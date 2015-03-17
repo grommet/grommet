@@ -12,18 +12,18 @@
     left: 0;
     right: 0;
     width: 100vw;
-    max-width: $app-width;
+    max-width: $document-width;
     margin: 0px auto;
 
     @include media-query(palm) {
       position: static;
       width: auto;
-      border-bottom: 1px solid $primary-text-color;
+      border-bottom: 1px solid $text-color;
     }
 
     a {
       text-decoration: none;
-      color: $primary-text-color;
+      color: $text-color;
     }
 
     &-items {
@@ -31,7 +31,7 @@
       width: $outline-width;
       padding: double($inuit-base-spacing-unit);
       padding-left: quadruple($inuit-base-spacing-unit);
-      background-color: $primary-background-color;
+      background-color: $background-color;
       border-bottom-right-radius: $brand-round;
       z-index: 1;
 

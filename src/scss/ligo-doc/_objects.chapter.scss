@@ -11,8 +11,8 @@
     height: double($inuit-base-spacing-unit);
     max-height: 0px;
     overflow: hidden;
-    background-color: $primary-background-color;
-    color: $primary-text-color;
+    background-color: $background-color;
+    color: $text-color;
     z-index: 2;
     transition: opacity $transition-duration;
 
@@ -26,7 +26,7 @@
     }
 
     h1 {
-      max-width: $app-width;
+      max-width: $document-width;
       margin: 0px auto;
       padding-left: $outline-width;
       line-height: double($inuit-base-spacing-unit);
@@ -44,8 +44,8 @@
   }
 
   header {
-    background-color: $primary-background-color;
-    color: $primary-text-color;
+    background-color: $background-color;
+    color: $text-color;
     border-color: none;
     min-height: round($inuit-base-spacing-unit * 8);
 
@@ -61,7 +61,7 @@
     padding-left: $outline-width;
     padding-right: $inuit-base-spacing-unit;
     border-bottom: 1px solid $border-color;
-    max-width: $app-width;
+    max-width: $document-width;
     margin: 0px auto;
 
     @include media-query(palm) {

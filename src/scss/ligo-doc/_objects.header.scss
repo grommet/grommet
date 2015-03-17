@@ -17,7 +17,7 @@
   }
 
   &__container {
-    max-width: $app-width;
+    max-width: $document-width;
     margin: 0px auto;
   }
 
@@ -34,10 +34,6 @@
     width: halve($header-height);
     height: halve($header-height);
     margin: $inuit-base-spacing-unit;
-
-    g {
-      fill: $brand-color;
-    }
   }
 
   &__name {
@@ -52,34 +48,6 @@
 
     a {
       color: $text-color;
-    }
-  }
-
-  &--home {
-    background-color: transparent;
-    color: $primary-text-color;
-
-    .header {
-
-      a {
-        color: $primary-text-color;
-
-        &:hover {
-          color: $primary-text-color;
-        }
-      }
-
-      &__logo {
-        g {
-          fill: $primary-text-color;
-        }
-      }
-
-      &__brand {
-        a {
-          color: $primary-text-color;
-        }
-      }
     }
   }
 }

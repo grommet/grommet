@@ -12,8 +12,8 @@
   left: 0px;
   right: 0px;
   overflow: auto;
-  background-color: $details-background-color;
-  color: $details-text-color;
+  background-color: $background-color;
+  color: $text-color;
   z-index: 10;
   @include animation('slide-down 0.5s forwards');
 
@@ -26,7 +26,7 @@
     top: 0px;
     left: 0px;
     right: 0px;
-    max-width: $app-width;
+    max-width: $document-width;
     margin: 0px auto;
     z-index: 1;
 
@@ -52,7 +52,7 @@
     }
 
     .icon-close {
-      stroke: $details-text-color;
+      stroke: $text-color;
       width: $inuit-base-spacing-unit;
       height: $inuit-base-spacing-unit;
       margin: halve($inuit-base-spacing-unit);

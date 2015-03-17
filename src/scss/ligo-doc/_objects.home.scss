@@ -4,7 +4,7 @@
   position: relative;
   height: 100vh;
   width: 100vw;
-  background-color: $primary-background-color;
+  background-color: $background-color;
 
   &__hero {
     position: fixed;
@@ -51,7 +51,7 @@
     cursor: pointer;
 
     &:hover {
-      border-color: $primary-text-color;
+      border-color: $text-color;
     }
 
     &--active {
@@ -63,22 +63,11 @@
 .hero {
   width: 100%;
   min-height: 100vh;
-  background-color: $primary-background-color;
-  color: $primary-text-color;
+  background-color: $background-color;
+  color: $text-color;
   padding: quadruple($inuit-base-spacing-unit);
   padding-top: quadruple($inuit-base-spacing-unit) + double($inuit-base-spacing-unit);
   transition: all $transition-duration;
-
-  &--1 {
-  }
-
-  &--2 {
-    background-color: nth($greens, 1);
-  }
-
-  &--3 {
-    background-color: nth($purples, 1);
-  }
 
   h1 {
     @include inuit-font-size(60px);
@@ -105,6 +94,6 @@
   width: 100%;
 
   path {
-    fill: $primary-text-color;
+    fill: $text-color;
   }
 }

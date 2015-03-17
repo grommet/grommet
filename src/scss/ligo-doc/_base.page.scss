@@ -7,7 +7,7 @@ html, body {
   overflow: hidden;
 }
 
-$app-width: round($inuit-base-spacing-unit * 40); // 960px;
+$document-width: round($inuit-base-spacing-unit * 40); // 960px;
 $content-width: round($inuit-base-spacing-unit * 24); // 576px;
 $header-height: quadruple($inuit-base-spacing-unit);
 $outline-width: round($inuit-base-spacing-unit * 12);

@@ -46,7 +46,7 @@
       position: absolute;
       top: $header-height;
       right: 0px;
-      background-color: $primary-active-background-color;
+      background-color: $background-color;
       @include inuit-font-size($inuit-heading-size-1);
       display: none;
     }
@@ -73,21 +73,6 @@
     }
   }
 
-  &--home {
-    a {
-      color: $primary-text-color;
-
-      &:hover, &.active {
-        color: $primary-text-color;
-
-        &:after {
-          content: '';
-          background-color: $primary-text-color;
-        }
-      }
-    }
-  }
-
   &--active {
     .menu {
       &__items {
@@ -96,10 +81,10 @@
     }
 
     a {
-      color: $primary-text-color;
+      color: $text-color;
 
       &:hover, &.active {
-        color: $primary-text-color;
+        color: $text-color;
       }
     }
   }
