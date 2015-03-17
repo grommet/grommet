@@ -11,10 +11,11 @@
   },
   "scripts": {
     "devX": "webpack-dev-server --devtool eval --progress --colors --content-base dist",
-    "dev": "gulp build; webpack -d --progress --colors --watch src/js/index.js dist/ligo-core.js",
-    "buildX": "gulp build; webpack -d --progress --colors src/js/index.js dist/ligo-core.js",
+    "dev": "gulp build; webpack -d --progress --colors --watch src/js/index.js",
+    "buildX": "gulp build; webpack -d --progress --colors src/js/index.js",
     "dev2": "gulp dev",
-    "test": "jest"
+    "test": "jest",
+    "package-doc": "webpack --config src/js/doc/webpack.config.doc.js -d --progress --colors src/js/doc/index.js dist/ligo-doc.js"
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/test/preprocessor.js",

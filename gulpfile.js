@@ -20,7 +20,7 @@ gulp.task('document', function() {
       stylesheetUrl: 'docs.css',
       layoutStylesheetUrl: false
     }))
-    .pipe(gulp.dest('./dist/docs/'))
+    .pipe(gulp.dest('./dist/docs/'));
 });
 
 gulp.task('build', ['copy', 'document']);
