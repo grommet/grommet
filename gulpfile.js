@@ -1,6 +1,8 @@
 var gulp = require('gulp');
 var markdownDocs = require('gulp-markdown-docs');
 var sass = require('gulp-ruby-sass');
+var webpack = require('gulp-webpack');
+var path = require('path');
 
 gulp.task('copy', function() {
   gulp.src('./src/scss/*.scss')
@@ -31,8 +33,9 @@ gulp.task('dev', function () {
   gulp.watch(['./docs/**/*.md', './docs/docs.css', './docs/template.html'], ['document']);
 });
 
-gulp.task('doc', ['doc-copy', 'doc-sass']);
-
+/**
+* CONFIGURATION FOR DOC MODULE
+**/
 gulp.task('doc-copy', function() {
   gulp.src('docs/index.html')
       .pipe(gulp.dest('dist/doc/'));
@@ -52,3 +55,30 @@ gulp.task('doc-sass', function() {
   })
   .pipe(gulp.dest('dist/doc'));
 });
+
+gulp.task('doc-webpack', function() {
+  return gulp.src('docs/index.js')
+        .pipe(webpack({
+          output: {
+            filename: 'index.js'
+          },
+          resolve: {
+            root: path.resolve(__dirname, 'src/js/doc')
+          },
+          module: {
+            loaders: [
+              {
+                test: /\.js$/,
+                loader: 'jsx-loader'
+              }
+            ]
+          }
+        }))
+        .pipe(gulp.dest('dist/doc/'));
+});
+
+gulp.task('doc', ['doc-copy', 'doc-sass', 'doc-webpack']);
+gulp.task('doc-dev', function() {
+  gulp.watch(['./docs/**'], ['doc']);
+});
+
