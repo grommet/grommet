@@ -1,0 +1,22 @@
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+
+.meter {
+  display: inline-block;
+
+  &__graphic {
+    width: quadruple($inuit-base-spacing-unit);
+    height: halve($inuit-base-spacing-unit);
+    stroke: $meter-color;
+    stroke-width: halve($inuit-base-spacing-unit);
+    background-color: #eee;
+  }
+
+  &__label {
+    margin-left: halve($inuit-base-spacing-unit);
+
+    &-units {
+      color: $secondary-color;
+      margin-left: 0.5em;
+    }
+  }
+}

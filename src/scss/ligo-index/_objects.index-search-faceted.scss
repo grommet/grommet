@@ -1,0 +1,163 @@
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+
+.index-search-faceted {
+  position: relative;
+
+  &__placeholder {
+    color: $secondary-color;
+  }
+
+  &__text {
+    width: 100%;
+    padding: 0px halve($inuit-base-spacing-unit);
+    background-color: transparent;
+    border: 1px solid $border-color;
+
+    &:focus {
+      outline: none;
+      background-color: $header-background-color;
+    }
+
+    &--set {
+      border-color: $border-color;
+    }
+
+    &--error {
+      border-color: $critical;
+    }
+
+    &-mirror {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      line-height: normal;
+      visibility: hidden;
+      z-index: -1;
+    }
+  }
+
+  &__tokens {
+    display: inline-block;
+    @include inuit-font-size($inuit-heading-size-3, quadruple($inuit-base-spacing-unit));
+    line-height: normal;
+    white-space: nowrap;
+    z-index: 1;
+  }
+
+  &__token {
+    display: inline-block;
+    margin-right: quarter($inuit-base-spacing-unit);
+    padding: 0px quarter($inuit-base-spacing-unit);
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+
+    &--error {
+      border-color: $critical;
+    }
+
+    &-attribute {
+      color: $secondary-color;
+
+      &:after {
+        content: ':';
+      }
+    }
+
+    &-clear {
+      position: relative;
+      display: inline-block;
+      width: $inuit-base-spacing-unit;
+      height: $inuit-base-spacing-unit;
+      cursor: pointer;
+
+      svg {
+        width: halve($inuit-base-spacing-unit);
+        height: halve($inuit-base-spacing-unit);
+        margin: quarter($inuit-base-spacing-unit);
+      }
+    }
+  }
+
+  &__clear {
+    position: absolute;
+    top: $inuit-base-spacing-unit;
+    right: $inuit-base-spacing-unit;
+    width: $inuit-base-spacing-unit;
+    height: $inuit-base-spacing-unit;
+    cursor: pointer;
+    display: none;
+    line-height: normal;
+
+    &--active {
+      display: block;
+    }
+  }
+
+  &--active {
+
+    .index-search-faceted {
+
+      &__text {
+        border-color: $focus-border-color;
+        //display: inline-block;
+
+        &--error {
+          border-color: $critical;
+        }
+      }
+
+      &__tokens {
+        display: none;
+      }
+
+      &__suggestions {
+        &--active {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__suggestions {
+    position: absolute;
+    top: quadruple($inuit-base-spacing-unit) - $inuit-base-spacing-unit - 5px; // TODO: make fully responsive
+    left: 0px;
+    display: none;
+    background-color: $background-color;
+    border: 1px solid $focus-border-color;
+    border-top-color: $background-color;
+    border-radius: 0 0 $border-radius $border-radius;
+    line-height: normal;
+    max-height: 400px; // TODO: make responsive
+    overflow: auto;
+
+    > li {
+      cursor: pointer;
+
+      &:hover {
+        background-color: $hover-background-color;
+      };
+    }
+  }
+
+  ul.index-search-faceted__suggestions > li {
+    padding-left: $inuit-base-spacing-unit;
+    padding-right: $inuit-base-spacing-unit;
+  }
+
+  &__suggestion {
+    &--active {
+      background-color: $hover-background-color;
+    }
+  }
+
+  &__suggestion-term {
+    display: inline-block;
+    min-width: quadruple($inuit-base-spacing-unit);
+    margin-right: halve($inuit-base-spacing-unit);
+  }
+
+  &__suggestion-count {
+    color: $secondary-color;
+  }
+}

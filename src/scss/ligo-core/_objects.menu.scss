@@ -1,0 +1,123 @@
+// (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
+
+.menu__control {
+  padding-left: $inuit-base-spacing-unit;
+  padding-right: $inuit-base-spacing-unit;
+  text-align: right;
+  border: 1px solid transparent; // so container aligns
+  border-radius: $border-radius;
+  white-space: nowrap;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $hover-background-color;
+    transition: background-color $base-animation-duration;
+
+    .menu__control-icon {
+      stroke: $active-icon-color;
+      fill: $active-icon-color;
+    }
+  }
+
+  &-icon {
+    width: $inuit-base-spacing-unit;
+    margin-left: halve($inuit-base-spacing-unit);
+    stroke: $inactive-icon-color;
+    fill: $inactive-icon-color;
+  }
+
+  &--small {
+    display: none;
+  }
+
+  @include media-query(palm) {
+    .menu__control {
+      &--large {
+        display: none;
+      }
+
+      &--small {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.menu {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  //background-color: $modal-overlay-background-color;
+  z-index: 10;
+
+  &__container {
+    position: absolute;
+    top: $inuit-base-spacing-unit;
+    background-color: $background-color;
+    //padding: $inuit-base-spacing-unit;
+    border: 1px solid $focus-border-color;
+    border-radius: $border-radius;
+    @include inuit-font-size($inuit-heading-size-3, double($inuit-base-spacing-unit));
+  }
+
+  &__title {
+    padding-left: $inuit-base-spacing-unit;
+    padding-right: $inuit-base-spacing-unit;
+    white-space: nowrap;
+
+    &-icon {
+      width: $inuit-base-spacing-unit;
+      margin-left: halve($inuit-base-spacing-unit);
+      margin-right: halve($inuit-base-spacing-unit);
+      stroke: $inactive-icon-color;
+      fill: $inactive-icon-color;
+    }
+
+    &--small {
+      display: none;
+    }
+
+    @include media-query(palm) {
+      text-align: right;
+      width: 100vw;
+
+      .menu__title {
+        &--large {
+          display: none;
+        }
+
+        &--small {
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  &__item {
+    cursor: pointer;
+
+    > * {
+      padding: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit;
+    }
+
+    &:hover {
+      background-color: $hover-background-color;
+    }
+  }
+
+  &--up {
+    .menu {
+      &__title {
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+
+        &-icon {
+          margin-right: 0px;
+        }
+      }
+    }
+  }
+}

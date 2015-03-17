@@ -1,0 +1,72 @@
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+
+$blues: (#0096d6, #59bbe4, #99d5ef, #d9eff9);
+$greys: (#000000, #87898b, #b9b8bb, #e5e8e8);
+$greens: (#008b2b, #40a860, #7fc595, #bfe2ca);
+$purples: (#822980, #8e3e8c, #c094bf, #e0c9df, #f2e9f2);
+
+$critical: #dc442f;
+$warning: #f4b51e;
+$ok: #42a425;
+$unknown: #848484;
+$disabled: $unknown;
+
+$status-colors: (
+  critical: $critical,
+  warning: $warning,
+  ok: $ok,
+  uknown: $unknown,
+  disabled: $disabled
+);
+
+$brand-color: nth($blues, 1);
+$background-color: #fff;
+$border-color: #ddd;
+$text-color: #333;
+$hover-text-color: #000;
+$secondary-color: #999;
+$link-color: #007DBA;
+$primary-background-color: nth($blues, 1);
+$primary-text-color: #fff;
+$primary-active-background-color: #000;
+
+$button-primary-background-color: #0096d6;
+$hover-background-color: rgba(0, 0, 0, 0.1);
+$modal-overlay-background-color: rgba(0, 0, 0, 0.6);
+$drop-background-color: rgba(255, 255, 255, 0.9);
+$header-background-color: rgba(255, 255, 255, 0.9);
+$selected-background-color: rgba(0, 0, 255, 0.1); // TODO: recolor
+$sort-placeholder-background-color: rgba(0, 0, 255, 0.1); // TODO: recolor
+$badge-background-color: nth($blues, 3);
+
+$details-background-color: rgba(0, 0, 0, 0.9);
+$details-text-color: #fff;
+
+$inactive-icon-color: #ccc;
+$active-icon-color: #000;
+$inactive-minor-icon-color: #eee;
+$active-minor-icon-color: #ccc;
+
+$meter-color: #0096d6;
+
+$critical: #dc442f;
+$warning: #f4b51e;
+$ok: #42a425;
+$unknown: #848484;
+$disabled: $unknown;
+
+$status-colors: (
+  critical: $critical,
+  warning: $warning,
+  ok: $ok,
+  uknown: $unknown,
+  disabled: $disabled
+);
+
+$graph-colors: (
+  '1': nth($blues, 1),
+  '2': nth($purples, 3),
+  '3': nth($greys, 2),
+  '4': nth($blues, 3),
+  '5': nth($purples, 2)
+);

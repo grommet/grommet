@@ -1,0 +1,201 @@
+// (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
+
+.dashboard, .dashboard-edit, .dashboard-panel-add {
+  position: relative;
+  text-align: center;
+
+  &__panels {
+    display: inline-block;
+  }
+
+  &__panel {
+    vertical-align: top;
+  }
+}
+
+.dashboard {
+
+  &__donut {
+    margin: 0px auto;
+  }
+
+  &__panel-key-color {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+  }
+
+  &__edit {
+    position: fixed;
+    right: $inuit-base-spacing-unit;
+    bottom: $inuit-base-spacing-unit;
+    width: $inuit-base-spacing-unit;
+    height: $inuit-base-spacing-unit;
+    cursor: pointer;
+
+    @include media-query(palm) {
+      display: none;
+    }
+
+    &:hover {
+      .dashboard__edit-icon {
+        stroke: $active-icon-color;
+      }
+    }
+
+    &-icon {
+      width: 18px;
+      height: 18px;
+      vertical-align: middle;
+      stroke: $inactive-icon-color;
+    }
+  }
+}
+
+.dashboard-edit {
+  padding-bottom: $inuit-base-spacing-unit;
+
+  &__add-panel {
+    position: absolute;
+    right: 0px;
+    bottom: halve($inuit-base-spacing-unit);
+  }
+
+  &__panel {
+    position: relative;
+    cursor: move;
+
+    > .index-aggregate {
+      pointer-events: none;
+    }
+
+    &-controls {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+    }
+
+    &-edit {
+      display: inline-block;
+      width: halve($inuit-base-spacing-unit);
+      height: halve($inuit-base-spacing-unit);
+      cursor: pointer;
+
+      &-icon {
+        vertical-align: top;
+        stroke: $inactive-icon-color;
+      }
+
+      &:hover {
+        .dashboard-edit__panel-edit-icon {
+          stroke: $active-icon-color;
+        }
+      }
+    }
+
+    &-remove {
+      display: inline-block;
+      width: halve($inuit-base-spacing-unit);
+      height: halve($inuit-base-spacing-unit);
+      margin-left: halve($inuit-base-spacing-unit);
+      cursor: pointer;
+
+      &-icon {
+        vertical-align: top;
+        stroke: $inactive-icon-color;
+      }
+
+      &:hover {
+        .dashboard-edit__panel-remove-icon {
+          stroke: $active-icon-color;
+        }
+      }
+    }
+
+    &--placeholder {
+      background-color: $sort-placeholder-background-color;
+    }
+  }
+}
+
+.dashboard-panel-add {
+  &__panel {
+    border-radius: $border-radius;
+
+    > * {
+      background-color: $background-color;
+      pointer-events: none;
+    }
+
+    &:hover {
+      background-color: $hover-background-color;
+    }
+
+    &--selected {
+      background-color: $selected-background-color;
+    }
+  }
+}
+
+.dashboard-panel-edit {
+  display: -webkit-flex;
+  display: flex;
+
+  &__config {
+    -webkit-flex: 1 0 auto;
+    flex: 1 0 auto;
+    position: relative;
+    //padding-top: $inuit-base-spacing-unit;
+  }
+
+  &__guided {
+    display: none;
+
+    &--active {
+      display: block;
+    }
+  }
+
+  &__raw {
+    width: 100%;
+    height: 50vh;
+    display: none;
+
+    &--active {
+      display: block;
+    }
+  }
+
+  &__display {
+    -webkit-flex: 0 0 auto;
+    flex: 0 0 auto;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  &__mode-selector {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+
+  &__mode-raw {
+    margin-left: halve($inuit-base-spacing-unit);
+  }
+}
+
+.dashboard-panel-edit-raw {
+  width: 100%;
+  height: 100%;
+
+  > textarea {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__error {
+    color: $critical;
+  }
+}
+

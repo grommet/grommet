@@ -1,0 +1,92 @@
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+
+// Settings
+@import "inuit-defaults/settings.defaults";
+@import "settings.defaults";
+@import "settings.color";
+@import "inuit-responsive-settings/settings.responsive";
+
+// Tools
+@import "inuit-functions/tools.functions";
+@import "inuit-mixins/tools.mixins";
+@import "inuit-responsive-tools/tools.responsive";
+
+// Generic
+@import "inuit-normalize/generic.normalize";
+@import "inuit-reset/generic.reset";
+@import "inuit-box-sizing/generic.box-sizing";
+@import "inuit-shared/generic.shared";
+
+// Base
+@import "inuit-page/base.page";
+$inuit-heading-size-1:  24px;
+$inuit-heading-size-2:  20px;
+$inuit-heading-size-3:  18px;
+$inuit-heading-size-4:  16px;
+$inuit-heading-size-5:  14px;
+$inuit-heading-size-6:  12px;
+@import "inuit-headings/base.headings";
+@import "inuit-lists/base.lists";
+@import "inuit-images/base.images";
+@import "inuit-paragraphs/base.paragraphs";
+
+@import "base.page";
+@import "base.font";
+@import "base.icon";
+@import "base.animation";
+
+// Objects
+$inuit-enable-list-inline--delimited: true;
+@import "inuit-list-inline/objects.list-inline";
+$inuit-enable-list-block--small: true;
+$inuit-enable-list-block--tiny: true;
+@import "inuit-list-block/objects.list-block";
+@import "inuit-list-ui/objects.list-ui";
+@import "inuit-list-bare/objects.list-bare";
+$inuit-enable-box--small: true;
+@import "inuit-box/objects.box";
+$inuit-enable-pack--auto: true;
+@import "inuit-pack/objects.pack";
+$inuit-enable-layout--flush: true;
+$inuit-enable-layout--center: true;
+@import "inuit-layout/objects.layout";
+$inuit-enable-table--cosy: true;
+@import "inuit-tables/objects.tables";
+@import "inuit-block/objects.block";
+@import "inuit-buttons/objects.buttons";
+@import "inuit-flag/objects.flag";
+@import "inuit-media/objects.media";
+
+@import "objects.app";
+@import "objects.header";
+@import "objects.menu";
+@import "objects.home";
+@import "objects.book";
+@import "objects.chapter";
+@import "objects.details";
+
+// Trumps
+@import "inuit-clearfix/trumps.clearfix";
+$inuit-use-fractions:   false;
+@import "inuit-widths/trumps.widths";
+@import "inuit-widths-responsive/trumps.widths-responsive";
+$inuit-enable-margins:            true;
+$inuit-enable-margins--large:      true;
+$inuit-enable-margins--huge:      true;
+$inuit-enable-margins--none:      true;
+$inuit-enable-paddings:           true;
+$inuit-enable-paddings--large:     true;
+$inuit-enable-paddings--huge:     true;
+$inuit-enable-paddings--none:     true;
+@import "inuit-spacing/trumps.spacing";
+$inuit-enable-responsive-margins:  true;
+$inuit-enable-responsive-margins--huge:     true;
+$inuit-enable-responsive-margins--none:     true;
+$inuit-enable-responsive-paddings:          true;
+$inuit-enable-responsive-paddings--huge:    true;
+$inuit-enable-responsive-paddings--none:    true;
+@import "inuit-spacing-responsive/trumps.spacing-responsive";
+@import "inuit-headings-trumps/trumps.headings";
+@import "inuit-print/trumps.print";
+
+// sass --sourcemap=none --watch src/scss:dist/css --load-path ./ --style compact

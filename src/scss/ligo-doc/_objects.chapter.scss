@@ -1,0 +1,117 @@
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+
+.chapter {
+
+  &__title {
+    opacity: 0;
+    position: fixed;
+    top: $header-height;
+    left: 0px;
+    right: 0px;
+    height: double($inuit-base-spacing-unit);
+    max-height: 0px;
+    overflow: hidden;
+    background-color: $primary-background-color;
+    color: $primary-text-color;
+    z-index: 2;
+    transition: opacity $transition-duration;
+
+    &--pinned {
+      opacity: 1;
+      max-height: double($inuit-base-spacing-unit);
+    }
+
+    @include media-query(palm) {
+      display: none;
+    }
+
+    h1 {
+      max-width: $app-width;
+      margin: 0px auto;
+      padding-left: $outline-width;
+      line-height: double($inuit-base-spacing-unit);
+    }
+  }
+
+  &__nav {
+    li {
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  header {
+    background-color: $primary-background-color;
+    color: $primary-text-color;
+    border-color: none;
+    min-height: round($inuit-base-spacing-unit * 8);
+
+    section {
+      border: none;
+    }
+  }
+
+  section {
+    position: relative;
+    padding-top: double($inuit-base-spacing-unit);
+    padding-bottom: double($inuit-base-spacing-unit);
+    padding-left: $outline-width;
+    padding-right: $inuit-base-spacing-unit;
+    border-bottom: 1px solid $border-color;
+    max-width: $app-width;
+    margin: 0px auto;
+
+    @include media-query(palm) {
+      padding: $inuit-base-spacing-unit;
+    }
+
+    h3 {
+      padding-top: $inuit-base-spacing-unit;
+    }
+
+    dt {
+      @include inuit-font-size($inuit-heading-size-4);
+      margin-bottom: halve($inuit-base-spacing-unit);
+    }
+
+    dd {
+      margin: 0;
+      margin-bottom: $inuit-base-spacing-unit;
+      max-width: $content-width;
+    }
+
+    p {
+      max-width: $content-width;
+    }
+
+    img {
+      margin: $inuit-base-spacing-unit 0;
+      max-width: $content-width;
+
+      @include media-query(palm) {
+        max-width: 100%;
+      }
+    }
+  }
+
+  > section:last-of-type {
+    min-height: 100vh;
+  }
+
+  &__details {
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 11;
+    background-color: #000;
+    color: #fff;
+
+    &-close {
+    }
+  }
+}

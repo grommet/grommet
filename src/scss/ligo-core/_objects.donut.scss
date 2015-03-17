@@ -1,0 +1,133 @@
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+
+@include keyframes(draw-stroke) {
+  0%   { stroke-dashoffset: quadruple($panel-width); }
+  100% { stroke-dashoffset: 0; }
+}
+
+.donut {
+
+  &.series-pre {
+    path {
+      stroke-dashoffset: quadruple($panel-width);
+    }
+  }
+
+  &__graphic-container {
+    position: relative;
+    width: $panel-width;
+    height: $panel-width;
+    ///margin: $inuit-base-spacing-unit; // for stroke overflow
+  }
+
+  svg.donut__graphic {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+
+    path {
+      stroke-width: $inuit-base-spacing-unit;
+      stroke-linecap: butt;
+      stroke-dasharray: quadruple($panel-width) quadruple($panel-width);
+      stroke-dashoffset: 0;
+      fill: none;
+      transition-property: stroke-width;
+      transition-duration: $base-animation-duration;
+      transition-timing-function: ease-in-out;
+      cursor: pointer;
+      @include animation('draw-stroke 3s');
+
+      &.donut__slice--active {
+        stroke-width: $inuit-base-spacing-unit + halve($inuit-base-spacing-unit);
+      }
+    }
+  }
+
+  &__active {
+    position: absolute;
+    width: 100%;
+    margin-top: double($inuit-base-spacing-unit);
+    text-align: center;
+    pointer-events: none;
+
+    &-value {
+      font-weight: bold;
+    }
+
+    &-label {
+      width: 60%;
+      margin: 0px auto;
+    }
+  }
+
+  &__key {
+    margin-top: $inuit-base-spacing-unit;
+    display: inline-block;
+    text-align: left;
+  }
+
+  &__key-item {
+    color: $secondary-color;
+
+    > * {
+      vertical-align: top;
+    }
+
+    svg.donut__key-item-swatch {
+      width: halve($inuit-base-spacing-unit);
+      height: halve($inuit-base-spacing-unit);
+      margin-top: quarter($inuit-base-spacing-unit);
+      margin-right: halve($inuit-base-spacing-unit);
+      overflow: visible;
+
+      path {
+        stroke-width: quarter($inuit-base-spacing-unit);
+        transition-property: stroke-width;
+        transition-duration: $base-animation-duration;
+        transition-timing-function: ease-in-out;
+      }
+    }
+
+    &-label {
+      display: inline-block;
+      width: quadruple($inuit-base-spacing-unit);
+    }
+
+    &-value {
+      display: inline-block;
+      width: double($inuit-base-spacing-unit);
+      text-align: right;
+    }
+
+    &--active {
+      color: $text-color;
+
+      svg.donut__key-item-swatch {
+        path {
+          stroke-width: halve($inuit-base-spacing-unit);
+        }
+      }
+    }
+  }
+}
+
+@each $status, $color in $status-colors {
+  .series-#{$status} {
+    stroke: $color;
+  }
+  //&.dashboard__panel-key-color {
+  //  background-color: $color;
+  //}
+}
+
+@each $index, $color in $graph-colors {
+  .series-#{$index} {
+    stroke: $color;
+  }
+  //&.dashboard__panel-key-color {
+  //  background-color: $color;
+  //}
+}

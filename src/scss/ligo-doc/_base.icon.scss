@@ -1,0 +1,59 @@
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+
+.control-icon {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  @include media-query(palm) {
+    transition: none;
+  }
+
+  svg {
+    vertical-align: middle;
+    width: double($inuit-base-spacing-unit);
+    height: double($inuit-base-spacing-unit);
+
+    g, path {
+      fill: $inactive-icon-color;
+      stroke: $inactive-icon-color;
+      transition: all 0.3s ease-in-out;
+
+      @include media-query(palm) {
+        transition: none;
+      }
+    }
+  }
+
+  &:hover svg {
+    g, path {
+      fill: $active-icon-color;
+      stroke: $active-icon-color;
+    }
+  }
+
+  &--active svg {
+    g, path {
+      fill: $active-icon-color;
+      stroke: $active-icon-color;
+    }
+  }
+
+  &--primary {
+    svg {
+      g, path {
+        fill: $primary-text-color;
+        stroke: $primary-text-color;
+      }
+    }
+
+    &:hover, &.control-icon--active {
+      background-color: $primary-active-background-color;
+
+      svg {
+        g, path {
+          fill: $primary-text-color;
+          stroke: $primary-text-color;
+        }
+      }
+    }
+  }
+}

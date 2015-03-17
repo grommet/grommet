@@ -1,0 +1,81 @@
+// (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
+
+
+.login {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.1);
+
+  &__background {
+    position: absolute;
+    max-width: none;
+
+    &--portrait {
+      width: auto;
+      height: 100%;
+    }
+
+    &--landscape {
+      height: auto;
+      width: 100%;
+    }
+  }
+
+  &__container {
+    position: relative;
+    width: 400px;
+    margin: quadruple($inuit-base-spacing-unit) auto;
+    padding: $inuit-box-padding;
+    padding-bottom: double($inuit-base-spacing-unit);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    text-align: center;
+    z-index: 1;
+    @include fade-in();
+
+    @include media-query(palm) {
+      margin: double($inuit-base-spacing-unit) 0px;
+      width: 100%;
+      border-radius: 0px;
+    }
+  }
+
+  &__logo {
+    display: inline-block;
+    width: double($inuit-base-spacing-unit);
+    height: double($inuit-base-spacing-unit);
+  }
+
+  &__form {
+    text-align: left;
+
+    > * {
+      width: 100%;
+      display: block;
+    }
+
+    .login__submit {
+      margin-top: $inuit-base-spacing-unit;
+    }
+  }
+
+  &__error {
+    margin-top: halve($inuit-base-spacing-unit);
+    color: $critical;
+  }
+
+  &__footer {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: quarter($inuit-base-spacing-unit);
+    padding: quarter($inuit-base-spacing-unit) $inuit-base-spacing-unit;
+    background-color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+  }
+}

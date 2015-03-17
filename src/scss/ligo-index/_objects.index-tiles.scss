@@ -1,0 +1,101 @@
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+
+.index-tiles {
+  position: relative;
+  margin-top: $inuit-base-spacing-unit;
+
+  &__tiles {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    text-align: left;
+  }
+
+  &__tile {
+    -webkit-flex-basis: round($inuit-base-spacing-unit * 8);
+    flex-basis: round($inuit-base-spacing-unit * 8);
+    margin-right: halve($inuit-base-spacing-unit);
+    margin-bottom: halve($inuit-base-spacing-unit);
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $hover-background-color;
+    }
+
+    &--critical {
+      border-color: $critical;
+      border-width: 2px;
+    }
+
+    &--warning {
+      border-color: $warning;
+      border-width: 2px;
+    }
+
+    > a {
+      display: block;
+      color: $text-color;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__attribute {
+    margin-bottom: quarter($inuit-base-spacing-unit);
+
+    &--status {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin-right: quarter($inuit-base-spacing-unit);
+
+      > svg {
+        position: relative;
+        top: -2px;
+      }
+    }
+
+    &--name {
+      display: inline-block;
+    }
+
+    &--activity {
+      margin-top: $inuit-base-spacing-unit;
+
+      .index-activity {
+        border-color: $unknown;
+        border-width: 4px 0 0 0;
+        border-style: solid;
+        padding-top: halve($inuit-base-spacing-unit);
+
+        &--critical {
+          border-color: $critical;
+        }
+
+        &--warning {
+          border-color: $warning;
+        }
+
+        &--ok {
+          border-color: $ok;
+        }
+
+        &__timestamp {
+          display: block;
+          color: $secondary-color;
+        }
+      }
+    }
+  }
+
+  &__attribute-selector {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+}

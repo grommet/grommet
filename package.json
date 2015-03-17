@@ -1,0 +1,52 @@
+{
+  "name": "ligo",
+  "version": "0.1.0",
+  "main": "src/js/index.js",
+  "description": "Ligo UI Library",
+  "author": "Eric Soderberg",
+  "license": "TBD",
+  "repository" : {
+      "type" : "git",
+      "url" : "https://ci-gerrit.vse.adapps.hp.com/piano2"
+  },
+  "scripts": {
+    "devX": "webpack-dev-server --devtool eval --progress --colors --content-base dist",
+    "dev": "gulp build; webpack -d --progress --colors --watch src/js/index.js dist/ligo-core.js",
+    "buildX": "gulp build; webpack -d --progress --colors src/js/index.js dist/ligo-core.js",
+    "dev2": "gulp dev",
+    "test": "jest"
+  },
+  "jest": {
+    "scriptPreprocessor": "<rootDir>/test/preprocessor.js",
+    "unmockedModulePathPatterns": [
+      "react",
+      "flux",
+      "lodash",
+      "superagent"
+    ],
+    "testDirectoryName": "test"
+  },
+  "dependencies": {
+    "cookies-js": "^1.2.1",
+    "flux": "^2.0.1",
+    "lodash": "^3.2.0",
+    "mirrorkey": "^1.2.0",
+    "moment": "^2.9.0",
+    "react": "^0.12.2",
+    "react-gravatar": "^1.0.0",
+    "react-router": "^0.12.0",
+    "react-time": "^2.4.0",
+    "superagent": "^0.21.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-markdown": "^1.0.0",
+    "gulp-markdown-docs": "^0.1.1",
+    "highlight": "^0.2.3",
+    "jest": "^0.1.37",
+    "jest-cli": "^0.3.0",
+    "jsx-loader": "^0.12.2",
+    "react-tools": "^0.12.2",
+    "webpack": "^1.5.3"
+  }
+}

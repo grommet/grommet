@@ -1,0 +1,26 @@
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+
+#loading {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: $primary-background-color;
+  text-align: center;
+  padding-top: 100px;
+  font-size: 48px;
+  color: $primary-text-color;
+  font-style: italic;
+  z-index: -1;
+}
+
+.app {
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: $background-color;
+  color: $text-color;
+
+  @include media-query(palm) {
+    position: relative;
+  }
+}

@@ -1,0 +1,81 @@
+body {
+  margin-left: 192px;
+  padding-left: 48px;
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+  background-color: #fff;
+  color: #333;
+}
+
+pre {
+  /* matches github */
+  background-color: #f2f2f2;
+  padding: 1em;
+  margin: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.doc-nav {
+  background-color: #0096d6;
+  color: #fff;
+  position: fixed;
+  width: 192px;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 1em;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+
+}
+.doc-nav a {
+  color: #fff;
+  text-decoration: none;
+}
+.doc-nav a:hover {
+  text-decoration: underline;
+}
+.doc-nav-group {
+  list-style: none;
+  padding: 0;
+}
+.doc-nav-group-header {
+  display: block;
+  padding: 0.5em 0;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.doc-nav-item {
+  padding: 0.5em 0 0.5em 1.5em;
+}
+.doc-section-header {
+  font-size: 1.7em;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.5em;
+}
+.doc-article {
+  padding-bottom: 4em;
+  display: block;
+}
+.doc-article h1 {
+  font-size: 1.6em;
+}
+.doc-article + .doc-article {
+  padding-top: 3em;
+  border-top: 1px solid #ccc;
+}
+@media screen and (max-width: 44.9375em) {
+  html {
+    width: 100%;
+    height: 100%;
+  }
+  body {
+    margin: 0px;
+    padding: 24px;
+  }
+  .doc-nav {
+    display: none;
+  }
+}

@@ -1,0 +1,110 @@
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+
+.home {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background-color: $primary-background-color;
+
+  &__hero {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    overflow: auto;
+    top: 0px;
+    transition: top 1s ease-in;
+
+    &--prior {
+      z-index: 1;
+    }
+
+    &--up {
+      top: -100vh;
+
+      &.home__hero--prior {
+        z-index: 3;
+      }
+    }
+
+    &--active {
+      z-index: 2;
+    }
+  }
+
+  &__selector {
+    position: absolute;
+    right: $inuit-base-spacing-unit;
+    top: 40vh;
+    z-index: 4;
+
+    @include media-query(palm) {
+      right: quarter($inuit-base-spacing-unit);
+    }
+  }
+
+  &__selector-item {
+    width: $inuit-base-spacing-unit;
+    height: $inuit-base-spacing-unit;
+    border-radius: $inuit-base-spacing-unit;
+    border: 2px solid $border-color;
+    margin-top: halve($inuit-base-spacing-unit);
+    cursor: pointer;
+
+    &:hover {
+      border-color: $primary-text-color;
+    }
+
+    &--active {
+      background-color: $border-color;
+    }
+  }
+}
+
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  background-color: $primary-background-color;
+  color: $primary-text-color;
+  padding: quadruple($inuit-base-spacing-unit);
+  padding-top: quadruple($inuit-base-spacing-unit) + double($inuit-base-spacing-unit);
+  transition: all $transition-duration;
+
+  &--1 {
+  }
+
+  &--2 {
+    background-color: nth($greens, 1);
+  }
+
+  &--3 {
+    background-color: nth($purples, 1);
+  }
+
+  h1 {
+    @include inuit-font-size(60px);
+  }
+
+  &__world {
+    transition: all $transition-duration;
+    max-width: 300px;
+
+    @include media-query(palm) {
+      display: block;
+      min-width: double(quadruple($inuit-base-spacing-unit));
+      margin: $inuit-base-spacing-unit auto;
+    }
+  }
+
+  @include media-query(palm) {
+    padding: $inuit-base-spacing-unit;
+    padding-top: quadruple($inuit-base-spacing-unit);
+  }
+}
+
+.world {
+  width: 100%;
+
+  path {
+    fill: $primary-text-color;
+  }
+}
