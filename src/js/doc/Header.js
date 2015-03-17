@@ -11,6 +11,10 @@ var Header = React.createClass({
 
   mixins: [RouterState],
 
+  propTypes: {
+    menuConfig: React.PropTypes.array.isRequired
+  },
+
   render: function() {
     var classes = ["header"];
     if (this.isActive('home')) {
@@ -25,7 +29,9 @@ var Header = React.createClass({
               <span className={"header__name"}>Application Style Guide</span>
             </Link>
           </div>
-          <Menu className={"list-inline pack__item"} home={this.isActive('home')}/>
+          <Menu className={"list-inline pack__item"}
+            config={this.props.menuConfig}
+            home={this.isActive('home')}/>
         </div>
       </div>
     );

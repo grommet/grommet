@@ -3,16 +3,16 @@
 var React = require('react');
 var Chapter = require('Chapter');
 
-var Resources = React.createClass({
+var Downloads = React.createClass({
 
   render: function() {
     return (
       <Chapter>
-        {'RESOURCES TBD'}
+        {'Downloads TBD'}
       </Chapter>
     );
   }
 
 });
 
-module.exports = Resources;
+module.exports = Downloads;

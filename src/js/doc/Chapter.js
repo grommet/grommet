@@ -10,14 +10,14 @@ var Chapter = React.createClass({
   mixins: [Navigation],
 
   _styleTitle: function () {
-    // pin title section under app header when content header disappears
-    var appHeaderElement = document.querySelectorAll('div.header').item(0);
-    var appHeaderRect = appHeaderElement.getBoundingClientRect();
+    // pin title section under document header when content header disappears
+    var docHeaderElement = document.querySelectorAll('div.header').item(0);
+    var docHeaderRect = docHeaderElement.getBoundingClientRect();
     var chapterElement = this.refs.chapter.getDOMNode();
     var chapterHeaderElement = chapterElement.querySelectorAll('header').item(0);
     var chapterHeaderRect = chapterHeaderElement.getBoundingClientRect();
     var titleElement = this.refs.title.getDOMNode();
-    if (chapterHeaderRect.bottom < (appHeaderRect.bottom + 48)) { // TODO: 48 too hard coded
+    if (chapterHeaderRect.bottom < (docHeaderRect.bottom + 48)) { // TODO: 48 too hard coded
       titleElement.classList.add("chapter__title--pinned");
     } else {
       titleElement.classList.remove("chapter__title--pinned");
@@ -35,34 +35,34 @@ var Chapter = React.createClass({
     if (event.target.parentNode.classList.contains("chapter__nav")) {
       var sectionElement = document.getElementById(event.target.dataset.target);
       var sectionRect = sectionElement.getBoundingClientRect();
-      var app = document.querySelectorAll('div.app').item(0);
-      var appHeaderElement = document.querySelectorAll('div.header').item(0);
-      var appHeaderRect = appHeaderElement.getBoundingClientRect();
+      var doc = document.querySelectorAll('div.document').item(0);
+      var docHeaderElement = document.querySelectorAll('div.header').item(0);
+      var docHeaderRect = docHeaderElement.getBoundingClientRect();
       var chapterElement = this.refs.chapter.getDOMNode();
       var chapterRect = chapterElement.getBoundingClientRect();
       var titleElement = this.refs.title.getDOMNode();
       titleElement.classList.add("chapter__title--pinned");
       var titleRect = titleElement.getBoundingClientRect();
-      if (chapterRect.top <= appHeaderRect.bottom) {
+      if (chapterRect.top <= docHeaderRect.bottom) {
         // desktop layout, put below headers
-        app.scrollTop = (app.scrollTop + sectionRect.top) -
-          (appHeaderRect.bottom - appHeaderRect.top) -
+        doc.scrollTop = (doc.scrollTop + sectionRect.top) -
+          (docHeaderRect.bottom - docHeaderRect.top) -
           (titleRect.bottom - titleRect.top);
       } else {
         // palm layout, all the way to the top
-        app.scrollTop = app.scrollTop + sectionRect.top;
+        doc.scrollTop = doc.scrollTop + sectionRect.top;
       }
     }
   },
 
   componentDidMount: function () {
-    var app = document.querySelectorAll('div.app').item(0);
-    app.addEventListener("scroll", this._onScroll);
+    var doc = document.querySelectorAll('div.document').item(0);
+    doc.addEventListener("scroll", this._onScroll);
   },
 
   componentWillUnmount: function () {
-    var app = document.querySelectorAll('div.app').item(0);
-    app.removeEventListener("scroll", this._onScroll);
+    var doc = document.querySelectorAll('div.document').item(0);
+    doc.removeEventListener("scroll", this._onScroll);
   },
 
   render: function() {

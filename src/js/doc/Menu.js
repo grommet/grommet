@@ -5,11 +5,13 @@ var Link = require('react-router').Link;
 var MenuControl = require('./MenuControl');
 var RouterState = require('react-router').State;
 
-var routes = [{route: 'design', label: 'Design'}, {route: 'resources', label: 'Resources'}];
-
 var Menu = React.createClass({
 
   mixins: [RouterState],
+
+  propTypes: {
+    config: React.PropTypes.array.isRequired
+  },
 
   _onActivate: function () {
     this.setState({active: true});
@@ -36,7 +38,7 @@ var Menu = React.createClass({
     if (this.state.active) {
       classes.push("menu--active");
     }
-    var items = routes.map(function (route) {
+    var items = this.props.config.map(function (route) {
       var classes = ["menu__item"];
       if (this.isActive(route.route)) {
         classes.push("menu__item--active");

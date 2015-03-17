@@ -16,7 +16,7 @@ var CONTENTS = [
   {label: 'Patterns', route: 'patterns', handler: Patterns}
 ];
 
-var Design = React.createClass({
+var StyleGuide = React.createClass({
 
   render: function() {
     return (
@@ -26,9 +26,9 @@ var Design = React.createClass({
 
 });
 
-Design.routes = function () {
+StyleGuide.routes = function () {
   return (
-    <Route name="design" handler={Design}>
+    <Route name="style guide" handler={StyleGuide}>
       <DefaultRoute name="philosophy" handler={Philosophy} />
       <Route name="basics" handler={Basics} />
       <Route name="patterns" handler={Patterns}>
@@ -42,4 +42,4 @@ Design.routes = function () {
   );
 }
 
-module.exports = Design;
+module.exports = StyleGuide;

@@ -4,14 +4,18 @@ var React = require('react');
 var RouteHandler = require('react-router').RouteHandler;
 var Header = require('./Header');
 
-var App = React.createClass({
+var Document = React.createClass({
+
+  propTypes: {
+    menuConfig: React.PropTypes.array.isRequired
+  },
 
   render: function() {
-    var classes = ['app'];
+    var classes = ['document'];
     return (
       <div className={classes.join(' ')}>
-        <Header/>
-        <div className={"app__content"}>
+        <Header menuConfig={this.props.menuConfig} />
+        <div className={"document__content"}>
           <RouteHandler />
         </div>
       </div>
@@ -19,4 +23,4 @@ var App = React.createClass({
   }
 });
 
-module.exports = App;
+module.exports = Document;
