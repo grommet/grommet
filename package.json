@@ -15,7 +15,7 @@
     "buildX": "gulp build; webpack -d --progress --colors src/js/index.js",
     "dev2": "gulp dev",
     "test": "jest",
-    "package-doc": "webpack --config src/js/doc/webpack.config.doc.js -d --progress --colors src/js/doc/index.js dist/ligo-doc.js"
+    "package-doc": "gulp doc; webpack --config webpack.config.doc.js -d --progress --colors docs/style_guide/index.js"
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/test/preprocessor.js",
@@ -43,6 +43,7 @@
     "gulp": "^3.8.11",
     "gulp-markdown": "^1.0.0",
     "gulp-markdown-docs": "^0.1.1",
+    "gulp-ruby-sass": "^1.0.0-alpha.3",
     "highlight": "^0.2.3",
     "jest": "^0.1.37",
     "jest-cli": "^0.3.0",

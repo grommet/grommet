@@ -3,12 +3,12 @@
 var React = require('react');
 var Route = require('react-router').Route;
 var DefaultRoute = require('react-router').DefaultRoute;
-var Book = require('../Book');
+var Book = require('Book');
 var Philosophy = require('./Philosophy');
 var Basics = require('./Basics');
 var Patterns = require('./Patterns');
 var Login = require('./Login');
-var TBDDetails = require('../TBDDetails');
+var TBDDetails = require('TBDDetails');
 
 var CONTENTS = [
   {label: 'Philosophy', route: 'philosophy', handler: Philosophy},
