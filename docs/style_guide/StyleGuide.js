@@ -7,6 +7,7 @@ var DefaultRoute = Router.DefaultRoute;
 var RouteHandler = Router.RouteHandler;
 var Link = Router.Link;
 var RouterState = Router.State;
+var Introduction = require('./Introduction');
 var Philosophy = require('./Philosophy');
 var Basics = require('./Basics');
 var Patterns = require('./Patterns');
@@ -70,8 +71,8 @@ var StyleGuide = React.createClass({
 StyleGuide.routes = function () {
   return (
     <Route name="style guide" path="styleguide" handler={StyleGuide}>
-      <Route name="introduction" handler={TBD} />
-      <DefaultRoute name="philosophy" handler={Philosophy} />
+      <DefaultRoute name="introduction" handler={Introduction} />
+      <Route name="philosophy" handler={Philosophy} />
       <Route name="basics" handler={Basics} />
       <Route name="patterns" handler={Patterns} />
       <Route name="login" handler={Login} />
