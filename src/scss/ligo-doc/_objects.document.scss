@@ -1,26 +1,46 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-#loading {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: $background-color;
-  text-align: center;
-  padding-top: 100px;
-  font-size: 48px;
-  color: $text-color;
-  font-style: italic;
-  z-index: -1;
-}
+.document {
+  position: relative;
+  max-width: $document-width;
+  margin: 0px auto;
 
-.doc {
-  width: 100vw;
-  height: 100vh;
-  overflow: auto;
-  background-color: $background-color;
-  color: $text-color;
+  &__contents {
+    position: absolute;
+    top: $header-height;
+    left: 0px;
+    width: $contents-width;
 
-  @include media-query(palm) {
-    position: relative;
+    a {
+      display: inline-block;
+      height: 100%;
+      color: $text-color;
+      text-decoration: none;
+
+      &:hover {
+        color: $hover-text-color;
+      }
+    }
+
+    &-section {
+      margin: halve($inuit-base-spacing-unit) 0px;
+    }
+
+    &-page {
+      padding-left: $inuit-base-spacing-unit;
+    }
+  }
+
+  &__content {
+    padding-top: $header-height;
+    padding-left: $contents-width;
+  }
+
+  &--no-contents {
+    .document {
+      &__content {
+        padding-left: 0px;
+      }
+    }
   }
 }

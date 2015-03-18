@@ -1,22 +1,51 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
-
 var React = require('react');
-var RouteHandler = require('react-router').RouteHandler;
-var Header = require('./Header');
+
+function addContents(input, output) {
+  input.forEach(function (content) {
+    if (content.hasOwnProperty('section')) {
+      output.push(
+        <h3 key={output.length} className="document__contents-section">
+          {content.section}
+        </h3>
+      );
+      addContents(content.contents, output);
+    } else {
+      output.push(
+        <div key={output.length} className="document__contents-page">
+          {content}
+        </div>
+      );
+    }
+  });
+}
 
 var Document = React.createClass({
 
   propTypes: {
-    menuConfig: React.PropTypes.array.isRequired
+    contents: React.PropTypes.array
   },
 
   render: function() {
     var classes = ['document'];
+    var contents = '';
+    if (this.props.contents) {
+      var items = []
+      addContents(this.props.contents, items);
+      contents = (
+        <div className={"document__contents"}>
+          {items}
+        </div>
+      );
+    } else {
+      classes.push("document--no-contents")
+    }
+
     return (
       <div className={classes.join(' ')}>
-        <Header menuConfig={this.props.menuConfig} />
+        {contents}
         <div className={"document__content"}>
-          <RouteHandler />
+          {this.props.children}
         </div>
       </div>
     );

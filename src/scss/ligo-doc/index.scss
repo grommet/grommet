@@ -57,12 +57,14 @@ $inuit-enable-table--cosy: true;
 @import "inuit-flag/objects.flag";
 @import "inuit-media/objects.media";
 
+@import "objects.site";
 @import "objects.document";
-@import "objects.header";
-@import "objects.menu";
-@import "objects.home";
-@import "objects.book";
-@import "objects.chapter";
+@import "objects.hero";
+//@import "objects.header";
+//@import "objects.menu";
+//@import "objects.home";
+//@import "objects.book";
+//@import "objects.chapter";
 @import "objects.details";
 
 // Trumps
