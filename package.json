@@ -49,6 +49,9 @@
     "jest-cli": "^0.3.0",
     "jsx-loader": "^0.12.2",
     "react-tools": "^0.12.2",
-    "webpack": "^1.5.3"
+    "webpack": "^1.5.3",
+    "run-sequence": "^0.3.7",
+    "del": "^0.1.3",
+    "browser-sync": "^1.5.2"
   }
 }

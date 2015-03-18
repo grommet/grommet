@@ -3,6 +3,10 @@ var markdownDocs = require('gulp-markdown-docs');
 var sass = require('gulp-ruby-sass');
 var webpack = require('gulp-webpack');
 var path = require('path');
+var runSequence = require('run-sequence');
+var del = require('del');
+var browserSync = require('browser-sync');
+var reload = browserSync.reload;
 
 gulp.task('copy', function() {
   gulp.src('./src/scss/*.scss')
@@ -77,8 +81,24 @@ gulp.task('doc-webpack', function() {
         .pipe(gulp.dest('dist/doc/'));
 });
 
-gulp.task('doc', ['doc-copy', 'doc-sass', 'doc-webpack']);
-gulp.task('doc-dev', function() {
+gulp.task('doc', ['doc-sass', 'doc-webpack', 'doc-copy']);
+
+gulp.task('doc-clean', function() {
+  del.sync(['dist/doc']);
+});
+
+gulp.task('doc-preprocess', function(callback) {
+  runSequence('doc-clean', 'doc', callback);
+});
+
+gulp.task('doc-dev', ['doc-preprocess'], function() {
+  browserSync({
+    server: {
+      baseDir: './dist/doc/'
+    }
+  });
+
   gulp.watch(['./docs/**'], ['doc']);
+  gulp.watch(['./dist/doc/index.js']).on('change', reload);
 });
 
