@@ -42,6 +42,16 @@
           }
         }
       }
+
+      .document__contents-page {
+        display: none;
+      }
+
+      &--active {
+        .document__contents-page {
+          display: block;
+        }
+      }
     }
 
     &-page {

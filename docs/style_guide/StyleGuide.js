@@ -34,7 +34,8 @@ var StyleGuide = React.createClass({
   _buildContents: function (contents, sections, sectionIndex) {
     return contents.map(function (content, index) {
       var className = '';
-      if (this.isActive(content.route)) {
+      var active = this.isActive(content.route);
+      if (active) {
         className = 'active';
         this._activeSectionIndex = sectionIndex || index + 1;
       }
@@ -47,6 +48,7 @@ var StyleGuide = React.createClass({
         if (content.hasOwnProperty('contents')) {
           item.contents = this._buildContents(content.contents, false, index + 1);
         }
+        item.active = active || this._activeSectionIndex === (index + 1);
       } else {
         item = link;
       }

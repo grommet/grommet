@@ -4,12 +4,16 @@ var React = require('react');
 function addContents(contents) {
   return contents.map(function (content, index) {
     if (content.hasOwnProperty('section')) {
+      var classes = ["document__contents-section"];
+      if (content.active) {
+        classes.push("document__contents-section--active");
+      }
       var children = '';
       if (content.hasOwnProperty('contents')) {
         children = addContents(content.contents);
       }
       return (
-        <div key={index} className="document__contents-section">
+        <div key={index} className={classes.join(' ')}>
           <h3>{content.section}</h3>
           {children}
         </div>
