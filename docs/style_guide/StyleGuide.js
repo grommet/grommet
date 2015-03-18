@@ -43,9 +43,9 @@ var StyleGuide = React.createClass({
 
 StyleGuide.routes = function () {
   return (
-    <Route name="style guide" handler={StyleGuide}>
-      <DefaultRoute name="introduction" handler={TBD} />
-      <Route name="philosophy" handler={Philosophy} />
+    <Route name="style guide" path="styleguide" handler={StyleGuide}>
+      <Route name="introduction" handler={TBD} />
+      <DefaultRoute name="philosophy" handler={Philosophy} />
       <Route name="basics" handler={Basics} />
       <Route name="patterns" handler={Patterns}>
         <Route name="login" handler={Login} />

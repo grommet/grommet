@@ -12,6 +12,7 @@
   left: 0px;
   right: 0px;
   overflow: auto;
+  padding: $header-height $inuit-base-spacing-unit;
   background-color: $background-color;
   color: $text-color;
   z-index: 10;
@@ -60,7 +61,8 @@
   }
 
   section {
-    padding-left: double($inuit-base-spacing-unit);
+    max-width: $document-width;
+    margin: 0px auto;
 
     @include media-query(palm) {
       padding-left: $inuit-base-spacing-unit;

@@ -34,6 +34,7 @@
   &__content {
     padding-top: $header-height + $inuit-base-spacing-unit;
     padding-left: $contents-width;
+    padding-bottom: quadruple($inuit-base-spacing-unit);
 
     > * {
       max-width: $content-width;
@@ -44,7 +45,21 @@
     .document {
       &__content {
         padding-left: 0px;
+
+        > * {
+          max-width: none;
+        }
       }
     }
   }
+}
+
+.tbd {
+  text-align: center;
+  margin: 20vh auto;
+  padding: double($inuit-base-spacing-unit);
+  @include inuit-font-size(quadruple($inuit-base-spacing-unit));
+  font-style: italic;
+  background-color: #ccc;
+  color: #fff;
 }

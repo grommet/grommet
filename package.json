@@ -5,9 +5,9 @@
   "description": "Ligo UI Library",
   "author": "Eric Soderberg",
   "license": "TBD",
-  "repository" : {
-      "type" : "git",
-      "url" : "https://ci-gerrit.vse.adapps.hp.com/piano2"
+  "repository": {
+    "type": "git",
+    "url": "https://ci-gerrit.vse.adapps.hp.com/piano2"
   },
   "scripts": {
     "devX": "webpack-dev-server --devtool eval --progress --colors --content-base dist",
@@ -39,19 +39,22 @@
     "superagent": "^0.21.0"
   },
   "devDependencies": {
+    "browser-sync": "^1.5.2",
+    "del": "^0.1.3",
+    "file-loader": "^0.8.1",
     "gulp": "^3.8.11",
     "gulp-markdown": "^1.0.0",
     "gulp-markdown-docs": "^0.1.1",
     "gulp-ruby-sass": "^1.0.0-alpha.3",
     "gulp-webpack": "^1.3.0",
     "highlight": "^0.2.3",
+    "html-loader": "^0.2.3",
     "jest": "^0.1.37",
     "jest-cli": "^0.3.0",
     "jsx-loader": "^0.12.2",
     "react-tools": "^0.12.2",
-    "webpack": "^1.5.3",
     "run-sequence": "^0.3.7",
-    "del": "^0.1.3",
-    "browser-sync": "^1.5.2"
+    "url-loader": "^0.5.5",
+    "webpack": "^1.5.3"
   }
 }

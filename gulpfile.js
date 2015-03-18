@@ -45,6 +45,8 @@ gulp.task('doc-copy', function() {
       .pipe(gulp.dest('dist/doc/'));
   gulp.src('src/lib/*')
       .pipe(gulp.dest('dist/doc/'));
+  //gulp.src('docs/**/*.html')
+  //    .pipe(gulp.dest('dist/doc/'));
 });
 
 gulp.task('doc-sass', function() {
@@ -67,14 +69,14 @@ gulp.task('doc-webpack', function() {
         filename: 'index.js'
       },
       resolve: {
-        root: path.resolve(__dirname, 'src/js/doc')
+        root: [
+          path.resolve(__dirname, 'src/js/doc')
+        ]
       },
       module: {
         loaders: [
-          {
-            test: /\.js$/,
-            loader: 'jsx-loader'
-          }
+          { test: /\.js$/, loader: 'jsx-loader' },
+          { test: /\.png$/, loader: "url-loader?mimetype=image/png" }
         ]
       },
       devtool: 'inline-source-map'
