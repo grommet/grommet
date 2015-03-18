@@ -1,26 +1,13 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var Chapter = require('Chapter');
 
 var Philosophy = React.createClass({
 
   render: function() {
     return (
-      <Chapter title="Philosophy">
-        <header>
-          <section>
-            <h1>Philosophy</h1>
-
-            <ol className="chapter__nav list-bare">
-              <li data-target="best-practices">Best Practices</li>
-              <li data-target="usability">Usability</li>
-              <li data-target="interactions">Interactions</li>
-              <li data-target="mobile">Mobile</li>
-              <li data-target="accessibility">Accessibility</li>
-            </ol>
-          </section>
-        </header>
+      <div>
+        <h1>Philosophy</h1>
 
         <section id="best-practices">
           <h2>Best Practices</h2>
@@ -241,8 +228,7 @@ var Philosophy = React.createClass({
             and try to avoid non-navigable elements.</li>
           </ol>
         </section>
-
-      </Chapter>
+      </div>
     );
   }
 

@@ -62,24 +62,24 @@ gulp.task('doc-sass', function() {
 
 gulp.task('doc-webpack', function() {
   return gulp.src('docs/index.js')
-        .pipe(webpack({
-          output: {
-            filename: 'index.js'
-          },
-          resolve: {
-            root: path.resolve(__dirname, 'src/js/doc')
-          },
-          module: {
-            loaders: [
-              {
-                test: /\.js$/,
-                loader: 'jsx-loader'
-              }
-            ]
-          },
-          devtool: 'inline-source-map'
-        }))
-        .pipe(gulp.dest('dist/doc/'));
+    .pipe(webpack({
+      output: {
+        filename: 'index.js'
+      },
+      resolve: {
+        root: path.resolve(__dirname, 'src/js/doc')
+      },
+      module: {
+        loaders: [
+          {
+            test: /\.js$/,
+            loader: 'jsx-loader'
+          }
+        ]
+      },
+      devtool: 'inline-source-map'
+    }))
+    .pipe(gulp.dest('dist/doc/'));
 });
 
 gulp.task('doc', ['doc-sass', 'doc-webpack', 'doc-copy']);
@@ -99,7 +99,7 @@ gulp.task('doc-dev', ['doc-preprocess'], function() {
     }
   });
 
-  gulp.watch(['./docs/**'], ['doc']);
+  gulp.watch(['./docs/**', './src/scss/ligo-doc/**'], ['doc']);
   gulp.watch(['./dist/doc/index.js']).on('change', reload);
 });
 

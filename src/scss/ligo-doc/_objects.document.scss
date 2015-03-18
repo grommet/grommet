@@ -23,7 +23,7 @@
     }
 
     &-section {
-      margin: halve($inuit-base-spacing-unit) 0px;
+      margin: $inuit-base-spacing-unit 0px halve($inuit-base-spacing-unit) 0px;
     }
 
     &-page {
@@ -32,8 +32,12 @@
   }
 
   &__content {
-    padding-top: $header-height;
+    padding-top: $header-height + $inuit-base-spacing-unit;
     padding-left: $contents-width;
+
+    > * {
+      max-width: $content-width;
+    }
   }
 
   &--no-contents {

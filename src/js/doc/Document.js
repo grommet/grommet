@@ -9,7 +9,9 @@ function addContents(input, output) {
           {content.section}
         </h3>
       );
-      addContents(content.contents, output);
+      if (content.hasOwnProperty('contents')) {
+        addContents(content.contents, output);
+      }
     } else {
       output.push(
         <div key={output.length} className="document__contents-page">

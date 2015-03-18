@@ -10,17 +10,15 @@ var Documents = require('Documents');
 var Document = Documents.Document;
 var TBD = Documents.TBD;
 
-
-
 var Documentation = React.createClass({
   render: function() {
     var contents = [
       {section: 'Guides', contents: [
-        (<Link key="hello world" to="hello world">Hello World</Link>),
-        (<Link key="get started" to="get started">Get Started</Link>)
+        (<Link to="hello world">Hello World</Link>),
+        (<Link to="get started">Get Started</Link>)
       ]},
       {section: 'Reference', contents: [
-        (<Link key="search" to="search ref">Search</Link>)
+        (<Link to="search ref">Search</Link>)
       ]}
     ];
     return (
@@ -36,7 +34,7 @@ Documentation.routes = function () {
     <Route name="documentation" handler={Documentation}>
       <DefaultRoute name="hello world" handler={TBD} />
       <Route name="get started" handler={TBD} />
-      <Route name="search ref" handler={TBD} />
+      <Route name="search ref" path="search" handler={TBD} />
     </Route>
   );
 }
