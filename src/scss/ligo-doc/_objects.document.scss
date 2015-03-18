@@ -2,14 +2,20 @@
 
 .document {
   position: relative;
-  max-width: $document-width;
+  max-width: $document-width + quadruple($inuit-base-spacing-unit);
   margin: 0px auto;
 
   &__contents {
     position: absolute;
     top: $header-height + $inuit-base-spacing-unit;
     left: 0px;
+    margin-left: double($inuit-base-spacing-unit);
     width: $contents-width;
+
+    @include media-query(palm) {
+      margin-left: $inuit-base-spacing-unit;
+      width: $contents-width - quadruple($inuit-base-spacing-unit);
+    }
 
     a {
       display: inline-block;
@@ -45,9 +51,15 @@
   }
 
   &__content {
+    margin-right: double($inuit-base-spacing-unit);
     padding-top: $header-height + double($inuit-base-spacing-unit);
     padding-left: $contents-width;
     padding-bottom: quadruple($inuit-base-spacing-unit);
+
+    @include media-query(palm) {
+      padding-left: $contents-width - double($inuit-base-spacing-unit);
+      margin-right: $inuit-base-spacing-unit;
+    }
 
     > * {
       max-width: $content-width;

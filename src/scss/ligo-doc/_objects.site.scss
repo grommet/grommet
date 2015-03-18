@@ -32,14 +32,13 @@
   right: 0px;
   height: $header-height;
   @include inuit-font-size($inuit-heading-size-2, $header-height);
-  white-space: nowrap;
+  //white-space: nowrap;
   z-index: 10;
   background-color: $header-background-color;
   transition: all $transition-duration;
 
   @include media-query(palm) {
     position: absolute;
-    height: auto;
   }
 
   &__container {
@@ -52,7 +51,8 @@
     border-bottom: 1px solid $border-color;
 
     @include media-query(palm) {
-      display: block;
+      padding-left: $inuit-base-spacing-unit;
+      padding-right: $inuit-base-spacing-unit;
     }
   }
 
@@ -77,11 +77,19 @@
   }
 
   &__nav {
-    -webkit-flex: 0 1 auto;
-    flex: 0 1 auto;
+    -webkit-flex: 2;
+    flex: 2;
+    text-align: right;
+    white-space: nowrap;
 
     > * {
       margin-left: $inuit-base-spacing-unit;
+    }
+
+    @include media-query(palm) {
+      white-space: normal;
+      margin-top: halve($inuit-base-spacing-unit);
+      @include inuit-font-size($inuit-base-font-size, $inuit-base-spacing-unit);
     }
   }
 }
