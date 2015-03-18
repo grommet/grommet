@@ -76,7 +76,8 @@ gulp.task('doc-webpack', function() {
                 loader: 'jsx-loader'
               }
             ]
-          }
+          },
+          devtool: 'inline-source-map'
         }))
         .pipe(gulp.dest('dist/doc/'));
 });
