@@ -7,7 +7,7 @@
 
   &__contents {
     position: absolute;
-    top: $header-height;
+    top: $header-height + $inuit-base-spacing-unit;
     left: 0px;
     width: $contents-width;
 
@@ -23,21 +23,33 @@
     }
 
     &-section {
-      margin: $inuit-base-spacing-unit 0px halve($inuit-base-spacing-unit) 0px;
+      margin: $inuit-base-spacing-unit 0px quarter($inuit-base-spacing-unit) 0px;
+      font-weight: normal;
     }
 
     &-page {
       padding-left: $inuit-base-spacing-unit;
+      margin: quarter($inuit-base-spacing-unit) 0px;
     }
   }
 
   &__content {
-    padding-top: $header-height + $inuit-base-spacing-unit;
+    padding-top: $header-height + double($inuit-base-spacing-unit);
     padding-left: $contents-width;
     padding-bottom: quadruple($inuit-base-spacing-unit);
 
     > * {
       max-width: $content-width;
+    }
+
+    section {
+      border-top: 1px solid $border-color;
+      margin-top: $inuit-base-spacing-unit;
+      padding-top: $inuit-base-spacing-unit;
+
+      h1, h2, h3, h4, h5 {
+        text-transform: uppercase
+      }
     }
   }
 
