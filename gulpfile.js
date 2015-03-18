@@ -7,6 +7,7 @@ var runSequence = require('run-sequence');
 var del = require('del');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
+var rsync = require('gulp-rsync');
 
 gulp.task('copy', function() {
   gulp.src('./src/scss/*.scss')
@@ -78,8 +79,8 @@ gulp.task('doc-webpack', function() {
           { test: /\.js$/, loader: 'jsx-loader' },
           { test: /\.png$/, loader: "url-loader?mimetype=image/png" }
         ]
-      },
-      devtool: 'inline-source-map'
+      }
+      //devtool: 'inline-source-map'
     }))
     .pipe(gulp.dest('dist/doc/'));
 });
@@ -103,5 +104,22 @@ gulp.task('doc-dev', ['doc-preprocess'], function() {
 
   gulp.watch(['./docs/**', './src/scss/ligo-doc/**', './src/js/doc/**'], ['doc']);
   gulp.watch(['./dist/doc/index.js']).on('change', reload);
+});
+
+gulp.task('doc-sync', function() {
+  gulp.src('./dist/doc')
+    .pipe(rsync({
+      root: './dist/doc',
+      hostname: 'ligo.usa.hp.com',
+      username: 'ligo',
+      destination: '/var/www/html/doc',
+      recursive: true,
+      relative: true,
+      progress: true,
+      incremental: true,
+      clean: true,
+      emptyDirectories: true,
+      exclude: ['.DS_Store'],
+    }));
 });
 
