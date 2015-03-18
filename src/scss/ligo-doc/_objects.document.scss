@@ -18,7 +18,7 @@
     }
 
     a {
-      display: inline-block;
+      display: block;
       height: 100%;
       color: $text-color;
       text-decoration: none;
@@ -30,6 +30,10 @@
 
     &-section {
       margin: $inuit-base-spacing-unit 0px quarter($inuit-base-spacing-unit) 0px;
+
+      h3 {
+        font-weight: normal;
+      }
 
       a {
         font-weight: normal;
