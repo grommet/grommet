@@ -3,7 +3,7 @@
 .hero {
   display: -webkit-flex;
   display: flex;
-  margin-top: quadruple($inuit-base-spacing-unit);
+  margin-top: double($inuit-base-spacing-unit);
 
   @include media-query(palm) {
     display: block;
