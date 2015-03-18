@@ -1,20 +1,22 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 var React = require('react');
 
-function addContents(input, output) {
-  input.forEach(function (content) {
+function addContents(contents) {
+  return contents.map(function (content, index) {
     if (content.hasOwnProperty('section')) {
-      output.push(
-        <h3 key={output.length} className="document__contents-section">
-          {content.section}
-        </h3>
-      );
+      var children = '';
       if (content.hasOwnProperty('contents')) {
-        addContents(content.contents, output);
+        children = addContents(content.contents);
       }
+      return (
+        <div key={index} className="document__contents-section">
+          <h3>{content.section}</h3>
+          {children}
+        </div>
+      );
     } else {
-      output.push(
-        <div key={output.length} className="document__contents-page">
+      return (
+        <div key={index} className="document__contents-page">
           {content}
         </div>
       );
@@ -25,15 +27,20 @@ function addContents(input, output) {
 var Document = React.createClass({
 
   propTypes: {
-    contents: React.PropTypes.array
+    contents: React.PropTypes.array,
+    activeSectionIndex: React.PropTypes.number
   },
 
   render: function() {
-    var classes = ['document'];
+    var classes = ["document"];
+
+    if (this.props.activeSectionIndex) {
+      classes.push("document--active-section-" + this.props.activeSectionIndex);
+    }
+
     var contents = '';
     if (this.props.contents) {
-      var items = []
-      addContents(this.props.contents, items);
+      var items = addContents(this.props.contents);
       contents = (
         <div className={"document__contents"}>
           {items}

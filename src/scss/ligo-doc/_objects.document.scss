@@ -24,7 +24,18 @@
 
     &-section {
       margin: $inuit-base-spacing-unit 0px quarter($inuit-base-spacing-unit) 0px;
-      font-weight: normal;
+
+      a {
+        font-weight: normal;
+      }
+
+      @for $i from 1 through 5 {
+        &:nth-child(#{$i}) {
+          a.active {
+            color: nth($accent-colors, $i);
+          }
+        }
+      }
     }
 
     &-page {
@@ -46,9 +57,21 @@
       border-top: 1px solid $border-color;
       margin-top: $inuit-base-spacing-unit;
       padding-top: $inuit-base-spacing-unit;
+    }
 
+    h1, h2, h3, h4, h5 {
+      text-transform: uppercase
+    }
+
+    img {
+      margin: $inuit-base-spacing-unit 0px;
+    }
+  }
+
+  @for $i from 1 through 5 {
+    &--active-section-#{$i} {
       h1, h2, h3, h4, h5 {
-        text-transform: uppercase
+        color: nth($accent-colors, $i);
       }
     }
   }

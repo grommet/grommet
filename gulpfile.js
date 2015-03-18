@@ -101,7 +101,7 @@ gulp.task('doc-dev', ['doc-preprocess'], function() {
     }
   });
 
-  gulp.watch(['./docs/**', './src/scss/ligo-doc/**'], ['doc']);
+  gulp.watch(['./docs/**', './src/scss/ligo-doc/**', './src/js/doc/**'], ['doc']);
   gulp.watch(['./dist/doc/index.js']).on('change', reload);
 });
 
