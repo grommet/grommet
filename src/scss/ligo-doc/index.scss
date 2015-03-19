@@ -82,8 +82,5 @@ $inuit-enable-responsive-margins--none:     true;
 $inuit-enable-responsive-paddings:          true;
 $inuit-enable-responsive-paddings--huge:    true;
 $inuit-enable-responsive-paddings--none:    true;
-@import "inuit-spacing-responsive/trumps.spacing-responsive";
 @import "inuit-headings-trumps/trumps.headings";
 @import "inuit-print/trumps.print";
-
-// sass --sourcemap=none --watch src/scss:dist/css --load-path ./ --style compact

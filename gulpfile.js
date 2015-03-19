@@ -1,12 +1,11 @@
 var gulp = require('gulp');
 var markdownDocs = require('gulp-markdown-docs');
-var sass = require('gulp-ruby-sass');
-var webpack = require('gulp-webpack');
+var webpack = require('webpack');
+var gulpWebpack = require('gulp-webpack');
+var WebpackDevServer = require('webpack-dev-server');
 var path = require('path');
-var runSequence = require('run-sequence');
 var del = require('del');
-var browserSync = require('browser-sync');
-var reload = browserSync.reload;
+var runSequence = require('run-sequence');
 var rsync = require('gulp-rsync');
 
 gulp.task('copy', function() {
@@ -46,67 +45,90 @@ gulp.task('doc-copy', function() {
       .pipe(gulp.dest('dist/doc/'));
   gulp.src('src/lib/*')
       .pipe(gulp.dest('dist/doc/'));
-  //gulp.src('docs/**/*.html')
-  //    .pipe(gulp.dest('dist/doc/'));
 });
-
-gulp.task('doc-sass', function() {
-  return sass('src/scss/ligo-doc', {
-    loadPath: [
-      'bower_components'
-    ],
-    style: 'compact'
-  })
-  .on('error', function (err) {
-    console.error('Error!', err.message);
-  })
-  .pipe(gulp.dest('dist/doc'));
-});
-
-gulp.task('doc-webpack', function() {
-  return gulp.src('docs/index.js')
-    .pipe(webpack({
-      output: {
-        filename: 'index.js'
-      },
-      resolve: {
-        root: [
-          path.resolve(__dirname, 'src/js/doc')
-        ]
-      },
-      module: {
-        loaders: [
-          { test: /\.js$/, loader: 'jsx-loader' },
-          { test: /\.png$/, loader: "url-loader?mimetype=image/png" }
-        ]
-      }
-      //devtool: 'inline-source-map'
-    }))
-    .pipe(gulp.dest('dist/doc/'));
-});
-
-gulp.task('doc', ['doc-sass', 'doc-webpack', 'doc-copy']);
 
 gulp.task('doc-clean', function() {
   del.sync(['dist/doc']);
 });
 
 gulp.task('doc-preprocess', function(callback) {
-  runSequence('doc-clean', 'doc', callback);
+  runSequence('doc-clean', 'doc-copy', callback);
+});
+
+gulp.task('doc-dist', ['doc-preprocess'], function() {
+    return gulp.src('docs/index.js')
+        .pipe(gulpWebpack({
+          output: {
+            filename: 'index.js'
+          },
+          resolve: {
+            root: [
+              path.resolve(__dirname, 'src/js/doc'),
+              path.resolve(__dirname, 'src/js/lib'),
+              path.resolve(__dirname, 'src/scss/ligo-doc'),
+              path.resolve(__dirname, 'bower_components')
+            ]
+          },
+          module: {
+            loaders: [
+              { test: /\.js$/, loader: 'jsx-loader' },
+              { test: /\.png$/, loader: 'url-loader?mimetype=image/png' },
+              {
+                test: /\.scss$/,
+                loader: "style!css!sass?outputStyle=expanded&includePaths[]="+path.resolve(__dirname, "bower_components")
+              },
+            ]
+          }
+      }))
+      .pipe(gulp.dest('dist/doc'));
 });
 
 gulp.task('doc-dev', ['doc-preprocess'], function() {
-  browserSync({
-    server: {
-      baseDir: './dist/doc/'
-    }
+    var compiler = webpack({
+      entry: {
+        app: ['webpack/hot/dev-server', './docs/index.js'],
+        styles: ['webpack/hot/dev-server',  './src/scss/ligo-doc/index.scss']
+      },
+      output: {
+        filename: 'index.js',
+        path: __dirname + 'dist/doc/'
+      },
+      resolve: {
+        root: [
+          path.resolve(__dirname, 'src/js/doc'),
+          path.resolve(__dirname, 'src/js/lib'),
+          path.resolve(__dirname, 'src/scss/ligo-doc'),
+          path.resolve(__dirname, 'bower_components')
+        ]
+      },
+      module: {
+        loaders: [
+          { test: /\.js$/, loader: 'jsx-loader' },
+          { test: /\.png$/, loader: 'url-loader?mimetype=image/png' },
+          {
+            test: /\.scss$/,
+            loader: "style!css!sass?outputStyle=expanded&includePaths[]="+path.resolve(__dirname, "bower_components")
+          },
+        ]
+      },
+      devtool: 'inline-source-map',
+      plugins: [ new webpack.HotModuleReplacementPlugin() ]
   });
 
-  gulp.watch(['./docs/**', './src/scss/ligo-doc/**', './src/js/doc/**'], ['doc']);
-  gulp.watch(['./dist/doc/index.js']).on('change', reload);
+  var server = new WebpackDevServer(compiler, {
+    contentBase: "dist/doc",
+    hot: true,
+    inline: true,
+    stats: { colors: true }
+  }).listen(8080, "localhost");
+
 });
 
-gulp.task('doc-sync', function() {
+gulp.task('doc-syncPre', function(callback) {
+  runSequence('doc-dist', callback);
+});
+
+gulp.task('doc-sync', ['doc-syncPre'], function() {
   gulp.src('./dist/doc')
     .pipe(rsync({
       root: './dist/doc',
