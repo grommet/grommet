@@ -35,6 +35,7 @@
   //white-space: nowrap;
   z-index: 10;
   background-color: $header-background-color;
+  color: $header-color;
   transition: all $transition-duration;
 
   @include media-query(palm) {
@@ -57,14 +58,9 @@
   }
 
   a {
-    display: inline-block;
-    height: 100%;
-    color: $text-color;
+    display: inline;
+    color: $header-color;
     text-decoration: none;
-
-    &:hover {
-      color: $hover-text-color;
-    }
   }
 
   &__title {
@@ -72,8 +68,8 @@
     flex: 1;
     overflow: hidden;
     text-overflow: ellipsis;
-    @include inuit-font-size($inuit-heading-size-1, $header-height);
-    font-weight: bold;
+    @include inuit-font-size(40px, $header-height);
+    font-weight: normal;
   }
 
   &__nav {
@@ -84,6 +80,16 @@
 
     > * {
       margin-left: $inuit-base-spacing-unit;
+    }
+
+    a {
+      &:hover {
+        border-top: 5px solid #474747;
+      }
+
+      &.active {
+        border-top: 5px solid #676767;
+      }
     }
 
     @include media-query(palm) {

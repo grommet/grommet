@@ -18,10 +18,9 @@ var Downloads = require('./Downloads');
 var Docs = React.createClass({
 
   render: function() {
-    var title = (<Link to="docs">Ligo</Link>);
+    var title = (<Link to="docs">ligo</Link>);
     var nav = [
       (<Link key="style-guide" to="style guide">Style Guide</Link>),
-      (<Link key="demo" to="demo">Demo</Link>),
       (<Link key="documentation" to="documentation">Documentation</Link>),
       (<Link key="downloads" to="downloads">Downloads</Link>)
     ];
@@ -39,7 +38,6 @@ var Docs = React.createClass({
 var routes = (
   <Route name="docs" path="/" handler={Docs}>
     {StyleGuide.routes()}
-    <Route name="demo" handler={Downloads} />
     {Documentation.routes()}
     <Route name="downloads" handler={Downloads} />
     <DefaultRoute name="home" handler={Home} />

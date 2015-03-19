@@ -5,6 +5,7 @@ html, body {
   height: 100%;
   width: 100%;
   overflow: hidden;
+  font-family: 'Open Sans', Arial, sans-serif;
 }
 
 $document-width: round($inuit-base-spacing-unit * 40); // 960px;
