@@ -83,6 +83,8 @@
     }
 
     a {
+      white-space: nowrap;
+
       &:hover {
         border-top: 5px solid #474747;
       }

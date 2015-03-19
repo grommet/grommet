@@ -20,6 +20,10 @@
       border-right: none;
     }
 
+    @include media-query(palm) {
+      border-right: none;
+    }
+
     img {
       display: inline-block;
       min-width: round($inuit-base-spacing-unit * 8);
