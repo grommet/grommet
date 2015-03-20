@@ -2,8 +2,8 @@
 
 .document {
   position: relative;
-  max-width: $document-width + quadruple($inuit-base-spacing-unit);
-  margin: 0px auto;
+  //max-width: $document-width + quadruple($inuit-base-spacing-unit);
+  //margin: 0px auto;
 
   &__contents {
     position: absolute;
@@ -65,8 +65,9 @@
   }
 
   &__content {
+    padding-top: $header-height;
+    /*
     margin-right: double($inuit-base-spacing-unit);
-    padding-top: $header-height + double($inuit-base-spacing-unit);
     padding-left: $contents-width;
     padding-bottom: quadruple($inuit-base-spacing-unit);
 
@@ -77,6 +78,17 @@
 
     > * {
       max-width: $content-width;
+    }
+    */
+
+    header {
+      background-color: #eee;
+
+      > * {
+        max-width: $document-width;
+        margin: 0px auto;
+        padding-left: $contents-width;
+      }
     }
 
     section {

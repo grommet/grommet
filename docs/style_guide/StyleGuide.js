@@ -26,6 +26,9 @@ var CONTENTS = [
     {route: "dashboard", label: 'Dashboard'},
     {route: "search", label: 'Search'}
   ]},
+  {route: "showcase", label: 'Showcase', contents: [
+    {route: "oneview", label: 'OneView'}
+  ]}
 ];
 
 var StyleGuide = React.createClass({
@@ -80,6 +83,8 @@ StyleGuide.routes = function () {
       <Route name="dashboard" handler={TBD} />
       <Route name="search" handler={TBD} />
       <Route name="filter" handler={TBD} />
+      <Route name="showcase" handler={TBD} />
+      <Route name="oneview" handler={TBD} />
     </Route>
   );
 }
