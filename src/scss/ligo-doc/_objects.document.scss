@@ -225,6 +225,7 @@ $chapter-header-height: round($inuit-base-spacing-unit * 13);
 
     a {
       text-decoration: none;
+      margin-right: halve($inuit-base-spacing-unit);
     }
   }
 

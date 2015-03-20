@@ -72,6 +72,11 @@ var Document = React.createClass({
     parent.scrollTop = 0;
   },
 
+  _onClickNext: function (event) {
+    var next = this.refs.next.getDOMNode();
+    next.querySelectorAll('a').item(0).click();
+  },
+
   getInitialState: function () {
     return {scrolled: false};
   },
@@ -155,7 +160,7 @@ var Document = React.createClass({
     var next = '';
     if (this.props.next) {
       next = (
-        <div className={"document__next control-icon"}
+        <div ref="next" className={"document__next control-icon"}
           onClick={this._onClickNext}>
           {this.props.next}
           <Right />
