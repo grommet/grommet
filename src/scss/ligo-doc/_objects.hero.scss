@@ -37,18 +37,18 @@
       text-decoration: none;
       padding: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit;
       border-radius: $brand-round;
-      color: $background-color;
+      color: $accent-color;
     }
 
     &:nth-child(1) {
       a.call-to-action {
-        background-color: nth($accent-colors, 1);
+        background-color: nth($accent-background-colors, 1);
       }
     }
 
     &:nth-child(2) {
       a.call-to-action {
-        background-color: nth($accent-colors, 2);
+        background-color: nth($accent-background-colors, 2);
       }
     }
   }

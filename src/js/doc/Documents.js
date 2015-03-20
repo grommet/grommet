@@ -5,6 +5,7 @@ module.exports = {
   Hero: require('./Hero'),
   Site: require('./Site'),
   SiteHeader: require('./SiteHeader'),
+  SiteFooter: require('./SiteFooter'),
   TBD: require('./TBD'),
 
   init: function () {

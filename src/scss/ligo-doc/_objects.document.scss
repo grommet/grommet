@@ -1,115 +1,156 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
+@mixin document-content {
+  width: 100%;
+  max-width: $document-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+$chapter-header-height: round($inuit-base-spacing-unit * 13);
+
 .document {
   position: relative;
-  //max-width: $document-width + quadruple($inuit-base-spacing-unit);
-  //margin: 0px auto;
 
-  &__contents {
+  &__chapters {
     position: absolute;
     top: $header-height + $inuit-base-spacing-unit;
-    left: 0px;
-    margin-left: double($inuit-base-spacing-unit);
-    width: $contents-width;
+    left: double($inuit-base-spacing-unit);
+    right: double($inuit-base-spacing-unit);
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
 
     @include media-query(palm) {
       margin-left: $inuit-base-spacing-unit;
       width: $contents-width - quadruple($inuit-base-spacing-unit);
     }
 
+    &-items {
+      -webkit-flex: 0 1 auto;
+      flex: 0 1 auto;
+      width: $document-width;
+      max-width: 100vw;
+    }
+  }
+
+  &__chapter {
+    @include inuit-font-size($inuit-heading-size-2);
+    width: $contents-width - double($inuit-base-spacing-unit);
+    margin: 0px;
+
     a {
+      position: relative;
       display: block;
-      height: 100%;
-      color: $text-color;
+      padding: halve($inuit-base-spacing-unit) halve($inuit-base-spacing-unit);
+      color: $accent-inactive-color;
       text-decoration: none;
 
-      &:hover {
-        color: $hover-text-color;
+      &:hover, &.active {
+        background-color: $accent-active-background-color;
+        color: $accent-active-color;
       }
     }
+  }
 
-    &-section {
-      margin: $inuit-base-spacing-unit 0px quarter($inuit-base-spacing-unit) 0px;
+  &__pages {
+    position: absolute;
+    top: $header-height + $chapter-header-height + $inuit-base-spacing-unit;
+    left: double($inuit-base-spacing-unit);
+    right: double($inuit-base-spacing-unit);
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
 
-      h3 {
-        font-weight: normal;
-      }
-
-      a {
-        font-weight: normal;
-      }
-
-      @for $i from 1 through 5 {
-        &:nth-child(#{$i}) {
-          a.active {
-            color: nth($accent-colors, $i);
-          }
-        }
-      }
-
-      .document__contents-page {
-        display: none;
-      }
-
-      &--active {
-        .document__contents-page {
-          display: block;
-        }
-      }
+    @include media-query(palm) {
+      margin-left: $inuit-base-spacing-unit;
+      width: $contents-width - quadruple($inuit-base-spacing-unit);
     }
 
-    &-page {
-      padding-left: $inuit-base-spacing-unit;
-      margin: quarter($inuit-base-spacing-unit) 0px;
+    &-items {
+      -webkit-flex: 0 1 auto;
+      flex: 0 1 auto;
+      width: $document-width;
+      max-width: 100vw;
+    }
+  }
+
+  &__page {
+    @include inuit-font-size($inuit-heading-size-2);
+    width: $contents-width - double($inuit-base-spacing-unit);
+    margin: 0px;
+
+    a {
+      position: relative;
+      display: block;
+      padding: halve($inuit-base-spacing-unit) halve($inuit-base-spacing-unit);
+      text-decoration: none;
     }
   }
 
   &__content {
     padding-top: $header-height;
-    /*
-    margin-right: double($inuit-base-spacing-unit);
-    padding-left: $contents-width;
-    padding-bottom: quadruple($inuit-base-spacing-unit);
-
-    @include media-query(palm) {
-      padding-left: $contents-width - double($inuit-base-spacing-unit);
-      margin-right: $inuit-base-spacing-unit;
-    }
-
-    > * {
-      max-width: $content-width;
-    }
-    */
 
     header {
-      background-color: #eee;
+      padding-top: double($inuit-base-spacing-unit);
+      padding-bottom: double($inuit-base-spacing-unit);
+      height: $chapter-header-height;
 
       > * {
-        max-width: $document-width;
-        margin: 0px auto;
+        @include document-content();
         padding-left: $contents-width;
       }
     }
 
     section {
-      border-top: 1px solid $border-color;
       margin-top: $inuit-base-spacing-unit;
+      margin-bottom: $inuit-base-spacing-unit;
       padding-top: $inuit-base-spacing-unit;
-    }
 
-    h1, h2, h3, h4, h5 {
-      text-transform: uppercase
-    }
+      > * {
+        @include document-content();
+        padding-left: $contents-width;
+      }
 
-    img {
-      margin: $inuit-base-spacing-unit 0px;
+      > img {
+        margin-top: $inuit-base-spacing-unit;
+        margin-bottom: $inuit-base-spacing-unit;
+        display: block;
+        width: auto;
+      }
+
+      h2 {
+        position: relative;
+        padding-top: $inuit-base-spacing-unit;
+
+        &:after {
+          position: absolute;
+          content: '';
+          top: 0px;
+          left: $contents-width;
+          right: 0px;
+          border-top: 1px solid $border-color;
+        }
+      }
+
+      &:first-of-type {
+        h2 {
+          &:after {
+            content: '';
+            border: none;
+          }
+        }
+      }
     }
   }
 
   @for $i from 1 through 5 {
-    &--active-section-#{$i} {
-      h1, h2, h3, h4, h5 {
-        color: nth($accent-colors, $i);
+    &--active-chapter-#{$i} {
+      header {
+        background-color: nth($accent-background-colors, $i);
+        color: $accent-color;
       }
     }
   }
@@ -122,6 +163,25 @@
         > * {
           max-width: none;
         }
+      }
+    }
+  }
+
+  &__footer {
+    height: quadruple($inuit-base-spacing-unit);
+    line-height: quadruple($inuit-base-spacing-unit);
+    border-width: 1px;
+    border-color: $border-color;
+    border-style: solid none;
+
+    a {
+      @include document-content();
+      padding-left: $contents-width;
+      display: block;
+      text-decoration: none;
+
+      &:before {
+        content: 'Next: ';
       }
     }
   }

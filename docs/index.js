@@ -10,6 +10,7 @@ var Link = Router.Link;
 var Documents = require('Documents');
 var Site = Documents.Site;
 var SiteHeader = Documents.SiteHeader;
+var SiteFooter = Documents.SiteFooter;
 var Home = require('./Home');
 var StyleGuide = require('./style_guide/StyleGuide');
 var Documentation = require('./Documentation');
@@ -29,6 +30,9 @@ var Docs = React.createClass({
       <Site>
         <SiteHeader title={title} nav={nav} />
         <RouteHandler />
+        <SiteFooter>
+          &copy; 2015 Ligo Application Style Guide
+        </SiteFooter>
       </Site>
     );
   }

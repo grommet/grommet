@@ -49,7 +49,6 @@
     padding-right: double($inuit-base-spacing-unit);
     display: -webkit-flex;
     display: flex;
-    border-bottom: 1px solid $border-color;
 
     @include media-query(palm) {
       padding-left: $inuit-base-spacing-unit;
@@ -100,4 +99,11 @@
       @include inuit-font-size($inuit-base-font-size, $inuit-base-spacing-unit);
     }
   }
+}
+
+.site-footer {
+  max-width: $document-width + quadruple($inuit-base-spacing-unit);
+  margin: 0px auto;
+  padding: double($inuit-base-spacing-unit);
+  color: $secondary-color;
 }

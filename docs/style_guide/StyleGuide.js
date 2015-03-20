@@ -11,6 +11,7 @@ var Introduction = require('./Introduction');
 var Philosophy = require('./Philosophy');
 var Basics = require('./Basics');
 var Patterns = require('./Patterns');
+var Showcase = require('./Showcase');
 var Login = require('./Login');
 var Documents = require('Documents');
 var Document = Documents.Document;
@@ -61,10 +62,38 @@ var StyleGuide = React.createClass({
   },
 
   render: function() {
-    var contents = this._buildContents(CONTENTS, true);
+
+    var pages = [];
+    var next = '';
+    this._activeChapterIndex = -1;
+    var chapters = CONTENTS.map(function (content, index) {
+      var active = this.isActive(content.route);
+
+      if (active && content.hasOwnProperty('contents')) {
+        pages = content.contents.map(function (item) {
+          return (
+            <Link to={item.route}>{item.label}</Link>
+          );
+        });
+      }
+
+      var className = '';
+      if (active) {
+        className = 'active';
+        this._activeChapterIndex = index + 1;
+      }
+      var link = (
+        <Link to={content.route} className={className}>{content.label}</Link>
+      );
+      if (this._activeChapterIndex === index) {
+        next = link;
+      }
+      return link;
+    }.bind(this));
+
     return (
-      <Document contents={contents}
-        activeSectionIndex={this._activeSectionIndex}>
+      <Document chapters={chapters} pages={pages} next={next}
+        activeChapterIndex={this._activeChapterIndex}>
         <RouteHandler />
       </Document>
     );
@@ -83,7 +112,7 @@ StyleGuide.routes = function () {
       <Route name="dashboard" handler={TBD} />
       <Route name="search" handler={TBD} />
       <Route name="filter" handler={TBD} />
-      <Route name="showcase" handler={TBD} />
+      <Route name="showcase" handler={Showcase} />
       <Route name="oneview" handler={TBD} />
     </Route>
   );
