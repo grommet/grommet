@@ -12,6 +12,13 @@ $chapter-header-height: round($inuit-base-spacing-unit * 13);
 .document {
   position: relative;
 
+  &__background {
+    position: absolute;
+    opacity: 0.1;
+    width: 100vw;
+    z-index: -1;
+  }
+
   &__chapters {
     position: absolute;
     top: $header-height + $inuit-base-spacing-unit;

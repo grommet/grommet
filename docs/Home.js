@@ -5,13 +5,14 @@ var Documents = require('Documents');
 var Document = Documents.Document;
 var Hero = Documents.Hero;
 var Link = require('react-router').Link;
+var background = require("./img/home.jpg");
 
 var Home = React.createClass({
 
   render: function() {
 
     return (
-      <Document>
+      <Document background={background}>
         <Hero>
           <div>
             <img />

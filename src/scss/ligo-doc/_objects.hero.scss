@@ -4,6 +4,7 @@
   display: -webkit-flex;
   display: flex;
   margin-top: double($inuit-base-spacing-unit);
+  margin-bottom: double($inuit-base-spacing-unit);
 
   @include media-query(palm) {
     display: block;

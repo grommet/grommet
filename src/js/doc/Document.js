@@ -37,7 +37,8 @@ var Document = React.createClass({
     chapter: React.PropTypes.node,
     pages: React.PropTypes.array,
     next: React.PropTypes.node,
-    activeChapterIndex: React.PropTypes.number
+    activeChapterIndex: React.PropTypes.number,
+    background: React.PropTypes.string
   },
 
   _styleTitle: function () {
@@ -173,8 +174,17 @@ var Document = React.createClass({
       upClasses.push("document__top--active");
     }
 
+    var background = '';
+    if (this.props.background) {
+      background = (
+        <img className="document__background"
+          src={this.props.background} alt="background" />
+      );
+    }
+
     return (
       <div ref="document" className={classes.join(' ')}>
+        {background}
         {chapters}
         {chapter}
         {pages}

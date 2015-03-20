@@ -72,6 +72,7 @@ var docWebpackConfig = {
     loaders: [
       { test: /\.js$/, loader: 'jsx-loader' },
       { test: /\.png$/, loader: 'url-loader?mimetype=image/png' },
+      { test: /\.jpg$/, loader: 'url-loader?mimetype=image/jpeg' },
       { test: /\.scss$/,loader: 'style!css!sass?outputStyle=expanded'},
     ]
   }
@@ -100,7 +101,7 @@ gulp.task('doc-dev', ['doc-preprocess'], function() {
       plugins: [ new webpack.HotModuleReplacementPlugin() ]
 
     });
-    
+
     new WebpackDevServer(webpack(devWebpackConfig), {
       contentBase: "dist/doc",
       hot: true,
