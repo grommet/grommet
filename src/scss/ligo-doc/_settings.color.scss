@@ -11,8 +11,19 @@ $link-color: #007DBA;
 $header-background-color: #222;
 $header-color: #fff;
 
-$accent-background-colors: (#009865, #891B61, #CB6532, #323298, #9832CB);
+//$accent-background-colors: (#009865, #891B61, #CB6532, #323298, #9832CB);
+// http://www.colourlovers.com/palette/110225/Vintage_Modern
+//$accent-background-colors: (#8C2318, #5E8C6A, #88A65E, #BFB35A, #F2C45A);
+// http://www.colourlovers.com/palette/632696/retro_modern_mix
+//$accent-background-colors: (#508B76, #E6321A, #FF8706, #450A00, #F2C45A);
+// http://www.colourlovers.com/palette/261277/Ume_Modern
+//$accent-background-colors: (#8FCCC8, #849F7E, #D9B93E, #0E1210, #FE8830);
+// http://www.colourlovers.com/palette/1309726/The_Perfect_Rainbow
+$accent-background-colors: (#F43779, #33A7E4, #79C866, #FF9439, #FF5039);
 $accent-color: #fff;
 $accent-active-background-color: rgba(0, 0, 0, 0.2);
 $accent-active-color: #fff;
 $accent-inactive-color: rgba(255, 255, 255, 0.7);
+
+$inactive-icon-color: #999;
+$active-icon-color: #000;

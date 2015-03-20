@@ -7,7 +7,7 @@ var Hero = React.createClass({
     var classes = ['hero'];
     return (
       <div className={classes.join(' ')}>
-      {this.props.children}
+        {this.props.children}
       </div>
     );
   }

@@ -63,37 +63,59 @@ var StyleGuide = React.createClass({
 
   render: function() {
 
+    this._activeChapterIndex = -2;
     var pages = [];
-    var next = '';
-    this._activeChapterIndex = -1;
-    var chapters = CONTENTS.map(function (content, index) {
-      var active = this.isActive(content.route);
+    var nextLink = '';
+    var chapterContextLink = '';
 
-      if (active && content.hasOwnProperty('contents')) {
-        pages = content.contents.map(function (item) {
-          return (
-            <Link to={item.route}>{item.label}</Link>
-          );
-        });
-      }
+    var chapters = CONTENTS.map(function (content, index) {
+      var chapterActive = this.isActive(content.route);
+      var pageActive = (content.hasOwnProperty('contents') &&
+        content.contents.some(function (item) {
+          return this.isActive(item.route);
+        }.bind(this)));
+      var active = chapterActive || pageActive;
 
       var className = '';
       if (active) {
         className = 'active';
-        this._activeChapterIndex = index + 1;
+        this._activeChapterIndex = index;
       }
-      var link = (
+
+      var chapterLink = (
         <Link to={content.route} className={className}>{content.label}</Link>
       );
-      if (this._activeChapterIndex === index) {
-        next = link;
+
+      if (active && content.hasOwnProperty('contents')) {
+
+        var activePageIndex = (chapterActive ? -1 : -2);
+        pages = content.contents.map(function (item, pageIndex) {
+
+          var pageLink = (<Link to={item.route}>{item.label}</Link>);
+
+          if (this.isActive(item.route)) {
+            activePageIndex = pageIndex;
+            chapterContextLink = chapterLink;
+          } else if (activePageIndex === (pageIndex - 1)) {
+            nextLink = pageLink;
+          }
+
+          return pageLink;
+
+        }.bind(this));
       }
-      return link;
+
+      if (! nextLink && this._activeChapterIndex === (index - 1)) {
+        nextLink = chapterLink;
+      }
+
+      return chapterLink;
     }.bind(this));
 
     return (
-      <Document chapters={chapters} pages={pages} next={next}
-        activeChapterIndex={this._activeChapterIndex}>
+      <Document chapters={chapters} pages={pages} next={nextLink}
+        chapter={chapterContextLink}
+        activeChapterIndex={this._activeChapterIndex + 1}>
         <RouteHandler />
       </Document>
     );

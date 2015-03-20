@@ -11,6 +11,8 @@
     vertical-align: middle;
     width: double($inuit-base-spacing-unit);
     height: double($inuit-base-spacing-unit);
+    width: $inuit-base-spacing-unit;
+    height: $inuit-base-spacing-unit;
 
     g, path {
       fill: $inactive-icon-color;
@@ -34,26 +36,6 @@
     g, path {
       fill: $active-icon-color;
       stroke: $active-icon-color;
-    }
-  }
-
-  &--primary {
-    svg {
-      g, path {
-        fill: $primary-text-color;
-        stroke: $primary-text-color;
-      }
-    }
-
-    &:hover, &.control-icon--active {
-      background-color: $primary-active-background-color;
-
-      svg {
-        g, path {
-          fill: $primary-text-color;
-          stroke: $primary-text-color;
-        }
-      }
     }
   }
 }
