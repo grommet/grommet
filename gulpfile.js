@@ -7,6 +7,7 @@ var path = require('path');
 var del = require('del');
 var runSequence = require('run-sequence');
 var rsync = require('gulp-rsync');
+var assign = require('object-assign');
 
 gulp.task('copy', function() {
   gulp.src('./src/scss/*.scss')
@@ -55,72 +56,57 @@ gulp.task('doc-preprocess', function(callback) {
   runSequence('doc-clean', 'doc-copy', callback);
 });
 
+var docWebpackConfig = {
+  output: {
+    filename: 'index.js'
+  },
+  resolve: {
+    root: [
+      path.resolve(__dirname, 'src/js/doc'),
+      path.resolve(__dirname, 'src/js/lib'),
+      path.resolve(__dirname, 'src/scss/ligo-doc'),
+      path.resolve(__dirname, 'node_modules')
+    ]
+  },
+  module: {
+    loaders: [
+      { test: /\.js$/, loader: 'jsx-loader' },
+      { test: /\.png$/, loader: 'url-loader?mimetype=image/png' },
+      { test: /\.scss$/,loader: 'style!css!sass?outputStyle=expanded'},
+    ]
+  }
+};
+
 gulp.task('doc-dist', ['doc-preprocess'], function() {
     return gulp.src('docs/index.js')
-        .pipe(gulpWebpack({
-          output: {
-            filename: 'index.js'
-          },
-          resolve: {
-            root: [
-              path.resolve(__dirname, 'src/js/doc'),
-              path.resolve(__dirname, 'src/js/lib'),
-              path.resolve(__dirname, 'src/scss/ligo-doc'),
-              path.resolve(__dirname, 'bower_components')
-            ]
-          },
-          module: {
-            loaders: [
-              { test: /\.js$/, loader: 'jsx-loader' },
-              { test: /\.png$/, loader: 'url-loader?mimetype=image/png' },
-              {
-                test: /\.scss$/,
-                loader: "style!css!sass?outputStyle=expanded&includePaths[]="+path.resolve(__dirname, "bower_components")
-              },
-            ]
-          }
-      }))
-      .pipe(gulp.dest('dist/doc'));
+           .pipe(gulpWebpack(docWebpackConfig))
+           .pipe(gulp.dest('dist/doc'));
 });
 
 gulp.task('doc-dev', ['doc-preprocess'], function() {
-    var compiler = webpack({
+    var devWebpackConfig = assign({}, docWebpackConfig, {
       entry: {
         app: ['webpack/hot/dev-server', './docs/index.js'],
         styles: ['webpack/hot/dev-server',  './src/scss/ligo-doc/index.scss']
       },
+
       output: {
         filename: 'index.js',
         path: __dirname + 'dist/doc/'
       },
-      resolve: {
-        root: [
-          path.resolve(__dirname, 'src/js/doc'),
-          path.resolve(__dirname, 'src/js/lib'),
-          path.resolve(__dirname, 'src/scss/ligo-doc'),
-          path.resolve(__dirname, 'bower_components')
-        ]
-      },
-      module: {
-        loaders: [
-          { test: /\.js$/, loader: 'jsx-loader' },
-          { test: /\.png$/, loader: 'url-loader?mimetype=image/png' },
-          {
-            test: /\.scss$/,
-            loader: "style!css!sass?outputStyle=expanded&includePaths[]="+path.resolve(__dirname, "bower_components")
-          },
-        ]
-      },
-      devtool: 'inline-source-map',
-      plugins: [ new webpack.HotModuleReplacementPlugin() ]
-  });
 
-  var server = new WebpackDevServer(compiler, {
-    contentBase: "dist/doc",
-    hot: true,
-    inline: true,
-    stats: { colors: true }
-  }).listen(8080, "localhost");
+      devtool: 'inline-source-map',
+
+      plugins: [ new webpack.HotModuleReplacementPlugin() ]
+
+    });
+    
+    new WebpackDevServer(webpack(devWebpackConfig), {
+      contentBase: "dist/doc",
+      hot: true,
+      inline: true,
+      stats: { colors: true }
+    }).listen(8080, "localhost");
 
 });
 

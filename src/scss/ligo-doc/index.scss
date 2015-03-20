@@ -10,6 +10,7 @@
 @import "inuit-functions/tools.functions";
 @import "inuit-mixins/tools.mixins";
 @import "inuit-responsive-tools/tools.responsive";
+@import "inuit-tools-widths/tools.widths";
 
 // Generic
 @import "inuit-normalize/generic.normalize";
@@ -66,7 +67,7 @@ $inuit-enable-table--cosy: true;
 @import "inuit-clearfix/trumps.clearfix";
 $inuit-use-fractions:   false;
 @import "inuit-widths/trumps.widths";
-@import "inuit-widths-responsive/trumps.widths-responsive";
+@import "inuit-responsive-widths/trumps.widths-responsive";
 $inuit-enable-margins:            true;
 $inuit-enable-margins--large:      true;
 $inuit-enable-margins--huge:      true;
@@ -82,5 +83,7 @@ $inuit-enable-responsive-margins--none:     true;
 $inuit-enable-responsive-paddings:          true;
 $inuit-enable-responsive-paddings--huge:    true;
 $inuit-enable-responsive-paddings--none:    true;
+$inuit-generate-spacing-alias: null;
+@import "inuit-responsive-spacing/trumps.spacing-responsive";
 @import "inuit-headings-trumps/trumps.headings";
 @import "inuit-print/trumps.print";
