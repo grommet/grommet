@@ -96,6 +96,9 @@
     "run-sequence": "^0.3.7",
     "url-loader": "^0.5.5",
     "webpack": "^1.7.3",
-    "webpack-dev-server": "latest"
+    "webpack-dev-server": "latest",
+    "imports-loader": "latest",
+    "json5": "^0.1.0",
+    "amdefine": "^0.1.0"
   }
 }

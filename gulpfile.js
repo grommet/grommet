@@ -47,8 +47,6 @@ gulp.task('dev', function () {
 gulp.task('doc-copy', function() {
   gulp.src('docs/index.html')
       .pipe(gulp.dest('dist/doc/'));
-  gulp.src('src/lib/*')
-      .pipe(gulp.dest('dist/doc/'));
 });
 
 gulp.task('doc-clean', function() {
@@ -82,7 +80,7 @@ var docWebpackConfig = {
   resolve: {
     root: [
       path.resolve(__dirname, 'src/js/doc'),
-      path.resolve(__dirname, 'src/js/lib'),
+      path.resolve(__dirname, 'src/lib'),
       path.resolve(__dirname, 'src/scss/ligo-doc'),
       path.resolve(__dirname, 'node_modules')
     ]
