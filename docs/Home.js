@@ -5,7 +5,7 @@ var Documents = require('Documents');
 var Document = Documents.Document;
 var Hero = Documents.Hero;
 var Link = require('react-router').Link;
-var background = require("./img/home.jpg");
+//var background = require("./img/home.jpg");
 
 var Home = React.createClass({
 
