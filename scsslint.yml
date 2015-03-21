@@ -51,7 +51,7 @@ linters:
 
   HexNotation:
     enabled: true
-    style: lowercase # or 'uppercase'
+    style: uppercase # or 'uppercase'
 
   HexValidation:
     enabled: true
@@ -88,7 +88,7 @@ linters:
 
   NestingDepth:
     enabled: true
-    max_depth: 5
+    max_depth: 6
 
   PlaceholderInExtend:
     enabled: true

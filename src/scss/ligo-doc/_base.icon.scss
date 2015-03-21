@@ -2,7 +2,8 @@
 
 .control-icon {
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition: all .3s ease-in-out;
+
   @include media-query(palm) {
     transition: none;
   }
@@ -11,13 +12,12 @@
     vertical-align: middle;
     width: double($inuit-base-spacing-unit);
     height: double($inuit-base-spacing-unit);
-    width: $inuit-base-spacing-unit;
-    height: $inuit-base-spacing-unit;
-
-    g, path {
+    
+    g, 
+    path {
       fill: $inactive-icon-color;
       stroke: $inactive-icon-color;
-      transition: all 0.3s ease-in-out;
+      transition: all .3s ease-in-out;
 
       @include media-query(palm) {
         transition: none;
@@ -26,14 +26,16 @@
   }
 
   &:hover svg {
-    g, path {
+    g, 
+    path {
       fill: $active-icon-color;
       stroke: $active-icon-color;
     }
   }
 
   &--active svg {
-    g, path {
+    g, 
+    path {
       fill: $active-icon-color;
       stroke: $active-icon-color;
     }

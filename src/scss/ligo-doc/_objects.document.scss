@@ -18,7 +18,7 @@ $chapter-header-height: round($inuit-base-spacing-unit * 13);
 
   &__background {
     position: absolute;
-    opacity: 0.8;
+    opacity: .8;
     width: 100vw;
     max-width: none;
     z-index: -1;
@@ -60,11 +60,12 @@ $chapter-header-height: round($inuit-base-spacing-unit * 13);
     a {
       position: relative;
       display: block;
-      padding: halve($inuit-base-spacing-unit) halve($inuit-base-spacing-unit);
+      padding: halve($inuit-base-spacing-unit);
       color: $accent-inactive-color;
       text-decoration: none;
 
-      &:hover, &.active {
+      &:hover, 
+      &.active {
         background-color: $accent-active-background-color;
         color: $accent-active-color;
       }
@@ -103,7 +104,7 @@ $chapter-header-height: round($inuit-base-spacing-unit * 13);
     a {
       position: relative;
       display: block;
-      padding: halve($inuit-base-spacing-unit) halve($inuit-base-spacing-unit);
+      padding: halve($inuit-base-spacing-unit);
       text-decoration: none;
     }
   }
@@ -186,7 +187,7 @@ $chapter-header-height: round($inuit-base-spacing-unit * 13);
 
           &:after {
             content: '';
-            border: none;
+            border: 0;
           }
         }
       }
@@ -264,6 +265,6 @@ $chapter-header-height: round($inuit-base-spacing-unit * 13);
   padding: double($inuit-base-spacing-unit);
   @include inuit-font-size(quadruple($inuit-base-spacing-unit));
   font-style: italic;
-  background-color: #ccc;
-  color: #fff;
+  background-color: #CCC;
+  color: #FFF;
 }
