@@ -50,7 +50,7 @@ var routes = (
 
 var router = Router.create({routes: routes});
 
-router.run(function (Handler, state) {
+router.run(function (Handler) {
   var factory = React.createFactory(Handler);
   var element = document.getElementById('docs');
   React.render(factory(), element);

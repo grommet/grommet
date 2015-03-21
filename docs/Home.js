@@ -2,7 +2,6 @@
 
 var React = require('react');
 var Documents = require('Documents');
-var Document = Documents.Document;
 var Hero = Documents.Hero;
 var Link = require('react-router').Link;
 //var background = require("./img/home.jpg");
@@ -12,7 +11,7 @@ var Home = React.createClass({
   render: function() {
 
     return (
-      <Document>
+      <Documents.Document>
         <Hero>
           <div>
             <img />
@@ -27,7 +26,7 @@ var Home = React.createClass({
             <Link to="hello world" className="call-to-action">Hello World</Link>
           </div>
         </Hero>
-      </Document>
+      </Documents.Document>
     );
   }
 

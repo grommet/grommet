@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 @include keyframes(slide-down) {
-  0%   { top: 100vh;}
+  0% { top: 100vh;}
   100% { top: 0px;}
 }
 
@@ -45,7 +45,7 @@
     height: double($inuit-base-spacing-unit);
     border-width: 1px;
     border-color: $border-color;
-    border-style: none solid solid solid;
+    border-style: none solid;
     cursor: pointer;
 
     @include media-query(palm) {

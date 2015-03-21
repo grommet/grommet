@@ -1,4 +1,4 @@
-$fade-in-duration: 0.5s;
+$fade-in-duration: .5s;
 
 @mixin fade-in() {
   -webkit-animation-name: fadein;
@@ -29,14 +29,14 @@ $fade-in-duration: 0.5s;
     }
   }
   -webkit-animation: $animations;
-  animation:         $animations;
+  animation: $animations;
 }
 
-@mixin keyframes($animationName) {
-  @-webkit-keyframes #{$animationName} {
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
     @content;
   }
-  @keyframes #{$animationName} {
+  @keyframes #{$animation-name} {
     @content;
   }
 }

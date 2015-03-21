@@ -18,11 +18,11 @@
     padding: double($inuit-base-spacing-unit);
 
     &:last-child {
-      border-right: none;
+      border-right: 0;
     }
 
     @include media-query(palm) {
-      border-right: none;
+      border-right: 0;
     }
 
     img {
@@ -30,7 +30,7 @@
       min-width: round($inuit-base-spacing-unit * 8);
       min-height: round($inuit-base-spacing-unit * 8);
       background-color: #eee;
-      border: none;
+      border: 0;
       margin-bottom: $inuit-base-spacing-unit;
     }
 

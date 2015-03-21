@@ -14,7 +14,6 @@ var Patterns = require('./Patterns');
 var Showcase = require('./Showcase');
 var Login = require('./Login');
 var Documents = require('Documents');
-var Document = Documents.Document;
 var TBD = Documents.TBD;
 
 var CONTENTS = [
@@ -113,11 +112,11 @@ var StyleGuide = React.createClass({
     }.bind(this));
 
     return (
-      <Document chapters={chapters} pages={pages} next={nextLink}
+      <Documents.Document chapters={chapters} pages={pages} next={nextLink}
         chapter={chapterContextLink}
         activeChapterIndex={this._activeChapterIndex + 1}>
         <RouteHandler />
-      </Document>
+      </Documents.Document>
     );
   }
 });
@@ -138,6 +137,6 @@ StyleGuide.routes = function () {
       <Route name="oneview" handler={TBD} />
     </Route>
   );
-}
+};
 
 module.exports = StyleGuide;

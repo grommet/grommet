@@ -8,6 +8,9 @@ var del = require('del');
 var runSequence = require('run-sequence');
 var rsync = require('gulp-rsync');
 var assign = require('object-assign');
+var react = require('gulp-react');
+var jshint = require('gulp-jshint');
+var scsslint = require('gulp-scss-lint');
 
 gulp.task('copy', function() {
   gulp.src('./src/scss/*.scss')
@@ -52,8 +55,24 @@ gulp.task('doc-clean', function() {
   del.sync(['dist/doc']);
 });
 
+gulp.task('doc-scsslint', function() {
+  return gulp.src('src/scss/ligo-doc/**/*.scss')
+      .pipe(scsslint({
+        'config': 'scsslint.yml'
+      }))
+      .pipe(scsslint.failReporter());
+});
+
+gulp.task('doc-jslint', function() {
+  return gulp.src('docs/**/*.js')
+          .pipe(react())
+          .pipe(jshint())
+          .pipe(jshint.reporter('default', {verbose: true}))
+          .pipe(jshint.reporter('fail'));
+});
+
 gulp.task('doc-preprocess', function(callback) {
-  runSequence('doc-clean', 'doc-copy', callback);
+  runSequence('doc-clean', 'doc-copy', 'doc-jslint', 'doc-scsslint', callback);
 });
 
 var docWebpackConfig = {

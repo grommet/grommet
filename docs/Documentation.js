@@ -7,7 +7,6 @@ var DefaultRoute = Router.DefaultRoute;
 var RouteHandler = Router.RouteHandler;
 var Link = Router.Link;
 var Documents = require('Documents');
-var Document = Documents.Document;
 var TBD = Documents.TBD;
 
 var Documentation = React.createClass({
@@ -22,9 +21,9 @@ var Documentation = React.createClass({
       ]}
     ];
     return (
-      <Document contents={contents}>
+      <Documents.Document contents={contents}>
         <RouteHandler />
-      </Document>
+      </Documents.Document>
     );
   }
 });
@@ -37,6 +36,6 @@ Documentation.routes = function () {
       <Route name="search ref" path="search" handler={TBD} />
     </Route>
   );
-}
+};
 
 module.exports = Documentation;
