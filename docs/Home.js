@@ -12,7 +12,7 @@ var Home = React.createClass({
   render: function() {
 
     return (
-      <Document background={background}>
+      <Document>
         <Hero>
           <div>
             <img />

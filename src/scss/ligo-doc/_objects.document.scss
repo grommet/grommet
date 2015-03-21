@@ -11,12 +11,22 @@ $chapter-header-height: round($inuit-base-spacing-unit * 13);
 
 .document {
   position: relative;
+  //color: #fff;
+  //width: 100vw;
+  //min-height: 100vh;
+  //overflow-x: hidden;
 
   &__background {
     position: absolute;
-    opacity: 0.1;
+    opacity: 0.8;
     width: 100vw;
+    max-width: none;
     z-index: -1;
+
+    &--portrait {
+      width: auto;
+      height: 100vh;
+    }
   }
 
   &__chapters {

@@ -62,10 +62,33 @@ var Document = React.createClass({
     */
   },
 
+  _styleBackground: function () {
+    if (this.refs.background) {
+      var windowRatio = window.innerWidth / window.innerHeight;
+      var backgroundElement = this.refs.background.getDOMNode();
+      var backgroundRatio = backgroundElement.offsetWidth / backgroundElement.offsetHeight;
+      if (windowRatio > backgroundRatio) {
+        if (this.state.portrait) {
+          this.setState({portrait: false});
+        }
+      } else {
+        if (! this.state.portrait) {
+          this.setState({portrait: true});
+        }
+      }
+    }
+  },
+
   _onScroll: function (event) {
     // debounce
     clearTimeout(this._scrollTimer);
     this._scrollTimer = setTimeout(this._styleTitle, 10);
+  },
+
+  _onResize: function (event) {
+    // debounce
+    clearTimeout(this._resizeTimer);
+    this._resizeTimer = setTimeout(this._styleBackground, 10);
   },
 
   _onClickTop: function (event) {
@@ -79,12 +102,14 @@ var Document = React.createClass({
   },
 
   getInitialState: function () {
-    return {scrolled: false};
+    return {scrolled: false, portrait: false};
   },
 
   componentDidMount: function () {
     var parent = this.refs.document.getDOMNode().parentNode;
     parent.addEventListener("scroll", this._onScroll);
+    window.addEventListener("resize", this._onResize);
+    setTimeout(this._styleBackground, 100);
   },
 
   componentWillReceiveProps: function () {
@@ -100,6 +125,7 @@ var Document = React.createClass({
   componentWillUnmount: function () {
     var parent = this.refs.document.getDOMNode().parentNode;
     parent.removeEventListener("scroll", this._onScroll);
+    window.removeEventListener("resize", this._onResize);
   },
 
   render: function() {
@@ -176,8 +202,12 @@ var Document = React.createClass({
 
     var background = '';
     if (this.props.background) {
+      var backgroundClasses = ["document__background"];
+      if (this.state.portrait) {
+        backgroundClasses.push("document__background--portrait")
+      }
       background = (
-        <img className="document__background"
+        <img ref="background" className={backgroundClasses.join(' ')}
           src={this.props.background} alt="background" />
       );
     }
