@@ -2,7 +2,8 @@
 module.exports = {
   // Components
   Document: require('./Document'),
-  Hero: require('./Hero'),
+  Panel: require('./Panel'),
+  Panels: require('./Panels'),
   Site: require('./Site'),
   SiteHeader: require('./SiteHeader'),
   SiteFooter: require('./SiteFooter'),

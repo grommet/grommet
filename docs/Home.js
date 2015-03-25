@@ -2,31 +2,32 @@
 
 var React = require('react');
 var Documents = require('Documents');
-var Hero = Documents.Hero;
+var Panel = Documents.Panel;
+var Panels = Documents.Panels;
 var Link = require('react-router').Link;
-//var background = require("./img/home.jpg");
+var Displays = require('./Displays');
 
 var Home = React.createClass({
 
   render: function() {
 
     return (
-      <Documents.Document>
-        <Hero>
-          <div>
-            <img />
-            <h2>Designers Start Here</h2>
+      <Panel direction="horizontal">
+        <Displays />
+        <Panel>
+          <Panel index="1" title="Design">
             <p>Guidelines for designing a Ligo application.</p>
             <Link to="style guide" className="call-to-action">Style Guide</Link>
-          </div>
-          <div>
-            <img />
-            <h2>Developers Start Here</h2>
+          </Panel>
+          <Panel index="2" title="Develop">
             <p>Learn Ligo in a few simple steps.</p>
             <Link to="hello world" className="call-to-action">Hello World</Link>
-          </div>
-        </Hero>
-      </Documents.Document>
+            <p></p>
+            <a>Demo</a>
+            <a href="https://github.com/HewlettPackard/Ligo">GitHub</a>
+          </Panel>
+        </Panel>
+      </Panel>
     );
   }
 

@@ -1,0 +1,88 @@
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+
+.panel {
+  margin-top: $inuit-base-spacing-unit;
+  margin-bottom: $inuit-base-spacing-unit;
+  border-bottom: 1px solid $border-color;
+
+  &:first-of-type {
+    margin-top: 0px;
+  }
+
+  &:last-of-type {
+    margin-bottom: 0px;
+    border-bottom: none;
+  }
+
+  &--horizontal {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+    @include document-content();
+    margin-top: round($inuit-base-spacing-unit * 3);
+    margin-bottom: double($inuit-base-spacing-unit);
+    border-bottom: none;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAADRJREFUSA1j/PHjx38GGgImGpo9TIxmHI2DAY/J0TgY8ChgGI2D0TgY+BAYeBeM5oOBjwMAZNAXfV/JDF0AAAAASUVORK5CYII=);
+
+    @include media-query(palm) {
+      display: block;
+    }
+
+    > * {
+      -webkit-flex: 1;
+      flex: 1;
+      vertical-align: top;
+      padding: double($inuit-base-spacing-unit);
+
+      &:first-child {
+        -webkit-flex: 2;
+        flex: 2;
+      }
+
+      @include media-query(palm) {
+        padding: 0px;
+        margin: $inuit-base-spacing-unit;
+        max-width: 100vw;
+      }
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-weight: normal;
+  }
+
+  > a {
+    display: block;
+  }
+
+  a.call-to-action {
+    display: inline-block;
+    margin-bottom: $inuit-base-spacing-unit;
+    text-decoration: none;
+    padding: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit;
+    border-radius: $brand-round;
+    color: $accent-color;
+  }
+
+  &--index-1 {
+    .panel__title {
+      color: nth($accent-background-colors, 1);
+    }
+
+    a.call-to-action {
+      background-color: nth($accent-background-colors, 1);
+    }
+  }
+
+  &--index-2 {
+    .panel__title {
+      color: nth($accent-background-colors, 2);
+    }
+
+    a.call-to-action {
+      background-color: nth($accent-background-colors, 2);
+    }
+  }
+}
