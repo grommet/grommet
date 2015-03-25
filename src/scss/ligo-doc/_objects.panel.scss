@@ -11,7 +11,7 @@
 
   &:last-of-type {
     margin-bottom: 0px;
-    border-bottom: none;
+    border-bottom: 0;
   }
 
   &--horizontal {
@@ -22,7 +22,7 @@
     @include document-content();
     margin-top: round($inuit-base-spacing-unit * 3);
     margin-bottom: double($inuit-base-spacing-unit);
-    border-bottom: none;
+    border-bottom: 0;
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAADRJREFUSA1j/PHjx38GGgImGpo9TIxmHI2DAY/J0TgY8ChgGI2D0TgY+BAYeBeM5oOBjwMAZNAXfV/JDF0AAAAASUVORK5CYII=);
 
     @include media-query(palm) {

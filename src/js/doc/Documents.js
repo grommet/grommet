@@ -3,7 +3,6 @@ module.exports = {
   // Components
   Document: require('./Document'),
   Panel: require('./Panel'),
-  Panels: require('./Panels'),
   Site: require('./Site'),
   SiteHeader: require('./SiteHeader'),
   SiteFooter: require('./SiteFooter'),

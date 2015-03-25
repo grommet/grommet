@@ -3,7 +3,6 @@
 var React = require('react');
 var Documents = require('Documents');
 var Panel = Documents.Panel;
-var Panels = Documents.Panels;
 var Link = require('react-router').Link;
 var Displays = require('./Displays');
 
