@@ -19,7 +19,7 @@ var TBD = Ligo.TBD;
 var TourDashboard = require('./TourDashboard');
 
 var routes = (
-  <Route name="app" path="/ligo/tour/" handler={App}>
+  <Route name="app" path="/" handler={App}>
     <Route name="login" handler={Login}/>
     <Route name="tbd" handler={TBD}/>
     <Route name="settings" handler={Settings}/>
