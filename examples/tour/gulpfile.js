@@ -26,39 +26,4 @@ var opts = {
   devServerPort: 8081
 };
 
-<<<<<<< HEAD
 require('../../_base.gulpfile.js')(gulp, opts);
-=======
-gulp.task('dist', ['preprocess'], function() {
-    return gulp.src('src/js/index.js')
-           .pipe(gulpWebpack(webpackConfig))
-           .pipe(gulp.dest('dist'));
-});
-
-gulp.task('dev', ['preprocess'], function() {
-    var devWebpackConfig = assign({}, webpackConfig, {
-      entry: {
-        app: ['webpack/hot/dev-server', './src/js/index.js'],
-        styles: ['webpack/hot/dev-server',  './src/scss/index.scss']
-      },
-
-      output: {
-        filename: 'index.js',
-        path: __dirname + 'dist/'
-      },
-
-      devtool: 'inline-source-map',
-
-      plugins: [ new webpack.HotModuleReplacementPlugin() ]
-
-    });
-
-    new WebpackDevServer(webpack(devWebpackConfig), {
-      contentBase: "dist",
-      hot: true,
-      inline: true,
-      stats: { colors: true }
-    }).listen(8001, "localhost");
-
-});
->>>>>>> fixing Tour
