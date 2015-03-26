@@ -2,29 +2,9 @@
   "name": "ligo-tour",
   "version": "0.1.0",
   "main": "src/js/index.js",
+  "description": "Ligo Tour",
   "author": "Eric Soderberg",
-  "license": "TBD",
   "dependencies": {
-    "moment": "^2.9.0",
-    "ligo": "^0.1.0",
-    "react": "^0.12.2",
-    "react-router": "^0.12.0",
-    "react-time": "^2.4.0"
-  },
-  "devDependencies": {
-    "sass-loader": "0.5.0",
-    "file-loader": "^0.8.1",
-    "gulp": "^3.8.11",
-    "gulp-webpack": "^1.3.0",
-    "gulp-react": "^3.0.1",
-    "html-loader": "^0.2.3",
-    "jsx-loader": "^0.12.2",
-    "css-loader": "^0.8.0",
-    "style-loader": "^0.8.0",
-    "url-loader": "^0.5.5",
-    "webpack": "^1.7.3",
-    "webpack-dev-server": "latest",
-    "del": "^0.1.3",
-    "run-sequence": "^0.3.7"
+    "ligo": "^0.1.0"
   }
 }

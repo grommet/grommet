@@ -1,5 +1,5 @@
 node_modules
-dist
+**/dist/**
 notes.txt
 .DS_Store
 .sass-cache

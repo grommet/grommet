@@ -9,7 +9,7 @@ var del = require('del');
 
 gulp.task('copy', function() {
   gulp.src('src/index.html')
-      .pipe(gulp.dest('dist/'));
+    .pipe(gulp.dest('dist/'));
 });
 
 gulp.task('clean', function() {
@@ -31,85 +31,63 @@ var webpackConfig = {
       path.resolve(__dirname, '../../src/js'),
       path.resolve(__dirname, '../../src/lib'),
       path.resolve(__dirname, '../../src/scss'),
-      path.resolve(__dirname, 'node_modules'),
-      path.resolve(__dirname, '../../node_modules')
+      path.resolve(__dirname, '../../node_modules'),
+      path.resolve(__dirname, 'node_modules')
     ]
   },
   module: {
     loaders: [
-      { test: /\.js$/, loader: 'jsx-loader' },
-      { test: /\.png$/, loader: 'url-loader?mimetype=image/png' },
-      { test: /\.jpg$/, loader: 'url-loader?mimetype=image/jpeg' },
-      { test: /\.scss$/,loader: 'style!css!sass?outputStyle=expanded'},
+      {
+        test: /\.js$/,
+        loader: 'jsx-loader'
+      },
+      {
+        test: /\.png$/,
+        loader: 'url-loader?mimetype=image/png'
+      },
+      {
+        test: /\.jpg$/,
+        loader: 'url-loader?mimetype=image/jpeg'
+      },
+      {
+        test: /\.scss$/,
+        loader: 'style!css!sass?outputStyle=expanded'
+      },
     ]
   }
 };
 
 gulp.task('dev', ['preprocess'], function() {
-    var devWebpackConfig = assign({}, webpackConfig, {
-      entry: {
-        app: ['webpack/hot/dev-server', './src/js/index.js'],
-        styles: ['webpack/hot/dev-server',  './src/scss/index.scss']
-      },
+  var devWebpackConfig = assign({}, webpackConfig, {
+    entry: {
+      app: ['webpack/hot/dev-server', './src/js/index.js'],
+      styles: ['webpack/hot/dev-server', './src/scss/index.scss']
+    },
 
-      output: {
-        filename: 'index.js',
-        path: __dirname + 'dist/'
-      },
+    output: {
+      filename: 'index.js',
+      path: __dirname + 'dist/'
+    },
 
-      devtool: 'inline-source-map',
+    devtool: 'inline-source-map',
 
-      plugins: [ new webpack.HotModuleReplacementPlugin() ]
+    plugins: [new webpack.HotModuleReplacementPlugin()]
 
-    });
+  });
 
-    new WebpackDevServer(webpack(devWebpackConfig), {
-      contentBase: "dist",
-      hot: true,
-      inline: true,
-      stats: { colors: true }
-    }).listen(8081, "localhost");
+  new WebpackDevServer(webpack(devWebpackConfig), {
+    contentBase: "dist",
+    hot: true,
+    inline: true,
+    stats: {
+      colors: true
+    }
+  }).listen(8081, "localhost");
 
 });
 
-gulp.task('dist', function() {
-    return gulp.src('docs/index.js')
-           .pipe(gulpWebpack(docWebpackConfig))
-           .pipe(gulp.dest('dist/doc'));
+gulp.task('dist', ['preprocess'], function() {
+  return gulp.src('src/js/index.js')
+    .pipe(gulpWebpack(webpackConfig))
+    .pipe(gulp.dest('dist/'));
 });
-
-
-/*
-gulp.task('copy', function() {
-  gulp.src('./src/*.html')
-    .pipe(gulp.dest('./dist'));
-  gulp.src('./src/img/*')
-    .pipe(gulp.dest('./dist/img'));
-  gulp.src('./node_modules/ligo/src/lib/*.js')
-    .pipe(gulp.dest('./dist/lib'));
-});
-
-gulp.task('sass', function() {
-  return sass('src/scss/', {
-    loadPath: [
-      'node_modules/ligo/src/scss',
-      'bower_components'
-    ],
-    style: 'compact'
-  })
-  .on('error', function (err) {
-    console.error('Error!', err.message);
-  })
-  .pipe(gulp.dest('dist/css'));
-});
-
-gulp.task('dev', function () {
-  gulp.watch(['./src/scss/*.scss', './node_modules/ligo/src/scss/** /*.scss'], ['sass']);
-});
-
-gulp.task('prerender', function () {
-  return gulp.src('src/js/login.js')
-      .pipe(render({template: 'src/_template.html'}))
-      .pipe(gulp.dest('dist'));
-});
-*/
