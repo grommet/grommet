@@ -12,7 +12,7 @@ var rest = require('./rest');
 
 var PREFIX = ''; // for running under a shared domain
 var PORT = 8000;
-var USE_WEBPACK_HOT_MODULE_RELOAD = true;
+var USE_WEBPACK_HOT_MODULE_RELOAD = false;
 
 var app = express();
 
