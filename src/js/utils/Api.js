@@ -11,7 +11,7 @@ var request = require('superagent');
 
 var VERSION = 200;
 var TIMEOUT = 10000;
-var PREFIX = '/ligo';
+var PREFIX = '';
 
 function token() {
   return SessionStore.getAll().id;
