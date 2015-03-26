@@ -14,11 +14,11 @@ var Home = React.createClass({
       <Panel direction="horizontal">
         <Displays />
         <Panel>
-          <Panel index="1" title="Design">
+          <Panel index={1} title="Design">
             <p>Guidelines for designing a Ligo application.</p>
             <Link to="style guide" className="call-to-action">Style Guide</Link>
           </Panel>
-          <Panel index="2" title="Develop">
+          <Panel index={2} title="Develop">
             <p>Learn Ligo in a few simple steps.</p>
             <Link to="hello world" className="call-to-action">Hello World</Link>
             <p></p>
