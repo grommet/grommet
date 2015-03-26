@@ -1,0 +1,34 @@
+{
+  "name": "ligo-tour",
+  "version": "0.1.0",
+  "main": "src/js/index.js",
+  "author": "Eric Soderberg",
+  "license": "TBD",
+  "scripts": {
+    "devX": "webpack-dev-server -d --progress --colors --content-base dist src/js/index.js",
+    "dev": "gulp copy; webpack -d --progress --colors --watch src/js/index.js",
+    "build": "gulp copy; webpack -d --progress --colors src/js/index.js",
+    "sass": "gulp sass; gulp dev"
+  },
+  "dependencies": {
+    "moment": "^2.9.0",
+    "ligo": "^0.1.0",
+    "react": "^0.12.2",
+    "react-router": "^0.12.0",
+    "react-time": "^2.4.0"
+  },
+  "devDependencies": {
+    "css-loader": "^0.9.1",
+    "expose-loader": "^0.6.0",
+    "file-loader": "^0.8.1",
+    "gulp": "^3.8.11",
+    "gulp-render": "^0.2.2",
+    "gulp-ruby-sass": "^1.0.0-alpha.3",
+    "jsx-loader": "^0.12.2",
+    "raw-loader": "^0.5.1",
+    "sass-loader": "^0.4.0-beta.1",
+    "style-loader": "^0.8.3",
+    "webpack": "^1.5.3",
+    "webpack-dev-server": "^1.7.0"
+  }
+}
