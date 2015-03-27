@@ -30,6 +30,10 @@ var webpackConfig = {
         loader: 'url-loader?mimetype=image/jpeg'
       },
       {
+        test: /\.svg$/,
+        loader: 'file-loader?mimetype=image/svg'
+      },
+      {
         test: /\.scss$/,
         loader: 'style!css!sass?outputStyle=expanded'
       },

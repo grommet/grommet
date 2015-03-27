@@ -1,7 +1,6 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 var React = require('react');
 var Up = require('./Up');
-var Right = require('./Right');
 
 function addContents(contents) {
   return contents.map(function (content, index) {
@@ -96,11 +95,6 @@ var Document = React.createClass({
     parent.scrollTop = 0;
   },
 
-  _onClickNext: function (event) {
-    var next = this.refs.next.getDOMNode();
-    next.querySelectorAll('a').item(0).click();
-  },
-
   getInitialState: function () {
     return {scrolled: false, portrait: false};
   },
@@ -187,10 +181,8 @@ var Document = React.createClass({
     var next = '';
     if (this.props.next) {
       next = (
-        <div ref="next" className={"document__next control-icon"}
-          onClick={this._onClickNext}>
+        <div ref="next" className="document__next">
           {this.props.next}
-          <Right />
         </div>
       );
     }
