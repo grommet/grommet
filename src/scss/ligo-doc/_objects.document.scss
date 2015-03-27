@@ -138,9 +138,12 @@ $chapter-header-height: round($inuit-base-spacing-unit * 13);
         background-color: nth($accent-background-colors, $i);
       }
 
-      h1, h2, h3, h4 {
+      h1,
+      h2,
+      h3,
+      h4 {
         font-weight: normal;
-        color: nth($accent-background-colors, $i);;
+        color: nth($accent-background-colors, $i);
       }
     }
   }
@@ -207,17 +210,6 @@ $chapter-header-height: round($inuit-base-spacing-unit * 13);
           border-top: 1px solid $border-color;
         }
       }
-
-      /*&:first-of-type {
-        h2 {
-          position: static;
-
-          &:after {
-            content: '';
-            border: 0;
-          }
-        }
-      }*/
     }
   }
 
@@ -245,7 +237,10 @@ $chapter-header-height: round($inuit-base-spacing-unit * 13);
           background-color: nth($accent-background-colors, $i);
           color: $accent-color;
 
-          h1, h2, h3 {
+          h1,
+          h2,
+          h3,
+          h4 {
             color: $accent-color;
           }
         }
@@ -309,6 +304,6 @@ $chapter-header-height: round($inuit-base-spacing-unit * 13);
   padding: double($inuit-base-spacing-unit);
   @include inuit-font-size(quadruple($inuit-base-spacing-unit));
   font-style: italic;
-  background-color: #DDD;
-  color: #FFF;
+  background-color: $border-color;
+  color: $background-color;
 }

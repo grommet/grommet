@@ -10,7 +10,7 @@ linters:
 
   BorderZero:
     enabled: true
-    convention: zero # or `none`
+    convention: none # or `zero`
 
   ColorKeyword:
     enabled: true
@@ -51,7 +51,7 @@ linters:
 
   HexNotation:
     enabled: true
-    style: uppercase # or 'uppercase'
+    style: lowercase # or 'uppercase'
 
   HexValidation:
     enabled: true
@@ -113,7 +113,7 @@ linters:
 
   SelectorDepth:
     enabled: true
-    max_depth: 3
+    max_depth: 4
 
   SelectorFormat:
     enabled: true
