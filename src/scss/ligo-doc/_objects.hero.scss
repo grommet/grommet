@@ -8,8 +8,10 @@
     -webkit-align-items: flex-start;
     align-items: flex-start;
     @include document-content();
-    margin-top: quadruple($inuit-base-spacing-unit);
+    margin-top: round($inuit-base-spacing-unit * 3);
     margin-bottom: double($inuit-base-spacing-unit);
+    padding-top: $inuit-base-spacing-unit;
+    padding-bottom: $inuit-base-spacing-unit;
 
     @include media-query(palm) {
       display: block;

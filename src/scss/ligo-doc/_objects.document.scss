@@ -16,6 +16,13 @@ $chapter-header-height: round($inuit-base-spacing-unit * 13);
   //min-height: 100vh;
   //overflow-x: hidden;
 
+  @include media-query(palm) {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+
   &__background {
     position: absolute;
     opacity: .8;
@@ -40,8 +47,11 @@ $chapter-header-height: round($inuit-base-spacing-unit * 13);
     justify-content: center;
 
     @include media-query(palm) {
-      margin-left: $inuit-base-spacing-unit;
-      width: $contents-width - quadruple($inuit-base-spacing-unit);
+      position: static;
+      -webkit-order: 10; // at least 4
+      order: 10;
+      padding: $inuit-base-spacing-unit;
+      border-bottom: 1px solid $border-color;
     }
 
     &-items {
@@ -57,6 +67,18 @@ $chapter-header-height: round($inuit-base-spacing-unit * 13);
     width: $contents-width - double($inuit-base-spacing-unit);
     margin: 0px;
 
+    @include media-query(palm) {
+      width: auto;
+
+      &:first-child a {
+        padding-top: 0px;
+      }
+
+      &:last-child a {
+        padding-bottom: 0px;
+      }
+    }
+
     a {
       position: relative;
       display: block;
@@ -68,6 +90,23 @@ $chapter-header-height: round($inuit-base-spacing-unit * 13);
       &.active {
         background-color: $accent-active-background-color;
         color: $accent-active-color;
+      }
+
+      @include media-query(palm) {
+        color: $link-color;
+        padding-left: 0px;
+        padding-right: 0px;
+
+        &.active {
+          background-color: inherit;
+          color: $link-color;
+        }
+
+        &:hover {
+          background-color: inherit;
+          color: $link-color;
+          text-decoration: underline;
+        }
       }
     }
   }
@@ -86,6 +125,7 @@ $chapter-header-height: round($inuit-base-spacing-unit * 13);
     @include media-query(palm) {
       margin-left: $inuit-base-spacing-unit;
       width: $contents-width - quadruple($inuit-base-spacing-unit);
+      display: none;
     }
 
     &-items {
@@ -111,6 +151,10 @@ $chapter-header-height: round($inuit-base-spacing-unit * 13);
       &.active {
         font-weight: bold;
       }
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 
@@ -123,12 +167,21 @@ $chapter-header-height: round($inuit-base-spacing-unit * 13);
     @include inuit-font-size($inuit-heading-size-2, double($inuit-base-spacing-unit));
     z-index: 2;
 
+    @include media-query(palm) {
+      position: static;
+      margin-top: $header-height;
+    }
+
     a {
       display: block;
       @include document-content();
       padding-left: $contents-width;
       text-decoration: none;
       color: $accent-color;
+
+      @include media-query(palm) {
+        padding-left: $inuit-base-spacing-unit;
+      }
     }
   }
 
@@ -151,13 +204,25 @@ $chapter-header-height: round($inuit-base-spacing-unit * 13);
   &__content {
     padding-top: $header-height + double($inuit-base-spacing-unit);
 
+    @include media-query(palm) {
+      padding-top: 0px;
+    }
+
     header {
       padding-top: double($inuit-base-spacing-unit);
       //padding-bottom: double($inuit-base-spacing-unit);
 
+      @include media-query(palm) {
+        padding-top: $inuit-base-spacing-unit;
+      }
+
       > * {
         @include document-content();
         padding-left: $contents-width;
+
+        @include media-query(palm) {
+          padding-left: $inuit-base-spacing-unit;
+        }
       }
 
       img {
@@ -166,10 +231,23 @@ $chapter-header-height: round($inuit-base-spacing-unit * 13);
         display: block;
         padding-left: $contents-width + double($inuit-base-spacing-unit);
         padding-right: round($inuit-base-spacing-unit * 8);
+
+        @include media-query(palm) {
+          padding-left: $inuit-base-spacing-unit;
+          padding-right: $inuit-base-spacing-unit;
+        }
       }
 
       p {
         display: block;
+        padding-right: round($inuit-base-spacing-unit * 5);
+
+        @include media-query(palm) {
+          padding-right: $inuit-base-spacing-unit;
+        }
+      }
+
+      dd {
         padding-right: round($inuit-base-spacing-unit * 5);
       }
     }
@@ -182,6 +260,10 @@ $chapter-header-height: round($inuit-base-spacing-unit * 13);
       > * {
         @include document-content();
         padding-left: $contents-width;
+
+        @include media-query(palm) {
+          padding-left: $inuit-base-spacing-unit;
+        }
       }
 
       img {
@@ -190,11 +272,30 @@ $chapter-header-height: round($inuit-base-spacing-unit * 13);
         display: block;
         padding-left: $contents-width + double($inuit-base-spacing-unit);
         padding-right: round($inuit-base-spacing-unit * 8);
+
+        @include media-query(palm) {
+          padding-left: $inuit-base-spacing-unit;
+          padding-right: $inuit-base-spacing-unit;
+        }
       }
 
       p {
+        position: relative;
         display: block;
         padding-right: round($inuit-base-spacing-unit * 5);
+        z-index: 1;
+
+        @include media-query(palm) {
+          padding-right: $inuit-base-spacing-unit;
+        }
+      }
+
+      dd {
+        padding-right: round($inuit-base-spacing-unit * 5);
+
+        @include media-query(palm) {
+          padding-right: $inuit-base-spacing-unit;
+        }
       }
 
       h2 {
@@ -208,6 +309,11 @@ $chapter-header-height: round($inuit-base-spacing-unit * 13);
           left: $contents-width;
           right: 0px;
           border-top: 1px solid $border-color;
+
+          @include media-query(palm) {
+            left: $inuit-base-spacing-unit;
+            right: $inuit-base-spacing-unit;
+          }
         }
       }
     }
@@ -273,6 +379,10 @@ $chapter-header-height: round($inuit-base-spacing-unit * 13);
     position: relative;
     @include document-content();
     padding-left: $contents-width;
+
+    @include media-query(palm) {
+      padding-left: $inuit-base-spacing-unit;
+    }
 
     a {
       text-decoration: none;

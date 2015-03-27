@@ -106,4 +106,8 @@
   margin: 0px auto;
   padding: double($inuit-base-spacing-unit);
   color: $secondary-color;
+
+  @include media-query(palm) {
+    padding: $inuit-base-spacing-unit;
+  }
 }
