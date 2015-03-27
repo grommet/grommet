@@ -1,3 +1,4 @@
+var gulp = require('gulp');
 var del = require('del');
 var scsslint = require('gulp-scss-lint');
 var react = require('gulp-react');
@@ -36,7 +37,7 @@ var webpackConfig = {
   }
 };
 
-module.exports = function(gulp, opts) {
+module.exports = function(opts) {
   var options = opts || {};
   var base = options.base || '';
 

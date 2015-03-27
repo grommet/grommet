@@ -1,4 +1,3 @@
-var gulp = require('gulp');
 var path = require('path');
 
 var opts = {
@@ -15,9 +14,8 @@ var opts = {
       root: [
         path.resolve(__dirname, 'src/js'),
         path.resolve(__dirname, 'src/scss'),
-        path.resolve(__dirname, '../../src/js'),
-        path.resolve(__dirname, '../../src/lib'),
         path.resolve(__dirname, '../../src/scss'),
+        path.resolve(__dirname, '../../src/js'),
         path.resolve(__dirname, '../../node_modules'),
         path.resolve(__dirname, 'node_modules')
       ]
@@ -26,4 +24,4 @@ var opts = {
   devServerPort: 8001
 };
 
-require('../../_base.gulpfile.js')(gulp, opts);
+require('../../_base.gulpfile.js')(opts);

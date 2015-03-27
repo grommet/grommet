@@ -1,4 +1,3 @@
-var gulp = require('gulp');
 var path = require('path');
 
 var opts = {
@@ -23,4 +22,4 @@ var opts = {
   devServerPort: 8080
 };
 
-require('../_base.gulpfile.js')(gulp, opts);
+require('../_base.gulpfile.js')(opts);

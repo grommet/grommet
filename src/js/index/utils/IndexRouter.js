@@ -1,6 +1,6 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-var Router = require('ligo').Router;
+var Router = require('../../utils/Router');
 
 var _config;
 
