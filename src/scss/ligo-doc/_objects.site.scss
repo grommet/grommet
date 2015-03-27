@@ -76,6 +76,7 @@
     flex: 2;
     text-align: right;
     white-space: nowrap;
+    overflow: hidden;
 
     > * {
       margin-left: $inuit-base-spacing-unit;
@@ -91,12 +92,13 @@
       &.active {
         border-top: 5px solid #676767;
       }
-    }
 
-    @include media-query(palm) {
-      white-space: normal;
-      margin-top: halve($inuit-base-spacing-unit);
-      @include inuit-font-size($inuit-base-font-size, $inuit-base-spacing-unit);
+      @include media-query(palm) {
+        //display: inline-block;
+        max-width: 20vw;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
     }
   }
 }
