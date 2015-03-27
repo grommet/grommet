@@ -64,7 +64,7 @@ $chapter-header-height: round($inuit-base-spacing-unit * 13);
       color: $accent-inactive-color;
       text-decoration: none;
 
-      &:hover, 
+      &:hover,
       &.active {
         background-color: $accent-active-background-color;
         color: $accent-active-color;
@@ -106,6 +106,10 @@ $chapter-header-height: round($inuit-base-spacing-unit * 13);
       display: block;
       padding: halve($inuit-base-spacing-unit);
       text-decoration: none;
+
+      &.active {
+        font-weight: bold;
+      }
     }
   }
 

@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 // turn off webkit elastic scrolling
-html, 
+html,
 body {
   height: 100%;
   width: 100%;
@@ -13,3 +13,12 @@ $document-width: round($inuit-base-spacing-unit * 40); // 960px;
 $content-width: round($inuit-base-spacing-unit * 24); // 576px;
 $header-height: round($inuit-base-spacing-unit * 3);
 $contents-width: round($inuit-base-spacing-unit * 10);
+
+a {
+  color: $link-color;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

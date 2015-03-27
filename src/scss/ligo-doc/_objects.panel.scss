@@ -4,6 +4,7 @@
   margin-top: $inuit-base-spacing-unit;
   margin-bottom: $inuit-base-spacing-unit;
   border-bottom: 1px solid $border-color;
+  background-color: $background-color;
 
   &:first-of-type {
     margin-top: 0px;
@@ -12,40 +13,6 @@
   &:last-of-type {
     margin-bottom: 0px;
     border-bottom: 0;
-  }
-
-  &--horizontal {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-align-items: flex-start;
-    align-items: flex-start;
-    @include document-content();
-    margin-top: round($inuit-base-spacing-unit * 3);
-    margin-bottom: double($inuit-base-spacing-unit);
-    border-bottom: 0;
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAADRJREFUSA1j/PHjx38GGgImGpo9TIxmHI2DAY/J0TgY8ChgGI2D0TgY+BAYeBeM5oOBjwMAZNAXfV/JDF0AAAAASUVORK5CYII=);
-
-    @include media-query(palm) {
-      display: block;
-    }
-
-    > * {
-      -webkit-flex: 1;
-      flex: 1;
-      vertical-align: top;
-      padding: double($inuit-base-spacing-unit);
-
-      &:first-child {
-        -webkit-flex: 2;
-        flex: 2;
-      }
-
-      @include media-query(palm) {
-        padding: 0px;
-        margin: $inuit-base-spacing-unit;
-        max-width: 100vw;
-      }
-    }
   }
 
   &__title {
