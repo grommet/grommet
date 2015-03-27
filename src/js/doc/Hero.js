@@ -11,7 +11,7 @@ var Hero = React.createClass({
     var classes = ["hero"];
     var style = {};
     if (this.props.texture) {
-      style['background-image'] = this.props.texture;
+      style['backgroundImage'] = this.props.texture;
     }
 
     return (
