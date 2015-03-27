@@ -23,7 +23,7 @@ var opts = {
       ]
     }
   },
-  devServerPort: 8081
+  devServerPort: 8001
 };
 
 require('../../_base.gulpfile.js')(gulp, opts);
