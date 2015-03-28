@@ -7,8 +7,8 @@ var opts = {
   copyAssets: ['examples/tour/src/index.html'],
   scssAssets: ['examples/tour/src/scss/**/*.scss'],
   jsAssets: ['examples/tour/src/js/**/*.js'],
-  mainJs: 'examples/tour/src/js/index.js',
-  mainScss: 'examples/tour/src/scss/index.scss',
+  mainJs: './examples/tour/src/js/index.js',
+  mainScss: './examples/tour/src/scss/index.scss',
   remoteDestination: '/var/www/html/tour',
   webpack: {
     resolve: {
@@ -25,4 +25,4 @@ var opts = {
   devServerPort: 8001
 };
 
-require('../../_base.gulpfile.js')(opts);
+require('../../_base.gulpfile.js')(gulp, opts);
