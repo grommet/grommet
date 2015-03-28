@@ -20,15 +20,7 @@ var opts = {
       ]
     }  
   },
-  devServerPort: 8080
+  devServerPort: 8002
 };
 
-React.createClass({
-  render: function() {
-    return (
-      null
-    );
-  }
-});
-
-require('../_base.gulpfile.js')(opts);
+require('../_base.gulpfile.js')(gulp, opts);
