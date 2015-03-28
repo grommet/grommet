@@ -1,4 +1,3 @@
-var gulp = require('gulp');
 var del = require('del');
 var scsslint = require('gulp-scss-lint');
 var react = require('gulp-react');
@@ -41,31 +40,34 @@ var webpackConfig = {
   }
 };
 
-module.exports = function(opts) {
+module.exports = function(gulp, opts) {
   var options = opts || {};
-  var base = options.base || '';
+
+  if (options.base) {
+    process.chdir(options.base);
+  }
 
   gulp.task('copy', function() {
     (options.copyAssets || []).forEach(function(copyAsset) {
-      gulp.src(base + copyAsset).pipe(gulp.dest(base + options.dist || 'dist/'));
+      gulp.src(copyAsset).pipe(gulp.dest(options.dist || 'dist/'));
     });
   });
 
   gulp.task('clean', function() {
-    del.sync([base + options.dist]);
+    del.sync([options.dist]);
   });
 
   gulp.task('scsslint', function() {
     (options.scssAssets || []).forEach(function(scssAsset) {
-      gulp.src(base + scssAsset).pipe(scsslint({
-        'config': base + 'scsslint.yml'
+      gulp.src(scssAsset).pipe(scsslint({
+        'config': 'scsslint.yml'
       })).pipe(scsslint.failReporter());
     });
   });
 
   gulp.task('jslint', function() {
     (options.jsAssets || []).forEach(function(jsAsset) {
-      gulp.src(base + jsAsset)
+      gulp.src(jsAsset)
         .pipe(react())
         .pipe(jshint())
         .pipe(jshint.reporter('default', {
@@ -81,16 +83,16 @@ module.exports = function(opts) {
 
   gulp.task('dist', ['preprocess'], function() {
     var config = assign({}, webpackConfig, options.webpack);
-    gulp.src(base + options.mainJs)
+    gulp.src(options.mainJs)
       .pipe(gulpWebpack(config))
-      .pipe(gulp.dest(base + options.dist || 'dist/'));
+      .pipe(gulp.dest(options.dist || 'dist/'));
   });
 
   gulp.task('dev', ['preprocess'], function() {
     var devWebpackConfig = assign({}, webpackConfig, options.webpack, {
       entry: {
-        app: ['webpack/hot/dev-server', base + options.mainJs],
-        styles: ['webpack/hot/dev-server', base + options.mainScss]
+        app: ['webpack/hot/dev-server', options.mainJs],
+        styles: ['webpack/hot/dev-server', options.mainScss]
       },
 
       output: {
@@ -120,9 +122,9 @@ module.exports = function(opts) {
   });
 
   gulp.task('sync', ['syncPre'], function() {
-    gulp.src(base + options.dist || 'dist/')
+    gulp.src(options.dist || 'dist/')
       .pipe(rsync({
-        root: base + options.dist || 'dist/',
+        root: options.dist || 'dist/',
         hostname: 'ligo.usa.hp.com',
         username: 'ligo',
         destination: options.remoteDestination,

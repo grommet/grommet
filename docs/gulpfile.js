@@ -1,3 +1,4 @@
+var gulp = require('gulp');
 var path = require('path');
 
 var opts = {
@@ -21,5 +22,13 @@ var opts = {
   },
   devServerPort: 8080
 };
+
+React.createClass({
+  render: function() {
+    return (
+      null
+    );
+  }
+});
 
 require('../_base.gulpfile.js')(opts);
