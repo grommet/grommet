@@ -7,7 +7,7 @@
   margin-right: auto;
 }
 
-$chapter-header-height: round($inuit-base-spacing-unit * 13);
+$chapter-header-height: round($inuit-base-spacing-unit * 15);
 
 .document {
   position: relative;
@@ -38,7 +38,12 @@ $chapter-header-height: round($inuit-base-spacing-unit * 13);
 
   &__chapters {
     position: absolute;
-    top: $header-height + $inuit-base-spacing-unit;
+    top: $header-height + double($inuit-base-spacing-unit);
+    
+    @include media-query(lap) {
+      top: $header-height + $inuit-base-spacing-unit;
+    }
+
     left: double($inuit-base-spacing-unit);
     right: double($inuit-base-spacing-unit);
     display: -webkit-flex;
@@ -83,6 +88,7 @@ $chapter-header-height: round($inuit-base-spacing-unit * 13);
       position: relative;
       display: block;
       padding: halve($inuit-base-spacing-unit);
+      margin-right: $inuit-base-spacing-unit;
       color: $accent-inactive-color;
       text-decoration: none;
 
@@ -212,6 +218,10 @@ $chapter-header-height: round($inuit-base-spacing-unit * 13);
       padding-top: double($inuit-base-spacing-unit);
       //padding-bottom: double($inuit-base-spacing-unit);
 
+      @include media-query(lap) {
+        padding-top: $inuit-base-spacing-unit;
+      }
+
       @include media-query(palm) {
         padding-top: $inuit-base-spacing-unit;
       }
@@ -240,7 +250,7 @@ $chapter-header-height: round($inuit-base-spacing-unit * 13);
 
       p {
         display: block;
-        padding-right: round($inuit-base-spacing-unit * 5);
+        padding-right: round($inuit-base-spacing-unit);
 
         @include media-query(palm) {
           padding-right: $inuit-base-spacing-unit;
@@ -248,7 +258,7 @@ $chapter-header-height: round($inuit-base-spacing-unit * 13);
       }
 
       dd {
-        padding-right: round($inuit-base-spacing-unit * 5);
+        padding-right: round($inuit-base-spacing-unit);
       }
     }
 

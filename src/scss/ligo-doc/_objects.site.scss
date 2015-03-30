@@ -93,7 +93,13 @@
         border-top: 5px solid #676767;
       }
 
+      @include media-query(lap) {
+        @include inuit-font-size($inuit-heading-size-3, $header-height);
+      }
+      
       @include media-query(palm) {
+        @include inuit-font-size($inuit-heading-size-4, $header-height);
+
         max-width: 20vw;
         overflow: hidden;
         text-overflow: ellipsis;
