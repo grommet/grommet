@@ -343,7 +343,7 @@ $chapter-header-height: round($inuit-base-spacing-unit * 15);
         padding-top: 0;
 
         h2:after {
-          border-top: 0;
+          border-top: none;
         }  
       }
       

@@ -4,7 +4,13 @@ var path = require('path');
 var opts = {
   base: '../',
   dist: 'docs/dist/',
-  copyAssets: ['docs/src/index.html'],
+  copyAssets: [
+    'docs/src/index.html', 
+    {
+      asset: 'docs/src/style_guide/img/*.png',
+      dist: 'docs/dist/img/'
+    }
+  ],
   scssAssets: ['src/scss/ligo-doc/**/*.scss'],
   jsAssets: ['docs/src/**/*.js'],
   mainJs: 'docs/src/index.js',

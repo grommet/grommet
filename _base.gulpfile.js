@@ -36,6 +36,10 @@ var webpackConfig = {
         test: /\.scss$/,
         loader: 'style!css!sass?outputStyle=expanded'
       },
+      {
+        test: /\.htm$/,
+        loader: 'jsx-loader!imports?React=react!html-jsx-loader'
+      }
     ]
   }
 };
@@ -51,7 +55,8 @@ module.exports = function(gulp, opts) {
 
   gulp.task('copy', function() {
     (options.copyAssets || []).forEach(function(copyAsset) {
-      gulp.src(copyAsset).pipe(gulp.dest(dist));
+      var asset = copyAsset.asset ? copyAsset.asset : copyAsset;
+      gulp.src(asset).pipe(gulp.dest(copyAsset.dist ? copyAsset.dist : dist));
     });
   });
 
@@ -62,7 +67,7 @@ module.exports = function(gulp, opts) {
   gulp.task('scsslint', function() {
     (options.scssAssets || []).forEach(function(scssAsset) {
       gulp.src(scssAsset).pipe(scsslint({
-        'config': 'scsslint.yml'
+        'config': '.scss-lint.yml'
       })).pipe(scsslint.failReporter());
     });
   });
@@ -84,17 +89,28 @@ module.exports = function(gulp, opts) {
   });
 
   gulp.task('dist', ['preprocess'], function() {
-    var config = assign({}, webpackConfig, options.webpack);
+    var config = assign({}, webpackConfig, options.webpack, {
+      plugins: [
+        new webpack.optimize.UglifyJsPlugin({
+          compress: {
+            warnings: false
+          }
+        })
+      ]
+    });
+
+    config.resolve.extensions = ['', '.js', '.json', '.htm', 'html', 'scss'];
+    
     return gulp.src(options.mainJs)
       .pipe(gulpWebpack(config))
       .pipe(gulp.dest(dist));
   });
 
   gulp.task('dev', ['preprocess'], function() {
-    
+
     var devWebpackConfig = assign({}, webpackConfig, options.webpack, {
       entry: {
-        app: ['webpack/hot/dev-server', './'+ options.mainJs],
+        app: ['webpack/hot/dev-server', './' + options.mainJs],
         styles: ['webpack/hot/dev-server', './' + options.mainScss]
       },
 
@@ -108,6 +124,8 @@ module.exports = function(gulp, opts) {
       plugins: [new webpack.HotModuleReplacementPlugin()]
 
     });
+
+    devWebpackConfig.resolve.extensions = ['', '.js', '.json', '.htm', 'html', 'scss'];
 
     new WebpackDevServer(webpack(devWebpackConfig), {
       contentBase: dist,
@@ -125,7 +143,7 @@ module.exports = function(gulp, opts) {
   });
 
   gulp.task('sync', ['syncPre'], function() {
-     gulp.src(dist)
+    gulp.src(dist)
       .pipe(rsync({
         root: dist,
         hostname: 'ligo.usa.hp.com',
