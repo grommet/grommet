@@ -300,6 +300,16 @@ $chapter-header-height: round($inuit-base-spacing-unit * 15);
         }
       }
 
+      ol {
+        padding-left: $contents-width + $inuit-base-spacing-unit;
+        padding-right: round($inuit-base-spacing-unit * 5);
+        
+        @include media-query(palm) {
+          padding-left: double($inuit-base-spacing-unit);
+          padding-right: $inuit-base-spacing-unit;
+        }
+      }
+
       dd {
         padding-right: round($inuit-base-spacing-unit * 5);
 
@@ -326,6 +336,16 @@ $chapter-header-height: round($inuit-base-spacing-unit * 15);
           }
         }
       }
+
+      &:nth-child(2) {
+        margin-top: 0;
+        padding-top: 0;
+
+        h2:after {
+          border-top: 0;
+        }  
+      }
+      
     }
   }
 
