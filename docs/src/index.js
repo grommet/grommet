@@ -24,7 +24,7 @@ var Docs = React.createClass({
     var nav = [
       (<Link key="style-guide" to="style guide">Style Guide</Link>),
       (<Link key="documentation" to="documentation">Documentation</Link>),
-      (<Link key="downloads" to="downloads">Downloads</Link>)
+      (<Link key="downloads" to="downloads" className="hide-palm">Downloads</Link>)
     ];
 
     return (

@@ -94,10 +94,13 @@
       }
 
       @include media-query(palm) {
-        //display: inline-block;
         max-width: 20vw;
         overflow: hidden;
         text-overflow: ellipsis;
+
+        &.hide-palm {
+          display: none;
+        }
       }
     }
   }
