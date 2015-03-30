@@ -29,9 +29,15 @@
       }
 
       @include media-query(palm) {
-        padding: 0px;
+
+        padding: 0;
         margin: $inuit-base-spacing-unit;
         max-width: 100vw;
+
+        &:first-child {
+          padding-right: $inuit-base-spacing-unit * 4;
+          padding-left: $inuit-base-spacing-unit * 2;
+        }
       }
     }
   }
