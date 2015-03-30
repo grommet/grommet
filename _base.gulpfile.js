@@ -43,13 +43,15 @@ var webpackConfig = {
 module.exports = function(gulp, opts) {
   var options = opts || {};
 
+  var dist = options.dist;
+
   if (options.base) {
     process.chdir(options.base);
   }
 
   gulp.task('copy', function() {
     (options.copyAssets || []).forEach(function(copyAsset) {
-      gulp.src(copyAsset).pipe(gulp.dest(options.dist || 'dist/'));
+      gulp.src(copyAsset).pipe(gulp.dest(dist));
     });
   });
 
@@ -83,21 +85,22 @@ module.exports = function(gulp, opts) {
 
   gulp.task('dist', ['preprocess'], function() {
     var config = assign({}, webpackConfig, options.webpack);
-    gulp.src(options.mainJs)
+    return gulp.src(options.mainJs)
       .pipe(gulpWebpack(config))
-      .pipe(gulp.dest(options.dist || 'dist/'));
+      .pipe(gulp.dest(dist));
   });
 
   gulp.task('dev', ['preprocess'], function() {
+    
     var devWebpackConfig = assign({}, webpackConfig, options.webpack, {
       entry: {
-        app: ['webpack/hot/dev-server', options.mainJs],
-        styles: ['webpack/hot/dev-server', options.mainScss]
+        app: ['webpack/hot/dev-server', './'+ options.mainJs],
+        styles: ['webpack/hot/dev-server', './' + options.mainScss]
       },
 
       output: {
         filename: 'index.js',
-        path: __dirname + 'dist/'
+        path: __dirname + dist
       },
 
       devtool: 'inline-source-map',
@@ -107,7 +110,7 @@ module.exports = function(gulp, opts) {
     });
 
     new WebpackDevServer(webpack(devWebpackConfig), {
-      contentBase: 'dist/',
+      contentBase: dist,
       hot: true,
       inline: true,
       stats: {
@@ -118,13 +121,13 @@ module.exports = function(gulp, opts) {
   });
 
   gulp.task('syncPre', function(callback) {
-    runSequence('dist', callback);
+    return runSequence('dist', callback);
   });
 
   gulp.task('sync', ['syncPre'], function() {
-    gulp.src(options.dist || 'dist/')
+     gulp.src(dist)
       .pipe(rsync({
-        root: options.dist || 'dist/',
+        root: dist,
         hostname: 'ligo.usa.hp.com',
         username: 'ligo',
         destination: options.remoteDestination,
