@@ -300,7 +300,8 @@ $chapter-header-height: round($inuit-base-spacing-unit * 15);
         }
       }
 
-      ol {
+      ol,
+      ul {
         padding-left: $contents-width + $inuit-base-spacing-unit;
         padding-right: round($inuit-base-spacing-unit * 5);
         
