@@ -35,8 +35,8 @@
         max-width: 100vw;
 
         &:first-child {
-          padding-right: $inuit-base-spacing-unit * 4;
-          padding-left: $inuit-base-spacing-unit * 2;
+          margin-right: $inuit-base-spacing-unit * 3;
+          margin-left: $inuit-base-spacing-unit * 3;
         }
       }
     }
