@@ -1,0 +1,53 @@
+.downloads {
+  h1,
+  h2 {
+    color: #ff5039;
+    font-weight: normal;
+  }
+
+  section {
+    > * {
+      padding-left: 0;
+	
+	    @include media-query(lap) {
+        padding-left: $inuit-base-spacing-unit;
+      }
+
+      @include media-query(palm) {
+        padding-left: $inuit-base-spacing-unit;
+      }
+	  }	
+
+    h2 {
+      &:after {
+        left: 0;
+      	
+      	@include media-query(lap) {
+	        left: $inuit-base-spacing-unit;
+          right: $inuit-base-spacing-unit;
+	      }
+
+        @include media-query(palm) {
+	        left: $inuit-base-spacing-unit;
+	      }
+      }
+	  }	
+
+    ul.links {
+      padding: 0; 
+      list-style-type: none;
+
+      li:not(:first-child) {
+        padding-top: 5px;
+      }
+
+      @include media-query(lap) {
+        padding-left: $inuit-base-spacing-unit;
+      }
+
+      @include media-query(palm) {
+        padding-left: $inuit-base-spacing-unit;
+      }
+    }
+  }	 
+}

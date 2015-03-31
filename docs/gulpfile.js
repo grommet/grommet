@@ -7,21 +7,22 @@ var opts = {
   copyAssets: [
     'docs/src/index.html', 
     {
-      asset: 'docs/src/style_guide/img/*.png',
+      asset: 'docs/src/style_guide/img/**',
       dist: 'docs/dist/img/'
     }
   ],
   scssAssets: ['src/scss/ligo-doc/**/*.scss'],
   jsAssets: ['docs/src/**/*.js'],
   mainJs: 'docs/src/index.js',
-  mainScss: 'src/scss/ligo-doc/index.scss',
+  mainScss: 'docs/src/scss/index.scss',
   remoteDestination: '/var/www/html/doc',
   webpack: {
     resolve: {
       root: [
         path.resolve(__dirname, '../src/js/doc'),
         path.resolve(__dirname, '../src/lib'),
-        path.resolve(__dirname, '../src/scss/ligo-doc'),
+        path.resolve(__dirname, 'src/scss'),
+        path.resolve(__dirname, '../src/scss'),
         path.resolve(__dirname, '../node_modules')
       ]
     }  

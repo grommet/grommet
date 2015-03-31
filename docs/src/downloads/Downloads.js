@@ -2,14 +2,14 @@
 
 var React = require('react');
 var Documents = require('Documents');
-var TBD = Documents.TBD;
+var Content = require('./Content');
 
 var Downloads = React.createClass({
 
-  render: function() {
-    return (
+  render: function() {    
+  	return (
       <Documents.Document>
-        <TBD />
+      	<Content />
       </Documents.Document>
     );
   }

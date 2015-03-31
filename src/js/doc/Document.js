@@ -2,33 +2,6 @@
 var React = require('react');
 var Up = require('./Up');
 
-function addContents(contents) {
-  return contents.map(function (content, index) {
-    if (content.hasOwnProperty('section')) {
-      var classes = ["document__contents-section"];
-      if (content.active) {
-        classes.push("document__contents-section--active");
-      }
-      var children = '';
-      if (content.hasOwnProperty('contents')) {
-        children = addContents(content.contents);
-      }
-      return (
-        <div key={index} className={classes.join(' ')}>
-          <h3>{content.section}</h3>
-          {children}
-        </div>
-      );
-    } else {
-      return (
-        <div key={index} className="document__contents-page">
-          {content}
-        </div>
-      );
-    }
-  });
-}
-
 var Document = React.createClass({
 
   propTypes: {
@@ -78,19 +51,19 @@ var Document = React.createClass({
     }
   },
 
-  _onScroll: function (event) {
+  _onScroll: function () {
     // debounce
     clearTimeout(this._scrollTimer);
     this._scrollTimer = setTimeout(this._styleTitle, 10);
   },
 
-  _onResize: function (event) {
+  _onResize: function () {
     // debounce
     clearTimeout(this._resizeTimer);
     this._resizeTimer = setTimeout(this._styleBackground, 10);
   },
 
-  _onClickTop: function (event) {
+  _onClickTop: function () {
     var parent = this.refs.document.getDOMNode().parentNode;
     parent.scrollTop = 0;
   },
@@ -131,6 +104,7 @@ var Document = React.createClass({
 
     var chapters = '';
     var chapter = '';
+    var items = '';
     if (this.props.chapter) {
       chapter = (
         <div className="document__chapter-title">
@@ -139,9 +113,9 @@ var Document = React.createClass({
       );
     } else {
       classes.push("document--chapter");
-
+     
       if (this.props.chapters) {
-        var items = this.props.chapters.map(function (chapter, index) {
+        items = this.props.chapters.map(function (chapter, index) {
           return (
             <div key={index} className="document__chapter">
               {chapter}
@@ -156,11 +130,12 @@ var Document = React.createClass({
           </div>
         );
       } else {
-        classes.push("document--no-chapters")
+        classes.push("document--no-chapters");
       }
     }
 
     var pages = '';
+
     if (this.props.pages) {
       items = this.props.pages.map(function (page, index) {
         return (
@@ -196,11 +171,24 @@ var Document = React.createClass({
     if (this.props.background) {
       var backgroundClasses = ["document__background"];
       if (this.state.portrait) {
-        backgroundClasses.push("document__background--portrait")
+        backgroundClasses.push("document__background--portrait");
       }
       background = (
         <img ref="background" className={backgroundClasses.join(' ')}
           src={this.props.background} alt="background" />
+      );
+    }
+
+    var documentFooter = '';
+    if (this.state.scrolled || next !== '') {
+      documentFooter = (
+        <div className={"document__footer"}>
+          {next}
+          <div className={upClasses.join(' ')}
+            onClick={this._onClickTop}>
+            <Up />
+          </div>
+        </div>
       );
     }
 
@@ -213,13 +201,7 @@ var Document = React.createClass({
         <div className={"document__content"}>
           {this.props.children}
         </div>
-        <div className={"document__footer"}>
-          {next}
-          <div className={upClasses.join(' ')}
-            onClick={this._onClickTop}>
-            <Up />
-          </div>
-        </div>
+        {documentFooter}
       </div>
     );
   }

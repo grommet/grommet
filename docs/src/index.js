@@ -15,7 +15,7 @@ var SiteFooter = Documents.SiteFooter;
 var Home = require('./Home');
 var StyleGuide = require('./style_guide/StyleGuide');
 var Documentation = require('./Documentation');
-var Downloads = require('./Downloads');
+var Downloads = require('./downloads/Downloads');
 
 var Docs = React.createClass({
 

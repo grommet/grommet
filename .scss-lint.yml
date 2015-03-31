@@ -68,9 +68,9 @@ linters:
     filename_extension: false
 
   Indentation:
-    enabled: true
+    enabled: false
     allow_non_nested_indentation: false
-    character: space # or 'tab'
+    character: tab # or 'tab'
     width: 2
 
   LeadingZero:

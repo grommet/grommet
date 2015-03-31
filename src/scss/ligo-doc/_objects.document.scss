@@ -336,15 +336,14 @@ $chapter-header-height: round($inuit-base-spacing-unit * 15);
         }
       }
 
-      &:nth-child(2) {
-        margin-top: 0;
-        padding-top: 0;
+    }
 
-        h2:after {
-          border-top: none;
-        }  
-      }
+    section:first-of-type {
+      padding-top: 0;
       
+      h2:after {
+        border-top: none;
+      }  
     }
   }
 
