@@ -21,14 +21,6 @@ var webpackConfig = {
         loader: 'jsx-loader'
       },
       {
-        test: /\.png$/,
-        loader: 'url-loader?mimetype=image/png'
-      },
-      {
-        test: /\.jpg$/,
-        loader: 'url-loader?mimetype=image/jpeg'
-      },
-      {
         test: /\.svg$/,
         loader: 'file-loader?mimetype=image/svg'
       },
