@@ -52,4 +52,13 @@
       background-color: nth($accent-background-colors, 2);
     }
   }
+
+  @include media-query(palm) {
+    padding: $inuit-base-spacing-unit;
+
+    > h2 {
+      margin-bottom: halve($inuit-base-spacing-unit);
+    }
+    
+  }
 }
