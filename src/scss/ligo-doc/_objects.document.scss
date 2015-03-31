@@ -70,29 +70,24 @@ $chapter-header-height: round($inuit-base-spacing-unit * 15);
   &__chapter {
     @include inuit-font-size($inuit-heading-size-2);
     width: $contents-width - double($inuit-base-spacing-unit);
-    margin: 0px;
-
+    height: $inuit-base-spacing-unit * 2;
+    
     @include media-query(palm) {
       width: auto;
-
-      &:first-child a {
-        padding-top: 0px;
-      }
-
-      &:last-child a {
-        padding-bottom: 0px;
-      }
     }
 
     a {
-      position: relative;
       display: block;
-      padding: halve($inuit-base-spacing-unit);
+      padding: halve($inuit-base-spacing-unit) + 1;
       margin-right: $inuit-base-spacing-unit;
       color: $accent-inactive-color;
       text-decoration: none;
 
-      &:hover,
+      &:hover:not(.active) {
+        border: 1px solid $accent-active-background-color;
+        padding: halve($inuit-base-spacing-unit);
+      }
+
       &.active {
         background-color: $accent-active-background-color;
         color: $accent-active-color;
@@ -100,8 +95,6 @@ $chapter-header-height: round($inuit-base-spacing-unit * 15);
 
       @include media-query(palm) {
         color: $link-color;
-        padding-left: 0px;
-        padding-right: 0px;
 
         &.active {
           background-color: inherit;
@@ -112,6 +105,11 @@ $chapter-header-height: round($inuit-base-spacing-unit * 15);
           background-color: inherit;
           color: $link-color;
           text-decoration: underline;
+        }
+
+        &:hover:not(.active) {
+          border: none;
+          padding: halve($inuit-base-spacing-unit) + 1;
         }
       }
     }
