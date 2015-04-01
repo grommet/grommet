@@ -6,3 +6,4 @@ notes.txt
 *.flags.json
 *.iml
 .idea/**
+*.log
