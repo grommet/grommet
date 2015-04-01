@@ -11,7 +11,7 @@ var opts = {
       dist: 'docs/dist/img/'
     }
   ],
-  scssAssets: ['src/scss/ligo-doc/**/*.scss'],
+  scssAssets: ['src/scss/ligo-doc/**/*.scss', 'docs/src/scss/**/*.scss'],
   jsAssets: ['docs/src/**/*.js'],
   mainJs: 'docs/src/index.js',
   mainScss: 'docs/src/scss/index.scss',

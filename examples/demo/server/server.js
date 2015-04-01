@@ -21,15 +21,10 @@ app.use(morgan('tiny'));
 
 app.use(bodyParser.json());
 
-router.get('/', function (req, res) {
-  res.redirect('/doc/');
-});
+router.use('/', express.static(path.resolve(__dirname + '/..')));
 
-router.use('/doc/', express.static('../../docs/dist'));
-
-router.use('/tour/', express.static('../tour/dist'));
-router.get('/tour/*', function (req, res) {
-  res.sendFile(path.resolve(__dirname + '/../tour/dist/index.html'));
+router.get('/*', function (req, res) {
+  res.sendFile(path.resolve(__dirname + '/../index.html'));
 });
 
 app.

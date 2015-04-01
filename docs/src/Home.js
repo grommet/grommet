@@ -25,7 +25,7 @@ var Home = React.createClass({
             <p>Learn Ligo in a few simple steps.</p>
             <Link to="hello world" className="call-to-action">Hello World</Link>
             <p></p>
-            <a>Demo</a>
+            <a href="/">Demo</a>
             <a href="https://github.com/HewlettPackard/Ligo">GitHub</a>
           </Panel>
         </Panel>

@@ -11,7 +11,7 @@ var TBD = Ligo.TBD;
 
 var routes = (
   <Route name="app" path="/" handler={App}>
-    <Route name="login" handler={Login}/>
+    <Route name="login" path="login" handler={Login}/>
     <Route name="tbd" handler={TBD}/>
     <DefaultRoute name="dashboard" handler={TBD}/>
   </Route>

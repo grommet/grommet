@@ -7,6 +7,10 @@ var opts = {
   copyAssets: [
     'examples/demo/src/index.html', 
     {
+      asset: 'examples/demo/server/**',
+      dist: 'examples/demo/dist/server/'
+    },
+    {
       asset: 'examples/demo/src/img/**',
       dist: 'examples/demo/dist/img/'
     }

@@ -11,7 +11,7 @@ Ligo.init({
   title: 'Todo App',
   background: '../img/task_background.jpg',
   logo: Logo,
-  copyright: '2015 Hewlett Packard',
+  copyright: '2015 All rights reserved.',
   menu: menuConfig,
   routes: Routes
 });
