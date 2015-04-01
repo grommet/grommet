@@ -1,0 +1,14 @@
+{
+  "name": "ligo-demo",
+  "version": "0.1.0",
+  "main": "src/js/index.js",
+  "description": "Ligo Demo App",
+  "authors": [
+  	"Alan Souza",
+  	"Bryan Jacquot",
+  	"Eric Soderberg"
+  ],
+  "dependencies": {
+    "ligo": "^0.1.0"
+  }
+}

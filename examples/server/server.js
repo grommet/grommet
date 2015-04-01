@@ -12,7 +12,7 @@ var rest = require('./rest');
 
 var PREFIX = ''; // for running under a shared domain
 var PORT = 8000;
-var USE_WEBPACK_HOT_MODULE_RELOAD = true;
+var USE_WEBPACK_HOT_MODULE_RELOAD = false;
 
 var app = express();
 
@@ -25,13 +25,13 @@ app.use(bodyParser.json());
 if (USE_WEBPACK_HOT_MODULE_RELOAD) {
   // when using webpack-dev-server
   router.use('/*', function (req, res) {
-    var url = 'http://localhost:8001' + req.originalUrl;
+    var url = 'http://localhost:8003' + req.originalUrl;
     req.pipe(request(url)).pipe(res);
   });
 } else {
-  router.use('/', express.static('../tour/dist'));
+  router.use('/', express.static('../demo/dist'));
   router.get('/*', function (req, res) {
-    res.sendFile(path.resolve(__dirname + '/../tour/dist/index.html'));
+    res.sendFile(path.resolve(__dirname + '/../demo/dist/index.html'));
   });
 }
 

@@ -2,7 +2,6 @@
 
 var React = require('react');
 var NavStore = require('../stores/NavStore');
-var navActions = require('../actions/NavActions');
 var Router = require('../utils/Router');
 var Link = require('../components/Link');
 
@@ -15,7 +14,7 @@ var NavSuggestions = React.createClass({
     }
   },
 
-  _onClick: function(suggestion) {
+  _onClick: function() {
     this.props.onRequestClose();
   },
 
@@ -40,7 +39,7 @@ var NavSuggestions = React.createClass({
 
     var clickHandler = this._onClick;
     var suggestions = this.state.suggestions.map(function (suggestion) {
-      var href = Router.resourceHref(suggestion.category, suggestion.uri);
+      var href = Router.makeHref(suggestion.category, suggestion.uri);
       return (
         <li key={suggestion.uri} className={"nav-suggestions__suggestion list-item"}>
           <Link href={href}

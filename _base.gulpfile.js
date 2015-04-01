@@ -119,14 +119,21 @@ module.exports = function(gulp, opts) {
 
     devWebpackConfig.resolve.extensions = ['', '.js', '.json', '.htm', 'html', 'scss'];
 
-    new WebpackDevServer(webpack(devWebpackConfig), {
+    var devServerConfig = {
       contentBase: dist,
       hot: true,
       inline: true,
       stats: {
         colors: true
       }
-    }).listen(options.devServerPort || 8080, "localhost");
+    };
+
+    if (options.devServerProxy) {
+      devServerConfig.proxy = options.devServerProxy;
+    } 
+
+    new WebpackDevServer(webpack(devWebpackConfig), devServerConfig).
+        listen(options.devServerPort || 8080, "localhost");
 
   });
 

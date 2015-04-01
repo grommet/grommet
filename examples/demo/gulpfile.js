@@ -3,19 +3,19 @@ var path = require('path');
 
 var opts = {
   base: '../../',
-  dist: 'examples/tour/dist/',
+  dist: 'examples/demo/dist/',
   copyAssets: [
-    'examples/tour/src/index.html', 
+    'examples/demo/src/index.html', 
     {
-      asset: 'examples/tour/src/img/**',
-      dist: 'examples/tour/dist/img/'
+      asset: 'examples/demo/src/img/**',
+      dist: 'examples/demo/dist/img/'
     }
   ],
-  scssAssets: ['examples/tour/src/scss/**/*.scss'],
-  jsAssets: ['examples/tour/src/js/**/*.js'],
-  mainJs: './examples/tour/src/js/index.js',
-  mainScss: './examples/tour/src/scss/index.scss',
-  remoteDestination: '/var/www/html/tour',
+  scssAssets: ['examples/demo/src/scss/**/*.scss'],
+  jsAssets: ['examples/demo/src/js/**/*.js'],
+  mainJs: './examples/demo/src/js/index.js',
+  mainScss: './examples/demo/src/scss/index.scss',
+  remoteDestination: '/var/www/html/demo',
   webpack: {
     resolve: {
       root: [
@@ -27,7 +27,10 @@ var opts = {
       ]
     }
   },
-  devServerPort: 8001
+  devServerPort: 8003,
+  devServerProxy: {
+    "/rest/*": 'http://localhost:8000'
+  }
 };
 
 require('../../_base.gulpfile.js')(gulp, opts);
