@@ -9,6 +9,8 @@ var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var path = require('path');
 var rest = require('./rest');
+var tour = require('./tour');
+var demo = require('./demo');
 
 var PREFIX = ''; // for running under a shared domain
 var PORT = 8000;
@@ -22,18 +24,15 @@ app.use(morgan('tiny'));
 app.use(bodyParser.json());
 
 router.get('/', function (req, res) {
-  res.redirect('/doc/');
+  res.redirect('/doc');
 });
 
-router.use('/doc/', express.static('../../docs/dist'));
-
-router.use('/tour/', express.static('../tour/dist'));
-router.get('/tour/*', function (req, res) {
-  res.sendFile(path.resolve(__dirname + '/../tour/dist/index.html'));
-});
+router.use('/doc', express.static('../../docs/dist'));
 
 app.
   use(PREFIX + '/rest', rest).
+  use(PREFIX + '/tour', tour).
+  use(PREFIX + '/demo', demo).
   use(PREFIX, router);
 
 app.listen(PORT);

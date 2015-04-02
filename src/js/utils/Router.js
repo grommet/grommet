@@ -7,11 +7,12 @@ var NavActions = require('../actions/NavActions');
 
 module.exports = {
 
-  init: function (routes) {
+  init: function (routes, containerId) {
     this._router = Router.create({
-      routes: routes,
-      location: Router.HistoryLocation
+      routes: routes
     });
+
+    this._containerId = containerId;
   },
 
   start: function () {
@@ -20,7 +21,7 @@ module.exports = {
       this._state = state;
       NavActions.routeChange(state);
       var factory = React.createFactory(Handler);
-      var appElement = document.getElementById('app');
+      var appElement = document.getElementById(this._containerId);
       if (appElement) {
         React.render(factory(), appElement);
       }
@@ -82,7 +83,7 @@ module.exports = {
   },
 
   makeHref: function (route, params, query) {
-    return this._router.makeHref(route, params, query);
+    return route; //this._router.makeHref(route, params, query);
   },
 
   isActive: function (routeName) {

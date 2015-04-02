@@ -27,7 +27,10 @@ var opts = {
       ]
     }
   },
-  devServerPort: 8001
+  devServerPort: 8001,
+  devServerProxy: {
+    "/rest/*": 'http://localhost:8000'
+  }
 };
 
 require('../../_base.gulpfile.js')(gulp, opts);

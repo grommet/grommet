@@ -92,6 +92,7 @@
     "style-loader": "^0.8.0",
     "html-jsx-loader": "^0.1.1",
     "imports-loader": "latest",
+    "file-loader": "^0.8.1",
     "react-tools": "^0.12.2",
     "run-sequence": "^0.3.7",
     "webpack": "^1.7.3",

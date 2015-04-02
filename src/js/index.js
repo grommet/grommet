@@ -59,7 +59,7 @@ module.exports = {
     SessionActions.setup();
     NavActions.setup(options);
 
-    Router.init(options.routes);
+    Router.init(options.routes, options.mainContainerId);
   },
 
   start: function () {
