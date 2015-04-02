@@ -9,6 +9,7 @@ var webpack = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
 var assign = require('object-assign');
 var rsync = require('gulp-rsync');
+var nodemon = require('gulp-nodemon')
 
 var webpackConfig = {
   output: {
@@ -104,6 +105,12 @@ module.exports = function(gulp, opts) {
 
   gulp.task('dev', ['preprocess'], function() {
 
+    if (options.nodeServerPath) {
+      nodemon({
+        script: options.nodeServerPath
+      });
+    }
+    
     var devWebpackConfig = assign({}, webpackConfig, options.webpack, {
       entry: {
         app: ['webpack/hot/dev-server', './' + options.mainJs],

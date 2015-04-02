@@ -34,7 +34,8 @@ var opts = {
   devServerPort: 8003,
   devServerProxy: {
     "/rest/*": 'http://localhost:8000'
-  }
+  },
+  nodeServerPath: 'examples/server/server.js'
 };
 
 require('../../_base.gulpfile.js')(gulp, opts);

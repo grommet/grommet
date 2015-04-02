@@ -98,6 +98,7 @@
     "webpack": "^1.7.3",
     "webpack-dev-server": "latest",
     "json5": "^0.1.0",
-    "amdefine": "^0.1.0"
+    "amdefine": "^0.1.0",
+    "gulp-nodemon": "^2.0.2"
   }
 }
