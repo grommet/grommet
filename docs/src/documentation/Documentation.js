@@ -10,33 +10,34 @@ var Documents = require('Documents');
 var TBD = Documents.TBD;
 var HelloWorld = require('./HelloWorld');
 var DocumentFooter = require('DocumentFooter');
+var MenuNavigation = require('MenuNavigation');
+
+var contents = [
+  {
+    route: 'helloworld', label: 'Hello World'
+  },
+  {
+    route: 'getstarted', label: 'Get Started'
+  },
+  {
+    route: 'reference', label: 'Reference'
+  },
+  {
+    route: 'architecture', label: 'Architecture'
+  }
+];
 
 var Documentation = React.createClass({
 
   render: function() {
 
-    var nav = (
-      <div className={"documentation__nav"}>
-        <div className={"documentation__nav-items"}>
-          <div className={"documentation__nav-item"}>
-            <Link to="helloworld">Hello World</Link>
-          </div>
-          <div className={"documentation__nav-item"}>
-            <Link to="getstarted">Get Started</Link>
-          </div>
-          <div className={"documentation__nav-item"}>
-            <Link to="reference">Reference</Link>
-          </div>
-          <div className={"documentation__nav-item"}>
-            <Link to="architecture">Architecture</Link>
-          </div>
-        </div>
-      </div>
-    );
-    
+    var items = contents.map(function (content) {
+      return <Link to={content.route}>{content.label}</Link>;
+    });
+
     return (
-      <div className="documentation">
-        {nav}
+      <div className="docs">
+        <MenuNavigation items={items} />
         <RouteHandler />
         <DocumentFooter />
       </div>

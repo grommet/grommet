@@ -1,0 +1,30 @@
+$docs-section-color: #06f;
+
+.docs {
+
+  padding-top: $header-height;
+
+  @include section-layout($docs-section-color, $contents-width - ($inuit-base-spacing-unit * 2));
+
+  section {
+   
+    h2 {
+      &:after {
+        @include media-query(lap) {
+            right: double($inuit-base-spacing-unit);
+          }
+      }
+    } 
+  }
+
+  @include nav-style($header-height + $inuit-base-spacing-unit);
+  
+  .nav {
+
+    @include media-query(palm) {
+      display: none;
+    }
+
+  }
+}
+

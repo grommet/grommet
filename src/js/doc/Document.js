@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 var React = require('react');
 var DocumentFooter = require('./DocumentFooter');
+var MenuNavigation = require('./MenuNavigation');
 
 var Document = React.createClass({
 
@@ -89,22 +90,8 @@ var Document = React.createClass({
     }
 
     var pages = '';
-
     if (this.props.pages) {
-      items = this.props.pages.map(function (page, index) {
-        return (
-          <div key={index} className="document__page">
-            {page}
-          </div>
-        );
-      });
-      pages = (
-        <div className={"document__pages"}>
-          <div className={"document__pages-items"}>
-            {items}
-          </div>
-        </div>
-      );
+      pages = <MenuNavigation items={this.props.pages} />;
     }
 
     var next = '';

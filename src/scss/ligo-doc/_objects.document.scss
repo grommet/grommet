@@ -11,10 +11,6 @@ $chapter-header-height: round($inuit-base-spacing-unit * 15);
 
 .document {
   position: relative;
-  //color: #fff;
-  //width: 100vw;
-  //min-height: 100vh;
-  //overflow-x: hidden;
 
   @include media-query(palm) {
     display: -webkit-flex;
@@ -115,49 +111,14 @@ $chapter-header-height: round($inuit-base-spacing-unit * 15);
     }
   }
 
-  &__pages {
-    position: absolute;
-    top: $header-height + $inuit-base-spacing-unit +
-      double($inuit-base-spacing-unit) + halve($inuit-base-spacing-unit);
-    left: double($inuit-base-spacing-unit);
-    right: double($inuit-base-spacing-unit);
-    display: -webkit-flex;
-    display: flex;
-    -webkit-justify-content: center;
-    justify-content: center;
+  @include nav-style($header-height + ($inuit-base-spacing-unit * 4));
 
+  .nav {
+    
     @include media-query(palm) {
       display: none;
     }
-
-    &-items {
-      -webkit-flex: 0 1 auto;
-      flex: 0 1 auto;
-      width: $document-width;
-      max-width: 100vw;
-    }
-  }
-
-  &__page {
-    @include inuit-font-size($inuit-heading-size-3);
-    width: $contents-width - double($inuit-base-spacing-unit);
-    margin: 0px;
-
-    a {
-      position: relative;
-      display: block;
-      padding: halve($inuit-base-spacing-unit);
-      text-decoration: none;
-      z-index: 1;
-
-      &.active {
-        font-weight: bold;
-      }
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
+  
   }
 
   &__chapter-title {
@@ -264,12 +225,12 @@ $chapter-header-height: round($inuit-base-spacing-unit * 15);
 
   &--chapter {
 
-    .document {
-      &__pages {
-        top: $header-height + $chapter-header-height +
-          double($inuit-base-spacing-unit) + halve($inuit-base-spacing-unit);
-      }
+    .nav {
+      top: $header-height + $chapter-header-height + double($inuit-base-spacing-unit);
+    }
 
+    .document {
+      
       &__content {
         padding-top: $header-height;
 
