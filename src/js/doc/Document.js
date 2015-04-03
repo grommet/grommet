@@ -1,6 +1,6 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 var React = require('react');
-var Up = require('./Up');
+var DocumentFooter = require('./DocumentFooter');
 
 var Document = React.createClass({
 
@@ -11,27 +11,6 @@ var Document = React.createClass({
     next: React.PropTypes.node,
     activeChapterIndex: React.PropTypes.number,
     background: React.PropTypes.string
-  },
-
-  _styleTitle: function () {
-    var parent = this.refs.document.getDOMNode().parentNode;
-    if (parent.scrollTop > window.innerHeight) {
-      this.setState({scrolled: true});
-    }
-    /*
-    // pin title section under header when content header disappears
-    var appHeaderElement = document.querySelectorAll('div.header').item(0);
-    var appHeaderRect = appHeaderElement.getBoundingClientRect();
-    var chapterElement = this.refs.chapter.getDOMNode();
-    var chapterHeaderElement = chapterElement.querySelectorAll('header').item(0);
-    var chapterHeaderRect = chapterHeaderElement.getBoundingClientRect();
-    var titleElement = this.refs.title.getDOMNode();
-    if (chapterHeaderRect.bottom < (appHeaderRect.bottom + 48)) { // TODO: 48 too hard coded
-      titleElement.classList.add("chapter__title--pinned");
-    } else {
-      titleElement.classList.remove("chapter__title--pinned");
-    }
-    */
   },
 
   _styleBackground: function () {
@@ -51,47 +30,22 @@ var Document = React.createClass({
     }
   },
 
-  _onScroll: function () {
-    // debounce
-    clearTimeout(this._scrollTimer);
-    this._scrollTimer = setTimeout(this._styleTitle, 10);
-  },
-
   _onResize: function () {
     // debounce
     clearTimeout(this._resizeTimer);
     this._resizeTimer = setTimeout(this._styleBackground, 10);
   },
 
-  _onClickTop: function () {
-    var parent = this.refs.document.getDOMNode().parentNode;
-    parent.scrollTop = 0;
-  },
-
   getInitialState: function () {
-    return {scrolled: false, portrait: false};
+    return {portrait: false};
   },
 
   componentDidMount: function () {
-    var parent = this.refs.document.getDOMNode().parentNode;
-    parent.addEventListener("scroll", this._onScroll);
     window.addEventListener("resize", this._onResize);
     setTimeout(this._styleBackground, 100);
   },
 
-  componentWillReceiveProps: function () {
-    this.setState({scrolled: false});
-  },
-
-  componentDidUpdate: function () {
-    if (! this.state.scrolled) {
-      this._onClickTop();
-    }
-  },
-
   componentWillUnmount: function () {
-    var parent = this.refs.document.getDOMNode().parentNode;
-    parent.removeEventListener("scroll", this._onScroll);
     window.removeEventListener("resize", this._onResize);
   },
 
@@ -162,11 +116,6 @@ var Document = React.createClass({
       );
     }
 
-    var upClasses = ["document__top", "control-icon"];
-    if (this.state.scrolled) {
-      upClasses.push("document__top--active");
-    }
-
     var background = '';
     if (this.props.background) {
       var backgroundClasses = ["document__background"];
@@ -179,19 +128,6 @@ var Document = React.createClass({
       );
     }
 
-    var documentFooter = '';
-    if (this.state.scrolled || next !== '') {
-      documentFooter = (
-        <div className={"document__footer"}>
-          {next}
-          <div className={upClasses.join(' ')}
-            onClick={this._onClickTop}>
-            <Up />
-          </div>
-        </div>
-      );
-    }
-
     return (
       <div ref="document" className={classes.join(' ')}>
         {background}
@@ -201,7 +137,7 @@ var Document = React.createClass({
         <div className={"document__content"}>
           {this.props.children}
         </div>
-        {documentFooter}
+        <DocumentFooter next={next} />
       </div>
     );
   }

@@ -127,8 +127,6 @@ $chapter-header-height: round($inuit-base-spacing-unit * 15);
     justify-content: center;
 
     @include media-query(palm) {
-      margin-left: $inuit-base-spacing-unit;
-      width: $contents-width - quadruple($inuit-base-spacing-unit);
       display: none;
     }
 
@@ -206,6 +204,7 @@ $chapter-header-height: round($inuit-base-spacing-unit * 15);
   }
 
   &__content {
+
     padding-top: $header-height + double($inuit-base-spacing-unit);
 
     @include media-query(palm) {
@@ -260,91 +259,7 @@ $chapter-header-height: round($inuit-base-spacing-unit * 15);
       }
     }
 
-    section {
-      margin-top: $inuit-base-spacing-unit;
-      margin-bottom: $inuit-base-spacing-unit;
-      padding-top: $inuit-base-spacing-unit;
-
-      > * {
-        @include document-content();
-        padding-left: $contents-width;
-
-        @include media-query(palm) {
-          padding-left: $inuit-base-spacing-unit;
-        }
-      }
-
-      img {
-        margin-top: double($inuit-base-spacing-unit);
-        margin-bottom: double($inuit-base-spacing-unit);
-        display: block;
-        padding-left: $contents-width + double($inuit-base-spacing-unit);
-        padding-right: round($inuit-base-spacing-unit * 8);
-
-        @include media-query(palm) {
-          padding-left: $inuit-base-spacing-unit;
-          padding-right: $inuit-base-spacing-unit;
-        }
-      }
-
-      p {
-        position: relative;
-        display: block;
-        padding-right: round($inuit-base-spacing-unit * 5);
-        z-index: 1;
-
-        @include media-query(palm) {
-          padding-right: $inuit-base-spacing-unit;
-        }
-      }
-
-      ol,
-      ul {
-        padding-left: $contents-width + $inuit-base-spacing-unit;
-        padding-right: round($inuit-base-spacing-unit * 5);
-        
-        @include media-query(palm) {
-          padding-left: double($inuit-base-spacing-unit);
-          padding-right: $inuit-base-spacing-unit;
-        }
-      }
-
-      dd {
-        padding-right: round($inuit-base-spacing-unit * 5);
-
-        @include media-query(palm) {
-          padding-right: $inuit-base-spacing-unit;
-        }
-      }
-
-      h2 {
-        position: relative;
-        padding-top: $inuit-base-spacing-unit;
-
-        &:after {
-          position: absolute;
-          content: '';
-          top: 0px;
-          left: $contents-width;
-          right: 0px;
-          border-top: 1px solid $border-color;
-
-          @include media-query(palm) {
-            left: $inuit-base-spacing-unit;
-            right: $inuit-base-spacing-unit;
-          }
-        }
-      }
-
-    }
-
-    section:first-of-type {
-      padding-top: 0;
-      
-      h2:after {
-        border-top: none;
-      }  
-    }
+    @include section-layout(inherit, $contents-width);
   }
 
   &--chapter {

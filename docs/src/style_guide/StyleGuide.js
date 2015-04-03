@@ -35,31 +35,6 @@ var StyleGuide = React.createClass({
 
   mixins: [RouterState],
 
-  _buildContents: function (contents, sections, sectionIndex) {
-    return contents.map(function (content, index) {
-      var className = '';
-      var active = this.isActive(content.route);
-      if (active) {
-        className = 'active';
-        this._activeSectionIndex = sectionIndex || index + 1;
-      }
-      var link = (
-        <Link to={content.route} className={className}>{content.label}</Link>
-      );
-      var item;
-      if (sections) {
-        item = {section: link};
-        if (content.hasOwnProperty('contents')) {
-          item.contents = this._buildContents(content.contents, false, index + 1);
-        }
-        item.active = active || this._activeSectionIndex === (index + 1);
-      } else {
-        item = link;
-      }
-      return item;
-    }.bind(this));
-  },
-
   render: function() {
 
     this._activeChapterIndex = -2;

@@ -1,0 +1,96 @@
+@mixin section-layout ($section-color, $section-padding) {
+  
+  section {
+    margin-top: $inuit-base-spacing-unit;
+    margin-bottom: $inuit-base-spacing-unit;
+    padding-top: $inuit-base-spacing-unit;
+
+    > * {
+      @include document-content();
+      padding-left: $section-padding;
+
+      @include media-query(palm) {
+        padding-left: $inuit-base-spacing-unit;
+      }
+    }
+
+    img {
+      margin-top: double($inuit-base-spacing-unit);
+      margin-bottom: double($inuit-base-spacing-unit);
+      display: block;
+      padding-left: $contents-width + double($inuit-base-spacing-unit);
+      padding-right: round($inuit-base-spacing-unit * 8);
+
+      @include media-query(palm) {
+        padding-left: $inuit-base-spacing-unit;
+        padding-right: $inuit-base-spacing-unit;
+      }
+    }
+
+    p {
+      position: relative;
+      display: block;
+      padding-right: round($inuit-base-spacing-unit * 5);
+      
+      @include media-query(palm) {
+        padding-right: $inuit-base-spacing-unit;
+      }
+    }
+
+    ol,
+    ul {
+      padding-left: $contents-width + $inuit-base-spacing-unit;
+      padding-right: round($inuit-base-spacing-unit * 5);
+      
+      @include media-query(palm) {
+        padding-left: double($inuit-base-spacing-unit);
+        padding-right: $inuit-base-spacing-unit;
+      }
+    }
+
+    dd {
+      padding-right: round($inuit-base-spacing-unit * 5);
+
+      @include media-query(palm) {
+        padding-right: $inuit-base-spacing-unit;
+      }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      color: $section-color;
+      font-weight: normal;
+    }
+
+    h2 {
+      position: relative;
+      padding-top: $inuit-base-spacing-unit;
+
+      &:after {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: $section-padding;
+        right: 0;
+        border-top: 1px solid $border-color;
+
+        @include media-query(palm) {
+          left: $inuit-base-spacing-unit;
+          right: $inuit-base-spacing-unit;
+        }
+
+      }
+    }
+
+  }
+
+  section:first-of-type {
+    padding-top: 0;
+    
+    h2:after {
+      border-top: none;
+    }  
+  }
+}
