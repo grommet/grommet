@@ -4,7 +4,6 @@ var React = require('react');
 var RouteHandler = require('react-router').RouteHandler;
 var Navigation = require('react-router').Navigation;
 var RouterState = require('react-router').State;
-var Router = require('../utils/Router');
 var SessionStore = require('../stores/SessionStore');
 var Header = require('./Header');
 var App = React.createClass({
@@ -12,36 +11,30 @@ var App = React.createClass({
   mixins: [Navigation, RouterState],
 
   statics: {
-    authRedirectTarget: function (path, postLoginPath) {
-      var data = SessionStore.getAll();
-      var result = null;
-      if (! data.id) {
-        if (! path.match(/login/)) {
-          result = 'login';
-        }
-      } else if (data.id) {
-        if (path.match(/login/)) {
-          result = postLoginPath || 'app';
-        }
-      }
-      return result;
-    },
 
     willTransitionTo: function (transition, params, query) {
-      var path = transition.path;
-      var target = this.authRedirectTarget(path, query.postLoginPath);
-      if ('login' === target) {
-        transition.redirect('login', {}, { 'postLogin' : path });
-      } else if (target) {
-        transition.redirect(target);
+      var data = SessionStore.getAll();
+
+      if (SessionStore.loginEnabled()) {
+        var path = transition.path;
+        if (!data.id && !path.match(/login/)) {
+          transition.redirect('login', {}, { 'postLogin': path });
+        } else if (data.id && path.match(/login/)) {
+          transition.redirect(query.postLoginPath || 'app');
+        }
       }
+      
     }
   },
 
   _onChange: function() {
     var data = SessionStore.getAll();
     this.setState(data);
-    var target = App.authRedirectTarget(this.getPathname(), this.getQuery().postLogin);
+    var target = 'login';
+    if (data.id) {
+     target = this.getQuery().postLogin || 'app';
+    }
+
     if (target) {
       // avoid nested dispatches
       setTimeout(function () {
@@ -55,7 +48,10 @@ var App = React.createClass({
   },
 
   componentDidMount: function() {
-    SessionStore.addChangeListener(this._onChange);
+    if (SessionStore.loginEnabled()) {
+      SessionStore.addChangeListener(this._onChange);  
+    }
+    
     var loadingElement = document.getElementById('loading');
     if (loadingElement) {
       loadingElement.parentNode.removeChild(loadingElement);
@@ -63,19 +59,24 @@ var App = React.createClass({
   },
 
   componentWillUnmount: function() {
-    SessionStore.removeChangeListener(this._onChange);
+    if (SessionStore.loginEnabled()) {
+      SessionStore.removeChangeListener(this._onChange);
+    }  
   },
 
   render: function() {
     var classes = ['app'];
     var active = false;
-    if (this.state.id) {
+
+    var loginEnabled = SessionStore.loginEnabled();
+
+    if (this.state.id || !loginEnabled) {
       classes.push('app--active');
       active = true;
     }
     return (
       <div className={classes.join(' ')}>
-        <Header active={active} />
+        <Header active={active} showSessionControl={loginEnabled}/>
         <div className={"app__content"}>
           <RouteHandler />
         </div>

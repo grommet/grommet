@@ -12,13 +12,18 @@ var Header = React.createClass({
     if (this.props.active) {
       classes.push('header--active');
     }
+
+    var sessionControl = '';
+    if (this.props.showSessionControl) {
+      sessionControl = <li><SessionControl /></li>;
+    }
     return (
       <div className={classes.join(' ')}>
         <div className={"header__background"} />
         <NavControl active={this.props.active} />
         <ol className={"header__controls list-inline"}>
           <li><NotificationsControl /></li>
-          <li><SessionControl /></li>
+          {sessionControl}
         </ol>
       </div>
     );

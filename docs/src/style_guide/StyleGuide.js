@@ -18,16 +18,16 @@ var TBD = Documents.TBD;
 
 var CONTENTS = [
   {route: "introduction", label: 'Introduction'},
-  {route: "philosophy", label: 'Philosophy'},
-  {route: "basics", label: 'Basics'},
-  {route: "patterns", label: 'Patterns', contents: [
-    {route: "login", label: 'Login'},
-    {route: "header", label: 'Header'},
-    {route: "dashboard", label: 'Dashboard'},
-    {route: "search", label: 'Search'}
+  {route: "sg_philosophy", label: 'Philosophy'},
+  {route: "sg_basics", label: 'Basics'},
+  {route: "sg_patterns", label: 'Patterns', contents: [
+    {route: "sg_login", label: 'Login'},
+    {route: "sg_header", label: 'Header'},
+    {route: "sg_dashboard", label: 'Dashboard'},
+    {route: "sg_search", label: 'Search'}
   ]},
-  {route: "showcase", label: 'Showcase', contents: [
-    {route: "oneview", label: 'OneView'}
+  {route: "sg_showcase", label: 'Showcase', contents: [
+    {route: "sg_oneview", label: 'OneView'}
   ]}
 ];
 
@@ -74,7 +74,7 @@ var StyleGuide = React.createClass({
             nextLink = pageLink;
           }
 
-          return pageLink;
+          return item;
 
         }.bind(this));
       }
@@ -100,16 +100,16 @@ StyleGuide.routes = function () {
   return (
     <Route name="style guide" path="styleguide" handler={StyleGuide}>
       <DefaultRoute name="introduction" handler={Introduction} />
-      <Route name="philosophy" handler={Philosophy} />
-      <Route name="basics" handler={Basics} />
-      <Route name="patterns" handler={Patterns} />
-      <Route name="login" handler={Login} />
-      <Route name="header" handler={TBD} />
-      <Route name="dashboard" handler={TBD} />
-      <Route name="search" handler={TBD} />
-      <Route name="filter" handler={TBD} />
-      <Route name="showcase" handler={Showcase} />
-      <Route name="oneview" handler={TBD} />
+      <Route name="sg_philosophy" path="philosophy" handler={Philosophy} />
+      <Route name="sg_basics" path="basics" handler={Basics} />
+      <Route name="sg_patterns" path="patterns" handler={Patterns} />
+      <Route name="sg_login" path="login" handler={Login} />
+      <Route name="sg_header" path="header" handler={TBD} />
+      <Route name="sg_dashboard" path="dashboard" handler={TBD} />
+      <Route name="sg_search" path="search" handler={TBD} />
+      <Route name="sg_filter" path="filter" handler={TBD} />
+      <Route name="sg_showcase" path="showcase" handler={Showcase} />
+      <Route name="sg_oneview" path="oneview" handler={TBD} />
     </Route>
   );
 };

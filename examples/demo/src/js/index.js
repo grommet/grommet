@@ -9,12 +9,11 @@ var menuConfig = require('./MenuConfig');
 
 Ligo.init({
   title: 'Todo App',
-  background: require('../img/task_background.jpg'),
   logo: Logo,
-  copyright: '2015 All rights reserved.',
   menu: menuConfig,
   routes: Routes,
-  mainContainerId: 'app'
+  mainContainerId: 'app',
+  login: false
 });
 
 // timeout for development of prerender version

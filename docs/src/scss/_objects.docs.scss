@@ -2,6 +2,14 @@ $docs-section-color: #06f;
 
 .docs {
 
+  @include media-query(palm) {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }  
+
+  position: relative;
   padding-top: $header-height;
 
   @include section-layout($docs-section-color, $contents-width - ($inuit-base-spacing-unit * 2));
@@ -22,9 +30,11 @@ $docs-section-color: #06f;
   .nav {
 
     @include media-query(palm) {
-      display: none;
+      position: static;
+      -webkit-order: 0;
+      order: 0;
+      margin: $inuit-base-spacing-unit;
     }
-
   }
 }
 

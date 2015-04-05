@@ -6,9 +6,10 @@ var Api = require('../utils/Api');
 
 module.exports = {
 
-  setup: function () {
+  setup: function (login) {
     AppDispatcher.handleViewAction({
-      type: Constants.ActionTypes.SESSION_SETUP
+      type: Constants.ActionTypes.SESSION_SETUP,
+      login: login
     });
   },
 

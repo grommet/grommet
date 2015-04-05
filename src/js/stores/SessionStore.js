@@ -11,6 +11,8 @@ var USER = "user";
 var LOGIN_TIME = "loginTime";
 var EMAIL = "email";
 
+var loginEnabled = true;
+
 var _data = {
   id: null,
   name: null,
@@ -63,6 +65,10 @@ var SessionStore = _.extend({}, EventEmitter.prototype, {
     return _data;
   },
 
+  loginEnabled: function () {
+    return loginEnabled;
+  },
+
   // Allow Controller-View to register itself with store
   addChangeListener: function(callback) {
     this.on(Constants.CHANGE_EVENT, callback);
@@ -82,7 +88,14 @@ var SessionStore = _.extend({}, EventEmitter.prototype, {
     switch(action.type) {
 
       case Constants.ActionTypes.SESSION_SETUP:
-        setup();
+
+        if (action.login) {
+          loginEnabled = true;
+          setup();
+        } else {
+          loginEnabled = false;
+        }
+        
         SessionStore.emitChange();
         break;
 

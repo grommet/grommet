@@ -56,7 +56,7 @@ module.exports = {
   Index: require('./index/index'),
 
   init: function (options) {
-    SessionActions.setup();
+    SessionActions.setup(options.login !== false);
     NavActions.setup(options);
 
     Router.init(options.routes, options.mainContainerId);

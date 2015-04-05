@@ -44,9 +44,7 @@ var DocumentFooter = React.createClass({
 	    var parent = this.refs.footer.getDOMNode().parentNode.parentNode;
 	    if (parent.scrollTop > window.innerHeight) {
 	      this.setState({scrolled: true});
-	    } else if (this.state.scrolled){
-	      this.setState({scrolled: false});	
-	    }
+	    } 
 	    /*
 	    // pin title section under header when content header disappears
 	    var appHeaderElement = document.querySelectorAll('div.header').item(0);

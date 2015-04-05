@@ -35,6 +35,31 @@
           }
         }
       }
+
+      &__subnavs {
+        display: none;
+        padding-left: halve($inuit-base-spacing-unit);
+
+        h4 {
+          text-transform: uppercase;
+          font-weight: normal;
+          margin-bottom: halve($inuit-base-spacing-unit);
+        }
+
+        &.active {
+          display: block;
+        }
+
+        a {
+          padding: 0;
+          padding-left: halve($inuit-base-spacing-unit);
+          @include inuit-font-size($inuit-heading-size-5);
+
+          &:last-child {
+            margin-bottom: halve($inuit-base-spacing-unit);
+          }
+        }
+      }
     }
 	  
 }
