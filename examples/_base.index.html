@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Todo App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <script src="http://ligo.usa.hp.com/libs/ligo.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.12.2/react.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.12.2/JSXTransformer.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-router/0.12.4/ReactRouter.min.js"></script>
+</head>
+<body>
+  <div id="loading">
+    One sec ...
+  </div>
+  <div id="app">
+    <!-- React goes here -->
+  </div>
+  <script type="text/jsx">
+    // Custom application logo (svg)
+    var Logo = React.createClass({
+        render: function() {
+          return (
+            <svg enable-background="new 0 0 141.732 141.732" height="47.244px" id="Livello_1" version="1.1" viewBox="0 0 141.732 141.732" width="47.244px">
+              <g id="Livello_5">
+                <path fill="#0096D6" d="M113.326,70.191c0-2.97-2.377-5.376-5.307-5.376H75.543V32.387v-0.001c0-2.98-2.418-5.397-5.396-5.397   c-2.98,0-5.398,2.417-5.398,5.397V70.17c0,2.981,2.418,5.398,5.398,5.398h37.875C110.949,75.568,113.326,73.161,113.326,70.191    M129.533,70.157c0,32.798-26.584,59.386-59.375,59.386c-32.793,0-59.375-26.588-59.375-59.386s26.582-59.386,59.375-59.386   C102.949,10.771,129.533,37.359,129.533,70.157 M140.314,70.157C140.314,31.41,108.904,0,70.158,0C31.41,0,0,31.41,0,70.157   s31.41,70.157,70.158,70.157C108.904,140.314,140.314,108.904,140.314,70.157"/>
+              </g>
+            </svg>
+          );
+        }
+
+    });
+
+    //Menu items
+    var menuConfig = [
+      [
+        {label: 'Dashboard', route: 'app'}
+      ]
+    ];
+
+    //Application routes
+    var Route = ReactRouter.Route;
+    var DefaultRoute = ReactRouter.DefaultRoute;
+    var Routes = (
+      <Route name="app" path="/" handler={Ligo.App} >
+        <DefaultRoute handler={Ligo.TBD} />
+        <Route name="tbd" handler={Ligo.TBD} />
+      </Route>
+    );
+
+    // Ligo initilization
+    Ligo.init({
+      title: 'Todo App',
+      logo: Logo,
+      menu: menuConfig,
+      routes: Routes,
+      mainContainerId: 'app',
+      login: false
+    });
+
+    Ligo.start();
+  </script>
+</body>
+</html>

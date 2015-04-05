@@ -1,10 +1,11 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+require("!style!css!sass!ligo-core/index.scss");
 
 var SessionActions = require('./actions/SessionActions');
 var NavActions = require('./actions/NavActions');
 var Router = require('./utils/Router');
 
-module.exports = {
+var Ligo = {
   // Components
   App: require('./components/App'),
   Donut: require('./components/Donut'),
@@ -66,3 +67,5 @@ module.exports = {
     Router.start();
   }
 };
+
+module.exports = Ligo;
