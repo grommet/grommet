@@ -33,15 +33,6 @@ var contents = [
           },
           {
             route: 'doc_navigation', label: 'Navigation'
-          },
-          {
-            route: 'doc_table', label: 'Table'
-          },
-          {
-            route: 'doc_tiles', label: 'Tiles'
-          },
-          {
-            route: 'doc_form', label: 'Form'
           }
         ]
       },

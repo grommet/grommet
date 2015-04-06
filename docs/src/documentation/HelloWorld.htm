@@ -4,15 +4,80 @@
     <section id="introduction">
       <h1>Hello World</h1>
       <p>
-        The easiest way to learn a new framework is by writing a simple application. In this section you will have quick access to Ligo bits which will allow you to play with it in your browser. At the end of this exercise you will have created a Todo Application using Ligo components.
+        The easiest way to learn a new framework is by writing a simple application on top of it. In this section you will have quick access to Ligo bits which will allow you to play with it in your browser. At the end of this exercise you will have created a Todo Application using Ligo components.
+      </p>
+      <p>  
+        This Todo application will provide the following features:
+        <ul>
+          <li>A dashboard with the list of existing tasks</li>
+          <li>Login and Logout operations</li>
+          <li>Adding, removing, editing, and completing tasks</li>
+          <li>Managing labels and assigning them to tasks</li>
+          <li>Searching for existing tasks and/or labels</li>
+          <li>Filtering tasks by status (completed, in progress, created) and/or labels</li>
+        </ul>
       </p>
     </section>
-
+    <section id="dependencies">
+      <h2>Understanding the Dependencies</h2>
+      <p>
+        Ligo is developed on top of <a href="http://reactjs.com" target="_blank">ReactJS</a> created by Facebook which provides great features in JavaScript for building user interfaces.
+        We are also using a JavaScript syntax extension called <a href="https://facebook.github.io/react/docs/jsx-in-depth.html" target="_blank">JSX</a>. To allow front-end routing paths we are using <a href="https://github.com/rackt/react-router">React Router</a> from Rackt. 
+      </p>
+      <p>
+        We expect that you have at least a basic understading on these technologies to be able to master Ligo, in addition to JavaScript of course. In terms of styling (css), Ligo already provides everything you need to quickly create great applications based on our application <a href="/#/styleguide">Style Guide</a>.  As a result, we don't expect you to write a lot of CSS code. After all, why reinventing the wheel?
+      </p>
+    </section>
     <section id="initial-structure">
       <h2>Initial Structure</h2>
       <p>
-        
+        In order to quickly get you started on Ligo, we'll use prebuilt JavaScript files in this exercise.
       </p>
+      <p>
+        <b>IMPORTANT NOTE:</b> These files are not meant to be used in production. Please refer to <a href="#">Get Started</a> for building production-ready apps.
+      </p>
+      <p>
+        That said, we should be ready to start developing our first Ligo application. Create a new HTML file with the following content:
+      </p>
+      <section class="code-fragment">
+        <div class="leading">index.html</div>
+        <pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span><br/>
+            <span class="nt">&lt;html&gt;</span><br/>
+            <span class="nt">  &lt;head&gt;</span><br/>
+            <span class="nt">     &lt;script </span><span class="na">src=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/react/0.12.2/react.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span><br/>
+            <span class="nt">     &lt;script </span><span class="na">src=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/react/0.12.2/JSXTransformer.js"</span><span class="nt">&gt;&lt;/script&gt;</span><br/>
+            <span class="nt">     &lt;script </span><span class="na">src=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/react-router/0.12.4/ReactRouter.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span><br/>
+            <span class="nt">     &lt;script </span><span class="na">src=</span><span class="s">"http://ligo.usa.hp.com/libs/ligo.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span><br/>
+            <span class="nt">  &lt;/head&gt;</span><br/>
+            <span class="nt">  &lt;body&gt;</span><br/>
+            <span class="nt">    &lt;div </span><span class="na">id=</span><span class="s">"loading"</span><span class="nt">&gt;</span><br/>
+            <span class="s">      One sec...</span><br/>
+            <span class="nt">    &lt;/div&gt;</span><br/>
+            <span class="nt">    &lt;div </span><span class="na">id=</span><span class="s">"app"</span><span class="nt">&gt;</span><br/>
+            <span class="s">      &lt;!-- React goes here --&gt;</span><br/>
+            <span class="nt">    &lt;/div&gt;</span><br/>
+            <span class="nt">    &lt;script </span><span class="na">type=</span><span class="s">"text/jsx"</span><span class="nt">&gt;</span><br/>
+            <span class="c">       //Application routes</span></br>
+            <span class="s">       var Route = ReactRouter.Route;</span></br>
+            <span class="s">       var DefaultRoute = ReactRouter.DefaultRoute;</span></br>
+            <span class="s">       var Routes = (</span></br>
+            <span class="s">       );</span></br></br>
+            <span class="c">       // Ligo initilization</span></br>
+            <span class="s">       Ligo.init(</span></br>
+            <span class="s">         title: 'Todo App',</span></br>
+            <span class="s">         logo: Logo,</span></br>
+            <span class="s">         menu: menuConfig,</span></br>
+            <span class="s">         routes: Routes,</span></br>
+            <span class="s">         mainContainerId: 'app',</span></br>
+            <span class="s">         login: false</span></br>
+            <span class="s">       );</span></br>
+            <span class="s">       Ligo.start();</span></br>
+            <span class="nt">    &lt;/script&gt;</span><br/>
+            <span class="nt">  &lt;/body&gt;</span><br/>
+            <span class="nt">&lt;/html&gt;</span><br/>
+          </code>
+        </pre>
+      </section>
     </section>
 </body>
 </html>

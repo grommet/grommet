@@ -50,7 +50,7 @@ linters:
     style: short # or 'long'
 
   HexNotation:
-    enabled: true
+    enabled: false
     style: lowercase # or 'uppercase'
 
   HexValidation:
@@ -87,7 +87,7 @@ linters:
     convention: hyphenated_lowercase # or 'BEM', or a regex pattern
 
   NestingDepth:
-    enabled: true
+    enabled: false
     max_depth: 6
 
   PlaceholderInExtend:
@@ -112,7 +112,7 @@ linters:
     allow_element_with_id: false
 
   SelectorDepth:
-    enabled: true
+    enabled: false
     max_depth: 4
 
   SelectorFormat:
