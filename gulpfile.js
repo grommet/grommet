@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var path = require('path');
+var chug = require('gulp-chug');
 
 var opts = {
   dist: 'dist/',
@@ -23,3 +24,26 @@ var opts = {
 };
 
 require('./_base.gulpfile.js')(gulp, opts);
+
+gulp.task('sync-all', function() {
+  
+  gulp.src('./examples/demo/gulpfile.js').pipe(chug({
+     tasks: ['sync']
+  }));
+
+  gulp.src('./examples/tour/gulpfile.js').pipe(chug({
+     tasks: ['sync']
+  }));
+
+  gulp.src('./examples/server/gulpfile.js').pipe(chug({
+     tasks: ['sync']
+  }));
+
+  gulp.src('./docs/gulpfile.js').pipe(chug({
+     tasks: ['sync']
+  }));
+
+  gulp.src('./gulpfile.js').pipe(chug({
+     tasks: ['sync']
+  }));
+});

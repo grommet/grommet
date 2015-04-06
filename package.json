@@ -83,6 +83,8 @@
     "gulp-react": "^3.0.1",
     "gulp-jshint": "^1.9.4",
     "gulp-scss-lint": "^0.1.10",
+    "gulp-nodemon": "^2.0.2",
+    "gulp-chug": "^0.4.2",
     "highlight": "^0.2.3",
     "jest": "^0.1.37",
     "jest-cli": "^0.3.0",
@@ -98,7 +100,6 @@
     "webpack": "^1.7.3",
     "webpack-dev-server": "latest",
     "json5": "^0.1.0",
-    "amdefine": "^0.1.0",
-    "gulp-nodemon": "^2.0.2"
+    "amdefine": "^0.1.0"
   }
 }

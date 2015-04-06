@@ -13,6 +13,7 @@ gulp.task('sync', function() {
       progress: true,
       incremental: true,
       clean: true,
+      silent: true,
       emptyDirectories: true,
       exclude: ['.DS_Store'],
     }));

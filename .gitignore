@@ -7,3 +7,4 @@ notes.txt
 *.iml
 .idea/**
 *.log
+*tmp*
