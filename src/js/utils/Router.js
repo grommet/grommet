@@ -13,6 +13,8 @@ module.exports = {
     });
 
     this._containerId = containerId;
+
+    document.body.innerHTML += '<div id="loading">One sec...</div>';
   },
 
   start: function () {
@@ -82,7 +84,7 @@ module.exports = {
       this.updateQueryParam(name, value));
   },
 
-  makeHref: function (route, params, query) {
+  makeHref: function (route) {
     return route; //this._router.makeHref(route, params, query);
   },
 
