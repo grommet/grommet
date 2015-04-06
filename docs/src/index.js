@@ -57,3 +57,5 @@ router.run(function (Handler) {
   var element = document.getElementById('docs');
   React.render(factory(), element);
 });
+
+document.body.classList.remove('loading');
