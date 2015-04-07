@@ -10,6 +10,7 @@ var TBD = Documents.TBD;
 var HelloWorld = require('./HelloWorld');
 var DocumentFooter = require('DocumentFooter');
 var MenuNavigation = require('MenuNavigation');
+var hljs = require('highlight.js');
 
 var contents = [
   {
@@ -58,6 +59,24 @@ var contents = [
 ];
 
 var Documentation = React.createClass({
+
+  componentDidMount: function () {
+    this.highlightCode();
+  },
+
+  componentDidUpdate: function () {
+    this.highlightCode();
+  },
+
+  highlightCode: function () {
+    var domNode = this.getDOMNode();
+    var nodes = domNode.querySelectorAll('pre code');
+    if (nodes.length > 0) {
+      for (var i = 0; i < nodes.length; i++) {
+        hljs.highlightBlock(nodes[i]);
+      }
+    }
+  },
 
   render: function() {
     return (

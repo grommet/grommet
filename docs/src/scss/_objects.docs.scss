@@ -24,55 +24,6 @@ $docs-section-color: #06f;
       }
     } 
 
-    .code-fragment {
-      overflow: auto;
-      position: relative;
-      display: block;
-      padding-right: $inuit-base-spacing-unit;
-
-      .leading {
-        padding: 7px;
-        font-size: 12px;
-        font-weight: bold;
-        color: #fff;
-        background-color: #40c6a5;
-      }
-
-      pre {
-        padding: halve($inuit-base-spacing-unit);
-        background-color: #bfece1;
-        border: none;
-
-        code {
-          
-          @include inuit-font-size($inuit-heading-size-5);
-
-          .break {
-            display: block;
-          }
-
-          .cp {
-            color: #FF7850;
-          }
-
-          .nt {
-            color: #3CAFDC;
-          }
-
-          .na {
-            color: #617d78;
-          }
-
-          .s {
-            color: #60798d;
-          }
-
-          .c {
-            color: #614767;
-          }
-        }
-      }
-    }
   }
 
   @include nav-style($header-height + $inuit-base-spacing-unit);
@@ -87,5 +38,30 @@ $docs-section-color: #06f;
     }
   }
 
+  pre {
+    padding-right: $inuit-base-spacing-unit;
+
+    code {
+      background-color: #bfece1;  
+    }
+    
+    .hljs {
+      @include inuit-font-size($inuit-heading-size-5);
+
+    }
+  }
+
+  &__code-header {
+
+    padding-right: $inuit-base-spacing-unit;
+    
+    &--label {
+      padding: 7px;
+      font-size: 12px;
+      font-weight: bold;
+      color: #fff;
+      background-color: #40c6a5;
+    }
+  }
 }
 

@@ -37,6 +37,7 @@
     "react-gravatar": "^1.0.0",
     "react-router": "^0.12.0",
     "react-time": "^2.4.0",
+    "highlight.js": "^8.5.0",
     "superagent": "^0.21.0",
     "inuit-responsive-settings": "~0.1.2",
     "inuit-responsive-tools": "~0.1.1",
@@ -93,12 +94,12 @@
     "sass-loader": "^0.4.2",
     "style-loader": "^0.8.0",
     "html-jsx-loader": "^0.1.1",
-    "imports-loader": "latest",
+    "imports-loader": "^0.6.3",
     "file-loader": "^0.8.1",
     "react-tools": "^0.12.2",
     "run-sequence": "^0.3.7",
     "webpack": "^1.7.3",
-    "webpack-dev-server": "latest",
+    "webpack-dev-server": "^1.8.0",
     "json5": "^0.1.0",
     "amdefine": "^0.1.0"
   }
