@@ -8,7 +8,7 @@ var Downloads = React.createClass({
 
   render: function() {
   	return (
-      <Ligo.Document centerColumn={true} accentIndex={3}>
+      <Ligo.Document centerColumn={true} accentIndex={1}>
       	<Content />
       </Ligo.Document>
     );

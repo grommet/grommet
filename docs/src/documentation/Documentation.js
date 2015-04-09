@@ -94,8 +94,8 @@ var Documentation = React.createClass({
     var pages = createPageLinks(CONTENTS, 2);
     return (
       <Ligo.Layout centerColumn={true}>
-        <Ligo.Nav vertical={true} accentIndex={2}>{pages}</Ligo.Nav>
-        <Ligo.Document accentIndex={2}>
+        <Ligo.Nav vertical={true} accentIndex={1}>{pages}</Ligo.Nav>
+        <Ligo.Document accentIndex={1}>
           <RouteHandler />
         </Ligo.Document>
       </Ligo.Layout>
