@@ -10,7 +10,6 @@ var WebpackDevServer = require('webpack-dev-server');
 var assign = require('object-assign');
 var rsync = require('gulp-rsync');
 var nodemon = require('gulp-nodemon');
-var path = require('path');
 
 var webpackConfig = {
   output: {

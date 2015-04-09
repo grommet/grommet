@@ -60,7 +60,7 @@
 }
 
 @include keyframes(slide-in) {
-  0%   { left: -80vw; }
+  0% { left: -80vw; }
   100% { left: 0px; }
 }
 
@@ -138,7 +138,7 @@
 
   &__sections {
     //margin-left: double($inuit-base-spacing-unit);
-    padding: quadruple($inuit-base-spacing-unit) 0px double($inuit-base-spacing-unit) 0px;
+    padding: quadruple($inuit-base-spacing-unit) 0px double($inuit-base-spacing-unit);
     height: 100vh;
     overflow: auto;
 
@@ -175,12 +175,15 @@
   &::-webkit-input-placeholder {
     color: #ddd;
   }
+
   &::-moz-input-placeholder {
     color: #ddd;
   }
+
   &::-ms-input-placeholder {
     color: #ddd;
   }
+
   &::input-placeholder {
     color: #ddd;
   }
@@ -208,32 +211,6 @@
     ///display: flex;
     display: block;
   }
-
-  /*&__label {
-    display: none;
-    margin-top: 0px;
-  }
-
-  &__section {
-    vertical-align: top;
-    cursor: pointer;
-    display: inline-block;
-    margin-bottom: $inuit-base-spacing-unit;
-
-    ul {
-      margin-right: $inuit-base-spacing-unit;
-    }
-  }*/
-
-  /*&__highlight-pages {
-    -webkit-flex: 0 0 auto;
-    flex: 0 0 auto;
-    width: $panel-width;
-
-    > li.nav-pages__page {
-      padding: quarter($inuit-base-spacing-unit) 0px;
-    }
-  }*/
 
   &__pages {
     ///-webkit-flex: 1 1 auto;
@@ -312,11 +289,12 @@
     }
   }
 
-  &__symbol, &__icon {
+  &__symbol, 
+  &__icon {
     display: block;
     width: quadruple($inuit-base-spacing-unit);
     height: quadruple($inuit-base-spacing-unit);
-    margin: 0px auto halve($inuit-base-spacing-unit) auto;
+    margin: 0px auto halve($inuit-base-spacing-unit);
     border-radius: double($inuit-base-spacing-unit);
     color: #fff;
     text-align: center;
@@ -371,11 +349,12 @@
         }
       }
 
-      &__symbol, &__icon {
+      &__symbol, 
+      &__icon {
         width: double($inuit-base-spacing-unit);
         height: double($inuit-base-spacing-unit);
         border-radius: quadruple($inuit-base-spacing-unit);
-        margin: 0px auto quarter($inuit-base-spacing-unit) auto;
+        margin: 0px auto quarter($inuit-base-spacing-unit);
 
         @include media-query(palm) {
           margin: 0px halve($inuit-base-spacing-unit) 0px 0px;
@@ -400,7 +379,8 @@
   }
 }
 
-.nav-suggestions, .nav-recents {
+.nav-suggestions, 
+.nav-recents {
   display: none;
   margin-top: halve($inuit-base-spacing-unit);
   padding-left: quadruple($inuit-base-spacing-unit) - $inuit-base-spacing-unit;
@@ -419,13 +399,16 @@
     padding-left: $inuit-base-spacing-unit;
   }
 
-  &__suggestion, &__recent {
+  &__suggestion, 
+  &__recent {
     a {
       display: block;
 
       &:hover {
-        .nav-suggestions, .nav-recents {
-          &__suggestion, &__recent {
+        .nav-suggestions, 
+        .nav-recents {
+          &__suggestion, 
+          &__recent {
             &-category {
               color: $hover-text-color;
             }

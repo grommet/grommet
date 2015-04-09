@@ -9,6 +9,7 @@
 
   a {
     color: $secondary-text-color;
+    margin-right: $inuit-base-spacing-unit;
 
     &.active {
       color: $text-color;
