@@ -28,7 +28,7 @@ var Layout = React.createClass({
 
     var style = {};
     if (this.props.texture) {
-      style['backgroundImage'] = this.props.texture;
+      style.backgroundImage = this.props.texture;
     }
 
     return (

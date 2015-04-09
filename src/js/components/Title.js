@@ -13,7 +13,6 @@ var Title = React.createClass({
   mixins: [ReactLayeredComponent],
 
   _onClick: function () {
-    console.log('!!! Title _onClick');
     if (this.props.nav) {
       this.setState({active: true});
     }
@@ -28,7 +27,6 @@ var Title = React.createClass({
   },
 
   renderLayer: function() {
-    console.log('!!! Title renderLayer', this.state.active, this.props.nav);
     if (! this.state.active) {
       return <span />;
     } else {

@@ -6,7 +6,6 @@ var TourMenu = require('./TourMenu');
 var TourNav = React.createClass({
 
   render: function() {
-    //return (<TourMenu />);
     return (
       <Ligo.NavUnified onRequestClose={this.props.onRequestClose} menu={<TourMenu />} />
     );

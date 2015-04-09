@@ -32,6 +32,12 @@
         margin-bottom: double($inuit-base-spacing-unit);
         padding-bottom: double($inuit-base-spacing-unit);
         border-bottom: 1px solid $border-color;
+
+        &:last-child {
+          border-bottom: none;
+          margin: 0;
+          padding: 0;
+        }
       }
     }
   }
@@ -42,6 +48,14 @@
     .layout__content {
       padding-top: halve($inuit-base-spacing-unit);
       padding-bottom: halve($inuit-base-spacing-unit);
+
+      @include media-query(palm) {
+        padding-left: $inuit-base-spacing-unit;
+      }
+
+      @include media-query(lap) {
+        padding-left: $inuit-base-spacing-unit;
+      }
     }
   }
 }

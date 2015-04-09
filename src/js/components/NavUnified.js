@@ -22,7 +22,7 @@ var NavUnified = React.createClass({
   },
   */
 
-  _onClose: function(e) {
+  _onClose: function() {
     this.props.onRequestClose();
   },
 
@@ -52,8 +52,7 @@ var NavUnified = React.createClass({
       <div className={'nav-unified'} onClick={this._onClose}>
         <div className={'nav-unified__container'} onClick={this._onSink}>
           <div className={'nav-unified__header'}>
-            <div className={'nav-unified__control'} onClick={this._onClose}>
-            </div>
+            <div className={'nav-unified__control'} onClick={this._onClose} />
             <NavSearch />
             <div className={"nav-unified__close control-icon"} onClick={this._onClose}>
               <Close />

@@ -24,6 +24,13 @@
       margin-right: 0px;
       margin-left: $inuit-base-spacing-unit;
     }
+
+    .hide-palm {
+      @include media-query(palm) {
+        display: none;
+      }  
+    }
+    
   }
 
   &--vertical {

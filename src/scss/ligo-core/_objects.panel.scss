@@ -1,17 +1,11 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 .panel {
-  margin-top: $inuit-base-spacing-unit;
-  margin-bottom: $inuit-base-spacing-unit;
   border-bottom: 1px solid $border-color;
   background-color: $background-color;
-
-  &:first-of-type {
-    margin-top: 0px;
-  }
+  padding: $inuit-base-spacing-unit;
 
   &:last-of-type {
-    margin-bottom: 0px;
     border-bottom: none;
   }
 
