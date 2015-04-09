@@ -1,6 +1,8 @@
 // (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
 
-input[type="button"], input[type="submit"], button {
+input[type="button"],
+input[type="submit"],
+button {
   padding: 5px 10px;
   border: none;
   border-radius: $border-radius;
@@ -8,7 +10,7 @@ input[type="button"], input[type="submit"], button {
 
   &.primary {
     background-color: $button-primary-background-color;
-    color: #fff;
+    color: $accent-text-color;
   }
 }
 

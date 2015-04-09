@@ -1,0 +1,77 @@
+section {
+  margin-top: $inuit-base-spacing-unit;
+  margin-bottom: $inuit-base-spacing-unit;
+  padding-top: $inuit-base-spacing-unit;
+
+  img {
+    margin-top: double($inuit-base-spacing-unit);
+    margin-bottom: double($inuit-base-spacing-unit);
+    display: block;
+    padding-left: $nav-width + double($inuit-base-spacing-unit);
+    padding-right: round($inuit-base-spacing-unit * 8);
+
+    @include media-query(palm) {
+      padding-left: $inuit-base-spacing-unit;
+      padding-right: $inuit-base-spacing-unit;
+    }
+  }
+
+  p {
+    position: relative;
+    display: block;
+    max-width: round($inuit-base-spacing-unit * 28);
+
+    @include media-query(palm) {
+      padding-right: $inuit-base-spacing-unit;
+    }
+  }
+
+  ol,
+  ul {
+    padding-left: $nav-width + $inuit-base-spacing-unit;
+    padding-right: round($inuit-base-spacing-unit * 5);
+
+    @include media-query(palm) {
+      padding-left: double($inuit-base-spacing-unit);
+      padding-right: $inuit-base-spacing-unit;
+    }
+  }
+
+  dd {
+    padding-right: round($inuit-base-spacing-unit * 5);
+
+    @include media-query(palm) {
+      padding-right: $inuit-base-spacing-unit;
+    }
+  }
+
+  h2 {
+    position: relative;
+    padding-top: $inuit-base-spacing-unit;
+
+    &:after {
+      position: absolute;
+      content: '';
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      border-top: 1px solid $border-color;
+
+      @include media-query(palm) {
+        left: $inuit-base-spacing-unit;
+        right: $inuit-base-spacing-unit;
+      }
+
+    }
+  }
+
+}
+
+section:first-of-type {
+  padding-top: 0px;
+  margin-top: 0px;
+
+  h2:after {
+    border-top: none;
+  }
+}

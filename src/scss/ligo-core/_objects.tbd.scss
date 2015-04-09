@@ -2,10 +2,9 @@
 
 .tbd {
   text-align: center;
-  margin: 20vh auto;
-  padding: double($inuit-base-spacing-unit);
+  padding: quadruple($inuit-base-spacing-unit);
   @include inuit-font-size(quadruple($inuit-base-spacing-unit));
   font-style: italic;
-  background-color: #ccc;
-  color: #fff;
+  background-color: $border-color;
+  color: $background-color;
 }

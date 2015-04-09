@@ -8,14 +8,25 @@
   <meta name="mobile-web-app-capable" content="yes">
   <link rel="shortcut icon" type="image/png" href="img/shortcut-icon.png" />
   <link rel="shortcut icon" sizes="196x196" type="image/png" href="img/mobile-app-icon.png">
-  <style>
-  body.loading {margin: 0px; width: 100vw; height: 100vw; background-image: linear-gradient(45deg, red, #f06d06);}
-  body.loading:after {content: ''; position: absolute; width: 100px; height: 100px; background-color: #00f; top: 50vh; left: 50vw; margin-top: -50px; margin-left: -50px; border-radius: 50px;}
-  </style>
+  <!-- move this font inside style sheets -->
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+  <style>
+  body.loading {margin: 0px; width: 100vw; height: 100vw; background-image: linear-gradient(45deg, #eee, #fff);}
+  body.loading #logo {display: block; margin: 10vh auto;}
+  body.loading #spinner {display: block; margin: 0px auto; width: 48px; height: 48px; -webkit-animation:spin 4s steps(4, end) infinite; -moz-animation:spin 4s linear infinite; animation:spin 4s linear infinite;}
+  @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+  @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+  @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+  </style>
 </head>
 <body class="loading">
-  <div id="docs"></div>
-  <script src="indexx.js"></script>
+  <div id="content">
+    <img id="logo" src="img/hpesm_sec_blk_pos_rgb.svg" alt="HPE logo" />
+    <svg id="spinner" viewBox="0 0 48 48">
+      <circle stroke="#ddd" stroke-width="4" stroke-dasharray="24px 8px" fill="none" cx="24" cy="24" r="20"></circle>
+      <circle stroke="#333" stroke-width="4" stroke-dasharray="24px 104px" fill="none" cx="24" cy="24" r="20"></circle>
+    </svg>
+  </div>
+  <script src="index.js"></script>
 </body>
 </html>

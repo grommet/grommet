@@ -48,7 +48,7 @@
       width: 18px;
       height: 18px;
       vertical-align: middle;
-      stroke: $inactive-icon-color;
+      stroke: $icon-color;
     }
   }
 }
@@ -84,7 +84,7 @@
 
       &-icon {
         vertical-align: top;
-        stroke: $inactive-icon-color;
+        stroke: $icon-color;
       }
 
       &:hover {
@@ -103,7 +103,7 @@
 
       &-icon {
         vertical-align: top;
-        stroke: $inactive-icon-color;
+        stroke: $icon-color;
       }
 
       &:hover {

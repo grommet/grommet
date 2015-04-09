@@ -1,0 +1,9 @@
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+
+// turn off webkit elastic scrolling
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}

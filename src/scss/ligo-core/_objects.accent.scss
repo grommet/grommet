@@ -1,0 +1,23 @@
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+
+@for $i from 1 through length($brand-colors) {
+  .accent-text-#{$i} {
+    h1,
+    h2,
+    h3,
+    h4,
+    dt {
+      font-weight: normal;
+      color: nth($brand-colors, $i);
+    }
+  }
+
+  .accent-background-#{$i} {
+    background-color: nth($brand-colors, $i);
+    color: $accent-text-color;
+
+    a {
+      color: $accent-text-color;
+    }
+  }
+}

@@ -1,5 +1,4 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
-require("!style!css!sass!ligo-core/index.scss");
 
 var SessionActions = require('./actions/SessionActions');
 var NavActions = require('./actions/NavActions');
@@ -8,17 +7,24 @@ var Router = require('./utils/Router');
 var Ligo = {
   // Components
   App: require('./components/App'),
+  Document: require('./components/Document'),
   Donut: require('./components/Donut'),
   FixedHeader: require('./components/FixedHeader'),
+  Footer: require('./components/Footer'),
   Form: require('./components/Form'),
   Header: require('./components/Header'),
   Link: require('./components/Link'),
   Login: require('./components/Login'),
+  Nav: require('./components/Nav'),
+  NavUnified: require('./components/NavUnified'),
+  Layout: require('./components/Layout'),
   Menu: require('./components/Menu'),
   Meter: require('./components/Meter'),
+  Panel: require('./components/Panel'),
   SearchCombo: require('./components/SearchCombo'),
   Tiles: require('./components/Tiles'),
   Tile: require('./components/Tile'),
+  Title: require('./components/Title'),
   Object: require('./components/Object'),
   TBD: require('./components/TBD'),
   Icons: {
@@ -33,7 +39,7 @@ var Ligo = {
     Previous: require('./components/icons/Previous'),
     Search: require('./components/icons/Search'),
     SearchPlus: require('./components/icons/SearchPlus'),
-    Status: require('./components/icons/Status')
+    Status: require('./components/icons/Status'),
   },
   // Mixins
   Mixins: {

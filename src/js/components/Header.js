@@ -1,30 +1,37 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var NavControl = require('./NavControl');
-var SessionControl = require('./SessionControl');
-var NotificationsControl = require('./NotificationsControl');
 
 var Header = React.createClass({
 
+  propTypes: {
+    centerColumn: React.PropTypes.bool,
+    primary: React.PropTypes.bool,
+    accentIndex: React.PropTypes.number
+  },
+
   render: function() {
-    var classes = ['header'];
-    if (this.props.active) {
-      classes.push('header--active');
+    var classes = ["header"];
+    var contentClasses = ["header__content"];
+
+    if (this.props.centerColumn) {
+      classes.push("center-column");
+      contentClasses.push("center-column__content");
+    }
+    if (this.props.primary) {
+      classes.push("header--primary");
+    }
+    if (this.props.accentIndex) {
+      classes.push("header--accent-" + this.props.accentIndex);
     }
 
-    var sessionControl = '';
-    if (this.props.showSessionControl) {
-      sessionControl = <li><SessionControl /></li>;
-    }
     return (
       <div className={classes.join(' ')}>
-        <div className={"header__background"} />
-        <NavControl active={this.props.active} />
-        <ol className={"header__controls list-inline"}>
-          <li><NotificationsControl /></li>
-          {sessionControl}
-        </ol>
+        <div className="header__wrapper">
+          <div className={contentClasses.join(' ')}>
+            {this.props.children}
+          </div>
+        </div>
       </div>
     );
   }

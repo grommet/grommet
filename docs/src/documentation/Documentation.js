@@ -5,58 +5,70 @@ var Router = require('react-router');
 var Route = Router.Route;
 var DefaultRoute = Router.DefaultRoute;
 var RouteHandler = Router.RouteHandler;
-var Documents = require('Documents');
-var TBD = Documents.TBD;
+var Link = Router.Link;
+var Ligo = require('ligo');
+var TBD = Ligo.TBD;
 var HelloWorld = require('./HelloWorld');
-var DocumentFooter = require('DocumentFooter');
-var MenuNavigation = require('MenuNavigation');
 var hljs = require('highlight.js');
 
-var contents = [
-  {
-    route: 'helloworld', label: 'Hello World'
-  },
-  {
-    route: 'doc_getstarted', label: 'Get Started'
-  },
-  {
-    route: 'doc_reference', 
-    label: 'Reference',
-    subNavs: [
-      {
-        title: 'Components',
-        links: [
-          {
-            route: 'doc_search', label: 'Search'
-          },
-          {
-            route: 'doc_login', label: 'Login'
-          },
-          {
-            route: 'doc_navigation', label: 'Navigation'
-          }
-        ]
-      },
-      {
-        title: 'Graphics',
-        links: [
-          {
-            route: 'doc_meter', label: 'Meter'
-          },
-          {
-            route: 'doc_donut', label: 'Donut'
-          },
-          {
-            route: 'doc_chart', label: 'Chart'
-          } 
-        ]
-      }
+var CONTENTS = [
+  {label: 'Guides',
+    contents: [
+      {route: 'doc_helloworld', label: 'Hello World', component: HelloWorld, default: true},
+      {route: 'doc_getstarted', label: 'Get Started', component: TBD}
     ]
   },
-  {
-    route: 'doc_architecture', label: 'Architecture'
+  {label: 'Patterns',
+    contents: [
+      {route: 'doc_dashboard', label: 'Dashboard', component: TBD},
+      {route: 'doc_index', label: 'Index', component: TBD},
+      {route: 'doc_login', label: 'Login', component: TBD},
+      {route: 'doc_navigation', label: 'Navigation', component: TBD},
+      {route: 'doc_search', label: 'Search', component: TBD},
+      {route: 'doc_session', label: 'Session', component: TBD}
+    ]
+  },
+  {label: 'Components',
+    contents: [
+      {route: 'doc_chart', label: 'Chart', component: TBD},
+      {route: 'doc_document', label: 'Document', component: TBD},
+      {route: 'doc_donut', label: 'Donut', component: TBD},
+      {route: 'doc_footer', label: 'Footer', component: TBD},
+      {route: 'doc_form', label: 'Form', component: TBD},
+      {route: 'doc_header', label: 'Header', component: TBD},
+      {route: 'doc_menu', label: 'Menu', component: TBD},
+      {route: 'doc_meter', label: 'Meter', component: TBD},
+      {route: 'doc_table', label: 'Table', component: TBD},
+      {route: 'doc_tile', label: 'Tile', component: TBD}
+    ]
+  },
+  {label: 'Reference',
+    contents: [
+      {route: 'doc_architecture', label: 'Architecture', component: TBD}
+    ]
   }
 ];
+
+function createPageLinks(contents, level) {
+  var result = [];
+  contents.forEach(function (page) {
+    if (page.hasOwnProperty('route')) {
+      result.push(<Link key={page.label} to={page.route}>{page.label}</Link>);
+    } else {
+      if (2 === level) {
+        result.push(<h3 key={page.label}>{page.label}</h3>);
+      } else if (3 === level) {
+        result.push(<h4 key={page.label}>{page.label}</h4>);
+      } else {
+        result.push(<h5 key={page.label}>{page.label}</h5>);
+      }
+    }
+    if (page.hasOwnProperty('contents')) {
+      result = result.concat(createPageLinks(page.contents, level + 1));
+    }
+  });
+  return result;
+}
 
 var Documentation = React.createClass({
 
@@ -79,33 +91,45 @@ var Documentation = React.createClass({
   },
 
   render: function() {
+    var pages = createPageLinks(CONTENTS, 2);
     return (
-      <div className="docs">
-          <MenuNavigation items={contents} />
+      <Ligo.Layout centerColumn={true}>
+        <Ligo.Nav vertical={true} accentIndex={2}>{pages}</Ligo.Nav>
+        <Ligo.Document accentIndex={2}>
           <RouteHandler />
-          <DocumentFooter />
-      </div>
+        </Ligo.Document>
+      </Ligo.Layout>
     );
   }
 });
 
+function createContentRoutes(contents) {
+  var result = [];
+  contents.forEach(function (content) {
+    if (content.default) {
+      result.push(
+        <DefaultRoute key={content.label} name={content.route}
+          handler={content.component} />
+      );
+    } else {
+      result.push(
+        <Route key={content.label} name={content.route}
+          path={content.label.toLowerCase().replace(/ /g,"-")}
+          handler={content.component} />
+      );
+    }
+    if (content.hasOwnProperty('contents')) {
+      result = result.concat(createContentRoutes(content.contents));
+    }
+  });
+  return result;
+}
+
 Documentation.routes = function () {
+  var routes = createContentRoutes(CONTENTS);
   return (
-    <Route name="documentation" handler={Documentation}>
-      <DefaultRoute name="helloworld" handler={HelloWorld} />
-      <Route name="doc_getstarted" path="getstarted" handler={TBD} />
-      <Route name="doc_reference" path="reference" handler={TBD}>
-        <Route name="doc_search" path="search" handler={TBD} />
-        <Route name="doc_login" path="login" handler={TBD} />
-        <Route name="doc_navigation" path="navigation" handler={TBD} />
-        <Route name="doc_table" path="table" handler={TBD} />
-        <Route name="doc_tiles" path="tiles" handler={TBD} />
-        <Route name="doc_form" path="form" handler={TBD} />
-        <Route name="doc_meter" path="meter" handler={TBD} />
-        <Route name="doc_donut" path="donut" handler={TBD} />
-        <Route name="doc_chart" path="chart" handler={TBD} />
-      </Route>
-      <Route name="doc_architecture" path="architecture" handler={TBD} />
+    <Route name="documentation" path="documentation" handler={Documentation}>
+      {routes}
     </Route>
   );
 };

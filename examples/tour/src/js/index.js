@@ -2,20 +2,27 @@
 
 require("!style!css!sass!index.scss");
 
-var Ligo = require('ligo');
+var React = require('react');
+var Router = require('react-router');
+//var Ligo = require('ligo');
+/*
 var LigoIndex = Ligo.Index;
-var Logo = require('./Logo');
 var menuConfig = require('./MenuConfig');
 var indexConfig = require('./IndexConfig');
+*/
 var routes = require('./Routes');
 
-/* Example of overriding functions:
-var SessionActions = Ligo.SessionActions;
-SessionActions.login = function (user, password) {
-  window.alert("Tour action " + user);
-}
-*/
+var router = Router.create({routes: routes}); //, location: Router.HistoryLocation});
 
+router.run(function (Handler) {
+  var factory = React.createFactory(Handler);
+  var element = document.getElementById('content');
+  React.render(factory(), element);
+});
+
+document.body.classList.remove('loading');
+
+/*
 Ligo.init({
   title: 'Ligo Tour',
   background: require('../img/piano_player.jpg'),
@@ -28,7 +35,5 @@ Ligo.init({
 
 LigoIndex.init(indexConfig);
 
-// timeout for development of prerender version
-//setTimeout(function () {
 Ligo.start();
-//}, 5000);
+*/

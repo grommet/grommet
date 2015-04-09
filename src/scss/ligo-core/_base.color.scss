@@ -1,0 +1,60 @@
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+
+// Generic
+
+$background-color: #fff;
+$accent-active-background-color: rgba(0, 0, 0, 0.2);
+
+$border-color: #ddd;
+
+$text-color: #333;
+$secondary-text-color: #999;
+$hover-text-color: #000;
+$accent-text-color: #fff;
+$inactive-accent-text-color: rgba(255, 255, 255, 0.7);
+$link-color: nth($brand-accent-colors, 2) !default;
+
+// Control Icons
+
+$icon-color: #999;
+$active-icon-color: #000;
+$disabled-icon-color: #ccc;
+
+// Status
+
+$status-colors: (
+  critical: $critical,
+  warning: $warning,
+  ok: $ok,
+  uknown: $unknown,
+  disabled: $disabled
+);
+
+$meter-color: nth($brand-accent-colors, 2);
+
+// Controls
+
+$focus-border-color: nth($brand-accent-colors, 2);
+$button-primary-background-color: nth($brand-accent-colors, 1);
+
+$hover-background-color: rgba(0, 0, 0, 0.1);
+$modal-overlay-background-color: rgba(0, 0, 0, 0.6);
+$drop-background-color: rgba(255, 255, 255, 0.9);
+$header-background-color: rgba(255, 255, 255, 0.9);
+$selected-background-color: rgba(0, 0, 255, 0.1); // TODO: recolor
+$sort-placeholder-background-color: rgba(0, 0, 255, 0.1); // TODO: recolor
+$badge-background-color: nth($brand-neutral-colors, 1);
+
+$inverse-background-color: nth($brand-neutral-colors, 1);
+$inverse-color: #fff;
+
+// Charts and Graphs
+
+$graph-colors: (
+  '1': nth($brand-accent-colors, 1),
+  '2': nth($brand-accent-colors, 2),
+  '3': nth($brand-accent-colors, 3),
+  '4': nth($brand-neutral-colors, 1),
+  '5': nth($brand-neutral-colors, 2),
+  '6': nth($brand-neutral-colors, 3)
+);

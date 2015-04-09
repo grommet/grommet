@@ -8,6 +8,7 @@ var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var path = require('path');
+var docs = require('./docs');
 var rest = require('./rest');
 var tour = require('./tour');
 var demo = require('./demo');
@@ -24,12 +25,11 @@ app.use(morgan('tiny'));
 app.use(bodyParser.json());
 
 router.get('/', function (req, res) {
-  res.redirect('/doc');
+  res.redirect('/docs');
 });
 
-router.use('/doc', express.static('../../docs/dist'));
-
 app.
+  use(PREFIX + '/docs', docs).
   use(PREFIX + '/rest', rest).
   use(PREFIX + '/tour', tour).
   use(PREFIX + '/demo', demo).

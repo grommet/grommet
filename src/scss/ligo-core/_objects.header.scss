@@ -1,72 +1,59 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 .header {
-  position: fixed;
-  top: - quadruple($inuit-base-spacing-unit);
-  left: 0px;
-  right: 0px;
-  height: quadruple($inuit-base-spacing-unit);
-  pointer-events: none;
-  z-index: 1;
-  transition: top $base-animation-duration;
 
-  @include media-query(palm) {
-    position: absolute;
-    top: - double($inuit-base-spacing-unit);
-    height: round($inuit-base-spacing-unit * 3);
-  }
-
-  &--active {
-    top: 0px;
-    pointer-events: auto;
-    transition: top double($base-animation-duration);
-  }
-
-  &__background {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
+  &__wrapper {
     background-color: $header-background-color;
-  }
-
-  &__controls {
-    position: absolute;
-    top: 0px;
-    right: 0px;
+    border-bottom: 1px solid $border-color;
     padding: $inuit-base-spacing-unit;
-    text-align: right;
-
-    @include media-query(palm) {
-      padding: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit;
-    }
-
-    > li {
-      text-align: left;
-      margin-left: halve($inuit-base-spacing-unit);
-      vertical-align: top;
-    }
-  }
-}
-
-.fixed-header {
-  position: fixed;
-  background-color: $header-background-color;
-  z-index: 1;
-
-  &__container {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    right: 0px;
   }
 
-  @include media-query(palm) {
-    position: relative;
+  &__content {
+    display: -webkit-flex;
+    display: flex;
+  }
 
-    &__container {
-      position: static;
+  &--primary {
+    height: $primary-header-height;
+    line-height: $primary-header-height;
+
+    .header__wrapper {
+      padding: 0px $inuit-base-spacing-unit;
+    }
+
+    .header__content {
+      -webkit-justify-content: space-between;
+      justify-content: space-between;
+      white-space: nowrap;
+
+      > * {
+        &:last-child {
+          text-align: right;
+        }
+      }
+    }
+
+    @include media-query(lap-and-up) {
+      .header__wrapper {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        z-index: 1;
+      }
+    }
+  }
+
+  @for $i from 1 through length($brand-colors) {
+    &.header--accent-#{$i} {
+      .header__wrapper {
+        background-color: nth($brand-colors, $i);
+        color: $accent-text-color;
+
+        a {
+          color: $accent-text-color;
+        }
+      }
     }
   }
 }

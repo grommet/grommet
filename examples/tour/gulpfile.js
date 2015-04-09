@@ -5,7 +5,7 @@ var opts = {
   base: '../../',
   dist: 'examples/tour/dist/',
   copyAssets: [
-    'examples/tour/src/index.html', 
+    'examples/tour/src/index.html',
     {
       asset: 'examples/tour/src/img/**',
       dist: 'examples/tour/dist/img/'
@@ -15,7 +15,7 @@ var opts = {
   jsAssets: ['examples/tour/src/js/**/*.js'],
   mainJs: './examples/tour/src/js/index.js',
   mainScss: './examples/tour/src/scss/index.scss',
-  remoteDestination: '/var/www/html/tour',
+  remoteDestination: '/var/www/html/tour2',
   webpack: {
     resolve: {
       root: [

@@ -12,23 +12,27 @@ var Philosophy = require('./Philosophy');
 var Basics = require('./Basics');
 var Patterns = require('./Patterns');
 var Showcase = require('./Showcase');
-var Login = require('./Login');
-var Documents = require('Documents');
-var TBD = Documents.TBD;
+var Login = require('./patterns/Login');
+var Ligo = require('Ligo');
+var TBD = Ligo.TBD;
 
 var CONTENTS = [
-  {route: "introduction", label: 'Introduction'},
-  {route: "sg_philosophy", label: 'Philosophy'},
-  {route: "sg_basics", label: 'Basics'},
-  {route: "sg_patterns", label: 'Patterns', contents: [
-    {route: "sg_login", label: 'Login'},
-    {route: "sg_header", label: 'Header'},
-    {route: "sg_dashboard", label: 'Dashboard'},
-    {route: "sg_search", label: 'Search'}
-  ]},
-  {route: "sg_showcase", label: 'Showcase', contents: [
-    {route: "sg_oneview", label: 'OneView'}
-  ]}
+  {route: "sg_introduction", label: 'Introduction', component: Introduction, default: true},
+  {route: "sg_philosophy", label: 'Philosophy', component: Philosophy},
+  {route: "sg_basics", label: 'Basics', component: Basics},
+  {route: "sg_patterns", label: 'Patterns', component: Patterns,
+    contents: [
+      {route: "sg_login", label: 'Login', component: Login},
+      {route: "sg_header", label: 'Header', component: TBD},
+      {route: "sg_dashboard", label: 'Dashboard', component: TBD},
+      {route: "sg_search", label: 'Search', component: TBD}
+    ]
+  },
+  {route: "sg_showcase", label: 'Showcase', component: Showcase,
+    contents: [
+      {route: "sg_oneview", label: 'OneView', component: TBD}
+    ]
+  }
 ];
 
 var StyleGuide = React.createClass({
@@ -37,79 +41,163 @@ var StyleGuide = React.createClass({
 
   render: function() {
 
-    this._activeChapterIndex = -2;
-    var pages = [];
-    var nextLink = '';
-    var chapterContextLink = '';
+    this._chapterIndex = -2;
 
-    var chapters = CONTENTS.map(function (content, index) {
-      var chapterActive = this.isActive(content.route);
-      var pageActive = (content.hasOwnProperty('contents') &&
-        content.contents.some(function (item) {
-          return this.isActive(item.route);
+    var chapterLinks = CONTENTS.map(function (chapter, index) {
+      var chapterActive = this.isActive(chapter.route);
+      var pageActive = (chapter.hasOwnProperty('contents') &&
+        chapter.contents.some(function (page) {
+          return this.isActive(page.route);
         }.bind(this)));
       var active = chapterActive || pageActive;
 
       var className = '';
       if (active) {
         className = 'active';
-        this._activeChapterIndex = index;
+        this._chapterIndex = index;
       }
 
-      var chapterLink = (
-        <Link to={content.route} className={className}>{content.label}</Link>
+      return (
+        <Link key={chapter.label} to={chapter.route} className={className}>
+          {chapter.label}
+        </Link>
       );
-
-      if (active && content.hasOwnProperty('contents')) {
-
-        var activePageIndex = (chapterActive ? -1 : -2);
-        pages = content.contents.map(function (item, pageIndex) {
-
-          var pageLink = (<Link to={item.route}>{item.label}</Link>);
-
-          if (this.isActive(item.route)) {
-            activePageIndex = pageIndex;
-            chapterContextLink = chapterLink;
-          } else if (activePageIndex === (pageIndex - 1)) {
-            nextLink = pageLink;
-          }
-
-          return item;
-
-        }.bind(this));
-      }
-
-      if (! nextLink && this._activeChapterIndex === (index - 1)) {
-        nextLink = chapterLink;
-      }
-
-      return chapterLink;
     }.bind(this));
 
+    var chapter = CONTENTS[this._chapterIndex];
+    var header = React.createFactory(chapter.component.Header)();
+    var pageLinks = null;
+    var nextLink = null;
+    var onPage = false;
+    var layoutCompact = false;
+
+    if (chapter.hasOwnProperty('contents')) {
+
+      var activePageIndex = -2;
+      pageLinks = chapter.contents.map(function (page, index) {
+
+        var className = '';
+        if (this.isActive(page.route)) {
+          className = 'active';
+        }
+
+        var pageLink = (
+          <Link key={page.label} to={page.route} className={className}>
+            {page.label}
+          </Link>
+        );
+
+        if (this.isActive(page.route)) {
+          onPage = true;
+          activePageIndex = index;
+          layoutCompact = true;
+          header = (
+            <Ligo.Nav accent={true}>
+              {chapterLinks[this._chapterIndex]}
+              {pageLink}
+            </Ligo.Nav>
+          );
+        } else if (activePageIndex === (index - 1)) {
+          nextLink = pageLink;
+        }
+
+        return pageLink;
+
+      }.bind(this));
+    }
+
+    if (! nextLink) {
+      nextLink = chapterLinks[this._chapterIndex + 1];
+    }
+
+    if (onPage) {
+      // we are on a page, no chapters
+      chapterLinks = null;
+    }
+
+    var accentIndex = this._chapterIndex + 1;
+
+    var content;
+    if (pageLinks || true) {
+      content = (
+        <Ligo.Layout centerColumn={true}>
+          <Ligo.Nav vertical={true}>{pageLinks}</Ligo.Nav>
+          <Ligo.Document accentIndex={accentIndex}>
+            <RouteHandler />
+          </Ligo.Document>
+        </Ligo.Layout>
+      );
+    } else {
+      content = (
+        <Ligo.Document centerColumn={true} accentIndex={accentIndex}>
+          <RouteHandler />
+        </Ligo.Document>
+      );
+    }
+
     return (
-      <Documents.Document chapters={chapters} pages={pages} next={nextLink}
-        chapter={chapterContextLink}
-        activeChapterIndex={this._activeChapterIndex + 1}>
-        <RouteHandler />
-      </Documents.Document>
+      <div>
+        <Ligo.Layout centerColumn={true} accentIndex={accentIndex}
+          compact={layoutCompact}>
+          <Ligo.Nav vertical={true} accent={true}>
+            {chapterLinks}
+          </Ligo.Nav>
+          {header}
+        </Ligo.Layout>
+        {content}
+        <Ligo.Footer centerColumn={true} scrollTop={true}>
+          <Ligo.Nav><span>Next: {nextLink}</span></Ligo.Nav>
+        </Ligo.Footer>
+      </div>
     );
   }
 });
 
+var Empty = React.createClass({
+  render: function () {
+    return (<div></div>);
+  }
+});
+
+function createContentRoutes(contents, level) {
+  var result = [];
+  contents.forEach(function (content) {
+
+    var handler;
+    if (level > 1) {
+      handler = content.component;
+    } else {
+      handler = content.component.Section;
+    }
+    if (! handler) {
+      handler = Empty;
+    }
+
+    if (content.default) {
+      result.push(
+        <DefaultRoute key={content.label} name={content.route}
+          handler={handler} />
+      );
+    } else {
+      result.push(
+        <Route key={content.label} name={content.route}
+          path={content.label.toLowerCase()}
+          handler={handler} />
+      );
+    }
+
+    if (content.hasOwnProperty('contents')) {
+      result = result.concat(createContentRoutes(content.contents, level + 1));
+    }
+  });
+  return result;
+}
+
 StyleGuide.routes = function () {
+  var routes = createContentRoutes(CONTENTS, 1);
   return (
     <Route name="style guide" path="styleguide" handler={StyleGuide}>
-      <DefaultRoute name="introduction" handler={Introduction} />
-      <Route name="sg_philosophy" path="philosophy" handler={Philosophy} />
-      <Route name="sg_basics" path="basics" handler={Basics} />
-      <Route name="sg_patterns" path="patterns" handler={Patterns} />
-      <Route name="sg_login" path="login" handler={Login} />
-      <Route name="sg_header" path="header" handler={TBD} />
-      <Route name="sg_dashboard" path="dashboard" handler={TBD} />
-      <Route name="sg_search" path="search" handler={TBD} />
-      <Route name="sg_filter" path="filter" handler={TBD} />
-      <Route name="sg_showcase" path="showcase" handler={Showcase} />
-      <Route name="sg_oneview" path="oneview" handler={TBD} />
+      {routes}
     </Route>
   );
 };

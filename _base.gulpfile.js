@@ -10,6 +10,7 @@ var WebpackDevServer = require('webpack-dev-server');
 var assign = require('object-assign');
 var rsync = require('gulp-rsync');
 var nodemon = require('gulp-nodemon');
+var path = require('path');
 
 var webpackConfig = {
   output: {
@@ -30,11 +31,19 @@ var webpackConfig = {
         loader: 'file-loader?mimetype=image/jpg'
       },
       {
+        test: /\.woff$/,
+        loader: 'file-loader'
+      },
+      {
         test: /\.scss$/,
         loader: 'style!css!sass?outputStyle=expanded'
       },
       {
-        test: /\.htm$/,
+        test: /style_guide\/[^\/]*\.htm$/,
+        loader: 'jsx-loader!imports?React=react!html-jsx-loader?group=true'
+      },
+      {
+        test: /documentation\/.*\.htm$|downloads\/.*\.htm$|style_guide\/.*\/.*\.htm$/,
         loader: 'jsx-loader!imports?React=react!html-jsx-loader'
       }
     ]
@@ -97,7 +106,7 @@ module.exports = function(gulp, opts) {
     });
 
     config.resolve.extensions = ['', '.js', '.json', '.htm', 'html', 'scss'];
-    
+
     return gulp.src(options.mainJs)
       .pipe(gulpWebpack(config))
       .pipe(gulp.dest(dist));
@@ -110,7 +119,7 @@ module.exports = function(gulp, opts) {
         script: options.nodeServerPath
       });
     }
-    
+
     var devWebpackConfig = assign({}, webpackConfig, options.webpack, {
       entry: {
         app: ['webpack/hot/dev-server', './' + options.mainJs],
@@ -141,7 +150,7 @@ module.exports = function(gulp, opts) {
 
     if (options.devServerProxy) {
       devServerConfig.proxy = options.devServerProxy;
-    } 
+    }
 
     new WebpackDevServer(webpack(devWebpackConfig), devServerConfig).
         listen(options.devServerPort || 8080, "localhost");

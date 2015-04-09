@@ -1,0 +1,111 @@
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+
+.document {
+
+  @for $i from 1 through length($brand-colors) {
+    &.document--accent-#{$i} {
+      h1,
+      h2,
+      h3,
+      h4,
+      dt {
+        font-weight: normal;
+        color: nth($brand-colors, $i);
+      }
+    }
+  }
+
+  &--no-contents {
+    .document {
+      &__content {
+        padding-left: 0px;
+
+        > * {
+          max-width: none;
+        }
+      }
+    }
+  }
+
+  section {
+    margin-top: $inuit-base-spacing-unit;
+    margin-bottom: $inuit-base-spacing-unit;
+    padding-top: $inuit-base-spacing-unit;
+  }
+
+  section,
+  header {
+
+    img {
+      margin-top: double($inuit-base-spacing-unit);
+      margin-bottom: double($inuit-base-spacing-unit);
+      display: block;
+      max-width: $readable-text-width;
+
+      @include media-query(palm) {
+        padding-left: $inuit-base-spacing-unit;
+        padding-right: $inuit-base-spacing-unit;
+      }
+    }
+
+    ol,
+    ul {
+      @include media-query(palm) {
+        padding-left: double($inuit-base-spacing-unit);
+        padding-right: $inuit-base-spacing-unit;
+      }
+    }
+
+    li {
+      max-width: $readable-text-width;
+    }
+
+    dt {
+      margin-top: $inuit-base-spacing-unit;
+      margin-bottom: quarter($inuit-base-spacing-unit);
+      text-transform: uppercase;
+    }
+
+    dd {
+      margin-left: 0px;
+
+      @include media-query(palm) {
+        padding-right: $inuit-base-spacing-unit;
+      }
+    }
+
+    h2 {
+      position: relative;
+      padding-top: $inuit-base-spacing-unit;
+
+      &:after {
+        position: absolute;
+        content: '';
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        border-top: 1px solid $border-color;
+
+        @include media-query(palm) {
+          //left: $inuit-base-spacing-unit;
+          //right: $inuit-base-spacing-unit;
+        }
+
+      }
+    }
+  }
+
+  section:first-child {
+    margin-top: 0px;
+    padding-top: 0px;
+
+    h2 {
+      padding-top: 0px;
+    }
+
+    h2:after {
+      border-top: none;
+    }
+  }
+
+}

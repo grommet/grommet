@@ -17,49 +17,42 @@
   width: 100vw;
   height: 100vh;
   overflow: auto;
-  //background-color: $background-color;
   color: $text-color;
 
-  @include media-query(palm) {
-    position: relative;
-  }
-}
+  &__header {
+    height: $header-height;
+    @include inuit-font-size($inuit-heading-size-2, $header-height);
+    background-color: $header-background-color;
+    color: $header-color;
+    transition: all $transition-duration;
 
-.site-header {
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  height: $header-height;
-  @include inuit-font-size($inuit-heading-size-2, $header-height);
-  //white-space: nowrap;
-  z-index: 10;
-  background-color: $header-background-color;
-  color: $header-color;
-  transition: all $transition-duration;
+    @include media-query(lap-and-up) {
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      z-index: 10;
+    }
 
-  @include media-query(palm) {
-    position: absolute;
-  }
-
-  &__container {
-    max-width: $document-width + quadruple($inuit-base-spacing-unit);
-    margin: 0px auto;
-    padding-left: double($inuit-base-spacing-unit);
-    padding-right: double($inuit-base-spacing-unit);
-    display: -webkit-flex;
-    display: flex;
-
-    @include media-query(palm) {
+    &-contents {
+      max-width: $document-width + quadruple($inuit-base-spacing-unit);
+      margin: 0px auto;
       padding-left: $inuit-base-spacing-unit;
       padding-right: $inuit-base-spacing-unit;
-    }
-  }
+      display: -webkit-flex;
+      display: flex;
 
-  a {
-    display: inline;
-    color: $header-color;
-    text-decoration: none;
+      @include media-query(lap-and-up) {
+        padding-left: double($inuit-base-spacing-unit);
+        padding-right: double($inuit-base-spacing-unit);
+      }
+    }
+
+    a {
+      display: inline;
+      color: $header-color;
+      text-decoration: none;
+    }
   }
 
   &__title {
@@ -96,7 +89,7 @@
       @include media-query(lap) {
         @include inuit-font-size($inuit-heading-size-3, $header-height);
       }
-      
+
       @include media-query(palm) {
         @include inuit-font-size($inuit-heading-size-4, $header-height);
 
@@ -110,15 +103,15 @@
       }
     }
   }
-}
 
-.site-footer {
-  max-width: $document-width + quadruple($inuit-base-spacing-unit);
-  margin: 0px auto;
-  padding: double($inuit-base-spacing-unit);
-  color: $secondary-color;
+  &__footer {
+    max-width: $document-width + quadruple($inuit-base-spacing-unit);
+    margin: 0px auto;
+    padding: double($inuit-base-spacing-unit);
+    color: $secondary-text-color;
 
-  @include media-query(palm) {
-    padding: $inuit-base-spacing-unit;
+    @include media-query(palm) {
+      padding: $inuit-base-spacing-unit;
+    }
   }
 }

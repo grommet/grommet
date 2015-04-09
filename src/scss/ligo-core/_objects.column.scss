@@ -1,0 +1,12 @@
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+
+.center-column {
+  padding: $inuit-base-spacing-unit;
+
+  .center-column__content {
+    width: 100%;
+    max-width: $center-column-width;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

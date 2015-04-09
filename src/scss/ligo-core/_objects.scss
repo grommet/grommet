@@ -9,6 +9,10 @@
 @import "inuit-layout/objects.layout";
 @import "inuit-tables/objects.tables";
 
+@import "objects.icon";
+@import "objects.column";
+@import "objects.accent";
+
 @import "objects.input";
 @import "objects.donut";
 @import "objects.meter";
@@ -16,14 +20,22 @@
 @import "objects.tile";
 @import "objects.object";
 @import "objects.form";
+@import "objects.fixed-header";
 
 @import "objects.header";
+@import "objects.title";
 @import "objects.nav";
+@import "objects.nav-unified";
 @import "objects.session";
 @import "objects.notifications";
+@import "objects.layout";
+@import "objects.footer";
 
 @import "objects.app";
 @import "objects.tbd";
 
 @import "objects.login";
 @import "objects.settings";
+
+@import "objects.document";
+@import "objects.panel";

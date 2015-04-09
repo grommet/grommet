@@ -10,7 +10,6 @@
 @import 'inuit-functions/tools.functions';
 @import 'inuit-mixins/tools.mixins';
 @import 'inuit-responsive-tools/tools.responsive';
-@import 'inuit-tools-widths/tools.widths';
 
 // Generic
 @import 'inuit-normalize/generic.normalize';
@@ -31,28 +30,11 @@ $inuit-heading-size-6:  12px;
 @import 'inuit-images/base.images';
 @import 'inuit-paragraphs/base.paragraphs';
 
-@import 'base.page';
 @import 'base.font';
 @import 'base.icon';
 @import 'base.animation';
-@import 'base.section';
-@import 'base.nav';
 
 // Objects
-$inuit-enable-list-inline--delimited: true;
-@import 'inuit-list-inline/objects.list-inline';
-$inuit-enable-list-block--small: true;
-$inuit-enable-list-block--tiny: true;
-@import 'inuit-list-block/objects.list-block';
-@import 'inuit-list-ui/objects.list-ui';
-@import 'inuit-list-bare/objects.list-bare';
-$inuit-enable-box--small: true;
-@import 'inuit-box/objects.box';
-$inuit-enable-pack--auto: true;
-@import 'inuit-pack/objects.pack';
-$inuit-enable-layout--flush: true;
-$inuit-enable-layout--center: true;
-@import 'inuit-layout/objects.layout';
 $inuit-enable-table--cosy: true;
 @import 'inuit-tables/objects.tables';
 @import 'inuit-block/objects.block';
@@ -61,32 +43,9 @@ $inuit-enable-table--cosy: true;
 @import 'inuit-media/objects.media';
 
 @import 'objects.site';
-@import 'objects.document';
-@import 'objects.hero';
-@import 'objects.panel';
 @import 'objects.details';
 
 // Trumps
 @import 'inuit-clearfix/trumps.clearfix';
-$inuit-use-fractions:   false;
-@import 'inuit-widths/trumps.widths';
-@import 'inuit-responsive-widths/trumps.widths-responsive';
-$inuit-enable-margins:            true;
-$inuit-enable-margins--large:      true;
-$inuit-enable-margins--huge:      true;
-$inuit-enable-margins--none:      true;
-$inuit-enable-paddings:           true;
-$inuit-enable-paddings--large:     true;
-$inuit-enable-paddings--huge:     true;
-$inuit-enable-paddings--none:     true;
-@import 'inuit-spacing/trumps.spacing';
-$inuit-enable-responsive-margins:  true;
-$inuit-enable-responsive-margins--huge:     true;
-$inuit-enable-responsive-margins--none:     true;
-$inuit-enable-responsive-paddings:          true;
-$inuit-enable-responsive-paddings--huge:    true;
-$inuit-enable-responsive-paddings--none:    true;
-$inuit-generate-spacing-alias: null;
-@import 'inuit-responsive-spacing/trumps.spacing-responsive';
 @import 'inuit-headings-trumps/trumps.headings';
 @import 'inuit-print/trumps.print';

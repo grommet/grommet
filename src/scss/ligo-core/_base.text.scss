@@ -12,3 +12,8 @@ a {
     color: $link-color;
   }
 }
+
+p,
+dd {
+  max-width: $readable-text-width;
+}

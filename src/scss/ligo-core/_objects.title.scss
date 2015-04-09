@@ -1,0 +1,22 @@
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+
+.title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  @include inuit-font-size(40px, $primary-header-height);
+  font-weight: normal;
+
+  a {
+    color: $text-color;
+
+    &:hover {
+      color: $hover-text-color;
+    }
+  }
+
+  &--nav {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

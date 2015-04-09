@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 @include keyframes(draw-stroke) {
-  0%   { stroke-dashoffset: quadruple($panel-width); }
+  0% { stroke-dashoffset: quadruple($panel-width); }
   100% { stroke-dashoffset: 0; }
 }
 
@@ -70,7 +70,7 @@
   }
 
   &__key-item {
-    color: $secondary-color;
+    color: $secondary-text-color;
 
     > * {
       vertical-align: top;

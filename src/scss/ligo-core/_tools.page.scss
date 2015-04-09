@@ -1,0 +1,8 @@
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+
+@mixin center-content {
+  width: 100%;
+  max-width: $center-content-width;
+  margin-left: auto;
+  margin-right: auto;
+}

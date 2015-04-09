@@ -5,6 +5,8 @@ var Route = require('react-router').Route;
 var DefaultRoute = require('react-router').DefaultRoute;
 
 var Ligo = require('ligo');
+var Tour = require('./Tour');
+/*
 var App = Ligo.App;
 var Login = Ligo.Login;
 var Settings = Ligo.Settings;
@@ -17,7 +19,20 @@ var Activity = LigoIndex.Activity;
 var ActivityResource = LigoIndex.ActivityResource;
 var TBD = Ligo.TBD;
 var TourDashboard = require('./TourDashboard');
+*/
 
+var routes = (
+  <Route name="tour" path="/" handler={Tour}>
+    <Route name="login" handler={Ligo.TBD}/>
+    <Route name="tbd" handler={Ligo.TBD}/>
+    <Route name="settings" handler={Ligo.TBD}/>
+    <Route name="activity" handler={Ligo.TBD} />
+    <Route name="reports" handler={Ligo.TBD} />
+    <DefaultRoute name="dashboard" handler={Ligo.TBD}/>
+  </Route>
+);
+
+/*
 var routes = (
   <Route name="app" path="/" handler={App}>
     <Route name="login" handler={Login}/>
@@ -34,5 +49,6 @@ var routes = (
     <DefaultRoute name="dashboard" handler={TourDashboard}/>
   </Route>
 );
+*/
 
 module.exports = routes;

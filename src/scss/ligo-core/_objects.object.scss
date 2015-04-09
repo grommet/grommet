@@ -17,7 +17,7 @@ $attribute-value-width: round($inuit-base-spacing-unit * 16);
       vertical-align: top;
       width: $attribute-name-width;
       text-align: left;
-      color: $secondary-color;
+      color: $secondary-text-color;
     }
 
     &-value {
@@ -41,28 +41,13 @@ $attribute-value-width: round($inuit-base-spacing-unit * 16);
     &--unset {
       .object__attribute-value {
         font-style: italic;
-        color: $secondary-color;
+        color: $secondary-text-color;
       }
     }
 
     &--array {
       > .object__attribute-value > ol {
         position: relative;
-        //padding: $inuit-base-spacing-unit 0px;
-
-        /*&:before {
-          content: '[';
-          position: absolute;
-          top: 0px;
-          left: 0px;
-        }
-
-        &:after {
-          content: ']';
-          position: absolute;
-          bottom: 0px;
-          left: 0px;
-        }*/
 
         > li {
           border-top: 1px solid $border-color;

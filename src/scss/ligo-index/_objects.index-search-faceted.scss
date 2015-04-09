@@ -4,7 +4,7 @@
   position: relative;
 
   &__placeholder {
-    color: $secondary-color;
+    color: $secondary-text-color;
   }
 
   &__text {
@@ -56,7 +56,7 @@
     }
 
     &-attribute {
-      color: $secondary-color;
+      color: $secondary-text-color;
 
       &:after {
         content: ':';
@@ -158,6 +158,6 @@
   }
 
   &__suggestion-count {
-    color: $secondary-color;
+    color: $secondary-text-color;
   }
 }

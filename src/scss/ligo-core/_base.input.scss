@@ -1,6 +1,8 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-input, select, textarea {
+input,
+select,
+textarea {
   padding-left: halve($inuit-base-spacing-unit);
   padding-right: $inuit-base-spacing-unit;
 }
@@ -10,7 +12,7 @@ select {
   border-radius: 0px;
   padding-right: $inuit-base-spacing-unit;
   -webkit-appearance: none;
-  background: url(/img/drop-caret.svg) no-repeat center right quarter($inuit-base-spacing-unit);
+  background: url("/img/drop-caret.svg") no-repeat center right quarter($inuit-base-spacing-unit);
   background-size: halve($inuit-base-spacing-unit) quarter($inuit-base-spacing-unit);
 
   &.plain {
@@ -18,7 +20,8 @@ select {
   }
 }
 
-label.checkbox, label.radiobutton {
+label.checkbox,
+label.radiobutton {
   input {
     margin-right: quarter($inuit-base-spacing-unit);
   }

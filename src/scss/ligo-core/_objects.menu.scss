@@ -22,8 +22,8 @@
   &-icon {
     width: $inuit-base-spacing-unit;
     margin-left: halve($inuit-base-spacing-unit);
-    stroke: $inactive-icon-color;
-    fill: $inactive-icon-color;
+    stroke: $icon-color;
+    fill: $icon-color;
   }
 
   &--small {
@@ -71,8 +71,8 @@
       width: $inuit-base-spacing-unit;
       margin-left: halve($inuit-base-spacing-unit);
       margin-right: halve($inuit-base-spacing-unit);
-      stroke: $inactive-icon-color;
-      fill: $inactive-icon-color;
+      stroke: $icon-color;
+      fill: $icon-color;
     }
 
     &--small {

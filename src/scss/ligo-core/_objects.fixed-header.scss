@@ -1,0 +1,22 @@
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+
+.fixed-header {
+  position: fixed;
+  background-color: $header-background-color;
+  z-index: 1;
+
+  &__container {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+  }
+
+  @include media-query(palm) {
+    position: relative;
+
+    &__container {
+      position: static;
+    }
+  }
+}

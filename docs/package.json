@@ -1,0 +1,10 @@
+{
+  "name": "ligo-docs",
+  "version": "0.1.0",
+  "main": "src/index.js",
+  "description": "Ligo Docs",
+  "author": "Eric Soderberg",
+  "dependencies": {
+    "ligo": "^0.1.0"
+  }
+}

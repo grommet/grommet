@@ -75,7 +75,7 @@ linters:
 
   LeadingZero:
     enabled: true
-    style: exclude_zero # or 'include_zero'
+    style: include_zero # or 'exclude_zero'
 
   MergeableSelector:
     enabled: true
@@ -107,7 +107,7 @@ linters:
 
   QualifyingElement:
     enabled: true
-    allow_element_with_attribute: false
+    allow_element_with_attribute: true
     allow_element_with_class: true
     allow_element_with_id: false
 
@@ -134,7 +134,7 @@ linters:
 
   SpaceAfterPropertyColon:
     enabled: true
-    style: one_space # or 'no_space', or 'at_least_one_space', or 'aligned'
+    style: at_least_one_space # or 'no_space', or 'on_space', or 'at_least_one_space', or 'aligned'
 
   SpaceAfterPropertyName:
     enabled: true

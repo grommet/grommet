@@ -32,7 +32,7 @@
 
     thead {
       td, th {
-        color: $secondary-color;
+        color: $secondary-text-color;
         font-weight: normal;
         border-bottom: 1px dashed $border-color;
         vertical-align: top;
@@ -209,7 +209,7 @@
       &__timestamp {
         max-width: $panel-width;
         text-align: right;
-        color: $secondary-color;
+        color: $secondary-text-color;
         white-space: nowrap;
       }
     }

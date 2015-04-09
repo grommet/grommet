@@ -65,7 +65,8 @@
     text-align: right;
     z-index: 1;
 
-    button, input[type="submit"] {
+    button,
+    input[type="submit"] {
       line-height: normal;
       background-color: inherit;
       border: none;
@@ -92,10 +93,6 @@
     }
   }
 
-  &__fields {
-
-  }
-
   &__field {
     margin-bottom: halve($inuit-base-spacing-unit);
 
@@ -115,11 +112,13 @@
       }
     }
 
-    input, textarea {
+    input,
+    textarea {
       max-width: quadruple(quadruple($inuit-base-spacing-unit));
     }
 
-    label.checkbox, label.radiobutton {
+    label.checkbox,
+    label.radiobutton {
       margin-right: $inuit-base-spacing-unit;
     }
   }
