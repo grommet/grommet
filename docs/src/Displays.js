@@ -7,7 +7,7 @@ var Displays = React.createClass({
   render: function() {
 
     return (
-      <svg version="1.1"
+      <svg version="1.1" className={this.props.className}
       	 viewBox="0 0 473 295" enableBackground="new 0 0 473 295">
       <g>
       	<rect x="212.5" y="108.5" fill="#676767" width="23" height="179"/>

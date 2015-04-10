@@ -13,6 +13,13 @@
       flex: 0 0 auto;
     }
 
+    @for $i from 1 through 4 {
+      > .flex-#{$i} {
+        -webkit-flex: $i;
+        flex: $i;
+      }
+    }
+
     > * {
       margin-right: double($inuit-base-spacing-unit);
 

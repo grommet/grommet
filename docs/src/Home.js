@@ -13,8 +13,8 @@ var Home = React.createClass({
 
     return (
       <Ligo.Layout centerColumn={true} texture={texture}>
-        <Displays />
-        <div>
+        <Displays className="flex-2"/>
+        <div className="flex-1">
           <Ligo.Panel index={1} title="Design">
             <p>Guidelines for designing a Ligo application.</p>
             <Link to="style guide" className="call-to-action">Style Guide</Link>
