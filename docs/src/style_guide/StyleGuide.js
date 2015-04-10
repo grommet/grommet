@@ -6,7 +6,6 @@ var Route = Router.Route;
 var DefaultRoute = Router.DefaultRoute;
 var RouteHandler = Router.RouteHandler;
 var Link = Router.Link;
-var RouterState = Router.State;
 var Introduction = require('./Introduction');
 var Philosophy = require('./Philosophy');
 var Basics = require('./Basics');
@@ -59,8 +58,10 @@ var CONTENTS = [
 
 var StyleGuide = React.createClass({
 
-  mixins: [RouterState],
-
+  contextTypes: {
+    router: React.PropTypes.func.isRequired
+  },
+  
   _linkToNode: function(e) {
     e.preventDefault();
     var node = this.getDOMNode();
@@ -72,10 +73,10 @@ var StyleGuide = React.createClass({
     this._chapterIndex = -2;
 
     var chapterLinks = CONTENTS.map(function (chapter, index) {
-      var chapterActive = this.isActive(chapter.route);
+      var chapterActive = this.context.router.isActive(chapter.route);
       var pageActive = (chapter.hasOwnProperty('contents') &&
         chapter.contents.some(function (page) {
-          return page.route ? this.isActive(page.route) : false;
+          return page.route ? this.context.router.isActive(page.route) : false;
         }.bind(this)));
       var active = chapterActive || pageActive;
 
@@ -105,7 +106,7 @@ var StyleGuide = React.createClass({
       pageLinks = chapter.contents.map(function (page, index) {
 
         var className = '';
-        if (page.route && this.isActive(page.route)) {
+        if (page.route && this.context.router.isActive(page.route)) {
           className = 'active';
         }
 
@@ -115,7 +116,7 @@ var StyleGuide = React.createClass({
           </Link>
         );
 
-        if (page.route && this.isActive(page.route)) {
+        if (page.route && this.context.router.isActive(page.route)) {
           onPage = true;
           activePageIndex = index;
           layoutCompact = true;

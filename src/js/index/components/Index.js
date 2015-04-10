@@ -1,6 +1,5 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-var _ = require('lodash');
 var React = require('react');
 var NavStore = require('../../stores/NavStore');
 var Router = require('../../utils/Router');
@@ -16,6 +15,10 @@ var Search = require('../utils/Search');
 var CLASS_ROOT = 'index';
 
 var Index = React.createClass({
+
+  contextTypes: {
+    router: React.PropTypes.func.isRequired
+  },
 
   _mobileScroll: function () {
     // if we are narrow, scroll down to hide app header above
@@ -123,7 +126,6 @@ var Index = React.createClass({
     var classes = [CLASS_ROOT];
     var filterClasses = [CLASS_ROOT + "__filter"];
     var resourceClasses = [CLASS_ROOT + "__resource"];
-    var result = this.state.index.result;
 
     if (this.state.filterActive) {
       classes.push(CLASS_ROOT + "--shared");

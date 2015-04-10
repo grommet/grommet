@@ -2,11 +2,12 @@
 var React = require('react');
 var Router = require('react-router');
 var Link = Router.Link;
-var RouterState = Router.State;
 
 var MenuNavigation = React.createClass({
 	
-	mixins: [RouterState],
+	contextTypes: {
+      router: React.PropTypes.func.isRequired
+    },
 
 	propTypes: {
 		items: React.PropTypes.arrayOf(React.PropTypes.object).isRequired
@@ -20,7 +21,7 @@ var MenuNavigation = React.createClass({
 			if (item.subNavs) {
 
 				var classNames = ['nav__subnavs'];
-				if (this.isActive(item.route)) {
+				if (this.context.router.isActive(item.route)) {
 					classNames.push('active');
 				}
 
