@@ -18,7 +18,29 @@ var TBD = Ligo.TBD;
 
 var CONTENTS = [
   {route: "sg_introduction", label: 'Introduction', component: Introduction, default: true},
-  {route: "sg_philosophy", label: 'Philosophy', component: Philosophy},
+  {route: "sg_philosophy", label: 'Philosophy', component: Philosophy,
+    contents: [
+      {
+        label: 'Best Practices',
+        id: 'best-practices'
+      },
+      {
+        label: 'Usability',
+        id: 'usability'
+      },
+      {
+        label: 'Interactions',
+        id: 'interactions'
+      },
+      {
+        label: 'Mobile',
+        id: 'mobile'
+      },
+      {
+        label: 'Accessibility',
+        id: 'accessibility'
+      }
+    ]},
   {route: "sg_basics", label: 'Basics', component: Basics},
   {route: "sg_patterns", label: 'Patterns', component: Patterns,
     contents: [
@@ -39,6 +61,12 @@ var StyleGuide = React.createClass({
 
   mixins: [RouterState],
 
+  _linkToNode: function(e) {
+    e.preventDefault();
+    var node = this.getDOMNode();
+    node.parentNode.scrollTop = node.querySelectorAll('section#'+e.target.id)[0].offsetTop - 100;
+  },
+
   render: function() {
 
     this._chapterIndex = -2;
@@ -47,7 +75,7 @@ var StyleGuide = React.createClass({
       var chapterActive = this.isActive(chapter.route);
       var pageActive = (chapter.hasOwnProperty('contents') &&
         chapter.contents.some(function (page) {
-          return this.isActive(page.route);
+          return page.route ? this.isActive(page.route) : false;
         }.bind(this)));
       var active = chapterActive || pageActive;
 
@@ -77,17 +105,17 @@ var StyleGuide = React.createClass({
       pageLinks = chapter.contents.map(function (page, index) {
 
         var className = '';
-        if (this.isActive(page.route)) {
+        if (page.route && this.isActive(page.route)) {
           className = 'active';
         }
 
-        var pageLink = (
+        var pageLink = page.id ? <a key={page.id} id={page.id} href="#" onClick={this._linkToNode} className={className}>{page.label}</a> : (
           <Link key={page.label} to={page.route} className={className}>
             {page.label}
           </Link>
         );
 
-        if (this.isActive(page.route)) {
+        if (page.route && this.isActive(page.route)) {
           onPage = true;
           activePageIndex = index;
           layoutCompact = true;
