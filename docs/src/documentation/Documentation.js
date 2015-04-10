@@ -9,13 +9,14 @@ var Link = Router.Link;
 var Ligo = require('ligo');
 var TBD = Ligo.TBD;
 var HelloWorld = require('./HelloWorld');
+var GetStarted = require('./GetStarted');
 var hljs = require('highlight.js');
 
 var CONTENTS = [
   {label: 'Guides',
     contents: [
       {route: 'doc_helloworld', label: 'Hello World', component: HelloWorld, default: true},
-      {route: 'doc_getstarted', label: 'Get Started', component: TBD}
+      {route: 'doc_getstarted', label: 'Get Started', component: GetStarted}
     ]
   },
   {label: 'Patterns',
