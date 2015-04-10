@@ -11,5 +11,5 @@ body {
 .hide-palm {
   @include media-query(palm) {
     display: none;
-  }  
+  }
 }

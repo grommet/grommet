@@ -2,19 +2,6 @@
 
 .document {
 
-  @for $i from 1 through length($brand-colors) {
-    &.document--accent-#{$i} {
-      h1,
-      h2,
-      h3,
-      h4,
-      dt {
-        font-weight: normal;
-        color: nth($brand-colors, $i);
-      }
-    }
-  }
-
   &--no-contents {
     .document {
       &__content {
@@ -41,12 +28,6 @@
       margin-bottom: double($inuit-base-spacing-unit);
       display: block;
       max-width: $readable-text-width;
-
-      @include media-query(palm) {
-        padding-left: $inuit-base-spacing-unit;
-        padding-right: $inuit-base-spacing-unit;
-        width: 100%;
-      }
     }
 
     ol,
@@ -54,7 +35,7 @@
       @include media-query(palm) {
         padding-left: $inuit-base-spacing-unit;
         padding-right: $inuit-base-spacing-unit;
-        margin: 0;
+        margin-left: 0px;
         margin-bottom: $inuit-base-spacing-unit;
       }
     }

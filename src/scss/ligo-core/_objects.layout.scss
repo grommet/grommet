@@ -26,7 +26,7 @@
     &__content {
       -webkit-flex-direction: column;
       flex-direction: column;
-      
+
       > * {
         &:not(:empty) {
           width: 100%;
@@ -36,8 +36,8 @@
 
           &:last-child {
             border-bottom: none;
-            margin: 0;
-            padding: 0;
+            margin-bottom: 0;
+            padding-bottom: 0;
           }
         }
       }
@@ -45,19 +45,12 @@
   }
 
   &--compact {
-    padding: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
 
     .layout__content {
       padding-top: halve($inuit-base-spacing-unit);
       padding-bottom: halve($inuit-base-spacing-unit);
-
-      @include media-query(palm) {
-        padding-left: $inuit-base-spacing-unit;
-      }
-
-      @include media-query(lap) {
-        padding-left: $inuit-base-spacing-unit;
-      }
     }
   }
 }
