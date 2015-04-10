@@ -16,7 +16,7 @@
   &--primary {
     height: $primary-header-height;
     line-height: $primary-header-height;
-    padding: 0; // TODO: remove
+    padding: 0px;
 
     .header__wrapper {
       padding: 0px $inuit-base-spacing-unit;

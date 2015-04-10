@@ -26,12 +26,6 @@
     }
   }
 
-  &--font-palm { // TODO: remove?
-    @include media-query(palm) {
-      font-size: $inuit-heading-size-4;
-    }
-  }
-
   &--vertical {
     width: $nav-width;
 
