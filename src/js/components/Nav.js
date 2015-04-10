@@ -23,6 +23,9 @@ var Nav = React.createClass({
     if (this.props.accent) {
       classes.push("nav--accent");
     }
+    if (this.props.fontPalm) {
+      classes.push("nav--font-palm");
+    }
     if (this.props.accentIndex) {
       classes.push("accent-text-" + this.props.accentIndex);
     }

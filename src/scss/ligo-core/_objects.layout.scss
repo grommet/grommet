@@ -26,17 +26,19 @@
     &__content {
       -webkit-flex-direction: column;
       flex-direction: column;
-
+      
       > * {
-        width: 100%;
-        margin-bottom: double($inuit-base-spacing-unit);
-        padding-bottom: double($inuit-base-spacing-unit);
-        border-bottom: 1px solid $border-color;
+        &:not(:empty) {
+          width: 100%;
+          margin-bottom: double($inuit-base-spacing-unit);
+          padding-bottom: double($inuit-base-spacing-unit);
+          border-bottom: 1px solid $border-color;
 
-        &:last-child {
-          border-bottom: none;
-          margin: 0;
-          padding: 0;
+          &:last-child {
+            border-bottom: none;
+            margin: 0;
+            padding: 0;
+          }
         }
       }
     }

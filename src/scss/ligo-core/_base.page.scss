@@ -7,3 +7,9 @@ body {
   width: 100%;
   overflow: hidden;
 }
+
+.hide-palm {
+  @include media-query(palm) {
+    display: none;
+  }  
+}

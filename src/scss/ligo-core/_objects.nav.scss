@@ -24,13 +24,13 @@
       margin-right: 0px;
       margin-left: $inuit-base-spacing-unit;
     }
-
-    .hide-palm {
-      @include media-query(palm) {
-        display: none;
-      }  
-    }
     
+  }
+
+  &--font-palm {
+    @include media-query(palm) {
+      font-size: $inuit-heading-size-4;
+    }
   }
 
   &--vertical {
@@ -39,7 +39,7 @@
     > * {
       display: block;
       margin-left: 0px;
-      margin-right: double($inuit-base-spacing-unit);
+      margin-right: double($inuit-base-spacing-unit);  
     }
 
     h1,

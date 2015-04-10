@@ -30,7 +30,7 @@ var Docs = React.createClass({
       <Ligo.App>
         <Ligo.Header centerColumn={true} primary={true}>
           <Ligo.Title>{title}</Ligo.Title>
-          <Ligo.Nav right={true}>{nav}</Ligo.Nav>
+          <Ligo.Nav right={true} fontPalm={true}>{nav}</Ligo.Nav>
         </Ligo.Header>
         <RouteHandler />
         <Ligo.Footer centerColumn={true}>

@@ -167,7 +167,7 @@ var StyleGuide = React.createClass({
       <div>
         <Ligo.Layout centerColumn={true} accentIndex={accentIndex}
           compact={layoutCompact}>
-          <Ligo.Nav vertical={true} accent={true}>
+          <Ligo.Nav vertical={true} accent={true} >
             {chapterLinks}
           </Ligo.Nav>
           {header}
