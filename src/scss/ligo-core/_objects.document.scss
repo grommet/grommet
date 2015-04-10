@@ -28,6 +28,10 @@
       margin-bottom: double($inuit-base-spacing-unit);
       display: block;
       max-width: $readable-text-width;
+
+      @include media-query(palm) {
+        max-width: 100%;
+      }
     }
 
     ol,
