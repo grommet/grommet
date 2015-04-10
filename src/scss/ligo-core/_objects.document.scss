@@ -45,14 +45,17 @@
       @include media-query(palm) {
         padding-left: $inuit-base-spacing-unit;
         padding-right: $inuit-base-spacing-unit;
+        width: 100%;
       }
     }
 
     ol,
     ul {
       @include media-query(palm) {
-        padding-left: double($inuit-base-spacing-unit);
+        padding-left: $inuit-base-spacing-unit;
         padding-right: $inuit-base-spacing-unit;
+        margin: 0;
+        margin-bottom: $inuit-base-spacing-unit;
       }
     }
 
