@@ -72,6 +72,7 @@
       &-label {
         padding-left: $inuit-base-spacing-unit;
       }
+
       &-drop-icon {
         display: none;
       }
@@ -110,10 +111,7 @@
     > * {
       display: block;
     }
-  }
 
-  &--down,
-  &--up {
     h1,
     h2,
     h3,

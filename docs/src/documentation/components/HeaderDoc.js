@@ -3,7 +3,6 @@
 var React = require('react');
 var Ligo = require('ligo');
 var Header = Ligo.Header;
-var Title = Ligo.Title;
 var Menu = Ligo.Menu;
 
 var HeaderDoc = React.createClass({
