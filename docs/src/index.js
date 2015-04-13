@@ -12,8 +12,8 @@ var RouteHandler = Router.RouteHandler;
 var Link = Router.Link;
 var Ligo = require('ligo');
 var Home = require('./Home');
-//var DesignIcon = require('./DesignIcon');
-//var DevelopIcon = require('./DevelopIcon');
+var DesignIcon = require('./DesignIcon');
+var DevelopIcon = require('./DevelopIcon');
 var StyleGuide = require('./style_guide/StyleGuide');
 var Documentation = require('./documentation/Documentation');
 var Downloads = require('./downloads/Downloads');
@@ -24,13 +24,13 @@ var Docs = React.createClass({
     var title = (<Link to="docs">ligo</Link>);
     var nav = [
       (<Link key="style-guide" to="style guide">
-        <span>Style Guide</span>
+        <Ligo.Label text="Style Guide" icon={<DesignIcon />} />
       </Link>),
       (<Link key="documentation" to="documentation">
-        <span>Documentation</span>
+        <Ligo.Label text="Documentation" icon={<DevelopIcon />} />
       </Link>),
       (<Link key="downloads" to="downloads">
-        <span>Downloads</span>
+        <Ligo.Label text="Downloads" />
       </Link>)
     ];
 

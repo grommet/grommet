@@ -1,0 +1,24 @@
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+
+.label {
+  @include media-query(palm) {
+    &__text {
+      display: none;
+    }
+  }
+
+  @include media_query(lap-and-up) {
+    &__icon {
+      display: none;
+    }
+  }
+
+  a.active > & {
+    .label__icon.control-icon {
+      svg {
+        fill: $active-icon-color;
+        stroke: $active-icon-color;
+      }
+    }
+  }
+}

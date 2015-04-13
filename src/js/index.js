@@ -13,6 +13,7 @@ var Ligo = {
   Footer: require('./components/Footer'),
   Form: require('./components/Form'),
   Header: require('./components/Header'),
+  Label: require('./components/Label'),
   Link: require('./components/Link'),
   Login: require('./components/Login'),
   Nav: require('./components/Nav'),

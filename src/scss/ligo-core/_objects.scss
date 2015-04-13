@@ -9,33 +9,29 @@
 @import "inuit-layout/objects.layout";
 @import "inuit-tables/objects.tables";
 
-@import "objects.icon";
-@import "objects.column";
 @import "objects.accent";
-
-@import "objects.input";
+@import "objects.app";
+@import "objects.column";
+@import "objects.document";
 @import "objects.donut";
-@import "objects.meter";
-@import "objects.menu";
-@import "objects.tile";
-@import "objects.object";
-@import "objects.form";
 @import "objects.fixed-header";
-
+@import "objects.footer";
+@import "objects.form";
 @import "objects.header";
-@import "objects.title";
+@import "objects.icon";
+@import "objects.input";
+@import "objects.label";
+@import "objects.layout";
+@import "objects.login";
+@import "objects.menu";
+@import "objects.meter";
 @import "objects.nav";
 @import "objects.nav-unified";
-@import "objects.session";
 @import "objects.notifications";
-@import "objects.layout";
-@import "objects.footer";
-
-@import "objects.app";
-@import "objects.tbd";
-
-@import "objects.login";
-@import "objects.settings";
-
-@import "objects.document";
+@import "objects.object";
 @import "objects.panel";
+@import "objects.session";
+@import "objects.settings";
+@import "objects.tbd";
+@import "objects.tile";
+@import "objects.title";

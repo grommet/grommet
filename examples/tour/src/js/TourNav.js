@@ -6,7 +6,8 @@ var TourMenu = require('./TourMenu');
 var TourNav = React.createClass({
 
   propTypes: {
-    onRequestClose: React.PropTypes.func
+    onRequestClose: React.PropTypes.func,
+    router: React.PropTypes.object.isRequired
   },
 
   childContextTypes: {
