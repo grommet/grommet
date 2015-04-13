@@ -6,13 +6,19 @@ var Route = Router.Route;
 var DefaultRoute = Router.DefaultRoute;
 var RouteHandler = Router.RouteHandler;
 var Link = Router.Link;
-var Ligo = require('ligo');
-var TBD = Ligo.TBD;
+var LigoLayout = require('ligo/components/Layout');
+var LigoMenu = require('ligo/components/Menu');
+var LigoTBD = require('ligo/components/TBD');
+var LigoDocument = require('ligo/components/Document');
 var HelloWorld = require('./HelloWorld');
 var GetStarted = require('./GetStarted');
 var MenuDoc = require('./components/MenuDoc');
 var HeaderDoc = require('./components/HeaderDoc');
-var hljs = require('highlight.js');
+require("!style!css!highlight.js/styles/github.css");
+var hljs = require('highlight.js/lib/highlight');
+hljs.registerLanguage('bash', require('highlight.js/lib/languages/bash'));
+hljs.registerLanguage('xml', require('highlight.js/lib/languages/xml'));
+hljs.registerLanguage('javascript', require('highlight.js/lib/languages/javascript'));
 
 var CONTENTS = [
   {label: 'Guides',
@@ -23,31 +29,31 @@ var CONTENTS = [
   },
   {label: 'Patterns',
     contents: [
-      {route: 'doc_dashboard', label: 'Dashboard', component: TBD},
-      {route: 'doc_index', label: 'Index', component: TBD},
-      {route: 'doc_login', label: 'Login', component: TBD},
-      {route: 'doc_navigation', label: 'Navigation', component: TBD},
-      {route: 'doc_search', label: 'Search', component: TBD},
-      {route: 'doc_session', label: 'Session', component: TBD}
+      {route: 'doc_dashboard', label: 'Dashboard', component: LigoTBD},
+      {route: 'doc_index', label: 'Index', component: LigoTBD},
+      {route: 'doc_login', label: 'Login', component: LigoTBD},
+      {route: 'doc_navigation', label: 'Navigation', component: LigoTBD},
+      {route: 'doc_search', label: 'Search', component: LigoTBD},
+      {route: 'doc_session', label: 'Session', component: LigoTBD}
     ]
   },
   {label: 'Components',
     contents: [
-      {route: 'doc_chart', label: 'Chart', component: TBD},
-      {route: 'doc_document', label: 'Document', component: TBD},
-      {route: 'doc_donut', label: 'Donut', component: TBD},
-      {route: 'doc_footer', label: 'Footer', component: TBD},
-      {route: 'doc_form', label: 'Form', component: TBD},
+      {route: 'doc_chart', label: 'Chart', component: LigoTBD},
+      {route: 'doc_document', label: 'Document', component: LigoTBD},
+      {route: 'doc_donut', label: 'Donut', component: LigoTBD},
+      {route: 'doc_footer', label: 'Footer', component: LigoTBD},
+      {route: 'doc_form', label: 'Form', component: LigoTBD},
       {route: 'doc_header', label: 'Header', component: HeaderDoc},
       {route: 'doc_menu', label: 'Menu', component: MenuDoc},
-      {route: 'doc_meter', label: 'Meter', component: TBD},
-      {route: 'doc_table', label: 'Table', component: TBD},
-      {route: 'doc_tile', label: 'Tile', component: TBD}
+      {route: 'doc_meter', label: 'Meter', component: LigoTBD},
+      {route: 'doc_table', label: 'Table', component: LigoTBD},
+      {route: 'doc_tile', label: 'Tile', component: LigoTBD}
     ]
   },
   {label: 'Reference',
     contents: [
-      {route: 'doc_architecture', label: 'Architecture', component: TBD}
+      {route: 'doc_architecture', label: 'Architecture', component: LigoTBD}
     ]
   }
 ];
@@ -96,12 +102,12 @@ var Documentation = React.createClass({
   render: function() {
     var pages = createPageLinks(CONTENTS, 2);
     return (
-      <Ligo.Layout centerColumn={true}>
-        <Ligo.Menu direction="down" accentIndex={1}>{pages}</Ligo.Menu>
-        <Ligo.Document accentIndex={1}>
+      <LigoLayout centerColumn={true}>
+        <LigoMenu direction="down" accentIndex={1}>{pages}</LigoMenu>
+        <LigoDocument accentIndex={1}>
           <RouteHandler />
-        </Ligo.Document>
-      </Ligo.Layout>
+        </LigoDocument>
+      </LigoLayout>
     );
   }
 });

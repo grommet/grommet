@@ -12,8 +12,11 @@ var Basics = require('./Basics');
 var Patterns = require('./Patterns');
 var Showcase = require('./Showcase');
 var Login = require('./patterns/Login');
-var Ligo = require('Ligo');
-var TBD = Ligo.TBD;
+var LigoLayout = require('ligo/components/Layout');
+var LigoTBD = require('ligo/components/TBD');
+var LigoDocument = require('ligo/components/Document');
+var LigoFooter = require('ligo/components/Footer');
+var LigoMenu = require('ligo/components/Menu');
 
 var CONTENTS = [
   {route: "sg_introduction", label: 'Introduction', component: Introduction, default: true},
@@ -44,14 +47,14 @@ var CONTENTS = [
   {route: "sg_patterns", label: 'Patterns', component: Patterns,
     contents: [
       {route: "sg_login", label: 'Login', component: Login},
-      {route: "sg_header", label: 'Header', component: TBD},
-      {route: "sg_dashboard", label: 'Dashboard', component: TBD},
-      {route: "sg_search", label: 'Search', component: TBD}
+      {route: "sg_header", label: 'Header', component: LigoTBD},
+      {route: "sg_dashboard", label: 'Dashboard', component: LigoTBD},
+      {route: "sg_search", label: 'Search', component: LigoTBD}
     ]
   },
   {route: "sg_showcase", label: 'Showcase', component: Showcase,
     contents: [
-      {route: "sg_oneview", label: 'OneView', component: TBD}
+      {route: "sg_oneview", label: 'OneView', component: LigoTBD}
     ]
   }
 ];
@@ -121,10 +124,10 @@ var StyleGuide = React.createClass({
           activePageIndex = index;
           layoutCompact = true;
           header = (
-            <Ligo.Menu direction="right" accent={true}>
+            <LigoMenu direction="right" accent={true}>
               {chapterLinks[this._chapterIndex]}
               {pageLink}
-            </Ligo.Menu>
+            </LigoMenu>
           );
         } else if (activePageIndex === (index - 1)) {
           nextLink = pageLink;
@@ -149,34 +152,34 @@ var StyleGuide = React.createClass({
     var content;
     if (pageLinks || true) {
       content = (
-        <Ligo.Layout centerColumn={true}>
-          <Ligo.Menu direction="down" inline={true}>{pageLinks}</Ligo.Menu>
-          <Ligo.Document accentIndex={accentIndex}>
+        <LigoLayout centerColumn={true}>
+          <LigoMenu direction="down" inline={true}>{pageLinks}</LigoMenu>
+          <LigoDocument accentIndex={accentIndex}>
             <RouteHandler />
-          </Ligo.Document>
-        </Ligo.Layout>
+          </LigoDocument>
+        </LigoLayout>
       );
     } else {
       content = (
-        <Ligo.Document centerColumn={true} accentIndex={accentIndex}>
+        <LigoDocument centerColumn={true} accentIndex={accentIndex}>
           <RouteHandler />
-        </Ligo.Document>
+        </LigoDocument>
       );
     }
 
     return (
       <div>
-        <Ligo.Layout centerColumn={true} accentIndex={accentIndex}
+        <LigoLayout centerColumn={true} accentIndex={accentIndex}
           compact={layoutCompact}>
-          <Ligo.Menu direction="down" accent={true} >
+          <LigoMenu direction="down" accent={true} >
             {chapterLinks}
-          </Ligo.Menu>
+          </LigoMenu>
           {header}
-        </Ligo.Layout>
+        </LigoLayout>
         {content}
-        <Ligo.Footer centerColumn={true} scrollTop={true}>
-          <Ligo.Menu><span>Next: {nextLink}</span></Ligo.Menu>
-        </Ligo.Footer>
+        <LigoFooter centerColumn={true} scrollTop={true}>
+          <LigoMenu><span>Next: {nextLink}</span></LigoMenu>
+        </LigoFooter>
       </div>
     );
   }

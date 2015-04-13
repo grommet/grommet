@@ -10,6 +10,7 @@ var WebpackDevServer = require('webpack-dev-server');
 var assign = require('object-assign');
 var rsync = require('gulp-rsync');
 var nodemon = require('gulp-nodemon');
+var file = require('gulp-file');
 
 var webpackConfig = {
   output: {
@@ -56,12 +57,20 @@ module.exports = function(gulp, opts) {
 
   if (options.base) {
     process.chdir(options.base);
+    console.log('current directory', process.cwd());
   }
 
   gulp.task('copy', function() {
     (options.copyAssets || []).forEach(function(copyAsset) {
-      var asset = copyAsset.asset ? copyAsset.asset : copyAsset;
-      gulp.src(asset).pipe(gulp.dest(copyAsset.dist ? copyAsset.dist : dist));
+      if (copyAsset.filename) {
+        gulp.src('./')
+          .pipe(file(copyAsset.filename, copyAsset.asset))
+          .pipe(gulp.dest(copyAsset.dist ? copyAsset.dist : dist));
+      } else {
+        var asset = copyAsset.asset ? copyAsset.asset : copyAsset;
+        gulp.src(asset).pipe(gulp.dest(copyAsset.dist ? copyAsset.dist : dist));
+      }
+      
     });
   });
 
@@ -100,7 +109,8 @@ module.exports = function(gulp, opts) {
           compress: {
             warnings: false
           }
-        })
+        }),
+        new webpack.optimize.DedupePlugin()
       ]
     });
 
@@ -164,9 +174,9 @@ module.exports = function(gulp, opts) {
     gulp.src(dist)
       .pipe(rsync({
         root: dist,
-        hostname: 'ligo.usa.hp.com',
-        username: 'ligo',
-        destination: options.remoteDestination,
+        hostname: options.sync.hostname,
+        username: options.sync.username,
+        destination: options.sync.remoteDestination,
         recursive: true,
         relative: true,
         incremental: true,

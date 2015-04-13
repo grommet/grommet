@@ -2,15 +2,15 @@
 
 var React = require('react');
 var Content = require('./Content');
-var Ligo = require('ligo');
+var LigoDocument = require('ligo/components/Document');
 
 var Downloads = React.createClass({
 
   render: function() {
   	return (
-      <Ligo.Document centerColumn={true} accentIndex={1}>
+      <LigoDocument centerColumn={true} accentIndex={1}>
       	<Content />
-      </Ligo.Document>
+      </LigoDocument>
     );
   }
 

@@ -1,5 +1,4 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
-require("!style!css!highlight.js/styles/github.css");
 //require("!style!css!sass!index.scss");
 require("!style!css!sass!index-hpe.scss");
 require('imports?this=>window!modernizr');
@@ -10,7 +9,12 @@ var Route = Router.Route;
 var DefaultRoute = Router.DefaultRoute;
 var RouteHandler = Router.RouteHandler;
 var Link = Router.Link;
-var Ligo = require('ligo');
+var LigoApp = require('ligo/components/App');
+var LigoHeader = require('ligo/components/Header');
+var LigoTitle = require('ligo/components/Title');
+var LigoMenu = require('ligo/components/Menu');
+var LigoLabel = require('ligo/components/Label');
+var LigoFooter = require('ligo/components/Footer');
 var Home = require('./Home');
 var DesignIcon = require('./DesignIcon');
 var DevelopIcon = require('./DevelopIcon');
@@ -24,28 +28,28 @@ var Docs = React.createClass({
     var title = (<Link to="docs">ligo</Link>);
     var nav = [
       (<Link key="style-guide" to="style guide">
-        <Ligo.Label text="Style Guide" icon={<DesignIcon />} />
+        <LigoLabel text="Style Guide" icon={<DesignIcon />} />
       </Link>),
       (<Link key="documentation" to="documentation">
-        <Ligo.Label text="Documentation" icon={<DevelopIcon />} />
+        <LigoLabel text="Documentation" icon={<DevelopIcon />} />
       </Link>),
       (<Link key="downloads" to="downloads">
-        <Ligo.Label text="Downloads" />
+        <LigoLabel text="Downloads" />
       </Link>)
     ];
 
     return (
-      <Ligo.App>
-        <Ligo.Header centerColumn={true} primary={true}>
-          <Ligo.Title>{title}</Ligo.Title>
-          <Ligo.Menu direction="left">{nav}</Ligo.Menu>
-        </Ligo.Header>
+      <LigoApp>
+        <LigoHeader centerColumn={true} primary={true}>
+          <LigoTitle>{title}</LigoTitle>
+          <LigoMenu direction="left">{nav}</LigoMenu>
+        </LigoHeader>
         <RouteHandler />
-        <Ligo.Footer centerColumn={true}>
+        <LigoFooter centerColumn={true}>
           <img src="img/hpesm_pri_grn_pos_rgb.svg" alt="HPE logo" />
           <div>This work is licensed under the <a href="http://creativecommons.org/licenses/by/4.0/legalcode">Creative Commons Attribution 4.0 International License</a>.</div>
-        </Ligo.Footer>
-      </Ligo.App>
+        </LigoFooter>
+      </LigoApp>
     );
   }
 

@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var path = require('path');
+var devGulpTasks = require('ligo/utils/gulp-tasks');
 
 var opts = {
   base: '../../',
@@ -38,4 +39,4 @@ var opts = {
   nodeServerPath: 'examples/server/server.js'
 };
 
-require('../../_base.gulpfile.js')(gulp, opts);
+devGulpTasks(gulp, opts);

@@ -4,7 +4,11 @@ var React = require('react');
 var Route = require('react-router').Route;
 var DefaultRoute = require('react-router').DefaultRoute;
 
-var Ligo = require('ligo');
+var LigoTBD = require('ligo/components/TBD');
+var LigoIndexActivity = require('ligo/index/components/Activity');
+var LigoIndexDashboardEdit = require('ligo/index/components/DashboardEdit');
+var LigoIndexDashboardPanelAdd = require('ligo/index/components/DashboardPanelAdd');
+var LigoIndexDashboardPanelEdit = require('ligo/index/components/DashboardPanelEdit');
 var Tour = require('./Tour');
 var TourDashboard = require('./TourDashboard');
 /*
@@ -24,17 +28,17 @@ var TourDashboard = require('./TourDashboard');
 
 var routes = (
   <Route name="tour" path="/" handler={Tour}>
-    <Route name="login" handler={Ligo.TBD}/>
-    <Route name="tbd" handler={Ligo.TBD}/>
-    <Route name="settings" handler={Ligo.TBD}/>
-    <Route name="activity" handler={Ligo.Index.Activity} />
-    <Route name="reports" handler={Ligo.TBD} />
+    <Route name="login" handler={LigoTBD}/>
+    <Route name="tbd" handler={LigoTBD}/>
+    <Route name="settings" handler={LigoTBD}/>
+    <Route name="activity" handler={LigoIndexActivity} />
+    <Route name="reports" handler={LigoTBD} />
     <Route name="dashboard-edit" path="dashboard/edit"
-      handler={Ligo.Index.DashboardEdit}>
+      handler={LigoIndexDashboardEdit}>
       <Route name="dashboard-panel-add" path="panel/add"
-        handler={Ligo.Index.DashboardPanelAdd}/>
+        handler={LigoIndexDashboardPanelAdd}/>
       <Route name="dashboard-panel-edit" path="panel/edit/:index"
-        handler={Ligo.Index.DashboardPanelEdit}/>
+        handler={LigoIndexDashboardPanelEdit}/>
     </Route>
     <DefaultRoute name="dashboard" handler={TourDashboard}/>
   </Route>
