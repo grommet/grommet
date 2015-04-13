@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var LigoIndex = require('ligo').Index;
+var LigoIndex = require('ligo/index');
 var Dashboard = LigoIndex.Dashboard;
 
 var configuration = {

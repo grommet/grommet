@@ -2,9 +2,9 @@
 
 var React = require('react');
 var RouteHandler = require('react-router').RouteHandler;
-var LigoApp = require('ligo')('app');
-var LigoHeader = require('ligo')('header');
-var LigoTitle = require('ligo')('title');
+var LigoApp = require('ligo/components/App');
+var LigoHeader = require('ligo/components/Header');
+var LigoTitle = require('ligo/components/Title');
 
 var Tour = React.createClass({
 

@@ -1,9 +1,8 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var LigoCore = require('ligo-core');
+var Login = require('ligo/components/Login');
 var Logo = require('./Logo');
-var Login = LigoCore.Login;
 
 var config = {
   logo: Logo,
