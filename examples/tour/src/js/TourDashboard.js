@@ -1,8 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var LigoIndex = require('ligo/index');
-var Dashboard = LigoIndex.Dashboard;
+var LigoIndexDashboard = require('ligo/index/components/Dashboard');
 
 var configuration = {
   panels: [
@@ -22,7 +21,7 @@ var TourDashboard = React.createClass({
 
   render: function () {
     return (
-      <Dashboard configuration={configuration} />
+      <LigoIndexDashboard configuration={configuration} />
     );
   }
 
