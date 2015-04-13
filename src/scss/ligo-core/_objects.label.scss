@@ -7,7 +7,7 @@
     }
   }
 
-  @include media_query(lap-and-up) {
+  @include media-query(lap-and-up) {
     &__icon {
       display: none;
     }
