@@ -21,8 +21,11 @@ var MenuDoc = React.createClass({
         <section>
           <h2>Options</h2>
           <dl>
+            <dt><code>accent  true|false</code></dt>
+            <dd>Whether the Menu is included in an accented layout.
+              In these cases, the background is an accent color.</dd>
             <dt><code>accentIndex  {"{n}"}</code></dt>
-            <dd>Which accent color to use for headers.</dd>
+            <dd>Which accent color to use for header text.</dd>
             <dt><code>collapse  true|false</code></dt>
             <dd>Indicates that the menu should be collapsed and
               the default collapsed icon should be shown as a

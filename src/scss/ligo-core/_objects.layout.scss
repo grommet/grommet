@@ -8,9 +8,12 @@
     padding-top: $inuit-base-spacing-unit;
     padding-bottom: $inuit-base-spacing-unit;
 
-    > .layout--fixed {
-      -webkit-flex: 0 0 auto;
-      flex: 0 0 auto;
+    &.center-column__content { // TODO: formalize this better
+      > .menu:first-child {
+        -webkit-flex: 0 0 auto;
+        flex: 0 0 auto;
+        width: $nav-width;
+      }
     }
 
     @for $i from 1 through 4 {

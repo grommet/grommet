@@ -3,30 +3,6 @@
 .menu {
   @include inuit-font-size($inuit-heading-size-3, inherit);
 
-  &--inline {
-    &.menu {
-      &--left {
-        > * {
-          margin-left: $inuit-base-spacing-unit;
-
-          &:first-child {
-            margin-left: 0px;
-          }
-        }
-      }
-
-      &--right {
-        > * {
-          margin-right: $inuit-base-spacing-unit;
-
-          &:last-child {
-            margin-right: 0px;
-          }
-        }
-      }
-    }
-  }
-
   &--controlled {
     display: inline-block;
     cursor: pointer;
@@ -84,6 +60,47 @@
       &:hover {
         text-decoration: none;
         background-color: $hover-background-color;
+      }
+    }
+  }
+
+  &--inline {
+    &.menu {
+      &--left {
+        > * {
+          margin-left: $inuit-base-spacing-unit;
+
+          &:first-child {
+            margin-left: 0px;
+          }
+        }
+      }
+
+      &--right {
+        > * {
+          margin-right: $inuit-base-spacing-unit;
+
+          &:last-child {
+            margin-right: 0px;
+          }
+        }
+      }
+
+      &--accent.menu--down {
+        a {
+          padding: halve($inuit-base-spacing-unit);
+          border: 1px solid transparent;
+          text-decoration: none;
+
+          &:hover:not(.active) {
+            border-color: $accent-active-background-color;
+            color: inherit;
+          }
+
+          &.active {
+            background-color: $accent-active-background-color;
+          }
+        }
       }
     }
   }

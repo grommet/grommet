@@ -9,6 +9,7 @@ var DropCaretIcon = require('./icons/DropCaret');
 var Menu = React.createClass({
 
   propTypes: {
+    accent: React.PropTypes.bool,
     accentIndex: React.PropTypes.number,
     direction: React.PropTypes.oneOf(['up', 'down', 'left', 'right']),
     icon: React.PropTypes.node,
@@ -17,6 +18,7 @@ var Menu = React.createClass({
 
   getDefaultProps: function () {
     return {
+      accent: false,
       direction: 'down'
     };
   },
@@ -201,6 +203,9 @@ var Menu = React.createClass({
       if ('down' === this.props.direction) {
         classes.push("layout--fixed");
       }
+    }
+    if (this.props.accent) {
+      classes.push("menu--accent");
     }
     if (this.props.accentIndex) {
       classes.push("accent-text-" + this.props.accentIndex);

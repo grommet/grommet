@@ -121,10 +121,10 @@ var StyleGuide = React.createClass({
           activePageIndex = index;
           layoutCompact = true;
           header = (
-            <Ligo.Nav accent={true}>
+            <Ligo.Menu direction="right" accent={true}>
               {chapterLinks[this._chapterIndex]}
               {pageLink}
-            </Ligo.Nav>
+            </Ligo.Menu>
           );
         } else if (activePageIndex === (index - 1)) {
           nextLink = pageLink;
@@ -168,14 +168,14 @@ var StyleGuide = React.createClass({
       <div>
         <Ligo.Layout centerColumn={true} accentIndex={accentIndex}
           compact={layoutCompact}>
-          <Ligo.Nav vertical={true} accent={true} >
+          <Ligo.Menu direction="down" accent={true} >
             {chapterLinks}
-          </Ligo.Nav>
+          </Ligo.Menu>
           {header}
         </Ligo.Layout>
         {content}
         <Ligo.Footer centerColumn={true} scrollTop={true}>
-          <Ligo.Nav><span>Next: {nextLink}</span></Ligo.Nav>
+          <Ligo.Menu><span>Next: {nextLink}</span></Ligo.Menu>
         </Ligo.Footer>
       </div>
     );
