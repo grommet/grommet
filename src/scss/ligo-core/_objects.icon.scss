@@ -4,12 +4,12 @@
   display: inline-block;
   width: double($inuit-base-spacing-unit);
   height: double($inuit-base-spacing-unit);
+  padding: halve($inuit-base-spacing-unit);
   vertical-align: middle;
   cursor: pointer;
 
   svg {
     display: block;
-    margin: halve($inuit-base-spacing-unit);
     width: $inuit-base-spacing-unit;
     height: $inuit-base-spacing-unit;
     fill: $icon-color;
@@ -19,9 +19,9 @@
 
   &--full {
     top: 0px;
+    padding: 0px;
 
     svg {
-      margin: 0px;
       width: double($inuit-base-spacing-unit);
       height: double($inuit-base-spacing-unit);
     }

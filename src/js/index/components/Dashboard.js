@@ -48,22 +48,22 @@ var Dashboard = React.createClass({
       );
 
       return (
-        <li key={panel.name} className={"dashboard__panel list-item box"}>
+        <div key={panel.name} className={"dashboard__panel"}>
           <IndexAggregate title={title}
             category={panel.params.category}
             attribute={panel.attribute}
             search={panel.params.search}
             aggregateResult={panel.aggregateResult}
             onSearch={this._onSearch} />
-        </li>
+        </div>
       );
     }, this);
 
     return (
       <div className={"dashboard"}>
-        <ol className={"dashboard__panels list-inline"}>
+        <div className={"dashboard__panels"}>
           {panels}
-        </ol>
+        </div>
         <div className={"dashboard__edit"}>
           <Link href={Router.makeHref("dashboard-edit")}>
             <EditIcon className={'dashboard__edit-icon'} />

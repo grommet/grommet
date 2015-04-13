@@ -10,6 +10,8 @@ var Ligo = require('ligo');
 var TBD = Ligo.TBD;
 var HelloWorld = require('./HelloWorld');
 var GetStarted = require('./GetStarted');
+var MenuDoc = require('./components/MenuDoc');
+var HeaderDoc = require('./components/HeaderDoc');
 var hljs = require('highlight.js');
 
 var CONTENTS = [
@@ -36,8 +38,8 @@ var CONTENTS = [
       {route: 'doc_donut', label: 'Donut', component: TBD},
       {route: 'doc_footer', label: 'Footer', component: TBD},
       {route: 'doc_form', label: 'Form', component: TBD},
-      {route: 'doc_header', label: 'Header', component: TBD},
-      {route: 'doc_menu', label: 'Menu', component: TBD},
+      {route: 'doc_header', label: 'Header', component: HeaderDoc},
+      {route: 'doc_menu', label: 'Menu', component: MenuDoc},
       {route: 'doc_meter', label: 'Meter', component: TBD},
       {route: 'doc_table', label: 'Table', component: TBD},
       {route: 'doc_tile', label: 'Tile', component: TBD}
@@ -95,7 +97,7 @@ var Documentation = React.createClass({
     var pages = createPageLinks(CONTENTS, 2);
     return (
       <Ligo.Layout centerColumn={true}>
-        <Ligo.Nav vertical={true} accentIndex={1}>{pages}</Ligo.Nav>
+        <Ligo.Menu direction="down" accentIndex={1}>{pages}</Ligo.Menu>
         <Ligo.Document accentIndex={1}>
           <RouteHandler />
         </Ligo.Document>

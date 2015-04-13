@@ -6,8 +6,7 @@ var Header = React.createClass({
 
   propTypes: {
     centerColumn: React.PropTypes.bool,
-    primary: React.PropTypes.bool,
-    accentIndex: React.PropTypes.number
+    primary: React.PropTypes.bool
   },
 
   render: function() {
@@ -20,9 +19,6 @@ var Header = React.createClass({
     }
     if (this.props.primary) {
       classes.push("header--primary");
-    }
-    if (this.props.accentIndex) {
-      classes.push("header--accent-" + this.props.accentIndex);
     }
 
     return (

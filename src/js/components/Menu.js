@@ -2,15 +2,17 @@
 
 var React = require('react');
 var ReactLayeredComponent = require('../mixins/ReactLayeredComponent');
+var KeyboardAccelerators = require('../mixins/KeyboardAccelerators');
 var MoreIcon = require('./icons/More');
 var DropCaretIcon = require('./icons/DropCaret');
 
 var Menu = React.createClass({
 
   propTypes: {
-    items: React.PropTypes.array,
-    label: React.PropTypes.string,
-    direction: React.PropTypes.oneOf(['up', 'down'])
+    accentIndex: React.PropTypes.number,
+    direction: React.PropTypes.oneOf(['up', 'down', 'left', 'right']),
+    icon: React.PropTypes.node,
+    label: React.PropTypes.string
   },
 
   getDefaultProps: function () {
@@ -19,14 +21,58 @@ var Menu = React.createClass({
     };
   },
 
-  mixins: [ReactLayeredComponent],
+  mixins: [ReactLayeredComponent, KeyboardAccelerators],
 
-  _onOpen: function () {
+  _layout: function () {
+    // place container over control
+    var controlElement = this.refs.control.getDOMNode();
+    var layerElement = document.getElementById('menu-layer');
+    var layerControlElement = document.getElementById('menu-layer');
+    var controlRect = controlElement.getBoundingClientRect();
+    var windowWidth = window.innerWidth;
+
+    // clear prior styling
+    layerElement.style.left = '';
+    layerElement.style.width = '';
+    layerElement.style.top = '';
+
+    var width = Math.min(
+      Math.max(controlElement.offsetWidth, layerElement.offsetWidth),
+      windowWidth);
+    // align right edge and make at least as wide as the control
+    // TODO: handle being on the right edge of the window with an icon control, go left
+    // TODO: calculate border width instead of hard coding it here.
+    var left = (controlRect.left + layerElement.offsetWidth) - width - 1;
+    if ((left + width) > windowWidth) {
+      left -= ((left + width) - windowWidth);
+    }
+    var top = controlRect.top - 1;
+    if ('up' === this.props.direction) {
+      // align bottom edge
+      top = (controlRect.top + controlElement.offsetHeight) - layerElement.offsetHeight + 1;
+    }
+
+    layerElement.style.left = '' + left + 'px';
+    layerElement.style.width = '' + width + 'px';
+    layerElement.style.top = '' + top + 'px';
+  },
+
+  _onOpen: function (event) {
+    event.preventDefault();
     this.setState({active: true});
   },
 
-  _onClose: function () {
+  _onClose: function (event) {
+    event.preventDefault();
     this.setState({active: false});
+  },
+
+  _onFocusControl: function () {
+    this.setState({controlFocused: true});
+  },
+
+  _onBlurControl: function () {
+    this.setState({controlFocused: false});
   },
 
   _onSink: function (event) {
@@ -37,133 +83,177 @@ var Menu = React.createClass({
     this._layout();
   },
 
-  _layout: function () {
-    // place container over control
-    var controlElement = this.refs.control.getDOMNode();
-    var containerElement = document.getElementById('menu__container');
-    var rect = controlElement.getBoundingClientRect();
-
-    // clear prior styling
-    containerElement.style.left = '';
-    containerElement.style.width = '';
-    containerElement.style.top = '';
-
-    // align right edge and make at least as wide as the control
-    var width = Math.max(controlElement.offsetWidth, containerElement.offsetWidth);
-    var left = (rect.left + controlElement.offsetWidth) - width;
-    var top = rect.top;
-    if ('up' === this.props.direction) {
-      // align bottom edge
-      top = (rect.top + controlElement.offsetHeight) - containerElement.offsetHeight;
-    }
-
-    containerElement.style.left = '' + left + 'px';
-    containerElement.style.width = '' + width + 'px';
-    containerElement.style.top = '' + top + 'px';
-
-    // make title line height the same as the control
-    var titleElement = containerElement.querySelectorAll('.menu__title').item(0);
-    titleElement.style.lineHeight = getComputedStyle(controlElement)['line-height'];
-    titleElement.style.fontSize = getComputedStyle(controlElement)['font-size'];
+  getInitialState: function () {
+    return {
+      controlFocused: false,
+      active: false,
+      inline: (! this.props.label && ! this.props.icon && ! this.props.collapse)
+    };
   },
 
-  getInitialState: function () {
-    return {active: false};
+  _findScrollParent: function (element) {
+    var parent = element.parentNode;
+    while (parent) {
+      if (parent.scrollHeight > parent.offsetHeight) {
+        break;
+      }
+      parent = parent.parentNode;
+    }
+    return parent;
   },
 
   componentDidUpdate: function (prevProps, prevState) {
+
+    // Set up keyboard listeners appropriate to the current state.
+
+    var activeKeyboardHandlers = {
+      esc: this._onClose,
+      space: this._onClose,
+      tab: this._onClose
+    };
+    var focusedKeyboardHandlers = {
+      space: this._onOpen,
+      down: this._onOpen
+    };
+
+    // the order here is important, need to turn off keys before turning on
+
+    if (! this.state.controlFocused && prevState.controlFocused) {
+      this.stopListeningToKeyboard(focusedKeyboardHandlers);
+    }
+
+    if (! this.state.active && prevState.active) {
+      window.removeEventListener('resize', this._layout);
+      document.body.removeEventListener('click', this._onClose);
+      this.stopListeningToKeyboard(activeKeyboardHandlers);
+      var scrollParent = this._findScrollParent(this.refs.control.getDOMNode());
+      if (scrollParent) {
+        scrollParent.removeEventListener('scroll', this._layout);
+      }
+    }
+
+    if (this.state.controlFocused && ! prevState.controlFocused) {
+      this.startListeningToKeyboard(focusedKeyboardHandlers);
+    }
+
     if (this.state.active && ! prevState.active) {
       this._layout();
-      window.addEventListener('resize', this._onResize);
-    } else if (! this.state.active && prevState.active) {
-      window.removeEventListener('resize', this._onResize);
+      window.addEventListener('resize', this._layout);
+      document.body.addEventListener('click', this._onClose);
+      this.startListeningToKeyboard(activeKeyboardHandlers);
+      var scrollParent = this._findScrollParent(this.refs.control.getDOMNode());
+      if (scrollParent) {
+        scrollParent.addEventListener('scroll', this._layout);
+      }
     }
   },
 
   componentWillUnmount: function () {
-    window.removeEventListener('resize', this._onResize);
+    window.removeEventListener('resize', this._layout);
+    document.body.removeEventListener('click', this._onClose);
   },
 
-  render: function () {
-    var classes = ["menu__control"];
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
-
-    if (this.props.items) {
-      var smallControlClasses = ["menu__control-icon"];
-      largeControl = '';
-      if (this.props.label) {
-        largeControl = (
-          <div className="menu__control--large">
-            {this.props.label}
-            <DropCaretIcon className="menu__control-icon" />
-          </div>
-        );
-        smallControlClasses.push("menu__control--small");
-      }
-
-      return (
-        <div ref="control" className={classes.join(' ')} onClick={this._onOpen}>
-          {largeControl}
-          <MoreIcon className={smallControlClasses.join(' ')} />
+  _createControl: function () {
+    var result = null;
+    var icon = null;
+    var controlClassName = "menu__control";
+    if (this.props.icon) {
+      icon = (
+        <div className={controlClassName + "-icon control-icon"}>
+          {this.props.icon}
+        </div>
+      );
+    } else {
+      icon = (
+        <div className={controlClassName + "-icon control-icon"}>
+          <MoreIcon />
         </div>
       );
     }
-    else {
-      return (<span/>);
+    if (this.props.label) {
+      result = (
+        <div className={controlClassName + " " + controlClassName + "--labelled"}>
+          {icon}
+          <span className={controlClassName + "-label"}>{this.props.label}</span>
+          <DropCaretIcon className={controlClassName + "-drop-icon"} />
+        </div>
+      );
+    } else {
+      result = (
+        <div className={controlClassName}>
+          {icon}
+        </div>
+      );
+    }
+    return result;
+  },
+
+  render: function () {
+    var classes = ["menu"];
+
+    if (this.state.inline) {
+      classes.push("menu--inline");
+    } else {
+      classes.push("menu--controlled");
+    }
+    if (this.props.direction) {
+      classes.push("menu--" + this.props.direction);
+      if ('down' === this.props.direction) {
+        classes.push("layout--fixed");
+      }
+    }
+    if (this.props.accentIndex) {
+      classes.push("accent-text-" + this.props.accentIndex);
+    }
+
+    if (this.state.inline) {
+
+      return (
+        <div className={classes.join(' ')} onClick={this._onClose}>
+          {this.props.children}
+        </div>
+      );
+
+    } else {
+
+      var controlContents = this._createControl();
+
+      return (
+        <div ref="control" className={classes.join(' ')}
+          tabIndex="0"
+          onClick={this._onOpen}
+          onFocus={this._onFocusControl}
+          onBlur={this._onBlurControl}>
+          {controlContents}
+        </div>
+      );
+
     }
   },
 
   renderLayer: function() {
     if (this.state.active) {
 
-      var classes = ["menu"];
+      var controlContents = this._createControl();
+
+      var first = null;
+      var secont = null;
       if ('up' === this.props.direction) {
-        classes.push("menu--up");
-      }
-
-      var smallTitleClasses = ["menu__title-icon"];
-      largeTitle = '';
-      if (this.props.label) {
-        largeTitle = (
-          <div className="menu__title--large">
-            {this.props.label}
-            <DropCaretIcon className="menu__title-icon" />
-          </div>
-        );
-        smallTitleClasses.push("menu__title--small");
-      }
-
-      var icon = React.createFactory(this.props.iconClass)({
-        className: "menu__title-icon"
-      });
-
-      var items = [];
-      if (this.props.items) {
-        items = this.props.items.map(function (item, index) {
-          return (
-            <li key={index} className={"menu__item list-item"}>
-              {item}
-            </li>
-          );
-        });
+        first = this.props.children;
+        second = controlContents;
+      } else {
+        first = controlContents;
+        second = this.props.children;
       }
 
       return (
-        <div className={classes.join(' ')} onClick={this._onClose}>
-          <div id={'menu__container'}
-            className={"menu__container"} onClick={this._onSink}>
-            <div className={"menu__title"} onClick={this._onClose}>
-              {largeTitle}
-              <MoreIcon className={smallTitleClasses.join(' ')} />
-            </div>
-            <ol className={"menu__items list-bare"}>
-              {items}
-            </ol>
-          </div>
+        <div id="menu-layer" className={"menu__layer menu__layer--" + this.props.direction}
+          onClick={this._onClose}>
+          {first}
+          {second}
         </div>
       );
+
     } else {
       return (<span />);
     }

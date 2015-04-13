@@ -1,122 +1,146 @@
 // (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
 
-.menu__control {
-  padding-left: $inuit-base-spacing-unit;
-  padding-right: $inuit-base-spacing-unit;
-  text-align: right;
-  border: 1px solid transparent; // so container aligns
-  border-radius: $border-radius;
-  white-space: nowrap;
-  cursor: pointer;
+.menu {
+  @include inuit-font-size($inuit-heading-size-3, inherit);
 
-  &:hover {
-    background-color: $hover-background-color;
-    transition: background-color $base-animation-duration;
+  &--inline {
+    &.menu {
+      &--left {
+        > * {
+          margin-left: $inuit-base-spacing-unit;
 
-    .menu__control-icon {
-      stroke: $active-icon-color;
-      fill: $active-icon-color;
+          &:first-child {
+            margin-left: 0px;
+          }
+        }
+      }
+
+      &--right {
+        > * {
+          margin-right: $inuit-base-spacing-unit;
+
+          &:last-child {
+            margin-right: 0px;
+          }
+        }
+      }
     }
   }
 
-  &-icon {
-    width: $inuit-base-spacing-unit;
-    margin-left: halve($inuit-base-spacing-unit);
-    stroke: $icon-color;
-    fill: $icon-color;
+  &--controlled {
+    display: inline-block;
+    cursor: pointer;
   }
 
-  &--small {
-    display: none;
-  }
+  &__control {
+    cursor: pointer;
 
-  @include media-query(palm) {
-    .menu__control {
-      &--large {
-        display: none;
+    &-drop-icon {
+      width: halve($inuit-base-spacing-unit);
+      margin-left: halve($inuit-base-spacing-unit);
+      stroke: $icon-color;
+    }
+
+    &--labelled {
+      @include media-query(palm) {
+        .menu__control-label,
+        .menu__control-drop-icon {
+          display: none;
+        }
       }
 
-      &--small {
-        display: inline-block;
+      @include media-query(lap-and-up) {
+        .menu__control-icon {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__layer {
+    position: fixed;
+    z-index: 2;
+    @include inuit-font-size($inuit-heading-size-3, inherit);
+    background-color: $background-color;
+    border: 1px solid $border-color;
+
+    @include media-query(palm) {
+      width: 100%;
+    }
+
+    .menu__control {
+      &-label {
+        padding-left: $inuit-base-spacing-unit;
+      }
+      &-drop-icon {
+        display: none;
+      }
+    }
+
+    a {
+      padding: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit;
+
+      &:hover {
+        text-decoration: none;
+        background-color: $hover-background-color;
       }
     }
   }
 }
 
-.menu {
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  //background-color: $modal-overlay-background-color;
-  z-index: 10;
+.menu--inline.menu,
+.menu__layer {
 
-  &__container {
-    position: absolute;
-    top: $inuit-base-spacing-unit;
-    background-color: $background-color;
-    //padding: $inuit-base-spacing-unit;
-    border: 1px solid $focus-border-color;
-    border-radius: $border-radius;
-    @include inuit-font-size($inuit-heading-size-3, double($inuit-base-spacing-unit));
-  }
-
-  &__title {
-    padding-left: $inuit-base-spacing-unit;
-    padding-right: $inuit-base-spacing-unit;
-    white-space: nowrap;
-
-    &-icon {
-      width: $inuit-base-spacing-unit;
-      margin-left: halve($inuit-base-spacing-unit);
-      margin-right: halve($inuit-base-spacing-unit);
-      stroke: $icon-color;
-      fill: $icon-color;
-    }
-
-    &--small {
-      display: none;
-    }
-
-    @include media-query(palm) {
-      text-align: right;
-      width: 100vw;
-
-      .menu__title {
-        &--large {
-          display: none;
-        }
-
-        &--small {
-          display: inline-block;
-        }
-      }
-    }
-  }
-
-  &__item {
-    cursor: pointer;
+  &--left {
+    text-align: right;
 
     > * {
-      padding: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit;
-    }
-
-    &:hover {
-      background-color: $hover-background-color;
+      display: inline-block;
     }
   }
 
-  &--up {
-    .menu {
-      &__title {
-        position: absolute;
-        bottom: 0px;
-        right: 0px;
+  &--right {
+    > * {
+      display: inline-block;
+    }
+  }
 
-        &-icon {
-          margin-right: 0px;
-        }
+  &--down,
+  &--up {
+    > * {
+      display: block;
+    }
+  }
+
+  &--down,
+  &--up {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 0px;
+      padding: halve($inuit-base-spacing-unit) 0px;
+      margin-top: $inuit-base-spacing-unit;
+      border-top: 1px solid $border-color;
+      min-width: $nav-width;
+
+      &:first-child {
+        margin-top: 0px;
+      }
+    }
+
+    &[class^="accent-text-"] {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      dt {
+        font-weight: normal;
+        text-transform: uppercase;
       }
     }
   }

@@ -23,7 +23,7 @@
   section,
   header {
 
-    img {
+    > img {
       margin-top: double($inuit-base-spacing-unit);
       margin-bottom: double($inuit-base-spacing-unit);
       display: block;
@@ -34,35 +34,42 @@
       }
     }
 
-    ol,
-    ul {
+    > ol,
+    > ul {
       @include media-query(palm) {
         padding-left: $inuit-base-spacing-unit;
         padding-right: $inuit-base-spacing-unit;
         margin-left: 0px;
         margin-bottom: $inuit-base-spacing-unit;
       }
-    }
 
-    li {
-      max-width: $readable-text-width;
-    }
-
-    dt {
-      margin-top: $inuit-base-spacing-unit;
-      margin-bottom: quarter($inuit-base-spacing-unit);
-      text-transform: uppercase;
-    }
-
-    dd {
-      margin-left: 0px;
-
-      @include media-query(palm) {
-        padding-right: $inuit-base-spacing-unit;
+      > li {
+        max-width: $readable-text-width;
       }
     }
 
-    h2 {
+    > dl {
+      > dt {
+        margin-top: $inuit-base-spacing-unit;
+        margin-bottom: quarter($inuit-base-spacing-unit);
+        text-transform: uppercase;
+
+        code {
+          text-transform: none;
+          white-space: pre-wrap;
+        }
+      }
+
+      > dd {
+        margin-left: 0px;
+
+        @include media-query(palm) {
+          padding-right: $inuit-base-spacing-unit;
+        }
+      }
+    }
+
+    > h2 {
       position: relative;
       padding-top: $inuit-base-spacing-unit;
 
@@ -87,11 +94,11 @@
     margin-top: 0px;
     padding-top: 0px;
 
-    h2 {
+    > h2 {
       padding-top: 0px;
     }
 
-    h2:after {
+    > h2:after {
       border-top: none;
     }
   }

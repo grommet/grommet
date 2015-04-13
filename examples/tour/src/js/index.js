@@ -4,15 +4,17 @@ require("!style!css!sass!index.scss");
 
 var React = require('react');
 var Router = require('react-router');
-//var Ligo = require('ligo');
+var Ligo = require('ligo');
+var indexConfig = require('./IndexConfig');
 /*
 var LigoIndex = Ligo.Index;
 var menuConfig = require('./MenuConfig');
-var indexConfig = require('./IndexConfig');
 */
 var routes = require('./Routes');
 
 var router = Router.create({routes: routes}); //, location: Router.HistoryLocation});
+
+Ligo.Index.init(indexConfig);
 
 router.run(function (Handler) {
   var factory = React.createFactory(Handler);

@@ -11,6 +11,10 @@ a {
   &:visited {
     color: $link-color;
   }
+
+  &.active {
+    color: $text-color;
+  }
 }
 
 p,

@@ -5,12 +5,28 @@
   &__wrapper {
     background-color: $header-background-color;
     border-bottom: 1px solid $border-color;
-    padding: $inuit-base-spacing-unit;
   }
 
   &__content {
     display: -webkit-flex;
     display: flex;
+    width: 100%;
+
+    > * {
+      -webkit-flex: 1;
+      flex: 1;
+
+      &:last-child {
+        text-align: right;
+      }
+    }
+
+    > h1,
+    > h2,
+    > h3,
+    > h4 {
+      margin-bottom: 0px;
+    }
   }
 
   &--primary {
@@ -28,6 +44,9 @@
       white-space: nowrap;
 
       > * {
+        -webkit-flex: auto;
+        flex: auto;
+
         &:last-child {
           text-align: right;
         }
@@ -41,19 +60,6 @@
         left: 0px;
         right: 0px;
         z-index: 1;
-      }
-    }
-  }
-
-  @for $i from 1 through length($brand-colors) {
-    &.header--accent-#{$i} {
-      .header__wrapper {
-        background-color: nth($brand-colors, $i);
-        color: $accent-text-color;
-
-        a {
-          color: $accent-text-color;
-        }
       }
     }
   }

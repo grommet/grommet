@@ -7,7 +7,11 @@ var DropCaret = require('./icons/DropCaret');
 var Title = React.createClass({
 
   propTypes: {
-    nav: React.PropTypes.node
+    nav: React.PropTypes.func
+  },
+
+  contextTypes: {
+    router: React.PropTypes.func.isRequired
   },
 
   mixins: [ReactLayeredComponent],
@@ -30,7 +34,9 @@ var Title = React.createClass({
     if (! this.state.active) {
       return <span />;
     } else {
-      return <this.props.nav onRequestClose={this._onClose} />;
+      return (
+        <this.props.nav onRequestClose={this._onClose} router={this.context.router} />
+      );
     }
   },
 

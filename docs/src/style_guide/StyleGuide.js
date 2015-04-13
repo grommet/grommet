@@ -61,7 +61,7 @@ var StyleGuide = React.createClass({
   contextTypes: {
     router: React.PropTypes.func.isRequired
   },
-  
+
   _linkToNode: function(e) {
     e.preventDefault();
     var node = this.getDOMNode();
@@ -150,7 +150,7 @@ var StyleGuide = React.createClass({
     if (pageLinks || true) {
       content = (
         <Ligo.Layout centerColumn={true}>
-          <Ligo.Nav vertical={true}>{pageLinks}</Ligo.Nav>
+          <Ligo.Menu direction="down" inline={true}>{pageLinks}</Ligo.Menu>
           <Ligo.Document accentIndex={accentIndex}>
             <RouteHandler />
           </Ligo.Document>
