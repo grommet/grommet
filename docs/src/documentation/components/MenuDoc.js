@@ -46,59 +46,73 @@ var MenuDoc = React.createClass({
           <h2>Examples</h2>
 
           <h3>(down, inline)</h3>
-          <Menu>
-            <a href="#" className="active">First</a>
-            <a href="#">Second</a>
-            <a href="#">Third</a>
-          </Menu>
+          <div className="example">
+            <Menu>
+              <a href="#" className="active">First</a>
+              <a href="#">Second</a>
+              <a href="#">Third</a>
+            </Menu>
+          </div>
           <pre><code className="html">{"<Menu> ..."}</code></pre>
 
           <h3>right, (inline)</h3>
-          <Menu direction="right">
-            <a href="#" className="active">First</a>
-            <a href="#">Second</a>
-            <a href="#">Third</a>
-          </Menu>
+          <div className="example">
+            <Menu direction="right">
+              <a href="#" className="active">First</a>
+              <a href="#">Second</a>
+              <a href="#">Third</a>
+            </Menu>
+          </div>
           <pre><code className="html">{"<Menu direction=\"right\"> ..."}</code></pre>
 
           <h3>left, (inline)</h3>
-          <Menu direction="left">
-            <a href="#" className="active">First</a>
-            <a href="#">Second</a>
-            <a href="#">Third</a>
-          </Menu>
+          <div className="example">
+            <Menu direction="left">
+              <a href="#" className="active">First</a>
+              <a href="#">Second</a>
+              <a href="#">Third</a>
+            </Menu>
+          </div>
           <pre><code className="html">{"<Menu direction=\"left\"> ..."}</code></pre>
 
           <h3>label, (collapsed, down)</h3>
-          <Menu label="Label">
-            <a href="#" className="active">First</a>
-            <a href="#">Second</a>
-            <a href="#">Third</a>
-          </Menu>
+          <div className="example">
+            <Menu label="Label">
+              <a href="#" className="active">First</a>
+              <a href="#">Second</a>
+              <a href="#">Third</a>
+            </Menu>
+          </div>
           <pre><code className="html">{"<Menu label=\"Label\"> ..."}</code></pre>
 
           <h3>collapse, (icon, down)</h3>
-          <Menu collapse={true}>
-            <a href="#" className="active">First</a>
-            <a href="#">Second</a>
-            <a href="#">Third</a>
-          </Menu>
+          <div className="example">
+            <Menu collapse={true}>
+              <a href="#" className="active">First</a>
+              <a href="#">Second</a>
+              <a href="#">Third</a>
+            </Menu>
+          </div>
           <pre><code className="html">{"<Menu collapse={true}> ..."}</code></pre>
 
           <h3>icon, (collapse, down)</h3>
-          <Menu icon={<Edit />}>
-            <a href="#" className="active">First</a>
-            <a href="#">Second</a>
-            <a href="#">Third</a>
-          </Menu>
+          <div className="example">
+            <Menu icon={<Edit />}>
+              <a href="#" className="active">First</a>
+              <a href="#">Second</a>
+              <a href="#">Third</a>
+            </Menu>
+          </div>
           <pre><code className="html">{"<Menu icon={<Ligo.Icons.Edit />}> ..."}</code></pre>
 
           <h3>collapse, up</h3>
-          <Menu collapse={true} direction="up">
-            <a href="#" className="active">First</a>
-            <a href="#">Second</a>
-            <a href="#">Third</a>
-          </Menu>
+          <div className="example">
+            <Menu collapse={true} direction="up">
+              <a href="#" className="active">First</a>
+              <a href="#">Second</a>
+              <a href="#">Third</a>
+            </Menu>
+          </div>
           <pre><code className="html">{"<Menu collapse={true} direction=\"up\"> ..."}</code></pre>
 
         </section>

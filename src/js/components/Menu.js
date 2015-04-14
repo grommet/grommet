@@ -200,15 +200,15 @@ var Menu = React.createClass({
     }
     if (this.props.direction) {
       classes.push("menu--" + this.props.direction);
-      if ('down' === this.props.direction) {
-        classes.push("layout--fixed");
-      }
     }
     if (this.props.accent) {
       classes.push("menu--accent");
     }
     if (this.props.accentIndex) {
       classes.push("accent-text-" + this.props.accentIndex);
+    }
+    if (this.props.className) {
+      classes.push(this.props.className);
     }
 
     if (this.state.inline) {

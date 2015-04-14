@@ -1,0 +1,39 @@
+// (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
+
+.dialog {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  //min-height: 100vh;
+  //margin-top: - quadruple($inuit-base-spacing-unit);
+  background-color: $modal-overlay-background-color;
+  padding: 0px $inuit-base-spacing-unit;
+  z-index: 10;
+
+  &__container {
+    position: absolute;
+    top: $inuit-base-spacing-unit;
+    left: $inuit-base-spacing-unit;
+    right: $inuit-base-spacing-unit;
+    bottom: $inuit-base-spacing-unit;
+    background-color: $background-color;
+    overflow: auto;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+
+    > * {
+      -webkit-flex: 1;
+      flex: 1;
+    }
+
+    .header,
+    .footer {
+      -webkit-flex: 0 0 auto;
+      flex: 0 0 auto;
+    }
+  }
+}

@@ -45,7 +45,7 @@ var Docs = React.createClass({
           <LigoMenu direction="left">{nav}</LigoMenu>
         </LigoHeader>
         <RouteHandler />
-        <LigoFooter centerColumn={true}>
+        <LigoFooter centerColumn={true} primary={true}>
           <img src="img/hpesm_pri_grn_pos_rgb.svg" alt="HPE logo" />
           <div>This work is licensed under the <a href="http://creativecommons.org/licenses/by/4.0/legalcode">Creative Commons Attribution 4.0 International License</a>.</div>
         </LigoFooter>

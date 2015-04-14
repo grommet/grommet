@@ -12,11 +12,11 @@ var Basics = require('./Basics');
 var Patterns = require('./Patterns');
 var Showcase = require('./Showcase');
 var Login = require('./patterns/Login');
-var LigoLayout = require('ligo/components/Layout');
-var LigoTBD = require('ligo/components/TBD');
+var Layout = require('ligo/components/Layout');
+var TBD = require('ligo/components/TBD');
 var LigoDocument = require('ligo/components/Document');
-var LigoFooter = require('ligo/components/Footer');
-var LigoMenu = require('ligo/components/Menu');
+var Footer = require('ligo/components/Footer');
+var Menu = require('ligo/components/Menu');
 
 var CONTENTS = [
   {route: "sg_introduction", label: 'Introduction', component: Introduction, default: true},
@@ -47,14 +47,14 @@ var CONTENTS = [
   {route: "sg_patterns", label: 'Patterns', component: Patterns,
     contents: [
       {route: "sg_login", label: 'Login', component: Login},
-      {route: "sg_header", label: 'Header', component: LigoTBD},
-      {route: "sg_dashboard", label: 'Dashboard', component: LigoTBD},
-      {route: "sg_search", label: 'Search', component: LigoTBD}
+      {route: "sg_header", label: 'Header', component: TBD},
+      {route: "sg_dashboard", label: 'Dashboard', component: TBD},
+      {route: "sg_search", label: 'Search', component: TBD}
     ]
   },
   {route: "sg_showcase", label: 'Showcase', component: Showcase,
     contents: [
-      {route: "sg_oneview", label: 'OneView', component: LigoTBD}
+      {route: "sg_oneview", label: 'OneView', component: TBD}
     ]
   }
 ];
@@ -113,7 +113,10 @@ var StyleGuide = React.createClass({
           className = 'active';
         }
 
-        var pageLink = page.id ? <a key={page.id} id={page.id} href="#" onClick={this._linkToNode} className={className}>{page.label}</a> : (
+        var pageLink = page.id ?
+          <a key={page.id} id={page.id} href="#" onClick={this._linkToNode}
+            className={className}>{page.label}</a>
+        : (
           <Link key={page.label} to={page.route} className={className}>
             {page.label}
           </Link>
@@ -124,10 +127,10 @@ var StyleGuide = React.createClass({
           activePageIndex = index;
           layoutCompact = true;
           header = (
-            <LigoMenu direction="right" accent={true}>
+            <Menu direction="right" accent={true}>
               {chapterLinks[this._chapterIndex]}
               {pageLink}
-            </LigoMenu>
+            </Menu>
           );
         } else if (activePageIndex === (index - 1)) {
           nextLink = pageLink;
@@ -138,8 +141,12 @@ var StyleGuide = React.createClass({
       }.bind(this));
     }
 
+    var next = null;
     if (! nextLink) {
       nextLink = chapterLinks[this._chapterIndex + 1];
+    }
+    if (nextLink) {
+      next = <span>Next: {nextLink}</span>;
     }
 
     if (onPage) {
@@ -149,37 +156,25 @@ var StyleGuide = React.createClass({
 
     var accentIndex = this._chapterIndex + 1;
 
-    var content;
-    if (pageLinks || true) {
-      content = (
-        <LigoLayout centerColumn={true}>
-          <LigoMenu direction="down" inline={true}>{pageLinks}</LigoMenu>
+    return (
+      <div>
+        <Layout centerColumn={true} accentIndex={accentIndex}
+          compact={layoutCompact}>
+          <Menu direction="down" accent={true} >
+            {chapterLinks}
+          </Menu>
+          {header}
+        </Layout>
+        <Layout centerColumn={true}>
+          <Menu direction="down" inline={true}>{pageLinks}</Menu>
           <LigoDocument accentIndex={accentIndex}>
             <RouteHandler />
           </LigoDocument>
-        </LigoLayout>
-      );
-    } else {
-      content = (
-        <LigoDocument centerColumn={true} accentIndex={accentIndex}>
-          <RouteHandler />
-        </LigoDocument>
-      );
-    }
-
-    return (
-      <div>
-        <LigoLayout centerColumn={true} accentIndex={accentIndex}
-          compact={layoutCompact}>
-          <LigoMenu direction="down" accent={true} >
-            {chapterLinks}
-          </LigoMenu>
-          {header}
-        </LigoLayout>
-        {content}
-        <LigoFooter centerColumn={true} scrollTop={true}>
-          <LigoMenu><span>Next: {nextLink}</span></LigoMenu>
-        </LigoFooter>
+        </Layout>
+        <Footer centerColumn={true} scrollTop={true}>
+          <Menu></Menu>
+          <Menu className="flex-1">{next}</Menu>
+        </Footer>
       </div>
     );
   }

@@ -46,15 +46,17 @@ var DonutDoc = React.createClass({
           <h2>Examples</h2>
 
           <h3>Generic</h3>
-
-          <Donut series={genericSeries} />
+          <div className="example">
+            <Donut series={genericSeries} />
+          </div>
           <pre><code className="html">
             {"<Donut series={" + JSON.stringify(genericSeries, null, '  ') + "} />"}
           </code></pre>
 
           <h3>Status</h3>
-
-          <Donut series={statusSeries} key={true} />
+          <div className="example">
+            <Donut series={statusSeries} key={true} />
+          </div>
           <pre><code className="html">
             {"<Donut series={" + JSON.stringify(statusSeries, null, '  ') + "} />"}
           </code></pre>

@@ -1,7 +1,8 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 .center-column {
-  padding: $inuit-base-spacing-unit;
+  padding-left: $inuit-base-spacing-unit;
+  padding-right: $inuit-base-spacing-unit;
 
   .center-column__content {
     width: 100%;

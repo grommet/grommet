@@ -2,7 +2,9 @@
 
 $border-radius: 4px;
 
+$header-height: round($inuit-base-spacing-unit * 3);
 $primary-header-height: round($inuit-base-spacing-unit * 4);
+$footer-height: round($inuit-base-spacing-unit * 2);
 
 $center-column-width: round($inuit-base-spacing-unit * 40); // 960px;
 $nav-width: round($inuit-base-spacing-unit * 8); // 240px

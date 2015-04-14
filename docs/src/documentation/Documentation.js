@@ -12,7 +12,10 @@ var TBD = require('ligo/components/TBD');
 var LigoDocument = require('ligo/components/Document');
 var HelloWorld = require('./HelloWorld');
 var GetStarted = require('./GetStarted');
+var DialogDoc = require('./components/DialogDoc');
 var DonutDoc = require('./components/DonutDoc');
+var FooterDoc = require('./components/FooterDoc');
+var FormDoc = require('./components/FormDoc');
 var HeaderDoc = require('./components/HeaderDoc');
 var MenuDoc = require('./components/MenuDoc');
 require("!style!css!highlight.js/styles/github.css");
@@ -41,10 +44,11 @@ var CONTENTS = [
   {label: 'Components',
     contents: [
       {route: 'doc_chart', label: 'Chart', component: TBD},
+      {route: 'doc_dialog', label: 'Dialog', component: DialogDoc},
       {route: 'doc_document', label: 'Document', component: TBD},
       {route: 'doc_donut', label: 'Donut', component: DonutDoc},
-      {route: 'doc_footer', label: 'Footer', component: TBD},
-      {route: 'doc_form', label: 'Form', component: TBD},
+      {route: 'doc_footer', label: 'Footer', component: FooterDoc},
+      {route: 'doc_form', label: 'Form', component: FormDoc},
       {route: 'doc_header', label: 'Header', component: HeaderDoc},
       {route: 'doc_menu', label: 'Menu', component: MenuDoc},
       {route: 'doc_meter', label: 'Meter', component: TBD},

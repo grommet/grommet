@@ -5,27 +5,10 @@
   &__content {
     display: -webkit-flex;
     display: flex;
-    padding-top: $inuit-base-spacing-unit;
-    padding-bottom: $inuit-base-spacing-unit;
+    padding-top: double($inuit-base-spacing-unit);
+    padding-bottom: double($inuit-base-spacing-unit);
 
-    &.center-column__content { // TODO: formalize this better
-      > .menu:first-child {
-        -webkit-flex: 0 0 auto;
-        flex: 0 0 auto;
-        width: $nav-width;
-
-        @include media-query(palm) {
-          width: 100%;
-        }
-      }
-    }
-
-    @for $i from 1 through 4 {
-      > .flex-#{$i} {
-        -webkit-flex: $i;
-        flex: $i;
-      }
-    }
+    @include flexible();
 
     > * {
       margin-right: double($inuit-base-spacing-unit);

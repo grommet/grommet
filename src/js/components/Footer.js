@@ -7,6 +7,7 @@ var Footer = React.createClass({
 
   propTypes: {
     centerColumn: React.PropTypes.bool,
+    primary: React.PropTypes.bool,
     scrollTop: React.PropTypes.bool
   },
 
@@ -53,6 +54,9 @@ var Footer = React.createClass({
     if (this.props.centerColumn) {
       classes.push("center-column");
       contentClasses.push("center-column__content");
+    }
+    if (this.props.primary) {
+      classes.push("footer--primary");
     }
 
     var top = null;

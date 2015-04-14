@@ -1,0 +1,22 @@
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+
+@mixin flexible {
+  &.center-column__content { // TODO: formalize this better
+    > .menu:first-child {
+      -webkit-flex: 0 0 auto;
+      flex: 0 0 auto;
+      width: $nav-width;
+
+      @include media-query(palm) {
+        width: 100%;
+      }
+    }
+  }
+
+  @for $i from 1 through 4 {
+    > .flex-#{$i} {
+      -webkit-flex: $i;
+      flex: $i;
+    }
+  }
+}

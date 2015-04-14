@@ -1,0 +1,31 @@
+// (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
+
+.form-field {
+  margin-bottom: halve($inuit-base-spacing-unit);
+
+  > * {
+    display: inline-block;
+  }
+
+  > label:first-child {
+    display: inline-block;
+    width: double(quadruple($inuit-base-spacing-unit));
+    text-align: right;
+    margin-right: $inuit-base-spacing-unit;
+    vertical-align: top;
+
+    @include media-query(palm) {
+      text-align: left;
+    }
+  }
+
+  input,
+  textarea {
+    max-width: quadruple(quadruple($inuit-base-spacing-unit));
+  }
+
+  label.checkbox,
+  label.radiobutton {
+    margin-right: $inuit-base-spacing-unit;
+  }
+}

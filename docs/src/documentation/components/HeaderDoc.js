@@ -35,25 +35,29 @@ var HeaderDoc = React.createClass({
           <h2>Examples</h2>
 
           <h3>Title and inline Menu</h3>
-          <Header>
-            <h2>Title</h2>
-            <Menu direction="left">
-              <a href="#" className="active">First</a>
-              <a href="#">Second</a>
-              <a href="#">Third</a>
-            </Menu>
-          </Header>
+          <div className="example">
+            <Header>
+              <h2>Title</h2>
+              <Menu direction="left">
+                <a href="#" className="active">First</a>
+                <a href="#">Second</a>
+                <a href="#">Third</a>
+              </Menu>
+            </Header>
+          </div>
           <pre><code className="html">{"<Header> ..."}</code></pre>
 
           <h3>Title and icon Menu</h3>
-          <Header>
-            <h2>Title</h2>
-            <Menu collapse={true}>
-              <a href="#" className="active">First</a>
-              <a href="#">Second</a>
-              <a href="#">Third</a>
-            </Menu>
-          </Header>
+          <div className="example">
+            <Header>
+              <h2>Title</h2>
+              <Menu collapse={true}>
+                <a href="#" className="active">First</a>
+                <a href="#">Second</a>
+                <a href="#">Third</a>
+              </Menu>
+            </Header>
+          </div>
           <pre><code className="html">{"<Header> ..."}</code></pre>
 
           <h3>Title menu and icon Menu</h3>
