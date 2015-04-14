@@ -22,7 +22,7 @@ app.use(morgan('tiny'));
 app.use(bodyParser.json());
 
 router.get('/', function (req, res) {
-  res.redirect('/docs');
+  res.redirect('/docs/hpe');
 });
 
 app.
