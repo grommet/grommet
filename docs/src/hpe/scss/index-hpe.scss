@@ -2,6 +2,7 @@
 
 @import 'hpe.defaults';
 @import 'ligo-core/index';
+@import 'objects.swatch';
 
 html {
   font-family: 'Metric', Arial, sans-serif;
@@ -18,4 +19,8 @@ html {
   h6 {
     color: inherit;
   }
+}
+
+.generic-branding {
+  display: none;
 }

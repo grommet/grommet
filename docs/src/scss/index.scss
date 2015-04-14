@@ -1,3 +1,12 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 @import 'ligo-core/index';
+@import 'objects.swatch';
+
+.hpe-branding {
+  display: none;
+}
+
+svg rect[fill="#00B388"] {
+  fill: $brand-color;
+}

@@ -82,7 +82,7 @@ var Displays = React.createClass({
                           <rect id="Rectangle-path" stroke="#DCDCDC" x="30.672" y="69.794" width="59" height="9"></rect>
                           <rect id="Rectangle-path" fill="#DCDCDC" x="30.172" y="63.294" width="37" height="2"></rect>
                           <rect id="Rectangle-path" fill="#0096D6" x="30.172" y="85.294" width="59" height="10"></rect>
-                          <rect id="Rectangle-path" fill="#00B387" x="30.172" y="85.294" width="59" height="10"></rect>
+                          <rect id="Rectangle-path" fill="#00B388" x="30.172" y="85.294" width="59" height="10"></rect>
                           <rect id="Rectangle-path" stroke="#DCDCDC" x="49.672" y="10.794" width="18" height="18"></rect>
                       </g>
                       <g id="Group" transform="translate(368.000000, 130.000000)">
@@ -110,7 +110,7 @@ var Displays = React.createClass({
                           <path d="M46.5,155 L64.5,155" id="Shape" stroke="#FFFFFF" strokeWidth="3"></path>
                           <g transform="translate(5.000000, 16.000000)" id="Rectangle-path">
                               <rect fill="#FFFFFF" x="0.833" y="0" width="103" height="92.166"></rect>
-                              <rect fill="#00B387" x="22.506" y="72.293" width="59" height="10"></rect>
+                              <rect fill="#00B388" x="22.506" y="72.293" width="59" height="10"></rect>
                               <rect stroke="#DCDCDC" x="22.506" y="40.293" width="59" height="7"></rect>
                               <rect fill="#DCDCDC" x="22.006" y="33.846" width="37" height="2"></rect>
                               <rect stroke="#DCDCDC" x="22.506" y="58.293" width="59" height="7"></rect>
@@ -130,7 +130,7 @@ var Displays = React.createClass({
                           <g transform="translate(2.000000, 12.000000)" id="Rectangle-path">
                               <rect fill="#FFFFFF" x="0" y="0" width="40" height="48"></rect>
                               <g transform="translate(6.000000, 15.000000)">
-                                  <rect fill="#00B387" x="0.781" y="21.363" width="25" height="5.63"></rect>
+                                  <rect fill="#00B388" x="0.781" y="21.363" width="25" height="5.63"></rect>
                                   <rect stroke="#DCDCDC" x="0.781" y="3.347" width="25" height="3.941"></rect>
                                   <rect fill="#DCDCDC" x="0.5" y="0.813" width="12" height="0.563"></rect>
                                   <rect stroke="#DCDCDC" x="0.781" y="13.481" width="25" height="3.94"></rect>
