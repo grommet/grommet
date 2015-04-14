@@ -1,9 +1,10 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var Ligo = require('ligo');
-var Header = Ligo.Header;
-var Menu = Ligo.Menu;
+var LigoDocument = require('ligo/components/Document');
+var Menu = require('ligo/components/Menu');
+var Header = require('ligo/components/Header');
+var LigoTBD = require('ligo/components/TBD');
 
 var HeaderDoc = React.createClass({
 
@@ -11,7 +12,7 @@ var HeaderDoc = React.createClass({
     var inline =
     "<Header>\n  <Link to={route}>{label}</Link>\n  ...\n</Header>";
     return (
-      <Ligo.Document>
+      <LigoDocument>
         <header>
           <h1>Header</h1>
           <p>Combines Title and Menu elements responsively.</p>
@@ -56,10 +57,10 @@ var HeaderDoc = React.createClass({
           <pre><code className="html">{"<Header> ..."}</code></pre>
 
           <h3>Title menu and icon Menu</h3>
-          <Ligo.TBD />
+          <LigoTBD />
 
         </section>
-      </Ligo.Document>
+      </LigoDocument>
     );
   }
 });

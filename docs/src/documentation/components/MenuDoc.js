@@ -1,8 +1,9 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var Ligo = require('ligo');
-var Menu = Ligo.Menu;
+var Menu = require('ligo/components/Menu');
+var LigoDocument = require('ligo/components/Document');
+var Edit = require('ligo/components/icons/Edit');
 
 var MenuDoc = React.createClass({
 
@@ -10,7 +11,7 @@ var MenuDoc = React.createClass({
     var inline =
     "<Menu>\n  <Link to={route}>{label}</Link>\n  ...\n</Menu>";
     return (
-      <Ligo.Document>
+      <LigoDocument>
         <header>
           <h1>Menu</h1>
           <p>Presents a list of choices responsively.</p>
@@ -85,7 +86,7 @@ var MenuDoc = React.createClass({
           <pre><code className="html">{"<Menu collapse={true}> ..."}</code></pre>
 
           <h3>icon, (collapse, down)</h3>
-          <Menu icon={<Ligo.Icons.Edit />}>
+          <Menu icon={<Edit />}>
             <a href="#" className="active">First</a>
             <a href="#">Second</a>
             <a href="#">Third</a>
@@ -101,7 +102,7 @@ var MenuDoc = React.createClass({
           <pre><code className="html">{"<Menu collapse={true} direction=\"up\"> ..."}</code></pre>
 
         </section>
-      </Ligo.Document>
+      </LigoDocument>
     );
   }
 });
