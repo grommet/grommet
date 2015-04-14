@@ -24,3 +24,17 @@ html {
 .generic-branding {
   display: none;
 }
+
+.font-sample {
+  margin-left: double($inuit-base-spacing-unit);
+  margin-bottom: double($inuit-base-spacing-unit);
+
+  &.primary {
+    font-family: 'Metric', Arial, sans-serif;
+    @include inuit-font-size($inuit-heading-size-1);
+  }
+  &.base {
+    font-family: Arial, sans-serif;
+    @include inuit-font-size($inuit-heading-size-3);
+  }
+}

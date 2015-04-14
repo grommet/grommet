@@ -10,3 +10,17 @@
 svg rect[fill="#00B388"] {
   fill: $brand-color;
 }
+
+.font-sample {
+  margin-left: double($inuit-base-spacing-unit);
+  margin-bottom: double($inuit-base-spacing-unit);
+
+  &.primary {
+    font-family: 'Open Sans', Arial, sans-serif;
+    @include inuit-font-size($inuit-heading-size-1);
+  }
+  &.base {
+    font-family: Arial, sans-serif;
+    @include inuit-font-size($inuit-heading-size-3);
+  }
+}
