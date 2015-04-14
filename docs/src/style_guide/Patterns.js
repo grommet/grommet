@@ -7,6 +7,7 @@ var Menu = require('ligo/components/Menu');
 var Donut = require('ligo/components/Donut');
 var SearchIcon = require('ligo/components/icons/Search');
 var Logo = require('../Logo');
+var Gravatar = require('react-gravatar');
 
 var PatternsHeader = React.createClass({
   render: function () {
@@ -63,10 +64,9 @@ var PatternsSection = React.createClass({
 
     <div className="example">
       <Header>
-        <Logo />
-        <h1>Title</h1>
+        <h1><Logo /> Title</h1>
         <Menu direction="left">
-          <span>icon</span>
+          <Gravatar email={'eric.soderberg@hp.com'} size={48} />
         </Menu>
       </Header>
     </div>
