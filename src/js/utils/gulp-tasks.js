@@ -11,6 +11,7 @@ var assign = require('object-assign');
 var rsync = require('gulp-rsync');
 var nodemon = require('gulp-nodemon');
 var file = require('gulp-file');
+var watch = require('gulp-watch');
 
 var webpackConfig = {
   output: {
@@ -61,6 +62,7 @@ module.exports = function(gulp, opts) {
   }
 
   gulp.task('copy', function() {
+    console.log(options.copyAssets);
     (options.copyAssets || []).forEach(function(copyAsset) {
       if (copyAsset.filename) {
         gulp.src('./')
@@ -128,6 +130,10 @@ module.exports = function(gulp, opts) {
         script: options.nodeServerPath
       });
     }
+
+    watch('src/**', function () {
+      gulp.src('src/js/**').pipe(gulp.dest('dist/'));
+    });
 
     var devWebpackConfig = assign({}, webpackConfig, options.webpack, {
       entry: {
