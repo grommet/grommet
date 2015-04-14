@@ -41,16 +41,15 @@ var IndexAggregate = React.createClass({
 
     if (aggregate) {
       aggregate.counts.forEach(function (count, index) {
-        var colorId = index + 1;
+        var accentIndex = index + 1;
         if ('status' === attribute.name) {
-          colorId = count.value.toLowerCase();
+          accentIndex = count.value.toLowerCase();
         }
-        var className = 'series-' + colorId;
 
         series.push({
           label: count.value,
           value: count.count,
-          className: className,
+          accentIndex: accentIndex,
           onClick: this._onClickValue.bind(this, count.value)
         });
       }, this);

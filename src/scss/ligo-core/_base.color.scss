@@ -52,10 +52,10 @@ $inverse-color: #fff;
 // Charts and Graphs
 
 $graph-colors: (
-  '1': nth($brand-accent-colors, 1),
-  '2': nth($brand-accent-colors, 2),
-  '3': nth($brand-accent-colors, 3),
-  '4': nth($brand-neutral-colors, 1),
-  '5': nth($brand-neutral-colors, 2),
-  '6': nth($brand-neutral-colors, 3)
+  '1': nth($brand-colors, 1),
+  '2': nth($brand-colors, 2),
+  '3': nth($brand-colors, 3),
+  '4': nth($brand-colors, 1),
+  '5': nth($brand-colors, 2),
+  '6': nth($brand-colors, 3)
 );

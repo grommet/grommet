@@ -49,11 +49,12 @@
   &__active {
     position: absolute;
     width: 100%;
-    margin-top: double($inuit-base-spacing-unit);
+    margin-top: round($inuit-base-spacing-unit * 3);
     text-align: center;
     pointer-events: none;
 
     &-value {
+      @include inuit-font-size($inuit-heading-size-1, $inuit-heading-size-1 + 2);
       font-weight: bold;
     }
 
@@ -115,7 +116,7 @@
 }
 
 @each $status, $color in $status-colors {
-  .series-#{$status} {
+  .donut__slice--accent-#{$status} {
     stroke: $color;
   }
   //&.dashboard__panel-key-color {
@@ -124,7 +125,7 @@
 }
 
 @each $index, $color in $graph-colors {
-  .series-#{$index} {
+  .donut__slice--accent-#{$index} {
     stroke: $color;
   }
   //&.dashboard__panel-key-color {

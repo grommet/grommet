@@ -23,6 +23,19 @@ function describeArc (x, y, radius, startAngle, endAngle) {
 
 var Donut = React.createClass({
 
+  propTypes: {
+    key: React.PropTypes.bool,
+    series: React.PropTypes.arrayOf(React.PropTypes.shape({
+      label: React.PropTypes.string,
+      value: React.PropTypes.number,
+      accentIndex: React.PropTypes.oneOfType([
+        React.PropTypes.number, // 1-6
+        React.PropTypes.string // status
+      ]),
+      onClick: React.PropTypes.func
+    })).isRequired
+  },
+
   _initialTimeout: function () {
     this.setState({initial: false, activeIndex: 0});
     clearTimeout(this._timeout);
@@ -60,7 +73,6 @@ var Donut = React.createClass({
     var startAngle = 0;
     var anglePer = 360.0 / total;
     var paths = {};
-    var includeKey = this.props.key;
     var keys = {};
     var value = null;
     var label = null;
@@ -70,30 +82,32 @@ var Donut = React.createClass({
       var endAngle = Math.min(360, Math.max(10, startAngle + (anglePer * item.value)));
       var commands = describeArc(100, 100, 80, startAngle, endAngle-2);
       startAngle = endAngle;
+      var accentIndex = item.accentIndex || (index + 1);
 
-      var sliceClasses = ['donut__slice', item.className];
+      var sliceClasses = ["donut__slice"];
+      sliceClasses.push("donut__slice--accent-" + accentIndex);
       if (this.state.activeIndex === index) {
-        sliceClasses.push('donut__slice--active');
+        sliceClasses.push("donut__slice--active");
         value = item.value;
         label = item.label;
       }
 
-      paths[item.className] = (
+      paths[accentIndex] = (
         <path fill="none" className={sliceClasses.join(' ')} d={commands}
           onMouseOver={this._onMouseOver.bind(null, index)}
           onMouseOut={this._onMouseOut.bind(null, index)}
           onClick={item.onClick} />
       );
 
-      if (includeKey) {
+      if (this.props.key) {
 
-        var keyItemClasses = ['list-item', 'donut__key-item'];
+        var keyItemClasses = ["donut__key-item"];
         if (this.state.activeIndex === index) {
-          keyItemClasses.push('donut__key-item--active');
+          keyItemClasses.push("donut__key-item--active");
         }
 
-        keys[item.className] = (
-          <li className={keyItemClasses.join(' ')}
+        keys[accentIndex] = (
+          <li key={item.className} className={keyItemClasses.join(' ')}
             onMouseOver={this._onMouseOver.bind(null, index)}
             onMouseOut={this._onMouseOut.bind(null, index)}>
             <svg className={"donut__key-item-swatch"} viewBox="0 0 10 10">
@@ -107,18 +121,18 @@ var Donut = React.createClass({
     }, this);
 
     return (
-      <div className={'donut'}>
+      <div className="donut">
         <div className="donut__graphic-container">
           <svg className="donut__graphic" viewBox="0 0 200 200"
             preserveAspectRatio="xMidYMid meet">
             <g>{paths}</g>
           </svg>
           <div className="donut__active">
-            <div className="donut__active-value alpha">{value}</div>
+            <div className="donut__active-value">{value}</div>
             <div className="donut__active-label">{label}</div>
           </div>
         </div>
-        <ol className="donut__key list-block list-block--tiny">
+        <ol className="donut__key">
           {keys}
         </ol>
       </div>
