@@ -5,6 +5,7 @@ var LigoDocument = require('ligo/components/Document');
 var Menu = require('ligo/components/Menu');
 var Header = require('ligo/components/Header');
 var LigoTBD = require('ligo/components/TBD');
+var Logo = require('../../Logo');
 
 var HeaderDoc = React.createClass({
 
@@ -47,10 +48,10 @@ var HeaderDoc = React.createClass({
           </div>
           <pre><code className="html">{"<Header> ..."}</code></pre>
 
-          <h3>Title and icon Menu</h3>
+          <h3>Logo, title and icon Menu</h3>
           <div className="example">
             <Header>
-              <h2>Title</h2>
+              <h2><Logo /> Title</h2>
               <Menu collapse={true}>
                 <a href="#" className="active">First</a>
                 <a href="#">Second</a>

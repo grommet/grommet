@@ -4,10 +4,9 @@ var React = require('react');
 var LoginForm = require('ligo/components/LoginForm');
 var Header = require('ligo/components/Header');
 var Menu = require('ligo/components/Menu');
-var Form = require('ligo/components/Form');
-var FormField = require('ligo/components/FormField');
 var Donut = require('ligo/components/Donut');
 var SearchIcon = require('ligo/components/icons/Search');
+var Logo = require('../Logo');
 
 var PatternsHeader = React.createClass({
   render: function () {
@@ -64,6 +63,7 @@ var PatternsSection = React.createClass({
 
     <div className="example">
       <Header>
+        <Logo />
         <h1>Title</h1>
         <Menu direction="left">
           <span>icon</span>
