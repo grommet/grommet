@@ -75,6 +75,7 @@ var Donut = React.createClass({
     var paths = {};
     var keys = {};
     var value = null;
+    var units = null;
     var label = null;
 
     this.props.series.forEach(function (item, index) {
@@ -89,6 +90,7 @@ var Donut = React.createClass({
       if (this.state.activeIndex === index) {
         sliceClasses.push("donut__slice--active");
         value = item.value;
+        units = item.units;
         label = item.label;
       }
 
@@ -128,7 +130,11 @@ var Donut = React.createClass({
             <g>{paths}</g>
           </svg>
           <div className="donut__active">
-            <div className="donut__active-value">{value}</div>
+            <div className="donut__active-value">
+              {value}
+              <span className="donut__active-units">{units}</span>
+            </div>
+
             <div className="donut__active-label">{label}</div>
           </div>
         </div>

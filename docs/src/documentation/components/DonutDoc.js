@@ -13,8 +13,8 @@ var DonutDoc = React.createClass({
       "{\n  label: <label>,\n  value: <value>,\n  accentIndex: (1-6|<status>)\n}";
 
     var genericSeries = [
-      {label: 'First', value: 10},
-      {label: 'Second', value: 20}
+      {label: 'Used', value: 10, units: 'TB'},
+      {label: 'Available', value: 20, units: 'TB'}
     ];
 
     var statusSeries = [
@@ -55,7 +55,7 @@ var DonutDoc = React.createClass({
 
           <h3>Status</h3>
           <div className="example">
-            <Donut series={statusSeries} key={true} />
+            <Donut series={statusSeries} />
           </div>
           <pre><code className="html">
             {"<Donut series={" + JSON.stringify(statusSeries, null, '  ') + "} />"}

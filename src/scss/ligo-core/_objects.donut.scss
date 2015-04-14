@@ -6,6 +6,7 @@
 }
 
 .donut {
+  display: inline-block;
 
   &.series-pre {
     path {
@@ -56,6 +57,13 @@
     &-value {
       @include inuit-font-size($inuit-heading-size-1, $inuit-heading-size-1 + 2);
       font-weight: bold;
+    }
+
+    &-units {
+      @include inuit-font-size($inuit-heading-size-3, inherit);
+      margin-left: quarter($inuit-base-spacing-unit);
+      color: $secondary-text-color;
+      font-weight: normal;
     }
 
     &-label {

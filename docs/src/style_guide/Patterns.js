@@ -5,7 +5,8 @@ var Header = require('ligo/components/Header');
 var Menu = require('ligo/components/Menu');
 var Form = require('ligo/components/Form');
 var FormField = require('ligo/components/FormField');
-//var Donut = require('ligo/components/Donut');
+var Donut = require('ligo/components/Donut');
+var SearchIcon = require('ligo/components/icons/Search');
 
 var PatternsHeader = React.createClass({
   render: function () {
@@ -26,6 +27,18 @@ var PatternsHeader = React.createClass({
 
 var PatternsSection = React.createClass({
   render: function () {
+
+    var genericSeries = [
+      {label: 'Used', value: 10, units: 'TB'},
+      {label: 'Available', value: 20, units: 'TB'}
+    ];
+
+    var statusSeries = [
+      {label: 'Critical', value: 10, accentIndex: 'critical'},
+      {label: 'Warning', value: 20, accentIndex: 'warning'},
+      {label: 'OK', value: 70, accentIndex: 'ok'}
+    ];
+
     return (
       <div>
   <section>
@@ -35,20 +48,22 @@ var PatternsSection = React.createClass({
     fermentum at nisl pellentesque, iaculis mattis nisl. Duis dapibus.
     <a href="#/styleguide/login">Read more</a></p>
 
-    <Form>
-      <fieldset>
-        <FormField>
-          <label htmlFor="username">Username</label>
-          <input id="username" />
-        </FormField>
-        <FormField>
-          <label htmlFor="password">Username</label>
-          <input type="password" id="password" />
-        </FormField>
-      </fieldset>
-      <input type="submit" className="primary" val="Login" />
-      <input type="checkbox" /><label>Remember me</label>
-    </Form>
+    <div className="example">
+      <Form>
+        <fieldset>
+          <FormField>
+            <label htmlFor="username">Username</label>
+            <input id="username" />
+          </FormField>
+          <FormField>
+            <label htmlFor="password">Username</label>
+            <input type="password" id="password" />
+          </FormField>
+        </fieldset>
+        <input type="submit" className="primary" val="Login" />
+        <input type="checkbox" /><label>Remember me</label>
+      </Form>
+    </div>
     <img src="img/snippet-login.png" alt="login snippet"/>
 
   </section>
@@ -60,12 +75,14 @@ var PatternsSection = React.createClass({
     fermentum at nisl pellentesque, iaculis mattis nisl. Duis dapibus.
     <a href="#/styleguide/header">Read more</a></p>
 
-    <Header>
-      <h1>Title</h1>
-      <Menu direction="left">
-        <span>icon</span>
-      </Menu>
-    </Header>
+    <div className="example">
+      <Header>
+        <h1>Title</h1>
+        <Menu direction="left">
+          <span>icon</span>
+        </Menu>
+      </Header>
+    </div>
 
   </section>
 
@@ -76,8 +93,10 @@ var PatternsSection = React.createClass({
     fermentum at nisl pellentesque, iaculis mattis nisl. Duis dapibus.
     <a href="#/styleguide/dashboard">Read more</a></p>
 
-
-    <img src="img/snippet-dashboard.png" alt="dashboard snippet"/>
+    <div className="example">
+      <Donut series={genericSeries} />
+      <Donut series={statusSeries} />
+    </div>
 
   </section>
 
@@ -88,7 +107,16 @@ var PatternsSection = React.createClass({
     fermentum at nisl pellentesque, iaculis mattis nisl. Duis dapibus.
     <a href="#/styleguide/search">Read more</a></p>
 
-    <img src="img/snippet-search.png" alt="search snippet"/>
+    <div className="example">
+      <Header>
+        <h1></h1>
+        <Menu direction="left">
+          <div className="control-icon">
+            <SearchIcon />
+          </div>
+        </Menu>
+      </Header>
+    </div>
 
   </section>
       </div>
