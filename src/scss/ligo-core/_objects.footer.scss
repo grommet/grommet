@@ -47,6 +47,31 @@
         img {
           margin: $inuit-base-spacing-unit 0px;
         }
+
+        p {
+          padding-top: halve($inuit-base-spacing-unit);
+          margin: 0;
+          max-width: none;
+          text-align: right;
+          line-height: $inuit-base-spacing-unit; 
+        }
+
+        @include media-query(palm) {
+          display: block;
+          line-height: $inuit-base-spacing-unit;
+
+          p {
+            text-align: left;
+          }
+        }
+
+        @include media-query(lap) {
+          display: block;
+
+          p {
+            text-align: left;
+          }
+        }  
       }
 
       &__top {

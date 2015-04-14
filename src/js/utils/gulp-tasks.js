@@ -104,7 +104,15 @@ module.exports = function(gulp, opts) {
     runSequence('clean', 'copy', 'jslint', 'scsslint', callback);
   });
 
-  gulp.task('dist', ['preprocess'], function() {
+   gulp.task('dist-preprocess', function(callback) {
+    if (options.distPreprocess) {
+      runSequence(options.distPreprocess, callback);  
+    } else {
+      callback();  
+    }
+  });
+
+  gulp.task('dist', ['preprocess', 'dist-preprocess'], function() {
     var config = assign({}, webpackConfig, options.webpack, {
       plugins: [
         new webpack.optimize.UglifyJsPlugin({

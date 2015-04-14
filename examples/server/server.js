@@ -1,13 +1,10 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-var _ = require('lodash');
 var express = require('express');
-var request = require('request');
 var router = express.Router();
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
-var path = require('path');
 var docs = require('./docs');
 var rest = require('./rest');
 var tour = require('./tour');
