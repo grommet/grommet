@@ -1,14 +1,12 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-var _ = require('lodash');
 var React = require('react');
 var DashboardStore = require('../stores/DashboardStore');
 var DashboardActions = require('../actions/DashboardActions');
-var Form = require('../../components/Form');
 
 var DashboardPanelEditGuided = React.createClass({
 
-  _onChange: function (event) {
+  _onChange: function () {
     var panel = {
       name: this.refs.name.getDOMNode().value,
       params: {
@@ -16,7 +14,7 @@ var DashboardPanelEditGuided = React.createClass({
         search: this.refs.search.getDOMNode().value
       },
       attribute: this.refs.attribute.getDOMNode().value,
-    }
+    };
     DashboardActions.editPanel(panel);
   },
 

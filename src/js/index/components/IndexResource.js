@@ -1,11 +1,9 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-var _ = require('lodash');
 var React = require('react');
 var RouteHandler = require('react-router').RouteHandler;
 var IndexStore = require('../stores/IndexStore');
 var Router = require('../../utils/Router');
-var IndexRouter = require('../utils/IndexRouter');
 var Link = require('../../components/Link');
 var PreviousIcon = require('../../components/icons/Previous');
 var NextIcon = require('../../components/icons/Next');

@@ -5,7 +5,6 @@ var AppDispatcher = require('../../dispatchers/AppDispatcher');
 var EventEmitter = require('events').EventEmitter;
 var Constants = require('../constants/IndexConstants');
 var Search = require('../utils/Search');
-var String = require('../utils/String');
 var AlphaNum = require('../utils/AlphaNum');
 
 var _persistentState = {}; // category key -> {view: , searchMode: , sort: , attributes: }
@@ -55,6 +54,12 @@ var _data = {
   facetedSearchText: '', // different than params.search.fullText because we strip the trailing '<attribute>:'
   facetedSearchSuggestions: []
 };
+
+function findAttribute(attributes, attributeName) {
+  return attributes.filter(function (attribute) {
+    return attribute.name === attributeName;
+  })[0];
+}
 
 function clearResults() {
   _data.result = {
@@ -120,7 +125,7 @@ function setContext(args) {
       searchMode: _data.defaults.searchMode,
       sort: _data.defaults.sort,
       attributes: _data.defaults.attributes
-    }
+    };
   }
 
   // set current state
@@ -135,7 +140,7 @@ function setContext(args) {
     if (! findAttribute(_data.attributes, attribute.name)) {
       attribute.visible = false;
       _data.attributes.push(attribute);
-    };
+    }
   });
 
   _data.includeActivity = false;
@@ -169,14 +174,8 @@ function setContext(args) {
   clearResults();
 }
 
-function findAttribute(attributes, attributeName) {
-  return attributes.filter(function (attribute) {
-    return attribute.name === attributeName;
-  })[0];
-}
-
 // attributes we don't allow the user to see when searching
-BLACKLIST = {'category': true, 'type': true, 'uri': true, 'eTag': true};
+var BLACKLIST = {'category': true, 'type': true, 'uri': true, 'eTag': true};
 
 // add additional attributes found in an index result to the list of available attributes
 function addAttributesFromResult(obj) {
@@ -185,7 +184,7 @@ function addAttributesFromResult(obj) {
     if (! attribute && ! BLACKLIST[name]) {
 
       if (typeof obj[name] !== 'object') {
-        var attribute = {
+        attribute = {
           name: name,
           label: String.toSentenceCase(name),
           visible: false
@@ -238,11 +237,11 @@ function buildFacetedSearchSuggestions() {
     term = matches[matches.length-1].toLowerCase();
   }
   var parts = term.split(':');
-
+  var exp;
   if (parts.length > 1) {
 
     // attribute:value
-    var exp = new RegExp(parts[1] + '[^$]', 'i');
+    exp = new RegExp(parts[1] + '[^$]', 'i');
     var attribute = findAttribute(_data.attributes, parts[0]);
     if (attribute.unfilteredAggregateResult) {
       attribute.unfilteredAggregateResult.counts.forEach(function (count) {
@@ -331,7 +330,7 @@ function startChanging() {
     view: _data.view,
     searchMode: _data.searchMode,
     attributes: _data.attributes.slice(0)
-  }
+  };
 }
 
 function pruneAttributesForPersistence(attributes) {

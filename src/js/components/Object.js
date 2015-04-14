@@ -45,7 +45,7 @@ function renderObject (obj) {
   );
 }
 
-var Object = React.createClass({
+var LigoObject = React.createClass({
 
   render: function() {
     return (
@@ -57,4 +57,4 @@ var Object = React.createClass({
 
 });
 
-module.exports = Object;
+module.exports = LigoObject;

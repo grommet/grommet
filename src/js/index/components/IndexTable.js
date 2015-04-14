@@ -1,6 +1,5 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-var _ = require('lodash');
 var React = require('react');
 var IndexRouter = require('../utils/IndexRouter');
 var IndexAttribute = require('../components/IndexAttribute');
@@ -17,7 +16,7 @@ function buildHeaderCells(attributes) {
       classes.push(CLASS_ROOT + "__cell--icon");
       content = (
         <StatusIcon className={CLASS_ROOT + "__header-icon"} value={'label'} />
-      )
+      );
     }
     return (
       <th key={attribute.name} className={classes.join(' ')}>{content}</th>
@@ -74,7 +73,7 @@ var IndexTable = React.createClass({
     window.removeEventListener("resize", this._onResize);
   },
 
-  componentDidUpdate: function(prevProps, prevState) {
+  componentDidUpdate: function() {
     // align fixed header width to its container
     var headerMirrorContainerElement = this.refs.headerMirrorContainer.getDOMNode();
     var headerMirrorTableElement = this.refs.headerMirrorTable.getDOMNode();

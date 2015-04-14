@@ -1,6 +1,5 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-var _ = require('lodash');
 var React = require('react');
 var IndexSearch = require('../components/IndexSearch');
 var IndexFilterAttribute = require('../components/IndexFilterAttribute');

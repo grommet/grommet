@@ -1,6 +1,5 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-var _ = require('lodash');
 var React = require('react');
 
 var Settings = React.createClass({

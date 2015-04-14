@@ -3,8 +3,6 @@
 var _ = require('lodash');
 var React = require('react');
 var Router = require('../../utils/Router');
-var IndexRouter = require('../utils/IndexRouter');
-var IndexStore = require('../stores/IndexStore');
 var IndexActions = require('../actions/IndexActions');
 var IndexAggregates = require('../components/IndexAggregates');
 var IndexTable = require('../components/IndexTable');
@@ -42,7 +40,7 @@ var IndexResults = React.createClass({
     this.refs.resources.getDOMNode().addEventListener("scroll", this._onScroll);
   },
 
-  componentWillReceiveProps: function (nextProps) {
+  componentWillReceiveProps: function () {
     /*if (nextProps.index.result.members.length > 0 &&
       ! nextProps.index.result.members[0]._activity &&
       nextProps.index.includeActivity) {

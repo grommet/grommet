@@ -4,7 +4,7 @@ jest.dontMock(__path__);
 
 describe('Login', function() {
   it('sets class name', function() {
-    var React = require('react/addons')
+    var React = require('react/addons');
     var TestUtils = React.addons.TestUtils;
 
     var Login = require(__path__);

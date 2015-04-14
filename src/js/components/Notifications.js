@@ -1,6 +1,5 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-var _ = require('lodash');
 var React = require('react');
 var NotificationsStore = require('../stores/NotificationsStore');
 var KeyboardAccelerators = require('../mixins/KeyboardAccelerators');
@@ -14,7 +13,7 @@ var Notifications = React.createClass({
     this.setState(NotificationsStore.getAll());
   },
 
-  _onClose: function(e) {
+  _onClose: function() {
     this.props.onRequestClose();
   },
 

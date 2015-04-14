@@ -1,6 +1,5 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-var _ = require('lodash');
 var React = require('react');
 var IndexActivity = require('../components/IndexActivity');
 var StatusIcon = require('../../components/icons/Status');
@@ -40,7 +39,7 @@ var IndexAttribute = React.createClass({
       } else if ('_activity' === attribute.name) {
         content = (
           <IndexActivity member={member}/>
-        )
+        );
       } else {
         content = (<span>{value}</span>);
       }

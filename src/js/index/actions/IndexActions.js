@@ -71,7 +71,7 @@ function queueActivity (category, uri) {
       restUri: '/rest/index/resources',
       apiParams: apiParams,
       resourceUri: uri
-    }
+    };
 
     pendingGets.push(getArgs);
     pendingActivityUris[uri] = true;
@@ -89,7 +89,8 @@ function getAttributeAggregates(getter, index) {
       return attribute.aggregate;
     }).map(function (attribute) {
       return attribute.name;
-    })
+    });
+
     if (attributes.length > 0) {
       getter(index.params, attributes);
     }
@@ -99,7 +100,8 @@ function getAttributeAggregates(getter, index) {
       return attribute.filter;
     }).map(function (attribute) {
       return attribute.name;
-    })
+    });
+
     if (attributes.length > 0) {
       var filterParams = _.extend({}, index.params,
         {search: {fullText: '', tokens: [], text: ''}});
@@ -110,7 +112,8 @@ function getAttributeAggregates(getter, index) {
       return attribute.aggregate || attribute.filter;
     }).map(function (attribute) {
       return attribute.name;
-    })
+    });
+    
     if (attributes.length > 0) {
       getter(index.params, attributes);
     }

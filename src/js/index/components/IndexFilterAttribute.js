@@ -1,10 +1,8 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-var _ = require('lodash');
 var React = require('react');
-var String = require('../utils/String');
 
-CLASS_ROOT = 'index-filter-attribute';
+var CLASS_ROOT = 'index-filter-attribute';
 
 var IndexFilterAttribute = React.createClass({
 
@@ -12,7 +10,7 @@ var IndexFilterAttribute = React.createClass({
     var tokenText = attribute.name + ':' + String.quoteIfNecessary(value);
     var search = this.props.search.clone();
     search.toggle(tokenText);
-    this.props.onSearch(search.fullText)
+    this.props.onSearch(search.fullText);
   },
 
   render: function () {

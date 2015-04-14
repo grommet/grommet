@@ -33,9 +33,9 @@ function responseHandler(key, params, context) {
   return function (err, res) {
     if (err && err.timeout === TIMEOUT) {
       dispatch(key, Constants.Request.TIMEOUT, null, params, context);
-    } else if (res.status === 400
-      && Constants.ActionTypes.LOGOUT !== key
-      && Constants.ActionTypes.LOGIN !== key) {
+    } else if (res.status === 400 && 
+      Constants.ActionTypes.LOGOUT !== key && 
+      Constants.ActionTypes.LOGIN !== key) {
       dispatch(Constants.ActionTypes.LOGOUT, null, null, params, context);
     } else if (!res.ok) {
       dispatch(key, Constants.Request.ERROR, res.body, params, context);
@@ -50,8 +50,8 @@ function deliver(req, key, params, context) {
   if (token()) {
     req.set('auth', token());
   }
-  req.set('Accept', 'application/json')
-  req.set('X-API-Version', VERSION)
+  req.set('Accept', 'application/json');
+  req.set('X-API-Version', VERSION);
   req.end(responseHandler(key, params, context));
 }
 

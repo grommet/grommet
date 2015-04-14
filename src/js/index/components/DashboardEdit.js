@@ -1,6 +1,5 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-var _ = require('lodash');
 var React = require('react');
 var RouteHandler = require('react-router').RouteHandler;
 var DashboardStore = require('../stores/DashboardStore');
@@ -49,7 +48,7 @@ var DashboardEdit = React.createClass({
     this._placeholder.style.height = '' + (rect.bottom - rect.top) + 'px';
   },
 
-  _onDragEnd: function(event) {
+  _onDragEnd: function() {
     this._dragged.style.display = "inline-block";
     this._dragged.parentNode.removeChild(this._placeholder);
     this._placeholder = null;
@@ -68,7 +67,7 @@ var DashboardEdit = React.createClass({
   _onDragOver: function(event) {
     event.preventDefault();
     this._dragged.style.display = "none";
-    if (event.target.className ==
+    if (event.target.className ===
       "dashboard-edit__panel dashboard-edit__panel--placeholder list-item box") {
       return;
     }
@@ -82,9 +81,7 @@ var DashboardEdit = React.createClass({
 
   componentDidMount: function() {
     DashboardActions.startChanging();
-    var panels = this.state.panels.forEach(function (panel) {
-      IndexActions.getAggregates(panel.params, [panel.attribute.name], panel.name);
-    });
+    
     DashboardStore.addChangeListener(this._onChange);
   },
 

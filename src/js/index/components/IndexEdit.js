@@ -1,6 +1,5 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-var _ = require('lodash');
 var React = require('react');
 var IndexStore = require('../stores/IndexStore');
 var IndexActions = require('../actions/IndexActions');
@@ -79,7 +78,7 @@ var IndexEdit = React.createClass({
     this._placeholder.style.height = '' + (rect.bottom - rect.top) + 'px';
   },
 
-  _onDragEnd: function(event) {
+  _onDragEnd: function() {
     this._dragged.style.display = "block";
     this._dragged.parentNode.removeChild(this._placeholder);
     this._placeholder = null;
@@ -95,7 +94,7 @@ var IndexEdit = React.createClass({
   _onDragOver: function(event) {
     event.preventDefault();
     this._dragged.style.display = "none";
-    if (event.target.className ==
+    if (event.target.className ===
       CLASS_ROOT + "__attribute " + CLASS_ROOT + "__attribute--placeholder list-item") {
       return;
     }
@@ -140,7 +139,7 @@ var IndexEdit = React.createClass({
       attributes = this.state.pendingChanges.attributes;
     }
 
-    var attributes = attributes.map(function (attribute, index) {
+    /**var attributes = attributes.map(function (attribute, index) {
       var id = 'a-' + index;
       return (
         <li key={attribute.name} data-index={index}
@@ -167,7 +166,7 @@ var IndexEdit = React.createClass({
           </label>
         </li>
       );
-    }, this);
+    }, this);**/
 
     return (
       <Form action={'Edit'}

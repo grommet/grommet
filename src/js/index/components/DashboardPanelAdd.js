@@ -1,8 +1,6 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-var _ = require('lodash');
 var React = require('react');
-var ReactLayeredComponent = require('../../mixins/ReactLayeredComponent');
 var DashboardStore = require('../stores/DashboardStore');
 var DashboardActions = require('../actions/DashboardActions');
 var IndexActions = require('../actions/IndexActions');
@@ -43,9 +41,6 @@ var DashboardPanelAdd = React.createClass({
   },
 
   componentDidMount: function() {
-    var panels = this.state.dashboard.availablePanels.forEach(function (panel) {
-      IndexActions.getAggregates(panel.params, [panel.attribute.name], panel.name);
-    });
     DashboardStore.addChangeListener(this._onChange);
   },
 

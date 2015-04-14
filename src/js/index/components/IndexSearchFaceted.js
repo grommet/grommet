@@ -1,11 +1,8 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-var _ = require('lodash');
 var React = require('react');
 var IndexStore = require('../stores/IndexStore');
-var IndexActions = require('../actions/IndexActions');
 var Search = require('../utils/Search');
-var String = require('../utils/String');
 var Clear = require('../../components/icons/Clear');
 var KeyboardAccelerators = require('../../mixins/KeyboardAccelerators');
 
@@ -140,7 +137,7 @@ var IndexSearchFaceted = React.createClass({
     IndexStore.removeChangeListener(this._onChange);
   },
 
-  componentDidUpdate: function(prevProps, prevState) {
+  componentDidUpdate: function() {
     // place suggestions drop down in line with search text
     var textMirrorElement = this.refs.textMirror.getDOMNode();
     var suggestionsElement = this.refs.suggestions.getDOMNode();
@@ -167,7 +164,7 @@ var IndexSearchFaceted = React.createClass({
     if (this.state.active) {
       classes.push(CLASS_ROOT + "--active");
     } else {
-      tokens = search.tokens.map(function (token, index) {
+      tokens = search.tokens.map(function (token) {
         var contents;
         if (token.attribute) {
           contents = [
@@ -182,12 +179,12 @@ var IndexSearchFaceted = React.createClass({
           tokenClasses.push(CLASS_ROOT + "__token--error");
         }
 
-        var onClearToken = this._onClearToken
+        var onClearToken = this._onClearToken;
         return (
           <li className={tokenClasses.join(' ')}>
             {contents}
             <span className={CLASS_ROOT + "__token-clear control-icon"}
-              onClick={function (e) {e.stopPropagation(); onClearToken.call(null, token)}}>
+              onClick={function (e) {e.stopPropagation(); onClearToken.call(null, token);}}>
               <Clear />
             </span>
           </li>
@@ -206,7 +203,7 @@ var IndexSearchFaceted = React.createClass({
         if (index === this.suggestionIndex) {
           classes.push(CLASS_ROOT + "__suggestion--active");
         }
-        var count = ''
+        var count = '';
         if (suggestion.hasOwnProperty('count')) {
           count = (
             <span className={CLASS_ROOT + "__suggestion-count"}>
@@ -228,7 +225,7 @@ var IndexSearchFaceted = React.createClass({
 
     var suggestionsClasses = [CLASS_ROOT + "__suggestions", "list-block", "list-block--tiny"];
     if (suggestions.length > 0) {
-      suggestionsClasses.push(CLASS_ROOT + "__suggestions--active")
+      suggestionsClasses.push(CLASS_ROOT + "__suggestions--active");
     }
 
     // mirror all text except last term

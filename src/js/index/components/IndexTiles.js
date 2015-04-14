@@ -1,13 +1,10 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-var _ = require('lodash');
 var React = require('react');
 var IndexRouter = require('../utils/IndexRouter');
 var Tiles = require('../../components/Tiles');
 var Tile = require('../../components/Tile');
 var IndexAttribute = require('../components/IndexAttribute');
-
-var CLASS_ROOT = "index-tiles";
 
 var IndexTiles = React.createClass({
 

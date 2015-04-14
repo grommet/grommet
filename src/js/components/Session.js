@@ -1,6 +1,5 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-var _ = require('lodash');
 var React = require('react');
 var SessionStore = require('../stores/SessionStore');
 var SessionActions = require('../actions/SessionActions');
@@ -17,7 +16,7 @@ var Session = React.createClass({
     this.setState(SessionStore.getAll());
   },
 
-  _onClose: function(e) {
+  _onClose: function() {
     this.props.onRequestClose();
   },
 
@@ -25,7 +24,7 @@ var Session = React.createClass({
     e.stopPropagation();
   },
 
-  _onClickLogout: function(e) {
+  _onClickLogout: function() {
     this.stopListeningToKeyboard();
     SessionActions.logout();
     this.props.onRequestClose();

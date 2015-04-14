@@ -10,19 +10,15 @@
     "url": "https://ci-gerrit.vse.adapps.hp.com/piano2"
   },
   "scripts": {
-    "devX": "webpack-dev-server --devtool eval --progress --colors --content-base dist",
-    "dev": "gulp build; webpack -d --progress --colors --watch src/js/index.js",
-    "buildX": "gulp build; webpack -d --progress --colors src/js/index.js",
-    "dev2": "gulp dev",
     "test": "jest"
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/test/preprocessor.js",
     "unmockedModulePathPatterns": [
-      "react",
-      "flux",
-      "lodash",
-      "superagent"
+      "<rootDir>/node_modules/react",
+      "<rootDir>/node_modules/flux",
+      "<rootDir>/node_modules/lodash",
+      "<rootDir>/node_modules/superagent"
     ],
     "testDirectoryName": "test"
   },

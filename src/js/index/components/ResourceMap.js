@@ -100,7 +100,6 @@ var ResourceMap = React.createClass({
   render: function() {
     var categories = [];
     if (this.state.treesAggregated.categories) {
-      var treeCategories = this.state.treesAggregated.categories;
       categories = buildCategories(this.state.treesAggregated.categories);
     }
     return (
