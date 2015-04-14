@@ -46,8 +46,8 @@ var Docs = React.createClass({
           <div>
             This work is licensed under the <a href="http://creativecommons.org/licenses/by/4.0/legalcode">Creative Commons Attribution 4.0 International License</a>.
             <div>
-              <p><a href="/doc/hpe/">HPE Branded-version</a></p>
-              <p><a href="/doc/">Generic Branded-version</a></p>
+              <p><a href="/docs/hpe/">HPE Branded-version</a></p>
+              <p><a href="/docs/">Generic Branded-version</a></p>
             </div>
           </div>
         </LigoFooter>
