@@ -25,17 +25,14 @@
       flex-direction: column;
 
       > * {
-        &:not(:empty) {
-          width: 100%;
-          margin-bottom: double($inuit-base-spacing-unit);
-          padding-bottom: double($inuit-base-spacing-unit);
-          border-bottom: 1px solid $border-color;
+        margin-bottom: double($inuit-base-spacing-unit);
+        padding-bottom: double($inuit-base-spacing-unit);
+        border-bottom: 1px solid $border-color;
 
-          &:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-          }
+        &:last-child {
+          border-bottom: none;
+          margin-bottom: 0;
+          padding-bottom: 0;
         }
       }
     }

@@ -9,6 +9,12 @@
 
       @include media-query(palm) {
         width: 100%;
+
+        &:empty {
+          width: 0;
+          margin: 0;
+          padding: 0;
+        }  
       }
     }
   }

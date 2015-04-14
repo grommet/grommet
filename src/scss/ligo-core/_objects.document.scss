@@ -2,14 +2,12 @@
 
 .document {
 
+  width: 100%;
+
   &--no-contents {
     .document {
       &__content {
         padding-left: 0px;
-
-        > * {
-          max-width: none;
-        }
       }
     }
   }
@@ -41,10 +39,6 @@
         padding-right: $inuit-base-spacing-unit;
         margin-left: 0px;
         margin-bottom: $inuit-base-spacing-unit;
-      }
-
-      > li {
-        max-width: $readable-text-width;
       }
     }
 
