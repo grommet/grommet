@@ -18,6 +18,7 @@ var Ligo = {
   Label: require('./components/Label'),
   Link: require('./components/Link'),
   Login: require('./components/Login'),
+  LoginForm: require('./components/LoginForm'),
   Nav: require('./components/Nav'),
   NavUnified: require('./components/NavUnified'),
   Layout: require('./components/Layout'),

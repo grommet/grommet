@@ -17,6 +17,7 @@ var DonutDoc = require('./components/DonutDoc');
 var FooterDoc = require('./components/FooterDoc');
 var FormDoc = require('./components/FormDoc');
 var HeaderDoc = require('./components/HeaderDoc');
+var LoginFormDoc = require('./components/LoginFormDoc');
 var MenuDoc = require('./components/MenuDoc');
 require("!style!css!highlight.js/styles/github.css");
 var hljs = require('highlight.js/lib/highlight');
@@ -50,6 +51,7 @@ var CONTENTS = [
       {route: 'doc_footer', label: 'Footer', component: FooterDoc},
       {route: 'doc_form', label: 'Form', component: FormDoc},
       {route: 'doc_header', label: 'Header', component: HeaderDoc},
+      {route: 'doc_login-form', label: 'LoginForm', component: LoginFormDoc},
       {route: 'doc_menu', label: 'Menu', component: MenuDoc},
       {route: 'doc_meter', label: 'Meter', component: TBD},
       {route: 'doc_table', label: 'Table', component: TBD},
