@@ -1,10 +1,10 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var Ligo = require('ligo');
-var Dialog = Ligo.Dialog;
-var Header = Ligo.Header;
-var Footer = Ligo.Footer;
+var LigoDocument = require('ligo/components/Document');
+var Dialog = require('ligo/components/Dialog');
+var Header = require('ligo/components/Header');
+var Footer = require('ligo/components/Footer');
 
 var SimpleDialog = React.createClass({
   render: function () {
@@ -46,7 +46,7 @@ var DialogDoc = React.createClass({
       simple = <SimpleDialog onClose={this._onClose} />;
     }
     return (
-      <Ligo.Document>
+      <LigoDocument>
         <header>
           <h1>Dialog</h1>
           <p>A modal overlay, usually containing a <a>Form</a>.</p>
@@ -69,7 +69,7 @@ var DialogDoc = React.createClass({
           <pre><code className="html">{"<Dialog> ..."}</code></pre>
 
         </section>
-      </Ligo.Document>
+      </LigoDocument>
     );
   }
 });

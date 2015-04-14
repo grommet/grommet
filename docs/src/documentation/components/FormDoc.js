@@ -1,13 +1,13 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var Ligo = require('ligo');
-var Form = Ligo.Form;
-var FormField = Ligo.FormField;
-var Header = Ligo.Header;
-var Menu = Ligo.Menu;
-var HelpIcon = Ligo.Icons.Help;
-var Footer = Ligo.Footer;
+var LigoDocument = require('ligo/components/Document');
+var Form = require('ligo/components/Form');
+var FormField = require('ligo/components/FormField');
+var Header = require('ligo/components/Header');
+var Menu = require('ligo/components/Menu');
+var HelpIcon = require('ligo/components/icons/Help');
+var Footer = require('ligo/components/Footer');
 
 var FormDoc = React.createClass({
 
@@ -25,7 +25,7 @@ var FormDoc = React.createClass({
       "  <Footer>...</Footer>",
       "</Form>"].join("\n");
     return (
-      <Ligo.Document>
+      <LigoDocument>
         <header>
           <h1>Form</h1>
           <p>A web form.</p>
@@ -68,7 +68,7 @@ var FormDoc = React.createClass({
           <pre><code className="html">{"<Form> ..."}</code></pre>
 
         </section>
-      </Ligo.Document>
+      </LigoDocument>
     );
   }
 });

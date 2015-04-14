@@ -1,8 +1,8 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var Ligo = require('ligo');
-var Footer = Ligo.Footer;
+var LigoDocument = require('ligo/components/Document');
+var Footer = require('ligo/components/Footer');
 
 var FooterDoc = React.createClass({
 
@@ -10,7 +10,7 @@ var FooterDoc = React.createClass({
     var inline =
     "<Footer>\n  ...\n</Footer>";
     return (
-      <Ligo.Document>
+      <LigoDocument>
         <header>
           <h1>Footer</h1>
           <p>Put things at the bottom.</p>
@@ -44,7 +44,7 @@ var FooterDoc = React.createClass({
           <pre><code className="html">{"<Footer> ..."}</code></pre>
 
         </section>
-      </Ligo.Document>
+      </LigoDocument>
     );
   }
 });
