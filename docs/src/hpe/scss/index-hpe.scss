@@ -33,6 +33,7 @@ html {
     font-family: 'Metric', Arial, sans-serif;
     @include inuit-font-size($inuit-heading-size-1);
   }
+
   &.base {
     font-family: Arial, sans-serif;
     @include inuit-font-size($inuit-heading-size-3);

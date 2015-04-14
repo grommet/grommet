@@ -19,6 +19,7 @@ svg rect[fill="#00B388"] {
     font-family: 'Open Sans', Arial, sans-serif;
     @include inuit-font-size($inuit-heading-size-1);
   }
+
   &.base {
     font-family: Arial, sans-serif;
     @include inuit-font-size($inuit-heading-size-3);
