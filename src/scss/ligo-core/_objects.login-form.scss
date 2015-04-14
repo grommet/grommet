@@ -38,6 +38,7 @@
   }
 
   &__submit {
+    margin-top: $inuit-base-spacing-unit;
     width: 100%;
     background-color: $brand-color;
     color: $accent-text-color;

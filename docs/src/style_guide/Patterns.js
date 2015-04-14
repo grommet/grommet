@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
+var LoginForm = require('ligo/components/LoginForm');
 var Header = require('ligo/components/Header');
 var Menu = require('ligo/components/Menu');
 var Form = require('ligo/components/Form');
@@ -49,22 +50,8 @@ var PatternsSection = React.createClass({
     <a href="#/styleguide/login">Read more</a></p>
 
     <div className="example">
-      <Form>
-        <fieldset>
-          <FormField>
-            <label htmlFor="username">Username</label>
-            <input id="username" />
-          </FormField>
-          <FormField>
-            <label htmlFor="password">Username</label>
-            <input type="password" id="password" />
-          </FormField>
-        </fieldset>
-        <input type="submit" className="primary" val="Login" />
-        <input type="checkbox" /><label>Remember me</label>
-      </Form>
+      <LoginForm rememberMe={true} forgotPassword={<a>Forgot password?</a>} />
     </div>
-    <img src="img/snippet-login.png" alt="login snippet"/>
 
   </section>
 
