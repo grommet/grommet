@@ -35,7 +35,7 @@ var PatternsSection = React.createClass({
     ];
 
     var statusSeries = [
-      {label: 'Critical', value: 10, accentIndex: 'critical'},
+      {label: 'Error', value: 10, accentIndex: 'error'},
       {label: 'Warning', value: 20, accentIndex: 'warning'},
       {label: 'OK', value: 70, accentIndex: 'ok'}
     ];

@@ -51,20 +51,10 @@ $attribute-value-width: round($inuit-base-spacing-unit * 16);
     border: 1px solid $unknown;
     border-radius: $border-radius;
 
-    &--critical {
-      border-color: $critical;
-    }
-
-    &--warning {
-      border-color: $warning;
-    }
-
-    &--ok {
-      border-color: $ok;
-    }
-
-    &--unknown {
-      border-color: $unknown;
+    @each $status, $color in $brand-status-colors {
+      &--#{$status} {
+        border-color: $color;
+      }
     }
   }
 

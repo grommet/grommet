@@ -7,7 +7,7 @@ var Router = require('../../utils/Router');
 var Link = require('../../components/Link');
 var PreviousIcon = require('../../components/icons/Previous');
 var NextIcon = require('../../components/icons/Next');
-var CloseIcon = require('../../components/icons/Close');
+var CloseIcon = require('../../components/icons/Clear');
 
 var CLASS_ROOT = 'index-resource';
 

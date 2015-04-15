@@ -195,7 +195,7 @@
   }
 
   &__error {
-    color: $critical;
+    color: map-get($brand-status-colors, error);
   }
 }
 

@@ -67,26 +67,18 @@ $badge-size: halve($inuit-base-spacing-unit) + quarter($inuit-base-spacing-unit)
 }
 
 .status-icon {
+  width: $inuit-base-spacing-unit;
+  height: $inuit-base-spacing-unit;
 
   .status-icon__base {
-    fill: $unknown;
+    fill: map-get($brand-status-colors, unknown);
   }
 
-  &-ok {
-    .status-icon__base {
-      fill: $ok;
-    }
-  }
-
-  &-warning {
-    .status-icon__base {
-      fill: $warning;
-    }
-  }
-
-  &-critical {
-    .status-icon__base {
-      fill: $critical;
+  @each $status, $color in $brand-status-colors {
+    &-#{$status} {
+      .status-icon__base {
+        fill: $color;
+      }
     }
   }
 
@@ -100,7 +92,15 @@ $badge-size: halve($inuit-base-spacing-unit) + quarter($inuit-base-spacing-unit)
     fill: $background-color;
   }
 
+  &--large {
+    width: double($inuit-base-spacing-unit);
+    height: double($inuit-base-spacing-unit);
+  }
+
   &--small {
+    width: halve($inuit-base-spacing-unit);
+    height: halve($inuit-base-spacing-unit);
+
     .status-icon__detail {
       display: none;
     }
@@ -112,5 +112,12 @@ $badge-size: halve($inuit-base-spacing-unit) + quarter($inuit-base-spacing-unit)
 }
 
 .icon-changing {
+  width: $inuit-base-spacing-unit;
+  height: $inuit-base-spacing-unit;
   @include animation('rotate-changing 1.5s linear infinite');
+
+  &--small {
+    width: halve($inuit-base-spacing-unit);
+    height: halve($inuit-base-spacing-unit);
+  }
 }

@@ -66,7 +66,7 @@
 
   &__error {
     margin-top: halve($inuit-base-spacing-unit);
-    color: $critical;
+    color: map-get($brand-status-colors, error);
   }
 
   &__footer {

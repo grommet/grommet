@@ -23,7 +23,7 @@
     }
 
     &--error {
-      border-color: $critical;
+      border-color: map-get($brand-status-colors, error);
     }
 
     &-mirror {
@@ -52,7 +52,7 @@
     border-radius: $border-radius;
 
     &--error {
-      border-color: $critical;
+      border-color: map-get($brand-status-colors, error);
     }
 
     &-attribute {
@@ -102,7 +102,7 @@
         //display: inline-block;
 
         &--error {
-          border-color: $critical;
+          border-color: map-get($brand-status-colors, error);
         }
       }
 

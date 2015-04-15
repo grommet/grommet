@@ -9,7 +9,7 @@ var Router = require('../../utils/Router');
 var Form = require('../../components/Form');
 var IndexAggregate = require('../components/IndexAggregate');
 var EditIcon = require('../../components/icons/Edit');
-var RemoveIcon = require('../../components/icons/Close');
+var RemoveIcon = require('../../components/icons/Clear');
 var Link = require('../../components/Link');
 
 var DashboardEdit = React.createClass({
@@ -81,7 +81,7 @@ var DashboardEdit = React.createClass({
 
   componentDidMount: function() {
     DashboardActions.startChanging();
-    
+
     DashboardStore.addChangeListener(this._onChange);
   },
 

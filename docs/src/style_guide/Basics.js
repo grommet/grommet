@@ -1,61 +1,131 @@
-<!DOCTYPE html>
-<html>
-<body>
-  <header>
-    <h1>Basics</h1>
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-    <p>Here you will find the core elements for the application style guide.
-    The downloadable assets contain these core elements. Checkboxes, buttons,
-    status icons and more are all described in these assets.
-    Rather than documenting these in gory detail, we thought you would
-    appreciate the brevity. We also think you really just want to see them anyway,
-    so why waste your time?</p>
-  </header>
+var React = require('react');
 
-  <section>
+var CONTROL_ICONS = [
+  {icon: 'Clear', labels: ['Clear', 'Close', 'Remove']},
+  {icon: 'DragHandle', labels: ['Drag handle']},
+  {icon: 'DropCaret', labels: ['Drop caret']},
+  {icon: 'Edit', labels: ['Edit', 'Settings', 'Actions']},
+  {icon: 'Filter'},
+  {icon: 'Help'},
+  {icon: 'More'},
+  {icon: 'Next'},
+  {icon: 'Previous'},
+  {icon: 'Search'},
+  {icon: 'SearchPlus', labels: ['Search and filter']},
+  {icon: 'Top'},
+  {icon: 'Up'}
+];
+
+CONTROL_ICONS.forEach(function (item) {
+  item.component = require('ligo/components/icons/' + item.icon);
+  if (! item.labels) {
+    item.labels = [item.icon];
+  }
+});
+
+var Changing = require('ligo/components/icons/Changing');
+var Status = require('ligo/components/icons/Status');
+
+var STATUS_ICONS = [
+  {component: Status, value: 'error', labels: ['Error', 'Critical']},
+  {component: Status, value: 'warning', labels: ['Warning']},
+  {component: Status, value: 'ok', labels: ['OK', 'Normal']},
+  {component: Status, value: 'unknown', labels: ['Unknown']},
+  {component: Status, value: 'disabled', labels: ['Disabled']},
+  {component: Status, value: 'label', labels: ['Label', 'Table header']}
+];
+
+var BasicsHeader = React.createClass({
+  render: function () {
+    return (
+      <header>
+        <h1>Basics</h1>
+
+        <p>Here you will find the core elements for the application style guide.
+        The downloadable assets contain these core elements. Checkboxes, buttons,
+        status icons and more are all described in these assets.
+        Rather than documenting these in gory detail, we thought you would
+        appreciate the brevity. We also think you really just want to see them anyway,
+        so why waste your time?</p>
+      </header>
+    );
+  }
+});
+
+var BasicsSection = React.createClass({
+  render: function () {
+
+    var controlIcons = CONTROL_ICONS.map(function (item) {
+      var labels = item.labels.map(function (label) {
+        return (<span key={label}>{label}</span>);
+      });
+      return (
+        <div key={item.labels[0]} className="icon-tile">
+          <div className="control-icon">{React.createFactory(item.component)()}</div>
+          <label>{labels}</label>
+        </div>
+      );
+    });
+
+    var statusIcons = STATUS_ICONS.map(function (item) {
+      var labels = item.labels.map(function (label) {
+        return (<span key={label}>{label}</span>);
+      });
+      return (
+        <div key={item.labels[0]} className="icon-tile">
+          <div>{React.createFactory(item.component)({value: item.value, large: true})}</div>
+          <div>{React.createFactory(item.component)({value: item.value})}</div>
+          <div>{React.createFactory(item.component)({value: item.value, small: true})}</div>
+          <label>{labels}</label>
+        </div>
+      );
+    });
+
+    return (
+    <div>
+  <section id="color">
     <h2>Color</h2>
-    <div class="generic-branding">
+    <div className="generic-branding">
       <p>These are the generic, or un-branded, colors. It is expected that
         applications will define their own brand color scheme.</p>
     </div>
-    <div class="hpe-branding">
-    <p>The HP Experience color palette is utilized in applications for the
+    <div className="hpe-branding">
+    <p>The Hewlett Packard Enterprise color palette is utilized in applications for the
     most part. However there are variances in the palette that apply specifically
     to applications.</p>
 
-    <p>For application design the color orange should not be used as an accent
-    color. The reason being that the highly salient orange is closely associated
-    with red which is a color which indicates a critical status. The red color is
-    reserved for resources that need immediate attention. </p>
+    <p>For application design the Hewlett Packard Enterprise orange/salmon accent color
+    is modified to be more red so it can be used as a status indicator and it should
+    not be used as an accent color in non-status contexts.</p>
 
-    <p>Similarly, the HP Experience green accent color should not be used because
-    it is reserved for status icons that refer to resources that are in a normal
-    state.</p>
+    <p>Also, dark yellow color is added for use as a warning status color.</p>
     </div>
 
     <h3>Primary</h3>
-    <span class="swatch brand"></span>
+    <span className="swatch brand"></span>
     <h3>Accent</h3>
-    <span class="swatch accent-1"></span>
-    <span class="swatch accent-2"></span>
-    <span class="swatch accent-3"></span>
+    <span className="swatch accent-1"></span>
+    <span className="swatch accent-2"></span>
+    <span className="swatch accent-3"></span>
     <h3>Neutral</h3>
-    <span class="swatch neutral-1"></span>
-    <span class="swatch neutral-2"></span>
-    <span class="swatch neutral-3"></span>
-    <span class="swatch neutral-4"></span>
-    <span class="swatch neutral-5"></span>
+    <span className="swatch neutral-1"></span>
+    <span className="swatch neutral-2"></span>
+    <span className="swatch neutral-3"></span>
+    <span className="swatch neutral-4"></span>
+    <span className="swatch neutral-5"></span>
 
     <h3>Status</h3>
     <p>These colors are used to convey status.</p>
-    <span class="swatch status-critical"></span>
-    <span class="swatch status-warning"></span>
-    <span class="swatch status-ok"></span>
-    <span class="swatch status-unknown"></span>
+    <span className="swatch status-error"></span>
+    <span className="swatch status-warning"></span>
+    <span className="swatch status-ok"></span>
+    <span className="swatch status-unknown"></span>
 
   </section>
 
-  <section>
+  <section id="text">
     <h2>Text</h2>
     <p>Text and Typography is arguably one of the most important elements of
     style to get right. Ironically, when done well the text styles and typography
@@ -65,16 +135,17 @@
     aesthetics, to unclear organization of information, to physical eye strain
     can result from an application with insufficient attention to this detail.</p>
 
-    <h3>Typography</h3>
-    <p>Applications use the <a class="generic-branding" href="http://www.google.com/fonts/specimen/Source+Sans+Pro">Source Sans Pro</a>
-    <span class="hpe-branding">Metric</span> font in prominent areas
+    <h3 id="typography">Typography</h3>
+    <p>Applications use the <a className="generic-branding"
+      href="http://www.google.com/fonts/specimen/Source+Sans+Pro">Source Sans Pro</a>
+    <span className="hpe-branding">Metric</span> font in prominent areas
     such as headings, subheadings, login screens and titles. For the remaining
     body copy, tables, labels, values, and so on, the Arial font is used. The
     typographic scale and styles can be found in the attached assets.</p>
-    <div class="font-sample primary">Primary font sample</div>
-    <div class="font-sample base">Basic font sample</div>
+    <div className="font-sample primary">Primary font sample</div>
+    <div className="font-sample base">Basic font sample</div>
 
-    <h3>Writing Style</h3>
+    <h3 id="writing-style">Writing Style</h3>
     <p>Applications should use a conversational tone and should not include
     excessive technical jargon.</p>
 
@@ -114,7 +185,7 @@
       action is optional.</li>
     </ul>
 
-    <h3>Date and Time</h3>
+    <h3 id="date-time">Date and Time</h3>
     <p>Date and time formats should generally be displayed in the user’s
     local timezone.  Any exceptions to this should include the timezone being
     used to display the time and date. In addition, dates and times shall always
@@ -156,7 +227,7 @@
       </li>
     </ol>
 
-    <h3>Capitalization</h3>
+    <h3 id="capitalization">Capitalization</h3>
     <p>For the English language, we recommend using English title capitalization
     rules for titles (i.e. generally, capitalize first letter of each word). Titles
     include the following user interface elements:</p>
@@ -228,5 +299,48 @@
       <li>Schema attribute names</li>
     </ul>
   </section>
-</body>
-</html>
+
+  <section id="icons">
+    <h2>Icons</h2>
+    <p>Icons are used for inline controls. Users should be able to identify
+      an icons function without any supporting text decoration. Because of this,
+      we have a fairly small icon set. Text is used for non-iconifiable controls.</p>
+
+    <h3>Controls</h3>
+    <p>Control icons have a larger hit area around them to work well on mobile platforms.</p>
+    <div className="example">
+      {controlIcons}
+    </div>
+
+    <h3>Status</h3>
+    <p>Status icons come in multiple sizes for use in different contexts.
+      They are differentiated both by color and by shape for accessibility.
+      Typically, status icons are placed immediately to the left of the label
+      indicating what object they are indicating the status of.</p>
+    <div className="example">
+      {statusIcons}
+    </div>
+    <p>When something is occuring that could lead to a change in status, a changing
+      icon is added next to the status icon. This changing icon is placed to the
+      right of the status icon when laying out horizontally, and below when laying
+      out vertically.</p>
+    <div className="example">
+      <div className="icon-tile">
+        <div><Changing /></div>
+        <div><Changing small={true} /></div>
+        <label>Changing</label>
+      </div>
+    </div>
+
+  </section>
+    </div>
+    );
+  }
+});
+
+module.exports = {
+
+  Header: BasicsHeader,
+
+  Section: BasicsSection
+};

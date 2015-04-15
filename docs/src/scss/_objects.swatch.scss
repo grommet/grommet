@@ -44,35 +44,30 @@
     }
   }
 
-  &.status-critical {
-    background-color: $critical;
+  @each $status, $color in $brand-status-colors {
+    &.status-#{$status} {
+      background-color: $color;
 
-    &:after {
-      content: "#{$critical}";
+      &:after {
+        content: "#{$color}";
+      }
     }
   }
+}
 
-  &.status-warning {
-    background-color: $warning;
+.icon-tile {
+  display: inline-block;
+  margin-right: double($inuit-base-spacing-unit);
+  margin-bottom: double($inuit-base-spacing-unit);
+  vertical-align: top;
+  text-align: center;
 
-    &:after {
-      content: "#{$warning}";
-    }
-  }
+  label {
+    display: block;
+    margin-top: halve($inuit-base-spacing-unit);
 
-  &.status-ok {
-    background-color: $ok;
-
-    &:after {
-      content: "#{$ok}";
-    }
-  }
-
-  &.status-unknown {
-    background-color: $unknown;
-
-    &:after {
-      content: "#{$unknown}";
+    span {
+      display: block;
     }
   }
 }

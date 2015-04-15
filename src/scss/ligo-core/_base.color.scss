@@ -13,7 +13,7 @@ $secondary-text-color: #999;
 $hover-text-color: #000;
 $accent-text-color: #fff;
 $inactive-accent-text-color: rgba(255, 255, 255, 0.7);
-$link-color: nth($brand-accent-colors, 2) !default;
+$link-color: $brand-link-color !default;
 
 // Control Icons
 
@@ -21,22 +21,12 @@ $icon-color: #999;
 $active-icon-color: #000;
 $disabled-icon-color: #ccc;
 
-// Status
-
-$status-colors: (
-  critical: $critical,
-  warning: $warning,
-  ok: $ok,
-  uknown: $unknown,
-  disabled: $disabled
-);
-
-$meter-color: nth($brand-accent-colors, 2);
+$meter-color: nth($brand-accent-colors, 1) !default;
 
 // Controls
 
-$focus-border-color: nth($brand-accent-colors, 2);
-$button-primary-background-color: nth($brand-accent-colors, 1);
+$focus-border-color: $brand-color !default;
+$button-primary-background-color: $brand-color !default;
 
 $hover-background-color: rgba(0, 0, 0, 0.1);
 $modal-overlay-background-color: rgba(0, 0, 0, 0.6);
@@ -51,11 +41,11 @@ $inverse-color: #fff;
 
 // Charts and Graphs
 
-$graph-colors: (
-  '1': nth($brand-colors, 1),
-  '2': nth($brand-colors, 2),
-  '3': nth($brand-colors, 3),
-  '4': nth($brand-colors, 1),
-  '5': nth($brand-colors, 2),
-  '6': nth($brand-colors, 3)
-);
+//$graph-colors: (
+//  '1': nth($brand-colors, 1),
+//  '2': nth($brand-colors, 2),
+//  '3': nth($brand-colors, 3),
+//  '4': nth($brand-colors, 1),
+//  '5': nth($brand-colors, 2),
+//  '6': nth($brand-colors, 3)
+//);

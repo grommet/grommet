@@ -3,7 +3,7 @@
 var React = require('react');
 var IndexSearch = require('../components/IndexSearch');
 var IndexFilterAttribute = require('../components/IndexFilterAttribute');
-var CloseIcon = require('../../components/icons/Close');
+var CloseIcon = require('../../components/icons/Clear');
 
 var CLASS_ROOT = 'index-filter';
 

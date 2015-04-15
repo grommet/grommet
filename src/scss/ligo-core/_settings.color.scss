@@ -5,20 +5,16 @@
 $brand-color: #0080ff !default;
 $brand-neutral-colors: (#5b3eff, #cc9933, #d55af2, #79a2bc, #877b75) !default;
 $brand-accent-colors: (#ff9e2c, #00cee4) !default;
-$brand-colors: $brand-neutral-colors !default;
-
-$link-color: #ff9e2c !default;
-
-//$brand-color: #79c866 !default;
-//$brand-neutral-colors: (#f43779, #33a7e4, #79c866, #ff9439, #ff5039) !default;
-//$brand-accent-colors: (#f43779, #33a7e4, #79c866, #ff9439, #ff5039) !default;
-//$brand-colors: $brand-accent-colors !default;
-
-//$link-color: #ff9439 !default;
-
-// Status
-$critical: #dc442f;
-$warning: #f4b51e;
-$ok: #42a425;
-$unknown: #848484;
-$disabled: $unknown;
+$brand-link-color: #ff9e2c !default;
+$brand-status-colors: (
+  error: #dc442f,
+  warning: #f4b51e,
+  ok: #42a425,
+  unknown: #848484,
+  disabled: #848484
+) !default;
+@if not variable-exists(brand-graph-colors) {
+  $brand-graph-colors: ();
+  $brand-graph-colors: join($brand-graph-colors, $brand-accent-colors);
+  $brand-graph-colors: join($brand-graph-colors, $brand-neutral-colors);
+};

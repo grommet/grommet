@@ -1,7 +1,8 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-@for $i from 1 through length($brand-colors) {
-  .accent-text-#{$i} {
+@for $i from 1 through length($brand-neutral-colors) {
+  .accent-text-#{$i},
+  .accent-text-#{$i+length($brand-neutral-colors)}, {
     h1,
     h2,
     h3,
@@ -10,12 +11,13 @@
     h6,
     dt {
       font-weight: normal;
-      color: nth($brand-colors, $i);
+      color: nth($brand-neutral-colors, $i);
     }
   }
 
-  .accent-background-#{$i} {
-    background-color: nth($brand-colors, $i);
+  .accent-background-#{$i},
+  .accent-background-#{$i+length($brand-neutral-colors)} {
+    background-color: nth($brand-neutral-colors, $i);
     color: $accent-text-color;
 
     a {

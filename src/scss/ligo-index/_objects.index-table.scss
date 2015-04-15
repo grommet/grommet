@@ -161,39 +161,14 @@
         border-color: transparent $unknown;
       }
 
-      &--critical {
-        border-color: $critical;
+      @each $status, $color in $brand-status-colors {
+        &--#{$status} {
+          border-color: $color;
 
-        &:before {
-          content: '';
-          border-color: transparent $critical;
-        }
-      }
-
-      &--warning {
-        border-color: $warning;
-
-        &:before {
-          content: '';
-          border-color: transparent $warning;
-        }
-      }
-
-      &--ok {
-        border-color: $ok;
-
-        &:before {
-          content: '';
-          border-color: transparent $ok;
-        }
-      }
-
-      &--unknown {
-        border-color: $unknown;
-
-        &:before {
-          content: '';
-          border-color: transparent $unknown;
+          &:before {
+            content: '';
+            border-color: transparent $color;
+          }
         }
       }
 

@@ -3,31 +3,45 @@
 var React = require('react');
 var OK = require('./status/OK');
 var Warning = require('./status/Warning');
-var Critical = require('./status/Critical');
+var Error = require('./status/Error');
 var Disabled = require('./status/Disabled');
 var Unknown = require('./status/Unknown');
 var Label = require('./status/Label');
 
+CLASS_NAME = "status-icon";
+
 var Status = React.createClass({
 
+  propType: {
+    large: React.PropTypes.bool,
+    small: React.PropTypes.bool,
+    value: React.PropTypes.oneOf(['error', 'warning', 'ok', 'unknown', 'disabled'])
+  },
+
   render: function() {
-    var className = "status-icon";
+    var classes = [CLASS_NAME];
     if (this.props.className) {
-      className += ' ' + this.props.className;
+      classes.push(this.props.className);
     }
     if (this.props.small) {
-      className += " status-icon--small";
+      classes.push(CLASS_NAME + "--small");
     }
+    if (this.props.large) {
+      classes.push(CLASS_NAME + "--large");
+    }
+    var className = classes.join(' ');
     var icon = (<span>{'?'}</span>);
     switch (this.props.value) {
     case 'ok':
+    case 'normal':
       icon = (<OK className={className} />);
       break;
     case 'warning':
       icon = (<Warning className={className} />);
       break;
+    case 'error':
     case 'critical':
-      icon = (<Critical className={className} />);
+      icon = (<Error className={className} />);
       break;
     case 'disabled':
       icon = (<Disabled className={className} />);

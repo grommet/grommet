@@ -25,14 +25,11 @@
       background-color: $hover-background-color;
     }
 
-    &--critical {
-      border-color: $critical;
-      border-width: 2px;
-    }
-
-    &--warning {
-      border-color: $warning;
-      border-width: 2px;
+    @each $status, $color in $brand-status-colors {
+      &--#{$status} {
+        border-color: $color;
+        border-width: 2px;
+      }
     }
 
     > a {
@@ -73,16 +70,10 @@
         border-style: solid;
         padding-top: halve($inuit-base-spacing-unit);
 
-        &--critical {
-          border-color: $critical;
-        }
-
-        &--warning {
-          border-color: $warning;
-        }
-
-        &--ok {
-          border-color: $ok;
+        @each $status, $color in $brand-status-colors {
+          &--#{$status} {
+            border-color: $color;
+          }
         }
 
         &__timestamp {

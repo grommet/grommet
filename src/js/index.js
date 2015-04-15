@@ -34,7 +34,6 @@ var Ligo = {
   Icons: {
     Changing: require('./components/icons/Changing'),
     Clear: require('./components/icons/Clear'),
-    Close: require('./components/icons/Close'),
     DragHandle: require('./components/icons/DragHandle'),
     Edit: require('./components/icons/Edit'),
     Filter: require('./components/icons/Filter'),

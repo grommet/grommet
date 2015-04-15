@@ -10,7 +10,7 @@ var NavPages = require('./NavPages');
 var NavSuggestions = require('./NavSuggestions');
 var NavRecents = require('./NavRecents');
 var KeyboardAccelerators = require('../mixins/KeyboardAccelerators');
-var Close = require('./icons/Close');
+var Close = require('./icons/Clear');
 
 var NavUnified = React.createClass({
 

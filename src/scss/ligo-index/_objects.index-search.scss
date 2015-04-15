@@ -13,7 +13,7 @@
     }
 
     &--error {
-      border-color: $critical;
+      border-color: $map-get($brand-status-colors, error);
     }
   }
 

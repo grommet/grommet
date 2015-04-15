@@ -5,7 +5,7 @@ var React = require('react');
 var Critical = React.createClass({
 
   render: function() {
-    var className = 'status-icon-critical';
+    var className = 'status-icon-error';
     if (this.props.className) {
       className += ' ' + this.props.className;
     }

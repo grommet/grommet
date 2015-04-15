@@ -43,7 +43,37 @@ var CONTENTS = [
         id: 'accessibility'
       }
     ]},
-  {route: "sg_basics", label: 'Basics', component: Basics},
+  {route: "sg_basics", label: 'Basics', component: Basics,
+    contents: [
+      {
+        label: 'Color',
+        id: 'color'
+      },
+      {
+        label: 'Text',
+        id: 'text'
+      },
+      {
+        label: 'Typography',
+        id: 'typography'
+      },
+      {
+        label: 'Writing Style',
+        id: 'writing-style'
+      },
+      {
+        label: 'Date and Time',
+        id: 'date-time'
+      },
+      {
+        label: 'Capitalization',
+        id: 'capitalization'
+      },
+      {
+        label: 'Icons',
+        id: 'icons'
+      }
+    ]},
   {route: "sg_patterns", label: 'Patterns', component: Patterns,
     contents: [
       {route: "sg_login", label: 'Login', component: Login},
@@ -65,13 +95,16 @@ var StyleGuide = React.createClass({
     router: React.PropTypes.func.isRequired
   },
 
-  _linkToNode: function(e) {
-    e.preventDefault();
+  _linkToNode: function (event) {
+    event.preventDefault();
+    var targetId = event.target.dataset.targetId;
     var node = this.getDOMNode();
-    node.parentNode.scrollTop = node.querySelectorAll('section#'+e.target.id)[0].offsetTop - 100;
+    var headerHeight = document.body.querySelectorAll('.header--primary')[0].offsetHeight;
+    console.log('!!! StyleGuide', node.querySelectorAll('#'+targetId)[0], node.querySelectorAll('#'+targetId)[0].offsetTop);
+    node.parentNode.scrollTop = node.querySelectorAll('#'+targetId)[0].offsetTop - headerHeight;
   },
 
-  render: function() {
+  render: function () {
 
     this._chapterIndex = -2;
 
@@ -114,7 +147,7 @@ var StyleGuide = React.createClass({
         }
 
         var pageLink = page.id ?
-          <a key={page.id} id={page.id} href="#" onClick={this._linkToNode}
+          <a key={page.id} data-target-id={page.id} href="#" onClick={this._linkToNode}
             className={className}>{page.label}</a>
         : (
           <Link key={page.label} to={page.route} className={className}>
