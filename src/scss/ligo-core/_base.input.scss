@@ -27,11 +27,9 @@ button {
   }
 }
 
-label.checkbox,
-label.radiobutton {
-  input {
-    margin-right: quarter($inuit-base-spacing-unit);
-  }
+input[type="checkbox"],
+input[type="radio"] {
+  margin-right: quarter($inuit-base-spacing-unit);
 }
 
 select {
