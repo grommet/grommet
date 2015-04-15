@@ -58,11 +58,9 @@ module.exports = function(gulp, opts) {
 
   if (options.base) {
     process.chdir(options.base);
-    console.log('current directory', process.cwd());
   }
 
   gulp.task('copy', function() {
-    console.log(options.copyAssets);
     (options.copyAssets || []).forEach(function(copyAsset) {
       if (copyAsset.filename) {
         gulp.src('./')
@@ -120,7 +118,8 @@ module.exports = function(gulp, opts) {
             warnings: false
           }
         }),
-        new webpack.optimize.DedupePlugin()
+        new webpack.optimize.DedupePlugin(),
+        new webpack.DefinePlugin(options.env || {})
       ]
     });
 

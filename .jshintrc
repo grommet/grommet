@@ -37,6 +37,7 @@
         "alert": true,
         "sinon": true,
         "Modernizr": true,
-        "jest": true
+        "jest": true,
+        "__HPE_THEME__": true
     }
 }

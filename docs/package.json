@@ -1,7 +1,7 @@
 {
   "name": "ligo-docs",
   "version": "0.1.0",
-  "main": "src/hpe/index-hpe.js",
+  "main": "src/index.js",
   "description": "Ligo Docs",
   "author": "Eric Soderberg",
   "dependencies": {

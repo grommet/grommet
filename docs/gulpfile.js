@@ -13,6 +13,10 @@ var opts = {
       dist: 'docs/dist/img/'
     },
     {
+      asset: 'src/img/**',
+      dist: 'docs/dist/img/'
+    },
+    {
       asset: 'docs/src/img/**',
       dist: 'docs/dist/img/'
     }
@@ -38,11 +42,14 @@ var opts = {
     }
   },
   devServerPort: 8002,
-  distPreprocess: ['dist-hpe']
+  distPreprocess: ['dist-hpe'],
+  env: {
+    __HPE_THEME__: 'false'
+  }
 };
 
 gulp.task('dist-hpe', function() {
-  return gulp.src('docs/src/hpe/gulpfile.js').pipe(chug({
+  return gulp.src('docs/hpe/gulpfile.js').pipe(chug({
      tasks: ['dist']
   }));
 });
