@@ -38,6 +38,6 @@
         "sinon": true,
         "Modernizr": true,
         "jest": true,
-        "__HPE_THEME__": true
+        "__THEME__": true
     }
 }

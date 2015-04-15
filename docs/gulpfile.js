@@ -44,7 +44,9 @@ var opts = {
   devServerPort: 8002,
   distPreprocess: ['dist-hpe'],
   env: {
-    __HPE_THEME__: 'false'
+    __THEME__: {
+      general: true
+    }
   }
 };
 

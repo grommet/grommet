@@ -155,7 +155,10 @@ module.exports = function(gulp, opts) {
 
       devtool: 'inline-source-map',
 
-      plugins: [new webpack.HotModuleReplacementPlugin()]
+      plugins: [
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.DefinePlugin(options.env || {})
+      ]
 
     });
 

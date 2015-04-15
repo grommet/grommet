@@ -46,7 +46,9 @@ var opts = {
   },
   devServerPort: 8002,
   env: {
-    __HPE_THEME__: 'true'
+    __THEME__: {
+      hpe: true
+    }
   }
 };
 
