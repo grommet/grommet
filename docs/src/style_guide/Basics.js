@@ -25,7 +25,7 @@ CONTROL_ICONS.forEach(function (item) {
   }
 });
 
-var Changing = require('ligo/components/icons/Changing');
+var Spinning = require('ligo/components/icons/Spinning');
 var Status = require('ligo/components/icons/Status');
 
 var STATUS_ICONS = [
@@ -326,9 +326,12 @@ var BasicsSection = React.createClass({
       out vertically.</p>
     <div className="example">
       <div className="icon-tile">
-        <div><Changing /></div>
-        <div><Changing small={true} /></div>
-        <label>Changing</label>
+        <div><Spinning /></div>
+        <div><Spinning small={true} /></div>
+        <label>
+          <span>Changing</span>
+          <span>Loading</span>
+        </label>
       </div>
     </div>
 

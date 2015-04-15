@@ -110,8 +110,8 @@ var Documentation = React.createClass({
     var pages = createPageLinks(CONTENTS, 2);
     return (
       <Layout centerColumn={true}>
-        <Menu direction="down" colorIndex={1}>{pages}</Menu>
-        <LigoDocument colorIndex={1}>
+        <Menu direction="down">{pages}</Menu>
+        <LigoDocument>
           <RouteHandler />
         </LigoDocument>
       </Layout>

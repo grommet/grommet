@@ -10,7 +10,7 @@ var Downloads = React.createClass({
   render: function() {
   	return (
       <Layout centerColumn={true}>
-        <LigoDocument colorIndex={1}>
+        <LigoDocument>
           <Content />
         </LigoDocument>
       </Layout>

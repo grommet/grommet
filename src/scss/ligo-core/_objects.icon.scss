@@ -107,14 +107,25 @@ $badge-size: halve($inuit-base-spacing-unit) + quarter($inuit-base-spacing-unit)
   }
 }
 
-@include keyframes(rotate-changing) {
+@include keyframes(rotate) {
   100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
 }
 
 .icon-changing {
   width: $inuit-base-spacing-unit;
   height: $inuit-base-spacing-unit;
-  @include animation('rotate-changing 1.5s linear infinite');
+  @include animation('rotate 1.5s linear infinite');
+
+  &--small {
+    width: halve($inuit-base-spacing-unit);
+    height: halve($inuit-base-spacing-unit);
+  }
+}
+
+.icon-spinning {
+  width: $inuit-base-spacing-unit;
+  height: $inuit-base-spacing-unit;
+  @include animation('rotate 4s steps(4, end) infinite');
 
   &--small {
     width: halve($inuit-base-spacing-unit);

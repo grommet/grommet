@@ -31,7 +31,6 @@ var Ligo = {
   Object: require('./components/Object'),
   TBD: require('./components/TBD'),
   Icons: {
-    Changing: require('./components/icons/Changing'),
     Clear: require('./components/icons/Clear'),
     DragHandle: require('./components/icons/DragHandle'),
     Edit: require('./components/icons/Edit'),
@@ -42,7 +41,8 @@ var Ligo = {
     Previous: require('./components/icons/Previous'),
     Search: require('./components/icons/Search'),
     SearchPlus: require('./components/icons/SearchPlus'),
-    Status: require('./components/icons/Status'),
+    Spinning: require('./components/icons/Spinning'),
+    Status: require('./components/icons/Status')
   },
   // Mixins
   Mixins: {
