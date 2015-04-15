@@ -8,3 +8,5 @@ notes.txt
 .idea/**
 *.log
 *tmp*
+**sublime-project**
+**sublime-workspace**
