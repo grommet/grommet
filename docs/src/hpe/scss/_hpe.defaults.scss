@@ -17,5 +17,6 @@ $brand-graph-colors: join($brand-graph-colors, $brand-neutral-colors);
 
 @font-face {
   font-family: "Metric";
-  src: url("/font/MetricWeb-Regular.woff") format('woff');
+  src: local('Metric'),
+    url("/font/MetricWeb-Regular.woff") format('woff');
 }
