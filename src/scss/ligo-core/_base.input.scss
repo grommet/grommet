@@ -16,26 +16,43 @@ textarea {
 
 input[type="button"],
 input[type="submit"],
-button {
-  padding: 5px 10px;
-  border: none;
+button,
+a.button {
+  display: inline-block;
+  padding: quarter($inuit-base-spacing-unit) halve($inuit-base-spacing-unit);
+  border: 1px solid transparent;
   border-radius: $border-radius;
-  border-color: $border-color;
+  background-color: $button-background-color;
+  color: $text-color;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $button-hover-background-color;
+  }
 
   &.primary {
     background-color: $button-primary-background-color;
     color: $colored-text-color;
-  }
-}
 
-button,
-a {
+    &:hover {
+      background-color: $brand-color;
+    }
+  }
+
   &.call-to-action {
+    //@include inuit-font-size($inuit-heading-size-3, inherit);
     @include inuit-font-size($inuit-heading-size-4);
     text-decoration: none;
     padding: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit;
     border-radius: $border-radius;
     color: $colored-text-color;
+    outline: none;
+  }
+
+  &:focus {
+    border: 1px solid $focus-border-color;
+    box-shadow: 0 0 1px 1px $focus-border-color;
   }
 }
 

@@ -83,7 +83,7 @@ var FormDoc = React.createClass({
                 </FormField>
                 <FormField>
                   <label>Item 5</label>
-                  <button className="primary">Access</button>
+                  <button>Access</button>
                 </FormField>
                 <FormField>
                   <label htmlFor="item6">Item 6</label>
@@ -96,7 +96,7 @@ var FormDoc = React.createClass({
                 </FormField>
                 <FormField>
                   <label htmlFor="item7">Item 7</label>
-                  <table ref="table">
+                  <table ref="table" className="selectable">
                     <tbody>
                       <tr className="selected" onClick={this._clickRow}>
                         <td>first</td>
@@ -113,7 +113,10 @@ var FormDoc = React.createClass({
               </fieldset>
               <Footer>
                 <span></span>
-                <input type="submit" value="OK" />
+                <span>
+                  <a className="button">Cancel</a>
+                  <input type="submit" className="primary" value="OK" />
+                </span>
               </Footer>
             </Form>
           </div>

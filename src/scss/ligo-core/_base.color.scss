@@ -1,11 +1,12 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-// Generic
+$brand-color-lighter: desaturate(lighten($brand-color, 55%), 40%) !default;
+$brand-color-darker: darken($brand-color, 9%) !default;
 
 $background-color: #fff;
 $hover-background-color: #eee;
 $colored-active-background-color: rgba(0, 0, 0, 0.2);
-$selected-background-color: desaturate(lighten($brand-color, 55%), 40%) !default;
+$selected-background-color: $brand-color-lighter !default;
 
 $border-color: #ddd;
 
@@ -27,7 +28,9 @@ $meter-color: nth($brand-accent-colors, 1) !default;
 // Controls
 
 $focus-border-color: $brand-color !default;
-$button-primary-background-color: $brand-color !default;
+$button-background-color: #e2e2e2 !default;
+$button-hover-background-color: #ccc !default;
+$button-primary-background-color: $brand-color-darker !default;
 
 $hover-background-color: rgba(0, 0, 0, 0.1);
 $modal-overlay-background-color: rgba(0, 0, 0, 0.6);

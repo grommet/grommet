@@ -23,14 +23,29 @@
     }
 
     button,
+    a.button,
     input[type="submit"] {
       @include inuit-font-size($inuit-heading-size-3, inherit);
       min-width: round($inuit-base-spacing-unit * 4);
       border-radius: 0px;
       padding-top: 0px;
       padding-bottom: 0px;
-      background-color: inherit;
       border-left: 1px solid $border-color;
+      background-color: $background-color;
+      color: $text-color;
+
+      &:hover {
+        background-color: $button-hover-background-color;
+      }
+
+      &.primary {
+        background-color: $button-primary-background-color;
+        color: $colored-text-color;
+
+        &:hover {
+          background-color: $brand-color;
+        }
+      }
     }
   }
 
@@ -53,7 +68,7 @@
           margin: 0;
           max-width: none;
           text-align: right;
-          line-height: $inuit-base-spacing-unit; 
+          line-height: $inuit-base-spacing-unit;
         }
 
         @include media-query(palm) {
@@ -71,7 +86,7 @@
           p {
             text-align: left;
           }
-        }  
+        }
       }
 
       &__top {

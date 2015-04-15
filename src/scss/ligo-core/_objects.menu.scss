@@ -3,6 +3,18 @@
 .menu {
   @include inuit-font-size($inuit-heading-size-3, inherit);
 
+  a {
+    color: lighten($text-color, 30%);
+
+    &:hover {
+      color: $text-color;
+    }
+
+    &.active {
+      color: $brand-color-darker;
+    }
+  }
+
   &:focus {
     outline: none;
     margin: -1px;
@@ -96,6 +108,7 @@
           padding: halve($inuit-base-spacing-unit);
           border: 1px solid transparent;
           text-decoration: none;
+          color: inherit;
 
           &:hover:not(.active) {
             border-color: $colored-active-background-color;
