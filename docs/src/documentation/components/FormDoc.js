@@ -70,12 +70,16 @@ var FormDoc = React.createClass({
                 <FormField>
                   <label></label>
                   <input id="item2" type="checkbox"/>
-                  <label htmlFor="item2">Item 2</label>
+                  <label htmlFor="item2" className="checkbox">Item 2</label>
                 </FormField>
                 <FormField>
-                  <label></label>
-                  <input id="item3" type="radio"/>
-                  <label htmlFor="item3">Item 3</label>
+                  <label>Item 3</label>
+                  <span>
+                    <input id="item3-1" name="item3" type="radio"/>
+                    <label htmlFor="item3-1" className="radio">first</label>
+                    <input id="item3-2" name="item3" type="radio"/>
+                    <label htmlFor="item3-2" className="radio">second</label>
+                  </span>
                 </FormField>
                 <FormField>
                   <label htmlFor="item4">Item 4</label>

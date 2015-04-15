@@ -26,6 +26,7 @@ a.button {
   color: $text-color;
   text-decoration: none;
   cursor: pointer;
+  text-align: center;
 
   &:hover {
     background-color: $button-hover-background-color;
@@ -76,4 +77,70 @@ select {
 
 textarea {
   border-color: $border-color;
+}
+
+input[type=checkbox],
+input[type=radio] {
+	display: none;
+}
+
+label.checkbox,
+label.radio {
+  position: relative;
+	display: inline-block;
+	cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding-top: quarter($inuit-base-spacing-unit);
+  padding-bottom: quarter($inuit-base-spacing-unit);
+
+  &:before {
+    content: "";
+    display: inline-block;
+    width: $inuit-base-spacing-unit;
+    height: $inuit-base-spacing-unit;
+    margin-right: halve($inuit-base-spacing-unit);
+    vertical-align: middle;
+    background-color: $background-color;
+    color: $brand-color-darker;
+    border: 1px solid $border-color;
+    text-align: center;
+  }
+}
+
+label.checkbox {
+  &:before {
+    content: "";
+    border-radius: $border-radius;
+  }
+}
+
+label.radio {
+  &:before {
+    content: "";
+    border-radius: $inuit-base-spacing-unit;
+  }
+}
+
+input[type=checkbox]:checked + label.checkbox:after {
+  content: "";
+  position: absolute;
+  top: quarter($inuit-base-spacing-unit) + 5.5px;
+  left: 4.5px;
+  width: $inuit-base-spacing-unit - 8;
+  height: $inuit-base-spacing-unit - 8;
+  background-color: $brand-color;
+}
+
+input[type=radio]:checked + label.radio:after {
+  content: "";
+  position: absolute;
+  top: quarter($inuit-base-spacing-unit) + 5px;
+  left: 4px;
+  width: $inuit-base-spacing-unit - 8;
+  height: $inuit-base-spacing-unit - 8;
+  border-radius: $inuit-base-spacing-unit - 8;
+  background-color: $brand-color;
 }
