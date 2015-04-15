@@ -3,7 +3,7 @@
 if (__THEME__.hpe) {
   require("!style!css!sass!index-hpe.scss");
 } else {
-  require("!style!css!sass!index.scss");  
+  require("!style!css!sass!index.scss");
 }
 
 require('./docs');

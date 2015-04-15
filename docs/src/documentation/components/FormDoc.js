@@ -100,12 +100,15 @@ var FormDoc = React.createClass({
                     <tbody>
                       <tr className="selected" onClick={this._clickRow}>
                         <td>first</td>
+                        <td>123</td>
                       </tr>
                       <tr onClick={this._clickRow}>
                         <td>second</td>
+                        <td>456</td>
                       </tr>
                       <tr onClick={this._clickRow}>
                         <td>third</td>
+                        <td>789</td>
                       </tr>
                     </tbody>
                   </table>
