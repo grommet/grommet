@@ -92,6 +92,7 @@ var FormDoc = React.createClass({
                     <option>second</option>
                     <option>third</option>
                   </select>
+                  <a>learn more ...</a>
                 </FormField>
                 <FormField>
                   <label htmlFor="item7">Item 7</label>

@@ -6,6 +6,7 @@ textarea {
   padding: quarter($inuit-base-spacing-unit) halve($inuit-base-spacing-unit);
   border: 1px solid $border-color;
   outline: none;
+  margin-right: halve($inuit-base-spacing-unit);
 
   &:focus {
     border: 1px solid $focus-border-color;
@@ -23,6 +24,17 @@ button {
 
   &.primary {
     background-color: $button-primary-background-color;
+    color: $colored-text-color;
+  }
+}
+
+button,
+a {
+  &.call-to-action {
+    @include inuit-font-size($inuit-heading-size-4);
+    text-decoration: none;
+    padding: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit;
+    border-radius: $border-radius;
     color: $colored-text-color;
   }
 }
