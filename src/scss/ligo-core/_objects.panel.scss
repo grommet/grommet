@@ -24,26 +24,26 @@
     text-decoration: none;
     padding: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit;
     border-radius: $border-radius;
-    color: $accent-text-color;
+    color: $colored-text-color;
   }
 
   &--index-1 {
     .panel__title {
-      color: nth($brand-accent-colors, 1);
+      color: nth($brand-neutral-colors, 1);
     }
 
     a.call-to-action {
-      background-color: nth($brand-accent-colors, 1);
+      background-color: nth($brand-neutral-colors, 1);
     }
   }
 
   &--index-2 {
     .panel__title {
-      color: nth($brand-accent-colors, 2);
+      color: nth($brand-neutral-colors, 2);
     }
 
     a.call-to-action {
-      background-color: nth($brand-accent-colors, 2);
+      background-color: nth($brand-neutral-colors, 2);
     }
   }
 

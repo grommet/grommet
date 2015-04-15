@@ -40,7 +40,7 @@
     background-color: $background-color;
     border: 1px solid $border-color;
 
-    
+
 
     .menu__control {
       &-label {
@@ -84,19 +84,19 @@
         }
       }
 
-      &--accent.menu--down {
+      &--colored.menu--down {
         a {
           padding: halve($inuit-base-spacing-unit);
           border: 1px solid transparent;
           text-decoration: none;
 
           &:hover:not(.active) {
-            border-color: $accent-active-background-color;
+            border-color: $colored-active-background-color;
             color: inherit;
           }
 
           &.active {
-            background-color: $accent-active-background-color;
+            background-color: $colored-active-background-color;
           }
         }
       }
@@ -144,7 +144,7 @@
       }
     }
 
-    &[class^="accent-text-"] {
+    &[class^="header-colored-index-"] {
       h1,
       h2,
       h3,

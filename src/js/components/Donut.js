@@ -28,7 +28,7 @@ var Donut = React.createClass({
     series: React.PropTypes.arrayOf(React.PropTypes.shape({
       label: React.PropTypes.string,
       value: React.PropTypes.number,
-      accentIndex: React.PropTypes.oneOfType([
+      colorIndex: React.PropTypes.oneOfType([
         React.PropTypes.number, // 1-6
         React.PropTypes.string // status
       ]),
@@ -83,10 +83,10 @@ var Donut = React.createClass({
       var endAngle = Math.min(360, Math.max(10, startAngle + (anglePer * item.value)));
       var commands = describeArc(100, 100, 80, startAngle, endAngle-2);
       startAngle = endAngle;
-      var accentIndex = item.accentIndex || (index + 1);
+      var colorIndex = item.colorIndex || (index + 1);
 
       var sliceClasses = ["donut__slice"];
-      sliceClasses.push("donut__slice--accent-" + accentIndex);
+      sliceClasses.push("donut__slice--color-index-" + colorIndex);
       if (this.state.activeIndex === index) {
         sliceClasses.push("donut__slice--active");
         value = item.value;
@@ -94,7 +94,7 @@ var Donut = React.createClass({
         label = item.label;
       }
 
-      paths[accentIndex] = (
+      paths[colorIndex] = (
         <path fill="none" className={sliceClasses.join(' ')} d={commands}
           onMouseOver={this._onMouseOver.bind(null, index)}
           onMouseOut={this._onMouseOut.bind(null, index)}
@@ -108,7 +108,7 @@ var Donut = React.createClass({
           keyItemClasses.push("donut__key-item--active");
         }
 
-        keys[accentIndex] = (
+        keys[colorIndex] = (
           <li key={item.className} className={keyItemClasses.join(' ')}
             onMouseOver={this._onMouseOver.bind(null, index)}
             onMouseOut={this._onMouseOut.bind(null, index)}>

@@ -5,7 +5,7 @@ var Document = React.createClass({
 
   propTypes: {
     centerColumn: React.PropTypes.bool,
-    accentIndex: React.PropTypes.number
+    colorIndex: React.PropTypes.number
   },
 
   render: function() {
@@ -15,8 +15,8 @@ var Document = React.createClass({
       classes.push("center-column");
       contentClasses.push("center-column__content");
     }
-    if (this.props.accentIndex) {
-      classes.push("accent-text-" + this.props.accentIndex);
+    if (this.props.colorIndex) {
+      classes.push("header-color-index-" + this.props.colorIndex);
     }
 
     return (

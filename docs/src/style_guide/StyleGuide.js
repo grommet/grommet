@@ -160,7 +160,7 @@ var StyleGuide = React.createClass({
           activePageIndex = index;
           layoutCompact = true;
           header = (
-            <Menu direction="right" accent={true}>
+            <Menu direction="right" colored={true}>
               {chapterLinks[this._chapterIndex]}
               {pageLink}
             </Menu>
@@ -187,20 +187,20 @@ var StyleGuide = React.createClass({
       chapterLinks = null;
     }
 
-    var accentIndex = this._chapterIndex + 1;
+    var colorIndex = this._chapterIndex + 1;
 
     return (
       <div>
-        <Layout centerColumn={true} accentIndex={accentIndex}
+        <Layout centerColumn={true} colorIndex={colorIndex}
           compact={layoutCompact}>
-          <Menu direction="down" accent={true} >
+          <Menu direction="down" colored={true} >
             {chapterLinks}
           </Menu>
           {header}
         </Layout>
         <Layout centerColumn={true}>
           <Menu direction="down" inline={true}>{pageLinks}</Menu>
-          <LigoDocument accentIndex={accentIndex}>
+          <LigoDocument colorIndex={colorIndex}>
             <RouteHandler />
           </LigoDocument>
         </Layout>

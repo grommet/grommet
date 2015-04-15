@@ -41,7 +41,7 @@
     margin-top: $inuit-base-spacing-unit;
     width: 100%;
     background-color: $brand-color;
-    color: $accent-text-color;
+    color: $colored-text-color;
     @include inuit-font-size($inuit-heading-size-3, inherit);
   }
 

@@ -7,7 +7,7 @@ var Layout = React.createClass({
   propTypes: {
     centerColumn: React.PropTypes.bool,
     compact: React.PropTypes.bool,
-    accentIndex: React.PropTypes.number,
+    colorIndex: React.PropTypes.number,
     texture: React.PropTypes.string
   },
 
@@ -22,8 +22,8 @@ var Layout = React.createClass({
     if (this.props.compact) {
       classes.push("layout--compact");
     }
-    if (this.props.accentIndex) {
-      classes.push("accent-background-" + this.props.accentIndex);
+    if (this.props.colorIndex) {
+      classes.push("background-color-index-" + this.props.colorIndex);
     }
 
     var style = {};

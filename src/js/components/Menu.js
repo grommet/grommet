@@ -9,8 +9,8 @@ var DropCaretIcon = require('./icons/DropCaret');
 var Menu = React.createClass({
 
   propTypes: {
-    accent: React.PropTypes.bool,
-    accentIndex: React.PropTypes.number,
+    colored: React.PropTypes.bool,
+    colorIndex: React.PropTypes.number,
     direction: React.PropTypes.oneOf(['up', 'down', 'left', 'right']),
     icon: React.PropTypes.node,
     label: React.PropTypes.string
@@ -18,7 +18,7 @@ var Menu = React.createClass({
 
   getDefaultProps: function () {
     return {
-      accent: false,
+      colored: false,
       direction: 'down'
     };
   },
@@ -201,11 +201,11 @@ var Menu = React.createClass({
     if (this.props.direction) {
       classes.push("menu--" + this.props.direction);
     }
-    if (this.props.accent) {
-      classes.push("menu--accent");
+    if (this.props.colored) {
+      classes.push("menu--colored");
     }
-    if (this.props.accentIndex) {
-      classes.push("accent-text-" + this.props.accentIndex);
+    if (this.props.colorIndex) {
+      classes.push("header-color-index-" + this.props.colorIndex);
     }
     if (this.props.className) {
       classes.push(this.props.className);
