@@ -1,6 +1,6 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-$border-radius: 4px;
+$border-radius: 4px !default;
 
 $header-height: round($inuit-base-spacing-unit * 3);
 $primary-header-height: round($inuit-base-spacing-unit * 4);

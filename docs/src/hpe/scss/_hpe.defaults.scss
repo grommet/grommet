@@ -20,3 +20,5 @@ $brand-graph-colors: join($brand-graph-colors, $brand-neutral-colors);
   src: local('Metric'),
     url("/font/MetricWeb-Regular.woff") format('woff');
 }
+
+$border-radius: 0px;
