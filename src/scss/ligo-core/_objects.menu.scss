@@ -3,6 +3,13 @@
 .menu {
   @include inuit-font-size($inuit-heading-size-3, inherit);
 
+  &:focus {
+    outline: none;
+    margin: -1px;
+    border: 1px solid $focus-border-color;
+    box-shadow: 0 0 1px 1px $focus-border-color;
+  }
+
   &--controlled {
     display: inline-block;
     cursor: pointer;

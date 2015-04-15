@@ -1,5 +1,16 @@
 // (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
 
+input,
+textarea {
+  border: 1px solid $border-color;
+  outline: none;
+
+  &:focus {
+    border: 1px solid $focus-border-color;
+    box-shadow: 0 0 1px 1px $focus-border-color;
+  }
+}
+
 input[type="button"],
 input[type="submit"],
 button {
