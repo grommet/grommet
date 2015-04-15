@@ -11,6 +11,15 @@ var Footer = require('ligo/components/Footer');
 
 var FormDoc = React.createClass({
 
+  _clickRow: function (event) {
+    var table = this.refs.table.getDOMNode();
+    var rows = table.querySelectorAll('tr');
+    for (var i = 0; i < rows.length; i++) {
+      rows[i].classList.remove('selected');
+    }
+    event.currentTarget.classList.add('selected');
+  },
+
   render: function() {
     var inline = [
       "<Form>",
@@ -57,6 +66,48 @@ var FormDoc = React.createClass({
                 <FormField>
                   <label htmlFor="item1">Item 1</label>
                   <input id="item1" />
+                </FormField>
+                <FormField>
+                  <label></label>
+                  <input id="item2" type="checkbox"/>
+                  <label htmlFor="item2">Item 2</label>
+                </FormField>
+                <FormField>
+                  <label></label>
+                  <input id="item3" type="radio"/>
+                  <label htmlFor="item3">Item 3</label>
+                </FormField>
+                <FormField>
+                  <label htmlFor="item4">Item 4</label>
+                  <textarea id="item4"></textarea>
+                </FormField>
+                <FormField>
+                  <label>Item 5</label>
+                  <button className="primary">Access</button>
+                </FormField>
+                <FormField>
+                  <label htmlFor="item6">Item 6</label>
+                  <select id="item6">
+                    <option>first</option>
+                    <option>second</option>
+                    <option>third</option>
+                  </select>
+                </FormField>
+                <FormField>
+                  <label htmlFor="item7">Item 7</label>
+                  <table ref="table">
+                    <tbody>
+                      <tr className="selected" onClick={this._clickRow}>
+                        <td>first</td>
+                      </tr>
+                      <tr onClick={this._clickRow}>
+                        <td>second</td>
+                      </tr>
+                      <tr onClick={this._clickRow}>
+                        <td>third</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </FormField>
               </fieldset>
               <Footer>

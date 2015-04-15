@@ -5,6 +5,7 @@
 $background-color: #fff;
 $hover-background-color: #eee;
 $colored-active-background-color: rgba(0, 0, 0, 0.2);
+$selected-background-color: desaturate(lighten($brand-color, 55%), 40%) !default;
 
 $border-color: #ddd;
 
@@ -32,7 +33,6 @@ $hover-background-color: rgba(0, 0, 0, 0.1);
 $modal-overlay-background-color: rgba(0, 0, 0, 0.6);
 $drop-background-color: rgba(255, 255, 255, 0.9);
 $header-background-color: rgba(255, 255, 255, 0.9);
-$selected-background-color: rgba(0, 0, 255, 0.1); // TODO: recolor
 $sort-placeholder-background-color: rgba(0, 0, 255, 0.1); // TODO: recolor
 $badge-background-color: nth($brand-neutral-colors, 1);
 

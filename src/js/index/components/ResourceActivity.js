@@ -6,7 +6,7 @@ var IndexActions = require('../actions/IndexActions');
 var Timestamp = require('react-time');
 var Meter = require('../../components/Meter');
 var StatusIcon = require('../../components/icons/Status');
-var ChangingIcon = require('../../components/icons/Changing');
+var ChangingIcon = require('../../components/icons/Spinning');
 
 var ResourceActivity = React.createClass({
 

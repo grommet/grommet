@@ -1,0 +1,16 @@
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+
+table {
+  tbody {
+    tr {
+      td {
+        padding: quarter($inuit-base-spacing-unit) halve($inuit-base-spacing-unit);
+      }
+      &.selected {
+        td {
+          background-color: $selected-background-color;
+        }
+      }
+    }
+  }
+}

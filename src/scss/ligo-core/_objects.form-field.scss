@@ -13,6 +13,7 @@
     text-align: right;
     margin-right: $inuit-base-spacing-unit;
     vertical-align: top;
+    padding-top: quarter($inuit-base-spacing-unit);
 
     @include media-query(palm) {
       text-align: left;

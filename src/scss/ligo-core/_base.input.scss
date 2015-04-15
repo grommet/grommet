@@ -3,8 +3,35 @@
 input,
 select,
 textarea {
-  padding-left: halve($inuit-base-spacing-unit);
-  padding-right: $inuit-base-spacing-unit;
+  padding: quarter($inuit-base-spacing-unit) halve($inuit-base-spacing-unit);
+  border: 1px solid $border-color;
+  outline: none;
+
+  &:focus {
+    border: 1px solid $focus-border-color;
+    box-shadow: 0 0 1px 1px $focus-border-color;
+  }
+}
+
+input[type="button"],
+input[type="submit"],
+button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: $border-radius;
+  border-color: $border-color;
+
+  &.primary {
+    background-color: $button-primary-background-color;
+    color: $colored-text-color;
+  }
+}
+
+label.checkbox,
+label.radiobutton {
+  input {
+    margin-right: quarter($inuit-base-spacing-unit);
+  }
 }
 
 select {
@@ -20,9 +47,6 @@ select {
   }
 }
 
-label.checkbox,
-label.radiobutton {
-  input {
-    margin-right: quarter($inuit-base-spacing-unit);
-  }
+textarea {
+  border-color: $border-color;
 }

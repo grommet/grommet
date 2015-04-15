@@ -20,6 +20,7 @@
 
   a.call-to-action {
     display: inline-block;
+    @include inuit-font-size($inuit-heading-size-4);
     margin-bottom: $inuit-base-spacing-unit;
     text-decoration: none;
     padding: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit;
