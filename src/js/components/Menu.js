@@ -96,7 +96,8 @@ var Menu = React.createClass({
   _findScrollParent: function (element) {
     var parent = element.parentNode;
     while (parent) {
-      if (parent.scrollHeight > parent.offsetHeight) {
+      // account for border the lazy way for now
+      if (parent.scrollHeight > (parent.offsetHeight + 10)) {
         break;
       }
       parent = parent.parentNode;
