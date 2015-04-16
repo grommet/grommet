@@ -3,6 +3,10 @@
 .form-field {
   margin-bottom: halve($inuit-base-spacing-unit);
 
+  &:last-child {
+    margin-bottom: 0px;
+  }
+
   > * {
     display: inline-block;
   }
@@ -21,13 +25,28 @@
   }
 
   > input[type=text],
+  > input[type=range],
   > select,
   > textarea {
     width: round($inuit-base-spacing-unit * 10);
   }
 
+  // Prevent textarea from adding extra bottom margin
+  > textarea {
+    vertical-align: top;
+  }
+
   label.radio,
   label.checkbox {
     margin-right: $inuit-base-spacing-unit;
+  }
+
+  > table {
+    margin-bottom: 0px;
+  }
+
+  > span {
+    vertical-align: top;
+    padding-top: quarter($inuit-base-spacing-unit);
   }
 }

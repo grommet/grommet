@@ -18,6 +18,11 @@ textarea {
     border-color: $focus-border-color;
     box-shadow: 0 0 1px 1px $focus-border-color;
   }
+
+  &::-moz-focus-inner {
+    border: 0;
+    outline: 0;
+  }
 }
 
 input[type="button"],
@@ -75,11 +80,16 @@ select {
   border-color: $border-color;
   padding-right: $inuit-base-spacing-unit;
   -webkit-appearance: none;
+  -moz-appearance: none;
   background: $small-drop-caret no-repeat center right quarter($inuit-base-spacing-unit);
   cursor: pointer;
 
   &:hover {
     background-color: $button-hover-background-color;
+  }
+
+  &::-moz-focus-inner {
+    border: 0;
   }
 
   &.plain {
@@ -164,4 +174,80 @@ input[type=radio]:focus + label.radio:before {
   content: "";
   border-color: $focus-border-color;
   box-shadow: 0 0 1px 1px $focus-border-color;
+}
+
+@mixin range-track {
+  width: 100%;
+  height: quarter($inuit-base-spacing-unit);
+  cursor: pointer;
+  animate: 0.2s;
+  background: none;
+  //background: $border-color;
+  border: $input-border-width solid $border-color;
+  border-radius: $border-radius;
+}
+
+@mixin range-thumb {
+  border: none;
+  //border: $button-border-width solid $button-border-color;
+  height: $inuit-base-spacing-unit;
+  width: halve($inuit-base-spacing-unit);
+  border-radius: $border-radius;
+  background: $brand-color;
+  cursor: pointer;
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  border-color: transparent;
+  padding: halve($inuit-base-spacing-unit) 0px;
+  height: $inuit-base-spacing-unit + halve($inuit-base-spacing-unit);
+
+  &:focus {
+    outline: none;
+  }
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+
+  &::-webkit-slider-runnable-track {
+    @include range-track();
+  }
+
+  &::-webkit-slider-thumb {
+    @include range-thumb();
+    -webkit-appearance: none;
+    margin-top: - (round($inuit-base-spacing-unit * (3/8)) + 1);
+  }
+
+  &::-moz-range-track {
+    @include range-track();
+  }
+
+  &::-moz-range-thumb {
+    @include range-thumb();
+  }
+
+  &::-ms-track {
+    @include range-track();
+    background: transparent;
+    border-color: transparent;
+    border-width: 16px 0;
+    color: transparent;
+  }
+
+  &::-ms-fill-lower {
+    background: #2a6495;
+    border-radius: $border-radius;
+  }
+
+  &::-ms-fill-upper {
+    background: #3071a9;
+    border-radius: $border-radius;
+  }
+
+  &::-ms-thumb {
+    @include range-thumb();
+  }
 }

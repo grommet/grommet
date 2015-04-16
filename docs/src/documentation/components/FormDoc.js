@@ -20,6 +20,14 @@ var FormDoc = React.createClass({
     event.currentTarget.classList.add('selected');
   },
 
+  _onChangeRange: function (event) {
+    this.setState({rangeValue: event.target.value});
+  },
+
+  getInitialState: function () {
+    return {rangeValue: 10};
+  },
+
   render: function() {
     var inline = [
       "<Form>",
@@ -66,19 +74,19 @@ var FormDoc = React.createClass({
               <fieldset>
                 <FormField>
                   <label htmlFor="item1">Item 1</label>
-                  <input id="item1" />
+                  <input id="item1" type="text" />
                 </FormField>
                 <FormField>
                   <label></label>
-                  <input id="item2" type="checkbox"/>
+                  <input id="item2" type="checkbox" />
                   <label htmlFor="item2" className="checkbox">Item 2</label>
                 </FormField>
                 <FormField>
                   <label>Item 3</label>
                   <span>
-                    <input id="item3-1" name="item3" type="radio"/>
+                    <input id="item3-1" name="item3" type="radio" />
                     <label htmlFor="item3-1" className="radio">first</label>
-                    <input id="item3-2" name="item3" type="radio"/>
+                    <input id="item3-2" name="item3" type="radio" />
                     <label htmlFor="item3-2" className="radio">second</label>
                   </span>
                 </FormField>
@@ -118,6 +126,18 @@ var FormDoc = React.createClass({
                       </tr>
                     </tbody>
                   </table>
+                </FormField>
+                <FormField>
+                  <label htmlFor="item8">Item 8</label>
+                  <input id="item8" type="number"
+                    min="1" max="20" step="1" defaultValue="10" />
+                </FormField>
+                <FormField>
+                  <label htmlFor="item9">Item 9</label>
+                  <input id="item9" type="range"
+                    min="1" max="20" defaultValue="10"
+                    onChange={this._onChangeRange}/>
+                  <span ref="rangeValue">{this.state.rangeValue}</span>
                 </FormField>
               </fieldset>
               <Footer>
