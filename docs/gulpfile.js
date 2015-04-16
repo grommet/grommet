@@ -13,6 +13,10 @@ var opts = {
       dist: 'docs/dist/img/'
     },
     {
+      asset: 'docs/src/documentation/img/**',
+      dist: 'docs/dist/img/'
+    },
+    {
       asset: 'src/img/**',
       dist: 'docs/dist/img/'
     },

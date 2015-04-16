@@ -12,6 +12,7 @@ var TBD = require('ligo/components/TBD');
 var LigoDocument = require('ligo/components/Document');
 var HelloWorld = require('./HelloWorld');
 var GetStarted = require('./GetStarted');
+var Architecture = require('./Architecture');
 var DialogDoc = require('./components/DialogDoc');
 var DonutDoc = require('./components/DonutDoc');
 var FooterDoc = require('./components/FooterDoc');
@@ -60,7 +61,7 @@ var CONTENTS = [
   },
   {label: 'Reference',
     contents: [
-      {route: 'doc_architecture', label: 'Architecture', component: TBD}
+      {route: 'doc_architecture', label: 'Architecture', component: Architecture}
     ]
   }
 ];

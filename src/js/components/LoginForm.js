@@ -65,8 +65,8 @@ var LoginForm = React.createClass({
       if (this.props.rememberMe) {
         rememberMe = (
           <span className={CLASS_NAME + "__remember-me"}>
-            <input type="checkbox" />
-            <label>Remember me</label>
+            <input id="remember-me" type="checkbox" />
+            <label htmlFor="remember-me" className="checkbox">Remember me</label>
           </span>
         );
       }
@@ -89,7 +89,7 @@ var LoginForm = React.createClass({
           <input type="password" className={CLASS_NAME + "__password"} ref="password" />
         </fieldset>
         {errors}
-        <input type="submit" className={CLASS_NAME + "__submit"} value={'Log in'} />
+        <input type="submit" className={CLASS_NAME + "__submit primary call-to-action"} value={'Log in'} />
         {footer}
       </form>
     );

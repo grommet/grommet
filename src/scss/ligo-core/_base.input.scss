@@ -21,7 +21,7 @@ textarea {
 
   &::-moz-focus-inner {
     border: none;
-    outline: 0;
+    outline: none;
   }
 }
 
@@ -180,7 +180,7 @@ input[type=radio]:focus + label.radio:before {
   width: 100%;
   height: quarter($inuit-base-spacing-unit);
   cursor: pointer;
-  animate: 0.2s;
+  //animate: 0.2s;
   background: none;
   //background: $border-color;
   border: $input-border-width solid $border-color;
