@@ -20,7 +20,7 @@ textarea {
   }
 
   &::-moz-focus-inner {
-    border: 0;
+    border: none;
     outline: 0;
   }
 }
@@ -89,7 +89,7 @@ select {
   }
 
   &::-moz-focus-inner {
-    border: 0;
+    border: none;
   }
 
   &.plain {
@@ -208,7 +208,7 @@ input[type=range] {
   }
 
   &::-moz-focus-inner {
-    border: 0;
+    border: none;
   }
 
   &::-webkit-slider-runnable-track {

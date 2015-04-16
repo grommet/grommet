@@ -18,8 +18,18 @@
   &--small {
     @include inuit-font-size($inuit-base-font-size);
 
-    .menu__control-drop-icon {
-      margin-left: halve(halve($inuit-base-spacing-unit));
+    .menu__control {
+      
+      &-drop-icon {
+        margin-left: halve(halve($inuit-base-spacing-unit));
+      }
+      
+      &-icon {
+        svg {
+          width: halve($inuit-base-spacing-unit) + ($inuit-base-spacing-unit/4);
+          height: halve($inuit-base-spacing-unit) + ($inuit-base-spacing-unit/4);
+        }
+      }
     }
   }
 
@@ -160,16 +170,20 @@
 
     .menu__control {
 
-      text-align: center;
-
       &-label {
         padding: halve($inuit-base-spacing-unit);
+      }
+
+      &-icon {
+        svg {
+          width: halve($inuit-base-spacing-unit) + ($inuit-base-spacing-unit/4);
+          height: halve($inuit-base-spacing-unit) + ($inuit-base-spacing-unit/4);
+        }
       }
     }
 
     a {
       padding: halve(halve($inuit-base-spacing-unit)) halve($inuit-base-spacing-unit);
-      text-align: center;
     }
   }
 
