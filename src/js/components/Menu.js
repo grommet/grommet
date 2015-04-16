@@ -13,13 +13,15 @@ var Menu = React.createClass({
     colorIndex: React.PropTypes.number,
     direction: React.PropTypes.oneOf(['up', 'down', 'left', 'right']),
     icon: React.PropTypes.node,
-    label: React.PropTypes.string
+    label: React.PropTypes.string,
+    small: React.PropTypes.bool
   },
 
   getDefaultProps: function () {
     return {
       colored: false,
-      direction: 'down'
+      direction: 'down',
+      small: false
     };
   },
 
@@ -64,8 +66,7 @@ var Menu = React.createClass({
     this.setState({active: true});
   },
 
-  _onClose: function (event) {
-    event.preventDefault();
+  _onClose: function () {
     this.setState({active: false});
   },
 
@@ -160,22 +161,28 @@ var Menu = React.createClass({
     var result = null;
     var icon = null;
     var controlClassName = "menu__control";
+
+    var classes = [controlClassName];
+    
     if (this.props.icon) {
+      classes.push(controlClassName + "--labelled");
       icon = (
         <div className={controlClassName + "-icon control-icon"}>
           {this.props.icon}
         </div>
       );
     } else {
+      classes.push(controlClassName +"--fixed-label");
       icon = (
         <div className={controlClassName + "-icon control-icon"}>
           <MoreIcon />
         </div>
       );
     }
+
     if (this.props.label) {
       result = (
-        <div className={controlClassName + " " + controlClassName + "--labelled"}>
+        <div className={classes.join(' ')}>
           {icon}
           <span className={controlClassName + "-label"}>{this.props.label}</span>
           <DropCaretIcon className={controlClassName + "-drop-icon"} />
@@ -204,6 +211,9 @@ var Menu = React.createClass({
     }
     if (this.props.colored) {
       classes.push("menu--colored");
+    }
+    if (this.props.small) {
+      classes.push("menu--small");
     }
     if (this.props.colorIndex) {
       classes.push("header-color-index-" + this.props.colorIndex);
@@ -252,8 +262,17 @@ var Menu = React.createClass({
         second = this.props.children;
       }
 
+      var classes = ["menu__layer"];
+
+      if (this.props.direction) {
+        classes.push("menu__layer--" + this.props.direction);
+      }
+      if (this.props.small) {
+        classes.push("menu__layer--small");
+      }
+
       return (
-        <div id="menu-layer" className={"menu__layer menu__layer--" + this.props.direction}
+        <div id="menu-layer" className={classes.join(' ')}
           onClick={this._onClose}>
           {first}
           {second}

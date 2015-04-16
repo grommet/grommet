@@ -15,6 +15,14 @@
     }
   }
 
+  &--small {
+    @include inuit-font-size($inuit-base-font-size);
+
+    .menu__control-drop-icon {
+      margin-left: halve(halve($inuit-base-spacing-unit));
+    }
+  }
+
   &:focus {
     outline: none;
     margin: -1px;
@@ -50,6 +58,12 @@
         }
       }
     }
+
+    &--fixed-label {
+      .menu__control-icon {
+        display: none;
+      }
+    }
   }
 
   &__layer {
@@ -58,8 +72,6 @@
     @include inuit-font-size($inuit-heading-size-3, inherit);
     background-color: $background-color;
     border: 1px solid $border-color;
-
-
 
     .menu__control {
       &-label {
@@ -128,7 +140,6 @@
 .menu__layer {
 
   &--left {
-    text-align: right;
 
     > * {
       display: inline-block;
@@ -136,8 +147,29 @@
   }
 
   &--right {
+
+    text-align: right;
+
     > * {
       display: inline-block;
+    }
+  }
+
+  &--small {
+    font-size: 1em;
+
+    .menu__control {
+
+      text-align: center;
+
+      &-label {
+        padding: halve($inuit-base-spacing-unit);
+      }
+    }
+
+    a {
+      padding: halve(halve($inuit-base-spacing-unit)) halve($inuit-base-spacing-unit);
+      text-align: center;
     }
   }
 

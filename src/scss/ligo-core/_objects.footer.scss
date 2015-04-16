@@ -19,6 +19,15 @@
 
       &:last-child {
         margin-right: 0px;
+        text-align: right;
+
+        @include media-query(palm) {
+          text-align: left;
+        }
+
+        @include media-query(lap) {
+          text-align: left;
+        }
       }
     }
 
@@ -75,19 +84,10 @@
 
         @include media-query(palm) {
           display: block;
-          line-height: $inuit-base-spacing-unit;
-
-          p {
-            text-align: left;
-          }
         }
 
         @include media-query(lap) {
           display: block;
-
-          p {
-            text-align: left;
-          }
         }
       }
 

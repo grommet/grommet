@@ -39,6 +39,8 @@ var MenuDoc = React.createClass({
             <dt><code>label  {"{text}"}</code></dt>
             <dd>Indicates that the menu should be collapsed and this
               label shown as a control top open it.</dd>
+            <dt><code>small  true|false</code></dt>
+            <dd>Indicates that the menu should be rendered in a small size.</dd>
           </dl>
         </section>
 
@@ -114,6 +116,16 @@ var MenuDoc = React.createClass({
             </Menu>
           </div>
           <pre><code className="html">{"<Menu collapse={true} direction=\"up\"> ..."}</code></pre>
+
+          <h3>collapse, small</h3>
+          <div className="example">
+            <Menu collapse={true} small={true}>
+              <a href="#" className="active">First</a>
+              <a href="#">Second</a>
+              <a href="#">Third</a>
+            </Menu>
+          </div>
+          <pre><code className="html">{"<Menu collapse={true} small={true}> ..."}</code></pre>
 
         </section>
       </LigoDocument>
