@@ -1,6 +1,4 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
-var String = require('../utils/String');
-
 // Parse the search text into formal tokens.
 // Tokens enable syntax highlighting and filter formalization.
 function tokenize(text) {
@@ -17,7 +15,6 @@ function tokenize(text) {
   var matches;
   var parts;
   var op = null;
-  var debugCount = 100;
 
   // TODO: handle nested parentheses, handle quoted parentheses
 
@@ -95,11 +92,8 @@ function normalizeToken(token) {
         token.text += String.quoteIfNecessary(token.value);
       }
     }
-  } else if (! token.attribute) {
-    // see if this is an attribute token by looking at its text
-    var exp = /(\S+):([^\s'"]+)|(\S+):'([^']+)'|(\S+):"([^']+)"/;
-    var matches = token.text.match(exp);
-  }
+  } 
+  
   return token;
 }
 

@@ -14,7 +14,7 @@ var SessionControl = React.createClass({
     this.setState({session: SessionStore.getAll()});
   },
 
-  _onClick: function(e) {
+  _onClick: function() {
     this.setState({active: !this.state.active});
   },
 

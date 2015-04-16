@@ -45,7 +45,7 @@ var Donut = React.createClass({
     this.setState({initial: false, activeIndex: index});
   },
 
-  _onMouseOut: function (index) {
+  _onMouseOut: function () {
     this.setState({initial: false, activeIndex: 0});
   },
 
@@ -69,7 +69,6 @@ var Donut = React.createClass({
       total += item.value;
     });
 
-    var series = this.props.series;
     var startAngle = 0;
     var anglePer = 360.0 / total;
     var paths = {};

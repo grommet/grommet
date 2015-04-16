@@ -1,7 +1,6 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var SearchIcon = require('../../components/icons/Search');
 var ClearIcon = require('../../components/icons/Clear');
 
 var CLASS_ROOT = 'index-search';

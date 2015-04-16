@@ -28,7 +28,8 @@
     }
   }
 
-  &__previous-container, &__next-container {
+  &__previous-container, 
+  &__next-container {
     position: absolute;
     top: 50vh;
     left: $inuit-base-spacing-unit;
@@ -45,7 +46,8 @@
     right: 0px;
   }
 
-  &__previous, &__next {
+  &__previous, 
+  &__next {
     position: relative;
     top: auto;
     z-index: 2;

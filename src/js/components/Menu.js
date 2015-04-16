@@ -31,7 +31,6 @@ var Menu = React.createClass({
     // place container over control
     var controlElement = this.refs.control.getDOMNode();
     var layerElement = document.getElementById('menu-layer');
-    var layerControlElement = document.getElementById('menu-layer');
     var controlRect = controlElement.getBoundingClientRect();
     var windowWidth = window.innerWidth;
 
@@ -126,11 +125,13 @@ var Menu = React.createClass({
       this.stopListeningToKeyboard(focusedKeyboardHandlers);
     }
 
+    var scrollParent = this._findScrollParent(this.refs.control.getDOMNode());
+
     if (! this.state.active && prevState.active) {
       window.removeEventListener('resize', this._layout);
       document.body.removeEventListener('click', this._onClose);
       this.stopListeningToKeyboard(activeKeyboardHandlers);
-      var scrollParent = this._findScrollParent(this.refs.control.getDOMNode());
+      
       if (scrollParent) {
         scrollParent.removeEventListener('scroll', this._layout);
       }
@@ -145,7 +146,7 @@ var Menu = React.createClass({
       window.addEventListener('resize', this._layout);
       document.body.addEventListener('click', this._onClose);
       this.startListeningToKeyboard(activeKeyboardHandlers);
-      var scrollParent = this._findScrollParent(this.refs.control.getDOMNode());
+
       if (scrollParent) {
         scrollParent.addEventListener('scroll', this._layout);
       }
@@ -253,7 +254,7 @@ var Menu = React.createClass({
       var controlContents = this._createControl();
 
       var first = null;
-      var secont = null;
+      var second = null;
       if ('up' === this.props.direction) {
         first = this.props.children;
         second = controlContents;

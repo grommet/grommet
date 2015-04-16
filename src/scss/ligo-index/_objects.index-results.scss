@@ -41,7 +41,8 @@
     }
   }
 
-  &__more-down, &__more-up {
+  &__more-down, 
+  &__more-up {
     color: $secondary-text-color;
     font-style: italic;
     margin: $inuit-base-spacing-unit;

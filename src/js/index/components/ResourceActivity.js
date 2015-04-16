@@ -6,6 +6,7 @@ var IndexActions = require('../actions/IndexActions');
 var Timestamp = require('react-time');
 var Meter = require('../../components/Meter');
 var StatusIcon = require('../../components/icons/Status');
+var SpinningIcon = require('../../components/icons/Spinning');
 
 var ResourceActivity = React.createClass({
 
@@ -47,7 +48,7 @@ var ResourceActivity = React.createClass({
           if ('Running' === activity.state) {
             status = (
               <span className={'resource-activity__changing'}>
-                <ChangingIcon />
+                <SpinningIcon />
               </span>
             );
           }

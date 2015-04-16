@@ -15,7 +15,6 @@ var IndexHeader = React.createClass({
   render: function () {
     var index = this.props.index;
 
-    var classes = [CLASS_ROOT];
     var searchClasses = [CLASS_ROOT + "__search"];
     var filterControlClasses = [CLASS_ROOT + "__filter-control"];
     var result = index.result;

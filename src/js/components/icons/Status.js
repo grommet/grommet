@@ -3,12 +3,11 @@
 var React = require('react');
 var OK = require('./status/OK');
 var Warning = require('./status/Warning');
-var Error = require('./status/Error');
 var Disabled = require('./status/Disabled');
 var Unknown = require('./status/Unknown');
 var Label = require('./status/Label');
 
-CLASS_NAME = "status-icon";
+var CLASS_NAME = "status-icon";
 
 var Status = React.createClass({
 

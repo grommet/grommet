@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 var React = require('react');
 
-var Document = React.createClass({
+var LigoDocument = React.createClass({
 
   propTypes: {
     centerColumn: React.PropTypes.bool,
@@ -29,4 +29,4 @@ var Document = React.createClass({
   }
 });
 
-module.exports = Document;
+module.exports = LigoDocument;

@@ -15,7 +15,7 @@ var NavControl = React.createClass({
     this.setState({nav: NavStore.getAll()});
   },
 
-  _onClick: function(e) {
+  _onClick: function() {
     this.setState({active: !this.state.active});
   },
 

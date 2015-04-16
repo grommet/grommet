@@ -7,7 +7,6 @@ var State = require('react-router').State;
 var Router = require('../../utils/Router');
 var IndexRouter = require('../utils/IndexRouter');
 var Form = require('../../components/Form');
-var DragHandle = require('../../components/icons/DragHandle');
 
 var CLASS_ROOT = 'index-edit';
 

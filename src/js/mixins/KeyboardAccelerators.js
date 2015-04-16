@@ -1,7 +1,5 @@
 // (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
 
-var React = require('react');
-
 // Allow callers to use key labels instead of key code numbers.
 // This makes their code easier to read.
 var KEYS = {
@@ -75,8 +73,8 @@ var KeyboardAccelerators = {
     }
 
     var keyCount = 0;
-    for (var key in this._keyboardAcceleratorHandlers) {
-      if (this._keyboardAcceleratorHandlers.hasOwnProperty(key)) {
+    for (var keyHandler in this._keyboardAcceleratorHandlers) {
+      if (this._keyboardAcceleratorHandlers.hasOwnProperty(keyHandler)) {
         keyCount += 1;
       }
     }

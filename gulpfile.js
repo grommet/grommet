@@ -17,6 +17,8 @@ var opts = {
       asset: JSON.stringify(packageJSON, null, 2)
    }
   ],
+  scssAssets: ['src/scss/**/*.scss'],
+  jsAssets: ['src/js/**/*.js'],
   mainJs: 'src/js/index.js',
   mainScss: 'src/scss/ligo-core/index.scss',
   sync: {

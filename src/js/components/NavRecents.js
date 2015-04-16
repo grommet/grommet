@@ -2,7 +2,6 @@
 
 var React = require('react');
 var NavStore = require('../stores/NavStore');
-var Router = require('../utils/Router');
 var Link = require('../components/Link');
 
 var NavRecents = React.createClass({

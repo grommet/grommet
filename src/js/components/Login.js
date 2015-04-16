@@ -1,7 +1,6 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var Router = require('../utils/Router');
 var AppStore = require('../stores/AppStore');
 var SessionStore = require('../stores/SessionStore');
 var SessionActions = require('../actions/SessionActions');
@@ -23,7 +22,7 @@ var Login = React.createClass({
     }
   },
 
-  _onResize: function(e) {
+  _onResize: function() {
     this.adjustBackground();
   },
 

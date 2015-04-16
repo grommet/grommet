@@ -87,6 +87,7 @@ $index-content-top: round($inuit-base-spacing-unit * 8);
 
   &__results {
     width: 100%;
+    
     @include media-query(lap-and-up) {
       height: 100vh;
     }

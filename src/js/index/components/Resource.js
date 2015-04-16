@@ -5,11 +5,9 @@ var ResourceStore = require('../stores/ResourceStore');
 var NavStore = require('../../stores/NavStore');
 var Router = require('../../utils/Router');
 var ResourceActions = require('../actions/ResourceActions');
-var FixedHeader = require('../../components/FixedHeader');
 var ResourceHeader = require('../components/ResourceHeader');
 var ResourceActivity = require('../components/ResourceActivity');
 var ResourceMap = require('../components/ResourceMap');
-var Object = require('../../components/Object');
 
 var CLASS_ROOT = 'resource';
 
@@ -20,7 +18,6 @@ var Resource = React.createClass({
   },
 
   _onNavChange: function() {
-    var data = NavStore.getAll();
     var uri = Router.param('splat');
     if (uri && uri !== this.state.uri) {
       // delay to avoid nested dispatches

@@ -18,7 +18,7 @@ var FixedHeader = React.createClass({
     window.removeEventListener("resize", this._onResize);
   },
 
-  componentDidUpdate: function(prevProps, prevState) {
+  componentDidUpdate: function() {
     // align fixed header width to its container
     var headerContainerElement = this.refs.headerContainer.getDOMNode();
     var headerElement = this.refs.header.getDOMNode();

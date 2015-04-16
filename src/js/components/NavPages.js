@@ -11,7 +11,7 @@ var NavPages = React.createClass({
     this.setState(NavStore.getAll());
   },
 
-  _onClick: function(event) {
+  _onClick: function() {
     this.props.onRequestClose();
   },
 
@@ -49,7 +49,7 @@ var NavPages = React.createClass({
       );
     }, this);
 
-    var highlightPages = this.state.activeHighlightPages.map(function (page, index) {
+    var highlightPages = this.state.activeHighlightPages.map(function (page) {
       var classes = ['nav-pages__page'];
       var icon = '';
       if (page.icon) {

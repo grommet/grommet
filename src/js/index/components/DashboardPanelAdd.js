@@ -3,7 +3,6 @@
 var React = require('react');
 var DashboardStore = require('../stores/DashboardStore');
 var DashboardActions = require('../actions/DashboardActions');
-var IndexActions = require('../actions/IndexActions');
 var Router = require('../../utils/Router');
 var Form = require('../../components/Form');
 var IndexAggregate = require('../components/IndexAggregate');

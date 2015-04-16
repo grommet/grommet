@@ -33,7 +33,8 @@ var Tile = React.createClass({
       status = (
         <StatusIcon className="tile--status"
           value={this.props.status.toLowerCase()} small={true} />
-      )
+      );
+
       classes.push("tile--status-" + this.props.status.toLowerCase());
     }
 
@@ -52,7 +53,7 @@ var Tile = React.createClass({
 
     var menu;
     if (this.props.actions) {
-      menu = (<Menu items={this.props.actions} iconClass={MoreIcon} direction="up" />)
+      menu = (<Menu items={this.props.actions} iconClass={MoreIcon} direction="up" />);
     }
 
     return (

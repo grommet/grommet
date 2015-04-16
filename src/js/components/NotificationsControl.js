@@ -8,7 +8,7 @@ var NotificationsControl = React.createClass({
 
   mixins: [ReactLayeredComponent],
 
-  _onClick: function(e) {
+  _onClick: function() {
     this.setState({active: !this.state.active});
   },
 

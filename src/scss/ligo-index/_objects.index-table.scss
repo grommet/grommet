@@ -26,12 +26,14 @@
     }
   }
 
-  &__table, &__header-mirror-table {
+  &__table, 
+  &__header-mirror-table {
     width: 100%;
     text-align: left;
 
     thead {
-      td, th {
+      td, 
+      th {
         color: $secondary-text-color;
         font-weight: normal;
         border-bottom: 1px dashed $border-color;
@@ -118,7 +120,8 @@
     thead {
       visibility: hidden; // the header mirror is what we show
 
-      td, th {
+      td, 
+      th {
         border-color: transparent;
       }
     }
