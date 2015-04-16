@@ -20,6 +20,7 @@
     padding-top: quarter($inuit-base-spacing-unit);
 
     @include media-query(palm) {
+      display: block;
       text-align: left;
     }
   }
