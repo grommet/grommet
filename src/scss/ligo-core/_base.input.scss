@@ -81,7 +81,8 @@ textarea {
 
 input[type=checkbox],
 input[type=radio] {
-	display: none;
+  opacity: 0;
+  position: absolute;
 }
 
 label.checkbox,
@@ -127,11 +128,17 @@ label.radio {
 input[type=checkbox]:checked + label.checkbox:after {
   content: "";
   position: absolute;
-  top: quarter($inuit-base-spacing-unit) + 5.5px;
-  left: 4.5px;
+  top: quarter($inuit-base-spacing-unit) + 5px;
+  left: 4px;
   width: $inuit-base-spacing-unit - 8;
   height: $inuit-base-spacing-unit - 8;
   background-color: $brand-color;
+}
+
+input[type=checkbox]:focus + label.checkbox:before {
+  content: "";
+  border-color: $focus-border-color;
+  box-shadow: 0 0 1px 1px $focus-border-color;
 }
 
 input[type=radio]:checked + label.radio:after {
@@ -143,4 +150,10 @@ input[type=radio]:checked + label.radio:after {
   height: $inuit-base-spacing-unit - 8;
   border-radius: $inuit-base-spacing-unit - 8;
   background-color: $brand-color;
+}
+
+input[type=radio]:focus + label.radio:before {
+  content: "";
+  border-color: $focus-border-color;
+  box-shadow: 0 0 1px 1px $focus-border-color;
 }

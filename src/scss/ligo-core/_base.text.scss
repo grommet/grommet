@@ -1,5 +1,11 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
+p,
+dd,
+li {
+  max-width: $readable-text-width;
+}
+
 a {
   text-decoration: none;
   color: $link-color;
