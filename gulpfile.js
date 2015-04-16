@@ -35,8 +35,13 @@ var opts = {
     resolve: {
       root: [
         path.resolve(__dirname, 'src/js'),
-        path.resolve(__dirname, 'src/scss')
+        path.resolve(__dirname, 'src/scss'),
+        path.resolve(__dirname, 'node_modules')
       ]
+    },
+    externals: {
+      "react": "React",
+      "react-router": "ReactRouter"
     }
   }
 };

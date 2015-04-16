@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Hello World!</title>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.1/react.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.1/JSXTransformer.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-router/0.13.2/ReactRouter.min.js"></script>
+  <script src="http://ligo.usa.hp.com/libs/ligo.min.js"></script>
+</head>
+<body>
+  <div id="content"></div>
+  <script type="text/jsx">
+    var App = React.createClass({
+      render: function() {
+        return (
+          <Ligo.App>
+            <Ligo.Header centerColumn={true} primary={true}>
+              <Ligo.Title>
+                {"Your App Name"}
+              </Ligo.Title>
+              <div />
+            </Ligo.Header>
+            <ReactRouter.RouteHandler />
+          </Ligo.App>
+        );
+      }
+    });
+
+    var TodoDashboard = React.createClass({
+      render: function () {
+        return (
+          <Ligo.Layout centerColumn={true}>
+            <Ligo.Panel title="Hello World!">
+              <p>If you&#39;ve made here, congratulations, you&#39;re inside Ligo world.</p>
+              <p>Now, come back to <a href="http://ligo.usa.hp.com/docs/hpe/#/documentation">Hello World</a> page to continue your Ligo exploration.</p>
+            </Ligo.Panel>
+          </Ligo.Layout>
+        );
+      }
+    }); 
+
+    var routes = (
+      <ReactRouter.Route name="todoapp" path="/" handler={App}>
+        <ReactRouter.DefaultRoute name="dashboard" handler={TodoDashboard}/>
+      </ReactRouter.Route>
+    );
+
+    ReactRouter.create({routes: routes}).run(function (Handler) {
+      var factory = React.createFactory(Handler);
+      var element = document.getElementById('content');
+      React.render(factory(), element);
+    });
+  </script>
+</body>
+</html>
