@@ -4,14 +4,12 @@ var React = require('react');
 var Route = require('react-router').Route;
 var DefaultRoute = require('react-router').DefaultRoute;
 
-var Ligo = require('ligo');
-var App = Ligo.App;
-var TBD = Ligo.TBD;
+var App = require('./TodoApp');
+var TodoDashboard = require('./TodoDashboard');
 
 var routes = (
-  <Route name="app" path="/" handler={App}>
-    <Route name="tbd" handler={TBD}/>
-    <DefaultRoute name="dashboard" handler={TBD}/>
+  <Route name="todoapp" path="/" handler={App}>
+    <DefaultRoute name="dashboard" handler={TodoDashboard}/>
   </Route>
 );
 

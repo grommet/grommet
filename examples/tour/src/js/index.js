@@ -19,7 +19,6 @@ LigoIndex.init(indexConfig);
 router.run(function (Handler) {
   var factory = React.createFactory(Handler);
   var element = document.getElementById('content');
-  console.log(factory);
   React.render(factory(), element);
 });
 

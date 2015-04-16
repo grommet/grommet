@@ -10,6 +10,10 @@ var opts = {
     {
       asset: 'examples/tour/src/img/**',
       dist: 'examples/tour/dist/img/'
+    },
+    {
+      asset: 'src/img/**',
+      dist: 'examples/tour/dist/img/'
     }
   ],
   scssAssets: ['examples/tour/src/scss/**/*.scss'],

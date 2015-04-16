@@ -2,21 +2,14 @@
 
 require("!style!css!sass!index.scss");
 
-var Ligo = require('ligo');
-var Logo = require('./Logo');
-var Routes = require('./Routes');
-var menuConfig = require('./MenuConfig');
+var React = require('react');
+var Router = require('react-router');
+var routes = require('./Routes');
 
-Ligo.init({
-  title: 'Todo App',
-  logo: Logo,
-  menu: menuConfig,
-  routes: Routes,
-  mainContainerId: 'app',
-  login: false
+var router = Router.create({routes: routes});
+
+router.run(function (Handler) {
+  var factory = React.createFactory(Handler);
+  var element = document.getElementById('content');
+  React.render(factory(), element);
 });
-
-// timeout for development of prerender version
-//setTimeout(function () {
-Ligo.start();
-//}, 5000);
