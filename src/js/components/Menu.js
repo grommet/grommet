@@ -125,13 +125,15 @@ var Menu = React.createClass({
       this.stopListeningToKeyboard(focusedKeyboardHandlers);
     }
 
-    var scrollParent = this._findScrollParent(this.refs.control.getDOMNode());
+    var scrollParent;
 
     if (! this.state.active && prevState.active) {
       window.removeEventListener('resize', this._layout);
       document.body.removeEventListener('click', this._onClose);
       this.stopListeningToKeyboard(activeKeyboardHandlers);
       
+      scrollParent = this._findScrollParent(this.refs.control.getDOMNode());
+
       if (scrollParent) {
         scrollParent.removeEventListener('scroll', this._layout);
       }
@@ -147,6 +149,8 @@ var Menu = React.createClass({
       document.body.addEventListener('click', this._onClose);
       this.startListeningToKeyboard(activeKeyboardHandlers);
 
+      scrollParent = this._findScrollParent(this.refs.control.getDOMNode());
+      
       if (scrollParent) {
         scrollParent.addEventListener('scroll', this._layout);
       }
