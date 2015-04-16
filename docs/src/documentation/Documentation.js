@@ -11,6 +11,7 @@ var Menu = require('ligo/components/Menu');
 var TBD = require('ligo/components/TBD');
 var LigoDocument = require('ligo/components/Document');
 var HelloWorld = require('./HelloWorld');
+var Tutorial = require('./Tutorial');
 var GetStarted = require('./GetStarted');
 var Architecture = require('./Architecture');
 var DialogDoc = require('./components/DialogDoc');
@@ -30,6 +31,7 @@ var CONTENTS = [
   {label: 'Guides',
     contents: [
       {route: 'doc_helloworld', label: 'Hello World', component: HelloWorld, default: true},
+      {route: 'doc_tutorial', label: 'Tutorial', component: Tutorial},
       {route: 'doc_getstarted', label: 'Get Started', component: GetStarted}
     ]
   },
