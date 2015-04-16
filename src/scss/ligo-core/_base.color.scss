@@ -27,10 +27,16 @@ $meter-color: nth($brand-accent-colors, 1) !default;
 
 // Controls
 
-$focus-border-color: $brand-color !default;
-$button-background-color: #e2e2e2 !default;
-$button-hover-background-color: #ccc !default;
+$focus-border-color: nth($brand-accent-colors, 1) !default;
+
+$button-background-color: $background-color !default;
+$button-border-color: $brand-color !default;
+$button-text-color: $text-color !default;
+$button-hover-background-color: $hover-background-color !default;
+$button-hover-border-color: $brand-color;
 $button-primary-background-color: $brand-color-darker !default;
+$button-primary-border-color: $brand-color-darker !default;
+$button-primary-text-color: $colored-text-color !default;
 
 $hover-background-color: rgba(0, 0, 0, 0.1);
 $modal-overlay-background-color: rgba(0, 0, 0, 0.6);

@@ -1,15 +1,21 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+$input-border-width: 1px !default;
+$button-border-width: 2px !default;
 
 input,
 select,
 textarea {
-  padding: quarter($inuit-base-spacing-unit) halve($inuit-base-spacing-unit);
-  border: 1px solid $border-color;
+  @include inuit-font-size($inuit-base-font-size);
+  // Align overall height with regular text line height, reduce
+  // top and bottom padding by an extra 2px.
+  padding: (quarter($inuit-base-spacing-unit) - $input-border-width) halve($inuit-base-spacing-unit);
+  border: $input-border-width solid $border-color;
+  border-radius: $border-radius;
   outline: none;
   margin-right: halve($inuit-base-spacing-unit);
 
   &:focus {
-    border: 1px solid $focus-border-color;
+    border-color: $focus-border-color;
     box-shadow: 0 0 1px 1px $focus-border-color;
   }
 }
@@ -19,22 +25,28 @@ input[type="submit"],
 button,
 a.button {
   display: inline-block;
-  padding: quarter($inuit-base-spacing-unit) halve($inuit-base-spacing-unit);
-  border: 1px solid transparent;
+  @include inuit-font-size($inuit-base-font-size);
+  // Align overall height with regular text line height, reduce
+  // top and bottom padding by an extra 2px.
+  padding: (quarter($inuit-base-spacing-unit) - $button-border-width) halve($inuit-base-spacing-unit);
+  border: $button-border-width solid $button-border-color;
   border-radius: $border-radius;
   background-color: $button-background-color;
-  color: $text-color;
+  color: $button-text-color;
   text-decoration: none;
   cursor: pointer;
   text-align: center;
+  outline: none;
 
   &:hover {
     background-color: $button-hover-background-color;
+    border-color: $button-hover-border-color;
   }
 
   &.primary {
     background-color: $button-primary-background-color;
-    color: $colored-text-color;
+    border-color: $button-primary-border-color;
+    color: $button-primary-text-color;
 
     &:hover {
       background-color: $brand-color;
@@ -42,17 +54,12 @@ a.button {
   }
 
   &.call-to-action {
-    //@include inuit-font-size($inuit-heading-size-3, inherit);
     @include inuit-font-size($inuit-heading-size-4);
-    text-decoration: none;
     padding: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit;
-    border-radius: $border-radius;
-    color: $colored-text-color;
-    outline: none;
   }
 
   &:focus {
-    border: 1px solid $focus-border-color;
+    border-color: $focus-border-color;
     box-shadow: 0 0 1px 1px $focus-border-color;
   }
 }
@@ -62,21 +69,22 @@ input[type="radio"] {
   margin-right: quarter($inuit-base-spacing-unit);
 }
 
+$small-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAAXNSR0IArs4c6QAAALNJREFUKBVjYBj6gHH69Olb////L8rIyJiemZl5HpuXgGoMgWpmAtW8ZgIyuIEMU6DCk0CJioaGBiaYJhAbJAaSA6kBqwUKcoiJiXUBBXKAEoxAwcM/f/6MA2liZ2dfBBS3BTKBwv+nvHr1qowRJAECU6dOdQNKzgdiKaDkNyANEuYCsp8BcWJ2dvYukADcepDAjx8/dIFia4CKuUCKQWyQGEwxkI8dTJs2rRLqduwKaCoKAOClUKEWEZS1AAAAAElFTkSuQmCC);
+
 select {
   border-color: $border-color;
-  border-radius: 0px;
   padding-right: $inuit-base-spacing-unit;
   -webkit-appearance: none;
-  background: url("/img/drop-caret.svg") no-repeat center right quarter($inuit-base-spacing-unit);
-  background-size: halve($inuit-base-spacing-unit) quarter($inuit-base-spacing-unit);
+  background: $small-drop-caret no-repeat center right quarter($inuit-base-spacing-unit);
+  cursor: pointer;
+
+  &:hover {
+    background-color: $button-hover-background-color;
+  }
 
   &.plain {
     border: none;
   }
-}
-
-textarea {
-  border-color: $border-color;
 }
 
 input[type=checkbox],
@@ -106,7 +114,7 @@ label.radio {
     vertical-align: middle;
     background-color: $background-color;
     color: $brand-color-darker;
-    border: 1px solid $border-color;
+    border: $input-border-width solid $border-color;
     text-align: center;
   }
 }
@@ -128,7 +136,7 @@ label.radio {
 input[type=checkbox]:checked + label.checkbox:after {
   content: "";
   position: absolute;
-  top: quarter($inuit-base-spacing-unit) + 5px;
+  top: quarter($inuit-base-spacing-unit) + 4.5px;
   left: 4px;
   width: $inuit-base-spacing-unit - 8;
   height: $inuit-base-spacing-unit - 8;

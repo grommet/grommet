@@ -19,24 +19,6 @@ var Form = React.createClass({
         {this.props.children}
       </form>
     );
-
-    /*
-        <div className={"form__header"}>
-          <div className={"form__title"}>
-            <span className={"form__title-action"}>
-              {this.props.action}
-            </span>
-            <span className={"form__title-resource"}>
-              {this.props.resource}
-            </span>
-          </div>
-        </div>
-    */
-    /*
-        <div className={"form__footer"}>
-          {this.props.buttons}
-        </div>
-    */
   }
 
 });

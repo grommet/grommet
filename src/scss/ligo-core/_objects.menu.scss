@@ -1,7 +1,7 @@
 // (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
 
 .menu {
-  @include inuit-font-size($inuit-heading-size-3, inherit);
+  @include inuit-font-size($inuit-heading-size-4, inherit);
 
   a {
     color: lighten($text-color, 30%);

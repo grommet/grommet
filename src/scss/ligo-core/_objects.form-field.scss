@@ -20,13 +20,14 @@
     }
   }
 
-  input,
-  textarea {
-    max-width: quadruple(quadruple($inuit-base-spacing-unit));
+  > input[type=text],
+  > select,
+  > textarea {
+    width: round($inuit-base-spacing-unit * 10);
   }
 
-  label.checkbox,
-  label.radio {
+  label.radio,
+  label.checkbox {
     margin-right: $inuit-base-spacing-unit;
   }
 }

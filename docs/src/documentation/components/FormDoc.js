@@ -45,13 +45,14 @@ var FormDoc = React.createClass({
         <section>
           <h2>Options</h2>
           <dl>
+          <dt><code>onSubmit  {"{func}"}</code></dt>
+          <dd>A function called when the user submits the form.</dd>
           </dl>
         </section>
 
         <section>
-          <h2>Examples</h2>
+          <h2>Example</h2>
 
-          <h3>Simple</h3>
           <div className="example">
             <Form>
               <Header>
@@ -87,7 +88,8 @@ var FormDoc = React.createClass({
                 </FormField>
                 <FormField>
                   <label>Item 5</label>
-                  <button>Access</button>
+                  <input type="text" />
+                  <button>Select</button>
                 </FormField>
                 <FormField>
                   <label htmlFor="item6">Item 6</label>
