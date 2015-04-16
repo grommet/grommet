@@ -141,7 +141,7 @@
 
     .index-activity {
       position: relative;
-      border: 1px solid $unknown;
+      border: 1px solid map-get($brand-status-colors, unknown);
       border-radius: $border-radius;
       margin-left: halve($inuit-base-spacing-unit);
       padding: quarter($inuit-base-spacing-unit) halve($inuit-base-spacing-unit);
@@ -158,7 +158,7 @@
           halve($inuit-base-spacing-unit)
           (halve($inuit-base-spacing-unit) + quarter($inuit-base-spacing-unit)) 0px;
         border-style: solid;
-        border-color: transparent $unknown;
+        border-color: transparent map-get($brand-status-colors, unknown);
       }
 
       @each $status, $color in $brand-status-colors {
@@ -172,7 +172,8 @@
         }
       }
 
-      &__name, &__progress {
+      &__name, 
+      &__progress {
         display: inline-block;
         margin-right: halve($inuit-base-spacing-unit);
       }

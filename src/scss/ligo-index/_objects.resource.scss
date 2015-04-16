@@ -32,7 +32,8 @@ $attribute-value-width: round($inuit-base-spacing-unit * 16);
   }
 
   &--loading {
-    .resource__content, .resource__header {
+    .resource__content, 
+    .resource__header {
       opacity: 0.1;
       transition: opacity 0s;
     }
@@ -48,7 +49,7 @@ $attribute-value-width: round($inuit-base-spacing-unit * 16);
   &__item {
     position: relative;
     padding-right: double(quadruple($inuit-base-spacing-unit));
-    border: 1px solid $unknown;
+    border: 1px solid map-get($brand-status-colors, unknown);
     border-radius: $border-radius;
 
     @each $status, $color in $brand-status-colors {
