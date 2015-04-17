@@ -3,12 +3,14 @@
 var React = require('react');
 var ReactLayeredComponent = require('../mixins/ReactLayeredComponent');
 var KeyboardAccelerators = require('../mixins/KeyboardAccelerators');
+var Overlay = require('../mixins/Overlay');
 var MoreIcon = require('./icons/More');
 var DropCaretIcon = require('./icons/DropCaret');
 
 var Menu = React.createClass({
 
   propTypes: {
+    collapse: React.PropTypes.bool,
     colored: React.PropTypes.bool,
     colorIndex: React.PropTypes.number,
     direction: React.PropTypes.oneOf(['up', 'down', 'left', 'right']),
@@ -25,40 +27,7 @@ var Menu = React.createClass({
     };
   },
 
-  mixins: [ReactLayeredComponent, KeyboardAccelerators],
-
-  _layout: function () {
-    // place container over control
-    var controlElement = this.refs.control.getDOMNode();
-    var layerElement = document.getElementById('menu-layer');
-    var controlRect = controlElement.getBoundingClientRect();
-    var windowWidth = window.innerWidth;
-
-    // clear prior styling
-    layerElement.style.left = '';
-    layerElement.style.width = '';
-    layerElement.style.top = '';
-
-    var width = Math.min(
-      Math.max(controlElement.offsetWidth, layerElement.offsetWidth),
-      windowWidth);
-    // align right edge and make at least as wide as the control
-    // TODO: handle being on the right edge of the window with an icon control, go left
-    // TODO: calculate border width instead of hard coding it here.
-    var left = (controlRect.left + layerElement.offsetWidth) - width - 1;
-    if ((left + width) > windowWidth) {
-      left -= ((left + width) - windowWidth);
-    }
-    var top = controlRect.top - 1;
-    if ('up' === this.props.direction) {
-      // align bottom edge
-      top = (controlRect.top + controlElement.offsetHeight) - layerElement.offsetHeight + 1;
-    }
-
-    layerElement.style.left = '' + left + 'px';
-    layerElement.style.width = '' + width + 'px';
-    layerElement.style.top = '' + top + 'px';
-  },
+  mixins: [ReactLayeredComponent, KeyboardAccelerators, Overlay],
 
   _onOpen: function (event) {
     event.preventDefault();
@@ -77,32 +46,12 @@ var Menu = React.createClass({
     this.setState({controlFocused: false});
   },
 
-  _onSink: function (event) {
-    event.stopPropagation();
-  },
-
-  _onResize: function () {
-    this._layout();
-  },
-
   getInitialState: function () {
     return {
       controlFocused: false,
       active: false,
       inline: (! this.props.label && ! this.props.icon && ! this.props.collapse)
     };
-  },
-
-  _findScrollParent: function (element) {
-    var parent = element.parentNode;
-    while (parent) {
-      // account for border the lazy way for now
-      if (parent.scrollHeight > (parent.offsetHeight + 10)) {
-        break;
-      }
-      parent = parent.parentNode;
-    }
-    return parent;
   },
 
   componentDidUpdate: function (prevProps, prevState) {
@@ -125,18 +74,10 @@ var Menu = React.createClass({
       this.stopListeningToKeyboard(focusedKeyboardHandlers);
     }
 
-    var scrollParent;
-
     if (! this.state.active && prevState.active) {
-      window.removeEventListener('resize', this._layout);
       document.body.removeEventListener('click', this._onClose);
       this.stopListeningToKeyboard(activeKeyboardHandlers);
-      
-      scrollParent = this._findScrollParent(this.refs.control.getDOMNode());
-
-      if (scrollParent) {
-        scrollParent.removeEventListener('scroll', this._layout);
-      }
+      this.stopOverlay();
     }
 
     if (this.state.controlFocused && ! prevState.controlFocused) {
@@ -144,21 +85,14 @@ var Menu = React.createClass({
     }
 
     if (this.state.active && ! prevState.active) {
-      this._layout();
-      window.addEventListener('resize', this._layout);
       document.body.addEventListener('click', this._onClose);
       this.startListeningToKeyboard(activeKeyboardHandlers);
-
-      scrollParent = this._findScrollParent(this.refs.control.getDOMNode());
-      
-      if (scrollParent) {
-        scrollParent.addEventListener('scroll', this._layout);
-      }
+      this.startOverlay(this.refs.control.getDOMNode(),
+        document.getElementById('menu-layer'));
     }
   },
 
   componentWillUnmount: function () {
-    window.removeEventListener('resize', this._layout);
     document.body.removeEventListener('click', this._onClose);
   },
 
@@ -168,7 +102,7 @@ var Menu = React.createClass({
     var controlClassName = "menu__control";
 
     var classes = [controlClassName];
-    
+
     if (this.props.icon) {
       classes.push(controlClassName + "--labelled");
       icon = (

@@ -26,6 +26,7 @@ var Ligo = {
   Menu: require('./components/Menu'),
   Meter: require('./components/Meter'),
   Panel: require('./components/Panel'),
+  Search: require('./components/Search'),
   SearchCombo: require('./components/SearchCombo'),
   Tiles: require('./components/Tiles'),
   Tile: require('./components/Tile'),

@@ -2,14 +2,14 @@
 
 var React = require('react');
 
-var CLASS_NAME = "icon-spinning";
+var CLASS_ROOT = "icon-spinning";
 
 var Spinning = React.createClass({
 
   render: function() {
-    var classes = [CLASS_NAME];
+    var classes = [CLASS_ROOT];
     if (this.props.small) {
-      classes.push(CLASS_NAME + "--small");
+      classes.push(CLASS_ROOT + "--small");
     }
     if (this.props.className) {
       classes.push(this.props.className);

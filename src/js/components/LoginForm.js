@@ -2,7 +2,7 @@
 
 var React = require('react');
 
-var CLASS_NAME = "login-form";
+var CLASS_ROOT = "login-form";
 
 var LoginForm = React.createClass({
 
@@ -35,16 +35,16 @@ var LoginForm = React.createClass({
   },
 
   render: function() {
-    var classes = [CLASS_NAME];
+    var classes = [CLASS_ROOT];
 
     var errors = this.props.errors.map(function (error, index) {
-      return (<div key={index} className={CLASS_NAME + "__error"}>{error}</div>);
+      return (<div key={index} className={CLASS_ROOT + "__error"}>{error}</div>);
     });
 
     var logo = null;
     if (this.props.logo) {
       logo = (
-        <div className={CLASS_NAME + "__logo"}>
+        <div className={CLASS_ROOT + "__logo"}>
           {this.props.logo}
         </div>
       );
@@ -53,7 +53,7 @@ var LoginForm = React.createClass({
     var title = null;
     if (this.props.title) {
       title = (
-        <h1 className={CLASS_NAME + "__title"}>
+        <h1 className={CLASS_ROOT + "__title"}>
           {this.props.title}
         </h1>
       );
@@ -64,14 +64,14 @@ var LoginForm = React.createClass({
       var rememberMe = null;
       if (this.props.rememberMe) {
         rememberMe = (
-          <span className={CLASS_NAME + "__remember-me"}>
+          <span className={CLASS_ROOT + "__remember-me"}>
             <input id="remember-me" type="checkbox" />
             <label htmlFor="remember-me" className="checkbox">Remember me</label>
           </span>
         );
       }
       footer = (
-        <div className={CLASS_NAME + "__footer"}>
+        <div className={CLASS_ROOT + "__footer"}>
           {rememberMe}
           {this.props.forgotPassword}
         </div>
@@ -84,12 +84,12 @@ var LoginForm = React.createClass({
         {title}
         <fieldset>
           <label>Username</label>
-          <input className={CLASS_NAME + "__username"} ref="username" />
+          <input className={CLASS_ROOT + "__username"} ref="username" />
           <label>Password</label>
-          <input type="password" className={CLASS_NAME + "__password"} ref="password" />
+          <input type="password" className={CLASS_ROOT + "__password"} ref="password" />
         </fieldset>
         {errors}
-        <input type="submit" className={CLASS_NAME + "__submit primary call-to-action"} value={'Log in'} />
+        <input type="submit" className={CLASS_ROOT + "__submit primary call-to-action"} value={'Log in'} />
         {footer}
       </form>
     );

@@ -1,6 +1,7 @@
 // (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
 
 .menu {
+  display: inline-block;
   @include inuit-font-size($inuit-heading-size-4, inherit);
 
   a {
@@ -19,11 +20,11 @@
     @include inuit-font-size($inuit-base-font-size);
 
     .menu__control {
-      
+
       &-drop-icon {
         margin-left: halve(halve($inuit-base-spacing-unit));
       }
-      
+
       &-icon {
         svg {
           width: halve($inuit-base-spacing-unit) + quarter($inuit-base-spacing-unit);

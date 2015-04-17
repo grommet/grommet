@@ -1,0 +1,60 @@
+// (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
+
+.search {
+  display: inline-block;
+  @include inuit-font-size($inuit-heading-size-4, inherit);
+
+  &:focus {
+    outline: none;
+    margin: -1px;
+    border: 1px solid $focus-border-color;
+    box-shadow: 0 0 1px 1px $focus-border-color;
+  }
+
+  &--controlled {
+    cursor: pointer;
+  }
+
+  &__control {
+    cursor: pointer;
+  }
+
+  &__layer {
+    position: fixed;
+    // This element will be positioned by the Overlay mixin.
+    z-index: 2;
+    @include inuit-font-size($inuit-heading-size-4, inherit);
+    background-color: $background-color;
+    border: 1px solid $border-color;
+
+    &--inline {
+      margin-left: -1px;
+    }
+
+    &-header {
+      white-space: nowrap;
+    }
+
+    &-contents {
+      display: inline-block;
+    }
+
+    input {
+      margin-right: 0px;
+    }
+
+    .search__control {
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    .search__suggestion {
+      padding: quarter($inuit-base-spacing-unit) halve($inuit-base-spacing-unit);
+      cursor: pointer;
+
+      &:hover {
+        background-color: $hover-background-color;
+      }
+    }
+  }
+}

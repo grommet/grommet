@@ -7,7 +7,7 @@ var Disabled = require('./status/Disabled');
 var Unknown = require('./status/Unknown');
 var Label = require('./status/Label');
 
-var CLASS_NAME = "status-icon";
+var CLASS_ROOT = "status-icon";
 
 var Status = React.createClass({
 
@@ -18,15 +18,15 @@ var Status = React.createClass({
   },
 
   render: function() {
-    var classes = [CLASS_NAME];
+    var classes = [CLASS_ROOT];
     if (this.props.className) {
       classes.push(this.props.className);
     }
     if (this.props.small) {
-      classes.push(CLASS_NAME + "--small");
+      classes.push(CLASS_ROOT + "--small");
     }
     if (this.props.large) {
-      classes.push(CLASS_NAME + "--large");
+      classes.push(CLASS_ROOT + "--large");
     }
     var className = classes.join(' ');
     var icon = (<span>{'?'}</span>);

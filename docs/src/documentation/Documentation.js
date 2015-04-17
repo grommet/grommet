@@ -21,6 +21,7 @@ var FormDoc = require('./components/FormDoc');
 var HeaderDoc = require('./components/HeaderDoc');
 var LoginFormDoc = require('./components/LoginFormDoc');
 var MenuDoc = require('./components/MenuDoc');
+var SearchDoc = require('./components/SearchDoc');
 require("!style!css!highlight.js/styles/github.css");
 var hljs = require('highlight.js/lib/highlight');
 hljs.registerLanguage('bash', require('highlight.js/lib/languages/bash'));
@@ -41,7 +42,7 @@ var CONTENTS = [
       {route: 'doc_index', label: 'Index', component: TBD},
       {route: 'doc_login', label: 'Login', component: TBD},
       {route: 'doc_navigation', label: 'Navigation', component: TBD},
-      {route: 'doc_search', label: 'Search', component: TBD},
+      {route: 'doc_searching', label: 'Searching', component: TBD},
       {route: 'doc_session', label: 'Session', component: TBD}
     ]
   },
@@ -57,6 +58,7 @@ var CONTENTS = [
       {route: 'doc_login-form', label: 'LoginForm', component: LoginFormDoc},
       {route: 'doc_menu', label: 'Menu', component: MenuDoc},
       {route: 'doc_meter', label: 'Meter', component: TBD},
+      {route: 'doc_search', label: 'Search', component: SearchDoc},
       {route: 'doc_table', label: 'Table', component: TBD},
       {route: 'doc_tile', label: 'Tile', component: TBD}
     ]

@@ -3,6 +3,7 @@
 var React = require('react');
 var LigoDocument = require('ligo/components/Document');
 var Menu = require('ligo/components/Menu');
+var Search = require('ligo/components/Search');
 var Header = require('ligo/components/Header');
 var LigoTBD = require('ligo/components/TBD');
 var Logo = require('../../Logo');
@@ -35,15 +36,18 @@ var HeaderDoc = React.createClass({
         <section>
           <h2>Examples</h2>
 
-          <h3>Title and inline Menu</h3>
+          <h3>Title, inline Menu, and Search</h3>
           <div className="example">
             <Header>
               <h2>Title</h2>
-              <Menu direction="left">
-                <a href="#" className="active">First</a>
-                <a href="#">Second</a>
-                <a href="#">Third</a>
-              </Menu>
+              <div>
+                <Menu direction="left">
+                  <a href="#" className="active">First</a>
+                  <a href="#">Second</a>
+                  <a href="#">Third</a>
+                </Menu>
+                <Search direction="left" />
+              </div>
             </Header>
           </div>
           <pre><code className="html">{"<Header> ..."}</code></pre>
