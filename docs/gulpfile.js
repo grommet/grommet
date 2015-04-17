@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var path = require('path');
-var devGulpTasks = require('ligo/utils/gulp-tasks');
+var devGulpTasks = require('grommet/utils/gulp-tasks');
 var chug = require('gulp-chug');
 
 var opts = {
@@ -25,7 +25,7 @@ var opts = {
       dist: 'docs/dist/img/'
     }
   ],
-  scssAssets: ['src/scss/ligo-core/**/*.scss', 'docs/src/scss/**/*.scss'],
+  scssAssets: ['src/scss/grommet-core/**/*.scss', 'docs/src/scss/**/*.scss'],
   jsAssets: ['docs/src/**/*.js'],
   mainJs: 'docs/src/index.js',
   mainScss: 'docs/src/scss/index.scss',

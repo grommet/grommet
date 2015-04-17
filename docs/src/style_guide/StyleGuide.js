@@ -12,11 +12,11 @@ var Basics = require('./Basics');
 var Patterns = require('./Patterns');
 var Showcase = require('./Showcase');
 var Login = require('./patterns/Login');
-var Layout = require('ligo/components/Layout');
-var TBD = require('ligo/components/TBD');
-var LigoDocument = require('ligo/components/Document');
-var Footer = require('ligo/components/Footer');
-var Menu = require('ligo/components/Menu');
+var Layout = require('grommet/components/Layout');
+var TBD = require('grommet/components/TBD');
+var GrommetDocument = require('grommet/components/Document');
+var Footer = require('grommet/components/Footer');
+var Menu = require('grommet/components/Menu');
 
 var CONTENTS = [
   {route: "sg_introduction", label: 'Introduction', component: Introduction, default: true},
@@ -200,9 +200,9 @@ var StyleGuide = React.createClass({
         </Layout>
         <Layout centerColumn={true}>
           <Menu direction="down" inline={true}>{pageLinks}</Menu>
-          <LigoDocument colorIndex={colorIndex}>
+          <GrommetDocument colorIndex={colorIndex}>
             <RouteHandler />
-          </LigoDocument>
+          </GrommetDocument>
         </Layout>
         <Footer centerColumn={true} scrollTop={true}>
           <Menu></Menu>

@@ -2,9 +2,9 @@
 
 var React = require('react');
 var RouteHandler = require('react-router').RouteHandler;
-var App = require('ligo/components/App');
-var Header = require('ligo/components/Header');
-var Title = require('ligo/components/Title');
+var App = require('grommet/components/App');
+var Header = require('grommet/components/Header');
+var Title = require('grommet/components/Title');
 
 var HelloWorld = React.createClass({
 

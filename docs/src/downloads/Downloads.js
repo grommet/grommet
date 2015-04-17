@@ -2,17 +2,17 @@
 
 var React = require('react');
 var Content = require('./Content');
-var Layout = require('ligo/components/Layout');
-var LigoDocument = require('ligo/components/Document');
+var Layout = require('grommet/components/Layout');
+var GrommetDocument = require('grommet/components/Document');
 
 var Downloads = React.createClass({
 
   render: function() {
   	return (
       <Layout centerColumn={true}>
-        <LigoDocument>
+        <GrommetDocument>
           <Content />
-        </LigoDocument>
+        </GrommetDocument>
       </Layout>
     );
   }

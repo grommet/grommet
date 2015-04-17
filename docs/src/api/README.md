@@ -1,9 +1,9 @@
 ---
-label: Ligo
-id: ligo
+label: Grommet
+id: grommet
 documentRank: 1
 
-Ligo
+Grommet
 =====
 
 [`API`](/docs/api/index.md)

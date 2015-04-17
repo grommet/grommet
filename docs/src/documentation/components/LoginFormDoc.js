@@ -1,8 +1,8 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var LoginForm = require('ligo/components/LoginForm');
-var LigoDocument = require('ligo/components/Document');
+var LoginForm = require('grommet/components/LoginForm');
+var GrommetDocument = require('grommet/components/Document');
 var Logo = require('../../Logo');
 
 var LoginFormDoc = React.createClass({
@@ -10,7 +10,7 @@ var LoginFormDoc = React.createClass({
   render: function() {
     var inline = "<LoginForm onSubmit={...} />";
     return (
-      <LigoDocument>
+      <GrommetDocument>
         <header>
           <h1>LoginForm</h1>
           <p>The form used to log in.</p>
@@ -54,7 +54,7 @@ var LoginFormDoc = React.createClass({
           <pre><code className="html">{"<LoginForm\n  logo={<Logo />}\n  title=\"Product Name\"\n  rememberMe={true}\n  forgotPassword={<a>...</a>}\n  onSubmit={...}\n  errors={[\"Invalid username or password.\"]}\n/>"}</code></pre>
 
         </section>
-      </LigoDocument>
+      </GrommetDocument>
     );
   }
 });

@@ -4,36 +4,36 @@
     <section id="introduction">
       <h1>Get Started</h1>
       <p>
-        This section aims to provide you with assets to quickly get Ligo framework up-and-running. We will recommend good practices on application structure, development, testing, static code analysis, and deployment. Also, you will find sample implementations of the most commonly-used Ligo components.
+        This section aims to provide you with assets to quickly get Grommet framework up-and-running. We will recommend good practices on application structure, development, testing, static code analysis, and deployment. Also, you will find sample implementations of the most commonly-used Grommet components.
       </p>
       <p>
-        Currently, Ligo is in early stages of development. As of this moment, we are neither deployed in <a href="https://www.npmjs.com/" target="_blank">Npm</a> nor <a href="https://github.com/" target="_blank">GitHub</a>. This means that you will need to manually build Ligo in your local environment.
+        Currently, Grommet is in early stages of development. As of this moment, we are neither deployed in <a href="https://www.npmjs.com/" target="_blank">Npm</a> nor <a href="https://github.com/" target="_blank">GitHub</a>. This means that you will need to manually build Grommet in your local environment.
       </p>
     </section>
     <section>
-      <h2>Building Ligo</h2>
+      <h2>Building Grommet</h2>
       <p>
-        To build Ligo is a prerequisite to install <a href="http://git-scm.com/">Git</a> and <a href="https://nodejs.org/">Node.js</a>. Then run the following commands to publish Ligo in your local npm: 
+        To build Grommet is a prerequisite to install <a href="http://git-scm.com/">Git</a> and <a href="https://nodejs.org/">Node.js</a>. Then run the following commands to publish Grommet in your local npm: 
       </p>
       <pre><code class="bash">
-        git clone git@ligo.usa.hp.com:/opt/git/ligo.git
+        git clone git@ligo.usa.hp.com:/opt/git/grommet.git
         <br/>
-        cd ligo
+        cd grommet
         <br/>
         npm install
         <br/>
         npm link
       </code></pre>
-      <p>You can now start a new project an link that to ligo:</p>
+      <p>You can now start a new project and link that to Grommet:</p>
       <pre><code class="bash">
         mkdir sample-app
         <br/>
         cd sample-app
         <br/>
-        npm link ligo
+        npm link grommet
       </code></pre>
-      <p>A <i>node_modules</i> folder will be created which contains the Ligo project from you local environment. Now it is time to create a <i>package.json</i> file that includes Ligo dependencies:</p>
-      <pre><code class="json">{'{\n  \"name\": \"sample-app\",\n  \"version\": \"0.1.0\",\n  \"main\": \"index.js\",\n  \"description\": \"Sample Ligo App\",\n  \"author\": \"Your Name\",\n  \"dependencies\": {\n    \"react\": \"^0.13.1\",\n    \"react-router\": \"^0.13.2\"\n  }\n}'}</code></pre>
+      <p>A <i>node_modules</i> folder will be created which contains the Grommet project from you local environment. Now it is time to create a <i>package.json</i> file that includes Grommet dependencies:</p>
+      <pre><code class="json">{'{\n  \"name\": \"sample-app\",\n  \"version\": \"0.1.0\",\n  \"main\": \"index.js\",\n  \"description\": \"Sample Grommet App\",\n  \"author\": \"Your Name\",\n  \"dependencies\": {\n    \"react\": \"^0.13.1\",\n    \"react-router\": \"^0.13.2\"\n  }\n}'}</code></pre>
       <p>Save this file and install the new project:</p>
       <pre><code class="bash">
         npm install

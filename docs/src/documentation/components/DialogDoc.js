@@ -1,10 +1,10 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var LigoDocument = require('ligo/components/Document');
-var Dialog = require('ligo/components/Dialog');
-var Header = require('ligo/components/Header');
-var Footer = require('ligo/components/Footer');
+var GrommetDocument = require('grommet/components/Document');
+var Dialog = require('grommet/components/Dialog');
+var Header = require('grommet/components/Header');
+var Footer = require('grommet/components/Footer');
 
 var SimpleDialog = React.createClass({
   render: function () {
@@ -46,7 +46,7 @@ var DialogDoc = React.createClass({
       simple = <SimpleDialog onClose={this._onClose} />;
     }
     return (
-      <LigoDocument>
+      <GrommetDocument>
         <header>
           <h1>Dialog</h1>
           <p>A modal overlay, usually containing a <a>Form</a>.</p>
@@ -69,7 +69,7 @@ var DialogDoc = React.createClass({
           <pre><code className="html">{"<Dialog> ..."}</code></pre>
 
         </section>
-      </LigoDocument>
+      </GrommetDocument>
     );
   }
 });

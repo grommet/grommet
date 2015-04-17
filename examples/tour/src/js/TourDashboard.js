@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var LigoIndexDashboard = require('ligo/index/components/Dashboard');
+var IndexDashboard = require('grommet/index/components/Dashboard');
 
 var configuration = {
   panels: [
@@ -21,7 +21,7 @@ var TourDashboard = React.createClass({
 
   render: function () {
     return (
-      <LigoIndexDashboard configuration={configuration} />
+      <IndexDashboard configuration={configuration} />
     );
   }
 

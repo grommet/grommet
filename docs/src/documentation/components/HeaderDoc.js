@@ -1,11 +1,11 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var LigoDocument = require('ligo/components/Document');
-var Menu = require('ligo/components/Menu');
-var Search = require('ligo/components/Search');
-var Header = require('ligo/components/Header');
-var LigoTBD = require('ligo/components/TBD');
+var GrommetDocument = require('grommet/components/Document');
+var Menu = require('grommet/components/Menu');
+var Search = require('grommet/components/Search');
+var Header = require('grommet/components/Header');
+var TBD = require('grommet/components/TBD');
 var Logo = require('../../Logo');
 
 var HeaderDoc = React.createClass({
@@ -14,7 +14,7 @@ var HeaderDoc = React.createClass({
     var inline =
     "<Header>\n  <Link to={route}>{label}</Link>\n  ...\n</Header>";
     return (
-      <LigoDocument>
+      <GrommetDocument>
         <header>
           <h1>Header</h1>
           <p>Combines Title and Menu elements responsively.</p>
@@ -66,10 +66,10 @@ var HeaderDoc = React.createClass({
           <pre><code className="html">{"<Header> ..."}</code></pre>
 
           <h3>Title menu and icon Menu</h3>
-          <LigoTBD />
+          <TBD />
 
         </section>
-      </LigoDocument>
+      </GrommetDocument>
     );
   }
 });

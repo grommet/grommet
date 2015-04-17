@@ -1,13 +1,13 @@
 ---
 label: Link
-id: ligo-link
-categorySlug: ligo-api
+id: grommet-link
+categorySlug: grommet-api
 categoryLabel: API
 
 Link
 ====
 
-A `<Link>` component is a Ligo version of an `<a>` element. Its key function is to handle routing between internal locations, managing browser history.
+A `<Link>` component is a Grommet version of an `<a>` element. Its key function is to handle routing between internal locations, managing browser history.
 
 
 Props

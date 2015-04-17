@@ -6,10 +6,10 @@ var Route = Router.Route;
 var DefaultRoute = Router.DefaultRoute;
 var RouteHandler = Router.RouteHandler;
 var Link = Router.Link;
-var Layout = require('ligo/components/Layout');
-var Menu = require('ligo/components/Menu');
-var TBD = require('ligo/components/TBD');
-var LigoDocument = require('ligo/components/Document');
+var Layout = require('grommet/components/Layout');
+var Menu = require('grommet/components/Menu');
+var TBD = require('grommet/components/TBD');
+var GrommetDocument = require('grommet/components/Document');
 var HelloWorld = require('./HelloWorld');
 var Tutorial = require('./Tutorial');
 var GetStarted = require('./GetStarted');
@@ -116,9 +116,9 @@ var Documentation = React.createClass({
     return (
       <Layout centerColumn={true}>
         <Menu direction="down">{pages}</Menu>
-        <LigoDocument>
+        <GrommetDocument>
           <RouteHandler />
-        </LigoDocument>
+        </GrommetDocument>
       </Layout>
     );
   }

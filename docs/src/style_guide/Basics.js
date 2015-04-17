@@ -19,14 +19,14 @@ var CONTROL_ICONS = [
 ];
 
 CONTROL_ICONS.forEach(function (item) {
-  item.component = require('ligo/components/icons/' + item.icon);
+  item.component = require('grommet/components/icons/' + item.icon);
   if (! item.labels) {
     item.labels = [item.icon];
   }
 });
 
-var Spinning = require('ligo/components/icons/Spinning');
-var Status = require('ligo/components/icons/Status');
+var Spinning = require('grommet/components/icons/Spinning');
+var Status = require('grommet/components/icons/Status');
 
 var STATUS_ICONS = [
   {component: Status, value: 'error', labels: ['Error', 'Critical']},

@@ -1,7 +1,7 @@
 
-# Ligo server
+# Grommet server
 
-> Ligo server
+> Grommet server
 
 ## Getting Started
 

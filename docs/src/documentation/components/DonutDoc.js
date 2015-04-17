@@ -1,8 +1,8 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var Donut = require('ligo/components/Donut');
-var LigoDocument = require('ligo/components/Document');
+var Donut = require('grommet/components/Donut');
+var GrommetDocument = require('grommet/components/Document');
 
 var DonutDoc = React.createClass({
 
@@ -24,7 +24,7 @@ var DonutDoc = React.createClass({
     ];
 
     return (
-      <LigoDocument>
+      <GrommetDocument>
         <header>
           <h1>Donut</h1>
           <p>Shows a circular graphic.</p>
@@ -62,7 +62,7 @@ var DonutDoc = React.createClass({
           </code></pre>
 
         </section>
-      </LigoDocument>
+      </GrommetDocument>
     );
   }
 });

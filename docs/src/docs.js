@@ -5,12 +5,12 @@ var Route = Router.Route;
 var DefaultRoute = Router.DefaultRoute;
 var RouteHandler = Router.RouteHandler;
 var Link = Router.Link;
-var LigoApp = require('ligo/components/App');
-var LigoHeader = require('ligo/components/Header');
-var LigoTitle = require('ligo/components/Title');
-var LigoMenu = require('ligo/components/Menu');
-var LigoLabel = require('ligo/components/Label');
-var LigoFooter = require('ligo/components/Footer');
+var App = require('grommet/components/App');
+var Header = require('grommet/components/Header');
+var Title = require('grommet/components/Title');
+var Menu = require('grommet/components/Menu');
+var Label = require('grommet/components/Label');
+var Footer = require('grommet/components/Footer');
 var Home = require('./Home');
 var DesignIcon = require('./DesignIcon');
 var DevelopIcon = require('./DevelopIcon');
@@ -25,39 +25,39 @@ var Docs = React.createClass({
     var hpeThemeClasses = __THEME__.hpe ? 'active' : '';
     var genericThemeClasses = !__THEME__.hpe ? 'active' : '';
 
-    var title = (<Link to="docs">ligo</Link>);
+    var title = (<Link to="docs">Grommet</Link>);
     var nav = [
       (<Link key="style-guide" to="style guide">
-        <LigoLabel text="Style Guide" icon={<DesignIcon />} />
+        <Label text="Style Guide" icon={<DesignIcon />} />
       </Link>),
       (<Link key="documentation" to="documentation">
-        <LigoLabel text="Documentation" icon={<DevelopIcon />} />
+        <Label text="Documentation" icon={<DevelopIcon />} />
       </Link>),
       (<Link key="downloads" to="downloads">
-        <LigoLabel text="Downloads" />
+        <Label text="Downloads" />
       </Link>)
     ];
 
     return (
-      <LigoApp>
-        <LigoHeader centerColumn={true} primary={true}>
-          <LigoTitle>{title}</LigoTitle>
-          <LigoMenu direction="left">{nav}</LigoMenu>
-        </LigoHeader>
+      <App>
+        <Header centerColumn={true} primary={true}>
+          <Title>{title}</Title>
+          <Menu direction="left">{nav}</Menu>
+        </Header>
         <RouteHandler />
-        <LigoFooter centerColumn={true} primary={true}>
+        <Footer centerColumn={true} primary={true}>
           <img src="img/hpesm_pri_grn_pos_rgb.svg" alt="HPE logo" />
           <div>
             This work is licensed under the <a href="http://creativecommons.org/licenses/by/4.0/legalcode">Creative Commons Attribution 4.0 International License</a>.
             <div>
-              <LigoMenu label="Theme" direction="up" small={true}>
-                <a href="/docs/" className={genericThemeClasses}>Ligo</a>
+              <Menu label="Theme" direction="up" small={true}>
+                <a href="/docs/" className={genericThemeClasses}>Grommet</a>
                 <a href="/docs/hpe/" className={hpeThemeClasses}>HPE</a>
-              </LigoMenu>
+              </Menu>
             </div>
           </div>
-        </LigoFooter>
-      </LigoApp>
+        </Footer>
+      </App>
     );
   }
 

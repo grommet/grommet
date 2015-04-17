@@ -1,9 +1,9 @@
 ---
-label: Ligo API
-id: ligo-api
+label: Grommet API
+id: grommet-api
 documentRank: 2
 
-Ligo API
+Grommet API
 =========
 
 - Renderable Components
@@ -46,7 +46,7 @@ While there are many modules in this repository, only those found on the
 default export are considered public.
 
 ```js
-var LigoCore = require('ligo-core');
-var Menu = LigoCore.Menu // yes
-var Menu = require('ligo-core/components/Menu') // no
+var GrommetCore = require('grommet-core');
+var Menu = GrommetCore.Menu // yes
+var Menu = require('grommet-core/components/Menu') // no
 ```

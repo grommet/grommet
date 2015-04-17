@@ -20,7 +20,7 @@ var opts = {
   scssAssets: ['src/scss/**/*.scss'],
   jsAssets: ['src/js/**/*.js'],
   mainJs: 'src/js/index.js',
-  mainScss: 'src/scss/ligo-core/index.scss',
+  mainScss: 'src/scss/grommet-core/index.scss',
   sync: {
     hostname: 'ligo.usa.hp.com',
     username: 'ligo',
@@ -28,9 +28,9 @@ var opts = {
   },
   webpack: {
     output: {
-      filename: 'ligo.min.js',
+      filename: 'grommet.min.js',
       libraryTarget: "var",
-      library: "Ligo"
+      library: "Grommet"
     },
     resolve: {
       root: [

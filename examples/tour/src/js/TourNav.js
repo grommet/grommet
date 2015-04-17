@@ -1,6 +1,6 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 var React = require('react');
-var LigoNavUnified = require('ligo/components/NavUnified');
+var NavUnified = require('grommet/components/NavUnified');
 var TourMenu = require('./TourMenu');
 
 var TourNav = React.createClass({
@@ -20,7 +20,7 @@ var TourNav = React.createClass({
 
   render: function() {
     return (
-      <LigoNavUnified onRequestClose={this.props.onRequestClose} menu={<TourMenu />} />
+      <NavUnified onRequestClose={this.props.onRequestClose} menu={<TourMenu />} />
     );
   }
 

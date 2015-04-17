@@ -1,11 +1,11 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var LoginForm = require('ligo/components/LoginForm');
-var Header = require('ligo/components/Header');
-var Menu = require('ligo/components/Menu');
-var Donut = require('ligo/components/Donut');
-var SearchIcon = require('ligo/components/icons/Search');
+var LoginForm = require('grommet/components/LoginForm');
+var Header = require('grommet/components/Header');
+var Menu = require('grommet/components/Menu');
+var Donut = require('grommet/components/Donut');
+var SearchIcon = require('grommet/components/icons/Search');
 var Logo = require('../Logo');
 var Gravatar = require('react-gravatar');
 

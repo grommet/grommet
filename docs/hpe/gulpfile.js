@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var path = require('path');
-var devGulpTasks = require('ligo/utils/gulp-tasks');
+var devGulpTasks = require('grommet/utils/gulp-tasks');
 
 var opts = {
   base: '../../',
@@ -24,7 +24,7 @@ var opts = {
       dist: 'docs/dist/hpe/font/'
     }
   ],
-  scssAssets: ['src/scss/ligo-core/**/*.scss', 'docs/src/scss/**/*.scss', 'src/scss/hpe/**/*.scss'],
+  scssAssets: ['src/scss/grommet-core/**/*.scss', 'docs/src/scss/**/*.scss', 'src/scss/hpe/**/*.scss'],
   jsAssets: ['docs/src/**/*.js'],
   mainJs: 'docs/src/index.js',
   mainScss: 'docs/src/scss/index-hpe.scss',

@@ -45,7 +45,7 @@ function renderObject (obj) {
   );
 }
 
-var LigoObject = React.createClass({
+var GrommetObject = React.createClass({
 
   render: function() {
     return (
@@ -57,4 +57,4 @@ var LigoObject = React.createClass({
 
 });
 
-module.exports = LigoObject;
+module.exports = GrommetObject;

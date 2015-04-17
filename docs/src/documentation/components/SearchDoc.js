@@ -1,8 +1,8 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var Search = require('ligo/components/Search');
-var LigoDocument = require('ligo/components/Document');
+var Search = require('grommet/components/Search');
+var GrommetDocument = require('grommet/components/Document');
 
 var SearchDoc = React.createClass({
 
@@ -18,7 +18,7 @@ var SearchDoc = React.createClass({
     var inline =
     "<Search onChange={...} />";
     return (
-      <LigoDocument>
+      <GrommetDocument>
         <header>
           <h1>Search</h1>
           <p>A responsive search control.</p>
@@ -85,7 +85,7 @@ var SearchDoc = React.createClass({
             this.state.value + "\" suggestions={[...]}/>"}</code></pre>
 
         </section>
-      </LigoDocument>
+      </GrommetDocument>
     );
   }
 });

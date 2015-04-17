@@ -1,13 +1,13 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var LigoDocument = require('ligo/components/Document');
-var Form = require('ligo/components/Form');
-var FormField = require('ligo/components/FormField');
-var Header = require('ligo/components/Header');
-var Menu = require('ligo/components/Menu');
-var HelpIcon = require('ligo/components/icons/Help');
-var Footer = require('ligo/components/Footer');
+var GrommetDocument = require('grommet/components/Document');
+var Form = require('grommet/components/Form');
+var FormField = require('grommet/components/FormField');
+var Header = require('grommet/components/Header');
+var Menu = require('grommet/components/Menu');
+var HelpIcon = require('grommet/components/icons/Help');
+var Footer = require('grommet/components/Footer');
 
 var FormDoc = React.createClass({
 
@@ -42,7 +42,7 @@ var FormDoc = React.createClass({
       "  <Footer>...</Footer>",
       "</Form>"].join("\n");
     return (
-      <LigoDocument>
+      <GrommetDocument>
         <header>
           <h1>Form</h1>
           <p>A web form.</p>
@@ -152,7 +152,7 @@ var FormDoc = React.createClass({
           <pre><code className="html">{"<Form> ..."}</code></pre>
 
         </section>
-      </LigoDocument>
+      </GrommetDocument>
     );
   }
 });

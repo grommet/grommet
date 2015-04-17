@@ -2,23 +2,23 @@
 
 var React = require('react');
 var RouteHandler = require('react-router').RouteHandler;
-var LigoApp = require('ligo/components/App');
-var LigoHeader = require('ligo/components/Header');
-var LigoTitle = require('ligo/components/Title');
+var App = require('grommet/components/App');
+var Header = require('grommet/components/Header');
+var Title = require('grommet/components/Title');
 
 var Tour = React.createClass({
 
   render: function() {
     return (
-      <LigoApp>
-        <LigoHeader primary={true}>
-          <LigoTitle>
-            {"Ligo Tour"}
-          </LigoTitle>
+      <App>
+        <Header primary={true}>
+          <Title>
+            {"Grommet Tour"}
+          </Title>
           <div />
-        </LigoHeader>
+        </Header>
         <RouteHandler />
-      </LigoApp>
+      </App>
     );
   }
 

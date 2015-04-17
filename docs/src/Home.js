@@ -1,8 +1,8 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var LigoLayout = require('ligo/components/Layout');
-var LigoPanel = require('ligo/components/Panel');
+var Layout = require('grommet/components/Layout');
+var Panel = require('grommet/components/Panel');
 var Link = require('react-router').Link;
 var Displays = require('./Displays');
 
@@ -13,22 +13,22 @@ var Home = React.createClass({
   var texture = "url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAADRJREFUSA1j/PHjx38GGgImGpo9TIxmHI2DAY/J0TgY8ChgGI2D0TgY+BAYeBeM5oOBjwMAZNAXfV/JDF0AAAAASUVORK5CYII=)";
 
     return (
-      <LigoLayout centerColumn={true} texture={texture}>
+      <Layout centerColumn={true} texture={texture}>
         <Displays className="flex-2"/>
         <div className="flex-1">
-          <LigoPanel index={1} title="Design">
-            <p>Guidelines for designing a Ligo application.</p>
+          <Panel index={1} title="Design">
+            <p>Guidelines for designing a Grommet application.</p>
             <Link to="style guide" className="call-to-action">Style Guide</Link>
-          </LigoPanel>
-          <LigoPanel index={2} title="Develop">
-            <p>Learn Ligo in a few simple steps.</p>
+          </Panel>
+          <Panel index={2} title="Develop">
+            <p>Learn Grommet in a few simple steps.</p>
             <Link to="doc_helloworld" className="call-to-action">Hello World</Link>
             <p></p>
             <a href="/demo">Demo</a>
-            <a href="https://github.com/HewlettPackard/Ligo">GitHub</a>
-          </LigoPanel>
+            <a href="https://github.com/HewlettPackard/grommet">GitHub</a>
+          </Panel>
         </div>
-      </LigoLayout>
+      </Layout>
     );
   }
 

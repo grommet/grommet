@@ -1,12 +1,12 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var Login = require('ligo/components/Login');
+var Login = require('grommet/components/Login');
 var Logo = require('./Logo');
 
 var config = {
   logo: Logo,
-  title: 'Ligo Tour',
+  title: 'Grommet Tour',
   background: 'img/piano_player.jpg',
   copyright: '2015 Hewlett Packard'
 };

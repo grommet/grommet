@@ -4,17 +4,13 @@ require("!style!css!sass!index.scss");
 
 var React = require('react');
 var Router = require('react-router');
-var LigoIndex = require('ligo/index/index');
+var Index = require('grommet/index/index');
 var indexConfig = require('./IndexConfig');
-/*
-var LigoIndex = Ligo.Index;
-var menuConfig = require('./MenuConfig');
-*/
 var routes = require('./Routes');
 
 var router = Router.create({routes: routes}); //, location: Router.HistoryLocation});
 
-LigoIndex.init(indexConfig);
+Index.init(indexConfig);
 
 router.run(function (Handler) {
   var factory = React.createFactory(Handler);
@@ -23,19 +19,3 @@ router.run(function (Handler) {
 });
 
 document.body.classList.remove('loading');
-
-/*
-Ligo.init({
-  title: 'Ligo Tour',
-  background: require('../img/piano_player.jpg'),
-  logo: Logo,
-  copyright: '2015 Hewlett Packard',
-  menu: menuConfig,
-  routes: routes,
-  mainContainerId: 'app'
-});
-
-LigoIndex.init(indexConfig);
-
-Ligo.start();
-*/

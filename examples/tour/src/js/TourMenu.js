@@ -2,7 +2,6 @@
 
 var React = require('react');
 var Link = require('react-router').Link;
-//var Ligo = require('ligo');
 var DashboardIcon = require('./DashboardIcon');
 
 var TourMenu = React.createClass({

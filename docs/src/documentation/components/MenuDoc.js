@@ -1,9 +1,9 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var Menu = require('ligo/components/Menu');
-var LigoDocument = require('ligo/components/Document');
-var Edit = require('ligo/components/icons/Edit');
+var Menu = require('grommet/components/Menu');
+var GrommetDocument = require('grommet/components/Document');
+var Edit = require('grommet/components/icons/Edit');
 
 var MenuDoc = React.createClass({
 
@@ -11,7 +11,7 @@ var MenuDoc = React.createClass({
     var inline =
     "<Menu>\n  <Link to={route}>{label}</Link>\n  ...\n</Menu>";
     return (
-      <LigoDocument>
+      <GrommetDocument>
         <header>
           <h1>Menu</h1>
           <p>Presents a list of choices responsively.</p>
@@ -105,7 +105,7 @@ var MenuDoc = React.createClass({
               <a href="#">Third</a>
             </Menu>
           </div>
-          <pre><code className="html">{"<Menu icon={<Ligo.Icons.Edit />}> ..."}</code></pre>
+          <pre><code className="html">{"<Menu icon={<Grommet.Icons.Edit />}> ..."}</code></pre>
 
           <h3>collapse, up</h3>
           <div className="example">
@@ -128,7 +128,7 @@ var MenuDoc = React.createClass({
           <pre><code className="html">{"<Menu collapse={true} small={true}> ..."}</code></pre>
 
         </section>
-      </LigoDocument>
+      </GrommetDocument>
     );
   }
 });

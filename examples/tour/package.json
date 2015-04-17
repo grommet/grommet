@@ -1,10 +1,10 @@
 {
-  "name": "ligo-tour",
+  "name": "grommet-tour",
   "version": "0.1.0",
   "main": "src/js/index.js",
-  "description": "Ligo Tour",
+  "description": "Grommet Tour",
   "author": "Eric Soderberg",
   "dependencies": {
-    "ligo": "^0.1.0"
+    "grommet": "^0.1.0"
   }
 }

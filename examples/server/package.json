@@ -1,7 +1,7 @@
 {
-  "name": "ligo-server",
+  "name": "grommet-server",
   "version": "1.0.0",
-  "description": "Ligo example server",
+  "description": "Grommet example server",
   "author": "Eric Soderberg",
   "license": "ISC",
   "dependencies": {
