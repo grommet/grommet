@@ -11,11 +11,12 @@ packageJSON.main = 'index.js';
 var opts = {
   dist: 'dist/',
   copyAssets: [
-   'src/js/**',
-   {
+    'src/js/**',
+    'design/**',
+    {
       filename: 'package.json',
       asset: JSON.stringify(packageJSON, null, 2)
-   }
+    }
   ],
   scssAssets: ['src/scss/**/*.scss'],
   jsAssets: ['src/js/**/*.js'],
@@ -24,7 +25,7 @@ var opts = {
   sync: {
     hostname: 'ligo.usa.hp.com',
     username: 'ligo',
-    remoteDestination: '/var/www/html/libs'
+    remoteDestination: '/var/www/html/assets'
   },
   webpack: {
     output: {
@@ -49,24 +50,24 @@ var opts = {
 require('./src/js/utils/gulp-tasks')(gulp, opts);
 
 gulp.task('sync-all', function() {
-  
+
   gulp.src('./examples/demo/gulpfile.js').pipe(chug({
-     tasks: ['sync']
+    tasks: ['sync']
   }));
 
   gulp.src('./examples/tour/gulpfile.js').pipe(chug({
-     tasks: ['sync']
+    tasks: ['sync']
   }));
 
   gulp.src('./examples/server/gulpfile.js').pipe(chug({
-     tasks: ['sync']
+    tasks: ['sync']
   }));
 
   gulp.src('./docs/gulpfile.js').pipe(chug({
-     tasks: ['sync']
+    tasks: ['sync']
   }));
 
   gulp.src('./gulpfile.js').pipe(chug({
-     tasks: ['sync']
+    tasks: ['sync']
   }));
 });
