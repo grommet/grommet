@@ -1,4 +1,14 @@
 require('imports?this=>window!modernizr');
+
+if (true || ! Modernizr.flexbox ||
+  ! Modernizr.localstorage ||
+  ! Modernizr.rgba ||
+  ! Modernizr.draganddrop) {
+  alert('Unfortunately, your browser appears to be too old. ' +
+    'We recommend the latest version of Chrome, Firefox, Safari, or Internet Explorer.' +
+    'If you are using the latest Internet Explorer, you will need to turn off Compatibility Mode.');
+}
+
 var React = require('react');
 var Router = require('react-router');
 var Route = Router.Route;
