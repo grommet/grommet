@@ -62,14 +62,20 @@ var Overlay = {
     // align right edge and make at least as wide as the control
     // TODO: handle being on the right edge of the window with an icon control, go left
     var left = (controlRect.left + layerElement.offsetWidth) - width;
-    if ((left + width) > windowWidth) {
-      left -= ((left + width) - windowWidth);
-    }
     if ('left' === this.props.direction) {
       // align right edge
       left = (controlRect.left + controlElement.offsetWidth) -
         layerElement.offsetWidth;
+    } else {
+      // align left edge
+      left = (controlRect.left + layerElement.offsetWidth) - width;
     }
+    if ((left + width) > windowWidth) {
+      left -= ((left + width) - windowWidth);
+    } else if (left < 0) {
+      left = 0;
+    }
+
     var top = controlRect.top;
     if ('up' === this.props.direction) {
       // align bottom edge
