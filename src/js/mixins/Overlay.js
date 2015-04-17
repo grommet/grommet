@@ -5,27 +5,28 @@ var Overlay = {
 
   _overlayControlElement: null,
   _overlayLayerElement: null,
+  _overlayScrollParents: [],
 
-  _findScrollParent: function (element) {
+  _findScrollParents: function (element) {
+    var result = [];
     var parent = element.parentNode;
     while (parent) {
       // account for border the lazy way for now
       if (parent.scrollHeight > (parent.offsetHeight + 10)) {
-        break;
+        result.push(parent);
       }
       parent = parent.parentNode;
     }
-    return parent;
+    return result;
   },
 
   startOverlay: function (controlElement, layerElement) {
     this._overlayControlElement = controlElement;
     this._overlayLayerElement = layerElement;
-
-    var scrollParent = this._findScrollParent(this._overlayControlElement);
-    if (scrollParent) {
-      scrollParent.addEventListener('scroll', this.positionOverlay);
-    }
+    this._overlayScrollParents = this._findScrollParents(this._overlayControlElement);
+    this._overlayScrollParents.forEach(function (parent) {
+      parent.addEventListener('scroll', this.positionOverlay);
+    }, this);
     window.addEventListener('resize', this.positionOverlay);
 
     this.positionOverlay();
@@ -33,13 +34,13 @@ var Overlay = {
 
   stopOverlay: function () {
     if (this._overlayControlElement) {
-      var scrollParent = this._findScrollParent(this._overlayControlElement);
-      if (scrollParent) {
-        scrollParent.removeEventListener('scroll', this.positionOverlay);
-      }
+      this._overlayScrollParents.forEach(function (parent) {
+        parent.removeEventListener('scroll', this.positionOverlay);
+      }, this);
       window.removeEventListener('resize', this.positionOverlay);
       this._overlayControlElement = null;
       this._overlayLayerElement = null;
+      this._overlayScrollParents = [];
     }
   },
 
