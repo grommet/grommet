@@ -2,6 +2,7 @@
 
 var React = require('react');
 var OK = require('./status/OK');
+var ErrorStatus = require('./status/ErrorStatus');
 var Warning = require('./status/Warning');
 var Disabled = require('./status/Disabled');
 var Unknown = require('./status/Unknown');
@@ -40,7 +41,7 @@ var Status = React.createClass({
       break;
     case 'error':
     case 'critical':
-      icon = (<Error className={className} />);
+      icon = (<ErrorStatus className={className} />);
       break;
     case 'disabled':
       icon = (<Disabled className={className} />);

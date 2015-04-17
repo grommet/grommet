@@ -2,7 +2,7 @@
 
 var React = require('react');
 
-var Critical = React.createClass({
+var ErrorStatus = React.createClass({
 
   render: function() {
     var className = 'status-icon-error';
@@ -23,4 +23,4 @@ var Critical = React.createClass({
 
 });
 
-module.exports = Critical;
+module.exports = ErrorStatus;
