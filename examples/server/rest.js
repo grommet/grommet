@@ -171,4 +171,11 @@ router.post('/:categoryName', function (req, res) {
   res.json({taskUri: task.uri});
 });
 
+router.post('/request-access', function (req, res) {
+  
+  console.log(req.body);
+  
+  res.sendStatus(200);
+});
+
 module.exports = router;
