@@ -1,6 +1,6 @@
 require('imports?this=>window!modernizr');
 
-if (true || ! Modernizr.flexbox ||
+if (! Modernizr.flexbox ||
   ! Modernizr.localstorage ||
   ! Modernizr.rgba ||
   ! Modernizr.draganddrop) {
