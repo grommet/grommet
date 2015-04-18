@@ -5,6 +5,7 @@ var GrommetDocument = require('grommet/components/Document');
 var Menu = require('grommet/components/Menu');
 var Search = require('grommet/components/Search');
 var Header = require('grommet/components/Header');
+var Edit = require('grommet/components/icons/Edit');
 var TBD = require('grommet/components/TBD');
 var Logo = require('../../Logo');
 
@@ -36,6 +37,15 @@ var HeaderDoc = React.createClass({
         <section>
           <h2>Examples</h2>
 
+          <h3>Title and Search</h3>
+          <div className="example">
+            <Header>
+              <h2>Title</h2>
+              <Search direction="left" />
+            </Header>
+          </div>
+          <pre><code className="html">{"<Header> ..."}</code></pre>
+
           <h3>Title, inline Menu, and Search</h3>
           <div className="example">
             <Header>
@@ -45,8 +55,8 @@ var HeaderDoc = React.createClass({
                   <a href="#" className="active">First</a>
                   <a href="#">Second</a>
                   <a href="#">Third</a>
+                  <Search direction="left" />
                 </Menu>
-                <Search direction="left" />
               </div>
             </Header>
           </div>
@@ -56,7 +66,7 @@ var HeaderDoc = React.createClass({
           <div className="example">
             <Header>
               <h2><Logo /> Title</h2>
-              <Menu collapse={true}>
+              <Menu icon={<Edit />}>
                 <a href="#" className="active">First</a>
                 <a href="#">Second</a>
                 <a href="#">Third</a>

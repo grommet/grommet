@@ -87,8 +87,14 @@ var Menu = React.createClass({
     if (this.state.active && ! prevState.active) {
       document.body.addEventListener('click', this._onClose);
       this.startListeningToKeyboard(activeKeyboardHandlers);
-      this.startOverlay(this.refs.control.getDOMNode(),
-        document.getElementById('menu-layer'));
+      var controlElement = this.refs.control.getDOMNode();
+      var layerElement = document.getElementById('menu-layer');
+      // give layer control element the same line height and font size as the control
+      var layerControlElement = layerElement.querySelectorAll('.menu__control')[0];
+      var fontSize = window.getComputedStyle(controlElement).fontSize;
+      layerControlElement.style.fontSize = fontSize;
+      layerControlElement.style.lineHeight = (controlElement.clientHeight) + 'px';
+      this.startOverlay(controlElement, layerElement);
     }
   },
 

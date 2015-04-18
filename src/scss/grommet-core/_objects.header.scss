@@ -20,6 +20,8 @@
       flex: 1;
 
       &:last-child {
+        -webkit-flex: 0 0 auto;
+        flex: 0 0 auto;
         text-align: right;
       }
 

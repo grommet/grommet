@@ -5,7 +5,7 @@ var LoginForm = require('grommet/components/LoginForm');
 var Header = require('grommet/components/Header');
 var Menu = require('grommet/components/Menu');
 var Donut = require('grommet/components/Donut');
-var SearchIcon = require('grommet/components/icons/Search');
+var Search = require('grommet/components/Search');
 var Logo = require('../Logo');
 var Gravatar = require('react-gravatar');
 
@@ -97,11 +97,7 @@ var PatternsSection = React.createClass({
     <div className="example">
       <Header>
         <h1></h1>
-        <Menu direction="left">
-          <div className="control-icon">
-            <SearchIcon />
-          </div>
-        </Menu>
+        <Search direction="left" />
       </Header>
     </div>
 
