@@ -112,8 +112,6 @@ label.radio {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  padding-top: quarter($inuit-base-spacing-unit);
-  padding-bottom: quarter($inuit-base-spacing-unit);
 
   &:before {
     content: "";
@@ -180,19 +178,16 @@ input[type=radio]:focus + label.radio:before {
   width: 100%;
   height: quarter($inuit-base-spacing-unit);
   cursor: pointer;
-  //animate: 0.2s;
   background: none;
-  //background: $border-color;
   border: $input-border-width solid $border-color;
   border-radius: $border-radius;
 }
 
 @mixin range-thumb {
   border: none;
-  //border: $button-border-width solid $button-border-color;
   height: $inuit-base-spacing-unit;
-  width: halve($inuit-base-spacing-unit);
-  border-radius: $border-radius;
+  width: $inuit-base-spacing-unit;
+  border-radius: $inuit-base-spacing-unit;
   background: $brand-color;
   cursor: pointer;
 }
@@ -200,8 +195,7 @@ input[type=radio]:focus + label.radio:before {
 input[type=range] {
   -webkit-appearance: none;
   border-color: transparent;
-  padding: halve($inuit-base-spacing-unit) 0px;
-  height: $inuit-base-spacing-unit + halve($inuit-base-spacing-unit);
+  padding: 0px;
 
   &:focus {
     outline: none;

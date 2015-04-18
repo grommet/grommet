@@ -21,6 +21,7 @@ var FormDoc = require('./components/FormDoc');
 var HeaderDoc = require('./components/HeaderDoc');
 var LoginFormDoc = require('./components/LoginFormDoc');
 var MenuDoc = require('./components/MenuDoc');
+var MeterDoc = require('./components/MeterDoc');
 var SearchDoc = require('./components/SearchDoc');
 require("!style!css!highlight.js/styles/github.css");
 var hljs = require('highlight.js/lib/highlight');
@@ -57,7 +58,7 @@ var CONTENTS = [
       {route: 'doc_header', label: 'Header', component: HeaderDoc},
       {route: 'doc_login-form', label: 'LoginForm', component: LoginFormDoc},
       {route: 'doc_menu', label: 'Menu', component: MenuDoc},
-      {route: 'doc_meter', label: 'Meter', component: TBD},
+      {route: 'doc_meter', label: 'Meter', component: MeterDoc},
       {route: 'doc_search', label: 'Search', component: SearchDoc},
       {route: 'doc_table', label: 'Table', component: TBD},
       {route: 'doc_tile', label: 'Tile', component: TBD}

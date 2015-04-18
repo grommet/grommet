@@ -2,6 +2,8 @@
 
 .form-field {
   margin-bottom: halve($inuit-base-spacing-unit);
+  // set line height to align labels with input elements
+  line-height: $inuit-base-spacing-unit + halve($inuit-base-spacing-unit);
 
   &:last-child {
     margin-bottom: 0px;
@@ -13,11 +15,10 @@
 
   > label:first-child {
     display: inline-block;
-    width: double(quadruple($inuit-base-spacing-unit));
+    width: round($inuit-base-spacing-unit * 8);
     text-align: right;
     margin-right: $inuit-base-spacing-unit;
     vertical-align: top;
-    padding-top: quarter($inuit-base-spacing-unit);
 
     @include media-query(palm) {
       display: block;
@@ -42,12 +43,12 @@
     margin-right: $inuit-base-spacing-unit;
   }
 
-  > table {
+  > table.selectable {
     margin-bottom: 0px;
-  }
 
-  > span {
-    vertical-align: top;
-    padding-top: quarter($inuit-base-spacing-unit);
+    tbody tr td {
+      padding-top: 0px;
+      padding-bottom: 0px;
+    }
   }
 }

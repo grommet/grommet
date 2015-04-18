@@ -23,7 +23,9 @@ $icon-color: #999;
 $active-icon-color: #000;
 $disabled-icon-color: #ccc;
 
-$meter-color: nth($brand-accent-colors, 1) !default;
+$meter-color: $brand-color !default;
+$meter-background-color: #eee !default;
+$meter-threshold-color: #666 !default;
 
 // Controls
 
