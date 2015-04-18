@@ -5,18 +5,11 @@ var React = require('react');
 var Header = React.createClass({
 
   propTypes: {
-    centerColumn: React.PropTypes.bool,
     primary: React.PropTypes.bool
   },
 
   render: function() {
     var classes = ["header"];
-    var contentClasses = ["header__content"];
-
-    if (this.props.centerColumn) {
-      classes.push("center-column");
-      contentClasses.push("center-column__content");
-    }
     if (this.props.primary) {
       classes.push("header--primary");
     }
@@ -24,7 +17,7 @@ var Header = React.createClass({
     return (
       <div className={classes.join(' ')}>
         <div className="header__wrapper">
-          <div className={contentClasses.join(' ')}>
+          <div className="header__content">
             {this.props.children}
           </div>
         </div>

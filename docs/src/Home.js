@@ -2,7 +2,7 @@
 
 var React = require('react');
 var RouteHandler = require('react-router').RouteHandler;
-var Layout = require('grommet/components/Layout');
+var Section = require('grommet/components/Section');
 var Panel = require('grommet/components/Panel');
 var Link = require('react-router').Link;
 var Displays = require('./Displays');
@@ -14,7 +14,7 @@ var Home = React.createClass({
   var texture = "url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAADRJREFUSA1j/PHjx38GGgImGpo9TIxmHI2DAY/J0TgY8ChgGI2D0TgY+BAYeBeM5oOBjwMAZNAXfV/JDF0AAAAASUVORK5CYII=)";
 
     return (
-      <Layout centerColumn={true} texture={texture}>
+      <Section texture={texture}>
         <Displays className="flex-2"/>
         <div className="flex-1">
           <Panel index={1} title="Design">
@@ -30,7 +30,7 @@ var Home = React.createClass({
           </Panel>
           <RouteHandler />
         </div>
-      </Layout>
+      </Section>
     );
   }
 

@@ -6,7 +6,7 @@ var Route = Router.Route;
 var DefaultRoute = Router.DefaultRoute;
 var RouteHandler = Router.RouteHandler;
 var Link = Router.Link;
-var Layout = require('grommet/components/Layout');
+var Section = require('grommet/components/Section');
 var Menu = require('grommet/components/Menu');
 var TBD = require('grommet/components/TBD');
 var GrommetDocument = require('grommet/components/Document');
@@ -115,12 +115,12 @@ var Documentation = React.createClass({
   render: function() {
     var pages = createPageLinks(CONTENTS, 2);
     return (
-      <Layout centerColumn={true}>
+      <Section>
         <Menu direction="down">{pages}</Menu>
         <GrommetDocument>
           <RouteHandler />
         </GrommetDocument>
-      </Layout>
+      </Section>
     );
   }
 });

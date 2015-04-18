@@ -11,7 +11,7 @@ var HelloWorld = React.createClass({
   render: function() {
     return (
       <App>
-        <Header centerColumn={true} primary={true}>
+        <Header primary={true}>
           <Title>
             {"<Your App Name />"}
           </Title>

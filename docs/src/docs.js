@@ -26,7 +26,7 @@ var Docs = React.createClass({
 
     return (
       <App>
-        <Header centerColumn={true} primary={true}>
+        <Header primary={true}>
           <Title><Link to="docs">Grommet</Link></Title>
           <Menu direction="left">
             <Link key="style-guide" to="style guide">
@@ -45,7 +45,7 @@ var Docs = React.createClass({
           </Menu>
         </Header>
         <RouteHandler />
-        <Footer centerColumn={true} primary={true}>
+        <Footer primary={true}>
           <img src="img/hpesm_pri_grn_pos_rgb.svg" alt="HPE logo" />
           <div>
             This work is licensed under the <a href="http://creativecommons.org/licenses/by/4.0/legalcode">Creative Commons Attribution 4.0 International License</a>.

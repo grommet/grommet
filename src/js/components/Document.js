@@ -4,24 +4,18 @@ var React = require('react');
 var GrommetDocument = React.createClass({
 
   propTypes: {
-    centerColumn: React.PropTypes.bool,
     colorIndex: React.PropTypes.number
   },
 
   render: function() {
     var classes = ["document"];
-    var contentClasses = ["document__content"];
-    if (this.props.centerColumn) {
-      classes.push("center-column");
-      contentClasses.push("center-column__content");
-    }
     if (this.props.colorIndex) {
       classes.push("header-color-index-" + this.props.colorIndex);
     }
 
     return (
       <div ref="document" className={classes.join(' ')}>
-        <div className={contentClasses.join(' ')}>
+        <div className="document__content">
           {this.props.children}
         </div>
       </div>

@@ -2,18 +2,18 @@
 
 var React = require('react');
 var Content = require('./Content');
-var Layout = require('grommet/components/Layout');
+var Section = require('grommet/components/Section');
 var GrommetDocument = require('grommet/components/Document');
 
 var Downloads = React.createClass({
 
   render: function() {
   	return (
-      <Layout centerColumn={true}>
+      <Section>
         <GrommetDocument>
           <Content />
         </GrommetDocument>
-      </Layout>
+      </Section>
     );
   }
 

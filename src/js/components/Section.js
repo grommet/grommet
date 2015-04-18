@@ -2,25 +2,20 @@
 
 var React = require('react');
 
-var Layout = React.createClass({
+var Section = React.createClass({
 
   propTypes: {
-    centerColumn: React.PropTypes.bool,
     compact: React.PropTypes.bool,
     colorIndex: React.PropTypes.number,
     texture: React.PropTypes.string
   },
 
   render: function() {
-    var classes = ["layout"];
-    var contentClasses = ["layout__content"];
+    var classes = ["section"];
+    var contentClasses = ["section__content"];
 
-    if (this.props.centerColumn) {
-      classes.push("center-column");
-      contentClasses.push("center-column__content");
-    }
     if (this.props.compact) {
-      classes.push("layout--compact");
+      classes.push("section--compact");
     }
     if (this.props.colorIndex) {
       classes.push("background-color-index-" + this.props.colorIndex);
@@ -42,4 +37,4 @@ var Layout = React.createClass({
 
 });
 
-module.exports = Layout;
+module.exports = Section;

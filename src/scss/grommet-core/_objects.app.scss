@@ -12,6 +12,13 @@
   font-style: italic;
 }
 
+@mixin centered-content {
+  width: 100%;
+  max-width: $center-column-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .app {
   position: absolute;
   top: 0px;
@@ -19,4 +26,44 @@
   left: 0px;
   right: 0px;
   overflow: auto;
+
+  &--centered {
+
+    > .header,
+    > div > .header {
+      .header__content {
+        @include centered-content();
+      }
+    }
+
+    > .footer,
+    > div > .footer {
+      padding-left: $inuit-base-spacing-unit;
+      padding-right: $inuit-base-spacing-unit;
+
+      .footer__content {
+        @include centered-content();
+      }
+    }
+
+    .document,
+    .section {
+      padding-left: $inuit-base-spacing-unit;
+      padding-right: $inuit-base-spacing-unit;
+
+      &__content {
+        @include centered-content();
+      }
+    }
+
+    .section .document {
+      padding-left: 0px;
+      padding-right: 0px;
+
+      &__content {
+        width: auto;
+        max-width: none;
+      }
+    }
+  }
 }

@@ -26,9 +26,6 @@ var HeaderDoc = React.createClass({
         <section>
           <h2>Options</h2>
           <dl>
-            <dt><code>centerColumn  true|false</code></dt>
-            <dd>Indicates that the contents should be constrained
-              horizontally for a center column application.</dd>
             <dt><code>primary  true|false</code></dt>
             <dd>Whether this is the primary application header or not.</dd>
           </dl>

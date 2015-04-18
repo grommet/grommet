@@ -12,7 +12,7 @@ var Basics = require('./Basics');
 var Patterns = require('./Patterns');
 var Showcase = require('./Showcase');
 var Login = require('./patterns/Login');
-var Layout = require('grommet/components/Layout');
+var Section = require('grommet/components/Section');
 var TBD = require('grommet/components/TBD');
 var GrommetDocument = require('grommet/components/Document');
 var Footer = require('grommet/components/Footer');
@@ -160,7 +160,7 @@ var StyleGuide = React.createClass({
           activePageIndex = index;
           layoutCompact = true;
           header = (
-            <Menu direction="right" colored={true}>
+            <Menu direction="left" colored={true}>
               {chapterLinks[this._chapterIndex]}
               {pageLink}
             </Menu>
@@ -191,22 +191,22 @@ var StyleGuide = React.createClass({
 
     return (
       <div>
-        <Layout centerColumn={true} colorIndex={colorIndex}
+        <Section colorIndex={colorIndex}
           compact={layoutCompact}>
           <Menu direction="down" colored={true} >
             {chapterLinks}
           </Menu>
           {header}
-        </Layout>
-        <Layout centerColumn={true}>
+        </Section>
+        <Section>
           <Menu direction="down" inline={true}>{pageLinks}</Menu>
           <GrommetDocument colorIndex={colorIndex}>
             <RouteHandler />
           </GrommetDocument>
-        </Layout>
-        <Footer centerColumn={true} scrollTop={true}>
+        </Section>
+        <Footer scrollTop={true}>
           <Menu></Menu>
-          <Menu className="flex-1">{next}</Menu>
+          <Menu className="flex-1" direction="left">{next}</Menu>
         </Footer>
       </div>
     );

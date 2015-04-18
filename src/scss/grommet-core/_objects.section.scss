@@ -1,6 +1,6 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-.layout {
+.section {
 
   &__content {
     display: -webkit-flex;
@@ -42,7 +42,7 @@
     padding-top: 0px;
     padding-bottom: 0px;
 
-    .layout__content {
+    .section__content {
       padding-top: halve($inuit-base-spacing-unit);
       padding-bottom: halve($inuit-base-spacing-unit);
     }
