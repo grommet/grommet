@@ -26,7 +26,6 @@ var RequestAccess = React.createClass({
 
   _onSubmit: function (event) {
     event.preventDefault();
-    var invalid = false;
     if (this.state.name && this.state.email && this.state.purpose) {
       this.setState({invalid: false});
       console.log('!!! RequestAccess submit TBD');
