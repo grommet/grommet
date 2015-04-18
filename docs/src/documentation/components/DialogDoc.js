@@ -5,6 +5,7 @@ var GrommetDocument = require('grommet/components/Document');
 var Dialog = require('grommet/components/Dialog');
 var Header = require('grommet/components/Header');
 var Footer = require('grommet/components/Footer');
+var FullForm = require('./FullForm');
 
 var SimpleDialog = React.createClass({
   render: function () {
@@ -13,11 +14,23 @@ var SimpleDialog = React.createClass({
         <Header>
           <h1>Title</h1>
         </Header>
-        <p>Lorem ipsum ...</p>
+        <p>This is a simple dialog.</p>
         <Footer>
           <span></span>
-          <button onClick={this.props.onClose}>OK</button>
+          <span>
+            <button onClick={this.props.onClose}>Close</button>
+          </span>
         </Footer>
+      </Dialog>
+    );
+  }
+});
+
+var FormDialog = React.createClass({
+  render: function () {
+    return (
+      <Dialog>
+        <FullForm onCancel={this.props.onClose} onSubmit={this.props.onClose} />
       </Dialog>
     );
   }
@@ -25,16 +38,24 @@ var SimpleDialog = React.createClass({
 
 var DialogDoc = React.createClass({
 
-  _onOpen: function () {
-    this.setState({active: true});
+  _onOpenSimple: function () {
+    this.setState({simpleActive: true});
   },
 
-  _onClose: function () {
-    this.setState({active: false});
+  _onCloseSimple: function () {
+    this.setState({simpleActive: false});
+  },
+
+  _onOpenForm: function () {
+    this.setState({formActive: true});
+  },
+
+  _onCloseForm: function () {
+    this.setState({formActive: false});
   },
 
   getInitialState: function () {
-    return {active: false};
+    return {simpleActive: false, formActive: false};
   },
 
   render: function() {
@@ -42,9 +63,14 @@ var DialogDoc = React.createClass({
     "<Dialog>\n  ...\n</Dialog>";
 
     var simple = null;
-    if (this.state.active) {
-      simple = <SimpleDialog onClose={this._onClose} />;
+    if (this.state.simpleActive) {
+      simple = <SimpleDialog onClose={this._onCloseSimple} />;
     }
+    var form = null;
+    if (this.state.formActive) {
+      form = <FormDialog onClose={this._onCloseForm} />;
+    }
+
     return (
       <GrommetDocument>
         <header>
@@ -64,8 +90,13 @@ var DialogDoc = React.createClass({
           <h2>Examples</h2>
 
           <h3>Simple</h3>
-          <button onClick={this._onOpen}>Launch</button>
+          <button onClick={this._onOpenSimple}>Simple</button>
           {simple}
+          <pre><code className="html">{"<Dialog> ..."}</code></pre>
+
+          <h3>Form</h3>
+          <button onClick={this._onOpenForm}>Form</button>
+          {form}
           <pre><code className="html">{"<Dialog> ..."}</code></pre>
 
         </section>

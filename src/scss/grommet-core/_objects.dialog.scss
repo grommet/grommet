@@ -1,39 +1,66 @@
 // (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
 
+@mixin flex-dialog-contents {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+
+  > * {
+    -webkit-flex: 1;
+    flex: 1;
+  }
+
+  > .header,
+  > .footer {
+    -webkit-flex: 0 0 auto;
+    flex: 0 0 auto;
+  }
+
+  > .header .header__content {
+    padding-left: $inuit-base-spacing-unit;
+  }
+}
+
 .dialog {
   position: fixed;
   top: 0px;
   left: 0px;
   right: 0px;
   bottom: 0px;
-  //min-height: 100vh;
-  //margin-top: - quadruple($inuit-base-spacing-unit);
   background-color: $modal-overlay-background-color;
-  padding: 0px $inuit-base-spacing-unit;
   z-index: 10;
 
-  &__container {
-    position: absolute;
-    top: $inuit-base-spacing-unit;
-    left: $inuit-base-spacing-unit;
-    right: $inuit-base-spacing-unit;
-    bottom: $inuit-base-spacing-unit;
-    background-color: $background-color;
-    overflow: auto;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: column;
-    flex-direction: column;
+  @include media-query(lap-and-up) {
+    padding: $inuit-base-spacing-unit;
+  }
 
-    > * {
-      -webkit-flex: 1;
-      flex: 1;
+  &__container {
+    min-width: round($inuit-base-spacing-unit * 16);
+    min-height: round($inuit-base-spacing-unit * 12);
+    max-width: $center-column-width;
+    margin: 0 auto;
+    background-color: $background-color;
+    overflow: none;
+
+    > :not(.footer):not(.header):not(.form) {
+      padding-left: $inuit-base-spacing-unit;
+      padding-right: $inuit-base-spacing-unit;
     }
 
-    .header,
-    .footer {
-      -webkit-flex: 0 0 auto;
-      flex: 0 0 auto;
+    @include media-query(palm) {
+      > .form {
+        > :not(.footer):not(.header) {
+          padding-left: $inuit-base-spacing-unit;
+          padding-right: $inuit-base-spacing-unit;
+        }
+      }
+    }
+
+    @include flex-dialog-contents();
+
+    > .form {
+      @include flex-dialog-contents();
     }
   }
 }

@@ -38,7 +38,10 @@ var FooterDoc = React.createClass({
           <div className="example">
             <Footer>
               <span></span>
-              <button>OK</button>
+              <span>
+                <button>Cancel</button>
+                <button className="primary">OK</button>
+              </span>
             </Footer>
           </div>
           <pre><code className="html">{"<Footer> ..."}</code></pre>

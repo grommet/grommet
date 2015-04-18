@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 .footer {
-  height: $footer-height;
+  height: $footer-height + 1px; // account for border
   border-top: 1px solid $border-color;
 
   &__content {
