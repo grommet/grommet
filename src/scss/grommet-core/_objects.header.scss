@@ -89,4 +89,18 @@
       }
     }
   }
+
+  .tile > & {
+    height: double($inuit-base-spacing-unit);
+
+    .header__wrapper {
+      height: double($inuit-base-spacing-unit);
+      border-bottom: none;
+      border-top: 1px solid $border-color;
+    }
+
+    .header__content {
+      line-height: double($inuit-base-spacing-unit);
+    }
+  }
 }

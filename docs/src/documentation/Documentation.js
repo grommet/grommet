@@ -23,6 +23,7 @@ var LoginFormDoc = require('./components/LoginFormDoc');
 var MenuDoc = require('./components/MenuDoc');
 var MeterDoc = require('./components/MeterDoc');
 var SearchDoc = require('./components/SearchDoc');
+var TilesDoc = require('./components/TilesDoc');
 require("!style!css!highlight.js/styles/github.css");
 var hljs = require('highlight.js/lib/highlight');
 hljs.registerLanguage('bash', require('highlight.js/lib/languages/bash'));
@@ -61,7 +62,7 @@ var CONTENTS = [
       {route: 'doc_meter', label: 'Meter', component: MeterDoc},
       {route: 'doc_search', label: 'Search', component: SearchDoc},
       {route: 'doc_table', label: 'Table', component: TBD},
-      {route: 'doc_tile', label: 'Tile', component: TBD}
+      {route: 'doc_tiles', label: 'Tiles', component: TilesDoc}
     ]
   },
   {label: 'Reference',
