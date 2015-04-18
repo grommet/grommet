@@ -48,6 +48,7 @@
   &__error {
     margin-bottom: halve($inuit-base-spacing-unit);
     color: map-get($brand-status-colors, error);
+    text-align: left;
   }
 
   &__footer {

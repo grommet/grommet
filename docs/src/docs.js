@@ -16,6 +16,7 @@ var DevelopIcon = require('./DevelopIcon');
 var StyleGuide = require('./style_guide/StyleGuide');
 var Documentation = require('./documentation/Documentation');
 var Downloads = require('./downloads/Downloads');
+var RequestAccess = require('./RequestAccess');
 
 var Docs = React.createClass({
 
@@ -24,24 +25,25 @@ var Docs = React.createClass({
     var hpeThemeClasses = __THEME__.hpe ? 'active' : '';
     var genericThemeClasses = !__THEME__.hpe ? 'active' : '';
 
-    var title = (<Link to="docs">Grommet</Link>);
-    var nav = [
-      (<Link key="style-guide" to="style guide">
-        <Label text="Style Guide" icon={<DesignIcon />} />
-      </Link>),
-      (<Link key="documentation" to="documentation">
-        <Label text="Documentation" icon={<DevelopIcon />} />
-      </Link>),
-      (<Link key="downloads" to="downloads">
-        <Label text="Downloads" />
-      </Link>)
-    ];
-
     return (
       <App>
         <Header centerColumn={true} primary={true}>
-          <Title>{title}</Title>
-          <Menu direction="left">{nav}</Menu>
+          <Title><Link to="docs">Grommet</Link></Title>
+          <Menu direction="left">
+            <Link key="style-guide" to="style guide">
+              <Label text="Style Guide" icon={<DesignIcon />} />
+            </Link>
+            <Link key="documentation" to="documentation">
+              <Label text="Documentation" icon={<DevelopIcon />} />
+            </Link>
+            <Link key="downloads" to="downloads">
+              <Label text="Downloads" />
+            </Link>
+            <Link key="request-access" to="request access"
+              className="button primary call-to-action">
+              <Label text="Request access" />
+            </Link>
+          </Menu>
         </Header>
         <RouteHandler />
         <Footer centerColumn={true} primary={true}>
@@ -64,7 +66,9 @@ var Docs = React.createClass({
 
 var routes = (
   <Route name="docs" path="/" handler={Docs}>
-    <DefaultRoute name="home" handler={Home} />
+    <Route name="home" path="/" handler={Home}>
+      <Route name="request access" handler={RequestAccess} />
+    </Route>
     {StyleGuide.routes()}
     {Documentation.routes()}
     <Route name="downloads" handler={Downloads} />

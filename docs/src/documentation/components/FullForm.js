@@ -114,11 +114,11 @@ var FullForm = React.createClass({
         </fieldset>
         <Footer>
           <span></span>
-          <span>
-            <a className="button" onClick={this.props.onCancel}>Cancel</a>
+          <Menu direction="right">
+            <a onClick={this.props.onCancel}>Cancel</a>
             <input type="submit" className="primary" value="OK"
               onClick={this.props.onSubmit} />
-          </span>
+          </Menu>
         </Footer>
       </Form>
     );

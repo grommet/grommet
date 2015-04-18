@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
+var RouteHandler = require('react-router').RouteHandler;
 var Layout = require('grommet/components/Layout');
 var Panel = require('grommet/components/Panel');
 var Link = require('react-router').Link;
@@ -27,6 +28,7 @@ var Home = React.createClass({
             <a href="/demo">Demo</a>
             <a href="https://github.com/HewlettPackard/grommet">GitHub</a>
           </Panel>
+          <RouteHandler />
         </div>
       </Layout>
     );

@@ -6,19 +6,34 @@
   -webkit-flex-direction: column;
   flex-direction: column;
 
-  > * {
+  > *:not(.form) {
     -webkit-flex: 1;
     flex: 1;
+    overflow: auto;
   }
 
   > .header,
   > .footer {
     -webkit-flex: 0 0 auto;
     flex: 0 0 auto;
+    overflow: none;
   }
 
-  > .header .header__content {
-    padding-left: $inuit-base-spacing-unit;
+  > .header {
+    .header__wrapper {
+      background-color: inherit;
+      border-bottom: none;
+    }
+
+    .header__content {
+      padding-left: $inuit-base-spacing-unit;
+    }
+  }
+
+  > .footer {
+    .footer__content {
+      //padding-right: $inuit-base-spacing-unit;
+    }
   }
 }
 
@@ -28,6 +43,7 @@
   left: 0px;
   right: 0px;
   bottom: 0px;
+  overflow: none;
   background-color: $modal-overlay-background-color;
   z-index: 10;
 
@@ -38,9 +54,10 @@
   &__container {
     min-width: round($inuit-base-spacing-unit * 16);
     min-height: round($inuit-base-spacing-unit * 12);
-    max-width: $center-column-width;
+    max-width: round($inuit-base-spacing-unit * 32); //$center-column-width;
+    max-height: 100vh;
     margin: 0 auto;
-    background-color: $background-color;
+    background-color: $modal-background-color;
     overflow: none;
 
     > :not(.footer):not(.header):not(.form) {
@@ -48,9 +65,13 @@
       padding-right: $inuit-base-spacing-unit;
     }
 
+    @include media-query(lap-and-up) {
+      max-height: calc(100vh - #{double($inuit-base-spacing-unit)});
+    }
+
     @include media-query(palm) {
       > .form {
-        > :not(.footer):not(.header) {
+        > :not(.header):not(.footer) {
           padding-left: $inuit-base-spacing-unit;
           padding-right: $inuit-base-spacing-unit;
         }
@@ -61,6 +82,12 @@
 
     > .form {
       @include flex-dialog-contents();
+    }
+  }
+
+  &--compact {
+    .dialog__container {
+      max-width: round($inuit-base-spacing-unit * 20);
     }
   }
 }

@@ -5,6 +5,7 @@ var GrommetDocument = require('grommet/components/Document');
 var Dialog = require('grommet/components/Dialog');
 var Header = require('grommet/components/Header');
 var Footer = require('grommet/components/Footer');
+var Menu = require('grommet/components/Menu');
 var FullForm = require('./FullForm');
 
 var SimpleDialog = React.createClass({
@@ -17,9 +18,9 @@ var SimpleDialog = React.createClass({
         <p>This is a simple dialog.</p>
         <Footer>
           <span></span>
-          <span>
-            <button onClick={this.props.onClose}>Close</button>
-          </span>
+          <Menu direction="right">
+            <button className="primary" onClick={this.props.onClose}>Close</button>
+          </Menu>
         </Footer>
       </Dialog>
     );

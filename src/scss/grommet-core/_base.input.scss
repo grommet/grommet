@@ -13,6 +13,7 @@ textarea {
   border-radius: $border-radius;
   outline: none;
   margin-right: halve($inuit-base-spacing-unit);
+  background-color: inherit;
 
   &:focus {
     border-color: $focus-border-color;
@@ -23,6 +24,15 @@ textarea {
     border: none;
     outline: none;
   }
+
+  &.error {
+    border-color: map-get($brand-status-colors, error);
+  }
+}
+
+input[type="button"],
+input[type="submit"] {
+  line-height: inherit;
 }
 
 input[type="button"],
@@ -30,14 +40,13 @@ input[type="submit"],
 button,
 a.button {
   display: inline-block;
-  @include inuit-font-size($inuit-base-font-size);
   // Align overall height with regular text line height, reduce
   // top and bottom padding by an extra 2px.
   padding: (quarter($inuit-base-spacing-unit) - $button-border-width) halve($inuit-base-spacing-unit);
   border: $button-border-width solid $button-border-color;
   border-radius: $border-radius;
-  background-color: $button-background-color;
-  color: $button-text-color;
+  background-color: inherit; //$button-background-color;
+  //color: $button-text-color;
   text-decoration: none;
   cursor: pointer;
   text-align: center;
@@ -55,6 +64,7 @@ a.button {
 
     &:hover {
       background-color: $brand-color;
+      border-color: $brand-color;
     }
   }
 
@@ -120,7 +130,7 @@ label.radio {
     height: $inuit-base-spacing-unit;
     margin-right: halve($inuit-base-spacing-unit);
     vertical-align: middle;
-    background-color: $background-color;
+    background-color: inherit;
     color: $brand-color-darker;
     border: $input-border-width solid $border-color;
     text-align: center;

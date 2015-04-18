@@ -6,11 +6,15 @@ var Form = React.createClass({
 
   propTypes: {
     className: React.PropTypes.string,
+    compact: React.PropTypes.bool,
     onSubmit: React.PropTypes.func
   },
 
   render: function () {
     var classes = ["form"];
+    if (this.props.compact) {
+      classes.push("form--compact");
+    }
     if (this.props.className) {
       classes.push(this.props.className);
     }

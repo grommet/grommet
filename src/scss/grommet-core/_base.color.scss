@@ -41,7 +41,8 @@ $button-primary-border-color: $brand-color-darker !default;
 $button-primary-text-color: $colored-text-color !default;
 
 $hover-background-color: rgba(0, 0, 0, 0.1);
-$modal-overlay-background-color: rgba(0, 0, 0, 0.6);
+$modal-overlay-background-color: rgba(255, 255, 255, 0.95); //rgba(0, 0, 0, 0.6);
+$modal-background-color: inherit; //rgba(255, 255, 255, 0.95);
 $drop-background-color: rgba(255, 255, 255, 0.9);
 $header-background-color: rgba(255, 255, 255, 0.9);
 $sort-placeholder-background-color: rgba(0, 0, 255, 0.1); // TODO: recolor

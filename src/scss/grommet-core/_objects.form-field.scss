@@ -1,9 +1,14 @@
 // (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
 
 .form-field {
+  position: relative;
   margin-bottom: halve($inuit-base-spacing-unit);
   // set line height to align labels with input elements
   line-height: $inuit-base-spacing-unit + halve($inuit-base-spacing-unit);
+
+  button {
+    line-height: $inuit-base-spacing-unit;
+  }
 
   &:last-child {
     margin-bottom: 0px;
@@ -14,23 +19,32 @@
   }
 
   > label:first-child {
-    display: inline-block;
-    width: round($inuit-base-spacing-unit * 8);
-    text-align: right;
-    margin-right: $inuit-base-spacing-unit;
-    vertical-align: top;
+    display: block;
+    text-align: left;
 
-    @include media-query(palm) {
-      display: block;
-      text-align: left;
+    .form:not(.form--compact) & {
+      @include media-query(lap-and-up) {
+        display: inline-block;
+        width: round($inuit-base-spacing-unit * 8);
+        text-align: right;
+        margin-right: $inuit-base-spacing-unit;
+        vertical-align: top;
+      }
     }
   }
 
   > input[type=text],
   > input[type=range],
+  > input[type=email],
+  > input[type=password],
   > select,
   > textarea {
     width: round($inuit-base-spacing-unit * 10);
+
+    .form--compact & {
+      width: 100%;
+      margin-right: 0px;
+    }
   }
 
   // Prevent textarea from adding extra bottom margin
@@ -49,6 +63,23 @@
     tbody tr td {
       padding-top: 0px;
       padding-bottom: 0px;
+    }
+  }
+
+  &--error {
+    input {
+      border-color: map-get($brand-status-colors, error);
+    }
+  }
+
+  &__error {
+    color: map-get($brand-status-colors, error);
+
+    .form--compact & {
+      display: block;
+      position: absolute;
+      top: 0px;
+      right: 0px;
     }
   }
 }
