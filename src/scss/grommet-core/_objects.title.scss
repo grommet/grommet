@@ -15,6 +15,10 @@
     }
   }
 
+  svg {
+    margin-right: halve($inuit-base-spacing-unit);
+  }
+
   &--nav {
     &:hover {
       cursor: pointer;

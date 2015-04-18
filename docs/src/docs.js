@@ -5,13 +5,14 @@ var RouteHandler = Router.RouteHandler;
 var Link = Router.Link;
 var App = require('grommet/components/App');
 var Header = require('grommet/components/Header');
+var Logo = require('./img/Logo');
 var Title = require('grommet/components/Title');
 var Menu = require('grommet/components/Menu');
 var Label = require('grommet/components/Label');
 var Footer = require('grommet/components/Footer');
 var Home = require('./Home');
-var DesignIcon = require('./DesignIcon');
-var DevelopIcon = require('./DevelopIcon');
+var DesignIcon = require('./img/Design');
+var DevelopIcon = require('./img/Develop');
 var StyleGuide = require('./style_guide/StyleGuide');
 var Documentation = require('./documentation/Documentation');
 var Downloads = require('./downloads/Downloads');
@@ -27,7 +28,12 @@ var Docs = React.createClass({
     return (
       <App>
         <Header primary={true}>
-          <Title><Link to="docs">Grommet</Link></Title>
+          <Title>
+            <Link to="docs">
+              <Logo />
+              Grommet
+            </Link>
+          </Title>
           <Menu direction="left">
             <Link key="style-guide" to="style guide">
               <Label text="Style Guide" icon={<DesignIcon />} />
@@ -45,8 +51,9 @@ var Docs = React.createClass({
           </Menu>
         </Header>
         <RouteHandler />
-        <Footer primary={true}>
-          <img src="img/hpesm_pri_grn_pos_rgb.svg" alt="HPE logo" />
+        <Footer className="docs__footer" primary={true} centered={true}>
+          <img src="img/hpesm_sec_grn_pos_rgb.svg" alt="Hewlett Packard Enterprise logo" />
+          <h3>Build your ideas!</h3>
           <div>
             This work is licensed under the <a href="http://creativecommons.org/licenses/by/4.0/legalcode">Creative Commons Attribution 4.0 International License</a>.
             <div>

@@ -191,14 +191,14 @@ var StyleGuide = React.createClass({
 
     return (
       <div>
-        <Section colorIndex={colorIndex}
+        <Section direction="right" colorIndex={colorIndex}
           compact={layoutCompact}>
           <Menu direction="down" colored={true} >
             {chapterLinks}
           </Menu>
           {header}
         </Section>
-        <Section>
+        <Section direction="right">
           <Menu direction="down" inline={true}>{pageLinks}</Menu>
           <GrommetDocument colorIndex={colorIndex}>
             <RouteHandler />
@@ -207,6 +207,7 @@ var StyleGuide = React.createClass({
         <Footer scrollTop={true}>
           <Menu></Menu>
           <Menu className="flex-1" direction="left">{next}</Menu>
+          <span></span>
         </Footer>
       </div>
     );

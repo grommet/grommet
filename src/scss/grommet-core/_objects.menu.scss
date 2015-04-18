@@ -144,12 +144,13 @@
         }
       }
 
-      &--colored { //.menu--down {
+      &--colored {
         a {
           text-decoration: none;
           color: inherit;
 
           &:hover:not(.active) {
+            background-color: $brand-color;
             color: inherit;
           }
 

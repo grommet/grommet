@@ -115,7 +115,7 @@ var Documentation = React.createClass({
   render: function() {
     var pages = createPageLinks(CONTENTS, 2);
     return (
-      <Section>
+      <Section direction="right">
         <Menu direction="down">{pages}</Menu>
         <GrommetDocument>
           <RouteHandler />

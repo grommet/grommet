@@ -6,7 +6,7 @@ var Header = require('grommet/components/Header');
 var Menu = require('grommet/components/Menu');
 var Donut = require('grommet/components/Donut');
 var Search = require('grommet/components/Search');
-var Logo = require('../Logo');
+var Logo = require('../img/Logo');
 var Gravatar = require('react-gravatar');
 
 var PatternsHeader = React.createClass({

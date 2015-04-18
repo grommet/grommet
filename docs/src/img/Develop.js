@@ -2,7 +2,7 @@
 
 var React = require('react');
 
-var DevelopIcon = React.createClass({
+var Develop = React.createClass({
 
   render: function() {
     var className = 'icon-design';
@@ -27,4 +27,4 @@ var DevelopIcon = React.createClass({
 
 });
 
-module.exports = DevelopIcon;
+module.exports = Develop;

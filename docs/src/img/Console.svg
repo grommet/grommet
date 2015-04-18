@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 460 304" enable-background="new 0 0 460 304" xml:space="preserve">
+<path fill="#010101" d="M392.1,209.8V0.2H66v209.6L0.8,303h456.5L392.1,209.8z M83.3,197.2V17.5h291.5v179.8H83.3z"/>
+<path fill="#010101" d="M392.1,209.8V0.2H66v209.6L0.8,303h456.5L392.1,209.8z M83.3,197.2V17.5h291.5v179.8H83.3z"/>
+<g>
+	<g>
+		<polygon fill="#010101" points="310.1,158.5 322.7,167.9 322.7,161.6 314.3,155.3 322.7,149 322.7,142.7 310.1,152.2 		"/>
+		<polygon fill="#010101" points="331.1,142.7 331.1,149 339.5,155.3 331.1,161.6 331.1,167.9 343.7,158.5 343.7,152.2 		"/>
+	</g>
+	<rect x="298.8" y="136" fill="none" width="38" height="38"/>
+</g>
+<text transform="matrix(1 0 0 1 141.2576 113.8865)" fill="#010101" font-family="'Metric-Semibold'" font-size="36">Hello World!</text>
+</svg>

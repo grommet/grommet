@@ -7,7 +7,17 @@ var Section = React.createClass({
   propTypes: {
     compact: React.PropTypes.bool,
     colorIndex: React.PropTypes.number,
+    direction: React.PropTypes.oneOf(['up', 'down', 'left', 'right']),
+    centered: React.PropTypes.bool,
     texture: React.PropTypes.string
+  },
+
+  getDefaultProps: function () {
+    return {
+      colored: false,
+      direction: 'down',
+      small: false
+    };
   },
 
   render: function() {
@@ -17,8 +27,17 @@ var Section = React.createClass({
     if (this.props.compact) {
       classes.push("section--compact");
     }
+    if (this.props.centered) {
+      classes.push("section--centered");
+    }
+    if (this.props.direction) {
+      classes.push("section--" + this.props.direction);
+    }
     if (this.props.colorIndex) {
       classes.push("background-color-index-" + this.props.colorIndex);
+    }
+    if (this.props.className) {
+      classes.push(this.props.className);
     }
 
     var style = {};

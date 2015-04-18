@@ -102,4 +102,19 @@
       }
     }
   }
+
+  &--centered {
+    .footer {
+      &__content {
+        display: block;
+        text-align: center;
+
+        > * {
+          margin-right: auto;
+          margin-left: auto;
+          text-align: center;
+        }
+      }
+    }
+  }
 }

@@ -3,6 +3,7 @@
 var React = require('react');
 var GrommetDocument = require('grommet/components/Document');
 var Footer = require('grommet/components/Footer');
+var Menu = require('grommet/components/Menu');
 
 var FooterDoc = React.createClass({
 
@@ -35,10 +36,10 @@ var FooterDoc = React.createClass({
           <div className="example">
             <Footer>
               <span></span>
-              <span>
-                <button>Cancel</button>
+              <Menu direction="right">
+                <a>Cancel</a>
                 <button className="primary">OK</button>
-              </span>
+              </Menu>
             </Footer>
           </div>
           <pre><code className="html">{"<Footer> ..."}</code></pre>

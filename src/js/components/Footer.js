@@ -6,6 +6,7 @@ var Top = require('./icons/Top');
 var Footer = React.createClass({
 
   propTypes: {
+    centered: React.PropTypes.bool,
     primary: React.PropTypes.bool,
     scrollTop: React.PropTypes.bool
   },
@@ -51,6 +52,12 @@ var Footer = React.createClass({
     var classes = ["footer"];
     if (this.props.primary) {
       classes.push("footer--primary");
+    }
+    if (this.props.centered) {
+      classes.push("footer--centered");
+    }
+    if (this.props.className) {
+      classes.push(this.props.className);
     }
 
     var top = null;

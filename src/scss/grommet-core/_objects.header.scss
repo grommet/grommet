@@ -33,9 +33,14 @@
     > h1,
     > h2,
     > h3,
-    > h4 {
+    > h4,
+    .title {
       margin-bottom: 0px;
       line-height: inherit;
+
+      svg {
+        height: $header-height - $inuit-base-spacing-unit;
+      }
     }
 
     svg {

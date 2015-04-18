@@ -1,0 +1,120 @@
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+
+.home {
+
+  &__logo {
+    height: 192px;
+  }
+
+  &__title {
+    @include inuit-font-size(72px);
+    font-weight: 600;
+  }
+
+  h2 {
+    @include inuit-font-size(36px);
+    font-weight: normal;
+  }
+
+  h3 {
+    @include inuit-font-size(36px);
+    font-weight: 100;
+    max-width: none;
+    margin-bottom: double($inuit-base-spacing-unit);
+  }
+
+  h4 {
+    @include inuit-font-size(24px);
+    font-weight: 100;
+    max-width: round($inuit-base-spacing-unit * 32);
+  }
+
+  .section {
+    padding-top: round($inuit-base-spacing-unit * 4);
+    padding-bottom: round($inuit-base-spacing-unit * 4);
+  }
+
+  &__introduction.section {
+    background-image: radial-gradient(#ffffff, #f2f2f2);
+
+    @include media-query(palm) {
+      .menu > * {
+        margin-left: 0px;
+
+        a {
+          color: $text-color;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  &__scale.section {
+    padding-bottom: round($inuit-base-spacing-unit * 6);
+  }
+
+  &__scale-graphic {
+    width: 80vw;
+    max-width: 320px;
+    margin-bottom: $inuit-base-spacing-unit;
+  }
+
+  &__process.section {
+    padding-top: 0px;
+    padding-bottom: round($inuit-base-spacing-unit * 2);
+  }
+
+  &__process-graphic {
+    position: relative;
+    top: - round($inuit-base-spacing-unit * 2);
+  }
+
+  &__features.section {
+    padding-top: round($inuit-base-spacing-unit * 2);
+
+    svg,
+    img {
+      height: 96px;
+      margin-bottom: $inuit-base-spacing-unit;
+    }
+
+    .tiles {
+      margin-bottom: round($inuit-base-spacing-unit * 2);
+    }
+  }
+
+  &__designer.section {
+    padding-top: round($inuit-base-spacing-unit * 2);
+    padding-bottom: round($inuit-base-spacing-unit * 2);
+
+    svg,
+    img {
+      height: 96px;
+      margin-bottom: $inuit-base-spacing-unit;
+    }
+  }
+
+  &__commands {
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: $inuit-base-spacing-unit;
+  }
+
+  &__developer.section {
+    padding-top: round($inuit-base-spacing-unit * 2);
+    padding-bottom: round($inuit-base-spacing-unit * 2);
+
+    svg,
+    img {
+      height: 72px;
+      margin-bottom: $inuit-base-spacing-unit;
+    }
+  }
+}
+
+.docs__footer {
+  h3 {
+    @include inuit-font-size(24px);
+    font-weight: 100;
+  }
+}

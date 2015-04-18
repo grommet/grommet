@@ -5,28 +5,43 @@
   display: flex;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-align-items: stretch;
+  align-items: stretch;
+  -webkit-align-content: stretch;
+  align-content: stretch;
 
   @include media-query(palm) {
-    display: block;
+    //display: block;
+  }
+
+  > * {
+    -webkit-flex-basis: double(quadruple($inuit-base-spacing-unit));
+    flex-basis: double(quadruple($inuit-base-spacing-unit));
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+  }
+
+  &--small {
+    > * {
+      -webkit-flex-basis: quadruple($inuit-base-spacing-unit);
+      flex-basis: quadruple($inuit-base-spacing-unit);
+    }
   }
 }
 
 .tile {
-  -webkit-flex-basis: double(quadruple($inuit-base-spacing-unit));
-  flex-basis: double(quadruple($inuit-base-spacing-unit));
-  margin-right: halve($inuit-base-spacing-unit);
-  margin-bottom: halve($inuit-base-spacing-unit);
-  border: 1px solid $border-color;
-  border-radius: $border-radius;
+  padding: $inuit-base-spacing-unit;
+  //border: 1px solid $border-color;
+  //border-radius: $border-radius;
 
   @include media-query(palm) {
-    width: 100vw;
+    //width: 100vw;
     margin: 0px;
     border-radius: none;
-    border-style: solid none none;
+    //border-style: solid none none;
 
     &:last-child {
-      border-bottom-style: solid;
+      //border-bottom-style: solid;
     }
   }
 
