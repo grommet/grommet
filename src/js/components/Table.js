@@ -43,7 +43,7 @@ var Table = React.createClass({
   },
 
   componentDidUpdate: function (prevProps, prevState) {
-    if (this.props.selection !== prevProps.selection) {
+    if (this.state.selection !== prevState.selection) {
       this._markSelection();
     }
   },

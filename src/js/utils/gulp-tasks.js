@@ -33,7 +33,7 @@ var webpackConfig = {
       },
       {
         test: /\.woff$/,
-        loader: 'file-loader'
+        loader: 'file-loader&minetype=application/font-woff'
       },
       {
         test: /\.scss$/,
@@ -70,7 +70,7 @@ module.exports = function(gulp, opts) {
         var asset = copyAsset.asset ? copyAsset.asset : copyAsset;
         gulp.src(asset).pipe(gulp.dest(copyAsset.dist ? copyAsset.dist : dist));
       }
-      
+
     });
   });
 
@@ -104,9 +104,9 @@ module.exports = function(gulp, opts) {
 
    gulp.task('dist-preprocess', function(callback) {
     if (options.distPreprocess) {
-      runSequence(options.distPreprocess, callback);  
+      runSequence(options.distPreprocess, callback);
     } else {
-      callback();  
+      callback();
     }
   });
 
@@ -124,7 +124,6 @@ module.exports = function(gulp, opts) {
     });
 
     config.resolve.extensions = ['', '.js', '.json', '.htm', 'html', 'scss'];
-
     return gulp.src(options.mainJs)
       .pipe(gulpWebpack(config))
       .pipe(gulp.dest(dist));
