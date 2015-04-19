@@ -87,6 +87,7 @@ router.run(function (Handler) {
   var factory = React.createFactory(Handler);
   var element = document.getElementById('content');
   React.render(factory(), element);
+  document.querySelectorAll('.docs')[0].scrollTop = 0;
 });
 
 document.body.classList.remove('loading');
