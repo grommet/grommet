@@ -102,6 +102,23 @@ $step-duration: 0.7s;
       }
     }
   }
+
+  &__code {
+    opacity: 0;
+    @include animation('reveal-code #{$step-duration * 6} 12.1s linear forwards');
+
+  }
+
+  &__final {
+    opacity: 0;
+    @include animation('reveal-final #{$step-duration * 4} 16.1s ease-in-out forwards');
+
+    .final {
+      &-donut {
+        stroke-linecap: butt;
+      }
+    }
+  }
 }
 
 @include keyframes(fold-paper) {
@@ -229,5 +246,29 @@ $step-duration: 0.7s;
 
   100% {
     stroke-dashoffset: 0px;
+  }
+}
+
+@include keyframes(reveal-code) {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(480px);
+    transform: translateY(480px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+}
+
+@include keyframes(reveal-final) {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }
