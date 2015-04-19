@@ -26,6 +26,9 @@ var MeterDoc = require('./components/MeterDoc');
 var SearchDoc = require('./components/SearchDoc');
 var TableDoc = require('./components/TableDoc');
 var TilesDoc = require('./components/TilesDoc');
+var AppDoc = require('./components/AppDoc');
+
+//hjjs configuration
 require("!style!css!highlight.js/styles/github.css");
 var hljs = require('highlight.js/lib/highlight');
 hljs.registerLanguage('bash', require('highlight.js/lib/languages/bash'));
@@ -52,6 +55,7 @@ var CONTENTS = [
   },
   {label: 'Components',
     contents: [
+      {route: 'doc_app', label: 'App', component: AppDoc},
       {route: 'doc_chart', label: 'Chart', component: TBD},
       {route: 'doc_dialog', label: 'Dialog', component: DialogDoc},
       {route: 'doc_document', label: 'Document', component: DocumentDoc},
