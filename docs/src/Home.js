@@ -29,8 +29,8 @@ var Home = React.createClass({
           <h1 className="home__title">Grommet</h1>
           <h3>The most advanced UI framework for enterprise applications.</h3>
           <Menu direction="right">
-            <span>Grab the Grommet <a>Sticker Sheet</a></span>
-            <span>Check out Grommet on <a>GitHub</a></span>
+            <span>Grab the Grommet <a href="/assets/grommet_sticker_sheet.ai" target="_blank">Sticker Sheet</a></span>
+            <span>Check out Grommet on <a href="https://github.com/HewlettPackard/grommet" target="_blank">GitHub</a></span>
           </Menu>
           <Link key="request-access" to="request access"
             className="button primary call-to-action home__request-access">
@@ -44,7 +44,7 @@ var Home = React.createClass({
             from phones to desktops, and everything in between.</h3>
           <Menu direction="left" colored={true}>
             <Link to="style guide" className="button">Start Designing</Link>
-            <Link to="doc_getstarted" className="button">Start your Project</Link>
+            <Link to="doc_helloworld" className="button">Start your Project</Link>
           </Menu>
         </Section>
 
@@ -90,35 +90,36 @@ var Home = React.createClass({
             PSDs, and more. Simply click the app you use to get started.</h4>
           <Tiles>
             <Tile>
-              <img src="img/Adobe_Illustrator.svg" alt="Adobe Illustrator" />
+              <img src="img/Adobe_Illustrator.svg" title="Adobe Illustrator" />
               <p>Adobe Illustrator</p>
             </Tile>
             <Tile>
-              <img src="img/Adobe_Photoshop.svg" alt="Adobe Photoshop" />
+              <img src="img/Adobe_Photoshop.svg" title="Adobe Photoshop" />
               <p>Adobe Photoshop</p>
             </Tile>
             <Tile>
-              <img src="img/Axure.png" alt="Axure" />
+              <img src="img/Axure.png" title="Axure" />
               <p>Axure</p>
             </Tile>
             <Tile>
-              <img src="img/Balsamiq.png" alt="Balsamiq" />
+              <img src="img/Balsamiq.png" title="Balsamiq" />
               <p>Balsamiq</p>
             </Tile>
             <Tile>
-              <img src="img/Sketch.png" alt="Sketch" />
+              <img src="img/Sketch.png" title="Sketch" />
               <p>Sketch</p>
             </Tile>
           </Tiles>
         </Section>
 
         <Section className="home__develop" direction="right" colorIndex={1}>
-          <img src="img/Console.svg" alt="Console" />
+          <img src="img/Console.svg" title="Console" />
           <div>
             <h2>Quick Develop</h2>
             <p>The easiest way to learn a new framework is by writing a simple
               application on top of it. Grommet depends on Node and NPM.
-              It's installed globally using NPM.</p>
+              It&#39;s installed globally using NPM.
+            </p>
             <pre className="home__commands"><code>
               {"$ npm install -g grommet\n$ grommet init myNewApp"}
             </code></pre>
@@ -131,28 +132,28 @@ var Home = React.createClass({
             easy-to-use solution.</h4>
           <Tiles small={true}>
             <Tile>
-              <img src="img/HTML5.svg" alt="HTML5" />
+              <img src="img/HTML5.svg" title="HTML5" />
             </Tile>
             <Tile>
-              <img src="img/CSS3.svg" alt="CSS3" />
+              <img src="img/CSS3.svg" title="CSS3" />
             </Tile>
             <Tile>
-              <img src="img/NodeJS.png" alt="NodeJS" />
+              <img src="img/NodeJS.png" title="NodeJS" />
             </Tile>
             <Tile>
-              <img src="img/InuitCSS.png" alt="InuitCSS" />
+              <img src="img/InuitCSS.png" title="InuitCSS" />
             </Tile>
             <Tile>
-              <img src="img/reactjs.png" alt="ReactJS" />
+              <img src="img/reactjs.png" title="ReactJS" />
             </Tile>
             <Tile>
-              <img src="img/gulp.png" alt="Gulp" />
+              <img src="img/gulp.png" title="Gulp" />
             </Tile>
             <Tile>
-              <img src="img/webpack.png" alt="Webpack" />
+              <img src="img/webpack.png" title="Webpack" />
             </Tile>
             <Tile>
-              <img src="img/GitHub.png" alt="GitHub" />
+              <img src="img/GitHub.png" title="GitHub" />
             </Tile>
           </Tiles>
         </Section>
