@@ -122,6 +122,21 @@ $step-duration: 0.7s;
         stroke-linecap: butt;
       }
     }
+
+    .status-error {
+      fill: map-get($brand-status-colors, error);
+      stroke: map-get($brand-status-colors, error);
+    }
+
+    .status-warning {
+      fill: map-get($brand-status-colors, warning);
+      stroke: map-get($brand-status-colors, warning);
+    }
+
+    .status-ok {
+      fill: map-get($brand-status-colors, ok);
+      stroke: map-get($brand-status-colors, ok);
+    }
   }
 }
 
@@ -255,13 +270,13 @@ $step-duration: 0.7s;
 
 @include keyframes(reveal-code) {
   0% {
-    opacity: 1;
+    opacity: 0.8;
     -webkit-transform: translateY(480px);
     transform: translateY(480px);
   }
 
   100% {
-    opacity: 1;
+    opacity: 0.8;
     -webkit-transform: translateY(0px);
     transform: translateY(0px);
   }

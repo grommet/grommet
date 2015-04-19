@@ -63,7 +63,7 @@ var ProcessAnimation = React.createClass({
                 </g>
               </g>
               <g className="process-animation__code">
-                <rect opacity="0.8" fill="#000000" x="0" y="0" width="720" height="480"></rect>
+                <rect opacity="1" fill="#000000" x="0" y="0" width="720" height="480"></rect>
                 <text fontFamily="Source Sans Pro" fontSize="20" fontWeight="normal" fill="#CCCCCC">
                   <tspan x="24" y="44">&lt;Grommet.App&gt;</tspan>
                   <tspan x="24" y="69">	   &lt;Header&gt;</tspan>
@@ -98,21 +98,21 @@ var ProcessAnimation = React.createClass({
                     <tspan x="21" y="116">Don’t forget your anniversary in two </tspan>
                     <tspan x="21" y="136">weeks.</tspan>
                   </text>
-                  <g id="status-sm-critical" transform="translate(0.000000, 7.000000)" fill="#DC462F">
+                  <g className="status-error" transform="translate(0.000000, 7.000000)" fill="#DC462F">
                     <circle id="Oval" cx="4" cy="4" r="4"></circle>
                   </g>
-                  <g id="status-sm-normal" transform="translate(0.000000, 47.000000)" fill="#43A547">
+                  <g className="status-normal" transform="translate(0.000000, 47.000000)" fill="#43A547">
                     <rect id="Rectangle-path" x="0" y="0" width="8" height="8"></rect>
                   </g>
-                  <g id="status-sm-warning" transform="translate(0.000000, 107.000000)" fill="#F3B51D">
+                  <g className="status-warning" transform="translate(0.000000, 107.000000)" fill="#F3B51D">
                     <path d="M0,9 L5,0 L10,9 L0,9 Z" id="Shape"></path>
                   </g>
                 </g>
                 <g className="final-donut" transform="translate(122.000000, 209.000000)">
                   <g id="Group">
-                    <path d="M92.1338481,0.778554501 C88.4452163,0.260151111 84.7248821,0 81,0" stroke="#DC442F" strokeWidth="40"></path>
-                    <path d="M116.069692,8.0964763 C109.365713,4.82672731 102.237397,2.5105972 94.8918542,1.21537976" id="Shape" stroke="#F4B51E" strokeWidth="20"></path>
-                    <path d="M78.2080403,0.0487338385 C38.0860059,1.44982615 5.21617473,32.3706757 1.36830413,72.3323398 C-2.47956647,112.294004 23.8863771,148.91861 63.0039157,157.949605 C102.121454,166.980601 141.874178,145.620692 155.933775,108.016591 C169.993372,70.4124893 154.004972,28.2118282 118.557725,9.36419257" id="Shape" stroke="#42A425" strokeWidth="20"></path>
+                    <path className="status-error" d="M92.1338481,0.778554501 C88.4452163,0.260151111 84.7248821,0 81,0" stroke="#DC442F" strokeWidth="40"></path>
+                    <path className="status-warning" d="M116.069692,8.0964763 C109.365713,4.82672731 102.237397,2.5105972 94.8918542,1.21537976" id="Shape" stroke="#F4B51E" strokeWidth="20"></path>
+                    <path className="status-normal"d="M78.2080403,0.0487338385 C38.0860059,1.44982615 5.21617473,32.3706757 1.36830413,72.3323398 C-2.47956647,112.294004 23.8863771,148.91861 63.0039157,157.949605 C102.121454,166.980601 141.874178,145.620692 155.933775,108.016591 C169.993372,70.4124893 154.004972,28.2118282 118.557725,9.36419257" id="Shape" stroke="#42A425" strokeWidth="20"></path>
                   </g>
                   <text id="2" fontFamily="Source Sans Pro" fontSize="72" fontWeight="normal" lineSpacing="89" fill="#000000">
                     <tspan x="64" y="93">2</tspan>
