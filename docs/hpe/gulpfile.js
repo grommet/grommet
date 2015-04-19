@@ -20,6 +20,10 @@ var opts = {
       dist: 'docs/dist/hpe/img/'
     },
     {
+      asset: 'docs/src/documentation/img/**',
+      dist: 'docs/dist/hpe/img/'
+    },
+    {
       asset: 'src/scss/hpe/font/**',
       dist: 'docs/dist/hpe/font/'
     }

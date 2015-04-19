@@ -32,7 +32,7 @@ var opts = {
   sync: {
     hostname: 'ligo.usa.hp.com',
     username: 'ligo',
-    remoteDestination: '/var/www/html/doc'
+    remoteDestination: '/var/www/html/docs'
   },
   webpack: {
     resolve: {

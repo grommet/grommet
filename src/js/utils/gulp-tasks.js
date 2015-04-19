@@ -113,11 +113,6 @@ module.exports = function(gulp, opts) {
   gulp.task('dist', ['preprocess', 'dist-preprocess'], function() {
     var config = assign({}, webpackConfig, options.webpack, {
       plugins: [
-        new webpack.optimize.UglifyJsPlugin({
-          compress: {
-            warnings: false
-          }
-        }),
         new webpack.optimize.DedupePlugin(),
         new webpack.DefinePlugin(options.env || {})
       ]
