@@ -49,6 +49,16 @@
     }
   }
 
+  a.home__request-access {
+    position: relative;
+    top: round($inuit-base-spacing-unit * 4);
+    display: block;
+
+    @include media-query(lap-and-up) {
+      display: none;
+    }
+  }
+
   &__scale.section {
     padding-bottom: round($inuit-base-spacing-unit * 6);
   }
@@ -112,9 +122,17 @@
   }
 }
 
-.docs__footer {
-  h3 {
-    @include inuit-font-size(24px);
-    font-weight: 100;
+.docs {
+  a.docs__header-request-access {
+    @include media-query(palm) {
+      display: none;
+    }
+  }
+
+  &__footer {
+    h3 {
+      @include inuit-font-size(24px);
+      font-weight: 100;
+    }
   }
 }

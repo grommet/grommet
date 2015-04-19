@@ -182,6 +182,7 @@
 .menu__layer {
 
   &--left {
+    text-align: right;
 
     > * {
       display: inline-block;
@@ -189,9 +190,6 @@
   }
 
   &--right {
-
-    text-align: right;
-
     > * {
       display: inline-block;
     }

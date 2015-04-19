@@ -28,10 +28,14 @@ var Home = React.createClass({
           <Logo className="home__logo" />
           <h1 className="home__title">Grommet</h1>
           <h3>The most advanced UI framework for enterprise applications.</h3>
-          <Menu direction="left">
+          <Menu direction="right">
             <span>Grab the Grommet <a>Sticker Sheet</a></span>
             <span>Check out Grommet on <a>GitHub</a></span>
           </Menu>
+          <Link key="request-access" to="request access"
+            className="button primary call-to-action home__request-access">
+            Request Access
+          </Link>
         </Section>
 
         <Section className="home__scale" centered={true} colorIndex={1}>

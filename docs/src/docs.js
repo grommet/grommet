@@ -26,8 +26,8 @@ var Docs = React.createClass({
     var genericThemeClasses = !__THEME__.hpe ? 'active' : '';
 
     return (
-      <App>
-        <Header primary={true}>
+      <App className="docs">
+        <Header primary={true} className="docs__header">
           <Title>
             <Link to="docs">
               <Logo />
@@ -45,7 +45,7 @@ var Docs = React.createClass({
               <Label text="Downloads" />
             </Link>
             <Link key="request-access" to="request access"
-              className="button primary call-to-action">
+              className="button primary call-to-action docs__header-request-access">
               <Label text="Request access" />
             </Link>
           </Menu>

@@ -17,6 +17,9 @@ var App = React.createClass({
     if (this.props.centered) {
       classes.push("app--centered");
     }
+    if (this.props.className) {
+      classes.push(this.props.className);
+    }
     return (
       <div className={classes.join(' ')}>
         {this.props.children}
