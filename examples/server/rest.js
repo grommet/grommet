@@ -7,6 +7,8 @@ var data = require('./data');
 var generator = require('./generator');
 var filter = require('./filter');
 var map = require('./map');
+var nodemailer = require('nodemailer');
+var smtpTransport = require('nodemailer-smtp-transport');
 
 generator.generate();
 
@@ -24,6 +26,50 @@ router.post('/login-sessions', function (req, res) {
 
 router.delete('/login-sessions', function (req, res) {
   res.json(null);
+});
+
+function handleEmailResponse(error, info) {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log('Message sent: ' + info.response);
+  }
+}
+
+router.post('/request-access', function(req, res) {
+
+  var data = req.body;
+
+  if (!data.name || !data.email || !data.businessPurpose) {
+    res.status(400).send({
+      message: "Invalid payload.",
+      recommendedActions: "Enter name, email, and businessPurpose and try again."
+    });
+  }
+
+  var transport = nodemailer.createTransport(smtpTransport({
+    host: 'path/to/smtp',
+    port: 25
+  }));
+
+  var toGrommetConfig = {
+    from: data.email, 
+    to: 'uxgroup@hp.com', 
+    subject: 'Evaluate access to ' + data.email,
+    text: data.name + ' with this email: '+ data.email + ' want to access Grommet for this reason: '+ data.businessPurpose
+  };
+
+  var toRequesterConfig = {
+    from: 'grommet@hp.com', 
+    to: data.email, 
+    subject: 'Welcome to Grommet!',
+    text: 'Thanks for signing-up for early access to Grommet. We are going evaluate your request and will get back to you soon.'
+  };
+
+  transport.sendMail(toGrommetConfig, handleEmailResponse);
+  transport.sendMail(toRequesterConfig, handleEmailResponse);
+
+  res.sendStatus(200);
 });
 
 router.get('/index/resources/aggregated', function (req, res) {
@@ -49,7 +95,7 @@ router.get('/index/resources/aggregated', function (req, res) {
 
   members.some(function (resource) {
     result.forEach(function (attributeResult) {
-      var value = undefined;
+      var value;
       if (resource.hasOwnProperty(attributeResult.attribute)) {
         value = resource[attributeResult.attribute];
       } else if (resource.attributes &&
@@ -94,7 +140,6 @@ router.get('/index/resources', function (req, res) {
 
   var startIndex = req.query.start;
   if (req.query.referenceUri) {
-    var referenceIndex = 0;
     members.some(function (member, index) {
       if (req.query.referenceUri === member.uri) {
         startIndex = Math.max(index - 3, 0);
@@ -169,13 +214,6 @@ router.post('/:categoryName', function (req, res) {
   }, 10000);
 
   res.json({taskUri: task.uri});
-});
-
-router.post('/request-access', function (req, res) {
-  
-  console.log(req.body);
-  
-  res.sendStatus(200);
 });
 
 module.exports = router;

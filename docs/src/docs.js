@@ -44,7 +44,7 @@ var Docs = React.createClass({
             <Link key="downloads" to="downloads">
               <Label text="Downloads" />
             </Link>
-            <Link key="request-access" to="request access"
+            <Link key="request-access" to="request_access"
               className="button primary call-to-action docs__header-request-access">
               <Label text="Request access" />
             </Link>
@@ -73,7 +73,7 @@ var Docs = React.createClass({
 var routes = (
   <Route name="docs" path="/" handler={Docs}>
     <Route name="home" path="/" handler={Home}>
-      <Route name="request access" handler={RequestAccess} />
+      <Route name="request_access" handler={RequestAccess} />
     </Route>
     {StyleGuide.routes()}
     {Documentation.routes()}

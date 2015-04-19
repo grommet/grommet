@@ -32,7 +32,7 @@ var Home = React.createClass({
             <span>Grab the Grommet <a href="/assets/grommet_sticker_sheet.ai" target="_blank">Sticker Sheet</a></span>
             <span>Check out Grommet on <a href="https://github.com/HewlettPackard/grommet" target="_blank">GitHub</a></span>
           </Menu>
-          <Link key="request-access" to="request access"
+          <Link key="request-access" to="request_access"
             className="button primary call-to-action home__request-access">
             Request Access
           </Link>

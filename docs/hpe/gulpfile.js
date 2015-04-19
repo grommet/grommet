@@ -45,6 +45,10 @@ var opts = {
     }
   },
   devServerPort: 8002,
+  devServerProxy: {
+    "/rest/*": 'http://localhost:8000'
+  },
+  nodeServerPath: 'examples/server/server.js',
   env: {
     __THEME__: {
       hpe: true

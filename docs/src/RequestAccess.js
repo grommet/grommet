@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
+var Link = require('react-router').Link;
 var Dialog = require('grommet/components/Dialog');
 var Form = require('grommet/components/Form');
 var FormField = require('grommet/components/FormField');
@@ -8,7 +9,9 @@ var Header = require('grommet/components/Header');
 var Footer = require('grommet/components/Footer');
 var Menu = require('grommet/components/Menu');
 var CloseIcon = require('grommet/components/icons/Clear');
-var Link = require('react-router').Link;
+var Status = require('grommet/components/icons/Status');
+var Actions = require('./actions/DocsActions');
+var DocsStore = require('./stores/DocsStore');
 
 var RequestAccess = React.createClass({
 
@@ -28,8 +31,14 @@ var RequestAccess = React.createClass({
     event.preventDefault();
     if (this.state.name && this.state.email && this.state.purpose) {
       this.setState({invalid: false});
-      console.log('!!! RequestAccess submit TBD');
-      this.setState({tbd: "Request access processing hasn't been wired up yet. Come back soon!"});
+      
+      var data = {
+        name: this.state.name,
+        email: this.state.email,
+        businessPurpose: this.state.purpose
+      };
+
+      Actions.requestAccess(data);      
     } else {
       this.setState({invalid: true});
     }
@@ -37,21 +46,51 @@ var RequestAccess = React.createClass({
 
   _errorMessage: function (field) {
     var result = null;
-    if (this.state.invalid && ! this.state[field]) {
+    if (this.state.invalid && !this.state[field]) {
       result = 'required';
     }
     return result;
+  },
+
+  _onChange: function() {
+    var state = this.getInitialState();
+    if (DocsStore.requestAccessError()) {
+      state.response = {
+        status: 'error',
+        msg: 'An unexpected error occured. Try again later.'
+      };
+    } else {
+      state.response = {
+        status: 'ok',
+        msg: 'Request for access has been sucessfully sent.'
+      };
+    }
+    
+    this.setState(state);
   },
 
   getInitialState: function () {
     return {name: '', email: '', purpose: '', invalid: false};
   },
 
+  componentDidMount: function() {
+    DocsStore.addChangeListener(this._onChange);
+  },
+
+  componentWillUnmount: function() {
+    DocsStore.removeChangeListener(this._onChange);
+  },
+
   render: function() {
 
-    var tbd = null;
-    if (this.state.tbd) {
-      tbd = (<p className="error">{this.state.tbd}</p>);
+    var msg = null;
+    if (this.state.response) {
+      msg = (
+        <p>
+          <Status value={this.state.response.status} />
+          {this.state.response.msg}
+        </p>
+      );
     }
     return (
       <Dialog compact={true}>
@@ -68,16 +107,16 @@ var RequestAccess = React.createClass({
           </Header>
           <div>
             <h3>Grommet is almost ready for primetime!</h3>
-            <p>We'll make sure you're the first to know when Grommet goes live.</p>
+            <p>We&#39;ll make sure you&#39;re the first to know when Grommet goes live.</p>
             <fieldset>
               <FormField error={this._errorMessage('name')}>
-                <label htmlFor="name">What's your name?</label>
+                <label htmlFor="name">What&#39;s your name?</label>
                 <input id="name" type="text"
                   value={this.state.name}
                   onChange={this._onNameChange} />
               </FormField>
               <FormField error={this._errorMessage('email')}>
-                <label htmlFor="email">What's your email address?</label>
+                <label htmlFor="email">What&#39;s your email address?</label>
                 <input ref="email" id="email" type="email"
                   value={this.state.email}
                   onChange={this._onEmailChange} />
@@ -91,12 +130,9 @@ var RequestAccess = React.createClass({
             </fieldset>
           </div>
           <Footer>
-            <span>
-              <input type="submit" className="primary" value="Notify me"
+            <input type="submit" className="primary" value="Notify me"
                 onClick={this._onSubmit} />
-              {tbd}
-            </span>
-            <span></span>
+            {msg}
           </Footer>
         </Form>
       </Dialog>

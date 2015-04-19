@@ -157,7 +157,8 @@ function buildMembers (categoryName, count) {
       category: categoryName,
       created: date.toISOString(),
       modified: date.toISOString()
-    }
+    };
+
     if (! category.noStatus) {
       resource.status = distribute([['Warning', 7], ['Critical', 19], 'OK']);
     }
@@ -189,7 +190,7 @@ function buildMembers (categoryName, count) {
 
     // ensure alerts for non-OK resources
     if (resource.status && 'OK' !== resource.status) {
-      var alerts = SCHEMA['alerts'];
+      var alerts = SCHEMA.alerts;
       var alert = {
         name: alerts.names[i % alerts.names.length],
         state: 'Active',
@@ -203,7 +204,8 @@ function buildMembers (categoryName, count) {
           associatedResourceUri: resource.uri,
           associatedResourceName: resource.name
         }
-      }
+      };
+
       data.addResource('alerts', alert);
     }
 
@@ -264,7 +266,7 @@ function createAssociations() {
   for (var categoryName in SCHEMA) {
     if (SCHEMA.hasOwnProperty(categoryName)) {
 
-      category = SCHEMA[categoryName];
+      var category = SCHEMA[categoryName];
       if (category.hasOwnProperty('associations')) {
 
         for (var name in category.associations) {

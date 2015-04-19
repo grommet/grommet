@@ -62,7 +62,10 @@ var Data = {
 
   addResource: function (categoryName, resource) {
     _resources[resource.uri] = resource;
-    _categories[categoryName].push(resource);
+    if (_categories[categoryName]) {
+      _categories[categoryName].push(resource);  
+    }
+    
   },
 
   addAssociation: function (name, parentUri, childUri) {
