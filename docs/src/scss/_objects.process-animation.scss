@@ -25,6 +25,10 @@ $step-duration: 0.7s;
     }
   }
 
+  &__drawing {
+    display: block;
+  }
+
   &__grid {
     &-columns path {
       stroke-dasharray: 480px 480px;
