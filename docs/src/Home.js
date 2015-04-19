@@ -44,7 +44,7 @@ var Home = React.createClass({
             from phones to desktops, and everything in between.</h3>
           <Menu direction="left" colored={true}>
             <Link to="style guide" className="button">Start Designing</Link>
-            <Link to="doc_helloworld" className="button">Start your Project</Link>
+            <Link to="doc_getstarted" className="button">Start your Project</Link>
           </Menu>
         </Section>
 
