@@ -27,6 +27,7 @@ var SearchDoc = require('./components/SearchDoc');
 var TableDoc = require('./components/TableDoc');
 var TilesDoc = require('./components/TilesDoc');
 var AppDoc = require('./components/AppDoc');
+var TitleDoc = require('./components/TitleDoc');
 
 //hjjs configuration
 require("!style!css!highlight.js/styles/github.css");
@@ -56,13 +57,14 @@ var CONTENTS = [
   {label: 'Components',
     contents: [
       {route: 'doc_app', label: 'App', component: AppDoc},
+      {route: 'doc_header', label: 'Header', component: HeaderDoc},
+      {route: 'doc_footer', label: 'Footer', component: FooterDoc},
+      {route: 'doc_title', label: 'Title', component: TitleDoc},
       {route: 'doc_chart', label: 'Chart', component: TBD},
       {route: 'doc_dialog', label: 'Dialog', component: DialogDoc},
       {route: 'doc_document', label: 'Document', component: DocumentDoc},
       {route: 'doc_donut', label: 'Donut', component: DonutDoc},
-      {route: 'doc_footer', label: 'Footer', component: FooterDoc},
       {route: 'doc_form', label: 'Form', component: FormDoc},
-      {route: 'doc_header', label: 'Header', component: HeaderDoc},
       {route: 'doc_login-form', label: 'LoginForm', component: LoginFormDoc},
       {route: 'doc_menu', label: 'Menu', component: MenuDoc},
       {route: 'doc_meter', label: 'Meter', component: MeterDoc},
