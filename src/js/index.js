@@ -28,6 +28,7 @@ var Grommet = {
   Search: require('./components/Search'),
   SearchCombo: require('./components/SearchCombo'),
   Section: require('./components/Section'),
+  Table: require('./components/Table'),
   Tiles: require('./components/Tiles'),
   Tile: require('./components/Tile'),
   Title: require('./components/Title'),

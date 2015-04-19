@@ -6,6 +6,7 @@ var FormField = require('grommet/components/FormField');
 var Header = require('grommet/components/Header');
 var Menu = require('grommet/components/Menu');
 var HelpIcon = require('grommet/components/icons/Help');
+var Table = require('grommet/components/Table');
 var Footer = require('grommet/components/Footer');
 
 var FullForm = React.createClass({
@@ -13,15 +14,6 @@ var FullForm = React.createClass({
   propTypes: {
     onCancel: React.PropTypes.func,
     onSubmit: React.PropTypes.func
-  },
-
-  _clickRow: function (event) {
-    var table = this.refs.table.getDOMNode();
-    var rows = table.querySelectorAll('tr');
-    for (var i = 0; i < rows.length; i++) {
-      rows[i].classList.remove('selected');
-    }
-    event.currentTarget.classList.add('selected');
   },
 
   _onChangeRange: function (event) {
@@ -82,22 +74,22 @@ var FullForm = React.createClass({
           </FormField>
           <FormField>
             <label htmlFor="item7">Item 7</label>
-            <table ref="table" className="selectable">
+            <Table ref="table" selectable={true} defaultSelection={0}>
               <tbody>
-                <tr className="selected" onClick={this._clickRow}>
+                <tr>
                   <td>first</td>
                   <td>123</td>
                 </tr>
-                <tr onClick={this._clickRow}>
+                <tr>
                   <td>second</td>
                   <td>456</td>
                 </tr>
-                <tr onClick={this._clickRow}>
+                <tr>
                   <td>third</td>
                   <td>789</td>
                 </tr>
               </tbody>
-            </table>
+            </Table>
           </FormField>
           <FormField>
             <label htmlFor="item8">Item 8</label>

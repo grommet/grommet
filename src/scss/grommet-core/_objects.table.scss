@@ -1,16 +1,17 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-table {
-  &.selectable {
+.table {
+
+  td,
+  th {
+    padding: quarter($inuit-base-spacing-unit) halve($inuit-base-spacing-unit);
+  }
+  &--selectable {
     tbody {
       tr {
         cursor: pointer;
 
-        td {
-          padding: quarter($inuit-base-spacing-unit) halve($inuit-base-spacing-unit);
-        }
-
-        &.selected {
+        &.table__row--selected {
           td {
             background-color: $selected-background-color;
           }
