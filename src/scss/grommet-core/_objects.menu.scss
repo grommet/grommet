@@ -16,34 +16,11 @@
     }
   }
 
-  &--small {
-    @include inuit-font-size($inuit-base-font-size);
-
-    .menu__control {
-
-      &-drop-icon {
-        margin-left: halve(halve($inuit-base-spacing-unit));
-      }
-
-      &-icon {
-        svg {
-          width: halve($inuit-base-spacing-unit) + quarter($inuit-base-spacing-unit);
-          height: halve($inuit-base-spacing-unit) + quarter($inuit-base-spacing-unit);
-        }
-      }
-    }
-  }
-
   &:focus {
     outline: none;
     margin: -1px;
     border: 1px solid $focus-border-color;
     box-shadow: 0 0 1px 1px $focus-border-color;
-  }
-
-  &--controlled {
-    display: inline-block;
-    cursor: pointer;
   }
 
   &__control {
@@ -102,6 +79,11 @@
         background-color: $hover-background-color;
       }
     }
+  }
+
+  &--controlled {
+    display: inline-block;
+    cursor: pointer;
   }
 
   &--inline {
@@ -176,6 +158,24 @@
       }
     }
   }
+
+  &--small {
+    @include inuit-font-size($inuit-base-font-size);
+
+    .menu__control {
+
+      &-drop-icon {
+        margin-left: halve(halve($inuit-base-spacing-unit));
+      }
+
+      &-icon {
+        svg {
+          width: halve($inuit-base-spacing-unit) + quarter($inuit-base-spacing-unit);
+          height: halve($inuit-base-spacing-unit) + quarter($inuit-base-spacing-unit);
+        }
+      }
+    }
+  }
 }
 
 .menu--inline.menu,
@@ -190,6 +190,8 @@
   }
 
   &--right {
+    text-align: left;
+
     > * {
       display: inline-block;
     }

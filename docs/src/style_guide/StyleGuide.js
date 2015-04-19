@@ -207,7 +207,6 @@ var StyleGuide = React.createClass({
         <Footer scrollTop={true}>
           <Menu></Menu>
           <Menu className="flex-1" direction="left">{next}</Menu>
-          <span></span>
         </Footer>
       </div>
     );
