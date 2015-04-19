@@ -15,6 +15,7 @@ var Tutorial = require('./Tutorial');
 var GetStarted = require('./GetStarted');
 var Architecture = require('./Architecture');
 var DialogDoc = require('./components/DialogDoc');
+var DocumentDoc = require('./components/DocumentDoc');
 var DonutDoc = require('./components/DonutDoc');
 var FooterDoc = require('./components/FooterDoc');
 var FormDoc = require('./components/FormDoc');
@@ -52,7 +53,7 @@ var CONTENTS = [
     contents: [
       {route: 'doc_chart', label: 'Chart', component: TBD},
       {route: 'doc_dialog', label: 'Dialog', component: DialogDoc},
-      {route: 'doc_document', label: 'Document', component: TBD},
+      {route: 'doc_document', label: 'Document', component: DocumentDoc},
       {route: 'doc_donut', label: 'Donut', component: DonutDoc},
       {route: 'doc_footer', label: 'Footer', component: FooterDoc},
       {route: 'doc_form', label: 'Form', component: FormDoc},
