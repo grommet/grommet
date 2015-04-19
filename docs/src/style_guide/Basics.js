@@ -142,8 +142,11 @@ var BasicsSection = React.createClass({
     such as headings, subheadings, login screens and titles. For the remaining
     body copy, tables, labels, values, and so on, the Arial font is used. The
     typographic scale and styles can be found in the attached assets.</p>
-    <div className="font-sample primary">Primary font sample</div>
-    <div className="font-sample base">Basic font sample</div>
+    <div className="font-sample h1">H1 font sample</div>
+    <div className="font-sample h2">H2 font sample</div>
+    <div className="font-sample h3">H3 font sample</div>
+    <div className="font-sample h4">H4 font sample</div>
+    <div className="font-sample h5">H5 font sample</div>
 
     <h3 id="writing-style">Writing Style</h3>
     <p>Applications should use a conversational tone and should not include
