@@ -31,7 +31,11 @@ $scale-background-color-top: rgba($scale-background-color, 0.85);
 
   &__introduction.section {
     background-image: radial-gradient(#ffffff, #f2f2f2);
-    padding-bottom: round($inuit-base-spacing-unit * 6);
+    padding-bottom: 0px; //round($inuit-base-spacing-unit * 2);
+
+    h3 {
+      margin-bottom: 0px;
+    }
 
     a {
       color: $text-color;
@@ -43,16 +47,17 @@ $scale-background-color-top: rgba($scale-background-color, 0.85);
     }
 
     @include media-query(palm) {
-      .menu > * {
-        margin-left: 0px;
+      .menu {
+        display: none;
       }
     }
   }
 
   a.home__request-access {
     position: relative;
-    top: round($inuit-base-spacing-unit * 4);
+    //top: round($inuit-base-spacing-unit * 4);
     display: block;
+    color: $colored-text-color;
 
     @include media-query(lap-and-up) {
       display: none;

@@ -34,6 +34,7 @@ var Home = React.createClass({
               </a>
             </span>
           </Menu>
+          <img className="hpe-logo" src="img/hpesm_sec_grn_pos_rgb.svg" alt="Hewlett Packard Enterprise logo" />
           <Link key="request-access" to="request_access"
             className="button primary call-to-action home__request-access">
             Request Access
