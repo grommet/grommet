@@ -47,7 +47,7 @@ var PatternsSection = React.createClass({
 
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In diam risus,
     fermentum at nisl pellentesque, iaculis mattis nisl. Duis dapibus.
-    <a href="#/styleguide/login">Read more</a></p>
+    <a href="login">Read more</a></p>
 
     <div className="example">
       <LoginForm rememberMe={true} forgotPassword={<a>Forgot password?</a>} />
@@ -60,7 +60,7 @@ var PatternsSection = React.createClass({
 
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In diam risus,
     fermentum at nisl pellentesque, iaculis mattis nisl. Duis dapibus.
-    <a href="#/styleguide/header">Read more</a></p>
+    <a href="header">Read more</a></p>
 
     <div className="example">
       <Header>
@@ -78,7 +78,7 @@ var PatternsSection = React.createClass({
 
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In diam risus,
     fermentum at nisl pellentesque, iaculis mattis nisl. Duis dapibus.
-    <a href="#/styleguide/dashboard">Read more</a></p>
+    <a href="dashboard">Read more</a></p>
 
     <div className="example">
       <Donut series={genericSeries} />
@@ -92,7 +92,7 @@ var PatternsSection = React.createClass({
 
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In diam risus,
     fermentum at nisl pellentesque, iaculis mattis nisl. Duis dapibus.
-    <a href="#/styleguide/search">Read more</a></p>
+    <a href="search">Read more</a></p>
 
     <div className="example">
       <Header>
