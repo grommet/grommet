@@ -64,7 +64,7 @@ var ProcessAnimation = React.createClass({
               </g>
               <g className="process-animation__code">
                 <rect opacity="1" fill="#000000" x="0" y="0" width="720" height="480"></rect>
-                <text fontFamily="Source Sans Pro" fontSize="20" fontWeight="normal" fill="#CCCCCC">
+                <text fontSize="20" fontWeight="normal" fill="#CCCCCC">
                   <tspan x="24" y="44">&lt;Grommet.App&gt;</tspan>
                   <tspan x="24" y="69">	   &lt;Header&gt;</tspan>
                   <tspan x="24" y="94">		     &lt;h1&gt;My Application&lt;/h1&gt;</tspan>
@@ -85,11 +85,11 @@ var ProcessAnimation = React.createClass({
               </g>
               <g className="process-animation__final" >
                 <rect id="Rectangle-5" fill="#FFFFFF" x="0" y="0" width="720" height="480"></rect>
-                <text id="My-Application" fontFamily="Source Sans Pro" fontSize="48" fontWeight="526" fill="#000000">
+                <text id="My-Application" fontSize="48" fontWeight="526" fill="#000000">
                   <tspan x="49" y="75">My Application</tspan>
                 </text>
                 <g className="final-text" transform="translate(410.000000, 194.000000)">
-                  <text id="The-coffee-pot-needs" fontFamily="Source Sans Pro" fontSize="16" fontWeight="normal" fill="#000000">
+                  <text id="The-coffee-pot-needs" fontSize="16" fontWeight="normal" fill="#000000">
                     <tspan x="21" y="16">The coffee pot needs to be cleaned.</tspan>
                     <tspan x="21" y="36"></tspan>
                     <tspan x="21" y="56">It’s going to be a sunny day </tspan>
@@ -114,7 +114,7 @@ var ProcessAnimation = React.createClass({
                     <path className="status-warning" d="M116.069692,8.0964763 C109.365713,4.82672731 102.237397,2.5105972 94.8918542,1.21537976" id="Shape" stroke="#F4B51E" strokeWidth="20"></path>
                     <path className="status-normal"d="M78.2080403,0.0487338385 C38.0860059,1.44982615 5.21617473,32.3706757 1.36830413,72.3323398 C-2.47956647,112.294004 23.8863771,148.91861 63.0039157,157.949605 C102.121454,166.980601 141.874178,145.620692 155.933775,108.016591 C169.993372,70.4124893 154.004972,28.2118282 118.557725,9.36419257" id="Shape" stroke="#42A425" strokeWidth="20"></path>
                   </g>
-                  <text id="2" fontFamily="Source Sans Pro" fontSize="72" fontWeight="normal" lineSpacing="89" fill="#000000">
+                  <text id="2" fontSize="72" fontWeight="normal" lineSpacing="89" fill="#000000">
                     <tspan x="64" y="93">2</tspan>
                     <tspan x="60" y="122" fontSize="16" lineSpacing="16">errors</tspan>
                   </text>

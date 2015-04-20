@@ -34,7 +34,7 @@ var webpackConfig = {
       },
       {
         test: /\.woff$/,
-        loader: 'file-loader&minetype=application/font-woff'
+        loader: 'file-loader?mimetype=application/font-woff'
       },
       {
         test: /\.scss$/,
