@@ -5,7 +5,7 @@ var chug = require('gulp-chug');
 
 var opts = {
   base: '../',
-  dist: 'docs/dist/',
+  dist: path.resolve(__dirname, '../docs/dist'),
   copyAssets: [
     'docs/src/index.html',
     {

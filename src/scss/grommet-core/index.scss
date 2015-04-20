@@ -2,16 +2,16 @@
 
 // Settings
 @import "inuit-defaults/settings.defaults";
-@import "grommet-core/settings.defaults";
-@import "grommet-core/settings.color";
+@import "settings.defaults";
+@import "settings.color";
 @import "inuit-responsive-settings/settings.responsive";
 
 // Tools
 @import "inuit-functions/tools.functions";
 @import "inuit-mixins/tools.mixins";
 @import "inuit-responsive-tools/tools.responsive";
-@import "grommet-core/tools.page";
-@import "grommet-core/tools.flexible";
+@import "tools.page";
+@import "tools.flexible";
 
 // Generic
 @import "inuit-normalize/generic.normalize";
@@ -20,10 +20,10 @@
 @import "inuit-shared/generic.shared";
 
 // Base
-@import "grommet-core/base";
+@import "base";
 
 // Objects
-@import "grommet-core/objects";
+@import "objects";
 
 // Trumps
 @import "inuit-clearfix/trumps.clearfix";

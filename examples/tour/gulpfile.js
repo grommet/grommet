@@ -4,7 +4,7 @@ var devGulpTasks = require('grommet/utils/gulp-tasks');
 
 var opts = {
   base: '../../',
-  dist: 'examples/tour/dist/',
+  dist: path.resolve(__dirname, '../../examples/tour/dist/'),
   copyAssets: [
     'examples/tour/src/index.html',
     {
@@ -18,8 +18,8 @@ var opts = {
   ],
   scssAssets: ['examples/tour/src/scss/**/*.scss'],
   jsAssets: ['examples/tour/src/js/**/*.js'],
-  mainJs: './examples/tour/src/js/index.js',
-  mainScss: './examples/tour/src/scss/index.scss',
+  mainJs: 'examples/tour/src/js/index.js',
+  mainScss: 'examples/tour/src/scss/index.scss',
   remoteDestination: '/var/www/html/tour2',
   webpack: {
     resolve: {

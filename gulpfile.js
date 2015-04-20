@@ -9,9 +9,10 @@ delete packageJSON.jest;
 packageJSON.main = 'index.js';
 
 var opts = {
-  dist: 'dist/',
+  dist: path.resolve(__dirname, 'dist'),
   copyAssets: [
     'src/js/**',
+    'src/scss/**',
     'design/**',
     {
       filename: 'package.json',

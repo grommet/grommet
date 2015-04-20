@@ -15,5 +15,105 @@
         </ul>
       </p>
     </section>
+    <section>
+      <h2>Initial Structure</h2>
+      <p>
+        Additionally from Grommet, this TodoApp will use <a href="http://gulpjs.com" target="_blank">Gulp</a> as the task runner, and <a href="https://facebook.github.io/flux/" target="_blank">Flux</a> as the web application architecture layout. These frameworks are not required for Grommet to work, but we strongly recommend them for your app as they provide great features for User Interface development.
+      </p>
+      <p>
+        Also, make sure that you have Grommet available in your local environment by following instructions on the <a href="#/documentation/getstarted" target="_blank">Get Started</a> page. That said, create the following folder structure and files locally:
+      </p>
+      <pre><code class="bash">
+        {"/todo-app\n  /src\n    /actions\n    /constants\n    /components\n    /scss\n    /stores\n    index.js\n    index.html\n  gulpfile.js\n  package.json\n"}
+      </code></pre>
+      <p>
+        <ul>
+          <li><b>package.json</b>: required project descriptor for NPM. Used to describe project information and dependencies.</li>
+          <li><b>gulpfile.js</b>: describes the tasks available for the TodoApp that will be executed by Gulp.</li>
+          <li><b>src/index.js</b>: main project source file that will connect CommonJS modules containing the TodoApp features.</li>
+          <li><b>src/index.html</b>: main html to load the TodoApp single-page script.</li>
+          <li><b>src/actions</b>: possible Flux actions that can be executed in this app.</li>
+          <li><b>src/constants</b>: all constants of the TodoApp.</li>
+          <li><b>src/components</b>: all the ReactJS components used in this application.</li>
+          <li><b>src/scss</b>: Sass folder that will contain Grommet stylesheets.</li>
+          <li><b>src/stores</b>: possible Flux stores that will handle back-end communication.</li>
+        </ul>
+      </p>
+      <p>
+        Add the following code inside <i>package.json</i>:
+      </p>
+      <pre><code class="json">
+        {"{\n  \"name\": \"todo-app\",\n  \"version\": \"0.1.0\",\n  \"main\": \"src/index.js\",\n  \"description\": \"Sample TodoApp\",\n  \"dependencies\": {\n    \"object-assign\": \"^2.0.0\",\n    \"cookies-js\": \"^1.2.1\",\n    \"flux\": \"^2.0.1\",\n    \"lodash\": \"^3.2.0\",\n    \"mirrorkey\": \"^1.2.0\",\n    \"moment\": \"^2.9.0\",\n    \"react\": \"^0.13.1\",\n    \"react-gravatar\": \"^1.0.0\",\n    \"react-router\": \"^0.13.2\",\n    \"react-time\": \"^2.4.0\",\n    \"highlight.js\": \"^8.5.0\",\n    \"superagent\": \"^1.1.0\",\n    \"inuit-responsive-settings\": \"~0.1.2\",\n    \"inuit-responsive-tools\": \"~0.1.1\",\n    \"inuit-headings\": \"~0.3.0\",\n    \"inuit-list-inline\": \"~0.2.2\",\n    \"inuit-list-block\": \"~0.4.2\",\n    \"inuit-list-ui\": \"~0.2.2\",\n    \"inuit-list-bare\": \"~0.3.0\",\n    \"inuit-box\": \"~0.4.4\",\n    \"inuit-pack\": \"~0.1.1\",\n    \"inuit-layout\": \"~0.2.2\",\n    \"inuit-tables\": \"~0.2.1\",\n    \"inuit-mixins\": \"~0.2.3\",\n    \"inuit-headings-trumps\": \"~0.1.2\",\n    \"inuit-defaults\": \"~0.2.1\",\n    \"inuit-responsive-widths\": \"~0.2.2\",\n    \"inuit-shared\": \"~0.1.5\",\n    \"inuit-normalize\": \"~3.0.2\",\n    \"inuit-widths\": \"0.4.2\",\n    \"inuit-spacing\": \"~0.7.0\",\n    \"inuit-print\": \"*\",\n    \"inuit-functions\": \"~0.2.0\",\n    \"inuit-media\": \"~0.4.2\",\n    \"inuit-flag\": \"~0.3.2\",\n    \"inuit-buttons\": \"~0.4.1\",\n    \"inuit-block\": \"~0.1.2\",\n    \"inuit-reset\": \"~0.1.1\",\n    \"inuit-box-sizing\": \"~0.2.0\",\n    \"inuit-paragraphs\": \"~0.1.4\",\n    \"inuit-page\": \"~0.2.1\",\n    \"inuit-lists\": \"~0.1.0\",\n    \"inuit-images\": \"~0.3.3\",\n    \"inuit-clearfix\": \"^0.2.1\",\n    \"inuit-tools-widths\": \"~0.1.0\",\n    \"inuit-responsive-spacing\": \"~0.0.2\"\n  },\n  \"devDependencies\": {\n    \"del\": \"^1.1.1\",\n    \"gulp\": \"^3.8.11\",\n    \"gulp-markdown\": \"^1.0.0\",\n    \"gulp-markdown-docs\": \"^0.1.1\",\n    \"gulp-rsync\": \"0.0.5\",\n    \"gulp-webpack\": \"^1.3.0\",\n    \"gulp-react\": \"^3.0.1\",\n    \"gulp-jshint\": \"^1.9.4\",\n    \"gulp-scss-lint\": \"^0.1.10\",\n    \"gulp-nodemon\": \"^2.0.2\",\n    \"gulp-chug\": \"^0.4.2\",\n    \"gulp-file\": \"^0.2.0\",\n    \"gulp-preprocess\": \"^1.2.0\",\n    \"gulp-watch\": \"^4.2.4\",\n    \"jest\": \"^0.1.37\",\n    \"jest-cli\": \"^0.4.0\",\n    \"jsx-loader\": \"^0.13.1\",\n    \"css-loader\": \"^0.10.1\",\n    \"sass-loader\": \"^0.4.2\",\n    \"style-loader\": \"^0.10.1\",\n    \"html-jsx-loader\": \"^0.1.4\",\n    \"imports-loader\": \"^0.6.3\",\n    \"file-loader\": \"^0.8.1\",\n    \"react-tools\": \"^0.13.1\",\n    \"run-sequence\": \"^1.0.2\",\n    \"webpack\": \"^1.7.3\",\n    \"webpack-dev-server\": \"^1.8.0\",\n    \"json5\": \"^0.4.0\",\n    \"amdefine\": \"^0.1.0\"\n  }\n}\n"}  
+      </code></pre>
+      <p>
+        Then run the following commands inside <i>todo-app</i> folder:
+      </p>
+      <pre><code class="bash">
+        npm install
+        <br/>
+        npm link grommet
+      </code></pre>
+      <p>
+        This is a Single-Page application and we need to populate <i>src/index.html</i> with the code that will load the <i>src/index.js</i> script.
+      </p>
+      <pre><code class="html">
+&lt;!DOCTYPE html&gt;<br/>&lt;html&gt;<br/>&lt;head&gt;<br/>  &lt;meta charset=&quot;UTF-8&quot;&gt;<br/>  &lt;title&gt;TodoApp&lt;/title&gt;<br/>  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, user-scalable=no&quot;&gt;<br/>  &lt;meta name=&quot;mobile-web-app-capable&quot; content=&quot;yes&quot;&gt;<br/>  &lt;link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'&gt;<br/>&lt;/head&gt;<br/>&lt;body class=&quot;loading&quot;&gt;<br/>  &lt;div id=&quot;content&quot;&gt;<br/>  &lt;/div&gt;<br/>  &lt;script src=&quot;index.js&quot;&gt;&lt;/script&gt;<br/>&lt;/body&gt;<br/>&lt;/html&gt;<br/>
+      </code></pre>
+    </section>
+    <section>
+      <h2>TodoApp Dashboard</h2>
+      <p>
+        Now that we have the structure in place it is time to start adding TodoApp code inside <i>src/index.js</i>:
+      </p>
+      <pre><code class="javascript">
+      {"require(\"!style!css!sass!./scss/index.scss\");\n\nvar React = require('react');\nvar Router = require('react-router');\nvar routes = require('./components/Routes');\n\nvar router = Router.create({routes: routes});\n\nrouter.run(function (Handler) {\n  var factory = React.createFactory(Handler);\n  var element = document.getElementById('content');\n  React.render(factory(), element);\n});"}
+      </code></pre>
+      <p>Create the <i>components/Routes.js</i> file and add the following code:</p>
+      <pre><code class="javascript">
+var React = require('react');<br/>var Route = require('react-router').Route;<br/>var DefaultRoute = require('react-router').DefaultRoute;<br/><br/>var App = require('./TodoApp');<br/>var TodoDashboard = require('./TodoDashboard');<br/><br/>var routes = (<br/>  &lt;Route name=&quot;todoapp&quot; path=&quot;/&quot; handler={'{'}App{'}'}&gt;<br/>    &lt;DefaultRoute name=&quot;dashboard&quot; handler={'{'}TodoDashboard{'}'}/&gt;<br/>  &lt;/Route&gt;<br/>);<br/><br/>module.exports = routes;<br/>
+      </code></pre>
+      <p>Create the <i>components/TodoApp.js</i> and add the following code:</p>
+      <pre><code class="javascript">
+var React = require('react');<br/>var RouteHandler = require('react-router').RouteHandler;<br/>var App = require('grommet/components/App');<br/>var Header = require('grommet/components/Header');<br/>var Title = require('grommet/components/Title');<br/>var Logo = require('./Logo');<br/><br/>var TodoApp = React.createClass({'{'}<br/><br/>  render: function() {'{'}<br/>    return (<br/>      &lt;App&gt;<br/>        &lt;Header primary={'{'}true{'}'}&gt;<br/>          &lt;Title&gt;<br/>            &lt;Logo /&gt;<br/>            TodoApp<br/>          &lt;/Title&gt;<br/>          &lt;div /&gt;<br/>        &lt;/Header&gt;<br/>        &lt;RouteHandler /&gt;<br/>      &lt;/App&gt;<br/>    );<br/>  {'}'}<br/><br/>{'}'});<br/><br/>module.exports = TodoApp;
+      </code></pre>
+      <p>Create the <i>components/TodoDashboard.js</i> and add the following code:</p>
+      <pre><code class="javascript">
+var React = require('react');<br/>var TBD = require('grommet/components/TBD');<br/><br/>var TodoDashboard = React.createClass({'{'}<br/><br/>  render: function () {'{'}<br/>    return (<br/>      &lt;TBD /&gt;<br/>    );<br/>  {'}'}<br/><br/>{'}'});<br/><br/>module.exports = TodoDashboard;
+      </code></pre>
+      <p>Create the <i>components/Logo.js</i> and add the following code:</p>
+      <pre><code class="javascript">
+var React = require('react');<br/><br/>var Logo = React.createClass({'{'}<br/><br/>  render: function() {'{'}<br/>    return (<br/>      &lt;svg enable-background=&quot;new 0 0 141.732 141.732&quot; height=&quot;47.244px&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 141.732 141.732&quot; width=&quot;47.244px&quot;&gt;<br/>        &lt;g&gt;<br/>          &lt;path fill=&quot;#0096D6&quot; d=&quot;M113.326,70.191c0-2.97-2.377-5.376-5.307-5.376H75.543V32.387v-0.001c0-2.98-2.418-5.397-5.396-5.397   c-2.98,0-5.398,2.417-5.398,5.397V70.17c0,2.981,2.418,5.398,5.398,5.398h37.875C110.949,75.568,113.326,73.161,113.326,70.191    M129.533,70.157c0,32.798-26.584,59.386-59.375,59.386c-32.793,0-59.375-26.588-59.375-59.386s26.582-59.386,59.375-59.386   C102.949,10.771,129.533,37.359,129.533,70.157 M140.314,70.157C140.314,31.41,108.904,0,70.158,0C31.41,0,0,31.41,0,70.157   s31.41,70.157,70.158,70.157C108.904,140.314,140.314,108.904,140.314,70.157&quot;/&gt;<br/>        &lt;/g&gt;<br/>      &lt;/svg&gt;<br/>    );<br/>  {'}'}<br/><br/>{'}'});<br/><br/>module.exports = Logo;
+      </code></pre>
+      <p>Create the <i>scss/index.scss</i> file and add the following code:</p>
+      <pre><code class="scss">
+@import 'grommet/grommet-core/index';
+      </code></pre>
+      <p>
+        That's it, at this point we have an initial landing page for TodoApp. Now, we need to run this project in the browser to make sure everything is looking as we expect.
+      </p>
+    </section>
+    <section>
+      <h2>Running a Dev Server</h2>
+      <p>
+        To execute this code in the browser we need to use a module bundler (e.g. <a href="http://webpack.github.io" target="_blank">Webpack</a>, <a href="http://browserify.org" target="_blank">Browserify</a>).
+        Grommet provides a set of tasks in Gulp that contain a lot of development tasks available out-of-the-box for you.
+      </p>
+      <p>
+        Add the following code to your <i>gulpfile.js</i>:
+      </p>
+      <pre><code class="javascript">
+        {"var gulp = require('gulp');\nvar path = require('path');\nvar devGulpTasks = require('grommet/utils/gulp-tasks');\n\nvar opts = {\n  dist: path.resolve(__dirname, 'dist'),\n  copyAssets: [\n    'src/index.html'\n  ],\n  scssAssets: ['src/scss/**/*.scss'],\n  jsAssets: ['src/**/*.js'],\n  mainJs: 'src/index.js',\n  mainScss: 'src/scss/index.scss',\n  webpack: {\n    resolve: {\n      root: [\n        path.resolve(__dirname, 'node_modules')\n      ]\n    }\n  },\n  devServerPort: 8010\n};\n\ndevGulpTasks(gulp, opts);\n"}
+      </code></pre>
+      <p>Inside <i>todo-app</i> root folder run the following command to start a dev server:</p>
+      <pre><code class="bash">
+        gulp dev
+      </code></pre>
+      <p>If you open <a href="http://localhost:8010/webpack-dev-server/" target="_blank">http://localhost:8010/webpack-dev-server/</a>, you should be able to see the following:
+        <img src="img/sample-todoapp.png" title="Sample of TodoApp"/>
+      </p>
+      <p>
+        This dev server has been implemented with <a href="http://webpack.github.io/docs/hot-module-replacement.html" target="_blank">Hot Module Replacement</a> enabled by default. This means that any change inside the project should refresh the browser automatically. Try changing the Title for example, you don't need to restart the server or even refresh the browser. The Dev server will detect that changes and will update the components properly. This works even for your SCSS files.
+      </p>
+    </section>
 </body>
 </html>

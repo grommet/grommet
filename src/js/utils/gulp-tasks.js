@@ -12,6 +12,7 @@ var rsync = require('gulp-rsync');
 var nodemon = require('gulp-nodemon');
 var file = require('gulp-file');
 var watch = require('gulp-watch');
+var path = require('path');
 
 var webpackConfig = {
   output: {
@@ -52,9 +53,14 @@ var webpackConfig = {
 };
 
 module.exports = function(gulp, opts) {
+
+  runSequence = runSequence.use(gulp);
+
   var options = opts || {};
 
   var dist = options.dist;
+
+  var scssLintPath = path.resolve(__dirname, 'scss-lint.yml');
 
   if (options.base) {
     process.chdir(options.base);
@@ -81,7 +87,7 @@ module.exports = function(gulp, opts) {
   gulp.task('scsslint', function() {
     (options.scssAssets || []).forEach(function(scssAsset) {
       gulp.src(scssAsset).pipe(scsslint({
-        'config': '.scss-lint.yml'
+        'config': scssLintPath
       })).pipe(scsslint.failReporter());
     });
   });
@@ -111,7 +117,7 @@ module.exports = function(gulp, opts) {
   });
 
   gulp.task('dist', ['preprocess', 'dist-preprocess'], function() {
-    var config = assign({}, webpackConfig, options.webpack, {
+    var config = assign({}, webpackConfig, options.webpack || {}, {
       plugins: [
         new webpack.optimize.UglifyJsPlugin({
             compress: {
@@ -123,7 +129,11 @@ module.exports = function(gulp, opts) {
       ]
     });
 
-    config.resolve.extensions = ['', '.js', '.json', '.htm', 'html', 'scss'];
+    if (!config.resolve) {
+      config.resolve = {};
+    }
+
+    config.resolve.extensions = ['', '.js', '.json', '.htm', '.html', '.scss'];
     return gulp.src(options.mainJs)
       .pipe(gulpWebpack(config))
       .pipe(gulp.dest(dist));
@@ -138,10 +148,10 @@ module.exports = function(gulp, opts) {
     }
 
     watch('src/**', function () {
-      gulp.src('src/js/**').pipe(gulp.dest('dist/'));
+      gulp.src('src/**').pipe(gulp.dest(dist));
     });
 
-    var devWebpackConfig = assign({}, webpackConfig, options.webpack, {
+    var devWebpackConfig = assign({}, webpackConfig, options.webpack || {}, {
       entry: {
         app: ['webpack/hot/dev-server', './' + options.mainJs],
         styles: ['webpack/hot/dev-server', './' + options.mainScss]
@@ -149,7 +159,7 @@ module.exports = function(gulp, opts) {
 
       output: {
         filename: 'index.js',
-        path: __dirname + dist
+        path: dist
       },
 
       devtool: 'inline-source-map',
@@ -161,7 +171,11 @@ module.exports = function(gulp, opts) {
 
     });
 
-    devWebpackConfig.resolve.extensions = ['', '.js', '.json', '.htm', 'html', 'scss'];
+    if (!devWebpackConfig.resolve) {
+      devWebpackConfig.resolve = {};
+    }
+
+    devWebpackConfig.resolve.extensions = ['', '.js', '.json', '.htm', '.html', '.scss'];
 
     var devServerConfig = {
       contentBase: dist,

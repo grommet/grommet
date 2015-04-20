@@ -38,6 +38,7 @@ var hljs = require('highlight.js/lib/highlight');
 hljs.registerLanguage('bash', require('highlight.js/lib/languages/bash'));
 hljs.registerLanguage('xml', require('highlight.js/lib/languages/xml'));
 hljs.registerLanguage('javascript', require('highlight.js/lib/languages/javascript'));
+hljs.registerLanguage('scss', require('highlight.js/lib/languages/scss'));
 
 var CONTENTS = [
   {label: 'Guides',

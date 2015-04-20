@@ -5,15 +5,17 @@ var RouteHandler = require('react-router').RouteHandler;
 var App = require('grommet/components/App');
 var Header = require('grommet/components/Header');
 var Title = require('grommet/components/Title');
+var Logo = require('./Logo');
 
-var HelloWorld = React.createClass({
+var TodoApp = React.createClass({
 
   render: function() {
     return (
       <App>
         <Header primary={true}>
           <Title>
-            {"<Your App Name />"}
+            <Logo />
+            TodoApp
           </Title>
           <div />
         </Header>
@@ -24,4 +26,4 @@ var HelloWorld = React.createClass({
 
 });
 
-module.exports = HelloWorld;
+module.exports = TodoApp;

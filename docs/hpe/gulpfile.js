@@ -4,7 +4,7 @@ var devGulpTasks = require('grommet/utils/gulp-tasks');
 
 var opts = {
   base: '../../',
-  dist: 'docs/dist/hpe/',
+  dist: path.resolve(__dirname, '../../docs/dist/hpe'),
   copyAssets: [
     'docs/src/index.html',
     {
