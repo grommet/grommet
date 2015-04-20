@@ -64,4 +64,10 @@ gulp.task('dist-hpe', function() {
   }));
 });
 
+gulp.task('dev-hpe', function() {
+  return gulp.src('docs/hpe/gulpfile.js').pipe(chug({
+     tasks: ['dev']
+  }));
+});
+
 devGulpTasks(gulp, opts);
