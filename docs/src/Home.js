@@ -85,7 +85,7 @@ var Home = React.createClass({
         </Section>
 
         <Section className="home__designer" centered={true}>
-          <h2>Ready for you Design Workflow.</h2>
+          <h2>Ready for your Design Workflow.</h2>
           <h4>All the resources you could possibly need! Sticker sheets, Stencils,
             PSDs, and more. Simply click the app you use to get started.</h4>
           <Tiles>
