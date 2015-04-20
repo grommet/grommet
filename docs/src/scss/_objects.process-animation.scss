@@ -16,9 +16,12 @@ $step-duration: 0.7s;
     margin: 0px auto;
     width: 720px;
     //height: 480px;
-    @include animation('fold-paper 1s ease-in-out forwards');
-    -webkit-transform-origin: bottom;
-    transform-origin: bottom;
+
+    @include media-query(lap-and-up) {
+      @include animation('fold-paper 1s ease-in-out forwards');
+      -webkit-transform-origin: bottom;
+      transform-origin: bottom;
+    }
 
     @include media-query(palm) {
       width: calc(100vw - #{double($inuit-base-spacing-unit)});
@@ -29,93 +32,98 @@ $step-duration: 0.7s;
     display: block;
   }
 
-  &__grid {
-    &-columns path {
-      stroke-dasharray: 480px 480px;
-      stroke-dashoffset: 480px;
-      opacity: 0;
-    }
-
-    &-column-1 {
-      @include animation('draw-column #{$step-duration} ease-in-out forwards');
-    }
-
-    @for $i from 2 through 17 {
-      &-column-#{$i} {
-        @include animation('draw-column #{$step-duration} 1.#{$i}s ease-in-out forwards');
-      }
-    }
-
-    &-rows path {
-      stroke-dasharray: 720px 720px;
-      stroke-dashoffset: 720px;
-      opacity: 0;
-    }
-
-    @for $i from 1 through 12 {
-      &-row-#{$i} {
-        @include animation('draw-row #{$step-duration * 2} 2.#{$i}s ease-in-out forwards');
-      }
-    }
-  }
-
-  &__rough {
-    &-header {
-      @include animation('draw-header #{$step-duration * 2} 4.1s ease-in-out forwards');
-      opacity: 0;
-    }
-
-    &-left-pane {
-      @include animation('draw-left-pane #{$step-duration * 2} 5.1s ease-in-out forwards');
-      opacity: 0;
-    }
-
-    &-right-pane {
-      @include animation('draw-right-pane #{$step-duration * 2} 6.1s ease-in-out forwards');
-      opacity: 0;
-    }
-
-    &-title {
-      stroke-dasharray: 240px 240px;
-      stroke-dashoffset: 240px;
-      @include animation('draw-title #{$step-duration} 7.1s ease-in-out forwards');
-    }
-
-    &-avatar {
-      stroke-dasharray: 152px 152px;
-      stroke-dashoffset: 152px;
-      @include animation('draw-avatar #{$step-duration} 8.1s ease-in-out forwards');
-    }
-
-    &-donut {
-      stroke-dasharray: 830px 830px;
-      stroke-dashoffset: 830px;
-      @include animation('draw-donut #{$step-duration * 2} 9.1s ease-in-out forwards');
-    }
-
-    &-text {
-      path {
-        stroke-dasharray: 264px 264px;
-        stroke-dashoffset: 264px;
+  @include media-query(lap-and-up) {
+    &__grid {
+      &-columns path {
+        stroke-dasharray: 480px 480px;
+        stroke-dashoffset: 480px;
+        opacity: 0;
       }
 
-      @for $i from 1 through 6 {
-        &-#{$i} {
-          @include animation('draw-text #{$step-duration} 11.#{$i}s ease-in-out forwards');
+      &-column-1 {
+        @include animation('draw-column #{$step-duration} ease-in-out forwards');
+      }
+
+      @for $i from 2 through 17 {
+        &-column-#{$i} {
+          @include animation('draw-column #{$step-duration} 1.#{$i}s ease-in-out forwards');
+        }
+      }
+
+      &-rows path {
+        stroke-dasharray: 720px 720px;
+        stroke-dashoffset: 720px;
+        opacity: 0;
+      }
+
+      @for $i from 1 through 12 {
+        &-row-#{$i} {
+          @include animation('draw-row #{$step-duration * 2} 2.#{$i}s ease-in-out forwards');
         }
       }
     }
-  }
 
-  &__code {
-    opacity: 0;
-    @include animation('reveal-code #{$step-duration * 6} 12.1s linear forwards');
+    &__rough {
+      &-header {
+        @include animation('draw-header #{$step-duration * 2} 4.1s ease-in-out forwards');
+        opacity: 0;
+      }
 
+      &-left-pane {
+        @include animation('draw-left-pane #{$step-duration * 2} 5.1s ease-in-out forwards');
+        opacity: 0;
+      }
+
+      &-right-pane {
+        @include animation('draw-right-pane #{$step-duration * 2} 6.1s ease-in-out forwards');
+        opacity: 0;
+      }
+
+      &-title {
+        stroke-dasharray: 240px 240px;
+        stroke-dashoffset: 240px;
+        @include animation('draw-title #{$step-duration} 7.1s ease-in-out forwards');
+      }
+
+      &-avatar {
+        stroke-dasharray: 152px 152px;
+        stroke-dashoffset: 152px;
+        @include animation('draw-avatar #{$step-duration} 8.1s ease-in-out forwards');
+      }
+
+      &-donut {
+        stroke-dasharray: 830px 830px;
+        stroke-dashoffset: 830px;
+        @include animation('draw-donut #{$step-duration * 2} 9.1s ease-in-out forwards');
+      }
+
+      &-text {
+        path {
+          stroke-dasharray: 264px 264px;
+          stroke-dashoffset: 264px;
+        }
+
+        @for $i from 1 through 6 {
+          &-#{$i} {
+            @include animation('draw-text #{$step-duration} 11.#{$i}s ease-in-out forwards');
+          }
+        }
+      }
+    }
+
+    &__code {
+      opacity: 0;
+      @include animation('reveal-code #{$step-duration * 6} 12.1s linear forwards');
+
+    }
   }
 
   &__final {
-    opacity: 0;
-    @include animation('reveal-final #{$step-duration * 4} 16.1s ease-in-out forwards');
+
+    @include media-query(lap-and-up) {
+      opacity: 0;
+      @include animation('reveal-final #{$step-duration * 4} 16.1s ease-in-out forwards');
+    }
 
     .final {
       &-donut {

@@ -8,11 +8,18 @@ $scale-background-color-top: rgba($scale-background-color, 0.85);
   &__logo {
     height: 140px;
     margin-bottom: double($inuit-base-spacing-unit);
+
+    @include media-query(palm) {
+      height: 96px;
+    }
   }
 
   &__title {
-    @include inuit-font-size(72px);
-    font-weight: 600;
+
+    @include media-query(lap-and-up) {
+      @include inuit-font-size(72px);
+      font-weight: 600;
+    }
   }
 
   h3 {
@@ -75,6 +82,18 @@ $scale-background-color-top: rgba($scale-background-color, 0.85);
       @include inuit-font-size($inuit-heading-size-3);
       padding: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit;
       color: $colored-text-color;
+    }
+
+    @include media-query(palm) {
+      .menu {
+        text-align: center;
+
+        a.button {
+          width: 100%;
+          margin-bottom: $inuit-base-spacing-unit;
+          margin-left: 0px;
+        }
+      }
     }
   }
 
