@@ -69,9 +69,11 @@ var Docs = React.createClass({
 
 });
 
+var rootPath = "/"; //window.location.pathname;
+
 var routes = (
-  <Route name="docs" path="/" handler={Docs}>
-    <Route name="home" path="/" handler={Home}>
+  <Route name="docs" path={rootPath} handler={Docs}>
+    <Route name="home" path={rootPath} handler={Home}>
       <Route name="request_access" handler={RequestAccess} />
     </Route>
     {StyleGuide.routes()}
