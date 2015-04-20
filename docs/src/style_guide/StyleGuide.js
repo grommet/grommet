@@ -95,15 +95,6 @@ var StyleGuide = React.createClass({
     router: React.PropTypes.func.isRequired
   },
 
-  _linkToNode: function (event) {
-    event.preventDefault();
-    var targetId = event.target.dataset.targetId;
-    var node = this.getDOMNode();
-    var headerHeight = document.body.querySelectorAll('.header--primary')[0].offsetHeight;
-    console.log('!!! StyleGuide', node.querySelectorAll('#'+targetId)[0], node.querySelectorAll('#'+targetId)[0].offsetTop);
-    node.parentNode.scrollTop = node.querySelectorAll('#'+targetId)[0].offsetTop - headerHeight;
-  },
-
   render: function () {
 
     this._chapterIndex = -2;
@@ -147,8 +138,7 @@ var StyleGuide = React.createClass({
         }
 
         var pageLink = page.id ?
-          <a key={page.id} data-target-id={page.id} href="#" onClick={this._linkToNode}
-            className={className}>{page.label}</a>
+          <a key={page.id} href={"#"+page.id} className={className}>{page.label}</a>
         : (
           <Link key={page.label} to={page.route} className={className}>
             {page.label}

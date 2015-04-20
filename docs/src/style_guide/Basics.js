@@ -85,7 +85,8 @@ var BasicsSection = React.createClass({
 
     return (
     <div>
-  <section id="color">
+  <section>
+    <a className="anchor" id="color"></a>
     <h2>Color</h2>
     <div className="generic-branding">
       <p>These are the generic, or un-branded, colors. It is expected that
@@ -125,7 +126,8 @@ var BasicsSection = React.createClass({
 
   </section>
 
-  <section id="text">
+  <section>
+    <a className="anchor" id="text"></a>
     <h2>Text</h2>
     <p>Text and Typography is arguably one of the most important elements of
     style to get right. Ironically, when done well the text styles and typography
@@ -135,7 +137,8 @@ var BasicsSection = React.createClass({
     aesthetics, to unclear organization of information, to physical eye strain
     can result from an application with insufficient attention to this detail.</p>
 
-    <h3 id="typography">Typography</h3>
+    <a className="anchor" id="typography"></a>
+    <h3>Typography</h3>
     <p>Applications use the <a className="generic-branding"
       href="http://www.google.com/fonts/specimen/Source+Sans+Pro">Source Sans Pro</a>
     <span className="hpe-branding">Metric</span> font.  The
@@ -146,7 +149,8 @@ var BasicsSection = React.createClass({
     <div className="font-sample h4">H4 font sample</div>
     <div className="font-sample h5">H5 font sample</div>
 
-    <h3 id="writing-style">Writing Style</h3>
+    <a className="anchor" id="writing-style"></a>
+    <h3>Writing Style</h3>
     <p>Applications should use a conversational tone and should not include
     excessive technical jargon.</p>
 
@@ -186,7 +190,8 @@ var BasicsSection = React.createClass({
       action is optional.</li>
     </ul>
 
-    <h3 id="date-time">Date and Time</h3>
+    <a className="anchor" id="date-time"></a>
+    <h3>Date and Time</h3>
     <p>Date and time formats should generally be displayed in the user’s
     local timezone.  Any exceptions to this should include the timezone being
     used to display the time and date. In addition, dates and times shall always
@@ -228,7 +233,8 @@ var BasicsSection = React.createClass({
       </li>
     </ol>
 
-    <h3 id="capitalization">Capitalization</h3>
+    <a className="anchor" id="capitalization"></a>
+    <h3>Capitalization</h3>
     <p>For the English language, we recommend using English title capitalization
     rules for titles (i.e. generally, capitalize first letter of each word). Titles
     include the following user interface elements:</p>
@@ -301,7 +307,8 @@ var BasicsSection = React.createClass({
     </ul>
   </section>
 
-  <section id="icons">
+  <section>
+    <a className="anchor" id="icons"></a>
     <h2>Icons</h2>
     <p>Icons are used for inline controls. Users should be able to identify
       an icons function without any supporting text decoration. Because of this,

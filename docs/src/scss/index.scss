@@ -9,6 +9,13 @@
   display: none;
 }
 
+a.anchor {
+  display: block;
+  height: 96px; 
+  margin-top: -96px;
+  visibility: hidden;
+}
+
 svg rect[fill="#00B388"] {
   fill: $brand-color;
 }
