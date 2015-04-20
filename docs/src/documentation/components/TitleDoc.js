@@ -7,7 +7,7 @@ var inline =
       "  ...\n" +
       "</Title>";
 
-var AppDoc = React.createClass({
+var TitleDoc = React.createClass({
   render: function() {
     return (
       <GrommetDocument>
@@ -42,4 +42,4 @@ var AppDoc = React.createClass({
   }
 });
 
-module.exports = AppDoc;
+module.exports = TitleDoc;

@@ -25,8 +25,6 @@ var AppDoc = React.createClass({
           <dl>
             <dt><code>centered  true|false</code></dt>
             <dd>Whether to centralize or not the content inside the container. Default is true.</dd>
-          </dl>
-          <dl>
             <dt><code>inline  true|false</code></dt>
             <dd>Whether to render the app relative to the container (inline) or to the browser window. Default is false.</dd>
           </dl>
