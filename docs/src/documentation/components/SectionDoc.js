@@ -38,9 +38,9 @@ var SectionDoc = React.createClass({
         <section>
           <h2>Examples</h2>
 
-          <h3>Section and Panels</h3>
-          <div className="example" direction="right">
-            <Section>
+          <h3>Section and Panels to the right</h3>
+          <div className="example">
+            <Section direction="right">
               <Panel title="Panel One">
                 <p>Sample Content One</p>
               </Panel>
@@ -50,7 +50,7 @@ var SectionDoc = React.createClass({
             </Section>
           </div>
           <pre><code className="html">
-            {"<Section>\n  <Panel title='Panel One'>\n    <p>\n      Sample Content One\n    </p>\n  </Panel>\n  <Panel title='Panel Two'>\n    <p>\n      Sample Content Two\n    </p>\n  </Panel>\n</Section>"}
+            {"<Section direction=\"right\">\n  <Panel title=\"Panel One\">\n    <p>\n      Sample Content One\n    </p>\n  </Panel>\n  <Panel title=\"Panel Two\">\n    <p>\n      Sample Content Two\n    </p>\n  </Panel>\n</Section>"}
           </code></pre>
         </section>  
       </GrommetDocument>

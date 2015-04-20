@@ -5,7 +5,7 @@ var Panel = React.createClass({
 
   propTypes: {
     direction: React.PropTypes.string,
-    index: React.PropTypes.number
+    index: React.PropTypes.oneOf([1, 2])
   },
 
   render: function() {

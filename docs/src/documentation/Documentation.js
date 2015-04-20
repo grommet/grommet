@@ -29,6 +29,7 @@ var TilesDoc = require('./components/TilesDoc');
 var AppDoc = require('./components/AppDoc');
 var TitleDoc = require('./components/TitleDoc');
 var SectionDoc = require('./components/SectionDoc');
+var PanelDoc = require('./components/PanelDoc');
 
 //hjjs configuration
 require("!style!css!highlight.js/styles/github.css");
@@ -62,6 +63,7 @@ var CONTENTS = [
       {route: 'doc_footer', label: 'Footer', component: FooterDoc},
       {route: 'doc_title', label: 'Title', component: TitleDoc},
       {route: 'doc_section', label: 'Section', component: SectionDoc},
+      {route: 'doc_panel', label: 'Panel', component: PanelDoc},
       {route: 'doc_chart', label: 'Chart', component: TBD},
       {route: 'doc_dialog', label: 'Dialog', component: DialogDoc},
       {route: 'doc_document', label: 'Document', component: DocumentDoc},
