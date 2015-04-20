@@ -63,7 +63,7 @@ $scale-background-color-top: rgba($scale-background-color, 0.85);
     padding-bottom: round($inuit-base-spacing-unit * 6);
     background-color: inherit;
     background-image: linear-gradient($scale-background-color-top,
-      #{$scale-background-color)});
+      #{$scale-background-color});
     color: $colored-text-color;
 
     a.button {
