@@ -1,9 +1,13 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
+$scale-background-color: nth($brand-accent-colors, 2);
+$scale-background-color-top: rgba($scale-background-color, 0.85);
+
 .home {
 
   &__logo {
-    height: 192px;
+    height: 140px;
+    margin-bottom: double($inuit-base-spacing-unit);
   }
 
   &__title {
@@ -11,21 +15,12 @@
     font-weight: 600;
   }
 
-  h2 {
-    @include inuit-font-size(36px);
-    font-weight: normal;
-  }
-
   h3 {
-    @include inuit-font-size(36px);
-    font-weight: 100;
     max-width: none;
     margin-bottom: double($inuit-base-spacing-unit);
   }
 
   h4 {
-    @include inuit-font-size(24px);
-    font-weight: 100;
     max-width: round($inuit-base-spacing-unit * 32);
   }
 
@@ -36,15 +31,20 @@
 
   &__introduction.section {
     background-image: radial-gradient(#ffffff, #f2f2f2);
+    padding-bottom: round($inuit-base-spacing-unit * 6);
+
+    a {
+      color: $text-color;
+      font-weight: 600;
+    }
+
+    .right-arrow {
+      height: $inuit-base-spacing-unit;
+    }
 
     @include media-query(palm) {
       .menu > * {
         margin-left: 0px;
-
-        a {
-          color: $text-color;
-          font-weight: bold;
-        }
       }
     }
   }
@@ -61,6 +61,16 @@
 
   &__scale.section {
     padding-bottom: round($inuit-base-spacing-unit * 6);
+    background-color: inherit;
+    background-image: linear-gradient($scale-background-color-top,
+      #{$scale-background-color)});
+    color: $colored-text-color;
+
+    a.button {
+      @include inuit-font-size($inuit-heading-size-3);
+      padding: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit;
+      color: $colored-text-color;
+    }
   }
 
   &__scale-graphic {

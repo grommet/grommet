@@ -5,7 +5,6 @@ var RouteHandler = Router.RouteHandler;
 var Link = Router.Link;
 var App = require('grommet/components/App');
 var Header = require('grommet/components/Header');
-var Logo = require('./img/Logo');
 var Title = require('grommet/components/Title');
 var Menu = require('grommet/components/Menu');
 var Label = require('grommet/components/Label');
@@ -30,7 +29,7 @@ var Docs = React.createClass({
         <Header primary={true} className="docs__header">
           <Title>
             <Link to="docs">
-              <Logo />
+              <img src="img/grommet.svg" title="Grommet" />
               Grommet
             </Link>
           </Title>

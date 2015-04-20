@@ -3,7 +3,7 @@
 var React = require('react');
 var LoginForm = require('grommet/components/LoginForm');
 var GrommetDocument = require('grommet/components/Document');
-var Logo = require('../../img/Logo');
+var Logo = require('../../img/grommet.svg');
 
 var LoginFormDoc = React.createClass({
 

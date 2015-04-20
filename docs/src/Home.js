@@ -2,18 +2,12 @@
 
 var React = require('react');
 var RouteHandler = require('react-router').RouteHandler;
-var Logo = require('./img/Logo');
 var Section = require('grommet/components/Section');
 var Tiles = require('grommet/components/Tiles');
 var Tile = require('grommet/components/Tile');
 var Menu = require('grommet/components/Menu');
 var Link = require('react-router').Link;
-var Scale = require('./img/Scale');
 var ProcessAnimation = require('./img/ProcessAnimation');
-var Semantic = require('./img/Semantic');
-var MobileFirst = require('./img/MobileFirst');
-var Customizable = require('./img/Customizable');
-var Tooling = require('./img/Tooling');
 
 var Home = React.createClass({
 
@@ -25,12 +19,20 @@ var Home = React.createClass({
       <div className="home">
 
         <Section className="home__introduction" centered={true}>
-          <Logo className="home__logo" />
+          <img className="home__logo" src="img/grommet.svg" title="Grommet" />
           <h1 className="home__title">Grommet</h1>
           <h3>The most advanced UI framework for enterprise applications.</h3>
           <Menu direction="right">
-            <span>Grab the Grommet <a href="/assets/grommet_sticker_sheet.ai" target="_blank">Sticker Sheet</a></span>
-            <span>Check out Grommet on <a href="https://github.com/HewlettPackard/grommet" target="_blank">GitHub</a></span>
+            <span>
+              Grab the Grommet <a href="/assets/grommet_sticker_sheet.ai" target="_blank">
+                Sticker Sheet <img className="right-arrow" src="img/right-arrow.svg" title="right arrow" />
+              </a>
+            </span>
+            <span>
+              Check out Grommet on <a href="https://github.com/HewlettPackard/grommet" target="_blank">
+                GitHub <img className="right-arrow" src="img/right-arrow.svg" title="right arrow" />
+              </a>
+            </span>
           </Menu>
           <Link key="request-access" to="request_access"
             className="button primary call-to-action home__request-access">
@@ -38,8 +40,8 @@ var Home = React.createClass({
           </Link>
         </Section>
 
-        <Section className="home__scale" centered={true} colorIndex={1}>
-          <Scale className="home__scale-graphic" />
+        <Section className="home__scale" centered={true}>
+          <img className="home__scale-graphic" src="img/scale.svg" alt="Scale" />
           <h3>Grommet easily and efficiently scales your project with one code base,
             from phones to desktops, and everything in between.</h3>
           <Menu direction="left" colored={true}>
@@ -48,32 +50,32 @@ var Home = React.createClass({
           </Menu>
         </Section>
 
-        <Section className="home__process" centered={true} colorIndex={2}>
+        <Section className="home__process" centered={true} colorIndex={1}>
           <ProcessAnimation className="home__process-graphic"/>
           <h2>Prototype your template quickly.</h2>
           <h4>With templates for all your basic layout needs and styling already
             baked in, crafting your application happens in no time.</h4>
         </Section>
 
-        <Section className="home__features" centered={true} colorIndex={3}>
+        <Section className="home__features" centered={true} colorIndex={2}>
           <Tiles>
             <Tile>
-              <Semantic />
+              <img src="img/semantic.svg" title="semantic" />
               <h2>Semantic</h2>
               <h4>Clean markup with all the utility and speed.</h4>
             </Tile>
             <Tile>
-              <MobileFirst />
+              <img src="img/mobile-first.svg" title="mobile first" />
               <h2>Mobile First</h2>
               <h4>Start small and build your way up to larger devices.</h4>
             </Tile>
             <Tile>
-              <Customizable />
+              <img src="img/customizable.svg" title="customizable" />
               <h2>Customizable</h2>
               <h4>Only use what you need and change what you use.</h4>
             </Tile>
             <Tile>
-              <Tooling />
+              <img src="img/tooling.svg" title="tooling" />
               <h2>Tooling</h2>
               <h4>All the toys a designer and developer need to succeed.</h4>
             </Tile>
@@ -112,7 +114,7 @@ var Home = React.createClass({
           </Tiles>
         </Section>
 
-        <Section className="home__develop" direction="right" colorIndex={1}>
+        <Section className="home__develop" direction="right" colorIndex={3}>
           <img src="img/Console.svg" title="Console" />
           <div>
             <h2>Quick Develop</h2>

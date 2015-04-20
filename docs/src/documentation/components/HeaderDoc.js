@@ -7,7 +7,7 @@ var Search = require('grommet/components/Search');
 var Header = require('grommet/components/Header');
 var Edit = require('grommet/components/icons/Edit');
 var TBD = require('grommet/components/TBD');
-var Logo = require('../../img/Logo');
+var Logo = require('../../img/grommet.svg');
 
 var HeaderDoc = React.createClass({
 

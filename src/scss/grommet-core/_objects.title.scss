@@ -15,8 +15,10 @@
     }
   }
 
-  svg {
+  svg,
+  img {
     margin-right: halve($inuit-base-spacing-unit);
+    height: double($inuit-base-spacing-unit);
   }
 
   &--nav {

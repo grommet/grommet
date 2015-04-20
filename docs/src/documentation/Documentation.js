@@ -14,6 +14,7 @@ var HelloWorld = require('./HelloWorld');
 var Tutorial = require('./Tutorial');
 var GetStarted = require('./GetStarted');
 var Architecture = require('./Architecture');
+var ChartDoc = require('./components/ChartDoc');
 var DialogDoc = require('./components/DialogDoc');
 var DocumentDoc = require('./components/DocumentDoc');
 var DonutDoc = require('./components/DonutDoc');
