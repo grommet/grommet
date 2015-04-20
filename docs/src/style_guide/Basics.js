@@ -138,9 +138,7 @@ var BasicsSection = React.createClass({
     <h3 id="typography">Typography</h3>
     <p>Applications use the <a className="generic-branding"
       href="http://www.google.com/fonts/specimen/Source+Sans+Pro">Source Sans Pro</a>
-    <span className="hpe-branding">Metric</span> font in prominent areas
-    such as headings, subheadings, login screens and titles. For the remaining
-    body copy, tables, labels, values, and so on, the Arial font is used. The
+    <span className="hpe-branding">Metric</span> font.  The
     typographic scale and styles can be found in the attached assets.</p>
     <div className="font-sample h1">H1 font sample</div>
     <div className="font-sample h2">H2 font sample</div>
