@@ -106,8 +106,8 @@ var RequestAccess = React.createClass({
             </Menu>
           </Header>
           <div>
-            <h3>Grommet is almost ready for primetime!</h3>
-            <p>We&#39;ll make sure you&#39;re the first to know when Grommet goes live.</p>
+            <h3>Grommet is almost ready!</h3>
+            <p>We would love to have you as a contributor.</p>
             <fieldset>
               <FormField error={this._errorMessage('name')}>
                 <label htmlFor="name">What&#39;s your name?</label>
@@ -130,7 +130,7 @@ var RequestAccess = React.createClass({
             </fieldset>
           </div>
           <Footer>
-            <input type="submit" className="primary" value="Notify me"
+            <input type="submit" className="primary" value="Request Access"
                 onClick={this._onSubmit} />
             {msg}
           </Footer>
