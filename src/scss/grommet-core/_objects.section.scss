@@ -11,11 +11,13 @@
 
       @include flexible();
 
-      > * {
-        margin-right: double($inuit-base-spacing-unit);
+      @include media-query(lap-and-up) {
+        > * {
+          margin-right: double($inuit-base-spacing-unit);
 
-        &:last-child {
-          margin-right: 0px;
+          &:last-child {
+            margin-right: 0px;
+          }
         }
       }
 
