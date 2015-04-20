@@ -24,7 +24,7 @@ var opts = {
   mainJs: 'src/js/index.js',
   mainScss: 'src/scss/grommet-core/index.scss',
   sync: {
-    hostname: 'ligo.usa.hp.com',
+    hostname: 'grommet.usa.hp.com',
     username: 'ligo',
     remoteDestination: '/var/www/html/assets'
   },

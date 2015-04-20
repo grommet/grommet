@@ -5,7 +5,7 @@ gulp.task('sync', function() {
   gulp.src('.')
     .pipe(rsync({
       root: '.',
-      hostname: 'ligo.usa.hp.com',
+      hostname: 'grommet.usa.hp.com',
       username: 'ligo',
       destination: '/var/www/html/server',
       recursive: true,

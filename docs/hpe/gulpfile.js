@@ -33,7 +33,7 @@ var opts = {
   mainJs: 'docs/src/index.js',
   mainScss: 'docs/src/scss/index-hpe.scss',
   sync: {
-    hostname: 'ligo.usa.hp.com',
+    hostname: 'grommet.usa.hp.com',
     username: 'ligo',
     remoteDestination: '/var/www/html/doc/hpe'
   },
