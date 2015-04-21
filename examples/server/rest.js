@@ -54,7 +54,7 @@ router.post('/request-access', function(req, res) {
   }
 
   var transport = nodemailer.createTransport(smtpTransport({
-    host: 'path/to/smtp',
+    host: 'smtp1.hp.com',
     port: 25
   }));
 
