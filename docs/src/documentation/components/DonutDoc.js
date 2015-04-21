@@ -10,7 +10,7 @@ var DonutDoc = React.createClass({
     var inline =
       "<Donut series={[\n  {label: <label>, value: <value>, colorIndex: <index>},\n  ...\n]} />";
     var seriesStructure =
-      "{\n  label: <label>,\n  value: <value>,\n  colorIndex: (1-6|<status>)\n}";
+      "{\n  label: <label>,\n  value: <value>,\n  colorIndex: (accent-[1-6]|<status>)\n}";
 
     var genericSeries = [
       {label: 'Used', value: 10, units: 'TB'},

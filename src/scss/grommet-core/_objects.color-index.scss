@@ -1,8 +1,8 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 @for $i from 1 through length($brand-neutral-colors) {
-  .header-color-index-#{$i},
-  .header-color-index-#{$i+length($brand-neutral-colors)}, {
+  .header-color-index-neutral-#{$i},
+  .header-color-index-neutral-#{$i+length($brand-neutral-colors)}, {
     h1,
     h2,
     h3,
@@ -14,9 +14,33 @@
     }
   }
 
-  .background-color-index-#{$i},
-  .background-color-index-#{$i+length($brand-neutral-colors)} {
+  .background-color-index-neutral-#{$i},
+  .background-color-index-neutral-#{$i+length($brand-neutral-colors)} {
     background-color: nth($brand-neutral-colors, $i);
+    color: $colored-text-color;
+
+    a {
+      color: $colored-text-color;
+    }
+  }
+}
+
+@for $i from 1 through length($brand-accent-colors) {
+  .background-color-index-accent-#{$i},
+  .background-color-index-accent-#{$i+length($brand-accent-colors)} {
+    background-color: nth($brand-accent-colors, $i);
+    color: $colored-text-color;
+
+    a {
+      color: $colored-text-color;
+    }
+  }
+}
+
+@for $i from 1 through length($brand-grey-colors) {
+  .background-color-index-grey-#{$i},
+  .background-color-index-grey-#{$i+length($brand-grey-colors)} {
+    background-color: nth($brand-grey-colors, $i);
     color: $colored-text-color;
 
     a {

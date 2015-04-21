@@ -38,7 +38,6 @@ $scale-background-color-top: rgba($scale-background-color, 0.85);
 
   &__introduction.section {
     background-image: radial-gradient(#ffffff, #f2f2f2);
-    padding-bottom: 0px; //round($inuit-base-spacing-unit * 2);
 
     h3 {
       margin-bottom: 0px;
@@ -62,7 +61,7 @@ $scale-background-color-top: rgba($scale-background-color, 0.85);
 
   a.home__request-access {
     position: relative;
-    //top: round($inuit-base-spacing-unit * 4);
+    top: round($inuit-base-spacing-unit * 4);
     display: block;
     color: $colored-text-color;
 
@@ -71,12 +70,41 @@ $scale-background-color-top: rgba($scale-background-color, 0.85);
     }
   }
 
+  &__hpe.section {
+
+    img {
+      max-height: 200px;
+    }
+
+    @include media-query(lap-and-up) {
+      padding-top: round($inuit-base-spacing-unit * 2);
+      padding-bottom: round($inuit-base-spacing-unit * 2);
+      background-image: radial-gradient(circle at 70% 50%,
+        nth($brand-grey-colors, 1),
+        nth($brand-grey-colors, 1) 35%,
+        nth($brand-grey-colors, 2) 35%,
+        nth($brand-grey-colors, 2) 55%,
+        nth($brand-grey-colors, 3) 55%,
+        nth($brand-grey-colors, 3) 85%,
+        nth($brand-grey-colors, 1) 85%);
+
+      .home__hpe-text {
+        margin: round($inuit-base-spacing-unit * 2) double($inuit-base-spacing-unit);
+        color: darken($colored-text-color, 20%);
+
+        h4 {
+          color: nth($brand-accent-colors, 1);
+          font-weight: 400;
+        }
+      }
+    }
+  }
+
   &__scale.section {
     padding-bottom: round($inuit-base-spacing-unit * 6);
     background-color: inherit;
     background-image: linear-gradient($scale-background-color-top,
-      #{$scale-background-color});
-    color: $colored-text-color;
+      $scale-background-color);
 
     a.button {
       @include inuit-font-size($inuit-heading-size-3);

@@ -13,8 +13,6 @@ var Home = React.createClass({
 
   render: function() {
 
-  //var texture = "url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAADRJREFUSA1j/PHjx38GGgImGpo9TIxmHI2DAY/J0TgY8ChgGI2D0TgY+BAYeBeM5oOBjwMAZNAXfV/JDF0AAAAASUVORK5CYII=)";
-
     return (
       <div className="home">
 
@@ -34,14 +32,21 @@ var Home = React.createClass({
               </a>
             </span>
           </Menu>
-          <img className="hpe-logo" src="img/hpesm_sec_grn_pos_rgb.svg" alt="Hewlett Packard Enterprise logo" />
           <Link key="request-access" to="request_access"
             className="button primary call-to-action home__request-access">
             Request Access
           </Link>
         </Section>
 
-        <Section className="home__scale" centered={true}>
+        <Section className="home__hpe" direction="right" colorIndex="grey-1">
+          <img className="flex-1" src="img/hpe_pri_grn_rev_rgb.svg" title="Hewlett Packard Enterprise logo" />
+          <div className="flex-1 home__hpe-text">
+            <h4>Grommit is a Hewlett Packard Enterprise open source framework.</h4>
+            <p>Designed and built with care from team @hpegrommet. Many thanks go out to all our contributors!</p>
+          </div>
+        </Section>
+
+        <Section className="home__scale" centered={true} colorIndex="accent-2">
           <img className="home__scale-graphic" src="img/scale.svg" alt="Scale" />
           <h3>Grommet easily and efficiently scales your project with one code base,
             from phones to desktops, and everything in between.</h3>
@@ -51,14 +56,14 @@ var Home = React.createClass({
           </Menu>
         </Section>
 
-        <Section className="home__process" centered={true} colorIndex={1}>
+        <Section className="home__process" centered={true} colorIndex="neutral-1">
           <ProcessAnimation className="home__process-graphic"/>
           <h2>Prototype your template quickly.</h2>
           <h4>With templates for all your basic layout needs and styling already
             baked in, crafting your application happens in no time.</h4>
         </Section>
 
-        <Section className="home__features" centered={true} colorIndex={2}>
+        <Section className="home__features" centered={true} colorIndex="neutral-2">
           <Tiles>
             <Tile>
               <img src="img/semantic.svg" title="semantic" />
@@ -115,7 +120,7 @@ var Home = React.createClass({
           </Tiles>
         </Section>
 
-        <Section className="home__develop" direction="right" colorIndex={3}>
+        <Section className="home__develop" direction="right" colorIndex="neutral-3">
           <img className="flex-1" src="img/Console.svg" title="Console" />
           <div className="flex-1">
             <h2>Quick Develop</h2>

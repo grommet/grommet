@@ -181,7 +181,7 @@ var StyleGuide = React.createClass({
 
     return (
       <div>
-        <Section direction="right" colorIndex={colorIndex}
+        <Section direction="right" colorIndex={"neutral-" + colorIndex}
           compact={layoutCompact}>
           <Menu direction="down" colored={true} >
             {chapterLinks}
@@ -190,7 +190,7 @@ var StyleGuide = React.createClass({
         </Section>
         <Section direction="right">
           <Menu direction="down" inline={true}>{pageLinks}</Menu>
-          <GrommetDocument colorIndex={colorIndex}>
+          <GrommetDocument colorIndex={"neutral-" + colorIndex}>
             <RouteHandler />
           </GrommetDocument>
         </Section>

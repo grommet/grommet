@@ -11,6 +11,7 @@ $brand-status-colors: (
   disabled: #848484
 );
 $brand-link-color: #2883d7;
+$brand-grey-colors: (#333333, #3B3B3B, #434343, #666666);
 $brand-graph-colors: ();
 $brand-graph-colors: join($brand-graph-colors, $brand-accent-colors);
 $brand-graph-colors: join($brand-graph-colors, $brand-neutral-colors);
