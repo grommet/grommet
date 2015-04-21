@@ -46,7 +46,7 @@ $step-duration: 0.7s;
 
       @for $i from 2 through 17 {
         &-column-#{$i} {
-          @include animation('draw-column #{$step-duration} 1.#{$i}s ease-in-out forwards');
+          @include animation('draw-column #{$step-duration} #{1 + ($i * 0.1)}s ease-in-out forwards');
         }
       }
 
@@ -58,7 +58,7 @@ $step-duration: 0.7s;
 
       @for $i from 1 through 12 {
         &-row-#{$i} {
-          @include animation('draw-row #{$step-duration * 2} 2.#{$i}s ease-in-out forwards');
+          @include animation('draw-row #{$step-duration * 2} #{2 + ($i * 0.1)}s ease-in-out forwards');
         }
       }
     }
@@ -113,8 +113,17 @@ $step-duration: 0.7s;
 
     &__code {
       opacity: 0;
-      @include animation('reveal-code #{$step-duration * 6} 12.1s linear forwards');
+      @include animation('reveal-code #{$step-duration / 4} 12.1s linear forwards');
 
+      tspan {
+        opacity: 0;
+      }
+    }
+
+    @for $i from 1 through 16 {
+      &__code tspan:nth-child(#{$i}) {
+        @include animation('reveal-code-text #{$step-duration / 2} #{12 + ($i * 0.25)}s linear forwards');
+      }
     }
   }
 
@@ -287,6 +296,16 @@ $step-duration: 0.7s;
     opacity: 0.8;
     -webkit-transform: translateY(0px);
     transform: translateY(0px);
+  }
+}
+
+@include keyframes(reveal-code-text) {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }
 
