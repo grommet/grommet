@@ -41,7 +41,7 @@ var Home = React.createClass({
         <Section className="home__hpe" direction="right" colorIndex="grey-1">
           <img className="flex-1" src="img/hpe_pri_grn_rev_rgb.svg" title="Hewlett Packard Enterprise logo" />
           <div className="flex-1 home__hpe-text">
-            <h4>Grommit is a Hewlett Packard Enterprise open source framework.</h4>
+            <h4>Grommet is a Hewlett Packard Enterprise open source framework.</h4>
             <p>Designed and built with care from team @hpegrommet. Many thanks go out to all our contributors!</p>
           </div>
         </Section>
