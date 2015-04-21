@@ -75,7 +75,8 @@ $scale-background-color-top: rgba($scale-background-color, 0.85);
   &__hpe.section {
 
     img {
-      max-height: 200px;
+      height: 200px;
+      width: 408px;
     }
 
     @include media-query(lap-and-up) {
