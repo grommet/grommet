@@ -150,9 +150,9 @@ module.exports = function(gulp, opts) {
     if (options.watch) {
       watch(options.watch.path, function () {
         gulp.src(options.watch.path).pipe(gulp.dest(options.watch.dist));
-      });  
+      });
     }
-    
+
 
     var devWebpackConfig = assign({}, webpackConfig, options.webpack || {}, {
       entry: {
@@ -186,7 +186,8 @@ module.exports = function(gulp, opts) {
       inline: true,
       stats: {
         colors: true
-      }
+      },
+      historyApiFallback: true
     };
 
     if (options.devServerProxy) {

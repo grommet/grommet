@@ -6,6 +6,10 @@
   @include inuit-font-size(40px, $primary-header-height);
   font-weight: normal;
 
+  @include media-query(palm) {
+    @include inuit-font-size(32px, $palm-header-height);
+  }
+
   a {
     color: inherit;
 
@@ -24,6 +28,10 @@
   img {
     margin-right: halve($inuit-base-spacing-unit);
     height: double($inuit-base-spacing-unit);
+
+    @include media-query(palm) {
+      height: halve($palm-header-height);
+    }
   }
 
   &--nav {

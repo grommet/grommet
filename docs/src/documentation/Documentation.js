@@ -14,6 +14,7 @@ var HelloWorld = require('./HelloWorld');
 var Tutorial = require('./Tutorial');
 var GetStarted = require('./GetStarted');
 var Architecture = require('./Architecture');
+var AppDoc = require('./components/AppDoc');
 //var ChartDoc = require('./components/ChartDoc');
 var DialogDoc = require('./components/DialogDoc');
 var DocumentDoc = require('./components/DocumentDoc');
@@ -25,12 +26,10 @@ var LoginFormDoc = require('./components/LoginFormDoc');
 var MenuDoc = require('./components/MenuDoc');
 var MeterDoc = require('./components/MeterDoc');
 var SearchDoc = require('./components/SearchDoc');
+var SectionDoc = require('./components/SectionDoc');
 var TableDoc = require('./components/TableDoc');
 var TilesDoc = require('./components/TilesDoc');
-var AppDoc = require('./components/AppDoc');
 var TitleDoc = require('./components/TitleDoc');
-var SectionDoc = require('./components/SectionDoc');
-var PanelDoc = require('./components/PanelDoc');
 
 //hjjs configuration
 require("!style!css!highlight.js/styles/github.css");
@@ -61,22 +60,21 @@ var CONTENTS = [
   {label: 'Components',
     contents: [
       {route: 'doc_app', label: 'App', component: AppDoc},
-      {route: 'doc_header', label: 'Header', component: HeaderDoc},
-      {route: 'doc_footer', label: 'Footer', component: FooterDoc},
-      {route: 'doc_title', label: 'Title', component: TitleDoc},
-      {route: 'doc_section', label: 'Section', component: SectionDoc},
-      {route: 'doc_panel', label: 'Panel', component: PanelDoc},
       {route: 'doc_chart', label: 'Chart', component: TBD},
       {route: 'doc_dialog', label: 'Dialog', component: DialogDoc},
       {route: 'doc_document', label: 'Document', component: DocumentDoc},
       {route: 'doc_donut', label: 'Donut', component: DonutDoc},
+      {route: 'doc_footer', label: 'Footer', component: FooterDoc},
       {route: 'doc_form', label: 'Form', component: FormDoc},
+      {route: 'doc_header', label: 'Header', component: HeaderDoc},
       {route: 'doc_login-form', label: 'LoginForm', component: LoginFormDoc},
       {route: 'doc_menu', label: 'Menu', component: MenuDoc},
       {route: 'doc_meter', label: 'Meter', component: MeterDoc},
       {route: 'doc_search', label: 'Search', component: SearchDoc},
+      {route: 'doc_section', label: 'Section', component: SectionDoc},
       {route: 'doc_table', label: 'Table', component: TableDoc},
-      {route: 'doc_tiles', label: 'Tiles', component: TilesDoc}
+      {route: 'doc_tiles', label: 'Tiles', component: TilesDoc},
+      {route: 'doc_title', label: 'Title', component: TitleDoc}
     ]
   },
   {label: 'Reference',

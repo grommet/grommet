@@ -17,7 +17,7 @@ var Header = React.createClass({
     if (this.props.className) {
       classes.push(this.props.className);
     }
-    var wrapperClasses = [];
+    var wrapperClasses = ["header__wrapper"];
     if (this.props.colorIndex) {
       wrapperClasses.push("background-color-index-" + this.props.colorIndex);
     }

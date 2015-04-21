@@ -32,8 +32,10 @@ $scale-background-color-top: rgba($scale-background-color, 0.85);
   }
 
   .section {
-    padding-top: round($inuit-base-spacing-unit * 4);
-    padding-bottom: round($inuit-base-spacing-unit * 4);
+    @include media-query(lap-and-up) {
+      padding-top: round($inuit-base-spacing-unit * 4);
+      padding-bottom: round($inuit-base-spacing-unit * 4);
+    }
   }
 
   &__introduction.section {
@@ -61,7 +63,7 @@ $scale-background-color-top: rgba($scale-background-color, 0.85);
 
   a.home__request-access {
     position: relative;
-    top: round($inuit-base-spacing-unit * 4);
+    top: round($inuit-base-spacing-unit * 2);
     display: block;
     color: $colored-text-color;
 
