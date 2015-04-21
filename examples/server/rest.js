@@ -8,11 +8,15 @@ var generator = require('./generator');
 var filter = require('./filter');
 var map = require('./map');
 var nodemailer = require('nodemailer');
+var path = require('path');
+var templatesDir = path.resolve(__dirname, 'templates');
+var emailTemplates = require('email-templates');
+var nodemailer = require('nodemailer');
 var smtpTransport = require('nodemailer-smtp-transport');
 
 generator.generate();
 
-router.post('/login-sessions', function (req, res) {
+router.post('/login-sessions', function(req, res) {
   if ('error' === req.body.userName) {
     res.status(400).send({
       message: "Invalid username or password or directory.",
@@ -20,11 +24,13 @@ router.post('/login-sessions', function (req, res) {
         " To obtain a username or password, contact your security administrator."
     });
   } else {
-    res.json({sessionID: 'abc123'});
+    res.json({
+      sessionID: 'abc123'
+    });
   }
 });
 
-router.delete('/login-sessions', function (req, res) {
+router.delete('/login-sessions', function(req, res) {
   res.json(null);
 });
 
@@ -48,31 +54,45 @@ router.post('/request-access', function(req, res) {
   }
 
   var transport = nodemailer.createTransport(smtpTransport({
-    host: 'stmp1.hp.com',
+    host: 'path/to/smtp',
     port: 25
   }));
 
   var toGrommetConfig = {
-    from: data.email, 
-    to: 'uxgroup@hp.com', 
-    subject: 'Evaluate access to ' + data.email,
-    text: data.name + ' with this email: '+ data.email + ' want to access Grommet for this reason: '+ data.businessPurpose
+    from: data.email,
+    to: 'uxgroup@hp.com',
+    subject: 'Evaluate access for ' + data.email,
+    text: data.name + ' with this email: ' + data.email + ' wants to access Grommet for this reason: ' + data.businessPurpose
   };
 
-  var toRequesterConfig = {
-    from: 'grommet@hp.com', 
-    to: data.email, 
-    subject: 'Welcome to Grommet!',
-    text: 'Thanks for signing-up for early access to Grommet. We are going evaluate your request and will get back to you soon.'
-  };
+  emailTemplates(templatesDir, function(err, template) {
+    if (err) {
+      console.log(err);
+    } else {
+      template('welcome', data, function(err, html, text) {
+        if (err) {
+          console.log(err);
+        } else {
+          var toRequesterConfig = {
+            from: 'grommet@hp.com',
+            to: data.email,
+            subject: 'Welcome to Grommet!',
+            text: text,
+            html: html
+          };
+
+          transport.sendMail(toRequesterConfig, handleEmailResponse);
+        }
+      });
+    }
+  });
 
   transport.sendMail(toGrommetConfig, handleEmailResponse);
-  transport.sendMail(toRequesterConfig, handleEmailResponse);
 
   res.sendStatus(200);
 });
 
-router.get('/index/resources/aggregated', function (req, res) {
+router.get('/index/resources/aggregated', function(req, res) {
   var members = data.getMembers(req.query.category) || [];
 
   if (req.query.userQuery) {
@@ -89,12 +109,15 @@ router.get('/index/resources/aggregated', function (req, res) {
   } else {
     attributes = [req.query.attribute];
   }
-  var result = attributes.map(function (attribute) {
-    return {attribute: attribute, counts: []};
+  var result = attributes.map(function(attribute) {
+    return {
+      attribute: attribute,
+      counts: []
+    };
   });
 
-  members.some(function (resource) {
-    result.forEach(function (attributeResult) {
+  members.some(function(resource) {
+    result.forEach(function(attributeResult) {
       var value;
       if (resource.hasOwnProperty(attributeResult.attribute)) {
         value = resource[attributeResult.attribute];
@@ -105,15 +128,18 @@ router.get('/index/resources/aggregated', function (req, res) {
       if (undefined !== value) {
         var counts = attributeResult.counts;
         var found = false;
-        for (var i=0; i<counts.length; i++) {
+        for (var i = 0; i < counts.length; i++) {
           if (value === counts[i].value) {
             counts[i].count += 1;
             found = true;
             break;
           }
         }
-        if (! found) {
-          counts.push({value: value, count: 1});
+        if (!found) {
+          counts.push({
+            value: value,
+            count: 1
+          });
         }
       }
     });
@@ -122,7 +148,7 @@ router.get('/index/resources/aggregated', function (req, res) {
   res.json(result);
 });
 
-router.get('/index/resources', function (req, res) {
+router.get('/index/resources', function(req, res) {
   var members = data.getMembers(req.query.category);
   var unfilteredTotal = members.length;
 
@@ -140,7 +166,7 @@ router.get('/index/resources', function (req, res) {
 
   var startIndex = req.query.start;
   if (req.query.referenceUri) {
-    members.some(function (member, index) {
+    members.some(function(member, index) {
       if (req.query.referenceUri === member.uri) {
         startIndex = Math.max(index - 3, 0);
         return true;
@@ -162,12 +188,12 @@ router.get('/index/resources', function (req, res) {
   });
 });
 
-router.get(/^\/index\/trees\/aggregated(.+)$/, function (req, res) {
+router.get(/^\/index\/trees\/aggregated(.+)$/, function(req, res) {
   var uri = req.params[0];
   res.json(map.build(uri));
 });
 
-router.get('/:categoryName/*', function (req, res) {
+router.get('/:categoryName/*', function(req, res) {
   var resource = data.getResource('/rest' + req.url);
   if (resource) {
     res.json(resource);
@@ -176,7 +202,7 @@ router.get('/:categoryName/*', function (req, res) {
   }
 });
 
-router.post('/:categoryName', function (req, res) {
+router.post('/:categoryName', function(req, res) {
   var categoryName = req.params.categoryName;
   var now = new Date();
 
@@ -207,13 +233,15 @@ router.post('/:categoryName', function (req, res) {
   };
   data.addResource('tasks', task);
 
-  setTimeout(function () {
+  setTimeout(function() {
     task.status = 'OK';
     task.state = 'Completed';
     task.modified = (new Date()).toISOString();
   }, 10000);
 
-  res.json({taskUri: task.uri});
+  res.json({
+    taskUri: task.uri
+  });
 });
 
 module.exports = router;

@@ -130,8 +130,10 @@ var RequestAccess = React.createClass({
             </fieldset>
           </div>
           <Footer>
-            <input type="submit" className="primary" value="Request Access"
+            <div>
+              <input type="submit" className="primary" value="Send"
                 onClick={this._onSubmit} />
+            </div>
             {msg}
           </Footer>
         </Form>
