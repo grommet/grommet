@@ -1,10 +1,10 @@
 // (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
 
 .login-form {
-  width: 400px;
+  width: round($inuit-base-spacing-unit * 16);
   padding: $inuit-box-padding;
   padding-bottom: double($inuit-base-spacing-unit);
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: $modal-overlay-background-color;
   border: 1px solid $border-color;
   border-radius: $border-radius;
   text-align: center;

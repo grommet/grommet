@@ -8,7 +8,7 @@ var Index = require('grommet/index/index');
 var indexConfig = require('./IndexConfig');
 var routes = require('./Routes');
 
-var router = Router.create({routes: routes}); //, location: Router.HistoryLocation});
+var router = Router.create({routes: routes, location: Router.HistoryLocation});
 
 Index.init(indexConfig);
 

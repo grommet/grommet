@@ -4,6 +4,7 @@ var React = require('react');
 var Route = require('react-router').Route;
 var DefaultRoute = require('react-router').DefaultRoute;
 
+var TourLogin = require('./TourLogin');
 var TBD = require('grommet/components/TBD');
 var IndexActivity = require('grommet/index/components/Activity');
 var IndexDashboardEdit = require('grommet/index/components/DashboardEdit');
@@ -13,8 +14,8 @@ var Tour = require('./Tour');
 var TourDashboard = require('./TourDashboard');
 
 var routes = (
-  <Route name="tour" path="/" handler={Tour}>
-    <Route name="login" handler={TBD}/>
+  <Route name="tour" path="/tour/" handler={Tour}>
+    <Route name="login" handler={TourLogin}/>
     <Route name="tbd" handler={TBD}/>
     <Route name="settings" handler={TBD}/>
     <Route name="activity" handler={IndexActivity} />
