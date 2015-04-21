@@ -56,6 +56,9 @@ var Footer = React.createClass({
     if (this.props.centered) {
       classes.push("footer--centered");
     }
+    if (this.props.colorIndex) {
+      classes.push("background-color-index-" + this.props.colorIndex);
+    }
     if (this.props.className) {
       classes.push(this.props.className);
     }

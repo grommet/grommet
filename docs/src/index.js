@@ -47,7 +47,17 @@ var RequestAccess = require('./RequestAccess');
 
 var Docs = React.createClass({
 
+  contextTypes: {
+    router: React.PropTypes.func.isRequired
+  },
+
   render: function() {
+    var footerColorIndex = null;
+    var footerLogo = "img/hpesm_sec_grn_pos_rgb.svg";
+    if (this.context.router.isActive("home")) {
+      footerColorIndex = "grey-1";
+      footerLogo = "img/hpesm_sec_grn_rev_rgb.svg";
+    }
 
     return (
       <App className="docs">
@@ -75,8 +85,8 @@ var Docs = React.createClass({
           </Menu>
         </Header>
         <RouteHandler />
-        <Footer className="docs__footer" primary={true} centered={true}>
-          <img src="img/hpesm_sec_grn_pos_rgb.svg" alt="Hewlett Packard Enterprise logo" />
+        <Footer className="docs__footer" colorIndex={footerColorIndex} primary={true} centered={true}>
+          <img src={footerLogo} alt="Hewlett Packard Enterprise logo" />
           <h3>Build your ideas!</h3>
           <div>
             This work is licensed under the <a href="http://creativecommons.org/licenses/by/4.0/legalcode">Creative Commons Attribution 4.0 International License</a>.

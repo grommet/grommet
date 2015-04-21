@@ -46,12 +46,7 @@
     .footer {
       &__content {
         position: relative;
-        padding: $inuit-base-spacing-unit 0px;
         color: $secondary-text-color;
-
-        img {
-          margin: $inuit-base-spacing-unit 0px;
-        }
 
         p {
           padding-top: halve($inuit-base-spacing-unit);

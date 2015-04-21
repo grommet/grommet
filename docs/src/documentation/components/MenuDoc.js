@@ -22,11 +22,6 @@ var MenuDoc = React.createClass({
         <section>
           <h2>Options</h2>
           <dl>
-            <dt><code>colored  true|false</code></dt>
-            <dd>Whether the Menu is included in a colored layout.
-              In these cases, the background is a neutral color.</dd>
-            <dt><code>colorIndex  {"accent-[1-6]"}</code></dt>
-            <dd>Which color index to use for header text.</dd>
             <dt><code>collapse  true|false</code></dt>
             <dd>Indicates that the menu should be collapsed and
               the default collapsed icon should be shown as a

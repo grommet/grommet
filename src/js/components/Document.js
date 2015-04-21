@@ -4,7 +4,7 @@ var React = require('react');
 var GrommetDocument = React.createClass({
 
   propTypes: {
-    colorIndex: React.PropTypes.number
+    colorIndex: React.PropTypes.string
   },
 
   render: function() {

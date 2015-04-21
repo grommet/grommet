@@ -6,7 +6,7 @@ var Section = React.createClass({
 
   propTypes: {
     compact: React.PropTypes.bool,
-    colorIndex: React.PropTypes.number,
+    colorIndex: React.PropTypes.string,
     direction: React.PropTypes.oneOf(['up', 'down', 'left', 'right']),
     centered: React.PropTypes.bool,
     texture: React.PropTypes.string

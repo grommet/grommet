@@ -7,11 +7,16 @@
   font-weight: normal;
 
   a {
-    color: $text-color;
+    color: inherit;
 
     &:hover {
-      color: $hover-text-color;
       text-decoration: none;
+    }
+
+    [class*="background-color-index-"] & {
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 

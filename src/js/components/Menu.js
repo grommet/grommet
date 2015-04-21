@@ -11,8 +11,6 @@ var Menu = React.createClass({
 
   propTypes: {
     collapse: React.PropTypes.bool,
-    colored: React.PropTypes.bool,
-    colorIndex: React.PropTypes.number,
     direction: React.PropTypes.oneOf(['up', 'down', 'left', 'right']),
     icon: React.PropTypes.node,
     label: React.PropTypes.string,
@@ -21,7 +19,6 @@ var Menu = React.createClass({
 
   getDefaultProps: function () {
     return {
-      colored: false,
       direction: 'down',
       small: false
     };
@@ -154,14 +151,8 @@ var Menu = React.createClass({
     if (this.props.direction) {
       classes.push("menu--" + this.props.direction);
     }
-    if (this.props.colored) {
-      classes.push("menu--colored");
-    }
     if (this.props.small) {
       classes.push("menu--small");
-    }
-    if (this.props.colorIndex) {
-      classes.push("header-color-index-" + this.props.colorIndex);
     }
     if (this.props.className) {
       classes.push(this.props.className);
