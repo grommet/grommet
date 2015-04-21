@@ -73,10 +73,10 @@ var TileDoc = React.createClass({
                 hello
                 <Footer>
                   <span></span>
-                  <Menu icon={<Edit/>}>
-                    <a>action 1</a>
-                    <a>action 2</a>
-                    <a>action 3</a>
+                  <Menu icon={<Edit/>} align="right" direction="up">
+                    <a>action-1</a>
+                    <a>action-2</a>
+                    <a>action-3</a>
                   </Menu>
                 </Footer>
               </Tile>
@@ -87,10 +87,10 @@ var TileDoc = React.createClass({
                 hello
                 <Footer>
                   <span></span>
-                  <Menu icon={<Edit/>}>
-                    <a>action 1</a>
-                    <a>action 2</a>
-                    <a>action 3</a>
+                  <Menu icon={<Edit/>} align="right" direction="up">
+                    <a>action-1</a>
+                    <a>action-2</a>
+                    <a>action-3</a>
                   </Menu>
                 </Footer>
               </Tile>
@@ -101,10 +101,10 @@ var TileDoc = React.createClass({
                 hello
                 <Footer>
                   <span></span>
-                  <Menu icon={<Edit/>}>
-                    <a>action 1</a>
-                    <a>action 2</a>
-                    <a>action 3</a>
+                  <Menu icon={<Edit/>} align="right" direction="up">
+                    <a>action-1</a>
+                    <a>action-2</a>
+                    <a>action-3</a>
                   </Menu>
                 </Footer>
               </Tile>
