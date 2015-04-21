@@ -20,7 +20,7 @@ var opts = {
   jsAssets: ['examples/tour/src/js/**/*.js'],
   mainJs: 'examples/tour/src/js/index.js',
   mainScss: 'examples/tour/src/scss/index.scss',
-  remoteDestination: '/var/www/html/tour2',
+  remoteDestination: '/var/www/html/tour',
   webpack: {
     resolve: {
       root: [

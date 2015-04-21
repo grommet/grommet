@@ -1,4 +1,6 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+var String = require('./String');
+
 // Parse the search text into formal tokens.
 // Tokens enable syntax highlighting and filter formalization.
 function tokenize(text) {
@@ -92,8 +94,8 @@ function normalizeToken(token) {
         token.text += String.quoteIfNecessary(token.value);
       }
     }
-  } 
-  
+  }
+
   return token;
 }
 
