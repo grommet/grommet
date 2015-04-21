@@ -11,52 +11,93 @@ var Chart = React.createClass({
     key: React.PropTypes.bool,
     max: React.PropTypes.number,
     min: React.PropTypes.number,
-    series: React.PropTypes.arrayOf(React.PropTypes.shape({
-      label: React.PropTypes.string,
-      values: React.PropTypes.arrayOf(React.PropTypes.number),
-      colorIndex: React.PropTypes.number
-    })).isRequired,
+    series: React.PropTypes.arrayOf(
+      React.PropTypes.shape({
+        label: React.PropTypes.string,
+        values: React.PropTypes.arrayOf(
+          React.PropTypes.arrayOf(React.PropTypes.number)),
+        colorIndex: React.PropTypes.string
+      })
+    ).isRequired,
     threshold: React.PropTypes.number
   },
 
-  getDefaultProps: function () {
+  getInitialState: function () {
+    // analyze series data
+    var minX = null;
+    var maxX = null;
+    var minY = null;
+    var maxY = null;
+    var maxValues = 0;
+    this.props.series.forEach(function (item) {
+      item.values.forEach(function (value) {
+        var x = value[0];
+        var y = value[1];
+        if (null === minX) {
+          minX = x;
+          maxX = x;
+          minY = y;
+          maxY = y;
+        } else {
+          minX = Math.min(minX, x);
+          maxX = Math.max(maxX, x);
+          minY = Math.min(minY, y);
+          maxY = Math.max(maxY, y);
+        }
+      });
+      maxValues = Math.max(maxValues, item.values.length);
+    });
+    if (this.props.threshold) {
+      minX = Math.min(minX, this.props.threshold);
+      maxX = Math.max(maxX, this.props.threshold);
+    }
     return {
-      max: 100,
-      min: 0
+      minX: minX,
+      maxX: maxX,
+      minY: this.props.min || minY,
+      maxY: this.props.max || maxY,
+      steps: maxValues
     };
   },
 
+  _translateX: function (x) {
+    return (x - this.state.minX) * (BASE_WIDTH) / (this.state.maxX - this.state.minX);
+  },
+
+  _translateY: function (y) {
+    return BASE_HEIGHT -
+      ((y - this.state.minY) * (BASE_HEIGHT) / (this.state.maxY - this.state.minY));
+  },
+
+  _coordinates: function (point) {
+    return this._translateX(point[0]) + ',' + this._translateY(point[1]);
+  },
+
   render: function() {
-    var step = (this.props.max - this.props.min) / 10;
+    var step = BASE_WIDTH / this.state.steps;
     var grid = [];
-    for (var i=0; i<BASE_WIDTH; i = i + step) {
+    for (var i=0; i<=BASE_WIDTH; i = i + step) {
       grid.push(<path key={i} fill="none" d={"M" + i + ",0L" + i + "," + BASE_HEIGHT} />);
     }
-    for (i=0; i<BASE_HEIGHT; i = i + step) {
-      grid.push(<path key={100 + i} fill="none" d={"M0," + i + ",0L" + BASE_WIDTH + "," + i} />);
+    var step = BASE_HEIGHT / 5;
+    for (i=BASE_HEIGHT; i>=0; i = i - step) {
+      grid.push(<path key={100 + i} fill="none" d={"M0," + i + "L" + BASE_WIDTH + "," + i} />);
     }
 
     var lines = {};
     var keys = {};
 
-    /*this.props.series.forEach(function (item, index) {
-
-      var endAngle = Math.min(360, Math.max(10, startAngle + (anglePer * item.value)));
-      var commands = describeArc(100, 100, 80, startAngle, endAngle-2);
-      startAngle = endAngle;
-      var colorIndex = item.colorIndex || (index + 1);
-
-      var sliceClasses = ["donut__slice"];
-      sliceClasses.push("donut__slice--color-index-" + colorIndex);
-      if (this.state.activeIndex === index) {
-        sliceClasses.push("donut__slice--active");
-        value = item.value;
-        units = item.units;
-        label = item.label;
-      }
-
-      paths[colorIndex] = (
-        <path fill="none" className={sliceClasses.join(' ')} d={commands} />
+    this.props.series.forEach(function (item, index) {
+      var commands = null;
+      item.values.forEach(function (value) {
+        if (null === commands) {
+          commands = "M" + this._coordinates(value);
+        } else {
+          commands += "L" + this._coordinates(value);
+        }
+      }, this);
+      lines[index] = (
+        <path fill="none" className={"color-index-" + item.colorIndex} d={commands} />
       );
 
       if (this.props.key) {
@@ -73,7 +114,6 @@ var Chart = React.createClass({
         );
       }
     }, this);
-      */
 
     return (
       <div className="chart">

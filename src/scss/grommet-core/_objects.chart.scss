@@ -6,4 +6,15 @@
   &__grid {
     stroke: $border-color;
   }
+
+  &__lines {
+    stroke-width: 3px;
+
+    @for $i from 1 through length($brand-accent-colors) {
+      .color-index-accent-#{$i},
+      .color-index-accent-#{$i+length($brand-accent-colors)} {
+        stroke: nth($brand-accent-colors, $i);
+      }
+    }
+  }
 }

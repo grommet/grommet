@@ -9,11 +9,19 @@ var ChartDoc = React.createClass({
   render: function() {
     var inline =
       "<Chart ... />";
+
+    var series = [
+      {label: 'first', values: [[1,1], [2,2], [3,3], [4, 3], [5, 2]], colorIndex: "accent-1"},
+      {label: 'second', values: [[1,0], [2,0], [3,0], [4, 2], [5,3]], colorIndex: "accent-2"}
+    ];
+
     return (
       <GrommetDocument>
         <header>
           <h1>Chart</h1>
           <p>Shows a graphical data chart.</p>
+          <p>This component needs attention and may be replaced by a
+            separate graphing package.</p>
 
           <pre><code className="html">{inline}</code></pre>
         </header>
@@ -22,15 +30,17 @@ var ChartDoc = React.createClass({
           <h2>Options</h2>
           <dl>
             <dt><code>max         {"{number}"}</code></dt>
-            <dd>The largest possible value. Defaults to 100.</dd>
+            <dd>The largest possible value.
+              Defaults to the largest x value in the series data.</dd>
             <dt><code>min         {"{number}"}</code></dt>
-            <dd>The smallest possible value. Defaults to 0.</dd>
+            <dd>The smallest possible value.
+              Defaults to the smallest x value in the series data.</dd>
             <dt><code>threshold   {"{number}"}</code></dt>
             <dd>Optional threshold value.</dd>
-            <dt><code>units       {"{string}"}</code></dt>
-            <dd>Optional units to display next to the value label.</dd>
-            <dt><code>value       {"{number}"}</code></dt>
-            <dd>The current value.</dd>
+            <dt><code>series       {"[{...}]"}</code></dt>
+            <dd>An array of: <code>
+              {"{label: <string>, colorIndex: <string>, values: [[x,y], ...]}"}
+              </code>.</dd>
           </dl>
         </section>
 
@@ -39,7 +49,7 @@ var ChartDoc = React.createClass({
 
           <h3>Simple</h3>
           <div className="example">
-          <Chart />
+          <Chart series={series} min={0} max={5} />
           </div>
           <pre><code className="html">
             {"<Chart />"}
