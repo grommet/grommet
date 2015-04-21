@@ -54,20 +54,25 @@ var Docs = React.createClass({
   render: function() {
     var footerColorIndex = null;
     var footerLogo = "img/hpesm_sec_grn_pos_rgb.svg";
+    var title = null;
     if (this.context.router.isActive("home")) {
       footerColorIndex = "grey-1";
       footerLogo = "img/hpesm_sec_grn_rev_rgb.svg";
+    } else {
+      title = (
+        <Title>
+          <Link to="docs">
+            <img src="img/grommet.svg" title="Grommet" />
+            Grommet
+          </Link>
+        </Title>
+      );
     }
 
     return (
       <App className="docs">
         <Header primary={true} className="docs__header">
-          <Title>
-            <Link to="docs">
-              <img src="img/grommet.svg" title="Grommet" />
-              Grommet
-            </Link>
-          </Title>
+          {title}
           <Menu direction="left">
             <Link key="style-guide" to="style guide">
               <Label text="Style Guide" icon={<DesignIcon />} />
