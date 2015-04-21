@@ -121,14 +121,15 @@ var Home = React.createClass({
         </Section>
 
         <Section className="home__develop" direction="right" colorIndex="neutral-3">
-          <img className="flex-1" src="img/Console.svg" title="Console" />
+          <Link className="flex-1" to="doc_helloworld">
+            <img src="img/Console.svg" title="Console" />
+          </Link>
           <div className="flex-1">
             <h2>Quick Develop</h2>
             <p>The easiest way to learn a new framework is by writing a simple
               application on top of it. Grommet depends on Node and NPM.
-              It&#39;s installed globally using NPM.
             </p>
-            <pre className="home__commands"><code>
+            <pre className="home__commands comming-soon"><code>
               {"$ npm install -g grommet\n$ grommet init myNewApp"}
             </code></pre>
           </div>

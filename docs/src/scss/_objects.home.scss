@@ -167,9 +167,25 @@ $scale-background-color-top: rgba($scale-background-color, 0.85);
   }
 
   &__commands {
+    position: relative;
     background-color: rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(0, 0, 0, 0.2);
     padding: $inuit-base-spacing-unit;
+    color: darken($colored-text-color, 20%);
+    overflow: hidden;
+
+    &.comming-soon:after {
+      content: 'Coming soon!';
+      display: block;
+      position: absolute;
+      color: $colored-text-color;
+      padding: halve($inuit-base-spacing-unit) double($inuit-base-spacing-unit);
+      background-color: nth($brand-neutral-colors, 1);
+      top: $inuit-base-spacing-unit;
+      right: - double($inuit-base-spacing-unit);
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
   }
 
   &__developer.section {
