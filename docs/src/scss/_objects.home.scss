@@ -37,7 +37,7 @@ $scale-background-color-top: rgba($scale-background-color, 0.85);
   }
 
   &__introduction.section {
-    background-image: radial-gradient(#ffffff, #f2f2f2);
+    background-image: radial-gradient(circle, #fff, #fff 65%, #eee);
 
     h3 {
       margin-bottom: 0px;
