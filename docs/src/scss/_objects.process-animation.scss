@@ -4,7 +4,7 @@ $step-duration: 0.7s;
 
 .process-animation {
   width: 720px;
-  //height: 480px;
+  height: 480px;
 
   @include media-query(palm) {
     width: calc(100vw - #{double($inuit-base-spacing-unit)});
@@ -15,7 +15,7 @@ $step-duration: 0.7s;
     display: block;
     margin: 0px auto;
     width: 720px;
-    //height: 480px;
+    height: 480px;
 
     @include media-query(lap-and-up) {
       @include animation('fold-paper 1s ease-in-out forwards');

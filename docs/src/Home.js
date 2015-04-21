@@ -98,11 +98,11 @@ var Home = React.createClass({
             PSDs, and more. Simply click the app you use to get started.</h4>
           <Tiles>
             <Tile>
-              <img src="img/Adobe_Illustrator.svg" title="Adobe Illustrator" />
+              <img src="img/Adobe_Illustrator.png" title="Adobe Illustrator" />
               <div>Adobe Illustrator</div>
             </Tile>
             <Tile>
-              <img src="img/Adobe_Photoshop.svg" title="Adobe Photoshop" />
+              <img src="img/Adobe_Photoshop.png" title="Adobe Photoshop" />
               <div>Adobe Photoshop</div>
             </Tile>
             <Tile>
@@ -141,10 +141,10 @@ var Home = React.createClass({
             easy-to-use solution.</h4>
           <Tiles small={true}>
             <Tile>
-              <img src="img/HTML5.svg" title="HTML5" />
+              <img src="img/HTML5.png" title="HTML5" />
             </Tile>
             <Tile>
-              <img src="img/CSS3.svg" title="CSS3" />
+              <img src="img/CSS3.png" title="CSS3" />
             </Tile>
             <Tile>
               <img src="img/NodeJS.png" title="NodeJS" />
