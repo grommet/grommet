@@ -22,19 +22,21 @@ var MenuDoc = React.createClass({
         <section>
           <h2>Options</h2>
           <dl>
-            <dt><code>collapse  true|false</code></dt>
+            <dt><code>align      right|left</code></dt>
+            <dd>Where to align the overlay.</dd>
+            <dt><code>collapse   true|false</code></dt>
             <dd>Indicates that the menu should be collapsed and
               the default collapsed icon should be shown as a
               control to open it.</dd>
             <dt><code>direction  right|left|down|up</code></dt>
             <dd>Which direction the options should be laid out in.</dd>
-            <dt><code>icon  {"{icon}"}</code></dt>
-            <dd>Indicates that the menu should be collapsed and this
+            <dt><code>icon       {"{icon}"}</code></dt>
+            <dd>Indicates that the menu should be collapsed and the
               icon shown as a control top open it.</dd>
-            <dt><code>label  {"{text}"}</code></dt>
-            <dd>Indicates that the menu should be collapsed and this
+            <dt><code>label      {"{text}"}</code></dt>
+            <dd>Indicates that the menu should be collapsed and the
               label shown as a control top open it.</dd>
-            <dt><code>small  true|false</code></dt>
+            <dt><code>small      true|false</code></dt>
             <dd>Indicates that the menu should be rendered in a small size.</dd>
           </dl>
         </section>

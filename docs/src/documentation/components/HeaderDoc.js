@@ -26,7 +26,10 @@ var HeaderDoc = React.createClass({
         <section>
           <h2>Options</h2>
           <dl>
-            <dt><code>primary  true|false</code></dt>
+            <dt><code>colorIndex  {"{category}-{index}"}</code></dt>
+            <dd>If specified, determines the background color.
+              For example: <code>"neutral-1"</code></dd>
+            <dt><code>primary     true|false</code></dt>
             <dd>Whether this is the primary application header or not.</dd>
           </dl>
         </section>
@@ -38,7 +41,7 @@ var HeaderDoc = React.createClass({
           <div className="example">
             <Header>
               <h2>Title</h2>
-              <Search direction="left" />
+              <Search align="right" />
             </Header>
           </div>
           <pre><code className="html">{"<Header> ..."}</code></pre>
@@ -52,7 +55,7 @@ var HeaderDoc = React.createClass({
                   <a href="#" className="active">First</a>
                   <a href="#">Second</a>
                   <a href="#">Third</a>
-                  <Search direction="left" />
+                  <Search align="right" />
                 </Menu>
               </div>
             </Header>
@@ -63,7 +66,7 @@ var HeaderDoc = React.createClass({
           <div className="example">
             <Header>
               <h2><Logo /> Title</h2>
-              <Menu icon={<Edit />}>
+              <Menu icon={<Edit />} align="right">
                 <a href="#" className="active">First</a>
                 <a href="#">Second</a>
                 <a href="#">Third</a>

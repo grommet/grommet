@@ -22,9 +22,14 @@ var FooterDoc = React.createClass({
         <section>
           <h2>Options</h2>
           <dl>
-            <dt><code>primary  true|false</code></dt>
+            <dt><code>centered    true|false</code></dt>
+            <dd>Whether to center the content.</dd>
+            <dt><code>colorIndex  {"{category}-{index}"}</code></dt>
+            <dd>If specified, determines the background color.
+              For example: <code>"neutral-1"</code></dd>
+            <dt><code>primary     true|false</code></dt>
             <dd>Whether this is the primary application footer or not.</dd>
-            <dt><code>scrollTop  true|false</code></dt>
+            <dt><code>scrollTop   true|false</code></dt>
             <dd>Whether to include a "scroll back to the top" control.</dd>
           </dl>
         </section>

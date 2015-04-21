@@ -11,16 +11,17 @@ var CLASS_ROOT = "search";
 var Search = React.createClass({
 
   propTypes: {
+    align: React.PropTypes.oneOf(['left', 'right']),
     defaultValue: React.PropTypes.string,
-    direction: React.PropTypes.oneOf(['left', 'right']),
     inline: React.PropTypes.bool,
+    onChange: React.PropTypes.func,
     placeHolder: React.PropTypes.string,
     suggestions: React.PropTypes.arrayOf(React.PropTypes.string)
   },
 
   getDefaultProps: function () {
     return {
-      direction: 'right',
+      align: 'left',
       inline: false,
       placeHolder: 'Search',
       suggestions: []
@@ -77,6 +78,7 @@ var Search = React.createClass({
 
   getInitialState: function () {
     return {
+      align: 'left',
       controlFocused: false,
       active: false
     };
@@ -114,14 +116,17 @@ var Search = React.createClass({
     if (this.state.active && ! prevState.active) {
       document.body.addEventListener('click', this._onClickBody);
       this.startListeningToKeyboard(activeKeyboardHandlers);
+
       var controlElement = this.refs.control.getDOMNode();
       var layerElement = document.getElementById('search-layer');
       var inputElement = layerElement.querySelectorAll('.search__input')[0];
+
       // give input element the same line height and font size as the control
       var fontSize = window.getComputedStyle(controlElement).fontSize;
       inputElement.style.fontSize = fontSize;
       inputElement.style.lineHeight = (controlElement.clientHeight - 12) + 'px';
-      this.startOverlay(controlElement,layerElement);
+
+      this.startOverlay(controlElement,layerElement, this.props.align);
       inputElement.focus();
     }
   },
@@ -149,8 +154,8 @@ var Search = React.createClass({
     } else {
       classes.push(CLASS_ROOT + "--controlled");
     }
-    if (this.props.direction) {
-      classes.push(CLASS_ROOT + "--" + this.props.direction);
+    if (this.props.align) {
+      classes.push(CLASS_ROOT + "--align-" + this.props.align);
     }
     if (this.props.className) {
       classes.push(this.props.className);
@@ -191,8 +196,8 @@ var Search = React.createClass({
 
       var classes = [CLASS_ROOT + "__layer"];
 
-      if (this.props.direction) {
-        classes.push(CLASS_ROOT + "__layer--" + this.props.direction);
+      if (this.props.align) {
+        classes.push(CLASS_ROOT + "__layer--align-" + this.props.align);
       }
       if (this.props.inline) {
         classes.push(CLASS_ROOT + "__layer--inline");
@@ -235,7 +240,7 @@ var Search = React.createClass({
         var controlContents = this._createControl();
         var first = null;
         var second = null;
-        if ('left' === this.props.direction) {
+        if ('right' === this.props.align) {
           first = contents;
           second = controlContents;
         } else {

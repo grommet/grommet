@@ -59,7 +59,7 @@
     z-index: 2;
     @include inuit-font-size($inuit-heading-size-3, inherit);
     background-color: $background-color;
-    border: 1px solid $border-color;
+    border: 1px solid $brand-color;
 
     .menu__control {
       &-label {
@@ -77,6 +77,12 @@
       &:hover {
         text-decoration: none;
         background-color: $hover-background-color;
+      }
+    }
+
+    &--align-right {
+      .menu__control {
+        text-align: right;
       }
     }
   }

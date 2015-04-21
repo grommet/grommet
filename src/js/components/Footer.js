@@ -7,6 +7,7 @@ var Footer = React.createClass({
 
   propTypes: {
     centered: React.PropTypes.bool,
+    colorIndex: React.PropTypes.string,
     primary: React.PropTypes.bool,
     scrollTop: React.PropTypes.bool
   },

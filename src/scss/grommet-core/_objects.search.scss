@@ -25,7 +25,7 @@
     z-index: 2;
     @include inuit-font-size($inuit-heading-size-4, inherit);
     background-color: $background-color;
-    border: 1px solid $border-color;
+    border: 1px solid $brand-color;
 
     &--inline {
       margin-left: -1px;
@@ -45,6 +45,7 @@
 
     .search__control {
       display: inline-block;
+      vertical-align: top;
     }
 
     .search__suggestion {

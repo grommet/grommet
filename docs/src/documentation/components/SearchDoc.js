@@ -29,10 +29,10 @@ var SearchDoc = React.createClass({
         <section>
           <h2>Options</h2>
           <dl>
+            <dt><code>align         right|left</code></dt>
+            <dd>Where to align the overlay.</dd>
             <dt><code>defaultValue  {"{string}"}</code></dt>
             <dd>What text to start with in the input.</dd>
-            <dt><code>direction     right|left</code></dt>
-            <dd>Which direction the input should be laid out in.</dd>
             <dt><code>inline        true|false</code></dt>
             <dd>Indicates that the search input should always
               be visible.</dd>

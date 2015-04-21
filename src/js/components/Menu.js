@@ -10,6 +10,7 @@ var DropCaretIcon = require('./icons/DropCaret');
 var Menu = React.createClass({
 
   propTypes: {
+    align: React.PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
     collapse: React.PropTypes.bool,
     direction: React.PropTypes.oneOf(['up', 'down', 'left', 'right']),
     icon: React.PropTypes.node,
@@ -19,6 +20,7 @@ var Menu = React.createClass({
 
   getDefaultProps: function () {
     return {
+      align: 'left',
       direction: 'down',
       small: false
     };
@@ -84,14 +86,17 @@ var Menu = React.createClass({
     if (this.state.active && ! prevState.active) {
       document.body.addEventListener('click', this._onClose);
       this.startListeningToKeyboard(activeKeyboardHandlers);
+
       var controlElement = this.refs.control.getDOMNode();
       var layerElement = document.getElementById('menu-layer');
+
       // give layer control element the same line height and font size as the control
       var layerControlElement = layerElement.querySelectorAll('.menu__control')[0];
       var fontSize = window.getComputedStyle(controlElement).fontSize;
       layerControlElement.style.fontSize = fontSize;
       layerControlElement.style.lineHeight = (controlElement.clientHeight) + 'px';
-      this.startOverlay(controlElement, layerElement);
+
+      this.startOverlay(controlElement, layerElement, this.props.align);
     }
   },
 
@@ -151,6 +156,9 @@ var Menu = React.createClass({
     if (this.props.direction) {
       classes.push("menu--" + this.props.direction);
     }
+    if (this.props.align) {
+      classes.push("menu--align-" + this.props.align);
+    }
     if (this.props.small) {
       classes.push("menu--small");
     }
@@ -202,6 +210,9 @@ var Menu = React.createClass({
 
       if (this.props.direction) {
         classes.push("menu__layer--" + this.props.direction);
+      }
+      if (this.props.align) {
+        classes.push("menu__layer--align-" + this.props.align);
       }
       if (this.props.small) {
         classes.push("menu__layer--small");

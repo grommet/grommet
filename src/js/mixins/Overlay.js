@@ -3,9 +3,12 @@
 // Overlay is a mixin for ensuring components layerd on top align with their initiating controls underneath.
 var Overlay = {
 
-  _overlayControlElement: null,
-  _overlayLayerElement: null,
-  _overlayScrollParents: [],
+  _overlay: {
+    controlElement: null,
+    layerElement: null,
+    align: null,
+    scrollParents: []
+  },
 
   _findScrollParents: function (element) {
     var result = [];
@@ -20,11 +23,12 @@ var Overlay = {
     return result;
   },
 
-  startOverlay: function (controlElement, layerElement) {
-    this._overlayControlElement = controlElement;
-    this._overlayLayerElement = layerElement;
-    this._overlayScrollParents = this._findScrollParents(this._overlayControlElement);
-    this._overlayScrollParents.forEach(function (parent) {
+  startOverlay: function (controlElement, layerElement, align) {
+    this._overlay.controlElement = controlElement;
+    this._overlay.layerElement = layerElement;
+    this._overlay.align = align;
+    this._overlay.scrollParents = this._findScrollParents(this._overlay.controlElement);
+    this._overlay.scrollParents.forEach(function (parent) {
       parent.addEventListener('scroll', this.positionOverlay);
     }, this);
     window.addEventListener('resize', this.positionOverlay);
@@ -33,20 +37,21 @@ var Overlay = {
   },
 
   stopOverlay: function () {
-    if (this._overlayControlElement) {
-      this._overlayScrollParents.forEach(function (parent) {
+    if (this._overlay.controlElement) {
+      this._overlay.scrollParents.forEach(function (parent) {
         parent.removeEventListener('scroll', this.positionOverlay);
       }, this);
       window.removeEventListener('resize', this.positionOverlay);
-      this._overlayControlElement = null;
-      this._overlayLayerElement = null;
-      this._overlayScrollParents = [];
+      this._overlay.controlElement = null;
+      this._overlay.layerElement = null;
+      this._overlay.align = null;
+      this._overlay.scrollParents = [];
     }
   },
 
   positionOverlay: function () {
-    var controlElement = this._overlayControlElement;
-    var layerElement = this._overlayLayerElement;
+    var controlElement = this._overlay.controlElement;
+    var layerElement = this._overlay.layerElement;
 
     var controlRect = controlElement.getBoundingClientRect();
     var windowWidth = window.innerWidth;
@@ -62,7 +67,7 @@ var Overlay = {
     // align right edge and make at least as wide as the control
     // TODO: handle being on the right edge of the window with an icon control, go left
     var left = (controlRect.left + layerElement.offsetWidth) - width;
-    if ('left' === this.props.direction) {
+    if ('right' === this._overlay.align) {
       // align right edge
       left = (controlRect.left + controlElement.offsetWidth) -
         layerElement.offsetWidth;
