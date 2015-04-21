@@ -99,23 +99,23 @@ var Home = React.createClass({
           <Tiles>
             <Tile>
               <img src="img/Adobe_Illustrator.svg" title="Adobe Illustrator" />
-              <p>Adobe Illustrator</p>
+              <div>Adobe Illustrator</div>
             </Tile>
             <Tile>
               <img src="img/Adobe_Photoshop.svg" title="Adobe Photoshop" />
-              <p>Adobe Photoshop</p>
+              <div>Adobe Photoshop</div>
             </Tile>
             <Tile>
               <img src="img/Axure.png" title="Axure" />
-              <p>Axure</p>
+              <div>Axure</div>
             </Tile>
             <Tile>
               <img src="img/Balsamiq.png" title="Balsamiq" />
-              <p>Balsamiq</p>
+              <div>Balsamiq</div>
             </Tile>
             <Tile>
               <img src="img/Sketch.png" title="Sketch" />
-              <p>Sketch</p>
+              <div>Sketch</div>
             </Tile>
           </Tiles>
         </Section>
