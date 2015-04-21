@@ -20,6 +20,7 @@
     display: inline-block;
     width: double($inuit-base-spacing-unit);
     height: double($inuit-base-spacing-unit);
+    margin-bottom: $inuit-base-spacing-unit;
   }
 
   fieldset {
