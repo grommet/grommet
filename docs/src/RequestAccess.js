@@ -27,15 +27,20 @@ var RequestAccess = React.createClass({
     this.setState({purpose: event.target.value});
   },
 
+  _onGithubChange: function (event) {
+    this.setState({github: event.target.value});
+  },
+
   _onSubmit: function (event) {
     event.preventDefault();
-    if (this.state.name && this.state.email && this.state.purpose) {
+    if (this.state.name && this.state.email && this.state.purpose && this.state.purpose) {
       this.setState({invalid: false});
       
       var data = {
         name: this.state.name,
         email: this.state.email,
-        businessPurpose: this.state.purpose
+        businessPurpose: this.state.purpose,
+        github: this.state.github
       };
 
       Actions.requestAccess(data);      
@@ -70,7 +75,7 @@ var RequestAccess = React.createClass({
   },
 
   getInitialState: function () {
-    return {name: '', email: '', purpose: '', invalid: false};
+    return {name: '', email: '', purpose: '', github: '', invalid: false};
   },
 
   componentDidMount: function() {
@@ -105,7 +110,7 @@ var RequestAccess = React.createClass({
               </Link>
             </Menu>
           </Header>
-          <div>
+          <div className="request-access">
             <h3>Grommet is almost ready!</h3>
             <p>We would love to have you as a contributor.</p>
             <fieldset>
@@ -120,6 +125,12 @@ var RequestAccess = React.createClass({
                 <input ref="email" id="email" type="email"
                   value={this.state.email}
                   onChange={this._onEmailChange} />
+              </FormField>
+              <FormField error={this._errorMessage('github')}>
+                <label htmlFor="github">What&#39;s your Github account?</label>
+                <input ref="github" id="github" type="text"
+                  value={this.state.github}
+                  onChange={this._onGithubChange} />
               </FormField>
               <FormField error={this._errorMessage('purpose')}>
                 <label htmlFor="purpose">What are you considering Grommet for?</label>

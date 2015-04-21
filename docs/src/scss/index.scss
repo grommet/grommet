@@ -20,6 +20,10 @@ svg rect[fill="#00B388"] {
   fill: $brand-color;
 }
 
+.request-access fieldset:first-of-type {
+  padding-top: 0;
+}
+
 .document .example {
   margin-bottom: $inuit-base-spacing-unit;
 

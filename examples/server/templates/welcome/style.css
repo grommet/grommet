@@ -23,14 +23,11 @@ table.welcome-body .title {
 
 table.welcome-body tfoot {
   font-size: 14px;
-}
-
-table.welcome-body tfoot tr {
-  height: 70px;
+  padding-bottom: 3%;
 }
 
 table.welcome-body tfoot tr td.left {
-  padding-left: 5%;
+  padding: 3% 5%;
   font-weight: bold;
 }
 
@@ -47,7 +44,7 @@ table.welcome-text {
 }
 
 table.welcome-text tr {
-  max-width: 500px;
+  max-width: 550px;
   display:block;
   padding: 5px;
 }

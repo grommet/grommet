@@ -46,7 +46,7 @@ router.post('/request-access', function(req, res) {
 
   var data = req.body;
 
-  if (!data.name || !data.email || !data.businessPurpose) {
+  if (!data.name || !data.email || !data.businessPurpose || !data.github) {
     res.status(400).send({
       message: "Invalid payload.",
       recommendedActions: "Enter name, email, and businessPurpose and try again."
@@ -54,15 +54,15 @@ router.post('/request-access', function(req, res) {
   }
 
   var transport = nodemailer.createTransport(smtpTransport({
-    host: 'smtp1.hp.com',
+    host: 'path/to/smtp',
     port: 25
   }));
 
   var toGrommetConfig = {
     from: data.email,
-    to: 'uxgroup@hp.com',
+    to: 'asouza@hp.com',
     subject: 'Evaluate access for ' + data.email,
-    text: data.name + ' with this email: ' + data.email + ' wants to access Grommet for this reason: ' + data.businessPurpose
+    text: data.name + ' with this email: ' + data.email + ' wants to access Grommet for this reason: ' + data.businessPurpose + '. The Github account is: '+ data.github +'.'
   };
 
   emailTemplates(templatesDir, function(err, template) {
