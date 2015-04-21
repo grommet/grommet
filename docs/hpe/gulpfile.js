@@ -57,6 +57,10 @@ var opts = {
     __THEME__: {
       hpe: true
     }
+  },
+  watch: {
+    path: path.resolve(__dirname, '../../src/js/**'),
+    dist: path.resolve(__dirname, '../../dist')
   }
 };
 

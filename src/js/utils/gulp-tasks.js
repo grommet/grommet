@@ -147,9 +147,12 @@ module.exports = function(gulp, opts) {
       });
     }
 
-    watch('src/**', function () {
-      gulp.src('src/**').pipe(gulp.dest(dist));
-    });
+    if (options.watch) {
+      watch(options.watch.path, function () {
+        gulp.src(options.watch.path).pipe(gulp.dest(options.watch.dist));
+      });  
+    }
+    
 
     var devWebpackConfig = assign({}, webpackConfig, options.webpack || {}, {
       entry: {

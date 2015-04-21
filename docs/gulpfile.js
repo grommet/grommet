@@ -55,6 +55,10 @@ var opts = {
     __THEME__: {
       general: true
     }
+  },
+  watch: {
+    path: path.resolve(__dirname, '../src/js/**'),
+    dist: path.resolve(__dirname, '../dist')
   }
 };
 
