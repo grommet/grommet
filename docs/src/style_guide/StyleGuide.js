@@ -84,7 +84,10 @@ var CONTENTS = [
   },
   {route: "sg_showcase", label: 'Showcase', component: Showcase,
     contents: [
-      {id: "oneview-dashboard", label: 'OneView Dashboard'}
+      {id: "oneview-dashboard", label: 'OneView Dashboard'},
+      {id: "oneview-masterpage", label: 'OneView Master Page'},
+      {id: "propel-dashboard", label: 'Propel Dashboard'},
+      {id: "propel-prod-detail", label: 'Propel Product Detail'}
     ]
   }
 ];
