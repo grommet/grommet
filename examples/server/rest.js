@@ -60,7 +60,7 @@ router.post('/request-access', function(req, res) {
 
   var toGrommetConfig = {
     from: data.email,
-    to: 'asouza@hp.com',
+    to: 'uxgroup@hp.com',
     subject: 'Evaluate access for ' + data.email,
     text: data.name + ' with this email: ' + data.email + ' wants to access Grommet for this reason: ' + data.businessPurpose + '. The Github account is: '+ data.github +'.'
   };
