@@ -7,8 +7,8 @@
   flex-direction: column;
 
   > *:not(.form) {
-    -webkit-flex: 1;
-    flex: 1;
+    -webkit-flex: 0 1 auto;
+    flex: 0 1 auto;
     overflow: auto;
   }
 
@@ -55,7 +55,7 @@
     min-width: round($inuit-base-spacing-unit * 16);
     min-height: round($inuit-base-spacing-unit * 12);
     max-width: round($inuit-base-spacing-unit * 32); //$center-column-width;
-    max-height: 100vh;
+    height: 100vh;
     margin: 0 auto;
     background-color: $modal-background-color;
     overflow: none;
@@ -81,6 +81,7 @@
     @include flex-dialog-contents();
 
     > .form {
+      height: 100%;
       @include flex-dialog-contents();
     }
   }
