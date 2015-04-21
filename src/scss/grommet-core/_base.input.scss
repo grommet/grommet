@@ -78,6 +78,14 @@ a.button {
     border-color: $focus-border-color;
     box-shadow: 0 0 1px 1px $focus-border-color;
   }
+
+  [class*="background-color-index-"] & {
+    &:hover {
+      background-color: $brand-color;
+      border-color: $brand-color;
+      text-decoration: none;
+    }
+  }
 }
 
 input[type="checkbox"],
