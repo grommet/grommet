@@ -68,12 +68,9 @@ var Search = React.createClass({
     this._onClose();
   },
 
-  _onClickBody: function (event) {
-    // ignore if from input or suggestion
-    if (! event.target.classList.contains("search__input") &&
-      ! event.target.classList.contains("search__suggestion")) {
-      this._onClose();
-    }
+  _onSink: function (event) {
+    event.stopPropagation();
+    event.nativeEvent.stopImmediatePropagation();
   },
 
   getInitialState: function () {
@@ -104,7 +101,7 @@ var Search = React.createClass({
     }
 
     if (! this.state.active && prevState.active) {
-      document.body.removeEventListener('click', this._onClickBody);
+      document.removeEventListener('click', this._onClose);
       this.stopListeningToKeyboard(activeKeyboardHandlers);
       this.stopOverlay();
     }
@@ -114,7 +111,7 @@ var Search = React.createClass({
     }
 
     if (this.state.active && ! prevState.active) {
-      document.body.addEventListener('click', this._onClickBody);
+      document.addEventListener('click', this._onClose);
       this.startListeningToKeyboard(activeKeyboardHandlers);
 
       var controlElement = this.refs.control.getDOMNode();
@@ -127,13 +124,15 @@ var Search = React.createClass({
       var fontSize = window.getComputedStyle(controlElement).fontSize;
       inputElement.style.fontSize = fontSize;
       var height = controlElement.clientHeight;
-      if (height <= layerControlIconElement.clientHeight) {
+      if (layerControlIconElement && height <= layerControlIconElement.clientHeight) {
         // adjust to align with underlying control when control uses all height
         layerControlElement.style.marginTop = '-3px';
       }
       inputElement.style.height = height + 'px';
-      layerControlElement.style.height = height + 'px';
-      layerControlElement.style.lineHeight = height + 'px';
+      if (layerControlElement) {
+        layerControlElement.style.height = height + 'px';
+        layerControlElement.style.lineHeight = height + 'px';
+      }
 
       this.startOverlay(controlElement,layerElement, this.props.align);
       inputElement.focus();
@@ -223,7 +222,7 @@ var Search = React.createClass({
       }, this);
 
       var contents = (
-        <div className={CLASS_ROOT + "__layer-contents"}>
+        <div className={CLASS_ROOT + "__layer-contents"} onClick={this._onSink}>
           <input type="search"
             defaultValue={this.props.defaultValue}
             className={CLASS_ROOT + "__input" }

@@ -1,8 +1,8 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
-
 var React = require('react');
 var IndexStore = require('../stores/IndexStore');
 var Search = require('../utils/Search');
+var StringConvert = require('../utils/StringConvert');
 var Clear = require('../../components/icons/Clear');
 var KeyboardAccelerators = require('../../mixins/KeyboardAccelerators');
 
@@ -110,7 +110,7 @@ var IndexSearchFaceted = React.createClass({
       // attribute value
       // prune any pre-typed text
       fullText = fullText.replace(/:\S+$/, ':');
-      term = String.quoteIfNecessary(term);
+      term = StringConvert.quoteIfNecessary(term);
       fullText += term;
     }
     this.props.onSearch(fullText);

@@ -1,13 +1,13 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
-
 var React = require('react');
+var StringConvert = require('../utils/StringConvert');
 
 var CLASS_ROOT = 'index-filter-attribute';
 
 var IndexFilterAttribute = React.createClass({
 
   _onFilterChange: function (attribute, value) {
-    var tokenText = attribute.name + ':' + String.quoteIfNecessary(value);
+    var tokenText = attribute.name + ':' + StringConvert.quoteIfNecessary(value);
     var search = this.props.search.clone();
     search.toggle(tokenText);
     this.props.onSearch(search.fullText);

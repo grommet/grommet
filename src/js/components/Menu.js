@@ -74,7 +74,7 @@ var Menu = React.createClass({
     }
 
     if (! this.state.active && prevState.active) {
-      document.body.removeEventListener('click', this._onClose);
+      document.removeEventListener('click', this._onClose);
       this.stopListeningToKeyboard(activeKeyboardHandlers);
       this.stopOverlay();
     }
@@ -84,19 +84,19 @@ var Menu = React.createClass({
     }
 
     if (this.state.active && ! prevState.active) {
-      document.body.addEventListener('click', this._onClose);
+      document.addEventListener('click', this._onClose);
       this.startListeningToKeyboard(activeKeyboardHandlers);
 
       var controlElement = this.refs.control.getDOMNode();
       var layerElement = document.getElementById('menu-layer');
       var layerControlElement = layerElement.querySelectorAll('.menu__control')[0];
-      var layerControlIconElement = layerElement.querySelectorAll('svg')[0];
+      var layerControlIconElement = layerElement.querySelectorAll('svg, img')[0];
 
       // give layer control element the same line height and font size as the control
       var fontSize = window.getComputedStyle(controlElement).fontSize;
       layerControlElement.style.fontSize = fontSize;
       var height = controlElement.clientHeight;
-      if (height <= layerControlIconElement.clientHeight) {
+      if (layerControlIconElement && height <= layerControlIconElement.clientHeight) {
         // adjust to align with underlying control when control uses all height
         layerControlElement.style.marginTop = '-3px';
       }

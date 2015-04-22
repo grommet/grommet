@@ -1,5 +1,5 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
-//var String = require('./String');
+var StringConvert = require('./StringConvert');
 
 // Parse the search text into formal tokens.
 // Tokens enable syntax highlighting and filter formalization.
@@ -44,7 +44,7 @@ function tokenize(text) {
       if (matches) { // attribute:value
         endIndex = index + matches[0].length;
         parts = matches[0].split(':');
-        value = String.unquoteIfNecessary(parts[1]);
+        value = StringConvert.unquoteIfNecessary(parts[1]);
         token = {attribute: parts[0], value: value, text: text.slice(index, endIndex)};
         index = endIndex + 1;
       } else {
@@ -91,7 +91,7 @@ function normalizeToken(token) {
     if (token.attribute) {
       token.text = token.attribute + ':';
       if (token.value) {
-        token.text += String.quoteIfNecessary(token.value);
+        token.text += StringConvert.quoteIfNecessary(token.value);
       }
     }
   }

@@ -45,7 +45,7 @@ var Tour = React.createClass({
           <Title>
             {"Grommet Tour"}
           </Title>
-          <Menu icon={<Gravatar email={this.data.email} size={48} />}
+          <Menu icon={<Gravatar email={this.state.data.email || ''} size={48} />}
             align="right">
             <a className="button" onClick={this._onLogout}>Logout</a>
           </Menu>
