@@ -4,24 +4,27 @@
     <section>
       <h1>Tutorial</h1>
       <p>
-        In this section we are going to create a complete production-ready Todo application which provides the following features:
+        In this section you will experience a complete, production-ready TodoApp which demonstrates the following features:
         <ul>
+          <li>Login and Logout operations</li>
           <li>A dashboard with the list of existing tasks</li>
           <li>Adding, removing, editing, and completing tasks</li>
           <li>Managing labels and assigning them to tasks</li>
           <li>Searching for existing tasks and/or labels</li>
-          <li>Filtering tasks by status (completed, in progress, created) and/or labels</li>
-          <li>Login and Logout operations</li>
+          <li>Filtering tasks by status and/or labels</li>
         </ul>
       </p>
     </section>
     <section>
       <h2>Initial Structure</h2>
       <p>
-        Additionally from Grommet, this TodoApp will use <a href="http://gulpjs.com" target="_blank">Gulp</a> as the task runner, and <a href="https://facebook.github.io/flux/" target="_blank">Flux</a> as the web application architecture layout. These frameworks are not required for Grommet to work, but we strongly recommend them for your app as they provide great features for User Interface development.
+        Your TodoApp will use <a href="http://gulpjs.com" target="_blank">Gulp</a> as the task runner, and <a href="https://facebook.github.io/flux/" target="_blank">Flux</a> as the web application architecture. These frameworks are not required for Grommet to work, but we recommend you explore them as they provide many benefits and simplifications for web-based applications.
       </p>
       <p>
-        Also, make sure that you have Grommet available in your local environment by following instructions on the <a href="get-started">Get Started</a> page. That said, create the following folder structure and files locally:
+        At this point, make sure you have Grommet available in your local environment by following instructions on the <a href="get-started">Get Started</a> page.
+      </p>
+      <p>
+        Create the following folder structure and files locally:
       </p>
       <pre><code class="bash">
         {"/todo-app\n  /src\n    /actions\n    /constants\n    /components\n    /scss\n    /stores\n    index.js\n    index.html\n  gulpfile.js\n  package.json\n"}
@@ -54,7 +57,7 @@
         npm link grommet
       </code></pre>
       <p>
-        This is a Single-Page application and we need to populate <i>src/index.html</i> with the code that will load the <i>src/index.js</i> script.
+        This is a single-page application that you need to populate with a <i>src/index.html</i> file that contains the code that will load the <i>src/index.js</i> script.
       </p>
       <pre><code class="html">
 &lt;!DOCTYPE html&gt;<br/>&lt;html&gt;<br/>&lt;head&gt;<br/>  &lt;meta charset=&quot;UTF-8&quot;&gt;<br/>  &lt;title&gt;TodoApp&lt;/title&gt;<br/>  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, user-scalable=no&quot;&gt;<br/>  &lt;meta name=&quot;mobile-web-app-capable&quot; content=&quot;yes&quot;&gt;<br/>  &lt;link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'&gt;<br/>&lt;/head&gt;<br/>&lt;body class=&quot;loading&quot;&gt;<br/>  &lt;div id=&quot;content&quot;&gt;<br/>  &lt;/div&gt;<br/>  &lt;script src=&quot;index.js&quot;&gt;&lt;/script&gt;<br/>&lt;/body&gt;<br/>&lt;/html&gt;<br/>
@@ -63,7 +66,7 @@
     <section>
       <h2>TodoApp Dashboard</h2>
       <p>
-        Now that we have the structure in place it is time to start adding TodoApp code inside <i>src/index.js</i>:
+        Now that you have the structure in place it is time to start adding TodoApp code inside <i>src/index.js</i>:
       </p>
       <pre><code class="javascript">
       {"require(\"!style!css!sass!./scss/index.scss\");\n\nvar React = require('react');\nvar Router = require('react-router');\nvar routes = require('./components/Routes');\n\nvar router = Router.create({routes: routes});\n\nrouter.run(function (Handler) {\n  var factory = React.createFactory(Handler);\n  var element = document.getElementById('content');\n  React.render(factory(), element);\n});"}
@@ -89,13 +92,13 @@ var React = require('react');<br/><br/>var Logo = React.createClass({'{'}<br/><b
 @import 'grommet/grommet-core/index';
       </code></pre>
       <p>
-        That's it, at this point we have an initial landing page for TodoApp. Now, we need to run this project in the browser to make sure everything is looking as we expect.
+        At this point you have an initial landing page for TodoApp. Now, you will run your application in the browser to make sure everything is working as expected.
       </p>
     </section>
     <section>
       <h2>Running a Dev Server</h2>
       <p>
-        To execute this code in the browser we need to use a module bundler (e.g. <a href="http://webpack.github.io" target="_blank">Webpack</a>, <a href="http://browserify.org" target="_blank">Browserify</a>).
+        To execute your code in your browser, you will use a module bundler (e.g. <a href="http://webpack.github.io" target="_blank">Webpack</a>, <a href="http://browserify.org" target="_blank">Browserify</a>).
         Grommet provides a set of tasks in Gulp that contains a lot of development tasks available out-of-the-box for you, including a development server based on Webpack.
       </p>
       <p>
@@ -112,7 +115,7 @@ var React = require('react');<br/><br/>var Logo = React.createClass({'{'}<br/><b
         <img src="img/sample-todoapp.png" title="Sample of TodoApp"/>
       </p>
       <p>
-        This dev server has been implemented with <a href="http://webpack.github.io/docs/hot-module-replacement.html" target="_blank">Hot Module Replacement</a> enabled by default. This means that any change inside the project should refresh the browser automatically. Try changing the Title, for example. The Dev server will detect this change and will update the components in your browser properly. This works even for your SCSS files.
+        This dev server has been implemented with <a href="http://webpack.github.io/docs/hot-module-replacement.html" target="_blank">Hot Module Replacement</a> enabled. This means that any change inside the project will replace the code running in your browser without refreshing your page.  Try changing the title and saving the file.  The server will detect this change and will update the components in your browser. This works even for your SCSS files.  Because this does not refresh your browser, you do not lose your context in your application.  This is a tremendous efficiency gain for developers.
       </p>
     </section>
 </body>
