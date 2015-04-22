@@ -40,6 +40,8 @@
       }
 
       &:first-child {
+        -webkit-flex: 1;
+        flex: 1;
         text-align: left;
       }
     }

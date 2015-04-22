@@ -25,7 +25,6 @@ var HeaderDoc = require('./components/HeaderDoc');
 var LoginFormDoc = require('./components/LoginFormDoc');
 var MenuDoc = require('./components/MenuDoc');
 var MeterDoc = require('./components/MeterDoc');
-var PanelDoc = require('./components/PanelDoc');
 var SearchDoc = require('./components/SearchDoc');
 var SectionDoc = require('./components/SectionDoc');
 var TableDoc = require('./components/TableDoc');
@@ -71,7 +70,6 @@ var CONTENTS = [
       {route: 'doc_login-form', label: 'LoginForm', component: LoginFormDoc},
       {route: 'doc_menu', label: 'Menu', component: MenuDoc},
       {route: 'doc_meter', label: 'Meter', component: MeterDoc},
-      {route: 'doc_panel', label: 'Panel', component: PanelDoc},
       {route: 'doc_search', label: 'Search', component: SearchDoc},
       {route: 'doc_section', label: 'Section', component: SectionDoc},
       {route: 'doc_table', label: 'Table', component: TableDoc},
