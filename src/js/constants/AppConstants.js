@@ -7,11 +7,13 @@ module.exports = {
   CHANGE_EVENT: 'change',
 
   ActionTypes: mirrorkey({
+    // remove?
     NAV_SETUP: null,
     NAV_SEARCH: null,
     NAV_SEARCH_SUGGESTIONS_RESULT: null,
     NAV_CHANGE: null,
     ROUTE_CHANGE: null,
+
     SESSION_SETUP: null,
     SESSION_LOGOUT: null,
     SESSION_LOGIN: null

@@ -13,8 +13,10 @@ var IndexDashboardPanelEdit = require('grommet/index/components/DashboardPanelEd
 var Tour = require('./Tour');
 var TourDashboard = require('./TourDashboard');
 
+var rootPath = "/"; // "/tour/";
+
 var routes = (
-  <Route name="tour" path="/tour/" handler={Tour}>
+  <Route name="tour" path={rootPath} handler={Tour}>
     <Route name="login" handler={TourLogin}/>
     <Route name="tbd" handler={TBD}/>
     <Route name="settings" handler={TBD}/>
