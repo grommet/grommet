@@ -89,12 +89,19 @@ var Menu = React.createClass({
 
       var controlElement = this.refs.control.getDOMNode();
       var layerElement = document.getElementById('menu-layer');
+      var layerControlElement = layerElement.querySelectorAll('.menu__control')[0];
+      var layerControlIconElement = layerElement.querySelectorAll('svg')[0];
 
       // give layer control element the same line height and font size as the control
-      var layerControlElement = layerElement.querySelectorAll('.menu__control')[0];
       var fontSize = window.getComputedStyle(controlElement).fontSize;
       layerControlElement.style.fontSize = fontSize;
-      layerControlElement.style.lineHeight = (controlElement.clientHeight) + 'px';
+      var height = controlElement.clientHeight;
+      if (height <= layerControlIconElement.clientHeight) {
+        // adjust to align with underlying control when control uses all height
+        layerControlElement.style.marginTop = '-3px';
+      }
+      layerControlElement.style.height = height + 'px';
+      layerControlElement.style.lineHeight = height + 'px';
 
       this.startOverlay(controlElement, layerElement, this.props.align);
     }
@@ -113,24 +120,18 @@ var Menu = React.createClass({
 
     if (this.props.icon) {
       classes.push(controlClassName + "--labelled");
-      icon = (
-        <div className={controlClassName + "-icon control-icon"}>
-          {this.props.icon}
-        </div>
-      );
+      icon = this.props.icon;
     } else {
       classes.push(controlClassName +"--fixed-label");
-      icon = (
-        <div className={controlClassName + "-icon control-icon"}>
-          <MoreIcon />
-        </div>
-      );
+      icon = <MoreIcon />;
     }
 
     if (this.props.label) {
       result = (
         <div className={classes.join(' ')}>
-          {icon}
+          <div className={controlClassName + "-icon"}>
+            {icon}
+          </div>
           <span className={controlClassName + "-label"}>{this.props.label}</span>
           <DropCaretIcon className={controlClassName + "-drop-icon"} />
         </div>

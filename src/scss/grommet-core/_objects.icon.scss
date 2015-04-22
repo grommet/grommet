@@ -4,35 +4,18 @@
   display: inline-block;
   width: double($inuit-base-spacing-unit);
   height: double($inuit-base-spacing-unit);
-  padding: halve($inuit-base-spacing-unit);
   vertical-align: middle;
   cursor: pointer;
+  fill: $icon-color;
+  stroke: $icon-color;
+  transition: all $base-animation-duration ease-in-out;
 
-  svg {
-    display: block;
-    width: $inuit-base-spacing-unit;
-    height: $inuit-base-spacing-unit;
-    fill: $icon-color;
-    stroke: $icon-color;
-    transition: all $base-animation-duration ease-in-out;
-  }
-
-  &--full {
-    top: 0px;
-    padding: 0px;
-
-    svg {
-      width: double($inuit-base-spacing-unit);
-      height: double($inuit-base-spacing-unit);
-    }
-  }
-
-  &:hover svg {
+  &:hover {
     fill: $active-icon-color;
     stroke: $active-icon-color;
   }
 
-  &--active svg {
+  &--active {
     fill: $active-icon-color;
     stroke: $active-icon-color;
   }
@@ -62,9 +45,9 @@ $badge-size: halve($inuit-base-spacing-unit) + quarter($inuit-base-spacing-unit)
   }
 }
 
-.drag-handle {
-  margin-right: $inuit-base-spacing-unit - 10;
-}
+//.drag-handle {
+//  margin-right: $inuit-base-spacing-unit - 10;
+//}
 
 .status-icon {
   width: $inuit-base-spacing-unit;

@@ -30,9 +30,7 @@ var FullForm = React.createClass({
         <Header>
           <h1>Edit</h1>
           <Menu direction="right">
-            <div className="control-icon">
-              <HelpIcon />
-            </div>
+            <HelpIcon />
           </Menu>
         </Header>
         <fieldset>

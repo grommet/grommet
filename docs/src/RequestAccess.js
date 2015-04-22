@@ -35,7 +35,7 @@ var RequestAccess = React.createClass({
     event.preventDefault();
     if (this.state.name && this.state.email && this.state.purpose && this.state.purpose) {
       this.setState({invalid: false});
-      
+
       var data = {
         name: this.state.name,
         email: this.state.email,
@@ -43,7 +43,7 @@ var RequestAccess = React.createClass({
         github: this.state.github
       };
 
-      Actions.requestAccess(data);      
+      Actions.requestAccess(data);
     } else {
       this.setState({invalid: true});
     }
@@ -70,7 +70,7 @@ var RequestAccess = React.createClass({
         msg: 'Request for access has been sucessfully sent.'
       };
     }
-    
+
     this.setState(state);
   },
 
@@ -104,9 +104,7 @@ var RequestAccess = React.createClass({
             <h1></h1>
             <Menu>
               <Link to="docs">
-                <div className="control-icon">
-                  <CloseIcon />
-                </div>
+                <CloseIcon />
               </Link>
             </Menu>
           </Header>

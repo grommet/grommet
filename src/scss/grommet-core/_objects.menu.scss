@@ -27,7 +27,9 @@
     cursor: pointer;
 
     &-drop-icon {
-      width: halve($inuit-base-spacing-unit);
+      width: $inuit-base-spacing-unit;
+      height: $inuit-base-spacing-unit;
+      margin-top: - quarter($inuit-base-spacing-unit);
       margin-left: halve($inuit-base-spacing-unit);
       stroke: $icon-color;
     }
@@ -79,6 +81,18 @@
         background-color: $hover-background-color;
       }
     }
+
+    //&--down {
+    //  .menu__control:not(.menu__control--fixed-label) {
+    //    margin-top: -3px;
+    //  }
+    //
+    //  &.menu__layer--small {
+    //    .menu__control:not(.menu__control--fixed-label) {
+    //      margin-top: -1px;
+    //    }
+    //  }
+    //}
 
     &--align-right {
       .menu__control {

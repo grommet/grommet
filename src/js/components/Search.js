@@ -120,15 +120,20 @@ var Search = React.createClass({
       var controlElement = this.refs.control.getDOMNode();
       var layerElement = document.getElementById('search-layer');
       var layerControlElement = layerElement.querySelectorAll('.search__control')[0];
+      var layerControlIconElement = layerElement.querySelectorAll('svg')[0];
       var inputElement = layerElement.querySelectorAll('.search__input')[0];
 
       // give input element the same line height and font size as the control
       var fontSize = window.getComputedStyle(controlElement).fontSize;
       inputElement.style.fontSize = fontSize;
-      var height = controlElement.clientHeight + 'px';
-      inputElement.style.height = height;
-      layerControlElement.style.height = height;
-      layerControlElement.style.lineHeight = height;
+      var height = controlElement.clientHeight;
+      if (height <= layerControlIconElement.clientHeight) {
+        // adjust to align with underlying control when control uses all height
+        layerControlElement.style.marginTop = '-3px';
+      }
+      inputElement.style.height = height + 'px';
+      layerControlElement.style.height = height + 'px';
+      layerControlElement.style.lineHeight = height + 'px';
 
       this.startOverlay(controlElement,layerElement, this.props.align);
       inputElement.focus();
@@ -143,9 +148,7 @@ var Search = React.createClass({
     var controlClassName = CLASS_ROOT + "__control";
     return (
       <div className={controlClassName}>
-        <div className={controlClassName + "-icon control-icon"}>
-          <SearchIcon />
-        </div>
+        <SearchIcon />
       </div>
     );
   },

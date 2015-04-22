@@ -2,10 +2,10 @@
 
 var React = require('react');
 
-var Up = React.createClass({
+var Down = React.createClass({
 
   render: function() {
-    var className = 'control-icon control-icon-up';
+    var className = 'control-icon control-icon-down';
     if (this.props.className) {
       className += ' ' + this.props.className;
     }
@@ -14,7 +14,7 @@ var Up = React.createClass({
         stroke="#979797">
         <g fill="none" fillRule="evenodd"
           strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" >
-          <path d="M15,26.5 L24,19.5 L33,26.5"></path>
+          <path d="M15,19.5 L24,26.5 L33,19.5"></path>
         </g>
       </svg>
     );
@@ -22,4 +22,4 @@ var Up = React.createClass({
 
 });
 
-module.exports = Up;
+module.exports = Down;
