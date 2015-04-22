@@ -119,12 +119,16 @@ var Search = React.createClass({
 
       var controlElement = this.refs.control.getDOMNode();
       var layerElement = document.getElementById('search-layer');
+      var layerControlElement = layerElement.querySelectorAll('.search__control')[0];
       var inputElement = layerElement.querySelectorAll('.search__input')[0];
 
       // give input element the same line height and font size as the control
       var fontSize = window.getComputedStyle(controlElement).fontSize;
       inputElement.style.fontSize = fontSize;
-      inputElement.style.lineHeight = (controlElement.clientHeight - 12) + 'px';
+      var height = controlElement.clientHeight + 'px';
+      inputElement.style.height = height;
+      layerControlElement.style.height = height;
+      layerControlElement.style.lineHeight = height;
 
       this.startOverlay(controlElement,layerElement, this.props.align);
       inputElement.focus();

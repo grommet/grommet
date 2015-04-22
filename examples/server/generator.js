@@ -160,7 +160,7 @@ function buildMembers (categoryName, count) {
     };
 
     if (! category.noStatus) {
-      resource.status = distribute([['Warning', 7], ['Critical', 19], 'OK']);
+      resource.status = distribute([['Warning', 7], ['Error', 19], 'OK']);
     }
     date.setDate(date.getDate()-1);
 
@@ -242,7 +242,7 @@ function createActivity () {
         associatedResourceName: resource.name
       };
       alert.state = 'Cleared';
-      alert.status = distribute([['Critical', 5], ['Warning', 3], 'OK']);
+      alert.status = distribute([['Error', 5], ['Warning', 3], 'OK']);
     }
   });
 
@@ -258,7 +258,7 @@ function createActivity () {
     };
     task.state = distribute([['Running', 13], ['Error', 9], ['Warning', 7], 'Completed']);
     task.status = ('Running' === task.state ? 'Unknown' :
-      {'Completed': 'OK', 'Warning': 'Warning', 'Error': 'Critical'}[task.state]);
+      {'Completed': 'OK', 'Warning': 'Warning', 'Error': 'Error'}[task.state]);
   });
 }
 

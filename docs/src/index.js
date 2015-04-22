@@ -54,7 +54,7 @@ var Docs = React.createClass({
   render: function() {
     var footerColorIndex = null;
     var footerLogo = "img/hpesm_sec_grn_pos_rgb.svg";
-    var title = null;
+    var title = '';
     if (this.context.router.isActive("home")) {
       footerColorIndex = "grey-1";
       footerLogo = "img/hpesm_sec_grn_rev_rgb.svg";

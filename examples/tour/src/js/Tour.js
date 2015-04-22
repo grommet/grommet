@@ -6,7 +6,9 @@ var App = require('grommet/components/App');
 var Header = require('grommet/components/Header');
 var Title = require('grommet/components/Title');
 var Menu = require('grommet/components/Menu');
+var Gravatar = require('react-gravatar');
 var SessionActions = require('grommet/actions/SessionActions');
+var SessionStore = require('grommet/stores/SessionStore');
 
 var Tour = React.createClass({
 
@@ -20,14 +22,31 @@ var Tour = React.createClass({
     this.context.router.transitionTo('login');
   },
 
+  _onChange: function () {
+    this.setState({data: SessionStore.getAll()});
+  },
+
+  getInitialState: function () {
+    return {data: SessionStore.getAll()};
+  },
+
+  componentDidMount: function () {
+    SessionStore.addChangeListener(this._onChange);
+  },
+
+  componentWillUnmount: function () {
+    SessionStore.removeChangeListener(this._onChange);
+  },
+
   render: function() {
     return (
-      <App>
+      <App centered={false}>
         <Header primary={true}>
           <Title>
             {"Grommet Tour"}
           </Title>
-          <Menu direction="left">
+          <Menu icon={<Gravatar email={this.data.email} size={48} />}
+            align="right">
             <a className="button" onClick={this._onLogout}>Logout</a>
           </Menu>
         </Header>

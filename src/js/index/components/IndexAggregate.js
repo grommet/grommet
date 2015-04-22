@@ -5,6 +5,7 @@ var Search = require('../utils/Search');
 var Donut = require('../../components/Donut');
 
 var STATUS_IMPORTANCE = {
+  'Error': 1,
   'Critical': 1,
   'Warning': 2,
   'OK': 3,

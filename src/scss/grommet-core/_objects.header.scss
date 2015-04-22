@@ -103,7 +103,8 @@
         flex: auto;
 
         &:last-child {
-          text-align: right;
+          -webkit-flex: 0 0 auto;
+          flex: 0 0 auto;
         }
       }
     }
