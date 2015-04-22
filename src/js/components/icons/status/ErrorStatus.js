@@ -5,7 +5,7 @@ var React = require('react');
 var ErrorStatus = React.createClass({
 
   render: function() {
-    var className = 'status-icon-error';
+    var className = 'status-icon status-icon-error';
     if (this.props.className) {
       className += ' ' + this.props.className;
     }
