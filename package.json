@@ -9,19 +9,6 @@
     "type": "git",
     "url": "https://ci-gerrit.vse.adapps.hp.com/piano2"
   },
-  "scripts": {
-    "test": "jest"
-  },
-  "jest": {
-    "scriptPreprocessor": "<rootDir>/test/preprocessor.js",
-    "unmockedModulePathPatterns": [
-      "<rootDir>/node_modules/react",
-      "<rootDir>/node_modules/flux",
-      "<rootDir>/node_modules/lodash",
-      "<rootDir>/node_modules/superagent"
-    ],
-    "testDirectoryName": "test"
-  },
   "dependencies": {
     "object-assign": "^2.0.0",
     "cookies-js": "^1.2.1",
@@ -85,8 +72,6 @@
     "gulp-file": "^0.2.0",
     "gulp-preprocess": "^1.2.0",
     "gulp-watch": "^4.2.4",
-    "jest": "^0.1.37",
-    "jest-cli": "^0.4.0",
     "jsx-loader": "^0.13.1",
     "css-loader": "^0.10.1",
     "sass-loader": "^0.4.2",
