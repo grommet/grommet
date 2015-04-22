@@ -7,29 +7,100 @@
         This section aims to provide you with assets to quickly get the Grommet framework running. You'll find recommendations for your application's structure, development, testing, static code analysis, and deployment.
       </p>
       <p>
-        Grommet is in the early stages of development. As of this moment, Grommet is not deployed in <a href="https://www.npmjs.com/" target="_blank">NPM</a> or <a href="http://bower.io/" target="_blank">Bower</a>. This means that early evaluators must build Grommet in their local environment.  Once Grommet is publicly released, this step will be removed.
+        Grommet is in the early stages of development.  As such, you must build Grommet in your local environment.  Once Grommet is publicly released, you will be able to get Grommet using <a href="https://www.npmjs.com/" target="_blank">NPM</a> or <a href="http://bower.io/" target="_blank">Bower</a>.
       </p>
       <p>
         Finally, don&#39;t forget to <a href="../request_access">Request Access</a> to the source code if you haven&#39;t done so.  This is also a temporary step that is only required while the repository is private on GitHub.
       </p>
     </section>
     <section>
-      <h2>Building Grommet</h2>
-      <p>
-        To build Grommet you must first install <a href="http://git-scm.com/" target="_blank">Git</a>, <a href="https://nodejs.org/" target="_blank">Node.js</a>, and <a href="http://gulpjs.com" target="_blank">Gulp</a>. Then run the following commands to publish Grommet in your local npm: 
-      </p>
-      <pre><code class="bash">
-        {'git clone https://github.com/HewlettPackard/grommet.git\ncd grommet\ngulp dist # This command generates a production version of Grommet.\ncd dist\nnpm link # This command links the production dist to your local NPM.'}
-      </code></pre>
+      <h2>Get Dependencies</h2>
+      <ol>
+        <li>
+          Install <a href="http://git-scm.com/" target="_blank">Git</a>.  For Windows, you may like <a href="http://msysgit.github.io/" target="_blank">Git for Windows</a>.
+        </li>
+        <li>
+          Install <a href="https://nodejs.org/" target="_blank">Node.js</a>
+        </li>
+      </ol>
+      <h2>Get Going</h2>
+      <ol>
+        <li>
+          Set your proxy environment variables
+          <pre><code class="bash">
+          {'npm config set proxy http://web-proxy.corp.hp.com:8088'}<br>
+          {'npm config set https-proxy https://web-proxy.corp.hp.com:8088'}
+          </code></pre>
+        </li>
+        <li>
+          Install <a href="http://gulpjs.com" target="_blank">Gulp</a>
+          <pre><code class="bash">
+            {'npm install --global gulp'}
+          </code></pre>
+        </li>
+        <li>
+          Clone the Grommet repository
+          <pre><code class="bash">
+            {'git clone https://github.com/HewlettPackard/grommet.git'}
+          </code></pre>
+        </li>
+        <li>
+          Move to Grommet directory
+          <pre><code class="bash">
+            {'cd grommet'}
+          </code></pre>
+        </li>
+        <li>
+          Generate a production version of Grommet in your local directory
+          <pre><code class="bash">
+            {'gulp dist'}
+          </code></pre>
+        </li>
+        <li>
+          Move to the distribution directory
+          <pre><code class="bash">
+            {'cd dist'}
+          </code></pre>
+        </li>
+        <li>
+          <b>Windows users</b> link to Grommet from an <b>Administrator</b> console
+          <pre><code class="bash">
+            {'npm link'}
+          </code></pre>
+          <b>Linux and OS X users</b> link to Grommet with sudo
+          <pre><code class="bash">
+            {'sudo npm link'}
+          </code></pre>
+        </li>
+      </ol>
       <p>You can now start a new project and link that to Grommet:</p>
-      <pre><code class="bash">
-        mkdir sample-app
-        <br/>
-        cd sample-app
-        <br/>
-        npm link grommet
-      </code></pre>
-      <p>A <i>node_modules</i> folder will be created which contains a symbolic link to Grommet from your local environment.</p>
+      <ol>
+        <li>
+          Move out of the dist folder
+          <pre><code class="bash">
+          {'cd ../..'}
+          </code></pre>
+        </li>
+        <li>
+          Create your project directory
+          <pre><code class="bash">
+          {'mkdir sample-app'}
+          </code></pre>
+        </li>
+        <li>
+          Move to your new project directory
+          <pre><code class="bash">
+          {'cd sample-app'}
+          </code></pre>
+        </li>
+        <li>
+          Link to Grommet in your new project
+          <pre><code class="bash">
+          {'npm link grommet'}
+          </code></pre>
+        </li>
+      </ol>
+      <p>At this point, a <i>node_modules</i> folder will be created which contains a symbolic link to Grommet from your local environment.</p>
     </section>
     <section>
       <h2>Next Steps</h2>
