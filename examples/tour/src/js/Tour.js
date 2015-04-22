@@ -2,10 +2,12 @@
 
 var React = require('react');
 var RouteHandler = require('react-router').RouteHandler;
+var Link = require('react-router').Link;
 var App = require('grommet/components/App');
 var Header = require('grommet/components/Header');
 var Title = require('grommet/components/Title');
 var Menu = require('grommet/components/Menu');
+var TourMainMenu = require('./TourMainMenu');
 var Gravatar = require('react-gravatar');
 var SessionActions = require('grommet/actions/SessionActions');
 var SessionStore = require('grommet/stores/SessionStore');
@@ -14,6 +16,16 @@ var Tour = React.createClass({
 
   contextTypes: {
     router: React.PropTypes.func.isRequired
+  },
+
+  _onClickTitle: function () {
+    console.log('!!! Tour _onClickTitle');
+    this.setState({mainMenuActive: true});
+  },
+
+  _onCloseMainMenu: function () {
+    console.log('!!! Tour _onCloseMainMenu');
+    this.setState({mainMenuActive: false});
   },
 
   _onLogout: function (event) {
@@ -27,7 +39,10 @@ var Tour = React.createClass({
   },
 
   getInitialState: function () {
-    return {data: SessionStore.getAll()};
+    return {
+      data: SessionStore.getAll(),
+      mainMenuActive: false
+    };
   },
 
   componentDidMount: function () {
@@ -39,18 +54,27 @@ var Tour = React.createClass({
   },
 
   render: function() {
+    var mainMenu = null;
+    console.log('!!! Tour render', this.state.mainMenuActive);
+    if (this.state.mainMenuActive) {
+      mainMenu = <TourMainMenu onClose={this._onCloseMainMenu} />;
+    }
     return (
       <App centered={false}>
         <Header primary={true}>
+          <div onClick={this._onClickTitle}>
           <Title>
             {"Grommet Tour"}
           </Title>
+          </div>
           <Menu icon={<Gravatar email={this.state.data.email || ''} size={48} />}
             align="right">
-            <a className="button" onClick={this._onLogout}>Logout</a>
+            <Link to="settings">Settings</Link>
+            <a onClick={this._onLogout}>Logout</a>
           </Menu>
         </Header>
         <RouteHandler />
+        {mainMenu}
       </App>
     );
   }
