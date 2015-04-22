@@ -7,17 +7,10 @@
         This section aims to provide you with assets to quickly get the Grommet framework running. You'll find recommendations for your application's structure, development, testing, static code analysis, and deployment.
       </p>
       <p>
-        Grommet is based on <a href="http://reactjs.com" target="_blank">ReactJS</a> which provides great features in JavaScript for building user interfaces.
-        You'll also use a JavaScript syntax extension called <a href="https://facebook.github.io/react/docs/jsx-in-depth.html" target="_blank">JSX</a>. To enable front-end routing you'll use <a href="https://github.com/rackt/react-router">React Router</a>. 
+        Grommet is in the early stages of development. As of this moment, Grommet is not deployed in <a href="https://www.npmjs.com/" target="_blank">NPM</a> or <a href="http://bower.io/" target="_blank">Bower</a>. This means that early evaluators must build Grommet in their local environment.  Once Grommet is publicly released, this step will be removed.
       </p>
       <p>
-        We expect that you have at least a basic understanding on these technologies to be able to master Grommet, in addition to JavaScript of course. In terms of cascading style sheets (css), Grommet provides everything you need to quickly create applications based on the application <a href="../styleguide">Style Guide</a>. Under the hood, you'll find <a href="http://inuitcss.com/" target="_blank">InuitCSS</a> and <a href="http://sass-lang.com/" target="_blank">Sass</a> to compile the style sheets. But, don&#39;t worry, you are not expected to write a lot of CSS when using Grommet.  We've done that for you.  But if you would like to contribute, please do so!
-      </p>
-      <p>
-        Grommet is in the early stages of development. As of this moment, Grommet is not deployed in <a href="https://www.npmjs.com/" target="_blank">NPM</a>. This means that early evaluators must build Grommet in your local environment.  Once Grommet is publicly released, this step will be removed and Grommet will be published in NPM.
-      </p>
-      <p>
-        Finally, don&#39;t forget to <a href="../request_access">Request Access</a> to the source code if you haven&#39;t done so.  This too is a temporary step that is only required while the repository is private on GitHub.
+        Finally, don&#39;t forget to <a href="../request_access">Request Access</a> to the source code if you haven&#39;t done so.  This is also a temporary step that is only required while the repository is private on GitHub.
       </p>
     </section>
     <section>
@@ -26,11 +19,7 @@
         To build Grommet you must first install <a href="http://git-scm.com/">Git</a> and <a href="https://nodejs.org/">Node.js</a>. Then run the following commands to publish Grommet in your local npm: 
       </p>
       <pre><code class="bash">
-        git clone https://github.com/HewlettPackard/grommet.git
-        <br/>
-        cd grommet
-        <br/>
-        npm link
+        {'git clone https://github.com/HewlettPackard/grommet.git\ncd grommet\ngulp dist # This command generates a production version of Grommet.\ncd dist\nnpm link'}
       </code></pre>
       <p>You can now start a new project and link that to Grommet:</p>
       <pre><code class="bash">
@@ -40,7 +29,7 @@
         <br/>
         npm link grommet
       </code></pre>
-      <p>A <i>node_modules</i> folder will be created which contains Grommet in your local environment.</p>
+      <p>A <i>node_modules</i> folder will be created which contains a symbolic link to Grommet from your local environment.</p>
     </section>
     <section>
       <h2>Next Steps</h2>
