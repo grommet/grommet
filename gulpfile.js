@@ -42,8 +42,7 @@ var opts = {
       ]
     },
     externals: {
-      "react": "React",
-      "react-router": "ReactRouter"
+      "react": "React"
     }
   }
 };
