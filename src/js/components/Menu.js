@@ -98,7 +98,7 @@ var Menu = React.createClass({
       var height = controlElement.clientHeight;
       if (layerControlIconElement && height <= layerControlIconElement.clientHeight) {
         // adjust to align with underlying control when control uses all height
-        layerControlElement.style.marginTop = '-3px';
+        layerControlElement.style.marginTop = '-2px';
       }
       layerControlElement.style.height = height + 'px';
       layerControlElement.style.lineHeight = height + 'px';

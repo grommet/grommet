@@ -161,7 +161,8 @@ module.exports = function(gulp, opts) {
 
       output: {
         filename: 'index.js',
-        path: dist
+        path: dist,
+        publicPath: '/'
       },
 
       devtool: 'inline-source-map',
@@ -186,6 +187,7 @@ module.exports = function(gulp, opts) {
       stats: {
         colors: true
       },
+      publicPath: devWebpackConfig.output.publicPath,
       historyApiFallback: true
     };
 

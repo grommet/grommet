@@ -62,6 +62,7 @@
     @include inuit-font-size($inuit-heading-size-3, inherit);
     background-color: $background-color;
     border: 1px solid $brand-color;
+    border-radius: $border-radius;
 
     .menu__control {
       &-label {
