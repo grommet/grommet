@@ -51,10 +51,25 @@ var opts = {
     externals: {
       "react": "React"
     }
-  }
+  },
+  distPreprocess: ['dist-css'],
 };
 
 require('./src/js/utils/gulp-tasks')(gulp, opts);
+
+gulp.task('dist-css', function () {
+	gulp.src('src/scss/hpe/*.scss')
+    .pipe(sass())
+    .pipe(rename('grommet-hpe.min.css'))
+    .pipe(minifyCss())
+    .pipe(gulp.dest('dist/')); 
+
+	return gulp.src('src/scss/grommet-core/*.scss')
+        .pipe(sass())
+        .pipe(rename('grommet.min.css'))
+        .pipe(minifyCss())
+        .pipe(gulp.dest('dist/')); 
+});
 
 gulp.task('sync-all', function() {
 
