@@ -19,18 +19,17 @@
         <li>
           Install <a href="https://nodejs.org/" target="_blank">Node.js</a>
         </li>
+        <li>
+          <p>Setup your NPM proxy (only required if you&#39;re behind a proxy server).</p>
+          <pre><code class="bash">
+          {'npm config set http-proxy http://\{host\}:\{port\}'}<br>
+          {'npm config set https-proxy https://\{host\}:\{port\}'}
+          </code></pre>
+        </li>
       </ol>
-      <p>Install Grommet either using <a href="https://www.npmjs.com/" target="_blank">NPM</a> or <a href="http://bower.io/" target="_blank">Bower</a>.</p>
       <h2>Get Going</h2>
         <h4>NPM</h4>
           <ol>
-            <li>
-              <p>Setup your proxy (only required if you&#39;re behind a proxy server).</p>
-              <pre><code class="bash">
-              {'npm config set http-proxy http://\{host\}:\{port\}'}<br>
-              {'npm config set https-proxy https://\{host\}:\{port\}'}
-              </code></pre>
-            </li>
           	<li>
               <p>Install Grommet using temporary registry</p>
               <pre><code class="bash">
@@ -47,6 +46,17 @@
               {'npm install -g bower'}
               </code></pre>
           	</li>
+            <li>
+              <p>Create environment variable with your proxy settings (only required if you&#39;re behind a proxy server)</p>
+              <p><b>Windows</b></p>
+              <pre><code class="json">
+                {'set HTTPS_PROXY=https://\{host\}:\{port\}'}
+              </code></pre>
+              <p><b>Linux/OS X</b></p>
+              <pre><code class="json">
+                {'export HTTPS_PROXY=https://\{host\}:\{port\}'}
+              </code></pre>
+            </li>
             <li>
               <p>Create a .bowerrc file with your proxy settings (only required if you&#39;re behind a proxy server)</p>
               <pre><code class="json">
