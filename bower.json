@@ -1,0 +1,10 @@
+{
+  "name": "grommet",
+  "version": "0.1.0",
+  "main": "grommet.js",
+  "description": "Grommet UI Library",
+  "author": "Eric Soderberg",
+  "dependencies": {
+    "react": "^0.13.1"
+  }
+}

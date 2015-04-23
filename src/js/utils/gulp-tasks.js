@@ -7,7 +7,6 @@ var runSequence = require('run-sequence');
 var assign = require('object-assign');
 var webpack = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
-var assign = require('object-assign');
 var rsync = require('gulp-rsync');
 var nodemon = require('gulp-nodemon');
 var file = require('gulp-file');

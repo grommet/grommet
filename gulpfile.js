@@ -1,6 +1,13 @@
 var gulp = require('gulp');
 var path = require('path');
 var chug = require('gulp-chug');
+var gulpWebpack = require('gulp-webpack');
+var assign = require('object-assign');
+var webpack = require('webpack');
+var sass = require('gulp-sass');
+var rename = require('gulp-rename');
+var del = require('del');
+var minifyCss = require('gulp-minify-css');
 
 var packageJSON = require('./package.json');
 delete packageJSON.devDependencies;
@@ -70,4 +77,104 @@ gulp.task('sync-all', function() {
   gulp.src('./gulpfile.js').pipe(chug({
     tasks: ['sync']
   }));
+});
+
+var bowerWebpackConfig = {
+  output: {
+    filename: 'grommet.js',
+    libraryTarget: "var",
+    library: "Grommet"
+  },
+  resolve: {
+    root: [
+      path.resolve(__dirname, 'src/js'),
+      path.resolve(__dirname, 'src/scss'),
+      path.resolve(__dirname, 'node_modules')
+    ],
+    extensions: ['', '.js', '.json', '.htm', '.html', '.scss']
+  },
+  externals: {
+    "react": "React"
+  },
+  module: {
+    loaders: [
+      {
+        test: /\.js$/,
+        loader: 'jsx-loader'
+      },
+      {
+        test: /\.svg$/,
+        loader: 'file-loader?mimetype=image/svg'
+      },
+      {
+        test: /\.jpg$/,
+        loader: 'file-loader?mimetype=image/jpg'
+      },
+      {
+        test: /\.woff$/,
+        loader: 'file-loader?mimetype=application/font-woff'
+      }
+    ]
+  },
+  plugins: [
+    new webpack.optimize.DedupePlugin()
+  ]
+};
+
+var bowerMinWebpackConfig = assign({}, bowerWebpackConfig, {
+	output: {
+    filename: 'grommet.min.js',
+    libraryTarget: "var",
+    library: "Grommet"
+  },
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin({
+        compress: {
+            warnings: false
+        }
+    }),
+    new webpack.optimize.DedupePlugin()
+  ]
+});
+
+gulp.task('dist-bower', function() {
+	del.sync(['dist-bower']);
+
+	//grommet exploded
+  gulp.src(opts.mainJs)
+    .pipe(gulpWebpack(bowerWebpackConfig))
+    .pipe(gulp.dest('dist-bower'));
+
+  //grommet minified
+  gulp.src(opts.mainJs)
+    .pipe(gulpWebpack(bowerMinWebpackConfig))
+    .pipe(gulp.dest('dist-bower'));
+
+  //grommet css exploded
+  gulp.src('src/scss/grommet-core/*.scss')
+        .pipe(sass())
+        .pipe(rename('grommet.css'))
+        .pipe(gulp.dest('dist-bower/css'));
+
+  //grommet css minified
+  gulp.src('src/scss/grommet-core/*.scss')
+        .pipe(sass())
+        .pipe(rename('grommet.min.css'))
+        .pipe(minifyCss())
+        .pipe(gulp.dest('dist-bower/css')); 
+
+  //grommet-hpe css exploded
+  gulp.src('src/scss/hpe/*.scss')
+        .pipe(sass())
+        .pipe(rename('grommet-hpe.css'))
+        .pipe(gulp.dest('dist-bower/css'));
+
+  //grommet-hpe css minified
+  gulp.src('src/scss/hpe/*.scss')
+        .pipe(sass())
+        .pipe(rename('grommet-hpe.min.css'))
+        .pipe(minifyCss())
+        .pipe(gulp.dest('dist-bower/css')); 
+
+  gulp.src('bower.json').pipe(gulp.dest('dist-bower'));
 });

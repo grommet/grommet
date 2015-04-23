@@ -1,7 +1,5 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-require("!style!css!sass!grommet-core/index.scss");
-
 var SessionActions = require('./actions/SessionActions');
 var NavActions = require('./actions/NavActions');
 var Router = require('./utils/Router');
