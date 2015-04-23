@@ -1,6 +1,14 @@
 # Grommet: The Most Advanced UI framework for Enterprise
 
-<img align="right" height="260" src="http://grommet.usa.hp.com/assets/grommet-logo.png">
+<img align="right" height="260" src="http://alansouzati.github.io/artic/img/grommet-logo.png">
+
+### Documentation
+
+Visit the [grommet.io](http://grommet.io/) website for any references.
+
+### Support / Contributing
+
+Send a [Request Access](http://grommet.usa.hp.com/docs/hpe/request_access) or write to us at uxgroup@hp.com.
 
 ### Install
 
@@ -16,10 +24,3 @@
 
   Access the [Hello World](http://grommet.usa.hp.com/docs/hpe/documentation) page to quickly learn how to use what you've just installed.
 
-### Documentation
-
-Visit the [grommet.io](http://grommet.io/) website for any references.
-
-### Support / Contributing
-
-Send a [Request Access](http://grommet.usa.hp.com/docs/hpe/request_access) or write to us at uxgroup@hp.com.
