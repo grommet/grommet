@@ -97,7 +97,7 @@ var PatternsSection = React.createClass({
     <div className="example">
       <Header>
         <h1></h1>
-        <Search direction="left" />
+        <Search align="right" />
       </Header>
     </div>
 

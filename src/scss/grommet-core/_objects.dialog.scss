@@ -57,8 +57,9 @@
     max-width: round($inuit-base-spacing-unit * 32); //$center-column-width;
     height: 100vh;
     margin: 0 auto;
-    background-color: $modal-background-color;
     overflow: none;
+    background-color: $modal-background-color;
+    border-radius: $border-radius;
 
     > :not(.footer):not(.header):not(.form) {
       padding-left: $inuit-base-spacing-unit;
