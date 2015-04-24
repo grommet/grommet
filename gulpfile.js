@@ -8,6 +8,7 @@ var sass = require('gulp-sass');
 var rename = require('gulp-rename');
 var del = require('del');
 var minifyCss = require('gulp-minify-css');
+var file = require('gulp-file');
 
 var packageJSON = require('./package.json');
 delete packageJSON.devDependencies;
@@ -191,5 +192,14 @@ gulp.task('dist-bower', function() {
         .pipe(minifyCss())
         .pipe(gulp.dest('dist-bower/css')); 
 
-  gulp.src('bower.json').pipe(gulp.dest('dist-bower'));
+	var bowerJSON = require('./package.json');
+	bowerJSON.dependencies = { 'react': '^0.13.1', 'grommet': 'HewlettPackard/grommet-bower' };
+	bowerJSON.main = 'grommet.js';
+	delete bowerJSON.devDependencies;
+	delete bowerJSON.scripts;
+	delete bowerJSON.jest;
+
+	gulp.src('./')
+          .pipe(file('bower.json', JSON.stringify(bowerJSON, null, 2)))
+          .pipe(gulp.dest('dist-bower'));
 });

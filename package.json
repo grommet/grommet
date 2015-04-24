@@ -2,12 +2,19 @@
   "name": "grommet",
   "version": "0.1.0",
   "main": "src/js/index.js",
-  "description": "Grommet UI Library",
-  "author": "Eric Soderberg",
-  "license": "TBD",
+  "description": "The most advanced UI framework for enterprise applications.",
+  "authors": [
+  	"Alan Souza",
+  	"Bryan Jacquot",
+  	"Chris Carlozzi",
+    "Eric Soderberg"
+  ],
+  "homepage": "http://grommet.io",
+  "bugs": "https://github.com/HewlettPackard/grommet/issues",
+  "license": "Apache 2",
   "repository": {
     "type": "git",
-    "url": "https://ci-gerrit.vse.adapps.hp.com/piano2"
+    "url": "https://github.com/HewlettPackard/grommet.git"
   },
   "dependencies": {
     "object-assign": "^2.0.0",
