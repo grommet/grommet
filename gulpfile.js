@@ -34,7 +34,7 @@ var opts = {
   sync: {
     hostname: 'grommet.usa.hp.com',
     username: 'ligo',
-    remoteDestination: '/var/www/html/assets'
+    remoteDestination: '/var/www/html/assets/' + packageJSON.version
   },
   webpack: {
     output: {
