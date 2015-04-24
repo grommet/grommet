@@ -216,4 +216,10 @@ $scale-background-color-top: rgba($scale-background-color, 0.85);
       font-weight: 100;
     }
   }
+
+  div.docs__code-heading {
+  	text-align: right;
+  	padding-right: 5px;
+  }
+  
 }
