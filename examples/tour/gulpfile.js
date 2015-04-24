@@ -35,8 +35,7 @@ var opts = {
   devServerPort: 8001,
   devServerProxy: {
     "/rest/*": 'http://localhost:8000'
-  },
-  nodeServerPath: 'examples/server/server.js'
+  }
 };
 
 devGulpTasks(gulp, opts);
