@@ -4,18 +4,19 @@ var React = require('react');
 
 var CONTROL_ICONS = [
   {icon: 'Clear', labels: ['Clear', 'Close', 'Remove']},
+  {icon: 'Edit', labels: ['Edit', 'Settings', 'Actions']},
+  {icon: 'More'},
   {icon: 'DragHandle', labels: ['Drag handle']},
   {icon: 'DropCaret', labels: ['Drop caret']},
-  {icon: 'Edit', labels: ['Edit', 'Settings', 'Actions']},
   {icon: 'Filter'},
-  {icon: 'Help'},
-  {icon: 'More'},
-  {icon: 'Next'},
-  {icon: 'Previous'},
   {icon: 'Search'},
   {icon: 'SearchPlus', labels: ['Search and filter']},
-  {icon: 'Top'},
-  {icon: 'Up'}
+  {icon: 'Help'},
+  {icon: 'Next'},
+  {icon: 'Previous'},
+  {icon: 'Down'},
+  {icon: 'Up'},
+  {icon: 'Top'}
 ];
 
 CONTROL_ICONS.forEach(function (item) {
@@ -63,7 +64,7 @@ var BasicsSection = React.createClass({
       });
       return (
         <div key={item.labels[0]} className="icon-tile">
-          <div className="control-icon">{React.createFactory(item.component)()}</div>
+          {React.createFactory(item.component)()}
           <label>{labels}</label>
         </div>
       );
@@ -75,9 +76,9 @@ var BasicsSection = React.createClass({
       });
       return (
         <div key={item.labels[0]} className="icon-tile">
-          <div>{React.createFactory(item.component)({value: item.value, large: true})}</div>
-          <div>{React.createFactory(item.component)({value: item.value})}</div>
-          <div>{React.createFactory(item.component)({value: item.value, small: true})}</div>
+          {React.createFactory(item.component)({value: item.value, large: true})}
+          {React.createFactory(item.component)({value: item.value})}
+          {React.createFactory(item.component)({value: item.value, small: true})}
           <label>{labels}</label>
         </div>
       );

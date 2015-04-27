@@ -44,7 +44,7 @@
   right: 0px;
   bottom: 0px;
   overflow: none;
-  background-color: $modal-overlay-background-color;
+  background-color: $layer-overlay-background-color;
   z-index: 10;
 
   @include media-query(lap-and-up) {
@@ -57,8 +57,9 @@
     max-width: round($inuit-base-spacing-unit * 32); //$center-column-width;
     height: 100vh;
     margin: 0 auto;
-    background-color: $modal-background-color;
     overflow: none;
+    background-color: $layer-background-color;
+    border-radius: $border-radius;
 
     > :not(.footer):not(.header):not(.form) {
       padding-left: $inuit-base-spacing-unit;

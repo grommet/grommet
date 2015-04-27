@@ -5,7 +5,6 @@ var React = require('react');
 var Form = React.createClass({
 
   propTypes: {
-    className: React.PropTypes.string,
     compact: React.PropTypes.bool,
     onSubmit: React.PropTypes.func
   },

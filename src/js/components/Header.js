@@ -6,13 +6,21 @@ var Header = React.createClass({
 
   propTypes: {
     colorIndex: React.PropTypes.string,
-    primary: React.PropTypes.bool
+    large: React.PropTypes.bool,
+    primary: React.PropTypes.bool,
+    small: React.PropTypes.bool
   },
 
   render: function() {
     var classes = ["header"];
     if (this.props.primary) {
       classes.push("header--primary");
+    }
+    if (this.props.large) {
+      classes.push("header--large");
+    }
+    if (this.props.small) {
+      classes.push("header--small");
     }
     if (this.props.className) {
       classes.push(this.props.className);

@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var rsync = require('gulp-rsync');
+var nodemon = require('gulp-nodemon');
 
 gulp.task('sync', function() {
   gulp.src('.')
@@ -7,7 +8,7 @@ gulp.task('sync', function() {
       root: '.',
       hostname: 'grommet.usa.hp.com',
       username: 'ligo',
-      destination: '/var/www/html/server',
+      destination: '/var/www/html/examples/server',
       recursive: true,
       relative: true,
       progress: true,
@@ -17,4 +18,10 @@ gulp.task('sync', function() {
       emptyDirectories: true,
       exclude: ['.DS_Store'],
     }));
+});
+
+gulp.task('dev', function () {
+  nodemon({
+    script: 'server.js'
+  });
 });

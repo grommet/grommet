@@ -56,9 +56,9 @@ var SearchDoc = React.createClass({
 
           <h3>Left</h3>
           <div className="example">
-            <Search direction="left" />
+            <Search align="right" />
           </div>
-          <pre><code className="html">{"<Search direction=\"left\"/>"}</code></pre>
+          <pre><code className="html">{"<Search align=\"right\"/>"}</code></pre>
 
           <h3>Suggestions and Default Value</h3>
           <div className="example">

@@ -1,7 +1,5 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-require("!style!css!sass!grommet-core/index.scss");
-
 var SessionActions = require('./actions/SessionActions');
 var NavActions = require('./actions/NavActions');
 var Router = require('./utils/Router');
@@ -9,6 +7,7 @@ var Router = require('./utils/Router');
 var Grommet = {
   // Components
   App: require('./components/App'),
+  CheckBox: require('./components/CheckBox'),
   Dialog: require('./components/Dialog'),
   Document: require('./components/Document'),
   Donut: require('./components/Donut'),
@@ -25,6 +24,7 @@ var Grommet = {
   Meter: require('./components/Meter'),
   NavUnified: require('./components/NavUnified'),
   Panel: require('./components/Panel'),
+  RadioButton: require('./components/RadioButton'),
   Search: require('./components/Search'),
   SearchCombo: require('./components/SearchCombo'),
   Section: require('./components/Section'),

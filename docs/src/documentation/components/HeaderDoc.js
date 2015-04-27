@@ -5,8 +5,8 @@ var GrommetDocument = require('grommet/components/Document');
 var Menu = require('grommet/components/Menu');
 var Search = require('grommet/components/Search');
 var Header = require('grommet/components/Header');
+var Title = require('grommet/components/Title');
 var Edit = require('grommet/components/icons/Edit');
-var TBD = require('grommet/components/TBD');
 var Logo = require('../../img/Logo');
 
 var HeaderDoc = React.createClass({
@@ -31,6 +31,10 @@ var HeaderDoc = React.createClass({
               For example: <code>"neutral-1"</code></dd>
             <dt><code>primary     true|false</code></dt>
             <dd>Whether this is the primary application header or not.</dd>
+            <dt><code>large     true|false</code></dt>
+            <dd>Larger sized version.</dd>
+            <dt><code>small     true|false</code></dt>
+            <dd>Smaller sized version.</dd>
           </dl>
         </section>
 
@@ -75,8 +79,44 @@ var HeaderDoc = React.createClass({
           </div>
           <pre><code className="html">{"<Header> ..."}</code></pre>
 
+          <h3>Large</h3>
+          <div className="example">
+            <Header large={true}>
+              <h2><Logo /> Title</h2>
+              <Menu icon={<Edit />} align="right">
+                <a href="#" className="active">First</a>
+                <a href="#">Second</a>
+                <a href="#">Third</a>
+              </Menu>
+            </Header>
+          </div>
+          <pre><code className="html">{"<Header large={true}> ..."}</code></pre>
+
+          <h3>Small</h3>
+          <div className="example">
+            <Header small={true}>
+              <h2><Logo /> Title</h2>
+              <Menu icon={<Edit />} align="right">
+                <a href="#" className="active">First</a>
+                <a href="#">Second</a>
+                <a href="#">Third</a>
+              </Menu>
+            </Header>
+          </div>
+          <pre><code className="html">{"<Header small={true}> ..."}</code></pre>
+
           <h3>Title menu and icon Menu</h3>
-          <TBD />
+          <div className="example">
+            <Header large={true}>
+              <Title onClick={function () {}}><Logo /> Title</Title>
+              <Menu icon={<Edit />} align="right">
+                <a href="#" className="active">First</a>
+                <a href="#">Second</a>
+                <a href="#">Third</a>
+              </Menu>
+            </Header>
+          </div>
+          <pre><code className="html">{"<Header large={true}> ..."}</code></pre>
 
         </section>
       </GrommetDocument>

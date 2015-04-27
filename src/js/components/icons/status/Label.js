@@ -5,7 +5,7 @@ var React = require('react');
 var Label = React.createClass({
 
   render: function() {
-    var className = 'status-icon-label';
+    var className = 'status-icon status-icon-label';
     if (this.props.className) {
       className += ' ' + this.props.className;
     }

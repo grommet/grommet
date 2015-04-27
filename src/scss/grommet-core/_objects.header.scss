@@ -1,19 +1,27 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 .header {
-  height: $header-height;
 
   @include media-query(palm) {
-    height: $palm-header-height;
+    height: $small-header-height;
+  }
+
+  @include media-query(lap-and-up) {
+    height: $header-height;
   }
 
   &__wrapper {
-    height: $header-height;
     background-color: $header-background-color;
-    border-bottom: 1px solid $border-color;
+    ///border-bottom: 1px solid $border-color;
+    padding-left: $inuit-base-spacing-unit;
+    padding-right: $inuit-base-spacing-unit;
 
     @include media-query(palm) {
-      height: $palm-header-height;
+      height: $small-header-height;
+    }
+
+    @include media-query(lap-and-up) {
+      height: $header-height;
     }
   }
 
@@ -23,15 +31,19 @@
     -webkit-align-items: center;
     align-items: center;
     width: 100%;
-    line-height: $header-height;
+    white-space: nowrap;
 
     @include media-query(palm) {
-      line-height: $palm-header-height;
+      line-height: $small-header-height;
+    }
+
+    @include media-query(lap-and-up) {
+      line-height: $header-height;
     }
 
     > * {
-      -webkit-flex: 1;
-      flex: 1;
+      -webkit-flex: 1 0;
+      flex: 1 0;
 
       &:last-child {
         -webkit-flex: 0 0 auto;
@@ -40,6 +52,8 @@
       }
 
       &:first-child {
+        -webkit-flex: 1 0;
+        flex: 1 0;
         text-align: left;
       }
     }
@@ -66,25 +80,57 @@
     }
   }
 
+  @include media-query(lap-and-up) {
+    &--large {
+      height: $large-header-height;
+
+      .header__wrapper {
+        height: $large-header-height;
+      }
+
+      .header__content {
+        line-height: $large-header-height;
+      }
+    }
+
+    &--small {
+      height: $small-header-height;
+
+      .header__wrapper {
+        height: $small-header-height;
+      }
+
+      .header__content {
+        line-height: $small-header-height;
+
+        > h1,
+        > h2,
+        > h3,
+        > h4,
+        .title {
+          svg {
+            height: $small-header-height - $inuit-base-spacing-unit;
+          }
+        }
+      }
+    }
+  }
+
   &--primary {
-    height: $primary-header-height;
-    line-height: $primary-header-height;
     padding: 0px;
 
-    @include media-query(palm) {
-      height: $palm-header-height;
-      line-height: $palm-header-height;
+    @include media-query(lap-and-up) {
+      height: $large-header-height;
+      line-height: $large-header-height;
     }
 
     .header__wrapper {
-      height: $primary-header-height;
-      line-height: $primary-header-height;
-      padding: 0px $inuit-base-spacing-unit;
+      //padding: 0px $inuit-base-spacing-unit;
       border-bottom: none;
 
-      @include media-query(palm) {
-        height: $palm-header-height;
-        line-height: $palm-header-height;
+      @include media-query(lap-and-up) {
+        height: $large-header-height;
+        line-height: $large-header-height;
       }
     }
 
@@ -92,10 +138,9 @@
       -webkit-justify-content: space-between;
       justify-content: space-between;
       white-space: nowrap;
-      line-height: $primary-header-height;
 
-      @include media-query(palm) {
-        line-height: $palm-header-height;
+      @include media-query(lap-and-up) {
+        line-height: $large-header-height;
       }
 
       > * {
@@ -103,7 +148,8 @@
         flex: auto;
 
         &:last-child {
-          text-align: right;
+          -webkit-flex: 0 0 auto;
+          flex: 0 0 auto;
         }
       }
     }

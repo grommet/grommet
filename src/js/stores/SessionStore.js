@@ -4,14 +4,12 @@ var _ = require('lodash');
 var AppDispatcher = require('../dispatchers/AppDispatcher');
 var EventEmitter = require('events').EventEmitter;
 var Constants = require('../constants/AppConstants');
-var Cookies = require('cookies-js');
+var Cookies = require('../utils/Cookies');
 
 var TOKEN = "token";
 var USER = "user";
 var LOGIN_TIME = "loginTime";
 var EMAIL = "email";
-
-var loginEnabled = true;
 
 var _data = {
   id: null,
@@ -25,7 +23,7 @@ function setup () {
   _data.id = Cookies.get(TOKEN);
   _data.name = Cookies.get(USER);
   _data.created = Cookies.get(LOGIN_TIME);
-  _data.email = Cookies.get(EMAIL) || 'eric.soderberg@hp.com';
+  _data.email = Cookies.get(EMAIL);
 }
 
 function login(username, id) {
@@ -53,9 +51,9 @@ function logout() {
   _data.id = null;
   _data.name = null;
   _data.created = null;
-  Cookies.expire(TOKEN);
-  Cookies.expire(USER);
-  Cookies.expire(LOGIN_TIME);
+  Cookies.remove(TOKEN);
+  Cookies.remove(USER);
+  Cookies.remove(LOGIN_TIME);
 }
 
 var SessionStore = _.extend({}, EventEmitter.prototype, {
@@ -63,10 +61,6 @@ var SessionStore = _.extend({}, EventEmitter.prototype, {
   // public methods used by Controller-View to operate on data
   getAll: function() {
     return _data;
-  },
-
-  loginEnabled: function () {
-    return loginEnabled;
   },
 
   // Allow Controller-View to register itself with store
@@ -88,14 +82,7 @@ var SessionStore = _.extend({}, EventEmitter.prototype, {
     switch(action.type) {
 
       case Constants.ActionTypes.SESSION_SETUP:
-
-        if (action.login) {
-          loginEnabled = true;
-          setup();
-        } else {
-          loginEnabled = false;
-        }
-        
+        setup();
         SessionStore.emitChange();
         break;
 

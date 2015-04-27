@@ -1,8 +1,11 @@
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+
 // http://jsfiddle.net/LBAr8/
 
 var React = require('react');
 
 var ReactLayeredComponent = {
+
   componentWillUnmount: function() {
     this._unrenderLayer();
     document.body.removeChild(this._target);

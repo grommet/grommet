@@ -5,6 +5,8 @@ var React = require('react');
 var FormField = React.createClass({
 
   propTypes: {
+    label: React.PropTypes.string,
+    htmlFor: React.PropTypes.string,
     error: React.PropTypes.string,
     help: React.PropTypes.string
   },
@@ -22,9 +24,14 @@ var FormField = React.createClass({
     }
     return (
       <div className={classes.join(' ')}>
-        {this.props.children}
-        {error}
-        {help}
+        <label className="form-field__label" htmlFor={this.props.htmlFor}>{this.props.label}</label>
+        <span className="form-field__container">
+          <span className="form-field__contents">
+            {this.props.children}
+          </span>
+          {error}
+          {help}
+        </span>
       </div>
     );
   }

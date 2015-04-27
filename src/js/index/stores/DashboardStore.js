@@ -35,7 +35,7 @@ function setup(config) {
   });
 }
 
-function setupCategories(menu) {
+/*function setupCategories(menu) {
   _data.categories = [];
   menu.forEach(function (section) {
     return section.forEach(function (page) {
@@ -48,7 +48,7 @@ function setupCategories(menu) {
       }
     });
   });
-}
+}*/
 
 function setAggregateResult(result, params) {
   if (_data.pendingPanels) {
@@ -171,10 +171,6 @@ var DashboardStore = _.extend({}, EventEmitter.prototype, {
       case Constants.ActionTypes.DASHBOARD_SETUP:
         setup(action.config);
         DashboardStore.emitChange();
-        break;
-
-      case Constants.ActionTypes.NAV_SETUP:
-        setupCategories(action.args.menu);
         break;
 
       case Constants.ActionTypes.INDEX_AGGREGATE_RESULT:

@@ -4,48 +4,72 @@
     <section id="introduction">
       <h1>Get Started</h1>
       <p>
-        This section aims to provide you with assets to quickly get Grommet framework up-and-running. We will recommend good practices on application structure, development, testing, static code analysis, and deployment.
+        Welcome to Grommet get started page. Here you will find instructions on how to install Grommet in your local environment.
       </p>
       <p>
-        Grommet is developed on top of <a href="http://reactjs.com" target="_blank">ReactJS</a> which provides great features in JavaScript for building user interfaces.
-        We are also using a JavaScript syntax extension called <a href="https://facebook.github.io/react/docs/jsx-in-depth.html" target="_blank">JSX</a>. To enable front-end routing paths we are using <a href="https://github.com/rackt/react-router">React Router</a>. 
-      </p>
-      <p>
-        We expect that you have at least a basic understading on these technologies to be able to master Grommet, in addition to JavaScript of course. In terms of styling (css), Grommet already provides everything you need to quickly create great applications based on our application <a href="../styleguide">Style Guide</a>. Under the hood, we are using <a href="http://inuitcss.com/" target="_blank">InuitCSS</a> and <a href="http://sass-lang.com/" target="_blank">Sass</a> to compile our stylesheets. But, don&#39;t worry too much here, we are not expecting you to write a lot of CSS code. After all, why reinventing the wheel?
-      </p>
-      <p>
-        Currently, Grommet is in early stages of development. As of this moment, we are not deployed in <a href="https://www.npmjs.com/" target="_blank">NPM</a>. This means that you, as an early evaluator, must build Grommet in your local environment.
-      </p>
-      <p>
-        Don&#39;t forget to <a href="../request_access">Request Access</a> to the source code if you haven&#39;t done so.
+        Don&#39;t forget to <a href="../request_access">Request Access</a> to the source code if you haven&#39;t done so.  This is a temporary step that is only required while the repository is private on GitHub.
       </p>
     </section>
     <section>
-      <h2>Building Grommet</h2>
-      <p>
-        To build Grommet is a prerequisite to install <a href="http://git-scm.com/">Git</a> and <a href="https://nodejs.org/">Node.js</a>. Then run the following commands to publish Grommet in your local npm: 
-      </p>
-      <pre><code class="bash">
-        git clone https://github.com/HewlettPackard/grommet.git
-        <br/>
-        cd grommet
-        <br/>
-        npm link
-      </code></pre>
-      <p>You can now start a new project and link that to Grommet:</p>
-      <pre><code class="bash">
-        mkdir sample-app
-        <br/>
-        cd sample-app
-        <br/>
-        npm link grommet
-      </code></pre>
-      <p>A <i>node_modules</i> folder will be created which contains Grommet bits from your local environment.</p>
-    </section>
+      <h2>Get Dependencies</h2>
+      <ol>
+        <li>
+          Install <a href="http://git-scm.com/" target="_blank">Git</a>. For Windows, you may like <a href="http://msysgit.github.io/" target="_blank">Git for Windows</a>.
+        </li>
+        <li>
+          Install <a href="https://nodejs.org/" target="_blank">Node.js</a>
+        </li>
+        <li>
+          <p>Setup your NPM proxy (only required if you&#39;re behind a proxy server).</p>
+          <pre><code class="bash">
+          {'npm config set http-proxy http://\{host\}:\{port\}'}<br>
+          {'npm config set https-proxy https://\{host\}:\{port\}'}
+          </code></pre>
+        </li>
+      </ol>
+      <h2>Get Going</h2>
+        <h4>NPM</h4>
+          <ol>
+          	<li>
+              <p>Install Grommet using temporary registry</p>
+              <pre><code class="bash">
+                {'npm install --save grommet --registry http://grommet.usa.hp.com:2374'}
+              </code></pre>
+              <p>At this point, a <i>node_modules</i> folder will be created which contains Grommet and its dependencies.</p>
+            </li>
+          </ol>
+        <h4>Bower</h4>
+          <ol>
+          	<li>
+          		<p>Install <a href="http://bower.io/" target="_blank">Bower</a></p>
+          		<pre><code class="bash">
+              {'npm install -g bower'}
+              </code></pre>
+          	</li>
+            <li>
+              <p>Create environment variable with your proxy settings (only required if you&#39;re behind a proxy server)</p>
+              <p><b>Windows</b></p>
+              <pre><code class="bash">
+                {'set HTTPS_PROXY=https://\{host\}:\{port\}'}
+              </code></pre>
+              <p><b>Linux/OS X</b></p>
+              <pre><code class="bash">
+                {'export HTTPS_PROXY=https://\{host\}:\{port\}'}
+              </code></pre>
+            </li>
+            <li>
+              <p>Install Grommet</p>
+              <pre><code class="bash">
+                {'bower install --save HewlettPackard/grommet-bower'}
+              </code></pre>
+              <p>At this point, a <i>bower_components</i> folder will be created which contains Grommet and its dependencies.</p>
+            </li>
+          </ol>
+    </section> 
     <section>
       <h2>Next Steps</h2>
       <p>
-        We recommend that you check out the <a href="tutorial">Tutorial</a> page and learn how to create production-ready Grommet apps.
+        We recommend that you check out the <a href="../documentation/tutorial">Tutorial</a> page and learn how to create Grommet applications.
       </p>
     </section>
 </body>

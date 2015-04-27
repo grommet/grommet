@@ -39,6 +39,8 @@
     "sinon": true,
     "Modernizr": true,
     "jest": true,
-    "__THEME__": true
+    "__THEME__": true,
+    "React": true,
+    "Grommet": true
   }
 }

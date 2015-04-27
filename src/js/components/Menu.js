@@ -15,6 +15,7 @@ var Menu = React.createClass({
     direction: React.PropTypes.oneOf(['up', 'down', 'left', 'right']),
     icon: React.PropTypes.node,
     label: React.PropTypes.string,
+    primary: React.PropTypes.bool,
     small: React.PropTypes.bool
   },
 
@@ -74,7 +75,7 @@ var Menu = React.createClass({
     }
 
     if (! this.state.active && prevState.active) {
-      document.body.removeEventListener('click', this._onClose);
+      document.removeEventListener('click', this._onClose);
       this.stopListeningToKeyboard(activeKeyboardHandlers);
       this.stopOverlay();
     }
@@ -84,17 +85,24 @@ var Menu = React.createClass({
     }
 
     if (this.state.active && ! prevState.active) {
-      document.body.addEventListener('click', this._onClose);
+      document.addEventListener('click', this._onClose);
       this.startListeningToKeyboard(activeKeyboardHandlers);
 
       var controlElement = this.refs.control.getDOMNode();
       var layerElement = document.getElementById('menu-layer');
+      var layerControlElement = layerElement.querySelectorAll('.menu__control')[0];
+      var layerControlIconElement = layerElement.querySelectorAll('svg, img')[0];
 
       // give layer control element the same line height and font size as the control
-      var layerControlElement = layerElement.querySelectorAll('.menu__control')[0];
       var fontSize = window.getComputedStyle(controlElement).fontSize;
       layerControlElement.style.fontSize = fontSize;
-      layerControlElement.style.lineHeight = (controlElement.clientHeight) + 'px';
+      var height = controlElement.clientHeight;
+      if (layerControlIconElement && height <= layerControlIconElement.clientHeight) {
+        // adjust to align with underlying control when control uses all height
+        layerControlElement.style.marginTop = '-2px';
+      }
+      layerControlElement.style.height = height + 'px';
+      layerControlElement.style.lineHeight = height + 'px';
 
       this.startOverlay(controlElement, layerElement, this.props.align);
     }
@@ -113,24 +121,18 @@ var Menu = React.createClass({
 
     if (this.props.icon) {
       classes.push(controlClassName + "--labelled");
-      icon = (
-        <div className={controlClassName + "-icon control-icon"}>
-          {this.props.icon}
-        </div>
-      );
+      icon = this.props.icon;
     } else {
       classes.push(controlClassName +"--fixed-label");
-      icon = (
-        <div className={controlClassName + "-icon control-icon"}>
-          <MoreIcon />
-        </div>
-      );
+      icon = <MoreIcon />;
     }
 
     if (this.props.label) {
       result = (
         <div className={classes.join(' ')}>
-          {icon}
+          <div className={controlClassName + "-icon"}>
+            {icon}
+          </div>
           <span className={controlClassName + "-label"}>{this.props.label}</span>
           <DropCaretIcon className={controlClassName + "-drop-icon"} />
         </div>
@@ -145,22 +147,31 @@ var Menu = React.createClass({
     return result;
   },
 
-  render: function () {
-    var classes = ["menu"];
+  _classes: function (prefix) {
+    var classes = [prefix];
 
+    if (this.props.direction) {
+      classes.push(prefix + "--" + this.props.direction);
+    }
+    if (this.props.align) {
+      classes.push(prefix + "--align-" + this.props.align);
+    }
+    if (this.props.small) {
+      classes.push(prefix + "--small");
+    }
+    if (this.props.primary) {
+      classes.push(prefix + "--primary");
+    }
+
+    return classes;
+  },
+
+  render: function () {
+    var classes = this._classes("menu");
     if (this.state.inline) {
       classes.push("menu--inline");
     } else {
       classes.push("menu--controlled");
-    }
-    if (this.props.direction) {
-      classes.push("menu--" + this.props.direction);
-    }
-    if (this.props.align) {
-      classes.push("menu--align-" + this.props.align);
-    }
-    if (this.props.small) {
-      classes.push("menu--small");
     }
     if (this.props.className) {
       classes.push(this.props.className);
@@ -206,17 +217,7 @@ var Menu = React.createClass({
         second = this.props.children;
       }
 
-      var classes = ["menu__layer"];
-
-      if (this.props.direction) {
-        classes.push("menu__layer--" + this.props.direction);
-      }
-      if (this.props.align) {
-        classes.push("menu__layer--align-" + this.props.align);
-      }
-      if (this.props.small) {
-        classes.push("menu__layer--small");
-      }
+      var classes = this._classes("menu__layer");
 
       return (
         <div id="menu-layer" className={classes.join(' ')}

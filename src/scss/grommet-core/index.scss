@@ -1,23 +1,23 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 // Settings
-@import "inuit-defaults/settings.defaults";
+@import "../../../node_modules/inuit-defaults/settings.defaults";
 @import "settings.defaults";
 @import "settings.color";
-@import "inuit-responsive-settings/settings.responsive";
+@import "../../../node_modules/inuit-responsive-settings/settings.responsive";
 
 // Tools
-@import "inuit-functions/tools.functions";
-@import "inuit-mixins/tools.mixins";
-@import "inuit-responsive-tools/tools.responsive";
+@import "../../../node_modules/inuit-functions/tools.functions";
+@import "../../../node_modules/inuit-mixins/tools.mixins";
+@import "../../../node_modules/inuit-responsive-tools/tools.responsive";
 @import "tools.page";
 @import "tools.flexible";
 
 // Generic
-@import "inuit-normalize/generic.normalize";
-@import "inuit-reset/generic.reset";
-@import "inuit-box-sizing/generic.box-sizing";
-@import "inuit-shared/generic.shared";
+@import "../../../node_modules/inuit-normalize/generic.normalize";
+@import "../../../node_modules/inuit-reset/generic.reset";
+@import "../../../node_modules/inuit-box-sizing/generic.box-sizing";
+@import "../../../node_modules/inuit-shared/generic.shared";
 
 // Base
 @import "base";
@@ -26,4 +26,4 @@
 @import "objects";
 
 // Trumps
-@import "inuit-clearfix/trumps.clearfix";
+@import "../../../node_modules/inuit-clearfix/trumps.clearfix";

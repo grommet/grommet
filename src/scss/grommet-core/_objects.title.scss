@@ -3,11 +3,15 @@
 .title {
   overflow: hidden;
   text-overflow: ellipsis;
-  @include inuit-font-size(40px, $primary-header-height);
   font-weight: normal;
+  margin-right: $inuit-base-spacing-unit;
 
   @include media-query(palm) {
-    @include inuit-font-size(32px, $palm-header-height);
+    @include inuit-font-size(32px, inherit);
+  }
+
+  @include media-query(lap-and-up) {
+    @include inuit-font-size(40px, inherit);
   }
 
   a {
@@ -24,19 +28,31 @@
     }
   }
 
-  svg,
+  svg:not(.control-icon),
   img {
     margin-right: halve($inuit-base-spacing-unit);
-    height: double($inuit-base-spacing-unit);
 
     @include media-query(palm) {
-      height: halve($palm-header-height);
+      height: halve($small-header-height);
+    }
+
+    @include media-query(lap-and-up) {
+      height: double($inuit-base-spacing-unit);
     }
   }
 
-  &--nav {
+  &--menu {
+
+    .control-icon {
+      margin-left: halve($inuit-base-spacing-unit);
+    }
+
     &:hover {
       cursor: pointer;
+
+      .control-icon {
+        stroke: $brand-color;
+      }
     }
   }
 }

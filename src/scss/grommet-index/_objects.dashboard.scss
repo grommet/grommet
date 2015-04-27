@@ -1,7 +1,7 @@
 // (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
 
-.dashboard, 
-.dashboard-edit, 
+.dashboard,
+.dashboard-edit,
 .dashboard-panel-add {
   position: relative;
   text-align: center;
@@ -30,27 +30,13 @@
 
   &__edit {
     position: fixed;
-    right: $inuit-base-spacing-unit;
-    bottom: $inuit-base-spacing-unit;
-    width: $inuit-base-spacing-unit;
-    height: $inuit-base-spacing-unit;
-    cursor: pointer;
+    right: halve($inuit-base-spacing-unit);
+    bottom: halve($inuit-base-spacing-unit);
+    width: double($inuit-base-spacing-unit);
+    height: double($inuit-base-spacing-unit);
 
     @include media-query(palm) {
       display: none;
-    }
-
-    &:hover {
-      .dashboard__edit-icon {
-        stroke: $active-icon-color;
-      }
-    }
-
-    &-icon {
-      width: 18px;
-      height: 18px;
-      vertical-align: middle;
-      stroke: $icon-color;
     }
   }
 }

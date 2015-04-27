@@ -5,7 +5,7 @@ var React = require('react');
 var Disabled = React.createClass({
 
   render: function() {
-    var className = 'status-icon-disabled';
+    var className = 'status-icon status-icon-disabled';
     if (this.props.className) {
       className += ' ' + this.props.className;
     }

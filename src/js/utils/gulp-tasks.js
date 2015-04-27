@@ -7,7 +7,6 @@ var runSequence = require('run-sequence');
 var assign = require('object-assign');
 var webpack = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
-var assign = require('object-assign');
 var rsync = require('gulp-rsync');
 var nodemon = require('gulp-nodemon');
 var file = require('gulp-file');
@@ -39,14 +38,6 @@ var webpackConfig = {
       {
         test: /\.scss$/,
         loader: 'style!css!sass?outputStyle=expanded'
-      },
-      {
-        test: /style_guide\/[^\/]*\.htm$/,
-        loader: 'jsx-loader!imports?React=react!html-jsx-loader?group=true'
-      },
-      {
-        test: /documentation\/.*\.htm$|downloads\/.*\.htm$|style_guide\/.*\/.*\.htm$/,
-        loader: 'jsx-loader!imports?React=react!html-jsx-loader'
       }
     ]
   }
@@ -133,6 +124,12 @@ module.exports = function(gulp, opts) {
       config.resolve = {};
     }
 
+    if (options.webpack.module && options.webpack.module.loaders) {
+    	webpackConfig.module.loaders.forEach(function(loader) {
+    		config.module.loaders.push(loader);
+    	});
+    }
+
     config.resolve.extensions = ['', '.js', '.json', '.htm', '.html', '.scss'];
     return gulp.src(options.mainJs)
       .pipe(gulpWebpack(config))
@@ -162,7 +159,8 @@ module.exports = function(gulp, opts) {
 
       output: {
         filename: 'index.js',
-        path: dist
+        path: dist,
+        publicPath: '/'
       },
 
       devtool: 'inline-source-map',
@@ -178,6 +176,12 @@ module.exports = function(gulp, opts) {
       devWebpackConfig.resolve = {};
     }
 
+    if (options.webpack.module && options.webpack.module.loaders) {
+    	webpackConfig.module.loaders.forEach(function(loader) {
+    		devWebpackConfig.module.loaders.push(loader);
+    	});
+    }
+
     devWebpackConfig.resolve.extensions = ['', '.js', '.json', '.htm', '.html', '.scss'];
 
     var devServerConfig = {
@@ -187,6 +191,7 @@ module.exports = function(gulp, opts) {
       stats: {
         colors: true
       },
+      publicPath: devWebpackConfig.output.publicPath,
       historyApiFallback: true
     };
 

@@ -1,0 +1,78 @@
+// (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
+
+.layer {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  overflow: none;
+  //background-image: linear-gradient(90deg, $layer-overlay-background-color, $layer-background-color 30%, $layer-background-color 70%, $layer-overlay-background-color); //$layer-overlay-background-color;
+  background-image: radial-gradient(circle at top, $layer-background-color, $layer-background-color 20%, $layer-overlay-background-color); //$layer-overlay-background-color;
+  z-index: 10;
+
+  &__container {
+    position: absolute;
+    background-color: $layer-background-color;
+    overflow: none;
+    border-radius: $border-radius;
+    max-height: 100vh;
+    max-width: 100vw;
+  }
+
+  &--align {
+    &-center {
+      .layer__container {
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+      }
+    }
+
+    &-left {
+      .layer__container {
+        left: 0px;
+        @include animation('slide-right 0.2s ease-in-out forwards');
+      }
+    }
+
+    &-right {
+      .layer__container {
+        right: 0px;
+      }
+    }
+
+    &-top {
+      .layer__container {
+        top: 0px;
+        @include animation('slide-down 0.2s ease-in-out forwards');
+      }
+    }
+
+    &-bottom {
+      .layer__container {
+        bottom: 0px;
+      }
+    }
+  }
+}
+
+@include keyframes(slide-right) {
+  0% {
+    left: -100vw;
+  }
+
+  100% {
+    left: 0px;
+  }
+}
+
+@include keyframes(slide-down) {
+  0% {
+    top: -100vh;
+  }
+
+  100% {
+    top: 0px;
+  }
+}

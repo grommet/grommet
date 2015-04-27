@@ -5,15 +5,15 @@ var React = require('react');
 var Next = React.createClass({
 
   render: function() {
-    var className = 'icon-next';
+    var className = 'control-icon control-icon-next';
     if (this.props.className) {
       className += ' ' + this.props.className;
     }
     return (
-      <svg className={className} viewBox="0 0 24 24" version="1.1">
+      <svg className={className} viewBox="0 0 48 48" version="1.1">
         <g fill="none" fillRule="evenodd"
           strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M8,22 L16,12 L8,2"></path>
+          <path d="M20,34 L28,24 L20,14"></path>
         </g>
       </svg>
     );

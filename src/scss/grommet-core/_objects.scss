@@ -1,16 +1,17 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-@import "inuit-list-inline/objects.list-inline";
-@import "inuit-list-block/objects.list-block";
-@import "inuit-list-ui/objects.list-ui";
-@import "inuit-list-bare/objects.list-bare";
-@import "inuit-box/objects.box";
-@import "inuit-pack/objects.pack";
-@import "inuit-layout/objects.layout";
-@import "inuit-tables/objects.tables";
+@import "../../../node_modules/inuit-list-inline/objects.list-inline";
+@import "../../../node_modules/inuit-list-block/objects.list-block";
+@import "../../../node_modules/inuit-list-ui/objects.list-ui";
+@import "../../../node_modules/inuit-list-bare/objects.list-bare";
+@import "../../../node_modules/inuit-box/objects.box";
+@import "../../../node_modules/inuit-pack/objects.pack";
+@import "../../../node_modules/inuit-layout/objects.layout";
+@import "../../../node_modules/inuit-tables/objects.tables";
 
 @import "objects.app";
 @import "objects.chart";
+@import "objects.check-box";
 @import "objects.color-index";
 @import "objects.column";
 @import "objects.dialog";
@@ -23,6 +24,7 @@
 @import "objects.header";
 @import "objects.icon";
 @import "objects.label";
+@import "objects.layer";
 @import "objects.section";
 @import "objects.login";
 @import "objects.login-form";
@@ -32,6 +34,7 @@
 @import "objects.notifications";
 @import "objects.object";
 @import "objects.panel";
+@import "objects.radio-button";
 @import "objects.search";
 @import "objects.section";
 @import "objects.session";

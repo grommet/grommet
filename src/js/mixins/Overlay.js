@@ -65,7 +65,6 @@ var Overlay = {
       Math.max(controlElement.offsetWidth, layerElement.offsetWidth),
         windowWidth);
     // align right edge and make at least as wide as the control
-    // TODO: handle being on the right edge of the window with an icon control, go left
     var left = (controlRect.left + layerElement.offsetWidth) - width;
     if ('right' === this._overlay.align) {
       // align right edge

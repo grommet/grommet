@@ -27,7 +27,9 @@
     cursor: pointer;
 
     &-drop-icon {
-      width: halve($inuit-base-spacing-unit);
+      width: $inuit-base-spacing-unit;
+      height: $inuit-base-spacing-unit;
+      margin-top: - quarter($inuit-base-spacing-unit);
       margin-left: halve($inuit-base-spacing-unit);
       stroke: $icon-color;
     }
@@ -56,10 +58,11 @@
 
   &__layer {
     position: fixed;
-    z-index: 2;
+    z-index: 5;
     @include inuit-font-size($inuit-heading-size-3, inherit);
     background-color: $background-color;
     border: 1px solid $brand-color;
+    border-radius: $border-radius;
 
     .menu__control {
       &-label {
@@ -80,6 +83,18 @@
       }
     }
 
+    //&--down {
+    //  .menu__control:not(.menu__control--fixed-label) {
+    //    margin-top: -3px;
+    //  }
+    //
+    //  &.menu__layer--small {
+    //    .menu__control:not(.menu__control--fixed-label) {
+    //      margin-top: -1px;
+    //    }
+    //  }
+    //}
+
     &--align-right {
       .menu__control {
         text-align: right;
@@ -97,6 +112,7 @@
       &--left {
         > * {
           margin-left: $inuit-base-spacing-unit;
+          margin-right: 0px;
 
           &:first-child {
             margin-left: 0px;
@@ -106,6 +122,7 @@
 
       &--right {
         > * {
+          margin-left: 0px;
           margin-right: $inuit-base-spacing-unit;
 
           &:last-child {
@@ -115,14 +132,14 @@
       }
 
       &--down {
-        @include media-query(lap-and-up) {
-          -webkit-flex: 0 0 auto;
-          flex: 0 0 auto;
-          width: $nav-width;
-        }
+        ///@include media-query(lap-and-up) {
+          ///-webkit-flex: 0 0 auto;
+          ///flex: 0 0 auto;
+          ///width: $nav-width;
+        ///}
 
         @include media-query(palm) {
-          width: auto;
+          ///width: auto;
 
           &:empty {
             width: 0;
@@ -188,6 +205,19 @@
           height: halve($inuit-base-spacing-unit) + quarter($inuit-base-spacing-unit);
         }
       }
+    }
+  }
+
+  &--primary {
+    display: block;
+    padding: 0px $inuit-base-spacing-unit $inuit-base-spacing-unit;
+    max-height: 100vh;
+    overflow: auto;
+
+    > .header:first-child {
+      margin-left: - $inuit-base-spacing-unit;
+      margin-right: - $inuit-base-spacing-unit;
+      margin-bottom: $inuit-base-spacing-unit;
     }
   }
 }

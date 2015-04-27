@@ -1,5 +1,7 @@
+**bower_components**
 node_modules
-**/dist/**
+**/dist*/**
+**/dist-bower*/**
 notes.txt
 .DS_Store
 .sass-cache

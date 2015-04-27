@@ -10,10 +10,6 @@
   -webkit-align-content: stretch;
   align-content: stretch;
 
-  @include media-query(palm) {
-    //display: block;
-  }
-
   > * {
     -webkit-flex-basis: double(quadruple($inuit-base-spacing-unit));
     flex-basis: double(quadruple($inuit-base-spacing-unit));

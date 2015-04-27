@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Hello World!</title>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400italic,400,700' rel='stylesheet' type='text/css'>
+  <link href='http://grommet.usa.hp.com/assets/0.1.0/grommet.min.css' rel='stylesheet' type='text/css'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.1/react.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.1/JSXTransformer.js"></script>
+  <script src="http://grommet.usa.hp.com/assets/0.1.0/grommet.min.js"></script>
+</head>
+<body>
+  <div id="content"></div>
+  <script type="text/jsx">
+
+    var HelloWorldDashboard = React.createClass({
+      render: function () {
+        return (
+          <Grommet.Section>
+            <p>Hello from a Grommet page!</p>
+            <p>Now, come back to the <a href="http://grommet.usa.hp.com/docs/hpe/documentation#understanding-grommet">Hello World</a> guide to continue your Grommet exploration.</p>
+          </Grommet.Section>
+        );
+      }
+    });
+    
+    var App = React.createClass({
+      render: function() {
+        return (
+          <Grommet.App>
+            <Grommet.Header primary={true}>
+              <Grommet.Title>Hello World</Grommet.Title>
+            </Grommet.Header>
+            <HelloWorldDashboard />
+          </Grommet.App>
+        );
+      }
+    });
+
+    var element = document.getElementById('content');
+    React.render(React.createElement(App), element);
+  </script>
+</body>
+</html>

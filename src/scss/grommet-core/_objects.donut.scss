@@ -18,7 +18,6 @@
     position: relative;
     width: $panel-width;
     height: $panel-width;
-    ///margin: $inuit-base-spacing-unit; // for stroke overflow
   }
 
   svg.donut__graphic {
@@ -35,9 +34,9 @@
       stroke-dasharray: quadruple($panel-width) quadruple($panel-width);
       stroke-dashoffset: 0;
       fill: none;
-      transition-property: stroke-width;
-      transition-duration: $base-animation-duration;
-      transition-timing-function: ease-in-out;
+      //transition-property: stroke-width;
+      //transition-duration: ($base-animation-duration / 2);
+      //transition-timing-function: ease-in-out;
       cursor: pointer;
       @include animation('draw-stroke 3s');
 

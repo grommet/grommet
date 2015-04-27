@@ -70,7 +70,7 @@
   left: 0px;
   right: 0px;
   bottom: 0px;
-  background-color: $modal-overlay-background-color;
+  background-color: $layer-overlay-background-color;
   z-index: 10;
 
   &__container {
@@ -289,7 +289,7 @@
     }
   }
 
-  &__symbol, 
+  &__symbol,
   &__icon {
     display: block;
     width: quadruple($inuit-base-spacing-unit);
@@ -349,7 +349,7 @@
         }
       }
 
-      &__symbol, 
+      &__symbol,
       &__icon {
         width: double($inuit-base-spacing-unit);
         height: double($inuit-base-spacing-unit);
@@ -379,7 +379,7 @@
   }
 }
 
-.nav-suggestions, 
+.nav-suggestions,
 .nav-recents {
   display: none;
   margin-top: halve($inuit-base-spacing-unit);
@@ -399,15 +399,15 @@
     padding-left: $inuit-base-spacing-unit;
   }
 
-  &__suggestion, 
+  &__suggestion,
   &__recent {
     a {
       display: block;
 
       &:hover {
-        .nav-suggestions, 
+        .nav-suggestions,
         .nav-recents {
-          &__suggestion, 
+          &__suggestion,
           &__recent {
             &-category {
               color: $hover-text-color;
