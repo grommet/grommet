@@ -47,15 +47,7 @@ var routes = (
   </Route>
 );
 
-var routerOptions = {
-  routes: routes
-};
-
-if (!__DEV_MODE__) {
-	routerOptions.location = Router.HistoryLocation;
-}
-
-var router = Router.create(routerOptions);
+var router = Router.create({routes: routes, location: Router.HistoryLocation});
 
 router.run(function (Handler) {
   var factory = React.createFactory(Handler);

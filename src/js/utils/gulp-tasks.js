@@ -196,8 +196,26 @@ module.exports = function(gulp, opts) {
       devServerConfig.proxy = options.devServerProxy;
     }
 
-    new WebpackDevServer(webpack(devWebpackConfig), devServerConfig).
-        listen(options.devServerPort || 8080, "localhost");
+    var server = new WebpackDevServer(webpack(devWebpackConfig), devServerConfig);
+    server.use('/', function(req, res, next) {
+
+    	if (req.url.match(/.+index.js$/)) { 
+		    res.redirect(301, '/index.js');
+		  } else if (req.url.match(/.+\/img\//)) { // img
+		    res.redirect(301, req.url.replace(/.*\/(img\/.*)$/, "/$1"));
+		  } else if (req.url.match(/\/img\//)) { // img
+		    next();
+		  } else if (req.url.match(/.+\/font\//)) { // font
+		    res.redirect(301, req.url.replace(/.*\/(font\/.*)$/, "/$1"));
+		  } else if (req.url.match(/\/font\//)) { // font
+		    next();
+		  } else if (req.url.match(/.+\/.*\.[^\/]*$/)) { // file
+		    res.redirect(301, req.url.replace(/.*\/([^\/]*)$/, "/$1"));
+		  } else {
+		    next();
+		  }
+    });
+    server.listen(options.devServerPort || 8080, "localhost");
 
   });
 
