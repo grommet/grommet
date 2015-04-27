@@ -9,7 +9,7 @@ var App = React.createClass({
   },
 
   getDefaultProps: function () {
-    return {centered: true};
+    return {centered: false};
   },
 
   render: function() {

@@ -38,13 +38,16 @@ var opts = {
     remoteDestination: '/var/www/html/doc/hpe'
   },
   webpack: {
+  	devAlias: {
+  		'grommet/hpe/font': path.resolve(__dirname, '../../src/scss/hpe/font'),
+  		'grommet': path.resolve(__dirname, '../../src/js')
+  	},
     resolve: {
       root: [
-        path.resolve(__dirname, '../../src/js'),
+        path.resolve(__dirname, '../../node_modules'),
         path.resolve(__dirname, '../../src/lib'),
-        path.resolve(__dirname, '../src/scss'),
         path.resolve(__dirname, '../../src/scss'),
-        path.resolve(__dirname, '../../node_modules')
+        path.resolve(__dirname, '../src/scss')
       ]
     },
     module: {
@@ -58,7 +61,7 @@ var opts = {
 	        loader: 'jsx-loader!imports?React=react!html-jsx-loader'
 	      }
     	]
-    }	
+    }
   },
   devServerPort: 8003,
   devServerProxy: {
@@ -68,10 +71,6 @@ var opts = {
     __THEME__: {
       hpe: true
     }
-  },
-  watch: {
-    path: path.resolve(__dirname, '../../src/js/**'),
-    dist: path.resolve(__dirname, '../../dist')
   }
 };
 

@@ -10,7 +10,6 @@ var WebpackDevServer = require('webpack-dev-server');
 var rsync = require('gulp-rsync');
 var nodemon = require('gulp-nodemon');
 var file = require('gulp-file');
-var watch = require('gulp-watch');
 var path = require('path');
 
 var webpackConfig = {
@@ -144,13 +143,6 @@ module.exports = function(gulp, opts) {
       });
     }
 
-    if (options.watch) {
-      watch(options.watch.path, function () {
-        gulp.src(options.watch.path).pipe(gulp.dest(options.watch.dist));
-      });
-    }
-
-
     var devWebpackConfig = assign({}, webpackConfig, options.webpack || {}, {
       entry: {
         app: ['webpack/hot/dev-server', './' + options.mainJs],
@@ -171,6 +163,10 @@ module.exports = function(gulp, opts) {
       ]
 
     });
+
+    if (options.webpack.devAlias) {
+    	devWebpackConfig.resolve.alias = options.webpack.devAlias;
+    }
 
     if (!devWebpackConfig.resolve) {
       devWebpackConfig.resolve = {};
