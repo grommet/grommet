@@ -22,7 +22,7 @@ if (__THEME__.hpe) {
   require("!style!css!sass!index.scss");
 }
 
-if ("/" === window.location.pathname) {
+if (__DEV_MODE__) {
   rootPath = "/"; // webpack-dev-server
 }
 
@@ -47,7 +47,15 @@ var routes = (
   </Route>
 );
 
-var router = Router.create({routes: routes, location: Router.HistoryLocation});
+var routerOptions = {
+  routes: routes
+};
+
+if (!__DEV_MODE__) {
+	routerOptions.location = Router.HistoryLocation;
+}
+
+var router = Router.create(routerOptions);
 
 router.run(function (Handler) {
   var factory = React.createFactory(Handler);

@@ -40,6 +40,7 @@
     "Modernizr": true,
     "jest": true,
     "__THEME__": true,
+    "__DEV_MODE__": true,
     "React": true,
     "Grommet": true
   }

@@ -8,7 +8,6 @@ var assign = require('object-assign');
 var webpack = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
 var rsync = require('gulp-rsync');
-var nodemon = require('gulp-nodemon');
 var file = require('gulp-file');
 var path = require('path');
 
@@ -107,6 +106,10 @@ module.exports = function(gulp, opts) {
   });
 
   gulp.task('dist', ['preprocess', 'dist-preprocess'], function() {
+  	var env = assign({}, options.env, {
+    	__DEV_MODE__: false
+    });
+
     var config = assign({}, webpackConfig, options.webpack || {}, {
       plugins: [
         new webpack.optimize.UglifyJsPlugin({
@@ -115,7 +118,7 @@ module.exports = function(gulp, opts) {
             }
         }),
         new webpack.optimize.DedupePlugin(),
-        new webpack.DefinePlugin(options.env || {})
+        new webpack.DefinePlugin(env)
       ]
     });
 
@@ -137,11 +140,9 @@ module.exports = function(gulp, opts) {
 
   gulp.task('dev', ['preprocess'], function() {
 
-    if (options.nodeServerPath) {
-      nodemon({
-        script: options.nodeServerPath
-      });
-    }
+    var env = assign({}, options.env, {
+    	__DEV_MODE__: true
+    });
 
     var devWebpackConfig = assign({}, webpackConfig, options.webpack || {}, {
       entry: {
@@ -159,7 +160,7 @@ module.exports = function(gulp, opts) {
 
       plugins: [
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.DefinePlugin(options.env || {})
+        new webpack.DefinePlugin(env)
       ]
 
     });
