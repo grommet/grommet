@@ -22,7 +22,7 @@ var Home = React.createClass({
           <h3>The most advanced UI framework for enterprise applications.</h3>
           <Menu direction="right">
             <span>
-              Grab the Grommet <a href="/assets/grommet_sticker_sheet.ai" target="_blank">
+              Grab the Grommet <a href="/assets/0.1.0/grommet_sticker_sheet.ai" target="_blank">
                 Sticker Sheet <img className="right-arrow" src="img/right-arrow.svg" title="right arrow" />
               </a>
             </span>
