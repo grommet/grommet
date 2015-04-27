@@ -8,7 +8,7 @@ var cookieParser = require('cookie-parser');
 var docs = require('./docs');
 var rest = require('./rest');
 var tour = require('./tour');
-var demo = require('./demo');
+//var demo = require('./demo');
 
 var PREFIX = ''; // for running under a shared domain
 var PORT = 8000;
@@ -29,7 +29,7 @@ app.
   use(PREFIX + '/docs', docs).
   use(PREFIX + '/rest', rest).
   use(PREFIX + '/tour', tour).
-  use(PREFIX + '/demo', demo).
+  //use(PREFIX + '/demo', demo).
   use(PREFIX, router);
 
 app.listen(PORT);

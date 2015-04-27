@@ -20,7 +20,11 @@ var opts = {
   jsAssets: ['examples/tour/src/js/**/*.js'],
   mainJs: 'examples/tour/src/js/index.js',
   mainScss: 'examples/tour/src/scss/index.scss',
-  remoteDestination: '/var/www/html/tour',
+  sync: {
+    hostname: 'grommet.usa.hp.com',
+    username: 'ligo',
+    remoteDestination: '/var/www/html/examples/tour/dist'
+  },
   webpack: {
     resolve: {
       root: [
