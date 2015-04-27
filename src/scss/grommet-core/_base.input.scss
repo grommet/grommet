@@ -88,11 +88,6 @@ a.button {
   }
 }
 
-input[type="checkbox"],
-input[type="radio"] {
-  margin-right: quarter($inuit-base-spacing-unit);
-}
-
 $small-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAAXNSR0IArs4c6QAAALNJREFUKBVjYBj6gHH69Olb////L8rIyJiemZl5HpuXgGoMgWpmAtW8ZgIyuIEMU6DCk0CJioaGBiaYJhAbJAaSA6kBqwUKcoiJiXUBBXKAEoxAwcM/f/6MA2liZ2dfBBS3BTKBwv+nvHr1qowRJAECU6dOdQNKzgdiKaDkNyANEuYCsp8BcWJ2dvYukADcepDAjx8/dIFia4CKuUCKQWyQGEwxkI8dTJs2rRLqduwKaCoKAOClUKEWEZS1AAAAAElFTkSuQmCC);
 
 select {
@@ -114,83 +109,6 @@ select {
   &.plain {
     border: none;
   }
-}
-
-input[type=checkbox],
-input[type=radio] {
-  opacity: 0;
-  position: absolute;
-}
-
-label.checkbox,
-label.radio {
-  position: relative;
-	display: inline-block;
-	cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-
-  &:before {
-    content: "";
-    display: inline-block;
-    width: $inuit-base-spacing-unit;
-    height: $inuit-base-spacing-unit;
-    margin-right: halve($inuit-base-spacing-unit);
-    vertical-align: middle;
-    background-color: inherit;
-    color: $brand-color-darker;
-    border: $input-border-width solid $border-color;
-    text-align: center;
-  }
-}
-
-label.checkbox {
-  &:before {
-    content: "";
-    border-radius: $border-radius;
-  }
-}
-
-label.radio {
-  &:before {
-    content: "";
-    border-radius: $inuit-base-spacing-unit;
-  }
-}
-
-input[type=checkbox]:checked + label.checkbox:after {
-  content: "";
-  position: absolute;
-  top: quarter($inuit-base-spacing-unit) + 4.5px;
-  left: 4px;
-  width: $inuit-base-spacing-unit - 8;
-  height: $inuit-base-spacing-unit - 8;
-  background-color: $brand-color;
-}
-
-input[type=checkbox]:focus + label.checkbox:before {
-  content: "";
-  border-color: $focus-border-color;
-  box-shadow: 0 0 1px 1px $focus-border-color;
-}
-
-input[type=radio]:checked + label.radio:after {
-  content: "";
-  position: absolute;
-  top: quarter($inuit-base-spacing-unit) + 5px;
-  left: 4px;
-  width: $inuit-base-spacing-unit - 8;
-  height: $inuit-base-spacing-unit - 8;
-  border-radius: $inuit-base-spacing-unit - 8;
-  background-color: $brand-color;
-}
-
-input[type=radio]:focus + label.radio:before {
-  content: "";
-  border-color: $focus-border-color;
-  box-shadow: 0 0 1px 1px $focus-border-color;
 }
 
 @mixin range-track {

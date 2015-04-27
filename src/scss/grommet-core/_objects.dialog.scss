@@ -44,7 +44,7 @@
   right: 0px;
   bottom: 0px;
   overflow: none;
-  background-color: $modal-overlay-background-color;
+  background-color: $layer-overlay-background-color;
   z-index: 10;
 
   @include media-query(lap-and-up) {
@@ -58,7 +58,7 @@
     height: 100vh;
     margin: 0 auto;
     overflow: none;
-    background-color: $modal-background-color;
+    background-color: $layer-background-color;
     border-radius: $border-radius;
 
     > :not(.footer):not(.header):not(.form) {

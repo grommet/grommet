@@ -1,13 +1,37 @@
 // (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
 
 .form {
+  min-width: round($inuit-base-spacing-unit * 20);
+
   fieldset {
     border: none;
     margin: 0px;
     padding-bottom: 1.5rem;
+  }
 
-    &:first-of-type {
-      padding-top: 1.5rem;
+  .form-fields {
+    padding: $inuit-base-spacing-unit;
+  }
+
+  .layer & {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    max-height: 100vh;
+
+    > .header,
+    > .footer {
+      -webkit-flex: 0 0 auto;
+      flex: 0 0 auto;
     }
+
+    > .form-fields {
+      overflow: auto;
+    }
+  }
+
+  &--compact {
+    min-width: round($inuit-base-spacing-unit * 10);
   }
 }

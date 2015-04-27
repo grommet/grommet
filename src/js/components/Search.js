@@ -143,6 +143,13 @@ var Search = React.createClass({
     document.removeEventListener('click', this._onRemoveLayer);
   },
 
+  focus: function () {
+    var ref = this.refs.input || this.refs.control;
+    if (ref) {
+      ref.getDOMNode().focus();
+    }
+  },
+
   _createControl: function () {
     var controlClassName = CLASS_ROOT + "__control";
     return (

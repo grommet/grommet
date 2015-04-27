@@ -23,6 +23,7 @@ var FooterDoc = require('./components/FooterDoc');
 var FormDoc = require('./components/FormDoc');
 var FormFieldDoc = require('./components/FormFieldDoc');
 var HeaderDoc = require('./components/HeaderDoc');
+var LayerDoc = require('./components/LayerDoc');
 var LoginFormDoc = require('./components/LoginFormDoc');
 var MenuDoc = require('./components/MenuDoc');
 var MeterDoc = require('./components/MeterDoc');
@@ -69,6 +70,7 @@ var CONTENTS = [
       {route: 'doc_form', label: 'Form', component: FormDoc},
       {route: 'doc_form-field', label: 'FormField', component: FormFieldDoc},
       {route: 'doc_header', label: 'Header', component: HeaderDoc},
+      {route: 'doc_layer', label: 'Layer', component: LayerDoc},
       {route: 'doc_login-form', label: 'LoginForm', component: LoginFormDoc},
       {route: 'doc_menu', label: 'Menu', component: MenuDoc},
       {route: 'doc_meter', label: 'Meter', component: MeterDoc},

@@ -4,7 +4,7 @@ var _ = require('lodash');
 var AppDispatcher = require('../dispatchers/AppDispatcher');
 var EventEmitter = require('events').EventEmitter;
 var Constants = require('../constants/AppConstants');
-var Cookies = require('cookies-js');
+var Cookies = require('../utils/Cookies');
 
 var TOKEN = "token";
 var USER = "user";
@@ -23,7 +23,7 @@ function setup () {
   _data.id = Cookies.get(TOKEN);
   _data.name = Cookies.get(USER);
   _data.created = Cookies.get(LOGIN_TIME);
-  _data.email = Cookies.get(EMAIL) || 'eric.soderberg@hp.com';
+  _data.email = Cookies.get(EMAIL);
 }
 
 function login(username, id) {
@@ -51,9 +51,9 @@ function logout() {
   _data.id = null;
   _data.name = null;
   _data.created = null;
-  Cookies.expire(TOKEN);
-  Cookies.expire(USER);
-  Cookies.expire(LOGIN_TIME);
+  Cookies.remove(TOKEN);
+  Cookies.remove(USER);
+  Cookies.remove(LOGIN_TIME);
 }
 
 var SessionStore = _.extend({}, EventEmitter.prototype, {

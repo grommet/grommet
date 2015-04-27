@@ -3,13 +3,14 @@
 var React = require('react');
 var GrommetDocument = require('grommet/components/Document');
 var FormField = require('grommet/components/FormField');
+var CheckBox = require('grommet/components/CheckBox');
+var RadioButton = require('grommet/components/RadioButton');
 
 var FormFieldDoc = React.createClass({
 
   render: function() {
     var inline = [
-      "<FormField>",
-      "  <label htmlFor=\"item1\">Item 1</label>",
+      "<FormField label=\"Item 1\" htmlFor=\"item1\">",
       "  <input id=\"item1\" />",
       "</FormField>"].join("\n");
     return (
@@ -28,6 +29,10 @@ var FormFieldDoc = React.createClass({
           <dd>Validation errors.</dd>
           <dt><code>help   {"{text}"}</code></dt>
           <dd>Helpful text.</dd>
+          <dt><code>htmlFor   {"{id}"}</code></dt>
+          <dd>Id of the input element that the label should be associated with.</dd>
+          <dt><code>label  {"{text}"}</code></dt>
+          <dd>Label for the field.</dd>
           </dl>
         </section>
 
@@ -36,22 +41,28 @@ var FormFieldDoc = React.createClass({
 
           <h3>Text input</h3>
           <div className="example">
-            <FormField>
-              <label htmlFor="item1">Item 1</label>
+            <FormField label="Item 1" htmlFor="item1">
               <input id="item1" type="text" />
             </FormField>
           </div>
-          <pre><code className="html">{"<FormField>\n  <label htmlFor=\"\{id\}\">...</label>\n  <input id=\"\{id\}\" type=\"text\"/>\n</FormField>"}</code></pre>
+          <pre><code className="html">{"<FormField label=\"Item 1\" htmlFor=\"item1\">\n  <input id=\"\{id\}\" type=\"text\"/>\n</FormField>"}</code></pre>
 
           <h3>Checkbox</h3>
           <div className="example">
-            <FormField>
-              <label></label>
-              <input id="item2" type="checkbox" />
-              <label htmlFor="item2" className="checkbox">Item 2</label>
+            <FormField label="">
+              <CheckBox id="item2" label="Item 2" />
             </FormField>
           </div>
-          <pre><code className="html">{"<FormField>\n  <label></label>\n  <input id=\"\{id\}\" type=\"checkbox\"/>\n  <label htmlFor=\"\{id\}\ className=\"checkbox\">...</label>\n</FormField>"}</code></pre>
+          <pre><code className="html">{"<FormField>\n  <CheckBox id=\"\{item2\}\" label=\"Item 2\"/>\n</FormField>"}</code></pre>
+
+          <h3>RadioButton</h3>
+          <div className="example">
+            <FormField label="">
+              <RadioButton id="item3-1" label="choice 1" name="choice"/>
+              <RadioButton id="item3-2" label="choice 2" name="choice"/>
+            </FormField>
+          </div>
+          <pre><code className="html">{"<FormField>\n  <RadioButton id=\"\{item3-1\}\" label=\"choice 1\" name=\"choice\"/>\n  <RadioButton id=\"\{item3-2\}\" label=\"choice 2\" name=\"choice\"/>\n</FormField>"}</code></pre>
 
         </section>
       </GrommetDocument>

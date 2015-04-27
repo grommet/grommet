@@ -1,0 +1,49 @@
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+
+.check-box {
+
+  &__input {
+    opacity: 0;
+    position: absolute;
+
+    &:checked + label.checkbox:after {
+      content: "";
+      position: absolute;
+      top: quarter($inuit-base-spacing-unit) + 4.5px;
+      left: 4px;
+      width: $inuit-base-spacing-unit - 8;
+      height: $inuit-base-spacing-unit - 8;
+      background-color: $brand-color;
+    }
+
+    &:focus + label.checkbox:before {
+      content: "";
+      border-color: $focus-border-color;
+      box-shadow: 0 0 1px 1px $focus-border-color;
+    }
+  }
+
+  &__label {
+    position: relative;
+  	display: inline-block;
+  	cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    &:before {
+      content: "";
+      display: inline-block;
+      width: $inuit-base-spacing-unit;
+      height: $inuit-base-spacing-unit;
+      margin-right: halve($inuit-base-spacing-unit);
+      vertical-align: middle;
+      background-color: inherit;
+      color: $brand-color-darker;
+      border: $input-border-width solid $border-color;
+      border-radius: $border-radius;
+      text-align: center;
+    }
+  }
+}

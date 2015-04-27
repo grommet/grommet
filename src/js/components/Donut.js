@@ -80,7 +80,8 @@ var Donut = React.createClass({
     this.props.series.forEach(function (item, index) {
 
       var endAngle = Math.min(360, Math.max(10, startAngle + (anglePer * item.value)));
-      var commands = describeArc(100, 100, 80, startAngle, endAngle-2);
+      var radius = (this.state.activeIndex === index) ? 78 : 72;
+      var commands = describeArc(96, 96, radius, startAngle, endAngle-2);
       startAngle = endAngle;
       var colorIndex = item.colorIndex || (index + 1);
 
@@ -111,8 +112,8 @@ var Donut = React.createClass({
           <li key={item.className} className={keyItemClasses.join(' ')}
             onMouseOver={this._onMouseOver.bind(null, index)}
             onMouseOut={this._onMouseOut.bind(null, index)}>
-            <svg className={"donut__key-item-swatch"} viewBox="0 0 10 10">
-              <path className={item.className} d="M 5 0 l 0 10" />
+            <svg className={"donut__key-item-swatch"} viewBox="0 0 12 12">
+              <path className={item.className} d="M 5 0 l 0 12" />
             </svg>
             <span className="donut__key-item-label">{item.label}</span>
             <span className="donut__key-item-value">{item.value}</span>
@@ -124,7 +125,7 @@ var Donut = React.createClass({
     return (
       <div className="donut">
         <div className="donut__graphic-container">
-          <svg className="donut__graphic" viewBox="0 0 200 200"
+          <svg className="donut__graphic" viewBox="0 0 192 192"
             preserveAspectRatio="xMidYMid meet">
             <g>{paths}</g>
           </svg>

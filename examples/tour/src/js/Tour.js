@@ -19,12 +19,10 @@ var Tour = React.createClass({
   },
 
   _onClickTitle: function () {
-    console.log('!!! Tour _onClickTitle');
     this.setState({mainMenuActive: true});
   },
 
   _onCloseMainMenu: function () {
-    console.log('!!! Tour _onCloseMainMenu');
     this.setState({mainMenuActive: false});
   },
 
@@ -35,7 +33,11 @@ var Tour = React.createClass({
   },
 
   _onChange: function () {
-    this.setState({data: SessionStore.getAll()});
+    var data = SessionStore.getAll();
+    this.setState({data: data});
+    if (! data.id && ! this.context.router.isActive('login')) {
+      this.context.router.transitionTo('login');
+    }
   },
 
   getInitialState: function () {
@@ -47,6 +49,7 @@ var Tour = React.createClass({
 
   componentDidMount: function () {
     SessionStore.addChangeListener(this._onChange);
+    SessionActions.setup();
   },
 
   componentWillUnmount: function () {
@@ -55,19 +58,16 @@ var Tour = React.createClass({
 
   render: function() {
     var mainMenu = null;
-    console.log('!!! Tour render', this.state.mainMenuActive);
     if (this.state.mainMenuActive) {
       mainMenu = <TourMainMenu onClose={this._onCloseMainMenu} />;
     }
     return (
       <App centered={false}>
         <Header primary={true}>
-          <div onClick={this._onClickTitle}>
-          <Title>
+          <Title onClick={this._onClickTitle}>
             {"Grommet Tour"}
           </Title>
-          </div>
-          <Menu icon={<Gravatar email={this.state.data.email || ''} size={48} />}
+          <Menu icon={<Gravatar email={this.state.data.email || ''} />}
             align="right">
             <Link to="settings">Settings</Link>
             <a onClick={this._onLogout}>Logout</a>

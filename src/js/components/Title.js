@@ -5,11 +5,15 @@ var DropCaret = require('./icons/DropCaret');
 
 var Title = React.createClass({
 
+  propTypes: {
+    onClick: React.PropTypes.func
+  },
+
   render: function() {
     var classes = ["title"];
     var caret = null;
 
-    if (this.props.menu) {
+    if (this.props.onClick) {
       classes.push("title--menu");
       caret = (
         <DropCaret className="title__caret" />
@@ -17,7 +21,7 @@ var Title = React.createClass({
     }
 
     return (
-      <div className={classes.join(' ')}>
+      <div className={classes.join(' ')} onClick={this.props.onClick}>
         {this.props.children}
         {caret}
       </div>

@@ -19,6 +19,12 @@
             margin-right: 0px;
           }
         }
+
+        > .menu:first-child {
+          -webkit-flex: 0 0 auto;
+          flex: 0 0 auto;
+          width: $nav-width;
+        }
       }
 
       @include media-query(palm) {

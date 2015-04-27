@@ -7,18 +7,32 @@
   right: 0px;
   bottom: 0px;
   overflow: none;
-  background-color: $modal-overlay-background-color;
+  //background-image: linear-gradient(90deg, $layer-overlay-background-color, $layer-background-color 30%, $layer-background-color 70%, $layer-overlay-background-color); //$layer-overlay-background-color;
+  background-image: radial-gradient(circle at top, $layer-background-color, $layer-background-color 20%, $layer-overlay-background-color); //$layer-overlay-background-color;
   z-index: 10;
 
   &__container {
     position: absolute;
+    background-color: $layer-background-color;
+    overflow: none;
+    border-radius: $border-radius;
+    max-height: 100vh;
+    max-width: 100vw;
   }
 
   &--align {
+    &-center {
+      .layer__container {
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+      }
+    }
+
     &-left {
       .layer__container {
-        @include animation('slide-right 1s ease-in-out forwards');
         left: 0px;
+        @include animation('slide-right 0.2s ease-in-out forwards');
       }
     }
 
@@ -31,6 +45,7 @@
     &-top {
       .layer__container {
         top: 0px;
+        @include animation('slide-down 0.2s ease-in-out forwards');
       }
     }
 
@@ -44,10 +59,20 @@
 
 @include keyframes(slide-right) {
   0% {
-    max-width: 0px;
+    left: -100vw;
   }
 
   100% {
-    max-width: 100vw;
+    left: 0px;
+  }
+}
+
+@include keyframes(slide-down) {
+  0% {
+    top: -100vh;
+  }
+
+  100% {
+    top: 0px;
   }
 }

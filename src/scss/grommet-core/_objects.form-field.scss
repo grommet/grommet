@@ -6,70 +6,96 @@
   // set line height to align labels with input elements
   line-height: $inuit-base-spacing-unit + halve($inuit-base-spacing-unit);
 
-  button {
-    line-height: $inuit-base-spacing-unit;
-  }
-
   &:last-child {
     margin-bottom: 0px;
   }
 
-  > * {
-    display: inline-block;
+  .form:not(.form--compact) & {
+    @include media-query(lap-and-up) {
+      display: -webkit-flex;
+      display: flex;
+      min-width: round($inuit-base-spacing-unit * 28);
+    }
   }
 
-  > label:first-child {
+  &__label {
     display: block;
     text-align: left;
 
     .form:not(.form--compact) & {
       @include media-query(lap-and-up) {
-        display: inline-block;
-        width: round($inuit-base-spacing-unit * 8);
+        -webkit-flex: 0 0 round($inuit-base-spacing-unit * 8);
+        flex: 0 0 round($inuit-base-spacing-unit * 8);
         text-align: right;
-        margin-right: $inuit-base-spacing-unit;
+        padding-right: $inuit-base-spacing-unit;
         vertical-align: top;
       }
     }
   }
 
-  > input[type=text],
-  > input[type=range],
-  > input[type=email],
-  > input[type=password],
-  > select,
-  > textarea {
-    width: round($inuit-base-spacing-unit * 10);
-
-    .form--compact & {
-      width: 100%;
-      margin-right: 0px;
+  &__container {
+    .form:not(.form--compact) & {
+      @include media-query(lap-and-up) {
+        -webkit-flex: 1 0 round($inuit-base-spacing-unit * 16);
+        flex: 1 0 round($inuit-base-spacing-unit * 16);
+      }
     }
   }
 
-  // Prevent textarea from adding extra bottom margin
-  > textarea {
-    vertical-align: top;
-  }
+  &__contents {
+    button {
+      line-height: $inuit-base-spacing-unit;
+    }
 
-  label.radio,
-  label.checkbox {
-    margin-right: $inuit-base-spacing-unit;
-  }
+    > input[type=text],
+    > input[type=range],
+    > input[type=email],
+    > input[type=password],
+    > select,
+    > textarea {
+      width: round($inuit-base-spacing-unit * 10);
 
-  > table.table--selectable {
-    margin-bottom: 0px;
+      .form--compact & {
+        width: 100%;
+        margin-right: 0px;
+      }
+    }
 
-    tbody tr td {
-      padding-top: 0px;
-      padding-bottom: 0px;
+    // Prevent textarea from adding extra bottom margin
+    > textarea {
+      vertical-align: top;
+    }
+
+    > .check-box,
+    > .radio-button {
+      display: block;
+    }
+
+    label.radio,
+    label.checkbox {
+      margin-right: $inuit-base-spacing-unit;
+    }
+
+    > table.table--selectable {
+      margin-bottom: 0px;
+
+      tbody tr td {
+        padding-top: 0px;
+        padding-bottom: 0px;
+      }
     }
   }
 
   &--error {
-    input {
+    input,
+    textarea,
+    select {
       border-color: map-get($brand-status-colors, error);
     }
+  }
+
+  &__help {
+    color: $secondary-text-color;
   }
 
   &__error {

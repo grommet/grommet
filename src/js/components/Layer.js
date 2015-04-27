@@ -2,12 +2,13 @@
 
 var React = require('react');
 var ReactLayeredComponent = require('../mixins/ReactLayeredComponent');
+var KeyboardAccelerators = require('../mixins/KeyboardAccelerators');
 
 var LayerContainer = React.createClass({
 
   propTypes: {
-    align: React.PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
-    onClose: React.PropTypes.func.isRequired,
+    align: React.PropTypes.oneOf(['center', 'top', 'bottom', 'left', 'right']),
+    onClose: React.PropTypes.func,
     router: React.PropTypes.func.isRequired
   },
 
@@ -15,8 +16,23 @@ var LayerContainer = React.createClass({
     router: React.PropTypes.func.isRequired
   },
 
+  mixins: [KeyboardAccelerators],
+
+  _onClick: function (event) {
+    if (this.props.onClose &&
+      event.target === this.refs.background.getDOMNode()) {
+      this.props.onClose();
+    }
+  },
+
   getChildContext: function () {
     return { router: this.props.router };
+  },
+
+  componentDidMount: function () {
+    if (this.props.onClose) {
+      this.startListeningToKeyboard({esc: this.props.onClose});
+    }
   },
 
   render: function () {
@@ -28,7 +44,7 @@ var LayerContainer = React.createClass({
       classes.push(this.props.className);
     }
     return (
-      <div className={classes.join(' ')} onClick={this.props.onClose}>
+      <div ref="background" className={classes.join(' ')} onClick={this._onClick}>
         <div className="layer__container">
           {this.props.children}
         </div>
@@ -40,8 +56,8 @@ var LayerContainer = React.createClass({
 var Layer = React.createClass({
 
   propTypes: {
-    align: React.PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
-    onClose: React.PropTypes.func.isRequired
+    align: React.PropTypes.oneOf(['center', 'top', 'bottom', 'left', 'right']),
+    onClose: React.PropTypes.func
   },
 
   contextTypes: {
@@ -49,6 +65,12 @@ var Layer = React.createClass({
   },
 
   mixins: [ReactLayeredComponent],
+
+  getDefaultProps: function () {
+    return {
+      align: 'center'
+    };
+  },
 
   render: function () {
     return (<span></span>);

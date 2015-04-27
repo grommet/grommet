@@ -2,8 +2,9 @@
 
 var React = require('react');
 var Link = require('react-router').Link;
-var Dialog = require('grommet/components/Dialog');
+var Layer = require('grommet/components/Layer');
 var Form = require('grommet/components/Form');
+var FormFields = require('grommet/components/FormFields');
 var FormField = require('grommet/components/FormField');
 var Header = require('grommet/components/Header');
 var Footer = require('grommet/components/Footer');
@@ -88,17 +89,17 @@ var RequestAccess = React.createClass({
 
   render: function() {
 
-    var msg = null;
+    var msg = <span></span>;
     if (this.state.response) {
       msg = (
-        <p>
+        <span>
           <Status value={this.state.response.status} />
           {this.state.response.msg}
-        </p>
+        </span>
       );
     }
     return (
-      <Dialog compact={true}>
+      <Layer>
         <Form compact={true} onSubmit={this._onSubmit}>
           <Header>
             <h1></h1>
@@ -108,7 +109,7 @@ var RequestAccess = React.createClass({
               </Link>
             </Menu>
           </Header>
-          <div className="request-access">
+          <FormFields className="request-access">
             <h3>Grommet is almost ready!</h3>
             <p>We would love to have you as a contributor.</p>
             <fieldset>
@@ -137,16 +138,16 @@ var RequestAccess = React.createClass({
                   onChange={this._onPurposeChange} />
               </FormField>
             </fieldset>
-          </div>
+          </FormFields>
           <Footer>
-            <div>
+            {msg}
+            <Menu direction="left">
               <input type="submit" className="primary" value="Send"
                 onClick={this._onSubmit} />
-            </div>
-            {msg}
+            </Menu>
           </Footer>
         </Form>
-      </Dialog>
+      </Layer>
     );
   }
 

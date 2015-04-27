@@ -31,6 +31,8 @@ var FormDoc = React.createClass({
         <section>
           <h2>Options</h2>
           <dl>
+          <dt><code>compact   true|false</code></dt>
+          <dd>Whether to render the form in a compact style.</dd>
           <dt><code>onSubmit  {"{func}"}</code></dt>
           <dd>A function called when the user submits the form.</dd>
           </dl>
@@ -39,10 +41,17 @@ var FormDoc = React.createClass({
         <section>
           <h2>Example</h2>
 
+          <h3>Regular</h3>
           <div className="example">
             <FullForm />
           </div>
           <pre><code className="html">{"<Form> ..."}</code></pre>
+
+          <h3>Compact</h3>
+          <div className="example">
+            <FullForm compact={true}/>
+          </div>
+          <pre><code className="html">{"<Form compact={true}> ..."}</code></pre>
 
         </section>
       </GrommetDocument>

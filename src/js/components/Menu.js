@@ -15,6 +15,7 @@ var Menu = React.createClass({
     direction: React.PropTypes.oneOf(['up', 'down', 'left', 'right']),
     icon: React.PropTypes.node,
     label: React.PropTypes.string,
+    primary: React.PropTypes.bool,
     small: React.PropTypes.bool
   },
 
@@ -146,22 +147,31 @@ var Menu = React.createClass({
     return result;
   },
 
-  render: function () {
-    var classes = ["menu"];
+  _classes: function (prefix) {
+    var classes = [prefix];
 
+    if (this.props.direction) {
+      classes.push(prefix + "--" + this.props.direction);
+    }
+    if (this.props.align) {
+      classes.push(prefix + "--align-" + this.props.align);
+    }
+    if (this.props.small) {
+      classes.push(prefix + "--small");
+    }
+    if (this.props.primary) {
+      classes.push(prefix + "--primary");
+    }
+
+    return classes;
+  },
+
+  render: function () {
+    var classes = this._classes("menu");
     if (this.state.inline) {
       classes.push("menu--inline");
     } else {
       classes.push("menu--controlled");
-    }
-    if (this.props.direction) {
-      classes.push("menu--" + this.props.direction);
-    }
-    if (this.props.align) {
-      classes.push("menu--align-" + this.props.align);
-    }
-    if (this.props.small) {
-      classes.push("menu--small");
     }
     if (this.props.className) {
       classes.push(this.props.className);
@@ -207,17 +217,7 @@ var Menu = React.createClass({
         second = this.props.children;
       }
 
-      var classes = ["menu__layer"];
-
-      if (this.props.direction) {
-        classes.push("menu__layer--" + this.props.direction);
-      }
-      if (this.props.align) {
-        classes.push("menu__layer--align-" + this.props.align);
-      }
-      if (this.props.small) {
-        classes.push("menu__layer--small");
-      }
+      var classes = this._classes("menu__layer");
 
       return (
         <div id="menu-layer" className={classes.join(' ')}
