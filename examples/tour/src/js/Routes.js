@@ -6,12 +6,12 @@ var DefaultRoute = require('react-router').DefaultRoute;
 
 var TourLogin = require('./TourLogin');
 var TBD = require('grommet/components/TBD');
-var IndexActivity = require('grommet/index/components/Activity');
-var IndexDashboardEdit = require('grommet/index/components/DashboardEdit');
-var IndexDashboardPanelAdd = require('grommet/index/components/DashboardPanelAdd');
-var IndexDashboardPanelEdit = require('grommet/index/components/DashboardPanelEdit');
+//var IndexActivity = require('grommet/index/components/Activity');
+//var IndexDashboardEdit = require('grommet/index/components/DashboardEdit');
+//var IndexDashboardPanelAdd = require('grommet/index/components/DashboardPanelAdd');
+//var IndexDashboardPanelEdit = require('grommet/index/components/DashboardPanelEdit');
 var Tour = require('./Tour');
-var TourDashboard = require('./TourDashboard');
+//var TourDashboard = require('./TourDashboard');
 
 var rootPath = "/"; // "/tour/";
 
@@ -20,16 +20,16 @@ var routes = (
     <Route name="login" handler={TourLogin}/>
     <Route name="tbd" handler={TBD}/>
     <Route name="settings" handler={TBD}/>
-    <Route name="activity" handler={IndexActivity} />
+    <Route name="activity" handler={TBD} />
     <Route name="reports" handler={TBD} />
     <Route name="dashboard-edit" path="dashboard/edit"
-      handler={IndexDashboardEdit}>
+      handler={TBD}>
       <Route name="dashboard-panel-add" path="panel/add"
-        handler={IndexDashboardPanelAdd}/>
+        handler={TBD}/>
       <Route name="dashboard-panel-edit" path="panel/edit/:index"
-        handler={IndexDashboardPanelEdit}/>
+        handler={TBD}/>
     </Route>
-    <DefaultRoute name="dashboard" handler={TourDashboard}/>
+    <DefaultRoute name="dashboard" handler={TBD}/>
   </Route>
 );
 

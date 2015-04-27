@@ -8,7 +8,6 @@
   bottom: 0px;
   overflow: none;
   //background-image: linear-gradient(90deg, $layer-overlay-background-color, $layer-background-color 30%, $layer-background-color 70%, $layer-overlay-background-color); //$layer-overlay-background-color;
-  background-image: radial-gradient(circle at top, $layer-background-color, $layer-background-color 20%, $layer-overlay-background-color); //$layer-overlay-background-color;
   z-index: 10;
 
   &__container {
@@ -22,6 +21,8 @@
 
   &--align {
     &-center {
+      background-image: radial-gradient(circle at top, $layer-background-color, $layer-background-color 20%, $layer-overlay-background-color); //$layer-overlay-background-color;
+
       .layer__container {
         left: 50%;
         -webkit-transform: translateX(-50%);
@@ -30,6 +31,8 @@
     }
 
     &-left {
+      background-image: radial-gradient(circle at left, $layer-background-color, $layer-background-color 20%, $layer-overlay-background-color); //$layer-overlay-background-color;
+
       .layer__container {
         left: 0px;
         @include animation('slide-right 0.2s ease-in-out forwards');
@@ -37,12 +40,16 @@
     }
 
     &-right {
+      background-image: radial-gradient(circle at right, $layer-background-color, $layer-background-color 20%, $layer-overlay-background-color); //$layer-overlay-background-color;
+
       .layer__container {
         right: 0px;
       }
     }
 
     &-top {
+      background-image: radial-gradient(circle at top left, $layer-background-color, $layer-background-color 20%, $layer-overlay-background-color); //$layer-overlay-background-color;
+
       .layer__container {
         top: 0px;
         @include animation('slide-down 0.2s ease-in-out forwards');
@@ -50,6 +57,8 @@
     }
 
     &-bottom {
+      background-image: radial-gradient(circle at bottom left, $layer-background-color, $layer-background-color 20%, $layer-overlay-background-color); //$layer-overlay-background-color;
+
       .layer__container {
         bottom: 0px;
       }

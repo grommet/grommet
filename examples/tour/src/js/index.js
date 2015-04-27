@@ -4,13 +4,13 @@ require("!style!css!sass!index.scss");
 
 var React = require('react');
 var Router = require('react-router');
-var Index = require('grommet/index/index'); /// TODO: refactor
-var indexConfig = require('./IndexConfig'); /// TODO: refactor
+//var Index = require('grommet/index/index'); /// TODO: refactor
+//var indexConfig = require('./IndexConfig'); /// TODO: refactor
 var routes = require('./Routes');
 
 var router = Router.create({routes: routes, location: Router.HistoryLocation});
 
-Index.init(indexConfig); /// TODO: refactor
+//Index.init(indexConfig); /// TODO: refactor
 
 router.run(function (Handler) {
   var factory = React.createFactory(Handler);

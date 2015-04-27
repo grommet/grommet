@@ -1,14 +1,12 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var SessionActions = require('./actions/SessionActions');
-var NavActions = require('./actions/NavActions');
 var Router = require('./utils/Router');
 
 var Grommet = {
   // Components
   App: require('./components/App'),
   CheckBox: require('./components/CheckBox'),
-  Dialog: require('./components/Dialog'),
   Document: require('./components/Document'),
   Donut: require('./components/Donut'),
   FixedHeader: require('./components/FixedHeader'),
@@ -22,7 +20,6 @@ var Grommet = {
   LoginForm: require('./components/LoginForm'),
   Menu: require('./components/Menu'),
   Meter: require('./components/Meter'),
-  NavUnified: require('./components/NavUnified'),
   Panel: require('./components/Panel'),
   RadioButton: require('./components/RadioButton'),
   Search: require('./components/Search'),
@@ -58,10 +55,8 @@ var Grommet = {
   // Dispatchers
   AppDispatcher: require('./dispatchers/AppDispatcher'),
   // Actions
-  NavActions: NavActions,
   SessionActions: SessionActions,
   // Stores
-  NavStore: require('./stores/NavStore'),
   SessionStore: require('./stores/SessionStore'),
   // Utils
   Api: require('./utils/Api'),
@@ -71,7 +66,6 @@ var Grommet = {
 
   init: function (options) {
     SessionActions.setup(options.login !== false);
-    NavActions.setup(options);
 
     Router.init(options.routes, options.mainContainerId);
   },
