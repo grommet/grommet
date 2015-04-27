@@ -43,7 +43,19 @@ var opts = {
         path.resolve(__dirname, '../src/scss'),
         path.resolve(__dirname, '../node_modules')
       ]
-    }
+    },
+    module: {
+    	loaders: [
+	      {
+	        test: /style_guide\/[^\/]*\.htm$/,
+	        loader: 'jsx-loader!imports?React=react!html-jsx-loader?group=true'
+	      },
+	      {
+	        test: /documentation\/.*\.htm$|downloads\/.*\.htm$|style_guide\/.*\/.*\.htm$/,
+	        loader: 'jsx-loader!imports?React=react!html-jsx-loader'
+	      }
+    	]
+    }	
   },
   devServerPort: 8002,
   devServerProxy: {
