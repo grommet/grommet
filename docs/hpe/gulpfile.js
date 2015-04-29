@@ -71,7 +71,8 @@ var opts = {
     __THEME__: {
       hpe: true
     }
-  }
+  },
+  scsslint: true
 };
 
 devGulpTasks(gulp, opts);

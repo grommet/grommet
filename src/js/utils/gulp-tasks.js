@@ -1,14 +1,14 @@
 var del = require('del');
-var scsslint = require('gulp-scss-lint');
 var react = require('gulp-react');
 var jshint = require('gulp-jshint');
 var gulpWebpack = require('gulp-webpack');
+var rsync = require('gulp-rsync');
+var file = require('gulp-file');
 var runSequence = require('run-sequence');
 var assign = require('object-assign');
 var webpack = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
-var rsync = require('gulp-rsync');
-var file = require('gulp-file');
+
 var path = require('path');
 
 var webpackConfig = {
@@ -74,11 +74,14 @@ module.exports = function(gulp, opts) {
   });
 
   gulp.task('scsslint', function() {
-    (options.scssAssets || []).forEach(function(scssAsset) {
-      gulp.src(scssAsset).pipe(scsslint({
-        'config': scssLintPath
-      })).pipe(scsslint.failReporter());
-    });
+  	if (options.scsslint) {
+  		var scsslint = require('gulp-scss-lint');
+	    (options.scssAssets || []).forEach(function(scssAsset) {
+	      gulp.src(scssAsset).pipe(scsslint({
+	        'config': scssLintPath
+	      })).pipe(scsslint.failReporter());
+	    });	
+  	} 
   });
 
   gulp.task('jslint', function() {

@@ -69,7 +69,8 @@ var opts = {
     __THEME__: {
       general: true
     }
-  }
+  },
+  scsslint: true
 };
 
 gulp.task('dist-hpe', function() {

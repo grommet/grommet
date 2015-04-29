@@ -49,6 +49,7 @@ var opts = {
     }
   },
   distPreprocess: ['dist-css'],
+  scsslint: true
 };
 
 require('./src/js/utils/gulp-tasks')(gulp, opts);
