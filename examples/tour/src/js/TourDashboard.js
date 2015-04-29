@@ -2,9 +2,9 @@
 
 var React = require('react');
 var Dashboard = require('grommet/components/Dashboard');
-var DashboardActions = require('grommet/actions/DashboardActions');
+//var DashboardActions = require('grommet/actions/DashboardActions');
 //var IndexActions = require('grommet/actions/IndexActions');
-var DashboardStore = require('../stores/DashboardStore');
+//var DashboardStore = require('../stores/DashboardStore');
 
 var configuration = {
   panels: [
@@ -22,23 +22,14 @@ var configuration = {
 
 var TourDashboard = React.createClass({
 
-  _onStoreChange: function () {
-    this.setState(DashboardStore.getAll());
-  },
-
-  componentDidMount: function () {
-    DashboardActions.setup(configuration);
-    DashboardStore.addChangeListener(this._onStoreChange);
-  },
-
-  componentWillUnmount: function () {
-    DashboardStore.removeChangeListener(this._onStoreChange);
+  getInitialState: function () {
+    return {panels: configuration.panels};
   },
 
   render: function () {
 
     var panels = this.state.panels.map(function (panel) {
-      return <span>{panel.name}</span>;
+      return <span key={panel.name}>{panel.name}</span>;
       /*
       var href = IndexRouter.categoryHref(panel.params.category);
       var title = (

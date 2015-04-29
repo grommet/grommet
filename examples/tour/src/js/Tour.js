@@ -13,6 +13,14 @@ var SessionActions = require('grommet/actions/SessionActions');
 var SessionStore = require('grommet/stores/SessionStore');
 var Rest = require('grommet/utils/Rest');
 
+var PAGES = [
+  {route: 'tour', label: 'Dashboard'},
+  {route: 'activity', label: 'Activity'},
+  {route: 'tasks', label: 'Tasks'},
+  {route: 'tbd', label: 'Reports'},
+  {route: 'settings', label: 'Settings'}
+];
+
 var Tour = React.createClass({
 
   contextTypes: {
@@ -60,15 +68,23 @@ var Tour = React.createClass({
   },
 
   render: function() {
+    var title = "Grommet Tour";
+    PAGES.forEach(function (page) {
+      if (this.context.router.isActive(page.route)) {
+        title = page.label;
+      }
+    }, this);
+
     var mainMenu = null;
     if (this.state.mainMenuActive) {
-      mainMenu = <MainMenu onClose={this._onCloseMainMenu} />;
+      mainMenu = <MainMenu pages={PAGES} onClose={this._onCloseMainMenu} />;
     }
+
     return (
       <App centered={false}>
         <Header primary={true}>
           <Title onClick={this._onClickTitle}>
-            {"Grommet Tour"}
+            {title}
           </Title>
           <Menu icon={<Gravatar email={this.state.data.email || ''} />}
             align="right">

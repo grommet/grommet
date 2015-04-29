@@ -8,30 +8,26 @@ var Title = require('grommet/components/Title');
 var Close = require('grommet/components/icons/Clear');
 var Link = require('react-router').Link;
 
-var PAGES = [
-  {route: 'tour', label: 'Dashboard'},
-  {route: 'activity', label: 'Activity'},
-  {route: 'tasks', label: 'Tasks'},
-  {route: 'tbd', label: 'Reports'},
-  {route: 'settings', label: 'Settings'}
-];
-
 var MainMenu = React.createClass({
 
   propTypes: {
-    onClose: React.PropTypes.func.isRequired
+    onClose: React.PropTypes.func.isRequired,
+    pages: React.PropTypes.arrayOf(React.PropTypes.shape({
+      route: React.PropTypes.string,
+      label: React.PropTypes.string
+    })).isRequired
   },
 
   _onSearch: function (query) {
     var regexp = new RegExp('^' + query, 'i');
-    var visiblePages = PAGES.filter(function (page) {
+    var visiblePages = this.props.pages.filter(function (page) {
       return regexp.test(page.label);
     });
     this.setState({visiblePages: visiblePages});
   },
 
   getInitialState: function() {
-    return {visiblePages: PAGES};
+    return {visiblePages: this.props.pages};
   },
 
   componentDidMount: function () {
