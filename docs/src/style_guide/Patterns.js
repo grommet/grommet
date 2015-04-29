@@ -8,6 +8,7 @@ var Donut = require('grommet/components/Donut');
 var Search = require('grommet/components/Search');
 var Logo = require('../img/Logo');
 var Gravatar = require('react-gravatar');
+var Link = require('react-router').Link;
 
 var PatternsHeader = React.createClass({
   render: function () {
@@ -47,8 +48,8 @@ var PatternsSection = React.createClass({
 
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In diam risus,
     fermentum at nisl pellentesque, iaculis mattis nisl. Duis dapibus.
-    <a href="login">Read more</a></p>
-
+     <Link to="sg_login">Read more</Link>
+    </p> 
     <div className="example">
       <LoginForm rememberMe={true} forgotPassword={<a>Forgot password?</a>} />
     </div>
@@ -60,8 +61,8 @@ var PatternsSection = React.createClass({
 
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In diam risus,
     fermentum at nisl pellentesque, iaculis mattis nisl. Duis dapibus.
-    <a href="header">Read more</a></p>
-
+     <Link to="sg_header">Read more</Link>
+    </p> 
     <div className="example">
       <Header>
         <h1><Logo /> Title</h1>
@@ -78,8 +79,8 @@ var PatternsSection = React.createClass({
 
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In diam risus,
     fermentum at nisl pellentesque, iaculis mattis nisl. Duis dapibus.
-    <a href="dashboard">Read more</a></p>
-
+     <Link to="sg_dashboard">Read more</Link>
+    </p>
     <div className="example">
       <Donut series={genericSeries} />
       <Donut series={statusSeries} />
@@ -92,8 +93,8 @@ var PatternsSection = React.createClass({
 
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In diam risus,
     fermentum at nisl pellentesque, iaculis mattis nisl. Duis dapibus.
-    <a href="search">Read more</a></p>
-
+    <Link to="sg_search">Read more</Link></p>
+   
     <div className="example">
       <Header>
         <h1></h1>
