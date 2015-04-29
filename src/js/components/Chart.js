@@ -77,7 +77,7 @@ var Chart = React.createClass({
 
   render: function() {
     var grid = [];
-    var step = BASE_WIDTH / this.state.steps;
+    //var step = BASE_WIDTH / this.state.steps;
     //for (var i=0; i<=BASE_WIDTH; i = i + step) {
     //  grid.push(<path key={i} fill="none" d={"M" + i + ",0L" + i + "," + BASE_HEIGHT} />);
     //}
@@ -121,9 +121,9 @@ var Chart = React.createClass({
       }*/
     }, this);
 
-    threshold = null;
+    var threshold = null;
     if (this.props.threshold) {
-      commands = 'M' + this._coordinates([this.state.minX, this.props.threshold]) +
+      var commands = 'M' + this._coordinates([this.state.minX, this.props.threshold]) +
         'L' + this._coordinates([this.state.maxX, this.props.threshold]);
       threshold = (
         <g>
