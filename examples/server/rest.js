@@ -188,6 +188,26 @@ router.get('/index/resources', function(req, res) {
   });
 });
 
+router.get(/^\/index\/search-suggestions/, function (req, res) {
+  var items = data.getItems();
+
+  if (req.query.userQuery) {
+    items = filter.filterUserQuery(items, req.query.userQuery);
+  }
+
+  if (req.query.query) {
+    items = filter.filterQuery(items, req.query.query);
+  }
+
+  var startIndex = + req.query.start; // coerce to be a number
+  // prune for start+count
+  items = items.slice(startIndex, startIndex + req.query.count);
+
+  res.json(items.map(function (item) {
+    return {name: item.name, category: item.category, uri: item.uri}
+  }));
+});
+
 router.get(/^\/index\/trees\/aggregated(.+)$/, function(req, res) {
   var uri = req.params[0];
   res.json(map.build(uri));

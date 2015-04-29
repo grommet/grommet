@@ -16,7 +16,7 @@ var Rest = require('grommet/utils/Rest');
 var PAGES = [
   {route: 'tour', label: 'Dashboard'},
   {route: 'activity', label: 'Activity'},
-  {route: 'tasks', label: 'Tasks'},
+  {route: 'tasks', label: 'Tasks', indexCategory: 'tasks'},
   {route: 'tbd', label: 'Reports'},
   {route: 'settings', label: 'Settings'}
 ];
