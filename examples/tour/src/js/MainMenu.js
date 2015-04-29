@@ -7,14 +7,31 @@ var Menu = require('grommet/components/Menu');
 var Title = require('grommet/components/Title');
 var Close = require('grommet/components/icons/Clear');
 var Link = require('react-router').Link;
-var TourNav = React.createClass({
+
+var PAGES = [
+  {route: 'tour', label: 'Dashboard'},
+  {route: 'activity', label: 'Activity'},
+  {route: 'tasks', label: 'Tasks'},
+  {route: 'tbd', label: 'Reports'},
+  {route: 'settings', label: 'Settings'}
+];
+
+var MainMenu = React.createClass({
 
   propTypes: {
     onClose: React.PropTypes.func.isRequired
   },
 
   _onSearch: function (query) {
-    console.log('!!! TourMainMenu _onSearch', query);
+    var regexp = new RegExp('^' + query, 'i');
+    var visiblePages = PAGES.filter(function (page) {
+      return regexp.test(page.label);
+    });
+    this.setState({visiblePages: visiblePages});
+  },
+
+  getInitialState: function() {
+    return {visiblePages: PAGES};
   },
 
   componentDidMount: function () {
@@ -22,6 +39,14 @@ var TourNav = React.createClass({
   },
 
   render: function() {
+    var pages = this.state.visiblePages.map(function (page) {
+      return (
+        <Link key={page.label} to={page.route} onClick={this.props.onClose}>
+          {page.label}
+        </Link>
+      );
+    }, this);
+
     return (
       <Layer align="top" onClose={this.props.onClose}>
         <Menu primary={true}>
@@ -37,10 +62,7 @@ var TourNav = React.createClass({
             </Menu>
           </Header>
           <Menu>
-            <Link to="tour">Dashboard</Link>
-            <Link to="activity">Activity</Link>
-            <Link to="tbd">Reports</Link>
-            <Link to="settings">Settings</Link>
+            {pages}
           </Menu>
           <h4>Suggestions</h4>
           <Menu>
@@ -59,4 +81,4 @@ var TourNav = React.createClass({
 
 });
 
-module.exports = TourNav;
+module.exports = MainMenu;

@@ -13,10 +13,13 @@ module.exports = {
   },
 
   logout: function () {
+    console.log('!!! SessionActions logout');
     AppDispatcher.handleViewAction({
       type: Constants.ActionTypes.SESSION_LOGOUT
     });
+    console.log('!!! SessionActions logout A');
     Api.del(Constants.ActionTypes.SESSION_LOGOUT, '/rest/login-sessions');
+    console.log('!!! SessionActions logout B');
   },
 
   login: function (username, password) {

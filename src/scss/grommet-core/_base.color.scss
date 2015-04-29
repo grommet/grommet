@@ -25,7 +25,7 @@ $disabled-icon-color: #ccc;
 
 $meter-color: $brand-color !default;
 $meter-background-color: #eee !default;
-$meter-threshold-color: #666 !default;
+$threshold-color: nth($brand-grey-colors, 1) !default;
 
 // Controls
 
@@ -43,6 +43,8 @@ $button-primary-text-color: $colored-text-color !default;
 $hover-background-color: rgba(0, 0, 0, 0.1);
 $layer-overlay-background-color: rgba($brand-color, 0.6); ///rgba(255, 255, 255, 0.95); //rgba(0, 0, 0, 0.6);
 $layer-background-color: rgba($background-color, 0.95); ///inherit; //rgba(255, 255, 255, 0.95);
+$layer-border: none !default; // 1px solid $brand-color;
+$layer-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3) !default;
 $drop-background-color: rgba(255, 255, 255, 0.9);
 $header-background-color: rgba(255, 255, 255, 0.9);
 $sort-placeholder-background-color: rgba(0, 0, 255, 0.1); // TODO: recolor

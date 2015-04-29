@@ -7,10 +7,11 @@ var App = require('grommet/components/App');
 var Header = require('grommet/components/Header');
 var Title = require('grommet/components/Title');
 var Menu = require('grommet/components/Menu');
-var TourMainMenu = require('./TourMainMenu');
+var MainMenu = require('./MainMenu');
 var Gravatar = require('react-gravatar');
 var SessionActions = require('grommet/actions/SessionActions');
 var SessionStore = require('grommet/stores/SessionStore');
+var Rest = require('grommet/utils/Rest');
 
 var Tour = React.createClass({
 
@@ -29,14 +30,16 @@ var Tour = React.createClass({
   _onLogout: function (event) {
     event.preventDefault();
     SessionActions.logout();
-    this.context.router.transitionTo('login');
+    //this.context.router.transitionTo('login');
   },
 
-  _onChange: function () {
+  _onSessionChange: function () {
     var data = SessionStore.getAll();
     this.setState({data: data});
     if (! data.id && ! this.context.router.isActive('login')) {
       this.context.router.transitionTo('login');
+    } else {
+      Rest.setHeader('auth', data.id);
     }
   },
 
@@ -48,18 +51,18 @@ var Tour = React.createClass({
   },
 
   componentDidMount: function () {
-    SessionStore.addChangeListener(this._onChange);
+    SessionStore.addChangeListener(this._onSessionChange);
     SessionActions.setup();
   },
 
   componentWillUnmount: function () {
-    SessionStore.removeChangeListener(this._onChange);
+    SessionStore.removeChangeListener(this._onSessionChange);
   },
 
   render: function() {
     var mainMenu = null;
     if (this.state.mainMenuActive) {
-      mainMenu = <TourMainMenu onClose={this._onCloseMainMenu} />;
+      mainMenu = <MainMenu onClose={this._onCloseMainMenu} />;
     }
     return (
       <App centered={false}>

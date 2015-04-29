@@ -3,7 +3,7 @@
 var React = require('react');
 var Dashboard = require('grommet/components/Dashboard');
 var DashboardActions = require('grommet/actions/DashboardActions');
-var IndexActions = require('grommet/actions/IndexActions');
+//var IndexActions = require('grommet/actions/IndexActions');
 var DashboardStore = require('../stores/DashboardStore');
 
 var configuration = {
@@ -38,6 +38,8 @@ var TourDashboard = React.createClass({
   render: function () {
 
     var panels = this.state.panels.map(function (panel) {
+      return <span>{panel.name}</span>;
+      /*
       var href = IndexRouter.categoryHref(panel.params.category);
       var title = (
         <Link href={href}>{panel.name}</Link>
@@ -53,10 +55,12 @@ var TourDashboard = React.createClass({
             onSearch={this._onSearch} />
         </div>
       );
+      */
     }, this);
 
     return (
       <Dashboard>
+        {panels}
       </Dashboard>
     );
   }

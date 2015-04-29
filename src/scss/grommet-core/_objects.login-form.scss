@@ -7,6 +7,7 @@
   background-color: $layer-background-color;
   border: 1px solid $border-color;
   border-radius: $border-radius;
+  box-shadow: $layer-box-shadow;
   text-align: center;
   z-index: 1;
   @include fade-in();
@@ -58,11 +59,7 @@
     display: flex;
     -webkit-justify-content: space-between;
     justify-content: space-between;
-  }
-
-  &__remember-me {
-    input {
-      margin-right: halve($inuit-base-spacing-unit);
-    }
+    // align line height with .form-field
+    line-height: $inuit-base-spacing-unit + halve($inuit-base-spacing-unit);
   }
 }

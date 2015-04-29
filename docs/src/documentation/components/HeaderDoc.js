@@ -53,7 +53,7 @@ var HeaderDoc = React.createClass({
           <h3>Title, inline Menu, and Search</h3>
           <div className="example">
             <Header>
-              <h2>Title</h2>
+              <h3>Title</h3>
               <div>
                 <Menu direction="left">
                   <a href="#" className="active">First</a>
@@ -82,7 +82,7 @@ var HeaderDoc = React.createClass({
           <h3>Large</h3>
           <div className="example">
             <Header large={true}>
-              <h2><Logo /> Title</h2>
+              <h1><Logo /> Title</h1>
               <Menu icon={<Edit />} align="right">
                 <a href="#" className="active">First</a>
                 <a href="#">Second</a>
@@ -95,7 +95,7 @@ var HeaderDoc = React.createClass({
           <h3>Small</h3>
           <div className="example">
             <Header small={true}>
-              <h2><Logo /> Title</h2>
+              <h3><Logo /> Title</h3>
               <Menu icon={<Edit />} align="right">
                 <a href="#" className="active">First</a>
                 <a href="#">Second</a>

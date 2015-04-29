@@ -1,7 +1,19 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 var _ = require('lodash');
 
-function filterUserQuery(members, userQuery) {
+var TRACE_PARSING = false;
+var TRACE_MATCHING = false;
+
+function unquoteIfNecessary (text) {
+  // remove surrounding quotes
+  if ((text[0] === '\'' && text[text.length-1] === '\'') ||
+    (text[0] === '"' && text[text.length-1] === '"')) {
+    text = text.slice(1, text.length-1);
+  }
+  return text;
+}
+
+function filterUserQuery (items, userQuery) {
   // handle quoted strings, e.g. 'a b' c "d e"
   var regexp = /'([^']+)'|"([^"]+)"|(\w+)/g;
   var matches;
@@ -16,9 +28,9 @@ function filterUserQuery(members, userQuery) {
     }
   }
 
-  var result = members.filter(function(member) {
+  var result = items.filter(function (item) {
     var unmatchedTerms = terms.slice(0);
-    _.forOwn(member, function (value, name) {
+    _.forOwn(item, function (value, name) {
       unmatchedTerms = unmatchedTerms.filter(function (term) {
         return ! term.test(value);
       });
@@ -31,7 +43,7 @@ function filterUserQuery(members, userQuery) {
   return result;
 }
 
-function dumpExpression(exp, prefix) {
+function dumpExpression (exp, prefix) {
   prefix = prefix || '';
   if (exp.left) {
     if (exp.notLeft) {
@@ -39,24 +51,33 @@ function dumpExpression(exp, prefix) {
     }
     if (exp.left.hasOwnProperty('attribute')) {
       console.log(prefix, ' left:', exp.left.attribute, ':', exp.left.value, exp.leftNot);
+    } else if (exp.left.hasOwnProperty('regexp')) {
+      console.log(prefix, ' left:', exp.left.regexp, exp.leftNot);
     } else {
       dumpExpression(exp.left, prefix + '  ');
     }
   }
-  console.log(prefix, exp.op);
+  if (exp.error) {
+    console.log(prefix, exp.error);
+  }
+  if (exp.op) {
+    console.log(prefix, exp.op);
+  }
   if (exp.right) {
     if (exp.notRight) {
       console.log(prefix, ' not right');
     }
     if (exp.right.hasOwnProperty('attribute')) {
       console.log(prefix, ' right:', exp.right.attribute, ':', exp.right.value, exp.rightNot);
+    } else if (exp.right.hasOwnProperty('regexp')) {
+      console.log(prefix, ' right:', exp.right.regexp, exp.rightNot);
     } else {
       dumpExpression(exp.right, prefix + '  ');
     }
   }
 }
 
-function addOp(expression, op) {
+function addOp (expression, op) {
   if (expression.op) {
     // already have an op, nest
     expression.right = {left: expression.right, op: op};
@@ -72,8 +93,8 @@ function addOp(expression, op) {
 }
 
 // e.g. associatedResourceUri:'/rest/server-profiles/11' AND (state:'Active' OR state:'Running') AND  parentTaskUri:'null' AND NOT taskType:'Background' AND NOT stateReason:'ValidationError'
-function parseQuery(query) {
-  //console.log('!!! parseQuery --- ', query);
+function parseQuery (query) {
+  if (TRACE_PARSING) console.log('!!! parseQuery --- ', query);
   // strip leading and trailing whitespace
   query = query.replace(/^\s+|\s+$/g, '');
   // split into tokens
@@ -88,24 +109,24 @@ function parseQuery(query) {
 
     term = null;
     if (' ' === query[index]) {
-      //console.log('!!! --space--');
+      if (TRACE_PARSING) console.log('!!! --space--');
       index += 1;
     } else if ('(' === query[index]) {
-      //console.log('!!! --begin-paren--');
+      if (TRACE_PARSING) console.log('!!! --begin-paren--');
       endIndex = query.indexOf(')', index);
       term = parseQuery(query.slice(index+1, endIndex));
-      //console.log('!!! --end-paren--');
+      if (TRACE_PARSING) console.log('!!! --end-paren--');
       index = endIndex + 1;
     } else if ('AND' === query.slice(index, index+3)) {
-      //console.log('!!! --and--');
+      if (TRACE_PARSING) console.log('!!! --and--');
       expression = addOp(expression, 'AND');
       index += 3;
     } else if ('OR' === query.slice(index, index+2)) {
-      //console.log('!!! --or--');
+      if (TRACE_PARSING) console.log('!!! --or--');
       expression = addOp(expression, 'OR');
       index += 2;
     } else if ('NOT' === query.slice(index, index+3)) {
-      //console.log('!!! --not--');
+      if (TRACE_PARSING) console.log('!!! --not--');
       if (expression.hasOwnProperty('left')) {
         expression.notRight = true;
       } else {
@@ -113,17 +134,36 @@ function parseQuery(query) {
       }
       index += 3;
     } else {
-      var matches = query.slice(index, query.length).match(/^\w+:'[^']+'/);
+      var matches = query.slice(index, query.length).match(/^\w+:'[^']+'|^\w+:"[^"]+"|^\w+:[^'"\s]+/);
       if (matches) {
-        //console.log('!!! --attribute--');
+        if (TRACE_PARSING) console.log('!!! --attribute--');
         // attribute:value
         endIndex = index + matches[0].length;
         var parts = matches[0].toLowerCase().split(':');
-        // remove quotes from value
-        term = {attribute: parts[0], value: parts[1].slice(1, parts[1].length-1)};
+        parts[1] = unquoteIfNecessary(parts[1]);
+        term = {attribute: parts[0], value: parts[1]};
         index = endIndex + 1;
       } else {
-        console.log('!!! NO ATTRIBUTE', query.slice(index), query.slice(index, query.length), matches);
+        // text string
+        matches = query.slice(index, query.length).match(/^[^'"\s]+|^'[^']+'|^"[^"]+"/);
+        if (matches) {
+          if (TRACE_PARSING) console.log('!!! --text--');
+          endIndex = index + matches[0].length;
+          // if the string is quoted, require matching at both ends
+          var text = query.slice(index, endIndex);
+          var unquoted = unquoteIfNecessary(text);
+          var regexp;
+          if (text === unquoted) {
+            regexp = new RegExp(text, 'i');
+          } else {
+            regexp = new RegExp('^' + unquoted + '$', 'i');
+          }
+          term = {regexp: regexp};
+          index = endIndex + 1;
+        } else {
+          console.log('!!! UNPARSEABLE', query.slice(index), query.slice(index, query.length), matches);
+          throw "Unable to parse " + query.slice(index);
+        }
       }
     }
 
@@ -142,11 +182,12 @@ function parseQuery(query) {
         }
       } else {
         console.log('!!! THIRD TERM', expression);
+        throw "Unable to parse " + term;
       }
     }
 
-    //console.log('!!! I', index, endIndex);
-    //dumpExpression(root);
+    if (TRACE_PARSING) console.log('!!! I', index, endIndex);
+    //if (DEBUG) dumpExpression(root);
     debugCount -= 1;
     if (debugCount <= 0) {
       break;
@@ -154,56 +195,79 @@ function parseQuery(query) {
   }
 
   //console.log('!!! RETURN');
-  //dumpExpression(root);
+  if (TRACE_PARSING) dumpExpression(root);
   return root;
 }
 
-function matchesFilter(member, filter, not) {
-  var matched = ((not || 'null' === filter.value) ? true : false);
-  _.forOwn(member, function (value, name) {
+function matchesAttribute (item, attribute, not) {
+  var matched = ((not || 'null' === attribute.value) ? true : false);
+  _.forOwn(item, function (value, name) {
     if ('attributes' === name) {
-      matched = matchesFilter(value, filter, not);
+      matched = matchesAttribute(value, attribute, not);
       if (matched || not) {
         return false;
       }
     } else {
-      if (name.toLowerCase() === filter.attribute &&
+      if (name.toLowerCase() === attribute.attribute &&
         (value &&
-        value.toLowerCase() === filter.value) ||
-        (! value && 'null' === filter.value)) {
+        value.toLowerCase() === attribute.value) ||
+        (! value && 'null' === attribute.value)) {
         matched = (not ? false : true);
         return false;
       }
     }
   });
-  //console.log('!!! FILTER', matched, member.uri, filter, not);
+  if (TRACE_MATCHING) console.log('!!! ATTRIBUTE', matched, item.uri, attribute, not);
   return matched;
 }
 
-function matchesTerm(member, term, not) {
+function matchesRegexp (item, regexp, not) {
+  var matched = (not ? true : false);
+  _.forOwn(item, function (value, name) {
+    if ('attributes' === name) {
+      matched = matchesRegexp(value, regexp, not);
+      if (matched || not) {
+        return false;
+      }
+    } else {
+      if ((value && regexp.test(value))) {
+        matched = (not ? false : true);
+        return false;
+      }
+    }
+  });
+  if (TRACE_MATCHING) console.log('!!! REGEXP', matched, item.uri, regexp, not);
+  return matched;
+}
+
+function matchesTerm (item, term, not) {
   var result = false
-  if (term.hasOwnProperty('attribute')) {
-    result = matchesFilter(member, term, not);
-  } else if (term.hasOwnProperty('op')){
-    result = matchesExpression(member, term, not);
+  if (term) {
+    if (term.hasOwnProperty('attribute')) {
+      result = matchesAttribute(item, term, not);
+    } else if (term.hasOwnProperty('regexp')) {
+      result = matchesRegexp(item, term.regexp, not);
+    } else if (term.hasOwnProperty('op')){
+      result = matchesExpression(item, term, not);
+    }
   }
   return result;
 }
 
-function matchesExpression(member, expression, not) {
-  var result = matchesTerm(member, expression.left, expression.notLeft);
+function matchesExpression (item, expression, not) {
+  var result = matchesTerm(item, expression.left, expression.notLeft);
   if ((result && 'AND' === expression.op) ||
     (! result && 'OR' === expression.op)) {
-    result = matchesTerm(member, expression.right, expression.notRight);
+    result = matchesTerm(item, expression.right, expression.notRight);
   }
-  //console.log('!!! EXPRESSION', result, member.uri, expression.left);
+  if (TRACE_MATCHING) console.log('!!! EXPRESSION', result, item.uri, expression.left);
   return result;
 }
 
-function filterQuery(members, query) {
+function filterQuery (items, query) {
   var expression = parseQuery(query);
-  var result = members.filter(function(member) {
-    return matchesExpression(member, expression);
+  var result = items.filter(function(item) {
+    return matchesExpression(item, expression);
   });
   return result;
 }
@@ -211,7 +275,7 @@ function filterQuery(members, query) {
 // http://my.opera.com/GreyWyvern/blog/show.dml/1671288
 // Do not attempt to change '==' to '===' in the following
 // method. Avoid type comparison is done on purpose.
-function alphanum(a, b) {
+function alphanum (a, b) {
   function chunkify(t) {
     var tz = [], x = 0, y = -1, n = 0, i, j;
     while (t && (i = (j = t.charAt(x++)).charCodeAt(0))) {
@@ -239,11 +303,11 @@ function alphanum(a, b) {
   return aa.length - bb.length;
 }
 
-function sortMembers (members, sort) {
+function sortItems (items, sort) {
   var parts = sort.split(':');
   var attribute = parts[0];
   var ascending = ('asc' === parts[1]);
-  members.sort(function (m1, m2) {
+  items.sort(function (m1, m2) {
     var first = (ascending ? m1 : m2);
     var second = (ascending ? m2 : m1);
     return alphanum(first[attribute], second[attribute]);
@@ -251,9 +315,9 @@ function sortMembers (members, sort) {
 }
 
 var Filter = {
-  filterUserQuery: filterUserQuery, // (members, userQuery)
-  filterQuery: filterQuery, // (members, query)
-  sort: sortMembers // (members, sort)
+  filterUserQuery: filterUserQuery, // (items, userQuery)
+  filterQuery: filterQuery, // (items, query)
+  sort: sortItems // (items, sort)
 };
 
 module.exports = Filter;

@@ -26,6 +26,9 @@ var opts = {
     remoteDestination: '/var/www/html/examples/tour/dist'
   },
   webpack: {
+  	devAlias: { // TODO: remove, just for local dev
+  		'grommet': path.resolve(__dirname, '../../src/js')
+  	},
     resolve: {
       root: [
         path.resolve(__dirname, 'src/js'),

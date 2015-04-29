@@ -65,8 +65,10 @@ var Chart = React.createClass({
   },
 
   _translateY: function (y) {
-    return BASE_HEIGHT -
-      ((y - this.state.minY) * (BASE_HEIGHT) / (this.state.maxY - this.state.minY));
+    // leave room for line width since strokes are aligned to the center
+    return Math.min(BASE_HEIGHT -
+      ((y - this.state.minY) * (BASE_HEIGHT) / (this.state.maxY - this.state.minY)),
+      BASE_HEIGHT - 1);
   },
 
   _coordinates: function (point) {
@@ -74,18 +76,19 @@ var Chart = React.createClass({
   },
 
   render: function() {
-    var step = BASE_WIDTH / this.state.steps;
     var grid = [];
-    for (var i=0; i<=BASE_WIDTH; i = i + step) {
-      grid.push(<path key={i} fill="none" d={"M" + i + ",0L" + i + "," + BASE_HEIGHT} />);
-    }
-    step = BASE_HEIGHT / 5;
-    for (i=BASE_HEIGHT; i>=0; i = i - step) {
-      grid.push(<path key={100 + i} fill="none" d={"M0," + i + "L" + BASE_WIDTH + "," + i} />);
-    }
+    var step = BASE_WIDTH / this.state.steps;
+    //for (var i=0; i<=BASE_WIDTH; i = i + step) {
+    //  grid.push(<path key={i} fill="none" d={"M" + i + ",0L" + i + "," + BASE_HEIGHT} />);
+    //}
+    //step = BASE_HEIGHT / 5;
+    //for (i=BASE_HEIGHT; i>=0; i = i - step) {
+    //  grid.push(<path key={100 + i} fill="none" d={"M0," + i + "L" + BASE_WIDTH + "," + i} />);
+    //}
 
     var lines = {};
     var keys = {};
+    var close = 'L' + BASE_WIDTH + ',' + BASE_HEIGHT + 'L0,' + BASE_HEIGHT + 'Z';
 
     this.props.series.forEach(function (item, index) {
       var commands = null;
@@ -97,7 +100,10 @@ var Chart = React.createClass({
         }
       }, this);
       lines[index] = (
-        <path fill="none" className={"color-index-" + item.colorIndex} d={commands} />
+        <g>
+          <path fill="none" className={"chart__lines-line color-index-" + item.colorIndex} d={commands} />
+          <path stroke="none" className={"chart__lines-area color-index-" + item.colorIndex} d={commands + close} />
+        </g>
       );
 
       /*if (this.props.key) {
@@ -115,12 +121,24 @@ var Chart = React.createClass({
       }*/
     }, this);
 
+    threshold = null;
+    if (this.props.threshold) {
+      commands = 'M' + this._coordinates([this.state.minX, this.props.threshold]) +
+        'L' + this._coordinates([this.state.maxX, this.props.threshold]);
+      threshold = (
+        <g>
+          <path className="chart__threshold" fill="none" d={commands} />
+        </g>
+      );
+    }
+
     return (
       <div className="chart">
         <svg className="chart__graphic" viewBox={"0 0 " + BASE_WIDTH + " " + BASE_HEIGHT}
           preserveAspectRatio="xMidYMid meet">
           <g className="chart__grid">{grid}</g>
           <g className="chart__lines">{lines}</g>
+          {threshold}
         </svg>
         <ol className="chart__key">
           {keys}

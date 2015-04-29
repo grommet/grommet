@@ -59,7 +59,6 @@ var LayerDoc = React.createClass({
   },
 
   _onCloseSimple: function () {
-    console.log('!!! LayerDoc _onCloseSimple');
     this.setState({simpleActive: false});
   },
 
@@ -68,7 +67,6 @@ var LayerDoc = React.createClass({
   },
 
   _onCloseForm: function () {
-    console.log('!!! LayerDoc _onCloseForm');
     this.setState({formActive: false});
   },
 

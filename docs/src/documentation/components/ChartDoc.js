@@ -49,7 +49,7 @@ var ChartDoc = React.createClass({
 
           <h3>Simple</h3>
           <div className="example">
-          <Chart series={series} min={0} max={5} />
+          <Chart series={series} min={0} max={5} threshold={2}/>
           </div>
           <pre><code className="html">
             {"<Chart />"}

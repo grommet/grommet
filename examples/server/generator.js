@@ -140,7 +140,7 @@ function createCategories () {
   }
 }
 
-function buildMembers (categoryName, count) {
+function buildItems (categoryName, count) {
   var category = SCHEMA[categoryName];
   var date = new Date();
   for (var i=1; i<=count; i++) {
@@ -216,7 +216,7 @@ function buildMembers (categoryName, count) {
 function createResources () {
   for (var categoryName in SCHEMA) {
     if (SCHEMA.hasOwnProperty(categoryName)) {
-      buildMembers(categoryName, RESOURCE_COUNT); // + categoryName.length);
+      buildItems(categoryName, RESOURCE_COUNT); // + categoryName.length);
     }
   }
 }
@@ -227,12 +227,12 @@ function createActivity () {
   for (var categoryName in SCHEMA) {
     if (SCHEMA.hasOwnProperty(categoryName) &&
       'alerts' !== categoryName && 'tasks' !== categoryName) {
-      resources = resources.concat(data.getMembers(categoryName));
+      resources = resources.concat(data.getItems(categoryName));
     }
   }
 
   var index = 0;
-  data.getMembers('alerts', true).forEach(function (alert) {
+  data.getItems('alerts', true).forEach(function (alert) {
     if ('Active' !== alert.state) {
       var resource = resources[index];
       index += 1;
@@ -247,7 +247,7 @@ function createActivity () {
   });
 
   index = 0;
-  data.getMembers('tasks', true).forEach(function (task) {
+  data.getItems('tasks', true).forEach(function (task) {
     var resource = resources[index];
     index += 1;
     task.attributes = {
@@ -273,8 +273,8 @@ function createAssociations() {
           if (category.associations.hasOwnProperty(name)) {
 
             var schema = category.associations[name];
-            var parents = data.getMembers(categoryName);
-            var children = data.getMembers(schema.category);
+            var parents = data.getItems(categoryName);
+            var children = data.getItems(schema.category);
             var childIndex = 0;
 
             parents.forEach(function (parent) {

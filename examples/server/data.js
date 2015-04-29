@@ -11,7 +11,7 @@ var _associations = {}; // uri: {name: {parents: [parent_item, ...],
 
 var Data = {
 
-  getMembers: function (categoryName, raw) {
+  getItems: function (categoryName, raw) {
     var result = [];
     if (categoryName) {
       if (Array.isArray(categoryName)) {
@@ -31,11 +31,11 @@ var Data = {
     }
     if (! raw) {
       // add _indexAttributes
-      result = result.map(function (member) {
-        member = _.extend({attributes: member._indexAttributes || {}}, member);
-        delete member._indexAttributes;
-        delete member._resourceAttributes;
-        return member;
+      result = result.map(function (item) {
+        item = _.extend({attributes: item._indexAttributes || {}}, item);
+        delete item._indexAttributes;
+        delete item._resourceAttributes;
+        return item;
       });
     }
     return result;
@@ -63,9 +63,9 @@ var Data = {
   addResource: function (categoryName, resource) {
     _resources[resource.uri] = resource;
     if (_categories[categoryName]) {
-      _categories[categoryName].push(resource);  
+      _categories[categoryName].push(resource);
     }
-    
+
   },
 
   addAssociation: function (name, parentUri, childUri) {

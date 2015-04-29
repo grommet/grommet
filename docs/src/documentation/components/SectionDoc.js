@@ -1,7 +1,7 @@
 var React = require('react');
 var GrommetDocument = require('grommet/components/Document');
 var Section = require('grommet/components/Section');
-var Panel = require('grommet/components/Panel');
+var Menu = require('grommet/components/Menu');
 
 var inline =
       "<Section>\n" +
@@ -38,21 +38,22 @@ var SectionDoc = React.createClass({
         <section>
           <h2>Examples</h2>
 
-          <h3>Section and Panels to the right</h3>
+          <h3>Menu and Document</h3>
           <div className="example">
             <Section direction="right">
-              <Panel title="Panel One">
-                <p>Sample Content One</p>
-              </Panel>
-              <Panel title="Panel Two">
-                <p>Sample Content Two</p>
-              </Panel>
+              <Menu>
+                <span>Link 1</span>
+                <span>Link 2</span>
+              </Menu>
+              <GrommetDocument>
+                <h2>Sample Content</h2>
+              </GrommetDocument>
             </Section>
           </div>
           <pre><code className="html">
-            {"<Section direction=\"right\">\n  <Panel title=\"Panel One\">\n    <p>\n      Sample Content One\n    </p>\n  </Panel>\n  <Panel title=\"Panel Two\">\n    <p>\n      Sample Content Two\n    </p>\n  </Panel>\n</Section>"}
+            {"<Section direction=\"right\">\n  <Menu>\n    ...\n  </Menu>\n  <Document>\n    <h2>\n      Sample Content\n    </h2>\n  </Document>\n</Section>"}
           </code></pre>
-        </section>  
+        </section>
       </GrommetDocument>
     );
   }

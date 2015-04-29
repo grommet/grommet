@@ -2,7 +2,6 @@
 
 .search {
   display: inline-block;
-  @include inuit-font-size($inuit-heading-size-4, inherit);
 
   &:focus {
     outline: none;
@@ -19,14 +18,21 @@
     cursor: pointer;
   }
 
+  &__input {
+    margin-right: 0px;
+    padding: 0px halve($inuit-base-spacing-unit);
+    font-size: inherit;
+  }
+
   &__layer {
     position: fixed;
     // This element will be positioned by the Overlay mixin.
     z-index: 2;
     @include inuit-font-size($inuit-heading-size-4, inherit);
     background-color: $background-color;
-    border: 1px solid $brand-color;
+    border: $layer-border;
     border-radius: $border-radius;
+    box-shadow: $layer-box-shadow;
 
     &--inline {
       margin-left: -1px;
@@ -58,6 +64,14 @@
       &:hover {
         background-color: $hover-background-color;
       }
+    }
+  }
+
+  &--inline {
+    .search__input {
+      width: 100%;
+      box-sizing: border-box;
+      line-height: inherit;
     }
   }
 }

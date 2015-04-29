@@ -93,14 +93,14 @@ router.post('/request-access', function(req, res) {
 });
 
 router.get('/index/resources/aggregated', function(req, res) {
-  var members = data.getMembers(req.query.category) || [];
+  var items = data.getItems(req.query.category) || [];
 
   if (req.query.userQuery) {
-    members = filter.filterUserQuery(members, req.query.userQuery);
+    items = filter.filterUserQuery(items, req.query.userQuery);
   }
 
   if (req.query.query) {
-    members = filter.filterQuery(members, req.query.query);
+    items = filter.filterQuery(items, req.query.query);
   }
 
   var attributes;
@@ -116,7 +116,7 @@ router.get('/index/resources/aggregated', function(req, res) {
     };
   });
 
-  members.some(function(resource) {
+  items.some(function(resource) {
     result.forEach(function(attributeResult) {
       var value;
       if (resource.hasOwnProperty(attributeResult.attribute)) {
@@ -149,25 +149,25 @@ router.get('/index/resources/aggregated', function(req, res) {
 });
 
 router.get('/index/resources', function(req, res) {
-  var members = data.getMembers(req.query.category);
-  var unfilteredTotal = members.length;
+  var items = data.getItems(req.query.category);
+  var unfilteredTotal = items.length;
 
   if (req.query.userQuery) {
-    members = filter.filterUserQuery(members, req.query.userQuery);
+    items = filter.filterUserQuery(items, req.query.userQuery);
   }
 
   if (req.query.query) {
-    members = filter.filterQuery(members, req.query.query);
+    items = filter.filterQuery(items, req.query.query);
   }
 
   if (req.query.sort) {
-    filter.sort(members, req.query.sort);
+    filter.sort(items, req.query.sort);
   }
 
-  var startIndex = req.query.start;
+  var startIndex = + req.query.start; // coerce to be a number
   if (req.query.referenceUri) {
-    members.some(function(member, index) {
-      if (req.query.referenceUri === member.uri) {
+    items.some(function(item, index) {
+      if (req.query.referenceUri === item.uri) {
         startIndex = Math.max(index - 3, 0);
         return true;
       }
@@ -175,16 +175,16 @@ router.get('/index/resources', function(req, res) {
   }
 
   // prune for start+count
-  var total = members.length;
-  members = members.slice(startIndex, startIndex + req.query.count);
+  var total = items.length;
+  items = items.slice(startIndex, startIndex + req.query.count);
 
   res.json({
     category: req.query.category,
     start: startIndex,
-    count: members.length,
+    count: items.length,
     total: total,
     unFilteredTotal: unfilteredTotal,
-    members: members
+    items: items
   });
 });
 

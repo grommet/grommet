@@ -30,7 +30,7 @@ $meter-width: round($inuit-base-spacing-unit * 8);
   }
 
   &__threshold {
-    stroke: $meter-threshold-color;
+    stroke: $threshold-color;
     stroke-width: 1px;
   }
 

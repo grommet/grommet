@@ -1,20 +1,37 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 .chart {
-  display: inline-block;
+  display: block;
 
   &__grid {
     stroke: $border-color;
   }
 
   &__lines {
-    stroke-width: 3px;
 
-    @for $i from 1 through length($brand-accent-colors) {
-      .color-index-accent-#{$i},
-      .color-index-accent-#{$i+length($brand-accent-colors)} {
-        stroke: nth($brand-accent-colors, $i);
+    &-line {
+      stroke-width: 3px;
+
+      @for $i from 1 through length($brand-graph-colors) {
+        &.color-index-accent-#{$i},
+        &.color-index-accent-#{$i+length($brand-graph-colors)} {
+          stroke: nth($brand-graph-colors, $i);
+        }
       }
     }
+
+    &-area {
+      @for $i from 1 through length($brand-graph-colors) {
+        &.color-index-accent-#{$i},
+        &.color-index-accent-#{$i+length($brand-graph-colors)} {
+          fill: rgba(nth($brand-graph-colors, $i), 0.5);
+        }
+      }
+    }
+  }
+
+  &__threshold {
+    stroke-width: 2px;
+    stroke: $threshold-color;
   }
 }

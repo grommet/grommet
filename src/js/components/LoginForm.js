@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
+var CheckBox = require('./CheckBox');
 
 var CLASS_ROOT = "login-form";
 
@@ -64,10 +65,8 @@ var LoginForm = React.createClass({
       var rememberMe = null;
       if (this.props.rememberMe) {
         rememberMe = (
-          <span className={CLASS_ROOT + "__remember-me"}>
-            <input id="remember-me" type="checkbox" />
-            <label htmlFor="remember-me" className="checkbox">Remember me</label>
-          </span>
+          <CheckBox className={CLASS_ROOT + "__remember-me"}
+            id="remember-me" label="Remember me" />
         );
       }
       footer = (

@@ -52,10 +52,10 @@
     }
   }
 
-  @for $i from 1 through length($brand-neutral-colors) {
+  @for $i from 1 through length($brand-graph-colors) {
     &__slice--color-index-#{$i},
-    &__slice--color-index-#{$i+length($brand-neutral-colors)} {
-      stroke: nth($brand-neutral-colors, $i);
+    &__slice--color-index-#{$i+length($brand-graph-colors)} {
+      stroke: nth($brand-graph-colors, $i);
     }
   }
 
