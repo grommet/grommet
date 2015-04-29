@@ -4,10 +4,19 @@
   <meta charset="UTF-8">
   <title>Todo App</title>
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400italic,400,700' rel='stylesheet' type='text/css'>
-  <link href='bower_components/grommet/css/grommet-hpe.min.css' rel='stylesheet' type='text/css'>
-  <script src="bower_components/react/react.js"></script>
-  <script src="bower_components/react/JSXTransformer.js"></script>
-  <script src="bower_components/grommet/grommet.min.js"></script>
+  <!-- @if NODE_ENV='production' -->
+  	<link href='css/grommet-hpe.min.css' rel='stylesheet' type='text/css'>
+	  <script src="../react/react.js"></script>
+	  <script src="../react/JSXTransformer.js"></script>
+	  <script src="grommet.min.js"></script> 
+  <!-- @endif -->
+ 
+ 	<!-- @if NODE_ENV!='production' -->
+ 	<link href='bower_components/grommet/css/grommet-hpe.min.css' rel='stylesheet' type='text/css'>
+	<script src="bower_components/react/react.js"></script>
+	<script src="bower_components/react/JSXTransformer.js"></script>
+	<script src="bower_components/grommet/grommet.min.js"></script>
+	<!-- @endif -->
 </head>
 <body>
   <div id="content"></div>
