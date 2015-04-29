@@ -13,6 +13,7 @@ var templatesDir = path.resolve(__dirname, 'templates');
 var emailTemplates = require('email-templates');
 var nodemailer = require('nodemailer');
 var smtpTransport = require('nodemailer-smtp-transport');
+var fs = require("fs");
 
 generator.generate();
 
@@ -53,6 +54,33 @@ router.post('/request-access', function(req, res) {
     });
   }
 
+  var requestsFilePath = path.resolve(__dirname, 'requests.csv');
+
+  fs.exists(requestsFilePath, function(exists) {
+
+    var contentCsv = [data.name, data.email, data.businessPurpose, data.github].join() + '\n';
+
+    if (exists) {
+      fs.appendFile(requestsFilePath, contentCsv, function(err) {
+        if (err) {
+          console.log('Error while creating the requests.csv: ' + err);
+        } else {
+          console.log(requestsFilePath + ' has been successfully created!');
+        }
+      });
+    } else {
+      fs.writeFile(requestsFilePath, contentCsv, function(err) {
+        if (err) {
+          console.log('Error while updating the requests.csv: ' + err);
+        } else {
+          console.log(requestsFilePath + ' has been successfully updated!');
+        }
+      });
+
+    }
+
+  });
+
   var transport = nodemailer.createTransport(smtpTransport({
     host: 'localhost',
     port: 25
@@ -62,7 +90,7 @@ router.post('/request-access', function(req, res) {
     from: data.email,
     to: 'uxgroup@hp.com',
     subject: 'Evaluate access for ' + data.email,
-    text: data.name + ' with this email: ' + data.email + ' wants to access Grommet for this reason: ' + data.businessPurpose + '. The Github account is: '+ data.github +'.'
+    text: data.name + ' with this email: ' + data.email + ' wants to access Grommet for this reason: ' + data.businessPurpose + '. The Github account is: ' + data.github + '.'
   };
 
   emailTemplates(templatesDir, function(err, template) {
@@ -164,7 +192,7 @@ router.get('/index/resources', function(req, res) {
     filter.sort(items, req.query.sort);
   }
 
-  var startIndex = + req.query.start; // coerce to be a number
+  var startIndex = +req.query.start; // coerce to be a number
   if (req.query.referenceUri) {
     items.some(function(item, index) {
       if (req.query.referenceUri === item.uri) {
@@ -188,7 +216,7 @@ router.get('/index/resources', function(req, res) {
   });
 });
 
-router.get(/^\/index\/search-suggestions/, function (req, res) {
+router.get(/^\/index\/search-suggestions/, function(req, res) {
   var items = data.getItems();
 
   if (req.query.userQuery) {
@@ -199,12 +227,16 @@ router.get(/^\/index\/search-suggestions/, function (req, res) {
     items = filter.filterQuery(items, req.query.query);
   }
 
-  var startIndex = + req.query.start; // coerce to be a number
+  var startIndex = +req.query.start; // coerce to be a number
   // prune for start+count
   items = items.slice(startIndex, startIndex + req.query.count);
 
-  res.json(items.map(function (item) {
-    return {name: item.name, category: item.category, uri: item.uri}
+  res.json(items.map(function(item) {
+    return {
+      name: item.name,
+      category: item.category,
+      uri: item.uri
+    }
   }));
 });
 
