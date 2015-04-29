@@ -1,13 +1,6 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-@import "../../../node_modules/inuit-list-inline/objects.list-inline";
-@import "../../../node_modules/inuit-list-block/objects.list-block";
-@import "../../../node_modules/inuit-list-ui/objects.list-ui";
-@import "../../../node_modules/inuit-list-bare/objects.list-bare";
-@import "../../../node_modules/inuit-box/objects.box";
-@import "../../../node_modules/inuit-pack/objects.pack";
-@import "../../../node_modules/inuit-layout/objects.layout";
-@import "../../../node_modules/inuit-tables/objects.tables";
+@import "inuit-list-bare/objects.list-bare";
 
 @import "objects.app";
 @import "objects.chart";

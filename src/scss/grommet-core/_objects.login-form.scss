@@ -2,7 +2,7 @@
 
 .login-form {
   width: round($inuit-base-spacing-unit * 16);
-  padding: $inuit-box-padding;
+  padding: $inuit-base-spacing-unit;
   padding-bottom: double($inuit-base-spacing-unit);
   background-color: $layer-background-color;
   border: 1px solid $border-color;

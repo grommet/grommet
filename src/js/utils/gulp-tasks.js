@@ -199,7 +199,7 @@ module.exports = function(gulp, opts) {
     var server = new WebpackDevServer(webpack(devWebpackConfig), devServerConfig);
     server.use('/', function(req, res, next) {
 
-    	if (req.url.match(/.+index.js$/)) { 
+      if (req.url.match(/.+index.js$/)) {
 		    res.redirect(301, '/index.js');
 		  } else if (req.url.match(/.+\/img\//)) { // img
 		    res.redirect(301, req.url.replace(/.*\/(img\/.*)$/, "/$1"));

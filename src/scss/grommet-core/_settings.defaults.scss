@@ -13,10 +13,3 @@ $readable-text-width: round($inuit-base-spacing-unit * 24); // 576px
 $panel-width: round($inuit-base-spacing-unit * 8);
 
 $inuit-namespace: 'i-';
-
-$inuit-enable-layout--center: true;
-$inuit-enable-box--small: true;
-$inuit-enable-table--cosy: true;
-$inuit-enable-list-block--small: true;
-$inuit-enable-list-block--tiny: true;
-$inuit-enable-list-inline--delimited: true;
