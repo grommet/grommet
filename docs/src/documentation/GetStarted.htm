@@ -31,9 +31,15 @@
         <h4>NPM</h4>
           <ol>
           	<li>
-              <p>Install Grommet globally using temporary registry</p>
+          		<p>Use the Grommet NPM private repo (temporary step while Grommet is not available in public NPM)</p>
+          		<pre><code class="bash">
+                {'npm set registry http://grommet.usa.hp.com:2374'}
+              </code></pre>
+          	</li>
+          	<li>
+              <p>Install Grommet globally</p>
               <pre><code class="bash">
-                {'npm install --global grommet --registry http://grommet.usa.hp.com:2374'}
+                {'npm install -g grommet'}
               </code></pre>
             </li>
             <li>
@@ -41,6 +47,12 @@
             	<pre><code class="bash">
                 {'grommet init sample-app'}</br>
                 {'cd sample-app'}
+              </code></pre>
+            </li>
+            <li>
+            	<p>Install Gulp globally</p>
+            	<pre><code class="bash">
+                {'npm install -g gulp'}
               </code></pre>
             </li>
             <li>
