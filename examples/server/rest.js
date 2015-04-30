@@ -144,8 +144,22 @@ router.get('/index/resources/aggregated', function(req, res) {
     };
   });
 
+  var intervals = null;
+  if (req.query.interval) {
+    intervals = [];
+    var stop =  new Date();
+    stop.setHours(23,59,59,999);
+    for (var i=0; i<req.query.count; i++) {
+      var start = new Date(stop.getTime() + 1);
+      start.setDate(start.getDate() - 1);
+      intervals.push({start: start.toISOString(), stop: stop.toISOString()});
+      stop = new Date(start.getTime() - 1);
+    }
+  }
+
   items.some(function(resource) {
     result.forEach(function(attributeResult) {
+
       var value;
       if (resource.hasOwnProperty(attributeResult.attribute)) {
         value = resource[attributeResult.attribute];
@@ -153,21 +167,35 @@ router.get('/index/resources/aggregated', function(req, res) {
         resource.attributes.hasOwnProperty(attributeResult.attribute)) {
         value = resource.attributes[attributeResult.attribute];
       }
+
       if (undefined !== value) {
         var counts = attributeResult.counts;
-        var found = false;
+        var count = null;
         for (var i = 0; i < counts.length; i++) {
           if (value === counts[i].value) {
-            counts[i].count += 1;
-            found = true;
+            count = counts[i];
             break;
           }
         }
-        if (!found) {
-          counts.push({
-            value: value,
-            count: 1
-          });
+        if (!count) {
+          var count = {value: value, count: 0};
+          if (intervals) {
+            count.intervals = _.map(intervals, _.clone);
+          }
+          counts.push(count);
+        }
+        count.count += 1;
+        if (count.intervals) {
+          for (i=0; i<count.intervals.length; i++) {
+            var interval = count.intervals[i];
+            if (! interval.count) {
+              interval.count = 0;
+            }
+            if (resource.created >= interval.start &&
+              resource.created <= interval.stop) {
+              interval.count += 1;
+            }
+          }
         }
       }
     });

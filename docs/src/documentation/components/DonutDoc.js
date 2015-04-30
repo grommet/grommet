@@ -10,7 +10,7 @@ var DonutDoc = React.createClass({
     var inline =
       "<Donut series={[\n  {label: <label>, value: <value>, colorIndex: <index>},\n  ...\n]} />";
     var seriesStructure =
-      "{\n  label: <label>,\n  value: <value>,\n  colorIndex: (accent-[1-6]|<status>)\n}";
+      "{\n  label: <label>,\n  value: <value>,\n  colorIndex: (graph-[1-6]|<status>)\n}";
 
     var genericSeries = [
       {label: 'Used', value: 10, units: 'TB'},
@@ -35,10 +35,14 @@ var DonutDoc = React.createClass({
         <section>
           <h2>Options</h2>
           <dl>
-            <dt><code>series  {"[{}, ...]"}</code></dt>
+            <dt><code>legend     true|false</code></dt>
+            <dd>Whether to show a legend.</dd>
+            <dt><code>series     {"[{}, ...]"}</code></dt>
             <dd>An array of objects describing the data:
               <pre><code>{seriesStructure}</code></pre>
             </dd>
+            <dt><code>units      {"{string}"}</code></dt>
+            <dd>Optional units to include.</dd>
           </dl>
         </section>
 
@@ -59,6 +63,14 @@ var DonutDoc = React.createClass({
           </div>
           <pre><code className="html">
             {"<Donut series={" + JSON.stringify(statusSeries, null, '  ') + "} />"}
+          </code></pre>
+
+          <h3>Legend</h3>
+          <div className="example">
+            <Donut series={statusSeries} legend={true} />
+          </div>
+          <pre><code className="html">
+            {"<Donut series={" + JSON.stringify(statusSeries, null, '  ') + "} legend={true} />"}
           </code></pre>
 
         </section>

@@ -8,31 +8,50 @@ var BASE_HEIGHT = 200;
 var Chart = React.createClass({
 
   propTypes: {
-    key: React.PropTypes.bool,
+    legend: React.PropTypes.bool,
     max: React.PropTypes.number,
     min: React.PropTypes.number,
     series: React.PropTypes.arrayOf(
       React.PropTypes.shape({
         label: React.PropTypes.string,
         values: React.PropTypes.arrayOf(
-          React.PropTypes.arrayOf(React.PropTypes.number)),
+          React.PropTypes.arrayOf(
+            React.PropTypes.oneOfType(
+              React.PropTypes.number,
+              React.PropTypes.object // Date
+            )
+          )
+        ),
         colorIndex: React.PropTypes.string
       })
     ).isRequired,
-    threshold: React.PropTypes.number
+    threshold: React.PropTypes.number,
+    type: React.PropTypes.oneOf(['line', 'bar', 'area']),
+    units: React.PropTypes.string,
+    xAxis: React.PropTypes.arrayOf(React.PropTypes.string)
   },
 
-  getInitialState: function () {
+  _onMouseOver: function (index) {
+    this.setState({activeIndex: index});
+  },
+
+  _onMouseOut: function () {
+    this.setState({activeIndex: 0});
+  },
+
+  _bounds: function (series) {
     // analyze series data
     var minX = null;
     var maxX = null;
     var minY = null;
     var maxY = null;
-    var maxValues = 0;
-    this.props.series.forEach(function (item) {
+    var maxValuesLength = 0;
+
+    series.forEach(function (item) {
       item.values.forEach(function (value) {
         var x = value[0];
         var y = value[1];
+
         if (null === minX) {
           minX = x;
           maxX = x;
@@ -45,53 +64,128 @@ var Chart = React.createClass({
           maxY = Math.max(maxY, y);
         }
       });
-      maxValues = Math.max(maxValues, item.values.length);
+      maxValuesLength = Math.max(maxValuesLength, item.values.length);
     });
-    if (this.props.threshold) {
-      minX = Math.min(minX, this.props.threshold);
-      maxX = Math.max(maxX, this.props.threshold);
+
+    if (null === minX) {
+      minX = 0;
+      maxX = 100;
+      minY = 0;
+      maxY = 100;
     }
-    return {
+
+    if ('bar' === this.props.type) {
+      /*jshint -W083 */
+      for (var i=0; i<maxValuesLength; i++) {
+        var sumY = 0;
+        series.forEach(function (item) {
+          sumY += item.values[i][1];
+        });
+        maxY = Math.max(maxY, sumY);
+      }
+    }
+
+    if (this.props.threshold) {
+      minY = Math.min(minY, this.props.threshold);
+      maxY = Math.max(maxY, this.props.threshold);
+    }
+    minY = this.props.min || minY;
+    maxY = this.props.max || maxY;
+    var spanX = maxX - minX;
+    var spanY = maxY - minY;
+    var scaleX = (BASE_WIDTH / spanX);
+    if ('bar' === this.props.type) {
+      scaleX = (BASE_WIDTH / (spanX + (spanX / maxValuesLength)));
+    }
+    var scaleY = (BASE_HEIGHT / spanY);
+
+    var result = {
       minX: minX,
       maxX: maxX,
-      minY: this.props.min || minY,
-      maxY: this.props.max || maxY,
-      steps: maxValues
+      minY: minY,
+      maxY: maxY,
+      spanX: spanX,
+      spanY: spanY,
+      scaleX: scaleX,
+      scaleY: scaleY,
+      steps: maxValuesLength
+    };
+
+    return result;
+  },
+
+  getDefaultProps: function () {
+    return {type: 'line'};
+  },
+
+  getInitialState: function () {
+    var bounds = this._bounds(this.props.series);
+    return {
+      bounds: bounds,
+      activeIndex: 0
     };
   },
 
+  componentWillReceiveProps: function (newProps) {
+    var bounds = this._bounds(newProps.series);
+    this.setState({
+      bounds: bounds,
+      activeIndex: 0
+    });
+  },
+
   _translateX: function (x) {
-    return (x - this.state.minX) * (BASE_WIDTH) / (this.state.maxX - this.state.minX);
+    var bounds = this.state.bounds;
+    return ((x - bounds.minX) * bounds.scaleX);
   },
 
   _translateY: function (y) {
     // leave room for line width since strokes are aligned to the center
-    return Math.min(BASE_HEIGHT -
-      ((y - this.state.minY) * (BASE_HEIGHT) / (this.state.maxY - this.state.minY)),
-      BASE_HEIGHT - 1);
+    return Math.max(1, (BASE_HEIGHT - Math.max(1, this._translateHeight(y))));
+  },
+
+  _translateHeight: function (y) {
+    var bounds = this.state.bounds;
+    return ((y - bounds.minY) * bounds.scaleY);
   },
 
   _coordinates: function (point) {
     return this._translateX(point[0]) + ',' + this._translateY(point[1]);
   },
 
-  render: function() {
-    var grid = [];
-    //var step = BASE_WIDTH / this.state.steps;
-    //for (var i=0; i<=BASE_WIDTH; i = i + step) {
-    //  grid.push(<path key={i} fill="none" d={"M" + i + ",0L" + i + "," + BASE_HEIGHT} />);
-    //}
-    //step = BASE_HEIGHT / 5;
-    //for (i=BASE_HEIGHT; i>=0; i = i - step) {
-    //  grid.push(<path key={100 + i} fill="none" d={"M0," + i + "L" + BASE_WIDTH + "," + i} />);
-    //}
+  _renderGrid: function () {
+    var paths = [];
 
-    var lines = {};
-    var keys = {};
-    var close = 'L' + BASE_WIDTH + ',' + BASE_HEIGHT + 'L0,' + BASE_HEIGHT + 'Z';
+    var step = BASE_WIDTH / this.state.bounds.steps;
+    for (var i=0; i<=BASE_WIDTH; i = i + step) {
+      paths.push(
+        <path key={i} fill="none" d={"M" + i + ",0L" + i + "," + BASE_HEIGHT} />
+      );
+    }
 
-    this.props.series.forEach(function (item, index) {
+    step = BASE_HEIGHT / 5;
+    for (i=BASE_HEIGHT; i>=0; i = i - step) {
+      paths.push(
+        <path key={1000 + i} fill="none" d={"M0," + i + "L" + BASE_WIDTH + "," + i} />
+      );
+    }
+
+    return (
+      <g className="chart__grid">{paths}</g>
+    );
+  },
+
+  _itemColorIndex: function (item, index) {
+    return item.colorIndex || ('graph-' + (index + 1));
+  },
+
+  _renderLineOrAreaValues: function () {
+    var close = 'L0,' + BASE_HEIGHT + 'L' + BASE_WIDTH + ',' + BASE_HEIGHT + 'Z';
+    var values = this.props.series.map(function (item, index) {
+
+      var colorIndex = this._itemColorIndex(item, index);
       var commands = null;
+
       item.values.forEach(function (value) {
         if (null === commands) {
           commands = "M" + this._coordinates(value);
@@ -99,32 +193,124 @@ var Chart = React.createClass({
           commands += "L" + this._coordinates(value);
         }
       }, this);
-      lines[index] = (
-        <g>
-          <path fill="none" className={"chart__lines-line color-index-" + item.colorIndex} d={commands} />
-          <path stroke="none" className={"chart__lines-area color-index-" + item.colorIndex} d={commands + close} />
+
+      var path = null;
+      if ('line' === this.props.type) {
+        path = (
+          <path fill="none" className={"chart__values-line color-index-" + colorIndex}
+            d={commands} />
+        );
+      } else {
+        path = (
+          <path stroke="none" className={"chart__values-area color-index-" + colorIndex}
+            d={commands + close} />
+        );
+      }
+
+      return (
+        <g key={index}>
+          {path}
         </g>
       );
-
-      /*if (this.props.key) {
-
-        var keyItemClasses = ["chart__key-item"];
-
-        keys[index] = (
-          <li key={item.className} className={keyItemClasses.join(' ')}>
-            <svg className={"chart__key-item-swatch"} viewBox="0 0 10 10">
-              <path className={item.className} d="M 5 0 l 0 10" />
-            </svg>
-            <span className="chart__key-item-label">{item.label}</span>
-          </li>
-        );
-      }*/
     }, this);
+
+    return values;
+  },
+
+  _renderBarValues: function () {
+    var step = BASE_WIDTH / this.state.bounds.steps;
+    var bars = [];
+
+    /*jshint -W083 */
+    for (var i=0; i<this.state.bounds.steps; i++) {
+      var baseY = this.state.bounds.minY;
+      var stepBars = this.props.series.map(function (item, index) {
+        var colorIndex = item.colorIndex || ('graph-' + (index + 1));
+        var value = item.values[i];
+        var stepBarHeight = this._translateHeight(value[1]);
+        var stepBarBase = this._translateHeight(baseY);
+        baseY += value[1];
+        var classes = ["chart__values-bar", "color-index-" + colorIndex];
+        if (! this.props.legend || i === this.state.activeIndex) {
+          classes.push("chart__values-bar--active");
+        }
+
+        return (
+          <rect key={item.label}
+            className={classes.join(' ')}
+            x={this._translateX(value[0])}
+            y={BASE_HEIGHT - (stepBarHeight + stepBarBase)}
+            width={step-3} height={stepBarHeight} />
+        );
+      }, this);
+
+      bars.push(
+        <g key={i}
+          onMouseOver={this._onMouseOver.bind(this, i)}
+          onMouseOut={this._onMouseOut.bind(this, i)}>
+          {stepBars}
+        </g>
+      );
+    }
+
+    return bars;
+  },
+
+  _renderLegend: function () {
+    var total = 0;
+    var legends = this.props.series.map(function (item, index) {
+      var colorIndex = this._itemColorIndex(item, index);
+      var value = item.values[this.state.activeIndex];
+      total += value[1];
+      return (
+        <li key={item.label} className="chart__legend-item">
+          <svg className={"chart__legend-item-swatch color-index-" + colorIndex}
+            viewBox="0 0 12 12">
+            <path className={item.className} d="M 5 0 l 0 12" />
+          </svg>
+          <span className="chart__legend-item-label">{item.label}</span>
+          <span className="chart__legend-item-value">{value[1]}</span>
+          <span className="chart__legend-item-units">{this.props.units}</span>
+        </li>
+      );
+    }, this);
+
+    var label = null;
+    if (this.props.xAxis) {
+      label = (
+        <li className="chart__legend-label">
+          {this.props.xAxis[this.state.activeIndex]}
+        </li>
+      );
+    }
+
+    return (
+      <ol className="chart__legend">
+        {label}
+        {legends}
+        <li className="chart__legend-total">
+          <span className="chart__legend-total-label">Total</span>
+          <span className="chart__legend-total-value">{total}</span>
+          <span className="chart__legend-total-units">{this.props.units}</span>
+        </li>
+      </ol>
+    );
+  },
+
+  render: function() {
+    var grid = null; // this._renderGrid();
+
+    var values = null;
+    if ('line' === this.props.type || 'area' === this.props.type) {
+      values = this._renderLineOrAreaValues();
+    } else if ('bar' === this.props.type) {
+      values = this._renderBarValues();
+    }
 
     var threshold = null;
     if (this.props.threshold) {
-      var commands = 'M' + this._coordinates([this.state.minX, this.props.threshold]) +
-        'L' + this._coordinates([this.state.maxX, this.props.threshold]);
+      var y = this._translateY(this.props.threshold);
+      var commands = 'M0,' + y + 'L' + BASE_WIDTH + ',' + y;
       threshold = (
         <g>
           <path className="chart__threshold" fill="none" d={commands} />
@@ -132,17 +318,20 @@ var Chart = React.createClass({
       );
     }
 
+    var legend = null;
+    if (this.props.legend) {
+      legend = this._renderLegend();
+    }
+
     return (
       <div className="chart">
         <svg className="chart__graphic" viewBox={"0 0 " + BASE_WIDTH + " " + BASE_HEIGHT}
           preserveAspectRatio="xMidYMid meet">
-          <g className="chart__grid">{grid}</g>
-          <g className="chart__lines">{lines}</g>
+          {grid}
+          <g className="chart__values">{values}</g>
           {threshold}
         </svg>
-        <ol className="chart__key">
-          {keys}
-        </ol>
+        {legend}
       </div>
     );
   }

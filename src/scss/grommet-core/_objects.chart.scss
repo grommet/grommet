@@ -7,25 +7,22 @@
     stroke: $border-color;
   }
 
-  &__lines {
+  &__values {
 
     &-line {
       stroke-width: 3px;
-
-      @for $i from 1 through length($brand-graph-colors) {
-        &.color-index-accent-#{$i},
-        &.color-index-accent-#{$i+length($brand-graph-colors)} {
-          stroke: nth($brand-graph-colors, $i);
-        }
-      }
+      @include graph-stroke-color();
     }
 
     &-area {
-      @for $i from 1 through length($brand-graph-colors) {
-        &.color-index-accent-#{$i},
-        &.color-index-accent-#{$i+length($brand-graph-colors)} {
-          fill: rgba(nth($brand-graph-colors, $i), 0.5);
-        }
+      @include graph-fill-color-translucent();
+    }
+
+    &-bar {
+      @include graph-fill-color-translucent();
+
+      &--active {
+        @include graph-fill-color();
       }
     }
   }
@@ -33,5 +30,71 @@
   &__threshold {
     stroke-width: 2px;
     stroke: $threshold-color;
+  }
+
+  &__legend {
+    margin: $inuit-base-spacing-unit 0 0;
+    display: inline-block;
+    text-align: left;
+    list-style-type: none;
+
+    &-label {
+      text-align: right;
+      @include inuit-font-size($inuit-heading-size-4);
+      margin-bottom: halve($inuit-base-spacing-unit);
+    }
+  }
+
+  &__legend-item,
+  &__legend-total {
+    white-space: nowrap;
+
+    > * {
+      vertical-align: top;
+    }
+
+    &-label {
+      display: inline-block;
+      width: quadruple($inuit-base-spacing-unit);
+      color: $secondary-text-color;
+    }
+
+    &-value {
+      display: inline-block;
+      width: double($inuit-base-spacing-unit);
+      text-align: right;
+    }
+
+    &-units {
+      margin-left: quarter($inuit-base-spacing-unit);
+    }
+  }
+
+  &__legend-item {
+
+    svg.chart__legend-item-swatch {
+      width: halve($inuit-base-spacing-unit);
+      height: halve($inuit-base-spacing-unit);
+      margin-top: quarter($inuit-base-spacing-unit);
+      margin-right: halve($inuit-base-spacing-unit);
+      overflow: visible;
+
+      @include graph-stroke-color();
+
+      path {
+        stroke-width: halve($inuit-base-spacing-unit);
+        transition-property: stroke-width;
+        transition-duration: $base-animation-duration;
+        transition-timing-function: ease-in-out;
+      }
+    }
+  }
+
+  &__legend-total {
+    margin-top: quarter($inuit-base-spacing-unit);
+    border-top: 1px dotted $border-color;
+    padding-top: quarter($inuit-base-spacing-unit);
+    margin-left: $inuit-base-spacing-unit;
+    color: $secondary-text-color;
   }
 }

@@ -47,7 +47,7 @@ var Tasks = React.createClass({
     };
   },
 
-  componentDidMount: function () {
+  componentWillMount: function () {
     this._getData();
   },
 

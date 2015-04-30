@@ -1,0 +1,46 @@
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+
+@mixin graph-stroke-color {
+  @each $status, $color in $brand-status-colors {
+    &.color-index-#{$status} {
+      stroke: $color;
+    }
+  }
+
+  @for $i from 1 through length($brand-graph-colors) {
+    &.color-index-graph-#{$i},
+    &.color-index-graph-#{$i+length($brand-graph-colors)} {
+      stroke: nth($brand-graph-colors, $i);
+    }
+  }
+}
+
+@mixin graph-fill-color {
+  @each $status, $color in $brand-status-colors {
+    &.color-index-#{$status} {
+      fill: $color;
+    }
+  }
+
+  @for $i from 1 through length($brand-graph-colors) {
+    &.color-index-graph-#{$i},
+    &.color-index-graph-#{$i+length($brand-graph-colors)} {
+      fill: nth($brand-graph-colors, $i);
+    }
+  }
+}
+
+@mixin graph-fill-color-translucent {
+  @each $status, $color in $brand-status-colors {
+    &.color-index-#{$status} {
+      fill: rgba($color, 0.7);
+    }
+  }
+
+  @for $i from 1 through length($brand-graph-colors) {
+    &.color-index-graph-#{$i},
+    &.color-index-graph-#{$i+length($brand-graph-colors)} {
+      fill: rgba(nth($brand-graph-colors, $i), 0.7);
+    }
+  }
+}

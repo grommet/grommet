@@ -7,6 +7,7 @@ var Menu = require('grommet/components/Menu');
 var Title = require('grommet/components/Title');
 var Close = require('grommet/components/icons/Clear');
 var Link = require('react-router').Link;
+var SessionActions = require('grommet/actions/SessionActions');
 var Rest = require('grommet/utils/Rest');
 
 var MainMenu = React.createClass({
