@@ -38,10 +38,10 @@ var opts = {
     remoteDestination: '/var/www/html/doc/hpe'
   },
   webpack: {
-  	devAlias: {
-  		'grommet/hpe/font': path.resolve(__dirname, '../../src/scss/hpe/font'),
-  		'grommet': path.resolve(__dirname, '../../src/js')
-  	},
+    devAlias: {
+      'grommet/scss/hpe/font': path.resolve(__dirname, '../../src/scss/hpe/font'),
+      'grommet': path.resolve(__dirname, '../../src/js')
+    },
     resolve: {
       root: [
         path.resolve(__dirname, '../../node_modules'),
@@ -61,7 +61,7 @@ var opts = {
 	        loader: 'jsx-loader!imports?React=react,Router=react-router,Link=>Router.Link!html-jsx-loader'
 	      }
     	]
-    }	
+    }
   },
   devServerPort: 8003,
   devServerProxy: {
