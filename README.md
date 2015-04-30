@@ -10,7 +10,7 @@ Visit the [grommet.io](http://grommet.io/) website for any references.
 
 Before you open an issue or pull request, please read our [Contributing](http://grommet.usa.hp.com/docs/hpe/documentation/contributing) guide.
 
-[Request Access](http://grommet.usa.hp.com/docs/hpe/request_access) or write to us at uxgroup@hp.com.
+[Request Access](http://grommet.usa.hp.com/docs/hpe/request_access) or write to us at grommet@hp.com.
 
 ### Install
 
