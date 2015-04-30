@@ -27,7 +27,7 @@ var TileDoc = React.createClass({
       "</Tiles>";
 
     var richTiles = [
-      <Tile key={1}>
+      (<Tile key={1}>
         <Header>
           <h3>First</h3>
         </Header>
@@ -40,9 +40,8 @@ var TileDoc = React.createClass({
             <a>action-3</a>
           </Menu>
         </Footer>
-      </Tile>
-      ,
-      <Tile key={2}>
+      </Tile>),
+      (<Tile key={2}>
         <Header>
           <h3>Second</h3>
         </Header>
@@ -55,9 +54,8 @@ var TileDoc = React.createClass({
             <a>action-3</a>
           </Menu>
         </Footer>
-      </Tile>
-      ,
-      <Tile key={3}>
+      </Tile>),
+      (<Tile key={3}>
         <Header>
           <h3>Third</h3>
         </Header>
@@ -70,7 +68,7 @@ var TileDoc = React.createClass({
             <a>action-3</a>
           </Menu>
         </Footer>
-      </Tile>
+      </Tile>)
     ];
 
     return (
