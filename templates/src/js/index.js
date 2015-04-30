@@ -4,7 +4,7 @@ var React = require('react');
 var App = require('grommet/components/App');
 var Header = require('grommet/components/Header');
 var Title = require('grommet/components/Title');
-var TodoAppDashboard = require('./TodoAppDashboard');
+var TodoAppDashboard = require('./components/TodoAppDashboard');
 
 var Main = React.createClass({
 	getInitialState: function() {

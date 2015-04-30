@@ -3,7 +3,7 @@ var devGulpTasks = require('grommet/utils/gulp-tasks');
 
 var opts = {
   copyAssets: [
-    'index.html',
+    'src/index.html',
     {
       asset: 'src/img/**',
       dist: 'dist/img/'

@@ -31,11 +31,30 @@
         <h4>NPM</h4>
           <ol>
           	<li>
-              <p>Install Grommet using temporary registry</p>
+              <p>Install Grommet globally using temporary registry</p>
               <pre><code class="bash">
-                {'npm install --save grommet --registry http://grommet.usa.hp.com:2374'}
+                {'npm install --global grommet --registry http://grommet.usa.hp.com:2374'}
               </code></pre>
-              <p>At this point, a <i>node_modules</i> folder will be created which contains Grommet and its dependencies.</p>
+            </li>
+            <li>
+            	<p>Use the Grommet generator to bootstrap your new app</p>
+            	<pre><code class="bash">
+                {'grommet init sample-app'}</br>
+                {'cd sample-app'}
+              </code></pre>
+            </li>
+            <li>
+            	<p>Start a development server with hot reload enabled</p>
+            	<pre><code class="bash">
+                {'gulp dev'}
+              </code></pre>
+            </li>
+            <li>
+            	<p>Open http://localhost:9000/webpack-dev-server/</p>
+            	<p>At this point you should be able to see the application dashboard running.</p>
+            </li>
+            <li>
+              <p>Checkout the <a data-to="doc_modulargrommet">Modular Grommet</a> page to understand the application structure better.</p>
             </li>
           </ol>
         <h4>Bower</h4>

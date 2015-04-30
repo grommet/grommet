@@ -12,6 +12,7 @@ var TBD = require('grommet/components/TBD');
 var GrommetDocument = require('grommet/components/Document');
 var HelloWorld = require('./HelloWorld');
 var Tutorial = require('./Tutorial');
+var ModularGrommet = require('./ModularGrommet');
 var GetStarted = require('./GetStarted');
 var Architecture = require('./Architecture');
 var AppDoc = require('./components/AppDoc');
@@ -45,7 +46,8 @@ var CONTENTS = [
     contents: [
       {route: 'doc_helloworld', label: 'Hello World', component: HelloWorld, default: true},
       {route: 'doc_getstarted', label: 'Get Started', component: GetStarted},
-      {route: 'doc_tutorial', label: 'Tutorial', component: Tutorial}
+      {route: 'doc_tutorial', label: 'Tutorial', component: Tutorial},
+      {route: 'doc_modulargrommet', label: 'Modular Grommet', component: ModularGrommet}
     ]
   },
   {label: 'Patterns',

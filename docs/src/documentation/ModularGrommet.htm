@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <section>
+      <h1>Modular Grommet</h1>
+      <p>
+       	This page will provide you with recommendations for creating modular applications using Grommet.
+      </p>
+      <p>
+      	In this exercise you will use the NPM version of Grommet. <a data-to="doc_getstarted">Get Started</a> page provides instructions on installing Grommet with NPM. 
+      </p>
+    </section>
+    <section>
+    	<h2>Application Structure</h2>
+    	<p>
+      	Whenever your application starts growing you feel the need to divide your code into smaller, independent chuncks. Diving into modules is a very common strategy for large-scale projects as it helps with parallel development and debugging. As a result, we recommend you to structure your Grommet application as follows:
+      </p>
+    	<pre><code class="bash">
+        {"/sample-app\n  /src\n    /js\n      /actions\n      /constants\n      /components\n      /stores\n      index.js\n    /scss\n    index.html\n  gulpfile.js\n  package.json\n"}
+      </code></pre>
+      <p>
+        <ul>
+          <li><b>package.json</b>: required project descriptor for NPM. Used to describe project information and dependencies.</li>
+          <li><b>gulpfile.js</b>: describes the tasks available for the application that will be executed by Gulp.</li>
+          <li><b>src/js/index.js</b>: main project source file that will connect CommonJS modules containing the application features.</li>
+          <li><b>src/js/actions</b>: possible Flux actions that can be executed in this app.</li>
+          <li><b>src/js/constants</b>: all constants of the application.</li>
+          <li><b>src/js/components</b>: all the ReactJS components used in this application.</li>
+          <li><b>src/js/stores</b>: possible Flux stores that will handle back-end communication.</li>
+          <li><b>src/scss</b>: Sass folder that will contain Grommet stylesheets.</li>
+          <li><b>src/index.html</b>: main html to load the application single-page script.</li>
+        </ul>
+      </p>
+      <p>
+      	The Grommet scaffolding tool already generates projects that comply with this folder structure. Also, Grommet provides you with a set of Gulp tasks that is intended to easily enable the creation of production-ready apps.
+      </p>
+    </section>
+    <section>
+    	<h2>Predefined Gulp Tasks</h2>
+    	<p>
+    		All these tasks are expected to be run at the root folder of your application.
+    		<ul>
+    			<li><b>gulp dev</b>: starts-up a dev server with hot reloading enabled.</li>
+    			<li><b>gulp dist</b>: generates a minified version of the project under the dist folder. All the content should be ready to be deployed in an application server of your choice.</li>
+    			<li><b>gulp jslint</b>: runs the JavaScript linter for all the files under <b>src/js</b>.</li>
+    			<li><b>gulp scsslint</b>: runs the Sass linter for all the files under <b>src/scss</b>. This task is disabled by default because it requires Ruby and scss-lint to be installed.
+    			Add <b>scsslint: true</b> option inside your gulpfile.js to enable Sass linting.</li>
+    			<li><b>gulp sync</b>: synchronizes the content of the dist folder with the remote server. Only executed if <b>sync</b> option object is provided in the gulpfile.js. The sync object specs is provided below:
+    			hostname: 'grommet.usa.hp.com',
+    username: 'ligo',
+    remoteDestination: '/var/www/html/docs/dist'
+    			<p>
+    				<pre><code class="json">
+    				   {"sync: {\n  hostname: 'path.to.hostname',\n  username: 'username',\n  remoteDestination: 'path/to/remote'\n}"}
+    				</code></pre>
+    			</p>	
+    			</li>
+    		</ul>
+    	</p>
+    </section>	
+</body>
+</html>
