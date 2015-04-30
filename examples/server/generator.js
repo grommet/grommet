@@ -162,7 +162,7 @@ function buildItems (categoryName, count) {
     if (! category.noStatus) {
       resource.status = distribute([['Warning', 7], ['Error', 19], 'OK']);
     }
-    date.setDate(date.getDate()-1);
+    date.setHours(date.getHours()-random(20)+1);
 
     if (category.indexAttributes) {
       resource._indexAttributes = {};

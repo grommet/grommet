@@ -29,12 +29,11 @@ var CONFIG = [
     }
   },
   {
-    name: 'Alert History',
+    name: 'Tasks',
     type: 'chart',
     params: {
-      category: 'alerts',
+      category: 'tasks',
       attribute: 'status',
-      query: 'status:error status:warning',
       interval: 'days',
       count: 20
     }
