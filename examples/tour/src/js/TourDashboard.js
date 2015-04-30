@@ -52,7 +52,16 @@ var STATUS_IMPORTANCE = {
 
 var TourDashboard = React.createClass({
 
-  _onDonutResponse: function (err, res, name, attribute) {
+  contextTypes: {
+    router: React.PropTypes.func.isRequired
+  },
+
+  _onClick: function (tile, value) {
+    console.log('!!! TourDashboard _onClick', tile.params, value);
+    // TODO: this.context.router.transitionTo()
+  },
+
+  _onDonutResponse: function (err, res, tile) {
     if (err && err.timeout > 1000) {
       // ignore for now
     } else if (res.status === 400) {
@@ -62,24 +71,25 @@ var TourDashboard = React.createClass({
     } else {
       var series = res.body[0].counts.map(function(count, index) {
         var colorIndex = 'graph-' + (index + 1);
-        if ('status' === attribute) {
+        if ('status' === tile.params.attribute) {
           colorIndex = count.value.toLowerCase();
         }
-        return {label: count.value, value: count.count, colorIndex: colorIndex};
-      });
-      if ('status' === attribute) {
+        return {label: count.value, value: count.count, colorIndex: colorIndex,
+          onClick: this._onClick.bind(this, tile, count.value)};
+      }, this);
+      if ('status' === tile.params.attribute) {
         // re-order by importance
         series.sort(function (s1, s2) {
           return (STATUS_IMPORTANCE[s1.label] - STATUS_IMPORTANCE[s2.label]);
         });
       }
       var state = {};
-      state[name] = {series: series};
+      state[tile.name] = {series: series};
       this.setState(state);
     }
   },
 
-  _onChartResponse: function (err, res, name, attribute) {
+  _onChartResponse: function (err, res, tile) {
     if (err && err.timeout > 1000) {
       // ignore for now
     } else if (res.status === 400) {
@@ -97,13 +107,13 @@ var TourDashboard = React.createClass({
           return [date, interval.count];
         });
         var colorIndex = 'graph-' + index;
-        if ('status' === attribute) {
+        if ('status' === tile.params.attribute) {
           colorIndex = count.value.toLowerCase();
         }
         return {label: count.value, values: values, colorIndex: colorIndex};
       });
       var state = {};
-      state[name] = {series: series, xAxis: xAxis};
+      state[tile.name] = {series: series, xAxis: xAxis};
       this.setState(state);
     }
   },
@@ -114,13 +124,13 @@ var TourDashboard = React.createClass({
         Rest.get('/rest/index/resources/aggregated',
           tile.params,
           function (err, res) {
-            this._onDonutResponse(err, res, tile.name, tile.params.attribute);
+            this._onDonutResponse(err, res, tile);
           }.bind(this));
       } else if ('chart' === tile.type) {
         Rest.get('/rest/index/resources/aggregated',
           tile.params,
           function (err, res) {
-            this._onChartResponse(err, res, tile.name, tile.params.attribute);
+            this._onChartResponse(err, res, tile);
           }.bind(this));
       }
     }, this);
