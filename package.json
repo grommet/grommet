@@ -16,8 +16,22 @@
     "type": "git",
     "url": "https://github.com/HewlettPackard/grommet.git"
   },
-  "peerDependencies": {
-  	"react": "^0.13.1",
+  "preferGlobal": true,
+  "bin": {
+    "grommet": "./bin/grommet.js"
+  },
+  "dependencies": {
+    "object-assign": "^2.0.0",
+    "flux": "^2.0.1",
+    "lodash": "^3.2.0",
+    "mirrorkey": "^1.2.0",
+    "moment": "^2.9.0",
+    "react-gravatar": "^1.0.0",
+    "react-router": "^0.13.2",
+    "react-time": "^2.4.0",
+    "highlight.js": "^8.5.0",
+    "superagent": "^1.1.0",
+    "react": "^0.13.1",
   	"inuit-box-sizing": "~0.2.0",
     "inuit-clearfix": "^0.2.1",
     "inuit-defaults": "~0.2.1",
@@ -33,18 +47,6 @@
     "inuit-responsive-settings": "~0.1.2",
     "inuit-responsive-tools": "~0.1.1",
     "inuit-shared": "~0.1.5"
-  },
-  "dependencies": {
-    "object-assign": "^2.0.0",
-    "flux": "^2.0.1",
-    "lodash": "^3.2.0",
-    "mirrorkey": "^1.2.0",
-    "moment": "^2.9.0",
-    "react-gravatar": "^1.0.0",
-    "react-router": "^0.13.2",
-    "react-time": "^2.4.0",
-    "highlight.js": "^8.5.0",
-    "superagent": "^1.1.0"
   },
   "devDependencies": {
     "del": "^1.1.1",

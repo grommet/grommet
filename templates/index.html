@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title><%= appTitle %></title>
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" type="image/png" href="img/shortcut-icon.png" />
+  <link rel="shortcut icon" sizes="196x196" type="image/png" href="img/mobile-app-icon.png">
+  <style>
+  body.loading {margin: 0px; width: 100vw; height: 100vw; background-image: radial-gradient(circle at 50% 15%, #fff, #fff 30%, #ccc);}
+  body.loading #logo {display: block; margin: 10vh auto;}
+  body.loading #spinner {display: block; margin: 0px auto; width: 48px; height: 48px; -webkit-animation:spin 4s steps(4, end) infinite; -moz-animation:spin 4s steps(4, end) infinite; animation:spin 4s steps(4, end) infinite; -webkit-transform-origin: 50% 50%;}
+  @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+  @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+  @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+  </style>
+</head>
+<body class="loading">
+  <div id="content">
+    <svg id="logo" width="140" height="140" viewBox="0 0 140 140" >
+      <path fill="#333333" d="M100.8,39.4c16.9,17,16.8,44.4-0.1,61.3c-16.9,16.9-44.6,16.9-61.5,0c-16.9-17-16.9-44.5,0-61.4c8.7-8.7,20.3-13,31.7-12.7L93.4,4C69-4.7,40.7,0.7,20.9,20C-6.7,47.2-7,91.9,20.4,119.4c27.3,27.4,71.7,27.5,99.1,0.1c27.3-27.3,27.3-71.5,0.1-98.9L100.8,39.4z"/>
+      <path id="logo__inner" fill="#03B388" d="M94.4,52.6c8.5,11.9,7.3,28.7-3.7,39.2c-11.8,11.3-30.4,11.1-42-0.5C37,79.5,37,60.5,48.7,48.8l22.2-22.2c-11.4-0.2-23,4-31.7,12.7c-16.9,16.9-17,44.4-0.1,61.3c17,17.1,44.5,17.2,61.6,0.1c16.9-16.9,16.9-44.4,0.1-61.3L95,45.2
+      	C93,47.2,92.8,50.3,94.4,52.6z"/>
+      <g id="spinner">
+        <circle stroke="#ddd" stroke-width="4" stroke-dasharray="24px 8px" fill="none" cx="70" cy="70" r="20"></circle>
+        <circle stroke="#333" stroke-width="4" stroke-dasharray="24px 104px" fill="none" cx="70" cy="70" r="20"></circle>
+      </g>
+    </svg>
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>

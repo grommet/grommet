@@ -1,26 +1,43 @@
 var gulp = require('gulp');
-var path = require('path');
 var chug = require('gulp-chug');
 var gulpWebpack = require('gulp-webpack');
-var assign = require('object-assign');
-var webpack = require('webpack');
 var sass = require('gulp-sass');
 var rename = require('gulp-rename');
-var del = require('del');
 var minifyCss = require('gulp-minify-css');
 var file = require('gulp-file');
 var preprocess = require('gulp-preprocess');
+var assign = require('object-assign');
+var webpack = require('webpack');
+var del = require('del');
+var path = require('path');
 
 var packageJSON = require('./package.json');
-delete packageJSON.devDependencies;
+packageJSON.devDependencies = {
+	"gulp": "^3.8.11",
+	"gulp-template": "^3.0.0",
+	"gulp-install": "^0.4.0"
+};
 packageJSON.main = 'index.js';
 
 var opts = {
   dist: path.resolve(__dirname, 'dist'),
   copyAssets: [
+  	'README.md',
     'src/js/**',
-    'src/scss/**',
+    {
+      asset: 'src/scss/**',
+      dist: 'dist/scss/'
+    },
     'design/**',
+    'src/img/**',
+    {
+      asset: 'bin/**',
+      dist: 'dist/bin/'
+    },
+    {
+      asset: 'templates/**',
+      dist: 'dist/templates/'
+    },
     {
       filename: 'package.json',
       asset: JSON.stringify(packageJSON, null, 2)

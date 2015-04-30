@@ -2,7 +2,6 @@ var del = require('del');
 var react = require('gulp-react');
 var jshint = require('gulp-jshint');
 var gulpWebpack = require('gulp-webpack');
-var rsync = require('gulp-rsync');
 var file = require('gulp-file');
 var runSequence = require('run-sequence');
 var assign = require('object-assign');
@@ -35,7 +34,9 @@ var webpackConfig = {
       },
       {
         test: /\.scss$/,
-        loader: 'style!css!sass?outputStyle=expanded'
+        loader: 'style!css!sass?outputStyle=expanded&'+
+        	"includePaths[]=" +
+            (path.resolve(process.cwd(), "node_modules"))
       }
     ]
   }
@@ -47,8 +48,9 @@ module.exports = function(gulp, opts) {
 
   var options = opts || {};
 
-  var dist = options.dist;
-
+  var dist = options.dist || path.resolve(process.cwd(), "dist");
+  options.webpack = options.webpack || {};
+  
   var scssLintPath = path.resolve(__dirname, 'scss-lint.yml');
 
   if (options.base) {
@@ -70,7 +72,7 @@ module.exports = function(gulp, opts) {
   });
 
   gulp.task('clean', function() {
-    del.sync([options.dist]);
+    del.sync([dist]);
   });
 
   gulp.task('scsslint', function() {
@@ -227,7 +229,9 @@ module.exports = function(gulp, opts) {
   });
 
   gulp.task('sync', ['syncPre'], function() {
-    gulp.src(dist)
+  	if (options.sync) {
+  		var rsync = require('gulp-rsync');
+  		gulp.src(dist)
       .pipe(rsync({
         root: dist,
         hostname: options.sync.hostname,
@@ -241,6 +245,8 @@ module.exports = function(gulp, opts) {
         emptyDirectories: true,
         exclude: ['.DS_Store'],
       }));
+  	}
+    
   });
 
 };
