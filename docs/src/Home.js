@@ -127,10 +127,10 @@ var Home = React.createClass({
           <div className="flex-1">
             <h2>Quick Develop</h2>
             <p>The easiest way to learn a new framework is by writing a simple
-              application on top of it. Grommet depends on Node and NPM.
+              application on top of it. Grommet depends on <a href="https://nodejs.org/" target="_blank">Node</a> and <a href="http://gulpjs.com/" target="_blank">Gulp</a>.
             </p>
             <pre className="home__commands"><code>
-              {"$ npm install -g grommet\n$ grommet init myNewApp"}
+              {"$ npm install -g grommet\n$ grommet init sample-app"}
             </code></pre>
           </div>
         </Section>
