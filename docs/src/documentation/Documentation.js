@@ -15,6 +15,7 @@ var Tutorial = require('./Tutorial');
 var ModularGrommet = require('./ModularGrommet');
 var GetStarted = require('./GetStarted');
 var Architecture = require('./Architecture');
+var Contributing = require('./Contributing');
 var AppDoc = require('./components/AppDoc');
 var ChartDoc = require('./components/ChartDoc');
 var DocumentDoc = require('./components/DocumentDoc');
@@ -83,7 +84,8 @@ var CONTENTS = [
   },
   {label: 'Reference',
     contents: [
-      {route: 'doc_architecture', label: 'Architecture', component: Architecture}
+      {route: 'doc_architecture', label: 'Architecture', component: Architecture},
+      {route: 'doc_contributing', label: 'Contributing', component: Contributing},
     ]
   }
 ];
