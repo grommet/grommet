@@ -1,5 +1,7 @@
 # Grommet: The Most Advanced UI framework for Enterprise
 
+[![Slack](http://alansouzati.github.io/artic/img/slack-badge.svg)](https://grommet.slack.com)
+
 <img align="right" height="260" src="http://alansouzati.github.io/artic/img/grommet-logo.png">
 
 ### Documentation
