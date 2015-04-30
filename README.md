@@ -20,7 +20,7 @@ Before you open an issue or pull request, please read our [Contributing](http://
 
   For NPM users:
 
-  	$ npm install --save grommet --registry http://grommet.usa.hp.com:2374	
+  	$ npm install -g grommet --registry http://grommet.usa.hp.com:2374	
 
 ### Hello World
 
