@@ -14,7 +14,10 @@ var Tour = require('./Tour');
 var TourDashboard = require('./TourDashboard');
 var Tasks = require('./Tasks');
 
-var rootPath = "/"; // "/tour/";
+var rootPath = "/tour/";
+if (__DEV_MODE__) {
+  rootPath = "/"; // webpack-dev-server
+}
 
 var routes = (
   <Route name="tour" path={rootPath} handler={Tour}>

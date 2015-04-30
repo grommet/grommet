@@ -15,11 +15,11 @@ var rootPath = '/docs/';
 var theme = 'generic';
 
 if (__THEME__.hpe) {
-  require("!style!css!sass!index-hpe.scss");
+  require("index-hpe.scss");
   rootPath = '/docs/hpe/';
   theme = 'hpe';
 } else {
-  require("!style!css!sass!index.scss");
+  require("index.scss");
 }
 
 if (__DEV_MODE__) {

@@ -28,7 +28,7 @@ var Login = React.createClass({
 
   componentDidMount: function() {
     window.addEventListener('resize', this._onResize);
-    setTimeout(this.adjustBackground, 10);
+    setTimeout(this.adjustBackground, 300);
   },
 
   componentWillUnmount: function() {
