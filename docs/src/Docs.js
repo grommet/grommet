@@ -39,7 +39,7 @@ var Docs = React.createClass({
 
     return (
       <App className="docs">
-        <Header primary={true} className="docs__header">
+        <Header primary={true} className="docs__header" flush={false}>
           {title}
           <Menu direction="left">
             <Link key="style-guide" to="style guide">

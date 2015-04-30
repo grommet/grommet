@@ -6,7 +6,6 @@
 }
 
 .donut {
-  display: inline-block;
 
   &.series-pre {
     path {
@@ -53,8 +52,9 @@
   &__active {
     position: absolute;
     width: 100%;
-    margin-top: round($inuit-base-spacing-unit * 3);
+    margin-top: round($inuit-base-spacing-unit * 2.5);
     text-align: center;
+    white-space: normal;
     pointer-events: none;
 
     &-value {
@@ -76,10 +76,9 @@
   }
 
   &__legend {
-    margin: $inuit-base-spacing-unit 0 0;
-    display: inline-block;
     text-align: left;
     list-style-type: none;
+    white-space: normal;
   }
 
   &__legend-item,
@@ -134,10 +133,49 @@
   }
 
   &__legend-total {
-    margin-top: quarter($inuit-base-spacing-unit);
-    border-top: 1px dotted $border-color;
-    padding-top: quarter($inuit-base-spacing-unit);
     margin-left: $inuit-base-spacing-unit;
+
+    > * {
+      margin-top: quarter($inuit-base-spacing-unit);
+      padding-top: quarter($inuit-base-spacing-unit);
+      border-top: 1px dotted $border-color;
+    }
+  }
+
+  &--landscape {
+    white-space: nowrap;
+
+    .donut {
+      &__graphic-container,
+      &__legend {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      &__legend {
+        margin: 0 0 0 $inuit-base-spacing-unit;
+      }
+    }
+  }
+
+  &--portrait {
+
+    .donut {
+      &__graphic-container,
+      &__legend {
+        display: block;
+      }
+
+      &__legend {
+        margin: $inuit-base-spacing-unit 0 0;
+      }
+    }
+  }
+
+  &--small {
+    .donut__legend {
+      display: none;
+    }
   }
 }
 

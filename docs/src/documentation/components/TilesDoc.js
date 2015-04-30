@@ -25,6 +25,54 @@ var TileDoc = React.createClass({
       "  </Tile>\n" +
       "  ...\n" +
       "</Tiles>";
+
+    var richTiles = [
+      <Tile key={1}>
+        <Header>
+          <h3>First</h3>
+        </Header>
+        hello
+        <Footer>
+          <span></span>
+          <Menu icon={<Edit/>} align="right" direction="up">
+            <a>action-1</a>
+            <a>action-2</a>
+            <a>action-3</a>
+          </Menu>
+        </Footer>
+      </Tile>
+      ,
+      <Tile key={2}>
+        <Header>
+          <h3>Second</h3>
+        </Header>
+        hello
+        <Footer>
+          <span></span>
+          <Menu icon={<Edit/>} align="right" direction="up">
+            <a>action-1</a>
+            <a>action-2</a>
+            <a>action-3</a>
+          </Menu>
+        </Footer>
+      </Tile>
+      ,
+      <Tile key={3}>
+        <Header>
+          <h3>Third</h3>
+        </Header>
+        hello
+        <Footer>
+          <span></span>
+          <Menu icon={<Edit/>} align="right" direction="up">
+            <a>action-1</a>
+            <a>action-2</a>
+            <a>action-3</a>
+          </Menu>
+        </Footer>
+      </Tile>
+    ];
+
     return (
       <GrommetDocument>
         <header>
@@ -37,8 +85,13 @@ var TileDoc = React.createClass({
         <section>
           <h2>Options</h2>
           <dl>
-            <dt><code>compact  true|false</code></dt>
-            <dd>Whether to compact the tiles into a smaller space.</dd>
+            <dt><code>fill        true|false</code></dt>
+            <dd>Whether the contents expand to fill all of the available space.</dd>
+            <dt><code>flush       true|false</code></dt>
+            <dd>Whether the contents are flush with the left and right edges or not.
+              Defaults to true.</dd>
+            <dt><code>small       true|false</code></dt>
+            <dd>Smaller sized version.</dd>
           </dl>
         </section>
 
@@ -66,52 +119,21 @@ var TileDoc = React.createClass({
           <h3>Headers and Footers</h3>
           <div className="example">
             <Tiles>
-              <Tile>
-                <Header>
-                  <h3>First</h3>
-                </Header>
-                hello
-                <Footer>
-                  <span></span>
-                  <Menu icon={<Edit/>} align="right" direction="up">
-                    <a>action-1</a>
-                    <a>action-2</a>
-                    <a>action-3</a>
-                  </Menu>
-                </Footer>
-              </Tile>
-              <Tile>
-                <Header>
-                  <h3>Second</h3>
-                </Header>
-                hello
-                <Footer>
-                  <span></span>
-                  <Menu icon={<Edit/>} align="right" direction="up">
-                    <a>action-1</a>
-                    <a>action-2</a>
-                    <a>action-3</a>
-                  </Menu>
-                </Footer>
-              </Tile>
-              <Tile>
-                <Header>
-                  <h3>Third</h3>
-                </Header>
-                hello
-                <Footer>
-                  <span></span>
-                  <Menu icon={<Edit/>} align="right" direction="up">
-                    <a>action-1</a>
-                    <a>action-2</a>
-                    <a>action-3</a>
-                  </Menu>
-                </Footer>
-              </Tile>
+              {richTiles}
             </Tiles>
           </div>
           <pre><code className="html">
             {"<Tiles>\n  <Tile>\n    ...\n  </Tile>\n  ...\n</Tiles>"}
+          </code></pre>
+
+          <h3>Fill</h3>
+          <div className="example">
+            <Tiles fill={true}>
+              {richTiles}
+            </Tiles>
+          </div>
+          <pre><code className="html">
+            {"<Tiles fill={true}>\n  ...\n</Tiles>"}
           </code></pre>
 
         </section>

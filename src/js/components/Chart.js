@@ -39,6 +39,10 @@ var Chart = React.createClass({
     this.setState({activeIndex: 0});
   },
 
+  _onResize: function() {
+    // nothing yet
+  },
+
   _bounds: function (series) {
     // analyze series data
     var minX = null;
@@ -124,6 +128,15 @@ var Chart = React.createClass({
       bounds: bounds,
       activeIndex: 0
     };
+  },
+
+  componentDidMount: function() {
+    window.addEventListener('resize', this._onResize);
+    setTimeout(this._onResize, 10);
+  },
+
+  componentWillUnmount: function() {
+    window.removeEventListener('resize', this._onResize);
   },
 
   componentWillReceiveProps: function (newProps) {
@@ -326,7 +339,7 @@ var Chart = React.createClass({
     return (
       <div className="chart">
         <svg className="chart__graphic" viewBox={"0 0 " + BASE_WIDTH + " " + BASE_HEIGHT}
-          preserveAspectRatio="xMidYMid meet">
+          preserveAspectRatio="none">
           {grid}
           <g className="chart__values">{values}</g>
           {threshold}

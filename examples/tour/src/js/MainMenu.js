@@ -95,7 +95,7 @@ var MainMenu = React.createClass({
     return (
       <Layer align="top" onClose={this.props.onClose}>
         <Menu primary={true}>
-          <Header large={true}>
+          <Header large={true} flush={false}>
             <Title>
               {"Grommet Tour"}
             </Title>

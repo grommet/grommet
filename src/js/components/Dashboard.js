@@ -4,13 +4,10 @@ var React = require('react');
 
 var Dashboard = React.createClass({
 
-
   render: function () {
     return (
       <div className={"dashboard"}>
-        <div className={"dashboard__panels"}>
-          {this.props.children}
-        </div>
+        {this.props.children}
       </div>
     );
   }

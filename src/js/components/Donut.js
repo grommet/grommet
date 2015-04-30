@@ -2,6 +2,8 @@
 
 var React = require('react');
 
+var BASE_SIZE = 192;
+
 function polarToCartesian (centerX, centerY, radius, angleInDegrees) {
   var angleInRadians = (angleInDegrees-90) * Math.PI / 180.0;
   return {
@@ -50,22 +52,46 @@ var Donut = React.createClass({
     this.setState({initial: false, activeIndex: 0});
   },
 
+  _onResize: function() {
+    // orientation based on available window orientation
+    var ratio = window.innerWidth / window.innerHeight;
+    if (ratio < 0.8) {
+      this.setState({orientation: 'portrait'});
+    } else if (ratio > 1.2) {
+      this.setState({orientation: 'landscape'});
+    }
+    // content based on avialable real estate
+    var parentElement = this.refs.donut.getDOMNode().parentNode;
+    var width = parentElement.offsetWidth;
+    var height = parentElement.offsetHeight;
+    if (height < BASE_SIZE || width < BASE_SIZE ||
+      (width < (BASE_SIZE * 2) && height < (BASE_SIZE * 2))) {
+      this.setState({size: 'small'});
+    } else {
+      this.setState({size: null});
+    }
+  },
+
   getInitialState: function() {
     return {
       initial: true,
       activeIndex: 0,
-      legend: false
+      legend: false,
+      orientation: 'portrait'
     };
   },
 
   componentDidMount: function() {
     this._timeout = setTimeout(this._initialTimeout, 10);
     this.setState({initial: true, activeIndex: 0});
+    window.addEventListener('resize', this._onResize);
+    setTimeout(this._onResize, 10);
   },
 
   componentWillUnmount: function() {
     clearTimeout(this._timeout);
     this._timeout = null;
+    window.removeEventListener('resize', this._onResize);
   },
 
   _itemColorIndex: function (item, index) {
@@ -111,6 +137,11 @@ var Donut = React.createClass({
   },
 
   render: function() {
+    var classes = ["donut", "donut--" + this.state.orientation];
+    if (this.state.size) {
+      classes.push("donut--" + this.state.size);
+    }
+
     var total = 0;
     this.props.series.some(function (item) {
       total += item.value;
@@ -126,7 +157,7 @@ var Donut = React.createClass({
 
       var endAngle = Math.min(360, Math.max(10, startAngle + (anglePer * item.value)));
       var radius = (this.state.activeIndex === index) ? 78 : 72;
-      var commands = describeArc(96, 96, radius, startAngle, endAngle-2);
+      var commands = describeArc(BASE_SIZE/2, BASE_SIZE/2, radius, startAngle, endAngle-2);
       startAngle = endAngle;
       var colorIndex = this._itemColorIndex(item, index);
 
@@ -153,9 +184,10 @@ var Donut = React.createClass({
     }
 
     return (
-      <div className="donut">
+      <div ref="donut" className={classes.join(' ')}>
         <div className="donut__graphic-container">
-          <svg className="donut__graphic" viewBox="0 0 192 192"
+          <svg className="donut__graphic"
+            viewBox={"0 0 " + BASE_SIZE + " " + BASE_SIZE}
             preserveAspectRatio="xMidYMid meet">
             <g>{paths}</g>
           </svg>

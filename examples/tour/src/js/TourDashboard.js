@@ -21,6 +21,14 @@ var CONFIG = [
     }
   },
   {
+    name: 'Servers',
+    type: 'donut',
+    params: {
+      category: 'server-hardware',
+      attribute: 'model'
+    }
+  },
+  {
     name: 'Alert History',
     type: 'chart',
     params: {
@@ -53,7 +61,7 @@ var TourDashboard = React.createClass({
       this.setState({error: res.body || res.text, data: {}});
     } else {
       var series = res.body[0].counts.map(function(count, index) {
-        var colorIndex = 'graph-' + index;
+        var colorIndex = 'graph-' + (index + 1);
         if ('status' === attribute) {
           colorIndex = count.value.toLowerCase();
         }
@@ -141,7 +149,7 @@ var TourDashboard = React.createClass({
       } else if ('chart' === tile.type) {
 
         return (
-          <Tile key={tile.name}>
+          <Tile key={tile.name} wide={true}>
             <Header><h3>{tile.name}</h3></Header>
             <Chart series={state.series || []}
               xAxis={state.xAxis || []}
@@ -154,7 +162,7 @@ var TourDashboard = React.createClass({
 
     return (
       <Dashboard>
-        <Tiles>
+        <Tiles fill={true} flush={false}>
           {tiles}
         </Tiles>
       </Dashboard>

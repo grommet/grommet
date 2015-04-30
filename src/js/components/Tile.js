@@ -5,13 +5,17 @@ var React = require('react');
 var Tile = React.createClass({
 
   propTypes: {
-    status: React.PropTypes.string
+    status: React.PropTypes.string,
+    wide: React.PropTypes.bool
   },
 
   render: function() {
     var classes = ["tile"];
     if (this.props.status) {
       classes.push("tile--status-" + this.props.status.toLowerCase());
+    }
+    if (this.props.wide) {
+      classes.push("tile--wide");
     }
     if (this.props.className) {
       classes.push(this.props.className);

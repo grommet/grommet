@@ -2,9 +2,14 @@
 
 .chart {
   display: block;
+  text-align: right;
 
   &__grid {
     stroke: $border-color;
+  }
+
+  &__graphic {
+    width: 100%;
   }
 
   &__values {

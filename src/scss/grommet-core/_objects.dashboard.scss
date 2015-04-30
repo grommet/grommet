@@ -1,0 +1,11 @@
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+
+.dashboard {
+  @include media-query(lap-and-up) {
+    height: calc(100vh - #{$large-header-height});
+  }
+
+  @include media-query(palm) {
+    height: calc(100vh - #{$small-header-height});
+  }
+}

@@ -12,7 +12,8 @@
 
   &__wrapper {
     background-color: $header-background-color;
-    ///border-bottom: 1px solid $border-color;
+    padding-left: $inuit-base-spacing-unit;
+    padding-right: $inuit-base-spacing-unit;
 
     @include media-query(palm) {
       height: $small-header-height;
@@ -20,11 +21,6 @@
 
     @include media-query(lap-and-up) {
       height: $header-height;
-    }
-
-    .layer__container > .form > .header & {
-      padding-left: $inuit-base-spacing-unit;
-      padding-right: $inuit-base-spacing-unit;
     }
   }
 
@@ -166,6 +162,13 @@
         right: 0px;
         z-index: 3;
       }
+    }
+  }
+
+  &--flush {
+    .header__wrapper {
+      padding-left: 0px;
+      padding-right: 0px;
     }
   }
 

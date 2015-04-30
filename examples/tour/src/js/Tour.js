@@ -82,7 +82,7 @@ var Tour = React.createClass({
 
     return (
       <App centered={false}>
-        <Header primary={true}>
+        <Header primary={true} flush={false}>
           <Title onClick={this._onClickTitle}>
             {title}
           </Title>
