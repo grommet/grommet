@@ -2,7 +2,7 @@
 
 var React = require('react');
 var RouteHandler = require('react-router').RouteHandler;
-var Link = require('react-router').Link;
+//var Link = require('react-router').Link;
 var App = require('grommet/components/App');
 var Header = require('grommet/components/Header');
 var Title = require('grommet/components/Title');
