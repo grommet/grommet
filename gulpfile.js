@@ -12,11 +12,7 @@ var del = require('del');
 var path = require('path');
 
 var packageJSON = require('./package.json');
-packageJSON.devDependencies = {
-	"gulp": "^3.8.11",
-	"gulp-template": "^3.0.0",
-	"gulp-install": "^0.4.0"
-};
+delete packageJSON.devDependencies;
 packageJSON.main = 'index.js';
 
 var opts = {

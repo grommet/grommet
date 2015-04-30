@@ -46,11 +46,14 @@
     "inuit-reset": "~0.1.1",
     "inuit-responsive-settings": "~0.1.2",
     "inuit-responsive-tools": "~0.1.1",
-    "inuit-shared": "~0.1.5"
+    "inuit-shared": "~0.1.5",
+    "gulp": "^3.8.11",
+		"gulp-template": "^3.0.0",
+		"gulp-install": "^0.4.0",
+		"mkdirp": "^0.5.0"
   },
   "devDependencies": {
     "del": "^1.1.1",
-    "gulp": "^3.8.11",
     "gulp-markdown": "^1.0.0",
     "gulp-markdown-docs": "^0.1.1",
     "gulp-rsync": "0.0.5",

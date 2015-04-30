@@ -5,6 +5,7 @@ var template = require('gulp-template');
 var install = require('gulp-install');
 var path = require('path');
 var fs = require('fs');
+var mkdirp = require('mkdirp');
 
 String.prototype.capitalize = function() {
 	var words = this.split(' ');
@@ -58,24 +59,33 @@ function getGrommetPath() {
 }
 
 gulp.task('init', function (done) {
-	var templateFolder = path.join(getGrommetPath(), 'templates/**');
-	var mobileIcon = path.join(getGrommetPath(), 'mobile-app-icon.png');
-	var shortcutIcon = path.join(getGrommetPath(), 'shortcut-icon.png');
+	mkdirp('./' + app, function (err) {
+		if (err) {
+			console.log('Error trying to create project: '+ err);
+		} else {
+			process.chdir('./' + app);
 
-	gulp.src(mobileIcon).pipe(gulp.dest('./src/img'));
-	gulp.src(shortcutIcon).pipe(gulp.dest('./src/img'));
+			var templateFolder = path.join(getGrommetPath(), 'templates/**');
+			var mobileIcon = path.join(getGrommetPath(), 'mobile-app-icon.png');
+			var shortcutIcon = path.join(getGrommetPath(), 'shortcut-icon.png');
 
-  gulp.src(templateFolder)
-  	.pipe(template({
-        appName: app,
-        appTitle: title
-    }))
-    .pipe(gulp.dest('./'))
-    .pipe(install())
-    .on('end', function () {
-      done();
-    })
-    .resume();
+			gulp.src(mobileIcon).pipe(gulp.dest('./src/img'));
+			gulp.src(shortcutIcon).pipe(gulp.dest('./src/img'));
+
+		  gulp.src(templateFolder)
+		  	.pipe(template({
+		        appName: app,
+		        appTitle: title
+		    }))
+		    .pipe(gulp.dest('./'))
+		    .pipe(install())
+		    .on('end', function () {
+		      done();
+		    })
+		    .resume();
+		}
+	});
+
 });
 
 gulp.start(task);
