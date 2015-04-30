@@ -52,7 +52,7 @@ var Cookies = {
     return true;
   },
   remove: function (sKey, sPath, sDomain) {
-    if (!this.hasItem(sKey)) { return false; }
+    if (!this.has(sKey)) { return false; }
     document.cookie = encodeURIComponent(sKey) + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT" + (sDomain ? "; domain=" + sDomain : "") + (sPath ? "; path=" + sPath : "");
     return true;
   },

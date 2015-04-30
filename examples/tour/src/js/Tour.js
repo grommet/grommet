@@ -88,7 +88,6 @@ var Tour = React.createClass({
           </Title>
           <Menu icon={<Gravatar email={this.state.data.email || ''} />}
             align="right">
-            <Link to="settings">Settings</Link>
             <a onClick={this._onLogout}>Logout</a>
           </Menu>
         </Header>
