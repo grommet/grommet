@@ -46,9 +46,6 @@
     			<li><b>gulp scsslint</b>: runs the Sass linter for all the files under <b>src/scss</b>. This task is disabled by default because it requires Ruby and scss-lint to be installed.
     			Add <b>scsslint: true</b> option inside your gulpfile.js to enable Sass linting.</li>
     			<li><b>gulp sync</b>: synchronizes the content of the dist folder with the remote server. Only executed if <b>sync</b> option object is provided in the gulpfile.js. The sync object specs is provided below:
-    			hostname: 'grommet.usa.hp.com',
-    username: 'ligo',
-    remoteDestination: '/var/www/html/docs/dist'
     			<p>
     				<pre><code class="json">
     				   {"sync: {\n  hostname: 'path.to.hostname',\n  username: 'username',\n  remoteDestination: 'path/to/remote'\n}"}
