@@ -1,8 +1,5 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-var SessionActions = require('./actions/SessionActions');
-var Router = require('./utils/Router');
-
 var Grommet = {
   // Components
   App: require('./components/App'),
@@ -15,7 +12,6 @@ var Grommet = {
   FormField: require('./components/FormField'),
   Header: require('./components/Header'),
   Label: require('./components/Label'),
-  Link: require('./components/Link'),
   Login: require('./components/Login'),
   LoginForm: require('./components/LoginForm'),
   Menu: require('./components/Menu'),
@@ -55,24 +51,11 @@ var Grommet = {
   // Dispatchers
   AppDispatcher: require('./dispatchers/AppDispatcher'),
   // Actions
-  SessionActions: SessionActions,
+  SessionActions: require('./actions/SessionActions'),
   // Stores
   SessionStore: require('./stores/SessionStore'),
   // Utils
-  Api: require('./utils/Api'),
-  Router: Router,
-
-  Index: require('./index/index'),
-
-  init: function (options) {
-    SessionActions.setup(options.login !== false);
-
-    Router.init(options.routes, options.mainContainerId);
-  },
-
-  start: function () {
-    Router.start();
-  }
+  Api: require('./utils/Api')
 };
 
 module.exports = Grommet;
