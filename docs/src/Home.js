@@ -129,7 +129,7 @@ var Home = React.createClass({
             <p>The easiest way to learn a new framework is by writing a simple
               application on top of it. Grommet depends on Node and NPM.
             </p>
-            <pre className="home__commands comming-soon"><code>
+            <pre className="home__commands"><code>
               {"$ npm install -g grommet\n$ grommet init myNewApp"}
             </code></pre>
           </div>
