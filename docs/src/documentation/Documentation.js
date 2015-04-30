@@ -44,8 +44,8 @@ var CONTENTS = [
   {label: 'Guides',
     contents: [
       {route: 'doc_helloworld', label: 'Hello World', component: HelloWorld, default: true},
-      {route: 'doc_tutorial', label: 'Tutorial', component: Tutorial},
-      {route: 'doc_getstarted', label: 'Get Started', component: GetStarted}
+      {route: 'doc_getstarted', label: 'Get Started', component: GetStarted},
+      {route: 'doc_tutorial', label: 'Tutorial', component: Tutorial}
     ]
   },
   {label: 'Patterns',
