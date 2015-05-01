@@ -7,8 +7,11 @@ var runSequence = require('run-sequence');
 var assign = require('object-assign');
 var webpack = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
-
 var path = require('path');
+
+String.prototype.endsWith = function(suffix) {
+  return this.indexOf(suffix, this.length - suffix.length) !== -1;
+};
 
 var webpackConfig = {
   output: {
@@ -98,8 +101,32 @@ module.exports = function(gulp, opts) {
     });
   });
 
+  gulp.task('test', function (done) {
+  	if (options.testPaths) {
+  		var mocha = require('gulp-mocha');
+  		require('./test-compiler');
+  		require('./mocked-dom')('<html><body></body></html>');
+  		var walk = require('walk');
+  		options.testPaths.forEach(function(testPath, index) {
+  			var walker = walk.walk(testPath, { followLinks: false });
+	  		walker.on('file', function(root, stat, next) {
+			    if (stat.name.endsWith('.js')) {
+			    	gulp.src(root + '/' + stat.name, {read: false}).pipe(mocha());
+			    }
+			    next();
+				});
+
+				if (index === options.testPaths.length - 1) {
+					walker.on('end', function() {
+					  done();
+					});
+				}	
+  		});
+  	}
+	});
+
   gulp.task('preprocess', function(callback) {
-    runSequence('clean', 'copy', 'jslint', 'scsslint', callback);
+    runSequence('clean', 'copy', 'jslint', 'scsslint', 'test', callback);
   });
 
    gulp.task('dist-preprocess', function(callback) {

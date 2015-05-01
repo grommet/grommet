@@ -62,7 +62,10 @@ var opts = {
     }
   },
   distPreprocess: ['dist-css'],
-  scsslint: true
+  scsslint: true,
+  testPaths: [
+  	'test'
+  ]
 };
 
 require('./src/js/utils/gulp-tasks')(gulp, opts);

@@ -71,6 +71,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-minify-css": "^1.1.0",
     "gulp-sourcemaps": "^1.5.2",
+    "gulp-mocha": "^2.0.1",
     "jsx-loader": "0.13.1",
     "css-loader": "^0.10.1",
     "sass-loader": "^0.4.2",
@@ -83,6 +84,9 @@
     "webpack": "^1.7.3",
     "webpack-dev-server": "^1.8.0",
     "json5": "^0.4.0",
-    "amdefine": "^0.1.0"
+    "amdefine": "^0.1.0",
+    "jsdom": "^3.1.1",
+    "walk": "^2.3.9",
+    "expect": "^1.6.0"
   }
 }
