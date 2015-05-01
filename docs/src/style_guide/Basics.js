@@ -165,7 +165,7 @@ var BasicsSection = React.createClass({
       <li>Use past tense to describe events that occurred in the past.</li>
       <li>Use an active voice whenever possible.</li>
       <li>Passive voice is acceptable to describe some error conditions.</li>
-      <li>Use descriptors clarify terminology. For example, “Specify InflD
+      <li>Use descriptors to clarify terminology. For example, “Specify InflD
       when Detect is set to NO.” We instead recommend something along the
       lines of “Specify the InflD parameter when the Detect option is set
       to NO”.</li>
@@ -237,7 +237,7 @@ var BasicsSection = React.createClass({
     <a className="anchor" id="capitalization"></a>
     <h3>Capitalization</h3>
     <p>For the English language, we recommend using English title capitalization
-    rules for titles (i.e. generally, capitalize first letter of each word). Titles
+    rules for titles (i.e. generally, capitalize the first letter of each word). Titles
     include the following user interface elements:</p>
     <ul>
       <li>Page titles</li>
@@ -291,7 +291,7 @@ var BasicsSection = React.createClass({
     </ul>
 
     <h4>Capitalization in APIs</h4>
-    <p>Yes, our application users make use of our API’s, so it’s important
+    <p>Yes, our application users make use of our APIs, so it’s important
     to provide a familiar voice to our users, regardless of the interface
     they are using.</p>
 
@@ -312,7 +312,7 @@ var BasicsSection = React.createClass({
     <a className="anchor" id="icons"></a>
     <h2>Icons</h2>
     <p>Icons are used for inline controls. Users should be able to identify
-      an icons function without any supporting text decoration. Because of this,
+      an icon’s function without any supporting text decoration. This is why
       we have a fairly small icon set. Text is used for non-iconifiable controls.</p>
 
     <h3>Controls</h3>
