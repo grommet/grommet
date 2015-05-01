@@ -4,6 +4,9 @@
   "main": "src/js/index.js",
   "description": "",
   "author": "",
+  "engines": {
+    "node": ">= 0.9"
+  },
   "dependencies": {
     "grommet": "^0.1.0",
     "react": "^0.13.1",

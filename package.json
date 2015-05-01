@@ -20,6 +20,9 @@
   "bin": {
     "grommet": "./bin/grommet.js"
   },
+  "engines": {
+    "node": ">= 0.9"
+  },
   "dependencies": {
     "gulp": "^3.8.11",
     "gulp-install": "^0.4.0",
