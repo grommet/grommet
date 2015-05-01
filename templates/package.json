@@ -1,6 +1,6 @@
 {
   "name": "<%= appName %>",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "src/js/index.js",
   "description": "",
   "author": "",
@@ -8,7 +8,7 @@
     "node": ">= 0.9"
   },
   "dependencies": {
-    "grommet": "^0.1.0",
+    "grommet": "^0.1.1",
     "react": "^0.13.1",
     "inuit-box-sizing": "~0.2.0",
     "inuit-clearfix": "^0.2.1",

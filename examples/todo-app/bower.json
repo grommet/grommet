@@ -1,6 +1,6 @@
 {
   "name": "grommet-todo-app",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "todoapp.js",
   "description": "Grommet Demo App",
   "authors": [

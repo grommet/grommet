@@ -180,26 +180,26 @@ gulp.task('dist-bower', function() {
 
   //grommet css exploded
   gulp.src('src/scss/grommet-core/*.scss')
-        .pipe(sass())
+        .pipe(sass({includePaths: [ 'node_modules' ]}))
         .pipe(rename('grommet.css'))
         .pipe(gulp.dest('dist-bower/css'));
 
   //grommet css minified
   gulp.src('src/scss/grommet-core/*.scss')
-        .pipe(sass())
+        .pipe(sass({includePaths: [ 'node_modules' ]}))
         .pipe(rename('grommet.min.css'))
         .pipe(minifyCss())
         .pipe(gulp.dest('dist-bower/css'));
 
   //grommet-hpe css exploded
   gulp.src('src/scss/hpe/*.scss')
-        .pipe(sass())
+        .pipe(sass({includePaths: [ 'node_modules' ]}))
         .pipe(rename('grommet-hpe.css'))
         .pipe(gulp.dest('dist-bower/css'));
 
   //grommet-hpe css minified
   gulp.src('src/scss/hpe/*.scss')
-        .pipe(sass())
+        .pipe(sass({includePaths: [ 'node_modules' ]}))
         .pipe(rename('grommet-hpe.min.css'))
         .pipe(minifyCss())
         .pipe(gulp.dest('dist-bower/css'));

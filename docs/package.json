@@ -1,10 +1,10 @@
 {
   "name": "grommet-docs",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "src/index.js",
   "description": "Grommet Docs",
   "author": "Eric Soderberg",
   "dependencies": {
-    "grommet": "^0.1.0"
+    "grommet": "^0.1.1"
   }
 }
