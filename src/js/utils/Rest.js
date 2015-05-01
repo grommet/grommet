@@ -6,12 +6,6 @@ var _headers = {};
 
 var _timeout = 10000; // 10s
 
-function deliver(req, handler) {
-  req.timeout(_timeout);
-  req.set(_headers);
-  req.end(handler);
-}
-
 // convert params to string, to deal with array values
 function buildQueryParams(params) {
   var result = [];
@@ -44,19 +38,25 @@ var Rest = {
     _headers[name] = value;
   },
 
-  get: function (uri, params, handler) {
+  get: function (uri, params) {
     var op = request.get(uri).query(buildQueryParams(params));
-    deliver(op, handler);
+    op.timeout(_timeout);
+    op.set(_headers);
+    return op;
   },
 
-  post: function (uri, data, handler) {
+  post: function (uri, data) {
     var op = request.post(uri).send(data);
-    deliver(op, handler);
+    op.timeout(_timeout);
+    op.set(_headers);
+    return op;
   },
 
-  del: function (uri, handler) {
+  del: function (uri) {
     var op = request.del(uri);
-    deliver(op, handler);
+    op.timeout(_timeout);
+    op.set(_headers);
+    return op;
   }
 };
 

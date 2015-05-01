@@ -7,7 +7,7 @@ var Menu = require('grommet/components/Menu');
 var Title = require('grommet/components/Title');
 var Close = require('grommet/components/icons/Clear');
 var Link = require('react-router').Link;
-var SessionActions = require('grommet/actions/SessionActions');
+var Actions = require('grommet/actions/Actions');
 var Rest = require('grommet/utils/Rest');
 
 var MainMenu = React.createClass({
@@ -36,7 +36,7 @@ var MainMenu = React.createClass({
     if (err && err.timeout > 1000) {
       // ignore
     } else if (res.status === 400) {
-      SessionActions.logout();
+      Actions.logout();
     } else if (!res.ok) {
       // ignore
     } else {
@@ -51,8 +51,8 @@ var MainMenu = React.createClass({
     });
     this.setState({visiblePages: visiblePages, suggestions: null});
     Rest.get('/rest/index/search-suggestions',
-      {start: 0, count: 5, query: text},
-      this._onSuggestionsResponse);
+      {start: 0, count: 5, query: text})
+      .end(this._onSuggestionsResponse);
   },
 
   getInitialState: function() {

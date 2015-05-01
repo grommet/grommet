@@ -53,7 +53,7 @@ module.exports = function(gulp, opts) {
 
   var dist = options.dist || path.resolve(process.cwd(), "dist");
   options.webpack = options.webpack || {};
-  
+
   var scssLintPath = path.resolve(__dirname, 'scss-lint.yml');
 
   if (options.base) {
@@ -85,8 +85,8 @@ module.exports = function(gulp, opts) {
 	      gulp.src(scssAsset).pipe(scsslint({
 	        'config': scssLintPath
 	      })).pipe(scsslint.failReporter());
-	    });	
-  	} 
+	    });
+  	}
   });
 
   gulp.task('jslint', function() {
@@ -120,13 +120,13 @@ module.exports = function(gulp, opts) {
 					walker.on('end', function() {
 					  done();
 					});
-				}	
+				}
   		});
   	}
 	});
 
   gulp.task('preprocess', function(callback) {
-    runSequence('clean', 'copy', 'jslint', 'scsslint', 'test', callback);
+    runSequence('clean', 'copy', 'jslint', 'scsslint', callback);
   });
 
    gulp.task('dist-preprocess', function(callback) {
@@ -273,7 +273,7 @@ module.exports = function(gulp, opts) {
         exclude: ['.DS_Store'],
       }));
   	}
-    
+
   });
 
 };

@@ -4,7 +4,7 @@ var React = require('react');
 var Index = require('grommet/components/Index');
 var Rest = require('grommet/utils/Rest');
 var IndexQuery = require('grommet/utils/IndexQuery');
-var SessionActions = require('grommet/actions/SessionActions');
+var Actions = require('grommet/actions/Actions');
 
 var SCHEMA = [
   {attribute: 'status', label: 'Status', index: 0},
@@ -20,7 +20,7 @@ var Tasks = React.createClass({
     if (err && err.timeout > 1000) {
       this.setState({error: 'Timeout', data: {}});
     } else if (res.status === 400) {
-      SessionActions.logout();
+      Actions.logout();
     } else if (!res.ok) {
       this.setState({error: res.body || res.text, data: {}});
     } else {
@@ -31,8 +31,8 @@ var Tasks = React.createClass({
 
   _getData: function () {
     Rest.get('/rest/index/resources',
-      {category: 'tasks', start: 0, count: 20, query: this.state.query.fullText},
-      this._onResponse);
+      {category: 'tasks', start: 0, count: 20, query: this.state.query.fullText})
+      .end(this._onResponse);
   },
 
   _onQuery: function (query) {

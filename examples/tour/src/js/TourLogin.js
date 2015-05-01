@@ -1,46 +1,44 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
+var Reflux = require('reflux');
 var Login = require('grommet/components/Login');
 var LoginForm = require('grommet/components/LoginForm');
-var SessionActions = require('grommet/actions/SessionActions');
+var Actions = require('grommet/actions/Actions');
 var SessionStore = require('grommet/stores/SessionStore');
 
 var TourLogin = React.createClass({
+
+  mixins: [Reflux.ListenerMixin],
 
   contextTypes: {
     router: React.PropTypes.func.isRequired
   },
 
   _onSubmit: function (fields) {
-    SessionActions.login(fields.username, fields.password);
+    Actions.login(fields.username, fields.password);
   },
 
-  _onChange: function () {
-    var data = SessionStore.getAll();
-    if (data.id) {
+  _onSessionChange: function (session) {
+    if (session.id) {
       setTimeout(function () {
         this.context.router.transitionTo('tour');
       }.bind(this), 1);
     } else {
-      this.setState({data: data});
+      this.setState({session: session});
     }
   },
 
   getInitialState: function () {
-    return {data: SessionStore.getAll()};
+    return {session: SessionStore.getInitialState()};
   },
 
   componentDidMount: function () {
-    SessionStore.addChangeListener(this._onChange);
-  },
-
-  componentWillUnmount: function () {
-    SessionStore.removeChangeListener(this._onChange);
+    this.listenTo(SessionStore, this._onSessionChange);
   },
 
   render: function () {
-    var loginError = this.state.data.loginError;
+    var loginError = this.state.session.loginError;
     var errors = [];
     if (loginError) {
       errors.push(loginError.message);

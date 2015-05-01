@@ -21,7 +21,7 @@ router.post('/login-sessions', function(req, res) {
   if ('error' === req.body.userName) {
     res.status(400).send({
       message: "Invalid username or password or directory.",
-      recommendedActions: "Enter correct credentials and try again." +
+      resolution: "Enter correct credentials and try again." +
         " To obtain a username or password, contact your security administrator."
     });
   } else {

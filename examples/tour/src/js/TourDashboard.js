@@ -8,7 +8,7 @@ var Header = require('grommet/components/Header');
 var Donut = require('grommet/components/Donut');
 var Chart = require('grommet/components/Chart');
 var Rest = require('grommet/utils/Rest');
-var SessionActions = require('grommet/actions/SessionActions');
+var Actions = require('grommet/actions/Actions');
 
 var CONFIG = [
   {
@@ -64,7 +64,7 @@ var TourDashboard = React.createClass({
     if (err && err.timeout > 1000) {
       // ignore for now
     } else if (res.status === 400) {
-      SessionActions.logout();
+      Actions.logout();
     } else if (!res.ok) {
       this.setState({error: res.body || res.text, data: {}});
     } else {
@@ -92,7 +92,7 @@ var TourDashboard = React.createClass({
     if (err && err.timeout > 1000) {
       // ignore for now
     } else if (res.status === 400) {
-      SessionActions.logout();
+      Actions.logout();
     } else if (!res.ok) {
       this.setState({error: res.body || res.text, data: {}});
     } else {
@@ -120,15 +120,13 @@ var TourDashboard = React.createClass({
   _getData: function () {
     this.state.tiles.forEach(function (tile) {
       if ('donut' === tile.type) {
-        Rest.get('/rest/index/resources/aggregated',
-          tile.params,
-          function (err, res) {
+        Rest.get('/rest/index/resources/aggregated', tile.params)
+          .end(function (err, res) {
             this._onDonutResponse(err, res, tile);
           }.bind(this));
       } else if ('chart' === tile.type) {
-        Rest.get('/rest/index/resources/aggregated',
-          tile.params,
-          function (err, res) {
+        Rest.get('/rest/index/resources/aggregated', tile.params)
+          .end(function (err, res) {
             this._onChartResponse(err, res, tile);
           }.bind(this));
       }

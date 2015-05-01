@@ -1,8 +1,24 @@
-var Constants = require('../constants/AppConstants');
-var Api = require('grommet/utils/api');
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-module.exports = {
-  requestAccess: function(data) {
-    Api.post(Constants.ActionTypes.REQUEST_ACCESS, '/rest/request-access', data, data);
-  }
-};
+var Reflux = require('reflux');
+var Rest = require('grommet/utils/Rest');
+
+var DocsActions = Reflux.createActions({
+  'requestAccess': {asyncResult: true},
+});
+
+DocsActions.requestAccess.listen(function(data) {
+  var thisAction = this;
+  Rest.post('/rest/request-access', data)
+    .end(function(err, res) {
+      if (err) {
+        return thisAction.failed(err, res.body);
+      }
+      if (!res.ok) {
+        return thisAction.failed(err, res.body);
+      }
+      thisAction.completed();
+    });
+});
+
+module.exports = DocsActions;

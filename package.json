@@ -21,7 +21,6 @@
     "grommet": "./bin/grommet.js"
   },
   "dependencies": {
-    "flux": "^2.0.1",
     "gulp": "^3.8.11",
     "gulp-install": "^0.4.0",
     "gulp-template": "^3.0.0",

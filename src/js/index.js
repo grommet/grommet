@@ -46,16 +46,12 @@ var Grommet = {
     KeyboardAccelerators: require('./mixins/KeyboardAccelerators'),
     ReactLayeredComponent: require('./mixins/ReactLayeredComponent')
   },
-  // Constants
-  AppConstants: require('./constants/AppConstants'),
-  // Dispatchers
-  AppDispatcher: require('./dispatchers/AppDispatcher'),
   // Actions
-  SessionActions: require('./actions/SessionActions'),
+  Actions: require('./actions/Actions'),
   // Stores
   SessionStore: require('./stores/SessionStore'),
   // Utils
-  Api: require('./utils/Api')
+  Rest: require('./utils/Rest')
 };
 
 module.exports = Grommet;

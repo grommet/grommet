@@ -1,9 +1,7 @@
-// (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-var _ = require('lodash');
-var AppDispatcher = require('../dispatchers/AppDispatcher');
-var EventEmitter = require('events').EventEmitter;
-var Constants = require('../constants/AppConstants');
+var Reflux = require('reflux');
+var Actions = require('../actions/Actions');
 var Cookies = require('../utils/Cookies');
 
 var TOKEN = "token";
@@ -11,98 +9,65 @@ var USER = "user";
 var LOGIN_TIME = "loginTime";
 var EMAIL = "email";
 
-var _data = {
-  id: null,
-  name: null,
-  created: null,
-  email: null,
-  loginError: null // {message: , resolution: }
-};
+var SessionStore = Reflux.createStore({
 
-function setup () {
-  _data.id = Cookies.get(TOKEN);
-  _data.name = Cookies.get(USER);
-  _data.created = Cookies.get(LOGIN_TIME);
-  _data.email = Cookies.get(EMAIL);
-}
-
-function login(username, id) {
-  _data.id = id;
-  _data.name = username;
-  _data.created = new Date();
-  _data.loginError = null;
-  if (username.indexOf('@') !== -1) {
-    _data.email = username;
-  }
-  Cookies.set(TOKEN, _data.id);
-  Cookies.set(USER, _data.name);
-  Cookies.set(LOGIN_TIME, _data.created);
-  Cookies.set(EMAIL, _data.email);
-}
-
-function setLoginError(message, resolution) {
-  _data.loginError = {
-    message: message,
-    resolution: resolution
-  };
-}
-
-function logout() {
-  _data.id = null;
-  _data.name = null;
-  _data.created = null;
-  Cookies.remove(TOKEN);
-  Cookies.remove(USER);
-  Cookies.remove(LOGIN_TIME);
-}
-
-var SessionStore = _.extend({}, EventEmitter.prototype, {
-
-  // public methods used by Controller-View to operate on data
-  getAll: function() {
-    return _data;
+  _data: {
+    id: null,
+    name: null,
+    created: null,
+    email: null,
+    loginError: null // {message: , resolution: }
   },
 
-  // Allow Controller-View to register itself with store
-  addChangeListener: function(callback) {
-    this.on(Constants.CHANGE_EVENT, callback);
+  init: function () {
+    this._data.id = Cookies.get(TOKEN);
+    this._data.name = Cookies.get(USER);
+    this._data.created = Cookies.get(LOGIN_TIME);
+    this._data.email = Cookies.get(EMAIL);
+
+    this.listenTo(Actions.login.completed, this._onLoginCompleted);
+    this.listenTo(Actions.login.failed, this._onLoginFailed);
+    this.listenTo(Actions.logout, this._onLogout);
   },
-  removeChangeListener: function(callback) {
-    this.removeListener(Constants.CHANGE_EVENT, callback);
-  },
-  // triggers change listener above, firing controller-view callback
-  emitChange: function() {
-    this.emit(Constants.CHANGE_EVENT);
-  },
 
-  // register store with dispatcher, allowing actions to flow through
-  dispatcherIndex: AppDispatcher.register(function(payload) {
-    var action = payload.action;
-
-    switch(action.type) {
-
-      case Constants.ActionTypes.SESSION_SETUP:
-        setup();
-        SessionStore.emitChange();
-        break;
-
-      case Constants.ActionTypes.SESSION_LOGOUT:
-        logout();
-        SessionStore.emitChange();
-        break;
-
-      case Constants.ActionTypes.SESSION_LOGIN:
-        if (Constants.Request.SUCCESS === action.result) {
-          login(action.context.username, action.response.sessionID);
-        } else if (Constants.Request.ERROR === action.result) {
-          setLoginError(action.response.message, action.response.recommendedActions);
-        }
-        SessionStore.emitChange();
-        break;
-
+  _onLoginCompleted: function (username, id) {
+    this._data.id = id;
+    this._data.name = username;
+    this._data.created = new Date();
+    this._data.loginError = null;
+    if (username.indexOf('@') !== -1) {
+      this._data.email = username;
     }
-  })
+    Cookies.set(TOKEN, this._data.id);
+    Cookies.set(USER, this._data.name);
+    Cookies.set(LOGIN_TIME, this._data.created);
+    Cookies.set(EMAIL, this._data.email);
+    this.trigger(this._data);
+  },
 
+  _onLoginFailed: function (error, response) {
+    this._data.loginError = {
+      message: response.message,
+      resolution: response.resolution
+    };
+    this.trigger(this._data);
+  },
+
+  _onLogout: function () {
+    this._data.id = null;
+    this._data.name = null;
+    this._data.created = null;
+    this._data.email = null;
+    Cookies.remove(TOKEN);
+    Cookies.remove(USER);
+    Cookies.remove(LOGIN_TIME);
+    Cookies.remove(EMAIL);
+    this.trigger(this._data);
+  },
+
+  getInitialState: function () {
+    return this._data;
+  }
 });
 
 module.exports = SessionStore;

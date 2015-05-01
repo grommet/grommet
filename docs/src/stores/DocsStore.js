@@ -1,47 +1,31 @@
 // (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
-var _ = require('lodash');
-var EventEmitter = require('events').EventEmitter;
-var Constants = require('../constants/AppConstants');
-var AppDispatcher = require('grommet/dispatchers/AppDispatcher');
+var Reflux = require('reflux');
+var DocsActions = require('../actions/DocsActions');
 
-var _data = {
-  requestAccessError: null
-};
+var DocsStore = Reflux.createStore({
 
-var DocsStore = _.extend({}, EventEmitter.prototype, {
+  _data: {
+    requestAccessError: null
+  },
+
+  init: function () {
+    this.listenTo(DocsActions.requestAccess.completed, this._onRequestAccessCompleted);
+    this.listenTo(DocsActions.requestAccess.failed, this._onRequestAccessFailed);
+  },
+
+  _onRequestAccessCompleted: function () {
+    this._data.requestAccessError = null;
+    this.trigger(this._data);
+  },
+
+  _onRequestAccessFailed: function () {
+    this._data.requestAccessError = 'error';
+    this.trigger(this._data);
+  },
 
   requestAccessError: function() {
-    return _data.requestAccessError !== null;
-  },
-
-  addChangeListener: function(callback) {
-    this.on(Constants.CHANGE_EVENT, callback);
-  },
-
-  removeChangeListener: function(callback) {
-    this.removeListener(Constants.CHANGE_EVENT, callback);
-  },
-
-  emitChange: function() {
-    this.emit(Constants.CHANGE_EVENT);
-  },
-
-  dispatcherIndex: AppDispatcher.register(function(payload) {
-    var action = payload.action;
-
-    switch(action.type) {
-
-      case Constants.ActionTypes.REQUEST_ACCESS:
-
-        if (Constants.Request.SUCCESS === action.result) {
-          _data.requestAccessError = null;
-        } else if (Constants.Request.ERROR === action.result) {
-          _data.requestAccessError = 'error';
-        }
-        DocsStore.emitChange();
-        break;
-    }
-  })
+    return this._data.requestAccessError !== null;
+  }
 });
 
 module.exports = DocsStore;

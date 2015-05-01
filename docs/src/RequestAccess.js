@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
+var Reflux = require('reflux');
 var Link = require('react-router').Link;
 var Layer = require('grommet/components/Layer');
 var Form = require('grommet/components/Form');
@@ -11,10 +12,12 @@ var Footer = require('grommet/components/Footer');
 var Menu = require('grommet/components/Menu');
 var CloseIcon = require('grommet/components/icons/Clear');
 var Status = require('grommet/components/icons/Status');
-var Actions = require('./actions/DocsActions');
+var DocsActions = require('./actions/DocsActions');
 var DocsStore = require('./stores/DocsStore');
 
 var RequestAccess = React.createClass({
+
+  mixins: [Reflux.ListenerMixin],
 
   _onNameChange: function (event) {
     this.setState({name: event.target.value});
@@ -44,7 +47,7 @@ var RequestAccess = React.createClass({
         github: this.state.github
       };
 
-      Actions.requestAccess(data);
+      DocsActions.requestAccess(data);
     } else {
       this.setState({invalid: true});
     }
@@ -80,11 +83,7 @@ var RequestAccess = React.createClass({
   },
 
   componentDidMount: function() {
-    DocsStore.addChangeListener(this._onChange);
-  },
-
-  componentWillUnmount: function() {
-    DocsStore.removeChangeListener(this._onChange);
+    this.listenTo(DocsStore, this._onChange);
   },
 
   render: function() {
