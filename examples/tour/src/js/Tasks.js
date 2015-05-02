@@ -1,49 +1,57 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
+var merge = require('lodash/object/merge');
 var Index = require('grommet/components/Index');
 var Rest = require('grommet/utils/Rest');
-var IndexQuery = require('grommet/utils/IndexQuery');
 var Actions = require('grommet/actions/Actions');
 
-var SCHEMA = [
-  {attribute: 'status', label: 'Status', index: 0},
-  {attribute: 'name', label: 'Name', index: 1},
-  {attribute: 'associatedResourceName', label: 'Resource', index: 2},
-  {attribute: 'created', label: 'Time', index: 3, timestamp: true},
-  {attribute: 'state', label: 'State', index: 4}
-];
+var OPTIONS = {
+  view: 'table',
+  attributes: [
+    {attribute: 'status', label: 'Status', index: 0},
+    {attribute: 'name', label: 'Name', index: 1},
+    {attribute: 'associatedResourceName', label: 'Resource', index: 2},
+    {attribute: 'created', label: 'Time', index: 3, timestamp: true},
+    {attribute: 'state', label: 'State', index: 4}
+  ],
+  params: {
+    category: 'tasks',
+    start: 0,
+    count: 20,
+    query: null
+  }
+};
 
 var Tasks = React.createClass({
 
   _onResponse: function (err, res) {
     if (err && err.timeout > 1000) {
-      this.setState({error: 'Timeout', data: {}});
+      this.setState({error: 'Timeout', result: {}});
     } else if (res.status === 400) {
       Actions.logout();
     } else if (!res.ok) {
-      this.setState({error: res.body || res.text, data: {}});
+      this.setState({error: res.body || res.text, result: {}});
     } else {
-      var data = res.body;
-      this.setState({data: data, error: null});
+      var result = res.body;
+      this.setState({result: result, error: null});
     }
   },
 
   _getData: function () {
-    Rest.get('/rest/index/resources',
-      {category: 'tasks', start: 0, count: 20, query: this.state.query.fullText})
+    Rest.get('/rest/index/resources', this.state.options.params)
       .end(this._onResponse);
   },
 
   _onQuery: function (query) {
-    this.setState({query: query}, this._getData);
+    var options = merge(this.state.options, {params: {query: query}});
+    this.setState({options: options}, this._getData);
   },
 
   getInitialState: function () {
     return {
-      schema: SCHEMA,
-      query: IndexQuery.create(''),
-      data: {}
+      options: OPTIONS,
+      result: {}
     };
   },
 
@@ -54,12 +62,9 @@ var Tasks = React.createClass({
   render: function () {
     return (
       <Index
-        schema={this.state.schema}
-        query={this.state.query}
-        data={this.state.data}
-        error={this.state.error}
-        onQuery={this._onQuery}
-        view="table" />
+        options={this.state.options}
+        result={this.state.result}
+        onQuery={this._onQuery} />
     );
   }
 

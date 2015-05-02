@@ -11,8 +11,8 @@
 
   td,
   th {
-    padding: quarter($inuit-base-spacing-unit) halve($inuit-base-spacing-unit);
-    line-height: $inuit-base-spacing-unit + halve($inuit-base-spacing-unit);
+    padding: halve($inuit-base-spacing-unit);
+    vertical-align: top;
     text-align: left;
   }
 

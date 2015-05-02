@@ -11,38 +11,51 @@ var CLASS_ROOT = 'index';
 var Index = React.createClass({
 
   propTypes: {
-    schema: React.PropTypes.arrayOf(React.PropTypes.shape({
-      attribute: React.PropTypes.string,
-      label: React.PropTypes.string,
-      index: React.PropTypes.number,
-      timestamp: React.PropTypes.bool
-    })),
-    data: React.PropTypes.shape({
+    options: React.PropTypes.shape({
+      category: React.PropTypes.oneOfType([
+        React.PropTypes.string,
+        React.PropTypes.arrayOf(React.PropTypes.string)
+      ]),
+      attributes: React.PropTypes.arrayOf(React.PropTypes.shape({
+        attribute: React.PropTypes.string,
+        label: React.PropTypes.string,
+        index: React.PropTypes.number,
+        timestamp: React.PropTypes.bool
+      })),
+      view: React.PropTypes.oneOf(["table", "tiles"]),
+      params: React.PropTypes.shape({
+        query: React.PropTypes.string
+      })
+    }),
+    result: React.PropTypes.shape({
       total: React.PropTypes.number,
-      unFilteredTotal: React.PropTypes.number,
+      unfilteredTotal: React.PropTypes.number,
       start: React.PropTypes.number,
       count: React.PropTypes.number,
-      items: React.PropTypes.arrayOf(React.PropTypes.object)
+      items: React.PropTypes.arrayOf(React.PropTypes.object),
+      error: React.PropTypes.string
     }),
     selection: React.PropTypes.oneOfType([
       React.PropTypes.string, // uri
       React.PropTypes.arrayOf(React.PropTypes.string)
     ]),
-    query: React.PropTypes.object,
-    error: React.PropTypes.string,
     onSelect: React.PropTypes.func,
-    onQuery: React.PropTypes.func,
-    onSchema: React.PropTypes.func,
-    view: React.PropTypes.oneOf(["table", "tiles"])
+    onQuery: React.PropTypes.func
   },
 
   getDefaultProps: function () {
     return ({
-      schema: [{name: 'name', label: 'Name', index: 0}],
-      view: "table",
-      data: {},
-      query: IndexQuery.create('')
+      options: {
+        attributes: [{name: 'name', label: 'Name', index: 0}],
+        view: "table"
+      },
+      result: {}
     });
+  },
+
+  _onSearch: function (text) {
+    var query = IndexQuery.create(text);
+    this.props.onQuery(query.fullText);
   },
 
   /*
@@ -98,10 +111,16 @@ var Index = React.createClass({
       classes.push(this.props.className);
     }
 
-    var data = this.props.data;
+    var options = this.props.options;
 
+    var searchText = options.params.query || '';
+    //if (options.params.query) {
+    //  searchText = options.params.query.fullText;
+    //}
+
+    var result = this.props.result;
     var more = null;
-    if (data && (data.start + data.count) < data.total) {
+    if ((result.start + result.count) < result.total) {
       more = (
         <div ref="more" className={CLASS_ROOT + "__more"}>
           {'more ...'}
@@ -110,17 +129,17 @@ var Index = React.createClass({
     }
 
     var view = null;
-    if ('table' === this.props.view) {
-      view = <IndexTable schema={this.props.schema} data={data} />;
-    } else if ('tiles' === this.props.view) {
-      view = <IndexTiles schema={this.props.schema} data={data} />;
+    if ('table' === options.view) {
+      view = <IndexTable options={options} result={result} />;
+    } else if ('tiles' === options.view) {
+      view = <IndexTiles options={options} result={result} />;
     }
 
     var error = null;
-    if (this.props.error) {
+    if (result.error) {
       error = (
         <div className={CLASS_ROOT + "__error"}>
-          {this.props.error}
+          {result.error}
         </div>
       );
     }
@@ -129,9 +148,10 @@ var Index = React.createClass({
       <div className={classes.join(' ')}>
         <div className={CLASS_ROOT + "__container"}>
           <IndexHeader className={CLASS_ROOT + "__header"}
-            data={this.props.data}
-            query={this.props.query}
-            onQuery={this.props.onQuery} />
+            searchText={searchText}
+            total={result.total}
+            unfilteredTotal={result.unfilteredTotal}
+            onSearch={this._onSearch} />
           <div ref="items" className={CLASS_ROOT + "__items"}>
             {error}
             {view}

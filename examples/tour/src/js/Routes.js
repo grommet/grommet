@@ -13,6 +13,7 @@ var TBD = require('grommet/components/TBD');
 var Tour = require('./Tour');
 var TourDashboard = require('./TourDashboard');
 var Tasks = require('./Tasks');
+var Activity = require('grommet/components/Activity');
 
 var rootPath = "/tour/";
 if (__DEV_MODE__) {
@@ -24,7 +25,7 @@ var routes = (
     <Route name="login" handler={TourLogin}/>
     <Route name="tbd" handler={TBD}/>
     <Route name="settings" handler={TBD}/>
-    <Route name="activity" handler={TBD} />
+    <Route name="activity" handler={Activity} />
     <Route name="tasks" handler={Tasks} />
     <Route name="reports" handler={TBD} />
     <Route name="dashboard-edit" path="dashboard/edit"

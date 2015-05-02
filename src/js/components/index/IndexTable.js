@@ -10,17 +10,21 @@ var CLASS_ROOT = 'index-table';
 var IndexTable = React.createClass({
 
   propTypes: {
-    schema: React.PropTypes.arrayOf(React.PropTypes.shape({
-      attribute: React.PropTypes.string,
-      label: React.PropTypes.string,
-      index: React.PropTypes.number,
-      timestamp: React.PropTypes.bool
-    })),
-    data: React.PropTypes.shape({
+    options: React.PropTypes.shape({
+      attributes: React.PropTypes.arrayOf(React.PropTypes.shape({
+        attribute: React.PropTypes.string,
+        label: React.PropTypes.string,
+        index: React.PropTypes.number,
+        timestamp: React.PropTypes.bool
+      }))
+    }),
+    result: React.PropTypes.shape({
       total: React.PropTypes.number,
+      unfilteredTotal: React.PropTypes.number,
       start: React.PropTypes.number,
       count: React.PropTypes.number,
-      items: React.PropTypes.arrayOf(React.PropTypes.object)
+      items: React.PropTypes.arrayOf(React.PropTypes.object),
+      error: React.PropTypes.string
     }),
     selection: React.PropTypes.oneOfType([
       React.PropTypes.string, // uri
@@ -35,7 +39,9 @@ var IndexTable = React.createClass({
       classes.push(this.props.className);
     }
 
-    var headerCells = this.props.schema.map(function (attribute) {
+    var attributes = this.props.options.attributes;
+
+    var headerCells = attributes.map(function (attribute) {
       var classes = [];
       var content = attribute.label;
       if ('status' === attribute.attribute) {
@@ -50,9 +56,9 @@ var IndexTable = React.createClass({
     });
 
     var rows = null;
-    if (this.props.data && this.props.data.items) {
-      rows = this.props.data.items.map(function (item) {
-        var cells = this.props.schema.map(function (attribute) {
+    if (this.props.result.items) {
+      rows = this.props.result.items.map(function (item) {
+        var cells = attributes.map(function (attribute) {
           return (
             <td key={attribute.attribute}>
               <IndexAttribute item={item} attribute={attribute} />

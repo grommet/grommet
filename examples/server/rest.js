@@ -35,6 +35,16 @@ router.delete('/login-sessions', function(req, res) {
   res.json(null);
 });
 
+router.get('/preferences/index', function(req, res) {
+  var preferences = data.getPreferences(req.headers.auth, req.query.category);
+  if (! preferences) {
+    res.status(404).send();
+  } else {
+    res.json(preferences);
+  }
+});
+
+// Email for Request Access TODO: move to a separate module?
 function handleEmailResponse(error, info) {
   if (error) {
     console.log(error);
@@ -239,7 +249,7 @@ router.get('/index/resources', function(req, res) {
     start: startIndex,
     count: items.length,
     total: total,
-    unFilteredTotal: unfilteredTotal,
+    unfilteredTotal: unfilteredTotal,
     items: items
   });
 });

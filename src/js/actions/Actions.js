@@ -9,6 +9,8 @@ var Actions = Reflux.createActions({
   'logout': {}
 });
 
+// Session
+
 Actions.login.listen(function(username, password) {
   var thisAction = this;
   Rest.post('/rest/login-sessions',

@@ -11,16 +11,21 @@ var CLASS_ROOT = 'index-tiles';
 var IndexTiles = React.createClass({
 
   propTypes: {
-    schema: React.PropTypes.arrayOf(React.PropTypes.shape({
-      attribute: React.PropTypes.string,
-      label: React.PropTypes.string,
-      index: React.PropTypes.number
-    })),
-    data: React.PropTypes.shape({
+    options: React.PropTypes.shape({
+      attributes: React.PropTypes.arrayOf(React.PropTypes.shape({
+        attribute: React.PropTypes.string,
+        label: React.PropTypes.string,
+        index: React.PropTypes.number,
+        timestamp: React.PropTypes.bool
+      }))
+    }),
+    result: React.PropTypes.shape({
       total: React.PropTypes.number,
+      unfilteredTotal: React.PropTypes.number,
       start: React.PropTypes.number,
       count: React.PropTypes.number,
-      items: React.PropTypes.arrayOf(React.PropTypes.object)
+      items: React.PropTypes.arrayOf(React.PropTypes.object),
+      error: React.PropTypes.string
     }),
     selection: React.PropTypes.oneOfType([
       React.PropTypes.string, // uri
@@ -42,7 +47,7 @@ var IndexTiles = React.createClass({
         var headerValues = [];
         var values = [];
 
-        this.props.schema.forEach(function (attribute) {
+        this.props.attributes.forEach(function (attribute) {
           var value = (
             <IndexAttribute key={attribute.attribute}
               item={item} attribute={attribute} />

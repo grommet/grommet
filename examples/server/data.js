@@ -2,12 +2,28 @@
 
 var _ = require('lodash');
 
-var _categories = {}; // name: [resource, ...]
+// name: [resource, ...]
+var _categories = {};
 
-var _resources = {}; // uri: resource
+// uri: resource
+var _resources = {};
 
-var _associations = {}; // uri: {name: {parents: [parent_item, ...],
-                       //              children: [child_item, ...]}}
+// uri: {name: {parents: [parent_item, ...],
+//              children: [child_item, ...]}}
+var _associations = {};
+
+// auth: {category: {attributes: [], view: ''}}
+var _preferences = {};
+
+function categoryId(categoryName) {
+  var result;
+  if (Array.isArray(categoryName)) {
+    result = categoryName.join(',');
+  } else {
+    result = categoryName;
+  }
+  return result;
+}
 
 var Data = {
 
@@ -86,6 +102,24 @@ var Data = {
         assoc[name] = {parents: [], children: []};
     }
     assoc[name].parents.push(parentUri);
+  },
+
+  getPreferences: function (auth, categoryName) {
+    var result = null;
+    var id = categoryId(categoryName);
+    if (_preferences.hasOwnProperty(auth) &&
+      _preferences[auth].hasOwnProperty(id)) {
+      result = _preferences[auth][id];
+    }
+    return result;
+  },
+
+  setPreferences: function (auth, categoryName, data) {
+    var id = categoryId(categoryName);
+    if (! _preferences.hasOwnProperty(auth)) {
+      _preferences[auth] = {};
+    }
+    return _preferences[auth][id] = data;
   }
 
 }

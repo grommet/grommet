@@ -12,12 +12,14 @@ function buildQueryParams(params) {
   for (var property in params) {
     if (params.hasOwnProperty(property)) {
       var value = params[property];
-      if (Array.isArray(value)) {
-        for (var i=0; i<value.length; i++) {
-          result.push(property + '=' + value[i]);
+      if (null !== value && undefined !== value) {
+        if (Array.isArray(value)) {
+          for (var i=0; i<value.length; i++) {
+            result.push(property + '=' + value[i]);
+          }
+        } else {
+          result.push(property + '=' + value);
         }
-      } else {
-        result.push(property + '=' + value);
       }
     }
   }

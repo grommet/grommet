@@ -47,6 +47,7 @@ var Search = React.createClass({
   },
 
   _onFocusInput: function () {
+    this.refs.input.getDOMNode().select();
     this.setState({layer: (! this.props.inline || this.props.suggestions)});
   },
 

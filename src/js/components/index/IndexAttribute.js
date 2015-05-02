@@ -39,7 +39,7 @@ var IndexAttribute = React.createClass({
         );
       } else if (attribute.timestamp) {
         content = (
-          <Timestamp value={new Date(value)} format="MM/DD/YY h:mm:ss a" />
+          <Timestamp value={new Date(value)} format="MM/DD/YY h:mm:ssa" />
         );
       } else {
         content = (<span>{value}</span>);

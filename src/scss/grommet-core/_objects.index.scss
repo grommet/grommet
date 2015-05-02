@@ -16,8 +16,15 @@ $index-header-height: round($inuit-base-spacing-unit * 2);
   }
 
   &__items {
-    padding-top: $index-header-height + double($inuit-base-spacing-unit);
     width: 100%;
+
+    @include media-query(palm) {
+      padding-top: double($inuit-base-spacing-unit);
+    }
+
+    @include media-query(lap-and-up) {
+      padding-top: $index-header-height + double($inuit-base-spacing-unit);
+    }
   }
 
   &__more {
@@ -32,10 +39,18 @@ $index-header-height: round($inuit-base-spacing-unit * 2);
 .index-header {
   position: relative;
   @include inuit-font-size($inuit-heading-size-2, inherit);
-  padding-left: $inuit-base-spacing-unit;
-  padding-right: $inuit-base-spacing-unit;
   display: -webkit-flex;
   display: flex;
+
+  @include media-query(palm) {
+    padding-top: $inuit-base-spacing-unit;
+    padding-bottom: $inuit-base-spacing-unit;
+  }
+
+  @include media-query(lap-and-up) {
+    padding-left: $inuit-base-spacing-unit;
+    padding-right: $inuit-base-spacing-unit;
+  }
 
   &__search {
     -webkit-flex: 1;
@@ -45,11 +60,14 @@ $index-header-height: round($inuit-base-spacing-unit * 2);
   &__count {
     -webkit-flex: 0 0 auto;
     flex: 0 0 auto;
-    min-width: round($inuit-base-spacing-unit * 8);
     margin-left: $inuit-base-spacing-unit;
     color: $secondary-text-color;
     text-align: left;
     white-space: nowrap;
+
+    @include media-query(lap-and-up) {
+      min-width: round($inuit-base-spacing-unit * 8);
+    }
   }
 
   &__out-of {
@@ -57,8 +75,10 @@ $index-header-height: round($inuit-base-spacing-unit * 2);
     @include inuit-font-size($inuit-base-font-size);
     display: none;
 
-    &--active {
-      display: inline;
+    @include media-query(lap-and-up) {
+      &--active {
+        display: inline;
+      }
     }
   }
 }

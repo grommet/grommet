@@ -189,7 +189,8 @@ function buildItems (categoryName, count) {
     }
 
     // ensure alerts for non-OK resources
-    if (resource.status && 'OK' !== resource.status) {
+    if (resource.status && 'OK' !== resource.status &&
+      'alerts' !== categoryName && 'tasks' !== categoryName) {
       var alerts = SCHEMA.alerts;
       var alert = {
         name: alerts.names[i % alerts.names.length],
