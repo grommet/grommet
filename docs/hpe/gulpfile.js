@@ -22,10 +22,6 @@ var opts = {
     {
       asset: 'docs/src/documentation/img/**',
       dist: 'docs/dist/hpe/img/'
-    },
-    {
-      asset: 'src/scss/hpe/font/**',
-      dist: 'docs/dist/hpe/font/'
     }
   ],
   scssAssets: ['src/scss/grommet-core/**/*.scss', 'docs/src/scss/**/*.scss', 'src/scss/hpe/**/*.scss'],

@@ -14,6 +14,7 @@ var path = require('path');
 var packageJSON = require('./package.json');
 delete packageJSON.devDependencies;
 packageJSON.main = 'index.js';
+packageJSON.dependencies['highlight.js'];
 
 var opts = {
   dist: path.resolve(__dirname, 'dist'),

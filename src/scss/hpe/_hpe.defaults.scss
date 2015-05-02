@@ -16,7 +16,11 @@ $brand-graph-colors: (#FF8D6D, #877B75, #2AD2C9, #614767, #617D78);
 
 @font-face {
   font-family: "Metric";
-  src: url("/grommet/scss/hpe/font/MetricWeb-Regular.woff") format('woff');
+  src: url("~grommet/scss/hpe/font/MetricWeb-Regular.woff") format('woff');
+}
+
+html {
+  font-family: 'Metric', Arial, sans-serif;
 }
 
 $border-radius: 0px;

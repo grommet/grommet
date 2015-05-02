@@ -36,7 +36,7 @@ var opts = {
   },
   webpack: {
   	devAlias: {
-  		'grommet/hpe/font': path.resolve(__dirname, '../src/scss/hpe/font'),
+  		'grommet/scss/hpe/font': path.resolve(__dirname, '../src/scss/hpe/font'),
   		'grommet': path.resolve(__dirname, '../src/js')
   	},
     resolve: {

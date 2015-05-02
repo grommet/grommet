@@ -165,10 +165,10 @@ linters:
     enabled: true
 
   UrlFormat:
-    enabled: true
+    enabled: false
 
   UrlQuotes:
-    enabled: true
+    enabled: false
 
   VariableForProperty:
     enabled: false
