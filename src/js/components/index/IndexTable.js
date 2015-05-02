@@ -33,6 +33,10 @@ var IndexTable = React.createClass({
     onSelect: React.PropTypes.func
   },
 
+  _onClickRow: function (uri) {
+    this.props.onSelect(uri);
+  },
+
   render: function () {
     var classes = [CLASS_ROOT];
     if (this.props.className) {
@@ -65,12 +69,16 @@ var IndexTable = React.createClass({
             </td>
           );
         }, this);
-        return (<tr key={item.uri}>{cells}</tr>);
+        return (
+          <tr key={item.uri} onClick={this._onClickRow.bind(this, item.uri)}>
+            {cells}
+          </tr>
+        );
       }, this);
     }
 
     return (
-      <Table className={classes.join(' ')}>
+      <Table className={classes.join(' ')} selectable={true}>
         <thead className={CLASS_ROOT + "__header"}>
           <tr>
             {headerCells}

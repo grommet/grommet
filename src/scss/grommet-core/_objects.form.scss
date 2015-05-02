@@ -10,7 +10,7 @@
   }
 
   .form-fields {
-    padding: $inuit-base-spacing-unit;
+    padding: $inuit-base-spacing-unit 0px;
   }
 
   .layer & {
@@ -18,7 +18,7 @@
     display: flex;
     -webkit-flex-direction: column;
     flex-direction: column;
-    max-height: 100vh;
+    max-height: calc(100vh - #{double($inuit-base-spacing-unit)});
 
     > .header,
     > .footer {

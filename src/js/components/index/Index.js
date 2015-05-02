@@ -1,10 +1,10 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var IndexTable = require('./index/IndexTable');
-var IndexTiles = require('./index/IndexTiles');
-var IndexHeader = require('./index/IndexHeader');
-var IndexQuery = require('../utils/IndexQuery');
+var IndexTable = require('./IndexTable');
+var IndexTiles = require('./IndexTiles');
+var IndexHeader = require('./IndexHeader');
+var IndexQuery = require('../../utils/IndexQuery');
 
 var CLASS_ROOT = 'index';
 
@@ -130,9 +130,15 @@ var Index = React.createClass({
 
     var view = null;
     if ('table' === options.view) {
-      view = <IndexTable options={options} result={result} />;
+      view = (
+        <IndexTable options={options} result={result}
+          onSelect={this.props.onSelect} />
+      );
     } else if ('tiles' === options.view) {
-      view = <IndexTiles options={options} result={result} />;
+      view = (
+        <IndexTiles options={options} result={result}
+          onSelect={this.props.onSelect} />
+      );
     }
 
     var error = null;

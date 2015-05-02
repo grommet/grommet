@@ -8,6 +8,7 @@ var LayerContainer = React.createClass({
 
   propTypes: {
     align: React.PropTypes.oneOf(['center', 'top', 'bottom', 'left', 'right']),
+    closer: React.PropTypes.node,
     onClose: React.PropTypes.func,
     router: React.PropTypes.func.isRequired
   },
@@ -43,9 +44,21 @@ var LayerContainer = React.createClass({
     if (this.props.className) {
       classes.push(this.props.className);
     }
+
+    var closer = null;
+    if (this.props.closer) {
+      classes.push("layer--closeable");
+      closer = (
+        <div className="layer__closer">
+          {this.props.closer}
+        </div>
+      );
+    }
+
     return (
       <div ref="background" className={classes.join(' ')} onClick={this._onClick}>
         <div className="layer__container">
+          {closer}
           {this.props.children}
         </div>
       </div>
@@ -57,6 +70,7 @@ var Layer = React.createClass({
 
   propTypes: {
     align: React.PropTypes.oneOf(['center', 'top', 'bottom', 'left', 'right']),
+    closer: React.PropTypes.node,
     onClose: React.PropTypes.func
   },
 
@@ -82,6 +96,7 @@ var Layer = React.createClass({
         align={this.props.align}
         children={this.props.children}
         className={this.props.className}
+        closer={this.props.closer}
         onClose={this.props.onClose}
         router={this.context.router} />
     );

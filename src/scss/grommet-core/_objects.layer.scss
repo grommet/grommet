@@ -18,6 +18,29 @@
     max-height: 100vh;
     max-width: 100vw;
     box-shadow: $layer-box-shadow;
+
+    @include media-query(palm) {
+      padding: $inuit-base-spacing-unit;
+    }
+
+    @include media-query(lap-and-up) {
+      padding: $inuit-base-spacing-unit quadruple($inuit-base-spacing-unit);
+    }
+  }
+
+  &__closer {
+    position: absolute;
+    top: $inuit-base-spacing-unit;
+    right: $inuit-base-spacing-unit;
+  }
+
+  &--closeable {
+    @include media-query(lap-and-up) {
+      .layer__container {
+        padding-top: round($inuit-base-spacing-unit * 3);
+        padding-bottom: round($inuit-base-spacing-unit * 3);
+      }
+    }
   }
 
   &--align {

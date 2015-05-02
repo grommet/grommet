@@ -2,7 +2,7 @@
 
 var React = require('react');
 var merge = require('lodash/object/merge');
-var Index = require('grommet/components/Index');
+var Index = require('grommet/components/index/Index');
 var Rest = require('grommet/utils/Rest');
 var Actions = require('grommet/actions/Actions');
 

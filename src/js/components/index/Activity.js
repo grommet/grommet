@@ -3,10 +3,9 @@
 var React = require('react');
 var Reflux = require('reflux');
 var merge = require('lodash/object/merge');
-var Index = require('grommet/components/Index');
-//var IndexQuery = require('grommet/utils/IndexQuery');
-var IndexActions = require('grommet/actions/IndexActions');
-var IndexStore = require('grommet/stores/IndexStore');
+var Index = require('./Index');
+var IndexActions = require('../../actions/IndexActions');
+var IndexStore = require('../../stores/IndexStore');
 
 var DEFAULT_OPTIONS = {
   category: ['alerts', 'tasks'],
@@ -24,6 +23,10 @@ var DEFAULT_OPTIONS = {
 };
 
 var Activity = React.createClass({
+
+  propTypes: {
+    onSelect: React.PropTypes.func
+  },
 
   mixins: [Reflux.ListenerMixin],
 
@@ -54,7 +57,8 @@ var Activity = React.createClass({
       <Index
         options={this.state.data.options}
         result={this.state.data.result}
-        onQuery={this._onQuery} />
+        onQuery={this._onQuery}
+        onSelect={this.props.onSelect} />
     );
   }
 

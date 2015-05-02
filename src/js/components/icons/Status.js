@@ -18,6 +18,10 @@ var Status = React.createClass({
     value: React.PropTypes.oneOf(['error', 'warning', 'ok', 'unknown', 'disabled'])
   },
 
+  getDefaultProps: function () {
+    return {value: 'unknown'};
+  },
+
   render: function() {
     var classes = [CLASS_ROOT];
     if (this.props.className) {
