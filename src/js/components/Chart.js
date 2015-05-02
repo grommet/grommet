@@ -16,10 +16,10 @@ var Chart = React.createClass({
         label: React.PropTypes.string,
         values: React.PropTypes.arrayOf(
           React.PropTypes.arrayOf(
-            React.PropTypes.oneOfType(
+            React.PropTypes.oneOfType([
               React.PropTypes.number,
               React.PropTypes.object // Date
-            )
+            ])
           )
         ),
         colorIndex: React.PropTypes.string
