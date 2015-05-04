@@ -41,21 +41,29 @@ Before you open an issue or pull request, please read our [Contributing](http://
 
   1. Install the Ruby scss-lint package:
 
+    ```bash
     $ gem install scss_lint
+    ```
 
   2. Clone Grommet repo:
 
+    ```bash
     $ git clone https://github.com/HewlettPackard/grommet.git
+    ```
 
   3. Create the NPM distribution:
 
+    ```bash
     $ gulp dist
+    ```
 
     After this step is completed, a **dist** folder will be created with content ready to be deployed in NPM.
 
   4. Create the Bower distribution:
 
+    ```bash
     $ gulp dist-bower
+    ```
 
     After this step is completed, a **dist-bower** folder will be created with content ready to be deployed in Bower, or to be used directly in the Browser. 
 
@@ -65,15 +73,21 @@ Before you open an issue or pull request, please read our [Contributing](http://
 
   1. Inside Grommet, access docs folder:
 
+    ```bash
     $ cd docs
+    ```
 
   2. Run the website using [Hot Module Replacement](http://webpack.github.io/docs/hot-module-replacement.html):
 
+    ```bash
     $ gulp dev
+    ```
 
     The above step will start a development server with generic Grommet styling, if you want to use the HPE style, run the following command instead:
 
+    ```bash
     $ gulp dev-hpe
+    ```
 
   3. Open [Grommet Website](http://localhost:8002/webpack-dev-server/)
 
@@ -81,7 +95,9 @@ Before you open an issue or pull request, please read our [Contributing](http://
 
   4. Build the website:
 
+    ```bash
     $ gulp dist
+    ```
 
     After this step is completed, a **docs/dist** folder will be created with the content ready to be deployed in an application server of your choice. 
 
