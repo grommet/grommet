@@ -14,12 +14,33 @@ var path = require('path');
 var packageJSON = require('./package.json');
 delete packageJSON.devDependencies;
 packageJSON.main = 'index.js';
-packageJSON.dependencies['highlight.js'];
+packageJSON.dependencies = {
+  'react': '^0.13.1',
+  'inuit-box-sizing': '~0.2.0',
+  'inuit-clearfix': '^0.2.1',
+  'inuit-defaults': '~0.2.1',
+  'inuit-functions': '~0.2.0',
+  'inuit-headings': '~0.3.0',
+  'inuit-images': '~0.3.3',
+  'inuit-list-bare': '~0.3.0',
+  'inuit-lists': '~0.1.0',
+  'inuit-mixins': '~0.2.3',
+  'inuit-normalize': '~3.0.2',
+  'inuit-page': '~0.2.1',
+  'inuit-reset': '~0.1.1',
+  'inuit-responsive-settings': '~0.1.2',
+  'inuit-responsive-tools': '~0.1.1',
+  'inuit-shared': '~0.1.5',
+  'mkdirp': '^0.5.0',
+  'gulp': '^3.8.11',
+  'gulp-template': '^3.0.0',
+  'gulp-install': '^0.4.0'
+};
 
 var opts = {
   dist: path.resolve(__dirname, 'dist'),
   copyAssets: [
-  	'README.md',
+    'README.md',
     'src/js/**',
     {
       asset: 'src/scss/**',
@@ -52,33 +73,33 @@ var opts = {
   webpack: {
     output: {
       filename: 'grommet.min.js',
-      libraryTarget: "var",
-      library: "Grommet"
+      libraryTarget: 'var',
+      library: 'Grommet'
     },
     resolve: {
       modulesDirectories: ['node_modules', 'src/js', 'src/scss']
     },
     externals: {
-      "react": "React"
+      'react': 'React'
     }
   },
   distPreprocess: ['dist-css'],
   scsslint: true,
   testPaths: [
-  	'test'
+    'test'
   ]
 };
 
 require('./src/js/utils/gulp-tasks')(gulp, opts);
 
 gulp.task('dist-css', function () {
-	gulp.src('src/scss/hpe/*.scss')
+  gulp.src('src/scss/hpe/*.scss')
     .pipe(sass({includePaths: [path.resolve(__dirname, './node_modules')]}))
     .pipe(rename('grommet-hpe.min.css'))
     .pipe(minifyCss())
     .pipe(gulp.dest('dist/'));
 
-	return gulp.src('src/scss/grommet-core/*.scss')
+  return gulp.src('src/scss/grommet-core/*.scss')
         .pipe(sass({includePaths: [path.resolve(__dirname, './node_modules')]}))
         .pipe(rename('grommet.min.css'))
         .pipe(minifyCss())
@@ -111,8 +132,8 @@ gulp.task('sync-all', function() {
 var bowerWebpackConfig = {
   output: {
     filename: 'grommet.js',
-    libraryTarget: "var",
-    library: "Grommet"
+    libraryTarget: 'var',
+    library: 'Grommet'
   },
   resolve: {
     root: [
@@ -123,7 +144,7 @@ var bowerWebpackConfig = {
     extensions: ['', '.js', '.json', '.htm', '.html', '.scss']
   },
   externals: {
-    "react": "React"
+    'react': 'React'
   },
   module: {
     loaders: [
@@ -151,10 +172,10 @@ var bowerWebpackConfig = {
 };
 
 var bowerMinWebpackConfig = assign({}, bowerWebpackConfig, {
-	output: {
+  output: {
     filename: 'grommet.min.js',
-    libraryTarget: "var",
-    library: "Grommet"
+    libraryTarget: 'var',
+    library: 'Grommet'
   },
   plugins: [
     new webpack.optimize.UglifyJsPlugin({
@@ -167,9 +188,9 @@ var bowerMinWebpackConfig = assign({}, bowerWebpackConfig, {
 });
 
 gulp.task('dist-bower', function() {
-	del.sync(['dist-bower']);
+  del.sync(['dist-bower']);
 
-	//grommet exploded
+  //grommet exploded
   gulp.src(opts.mainJs)
     .pipe(gulpWebpack(bowerWebpackConfig))
     .pipe(gulp.dest('dist-bower'));
@@ -211,14 +232,14 @@ gulp.task('dist-bower', function() {
         .pipe(rename('sample-grommet.html'))
         .pipe(gulp.dest('dist-bower'));
 
-	var bowerJSON = require('./package.json');
-	bowerJSON.dependencies = { 'react': '^0.13.1', 'grommet': 'HewlettPackard/grommet-bower' };
-	bowerJSON.main = 'grommet.js';
-	delete bowerJSON.devDependencies;
-	delete bowerJSON.scripts;
-	delete bowerJSON.jest;
+  var bowerJSON = require('./package.json');
+  bowerJSON.dependencies = { 'react': '^0.13.1', 'grommet': 'HewlettPackard/grommet-bower' };
+  bowerJSON.main = 'grommet.js';
+  delete bowerJSON.devDependencies;
+  delete bowerJSON.scripts;
+  delete bowerJSON.jest;
 
-	gulp.src('./dist-bower')
+  gulp.src('./dist-bower')
           .pipe(file('bower.json', JSON.stringify(bowerJSON, null, 2)))
           .pipe(gulp.dest('dist-bower'));
 });
