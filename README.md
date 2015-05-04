@@ -37,7 +37,7 @@ Before you open an issue or pull request, please read our [Contributing](http://
 
 ### Building Grommet
 
-  If you want to build Grommet in your local environment, run the following commands:
+  If you want to build Grommet in your local environment, execute the following commands:
 
   1. Install the Ruby scss-lint package:
 
@@ -69,7 +69,7 @@ Before you open an issue or pull request, please read our [Contributing](http://
 
 ### Running Grommet Website
 
-  If you want to run the Grommet website locally run the following commands:
+  If you want to run the Grommet website locally execute the following commands:
 
   1. Inside Grommet, access docs folder:
 
@@ -99,6 +99,6 @@ Before you open an issue or pull request, please read our [Contributing](http://
     $ gulp dist
     ```
 
-    After this step is completed, a **docs/dist** folder will be created with the content ready to be deployed in an application server of your choice. 
+    After this step is completed, a **docs/dist** folder will be created with the content ready to be deployed in an application server of your choice, or you can try to open **docs/dist/index.html** in your browser. 
 
 Grommet team is looking forward to your contributions.
