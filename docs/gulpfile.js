@@ -50,13 +50,13 @@ var opts = {
     module: {
     	loaders: [
 	      {
-	        test: /style_guide\/[^\/]*\.htm$/,
-	        loader: 'jsx-loader!imports?React=react,Router=react-router,Link=>Router.Link!html-jsx-loader?group=true'
-	      },
-	      {
-	        test: /documentation\/.*\.htm$|downloads\/.*\.htm$|style_guide\/.*\/.*\.htm$/,
-	        loader: 'jsx-loader!imports?React=react,Router=react-router,Link=>Router.Link!html-jsx-loader'
-	      }
+          test: /style_guide(\/|\\)[^\/]*\.htm$/,
+          loader: 'jsx-loader!imports?React=react,Router=react-router,Link=>Router.Link!html-jsx-loader?group=true'
+        },
+        {
+          test: /documentation(\/|\\).*\.htm$|downloads(\/|\\).*\.htm$|style_guide(\/|\\).*\/.*\.htm$/,
+          loader: 'jsx-loader!imports?React=react,Router=react-router,Link=>Router.Link!html-jsx-loader'
+        }
     	]
     }	
   },
