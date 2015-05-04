@@ -165,6 +165,7 @@ module.exports = function(gulp, opts) {
     }
 
     config.resolve.extensions = ['', '.js', '.json', '.htm', '.html', '.scss'];
+
     return gulp.src(options.mainJs)
       .pipe(gulpWebpack(config))
       .pipe(gulp.dest(dist));

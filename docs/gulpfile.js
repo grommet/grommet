@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var path = require('path');
-var devGulpTasks = require('grommet/utils/gulp-tasks');
+var devGulpTasks = require('../src/js/utils/gulp-tasks');
 var chug = require('gulp-chug');
 
 var opts = {
@@ -35,11 +35,11 @@ var opts = {
     remoteDestination: '/var/www/html/docs/dist'
   },
   webpack: {
-  	devAlias: {
-  		'grommet/scss/hpe/font': path.resolve(__dirname, '../src/scss/hpe/font'),
-  		'grommet': path.resolve(__dirname, '../src/js')
-  	},
-    resolve: {
+  	resolve: {
+  		alias: {
+	  		'grommet/scss': path.resolve(__dirname, '../src/scss'),
+	  		'grommet': path.resolve(__dirname, '../src/js')
+	  	},
       root: [
         path.resolve(__dirname, '../node_modules'),
         path.resolve(__dirname, '../src/lib'),
