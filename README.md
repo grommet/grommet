@@ -79,9 +79,7 @@ Before you open an issue or pull request, please read our [Contributing](http://
 
   2. Run the website using [Hot Module Replacement](http://webpack.github.io/docs/hot-module-replacement.html):
 
-    ```bash
-    $ gulp dev
-    ```
+      $ gulp dev
 
     The above step will start a development server with generic Grommet styling, if you want to use the HPE style, run the following command instead:
 

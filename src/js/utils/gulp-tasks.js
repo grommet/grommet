@@ -120,7 +120,7 @@ module.exports = function(gulp, opts) {
               captureFile: 'test/coverage.html',
               reporter: 'html-cov'
             }));
-            console.log('Done checkout the results at test/coverage.html');
+            console.log('Done! You can checkout the report at test/coverage.html.');
             done(); 
         });
   	}
