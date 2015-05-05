@@ -13,6 +13,8 @@ var IndexActions = Reflux.createActions({
 
 IndexActions.setup.listen(function (options) {
   var thisAction = this;
+  thisAction.failed('TBD');
+  /*
   Rest.get('/rest/preferences/index',
     {category: options.category})
     .end(function(err, res) {
@@ -25,6 +27,7 @@ IndexActions.setup.listen(function (options) {
         thisAction.completed(res.body);
       }
     });
+  */
 });
 
 IndexActions.getItems.listen(function (options) {

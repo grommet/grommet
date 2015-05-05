@@ -95,8 +95,14 @@ var IndexTiles = React.createClass({
       }, this);
     }
 
+    var onMore = null;
+    if (this.props.result &&
+      this.props.result.count < this.props.result.total) {
+      onMore = this.props.onMore;
+    }
+
     return (
-      <Tiles className={classes.join(' ')}>
+      <Tiles className={classes.join(' ')} onMore={onMore}>
         {tiles}
       </Tiles>
     );

@@ -2,10 +2,9 @@
 
 var React = require('react');
 var SpinningIcon = require('./icons/Spinning');
-var DOM = require('../utils/DOM');
+var InfiniteScroll = require('../mixins/InfiniteScroll');
 
 var CLASS_ROOT = "table";
-var SCROLL_MORE_DELAY = 2000;
 
 var Table = React.createClass({
 
@@ -15,6 +14,8 @@ var Table = React.createClass({
     scrollable: React.PropTypes.bool,
     selectable: React.PropTypes.bool
   },
+
+  mixins: [InfiniteScroll],
 
   getDefaultProps: function () {
     return {
@@ -27,7 +28,8 @@ var Table = React.createClass({
   _markSelection: function () {
     if (null !== this.state.selection) {
       var tbody = this.refs.table.getDOMNode().querySelectorAll('tbody')[0];
-      tbody.childNodes[this.state.selection].classList.add(CLASS_ROOT + "__row--selected");
+      tbody.childNodes[this.state.selection].classList.
+        add(CLASS_ROOT + "__row--selected");
     }
   },
 
@@ -44,34 +46,6 @@ var Table = React.createClass({
       }
       element.classList.add(CLASS_ROOT + "__row--selected");
     }
-  },
-
-  _onScroll: function () {
-    // delay a bit to ride out quick users
-    clearTimeout(this._scrollTimer);
-    this._scrollTimer = setTimeout(function () {
-      // are we at the bottom?
-      var containerElement = this.refs.container.getDOMNode();
-      var moreElement = this.refs.more.getDOMNode();
-      var containerRect = containerElement.getBoundingClientRect();
-      var moreRect = moreElement.getBoundingClientRect();
-      if (moreRect.bottom <= containerRect.bottom) {
-        this.props.onMore();
-      }
-    }.bind(this), SCROLL_MORE_DELAY);
-  },
-
-  _startListeningForScroll: function () {
-    var table = this.refs.table.getDOMNode();
-    var scrollParent = DOM.findScrollParents(table)[0];
-    scrollParent.addEventListener("scroll", this._onScroll);
-  },
-
-  _stopListeningForScroll: function () {
-    var table = this.refs.table.getDOMNode();
-    var scrollParent = DOM.findScrollParents(table)[0];
-    clearTimeout(this._scrollTimer);
-    scrollParent.removeEventListener("scroll", this._onScroll);
   },
 
   _onResize: function () {
@@ -118,7 +92,7 @@ var Table = React.createClass({
       this._alignMirror();
     }
     if (this.props.onMore) {
-      this._startListeningForScroll();
+      this.startListeningForScroll(this.refs.more.getDOMNode(), this.props.onMore);
     }
     window.addEventListener('resize', this._onResize);
   },
@@ -131,15 +105,15 @@ var Table = React.createClass({
       this._alignMirror();
     }
     if (prevProps.onMore && ! this.props.onMore) {
-      this._stopListeningForScroll();
+      this.stopListeningForScroll();
     } else if (this.props.onMore && ! prevProps.onMore) {
-      this._startListeningForScroll();
+      this.startListeningForScroll(this.refs.more.getDOMNode(), this.props.onMore);
     }
   },
 
   componentWillUnmount: function () {
     if (this.props.onMore) {
-      this._stopListeningForScroll();
+      this.stopListeningForScroll();
     }
     window.removeEventListener('resize', this._onResize);
   },
