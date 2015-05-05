@@ -41,19 +41,19 @@ Before you open an issue or pull request, please read our [Contributing](http://
 
   1. Install the Ruby scss-lint package:
 
-    ```bash
+    ```
     $ gem install scss_lint
     ```
 
   2. Clone Grommet repo:
 
-    ```bash
+    ```
     $ git clone https://github.com/HewlettPackard/grommet.git
     ```
 
   3. Create the NPM distribution:
 
-    ```bash
+    ```
     $ gulp dist
     ```
 
@@ -61,7 +61,7 @@ Before you open an issue or pull request, please read our [Contributing](http://
 
   4. Create the Bower distribution:
 
-    ```bash
+    ```
     $ gulp dist-bower
     ```
 
@@ -79,13 +79,13 @@ Before you open an issue or pull request, please read our [Contributing](http://
 
   2. Run the website using [Hot Module Replacement](http://webpack.github.io/docs/hot-module-replacement.html):
 
-    ```bash
+    ```
     $ gulp dev
     ```
 
     The above step will start a development server with generic Grommet styling, if you want to use the HPE style, run the following command instead:
 
-    ```bash
+    ```
     $ gulp dev-hpe
     ```
 
@@ -95,7 +95,7 @@ Before you open an issue or pull request, please read our [Contributing](http://
 
   4. Build the website:
 
-    ```bash
+    ```
     $ gulp dist
     ```
 
@@ -105,7 +105,7 @@ Before you open an issue or pull request, please read our [Contributing](http://
 
   The current tests are located inside the **test** folder and you can execute them by running the following command:
 
-  ```bash
+  ```
   $ gulp test
   ```
 
