@@ -101,4 +101,14 @@ Before you open an issue or pull request, please read our [Contributing](http://
 
     After this step is completed, a **docs/dist** folder will be created with the content ready to be deployed in an application server of your choice, or you can try to open **docs/dist/index.html** in your browser. 
 
-Grommet team is looking forward to your contributions.
+### Running Grommet Tests
+
+  The current tests are located inside the **test** folder and you can execute them by running the following command:
+
+  ```bash
+  $ gulp test
+  ```
+
+  This task will generate a code coverage report under **test/coverage.html**.
+
+  Grommet team is looking forward to your contributions. As of this moment, we need extra help on writting unit tests. We believe one good way to start learning a new framework is by writing tests for it.
