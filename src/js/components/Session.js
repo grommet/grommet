@@ -2,11 +2,11 @@
 
 var React = require('react');
 var SessionStore = require('../stores/SessionStore');
-var SessionActions = require('../actions/SessionActions');
+//var SessionActions = require('../actions/SessionActions');
 var KeyboardAccelerators = require('../mixins/KeyboardAccelerators');
 var Gravatar = require('react-gravatar');
 var Timestamp = require('react-time');
-var Link = require('../components/Link');
+//var Link = require('../components/Link');
 
 var Session = React.createClass({
 
@@ -26,7 +26,7 @@ var Session = React.createClass({
 
   _onClickLogout: function() {
     this.stopListeningToKeyboard();
-    SessionActions.logout();
+    //SessionActions.logout();
     this.props.onRequestClose();
   },
 
@@ -58,8 +58,6 @@ var Session = React.createClass({
             </div>
           </div>
           <ul className={'session__actions list-bare'}>
-            <li><Link href="">Edit account</Link></li>
-            <li><Link href="">About</Link></li>
             <li><a onClick={this._onClickLogout}>Logout</a></li>
           </ul>
         </div>

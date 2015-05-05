@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var NotificationsStore = require('../stores/NotificationsStore');
+//var NotificationsStore = require('../stores/NotificationsStore');
 var KeyboardAccelerators = require('../mixins/KeyboardAccelerators');
 //var SVG = require('react-svg');
 
@@ -10,7 +10,7 @@ var Notifications = React.createClass({
   mixins: [KeyboardAccelerators],
 
   _onChange: function() {
-    this.setState(NotificationsStore.getAll());
+    //this.setState(NotificationsStore.getAll());
   },
 
   _onClose: function() {
@@ -22,17 +22,17 @@ var Notifications = React.createClass({
   },
 
   getInitialState: function() {
-    return NotificationsStore.getAll();
+    //return NotificationsStore.getAll();
   },
 
   componentDidMount: function() {
     this.startListeningToKeyboard({esc: this._onClose});
-    NotificationsStore.addChangeListener(this._onChange);
+    //NotificationsStore.addChangeListener(this._onChange);
   },
 
   componentWillUnmount: function() {
     this.stopListeningToKeyboard();
-    NotificationsStore.removeChangeListener(this._onChange);
+    //NotificationsStore.removeChangeListener(this._onChange);
   },
 
   render: function() {

@@ -86,7 +86,7 @@ var opts = {
   distPreprocess: ['dist-css'],
   scsslint: true,
   testPaths: [
-    'test'
+    'test/**/*.js'
   ]
 };
 

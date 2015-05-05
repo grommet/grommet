@@ -104,24 +104,25 @@ module.exports = function(gulp, opts) {
   gulp.task('test', function (done) {
   	if (options.testPaths) {
   		var mocha = require('gulp-mocha');
-  		require('./test-compiler');
+  		
+      require('./test-compiler');
   		require('./mocked-dom')('<html><body></body></html>');
-  		var walk = require('walk');
-  		options.testPaths.forEach(function(testPath, index) {
-  			var walker = walk.walk(testPath, { followLinks: false });
-	  		walker.on('file', function(root, stat, next) {
-			    if (stat.name.endsWith('.js')) {
-			    	gulp.src(root + '/' + stat.name, {read: false}).pipe(mocha());
-			    }
-			    next();
-				});
 
-				if (index === options.testPaths.length - 1) {
-					walker.on('end', function() {
-					  done();
-					});
-				}
-  		});
+      gulp.src(options.testPaths, { read: false })
+        .pipe(mocha({
+          reporter: 'spec'
+        })).once('end', function () {
+          console.log('Generating code coverage...');
+          var blanket = require('gulp-blanket-mocha');
+          gulp.src(options.testPaths, { read: false })  
+            .pipe(blanket({
+              instrument:[path.join(process.cwd(), 'src/js')],
+              captureFile: 'test/coverage.html',
+              reporter: 'html-cov'
+            }));
+            console.log('Done checkout the results at test/coverage.html');
+            done(); 
+        });
   	}
 	});
 

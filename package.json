@@ -65,6 +65,7 @@
     "gulp-jshint": "^1.9.4",
     "gulp-minify-css": "^1.1.0",
     "gulp-mocha": "^2.0.1",
+    "gulp-blanket-mocha": "^0.0.4",
     "gulp-nodemon": "^2.0.2",
     "gulp-preprocess": "^1.2.0",
     "gulp-react": "^3.0.1",
@@ -78,8 +79,19 @@
     "json5": "^0.4.0",
     "react-tools": "^0.13.1",
     "run-sequence": "^1.0.2",
-    "walk": "^2.3.9",
     "webpack": "^1.7.3",
-    "webpack-dev-server": "^1.8.0"
+    "webpack-dev-server": "^1.8.0",
+    "glob": "^4.3.5"
+  },
+  "config": {
+    "blanket": {
+      "data-cover-never": [
+        "gulp-tasks",
+        "blanket-stub-jsx",
+        "mocked-dom",
+        "test-compiler"
+      ],
+      "loader": "../../../../../src/js/utils/blanket-stub-jsx.js"
+    }
   }
 }

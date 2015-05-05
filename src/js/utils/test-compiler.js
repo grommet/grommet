@@ -41,3 +41,8 @@ require.extensions['.js'] = function(module, filename) {
 
   return module._compile(transform(filename), filename);
 };
+
+module.exports = {
+  transform: transform,
+  shouldStub: shouldStub
+};
