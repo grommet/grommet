@@ -6,7 +6,6 @@ var Grommet = {
   CheckBox: require('./components/CheckBox'),
   Document: require('./components/Document'),
   Donut: require('./components/Donut'),
-  FixedHeader: require('./components/FixedHeader'),
   Footer: require('./components/Footer'),
   Form: require('./components/Form'),
   FormField: require('./components/FormField'),

@@ -4,6 +4,7 @@ var React = require('react');
 var Tiles = require('../Tiles');
 var Tile = require('../Tile');
 var Header = require('../Header');
+var Footer = require('../Footer');
 var IndexAttribute = require('./IndexAttribute');
 
 var CLASS_ROOT = 'index-tiles';
@@ -34,6 +35,10 @@ var IndexTiles = React.createClass({
     onSelect: React.PropTypes.func
   },
 
+  _onClick: function (uri) {
+    this.props.onSelect(uri);
+  },
+
   render: function () {
     var classes = [CLASS_ROOT];
     if (this.props.className) {
@@ -41,31 +46,50 @@ var IndexTiles = React.createClass({
     }
 
     var tiles = null;
-    if (this.props.data && this.props.data.items) {
-      tiles = this.props.data.items.map(function (item) {
+    if (this.props.result && this.props.result.items) {
+      tiles = this.props.result.items.map(function (item) {
 
         var headerValues = [];
         var values = [];
+        var footerValues = [];
 
-        this.props.attributes.forEach(function (attribute) {
+        this.props.options.attributes.forEach(function (attribute) {
           var value = (
             <IndexAttribute key={attribute.attribute}
               item={item} attribute={attribute} />
           );
-          if ('status' === attribute.attribute ||
-            'name' === attribute.attribute) {
+          if (attribute.header) {
             headerValues.push(value);
+          } else if (attribute.footer) {
+            footerValues.push(value);
           } else {
             values.push(value);
           }
         }, this);
 
-        return (
-          <Tile key={item.uri}>
-            <Header>
+        var header = null;
+        if (headerValues.length > 0) {
+          header = (
+            <Header small={true}>
               <span>{headerValues}</span>
             </Header>
+          );
+        }
+
+        var footer = null;
+        if (footerValues.length > 0) {
+          footer = (
+            <Footer small={true}>
+              <span>{footerValues}</span>
+            </Footer>
+          );
+        }
+
+        return (
+          <Tile key={item.uri} onClick={this._onClick.bind(this, item.uri)}>
+            {header}
             {values}
+            {footer}
           </Tile>
         );
       }, this);

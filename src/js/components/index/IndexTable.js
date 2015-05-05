@@ -47,6 +47,13 @@ var IndexTable = React.createClass({
 
     var headerCells = attributes.map(function (attribute) {
       var classes = [];
+      if (attribute.secondary) {
+        classes.push(CLASS_ROOT + "__header--secondary");
+      }
+      if (attribute.size) {
+        classes.push(CLASS_ROOT + "__header--" + attribute.size);
+      }
+
       var content = attribute.label;
       if ('status' === attribute.attribute) {
         classes.push(CLASS_ROOT + "__cell--icon");
@@ -54,10 +61,11 @@ var IndexTable = React.createClass({
           <StatusIcon className={CLASS_ROOT + "__header-icon"} value={'label'} small={true} />
         );
       }
+
       return (
         <th key={attribute.attribute} className={classes.join(' ')}>{content}</th>
       );
-    });
+    }, this);
 
     var rows = null;
     if (this.props.result.items) {
@@ -78,15 +86,9 @@ var IndexTable = React.createClass({
     }
 
     return (
-      <Table className={classes.join(' ')} selectable={true}>
-        <thead className={CLASS_ROOT + "__header"}>
-          <tr>
-            {headerCells}
-          </tr>
-        </thead>
-        <tbody className={CLASS_ROOT + "__body"}>
-          {rows}
-        </tbody>
+      <Table className={classes.join(' ')} selectable={true} scrollable={true}>
+        <thead><tr>{headerCells}</tr></thead>
+        <tbody>{rows}</tbody>
       </Table>
     );
   }

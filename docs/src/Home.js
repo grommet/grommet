@@ -64,7 +64,7 @@ var Home = React.createClass({
         </Section>
 
         <Section className="home__features" centered={true} colorIndex="neutral-2">
-          <Tiles>
+          <Tiles fill={true}>
             <Tile>
               <img src="img/semantic.svg" title="semantic" />
               <h2>Semantic</h2>
@@ -96,7 +96,7 @@ var Home = React.createClass({
           <h2>Ready for your Design Workflow.</h2>
           <h4>All the resources you could possibly need! Sticker sheets, Stencils,
             PSDs, and more. Simply click the app you use to get started.</h4>
-          <Tiles>
+          <Tiles fill={true}>
             <Tile>
               <img src="img/Adobe_Illustrator.png" title="Adobe Illustrator" />
               <div>Adobe Illustrator</div>
@@ -139,7 +139,7 @@ var Home = React.createClass({
           <h2>Built with the best stuff.</h2>
           <h4>The tools you know and love, all packaged together in one
             easy-to-use solution.</h4>
-          <Tiles small={true}>
+          <Tiles small={true} fill={true}>
             <Tile>
               <img src="img/HTML5.png" title="HTML5" />
             </Tile>

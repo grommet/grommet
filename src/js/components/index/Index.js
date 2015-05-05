@@ -39,6 +39,7 @@ var Index = React.createClass({
       React.PropTypes.string, // uri
       React.PropTypes.arrayOf(React.PropTypes.string)
     ]),
+    onMore: React.PropTypes.func,
     onSelect: React.PropTypes.func,
     onQuery: React.PropTypes.func
   },
@@ -47,7 +48,7 @@ var Index = React.createClass({
     return ({
       options: {
         attributes: [{name: 'name', label: 'Name', index: 0}],
-        view: "table"
+        view: "tiles"
       },
       result: {}
     });
@@ -60,48 +61,28 @@ var Index = React.createClass({
 
   /*
   _onScroll: function () {
+    console.log('!!! Index _onScroll');
     // delay a bit to ride out quick users
     clearTimeout(this._scrollTimer);
     this._scrollTimer = setTimeout(function () {
       // are we at the bottom?
-      var resourcesElement = this.refs.resources.getDOMNode();
+      var itemsElement = this.refs.items.getDOMNode();
       var moreElement = this.refs.more.getDOMNode();
-      var resourcesRect = resourcesElement.getBoundingClientRect();
+      var itemsRect = itemsElement.getBoundingClientRect();
       var moreRect = moreElement.getBoundingClientRect();
-      if (moreRect.bottom <= resourcesRect.bottom) {
-        // do we have more we could show?
-        var index = this.props.index;
-        if (index.result.count < index.result.total) {
-          // get one more page's worth of data
-          var params = _.extend({}, index.params);
-          params.count += index.pageSize;
-          IndexActions.getResult(params);
-        }
+      if (moreRect.bottom <= itemsRect.bottom) {
+        this.props.onMore();
       }
     }.bind(this), 2000);
   },
 
   componentDidMount: function () {
-    this.refs.resources.getDOMNode().addEventListener("scroll", this._onScroll);
-  },
-
-  componentWillReceiveProps: function () {
-    if (nextProps.index.result.members.length > 0 &&
-      ! nextProps.index.result.members[0]._activity &&
-      nextProps.index.includeActivity) {
-      // check for activity
-      var state = this.state;
-      clearTimeout(this._activityTimer);
-      this._activityTimer = setTimeout(function () {
-        IndexActions.getIndexActivity(state.result.members);
-      }, 1000); // delay a bit in case the user is searching
-    }
+    this.refs.items.getDOMNode().addEventListener("scroll", this._onScroll);
   },
 
   componentWillUnmount: function () {
-    clearTimeout(this._activityTimer);
     clearTimeout(this._scrollTimer);
-    this.refs.resources.getDOMNode().removeEventListener("scroll", this._onScroll);
+    this.refs.items.getDOMNode().removeEventListener("scroll", this._onScroll);
   },
   */
 
@@ -156,12 +137,12 @@ var Index = React.createClass({
           <IndexHeader className={CLASS_ROOT + "__header"}
             searchText={searchText}
             total={result.total}
+            fixed={'tiles' === options.view || true}
             unfilteredTotal={result.unfilteredTotal}
             onSearch={this._onSearch} />
+          {error}
           <div ref="items" className={CLASS_ROOT + "__items"}>
-            {error}
             {view}
-            {more}
           </div>
         </div>
       </div>

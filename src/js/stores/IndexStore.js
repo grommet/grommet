@@ -4,17 +4,7 @@ var Reflux = require('reflux');
 var merge = require('lodash/object/merge');
 var IndexActions = require('../actions/IndexActions');
 
-// category key -> {view: , searchMode: , sort: , attributes: }
-//var _persistentState = {};
-
-// construct the key to use for _persistentState
-//function categoryKey(category) {
-//  if (typeof category === 'string') {
-//    return category;
-//  } else if (Array.isArray(category)) {
-//    return category.join(',');
-//  }
-//}
+var DEFAULT_PAGE_SIZE = 20;
 
 var IndexStore = Reflux.createStore({
 
@@ -24,9 +14,10 @@ var IndexStore = Reflux.createStore({
       category: null,
       view: 'tiles',
       attributes: [{attribute: 'name', label: 'Name'}],
+      pageSize: DEFAULT_PAGE_SIZE,
       params: {
         start: 0,
-        count: 20,
+        count: DEFAULT_PAGE_SIZE,
         query: null,
         sort: 'name:asc',
         referenceUri: null
@@ -60,24 +51,6 @@ var IndexStore = Reflux.createStore({
     this._data.state = 'changing';
     // set from defaults until response comes
     this._data.options = merge(this._data.options, options);
-
-    /* replaced by server persistence
-    // get or create persistence
-    _persistentState = JSON.parse(localStorage.getItem('IndexStore__state') || '{}');
-    var key = categoryKey(defaultParams.category);
-    // initialize persistent state if we haven't yet
-    if (! _persistentState.hasOwnProperty(key)) {
-      _persistentState[key] = {
-        options: defaultOptions,
-        params: defaultParams
-      };
-    }
-
-    // set current
-    var persistent = _persistentState[key];
-    this._data.options = persistent.options;
-    this._data.params = persistent.params;
-    */
   },
 
   _onSetupCompleted: function (options) {

@@ -29,13 +29,16 @@ var HeaderDoc = React.createClass({
             <dt><code>colorIndex  {"{category}-{index}"}</code></dt>
             <dd>If specified, determines the background color.
               For example: <code>"neutral-1"</code></dd>
+            <dt><code>fixed       true|false</code></dt>
+            <dd>Whether the header is fixed on the page, typically so content
+              below it will scroll under it.</dd>
             <dt><code>flush       true|false</code></dt>
             <dd>Whether the contents are flush with the left and right edges or not.
               Defaults to true.</dd>
-            <dt><code>primary     true|false</code></dt>
-            <dd>Whether this is the primary application header or not.</dd>
             <dt><code>large       true|false</code></dt>
             <dd>Larger sized version.</dd>
+            <dt><code>primary     true|false</code></dt>
+            <dd>Whether this is the primary application header or not.</dd>
             <dt><code>small       true|false</code></dt>
             <dd>Smaller sized version.</dd>
           </dl>

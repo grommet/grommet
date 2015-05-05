@@ -164,6 +164,7 @@ $scale-background-color-top: rgba($scale-background-color, 0.85);
 
     svg,
     img {
+      display: inline;
       max-height: 96px;
       margin-bottom: $inuit-base-spacing-unit;
     }
@@ -207,5 +208,5 @@ $scale-background-color-top: rgba($scale-background-color, 0.85);
   	text-align: right;
   	padding-right: 5px;
   }
-  
+
 }

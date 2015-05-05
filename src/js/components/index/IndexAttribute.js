@@ -4,6 +4,8 @@ var React = require('react');
 var StatusIcon = require('../icons/Status');
 var Timestamp = require('react-time');
 
+var CLASS_ROOT = "index-attribute";
+
 var IndexAttribute = React.createClass({
 
   propTypes: {
@@ -15,8 +17,20 @@ var IndexAttribute = React.createClass({
   },
 
   render: function() {
-    var item = this.props.item;
     var attribute = this.props.attribute;
+
+    var classes = [CLASS_ROOT];
+    if (attribute.secondary) {
+      classes.push(CLASS_ROOT + "--secondary");
+    }
+    if (attribute.size) {
+      classes.push(CLASS_ROOT + "--" + attribute.size);
+    }
+    if (this.props.className) {
+      classes.push(this.props.className);
+    }
+
+    var item = this.props.item;
     var content = (<span>'?'</span>);
     var value;
 
@@ -35,14 +49,18 @@ var IndexAttribute = React.createClass({
 
       if ('status' === attribute.attribute) {
         content = (
-          <StatusIcon value={value.toLowerCase()} small={true} />
+          <StatusIcon className={classes.join(' ')}
+            value={value.toLowerCase()} small={true} />
         );
       } else if (attribute.timestamp) {
         content = (
-          <Timestamp value={new Date(value)} format="MM/DD/YY h:mm:ssa" />
+          <Timestamp className={classes.join(' ')}
+            value={new Date(value)} format="MM/DD/YY h:mm:ssa" />
         );
       } else {
-        content = (<span>{value}</span>);
+        content = (
+          <span className={classes.join(' ')}>{value}</span>
+        );
       }
     }
 

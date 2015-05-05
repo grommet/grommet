@@ -1,7 +1,10 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 .table {
-  width: 100%;
+
+  table {
+    width: 100%;
+  }
 
   th {
     font-weight: 100;
@@ -14,6 +17,23 @@
     padding: halve($inuit-base-spacing-unit);
     vertical-align: top;
     text-align: left;
+  }
+
+  &__mirror {
+
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+
+    > thead {
+      position: fixed;
+      background-color: $header-background-color;
+
+      @include media-query(palm) {
+        position: static;
+      }
+    }
   }
 
   &--selectable {
