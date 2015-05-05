@@ -59,33 +59,6 @@ var Index = React.createClass({
     this.props.onQuery(query.fullText);
   },
 
-  /*
-  _onScroll: function () {
-    console.log('!!! Index _onScroll');
-    // delay a bit to ride out quick users
-    clearTimeout(this._scrollTimer);
-    this._scrollTimer = setTimeout(function () {
-      // are we at the bottom?
-      var itemsElement = this.refs.items.getDOMNode();
-      var moreElement = this.refs.more.getDOMNode();
-      var itemsRect = itemsElement.getBoundingClientRect();
-      var moreRect = moreElement.getBoundingClientRect();
-      if (moreRect.bottom <= itemsRect.bottom) {
-        this.props.onMore();
-      }
-    }.bind(this), 2000);
-  },
-
-  componentDidMount: function () {
-    this.refs.items.getDOMNode().addEventListener("scroll", this._onScroll);
-  },
-
-  componentWillUnmount: function () {
-    clearTimeout(this._scrollTimer);
-    this.refs.items.getDOMNode().removeEventListener("scroll", this._onScroll);
-  },
-  */
-
   render: function () {
     var classes = [CLASS_ROOT];
     if (this.props.className) {
@@ -95,30 +68,21 @@ var Index = React.createClass({
     var options = this.props.options;
 
     var searchText = options.params.query || '';
-    //if (options.params.query) {
-    //  searchText = options.params.query.fullText;
-    //}
 
     var result = this.props.result;
-    var more = null;
-    if ((result.start + result.count) < result.total) {
-      more = (
-        <div ref="more" className={CLASS_ROOT + "__more"}>
-          {'more ...'}
-        </div>
-      );
-    }
 
     var view = null;
     if ('table' === options.view) {
       view = (
         <IndexTable options={options} result={result}
-          onSelect={this.props.onSelect} />
+          onSelect={this.props.onSelect}
+          onMore={this.props.onMore} />
       );
     } else if ('tiles' === options.view) {
       view = (
         <IndexTiles options={options} result={result}
-          onSelect={this.props.onSelect} />
+          onSelect={this.props.onSelect}
+          onMore={this.props.onMore} />
       );
     }
 

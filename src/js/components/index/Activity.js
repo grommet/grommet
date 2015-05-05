@@ -36,13 +36,12 @@ var Activity = React.createClass({
   },
 
   _onMore: function () {
-    console.log('!!! Activity _onMore');
     // do we have more we could show?
     var data = this.state.data;
     if (data.result.count < data.result.total) {
       // get one more page's worth of data
       var options = merge(data.options,
-        {params: {count: (data.options.count + data.pageSize)}});
+        {params: {count: (data.options.params.count + data.options.pageSize)}});
       IndexActions.getItems(options);
     }
   },

@@ -1,11 +1,17 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
+var SpinningIcon = require('./icons/Spinning');
+var DOM = require('../utils/DOM');
+
+var CLASS_ROOT = "table";
+var SCROLL_MORE_DELAY = 2000;
 
 var Table = React.createClass({
 
   propTypes: {
     defaultSelection: React.PropTypes.number,
+    onMore: React.PropTypes.func,
     scrollable: React.PropTypes.bool,
     selectable: React.PropTypes.bool
   },
@@ -21,7 +27,7 @@ var Table = React.createClass({
   _markSelection: function () {
     if (null !== this.state.selection) {
       var tbody = this.refs.table.getDOMNode().querySelectorAll('tbody')[0];
-      tbody.childNodes[this.state.selection].classList.add("table__row--selected");
+      tbody.childNodes[this.state.selection].classList.add(CLASS_ROOT + "__row--selected");
     }
   },
 
@@ -31,12 +37,41 @@ var Table = React.createClass({
       element = element.parentNode;
     }
     if (element && element.parentNode.nodeName === 'TBODY') {
-      var rows = this.refs.table.getDOMNode().querySelectorAll(".table__row--selected");
+      var rows = this.refs.table.getDOMNode()
+        .querySelectorAll("." + CLASS_ROOT + "__row--selected");
       for (var i=0; i<rows.length; i++) {
-        rows[i].classList.remove("table__row--selected");
+        rows[i].classList.remove(CLASS_ROOT + "__row--selected");
       }
-      element.classList.add("table__row--selected");
+      element.classList.add(CLASS_ROOT + "__row--selected");
     }
+  },
+
+  _onScroll: function () {
+    // delay a bit to ride out quick users
+    clearTimeout(this._scrollTimer);
+    this._scrollTimer = setTimeout(function () {
+      // are we at the bottom?
+      var containerElement = this.refs.container.getDOMNode();
+      var moreElement = this.refs.more.getDOMNode();
+      var containerRect = containerElement.getBoundingClientRect();
+      var moreRect = moreElement.getBoundingClientRect();
+      if (moreRect.bottom <= containerRect.bottom) {
+        this.props.onMore();
+      }
+    }.bind(this), SCROLL_MORE_DELAY);
+  },
+
+  _startListeningForScroll: function () {
+    var table = this.refs.table.getDOMNode();
+    var scrollParent = DOM.findScrollParents(table)[0];
+    scrollParent.addEventListener("scroll", this._onScroll);
+  },
+
+  _stopListeningForScroll: function () {
+    var table = this.refs.table.getDOMNode();
+    var scrollParent = DOM.findScrollParents(table)[0];
+    clearTimeout(this._scrollTimer);
+    scrollParent.removeEventListener("scroll", this._onScroll);
   },
 
   _onResize: function () {
@@ -82,6 +117,9 @@ var Table = React.createClass({
       this._buildMirror();
       this._alignMirror();
     }
+    if (this.props.onMore) {
+      this._startListeningForScroll();
+    }
     window.addEventListener('resize', this._onResize);
   },
 
@@ -92,19 +130,27 @@ var Table = React.createClass({
     if (this.props.scrollable) {
       this._alignMirror();
     }
+    if (prevProps.onMore && ! this.props.onMore) {
+      this._stopListeningForScroll();
+    } else if (this.props.onMore && ! prevProps.onMore) {
+      this._startListeningForScroll();
+    }
   },
 
   componentWillUnmount: function () {
+    if (this.props.onMore) {
+      this._stopListeningForScroll();
+    }
     window.removeEventListener('resize', this._onResize);
   },
 
   render: function () {
-    var classes = ["table"];
+    var classes = [CLASS_ROOT];
     if (this.props.selectable) {
-      classes.push("table--selectable");
+      classes.push(CLASS_ROOT + "--selectable");
     }
     if (this.props.scrollable) {
-      classes.push("table--scrollable");
+      classes.push(CLASS_ROOT + "--scrollable");
     }
     if (this.props.className) {
       classes.push(this.props.className);
@@ -113,7 +159,7 @@ var Table = React.createClass({
     var mirror = null;
     if (this.props.scrollable) {
       mirror = (
-        <table ref="mirror" className="table__mirror">
+        <table ref="mirror" className={CLASS_ROOT + "__mirror"}>
           <thead>
             <tr></tr>
           </thead>
@@ -121,12 +167,22 @@ var Table = React.createClass({
       );
     }
 
+    var more = null;
+    if (this.props.onMore) {
+      more = (
+        <div ref="more" className={CLASS_ROOT + "__more"}>
+          <SpinningIcon />
+        </div>
+      );
+    }
+
     return (
-      <div className={classes.join(' ')}>
+      <div ref="container" className={classes.join(' ')}>
         {mirror}
-        <table ref="table" className="table__table" onClick={this._onClick}>
+        <table ref="table" className={CLASS_ROOT + "__table"} onClick={this._onClick}>
           {this.props.children}
         </table>
+        {more}
       </div>
     );
   }

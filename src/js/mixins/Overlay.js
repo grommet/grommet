@@ -1,5 +1,7 @@
 // (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
 
+var DOM = require('../utils/DOM');
+
 // Overlay is a mixin for ensuring components layerd on top align with their initiating controls underneath.
 var Overlay = {
 
@@ -10,24 +12,11 @@ var Overlay = {
     scrollParents: []
   },
 
-  _findScrollParents: function (element) {
-    var result = [];
-    var parent = element.parentNode;
-    while (parent) {
-      // account for border the lazy way for now
-      if (parent.scrollHeight > (parent.offsetHeight + 10)) {
-        result.push(parent);
-      }
-      parent = parent.parentNode;
-    }
-    return result;
-  },
-
   startOverlay: function (controlElement, layerElement, align) {
     this._overlay.controlElement = controlElement;
     this._overlay.layerElement = layerElement;
     this._overlay.align = align;
-    this._overlay.scrollParents = this._findScrollParents(this._overlay.controlElement);
+    this._overlay.scrollParents = DOM.findScrollParents(this._overlay.controlElement);
     this._overlay.scrollParents.forEach(function (parent) {
       parent.addEventListener('scroll', this.positionOverlay);
     }, this);

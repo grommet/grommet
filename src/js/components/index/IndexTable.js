@@ -30,6 +30,7 @@ var IndexTable = React.createClass({
       React.PropTypes.string, // uri
       React.PropTypes.arrayOf(React.PropTypes.string)
     ]),
+    onMore: React.PropTypes.func,
     onSelect: React.PropTypes.func
   },
 
@@ -85,8 +86,17 @@ var IndexTable = React.createClass({
       }, this);
     }
 
+    var onMore = null;
+    if (this.props.result &&
+      this.props.result.count < this.props.result.total) {
+      onMore = this.props.onMore;
+    }
+
     return (
-      <Table className={classes.join(' ')} selectable={true} scrollable={true}>
+      <Table className={classes.join(' ')}
+        selectable={true}
+        scrollable={true}
+        onMore={onMore}>
         <thead><tr>{headerCells}</tr></thead>
         <tbody>{rows}</tbody>
       </Table>
