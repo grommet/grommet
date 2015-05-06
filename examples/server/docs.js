@@ -20,7 +20,7 @@ function translateStatics(req, res, next, theme) {
 }
 
 router.use('/hpe', function (req, res, next) {
-  translateStatics(req, res, next, 'hpe');
+  translateStatics(req, res, next, 'hpe/');
 });
 router.use('/hpe', express.static('../../docs/dist/hpe'));
 router.get('/hpe/*', function (req, res) {
@@ -28,7 +28,7 @@ router.get('/hpe/*', function (req, res) {
 });
 
 router.use('/hpinc', function (req, res, next) {
-  translateStatics(req, res, next, 'hpinc');
+  translateStatics(req, res, next, 'hpinc/');
 });
 router.use('/hpinc', express.static('../../docs/dist/hpinc'));
 router.get('/hpinc/*', function (req, res) {
