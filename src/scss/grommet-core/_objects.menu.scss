@@ -64,6 +64,7 @@
     border: $layer-border;
     border-radius: $border-radius;
     box-shadow: $layer-box-shadow;
+    overflow: auto;
 
     .menu__control {
       &-label {

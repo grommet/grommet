@@ -4,7 +4,6 @@ var React = require('react');
 var IndexTable = require('./IndexTable');
 var IndexTiles = require('./IndexTiles');
 var IndexHeader = require('./IndexHeader');
-var IndexQuery = require('../../utils/IndexQuery');
 
 var CLASS_ROOT = 'index';
 
@@ -24,7 +23,7 @@ var Index = React.createClass({
       })),
       view: React.PropTypes.oneOf(["table", "tiles"]),
       params: React.PropTypes.shape({
-        query: React.PropTypes.string
+        query: React.PropTypes.object
       })
     }),
     result: React.PropTypes.shape({
@@ -40,8 +39,8 @@ var Index = React.createClass({
       React.PropTypes.arrayOf(React.PropTypes.string)
     ]),
     onMore: React.PropTypes.func,
-    onSelect: React.PropTypes.func,
-    onQuery: React.PropTypes.func
+    onQuery: React.PropTypes.func,
+    onSelect: React.PropTypes.func
   },
 
   getDefaultProps: function () {
@@ -54,11 +53,6 @@ var Index = React.createClass({
     });
   },
 
-  _onSearch: function (text) {
-    var query = IndexQuery.create(text);
-    this.props.onQuery(query.fullText);
-  },
-
   render: function () {
     var classes = [CLASS_ROOT];
     if (this.props.className) {
@@ -66,9 +60,6 @@ var Index = React.createClass({
     }
 
     var options = this.props.options;
-
-    var searchText = options.params.query || '';
-
     var result = this.props.result;
 
     var view = null;
@@ -99,11 +90,11 @@ var Index = React.createClass({
       <div className={classes.join(' ')}>
         <div className={CLASS_ROOT + "__container"}>
           <IndexHeader className={CLASS_ROOT + "__header"}
-            searchText={searchText}
+            options={this.props.options}
             total={result.total}
             fixed={'tiles' === options.view || true}
             unfilteredTotal={result.unfilteredTotal}
-            onSearch={this._onSearch} />
+            onQuery={this.props.onQuery} />
           {error}
           <div ref="items" className={CLASS_ROOT + "__items"}>
             {view}

@@ -62,6 +62,29 @@
   }
 }
 
+.index-filters {
+  padding-left: $inuit-base-spacing-unit;
+  padding-right: $inuit-base-spacing-unit;
+
+  &__menu {
+    margin-left: $inuit-base-spacing-unit;
+  }
+
+  &__filter {
+    //display: block;
+    margin-bottom: $inuit-base-spacing-unit;
+
+    //&-label {
+    //  display: block;
+    //  color: $secondary-text-color;
+    //}
+
+    //&-value {
+    //  display: block;
+    //}
+  }
+}
+
 .index-table {
   &__header {
     &--small {

@@ -47,7 +47,7 @@ function tokenize(text) {
         value = StringConvert.unquoteIfNecessary(parts[1]);
         token = {attribute: parts[0], value: value, text: text.slice(index, endIndex)};
         index = endIndex + 1;
-      } else {
+      } else { // plain text, possibly quoted
         matches = rest.match(/^[^'"\s]+|^'[^']+'|^"[^"]+"/);
         if (matches) { // text
           endIndex = index + matches[0].length;
@@ -78,9 +78,16 @@ function tokenize(text) {
 }
 
 function extractText(fullText) {
+  // prune out attribute:value elements
   var text = fullText.replace(/\w+:[^'"\s]+|\w+:'[^']+'|\w+:"[^"]+"/g, '');
   // prune whitespace
   return text.replace(/\s+/g, ' ').replace(/^\s+/, '').replace(/\s+$/, '');
+}
+
+function tokensForAttribute(tokens, attribute) {
+  return tokens.filter(function (token) {
+    return (token.hasOwnProperty('attribute') && token.attribute === attribute);
+  });
 }
 
 function normalizeToken(token) {
@@ -114,6 +121,7 @@ var Query = function () {
 };
 
 Query.prototype = {
+
   initialize: function (textArg) {
     this.fullText = textArg || '';
     this.tokens = tokenize(this.fullText);
@@ -166,13 +174,49 @@ Query.prototype = {
   },
 
   replaceTextTokens: function (textArg) {
-    var newText = this.tokens.filter(function (token) {
-      return token.hasOwnProperty('attribute');
-    }).map(function (token) {
-      return token.text;
-    }).join(' ');
+    var newText = this.tokens
+      .filter(function (token) {
+        return token.hasOwnProperty('attribute');
+      }).map(function (token) {
+        return token.text;
+      }).join(' ');
+    // TODO: refactor to preserve order of existing text tokens that aren't replaced
     newText = appendText(newText, textArg);
     this.initialize(newText);
+  },
+
+  attributeValues: function (attribute) {
+    return tokensForAttribute(this.tokens, attribute)
+      .map(function (token) {
+        return token.value;
+      });
+  },
+
+  replaceAttributeValues: function (attribute, values) {
+    var currentTokens = tokensForAttribute(this.tokens, attribute);
+    var newTokens = values.map(function (value) {
+      return {attribute: attribute, value: value,
+        text: (attribute + ':' + StringConvert.quoteIfNecessary(value))
+      };
+    });
+    // remove
+    currentTokens.forEach(function (currentToken) {
+      var exists = newTokens.some(function (newToken) {
+        return currentToken.text === newToken.text;
+      });
+      if (! exists) {
+        this.remove(currentToken);
+      }
+    }, this);
+    // add
+    newTokens.forEach(function (newToken) {
+      var exists = currentTokens.some(function (currentToken) {
+        return currentToken.text === newToken.text;
+      });
+      if (! exists) {
+        this.add(newToken);
+      }
+    }, this);
   },
 
   filterCount: function () {

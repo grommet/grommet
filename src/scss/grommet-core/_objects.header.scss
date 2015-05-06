@@ -44,16 +44,9 @@
       -webkit-flex: 1 0;
       flex: 1 0;
 
-      &:last-child {
+      &:last-child:not(:first-child) {
         -webkit-flex: 0 0 auto;
         flex: 0 0 auto;
-        text-align: right;
-      }
-
-      &:first-child {
-        -webkit-flex: 1 0;
-        flex: 1 0;
-        text-align: left;
       }
     }
 
@@ -68,6 +61,11 @@
       svg {
         height: $header-height - $inuit-base-spacing-unit;
       }
+    }
+
+    > .menu {
+      -webkit-flex: 0 0 auto;
+      flex: 0 0 auto;
     }
 
     svg {

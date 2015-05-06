@@ -6,7 +6,6 @@ var DefaultRoute = require('react-router').DefaultRoute;
 
 var TourLogin = require('./TourLogin');
 var TBD = require('grommet/components/TBD');
-//var IndexActivity = require('grommet/index/components/Activity');
 //var IndexDashboardEdit = require('grommet/index/components/DashboardEdit');
 //var IndexDashboardPanelAdd = require('grommet/index/components/DashboardPanelAdd');
 //var IndexDashboardPanelEdit = require('grommet/index/components/DashboardPanelEdit');

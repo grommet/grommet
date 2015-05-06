@@ -38,13 +38,31 @@ var IndexTable = React.createClass({
     this.props.onSelect(uri);
   },
 
+  _simplifyAttributes: function (attributes) {
+    return attributes
+      .filter(function (attribute) {
+        return attribute.hasOwnProperty('index');
+      })
+      .sort(function (a, b) {
+        return a.index - b.index;
+      });
+  },
+
+  getInitialState: function () {
+    return {attributes: this._simplifyAttributes(this.props.options.attributes)};
+  },
+
+  componentWillReceiveProps: function (newProps) {
+    this.setState({attributes: this._simplifyAttributes(newProps.options.attributes)});
+  },
+
   render: function () {
     var classes = [CLASS_ROOT];
     if (this.props.className) {
       classes.push(this.props.className);
     }
 
-    var attributes = this.props.options.attributes;
+    var attributes = this.state.attributes;
 
     var headerCells = attributes.map(function (attribute) {
       var classes = [];

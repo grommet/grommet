@@ -12,6 +12,7 @@ var IndexActions = Reflux.createActions({
 });
 
 IndexActions.setup.listen(function () {
+>>>>>>> Added IndexFilters, added form interaction aspects to CheckBox, constrain Overlay height to within viewport
   var thisAction = this;
   thisAction.failed('TBD');
   /*
@@ -33,8 +34,8 @@ IndexActions.setup.listen(function () {
 IndexActions.getItems.listen(function (options) {
   var thisAction = this;
   var params = merge({}, {category: options.category}, options.params);
-  if (options.params.query && (typeof options.params.query === 'object')) {
-    params.query = options.params.query.fullText;
+  if (params.query && (typeof params.query === 'object')) {
+    params.query = params.query.fullText;
   }
   Rest.get('/rest/index/resources', params)
     .end(function(err, res) {

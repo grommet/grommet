@@ -109,7 +109,7 @@ var Menu = React.createClass({
   },
 
   componentWillUnmount: function () {
-    document.body.removeEventListener('click', this._onClose);
+    document.removeEventListener('click', this._onClose);
   },
 
   _createControl: function () {

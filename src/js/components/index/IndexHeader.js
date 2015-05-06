@@ -3,21 +3,39 @@
 var React = require('react');
 var Header = require('../Header');
 var Search = require('../Search');
+var IndexFilters = require('./IndexFilters');
+var IndexQuery = require('../../utils/IndexQuery');
 
 var CLASS_ROOT = 'index-header';
 
 var IndexHeader = React.createClass({
 
   propTypes: {
+    options: React.PropTypes.shape({
+      attributes: React.PropTypes.arrayOf(React.PropTypes.shape({
+        attribute: React.PropTypes.string,
+        label: React.PropTypes.string,
+        index: React.PropTypes.number,
+        timestamp: React.PropTypes.bool
+      })),
+      params: React.PropTypes.shape({
+        query: React.PropTypes.object
+      })
+    }),
     fixed: React.PropTypes.bool,
-    searchText: React.PropTypes.string,
     total: React.PropTypes.number,
     unfilteredTotal: React.PropTypes.number,
-    onSearch: React.PropTypes.func.isRequired
+    onQuery: React.PropTypes.func.isRequired
   },
 
   _onSearchChange: function (text) {
-    this.props.onSearch(text);
+    var query = this.props.options.params.query;
+    if (query) {
+      query.replaceTextTokens(text);
+    } else {
+      query = IndexQuery.create(text);
+    }
+    this.props.onQuery(query);
   },
 
   render: function () {
@@ -25,7 +43,16 @@ var IndexHeader = React.createClass({
     if (this.props.className) {
       classes.push(this.props.className);
     }
-    var searchText = this.props.searchText || '';
+
+    var searchText = '';
+    var query = this.props.options.params.query;
+    if (query) {
+      if (typeof query === 'string') {
+        searchText = query;
+      } else {
+        searchText = query.text;
+      }
+    }
 
     var outOfClasses = [CLASS_ROOT + "__out-of"];
     if (this.props.unfilteredTotal > this.props.total) {
@@ -38,6 +65,8 @@ var IndexHeader = React.createClass({
           inline={true}
           defaultValue={searchText}
           onChange={this._onSearchChange} />
+        <IndexFilters options={this.props.options}
+          onQuery={this.props.onQuery} />
         <span className={CLASS_ROOT + "__count"}>
           {this.props.total}
           <span className={outOfClasses.join(' ')}>

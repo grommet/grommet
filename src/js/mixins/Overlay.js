@@ -76,9 +76,13 @@ var Overlay = {
         layerElement.offsetHeight;
     }
 
+    // ensure height is within viewport
+    var maxHeight = window.innerHeight - top;
+
     layerElement.style.left = '' + left + 'px';
     layerElement.style.width = '' + width + 'px';
     layerElement.style.top = '' + top + 'px';
+    layerElement.style.maxHeight = '' + maxHeight + 'px';
   },
 
   componentWillUnmount: function () {

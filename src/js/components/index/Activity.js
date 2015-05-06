@@ -11,11 +11,16 @@ var DEFAULT_OPTIONS = {
   category: ['alerts', 'tasks'],
   view: 'table',
   attributes: [
-    {attribute: 'status', label: 'Status', index: 0, size: 'small', header: true},
+    {attribute: 'status', label: 'Status', index: 0, size: 'small', header: true,
+      filter: ['Error', 'Warning', 'OK', 'Unknown']},
     {attribute: 'name', label: 'Name', index: 1},
     {attribute: 'associatedResourceName', label: 'Resource', index: 2, size: 'medium'},
-    {attribute: 'created', label: 'Time', index: 3, timestamp: true, size: 'medium', secondary: true},
-    {attribute: 'state', label: 'State', index: 4, size: 'medium', secondary: true}
+    {attribute: 'created', label: 'Time', index: 3,
+      timestamp: true, size: 'medium', secondary: true, fitler: true},
+    {attribute: 'state', label: 'State', index: 4, size: 'medium', secondary: true,
+      filter: ['Active', 'Cleared', 'Running', 'Completed']},
+    {attribute: 'category', label: 'Category',
+      filter: ['Alerts', 'Tasks']},
   ],
   params: {
     sort: 'created:desc',
