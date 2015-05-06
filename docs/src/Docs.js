@@ -15,8 +15,7 @@ var RouteHandler = require('react-router').RouteHandler;
 var Docs = React.createClass({
 
   contextTypes: {
-    router: React.PropTypes.func.isRequired,
-    theme: React.PropTypes.string
+    router: React.PropTypes.func.isRequired
   },
 
   render: function() {
@@ -67,6 +66,7 @@ var Docs = React.createClass({
               <Menu label="Theme" direction="up" small={true}>
                 <a href="/docs/" className={this.props.theme === 'generic' ? 'active' : ''}>Grommet</a>
                 <a href="/docs/hpe/" className={this.props.theme === 'hpe' ? 'active' : ''}>HPE</a>
+                <a href="/docs/hpinc/" className={this.props.theme === 'hpinc' ? 'active' : ''}>HPInc</a>
               </Menu>
             </div>
           </div>

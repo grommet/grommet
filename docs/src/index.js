@@ -18,7 +18,11 @@ if (__THEME__.hpe) {
   require("index-hpe.scss");
   rootPath = '/docs/hpe/';
   theme = 'hpe';
-} else {
+} if (__THEME__.hpinc) {
+  require("index-hpinc.scss");
+  rootPath = '/docs/hpinc/';
+  theme = 'hpinc';
+} else if(__THEME__.generic) {
   require("index.scss");
 }
 
@@ -36,8 +40,16 @@ var StyleGuide = require('./style_guide/StyleGuide');
 var Documentation = require('./documentation/Documentation');
 var Downloads = require('./downloads/Downloads');
 
+var DocsRouter = React.createClass({
+  render: function() {
+    return (
+      <Docs theme={theme} />
+    );
+  }
+});
+
 var routes = (
-  <Route name="docs" path={rootPath} handler={Docs}>
+  <Route name="docs" path={rootPath} handler={DocsRouter}>
     <Route name="home" path={rootPath} handler={Home}>
       <Route name="request_access" handler={RequestAccess} />
     </Route>

@@ -58,7 +58,7 @@ var opts = {
           loader: 'jsx-loader!imports?React=react,Router=react-router,Link=>Router.Link!html-jsx-loader'
         }
     	]
-    }	
+    }
   },
   devServerPort: 8002,
   devServerProxy: {
@@ -67,7 +67,7 @@ var opts = {
   distPreprocess: ['dist-hpe', 'dist-hpinc'],
   env: {
     __THEME__: {
-      general: true
+      generic: true
     }
   },
   scsslint: true
