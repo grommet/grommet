@@ -56,6 +56,13 @@ var BasicsHeader = React.createClass({
 });
 
 var BasicsSection = React.createClass({
+
+  componentDidMount: function () {
+    var fontNameElement = this.refs.fontName.getDOMNode();
+    var fontFamily = window.getComputedStyle(fontNameElement).fontFamily;
+    fontNameElement.innerHTML = fontFamily.split(',')[0];
+  },
+
   render: function () {
 
     var controlIcons = CONTROL_ICONS.map(function (item) {
@@ -149,9 +156,7 @@ var BasicsSection = React.createClass({
 
     <a className="anchor" id="typography"></a>
     <h3>Typography</h3>
-    <p>Applications use the <a className="generic-branding"
-      href="http://www.google.com/fonts/specimen/Source+Sans+Pro">Source Sans Pro</a>
-    <span className="hpe-branding">Metric</span> font.  The
+    <p>Applications use the <span ref="fontName">Arial</span> font.  The
     typographic scale and styles can be found in the attached assets.</p>
     <div className="font-sample h1">H1 font sample</div>
     <div className="font-sample h2">H2 font sample</div>
