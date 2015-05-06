@@ -30,6 +30,8 @@ var DEFAULT_OPTIONS = {
 var Activity = React.createClass({
 
   propTypes: {
+    query: React.PropTypes.object,
+    onQuery: React.PropTypes.func,
     onSelect: React.PropTypes.func
   },
 
@@ -38,6 +40,9 @@ var Activity = React.createClass({
   _onQuery: function (query) {
     var options = merge(this.state.data.options, {params: {query: query}});
     IndexActions.getItems(options);
+    if (this.props.onQuery) {
+      this.props.onQuery(query);
+    }
   },
 
   _onMore: function () {
@@ -61,7 +66,11 @@ var Activity = React.createClass({
   },
 
   componentWillMount: function () {
-    IndexActions.setup(DEFAULT_OPTIONS);
+    var options = DEFAULT_OPTIONS;
+    if (this.props.query) {
+      options = merge(DEFAULT_OPTIONS, {params: {query: this.props.query}});
+    }
+    IndexActions.setup(options);
   },
 
   componentDidMount: function () {
