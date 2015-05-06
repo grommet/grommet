@@ -27,14 +27,11 @@ function getPossibleNodePaths() {
 
   if (process.env.NODE_PATH) {
     paths = paths.concat(process.env.NODE_PATH.split(splitter));
-  } else {
-    if (process.platform === 'win32') {
-      paths.push(path.join(process.env.APPDATA, 'npm', 'node_modules'));
-    } else {
-      paths.push('/usr/lib/node_modules');
-      paths.push('/usr/local/lib/node_modules');
-    }
   }
+
+  paths.push(path.join(process.env.APPDATA, 'npm', 'node_modules'));
+  paths.push('/usr/lib/node_modules');
+  paths.push('/usr/local/lib/node_modules');
 
   return paths;
 }
@@ -50,7 +47,7 @@ function getGrommetPath() {
 		}
 		return false;
 	});
-  
+
   if (!grommetPath) {
   	console.log('Could not find Grommet!');
   	process.exit(1);
