@@ -1,0 +1,26 @@
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+
+$brand-color: #0096D6;
+$brand-neutral-colors: (#767676, #B9B8BB, #E5E8E8);
+$brand-accent-colors: (#008424, #822980);
+$brand-status-colors: (
+  error: #DC442F,
+  warning: #F4B51E,
+  ok: #42A425,
+  unknown: #848484,
+  disabled: #848484
+);
+$brand-link-color: #2883d7;
+$brand-grey-colors: (#767676, #B9B8BB, #E5E8E8);
+$brand-graph-colors: (#0096D6, #C094bf, #99d5ef, #87898b, #b9b8bb);
+
+@font-face {
+  font-family: "HPSimplified";
+  src: url("~grommet/scss/hpinc/font/hps-me-w27-regular-woff.woff") format('woff');
+}
+
+html {
+  font-family: 'HPSimplified', Arial, sans-serif
+}
+
+$border-radius: 0px 5px 0px 5px;
