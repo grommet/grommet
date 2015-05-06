@@ -10,12 +10,11 @@ var Top = React.createClass({
       className += ' ' + this.props.className;
     }
     return (
-      <svg className={className} viewBox="0 0 48 48" version="1.1"
-        stroke="#979797">
-        <g strokeLinecap="round" strokeWidth="3" fillRule="evenodd" fill="none">
-          <path d="M24,22.5 L33,29.5"></path>
-          <path d="M15,18.5 L33,18.5"></path>
-          <path d="M24,22.5 L15,29.5"></path>
+      <svg className={className} viewBox="0 0 48 48" version="1.1">
+        <g fill="none">
+          <polyline strokeWidth="2" points="14,20.9 24,13 34,21 "/>
+          <path strokeWidth="2" d="M24,13.3C24,36,24,36,24,36"/>
+          <line strokeWidth="2" x1="13" y1="11" x2="35" y2="11"/>
         </g>
       </svg>
     );

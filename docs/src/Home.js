@@ -8,6 +8,11 @@ var Tile = require('grommet/components/Tile');
 var Menu = require('grommet/components/Menu');
 var Link = require('react-router').Link;
 var ProcessAnimation = require('./img/ProcessAnimation');
+var Semantic = require('./img/Semantic');
+var MobileFirst = require('./img/MobileFirst');
+var Customizable = require('./img/Customizable');
+var Tooling = require('./img/Tooling');
+var Console = require('./img/Console');
 
 var Home = React.createClass({
 
@@ -46,7 +51,7 @@ var Home = React.createClass({
           </div>
         </Section>
 
-        <Section className="home__scale" centered={true} colorIndex="accent-2">
+        <Section className="home__scale" centered={true} colorIndex="neutral-1">
           <img className="home__scale-graphic" src="img/scale.svg" alt="Scale" />
           <h3>Grommet easily and efficiently scales your project with one code base,
             from phones to desktops, and everything in between.</h3>
@@ -56,32 +61,32 @@ var Home = React.createClass({
           </Menu>
         </Section>
 
-        <Section className="home__process" centered={true} colorIndex="neutral-1">
+        <Section className="home__process" centered={true} colorIndex="neutral-2">
           <ProcessAnimation className="home__process-graphic"/>
           <h2>Prototype your template quickly.</h2>
           <h4>With templates for all your basic layout needs and styling already
             baked in, crafting your application happens in no time.</h4>
         </Section>
 
-        <Section className="home__features" centered={true} colorIndex="neutral-2">
+        <Section className="home__features" centered={true} colorIndex="neutral-3">
           <Tiles fill={true}>
             <Tile>
-              <img src="img/semantic.svg" title="semantic" />
+              <Semantic />
               <h2>Semantic</h2>
               <h4>Clean markup with all the utility and speed.</h4>
             </Tile>
             <Tile>
-              <img src="img/mobile-first.svg" title="mobile first" />
+              <MobileFirst />
               <h2>Mobile First</h2>
               <h4>Start small and build your way up to larger devices.</h4>
             </Tile>
             <Tile>
-              <img src="img/customizable.svg" title="customizable" />
+              <Customizable />
               <h2>Customizable</h2>
               <h4>Only use what you need and change what you use.</h4>
             </Tile>
             <Tile>
-              <img src="img/tooling.svg" title="tooling" />
+              <Tooling />
               <h2>Tooling</h2>
               <h4>All the toys a designer and developer need to succeed.</h4>
             </Tile>
@@ -120,9 +125,9 @@ var Home = React.createClass({
           </Tiles>
         </Section>
 
-        <Section className="home__develop" direction="right" colorIndex="neutral-3">
+        <Section className="home__develop" direction="right" colorIndex="neutral-1">
           <Link className="flex-1" to="doc_helloworld">
-            <img src="img/Console.svg" title="Console" />
+            <Console />
           </Link>
           <div className="flex-1">
             <h2>Quick Develop</h2>

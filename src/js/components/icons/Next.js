@@ -11,9 +11,9 @@ var Next = React.createClass({
     }
     return (
       <svg className={className} viewBox="0 0 48 48" version="1.1">
-        <g fill="none" fillRule="evenodd"
-          strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M20,34 L28,24 L20,14"></path>
+        <g fill="none">
+        	<polyline strokeWidth="2" points="27.1,14 35,24 27,34"/>
+        	<path strokeWidth="2" d="M34.7,24C12,24,12,24,12,24"/>
         </g>
       </svg>
     );

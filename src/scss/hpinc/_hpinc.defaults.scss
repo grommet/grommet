@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 $brand-color: #0096D6;
-$brand-neutral-colors: (#767676, #B9B8BB, #E5E8E8);
+$brand-neutral-colors: (#545454, #767676, #989898);
 $brand-accent-colors: (#008424, #822980);
 $brand-status-colors: (
   error: #DC442F,
@@ -11,7 +11,7 @@ $brand-status-colors: (
   disabled: #848484
 );
 $brand-link-color: #2883d7;
-$brand-grey-colors: (#767676, #B9B8BB, #E5E8E8);
+$brand-grey-colors: (#545454, #767676, #989898);
 $brand-graph-colors: (#0096D6, #C094bf, #99d5ef, #87898b, #b9b8bb);
 
 @font-face {
@@ -19,8 +19,22 @@ $brand-graph-colors: (#0096D6, #C094bf, #99d5ef, #87898b, #b9b8bb);
   src: url("~grommet/scss/hpinc/font/hps-me-w27-regular-woff.woff") format('woff');
 }
 
-html {
+html,
+.brand-font {
   font-family: 'HPSimplified', Arial, sans-serif;
+}
+
+.control-icon {
+  path,
+  line,
+  polyline,
+  circle,
+  rect,
+  polygon {
+    stroke-width: 4px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
 }
 
 $border-radius: 0px 5px 0px 5px;

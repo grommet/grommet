@@ -11,18 +11,16 @@ var Edit = React.createClass({
     }
     return (
       <svg className={className} viewBox="0 0 48 48" version="1.1">
-        <g fill="none" fill-rule="evenodd">
-          <circle strokeWidth="4" cx="24" cy="24" r="7"></circle>
-          <g strokeWidth="3" strokeLinecap="round">
-            <path d="M24,13.5 L24,17.5"></path>
-            <path d="M24,30.5 L24,34.5"></path>
-            <path d="M30.5,24 L34.5,24"></path>
-            <path d="M13.5,24 L17.5,24"></path>
-            <path d="M16.5,16.5 L18.5,18.5"></path>
-            <path d="M29.5,29.5 L31.5,31.5"></path>
-            <path d="M28,18 L30.5,15.5"></path>
-            <path d="M16.5,31.5 L18.5,29.5"></path>
-          </g>
+        <g fill="none">
+          <circle strokeWidth="2" cx="24" cy="24" r="9"/>
+          <line strokeWidth="2" x1="24" y1="11" x2="24" y2="15"/>
+          <line strokeWidth="2" x1="33.2" y1="14.8" x2="30.3" y2="17.6"/>
+          <line strokeWidth="2" x1="37" y1="24" x2="33" y2="24"/>
+          <line strokeWidth="2" x1="33.2" y1="33.2" x2="30.3" y2="30.4"/>
+          <line strokeWidth="2" x1="24" y1="37" x2="24" y2="33"/>
+          <line strokeWidth="2" x1="14.8" y1="33.2" x2="17.7" y2="30.4"/>
+          <line strokeWidth="2" x1="11" y1="24" x2="15.2" y2="24"/>
+          <line strokeWidth="2" x1="14.8" y1="14.8" x2="17.7" y2="17.6"/>
         </g>
       </svg>
     );

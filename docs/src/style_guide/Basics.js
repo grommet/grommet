@@ -3,6 +3,7 @@
 var React = require('react');
 
 var CONTROL_ICONS = [
+  {icon: 'Add'},
   {icon: 'Clear', labels: ['Clear', 'Close', 'Remove']},
   {icon: 'Edit', labels: ['Edit', 'Settings', 'Actions']},
   {icon: 'More'},
@@ -10,7 +11,6 @@ var CONTROL_ICONS = [
   {icon: 'DropCaret', labels: ['Drop caret']},
   {icon: 'Filter'},
   {icon: 'Search'},
-  {icon: 'SearchPlus', labels: ['Search and filter']},
   {icon: 'Help'},
   {icon: 'Next'},
   {icon: 'Previous'},
@@ -124,6 +124,15 @@ var BasicsSection = React.createClass({
     <span className="swatch status-warning"></span>
     <span className="swatch status-ok"></span>
     <span className="swatch status-unknown"></span>
+
+    <h3>Graph</h3>
+    <p>These colors are used to draw graphs and charts.</p>
+    <span className="swatch graph-1"></span>
+    <span className="swatch graph-2"></span>
+    <span className="swatch graph-3"></span>
+    <span className="swatch graph-4"></span>
+    <span className="swatch graph-5"></span>
+    <span className="swatch graph-6"></span>
 
   </section>
 

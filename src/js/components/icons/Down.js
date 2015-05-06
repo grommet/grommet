@@ -10,11 +10,10 @@ var Down = React.createClass({
       className += ' ' + this.props.className;
     }
     return (
-      <svg className={className} viewBox="0 0 48 48" version="1.1"
-        stroke="#979797">
-        <g fill="none" fillRule="evenodd"
-          strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" >
-          <path d="M15,19.5 L24,26.5 L33,19.5"></path>
+      <svg className={className} viewBox="0 0 48 48" version="1.1">
+        <g fill="none">
+          <polyline strokeWidth="2" points="34,27.1 24,35 14,27 "/>
+          <path strokeWidth="2" d="M24,34.7C24,12,24,12,24,12"/>
         </g>
       </svg>
     );

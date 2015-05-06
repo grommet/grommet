@@ -11,8 +11,9 @@ var Filter = React.createClass({
     }
     return (
       <svg className={className} viewBox="0 0 48 48" version="1.1">
-        <g strokeWidth="1" fillRule="evenodd">
-          <path d="M12,12 L21,23 L21,34 L27,36 L27,23 L36,12 L12,12 Z"></path>
+        <g fill="none">
+        	<polygon strokeWidth="2" points="12,13 24,27 36,13 	"/>
+        	<line strokeWidth="2" x1="24" y1="27" x2="24" y2="38"/>
         </g>
       </svg>
     );

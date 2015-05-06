@@ -11,9 +11,8 @@ var DropCaret = React.createClass({
     }
     return (
       <svg className={className} viewBox="0 0 48 48" version="1.1" >
-        <g strokeWidth="6" strokeLinecap="round" strokeLinejoin="round"
-          fill="none" fillRule="evenodd" >
-          <path d="M15,21 L24,30 L33,21"></path>
+        <g fill="none">
+          <path strokeWidth="2" d="M12,18l12,9l12-9"/>
         </g>
       </svg>
     );

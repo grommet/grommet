@@ -10,12 +10,11 @@ var More = React.createClass({
       className += ' ' + this.props.className;
     }
     return (
-      <svg className={className} viewBox="0 0 48 48" version="1.1"
-        fill="#BBBBBB">
-        <g stroke="none" strokeWidth="1" fillRule="evenodd">
-          <circle cx="15" cy="24" r="3"></circle>
-          <circle cx="24" cy="24" r="3"></circle>
-          <circle cx="33" cy="24" r="3"></circle>
+      <svg className={className} viewBox="0 0 48 48" version="1.1">
+        <g fill="none">
+          <rect x="23" y="23" strokeWidth="2" width="2" height="2"/>
+          <rect x="15" y="23" strokeWidth="2" width="2" height="2"/>
+          <rect x="31" y="23" strokeWidth="2" width="2" height="2"/>
         </g>
       </svg>
     );

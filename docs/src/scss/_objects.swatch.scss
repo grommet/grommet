@@ -53,6 +53,16 @@
       }
     }
   }
+
+  @for $i from 1 through length($brand-graph-colors) {
+    &.graph-#{$i} {
+      background-color: nth($brand-graph-colors, $i);
+
+      &:after {
+        content: "#{nth($brand-graph-colors, $i)}";
+      }
+    }
+  }
 }
 
 .icon-tile {

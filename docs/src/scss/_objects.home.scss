@@ -1,6 +1,6 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-$scale-background-color: nth($brand-accent-colors, 2);
+$scale-background-color: nth($brand-neutral-colors, 1);
 $scale-background-color-top: rgba($scale-background-color, 0.85);
 
 .home {
@@ -29,6 +29,12 @@ $scale-background-color-top: rgba($scale-background-color, 0.85);
 
   h4 {
     max-width: round($inuit-base-spacing-unit * 32);
+  }
+
+  svg {
+    g.home-brand {
+      fill: $brand-color;
+    }
   }
 
   .section {
@@ -96,7 +102,7 @@ $scale-background-color-top: rgba($scale-background-color, 0.85);
         color: darken($colored-text-color, 20%);
 
         h4 {
-          color: nth($brand-accent-colors, 1);
+          color: $brand-color; //nth($brand-accent-colors, 1);
           font-weight: 400;
         }
       }
@@ -176,6 +182,14 @@ $scale-background-color-top: rgba($scale-background-color, 0.85);
     border: 1px solid rgba(0, 0, 0, 0.2);
     padding: $inuit-base-spacing-unit;
     overflow: hidden;
+  }
+
+
+  &__develop.section {
+    svg,
+    img {
+      width: 100%;
+    }
   }
 
   &__developer.section {

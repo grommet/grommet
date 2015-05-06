@@ -59,7 +59,7 @@ var opts = {
     	]
     }
   },
-  devServerPort: 8002,
+  devServerPort: 8003,
   devServerProxy: {
     "/rest/*": 'http://localhost:8000'
   },
