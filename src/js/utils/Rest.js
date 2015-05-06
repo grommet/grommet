@@ -40,6 +40,13 @@ var Rest = {
     _headers[name] = value;
   },
 
+  head: function (uri, params) {
+    var op = request.head(uri).query(buildQueryParams(params));
+    op.timeout(_timeout);
+    op.set(_headers);
+    return op;
+  },
+
   get: function (uri, params) {
     var op = request.get(uri).query(buildQueryParams(params));
     op.timeout(_timeout);
@@ -47,8 +54,22 @@ var Rest = {
     return op;
   },
 
+  patch: function (uri, data) {
+    var op = request.patch(uri).send(data);
+    op.timeout(_timeout);
+    op.set(_headers);
+    return op;
+  },
+
   post: function (uri, data) {
     var op = request.post(uri).send(data);
+    op.timeout(_timeout);
+    op.set(_headers);
+    return op;
+  },
+
+  put: function (uri, data) {
+    var op = request.put(uri).send(data);
     op.timeout(_timeout);
     op.set(_headers);
     return op;

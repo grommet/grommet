@@ -28,6 +28,7 @@ var LayerDoc = require('./components/LayerDoc');
 var LoginFormDoc = require('./components/LoginFormDoc');
 var MenuDoc = require('./components/MenuDoc');
 var MeterDoc = require('./components/MeterDoc');
+var RestDoc = require('./utils/RestDoc');
 var SearchDoc = require('./components/SearchDoc');
 var SectionDoc = require('./components/SectionDoc');
 var TableDoc = require('./components/TableDoc');
@@ -80,6 +81,11 @@ var CONTENTS = [
       {route: 'doc_table', label: 'Table', component: TableDoc},
       {route: 'doc_tiles', label: 'Tiles', component: TilesDoc},
       {route: 'doc_title', label: 'Title', component: TitleDoc}
+    ]
+  },
+  {label: 'Utils',
+    contents: [
+      {route: 'doc_rest', label: 'Rest', component: RestDoc},
     ]
   },
   {label: 'Reference',
