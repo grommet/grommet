@@ -29,7 +29,10 @@ function getPossibleNodePaths() {
     paths = paths.concat(process.env.NODE_PATH.split(splitter));
   }
 
-  paths.push(path.join(process.env.APPDATA, 'npm', 'node_modules'));
+  if (process.platform === 'win32') {
+    paths.push(path.join(process.env.APPDATA, 'npm', 'node_modules'));
+  }
+
   paths.push('/usr/lib/node_modules');
   paths.push('/usr/local/lib/node_modules');
 
