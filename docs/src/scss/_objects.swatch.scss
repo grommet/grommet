@@ -3,15 +3,15 @@
 .swatch {
   position: relative;
   display: inline-block;
-  width: 100px;
-  height: 60px;
+  width: round($inuit-base-spacing-unit * 4);
+  height: round($inuit-base-spacing-unit * 3);
   margin-right: $inuit-base-spacing-unit;
   margin-bottom: double($inuit-base-spacing-unit);
 
   &:after {
     content: '';
     position: absolute;
-    top: 60px;
+    top: round($inuit-base-spacing-unit * 3);
     left: 0px;
     text-transform: uppercase;
   }
