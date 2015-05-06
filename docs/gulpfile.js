@@ -64,7 +64,7 @@ var opts = {
   devServerProxy: {
     "/rest/*": 'http://localhost:8000'
   },
-  distPreprocess: ['dist-hpe'],
+  distPreprocess: ['dist-hpe', 'dist-hpinc'],
   env: {
     __THEME__: {
       general: true
@@ -81,6 +81,18 @@ gulp.task('dist-hpe', function() {
 
 gulp.task('dev-hpe', function() {
   return gulp.src('docs/hpe/gulpfile.js').pipe(chug({
+     tasks: ['dev']
+  }));
+});
+
+gulp.task('dist-hpinc', function() {
+  return gulp.src('docs/hpinc/gulpfile.js').pipe(chug({
+     tasks: ['dist']
+  }));
+});
+
+gulp.task('dev-hpinc', function() {
+  return gulp.src('docs/hpinc/gulpfile.js').pipe(chug({
      tasks: ['dev']
   }));
 });
