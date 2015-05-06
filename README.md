@@ -27,7 +27,7 @@ Before opening an issue or pull request, please read the [Contributing](http://g
 
   For NPM users:
   ```
-    $ npm install -g grommet --registry http://grommet.usa.hp.com:2374  
+    $ npm install -g grommet --registry http://grommet.usa.hp.com:2374
   ```
 
-  Detailed instructions are on the [Get Started](http://grommet.usa.hp.com/docs/hpinc/documentation/get-started) page.
+  Detailed instructions are on the [Get Started](http://grommet.usa.hp.com/docs/hpe/documentation/get-started) page.
