@@ -18,7 +18,7 @@ Before opening an issue or pull request, please read the [Contributing](http://g
 
 ### Install
 
-  Then you can install Grommet using one of the methods below.
+  You can install Grommet using either of the methods below.
 
   For Bower users:
   ```
