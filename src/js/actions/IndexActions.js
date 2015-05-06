@@ -11,7 +11,7 @@ var IndexActions = Reflux.createActions({
   'getAggregate': {asyncResult: true}
 });
 
-IndexActions.setup.listen(function (options) {
+IndexActions.setup.listen(function () {
   var thisAction = this;
   thisAction.failed('TBD');
   /*
