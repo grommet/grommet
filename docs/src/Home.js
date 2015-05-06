@@ -13,6 +13,7 @@ var MobileFirst = require('./img/MobileFirst');
 var Customizable = require('./img/Customizable');
 var Tooling = require('./img/Tooling');
 var Console = require('./img/Console');
+var NextIcon = require('grommet/components/icons/Next');
 
 var Home = React.createClass({
 
@@ -28,12 +29,12 @@ var Home = React.createClass({
           <Menu direction="right">
             <span>
               Grab the Grommet <a href="/assets/0.1.1/grommet_sticker_sheet.ai" target="_blank">
-                Sticker Sheet <img className="right-arrow" src="img/right-arrow.svg" title="right arrow" />
+                Sticker Sheet <NextIcon />
               </a>
             </span>
             <span>
               Check out Grommet on <a href="https://github.com/HewlettPackard/grommet" target="_blank">
-                GitHub <img className="right-arrow" src="img/right-arrow.svg" title="right arrow" />
+                GitHub <NextIcon />
               </a>
             </span>
           </Menu>

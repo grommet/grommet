@@ -54,10 +54,21 @@ $scale-background-color-top: rgba($scale-background-color, 0.85);
     a {
       color: $text-color;
       font-weight: 600;
+
+      &:hover {
+        svg g {
+          stroke: $brand-color-darker;
+        }
+      }
     }
 
-    .right-arrow {
-      height: $inuit-base-spacing-unit;
+    .control-icon-next {
+      position: relative;
+      margin-left: - halve($inuit-base-spacing-unit);
+
+      g {
+        stroke: $brand-color;
+      }
     }
 
     @include media-query(palm) {
