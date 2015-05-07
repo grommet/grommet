@@ -12,7 +12,8 @@ var TourActivity = React.createClass({
   },
 
   _onSelect: function (selection) {
-    this.context.router.transitionTo('alert', {splat: selection});
+    this.context.router.transitionTo('alert', {splat: selection},
+      this.context.router.getCurrentQuery());
   },
 
   _onQuery: function (query) {

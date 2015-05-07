@@ -10,6 +10,10 @@ var Actions = require('grommet/actions/Actions');
 
 var TourAlert = React.createClass({
 
+  contextTypes: {
+    router: React.PropTypes.func.isRequired
+  },
+
   _onResponse: function (err, res) {
     if (err && err.timeout > 1000) {
       this.setState({error: 'Timeout', result: {}});
@@ -28,7 +32,11 @@ var TourAlert = React.createClass({
   },
 
   getInitialState: function () {
-    return {uri: this.props.params.splat, resource: {}};
+    return {
+      uri: this.props.params.splat,
+      resource: {},
+      query: this.context.router.getCurrentQuery()
+    };
   },
 
   componentWillMount: function () {
@@ -41,7 +49,7 @@ var TourAlert = React.createClass({
   },
 
   render: function () {
-    var closer = <Link to="activity"><CloseIcon /></Link>;
+    var closer = <Link to="activity" query={this.state.query}><CloseIcon /></Link>;
     var associatedResource = null;
     if (this.state.resource && this.state.resource.attributes) {
       associatedResource =
