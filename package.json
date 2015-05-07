@@ -83,7 +83,8 @@
     "run-sequence": "^1.0.2",
     "webpack": "^1.7.3",
     "webpack-dev-server": "^1.8.0",
-    "glob": "^4.3.5"
+    "glob": "^4.3.5",
+    "yargs": "^3.8.0"
   },
   "config": {
     "blanket": {

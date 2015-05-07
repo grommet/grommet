@@ -104,25 +104,50 @@ module.exports = function(gulp, opts) {
   gulp.task('test', function (done) {
   	if (options.testPaths) {
   		var mocha = require('gulp-mocha');
-
+      var watch = require('gulp-watch');
+      var argv =  require('yargs').argv;
       require('./test-compiler');
   		require('./mocked-dom')('<html><body></body></html>');
+
+      function handleError() {
+        if (argv.w) {
+          this.emit('end');
+        } else {
+          process.exit(1);
+        }
+      }
 
       gulp.src(options.testPaths, { read: false })
         .pipe(mocha({
           reporter: 'spec'
         })).once('end', function () {
-          console.log('Generating code coverage...');
-          var blanket = require('gulp-blanket-mocha');
-          gulp.src(options.testPaths, { read: false })
-            .pipe(blanket({
-              instrument:[path.join(process.cwd(), 'src/js')],
-              captureFile: 'test/coverage.html',
-              reporter: 'html-cov'
-            }));
+          if (argv.w) {
+            var watchFolders = options.testPaths.slice();
+            options.jsAssets.forEach(function (jsAsset) {
+              watchFolders.push(jsAsset);
+            });
+            watch(watchFolders, function() {
+              gulp.src(options.testPaths, { read: false })
+                .pipe(mocha({
+                  reporter: 'spec'
+                })).once('end', function() {
+                  console.log('Watching for changes...');
+                }).on("error", handleError);
+            });
+            console.log('Watching for changes...');
+          } else {
+            console.log('Generating code coverage...');
+            var blanket = require('gulp-blanket-mocha');
+            gulp.src(options.testPaths, { read: false })
+              .pipe(blanket({
+                instrument:[path.join(process.cwd(), 'src/js')],
+                captureFile: 'test/coverage.html',
+                reporter: 'html-cov'
+              }));
             console.log('Done! You can checkout the report at test/coverage.html.');
             done();
-        });
+          }
+        }).on("error", handleError);
   	}
 	});
 
