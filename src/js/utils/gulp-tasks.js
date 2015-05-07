@@ -109,14 +109,6 @@ module.exports = function(gulp, opts) {
       require('./test-compiler');
       require('./mocked-dom')('<html><body></body></html>');
 
-      function handleError() {
-        if (argv.w) {
-          this.emit('end');
-        } else {
-          process.exit(1);
-        }
-      }
-
       gulp.src(options.testPaths, { read: false })
         .pipe(mocha({
           reporter: 'spec'
@@ -132,7 +124,13 @@ module.exports = function(gulp, opts) {
                   reporter: 'spec'
                 })).once('end', function() {
                   console.log('Watching for changes...');
-                }).on("error", handleError);
+                }).on("error", function handleError() {
+                  if (argv.w) {
+                    this.emit('end');
+                  } else {
+                    process.exit(1);
+                  }
+                });
             });
             console.log('Watching for changes...');
           } else {
@@ -147,7 +145,15 @@ module.exports = function(gulp, opts) {
             console.log('Done! You can checkout the report at test/coverage.html.');
             done();
           }
-        }).on("error", handleError);
+        }).on("error", function handleError() {
+          if (argv.w) {
+            this.emit('end');
+          } else {
+            process.exit(1);
+          }
+        });
+    } else {
+      done();
     }
   });
 
