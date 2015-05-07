@@ -36,7 +36,10 @@ packageJSON.dependencies = {
   'mkdirp': '^0.5.0',
   'gulp': '^3.8.11',
   'gulp-template': '^3.0.0',
-  'gulp-install': '^0.4.0'
+  'gulp-install': '^0.4.0',
+  "lodash": "^3.8.0",
+  "reflux": "^0.2.7",
+  "superagent": "^1.1.0"
 };
 
 var opts = {

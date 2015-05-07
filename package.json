@@ -41,12 +41,12 @@
     "inuit-responsive-tools": "~0.1.1",
     "inuit-shared": "~0.1.5",
     "highlight.js": "^8.5.0",
-    "lodash": "^3.8.0",
     "object-assign": "^2.0.0",
     "react-gravatar": "^1.0.0",
     "react-router": "^0.13.3",
     "react-time": "^2.4.0",
     "moment": "^2.8.3",
+    "lodash": "^3.8.0",
     "reflux": "^0.2.7",
     "superagent": "^1.1.0"
   },
