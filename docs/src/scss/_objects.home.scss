@@ -234,4 +234,7 @@ $scale-background-color-top: rgba($scale-background-color, 0.85);
   	padding-right: 5px;
   }
 
+  svg g.doc-brand {
+    stroke: $brand-color;
+  }
 }

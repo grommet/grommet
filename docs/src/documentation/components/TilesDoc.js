@@ -29,43 +29,43 @@ var TileDoc = React.createClass({
     var richTiles = [
       (<Tile key={1}>
         <Header>
-          <h3>First</h3>
+          <h4>First</h4>
         </Header>
         hello
         <Footer>
           <span></span>
           <Menu icon={<Edit/>} align="right" direction="up">
-            <a>action-1</a>
-            <a>action-2</a>
-            <a>action-3</a>
+            <a>action 1</a>
+            <a>action 2</a>
+            <a>action 3</a>
           </Menu>
         </Footer>
       </Tile>),
       (<Tile key={2}>
         <Header>
-          <h3>Second</h3>
+          <h4>Second</h4>
         </Header>
         hello
         <Footer>
           <span></span>
           <Menu icon={<Edit/>} align="right" direction="up">
-            <a>action-1</a>
-            <a>action-2</a>
-            <a>action-3</a>
+            <a>action 1</a>
+            <a>action 2</a>
+            <a>action 3</a>
           </Menu>
         </Footer>
       </Tile>),
       (<Tile key={3}>
         <Header>
-          <h3>Third</h3>
+          <h4>Third</h4>
         </Header>
         hello
         <Footer>
           <span></span>
           <Menu icon={<Edit/>} align="right" direction="up">
-            <a>action-1</a>
-            <a>action-2</a>
-            <a>action-3</a>
+            <a>action 1</a>
+            <a>action 2</a>
+            <a>action 3</a>
           </Menu>
         </Footer>
       </Tile>)
