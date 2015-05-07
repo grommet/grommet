@@ -10,21 +10,18 @@ var Actions = require('grommet/actions/Actions');
 var OPTIONS = {
   view: 'table',
   attributes: [
-    {attribute: 'status', label: 'Status', index: 0},
-    {attribute: 'name', label: 'Name', index: 1},
-    {attribute: 'associatedResourceName', label: 'Resource', index: 2},
-    {attribute: 'created', label: 'Time', index: 3, timestamp: true},
-    {attribute: 'state', label: 'State', index: 4}
+    {attribute: 'status', label: 'Status', index: 0, size: 'small'},
+    {attribute: 'name', label: 'Name', index: 1}
   ],
   params: {
-    category: 'tasks',
+    category: 'enclosures',
     start: 0,
     count: 20,
     query: null
   }
 };
 
-var Tasks = React.createClass({
+var Enclosures = React.createClass({
 
   contextTypes: {
     router: React.PropTypes.func.isRequired
@@ -80,4 +77,4 @@ var Tasks = React.createClass({
 
 });
 
-module.exports = Tasks;
+module.exports = Enclosures;

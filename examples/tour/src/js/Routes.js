@@ -11,7 +11,7 @@ var TBD = require('grommet/components/TBD');
 //var IndexDashboardPanelEdit = require('grommet/index/components/DashboardPanelEdit');
 var Tour = require('./Tour');
 var TourDashboard = require('./TourDashboard');
-var Tasks = require('./Tasks');
+var Enclosures = require('./Enclosures');
 var TourActivity = require('./TourActivity');
 var TourAlert = require('./TourAlert');
 
@@ -28,7 +28,7 @@ var routes = (
     <Route name="activity" handler={TourActivity}>
       <Route name="alert" path={rootPath + "alert/*"} handler={TourAlert} />
     </Route>
-    <Route name="tasks" handler={Tasks} />
+    <Route name="enclosures" handler={Enclosures} />
     <Route name="reports" handler={TBD} />
     <Route name="dashboard-edit" path="dashboard/edit"
       handler={TBD}>
