@@ -38,7 +38,7 @@ var webpackConfig = {
       {
         test: /\.scss$/,
         loader: 'style!css!sass?outputStyle=expanded&'+
-        	"includePaths[]=" +
+          "includePaths[]=" +
             (path.resolve(process.cwd(), "node_modules"))
       }
     ]
@@ -79,14 +79,14 @@ module.exports = function(gulp, opts) {
   });
 
   gulp.task('scsslint', function() {
-  	if (options.scsslint) {
-  		var scsslint = require('gulp-scss-lint');
-	    (options.scssAssets || []).forEach(function(scssAsset) {
-	      gulp.src(scssAsset).pipe(scsslint({
-	        'config': scssLintPath
-	      })).pipe(scsslint.failReporter());
-	    });
-  	}
+    if (options.scsslint) {
+      var scsslint = require('gulp-scss-lint');
+      (options.scssAssets || []).forEach(function(scssAsset) {
+        gulp.src(scssAsset).pipe(scsslint({
+          'config': scssLintPath
+        })).pipe(scsslint.failReporter());
+      });
+    }
   });
 
   gulp.task('jslint', function() {
@@ -102,12 +102,12 @@ module.exports = function(gulp, opts) {
   });
 
   gulp.task('test', function (done) {
-  	if (options.testPaths) {
-  		var mocha = require('gulp-mocha');
+    if (options.testPaths) {
+      var mocha = require('gulp-mocha');
       var watch = require('gulp-watch');
       var argv =  require('yargs').argv;
       require('./test-compiler');
-  		require('./mocked-dom')('<html><body></body></html>');
+      require('./mocked-dom')('<html><body></body></html>');
 
       function handleError() {
         if (argv.w) {
@@ -148,8 +148,8 @@ module.exports = function(gulp, opts) {
             done();
           }
         }).on("error", handleError);
-  	}
-	});
+    }
+  });
 
   gulp.task('preprocess', function(callback) {
     runSequence('clean', 'copy', 'jslint', 'scsslint', callback);
@@ -164,8 +164,8 @@ module.exports = function(gulp, opts) {
   });
 
   gulp.task('dist', ['preprocess', 'dist-preprocess'], function() {
-  	var env = assign({}, options.env, {
-    	__DEV_MODE__: false
+    var env = assign({}, options.env, {
+      __DEV_MODE__: false
     });
 
     var config = assign({}, webpackConfig, options.webpack || {}, {
@@ -185,9 +185,9 @@ module.exports = function(gulp, opts) {
     }
 
     if (options.webpack.module && options.webpack.module.loaders) {
-    	webpackConfig.module.loaders.forEach(function(loader) {
-    		config.module.loaders.push(loader);
-    	});
+      webpackConfig.module.loaders.forEach(function(loader) {
+        config.module.loaders.push(loader);
+      });
     }
 
     config.resolve.extensions = ['', '.js', '.json', '.htm', '.html', '.scss'];
@@ -200,7 +200,7 @@ module.exports = function(gulp, opts) {
   gulp.task('dev', ['preprocess'], function() {
 
     var env = assign({}, options.env, {
-    	__DEV_MODE__: true
+      __DEV_MODE__: true
     });
 
     var devWebpackConfig = assign({}, webpackConfig, options.webpack || {}, {
@@ -225,7 +225,7 @@ module.exports = function(gulp, opts) {
     });
 
     if (options.webpack.devAlias) {
-    	devWebpackConfig.resolve.alias = options.webpack.devAlias;
+      devWebpackConfig.resolve.alias = options.webpack.devAlias;
     }
 
     if (!devWebpackConfig.resolve) {
@@ -233,9 +233,9 @@ module.exports = function(gulp, opts) {
     }
 
     if (options.webpack.module && options.webpack.module.loaders) {
-    	webpackConfig.module.loaders.forEach(function(loader) {
-    		devWebpackConfig.module.loaders.push(loader);
-    	});
+      webpackConfig.module.loaders.forEach(function(loader) {
+        devWebpackConfig.module.loaders.push(loader);
+      });
     }
 
     devWebpackConfig.resolve.extensions = ['', '.js', '.json', '.htm', '.html', '.scss'];
@@ -259,20 +259,20 @@ module.exports = function(gulp, opts) {
     server.use('/', function(req, res, next) {
 
       if (req.url.match(/.+index.js$/)) {
-		    res.redirect(301, '/index.js');
-		  } else if (req.url.match(/.+\/img\//)) { // img
-		    res.redirect(301, req.url.replace(/.*\/(img\/.*)$/, "/$1"));
-		  } else if (req.url.match(/\/img\//)) { // img
-		    next();
-		  } else if (req.url.match(/.+\/font\//)) { // font
-		    res.redirect(301, req.url.replace(/.*\/(font\/.*)$/, "/$1"));
-		  } else if (req.url.match(/\/font\//)) { // font
-		    next();
-		  } else if (req.url.match(/.+\/.*\.[^\/]*$/)) { // file
-		    res.redirect(301, req.url.replace(/.*\/([^\/]*)$/, "/$1"));
-		  } else {
-		    next();
-		  }
+        res.redirect(301, '/index.js');
+      } else if (req.url.match(/.+\/img\//)) { // img
+        res.redirect(301, req.url.replace(/.*\/(img\/.*)$/, "/$1"));
+      } else if (req.url.match(/\/img\//)) { // img
+        next();
+      } else if (req.url.match(/.+\/font\//)) { // font
+        res.redirect(301, req.url.replace(/.*\/(font\/.*)$/, "/$1"));
+      } else if (req.url.match(/\/font\//)) { // font
+        next();
+      } else if (req.url.match(/.+\/.*\.[^\/]*$/)) { // file
+        res.redirect(301, req.url.replace(/.*\/([^\/]*)$/, "/$1"));
+      } else {
+        next();
+      }
     });
     server.listen(options.devServerPort || 8080, "localhost");
 
@@ -283,9 +283,9 @@ module.exports = function(gulp, opts) {
   });
 
   gulp.task('sync', ['syncPre'], function() {
-  	if (options.sync) {
-  		var rsync = require('gulp-rsync');
-  		gulp.src(dist)
+    if (options.sync) {
+      var rsync = require('gulp-rsync');
+      gulp.src(dist)
       .pipe(rsync({
         root: dist,
         hostname: options.sync.hostname,
@@ -299,7 +299,7 @@ module.exports = function(gulp, opts) {
         emptyDirectories: true,
         exclude: ['.DS_Store'],
       }));
-  	}
+    }
 
   });
 
