@@ -6,6 +6,7 @@ var rename = require('gulp-rename');
 var minifyCss = require('gulp-minify-css');
 var file = require('gulp-file');
 var preprocess = require('gulp-preprocess');
+var gulpif = require('gulp-if');
 var assign = require('object-assign');
 var webpack = require('webpack');
 var del = require('del');
@@ -13,6 +14,7 @@ var path = require('path');
 
 var packageJSON = require('./package.json');
 delete packageJSON.devDependencies;
+delete packageJSON.config;
 packageJSON.main = 'index.js';
 packageJSON.dependencies = {
   'react': '^0.13.1',
@@ -187,6 +189,13 @@ var bowerMinWebpackConfig = assign({}, bowerWebpackConfig, {
   ]
 });
 
+function distCss(path, name, minify) {
+  gulp.src(path)
+    .pipe(sass({includePaths: [ 'node_modules' ]}))
+    .pipe(rename(name))
+    .pipe(gulpif(minify, minifyCss()))
+    .pipe(gulp.dest('dist-bower/css'));
+}
 gulp.task('dist-bower', function() {
   del.sync(['dist-bower']);
 
@@ -200,33 +209,14 @@ gulp.task('dist-bower', function() {
     .pipe(gulpWebpack(bowerMinWebpackConfig))
     .pipe(gulp.dest('dist-bower'));
 
-  //grommet css exploded
-  gulp.src('src/scss/grommet-core/*.scss')
-        .pipe(sass({includePaths: [ 'node_modules' ]}))
-        .pipe(rename('grommet.css'))
-        .pipe(gulp.dest('dist-bower/css'));
+  distCss('src/scss/grommet-core/*.scss', 'grommet.css');
+  distCss('src/scss/grommet-core/*.scss', 'grommet.min.css', true);
+  distCss('src/scss/hpe/*.scss', 'grommet-hpe.css');
+  distCss('src/scss/hpe/*.scss', 'grommet-hpe.min.css', true);
+  distCss('src/scss/hpinc/*.scss', 'grommet-hpinc.css');
+  distCss('src/scss/hpinc/*.scss', 'grommet-hpinc.min.css', true);
 
-  //grommet css minified
-  gulp.src('src/scss/grommet-core/*.scss')
-        .pipe(sass({includePaths: [ 'node_modules' ]}))
-        .pipe(rename('grommet.min.css'))
-        .pipe(minifyCss())
-        .pipe(gulp.dest('dist-bower/css'));
-
-  //grommet-hpe css exploded
-  gulp.src('src/scss/hpe/*.scss')
-        .pipe(sass({includePaths: [ 'node_modules' ]}))
-        .pipe(rename('grommet-hpe.css'))
-        .pipe(gulp.dest('dist-bower/css'));
-
-  //grommet-hpe css minified
-  gulp.src('src/scss/hpe/*.scss')
-        .pipe(sass({includePaths: [ 'node_modules' ]}))
-        .pipe(rename('grommet-hpe.min.css'))
-        .pipe(minifyCss())
-        .pipe(gulp.dest('dist-bower/css'));
-
-   //sample-grommet
+  //sample-grommet
   gulp.src('examples/todo-app/index.html')
         .pipe(preprocess({context: { NODE_ENV: 'production'}}))
         .pipe(rename('sample-grommet.html'))
@@ -237,7 +227,7 @@ gulp.task('dist-bower', function() {
   bowerJSON.main = 'grommet.js';
   delete bowerJSON.devDependencies;
   delete bowerJSON.scripts;
-  delete bowerJSON.jest;
+  delete bowerJSON.config;
 
   gulp.src('./dist-bower')
           .pipe(file('bower.json', JSON.stringify(bowerJSON, null, 2)))
