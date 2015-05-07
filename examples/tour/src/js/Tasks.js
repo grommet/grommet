@@ -3,6 +3,7 @@
 var React = require('react');
 var merge = require('lodash/object/merge');
 var Index = require('grommet/components/index/Index');
+var IndexQuery = require('grommet/utils/IndexQuery');
 var Rest = require('grommet/utils/Rest');
 var Actions = require('grommet/actions/Actions');
 
@@ -25,6 +26,10 @@ var OPTIONS = {
 
 var Tasks = React.createClass({
 
+  contextTypes: {
+    router: React.PropTypes.func.isRequired
+  },
+
   _onResponse: function (err, res) {
     if (err && err.timeout > 1000) {
       this.setState({error: 'Timeout', result: {}});
@@ -39,20 +44,25 @@ var Tasks = React.createClass({
   },
 
   _getData: function () {
-    Rest.get('/rest/index/resources', this.state.options.params)
-      .end(this._onResponse);
+    var params = merge({}, this.state.options.params);
+    if (params.query && (typeof params.query === 'object')) {
+      params.query = params.query.fullText;
+    }
+    Rest.get('/rest/index/resources', params).end(this._onResponse);
   },
 
   _onQuery: function (query) {
     var options = merge(this.state.options, {params: {query: query}});
     this.setState({options: options}, this._getData);
+    var path = this.context.router.getCurrentPathname();
+    this.context.router.replaceWith(path, {}, {q: query.fullText});
   },
 
   getInitialState: function () {
-    return {
-      options: OPTIONS,
-      result: {}
-    };
+    var queryText = this.context.router.getCurrentQuery().q || '';
+    var options = merge(OPTIONS,
+      {params: {query: IndexQuery.create(queryText)}});
+    return {options: options, result: {}};
   },
 
   componentWillMount: function () {

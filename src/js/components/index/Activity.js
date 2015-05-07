@@ -1,11 +1,8 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var Reflux = require('reflux');
 var merge = require('lodash/object/merge');
 var Index = require('./Index');
-var IndexActions = require('../../actions/IndexActions');
-var IndexStore = require('../../stores/IndexStore');
 
 var DEFAULT_OPTIONS = {
   category: ['alerts', 'tasks'],
@@ -35,56 +32,25 @@ var Activity = React.createClass({
     onSelect: React.PropTypes.func
   },
 
-  mixins: [Reflux.ListenerMixin],
-
-  _onQuery: function (query) {
-    var options = merge(this.state.data.options, {params: {query: query}});
-    IndexActions.getItems(options);
-    if (this.props.onQuery) {
-      this.props.onQuery(query);
-    }
-  },
-
-  _onMore: function () {
-    // do we have more we could show?
-    var data = this.state.data;
-    if (data.result.count < data.result.total) {
-      // get one more page's worth of data
-      var options = merge(data.options,
-        {params: {count: (data.options.params.count + data.options.pageSize)}});
-      IndexActions.getItems(options);
-    }
-  },
-
-  _onIndexChange: function (data) {
-    this.setState({data: data});
-  },
-
   getInitialState: function () {
-    var data = IndexStore.getInitialState();
-    return {data: data};
-  },
-
-  componentWillMount: function () {
     var options = DEFAULT_OPTIONS;
     if (this.props.query) {
       options = merge(DEFAULT_OPTIONS, {params: {query: this.props.query}});
     }
-    IndexActions.setup(options);
+    return {options: options};
   },
 
-  componentDidMount: function () {
-    this.listenTo(IndexStore, this._onIndexChange);
+  componentWillReceiveProps: function (newProps) {
+    var options = merge(this.state.options, {params: {query: newProps.query}});
+    this.setState({options: options});
   },
 
   render: function () {
     return (
       <Index
-        options={this.state.data.options}
-        result={this.state.data.result}
-        onQuery={this._onQuery}
-        onSelect={this.props.onSelect}
-        onMore={this._onMore} />
+        options={this.state.options}
+        onQuery={this.props.onQuery}
+        onSelect={this.props.onSelect} />
     );
   }
 

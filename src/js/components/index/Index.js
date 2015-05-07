@@ -1,6 +1,10 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
+var Reflux = require('reflux');
+var merge = require('lodash/object/merge');
+var IndexActions = require('../../actions/IndexActions');
+var IndexStore = require('../../stores/IndexStore');
 var IndexTable = require('./IndexTable');
 var IndexTiles = require('./IndexTiles');
 var IndexHeader = require('./IndexHeader');
@@ -17,8 +21,10 @@ var Index = React.createClass({
       ]),
       attributes: React.PropTypes.arrayOf(React.PropTypes.shape({
         attribute: React.PropTypes.string,
-        label: React.PropTypes.string,
+        header: React.PropTypes.bool,
         index: React.PropTypes.number,
+        label: React.PropTypes.string,
+        size: React.PropTypes.string,
         timestamp: React.PropTypes.bool
       })),
       view: React.PropTypes.oneOf(["table", "tiles"]),
@@ -26,6 +32,13 @@ var Index = React.createClass({
         query: React.PropTypes.object
       })
     }),
+    selection: React.PropTypes.oneOfType([
+      React.PropTypes.string, // uri
+      React.PropTypes.arrayOf(React.PropTypes.string)
+    ]),
+    onSelect: React.PropTypes.func,
+    onQuery: React.PropTypes.func,
+    // if a result is omitted, the Index will use the expected REST api
     result: React.PropTypes.shape({
       total: React.PropTypes.number,
       unfilteredTotal: React.PropTypes.number,
@@ -34,13 +47,7 @@ var Index = React.createClass({
       items: React.PropTypes.arrayOf(React.PropTypes.object),
       error: React.PropTypes.string
     }),
-    selection: React.PropTypes.oneOfType([
-      React.PropTypes.string, // uri
-      React.PropTypes.arrayOf(React.PropTypes.string)
-    ]),
-    onMore: React.PropTypes.func,
-    onQuery: React.PropTypes.func,
-    onSelect: React.PropTypes.func
+    onMore: React.PropTypes.func
   },
 
   getDefaultProps: function () {
@@ -48,9 +55,59 @@ var Index = React.createClass({
       options: {
         attributes: [{name: 'name', label: 'Name', index: 0}],
         view: "tiles"
-      },
-      result: {}
+      }
     });
+  },
+
+  mixins: [Reflux.ListenerMixin],
+
+  _onQuery: function (query) {
+    if (! this.props.result) {
+      var options = merge(this.state.options, {params: {query: query}});
+      IndexActions.getItems(options);
+    }
+    if (this.props.onQuery) {
+      this.props.onQuery(query);
+    }
+  },
+
+  _onMore: function () {
+    // do we have more we could show?
+    var result = this.state.result;
+    if (result.count < result.total) {
+      // get one more page's worth of data
+      var options = this.state.options;
+      options = merge(options,
+        {params: {count: (options.params.count + options.pageSize)}});
+      IndexActions.getItems(options);
+    }
+  },
+
+  _onIndexChange: function (data) {
+    this.setState(data);
+  },
+
+  getInitialState: function () {
+    return {options: this.props.options, result: (this.props.result || {})};
+  },
+
+  componentWillMount: function () {
+    if (! this.props.result) {
+      IndexActions.setup(this.state.options);
+    }
+  },
+
+  componentWillReceiveProps: function (newProps) {
+    this.setState({options: this.props.options});
+    if (newProps.result) {
+      this.setState({result: newProps.result});
+    }
+  },
+
+  componentDidMount: function () {
+    if (! this.props.result) {
+      this.listenTo(IndexStore, this._onIndexChange);
+    }
   },
 
   render: function () {
@@ -59,21 +116,21 @@ var Index = React.createClass({
       classes.push(this.props.className);
     }
 
-    var options = this.props.options;
-    var result = this.props.result;
+    var options = this.state.options;
+    var result = this.state.result;
 
     var view = null;
     if ('table' === options.view) {
       view = (
         <IndexTable options={options} result={result}
           onSelect={this.props.onSelect}
-          onMore={this.props.onMore} />
+          onMore={this._onMore} />
       );
     } else if ('tiles' === options.view) {
       view = (
         <IndexTiles options={options} result={result}
           onSelect={this.props.onSelect}
-          onMore={this.props.onMore} />
+          onMore={this._onMore} />
       );
     }
 
@@ -90,11 +147,11 @@ var Index = React.createClass({
       <div className={classes.join(' ')}>
         <div className={CLASS_ROOT + "__container"}>
           <IndexHeader className={CLASS_ROOT + "__header"}
-            options={this.props.options}
+            options={options}
             total={result.total}
             fixed={'tiles' === options.view || true}
             unfilteredTotal={result.unfilteredTotal}
-            onQuery={this.props.onQuery} />
+            onQuery={this._onQuery} />
           {error}
           <div ref="items" className={CLASS_ROOT + "__items"}>
             {view}

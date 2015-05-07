@@ -1,7 +1,6 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var Dashboard = require('grommet/components/Dashboard');
 var Tiles = require('grommet/components/Tiles');
 var Tile = require('grommet/components/Tile');
 var Header = require('grommet/components/Header');
@@ -147,12 +146,14 @@ var TourDashboard = React.createClass({
       var state = this.state[tile.name] || {};
 
       if ('donut' === tile.type) {
+
         return (
           <Tile key={tile.name}>
             <Header><h3>{tile.name}</h3></Header>
             <Donut series={state.series || []} legend={true} />
           </Tile>
         );
+
       } else if ('chart' === tile.type) {
 
         return (
@@ -168,11 +169,9 @@ var TourDashboard = React.createClass({
     }, this);
 
     return (
-      <Dashboard>
-        <Tiles fill={true} flush={false}>
-          {tiles}
-        </Tiles>
-      </Dashboard>
+      <Tiles fill={true} flush={false}>
+        {tiles}
+      </Tiles>
     );
   }
 

@@ -104,7 +104,7 @@ module.exports = function(gulp, opts) {
   gulp.task('test', function (done) {
   	if (options.testPaths) {
   		var mocha = require('gulp-mocha');
-  		
+
       require('./test-compiler');
   		require('./mocked-dom')('<html><body></body></html>');
 
@@ -114,14 +114,14 @@ module.exports = function(gulp, opts) {
         })).once('end', function () {
           console.log('Generating code coverage...');
           var blanket = require('gulp-blanket-mocha');
-          gulp.src(options.testPaths, { read: false })  
+          gulp.src(options.testPaths, { read: false })
             .pipe(blanket({
               instrument:[path.join(process.cwd(), 'src/js')],
               captureFile: 'test/coverage.html',
               reporter: 'html-cov'
             }));
             console.log('Done! You can checkout the report at test/coverage.html.');
-            done(); 
+            done();
         });
   	}
 	});

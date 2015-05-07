@@ -59,14 +59,26 @@ var IndexHeader = React.createClass({
       outOfClasses.push(CLASS_ROOT + "__out-of--active");
     }
 
+    var filters = null;
+    var numFilters = this.props.options.attributes
+      .filter(function (attribute) {
+        return attribute.hasOwnProperty('filter');
+      })
+      .length;
+    if (numFilters > 0) {
+      filters = (
+        <IndexFilters options={this.props.options}
+          onQuery={this.props.onQuery} />
+      );
+    }
+
     return (
       <Header className={classes.join(' ')} fixed={this.props.fixed} flush={false}>
         <Search className={CLASS_ROOT + "__search"}
           inline={true}
           defaultValue={searchText}
           onChange={this._onSearchChange} />
-        <IndexFilters options={this.props.options}
-          onQuery={this.props.onQuery} />
+        {filters}
         <span className={CLASS_ROOT + "__count"}>
           {this.props.total}
           <span className={outOfClasses.join(' ')}>
