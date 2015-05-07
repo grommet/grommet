@@ -56,18 +56,18 @@ var IndexStore = Reflux.createStore({
   _onSetupCompleted: function (options) {
     this._data.options = options;
     this.trigger(this._data);
-    IndexActions.getItems(this._data.options);
+    IndexActions.getItems(this._data.options.params);
   },
 
   _onSetupFailed: function () {
     // likely didn't have any to get
     this.trigger(this._data);
-    IndexActions.getItems(this._data.options);
+    IndexActions.getItems(this._data.options.params);
   },
 
-  _onGetItems: function (options) {
+  _onGetItems: function (params) {
     this._data.state = 'changing';
-    this._data.options = options;
+    this._data.options.params = params;
     clearTimeout(this._clearTimer);
 
     // clear results slowly to avoid jumpiness

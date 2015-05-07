@@ -15,10 +15,6 @@ var Index = React.createClass({
 
   propTypes: {
     options: React.PropTypes.shape({
-      category: React.PropTypes.oneOfType([
-        React.PropTypes.string,
-        React.PropTypes.arrayOf(React.PropTypes.string)
-      ]),
       attributes: React.PropTypes.arrayOf(React.PropTypes.shape({
         attribute: React.PropTypes.string,
         header: React.PropTypes.bool,
@@ -29,6 +25,10 @@ var Index = React.createClass({
       })),
       view: React.PropTypes.oneOf(["table", "tiles"]),
       params: React.PropTypes.shape({
+        category: React.PropTypes.oneOfType([
+          React.PropTypes.string,
+          React.PropTypes.arrayOf(React.PropTypes.string)
+        ]),
         query: React.PropTypes.object
       })
     }),
@@ -63,8 +63,8 @@ var Index = React.createClass({
 
   _onQuery: function (query) {
     if (! this.props.result) {
-      var options = merge(this.state.options, {params: {query: query}});
-      IndexActions.getItems(options);
+      var params = merge(this.state.options.params, {query: query});
+      IndexActions.getItems(params);
     }
     if (this.props.onQuery) {
       this.props.onQuery(query);
@@ -76,14 +76,15 @@ var Index = React.createClass({
     var result = this.state.result;
     if (result.count < result.total) {
       // get one more page's worth of data
-      var options = this.state.options;
-      options = merge(options,
-        {params: {count: (options.params.count + options.pageSize)}});
-      IndexActions.getItems(options);
+      var params = this.state.options.params;
+      params = merge(params,
+        {count: (params.count + this.state.options.pageSize)});
+      IndexActions.getItems(params);
     }
   },
 
   _onIndexChange: function (data) {
+    console.log('!!! Index _onIndexChange', data);
     this.setState(data);
   },
 

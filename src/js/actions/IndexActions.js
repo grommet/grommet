@@ -30,21 +30,39 @@ IndexActions.setup.listen(function () {
   */
 });
 
-IndexActions.getItems.listen(function (options) {
+IndexActions.getItems.listen(function (params) {
   var thisAction = this;
-  var params = merge({}, {category: options.category}, options.params);
-  if (params.query && (typeof params.query === 'object')) {
-    params.query = params.query.fullText;
+  var restParams = merge({}, params);
+  if (restParams.query && (typeof restParams.query === 'object')) {
+    restParams.query = restParams.query.fullText;
   }
-  Rest.get('/rest/index/resources', params)
+  Rest.get('/rest/index/resources', restParams)
     .end(function(err, res) {
       if (res.status === 400) {
         return Actions.logout();
       }
       if (err || !res.ok) {
-        return thisAction.failed(err, res.body || res.text);
+        return thisAction.failed(err, res.body || res.text, params);
       }
-      thisAction.completed(res.body);
+      thisAction.completed(res.body, params);
+    });
+});
+
+IndexActions.getAggregate.listen(function (params) {
+  var thisAction = this;
+  var restParams = merge({}, params);
+  if (restParams.query && (typeof restParams.query === 'object')) {
+    restParams.query = restParams.query.fullText;
+  }
+  Rest.get('/rest/index/resources/aggregated', restParams)
+    .end(function(err, res) {
+      if (res.status === 400) {
+        return Actions.logout();
+      }
+      if (err || !res.ok) {
+        return thisAction.failed(err, res.body || res.text, params);
+      }
+      thisAction.completed(res.body, params);
     });
 });
 

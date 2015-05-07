@@ -5,7 +5,6 @@ var merge = require('lodash/object/merge');
 var Index = require('./Index');
 
 var DEFAULT_OPTIONS = {
-  category: ['alerts', 'tasks'],
   view: 'table',
   attributes: [
     {attribute: 'status', label: 'Status', index: 0, size: 'small', header: true,
@@ -20,6 +19,7 @@ var DEFAULT_OPTIONS = {
       filter: ['Alerts', 'Tasks']},
   ],
   params: {
+    category: ['alerts', 'tasks'],
     sort: 'created:desc',
   }
 };
