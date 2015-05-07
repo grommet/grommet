@@ -187,6 +187,7 @@ router.get('/index/resources/aggregated', function(req, res) {
             break;
           }
         }
+
         if (!count) {
           var count = {value: value, count: 0};
           if (intervals) {
@@ -195,6 +196,7 @@ router.get('/index/resources/aggregated', function(req, res) {
           counts.push(count);
         }
         count.count += 1;
+
         if (count.intervals) {
           for (i=0; i<count.intervals.length; i++) {
             var interval = count.intervals[i];

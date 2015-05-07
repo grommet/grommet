@@ -33,10 +33,10 @@ var ChartDoc = React.createClass({
             <dd>Whether to show a legend.</dd>
             <dt><code>max         {"{number}"}</code></dt>
             <dd>The largest possible value.
-              Defaults to the largest x value in the series data.</dd>
+              Defaults to the largest y value in the series data.</dd>
             <dt><code>min         {"{number}"}</code></dt>
             <dd>The smallest possible value.
-              Defaults to the smallest x value in the series data.</dd>
+              Defaults to the smallest y value in the series data.</dd>
             <dt><code>series       {"[{...}]"}</code></dt>
             <dd>An array of: <code>
               {"{label: <string>, colorIndex: <string>, values: [[x,y], ...]}"}
@@ -79,7 +79,7 @@ var ChartDoc = React.createClass({
             {"<Chart type=\"area\" threshold={2} />"}
           </code></pre>
 
-          <h3>Legend, xAxis, and Units</h3>
+          <h3>Bar, Legend, xAxis, and Units</h3>
           <div className="example">
           <Chart series={series} min={0} max={5} threshold={2} type="bar" legend={true}
             xAxis={['Aug 8', 'Aug 7', 'Aug 6', 'Aug 5', 'Aug 4']}
@@ -89,6 +89,15 @@ var ChartDoc = React.createClass({
             {"<Chart type=\"bar\" threshold={2} legend=(true) xAxis={[...]} units=\"TB\" />"}
           </code></pre>
 
+          <h3>Area, Legend, xAxis, and Units</h3>
+          <div className="example">
+          <Chart series={series} min={0} max={5} threshold={2} type="area" legend={true}
+            xAxis={['Aug 8', 'Aug 7', 'Aug 6', 'Aug 5', 'Aug 4']}
+            units="TB" />
+          </div>
+          <pre><code className="html">
+            {"<Chart type=\"bar\" threshold={2} legend=(true) xAxis={[...]} units=\"TB\" />"}
+          </code></pre>
 
         </section>
       </GrommetDocument>

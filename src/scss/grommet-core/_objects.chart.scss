@@ -2,7 +2,6 @@
 
 .chart {
   display: block;
-  text-align: right;
 
   &__grid {
     stroke: $border-color;
@@ -33,12 +32,37 @@
   }
 
   &__threshold {
-    stroke-width: 2px;
+    stroke-width: 1px;
     stroke: $threshold-color;
   }
 
+  &__xaxis {
+    &-index {
+      fill: $secondary-text-color;
+
+      &-background {
+        fill: rgba(0, 0, 0, 0);
+        transition: fill 0.3s;
+      }
+
+      &--active {
+        text {
+          fill: $text-color;
+        }
+
+        .chart__xaxis-index {
+          &-background {
+            fill: rgba(128, 128, 128, 0.1);
+          }
+        }
+      }
+    }
+  }
+
   &__legend {
-    margin: $inuit-base-spacing-unit 0 0;
+    position: relative;
+    left: 0px;
+    margin: 0px;
     display: inline-block;
     text-align: left;
     list-style-type: none;
@@ -68,10 +92,16 @@
       display: inline-block;
       width: double($inuit-base-spacing-unit);
       text-align: right;
+      @include inuit-font-size($inuit-heading-size-4);
     }
 
     &-units {
       margin-left: quarter($inuit-base-spacing-unit);
+      @include inuit-font-size($inuit-heading-size-4);
+    }
+
+    &--unset {
+      color: $secondary-text-color;
     }
   }
 
