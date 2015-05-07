@@ -132,7 +132,7 @@ module.exports = function(gulp, opts) {
 
    gulp.task('dist-preprocess', function(callback) {
     if (options.distPreprocess) {
-      runSequence(options.distPreprocess, callback);
+      runSequence(options.distPreprocess, 'test' ,callback);
     } else {
       callback();
     }
