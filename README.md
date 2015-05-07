@@ -35,3 +35,7 @@ Before opening an issue or pull request, please read the [Contributing](http://g
 ### Build
 
   Refer to the [Grommet Build Wiki](https://github.com/HewlettPackard/grommet/wiki/Building-your-copy-of-Grommet) for instructions on how to install your local copy of Grommet.
+
+### Release History
+
+  See the [Change Log](https://github.com/HewlettPackard/grommet/wiki/Change-Log).
