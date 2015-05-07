@@ -18,6 +18,7 @@ var Architecture = require('./Architecture');
 var Contributing = require('./Contributing');
 var AppDoc = require('./components/AppDoc');
 var ChartDoc = require('./components/ChartDoc');
+var CheckBoxDoc = require('./components/CheckBoxDoc');
 var DocumentDoc = require('./components/DocumentDoc');
 var DonutDoc = require('./components/DonutDoc');
 var FooterDoc = require('./components/FooterDoc');
@@ -28,6 +29,7 @@ var LayerDoc = require('./components/LayerDoc');
 var LoginFormDoc = require('./components/LoginFormDoc');
 var MenuDoc = require('./components/MenuDoc');
 var MeterDoc = require('./components/MeterDoc');
+var RadioButtonDoc = require('./components/RadioButtonDoc');
 var RestDoc = require('./utils/RestDoc');
 var SearchDoc = require('./components/SearchDoc');
 var SectionDoc = require('./components/SectionDoc');
@@ -66,6 +68,7 @@ var CONTENTS = [
     contents: [
       {route: 'doc_app', label: 'App', component: AppDoc},
       {route: 'doc_chart', label: 'Chart', component: ChartDoc},
+      {route: 'doc_check-box', label: 'CheckBox', component: CheckBoxDoc},
       {route: 'doc_document', label: 'Document', component: DocumentDoc},
       {route: 'doc_donut', label: 'Donut', component: DonutDoc},
       {route: 'doc_footer', label: 'Footer', component: FooterDoc},
@@ -76,6 +79,7 @@ var CONTENTS = [
       {route: 'doc_login-form', label: 'LoginForm', component: LoginFormDoc},
       {route: 'doc_menu', label: 'Menu', component: MenuDoc},
       {route: 'doc_meter', label: 'Meter', component: MeterDoc},
+      {route: 'doc_radio-button', label: 'RadioButton', component: RadioButtonDoc},
       {route: 'doc_search', label: 'Search', component: SearchDoc},
       {route: 'doc_section', label: 'Section', component: SectionDoc},
       {route: 'doc_table', label: 'Table', component: TableDoc},
