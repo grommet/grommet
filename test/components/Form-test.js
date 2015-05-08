@@ -1,57 +1,42 @@
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+
 var __path__ = '../../src/js/components/Form';
 
+var ReactTestUtils = require('../mocks/ReactTestUtils');
 var expect = require('expect');
-var assert = require('assert');
 
 describe('Grommet Form', function() {
   it('loads a basic Form', function() {
-
     var React = require('react/addons');
-    var TestUtils = React.addons.TestUtils;
-    var Form = require(__path__);
+    var Component = ReactTestUtils.getComponent(__path__, <h2>Form</h2>);
 
-    var Component = TestUtils.renderIntoDocument(<Form><h2>Form</h2></Form>);
-
-    var formInstance = TestUtils.findRenderedDOMComponentWithClass(Component, 'form');
-
-    expect(formInstance).toExist();
-    assert.equal(formInstance.getDOMNode().textContent, 'Form');
+    ReactTestUtils.componentShouldExist(Component, 'form', 'Form');
   });
 
   it('loads a compact Form', function() {
-
     var React = require('react/addons');
-    var TestUtils = React.addons.TestUtils;
-    var Form = require(__path__);
+    var Component = ReactTestUtils.getComponent(__path__, <h2>Form Compact</h2>, { compact: true });
 
-    var Component = TestUtils.renderIntoDocument(<Form compact={true}><h2>Form</h2></Form>);
-
-    var formInstance = TestUtils.findRenderedDOMComponentWithClass(Component, 'form--compact');
-
-    expect(formInstance).toExist();
-    assert.equal(formInstance.getDOMNode().textContent, 'Form');
+    ReactTestUtils.componentShouldExist(Component, 'form--compact', 'Form Compact');
   });
 
   it('submits a Form', function(done) {
-
     var React = require('react/addons');
     var TestUtils = React.addons.TestUtils;
-    var Form = require(__path__);
 
     var formSubmited = false;
-    var formSubmit = function() {
-      formSubmited = true;
-    }
+    var childrenElement = <div><h2>Form Compact</h2></div>;
+    var Component = ReactTestUtils.getComponent(__path__, childrenElement, {
+      onSubmit: function() {
+        formSubmited = true;
+      }
+    });
 
-    var Component = TestUtils.renderIntoDocument(<Form className="testing" onSubmit={formSubmit}><h2>Form</h2><input type="submit" value="Click" onClick={formSubmit}/></Form>);
-
-    var formInstance = TestUtils.findRenderedDOMComponentWithClass(Component, 'testing');
-
-    expect(formInstance).toExist();
+    ReactTestUtils.componentShouldExist(Component, 'form');
     expect(formSubmited).toBe(false);
 
-    var btn = TestUtils.findRenderedDOMComponentWithTag(Component, 'input');
-    TestUtils.Simulate.click(btn.getDOMNode());
+    var form = TestUtils.findRenderedDOMComponentWithTag(Component, 'form');
+    TestUtils.Simulate.submit(form);
 
     setTimeout(function() {
       expect(formSubmited).toBe(true);

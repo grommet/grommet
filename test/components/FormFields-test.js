@@ -1,34 +1,21 @@
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+
 var __path__ = '../../src/js/components/FormFields';
 
-var expect = require('expect');
-var assert = require('assert');
+var ReactTestUtils = require('../mocks/ReactTestUtils');
 
 describe('Grommet FormFields', function() {
   it('loads a basic FormFields', function() {
-
     var React = require('react/addons');
-    var TestUtils = React.addons.TestUtils;
-    var FormFields = require(__path__);
+    var Component = ReactTestUtils.getComponent(__path__, <h2>FormFields</h2>);
 
-    var Component = TestUtils.renderIntoDocument(<FormFields><h2>FormFields</h2></FormFields>);
-
-    var formFieldsInstance = TestUtils.findRenderedDOMComponentWithClass(Component, 'form-fields');
-
-    expect(formFieldsInstance).toExist();
-    assert.equal(formFieldsInstance.getDOMNode().textContent, 'FormFields');
+    ReactTestUtils.componentShouldExist(Component, 'form-fields', 'FormFields');
   });
 
   it('loads a custom class FormFields', function() {
-
     var React = require('react/addons');
-    var TestUtils = React.addons.TestUtils;
-    var FormFields = require(__path__);
+    var Component = ReactTestUtils.getComponent(__path__, <h2>FormFields Custom</h2>, { className: 'testing' });
 
-    var Component = TestUtils.renderIntoDocument(<FormFields className="testing"><h2>FormFields Custom</h2></FormFields>);
-
-    var formFieldsInstance = TestUtils.findRenderedDOMComponentWithClass(Component, 'testing');
-
-    expect(formFieldsInstance).toExist();
-    assert.equal(formFieldsInstance.getDOMNode().textContent, 'FormFields Custom');
+    ReactTestUtils.componentShouldExist(Component, 'testing', 'FormFields Custom');
   });
 });

@@ -1,3 +1,5 @@
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+
 var __path__ = '../../src/js/actions/Actions';
 
 var rewire = require('rewire');
@@ -55,7 +57,7 @@ describe('Grommet Actions', function() {
     Actions.login('fakeUser', 'fakePassword');
   });
 
-  it('fails to login on the backend for same weird reason', function (done) {
+  it('fails to login on the backend for some weird reason', function (done) {
     var Actions = rewire(__path__);
     Actions.__set__('Rest', {
       post: function () {

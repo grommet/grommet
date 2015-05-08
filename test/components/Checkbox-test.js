@@ -1,38 +1,23 @@
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+
 var __path__ = '../../src/js/components/CheckBox';
 
-var expect = require('expect');
-var assert = require('assert');
+var ReactTestUtils = require('../mocks/ReactTestUtils');
 
 describe('Grommet CheckBox', function() {
   it('loads a basic CheckBox', function() {
-
     var React = require('react/addons');
-    var TestUtils = React.addons.TestUtils;
-    var CheckBox = require(__path__);
+    var Component = ReactTestUtils.getComponent(__path__, null, { id: 'sample-check', label: 'Test Me'});
 
-    var Component = TestUtils.renderIntoDocument(<CheckBox id="sample-check" label="Test me" />);
-
-    var checkBoxInstance = TestUtils.findRenderedDOMComponentWithClass(Component, 'check-box');
-    var checkBoxLabel = TestUtils.findRenderedDOMComponentWithClass(Component, 'check-box__label');
-
-    expect(checkBoxInstance).toExist();
-    expect(checkBoxLabel).toExist();
-    assert.equal(checkBoxInstance.getDOMNode().textContent, 'Test me');
+    ReactTestUtils.componentShouldExist(Component, 'check-box');
+    ReactTestUtils.componentShouldExist(Component, 'check-box__label', 'Test Me');
   });
 
   it('loads a custom className CheckBox', function() {
-
     var React = require('react/addons');
-    var TestUtils = React.addons.TestUtils;
-    var CheckBox = require(__path__);
+    var Component = ReactTestUtils.getComponent(__path__, null, { id: 'sample-check', className: 'testing', label: 'Custom class'});
 
-    var Component = TestUtils.renderIntoDocument(<CheckBox id="sample-check" className="testing" label="Custom class" />);
-
-    var checkBoxInstance = TestUtils.findRenderedDOMComponentWithClass(Component, 'testing');
-    var checkBoxLabel = TestUtils.findRenderedDOMComponentWithClass(checkBoxInstance, 'check-box__label');
-
-    expect(checkBoxInstance).toExist();
-    expect(checkBoxLabel).toExist();
-    assert.equal(checkBoxInstance.getDOMNode().textContent, 'Custom class');
+    ReactTestUtils.componentShouldExist(Component, 'check-box');
+    ReactTestUtils.componentShouldExist(Component, 'check-box__label', 'Custom class');
   });
 });

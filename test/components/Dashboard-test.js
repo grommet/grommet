@@ -1,20 +1,14 @@
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+
 var __path__ = '../../src/js/components/Dashboard';
 
-var expect = require('expect');
-var assert = require('assert');
+var ReactTestUtils = require('../mocks/ReactTestUtils');
 
 describe('Grommet Dashboard', function() {
   it('loads a basic Dashboard', function() {
-
     var React = require('react/addons');
-    var TestUtils = React.addons.TestUtils;
-    var Dashboard = require(__path__);
+    var Component = ReactTestUtils.getComponent(__path__, <h2>Dashboard</h2>);
 
-    var Component = TestUtils.renderIntoDocument(<Dashboard><h2>Dashboard</h2></Dashboard>);
-
-    var dashboardInstance = TestUtils.findRenderedDOMComponentWithClass(Component, 'dashboard');
-
-    expect(dashboardInstance).toExist();
-    assert.equal(dashboardInstance.getDOMNode().textContent, 'Dashboard');
+    ReactTestUtils.componentShouldExist(Component, 'dashboard', 'Dashboard');
   });
 });
