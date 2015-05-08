@@ -9,20 +9,19 @@ var Actions = Reflux.createActions({
   'logout': {}
 });
 
-// Session
+Actions.login.listen(function(userName, password) {
+  if (!userName || !password) {
+    return this.failed(400, { message: 'Please provide userName and password.' });
+  }
 
-Actions.login.listen(function(username, password) {
   var thisAction = this;
   Rest.post('/rest/login-sessions',
-    {authLoginDomain: 'LOCAL', userName: username, password: password, loginMsgAck: true})
+    {authLoginDomain: 'LOCAL', userName: userName, password: password, loginMsgAck: true})
     .end(function(err, res) {
-      if (err) {
+      if (err || !res.ok) {
         return thisAction.failed(err, res.body);
       }
-      if (!res.ok) {
-        return thisAction.failed(err, res.body);
-      }
-      thisAction.completed(username, res.body.sessionID);
+      thisAction.completed(userName, res.body.sessionID);
     });
 });
 
