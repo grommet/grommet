@@ -6,7 +6,8 @@ var Form = React.createClass({
 
   propTypes: {
     compact: React.PropTypes.bool,
-    onSubmit: React.PropTypes.func
+    onSubmit: React.PropTypes.func,
+    className: React.PropTypes.string
   },
 
   render: function () {
