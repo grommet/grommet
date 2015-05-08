@@ -118,7 +118,6 @@ describe('Grommet Footer', function() {
       var footerTop = TestUtils.findRenderedDOMComponentWithClass(Component, 'footer__top');
 
       TestUtils.Simulate.click(footerTop.getDOMNode());
-
       domEvents.scroll(contentDiv);
 
       setTimeout(function() {
