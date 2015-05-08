@@ -3,7 +3,7 @@ var __path__ = '../../src/js/components/Header';
 var expect = require('expect');
 var assert = require('assert');
 
-describe('Grommet Header specs', function() {
+describe('Grommet Header', function() {
   it('loads a basic Header', function() {
 
     var React = require('react/addons');

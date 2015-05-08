@@ -3,7 +3,7 @@ var __path__ = '../../src/js/components/CheckBox';
 var expect = require('expect');
 var assert = require('assert');
 
-describe('Grommet CheckBox specs', function() {
+describe('Grommet CheckBox', function() {
   it('loads a basic CheckBox', function() {
 
     var React = require('react/addons');

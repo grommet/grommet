@@ -3,7 +3,7 @@ var __path__ = '../../src/js/components/App';
 var expect = require('expect');
 var assert = require('assert');
 
-describe('Grommet App specs', function() {
+describe('Grommet App', function() {
   it('loads App component with default configuration', function() {
 
     var React = require('react/addons');

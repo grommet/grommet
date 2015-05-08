@@ -4,7 +4,7 @@ var rewire = require('rewire');
 var expect = require('expect');
 var should = require('should');
 
-describe('Grommet Actions specs', function() {
+describe('Grommet Actions', function() {
   it('does not login with invalid data', function(done) {
 
     var Actions = require(__path__);
