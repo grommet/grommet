@@ -20,7 +20,7 @@ describe('Grommet Form', function() {
     ReactTestUtils.componentShouldExist(Component, 'form--compact', 'Form Compact');
   });
 
-  it('loads a custome Form', function() {
+  it('loads a custom Form', function() {
     var React = require('react/addons');
     var Component = ReactTestUtils.getComponent(__path__, <h2>Form Custom</h2>, { className: 'testing'});
 
