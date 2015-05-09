@@ -112,26 +112,30 @@ var RequestAccess = React.createClass({
             <h3>Grommet is almost ready!</h3>
             <p>We would love to have you as a contributor.</p>
             <fieldset>
-              <FormField error={this._errorMessage('name')}>
-                <label htmlFor="name">What&#39;s your name?</label>
+              <FormField htmlFor="name"
+                label={"What's your name?"}
+                error={this._errorMessage('name')}>
                 <input id="name" type="text"
                   value={this.state.name}
                   onChange={this._onNameChange} />
               </FormField>
-              <FormField error={this._errorMessage('email')}>
-                <label htmlFor="email">What&#39;s your email address?</label>
+              <FormField htmlFor="email"
+                label={"What's your email address?"}
+                error={this._errorMessage('email')}>
                 <input ref="email" id="email" type="email"
                   value={this.state.email}
                   onChange={this._onEmailChange} />
               </FormField>
-              <FormField error={this._errorMessage('github')}>
-                <label htmlFor="github">What&#39;s your Github account?</label>
+              <FormField htmlFor="github"
+                label={"What's your Github account?"}
+                error={this._errorMessage('github')}>
                 <input ref="github" id="github" type="text"
                   value={this.state.github}
                   onChange={this._onGithubChange} />
               </FormField>
-              <FormField error={this._errorMessage('purpose')}>
-                <label htmlFor="purpose">What are you considering Grommet for?</label>
+              <FormField htmlFor="purpose"
+                label={"What are you considering Grommet for?"}
+                error={this._errorMessage('purpose')}>
                 <input ref="purpose" id="purpose" type="text"
                   value={this.state.purpose}
                   onChange={this._onPurposeChange} />
@@ -139,11 +143,11 @@ var RequestAccess = React.createClass({
             </fieldset>
           </FormFields>
           <Footer>
-            {msg}
             <Menu direction="left">
               <input type="submit" className="primary" value="Send"
                 onClick={this._onSubmit} />
             </Menu>
+            {msg}
           </Footer>
         </Form>
       </Layer>

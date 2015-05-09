@@ -9,7 +9,7 @@
     &:checked + label.checkbox:after {
       content: "";
       position: absolute;
-      top: quarter($inuit-base-spacing-unit) + 4.5px;
+      top: quarter($inuit-base-spacing-unit);
       left: 4px;
       width: $inuit-base-spacing-unit - 8;
       height: $inuit-base-spacing-unit - 8;

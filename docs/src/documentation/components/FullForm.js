@@ -9,6 +9,7 @@ var Menu = require('grommet/components/Menu');
 var HelpIcon = require('grommet/components/icons/Help');
 var CheckBox = require('grommet/components/CheckBox');
 var RadioButton = require('grommet/components/RadioButton');
+var SearchInput = require('grommet/components/SearchInput');
 var Table = require('grommet/components/Table');
 var Footer = require('grommet/components/Footer');
 
@@ -20,12 +21,37 @@ var FullForm = React.createClass({
     onSubmit: React.PropTypes.func
   },
 
+  _searchInputSuggestions: ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight'],
+
   _onChangeRange: function (event) {
     this.setState({rangeValue: event.target.value});
   },
 
+  _onChange: function (event) {
+    console.log('!!! FullForm changed', event.target, 'to', event.target.value);
+  },
+
+  _onSearchInputChange: function (event) {
+    console.log('!!! FullForm _onSearchInputChange', event.target.value);
+    this.setState({
+      searchInput: {
+        value: event.target.value,
+        suggestions: this._searchInputSuggestions
+      }
+    });
+  },
+
+  _onSearch: function (text) {
+    var searchInput = this.state.searchInput;
+    var regexp = new RegExp('^' + text);
+    searchInput.suggestions = this._searchInputSuggestions.filter(function (value) {
+      return regexp.test(value);
+    });
+    this.setState({searchInput: searchInput});
+  },
+
   getInitialState: function () {
-    return {rangeValue: 10};
+    return {rangeValue: 10, searchInput: {suggestions: this._searchInputSuggestions}};
   },
 
   render: function() {
@@ -39,36 +65,39 @@ var FullForm = React.createClass({
         </Header>
         <FormFields>
           <fieldset>
+            <legend>First section</legend>
             <FormField label="Item 1" htmlFor="item1" help="something helpful">
-              <input id="item1" type="text" />
+              <input id="item1" name="item-1" type="text" onChange={this._onChange} />
             </FormField>
             <FormField>
-              <CheckBox id="item2" label="Item 2" name="item2" />
+              <CheckBox id="item2" name="item-2" label="Item 2" />
             </FormField>
             <FormField label="Item 3">
-              <RadioButton id="item3-1" label="first" name="item3" />
-              <RadioButton id="item3-2" label="second" name="item3" />
+              <RadioButton id="item3-1" name="item-3" label="first" />
+              <RadioButton id="item3-2" name="item-3" label="second" />
             </FormField>
             <FormField label="Item 4" htmlFor="item4" error="something's wrong">
-              <textarea id="item4"></textarea>
+              <textarea id="item4" name="item-4"></textarea>
             </FormField>
-            <FormField label="Item 5">
-              <input type="text" />
-              <button>Select</button>
+            <FormField label="Item 5" htmlFor="item5">
+              <SearchInput id="item5" name="item-5"
+                value={this.state.searchInput.value}
+                suggestions={this.state.searchInput.suggestions}
+                onChange={this._onSearchInputChange}
+                onSearch={this._onSearchInputSearch} />
             </FormField>
-            <FormField label="Item 6" htmlFor="item6">
-              <select id="item6">
+            <FormField label="Item 6" htmlFor="item6" help={<a>learn more ...</a>}>
+              <select id="item6" name="item-6">
                 <option>first</option>
                 <option>second</option>
                 <option>third</option>
               </select>
-              <a>learn more ...</a>
             </FormField>
           </fieldset>
           <fieldset>
-            <h3>Another section</h3>
+            <legend>Another section</legend>
             <p>Some informational text.</p>
-            <FormField label="Item 7" htmlFor="item7">
+            <FormField label="Item 7">
               <Table selectable={true} defaultSelection={0}>
                 <tbody>
                   <tr>
@@ -87,23 +116,21 @@ var FullForm = React.createClass({
               </Table>
             </FormField>
             <FormField label="Item 8" htmlFor="item8">
-              <input id="item8" type="number"
+              <input id="item8" name="item-8" type="number"
                 min="1" max="20" step="1" defaultValue="10" />
             </FormField>
-            <FormField label="Item 9" htmlFor="item9">
-              <input id="item9" type="range"
+            <FormField label="Item 9" htmlFor="item9" help={this.state.rangeValue}>
+              <input id="item9" name="item-9" type="range"
                 min="1" max="20" defaultValue="10"
                 onChange={this._onChangeRange}/>
-              <span ref="rangeValue">{this.state.rangeValue}</span>
             </FormField>
           </fieldset>
         </FormFields>
         <Footer>
-          <span></span>
-          <Menu direction="left">
-            <a onClick={this.props.onCancel}>Cancel</a>
+          <Menu direction="right">
             <input type="submit" className="primary" value="OK"
               onClick={this.props.onSubmit} />
+            <a onClick={this.props.onCancel}>Cancel</a>
           </Menu>
         </Footer>
       </Form>

@@ -2,35 +2,48 @@
 
 var React = require('react');
 
+var CLASS_ROOT = "form-field";
+
 var FormField = React.createClass({
 
   propTypes: {
-    label: React.PropTypes.string,
-    htmlFor: React.PropTypes.string,
     error: React.PropTypes.string,
-    help: React.PropTypes.string
+    help: React.PropTypes.node,
+    htmlFor: React.PropTypes.string,
+    label: React.PropTypes.string,
+    required: React.PropTypes.bool
   },
 
   render: function () {
-    var classes = ["form-field"];
+    var classes = [CLASS_ROOT];
+    if (this.props.required) {
+      classes.push(CLASS_ROOT + "--required");
+    }
+    if (this.props.htmlFor) {
+      classes.push(CLASS_ROOT + "--text");
+    }
+
     var error = null;
     if (this.props.error) {
-      classes.push("form-field--error");
-      error = <span className="form-field__error">{this.props.error}</span>;
+      classes.push(CLASS_ROOT + "--error");
+      error = <span className={CLASS_ROOT + "__error"}>{this.props.error}</span>;
     }
     var help = null;
     if (this.props.help) {
-      help = <span className="form-field__help">{this.props.help}</span>;
+      help = <span className={CLASS_ROOT + "__help"}>{this.props.help}</span>;
     }
+
     return (
       <div className={classes.join(' ')}>
-        <label className="form-field__label" htmlFor={this.props.htmlFor}>{this.props.label}</label>
-        <span className="form-field__container">
-          <span className="form-field__contents">
+        <label className={CLASS_ROOT + "__label"} htmlFor={this.props.htmlFor}>
+          {this.props.label}
+        </label>
+        <span className={CLASS_ROOT + "__container"}>
+          <span className={CLASS_ROOT + "__contents"}>
             {this.props.children}
           </span>
-          {error}
           {help}
+          {error}
         </span>
       </div>
     );

@@ -1,0 +1,57 @@
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+
+.search-input {
+  position: relative;
+  display: inline-block;
+
+  &__input {
+    width: 100%;
+    height: 100%;
+    display: block;
+    padding-right: round($inuit-base-spacing-unit * 2.5);
+  }
+
+  &__control {
+    position: absolute;
+    bottom: 0px;
+    right: halve($inuit-base-spacing-unit);
+  }
+
+  &__layer {
+    position: fixed;
+    // This element will be positioned by the Overlay mixin.
+    z-index: 2;
+    background-color: $background-color;
+    border: $layer-border;
+    border-radius: $border-radius;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    box-shadow: $layer-box-shadow;
+
+    // need to be this specific to override browser default box-sizing
+    input[type="search"] {
+      width: 100%;
+      -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+              box-sizing: border-box;
+      border-radius: 0px;
+    }
+
+    &-suggestion {
+      padding: quarter($inuit-base-spacing-unit) halve($inuit-base-spacing-unit);
+      cursor: pointer;
+
+      &:hover,
+      &--active {
+        background-color: $hover-background-color;
+      }
+    }
+  }
+
+  &--active {
+    .search-input__input {
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+    }
+  }
+}

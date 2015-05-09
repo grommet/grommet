@@ -51,17 +51,17 @@ var Overlay = {
     layerElement.style.top = '';
 
     var width = Math.min(
-      Math.max(controlElement.offsetWidth, layerElement.offsetWidth),
+      Math.max(controlRect.width, layerElement.offsetWidth),
         windowWidth);
     // align right edge and make at least as wide as the control
     var left = (controlRect.left + layerElement.offsetWidth) - width;
     if ('right' === this._overlay.align) {
       // align right edge
-      left = (controlRect.left + controlElement.offsetWidth) -
+      left = (controlRect.left + controlRect.width) -
         layerElement.offsetWidth;
     } else {
       // align left edge
-      left = (controlRect.left + layerElement.offsetWidth) - width;
+      left = controlRect.left;
     }
     if ((left + width) > windowWidth) {
       left -= ((left + width) - windowWidth);
@@ -72,8 +72,11 @@ var Overlay = {
     var top = controlRect.top;
     if ('up' === this.props.direction) {
       // align bottom edge
-      top = (controlRect.top + controlElement.offsetHeight) -
+      top = (controlRect.top + controlRect.height) -
         layerElement.offsetHeight;
+    } else if ('below' === this._overlay.align) {
+      // align top of layer to bottom of control
+      top = (controlRect.top + controlRect.height);
     }
 
     // ensure height is within viewport

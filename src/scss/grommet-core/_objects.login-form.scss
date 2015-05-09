@@ -1,6 +1,7 @@
 // (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
 
 .login-form {
+  position: relative;
   width: round($inuit-base-spacing-unit * 16);
   padding: $inuit-base-spacing-unit;
   padding-bottom: double($inuit-base-spacing-unit);
@@ -32,10 +33,6 @@
     > * {
       width: 100%;
       display: block;
-    }
-
-    input {
-      margin-bottom: halve($inuit-base-spacing-unit);
     }
   }
 

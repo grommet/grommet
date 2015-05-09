@@ -18,7 +18,7 @@ var Grommet = {
   Panel: require('./components/Panel'),
   RadioButton: require('./components/RadioButton'),
   Search: require('./components/Search'),
-  SearchCombo: require('./components/SearchCombo'),
+  SearchInput: require('./components/SearchInput'),
   Section: require('./components/Section'),
   Table: require('./components/Table'),
   Tiles: require('./components/Tiles'),

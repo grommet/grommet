@@ -32,6 +32,7 @@ var MeterDoc = require('./components/MeterDoc');
 var RadioButtonDoc = require('./components/RadioButtonDoc');
 var RestDoc = require('./utils/RestDoc');
 var SearchDoc = require('./components/SearchDoc');
+var SearchInputDoc = require('./components/SearchInputDoc');
 var SectionDoc = require('./components/SectionDoc');
 var TableDoc = require('./components/TableDoc');
 var TilesDoc = require('./components/TilesDoc');
@@ -81,6 +82,7 @@ var CONTENTS = [
       {route: 'doc_meter', label: 'Meter', component: MeterDoc},
       {route: 'doc_radio-button', label: 'RadioButton', component: RadioButtonDoc},
       {route: 'doc_search', label: 'Search', component: SearchDoc},
+      {route: 'doc_search-input', label: 'SearchInput', component: SearchInputDoc},
       {route: 'doc_section', label: 'Section', component: SectionDoc},
       {route: 'doc_table', label: 'Table', component: TableDoc},
       {route: 'doc_tiles', label: 'Tiles', component: TilesDoc},

@@ -8,7 +8,7 @@ textarea {
   @include inuit-font-size($inuit-base-font-size);
   // Align overall height with regular text line height, reduce
   // top and bottom padding by an extra 2px.
-  padding: (quarter($inuit-base-spacing-unit) - $input-border-width) halve($inuit-base-spacing-unit);
+  padding: (halve($inuit-base-spacing-unit) - $input-border-width) $inuit-base-spacing-unit;
   border: $input-border-width solid $border-color;
   border-radius: $border-radius;
   outline: none;
@@ -95,7 +95,7 @@ select {
   padding-right: $inuit-base-spacing-unit;
   -webkit-appearance: none;
   -moz-appearance: none;
-  background: $small-drop-caret no-repeat center right quarter($inuit-base-spacing-unit);
+  background: $small-drop-caret no-repeat center right halve($inuit-base-spacing-unit);
   cursor: pointer;
 
   &:hover {

@@ -1,6 +1,8 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
+var Form = require('./Form');
+var FormField = require('./FormField');
 var CheckBox = require('./CheckBox');
 
 var CLASS_ROOT = "login-form";
@@ -78,19 +80,21 @@ var LoginForm = React.createClass({
     }
 
     return (
-      <form className={classes.join(' ')} onSubmit={this._onSubmit}>
+      <Form className={classes.join(' ')} onSubmit={this._onSubmit}>
         {logo}
         {title}
         <fieldset>
-          <label>Username</label>
-          <input className={CLASS_ROOT + "__username"} ref="username" />
-          <label>Password</label>
-          <input type="password" className={CLASS_ROOT + "__password"} ref="password" />
+          <FormField htmlFor="username" label="Username">
+            <input id="username" ref="username" type="text" />
+          </FormField>
+          <FormField htmlFor="password" label="Password">
+            <input id="password" ref="password" type="password" />
+          </FormField>
         </fieldset>
         {errors}
         <input type="submit" className={CLASS_ROOT + "__submit primary call-to-action"} value={'Log in'} />
         {footer}
-      </form>
+      </Form>
     );
   }
 

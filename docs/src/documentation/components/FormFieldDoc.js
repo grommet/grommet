@@ -47,6 +47,15 @@ var FormFieldDoc = React.createClass({
           </div>
           <pre><code className="html">{"<FormField label=\"Item 1\" htmlFor=\"item1\">\n  <input id=\"\{id\}\" type=\"text\"/>\n</FormField>"}</code></pre>
 
+          <h3>Text input with errors</h3>
+          <div className="example">
+            <FormField label="Item 1" htmlFor="item1" error="error text">
+              <input id="item1" type="text" />
+            </FormField>
+          </div>
+          <pre><code className="html">{"<FormField label=\"Item 1\" htmlFor=\"item1\" error=\"error text\">\n  <input id=\"\{id\}\" type=\"text\"/>\n</FormField>"}</code></pre>
+
+
           <h3>Checkbox</h3>
           <div className="example">
             <FormField label="">
@@ -55,14 +64,14 @@ var FormFieldDoc = React.createClass({
           </div>
           <pre><code className="html">{"<FormField>\n  <CheckBox id=\"\{item2\}\" label=\"Item 2\"/>\n</FormField>"}</code></pre>
 
-          <h3>RadioButton</h3>
+          <h3>RadioButton with help</h3>
           <div className="example">
-            <FormField label="">
+            <FormField label="item 1" help="help text">
               <RadioButton id="item3-1" label="choice 1" name="choice"/>
               <RadioButton id="item3-2" label="choice 2" name="choice"/>
             </FormField>
           </div>
-          <pre><code className="html">{"<FormField>\n  <RadioButton id=\"\{item3-1\}\" label=\"choice 1\" name=\"choice\"/>\n  <RadioButton id=\"\{item3-2\}\" label=\"choice 2\" name=\"choice\"/>\n</FormField>"}</code></pre>
+          <pre><code className="html">{"<FormField help=\"help text\">\n  <RadioButton id=\"\{item3-1\}\" label=\"choice 1\" name=\"choice\"/>\n  <RadioButton id=\"\{item3-2\}\" label=\"choice 2\" name=\"choice\"/>\n</FormField>"}</code></pre>
 
         </section>
       </GrommetDocument>

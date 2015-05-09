@@ -38,7 +38,7 @@ var SearchDoc = React.createClass({
               be visible.</dd>
             <dt><code>onChange      {"function ({text}) {...}"}</code></dt>
             <dd>Function that will be called when the user types some text.</dd>
-            <dt><code>placeHolder   [{"{string}"}, ...]</code></dt>
+            <dt><code>placeHolder   {"{string}"}</code></dt>
             <dd>Placeholder text to use when the input is empty.</dd>
             <dt><code>suggestions   [{"{string}"}, ...]</code></dt>
             <dd>Suggestions</dd>

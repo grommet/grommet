@@ -2,44 +2,34 @@
 
 .form-field {
   position: relative;
-  margin-bottom: halve($inuit-base-spacing-unit);
-  // set line height to align labels with input elements
-  line-height: $inuit-base-spacing-unit + halve($inuit-base-spacing-unit);
+  padding: $inuit-base-spacing-unit $inuit-base-spacing-unit
+    halve($inuit-base-spacing-unit);
+  border: $input-border-width solid $border-color;
+  margin-bottom: -1px; // so borders overlap
+  background-color: $form-field-background-color;
+
+  @include media-query(lap-and-up) {
+    width: round($inuit-base-spacing-unit * 24);
+    max-width: 100%;
+  }
+
+  @include media-query(palm) {
+    width: 100vw;
+  }
 
   &:last-child {
     margin-bottom: 0px;
   }
 
-  .form:not(.form--compact) & {
-    @include media-query(lap-and-up) {
-      display: -webkit-flex;
-      display: flex;
-      min-width: round($inuit-base-spacing-unit * 28);
-    }
-  }
-
   &__label {
+    position: absolute;
+    top: quarter($inuit-base-spacing-unit);
+    left: $inuit-base-spacing-unit + 1; // +1 for input border
     display: block;
     text-align: left;
-
-    .form:not(.form--compact) & {
-      @include media-query(lap-and-up) {
-        -webkit-flex: 0 0 round($inuit-base-spacing-unit * 8);
-        flex: 0 0 round($inuit-base-spacing-unit * 8);
-        text-align: right;
-        padding-right: $inuit-base-spacing-unit;
-        vertical-align: top;
-      }
-    }
-  }
-
-  &__container {
-    .form:not(.form--compact) & {
-      @include media-query(lap-and-up) {
-        -webkit-flex: 1 0 round($inuit-base-spacing-unit * 16);
-        flex: 1 0 round($inuit-base-spacing-unit * 16);
-      }
-    }
+    line-height: $inuit-base-spacing-unit;
+    color: $secondary-text-color;
+    z-index: 1;
   }
 
   &__contents {
@@ -51,24 +41,44 @@
     > input[type=range],
     > input[type=email],
     > input[type=password],
+    > input[type=number],
     > select,
+    > .search-input input,
     > textarea {
-      width: round($inuit-base-spacing-unit * 10);
-
-      .form--compact & {
-        width: 100%;
-        margin-right: 0px;
-      }
+      display: block;
+      padding-top: $inuit-base-spacing-unit;
+      width: 100%;
+      margin-right: 0px;
+      border-radius: 0px;
+      @include inuit-font-size(24px);
+      height: round($inuit-base-spacing-unit * 3);
     }
 
     // Prevent textarea from adding extra bottom margin
     > textarea {
       vertical-align: top;
+      padding-top: $inuit-base-spacing-unit + quarter($inuit-base-spacing-unit);
+      height: auto;
+    }
+
+    > select {
+      height: round($inuit-base-spacing-unit * 3);
+      background-position: bottom round($inuit-base-spacing-unit * 3/4)
+        right $inuit-base-spacing-unit;
+    }
+
+    > input[type=range] {
+      border: $input-border-width solid $border-color;
     }
 
     > .check-box,
     > .radio-button {
       display: block;
+      margin-top: quarter($inuit-base-spacing-unit);
+
+      &:first-of-type {
+        margin-top: halve($inuit-base-spacing-unit);
+      }
     }
 
     label.radio,
@@ -76,37 +86,58 @@
       margin-right: $inuit-base-spacing-unit;
     }
 
-    > table.table--selectable {
-      margin-bottom: 0px;
+    > .search-input {
+      display: block;
+    }
 
-      tbody tr td {
-        padding-top: 0px;
-        padding-bottom: 0px;
-        line-height: inherit;
+    > .table--selectable {
+      margin-top: halve($inuit-base-spacing-unit);
+      margin-left: - $inuit-base-spacing-unit;
+      margin-right: - $inuit-base-spacing-unit;
+      margin-bottom: - halve($inuit-base-spacing-unit);
+
+      table {
+        margin-bottom: 0px;
+
+        td:first-child,
+        th:first-child {
+          padding-left: $inuit-base-spacing-unit;
+        }
       }
     }
   }
 
+  &__help {
+    position: absolute;
+    top: quarter($inuit-base-spacing-unit);
+    right: $inuit-base-spacing-unit;
+    display: block;
+    color: $secondary-text-color;
+    line-height: $inuit-base-spacing-unit;
+  }
+
+  &__error {
+    position: absolute;
+    top: quarter($inuit-base-spacing-unit);
+    right: $inuit-base-spacing-unit;
+    display: block;
+    color: map-get($brand-status-colors, error);
+    line-height: $inuit-base-spacing-unit;
+    background-color: $background-color;
+  }
+
+  &--text {
+    padding: 0px;
+    border: none;
+  }
+
   &--error {
+    margin-bottom: 0px;
+
     input,
     textarea,
     select {
       border-color: map-get($brand-status-colors, error);
-    }
-  }
-
-  &__help {
-    color: $secondary-text-color;
-  }
-
-  &__error {
-    color: map-get($brand-status-colors, error);
-
-    .form--compact & {
-      display: block;
-      position: absolute;
-      top: 0px;
-      right: 0px;
     }
   }
 }
