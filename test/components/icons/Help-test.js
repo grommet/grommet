@@ -6,14 +6,14 @@ var ReactTestUtils = require('../../mocks/ReactTestUtils');
 
 describe('Grommet Help', function() {
   it('loads an help icon', function() {
-    var React = require('react/addons');
+    require('react/addons');
     var Component = ReactTestUtils.getComponent(__path__);
 
     ReactTestUtils.componentShouldExist(Component, 'control-icon-help');
   });
 
   it('loads a custom help icon', function() {
-    var React = require('react/addons');
+    require('react/addons');
     var Component = ReactTestUtils.getComponent(__path__, null, { className: 'testing' });
 
     ReactTestUtils.componentShouldExist(Component, 'testing');

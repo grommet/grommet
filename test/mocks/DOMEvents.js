@@ -6,4 +6,4 @@ module.exports = {
     evt.initEvent("scroll", false, true);
     element.dispatchEvent(evt);
   }
-}
+};

@@ -96,11 +96,11 @@ describe('Grommet Footer', function() {
         return { centered: false };
       },
       render() {
-        return <div><Footer centered={this.state.centered} /></div>
+        return <div><Footer centered={this.state.centered} /></div>;
       }
     }));
 
-    var Component = TestUtils.renderIntoDocument(TestParent());
+    var Component = TestUtils.renderIntoDocument(new TestParent());
 
     ReactTestUtils.componentShouldNotExist(Component, 'footer--centered');
 

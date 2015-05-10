@@ -6,14 +6,14 @@ var ReactTestUtils = require('../../mocks/ReactTestUtils');
 
 describe('Grommet SearchPlus', function() {
   it('loads an search-plus icon', function() {
-    var React = require('react/addons');
+    require('react/addons');
     var Component = ReactTestUtils.getComponent(__path__);
 
     ReactTestUtils.componentShouldExist(Component, 'control-icon-search-plus');
   });
 
   it('loads a custom search-plus icon', function() {
-    var React = require('react/addons');
+    require('react/addons');
     var Component = ReactTestUtils.getComponent(__path__, null, { className: 'testing' });
 
     ReactTestUtils.componentShouldExist(Component, 'testing');

@@ -6,14 +6,14 @@ var ReactTestUtils = require('../../mocks/ReactTestUtils');
 
 describe('Grommet Clear', function() {
   it('loads an clear icon', function() {
-    var React = require('react/addons');
+    require('react/addons');
     var Component = ReactTestUtils.getComponent(__path__);
 
     ReactTestUtils.componentShouldExist(Component, 'control-icon-clear');
   });
 
   it('loads a custom clear icon', function() {
-    var React = require('react/addons');
+    require('react/addons');
     var Component = ReactTestUtils.getComponent(__path__, null, { className: 'testing' });
 
     ReactTestUtils.componentShouldExist(Component, 'testing');

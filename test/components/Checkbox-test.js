@@ -6,7 +6,7 @@ var ReactTestUtils = require('../mocks/ReactTestUtils');
 
 describe('Grommet CheckBox', function() {
   it('loads a basic CheckBox', function() {
-    var React = require('react/addons');
+    require('react/addons');
     var Component = ReactTestUtils.getComponent(__path__, null, { id: 'sample-check', label: 'Test Me'});
 
     ReactTestUtils.componentShouldExist(Component, 'check-box');
@@ -14,7 +14,7 @@ describe('Grommet CheckBox', function() {
   });
 
   it('loads a custom className CheckBox', function() {
-    var React = require('react/addons');
+    require('react/addons');
     var Component = ReactTestUtils.getComponent(__path__, null, { id: 'sample-check', className: 'testing', label: 'Custom class'});
 
     ReactTestUtils.componentShouldExist(Component, 'check-box');

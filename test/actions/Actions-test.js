@@ -12,7 +12,7 @@ describe('Grommet Actions', function() {
     var Actions = require(__path__);
     var Reflux = require('reflux');
 
-    var FailingStore = Reflux.createStore({
+    Reflux.createStore({
       listenables: Actions,
       onLoginCompleted: function() {
         should.fail('Expected the login action to fail.');
@@ -36,13 +36,13 @@ describe('Grommet Actions', function() {
           end: function (callback) {
             callback(undefined, { ok: true, body: { sessionID: '123' }});
           }
-        }
+        };
       }
     });
 
     var Reflux = require('reflux');
 
-    var SuccessStore = Reflux.createStore({
+    Reflux.createStore({
       listenables: Actions,
       onLoginCompleted: function(userName, sessionID) {
         expect(userName).toBe('fakeUser');
@@ -65,13 +65,13 @@ describe('Grommet Actions', function() {
           end: function (callback) {
             callback(400, { ok: false, body: { message: 'An expected error occured.' }});
           }
-        }
+        };
       }
     });
 
     var Reflux = require('reflux');
 
-    var SuccessStore = Reflux.createStore({
+    Reflux.createStore({
       listenables: Actions,
       onLoginCompleted: function() {
         should.fail('Expected the login action to fail.');

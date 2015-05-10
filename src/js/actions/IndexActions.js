@@ -30,40 +30,29 @@ IndexActions.setup.listen(function () {
   */
 });
 
-IndexActions.getItems.listen(function (params) {
-  var thisAction = this;
+function getItems(url, params, action) {
   var restParams = merge({}, params);
   if (restParams.query && (typeof restParams.query === 'object')) {
     restParams.query = restParams.query.fullText;
   }
-  Rest.get('/rest/index/resources', restParams)
+  Rest.get(url, restParams)
     .end(function(err, res) {
       if (res.status === 400) {
         return Actions.logout();
       }
       if (err || !res.ok) {
-        return thisAction.failed(err, res.body || res.text, params);
+        return action.failed(err, res.body || res.text, params);
       }
-      thisAction.completed(res.body, params);
+      action.completed(res.body, params);
     });
+}
+
+IndexActions.getItems.listen(function (params) {
+  getItems('/rest/index/resources', params, this);
 });
 
 IndexActions.getAggregate.listen(function (params) {
-  var thisAction = this;
-  var restParams = merge({}, params);
-  if (restParams.query && (typeof restParams.query === 'object')) {
-    restParams.query = restParams.query.fullText;
-  }
-  Rest.get('/rest/index/resources/aggregated', restParams)
-    .end(function(err, res) {
-      if (res.status === 400) {
-        return Actions.logout();
-      }
-      if (err || !res.ok) {
-        return thisAction.failed(err, res.body || res.text, params);
-      }
-      thisAction.completed(res.body, params);
-    });
+  getItems('/rest/index/resources/aggregated', params, this);
 });
 
 module.exports = IndexActions;
