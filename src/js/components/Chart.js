@@ -203,7 +203,7 @@ var Chart = React.createClass({
     return this._translateX(point[0]) + ',' + this._translateY(point[1]);
   },
 
-  _renderGrid: function () {
+  /*_renderGrid: function () {
     var paths = [];
 
     for (var i=0; i<=BASE_WIDTH; i = i + this.state.bounds.xStepWidth) {
@@ -222,7 +222,7 @@ var Chart = React.createClass({
     return (
       <g className={CLASS_ROOT + "__grid"}>{paths}</g>
     );
-  },
+  },*/
 
   _itemColorIndex: function (item, seriesIndex) {
     return item.colorIndex || ('graph-' + (seriesIndex + 1));

@@ -159,7 +159,7 @@ describe('Grommet IndexActions', function() {
     });
   });
 
-  describe('getAggregate', function() {
+  describe('GetAggregate', function() {
     it('gets an item set from index aggregate', function(done) {
 
       var IndexActions = rewire(__path__);
