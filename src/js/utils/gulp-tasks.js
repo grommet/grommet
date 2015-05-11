@@ -124,7 +124,8 @@ module.exports = function(gulp, opts) {
                   reporter: 'spec'
                 })).once('end', function() {
                   console.log('Watching for changes...');
-                }).on("error", function handleError() {
+                }).on("error", function (err) {
+                  console.error('Test failed:', err.stack || err);
                   if (argv.w) {
                     this.emit('end');
                   } else {
@@ -145,7 +146,8 @@ module.exports = function(gulp, opts) {
             console.log('Done! You can checkout the report at test/coverage.html.');
             done();
           }
-        }).on("error", function handleError() {
+        }).on("error", function (err) {
+          console.error('Test failed:', err.stack || err);
           if (argv.w) {
             this.emit('end');
           } else {

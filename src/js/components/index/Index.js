@@ -84,7 +84,7 @@ var Index = React.createClass({
   },
 
   _onIndexChange: function (data) {
-    console.log('!!! Index _onIndexChange', data);
+    //console.log('!!! Index _onIndexChange', data);
     this.setState(data);
   },
 

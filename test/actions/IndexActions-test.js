@@ -2,7 +2,6 @@
 
 var __path__ = '../../src/js/actions/IndexActions';
 
-var rewire = require('rewire');
 var expect = require('expect');
 var should = require('should');
 
@@ -31,22 +30,7 @@ describe('Grommet IndexActions', function() {
   describe('GetItems', function() {
     it('gets an item set from index', function(done) {
 
-      var IndexActions = rewire(__path__);
-      IndexActions.__set__('Rest', {
-        get: function () {
-          return {
-            end: function (callback) {
-              callback(undefined, { ok: true, body: {
-                total: 10,
-                unfilteredTotal: 100,
-                start: 0,
-                count: 10,
-                items: [{ id: '1', value: 'Fake 1'}, { id: '2', value: 'Fake 2'}]
-              }});
-            }
-          };
-        }
-      });
+      var IndexActions = require('../mocks/components/IndexActions-mock').successIndexAction();
       var Reflux = require('reflux');
 
       Reflux.createStore({
@@ -66,22 +50,7 @@ describe('Grommet IndexActions', function() {
 
     it('gets an item set from index with query param', function(done) {
 
-      var IndexActions = rewire(__path__);
-      IndexActions.__set__('Rest', {
-        get: function () {
-          return {
-            end: function (callback) {
-              callback(undefined, { ok: true, body: {
-                total: 10,
-                unfilteredTotal: 100,
-                start: 0,
-                count: 10,
-                items: [{ id: '1', value: 'Fake 1'}, { id: '2', value: 'Fake 2'}]
-              }});
-            }
-          };
-        }
-      });
+      var IndexActions = require('../mocks/components/IndexActions-mock').successIndexAction();
       var Reflux = require('reflux');
 
       Reflux.createStore({
@@ -104,20 +73,11 @@ describe('Grommet IndexActions', function() {
     });
 
     it('logout if bad request is sent to getItems', function(done) {
-      var IndexActions = rewire(__path__);
+      var IndexActions = require('../mocks/components/IndexActions-mock').badRequestIndexAction();
       var logout = false;
       IndexActions.__set__('Actions', {
         logout: function() {
           logout = true;
-        }
-      });
-      IndexActions.__set__('Rest', {
-        get: function () {
-          return {
-            end: function (callback) {
-              callback(undefined, { status: 400 });
-            }
-          };
         }
       });
 
@@ -130,17 +90,7 @@ describe('Grommet IndexActions', function() {
     });
 
     it('handle failing scenarios from the backend', function(done) {
-      var IndexActions = rewire(__path__);
-      IndexActions.__set__('Rest', {
-        get: function () {
-          return {
-            end: function (callback) {
-              callback(410, { ok: false, body: { message: 'An expected error occured.' }});
-            }
-          };
-        }
-      });
-
+      var IndexActions = require('../mocks/components/IndexActions-mock').unexpectedErrorIndexAction();
       var Reflux = require('reflux');
 
       Reflux.createStore({
@@ -162,22 +112,7 @@ describe('Grommet IndexActions', function() {
   describe('GetAggregate', function() {
     it('gets an item set from index aggregate', function(done) {
 
-      var IndexActions = rewire(__path__);
-      IndexActions.__set__('Rest', {
-        get: function () {
-          return {
-            end: function (callback) {
-              callback(undefined, { ok: true, body: {
-                total: 10,
-                unfilteredTotal: 100,
-                start: 0,
-                count: 10,
-                items: [{ id: '1', value: 'Fake 1'}, { id: '2', value: 'Fake 2'}]
-              }});
-            }
-          };
-        }
-      });
+      var IndexActions = require('../mocks/components/IndexActions-mock').successIndexAction();
       var Reflux = require('reflux');
 
       Reflux.createStore({
@@ -188,7 +123,7 @@ describe('Grommet IndexActions', function() {
           done();
         },
         onGetAggregateFailed: function() {
-          should.fail('Expected the getItems to succeed.');
+          should.fail('Expected the getAggregate to succeed.');
         }
       });
 
@@ -197,22 +132,7 @@ describe('Grommet IndexActions', function() {
 
     it('gets an item set from index aggregate with query param', function(done) {
 
-      var IndexActions = rewire(__path__);
-      IndexActions.__set__('Rest', {
-        get: function () {
-          return {
-            end: function (callback) {
-              callback(undefined, { ok: true, body: {
-                total: 10,
-                unfilteredTotal: 100,
-                start: 0,
-                count: 10,
-                items: [{ id: '1', value: 'Fake 1'}, { id: '2', value: 'Fake 2'}]
-              }});
-            }
-          };
-        }
-      });
+      var IndexActions = require('../mocks/components/IndexActions-mock').successIndexAction();
       var Reflux = require('reflux');
 
       Reflux.createStore({
@@ -223,7 +143,7 @@ describe('Grommet IndexActions', function() {
           done();
         },
         onGetAggregateFailed: function() {
-          should.fail('Expected the getItems to succeed.');
+          should.fail('Expected the getAggregate to succeed.');
         }
       });
 
@@ -235,20 +155,11 @@ describe('Grommet IndexActions', function() {
     });
 
     it('logout if bad request is sent to getAggregate', function(done) {
-      var IndexActions = rewire(__path__);
+      var IndexActions = require('../mocks/components/IndexActions-mock').badRequestIndexAction();
       var logout = false;
       IndexActions.__set__('Actions', {
         logout: function() {
           logout = true;
-        }
-      });
-      IndexActions.__set__('Rest', {
-        get: function () {
-          return {
-            end: function (callback) {
-              callback(undefined, { status: 400 });
-            }
-          };
         }
       });
 
@@ -261,23 +172,13 @@ describe('Grommet IndexActions', function() {
     });
 
     it('handle failing scenarios from the backend', function(done) {
-      var IndexActions = rewire(__path__);
-      IndexActions.__set__('Rest', {
-        get: function () {
-          return {
-            end: function (callback) {
-              callback(410, { ok: false, body: { message: 'An expected error occured.' }});
-            }
-          };
-        }
-      });
-
+      var IndexActions = require('../mocks/components/IndexActions-mock').unexpectedErrorIndexAction();
       var Reflux = require('reflux');
 
       Reflux.createStore({
         listenables: IndexActions,
         onGetAggregateCompleted: function() {
-          should.fail('Expected the getItems action to fail.');
+          should.fail('Expected the getAggregate action to fail.');
         },
         onGetAggregateFailed: function(err, response) {
           expect(err).toBe(410);
