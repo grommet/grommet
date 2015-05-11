@@ -99,7 +99,7 @@ var Index = React.createClass({
   },
 
   componentWillReceiveProps: function (newProps) {
-    this.setState({options: this.props.options});
+    this.setState({options: newProps.options});
     if (newProps.result) {
       this.setState({result: newProps.result});
     }
