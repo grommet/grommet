@@ -48,6 +48,6 @@ describe('Grommet Form', function() {
     setTimeout(function() {
       expect(formSubmited).toBe(true);
       done();
-    }, 50);
+    }, 10);
   });
 });
