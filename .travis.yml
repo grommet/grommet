@@ -4,4 +4,5 @@ node_js:
 sudo: false
 before_script:
   - npm install -g gulp
+  - gem install scss-lint
   - gulp preprocess
