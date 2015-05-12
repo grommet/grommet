@@ -7,7 +7,7 @@ var Actions = Reflux.createActions({
   // Session
   'login': {asyncResult: true},
   'logout': {}
-})
+});
 
 Actions.login.listen(function(userName, password) {
   if (!userName || !password) {
