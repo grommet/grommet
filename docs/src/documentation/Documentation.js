@@ -16,6 +16,7 @@ var ModularGrommet = require('./ModularGrommet');
 var GetStarted = require('./GetStarted');
 var Architecture = require('./Architecture');
 var Contributing = require('./Contributing');
+var Integration = require('./Integration');
 var AppDoc = require('./components/AppDoc');
 var ChartDoc = require('./components/ChartDoc');
 var CheckBoxDoc = require('./components/CheckBoxDoc');
@@ -98,6 +99,7 @@ var CONTENTS = [
     contents: [
       {route: 'doc_architecture', label: 'Architecture', component: Architecture},
       {route: 'doc_contributing', label: 'Contributing', component: Contributing},
+      {route: 'doc_integration', label: 'Integration', component: Integration},
     ]
   }
 ];
