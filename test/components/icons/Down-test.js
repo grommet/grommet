@@ -6,14 +6,12 @@ var ReactTestUtils = require('../../mocks/ReactTestUtils');
 
 describe('Grommet Down', function() {
   it('loads an down icon', function() {
-    require('react/addons');
     var Component = ReactTestUtils.getComponent(__path__);
 
     ReactTestUtils.componentShouldExist(Component, 'control-icon-down');
   });
 
   it('loads a custom down icon', function() {
-    require('react/addons');
     var Component = ReactTestUtils.getComponent(__path__, null, { className: 'testing' });
 
     ReactTestUtils.componentShouldExist(Component, 'testing');

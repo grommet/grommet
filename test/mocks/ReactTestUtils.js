@@ -23,5 +23,11 @@ module.exports = {
     var instance = TestUtils.scryRenderedDOMComponentsWithClass(component, className);
 
     expect(instance.length).toBe(0);
+  },
+  layerShouldExist: function(assertContent) {
+    expect(document.body.getElementsByClassName('layer').length).toBe(1);
+    if (assertContent) {
+      expect(document.body.getElementsByClassName('layer')[0].textContent).toBe('Testing Layer');
+    }
   }
 };
