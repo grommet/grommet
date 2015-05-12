@@ -39,7 +39,7 @@ describe('Grommet IndexAttribute', function() {
 
     var Component = ReactTestUtils.getComponent(__path__, undefined, {
       item: {
-        data: 1431391396880
+        data: '05/11/2015'
       },
       attribute: {
         attribute: 'data',
@@ -47,7 +47,7 @@ describe('Grommet IndexAttribute', function() {
       }
     });
 
-    ReactTestUtils.componentShouldExist(Component, 'index-attribute', '05/11/15 5:43:16pm');
+    ReactTestUtils.componentShouldExist(Component, 'index-attribute', '05/11/15 12:00:00am');
   });
 
   it('loads a secondary IndexAttribute component', function() {
