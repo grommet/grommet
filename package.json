@@ -23,6 +23,9 @@
   "engines": {
     "node": ">= 0.9"
   },
+  "scripts": {
+    "test": "gulp test"
+  },
   "dependencies": {
     "react": "^0.13.1",
     "inuit-box-sizing": "~0.2.0",
