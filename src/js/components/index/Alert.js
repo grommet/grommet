@@ -15,7 +15,7 @@ var Alert = React.createClass({
     var resource = this.props.resource;
     var status = resource.status || 'unknown';
     return (
-      <div>
+      <div className="alert">
         <div>
           <StatusIcon value={status.toLowerCase()} large={true} />
           <h3>{resource.name}</h3>

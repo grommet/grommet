@@ -9,11 +9,12 @@ var CLASS_ROOT = "index-attribute";
 var IndexAttribute = React.createClass({
 
   propTypes: {
-    item: React.PropTypes.object,
+    item: React.PropTypes.object.isRequired,
     attribute: React.PropTypes.shape({
       attribute: React.PropTypes.string,
       timestamp: React.PropTypes.bool
-    })
+    }).isRequired,
+    className: React.PropTypes.string
   },
 
   render: function() {
