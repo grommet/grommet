@@ -38,8 +38,8 @@ var webpackConfig = {
       {
         test: /\.scss$/,
         loader: 'style!css!sass?outputStyle=expanded&'+
-          "includePaths[]=" +
-            (path.resolve(process.cwd(), "node_modules"))
+          'includePaths[]=' +
+            (path.resolve(process.cwd(), 'node_modules'))
       }
     ]
   }
@@ -51,7 +51,7 @@ module.exports = function(gulp, opts) {
 
   var options = opts || {};
 
-  var dist = options.dist || path.resolve(process.cwd(), "dist");
+  var dist = options.dist || path.resolve(process.cwd(), 'dist');
   options.webpack = options.webpack || {};
 
   var scssLintPath = path.resolve(__dirname, 'scss-lint.yml');
@@ -78,27 +78,31 @@ module.exports = function(gulp, opts) {
     del.sync([dist]);
   });
 
+  function failLintBuild() {
+    console.error('Lint failed');
+    process.exit(1);
+  }
+
   gulp.task('scsslint', function() {
     if (options.scsslint) {
       var scsslint = require('gulp-scss-lint');
-      (options.scssAssets || []).forEach(function(scssAsset) {
-        gulp.src(scssAsset).pipe(scsslint({
-          'config': scssLintPath
-        })).pipe(scsslint.failReporter());
-      });
+      return gulp.src(options.scssAssets || []).pipe(scsslint({
+        'config': scssLintPath
+      }))
+      .pipe(scsslint.failReporter())
+      .on('error', failLintBuild);
     }
   });
 
   gulp.task('jslint', function() {
-    (options.jsAssets || []).forEach(function(jsAsset) {
-      gulp.src(jsAsset)
+   return gulp.src(options.jsAssets || [])
         .pipe(react())
         .pipe(jshint())
         .pipe(jshint.reporter('default', {
           verbose: true
         }))
-        .pipe(jshint.reporter('fail'));
-    });
+        .pipe(jshint.reporter('fail'))
+        .on('error', failLintBuild);
   });
 
   gulp.task('test', function (done) {
@@ -124,7 +128,7 @@ module.exports = function(gulp, opts) {
                   reporter: 'spec'
                 })).once('end', function() {
                   console.log('Watching for changes...');
-                }).on("error", function (err) {
+                }).on('error', function (err) {
                   console.error('Test failed:', err.stack || err);
                   if (argv.w) {
                     this.emit('end');
@@ -146,7 +150,7 @@ module.exports = function(gulp, opts) {
             console.log('Done! You can checkout the report at test/coverage.html.');
             done();
           }
-        }).on("error", function (err) {
+        }).on('error', function (err) {
           console.error('Test failed:', err.stack || err);
           if (argv.w) {
             this.emit('end');
@@ -163,15 +167,15 @@ module.exports = function(gulp, opts) {
     runSequence('clean', 'copy', 'jslint', 'scsslint', callback);
   });
 
-   gulp.task('dist-preprocess', function(callback) {
+  gulp.task('dist-preprocess', function(callback) {
     if (options.distPreprocess) {
-      runSequence(options.distPreprocess, 'test' ,callback);
+      runSequence('preprocess', options.distPreprocess, 'test', callback);
     } else {
-      callback();
+      runSequence('preprocess', callback);
     }
   });
 
-  gulp.task('dist', ['preprocess', 'dist-preprocess'], function() {
+  gulp.task('dist', ['dist-preprocess'], function() {
     var env = assign({}, options.env, {
       __DEV_MODE__: false
     });
@@ -269,20 +273,20 @@ module.exports = function(gulp, opts) {
       if (req.url.match(/.+index.js$/)) {
         res.redirect(301, '/index.js');
       } else if (req.url.match(/.+\/img\//)) { // img
-        res.redirect(301, req.url.replace(/.*\/(img\/.*)$/, "/$1"));
+        res.redirect(301, req.url.replace(/.*\/(img\/.*)$/, '/$1'));
       } else if (req.url.match(/\/img\//)) { // img
         next();
       } else if (req.url.match(/.+\/font\//)) { // font
-        res.redirect(301, req.url.replace(/.*\/(font\/.*)$/, "/$1"));
+        res.redirect(301, req.url.replace(/.*\/(font\/.*)$/, '/$1'));
       } else if (req.url.match(/\/font\//)) { // font
         next();
       } else if (req.url.match(/.+\/.*\.[^\/]*$/)) { // file
-        res.redirect(301, req.url.replace(/.*\/([^\/]*)$/, "/$1"));
+        res.redirect(301, req.url.replace(/.*\/([^\/]*)$/, '/$1'));
       } else {
         next();
       }
     });
-    server.listen(options.devServerPort || 8080, "localhost");
+    server.listen(options.devServerPort || 8080, 'localhost');
 
   });
 
