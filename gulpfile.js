@@ -11,6 +11,7 @@ var assign = require('object-assign');
 var webpack = require('webpack');
 var del = require('del');
 var path = require('path');
+var fs = require('fs');
 var coveralls = require('gulp-coveralls');
 var blanket = require('gulp-blanket-mocha');
 
@@ -255,5 +256,12 @@ gulp.task('coveralls-preprocess', function(done) {
 });
 
 gulp.task('coveralls', ['coveralls-preprocess'], function() {
-  return gulp.src('./test/lcov.info').pipe(coveralls());
+  fs.exists('./test/lcov.info', function (exists) {
+    if (exists) {
+      gulp.src('./test/lcov.info').pipe(coveralls());
+    } else {
+      console.error('Could not find lcov report file.');
+      process.exit(1);
+    }
+  });
 });
