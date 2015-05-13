@@ -255,10 +255,12 @@ gulp.task('coveralls-preprocess', function(done) {
     });
 });
 
-gulp.task('coveralls', ['coveralls-preprocess'], function() {
+gulp.task('coveralls', ['coveralls-preprocess'], function(done) {
   fs.exists('./test/lcov.info', function (exists) {
     if (exists) {
-      gulp.src('./test/lcov.info').pipe(coveralls());
+      gulp.src('./test/lcov.info').pipe(coveralls()).end(function() {
+        done();
+      });
     } else {
       console.error('Could not find lcov report file.');
       process.exit(1);
