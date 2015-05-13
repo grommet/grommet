@@ -241,26 +241,24 @@ gulp.task('dist-bower', function() {
           .pipe(gulp.dest('dist-bower'));
 });
 
-gulp.task('coveralls-preprocess', function(done) {
+gulp.task('blanket-lcov-reporter', function(done) {
   require('./src/js/utils/test-compiler');
   require('./src/js/utils/mocked-dom')('<html><body></body></html>');
 
-  return gulp.src('./test/**/*.js', { read: false })
-    .pipe(blanket({
-      instrument:[path.join(__dirname, 'src/js')],
-      captureFile: 'test/lcov.info',
-      reporter: 'mocha-lcov-reporter'
-    })).end(function() {
-      done();
-    });
+  gulp.src('./test/**/*.js', { read: false }).pipe(blanket({
+    instrument: [path.join(__dirname, 'src/js')],
+    captureFile: 'test/lcov.info',
+    reporter: 'mocha-lcov-reporter'
+  }));
+
+  done();
 });
 
-gulp.task('coveralls', ['coveralls-preprocess'], function(done) {
-  fs.exists('./test/lcov.info', function (exists) {
+gulp.task('coveralls', function() {
+  var lcovPath = './test/lcov.info';
+  fs.exists(lcovPath, function (exists) {
     if (exists) {
-      gulp.src('./test/lcov.info').pipe(coveralls()).end(function() {
-        done();
-      });
+      gulp.src(lcovPath).pipe(coveralls());
     } else {
       console.error('Could not find lcov report file.');
       process.exit(1);
