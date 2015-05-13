@@ -199,6 +199,7 @@ function distCss(path, name, minify) {
     .pipe(gulpif(minify, minifyCss()))
     .pipe(gulp.dest('dist-bower/css'));
 }
+
 gulp.task('dist-bower', function() {
   del.sync(['dist-bower']);
 
@@ -235,4 +236,21 @@ gulp.task('dist-bower', function() {
   gulp.src('./dist-bower')
           .pipe(file('bower.json', JSON.stringify(bowerJSON, null, 2)))
           .pipe(gulp.dest('dist-bower'));
+});
+
+gulp.task('coveralls', function() {
+  require('./src/js/utils/test-compiler');
+  require('./src/js/utils/mocked-dom')('<html><body></body></html>');
+  var blanket = require('gulp-blanket-mocha');
+  var coveralls = require('gulp-coveralls');
+
+  gulp.src('./test/**/*.js', { read: false })
+    .pipe(blanket({
+      instrument:[path.join(process.cwd(), 'src/js')],
+      captureFile: 'test/lcov.info',
+      reporter: 'mocha-lcov-reporter'
+    })).end(function() {
+      gulp.src('./test/lcov.info').pipe(coveralls());
+    });
+
 });

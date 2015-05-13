@@ -6,6 +6,8 @@ before_script:
 - npm install -g gulp
 - gem install scss-lint
 - gulp preprocess
+after_script:
+- gulp coveralls
 notifications:
   slack:
     secure: WeOy0cWkkmem1I9eahruJYQLpTy/Qz8A/CNErCnEkOrhItD3SE75jTq49SBT+/VxcVGZaaOqRgzOd/ISjdhEWZOouNI0+lSd4YDFGAZtV9esoJKW4e+xcSciPC9TeUGXrl45bJkFPeVKc1KHoDuqeyBj7E3KmPqyl5AL9xICMmM=

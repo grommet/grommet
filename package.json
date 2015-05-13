@@ -27,7 +27,7 @@
     "test": "gulp test"
   },
   "dependencies": {
-    "react": "^0.13.1",
+    "highlight.js": "^8.5.0",
     "inuit-box-sizing": "~0.2.0",
     "inuit-clearfix": "^0.2.1",
     "inuit-defaults": "~0.2.1",
@@ -43,13 +43,13 @@
     "inuit-responsive-settings": "~0.1.2",
     "inuit-responsive-tools": "~0.1.1",
     "inuit-shared": "~0.1.5",
-    "highlight.js": "^8.5.0",
+    "lodash": "^3.8.0",
+    "moment": "^2.8.3",
     "object-assign": "^2.0.0",
+    "react": "^0.13.1",
     "react-gravatar": "^1.0.0",
     "react-router": "^0.13.3",
     "react-time": "^2.4.0",
-    "moment": "^2.8.3",
-    "lodash": "^3.8.0",
     "reflux": "^0.2.7",
     "superagent": "^1.1.0"
   },
@@ -80,6 +80,7 @@
     "gulp-scss-lint": "^0.1.10",
     "gulp-watch": "^4.2.4",
     "gulp-webpack": "^1.3.0",
+    "gulp-coveralls": "^0.1.4",
     "gulp-if": "^1.2.5",
     "jsdom": "~4.4.0",
     "json5": "^0.4.0",
@@ -89,7 +90,8 @@
     "webpack-dev-server": "^1.8.0",
     "glob": "^4.3.5",
     "yargs": "^3.8.0",
-    "rewire": "^2.3.3"
+    "rewire": "^2.3.3",
+    "mocha-lcov-reporter": "^0.0.2"
   },
   "config": {
     "blanket": {
