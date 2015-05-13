@@ -11,6 +11,8 @@ var assign = require('object-assign');
 var webpack = require('webpack');
 var del = require('del');
 var path = require('path');
+var coveralls = require('gulp-coveralls');
+var blanket = require('gulp-blanket-mocha');
 
 var packageJSON = require('./package.json');
 delete packageJSON.devDependencies;
@@ -238,22 +240,20 @@ gulp.task('dist-bower', function() {
           .pipe(gulp.dest('dist-bower'));
 });
 
-gulp.task('coveralls', function() {
+gulp.task('coveralls-preprocess', function(done) {
   require('./src/js/utils/test-compiler');
   require('./src/js/utils/mocked-dom')('<html><body></body></html>');
-  var blanket = require('gulp-blanket-mocha');
-  var coveralls = require('gulp-coveralls');
-  var coverageFilePath = path.join(__dirname, 'test/lcov.info');
-  gulp.src('./test/**/*.js', { read: false })
+
+  return gulp.src('./test/**/*.js', { read: false })
     .pipe(blanket({
-      instrument:[path.join(process.cwd(), 'src/js')],
-      captureFile: coverageFilePath,
+      instrument:[path.join(__dirname, 'src/js')],
+      captureFile: 'test/lcov.info',
       reporter: 'mocha-lcov-reporter'
     })).end(function() {
-      console.log('Report has been generated, adding it to coveralls...');
-      gulp.src(coverageFilePath).pipe(coveralls()).end(function() {
-        console.log('Coveralls report has been successfully added.');
-      });
+      done();
     });
+});
 
+gulp.task('coveralls', ['coveralls-preprocess'], function() {
+  return gulp.src('./test/lcov.info').pipe(coveralls());
 });
