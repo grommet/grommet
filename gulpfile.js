@@ -243,14 +243,17 @@ gulp.task('coveralls', function() {
   require('./src/js/utils/mocked-dom')('<html><body></body></html>');
   var blanket = require('gulp-blanket-mocha');
   var coveralls = require('gulp-coveralls');
-
+  var coverageFilePath = path.join(__dirname, 'test/lcov.info');
   gulp.src('./test/**/*.js', { read: false })
     .pipe(blanket({
       instrument:[path.join(process.cwd(), 'src/js')],
-      captureFile: 'test/lcov.info',
+      captureFile: coverageFilePath,
       reporter: 'mocha-lcov-reporter'
     })).end(function() {
-      gulp.src('./test/lcov.info').pipe(coveralls());
+      console.log('Report has been generated, adding it to coveralls...');
+      gulp.src(coverageFilePath).pipe(coveralls()).end(function() {
+        console.log('Coveralls report has been successfully added.');
+      });
     });
 
 });
