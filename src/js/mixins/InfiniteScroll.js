@@ -2,7 +2,8 @@
 
 var DOM = require('../utils/DOM');
 
-var SCROLL_MORE_DELAY = 2000;
+var SCROLL_MORE_DELAY = 2000; // when the user scrolls
+var SCROLL_MORE_INITIAL_DELAY = 200; // when we start out at the bottom already
 
 var InfiniteScroll = {
 
@@ -30,6 +31,10 @@ var InfiniteScroll = {
     this._infiniteScroll.indicatorElement = indicatorElement;
     this._infiniteScroll.scrollParent = DOM.findScrollParents(indicatorElement)[0];
     this._infiniteScroll.scrollParent.addEventListener("scroll", this._onScroll);
+    // check in case we're already at the bottom
+    if (this._infiniteScroll.scrollParent === document) {
+      this._infiniteScroll.scrollTimer = setTimeout(onEnd, SCROLL_MORE_INITIAL_DELAY);
+    }
   },
 
   stopListeningForScroll: function () {

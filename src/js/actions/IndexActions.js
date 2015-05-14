@@ -7,8 +7,10 @@ var Actions = require('./Actions');
 
 var IndexActions = Reflux.createActions({
   'setup': {asyncResult: true},
+  'cleanup': {},
   'getItems': {asyncResult: true},
-  'getAggregate': {asyncResult: true}
+  'getAggregate': {asyncResult: true},
+  'getMap': {asyncResult: true}
 });
 
 IndexActions.setup.listen(function () {
@@ -53,6 +55,20 @@ IndexActions.getItems.listen(function (params) {
 
 IndexActions.getAggregate.listen(function (params) {
   getItems('/rest/index/resources/aggregated', params, this);
+});
+
+IndexActions.getMap.listen(function (uri) {
+  var thisAction = this;
+  Rest.get('/rest/index/trees/aggregated' + uri)
+    .end(function(err, res) {
+      if (res.status === 400) {
+        return Actions.logout();
+      }
+      if (err || !res.ok) {
+        return thisAction.failed(err, res.body || res.text, uri);
+      }
+      thisAction.completed(res.body, uri);
+    });
 });
 
 module.exports = IndexActions;

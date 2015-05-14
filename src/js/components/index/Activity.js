@@ -27,15 +27,23 @@ var DEFAULT_OPTIONS = {
 var Activity = React.createClass({
 
   propTypes: {
-    query: React.PropTypes.object,
+    label: React.PropTypes.string,
     onQuery: React.PropTypes.func,
-    onSelect: React.PropTypes.func
+    onSelect: React.PropTypes.func,
+    query: React.PropTypes.object,
+    selection: React.PropTypes.oneOfType([
+      React.PropTypes.string, // uri
+      React.PropTypes.arrayOf(React.PropTypes.string)
+    ])
   },
 
   getInitialState: function () {
     var options = DEFAULT_OPTIONS;
     if (this.props.query) {
-      options = merge(DEFAULT_OPTIONS, {params: {query: this.props.query}});
+      options = merge(options, {params: {query: this.props.query}});
+    }
+    if (this.props.label) {
+      options = merge(options, {label: this.props.label});
     }
     return {options: options};
   },
@@ -49,6 +57,7 @@ var Activity = React.createClass({
     return (
       <Index
         options={this.state.options}
+        selection={this.props.selection}
         onQuery={this.props.onQuery}
         onSelect={this.props.onSelect} />
     );

@@ -2,7 +2,7 @@
 
 .menu {
   display: inline-block;
-  @include inuit-font-size($inuit-heading-size-4, inherit);
+  //@include inuit-font-size($inuit-heading-size-4, inherit);
 
   a:not(.button) {
     color: lighten($text-color, 30%);
@@ -110,6 +110,11 @@
     cursor: pointer;
   }
 
+  &--labelled {
+    padding-left: $inuit-base-spacing-unit;
+    padding-right: $inuit-base-spacing-unit;
+  }
+
   &--inline {
     &.menu {
       &--left {
@@ -213,7 +218,6 @@
 
   &--primary {
     display: block;
-    padding: 0px $inuit-base-spacing-unit $inuit-base-spacing-unit;
     max-height: 100vh;
     overflow: auto;
 
@@ -221,6 +225,23 @@
       margin-left: - $inuit-base-spacing-unit;
       margin-right: - $inuit-base-spacing-unit;
       margin-bottom: $inuit-base-spacing-unit;
+    }
+
+    > a:not(.button) {
+      padding: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit;
+
+      &:hover {
+        text-decoration: none;
+
+        &:not(.active) {
+          background-color: $hover-background-color;
+        }
+      }
+
+      &.active {
+        color: $text-color;
+        background-color: $selected-background-color;
+      }
     }
   }
 }

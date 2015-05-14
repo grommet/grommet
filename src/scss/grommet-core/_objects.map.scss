@@ -1,0 +1,56 @@
+.map {
+  padding: $inuit-base-spacing-unit;
+
+  &__categories {
+    margin: 0px;
+    list-style-type: none;
+  }
+
+  &__category {
+    position: relative;
+    padding-top: $inuit-base-spacing-unit;
+    margin-bottom: halve($inuit-base-spacing-unit);
+    max-width: none;
+
+    &-label {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      //text-align: right;
+      @include inuit-font-size($label-font-size);
+    }
+
+    &-items {
+      margin: 0px;
+      list-style-type: none;
+      //white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+
+  &__item {
+    display: inline-block;
+    width: $panel-width;
+    border: 1px solid $border-color;
+    margin-right: halve($inuit-base-spacing-unit);
+    margin-bottom: halve($inuit-base-spacing-unit);
+    @include inuit-font-size($content-font-size);
+
+    > a {
+      display: block;
+      padding: quarter($inuit-base-spacing-unit) halve($inuit-base-spacing-unit);
+
+      > * {
+        display: inline-block;
+      }
+
+      &:hover {
+        background-color: $hover-background-color;
+      }
+    }
+
+    .status-icon {
+      margin-right: quarter($inuit-base-spacing-unit);
+    }
+  }
+}

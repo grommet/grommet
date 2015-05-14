@@ -31,11 +31,11 @@ var FullForm = React.createClass({
     console.log('!!! FullForm changed', event.target, 'to', event.target.value);
   },
 
-  _onSearchInputChange: function (event) {
-    console.log('!!! FullForm _onSearchInputChange', event.target.value);
+  _onSearchInputChange: function (value) {
+    console.log('!!! FullForm _onSearchInputChange', value);
     this.setState({
       searchInput: {
-        value: event.target.value,
+        value: value,
         suggestions: this._searchInputSuggestions
       }
     });

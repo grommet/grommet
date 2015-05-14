@@ -85,8 +85,15 @@ var IndexTiles = React.createClass({
           );
         }
 
+        var selected = false;
+        if (this.props.selection && item.uri === this.props.selection) {
+          selected = true;
+        }
+
         return (
-          <Tile key={item.uri} onClick={this._onClick.bind(this, item.uri)}>
+          <Tile key={item.uri}
+            onClick={this._onClick.bind(this, item.uri)}
+            selected={selected}>
             {header}
             {values}
             {footer}
@@ -102,7 +109,7 @@ var IndexTiles = React.createClass({
     }
 
     return (
-      <Tiles className={classes.join(' ')} onMore={onMore}>
+      <Tiles className={classes.join(' ')} onMore={onMore} flush={false}>
         {tiles}
       </Tiles>
     );

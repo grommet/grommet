@@ -7,14 +7,14 @@ var Router = require('react-router');
 var Rest = require('grommet/utils/Rest');
 //var Index = require('grommet/index/index'); /// TODO: refactor
 //var indexConfig = require('./IndexConfig'); /// TODO: refactor
-var routes = require('./Routes');
+var Routes = require('./Routes');
 
 Rest.setHeaders({
   'Accept': 'application/json',
   'X-API-Version': 200
 });
 
-var router = Router.create({routes: routes, location: Router.HistoryLocation});
+var router = Router.create({routes: Routes.routes, location: Router.HistoryLocation});
 
 //Index.init(indexConfig); /// TODO: refactor
 

@@ -1,17 +1,19 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 .title {
+  display: inline;
   overflow: hidden;
   text-overflow: ellipsis;
   font-weight: normal;
-  margin-right: $inuit-base-spacing-unit;
+  margin-right: halve($inuit-base-spacing-unit);
 
   @include media-query(palm) {
     @include inuit-font-size(32px, inherit);
   }
 
   @include media-query(lap-and-up) {
-    @include inuit-font-size(40px, inherit);
+    @include inuit-font-size(24px, inherit);
+    font-weight: 600;
   }
 
   a {

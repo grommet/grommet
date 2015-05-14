@@ -15,6 +15,7 @@ var Index = React.createClass({
 
   propTypes: {
     options: React.PropTypes.shape({
+      label: React.PropTypes.string,
       attributes: React.PropTypes.arrayOf(React.PropTypes.shape({
         attribute: React.PropTypes.string,
         header: React.PropTypes.bool,
@@ -78,24 +79,17 @@ var Index = React.createClass({
       // get one more page's worth of data
       var params = this.state.options.params;
       params = merge(params,
-        {count: (params.count + this.state.options.pageSize)});
+        {count: (params.count + (this.state.options.pageSize || 20))});
       IndexActions.getItems(params);
     }
   },
 
   _onIndexChange: function (data) {
-    //console.log('!!! Index _onIndexChange', data);
     this.setState(data);
   },
 
   getInitialState: function () {
     return {options: this.props.options, result: (this.props.result || {})};
-  },
-
-  componentWillMount: function () {
-    if (! this.props.result) {
-      IndexActions.setup(this.state.options);
-    }
   },
 
   componentWillReceiveProps: function (newProps) {
@@ -107,7 +101,14 @@ var Index = React.createClass({
 
   componentDidMount: function () {
     if (! this.props.result) {
+      IndexActions.setup(this.state.options);
       this.listenTo(IndexStore, this._onIndexChange);
+    }
+  },
+
+  componentWillUnmount: function () {
+    if (! this.props.result) {
+      IndexActions.cleanup();
     }
   },
 
@@ -120,18 +121,25 @@ var Index = React.createClass({
     var options = this.state.options;
     var result = this.state.result;
 
+    var onMore = this.props.onMore;
+    if (! this.props.result && ! onMore) {
+      onMore = this._onMore;
+    }
+
     var view = null;
     if ('table' === options.view) {
       view = (
         <IndexTable options={options} result={result}
+          selection={this.props.selection}
           onSelect={this.props.onSelect}
-          onMore={this._onMore} />
+          onMore={onMore} />
       );
     } else if ('tiles' === options.view) {
       view = (
         <IndexTiles options={options} result={result}
+          selection={this.props.selection}
           onSelect={this.props.onSelect}
-          onMore={this._onMore} />
+          onMore={onMore} />
       );
     }
 
@@ -150,7 +158,7 @@ var Index = React.createClass({
           <IndexHeader className={CLASS_ROOT + "__header"}
             options={options}
             total={result.total}
-            fixed={'tiles' === options.view || true}
+            fixed={true}
             unfilteredTotal={result.unfilteredTotal}
             onQuery={this._onQuery} />
           {error}

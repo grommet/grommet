@@ -1,0 +1,32 @@
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+
+.sidebar {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  height: 100vh;
+
+  @include media-query(palm) {
+    width: 100vw;
+  }
+
+  @include media-query(lap-and-up) {
+    width: $sidebar-width;
+  }
+
+  > * {
+    -webkit-flex: 1 0;
+    flex: 1 0;
+
+    &.header,
+    &.footer {
+      -webkit-flex: 0 0 auto;
+      flex: 0 0 auto;
+    }
+  }
+
+  &--primary {
+    background-image: linear-gradient(to left, #dfdfdf, #f5f5f5 10px);
+  }
+}

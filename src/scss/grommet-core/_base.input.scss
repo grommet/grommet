@@ -8,7 +8,8 @@ textarea {
   @include inuit-font-size($inuit-base-font-size);
   // Align overall height with regular text line height, reduce
   // top and bottom padding by an extra 2px.
-  padding: (halve($inuit-base-spacing-unit) - $input-border-width) $inuit-base-spacing-unit;
+  padding: (halve($inuit-base-spacing-unit) - $input-border-width)
+    ($inuit-base-spacing-unit - $input-border-width);
   border: $input-border-width solid $border-color;
   border-radius: $border-radius;
   outline: none;
@@ -16,8 +17,11 @@ textarea {
   background-color: inherit;
 
   &:focus {
+    padding: (halve($inuit-base-spacing-unit) - ($input-border-width + 1))
+      ($inuit-base-spacing-unit - ($input-border-width + 1));
+    border-width: 2px;
     border-color: $focus-border-color;
-    box-shadow: 0 0 1px 1px $focus-border-color;
+    //box-shadow: 0 0 1px 1px $focus-border-color;
   }
 
   &::-moz-focus-inner {

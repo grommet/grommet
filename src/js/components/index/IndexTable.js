@@ -87,8 +87,12 @@ var IndexTable = React.createClass({
     }, this);
 
     var rows = null;
+    var selectionIndex = null;
     if (this.props.result.items) {
-      rows = this.props.result.items.map(function (item) {
+      rows = this.props.result.items.map(function (item, index) {
+        if (this.props.selection && item.uri === this.props.selection) {
+          selectionIndex = index;
+        }
         var cells = attributes.map(function (attribute) {
           return (
             <td key={attribute.attribute}>
@@ -114,6 +118,7 @@ var IndexTable = React.createClass({
       <Table className={classes.join(' ')}
         selectable={true}
         scrollable={true}
+        selection={selectionIndex}
         onMore={onMore}>
         <thead><tr>{headerCells}</tr></thead>
         <tbody>{rows}</tbody>

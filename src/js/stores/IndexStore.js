@@ -6,42 +6,44 @@ var IndexActions = require('../actions/IndexActions');
 
 var DEFAULT_PAGE_SIZE = 20;
 
+var DEFAULT_DATA = {
+  options: {
+    category: null,
+    view: 'tiles',
+    attributes: [{attribute: 'name', label: 'Name'}],
+    pageSize: DEFAULT_PAGE_SIZE,
+    params: {
+      start: 0,
+      count: DEFAULT_PAGE_SIZE,
+      //query: null,
+      sort: 'name:asc',
+      //itemUri: null
+    }
+  },
+
+  state: 'idle',
+
+  result: {
+    items: [],
+    start: 0,
+    count: 0,
+    total: 0,
+    unfilteredTotal: 0
+  },
+
+  // hash of uri -> index in result.items[]
+  uriIndexes: {}
+};
+
 var IndexStore = Reflux.createStore({
 
-  _data: {
-
-    options: {
-      category: null,
-      view: 'tiles',
-      attributes: [{attribute: 'name', label: 'Name'}],
-      pageSize: DEFAULT_PAGE_SIZE,
-      params: {
-        start: 0,
-        count: DEFAULT_PAGE_SIZE,
-        query: null,
-        sort: 'name:asc',
-        referenceUri: null
-      }
-    },
-
-    state: 'idle',
-
-    result: {
-      items: [],
-      start: 0,
-      count: 0,
-      total: 0,
-      unfilteredTotal: 0
-    },
-
-    // hash of uri -> index in result.items[]
-    uriIndexes: {}
-  },
+  _data: merge({}, DEFAULT_DATA),
 
   init: function () {
     this.listenTo(IndexActions.setup, this._onSetup);
     this.listenTo(IndexActions.setup.completed, this._onSetupCompleted);
     this.listenTo(IndexActions.setup.failed, this._onSetupFailed);
+    this.listenTo(IndexActions.cleanup, this._onCleanup);
     this.listenTo(IndexActions.getItems, this._onGetItems);
     this.listenTo(IndexActions.getItems.completed, this._onGetItemsCompleted);
     this.listenTo(IndexActions.getItems.failed, this._onGetItemsFailed);
@@ -65,6 +67,11 @@ var IndexStore = Reflux.createStore({
     IndexActions.getItems(this._data.options.params);
   },
 
+  _onCleanup: function () {
+    this._data = merge({}, DEFAULT_DATA);
+    this.trigger(this._data);
+  },
+
   _onGetItems: function (params) {
     this._data.state = 'changing';
     this._data.options.params = params;
@@ -72,13 +79,7 @@ var IndexStore = Reflux.createStore({
 
     // clear results slowly to avoid jumpiness
     this._clearTimer = setTimeout(function () {
-      this._data.result = {
-        items: [],
-        start: 0,
-        count: 0,
-        total: 0,
-        unfilteredTotal: 0
-      };
+      this._data.result = merge({}, DEFAULT_DATA.result);
       this._data.uriIndexes = {};
       this.trigger(this._data);
     }.bind(this), 500);

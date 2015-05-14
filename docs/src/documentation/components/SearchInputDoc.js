@@ -4,7 +4,7 @@ var React = require('react');
 var SearchInput = require('grommet/components/SearchInput');
 var GrommetDocument = require('grommet/components/Document');
 
-var SearchComboDoc = React.createClass({
+var SearchInputDoc = React.createClass({
 
   _values: ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight'],
 
@@ -85,4 +85,4 @@ var SearchComboDoc = React.createClass({
   }
 });
 
-module.exports = SearchComboDoc;
+module.exports = SearchInputDoc;

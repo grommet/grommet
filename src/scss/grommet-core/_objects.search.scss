@@ -20,8 +20,15 @@
 
   &__input {
     margin-right: 0px;
-    padding: 0px halve($inuit-base-spacing-unit);
-    font-size: inherit;
+
+    .header & {
+      padding: 0px halve($inuit-base-spacing-unit);
+      font-size: inherit;
+
+      &:focus {
+        padding: 0px (halve($inuit-base-spacing-unit) - 1px);
+      }
+    }
   }
 
   &__layer {
@@ -58,10 +65,11 @@
     }
 
     .search__suggestion {
-      padding: quarter($inuit-base-spacing-unit) halve($inuit-base-spacing-unit);
+      padding: quarter($inuit-base-spacing-unit) $inuit-base-spacing-unit;
       cursor: pointer;
 
-      &:hover {
+      &:hover,
+      &--active {
         background-color: $hover-background-color;
       }
     }
@@ -70,8 +78,12 @@
   &--inline {
     .search__input {
       width: 100%;
-      box-sizing: border-box;
-      //line-height: inherit;
+      box-sizing:  border-box;
+
+      .header & {
+        padding: 0px;
+        border: none;
+      }
     }
   }
 }

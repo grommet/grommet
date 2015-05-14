@@ -9,6 +9,10 @@
     height: 100%;
     display: block;
     padding-right: round($inuit-base-spacing-unit * 2.5);
+
+    &:focus {
+      padding-right: round($inuit-base-spacing-unit * 2.5) - 1;
+    }
   }
 
   &__control {

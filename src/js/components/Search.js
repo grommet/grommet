@@ -31,7 +31,7 @@ var Search = React.createClass({
 
   _onAddLayer: function (event) {
     event.preventDefault();
-    this.setState({layer: true});
+    this.setState({layer: true, activeSuggestionIndex: -1});
   },
 
   _onRemoveLayer: function () {
@@ -39,7 +39,11 @@ var Search = React.createClass({
   },
 
   _onFocusControl: function () {
-    this.setState({controlFocused: true, layer: true});
+    this.setState({
+      controlFocused: true,
+      layer: true,
+      activeSuggestionIndex: -1
+    });
   },
 
   _onBlurControl: function () {
@@ -48,7 +52,10 @@ var Search = React.createClass({
 
   _onFocusInput: function () {
     this.refs.input.getDOMNode().select();
-    this.setState({layer: (! this.props.inline || this.props.suggestions)});
+    this.setState({
+      layer: (! this.props.inline || this.props.suggestions),
+      activeSuggestionIndex: -1
+    });
   },
 
   _onBlurInput: function () {
@@ -56,9 +63,32 @@ var Search = React.createClass({
   },
 
   _onChangeInput: function (event) {
+    this.setState({activeSuggestionIndex: -1});
     if (this.props.onChange) {
       this.props.onChange(event.target.value);
     }
+  },
+
+  _onNextSuggestion: function () {
+    var index = this.state.activeSuggestionIndex;
+    index = Math.min(index + 1, this.props.suggestions.length - 1);
+    this.setState({activeSuggestionIndex: index});
+  },
+
+  _onPreviousSuggestion: function () {
+    var index = this.state.activeSuggestionIndex;
+    index = Math.max(index - 1, 0);
+    this.setState({activeSuggestionIndex: index});
+  },
+
+  _onEnter: function () {
+    if (this.state.activeSuggestionIndex >= 0) {
+      var text = this.props.suggestions[this.state.activeSuggestionIndex];
+      if (this.props.onChange) {
+        this.props.onChange(text);
+      }
+    }
+    this._onRemoveLayer();
   },
 
   _onClickSuggestion: function (item) {
@@ -77,7 +107,8 @@ var Search = React.createClass({
     return {
       align: 'left',
       controlFocused: false,
-      layer: false
+      layer: false,
+      activeSuggestionIndex: -1
     };
   },
 
@@ -88,7 +119,9 @@ var Search = React.createClass({
     var activeKeyboardHandlers = {
       esc: this._onRemoveLayer,
       tab: this._onRemoveLayer,
-      enter: this._onRemoveLayer
+      up: this._onPreviousSuggestion,
+      down: this._onNextSuggestion,
+      enter: this._onEnter
     };
     var focusedKeyboardHandlers = {
       space: this._onAddLayer
@@ -221,10 +254,14 @@ var Search = React.createClass({
 
       var suggestions = null;
       if (this.props.suggestions) {
-        suggestions = this.props.suggestions.map(function (item) {
+        suggestions = this.props.suggestions.map(function (item, index) {
+          var classes = [CLASS_ROOT + "__suggestion"];
+          if (index === this.state.activeSuggestionIndex) {
+            classes.push(CLASS_ROOT + "__suggestion--active");
+          }
           return (
             <div key={item}
-              className={CLASS_ROOT + "__suggestion"}
+              className={classes.join(' ')}
               onClick={this._onClickSuggestion.bind(this, item)}>
               {item}
             </div>

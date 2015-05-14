@@ -172,6 +172,9 @@ var Menu = React.createClass({
       classes.push("menu--inline");
     } else {
       classes.push("menu--controlled");
+      if (this.props.label) {
+        classes.push("menu--labelled");
+      }
     }
     if (this.props.className) {
       classes.push(this.props.className);

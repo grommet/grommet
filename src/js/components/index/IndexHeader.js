@@ -12,6 +12,7 @@ var IndexHeader = React.createClass({
 
   propTypes: {
     options: React.PropTypes.shape({
+      label: React.PropTypes.string,
       attributes: React.PropTypes.arrayOf(React.PropTypes.shape({
         attribute: React.PropTypes.string,
         label: React.PropTypes.string,
@@ -73,9 +74,11 @@ var IndexHeader = React.createClass({
     }
 
     return (
-      <Header className={classes.join(' ')} fixed={this.props.fixed} flush={false}>
+      <Header className={classes.join(' ')}
+        fixed={this.props.fixed} flush={false} large={true}>
         <Search className={CLASS_ROOT + "__search"}
           inline={true}
+          placeHolder={"Search " + this.props.options.label}
           defaultValue={searchText}
           onChange={this._onSearchChange} />
         {filters}

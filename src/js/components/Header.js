@@ -16,7 +16,47 @@ var Header = React.createClass({
   },
 
   getDefaultProps: function () {
-    return {flush: true, large: false, primary: false, small: false};
+    return {
+      flush: true,
+      large: false,
+      primary: false,
+      small: false};
+  },
+
+  _onResize: function () {
+    this._alignMirror();
+  },
+
+  _alignMirror: function () {
+    var contentElement = this.refs.content.getDOMNode();
+    var mirrorElement = this.refs.mirror.getDOMNode();
+
+    // constrain fixed content to the width of the mirror
+    var mirrorRect = mirrorElement.getBoundingClientRect();
+    contentElement.style.width = '' + Math.floor(mirrorRect.width) + 'px';
+
+    // align the mirror height with the content's height
+    var contentRect = contentElement.getBoundingClientRect();
+    mirrorElement.style.height = '' + Math.floor(contentRect.height) + 'px';
+  },
+
+  componentDidMount: function () {
+    if (this.props.fixed) {
+      this._alignMirror();
+      window.addEventListener('resize', this._onResize);
+    }
+  },
+
+  componentDidUpdate: function () {
+    if (this.props.fixed) {
+      this._alignMirror();
+    }
+  },
+
+  componentWillUnmount: function () {
+    if (this.props.fixed) {
+      window.removeEventListener('resize', this._onResize);
+    }
   },
 
   render: function() {
@@ -39,18 +79,35 @@ var Header = React.createClass({
     if (this.props.className) {
       classes.push(this.props.className);
     }
-    var wrapperClasses = [CLASS_ROOT + "__wrapper"];
-    if (this.props.colorIndex) {
-      wrapperClasses.push("background-color-index-" + this.props.colorIndex);
+
+    var mirror = null;
+    if (this.props.fixed) {
+      mirror = <div ref="mirror" className={CLASS_ROOT + "__mirror"}></div>;
+    }
+
+    var content = (
+      <div ref="content" className={CLASS_ROOT + "__content"}>
+        {this.props.children}
+      </div>
+    );
+    if (this.props.colorIndex || this.props.fixed) {
+      var wrapperClasses = [CLASS_ROOT + "__wrapper"];
+      if (this.props.colorIndex) {
+        wrapperClasses.push("background-color-index-" +
+          this.props.colorIndex);
+      }
+
+      content = (
+        <div className={wrapperClasses.join(' ')}>
+          {content}
+        </div>
+      );
     }
 
     return (
       <div className={classes.join(' ')}>
-        <div className={wrapperClasses.join(' ')}>
-          <div className={CLASS_ROOT + "__content"}>
-            {this.props.children}
-          </div>
-        </div>
+        {mirror}
+        {content}
       </div>
     );
   }

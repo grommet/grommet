@@ -8,6 +8,7 @@ var Tile = React.createClass({
 
   propTypes: {
     onClick: React.PropTypes.func,
+    selected: React.PropTypes.bool,
     status: React.PropTypes.string,
     wide: React.PropTypes.bool
   },
@@ -22,6 +23,9 @@ var Tile = React.createClass({
     }
     if (this.props.onClick) {
       classes.push(CLASS_ROOT + "--selectable");
+    }
+    if (this.props.selected) {
+      classes.push(CLASS_ROOT + "--selected");
     }
     if (this.props.className) {
       classes.push(this.props.className);

@@ -22,6 +22,10 @@ var SearchInput = React.createClass({
 
   mixins: [ReactLayeredComponent, KeyboardAccelerators, Overlay],
 
+  _onInputChange: function (event) {
+    this.props.onChange(event.target.value);
+  },
+
   _onOpen: function (event) {
     event.preventDefault();
     this.setState({active: true, activeSuggestionIndex: -1});
@@ -54,14 +58,14 @@ var SearchInput = React.createClass({
     if (this.state.activeSuggestionIndex >= 0) {
       var text = this.props.suggestions[this.state.activeSuggestionIndex];
       this.setState({value: text});
-      this.props.onChange({target: {value: text}});
+      this.props.onChange(text);
     }
   },
 
   _onClickSuggestion: function (text) {
     this.setState({value: text});
     this._activation(false);
-    this.props.onChange({target: {value: text}});
+    this.props.onChange(text);
   },
 
   _activation: function (active) {
@@ -139,7 +143,7 @@ var SearchInput = React.createClass({
         <input className={CLASS_ROOT + "__input"}
           id={this.props.id} name={this.props.name}
           value={this.props.value} defaultValue={this.props.defaultValue}
-          onChange={this.props.onChange} />
+          onChange={this._onInputChange} />
         <div className={CLASS_ROOT + "__control"} onClick={this._onOpen} >
           <SearchIcon />
         </div>

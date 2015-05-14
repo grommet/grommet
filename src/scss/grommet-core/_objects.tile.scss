@@ -75,6 +75,18 @@
     border-radius: 0px;
   }
 
+  .status-icon {
+    margin-right: quarter($inuit-base-spacing-unit);
+  }
+
+  > .header {
+    margin-bottom: $inuit-base-spacing-unit;
+
+    .header__content {
+      border-bottom: none;
+    }
+  }
+
   //@include media-query(lap-and-up) {
   //  display: -webkit-flex;
   //  display: flex;
@@ -89,13 +101,15 @@
   //}
 
   &--selectable {
-    border: 1px solid transparent;
     cursor: pointer;
-    transition: border-color 0.2s;
+    transition: background-color 0.2s;
 
-    &:hover {
-      border-color: $brand-color;
-      transition: border-color 1s;
+    &.tile--selected {
+      background-color: $selected-background-color;
+    }
+
+    &:hover:not(.tile--selected) {
+      background-color: $hover-background-color;
     }
   }
 }

@@ -1,8 +1,10 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
+var Reflux = require('reflux');
 var Donut = require('../Donut');
 var IndexActions = require('../../actions/IndexActions');
+var IndexQuery = require('../../utils/IndexQuery');
 
 var STATUS_IMPORTANCE = {
   'Error': 1,
@@ -21,10 +23,24 @@ var IndexDonut = React.createClass({
       query: React.PropTypes.object,
       attribute: React.PropTypes.string
     }),
+    onClick: React.PropTypes.func,
     series: React.PropTypes.arrayOf(React.PropTypes.shape({
       label: React.PropTypes.string,
       value: React.PropTypes.number
     })),
+  },
+
+  mixins: [Reflux.ListenerMixin],
+
+  _onClick: function (value) {
+    var query;
+    if (this.state.params.query) {
+      query = this.state.params.query.clone();
+    } else {
+      query = IndexQuery.create();
+    }
+    query.replaceAttributeValues(this.state.params.attribute, [value]);
+    this.props.onClick(query);
   },
 
   _onGetAggregateCompleted: function (response, params) {
@@ -35,7 +51,12 @@ var IndexDonut = React.createClass({
         if ('status' === this.state.params.attribute) {
           colorIndex = count.value.toLowerCase();
         }
-        return {label: count.value, value: count.count, colorIndex: colorIndex};
+        return {
+          label: count.value,
+          value: count.count,
+          colorIndex: colorIndex,
+          onClick: this._onClick.bind(this, count.value)
+        };
       }, this);
       if ('status' === this.state.params.attribute) {
         // re-order by importance
@@ -51,9 +72,9 @@ var IndexDonut = React.createClass({
     return {params: this.props.params, series: (this.props.series || [])};
   },
 
-  componentWillMount: function () {
+  componentDidMount: function () {
     if (! this.props.series) {
-      IndexActions.getAggregate.completed.listen(this._onGetAggregateCompleted);
+      this.listenTo(IndexActions.getAggregate.completed, this._onGetAggregateCompleted);
       IndexActions.getAggregate(this.state.params);
     }
   },

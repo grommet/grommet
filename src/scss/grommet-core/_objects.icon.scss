@@ -84,6 +84,9 @@ $badge-size: halve($inuit-base-spacing-unit) + quarter($inuit-base-spacing-unit)
   &--small {
     width: halve($inuit-base-spacing-unit);
     height: halve($inuit-base-spacing-unit);
+    // adjust margin so it aligns with text better
+    margin-top: quarter($inuit-base-spacing-unit);
+    margin-bottom: quarter($inuit-base-spacing-unit);
 
     .status-icon__detail {
       display: none;

@@ -3,8 +3,8 @@
 var React = require('react');
 var Link = require('react-router').Link;
 var Rest = require('grommet/utils/Rest');
-var Layer = require('grommet/components/Layer');
 var Alert = require('grommet/components/index/Alert');
+var Header = require('grommet/components/Header');
 var CloseIcon = require('grommet/components/icons/Clear');
 var Actions = require('grommet/actions/Actions');
 
@@ -32,20 +32,21 @@ var TourAlert = React.createClass({
   },
 
   getInitialState: function () {
+    var router = this.context.router;
     return {
-      uri: this.props.params.splat,
+      uri: router.getCurrentParams().splat,
       resource: {},
-      query: this.context.router.getCurrentQuery()
+      query: router.getCurrentQuery()
     };
   },
 
-  componentWillMount: function () {
+  componentDidMount: function () {
     this._getData();
   },
 
-  componentWillReceiveProps: function (newProps) {
-    this.setState({uri: newProps.params.splat});
-    this._getData();
+  componentWillReceiveProps: function () {
+    var router = this.context.router;
+    this.setState({uri: router.getCurrentParams().splat}, this._getData);
   },
 
   render: function () {
@@ -56,10 +57,14 @@ var TourAlert = React.createClass({
         this.state.resource.attributes.associatedResourceName;
     }
     return (
-      <Layer closer={closer}>
+      <div>
+        <Header large={true}>
+          <span></span>
+          {closer}
+        </Header>
         <Alert resource={this.state.resource}
           associatedResource={associatedResource} />
-      </Layer>
+      </div>
     );
   }
 

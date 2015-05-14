@@ -9,7 +9,7 @@ var CLASS_ROOT = "table";
 var Table = React.createClass({
 
   propTypes: {
-    defaultSelection: React.PropTypes.number,
+    selection: React.PropTypes.number,
     onMore: React.PropTypes.func,
     scrollable: React.PropTypes.bool,
     selectable: React.PropTypes.bool
@@ -19,13 +19,22 @@ var Table = React.createClass({
 
   getDefaultProps: function () {
     return {
-      defaultSelection: null,
+      selection: null,
       scrollable: false,
       selectable: false
     };
   },
 
+  _clearSelection: function () {
+    var rows = this.refs.table.getDOMNode()
+      .querySelectorAll("." + CLASS_ROOT + "__row--selected");
+    for (var i=0; i<rows.length; i++) {
+      rows[i].classList.remove(CLASS_ROOT + "__row--selected");
+    }
+  },
+
   _markSelection: function () {
+    this._clearSelection();
     if (null !== this.state.selection) {
       var tbody = this.refs.table.getDOMNode().querySelectorAll('tbody')[0];
       tbody.childNodes[this.state.selection].classList.
@@ -39,11 +48,7 @@ var Table = React.createClass({
       element = element.parentNode;
     }
     if (element && element.parentNode.nodeName === 'TBODY') {
-      var rows = this.refs.table.getDOMNode()
-        .querySelectorAll("." + CLASS_ROOT + "__row--selected");
-      for (var i=0; i<rows.length; i++) {
-        rows[i].classList.remove(CLASS_ROOT + "__row--selected");
-      }
+      this._clearSelection();
       element.classList.add(CLASS_ROOT + "__row--selected");
     }
   },
@@ -82,7 +87,7 @@ var Table = React.createClass({
   },
 
   getInitialState: function () {
-    return {selection: this.props.defaultSelection};
+    return {selection: this.props.selection};
   },
 
   componentDidMount: function () {
@@ -97,6 +102,12 @@ var Table = React.createClass({
     window.addEventListener('resize', this._onResize);
   },
 
+  componentWillReceiveProps: function (newProps) {
+    if (newProps.hasOwnProperty('selection')) {
+      this.setState({selection: newProps.selection});
+    }
+  },
+
   componentDidUpdate: function (prevProps, prevState) {
     if (this.state.selection !== prevState.selection) {
       this._markSelection();
@@ -104,9 +115,8 @@ var Table = React.createClass({
     if (this.props.scrollable) {
       this._alignMirror();
     }
-    if (prevProps.onMore && ! this.props.onMore) {
-      this.stopListeningForScroll();
-    } else if (this.props.onMore && ! prevProps.onMore) {
+    this.stopListeningForScroll();
+    if (this.props.onMore) {
       this.startListeningForScroll(this.refs.more.getDOMNode(), this.props.onMore);
     }
   },

@@ -27,7 +27,7 @@
     left: $inuit-base-spacing-unit + 1; // +1 for input border
     display: block;
     text-align: left;
-    line-height: $inuit-base-spacing-unit;
+    @include inuit-font-size($label-font-size, $inuit-base-spacing-unit);
     color: $secondary-text-color;
     z-index: 1;
   }
@@ -46,19 +46,36 @@
     > .search-input input,
     > textarea {
       display: block;
-      padding-top: $inuit-base-spacing-unit;
       width: 100%;
       margin-right: 0px;
       border-radius: 0px;
-      @include inuit-font-size(24px);
+      @include inuit-font-size($content-font-size);
+    }
+
+    > input[type=text],
+    > input[type=range],
+    > input[type=email],
+    > input[type=password],
+    > input[type=number],
+    > select,
+    > .search-input input {
+      padding-top: ($inuit-base-spacing-unit - $input-border-width);
       height: round($inuit-base-spacing-unit * 3);
+
+      &:focus {
+        padding-top: ($inuit-base-spacing-unit - ($input-border-width + 1));
+      }
     }
 
     // Prevent textarea from adding extra bottom margin
     > textarea {
       vertical-align: top;
-      padding-top: $inuit-base-spacing-unit + quarter($inuit-base-spacing-unit);
+      padding-top: $inuit-base-spacing-unit + quarter($inuit-base-spacing-unit) - $input-border-width;
       height: auto;
+
+      &:focus {
+        padding-top: ($inuit-base-spacing-unit + quarter($inuit-base-spacing-unit) - ($input-border-width + 1));
+      }
     }
 
     > select {
@@ -75,6 +92,7 @@
     > .radio-button {
       display: block;
       margin-top: quarter($inuit-base-spacing-unit);
+      @include inuit-font-size($content-font-size);
 
       &:first-of-type {
         margin-top: halve($inuit-base-spacing-unit);
@@ -95,6 +113,7 @@
       margin-left: - $inuit-base-spacing-unit;
       margin-right: - $inuit-base-spacing-unit;
       margin-bottom: - halve($inuit-base-spacing-unit);
+      @include inuit-font-size($content-font-size);
 
       table {
         margin-bottom: 0px;

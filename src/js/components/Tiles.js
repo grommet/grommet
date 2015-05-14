@@ -27,10 +27,9 @@ var Tiles = React.createClass({
     }
   },
 
-  componentDidUpdate: function (prevProps) {
-    if (prevProps.onMore && ! this.props.onMore) {
-      this.stopListeningForScroll();
-    } else if (this.props.onMore && ! prevProps.onMore) {
+  componentDidUpdate: function () {
+    this.stopListeningForScroll();
+    if (this.props.onMore) {
       this.startListeningForScroll(this.refs.more.getDOMNode(), this.props.onMore);
     }
   },

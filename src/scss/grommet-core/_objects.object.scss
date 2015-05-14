@@ -4,31 +4,40 @@ $attribute-name-width: round($inuit-base-spacing-unit * 8);
 $attribute-value-width: round($inuit-base-spacing-unit * 16);
 
 .object {
-  text-align: left;
+  overflow: auto;
+
+  &__container {
+    padding: $inuit-base-spacing-unit;
+  }
+
+  ul,
+  ol {
+    margin: 0px;
+    list-style-type: none;
+  }
 
   li {
     width: auto;
   }
 
   &__attribute {
+    margin-bottom: halve($inuit-base-spacing-unit);
 
     &-name {
-      display: inline-block;
-      vertical-align: top;
-      width: $attribute-name-width;
-      text-align: left;
+      display: block;
       color: $secondary-text-color;
+      @include inuit-font-size($label-font-size);
     }
 
     &-value {
-      display: inline-block;
-      vertical-align: top;
-      margin-left: $inuit-base-spacing-unit;
-      text-align: left;
-      max-width: $attribute-value-width;
+      display: block;
+      @include inuit-font-size($content-font-size);
 
-      ul {
+      ul,
+      ol {
+        margin-left: $inuit-base-spacing-unit;
         padding-top: $inuit-base-spacing-unit;
+        padding-bottom: $inuit-base-spacing-unit;
       }
     }
 
@@ -47,17 +56,17 @@ $attribute-value-width: round($inuit-base-spacing-unit * 16);
 
     &--array {
       > .object__attribute-value > ol {
-        position: relative;
 
         > li {
           border-top: 1px solid $border-color;
 
-          &:first-child {
-            border: none;
+          &:last-child {
+            border-bottom: 1px solid $border-color;
           }
 
           > ul {
             padding-top: 0px;
+            padding-bottom: 0px;
           }
         }
 

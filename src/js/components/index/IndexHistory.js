@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
+var Reflux = require('reflux');
 var Chart = require('../Chart');
 var IndexActions = require('../../actions/IndexActions');
 
@@ -17,8 +18,11 @@ var IndexHistory = React.createClass({
     series: React.PropTypes.arrayOf(React.PropTypes.shape({
       label: React.PropTypes.string,
       value: React.PropTypes.number
-    }))
+    })),
+    threshold: React.PropTypes.number
   },
+
+  mixins: [Reflux.ListenerMixin],
 
   _onGetAggregateCompleted: function (response, params) {
     response = response[0];
@@ -46,10 +50,17 @@ var IndexHistory = React.createClass({
     return {params: this.props.params, series: (this.props.series || [])};
   },
 
-  componentWillMount: function () {
+  componentDidMount: function () {
     if (! this.props.series) {
-      IndexActions.getAggregate.completed.listen(this._onGetAggregateCompleted);
+      this.listenTo(IndexActions.getAggregate.completed, this._onGetAggregateCompleted);
       IndexActions.getAggregate(this.state.params);
+    }
+  },
+
+  componentWillReceiveProps: function (newProps) {
+    this.setState({params: newProps.params});
+    if (! newProps.series) {
+      IndexActions.getAggregate(newProps.params);
     }
   },
 
@@ -58,7 +69,7 @@ var IndexHistory = React.createClass({
       <Chart series={this.state.series || []}
         xAxis={this.state.xAxis || []}
         legend={true}
-        type="bar" threshold={10} />
+        type="bar" threshold={this.props.threshold} />
     );
   }
 
