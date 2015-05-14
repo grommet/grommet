@@ -65,9 +65,11 @@ gulp.task('init', function (done) {
 		} else {
 			process.chdir('./' + app);
 
-			var templateFolder = path.join(getGrommetPath(), 'templates/**');
-			var mobileIcon = path.join(getGrommetPath(), 'mobile-app-icon.png');
-			var shortcutIcon = path.join(getGrommetPath(), 'shortcut-icon.png');
+      var grommetPath = getGrommetPath();
+			var templateFolder = path.join(grommetPath, 'templates/**');
+			var mobileIcon = path.join(grommetPath, 'mobile-app-icon.png');
+      var shortcutIcon = path.join(grommetPath, 'shortcut-icon.png');
+			var grommetVersion = require(path.join(grommetPath, 'package.json')).version;
 
 			gulp.src(mobileIcon).pipe(gulp.dest('./src/img'));
 			gulp.src(shortcutIcon).pipe(gulp.dest('./src/img'));
@@ -75,7 +77,8 @@ gulp.task('init', function (done) {
 		  gulp.src(templateFolder)
 		  	.pipe(template({
 		        appName: app,
-		        appTitle: title
+		        appTitle: title,
+            grommetVersion: grommetVersion
 		    }))
 		    .pipe(gulp.dest('./'))
 		    .pipe(install())

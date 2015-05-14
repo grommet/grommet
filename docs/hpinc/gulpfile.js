@@ -2,6 +2,8 @@ var gulp = require('gulp');
 var path = require('path');
 var devGulpTasks = require('../../src/js/utils/gulp-tasks');
 
+var grommetVersion = require('../../package.json').version;
+
 var opts = {
   base: '../../',
   dist: path.resolve(__dirname, '../../docs/dist/hpinc'),
@@ -47,16 +49,16 @@ var opts = {
       ]
     },
     module: {
-    	loaders: [
-	      {
-	        test: /style_guide(\/|\\)[^\/]*\.htm$/,
-	        loader: 'jsx-loader!imports?React=react,Router=react-router,Link=>Router.Link!html-jsx-loader?group=true'
-	      },
-	      {
-	        test: /documentation(\/|\\).*\.htm$|downloads(\/|\\).*\.htm$|style_guide(\/|\\).*\/.*\.htm$/,
-	        loader: 'jsx-loader!imports?React=react,Router=react-router,Link=>Router.Link!html-jsx-loader'
-	      }
-    	]
+      loaders: [
+        {
+          test: /style_guide(\/|\\)[^\/]*\.htm$/,
+          loader: 'jsx-loader!imports?React=react,Router=react-router,Link=>Router.Link!html-jsx-loader?group=true&__GROMMET_VERSION__=' + grommetVersion
+        },
+        {
+          test: /documentation(\/|\\).*\.htm$|downloads(\/|\\).*\.htm$|style_guide(\/|\\).*\/.*\.htm$/,
+          loader: 'jsx-loader!imports?React=react,Router=react-router,Link=>Router.Link!html-jsx-loader?__GROMMET_VERSION__=' + grommetVersion
+        }
+      ]
     }
   },
   devServerPort: 8004,

@@ -41,6 +41,7 @@
     "jest": true,
     "__THEME__": true,
     "__DEV_MODE__": true,
+    "__GROMMET__": true,
     "React": true,
     "Grommet": true
   }

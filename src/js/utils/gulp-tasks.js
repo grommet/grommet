@@ -9,6 +9,8 @@ var webpack = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
 var path = require('path');
 
+var grommetVersion = require('../../../package.json').version;
+
 String.prototype.endsWith = function(suffix) {
   return this.indexOf(suffix, this.length - suffix.length) !== -1;
 };
@@ -177,7 +179,10 @@ module.exports = function(gulp, opts) {
 
   gulp.task('dist', ['dist-preprocess'], function() {
     var env = assign({}, options.env, {
-      __DEV_MODE__: false
+      __DEV_MODE__: false,
+      __GROMMET__: {
+        version: '"'+grommetVersion+'"'
+      }
     });
 
     var config = assign({}, webpackConfig, options.webpack || {}, {
@@ -212,7 +217,10 @@ module.exports = function(gulp, opts) {
   gulp.task('dev', ['preprocess'], function() {
 
     var env = assign({}, options.env, {
-      __DEV_MODE__: true
+      __DEV_MODE__: true,
+      __GROMMET__: {
+        version: '"'+grommetVersion+'"'
+      }
     });
 
     var devWebpackConfig = assign({}, webpackConfig, options.webpack || {}, {
@@ -286,7 +294,13 @@ module.exports = function(gulp, opts) {
         next();
       }
     });
-    server.listen(options.devServerPort || 8080, 'localhost');
+    server.listen(options.devServerPort || 8080, 'localhost', function(err) {
+      if(err) {
+        console.error('[webpack-dev-server] failed to start:', err);
+      } else {
+        console.log('[webpack-dev-server] started:', 'Browse to http://localhost:'+ options.devServerPort +'/webpack-dev-server/');
+      }
+    });
 
   });
 
