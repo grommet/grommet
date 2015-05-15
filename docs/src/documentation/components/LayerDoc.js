@@ -6,8 +6,6 @@ var Layer = require('grommet/components/Layer');
 var Form = require('grommet/components/Form');
 var FormFields = require('grommet/components/FormFields');
 var Header = require('grommet/components/Header');
-var Footer = require('grommet/components/Footer');
-var Menu = require('grommet/components/Menu');
 var FullForm = require('./FullForm');
 
 var SimpleDialog = React.createClass({
