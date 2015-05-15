@@ -150,7 +150,7 @@ var TourDashboard = React.createClass({
       <div>
         <Header fixed={true} flush={false} primary={true} large={true}>
           <span>
-            <Title onClick={this._onClickTitle}>Grommet Tour</Title>
+            <Title onClick={this._onClickTitle}>Medium App</Title>
             <Search ref="search" inline={true} />
           </span>
           <TourSessionMenu />

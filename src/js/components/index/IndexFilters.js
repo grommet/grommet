@@ -148,9 +148,11 @@ var IndexFilters = React.createClass({
     } else if (activeFilterCount > 1) {
       label = "" + activeFilterCount + " filters";
     }
+    var icon = (<FilterIcon notifications={activeFilterCount} />);
 
     return (
-      <Menu className={CLASS_ROOT + "__menu"} label={label} icon={<FilterIcon />}>
+      <Menu className={CLASS_ROOT + "__menu"} icon={icon}
+        align="right" direction="down">
         <div className={CLASS_ROOT} onClick={this._onSink}>
           {filters}
         </div>

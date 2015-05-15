@@ -15,33 +15,20 @@
     stroke: $active-icon-color;
   }
 
+  &__badge {
+    circle {
+      fill: $icon-badge-background-color;
+    }
+
+    text {
+      stroke: $icon-badge-text-color;
+      fill: $icon-badge-text-color;
+    }
+  }
+
   &--active {
     fill: $active-icon-color;
     stroke: $active-icon-color;
-  }
-}
-
-$badge-size: halve($inuit-base-spacing-unit) + quarter($inuit-base-spacing-unit);
-
-.control-badge {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  width: $badge-size;
-  height: $badge-size;
-  border-radius: $border-radius;
-  background-color: $badge-background-color;
-  text-align: center;
-  @include inuit-font-size($inuit-base-font-size, $badge-size);
-
-  &:after {
-    content: '';
-    position: absolute;
-    right: 0px;
-    width: $badge-size;
-    height: $badge-size;
-    border-radius: $border-radius;
-    border: 1px solid $background-color;
   }
 }
 

@@ -12,6 +12,8 @@ var ROOT_CLASS = "menu";
 var MenuLayer = React.createClass({
 
   propTypes: {
+    align: React.PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
+    direction: React.PropTypes.oneOf(['up', 'down', 'left', 'right']),
     onClick: React.PropTypes.func.isRequired,
     router: React.PropTypes.func
   },
@@ -25,8 +27,16 @@ var MenuLayer = React.createClass({
   },
 
   render: function () {
+    var classes = [ROOT_CLASS + "__layer"];
+    if (this.props.direction) {
+      classes.push(ROOT_CLASS + "__layer--" + this.props.direction);
+    }
+    if (this.props.align) {
+      classes.push(ROOT_CLASS + "__layer--align-" + this.props.align);
+    }
+
     return (
-      <div id="menu-layer" className={ROOT_CLASS + "__layer"}
+      <div id="menu-layer" className={classes.join(' ')}
         onClick={this.props.onClick}>
         {this.props.children}
       </div>
@@ -252,7 +262,10 @@ var Menu = React.createClass({
       }
 
       return (
-        <MenuLayer router={this.context.router} onClick={this._onClose}>
+        <MenuLayer router={this.context.router}
+          align={this.props.align}
+          direction={this.props.direction}
+          onClick={this._onClose}>
           {first}
           {second}
         </MenuLayer>

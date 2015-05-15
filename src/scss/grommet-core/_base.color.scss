@@ -24,6 +24,8 @@ $link-color: $brand-link-color !default;
 $icon-color: #999;
 $active-icon-color: #000;
 $disabled-icon-color: #ccc;
+$icon-badge-background-color: $brand-color;
+$icon-badge-text-color: $colored-text-color;
 
 $meter-color: $brand-color !default;
 $meter-background-color: #eee !default;
@@ -52,7 +54,6 @@ $drop-background-color: rgba(255, 255, 255, 0.9);
 $header-background-color: rgba(255, 255, 255, 0.9);
 $active-background-color: rgba(230, 230, 230, 0.7);
 $sort-placeholder-background-color: rgba(0, 0, 255, 0.1); // TODO: recolor
-$badge-background-color: nth($brand-neutral-colors, 1);
 
 $inverse-background-color: nth($brand-neutral-colors, 1);
 $inverse-color: #fff;

@@ -22,7 +22,7 @@ var TourMain = React.createClass({
     return (
       <Sidebar primary={this.props.primary}>
         <Header large={true} flush={false}>
-          <Title>{"Grommet Tour"}</Title>
+          <Title>Medium App</Title>
         </Header>
         <TourMainMenu />
         <Footer>
