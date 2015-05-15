@@ -10,12 +10,18 @@ function addResource(uri, result, associationContext) {
     result.categories[resource.category] = [];
   }
   if (result.categories[resource.category] > 10) {
+    // TODO:
   } else {
-    result.categories[resource.category].push({
-      uri: uri,
-      status: resource.status,
-      name: resource.name
-    });
+    // don't add if we already have it
+    if (! result.categories[resource.category].some(function (item) {
+      return (item.uri === uri);
+      })) {
+      result.categories[resource.category].push({
+        uri: uri,
+        status: resource.status,
+        name: resource.name
+      });
+    }
   }
 }
 

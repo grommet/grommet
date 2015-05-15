@@ -17,11 +17,11 @@ var TourMap = React.createClass({
   mixins: [Reflux.ListenerMixin],
 
   _onGetMapCompleted: function (response) {
-    // convert to Map data format
     var router = this.context.router;
     var Routes = require('./Routes');
-    var data = {categories: [], links: response.links};
+    var categories = [];
 
+    // convert to Map data format
     forOwn(response.categories, function (category, name) {
       var items = category.map(function (resource) {
         var path = Routes.resourcePath(router, name, resource.uri, 'map');
@@ -33,7 +33,7 @@ var TourMap = React.createClass({
         };
       }, this);
 
-      data.categories.push({
+      categories.push({
         name: name,
         label: Routes.categoryLabel(name) || name,
         path: Routes.categoryPath(router, name),
@@ -41,7 +41,11 @@ var TourMap = React.createClass({
       });
     }, this);
 
-    this.setState({data: data});
+    var links = response.links.map(function (link) {
+      return {parentId: link.parentUri, childId: link.childUri};
+    });
+
+    this.setState({data: {categories: categories, links: links}});
   },
 
   _getData: function () {
@@ -72,21 +76,23 @@ var TourMap = React.createClass({
         if (item.status) {
           statusIcon = <StatusIcon value={item.status.toLowerCase()} small={true} />;
         }
+        var node;
         if (item.path) {
-          return (
-            <Link key={item.uri} to={item.path}>
+          node = (
+            <Link key={item.uri} id={item.uri} to={item.path}>
               {statusIcon}
               {item.name}
             </Link>
           );
         } else {
-          return (
-            <div key={item.uri}>
+          node = (
+            <div key={item.uri} id={item.uri}>
               {statusIcon}
               {item.name}
             </div>
           );
         }
+        return {id: item.uri, node: node};
       });
 
       var label = category.label;

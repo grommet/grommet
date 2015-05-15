@@ -1,5 +1,18 @@
 .map {
+  position: relative;
   padding: $inuit-base-spacing-unit;
+
+  &__canvas {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
+    opacity: 0.1;
+
+    &--highlight {
+      opacity: 1;
+    }
+  }
 
   &__categories {
     margin: 0px;
@@ -16,15 +29,14 @@
       position: absolute;
       top: 0px;
       left: 0px;
-      //text-align: right;
       @include inuit-font-size($label-font-size);
     }
 
     &-items {
       margin: 0px;
       list-style-type: none;
-      //white-space: nowrap;
       overflow: hidden;
+      text-align: center;
     }
   }
 
@@ -34,11 +46,13 @@
     border: 1px solid $border-color;
     margin-right: halve($inuit-base-spacing-unit);
     margin-bottom: halve($inuit-base-spacing-unit);
+    background-color: $background-color;
     @include inuit-font-size($content-font-size);
 
     > a {
       display: block;
       padding: quarter($inuit-base-spacing-unit) halve($inuit-base-spacing-unit);
+      transition: background-color 0.2s;
 
       > * {
         display: inline-block;
