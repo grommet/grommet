@@ -91,16 +91,6 @@ var TourDashboard = React.createClass({
 
     var tiles = this.state.tiles.map(function (tile) {
 
-      var contents = null;
-      if ('donut' === tile.type) {
-        contents =  <IndexDonut params={tile.params}
-          onClick={function (query) {
-            this._onClickSegment(tile, query);
-          }.bind(this)}/>;
-      } else if ('chart' === tile.type) {
-        contents = <IndexHistory params={tile.params} />;
-      }
-
       var header = null;
       if (tile.route) {
         var queryParams = {};
@@ -114,6 +104,16 @@ var TourDashboard = React.createClass({
         );
       } else {
         header = tile.name;
+      }
+
+      var contents = null;
+      if ('donut' === tile.type) {
+        contents =  <IndexDonut params={tile.params}
+          onClick={function (query) {
+            this._onClickSegment(tile, query);
+          }.bind(this)}/>;
+      } else if ('chart' === tile.type) {
+        contents = <IndexHistory params={tile.params} />;
       }
 
       return (

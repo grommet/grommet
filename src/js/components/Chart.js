@@ -3,14 +3,15 @@
 var React = require('react');
 
 var CLASS_ROOT = "chart";
-var BASE_WIDTH = 400;
-var BASE_HEIGHT = 200;
-var XAXIS_HEIGHT = 20;
+var DEFAULT_WIDTH = 400;
+var DEFAULT_HEIGHT = 200;
+var XAXIS_HEIGHT = 24;
 var BAR_PADDING = 2;
 
 var Chart = React.createClass({
 
   propTypes: {
+    height: React.PropTypes.number,
     legend: React.PropTypes.bool,
     max: React.PropTypes.number,
     min: React.PropTypes.number,
@@ -31,7 +32,16 @@ var Chart = React.createClass({
     threshold: React.PropTypes.number,
     type: React.PropTypes.oneOf(['line', 'bar', 'area']),
     units: React.PropTypes.string,
+    width: React.PropTypes.number,
     xAxis: React.PropTypes.arrayOf(React.PropTypes.string)
+  },
+
+  getDefaultProps: function () {
+    return {
+      type: 'line',
+      width: DEFAULT_WIDTH,
+      height: DEFAULT_HEIGHT
+    };
   },
 
   _onMouseOver: function (xIndex) {
@@ -43,12 +53,27 @@ var Chart = React.createClass({
   },
 
   _onResize: function() {
+    // debounce
+    clearTimeout(this._resizeTimer);
+    this._resizeTimer = setTimeout(this._layout, 50);
+  },
+
+  _layout: function () {
     if (this.props.legend) {
       this._alignLegend();
     }
+    var element = this.refs.chart.getDOMNode();
+    var rect = element.getBoundingClientRect();
+    if (rect.width !== this.state.width || rect.height !== this.state.height) {
+      this.setState({
+        width: rect.width,
+        height: rect.height,
+        bounds: this._bounds(this.props.series, this.props.xAxis, rect.width, rect.height)
+      });
+    }
   },
 
-  _bounds: function (series, xAxis) {
+  _bounds: function (series, xAxis, width, height) {
     // analyze series data
     var minX = null;
     var maxX = null;
@@ -103,16 +128,16 @@ var Chart = React.createClass({
     maxY = this.props.max || maxY;
     var spanX = maxX - minX;
     var spanY = maxY - minY;
-    var scaleX = (BASE_WIDTH / spanX);
-    var xStepWidth = (BASE_WIDTH / xAxis.length);
+    var scaleX = (width / spanX);
+    var xStepWidth = (width / xAxis.length);
     if ('bar' === this.props.type) {
       // allow room for bar width for last bar
-      scaleX = (BASE_WIDTH / (spanX + (spanX / (xAxis.length - 1))));
+      scaleX = (width / (spanX + (spanX / (xAxis.length - 1))));
     }
-    var scaleY = (BASE_HEIGHT / spanY);
-    if (this.props.xAxis) {
+    var scaleY = (height / spanY);
+    if (xAxis) {
       // reserve room for the xAxis
-      scaleY = ((BASE_HEIGHT - XAXIS_HEIGHT) / spanY);
+      scaleY = ((height - XAXIS_HEIGHT) / spanY);
     }
 
     var result = {
@@ -134,30 +159,30 @@ var Chart = React.createClass({
   _alignLegend: function () {
     // align legend with active index
     var legendElement = this.refs.legend.getDOMNode();
-    var xAxisElement = this.refs.xAxis.getDOMNode();
+    var frontElement = this.refs.front.getDOMNode();
     var activeElement =
-      xAxisElement.querySelectorAll('.chart__xaxis-index--active')[0];
+      frontElement.querySelectorAll('.chart__front-band--active')[0];
     if (activeElement) {
-      var rect = xAxisElement.getBoundingClientRect();
+      var rect = frontElement.getBoundingClientRect();
       var activeRect = activeElement.getBoundingClientRect();
       var legendRect = legendElement.getBoundingClientRect();
-      var left = ((activeRect.left - rect.left) + (2 * BAR_PADDING));
+      var left = (activeRect.right - rect.left);
       if ((left + legendRect.width) > rect.width) {
-        left -= ((left + legendRect.width) - rect.width + (2 * BAR_PADDING));
+        left = (activeRect.left - rect.left) - legendRect.width;
       }
-      legendElement.style.left = '' + left + 'px';
+      legendElement.style.left = '' + left + 'px ';
+      legendElement.style.top = '' + XAXIS_HEIGHT + 'px ';
     }
   },
 
-  getDefaultProps: function () {
-    return {type: 'line'};
-  },
-
   getInitialState: function () {
-    var bounds = this._bounds(this.props.series, this.props.xAxis);
+    var bounds = this._bounds(this.props.series, this.props.xAxis,
+      this.props.width, this.props.height);
     return {
       bounds: bounds,
-      activeXIndex: 0
+      activeXIndex: 0,
+      width: this.props.width,
+      height: this.props.height
     };
   },
 
@@ -171,17 +196,18 @@ var Chart = React.createClass({
   },
 
   componentWillReceiveProps: function (newProps) {
-    var bounds = this._bounds(newProps.series, newProps.xAxis);
+    var bounds = this._bounds(newProps.series, newProps.xAxis,
+      newProps.width, newProps.height);
     this.setState({
       bounds: bounds,
-      activeXIndex: 0
+      activeXIndex: 0,
+      width: newProps.width,
+      height: newProps.height
     });
   },
 
   componentDidUpdate: function () {
-    if (this.props.legend) {
-      this._alignLegend();
-    }
+    this._layout();
   },
 
   _translateX: function (x) {
@@ -191,7 +217,7 @@ var Chart = React.createClass({
 
   _translateY: function (y) {
     // leave room for line width since strokes are aligned to the center
-    return Math.max(1, (BASE_HEIGHT - Math.max(1, this._translateHeight(y))));
+    return Math.max(1, (this.state.height - Math.max(1, this._translateHeight(y))));
   },
 
   _translateHeight: function (y) {
@@ -206,16 +232,16 @@ var Chart = React.createClass({
   /*_renderGrid: function () {
     var paths = [];
 
-    for (var i=0; i<=BASE_WIDTH; i = i + this.state.bounds.xStepWidth) {
+    for (var i=0; i<=this.state.width; i = i + this.state.bounds.xStepWidth) {
       paths.push(
-        <path key={i} fill="none" d={"M" + i + ",0L" + i + "," + BASE_HEIGHT} />
+        <path key={i} fill="none" d={"M" + i + ",0L" + i + "," + this.state.height} />
       );
     }
 
-    var step = BASE_HEIGHT / 5;
-    for (i=BASE_HEIGHT; i>=0; i = i - step) {
+    var step = this.state.height / 5;
+    for (i=this.state.height; i>=0; i = i - step) {
       paths.push(
-        <path key={1000 + i} fill="none" d={"M0," + i + "L" + BASE_WIDTH + "," + i} />
+        <path key={1000 + i} fill="none" d={"M0," + i + "L" + this.state.width + "," + i} />
       );
     }
 
@@ -229,7 +255,8 @@ var Chart = React.createClass({
   },
 
   _renderLineOrAreaValues: function () {
-    var close = 'L0,' + BASE_HEIGHT + 'L' + BASE_WIDTH + ',' + BASE_HEIGHT + 'Z';
+    var close = 'L0,' + this.state.height +
+      'L' + this.state.width + ',' + this.state.height + 'Z';
     var values = this.props.series.map(function (item, seriesIndex) {
 
       var colorIndex = this._itemColorIndex(item, seriesIndex);
@@ -246,12 +273,14 @@ var Chart = React.createClass({
       var path = null;
       if ('line' === this.props.type) {
         path = (
-          <path fill="none" className={CLASS_ROOT + "__values-line color-index-" + colorIndex}
+          <path fill="none"
+            className={CLASS_ROOT + "__values-line color-index-" + colorIndex}
             d={commands} />
         );
       } else {
         path = (
-          <path stroke="none" className={CLASS_ROOT + "__values-area color-index-" + colorIndex}
+          <path stroke="none"
+            className={CLASS_ROOT + "__values-area color-index-" + colorIndex}
             d={commands + close} />
         );
       }
@@ -286,7 +315,7 @@ var Chart = React.createClass({
           <rect key={item.label}
             className={classes.join(' ')}
             x={this._translateX(value[0]) + BAR_PADDING}
-            y={BASE_HEIGHT - (stepBarHeight + stepBarBase)}
+            y={this.state.height - (stepBarHeight + stepBarBase)}
             width={bounds.xStepWidth - (2 * BAR_PADDING)}
             height={stepBarHeight} />
         );
@@ -304,9 +333,6 @@ var Chart = React.createClass({
 
   _renderXAxis: function () {
     var bounds = this.state.bounds;
-    var size = Math.min(XAXIS_HEIGHT / 1.7,
-      Math.max((XAXIS_HEIGHT / 3),
-        (XAXIS_HEIGHT - (bounds.xAxis.length))));
     var labelY = XAXIS_HEIGHT * 0.6;
 
     var labels = bounds.xAxis.map(function (label, xIndex) {
@@ -318,15 +344,11 @@ var Chart = React.createClass({
       var x = (bounds.xAxis.length - xIndex - 1) * bounds.xStepWidth;
       var text = null;
       if (this.props.xAxis) {
-        text = (<text x={x + BAR_PADDING} y={labelY} fontSize={size}>{label}</text>);
+        text = (<text x={x + BAR_PADDING} y={labelY} fontSize={16}>{label}</text>);
       }
 
       return (
-        <g key={xIndex} className={classes.join(' ')}
-          onMouseOver={this._onMouseOver.bind(this, xIndex)}
-          onMouseOut={this._onMouseOut.bind(this, xIndex)}>
-          <rect className={CLASS_ROOT + "__xaxis-index-background"}
-            x={x} y={0} width={bounds.xStepWidth} height={BASE_HEIGHT} />
+        <g key={xIndex} className={classes.join(' ')}>
           {text}
         </g>
       );
@@ -335,6 +357,40 @@ var Chart = React.createClass({
     return (
       <g ref="xAxis" className={CLASS_ROOT + "__xaxis"}>
         {labels}
+      </g>
+    );
+  },
+
+  _renderBands: function (layer) {
+    var className = "chart__" + layer;
+    var bounds = this.state.bounds;
+
+    var bands = bounds.xAxis.map(function (label, xIndex) {
+      var classes = [className + "-band"];
+      if (xIndex === this.state.activeXIndex) {
+        classes.push(className + "-band--active");
+      }
+
+      var x = (bounds.xAxis.length - xIndex - 1) * bounds.xStepWidth;
+      var onMouseOver;
+      var onMouseOut;
+      if ('front' === layer) {
+        onMouseOver = this._onMouseOver.bind(this, xIndex);
+        onMouseOut = this._onMouseOut.bind(this, xIndex);
+      }
+
+      return (
+        <g key={xIndex} className={classes.join(' ')}
+          onMouseOver={onMouseOver} onMouseOut={onMouseOut}>
+          <rect className={className + "-band-background"}
+            x={x} y={0} width={bounds.xStepWidth} height={this.state.height} />
+        </g>
+      );
+    }, this);
+
+    return (
+      <g ref={layer} className={className}>
+        {bands}
       </g>
     );
   },
@@ -398,7 +454,7 @@ var Chart = React.createClass({
     var threshold = null;
     if (this.props.threshold) {
       var y = this._translateY(this.props.threshold);
-      var commands = 'M0,' + y + 'L' + BASE_WIDTH + ',' + y;
+      var commands = 'M0,' + y + 'L' + this.state.width + ',' + y;
       threshold = (
         <g>
           <path className={CLASS_ROOT + "__threshold"} fill="none" d={commands} />
@@ -412,19 +468,27 @@ var Chart = React.createClass({
     }
 
     var xAxis = null;
-    if (this.props.legend || this.props.xAxis) {
+    if (this.props.xAxis) {
       xAxis = this._renderXAxis();
+    }
+    var backBands = null;
+    var frontBands = null;
+    if (this.props.legend) {
+      backBands = this._renderBands('back');
+      frontBands = this._renderBands('front');
     }
 
     return (
       <div className={CLASS_ROOT}>
-        <svg className={CLASS_ROOT + "__graphic"}
-          viewBox={"0 0 " + BASE_WIDTH + " " + BASE_HEIGHT}
+        <svg ref="chart" className={CLASS_ROOT + "__graphic"}
+          viewBox={"0 0 " + this.state.width + " " + this.state.height}
           preserveAspectRatio="none">
           {grid}
-          <g className={CLASS_ROOT + "__values"}>{values}</g>
-          {threshold}
+          {backBands}
           {xAxis}
+          <g className={CLASS_ROOT + "__values"}>{values}</g>
+          {frontBands}
+          {threshold}
         </svg>
         {legend}
       </div>

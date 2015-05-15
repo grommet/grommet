@@ -47,7 +47,10 @@ var IndexHistory = React.createClass({
   },
 
   getInitialState: function () {
-    return {params: this.props.params, series: (this.props.series || [])};
+    return {
+      params: this.props.params,
+      series: (this.props.series || [])
+    };
   },
 
   componentDidMount: function () {
@@ -69,7 +72,8 @@ var IndexHistory = React.createClass({
       <Chart series={this.state.series || []}
         xAxis={this.state.xAxis || []}
         legend={true}
-        type="bar" threshold={this.props.threshold} />
+        type="bar"
+        threshold={this.props.threshold} />
     );
   }
 

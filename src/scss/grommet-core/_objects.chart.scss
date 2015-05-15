@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 .chart {
+  position: relative;
   display: block;
 
   &__grid {
@@ -9,6 +10,7 @@
 
   &__graphic {
     width: 100%;
+    max-height: calc(100vh - #{double($header-height)});
   }
 
   &__values {
@@ -52,17 +54,42 @@
 
         .chart__xaxis-index {
           &-background {
-            fill: rgba(128, 128, 128, 0.1);
+            fill: $active-background-color;
           }
         }
       }
     }
   }
 
+  &__back {
+    &-band {
+      &-background {
+        fill: rgba(0, 0, 0, 0);
+        transition: fill 0.3s;
+      }
+
+      &--active {
+        .chart__back-band-background {
+          fill: $active-background-color;
+        }
+      }
+    }
+  }
+
+  &__front {
+    &-band {
+      &-background {
+        fill: rgba(0, 0, 0, 0);
+      }
+    }
+  }
+
   &__legend {
-    position: relative;
+    position: absolute;
     left: 0px;
     margin: 0px;
+    padding: halve($inuit-base-spacing-unit);
+    background-color: $active-background-color;
     display: inline-block;
     text-align: left;
     list-style-type: none;
