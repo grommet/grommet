@@ -8,6 +8,9 @@ var Header = require('grommet/components/Header');
 var Title = require('grommet/components/Title');
 var Search = require('grommet/components/Search');
 var TourSessionMenu = require('./TourSessionMenu');
+var Layer = require('grommet/components/Layer');
+var CloseIcon = require('grommet/components/icons/Clear');
+var TourMain = require('./TourMain');
 var IndexDonut = require('grommet/components/index/IndexDonut');
 var IndexHistory = require('grommet/components/index/IndexHistory');
 var IndexQuery = require('grommet/utils/IndexQuery');
@@ -52,6 +55,14 @@ var TourDashboard = React.createClass({
     router: React.PropTypes.func.isRequired
   },
 
+  _onClickTitle: function () {
+    this.setState({mainActive: true});
+  },
+
+  _onCloseMain: function () {
+    this.setState({mainActive: false});
+  },
+
   _onClickSegment: function (tile, query) {
     this.context.router.transitionTo(tile.route, {}, {q: query.fullText});
   },
@@ -74,7 +85,7 @@ var TourDashboard = React.createClass({
   },
 
   getInitialState: function () {
-    return {tiles: CONFIG};
+    return {tiles: CONFIG, mainActive: false};
   },
 
   componentDidMount: function () {
@@ -124,11 +135,22 @@ var TourDashboard = React.createClass({
       );
     }, this);
 
+    var main = null;
+    if (this.state.mainActive) {
+      var closer = <div onClick={this._onCloseMain}><CloseIcon /></div>;
+      main = (
+        <Layer align="left" flush={true}
+          closer={closer} onClose={this._onCloseMain}>
+          <TourMain primary={false} />
+        </Layer>
+      );
+    }
+
     return (
       <div>
-        <Header fixed={true} flush={false} primary={true}>
+        <Header fixed={true} flush={false} primary={true} large={true}>
           <span>
-            <Title>Grommet Tour</Title>
+            <Title onClick={this._onClickTitle}>Grommet Tour</Title>
             <Search ref="search" inline={true} />
           </span>
           <TourSessionMenu />
@@ -136,6 +158,7 @@ var TourDashboard = React.createClass({
         <Tiles fill={true} flush={false}>
           {tiles}
         </Tiles>
+        {main}
       </div>
     );
   }

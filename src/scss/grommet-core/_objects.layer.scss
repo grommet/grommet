@@ -1,5 +1,10 @@
 // (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
 
+@include keyframes(reveal-layer-background) {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 .layer {
   position: fixed;
   top: 0px;
@@ -7,8 +12,8 @@
   right: 0px;
   bottom: 0px;
   overflow: none;
-  //background-image: linear-gradient(90deg, $layer-overlay-background-color, $layer-background-color 30%, $layer-background-color 70%, $layer-overlay-background-color); //$layer-overlay-background-color;
   z-index: 10;
+  @include animation('reveal-layer-background 0.2s');
 
   &__container {
     position: absolute;
@@ -40,6 +45,12 @@
         padding-top: round($inuit-base-spacing-unit * 3);
         padding-bottom: round($inuit-base-spacing-unit * 3);
       }
+    }
+  }
+
+  &--flush {
+    .layer__container {
+      padding: 0px;
     }
   }
 

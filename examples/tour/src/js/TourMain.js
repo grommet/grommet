@@ -10,9 +10,17 @@ var TourSessionMenu = require('./TourSessionMenu');
 
 var TourMain = React.createClass({
 
+  propTypes: {
+    primary: React.PropTypes.bool
+  },
+
+  getDefaultProps: function () {
+    return {primary: true};
+  },
+
   render: function() {
     return (
-      <Sidebar primary={true}>
+      <Sidebar primary={this.props.primary}>
         <Header large={true} flush={false}>
           <Title>{"Grommet Tour"}</Title>
         </Header>

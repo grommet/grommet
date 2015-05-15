@@ -58,21 +58,6 @@ var Chart = React.createClass({
     this._resizeTimer = setTimeout(this._layout, 50);
   },
 
-  _layout: function () {
-    if (this.props.legend) {
-      this._alignLegend();
-    }
-    var element = this.refs.chart.getDOMNode();
-    var rect = element.getBoundingClientRect();
-    if (rect.width !== this.state.width || rect.height !== this.state.height) {
-      this.setState({
-        width: rect.width,
-        height: rect.height,
-        bounds: this._bounds(this.props.series, this.props.xAxis, rect.width, rect.height)
-      });
-    }
-  },
-
   _bounds: function (series, xAxis, width, height) {
     // analyze series data
     var minX = null;
@@ -172,6 +157,21 @@ var Chart = React.createClass({
       }
       legendElement.style.left = '' + left + 'px ';
       legendElement.style.top = '' + (XAXIS_HEIGHT * 2) + 'px ';
+    }
+  },
+
+  _layout: function () {
+    if (this.props.legend) {
+      this._alignLegend();
+    }
+    var element = this.refs.chart.getDOMNode();
+    var rect = element.getBoundingClientRect();
+    if (rect.width !== this.state.width || rect.height !== this.state.height) {
+      this.setState({
+        width: rect.width,
+        height: rect.height,
+        bounds: this._bounds(this.props.series, this.props.xAxis, rect.width, rect.height)
+      });
     }
   },
 

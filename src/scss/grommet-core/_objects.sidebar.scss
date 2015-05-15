@@ -6,6 +6,7 @@
   -webkit-flex-direction: column;
   flex-direction: column;
   height: 100vh;
+  background-color: $background-color;
 
   @include media-query(palm) {
     width: 100vw;
@@ -28,5 +29,6 @@
 
   &--primary {
     background-image: linear-gradient(to left, #dfdfdf, #f5f5f5 10px);
+    background-color: none;
   }
 }

@@ -11,13 +11,13 @@ var Menu = require('grommet/components/Menu');
 var FullForm = require('./FullForm');
 
 var SimpleDialog = React.createClass({
-  _onSubmit: function (event) {
-    event.preventDefault();
-    this.props.onClose();
+  propTypes: {
+    onClose: React.PropTypes.func.isRequired
   },
+
   render: function () {
     return (
-      <Layer>
+      <Layer onClose={this.props.onClose} closer={true}>
         <Form>
           <Header>
             <h2>Title</h2>
@@ -25,12 +25,6 @@ var SimpleDialog = React.createClass({
           <FormFields>
             <p>This is a simple dialog.</p>
           </FormFields>
-          <Footer>
-            <span></span>
-            <Menu direction="right">
-              <button className="primary" onClick={this._onSubmit}>Close</button>
-            </Menu>
-          </Footer>
         </Form>
       </Layer>
     );
@@ -38,6 +32,10 @@ var SimpleDialog = React.createClass({
 });
 
 var FormDialog = React.createClass({
+  propTypes: {
+    onClose: React.PropTypes.func.isRequired
+  },
+
   _onSubmit: function (event) {
     event.preventDefault();
     this.props.onClose();
@@ -99,6 +97,18 @@ var LayerDoc = React.createClass({
         <section>
           <h2>Options</h2>
           <dl>
+            <dt><code>align    center|top|bottom|left|right</code></dt>
+            <dd>Which direction the layer contents should emanate from.</dd>
+            <dt><code>closer   {"true|false|{node}"}</code></dt>
+            <dd>Adds a visible control to close the layer.
+              If the caller provides a node, it is the caller&#39;s
+              responsibility to listen to events from the node.</dd>
+            <dt><code>flush    true|false</code></dt>
+            <dd>Whether the contents are flush with the edges or not.
+              Defaults to false.</dd>
+            <dt><code>onClose  {"function () {...}"}</code></dt>
+            <dd>Function that will be called when the user clicks on the
+              translucent background.</dd>
           </dl>
         </section>
 

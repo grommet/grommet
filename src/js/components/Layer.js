@@ -1,14 +1,21 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
+var CloseIcon = require('./icons/Clear');
 var ReactLayeredComponent = require('../mixins/ReactLayeredComponent');
 var KeyboardAccelerators = require('../mixins/KeyboardAccelerators');
+
+var CLASS_ROOT = "layer";
 
 var LayerContainer = React.createClass({
 
   propTypes: {
     align: React.PropTypes.oneOf(['center', 'top', 'bottom', 'left', 'right']),
-    closer: React.PropTypes.node,
+    closer: React.PropTypes.oneOfType([
+      React.PropTypes.node,
+      React.PropTypes.bool
+    ]),
+    flush: React.PropTypes.bool,
     onClose: React.PropTypes.func,
     router: React.PropTypes.func
   },
@@ -27,7 +34,7 @@ var LayerContainer = React.createClass({
   },
 
   getChildContext: function () {
-    return { router: this.props.router };
+    return {router: this.props.router};
   },
 
   componentDidMount: function () {
@@ -37,9 +44,12 @@ var LayerContainer = React.createClass({
   },
 
   render: function () {
-    var classes = ["layer"];
+    var classes = [CLASS_ROOT];
     if (this.props.align) {
-      classes.push("layer--align-" + this.props.align);
+      classes.push(CLASS_ROOT + "--align-" + this.props.align);
+    }
+    if (this.props.flush) {
+      classes.push(CLASS_ROOT + "--flush");
     }
     if (this.props.className) {
       classes.push(this.props.className);
@@ -47,17 +57,27 @@ var LayerContainer = React.createClass({
 
     var closer = null;
     if (this.props.closer) {
-      classes.push("layer--closeable");
-      closer = (
-        <div className="layer__closer">
-          {this.props.closer}
-        </div>
-      );
+      classes.push(CLASS_ROOT + "--closeable");
+
+      if (true === this.props.closer) {
+        closer = (
+          <div className={CLASS_ROOT + "__closer"}
+            onClick={this.props.onClose}>
+            <CloseIcon />
+          </div>
+        );
+      } else {
+        closer = (
+          <div className={CLASS_ROOT + "__closer"}>
+            {this.props.closer}
+          </div>
+        );
+      }
     }
 
     return (
       <div ref="background" className={classes.join(' ')} onClick={this._onClick}>
-        <div className="layer__container">
+        <div className={CLASS_ROOT + "__container"}>
           {closer}
           {this.props.children}
         </div>
@@ -70,7 +90,11 @@ var Layer = React.createClass({
 
   propTypes: {
     align: React.PropTypes.oneOf(['center', 'top', 'bottom', 'left', 'right']),
-    closer: React.PropTypes.node,
+    closer: React.PropTypes.oneOfType([
+      React.PropTypes.node,
+      React.PropTypes.bool
+    ]),
+    flush: React.PropTypes.bool,
     onClose: React.PropTypes.func
   },
 
@@ -97,6 +121,7 @@ var Layer = React.createClass({
         children={this.props.children}
         className={this.props.className}
         closer={this.props.closer}
+        flush={this.props.flush}
         onClose={this.props.onClose}
         router={this.context.router} />
     );
