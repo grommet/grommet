@@ -171,7 +171,7 @@ var Chart = React.createClass({
         left = (activeRect.left - rect.left) - legendRect.width;
       }
       legendElement.style.left = '' + left + 'px ';
-      legendElement.style.top = '' + XAXIS_HEIGHT + 'px ';
+      legendElement.style.top = '' + (XAXIS_HEIGHT * 2) + 'px ';
     }
   },
 

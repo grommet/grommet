@@ -40,22 +40,13 @@
 
   &__xaxis {
     &-index {
-      fill: $secondary-text-color;
-
-      &-background {
-        fill: rgba(0, 0, 0, 0);
-        transition: fill 0.3s;
+      text {
+        fill: $secondary-text-color;
       }
 
       &--active {
         text {
           fill: $text-color;
-        }
-
-        .chart__xaxis-index {
-          &-background {
-            fill: $active-background-color;
-          }
         }
       }
     }
@@ -65,7 +56,6 @@
     &-band {
       &-background {
         fill: rgba(0, 0, 0, 0);
-        transition: fill 0.3s;
       }
 
       &--active {
@@ -93,6 +83,7 @@
     display: inline-block;
     text-align: left;
     list-style-type: none;
+    pointer-events: none;
 
     &-label {
       text-align: right;
