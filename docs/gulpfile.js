@@ -70,6 +70,9 @@ var opts = {
   env: {
     __THEME__: {
       generic: true
+    },
+    __GROMMET__: {
+      version: '"'+grommetVersion+'"'
     }
   },
   scsslint: true

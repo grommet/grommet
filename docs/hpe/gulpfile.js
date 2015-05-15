@@ -68,6 +68,9 @@ var opts = {
   env: {
     __THEME__: {
       hpe: true
+    },
+    __GROMMET__: {
+      version: '"'+grommetVersion+'"'
     }
   },
   scsslint: true
