@@ -14,6 +14,7 @@ var path = require('path');
 var fs = require('fs');
 var coveralls = require('gulp-coveralls');
 var blanket = require('gulp-blanket-mocha');
+var runSequence = require('run-sequence');
 
 var packageJSON = require('./package.json');
 delete packageJSON.devDependencies;
@@ -101,6 +102,12 @@ var opts = {
 require('./src/js/utils/gulp-tasks')(gulp, opts);
 
 gulp.task('dist-css', function () {
+  gulp.src('src/scss/hpinc/*.scss')
+    .pipe(sass({includePaths: [path.resolve(__dirname, './node_modules')]}))
+    .pipe(rename('grommet-hpinc.min.css'))
+    .pipe(minifyCss())
+    .pipe(gulp.dest('dist/'));
+
   gulp.src('src/scss/hpe/*.scss')
     .pipe(sass({includePaths: [path.resolve(__dirname, './node_modules')]}))
     .pipe(rename('grommet-hpe.min.css'))
@@ -203,18 +210,24 @@ function distCss(path, name, minify) {
     .pipe(gulp.dest('dist-bower/css'));
 }
 
-gulp.task('dist-bower', function() {
-  del.sync(['dist-bower']);
-
-  //grommet exploded
-  gulp.src(opts.mainJs)
+gulp.task('dist-bower:exploded', function() {
+  return gulp.src(opts.mainJs)
     .pipe(gulpWebpack(bowerWebpackConfig))
     .pipe(gulp.dest('dist-bower'));
+});
 
-  //grommet minified
-  gulp.src(opts.mainJs)
+gulp.task('dist-bower:minified', function() {
+  return gulp.src(opts.mainJs)
     .pipe(gulpWebpack(bowerMinWebpackConfig))
     .pipe(gulp.dest('dist-bower'));
+});
+
+gulp.task('dist-bower:preprocess', function(done) {
+  del.sync(['dist-bower']);
+  runSequence(['dist-bower:exploded', 'dist-bower:minified'], done);
+});
+
+gulp.task('dist-bower', ['dist-bower:preprocess'], function(done) {
 
   distCss('src/scss/grommet-core/*.scss', 'grommet.css');
   distCss('src/scss/grommet-core/*.scss', 'grommet.min.css', true);
@@ -236,7 +249,7 @@ gulp.task('dist-bower', function() {
   delete bowerJSON.scripts;
   delete bowerJSON.config;
 
-  gulp.src('./dist-bower')
+  return gulp.src('./dist-bower')
           .pipe(file('bower.json', JSON.stringify(bowerJSON, null, 2)))
           .pipe(gulp.dest('dist-bower'));
 });

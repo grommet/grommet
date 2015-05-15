@@ -139,15 +139,6 @@ module.exports = function(gulp, opts) {
             });
             console.log('Watching for changes...');
           } else {
-            console.log('Generating code coverage...');
-            var blanket = require('gulp-blanket-mocha');
-            gulp.src(options.testPaths, { read: false })
-              .pipe(blanket({
-                instrument:[path.join(process.cwd(), 'src/js')],
-                captureFile: 'test/coverage.html',
-                reporter: 'html-cov'
-              }));
-            console.log('Done! You can checkout the report at test/coverage.html.');
             done();
           }
         }).on('error', function (err) {
@@ -163,6 +154,22 @@ module.exports = function(gulp, opts) {
     }
   });
 
+  gulp.task('coverage', function (done) {
+    if (options.testPaths) {
+      var blanket = require('gulp-blanket-mocha');
+      gulp.src(options.testPaths, { read: false })
+        .pipe(blanket({
+          instrument:[path.join(process.cwd(), 'src/js')],
+          captureFile: 'test/coverage.html',
+          reporter: 'html-cov'
+        }));
+      console.log('Done! You can checkout the report at test/coverage.html.');
+    } else {
+      console.log('No test found, please specify testPaths as an option.');
+    }
+    done();
+  });
+
   gulp.task('preprocess', function(callback) {
     runSequence('clean', 'copy', 'jslint', 'scsslint', callback);
   });
@@ -171,7 +178,7 @@ module.exports = function(gulp, opts) {
     if (options.distPreprocess) {
       runSequence('preprocess', options.distPreprocess, 'test', callback);
     } else {
-      runSequence('preprocess', callback);
+      runSequence('preprocess', 'test', callback);
     }
   });
 
