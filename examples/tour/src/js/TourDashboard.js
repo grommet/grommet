@@ -18,6 +18,16 @@ var Link = require('react-router').Link;
 
 var CONFIG = [
   {
+    type: 'line',
+    wide: true,
+    params: {
+      category: 'tasks',
+      attribute: 'status',
+      interval: 'days',
+      count: 20
+    }
+  },
+  {
     name: 'Active Alerts',
     route: 'activity',
     type: 'donut',
@@ -34,17 +44,6 @@ var CONFIG = [
     params: {
       category: 'server-hardware',
       attribute: 'model'
-    }
-  },
-  {
-    name: 'Tasks',
-    type: 'chart',
-    wide: true,
-    params: {
-      category: 'tasks',
-      attribute: 'status',
-      interval: 'days',
-      count: 20
     }
   }
 ];
@@ -113,8 +112,11 @@ var TourDashboard = React.createClass({
             {tile.name}
           </Link>
         );
-      } else {
+      } else if (tile.name) {
         header = tile.name;
+      }
+      if (header) {
+        header = <Header small={true}><h4>{header}</h4></Header>;
       }
 
       var contents = null;
@@ -123,13 +125,13 @@ var TourDashboard = React.createClass({
           onClick={function (query) {
             this._onClickSegment(tile, query);
           }.bind(this)}/>;
-      } else if ('chart' === tile.type) {
-        contents = <IndexHistory params={tile.params} />;
+      } else {
+        contents = <IndexHistory params={tile.params} type={tile.type} />;
       }
 
       return (
         <Tile key={tile.name} wide={tile.wide}>
-          <Header small={true}><h4>{header}</h4></Header>
+          {header}
           {contents}
         </Tile>
       );

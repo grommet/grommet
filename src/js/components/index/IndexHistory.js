@@ -19,7 +19,8 @@ var IndexHistory = React.createClass({
       label: React.PropTypes.string,
       value: React.PropTypes.number
     })),
-    threshold: React.PropTypes.number
+    threshold: React.PropTypes.number,
+    type: React.PropTypes.oneOf(['bar', 'area', 'line'])
   },
 
   mixins: [Reflux.ListenerMixin],
@@ -72,7 +73,7 @@ var IndexHistory = React.createClass({
       <Chart series={this.state.series || []}
         xAxis={this.state.xAxis || []}
         legend={true}
-        type="bar"
+        type={this.props.type}
         threshold={this.props.threshold} />
     );
   }
