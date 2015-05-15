@@ -156,8 +156,8 @@ var Donut = React.createClass({
     var paths = this.props.series.map(function (item, index) {
 
       var endAngle = Math.min(360, Math.max(10, startAngle + (anglePer * item.value)));
-      var radius = (this.state.activeIndex === index) ? 78 : 72;
-      var commands = describeArc(BASE_SIZE/2, BASE_SIZE/2, radius, startAngle, endAngle-2);
+      var radius = 84;
+      var commands = describeArc(BASE_SIZE/2, BASE_SIZE/2, radius, startAngle, endAngle);
       startAngle = endAngle;
       var colorIndex = this._itemColorIndex(item, index);
 
@@ -192,9 +192,9 @@ var Donut = React.createClass({
             <g>{paths}</g>
           </svg>
           <div className="donut__active">
-            <div className="donut__active-value">
+            <div className="donut__active-value large-number-font">
               {value}
-              <span className="donut__active-units">{units}</span>
+              <span className="donut__active-units large-number-font">{units}</span>
             </div>
             <div className="donut__active-label">{label}</div>
           </div>

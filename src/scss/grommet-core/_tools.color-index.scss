@@ -15,6 +15,21 @@
   }
 }
 
+@mixin graph-stroke-color-translucent {
+  @each $status, $color in $brand-status-colors {
+    &.color-index-#{$status} {
+      stroke: rgba($color, 0.7);
+    }
+  }
+
+  @for $i from 1 through length($brand-graph-colors) {
+    &.color-index-graph-#{$i},
+    &.color-index-graph-#{$i+length($brand-graph-colors)} {
+      stroke: rgba(nth($brand-graph-colors, $i), 0.7);
+    }
+  }
+}
+
 @mixin graph-fill-color {
   @each $status, $color in $brand-status-colors {
     &.color-index-#{$status} {

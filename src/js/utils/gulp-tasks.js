@@ -36,6 +36,10 @@ var webpackConfig = {
         loader: 'file-loader?mimetype=application/font-woff'
       },
       {
+        test: /\.otf$/,
+        loader: 'file-loader?mimetype=application/font/opentype'
+      },
+      {
         test: /\.scss$/,
         loader: 'style!css!sass?outputStyle=expanded&'+
           'includePaths[]=' +

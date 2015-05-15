@@ -33,14 +33,11 @@
       stroke-dasharray: quadruple($panel-width) quadruple($panel-width);
       stroke-dashoffset: 0;
       fill: none;
-      //transition-property: stroke-width;
-      //transition-duration: ($base-animation-duration / 2);
-      //transition-timing-function: ease-in-out;
       cursor: pointer;
       @include animation('draw-stroke 3s');
 
       &.donut__slice--active {
-        stroke-width: $inuit-base-spacing-unit + halve($inuit-base-spacing-unit);
+        stroke-width: $inuit-base-spacing-unit;
       }
     }
   }
@@ -52,13 +49,13 @@
   &__active {
     position: absolute;
     width: 100%;
-    margin-top: round($inuit-base-spacing-unit * 2.5);
+    margin-top: round($inuit-base-spacing-unit * 3);
     text-align: center;
     white-space: normal;
     pointer-events: none;
 
     &-value {
-      @include inuit-font-size($inuit-heading-size-1, $inuit-heading-size-1 + 2);
+      @include inuit-font-size($large-number-font-size, $inuit-heading-size-1 + 2);
       font-weight: bold;
     }
 
@@ -70,8 +67,9 @@
     }
 
     &-label {
-      width: 60%;
+      width: 50%;
       margin: 0px auto;
+      @include inuit-font-size($label-font-size, $label-font-size + 2);
     }
   }
 
