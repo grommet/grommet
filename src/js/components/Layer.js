@@ -10,11 +10,11 @@ var LayerContainer = React.createClass({
     align: React.PropTypes.oneOf(['center', 'top', 'bottom', 'left', 'right']),
     closer: React.PropTypes.node,
     onClose: React.PropTypes.func,
-    router: React.PropTypes.func.isRequired
+    router: React.PropTypes.func
   },
 
   childContextTypes: {
-    router: React.PropTypes.func.isRequired
+    router: React.PropTypes.func
   },
 
   mixins: [KeyboardAccelerators],
@@ -75,7 +75,7 @@ var Layer = React.createClass({
   },
 
   contextTypes: {
-    router: React.PropTypes.func.isRequired
+    router: React.PropTypes.func
   },
 
   mixins: [ReactLayeredComponent],

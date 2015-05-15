@@ -79,6 +79,7 @@
     a {
       padding: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit;
       white-space: nowrap;
+      display: block;
 
       &:hover {
         text-decoration: none;

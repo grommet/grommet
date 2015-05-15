@@ -7,6 +7,33 @@ var Overlay = require('../mixins/Overlay');
 var MoreIcon = require('./icons/More');
 var DropCaretIcon = require('./icons/DropCaret');
 
+var ROOT_CLASS = "menu";
+
+var MenuLayer = React.createClass({
+
+  propTypes: {
+    onClick: React.PropTypes.func.isRequired,
+    router: React.PropTypes.func
+  },
+
+  childContextTypes: {
+    router: React.PropTypes.func
+  },
+
+  getChildContext: function () {
+    return { router: this.props.router };
+  },
+
+  render: function () {
+    return (
+      <div id="menu-layer" className={ROOT_CLASS + "__layer"}
+        onClick={this.props.onClick}>
+        {this.props.children}
+      </div>
+    );
+  }
+});
+
 var Menu = React.createClass({
 
   propTypes: {
@@ -17,6 +44,10 @@ var Menu = React.createClass({
     label: React.PropTypes.string,
     primary: React.PropTypes.bool,
     small: React.PropTypes.bool
+  },
+
+  contextTypes: {
+    router: React.PropTypes.func
   },
 
   getDefaultProps: function () {
@@ -90,7 +121,7 @@ var Menu = React.createClass({
 
       var controlElement = this.refs.control.getDOMNode();
       var layerElement = document.getElementById('menu-layer');
-      var layerControlElement = layerElement.querySelectorAll('.menu__control')[0];
+      var layerControlElement = layerElement.querySelectorAll("." + ROOT_CLASS + "__control")[0];
       var layerControlIconElement = layerElement.querySelectorAll('svg, img')[0];
 
       // give layer control element the same line height and font size as the control
@@ -115,7 +146,7 @@ var Menu = React.createClass({
   _createControl: function () {
     var result = null;
     var icon = null;
-    var controlClassName = "menu__control";
+    var controlClassName = ROOT_CLASS + "__control";
 
     var classes = [controlClassName];
 
@@ -167,13 +198,13 @@ var Menu = React.createClass({
   },
 
   render: function () {
-    var classes = this._classes("menu");
+    var classes = this._classes(ROOT_CLASS);
     if (this.state.inline) {
-      classes.push("menu--inline");
+      classes.push(ROOT_CLASS + "--inline");
     } else {
-      classes.push("menu--controlled");
+      classes.push(ROOT_CLASS + "--controlled");
       if (this.props.label) {
-        classes.push("menu--labelled");
+        classes.push(ROOT_CLASS + "--labelled");
       }
     }
     if (this.props.className) {
@@ -220,14 +251,11 @@ var Menu = React.createClass({
         second = this.props.children;
       }
 
-      var classes = this._classes("menu__layer");
-
       return (
-        <div id="menu-layer" className={classes.join(' ')}
-          onClick={this._onClose}>
+        <MenuLayer router={this.context.router} onClick={this._onClose}>
           {first}
           {second}
-        </div>
+        </MenuLayer>
       );
 
     } else {

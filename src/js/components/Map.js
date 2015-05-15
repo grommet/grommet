@@ -33,7 +33,6 @@ var ResourceMap = React.createClass({
   },
 
   _draw: function () {
-    console.log('!!! Map draw');
     var canvasElement = this.refs.canvas.getDOMNode();
     var highlightCanvasElement = this.refs.highlightCanvas.getDOMNode();
     // don't draw if we don't have a canvas to draw on, such as a unit test
