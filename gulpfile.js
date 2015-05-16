@@ -7,6 +7,9 @@ var minifyCss = require('gulp-minify-css');
 var file = require('gulp-file');
 var preprocess = require('gulp-preprocess');
 var gulpif = require('gulp-if');
+var prompt = require('gulp-prompt');
+var bump = require('gulp-bump');
+var git = require('gulp-git');
 var assign = require('object-assign');
 var webpack = require('webpack');
 var del = require('del');
@@ -15,36 +18,42 @@ var fs = require('fs');
 var coveralls = require('gulp-coveralls');
 var blanket = require('gulp-blanket-mocha');
 var runSequence = require('run-sequence');
+var spawn = require('child_process').spawn;
+var mkdirp = require('mkdirp');
 
-var packageJSON = require('./package.json');
-delete packageJSON.devDependencies;
-delete packageJSON.config;
-packageJSON.main = 'index.js';
-packageJSON.dependencies = {
-  'react': '^0.13.1',
-  'inuit-box-sizing': '~0.2.0',
-  'inuit-clearfix': '^0.2.1',
-  'inuit-defaults': '~0.2.1',
-  'inuit-functions': '~0.2.0',
-  'inuit-headings': '~0.3.0',
-  'inuit-images': '~0.3.3',
-  'inuit-list-bare': '~0.3.0',
-  'inuit-lists': '~0.1.0',
-  'inuit-mixins': '~0.2.3',
-  'inuit-normalize': '~3.0.2',
-  'inuit-page': '~0.2.1',
-  'inuit-reset': '~0.1.1',
-  'inuit-responsive-settings': '~0.1.2',
-  'inuit-responsive-tools': '~0.1.1',
-  'inuit-shared': '~0.1.5',
-  'mkdirp': '^0.5.0',
-  'gulp': '^3.8.11',
-  'gulp-template': '^3.0.0',
-  'gulp-install': '^0.4.0',
-  "lodash": "^3.8.0",
-  "reflux": "^0.2.7",
-  "superagent": "^1.1.0"
-};
+function getPackageJSON() {
+  delete require.cache[require.resolve('./package.json')];
+  var packageJSON = require('./package.json');
+  delete packageJSON.devDependencies;
+  delete packageJSON.config;
+  packageJSON.main = 'index.js';
+  packageJSON.dependencies = {
+    'react': '^0.13.1',
+    'inuit-box-sizing': '~0.2.0',
+    'inuit-clearfix': '^0.2.1',
+    'inuit-defaults': '~0.2.1',
+    'inuit-functions': '~0.2.0',
+    'inuit-headings': '~0.3.0',
+    'inuit-images': '~0.3.3',
+    'inuit-list-bare': '~0.3.0',
+    'inuit-lists': '~0.1.0',
+    'inuit-mixins': '~0.2.3',
+    'inuit-normalize': '~3.0.2',
+    'inuit-page': '~0.2.1',
+    'inuit-reset': '~0.1.1',
+    'inuit-responsive-settings': '~0.1.2',
+    'inuit-responsive-tools': '~0.1.1',
+    'inuit-shared': '~0.1.5',
+    'mkdirp': '^0.5.0',
+    'gulp': '^3.8.11',
+    'gulp-template': '^3.0.0',
+    'gulp-install': '^0.4.0',
+    "lodash": "^3.8.0",
+    "reflux": "^0.2.7",
+    "superagent": "^1.1.0"
+  };
+  return packageJSON;
+}
 
 var opts = {
   dist: path.resolve(__dirname, 'dist'),
@@ -67,7 +76,7 @@ var opts = {
     },
     {
       filename: 'package.json',
-      asset: JSON.stringify(packageJSON, null, 2)
+      asset: JSON.stringify(getPackageJSON(), null, 2)
     }
   ],
   scssAssets: ['src/scss/**/*.scss'],
@@ -77,7 +86,7 @@ var opts = {
   sync: {
     hostname: 'grommet.usa.hp.com',
     username: 'ligo',
-    remoteDestination: '/var/www/html/assets/' + packageJSON.version
+    remoteDestination: '/var/www/html/assets/' + getPackageJSON().version
   },
   webpack: {
     output: {
@@ -242,7 +251,7 @@ gulp.task('dist-bower', ['dist-bower:preprocess'], function(done) {
         .pipe(rename('sample-grommet.html'))
         .pipe(gulp.dest('dist-bower'));
 
-  var bowerJSON = require('./package.json');
+  var bowerJSON = getPackageJSON();
   bowerJSON.dependencies = { 'react': '^0.13.1', 'grommet': 'HewlettPackard/grommet-bower' };
   bowerJSON.main = 'grommet.js';
   delete bowerJSON.devDependencies;
@@ -277,4 +286,65 @@ gulp.task('coveralls', function() {
       process.exit(1);
     }
   });
+});
+
+gulp.task('release:bump', function(done) {
+  gulp.src('./')
+    .pipe(prompt.prompt({
+        type: 'input',
+        name: 'bump',
+        message: 'What type of bump would you like to do (patch, minor, major)?',
+        validate: function(pass){
+          if(pass !== 'patch' && pass !== 'minor' && pass !== 'major'){
+              return false;
+          }
+          return true;
+        }
+    }, function(res){
+        gulp.src('./package.json')
+          .pipe(bump({ type: res.bump }))
+          .pipe(gulp.dest('./')).on('end', function() {
+            opts.copyAssets.push({
+              filename: 'package.json',
+              asset: JSON.stringify(getPackageJSON(), null, 2)
+            });
+            done();
+          });
+    }));
+});
+
+gulp.task('release:npm', function(done) {
+  process.chdir('dist');
+  spawn('npm', ['publish'], { stdio: 'inherit' }).on('close', function() {
+    process.chdir(__dirname);
+    done();
+  });
+});
+
+gulp.task('release:createTmp', function(done) {
+  del.sync(['./tmp']);
+  mkdirp('./tmp', function (err) {
+    if (err) {
+      throw err;
+    }
+    done();
+  });
+});
+
+gulp.task('release:bower', ['release:createTmp'], function(done) {
+  git.clone('https://github.com/HewlettPackard/grommet-bower.git',
+    { cwd: './tmp/' },
+    function (err) {
+      if (err) {
+        throw err;
+      }
+      gulp.src('./dist-bower/**').pipe(gulp.dest('./tmp/grommet-bower'));
+      done();
+    }
+  );
+});
+
+gulp.task('release', function(done) {
+  //TODO: commit files on both npm and bower. tag both bower and npm. sync both grommet and the website.
+  runSequence('release:bump', ['dist-bower', 'dist'], 'release:npm', 'release:bower', done);
 });
