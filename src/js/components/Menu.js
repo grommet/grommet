@@ -96,7 +96,6 @@ var Menu = React.createClass({
   },
 
   componentDidUpdate: function (prevProps, prevState) {
-
     // Set up keyboard listeners appropriate to the current state.
 
     var activeKeyboardHandlers = {
@@ -121,7 +120,9 @@ var Menu = React.createClass({
       this.stopOverlay();
     }
 
-    if (this.state.controlFocused && ! prevState.controlFocused) {
+    // re-arm the space key in case we used it when active
+    if (this.state.controlFocused && (! prevState.controlFocused ||
+      (! this.state.active && prevState.active))) {
       this.startListeningToKeyboard(focusedKeyboardHandlers);
     }
 
@@ -138,9 +139,14 @@ var Menu = React.createClass({
       var fontSize = window.getComputedStyle(controlElement).fontSize;
       layerControlElement.style.fontSize = fontSize;
       var height = controlElement.clientHeight;
-      if (layerControlIconElement && height <= layerControlIconElement.clientHeight) {
+      if (layerControlIconElement &&
+        height <= (layerControlIconElement.clientHeight + 1)) {
         // adjust to align with underlying control when control uses all height
-        layerControlElement.style.marginTop = '-2px';
+        if ('down' === this.props.direction) {
+          layerControlElement.style.marginTop = '-1px';
+        } else if ('up' === this.props.direction) {
+          layerControlElement.style.marginBottom = '1px';
+        }
       }
       layerControlElement.style.height = height + 'px';
       layerControlElement.style.lineHeight = height + 'px';
@@ -153,7 +159,7 @@ var Menu = React.createClass({
     document.removeEventListener('click', this._onClose);
   },
 
-  _createControl: function () {
+  _renderControl: function () {
     var result = null;
     var icon = null;
     var controlClassName = ROOT_CLASS + "__control";
@@ -231,7 +237,7 @@ var Menu = React.createClass({
 
     } else {
 
-      var controlContents = this._createControl();
+      var controlContents = this._renderControl();
 
       return (
         <div ref="control" className={classes.join(' ')}
@@ -249,7 +255,7 @@ var Menu = React.createClass({
   renderLayer: function() {
     if (this.state.active) {
 
-      var controlContents = this._createControl();
+      var controlContents = this._renderControl();
 
       var first = null;
       var second = null;

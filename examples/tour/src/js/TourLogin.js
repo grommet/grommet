@@ -48,7 +48,7 @@ var TourLogin = React.createClass({
       <Login background={"img/piano_player.jpg"}>
         <LoginForm
           logo={<img src="img/grommet.svg" title="logo" />}
-          title="Grommet Tour"
+          title="Medium App"
           onSubmit={this._onSubmit}
           errors={errors} />
       </Login>

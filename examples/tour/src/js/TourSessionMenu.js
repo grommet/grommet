@@ -8,6 +8,7 @@ var Actions = require('grommet/actions/Actions');
 var TourSessionMenu = React.createClass({
 
   propTypes: {
+    align: React.PropTypes.string,
     direction: React.PropTypes.string
   },
 
@@ -29,6 +30,7 @@ var TourSessionMenu = React.createClass({
   render: function() {
     return (
       <Menu icon={<Gravatar email={this.state.session.email || ''} />}
+        align={this.props.align}
         direction={this.props.direction}>
         <a onClick={this._onLogout}>Logout</a>
       </Menu>

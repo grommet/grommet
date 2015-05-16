@@ -1,6 +1,7 @@
 // (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
 
 .menu {
+  position: relative;
   display: inline-block;
   //@include inuit-font-size($inuit-heading-size-4, inherit);
 
@@ -18,9 +19,18 @@
 
   &:focus {
     outline: none;
-    margin: -1px;
-    border: 1px solid $focus-border-color;
-    box-shadow: 0 0 1px 1px $focus-border-color;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      bottom: 0px;
+      right: 0px;
+      border: 1px solid $focus-border-color;
+      box-shadow: 0 0 1px 1px $focus-border-color;
+      pointer-events: none;
+    }
   }
 
   &__control {
@@ -29,7 +39,7 @@
     &-drop-icon {
       width: $inuit-base-spacing-unit;
       height: $inuit-base-spacing-unit;
-      margin-top: - quarter($inuit-base-spacing-unit);
+      //margin-top: - quarter($inuit-base-spacing-unit);
       margin-left: halve($inuit-base-spacing-unit);
       stroke: $icon-color;
     }

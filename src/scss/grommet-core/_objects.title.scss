@@ -43,6 +43,12 @@
     }
   }
 
+  &--interactive {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
   &--menu {
 
     .control-icon {

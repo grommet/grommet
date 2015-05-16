@@ -155,7 +155,7 @@ var TourDashboard = React.createClass({
             <Title onClick={this._onClickTitle}>Medium App</Title>
             <Search ref="search" inline={true} />
           </span>
-          <TourSessionMenu />
+          <TourSessionMenu align="right"/>
         </Header>
         <Tiles fill={true} flush={false}>
           {tiles}
