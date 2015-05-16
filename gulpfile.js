@@ -236,7 +236,7 @@ gulp.task('dist-bower:preprocess', function(done) {
   runSequence(['dist-bower:exploded', 'dist-bower:minified'], done);
 });
 
-gulp.task('dist-bower', ['dist-bower:preprocess'], function(done) {
+gulp.task('dist-bower', ['dist-bower:preprocess'], function() {
 
   distCss('src/scss/grommet-core/*.scss', 'grommet.css');
   distCss('src/scss/grommet-core/*.scss', 'grommet.min.css', true);
@@ -317,7 +317,30 @@ gulp.task('release:npm', function(done) {
   process.chdir('dist');
   spawn('npm', ['publish'], { stdio: 'inherit' }).on('close', function() {
     process.chdir(__dirname);
-    done();
+    var version = 'v'+getPackageJSON().version;
+    gulp.src('./*')
+      .pipe(git.add())
+      .pipe(git.commit(version)).on('end', function() {
+        git.push('origin', 'master', function (err) {
+          if (err) {
+            throw err;
+          }
+
+          git.tag(version, version, function (err) {
+            if (err) {
+              throw err;
+            }
+
+            git.push('origin', version, function (err) {
+              if (err) {
+                throw err;
+              }
+              process.chdir(__dirname);
+              done();
+            });
+          });
+        });
+      });
   });
 });
 
@@ -339,12 +362,55 @@ gulp.task('release:bower', ['release:createTmp'], function(done) {
         throw err;
       }
       gulp.src('./dist-bower/**').pipe(gulp.dest('./tmp/grommet-bower'));
-      done();
+
+      var version = 'v'+getPackageJSON().version;
+      process.chdir('./tmp/grommet-bower');
+      gulp.src('./*')
+        .pipe(git.add())
+        .pipe(git.commit(version)).on('end', function() {
+          git.push('origin', 'master', function (err) {
+            if (err) {
+              throw err;
+            }
+
+            git.tag(version, version, function (err) {
+              if (err) {
+                throw err;
+              }
+
+              git.push('origin', version, function (err) {
+                if (err) {
+                  throw err;
+                }
+                process.chdir(__dirname);
+                done();
+              });
+            });
+          });
+        });
     }
   );
 });
 
+gulp.task('release:clean', function() {
+  del.sync(['./tmp']);
+});
+
+gulp.task('release:sync', function() {
+  gulp.src('./examples/server/gulpfile.js').pipe(chug({
+    tasks: ['sync']
+  }));
+
+  gulp.src('./docs/gulpfile.js').pipe(chug({
+    tasks: ['sync']
+  }));
+
+  gulp.src('./gulpfile.js').pipe(chug({
+    tasks: ['sync']
+  }));
+});
+
 gulp.task('release', function(done) {
   //TODO: commit files on both npm and bower. tag both bower and npm. sync both grommet and the website.
-  runSequence('release:bump', ['dist-bower', 'dist'], 'release:npm', 'release:bower', done);
+  runSequence('release:bump', ['dist-bower', 'dist'], 'release:npm', 'release:bower', 'release:sync', 'release:clean', done);
 });
