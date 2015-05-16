@@ -1,10 +1,5 @@
 // (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
 
-@include keyframes(reveal-layer-background) {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
 .layer {
   position: fixed;
   top: 0px;
@@ -13,7 +8,6 @@
   bottom: 0px;
   overflow: none;
   z-index: 10;
-  @include animation('reveal-layer-background 0.2s');
 
   &__container {
     position: absolute;
@@ -55,7 +49,7 @@
   }
 
   &--align {
-    &-center {
+    &-center:not(.layer--hidden) {
       background-image: radial-gradient(circle at top, $layer-background-color, $layer-background-color 20%, $layer-overlay-background-color); //$layer-overlay-background-color;
 
       .layer__container {
@@ -65,7 +59,7 @@
       }
     }
 
-    &-left {
+    &-left:not(.layer--hidden) {
       background-image: radial-gradient(circle at left, $layer-background-color, $layer-background-color 20%, $layer-overlay-background-color); //$layer-overlay-background-color;
 
       .layer__container {
@@ -74,7 +68,7 @@
       }
     }
 
-    &-right {
+    &-right:not(.layer--hidden) {
       background-image: radial-gradient(circle at right, $layer-background-color, $layer-background-color 20%, $layer-overlay-background-color); //$layer-overlay-background-color;
 
       .layer__container {
@@ -82,7 +76,7 @@
       }
     }
 
-    &-top {
+    &-top:not(.layer--hidden) {
       background-image: radial-gradient(circle at top left, $layer-background-color, $layer-background-color 20%, $layer-overlay-background-color); //$layer-overlay-background-color;
 
       .layer__container {
@@ -91,13 +85,54 @@
       }
     }
 
-    &-bottom {
+    &-bottom:not(.layer--hidden) {
       background-image: radial-gradient(circle at bottom left, $layer-background-color, $layer-background-color 20%, $layer-overlay-background-color); //$layer-overlay-background-color;
 
       .layer__container {
         bottom: 0px;
       }
     }
+  }
+
+  &--hidden {
+    &.layer--align {
+
+      &-left {
+        right: auto;
+
+        .layer__container {
+          left: -100vw;
+        }
+      }
+    }
+
+    @include media-query(lap-and-up) {
+      &.layer--peek {
+        &.layer--align {
+
+          &-left {
+            right: auto;
+
+            .layer__container {
+              left: auto;
+              right: - halve($inuit-base-spacing-unit);
+              border-right: 2px solid $brand-color;
+              @include animation('peek-right 0.5s ease-in-out alternate 5');
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include keyframes(peek-right) {
+  0% {
+    right: - quarter($inuit-base-spacing-unit);
+  }
+
+  100% {
+    right: - halve($inuit-base-spacing-unit);
   }
 }
 

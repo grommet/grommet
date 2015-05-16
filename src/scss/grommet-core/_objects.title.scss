@@ -45,7 +45,9 @@
 
   &--interactive {
     &:hover {
+      color: $brand-color;
       cursor: pointer;
+      transition: color 0.3s;
     }
   }
 

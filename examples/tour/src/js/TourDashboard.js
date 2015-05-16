@@ -54,6 +54,14 @@ var TourDashboard = React.createClass({
     router: React.PropTypes.func.isRequired
   },
 
+  _onOverTitle: function () {
+    this.setState({mainPeek: true});
+  },
+
+  _onOutTitle: function () {
+    this.setState({mainPeek: false});
+  },
+
   _onClickTitle: function () {
     this.setState({mainActive: true});
   },
@@ -84,7 +92,7 @@ var TourDashboard = React.createClass({
   },
 
   getInitialState: function () {
-    return {tiles: CONFIG, mainActive: false};
+    return {tiles: CONFIG, mainActive: false, mainPeek: false};
   },
 
   componentDidMount: function () {
@@ -99,7 +107,7 @@ var TourDashboard = React.createClass({
 
   render: function () {
 
-    var tiles = this.state.tiles.map(function (tile) {
+    var tiles = this.state.tiles.map(function (tile, index) {
 
       var header = null;
       if (tile.route) {
@@ -130,29 +138,30 @@ var TourDashboard = React.createClass({
       }
 
       return (
-        <Tile key={tile.name} wide={tile.wide}>
+        <Tile key={index} wide={tile.wide}>
           {header}
           {contents}
         </Tile>
       );
     }, this);
 
-    var main = null;
-    if (this.state.mainActive) {
-      var closer = <div onClick={this._onCloseMain}><CloseIcon /></div>;
-      main = (
-        <Layer align="left" flush={true}
-          closer={closer} onClose={this._onCloseMain}>
-          <TourMain primary={false} />
-        </Layer>
-      );
-    }
+    var closer = <div onClick={this._onCloseMain}><CloseIcon /></div>;
+    var main = (
+      <Layer align="left" flush={true}
+        hidden={! this.state.mainActive} peek={this.state.mainPeek}
+        closer={closer} onClose={this._onCloseMain}>
+        <TourMain primary={false} />
+      </Layer>
+    );
 
     return (
       <div>
         <Header fixed={true} flush={false} primary={true} large={true}>
           <span>
-            <Title onClick={this._onClickTitle}>Medium App</Title>
+            <span onMouseOver={this._onOverTitle}
+              onMouseOut={this._onOutTitle}>
+              <Title onClick={this._onClickTitle}>Medium App</Title>
+            </span>
             <Search ref="search" inline={true} />
           </span>
           <TourSessionMenu align="right"/>

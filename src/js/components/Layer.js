@@ -16,6 +16,8 @@ var LayerContainer = React.createClass({
       React.PropTypes.bool
     ]),
     flush: React.PropTypes.bool,
+    hidden: React.PropTypes.bool,
+    peek: React.PropTypes.bool,
     onClose: React.PropTypes.func,
     router: React.PropTypes.func
   },
@@ -50,6 +52,12 @@ var LayerContainer = React.createClass({
     }
     if (this.props.flush) {
       classes.push(CLASS_ROOT + "--flush");
+    }
+    if (this.props.hidden) {
+      classes.push(CLASS_ROOT + "--hidden");
+    }
+    if (this.props.peek) {
+      classes.push(CLASS_ROOT + "--peek");
     }
     if (this.props.className) {
       classes.push(this.props.className);
@@ -95,6 +103,8 @@ var Layer = React.createClass({
       React.PropTypes.bool
     ]),
     flush: React.PropTypes.bool,
+    hidden: React.PropTypes.bool,
+    peek: React.PropTypes.bool,
     onClose: React.PropTypes.func
   },
 
@@ -116,13 +126,7 @@ var Layer = React.createClass({
 
   renderLayer: function () {
     return (
-      <LayerContainer
-        align={this.props.align}
-        children={this.props.children}
-        className={this.props.className}
-        closer={this.props.closer}
-        flush={this.props.flush}
-        onClose={this.props.onClose}
+      <LayerContainer {...this.props}
         router={this.context.router} />
     );
   }

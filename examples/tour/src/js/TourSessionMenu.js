@@ -28,8 +28,9 @@ var TourSessionMenu = React.createClass({
   },
 
   render: function() {
+    var icon = <Gravatar email={this.state.session.email || ''} default="mm"/>;
     return (
-      <Menu icon={<Gravatar email={this.state.session.email || ''} />}
+      <Menu icon={icon}
         align={this.props.align}
         direction={this.props.direction}>
         <a onClick={this._onLogout}>Logout</a>
