@@ -104,6 +104,12 @@ var LayerDoc = React.createClass({
             <dt><code>flush    true|false</code></dt>
             <dd>Whether the contents are flush with the edges or not.
               Defaults to false.</dd>
+            <dt><code>hidden   true|false</code></dt>
+            <dd>Whether the contents are rendered offscreen.
+              Defaults to false.</dd>
+            <dt><code>peek     true|false</code></dt>
+            <dd>Whether the hidden contents are shown just a bit.
+              Defaults to false.</dd>
             <dt><code>onClose  {"function () {...}"}</code></dt>
             <dd>Function that will be called when the user clicks on the
               translucent background.</dd>
