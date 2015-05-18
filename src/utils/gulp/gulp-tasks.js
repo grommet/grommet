@@ -114,8 +114,8 @@ module.exports = function(gulp, opts) {
       var mocha = require('gulp-mocha');
       var watch = require('gulp-watch');
       var argv =  require('yargs').argv;
-      require('./test-compiler');
-      require('./mocked-dom')('<html><body></body></html>');
+      require('../test/test-compiler');
+      require('../test/mocked-dom')('<html><body></body></html>');
 
       gulp.src(options.testPaths, { read: false })
         .pipe(mocha({

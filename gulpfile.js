@@ -64,6 +64,10 @@ var opts = {
       asset: 'src/scss/**',
       dist: 'dist/scss/'
     },
+    {
+      asset: 'src/utils/**',
+      dist: 'dist/utils/'
+    },
     'design/**',
     'src/img/**',
     {
@@ -108,7 +112,7 @@ var opts = {
   ]
 };
 
-require('./src/js/utils/gulp-tasks')(gulp, opts);
+require('./src/utils/gulp/gulp-tasks')(gulp, opts);
 
 gulp.task('dist-css', function () {
   gulp.src('src/scss/hpinc/*.scss')
@@ -264,8 +268,8 @@ gulp.task('dist-bower', ['dist-bower:preprocess'], function() {
 });
 
 gulp.task('blanket-lcov-reporter', function(done) {
-  require('./src/js/utils/test-compiler');
-  require('./src/js/utils/mocked-dom')('<html><body></body></html>');
+  require('./src/utils/test/test-compiler');
+  require('./src/utils/test/mocked-dom')('<html><body></body></html>');
 
   gulp.src('./test/**/*.js', { read: false }).pipe(blanket({
     instrument: [path.join(__dirname, 'src/js')],

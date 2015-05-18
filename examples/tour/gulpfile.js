@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var path = require('path');
-var devGulpTasks = require('grommet/utils/gulp-tasks');
+var devGulpTasks = require('grommet/utils/gulp/gulp-tasks');
 
 var opts = {
   base: '../../',

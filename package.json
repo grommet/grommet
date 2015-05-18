@@ -1,6 +1,6 @@
 {
   "name": "grommet",
-  "version": "0.1.3",
+  "version": "0.1.2",
   "main": "src/js/index.js",
   "description": "The most advanced UI framework for enterprise applications.",
   "authors": [
@@ -99,13 +99,7 @@
   },
   "config": {
     "blanket": {
-      "data-cover-never": [
-        "gulp-tasks",
-        "blanket-stub-jsx",
-        "mocked-dom",
-        "test-compiler"
-      ],
-      "loader": "../../../../../src/js/utils/blanket-stub-jsx.js"
+      "loader": "../../../../../src/utils/test/blanket-stub-jsx.js"
     }
   }
 }

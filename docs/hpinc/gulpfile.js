@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var path = require('path');
-var devGulpTasks = require('../../src/js/utils/gulp-tasks');
+var devGulpTasks = require('../../src/utils/gulp/gulp-tasks');
 
 var grommetVersion = require('../../package.json').version;
 

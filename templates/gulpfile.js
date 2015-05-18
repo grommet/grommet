@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-var devGulpTasks = require('grommet/utils/gulp-tasks');
+var devGulpTasks = require('grommet/utils/gulp/gulp-tasks');
 
 var opts = {
   copyAssets: [
@@ -8,7 +8,7 @@ var opts = {
       asset: 'src/img/**',
       dist: 'dist/img/'
     }
-  ],  
+  ],
   jsAssets: ['src/js/**/*.js'],
   mainJs: 'src/js/index.js',
   mainScss: 'src/scss/index.scss',
