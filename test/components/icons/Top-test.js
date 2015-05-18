@@ -2,18 +2,18 @@
 
 var __path__ = '../../src/js/components/icons/Top';
 
-var ReactTestUtils = require('../../mocks/ReactTestUtils');
+var GrommetTestUtils = require('../../mocks/GrommetTestUtils');
 
 describe('Grommet Top', function() {
   it('loads an top icon', function() {
-    var Component = ReactTestUtils.getComponent(__path__);
+    var Component = GrommetTestUtils.getComponent(__path__);
 
-    ReactTestUtils.componentShouldExist(Component, 'control-icon-top');
+    GrommetTestUtils.componentShouldExist(Component, 'control-icon-top');
   });
 
   it('loads a custom top icon', function() {
-    var Component = ReactTestUtils.getComponent(__path__, null, { className: 'testing' });
+    var Component = GrommetTestUtils.getComponent(__path__, null, { className: 'testing' });
 
-    ReactTestUtils.componentShouldExist(Component, 'testing');
+    GrommetTestUtils.componentShouldExist(Component, 'testing');
   });
 });

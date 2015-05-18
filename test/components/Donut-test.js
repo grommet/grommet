@@ -2,7 +2,7 @@
 
 var __path__ = '../../src/js/components/Donut';
 
-var ReactTestUtils = require('../mocks/ReactTestUtils');
+var GrommetTestUtils = require('../mocks/GrommetTestUtils');
 var expect = require('expect');
 
 var testSeries = [
@@ -13,11 +13,11 @@ var testSeries = [
 
 describe('Grommet Donut', function() {
   it('loads a basic Donut component', function() {
-    var Component = ReactTestUtils.getComponent(__path__, undefined, {
+    var Component = GrommetTestUtils.getComponent(__path__, undefined, {
       series: testSeries
     });
 
-    ReactTestUtils.componentShouldExist(Component, 'donut');
+    GrommetTestUtils.componentShouldExist(Component, 'donut');
 
     var React = require('react/addons');
     var TestUtils = React.addons.TestUtils;
@@ -28,12 +28,12 @@ describe('Grommet Donut', function() {
   });
 
   it('loads a Donut component with legend', function() {
-    var Component = ReactTestUtils.getComponent(__path__, undefined, {
+    var Component = GrommetTestUtils.getComponent(__path__, undefined, {
       series: testSeries,
       legend: true
     });
 
-    ReactTestUtils.componentShouldExist(Component, 'donut');
-    ReactTestUtils.componentShouldExist(Component, 'donut__legend');
+    GrommetTestUtils.componentShouldExist(Component, 'donut');
+    GrommetTestUtils.componentShouldExist(Component, 'donut__legend');
   });
 });

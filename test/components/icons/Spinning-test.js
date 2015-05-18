@@ -2,24 +2,24 @@
 
 var __path__ = '../../src/js/components/icons/Spinning';
 
-var ReactTestUtils = require('../../mocks/ReactTestUtils');
+var GrommetTestUtils = require('../../mocks/GrommetTestUtils');
 
 describe('Grommet Spinning', function() {
   it('loads an spinning icon', function() {
-    var Component = ReactTestUtils.getComponent(__path__);
+    var Component = GrommetTestUtils.getComponent(__path__);
 
-    ReactTestUtils.componentShouldExist(Component, 'icon-spinning');
+    GrommetTestUtils.componentShouldExist(Component, 'icon-spinning');
   });
 
   it('loads a custom spinning icon', function() {
-    var Component = ReactTestUtils.getComponent(__path__, null, { className: 'testing' });
+    var Component = GrommetTestUtils.getComponent(__path__, null, { className: 'testing' });
 
-    ReactTestUtils.componentShouldExist(Component, 'testing');
+    GrommetTestUtils.componentShouldExist(Component, 'testing');
   });
 
   it('loads a small spinning icon', function() {
-    var Component = ReactTestUtils.getComponent(__path__, null, { small: true});
+    var Component = GrommetTestUtils.getComponent(__path__, null, { small: true});
 
-    ReactTestUtils.componentShouldExist(Component, 'icon-spinning--small');
+    GrommetTestUtils.componentShouldExist(Component, 'icon-spinning--small');
   });
 });

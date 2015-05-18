@@ -4,12 +4,17 @@ var React = require('react/addons');
 var TestUtils = React.addons.TestUtils;
 var expect = require('expect');
 var assert = require('assert');
+var App = require('../../src/js/components/App');
 
 module.exports = {
-  getComponent: function(path, testBody, props) {
+  getComponent: function(path, testBody, props, excludeApp) {
     var JSXComponent = require(path);
 
-    return TestUtils.renderIntoDocument(<div><JSXComponent {...props}>{testBody}</JSXComponent></div>);
+    if (excludeApp) {
+      return TestUtils.renderIntoDocument(<div><JSXComponent {...props}>{testBody}</JSXComponent></div>);
+    } else {
+      return TestUtils.renderIntoDocument(<App><JSXComponent {...props}>{testBody}</JSXComponent></App>);
+    }
   },
   componentShouldExist: function(component, className, assertContent) {
     var instance = TestUtils.findRenderedDOMComponentWithClass(component, className);

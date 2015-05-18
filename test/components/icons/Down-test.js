@@ -2,18 +2,18 @@
 
 var __path__ = '../../src/js/components/icons/Down';
 
-var ReactTestUtils = require('../../mocks/ReactTestUtils');
+var GrommetTestUtils = require('../../mocks/GrommetTestUtils');
 
 describe('Grommet Down', function() {
   it('loads an down icon', function() {
-    var Component = ReactTestUtils.getComponent(__path__);
+    var Component = GrommetTestUtils.getComponent(__path__);
 
-    ReactTestUtils.componentShouldExist(Component, 'control-icon-down');
+    GrommetTestUtils.componentShouldExist(Component, 'control-icon-down');
   });
 
   it('loads a custom down icon', function() {
-    var Component = ReactTestUtils.getComponent(__path__, null, { className: 'testing' });
+    var Component = GrommetTestUtils.getComponent(__path__, null, { className: 'testing' });
 
-    ReactTestUtils.componentShouldExist(Component, 'testing');
+    GrommetTestUtils.componentShouldExist(Component, 'testing');
   });
 });

@@ -11,7 +11,7 @@ var Actions = Reflux.createActions({
 
 Actions.login.listen(function(userName, password) {
   if (!userName || !password) {
-    return this.failed(400, { message: 'Please provide userName and password.' });
+    return this.failed(400, { message: 'Please provide Username and Password.' });
   }
 
   var thisAction = this;

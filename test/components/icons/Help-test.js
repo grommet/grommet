@@ -2,18 +2,18 @@
 
 var __path__ = '../../src/js/components/icons/Help';
 
-var ReactTestUtils = require('../../mocks/ReactTestUtils');
+var GrommetTestUtils = require('../../mocks/GrommetTestUtils');
 
 describe('Grommet Help', function() {
   it('loads an help icon', function() {
-    var Component = ReactTestUtils.getComponent(__path__);
+    var Component = GrommetTestUtils.getComponent(__path__);
 
-    ReactTestUtils.componentShouldExist(Component, 'control-icon-help');
+    GrommetTestUtils.componentShouldExist(Component, 'control-icon-help');
   });
 
   it('loads a custom help icon', function() {
-    var Component = ReactTestUtils.getComponent(__path__, null, { className: 'testing' });
+    var Component = GrommetTestUtils.getComponent(__path__, null, { className: 'testing' });
 
-    ReactTestUtils.componentShouldExist(Component, 'testing');
+    GrommetTestUtils.componentShouldExist(Component, 'testing');
   });
 });

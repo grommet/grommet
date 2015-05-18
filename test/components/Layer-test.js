@@ -2,7 +2,7 @@
 
 var __path__ = '../../src/js/components/Layer';
 
-var ReactTestUtils = require('../mocks/ReactTestUtils');
+var GrommetTestUtils = require('../mocks/GrommetTestUtils');
 
 describe('Grommet Layer', function() {
   it('loads a basic Layer component', function() {
@@ -36,6 +36,6 @@ describe('Grommet Layer', function() {
 
     TestUtils.renderIntoDocument(new TestParent());
 
-    ReactTestUtils.layerShouldExist('Testing Layer');
+    GrommetTestUtils.layerShouldExist('Testing Layer');
   });
 });

@@ -2,28 +2,28 @@
 
 var __path__ = '../../src/js/components/App';
 
-var ReactTestUtils = require('../mocks/ReactTestUtils');
+var GrommetTestUtils = require('../mocks/GrommetTestUtils');
 
 describe('Grommet App', function() {
   it('loads App component with default configuration', function() {
     var React = require('react/addons');
-    var Component = ReactTestUtils.getComponent(__path__, <h2>App</h2>);
+    var Component = GrommetTestUtils.getComponent(__path__, <h2>App</h2>, undefined, true);
 
-    ReactTestUtils.componentShouldExist(Component, 'app', 'App');
+    GrommetTestUtils.componentShouldExist(Component, 'app', 'App');
   });
 
   it('loads an inline App component', function() {
     var React = require('react/addons');
-    var Component = ReactTestUtils.getComponent(__path__, <h2>App Inline</h2>, { inline: true });
+    var Component = GrommetTestUtils.getComponent(__path__, <h2>App Inline</h2>, { inline: true }, undefined, true);
 
-    ReactTestUtils.componentShouldExist(Component, 'app--inline', 'App Inline');
+    GrommetTestUtils.componentShouldExist(Component, 'app--inline', 'App Inline');
   });
 
   it('loads a custom class App component', function() {
 
     var React = require('react/addons');
-    var Component = ReactTestUtils.getComponent(__path__, <h2>App Custom</h2>, { className: 'testing' });
+    var Component = GrommetTestUtils.getComponent(__path__, <h2>App Custom</h2>, { className: 'testing' }, undefined, true);
 
-    ReactTestUtils.componentShouldExist(Component, 'testing', 'App Custom');
+    GrommetTestUtils.componentShouldExist(Component, 'testing', 'App Custom');
   });
 });

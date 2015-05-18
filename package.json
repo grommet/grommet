@@ -50,6 +50,7 @@
     "react-gravatar": "^1.0.0",
     "react-router": "^0.13.3",
     "react-time": "^2.4.0",
+    "react-intl": "^1.2.0",
     "reflux": "^0.2.7",
     "superagent": "^1.1.0"
   },
@@ -91,6 +92,7 @@
     "run-sequence": "^1.0.2",
     "webpack": "^1.7.3",
     "webpack-dev-server": "^1.8.0",
+    "node-libs-browser": "^0.5.0",
     "glob": "^4.3.5",
     "yargs": "^3.8.0",
     "rewire": "^2.3.3",

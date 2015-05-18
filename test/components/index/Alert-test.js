@@ -2,18 +2,18 @@
 
 var __path__ = '../../src/js/components/index/Alert';
 
-var ReactTestUtils = require('../../mocks/ReactTestUtils');
+var GrommetTestUtils = require('../../mocks/GrommetTestUtils');
 
 describe('Grommet Alert', function() {
   it('loads a basic Alert component', function() {
 
-    var Component = ReactTestUtils.getComponent(__path__, undefined, {
+    var Component = GrommetTestUtils.getComponent(__path__, undefined, {
       resource: {
         name: 'network',
         status: 'error'
       }
     });
 
-    ReactTestUtils.componentShouldExist(Component, 'alert');
+    GrommetTestUtils.componentShouldExist(Component, 'alert');
   });
 });

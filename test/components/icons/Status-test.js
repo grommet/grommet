@@ -2,74 +2,74 @@
 
 var __path__ = '../../src/js/components/icons/Status';
 
-var ReactTestUtils = require('../../mocks/ReactTestUtils');
+var GrommetTestUtils = require('../../mocks/GrommetTestUtils');
 
 describe('Grommet Status', function() {
   it('loads an status-icon icon', function() {
-    var Component = ReactTestUtils.getComponent(__path__);
+    var Component = GrommetTestUtils.getComponent(__path__);
 
-    ReactTestUtils.componentShouldExist(Component, 'status-icon');
+    GrommetTestUtils.componentShouldExist(Component, 'status-icon');
   });
 
   it('loads a custom status-icon', function() {
-    var Component = ReactTestUtils.getComponent(__path__, null, { className: 'testing' });
+    var Component = GrommetTestUtils.getComponent(__path__, null, { className: 'testing' });
 
-    ReactTestUtils.componentShouldExist(Component, 'testing');
+    GrommetTestUtils.componentShouldExist(Component, 'testing');
   });
 
   it('loads a small status-icon', function() {
-    var Component = ReactTestUtils.getComponent(__path__, null, { small: true});
+    var Component = GrommetTestUtils.getComponent(__path__, null, { small: true});
 
-    ReactTestUtils.componentShouldExist(Component, 'status-icon--small');
+    GrommetTestUtils.componentShouldExist(Component, 'status-icon--small');
   });
 
   it('loads a large status-icon', function() {
-    var Component = ReactTestUtils.getComponent(__path__, null, { large: true});
+    var Component = GrommetTestUtils.getComponent(__path__, null, { large: true});
 
-    ReactTestUtils.componentShouldExist(Component, 'status-icon--large');
+    GrommetTestUtils.componentShouldExist(Component, 'status-icon--large');
   });
 
   it('loads an ok or normal status-icon', function() {
-    var Component = ReactTestUtils.getComponent(__path__, null, { value: 'ok'});
+    var Component = GrommetTestUtils.getComponent(__path__, null, { value: 'ok'});
 
-    ReactTestUtils.componentShouldExist(Component, 'status-icon-ok');
+    GrommetTestUtils.componentShouldExist(Component, 'status-icon-ok');
 
-    Component = ReactTestUtils.getComponent(__path__, null, { value: 'normal'});
+    Component = GrommetTestUtils.getComponent(__path__, null, { value: 'normal'});
 
-    ReactTestUtils.componentShouldExist(Component, 'status-icon-ok');
+    GrommetTestUtils.componentShouldExist(Component, 'status-icon-ok');
   });
 
   it('loads an error or critical status-icon', function() {
-    var Component = ReactTestUtils.getComponent(__path__, null, { value: 'error'});
+    var Component = GrommetTestUtils.getComponent(__path__, null, { value: 'error'});
 
-    ReactTestUtils.componentShouldExist(Component, 'status-icon-error');
+    GrommetTestUtils.componentShouldExist(Component, 'status-icon-error');
 
-    Component = ReactTestUtils.getComponent(__path__, null, { value: 'critical'});
+    Component = GrommetTestUtils.getComponent(__path__, null, { value: 'critical'});
 
-    ReactTestUtils.componentShouldExist(Component, 'status-icon-error');
+    GrommetTestUtils.componentShouldExist(Component, 'status-icon-error');
   });
 
   it('loads a warning status-icon', function() {
-    var Component = ReactTestUtils.getComponent(__path__, null, { value: 'warning'});
+    var Component = GrommetTestUtils.getComponent(__path__, null, { value: 'warning'});
 
-    ReactTestUtils.componentShouldExist(Component, 'status-icon-warning');
+    GrommetTestUtils.componentShouldExist(Component, 'status-icon-warning');
   });
 
   it('loads a disabled status-icon', function() {
-    var Component = ReactTestUtils.getComponent(__path__, null, { value: 'disabled'});
+    var Component = GrommetTestUtils.getComponent(__path__, null, { value: 'disabled'});
 
-    ReactTestUtils.componentShouldExist(Component, 'status-icon-disabled');
+    GrommetTestUtils.componentShouldExist(Component, 'status-icon-disabled');
   });
 
   it('loads a unknown status-icon', function() {
-    var Component = ReactTestUtils.getComponent(__path__, null, { value: 'unknown'});
+    var Component = GrommetTestUtils.getComponent(__path__, null, { value: 'unknown'});
 
-    ReactTestUtils.componentShouldExist(Component, 'status-icon-unknown');
+    GrommetTestUtils.componentShouldExist(Component, 'status-icon-unknown');
   });
 
   it('loads a label status-icon', function() {
-    var Component = ReactTestUtils.getComponent(__path__, null, { value: 'label'});
+    var Component = GrommetTestUtils.getComponent(__path__, null, { value: 'label'});
 
-    ReactTestUtils.componentShouldExist(Component, 'status-icon-label');
+    GrommetTestUtils.componentShouldExist(Component, 'status-icon-label');
   });
 });

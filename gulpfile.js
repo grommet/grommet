@@ -29,6 +29,7 @@ function getPackageJSON() {
   packageJSON.main = 'index.js';
   packageJSON.dependencies = {
     'react': '^0.13.1',
+    'react-intl': '^1.2.0',
     'inuit-box-sizing': '~0.2.0',
     'inuit-clearfix': '^0.2.1',
     'inuit-defaults': '~0.2.1',
@@ -195,7 +196,7 @@ var bowerWebpackConfig = {
     ]
   },
   plugins: [
-    new webpack.optimize.DedupePlugin()
+   //new webpack.optimize.DedupePlugin()
   ]
 };
 
@@ -210,8 +211,8 @@ var bowerMinWebpackConfig = assign({}, bowerWebpackConfig, {
         compress: {
             warnings: false
         }
-    }),
-    new webpack.optimize.DedupePlugin()
+    })
+    //new webpack.optimize.DedupePlugin()
   ]
 });
 

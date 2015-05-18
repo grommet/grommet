@@ -2,7 +2,7 @@
 
 var __path__ = '../../mocks/components/Activity-mock';
 
-var ReactTestUtils = require('../../mocks/ReactTestUtils');
+var GrommetTestUtils = require('../../mocks/GrommetTestUtils');
 var IndexQuery = require('../../../src/js/utils/IndexQuery');
 var expect = require('expect');
 
@@ -15,7 +15,7 @@ describe('Grommet Activity', function() {
     var TestUtils = React.addons.TestUtils;
     var Component = TestUtils.renderIntoDocument(<Activity />);
 
-    ReactTestUtils.componentShouldExist(Component, 'index');
+    GrommetTestUtils.componentShouldExist(Component, 'index');
   });
 
   it('loads Activity component with query', function(done) {
@@ -34,8 +34,8 @@ describe('Grommet Activity', function() {
       <Activity query={queryProp} onQuery={_onQuery} />
     );
 
-    ReactTestUtils.componentShouldExist(Component, 'index');
-    ReactTestUtils.componentShouldExist(Component, 'search__input');
+    GrommetTestUtils.componentShouldExist(Component, 'index');
+    GrommetTestUtils.componentShouldExist(Component, 'search__input');
 
     var searchNode = TestUtils.findRenderedDOMComponentWithClass(Component, 'search__input');
     TestUtils.Simulate.change(searchNode, {target: {value: 'New Query'}});
@@ -62,8 +62,8 @@ describe('Grommet Activity', function() {
 
     var Component = TestUtils.renderIntoDocument(new TestParent());
 
-    ReactTestUtils.componentShouldExist(Component, 'index');
-    ReactTestUtils.componentShouldExist(Component, 'search__input');
+    GrommetTestUtils.componentShouldExist(Component, 'index');
+    GrommetTestUtils.componentShouldExist(Component, 'search__input');
 
     var searchNode = TestUtils.findRenderedDOMComponentWithClass(Component, 'search__input');
     expect(searchNode.getDOMNode().value).toBe('testing');

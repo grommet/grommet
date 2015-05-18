@@ -2,28 +2,27 @@
 
 var __path__ = '../../src/js/components/Split';
 
-var ReactTestUtils = require('../mocks/ReactTestUtils');
-var expect = require('expect');
+var GrommetTestUtils = require('../mocks/GrommetTestUtils');
 
 describe('Grommet Split', function() {
   it('loads a basic Split', function() {
     var React = require('react/addons');
-    var Component = ReactTestUtils.getComponent(__path__, <h2>Split</h2>);
+    var Component = GrommetTestUtils.getComponent(__path__, <h2>Split</h2>);
 
-    ReactTestUtils.componentShouldExist(Component, 'split', 'Split');
+    GrommetTestUtils.componentShouldExist(Component, 'split', 'Split');
   });
 
   it('loads a left Split', function() {
     var React = require('react/addons');
-    var Component = ReactTestUtils.getComponent(__path__, <h2>Split left</h2>, { flex: 'left' });
+    var Component = GrommetTestUtils.getComponent(__path__, <h2>Split left</h2>, { flex: 'left' });
 
-    ReactTestUtils.componentShouldExist(Component, 'split--flex-left', 'Split left');
+    GrommetTestUtils.componentShouldExist(Component, 'split--flex-left', 'Split left');
   });
 
   it('loads a custom Split', function() {
     var React = require('react/addons');
-    var Component = ReactTestUtils.getComponent(__path__, <h2>Split Custom</h2>, { className: 'testing' });
+    var Component = GrommetTestUtils.getComponent(__path__, <h2>Split Custom</h2>, { className: 'testing' });
 
-    ReactTestUtils.componentShouldExist(Component, 'testing', 'Split Custom');
+    GrommetTestUtils.componentShouldExist(Component, 'testing', 'Split Custom');
   });
 });

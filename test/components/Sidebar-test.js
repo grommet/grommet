@@ -2,28 +2,28 @@
 
 var __path__ = '../../src/js/components/Sidebar';
 
-var ReactTestUtils = require('../mocks/ReactTestUtils');
+var GrommetTestUtils = require('../mocks/GrommetTestUtils');
 var expect = require('expect');
 
 describe('Grommet Sidebar', function() {
   it('loads a basic Sidebar', function() {
     var React = require('react/addons');
-    var Component = ReactTestUtils.getComponent(__path__, <h2>Sidebar</h2>);
+    var Component = GrommetTestUtils.getComponent(__path__, <h2>Sidebar</h2>);
 
-    ReactTestUtils.componentShouldExist(Component, 'sidebar', 'Sidebar');
+    GrommetTestUtils.componentShouldExist(Component, 'sidebar', 'Sidebar');
   });
 
   it('loads a primary Sidebar', function() {
     var React = require('react/addons');
-    var Component = ReactTestUtils.getComponent(__path__, <h2>Sidebar Primary</h2>, { primary: true });
+    var Component = GrommetTestUtils.getComponent(__path__, <h2>Sidebar Primary</h2>, { primary: true });
 
-    ReactTestUtils.componentShouldExist(Component, 'sidebar--primary', 'Sidebar Primary');
+    GrommetTestUtils.componentShouldExist(Component, 'sidebar--primary', 'Sidebar Primary');
   });
 
   it('loads a custom Sidebar', function() {
     var React = require('react/addons');
-    var Component = ReactTestUtils.getComponent(__path__, <h2>Sidebar Custom</h2>, { className: 'testing' });
+    var Component = GrommetTestUtils.getComponent(__path__, <h2>Sidebar Custom</h2>, { className: 'testing' });
 
-    ReactTestUtils.componentShouldExist(Component, 'testing', 'Sidebar Custom');
+    GrommetTestUtils.componentShouldExist(Component, 'testing', 'Sidebar Custom');
   });
 });

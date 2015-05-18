@@ -2,13 +2,13 @@
 
 var __path__ = '../../src/js/components/Dashboard';
 
-var ReactTestUtils = require('../mocks/ReactTestUtils');
+var GrommetTestUtils = require('../mocks/GrommetTestUtils');
 
 describe('Grommet Dashboard', function() {
   it('loads a basic Dashboard', function() {
     var React = require('react/addons');
-    var Component = ReactTestUtils.getComponent(__path__, <h2>Dashboard</h2>);
+    var Component = GrommetTestUtils.getComponent(__path__, <h2>Dashboard</h2>);
 
-    ReactTestUtils.componentShouldExist(Component, 'dashboard', 'Dashboard');
+    GrommetTestUtils.componentShouldExist(Component, 'dashboard', 'Dashboard');
   });
 });

@@ -2,29 +2,29 @@
 
 var __path__ = '../../src/js/components/Label';
 
-var ReactTestUtils = require('../mocks/ReactTestUtils');
+var GrommetTestUtils = require('../mocks/GrommetTestUtils');
 
 describe('Grommet Label', function() {
   it('loads an empty Label component', function() {
-    var Component = ReactTestUtils.getComponent(__path__);
+    var Component = GrommetTestUtils.getComponent(__path__);
 
-    ReactTestUtils.componentShouldExist(Component, 'label', '');
+    GrommetTestUtils.componentShouldExist(Component, 'label', '');
   });
 
   it('loads a Label component with icon', function() {
     var React = require('react/addons');
-    var Component = ReactTestUtils.getComponent(__path__, undefined, {
+    var Component = GrommetTestUtils.getComponent(__path__, undefined, {
       icon: <div>Icon</div>
     });
 
-    ReactTestUtils.componentShouldExist(Component, 'label__icon', 'Icon');
+    GrommetTestUtils.componentShouldExist(Component, 'label__icon', 'Icon');
   });
 
   it('loads a Label component with text', function() {
-    var Component = ReactTestUtils.getComponent(__path__, undefined, {
+    var Component = GrommetTestUtils.getComponent(__path__, undefined, {
       text: 'Text'
     });
 
-    ReactTestUtils.componentShouldExist(Component, 'label__text', 'Text');
+    GrommetTestUtils.componentShouldExist(Component, 'label__text', 'Text');
   });
 });

@@ -2,7 +2,7 @@
 
 var __path__ = '../../src/js/components/Map';
 
-var ReactTestUtils = require('../mocks/ReactTestUtils');
+var GrommetTestUtils = require('../mocks/GrommetTestUtils');
 var expect = require('expect');
 
 var testData = {
@@ -24,11 +24,11 @@ var testData = {
 
 describe('Grommet Map', function() {
   it('loads a basic Map component', function() {
-    var Component = ReactTestUtils.getComponent(__path__, undefined, {
+    var Component = GrommetTestUtils.getComponent(__path__, undefined, {
       data: testData
     });
 
-    ReactTestUtils.componentShouldExist(Component, 'map');
+    GrommetTestUtils.componentShouldExist(Component, 'map');
 
     var React = require('react/addons');
     var TestUtils = React.addons.TestUtils;

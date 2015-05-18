@@ -198,8 +198,8 @@ module.exports = function(gulp, opts) {
                 warnings: false
             }
         }),
-        new webpack.optimize.DedupePlugin(),
         new webpack.DefinePlugin(env)
+        //new webpack.optimize.DedupePlugin()
       ]
     });
 

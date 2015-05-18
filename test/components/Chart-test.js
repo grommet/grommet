@@ -2,7 +2,7 @@
 
 var __path__ = '../../src/js/components/Chart';
 
-var ReactTestUtils = require('../mocks/ReactTestUtils');
+var GrommetTestUtils = require('../mocks/GrommetTestUtils');
 var expect = require('expect');
 
 var testSeries = [
@@ -20,11 +20,11 @@ var testSeries = [
 
 describe('Grommet Chart', function() {
   it('loads a basic line Chart component', function() {
-    var Component = ReactTestUtils.getComponent(__path__, undefined, {
+    var Component = GrommetTestUtils.getComponent(__path__, undefined, {
       series: testSeries
     });
 
-    ReactTestUtils.componentShouldExist(Component, 'chart');
+    GrommetTestUtils.componentShouldExist(Component, 'chart');
 
     var React = require('react/addons');
     var TestUtils = React.addons.TestUtils;
@@ -35,12 +35,12 @@ describe('Grommet Chart', function() {
   });
 
   it('loads a basic line Chart component with threshold', function() {
-    var Component = ReactTestUtils.getComponent(__path__, undefined, {
+    var Component = GrommetTestUtils.getComponent(__path__, undefined, {
       series: testSeries,
       threshold: 1
     });
 
-    ReactTestUtils.componentShouldExist(Component, 'chart');
+    GrommetTestUtils.componentShouldExist(Component, 'chart');
 
     var React = require('react/addons');
     var TestUtils = React.addons.TestUtils;
@@ -51,14 +51,14 @@ describe('Grommet Chart', function() {
   });
 
   it('loads a basic line Chart component with legend', function() {
-    var Component = ReactTestUtils.getComponent(__path__, undefined, {
+    var Component = GrommetTestUtils.getComponent(__path__, undefined, {
       series: testSeries,
       legend: true,
       xAxis: ['one', 'two']
     });
 
-    ReactTestUtils.componentShouldExist(Component, 'chart');
-    ReactTestUtils.componentShouldExist(Component, 'chart__legend');
+    GrommetTestUtils.componentShouldExist(Component, 'chart');
+    GrommetTestUtils.componentShouldExist(Component, 'chart__legend');
 
     var React = require('react/addons');
     var TestUtils = React.addons.TestUtils;
@@ -69,12 +69,12 @@ describe('Grommet Chart', function() {
   });
 
   it('loads a basic area Chart component', function() {
-    var Component = ReactTestUtils.getComponent(__path__, undefined, {
+    var Component = GrommetTestUtils.getComponent(__path__, undefined, {
       series: testSeries,
       type: 'area'
     });
 
-    ReactTestUtils.componentShouldExist(Component, 'chart');
+    GrommetTestUtils.componentShouldExist(Component, 'chart');
 
     var React = require('react/addons');
     var TestUtils = React.addons.TestUtils;
@@ -85,12 +85,12 @@ describe('Grommet Chart', function() {
   });
 
   it('loads a basic bar Chart component', function() {
-    var Component = ReactTestUtils.getComponent(__path__, undefined, {
+    var Component = GrommetTestUtils.getComponent(__path__, undefined, {
       series: testSeries,
       type: 'bar'
     });
 
-    ReactTestUtils.componentShouldExist(Component, 'chart');
+    GrommetTestUtils.componentShouldExist(Component, 'chart');
 
     var React = require('react/addons');
     var TestUtils = React.addons.TestUtils;

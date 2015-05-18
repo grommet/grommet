@@ -2,12 +2,12 @@
 
 var __path__ = '../../src/js/components/index/IndexAttribute';
 
-var ReactTestUtils = require('../../mocks/ReactTestUtils');
+var GrommetTestUtils = require('../../mocks/GrommetTestUtils');
 
 describe('Grommet IndexAttribute', function() {
   it('loads a basic IndexAttribute component', function() {
 
-    var Component = ReactTestUtils.getComponent(__path__, undefined, {
+    var Component = GrommetTestUtils.getComponent(__path__, undefined, {
       item: {
        data: 'testing'
       },
@@ -16,12 +16,12 @@ describe('Grommet IndexAttribute', function() {
       }
     });
 
-    ReactTestUtils.componentShouldExist(Component, 'index-attribute', 'testing');
+    GrommetTestUtils.componentShouldExist(Component, 'index-attribute', 'testing');
   });
 
   it('loads an IndexAttribute component where item has multiple attributes', function() {
 
-    var Component = ReactTestUtils.getComponent(__path__, undefined, {
+    var Component = GrommetTestUtils.getComponent(__path__, undefined, {
       item: {
         attributes: {
           data: 'testing multiple'
@@ -32,12 +32,12 @@ describe('Grommet IndexAttribute', function() {
       }
     });
 
-    ReactTestUtils.componentShouldExist(Component, 'index-attribute', 'testing multiple');
+    GrommetTestUtils.componentShouldExist(Component, 'index-attribute', 'testing multiple');
   });
 
   it('loads a timestamp IndexAttribute component', function() {
 
-    var Component = ReactTestUtils.getComponent(__path__, undefined, {
+    var Component = GrommetTestUtils.getComponent(__path__, undefined, {
       item: {
         data: '05/11/2015'
       },
@@ -47,12 +47,12 @@ describe('Grommet IndexAttribute', function() {
       }
     });
 
-    ReactTestUtils.componentShouldExist(Component, 'index-attribute', '05/11/15 12:00:00am');
+    GrommetTestUtils.componentShouldExist(Component, 'index-attribute', '05/11/15 12:00:00am');
   });
 
   it('loads a secondary IndexAttribute component', function() {
 
-    var Component = ReactTestUtils.getComponent(__path__, undefined, {
+    var Component = GrommetTestUtils.getComponent(__path__, undefined, {
       item: {
        data: 'testing'
       },
@@ -62,12 +62,12 @@ describe('Grommet IndexAttribute', function() {
       }
     });
 
-    ReactTestUtils.componentShouldExist(Component, 'index-attribute--secondary', 'testing');
+    GrommetTestUtils.componentShouldExist(Component, 'index-attribute--secondary', 'testing');
   });
 
   it('loads a status IndexAttribute component', function() {
 
-    var Component = ReactTestUtils.getComponent(__path__, undefined, {
+    var Component = GrommetTestUtils.getComponent(__path__, undefined, {
       item: {
        status: 'ok'
       },
@@ -76,12 +76,12 @@ describe('Grommet IndexAttribute', function() {
       }
     });
 
-    ReactTestUtils.componentShouldExist(Component, 'status-icon');
+    GrommetTestUtils.componentShouldExist(Component, 'status-icon');
   });
 
   it('loads a small IndexAttribute component', function() {
 
-    var Component = ReactTestUtils.getComponent(__path__, undefined, {
+    var Component = GrommetTestUtils.getComponent(__path__, undefined, {
       item: {
        data: 'testing'
       },
@@ -91,12 +91,12 @@ describe('Grommet IndexAttribute', function() {
       }
     });
 
-    ReactTestUtils.componentShouldExist(Component, 'index-attribute--small', 'testing');
+    GrommetTestUtils.componentShouldExist(Component, 'index-attribute--small', 'testing');
   });
 
   it('loads a custom class IndexAttribute component', function() {
 
-    var Component = ReactTestUtils.getComponent(__path__, undefined, {
+    var Component = GrommetTestUtils.getComponent(__path__, undefined, {
       item: {
        data: 'testing'
       },
@@ -106,13 +106,13 @@ describe('Grommet IndexAttribute', function() {
       className: 'custom'
     });
 
-    ReactTestUtils.componentShouldExist(Component, 'custom', 'testing');
+    GrommetTestUtils.componentShouldExist(Component, 'custom', 'testing');
   });
 
   it('loads an IndexAttribute component with custom render function', function() {
 
     var React = require('react/addons');
-    var Component = ReactTestUtils.getComponent(__path__, undefined, {
+    var Component = GrommetTestUtils.getComponent(__path__, undefined, {
       item: {
        data: 'testing'
       },
@@ -124,6 +124,6 @@ describe('Grommet IndexAttribute', function() {
       }
     });
 
-    ReactTestUtils.componentShouldExist(Component, 'testing-render', 'Testing Render');
+    GrommetTestUtils.componentShouldExist(Component, 'testing-render', 'Testing Render');
   });
 });

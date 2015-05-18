@@ -3,49 +3,49 @@
 var __path__ = '../../src/js/components/Footer';
 
 var domEvents = require('../mocks/DOMEvents');
-var ReactTestUtils = require('../mocks/ReactTestUtils');
+var GrommetTestUtils = require('../mocks/GrommetTestUtils');
 
 describe('Grommet Footer', function() {
 
   it('loads a basic Footer', function() {
     var React = require('react/addons');
-    var Component = ReactTestUtils.getComponent(__path__, <h2>Footer</h2>);
+    var Component = GrommetTestUtils.getComponent(__path__, <h2>Footer</h2>);
 
-    ReactTestUtils.componentShouldExist(Component, 'footer', 'Footer');
+    GrommetTestUtils.componentShouldExist(Component, 'footer', 'Footer');
   });
 
   it('loads a primary Footer', function() {
     var React = require('react/addons');
-    var Component = ReactTestUtils.getComponent(__path__, <h2>Footer Primary</h2>, { primary: true });
+    var Component = GrommetTestUtils.getComponent(__path__, <h2>Footer Primary</h2>, { primary: true });
 
-    ReactTestUtils.componentShouldExist(Component, 'footer--primary', 'Footer Primary');
+    GrommetTestUtils.componentShouldExist(Component, 'footer--primary', 'Footer Primary');
   });
 
   it('loads a centered Footer', function() {
     var React = require('react/addons');
-    var Component = ReactTestUtils.getComponent(__path__, <h2>Footer Centered</h2>, { centered: true });
+    var Component = GrommetTestUtils.getComponent(__path__, <h2>Footer Centered</h2>, { centered: true });
 
-    ReactTestUtils.componentShouldExist(Component, 'footer--centered', 'Footer Centered');
+    GrommetTestUtils.componentShouldExist(Component, 'footer--centered', 'Footer Centered');
   });
 
   it('loads a colored Footer', function() {
     var React = require('react/addons');
-    var Component = ReactTestUtils.getComponent(__path__, <h2>Footer Colored 1</h2>, { colorIndex: '1' });
+    var Component = GrommetTestUtils.getComponent(__path__, <h2>Footer Colored 1</h2>, { colorIndex: '1' });
 
-    ReactTestUtils.componentShouldExist(Component, 'background-color-index-1', 'Footer Colored 1');
+    GrommetTestUtils.componentShouldExist(Component, 'background-color-index-1', 'Footer Colored 1');
   });
 
   it('loads a custom class Footer', function() {
     var React = require('react/addons');
-    var Component = ReactTestUtils.getComponent(__path__, <h2>Footer Custom Class</h2>, { className: 'testing' });
+    var Component = GrommetTestUtils.getComponent(__path__, <h2>Footer Custom Class</h2>, { className: 'testing' });
 
-    ReactTestUtils.componentShouldExist(Component, 'testing', 'Footer Custom Class');
+    GrommetTestUtils.componentShouldExist(Component, 'testing', 'Footer Custom Class');
   });
 
   it('scrolls Footer', function(done) {
     var React = require('react/addons');
     var TestUtils = React.addons.TestUtils;
-    var Component = ReactTestUtils.getComponent(__path__, <h2>Footer Scroll Top</h2>, { scrollTop: true });
+    var Component = GrommetTestUtils.getComponent(__path__, <h2>Footer Scroll Top</h2>, { scrollTop: true });
     var footerInstance = TestUtils.findRenderedDOMComponentWithClass(Component, 'footer');
 
     var contentDiv = footerInstance.getDOMNode().parentNode.parentNode;
@@ -54,7 +54,7 @@ describe('Grommet Footer', function() {
     domEvents.scroll(contentDiv);
 
     setTimeout(function() {
-      ReactTestUtils.componentShouldExist(Component, 'footer__top');
+      GrommetTestUtils.componentShouldExist(Component, 'footer__top');
 
       React.unmountComponentAtNode(contentDiv);
       done();
@@ -64,7 +64,7 @@ describe('Grommet Footer', function() {
   it('scrolls back to top if clicking on top icon', function(done) {
     var React = require('react/addons');
     var TestUtils = React.addons.TestUtils;
-    var Component = ReactTestUtils.getComponent(__path__, <h2>Footer Scroll Top</h2>, { scrollTop: true });
+    var Component = GrommetTestUtils.getComponent(__path__, <h2>Footer Scroll Top</h2>, { scrollTop: true });
     var footerInstance = TestUtils.findRenderedDOMComponentWithClass(Component, 'footer');
 
     var contentDiv = footerInstance.getDOMNode().parentNode.parentNode;
@@ -79,7 +79,7 @@ describe('Grommet Footer', function() {
       domEvents.scroll(contentDiv);
 
       setTimeout(function() {
-        ReactTestUtils.componentShouldNotExist(Component, 'footer__top');
+        GrommetTestUtils.componentShouldNotExist(Component, 'footer__top');
 
         done();
       }, 10);
@@ -102,13 +102,13 @@ describe('Grommet Footer', function() {
 
     var Component = TestUtils.renderIntoDocument(new TestParent());
 
-    ReactTestUtils.componentShouldNotExist(Component, 'footer--centered');
+    GrommetTestUtils.componentShouldNotExist(Component, 'footer--centered');
 
     Component.setState({
       centered: true
     });
 
-    ReactTestUtils.componentShouldExist(Component, 'footer--centered');
+    GrommetTestUtils.componentShouldExist(Component, 'footer--centered');
   });
 
 });

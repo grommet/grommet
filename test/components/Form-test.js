@@ -2,29 +2,29 @@
 
 var __path__ = '../../src/js/components/Form';
 
-var ReactTestUtils = require('../mocks/ReactTestUtils');
+var GrommetTestUtils = require('../mocks/GrommetTestUtils');
 var expect = require('expect');
 
 describe('Grommet Form', function() {
   it('loads a basic Form', function() {
     var React = require('react/addons');
-    var Component = ReactTestUtils.getComponent(__path__, <h2>Form</h2>);
+    var Component = GrommetTestUtils.getComponent(__path__, <h2>Form</h2>);
 
-    ReactTestUtils.componentShouldExist(Component, 'form', 'Form');
+    GrommetTestUtils.componentShouldExist(Component, 'form', 'Form');
   });
 
   it('loads a compact Form', function() {
     var React = require('react/addons');
-    var Component = ReactTestUtils.getComponent(__path__, <h2>Form Compact</h2>, { compact: true });
+    var Component = GrommetTestUtils.getComponent(__path__, <h2>Form Compact</h2>, { compact: true });
 
-    ReactTestUtils.componentShouldExist(Component, 'form--compact', 'Form Compact');
+    GrommetTestUtils.componentShouldExist(Component, 'form--compact', 'Form Compact');
   });
 
   it('loads a custom Form', function() {
     var React = require('react/addons');
-    var Component = ReactTestUtils.getComponent(__path__, <h2>Form Custom</h2>, { className: 'testing'});
+    var Component = GrommetTestUtils.getComponent(__path__, <h2>Form Custom</h2>, { className: 'testing'});
 
-    ReactTestUtils.componentShouldExist(Component, 'testing', 'Form Custom');
+    GrommetTestUtils.componentShouldExist(Component, 'testing', 'Form Custom');
   });
 
   it('submits a Form', function(done) {
@@ -33,13 +33,13 @@ describe('Grommet Form', function() {
 
     var formSubmited = false;
     var childrenElement = <div><h2>Form Compact</h2></div>;
-    var Component = ReactTestUtils.getComponent(__path__, childrenElement, {
+    var Component = GrommetTestUtils.getComponent(__path__, childrenElement, {
       onSubmit: function() {
         formSubmited = true;
       }
     });
 
-    ReactTestUtils.componentShouldExist(Component, 'form');
+    GrommetTestUtils.componentShouldExist(Component, 'form');
     expect(formSubmited).toBe(false);
 
     var form = TestUtils.findRenderedDOMComponentWithTag(Component, 'form');
