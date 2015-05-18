@@ -130,13 +130,11 @@ var IndexFilters = React.createClass({
         return (
           <div key={attribute.attribute} className={CLASS_ROOT + "__filter"}>
             <h4 className={CLASS_ROOT + "__filter-label"}>{attribute.label}</h4>
-            <div>
-              <CheckBox className={CLASS_ROOT + "__filter-value"}
-                id={attribute.attribute + '-all'} label="All"
-                checked={this.state.data[attribute.attribute].all}
-                onChange={this._onChangeAll
-                  .bind(this, attribute.attribute, attribute.filter)} />
-            </div>
+            <CheckBox className={CLASS_ROOT + "__filter-value"}
+              id={attribute.attribute + '-all'} label="All"
+              checked={this.state.data[attribute.attribute].all}
+              onChange={this._onChangeAll
+                .bind(this, attribute.attribute, attribute.filter)} />
             {values}
           </div>
         );

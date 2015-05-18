@@ -85,7 +85,7 @@ var LoginForm = React.createClass({
         {title}
         <fieldset>
           <FormField htmlFor="username" label="Username">
-            <input id="username" ref="username" type="text" />
+            <input id="username" ref="username" type="email" />
           </FormField>
           <FormField htmlFor="password" label="Password">
             <input id="password" ref="password" type="password" />

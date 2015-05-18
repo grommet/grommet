@@ -9,7 +9,7 @@ var Title = require('grommet/components/Title');
 var Search = require('grommet/components/Search');
 var TourSessionMenu = require('./TourSessionMenu');
 var Layer = require('grommet/components/Layer');
-var CloseIcon = require('grommet/components/icons/Clear');
+var Logo = require('./MediumLogo');
 var TourMain = require('./TourMain');
 var IndexDonut = require('grommet/components/index/IndexDonut');
 var IndexHistory = require('grommet/components/index/IndexHistory');
@@ -24,7 +24,7 @@ var CONFIG = [
       category: 'tasks',
       attribute: 'status',
       interval: 'days',
-      count: 20
+      count: 10
     }
   },
   {
@@ -79,7 +79,7 @@ var TourDashboard = React.createClass({
     clearTimeout(this._timer);
     this._timer = setTimeout(function () {
       // set wide chart count according to the space we have
-      var count = Math.round(Math.max(10, window.innerWidth / 40));
+      var count = Math.round(Math.max(8, window.innerWidth / 40));
       var tiles = this.state.tiles.map(function (tile) {
         if (tile.wide) {
           return merge(tile, {params: {count: count}});
@@ -145,12 +145,11 @@ var TourDashboard = React.createClass({
       );
     }, this);
 
-    var closer = <div onClick={this._onCloseMain}><CloseIcon /></div>;
     var main = (
       <Layer align="left" flush={true}
         hidden={! this.state.mainActive} peek={this.state.mainPeek}
-        closer={closer} onClose={this._onCloseMain}>
-        <TourMain primary={false} />
+        onClose={this._onCloseMain}>
+        <TourMain primary={false} onClose={this._onCloseMain} />
       </Layer>
     );
 
@@ -160,7 +159,10 @@ var TourDashboard = React.createClass({
           <span>
             <span onMouseOver={this._onOverTitle}
               onMouseOut={this._onOutTitle}>
-              <Title onClick={this._onClickTitle}>Medium App</Title>
+              <Title onClick={this._onClickTitle}>
+                <Logo />
+                <span>Medium App</span>
+              </Title>
             </span>
             <Search ref="search" inline={true} />
           </span>

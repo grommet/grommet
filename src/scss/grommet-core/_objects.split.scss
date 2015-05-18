@@ -7,36 +7,26 @@
     display: flex;
     height: 100vh;
 
-    > div {
+    > * {
       -webkit-flex: 1 0;
       flex: 1 0;
       position: relative;
       height: 100vh;
       overflow: auto;
+    }
 
-      &:first-child:not(:last-of-type) {
-        max-width: $sidebar-width;
+    &--flex-right {
+      > *:first-child:not(:last-child) {
+        -webkit-flex: 0 0 $sidebar-width;
+        flex: 0 0 $sidebar-width;
       }
     }
 
-    &--right {
-      > div:first-child {
-        -webkit-flex: 0 0 auto;
-        flex: 0 0 auto;
+    &--flex-left {
+      > *:last-child:not(:first-child) {
+        -webkit-flex: 0 0 $sidebar-width;
+        flex: 0 0 $sidebar-width;
       }
-    }
-
-    &--left {
-      > div:last-child {
-        -webkit-flex: 0 0 auto;
-        flex: 0 0 auto;
-      }
-    }
-  }
-
-  @include media-query(palm) {
-    > div:not(:last-of-type) {
-      display: none;
     }
   }
 }

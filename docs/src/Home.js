@@ -13,7 +13,7 @@ var MobileFirst = require('./img/MobileFirst');
 var Customizable = require('./img/Customizable');
 var Tooling = require('./img/Tooling');
 var Console = require('./img/Console');
-var NextIcon = require('grommet/components/icons/Next');
+var NextIcon = require('grommet/components/icons/Right');
 
 var Home = React.createClass({
 

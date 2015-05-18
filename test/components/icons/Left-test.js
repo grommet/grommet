@@ -1,17 +1,17 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-var __path__ = '../../src/js/components/icons/Previous';
+var __path__ = '../../src/js/components/icons/Left';
 
 var ReactTestUtils = require('../../mocks/ReactTestUtils');
 
 describe('Grommet Previous', function() {
-  it('loads an previous icon', function() {
+  it('loads an left icon', function() {
     var Component = ReactTestUtils.getComponent(__path__);
 
-    ReactTestUtils.componentShouldExist(Component, 'control-icon-previous');
+    ReactTestUtils.componentShouldExist(Component, 'control-icon-left');
   });
 
-  it('loads a custom previous icon', function() {
+  it('loads a custom left icon', function() {
     var Component = ReactTestUtils.getComponent(__path__, null, { className: 'testing' });
 
     ReactTestUtils.componentShouldExist(Component, 'testing');

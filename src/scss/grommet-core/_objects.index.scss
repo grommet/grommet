@@ -26,26 +26,34 @@
 .index-header {
   position: relative;
 
-  .index-header__count {
-    position: absolute;
-    right: $inuit-base-spacing-unit;
-    bottom: - $inuit-base-spacing-unit - 1; //- round($inuit-base-spacing-unit * 3/4);
-    padding-left: quarter($inuit-base-spacing-unit);
-    padding-right: quarter($inuit-base-spacing-unit);
-    @include inuit-font-size($label-font-size);
+  &__count {
     color: $secondary-text-color;
-    background-color: $background-color;
-    text-align: right;
-    white-space: nowrap;
+    @include inuit-font-size($label-font-size, inherit);
+
+    @include media-query(palm) {
+      margin-left: halve($inuit-base-spacing-unit);
+    }
+
+    @include media-query(lap-and-up) {
+      position: absolute;
+      right: $inuit-base-spacing-unit;
+      bottom: 0px; //- $inuit-base-spacing-unit - 1; //- round($inuit-base-spacing-unit * 3/4);
+      padding-left: quarter($inuit-base-spacing-unit);
+      padding-right: quarter($inuit-base-spacing-unit);
+      @include inuit-font-size($label-font-size);
+      background-color: $background-color;
+      text-align: right;
+      white-space: nowrap;
+    }
   }
 
   &__out-of {
-    margin-left: quarter($inuit-base-spacing-unit);
     display: none;
 
     @include media-query(lap-and-up) {
       &--active {
         display: inline;
+        margin-left: quarter($inuit-base-spacing-unit);
       }
     }
   }
@@ -60,17 +68,12 @@
   }
 
   &__filter {
-    //display: block;
     margin-bottom: $inuit-base-spacing-unit;
 
-    //&-label {
-    //  display: block;
-    //  color: $secondary-text-color;
-    //}
-
-    //&-value {
-    //  display: block;
-    //}
+    &-value {
+      display: block;
+      margin-bottom: quarter($inuit-base-spacing-unit);
+    }
   }
 }
 

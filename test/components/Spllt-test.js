@@ -15,9 +15,9 @@ describe('Grommet Split', function() {
 
   it('loads a left Split', function() {
     var React = require('react/addons');
-    var Component = ReactTestUtils.getComponent(__path__, <h2>Split left</h2>, { bias: 'left' });
+    var Component = ReactTestUtils.getComponent(__path__, <h2>Split left</h2>, { flex: 'left' });
 
-    ReactTestUtils.componentShouldExist(Component, 'split--left', 'Split left');
+    ReactTestUtils.componentShouldExist(Component, 'split--flex-left', 'Split left');
   });
 
   it('loads a custom Split', function() {

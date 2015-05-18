@@ -2,7 +2,7 @@
 
 .menu {
   position: relative;
-  display: inline-block;
+  //display: inline-block;
   //@include inuit-font-size($inuit-heading-size-4, inherit);
 
   a:not(.button) {
@@ -68,8 +68,8 @@
 
   &__layer {
     position: fixed;
-    z-index: 5;
-    @include inuit-font-size($inuit-heading-size-3, inherit);
+    z-index: 10;
+    @include inuit-font-size($inuit-base-font-size, inherit);
     background-color: $background-color;
     border: $layer-border;
     border-radius: $border-radius;

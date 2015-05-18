@@ -19,12 +19,18 @@ var OPTIONS = {
 };
 
 var Enclosures = React.createClass({
+
+  propTypes: {
+    onMain: React.PropTypes.func
+  },
+
   render: function () {
     return (
       <TourIndex
         resourceRoute="enclosure"
         selectionRoute="enclosure-overview"
-        options={OPTIONS} />
+        options={OPTIONS}
+        onMain={this.props.onMain} />
     );
   }
 });

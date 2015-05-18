@@ -16,6 +16,10 @@ var PAGES = [
 
 var TourMainMenu = React.createClass({
 
+  propTypes: {
+    onClose: React.PropTypes.func
+  },
+
   render: function() {
     var pages = PAGES.map(function (page) {
       return (

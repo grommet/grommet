@@ -8,6 +8,8 @@ var Index = require('grommet/components/index/Index');
 var IndexQuery = require('grommet/utils/IndexQuery');
 var Rest = require('grommet/utils/Rest');
 var Actions = require('grommet/actions/Actions');
+var Title = require('grommet/components/Title');
+var Logo = require('./MediumLogo');
 
 var TourIndex = React.createClass({
 
@@ -34,6 +36,7 @@ var TourIndex = React.createClass({
         query: React.PropTypes.object
       })
     }),
+    onMain: React.PropTypes.func
   },
 
   contextTypes: {
@@ -59,6 +62,7 @@ var TourIndex = React.createClass({
     }
   },
 
+  // only called when this.props.manageData is true
   _getData: function () {
     var params = merge({}, this.state.options.params);
     if (params.query && (typeof params.query === 'object')) {
@@ -87,6 +91,16 @@ var TourIndex = React.createClass({
     }
   },
 
+  _onResponsive: function (responsive) {
+    this.setState({responsive: responsive});
+    if ('multiple' === responsive) {
+      this.setState({showMain: true});
+    }
+    if ('single' === responsive) {
+      this.setState({showMain: false});
+    }
+  },
+
   getInitialState: function () {
     var options = this.props.options;
     var queryText = this.context.router.getCurrentQuery().q;
@@ -94,7 +108,10 @@ var TourIndex = React.createClass({
       options = merge(this.props.options,
         {params: {query: IndexQuery.create(queryText)}});
     }
-    var state = {options: options, selection: null};
+    var state = {
+      options: options,
+      selection: null,
+    };
     if (this.props.manageData) {
       state.result = {};
     }
@@ -115,16 +132,47 @@ var TourIndex = React.createClass({
     this._setSelectionFromLocation();
   },
 
-  render: function () {
+  _renderIndex: function (navControl) {
     return (
-      <Split>
-        <Index
-          options={this.state.options}
-          result={this.state.result}
-          selection={this.state.selection}
-          onSelect={this._onSelect}
-          onQuery={this._onQuery} />
-        <RouteHandler />
+      <Index
+        options={this.state.options}
+        result={this.state.result}
+        selection={this.state.selection}
+        onSelect={this._onSelect}
+        onQuery={this._onQuery}
+        navControl={navControl} />
+    );
+  },
+
+  render: function () {
+    var navControl = null;
+    if (this.props.onMain) {
+      navControl = (
+        <Title onClick={this.props.onMain}>
+          <Logo />
+        </Title>
+      );
+    }
+
+    var resourceRouted = this.context.router.getCurrentRoutes().length >= 4;
+    var pane1;
+    var pane2;
+
+    if ('single' === this.state.responsive) {
+      if (resourceRouted) {
+        pane1 = <RouteHandler />;
+      } else {
+        pane1 = this._renderIndex(navControl);
+      }
+    } else {
+      pane1 = this._renderIndex(navControl);
+      pane2 = <RouteHandler />;
+    }
+
+    return (
+      <Split onResponsive={this._onResponsive}>
+        {pane1}
+        {pane2}
       </Split>
     );
   }

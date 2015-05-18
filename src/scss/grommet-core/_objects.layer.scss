@@ -29,8 +29,16 @@
 
   &__closer {
     position: absolute;
-    top: $inuit-base-spacing-unit;
-    right: $inuit-base-spacing-unit;
+
+    @include media-query(palm) {
+      top: 0px;
+      right: 0px;
+    }
+
+    @include media-query(lap-and-up) {
+      top: $inuit-base-spacing-unit;
+      right: $inuit-base-spacing-unit;
+    }
   }
 
   &--closeable {

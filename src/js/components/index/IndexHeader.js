@@ -2,6 +2,7 @@
 
 var React = require('react');
 var Header = require('../Header');
+var Menu = require('../Menu');
 var Search = require('../Search');
 var IndexFilters = require('./IndexFilters');
 var IndexQuery = require('../../utils/IndexQuery');
@@ -26,7 +27,8 @@ var IndexHeader = React.createClass({
     fixed: React.PropTypes.bool,
     total: React.PropTypes.number,
     unfilteredTotal: React.PropTypes.number,
-    onQuery: React.PropTypes.func.isRequired
+    onQuery: React.PropTypes.func.isRequired,
+    navControl: React.PropTypes.node
   },
 
   _onSearchChange: function (text) {
@@ -73,9 +75,19 @@ var IndexHeader = React.createClass({
       );
     }
 
+    var navControl = null;
+    if (this.props.navControl) {
+      navControl = (
+        <Menu className={CLASS_ROOT + "__nav-control"}>
+          {this.props.navControl}
+        </Menu>
+      );
+    }
+
     return (
       <Header className={classes.join(' ')}
         fixed={this.props.fixed} flush={false} large={true}>
+        {navControl}
         <Search className={CLASS_ROOT + "__search"}
           inline={true}
           placeHolder={"Search " + this.props.options.label}

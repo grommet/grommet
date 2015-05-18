@@ -16,18 +16,23 @@ var OPTIONS = {
     category: 'server-hardware',
     start: 0,
     count: 20,
-    query: null
   }
 };
 
 var Servers = React.createClass({
+
+  propTypes: {
+    onMain: React.PropTypes.func
+  },
+
   render: function () {
     return (
       <TourIndex
         manageData={true}
         resourceRoute="server"
         selectionRoute="server-overview"
-        options={OPTIONS} />
+        options={OPTIONS}
+        onMain={this.props.onMain} />
     );
   }
 });

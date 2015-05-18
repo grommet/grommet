@@ -2,10 +2,10 @@
 
 var React = require('react');
 
-var Previous = React.createClass({
+var Left = React.createClass({
 
   render: function() {
-    var className = 'control-icon control-icon-previous';
+    var className = 'control-icon control-icon-left';
     if (this.props.className) {
       className += ' ' + this.props.className;
     }
@@ -21,4 +21,4 @@ var Previous = React.createClass({
 
 });
 
-module.exports = Previous;
+module.exports = Left;

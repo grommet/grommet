@@ -8,7 +8,9 @@
   cursor: pointer;
   fill: $icon-color;
   stroke: $icon-color;
-  transition: all $base-animation-duration ease-in-out;
+  @include media-query(lap-and-up) {
+    transition: all $base-animation-duration ease-in-out;
+  }
 
   &:hover {
     fill: $active-icon-color;
@@ -105,4 +107,12 @@
     width: halve($inuit-base-spacing-unit);
     height: halve($inuit-base-spacing-unit);
   }
+}
+
+.logo-icon {
+  display: inline-block;
+  width: double($inuit-base-spacing-unit);
+  height: double($inuit-base-spacing-unit);
+  vertical-align: middle;
+  margin-right: $inuit-base-spacing-unit;
 }

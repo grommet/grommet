@@ -2,10 +2,10 @@
 
 var React = require('react');
 
-var Next = React.createClass({
+var Right = React.createClass({
 
   render: function() {
-    var className = 'control-icon control-icon-next';
+    var className = 'control-icon control-icon-right';
     if (this.props.className) {
       className += ' ' + this.props.className;
     }
@@ -21,4 +21,4 @@ var Next = React.createClass({
 
 });
 
-module.exports = Next;
+module.exports = Right;

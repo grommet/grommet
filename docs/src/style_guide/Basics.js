@@ -12,8 +12,8 @@ var CONTROL_ICONS = [
   {icon: 'Filter'},
   {icon: 'Search'},
   {icon: 'Help'},
-  {icon: 'Next'},
-  {icon: 'Previous'},
+  {icon: 'Left', labels: ['Left', 'Previous']},
+  {icon: 'Right', labels: ['Right', 'Next']},
   {icon: 'Down'},
   {icon: 'Up'},
   {icon: 'Top'}

@@ -30,6 +30,7 @@ var Activity = React.createClass({
     label: React.PropTypes.string,
     onQuery: React.PropTypes.func,
     onSelect: React.PropTypes.func,
+    navControl: React.PropTypes.node,
     query: React.PropTypes.object,
     selection: React.PropTypes.oneOfType([
       React.PropTypes.string, // uri
@@ -59,7 +60,8 @@ var Activity = React.createClass({
         options={this.state.options}
         selection={this.props.selection}
         onQuery={this.props.onQuery}
-        onSelect={this.props.onSelect} />
+        onSelect={this.props.onSelect}
+        navControl={this.props.navControl} />
     );
   }
 
