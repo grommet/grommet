@@ -322,8 +322,8 @@ gulp.task('release:npm', function(done) {
   spawn('npm', ['publish'], { stdio: 'inherit' }).on('close', function() {
     process.chdir(__dirname);
     var version = 'v'+getPackageJSON().version;
-    gulp.src('./*')
-      .pipe(git.add())
+    gulp.src('./')
+      .pipe(git.add({args: '--all'}))
       .pipe(git.commit(version)).on('end', function() {
         git.push('origin', 'master', function (err) {
           if (err) {
@@ -369,8 +369,8 @@ gulp.task('release:bower', ['release:createTmp'], function(done) {
 
       var version = 'v'+getPackageJSON().version;
       process.chdir('./tmp/grommet-bower');
-      gulp.src('./*')
-        .pipe(git.add())
+      gulp.src('./')
+        .pipe(git.add({args: '--all'}))
         .pipe(git.commit(version)).on('end', function() {
           git.push('origin', 'master', function (err) {
             if (err) {
