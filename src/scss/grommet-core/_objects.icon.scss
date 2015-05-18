@@ -8,6 +8,7 @@
   cursor: pointer;
   fill: $icon-color;
   stroke: $icon-color;
+
   @include media-query(lap-and-up) {
     transition: all $base-animation-duration ease-in-out;
   }
