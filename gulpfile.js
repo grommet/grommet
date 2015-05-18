@@ -401,10 +401,6 @@ gulp.task('release:clean', function() {
 });
 
 gulp.task('release:sync', function() {
-  gulp.src('./examples/server/gulpfile.js').pipe(chug({
-    tasks: ['sync']
-  }));
-
   gulp.src('./docs/gulpfile.js').pipe(chug({
     tasks: ['sync']
   }));
@@ -415,6 +411,5 @@ gulp.task('release:sync', function() {
 });
 
 gulp.task('release', function(done) {
-  //TODO: commit files on both npm and bower. tag both bower and npm. sync both grommet and the website.
-  runSequence('release:bump', ['dist-bower', 'dist'], 'release:npm', 'release:bower', 'release:sync', 'release:clean', done);
+  runSequence('release:bump', ['dist-bower', 'dist'], 'release:npm', 'release:bower', 'release:clean', 'release:sync', done);
 });
