@@ -1,11 +1,8 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var IntlMixin = require('../mixins/GrommetIntlMixin');
 
 var App = React.createClass({
-
-  mixins: [IntlMixin],
 
   propTypes: {
     centered: React.PropTypes.bool,
