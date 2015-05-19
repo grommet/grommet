@@ -14,13 +14,27 @@ function polarToCartesian (centerX, centerY, radius, angleInDegrees) {
   };
 }
 
-function describeArc (x, y, radius, startAngle, endAngle) {
+function arcCommands (x, y, radius, startAngle, endAngle) {
   var start = polarToCartesian(x, y, radius, endAngle);
   var end = polarToCartesian(x, y, radius, startAngle);
   var arcSweep = endAngle - startAngle <= 180 ? "0" : "1";
   var d = [
-      "M", start.x, start.y,
-      "A", radius, radius, 0, arcSweep, 0, end.x, end.y
+    "M", start.x, start.y,
+    "A", radius, radius, 0, arcSweep, 0, end.x, end.y
+  ].join(" ");
+  return d;
+}
+
+function activeIndicatorCommands (x, y, radius, startAngle, endAngle) {
+  var midAngle = endAngle - ((endAngle - startAngle) / 2);
+  var point = polarToCartesian(x, y, radius - 24, midAngle);
+  var start = polarToCartesian(x, y, radius, midAngle - 10);
+  var end = polarToCartesian(x, y, radius, midAngle + 10);
+  //var arcSweep = endAngle - startAngle <= 180 ? "0" : "1";
+  var d = ["M", point.x, point.y,
+    "L", start.x, start.y,
+    "A", radius, radius, 0, 0, 0, end.x, end.y,
+    "Z"
   ].join(" ");
   return d;
 }
@@ -203,15 +217,15 @@ var Donut = React.createClass({
     var value = null;
     var units = null;
     var label = null;
+    var activeIndicator = null;
 
     var paths = this.props.series.map(function (item, index) {
 
       var endAngle = Math.min(360, Math.max(10, startAngle + (anglePer * item.value)));
       var radius = 84;
       // start from the bottom
-      var commands = describeArc(BASE_SIZE/2, BASE_SIZE/2, radius,
+      var commands = arcCommands(BASE_SIZE/2, BASE_SIZE/2, radius,
         startAngle + 180, endAngle + 180);
-      startAngle = endAngle;
       var colorIndex = this._itemColorIndex(item, index);
 
       var sliceClasses = [CLASS_ROOT + "__slice"];
@@ -222,6 +236,18 @@ var Donut = React.createClass({
         units = item.units;
         label = item.label;
       }
+
+      if (index === this.state.activeIndex) {
+        var indicatorCommands = activeIndicatorCommands(BASE_SIZE/2, BASE_SIZE/2, radius,
+          startAngle + 180, endAngle + 180);
+        activeIndicator = (
+          <path stroke="none"
+            className={CLASS_ROOT + "__slice-indicator color-index-" + colorIndex}
+            d={indicatorCommands} />
+        );
+      }
+
+      startAngle = endAngle;
 
       return(
         <path key={item.label} fill="none" className={sliceClasses.join(' ')} d={commands}
@@ -260,7 +286,10 @@ var Donut = React.createClass({
           <svg className={CLASS_ROOT + "__graphic"}
             viewBox={"0 0 " + BASE_SIZE + " " + viewBoxHeight}
             preserveAspectRatio="xMidYMid meet">
-            <g>{paths}</g>
+            <g>
+              {activeIndicator}
+              {paths}
+            </g>
           </svg>
           <div className={CLASS_ROOT + "__active"}>
             <div className={CLASS_ROOT + "__active-value large-number-font"}>

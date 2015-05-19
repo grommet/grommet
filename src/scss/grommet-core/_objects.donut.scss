@@ -31,27 +31,29 @@
     width: 100%;
     height: 100%;
     overflow: visible;
-
-    path {
-      stroke-width: $inuit-base-spacing-unit;
-      stroke-linecap: butt;
-      stroke-dasharray: quadruple($panel-width) quadruple($panel-width);
-      stroke-dashoffset: 0;
-      fill: none;
-      cursor: pointer;
-
-      @include media-query(lap-and-up) {
-        @include animation('draw-stroke 3s');
-      }
-
-      &.donut__slice--active {
-        stroke-width: $inuit-base-spacing-unit;
-      }
-    }
   }
 
   &__slice {
+    stroke-width: $inuit-base-spacing-unit;
+    stroke-linecap: butt;
+    stroke-dasharray: quadruple($panel-width) quadruple($panel-width);
+    stroke-dashoffset: 0;
+    fill: none;
+    cursor: pointer;
+
     @include graph-stroke-color();
+
+    @include media-query(lap-and-up) {
+      @include animation('draw-stroke 3s');
+    }
+
+    &-indicator {
+      @include graph-fill-color;
+    }
+
+    &--active {
+      stroke-width: $inuit-base-spacing-unit;
+    }
   }
 
   &__active {
@@ -101,6 +103,7 @@
     text-align: left;
     list-style-type: none;
     white-space: normal;
+    display: inline-block;
     margin: $inuit-base-spacing-unit 0 0;
   }
 
@@ -186,8 +189,7 @@
   &--portrait {
 
     .donut {
-      &__graphic-container,
-      &__legend {
+      &__graphic-container {
         display: block;
       }
 

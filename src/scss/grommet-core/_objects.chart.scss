@@ -21,11 +21,11 @@
     }
 
     &-area {
-      @include graph-fill-color-translucent();
+      @include graph-fill-color-translucent(0.7);
     }
 
     &-bar {
-      @include graph-fill-color-translucent();
+      @include graph-fill-color-translucent(0.7);
 
       &--active {
         @include graph-fill-color();
