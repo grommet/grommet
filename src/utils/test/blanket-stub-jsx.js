@@ -51,10 +51,12 @@ module.exports = function(blanket) {
   var antifilters = blanket.options('antifilter');
   var pattern = blanket.options('filter') + '/**/*.js';
   glob.sync(pattern).forEach(function(file) {
-    for (var i = 0; i < antifilters.length; i++) {
-      var antifilter = antifilters[i];
-      if (file.indexOf(antifilter) > 0) {
-        return;
+    if (antifilters) {
+      for (var i = 0; i < antifilters.length; i++) {
+        var antifilter = antifilters[i];
+        if (file.indexOf(antifilter) > 0) {
+          return;
+        }
       }
     }
 
