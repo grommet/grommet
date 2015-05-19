@@ -26,7 +26,7 @@ var Home = React.createClass({
           <img className="home__logo" src="img/grommet.svg" title="Grommet" />
           <h1 className="home__title">Grommet</h1>
           <h3>The most advanced UI framework for enterprise applications.</h3>
-          <Menu direction="right">
+          <Menu direction="center">
             <span>
               Grab the Grommet <a href={assetsPath + 'grommet_sticker_sheet.ai'} target="_blank">
                 Sticker Sheet <NextIcon />

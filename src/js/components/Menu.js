@@ -13,7 +13,7 @@ var MenuLayer = React.createClass({
 
   propTypes: {
     align: React.PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
-    direction: React.PropTypes.oneOf(['up', 'down', 'left', 'right']),
+    direction: React.PropTypes.oneOf(['up', 'down', 'left', 'right', 'center']),
     onClick: React.PropTypes.func.isRequired,
     router: React.PropTypes.func
   },
@@ -49,7 +49,7 @@ var Menu = React.createClass({
   propTypes: {
     align: React.PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
     collapse: React.PropTypes.bool,
-    direction: React.PropTypes.oneOf(['up', 'down', 'left', 'right']),
+    direction: React.PropTypes.oneOf(['up', 'down', 'left', 'right', 'center']),
     icon: React.PropTypes.node,
     label: React.PropTypes.string,
     primary: React.PropTypes.bool,

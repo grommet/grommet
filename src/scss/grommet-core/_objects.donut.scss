@@ -7,6 +7,11 @@
 
 .donut {
 
+  @include media-query(palm) {
+    width: $panel-width;
+    margin: 0px auto;
+  }
+
   &.series-pre {
     path {
       stroke-dashoffset: quadruple($panel-width);
@@ -96,6 +101,7 @@
     text-align: left;
     list-style-type: none;
     white-space: normal;
+    margin: $inuit-base-spacing-unit 0 0;
   }
 
   &__legend-item,
@@ -160,17 +166,19 @@
   }
 
   &--landscape {
-    white-space: nowrap;
+    @include media-query(lap-and-up) {
+      white-space: nowrap;
 
-    .donut {
-      &__graphic-container,
-      &__legend {
-        display: inline-block;
-        vertical-align: middle;
-      }
+      .donut {
+        &__graphic-container,
+        &__legend {
+          display: inline-block;
+          vertical-align: middle;
+        }
 
-      &__legend {
-        margin: 0 0 0 $inuit-base-spacing-unit;
+        &__legend {
+          margin: 0 0 0 $inuit-base-spacing-unit;
+        }
       }
     }
   }

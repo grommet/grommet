@@ -1,20 +1,23 @@
 // (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
 
 .tiles {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
   padding: halve($inuit-base-spacing-unit);
 
-  > .tile {
-    -webkit-flex: 0 0 round($inuit-base-spacing-unit * 8);
-    flex: 0 0 round($inuit-base-spacing-unit * 8);
-    flex-grow: 1;
+  @include media-query(lap-and-up) {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
 
-    &--wide {
-      -webkit-flex-basis: 100%;
-      flex-basis: 100%;
+    > .tile {
+      -webkit-flex: 0 0 round($inuit-base-spacing-unit * 8);
+      flex: 0 0 round($inuit-base-spacing-unit * 8);
+      flex-grow: 1;
+
+      &--wide {
+        -webkit-flex-basis: 100%;
+        flex-basis: 100%;
+      }
     }
   }
 
@@ -35,44 +38,54 @@
     @include media-query(lap-and-up) {
       margin: - $inuit-base-spacing-unit;
 
-      > .tile {
-        -webkit-flex: 0 0 round($inuit-base-spacing-unit * 7);
-        flex: 0 0 round($inuit-base-spacing-unit * 7);
-        flex-grow: 1;
+      @include media-query(lap-and-up) {
+        > .tile {
+          -webkit-flex: 0 0 round($inuit-base-spacing-unit * 7);
+          flex: 0 0 round($inuit-base-spacing-unit * 7);
+          flex-grow: 1;
+        }
       }
     }
   }
 
   &--small {
-    > .tile {
-      -webkit-flex-basis: round($inuit-base-spacing-unit * 4);
-      flex-basis: round($inuit-base-spacing-unit * 4);
+    @include media-query(lap-and-up) {
+      > .tile {
+        -webkit-flex-basis: round($inuit-base-spacing-unit * 4);
+        flex-basis: round($inuit-base-spacing-unit * 4);
+      }
     }
   }
 
   &--fill {
-    -webkit-align-items: stretch;
-    align-items: stretch;
-    -webkit-align-content: stretch;
-    align-content: stretch;
+    @include media-query(lap-and-up) {
+      -webkit-align-items: stretch;
+      align-items: stretch;
+      -webkit-align-content: stretch;
+      align-content: stretch;
 
-    > .tile {
-      -webkit-flex-grow: 1;
-      flex-grow: 1;
+      > .tile {
+        -webkit-flex-grow: 1;
+        flex-grow: 1;
+      }
     }
   }
 }
 
 .tile {
-  -webkit-flex: 0 0 round($inuit-base-spacing-unit * 8);
-  flex: 0 0 round($inuit-base-spacing-unit * 8);
-  flex-grow: 1;
   padding: halve($inuit-base-spacing-unit);
   overflow: hidden;
 
   @include media-query(palm) {
     margin: 0px;
     border-radius: 0px;
+    text-align: center;
+  }
+
+  @include media-query(lap-and-up) {
+    -webkit-flex: 0 0 round($inuit-base-spacing-unit * 8);
+    flex: 0 0 round($inuit-base-spacing-unit * 8);
+    flex-grow: 1;
   }
 
   .status-icon {
@@ -86,19 +99,6 @@
       border-bottom: none;
     }
   }
-
-  //@include media-query(lap-and-up) {
-  //  display: -webkit-flex;
-  //  display: flex;
-  //  -webkit-flex-direction: column;
-  //  flex-direction: column;
-  //
-  //  > .header,
-  //  > .footer {
-  //    -webkit-flex: 0 0 auto;
-  //    flex: 0 0 auto;
-  //  }
-  //}
 
   &--selectable {
     cursor: pointer;
