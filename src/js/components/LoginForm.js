@@ -4,9 +4,12 @@ var React = require('react');
 var Form = require('./Form');
 var FormField = require('./FormField');
 var CheckBox = require('./CheckBox');
+var IntlMixin = require('../mixins/GrommetIntlMixin');
 var CLASS_ROOT = "login-form";
 
 var LoginForm = React.createClass({
+
+  mixins: [IntlMixin],
 
   propTypes: {
     logo: React.PropTypes.node,
@@ -91,7 +94,7 @@ var LoginForm = React.createClass({
           </FormField>
         </fieldset>
         {errors}
-        <input type="submit" className={CLASS_ROOT + "__submit primary call-to-action"} value={'Log In'} />
+        <input type="submit" className={CLASS_ROOT + "__submit primary call-to-action"} value={this.getIntlMessage('LoginForm.btn_label')} />
         {footer}
       </Form>
     );
