@@ -10,10 +10,15 @@ var IntlMixin = ReactIntl.IntlMixin;
 module.exports = {
   mixins: [IntlMixin],
 
-  getDefaultProps: function () {
+  getDefaultProps: function() {
     return {
-      locales: 'en-US',
-      messages: require('../messages/en-US')
+      locales: 'en-US'
     };
+  },
+
+  getChildContext: function () {
+    if (!this.props.messages && !this.context.messages) {
+      this.context.messages = require('../messages/' + this.props.locales);
+    }
   }
 };

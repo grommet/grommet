@@ -7,14 +7,10 @@ var assert = require('assert');
 var App = require('../../src/js/components/App');
 
 module.exports = {
-  getComponent: function(path, testBody, props, excludeApp) {
+  getComponent: function(path, testBody, props) {
     var JSXComponent = require(path);
 
-    if (excludeApp) {
-      return TestUtils.renderIntoDocument(<div><JSXComponent {...props}>{testBody}</JSXComponent></div>);
-    } else {
-      return TestUtils.renderIntoDocument(<App><JSXComponent {...props}>{testBody}</JSXComponent></App>);
-    }
+    return TestUtils.renderIntoDocument(<div><JSXComponent {...props}>{testBody}</JSXComponent></div>);
   },
   componentShouldExist: function(component, className, assertContent) {
     var instance = TestUtils.findRenderedDOMComponentWithClass(component, className);

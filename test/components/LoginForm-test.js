@@ -4,7 +4,6 @@ var __path__ = '../../src/js/components/LoginForm';
 
 var GrommetTestUtils = require('../mocks/GrommetTestUtils');
 var expect = require('expect');
-var messages = require('../../src/js/messages/en-US');
 
 describe('Grommet LoginForm', function() {
   it('loads a basic LoginForm component', function() {
@@ -60,6 +59,35 @@ describe('Grommet LoginForm', function() {
     GrommetTestUtils.componentShouldExist(Component, 'login-form__error', 'This is a bad form');
   });
 
+  it('loads a LoginForm component with pt-BR locale', function() {
+    var Component = GrommetTestUtils.getComponent(__path__, undefined, {
+      locales: 'pt-BR'
+    });
+
+    GrommetTestUtils.componentShouldExist(Component, 'login-form');
+    var React = require('react/addons');
+    var TestUtils = React.addons.TestUtils;
+    var component = TestUtils.findRenderedDOMComponentWithClass(Component, 'call-to-action');
+    expect(component.getDOMNode().value).toBe('Logar');
+  });
+
+  it('loads a LoginForm component with pt-BR locale and custom messages', function() {
+    var Component = GrommetTestUtils.getComponent(__path__, undefined, {
+      locales: 'pt-BR',
+      messages: {
+        LoginForm: {
+          btn_label: 'Logar Test'
+        }
+      }
+    });
+
+    GrommetTestUtils.componentShouldExist(Component, 'login-form');
+    var React = require('react/addons');
+    var TestUtils = React.addons.TestUtils;
+    var component = TestUtils.findRenderedDOMComponentWithClass(Component, 'call-to-action');
+    expect(component.getDOMNode().value).toBe('Logar Test');
+  });
+
   it('submits a LoginForm with username and password', function(done) {
     var username = '';
     var password = '';
@@ -74,7 +102,7 @@ describe('Grommet LoginForm', function() {
     };
 
     var Component = TestUtils.renderIntoDocument(
-      <LoginForm onSubmit={_onSubmit} locales="en-US" messages={messages} />
+      <LoginForm onSubmit={_onSubmit} />
     );
 
     GrommetTestUtils.componentShouldExist(Component, 'login-form');
