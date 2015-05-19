@@ -18,9 +18,9 @@ var DonutDoc = React.createClass({
     ];
 
     var statusSeries = [
-      {label: 'Error', value: 10, colorIndex: 'error'},
+      {label: 'OK', value: 70, colorIndex: 'ok'},
       {label: 'Warning', value: 20, colorIndex: 'warning'},
-      {label: 'OK', value: 70, colorIndex: 'ok'}
+      {label: 'Error', value: 10, colorIndex: 'error', important: true}
     ];
 
     return (
@@ -71,6 +71,15 @@ var DonutDoc = React.createClass({
           </div>
           <pre><code className="html">
             {"<Donut series={" + JSON.stringify(statusSeries, null, '  ') + "} legend={true} />"}
+          </code></pre>
+
+          <h3>Partial</h3>
+          <div className="example">
+            <Donut series={genericSeries} partial={true} legend={true}
+              minLabel="0 TB" maxLabel="30 TB"/>
+          </div>
+          <pre><code className="html">
+            {"<Donut series={" + JSON.stringify(genericSeries, null, '  ') + "} partial={true} legend={true} />"}
           </code></pre>
 
         </section>

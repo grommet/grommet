@@ -75,15 +75,21 @@
   }
 
   &__legend {
-    position: absolute;
-    left: 0px;
-    margin: 0px;
     padding: halve($inuit-base-spacing-unit);
-    background-color: $active-background-color;
     display: inline-block;
-    text-align: left;
     list-style-type: none;
     pointer-events: none;
+
+    @include media-query(palm) {
+      margin: 0px auto;
+    }
+
+    @include media-query(lap-and-up) {
+      position: absolute;
+      left: 0px;
+      margin: 0px;
+      background-color: $active-background-color;
+    }
 
     &-label {
       text-align: right;

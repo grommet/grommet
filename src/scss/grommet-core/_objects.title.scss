@@ -47,7 +47,10 @@
     &:hover {
       color: $brand-color;
       cursor: pointer;
-      transition: color 0.3s;
+
+      @include media-query(lap-and-up) {
+        transition: color 0.3s;
+      }
     }
   }
 

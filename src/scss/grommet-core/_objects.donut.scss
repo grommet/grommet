@@ -34,7 +34,10 @@
       stroke-dashoffset: 0;
       fill: none;
       cursor: pointer;
-      @include animation('draw-stroke 3s');
+
+      @include media-query(lap-and-up) {
+        @include animation('draw-stroke 3s');
+      }
 
       &.donut__slice--active {
         stroke-width: $inuit-base-spacing-unit;
@@ -73,6 +76,22 @@
     }
   }
 
+  &__min-label,
+  &__max-label {
+    position: absolute;
+    bottom: 0px;
+    color: $secondary-text-color;
+    @include inuit-font-size($label-font-size);
+  }
+
+  &__min-label {
+    left: halve($inuit-base-spacing-unit);
+  }
+
+  &__max-label {
+    right: halve($inuit-base-spacing-unit);
+  }
+
   &__legend {
     text-align: left;
     list-style-type: none;
@@ -100,6 +119,7 @@
   }
 
   &__legend-item {
+    cursor: pointer;
 
     svg.donut__legend-item-swatch {
       width: halve($inuit-base-spacing-unit);
@@ -120,7 +140,6 @@
 
     &--active {
       color: $text-color;
-      font-weight: bold;
 
       svg.donut__legend-item-swatch {
         path {
@@ -170,9 +189,18 @@
     }
   }
 
+  &--partial {
+    .donut__graphic-container {
+      height: round($panel-width - $inuit-base-spacing-unit);
+    }
+  }
+
   &--small {
-    .donut__legend {
-      display: none;
+    // always display the legend on phones
+    @include media-query(lap-and-up) {
+      .donut__legend {
+        display: none;
+      }
     }
   }
 }

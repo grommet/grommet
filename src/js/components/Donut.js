@@ -2,7 +2,9 @@
 
 var React = require('react');
 
+var CLASS_ROOT = "donut";
 var BASE_SIZE = 192;
+var PARTIAL_SIZE = 168;
 
 function polarToCartesian (centerX, centerY, radius, angleInDegrees) {
   var angleInRadians = (angleInDegrees-90) * Math.PI / 180.0;
@@ -27,6 +29,9 @@ var Donut = React.createClass({
 
   propTypes: {
     legend: React.PropTypes.bool,
+    partial: React.PropTypes.bool,
+    maxLabel: React.PropTypes.string,
+    minLabel: React.PropTypes.string,
     series: React.PropTypes.arrayOf(React.PropTypes.shape({
       label: React.PropTypes.string,
       value: React.PropTypes.number,
@@ -34,13 +39,17 @@ var Donut = React.createClass({
         React.PropTypes.number, // 1-6
         React.PropTypes.string // status
       ]),
+      important: React.PropTypes.bool,
       onClick: React.PropTypes.func
     })).isRequired,
     units: React.PropTypes.string
   },
 
   _initialTimeout: function () {
-    this.setState({initial: false, activeIndex: 0});
+    this.setState({
+      initial: false,
+      activeIndex: this.state.importantIndex
+    });
     clearTimeout(this._timeout);
   },
 
@@ -49,7 +58,10 @@ var Donut = React.createClass({
   },
 
   _onMouseOut: function () {
-    this.setState({initial: false, activeIndex: 0});
+    this.setState({
+      initial: false,
+      activeIndex: this.state.importantIndex
+    });
   },
 
   _onResize: function() {
@@ -64,18 +76,35 @@ var Donut = React.createClass({
     var parentElement = this.refs.donut.getDOMNode().parentNode;
     var width = parentElement.offsetWidth;
     var height = parentElement.offsetHeight;
-    if (height < BASE_SIZE || width < BASE_SIZE ||
-      (width < (BASE_SIZE * 2) && height < (BASE_SIZE * 2))) {
+    var donutHeight = BASE_SIZE;
+    if (this.props.partial) {
+      donutHeight = PARTIAL_SIZE;
+    }
+    if (height < donutHeight || width < BASE_SIZE ||
+      (width < (BASE_SIZE * 2) && height < (donutHeight * 2))) {
       this.setState({size: 'small'});
     } else {
       this.setState({size: null});
     }
   },
 
+  _importantIndex: function (series) {
+    var result = 0;
+    series.some(function (data, index) {
+      if (data.important) {
+        result = index;
+        return true;
+      }
+    });
+    return result;
+  },
+
   getInitialState: function() {
+    var importantIndex = this._importantIndex(this.props.series);
     return {
       initial: true,
-      activeIndex: 0,
+      importantIndex: importantIndex,
+      activeIndex: importantIndex,
       legend: false,
       orientation: 'portrait'
     };
@@ -86,6 +115,14 @@ var Donut = React.createClass({
     this.setState({initial: true, activeIndex: 0});
     window.addEventListener('resize', this._onResize);
     setTimeout(this._onResize, 10);
+  },
+
+  componentWillReceiveProps: function (newProps) {
+    var importantIndex = this._importantIndex(newProps.series);
+    this.setState({
+      importantIndex: importantIndex,
+      activeIndex: importantIndex
+    });
   },
 
   componentWillUnmount: function() {
@@ -100,11 +137,12 @@ var Donut = React.createClass({
 
   _renderLegend: function () {
     var total = 0;
+    var classPrefix = CLASS_ROOT + "__legend";
 
     var legends = this.props.series.map(function (item, index) {
-      var legendClasses = ["donut__legend-item"];
+      var legendClasses = [classPrefix + "-item"];
       if (this.state.activeIndex === index) {
-        legendClasses.push("donut__legend-item--active");
+        legendClasses.push(classPrefix + "-item--active");
       }
       var colorIndex = this._itemColorIndex(item, index);
       total += item.value;
@@ -112,34 +150,43 @@ var Donut = React.createClass({
       return(
         <li key={item.label} className={legendClasses.join(' ')}
           onMouseOver={this._onMouseOver.bind(this, index)}
-          onMouseOut={this._onMouseOut.bind(this, index)}>
-          <svg className={"donut__legend-item-swatch color-index-" + colorIndex}
+          onMouseOut={this._onMouseOut.bind(this, index)}
+          onClick={item.onClick}>
+          <svg className={classPrefix + "-item-swatch color-index-" + colorIndex}
             viewBox="0 0 12 12">
             <path className={item.className} d="M 5 0 l 0 12" />
           </svg>
-          <span className="donut__legend-item-label">{item.label}</span>
-          <span className="donut__legend-item-value">{item.value}</span>
-          <span className="donut__legend-item-units">{this.props.units}</span>
+          <span className={classPrefix + "-item-label"}>{item.label}</span>
+          <span className={classPrefix + "-item-value"}>{item.value}</span>
+          <span className={classPrefix + "-item-units"}>{this.props.units}</span>
         </li>
       );
     }, this);
 
     return (
-      <ol className="donut__legend">
-        {legends}
-        <li className="donut__legend-total">
-          <span className="donut__legend-total-label">Total</span>
-          <span className="donut__legend-total-value">{total}</span>
-          <span className="donut__legend-total-units">{this.props.units}</span>
+      <ol className={classPrefix}>
+        {legends.reverse()}
+        <li className={classPrefix + "-total"}>
+          <span className={classPrefix + "-total-label"}>Total</span>
+          <span className={classPrefix + "-total-value"}>{total}</span>
+          <span className={classPrefix + "-total-units"}>{this.props.units}</span>
         </li>
       </ol>
     );
   },
 
   render: function() {
-    var classes = ["donut", "donut--" + this.state.orientation];
+    var classes = [CLASS_ROOT, CLASS_ROOT + "--" + this.state.orientation];
     if (this.state.size) {
-      classes.push("donut--" + this.state.size);
+      classes.push(CLASS_ROOT + "--" + this.state.size);
+    }
+    if (this.props.partial) {
+      classes.push(CLASS_ROOT + "--partial");
+    }
+
+    var viewBoxHeight = BASE_SIZE;
+    if (this.props.partial) {
+      viewBoxHeight = PARTIAL_SIZE;
     }
 
     var total = 0;
@@ -149,6 +196,10 @@ var Donut = React.createClass({
 
     var startAngle = 0;
     var anglePer = 360.0 / total;
+    if (this.props.partial) {
+      startAngle = 60;
+      anglePer = 240.0 / total;
+    }
     var value = null;
     var units = null;
     var label = null;
@@ -157,14 +208,16 @@ var Donut = React.createClass({
 
       var endAngle = Math.min(360, Math.max(10, startAngle + (anglePer * item.value)));
       var radius = 84;
-      var commands = describeArc(BASE_SIZE/2, BASE_SIZE/2, radius, startAngle, endAngle);
+      // start from the bottom
+      var commands = describeArc(BASE_SIZE/2, BASE_SIZE/2, radius,
+        startAngle + 180, endAngle + 180);
       startAngle = endAngle;
       var colorIndex = this._itemColorIndex(item, index);
 
-      var sliceClasses = ["donut__slice"];
+      var sliceClasses = [CLASS_ROOT + "__slice"];
       sliceClasses.push("color-index-" + colorIndex);
       if (this.state.activeIndex === index) {
-        sliceClasses.push("donut__slice--active");
+        sliceClasses.push(CLASS_ROOT + "__slice--active");
         value = item.value;
         units = item.units;
         label = item.label;
@@ -178,6 +231,24 @@ var Donut = React.createClass({
       );
     }, this);
 
+    var minLabel;
+    if (this.props.minLabel) {
+      minLabel = (
+        <div className={CLASS_ROOT + "__min-label"}>
+          {this.props.minLabel}
+        </div>
+      );
+    }
+
+    var maxLabel;
+    if (this.props.maxLabel) {
+      maxLabel = (
+        <div className={CLASS_ROOT + "__max-label"}>
+          {this.props.maxLabel}
+        </div>
+      );
+    }
+
     var legend = null;
     if (this.props.legend) {
       legend = this._renderLegend();
@@ -185,19 +256,21 @@ var Donut = React.createClass({
 
     return (
       <div ref="donut" className={classes.join(' ')}>
-        <div className="donut__graphic-container">
-          <svg className="donut__graphic"
-            viewBox={"0 0 " + BASE_SIZE + " " + BASE_SIZE}
+        <div className={CLASS_ROOT + "__graphic-container"}>
+          <svg className={CLASS_ROOT + "__graphic"}
+            viewBox={"0 0 " + BASE_SIZE + " " + viewBoxHeight}
             preserveAspectRatio="xMidYMid meet">
             <g>{paths}</g>
           </svg>
-          <div className="donut__active">
-            <div className="donut__active-value large-number-font">
+          <div className={CLASS_ROOT + "__active"}>
+            <div className={CLASS_ROOT + "__active-value large-number-font"}>
               {value}
-              <span className="donut__active-units large-number-font">{units}</span>
+              <span className={CLASS_ROOT + "__active-units large-number-font"}>{units}</span>
             </div>
-            <div className="donut__active-label">{label}</div>
+            <div className={CLASS_ROOT + "__active-label"}>{label}</div>
           </div>
+          {minLabel}
+          {maxLabel}
         </div>
         {legend}
       </div>

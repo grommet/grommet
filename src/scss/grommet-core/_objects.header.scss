@@ -45,6 +45,7 @@
     > * {
       -webkit-flex: 1 0;
       flex: 1 0;
+      overflow: hidden;
 
       &:last-child:not(:first-child) {
         -webkit-flex: 0 0 auto;
