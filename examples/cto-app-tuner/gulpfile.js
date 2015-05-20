@@ -13,6 +13,11 @@ var opts = {
   jsAssets: ['src/js/**/*.js'],
   mainJs: 'src/js/index.js',
   mainScss: 'src/scss/index.scss',
+  sync: {
+    hostname: 'grommet.usa.hp.com',
+    username: 'ligo',
+    remoteDestination: '/var/www/html/examples/cto-app-tuner/dist'
+  },
   devServerPort: 9000,
   webpack: {
     devAlias: { // TODO: remove, just for local dev
