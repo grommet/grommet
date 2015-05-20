@@ -23,6 +23,19 @@ module.exports = {
     });
     return IndexActionsMock;
   },
+  successGetAggregateAction: function() {
+    var IndexActionsMock = rewire(__path__);
+    IndexActionsMock.__set__('Rest', {
+      get: function () {
+        return {
+          end: function (callback) {
+            callback(undefined, { ok: true, body: [{ counts: [{count: 10, value: 'Test1'}, {count: 20, value: 'Test2'}]}]});
+          }
+        };
+      }
+    });
+    return IndexActionsMock;
+  },
   badRequestIndexAction: function() {
     var IndexActionsMock = rewire(__path__);
     IndexActionsMock.__set__('Rest', {
