@@ -28,6 +28,7 @@ var FormFieldDoc = require('./components/FormFieldDoc');
 var HeaderDoc = require('./components/HeaderDoc');
 var LayerDoc = require('./components/LayerDoc');
 var LoginFormDoc = require('./components/LoginFormDoc');
+var MapDoc = require('./components/MapDoc');
 var MenuDoc = require('./components/MenuDoc');
 var MeterDoc = require('./components/MeterDoc');
 var RadioButtonDoc = require('./components/RadioButtonDoc');
@@ -82,6 +83,7 @@ var CONTENTS = [
       {route: 'doc_header', label: 'Header', component: HeaderDoc},
       {route: 'doc_layer', label: 'Layer', component: LayerDoc},
       {route: 'doc_login-form', label: 'LoginForm', component: LoginFormDoc},
+      {route: 'doc_map', label: 'Map', component: MapDoc},
       {route: 'doc_menu', label: 'Menu', component: MenuDoc},
       {route: 'doc_meter', label: 'Meter', component: MeterDoc},
       {route: 'doc_radio-button', label: 'RadioButton', component: RadioButtonDoc},
