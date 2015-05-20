@@ -20,7 +20,7 @@ var OK = React.createClass({
   },
 
   render: function() {
-    var classes = [BASE_CLASS, CLASS_ROOT]
+    var classes = [BASE_CLASS, CLASS_ROOT];
     if (this.props.className) {
       classes.push(this.props.className);
     }
