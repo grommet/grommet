@@ -34,7 +34,7 @@
   &__layer {
     position: fixed;
     // This element will be positioned by the Overlay mixin.
-    z-index: 2;
+    z-index: 10;
     @include inuit-font-size($inuit-heading-size-4, inherit);
     background-color: $background-color;
     border: $layer-border;

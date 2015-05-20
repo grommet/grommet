@@ -61,8 +61,10 @@ var IndexDonut = React.createClass({
       if ('status' === this.state.params.attribute) {
         // re-order by importance
         series.sort(function (s1, s2) {
-          return (STATUS_IMPORTANCE[s1.label] - STATUS_IMPORTANCE[s2.label]);
+          return (STATUS_IMPORTANCE[s2.label] - STATUS_IMPORTANCE[s1.label]);
         });
+        // mark most severe as most important
+        series[series.length-1].important = true;
       }
       this.setState({series: series});
     }

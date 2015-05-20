@@ -53,7 +53,7 @@ var Search = React.createClass({
   _onFocusInput: function () {
     this.refs.input.getDOMNode().select();
     this.setState({
-      layer: (! this.props.inline || this.props.suggestions),
+      layer: (! this.state.inline || this.props.suggestions),
       activeSuggestionIndex: -1
     });
   },
@@ -103,13 +103,33 @@ var Search = React.createClass({
     event.nativeEvent.stopImmediatePropagation();
   },
 
+  _layout: function () {
+    if (window.innerWidth < 600) {
+      this.setState({inline: false});
+    } else {
+      this.setState({inline: this.props.inline});
+    }
+  },
+
+  _onResize: function () {
+    // debounce
+    clearTimeout(this._resizeTimer);
+    this._resizeTimer = setTimeout(this._layout, 50);
+  },
+
   getInitialState: function () {
     return {
       align: 'left',
       controlFocused: false,
+      inline: this.props.inline,
       layer: false,
       activeSuggestionIndex: -1
     };
+  },
+
+  componentDidMount: function () {
+    window.addEventListener('resize', this._onResize);
+    this._layout();
   },
 
   componentDidUpdate: function (prevProps, prevState) {
@@ -175,6 +195,7 @@ var Search = React.createClass({
 
   componentWillUnmount: function () {
     document.removeEventListener('click', this._onRemoveLayer);
+    window.removeEventListener('resize', this._onResize);
   },
 
   focus: function () {
@@ -196,7 +217,7 @@ var Search = React.createClass({
   _classes: function (prefix) {
     var classes = [prefix];
 
-    if (this.props.inline) {
+    if (this.state.inline) {
       classes.push(prefix + "--inline");
     } else {
       classes.push(prefix + "--controlled");
@@ -214,7 +235,7 @@ var Search = React.createClass({
       classes.push(this.props.className);
     }
 
-    if (this.props.inline) {
+    if (this.state.inline) {
 
       var readOnly = this.props.suggestions ? true : false;
 
@@ -281,7 +302,7 @@ var Search = React.createClass({
         </div>
       );
 
-      if (! this.props.inline) {
+      if (! this.state.inline) {
         var control = this._createControl();
         var rightAlign = ('right' === this.props.align);
         var first = rightAlign ? contents : control;
