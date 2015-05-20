@@ -78,7 +78,7 @@ var Donut = React.createClass({
     });
   },
 
-  _onResize: function() {
+  _layout: function () {
     // orientation based on available window orientation
     var ratio = window.innerWidth / window.innerHeight;
     if (ratio < 0.8) {
@@ -100,6 +100,12 @@ var Donut = React.createClass({
     } else {
       this.setState({size: null});
     }
+  },
+
+  _onResize: function() {
+    // debounce
+    clearTimeout(this._resizeTimer);
+    this._resizeTimer = setTimeout(this._layout, 50);
   },
 
   _importantIndex: function (series) {
@@ -125,10 +131,10 @@ var Donut = React.createClass({
   },
 
   componentDidMount: function() {
-    this._timeout = setTimeout(this._initialTimeout, 10);
+    this._initialTimer = setTimeout(this._initialTimeout, 10);
     this.setState({initial: true, activeIndex: 0});
     window.addEventListener('resize', this._onResize);
-    setTimeout(this._onResize, 10);
+    this._onResize();
   },
 
   componentWillReceiveProps: function (newProps) {
@@ -140,8 +146,8 @@ var Donut = React.createClass({
   },
 
   componentWillUnmount: function() {
-    clearTimeout(this._timeout);
-    this._timeout = null;
+    clearTimeout(this._initialTimer);
+    clearTimeout(this._resizeTimer);
     window.removeEventListener('resize', this._onResize);
   },
 

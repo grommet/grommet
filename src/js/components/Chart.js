@@ -188,10 +188,11 @@ var Chart = React.createClass({
 
   componentDidMount: function() {
     window.addEventListener('resize', this._onResize);
-    setTimeout(this._onResize, 10);
+    this._onResize();
   },
 
   componentWillUnmount: function() {
+    clearTimeout(this._resizeTimer);
     window.removeEventListener('resize', this._onResize);
   },
 
