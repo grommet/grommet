@@ -222,6 +222,10 @@ var Donut = React.createClass({
     var paths = this.props.series.map(function (item, index) {
 
       var endAngle = Math.min(360, Math.max(10, startAngle + (anglePer * item.value)));
+      if (item.value > 0 && (startAngle + 360) === endAngle) {
+        // full use for this item, make sure we render it.
+        endAngle -= 0.1;
+      }
       var radius = 84;
       // start from the bottom
       var commands = arcCommands(BASE_SIZE/2, BASE_SIZE/2, radius,
