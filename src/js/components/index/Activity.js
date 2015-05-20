@@ -3,28 +3,11 @@
 var React = require('react');
 var merge = require('lodash/object/merge');
 var Index = require('./Index');
-
-var DEFAULT_OPTIONS = {
-  view: 'table',
-  attributes: [
-    {attribute: 'status', label: 'Status', index: 0, size: 'small', header: true,
-      filter: ['Error', 'Warning', 'OK', 'Unknown']},
-    {attribute: 'name', label: 'Name', index: 1},
-    {attribute: 'associatedResourceName', label: 'Resource', index: 2, size: 'medium'},
-    {attribute: 'created', label: 'Time', index: 3,
-      timestamp: true, size: 'medium', secondary: true, fitler: true},
-    {attribute: 'state', label: 'State', index: 4, size: 'medium', secondary: true,
-      filter: ['Active', 'Cleared', 'Running', 'Completed']},
-    {attribute: 'category', label: 'Category',
-      filter: ['Alerts', 'Tasks']},
-  ],
-  params: {
-    category: ['alerts', 'tasks'],
-    sort: 'created:desc',
-  }
-};
+var IntlMixin = require('../../mixins/GrommetIntlMixin');
 
 var Activity = React.createClass({
+
+  mixins: [IntlMixin],
 
   propTypes: {
     label: React.PropTypes.string,
@@ -39,12 +22,12 @@ var Activity = React.createClass({
   },
 
   getInitialState: function () {
-    var options = DEFAULT_OPTIONS;
+    var options;
     if (this.props.query) {
-      options = merge(options, {params: {query: this.props.query}});
+      options = {params: {query: this.props.query}};
     }
     if (this.props.label) {
-      options = merge(options, {label: this.props.label});
+      options = {label: this.props.label};
     }
     return {options: options};
   },
@@ -55,9 +38,40 @@ var Activity = React.createClass({
   },
 
   render: function () {
+    var defaultOpt = {
+      view: 'table',
+      attributes: [
+        {attribute: 'status', label: this.getIntlMessage('Activity.status'), index: 0, size: 'small', header: true,
+          filter: [
+            this.getIntlMessage('Activity.filter.error'),
+            this.getIntlMessage('Activity.filter.warning'),
+            this.getIntlMessage('Activity.filter.ok'),
+            this.getIntlMessage('Activity.filter.unknown')
+          ]},
+        {attribute: 'name', label: this.getIntlMessage('Activity.name'), index: 1},
+        {attribute: 'associatedResourceName', label: this.getIntlMessage('Activity.resource'), index: 2, size: 'medium'},
+        {attribute: 'created', label: this.getIntlMessage('Activity.time'), index: 3,
+          timestamp: true, size: 'medium', secondary: true, fitler: true},
+        {attribute: 'state', label: this.getIntlMessage('Activity.state'), index: 4, size: 'medium', secondary: true,
+          filter: [
+            this.getIntlMessage('Activity.filter.active'),
+            this.getIntlMessage('Activity.filter.cleared'),
+            this.getIntlMessage('Activity.filter.running'),
+            this.getIntlMessage('Activity.filter.completed')
+          ]},
+        {attribute: 'category', label: this.getIntlMessage('Activity.category'),
+          filter: [this.getIntlMessage('Activity.filter.alerts'), this.getIntlMessage('Activity.filter.tasks')]},
+      ],
+      params: {
+        category: ['alerts', 'tasks'],
+        sort: 'created:desc',
+      }
+    };
+
+    var options = merge(defaultOpt, this.state.options);
     return (
       <Index
-        options={this.state.options}
+        options={options}
         selection={this.props.selection}
         onQuery={this.props.onQuery}
         onSelect={this.props.onSelect}

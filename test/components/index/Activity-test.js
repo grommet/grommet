@@ -25,7 +25,7 @@ describe('Grommet Activity', function() {
     var React = require('react/addons');
     var TestUtils = React.addons.TestUtils;
 
-    var query = ''
+    var query = '';
     var _onQuery = function(data) {
       query = data.text;
     };
@@ -56,7 +56,7 @@ describe('Grommet Activity', function() {
         return { query: IndexQuery.create('testing') };
       },
       render: function() {
-        return <Activity query={this.state.query} />
+        return <Activity query={this.state.query} />;
       }
     }));
 

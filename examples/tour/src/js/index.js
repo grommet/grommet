@@ -19,9 +19,9 @@ var router = Router.create({routes: Routes.routes, location: Router.HistoryLocat
 //Index.init(indexConfig); /// TODO: refactor
 
 router.run(function (Handler) {
-  var factory = React.createFactory(Handler);
   var element = document.getElementById('content');
-  React.render(factory(), element);
+  var locale = window.navigator.userLanguage || window.navigator.language;
+  React.render(<Handler locales={locale} />, element);
 });
 
 document.body.classList.remove('loading');

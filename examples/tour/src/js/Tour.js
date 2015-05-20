@@ -6,10 +6,11 @@ var RouteHandler = require('react-router').RouteHandler;
 var App = require('grommet/components/App');
 var SessionStore = require('grommet/stores/SessionStore');
 var Rest = require('grommet/utils/Rest');
+var IntlMixin = require('grommet/mixins/GrommetIntlMixin');
 
 var Tour = React.createClass({
 
-  mixins: [Reflux.ListenerMixin],
+  mixins: [Reflux.ListenerMixin, IntlMixin],
 
   contextTypes: {
     router: React.PropTypes.func.isRequired
