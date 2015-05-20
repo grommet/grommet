@@ -10,15 +10,17 @@ var IntlMixin = ReactIntl.IntlMixin;
 module.exports = {
   mixins: [IntlMixin],
 
-  getDefaultProps: function() {
-    return {
-      locales: 'en-US'
-    };
-  },
-
   getChildContext: function () {
+    if (!this.props.locales && !this.context.locales) {
+      this.context.locales = 'en-US';
+    }
+
     if (!this.props.messages && !this.context.messages) {
-      this.context.messages = require('../messages/' + this.props.locales);
+      try {
+        this.context.messages = require('../messages/' + (this.props.locales || this.context.locales || 'en-US'));
+      } catch (e) {
+        this.context.messages = require('../messages/en-US');
+      }
     }
   }
 };

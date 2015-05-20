@@ -40,7 +40,10 @@ var StyleGuide = require('./style_guide/StyleGuide');
 var Documentation = require('./documentation/Documentation');
 var Downloads = require('./downloads/Downloads');
 
+var IntlMixin = require('grommet/mixins/GrommetIntlMixin');
+
 var DocsRouter = React.createClass({
+  mixins: [IntlMixin],
   render: function() {
     return (
       <Docs theme={theme} />
@@ -62,9 +65,9 @@ var routes = (
 var router = Router.create({routes: routes, location: Router.HistoryLocation});
 
 router.run(function (Handler) {
-  var factory = React.createFactory(Handler);
   var element = document.getElementById('content');
-  React.render(factory(), element);
+  var locale = window.navigator.userLanguage || window.navigator.language;
+  React.render(<Handler locales={locale} />, element);
   document.querySelectorAll('.docs')[0].scrollTop = 0;
 });
 

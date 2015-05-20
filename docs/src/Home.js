@@ -21,7 +21,6 @@ var Home = React.createClass({
     var assetsPath = '/assets/' + __GROMMET__.version + '/';
     return (
       <div className="home">
-
         <Section className="home__introduction" centered={true}>
           <img className="home__logo" src="img/grommet.svg" title="Grommet" />
           <h1 className="home__title">Grommet</h1>

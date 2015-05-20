@@ -88,6 +88,18 @@ describe('Grommet LoginForm', function() {
     expect(component.getDOMNode().value).toBe('Logar Test');
   });
 
+  it('falls back to en-US for unsupported locales inside LoginForm component', function() {
+    var Component = GrommetTestUtils.getComponent(__path__, undefined, {
+      locales: 'af'
+    });
+
+    GrommetTestUtils.componentShouldExist(Component, 'login-form');
+    var React = require('react/addons');
+    var TestUtils = React.addons.TestUtils;
+    var component = TestUtils.findRenderedDOMComponentWithClass(Component, 'call-to-action');
+    expect(component.getDOMNode().value).toBe('Log In');
+  });
+
   it('submits a LoginForm with username and password', function(done) {
     var username = '';
     var password = '';
