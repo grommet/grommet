@@ -1,4 +1,4 @@
-//for hpe theme, use the following import instead
-//@import 'grommet/scss/hpe/index';
+//for hpe theme, uncomment the following import
+@import 'hpe/hpe.defaults';
 
-@import 'grommet/scss/grommet-core/index';
+@import 'grommet-core/index';

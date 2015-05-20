@@ -4,7 +4,7 @@
   position: relative;
 
   @include media-query(lap-and-up) {
-    min-width: round($inuit-base-spacing-unit * 20);
+    min-width: $form-width;
   }
 
   > .header .header__wrapper { // TODO: clean up
@@ -20,6 +20,8 @@
     margin: 0px;
     margin-bottom: 2rem;
     margin-top: $inuit-base-spacing-unit;
+    margin-left: $inuit-base-spacing-unit;
+    margin-right: $inuit-base-spacing-unit;
 
     legend {
       @include inuit-font-size(24px);
@@ -60,7 +62,18 @@
     }
   }
 
+  &--fill {
+    min-width: 0px;
+  }
+
+  &--flush {
+    fieldset {
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+  }
+
   &--compact {
-    min-width: round($inuit-base-spacing-unit * 10);
+    min-width: $compact-form-width;
   }
 }

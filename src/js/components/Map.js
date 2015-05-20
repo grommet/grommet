@@ -117,7 +117,7 @@ var ResourceMap = React.createClass({
   _renderItems: function (items) {
     return items.map(function (item, index) {
       return (
-        <li key={index} className={CLASS_ROOT + "__item"}
+        <li key={index} id={item.id} className={CLASS_ROOT + "__item"}
           onMouseEnter={this._onEnter.bind(this, item.id)}
           onMouseLeave={this._onLeave.bind(this, item.id)}>
           {item.node}

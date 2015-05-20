@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 $input-border-width: 1px !default;
 $button-border-width: 2px !default;
+$range-border-radius: 3px !default;
 
 input,
 select,
@@ -117,11 +118,11 @@ select {
 
 @mixin range-track {
   width: 100%;
-  height: quarter($inuit-base-spacing-unit);
+  height: halve($inuit-base-spacing-unit);
   cursor: pointer;
   background: none;
   border: $input-border-width solid $border-color;
-  border-radius: $border-radius;
+  border-radius: $range-border-radius;
 }
 
 @mixin range-thumb {
@@ -153,7 +154,7 @@ input[type=range] {
   &::-webkit-slider-thumb {
     @include range-thumb();
     -webkit-appearance: none;
-    margin-top: - (round($inuit-base-spacing-unit * (3/8)) + 1);
+    margin-top: - (round($inuit-base-spacing-unit * (1/4)) + 1);
   }
 
   &::-moz-range-track {

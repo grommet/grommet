@@ -9,12 +9,20 @@
   background-color: $form-field-background-color;
 
   @include media-query(lap-and-up) {
-    width: round($inuit-base-spacing-unit * 24);
+    width: $form-width;
     max-width: 100%;
+
+    .form--compact & {
+      width: $compact-form-width;
+    }
   }
 
   @include media-query(palm) {
     width: 100vw;
+  }
+
+  .form--fill & {
+    width: 100%;
   }
 
   &:last-child {
@@ -86,6 +94,8 @@
 
     > input[type=range] {
       border: $input-border-width solid $border-color;
+      padding-left: $inuit-base-spacing-unit;
+      padding-right: $inuit-base-spacing-unit;
     }
 
     > .check-box,

@@ -20,7 +20,8 @@ var Header = React.createClass({
       flush: true,
       large: false,
       primary: false,
-      small: false};
+      small: false
+    };
   },
 
   _onResize: function () {

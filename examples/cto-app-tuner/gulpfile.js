@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var path = require('path');
 var devGulpTasks = require('grommet/utils/gulp/gulp-tasks');
 
 var opts = {
@@ -12,7 +13,22 @@ var opts = {
   jsAssets: ['src/js/**/*.js'],
   mainJs: 'src/js/index.js',
   mainScss: 'src/scss/index.scss',
-  devServerPort: 9000
+  devServerPort: 9000,
+  webpack: {
+    devAlias: { // TODO: remove, just for local dev
+      'grommet/scss': path.resolve(__dirname, '../../src/scss'),
+      'grommet': path.resolve(__dirname, '../../src/js')
+    },
+    resolve: {
+      root: [
+        path.resolve(__dirname, 'src/js'),
+        path.resolve(__dirname, 'src/scss'),
+        path.resolve(__dirname, '../../src/scss'),
+        path.resolve(__dirname, '../../node_modules')
+        //path.resolve(__dirname, 'node_modules')
+      ]
+    }
+  },
 };
 
 devGulpTasks(gulp, opts);
