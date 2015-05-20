@@ -23,5 +23,6 @@ module.exports = {
   },
   LoginForm: {
     btn_label: 'Logar'
-  }
+  },
+  LOGIN_INVALID_PASSWORD: 'Por Favor, informe Usuário e Senha.'
 };

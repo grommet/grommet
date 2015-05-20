@@ -23,5 +23,6 @@ module.exports = {
   },
   LoginForm: {
     btn_label: 'Log In'
-  }
+  },
+  LOGIN_INVALID_PASSWORD: 'Please provide Username and Password.'
 };

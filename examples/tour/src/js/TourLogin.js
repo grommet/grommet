@@ -6,10 +6,11 @@ var Login = require('grommet/components/Login');
 var LoginForm = require('grommet/components/LoginForm');
 var Actions = require('grommet/actions/Actions');
 var SessionStore = require('grommet/stores/SessionStore');
+var IntlMixin = require('grommet/mixins/GrommetIntlMixin');
 
 var TourLogin = React.createClass({
 
-  mixins: [Reflux.ListenerMixin],
+  mixins: [Reflux.ListenerMixin, IntlMixin],
 
   contextTypes: {
     router: React.PropTypes.func.isRequired
@@ -41,8 +42,20 @@ var TourLogin = React.createClass({
     var loginError = this.state.session.loginError;
     var errors = [];
     if (loginError) {
-      errors.push(loginError.message);
-      errors.push(loginError.resolution);
+      var message;
+      var resolution;
+      try {
+        message = this.getIntlMessage(loginError.message);
+        if (loginError.resolution) {
+          resolution = this.getIntlMessage(loginError.resolution);
+        }
+      } catch(e) {
+        console.error(e);
+        message = loginError.message;
+        resolution = loginError.resolution;
+      }
+      errors.push(message);
+      errors.push(resolution);
     }
     return (
       <Login background={"img/piano_player.jpg"}>
