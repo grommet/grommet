@@ -21,11 +21,11 @@ describe('Grommet IndexDonut', function() {
 
     var Component = TestUtils.renderIntoDocument(<IndexDonut params={params} />);
 
-    setTimeout(function() {
+    IndexActions.getAggregate.completed.listen(function () {
       GrommetTestUtils.componentShouldExist(Component, 'donut');
       GrommetTestUtils.componentShouldExist(Component, 'donut__legend');
       done();
-    }, 10);
+    });
   });
 
   it('invokes the callback function  whenever a click happens in the series', function(done) {
@@ -42,6 +42,7 @@ describe('Grommet IndexDonut', function() {
     var seriesClicked = false;
     var _onClick = function() {
       seriesClicked = true;
+
     };
 
     var Component = TestUtils.renderIntoDocument(<IndexDonut params={params} onClick={_onClick}/>);
@@ -49,13 +50,13 @@ describe('Grommet IndexDonut', function() {
     GrommetTestUtils.componentShouldExist(Component, 'donut');
     GrommetTestUtils.componentShouldExist(Component, 'donut__legend');
 
-    setTimeout(function() {
+    IndexActions.getAggregate.completed.listen(function () {
       var donutItemActive = TestUtils.findRenderedDOMComponentWithClass(Component, 'donut__legend-item--active');
 
       TestUtils.Simulate.click(donutItemActive.getDOMNode());
       expect(seriesClicked).toBe(true);
       done();
-    }, 10);
+    });
   });
 
   it('invokes the callback function with query whenever a click happens in the series', function(done) {
@@ -87,12 +88,12 @@ describe('Grommet IndexDonut', function() {
     GrommetTestUtils.componentShouldExist(Component, 'donut');
     GrommetTestUtils.componentShouldExist(Component, 'donut__legend');
 
-    setTimeout(function() {
+    IndexActions.getAggregate.completed.listen(function () {
       var donutItemActive = TestUtils.findRenderedDOMComponentWithClass(Component, 'donut__legend-item--active');
 
       TestUtils.Simulate.click(donutItemActive.getDOMNode());
       expect(query.fullText).toBe('Filter Me');
       done();
-    }, 10);
+    });
   });
 });
