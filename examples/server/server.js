@@ -8,6 +8,7 @@ var cookieParser = require('cookie-parser');
 var docs = require('./docs');
 var rest = require('./rest');
 var tour = require('./tour');
+var ctoAppTuner = require('./cto-app-tuner');
 //var demo = require('./demo');
 
 var PREFIX = ''; // for running under a shared domain
@@ -29,6 +30,7 @@ app.
   use(PREFIX + '/docs', docs).
   use(PREFIX + '/rest', rest).
   use(PREFIX + '/tour', tour).
+  use(PREFIX + '/cto-app-tuner', ctoAppTuner).
   //use(PREFIX + '/demo', demo).
   use(PREFIX, router);
 
