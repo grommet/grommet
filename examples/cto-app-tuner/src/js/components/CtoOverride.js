@@ -10,7 +10,7 @@ var Menu = require('grommet/components/Menu');
 var CtoOverride = React.createClass({
 
   propTypes: {
-    onCancel: React.PropTypes.func.isRequired,
+    onClose: React.PropTypes.func.isRequired,
     onSubmit: React.PropTypes.func.isRequired
   },
 
@@ -26,7 +26,7 @@ var CtoOverride = React.createClass({
             <Menu direction="left">
               <input type="submit" className="primary" value="Yes, of course"
                 onClick={this.props.onSubmit} />
-              <a onClick={this.props.onCancel}>No</a>
+              <a onClick={this.props.onClose}>No</a>
             </Menu>
           </Footer>
         </Form>
