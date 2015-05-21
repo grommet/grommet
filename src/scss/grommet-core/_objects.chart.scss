@@ -76,8 +76,6 @@
 
   &__legend {
     padding: halve($inuit-base-spacing-unit);
-    display: inline-block;
-    list-style-type: none;
     pointer-events: none;
 
     @include media-query(palm) {
@@ -90,70 +88,11 @@
       margin: 0px;
       background-color: $active-background-color;
     }
-
-    &-label {
-      text-align: right;
-      @include inuit-font-size($inuit-heading-size-4);
-      margin-bottom: halve($inuit-base-spacing-unit);
-    }
   }
 
-  &__legend-item,
-  &__legend-total {
-    white-space: nowrap;
-
-    > * {
-      vertical-align: top;
+  &--small {
+    .chart__graphic {
+      max-height: double($header-height);
     }
-
-    &-label {
-      display: inline-block;
-      width: quadruple($inuit-base-spacing-unit);
-      color: $secondary-text-color;
-    }
-
-    &-value {
-      display: inline-block;
-      width: double($inuit-base-spacing-unit);
-      text-align: right;
-      @include inuit-font-size($inuit-heading-size-4);
-    }
-
-    &-units {
-      margin-left: quarter($inuit-base-spacing-unit);
-      @include inuit-font-size($inuit-heading-size-4);
-    }
-
-    &--unset {
-      color: $secondary-text-color;
-    }
-  }
-
-  &__legend-item {
-
-    svg.chart__legend-item-swatch {
-      width: halve($inuit-base-spacing-unit);
-      height: halve($inuit-base-spacing-unit);
-      margin-top: quarter($inuit-base-spacing-unit);
-      margin-right: halve($inuit-base-spacing-unit);
-      overflow: visible;
-
-      @include graph-stroke-color();
-
-      path {
-        stroke-width: halve($inuit-base-spacing-unit);
-        transition-property: stroke-width;
-        transition-duration: $base-animation-duration;
-        transition-timing-function: ease-in-out;
-      }
-    }
-  }
-
-  &__legend-total {
-    margin-top: quarter($inuit-base-spacing-unit);
-    border-top: 1px dotted $border-color;
-    padding-top: quarter($inuit-base-spacing-unit);
-    margin-left: $inuit-base-spacing-unit;
-    color: $secondary-text-color;
   }
 }

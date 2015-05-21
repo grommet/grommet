@@ -140,7 +140,7 @@ var Main = React.createClass({
                 "value": 100 - this._getFriendliness(),
                 "units": "%"
               }
-            ]}/>
+            ]} small={true} />
           </Tile>
           <Tile>
             <Header small={true}>
@@ -157,7 +157,7 @@ var Main = React.createClass({
                 "value": 100 - this._getSatisfaction(),
                 "units": "%"
               }
-            ]} />
+            ]} small={true} />
           </Tile>
           <Tile wide={true}>
             <Header small={true}>
@@ -165,7 +165,7 @@ var Main = React.createClass({
             </Header>
               <Chart series={series} min={0} max={10} threshold={6} type="area" legend={true}
               xAxis={['Jun 3', 'Jun 2', 'Jun 1', 'May 31', 'May 30']}
-              units="Fun" />
+              units="Fun" small={true} />
           </Tile>
         </Tiles>
       </div>

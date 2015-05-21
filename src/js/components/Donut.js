@@ -70,6 +70,7 @@ var Donut = React.createClass({
       important: React.PropTypes.bool,
       onClick: React.PropTypes.func
     })),
+    small: React.PropTypes.bool,
     units: React.PropTypes.string,
     value: React.PropTypes.number
   },
@@ -190,6 +191,9 @@ var Donut = React.createClass({
     }
     if (this.props.partial) {
       classes.push(CLASS_ROOT + "--partial");
+    }
+    if (this.props.small) {
+      classes.push(CLASS_ROOT + "--small");
     }
 
     var viewBoxHeight = BASE_SIZE;

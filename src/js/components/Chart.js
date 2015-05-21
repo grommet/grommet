@@ -31,6 +31,7 @@ var Chart = React.createClass({
         colorIndex: React.PropTypes.string
       })
     ).isRequired,
+    small: React.PropTypes.bool,
     threshold: React.PropTypes.number,
     type: React.PropTypes.oneOf(['line', 'bar', 'area']),
     units: React.PropTypes.string,
@@ -153,12 +154,12 @@ var Chart = React.createClass({
       var rect = frontElement.getBoundingClientRect();
       var activeRect = activeElement.getBoundingClientRect();
       var legendRect = legendElement.getBoundingClientRect();
-      var left = (activeRect.right - rect.left);
+      var left = (activeRect.left - rect.left);
       if ((left + legendRect.width) > rect.width) {
-        left = (activeRect.left - rect.left) - legendRect.width;
+        left = (activeRect.right - rect.left) - legendRect.width;
       }
       legendElement.style.left = '' + left + 'px ';
-      legendElement.style.top = '' + (XAXIS_HEIGHT * 2) + 'px ';
+      legendElement.style.top = '' + (XAXIS_HEIGHT) + 'px ';
     }
   },
 
@@ -394,6 +395,11 @@ var Chart = React.createClass({
   },
 
   render: function() {
+    var classes = [CLASS_ROOT];
+    if (this.props.small) {
+      classes.push(CLASS_ROOT + "--small");
+    }
+
     var values = null;
     if ('line' === this.props.type || 'area' === this.props.type) {
       values = this._renderLineOrAreaValues();
@@ -429,7 +435,7 @@ var Chart = React.createClass({
     }
 
     return (
-      <div className={CLASS_ROOT}>
+      <div className={classes.join(' ')}>
         <svg ref="chart" className={CLASS_ROOT + "__graphic"}
           viewBox={"0 0 " + this.state.width + " " + this.state.height}
           preserveAspectRatio="none">

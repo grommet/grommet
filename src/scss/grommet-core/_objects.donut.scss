@@ -142,6 +142,18 @@
   }
 
   &--small {
+
+    .donut {
+      &__graphic-container {
+        width: $small-panel-width;
+        height: $small-panel-width;
+      }
+
+      &__active {
+        margin-top: round($inuit-base-spacing-unit * 2);
+      }
+    }
+
     // always display the legend on phones
     @include media-query(lap-and-up) {
       .donut__legend {
