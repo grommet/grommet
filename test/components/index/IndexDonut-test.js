@@ -51,7 +51,7 @@ describe('Grommet IndexDonut', function() {
     GrommetTestUtils.componentShouldExist(Component, 'donut__legend');
 
     IndexActions.getAggregate.completed.listen(function () {
-      var donutItemActive = TestUtils.findRenderedDOMComponentWithClass(Component, 'donut__legend-item--active');
+      var donutItemActive = TestUtils.findRenderedDOMComponentWithClass(Component, 'donut__slice--active');
 
       TestUtils.Simulate.click(donutItemActive.getDOMNode());
       expect(seriesClicked).toBe(true);
@@ -89,7 +89,7 @@ describe('Grommet IndexDonut', function() {
     GrommetTestUtils.componentShouldExist(Component, 'donut__legend');
 
     IndexActions.getAggregate.completed.listen(function () {
-      var donutItemActive = TestUtils.findRenderedDOMComponentWithClass(Component, 'donut__legend-item--active');
+      var donutItemActive = TestUtils.findRenderedDOMComponentWithClass(Component, 'donut__slice--active');
 
       TestUtils.Simulate.click(donutItemActive.getDOMNode());
       expect(query.fullText).toBe('Filter Me');

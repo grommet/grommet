@@ -1,8 +1,10 @@
 // (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
+var Legend = require('./Legend');
 
 var CLASS_ROOT = "chart";
+
 var DEFAULT_WIDTH = 400;
 var DEFAULT_HEIGHT = 200;
 var XAXIS_HEIGHT = 24;
@@ -146,7 +148,7 @@ var Chart = React.createClass({
     var legendElement = this.refs.legend.getDOMNode();
     var frontElement = this.refs.front.getDOMNode();
     var activeElement =
-      frontElement.querySelectorAll('.chart__front-band--active')[0];
+      frontElement.querySelectorAll('.' + CLASS_ROOT + '__front-band--active')[0];
     if (activeElement) {
       var rect = frontElement.getBoundingClientRect();
       var activeRect = activeElement.getBoundingClientRect();
@@ -229,27 +231,6 @@ var Chart = React.createClass({
   _coordinates: function (point) {
     return this._translateX(point[0]) + ',' + this._translateY(point[1]);
   },
-
-  /*_renderGrid: function () {
-    var paths = [];
-
-    for (var i=0; i<=this.state.width; i = i + this.state.bounds.xStepWidth) {
-      paths.push(
-        <path key={i} fill="none" d={"M" + i + ",0L" + i + "," + this.state.height} />
-      );
-    }
-
-    var step = this.state.height / 5;
-    for (i=this.state.height; i>=0; i = i - step) {
-      paths.push(
-        <path key={1000 + i} fill="none" d={"M0," + i + "L" + this.state.width + "," + i} />
-      );
-    }
-
-    return (
-      <g className={CLASS_ROOT + "__grid"}>{paths}</g>
-    );
-  },*/
 
   _itemColorIndex: function (item, seriesIndex) {
     return item.colorIndex || ('graph-' + (seriesIndex + 1));
@@ -363,7 +344,7 @@ var Chart = React.createClass({
   },
 
   _renderBands: function (layer) {
-    var className = "chart__" + layer;
+    var className = CLASS_ROOT + "__" + layer;
     var bounds = this.state.bounds;
 
     var bands = bounds.xAxis.map(function (label, xIndex) {
@@ -397,54 +378,22 @@ var Chart = React.createClass({
   },
 
   _renderLegend: function () {
-    var total = 0;
-    var legends = this.props.series.map(function (item, seriesIndex) {
-      var classes = [CLASS_ROOT + "__legend-item"];
-      var colorIndex = this._itemColorIndex(item, seriesIndex);
-      var value = item.values[this.state.activeXIndex];
-      total += value[1];
-      if (0 === value[1]) {
-        classes.push(CLASS_ROOT + "__legend-item--unset");
-      }
-
-      return (
-        <li key={item.label} className={classes.join(' ')}>
-          <svg className={CLASS_ROOT + "__legend-item-swatch color-index-" + colorIndex}
-            viewBox="0 0 12 12">
-            <path className={item.className} d="M 5 0 l 0 12" />
-          </svg>
-          <span className={CLASS_ROOT + "__legend-item-label"}>{item.label}</span>
-          <span className={CLASS_ROOT + "__legend-item-value"}>{value[1]}</span>
-          <span className={CLASS_ROOT + "__legend-item-units"}>{this.props.units}</span>
-        </li>
-      );
+    var activeSeries = this.props.series.map(function (item) {
+      return {
+        label: item.label,
+        value: item.values[this.state.activeXIndex][1],
+        units: item.units,
+        colorIndex: item.colorIndex
+      };
     }, this);
-
-    var label = null;
-    if (false && this.props.xAxis) {
-      label = (
-        <li className={CLASS_ROOT + "__legend-label"}>
-          {this.props.xAxis[this.state.activeXIndex]}
-        </li>
-      );
-    }
-
     return (
-      <ol ref="legend" className={CLASS_ROOT + "__legend"}>
-        {label}
-        {legends}
-        <li className={CLASS_ROOT + "__legend-total"}>
-          <span className={CLASS_ROOT + "__legend-total-label"}>Total</span>
-          <span className={CLASS_ROOT + "__legend-total-value"}>{total}</span>
-          <span className={CLASS_ROOT + "__legend-total-units"}>{this.props.units}</span>
-        </li>
-      </ol>
+      <Legend ref="legend" className={CLASS_ROOT + "__legend"}
+        series={activeSeries}
+        units={this.props.units} />
     );
   },
 
   render: function() {
-    var grid = null; // this._renderGrid();
-
     var values = null;
     if ('line' === this.props.type || 'area' === this.props.type) {
       values = this._renderLineOrAreaValues();
@@ -484,7 +433,6 @@ var Chart = React.createClass({
         <svg ref="chart" className={CLASS_ROOT + "__graphic"}
           viewBox={"0 0 " + this.state.width + " " + this.state.height}
           preserveAspectRatio="none">
-          {grid}
           {backBands}
           {xAxis}
           <g className={CLASS_ROOT + "__values"}>{values}</g>

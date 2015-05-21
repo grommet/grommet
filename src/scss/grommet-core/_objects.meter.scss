@@ -18,20 +18,36 @@ $meter-width: round($inuit-base-spacing-unit * 8);
   &__graphic {
     width: round($inuit-base-spacing-unit * 8);
     height: $inuit-base-spacing-unit;
-    background-color: $meter-background-color;
+    //background-color: $meter-background-color;
   }
 
   &__value {
     stroke: $meter-color;
-    stroke-width: $inuit-base-spacing-unit - quarter($inuit-base-spacing-unit);
+    stroke-width: $inuit-base-spacing-unit;
     stroke-dasharray: $meter-width $meter-width;
     stroke-dashoffset: 0;
-    @include animation('draw-meter 1.5s');
+
+    @include media-query(lap-and-up) {
+      @include animation('draw-meter 1.5s');
+    }
   }
 
   &__threshold {
     stroke: $threshold-color;
     stroke-width: 1px;
+  }
+
+  &__bar {
+    stroke-width: $inuit-base-spacing-unit;
+    stroke-linecap: butt;
+    stroke-dasharray: quadruple($panel-width) quadruple($panel-width);
+    stroke-dashoffset: 0;
+
+    @include graph-stroke-color();
+
+    @include media-query(lap-and-up) {
+      @include animation('draw-meter 1.5s');
+    }
   }
 
   &__label {
@@ -43,5 +59,9 @@ $meter-width: round($inuit-base-spacing-unit * 8);
       color: $secondary-text-color;
       margin-left: 0.5em;
     }
+  }
+
+  &__legend {
+    vertical-align: top;
   }
 }

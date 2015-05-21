@@ -1,6 +1,10 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 @mixin graph-stroke-color {
+  &.color-index-unset {
+    stroke: $unset-color;
+  }
+
   @each $status, $color in $brand-status-colors {
     &.color-index-#{$status} {
       stroke: $color;
@@ -11,6 +15,13 @@
     &.color-index-graph-#{$i},
     &.color-index-graph-#{$i+length($brand-graph-colors)} {
       stroke: nth($brand-graph-colors, $i);
+    }
+  }
+
+  @for $i from 1 through length($brand-grey-colors) {
+    &.color-index-grey-#{$i},
+    &.color-index-grey-#{$i+length($brand-grey-colors)} {
+      stroke: nth($brand-grey-colors, $i);
     }
   }
 }
@@ -31,6 +42,10 @@
 }
 
 @mixin graph-fill-color {
+  &.color-index-unset {
+    fill: $unset-color;
+  }
+
   @each $status, $color in $brand-status-colors {
     &.color-index-#{$status} {
       fill: $color;
@@ -41,6 +56,13 @@
     &.color-index-graph-#{$i},
     &.color-index-graph-#{$i+length($brand-graph-colors)} {
       fill: nth($brand-graph-colors, $i);
+    }
+  }
+
+  @for $i from 1 through length($brand-grey-colors) {
+    &.color-index-grey-#{$i},
+    &.color-index-grey-#{$i+length($brand-grey-colors)} {
+      fill: nth($brand-grey-colors, $i);
     }
   }
 }

@@ -1,0 +1,76 @@
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+
+.legend {
+  text-align: left;
+  list-style-type: none;
+  white-space: normal;
+  display: inline-block;
+  margin: 0px;
+
+  &__item,
+  &__total {
+    color: $secondary-text-color;
+
+    > * {
+      vertical-align: top;
+    }
+
+    &-label {
+      display: inline-block;
+      width: quadruple($inuit-base-spacing-unit);
+    }
+
+    &-value {
+      display: inline-block;
+      width: double($inuit-base-spacing-unit);
+      text-align: right;
+    }
+
+    &-units {
+      display: inline-block;
+      margin-left: quarter($inuit-base-spacing-unit);
+    }
+  }
+
+  &__item {
+    cursor: pointer;
+
+    svg.legend__item-swatch {
+      width: halve($inuit-base-spacing-unit);
+      height: halve($inuit-base-spacing-unit);
+      margin-top: quarter($inuit-base-spacing-unit);
+      margin-right: halve($inuit-base-spacing-unit);
+      overflow: visible;
+
+      @include graph-stroke-color();
+
+      path {
+        stroke-width: halve($inuit-base-spacing-unit);
+        transition-property: stroke-width;
+        transition-duration: $base-animation-duration;
+        transition-timing-function: ease-in-out;
+      }
+    }
+
+    &--active {
+      color: $text-color;
+
+      svg.legend__item-swatch {
+        path {
+          stroke-width: halve($inuit-base-spacing-unit);
+        }
+      }
+    }
+  }
+
+  &__total {
+    margin-left: $inuit-base-spacing-unit;
+
+    > * {
+      margin-top: quarter($inuit-base-spacing-unit);
+      padding-top: quarter($inuit-base-spacing-unit);
+      border-top: 1px dotted $border-color;
+    }
+  }
+}
+

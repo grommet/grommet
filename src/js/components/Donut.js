@@ -1,6 +1,7 @@
 // (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
+var Legend = require('./Legend');
 
 var CLASS_ROOT = "donut";
 var BASE_SIZE = 192;
@@ -44,19 +45,40 @@ var Donut = React.createClass({
   propTypes: {
     legend: React.PropTypes.bool,
     partial: React.PropTypes.bool,
-    maxLabel: React.PropTypes.string,
-    minLabel: React.PropTypes.string,
+    max: React.PropTypes.oneOfType([
+      React.PropTypes.shape({
+        value: React.PropTypes.number,
+        label: React.PropTypes.string
+      }),
+      React.PropTypes.number
+    ]),
+    min: React.PropTypes.oneOfType([
+      React.PropTypes.shape({
+        value: React.PropTypes.number,
+        label: React.PropTypes.string
+      }),
+      React.PropTypes.number
+    ]),
     series: React.PropTypes.arrayOf(React.PropTypes.shape({
       label: React.PropTypes.string,
       value: React.PropTypes.number,
+      units: React.PropTypes.string,
       colorIndex: React.PropTypes.oneOfType([
         React.PropTypes.number, // 1-6
         React.PropTypes.string // status
       ]),
       important: React.PropTypes.bool,
       onClick: React.PropTypes.func
-    })).isRequired,
-    units: React.PropTypes.string
+    })),
+    units: React.PropTypes.string,
+    value: React.PropTypes.number
+  },
+
+  getDefaultProps: function () {
+    return {
+      max: {value: 100},
+      min: {value: 0}
+    };
   },
 
   _initialTimeout: function () {
@@ -67,15 +89,8 @@ var Donut = React.createClass({
     clearTimeout(this._timeout);
   },
 
-  _onMouseOver: function (index) {
+  _onActive: function (index) {
     this.setState({initial: false, activeIndex: index});
-  },
-
-  _onMouseOut: function () {
-    this.setState({
-      initial: false,
-      activeIndex: this.state.importantIndex
-    });
   },
 
   _layout: function () {
@@ -108,6 +123,15 @@ var Donut = React.createClass({
     this._resizeTimer = setTimeout(this._layout, 50);
   },
 
+  _generateSeries: function (props) {
+    var total = props.max.value - props.min.value;
+    var remaining = total - (props.value - props.min.value);
+    return [
+      {value: props.value},
+      {value: remaining, colorIndex: 'unset'}
+    ];
+  },
+
   _importantIndex: function (series) {
     var result = 0;
     series.some(function (data, index) {
@@ -120,13 +144,15 @@ var Donut = React.createClass({
   },
 
   getInitialState: function() {
-    var importantIndex = this._importantIndex(this.props.series);
+    var series = this.props.series || this._generateSeries(this.props);
+    var importantIndex = this._importantIndex(series);
     return {
       initial: true,
       importantIndex: importantIndex,
       activeIndex: importantIndex,
       legend: false,
-      orientation: 'portrait'
+      orientation: 'portrait',
+      series: series
     };
   },
 
@@ -138,10 +164,12 @@ var Donut = React.createClass({
   },
 
   componentWillReceiveProps: function (newProps) {
-    var importantIndex = this._importantIndex(newProps.series);
+    var series = newProps.series || this._generateSeries(newProps);
+    var importantIndex = this._importantIndex(series);
     this.setState({
       importantIndex: importantIndex,
-      activeIndex: importantIndex
+      activeIndex: importantIndex,
+      series: series
     });
   },
 
@@ -153,46 +181,6 @@ var Donut = React.createClass({
 
   _itemColorIndex: function (item, index) {
     return item.colorIndex || ('graph-' + (index + 1));
-  },
-
-  _renderLegend: function () {
-    var total = 0;
-    var classPrefix = CLASS_ROOT + "__legend";
-
-    var legends = this.props.series.map(function (item, index) {
-      var legendClasses = [classPrefix + "-item"];
-      if (this.state.activeIndex === index) {
-        legendClasses.push(classPrefix + "-item--active");
-      }
-      var colorIndex = this._itemColorIndex(item, index);
-      total += item.value;
-
-      return(
-        <li key={item.label} className={legendClasses.join(' ')}
-          onMouseOver={this._onMouseOver.bind(this, index)}
-          onMouseOut={this._onMouseOut.bind(this, index)}
-          onClick={item.onClick}>
-          <svg className={classPrefix + "-item-swatch color-index-" + colorIndex}
-            viewBox="0 0 12 12">
-            <path className={item.className} d="M 5 0 l 0 12" />
-          </svg>
-          <span className={classPrefix + "-item-label"}>{item.label}</span>
-          <span className={classPrefix + "-item-value"}>{item.value}</span>
-          <span className={classPrefix + "-item-units"}>{this.props.units}</span>
-        </li>
-      );
-    }, this);
-
-    return (
-      <ol className={classPrefix}>
-        {legends.reverse()}
-        <li className={classPrefix + "-total"}>
-          <span className={classPrefix + "-total-label"}>Total</span>
-          <span className={classPrefix + "-total-value"}>{total}</span>
-          <span className={classPrefix + "-total-units"}>{this.props.units}</span>
-        </li>
-      </ol>
-    );
   },
 
   render: function() {
@@ -210,7 +198,7 @@ var Donut = React.createClass({
     }
 
     var total = 0;
-    this.props.series.some(function (item) {
+    this.state.series.some(function (item) {
       total += item.value;
     });
 
@@ -225,7 +213,7 @@ var Donut = React.createClass({
     var label = null;
     var activeIndicator = null;
 
-    var paths = this.props.series.map(function (item, index) {
+    var paths = this.state.series.map(function (item, index) {
 
       var endAngle = Math.min(360, Math.max(10, startAngle + (anglePer * item.value)));
       if (item.value > 0 && (startAngle + 360) === endAngle) {
@@ -243,7 +231,7 @@ var Donut = React.createClass({
       if (this.state.activeIndex === index) {
         sliceClasses.push(CLASS_ROOT + "__slice--active");
         value = item.value;
-        units = item.units;
+        units = item.units || this.props.units;
         label = item.label;
       }
 
@@ -261,33 +249,41 @@ var Donut = React.createClass({
 
       return(
         <path key={item.label} fill="none" className={sliceClasses.join(' ')} d={commands}
-          onMouseOver={this._onMouseOver.bind(null, index)}
-          onMouseOut={this._onMouseOut.bind(null, index)}
+          onMouseOver={this._onActive.bind(this, index)}
+          onMouseOut={this._onActive.bind(this, this.state.importantIndex)}
           onClick={item.onClick} />
       );
     }, this);
 
     var minLabel;
-    if (this.props.minLabel) {
-      minLabel = (
-        <div className={CLASS_ROOT + "__min-label"}>
-          {this.props.minLabel}
-        </div>
-      );
-    }
-
     var maxLabel;
-    if (this.props.maxLabel) {
-      maxLabel = (
-        <div className={CLASS_ROOT + "__max-label"}>
-          {this.props.maxLabel}
-        </div>
-      );
+    if (this.props.partial) {
+      if (this.props.min) {
+        minLabel = (
+          <div className={CLASS_ROOT + "__min-label"}>
+            {this.props.min.value} {this.props.units}
+          </div>
+        );
+      }
+      if (this.props.max) {
+        maxLabel = (
+          <div className={CLASS_ROOT + "__max-label"}>
+            {this.props.max.value} {this.props.units}
+          </div>
+        );
+      }
     }
 
     var legend = null;
     if (this.props.legend) {
-      legend = this._renderLegend();
+      legend = (
+        <Legend className={CLASS_ROOT + "__legend"}
+          series={this.props.series}
+          units={this.props.units}
+          value={this.props.value}
+          activeIndex={this.state.activeIndex}
+          onActive={this._onActive} />
+      );
     }
 
     return (

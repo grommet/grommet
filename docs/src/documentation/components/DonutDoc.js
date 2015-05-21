@@ -4,25 +4,23 @@ var React = require('react');
 var Donut = require('grommet/components/Donut');
 var GrommetDocument = require('grommet/components/Document');
 
+var inline =
+  "<Donut series={[\n  {label: <label>, value: <value>, colorIndex: <index>},\n  ...\n]} />";
+
+var genericSeries = [
+  {label: 'Used', value: 10},
+  {label: 'Available', value: 20}
+];
+
+var statusSeries = [
+  {label: 'OK', value: 70, colorIndex: 'ok'},
+  {label: 'Warning', value: 20, colorIndex: 'warning'},
+  {label: 'Error', value: 10, colorIndex: 'error', important: true}
+];
+
 var DonutDoc = React.createClass({
 
   render: function() {
-    var inline =
-      "<Donut series={[\n  {label: <label>, value: <value>, colorIndex: <index>},\n  ...\n]} />";
-    var seriesStructure =
-      "{\n  label: <label>,\n  value: <value>,\n  colorIndex: (graph-[1-6]|<status>)\n}";
-
-    var genericSeries = [
-      {label: 'Used', value: 10, units: 'TB'},
-      {label: 'Available', value: 20, units: 'TB'}
-    ];
-
-    var statusSeries = [
-      {label: 'OK', value: 70, colorIndex: 'ok'},
-      {label: 'Warning', value: 20, colorIndex: 'warning'},
-      {label: 'Error', value: 10, colorIndex: 'error', important: true}
-    ];
-
     return (
       <GrommetDocument>
         <header>
@@ -37,10 +35,8 @@ var DonutDoc = React.createClass({
           <dl>
             <dt><code>legend     true|false</code></dt>
             <dd>Whether to show a legend.</dd>
-            <dt><code>series     {"[{}, ...]"}</code></dt>
-            <dd>An array of objects describing the data:
-              <pre><code>{seriesStructure}</code></pre>
-            </dd>
+            <dt><code>series     {"[{value: , label: , colorIndex: , important: }, ...]"}</code></dt>
+            <dd>An array of objects describing the data.</dd>
             <dt><code>units      {"{string}"}</code></dt>
             <dd>Optional units to include.</dd>
           </dl>
@@ -49,12 +45,20 @@ var DonutDoc = React.createClass({
         <section>
           <h2>Examples</h2>
 
-          <h3>Generic</h3>
+          <h3>Single</h3>
           <div className="example">
-            <Donut series={genericSeries} />
+            <Donut value={20} units="TB" />
           </div>
           <pre><code className="html">
-            {"<Donut series={" + JSON.stringify(genericSeries, null, '  ') + "} />"}
+            {"<Donut value={20} units=\"TB\" />"}
+          </code></pre>
+
+          <h3>Multiple</h3>
+          <div className="example">
+            <Donut series={genericSeries} units="TB" />
+          </div>
+          <pre><code className="html">
+            {"<Donut series={" + JSON.stringify(genericSeries, null, '  ') + "} units=\"TB\" />"}
           </code></pre>
 
           <h3>Status</h3>
@@ -76,10 +80,10 @@ var DonutDoc = React.createClass({
           <h3>Partial</h3>
           <div className="example">
             <Donut series={genericSeries} partial={true} legend={true}
-              minLabel="0 TB" maxLabel="30 TB"/>
+              min={{value: 0}} max={{value: 30}} units="TB"/>
           </div>
           <pre><code className="html">
-            {"<Donut series={" + JSON.stringify(genericSeries, null, '  ') + "} partial={true} legend={true} />"}
+            {"<Donut series={" + JSON.stringify(genericSeries, null, '  ') + "} partial={true} legend={true} min={{value: 0}} max={{value: 30}} />"}
           </code></pre>
 
         </section>
