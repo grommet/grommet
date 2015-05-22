@@ -1,7 +1,20 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-if (!global.Intl) {
-  global.Intl = require('intl/Intl');
+var supportedLocales = ['en-US', 'pt-BR'];
+
+function localesSupported() {
+  return supportedLocales.every(function (locale) {
+    return Intl.NumberFormat.supportedLocalesOf(locale)[0] === locale &&
+            Intl.DateTimeFormat.supportedLocalesOf(locale)[0] === locale;
+  });
+}
+
+if (! localesSupported()) {
+  require('intl/Intl');
+  IntlPolyfill.__addLocaleData(require('intl/locale-data/json/en-US.json'));
+  IntlPolyfill.__addLocaleData(require('intl/locale-data/json/pt-BR.json'));
+  Intl.NumberFormat = IntlPolyfill.NumberFormat;
+  Intl.DateTimeFormat = IntlPolyfill.DateTimeFormat;
 }
 
 var ReactIntl = require('react-intl');

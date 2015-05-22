@@ -24,6 +24,10 @@ var webpackConfig = {
         loader: 'jsx-loader'
       },
       {
+        test: /\.json$/,
+        loader: 'json-loader'
+      },
+      {
         test: /\.svg$/,
         loader: 'file-loader?mimetype=image/svg'
       },

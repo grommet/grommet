@@ -4,7 +4,6 @@ var React = require('react/addons');
 var TestUtils = React.addons.TestUtils;
 var expect = require('expect');
 var assert = require('assert');
-var App = require('../../src/js/components/App');
 
 module.exports = {
   getComponent: function(path, testBody, props) {
