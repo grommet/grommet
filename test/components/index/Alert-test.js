@@ -33,8 +33,8 @@ describe('Grommet Alert', function() {
     );
 
     GrommetTestUtils.componentShouldExist(Component, 'alert');
-    expect(Component.refs.dateCreated).toExist();
-    expect(Component.refs.dateCreated.getDOMNode().textContent).toBe('Tuesday, November 10, 2015, 3:10:09 AM');
+    expect(Component.refs.date).toExist();
+    expect(Component.refs.date.getDOMNode().textContent).toBe('Tuesday, November 10, 2015, 3:10:09 AM');
   });
 
    it('loads a Alert component with created date in pt-BR locale', function() {
@@ -52,8 +52,8 @@ describe('Grommet Alert', function() {
     );
 
     GrommetTestUtils.componentShouldExist(Component, 'alert');
-    expect(Component.refs.dateCreated).toExist();
-    expect(Component.refs.dateCreated.getDOMNode().textContent).toBe('terça-feira, 10 de novembro de 2015 3:10:09');
+    expect(Component.refs.date).toExist();
+    expect(Component.refs.date.getDOMNode().textContent).toBe('terça-feira, 10 de novembro de 2015 3:10:09');
   });
 
 });

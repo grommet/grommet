@@ -15,11 +15,14 @@ module.exports = {
       unknown: 'Desconhecido',
       active: 'Ativo',
       cleared: 'Livre',
-      running: 'Rodando',
+      running: 'Executando',
       completed: 'Completo',
       alerts: 'Alertas',
       tasks: 'Tarefas'
     }
+  },
+  Index: {
+    name: 'Nome'
   },
   LoginForm: {
     btn_label: 'Logar'

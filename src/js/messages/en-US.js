@@ -21,6 +21,9 @@ module.exports = {
       tasks: 'Tasks'
     }
   },
+  Index: {
+    name: 'Name'
+  },
   LoginForm: {
     btn_label: 'Log In'
   },

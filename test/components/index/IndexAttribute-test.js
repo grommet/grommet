@@ -47,7 +47,7 @@ describe('Grommet IndexAttribute', function() {
       }
     });
 
-    GrommetTestUtils.componentShouldExist(Component, 'index-attribute', '05/11/15 12:00:00am');
+    GrommetTestUtils.componentShouldExist(Component, 'index-attribute', 'Monday, May 11, 2015, 12:00:00 AM');
   });
 
   it('loads a secondary IndexAttribute component', function() {

@@ -2,11 +2,13 @@
 
 var React = require('react');
 var StatusIcon = require('../icons/Status');
-var Timestamp = require('react-time');
+var IntlMixin = require('../../mixins/GrommetIntlMixin');
 
 var CLASS_ROOT = "index-attribute";
 
 var IndexAttribute = React.createClass({
+
+  mixins: [IntlMixin],
 
   propTypes: {
     item: React.PropTypes.object.isRequired,
@@ -54,10 +56,7 @@ var IndexAttribute = React.createClass({
             value={value.toLowerCase()} small={true} />
         );
       } else if (attribute.timestamp) {
-        content = (
-          <Timestamp className={classes.join(' ')}
-            value={new Date(value)} format="MM/DD/YY h:mm:ssa" />
-        );
+        content = this.getGrommetFormattedDate(value, 'index-attribute', classes.join(' '));
       } else {
         content = (
           <span className={classes.join(' ')}>{value}</span>

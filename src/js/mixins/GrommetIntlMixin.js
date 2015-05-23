@@ -17,8 +17,10 @@ if (! localesSupported()) {
   Intl.DateTimeFormat = IntlPolyfill.DateTimeFormat;
 }
 
+var React = require('react');
 var ReactIntl = require('react-intl');
 var IntlMixin = ReactIntl.IntlMixin;
+var FormattedDate = ReactIntl.FormattedDate;
 
 module.exports = {
   mixins: [IntlMixin],
@@ -35,5 +37,16 @@ module.exports = {
         this.context.messages = require('../messages/en-US');
       }
     }
+  },
+
+  getGrommetFormattedDate: function (date, ref, className) {
+    return (<div ref={ref || 'date'} className={className}><FormattedDate
+            value={new Date(date)}
+            day="numeric"
+            month="numeric"
+            year="numeric"
+            hour="numeric"
+            minute="numeric"
+            second="numeric" /></div>);
   }
 };
