@@ -7,10 +7,15 @@ var CheckBox = require('../CheckBox');
 var IndexQuery = require('../../utils/IndexQuery');
 //var StatusIcon = require('../icons/Status');
 //var Timestamp = require('react-time');
+var IntlMixin = require('../../mixins/GrommetIntlMixin');
+var ReactIntl = require('react-intl');
+var FormattedMessage = ReactIntl.FormattedMessage;
 
 var CLASS_ROOT = "index-filters";
 
 var IndexFilters = React.createClass({
+
+  mixins: [IntlMixin],
 
   propTypes: {
     options: React.PropTypes.shape({
@@ -131,7 +136,7 @@ var IndexFilters = React.createClass({
           <div key={attribute.attribute} className={CLASS_ROOT + "__filter"}>
             <h4 className={CLASS_ROOT + "__filter-label"}>{attribute.label}</h4>
             <CheckBox className={CLASS_ROOT + "__filter-value"}
-              id={attribute.attribute + '-all'} label="All"
+              id={attribute.attribute + '-all'} label={this.getIntlMessage('IndexFilters.all')}
               checked={this.state.data[attribute.attribute].all}
               onChange={this._onChangeAll
                 .bind(this, attribute.attribute, attribute.filter)} />
@@ -140,18 +145,17 @@ var IndexFilters = React.createClass({
         );
       }, this);
 
-    var label = "Filters";
-    if (1 === activeFilterCount) {
-      label = "1 filter";
-    } else if (activeFilterCount > 1) {
-      label = "" + activeFilterCount + " filters";
-    }
+    var label = (<FormattedMessage
+                    message={this.getIntlMessage('IndexFilters.filters')}
+                    quantity={activeFilterCount} />);
+
     var icon = (<FilterIcon notifications={activeFilterCount} />);
 
     return (
       <Menu className={CLASS_ROOT + "__menu"} icon={icon}
         align="right" direction="down">
         <div className={CLASS_ROOT} onClick={this._onSink}>
+          {label}
           {filters}
         </div>
       </Menu>

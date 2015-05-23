@@ -24,8 +24,27 @@ module.exports = {
   Index: {
     name: 'Nome'
   },
+  IndexFilters: {
+    all: 'Todos',
+    filters: '{quantity, plural,\n  =0 {Filtros}\n  =1 {um filtro}\n  other {# filtros}\n}'
+  },
+  IndexHeader: {
+    search: 'Buscar'
+  },
+  Task: {
+    unknown: 'Desconhecido'
+  },
   LoginForm: {
-    btn_label: 'Logar'
+    btn_label: 'Logar',
+    username: 'Usuário',
+    password: 'Senha',
+    rememberMe: 'Lembrar Usuário'
+  },
+  Search: {
+    placeHolder: 'Buscar'
+  },
+  Session: {
+    logout: 'Deslogar'
   },
   LOGIN_INVALID_PASSWORD: 'Por Favor, informe Usuário e Senha.'
 };

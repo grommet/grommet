@@ -70,7 +70,7 @@ var LoginForm = React.createClass({
       if (this.props.rememberMe) {
         rememberMe = (
           <CheckBox className={CLASS_ROOT + "__remember-me"}
-            id="remember-me" label="Remember me" />
+            id="remember-me" label={this.getIntlMessage('LoginForm.rememberMe')} />
         );
       }
       footer = (
@@ -86,10 +86,10 @@ var LoginForm = React.createClass({
         {logo}
         {title}
         <fieldset>
-          <FormField htmlFor="username" label="Username">
+          <FormField htmlFor="username" label={this.getIntlMessage('LoginForm.username')}>
             <input id="username" ref="username" type="email" />
           </FormField>
-          <FormField htmlFor="password" label="Password">
+          <FormField htmlFor="password" label={this.getIntlMessage('LoginForm.password')}>
             <input id="password" ref="password" type="password" />
           </FormField>
         </fieldset>

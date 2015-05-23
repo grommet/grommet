@@ -5,6 +5,7 @@ var ReactLayeredComponent = require('../mixins/ReactLayeredComponent');
 var KeyboardAccelerators = require('../mixins/KeyboardAccelerators');
 var Overlay = require('../mixins/Overlay');
 var SearchIcon = require('./icons/Search');
+var IntlMixin = require('../mixins/GrommetIntlMixin');
 
 var CLASS_ROOT = "search";
 
@@ -23,11 +24,11 @@ var Search = React.createClass({
     return {
       align: 'left',
       inline: false,
-      placeHolder: 'Search'
+      placeHolder: 'SEARCH_PLACEHOLDER'
     };
   },
 
-  mixins: [ReactLayeredComponent, KeyboardAccelerators, Overlay],
+  mixins: [ReactLayeredComponent, KeyboardAccelerators, Overlay, IntlMixin],
 
   _onAddLayer: function (event) {
     event.preventDefault();
@@ -230,6 +231,11 @@ var Search = React.createClass({
   },
 
   render: function () {
+    var placeholderText = this.props.placeHolder;
+    if (placeholderText === 'SEARCH_PLACEHOLDER') {
+      placeholderText = this.getIntlMessage('Search.placeHolder');
+    }
+
     var classes = this._classes(CLASS_ROOT);
     if (this.props.className) {
       classes.push(this.props.className);
@@ -242,7 +248,7 @@ var Search = React.createClass({
       return (
         <div className={classes.join(' ')}>
           <input ref="input" type="search"
-            placeholder={this.props.placeHolder}
+            placeholder={placeholderText}
             value={this.props.defaultValue}
             className={CLASS_ROOT + "__input" }
             readOnly={readOnly}

@@ -6,10 +6,13 @@ var Menu = require('../Menu');
 var Search = require('../Search');
 var IndexFilters = require('./IndexFilters');
 var IndexQuery = require('../../utils/IndexQuery');
+var IntlMixin = require('../../mixins/GrommetIntlMixin');
 
 var CLASS_ROOT = 'index-header';
 
 var IndexHeader = React.createClass({
+
+  mixins: [IntlMixin],
 
   propTypes: {
     options: React.PropTypes.shape({
@@ -90,7 +93,7 @@ var IndexHeader = React.createClass({
         {navControl}
         <Search className={CLASS_ROOT + "__search"}
           inline={true}
-          placeHolder={"Search " + this.props.options.label}
+          placeHolder={this.getIntlMessage('IndexHeader.search') + ' ' + this.props.options.label}
           defaultValue={searchText}
           onChange={this._onSearchChange} />
         {filters}
