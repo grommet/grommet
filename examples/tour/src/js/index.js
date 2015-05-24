@@ -8,6 +8,7 @@ var Rest = require('grommet/utils/Rest');
 //var Index = require('grommet/index/index'); /// TODO: refactor
 //var indexConfig = require('./IndexConfig'); /// TODO: refactor
 var Routes = require('./Routes');
+var merge = require('lodash/object/merge');
 
 Rest.setHeaders({
   'Accept': 'application/json',
@@ -21,7 +22,8 @@ var router = Router.create({routes: Routes.routes, location: Router.HistoryLocat
 router.run(function (Handler) {
   var element = document.getElementById('content');
   var locale = window.navigator.userLanguage || window.navigator.language;
-  React.render(<Handler locales={locale} />, element);
+  var messages = merge(require('grommet/messages/'+locale), require('../messages/'+locale));
+  React.render(<Handler locales={locale} messages={messages} />, element);
 });
 
 document.body.classList.remove('loading');

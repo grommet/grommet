@@ -14,6 +14,7 @@ var TourMain = require('./TourMain');
 var IndexDonut = require('grommet/components/index/IndexDonut');
 var IndexHistory = require('grommet/components/index/IndexHistory');
 var IndexQuery = require('grommet/utils/IndexQuery');
+var IntlMixin = require('grommet/mixins/GrommetIntlMixin');
 var Link = require('react-router').Link;
 
 var CONFIG = [
@@ -28,7 +29,7 @@ var CONFIG = [
     }
   },
   {
-    name: 'Active Alerts',
+    name: 'TourDashboard.activeAlerts',
     route: 'activity',
     type: 'donut',
     params: {
@@ -38,7 +39,7 @@ var CONFIG = [
     }
   },
   {
-    name: 'Servers',
+    name: 'TourDashboard.servers',
     route: 'servers',
     type: 'donut',
     params: {
@@ -49,6 +50,8 @@ var CONFIG = [
 ];
 
 var TourDashboard = React.createClass({
+
+  mixins: [IntlMixin],
 
   contextTypes: {
     router: React.PropTypes.func.isRequired
@@ -117,11 +120,11 @@ var TourDashboard = React.createClass({
         }
         header = (
           <Link to={tile.route} query={queryParams}>
-            {tile.name}
+            {this.getIntlMessage(tile.name)}
           </Link>
         );
       } else if (tile.name) {
-        header = tile.name;
+        header = this.getIntlMessage(tile.name);
       }
       if (header) {
         header = <Header small={true}><h4>{header}</h4></Header>;
