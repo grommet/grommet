@@ -87,12 +87,11 @@ var IndexHeader = React.createClass({
       );
     }
 
-    var label = this.props.options.label;
-    try {
-      label = this.getIntlMessage(this.props.options.label.toLowerCase());
-    } catch (e) {
-      label = this.props.options.label;
+    var label = '';
+    if (this.props.options.label) {
+      label = this.getGrommetIntlMessage(this.props.options.label.toLowerCase());
     }
+
     return (
       <Header className={classes.join(' ')}
         fixed={this.props.fixed} flush={false} large={true}>

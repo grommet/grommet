@@ -52,12 +52,7 @@ var IndexDonut = React.createClass({
         if ('status' === this.state.params.attribute) {
           colorIndex = count.value.toLowerCase();
         }
-        var label = count.value;
-        try {
-          label = this.getIntlMessage(count.value);
-        } catch (e) {
-          label = count.value;
-        }
+        var label = this.getGrommetIntlMessage(count.value);
         return {
           label: label,
           value: count.count,
