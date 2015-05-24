@@ -48,5 +48,15 @@ module.exports = {
             hour="numeric"
             minute="numeric"
             second="numeric" /></div>);
+  },
+
+  getGrommetIntlMessage: function(messageKey) {
+    var message= messageKey;
+    try {
+      message = this.getIntlMessage(messageKey);
+    } catch(e) {
+      message = messageKey;
+    }
+    return message;
   }
 };

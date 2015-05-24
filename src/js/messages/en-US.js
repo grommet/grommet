@@ -46,5 +46,18 @@ module.exports = {
   Session: {
     logout: 'Logout'
   },
+  Legend: {
+    total: 'Total'
+  },
+  Error: 'Error',
+  Critical: 'Critical',
+  Warning: 'Warning',
+  OK: 'OK',
+  Disabled: 'Disabled',
+  Unknown: 'Unknown',
+  Completed: 'Completed',
+  Running: 'Running',
+  Active: 'Active',
+  Cleared: 'Cleared',
   LOGIN_INVALID_PASSWORD: 'Please provide Username and Password.'
 };

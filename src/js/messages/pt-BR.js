@@ -46,5 +46,18 @@ module.exports = {
   Session: {
     logout: 'Deslogar'
   },
+  Legend: {
+    total: 'Total'
+  },
+  Error: 'Erro',
+  Critical: 'Crítico',
+  Warning: 'Alerta',
+  OK: 'OK',
+  Disabled: 'Desabilitado',
+  Unknown: 'Desconhecido',
+  Completed: 'Completo',
+  Running: 'Executando',
+  Active: 'Ativo',
+  Cleared: 'Livre',
   LOGIN_INVALID_PASSWORD: 'Por Favor, informe Usuário e Senha.'
 };

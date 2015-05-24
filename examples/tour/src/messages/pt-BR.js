@@ -3,5 +3,14 @@ module.exports = {
   TourDashboard: {
     servers: 'Servidores',
     activeAlerts: 'Alertas Ativos'
-  }
+  },
+  TourSessionMenu: {
+    logout: 'Deslogar'
+  },
+  dashboard: 'Painel de Controle',
+  activity: 'Atividade',
+  enclosures: 'Enclosures',
+  servers: 'Servidores',
+  reports: 'Relatórios',
+  settings: 'Configurações'
 };

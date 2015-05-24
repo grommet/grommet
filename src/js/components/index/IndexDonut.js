@@ -5,6 +5,7 @@ var Reflux = require('reflux');
 var Donut = require('../Donut');
 var IndexActions = require('../../actions/IndexActions');
 var IndexQuery = require('../../utils/IndexQuery');
+var IntlMixin = require('../../mixins/GrommetIntlMixin');
 
 var STATUS_IMPORTANCE = {
   'Error': 1,
@@ -30,7 +31,7 @@ var IndexDonut = React.createClass({
     })),
   },
 
-  mixins: [Reflux.ListenerMixin],
+  mixins: [Reflux.ListenerMixin, IntlMixin],
 
   _onClick: function (value) {
     var query;
@@ -51,8 +52,14 @@ var IndexDonut = React.createClass({
         if ('status' === this.state.params.attribute) {
           colorIndex = count.value.toLowerCase();
         }
+        var label = count.value;
+        try {
+          label = this.getIntlMessage(count.value);
+        } catch (e) {
+          label = count.value;
+        }
         return {
-          label: count.value,
+          label: label,
           value: count.count,
           colorIndex: colorIndex,
           onClick: this._onClick.bind(this, count.value)

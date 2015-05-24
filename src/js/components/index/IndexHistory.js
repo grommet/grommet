@@ -4,6 +4,7 @@ var React = require('react');
 var Reflux = require('reflux');
 var Chart = require('../Chart');
 var IndexActions = require('../../actions/IndexActions');
+var IntlMixin = require('../../mixins/GrommetIntlMixin');
 
 var IndexHistory = React.createClass({
 
@@ -23,7 +24,7 @@ var IndexHistory = React.createClass({
     type: React.PropTypes.oneOf(['bar', 'area', 'line'])
   },
 
-  mixins: [Reflux.ListenerMixin],
+  mixins: [Reflux.ListenerMixin, IntlMixin],
 
   _onGetAggregateCompleted: function (response, params) {
     response = response[0];
@@ -41,7 +42,13 @@ var IndexHistory = React.createClass({
         if ('status' === this.state.params.attribute) {
           colorIndex = count.value.toLowerCase();
         }
-        return {label: count.value, values: values, colorIndex: colorIndex};
+        var label = count.value;
+        try {
+          label = this.getIntlMessage(count.value);
+        } catch (e) {
+          label = count.value;
+        }
+        return {label: label, values: values, colorIndex: colorIndex};
       }, this);
       this.setState({series: series, xAxis: xAxis});
     }

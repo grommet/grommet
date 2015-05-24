@@ -4,8 +4,11 @@ var Menu = require('grommet/components/Menu');
 var Gravatar = require('react-gravatar');
 var SessionStore = require('grommet/stores/SessionStore');
 var Actions = require('grommet/actions/Actions');
+var IntlMixin = require('grommet/mixins/GrommetIntlMixin');
 
 var TourSessionMenu = React.createClass({
+
+  mixins: [IntlMixin],
 
   propTypes: {
     align: React.PropTypes.string,
@@ -33,7 +36,7 @@ var TourSessionMenu = React.createClass({
       <Menu icon={icon}
         align={this.props.align}
         direction={this.props.direction}>
-        <a onClick={this._onLogout}>Logout</a>
+        <a onClick={this._onLogout}>{this.getIntlMessage('TourSessionMenu.logout')}</a>
       </Menu>
     );
   }

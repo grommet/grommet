@@ -59,7 +59,7 @@ var IndexAttribute = React.createClass({
         content = this.getGrommetFormattedDate(value, 'index-attribute', classes.join(' '));
       } else {
         content = (
-          <span className={classes.join(' ')}>{value}</span>
+          <span className={classes.join(' ')}>{this.getGrommetIntlMessage(value)}</span>
         );
       }
     }

@@ -87,13 +87,19 @@ var IndexHeader = React.createClass({
       );
     }
 
+    var label = this.props.options.label;
+    try {
+      label = this.getIntlMessage(this.props.options.label.toLowerCase());
+    } catch (e) {
+      label = this.props.options.label;
+    }
     return (
       <Header className={classes.join(' ')}
         fixed={this.props.fixed} flush={false} large={true}>
         {navControl}
         <Search className={CLASS_ROOT + "__search"}
           inline={true}
-          placeHolder={this.getIntlMessage('IndexHeader.search') + ' ' + this.props.options.label}
+          placeHolder={this.getIntlMessage('IndexHeader.search') + ' ' + label}
           defaultValue={searchText}
           onChange={this._onSearchChange} />
         {filters}
