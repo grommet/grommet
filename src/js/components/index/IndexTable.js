@@ -83,6 +83,8 @@ var IndexTable = React.createClass({
         content = (
           <StatusIcon className={CLASS_ROOT + "__header-icon"} value={'label'} small={true} />
         );
+      } else {
+        content = this.getGrommetIntlMessage(content);
       }
 
       return (

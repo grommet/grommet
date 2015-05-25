@@ -87,10 +87,7 @@ var IndexHeader = React.createClass({
       );
     }
 
-    var label = '';
-    if (this.props.options.label) {
-      label = this.getGrommetIntlMessage(this.props.options.label.toLowerCase());
-    }
+    var label = this.getGrommetIntlMessage(this.props.options.label);
 
     return (
       <Header className={classes.join(' ')}

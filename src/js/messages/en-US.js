@@ -1,26 +1,6 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 module.exports = {
-  Activity: {
-    status: 'Status',
-    name: 'Name',
-    time: 'Time',
-    state: 'State',
-    category: 'Category',
-    resource: 'Resource',
-    filter: {
-      error: 'Error',
-      warning: 'Warning',
-      ok: 'OK',
-      unknown: 'Unknown',
-      active: 'Active',
-      cleared: 'Cleared',
-      running: 'Running',
-      completed: 'Completed',
-      alerts: 'Alerts',
-      tasks: 'Tasks'
-    }
-  },
   Index: {
     name: 'Name'
   },
@@ -49,15 +29,24 @@ module.exports = {
   Legend: {
     total: 'Total'
   },
-  Error: 'Error',
-  Critical: 'Critical',
-  Warning: 'Warning',
-  OK: 'OK',
-  Disabled: 'Disabled',
-  Unknown: 'Unknown',
-  Completed: 'Completed',
-  Running: 'Running',
-  Active: 'Active',
-  Cleared: 'Cleared',
+  error: 'Error',
+  critical: 'Critical',
+  warning: 'Warning',
+  ok: 'OK',
+  disabled: 'Disabled',
+  unknown: 'Unknown',
+  completed: 'Completed',
+  running: 'Running',
+  active: 'Active',
+  cleared: 'Cleared',
+  name: 'Name',
+  resource: 'Resource',
+  model: 'Model',
+  time: 'Time',
+  state: 'State',
+  status: 'Status',
+  category: 'Category',
+  alerts: 'Alerts',
+  tasks: 'Tasks',
   LOGIN_INVALID_PASSWORD: 'Please provide Username and Password.'
 };

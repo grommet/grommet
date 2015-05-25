@@ -121,10 +121,11 @@ var IndexFilters = React.createClass({
           if (active) {
             activeFilterCount += 1;
           }
+          var label = value ? this.getGrommetIntlMessage(value) : '';
           return (
             <div key={id}>
               <CheckBox className={CLASS_ROOT + "__filter-value"}
-                id={id} label={value}
+                id={id} label={label}
                 checked={active}
                 onChange={this._onChange
                   .bind(this, attribute.attribute, value)} />
@@ -134,7 +135,7 @@ var IndexFilters = React.createClass({
 
         return (
           <div key={attribute.attribute} className={CLASS_ROOT + "__filter"}>
-            <h4 className={CLASS_ROOT + "__filter-label"}>{attribute.label}</h4>
+            <h4 className={CLASS_ROOT + "__filter-label"}>{this.getGrommetIntlMessage(attribute.label)}</h4>
             <CheckBox className={CLASS_ROOT + "__filter-value"}
               id={attribute.attribute + '-all'} label={this.getIntlMessage('IndexFilters.all')}
               checked={this.state.data[attribute.attribute].all}

@@ -41,26 +41,20 @@ var Activity = React.createClass({
     var defaultOpt = {
       view: 'table',
       attributes: [
-        {attribute: 'status', label: this.getIntlMessage('Activity.status'), index: 0, size: 'small', header: true,
+        {attribute: 'status', label: 'Status', index: 0, size: 'small', header: true,
           filter: [
-            this.getIntlMessage('Activity.filter.error'),
-            this.getIntlMessage('Activity.filter.warning'),
-            this.getIntlMessage('Activity.filter.ok'),
-            this.getIntlMessage('Activity.filter.unknown')
+            'Error', 'Warning', 'OK', 'Unknown'
           ]},
-        {attribute: 'name', label: this.getIntlMessage('Activity.name'), index: 1},
-        {attribute: 'associatedResourceName', label: this.getIntlMessage('Activity.resource'), index: 2, size: 'medium'},
-        {attribute: 'created', label: this.getIntlMessage('Activity.time'), index: 3,
+        {attribute: 'name', label: 'Name', index: 1},
+        {attribute: 'associatedResourceName', label: 'Resource', index: 2, size: 'medium'},
+        {attribute: 'created', label: 'Time', index: 3,
           timestamp: true, size: 'medium', secondary: true, fitler: true},
-        {attribute: 'state', label: this.getIntlMessage('Activity.state'), index: 4, size: 'medium', secondary: true,
+        {attribute: 'state', label: 'State', index: 4, size: 'medium', secondary: true,
           filter: [
-            this.getIntlMessage('Activity.filter.active'),
-            this.getIntlMessage('Activity.filter.cleared'),
-            this.getIntlMessage('Activity.filter.running'),
-            this.getIntlMessage('Activity.filter.completed')
+            'Active', 'Cleared', 'Running', 'Completed'
           ]},
-        {attribute: 'category', label: this.getIntlMessage('Activity.category'),
-          filter: [this.getIntlMessage('Activity.filter.alerts'), this.getIntlMessage('Activity.filter.tasks')]},
+        {attribute: 'category', label: 'Category',
+          filter: ['Alerts', 'Tasks']},
       ],
       params: {
         category: ['alerts', 'tasks'],

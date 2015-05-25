@@ -1,26 +1,6 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 module.exports = {
-  Activity: {
-    status: 'Status',
-    name: 'Nome',
-    time: 'Data',
-    state: 'Estado',
-    category: 'Categoria',
-    resource: 'Recurso',
-    filter: {
-      error: 'Erro',
-      warning: 'Alerta',
-      ok: 'OK',
-      unknown: 'Desconhecido',
-      active: 'Ativo',
-      cleared: 'Livre',
-      running: 'Executando',
-      completed: 'Completo',
-      alerts: 'Alertas',
-      tasks: 'Tarefas'
-    }
-  },
   Index: {
     name: 'Nome'
   },
@@ -49,15 +29,24 @@ module.exports = {
   Legend: {
     total: 'Total'
   },
-  Error: 'Erro',
-  Critical: 'Crítico',
-  Warning: 'Alerta',
-  OK: 'OK',
-  Disabled: 'Desabilitado',
-  Unknown: 'Desconhecido',
-  Completed: 'Completo',
-  Running: 'Executando',
-  Active: 'Ativo',
-  Cleared: 'Livre',
+  error: 'Erro',
+  critical: 'Crítico',
+  warning: 'Alerta',
+  ok: 'OK',
+  disabled: 'Desabilitado',
+  unknown: 'Desconhecido',
+  completed: 'Completo',
+  running: 'Executando',
+  active: 'Ativo',
+  cleared: 'Livre',
+  name: 'Nome',
+  resource: 'Recurso',
+  model: 'Modelo',
+  time: 'Data',
+  state: 'Estado',
+  status: 'Situação',
+  category: 'Categoria',
+  alerts: 'Alertas',
+  tasks: 'Tarefas',
   LOGIN_INVALID_PASSWORD: 'Por Favor, informe Usuário e Senha.'
 };
