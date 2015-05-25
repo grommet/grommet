@@ -54,7 +54,8 @@ module.exports = {
     var message= messageKey;
     if(messageKey) {
       try {
-        message = this.getIntlMessage(messageKey.toLowerCase());
+        var i18nKey = messageKey.charAt(0).toLowerCase() + messageKey.slice(1);
+        message = this.getIntlMessage(i18nKey);
       } catch(e) {
         message = messageKey;
       }

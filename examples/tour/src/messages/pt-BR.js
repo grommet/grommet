@@ -12,5 +12,11 @@ module.exports = {
   enclosures: 'Enclosures',
   servers: 'Servidores',
   reports: 'Relatórios',
-  settings: 'Configurações'
+  settings: 'Configurações',
+  overview: 'Sumário',
+  map: 'Mapa',
+  deviceBays: 'Baias do Dispositivo',
+  bay: 'Baia',
+  flavor: 'Tipo',
+  switches: 'Switches'
 };

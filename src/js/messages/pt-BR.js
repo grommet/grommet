@@ -48,5 +48,8 @@ module.exports = {
   category: 'Categoria',
   alerts: 'Alertas',
   tasks: 'Tarefas',
+  created: 'Data de Criação',
+  modified: 'Data de Modificação',
+  uri: 'URI',
   LOGIN_INVALID_PASSWORD: 'Por Favor, informe Usuário e Senha.'
 };
