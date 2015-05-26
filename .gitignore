@@ -1,0 +1,17 @@
+**bower_components**
+node_modules
+**/dist*/**
+**/dist-bower*/**
+notes.txt
+.DS_Store
+.sass-cache
+*.flags.json
+*.iml
+.idea/**
+*.log
+*tmp*
+**sublime-project**
+**sublime-workspace**
+**requests.csv**
+**coverage**
+**lcov.info**
