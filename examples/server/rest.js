@@ -257,7 +257,7 @@ router.get('/index/resources', function(req, res) {
 });
 
 router.get(/^\/index\/search-suggestions/, function(req, res) {
-  var items = data.getItems();
+  var items = data.getItems(req.query.category || null);
 
   if (req.query.userQuery) {
     items = filter.filterUserQuery(items, req.query.userQuery);

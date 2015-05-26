@@ -29,6 +29,11 @@ var SCHEMA = {
         category: "volumes",
         count: 3,
         share: false
+      },
+      "SERVER_PROFILE_TO_FIRMWARE_DRIVER" : {
+        category: "firmware-drivers",
+        count: 1,
+        share: true
       }
     }
   },
@@ -97,6 +102,14 @@ var SCHEMA = {
   },
   "volumes": {prefix: "volume"},
   "storage-arrays": {prefix: "storage array"},
+  "firmware-drivers": {
+    count: 3,
+    names: [
+      "HP Service Pack For Proliant - OneView 2014 09 17 version 2014.11.0.00",
+      "HP Service Pack For Proliant - OneView 2014 12 17 version 2014.12.0.00",
+      "HP Service Pack For Proliant - OneView 2015 03 17 version 2015.03.0.00",
+    ]
+  },
   "alerts": {
     names: [
       "Temperature threshold exceeded by 10 degrees.",
@@ -140,9 +153,10 @@ function createCategories () {
   }
 }
 
-function buildItems (categoryName, count) {
+function buildItems (categoryName) {
   var category = SCHEMA[categoryName];
   var date = new Date();
+  var count = category.count || RESOURCE_COUNT;
   for (var i=1; i<=count; i++) {
     var name;
     if (category.prefix) {
@@ -217,7 +231,7 @@ function buildItems (categoryName, count) {
 function createResources () {
   for (var categoryName in SCHEMA) {
     if (SCHEMA.hasOwnProperty(categoryName)) {
-      buildItems(categoryName, RESOURCE_COUNT); // + categoryName.length);
+      buildItems(categoryName);
     }
   }
 }

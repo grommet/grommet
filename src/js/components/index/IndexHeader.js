@@ -31,6 +31,7 @@ var IndexHeader = React.createClass({
     total: React.PropTypes.number,
     unfilteredTotal: React.PropTypes.number,
     onQuery: React.PropTypes.func.isRequired,
+    addControl: React.PropTypes.node,
     navControl: React.PropTypes.node
   },
 
@@ -78,6 +79,15 @@ var IndexHeader = React.createClass({
       );
     }
 
+    var addControl = null;
+    if (this.props.addControl) {
+      addControl = (
+        <Menu className={CLASS_ROOT + "__add-control"}>
+          {this.props.addControl}
+        </Menu>
+      );
+    }
+
     var navControl = null;
     if (this.props.navControl) {
       navControl = (
@@ -99,6 +109,7 @@ var IndexHeader = React.createClass({
           defaultValue={searchText}
           onChange={this._onSearchChange} />
         {filters}
+        {addControl}
         <span className={CLASS_ROOT + "__count"}>
           {this.props.total}
           <span className={outOfClasses.join(' ')}>

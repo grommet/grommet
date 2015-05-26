@@ -18,6 +18,7 @@ var Overview = require('./Overview');
 var TourMap = require('./TourMap');
 var Servers = require('./Servers');
 var Server = require('./Server');
+var ServerAdd = require('./ServerAdd');
 var TourActivity = require('./TourActivity');
 var TourActivityResource = require('./TourActivityResource');
 
@@ -92,6 +93,7 @@ module.exports = {
           </Route>
         </Route>
         <Route name="servers" handler={Servers}>
+          <Route name="server add" handler={ServerAdd} />
           <Route name="server" path={rootPath + "servers/"} handler={Server}>
             <Route name="server-overview" path={rootPath + "servers/overview/*"}
               handler={Overview} />

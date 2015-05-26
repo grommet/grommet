@@ -31,6 +31,7 @@ var Servers = React.createClass({
         manageData={true}
         resourceRoute="server"
         selectionRoute="server-overview"
+        addRoute="server add"
         options={OPTIONS}
         onMain={this.props.onMain} />
     );

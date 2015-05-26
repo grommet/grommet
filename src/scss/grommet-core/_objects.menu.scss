@@ -68,7 +68,7 @@
 
   &__layer {
     position: fixed;
-    z-index: 10;
+    z-index: 20;
     @include inuit-font-size($inuit-base-font-size, inherit);
     background-color: $background-color;
     border: $layer-border;

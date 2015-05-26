@@ -2,6 +2,7 @@
 
 var React = require('react');
 var RouteHandler = require('react-router').RouteHandler;
+var Link = require('react-router').Link;
 var merge = require('lodash/object/merge');
 var Split = require('grommet/components/Split');
 var Index = require('grommet/components/index/Index');
@@ -10,10 +11,12 @@ var Rest = require('grommet/utils/Rest');
 var Actions = require('grommet/actions/Actions');
 var Title = require('grommet/components/Title');
 var Logo = require('./MediumLogo');
+var AddIcon = require('grommet/components/icons/Add');
 
 var TourIndex = React.createClass({
 
   propTypes: {
+    addRoute: React.PropTypes.string,
     manageData: React.PropTypes.bool,
     resourceRoute: React.PropTypes.string,
     selectionRoute: React.PropTypes.string,
@@ -132,7 +135,7 @@ var TourIndex = React.createClass({
     this._setSelectionFromLocation();
   },
 
-  _renderIndex: function (navControl) {
+  _renderIndex: function (navControl, addControl) {
     return (
       <Index
         options={this.state.options}
@@ -140,6 +143,7 @@ var TourIndex = React.createClass({
         selection={this.state.selection}
         onSelect={this._onSelect}
         onQuery={this._onQuery}
+        addControl={addControl}
         navControl={navControl} />
     );
   },
@@ -154,6 +158,11 @@ var TourIndex = React.createClass({
       );
     }
 
+    var addControl = null;
+    if (this.props.addRoute) {
+      addControl = <Link to={this.props.addRoute}><AddIcon /></Link>;
+    }
+
     var resourceRouted = this.context.router.getCurrentRoutes().length >= 4;
     var pane1;
     var pane2;
@@ -162,10 +171,10 @@ var TourIndex = React.createClass({
       if (resourceRouted) {
         pane1 = <RouteHandler />;
       } else {
-        pane1 = this._renderIndex(navControl);
+        pane1 = this._renderIndex(navControl, addControl);
       }
     } else {
-      pane1 = this._renderIndex(navControl);
+      pane1 = this._renderIndex(navControl, addControl);
       pane2 = <RouteHandler />;
     }
 
