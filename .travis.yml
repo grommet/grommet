@@ -9,6 +9,7 @@ before_script:
 after_script:
 - gulp blanket-lcov-reporter
 - gulp coveralls
+- gulp release:stable
 notifications:
   slack:
     secure: WeOy0cWkkmem1I9eahruJYQLpTy/Qz8A/CNErCnEkOrhItD3SE75jTq49SBT+/VxcVGZaaOqRgzOd/ISjdhEWZOouNI0+lSd4YDFGAZtV9esoJKW4e+xcSciPC9TeUGXrl45bJkFPeVKc1KHoDuqeyBj7E3KmPqyl5AL9xICMmM=
