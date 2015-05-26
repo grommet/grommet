@@ -398,7 +398,7 @@ gulp.task('release:bower', ['release:createTmp'], function(done) {
 });
 
 gulp.task('release:stable', ['dist', 'release:createTmp'], function(done) {
-  git.clone('https://github.com/HewlettPackard/grommet.git',
+  git.clone('https://'+ process.env.GH_TOKEN +'@github.com/HewlettPackard/grommet.git',
     { cwd: './tmp/' },
     function (err) {
       if (err) {
