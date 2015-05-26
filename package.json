@@ -2,7 +2,7 @@
   "name": "grommet",
   "version": "0.2.0",
   "main": "src/js/index.js",
-  "description": "The most advanced UI framework for enterprise applications!",
+  "description": "The most advanced UI framework for enterprise applications.",
   "private": true,
   "publishConfig": {
     "registry": "http://grommet.usa.hp.com:2374/"

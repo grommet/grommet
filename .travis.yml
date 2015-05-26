@@ -9,7 +9,13 @@ before_script:
 after_script:
 - gulp blanket-lcov-reporter
 - gulp coveralls
+after_success:
+- git config credential.helper "store --file=.git/credentials"
+- echo "https://${GH_TOKEN}:@github.com" > .git/credentials
 - gulp release:stable
 notifications:
   slack:
     secure: WeOy0cWkkmem1I9eahruJYQLpTy/Qz8A/CNErCnEkOrhItD3SE75jTq49SBT+/VxcVGZaaOqRgzOd/ISjdhEWZOouNI0+lSd4YDFGAZtV9esoJKW4e+xcSciPC9TeUGXrl45bJkFPeVKc1KHoDuqeyBj7E3KmPqyl5AL9xICMmM=
+env:
+  global:
+    secure: PyHVZl5R+jeUNyFxFnBir4nu3p/m3nV1OdOSAXmRLkByMnQZ9zRHvxBesG+rhi9GeUbiDabHg+fdsf18+fZQ/mgyeSHsG9noDuViifq9FaP9XUoViJCseH3suHB7PT8UZczudFn7EwYCAK0TL4AlT/cBX/KBIWvO3gsofhx0Cbg=
