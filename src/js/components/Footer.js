@@ -3,13 +3,22 @@
 var React = require('react');
 var Top = require('./icons/Top');
 
+var CLASS_ROOT = "footer";
+
 var Footer = React.createClass({
 
   propTypes: {
     centered: React.PropTypes.bool,
     colorIndex: React.PropTypes.string,
+    flush: React.PropTypes.bool,
     primary: React.PropTypes.bool,
     scrollTop: React.PropTypes.bool
+  },
+
+  getDefaultProps: function () {
+    return {
+      flush: true
+    };
   },
 
   _updateState: function () {
@@ -50,12 +59,15 @@ var Footer = React.createClass({
   },
 
   render: function() {
-    var classes = ["footer"];
+    var classes = [CLASS_ROOT];
     if (this.props.primary) {
-      classes.push("footer--primary");
+      classes.push(CLASS_ROOT + "--primary");
     }
     if (this.props.centered) {
-      classes.push("footer--centered");
+      classes.push(CLASS_ROOT + "--centered");
+    }
+    if (this.props.flush) {
+      classes.push(CLASS_ROOT + "--flush");
     }
     if (this.props.colorIndex) {
       classes.push("background-color-index-" + this.props.colorIndex);
@@ -67,7 +79,7 @@ var Footer = React.createClass({
     var top = null;
     if (this.props.scrollTop && this.state.scrolled) {
       top = (
-        <div className="footer__top control-icon"
+        <div className={CLASS_ROOT + "__top control-icon"}
           onClick = {this._onClickTop}>
           <Top />
         </div>
@@ -76,7 +88,7 @@ var Footer = React.createClass({
 
     return (
       <div ref="footer" className={classes.join(' ')}>
-        <div className="footer__content">
+        <div className={CLASS_ROOT + "__content"}>
           {this.props.children}
           {top}
         </div>

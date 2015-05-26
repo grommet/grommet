@@ -28,7 +28,7 @@ var Enclosures = React.createClass({
     return (
       <TourIndex
         resourceRoute="enclosure"
-        selectionRoute="enclosure-overview"
+        selectionRoute="enclosure overview"
         options={OPTIONS}
         onMain={this.props.onMain} />
     );

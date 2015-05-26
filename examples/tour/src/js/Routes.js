@@ -18,9 +18,10 @@ var Overview = require('./Overview');
 var TourMap = require('./TourMap');
 var ServerHardwares = require('./ServerHardwares');
 var ServerHardware = require('./ServerHardware');
-var ServerProfiles = require('./ServerProfiles');
-var ServerProfile = require('./ServerProfile');
-var ServerProfileAdd = require('./ServerProfileAdd');
+var ServerProfiles = require('./server-profiles/ServerProfiles');
+var ServerProfile = require('./server-profiles/ServerProfile');
+var ServerProfileOverview = require('./server-profiles/ServerProfileOverview');
+var ServerProfileAdd = require('./server-profiles/ServerProfileAdd');
 var TourActivity = require('./TourActivity');
 var TourActivityResource = require('./TourActivityResource');
 
@@ -73,7 +74,7 @@ module.exports = {
     if (indexMap) {
       var route = indexMap.resourceRoute;
       if (view) {
-        route += '-' + view;
+        route += ' ' + view;
       }
       result = router.makePath(route, {splat: uri});
     }
@@ -120,7 +121,7 @@ module.exports = {
             path={rootPath + "server-profiles/"} handler={ServerProfile}>
             <Route name="server profile overview"
               path={rootPath + "server-profiles/overview/*"}
-              handler={Overview} />
+              handler={ServerProfileOverview} />
             <Route name="server profile map"
               path={rootPath + "server-profiles/map/*"}
               handler={TourMap} />

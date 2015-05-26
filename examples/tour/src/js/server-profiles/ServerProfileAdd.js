@@ -18,13 +18,37 @@ var Tile = require('grommet/components/Tile');
 var Rest = require('grommet/utils/Rest');
 var ServerProfileConnectionAdd = require('./ServerProfileConnectionAdd');
 var ServerProfileVolumeAdd = require('./ServerProfileVolumeAdd');
+var BusyIcon = require('grommet/components/icons/Spinning');
 
 var ServerProfileAdd = React.createClass({
 
+  contextTypes: {
+    router: React.PropTypes.func.isRequired
+  },
+
+  _onTaskResponse: function (err, res) {
+    console.log('!!! ServerProfileAdd _onTaskResponse', err, res);
+    if (res.ok) {
+      var task = res.body;
+      console.log('!!! ServerProfileAdd _onTaskResponse', task.attributes.associatedResourceUri);
+      this.context.router.transitionTo('server profile overview',
+        {splat: task.attributes.associatedResourceUri});
+    }
+  },
+
+  _onAddResponse: function (err, res) {
+    console.log('!!! ServerProfileAdd _onAddResponse', err, res);
+    if (res.ok) {
+      Rest.get(res.body.taskUri).end(this._onTaskResponse);
+    }
+  },
+
   _onSubmit: function (event) {
     event.preventDefault();
+    this.setState({initiating: true});
     // POST it to the back end and make sure it passes initial muster.
-    // TODO:
+    Rest.post('/rest/server-profiles', this.state.serverProfile)
+      .end(this._onAddResponse);
   },
 
   _onChange: function (event) {
@@ -144,7 +168,8 @@ var ServerProfileAdd = React.createClass({
         manageBootOrder: false
       },
       hardwareSuggestions: [],
-      firmwareSuggestions: []
+      firmwareSuggestions: [],
+      initiating: false
     };
   },
 
@@ -153,10 +178,8 @@ var ServerProfileAdd = React.createClass({
     this._onFirmwareSearch('');
   },
 
-  render: function () {
-    var serverProfile = this.state.serverProfile;
-
-    var connections = serverProfile.connections.map(function (connection, index) {
+  _renderConnections: function () {
+    return this.state.serverProfile.connections.map(function (connection, index) {
       return (
         <Tile key={connection.name}>
           <Header small={true}>
@@ -175,17 +198,10 @@ var ServerProfileAdd = React.createClass({
         </Tile>
       );
     }, this);
+  },
 
-    var addConnection = null;
-    if (this.state.addConnection) {
-      addConnection = (
-        <ServerProfileConnectionAdd
-          onAdd={this._onAddConnection}
-          onClose={this._onNewConnectionClose} />
-      );
-    }
-
-    var volumes = serverProfile.volumes.map(function (volume, index) {
+  _renderVolumes: function () {
+    return this.state.serverProfile.volumes.map(function (volume, index) {
       return (
         <Tile key={volume.name}>
           <Header small={true}>
@@ -199,6 +215,23 @@ var ServerProfileAdd = React.createClass({
         </Tile>
       );
     }, this);
+  },
+
+  render: function () {
+    var serverProfile = this.state.serverProfile;
+
+    var connections = this._renderConnections();
+
+    var addConnection = null;
+    if (this.state.addConnection) {
+      addConnection = (
+        <ServerProfileConnectionAdd
+          onAdd={this._onAddConnection}
+          onClose={this._onNewConnectionClose} />
+      );
+    }
+
+    var volumes = this._renderVolumes();
 
     var addVolume = null;
     if (this.state.addVolume) {
@@ -206,6 +239,16 @@ var ServerProfileAdd = React.createClass({
         <ServerProfileVolumeAdd
           onAdd={this._onAddVolume}
           onClose={this._onNewVolumeClose} />
+      );
+    }
+
+    var actions = null;
+    if (this.state.initiating) {
+      actions = <span><BusyIcon /> Adding</span>;
+    } else {
+      actions = (
+        <input type="submit" className="primary" value="Add"
+          onClick={this._onSubmit} />
       );
     }
 
@@ -349,10 +392,10 @@ var ServerProfileAdd = React.createClass({
           <fieldset>
             <legend>Advanced</legend>
             <FormField label="Hide unused FlexNICs">
-              <RadioButton name="hideUnusedNics" label="Yes"
+              <RadioButton id="hideYes" name="hideUnusedNics" label="Yes"
                 checked={serverProfile.hideUnusedNics}
                 onChange={this._onChange} />
-              <RadioButton name="hideUnusedNics" label="No"
+              <RadioButton id="hideNo" name="hideUnusedNics" label="No"
                 checked={! serverProfile.hideUnusedNics}
                 onChange={this._onChange} />
             </FormField>
@@ -363,8 +406,7 @@ var ServerProfileAdd = React.createClass({
         <Footer flush={false}>
           <span></span>
           <Menu direction="left">
-            <input type="submit" className="primary" value="Add"
-              onClick={this._onSubmit} />
+            {actions}
           </Menu>
         </Footer>
 

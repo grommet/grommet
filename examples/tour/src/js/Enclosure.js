@@ -4,8 +4,8 @@ var React = require('react');
 var TourResource = require('./TourResource');
 
 var VIEWS = [
-  {label: 'Overview', name: 'overview', route: 'enclosure-overview'},
-  {label: 'Map', name: 'map', route: 'enclosure-map'}
+  {label: 'Overview', name: 'overview', route: 'enclosure overview'},
+  {label: 'Map', name: 'map', route: 'enclosure map'}
 ];
 
 var Enclosure = React.createClass({
