@@ -12,7 +12,7 @@ var Footer = require('grommet/components/Footer');
 var FormFields = require('grommet/components/FormFields');
 var FormField = require('grommet/components/FormField');
 
-var ServerVolumeAdd = React.createClass({
+var ServerProfileVolumeAdd = React.createClass({
 
   propTypes: {
     onAdd: React.PropTypes.func.isRequired,
@@ -113,4 +113,4 @@ var ServerVolumeAdd = React.createClass({
 });
 
 
-module.exports = ServerVolumeAdd;
+module.exports = ServerProfileVolumeAdd;

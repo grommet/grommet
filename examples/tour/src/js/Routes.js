@@ -16,9 +16,11 @@ var Enclosures = require('./Enclosures');
 var Enclosure = require('./Enclosure');
 var Overview = require('./Overview');
 var TourMap = require('./TourMap');
-var Servers = require('./Servers');
-var Server = require('./Server');
-var ServerAdd = require('./ServerAdd');
+var ServerHardwares = require('./ServerHardwares');
+var ServerHardware = require('./ServerHardware');
+var ServerProfiles = require('./ServerProfiles');
+var ServerProfile = require('./ServerProfile');
+var ServerProfileAdd = require('./ServerProfileAdd');
 var TourActivity = require('./TourActivity');
 var TourActivityResource = require('./TourActivityResource');
 
@@ -29,14 +31,19 @@ if (__DEV_MODE__) {
 
 var INDEX_MAP = {
   "enclosures": {
-    label: 'Enclosures',
+    label: 'enclosures',
     categoryRoute: 'enclosures',
     resourceRoute: 'enclosure'
   },
   "server-hardware": {
-    label: 'Servers',
-    categoryRoute: 'servers',
-    resourceRoute: 'server'
+    label: 'serverHardware',
+    categoryRoute: 'server hardwares',
+    resourceRoute: 'server hardware'
+  },
+  "server-profiles": {
+    label: 'serverProfiles',
+    categoryRoute: 'server profiles',
+    resourceRoute: 'server profile'
   }
 };
 
@@ -81,23 +88,41 @@ module.exports = {
         <Route name="tbd" handler={TBD}/>
         <Route name="settings" handler={TBD}/>
         <Route name="activity" handler={TourActivity}>
-          <Route name="activity-resource" path={rootPath + "activity/*"}
+          <Route name="activity resource" path={rootPath + "activity/*"}
             handler={TourActivityResource} />
         </Route>
         <Route name="enclosures" handler={Enclosures}>
-          <Route name="enclosure" path={rootPath + "enclosures/"} handler={Enclosure}>
-            <Route name="enclosure-overview" path={rootPath + "enclosures/overview/*"}
+          <Route name="enclosure"
+            path={rootPath + "enclosures/"} handler={Enclosure}>
+            <Route name="enclosure overview"
+              path={rootPath + "enclosures/overview/*"}
               handler={Overview} />
-            <Route name="enclosure-map" path={rootPath + "enclosures/map/*"}
+            <Route name="enclosure map"
+              path={rootPath + "enclosures/map/*"}
               handler={TourMap} />
           </Route>
         </Route>
-        <Route name="servers" handler={Servers}>
-          <Route name="server add" handler={ServerAdd} />
-          <Route name="server" path={rootPath + "servers/"} handler={Server}>
-            <Route name="server-overview" path={rootPath + "servers/overview/*"}
+        <Route name="server hardwares"
+          path={rootPath + "server-hardware"} handler={ServerHardwares}>
+          <Route name="server hardware"
+            path={rootPath + "server-hardware/"} handler={ServerHardware}>
+            <Route name="server hardware overview"
+              path={rootPath + "server-hardware/overview/*"}
               handler={Overview} />
-            <Route name="server-map" path={rootPath + "servers/map/*"}
+            <Route name="server hardware map"
+              path={rootPath + "server-hardware/map/*"}
+              handler={TourMap} />
+          </Route>
+        </Route>
+        <Route name="server profiles" handler={ServerProfiles}>
+          <Route name="server profile add" handler={ServerProfileAdd} />
+          <Route name="server profile"
+            path={rootPath + "server-profiles/"} handler={ServerProfile}>
+            <Route name="server profile overview"
+              path={rootPath + "server-profiles/overview/*"}
+              handler={Overview} />
+            <Route name="server profile map"
+              path={rootPath + "server-profiles/map/*"}
               handler={TourMap} />
           </Route>
         </Route>

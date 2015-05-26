@@ -15,7 +15,7 @@ var SearchInput = require('grommet/components/SearchInput');
 var RadioButton = require('grommet/components/RadioButton');
 var Rest = require('grommet/utils/Rest');
 
-var ServerConnectionAdd = React.createClass({
+var ServerProfileConnectionAdd = React.createClass({
 
   propTypes: {
     onAdd: React.PropTypes.func.isRequired,
@@ -186,4 +186,4 @@ var ServerConnectionAdd = React.createClass({
 });
 
 
-module.exports = ServerConnectionAdd;
+module.exports = ServerProfileConnectionAdd;

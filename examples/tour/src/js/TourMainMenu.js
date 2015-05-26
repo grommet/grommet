@@ -9,8 +9,10 @@ var PAGES = [
   {route: 'activity', label: 'activity'},
   {route: 'enclosures', label: 'enclosures',
     indexCategory: 'enclosures', resourceRoute: 'enclosure'},
-  {route: 'servers', label: 'servers',
-    indexCategory: 'server-hardware', resourceRoute: 'server'},
+  {route: 'server hardwares', label: 'serverHardware',
+    indexCategory: 'server-hardware', resourceRoute: 'server hardware'},
+  {route: 'server profiles', label: 'serverProfiles',
+    indexCategory: 'server-profiles', resourceRoute: 'server profile'},
   {route: 'tbd', label: 'reports'},
   {route: 'settings', label: 'settings'}
 ];

@@ -16,27 +16,29 @@ var RadioButton = require('grommet/components/RadioButton');
 var Tiles = require('grommet/components/Tiles');
 var Tile = require('grommet/components/Tile');
 var Rest = require('grommet/utils/Rest');
-var ServerConnectionAdd = require('./ServerConnectionAdd');
-var ServerVolumeAdd = require('./ServerVolumeAdd');
+var ServerProfileConnectionAdd = require('./ServerProfileConnectionAdd');
+var ServerProfileVolumeAdd = require('./ServerProfileVolumeAdd');
 
-var ServerAdd = React.createClass({
+var ServerProfileAdd = React.createClass({
 
   _onSubmit: function (event) {
     event.preventDefault();
+    // POST it to the back end and make sure it passes initial muster.
+    // TODO:
   },
 
   _onChange: function (event) {
-    console.log('!!! ServerAdd _onChange', event.target.getAttribute('name'), 'to', event.target.value);
-    var server = this.state.server;
-    server[event.target.getAttribute('name')] = event.target.value;
-    this.setState({server: server});
+    console.log('!!! ServerProfileAdd _onChange', event.target.getAttribute('name'), 'to', event.target.value);
+    var serverProfile = this.state.serverProfile;
+    serverProfile[event.target.getAttribute('name')] = event.target.value;
+    this.setState({serverProfile: serverProfile});
   },
 
   _onHardwareChange: function (value) {
-    console.log('!!! ServerAdd _onHardwareChange', value);
-    var server = this.state.server;
-    server.hardware = value;
-    this.setState({server: server});
+    console.log('!!! ServerProfileAdd _onHardwareChange', value);
+    var serverProfile = this.state.serverProfile;
+    serverProfile.hardware = value;
+    this.setState({serverProfile: serverProfile});
   },
 
   _onHardwareSearchResponse: function (err, res) {
@@ -56,10 +58,10 @@ var ServerAdd = React.createClass({
   },
 
   _onFirmwareChange: function (value) {
-    console.log('!!! ServerAdd _onFirmwareChange', value);
-    var server = this.state.server;
-    server.firmware = value;
-    this.setState({server: server});
+    console.log('!!! ServerProfileAdd _onFirmwareChange', value);
+    var serverProfile = this.state.serverProfile;
+    serverProfile.firmware = value;
+    this.setState({serverProfile: serverProfile});
   },
 
   _onFirmwareSearchResponse: function (err, res) {
@@ -79,10 +81,10 @@ var ServerAdd = React.createClass({
   },
 
   _onAddConnection: function (connection) {
-    console.log('!!! ServerAdd _onAddConnection', connection);
-    var server = this.state.server;
-    server.connections.push(connection);
-    this.setState({server: server});
+    console.log('!!! ServerProfileAdd _onAddConnection', connection);
+    var serverProfile = this.state.serverProfile;
+    serverProfile.connections.push(connection);
+    this.setState({serverProfile: serverProfile});
   },
 
   _onNewConnectionOpen: function (event) {
@@ -95,16 +97,16 @@ var ServerAdd = React.createClass({
   },
 
   _onRemoveConnection: function (index) {
-    var server = this.state.server;
-    server.connections.splice(index, 1);
-    this.setState({server: server});
+    var serverProfile = this.state.serverProfile;
+    serverProfile.connections.splice(index, 1);
+    this.setState({serverProfile: serverProfile});
   },
 
   _onAddVolume: function (volume) {
     console.log('!!! ServerAdd _onAddVolume', volume);
-    var server = this.state.server;
-    server.volumes.push(volume);
-    this.setState({server: server});
+    var serverProfile = this.state.serverProfile;
+    serverProfile.volumes.push(volume);
+    this.setState({serverProfile: serverProfile});
   },
 
   _onNewVolumeOpen: function (event) {
@@ -117,14 +119,15 @@ var ServerAdd = React.createClass({
   },
 
   _onRemoveVolume: function (index) {
-    var server = this.state.server;
-    server.volumes.splice(index, 1);
-    this.setState({server: server});
+    var serverProfile = this.state.serverProfile;
+    serverProfile.volumes.splice(index, 1);
+    this.setState({serverProfile: serverProfile});
   },
 
   getInitialState: function () {
     return {
-      server: {
+      serverProfile: {
+        category: 'server-profiles',
         name: '',
         description: '',
         hardware: '',
@@ -151,9 +154,9 @@ var ServerAdd = React.createClass({
   },
 
   render: function () {
-    var server = this.state.server;
+    var serverProfile = this.state.serverProfile;
 
-    var connections = server.connections.map(function (connection, index) {
+    var connections = serverProfile.connections.map(function (connection, index) {
       return (
         <Tile key={connection.name}>
           <Header small={true}>
@@ -176,13 +179,13 @@ var ServerAdd = React.createClass({
     var addConnection = null;
     if (this.state.addConnection) {
       addConnection = (
-        <ServerConnectionAdd
+        <ServerProfileConnectionAdd
           onAdd={this._onAddConnection}
           onClose={this._onNewConnectionClose} />
       );
     }
 
-    var volumes = server.volumes.map(function (volume, index) {
+    var volumes = serverProfile.volumes.map(function (volume, index) {
       return (
         <Tile key={volume.name}>
           <Header small={true}>
@@ -200,7 +203,7 @@ var ServerAdd = React.createClass({
     var addVolume = null;
     if (this.state.addVolume) {
       addVolume = (
-        <ServerVolumeAdd
+        <ServerProfileVolumeAdd
           onAdd={this._onAddVolume}
           onClose={this._onNewVolumeClose} />
       );
@@ -209,9 +212,9 @@ var ServerAdd = React.createClass({
     return (
       <Form flush={false}>
         <Header flush={false} fixed={true} large={true}>
-          <Title>Add Server</Title>
+          <Title>Add Server Profile</Title>
           <Menu>
-            <Link to="servers"><CloseIcon /></Link>
+            <Link to="server profiles"><CloseIcon /></Link>
           </Menu>
         </Header>
 
@@ -221,21 +224,23 @@ var ServerAdd = React.createClass({
             <legend>General</legend>
             <FormField label="Name" htmlFor="name">
               <input id="name" name="name" type="text"
-                value={server.name} onChange={this._onChange} />
+                value={serverProfile.name} onChange={this._onChange} />
             </FormField>
             <FormField label="Description" htmlFor="description">
               <input id="description" name="description" type="text"
-                value={server.description} onChange={this._onChange} />
+                value={serverProfile.description} onChange={this._onChange} />
             </FormField>
             <FormField label="Hardware" htmlFor="hardware">
               <SearchInput id="hardware" name="hardware"
-                value={server.hardware}
+                value={serverProfile.hardware}
                 suggestions={this.state.hardwareSuggestions}
                 onChange={this._onHardwareChange}
                 onSearch={this._onHardwareSearch} />
             </FormField>
             <FormField label="Affinity" htmlFor="affinity">
-              <select id="affinity" name="affinity" onChange={this._onChange}>
+              <select id="affinity" name="affinity"
+                value={serverProfile.affinity}
+                onChange={this._onChange}>
                 <option>Device bay</option>
                 <option>Device bay and hardware</option>
               </select>
@@ -246,7 +251,7 @@ var ServerAdd = React.createClass({
             <legend>Firmware</legend>
             <FormField label="Firmware baseline" htmlFor="firmware">
               <SearchInput id="firmware" name="firmware"
-                value={server.firmware}
+                value={serverProfile.firmware}
                 suggestions={this.state.firmwareSuggestions}
                 onChange={this._onFirmwareChange}
                 onSearch={this._onFirmwareSearch} />
@@ -265,11 +270,11 @@ var ServerAdd = React.createClass({
             <legend>Local Storage</legend>
             <CheckBox id="manageLocalStorage" name="manageLocalStorage"
               label="Manage local storage"
-              checked={server.manageLocalStorage}
+              checked={serverProfile.manageLocalStorage}
               onChange={this._onChange}/>
             <FormField label="Logical drive" htmlFor="logicalDrive">
               <select id="logicalDrive" name="logicalDrive"
-                value={server.logicalDrive}
+                value={serverProfile.logicalDrive}
                 onChange={this._onChange}>
                 <option>None</option>
                 <option>RAID 0</option>
@@ -279,13 +284,13 @@ var ServerAdd = React.createClass({
             <FormField htmlFor="logicalDriveBootable">
               <CheckBox id="logicalDriveBootable" name="logicalDriveBootable"
                 label="Bootable"
-                checked={server.logicalDriveBootable}
+                checked={serverProfile.logicalDriveBootable}
                 onChange={this._onChange}/>
             </FormField>
             <FormField htmlFor="logicalDriveInitialize">
               <CheckBox id="logicalDriveInitialize" name="logicalDriveInitialize"
                 label="Initialize"
-                checked={server.logicalDriveInitialize}
+                checked={serverProfile.logicalDriveInitialize}
                 onChange={this._onChange}/>
             </FormField>
           </fieldset>
@@ -294,11 +299,11 @@ var ServerAdd = React.createClass({
             <legend>SAN Storage</legend>
             <CheckBox id="manageSanStorage" name="manageSanStorage"
               label="Manage SAN storage"
-              checked={server.manageSanStorage}
+              checked={serverProfile.manageSanStorage}
               onChange={this._onChange}/>
             <FormField label="Host OS type" htmlFor="hostOsType">
               <select id="hostOsType" name="hostOsType"
-                value={server.hostOsType}
+                value={serverProfile.hostOsType}
                 onChange={this._onChange}>
                 <option>AIX</option>
                 <option>Citrix Xen Server (5.x, 6.x)</option>
@@ -329,7 +334,7 @@ var ServerAdd = React.createClass({
             <legend>Boot</legend>
             <CheckBox id="manageBootOrder" name="manageBootOrder"
               label="Manage boot order"
-              checked={server.manageBootOrder}
+              checked={serverProfile.manageBootOrder}
               onChange={this._onChange}/>
           </fieldset>
 
@@ -337,7 +342,7 @@ var ServerAdd = React.createClass({
             <legend>BIOS/UEFI</legend>
             <CheckBox id="manageBios" name="manageBios"
               label="Manage BIOS"
-              checked={server.manageBios}
+              checked={serverProfile.manageBios}
               onChange={this._onChange}/>
           </fieldset>
 
@@ -345,10 +350,10 @@ var ServerAdd = React.createClass({
             <legend>Advanced</legend>
             <FormField label="Hide unused FlexNICs">
               <RadioButton name="hideUnusedNics" label="Yes"
-                checked={server.hideUnusedNics}
+                checked={serverProfile.hideUnusedNics}
                 onChange={this._onChange} />
               <RadioButton name="hideUnusedNics" label="No"
-                checked={! server.hideUnusedNics}
+                checked={! serverProfile.hideUnusedNics}
                 onChange={this._onChange} />
             </FormField>
           </fieldset>
@@ -370,4 +375,4 @@ var ServerAdd = React.createClass({
   }
 });
 
-module.exports = ServerAdd;
+module.exports = ServerProfileAdd;

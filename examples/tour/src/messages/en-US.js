@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 module.exports = {
   TourDashboard: {
-    servers: 'Servers',
+    serverHardware: 'Server Hardware',
     activeAlerts: 'Active Alerts'
   },
   TourSessionMenu: {
@@ -10,7 +10,8 @@ module.exports = {
   dashboard: 'Dashboard',
   activity: 'Activity',
   enclosures: 'Enclosures',
-  servers: 'Servers',
+  serverHardware: 'Server Hardware',
+  serverProfiles: 'Server Profiles',
   reports: 'Reports',
   settings: 'Settings',
   overview: 'Overview',

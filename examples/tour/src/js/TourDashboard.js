@@ -40,8 +40,8 @@ var CONFIG = [
     }
   },
   {
-    name: 'TourDashboard.servers',
-    route: 'servers',
+    name: 'TourDashboard.serverHardware',
+    route: 'server hardwares',
     type: 'arc',
     params: {
       category: 'server-hardware',
@@ -101,7 +101,7 @@ var TourDashboard = React.createClass({
 
   componentDidMount: function () {
     this.refs.search.focus();
-    window.addEventListener('resize', this._onResize);
+    window.addEventListener('resize ', this._onResize);
     this._onResize();
   },
 
