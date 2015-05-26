@@ -80,6 +80,10 @@ var opts = {
       dist: 'dist/templates/'
     },
     {
+      asset: 'examples/**',
+      dist: 'dist/examples/'
+    },
+    {
       filename: 'package.json',
       asset: JSON.stringify(getPackageJSON(), null, 2)
     }
@@ -413,12 +417,4 @@ gulp.task('release:sync', function() {
 
 gulp.task('release', function(done) {
   runSequence('release:bump', ['dist-bower', 'dist'], 'release:npm', 'release:bower', 'release:clean', 'release:sync', done);
-});
-
-gulp.task('tour-standalone', function() {
-   gulp.src('./examples/tour/src/**/*').pipe(gulp.dest('./tour-standalone/src'));
-   gulp.src('./examples/tour/standalone/gulpfile.js').pipe(gulp.dest('./tour-standalone'));
-   gulp.src('./examples/tour/package.json').pipe(gulp.dest('./tour-standalone'));
-   gulp.src('./examples/server/**/*').pipe(gulp.dest('./tour-standalone/server'));
-   gulp.src('./src/**/*').pipe(gulp.dest('./tour-standalone/node_modules/grommet'));
 });
