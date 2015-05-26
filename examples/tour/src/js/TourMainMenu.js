@@ -19,15 +19,11 @@ var TourMainMenu = React.createClass({
 
   mixins: [IntlMixin],
 
-  propTypes: {
-    onClose: React.PropTypes.func
-  },
-
   render: function() {
     var pages = PAGES.map(function (page) {
       var label = this.getIntlMessage(page.label);
       return (
-        <Link key={label} to={page.route} onClick={this.props.onClose}>
+        <Link key={label} to={page.route}>
           {label}
         </Link>
       );

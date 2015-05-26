@@ -36,7 +36,7 @@ var TourMain = React.createClass({
             </div>
           </Menu>
         </Header>
-        <TourMainMenu onClose={this.props.onClose} />
+        <TourMainMenu />
         <Footer>
           <TourSessionMenu direction="up" />
         </Footer>

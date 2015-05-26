@@ -8,10 +8,17 @@ var TourMain = require('./TourMain');
 
 var TourSplit = React.createClass({
 
+  contextTypes: {
+    router: React.PropTypes.func.isRequired
+  },
+
   _onOpenMain: function () {
     this.setState({showMain: true});
     if ('multiple' === this.state.responsive) {
       this.setState({reShowMain: true});
+    } else {
+      var routes = this.context.router.getCurrentRoutes();
+      this.setState({currentRoute: routes[routes.length-1].name});
     }
   },
 
@@ -19,13 +26,15 @@ var TourSplit = React.createClass({
     this.setState({showMain: false});
     if ('multiple' === this.state.responsive) {
       this.setState({reShowMain: false});
+    } else {
+      this.setState({currentRoute: null});
     }
   },
 
   _onResponsive: function (responsive) {
     this.setState({responsive: responsive});
     if ('multiple' === responsive && this.state.reShowMain) {
-      this.setState({showMain: true});
+      this.setState({showMain: true, currentRoute: null});
     }
     if ('single' === responsive) {
       this.setState({showMain: false});
@@ -33,7 +42,20 @@ var TourSplit = React.createClass({
   },
 
   getInitialState: function () {
-    return {responsive: null, showMain: true, reShowMain: true};
+    return {
+      responsive: null,
+      showMain: true,
+      reShowMain: true
+    };
+  },
+
+  componentWillReceiveProps: function () {
+    if ('single' === this.state.responsive) {
+      var routes = this.context.router.getCurrentRoutes();
+      if (this.state.currentRoute !== routes[routes.length-1].name) {
+        this.setState({showMain: false});
+      }
+    }
   },
 
   render: function() {
