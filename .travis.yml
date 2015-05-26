@@ -10,9 +10,14 @@ after_script:
 - gulp blanket-lcov-reporter
 - gulp coveralls
 after_success:
-- git config credential.helper "store --file=.git/credentials"
-- echo "https://${GH_TOKEN}:@github.com" > .git/credentials
-- gulp release:stable
+- |
+  if [ "$TRAVIS_BRANCH" = "master" ]; then
+    git config credential.helper "store --file=.git/credentials"
+    echo "https://${GH_TOKEN}:@github.com" > .git/credentials
+    git config --global user.name "grommet-github-bot"
+    git config --global user.email "uxgroup@hp.com"
+    gulp release:stable
+  fi
 notifications:
   slack:
     secure: WeOy0cWkkmem1I9eahruJYQLpTy/Qz8A/CNErCnEkOrhItD3SE75jTq49SBT+/VxcVGZaaOqRgzOd/ISjdhEWZOouNI0+lSd4YDFGAZtV9esoJKW4e+xcSciPC9TeUGXrl45bJkFPeVKc1KHoDuqeyBj7E3KmPqyl5AL9xICMmM=
