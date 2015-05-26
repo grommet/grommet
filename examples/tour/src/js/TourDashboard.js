@@ -11,7 +11,7 @@ var TourSessionMenu = require('./TourSessionMenu');
 var Layer = require('grommet/components/Layer');
 var Logo = require('./MediumLogo');
 var TourMain = require('./TourMain');
-var IndexDonut = require('grommet/components/index/IndexDonut');
+var IndexMeter = require('grommet/components/index/IndexMeter');
 var IndexHistory = require('grommet/components/index/IndexHistory');
 var IndexQuery = require('grommet/utils/IndexQuery');
 var IntlMixin = require('grommet/mixins/GrommetIntlMixin');
@@ -19,19 +19,20 @@ var Link = require('react-router').Link;
 
 var CONFIG = [
   {
-    type: 'line',
+    history: true,
+    type: 'area',
     wide: true,
     params: {
       category: 'tasks',
       attribute: 'status',
       interval: 'days',
-      count: 10
+      count: 8
     }
   },
   {
     name: 'TourDashboard.activeAlerts',
     route: 'activity',
-    type: 'donut',
+    type: 'arc',
     params: {
       category: 'alerts',
       query: IndexQuery.create('state:Active'),
@@ -41,7 +42,7 @@ var CONFIG = [
   {
     name: 'TourDashboard.servers',
     route: 'servers',
-    type: 'donut',
+    type: 'arc',
     params: {
       category: 'server-hardware',
       attribute: 'model'
@@ -82,7 +83,7 @@ var TourDashboard = React.createClass({
     clearTimeout(this._timer);
     this._timer = setTimeout(function () {
       // set wide chart count according to the space we have
-      var count = Math.round(Math.max(8, window.innerWidth / 40));
+      var count = Math.round(Math.max(4, window.innerWidth / 48));
       var tiles = this.state.tiles.map(function (tile) {
         if (tile.wide) {
           return merge(tile, {params: {count: count}});
@@ -131,13 +132,14 @@ var TourDashboard = React.createClass({
       }
 
       var contents = null;
-      if ('donut' === tile.type) {
-        contents =  <IndexDonut params={tile.params}
+      if (tile.history) {
+        contents = <IndexHistory params={tile.params} type={tile.type}
+          small={true} smooth={true} />;
+      } else {
+        contents = <IndexMeter params={tile.params} type={tile.type}
           onClick={function (query) {
             this._onClickSegment(tile, query);
-          }.bind(this)}/>;
-      } else {
-        contents = <IndexHistory params={tile.params} type={tile.type} />;
+          }.bind(this)} />;
       }
 
       return (

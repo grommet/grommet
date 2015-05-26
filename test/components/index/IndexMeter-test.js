@@ -1,17 +1,17 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-var __path__ = '../../../src/js/components/index/IndexDonut';
+var __path__ = '../../../src/js/components/index/IndexMeter';
 
 var GrommetTestUtils = require('../../mocks/GrommetTestUtils');
 var rewire = require('rewire');
 var expect = require('expect');
 
-describe('Grommet IndexDonut', function() {
-  it('loads a basic IndexDonut component', function(done) {
+describe('Grommet IndexMeter', function() {
+  it('loads a basic IndexMeter component', function(done) {
 
-    var IndexDonut = rewire(__path__);
+    var IndexMeter = rewire(__path__);
     var IndexActions = require('../../mocks/components/IndexActions-mock').successGetAggregateAction();
-    IndexDonut.__set__('IndexActions', IndexActions);
+    IndexMeter.__set__('IndexActions', IndexActions);
 
     var React = require('react/addons');
     var TestUtils = React.addons.TestUtils;
@@ -19,19 +19,19 @@ describe('Grommet IndexDonut', function() {
       attribute: 'status'
     };
 
-    var Component = TestUtils.renderIntoDocument(<IndexDonut params={params} />);
+    var Component = TestUtils.renderIntoDocument(<IndexMeter params={params} />);
 
     IndexActions.getAggregate.completed.listen(function () {
-      GrommetTestUtils.componentShouldExist(Component, 'donut');
-      GrommetTestUtils.componentShouldExist(Component, 'donut__legend');
+      GrommetTestUtils.componentShouldExist(Component, 'meter');
+      GrommetTestUtils.componentShouldExist(Component, 'meter__legend');
       done();
     });
   });
 
   it('invokes the callback function  whenever a click happens in the series', function(done) {
-    var IndexDonut = rewire(__path__);
+    var IndexMeter = rewire(__path__);
     var IndexActions = require('../../mocks/components/IndexActions-mock').successGetAggregateAction();
-    IndexDonut.__set__('IndexActions', IndexActions);
+    IndexMeter.__set__('IndexActions', IndexActions);
 
     var React = require('react/addons');
     var TestUtils = React.addons.TestUtils;
@@ -45,24 +45,24 @@ describe('Grommet IndexDonut', function() {
 
     };
 
-    var Component = TestUtils.renderIntoDocument(<IndexDonut params={params} onClick={_onClick}/>);
+    var Component = TestUtils.renderIntoDocument(<IndexMeter params={params} onClick={_onClick}/>);
 
-    GrommetTestUtils.componentShouldExist(Component, 'donut');
-    GrommetTestUtils.componentShouldExist(Component, 'donut__legend');
+    GrommetTestUtils.componentShouldExist(Component, 'meter');
+    GrommetTestUtils.componentShouldExist(Component, 'meter__legend');
 
     IndexActions.getAggregate.completed.listen(function () {
-      var donutItemActive = TestUtils.findRenderedDOMComponentWithClass(Component, 'donut__slice--active');
+      var meterItemActive = TestUtils.findRenderedDOMComponentWithClass(Component, 'meter__bar--active');
 
-      TestUtils.Simulate.click(donutItemActive.getDOMNode());
+      TestUtils.Simulate.click(meterItemActive.getDOMNode());
       expect(seriesClicked).toBe(true);
       done();
     });
   });
 
   it('invokes the callback function with query whenever a click happens in the series', function(done) {
-    var IndexDonut = rewire(__path__);
+    var IndexMeter = rewire(__path__);
     var IndexActions = require('../../mocks/components/IndexActions-mock').successGetAggregateAction();
-    IndexDonut.__set__('IndexActions', IndexActions);
+    IndexMeter.__set__('IndexActions', IndexActions);
 
     var React = require('react/addons');
     var TestUtils = React.addons.TestUtils;
@@ -83,15 +83,15 @@ describe('Grommet IndexDonut', function() {
       query = q;
     };
 
-    var Component = TestUtils.renderIntoDocument(<IndexDonut params={params} onClick={_onClick}/>);
+    var Component = TestUtils.renderIntoDocument(<IndexMeter params={params} onClick={_onClick}/>);
 
-    GrommetTestUtils.componentShouldExist(Component, 'donut');
-    GrommetTestUtils.componentShouldExist(Component, 'donut__legend');
+    GrommetTestUtils.componentShouldExist(Component, 'meter');
+    GrommetTestUtils.componentShouldExist(Component, 'meter__legend');
 
     IndexActions.getAggregate.completed.listen(function () {
-      var donutItemActive = TestUtils.findRenderedDOMComponentWithClass(Component, 'donut__slice--active');
+      var meterItemActive = TestUtils.findRenderedDOMComponentWithClass(Component, 'meter__bar--active');
 
-      TestUtils.Simulate.click(donutItemActive.getDOMNode());
+      TestUtils.Simulate.click(meterItemActive.getDOMNode());
       expect(query.fullText).toBe('Filter Me');
       done();
     });

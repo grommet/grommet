@@ -10,6 +10,7 @@
 
   &__graphic {
     width: 100%;
+    height: $graphic-height;
     max-height: calc(100vh - #{double($header-height)});
   }
 
@@ -20,17 +21,13 @@
       @include graph-stroke-color();
     }
 
-    &-area {
-      @include graph-fill-color-translucent(0.7);
-    }
+    //&-bar {
+    //  @include graph-fill-color-translucent(0.7);
 
-    &-bar {
-      @include graph-fill-color-translucent(0.7);
-
-      &--active {
-        @include graph-fill-color();
-      }
-    }
+    //  &--active {
+    //    @include graph-fill-color();
+    //  }
+    //}
   }
 
   &__threshold {
@@ -52,26 +49,18 @@
     }
   }
 
-  &__back {
-    &-band {
+  &__front {
+    &-xband {
       &-background {
         fill: rgba(0, 0, 0, 0);
-      }
-
-      &--active {
-        .chart__back-band-background {
-          fill: $active-background-color;
-        }
       }
     }
   }
 
-  &__front {
-    &-band {
-      &-background {
-        fill: rgba(0, 0, 0, 0);
-      }
-    }
+  &__cursor {
+    stroke: $focus-border-color;
+    stroke-width: 3;
+    pointer-events: none;
   }
 
   &__legend {
@@ -90,9 +79,22 @@
     }
   }
 
+  &--area,
+  &--bar {
+    .chart__gradient {
+      @include graph-fill-color-gradient();
+    }
+  }
+
   &--small {
     .chart__graphic {
-      max-height: double($header-height);
+      height: $small-graphic-height;
+    }
+  }
+
+  &--large {
+    .chart__graphic {
+      height: $large-graphic-height;
     }
   }
 }
