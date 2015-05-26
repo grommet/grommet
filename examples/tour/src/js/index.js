@@ -19,9 +19,16 @@ var router = Router.create({routes: Routes.routes, location: Router.HistoryLocat
 
 //Index.init(indexConfig); /// TODO: refactor
 
+function normalizeLocale(locale) {
+  if ('en-us' === locale) {
+    locale = 'en-US';
+  }
+  return locale;
+}
+
 router.run(function (Handler) {
   var element = document.getElementById('content');
-  var locale = window.navigator.userLanguage || window.navigator.language;
+  var locale = normalizeLocale(window.navigator.userLanguage || window.navigator.language);
   var messages = merge(require('grommet/messages/'+locale), require('../messages/'+locale));
   React.render(<Handler locales={locale} messages={messages} />, element);
 });
