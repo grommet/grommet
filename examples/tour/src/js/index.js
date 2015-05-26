@@ -5,10 +5,10 @@ require("!style!css!sass!index.scss");
 var React = require('react');
 var Router = require('react-router');
 var Rest = require('grommet/utils/Rest');
+var Locale = require('grommet/utils/Locale');
 //var Index = require('grommet/index/index'); /// TODO: refactor
 //var indexConfig = require('./IndexConfig'); /// TODO: refactor
 var Routes = require('./Routes');
-var merge = require('lodash/object/merge');
 
 Rest.setHeaders({
   'Accept': 'application/json',
@@ -19,18 +19,17 @@ var router = Router.create({routes: Routes.routes, location: Router.HistoryLocat
 
 //Index.init(indexConfig); /// TODO: refactor
 
-function normalizeLocale(locale) {
-  if ('en-us' === locale) {
-    locale = 'en-US';
-  }
-  return locale;
-}
-
 router.run(function (Handler) {
   var element = document.getElementById('content');
-  var locale = normalizeLocale(window.navigator.userLanguage || window.navigator.language);
-  var messages = merge(require('grommet/messages/'+locale), require('../messages/'+locale));
-  React.render(<Handler locales={locale} messages={messages} />, element);
+  var locale = Locale.getCurrentLocale();
+  var localeData;
+  try {
+    localeData = Locale.getLocaleData(require('../messages/'+locale));
+  } catch (e) {
+    localeData = Locale.getLocaleData(require('../messages/en-US'));
+  }
+
+  React.render(<Handler locales={localeData.locale} messages={localeData.messages} />, element);
 });
 
 document.body.classList.remove('loading');

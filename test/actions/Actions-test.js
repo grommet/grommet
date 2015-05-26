@@ -19,7 +19,7 @@ describe('Grommet Actions', function() {
       },
       onLoginFailed: function(err, response) {
         expect(err).toBe(400);
-        expect(response.message).toBe('LOGIN_INVALID_PASSWORD');
+        expect(response.message).toBe('loginInvalidPassword');
         done();
       }
     });

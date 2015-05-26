@@ -43,8 +43,8 @@ var LoginForm = React.createClass({
     var classes = [CLASS_ROOT];
 
     var errors = this.props.errors.map(function (error, index) {
-      return (<div key={index} className={CLASS_ROOT + "__error"}>{error}</div>);
-    });
+      return (<div key={index} className={CLASS_ROOT + "__error"}>{this.getGrommetIntlMessage(error)}</div>);
+    }.bind(this));
 
     var logo = null;
     if (this.props.logo) {

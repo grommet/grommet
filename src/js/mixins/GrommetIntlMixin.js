@@ -51,12 +51,12 @@ module.exports = {
   },
 
   getGrommetIntlMessage: function(messageKey) {
-    var message= messageKey;
+    var message = messageKey;
     if(messageKey) {
       try {
         var i18nKey = messageKey.charAt(0).toLowerCase() + messageKey.slice(1);
         message = this.getIntlMessage(i18nKey);
-      } catch(e) {
+      } catch (e) {
         message = messageKey;
       }
     }

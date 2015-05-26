@@ -51,5 +51,5 @@ module.exports = {
   created: 'Data de Criação',
   modified: 'Data de Modificação',
   uri: 'URI',
-  LOGIN_INVALID_PASSWORD: 'Por Favor, informe Usuário e Senha.'
+  loginInvalidPassword: 'Por Favor, informe Usuário e Senha.'
 };

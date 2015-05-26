@@ -51,5 +51,5 @@ module.exports = {
   created: 'Created',
   modified: 'Modified',
   uri: 'URI',
-  LOGIN_INVALID_PASSWORD: 'Please provide Username and Password.'
+  loginInvalidPassword: 'Please provide Username and Password.'
 };
