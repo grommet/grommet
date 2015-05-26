@@ -3,7 +3,7 @@
 var supportedLocales = ['en-US', 'pt-BR'];
 
 function localesSupported() {
-  return supportedLocales.every(function (locale) {
+  return global.Intl && supportedLocales.every(function (locale) {
     return Intl.NumberFormat.supportedLocalesOf(locale)[0] === locale &&
             Intl.DateTimeFormat.supportedLocalesOf(locale)[0] === locale;
   });

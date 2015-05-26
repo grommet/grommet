@@ -27,7 +27,7 @@ var MeterDoc = React.createClass({
       <GrommetDocument>
         <header>
           <h1>Meter</h1>
-          <p>Shows a linear meter graphic.</p>
+          <p>Shows a bar, arc, or circular meter graphic.</p>
 
           <pre><code className="html">{inline}</code></pre>
         </header>
