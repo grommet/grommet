@@ -17,9 +17,6 @@ var opts = {
   mainJs: 'src/js/index.js',
   mainScss: 'src/scss/index.scss',
   webpack: {
-  	devAlias: { // TODO: remove, just for local dev
-  		'grommet': path.resolve(__dirname, 'node_modules/grommet')
-  	},
     resolve: {
       root: [
         path.resolve(__dirname, 'src/js'),

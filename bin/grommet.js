@@ -100,15 +100,13 @@ gulp.task('export', function (done) {
 			process.chdir('./' + dest);
 
 			var grommetPath = getGrommetPath();
+			var exampleFolder = path.join(grommetPath, 'examples/'+app+'/**');
 			var templateFolder = path.join(grommetPath, 'templates/'+app+'/**');
-			var exampleFolder = path.join(grommetPath, 'examples/'+app+'/src/**');
 			var serverFolder = path.join(grommetPath, 'examples/server/**');
-			var grommetFolder = path.join(grommetPath, 'src/**');
 
-			gulp.src(exampleFolder).pipe(gulp.dest('./src'));
+			gulp.src([exampleFolder,'!/**/gulpfile.js','!/**/package.json']).pipe(gulp.dest('./'));
 			gulp.src(templateFolder).pipe(gulp.dest('./'));
 			gulp.src(serverFolder).pipe(gulp.dest('./server'));
-			gulp.src(grommetFolder).pipe(gulp.dest('./node_modules/grommet'));
 		}
 	});
 
