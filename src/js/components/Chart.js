@@ -613,10 +613,9 @@ var Chart = React.createClass({
     if (this.props.xAxis) {
       xAxis = this._renderXAxis();
     }
-    //var backBands = null;
+
     var frontBands = null;
     if (this.props.legend) {
-      //backBands = this._renderXBands('back');
       frontBands = this._renderXBands('front');
     }
 
