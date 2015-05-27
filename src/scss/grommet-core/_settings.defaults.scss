@@ -6,6 +6,9 @@ $header-height: round($inuit-base-spacing-unit * 3);
 $large-header-height: round($inuit-base-spacing-unit * 4);
 $small-header-height: round($inuit-base-spacing-unit * 2);
 $footer-height: round($inuit-base-spacing-unit * 2);
+$graphic-height: round($inuit-base-spacing-unit * 16); // 384px
+$small-graphic-height: round($inuit-base-spacing-unit * 8); // 192px
+$large-graphic-height: round($inuit-base-spacing-unit * 24); // 576px
 
 $center-column-width: round($inuit-base-spacing-unit * 40); // 960px;
 $sidebar-width: round($inuit-base-spacing-unit * 16); // 384px
@@ -15,5 +18,6 @@ $compact-form-width: round($inuit-base-spacing-unit * 10); // 240px
 $readable-text-width: round($inuit-base-spacing-unit * 24); // 576px
 $panel-width: round($inuit-base-spacing-unit * 8);
 $small-panel-width: round($inuit-base-spacing-unit * 6);
+$large-panel-width: round($inuit-base-spacing-unit * 12);
 
 $inuit-namespace: 'i-';

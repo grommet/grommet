@@ -27,6 +27,9 @@ var FooterDoc = React.createClass({
             <dt><code>colorIndex  {"{category}-{index}"}</code></dt>
             <dd>If specified, determines the background color.
               For example: <code>"neutral-1"</code></dd>
+            <dt><code>flush       true|false</code></dt>
+            <dd>Whether the contents are flush with the left and right edges or not.
+              Defaults to true.</dd>
             <dt><code>primary     true|false</code></dt>
             <dd>Whether this is the primary application footer or not.</dd>
             <dt><code>scrollTop   true|false</code></dt>

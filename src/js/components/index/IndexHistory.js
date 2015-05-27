@@ -4,10 +4,21 @@ var React = require('react');
 var Reflux = require('reflux');
 var Chart = require('../Chart');
 var IndexActions = require('../../actions/IndexActions');
+var IntlMixin = require('../../mixins/GrommetIntlMixin');
+
+var STATUS_IMPORTANCE = {
+  'Error': 1,
+  'Critical': 1,
+  'Warning': 2,
+  'OK': 3,
+  'Disabled': 4,
+  'Unknown': 5
+};
 
 var IndexHistory = React.createClass({
 
   propTypes: {
+    large: React.PropTypes.bool,
     params: React.PropTypes.shape({
       category: React.PropTypes.string,
       query: React.PropTypes.object,
@@ -19,11 +30,13 @@ var IndexHistory = React.createClass({
       label: React.PropTypes.string,
       value: React.PropTypes.number
     })),
+    small: React.PropTypes.bool,
+    smooth: React.PropTypes.bool,
     threshold: React.PropTypes.number,
     type: React.PropTypes.oneOf(['bar', 'area', 'line'])
   },
 
-  mixins: [Reflux.ListenerMixin],
+  mixins: [Reflux.ListenerMixin, IntlMixin],
 
   _onGetAggregateCompleted: function (response, params) {
     response = response[0];
@@ -33,7 +46,10 @@ var IndexHistory = React.createClass({
         var values = count.intervals.map(function (interval) {
           var date = new Date(Date.parse(interval.start));
           if (0 === index) {
-            xAxis.push((date.getMonth() + 1) + '/' + date.getDate());
+            xAxis.push({
+              label: (date.getMonth() + 1) + '/' + date.getDate(),
+              value: date
+            });
           }
           return [date, interval.count];
         });
@@ -41,8 +57,17 @@ var IndexHistory = React.createClass({
         if ('status' === this.state.params.attribute) {
           colorIndex = count.value.toLowerCase();
         }
-        return {label: count.value, values: values, colorIndex: colorIndex};
+        var label = this.getGrommetIntlMessage(count.value);
+        return {label: label, values: values, colorIndex: colorIndex};
       }, this);
+      if ('status' === this.state.params.attribute) {
+        // re-order by importance
+        series.sort(function (s1, s2) {
+          return (STATUS_IMPORTANCE[s2.label] - STATUS_IMPORTANCE[s1.label]);
+        });
+        // mark most severe as most important
+        series[series.length-1].important = true;
+      }
       this.setState({series: series, xAxis: xAxis});
     }
   },
@@ -73,6 +98,10 @@ var IndexHistory = React.createClass({
       <Chart series={this.state.series || []}
         xAxis={this.state.xAxis || []}
         legend={true}
+        legendTotal={true}
+        small={this.props.small}
+        large={this.props.large}
+        smooth={this.props.smooth}
         type={this.props.type}
         threshold={this.props.threshold} />
     );

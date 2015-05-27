@@ -2,9 +2,11 @@
 
 var React = require('react');
 var StatusIcon = require('../icons/Status');
-var Timestamp = require('react-time');
+var IntlMixin = require('../../mixins/GrommetIntlMixin');
 
 var Alert = React.createClass({
+
+  mixins: [IntlMixin],
 
   propTypes: {
     associatedResource: React.PropTypes.node,
@@ -14,13 +16,18 @@ var Alert = React.createClass({
   render: function () {
     var resource = this.props.resource;
     var status = resource.status || 'unknown';
+    var createdDate;
+    if (resource.created) {
+      createdDate = this.getGrommetFormattedDate(resource.created);
+    }
+
     return (
       <div className="alert">
         <div>
           <StatusIcon value={status.toLowerCase()} large={true} />
           <h3>{resource.name}</h3>
         </div>
-        <h4><Timestamp value={new Date(resource.created)} format="MM/DD/YY h:mm:ssa" /></h4>
+        {createdDate}
         {this.props.associatedResource}
       </div>
     );

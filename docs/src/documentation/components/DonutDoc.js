@@ -25,6 +25,7 @@ var DonutDoc = React.createClass({
       <GrommetDocument>
         <header>
           <h1>Donut</h1>
+          <p>NOTE: Donut is deprecated. Please use <a href="meter">Meter</a> instead.</p>
           <p>Shows a circular graphic.</p>
 
           <pre><code className="html">{inline}</code></pre>

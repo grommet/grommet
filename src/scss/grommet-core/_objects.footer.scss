@@ -10,6 +10,8 @@
     -webkit-justify-content: space-between;
     justify-content: space-between;
     width: 100%;
+    padding-left: $inuit-base-spacing-unit;
+    padding-right: $inuit-base-spacing-unit;
 
     @include flexible();
 
@@ -78,6 +80,13 @@
           text-align: center;
         }
       }
+    }
+  }
+
+  &--flush {
+    .footer__content {
+      padding-left: 0px;
+      padding-right: 0px;
     }
   }
 }

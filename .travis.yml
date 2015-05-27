@@ -9,6 +9,19 @@ before_script:
 after_script:
 - gulp blanket-lcov-reporter
 - gulp coveralls
+after_success:
+- |
+  if [ "$TRAVIS_BRANCH" = "master" ]; then
+    git config credential.helper "store --file=.git/credentials"
+    echo "https://${GH_TOKEN}:@github.com" > .git/credentials
+    git config --global user.name "Grommet Community Bot"
+    git config --global user.email "asouza@hp.com"
+    gulp release:stable
+  fi
 notifications:
   slack:
     secure: WeOy0cWkkmem1I9eahruJYQLpTy/Qz8A/CNErCnEkOrhItD3SE75jTq49SBT+/VxcVGZaaOqRgzOd/ISjdhEWZOouNI0+lSd4YDFGAZtV9esoJKW4e+xcSciPC9TeUGXrl45bJkFPeVKc1KHoDuqeyBj7E3KmPqyl5AL9xICMmM=
+env:
+  global:
+  - secure: PyHVZl5R+jeUNyFxFnBir4nu3p/m3nV1OdOSAXmRLkByMnQZ9zRHvxBesG+rhi9GeUbiDabHg+fdsf18+fZQ/mgyeSHsG9noDuViifq9FaP9XUoViJCseH3suHB7PT8UZczudFn7EwYCAK0TL4AlT/cBX/KBIWvO3gsofhx0Cbg=
+  - secure: Wzl8mZUJhpzYRopd3ot6gO8b8LW25URMw1c4kdu9tuJzyY/dwWEATHFvOGT6NDe24qzSpGGRRbojdiJrC1nKJL0NkWfCaEgBZ4P4sT1ok0l81oRMl6dKdSGgIy6YZgLQoKIcp9ZKI6XI1mnxh3ONT8dEMV25R/RRbReNknD/VCc=

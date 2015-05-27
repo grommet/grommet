@@ -81,3 +81,32 @@
     }
   }
 }
+
+@mixin graph-fill-color-gradient() {
+  @each $status, $color in $brand-status-colors {
+    &.color-index-#{$status} {
+      .begin {
+        stop-color: $color;
+      }
+
+      .end {
+        stop-color: $color;
+        stop-opacity: 0;
+      }
+    }
+  }
+
+  @for $i from 1 through length($brand-graph-colors) {
+    &.color-index-graph-#{$i},
+    &.color-index-graph-#{$i+length($brand-graph-colors)} {
+      .begin {
+        stop-color: nth($brand-graph-colors, $i);
+      }
+
+      .end {
+        stop-color: nth($brand-graph-colors, $i);
+        stop-opacity: 0;
+      }
+    }
+  }
+}

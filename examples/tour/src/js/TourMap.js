@@ -7,6 +7,7 @@ var GrommetMap = require('grommet/components/Map');
 var Link = require('react-router').Link;
 var StatusIcon = require('grommet/components/icons/Status');
 var IndexActions = require('grommet/actions/IndexActions');
+var IntlMixin = require('grommet/mixins/GrommetIntlMixin');
 
 var TourMap = React.createClass({
 
@@ -14,7 +15,7 @@ var TourMap = React.createClass({
     router: React.PropTypes.func.isRequired
   },
 
-  mixins: [Reflux.ListenerMixin],
+  mixins: [Reflux.ListenerMixin, IntlMixin],
 
   _onGetMapCompleted: function (response) {
     var router = this.context.router;
@@ -35,7 +36,7 @@ var TourMap = React.createClass({
 
       categories.push({
         name: name,
-        label: Routes.categoryLabel(name) || name,
+        label: this.getGrommetIntlMessage(Routes.categoryLabel(name) || name),
         path: Routes.categoryPath(router, name),
         items: items
       });

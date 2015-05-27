@@ -76,7 +76,10 @@ describe('Grommet LoginForm', function() {
       locales: 'pt-BR',
       messages: {
         LoginForm: {
-          btn_label: 'Logar Test'
+          btn_label: 'Logar Test',
+          username: 'Usuário',
+          password: 'Senha',
+          rememberMe: 'Lembrar Usuário'
         }
       }
     });

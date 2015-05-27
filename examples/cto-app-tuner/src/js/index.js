@@ -6,7 +6,7 @@ var Header = require('grommet/components/Header');
 var Title = require('grommet/components/Title');
 var Tiles = require('grommet/components/Tiles');
 var Tile = require('grommet/components/Tile');
-var Donut = require('grommet/components/Donut');
+var Meter = require('grommet/components/Meter');
 var Sidebar = require('grommet/components/Sidebar');
 var Form = require('grommet/components/Form');
 var FormFields = require('grommet/components/FormFields');
@@ -129,35 +129,33 @@ var Main = React.createClass({
             <Header small={true}>
               <h4>User Friendliness</h4>
             </Header>
-            <Donut series={[
+            <Meter type="arc" series={[
               {
-                "label": "Friendly",
-                "value": this._getFriendliness(),
-                "units": "%"
+                label: "Friendly",
+                value: this._getFriendliness(),
+                important: true
               },
               {
-                "label": "Unfriendly ",
-                "value": 100 - this._getFriendliness(),
-                "units": "%"
+                label: "Unfriendly ",
+                value: 100 - this._getFriendliness()
               }
-            ]} small={true} />
+            ]} units="%" small={true} />
           </Tile>
           <Tile>
             <Header small={true}>
               <h4>User Satisfaction</h4>
             </Header>
-            <Donut series={[
+            <Meter type="arc" series={[
               {
-                "label": "Satisfied",
-                "value": this._getSatisfaction(),
-                "units": "%"
+                label: "Satisfied",
+                value: this._getSatisfaction(),
+                important: true
               },
               {
-                "label": "Unsatisfied",
-                "value": 100 - this._getSatisfaction(),
-                "units": "%"
+                label: "Unsatisfied",
+                value: 100 - this._getSatisfaction()
               }
-            ]} small={true} />
+            ]} units="%" small={true} />
           </Tile>
           <Tile wide={true}>
             <Header small={true}>
@@ -165,7 +163,7 @@ var Main = React.createClass({
             </Header>
               <Chart series={series} min={0} max={10} threshold={6} type="area" legend={true}
               xAxis={['Jun 3', 'Jun 2', 'Jun 1', 'May 31', 'May 30']}
-              units="Fun" small={true} />
+              units="Fun" small={true} smooth={true} />
           </Tile>
         </Tiles>
       </div>

@@ -1,10 +1,13 @@
 // (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
+var IntlMixin = require('../mixins/GrommetIntlMixin');
 
 var CLASS_ROOT = "legend";
 
 var Legend = React.createClass({
+
+  mixins: [IntlMixin],
 
   propTypes: {
     activeIndex: React.PropTypes.number,
@@ -19,6 +22,7 @@ var Legend = React.createClass({
       ]),
       onClick: React.PropTypes.func
     })).isRequired,
+    total: React.PropTypes.bool,
     units: React.PropTypes.string,
     value: React.PropTypes.number
   },
@@ -44,18 +48,26 @@ var Legend = React.createClass({
 
   render: function () {
     var classes = [CLASS_ROOT];
+    if (this.props.series.length === 1) {
+      classes.push(CLASS_ROOT + "--single");
+    }
     if (this.props.className) {
       classes.push(this.props.className);
     }
 
-    var total = 0;
+    var totalValue = 0;
     var items = this.props.series.map(function (item, index) {
       var legendClasses = [CLASS_ROOT + "__item"];
       if (index === this.state.activeIndex) {
         legendClasses.push(CLASS_ROOT + "__item--active");
       }
       var colorIndex = this._itemColorIndex(item, index);
-      total += item.value;
+      totalValue += item.value;
+
+      var valueClasses = [CLASS_ROOT + "__item-value"];
+      if (1 === this.props.series.length) {
+        valueClasses.push("large-number-font");
+      }
 
       return(
         <li key={item.label} className={legendClasses.join(' ')}
@@ -67,20 +79,33 @@ var Legend = React.createClass({
             <path className={item.className} d="M 5 0 l 0 12" />
           </svg>
           <span className={CLASS_ROOT + "__item-label"}>{item.label}</span>
-          <span className={CLASS_ROOT + "__item-value"}>{item.value}</span>
-          <span className={CLASS_ROOT + "__item-units"}>{this.props.units}</span>
+          <span className={valueClasses.join(' ')}>
+            {item.value}
+            <span className={CLASS_ROOT + "__item-units"}>{this.props.units}</span>
+          </span>
         </li>
       );
     }, this);
 
+    var total = null;
+    if (this.props.total) {
+      total = (
+        <li className={CLASS_ROOT + "__total"}>
+          <span className={CLASS_ROOT + "__total-label"}>
+            {this.getIntlMessage('Legend.total')}
+          </span>
+          <span className={CLASS_ROOT + "__total-value"}>
+            {totalValue}
+            <span className={CLASS_ROOT + "__total-units"}>{this.props.units}</span>
+          </span>
+        </li>
+      );
+    }
+
     return (
       <ol className={classes.join(' ')}>
         {items.reverse()}
-        <li className={CLASS_ROOT + "__total"}>
-          <span className={CLASS_ROOT + "__total-label"}>Total</span>
-          <span className={CLASS_ROOT + "__total-value"}>{total}</span>
-          <span className={CLASS_ROOT + "__total-units"}>{this.props.units}</span>
-        </li>
+        {total}
       </ol>
     );
   }

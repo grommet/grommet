@@ -8,10 +8,13 @@ var IndexStore = require('../../stores/IndexStore');
 var IndexTable = require('./IndexTable');
 var IndexTiles = require('./IndexTiles');
 var IndexHeader = require('./IndexHeader');
+var IntlMixin = require('../../mixins/GrommetIntlMixin');
 
 var CLASS_ROOT = 'index';
 
 var Index = React.createClass({
+
+  mixins: [Reflux.ListenerMixin, IntlMixin],
 
   propTypes: {
     options: React.PropTypes.shape({
@@ -39,6 +42,7 @@ var Index = React.createClass({
     ]),
     onSelect: React.PropTypes.func,
     onQuery: React.PropTypes.func,
+    addControl: React.PropTypes.node,
     navControl: React.PropTypes.node,
     // if a result is omitted, the Index will use the expected REST api
     result: React.PropTypes.shape({
@@ -55,13 +59,11 @@ var Index = React.createClass({
   getDefaultProps: function () {
     return ({
       options: {
-        attributes: [{name: 'name', label: 'Name', index: 0}],
+        attributes: [{name: 'name', label_key: 'Index.name', index: 0}],
         view: "tiles"
       }
     });
   },
-
-  mixins: [Reflux.ListenerMixin],
 
   _onQuery: function (query) {
     if (! this.props.result) {
@@ -162,6 +164,7 @@ var Index = React.createClass({
             fixed={true}
             unfilteredTotal={result.unfilteredTotal}
             onQuery={this._onQuery}
+            addControl={this.props.addControl}
             navControl={this.props.navControl} />
           {error}
           <div ref="items" className={CLASS_ROOT + "__items"}>

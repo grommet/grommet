@@ -72,5 +72,19 @@
       border-top: 1px dotted $border-color;
     }
   }
+
+  &--single {
+    .legend__item {
+      &-swatch,
+      &-label {
+        display: none;
+      }
+
+      &-value {
+        @include inuit-font-size($large-number-font-size);
+        font-weight: bold;
+      }
+    }
+  }
 }
 

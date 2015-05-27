@@ -2,9 +2,10 @@
 
 var React = require('react');
 var Reflux = require('reflux');
-var Donut = require('../Donut');
+var Meter = require('../Meter');
 var IndexActions = require('../../actions/IndexActions');
 var IndexQuery = require('../../utils/IndexQuery');
+var IntlMixin = require('../../mixins/GrommetIntlMixin');
 
 var STATUS_IMPORTANCE = {
   'Error': 1,
@@ -15,9 +16,10 @@ var STATUS_IMPORTANCE = {
   'Unknown': 5
 };
 
-var IndexDonut = React.createClass({
+var IndexMeter = React.createClass({
 
   propTypes: {
+    large: React.PropTypes.bool,
     params: React.PropTypes.shape({
       category: React.PropTypes.string,
       query: React.PropTypes.object,
@@ -28,9 +30,12 @@ var IndexDonut = React.createClass({
       label: React.PropTypes.string,
       value: React.PropTypes.number
     })),
+    small: React.PropTypes.bool,
+    threshold: React.PropTypes.number,
+    type: React.PropTypes.oneOf(['bar', 'arc', 'circle'])
   },
 
-  mixins: [Reflux.ListenerMixin],
+  mixins: [Reflux.ListenerMixin, IntlMixin],
 
   _onClick: function (value) {
     var query;
@@ -51,8 +56,9 @@ var IndexDonut = React.createClass({
         if ('status' === this.state.params.attribute) {
           colorIndex = count.value.toLowerCase();
         }
+        var label = this.getGrommetIntlMessage(count.value);
         return {
-          label: count.value,
+          label: label,
           value: count.count,
           colorIndex: colorIndex,
           onClick: this._onClick.bind(this, count.value)
@@ -83,10 +89,16 @@ var IndexDonut = React.createClass({
 
   render: function () {
     return (
-      <Donut series={this.state.series || []} legend={true} />
+      <Meter series={this.state.series || []}
+        legend={true}
+        legendTotal={true}
+        small={this.props.small}
+        large={this.props.large}
+        type={this.props.type}
+        threshold={this.props.threshold} />
     );
   }
 
 });
 
-module.exports = IndexDonut;
+module.exports = IndexMeter;

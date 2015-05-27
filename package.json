@@ -3,6 +3,10 @@
   "version": "0.2.0",
   "main": "src/js/index.js",
   "description": "The most advanced UI framework for enterprise applications.",
+  "private": true,
+  "publishConfig": {
+    "registry": "http://grommet.usa.hp.com:2374/"
+  },
   "authors": [
     "Alan Souza",
     "Bryan Jacquot",
@@ -44,14 +48,15 @@
     "inuit-responsive-settings": "~0.1.2",
     "inuit-responsive-tools": "~0.1.1",
     "inuit-shared": "~0.1.5",
+    "json-stringify-pretty-compact": "^1.0.1",
     "lodash": "^3.8.0",
     "moment": "^2.8.3",
     "object-assign": "^2.0.0",
     "react": "^0.13.1",
     "react-gravatar": "^1.0.0",
+    "react-intl": "^1.2.0",
     "react-router": "^0.13.3",
     "react-time": "^2.4.0",
-    "react-intl": "^1.2.0",
     "reflux": "^0.2.7",
     "superagent": "^1.1.0"
   },
@@ -66,6 +71,7 @@
     "jsx-loader": "0.13.1",
     "sass-loader": "^0.4.2",
     "style-loader": "^0.10.1",
+    "json-loader": "^0.5.1",
     "gulp": "^3.8.11",
     "gulp-chug": "^0.4.2",
     "gulp-file": "^0.2.0",

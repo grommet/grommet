@@ -6,8 +6,11 @@ var Link = require('react-router').Link;
 var Header = require('grommet/components/Header');
 var Menu = require('grommet/components/Menu');
 var CloseIcon = require('grommet/components/icons/Clear');
+var IntlMixin = require('grommet/mixins/GrommetIntlMixin');
 
 var TourResource = React.createClass({
+
+  mixins: [IntlMixin],
 
   propTypes: {
     categoryRoute: React.PropTypes.string.isRequired,
@@ -58,7 +61,7 @@ var TourResource = React.createClass({
         <Link key={view.label} to={view.route}
           params={{splat: this.state.uri}}
           query={{q: this.state.query}}>
-          {view.label}
+          {this.getGrommetIntlMessage(view.label)}
         </Link>
       );
     }, this);
@@ -66,7 +69,7 @@ var TourResource = React.createClass({
     return (
       <div>
         <Header large={true} fixed={true}>
-          <Menu label={this.state.view.label}>
+          <Menu label={this.getGrommetIntlMessage(this.state.view.label)}>
             {menuOptions}
           </Menu>
           <span></span>

@@ -31,8 +31,9 @@
     "react-time": "^2.4.0",
     "react-intl": "^1.2.0",
     "reflux": "^0.2.7",
-    "superagent": "^1.1.0"
-  },
+    "superagent": "^1.1.0",
+    "json-loader": "^0.5.1"
+},
   "devDependencies": {
     "del": "^1.1.1",
     "css-loader": "^0.10.1",

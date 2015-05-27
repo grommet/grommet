@@ -3,6 +3,7 @@
 var __path__ = '../../src/js/components/index/Alert';
 
 var GrommetTestUtils = require('../../mocks/GrommetTestUtils');
+var expect = require('expect');
 
 describe('Grommet Alert', function() {
   it('loads a basic Alert component', function() {
@@ -16,4 +17,43 @@ describe('Grommet Alert', function() {
 
     GrommetTestUtils.componentShouldExist(Component, 'alert');
   });
+
+  it('loads a Alert component with created date', function() {
+
+    var Alert = require('../../../src/js/components/index/Alert');
+    var resource = {
+      name: 'network',
+      status: 'error',
+      created: '11/10/2015 03:10:09'
+    };
+    var React = require('react/addons');
+    var TestUtils = React.addons.TestUtils;
+    var Component = TestUtils.renderIntoDocument(
+      <Alert locales="en-US" resource={resource} />
+    );
+
+    GrommetTestUtils.componentShouldExist(Component, 'alert');
+    expect(Component.refs.date).toExist();
+    expect(Component.refs.date.getDOMNode().textContent).toBe('Tuesday, November 10, 2015, 3:10:09 AM');
+  });
+
+   it('loads a Alert component with created date in pt-BR locale', function() {
+
+    var Alert = require('../../../src/js/components/index/Alert');
+    var resource = {
+      name: 'network',
+      status: 'error',
+      created: '11/10/2015 03:10:09'
+    };
+    var React = require('react/addons');
+    var TestUtils = React.addons.TestUtils;
+    var Component = TestUtils.renderIntoDocument(
+      <Alert locales="pt-BR" resource={resource} />
+    );
+
+    GrommetTestUtils.componentShouldExist(Component, 'alert');
+    expect(Component.refs.date).toExist();
+    expect(Component.refs.date.getDOMNode().textContent).toBe('terça-feira, 10 de novembro de 2015 3:10:09');
+  });
+
 });

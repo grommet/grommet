@@ -6,11 +6,12 @@ var SessionStore = require('../stores/SessionStore');
 var KeyboardAccelerators = require('../mixins/KeyboardAccelerators');
 var Gravatar = require('react-gravatar');
 var Timestamp = require('react-time');
+var IntlMixin = require('../mixins/GrommetIntlMixin');
 //var Link = require('../components/Link');
 
 var Session = React.createClass({
 
-  mixins: [KeyboardAccelerators],
+  mixins: [KeyboardAccelerators, IntlMixin],
 
   _onChange: function() {
     this.setState(SessionStore.getAll());
@@ -58,7 +59,7 @@ var Session = React.createClass({
             </div>
           </div>
           <ul className={'session__actions list-bare'}>
-            <li><a onClick={this._onClickLogout}>Logout</a></li>
+            <li><a onClick={this._onClickLogout}>{this.getIntlMessage('Session.logout')}</a></li>
           </ul>
         </div>
       </div>

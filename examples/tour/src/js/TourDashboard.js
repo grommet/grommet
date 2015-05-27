@@ -11,26 +11,28 @@ var TourSessionMenu = require('./TourSessionMenu');
 var Layer = require('grommet/components/Layer');
 var Logo = require('./MediumLogo');
 var TourMain = require('./TourMain');
-var IndexDonut = require('grommet/components/index/IndexDonut');
+var IndexMeter = require('grommet/components/index/IndexMeter');
 var IndexHistory = require('grommet/components/index/IndexHistory');
 var IndexQuery = require('grommet/utils/IndexQuery');
+var IntlMixin = require('grommet/mixins/GrommetIntlMixin');
 var Link = require('react-router').Link;
 
 var CONFIG = [
   {
-    type: 'line',
+    history: true,
+    type: 'area',
     wide: true,
     params: {
       category: 'tasks',
       attribute: 'status',
       interval: 'days',
-      count: 10
+      count: 8
     }
   },
   {
-    name: 'Active Alerts',
+    name: 'TourDashboard.activeAlerts',
     route: 'activity',
-    type: 'donut',
+    type: 'arc',
     params: {
       category: 'alerts',
       query: IndexQuery.create('state:Active'),
@@ -38,9 +40,9 @@ var CONFIG = [
     }
   },
   {
-    name: 'Servers',
-    route: 'servers',
-    type: 'donut',
+    name: 'TourDashboard.serverHardware',
+    route: 'server hardwares',
+    type: 'arc',
     params: {
       category: 'server-hardware',
       attribute: 'model'
@@ -49,6 +51,8 @@ var CONFIG = [
 ];
 
 var TourDashboard = React.createClass({
+
+  mixins: [IntlMixin],
 
   contextTypes: {
     router: React.PropTypes.func.isRequired
@@ -79,7 +83,7 @@ var TourDashboard = React.createClass({
     clearTimeout(this._timer);
     this._timer = setTimeout(function () {
       // set wide chart count according to the space we have
-      var count = Math.round(Math.max(8, window.innerWidth / 40));
+      var count = Math.round(Math.max(4, window.innerWidth / 48));
       var tiles = this.state.tiles.map(function (tile) {
         if (tile.wide) {
           return merge(tile, {params: {count: count}});
@@ -97,7 +101,7 @@ var TourDashboard = React.createClass({
 
   componentDidMount: function () {
     this.refs.search.focus();
-    window.addEventListener('resize', this._onResize);
+    window.addEventListener('resize ', this._onResize);
     this._onResize();
   },
 
@@ -117,24 +121,25 @@ var TourDashboard = React.createClass({
         }
         header = (
           <Link to={tile.route} query={queryParams}>
-            {tile.name}
+            {this.getIntlMessage(tile.name)}
           </Link>
         );
       } else if (tile.name) {
-        header = tile.name;
+        header = this.getIntlMessage(tile.name);
       }
       if (header) {
         header = <Header small={true}><h4>{header}</h4></Header>;
       }
 
       var contents = null;
-      if ('donut' === tile.type) {
-        contents =  <IndexDonut params={tile.params}
+      if (tile.history) {
+        contents = <IndexHistory params={tile.params} type={tile.type}
+          small={true} smooth={true} />;
+      } else {
+        contents = <IndexMeter params={tile.params} type={tile.type}
           onClick={function (query) {
             this._onClickSegment(tile, query);
-          }.bind(this)}/>;
-      } else {
-        contents = <IndexHistory params={tile.params} type={tile.type} />;
+          }.bind(this)} />;
       }
 
       return (

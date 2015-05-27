@@ -61,12 +61,9 @@ var Donut = React.createClass({
     ]),
     series: React.PropTypes.arrayOf(React.PropTypes.shape({
       label: React.PropTypes.string,
-      value: React.PropTypes.number,
+      value: React.PropTypes.number.isRequired,
       units: React.PropTypes.string,
-      colorIndex: React.PropTypes.oneOfType([
-        React.PropTypes.number, // 1-6
-        React.PropTypes.string // status
-      ]),
+      colorIndex: React.PropTypes.string,
       important: React.PropTypes.bool,
       onClick: React.PropTypes.func
     })),
@@ -158,6 +155,7 @@ var Donut = React.createClass({
   },
 
   componentDidMount: function() {
+    console.log('Grommet Donut is deprecated. Please use Grommet Meter instead.');
     this._initialTimer = setTimeout(this._initialTimeout, 10);
     this.setState({initial: true, activeIndex: 0});
     window.addEventListener('resize', this._onResize);

@@ -14,7 +14,8 @@ var OPTIONS = {
   params: {
     category: 'enclosures',
     start: 0,
-    count: 40
+    count: 40,
+    sort: 'name:asc'
   }
 };
 
@@ -28,7 +29,7 @@ var Enclosures = React.createClass({
     return (
       <TourIndex
         resourceRoute="enclosure"
-        selectionRoute="enclosure-overview"
+        selectionRoute="enclosure overview"
         options={OPTIONS}
         onMain={this.props.onMain} />
     );

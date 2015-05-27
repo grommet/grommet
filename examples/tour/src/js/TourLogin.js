@@ -44,15 +44,9 @@ var TourLogin = React.createClass({
     if (loginError) {
       var message;
       var resolution;
-      try {
-        message = this.getIntlMessage(loginError.message);
-        if (loginError.resolution) {
-          resolution = this.getIntlMessage(loginError.resolution);
-        }
-      } catch(e) {
-        console.error(e);
-        message = loginError.message;
-        resolution = loginError.resolution;
+      message = this.getGrommetIntlMessage(loginError.message);
+      if (loginError.resolution) {
+        resolution = this.getGrommetIntlMessage(loginError.resolution);
       }
       errors.push(message);
       errors.push(resolution);

@@ -4,7 +4,7 @@ var React = require('react');
 var TourIndex = require('./TourIndex');
 
 var OPTIONS = {
-  label: "Servers",
+  label: "Server Hardware",
   view: 'table',
   attributes: [
     {attribute: 'status', label: 'Status', index: 0, size: 'small',
@@ -16,10 +16,11 @@ var OPTIONS = {
     category: 'server-hardware',
     start: 0,
     count: 20,
+    sort: 'name:asc'
   }
 };
 
-var Servers = React.createClass({
+var ServerHardwares = React.createClass({
 
   propTypes: {
     onMain: React.PropTypes.func
@@ -29,12 +30,12 @@ var Servers = React.createClass({
     return (
       <TourIndex
         manageData={true}
-        resourceRoute="server"
-        selectionRoute="server-overview"
+        resourceRoute="server hardware"
+        selectionRoute="server hardware overview"
         options={OPTIONS}
         onMain={this.props.onMain} />
     );
   }
 });
 
-module.exports = Servers;
+module.exports = ServerHardwares;

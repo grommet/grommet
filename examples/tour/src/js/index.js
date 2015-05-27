@@ -5,6 +5,7 @@ require("!style!css!sass!index.scss");
 var React = require('react');
 var Router = require('react-router');
 var Rest = require('grommet/utils/Rest');
+var Locale = require('grommet/utils/Locale');
 //var Index = require('grommet/index/index'); /// TODO: refactor
 //var indexConfig = require('./IndexConfig'); /// TODO: refactor
 var Routes = require('./Routes');
@@ -20,8 +21,15 @@ var router = Router.create({routes: Routes.routes, location: Router.HistoryLocat
 
 router.run(function (Handler) {
   var element = document.getElementById('content');
-  var locale = window.navigator.userLanguage || window.navigator.language;
-  React.render(<Handler locales={locale} />, element);
+  var locale = Locale.getCurrentLocale();
+  var localeData;
+  try {
+    localeData = Locale.getLocaleData(require('../messages/'+locale));
+  } catch (e) {
+    localeData = Locale.getLocaleData(require('../messages/en-US'));
+  }
+
+  React.render(<Handler locales={localeData.locale} messages={localeData.messages} />, element);
 });
 
 document.body.classList.remove('loading');

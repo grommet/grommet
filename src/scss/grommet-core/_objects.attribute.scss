@@ -1,0 +1,26 @@
+// (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
+
+.attribute {
+  padding: $inuit-base-spacing-unit $inuit-base-spacing-unit
+    halve($inuit-base-spacing-unit);
+
+  @include media-query(lap-and-up) {
+    width: $form-width;
+    max-width: 100%;
+
+    .form--compact & {
+      width: $compact-form-width;
+    }
+  }
+
+  @include media-query(palm) {
+    width: 100vw;
+  }
+
+  &__label {
+    display: block;
+    text-align: left;
+    @include inuit-font-size($label-font-size, $inuit-base-spacing-unit);
+    color: $secondary-text-color;
+  }
+}

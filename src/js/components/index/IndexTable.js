@@ -4,10 +4,13 @@ var React = require('react');
 var Table = require('../Table');
 var IndexAttribute = require('./IndexAttribute');
 var StatusIcon = require('../icons/Status');
+var IntlMixin = require('../../mixins/GrommetIntlMixin');
 
 var CLASS_ROOT = 'index-table';
 
 var IndexTable = React.createClass({
+
+  mixins: [IntlMixin],
 
   propTypes: {
     options: React.PropTypes.shape({
@@ -41,6 +44,7 @@ var IndexTable = React.createClass({
   _simplifyAttributes: function (attributes) {
     return attributes
       .filter(function (attribute) {
+        attribute.label = attribute.label ? attribute.label : this.getIntlMessage(attribute.label_key);
         return attribute.hasOwnProperty('index');
       })
       .sort(function (a, b) {
@@ -79,6 +83,8 @@ var IndexTable = React.createClass({
         content = (
           <StatusIcon className={CLASS_ROOT + "__header-icon"} value={'label'} small={true} />
         );
+      } else {
+        content = this.getGrommetIntlMessage(content);
       }
 
       return (

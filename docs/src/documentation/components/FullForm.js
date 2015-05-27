@@ -70,11 +70,14 @@ var FullForm = React.createClass({
               <input id="item1" name="item-1" type="text" onChange={this._onChange} />
             </FormField>
             <FormField>
-              <CheckBox id="item2" name="item-2" label="Item 2" />
+              <CheckBox id="item2" name="item-2" label="Item 2"
+                onChange={this._onChange} />
             </FormField>
             <FormField label="Item 3">
-              <RadioButton id="item3-1" name="item-3" label="first" />
-              <RadioButton id="item3-2" name="item-3" label="second" />
+              <RadioButton id="item3-1" name="item-3" label="first"
+                onChange={this._onChange} />
+              <RadioButton id="item3-2" name="item-3" label="second"
+                onChange={this._onChange} />
             </FormField>
             <FormField label="Item 4" htmlFor="item4" error="something's wrong">
               <textarea id="item4" name="item-4"></textarea>
