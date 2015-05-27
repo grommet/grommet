@@ -104,10 +104,11 @@ gulp.task('export', function () {
       var templateFolder = path.join(grommetPath, 'templates/'+ app +'/**');
       var serverFolder = path.join(grommetPath, 'examples/server/**');
 
-      console.log(exampleFolder + '/**');
       gulp.src([
         exampleFolder + '/**',
+        '!'+exampleFolder+'/node_modules/',
         '!'+exampleFolder+'/node_modules/**',
+        '!'+exampleFolder+'/dist/',
         '!'+exampleFolder+'/dist/**',
         '!'+exampleFolder+'/gulpfile.js',
         '!'+exampleFolder+'/package.json'
