@@ -19,6 +19,7 @@ String.prototype.capitalize = function() {
 
 var task = process.argv[2] || 'init';
 var app = process.argv[3] || 'app-name';
+var dest = process.argv[4] || app;
 var title = app.replace(/-|_/g, ' ').capitalize();
 
 function getPossibleNodePaths() {
@@ -66,7 +67,7 @@ gulp.task('init', function (done) {
 			process.chdir('./' + app);
 
       var grommetPath = getGrommetPath();
-			var templateFolder = path.join(grommetPath, 'templates/**');
+			var templateFolder = path.join(grommetPath, 'templates/init/**');
 			var mobileIcon = path.join(grommetPath, 'mobile-app-icon.png');
       var shortcutIcon = path.join(grommetPath, 'shortcut-icon.png');
 			var grommetVersion = require(path.join(grommetPath, 'package.json')).version;
@@ -86,6 +87,26 @@ gulp.task('init', function (done) {
 		      done();
 		    })
 		    .resume();
+		}
+	});
+
+});
+
+gulp.task('export', function (done) {
+	mkdirp('./' + dest, function (err) {
+		if (err) {
+			console.log('Error trying to create project: '+ err);
+		} else {
+			process.chdir('./' + dest);
+
+			var grommetPath = getGrommetPath();
+			var exampleFolder = path.join(grommetPath, 'examples/'+app+'/**');
+			var templateFolder = path.join(grommetPath, 'templates/'+app+'/**');
+			var serverFolder = path.join(grommetPath, 'examples/server/**');
+
+			gulp.src([exampleFolder,'!/**/node_modules','!/**/dist','!/**/gulpfile.js','!/**/package.json']).pipe(gulp.dest('./'));
+			gulp.src(templateFolder).pipe(gulp.dest('./'));
+			gulp.src(serverFolder).pipe(gulp.dest('./server'));
 		}
 	});
 

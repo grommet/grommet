@@ -5,6 +5,6 @@
   "description": "Grommet Tour",
   "author": "Eric Soderberg",
   "dependencies": {
-    "grommet": "https://github.com/HewlettPackard/grommet.git#stable"
+    "grommet": "^0.1.2"
   }
 }

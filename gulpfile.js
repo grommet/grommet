@@ -80,6 +80,10 @@ var opts = {
       dist: 'dist/templates/'
     },
     {
+      asset: 'examples/**',
+      dist: 'dist/examples/'
+    },
+    {
       filename: 'package.json',
       asset: JSON.stringify(getPackageJSON(), null, 2)
     }
