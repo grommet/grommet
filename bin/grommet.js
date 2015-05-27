@@ -104,7 +104,7 @@ gulp.task('export', function (done) {
 			var templateFolder = path.join(grommetPath, 'templates/'+app+'/**');
 			var serverFolder = path.join(grommetPath, 'examples/server/**');
 
-			gulp.src([exampleFolder,'!/**/gulpfile.js','!/**/package.json']).pipe(gulp.dest('./'));
+			gulp.src([exampleFolder,'!/**/node_modules','!/**/dist','!/**/gulpfile.js','!/**/package.json']).pipe(gulp.dest('./'));
 			gulp.src(templateFolder).pipe(gulp.dest('./'));
 			gulp.src(serverFolder).pipe(gulp.dest('./server'));
 		}
