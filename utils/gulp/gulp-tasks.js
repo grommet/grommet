@@ -169,7 +169,7 @@ module.exports = function(gulp, opts) {
     }
   });
 
-  gulp.task('coverage', function (done) {
+  gulp.task('coverage', ['test'], function (done) {
     if (options.testPaths) {
       var blanket = require('gulp-blanket-mocha');
       gulp.src(options.testPaths, { read: false })
