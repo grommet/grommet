@@ -71,6 +71,10 @@
       flex: 0 0 auto;
     }
 
+    .status-icon {
+      margin-right: halve($inuit-base-spacing-unit);
+    }
+
     svg {
       vertical-align: middle;
     }

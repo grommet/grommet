@@ -285,6 +285,11 @@ router.get(/^\/index\/trees\/aggregated(.+)$/, function(req, res) {
   res.json(map.build(uri));
 });
 
+router.get(/^\/index\/trees(.+)$/, function(req, res) {
+  var uri = req.params[0];
+  res.status(501).send();
+});
+
 router.get('/:categoryName/*', function(req, res) {
   var resource = data.getResource('/rest' + req.url);
   if (resource) {

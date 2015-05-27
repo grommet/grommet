@@ -16,7 +16,7 @@ var TourActivity = React.createClass({
 
   _onSelect: function (selection) {
     var router = this.context.router;
-    router.transitionTo('activity-resource', {splat: selection},
+    router.transitionTo('activity resource', {splat: selection},
       router.getCurrentQuery());
   },
 

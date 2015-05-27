@@ -27,7 +27,7 @@ var Alert = React.createClass({
           <StatusIcon value={status.toLowerCase()} large={true} />
           <h3>{resource.name}</h3>
         </div>
-        {createdDate}
+        <span className="alert__timestamp">{createdDate}</span>
         {this.props.associatedResource}
       </div>
     );

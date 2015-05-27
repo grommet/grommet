@@ -39,15 +39,17 @@ module.exports = {
     }
   },
 
-  getGrommetFormattedDate: function (date, ref, className) {
-    return (<div ref={ref || 'date'} className={className}><FormattedDate
-            value={new Date(date)}
-            day="numeric"
-            month="numeric"
-            year="numeric"
-            hour="numeric"
-            minute="numeric"
-            second="numeric" /></div>);
+  getGrommetFormattedDate: function (date) {
+    return (
+      <FormattedDate
+        value={new Date(date)}
+        day="numeric"
+        month="numeric"
+        year="numeric"
+        hour="numeric"
+        minute="numeric"
+        second="numeric" />
+    );
   },
 
   getGrommetIntlMessage: function(messageKey) {
