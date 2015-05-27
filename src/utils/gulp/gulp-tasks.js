@@ -76,7 +76,14 @@ module.exports = function(gulp, opts) {
           .pipe(gulp.dest(copyAsset.dist ? copyAsset.dist : dist));
       } else {
         var asset = copyAsset.asset ? copyAsset.asset : copyAsset;
-        gulp.src(asset).pipe(gulp.dest(copyAsset.dist ? copyAsset.dist : dist));
+        var assets = [asset];
+        if (copyAsset.ignores) {
+          copyAsset.ignores.forEach(function(ignore) {
+            assets.push('!'+ asset +'**/'+ignore);
+            assets.push('!'+ asset +'**/'+ignore+'/**');
+          });
+        }
+        gulp.src(assets).pipe(gulp.dest(copyAsset.dist ? copyAsset.dist : dist));
       }
 
     });

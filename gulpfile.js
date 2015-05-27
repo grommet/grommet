@@ -81,7 +81,11 @@ var opts = {
     },
     {
       asset: 'examples/**',
-      dist: 'dist/examples/'
+      dist: 'dist/examples/',
+      ignores: [
+        'node_modules/',
+        'dist/'
+      ]
     },
     {
       filename: 'package.json',
