@@ -52,6 +52,7 @@ var TourIndex = React.createClass({
       router.getCurrentQuery());
   },
 
+  // only called when this.props.manageData is true
   _onResponse: function (err, res) {
     if (err && err.timeout > 1000) {
       this.setState({error: 'Timeout', result: {}});
@@ -72,6 +73,19 @@ var TourIndex = React.createClass({
       params.query = params.query.fullText;
     }
     Rest.get('/rest/index/resources', params).end(this._onResponse);
+  },
+
+  // only called when this.props.manageData is true
+  _onMore: function () {
+    // do we have more we could show?
+    var result = this.state.result;
+    if (result.count < result.total) {
+      // get one more page's worth of data
+      var params = this.state.options.params;
+      params = merge({}, params,
+        {count: (params.count + (this.state.options.pageSize || 20))});
+      Rest.get('/rest/index/resources', params).end(this._onResponse);
+    }
   },
 
   _onQuery: function (query) {
@@ -136,6 +150,10 @@ var TourIndex = React.createClass({
   },
 
   _renderIndex: function (navControl, addControl) {
+    var onMore;
+    if (this.props.manageData) {
+      onMore = this._onMore;
+    }
     return (
       <Index
         options={this.state.options}
@@ -143,6 +161,7 @@ var TourIndex = React.createClass({
         selection={this.state.selection}
         onSelect={this._onSelect}
         onQuery={this._onQuery}
+        onMore={onMore}
         addControl={addControl}
         navControl={navControl} />
     );

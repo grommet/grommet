@@ -14,7 +14,8 @@ var OPTIONS = {
   params: {
     category: 'enclosures',
     start: 0,
-    count: 40
+    count: 40,
+    sort: 'name:asc'
   }
 };
 

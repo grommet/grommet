@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
+var Link = require('react-router').Link;
 var Rest = require('grommet/utils/Rest');
 var Actions = require('grommet/actions/Actions');
 var Attribute = require('grommet/components/Attribute');
@@ -48,6 +49,15 @@ var ServerProfileOverview = React.createClass({
 
   render: function () {
     var serverProfile = this.state.serverProfile;
+    var serverHardwareLink;
+    if (serverProfile.serverHardware) {
+      serverHardwareLink = (
+        <Link to="server hardware"
+          param={{splat: serverProfile.serverHardware.uri}}>
+          {serverProfile.serverHardware.name}
+        </Link>
+      );
+    }
     var connections;
     return (
       <div>
@@ -56,7 +66,7 @@ var ServerProfileOverview = React.createClass({
           {serverProfile.description}
         </Attribute>
         <Attribute label="Server hardware">
-          {serverProfile.serverHardware}
+          {serverHardwareLink}
         </Attribute>
         <Attribute label="Affinity">
           {serverProfile.affinity}

@@ -15,6 +15,7 @@ var OPTIONS = {
     category: 'server-profiles',
     start: 0,
     count: 20,
+    sort: 'name:asc'
   }
 };
 

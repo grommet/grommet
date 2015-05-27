@@ -16,6 +16,7 @@ var OPTIONS = {
     category: 'server-hardware',
     start: 0,
     count: 20,
+    sort: 'name:asc'
   }
 };
 

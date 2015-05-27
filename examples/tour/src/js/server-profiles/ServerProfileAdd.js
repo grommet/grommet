@@ -27,17 +27,14 @@ var ServerProfileAdd = React.createClass({
   },
 
   _onTaskResponse: function (err, res) {
-    console.log('!!! ServerProfileAdd _onTaskResponse', err, res);
     if (res.ok) {
       var task = res.body;
-      console.log('!!! ServerProfileAdd _onTaskResponse', task.attributes.associatedResourceUri);
       this.context.router.transitionTo('server profile overview',
         {splat: task.attributes.associatedResourceUri});
     }
   },
 
   _onAddResponse: function (err, res) {
-    console.log('!!! ServerProfileAdd _onAddResponse', err, res);
     if (res.ok) {
       Rest.get(res.body.taskUri).end(this._onTaskResponse);
     }
@@ -52,37 +49,35 @@ var ServerProfileAdd = React.createClass({
   },
 
   _onChange: function (event) {
-    console.log('!!! ServerProfileAdd _onChange', event.target.getAttribute('name'), 'to', event.target.value);
     var serverProfile = this.state.serverProfile;
     serverProfile[event.target.getAttribute('name')] = event.target.value;
     this.setState({serverProfile: serverProfile});
   },
 
-  _onHardwareChange: function (value) {
-    console.log('!!! ServerProfileAdd _onHardwareChange', value);
+  _onServerHardwareChange: function (value) {
     var serverProfile = this.state.serverProfile;
-    serverProfile.hardware = value;
+    var serverHardware = {uri: value.value, name: value.label};
+    serverProfile.serverHardware = serverHardware;
     this.setState({serverProfile: serverProfile});
   },
 
-  _onHardwareSearchResponse: function (err, res) {
+  _onServerHardwareSearchResponse: function (err, res) {
     if (res.ok) {
-      var names = res.body.map(function (item) {
-        return item.name;
+      var suggestions = res.body.map(function (item) {
+        return {value: item.uri, label: item.name};
       });
-      this.setState({hardwareSuggestions: names});
+      this.setState({serverHardwareSuggestions: suggestions});
     }
   },
 
-  _onHardwareSearch: function (value) {
+  _onServerHardwareSearch: function (value) {
     var params = {category: 'server-hardware', query: value,
       start: 0, count: 5};
     Rest.get('/rest/index/search-suggestions', params)
-      .end(this._onHardwareSearchResponse);
+      .end(this._onServerHardwareSearchResponse);
   },
 
   _onFirmwareChange: function (value) {
-    console.log('!!! ServerProfileAdd _onFirmwareChange', value);
     var serverProfile = this.state.serverProfile;
     serverProfile.firmware = value;
     this.setState({serverProfile: serverProfile});
@@ -105,7 +100,6 @@ var ServerProfileAdd = React.createClass({
   },
 
   _onAddConnection: function (connection) {
-    console.log('!!! ServerProfileAdd _onAddConnection', connection);
     var serverProfile = this.state.serverProfile;
     serverProfile.connections.push(connection);
     this.setState({serverProfile: serverProfile});
@@ -127,7 +121,6 @@ var ServerProfileAdd = React.createClass({
   },
 
   _onAddVolume: function (volume) {
-    console.log('!!! ServerAdd _onAddVolume', volume);
     var serverProfile = this.state.serverProfile;
     serverProfile.volumes.push(volume);
     this.setState({serverProfile: serverProfile});
@@ -154,7 +147,7 @@ var ServerProfileAdd = React.createClass({
         category: 'server-profiles',
         name: '',
         description: '',
-        hardware: '',
+        serverHardware: {},
         affinity: 'Device bay',
         firmware: '',
         connections: [],
@@ -167,14 +160,14 @@ var ServerProfileAdd = React.createClass({
         volumes: [],
         manageBootOrder: false
       },
-      hardwareSuggestions: [],
+      serverHardwareSuggestions: [],
       firmwareSuggestions: [],
       initiating: false
     };
   },
 
   componentDidMount: function () {
-    this._onHardwareSearch('');
+    this._onServerHardwareSearch('');
     this._onFirmwareSearch('');
   },
 
@@ -252,6 +245,11 @@ var ServerProfileAdd = React.createClass({
       );
     }
 
+    var serverHardwareValue = {
+      value: serverProfile.serverHardware.uri,
+      label: serverProfile.serverHardware.name,
+    };
+
     return (
       <Form flush={false}>
         <Header flush={false} fixed={true} large={true}>
@@ -273,12 +271,12 @@ var ServerProfileAdd = React.createClass({
               <input id="description" name="description" type="text"
                 value={serverProfile.description} onChange={this._onChange} />
             </FormField>
-            <FormField label="Hardware" htmlFor="hardware">
-              <SearchInput id="hardware" name="hardware"
-                value={serverProfile.hardware}
-                suggestions={this.state.hardwareSuggestions}
-                onChange={this._onHardwareChange}
-                onSearch={this._onHardwareSearch} />
+            <FormField label="Server hardware" htmlFor="serverHardware">
+              <SearchInput id="serverHardware" name="serverHardware"
+                value={serverHardwareValue}
+                suggestions={this.state.serverHardwareSuggestions}
+                onChange={this._onServerHardwareChange}
+                onSearch={this._onServerHardwareSearch} />
             </FormField>
             <FormField label="Affinity" htmlFor="affinity">
               <select id="affinity" name="affinity"
