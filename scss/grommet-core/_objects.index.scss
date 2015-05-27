@@ -117,6 +117,37 @@
   }
 }
 
+.index-list {
+  list-style-type: none;
+  margin: 0px;
+  padding: $inuit-base-spacing-unit;
+
+  &__item {
+    margin-bottom: quarter($inuit-base-spacing-unit);
+    padding: halve($inuit-base-spacing-unit);
+    border: 1px solid $border-color;
+    max-width: none;
+    cursor: pointer;
+
+    > .index-attribute {
+      margin-right: halve($inuit-base-spacing-unit);
+    }
+
+    &--selected {
+      background-color: $selected-background-color;
+    }
+
+    &:hover:not(.index-list__item--selected) {
+      background-color: $hover-background-color;
+    }
+  }
+
+  &--flush {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
 .index-attribute {
   &--secondary {
     color: $secondary-text-color;

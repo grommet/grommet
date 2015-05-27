@@ -5,7 +5,7 @@ var TourIndex = require('./TourIndex');
 
 var OPTIONS = {
   label: "Server Hardware",
-  view: 'table',
+  view: 'list',
   attributes: [
     {attribute: 'status', label: 'Status', index: 0, size: 'small',
       filter: ['Error', 'Warning', 'OK', 'Unknown']},

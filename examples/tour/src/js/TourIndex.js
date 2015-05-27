@@ -30,7 +30,7 @@ var TourIndex = React.createClass({
         size: React.PropTypes.string,
         timestamp: React.PropTypes.bool
       })),
-      view: React.PropTypes.oneOf(["table", "tiles"]),
+      view: React.PropTypes.oneOf(["table", "tiles", "list"]),
       params: React.PropTypes.shape({
         category: React.PropTypes.oneOfType([
           React.PropTypes.string,
@@ -159,6 +159,7 @@ var TourIndex = React.createClass({
         options={this.state.options}
         result={this.state.result}
         selection={this.state.selection}
+        flush={false}
         onSelect={this._onSelect}
         onQuery={this._onQuery}
         onMore={onMore}
