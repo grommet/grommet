@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 module.exports = {
   TourDashboard: {
-    servers: 'Servidores',
+    serverHardware: 'Hardware do Servidor',
     activeAlerts: 'Alertas Ativos'
   },
   TourSessionMenu: {
