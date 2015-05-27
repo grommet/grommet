@@ -7,6 +7,7 @@ var IndexActions = require('../../actions/IndexActions');
 var IndexStore = require('../../stores/IndexStore');
 var IndexTable = require('./IndexTable');
 var IndexTiles = require('./IndexTiles');
+var IndexList = require('./IndexList');
 var IndexHeader = require('./IndexHeader');
 var IntlMixin = require('../../mixins/GrommetIntlMixin');
 
@@ -17,6 +18,7 @@ var Index = React.createClass({
   mixins: [Reflux.ListenerMixin, IntlMixin],
 
   propTypes: {
+    flush: React.PropTypes.bool,
     options: React.PropTypes.shape({
       label: React.PropTypes.string,
       attributes: React.PropTypes.arrayOf(React.PropTypes.shape({
@@ -27,7 +29,7 @@ var Index = React.createClass({
         size: React.PropTypes.string,
         timestamp: React.PropTypes.bool
       })),
-      view: React.PropTypes.oneOf(["table", "tiles"]),
+      view: React.PropTypes.oneOf(["table", "tiles", "list"]),
       params: React.PropTypes.shape({
         category: React.PropTypes.oneOfType([
           React.PropTypes.string,
@@ -60,6 +62,7 @@ var Index = React.createClass({
     return ({
       options: {
         attributes: [{name: 'name', label_key: 'Index.name', index: 0}],
+        flush: true,
         view: "tiles"
       }
     });
@@ -133,6 +136,7 @@ var Index = React.createClass({
     if ('table' === options.view) {
       view = (
         <IndexTable options={options} result={result}
+          flush={this.props.flush}
           selection={this.props.selection}
           onSelect={this.props.onSelect}
           onMore={onMore} />
@@ -140,6 +144,15 @@ var Index = React.createClass({
     } else if ('tiles' === options.view) {
       view = (
         <IndexTiles options={options} result={result}
+          flush={this.props.flush}
+          selection={this.props.selection}
+          onSelect={this.props.onSelect}
+          onMore={onMore} />
+      );
+    } else if ('list' === options.view) {
+      view = (
+        <IndexList options={options} result={result}
+          flush={this.props.flush}
           selection={this.props.selection}
           onSelect={this.props.onSelect}
           onMore={onMore} />
