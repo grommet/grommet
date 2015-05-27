@@ -183,6 +183,9 @@ module.exports = function(gulp, opts) {
   });
 
   gulp.task('dist-preprocess', function(callback) {
+    if (process.env.CI) {
+      callback();
+    }
     if (options.distPreprocess) {
       runSequence('preprocess', options.distPreprocess, 'test', callback);
     } else {
