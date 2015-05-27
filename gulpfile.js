@@ -416,9 +416,8 @@ gulp.task('release:stable', ['dist', 'release:createTmp'], function(done) {
             throw err;
           }
 
-          gulp.src('../../dist/**').pipe(gulp.dest('./'));
-
-          git.status({args: '--porcelain'}, function (err, stdout) {
+          gulp.src('../../dist/**').pipe(gulp.dest('./')).on('end', function() {
+            git.status({args: '--porcelain'}, function (err, stdout) {
             if (err) {
               throw err;
             }
@@ -442,6 +441,7 @@ gulp.task('release:stable', ['dist', 'release:createTmp'], function(done) {
               process.chdir(__dirname);
               done();
             }
+          });
           });
         });
       }
