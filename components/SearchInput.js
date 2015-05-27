@@ -11,13 +11,33 @@ var CLASS_ROOT = "search-input";
 var SearchInput = React.createClass({
 
   propTypes: {
-    defaultValue: React.PropTypes.string,
+    defaultValue: React.PropTypes.oneOfType([
+      React.PropTypes.shape({
+        label: React.PropTypes.string,
+        value: React.PropTypes.string
+      }),
+      React.PropTypes.string
+    ]),
     id: React.PropTypes.string,
     name: React.PropTypes.string,
     onChange: React.PropTypes.func,
     onSearch: React.PropTypes.func,
-    suggestions: React.PropTypes.arrayOf(React.PropTypes.string),
-    value: React.PropTypes.string
+    suggestions: React.PropTypes.arrayOf(
+      React.PropTypes.oneOfType([
+        React.PropTypes.shape({
+          label: React.PropTypes.string,
+          value: React.PropTypes.string
+        }),
+        React.PropTypes.string
+      ])
+    ),
+    value: React.PropTypes.oneOfType([
+      React.PropTypes.shape({
+        label: React.PropTypes.string,
+        value: React.PropTypes.string
+      }),
+      React.PropTypes.string
+    ])
   },
 
   mixins: [ReactLayeredComponent, KeyboardAccelerators, Overlay],
@@ -56,16 +76,17 @@ var SearchInput = React.createClass({
     this.setState({active: false});
     this._activation(false);
     if (this.state.activeSuggestionIndex >= 0) {
-      var text = this.props.suggestions[this.state.activeSuggestionIndex];
-      this.setState({value: text});
-      this.props.onChange(text);
+      var suggestion = this.props.suggestions[this.state.activeSuggestionIndex];
+      this.setState({value: suggestion});
+      this.props.onChange(suggestion);
     }
   },
 
-  _onClickSuggestion: function (text) {
-    this.setState({value: text});
+  _onClickSuggestion: function (suggestion) {
+    console.log('!!! SearchInput _onClickSuggestion', suggestion);
+    this.setState({value: suggestion});
     this._activation(false);
-    this.props.onChange(text);
+    this.props.onChange(suggestion);
   },
 
   _activation: function (active) {
@@ -129,7 +150,20 @@ var SearchInput = React.createClass({
     this._activation(false);
   },
 
+  _valueText: function (value) {
+    var text = '';
+    if (value) {
+      if ('string' === typeof value) {
+        text = value;
+      } else {
+        text = value.label || value.value;
+      }
+    }
+    return text;
+  },
+
   render: function() {
+    console.log('!!! SearchInput render', this.props.value);
     var classes = [CLASS_ROOT];
     if (this.state.active) {
       classes.push(CLASS_ROOT + "--active");
@@ -142,7 +176,8 @@ var SearchInput = React.createClass({
       <div ref="component" className={classes.join(' ')}>
         <input className={CLASS_ROOT + "__input"}
           id={this.props.id} name={this.props.name}
-          value={this.props.value} defaultValue={this.props.defaultValue}
+          value={this._valueText(this.props.value)}
+          defaultValue={this._valueText(this.props.defaultValue)}
           onChange={this._onInputChange} />
         <div className={CLASS_ROOT + "__control"} onClick={this._onOpen} >
           <SearchIcon />
@@ -153,19 +188,20 @@ var SearchInput = React.createClass({
 
   renderLayer: function() {
     if (this.state.active) {
+      console.log('!!! SearchInput renderLayer', this.props.suggestions);
 
       var suggestions = null;
       if (this.props.suggestions) {
-        suggestions = this.props.suggestions.map(function (text, index) {
+        suggestions = this.props.suggestions.map(function (suggestion, index) {
           var classes = [CLASS_ROOT + "__layer-suggestion"];
           if (index === this.state.activeSuggestionIndex) {
             classes.push(CLASS_ROOT + "__layer-suggestion--active");
           }
           return (
-            <div key={text}
+            <div key={this._valueText(suggestion)}
               className={classes.join(' ')}
-              onClick={this._onClickSuggestion.bind(this, text)}>
-              {text}
+              onClick={this._onClickSuggestion.bind(this, suggestion)}>
+              {this._valueText(suggestion)}
             </div>
           );
         }, this);

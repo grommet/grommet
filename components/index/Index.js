@@ -42,6 +42,7 @@ var Index = React.createClass({
     ]),
     onSelect: React.PropTypes.func,
     onQuery: React.PropTypes.func,
+    addControl: React.PropTypes.node,
     navControl: React.PropTypes.node,
     // if a result is omitted, the Index will use the expected REST api
     result: React.PropTypes.shape({
@@ -163,6 +164,7 @@ var Index = React.createClass({
             fixed={true}
             unfilteredTotal={result.unfilteredTotal}
             onQuery={this._onQuery}
+            addControl={this.props.addControl}
             navControl={this.props.navControl} />
           {error}
           <div ref="items" className={CLASS_ROOT + "__items"}>

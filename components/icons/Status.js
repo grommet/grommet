@@ -35,7 +35,7 @@ var Status = React.createClass({
     }
     var className = classes.join(' ');
     var icon = (<span>{'?'}</span>);
-    switch (this.props.value) {
+    switch (this.props.value.toLowerCase()) {
     case 'ok':
     case 'normal':
       icon = (<OK className={className} />);

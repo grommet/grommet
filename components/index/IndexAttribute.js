@@ -56,7 +56,8 @@ var IndexAttribute = React.createClass({
             value={value.toLowerCase()} small={true} />
         );
       } else if (attribute.timestamp) {
-        content = this.getGrommetFormattedDate(value, 'index-attribute', classes.join(' '));
+        content = <span className={classes.join(' ')}>
+          {this.getGrommetFormattedDate(value)}</span>;
       } else {
         content = (
           <span className={classes.join(' ')}>{this.getGrommetIntlMessage(value)}</span>

@@ -6,15 +6,10 @@
     width: 100%;
   }
 
-  th {
-    font-weight: 100;
-    @include inuit-font-size(20px);
-    border-bottom: 1px solid $border-color;
-  }
-
   td,
   th {
-    padding: halve($inuit-base-spacing-unit);
+    // -1 to accommodate border
+    padding: (halve($inuit-base-spacing-unit) - 1) halve($inuit-base-spacing-unit);
     vertical-align: top;
     text-align: left;
 
@@ -25,6 +20,12 @@
     &:last-child {
       padding-right: $inuit-base-spacing-unit;
     }
+  }
+
+  th {
+    font-weight: 100;
+    @include inuit-font-size(20px);
+    border-bottom: 1px solid $border-color;
   }
 
   &__mirror {

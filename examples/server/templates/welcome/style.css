@@ -1,0 +1,63 @@
+table.welcome-body {
+  border: none;
+  height: 100%;
+  width: 100%;
+  background-color: #f2f2f2;
+  max-width: 720px;
+}
+
+table.welcome-body .logo {
+  height: 10%;
+  padding-top: 2%;
+}
+
+table.welcome-body .logo img {
+  max-width: 80px;
+}
+
+table.welcome-body .title {
+  font-weight: bold; 
+  font-size: 24px;
+  height: 10%;
+}
+
+table.welcome-body tfoot {
+  font-size: 14px;
+  padding-bottom: 3%;
+}
+
+table.welcome-body tfoot tr td.left {
+  padding: 3% 5%;
+  font-weight: bold;
+}
+
+table.welcome-body tfoot tr td.right {
+  padding-right: 5%;
+  color: #617D78;
+}
+
+table.welcome-text {
+  background: white;
+  width: 90%;
+  height: 95%;
+  padding: 3%;
+}
+
+table.welcome-text tr {
+  max-width: 550px;
+  display:block;
+  padding: 5px;
+}
+
+table.welcome-text .header {
+  height: 10%;
+}
+
+table.welcome-text h1 {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #3B3B3B;
+}

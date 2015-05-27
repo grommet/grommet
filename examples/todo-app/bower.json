@@ -1,0 +1,14 @@
+{
+  "name": "grommet-todo-app",
+  "version": "0.1.2",
+  "main": "todoapp.js",
+  "description": "Grommet Demo App",
+  "authors": [
+  	"Alan Souza",
+  	"Bryan Jacquot",
+  	"Eric Soderberg"
+  ],
+  "dependencies": {
+    "grommet": "HewlettPackard/grommet-bower"
+  }
+}

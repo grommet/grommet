@@ -24,7 +24,7 @@
   &__layer {
     position: fixed;
     // This element will be positioned by the Overlay mixin.
-    z-index: 2;
+    z-index: 20;
     background-color: $background-color;
     border: $layer-border;
     border-radius: $border-radius;
