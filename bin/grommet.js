@@ -92,7 +92,7 @@ gulp.task('init', function (done) {
 
 });
 
-gulp.task('export', function () {
+gulp.task('export', function (done) {
   mkdirp('./' + dest, function (err) {
     if (err) {
       console.log('Error trying to create project: '+ err);
@@ -112,11 +112,13 @@ gulp.task('export', function () {
         '!'+exampleFolder+'/dist/**',
         '!'+exampleFolder+'/gulpfile.js',
         '!'+exampleFolder+'/package.json'
-      ]).pipe(gulp.dest('./'));
-      gulp.src(templateFolder).pipe(gulp.dest('./'));
-      gulp.src(serverFolder).pipe(gulp.dest('./server'));
+      ]).pipe(gulp.dest('./')).on('end', function() {
+        gulp.src(templateFolder).pipe(gulp.dest('./'));
+        gulp.src(serverFolder).pipe(gulp.dest('./server'));
 
-      console.log('Successfully exported '+ app +' to '+ dest +'.');
+        console.log('Successfully exported '+ app +' to '+ dest +'.');
+        done();
+      });
     }
   });
 
