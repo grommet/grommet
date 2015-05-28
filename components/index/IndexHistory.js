@@ -82,14 +82,14 @@ var IndexHistory = React.createClass({
   componentDidMount: function () {
     if (! this.props.series) {
       this.listenTo(IndexActions.getAggregate.completed, this._onGetAggregateCompleted);
-      IndexActions.getAggregate(this.state.params);
+      IndexActions.getAggregate(this.state.params, true);
     }
   },
 
   componentWillReceiveProps: function (newProps) {
     this.setState({params: newProps.params});
     if (! newProps.series) {
-      IndexActions.getAggregate(newProps.params);
+      IndexActions.getAggregate(newProps.params, true);
     }
   },
 

@@ -41,6 +41,7 @@ var opts = {
   },
   devServerPort: 8001,
   devServerProxy: {
+    "/rest/ws": 'ws://localhost:8000',
     "/rest/*": 'http://localhost:8000'
   }
 };

@@ -176,6 +176,7 @@ function buildItems (categoryName) {
     if (! category.noStatus) {
       resource.status = distribute([['Warning', 7], ['Error', 19], 'OK']);
     }
+    // randomly reduce timestamp for the next item
     date.setHours(date.getHours()-random(20)+1);
 
     if (category.indexAttributes) {
@@ -310,12 +311,44 @@ function createAssociations() {
   }
 }
 
+var listener;
+
+function randomActivity() {
+  var resource = data.getResource('/rest/server-profiles/1');
+  if (resource) {
+    var now = new Date();
+    var alert = {
+      name: 'Ping',
+      state: 'Active',
+      status: 'Warning',
+      uri: '/rest/alerts/' + now.getTime(),
+      category: 'alerts',
+      created: now.toISOString(),
+      modified: now.toISOString(),
+      attributes: {
+        associatedResourceCategory: resource.category,
+        associatedResourceUri: resource.uri,
+        associatedResourceName: resource.name
+      }
+    };
+    data.addResource('alerts', alert);
+    if (listener) {
+      listener([{category: alert.category, uri: alert.uri}]);
+    }
+  }
+}
+
 var Generator = {
   generate: function () {
     createCategories();
     createResources();
     createActivity();
     createAssociations();
+    setInterval(randomActivity, 10000);
+  },
+
+  listen: function (handler) {
+    listener = handler;
   }
 };
 
