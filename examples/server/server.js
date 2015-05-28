@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var express = require('express');
+var http = require("http");
 var router = express.Router();
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
@@ -28,10 +29,14 @@ router.get('/', function (req, res) {
 
 app.
   use(PREFIX + '/docs', docs).
-  use(PREFIX + '/rest', rest).
+  use(PREFIX + '/rest', rest.router).
   use(PREFIX + '/tour', tour).
   use(PREFIX + '/cto-app-tuner', ctoAppTuner).
   //use(PREFIX + '/demo', demo).
   use(PREFIX, router);
 
-app.listen(PORT);
+var server = http.createServer(app);
+
+rest.setup(server);
+
+server.listen(PORT);

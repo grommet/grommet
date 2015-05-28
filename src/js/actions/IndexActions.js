@@ -3,12 +3,16 @@
 var Reflux = require('reflux');
 var merge = require('lodash/object/merge');
 var Rest = require('../utils/Rest');
+var RestWatch = require('../utils/RestWatch');
 var Actions = require('./Actions');
+
+var requests = [];
 
 var IndexActions = Reflux.createActions({
   'setup': {asyncResult: true},
   'cleanup': {},
   'getItems': {asyncResult: true},
+  'getItem': {asyncResult: true},
   'getAggregate': {asyncResult: true},
   'getMap': {asyncResult: true}
 });
@@ -32,12 +36,22 @@ IndexActions.setup.listen(function () {
   */
 });
 
-function getItems(url, params, action) {
-  var restParams = merge({}, params);
-  if (restParams.query && (typeof restParams.query === 'object')) {
-    restParams.query = restParams.query.fullText;
+IndexActions.cleanup.listen(function () {
+  while (requests.length > 0) {
+    RestWatch.stop(requests.pop());
   }
-  Rest.get(url, restParams)
+});
+
+function normalizeParams(params) {
+  var result = merge({}, params);
+  if (result.query && (typeof result.query === 'object')) {
+    result.query = result.query.fullText;
+  }
+  return result;
+}
+
+function get(url, params, action, context) {
+  Rest.get(url, normalizeParams(params))
     .end(function(err, res) {
       if (res.status === 400) {
         return Actions.logout();
@@ -45,30 +59,36 @@ function getItems(url, params, action) {
       if (err || !res.ok) {
         return action.failed(err, res.body || res.text, params);
       }
-      action.completed(res.body, params);
+      action.completed(res.body, context);
     });
 }
 
-IndexActions.getItems.listen(function (params) {
-  getItems('/rest/index/resources', params, this);
-});
-
-IndexActions.getAggregate.listen(function (params) {
-  getItems('/rest/index/resources/aggregated', params, this);
-});
-
-IndexActions.getMap.listen(function (uri) {
-  var thisAction = this;
-  Rest.get('/rest/index/trees/aggregated' + uri)
-    .end(function(err, res) {
-      if (res.status === 400) {
-        return Actions.logout();
-      }
-      if (err || !res.ok) {
-        return thisAction.failed(err, res.body || res.text, uri);
-      }
-      thisAction.completed(res.body, uri);
+function startWatching(url, params, action, context) {
+  var request = RestWatch.start(url, normalizeParams(params),
+    function (result) {
+      action.completed(result, context);
     });
+  requests.push(request);
+}
+
+function getOrWatch(url, params, action, context, watch) {
+  if (watch && RestWatch.available()) {
+    startWatching(url, params, action, context);
+  } else {
+    get(url, params, action, context);
+  }
+}
+
+IndexActions.getItems.listen(function (params, watch) {
+  getOrWatch('/rest/index/resources', params, this, params, watch);
+});
+
+IndexActions.getAggregate.listen(function (params, watch) {
+  getOrWatch('/rest/index/resources/aggregated', params, this, params, watch);
+});
+
+IndexActions.getMap.listen(function (uri, watch) {
+  getOrWatch('/rest/index/trees/aggregated' + uri, null, this, uri, watch);
 });
 
 module.exports = IndexActions;

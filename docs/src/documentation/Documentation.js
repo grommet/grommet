@@ -33,6 +33,7 @@ var MenuDoc = require('./components/MenuDoc');
 var MeterDoc = require('./components/MeterDoc');
 var RadioButtonDoc = require('./components/RadioButtonDoc');
 var RestDoc = require('./utils/RestDoc');
+var RestWatchDoc = require('./utils/RestWatchDoc');
 var SearchDoc = require('./components/SearchDoc');
 var SearchInputDoc = require('./components/SearchInputDoc');
 var SectionDoc = require('./components/SectionDoc');
@@ -101,6 +102,7 @@ var CONTENTS = [
   {label: 'Utils',
     contents: [
       {route: 'doc_rest', label: 'Rest', component: RestDoc},
+      {route: 'doc_rest-watch', label: 'RestWatch', component: RestWatchDoc},
     ]
   },
   {label: 'Reference',

@@ -28,7 +28,7 @@ var ServerProfiles = React.createClass({
   render: function () {
     return (
       <TourIndex
-        manageData={true}
+        manageData={false}
         resourceRoute="server profile"
         selectionRoute="server profile overview"
         addRoute="server profile add"
