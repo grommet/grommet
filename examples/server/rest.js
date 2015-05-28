@@ -288,7 +288,8 @@ router.post('/request-access', function(req, res) {
 
   fs.exists(requestsFilePath, function(exists) {
 
-    var contentCsv = [data.name, data.email, data.businessPurpose, data.github].join() + '\n';
+    var contentCsv = [data.name, data.email, data.businessPurpose, data.github]
+      .join() + '\n';
 
     if (exists) {
       fs.appendFile(requestsFilePath, contentCsv, function(err) {
@@ -320,7 +321,9 @@ router.post('/request-access', function(req, res) {
     from: data.email,
     to: 'uxgroup@hp.com',
     subject: 'Evaluate access for ' + data.email,
-    text: data.name + ' with this email: ' + data.email + ' wants to access Grommet for this reason: ' + data.businessPurpose + '. The Github account is: ' + data.github + '.'
+    text: data.name + ' with this email: ' + data.email +
+      ' wants to access Grommet for this reason: ' + data.businessPurpose +
+      '. The Github account is: ' + data.github + '.'
   };
 
   emailTemplates(templatesDir, function(err, template) {
