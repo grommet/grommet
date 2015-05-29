@@ -36,14 +36,17 @@ var RestWatchDoc = React.createClass({
       <GrommetDocument>
         <header>
           <h1>RestWatch</h1>
-          <p>Uses WebSocket to receive asynchronous updates of changes in
-          responses to REST calls. It does not issue REST requests to the server.
-          It relies on the server side supporting
-          web sockets and supporting the interaction protocol used by RestWatch.</p>
+          <p>Attempts to use WebSocket to receive asynchronous updates
+          of changes in responses to REST calls.
+          If WebSocket is not available, it falls back to polling
+          REST requests to the server every 10 seconds.
+          For asynchronous WebSocket support, it relies on the server
+          side supporting web sockets and supporting the interaction
+          protocol used by RestWatch.</p>
 
           <pre><code className="javascript">{inline}</code></pre>
 
-          <p>Messages sent to the server are JSON and look like this:</p>
+          <p>WebSocket messages sent to the server are JSON and look like this:</p>
           <pre><code className="javascript">{message}</code></pre>
 
           <p>RestWatch is resilient to the server restarting. If the
