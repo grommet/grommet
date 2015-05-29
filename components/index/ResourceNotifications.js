@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var Rest = require('grommet/utils/Rest');
+var RestWatch = require('grommet/utils/RestWatch');
 var GrommetNotification = require('grommet/components/Notification');
 //var IndexActions = require('../../actions/IndexActions');
 
@@ -13,8 +13,8 @@ var ResourceNotifications = React.createClass({
     resourceUri: React.PropTypes.string.isRequired
   },
 
-  _onResponse: function (err, res) {
-    this.setState({notifications: res.body.items});
+  _onUpdate: function (result) {
+    this.setState({notifications: result.items});
   },
 
   _getData: function (resourceUri) {
@@ -25,7 +25,7 @@ var ResourceNotifications = React.createClass({
       query: "associatedResourceUri:" + resourceUri +
         " AND (state:Active OR state:Locked OR state:Running)"
     };
-    Rest.get('/rest/index/resources', params).end(this._onResponse);
+    RestWatch.start('/rest/index/resources', params, this._onUpdate);
   },
 
   getInitialState: function () {

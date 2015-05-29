@@ -72,7 +72,7 @@ function startWatching(url, params, action, context) {
 }
 
 function getOrWatch(url, params, action, context, watch) {
-  if (watch && RestWatch.available()) {
+  if (watch) {
     startWatching(url, params, action, context);
   } else {
     get(url, params, action, context);
