@@ -19,7 +19,9 @@
   }
 
   &__error {
+    padding: quarter($inuit-base-spacing-unit) $inuit-base-spacing-unit;
     color: map-get($brand-status-colors, error);
+    border-bottom: 1px solid $border-color;
   }
 }
 

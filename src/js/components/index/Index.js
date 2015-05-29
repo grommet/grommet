@@ -160,10 +160,10 @@ var Index = React.createClass({
     }
 
     var error = null;
-    if (result.error) {
+    if (this.state.error) {
       error = (
         <div className={CLASS_ROOT + "__error"}>
-          {result.error}
+          {this.state.error}
         </div>
       );
     }
