@@ -13,7 +13,7 @@ var Title = require('grommet/components/Title');
 var Logo = require('./MediumLogo');
 var AddIcon = require('grommet/components/icons/Add');
 
-var TourIndex = React.createClass({
+var MediumIndex = React.createClass({
 
   propTypes: {
     addRoute: React.PropTypes.string,
@@ -214,4 +214,4 @@ var TourIndex = React.createClass({
 
 });
 
-module.exports = TourIndex;
+module.exports = MediumIndex;

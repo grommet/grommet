@@ -7,10 +7,10 @@ var Tile = require('grommet/components/Tile');
 var Header = require('grommet/components/Header');
 var Title = require('grommet/components/Title');
 var Search = require('grommet/components/Search');
-var TourSessionMenu = require('./TourSessionMenu');
+var MediumSessionMenu = require('./MediumSessionMenu');
 var Layer = require('grommet/components/Layer');
 var Logo = require('./MediumLogo');
-var TourMain = require('./TourMain');
+var MediumMain = require('./MediumMain');
 var IndexMeter = require('grommet/components/index/IndexMeter');
 var IndexHistory = require('grommet/components/index/IndexHistory');
 var IndexQuery = require('grommet/utils/IndexQuery');
@@ -30,7 +30,7 @@ var CONFIG = [
     }
   },
   {
-    name: 'TourDashboard.activeAlerts',
+    name: 'MediumDashboard.activeAlerts',
     route: 'activity',
     type: 'arc',
     params: {
@@ -40,7 +40,7 @@ var CONFIG = [
     }
   },
   {
-    name: 'TourDashboard.serverHardware',
+    name: 'MediumDashboard.serverHardware',
     route: 'server hardwares',
     type: 'arc',
     params: {
@@ -50,7 +50,7 @@ var CONFIG = [
   }
 ];
 
-var TourDashboard = React.createClass({
+var MediumDashboard = React.createClass({
 
   mixins: [IntlMixin],
 
@@ -154,7 +154,7 @@ var TourDashboard = React.createClass({
       <Layer align="left" flush={true}
         hidden={! this.state.mainActive} peek={this.state.mainPeek}
         onClose={this._onCloseMain}>
-        <TourMain primary={false} onClose={this._onCloseMain} />
+        <MediumMain primary={false} onClose={this._onCloseMain} />
       </Layer>
     );
 
@@ -171,7 +171,7 @@ var TourDashboard = React.createClass({
             </span>
             <Search ref="search" inline={true} />
           </span>
-          <TourSessionMenu align="right"/>
+          <MediumSessionMenu align="right"/>
         </Header>
         <Tiles fill={true} flush={false}>
           {tiles}
@@ -183,4 +183,4 @@ var TourDashboard = React.createClass({
 
 });
 
-module.exports = TourDashboard;
+module.exports = MediumDashboard;

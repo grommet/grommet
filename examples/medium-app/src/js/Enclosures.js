@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var TourIndex = require('./TourIndex');
+var MediumIndex = require('./MediumIndex');
 
 var OPTIONS = {
   label: "Enclosures",
@@ -27,7 +27,7 @@ var Enclosures = React.createClass({
 
   render: function () {
     return (
-      <TourIndex
+      <MediumIndex
         resourceRoute="enclosure"
         selectionRoute="enclosure overview"
         options={OPTIONS}

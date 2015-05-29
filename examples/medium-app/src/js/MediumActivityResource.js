@@ -8,7 +8,7 @@ var Header = require('grommet/components/Header');
 var CloseIcon = require('grommet/components/icons/Clear');
 var Actions = require('grommet/actions/Actions');
 
-var TourAlert = React.createClass({
+var MediumActivityResource = React.createClass({
 
   contextTypes: {
     router: React.PropTypes.func.isRequired
@@ -70,4 +70,4 @@ var TourAlert = React.createClass({
 
 });
 
-module.exports = TourAlert;
+module.exports = MediumActivityResource;

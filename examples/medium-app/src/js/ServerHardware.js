@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var TourResource = require('./TourResource');
+var MediumResource = require('./MediumResource');
 
 var VIEWS = [
   {label: 'Overview', name: 'overview', route: 'server hardware overview'},
@@ -11,7 +11,7 @@ var VIEWS = [
 var ServerHardware = React.createClass({
   render: function () {
     return (
-      <TourResource categoryRoute="server hardwares" views={VIEWS} />
+      <MediumResource categoryRoute="server hardwares" views={VIEWS} />
     );
   }
 });

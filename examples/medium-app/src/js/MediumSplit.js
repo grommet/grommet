@@ -4,9 +4,9 @@ var React = require('react');
 var RouteHandler = require('react-router').RouteHandler;
 var Split = require('grommet/components/Split');
 var Layer = require('grommet/components/Layer');
-var TourMain = require('./TourMain');
+var MediumMain = require('./MediumMain');
 
-var TourSplit = React.createClass({
+var MediumSplit = React.createClass({
 
   contextTypes: {
     router: React.PropTypes.func.isRequired
@@ -67,7 +67,7 @@ var TourSplit = React.createClass({
       if (this.state.showMain) {
         main = (
           <Layer align="left" flush={true} onClose={this._onCloseMain}>
-            <TourMain primary={false} onClose={this._onCloseMain} />
+            <MediumMain primary={false} onClose={this._onCloseMain} />
           </Layer>
         );
       }
@@ -76,7 +76,7 @@ var TourSplit = React.createClass({
       if (! this.state.showMain) {
         pane1 = <RouteHandler onMain={this._onOpenMain} />;
       } else {
-        pane1 = <TourMain onClose={this._onCloseMain} />;
+        pane1 = <MediumMain onClose={this._onCloseMain} />;
         pane2 = <RouteHandler />;
       }
     }
@@ -94,4 +94,4 @@ var TourSplit = React.createClass({
 
 });
 
-module.exports = TourSplit;
+module.exports = MediumSplit;

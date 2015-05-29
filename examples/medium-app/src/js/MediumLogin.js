@@ -8,7 +8,7 @@ var Actions = require('grommet/actions/Actions');
 var SessionStore = require('grommet/stores/SessionStore');
 var IntlMixin = require('grommet/mixins/GrommetIntlMixin');
 
-var TourLogin = React.createClass({
+var MediumLogin = React.createClass({
 
   mixins: [Reflux.ListenerMixin, IntlMixin],
 
@@ -23,7 +23,7 @@ var TourLogin = React.createClass({
   _onSessionChange: function (session) {
     if (session.id) {
       setTimeout(function () {
-        this.context.router.transitionTo('tour');
+        this.context.router.transitionTo('medium');
       }.bind(this), 1);
     } else {
       this.setState({session: session});
@@ -64,4 +64,4 @@ var TourLogin = React.createClass({
 
 });
 
-module.exports = TourLogin;
+module.exports = MediumLogin;

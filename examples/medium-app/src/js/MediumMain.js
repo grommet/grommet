@@ -8,10 +8,10 @@ var Title = require('grommet/components/Title');
 var Logo = require('./MediumLogo');
 var Menu = require('grommet/components/Menu');
 var CloseIcon = require('grommet/components/icons/Clear');
-var TourMainMenu = require('./TourMainMenu');
-var TourSessionMenu = require('./TourSessionMenu');
+var MediumMainMenu = require('./MediumMainMenu');
+var MediumSessionMenu = require('./MediumSessionMenu');
 
-var TourMain = React.createClass({
+var MediumMain = React.createClass({
 
   propTypes: {
     primary: React.PropTypes.bool,
@@ -36,9 +36,9 @@ var TourMain = React.createClass({
             </div>
           </Menu>
         </Header>
-        <TourMainMenu />
+        <MediumMainMenu />
         <Footer>
-          <TourSessionMenu direction="up" />
+          <MediumSessionMenu direction="up" />
         </Footer>
       </Sidebar>
     );
@@ -46,4 +46,4 @@ var TourMain = React.createClass({
 
 });
 
-module.exports = TourMain;
+module.exports = MediumMain;

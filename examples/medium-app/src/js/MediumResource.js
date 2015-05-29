@@ -8,7 +8,7 @@ var Menu = require('grommet/components/Menu');
 var CloseIcon = require('grommet/components/icons/Clear');
 var IntlMixin = require('grommet/mixins/GrommetIntlMixin');
 
-var TourResource = React.createClass({
+var MediumResource = React.createClass({
 
   mixins: [IntlMixin],
 
@@ -93,4 +93,4 @@ var TourResource = React.createClass({
 
 });
 
-module.exports = TourResource;
+module.exports = MediumResource;

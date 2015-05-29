@@ -17,7 +17,7 @@ var PAGES = [
   {route: 'settings', label: 'settings'}
 ];
 
-var TourMainMenu = React.createClass({
+var MediumMainMenu = React.createClass({
 
   mixins: [IntlMixin],
 
@@ -40,4 +40,4 @@ var TourMainMenu = React.createClass({
 
 });
 
-module.exports = TourMainMenu;
+module.exports = MediumMainMenu;

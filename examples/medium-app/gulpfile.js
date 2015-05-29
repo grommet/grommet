@@ -4,26 +4,26 @@ var devGulpTasks = require('grommet/utils/gulp/gulp-tasks');
 
 var opts = {
   base: '../../',
-  dist: path.resolve(__dirname, '../../examples/tour/dist/'),
+  dist: path.resolve(__dirname, '../../examples/medium-app/dist/'),
   copyAssets: [
-    'examples/tour/src/index.html',
+    'examples/medium-app/src/index.html',
     {
-      asset: 'examples/tour/src/img/**',
-      dist: 'examples/tour/dist/img/'
+      asset: 'examples/medium-app/src/img/**',
+      dist: 'examples/medium-app/dist/img/'
     },
     {
       asset: 'src/img/**',
-      dist: 'examples/tour/dist/img/'
+      dist: 'examples/medium-app/dist/img/'
     }
   ],
-  scssAssets: ['examples/tour/src/scss/**/*.scss'],
-  jsAssets: ['examples/tour/src/js/**/*.js'],
-  mainJs: 'examples/tour/src/js/index.js',
-  mainScss: 'examples/tour/src/scss/index.scss',
+  scssAssets: ['examples/medium-app/src/scss/**/*.scss'],
+  jsAssets: ['examples/medium-app/src/js/**/*.js'],
+  mainJs: 'examples/medium-app/src/js/index.js',
+  mainScss: 'examples/medium-app/src/scss/index.scss',
   sync: {
     hostname: 'grommet.usa.hp.com',
     username: 'ligo',
-    remoteDestination: '/var/www/html/examples/tour/dist'
+    remoteDestination: '/var/www/html/examples/medium-app/dist'
   },
   webpack: {
   	devAlias: { // TODO: remove, just for local dev

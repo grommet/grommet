@@ -4,18 +4,18 @@ var React = require('react');
 var Route = require('react-router').Route;
 //var DefaultRoute = require('react-router').DefaultRoute;
 
-var TourLogin = require('./TourLogin');
+var MediumLogin = require('./MediumLogin');
 var TBD = require('grommet/components/TBD');
 //var IndexDashboardEdit = require('grommet/index/components/DashboardEdit');
 //var IndexDashboardPanelAdd = require('grommet/index/components/DashboardPanelAdd');
 //var IndexDashboardPanelEdit = require('grommet/index/components/DashboardPanelEdit');
-var Tour = require('./Tour');
-var TourDashboard = require('./TourDashboard');
-var TourSplit = require('./TourSplit');
+var MediumApp = require('./MediumApp');
+var MediumDashboard = require('./MediumDashboard');
+var MediumSplit = require('./MediumSplit');
 var Enclosures = require('./Enclosures');
 var Enclosure = require('./Enclosure');
 var Overview = require('./Overview');
-var TourMap = require('./TourMap');
+var MediumMap = require('./MediumMap');
 var ServerHardwares = require('./ServerHardwares');
 var ServerHardware = require('./ServerHardware');
 var ServerProfiles = require('./server-profiles/ServerProfiles');
@@ -24,10 +24,10 @@ var ServerProfileOverview = require('./server-profiles/ServerProfileOverview');
 var ServerProfileAdd = require('./server-profiles/ServerProfileAdd');
 var ServerProfileEdit = require('./server-profiles/ServerProfileEdit');
 var ServerProfileDelete = require('./server-profiles/ServerProfileDelete');
-var TourActivity = require('./TourActivity');
-var TourActivityResource = require('./TourActivityResource');
+var MediumActivity = require('./MediumActivity');
+var MediumActivityResource = require('./MediumActivityResource');
 
-var rootPath = "/tour/";
+var rootPath = "/medium-app/";
 /// turn off when trying to get websockets + webpack dev server working together
 if (__DEV_MODE__) {
   rootPath = "/"; // webpack-dev-server
@@ -85,15 +85,15 @@ module.exports = {
   },
 
   routes: (
-    <Route name="tour" path={rootPath} handler={Tour}>
-      <Route name="login" handler={TourLogin}/>
-      <Route name="dashboard" path={rootPath} handler={TourDashboard}/>
-      <Route handler={TourSplit}>
+    <Route name="medium" path={rootPath} handler={MediumApp}>
+      <Route name="login" handler={MediumLogin}/>
+      <Route name="dashboard" path={rootPath} handler={MediumDashboard}/>
+      <Route handler={MediumSplit}>
         <Route name="tbd" handler={TBD}/>
         <Route name="settings" handler={TBD}/>
-        <Route name="activity" handler={TourActivity}>
+        <Route name="activity" handler={MediumActivity}>
           <Route name="activity resource" path={rootPath + "activity/*"}
-            handler={TourActivityResource} />
+            handler={MediumActivityResource} />
         </Route>
         <Route name="enclosures" handler={Enclosures}>
           <Route name="enclosure"
@@ -103,7 +103,7 @@ module.exports = {
               handler={Overview} />
             <Route name="enclosure map"
               path={rootPath + "enclosures/map/*"}
-              handler={TourMap} />
+              handler={MediumMap} />
           </Route>
         </Route>
         <Route name="server hardwares"
@@ -115,7 +115,7 @@ module.exports = {
               handler={Overview} />
             <Route name="server hardware map"
               path={rootPath + "server-hardware/map/*"}
-              handler={TourMap} />
+              handler={MediumMap} />
           </Route>
         </Route>
         <Route name="server profiles" handler={ServerProfiles}>
@@ -127,7 +127,7 @@ module.exports = {
               handler={ServerProfileOverview} />
             <Route name="server profile map"
               path={rootPath + "server-profiles/map/*"}
-              handler={TourMap} />
+              handler={MediumMap} />
             <Route name="server profile edit"
               path={rootPath + "server-profiles/edit/*"}
               handler={ServerProfileEdit} />

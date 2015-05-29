@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var TourResource = require('../TourResource');
+var MediumResource = require('../MediumResource');
 
 var VIEWS = [
   {label: 'Overview', name: 'overview', route: 'server profile overview'},
@@ -13,7 +13,7 @@ var VIEWS = [
 var ServerProfile = React.createClass({
   render: function () {
     return (
-      <TourResource categoryRoute="server profiles" views={VIEWS} />
+      <MediumResource categoryRoute="server profiles" views={VIEWS} />
     );
   }
 });

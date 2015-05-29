@@ -1,8 +1,8 @@
 {
-  "name": "grommet-tour",
+  "name": "medium-app",
   "version": "0.1.2",
   "main": "src/js/index.js",
-  "description": "Grommet Tour",
+  "description": "Medium App",
   "author": "Eric Soderberg",
   "dependencies": {
     "grommet": "^0.1.2"

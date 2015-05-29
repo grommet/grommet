@@ -1,25 +1,26 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var TourIndex = require('../TourIndex');
+var MediumIndex = require('./MediumIndex');
 
 var OPTIONS = {
-  label: "Server Profiles",
-  view: 'table',
+  label: "Server Hardware",
+  view: 'list',
   attributes: [
     {attribute: 'status', label: 'Status', index: 0, size: 'small',
       filter: ['Error', 'Warning', 'OK', 'Unknown']},
-    {attribute: 'name', label: 'Name', index: 1}
+    {attribute: 'name', label: 'Name', index: 1},
+    {attribute: 'model', label: 'Model', index: 2, secondary: true}
   ],
   params: {
-    category: 'server-profiles',
+    category: 'server-hardware',
     start: 0,
     count: 20,
     sort: 'name:asc'
   }
 };
 
-var ServerProfiles = React.createClass({
+var ServerHardwares = React.createClass({
 
   propTypes: {
     onMain: React.PropTypes.func
@@ -27,15 +28,14 @@ var ServerProfiles = React.createClass({
 
   render: function () {
     return (
-      <TourIndex
-        manageData={false}
-        resourceRoute="server profile"
-        selectionRoute="server profile overview"
-        addRoute="server profile add"
+      <MediumIndex
+        manageData={true}
+        resourceRoute="server hardware"
+        selectionRoute="server hardware overview"
         options={OPTIONS}
         onMain={this.props.onMain} />
     );
   }
 });
 
-module.exports = ServerProfiles;
+module.exports = ServerHardwares;

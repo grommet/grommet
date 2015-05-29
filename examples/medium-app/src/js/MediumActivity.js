@@ -8,7 +8,7 @@ var IndexQuery = require('grommet/utils/IndexQuery');
 var Title = require('grommet/components/Title');
 var Logo = require('./MediumLogo');
 
-var TourActivity = React.createClass({
+var MediumActivity = React.createClass({
 
   contextTypes: {
     router: React.PropTypes.func.isRequired
@@ -108,4 +108,4 @@ var TourActivity = React.createClass({
 
 });
 
-module.exports = TourActivity;
+module.exports = MediumActivity;

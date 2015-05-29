@@ -1,10 +1,10 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 module.exports = {
-  TourDashboard: {
+  MediumDashboard: {
     serverHardware: 'Hardware do Servidor',
     activeAlerts: 'Alertas Ativos'
   },
-  TourSessionMenu: {
+  MediumSessionMenu: {
     logout: 'Deslogar'
   },
   dashboard: 'Painel de Controle',

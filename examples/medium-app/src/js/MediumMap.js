@@ -9,7 +9,7 @@ var StatusIcon = require('grommet/components/icons/Status');
 var IndexActions = require('grommet/actions/IndexActions');
 var IntlMixin = require('grommet/mixins/GrommetIntlMixin');
 
-var TourMap = React.createClass({
+var MediumMap = React.createClass({
 
   contextTypes: {
     router: React.PropTypes.func.isRequired
@@ -163,4 +163,4 @@ var TourMap = React.createClass({
 
 });
 
-module.exports = TourMap;
+module.exports = MediumMap;

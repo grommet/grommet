@@ -8,7 +8,7 @@ var SessionStore = require('grommet/stores/SessionStore');
 var Rest = require('grommet/utils/Rest');
 var IntlMixin = require('grommet/mixins/GrommetIntlMixin');
 
-var Tour = React.createClass({
+var MediumApp = React.createClass({
 
   mixins: [Reflux.ListenerMixin, IntlMixin],
 
@@ -49,4 +49,4 @@ var Tour = React.createClass({
 
 });
 
-module.exports = Tour;
+module.exports = MediumApp;
