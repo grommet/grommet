@@ -63,7 +63,7 @@ var TourMap = React.createClass({
 
   _getData: function () {
     this.listenTo(IndexActions.getMap.completed, this._onGetMapCompleted);
-    IndexActions.getMap(this.state.uri);
+    IndexActions.getMap(this.state.uri, true);
   },
 
   getInitialState: function () {
@@ -79,7 +79,10 @@ var TourMap = React.createClass({
 
   componentWillReceiveProps: function () {
     var router = this.context.router;
-    this.setState({uri: router.getCurrentParams().splat}, this._getData);
+    var uri = router.getCurrentParams().splat;
+    if (uri !== this.state.uri) {
+      this.setState({uri: uri}, this._getData);
+    }
   },
 
   _renderItem: function (item) {
