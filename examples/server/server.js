@@ -8,7 +8,6 @@ var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var docs = require('./docs');
 var rest = require('./rest');
-var tour = require('./tour');
 var mediumApp = require('./medium-app');
 var ctoAppTuner = require('./cto-app-tuner');
 //var demo = require('./demo');
@@ -28,11 +27,14 @@ router.get('/', function (req, res) {
   res.redirect('/docs/hpe');
 });
 
+app.use('/tour/', function (req, res, next) {
+  res.redirect('/medium-app');
+});
+
 app.
   use(PREFIX + '/docs', docs).
   use(PREFIX + '/rest', rest.router).
   use(PREFIX + '/medium-app', mediumApp).
-  use(PREFIX + '/tour', tour).
   use(PREFIX + '/cto-app-tuner', ctoAppTuner).
   //use(PREFIX + '/demo', demo).
   use(PREFIX, router);
