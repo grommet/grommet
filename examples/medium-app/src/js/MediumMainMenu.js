@@ -5,16 +5,16 @@ var IntlMixin = require('grommet/mixins/GrommetIntlMixin');
 var Link = require('react-router').Link;
 
 var PAGES = [
-  {route: 'dashboard', label: 'dashboard'},
-  {route: 'activity', label: 'activity'},
-  {route: 'enclosures', label: 'enclosures',
+  {route: 'dashboard', label: 'Dashboard'},
+  {route: 'activity', label: 'Activity'},
+  {route: 'enclosures', label: 'Enclosures',
     indexCategory: 'enclosures', resourceRoute: 'enclosure'},
-  {route: 'server hardwares', label: 'serverHardware',
+  {route: 'server hardwares', label: 'Server Hardware',
     indexCategory: 'server-hardware', resourceRoute: 'server hardware'},
-  {route: 'server profiles', label: 'serverProfiles',
+  {route: 'server profiles', label: 'Server Profiles',
     indexCategory: 'server-profiles', resourceRoute: 'server profile'},
-  {route: 'tbd', label: 'reports'},
-  {route: 'settings', label: 'settings'}
+  {route: 'tbd', label: 'Reports'},
+  {route: 'settings', label: 'Settings'}
 ];
 
 var MediumMainMenu = React.createClass({
@@ -23,7 +23,7 @@ var MediumMainMenu = React.createClass({
 
   render: function() {
     var pages = PAGES.map(function (page) {
-      var label = this.getIntlMessage(page.label);
+      var label = this.getGrommetIntlMessage(page.label);
       return (
         <Link key={label} to={page.route}>
           {label}

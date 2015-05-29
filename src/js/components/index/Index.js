@@ -61,7 +61,7 @@ var Index = React.createClass({
   getDefaultProps: function () {
     return ({
       options: {
-        attributes: [{name: 'name', label_key: 'Index.name', index: 0}],
+        attributes: [{name: 'name', label: 'Name', index: 0}],
         flush: true,
         view: "tiles"
       }

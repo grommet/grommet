@@ -92,7 +92,7 @@ var Legend = React.createClass({
       total = (
         <li className={CLASS_ROOT + "__total"}>
           <span className={CLASS_ROOT + "__total-label"}>
-            {this.getIntlMessage('Legend.total')}
+            {this.getGrommetIntlMessage('Total')}
           </span>
           <span className={CLASS_ROOT + "__total-value"}>
             {totalValue}

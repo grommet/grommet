@@ -36,7 +36,7 @@ var MediumSessionMenu = React.createClass({
       <Menu icon={icon}
         align={this.props.align}
         direction={this.props.direction}>
-        <a onClick={this._onLogout}>{this.getIntlMessage('MediumSessionMenu.logout')}</a>
+        <a onClick={this._onLogout}>{this.getGrommetIntlMessage('Logout')}</a>
       </Menu>
     );
   }

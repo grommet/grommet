@@ -24,7 +24,7 @@ var Search = React.createClass({
     return {
       align: 'left',
       inline: false,
-      placeHolder: 'SEARCH_PLACEHOLDER'
+      placeHolder: 'Search'
     };
   },
 
@@ -231,10 +231,6 @@ var Search = React.createClass({
   },
 
   render: function () {
-    var placeholderText = this.props.placeHolder;
-    if (placeholderText === 'SEARCH_PLACEHOLDER') {
-      placeholderText = this.getIntlMessage('Search.placeHolder');
-    }
 
     var classes = this._classes(CLASS_ROOT);
     if (this.props.className) {
@@ -248,7 +244,7 @@ var Search = React.createClass({
       return (
         <div className={classes.join(' ')}>
           <input ref="input" type="search"
-            placeholder={placeholderText}
+            placeholder={this.getGrommetIntlMessage(this.props.placeHolder)}
             value={this.props.defaultValue}
             className={CLASS_ROOT + "__input" }
             readOnly={readOnly}

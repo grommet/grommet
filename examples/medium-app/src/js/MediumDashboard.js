@@ -30,7 +30,7 @@ var CONFIG = [
     }
   },
   {
-    name: 'MediumDashboard.activeAlerts',
+    name: 'Active Alerts',
     route: 'activity',
     type: 'arc',
     params: {
@@ -40,7 +40,7 @@ var CONFIG = [
     }
   },
   {
-    name: 'MediumDashboard.serverHardware',
+    name: 'Server Hardware',
     route: 'server hardwares',
     type: 'arc',
     params: {
@@ -121,11 +121,11 @@ var MediumDashboard = React.createClass({
         }
         header = (
           <Link to={tile.route} query={queryParams}>
-            {this.getIntlMessage(tile.name)}
+            {this.getGrommetIntlMessage(tile.name)}
           </Link>
         );
       } else if (tile.name) {
-        header = this.getIntlMessage(tile.name);
+        header = this.getGrommetIntlMessage(tile.name);
       }
       if (header) {
         header = <Header small={true}><h4>{header}</h4></Header>;

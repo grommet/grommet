@@ -75,12 +75,7 @@ describe('Grommet LoginForm', function() {
     var Component = GrommetTestUtils.getComponent(__path__, undefined, {
       locales: 'pt-BR',
       messages: {
-        LoginForm: {
-          btn_label: 'Logar Test',
-          username: 'Usuário',
-          password: 'Senha',
-          rememberMe: 'Lembrar Usuário'
-        }
+        'Log In': 'Logar Test'
       }
     });
 
