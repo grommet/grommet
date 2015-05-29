@@ -413,6 +413,29 @@ router.get('/:categoryName/*', function(req, res) {
   }
 });
 
+function createTask (categoryName, action, resource) {
+  var now = new Date();
+
+  var task = {
+    category: 'tasks',
+    uri: '/rest/tasks/' + now.getTime(),
+    name: action,
+    status: 'Unknown',
+    state: 'Running',
+    attributes: {
+      associatedResourceUri: resource.uri,
+      associatedResourceName: resource.name,
+      associatedResourceCategory: categoryName,
+      hidden: false
+    },
+    created: now.toISOString(),
+    modified: now.toISOString()
+  };
+  data.addResource('tasks', task);
+
+  return task;
+}
+
 router.post('/:categoryName', function(req, res) {
   var categoryName = req.params.categoryName;
   var now = new Date();
@@ -427,22 +450,11 @@ router.post('/:categoryName', function(req, res) {
   }, req.body);
   data.addResource(categoryName, resource);
 
-  var task = {
-    category: 'tasks',
-    uri: '/rest/tasks/' + now.getTime(),
-    name: 'Add',
-    status: 'Unknown',
-    state: 'Running',
-    attributes: {
-      associatedResourceUri: resource.uri,
-      associatedResourceName: resource.name,
-      associatedResourceCategory: categoryName,
-      hidden: false
-    },
-    created: now.toISOString(),
-    modified: now.toISOString()
-  };
-  data.addResource('tasks', task);
+  var task = createTask(categoryName, 'Add', resource);
+
+  res.json({
+    taskUri: task.uri
+  });
 
   setTimeout(function() {
     task.status = 'OK';
@@ -451,15 +463,65 @@ router.post('/:categoryName', function(req, res) {
     onResourceChange([{category: task.category, uri: task.uri}]);
   }, 10000);
 
+  setTimeout(function () {
+    onResourceChange([
+      {category: resource.category, uri: resource.uri},
+      {category: task.category, uri: task.uri},
+    ]);
+  }, 1);
+});
+
+router.put('/:categoryName/*', function(req, res) {
+  var categoryName = req.params.categoryName;
+  var resource = req.body;
+  var now = new Date();
+  resource.modified = now.toISOString();
+  data.updateResource(categoryName, resource);
+
+  var task = createTask(categoryName, 'Update', resource);
+
   res.json({
     taskUri: task.uri
   });
+
+  setTimeout(function() {
+    task.status = 'OK';
+    task.state = 'Completed';
+    task.modified = (new Date()).toISOString();
+    onResourceChange([{category: task.category, uri: task.uri}]);
+  }, 10000);
 
   setTimeout(function () {
     onResourceChange([
       {category: resource.category, uri: resource.uri},
       {category: task.category, uri: task.uri},
     ]);
+  }, 1);
+});
+
+router.delete('/:categoryName/*', function(req, res) {
+  var categoryName = req.params.categoryName;
+  var resource = data.getResource('/rest' + req.url);
+
+  var task = createTask(categoryName, 'Delete', resource);
+
+  res.json({
+    taskUri: task.uri
+  });
+
+  setTimeout(function() {
+    data.deleteResource(categoryName, '/rest' + req.url);
+    task.status = 'OK';
+    task.state = 'Completed';
+    task.modified = (new Date()).toISOString();
+    onResourceChange([
+      {category: resource.category, uri: resource.uri},
+      {category: task.category, uri: task.uri},
+    ]);
+  }, 10000);
+
+  setTimeout(function () {
+    onResourceChange([{category: task.category, uri: task.uri}]);
   }, 1);
 });
 

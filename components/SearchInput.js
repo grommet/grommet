@@ -83,7 +83,6 @@ var SearchInput = React.createClass({
   },
 
   _onClickSuggestion: function (suggestion) {
-    console.log('!!! SearchInput _onClickSuggestion', suggestion);
     this.setState({value: suggestion});
     this._activation(false);
     this.props.onChange(suggestion);
@@ -163,7 +162,6 @@ var SearchInput = React.createClass({
   },
 
   render: function() {
-    console.log('!!! SearchInput render', this.props.value);
     var classes = [CLASS_ROOT];
     if (this.state.active) {
       classes.push(CLASS_ROOT + "--active");
@@ -188,7 +186,6 @@ var SearchInput = React.createClass({
 
   renderLayer: function() {
     if (this.state.active) {
-      console.log('!!! SearchInput renderLayer', this.props.suggestions);
 
       var suggestions = null;
       if (this.props.suggestions) {

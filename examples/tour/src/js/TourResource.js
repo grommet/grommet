@@ -18,35 +18,37 @@ var TourResource = React.createClass({
       label: React.PropTypes.string,
       name: React.PropTypes.string,
       route: React.PropTypes.string
-    })).isRequired
+    }))
   },
 
   contextTypes: {
     router: React.PropTypes.func.isRequired
   },
 
-  getInitialState: function () {
+  _stateFromProps: function (props) {
     var router = this.context.router;
     var params = router.getCurrentParams();
-    var view = this.props.views.filter(function (view) {
-      return (router.isActive(view.route));
-    })[0];
+
+    var view;
+    if (props.views) {
+      view = props.views.filter(function (view) {
+        return (router.isActive(view.route));
+      })[0];
+    }
+
     return {
       uri: params.splat,
-      view: view || {label: 'view'},
+      view: view,
       query: router.getCurrentQuery()
     };
   },
 
-  componentWillReceiveProps: function () {
-    var router = this.context.router;
-    var params = router.getCurrentParams();
-    this.setState({
-      uri: params.splat,
-      view: this.props.views.filter(function (view) {
-        return (router.isActive(view.route));
-      })[0]
-    });
+  getInitialState: function () {
+    return this._stateFromProps(this.props);
+  },
+
+  componentWillReceiveProps: function (newProps) {
+    this.setState(this._stateFromProps(newProps));
   },
 
   render: function () {
@@ -56,22 +58,29 @@ var TourResource = React.createClass({
       </Link>
     );
 
-    var menuOptions = this.props.views.map(function (view) {
-      return (
-        <Link key={view.label} to={view.route}
-          params={{splat: this.state.uri}}
-          query={{q: this.state.query}}>
-          {this.getGrommetIntlMessage(view.label)}
-        </Link>
+    var menu;
+    if (this.props.views) {
+      var menuOptions = this.props.views.map(function (view) {
+        return (
+          <Link key={view.label} to={view.route}
+            params={{splat: this.state.uri}}
+            query={{q: this.state.query}}>
+            {this.getGrommetIntlMessage(view.label)}
+          </Link>
+        );
+      }, this);
+
+      menu = (
+        <Menu label={this.getGrommetIntlMessage(this.state.view.label)}>
+          {menuOptions}
+        </Menu>
       );
-    }, this);
+    }
 
     return (
       <div>
         <Header large={true} fixed={true}>
-          <Menu label={this.getGrommetIntlMessage(this.state.view.label)}>
-            {menuOptions}
-          </Menu>
+          {menu}
           <span></span>
           <Menu>
             {close}

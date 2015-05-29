@@ -22,6 +22,8 @@ var ServerProfiles = require('./server-profiles/ServerProfiles');
 var ServerProfile = require('./server-profiles/ServerProfile');
 var ServerProfileOverview = require('./server-profiles/ServerProfileOverview');
 var ServerProfileAdd = require('./server-profiles/ServerProfileAdd');
+var ServerProfileEdit = require('./server-profiles/ServerProfileEdit');
+var ServerProfileDelete = require('./server-profiles/ServerProfileDelete');
 var TourActivity = require('./TourActivity');
 var TourActivityResource = require('./TourActivityResource');
 
@@ -126,6 +128,12 @@ module.exports = {
             <Route name="server profile map"
               path={rootPath + "server-profiles/map/*"}
               handler={TourMap} />
+            <Route name="server profile edit"
+              path={rootPath + "server-profiles/edit/*"}
+              handler={ServerProfileEdit} />
+            <Route name="server profile delete"
+              path={rootPath + "server-profiles/delete/*"}
+              handler={ServerProfileDelete} />
           </Route>
         </Route>
         <Route name="reports" handler={TBD} />
