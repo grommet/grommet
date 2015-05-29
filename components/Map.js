@@ -116,8 +116,19 @@ var ResourceMap = React.createClass({
 
   _renderItems: function (items) {
     return items.map(function (item, index) {
+      var classes = [CLASS_ROOT + "__item"];
+      var active = this.state.activeId === item.id ||
+        this.props.data.links.some(function (link) {
+          return ((link.parentId === item.id ||
+            link.childId === item.id) &&
+            (link.parentId === this.state.activeId ||
+            link.childId === this.state.activeId));
+        }, this);
+      if (active) {
+        classes.push(CLASS_ROOT + "__item--active");
+      }
       return (
-        <li key={index} id={item.id} className={CLASS_ROOT + "__item"}
+        <li key={index} id={item.id} className={classes.join(' ')}
           onMouseEnter={this._onEnter.bind(this, item.id)}
           onMouseLeave={this._onLeave.bind(this, item.id)}>
           {item.node}

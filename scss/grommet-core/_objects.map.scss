@@ -66,5 +66,9 @@
     .status-icon {
       margin-right: quarter($inuit-base-spacing-unit);
     }
+
+    &--active {
+      border-color: $strong-border-color;
+    }
   }
 }
