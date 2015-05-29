@@ -122,7 +122,7 @@ var ResourceMap = React.createClass({
           return ((link.parentId === item.id ||
             link.childId === item.id) &&
             (link.parentId === this.state.activeId ||
-            link.childId === this.state.activeId))
+            link.childId === this.state.activeId));
         }, this);
       if (active) {
         classes.push(CLASS_ROOT + "__item--active");
