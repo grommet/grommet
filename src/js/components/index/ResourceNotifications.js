@@ -15,17 +15,41 @@ var ResourceNotifications = React.createClass({
 
   _onUpdate: function (result) {
     this.setState({notifications: result.items});
+    // if we have a running task, remember it's uri so we keep it
+    var newRunningUri;
+    result.items.some(function (item) {
+      if ('Running' === item.state &&
+        item.uri !== this.state.runningUri) {
+        newRunningUri = item.uri;
+        return true;
+      }
+    }, this);
+
+    if (newRunningUri) {
+      this.setState({runningUri: newRunningUri},
+        this._getData.bind(this, this.props.resourceUri));
+    }
   },
 
   _getData: function (resourceUri) {
+    if (this._watch) {
+      RestWatch.stop(this._watch);
+      delete this._watch;
+    }
+    var runningUri = '';
+    if (this.state.runningUri) {
+      runningUri = ' OR uri:' + this.state.runningUri;
+    }
     var params = {
       category: ['alerts', 'tasks'],
       start: 0,
       count: 10,
       query: "associatedResourceUri:" + resourceUri +
-        " AND (state:Active OR state:Locked OR state:Running)"
+        " AND (state:Active OR state:Locked OR state:Running" +
+        runningUri + ")"
     };
-    RestWatch.start('/rest/index/resources', params, this._onUpdate);
+    this._watch = RestWatch.start('/rest/index/resources',
+      params, this._onUpdate);
   },
 
   getInitialState: function () {
@@ -38,6 +62,7 @@ var ResourceNotifications = React.createClass({
 
   componentWillReceiveProps: function (newProps) {
     if (newProps.resourceUri !== this.props.resourceUri) {
+      this.setState({runningUri: null});
       this._getData(newProps.resourceUri);
     }
   },
