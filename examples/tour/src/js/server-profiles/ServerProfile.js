@@ -5,7 +5,9 @@ var TourResource = require('../TourResource');
 
 var VIEWS = [
   {label: 'Overview', name: 'overview', route: 'server profile overview'},
-  {label: 'Map', name: 'map', route: 'server profile map'}
+  {label: 'Map', name: 'map', route: 'server profile map'},
+  {label: 'Edit', name: 'edit', route: 'server profile edit'},
+  {label: 'Delete', name: 'delete', route: 'server profile delete'}
 ];
 
 var ServerProfile = React.createClass({

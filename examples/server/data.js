@@ -81,7 +81,27 @@ var Data = {
     if (_categories[categoryName]) {
       _categories[categoryName].push(resource);
     }
+  },
 
+  updateResource: function (categoryName, resource) {
+    _resources[resource.uri] = resource;
+    if (_categories[categoryName]) {
+      _categories[categoryName] =
+        _categories[categoryName].filter(function (res) {
+          return (res.uri !== resource.uri);
+        });
+      _categories[categoryName].push(resource);
+    }
+  },
+
+  deleteResource: function (categoryName, uri) {
+    delete _resources[uri];
+    if (_categories[categoryName]) {
+      _categories[categoryName] =
+        _categories[categoryName].filter(function (res) {
+          return (res.uri !== uri);
+        });
+    }
   },
 
   addAssociation: function (name, parentUri, childUri) {
