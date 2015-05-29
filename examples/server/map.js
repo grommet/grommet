@@ -9,19 +9,19 @@ function addResource(uri, result, associationContext) {
   if (! result.categories.hasOwnProperty(resource.category)) {
     result.categories[resource.category] = [];
   }
-  if (result.categories[resource.category] > 10) {
-    // TODO:
-  } else {
-    // don't add if we already have it
-    if (! result.categories[resource.category].some(function (item) {
-      return (item.uri === uri);
-      })) {
-      result.categories[resource.category].push({
-        uri: uri,
-        status: resource.status,
-        name: resource.name
-      });
-    }
+  // don't add if we already have it
+  var exists = result.categories[resource.category].some(function (item) {
+    return (item.uri === uri);
+  });
+  if (! exists) {
+    result.categories[resource.category].push({
+      uri: uri,
+      status: resource.status,
+      name: resource.name,
+      // associationContext is added to make reduce easier.
+      // It will be removed before responding.
+      associationContext: associationContext
+    });
   }
 }
 
@@ -57,38 +57,53 @@ function reduce(result) {
       var items = result.categories[name];
       if (items.length > REDUCE_LIMIT) {
 
-        var reduced = {
-          association: {
-            parentUri: '',
-            name: ''
-          },
-          total: 0,
-          uri: '/summary/' + name,
-          status: {}
-        }
+        var reducedItems = [];
+        // group by parentUri
+        var reducedItemsMap = {}; // parentUri: data
 
         for (var i=0; i<items.length; i++) {
           var item = items[i];
-          // adjust counters
-          reduced.total += 1;
-          if (! reduced.status[item.status]) {
-            reduced.status[item.status] = 0;
-          }
-          reduced.status[item.status] += 1;
+          var reducedItem;
 
-          // adjust links
-          for (var j=0; j<result.links.length; j++) {
-            var link = result.links[j];
-            if (link.parentUri === item.uri) {
-              link.parentUri = reduced.uri;
+          if (item.associationContext.parentUri) {
+            reducedItem = reducedItemsMap[item.associationContext.parentUri];
+            if (! reducedItem) {
+              reducedItem = {
+                association: {
+                  parentUri: item.associationContext.parentUri,
+                  name: item.associationContext.name
+                },
+                total: 0,
+                uri: '/summary/' + name + item.associationContext.parentUri,
+                status: {}
+              }
+              reducedItems.push(reducedItem);
+              reducedItemsMap[item.associationContext.parentUri] = reducedItem;
             }
-            if (link.childUri === item.uri) {
-              link.childUri = reduced.uri;
+
+            // adjust counters
+            reducedItem.total += 1;
+            if (! reducedItem.status[item.status]) {
+              reducedItem.status[item.status] = 0;
             }
+            reducedItem.status[item.status] += 1;
+
+            // adjust links
+            for (var j=0; j<result.links.length; j++) {
+              var link = result.links[j];
+              if (link.parentUri === item.uri) {
+                link.parentUri = reducedItem.uri;
+              }
+              if (link.childUri === item.uri) {
+                link.childUri = reducedItem.uri;
+              }
+            }
+          } else {
+            reducedItems.push(item);
           }
         }
 
-        result.categories[name] = [reduced];
+        result.categories[name] = reducedItems;
       }
     }
   }

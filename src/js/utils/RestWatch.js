@@ -37,7 +37,7 @@ var RestWatch = {
     // know which action to deliver the response with.
     state.requests.some(function (request) {
       if (request.id === message.id) {
-        request.handler(message.data);
+        request.handler(message.result);
       }
     });
   },

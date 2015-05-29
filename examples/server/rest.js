@@ -156,30 +156,37 @@ function closeConnection (connection) {
   }
 }
 
+var MAP_REGEXP = /^\/rest\/index\/trees\/aggregated(.+)$/;
+
 function respondToRequest (connection, request) {
-  var response = {id: request.id};
+  var response = {op: 'update', id: request.id};
+
   if ('/rest/index/resources' === request.url) {
-    var result = getItems(request.url, request.params);
-    response.op = 'update';
-    response.data = result;
-    connection.ws.send(JSON.stringify(response));
+    response.result = getItems(request.url, request.params);
   } else if ('/rest/index/resources/aggregated' === request.url) {
-    var result = getAggregate(request.url, request.params);
-    response.action = 'update';
-    response.data = result;
-    connection.ws.send(JSON.stringify(response));
+    response.result = getAggregate(request.url, request.params);
+  } else if (MAP_REGEXP.test(request.url)) {
+    var uri = MAP_REGEXP.exec(request.url)[1];
+    response.result = map.build(uri);
   } else {
-    response.action = 'error';
-    response.data = 'unknown url ' + request.url;
-    if (connection.ws) {
-      connection.ws.send(JSON.stringify(response));
-      closeConnection(connection);
-    }
+    response.op = 'error';
+    response.result = 'unknown url ' + request.url;
+  }
+
+  if (connection.ws) {
+    var data = JSON.stringify(response);
+    console.log(response.op.toUpperCase(), request.url, data.length);
+    connection.ws.send(data);
+  }
+
+  if ('error' === response.op) {
+    closeConnection(connection);
   }
 }
 
 function onMessage (connection, request) {
   if ('start' === request.op) {
+    console.log('WATCH', request.url);
     connection.requests.push(request);
     respondToRequest(connection, request);
   } else if ('stop' === request.op) {
