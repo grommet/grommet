@@ -17,8 +17,12 @@ router.all(/\/index.js|\/webpack-dev-server.js/, function (req, res) {
 router.use('/', function (req, res, next) {
   if (req.url.match(/.+\/img\//)) { // img
     res.redirect(301, req.url.replace(/.*\/(img\/.*)$/, "/medium-app/$1"));
+  } else if (req.url.match(/\/img\//)) { // img
+    next();
   } else if (req.url.match(/.+\/font\//)) { // font
     res.redirect(301, req.url.replace(/.*\/(font\/.*)$/, "/medium-app/$1"));
+  } else if (req.url.match(/\/font\//)) { // font
+    next();
   } else if (req.url.match(/.+\/.*\.[^\/]*$/)) { // file
     res.redirect(301, req.url.replace(/.*\/([^\/]*)$/, "/medium-app/$1"));
   } else {

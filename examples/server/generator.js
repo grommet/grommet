@@ -344,7 +344,7 @@ var Generator = {
     createResources();
     createActivity();
     createAssociations();
-    setInterval(randomActivity, 10000);
+    //setInterval(randomActivity, 10000);
   },
 
   listen: function (handler) {
