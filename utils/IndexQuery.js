@@ -81,7 +81,7 @@ function extractText(fullText) {
   // prune out attribute:value elements
   var text = fullText.replace(/\w+:[^'"\s]+|\w+:'[^']+'|\w+:"[^"]+"/g, '');
   // prune whitespace
-  return text.replace(/\s+/g, ' ').replace(/^\s+/, '').replace(/\s+$/, '');
+  return text.replace(/\s+/g, ' '); //.replace(/^\s+/, '').replace(/\s+$/, '');
 }
 
 function tokensForAttribute(tokens, attribute) {

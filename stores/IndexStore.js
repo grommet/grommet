@@ -89,6 +89,7 @@ var IndexStore = Reflux.createStore({
 
   _onGetItemsCompleted: function (response) {
     this._data.result = response;
+    this._data.error = '';
 
     // save uri -> index to speed up lookups by uri
     this._data.uriIndexes = {};
@@ -101,8 +102,16 @@ var IndexStore = Reflux.createStore({
     this.trigger(this._data);
   },
 
-  _onGetItemsFailed: function () {
-    // TODO:
+  _unescapeSafeHtml: function (text) {
+    return text.replace(/&amp;/g, '&')
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/&quot;/g, '"')
+      .replace(/&#039;|&#39;/g, "'");
+  },
+
+  _onGetItemsFailed: function (error) {
+    this._data.error = this._unescapeSafeHtml(error.response.text);
     clearTimeout(this._clearTimer);
     this._data.state = 'idle';
     this.trigger(this._data);

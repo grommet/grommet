@@ -162,7 +162,7 @@ function parseQuery (query) {
           index = endIndex + 1;
         } else {
           console.log('!!! UNPARSEABLE', query.slice(index), query.slice(index, query.length), matches);
-          throw "Unable to parse " + query.slice(index);
+          throw "Unable to parse: " + query.slice(index);
         }
       }
     }
@@ -182,7 +182,7 @@ function parseQuery (query) {
         }
       } else {
         console.log('!!! THIRD TERM', expression);
-        throw "Unable to parse " + term;
+        throw "Unable to parse: " + query + ". Missing AND or OR?";
       }
     }
 
