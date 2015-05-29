@@ -90,6 +90,10 @@ var opts = {
     {
       filename: 'package.json',
       asset: JSON.stringify(getPackageJSON(), null, 2)
+    },
+    {
+      asset: '.jshintrc',
+      dist: 'dist/'
     }
   ],
   scssAssets: ['src/scss/**/*.scss'],
