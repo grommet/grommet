@@ -3,7 +3,6 @@
 var __path__ = '../../src/js/components/Sidebar';
 
 var GrommetTestUtils = require('../mocks/GrommetTestUtils');
-var expect = require('expect');
 
 describe('Grommet Sidebar', function() {
   it('loads a basic Sidebar', function() {

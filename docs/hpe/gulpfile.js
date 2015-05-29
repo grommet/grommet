@@ -37,10 +37,10 @@ var opts = {
   },
   webpack: {
     resolve: {
-    	alias: {
-	      'grommet/scss': path.resolve(__dirname, '../../src/scss'),
-	      'grommet': path.resolve(__dirname, '../../src/js')
-	    },
+      alias: {
+        'grommet/scss': path.resolve(__dirname, '../../src/scss'),
+        'grommet': path.resolve(__dirname, '../../src/js')
+      },
       root: [
         path.resolve(__dirname, '../../node_modules'),
         path.resolve(__dirname, '../../src/lib'),

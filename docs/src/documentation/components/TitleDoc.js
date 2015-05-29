@@ -36,7 +36,7 @@ var TitleDoc = React.createClass({
           <pre><code className="html">
             {"<Title>\n  Sample Title\n</Title>"}
           </code></pre>
-        </section>  
+        </section>
       </GrommetDocument>
     );
   }

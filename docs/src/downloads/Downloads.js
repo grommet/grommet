@@ -8,7 +8,7 @@ var GrommetDocument = require('grommet/components/Document');
 var Downloads = React.createClass({
 
   render: function() {
-  	return (
+    return (
       <Section>
         <GrommetDocument>
           <Content />

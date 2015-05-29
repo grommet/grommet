@@ -37,11 +37,11 @@ var opts = {
     remoteDestination: '/var/www/html/docs/dist'
   },
   webpack: {
-  	resolve: {
-  		alias: {
-	  		'grommet/scss': path.resolve(__dirname, '../src/scss'),
-	  		'grommet': path.resolve(__dirname, '../src/js')
-	  	},
+    resolve: {
+      alias: {
+        'grommet/scss': path.resolve(__dirname, '../src/scss'),
+        'grommet': path.resolve(__dirname, '../src/js')
+      },
       root: [
         path.resolve(__dirname, '../node_modules'),
         path.resolve(__dirname, '../src/lib'),
@@ -50,8 +50,8 @@ var opts = {
       ]
     },
     module: {
-    	loaders: [
-	      {
+      loaders: [
+        {
           test: /style_guide(\/|\\)[^\/]*\.htm$/,
           loader: 'jsx-loader!imports?React=react,Router=react-router,Link=>Router.Link!html-jsx-loader?group=true&__GROMMET_VERSION__=' + grommetVersion
         },
@@ -59,7 +59,7 @@ var opts = {
           test: /documentation(\/|\\).*\.htm$|downloads(\/|\\).*\.htm$|style_guide(\/|\\).*\/.*\.htm$/,
           loader: 'jsx-loader!imports?React=react,Router=react-router,Link=>Router.Link!html-jsx-loader?__GROMMET_VERSION__=' + grommetVersion
         }
-    	]
+      ]
     }
   },
   devServerPort: 8002,
