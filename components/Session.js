@@ -59,7 +59,7 @@ var Session = React.createClass({
             </div>
           </div>
           <ul className={'session__actions list-bare'}>
-            <li><a onClick={this._onClickLogout}>{this.getIntlMessage('Session.logout')}</a></li>
+            <li><a onClick={this._onClickLogout}>{this.getGrommetIntlMessage('Logout')}</a></li>
           </ul>
         </div>
       </div>

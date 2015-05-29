@@ -1,21 +1,15 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 module.exports = {
-  MediumDashboard: {
-    serverHardware: 'Hardware do Servidor',
-    activeAlerts: 'Alertas Ativos'
-  },
-  MediumSessionMenu: {
-    logout: 'Deslogar'
-  },
-  dashboard: 'Painel de Controle',
-  activity: 'Atividade',
-  enclosures: 'Enclosures',
-  serverHardware: 'Hardware de Servidor',
-  serverProfiles: 'Perfil de Servidor',
-  reports: 'Relatórios',
-  settings: 'Configurações',
-  overview: 'Sumário',
-  map: 'Mapa',
+  'Active Alerts': 'Alertas Ativos',
+  Dashboard: 'Painel de Controle',
+  Activity: 'Atividade',
+  Enclosures: 'Enclosures',
+  'Server Hardware': 'Hardware do Servidor',
+  'Server Profiles': 'Perfis do Servidor',
+  Reports: 'Relatórios',
+  Settings: 'Configurações',
+  Overview: 'Sumário',
+  Map: 'Mapa',
   deviceBays: 'Baias do Dispositivo',
   bay: 'Baia',
   flavor: 'Tipo',

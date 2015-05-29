@@ -1,55 +1,38 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 module.exports = {
-  Index: {
-    name: 'Name'
-  },
   IndexFilters: {
-    all: 'All',
     filters: '{quantity, plural,\n  =0 {Filters}\n  =1 {one filter}\n  other {# filters}\n}'
   },
-  IndexHeader: {
-    search: 'Search'
-  },
-  Task: {
-    unknown: 'Unknown'
-  },
-  LoginForm: {
-    btn_label: 'Log In',
-    username: 'Username',
-    password: 'Password',
-    rememberMe: 'Remember me'
-  },
-  Search: {
-    placeHolder: 'Search'
-  },
-  Session: {
-    logout: 'Logout'
-  },
-  Legend: {
-    total: 'Total'
-  },
-  error: 'Error',
-  critical: 'Critical',
-  warning: 'Warning',
-  ok: 'OK',
-  disabled: 'Disabled',
-  unknown: 'Unknown',
-  completed: 'Completed',
-  running: 'Running',
-  active: 'Active',
-  cleared: 'Cleared',
-  name: 'Name',
-  resource: 'Resource',
-  model: 'Model',
-  time: 'Time',
-  state: 'State',
-  status: 'Status',
-  category: 'Category',
-  alerts: 'Alerts',
-  tasks: 'Tasks',
+  Active: 'Active',
+  Alerts: 'Alerts',
+  All: 'All',
+  Category: 'Category',
+  Cleared: 'Cleared',
+  Completed: 'Completed',
   created: 'Created',
+  Critical: 'Critical',
+  Disabled: 'Disabled',
+  Error: 'Error',
+  loginInvalidPassword: 'Please provide Username and Password.',
+  'Log In': 'Log In',
+  Logout: 'Logout',
+  model: 'Model',
   modified: 'Modified',
+  Name: 'Name',
+  OK: 'OK',
+  Password: 'Password',
+  'Remember me': 'Remember me',
+  Resource: 'Resource',
+  Running: 'Running',
+  Search: 'Search',
+  State: 'State',
+  Status: 'Status',
+  Tasks: 'Tasks',
+  Time: 'Time',
+  Total: 'Total',
+  Unknown: 'Unknown',
+  Username: 'Username',
   uri: 'URI',
-  loginInvalidPassword: 'Please provide Username and Password.'
+  Warning: 'Warning'
 };

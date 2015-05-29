@@ -105,7 +105,7 @@ var IndexHeader = React.createClass({
         {navControl}
         <Search className={CLASS_ROOT + "__search"}
           inline={true}
-          placeHolder={this.getIntlMessage('IndexHeader.search') + ' ' + label}
+          placeHolder={this.getGrommetIntlMessage('Search') + ' ' + label}
           defaultValue={searchText}
           onChange={this._onSearchChange} />
         {filters}

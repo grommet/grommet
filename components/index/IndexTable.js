@@ -44,7 +44,6 @@ var IndexTable = React.createClass({
   _simplifyAttributes: function (attributes) {
     return attributes
       .filter(function (attribute) {
-        attribute.label = attribute.label ? attribute.label : this.getIntlMessage(attribute.label_key);
         return attribute.hasOwnProperty('index');
       })
       .sort(function (a, b) {
@@ -77,7 +76,7 @@ var IndexTable = React.createClass({
         classes.push(CLASS_ROOT + "__header--" + attribute.size);
       }
 
-      var content = attribute.label;
+      var content = this.getGrommetIntlMessage(attribute.label);
       if ('status' === attribute.attribute) {
         classes.push(CLASS_ROOT + "__cell--icon");
         content = (

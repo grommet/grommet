@@ -15,7 +15,7 @@ var Task = React.createClass({
 
   render: function () {
     var resource = this.props.resource;
-    var status = resource.status || this.getIntlMessage('Task.unknown');
+    var status = resource.status || this.getGrommetIntlMessage('Unknown');
     return (
       <div>
         <div>
