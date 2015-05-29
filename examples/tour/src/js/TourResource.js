@@ -33,7 +33,7 @@ var TourResource = React.createClass({
     })[0];
     return {
       uri: params.splat,
-      view: view || 'view',
+      view: view || {label: 'view'},
       query: router.getCurrentQuery()
     };
   },

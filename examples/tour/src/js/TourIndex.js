@@ -48,7 +48,13 @@ var TourIndex = React.createClass({
 
   _onSelect: function (selection) {
     var router = this.context.router;
-    router.transitionTo(this.props.selectionRoute, {splat: selection},
+    // if we've already selected something, use the same route we are using now
+    var route = this.props.selectionRoute;
+    var routes = this.context.router.getCurrentRoutes();
+    if (routes.length >= 5) {
+      route = routes[4].name;
+    }
+    router.transitionTo(route, {splat: selection},
       router.getCurrentQuery());
   },
 
