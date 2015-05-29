@@ -317,7 +317,7 @@ module.exports = function(gulp, opts) {
       }
     });
     server.listen(options.devServerPort || 8080, 'localhost', function(err) {
-      if(err) {
+      if (err) {
         console.error('[webpack-dev-server] failed to start:', err);
       } else {
         console.log('[webpack-dev-server] started:', 'Browse to http://localhost:'+ options.devServerPort +'/webpack-dev-server/');

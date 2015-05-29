@@ -26,6 +26,7 @@ var TourActivity = require('./TourActivity');
 var TourActivityResource = require('./TourActivityResource');
 
 var rootPath = "/tour/";
+/// turn off when trying to get websockets + webpack dev server working together
 if (__DEV_MODE__) {
   rootPath = "/"; // webpack-dev-server
 }
