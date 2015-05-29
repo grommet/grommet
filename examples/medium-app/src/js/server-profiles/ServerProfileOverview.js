@@ -2,7 +2,7 @@
 
 var React = require('react');
 var Link = require('react-router').Link;
-var Rest = require('grommet/utils/Rest');
+var RestWatch = require('grommet/utils/RestWatch');
 var Actions = require('grommet/actions/Actions');
 var Header = require('grommet/components/Header');
 var ResourceNotifications = require('grommet/components/index/ResourceNotifications');
@@ -17,20 +17,12 @@ var ServerProfileOverview = React.createClass({
     router: React.PropTypes.func.isRequired
   },
 
-  _onResponse: function (err, res) {
-    if (err && err.timeout > 1000) {
-      this.setState({error: 'Timeout', serverProfile: {}});
-    } else if (res.status === 400) {
-      Actions.logout();
-    } else if (!res.ok) {
-      this.setState({error: res.body || res.text, serverProfile: {}});
-    } else {
-      this.setState({serverProfile: res.body, error: null});
-    }
+  _onUpdate: function (result) {
+    this.setState({serverProfile: result});
   },
 
   _getData: function () {
-    Rest.get(this.state.uri).end(this._onResponse);
+    this._watch = RestWatch.start(this.state.uri, null, this._onUpdate);
   },
 
   getInitialState: function () {
@@ -51,6 +43,10 @@ var ServerProfileOverview = React.createClass({
     if (uri !== this.state.uri) {
       this.setState({uri: uri}, this._getData);
     }
+  },
+
+  componentWillUnmount: function () {
+    RestWatch.stop(this._watch);
   },
 
   render: function () {

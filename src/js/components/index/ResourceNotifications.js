@@ -67,6 +67,10 @@ var ResourceNotifications = React.createClass({
     }
   },
 
+  componentWillUnmount: function () {
+    RestWatch.stop(this._watch);
+  },
+
   render: function () {
     var classes = [CLASS_ROOT];
     if (this.props.className) {

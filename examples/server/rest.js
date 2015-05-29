@@ -170,15 +170,20 @@ function respondToRequest (connection, request) {
     var uri = MAP_REGEXP.exec(request.url)[1];
     response.result = map.build(uri);
   } else {
-    response.op = 'error';
-    response.result = 'unknown url ' + request.url;
+    var resource = data.getResource(request.url);
+    if (resource) {
+      response.result = resource;
+    } else {
+      response.op = 'error';
+      response.result = 'unknown url ' + request.url;
+    }
   }
 
   if (connection.ws) {
-    var data = JSON.stringify(response);
+    var serializedResponse = JSON.stringify(response);
     console.log(response.op.toUpperCase(), request.url,
-      stringify(request.params), data.length);
-    connection.ws.send(data);
+      stringify(request.params), serializedResponse.length);
+    connection.ws.send(serializedResponse);
   }
 
   if ('error' === response.op) {
@@ -226,11 +231,22 @@ function initializeSocket (server) {
 }
 
 function requestMatches (request, events) {
-  // For now, if the request category(ies) match the change, respond
-  var category = request.params.category;
+  // If the request category(ies) or the request url match the change, respond
+  var category;
+  var uri;
+  if (request.params && request.params.category) {
+    category = request.params.category;
+  } else {
+    uri = request.url;
+  }
   return events.some(function (event) {
-    return (category === event.category ||
-      (Array.isArray(category) && category.indexOf(event.category) !== -1))
+    if (category) {
+      return (category === event.category ||
+        (Array.isArray(category) &&
+        category.indexOf(event.category) !== -1));
+    } else {
+      return (uri === event.uri);
+    }
   });
 }
 
@@ -445,7 +461,7 @@ router.post('/:categoryName', function(req, res) {
   var resource = _.extend({
     category: categoryName,
     uri: '/rest/' + categoryName + '/' + now.getTime(),
-    status: 'OK',
+    status: 'Unknown',
     state: 'Normal',
     created: now.toISOString(),
     modified: now.toISOString()
@@ -459,10 +475,14 @@ router.post('/:categoryName', function(req, res) {
   });
 
   setTimeout(function() {
+    resource.status = 'OK',
     task.status = 'OK';
     task.state = 'Completed';
     task.modified = (new Date()).toISOString();
-    onResourceChange([{category: task.category, uri: task.uri}]);
+    onResourceChange([
+      {category: resource.category, uri: resource.uri},
+      {category: task.category, uri: task.uri},
+    ]);
   }, 10000);
 
   setTimeout(function () {
