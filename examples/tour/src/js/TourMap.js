@@ -19,19 +19,31 @@ var TourMap = React.createClass({
 
   _onGetMapCompleted: function (response) {
     var router = this.context.router;
+    // require Routes lazily to avoid a circular dependency
     var Routes = require('./Routes');
     var categories = [];
 
     // convert to Map data format
-    forOwn(response.categories, function (category, name) {
-      var items = category.map(function (resource) {
-        var path = Routes.resourcePath(router, name, resource.uri, 'map');
-        return {
-          name: resource.name,
-          uri: resource.uri,
-          status: resource.status,
-          path: path
-        };
+    forOwn(response.categories, function (contents, name) {
+      var items = contents.map(function (resource) {
+        if (resource.hasOwnProperty('name')) {
+          // single resource
+          var path = Routes.resourcePath(router, name, resource.uri, 'map');
+          return {
+            name: resource.name,
+            uri: resource.uri,
+            status: resource.status,
+            path: path
+          };
+        } else {
+          // aggregate summary
+          return {
+            name: '' + resource.total +
+              ' ' + (Routes.categoryLabel(name) || name),
+            uri: resource.uri, // for link drawing
+            status: resource.status
+          };
+        }
       }, this);
 
       categories.push({
@@ -70,31 +82,59 @@ var TourMap = React.createClass({
     this.setState({uri: router.getCurrentParams().splat}, this._getData);
   },
 
+  _renderItem: function (item) {
+    var node;
+    if (typeof item.status === 'object') {
+      // summary node
+      var statuses = [];
+      forOwn(item.status, function (count, status) {
+        statuses.push(
+          <span key={status}>
+            <StatusIcon value={status.toLowerCase()} small={true} />
+            {count}
+          </span>
+        );
+      });
+      node = (
+        <div key={item.name} id={item.uri}>
+          {item.name}
+          <div>
+            {statuses}
+          </div>
+        </div>
+      );
+    } else {
+      var status = null;
+      if (item.status) {
+        status = <StatusIcon value={item.status.toLowerCase()} small={true} />;
+      }
+      if (item.path) {
+        node = (
+          <Link key={item.uri} id={item.uri} to={item.path}>
+            {status}
+            {item.name}
+          </Link>
+        );
+      } else {
+        node = (
+          <div key={item.uri} id={item.uri}>
+            {status}
+            {item.name}
+          </div>
+        );
+      }
+    }
+    return node;
+  },
+
   render: function () {
     var categories = this.state.data.categories.map(function (category) {
       var items = category.items.map(function (item) {
-        var statusIcon = null;
-        if (item.status) {
-          statusIcon = <StatusIcon value={item.status.toLowerCase()} small={true} />;
-        }
-        var node;
-        if (item.path) {
-          node = (
-            <Link key={item.uri} id={item.uri} to={item.path}>
-              {statusIcon}
-              {item.name}
-            </Link>
-          );
-        } else {
-          node = (
-            <div key={item.uri} id={item.uri}>
-              {statusIcon}
-              {item.name}
-            </div>
-          );
-        }
-        return {id: item.uri, node: node};
-      });
+        return {
+          id: item.uri,
+          node: this._renderItem(item)
+        };
+      }, this);
 
       var label = category.label;
       if (category.path) {
