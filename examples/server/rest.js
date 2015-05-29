@@ -4,6 +4,7 @@ var _ = require('lodash');
 var express = require('express');
 var router = express.Router();
 var ws = require("ws");
+var stringify = require("json-stringify-pretty-compact");
 var data = require('./data');
 var generator = require('./generator');
 var filter = require('./filter');
@@ -175,7 +176,8 @@ function respondToRequest (connection, request) {
 
   if (connection.ws) {
     var data = JSON.stringify(response);
-    console.log(response.op.toUpperCase(), request.url, data.length);
+    console.log(response.op.toUpperCase(), request.url,
+      stringify(request.params), data.length);
     connection.ws.send(data);
   }
 
@@ -186,7 +188,7 @@ function respondToRequest (connection, request) {
 
 function onMessage (connection, request) {
   if ('start' === request.op) {
-    console.log('WATCH', request.url);
+    console.log('WATCH', request.url, stringify(request.params));
     connection.requests.push(request);
     respondToRequest(connection, request);
   } else if ('stop' === request.op) {

@@ -114,7 +114,7 @@ var RestWatch = {
     state.requests = state.requests.filter(function (request) {
       if (request.id === requestId) {
         if (state.wsReady) {
-          this._sendRequest('stop', request.id);
+          this._sendMessage('stop', request.id);
         }
       } else {
         return true;
