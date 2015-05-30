@@ -149,23 +149,23 @@ gulp.task('dist-css', function () {
 
 gulp.task('sync-all', function() {
 
-  gulp.src('./examples/demo/gulpfile.js').pipe(chug({
+  gulp.src('./examples/demo/gulpfile.js', { read: false }).pipe(chug({
     tasks: ['sync']
   }));
 
-  gulp.src('./examples/tour/gulpfile.js').pipe(chug({
+  gulp.src('./examples/tour/gulpfile.js', { read: false }).pipe(chug({
     tasks: ['sync']
   }));
 
-  gulp.src('./examples/server/gulpfile.js').pipe(chug({
+  gulp.src('./examples/server/gulpfile.js', { read: false }).pipe(chug({
     tasks: ['sync']
   }));
 
-  gulp.src('./docs/gulpfile.js').pipe(chug({
+  gulp.src('./docs/gulpfile.js', { read: false }).pipe(chug({
     tasks: ['sync']
   }));
 
-  gulp.src('./gulpfile.js').pipe(chug({
+  gulp.src('./gulpfile.js', { read: false }).pipe(chug({
     tasks: ['sync']
   }));
 });
@@ -464,11 +464,11 @@ gulp.task('release:clean', function() {
 });
 
 gulp.task('release:sync', function() {
-  gulp.src('./docs/gulpfile.js').pipe(chug({
+  gulp.src('./docs/gulpfile.js', { read: false }).pipe(chug({
     tasks: ['sync']
   }));
 
-  gulp.src('./gulpfile.js').pipe(chug({
+  gulp.src('./gulpfile.js', { read: false }).pipe(chug({
     tasks: ['sync']
   }));
 });

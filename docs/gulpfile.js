@@ -79,25 +79,25 @@ var opts = {
 };
 
 gulp.task('dist-hpe', function() {
-  return gulp.src('docs/hpe/gulpfile.js').pipe(chug({
+  return gulp.src('docs/hpe/gulpfile.js', { read: false }).pipe(chug({
      tasks: ['dist']
   }));
 });
 
 gulp.task('dev-hpe', function() {
-  return gulp.src('docs/hpe/gulpfile.js').pipe(chug({
+  return gulp.src('docs/hpe/gulpfile.js', { read: false }).pipe(chug({
      tasks: ['dev']
   }));
 });
 
 gulp.task('dist-hpinc', function() {
-  return gulp.src('docs/hpinc/gulpfile.js').pipe(chug({
+  return gulp.src('docs/hpinc/gulpfile.js', { read: false }).pipe(chug({
      tasks: ['dist']
   }));
 });
 
 gulp.task('dev-hpinc', function() {
-  return gulp.src('docs/hpinc/gulpfile.js').pipe(chug({
+  return gulp.src('docs/hpinc/gulpfile.js', { read: false }).pipe(chug({
      tasks: ['dev']
   }));
 });
