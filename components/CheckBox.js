@@ -26,13 +26,13 @@ var CheckBox = React.createClass({
     }
     return (
       <label className={classes.join(' ')}>
-        <input className="check-box__input"
+        <input className={CLASS_ROOT + "__input"}
           id={this.props.id} name={this.props.name} type="checkbox"
           checked={this.props.checked}
           defaultChecked={this.props.defaultChecked}
           onChange={this.props.onChange} />
-        <span className="check-box__control"></span>
-        <span className="check-box__label">
+        <span className={CLASS_ROOT + "__control"}></span>
+        <span className={CLASS_ROOT + "__label"}>
           {this.props.label}
         </span>
       </label>

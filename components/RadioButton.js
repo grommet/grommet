@@ -2,6 +2,8 @@
 
 var React = require('react');
 
+var CLASS_ROOT = "radio-button";
+
 var RadioButton = React.createClass({
 
   propTypes: {
@@ -14,21 +16,22 @@ var RadioButton = React.createClass({
   },
 
   render: function () {
-    var classes = ["radio-button"];
+    var classes = [CLASS_ROOT];
     if (this.props.className) {
       classes.push(this.props.className);
     }
     return (
-      <span className={classes.join(' ')}>
-        <input className="radio-button__input"
+      <label className={classes.join(' ')}>
+        <input className={CLASS_ROOT + "__input"}
           id={this.props.id} name={this.props.name} type="radio"
           checked={this.props.checked}
           defaultChecked={this.props.defaultChecked}
-          onChange={this.props.onChange}/>
-        <label className="radio-button__label radio" htmlFor={this.props.id}>
+          onChange={this.props.onChange} />
+        <span className={CLASS_ROOT + "__control"}></span>
+        <span className={CLASS_ROOT + "__label"}>
           {this.props.label}
-        </label>
-      </span>
+        </span>
+      </label>
     );
   }
 
