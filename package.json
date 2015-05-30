@@ -5,7 +5,7 @@
   "description": "The most advanced UI framework for enterprise applications.",
   "private": true,
   "publishConfig": {
-    "registry": "http://grommet.usa.hp.com:2374/"
+    "registry": "http://grommet.io:2374/"
   },
   "authors": [
     "Alan Souza",
