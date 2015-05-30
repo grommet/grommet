@@ -35,7 +35,6 @@ var Router = require('react-router');
 var Route = Router.Route;
 var Docs = require('./Docs');
 var Home = require('./Home');
-var RequestAccess = require('./RequestAccess');
 var StyleGuide = require('./style_guide/StyleGuide');
 var Documentation = require('./documentation/Documentation');
 var Downloads = require('./downloads/Downloads');
@@ -53,9 +52,7 @@ var DocsRouter = React.createClass({
 
 var routes = (
   <Route name="docs" path={rootPath} handler={DocsRouter}>
-    <Route name="home" path={rootPath} handler={Home}>
-      <Route name="request_access" handler={RequestAccess} />
-    </Route>
+    <Route name="home" path={rootPath} handler={Home} />
     {StyleGuide.routes()}
     {Documentation.routes()}
     <Route name="downloads" handler={Downloads} />

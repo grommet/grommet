@@ -37,10 +37,6 @@ var Home = React.createClass({
               </a>
             </span>
           </Menu>
-          <Link key="request-access" to="request_access"
-            className="button primary call-to-action home__request-access">
-            Request Access
-          </Link>
         </Section>
 
         <Section className="home__hpe" direction="right" colorIndex="grey-1">
