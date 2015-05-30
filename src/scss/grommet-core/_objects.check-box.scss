@@ -1,49 +1,79 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 .check-box {
+  cursor: pointer;
 
   &__input {
     opacity: 0;
     position: absolute;
 
-    &:checked + label.checkbox:after {
+    &:checked + .check-box__control:after {
       content: "";
+      display: block;
       position: absolute;
-      top: quarter($inuit-base-spacing-unit);
-      left: 4px;
-      width: $inuit-base-spacing-unit - 8;
-      height: $inuit-base-spacing-unit - 8;
+      top: 3px;
+      left: 3px;
+      width: $inuit-base-spacing-unit - 8px;
+      height: $inuit-base-spacing-unit - 8px;
       background-color: $brand-color;
     }
 
-    &:focus + label.checkbox:before {
+    &:focus + .check-box__control {
       content: "";
       border-color: $focus-border-color;
       box-shadow: 0 0 1px 1px $focus-border-color;
     }
   }
 
-  &__label {
+  &__control {
     position: relative;
   	display: inline-block;
-  	cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+    width: $inuit-base-spacing-unit;
+    height: $inuit-base-spacing-unit;
+    margin-right: halve($inuit-base-spacing-unit);
+    vertical-align: middle;
+    background-color: inherit;
+    border: $input-border-width solid $border-color;
+    border-radius: $border-radius;
+  }
 
-    &:before {
-      content: "";
-      display: inline-block;
-      width: $inuit-base-spacing-unit;
+  &--toggle {
+    .check-box__control {
+      width: double($inuit-base-spacing-unit);
       height: $inuit-base-spacing-unit;
-      margin-right: halve($inuit-base-spacing-unit);
-      vertical-align: middle;
-      background-color: inherit;
-      color: $brand-color-darker;
-      border: $input-border-width solid $border-color;
-      border-radius: $border-radius;
-      text-align: center;
+      background-color: $meter-background-color;
+      border: none;
+      transition: background-color 0.3s;
+
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: $inuit-base-spacing-unit - 4px;
+        height: $inuit-base-spacing-unit - 4px;
+        background-color: #fff;
+        border-radius: $border-radius;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        transition: margin-left 0.3s;
+      }
+    }
+
+    .check-box__input {
+
+      &:checked + .check-box__control {
+        background-color: $brand-color;
+      }
+
+      &:checked + .check-box__control:after {
+        top: 2px;
+        left: 2px;
+        width: $inuit-base-spacing-unit - 4px;
+        height: $inuit-base-spacing-unit - 4px;
+        background-color: #fff;
+        margin-left: $inuit-base-spacing-unit;
+      }
     }
   }
 }

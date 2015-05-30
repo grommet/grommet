@@ -37,16 +37,25 @@ var CheckBoxDoc = React.createClass({
             {"<input>"} element.</dd>
           <dt><code>onChange        {"{func}"}</code></dt>
           <dd>Same as React {"<input onChange= >"}.</dd>
+          <dt><code>toggle         true|false</code></dt>
+          <dd>Whether to visualize it as a toggle switch.</dd>
           </dl>
         </section>
 
         <section>
           <h2>Example</h2>
 
+          <h3>Basic</h3>
           <div className="example">
             <CheckBox id="item2" label="Item 2" />
           </div>
-          <pre><code className="html">{"<CheckBox id=\"\{item2\}\" label=\"Item 2\"/>"}</code></pre>
+          <pre><code className="html">{"<CheckBox id=\"\{item2\}\" label=\"Item 2\" />"}</code></pre>
+
+          <h3>Toggle</h3>
+          <div className="example">
+            <CheckBox id="item3" label="Item 3" toggle={true} />
+          </div>
+          <pre><code className="html">{"<CheckBox id=\"\{item3\}\" label=\"Item 3\" toggle={true} />"}</code></pre>
 
         </section>
       </GrommetDocument>

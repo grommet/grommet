@@ -3,7 +3,6 @@
 var React = require('react');
 var Link = require('react-router').Link;
 var RestWatch = require('grommet/utils/RestWatch');
-var Actions = require('grommet/actions/Actions');
 var Header = require('grommet/components/Header');
 var ResourceNotifications = require('grommet/components/index/ResourceNotifications');
 var Attribute = require('grommet/components/Attribute');
