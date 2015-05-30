@@ -2,6 +2,8 @@
 
 var React = require('react');
 
+var CLASS_ROOT = "check-box";
+
 var CheckBox = React.createClass({
 
   propTypes: {
@@ -10,25 +12,30 @@ var CheckBox = React.createClass({
     id: React.PropTypes.string.isRequired,
     label: React.PropTypes.string.isRequired,
     name: React.PropTypes.string,
-    onChange: React.PropTypes.func
+    onChange: React.PropTypes.func,
+    toggle: React.PropTypes.bool
   },
 
   render: function () {
-    var classes = ["check-box"];
+    var classes = [CLASS_ROOT];
+    if (this.props.toggle) {
+      classes.push(CLASS_ROOT + "--toggle");
+    }
     if (this.props.className) {
       classes.push(this.props.className);
     }
     return (
-      <span className={classes.join(' ')}>
+      <label className={classes.join(' ')}>
         <input className="check-box__input"
           id={this.props.id} name={this.props.name} type="checkbox"
           checked={this.props.checked}
           defaultChecked={this.props.defaultChecked}
           onChange={this.props.onChange} />
-        <label className="check-box__label checkbox" htmlFor={this.props.id}>
+        <span className="check-box__control"></span>
+        <span className="check-box__label">
           {this.props.label}
-        </label>
-      </span>
+        </span>
+      </label>
     );
   }
 
