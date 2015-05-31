@@ -93,7 +93,7 @@ a.button {
   }
 }
 
-$small-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAAXNSR0IArs4c6QAAALNJREFUKBVjYBj6gHH69Olb////L8rIyJiemZl5HpuXgGoMgWpmAtW8ZgIyuIEMU6DCk0CJioaGBiaYJhAbJAaSA6kBqwUKcoiJiXUBBXKAEoxAwcM/f/6MA2liZ2dfBBS3BTKBwv+nvHr1qowRJAECU6dOdQNKzgdiKaDkNyANEuYCsp8BcWJ2dvYukADcepDAjx8/dIFia4CKuUCKQWyQGEwxkI8dTJs2rRLqduwKaCoKAOClUKEWEZS1AAAAAElFTkSuQmCC);
+$small-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAAAXNSR0IArs4c6QAAARpJREFUKBVjnDlzJuu/f//cGagAmJiYTjCCzAEaWg+kGkBsCsCG58+fB4MNBBkyY8aMeYyMjIlkGnjy69evjkVFRd+ZYAa8ePEiDcjeBeOTQN/9+fOnL8gwkB64C0Gczs5OXn5+/sNAl+qD+ESAN////7fKyMi4DVOLYiBIcPLkyVKsrKwngIbKwhRho4EGgVzkDDTsOLI83Mswwdzc3GdAxV5A/keYGDoNlP8HFItBNwykDsNAkGBmZuYVIBUIxL9AfCygCGjYOizi2A0EKUxPT98PdEkyFk39QMMmYhEHC2F1IUwxUOMSILsaxgdasAaY1kpgfGw0RqRgUwRMozOB4trApOXS0NDwA5saksRCQ0OZ+/v7BYjRBACZeF+tn9zqUwAAAABJRU5ErkJggg==);
 
 select {
   border-color: $border-color;
@@ -122,22 +122,22 @@ select {
   cursor: pointer;
   background: none;
   border: $input-border-width solid $border-color;
-  border-radius: $range-border-radius;
 }
 
 @mixin range-thumb {
-  border: none;
+  position: relative;
   height: $inuit-base-spacing-unit;
   width: $inuit-base-spacing-unit;
-  border-radius: $inuit-base-spacing-unit;
-  background: $brand-color;
-  cursor: pointer;
+  overflow: visible;
 }
 
 input[type=range] {
+  position: relative;
   -webkit-appearance: none;
   border-color: transparent;
+  height: $inuit-base-spacing-unit;
   padding: 0px;
+  overflow-x: hidden;
 
   &:focus {
     outline: none;
@@ -157,13 +157,52 @@ input[type=range] {
     margin-top: - (round($inuit-base-spacing-unit * (1/4)) + 1);
   }
 
+  &::-webkit-slider-thumb:before {
+    content: "";
+    position: absolute;
+    left: -3000px;
+    right: halve($inuit-base-spacing-unit);
+    top: quarter($inuit-base-spacing-unit);
+    bottom: quarter($inuit-base-spacing-unit);
+    background-color: $brand-color;
+    pointer-events: none;
+  }
+
+  &::-webkit-slider-thumb:after {
+    content: "";
+    position: absolute;
+    border: 1px solid $border-color;
+    // -3 so we can see the thumb shadow
+    height: $inuit-base-spacing-unit - 3;
+    width: $inuit-base-spacing-unit - 3;
+    border-radius: $inuit-base-spacing-unit;
+    background-color: $background-color;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  }
+
   &::-moz-range-track {
     @include range-track();
   }
 
   &::-moz-range-thumb {
     @include range-thumb();
+    // since the :before doesn't work on the thumb, restyle a bit
+    border-radius: $inuit-base-spacing-unit;
+    border: none;
+    background-color: $brand-color;
   }
+
+  // This isn't working
+  //&::-moz-range-thumb:before {
+  //	content: "";
+  //	position: absolute;
+  //	left: -3000px;
+  //	right: halve($inuit-base-spacing-unit);
+  //	top: quarter($inuit-base-spacing-unit);
+  //	bottom: quarter($inuit-base-spacing-unit);
+  //	background: $brand-color;
+  //}
 
   &::-ms-track {
     @include range-track();
@@ -174,12 +213,12 @@ input[type=range] {
   }
 
   &::-ms-fill-lower {
-    background: #2a6495;
+    background: $brand-color;
     border-radius: $border-radius;
   }
 
   &::-ms-fill-upper {
-    background: #3071a9;
+    background: $background-color;
     border-radius: $border-radius;
   }
 
