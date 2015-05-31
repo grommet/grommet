@@ -43,13 +43,13 @@ var FormDoc = React.createClass({
 
           <h3>Regular</h3>
           <div className="example">
-            <FullForm />
+            <FullForm prefix="a-" />
           </div>
           <pre><code className="html">{"<Form> ..."}</code></pre>
 
           <h3>Compact</h3>
           <div className="example">
-            <FullForm compact={true}/>
+            <FullForm prefix="b-" compact={true}/>
           </div>
           <pre><code className="html">{"<Form compact={true}> ..."}</code></pre>
 

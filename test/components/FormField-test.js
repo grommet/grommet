@@ -43,7 +43,8 @@ describe('Grommet FormField', function() {
     });
 
     GrommetTestUtils.componentShouldExist(Component, 'form-field');
-    GrommetTestUtils.componentShouldExist(Component, 'form-field__help', 'This field is very important');
+    GrommetTestUtils.componentShouldExist(Component, 'form-field__help',
+      'This field is very important');
     GrommetTestUtils.componentShouldExist(Component, 'inputTest');
   });
 
@@ -58,7 +59,7 @@ describe('Grommet FormField', function() {
 
     GrommetTestUtils.componentShouldExist(Component, 'form-field');
     GrommetTestUtils.componentShouldExist(Component,
-      'form-field--error', 'Item 1Field Test is required.');
+      'form-field__error', 'Field Test is required.');
     GrommetTestUtils.componentShouldExist(Component, 'inputTest');
   });
 });
