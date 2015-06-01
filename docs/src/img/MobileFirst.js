@@ -8,9 +8,9 @@ var MobileFirst = React.createClass({
     return (
       <svg className="home-mobile-first" viewBox="0 0 90 82" version="1.1">
         <g fill="#ffffff">
-        	<rect x="40" y="69.2" width="10" height="12"/>
-        	<rect x="60" y="69.2" width="10" height="12"/>
-        	<rect x="80" y="69.2" width="10" height="12"/>
+          <rect x="40" y="69.2" width="10" height="12"/>
+          <rect x="60" y="69.2" width="10" height="12"/>
+          <rect x="80" y="69.2" width="10" height="12"/>
           <polyline points="30,21.2 30,81.2 20,81.2 20,21.2 30,21.2 "/>
         </g>
         <g className="home-brand">

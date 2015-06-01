@@ -1,0 +1,71 @@
+---
+parser: babel-eslint
+
+plugins:
+  - react
+
+ecmaFeatures:
+  jsx: true
+
+env:
+  browser: true
+  node: true
+
+globals:
+  __DEV__: true
+  __THEME__: true
+  IntlPolyfill: true
+  __DEV_MODE__: true
+  Modernizr: true
+
+rules:
+  # ERRORS
+  space-before-blocks: 2
+  indent: [2, 2, indentSwitchCase: true]
+  brace-style: 2
+  space-after-keywords: 2
+  no-comma-dangle: 2
+  no-unused-expressions: 2
+  block-scoped-var: 2
+  eol-last: 2
+  dot-notation: 2
+  consistent-return: 2
+  no-unused-vars: [2, args: none]
+  quotes: 0
+  #change soon back to quotes: [2, 'single']
+
+  # WARNINGS
+  no-trailing-spaces: 1
+  max-len: 0
+  #change soon back to max-len: [1, 80]
+  no-underscore-dangle: 0
+  new-cap: 0
+  no-use-before-define: 0
+  key-spacing: 0
+  eqeqeq: 0
+  strict: 0
+  space-unary-ops: 0
+  yoda: 0
+  no-loop-func: 0
+  no-trailing-spaces: 0
+  no-multi-spaces: 0
+  no-shadow: 0
+
+  react:
+    - display-name: 1
+    - jsx-boolean-value: 1
+    - jsx-quotes: 1
+    - jsx-no-undef: 1
+    - jsx-sort-props: 1
+    - jsx-sort-prop-types: 1
+    - jsx-uses-react: 1
+    - jsx-uses-vars: 1
+    - no-did-mount-set-state: 1
+    - no-did-update-set-state: 1
+    - no-multi-comp: 1
+    - no-unknown-property: 1
+    - prop-types: 1
+    - react-in-jsx-scope: 1
+    - self-closing-comp: 1
+    - sort-comp: 1
+    - wrap-multilines: 1

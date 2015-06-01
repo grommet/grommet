@@ -54,11 +54,11 @@ var Activity = React.createClass({
             'Active', 'Cleared', 'Running', 'Completed'
           ]},
         {attribute: 'category', label: 'Category',
-          filter: ['Alerts', 'Tasks']},
+          filter: ['Alerts', 'Tasks']}
       ],
       params: {
         category: ['alerts', 'tasks'],
-        sort: 'created:desc',
+        sort: 'created:desc'
       }
     };
 

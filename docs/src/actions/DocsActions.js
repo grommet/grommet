@@ -4,7 +4,7 @@ var Reflux = require('reflux');
 var Rest = require('grommet/utils/Rest');
 
 var DocsActions = Reflux.createActions({
-  'requestAccess': {asyncResult: true},
+  'requestAccess': {asyncResult: true}
 });
 
 DocsActions.requestAccess.listen(function(data) {

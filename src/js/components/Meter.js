@@ -15,7 +15,7 @@ var CIRCLE_RADIUS = 84;
 var ARC_HEIGHT = 144;
 
 function polarToCartesian (centerX, centerY, radius, angleInDegrees) {
-  var angleInRadians = (angleInDegrees-90) * Math.PI / 180.0;
+  var angleInRadians = (angleInDegrees - 90) * Math.PI / 180.0;
   return {
     x: centerX + (radius * Math.cos(angleInRadians)),
     y: centerY + (radius * Math.sin(angleInRadians))
@@ -273,7 +273,7 @@ var Meter = React.createClass({
       }
       start += distance;
 
-      return(
+      return (
         <path key={index} className={barClasses.join(' ')} d={commands}
           onMouseOver={this._onActivate.bind(this, index)}
           onMouseOut={this._onActivate.bind(this, this.state.importantIndex)}
@@ -299,13 +299,13 @@ var Meter = React.createClass({
       var endAngle = Math.min(360, Math.max(0,
         startAngle + (this.state.anglePer * item.value)));
       // start from the bottom
-      var commands = arcCommands(CIRCLE_WIDTH/2, CIRCLE_WIDTH/2, CIRCLE_RADIUS,
+      var commands = arcCommands(CIRCLE_WIDTH / 2, CIRCLE_WIDTH / 2, CIRCLE_RADIUS,
         startAngle + this.state.angleOffset,
         endAngle + this.state.angleOffset);
 
       if (index === this.state.activeIndex) {
         var indicatorCommands =
-          activeIndicatorCommands(CIRCLE_WIDTH/2, CIRCLE_WIDTH/2, CIRCLE_RADIUS,
+          activeIndicatorCommands(CIRCLE_WIDTH / 2, CIRCLE_WIDTH / 2, CIRCLE_RADIUS,
           startAngle + this.state.angleOffset,
           endAngle + this.state.angleOffset);
         activeIndicator = (
@@ -317,7 +317,7 @@ var Meter = React.createClass({
 
       startAngle = endAngle;
 
-      return(
+      return (
         <path key={item.label} fill="none"
           className={sliceClasses.join(' ')} d={commands}
           onMouseOver={this._onActivate.bind(this, index)}
@@ -384,7 +384,7 @@ var Meter = React.createClass({
       (this.state.anglePer * this.props.threshold);
     var endAngle = Math.min(360, Math.max(0, startAngle + 1));
     // start from the bottom
-    var commands = arcCommands(CIRCLE_WIDTH/2, CIRCLE_WIDTH/2, CIRCLE_RADIUS,
+    var commands = arcCommands(CIRCLE_WIDTH / 2, CIRCLE_WIDTH / 2, CIRCLE_RADIUS,
       startAngle + 180, endAngle + 180);
     return (
       <path className={CLASS_ROOT + "__threshold"} d={commands} />

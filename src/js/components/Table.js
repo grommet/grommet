@@ -28,7 +28,7 @@ var Table = React.createClass({
   _clearSelection: function () {
     var rows = this.refs.table.getDOMNode()
       .querySelectorAll("." + CLASS_ROOT + "__row--selected");
-    for (var i=0; i<rows.length; i++) {
+    for (var i = 0; i < rows.length; i++) {
       rows[i].classList.remove(CLASS_ROOT + "__row--selected");
     }
   },
@@ -62,7 +62,7 @@ var Table = React.createClass({
     var cells = tableElement.querySelectorAll('thead tr th');
     var mirrorElement = this.refs.mirror.getDOMNode();
     var mirrorRow = mirrorElement.querySelectorAll('thead tr')[0];
-    for (var i=0; i<cells.length; i++) {
+    for (var i = 0; i < cells.length; i++) {
       mirrorRow.appendChild(cells[i].cloneNode(true));
     }
   },
@@ -77,7 +77,7 @@ var Table = React.createClass({
     mirrorElement.style.width = '' + Math.floor(rect.right - rect.left) + 'px';
 
     var height = 0;
-    for (var i=0; i<cells.length; i++) {
+    for (var i = 0; i < cells.length; i++) {
       rect = cells[i].getBoundingClientRect();
       mirrorCells[i].style.width = '' + Math.floor(rect.right - rect.left) + 'px';
       mirrorCells[i].style.height = '' + Math.floor(rect.bottom - rect.top) + 'px';

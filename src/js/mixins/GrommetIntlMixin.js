@@ -54,7 +54,7 @@ module.exports = {
 
   getGrommetIntlMessage: function(messageKey) {
     var message = messageKey;
-    if(messageKey) {
+    if (messageKey) {
       try {
         message = this.getIntlMessage(messageKey);
       } catch (e) {

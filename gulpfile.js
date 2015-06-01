@@ -69,7 +69,6 @@ var opts = {
       asset: 'src/utils/**',
       dist: 'dist/utils/'
     },
-    'design/**',
     'src/img/**',
     {
       asset: 'bin/**',
@@ -92,8 +91,8 @@ var opts = {
       asset: JSON.stringify(getPackageJSON(), null, 2)
     },
     {
-      asset: '.jshintrc',
-      dist: 'dist/'
+      asset: 'src/utils/gulp/.eslintrc',
+      dist: 'dist/utils/gulp/'
     }
   ],
   scssAssets: ['src/scss/**/*.scss'],
@@ -194,6 +193,10 @@ var bowerWebpackConfig = {
         loader: 'jsx-loader'
       },
       {
+        test: /\.json$/,
+        loader: 'json-loader'
+      },
+      {
         test: /\.svg$/,
         loader: 'file-loader?mimetype=image/svg'
       },
@@ -275,7 +278,7 @@ gulp.task('dist-bower', ['dist-bower:preprocess'], function() {
   delete bowerJSON.scripts;
   delete bowerJSON.config;
 
-  return gulp.src('./dist-bower')
+  return gulp.src('.')
           .pipe(file('bower.json', JSON.stringify(bowerJSON, null, 2)))
           .pipe(gulp.dest('dist-bower'));
 });
@@ -463,16 +466,12 @@ gulp.task('release:clean', function() {
   del.sync(['./tmp']);
 });
 
-gulp.task('release:sync', function() {
+gulp.task('release:site', function() {
   gulp.src('./docs/gulpfile.js', { read: false }).pipe(chug({
-    tasks: ['sync']
-  }));
-
-  gulp.src('./gulpfile.js', { read: false }).pipe(chug({
-    tasks: ['sync']
+    tasks: ['deploy']
   }));
 });
 
 gulp.task('release', function(done) {
-  runSequence('release:bump', ['dist-bower', 'dist'], 'release:npm', 'release:bower', 'release:clean', 'release:sync', done);
+  runSequence('release:bump', ['dist-bower', 'dist'], 'release:npm', 'release:bower', 'release:clean', 'release:site', done);
 });

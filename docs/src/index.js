@@ -11,23 +11,16 @@ if (! Modernizr.flexbox ||
     'If you are using the latest Internet Explorer, you will need to turn off Compatibility Mode.');
 }
 
-var rootPath = '/docs/';
 var theme = 'generic';
 
 if (__THEME__.hpe) {
   require("index-hpe.scss");
-  rootPath = '/docs/hpe/';
   theme = 'hpe';
 } if (__THEME__.hpinc) {
   require("index-hpinc.scss");
-  rootPath = '/docs/hpinc/';
   theme = 'hpinc';
-} else if(__THEME__.generic) {
+} else if (__THEME__.generic) {
   require("index.scss");
-}
-
-if (__DEV_MODE__) {
-  rootPath = "/"; // webpack-dev-server
 }
 
 var React = require('react');
@@ -51,15 +44,15 @@ var DocsRouter = React.createClass({
 });
 
 var routes = (
-  <Route name="docs" path={rootPath} handler={DocsRouter}>
-    <Route name="home" path={rootPath} handler={Home} />
+  <Route name="docs" path='/' handler={DocsRouter}>
+    <Route name="home" path='/' handler={Home} />
     {StyleGuide.routes()}
     {Documentation.routes()}
     <Route name="downloads" handler={Downloads} />
   </Route>
 );
 
-var router = Router.create({routes: routes, location: Router.HistoryLocation});
+var router = Router.create({routes: routes});
 
 router.run(function (Handler) {
   var element = document.getElementById('content');

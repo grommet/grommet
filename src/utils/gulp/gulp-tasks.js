@@ -1,6 +1,6 @@
 var del = require('del');
 var react = require('gulp-react');
-var jshint = require('gulp-jshint');
+var eslint = require('gulp-eslint');
 var gulpWebpack = require('gulp-webpack');
 var file = require('gulp-file');
 var runSequence = require('run-sequence');
@@ -63,6 +63,7 @@ module.exports = function(gulp, opts) {
   options.webpack = options.webpack || {};
 
   var scssLintPath = path.resolve(__dirname, 'scss-lint.yml');
+  var esLintPath = path.resolve(__dirname, '.eslintrc');
 
   if (options.base) {
     process.chdir(options.base);
@@ -79,11 +80,12 @@ module.exports = function(gulp, opts) {
         var assets = [asset];
         if (copyAsset.ignores) {
           copyAsset.ignores.forEach(function(ignore) {
+            assets.push('!'+ asset + ignore);
             assets.push('!'+ asset +'**/'+ignore);
             assets.push('!'+ asset +'**/'+ignore+'/**');
           });
         }
-        gulp.src(assets).pipe(gulp.dest(copyAsset.dist ? copyAsset.dist : dist));
+        gulp.src(assets, {dot: true}).pipe(gulp.dest(copyAsset.dist ? copyAsset.dist : dist));
       }
 
     });
@@ -112,12 +114,9 @@ module.exports = function(gulp, opts) {
   gulp.task('jslint', function() {
    return gulp.src(options.jsAssets || [])
         .pipe(react())
-        .pipe(jshint())
-        .pipe(jshint.reporter('default', {
-          verbose: true
-        }))
-        .pipe(jshint.reporter('fail'))
-        .on('error', failLintBuild);
+        .pipe(eslint(esLintPath))
+        .pipe(eslint.formatEach())
+        .pipe(eslint.failOnError());
   });
 
   gulp.task('test', function (done) {
@@ -192,9 +191,9 @@ module.exports = function(gulp, opts) {
   gulp.task('dist-preprocess', function(callback) {
     if (options.distPreprocess) {
       if (process.env.CI) {
-        runSequence('preprocess', options.distPreprocess, callback);
+        runSequence('preprocess', options.distPreprocess, 'copy', callback);
       } else {
-        runSequence('preprocess', options.distPreprocess, 'test', callback);
+        runSequence('preprocess', options.distPreprocess, 'copy', 'test', callback);
       }
     } else {
       if (process.env.CI) {

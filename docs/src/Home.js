@@ -18,7 +18,7 @@ var NextIcon = require('grommet/components/icons/Right');
 var Home = React.createClass({
 
   render: function() {
-    var assetsPath = '/assets/' + __GROMMET__.version + '/';
+    var assetsPath = '/grommet/assets/' + __GROMMET__.version + '/';
     return (
       <div className="home">
         <Section className="home__introduction" centered={true}>

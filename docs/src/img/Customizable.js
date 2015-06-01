@@ -12,7 +12,7 @@ var Customizable = React.createClass({
           <rect x="11" y="62.8" width="20" height="20"/>
         </g>
         <g className="home-brand">
-      	  <path d="M77.2,57.9v29.9H6V57.9H77.2 M83.2,51.9H0v41.9h83.2V51.9L83.2,51.9z"/>
+          <path d="M77.2,57.9v29.9H6V57.9H77.2 M83.2,51.9H0v41.9h83.2V51.9L83.2,51.9z"/>
           <rect x="52.2" y="10.9" width="20" height="20"/>
         </g>
       </svg>

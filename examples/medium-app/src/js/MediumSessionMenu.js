@@ -26,7 +26,7 @@ var MediumSessionMenu = React.createClass({
 
   getInitialState: function () {
     return {
-      session: SessionStore.getInitialState(),
+      session: SessionStore.getInitialState()
     };
   },
 

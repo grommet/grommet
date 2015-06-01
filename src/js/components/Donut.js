@@ -8,7 +8,7 @@ var BASE_SIZE = 192;
 var PARTIAL_SIZE = 168;
 
 function polarToCartesian (centerX, centerY, radius, angleInDegrees) {
-  var angleInRadians = (angleInDegrees-90) * Math.PI / 180.0;
+  var angleInRadians = (angleInDegrees - 90) * Math.PI / 180.0;
   return {
     x: centerX + (radius * Math.cos(angleInRadians)),
     y: centerY + (radius * Math.sin(angleInRadians))
@@ -224,7 +224,7 @@ var Donut = React.createClass({
       }
       var radius = 84;
       // start from the bottom
-      var commands = arcCommands(BASE_SIZE/2, BASE_SIZE/2, radius,
+      var commands = arcCommands(BASE_SIZE / 2, BASE_SIZE / 2, radius,
         startAngle + 180, endAngle + 180);
       var colorIndex = this._itemColorIndex(item, index);
 
@@ -238,7 +238,7 @@ var Donut = React.createClass({
       }
 
       if (index === this.state.activeIndex) {
-        var indicatorCommands = activeIndicatorCommands(BASE_SIZE/2, BASE_SIZE/2, radius,
+        var indicatorCommands = activeIndicatorCommands(BASE_SIZE / 2, BASE_SIZE / 2, radius,
           startAngle + 180, endAngle + 180);
         activeIndicator = (
           <path stroke="none"
@@ -249,7 +249,7 @@ var Donut = React.createClass({
 
       startAngle = endAngle;
 
-      return(
+      return (
         <path key={item.label} fill="none" className={sliceClasses.join(' ')} d={commands}
           onMouseOver={this._onActive.bind(this, index)}
           onMouseOut={this._onActive.bind(this, this.state.importantIndex)}
