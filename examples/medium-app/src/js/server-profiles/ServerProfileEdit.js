@@ -11,6 +11,10 @@ var ServerProfileEdit = React.createClass({
   },
 
   _onTaskResponse: function (err, res) {
+    if (err) {
+      throw err;
+    }
+
     if (res.ok) {
       var task = res.body;
       this.context.router.transitionTo('server profile overview',
@@ -19,6 +23,10 @@ var ServerProfileEdit = React.createClass({
   },
 
   _onUpdateResponse: function (err, res) {
+    if (err) {
+      throw err;
+    }
+
     if (res.ok) {
       Rest.get(res.body.taskUri).end(this._onTaskResponse);
     }
@@ -32,6 +40,10 @@ var ServerProfileEdit = React.createClass({
   },
 
   _onGetResponse: function (err, res) {
+    if (err) {
+      throw err;
+    }
+
     if (res.ok) {
       this.setState({serverProfile: res.body});
     }

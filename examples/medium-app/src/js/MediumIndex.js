@@ -133,7 +133,7 @@ var MediumIndex = React.createClass({
     }
     var state = {
       options: options,
-      selection: null,
+      selection: null
     };
     if (this.props.manageData) {
       state.result = {};

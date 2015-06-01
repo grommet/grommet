@@ -24,7 +24,7 @@ router.run(function (Handler) {
   var locale = Locale.getCurrentLocale();
   var localeData;
   try {
-    localeData = Locale.getLocaleData(require('../messages/'+locale));
+    localeData = Locale.getLocaleData(require('../messages/' + locale));
   } catch (e) {
     localeData = Locale.getLocaleData(require('../messages/en-US'));
   }

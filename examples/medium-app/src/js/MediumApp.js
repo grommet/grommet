@@ -30,7 +30,7 @@ var MediumApp = React.createClass({
 
   getInitialState: function () {
     return {
-      session: SessionStore.getInitialState(),
+      session: SessionStore.getInitialState()
     };
   },
 

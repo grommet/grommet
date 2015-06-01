@@ -12,8 +12,8 @@ var Right = React.createClass({
     return (
       <svg className={className} viewBox="0 0 48 48" version="1.1">
         <g fill="none">
-        	<polyline strokeWidth="2" points="27.1,14 35,24 27,34"/>
-        	<path strokeWidth="2" d="M34.7,24C12,24,12,24,12,24"/>
+          <polyline strokeWidth="2" points="27.1,14 35,24 27,34" />
+          <path strokeWidth="2" d="M34.7,24C12,24,12,24,12,24" />
         </g>
       </svg>
     );

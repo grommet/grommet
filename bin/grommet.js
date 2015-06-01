@@ -68,14 +68,12 @@ gulp.task('init', function (done) {
 
       var grommetPath = getGrommetPath();
       var templateFolder = path.join(grommetPath, 'templates/init/**');
-      var jshintFile = path.join(grommetPath, '.jshintrc');
       var mobileIcon = path.join(grommetPath, 'mobile-app-icon.png');
       var shortcutIcon = path.join(grommetPath, 'shortcut-icon.png');
       var grommetVersion = require(path.join(grommetPath, 'package.json')).version;
 
       gulp.src(mobileIcon).pipe(gulp.dest('./src/img'));
       gulp.src(shortcutIcon).pipe(gulp.dest('./src/img'));
-      gulp.src([jshintFile], {dot : true}).pipe(gulp.dest('./'));
 
       gulp.src(templateFolder)
         .pipe(template({

@@ -47,6 +47,10 @@ var ServerProfileForm = React.createClass({
   },
 
   _onServerHardwareSearchResponse: function (err, res) {
+    if (err) {
+      throw err;
+    }
+
     if (res.ok) {
       var suggestions = res.body.map(function (item) {
         return {value: item.uri, label: item.name};
@@ -69,6 +73,10 @@ var ServerProfileForm = React.createClass({
   },
 
   _onFirmwareSearchResponse: function (err, res) {
+    if (err) {
+      throw err;
+    }
+
     if (res.ok) {
       var names = res.body.map(function (item) {
         return item.name;
@@ -228,7 +236,7 @@ var ServerProfileForm = React.createClass({
     if (serverProfile.serverHardware) {
       serverHardwareValue = {
         value: serverProfile.serverHardware.uri,
-        label: serverProfile.serverHardware.name,
+        label: serverProfile.serverHardware.name
       };
     }
 

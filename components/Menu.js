@@ -170,7 +170,7 @@ var Menu = React.createClass({
       classes.push(controlClassName + "--labelled");
       icon = this.props.icon;
     } else {
-      classes.push(controlClassName +"--fixed-label");
+      classes.push(controlClassName + "--fixed-label");
       icon = <MoreIcon />;
     }
 

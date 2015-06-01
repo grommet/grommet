@@ -28,7 +28,7 @@ var ResourceMap = React.createClass({
     var rect = element.getBoundingClientRect();
     return [
       rect.left - canvasRect.left + (rect.width / 2),
-      rect.top - canvasRect.top + (rect.height / 2),
+      rect.top - canvasRect.top + (rect.height / 2)
     ];
   },
 
@@ -90,7 +90,7 @@ var ResourceMap = React.createClass({
   },
 
   _onLeave: function () {
-     this.setState({activeId: null});
+    this.setState({activeId: null});
   },
 
   getInitialState: function () {

@@ -70,7 +70,7 @@ var IndexMeter = React.createClass({
           return (STATUS_IMPORTANCE[s2.label] - STATUS_IMPORTANCE[s1.label]);
         });
         // mark most severe as most important
-        series[series.length-1].important = true;
+        series[series.length - 1].important = true;
       }
       this.setState({series: series});
     }

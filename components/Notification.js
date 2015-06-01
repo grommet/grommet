@@ -13,7 +13,7 @@ var GrommetNotification = React.createClass({
     message: React.PropTypes.string.isRequired,
     state: React.PropTypes.string,
     status: React.PropTypes.string,
-    timestamp: React.PropTypes.object, // Date
+    timestamp: React.PropTypes.object // Date
   },
 
   mixins: [IntlMixin],

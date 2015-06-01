@@ -58,6 +58,10 @@ var RestWatch = {
     request.pollBusy = true;
     Rest.get(request.url, request.params)
       .end(function(err, res) {
+        if (err) {
+          throw err;
+        }
+
         if (res.ok) {
           request.handler(res.body);
         }
