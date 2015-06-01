@@ -9,9 +9,9 @@ var inline =
   "<Chart ... />";
 
 var series = [
-  {label: 'first', values: [[5,2], [4,3], [3,3], [2,2], [1,4]],
+  {label: 'first', values: [[5, 2], [4, 3], [3, 3], [2, 2], [1, 4]],
     colorIndex: "graph-1"},
-  {label: 'second', values: [[5,4], [4,3], [3,0], [2,1], [1,0]],
+  {label: 'second', values: [[5, 4], [4, 3], [3, 0], [2, 1], [1, 0]],
     colorIndex: "graph-2"}
 ];
 var seriesXAxis = [
@@ -24,12 +24,12 @@ var seriesXAxis = [
 
 var dateSeries = [
   {label: 'first', values: [
-    [new Date(Date.parse("2015-05-22")),4],
-    [new Date(Date.parse("2015-05-21")),2],
-    [new Date(Date.parse("2015-05-20")),3],
-    [new Date(Date.parse("2015-05-19")),3],
-    [new Date(Date.parse("2015-05-18")),2]
-  ], colorIndex: "graph-4"},
+    [new Date(Date.parse("2015-05-22")), 4],
+    [new Date(Date.parse("2015-05-21")), 2],
+    [new Date(Date.parse("2015-05-20")), 3],
+    [new Date(Date.parse("2015-05-19")), 3],
+    [new Date(Date.parse("2015-05-18")), 2]
+  ], colorIndex: "graph-4"}
 ];
 var dateSeriesXAxis = [
   {label: 'May 22', value: dateSeries[0].values[0][0]},

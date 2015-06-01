@@ -30,7 +30,7 @@ var PanelDoc = React.createClass({
           <pre><code className="html">
             {"<Panel title=\"Panel One\">\n  <p>\n    Sample Content One\n  </p>\n</Panel>"}
           </code></pre>
-        </section>  
+        </section>
       </GrommetDocument>
     );
   }

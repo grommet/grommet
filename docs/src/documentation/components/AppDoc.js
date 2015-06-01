@@ -44,7 +44,7 @@ var AppDoc = React.createClass({
           <pre><code className="html">
             {"<App>\n  <Header>\n    <Title>\n      My App\n    </Title>\n  </Header>\n  ...\n</App>"}
           </code></pre>
-        </section>  
+        </section>
       </GrommetDocument>
     );
   }

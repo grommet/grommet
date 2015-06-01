@@ -141,7 +141,7 @@ var StyleGuide = React.createClass({
         }
 
         var pageLink = page.id ?
-          <a key={page.id} href={"#"+page.id} className={className}>{page.label}</a>
+          <a key={page.id} href={"#" + page.id} className={className}>{page.label}</a>
         : (
           <Link key={page.label} to={page.route} className={className}>
             {page.label}
