@@ -1,8 +1,8 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var RestWatch = require('grommet/utils/RestWatch');
-var GrommetNotification = require('grommet/components/Notification');
+var RestWatch = require('../../utils/RestWatch');
+var GrommetNotification = require('../Notification');
 //var IndexActions = require('../../actions/IndexActions');
 
 var CLASS_ROOT = 'resource-notifications';
