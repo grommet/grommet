@@ -1,6 +1,6 @@
 var del = require('del');
 var react = require('gulp-react');
-var jshint = require('gulp-jshint');
+var eslint = require('gulp-eslint');
 var gulpWebpack = require('gulp-webpack');
 var file = require('gulp-file');
 var runSequence = require('run-sequence');
@@ -63,6 +63,7 @@ module.exports = function(gulp, opts) {
   options.webpack = options.webpack || {};
 
   var scssLintPath = path.resolve(__dirname, 'scss-lint.yml');
+  var esLintPath = path.resolve(__dirname, '.eslintrc');
 
   if (options.base) {
     process.chdir(options.base);
@@ -84,7 +85,7 @@ module.exports = function(gulp, opts) {
             assets.push('!'+ asset +'**/'+ignore+'/**');
           });
         }
-        gulp.src(assets).pipe(gulp.dest(copyAsset.dist ? copyAsset.dist : dist));
+        gulp.src(assets, {dot: true}).pipe(gulp.dest(copyAsset.dist ? copyAsset.dist : dist));
       }
 
     });
@@ -113,12 +114,9 @@ module.exports = function(gulp, opts) {
   gulp.task('jslint', function() {
    return gulp.src(options.jsAssets || [])
         .pipe(react())
-        .pipe(jshint())
-        .pipe(jshint.reporter('default', {
-          verbose: true
-        }))
-        .pipe(jshint.reporter('fail'))
-        .on('error', failLintBuild);
+        .pipe(eslint(esLintPath))
+        .pipe(eslint.formatEach())
+        .pipe(eslint.failOnError());
   });
 
   gulp.task('test', function (done) {

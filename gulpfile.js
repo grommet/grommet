@@ -91,8 +91,8 @@ var opts = {
       asset: JSON.stringify(getPackageJSON(), null, 2)
     },
     {
-      asset: '.jshintrc',
-      dist: 'dist/'
+      asset: 'src/utils/gulp/.eslintrc',
+      dist: 'dist/utils/gulp/'
     }
   ],
   scssAssets: ['src/scss/**/*.scss'],

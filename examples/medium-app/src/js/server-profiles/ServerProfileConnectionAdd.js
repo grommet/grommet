@@ -60,6 +60,10 @@ var ServerProfileConnectionAdd = React.createClass({
   },
 
   _onNetworkSearchResponse: function (err, res) {
+    if (err) {
+      throw err;
+    }
+
     if (res.ok) {
       var names = res.body.map(function (item) {
         return item.name;

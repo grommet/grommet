@@ -14,7 +14,7 @@ function buildQueryParams(params) {
       var value = params[property];
       if (null !== value && undefined !== value) {
         if (Array.isArray(value)) {
-          for (var i=0; i<value.length; i++) {
+          for (var i = 0; i < value.length; i++) {
             result.push(property + '=' + value[i]);
           }
         } else {

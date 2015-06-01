@@ -280,11 +280,11 @@ var Chart = React.createClass({
     // the current coordinate for them.
     var previous = current;
     if (index > 0) {
-      previous = coordinates[index-1];
+      previous = coordinates[index - 1];
     }
     var next = current;
     if (index < coordinates.length - 1) {
-      next = coordinates[index+1];
+      next = coordinates[index + 1];
     }
 
     // Put the control X coordinates midway between the coordinates.

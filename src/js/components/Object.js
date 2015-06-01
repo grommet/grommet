@@ -34,15 +34,13 @@ var GrommetObject = React.createClass({
         if (null === value) {
           value = 'null';
           classes.push(CLASS_ROOT + "__attribute--unset");
-        }
-        else if (Array.isArray(value)) {
+        } else if (Array.isArray(value)) {
           var items = this._renderArray(value);
           value = (
             <ol>{items}</ol>
           );
           classes.push(CLASS_ROOT + "__attribute--array");
-        }
-        else if ('object' === typeof value) {
+        } else if ('object' === typeof value) {
           value = this._renderObject(value);
           classes.push(CLASS_ROOT + "__attribute--container");
         } else {
@@ -57,7 +55,7 @@ var GrommetObject = React.createClass({
       }
     }
 
-    return(
+    return (
       <ul>{attrs}</ul>
     );
   },

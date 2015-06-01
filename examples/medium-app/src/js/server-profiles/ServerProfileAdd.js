@@ -16,6 +16,10 @@ var ServerProfileAdd = React.createClass({
   },
 
   _onTaskResponse: function (err, res) {
+    if (err) {
+      throw err;
+    }
+
     if (res.ok) {
       var task = res.body;
       this.context.router.transitionTo('server profile overview',
@@ -24,6 +28,10 @@ var ServerProfileAdd = React.createClass({
   },
 
   _onAddResponse: function (err, res) {
+    if (err) {
+      throw err;
+    }
+
     if (res.ok) {
       Rest.get(res.body.taskUri).end(this._onTaskResponse);
     }

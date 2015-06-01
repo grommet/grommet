@@ -189,7 +189,7 @@ var Search = React.createClass({
         layerControlElement.style.lineHeight = height + 'px';
       }
 
-      this.startOverlay(baseElement,layerElement, this.props.align);
+      this.startOverlay(baseElement, layerElement, this.props.align);
       inputElement.focus();
     }
   },

@@ -5,7 +5,7 @@ function normalizeLocale(locale) {
   var locales = locale.replace(/_/g, '-').split('-');
   var normalizedLocale = locales[0];
   if (locales.length > 1) {
-    normalizedLocale += '-'+locales[1].toUpperCase();
+    normalizedLocale += '-' + locales[1].toUpperCase();
   }
 
   return normalizedLocale;

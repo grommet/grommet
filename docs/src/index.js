@@ -19,7 +19,7 @@ if (__THEME__.hpe) {
 } if (__THEME__.hpinc) {
   require("index-hpinc.scss");
   theme = 'hpinc';
-} else if(__THEME__.generic) {
+} else if (__THEME__.generic) {
   require("index.scss");
 }
 

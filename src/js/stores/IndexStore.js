@@ -16,7 +16,7 @@ var DEFAULT_DATA = {
       start: 0,
       count: DEFAULT_PAGE_SIZE,
       //query: null,
-      sort: 'name:asc',
+      sort: 'name:asc'
       //itemUri: null
     }
   },

@@ -102,14 +102,14 @@ var CONTENTS = [
   {label: 'Utils',
     contents: [
       {route: 'doc_rest', label: 'Rest', component: RestDoc},
-      {route: 'doc_rest-watch', label: 'RestWatch', component: RestWatchDoc},
+      {route: 'doc_rest-watch', label: 'RestWatch', component: RestWatchDoc}
     ]
   },
   {label: 'Reference',
     contents: [
       {route: 'doc_architecture', label: 'Architecture', component: Architecture},
       {route: 'doc_contributing', label: 'Contributing', component: Contributing},
-      {route: 'doc_integration', label: 'Integration', component: Integration},
+      {route: 'doc_integration', label: 'Integration', component: Integration}
     ]
   }
 ];
@@ -179,7 +179,7 @@ function createContentRoutes(contents) {
     } else {
       result.push(
         <Route key={content.label} name={content.route}
-          path={content.label.toLowerCase().replace(/ /g,"-")}
+          path={content.label.toLowerCase().replace(/ /g, "-")}
           handler={content.component} />
       );
     }

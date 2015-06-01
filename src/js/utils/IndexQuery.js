@@ -27,15 +27,15 @@ function tokenize(text) {
       index += 1;
     } else if ('(' === text[index]) { // begin paren
       endIndex = text.indexOf(')', index);
-      token = tokenize(text.slice(index+1, endIndex));
+      token = tokenize(text.slice(index + 1, endIndex));
       index = endIndex + 1;
-    } else if ('AND' === text.slice(index, index+3)) { // AND
+    } else if ('AND' === text.slice(index, index + 3)) { // AND
       op = 'AND';
       index += 3;
-    } else if ('OR' === text.slice(index, index+2)) { // OR
+    } else if ('OR' === text.slice(index, index + 2)) { // OR
       op = 'OR';
       index += 2;
-    } else if ('NOT' === text.slice(index, index+3)) { // NOT
+    } else if ('NOT' === text.slice(index, index + 3)) { // NOT
       op = 'NOT';
       index += 3;
     } else {

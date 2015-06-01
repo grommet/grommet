@@ -9,7 +9,7 @@ var App = React.createClass({
   mixins: [IntlMixin],
 
   propTypes: {
-    centered: React.PropTypes.bool,
+    centered: React.PropTypes.bool
   },
 
   getDefaultProps: function () {

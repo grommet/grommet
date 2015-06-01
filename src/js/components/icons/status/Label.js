@@ -11,7 +11,7 @@ var Label = React.createClass({
     }
     return (
       <svg className={className} viewBox="0 0 24 24" version="1.1">
-      	<g className={"status-icon__base"} fill="#CCCCCC">
+        <g className={"status-icon__base"} fill="#CCCCCC">
           <circle cx="12" cy="12" r="12"></circle>
         </g>
       </svg>

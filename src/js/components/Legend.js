@@ -69,7 +69,7 @@ var Legend = React.createClass({
         valueClasses.push("large-number-font");
       }
 
-      return(
+      return (
         <li key={item.label} className={legendClasses.join(' ')}
           onClick={item.onClick}
           onMouseOver={this._onActive.bind(this, index)}

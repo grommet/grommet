@@ -18,7 +18,7 @@ var MediumSplit = React.createClass({
       this.setState({reShowMain: true});
     } else {
       var routes = this.context.router.getCurrentRoutes();
-      this.setState({currentRoute: routes[routes.length-1].name});
+      this.setState({currentRoute: routes[routes.length - 1].name});
     }
   },
 
@@ -52,7 +52,7 @@ var MediumSplit = React.createClass({
   componentWillReceiveProps: function () {
     if ('single' === this.state.responsive) {
       var routes = this.context.router.getCurrentRoutes();
-      if (this.state.currentRoute !== routes[routes.length-1].name) {
+      if (this.state.currentRoute !== routes[routes.length - 1].name) {
         this.setState({showMain: false});
       }
     }
