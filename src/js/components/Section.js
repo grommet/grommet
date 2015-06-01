@@ -2,13 +2,16 @@
 
 var React = require('react');
 
+var CLASS_ROOT = "section";
+
 var Section = React.createClass({
 
   propTypes: {
+    centered: React.PropTypes.bool,
     compact: React.PropTypes.bool,
     colorIndex: React.PropTypes.string,
     direction: React.PropTypes.oneOf(['up', 'down', 'left', 'right']),
-    centered: React.PropTypes.bool,
+    flush: React.PropTypes.bool,
     texture: React.PropTypes.string
   },
 
@@ -16,22 +19,26 @@ var Section = React.createClass({
     return {
       colored: false,
       direction: 'down',
+      flush: true,
       small: false
     };
   },
 
   render: function() {
-    var classes = ["section"];
-    var contentClasses = ["section__content"];
+    var classes = [CLASS_ROOT];
+    var contentClasses = [CLASS_ROOT + "__content"];
 
     if (this.props.compact) {
-      classes.push("section--compact");
+      classes.push(CLASS_ROOT + "--compact");
     }
     if (this.props.centered) {
-      classes.push("section--centered");
+      classes.push(CLASS_ROOT + "--centered");
+    }
+    if (this.props.flush) {
+      classes.push(CLASS_ROOT + "--flush");
     }
     if (this.props.direction) {
-      classes.push("section--" + this.props.direction);
+      classes.push(CLASS_ROOT + "--" + this.props.direction);
     }
     if (this.props.colorIndex) {
       classes.push("background-color-index-" + this.props.colorIndex);

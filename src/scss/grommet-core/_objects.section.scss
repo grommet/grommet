@@ -4,6 +4,15 @@
   padding-top: double($inuit-base-spacing-unit);
   padding-bottom: double($inuit-base-spacing-unit);
 
+  &__content {
+    > h2,
+    > h3,
+    > h4 {
+      padding-left: $inuit-base-spacing-unit;
+      padding-right: $inuit-base-spacing-unit;
+    }
+  }
+
   &--right {
     .section__content {
       display: -webkit-flex;
@@ -62,6 +71,17 @@
     .section__content > * {
       margin-left: auto;
       margin-right: auto;
+    }
+  }
+
+  &--flush {
+    .section__content {
+      > h2,
+      > h3,
+      > h4 {
+        padding-left: 0px;
+        padding-left: 0px;
+      }
     }
   }
 }
