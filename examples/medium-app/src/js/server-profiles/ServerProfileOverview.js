@@ -3,7 +3,9 @@
 var React = require('react');
 var Link = require('react-router').Link;
 var RestWatch = require('grommet/utils/RestWatch');
+var GrommetDocument = require('grommet/components/Document');
 var Header = require('grommet/components/Header');
+var Section = require('grommet/components/Section');
 var ResourceNotifications = require('grommet/components/index/ResourceNotifications');
 var Attribute = require('grommet/components/Attribute');
 var StatusIcon = require('grommet/components/icons/Status');
@@ -63,7 +65,7 @@ var ServerProfileOverview = React.createClass({
     var connections;
 
     return (
-      <div>
+      <GrommetDocument flush={false}>
         <Header flush={false} small={true}>
           <span>
             <StatusIcon value={serverProfile.status} />
@@ -73,27 +75,33 @@ var ServerProfileOverview = React.createClass({
 
         <ResourceNotifications resourceUri={this.state.uri} />
 
-        <Attribute label="Description">
-          {serverProfile.description}
-        </Attribute>
-        <Attribute label="Server hardware">
-          {serverHardwareLink}
-        </Attribute>
-        <Attribute label="Affinity">
-          {serverProfile.affinity}
-        </Attribute>
+        <Section compact={true} flush={false}>
+          <Attribute label="Description">
+            {serverProfile.description}
+          </Attribute>
+          <Attribute label="Server hardware">
+            {serverHardwareLink}
+          </Attribute>
+          <Attribute label="Affinity">
+            {serverProfile.affinity}
+          </Attribute>
+        </Section>
 
-        <h2>Firmware</h2>
-        <Attribute label="Firmware baseline">
-          {serverProfile.firmwareBaseline}
-        </Attribute>
+        <Section compact={true} flush={false} colorIndex="neutral-1">
+          <h2>Firmware</h2>
+          <Attribute label="Firmware baseline">
+            {serverProfile.firmwareBaseline}
+          </Attribute>
+        </Section>
 
-        <h2>Connections</h2>
-        <Tiles>
-          {connections}
-        </Tiles>
+        <Section compact={true} flush={false} colorIndex="neutral-2">
+          <h2>Connections</h2>
+          <Tiles flush={false}>
+            {connections}
+          </Tiles>
+        </Section>
 
-      </div>
+      </GrommetDocument>
     );
   }
 });

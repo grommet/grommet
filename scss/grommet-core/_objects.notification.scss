@@ -1,8 +1,6 @@
 // (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
 
 .notification {
-  border-top: 1px solid $border-color;
-  border-bottom: 1px solid $border-color;
   padding: $inuit-base-spacing-unit;
 
   &__status {
@@ -24,7 +22,6 @@
   @each $status, $color in $brand-status-colors {
     &--#{$status} {
       background-color: rgba($color, 0.15);
-      border-color: $color;
     }
   }
 
