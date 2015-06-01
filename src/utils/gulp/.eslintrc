@@ -17,6 +17,7 @@ globals:
   IntlPolyfill: true
   __DEV_MODE__: true
   Modernizr: true
+  __GROMMET__: true
 
 rules:
   # ERRORS
@@ -50,6 +51,7 @@ rules:
   no-trailing-spaces: 0
   no-multi-spaces: 0
   no-shadow: 0
+  no-alert: 0
 
   react:
     - display-name: 1
