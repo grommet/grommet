@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var path = require('path');
 var devGulpTasks = require('../src/utils/gulp/gulp-tasks');
 var chug = require('gulp-chug');
+var ghPages = require('gulp-gh-pages');
 
 var grommetVersion = require('../package.json').version;
 
@@ -25,6 +26,18 @@ var opts = {
     {
       asset: 'docs/src/img/**',
       dist: 'docs/dist/img/'
+    },
+    {
+      asset: 'design/**',
+      dist: 'docs/dist/assets/' + grommetVersion
+    },
+    {
+      asset: 'dist-bower/**',
+      dist: 'docs/dist/assets/' + grommetVersion,
+      ignores: [
+        'bower.json',
+        'sample-grommet.html'
+      ]
     }
   ],
   scssAssets: ['src/scss/grommet-core/**/*.scss', 'docs/src/scss/**/*.scss'],
@@ -66,7 +79,7 @@ var opts = {
   devServerProxy: {
     "/rest/*": 'http://localhost:8000'
   },
-  distPreprocess: ['dist-hpe', 'dist-hpinc'],
+  distPreprocess: ['dist-hpe', 'dist-hpinc', 'dist-bower'],
   env: {
     __THEME__: {
       generic: true
@@ -77,6 +90,12 @@ var opts = {
   },
   scsslint: true
 };
+
+gulp.task('dist-bower', function() {
+  return gulp.src('gulpfile.js', { read: false }).pipe(chug({
+     tasks: ['dist-bower']
+  }));
+});
 
 gulp.task('dist-hpe', function() {
   return gulp.src('docs/hpe/gulpfile.js', { read: false }).pipe(chug({
@@ -100,6 +119,10 @@ gulp.task('dev-hpinc', function() {
   return gulp.src('docs/hpinc/gulpfile.js', { read: false }).pipe(chug({
      tasks: ['dev']
   }));
+});
+
+gulp.task('deploy', ['dist'], function() {
+  return gulp.src('docs/dist/**').pipe(ghPages());
 });
 
 devGulpTasks(gulp, opts);

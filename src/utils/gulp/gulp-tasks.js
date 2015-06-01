@@ -79,6 +79,7 @@ module.exports = function(gulp, opts) {
         var assets = [asset];
         if (copyAsset.ignores) {
           copyAsset.ignores.forEach(function(ignore) {
+            assets.push('!'+ asset + ignore);
             assets.push('!'+ asset +'**/'+ignore);
             assets.push('!'+ asset +'**/'+ignore+'/**');
           });
@@ -192,9 +193,9 @@ module.exports = function(gulp, opts) {
   gulp.task('dist-preprocess', function(callback) {
     if (options.distPreprocess) {
       if (process.env.CI) {
-        runSequence('preprocess', options.distPreprocess, callback);
+        runSequence('preprocess', options.distPreprocess, 'copy', callback);
       } else {
-        runSequence('preprocess', options.distPreprocess, 'test', callback);
+        runSequence('preprocess', options.distPreprocess, 'copy', 'test', callback);
       }
     } else {
       if (process.env.CI) {

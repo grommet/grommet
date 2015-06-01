@@ -93,6 +93,7 @@
     "gulp-git": "^1.2.3",
     "gulp-prompt": "^0.1.2",
     "gulp-bump": "^0.3.0",
+    "gulp-gh-pages": "^0.5.1",
     "jsdom": "~4.4.0",
     "json5": "^0.4.0",
     "react-tools": "^0.13.1",
