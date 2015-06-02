@@ -51,7 +51,7 @@ var Home = React.createClass({
 
         <Section className="home__process" centered={true} colorIndex="neutral-2">
           <ProcessAnimation className="home__process-graphic"/>
-          <h2>Prototype your template quickly.</h2>
+          <h2>Prototype your application quickly.</h2>
           <h4>With templates for all your basic layout needs and styling already
             baked in, crafting your application happens in no time.</h4>
         </Section>
