@@ -61,7 +61,6 @@ var opts = {
   copyAssets: [
     'README.md',
     'src/js/**',
-    'design/**',
     {
       asset: 'src/scss/**',
       dist: 'dist/scss/'
@@ -469,6 +468,14 @@ gulp.task('release:clean', function() {
 
 gulp.task('release:site', function() {
   gulp.src('./docs/gulpfile.js', { read: false }).pipe(chug({
+    tasks: ['sync']
+  }));
+
+  gulp.src('./examples/server/gulpfile.js', { read: false }).pipe(chug({
+    tasks: ['sync']
+  }));
+
+  gulp.src('./examples/medium-app/gulpfile.js', { read: false }).pipe(chug({
     tasks: ['sync']
   }));
 });
