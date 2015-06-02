@@ -20,11 +20,9 @@ var Docs = React.createClass({
 
   render: function() {
     var footerColorIndex = null;
-    var footerLogo = "img/hpesm_sec_grn_pos_rgb.svg";
     var title = '';
     if (this.context.router.isActive("home")) {
       footerColorIndex = "grey-1";
-      footerLogo = "img/hpesm_sec_grn_rev_rgb.svg";
     } else {
       title = (
         <Title>
@@ -54,8 +52,7 @@ var Docs = React.createClass({
         </Header>
         <RouteHandler />
         <Footer className="docs__footer" colorIndex={footerColorIndex} primary={true} centered={true}>
-          <img src={footerLogo} alt="Hewlett Packard Enterprise logo" />
-          <h3>Build your ideas!</h3>
+          <h3>Build your ideas with Grommet by HP!</h3>
           <div>
             This work is licensed under the <a href="http://creativecommons.org/licenses/by/4.0/legalcode">Creative Commons Attribution 4.0 International License</a>.
             <div>

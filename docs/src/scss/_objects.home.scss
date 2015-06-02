@@ -89,37 +89,6 @@ $scale-background-color-top: rgba($scale-background-color, 0.85);
     }
   }
 
-  &__hpe.section {
-
-    img {
-      height: 200px;
-      width: 408px;
-    }
-
-    @include media-query(lap-and-up) {
-      padding-top: round($inuit-base-spacing-unit * 2);
-      padding-bottom: round($inuit-base-spacing-unit * 2);
-      background-image: radial-gradient(circle at 70% 50%,
-        nth($brand-grey-colors, 1),
-        nth($brand-grey-colors, 1) 35%,
-        nth($brand-grey-colors, 2) 35%,
-        nth($brand-grey-colors, 2) 55%,
-        nth($brand-grey-colors, 3) 55%,
-        nth($brand-grey-colors, 3) 85%,
-        nth($brand-grey-colors, 1) 85%);
-
-      .home__hpe-text {
-        margin: round($inuit-base-spacing-unit * 2) double($inuit-base-spacing-unit);
-        color: darken($colored-text-color, 20%);
-
-        h4 {
-          color: $brand-color; //nth($brand-accent-colors, 1);
-          font-weight: 400;
-        }
-      }
-    }
-  }
-
   &__scale.section {
     padding-bottom: round($inuit-base-spacing-unit * 6);
     background-color: inherit;
