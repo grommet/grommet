@@ -10,11 +10,11 @@ Visit the [grommet.io](http://grommet.io/) website for more information.
 
 ### Support / Contributing
 
-Before opening an issue or pull request, please read the [Contributing](http://grommet.io/docs/hpe/documentation/contributing) guide.
+Before opening an issue or pull request, please read the [Contributing](http://grommet.io/docs/documentation/contributing) guide.
 
 ### Hello World
 
-  The quickest way to get started is to access the [Hello World](http://grommet.io/docs/hpe/documentation) page.
+  The quickest way to get started is to access the [Hello World](http://grommet.io/docs/documentation) page.
 
 ### Install
 
@@ -30,7 +30,7 @@ Before opening an issue or pull request, please read the [Contributing](http://g
     $ npm install -g grommet
   ```
 
-  Detailed instructions are on the [Get Started](http://grommet.io/docs/hpe/documentation/get-started) page.
+  Detailed instructions are on the [Get Started](http://grommet.io/docs/documentation/get-started) page.
 
 ### Build
 
