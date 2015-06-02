@@ -1,11 +1,11 @@
 {
-  "name": "grommet-tour",
+  "name": "medium-app",
   "version": "0.1.2",
   "main": "src/js/index.js",
   "description": "Grommet Tour",
   "author": "Eric Soderberg",
   "dependencies": {
-    "grommet": "https://github.com/HewlettPackard/grommet.git#stable", 
+    "grommet": "https://github.com/HewlettPackard/grommet.git#stable",
     "intl": "^0.1.4",
     "inuit-box-sizing": "~0.2.0",
     "inuit-clearfix": "^0.2.1",
@@ -46,7 +46,7 @@
     "gulp": "^3.8.11",
     "gulp-chug": "^0.4.2",
     "gulp-file": "^0.2.0",
-    "gulp-jshint": "^1.9.4",
+    "gulp-eslint": "^0.12.0",
     "gulp-minify-css": "^1.1.0",
     "gulp-mocha": "^2.0.1",
     "gulp-blanket-mocha": "^0.0.4",
