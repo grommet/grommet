@@ -23,8 +23,8 @@ var CONFIG = [
     type: 'area',
     wide: true,
     params: {
-      category: 'tasks',
-      attribute: 'status',
+      category: 'server-profiles',
+      attribute: 'state',
       interval: 'days',
       count: 8
     }

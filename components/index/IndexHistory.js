@@ -53,7 +53,7 @@ var IndexHistory = React.createClass({
           }
           return [date, interval.count];
         });
-        var colorIndex = 'graph-' + index;
+        var colorIndex = 'graph-' + (index + 1);
         if ('status' === this.state.params.attribute) {
           colorIndex = count.value.toLowerCase();
         }
