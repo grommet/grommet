@@ -88,7 +88,7 @@ var Legend = React.createClass({
     }, this);
 
     var total = null;
-    if (this.props.total) {
+    if (this.props.total && this.props.series.length > 1) {
       total = (
         <li className={CLASS_ROOT + "__total"}>
           <span className={CLASS_ROOT + "__total-label"}>

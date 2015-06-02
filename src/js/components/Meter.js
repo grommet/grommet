@@ -233,6 +233,7 @@ var Meter = React.createClass({
   componentWillReceiveProps: function (newProps) {
     var state = this._stateFromProps(newProps);
     this.setState(state);
+    this._onResize();
   },
 
   componentWillUnmount: function() {
@@ -495,9 +496,11 @@ var Meter = React.createClass({
           </g>
         </svg>
         {current}
-        <div className={CLASS_ROOT + "__labels"}>
-          {minLabel}
-          {maxLabel}
+        <div className={CLASS_ROOT + "__labels-container"}>
+          <div className={CLASS_ROOT + "__labels"}>
+            {minLabel}
+            {maxLabel}
+          </div>
         </div>
         {legend}
       </div>

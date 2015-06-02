@@ -20,6 +20,10 @@ $meter-bar-length: round($inuit-base-spacing-unit * 8);
     stroke: $threshold-color;
   }
 
+  &__labels-container {
+    display: inline-block;
+  }
+
   &__labels {
     display: -webkit-flex;
     display: flex;
@@ -72,7 +76,7 @@ $meter-bar-length: round($inuit-base-spacing-unit * 8);
         }
       }
 
-      &__labels {
+      &__labels-container {
         width: $meter-bar-length;
       }
     }
@@ -156,7 +160,7 @@ $meter-bar-length: round($inuit-base-spacing-unit * 8);
         }
       }
 
-      &__labels {
+      &__labels-container {
         width: $panel-width;
       }
 
@@ -171,7 +175,7 @@ $meter-bar-length: round($inuit-base-spacing-unit * 8);
       height: $panel-width - double($inuit-base-spacing-unit);
     }
 
-    .meter__labels {
+    .meter__labels-container {
       padding-left: halve($inuit-base-spacing-unit);
       padding-right: halve($inuit-base-spacing-unit);
     }
@@ -228,7 +232,7 @@ $meter-bar-length: round($inuit-base-spacing-unit * 8);
         }
       }
 
-      .meter__labels {
+      .meter__labels-container {
         position: absolute;
         left: $inuit-base-spacing-unit + halve($inuit-base-spacing-unit);
         vertical-align: top;
@@ -247,7 +251,7 @@ $meter-bar-length: round($inuit-base-spacing-unit * 8);
         height: $panel-width;
       }
 
-      .meter__labels {
+      .meter__labels-container {
         width: auto;
         padding-top: halve($inuit-base-spacing-unit);
         padding-bottom: halve($inuit-base-spacing-unit);
@@ -325,6 +329,20 @@ $meter-bar-length: round($inuit-base-spacing-unit * 8);
     &.meter--arc {
       svg.meter__graphic {
         height: $large-panel-width - $inuit-base-spacing-unit;
+      }
+    }
+  }
+
+  &--legend {
+    &-right {
+      white-space: nowrap;
+
+      .meter__labels-container {
+        width: auto;
+      }
+
+      .meter__legend {
+        vertical-align: top;
       }
     }
   }
