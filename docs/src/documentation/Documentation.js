@@ -17,9 +17,12 @@ var GetStarted = require('./GetStarted');
 var Architecture = require('./Architecture');
 var Contributing = require('./Contributing');
 var Integration = require('./Integration');
+
+var ActionsDoc = require('./patterns/ActionsDoc');
 var AppDoc = require('./components/AppDoc');
 var ChartDoc = require('./components/ChartDoc');
 var CheckBoxDoc = require('./components/CheckBoxDoc');
+var DashboardDoc = require('./patterns/DashboardDoc');
 var DocumentDoc = require('./components/DocumentDoc');
 var DonutDoc = require('./components/DonutDoc');
 var FooterDoc = require('./components/FooterDoc');
@@ -31,6 +34,7 @@ var LoginFormDoc = require('./components/LoginFormDoc');
 var MapDoc = require('./components/MapDoc');
 var MenuDoc = require('./components/MenuDoc');
 var MeterDoc = require('./components/MeterDoc');
+var NavigationDoc = require('./patterns/NavigationDoc');
 var RadioButtonDoc = require('./components/RadioButtonDoc');
 var RestDoc = require('./utils/RestDoc');
 var RestWatchDoc = require('./utils/RestWatchDoc');
@@ -63,12 +67,9 @@ var CONTENTS = [
   },
   {label: 'Patterns',
     contents: [
-      {route: 'doc_dashboard', label: 'Dashboard', component: TBD},
-      {route: 'doc_index', label: 'Index', component: TBD},
-      {route: 'doc_login', label: 'Login', component: TBD},
-      {route: 'doc_navigation', label: 'Navigation', component: TBD},
-      {route: 'doc_searching', label: 'Searching', component: TBD},
-      {route: 'doc_session', label: 'Session', component: TBD}
+      {route: 'doc_dashboard', label: 'Dashboard', component: DashboardDoc},
+      {route: 'doc_navigation', label: 'Navigation', component: NavigationDoc},
+      {route: 'doc_actions', label: 'Actions', component: ActionsDoc},
     ]
   },
   {label: 'Components',
