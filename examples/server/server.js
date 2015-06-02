@@ -36,7 +36,7 @@ app.
   use(PREFIX + '/rest', rest.router).
   use(PREFIX + '/medium-app', mediumApp).
   use(PREFIX + '/cto-app-tuner', ctoAppTuner).
-  use(PREFIX + '/assets', express.static(__dirname + '/../../assets')).
+  use(PREFIX + '/assets', express.static(__dirname + '/../../docs/dist/assets')).
   use(PREFIX + '/hello-world', express.static(__dirname + '/../hello-world')).
   //use(PREFIX + '/demo', demo).
   use(PREFIX, router);
