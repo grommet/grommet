@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var path = require('path');
 
-router.use('/', express.static('../todo-app/dist'));
+router.use('/', express.static(__dirname + '/../todo-app/dist'));
 router.get('/*', function (req, res) {
   res.sendFile(path.resolve(__dirname + '/../todo-app/dist/index.html'));
 });

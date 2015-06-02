@@ -30,7 +30,7 @@ router.use('/', function (req, res, next) {
   }
 });
 
-router.use('/', express.static('../medium-app/dist'));
+router.use('/', express.static(__dirname + '/../medium-app/dist'));
 router.get('/*', function (req, res) {
   res.sendFile(path.resolve(__dirname + '/../medium-app/dist/index.html'));
 });
