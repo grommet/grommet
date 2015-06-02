@@ -469,7 +469,7 @@ gulp.task('release:clean', function() {
 
 gulp.task('release:site', function() {
   gulp.src('./docs/gulpfile.js', { read: false }).pipe(chug({
-    tasks: ['deploy']
+    tasks: ['sync']
   }));
 });
 

@@ -2,7 +2,6 @@ var gulp = require('gulp');
 var path = require('path');
 var devGulpTasks = require('../src/utils/gulp/gulp-tasks');
 var chug = require('gulp-chug');
-var ghPages = require('gulp-gh-pages');
 
 var grommetVersion = require('../package.json').version;
 
@@ -119,10 +118,6 @@ gulp.task('dev-hpinc', function() {
   return gulp.src('docs/hpinc/gulpfile.js', { read: false }).pipe(chug({
      tasks: ['dev']
   }));
-});
-
-gulp.task('deploy', ['dist'], function() {
-  return gulp.src('docs/dist/**').pipe(ghPages());
 });
 
 devGulpTasks(gulp, opts);

@@ -89,7 +89,6 @@
     "gulp-git": "^1.2.3",
     "gulp-prompt": "^0.1.2",
     "gulp-bump": "^0.3.0",
-    "gulp-gh-pages": "^0.5.1",
     "eslint": "^0.21.2",
     "eslint-plugin-react": "^2.4.0",
     "babel": "^5.3.3",
