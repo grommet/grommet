@@ -51,8 +51,8 @@ var DocsRouter = React.createClass({
 });
 
 var routes = (
-  <Route name="docs" path='/' handler={DocsRouter}>
-    <Route name="home" path='/' handler={Home} />
+  <Route name="docs" path={rootPath} handler={DocsRouter}>
+    <Route name="home" path={rootPath} handler={Home} />
     {StyleGuide.routes()}
     {Documentation.routes()}
     <Route name="downloads" handler={Downloads} />

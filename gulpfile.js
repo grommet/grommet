@@ -61,6 +61,7 @@ var opts = {
   copyAssets: [
     'README.md',
     'src/js/**',
+    'design/**',
     {
       asset: 'src/scss/**',
       dist: 'dist/scss/'
@@ -100,8 +101,8 @@ var opts = {
   mainJs: 'src/js/index.js',
   mainScss: 'src/scss/grommet-core/index.scss',
   sync: {
-    hostname: 'grommet.usa.hp.com',
-    username: 'ligo',
+    hostname: 'grommet.io',
+    username: 'grommet',
     remoteDestination: '/var/www/html/assets/' + getPackageJSON().version
   },
   webpack: {
