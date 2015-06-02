@@ -22,7 +22,7 @@ Before opening an issue or pull request, please read the [Contributing](http://g
 
   For Bower users:
   ```
-    $ bower install
+    $ bower install grommet
   ```
 
   For NPM users:
