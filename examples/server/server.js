@@ -37,6 +37,7 @@ app.
   use(PREFIX + '/medium-app', mediumApp).
   use(PREFIX + '/cto-app-tuner', ctoAppTuner).
   use(PREFIX + '/assets', express.static('../../assets')).
+  use(PREFIX + '/hello-world', express.static('../hello-world')).
   //use(PREFIX + '/demo', demo).
   use(PREFIX, router);
 
