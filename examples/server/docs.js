@@ -22,7 +22,7 @@ function translateStatics(req, res, next, theme) {
 router.use('/hpe', function (req, res, next) {
   translateStatics(req, res, next, 'hpe/');
 });
-router.use('/hpe', express.static('../../docs/dist/hpe'));
+router.use('/hpe', express.static(__dirname + '/../../docs/dist/hpe'));
 router.get('/hpe/*', function (req, res) {
   res.sendFile(path.resolve(__dirname + '/../../docs/dist/hpe/index.html'));
 });
@@ -30,7 +30,7 @@ router.get('/hpe/*', function (req, res) {
 router.use('/hpinc', function (req, res, next) {
   translateStatics(req, res, next, 'hpinc/');
 });
-router.use('/hpinc', express.static('../../docs/dist/hpinc'));
+router.use('/hpinc', express.static(__dirname + '/../../docs/dist/hpinc'));
 router.get('/hpinc/*', function (req, res) {
   res.sendFile(path.resolve(__dirname + '/../../docs/dist/hpinc/index.html'));
 });
@@ -38,7 +38,7 @@ router.get('/hpinc/*', function (req, res) {
 router.use('/', function (req, res, next) {
   translateStatics(req, res, next, '');
 });
-router.use('/', express.static('../../docs/dist'));
+router.use('/', express.static(__dirname + '/../../docs/dist'));
 router.get('/*', function (req, res) {
   res.sendFile(path.resolve(__dirname + '/../../docs/dist/index.html'));
 });
