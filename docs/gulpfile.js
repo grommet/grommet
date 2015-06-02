@@ -45,8 +45,8 @@ var opts = {
   mainJs: 'docs/src/index.js',
   mainScss: 'docs/src/scss/index.scss',
   sync: {
-    hostname: 'grommet.usa.hp.com',
-    username: 'ligo',
+    hostname: 'grommet.io',
+    username: 'grommet',
     remoteDestination: '/var/www/html/docs/dist'
   },
   webpack: {

@@ -57,9 +57,9 @@ var Docs = React.createClass({
             This work is licensed under the <a href="http://creativecommons.org/licenses/by/4.0/legalcode">Creative Commons Attribution 4.0 International License</a>.
             <div>
               <Menu label="Theme" direction="up" small={true}>
-                <a href="/grommet/" className={this.props.theme === 'generic' ? 'active' : ''}>Grommet</a>
-                <a href="/grommet/hpe/" className={this.props.theme === 'hpe' ? 'active' : ''}>HPE</a>
-                <a href="/grommet/hpinc/" className={this.props.theme === 'hpinc' ? 'active' : ''}>HPInc</a>
+                <a href="/docs/" className={this.props.theme === 'generic' ? 'active' : ''}>Grommet</a>
+                <a href="/docs/hpe/" className={this.props.theme === 'hpe' ? 'active' : ''}>HPE</a>
+                <a href="/docs/hpinc/" className={this.props.theme === 'hpinc' ? 'active' : ''}>HPInc</a>
               </Menu>
             </div>
           </div>

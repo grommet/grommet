@@ -18,13 +18,13 @@ var NextIcon = require('grommet/components/icons/Right');
 var Home = React.createClass({
 
   render: function() {
-    var assetsPath = '/grommet/assets/' + __GROMMET__.version + '/';
+    var assetsPath = '/docs/assets/' + __GROMMET__.version + '/';
     return (
       <div className="home">
         <Section className="home__introduction" centered={true}>
           <img className="home__logo" src="img/grommet.svg" title="Grommet" />
           <h1 className="home__title">Grommet</h1>
-          <h3>The most advanced UI framework for enterprise applications.</h3>
+          <h3>The most advanced UX framework for enterprise applications.</h3>
           <Menu direction="center">
             <span>
               Grab the Grommet <a href={assetsPath + 'grommet_sticker_sheet.ai'} target="_blank">

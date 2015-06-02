@@ -11,16 +11,23 @@ if (! Modernizr.flexbox ||
     'If you are using the latest Internet Explorer, you will need to turn off Compatibility Mode.');
 }
 
+var rootPath = '/docs/';
 var theme = 'generic';
 
 if (__THEME__.hpe) {
   require("index-hpe.scss");
+  rootPath = '/docs/hpe/';
   theme = 'hpe';
 } if (__THEME__.hpinc) {
   require("index-hpinc.scss");
+  rootPath = '/docs/hpinc/';
   theme = 'hpinc';
 } else if (__THEME__.generic) {
   require("index.scss");
+}
+
+if (__DEV_MODE__) {
+  rootPath = "/"; // webpack-dev-server
 }
 
 var React = require('react');
@@ -52,7 +59,7 @@ var routes = (
   </Route>
 );
 
-var router = Router.create({routes: routes});
+var router = Router.create({routes: routes, location: Router.HistoryLocation});
 
 router.run(function (Handler) {
   var element = document.getElementById('content');

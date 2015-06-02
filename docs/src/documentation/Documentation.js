@@ -8,7 +8,7 @@ var RouteHandler = Router.RouteHandler;
 var Link = Router.Link;
 var Section = require('grommet/components/Section');
 var Menu = require('grommet/components/Menu');
-var TBD = require('grommet/components/TBD');
+//var TBD = require('grommet/components/TBD');
 var GrommetDocument = require('grommet/components/Document');
 var HelloWorld = require('./HelloWorld');
 var Tutorial = require('./Tutorial');
@@ -69,7 +69,7 @@ var CONTENTS = [
     contents: [
       {route: 'doc_dashboard', label: 'Dashboard', component: DashboardDoc},
       {route: 'doc_navigation', label: 'Navigation', component: NavigationDoc},
-      {route: 'doc_actions', label: 'Actions', component: ActionsDoc},
+      {route: 'doc_actions', label: 'Actions', component: ActionsDoc}
     ]
   },
   {label: 'Components',
