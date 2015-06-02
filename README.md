@@ -10,11 +10,11 @@ Visit the [grommet.io](http://grommet.io/) website for more information.
 
 ### Support / Contributing
 
-Before opening an issue or pull request, please read the [Contributing](http://grommet.io/grommet/hpe/documentation/contributing) guide.
+Before opening an issue or pull request, please read the [Contributing](http://grommet.io/docs/hpe/documentation/contributing) guide.
 
 ### Hello World
 
-  The quickest way to get started is to access the [Hello World](http://grommet.io/grommet/hpe/documentation) page.
+  The quickest way to get started is to access the [Hello World](http://grommet.io/docs/hpe/documentation) page.
 
 ### Install
 
@@ -22,15 +22,15 @@ Before opening an issue or pull request, please read the [Contributing](http://g
 
   For Bower users:
   ```
-    $ bower install --save HewlettPackard/grommet-bower
+    $ bower install
   ```
 
   For NPM users:
   ```
-    $ npm install -g grommet --registry http://grommet.usa.hp.com:2374
+    $ npm install -g grommet
   ```
 
-  Detailed instructions are on the [Get Started](http://grommet.io/grommet/hpe/documentation/get-started) page.
+  Detailed instructions are on the [Get Started](http://grommet.io/docs/hpe/documentation/get-started) page.
 
 ### Build
 

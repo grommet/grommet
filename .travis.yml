@@ -4,7 +4,7 @@ node_js:
 sudo: false
 before_script:
 - npm install -g gulp
-- gem install scss-lint
+- gem install scss-lint -v 0.38.0
 - gulp preprocess
 after_script:
 - gulp blanket-lcov-reporter
