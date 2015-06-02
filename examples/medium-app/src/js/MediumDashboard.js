@@ -101,7 +101,7 @@ var MediumDashboard = React.createClass({
 
   componentDidMount: function () {
     this.refs.search.focus();
-    window.addEventListener('resize ', this._onResize);
+    window.addEventListener('resize', this._onResize);
     this._onResize();
   },
 
