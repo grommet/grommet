@@ -19,6 +19,7 @@
     "nodemailer-smtp-transport": "^1.0.2",
     "request": "^2.53.0",
     "serve-static": "^1.7.1",
-    "ws": "^0.7.2"
+    "ws": "^0.7.2",
+    "json-stringify-pretty-compact": "^1.0.1"
   }
 }
