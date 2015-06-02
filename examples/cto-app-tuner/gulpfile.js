@@ -14,8 +14,8 @@ var opts = {
   mainJs: 'src/js/index.js',
   mainScss: 'src/scss/index.scss',
   sync: {
-    hostname: 'grommet.usa.hp.com',
-    username: 'ligo',
+    hostname: 'grommet.io',
+    username: 'grommet',
     remoteDestination: '/var/www/html/examples/cto-app-tuner/dist'
   },
   devServerPort: 9000,
