@@ -8,6 +8,7 @@ $step-duration: 0.7s;
 
   @include media-query(palm) {
     width: calc(100vw - #{double($inuit-base-spacing-unit)});
+    height: auto;
   }
 
   &__paper {
@@ -25,6 +26,7 @@ $step-duration: 0.7s;
 
     @include media-query(palm) {
       width: calc(100vw - #{double($inuit-base-spacing-unit)});
+      height: auto;
     }
   }
 
