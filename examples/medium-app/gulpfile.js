@@ -21,8 +21,8 @@ var opts = {
   mainJs: 'examples/medium-app/src/js/index.js',
   mainScss: 'examples/medium-app/src/scss/index.scss',
   sync: {
-    hostname: 'grommet.usa.hp.com',
-    username: 'ligo',
+    hostname: 'grommet.io',
+    username: 'grommet',
     remoteDestination: '/var/www/html/examples/medium-app/dist'
   },
   webpack: {

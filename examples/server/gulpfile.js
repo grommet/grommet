@@ -6,8 +6,8 @@ gulp.task('sync', function() {
   gulp.src('.')
     .pipe(rsync({
       root: '.',
-      hostname: 'grommet.usa.hp.com',
-      username: 'ligo',
+      hostname: 'grommet.io',
+      username: 'grommet',
       destination: '/var/www/html/examples/server',
       recursive: true,
       relative: true,

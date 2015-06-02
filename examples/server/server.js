@@ -24,7 +24,7 @@ app.use(morgan('tiny'));
 app.use(bodyParser.json());
 
 router.get('/', function (req, res) {
-  res.redirect('/docs/hpe');
+  res.redirect('/docs');
 });
 
 app.use('/tour/', function (req, res, next) {
@@ -36,6 +36,7 @@ app.
   use(PREFIX + '/rest', rest.router).
   use(PREFIX + '/medium-app', mediumApp).
   use(PREFIX + '/cto-app-tuner', ctoAppTuner).
+  use(PREFIX + '/assets', express.static('../../assets')).
   //use(PREFIX + '/demo', demo).
   use(PREFIX, router);
 
