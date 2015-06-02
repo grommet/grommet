@@ -1,4 +1,4 @@
-# Grommet: The most advanced UI framework for enterprise apps
+# Grommet: The most advanced UX framework for enterprise apps
 
 [![Slack](http://alansouzati.github.io/artic/img/slack-badge.svg)](https://grommet.slack.com)  [![Build Status](https://magnum.travis-ci.com/HewlettPackard/grommet.svg?token=1waizR3WLGtkHJzKYxT8&branch=master)](https://magnum.travis-ci.com/HewlettPackard/grommet)  [![Coverage Status](https://coveralls.io/repos/HewlettPackard/grommet/badge.svg?branch=master&t=Wle9Qs)](https://coveralls.io/r/HewlettPackard/grommet?branch=master)
 
