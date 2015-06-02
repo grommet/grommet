@@ -8,9 +8,9 @@
   	<link href='css/grommet-hpe.min.css' rel='stylesheet' type='text/css'>
 	  <script src="../react/react.js"></script>
 	  <script src="../react/JSXTransformer.js"></script>
-	  <script src="grommet.min.js"></script> 
+	  <script src="grommet.min.js"></script>
   <!-- @endif -->
- 
+
  	<!-- @if NODE_ENV!='production' -->
  	<link href='bower_components/grommet/css/grommet-hpe.min.css' rel='stylesheet' type='text/css'>
 	<script src="bower_components/react/react.js"></script>
@@ -34,7 +34,7 @@
   	var TodoAppDashboard = React.createClass({
 
 		  render: function () {
-		  	
+
 			  var tasksMap = {
 			  	error: 0,
 			  	ok: 0,
@@ -42,7 +42,7 @@
 			  };
 
 		  	var items = this.props.tasks.map(function(task) {
-		  		
+
 		  		tasksMap[task.type] += 1;
 
 		  		return (
@@ -104,7 +104,7 @@
 				  	{
 				  		type: 'ok',
 				  		item: 'Go to Santa Cruz, it\'s summer time.'
-				  	},
+				  	}
 			  	]
 				};
 			},

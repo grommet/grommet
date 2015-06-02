@@ -33,7 +33,7 @@ var Main = React.createClass({
         {
           type: 'ok',
           item: 'Go to Santa Cruz, it\'s summer time.'
-        },
+        }
       ]
     };
   },

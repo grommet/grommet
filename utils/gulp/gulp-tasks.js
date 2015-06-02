@@ -63,7 +63,7 @@ module.exports = function(gulp, opts) {
   options.webpack = options.webpack || {};
 
   var scssLintPath = path.resolve(__dirname, 'scss-lint.yml');
-  var esLintPath = path.resolve(__dirname, '.eslintrc');
+  var esLintPath = path.resolve(__dirname, 'eslintrc');
 
   if (options.base) {
     process.chdir(options.base);
