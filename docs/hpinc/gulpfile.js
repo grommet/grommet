@@ -30,11 +30,6 @@ var opts = {
   jsAssets: ['docs/src/**/*.js'],
   mainJs: 'docs/src/index.js',
   mainScss: 'docs/src/scss/index-hpinc.scss',
-  sync: {
-    hostname: 'grommet.usa.hp.com',
-    username: 'ligo',
-    remoteDestination: '/var/www/html/doc/hpinc'
-  },
   webpack: {
     resolve: {
       alias: {
