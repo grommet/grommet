@@ -5,6 +5,13 @@ var __path__ = '../../src/js/components/Layer';
 var GrommetTestUtils = require('../mocks/GrommetTestUtils');
 
 describe('Grommet Layer', function() {
+  beforeEach(function() {
+    var elements = document.body.getElementsByClassName('layer');
+
+    while(elements.length > 0){
+      elements[0].parentNode.removeChild(elements[0]);
+    }
+  });
   it('loads a basic Layer component', function() {
     var React = require('react/addons');
     var TestUtils = React.addons.TestUtils;

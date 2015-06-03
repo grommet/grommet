@@ -27,7 +27,7 @@ module.exports = {
   layerShouldExist: function(assertContent) {
     expect(document.body.getElementsByClassName('layer').length).toBe(1);
     if (assertContent) {
-      expect(document.body.getElementsByClassName('layer')[0].textContent).toBe('Testing Layer');
+      expect(document.body.getElementsByClassName('layer')[0].textContent).toBe(assertContent);
     }
   }
 };
