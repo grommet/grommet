@@ -2,7 +2,7 @@
 
 [![Slack](http://alansouzati.github.io/artic/img/slack-badge.svg)](https://grommet.slack.com)  [![Build Status](https://api.travis-ci.org/HewlettPackard/grommet.svg)](https://travis-ci.org/HewlettPackard/grommet)  [![Coverage Status](https://coveralls.io/repos/HewlettPackard/grommet/badge.svg?branch=master&t=Wle9Qs)](https://coveralls.io/r/HewlettPackard/grommet?branch=master)
 
-<img align="right" height="260" src="http://alansouzati.github.io/artic/img/grommet-logo.png">
+<img align="right" height="260" src="http://grommet.io/docs/img/grommet.svg">
 
 ### Documentation
 
