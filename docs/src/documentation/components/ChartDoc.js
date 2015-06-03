@@ -9,9 +9,9 @@ var inline =
   "<Chart ... />";
 
 var series = [
-  {label: 'first', values: [[5, 2], [4, 3], [3, 3], [2, 2], [1, 4]],
+  {label: 'first', values: [[8, 1], [7, 2], [6, 3], [5, 2], [4, 3], [3, 3], [2, 2], [1, 4]],
     colorIndex: "graph-1"},
-  {label: 'second', values: [[5, 4], [4, 3], [3, 0], [2, 1], [1, 0]],
+  {label: 'second', values: [[8, 4], [7, 2], [6, 3], [5, 4], [4, 3], [3, 0], [2, 1], [1, 0]],
     colorIndex: "graph-2"}
 ];
 var seriesXAxis = [
@@ -19,7 +19,10 @@ var seriesXAxis = [
   {label: 'May 21', value: series[0].values[1][0]},
   {label: 'May 20', value: series[0].values[2][0]},
   {label: 'May 19', value: series[0].values[3][0]},
-  {label: 'May 18', value: series[0].values[4][0]}
+  {label: 'May 18', value: series[0].values[4][0]},
+  {label: 'May 17', value: series[0].values[5][0]},
+  {label: 'May 16', value: series[0].values[6][0]},
+  {label: 'May 15', value: series[0].values[7][0]}
 ];
 
 var dateSeries = [
@@ -28,15 +31,22 @@ var dateSeries = [
     [new Date(Date.parse("2015-05-21")), 2],
     [new Date(Date.parse("2015-05-20")), 3],
     [new Date(Date.parse("2015-05-19")), 3],
-    [new Date(Date.parse("2015-05-18")), 2]
+    [new Date(Date.parse("2015-05-18")), 2],
+    [new Date(Date.parse("2015-05-17")), 1],
+    [new Date(Date.parse("2015-05-16")), 4],
+    [new Date(Date.parse("2015-05-15")), 2],
   ], colorIndex: "graph-4"}
 ];
+
 var dateSeriesXAxis = [
   {label: 'May 22', value: dateSeries[0].values[0][0]},
   {label: 'May 21', value: dateSeries[0].values[1][0]},
   {label: 'May 20', value: dateSeries[0].values[2][0]},
   {label: 'May 19', value: dateSeries[0].values[3][0]},
-  {label: 'May 18', value: dateSeries[0].values[4][0]}
+  {label: 'May 18', value: dateSeries[0].values[4][0]},
+  {label: 'May 17', value: dateSeries[0].values[5][0]},
+  {label: 'May 16', value: dateSeries[0].values[6][0]},
+  {label: 'May 15', value: dateSeries[0].values[7][0]}
 ];
 
 var ChartDoc = React.createClass({
@@ -184,6 +194,18 @@ var ChartDoc = React.createClass({
               " legend={true}\n" +
               " xAxis={" + stringify(dateSeriesXAxis) +  "}\n" +
               " series={" + stringify(dateSeries) + "} />"}
+          </code></pre>
+
+          <h3>Small, Loading</h3>
+          <div className="example">
+          <Chart series={[]} min={0} threshold={2} type="bar" legend={true}
+            xAxis={[]}
+            units="TB" small={true} />
+          </div>
+          <pre><code className="html">
+            {"<Chart type=\"bar\" small={true} threshold={2}\n" +
+              " legend=(true) units=\"TB\"\n xAxis={[]}\n" +
+              " series={[]} />"}
           </code></pre>
 
         </section>

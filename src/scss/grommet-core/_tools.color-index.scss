@@ -1,6 +1,12 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 @mixin graph-stroke-color {
+  &.color-index-loading {
+    stroke: $unset-color;
+    stroke-dasharray: 1px 10px;
+    stroke-dashoffset: 0;
+  }
+
   &.color-index-unset {
     stroke: $unset-color;
   }
@@ -89,6 +95,11 @@
         stop-color: $color;
       }
 
+      .mid {
+        stop-color: $color;
+        stop-opacity: 0.5;
+      }
+
       .end {
         stop-color: $color;
         stop-opacity: 0;
@@ -101,6 +112,11 @@
     &.color-index-graph-#{$i+length($brand-graph-colors)} {
       .begin {
         stop-color: nth($brand-graph-colors, $i);
+      }
+
+      .mid {
+        stop-color: nth($brand-graph-colors, $i);
+        stop-opacity: 0.5;
       }
 
       .end {

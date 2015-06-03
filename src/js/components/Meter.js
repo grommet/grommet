@@ -133,11 +133,15 @@ var Meter = React.createClass({
   },
 
   _generateSeries: function (props, min, max) {
-    var remaining = max.value - props.value;
-    return [
-      {value: props.value, important: true},
-      {value: remaining, colorIndex: 'unset'}
-    ];
+    var series = [];
+    if (props.value) {
+      var remaining = max.value - props.value;
+      series = [
+        {value: props.value, important: true},
+        {value: remaining, colorIndex: 'unset'}
+      ];
+    }
+    return series;
   },
 
   _importantIndex: function (series) {
@@ -170,6 +174,32 @@ var Meter = React.createClass({
     return total;
   },
 
+  _viewBoxDimensions: function () {
+    var viewBoxHeight;
+    var viewBoxWidth;
+    if ('arc' === this.props.type) {
+      if (this.props.vertical) {
+        viewBoxWidth = ARC_HEIGHT;
+        viewBoxHeight = CIRCLE_WIDTH;
+      } else {
+        viewBoxWidth = CIRCLE_WIDTH;
+        viewBoxHeight = ARC_HEIGHT;
+      }
+    } else if ('circle' === this.props.type) {
+      viewBoxWidth = CIRCLE_WIDTH;
+      viewBoxHeight = CIRCLE_WIDTH;
+    } else if ('bar' === this.props.type) {
+      if (this.props.vertical) {
+        viewBoxWidth = BAR_THICKNESS;
+        viewBoxHeight = BAR_LENGTH;
+      } else {
+        viewBoxWidth = BAR_LENGTH;
+        viewBoxHeight = BAR_THICKNESS;
+      }
+    }
+    return [viewBoxWidth, viewBoxHeight];
+  },
+
   // Generates state based on the provided props.
   _stateFromProps: function (props) {
     var total;
@@ -188,15 +218,18 @@ var Meter = React.createClass({
     // Determine important index.
     var importantIndex = this._importantIndex(series);
     total = this._seriesTotal(series);
+    // Determine the viewBox dimensions
+    var viewBoxDimensions = this._viewBoxDimensions();
 
     var state = {
       importantIndex: importantIndex,
       activeIndex: importantIndex,
-      legendPosition: 'bottom',
       series: series,
       min: min,
       max: max,
-      total: total
+      total: total,
+      viewBoxWidth: viewBoxDimensions[0],
+      viewBoxHeight: viewBoxDimensions[1]
     };
 
     if ('arc' === this.props.type) {
@@ -220,6 +253,7 @@ var Meter = React.createClass({
 
   getInitialState: function() {
     var state = this._stateFromProps(this.props);
+    state.legendPosition = 'bottom';
     state.initial = true;
     return state;
   },
@@ -250,59 +284,86 @@ var Meter = React.createClass({
     return Math.round(this.state.scale * value);
   },
 
+  _barCommands: function (start, distance) {
+    var commands;
+    if (this.props.vertical) {
+      commands = "M" + MID_BAR_THICKNESS + "," + (BAR_LENGTH - start) +
+        " L" + MID_BAR_THICKNESS + "," + (BAR_LENGTH - (start + distance));
+    } else {
+      commands = "M" + start + "," + MID_BAR_THICKNESS +
+        " L" + (start + distance) + "," + MID_BAR_THICKNESS;
+    }
+    return commands;
+  },
+
   _renderBar: function () {
     var start = 0;
     var minRemaining = this.state.min.value;
-    var bars = this.state.series.map(function (item, index) {
+    var classes;
+    var commands;
+
+    var paths = this.state.series.map(function (item, index) {
       var colorIndex = this._itemColorIndex(item, index);
-      var barClasses = [CLASS_ROOT + "__bar"];
+      classes = [CLASS_ROOT + "__bar"];
       if (index === this.state.activeIndex) {
-        barClasses.push(CLASS_ROOT + "__bar--active");
+        classes.push(CLASS_ROOT + "__bar--active");
       }
-      barClasses.push("color-index-" + colorIndex);
+      classes.push("color-index-" + colorIndex);
 
       var value = item.value - minRemaining;
       minRemaining = Math.max(0, minRemaining - item.value);
       var distance = this._translateBarWidth(value);
-      var commands;
-      if (this.props.vertical) {
-        commands = "M" + MID_BAR_THICKNESS + "," + (BAR_LENGTH - start) +
-          " L" + MID_BAR_THICKNESS + "," + (BAR_LENGTH - (start + distance));
-      } else {
-        commands = "M" + start + "," + MID_BAR_THICKNESS +
-          " L" + (start + distance) + "," + MID_BAR_THICKNESS;
-      }
+      commands = this._barCommands(start, distance);
       start += distance;
 
       return (
-        <path key={index} className={barClasses.join(' ')} d={commands}
+        <path key={index} className={classes.join(' ')} d={commands}
           onMouseOver={this._onActivate.bind(this, index)}
           onMouseOut={this._onActivate.bind(this, this.state.importantIndex)}
           onClick={item.onClick} />
       );
     }, this);
 
-    return bars;
+    if (paths.length === 0) {
+      classes = [CLASS_ROOT + "__bar"];
+      classes.push(CLASS_ROOT + "__bar--loading");
+      classes.push("color-index-loading");
+      commands = this._barCommands(0, BAR_LENGTH);
+      paths.push(
+        <path key="loading" className={classes.join(' ')} d={commands} />
+      );
+    }
+
+    return paths;
+  },
+
+  _translateEndAngle: function (startAngle, value) {
+    return Math.min(360, Math.max(0,
+      startAngle + (this.state.anglePer * value)));
+  },
+
+  _arcCommands: function (startAngle, endAngle) {
+    return arcCommands(CIRCLE_WIDTH / 2, CIRCLE_WIDTH / 2, CIRCLE_RADIUS,
+      startAngle + this.state.angleOffset,
+      endAngle + this.state.angleOffset);
   },
 
   _renderArcOrCircle: function () {
     var startAngle = this.state.startAngle;
     var activeIndicator = null;
+    var classes;
+    var endAngle;
+    var commands;
 
     var paths = this.state.series.map(function (item, index) {
-      var sliceClasses = [CLASS_ROOT + "__slice"];
+      var classes = [CLASS_ROOT + "__slice"];
       if (index === this.state.activeIndex) {
-        sliceClasses.push(CLASS_ROOT + "__slice--active");
+        classes.push(CLASS_ROOT + "__slice--active");
       }
       var colorIndex = this._itemColorIndex(item, index);
-      sliceClasses.push("color-index-" + colorIndex);
-
-      var endAngle = Math.min(360, Math.max(0,
-        startAngle + (this.state.anglePer * item.value)));
-      // start from the bottom
-      var commands = arcCommands(CIRCLE_WIDTH / 2, CIRCLE_WIDTH / 2, CIRCLE_RADIUS,
-        startAngle + this.state.angleOffset,
-        endAngle + this.state.angleOffset);
+      classes.push("color-index-" + colorIndex);
+      endAngle = this._translateEndAngle(startAngle, item.value);
+      commands = this._arcCommands(startAngle, endAngle);
 
       if (index === this.state.activeIndex) {
         var indicatorCommands =
@@ -319,13 +380,24 @@ var Meter = React.createClass({
       startAngle = endAngle;
 
       return (
-        <path key={item.label} fill="none"
-          className={sliceClasses.join(' ')} d={commands}
+        <path key={item.label || index} fill="none"
+          className={classes.join(' ')} d={commands}
           onMouseOver={this._onActivate.bind(this, index)}
           onMouseOut={this._onActivate.bind(this, this.state.importantIndex)}
           onClick={item.onClick} />
       );
     }, this);
+
+    if (paths.length === 0) {
+      classes = [CLASS_ROOT + "__slice"];
+      classes.push(CLASS_ROOT + "__slice--loading");
+      classes.push("color-index-loading");
+      endAngle = this._translateEndAngle(this.state.startAngle, this.state.max.value);
+      commands = this._arcCommands(this.state.startAngle, endAngle);
+      paths.push(
+        <path key="loading" className={classes.join(' ')} d={commands} />
+      );
+    }
 
     return (
       <g>
@@ -415,31 +487,11 @@ var Meter = React.createClass({
     if (this.props.large) {
       classes.push(CLASS_ROOT + "--large");
     }
+    if (this.state.series.length === 0) {
+      classes.push(CLASS_ROOT + "--loading");
+    }
     if (this.props.className) {
       classes.push(this.props.className);
-    }
-
-    var viewBoxHeight;
-    var viewBoxWidth;
-    if ('arc' === this.props.type) {
-      if (this.props.vertical) {
-        viewBoxWidth = ARC_HEIGHT;
-        viewBoxHeight = CIRCLE_WIDTH;
-      } else {
-        viewBoxWidth = CIRCLE_WIDTH;
-        viewBoxHeight = ARC_HEIGHT;
-      }
-    } else if ('circle' === this.props.type) {
-      viewBoxWidth = CIRCLE_WIDTH;
-      viewBoxHeight = CIRCLE_WIDTH;
-    } else if ('bar' === this.props.type) {
-      if (this.props.vertical) {
-        viewBoxWidth = BAR_THICKNESS;
-        viewBoxHeight = BAR_LENGTH;
-      } else {
-        viewBoxWidth = BAR_LENGTH;
-        viewBoxHeight = BAR_THICKNESS;
-      }
     }
 
     var values = null;
@@ -488,7 +540,8 @@ var Meter = React.createClass({
     return (
       <div className={classes.join(' ')}>
         <svg className={CLASS_ROOT + "__graphic"}
-          viewBox={"0 0 " + viewBoxWidth + " " + viewBoxHeight}
+          viewBox={"0 0 " + this.state.viewBoxWidth +
+            " " + this.state.viewBoxHeight}
           preserveAspectRatio="xMidYMid meet">
           <g>
             {values}

@@ -272,6 +272,22 @@ var MeterDoc = React.createClass({
             {"<Meter value={" + simpleValue + "} type=\"circle\" large={true} />"}
           </code></pre>
 
+          <h3>Bar, Loading</h3>
+          <div className="example">
+            <Meter value={undefined} />
+          </div>
+          <pre><code className="html">
+            {"<Meter value={undefined} />"}
+          </code></pre>
+
+          <h3>Arc, Loading</h3>
+          <div className="example">
+            <Meter value={undefined} type="arc" />
+          </div>
+          <pre><code className="html">
+            {"<Meter value={undefined} type=\"arc\" />"}
+          </code></pre>
+
         </section>
       </GrommetDocument>
     );
