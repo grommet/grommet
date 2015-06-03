@@ -34,7 +34,7 @@ var dateSeries = [
     [new Date(Date.parse("2015-05-18")), 2],
     [new Date(Date.parse("2015-05-17")), 1],
     [new Date(Date.parse("2015-05-16")), 4],
-    [new Date(Date.parse("2015-05-15")), 2],
+    [new Date(Date.parse("2015-05-15")), 2]
   ], colorIndex: "graph-4"}
 ];
 
