@@ -8,17 +8,17 @@ var expect = require('expect');
 var testSeries = [
   {
     label: 'ascending',
-    values: [[3,3], [2,2], [1,1]],
+    values: [[3, 3], [2, 2], [1, 1]],
     colorIndex: "graph-1"
   },
   {
     label: 'descending',
-    values: [[3,1], [2,2], [1,3]],
+    values: [[3, 1], [2, 2], [1, 3]],
     colorIndex: "graph-2"
   },
   {
     label: 'peak',
-    values: [[3,1], [2,2], [1,1]],
+    values: [[3, 1], [2, 2], [1, 1]],
     colorIndex: "graph-3"
   }
 ];

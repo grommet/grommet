@@ -36,7 +36,8 @@ module.exports = {
     var result = [{ counts: [
       {count: 10, value: 'Test1'},
       {count: 20, value: 'Test2'}
-    ]}]
+    ]}];
+
     IndexActionsMock.__set__('Rest', {
       get: function () {
         return {

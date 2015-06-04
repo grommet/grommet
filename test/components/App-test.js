@@ -35,7 +35,6 @@ describe('Grommet App', function() {
     var Component = GrommetTestUtils.getComponent(__path__, <LoginForm />, { locales: 'pt-BR' });
 
     GrommetTestUtils.componentShouldExist(Component, 'login-form');
-    var React = require('react/addons');
     var TestUtils = React.addons.TestUtils;
     var component = TestUtils.findRenderedDOMComponentWithClass(Component, 'call-to-action');
     expect(component.getDOMNode().value).toBe('Logar');

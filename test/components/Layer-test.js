@@ -8,7 +8,7 @@ describe('Grommet Layer', function() {
   beforeEach(function() {
     var elements = document.body.getElementsByClassName('layer');
 
-    while(elements.length > 0){
+    while (elements.length > 0) {
       elements[0].parentNode.removeChild(elements[0]);
     }
   });
@@ -19,7 +19,7 @@ describe('Grommet Layer', function() {
 
     var LayerDialog = React.createClass({
       childContextTypes: {
-        router: React.PropTypes.func,
+        router: React.PropTypes.func
       },
       getChildContext: function () {
         return {

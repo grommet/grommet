@@ -36,7 +36,7 @@ describe('Grommet Alert', function() {
     GrommetTestUtils.componentShouldExist(Component, 'alert__timestamp', 'Tuesday, November 10, 2015, 3:10:09 AM');
   });
 
-   it('loads a Alert component with created date in pt-BR locale', function() {
+  it('loads a Alert component with created date in pt-BR locale', function() {
 
     var Alert = require('../../../src/js/components/index/Alert');
     var resource = {

@@ -73,7 +73,7 @@ describe('Grommet IndexMeter', function() {
           return {
             fullText: 'Filter Me',
             replaceAttributeValues: function() {}
-          }
+          };
         }
       }
     };

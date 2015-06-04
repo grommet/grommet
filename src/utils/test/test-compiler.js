@@ -1,14 +1,16 @@
 //based on https://github.com/danvk/mocha-react
-var fs = require('fs'),
-  ReactTools = require('react-tools'),
-  origJs = require.extensions['.js'];
+var fs = require('fs');
+var ReactTools = require('react-tools');
+var origJs = require.extensions['.js'];
 
 // A module that exports a single, stubbed-out React Component.
 var reactStub = 'module.exports = require("react").createClass({render:function(){return null;}});';
 
 // Should this file be stubbed out for testing?
 function shouldStub(filename) {
-  if (!global.reactModulesToStub) return false;
+  if (!global.reactModulesToStub) {
+    return false;
+  }
 
   // Check if the file name ends with any stub path.
   var stubs = global.reactModulesToStub;
