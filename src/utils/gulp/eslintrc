@@ -36,11 +36,6 @@ rules:
   dot-notation: 2
   consistent-return: 2
   no-unused-vars: [2, args: none]
-  quotes: 0
-  #change soon back to quotes: [2, 'single']
-
-  # WARNINGS
-  no-trailing-spaces: 1
 
   # DISABLED
   max-len: 0
@@ -60,6 +55,8 @@ rules:
   no-alert: 0
   no-process-exit: 0
   no-extend-native: 0
+  block-scoped-var: 0
+  quotes: 0
 
   react:
     - display-name: 1

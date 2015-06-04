@@ -16,7 +16,7 @@ gulp.task('sync', function() {
       clean: true,
       silent: false,
       emptyDirectories: true,
-      exclude: ['.DS_Store', 'node_modules'],
+      exclude: ['.DS_Store', 'node_modules']
     }));
 });
 

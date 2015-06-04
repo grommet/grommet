@@ -96,7 +96,13 @@ var opts = {
     }
   ],
   scssAssets: ['src/scss/**/*.scss'],
-  jsAssets: ['src/js/**/*.js', 'src/utils/**/*.js', 'test/**/*.js', 'examples/cto-app-tuner/src/**/*.js'],
+  jsAssets: [
+    'src/js/**/*.js',
+    'src/utils/**/*.js',
+    'test/**/*.js',
+    'examples/cto-app-tuner/src/**/*.js',
+    'examples/server/*.js'
+  ],
   mainJs: 'src/js/index.js',
   mainScss: 'src/scss/grommet-core/index.scss',
   sync: {

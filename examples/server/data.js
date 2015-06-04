@@ -27,11 +27,11 @@ function categoryId(categoryName) {
 
 var Data = {
 
-  getItems: function (categoryName, raw) {
+  getItems: function(categoryName, raw) {
     var result = [];
     if (categoryName) {
       if (Array.isArray(categoryName)) {
-        for (var i=0; i<categoryName.length; i++) {
+        for (var i = 0; i < categoryName.length; i++) {
           result = result.concat(_categories[categoryName[i]]);
         }
       } else {
@@ -45,10 +45,12 @@ var Data = {
         }
       }
     }
-    if (! raw) {
+    if (!raw) {
       // add _indexAttributes
-      result = result.map(function (item) {
-        item = _.extend({attributes: item._indexAttributes || {}}, item);
+      result = result.map(function(item) {
+        item = _.extend({
+          attributes: item._indexAttributes || {}
+        }, item);
         delete item._indexAttributes;
         delete item._resourceAttributes;
         return item;
@@ -57,7 +59,7 @@ var Data = {
     return result;
   },
 
-  getResource: function (uri) {
+  getResource: function(uri) {
     // move _resourceAttributes to top
     var resource = _resources[uri];
     if (resource) {
@@ -68,63 +70,67 @@ var Data = {
     return resource;
   },
 
-  getAssociations: function (uri) {
+  getAssociations: function(uri) {
     return _associations[uri];
   },
 
-  addCategory: function (name) {
+  addCategory: function(name) {
     _categories[name] = [];
   },
 
-  addResource: function (categoryName, resource) {
+  addResource: function(categoryName, resource) {
     _resources[resource.uri] = resource;
     if (_categories[categoryName]) {
       _categories[categoryName].push(resource);
     }
   },
 
-  updateResource: function (categoryName, resource) {
+  updateResource: function(categoryName, resource) {
     _resources[resource.uri] = resource;
     if (_categories[categoryName]) {
-      _categories[categoryName] =
-        _categories[categoryName].filter(function (res) {
-          return (res.uri !== resource.uri);
-        });
+      _categories[categoryName] = _categories[categoryName].filter(function(res) {
+        return (res.uri !== resource.uri);
+      });
       _categories[categoryName].push(resource);
     }
   },
 
-  deleteResource: function (categoryName, uri) {
+  deleteResource: function(categoryName, uri) {
     delete _resources[uri];
     if (_categories[categoryName]) {
-      _categories[categoryName] =
-        _categories[categoryName].filter(function (res) {
-          return (res.uri !== uri);
-        });
+      _categories[categoryName] = _categories[categoryName].filter(function(res) {
+        return (res.uri !== uri);
+      });
     }
   },
 
-  addAssociation: function (name, parentUri, childUri) {
-    if (! _associations.hasOwnProperty(parentUri)) {
-        _associations[parentUri] = {};
+  addAssociation: function(name, parentUri, childUri) {
+    if (!_associations.hasOwnProperty(parentUri)) {
+      _associations[parentUri] = {};
     }
     var assoc = _associations[parentUri];
-    if (! assoc.hasOwnProperty(name)) {
-        assoc[name] = {parents: [], children: []};
+    if (!assoc.hasOwnProperty(name)) {
+      assoc[name] = {
+        parents: [],
+        children: []
+      };
     }
     assoc[name].children.push(childUri);
 
-    if (! _associations.hasOwnProperty(childUri)) {
-        _associations[childUri] = {};
+    if (!_associations.hasOwnProperty(childUri)) {
+      _associations[childUri] = {};
     }
     assoc = _associations[childUri];
-    if (! assoc.hasOwnProperty(name)) {
-        assoc[name] = {parents: [], children: []};
+    if (!assoc.hasOwnProperty(name)) {
+      assoc[name] = {
+        parents: [],
+        children: []
+      };
     }
     assoc[name].parents.push(parentUri);
   },
 
-  getPreferences: function (auth, categoryName) {
+  getPreferences: function(auth, categoryName) {
     var result = null;
     var id = categoryId(categoryName);
     if (_preferences.hasOwnProperty(auth) &&
@@ -134,14 +140,14 @@ var Data = {
     return result;
   },
 
-  setPreferences: function (auth, categoryName, data) {
+  setPreferences: function(auth, categoryName, data) {
     var id = categoryId(categoryName);
-    if (! _preferences.hasOwnProperty(auth)) {
+    if (!_preferences.hasOwnProperty(auth)) {
       _preferences[auth] = {};
     }
-    return _preferences[auth][id] = data;
+    _preferences[auth][id] = data;
   }
 
-}
+};
 
 module.exports = Data;
