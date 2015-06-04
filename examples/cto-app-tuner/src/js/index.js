@@ -29,7 +29,7 @@ var Main = React.createClass({
   },
 
   _checkOverride: function() {
-    if( (this.state.fast + this.state.easy + this.state.fun) > 220 ) {
+    if ( (this.state.fast + this.state.easy + this.state.fun) > 220 ) {
       this.setState({overrideActive: true});
     }
   },
@@ -77,8 +77,8 @@ var Main = React.createClass({
     var success = Math.round(this._getFriendliness() / 10);
 
     var series = [
-      {label: 'Delight', values: [[5,delight], [4,2], [3,4], [2,3], [1,4]], colorIndex: "graph-1"},
-      {label: 'Success', values: [[5,success], [4,3], [3,2], [2,3], [1,2]], colorIndex: "graph-2"}
+      {label: 'Delight', values: [[5, delight], [4, 2], [3, 4], [2, 3], [1, 4]], colorIndex: "graph-1"},
+      {label: 'Success', values: [[5, success], [4, 3], [3, 2], [2, 3], [1, 2]], colorIndex: "graph-2"}
     ];
 
     var editControl = null;
