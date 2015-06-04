@@ -486,7 +486,7 @@ gulp.task('release:stable', ['dist', 'release:createTmp'], function(done) {
                     args: '--all'
                   }))
                   .pipe(git.commit('Stable dev version update.')).on('end', function() {
-                  git.push('origin', 'stable', function(err) {
+                  git.push('origin', 'stable', { quiet: true }, function(err) {
                     if (err) {
                       throw err;
                     }

@@ -25,16 +25,20 @@ function addResource(uri, result, associationContext) {
   }
 }
 
+function add(uri, result, associations, callback) {
+  if (associations.hasOwnProperty(name)) {
+    associations[name].children.forEach(function (childUri) {
+      result.links.push({parentUri: uri, childUri: childUri});
+      addResource(childUri, result, {name: name, parentUri: uri});
+      callback(childUri, result);
+    });
+  }
+}
+
 function addChildren(uri, result) {
   var associations = data.getAssociations(uri);
   for (var name in associations) {
-    if (associations.hasOwnProperty(name)) {
-      associations[name].children.forEach(function (childUri) {
-        result.links.push({parentUri: uri, childUri: childUri});
-        addResource(childUri, result, {name: name, parentUri: uri});
-        addChildren(childUri, result);
-      });
-    }
+    add(uri, result, associations, addChildren);
   }
 }
 
@@ -42,11 +46,7 @@ function addParents(uri, result) {
   var associations = data.getAssociations(uri);
   for (var name in associations) {
     if (associations.hasOwnProperty(name)) {
-      associations[name].parents.forEach(function (parentUri) {
-        result.links.push({parentUri: parentUri, childUri: uri});
-        addResource(parentUri, result, {name: name, childUri: uri});
-        addParents(parentUri, result);
-      });
+      add(uri, result, associations, addParents);
     }
   }
 }
