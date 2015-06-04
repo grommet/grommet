@@ -3,4 +3,5 @@ languages:
 exclude_paths:
   - "src/js/utils/AlphaNum.js"
   - "src/js/utils/Cookies.js"
-  - "**/messages/**"
+  - "src/js/messages/*.js"
+  - "examples/medium-app/src/messages/*.js"
