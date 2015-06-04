@@ -32,6 +32,20 @@
       }
     }
 
+    > iframe {
+      width: 100%;
+      max-width: $readable-text-width;
+      height: 400px;
+
+      @include media-query(palm) {
+        height: 250px;
+      }
+
+      @include media-query(lap) {
+        height: 250px;
+      }
+    }
+
     > ol,
     > ul {
       @include media-query(palm) {

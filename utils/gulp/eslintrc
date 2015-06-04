@@ -14,10 +14,14 @@ env:
 globals:
   __DEV__: true
   __THEME__: true
-  IntlPolyfill: true
-  __DEV_MODE__: true
-  Modernizr: true
   __GROMMET__: true
+  __DEV_MODE__: true
+  IntlPolyfill: true
+  Modernizr: true
+  describe: true
+  it: true
+  beforeEach: true
+  afterEach: true
 
 rules:
   # ERRORS
@@ -37,6 +41,8 @@ rules:
 
   # WARNINGS
   no-trailing-spaces: 1
+
+  # DISABLED
   max-len: 0
   #change soon back to max-len: [1, 80]
   no-underscore-dangle: 0
@@ -52,6 +58,8 @@ rules:
   no-multi-spaces: 0
   no-shadow: 0
   no-alert: 0
+  no-process-exit: 0
+  no-extend-native: 0
 
   react:
     - display-name: 1

@@ -1,5 +1,15 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
+@include keyframes(reveal-chart) {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 .chart {
   position: relative;
   display: block;
@@ -16,6 +26,12 @@
 
   &__values {
 
+    @include media-query(lap-and-up) {
+      g {
+        @include animation('reveal-chart 1.5s');
+      }
+    }
+
     &-line {
       stroke-width: 3px;
       @include graph-stroke-color();
@@ -28,6 +44,11 @@
     //    @include graph-fill-color();
     //  }
     //}
+
+    &--loading {
+      stroke-width: $inuit-base-spacing-unit;
+      @include graph-stroke-color();
+    }
   }
 
   &__threshold {

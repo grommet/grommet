@@ -8,7 +8,7 @@ var CLASS_ROOT = "chart";
 var DEFAULT_WIDTH = 400;
 var DEFAULT_HEIGHT = 200;
 var XAXIS_HEIGHT = 24;
-var BAR_PADDING = 2;
+var BAR_PADDING = 6;
 
 var Chart = React.createClass({
 
@@ -322,8 +322,8 @@ var Chart = React.createClass({
       }, this);
 
       var colorIndex = this._itemColorIndex(item, seriesIndex);
-      var className = CLASS_ROOT + "__values-" + this.props.type +
-        " color-index-" + colorIndex;
+      var classes = [CLASS_ROOT + "__values-" + this.props.type,
+        "color-index-" + colorIndex];
       var commands = null;
       var controlCoordinates = null;
       var previousControlCoordinates = null;
@@ -355,7 +355,7 @@ var Chart = React.createClass({
       var path = null;
       if ('line' === this.props.type) {
         path = (
-          <path fill="none" className={className} d={commands} />
+          <path fill="none" className={classes.join(' ')} d={commands} />
         );
       } else if ('area' === this.props.type) {
         // For area charts, close the path by drawing down to the bottom
@@ -369,7 +369,7 @@ var Chart = React.createClass({
         var fill = 'url(#' + CLASS_ROOT + "__gradient-" + colorIndex + ')';
 
         path = (
-          <path stroke="none" className={className} fill={fill} d={commands} />
+          <path stroke="none" className={classes.join(' ')} fill={fill} d={commands} />
         );
       }
 
@@ -387,7 +387,7 @@ var Chart = React.createClass({
   _renderBars: function () {
     var bounds = this.state.bounds;
 
-    var bars = bounds.xAxis.map(function (obj, xIndex) {
+    var values = bounds.xAxis.map(function (obj, xIndex) {
       var baseY = bounds.minY;
       var stepBars = this.props.series.map(function (item, seriesIndex) {
 
@@ -423,7 +423,7 @@ var Chart = React.createClass({
       );
     }, this);
 
-    return bars;
+    return values;
   },
 
   // Converts the threshold value into a line.
@@ -449,6 +449,7 @@ var Chart = React.createClass({
           className={CLASS_ROOT + "__gradient color-index-" + colorIndex}
           x1="0" x2="0" y1="0" y2="1">
           <stop className={"begin"} offset="0"/>
+          <stop className={"mid"} offset="0.2"/>
           <stop className={"end"} offset="1"/>
         </linearGradient>
       );
@@ -547,6 +548,7 @@ var Chart = React.createClass({
   _renderCursor: function () {
     var value = this.props.series[0].values[this.state.activeXIndex];
     var coordinates = this._coordinates(value);
+    coordinates[0] += BAR_PADDING;
     // Offset it just a little if it is at an edge.
     var x = Math.max(1, Math.min(coordinates[0], this.state.width - 1));
     return (
@@ -589,6 +591,20 @@ var Chart = React.createClass({
       values = this._renderLinesOrAreas();
     } else if ('bar' === this.props.type) {
       values = this._renderBars();
+    }
+
+    if (values.length === 0) {
+      classes.push(CLASS_ROOT + "--loading");
+      var valueClasses = [CLASS_ROOT + "__values"];
+      valueClasses.push(CLASS_ROOT + "__values--loading");
+      valueClasses.push("color-index-loading");
+      var commands = "M0," + (this.state.height / 2) +
+        " L" + this.state.width + "," + (this.state.height / 2);
+      values.push(
+        <g key="loading">
+          <path stroke="none" className={valueClasses.join(' ')} d={commands} />
+        </g>
+      );
     }
 
     var gradients = null;

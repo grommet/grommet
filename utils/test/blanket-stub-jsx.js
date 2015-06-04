@@ -1,7 +1,5 @@
 // Transform & instrument JS for Blanket coverage analysis.
 // based on https://github.com/alex-seville/blanket/blob/master/src/node-loaders/coffee-script.js
-'use strict';
-
 var fs = require('fs');
 var glob = require('glob');
 var path = require('path');
@@ -20,29 +18,29 @@ module.exports = function(blanket) {
 
     // React-ify as necessary.
     var content = transformer.transform(filename) ||
-        fs.readFileSync(filename, 'utf8');
+      fs.readFileSync(filename, 'utf8');
 
     // Don't instrument code unless it passes the filter & is non-stubby.
     var pattern = blanket.options('filter');
     var normalizedFilename = blanket.normalizeBackslashes(filename);
     if (transformer.shouldStub(filename) ||
-        !blanket.matchPattern(normalizedFilename, pattern)) {
+      !blanket.matchPattern(normalizedFilename, pattern)) {
       localModule._compile(content, normalizedFilename);
-      delete require.cache[normalizedFilename];  // might not be stubbed in the future.
-      return;
+      delete require.cache[normalizedFilename]; // might not be stubbed in the future.
+      return false;
     }
 
     blanket.instrument({
       inputFile: content,
       inputFileName: normalizedFilename
-    }, function(instrumented){
+    }, function(instrumented) {
       var baseDirPath = blanket.normalizeBackslashes(path.dirname(normalizedFilename)) + '/.';
       try {
-        instrumented = instrumented.replace(/require\s*\(\s*("|')\./g,'require($1' + baseDirPath);
+        instrumented = instrumented.replace(/require\s*\(\s*("|')\./g, 'require($1' + baseDirPath);
         localModule._compile(instrumented, normalizedFilename);
-        delete require.cache[normalizedFilename];  // might be stubbed in the future.
-      } catch(err){
-        console.log("Error parsing instrumented code: " + err + '. Path: '+ filename);
+        delete require.cache[normalizedFilename]; // might be stubbed in the future.
+      } catch (err) {
+        console.log("Error parsing instrumented code: " + err + '. Path: ' + filename);
       }
     });
   };
@@ -55,7 +53,7 @@ module.exports = function(blanket) {
       for (var i = 0; i < antifilters.length; i++) {
         var antifilter = antifilters[i];
         if (file.indexOf(antifilter) > 0) {
-          return;
+          return false;
         }
       }
     }

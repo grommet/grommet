@@ -1,8 +1,8 @@
 # Grommet: The most advanced UX framework for enterprise apps
 
-[![Slack](http://alansouzati.github.io/artic/img/slack-badge.svg)](https://grommet.slack.com)  [![Build Status](https://magnum.travis-ci.com/HewlettPackard/grommet.svg?token=1waizR3WLGtkHJzKYxT8&branch=master)](https://magnum.travis-ci.com/HewlettPackard/grommet)  [![Coverage Status](https://coveralls.io/repos/HewlettPackard/grommet/badge.svg?branch=master&t=Wle9Qs)](https://coveralls.io/r/HewlettPackard/grommet?branch=master)
+[![Slack](http://alansouzati.github.io/artic/img/slack-badge.svg)](https://grommet.slack.com)  [![Build Status](https://api.travis-ci.org/HewlettPackard/grommet.svg)](https://travis-ci.org/HewlettPackard/grommet)  [![Coverage Status](https://coveralls.io/repos/HewlettPackard/grommet/badge.svg)](https://coveralls.io/r/HewlettPackard/grommet) [![Code Climate](https://codeclimate.com/github/HewlettPackard/grommet/badges/gpa.svg)](https://codeclimate.com/github/HewlettPackard/grommet)
 
-<img align="right" height="260" src="http://alansouzati.github.io/artic/img/grommet-logo.png">
+<img align="right" height="260" src="http://grommet.io/docs/img/grommet.svg">
 
 ### Documentation
 

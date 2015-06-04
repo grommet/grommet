@@ -45,9 +45,9 @@ var webpackConfig = {
       },
       {
         test: /\.scss$/,
-        loader: 'style!css!sass?outputStyle=expanded&'+
+        loader: 'style!css!sass?outputStyle=expanded&' +
           'includePaths[]=' +
-            (path.resolve(process.cwd(), 'node_modules'))
+          (path.resolve(process.cwd(), 'node_modules'))
       }
     ]
   }
@@ -80,12 +80,14 @@ module.exports = function(gulp, opts) {
         var assets = [asset];
         if (copyAsset.ignores) {
           copyAsset.ignores.forEach(function(ignore) {
-            assets.push('!'+ asset + ignore);
-            assets.push('!'+ asset +'**/'+ignore);
-            assets.push('!'+ asset +'**/'+ignore+'/**');
+            assets.push('!' + asset + ignore);
+            assets.push('!' + asset + '**/' + ignore);
+            assets.push('!' + asset + '**/' + ignore + '/**');
           });
         }
-        gulp.src(assets, {dot: true}).pipe(gulp.dest(copyAsset.dist ? copyAsset.dist : dist));
+        gulp.src(assets, {
+          dot: true
+        }).pipe(gulp.dest(copyAsset.dist ? copyAsset.dist : dist));
       }
 
     });
@@ -106,74 +108,80 @@ module.exports = function(gulp, opts) {
       return gulp.src(options.scssAssets || []).pipe(scsslint({
         'config': scssLintPath
       }))
-      .pipe(scsslint.failReporter())
-      .on('error', failLintBuild);
+        .pipe(scsslint.failReporter())
+        .on('error', failLintBuild);
     }
   });
 
   gulp.task('jslint', function() {
-   return gulp.src(options.jsAssets || [])
-        .pipe(react())
-        .pipe(eslint(esLintPath))
-        .pipe(eslint.formatEach())
-        .pipe(eslint.failOnError());
+    return gulp.src(options.jsAssets || [])
+      .pipe(react())
+      .pipe(eslint(esLintPath))
+      .pipe(eslint.formatEach())
+      .pipe(eslint.failOnError());
   });
 
-  gulp.task('test', function (done) {
+  gulp.task('test', function(done) {
     if (options.testPaths) {
       var mocha = require('gulp-mocha');
       var watch = require('gulp-watch');
-      var argv =  require('yargs').argv;
+      var argv = require('yargs').argv;
       require('../test/test-compiler');
       require('../test/mocked-dom')('<html><body></body></html>');
 
-      gulp.src(options.testPaths, { read: false })
+      gulp.src(options.testPaths, {
+        read: false
+      })
         .pipe(mocha({
           reporter: 'spec'
-        })).once('end', function () {
-          if (argv.w) {
-            var watchFolders = options.testPaths.slice();
-            options.jsAssets.forEach(function (jsAsset) {
-              watchFolders.push(jsAsset);
+        })).once('end', function() {
+        if (argv.w) {
+          var watchFolders = options.testPaths.slice();
+          options.jsAssets.forEach(function(jsAsset) {
+            watchFolders.push(jsAsset);
+          });
+          watch(watchFolders, function() {
+            gulp.src(options.testPaths, {
+              read: false
+            })
+              .pipe(mocha({
+                reporter: 'spec'
+              })).once('end', function() {
+              console.log('Watching for changes...');
+            }).on('error', function(err) {
+              console.error('Test failed:', err.stack || err);
+              if (argv.w) {
+                this.emit('end');
+              } else {
+                process.exit(1);
+              }
             });
-            watch(watchFolders, function() {
-              gulp.src(options.testPaths, { read: false })
-                .pipe(mocha({
-                  reporter: 'spec'
-                })).once('end', function() {
-                  console.log('Watching for changes...');
-                }).on('error', function (err) {
-                  console.error('Test failed:', err.stack || err);
-                  if (argv.w) {
-                    this.emit('end');
-                  } else {
-                    process.exit(1);
-                  }
-                });
-            });
-            console.log('Watching for changes...');
-          } else {
-            done();
-          }
-        }).on('error', function (err) {
-          console.error('Test failed:', err.stack || err);
-          if (argv.w) {
-            this.emit('end');
-          } else {
-            process.exit(1);
-          }
-        });
+          });
+          console.log('Watching for changes...');
+        } else {
+          done();
+        }
+      }).on('error', function(err) {
+        console.error('Test failed:', err.stack || err);
+        if (argv.w) {
+          this.emit('end');
+        } else {
+          process.exit(1);
+        }
+      });
     } else {
       done();
     }
   });
 
-  gulp.task('coverage', ['test'], function (done) {
+  gulp.task('coverage', ['test'], function(done) {
     if (options.testPaths) {
       var blanket = require('gulp-blanket-mocha');
-      gulp.src(options.testPaths, { read: false })
+      gulp.src(options.testPaths, {
+        read: false
+      })
         .pipe(blanket({
-          instrument:[path.join(process.cwd(), 'src/js')],
+          instrument: [path.join(process.cwd(), 'src/js')],
           captureFile: 'test/coverage.html',
           reporter: 'html-cov'
         }));
@@ -212,12 +220,12 @@ module.exports = function(gulp, opts) {
     var config = assign({}, webpackConfig, options.webpack || {}, {
       plugins: [
         new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false
-            }
+          compress: {
+            warnings: false
+          }
         }),
         new webpack.DefinePlugin(env)
-        //new webpack.optimize.DedupePlugin()
+      //new webpack.optimize.DedupePlugin()
       ]
     });
 
@@ -319,7 +327,8 @@ module.exports = function(gulp, opts) {
       if (err) {
         console.error('[webpack-dev-server] failed to start:', err);
       } else {
-        console.log('[webpack-dev-server] started:', 'Browse to http://localhost:'+ options.devServerPort +'/webpack-dev-server/');
+        console.log('[webpack-dev-server] started:', 'Browse to http://localhost:' +
+          options.devServerPort + '/webpack-dev-server/');
       }
     });
 
@@ -333,21 +342,20 @@ module.exports = function(gulp, opts) {
     if (options.sync) {
       var rsync = require('gulp-rsync');
       gulp.src(dist)
-      .pipe(rsync({
-        root: dist,
-        hostname: options.sync.hostname,
-        username: options.sync.username,
-        destination: options.sync.remoteDestination,
-        recursive: true,
-        relative: true,
-        incremental: true,
-        silent: true,
-        clean: true,
-        emptyDirectories: true,
-        exclude: ['.DS_Store'],
-      }));
+        .pipe(rsync({
+          root: dist,
+          hostname: options.sync.hostname,
+          username: options.sync.username,
+          destination: options.sync.remoteDestination,
+          recursive: true,
+          relative: true,
+          incremental: true,
+          silent: true,
+          clean: true,
+          emptyDirectories: true,
+          exclude: ['.DS_Store']
+        }));
     }
 
   });
-
 };

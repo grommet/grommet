@@ -124,7 +124,7 @@
             .layer__container {
               left: auto;
               right: - halve($inuit-base-spacing-unit);
-              border-right: 2px solid $brand-color;
+              border-right: 10px solid $brand-color;
               @include animation('peek-right 0.5s ease-in-out alternate 5');
             }
           }
