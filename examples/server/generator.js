@@ -15,22 +15,22 @@ var SCHEMA = {
       }
     },
     associations: {
-      "SERVER_PROFILE_TO_NETWORK" : {
+      "SERVER_PROFILE_TO_NETWORK": {
         category: "ethernet-networks",
         count: 40,
         share: true
       },
-      "SERVER_PROFILE_TO_SERVER_HARDWARE" : {
+      "SERVER_PROFILE_TO_SERVER_HARDWARE": {
         category: "server-hardware",
         count: 1,
         share: false
       },
-      "SERVER_PROFILE_TO_VOLUME" : {
+      "SERVER_PROFILE_TO_VOLUME": {
         category: "volumes",
         count: 3,
         share: false
       },
-      "SERVER_PROFILE_TO_FIRMWARE_DRIVER" : {
+      "SERVER_PROFILE_TO_FIRMWARE_DRIVER": {
         category: "firmware-drivers",
         count: 1,
         share: true
@@ -40,10 +40,12 @@ var SCHEMA = {
   "server-hardware": {
     prefix: "enclosure 1, bay",
     indexAttributes: {
-      model: {prefix: 'proliant bl460c gen'}
+      model: {
+        prefix: 'proliant bl460c gen'
+      }
     },
     associations: {
-      "SERVER_HARDWARE_TO_SERVER_HARDWARE_TYPE" : {
+      "SERVER_HARDWARE_TO_SERVER_HARDWARE_TYPE": {
         category: "server-hardware-types",
         count: 1,
         share: true
@@ -53,7 +55,9 @@ var SCHEMA = {
   "server-hardware-types": {
     prefix: "server type",
     indexAttributes: {
-      model: {prefix: 'proliant bl460c gen'}
+      model: {
+        prefix: 'proliant bl460c gen'
+      }
     },
     noStatus: true
   },
@@ -64,18 +68,18 @@ var SCHEMA = {
         bay: 1,
         model: 'abc',
         flavor: null
-      },{
+      }, {
         bay: 2,
         model: 'def'
       }]
     },
     associations: {
-      "ENCLOSURE_TO_SERVER_HARDWARE" : {
+      "ENCLOSURE_TO_SERVER_HARDWARE": {
         category: "server-hardware",
         count: 16,
         share: false
       },
-      "ENCLOSURE_TO_INTERCONNECT" : {
+      "ENCLOSURE_TO_INTERCONNECT": {
         category: "switches",
         count: 6,
         share: false
@@ -86,28 +90,39 @@ var SCHEMA = {
     prefix: "interconnect",
     indexAttributes: {
       model: 'FlexFabric 10G'
-    },
+    }
   },
   "ethernet-networks": {
     prefix: "net",
     indexAttributes: {
-      vlan: {prefix: '', unique: true}
+      vlan: {
+        prefix: '',
+        unique: true
+      }
     }
   },
   "fc-networks": {
     prefix: "san",
     indexAttributes: {
-      vlan: {prefix: '', unique: true, start: RESOURCE_COUNT}
+      vlan: {
+        prefix: '',
+        unique: true,
+        start: RESOURCE_COUNT
+      }
     }
   },
-  "volumes": {prefix: "volume"},
-  "storage-arrays": {prefix: "storage array"},
+  "volumes": {
+    prefix: "volume"
+  },
+  "storage-arrays": {
+    prefix: "storage array"
+  },
   "firmware-drivers": {
     count: 3,
     names: [
       "HP Service Pack For Proliant - OneView 2014 09 17 version 2014.11.0.00",
       "HP Service Pack For Proliant - OneView 2014 12 17 version 2014.12.0.00",
-      "HP Service Pack For Proliant - OneView 2015 03 17 version 2015.03.0.00",
+      "HP Service Pack For Proliant - OneView 2015 03 17 version 2015.03.0.00"
     ]
   },
   "alerts": {
@@ -124,14 +139,14 @@ var SCHEMA = {
 
 // derived from http://stackoverflow.com/questions/521295/javascript-random-seeds
 var seed = 1234;
-function random (scale) {
-    var x = Math.sin(seed++) * 10000;
-    return Math.round((x - Math.floor(x)) * scale);
+function random(scale) {
+  var x = Math.sin(seed++) * 10000;
+  return Math.round((x - Math.floor(x)) * scale);
 }
 
-function distribute (values) {
+function distribute(values) {
   var result;
-  for (var i=0; i<values.length; i++) {
+  for (var i = 0; i < values.length; i++) {
     if (Array.isArray(values[i])) {
       if (random(values[i][1]) === 0) {
         result = values[i][0];
@@ -145,7 +160,7 @@ function distribute (values) {
   return result;
 }
 
-function createCategories () {
+function createCategories() {
   for (var categoryName in SCHEMA) {
     if (SCHEMA.hasOwnProperty(categoryName)) {
       data.addCategory(categoryName);
@@ -153,11 +168,11 @@ function createCategories () {
   }
 }
 
-function buildItems (categoryName) {
+function buildItems(categoryName) {
   var category = SCHEMA[categoryName];
   var date = new Date();
   var count = category.count || RESOURCE_COUNT;
-  for (var i=1; i<=count; i++) {
+  for (var i = 1; i <= count; i++) {
     var name;
     if (category.prefix) {
       name = category.prefix + ' ' + i;
@@ -173,11 +188,11 @@ function buildItems (categoryName) {
       modified: date.toISOString()
     };
 
-    if (! category.noStatus) {
+    if (!category.noStatus) {
       resource.status = distribute([['Warning', 7], ['Error', 19], 'OK']);
     }
     // randomly reduce timestamp for the next item
-    date.setHours(date.getHours()-random(20)+1);
+    date.setHours(date.getHours() - random(20) + 1);
 
     if (category.indexAttributes) {
       resource._indexAttributes = {};
@@ -229,7 +244,7 @@ function buildItems (categoryName) {
   }
 }
 
-function createResources () {
+function createResources() {
   for (var categoryName in SCHEMA) {
     if (SCHEMA.hasOwnProperty(categoryName)) {
       buildItems(categoryName);
@@ -237,7 +252,7 @@ function createResources () {
   }
 }
 
-function createActivity () {
+function createActivity() {
   // associate alerts and tasks with resources
   var resources = [];
   for (var categoryName in SCHEMA) {
@@ -248,7 +263,7 @@ function createActivity () {
   }
 
   var index = 0;
-  data.getItems('alerts', true).forEach(function (alert) {
+  data.getItems('alerts', true).forEach(function(alert) {
     if ('Active' !== alert.state) {
       var resource = resources[index];
       index += 1;
@@ -263,18 +278,22 @@ function createActivity () {
   });
 
   index = 0;
-  data.getItems('tasks', true).forEach(function (task) {
+  data.getItems('tasks', true).forEach(function(task) {
     var resource = resources[index];
     index += 1;
     task.attributes = {
       associatedResourceCategory: resource.category,
       associatedResourceUri: resource.uri,
       associatedResourceName: resource.name,
-      parentTaskUri: null,
+      parentTaskUri: null
     };
     task.state = distribute([['Running', 13], ['Error', 9], ['Warning', 7], 'Completed']);
     task.status = ('Running' === task.state ? 'Unknown' :
-      {'Completed': 'OK', 'Warning': 'Warning', 'Error': 'Error'}[task.state]);
+      {
+        'Completed': 'OK',
+        'Warning': 'Warning',
+        'Error': 'Error'
+      }[task.state]);
   });
 }
 
@@ -293,8 +312,8 @@ function createAssociations() {
             var children = data.getItems(schema.category);
             var childIndex = 0;
 
-            parents.forEach(function (parent) {
-              for (var i=0; i<schema.count; i++) {
+            parents.forEach(function(parent) {
+              for (var i = 0; i < schema.count; i++) {
                 if (childIndex < children.length) {
                   data.addAssociation(name, parent.uri, children[childIndex].uri);
                   childIndex += 1;
@@ -313,7 +332,7 @@ function createAssociations() {
 
 var listener;
 
-function randomActivity() {
+/**function randomActivity() {
   var resource = data.getResource('/rest/server-profiles/1');
   if (resource) {
     var now = new Date();
@@ -333,21 +352,24 @@ function randomActivity() {
     };
     data.addResource('alerts', alert);
     if (listener) {
-      listener([{category: alert.category, uri: alert.uri}]);
+      listener([{
+        category: alert.category,
+        uri: alert.uri
+      }]);
     }
   }
-}
+}**/
 
 var Generator = {
-  generate: function () {
+  generate: function() {
     createCategories();
     createResources();
     createActivity();
     createAssociations();
-    //setInterval(randomActivity, 10000);
+  //setInterval(randomActivity, 10000);
   },
 
-  listen: function (handler) {
+  listen: function(handler) {
     listener = handler;
   }
 };

@@ -9,38 +9,38 @@ function translateStatics(req, res, next, theme) {
   } else if (req.url.match(/\/img\//)) { // img
     next();
   } else if (req.url.match(/.+\/font\//)) { // font
-    res.redirect(301, req.url.replace(/.*\/(font\/.*)$/, "/docs/"+ theme + "$1"));
+    res.redirect(301, req.url.replace(/.*\/(font\/.*)$/, "/docs/" + theme + "$1"));
   } else if (req.url.match(/\/font\//)) { // font
     next();
   } else if (req.url.match(/.+\/.*\.[^\/]*$/)) { // file
-    res.redirect(301, req.url.replace(/.*\/([^\/]*)$/, "/docs/"+ theme + "$1"));
+    res.redirect(301, req.url.replace(/.*\/([^\/]*)$/, "/docs/" + theme + "$1"));
   } else {
     next();
   }
 }
 
-router.use('/hpe', function (req, res, next) {
+router.use('/hpe', function(req, res, next) {
   translateStatics(req, res, next, 'hpe/');
 });
-router.use('/hpe', express.static(__dirname + '/../../docs/dist/hpe'));
-router.get('/hpe/*', function (req, res) {
-  res.sendFile(path.resolve(__dirname + '/../../docs/dist/hpe/index.html'));
+router.use('/hpe', express.static(path.join(__dirname, '/../../docs/dist/hpe')));
+router.get('/hpe/*', function(req, res) {
+  res.sendFile(path.resolve(__dirname, '/../../docs/dist/hpe/index.html'));
 });
 
-router.use('/hpinc', function (req, res, next) {
+router.use('/hpinc', function(req, res, next) {
   translateStatics(req, res, next, 'hpinc/');
 });
-router.use('/hpinc', express.static(__dirname + '/../../docs/dist/hpinc'));
-router.get('/hpinc/*', function (req, res) {
-  res.sendFile(path.resolve(__dirname + '/../../docs/dist/hpinc/index.html'));
+router.use('/hpinc', express.static(path.join(__dirname, '/../../docs/dist/hpinc')));
+router.get('/hpinc/*', function(req, res) {
+  res.sendFile(path.resolve(__dirname, '/../../docs/dist/hpinc/index.html'));
 });
 
-router.use('/', function (req, res, next) {
+router.use('/', function(req, res, next) {
   translateStatics(req, res, next, '');
 });
-router.use('/', express.static(__dirname + '/../../docs/dist'));
-router.get('/*', function (req, res) {
-  res.sendFile(path.resolve(__dirname + '/../../docs/dist/index.html'));
+router.use('/', express.static(path.join(__dirname, '/../../docs/dist')));
+router.get('/*', function(req, res) {
+  res.sendFile(path.resolve(__dirname, '/../../docs/dist/index.html'));
 });
 
 module.exports = router;

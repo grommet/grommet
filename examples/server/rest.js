@@ -85,8 +85,8 @@ function getAggregate (url, queryParams) {
   if (queryParams.interval) {
     intervals = [];
     var stop =  new Date();
-    stop.setHours(23,59,59,999);
-    for (var i=0; i<queryParams.count; i++) {
+    stop.setHours(23, 59, 59, 999);
+    for (var i = 0; i < queryParams.count; i++) {
       var start = new Date(stop.getTime() + 1);
       start.setDate(start.getDate() - 1);
       intervals.push({start: start.toISOString(), stop: stop.toISOString()});
@@ -116,7 +116,7 @@ function getAggregate (url, queryParams) {
         }
 
         if (!count) {
-          var count = {value: value, count: 0};
+          count = {value: value, count: 0};
           if (intervals) {
             count.intervals = _.map(intervals, _.clone);
           }
@@ -125,8 +125,7 @@ function getAggregate (url, queryParams) {
         count.count += 1;
 
         if (count.intervals) {
-          for (i=0; i<count.intervals.length; i++) {
-            var interval = count.intervals[i];
+          count.intervals.forEach(function(interval) {
             if (! interval.count) {
               interval.count = 0;
             }
@@ -134,7 +133,7 @@ function getAggregate (url, queryParams) {
               resource.created <= interval.stop) {
               interval.count += 1;
             }
-          }
+          });
         }
       }
     });
@@ -408,7 +407,7 @@ router.get(/^\/index\/search-suggestions/, function(req, res) {
       name: item.name,
       category: item.category,
       uri: item.uri
-    }
+    };
   }));
 });
 
@@ -475,20 +474,20 @@ router.post('/:categoryName', function(req, res) {
   });
 
   setTimeout(function() {
-    resource.status = 'OK',
+    resource.status = 'OK';
     task.status = 'OK';
     task.state = 'Completed';
     task.modified = (new Date()).toISOString();
     onResourceChange([
       {category: resource.category, uri: resource.uri},
-      {category: task.category, uri: task.uri},
+      {category: task.category, uri: task.uri}
     ]);
   }, 10000);
 
   setTimeout(function () {
     onResourceChange([
       {category: resource.category, uri: resource.uri},
-      {category: task.category, uri: task.uri},
+      {category: task.category, uri: task.uri}
     ]);
   }, 1);
 });
@@ -516,7 +515,7 @@ router.put('/:categoryName/*', function(req, res) {
   setTimeout(function () {
     onResourceChange([
       {category: resource.category, uri: resource.uri},
-      {category: task.category, uri: task.uri},
+      {category: task.category, uri: task.uri}
     ]);
   }, 1);
 });
@@ -538,7 +537,7 @@ router.delete('/:categoryName/*', function(req, res) {
     task.modified = (new Date()).toISOString();
     onResourceChange([
       {category: resource.category, uri: resource.uri},
-      {category: task.category, uri: task.uri},
+      {category: task.category, uri: task.uri}
     ]);
   }, 10000);
 

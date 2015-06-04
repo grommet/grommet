@@ -31,7 +31,7 @@ function addChildren(uri, result) {
     if (associations.hasOwnProperty(name)) {
       associations[name].children.forEach(function (childUri) {
         result.links.push({parentUri: uri, childUri: childUri});
-        addResource(childUri, result, {name: name, parentUri: uri})
+        addResource(childUri, result, {name: name, parentUri: uri});
         addChildren(childUri, result);
       });
     }
@@ -61,7 +61,7 @@ function reduce(result) {
         // group by parentUri
         var reducedItemsMap = {}; // parentUri: data
 
-        for (var i=0; i<items.length; i++) {
+        for (var i = 0; i < items.length; i++) {
           var item = items[i];
           var reducedItem;
 
@@ -76,7 +76,7 @@ function reduce(result) {
                 total: 0,
                 uri: '/summary/' + name + item.associationContext.parentUri,
                 status: {}
-              }
+              };
               reducedItems.push(reducedItem);
               reducedItemsMap[item.associationContext.parentUri] = reducedItem;
             }
@@ -89,7 +89,7 @@ function reduce(result) {
             reducedItem.status[item.status] += 1;
 
             // adjust links
-            for (var j=0; j<result.links.length; j++) {
+            for (var j = 0; j < result.links.length; j++) {
               var link = result.links[j];
               if (link.parentUri === item.uri) {
                 link.parentUri = reducedItem.uri;
@@ -109,7 +109,7 @@ function reduce(result) {
   }
 }
 
-var Map = {
+var GrommetMap = {
   build: function (uri) {
     var result = { links: [], categories: {}, rootUri: uri };
     addResource(uri, result);
@@ -120,4 +120,4 @@ var Map = {
   }
 };
 
-module.exports = Map;
+module.exports = GrommetMap;
