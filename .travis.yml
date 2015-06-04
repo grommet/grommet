@@ -4,11 +4,13 @@ node_js:
 sudo: false
 before_script:
 - npm install -g gulp
+- npm install -g codeclimate-test-reporter
 - gem install scss-lint -v 0.38.0
 - gulp preprocess
 after_script:
 - gulp blanket-lcov-reporter
 - gulp coveralls
+- codeclimate < test/lcov.info
 after_success:
 - |
   if [ "$TRAVIS_BRANCH" = "master" ]; then

@@ -126,45 +126,61 @@ var opts = {
 
 require('./src/utils/gulp/gulp-tasks')(gulp, opts);
 
-gulp.task('dist-css', function () {
+gulp.task('dist-css', function() {
   gulp.src('src/scss/hpinc/*.scss')
-    .pipe(sass({includePaths: [path.resolve(__dirname, './node_modules')]}))
+    .pipe(sass({
+      includePaths: [path.resolve(__dirname, './node_modules')]
+    }))
     .pipe(rename('grommet-hpinc.min.css'))
     .pipe(minifyCss())
     .pipe(gulp.dest('dist/'));
 
   gulp.src('src/scss/hpe/*.scss')
-    .pipe(sass({includePaths: [path.resolve(__dirname, './node_modules')]}))
+    .pipe(sass({
+      includePaths: [path.resolve(__dirname, './node_modules')]
+    }))
     .pipe(rename('grommet-hpe.min.css'))
     .pipe(minifyCss())
     .pipe(gulp.dest('dist/'));
 
   return gulp.src('src/scss/grommet-core/*.scss')
-        .pipe(sass({includePaths: [path.resolve(__dirname, './node_modules')]}))
-        .pipe(rename('grommet.min.css'))
-        .pipe(minifyCss())
-        .pipe(gulp.dest('dist/'));
+    .pipe(sass({
+      includePaths: [path.resolve(__dirname, './node_modules')]
+    }))
+    .pipe(rename('grommet.min.css'))
+    .pipe(minifyCss())
+    .pipe(gulp.dest('dist/'));
 });
 
 gulp.task('sync-all', function() {
 
-  gulp.src('./examples/demo/gulpfile.js', { read: false }).pipe(chug({
+  gulp.src('./examples/demo/gulpfile.js', {
+    read: false
+  }).pipe(chug({
     tasks: ['sync']
   }));
 
-  gulp.src('./examples/tour/gulpfile.js', { read: false }).pipe(chug({
+  gulp.src('./examples/tour/gulpfile.js', {
+    read: false
+  }).pipe(chug({
     tasks: ['sync']
   }));
 
-  gulp.src('./examples/server/gulpfile.js', { read: false }).pipe(chug({
+  gulp.src('./examples/server/gulpfile.js', {
+    read: false
+  }).pipe(chug({
     tasks: ['sync']
   }));
 
-  gulp.src('./docs/gulpfile.js', { read: false }).pipe(chug({
+  gulp.src('./docs/gulpfile.js', {
+    read: false
+  }).pipe(chug({
     tasks: ['sync']
   }));
 
-  gulp.src('./gulpfile.js', { read: false }).pipe(chug({
+  gulp.src('./gulpfile.js', {
+    read: false
+  }).pipe(chug({
     tasks: ['sync']
   }));
 });
@@ -211,7 +227,7 @@ var bowerWebpackConfig = {
     ]
   },
   plugins: [
-   //new webpack.optimize.DedupePlugin()
+    //new webpack.optimize.DedupePlugin()
   ]
 };
 
@@ -223,17 +239,19 @@ var bowerMinWebpackConfig = assign({}, bowerWebpackConfig, {
   },
   plugins: [
     new webpack.optimize.UglifyJsPlugin({
-        compress: {
-            warnings: false
-        }
+      compress: {
+        warnings: false
+      }
     })
-    //new webpack.optimize.DedupePlugin()
+  //new webpack.optimize.DedupePlugin()
   ]
 });
 
 function distCss(path, name, minify) {
   gulp.src(path)
-    .pipe(sass({includePaths: [ 'node_modules' ]}))
+    .pipe(sass({
+      includePaths: ['node_modules']
+    }))
     .pipe(rename(name))
     .pipe(gulpif(minify, minifyCss()))
     .pipe(gulp.dest('dist-bower/css'));
@@ -267,27 +285,36 @@ gulp.task('dist-bower', ['dist-bower:preprocess'], function() {
 
   //sample-grommet
   gulp.src('examples/todo-app/index.html')
-        .pipe(preprocess({context: { NODE_ENV: 'production'}}))
-        .pipe(rename('sample-grommet.html'))
-        .pipe(gulp.dest('dist-bower'));
+    .pipe(preprocess({
+      context: {
+        NODE_ENV: 'production'
+      }
+    }))
+    .pipe(rename('sample-grommet.html'))
+    .pipe(gulp.dest('dist-bower'));
 
   var bowerJSON = getPackageJSON();
-  bowerJSON.dependencies = { 'react': '^0.13.1', 'grommet': 'HewlettPackard/grommet-bower' };
+  bowerJSON.dependencies = {
+    'react': '^0.13.1',
+    'grommet': 'HewlettPackard/grommet-bower'
+  };
   bowerJSON.main = 'grommet.js';
   delete bowerJSON.devDependencies;
   delete bowerJSON.scripts;
   delete bowerJSON.config;
 
   return gulp.src('.')
-          .pipe(file('bower.json', JSON.stringify(bowerJSON, null, 2)))
-          .pipe(gulp.dest('dist-bower'));
+    .pipe(file('bower.json', JSON.stringify(bowerJSON, null, 2)))
+    .pipe(gulp.dest('dist-bower'));
 });
 
 gulp.task('blanket-lcov-reporter', function(done) {
   require('./src/utils/test/test-compiler');
   require('./src/utils/test/mocked-dom')('<html><body></body></html>');
 
-  gulp.src('./test/**/*.js', { read: false }).pipe(blanket({
+  gulp.src('./test/**/*.js', {
+    read: false
+  }).pipe(blanket({
     instrument: [path.join(__dirname, 'src/js')],
     captureFile: 'test/lcov.info',
     reporter: 'mocha-lcov-reporter'
@@ -298,7 +325,7 @@ gulp.task('blanket-lcov-reporter', function(done) {
 
 gulp.task('coveralls', function() {
   var lcovPath = './test/lcov.info';
-  fs.exists(lcovPath, function (exists) {
+  fs.exists(lcovPath, function(exists) {
     if (exists) {
       gulp.src(lcovPath).pipe(coveralls());
     } else {
@@ -311,62 +338,68 @@ gulp.task('coveralls', function() {
 gulp.task('release:bump', function(done) {
   gulp.src('./')
     .pipe(prompt.prompt({
-        type: 'input',
-        name: 'bump',
-        message: 'What type of bump would you like to do (patch, minor, major)?',
-        validate: function(pass){
-          if(pass !== 'patch' && pass !== 'minor' && pass !== 'major'){
-              return false;
-          }
-          return true;
+      type: 'input',
+      name: 'bump',
+      message: 'What type of bump would you like to do (patch, minor, major)?',
+      validate: function(pass) {
+        if (pass !== 'patch' && pass !== 'minor' && pass !== 'major') {
+          return false;
         }
-    }, function(res){
-        gulp.src('./package.json')
-          .pipe(bump({ type: res.bump }))
-          .pipe(gulp.dest('./')).on('end', function() {
-            opts.copyAssets.push({
-              filename: 'package.json',
-              asset: JSON.stringify(getPackageJSON(), null, 2)
-            });
-            done();
-          });
+        return true;
+      }
+    }, function(res) {
+      gulp.src('./package.json')
+        .pipe(bump({
+          type: res.bump
+        }))
+        .pipe(gulp.dest('./')).on('end', function() {
+        opts.copyAssets.push({
+          filename: 'package.json',
+          asset: JSON.stringify(getPackageJSON(), null, 2)
+        });
+        done();
+      });
     }));
 });
 
 gulp.task('release:npm', function(done) {
   process.chdir('dist');
-  spawn('npm', ['publish'], { stdio: 'inherit' }).on('close', function() {
+  spawn('npm', ['publish'], {
+    stdio: 'inherit'
+  }).on('close', function() {
     process.chdir(__dirname);
-    var version = 'v'+getPackageJSON().version;
+    var version = 'v' + getPackageJSON().version;
     gulp.src('./')
-      .pipe(git.add({args: '--all'}))
+      .pipe(git.add({
+        args: '--all'
+      }))
       .pipe(git.commit(version)).on('end', function() {
-        git.push('origin', 'master', function (err) {
+      git.push('origin', 'master', function(err) {
+        if (err) {
+          throw err;
+        }
+
+        git.tag(version, version, function(err) {
           if (err) {
             throw err;
           }
 
-          git.tag(version, version, function (err) {
+          git.push('origin', version, function(err) {
             if (err) {
               throw err;
             }
-
-            git.push('origin', version, function (err) {
-              if (err) {
-                throw err;
-              }
-              process.chdir(__dirname);
-              done();
-            });
+            process.chdir(__dirname);
+            done();
           });
         });
       });
+    });
   });
 });
 
 gulp.task('release:createTmp', function(done) {
   del.sync(['./tmp']);
-  mkdirp('./tmp', function (err) {
+  mkdirp('./tmp', function(err) {
     if (err) {
       throw err;
     }
@@ -376,83 +409,93 @@ gulp.task('release:createTmp', function(done) {
 
 gulp.task('release:bower', ['release:createTmp'], function(done) {
   git.clone('https://github.com/HewlettPackard/grommet-bower.git',
-    { cwd: './tmp/' },
-    function (err) {
+    {
+      cwd: './tmp/'
+    },
+    function(err) {
       if (err) {
         throw err;
       }
       gulp.src('./dist-bower/**').pipe(gulp.dest('./tmp/grommet-bower'));
 
-      var version = 'v'+getPackageJSON().version;
+      var version = 'v' + getPackageJSON().version;
       process.chdir('./tmp/grommet-bower');
       gulp.src('./')
-        .pipe(git.add({args: '--all'}))
+        .pipe(git.add({
+          args: '--all'
+        }))
         .pipe(git.commit(version)).on('end', function() {
-          git.push('origin', 'master', function (err) {
+        git.push('origin', 'master', function(err) {
+          if (err) {
+            throw err;
+          }
+
+          git.tag(version, version, function(err) {
             if (err) {
               throw err;
             }
 
-            git.tag(version, version, function (err) {
+            git.push('origin', version, function(err) {
               if (err) {
                 throw err;
               }
-
-              git.push('origin', version, function (err) {
-                if (err) {
-                  throw err;
-                }
-                process.chdir(__dirname);
-                done();
-              });
+              process.chdir(__dirname);
+              done();
             });
           });
         });
+      });
     }
   );
 });
 
 gulp.task('release:stable', ['dist', 'release:createTmp'], function(done) {
   if (process.env.CI) {
-    git.clone('https://'+ process.env.GH_TOKEN +'@github.com/HewlettPackard/grommet.git',
-      { cwd: './tmp/' },
-      function (err) {
+    git.clone('https://' + process.env.GH_TOKEN + '@github.com/HewlettPackard/grommet.git',
+      {
+        cwd: './tmp/'
+      },
+      function(err) {
         if (err) {
           throw err;
         }
 
         process.chdir('./tmp/grommet');
-        git.checkout('stable', function (err) {
+        git.checkout('stable', function(err) {
           if (err) {
             throw err;
           }
 
           gulp.src('../../dist/**').pipe(gulp.dest('./')).on('end', function() {
-            git.status({args: '--porcelain'}, function (err, stdout) {
-            if (err) {
-              throw err;
-            }
+            git.status({
+              args: '--porcelain'
+            }, function(err, stdout) {
+              if (err) {
+                throw err;
+              }
 
-            if (stdout && stdout !== '') {
-              gulp.src('./')
-              .pipe(git.add({args: '--all'}))
-              .pipe(git.commit('Stable dev version update.')).on('end', function() {
-                git.push('origin', 'stable', function (err) {
-                  if (err) {
-                    throw err;
-                  }
+              if (stdout && stdout !== '') {
+                gulp.src('./')
+                  .pipe(git.add({
+                    args: '--all'
+                  }))
+                  .pipe(git.commit('Stable dev version update.')).on('end', function() {
+                  git.push('origin', 'stable', function(err) {
+                    if (err) {
+                      throw err;
+                    }
 
-                  process.chdir(__dirname);
-                  done();
+                    process.chdir(__dirname);
+                    done();
+                  });
                 });
-              });
-            } else {
-              console.log('No difference since last commit, skipping stable release.');
+              } else {
+                console.log('No difference since last commit, skipping stable release.');
 
-              process.chdir(__dirname);
-              done();
-            }
-          });
+                process.chdir(__dirname);
+                done();
+              }
+            });
           });
         });
       }
@@ -467,15 +510,21 @@ gulp.task('release:clean', function() {
 });
 
 gulp.task('release:site', function() {
-  gulp.src('./docs/gulpfile.js', { read: false }).pipe(chug({
+  gulp.src('./docs/gulpfile.js', {
+    read: false
+  }).pipe(chug({
     tasks: ['sync']
   }));
 
-  gulp.src('./examples/server/gulpfile.js', { read: false }).pipe(chug({
+  gulp.src('./examples/server/gulpfile.js', {
+    read: false
+  }).pipe(chug({
     tasks: ['sync']
   }));
 
-  gulp.src('./examples/medium-app/gulpfile.js', { read: false }).pipe(chug({
+  gulp.src('./examples/medium-app/gulpfile.js', {
+    read: false
+  }).pipe(chug({
     tasks: ['sync']
   }));
 });
