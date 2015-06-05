@@ -6,7 +6,6 @@ var GrommetTestUtils = require('../mocks/GrommetTestUtils');
 
 describe('Grommet RadioButton', function() {
   it('loads a basic RadioButton', function() {
-    var React = require('react/addons');
     var Component = GrommetTestUtils.getComponent(__path__, undefined, {
       id: 'radio-id',
       label: 'Test Label'
