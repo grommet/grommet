@@ -87,7 +87,8 @@ var IndexStore = Reflux.createStore({
     this.trigger(this._data);
   },
 
-  _onGetItemsCompleted: function (response) {
+  _onGetItemsCompleted: function (response, context, request) {
+    this._data.request = request;
     this._data.result = response;
     this._data.error = '';
 

@@ -187,10 +187,11 @@ function respondToRequest (connection, request) {
 
 function onMessage (connection, request) {
   if ('start' === request.op) {
-    console.log('WATCH', request.url, stringify(request.params));
+    console.log('WATCH', request.url, request.id, stringify(request.params));
     connection.requests.push(request);
     respondToRequest(connection, request);
   } else if ('stop' === request.op) {
+    console.log('STOP', request.id);
     // Remove request
     connection.requests = connection.requests.filter(function (req) {
       return (req.id !== request.id);

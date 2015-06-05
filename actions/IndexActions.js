@@ -14,7 +14,8 @@ var IndexActions = Reflux.createActions({
   'getItems': {asyncResult: true},
   'getItem': {asyncResult: true},
   'getAggregate': {asyncResult: true},
-  'getMap': {asyncResult: true}
+  'getMap': {asyncResult: true},
+  'stopWatching': {}
 });
 
 IndexActions.setup.listen(function () {
@@ -42,6 +43,10 @@ IndexActions.cleanup.listen(function () {
   }
 });
 
+IndexActions.stopWatching.listen(function (request) {
+  RestWatch.stop(request);
+});
+
 function normalizeParams(params) {
   var result = merge({}, params);
   if (result.query && (typeof result.query === 'object')) {
@@ -66,12 +71,15 @@ function get(url, params, action, context) {
 function startWatching(url, params, action, context) {
   var request = RestWatch.start(url, normalizeParams(params),
     function (result) {
-      action.completed(result, context);
+      action.completed(result, context, request);
     });
   requests.push(request);
 }
 
-function getOrWatch(url, params, action, context, watch) {
+function getOrWatch(url, params, action, context, watch, replaceRequest) {
+  if (replaceRequest) {
+    RestWatch.stop(replaceRequest);
+  }
   if (watch) {
     startWatching(url, params, action, context);
   } else {
@@ -79,16 +87,19 @@ function getOrWatch(url, params, action, context, watch) {
   }
 }
 
-IndexActions.getItems.listen(function (params, watch) {
-  getOrWatch('/rest/index/resources', params, this, params, watch);
+IndexActions.getItems.listen(function (params, watch, replaceRequest) {
+  getOrWatch('/rest/index/resources', params, this, params,
+    watch, replaceRequest);
 });
 
-IndexActions.getAggregate.listen(function (params, watch) {
-  getOrWatch('/rest/index/resources/aggregated', params, this, params, watch);
+IndexActions.getAggregate.listen(function (params, watch, replaceRequest) {
+  getOrWatch('/rest/index/resources/aggregated', params, this, params,
+    watch, replaceRequest);
 });
 
-IndexActions.getMap.listen(function (uri, watch) {
-  getOrWatch('/rest/index/trees/aggregated' + uri, null, this, uri, watch);
+IndexActions.getMap.listen(function (uri, watch, replaceRequest) {
+  getOrWatch('/rest/index/trees/aggregated' + uri, null, this, uri,
+    watch, replaceRequest);
 });
 
 module.exports = IndexActions;
