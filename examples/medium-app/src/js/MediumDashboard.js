@@ -2,6 +2,7 @@
 
 var React = require('react');
 var merge = require('lodash/object/merge');
+var IndexActions = require('grommet/actions/IndexActions');
 var Tiles = require('grommet/components/Tiles');
 var Tile = require('grommet/components/Tile');
 var Header = require('grommet/components/Header');
@@ -106,6 +107,7 @@ var MediumDashboard = React.createClass({
   },
 
   componentWillUnmount: function () {
+    IndexActions.cleanup();
     window.removeEventListener('resize', this._onResize);
   },
 

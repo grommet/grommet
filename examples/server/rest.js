@@ -417,7 +417,7 @@ router.get(/^\/index\/trees\/aggregated(.+)$/, function(req, res) {
 });
 
 router.get(/^\/index\/trees(.+)$/, function(req, res) {
-  var uri = req.params[0];
+  //var uri = req.params[0];
   res.status(501).send();
 });
 

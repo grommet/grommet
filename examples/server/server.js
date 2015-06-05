@@ -13,7 +13,6 @@ var ctoAppTuner = require('./cto-app-tuner');
 var path = require('path');
 //var demo = require('./demo');
 
-var PREFIX = ''; // for running under a shared domain
 var PORT = 8000;
 
 var app = express();
@@ -33,14 +32,14 @@ app.use('/tour/', function (req, res, next) {
 });
 
 app.
-  use(path.join(PREFIX, 'docs'), docs).
-  use(path.join(PREFIX, 'rest'), rest.router).
-  use(path.join(PREFIX, 'medium-app'), mediumApp).
-  use(path.join(PREFIX, 'cto-app-tuner'), ctoAppTuner).
-  use(path.join(PREFIX, 'assets'), express.static(path.join(__dirname, '/../../docs/dist/assets'))).
-  use(path.join(PREFIX, 'hello-world'), express.static(path.join(__dirname, '/../hello-world'))).
-  //use(PREFIX + '/demo', demo).
-  use(PREFIX, router);
+  use('/docs', docs).
+  use('/rest', rest.router).
+  use('/medium-app', mediumApp).
+  use('/cto-app-tuner', ctoAppTuner).
+  use('/assets', express.static(path.join(__dirname, '/../../docs/dist/assets'))).
+  use('/hello-world', express.static(path.join(__dirname, '/../hello-world'))).
+  //use('/demo', demo).
+  use('', router);
 
 var server = http.createServer(app);
 

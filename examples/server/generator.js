@@ -330,9 +330,10 @@ function createAssociations() {
   }
 }
 
-var listener;
+//var listener;
 
-/**function randomActivity() {
+/**
+function randomActivity() {
   var resource = data.getResource('/rest/server-profiles/1');
   if (resource) {
     var now = new Date();
@@ -358,7 +359,8 @@ var listener;
       }]);
     }
   }
-}**/
+}
+**/
 
 var Generator = {
   generate: function() {
@@ -366,11 +368,11 @@ var Generator = {
     createResources();
     createActivity();
     createAssociations();
-  //setInterval(randomActivity, 10000);
+    //setInterval(randomActivity, 10000);
   },
 
   listen: function(handler) {
-    listener = handler;
+    //listener = handler;
   }
 };
 
