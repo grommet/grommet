@@ -1,5 +1,6 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
+var compression = require('compression');
 var express = require('express');
 var http = require("http");
 var router = express.Router();
@@ -16,6 +17,8 @@ var path = require('path');
 var PORT = 8000;
 
 var app = express();
+
+app.use(compression());
 
 app.use(cookieParser());
 
