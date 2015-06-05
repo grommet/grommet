@@ -71,7 +71,7 @@ var Index = React.createClass({
   _onQuery: function (query) {
     if (! this.props.result) {
       var params = merge(this.state.options.params, {query: query});
-      IndexActions.getItems(params);
+      IndexActions.getItems(params, true, this.state.request);
     }
     if (this.props.onQuery) {
       this.props.onQuery(query);
@@ -86,7 +86,7 @@ var Index = React.createClass({
       var params = this.state.options.params;
       params = merge(params,
         {count: (params.count + (this.state.options.pageSize || 20))});
-      IndexActions.getItems(params);
+      IndexActions.getItems(params, true, this.state.request);
     }
   },
 

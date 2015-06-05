@@ -48,7 +48,7 @@ var IndexMeter = React.createClass({
     this.props.onClick(query);
   },
 
-  _onGetAggregateCompleted: function (response, params) {
+  _onGetAggregateCompleted: function (response, params, request) {
     response = response[0];
     if (params === this.state.params) {
       var series = response.counts.map(function(count, index) {
@@ -72,7 +72,7 @@ var IndexMeter = React.createClass({
         // mark most severe as most important
         series[series.length - 1].important = true;
       }
-      this.setState({series: series});
+      this.setState({series: series, request: request});
     }
   },
 
@@ -82,7 +82,8 @@ var IndexMeter = React.createClass({
 
   componentDidMount: function () {
     if (! this.props.series) {
-      this.listenTo(IndexActions.getAggregate.completed, this._onGetAggregateCompleted);
+      this.listenTo(IndexActions.getAggregate.completed,
+        this._onGetAggregateCompleted);
       IndexActions.getAggregate(this.state.params, true);
     }
   },
@@ -90,12 +91,12 @@ var IndexMeter = React.createClass({
   componentWillReceiveProps: function (newProps) {
     this.setState({params: newProps.params});
     if (! newProps.series) {
-      IndexActions.getAggregate(newProps.params, true);
+      IndexActions.getAggregate(newProps.params, true, this.state.request);
     }
   },
 
   componentWillUnmount: function () {
-    // TODO: cleanup IndexActions.getAggregate watching
+    IndexActions.stopWatching(this.state.request);
   },
 
   render: function () {
