@@ -93,6 +93,10 @@ var IndexHistory = React.createClass({
     }
   },
 
+  componentWillUnmount: function () {
+    // TODO: cleanup IndexActions.getAggregate watching
+  },
+
   render: function () {
     return (
       <Chart series={this.state.series || []}

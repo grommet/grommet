@@ -4,14 +4,20 @@ var _ = require('lodash');
 var TRACE_PARSING = false;
 var TRACE_MATCHING = false;
 
-function unquoteIfNecessary(text) {
-  // remove surrounding quotes
-  if ((text[0] === '\'' && text[text.length - 1] === '\'') ||
-    (text[0] === '"' && text[text.length - 1] === '"')) {
-    text = text.slice(1, text.length - 1);
+var TIMESTAMP_REGEXP = /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d{3}Z/;
+
+// TODO: This won't work in deployment context, use locally for now
+//var StringConvert = require('../../src/js/utils/StringConvert');
+var StringConvert = {
+  unquoteIfNecessary: function (text) {
+    // remove surrounding quotes
+    if ((text[0] === '\'' && text[text.length - 1] === '\'') ||
+      (text[0] === '"' && text[text.length - 1] === '"')) {
+      text = text.slice(1, text.length - 1);
+    }
+    return text;
   }
-  return text;
-}
+};
 
 function filterUserQuery(items, userQuery) {
   // handle quoted strings, e.g. 'a b' c "d e"
@@ -43,267 +49,296 @@ function filterUserQuery(items, userQuery) {
   return result;
 }
 
-function dumpExpression(exp, prefix) {
-  prefix = prefix || '';
-  if (exp.left) {
-    if (exp.notLeft) {
-      console.log(prefix, ' not left');
+// An attribute term in an Expression.
+function AttributeTerm (text) {
+  this._not = false;
+
+  var parts = text.toLowerCase().split(':');
+  this._name = parts[0];
+  this._value = StringConvert.unquoteIfNecessary(parts[1]);
+
+  this.not = function (not) {
+    this._not = not;
+  };
+
+  this.isRelatedTo = function (term) {
+    return (this._name === term._name);
+  };
+
+  this.matches = function (item) {
+    var result = ((this._not || 'null' === this._value) ? true : false);
+    _.forOwn(item, function (value, name) {
+      if ('attributes' === name) {
+        result = this.matches(value);
+        if (result || this._not) {
+          return false;
+        }
+      } else {
+        if (name.toLowerCase() === this._name &&
+          ((value && value.toLowerCase() === this._value) ||
+          (! value && 'null' === this._value))) {
+          result = (this._not ? false : true);
+          return false;
+        }
+      }
+    }, this);
+    if (result && TRACE_MATCHING && item.uri) {
+      console.log('!!! ATTRIBUTE', result, item.uri, this._not ? 'NOT' : '', this._name, this._value);
     }
-    if (exp.left.hasOwnProperty('attribute')) {
-      console.log(prefix, ' left:', exp.left.attribute, ':', exp.left.value, exp.leftNot);
-    } else if (exp.left.hasOwnProperty('regexp')) {
-      console.log(prefix, ' left:', exp.left.regexp, exp.leftNot);
-    } else {
-      dumpExpression(exp.left, prefix + '  ');
-    }
-  }
-  if (exp.error) {
-    console.log(prefix, exp.error);
-  }
-  if (exp.op) {
-    console.log(prefix, exp.op);
-  }
-  if (exp.right) {
-    if (exp.notRight) {
-      console.log(prefix, ' not right');
-    }
-    if (exp.right.hasOwnProperty('attribute')) {
-      console.log(prefix, ' right:', exp.right.attribute, ':', exp.right.value, exp.rightNot);
-    } else if (exp.right.hasOwnProperty('regexp')) {
-      console.log(prefix, ' right:', exp.right.regexp, exp.rightNot);
-    } else {
-      dumpExpression(exp.right, prefix + '  ');
-    }
-  }
+    return result;
+  };
+
+  this.toString = function (prefix) {
+    return prefix + (this._not ? ' not ' : '') + this._name + ':' + this._value;
+  };
 }
 
-function addOp(expression, op) {
-  if (expression.op) {
-    // already have an op, nest
-    expression.right = {
-      left: expression.right,
-      op: op
-    };
-    if (expression.notRight) {
-      expression.right.notLeft = true;
-      delete expression.notRight;
-    }
-    expression = expression.right;
+// A text term in an Expression.
+function TextTerm (text) {
+  this._not = false;
+  this._text = text;
+
+  // if the string is quoted, require matching at both ends
+  var unquoted = StringConvert.unquoteIfNecessary(text);
+  if (text === unquoted) {
+    this._regexp = new RegExp(text, 'i');
   } else {
-    expression.op = op;
+    this._regexp = new RegExp('^' + unquoted + '$', 'i');
   }
-  return expression;
+
+  this.not = function (not) {
+    this._not = not;
+  };
+
+  this.isRelatedTo = function (term) {
+    return false;
+  };
+
+  this.matches = function (item) {
+    var result = (this._not ? true : false);
+    var matched;
+    _.forOwn(item, function(value, name) {
+      if ('attributes' === name) {
+        result = this.matches(value);
+        if (result || this._not) {
+          return false;
+        }
+      } else {
+        // Don't match timestamps against short strings
+        if (value && this._regexp.test(value) &&
+          (text.length > 5 || ! TIMESTAMP_REGEXP.test(value))) {
+          result = (this._not ? false : true);
+          matched = name + ':' + value;
+          return false;
+        }
+      }
+    }, this);
+    if (result && TRACE_MATCHING) {
+      console.log('!!! REGEXP', result, item.uri, matched, this._not ? 'NOT' : '', this._regexp);
+    }
+    return result;
+  };
+
+  this.toString = function (prefix) {
+    return prefix + (this._not ? ' not ' : '') + this._regexp;
+  };
 }
 
-// e.g. associatedResourceUri:'/rest/server-profiles/11' AND (state:'Active' OR state:'Running') AND  parentTaskUri:'null' AND NOT taskType:'Background' AND NOT stateReason:'ValidationError'
-function parseQuery(query) {
-  if (TRACE_PARSING) {
-    console.log('!!! parseQuery --- ', query);
-  }
-  // strip leading and trailing whitespace
-  query = query.replace(/^\s+|\s+$/g, '');
-  // split into tokens
-  var index = 0;
-  var endIndex;
-  var root = {};
-  var expression = root;
-  var term;
-  var debugCount = 100;
+// A simple expression in a query.
+// These can be nested for more complex expressions.
+// They have a _left term, a _right term, and an _op (AND or OR).
+function Expression () {
 
-  while (index < query.length) {
-
-    term = null;
-    if (' ' === query[index]) {
-      if (TRACE_PARSING) {
-        console.log('!!! --space--');
-      }
-      index += 1;
-    } else if ('(' === query[index]) {
-      if (TRACE_PARSING) {
-        console.log('!!! --begin-paren--');
-      }
-      endIndex = query.indexOf(')', index);
-      term = parseQuery(query.slice(index + 1, endIndex));
-      if (TRACE_PARSING) {
-        console.log('!!! --end-paren--');
-      }
-      index = endIndex + 1;
-    } else if ('AND' === query.slice(index, index + 3)) {
-      if (TRACE_PARSING) {
-        console.log('!!! --and--');
-      }
-      expression = addOp(expression, 'AND');
-      index += 3;
-    } else if ('OR' === query.slice(index, index + 2)) {
-      if (TRACE_PARSING) {
-        console.log('!!! --or--');
-      }
-      expression = addOp(expression, 'OR');
-      index += 2;
-    } else if ('NOT' === query.slice(index, index + 3)) {
-      if (TRACE_PARSING) {
-        console.log('!!! --not--');
-      }
-      if (expression.hasOwnProperty('left')) {
-        expression.notRight = true;
-      } else {
-        expression.notLeft = true;
-      }
-      index += 3;
+  this.op = function (op) {
+    if (this._op) {
+      // already have an op, nest
+      throw 'Multiple operations';
     } else {
-      var matches = query.slice(index, query.length).match(/^\w+:'[^']+'|^\w+:"[^"]+"|^\w+:[^'"\s]+/);
-      if (matches) {
-        if (TRACE_PARSING) {
-          console.log('!!! --attribute--');
-        }
-        // attribute:value
-        endIndex = index + matches[0].length;
-        var parts = matches[0].toLowerCase().split(':');
-        parts[1] = unquoteIfNecessary(parts[1]);
-        term = {
-          attribute: parts[0],
-          value: parts[1]
-        };
-        index = endIndex + 1;
-      } else {
-        // text string
-        matches = query.slice(index, query.length).match(/^[^'"\s]+|^'[^']+'|^"[^"]+"/);
-        if (matches) {
-          if (TRACE_PARSING) {
-            console.log('!!! --text--');
-          }
-          endIndex = index + matches[0].length;
-          // if the string is quoted, require matching at both ends
-          var text = query.slice(index, endIndex);
-          var unquoted = unquoteIfNecessary(text);
-          var regexp;
-          if (text === unquoted) {
-            regexp = new RegExp(text, 'i');
-          } else {
-            regexp = new RegExp('^' + unquoted + '$', 'i');
-          }
-          term = {
-            regexp: regexp
-          };
-          index = endIndex + 1;
+      this._op = op;
+    }
+  };
+
+  this.addTerm = function (term) {
+    if (! this._left) {
+      this._left = term;
+    } else if (! this._right) {
+      this._right = term;
+      if (! this._op) {
+        if (this._left.isRelatedTo(this._right)) {
+          this._op = 'OR';
         } else {
-          console.log('!!! UNPARSEABLE', query.slice(index), query.slice(index, query.length), matches);
-          throw "Unable to parse: " + query.slice(index);
+          this._op = 'AND';
         }
       }
+    } else {
+      // We already have a left and a right.
+      // If the right is a simple term, convert it to an expression.
+      if (! this._right._left) {
+        var expression = new Expression();
+        expression.addTerm(this._right);
+        this._right = expression;
+      }
+      // Add the term to the right expression.
+      this._right.addTerm(term);
     }
+  };
 
-    if (null !== term) {
-      if (!expression.hasOwnProperty('left')) {
-        expression.left = term;
-      } else if (!expression.hasOwnProperty('right')) {
-        expression.right = term;
-        if (!expression.op) {
-          if (expression.left.attribute &&
-            expression.left.attribute === expression.right.attribute) {
-            expression.op = 'OR';
-          } else {
-            expression.op = 'AND';
-          }
-        }
+  this.isRelatedTo = function (term) {
+    return false;
+  };
+
+  this.matches = function (item) {
+    var result = false;
+    if (this._left) {
+      result = this._left.matches(item);
+    }
+    if ((result && 'AND' === this._op) ||
+      (! result && 'OR' === this._op)) {
+      if (this._right) {
+        result = this._right.matches(item);
       } else {
-        console.log('!!! THIRD TERM', expression);
-        throw "Unable to parse: " + query + ". Missing AND or OR?";
+        result = false;
       }
     }
-
-    if (TRACE_PARSING) {
-      console.log('!!! I', index, endIndex);
+    if (result && TRACE_MATCHING) {
+      console.log('!!! EXPRESSION', result, item.uri, this._op);
     }
-    //if (DEBUG) dumpExpression(root);
-    debugCount -= 1;
-    if (debugCount <= 0) {
-      break;
-    }
-  }
+    return result;
+  };
 
-  //console.log('!!! RETURN');
+  this.toString = function (prefix) {
+    prefix = prefix || '';
+    var result = '';
+    if (this._left) {
+      result += this._left.toString(prefix + '  ') + "\n";
+    }
+    if (this._op) {
+      result += prefix + this._op + "\n";
+    }
+    if (this._right) {
+      result += this._right.toString(prefix + '  ') + "\n";
+    }
+    return result;
+  };
+}
+
+// parser helper functions
+
+function traceParsing (message) {
   if (TRACE_PARSING) {
-    dumpExpression(root);
+    console.log('!!! ' + message);
   }
-  return root;
 }
 
-function matchesAttribute(item, attribute, not) {
-  var matched = ((not || 'null' === attribute.value) ? true : false);
-  _.forOwn(item, function(value, name) {
-    if ('attributes' === name) {
-      matched = matchesAttribute(value, attribute, not);
-      if (matched || not) {
-        return false;
-      }
-    } else {
-      if (name.toLowerCase() === attribute.attribute &&
-        (value &&
-        value.toLowerCase() === attribute.value) ||
-        (!value && 'null' === attribute.value)) {
-        matched = (not ? false : true);
-        return false;
-      }
-    }
-  });
-  if (TRACE_MATCHING) {
-    console.log('!!! ATTRIBUTE', matched, item.uri, attribute, not);
-  }
-  return matched;
+function parseSpace (text, expression) {
+  return (' ' === text[0] ? 1 : 0);
 }
 
-function matchesRegexp(item, regexp, not) {
-  var matched = (not ? true : false);
-  _.forOwn(item, function(value, name) {
-    if ('attributes' === name) {
-      matched = matchesRegexp(value, regexp, not);
-      if (matched || not) {
-        return false;
-      }
-    } else {
-      if ( (value && regexp.test(value)) ) {
-        matched = (not ? false : true);
-        return false;
-      }
-    }
-  });
-  if (TRACE_MATCHING) {
-    console.log('!!! REGEXP', matched, item.uri, regexp, not);
-  }
-  return matched;
-}
-
-function matchesExpression(item, expression, not) {
-  var result = matchesTerm(item, expression.left, expression.notLeft);
-  if ((result && 'AND' === expression.op) ||
-    (!result && 'OR' === expression.op)) {
-    result = matchesTerm(item, expression.right, expression.notRight);
-  }
-  if (TRACE_MATCHING) {
-    console.log('!!! EXPRESSION', result, item.uri, expression.left);
+function parseParens (text, expression) {
+  var result = 0;
+  if ('(' === text[0]) {
+    traceParsing('--begin-paren--');
+    // NOTE: This doesn't handle nested parens yet.
+    var endIndex = text.indexOf(')');
+    var subExpression = parseQuery(text.slice(1, endIndex));
+    traceParsing('--end-paren--');
+    expression.addTerm(subExpression);
+    result = endIndex + 1;
   }
   return result;
 }
 
-function matchesTerm(item, term, not) {
-  var result = false;
-  if (term) {
-    if (term.hasOwnProperty('attribute')) {
-      result = matchesAttribute(item, term, not);
-    } else if (term.hasOwnProperty('regexp')) {
-      result = matchesRegexp(item, term.regexp, not);
-    } else if (term.hasOwnProperty('op')) {
-      result = matchesExpression(item, term, not);
-    }
+function parseAnd (text, expression) {
+  var result = 0;
+  if ('AND' === text.slice(0, 3)) {
+    traceParsing('--and--');
+    result = 3;
+    expression.op('AND');
   }
   return result;
+}
+
+function parseOr (text, expression) {
+  var result = 0;
+  if ('OR' === text.slice(0, 2)) {
+    traceParsing('--or--');
+    result = 2;
+    expression.op('OR');
+  }
+  return result;
+}
+
+function parseNot (text, expression) {
+  var result = 0;
+  if ('NOT' === text.slice(0, 3)) {
+    traceParsing('--not--');
+    result = 3;
+    expression.negateNextTerm();
+  }
+  return result;
+}
+
+function parseAttribute (text, expression) {
+  var result = 0;
+  var matches = text.match(/^\w+:'[^']+'|^\w+:"[^"]+"|^\w+:[^'"\s]+/);
+  if (matches) {
+    traceParsing('--attribute--');
+    // attribute:value
+    result = matches[0].length;
+    var term = new AttributeTerm(matches[0]);
+    expression.addTerm(term);
+  }
+  return result;
+}
+
+function parseText (text, expression) {
+  var result = 0;
+  var matches = text.match(/^[^'"\s]+|^'[^']+'|^"[^"]+"/);
+  if (matches) {
+    traceParsing('--text--');
+    result = matches[0].length;
+    var term = new TextTerm(matches[0]);
+    expression.addTerm(term);
+  }
+  return result;
+}
+
+function parseQuery (query) {
+
+  var parsers = [
+    parseSpace,
+    parseParens,
+    parseAnd,
+    parseOr,
+    parseNot,
+    parseAttribute,
+    parseText
+  ];
+  var remaining = query;
+  var expression = new Expression();
+  traceParsing('--parse-- ' + query);
+
+  while (remaining.length > 0) {
+    for (var i = 0; i < parsers.length; i += 1) {
+      var parser = parsers[i];
+      var length = parser(remaining, expression);
+      if (length > 0) {
+        remaining = remaining.slice(length);
+        traceParsing('  parsed ' + length + ' leaving ' + remaining);
+        break;
+      }
+    }
+  }
+
+  traceParsing('--parsed-- ' + "\n" + expression.toString());
+
+  return expression;
 }
 
 function filterQuery(items, query) {
   var expression = parseQuery(query);
   var result = items.filter(function(item) {
-    return matchesExpression(item, expression);
+    return expression.matches(item);
   });
   return result;
 }

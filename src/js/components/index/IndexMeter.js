@@ -94,6 +94,10 @@ var IndexMeter = React.createClass({
     }
   },
 
+  componentWillUnmount: function () {
+    // TODO: cleanup IndexActions.getAggregate watching
+  },
+
   render: function () {
     return (
       <Meter series={this.state.series || []}

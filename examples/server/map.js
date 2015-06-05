@@ -25,7 +25,7 @@ function addResource(uri, result, associationContext) {
   }
 }
 
-function add(uri, result, associations, callback) {
+function add(name, uri, result, associations, callback) {
   if (associations.hasOwnProperty(name)) {
     associations[name].children.forEach(function (childUri) {
       result.links.push({parentUri: uri, childUri: childUri});
@@ -38,7 +38,9 @@ function add(uri, result, associations, callback) {
 function addChildren(uri, result) {
   var associations = data.getAssociations(uri);
   for (var name in associations) {
-    add(uri, result, associations, addChildren);
+    if (associations.hasOwnProperty(name)) {
+      add(name, uri, result, associations, addChildren);
+    }
   }
 }
 
@@ -46,7 +48,7 @@ function addParents(uri, result) {
   var associations = data.getAssociations(uri);
   for (var name in associations) {
     if (associations.hasOwnProperty(name)) {
-      add(uri, result, associations, addParents);
+      add(name, uri, result, associations, addParents);
     }
   }
 }

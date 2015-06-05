@@ -3,7 +3,6 @@
 var __path__ = '../../src/js/components/index/Alert';
 
 var GrommetTestUtils = require('../../mocks/GrommetTestUtils');
-var expect = require('expect');
 
 describe('Grommet Alert', function() {
   it('loads a basic Alert component', function() {
