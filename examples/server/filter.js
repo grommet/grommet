@@ -36,7 +36,7 @@ function filterUserQuery(items, userQuery) {
 
   var result = items.filter(function(item) {
     var unmatchedTerms = terms.slice(0);
-    _.forOwn(item, function(value, name) {
+    _.forOwn(item, function(value) {
       unmatchedTerms = unmatchedTerms.filter(function(term) {
         return !term.test(value);
       });
@@ -110,7 +110,7 @@ function TextTerm (text) {
     this._not = not;
   };
 
-  this.isRelatedTo = function (term) {
+  this.isRelatedTo = function () {
     return false;
   };
 
@@ -183,7 +183,7 @@ function Expression () {
     }
   };
 
-  this.isRelatedTo = function (term) {
+  this.isRelatedTo = function () {
     return false;
   };
 
@@ -230,7 +230,7 @@ function traceParsing (message) {
   }
 }
 
-function parseSpace (text, expression) {
+function parseSpace (text) {
   return (' ' === text[0] ? 1 : 0);
 }
 
