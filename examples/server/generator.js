@@ -139,12 +139,12 @@ var SCHEMA = {
 
 // derived from http://stackoverflow.com/questions/521295/javascript-random-seeds
 var seed = 1234;
-function random(scale) {
+function random (scale) {
   var x = Math.sin(seed++) * 10000;
   return Math.round((x - Math.floor(x)) * scale);
 }
 
-function distribute(values) {
+function distribute (values) {
   var result;
   for (var i = 0; i < values.length; i++) {
     if (Array.isArray(values[i])) {
@@ -160,7 +160,7 @@ function distribute(values) {
   return result;
 }
 
-function createCategories() {
+function createCategories () {
   for (var categoryName in SCHEMA) {
     if (SCHEMA.hasOwnProperty(categoryName)) {
       data.addCategory(categoryName);
@@ -168,10 +168,82 @@ function createCategories() {
   }
 }
 
-function buildItems(categoryName) {
+function alertForResource (resource, index) {
+  var alerts = SCHEMA.alerts;
+  var alert = {
+    name: alerts.names[index % alerts.names.length],
+    state: 'Active',
+    status: resource.status,
+    uri: '/rest/alerts/r' + index + '-' + resource.category,
+    category: 'alerts',
+    created: resource.created,
+    modified: resource.modified,
+    attributes: {
+      associatedResourceCategory: resource.category,
+      associatedResourceUri: resource.uri,
+      associatedResourceName: resource.name
+    }
+  };
+
+  data.addResource('alerts', alert);
+}
+
+function buildItem (categoryName, index, name, date) {
+  var category = SCHEMA[categoryName];
+
+  var resource = {
+    name: name,
+    state: 'Normal',
+    uri: '/rest/' + categoryName + '/' + index,
+    category: categoryName,
+    created: date.toISOString(),
+    modified: date.toISOString()
+  };
+
+  if (!category.noStatus) {
+    resource.status = distribute([['Warning', 7], ['Error', 19], 'OK']);
+  }
+  // randomly reduce timestamp for the next item
+  date.setHours(date.getHours() - random(20) + 1);
+
+  if (category.indexAttributes) {
+    resource._indexAttributes = {};
+    for (var attributeName in category.indexAttributes) {
+      if (category.indexAttributes.hasOwnProperty(attributeName)) {
+        var value = category.indexAttributes[attributeName];
+        if (typeof value === 'string') {
+          resource._indexAttributes[attributeName] = value;
+        } else if (value.hasOwnProperty('prefix')) {
+          var valueIndex;
+          if (value.unique) {
+            valueIndex = (value.start || 0) + index;
+          } else {
+            valueIndex = ((index % 3) + 1);
+          }
+          resource._indexAttributes[attributeName] = value.prefix + valueIndex;
+        }
+      }
+    }
+  }
+
+  if (category.resourceAttributes) {
+    resource._resourceAttributes = category.resourceAttributes;
+  }
+
+  // ensure alerts for non-OK resources
+  if (resource.status && 'OK' !== resource.status &&
+    'alerts' !== categoryName && 'tasks' !== categoryName) {
+    alertForResource(resource, index);
+  }
+
+  return resource;
+}
+
+function buildItems (categoryName) {
   var category = SCHEMA[categoryName];
   var date = new Date();
   var count = category.count || RESOURCE_COUNT;
+
   for (var i = 1; i <= count; i++) {
     var name;
     if (category.prefix) {
@@ -179,72 +251,13 @@ function buildItems(categoryName) {
     } else if (category.names) {
       name = category.names[i % category.names.length];
     }
-    var resource = {
-      name: name,
-      state: 'Normal',
-      uri: '/rest/' + categoryName + '/' + i,
-      category: categoryName,
-      created: date.toISOString(),
-      modified: date.toISOString()
-    };
-
-    if (!category.noStatus) {
-      resource.status = distribute([['Warning', 7], ['Error', 19], 'OK']);
-    }
-    // randomly reduce timestamp for the next item
-    date.setHours(date.getHours() - random(20) + 1);
-
-    if (category.indexAttributes) {
-      resource._indexAttributes = {};
-      for (var attributeName in category.indexAttributes) {
-        if (category.indexAttributes.hasOwnProperty(attributeName)) {
-          var value = category.indexAttributes[attributeName];
-          if (typeof value === 'string') {
-            resource._indexAttributes[attributeName] = value;
-          } else if (value.hasOwnProperty('prefix')) {
-            var index;
-            if (value.unique) {
-              index = (value.start || 0) + i;
-            } else {
-              index = ((i % 3) + 1);
-            }
-            resource._indexAttributes[attributeName] = value.prefix + index;
-          }
-        }
-      }
-    }
-
-    if (category.resourceAttributes) {
-      resource._resourceAttributes = category.resourceAttributes;
-    }
-
-    // ensure alerts for non-OK resources
-    if (resource.status && 'OK' !== resource.status &&
-      'alerts' !== categoryName && 'tasks' !== categoryName) {
-      var alerts = SCHEMA.alerts;
-      var alert = {
-        name: alerts.names[i % alerts.names.length],
-        state: 'Active',
-        status: resource.status,
-        uri: '/rest/alerts/r' + i + '-' + categoryName,
-        category: 'alerts',
-        created: resource.created,
-        modified: resource.modified,
-        attributes: {
-          associatedResourceCategory: resource.category,
-          associatedResourceUri: resource.uri,
-          associatedResourceName: resource.name
-        }
-      };
-
-      data.addResource('alerts', alert);
-    }
+    var resource = buildItem(categoryName, i, name, date);
 
     data.addResource(categoryName, resource);
   }
 }
 
-function createResources() {
+function createResources () {
   for (var categoryName in SCHEMA) {
     if (SCHEMA.hasOwnProperty(categoryName)) {
       buildItems(categoryName);
@@ -252,7 +265,7 @@ function createResources() {
   }
 }
 
-function createActivity() {
+function createActivity () {
   // associate alerts and tasks with resources
   var resources = [];
   for (var categoryName in SCHEMA) {
@@ -297,7 +310,7 @@ function createActivity() {
   });
 }
 
-function createAssociations() {
+function createAssociations () {
   for (var categoryName in SCHEMA) {
     if (SCHEMA.hasOwnProperty(categoryName)) {
 
@@ -363,7 +376,7 @@ function randomActivity() {
 **/
 
 var Generator = {
-  generate: function() {
+  generate: function () {
     createCategories();
     createResources();
     createActivity();
@@ -371,7 +384,7 @@ var Generator = {
     //setInterval(randomActivity, 10000);
   },
 
-  listen: function(handler) {
+  listen: function (handler) {
     //listener = handler;
   }
 };
