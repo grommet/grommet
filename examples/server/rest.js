@@ -10,15 +10,6 @@ var generator = require('./generator');
 var filter = require('./filter');
 var map = require('./map');
 
-// remove following requires when request access is removed
-var nodemailer = require('nodemailer');
-var path = require('path');
-var templatesDir = path.resolve(__dirname, 'templates');
-var emailTemplates = require('email-templates');
-var nodemailer = require('nodemailer');
-var smtpTransport = require('nodemailer-smtp-transport');
-var fs = require("fs");
-
 // Actions
 
 function filteredItems (items, queryParams) {
@@ -64,6 +55,37 @@ function getItems (url, queryParams) {
   };
 }
 
+function updateAggregateCounts (counts, resource, value, intervals) {
+  var count = null;
+  for (var i = 0; i < counts.length; i++) {
+    if (value === counts[i].value) {
+      count = counts[i];
+      break;
+    }
+  }
+
+  if (!count) {
+    count = {value: value, count: 0};
+    if (intervals) {
+      count.intervals = _.map(intervals, _.clone);
+    }
+    counts.push(count);
+  }
+  count.count += 1;
+
+  if (count.intervals) {
+    count.intervals.forEach(function(interval) {
+      if (! interval.count) {
+        interval.count = 0;
+      }
+      if (resource.created >= interval.start &&
+        resource.created <= interval.stop) {
+        interval.count += 1;
+      }
+    });
+  }
+}
+
 function getAggregate (url, queryParams) {
   var items = data.getItems(queryParams.category) || [];
   items = filteredItems(items, queryParams);
@@ -106,35 +128,8 @@ function getAggregate (url, queryParams) {
       }
 
       if (undefined !== value) {
-        var counts = attributeResult.counts;
-        var count = null;
-        for (var i = 0; i < counts.length; i++) {
-          if (value === counts[i].value) {
-            count = counts[i];
-            break;
-          }
-        }
-
-        if (!count) {
-          count = {value: value, count: 0};
-          if (intervals) {
-            count.intervals = _.map(intervals, _.clone);
-          }
-          counts.push(count);
-        }
-        count.count += 1;
-
-        if (count.intervals) {
-          count.intervals.forEach(function(interval) {
-            if (! interval.count) {
-              interval.count = 0;
-            }
-            if (resource.created >= interval.start &&
-              resource.created <= interval.stop) {
-              interval.count += 1;
-            }
-          });
-        }
+        updateAggregateCounts(attributeResult.counts,
+          resource, value, intervals);
       }
     });
   });
@@ -286,95 +281,6 @@ router.get('/preferences/index', function(req, res) {
   } else {
     res.json(preferences);
   }
-});
-
-// Email for Request Access TODO: move to a separate module?
-function handleEmailResponse(error, info) {
-  if (error) {
-    console.log(error);
-  } else {
-    console.log('Message sent: ' + info.response);
-  }
-}
-
-router.post('/request-access', function(req, res) {
-
-  var data = req.body;
-
-  if (!data.name || !data.email || !data.businessPurpose || !data.github) {
-    res.status(400).send({
-      message: "Invalid payload.",
-      recommendedActions: "Enter name, email, and businessPurpose and try again."
-    });
-  }
-
-  var requestsFilePath = path.resolve(__dirname, 'requests.csv');
-
-  fs.exists(requestsFilePath, function(exists) {
-
-    var contentCsv = [data.name, data.email, data.businessPurpose, data.github]
-      .join() + '\n';
-
-    if (exists) {
-      fs.appendFile(requestsFilePath, contentCsv, function(err) {
-        if (err) {
-          console.log('Error while creating the requests.csv: ' + err);
-        } else {
-          console.log(requestsFilePath + ' has been successfully created!');
-        }
-      });
-    } else {
-      fs.writeFile(requestsFilePath, contentCsv, function(err) {
-        if (err) {
-          console.log('Error while updating the requests.csv: ' + err);
-        } else {
-          console.log(requestsFilePath + ' has been successfully updated!');
-        }
-      });
-
-    }
-
-  });
-
-  var transport = nodemailer.createTransport(smtpTransport({
-    host: 'localhost',
-    port: 25
-  }));
-
-  var toGrommetConfig = {
-    from: data.email,
-    to: 'uxgroup@hp.com',
-    subject: 'Evaluate access for ' + data.email,
-    text: data.name + ' with this email: ' + data.email +
-      ' wants to access Grommet for this reason: ' + data.businessPurpose +
-      '. The Github account is: ' + data.github + '.'
-  };
-
-  emailTemplates(templatesDir, function(err, template) {
-    if (err) {
-      console.log(err);
-    } else {
-      template('welcome', data, function(err, html, text) {
-        if (err) {
-          console.log(err);
-        } else {
-          var toRequesterConfig = {
-            from: 'grommet@hp.com',
-            to: data.email,
-            subject: 'Welcome to Grommet!',
-            text: text,
-            html: html
-          };
-
-          transport.sendMail(toRequesterConfig, handleEmailResponse);
-        }
-      });
-    }
-  });
-
-  transport.sendMail(toGrommetConfig, handleEmailResponse);
-
-  res.sendStatus(200);
 });
 
 router.get('/index/resources', function(req, res) {
