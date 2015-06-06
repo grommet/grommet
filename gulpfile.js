@@ -263,16 +263,18 @@ function distCss(path, name, minify) {
     .pipe(gulp.dest('dist-bower/css'));
 }
 
-gulp.task('dist-bower:exploded', function() {
+function distBower(config) {
   return gulp.src(opts.mainJs)
-    .pipe(gulpWebpack(bowerWebpackConfig))
+    .pipe(gulpWebpack(config))
     .pipe(gulp.dest('dist-bower'));
+}
+
+gulp.task('dist-bower:exploded', function() {
+  distBower(bowerWebpackConfig);
 });
 
 gulp.task('dist-bower:minified', function() {
-  return gulp.src(opts.mainJs)
-    .pipe(gulpWebpack(bowerMinWebpackConfig))
-    .pipe(gulp.dest('dist-bower'));
+  distBower(bowerMinWebpackConfig);
 });
 
 gulp.task('dist-bower:preprocess', function(done) {
