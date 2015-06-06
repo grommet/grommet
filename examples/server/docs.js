@@ -24,7 +24,7 @@ router.use('/hpe', function(req, res, next) {
 });
 router.use('/hpe', express.static(path.join(__dirname, '/../../docs/dist/hpe')));
 router.get('/hpe/*', function(req, res) {
-  res.sendFile(path.resolve(__dirname, '/../../docs/dist/hpe/index.html'));
+  res.sendFile(path.join(__dirname, '/../../docs/dist/hpe/index.html'));
 });
 
 router.use('/hpinc', function(req, res, next) {
@@ -32,7 +32,7 @@ router.use('/hpinc', function(req, res, next) {
 });
 router.use('/hpinc', express.static(path.join(__dirname, '/../../docs/dist/hpinc')));
 router.get('/hpinc/*', function(req, res) {
-  res.sendFile(path.resolve(__dirname, '/../../docs/dist/hpinc/index.html'));
+  res.sendFile(path.join(__dirname, '/../../docs/dist/hpinc/index.html'));
 });
 
 router.use('/', function(req, res, next) {
@@ -40,7 +40,7 @@ router.use('/', function(req, res, next) {
 });
 router.use('/', express.static(path.join(__dirname, '/../../docs/dist')));
 router.get('/*', function(req, res) {
-  res.sendFile(path.resolve(__dirname, '/../../docs/dist/index.html'));
+  res.sendFile(path.join(__dirname, '/../../docs/dist/index.html'));
 });
 
 module.exports = router;
