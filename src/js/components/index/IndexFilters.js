@@ -3,6 +3,7 @@
 var React = require('react');
 var Menu = require('../Menu');
 var FilterIcon = require('../icons/Filter');
+var Header = require('../Header');
 var CheckBox = require('../CheckBox');
 var IndexQuery = require('../../utils/IndexQuery');
 //var StatusIcon = require('../icons/Status');
@@ -52,12 +53,6 @@ var IndexFilters = React.createClass({
         query.replaceAttributeValues(attribute.attribute, activeValues);
       }, this);
     this.props.onQuery(query);
-  },
-
-  _onSink: function (event) {
-    event.stopPropagation();
-    // need to go native to prevent Menu from closing
-    event.nativeEvent.stopImmediatePropagation();
   },
 
   _onChange: function (attribute, value) {
@@ -123,42 +118,45 @@ var IndexFilters = React.createClass({
           }
           var label = value ? this.getGrommetIntlMessage(value) : '';
           return (
-            <div key={id}>
-              <CheckBox className={CLASS_ROOT + "__filter-value"}
-                id={id} label={label}
-                checked={active}
-                onChange={this._onChange
-                  .bind(this, attribute.attribute, value)} />
-            </div>
+            <CheckBox key={id} className={CLASS_ROOT + "__filter-value"}
+              id={id} label={label}
+              checked={active}
+              onChange={this._onChange
+                .bind(this, attribute.attribute, value)} />
           );
         }, this);
 
-        return (
-          <div key={attribute.attribute} className={CLASS_ROOT + "__filter"}>
-            <h4 className={CLASS_ROOT + "__filter-label"}>{this.getGrommetIntlMessage(attribute.label)}</h4>
-            <CheckBox className={CLASS_ROOT + "__filter-value"}
-              id={attribute.attribute + '-all'} label={this.getGrommetIntlMessage('All')}
-              checked={this.state.data[attribute.attribute].all}
-              onChange={this._onChangeAll
-                .bind(this, attribute.attribute, attribute.filter)} />
-            {values}
-          </div>
+        var components = [];
+        components.push(
+          <Header key="label" className={CLASS_ROOT + "__filter-label"}
+            small={true} flush={false}>
+            {this.getGrommetIntlMessage(attribute.label)}
+          </Header>
         );
+        components.push(
+          <CheckBox key="all" className={CLASS_ROOT + "__filter-value"}
+            id={attribute.attribute + '-all'}
+            label={this.getGrommetIntlMessage('All')}
+            checked={this.state.data[attribute.attribute].all}
+            onChange={this._onChangeAll
+              .bind(this, attribute.attribute, attribute.filter)} />
+        );
+        return components.concat(values);
       }, this);
 
-    var label = (<FormattedMessage
-                    message={this.getIntlMessage('IndexFilters.filters')}
-                    quantity={activeFilterCount} />);
+    var label = (
+      <FormattedMessage
+        message={this.getIntlMessage('IndexFilters.filters')}
+        quantity={activeFilterCount} />
+    );
 
     var icon = (<FilterIcon notifications={activeFilterCount} />);
 
     return (
       <Menu className={CLASS_ROOT + "__menu"} icon={icon}
-        align="right" direction="down">
-        <div className={CLASS_ROOT} onClick={this._onSink}>
-          {label}
-          {filters}
-        </div>
+        align="right" direction="down" closeOnClick={false}>
+        {label}
+        {filters}
       </Menu>
     );
   }

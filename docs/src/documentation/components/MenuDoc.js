@@ -4,6 +4,8 @@ var React = require('react');
 var Menu = require('grommet/components/Menu');
 var GrommetDocument = require('grommet/components/Document');
 var Edit = require('grommet/components/icons/Edit');
+var Filter = require('grommet/components/icons/Filter');
+var CheckBox = require('grommet/components/CheckBox');
 
 var MenuDoc = React.createClass({
 
@@ -24,7 +26,10 @@ var MenuDoc = React.createClass({
           <dl>
             <dt><code>align      right|left</code></dt>
             <dd>Where to align the overlay.</dd>
-            <dt><code>collapse   true|false</code></dt>
+            <dt><code>closeOnClick  true|false</code></dt>
+            <dd>Indicates whether the opened menu drop down should close
+            when clicked. Default is true.</dd>
+            <dt><code>collapse      true|false</code></dt>
             <dd>Indicates that the menu should be collapsed and
               the default collapsed icon should be shown as a
               control to open it.</dd>
@@ -103,6 +108,16 @@ var MenuDoc = React.createClass({
             </Menu>
           </div>
           <pre><code className="html">{"<Menu icon={<Grommet.Icons.Edit />}> ..."}</code></pre>
+
+          <h3>icon, (collapse, down), do not close on click</h3>
+          <div className="example">
+            <Menu icon={<Filter />} closeOnClick={false}>
+              <CheckBox label="first" />
+              <CheckBox label="second" />
+              <CheckBox label="third" />
+            </Menu>
+          </div>
+          <pre><code className="html">{"<Menu icon={<Grommet.Icons.Filter />} closeOnClick={false}> ..."}</code></pre>
 
           <h3>collapse, up</h3>
           <div className="example">
