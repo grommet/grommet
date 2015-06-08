@@ -10,7 +10,9 @@ var state = {
   wsReady: false,
   timer: null,
   requests: [], // {message: , context: }
-  nextRequestId: 1
+  nextRequestId: 1,
+  initialized: false,
+  socketUrl: null
 };
 
 var RestWatch = {
@@ -51,6 +53,7 @@ var RestWatch = {
     // lost connection, retry in a bit
     state.ws = null;
     state.wsReady = false;
+    state.initialized = false;
     state.timer = setTimeout(this.initialize.bind(this), RECONNECT_TIMEOUT);
   },
 
@@ -77,14 +80,17 @@ var RestWatch = {
     });
   },
 
-  initialize: function() {
-    if (!state.ws && this.available()) {
-      var path = 'ws://' + (__SOCKET_HOST__ || window.location.host) + '/rest/ws';
+  initialize: function(socketUrl) {
+    if (!state.initialized && !state.ws && this.available() && (state.socketUrl || socketUrl)) {
+      state.socketUrl = state.socketUrl || socketUrl;
+      var path = state.socketUrl;
+      console.log('INITIALIZED SOCKET!!!!!', path);
       state.ws = new WebSocket(path);
       state.ws.onopen = this._onOpen.bind(this);
       state.ws.onerror = this._onError.bind(this);
       state.ws.onmessage = this._onMessage.bind(this);
       state.ws.onclose = this._onClose.bind(this);
+      state.initialized = true;
     }
   },
 
