@@ -7,6 +7,7 @@ To run this application, execute the following commands:
   1. Install bower dependencies:
 
     ```
+    $ cd grommet/examples/todo-app
     $ bower install
     ```
 
