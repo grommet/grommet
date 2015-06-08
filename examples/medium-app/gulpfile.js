@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var path = require('path');
-var devGulpTasks = require('grommet/utils/gulp/gulp-tasks');
+var devGulpTasks = require('../../src/utils/gulp/gulp-tasks');
 
 var opts = {
   base: '../../',
@@ -41,9 +41,9 @@ var opts = {
   },
   devServerPort: 8001,
   devServerProxy: {
-    "/rest/ws": 'ws://localhost:8000',
     "/rest/*": 'http://localhost:8000'
-  }
+  },
+  websocketHost: 'localhost:8000'
 };
 
 devGulpTasks(gulp, opts);

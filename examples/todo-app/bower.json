@@ -9,6 +9,6 @@
   	"Eric Soderberg"
   ],
   "dependencies": {
-    "grommet": "HewlettPackard/grommet-bower"
+    "grommet": "^0.2.2"
   }
 }

@@ -28,7 +28,6 @@ var MediumActivity = require('./MediumActivity');
 var MediumActivityResource = require('./MediumActivityResource');
 
 var rootPath = "/medium-app/";
-/// turn off when trying to get websockets + webpack dev server working together
 if (__DEV_MODE__) {
   rootPath = "/"; // webpack-dev-server
 }

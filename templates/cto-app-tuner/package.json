@@ -1,9 +1,12 @@
 {
-  "name": "medium-app",
-  "version": "0.1.2",
+  "name": "cto-app-tuner",
+  "version": "0.2.0",
   "main": "src/js/index.js",
-  "description": "Grommet Tour",
-  "author": "Eric Soderberg",
+  "description": "",
+  "author": "",
+  "engines": {
+    "node": ">= 0.9"
+  },
   "dependencies": {
     "grommet": "https://github.com/HewlettPackard/grommet.git#stable",
     "intl": "^0.1.4",

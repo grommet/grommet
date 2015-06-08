@@ -25,11 +25,7 @@ var opts = {
       ]
     }
   },
-  devServerPort: 8001,
-  devServerProxy: {
-    "/rest/*": 'http://localhost:8000'
-  },
-  websocketHost: 'localhost:8000'
+  devServerPort: 9000
 };
 
 devGulpTasks(gulp, opts);

@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var path = require('path');
-var devGulpTasks = require('grommet/utils/gulp/gulp-tasks');
+var devGulpTasks = require('../../src/utils/gulp/gulp-tasks');
 
 var opts = {
   copyAssets: [
@@ -30,10 +30,9 @@ var opts = {
         path.resolve(__dirname, 'src/scss'),
         path.resolve(__dirname, '../../src/scss'),
         path.resolve(__dirname, '../../node_modules')
-        //path.resolve(__dirname, 'node_modules')
       ]
     }
-  },
+  }
 };
 
 devGulpTasks(gulp, opts);

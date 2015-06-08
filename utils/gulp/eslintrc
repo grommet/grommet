@@ -16,6 +16,7 @@ globals:
   __THEME__: true
   __GROMMET__: true
   __DEV_MODE__: true
+  __SOCKET_HOST__: true
   IntlPolyfill: true
   Modernizr: true
   describe: true

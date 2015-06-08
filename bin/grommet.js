@@ -43,7 +43,7 @@ function getPossibleNodePaths() {
 function getGrommetPath() {
 
   var grommetPath;
-  getPossibleNodePaths().some(function (nodePath) {
+  getPossibleNodePaths().some(function(nodePath) {
     var possiblePath = path.join(nodePath, 'grommet');
     if (fs.existsSync(possiblePath)) {
       grommetPath = possiblePath;
@@ -59,10 +59,10 @@ function getGrommetPath() {
   return grommetPath;
 }
 
-gulp.task('init', function (done) {
-  mkdirp('./' + app, function (err) {
+gulp.task('init', function(done) {
+  mkdirp('./' + app, function(err) {
     if (err) {
-      console.log('Error trying to create project: '+ err);
+      console.log('Error trying to create project: ' + err);
     } else {
       process.chdir('./' + app);
 
@@ -77,47 +77,56 @@ gulp.task('init', function (done) {
 
       gulp.src(templateFolder)
         .pipe(template({
-            appName: app,
-            appTitle: title,
-            grommetVersion: grommetVersion
+          appName: app,
+          appTitle: title,
+          grommetVersion: grommetVersion
         }))
         .pipe(gulp.dest('./'))
         .pipe(install())
-        .on('end', function () {
+        .on('finish', function() {
           done();
-        })
-        .resume();
+        });
     }
   });
 
 });
 
-gulp.task('export', function (done) {
-  mkdirp('./' + dest, function (err) {
+gulp.task('export', function(done) {
+  mkdirp('./' + dest, function(err) {
     if (err) {
-      console.log('Error trying to create project: '+ err);
+      console.log('Error trying to create project: ' + err);
     } else {
       process.chdir('./' + dest);
 
       var grommetPath = getGrommetPath();
-      var exampleFolder = path.join(grommetPath, 'examples/'+ app);
-      var templateFolder = path.join(grommetPath, 'templates/'+ app +'/**');
+      var exampleFolder = path.join(grommetPath, 'examples/' + app);
+      var templateFolder = path.join(grommetPath, 'templates/' + app + '/**');
       var serverFolder = path.join(grommetPath, 'examples/server/**');
 
-      gulp.src([
-        exampleFolder + '/**',
-        '!'+exampleFolder+'/node_modules/',
-        '!'+exampleFolder+'/node_modules/**',
-        '!'+exampleFolder+'/dist/',
-        '!'+exampleFolder+'/dist/**',
-        '!'+exampleFolder+'/gulpfile.js',
-        '!'+exampleFolder+'/package.json'
-      ]).pipe(gulp.dest('./')).on('end', function() {
-        gulp.src(templateFolder).pipe(gulp.dest('./'));
-        gulp.src(serverFolder).pipe(gulp.dest('./server'));
+      fs.exists(exampleFolder, function(exists) {
+        if (!exists) {
+          throw new Error('Could not find ' + exampleFolder);
+        }
 
-        console.log('Successfully exported '+ app +' to '+ dest +'.');
-        done();
+        gulp.src([
+          exampleFolder + '/**',
+          '!' + exampleFolder + '/node_modules/',
+          '!' + exampleFolder + '/node_modules/**',
+          '!' + exampleFolder + '/dist/',
+          '!' + exampleFolder + '/dist/**',
+          '!' + exampleFolder + '/gulpfile.js',
+          '!' + exampleFolder + '/package.json',
+          '!' + exampleFolder + '/README.md'
+        ]).pipe(gulp.dest('./')).on('end', function() {
+          gulp.src(templateFolder).pipe(gulp.dest('./')).pipe(install()).on('finish', function() {
+            gulp.src(serverFolder).pipe(gulp.dest('./server')).pipe(install());
+          });
+        });
+
+        process.on('exit', function () {
+          console.log('Successfully exported ' + app + ' to ' + dest + '.');
+          done();
+        });
       });
     }
   });
