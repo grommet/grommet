@@ -1,26 +1,3 @@
+# Grommet Example App: server
 
-# Grommet server
-
-> Grommet server
-
-## Getting Started
-
-1. initialize tour
-
-    # cd examples/tour
-
-    # npm install
-
-    # gulp dev
-
-2. run server
-
-    # cd examples/server
-
-    # npm install
-
-    # node server.js
-
-3. browse
-
-    https://localhost:8000
+To run this example server, checkout [Running Server Wiki](https://github.com/HewlettPackard/grommet/wiki/Running-the-example-server).
