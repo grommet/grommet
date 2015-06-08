@@ -20,8 +20,16 @@ $meter-bar-length: round($inuit-base-spacing-unit * 8);
     stroke: $threshold-color;
   }
 
+  &__active-graphic {
+    position: relative;
+  }
+
+  &__labeled-graphic {
+    white-space: normal;
+  }
+
   &__labels-container {
-    display: inline-block;
+    display: block;
   }
 
   &__labels {
@@ -43,22 +51,34 @@ $meter-bar-length: round($inuit-base-spacing-unit * 8);
 
   &--bar {
     .meter {
+
+      &__labeled-graphic {
+        display: inline-block;
+      }
+
       &__graphic {
         width: $meter-bar-length;
         height: $inuit-base-spacing-unit;
       }
 
       &__bar {
-        stroke-width: $inuit-base-spacing-unit;
         stroke-linecap: butt;
         stroke-dasharray: quadruple($panel-width) quadruple($panel-width);
         stroke-dashoffset: 0;
+      }
 
+      &__values .meter__bar {
+        stroke-width: $inuit-base-spacing-unit;
         @include graph-stroke-color();
 
         @include media-query(lap-and-up) {
           @include animation('draw-meter 1.5s');
         }
+      }
+
+      &__thresholds .meter__bar {
+        stroke-width: halve($inuit-base-spacing-unit);
+        @include graph-stroke-color-translucent(0.5);
       }
 
       &__threshold {
@@ -69,6 +89,7 @@ $meter-bar-length: round($inuit-base-spacing-unit * 8);
         display: inline-block;
         vertical-align: top;
         margin-left: halve($inuit-base-spacing-unit);
+        @include inuit-font-size($inuit-heading-size-3);
 
         &-units {
           color: $secondary-text-color;
@@ -90,6 +111,7 @@ $meter-bar-length: round($inuit-base-spacing-unit * 8);
     }
 
     svg.meter__graphic {
+      display: block;
       width: $panel-width;
       height: $panel-width;
     }
@@ -103,7 +125,6 @@ $meter-bar-length: round($inuit-base-spacing-unit * 8);
       }
 
       &__slice {
-        stroke-width: $inuit-base-spacing-unit;
         stroke-linecap: butt;
         stroke-dasharray: quadruple($panel-width) quadruple($panel-width);
         stroke-dashoffset: 0;
@@ -111,19 +132,29 @@ $meter-bar-length: round($inuit-base-spacing-unit * 8);
         cursor: pointer;
         stroke: $meter-background-color;
 
-        @include graph-stroke-color();
-
-        @include media-query(lap-and-up) {
-          @include animation('draw-stroke 3s');
-        }
-
         &-indicator {
-          @include graph-fill-color;
+          stroke-linecap: round;
+          stroke-width: 3;
+          @include graph-stroke-color;
         }
 
         &--active {
           stroke-width: $inuit-base-spacing-unit;
         }
+      }
+
+      &__values .meter__slice {
+        stroke-width: $inuit-base-spacing-unit;
+        @include graph-stroke-color();
+
+        @include media-query(lap-and-up) {
+          @include animation('draw-stroke 3s');
+        }
+      }
+
+      &__thresholds .meter__slice {
+        stroke-width: halve($inuit-base-spacing-unit);
+        @include graph-stroke-color-translucent(0.5);
       }
 
       &__threshold {
@@ -205,6 +236,16 @@ $meter-bar-length: round($inuit-base-spacing-unit * 8);
         flex: 0 0 auto;
         text-align: left;
       }
+
+      &__label-min {
+        -webkit-order: 1;
+        order: 1;
+      }
+
+      &__label-max {
+        -webkit-order: 0;
+        order: 0;
+      }
     }
 
     &.meter--bar {
@@ -234,9 +275,13 @@ $meter-bar-length: round($inuit-base-spacing-unit * 8);
 
       .meter__labels-container {
         position: absolute;
+        top: 0px;
         left: $inuit-base-spacing-unit + halve($inuit-base-spacing-unit);
-        vertical-align: top;
         width: auto;
+        height: $meter-bar-length;
+      }
+
+      .meter__labels {
         height: $meter-bar-length;
       }
 
@@ -247,14 +292,22 @@ $meter-bar-length: round($inuit-base-spacing-unit * 8);
 
     &.meter--arc {
       svg.meter__graphic {
+        display: inline;
         width: $panel-width - double($inuit-base-spacing-unit);
         height: $panel-width;
       }
 
       .meter__labels-container {
+        display: inline-block;
+        vertical-align: top;
         width: auto;
+        height: $panel-width;
         padding-top: halve($inuit-base-spacing-unit);
         padding-bottom: halve($inuit-base-spacing-unit);
+      }
+
+      .meter__labels {
+        height: $panel-width - $inuit-base-spacing-unit;
       }
     }
   }
@@ -263,6 +316,10 @@ $meter-bar-length: round($inuit-base-spacing-unit * 8);
     &.meter--bar {
       svg.meter__graphic {
         width: $small-panel-width;
+      }
+
+      .meter__active {
+        @include inuit-font-size($inuit-base-font-size);
       }
     }
 
@@ -344,6 +401,12 @@ $meter-bar-length: round($inuit-base-spacing-unit * 8);
       .meter__legend {
         vertical-align: top;
       }
+    }
+  }
+
+  &--loading {
+    .meter__thresholds {
+      display: none;
     }
   }
 }
