@@ -30,7 +30,7 @@ router.get('/', function (req, res) {
   res.redirect('/docs');
 });
 
-app.use('/tour/', function (req, res, next) {
+app.use('/tour/', function (req, res) {
   res.redirect('/medium-app');
 });
 

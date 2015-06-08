@@ -384,7 +384,7 @@ var Generator = {
     //setInterval(randomActivity, 10000);
   },
 
-  listen: function (handler) {
+  listen: function () {
     //listener = handler;
   }
 };
