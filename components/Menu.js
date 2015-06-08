@@ -48,6 +48,7 @@ var Menu = React.createClass({
 
   propTypes: {
     align: React.PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
+    closeOnClick: React.PropTypes.bool,
     collapse: React.PropTypes.bool,
     direction: React.PropTypes.oneOf(['up', 'down', 'left', 'right', 'center']),
     icon: React.PropTypes.node,
@@ -63,6 +64,7 @@ var Menu = React.createClass({
   getDefaultProps: function () {
     return {
       align: 'left',
+      closeOnClick: true,
       direction: 'down',
       small: false
     };
@@ -85,6 +87,12 @@ var Menu = React.createClass({
 
   _onBlurControl: function () {
     this.setState({controlFocused: false});
+  },
+
+  _onSink: function (event) {
+    event.stopPropagation();
+    // need to go native to prevent closing via document
+    event.nativeEvent.stopImmediatePropagation();
   },
 
   getInitialState: function () {
@@ -255,7 +263,11 @@ var Menu = React.createClass({
   renderLayer: function() {
     if (this.state.active) {
 
-      var controlContents = this._renderControl();
+      var controlContents = (
+        <div onClick={this._onClose}>
+          {this._renderControl()}
+        </div>
+      );
 
       var first = null;
       var second = null;
@@ -267,11 +279,18 @@ var Menu = React.createClass({
         second = this.props.children;
       }
 
+      var onClick;
+      if (this.props.closeOnClick) {
+        onClick = this._onClose;
+      } else {
+        onClick = this._onSink;
+      }
+
       return (
         <MenuLayer router={this.context.router}
           align={this.props.align}
           direction={this.props.direction}
-          onClick={this._onClose}>
+          onClick={onClick}>
           {first}
           {second}
         </MenuLayer>
