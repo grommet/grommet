@@ -249,7 +249,8 @@ module.exports = function(gulp, opts) {
   gulp.task('dev', ['preprocess'], function() {
 
     var env = assign({}, options.env, {
-      __DEV_MODE__: true
+      __DEV_MODE__: true,
+      __SOCKET_HOST__: options.websocketHost ? '"' + options.websocketHost + '"' : undefined
     });
 
     var devWebpackConfig = assign({}, webpackConfig, options.webpack || {}, {

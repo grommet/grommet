@@ -15,7 +15,7 @@ var state = {
 
 var RestWatch = {
 
-  _sendMessage: function (op, id, url, params) {
+  _sendMessage: function(op, id, url, params) {
     state.ws.send(JSON.stringify({
       op: op,
       id: id,
@@ -24,37 +24,37 @@ var RestWatch = {
     }));
   },
 
-  _onOpen: function () {
+  _onOpen: function() {
     state.wsReady = true;
     // send any requests we have queued up
-    state.requests.forEach(function (request) {
+    state.requests.forEach(function(request) {
       this._sendMessage('start', request.id, request.url, request.params);
     }, this);
   },
 
-  _onError: function (error) {
+  _onError: function(error) {
     console.log('!!! RestWatch _onError TODO', error);
   },
 
-  _onMessage: function (event) {
+  _onMessage: function(event) {
     var message = JSON.parse(event.data);
     // Figure out which message this corresponds to so we
     // know which action to deliver the response with.
-    state.requests.some(function (request) {
+    state.requests.some(function(request) {
       if (request.id === message.id) {
         request.handler(message.result);
       }
     });
   },
 
-  _onClose: function () {
+  _onClose: function() {
     // lost connection, retry in a bit
     state.ws = null;
     state.wsReady = false;
     state.timer = setTimeout(this.initialize.bind(this), RECONNECT_TIMEOUT);
   },
 
-  _getREST: function (request) {
+  _getREST: function(request) {
     request.pollBusy = true;
     Rest.get(request.url, request.params)
       .end(function(err, res) {
@@ -69,17 +69,17 @@ var RestWatch = {
       });
   },
 
-  _poll: function () {
-    state.requests.forEach(function (request) {
-      if (! request.pollBusy) {
+  _poll: function() {
+    state.requests.forEach(function(request) {
+      if (!request.pollBusy) {
         this._getREST(request);
       }
     });
   },
 
-  initialize: function () {
-    if (! state.ws && this.available()) {
-      var path = 'ws://' + window.location.host + '/rest/ws';
+  initialize: function() {
+    if (!state.ws && this.available()) {
+      var path = 'ws://' + (__SOCKET_HOST__ || window.location.host) + '/rest/ws';
       state.ws = new WebSocket(path);
       state.ws.onopen = this._onOpen.bind(this);
       state.ws.onerror = this._onError.bind(this);
@@ -88,11 +88,11 @@ var RestWatch = {
     }
   },
 
-  available: function () {
+  available: function() {
     return ('WebSocket' in window || 'MozWebSocket' in window);
   },
 
-  start: function (url, params, handler) {
+  start: function(url, params, handler) {
     this.initialize();
     var request = {
       id: state.nextRequestId,
@@ -105,7 +105,7 @@ var RestWatch = {
 
     if (state.wsReady) {
       this._sendMessage('start', request.id, request.url, request.params);
-    } else if (! this.available()) {
+    } else if (!this.available()) {
       // no web sockets, fall back to polling
       this._getREST(request);
       clearTimeout(state.timer);
@@ -114,8 +114,8 @@ var RestWatch = {
     return request.id;
   },
 
-  stop: function (requestId) {
-    state.requests = state.requests.filter(function (request) {
+  stop: function(requestId) {
+    state.requests = state.requests.filter(function(request) {
       if (request.id === requestId) {
         if (state.wsReady) {
           this._sendMessage('stop', request.id);
