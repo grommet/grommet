@@ -9,10 +9,16 @@ var inline =
   "<Meter value={70} total={100} units=\"GB\" />";
 
 var simpleValue = 40;
-var simpleMin = {value: 20, label: '20 GB'};
+var simpleMin = {value: 0, label: '0 GB'};
 var simpleMax = {value: 80, label: '80 GB'};
 var simpleThreshold = 75;
 var simpleUnits = 'GB';
+
+var thresholds = [
+  {label: 'OK', value: 0, colorIndex: 'ok'},
+  {label: 'Warning', value: 60, colorIndex: 'warning'},
+  {label: 'Error', value: 70, colorIndex: 'error'}
+];
 
 var statusSeries = [
   {label: 'OK', value: 60, colorIndex: 'ok'},
@@ -121,7 +127,7 @@ var MeterDoc = React.createClass({
               " units=\"" + simpleUnits + "\" />"}
           </code></pre>
 
-          <h3>Bar, Min, Max, Units, Threshold, Vertical</h3>
+          <h3>Bar, Min, Max, Units, Thresholds, Vertical</h3>
           <div className="example">
             <Meter value={simpleValue} min={simpleMin}
               max={simpleMax} threshold={simpleThreshold}
@@ -135,21 +141,21 @@ var MeterDoc = React.createClass({
               " units=\"" + simpleUnits + "\" vertical={true} />"}
           </code></pre>
 
-          <h3>Arc, Min, Max, Units, Threshold</h3>
+          <h3>Arc, Min, Max, Units, Thresholds</h3>
           <div className="example">
             <Meter type="arc" value={simpleValue} min={simpleMin}
-              max={simpleMax} threshold={simpleThreshold}
+              max={simpleMax} thresholds={thresholds}
               units={simpleUnits} />
           </div>
           <pre><code className="html">
             {"<Meter type=\"arc\" value={" + simpleValue + "}\n" +
               " min={" + stringify(simpleMin) + "}\n" +
               " max={" + stringify(simpleMax) + "}\n" +
-              " threshold={" + simpleThreshold + "}\n" +
+              " thresholds={" + JSON.stringify(thresholds, null, '  ') + "}\n" +
               " units=\"" + simpleUnits + "\" />"}
           </code></pre>
 
-          <h3>Arc, Min, Max, Units, Threshold, Vertical</h3>
+          <h3>Arc, Min, Max, Units, Thresholds, Vertical</h3>
           <div className="example">
             <Meter type="arc" value={simpleValue} min={simpleMin}
               max={simpleMax} threshold={simpleThreshold}

@@ -33,6 +33,10 @@
 }
 
 @mixin graph-stroke-color-translucent($opacity) {
+  &.color-index-unset {
+    stroke: rgba($unset-color, $opacity);
+  }
+
   @each $status, $color in $brand-status-colors {
     &.color-index-#{$status} {
       stroke: rgba($color, $opacity);
