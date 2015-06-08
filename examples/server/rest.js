@@ -156,21 +156,26 @@ var MAP_REGEXP = /^\/rest\/index\/trees\/aggregated(.+)$/;
 function respondToRequest (connection, request) {
   var response = {op: 'update', id: request.id};
 
-  if ('/rest/index/resources' === request.url) {
-    response.result = getItems(request.url, request.params);
-  } else if ('/rest/index/resources/aggregated' === request.url) {
-    response.result = getAggregate(request.url, request.params);
-  } else if (MAP_REGEXP.test(request.url)) {
-    var uri = MAP_REGEXP.exec(request.url)[1];
-    response.result = map.build(uri);
-  } else {
-    var resource = data.getResource(request.url);
-    if (resource) {
-      response.result = resource;
+  try {
+    if ('/rest/index/resources' === request.url) {
+      response.result = getItems(request.url, request.params);
+    } else if ('/rest/index/resources/aggregated' === request.url) {
+      response.result = getAggregate(request.url, request.params);
+    } else if (MAP_REGEXP.test(request.url)) {
+      var uri = MAP_REGEXP.exec(request.url)[1];
+      response.result = map.build(uri);
     } else {
-      response.op = 'error';
-      response.result = 'unknown url ' + request.url;
+      var resource = data.getResource(request.url);
+      if (resource) {
+        response.result = resource;
+      } else {
+        response.op = 'error';
+        response.result = 'unknown url ' + request.url;
+      }
     }
+  } catch (e) {
+    response.op = 'error';
+    response.resule = e.message;
   }
 
   if (connection.ws) {
