@@ -5,10 +5,13 @@ require("!style!css!sass!index.scss");
 var React = require('react');
 var Router = require('react-router');
 var Rest = require('grommet/utils/Rest');
+var RestWatch = require('grommet/utils/RestWatch');
 var Locale = require('grommet/utils/Locale');
 //var Index = require('grommet/index/index'); /// TODO: refactor
 //var indexConfig = require('./IndexConfig'); /// TODO: refactor
 var Routes = require('./Routes');
+
+RestWatch.initialize('ws://localhost:8000/rest/ws');
 
 Rest.setHeaders({
   'Accept': 'application/json',
