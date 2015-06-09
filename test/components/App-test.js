@@ -4,7 +4,6 @@ var __path__ = '../../src/js/components/App';
 
 var GrommetTestUtils = require('../mocks/GrommetTestUtils');
 var LoginForm = require('../../src/js/components/LoginForm');
-var expect = require('expect');
 
 describe('Grommet App', function() {
   it('loads App component with default configuration', function() {
@@ -35,8 +34,6 @@ describe('Grommet App', function() {
     var Component = GrommetTestUtils.getComponent(__path__, <LoginForm />, { locales: 'pt-BR' });
 
     GrommetTestUtils.componentShouldExist(Component, 'login-form');
-    var TestUtils = React.addons.TestUtils;
-    var component = TestUtils.findRenderedDOMComponentWithClass(Component, 'call-to-action');
-    expect(component.getDOMNode().value).toBe('Logar');
+    GrommetTestUtils.componentShouldExist(Component, 'button--primary', 'Logar');
   });
 });

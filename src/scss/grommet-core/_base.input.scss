@@ -1,7 +1,4 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
-$input-border-width: 1px !default;
-$button-border-width: 2px !default;
-$range-border-radius: 3px !default;
 
 input,
 select,
@@ -39,58 +36,6 @@ input[type="button"],
 input[type="submit"] {
   text-align: center;
   line-height: inherit;
-}
-
-input[type="button"],
-input[type="submit"],
-button,
-a.button {
-  display: inline-block;
-  // Align overall height with regular text line height, reduce
-  // top and bottom padding by an extra 2px.
-  padding: (quarter($inuit-base-spacing-unit) - $button-border-width) halve($inuit-base-spacing-unit);
-  border: $button-border-width solid $button-border-color;
-  border-radius: $border-radius;
-  background-color: inherit; //$button-background-color;
-  //color: $button-text-color;
-  text-decoration: none;
-  cursor: pointer;
-  text-align: center;
-  outline: none;
-
-  &:hover {
-    background-color: $button-hover-background-color;
-    border-color: $button-hover-border-color;
-  }
-
-  &.primary {
-    background-color: $button-primary-background-color;
-    border-color: $button-primary-border-color;
-    color: $button-primary-text-color;
-
-    &:hover {
-      background-color: $brand-color;
-      border-color: $brand-color;
-    }
-  }
-
-  &.call-to-action {
-    @include inuit-font-size($inuit-heading-size-4);
-    padding: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit;
-  }
-
-  &:focus {
-    border-color: $focus-border-color;
-    box-shadow: 0 0 1px 1px $focus-border-color;
-  }
-
-  [class*="background-color-index-"] & {
-    &:hover {
-      background-color: $brand-color;
-      border-color: $brand-color;
-      text-decoration: none;
-    }
-  }
 }
 
 $small-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAAAXNSR0IArs4c6QAAARpJREFUKBVjnDlzJuu/f//cGagAmJiYTjCCzAEaWg+kGkBsCsCG58+fB4MNBBkyY8aMeYyMjIlkGnjy69evjkVFRd+ZYAa8ePEiDcjeBeOTQN/9+fOnL8gwkB64C0Gczs5OXn5+/sNAl+qD+ESAN////7fKyMi4DVOLYiBIcPLkyVKsrKwngIbKwhRho4EGgVzkDDTsOLI83Mswwdzc3GdAxV5A/keYGDoNlP8HFItBNwykDsNAkGBmZuYVIBUIxL9AfCygCGjYOizi2A0EKUxPT98PdEkyFk39QMMmYhEHC2F1IUwxUOMSILsaxgdasAaY1kpgfGw0RqRgUwRMozOB4trApOXS0NDwA5saksRCQ0OZ+/v7BYjRBACZeF+tn9zqUwAAAABJRU5ErkJggg==);

@@ -6,9 +6,17 @@ var FullForm = require('./FullForm');
 
 var FormDoc = React.createClass({
 
+  _onSubmit: function (event) {
+    event.preventDefault();
+  },
+
+  _onCancel: function (event) {
+    event.preventDefault();
+  },
+
   render: function() {
     var inline = [
-      "<Form>",
+      "<Form onSubmit={...}>",
       "  <Header>...</Header>",
       "  <fieldset>",
       "    <FormField>",
@@ -43,15 +51,15 @@ var FormDoc = React.createClass({
 
           <h3>Regular</h3>
           <div className="example">
-            <FullForm prefix="a-" />
+            <FullForm prefix="a-" onSubmit={this._onSubmit} onCancel={this._onCancel} />
           </div>
-          <pre><code className="html">{"<Form> ..."}</code></pre>
+          <pre><code className="html">{"<Form onSubmit={...}> ..."}</code></pre>
 
           <h3>Compact</h3>
           <div className="example">
-            <FullForm prefix="b-" compact={true}/>
+            <FullForm prefix="b-" onSubmit={this._onSubmit} compact={true} onCancel={this._onCancel} />
           </div>
-          <pre><code className="html">{"<Form compact={true}> ..."}</code></pre>
+          <pre><code className="html">{"<Form onSubmit={...} compact={true}> ..."}</code></pre>
 
         </section>
       </GrommetDocument>

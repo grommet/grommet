@@ -12,6 +12,7 @@ var RadioButton = require('grommet/components/RadioButton');
 var SearchInput = require('grommet/components/SearchInput');
 var Table = require('grommet/components/Table');
 var Footer = require('grommet/components/Footer');
+var Button = require('grommet/components/Button');
 
 var FullForm = React.createClass({
 
@@ -144,9 +145,8 @@ var FullForm = React.createClass({
         </FormFields>
         <Footer>
           <Menu direction="right">
-            <input type="submit" className="primary" value="OK"
-              onClick={this.props.onSubmit} />
-            <a onClick={this.props.onCancel}>Cancel</a>
+            <Button label="OK" primary={true} onClick={this.props.onSubmit} />
+            <Button label="Cancel" onClick={this.props.onCancel} />
           </Menu>
         </Footer>
       </Form>

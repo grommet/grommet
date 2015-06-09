@@ -20,11 +20,11 @@ var Integration = require('./Integration');
 
 var ActionsDoc = require('./patterns/ActionsDoc');
 var AppDoc = require('./components/AppDoc');
+var ButtonDoc = require('./components/ButtonDoc');
 var ChartDoc = require('./components/ChartDoc');
 var CheckBoxDoc = require('./components/CheckBoxDoc');
 var DashboardDoc = require('./patterns/DashboardDoc');
 var DocumentDoc = require('./components/DocumentDoc');
-var DonutDoc = require('./components/DonutDoc');
 var FooterDoc = require('./components/FooterDoc');
 var FormDoc = require('./components/FormDoc');
 var FormFieldDoc = require('./components/FormFieldDoc');
@@ -75,10 +75,10 @@ var CONTENTS = [
   {label: 'Components',
     contents: [
       {route: 'doc_app', label: 'App', component: AppDoc},
+      {route: 'doc_button', label: 'Button', component: ButtonDoc},
       {route: 'doc_chart', label: 'Chart', component: ChartDoc},
       {route: 'doc_check-box', label: 'CheckBox', component: CheckBoxDoc},
       {route: 'doc_document', label: 'Document', component: DocumentDoc},
-      {route: 'doc_donut', label: 'Donut', component: DonutDoc},
       {route: 'doc_footer', label: 'Footer', component: FooterDoc},
       {route: 'doc_form', label: 'Form', component: FormDoc},
       {route: 'doc_form-field', label: 'FormField', component: FormFieldDoc},

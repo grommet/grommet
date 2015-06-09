@@ -35,8 +35,7 @@ var FormDialog = React.createClass({
   },
 
   _onSubmit: function (event) {
-    event.preventDefault();
-    this.props.onClose();
+    this.props.onClose(event);
   },
 
   render: function () {
@@ -62,7 +61,8 @@ var LayerDoc = React.createClass({
     this.setState({formActive: true});
   },
 
-  _onCloseForm: function () {
+  _onCloseForm: function (event) {
+    event.preventDefault();
     this.setState({formActive: false});
   },
 

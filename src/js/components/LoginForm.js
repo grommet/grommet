@@ -4,6 +4,7 @@ var React = require('react');
 var Form = require('./Form');
 var FormField = require('./FormField');
 var CheckBox = require('./CheckBox');
+var Button = require('./Button');
 var IntlMixin = require('../mixins/GrommetIntlMixin');
 var CLASS_ROOT = "login-form";
 
@@ -94,7 +95,9 @@ var LoginForm = React.createClass({
           </FormField>
         </fieldset>
         {errors}
-        <input type="submit" className={CLASS_ROOT + "__submit primary call-to-action"} value={this.getGrommetIntlMessage('Log In')} />
+        <Button className={CLASS_ROOT + "__submit"} primary={true} strong={true}
+          label={this.getGrommetIntlMessage('Log In')}
+          onClick={this._onSubmit} />
         {footer}
       </Form>
     );

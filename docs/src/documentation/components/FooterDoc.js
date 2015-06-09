@@ -4,8 +4,13 @@ var React = require('react');
 var GrommetDocument = require('grommet/components/Document');
 var Footer = require('grommet/components/Footer');
 var Menu = require('grommet/components/Menu');
+var Button = require('grommet/components/Button');
 
 var FooterDoc = React.createClass({
+
+  _onClick: function () {
+    // no-op
+  },
 
   render: function() {
     var inline =
@@ -45,8 +50,8 @@ var FooterDoc = React.createClass({
             <Footer>
               <span></span>
               <Menu direction="right">
-                <a>Cancel</a>
-                <button className="primary">OK</button>
+                <Button label="Cancel" onClick={this._onClick} />
+                <Button label="OK" primary={true} onClick={this._onClick} />
               </Menu>
             </Footer>
           </div>

@@ -30,14 +30,6 @@
         }
       }
     }
-
-    button,
-    a.button,
-    input[type="submit"],
-    input[type="button"] {
-      @include inuit-font-size($inuit-heading-size-3, inherit);
-      min-width: round($inuit-base-spacing-unit * 4);
-    }
   }
 
   &--primary {

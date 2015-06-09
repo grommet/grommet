@@ -65,10 +65,7 @@ describe('Grommet LoginForm', function() {
     });
 
     GrommetTestUtils.componentShouldExist(Component, 'login-form');
-    var React = require('react/addons');
-    var TestUtils = React.addons.TestUtils;
-    var component = TestUtils.findRenderedDOMComponentWithClass(Component, 'call-to-action');
-    expect(component.getDOMNode().value).toBe('Logar');
+    GrommetTestUtils.componentShouldExist(Component, 'button--primary', 'Logar');
   });
 
   it('loads a LoginForm component with pt-BR locale and custom messages', function() {
@@ -80,10 +77,7 @@ describe('Grommet LoginForm', function() {
     });
 
     GrommetTestUtils.componentShouldExist(Component, 'login-form');
-    var React = require('react/addons');
-    var TestUtils = React.addons.TestUtils;
-    var component = TestUtils.findRenderedDOMComponentWithClass(Component, 'call-to-action');
-    expect(component.getDOMNode().value).toBe('Logar Test');
+    GrommetTestUtils.componentShouldExist(Component, 'button--primary', 'Logar Test');
   });
 
   it('falls back to en-US for unsupported locales inside LoginForm component', function() {
@@ -92,10 +86,7 @@ describe('Grommet LoginForm', function() {
     });
 
     GrommetTestUtils.componentShouldExist(Component, 'login-form');
-    var React = require('react/addons');
-    var TestUtils = React.addons.TestUtils;
-    var component = TestUtils.findRenderedDOMComponentWithClass(Component, 'call-to-action');
-    expect(component.getDOMNode().value).toBe('Log In');
+    GrommetTestUtils.componentShouldExist(Component, 'button--primary', 'Log In');
   });
 
   it('submits a LoginForm with username and password', function(done) {
