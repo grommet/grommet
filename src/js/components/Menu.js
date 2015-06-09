@@ -14,6 +14,7 @@ var MenuLayer = React.createClass({
   propTypes: {
     align: React.PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
     direction: React.PropTypes.oneOf(['up', 'down', 'left', 'right', 'center']),
+    id: React.PropTypes.string.isRequired,
     onClick: React.PropTypes.func.isRequired,
     router: React.PropTypes.func
   },
@@ -36,7 +37,7 @@ var MenuLayer = React.createClass({
     }
 
     return (
-      <div id="menu-layer" className={classes.join(' ')}
+      <div id={this.props.id} className={classes.join(' ')}
         onClick={this.props.onClick}>
         {this.props.children}
       </div>
@@ -103,6 +104,15 @@ var Menu = React.createClass({
     };
   },
 
+  componentDidMount: function () {
+    if (this.refs.control) {
+      var controlElement = this.refs.control.getDOMNode();
+      this.setState({
+        layerId: 'menu-layer-' + controlElement.getAttribute('data-reactid')
+      });
+    }
+  },
+
   componentDidUpdate: function (prevProps, prevState) {
     // Set up keyboard listeners appropriate to the current state.
 
@@ -139,7 +149,7 @@ var Menu = React.createClass({
       this.startListeningToKeyboard(activeKeyboardHandlers);
 
       var controlElement = this.refs.control.getDOMNode();
-      var layerElement = document.getElementById('menu-layer');
+      var layerElement = document.getElementById(this.state.layerId);
       var layerControlElement = layerElement.querySelectorAll("." + ROOT_CLASS + "__control")[0];
       var layerControlIconElement = layerElement.querySelectorAll('svg, img')[0];
 
@@ -290,7 +300,8 @@ var Menu = React.createClass({
         <MenuLayer router={this.context.router}
           align={this.props.align}
           direction={this.props.direction}
-          onClick={onClick}>
+          onClick={onClick}
+          id={this.state.layerId}>
           {first}
           {second}
         </MenuLayer>
