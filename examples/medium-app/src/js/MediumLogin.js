@@ -7,6 +7,7 @@ var LoginForm = require('grommet/components/LoginForm');
 var Actions = require('grommet/actions/Actions');
 var SessionStore = require('grommet/stores/SessionStore');
 var IntlMixin = require('grommet/mixins/GrommetIntlMixin');
+var Logo = require('./MediumLogo');
 
 var MediumLogin = React.createClass({
 
@@ -54,7 +55,7 @@ var MediumLogin = React.createClass({
     return (
       <Login background={"img/piano_player.jpg"}>
         <LoginForm
-          logo={<img src="img/grommet.svg" title="logo" />}
+          logo={<Logo />}
           title="Medium App"
           onSubmit={this._onSubmit}
           errors={errors} />
