@@ -21,6 +21,24 @@ $brand-graph-colors: (#FF8D6D, #877B75, #2AD2C9, #614767, #617D78);
 }
 
 @font-face {
+  font-family: "Metric";
+  src: url("~grommet/scss/hpe/font/MetricWeb-Bold.woff") format('woff');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Metric";
+  src: url("~grommet/scss/hpe/font/MetricWeb-Semibold.woff") format('woff');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Metric";
+  src: url("~grommet/scss/hpe/font/MetricWeb-Light.woff") format('woff');
+  font-weight: 100;
+}
+
+@font-face {
   font-family: "Simple";
   src: url("~grommet/scss/hpe/font/SimRg.otf") format("opentype");
 }
@@ -34,4 +52,8 @@ html,
   font-family: 'Simple', 'Metric', Arial, sans-serif;
 }
 
+$button-text-color: #000;
+$button-text-transform: uppercase;
+$button-font-weight: 600;
+$button-alternate-border-color: #FF8D6D;
 $border-radius: 0px;

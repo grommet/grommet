@@ -2,22 +2,30 @@
 
 $border-radius: 4px !default;
 
-$header-height: round($inuit-base-spacing-unit * 3);
-$large-header-height: round($inuit-base-spacing-unit * 4);
-$small-header-height: round($inuit-base-spacing-unit * 2);
-$footer-height: round($inuit-base-spacing-unit * 2);
-$graphic-height: round($inuit-base-spacing-unit * 16); // 384px
-$small-graphic-height: round($inuit-base-spacing-unit * 8); // 192px
-$large-graphic-height: round($inuit-base-spacing-unit * 24); // 576px
+$header-height: round($inuit-base-spacing-unit * 3) !default;
+$large-header-height: round($inuit-base-spacing-unit * 4) !default;
+$small-header-height: round($inuit-base-spacing-unit * 2) !default;
+$footer-height: round($inuit-base-spacing-unit * 2) !default;
+$graphic-height: round($inuit-base-spacing-unit * 16) !default; // 384px
+$small-graphic-height: round($inuit-base-spacing-unit * 8) !default; // 192px
+$large-graphic-height: round($inuit-base-spacing-unit * 24) !default; // 576px
 
-$center-column-width: round($inuit-base-spacing-unit * 40); // 960px;
-$sidebar-width: round($inuit-base-spacing-unit * 16); // 384px
-$nav-width: round($inuit-base-spacing-unit * 8); // 192px
-$form-width: round($inuit-base-spacing-unit * 20); // 480px
-$compact-form-width: round($inuit-base-spacing-unit * 10); // 240px
-$readable-text-width: round($inuit-base-spacing-unit * 24); // 576px
-$panel-width: round($inuit-base-spacing-unit * 8);
-$small-panel-width: round($inuit-base-spacing-unit * 6);
-$large-panel-width: round($inuit-base-spacing-unit * 12);
+$center-column-width: round($inuit-base-spacing-unit * 40) !default; // 960px;
+$sidebar-width: round($inuit-base-spacing-unit * 16) !default; // 384px
+$nav-width: round($inuit-base-spacing-unit * 8) !default; // 192px
+$form-width: round($inuit-base-spacing-unit * 20) !default; // 480px
+$compact-form-width: round($inuit-base-spacing-unit * 10) !default; // 240px
+$readable-text-width: round($inuit-base-spacing-unit * 24) !default; // 576px
+$panel-width: round($inuit-base-spacing-unit * 8) !default;
+$small-panel-width: round($inuit-base-spacing-unit * 6) !default;
+$large-panel-width: round($inuit-base-spacing-unit * 12) !default;
+
+$input-border-width: 1px !default;
+$button-border-width: 2px !default;
+$button-hover-border-width: 3px !default;
+$range-border-radius: 3px !default;
+
+$button-text-transform: none !default;
+$button-font-weight: inherit !default;
 
 $inuit-namespace: 'i-';

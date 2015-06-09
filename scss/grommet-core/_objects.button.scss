@@ -1,0 +1,118 @@
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+
+@mixin basic-button {
+  height: double($inuit-base-spacing-unit);
+  padding: (halve($inuit-base-spacing-unit) - $button-border-width)
+    (double($inuit-base-spacing-unit) - $button-border-width);
+  background-color: transparent;
+  border: $button-border-width solid $button-border-color;
+  border-radius: $border-radius;
+  color: $button-text-color;
+  @include inuit-font-size(18px, $inuit-base-spacing-unit);
+  text-transform: $button-text-transform;
+  font-weight: $button-font-weight;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  outline: none;
+}
+
+input[type="button"],
+input[type="submit"],
+button,
+a.button {
+  @include basic-button();
+}
+
+.button {
+  @include basic-button();
+
+  &:hover {
+    border-width: $button-hover-border-width;
+    padding: (halve($inuit-base-spacing-unit) - $button-hover-border-width)
+      (double($inuit-base-spacing-unit) - $button-hover-border-width);
+  }
+
+  &:active {
+    border-color: darken($button-border-color, 15%);
+    background-color: darken($button-border-color, 15%);
+    color: $colored-text-color;
+  }
+
+  &:focus {
+    border-color: $focus-border-color;
+    box-shadow: 0 0 1px 1px $focus-border-color;
+  }
+
+  &--strong {
+    background-color: $button-border-color;
+  }
+
+  &--primary {
+    border-color: $button-primary-border-color;
+
+    &.button--strong {
+      background-color: $button-primary-border-color;
+      color: $colored-text-color;
+    }
+
+    &:active,
+    &.button--strong:active {
+      border-color: darken($button-primary-border-color, 15%);
+      background-color: darken($button-primary-border-color, 15%);
+    }
+  }
+
+  &--alternate {
+    border-color: $button-alternate-border-color;
+
+    &.button--strong {
+      background-color: $button-alternate-border-color;
+    }
+
+    &:active,
+    &.button--strong:active {
+      border-color: darken($button-alternate-border-color, 15%);
+      background-color: darken($button-alternate-border-color, 15%);
+    }
+  }
+
+  &--large {
+    height: round($inuit-base-spacing-unit * 3);
+    padding: ($inuit-base-spacing-unit - $button-border-width)
+      (double($inuit-base-spacing-unit) - $button-border-width);
+
+    &:hover {
+      padding: ($inuit-base-spacing-unit - $button-hover-border-width)
+        (double($inuit-base-spacing-unit) - $button-hover-border-width);
+    }
+  }
+
+  &--small {
+    border: none;
+    height: $inuit-base-spacing-unit;
+    padding: 0px halve($inuit-base-spacing-unit);
+    @include inuit-font-size(16px, $inuit-base-spacing-unit);
+    color: $brand-link-color;
+    text-transform: none;
+    font-weight: normal;
+
+    &:hover {
+      border-width: 0px;
+      padding: 0px halve($inuit-base-spacing-unit);
+    }
+  }
+
+  &--disabled {
+    opacity: 0.2;
+    border-color: $button-disabled-background-color;
+    background-color: $button-disabled-background-color;
+    cursor: default;
+
+    &:active {
+      color: $button-text-color;
+      border-color: $button-disabled-background-color;
+      background-color: $button-disabled-background-color;
+    }
+  }
+}
