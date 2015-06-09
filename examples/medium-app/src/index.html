@@ -9,24 +9,86 @@
   <link rel="shortcut icon" type="image/png" href="img/shortcut-icon.png" />
   <link rel="apple-touch-icon" sizes="192x192" type="image/png" href="img/mobile-app-icon.png">
   <style>
-  body.loading {margin: 0px; width: 100vw; height: 100vw; background-image: radial-gradient(circle at 50% 15%, #fff, #fff 30%, #ccc);}
-  body.loading #logo {display: block; margin: 10vh auto;}
-  body.loading #spinner {display: block; margin: 0px auto; width: 48px; height: 48px; -webkit-animation:spin 4s steps(4, end) infinite; -moz-animation:spin 4s steps(4, end) infinite; animation:spin 4s steps(4, end) infinite; -webkit-transform-origin: 50% 50%;}
-  @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
-  @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
-  @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+  body.loading {margin: 0px; width: 100vw; height: 100vh;
+    background-image: radial-gradient(circle at 50% 15%, #fff, #fff 30%, #ccc);
+  }
+  body.loading #content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    font-size: 0px;
+  }
+  body.loading #logo {
+    position: absolute; display: block; width: 96px; height: 96px;
+    top: calc(50vh - 48px); left: calc(50vw - 48px);
+  }
+  div.t {
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 0px;
+    width: 10vw;
+    height: 10vh;
+    background-color: #e2e2e2;
+  }
+  div.t.on {
+    -webkit-animation: pulse 3s infinite linear alternate;
+    -moz-animation: pulse 3s infinite linear alternate;
+    animation: pulse 3s infinite linear alternate;
+  }
+  div.t.on:hover {
+    -webkit-animation: none;
+    background-color: #ccc;
+  }
+  @-webkit-keyframes pulse {
+    100% { background-color: #fff; }
+  }
+  @-moz-keyframes pulse {
+    100% { background-color: #fff; }
+  }
+  @keyframes pulse {
+    100% { background-color: #fff; }
+  }
   </style>
 </head>
 <body class="loading">
   <div id="content">
-    <svg id="logo" width="140" height="140" viewBox="0 0 140 140" >
-      <path d="M100.778067,39.3784493 C117.6444,56.3564493 117.611399,83.7914493 100.676065,100.726449 C83.7427312,117.659449 56.1111863,117.646449 39.1928526,100.698449 C22.2505185,83.7264493 22.2605187,56.2334493 39.2208532,39.2734493 C47.9560254,30.5384493 59.4852528,26.3004493 70.9314785,26.5574493 L93.4449225,4.04444926 C68.9824401,-4.65155074 40.6508814,0.675449262 20.9294924,20.0254493 C-6.74605336,47.1834493 -7.01205861,91.9314493 20.3544811,119.401449 C47.6840201,146.834449 92.0788956,146.866449 119.447435,119.497449 C146.749974,92.1954493 146.783974,47.9514493 119.550437,20.6054493 L100.778067,39.3784493 L100.778067,39.3784493 Z" fill="#8C50FF"></path>
-      <path d="M94.4064621,52.5519231 C102.88827,64.4289231 101.698297,81.2119231 90.703546,91.7159231 C78.8598143,103.030923 60.2962348,102.798923 48.723497,91.2069231 C37.0167621,79.4809231 37.0187621,60.4809231 48.7374966,48.7619231 L70.9489935,26.5479231 C59.5442518,26.3319231 47.9775139,30.5319231 39.2427117,39.2669231 C22.3140952,56.1959231 22.2750961,83.6199231 39.1227144,100.599923 C56.1293292,117.739923 83.6227064,117.797923 100.69732,100.724923 C117.632936,83.7899231 117.617936,56.3049231 100.802317,39.3769231 L94.9894489,45.1899231 C93.0114937,47.1669231 92.7814989,50.2759231 94.4064621,52.5519231 L94.4064621,52.5519231 Z" fill="#333333"></path>
-      <g id="spinner">
-        <circle stroke="#ddd" stroke-width="4" stroke-dasharray="24px 8px" fill="none" cx="70" cy="70" r="20"></circle>
-        <circle stroke="#333" stroke-width="4" stroke-dasharray="24px 104px" fill="none" cx="70" cy="70" r="20"></circle>
+    <svg id="logo" viewBox="0 0 48 48" version="1.1">
+      <g>
+        <g opacity="0.2">
+          <polygon fill="#333333" points="48,0 24,41 24,24"/>
+        </g>
+        <polygon fill="#333333" points="48,0 48,24 38.8,15.8"/>
+        <polygon opacity="0.4" fill="#333333" points="48,48 30.4,30.1 38.8,15.8"/>
+        <polygon opacity="0.8" fill="#333333" points="38.8,15.8 48,48 48,24"/>
+        <g>
+          <polygon fill="#333333" points="0,48 17.6,30.1 9.2,15.8"/>
+        </g>
+        <polygon opacity="0.2" fill="#333333" points="0,48 0,24 9.2,15.8"/>
+        <polygon opacity="0.8" fill="#333333" points="0,0 24,41 24,24"/>
+        <polygon opacity="0.4" fill="#333333" points="9.2,15.8 0,0 0,24"/>
       </g>
     </svg>
+    <script>
+    var c = document.getElementById("content");
+    for (var i = 0; i < 100; i += 1) {
+      c.insertAdjacentHTML('beforeend', '<div class="t off"></div>');
+    }
+    var timer = setInterval(function () {
+      var again = false;
+      if (document.body.classList.contains('loading')) {
+        var ts = c.querySelectorAll('div.t.off');
+        var index = Math.floor(Math.random() * ts.length);
+        ts[index].classList.remove('off');
+        ts[index].classList.add('on');
+        if (ts.length > 1) {
+          again = true;
+        }
+      }
+      if (! again) {
+        clearInterval(timer);
+      }
+    }, 100)
+    </script>
   </div>
   <script src="index.js"></script>
 </body>
