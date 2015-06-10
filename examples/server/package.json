@@ -22,5 +22,10 @@
     "serve-static": "^1.7.1",
     "ws": "^0.7.2",
     "json-stringify-pretty-compact": "^1.0.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-nodemon": "^2.0.3",
+    "gulp-rsync": "0.0.5"
   }
 }
