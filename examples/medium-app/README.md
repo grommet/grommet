@@ -23,4 +23,6 @@ To run this application, execute the following commands:
 
   3. Open [http://localhost:8001/webpack-dev-server/](http://localhost:8001/webpack-dev-server/)
 
+  4. For the login credentials: `Username` must be a valid email, and any `Password` is accepted at this point.
+
   **NOTE**: If you want to use this application outside the Grommet context, checkout [Exporting Example Apps Wiki](https://github.com/HewlettPackard/grommet/wiki/Exporting-examples-from-Grommet).
