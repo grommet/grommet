@@ -1,0 +1,28 @@
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+
+.distribution {
+  position: relative;
+  display: block;
+
+  &__graphic {
+    width: 100%;
+    height: $graphic-height;
+    max-height: calc(100vh - #{double($header-height)});
+  }
+
+  rect {
+    @include graph-fill-color();
+  }
+
+  &--small {
+    .distribution__graphic {
+      height: $small-graphic-height;
+    }
+  }
+
+  &--large {
+    .distribution__graphic {
+      height: $large-graphic-height;
+    }
+  }
+}
