@@ -24,6 +24,7 @@ var ButtonDoc = require('./components/ButtonDoc');
 var ChartDoc = require('./components/ChartDoc');
 var CheckBoxDoc = require('./components/CheckBoxDoc');
 var DashboardDoc = require('./patterns/DashboardDoc');
+var DistributionDoc = require('./components/DistributionDoc');
 var DocumentDoc = require('./components/DocumentDoc');
 var FooterDoc = require('./components/FooterDoc');
 var FormDoc = require('./components/FormDoc');
@@ -78,6 +79,7 @@ var CONTENTS = [
       {route: 'doc_button', label: 'Button', component: ButtonDoc},
       {route: 'doc_chart', label: 'Chart', component: ChartDoc},
       {route: 'doc_check-box', label: 'CheckBox', component: CheckBoxDoc},
+      {route: 'doc_distribution', label: 'Distribution', component: DistributionDoc},
       {route: 'doc_document', label: 'Document', component: DocumentDoc},
       {route: 'doc_footer', label: 'Footer', component: FooterDoc},
       {route: 'doc_form', label: 'Form', component: FormDoc},
