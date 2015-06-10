@@ -12,15 +12,16 @@
     "ejs": "^2.3.1",
     "email-templates": "^1.2.1",
     "express": "^4.10.6",
+    "express-http-proxy": "^0.6.0",
     "http-proxy": "^1.11.1",
     "json-server": "^0.5.5",
+    "json-stringify-pretty-compact": "^1.0.1",
     "lodash": "^2.4.1",
     "morgan": "^1.5.0",
     "nodemailer": "^1.3.4",
     "nodemailer-smtp-transport": "^1.0.2",
     "request": "^2.53.0",
     "serve-static": "^1.7.1",
-    "ws": "^0.7.2",
-    "json-stringify-pretty-compact": "^1.0.1"
+    "ws": "^0.7.2"
   }
 }
