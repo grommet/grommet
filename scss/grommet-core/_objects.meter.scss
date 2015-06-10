@@ -219,10 +219,16 @@ $meter-bar-length: round($inuit-base-spacing-unit * 8);
   }
 
   &--vertical {
-    display: -webkit-flex;
-    display: flex;
-
     .meter {
+      &__active-graphic {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      &__labeled-graphic {
+        white-space: nowrap;
+      }
+
       &__labels {
         -webkit-flex-direction: column;
         flex-direction: column;
@@ -245,6 +251,13 @@ $meter-bar-length: round($inuit-base-spacing-unit * 8);
       &__label-max {
         -webkit-order: 0;
         order: 0;
+      }
+
+      &__legend {
+        @include media-query(lap-and-up) {
+          vertical-align: middle;
+          margin: 0px 0px 0px 24px;
+        }
       }
     }
 
@@ -314,6 +327,11 @@ $meter-bar-length: round($inuit-base-spacing-unit * 8);
 
   &--small {
     &.meter--bar {
+
+      .meter__labels-container {
+        width: $small-panel-width;
+      }
+
       svg.meter__graphic {
         width: $small-panel-width;
       }
