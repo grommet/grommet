@@ -8,10 +8,11 @@ var GrommetDocument = require('grommet/components/Document');
 var inline =
   "<Distribution series={[...]} />";
 
-var statusSeries = [
-  {label: 'OK', value: 70, colorIndex: 'ok'},
-  {label: 'Warning', value: 20, colorIndex: 'warning'},
-  {label: 'Error', value: 10, colorIndex: 'error'}
+var series = [
+  {label: 'First', value: 40},
+  {label: 'Second', value: 30},
+  {label: 'Third', value: 20},
+  {label: 'Fourth', value: 10}
 ];
 
 var DistributionDoc = React.createClass({
@@ -50,38 +51,38 @@ var DistributionDoc = React.createClass({
 
           <h3>Basic</h3>
           <div className="example">
-            <Distribution series={statusSeries} />
+            <Distribution series={series} />
           </div>
           <pre><code className="html">
             {"<Distribution\n " +
-              "series={" + stringify(statusSeries, null, '  ') + "}  />"}
+              "series={" + stringify(series, null, '  ') + "}  />"}
           </code></pre>
 
           <h3>Legend</h3>
           <div className="example">
-            <Distribution legend={true} series={statusSeries} />
+            <Distribution legend={true} series={series} />
           </div>
           <pre><code className="html">
             {"<Distribution legend={true}\n " +
-              "series={" + stringify(statusSeries, null, '  ') + "}  />"}
+              "series={" + stringify(series, null, '  ') + "}  />"}
           </code></pre>
 
           <h3>Small</h3>
           <div className="example">
-            <Distribution small={true} series={statusSeries} />
+            <Distribution small={true} series={series} />
           </div>
           <pre><code className="html">
             {"<Distribution small={true}\n " +
-              "series={" + stringify(statusSeries, null, '  ') + "}  />"}
+              "series={" + stringify(series, null, '  ') + "}  />"}
           </code></pre>
 
           <h3>Large</h3>
           <div className="example">
-            <Distribution large={true} series={statusSeries} />
+            <Distribution large={true} series={series} />
           </div>
           <pre><code className="html">
             {"<Distribution large={true}\n " +
-              "series={" + stringify(statusSeries, null, '  ') + "}  />"}
+              "series={" + stringify(series, null, '  ') + "}  />"}
           </code></pre>
 
           <h3>Loading</h3>
