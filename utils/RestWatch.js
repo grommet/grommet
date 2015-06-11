@@ -83,8 +83,7 @@ var RestWatch = {
   initialize: function(socketUrl) {
     if (!state.initialized && !state.ws && this.available() && (state.socketUrl || socketUrl)) {
       state.socketUrl = state.socketUrl || socketUrl;
-      var path = state.socketUrl;
-      state.ws = new WebSocket(path);
+      state.ws = new WebSocket(state.socketUrl);
       state.ws.onopen = this._onOpen.bind(this);
       state.ws.onerror = this._onError.bind(this);
       state.ws.onmessage = this._onMessage.bind(this);

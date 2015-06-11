@@ -13,7 +13,6 @@ var mediumApp = require('./medium-app');
 var ctoAppTuner = require('./cto-app-tuner');
 var path = require('path');
 var proxy = require('express-http-proxy');
-
 //var demo = require('./demo');
 
 var PORT = 8000;
