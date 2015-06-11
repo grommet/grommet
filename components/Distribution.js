@@ -140,12 +140,12 @@ var Distribution = React.createClass({
       legend = this._renderLegend();
     }
 
-    var rects = null;
+    var boxes = [];
     if (this.props.series) {
       var areaPer = (this.state.width * this.state.height) / this.state.total;
       var origin = [0, 0];
       var across = false;
-      rects = this.props.series.map(function (item, index) {
+      boxes = this.props.series.map(function (item, index) {
         var classes = [CLASS_ROOT + "__box"];
         var colorIndex = this._itemColorIndex(item, index);
         classes.push("color-index-" + colorIndex);
@@ -163,10 +163,33 @@ var Distribution = React.createClass({
           across = true;
           origin[0] += width;
         }
+        var text = '' + item.value;
+        if (this.props.units) {
+          text += ' ' + this.props.units;
+        }
+        if (item.label) {
+          text += ' ' + item.label;
+        }
         return (
-          <rect key={index} className={classes.join(' ')} x={x} y={y} width={width} height={height} />
+          <g key={index}>
+            <rect className={classes.join(' ')} x={x} y={y} width={width} height={height}></rect>
+            <text className={CLASS_ROOT + "__box-label"} x={x + 12} y={y + 24}>{text}</text>
+          </g>
         );
       }, this);
+    }
+
+    if (boxes.length === 0) {
+      classes.push(CLASS_ROOT + "--loading");
+      var loadingClasses = [CLASS_ROOT + "__loading-indicator"];
+      loadingClasses.push("color-index-loading");
+      var commands = "M0," + (this.state.height / 2) +
+        " L" + this.state.width + "," + (this.state.height / 2);
+      boxes.push(
+        <g key="loading">
+          <path stroke="none" className={loadingClasses.join(' ')} d={commands} />
+        </g>
+      );
     }
 
     return (
@@ -174,7 +197,7 @@ var Distribution = React.createClass({
         <svg ref="box" className={CLASS_ROOT + "__graphic"}
           viewBox={"0 0 " + this.state.width + " " + this.state.height}
           preserveAspectRatio="none">
-          {rects}
+          {boxes}
         </svg>
         {legend}
       </div>

@@ -10,8 +10,17 @@
     max-height: calc(100vh - #{double($header-height)});
   }
 
-  rect {
+  &__box {
     @include graph-fill-color();
+
+    &-label {
+      fill: $active-background-color;
+    }
+  }
+
+  &__loading-indicator {
+    stroke-width: $inuit-base-spacing-unit;
+    @include graph-stroke-color();
   }
 
   &--small {
