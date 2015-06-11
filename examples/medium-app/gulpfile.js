@@ -10,10 +10,6 @@ var opts = {
     {
       asset: 'examples/medium-app/src/img/**',
       dist: 'examples/medium-app/dist/img/'
-    },
-    {
-      asset: 'src/img/**',
-      dist: 'examples/medium-app/dist/img/'
     }
   ],
   scssAssets: ['examples/medium-app/src/scss/**/*.scss'],
