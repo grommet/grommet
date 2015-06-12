@@ -57,11 +57,11 @@ var TodoAddTaskForm = React.createClass({
           </FormFields>
         </Form>
         <Footer>
-            <Menu direction="right">
-              <Button label="OK" primary={true} onClick={this._onSubmit} />
-              <Button label="Cancel" onClick={this.props.onClose} />
-            </Menu>
-          </Footer>
+          <Menu direction="right">
+            <Button label="OK" primary={true} onClick={this._onSubmit} />
+            <Button label="Cancel" onClick={this.props.onClose} />
+          </Menu>
+        </Footer>
       </Layer>
     );
   }

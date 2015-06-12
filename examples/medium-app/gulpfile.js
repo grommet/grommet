@@ -22,10 +22,10 @@ var opts = {
     remoteDestination: '/var/www/html/examples/medium-app/dist'
   },
   webpack: {
-  	devAlias: { // TODO: remove, just for local dev
-  		'grommet': path.resolve(__dirname, '../../src/js')
-  	},
     resolve: {
+      alias: { // TODO: remove, just for local dev
+        'grommet': path.resolve(__dirname, '../../src/js')
+      },
       root: [
         path.resolve(__dirname, 'src/js'),
         path.resolve(__dirname, 'src/scss'),

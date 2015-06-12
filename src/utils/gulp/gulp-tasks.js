@@ -273,10 +273,6 @@ module.exports = function(gulp, opts) {
 
     });
 
-    if (options.webpack.devAlias) {
-      devWebpackConfig.resolve.alias = options.webpack.devAlias;
-    }
-
     if (!devWebpackConfig.resolve) {
       devWebpackConfig.resolve = {};
     }
