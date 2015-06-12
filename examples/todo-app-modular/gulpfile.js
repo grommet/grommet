@@ -1,5 +1,3 @@
-// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
-
 var gulp = require('gulp');
 var path = require('path');
 var devGulpTasks = require('../../src/utils/gulp/gulp-tasks');
@@ -17,11 +15,11 @@ var opts = {
   mainScss: 'src/scss/index.scss',
   devServerPort: 9010,
   webpack: {
-    devAlias: { // TODO: remove, just for local dev
-      'grommet/scss': path.resolve(__dirname, '../../src/scss'),
-      'grommet': path.resolve(__dirname, '../../src/js')
-    },
     resolve: {
+      alias: { // TODO: remove, just for local dev
+        'grommet/scss': path.resolve(__dirname, '../../src/scss'),
+        'grommet': path.resolve(__dirname, '../../src/js')
+      },
       root: [
         path.resolve(__dirname, 'src/js'),
         path.resolve(__dirname, 'src/scss'),

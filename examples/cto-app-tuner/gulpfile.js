@@ -20,11 +20,11 @@ var opts = {
   },
   devServerPort: 9000,
   webpack: {
-    devAlias: { // TODO: remove, just for local dev
-      'grommet/scss': path.resolve(__dirname, '../../src/scss'),
-      'grommet': path.resolve(__dirname, '../../src/js')
-    },
     resolve: {
+      alias: { // TODO: remove, just for local dev
+        'grommet/scss': path.resolve(__dirname, '../../src/scss'),
+        'grommet': path.resolve(__dirname, '../../src/js')
+      },
       root: [
         path.resolve(__dirname, 'src/js'),
         path.resolve(__dirname, 'src/scss'),
