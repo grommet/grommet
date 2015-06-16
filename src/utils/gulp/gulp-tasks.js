@@ -217,16 +217,23 @@ module.exports = function(gulp, opts) {
       __DEV_MODE__: false
     });
 
-    var config = assign({}, webpackConfig, options.webpack || {}, {
-      plugins: [
-        new webpack.optimize.UglifyJsPlugin({
-          compress: {
-            warnings: false
-          }
-        }),
-        new webpack.DefinePlugin(env)
+    var plugins = [
+      new webpack.DefinePlugin(env)
       //new webpack.optimize.DedupePlugin()
-      ]
+    ];
+
+    var argv = require('yargs').argv;
+    console.log(argv);
+    if (!argv.skipMinify) {
+      plugins.push(new webpack.optimize.UglifyJsPlugin({
+        compress: {
+          warnings: false
+        }
+      }));
+    }
+
+    var config = assign({}, webpackConfig, options.webpack || {}, {
+      plugins: plugins
     });
 
     if (!config.resolve) {
