@@ -133,4 +133,11 @@ gulp.task('export', function(done) {
 
 });
 
-gulp.start(task);
+var argv = require('yargs').argv;
+
+if (argv.version) {
+  console.log(require(path.join(getGrommetPath(), 'package.json')).version);
+  process.exit(0);
+} else {
+  gulp.start(task);
+}
