@@ -10,6 +10,7 @@ var cookieParser = require('cookie-parser');
 var docs = require('./docs');
 var rest = require('./rest');
 var mediumApp = require('./medium-app');
+var mediumAppDev = require('./medium-app-dev');
 var ctoAppTuner = require('./cto-app-tuner');
 var path = require('path');
 var proxy = require('express-http-proxy');
@@ -45,6 +46,7 @@ app.
   use('/docs', docs).
   use('/rest', rest.router).
   use('/medium-app', mediumApp).
+  use('/medium-app-dev', mediumAppDev).
   use('/cto-app-tuner', ctoAppTuner).
   use('/assets', express.static(path.join(__dirname, '/../../docs/dist/assets'))).
   use('/hello-world', express.static(path.join(__dirname, '/../hello-world'))).
