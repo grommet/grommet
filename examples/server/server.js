@@ -15,6 +15,7 @@ var ctoAppTuner = require('./cto-app-tuner');
 var path = require('path');
 var proxy = require('express-http-proxy');
 //var demo = require('./demo');
+var request = require('request');
 
 var PORT = 8000;
 
@@ -42,6 +43,16 @@ app.use('/slackin', proxy('grommet.io:3000', {
   }
 }));
 
+app.use('/socket.io', proxy('grommet.io:3000', {
+  forwardPath: function(req, res) {
+    return '/socket.io' + require('url').parse(req.url).path;
+  }
+}));
+
+app.use('/invite', function(req, res) {
+  request.post({uri: 'http://grommet.io:3000/invite', json: req.body}).pipe(res);
+});
+
 app.
   use('/docs', docs).
   use('/rest', rest.router).
@@ -49,6 +60,7 @@ app.
   use('/medium-app-dev', mediumAppDev).
   use('/cto-app-tuner', ctoAppTuner).
   use('/assets', express.static(path.join(__dirname, '/../../docs/dist/assets'))).
+  use('/assets', express.static('/usr/local/lib/node_modules/slackin/lib/assets')).
   use('/hello-world', express.static(path.join(__dirname, '/../hello-world'))).
   //use('/demo', demo).
   use('', router);
