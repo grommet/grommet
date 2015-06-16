@@ -65,7 +65,7 @@ var opts = {
       hpinc: true
     },
     __GROMMET__: {
-      version: '"'+grommetVersion+'"'
+      version: '"' + grommetVersion + '"'
     }
   },
   scsslint: true
