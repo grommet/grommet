@@ -2,7 +2,8 @@
 
 var React = require('react');
 var GrommetDocument = require('grommet/components/Document');
-var FullForm = require('./FullForm');
+var FullForm = require('./samples/FullForm');
+var AddUserForm = require('./samples/AddUserForm');
 
 var FormDoc = React.createClass({
 
@@ -60,6 +61,12 @@ var FormDoc = React.createClass({
             <FullForm prefix="b-" onSubmit={this._onSubmit} compact={true} onCancel={this._onCancel} />
           </div>
           <pre><code className="html">{"<Form onSubmit={...} compact={true}> ..."}</code></pre>
+
+          <h3>Add User</h3>
+          <div className="example">
+            <AddUserForm prefix="a-" onSubmit={this._onSubmit} onCancel={this._onCancel} />
+          </div>
+          <pre><code className="html">{"<Form onSubmit={...}> ..."}</code></pre>
 
         </section>
       </GrommetDocument>

@@ -6,6 +6,8 @@
   border: $input-border-width solid $border-color;
   margin-bottom: - $input-border-width; // so borders overlap
   background-color: $form-field-background-color;
+  max-height: 100vh;
+  transition: all 0.4s;
 
   @include media-query(lap-and-up) {
     width: $form-width;
@@ -18,6 +20,8 @@
 
   @include media-query(palm) {
     width: 100vw;
+    border-left: none;
+    border-right: none;
   }
 
   .form--fill & {
@@ -69,7 +73,10 @@
 
     > .check-box,
     > .radio-button {
+      display: block;
       @include inuit-font-size($content-font-size);
+      margin-top: quarter($inuit-base-spacing-unit);
+      margin-bottom: quarter($inuit-base-spacing-unit);
     }
 
     > .search-input {
@@ -94,6 +101,14 @@
         }
       }
     }
+
+    > .form-field:not(.form-field--hidden) {
+      margin-top: halve($inuit-base-spacing-unit);
+      border: none;
+      border-top: 1px solid $border-color;
+      padding-left: 0px;
+      padding-right: 0px;
+    }
   }
 
   &__help {
@@ -116,6 +131,15 @@
     .form-field__label {
       cursor: pointer;
     }
+  }
+
+  &--hidden {
+    max-height: 0px;
+    border: none;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    transition: all 0.2s;
   }
 
   &--error {

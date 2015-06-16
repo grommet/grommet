@@ -6,7 +6,8 @@ var Layer = require('grommet/components/Layer');
 var Form = require('grommet/components/Form');
 var FormFields = require('grommet/components/FormFields');
 var Header = require('grommet/components/Header');
-var FullForm = require('./FullForm');
+var FullForm = require('./samples/FullForm');
+var AddUserForm = require('./samples/AddUserForm');
 
 var SimpleDialog = React.createClass({
   propTypes: {
@@ -40,8 +41,26 @@ var FormDialog = React.createClass({
 
   render: function () {
     return (
-      <Layer>
+      <Layer flush={true}>
         <FullForm onCancel={this.props.onClose} onSubmit={this._onSubmit} />
+      </Layer>
+    );
+  }
+});
+
+var AddUserDialog = React.createClass({
+  propTypes: {
+    onClose: React.PropTypes.func.isRequired
+  },
+
+  _onSubmit: function (event) {
+    this.props.onClose(event);
+  },
+
+  render: function () {
+    return (
+      <Layer flush={true}>
+        <AddUserForm onCancel={this.props.onClose} onSubmit={this._onSubmit} />
       </Layer>
     );
   }
@@ -66,8 +85,21 @@ var LayerDoc = React.createClass({
     this.setState({formActive: false});
   },
 
+  _onOpenUserAdd: function () {
+    this.setState({addUserActive: true});
+  },
+
+  _onCloseUserAdd: function (event) {
+    event.preventDefault();
+    this.setState({addUserActive: false});
+  },
+
   getInitialState: function () {
-    return {simpleActive: false, formActive: false};
+    return {
+      simpleActive: false,
+      formActive: false,
+      addUserActive: false
+    };
   },
 
   render: function() {
@@ -81,6 +113,10 @@ var LayerDoc = React.createClass({
     var form = null;
     if (this.state.formActive) {
       form = <FormDialog onClose={this._onCloseForm} />;
+    }
+    var addUser = null;
+    if (this.state.addUserActive) {
+      addUser = <AddUserDialog onClose={this._onCloseUserAdd} />;
     }
 
     return (
@@ -127,6 +163,11 @@ var LayerDoc = React.createClass({
           <h3>Form</h3>
           <button onClick={this._onOpenForm}>Form</button>
           {form}
+          <pre><code className="html">{"<Layer> ..."}</code></pre>
+
+          <h3>Add User</h3>
+          <button onClick={this._onOpenUserAdd}>Add User</button>
+          {addUser}
           <pre><code className="html">{"<Layer> ..."}</code></pre>
 
         </section>
