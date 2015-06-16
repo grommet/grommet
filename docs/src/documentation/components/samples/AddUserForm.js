@@ -61,10 +61,18 @@ var AddUserForm = React.createClass({
   },
 
   _onChange: function (event) {
+    console.log('!!! FullForm changed', event.target, 'to', event.target.value);
     var user = this.state.user;
     user[event.target.getAttribute('name')] = event.target.value;
     this.setState({user: user});
-    console.log('!!! FullForm changed', event.target, 'to', event.target.value);
+    this._validate(false);
+  },
+
+  _onChangeCheckBox: function (event) {
+    console.log('!!! FullForm checkbox changed', event.target, 'to', event.target.checked);
+    var user = this.state.user;
+    user[event.target.getAttribute('name')] = event.target.checked;
+    this.setState({user: user});
     this._validate(false);
   },
 
@@ -92,7 +100,9 @@ var AddUserForm = React.createClass({
     var errors = document.querySelectorAll('.form-field--error');
     if (errors.length > 0) {
       var input = errors[0].querySelectorAll('input')[0];
-      input.focus();
+      if (input) {
+        input.focus();
+      }
     }
   },
 
@@ -136,16 +146,16 @@ var AddUserForm = React.createClass({
               <FormField hidden={user.role !== 'specialized'}>
                 <CheckBox id={p + "sub-role-backup"} name="backupAdmin"
                   label="Backup administrator"
-                  checked={user.backupAdmin} onChange={this._onChange} />
+                  checked={user.backupAdmin} onChange={this._onChangeCheckBox} />
                 <CheckBox id={p + "sub-role-network"} name="networkAdmin"
                   label="Network administrator"
-                  checked={user.networkAdmin} onChange={this._onChange} />
+                  checked={user.networkAdmin} onChange={this._onChangeCheckBox} />
                 <CheckBox id={p + "sub-role-server"} name="serverAdmin"
                   label="Server administrator"
-                  checked={user.serverAdmin} onChange={this._onChange} />
+                  checked={user.serverAdmin} onChange={this._onChangeCheckBox} />
                 <CheckBox id={p + "sub-role-storage"} name="storageAdmin"
                   label="Storage administrator"
-                  checked={user.storageAdmin} onChange={this._onChange} />
+                  checked={user.storageAdmin} onChange={this._onChangeCheckBox} />
               </FormField>
             </FormField>
             <FormField>
