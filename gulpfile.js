@@ -51,7 +51,8 @@ function getPackageJSON() {
     'gulp-install': '^0.4.0',
     "lodash": "^3.8.0",
     "reflux": "^0.2.7",
-    "superagent": "^1.1.0"
+    "superagent": "^1.1.0",
+    "yargs": "^3.8.0"
   };
   return packageJSON;
 }

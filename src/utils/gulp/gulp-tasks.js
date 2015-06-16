@@ -223,7 +223,7 @@ module.exports = function(gulp, opts) {
     ];
 
     var argv = require('yargs').argv;
-    console.log(argv);
+
     if (!argv.skipMinify) {
       plugins.push(new webpack.optimize.UglifyJsPlugin({
         compress: {
@@ -261,8 +261,7 @@ module.exports = function(gulp, opts) {
 
     var devWebpackConfig = assign({}, webpackConfig, options.webpack || {}, {
       entry: {
-        app: ['webpack/hot/dev-server', './' + options.mainJs],
-        styles: ['webpack/hot/dev-server', './' + options.mainScss]
+        app: ['webpack/hot/dev-server', './' + options.mainJs]
       },
 
       output: {
