@@ -32,7 +32,7 @@
     white-space: nowrap;
     padding-left: $inuit-base-spacing-unit;
     padding-right: $inuit-base-spacing-unit;
-    border-bottom: 1px solid $border-color;
+    ///border-bottom: 1px solid $border-color;
 
     @include media-query(palm) {
       line-height: $small-header-height;

@@ -4,15 +4,11 @@
   position: relative;
 
   @include media-query(lap-and-up) {
-    min-width: $form-width;
+    max-width: $form-width;
   }
 
   > .header .header__wrapper { // TODO: clean up
     background-color: inherit;
-  }
-
-  > .footer {
-    margin-top: $inuit-base-spacing-unit;
   }
 
   fieldset {
@@ -24,25 +20,30 @@
     margin-right: $inuit-base-spacing-unit;
 
     legend {
-      @include inuit-font-size(24px);
-      font-weight: 100;
+      @include inuit-font-size(36px);
+      font-weight: 600;
       margin-bottom: halve($inuit-base-spacing-unit);
       color: $secondary-text-color;
     }
   }
 
   .layer & {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: column;
-    flex-direction: column;
-    max-height: calc(100vh - #{double($inuit-base-spacing-unit)});
-    max-width: calc(100vw - #{double($inuit-base-spacing-unit)});
+    padding: $inuit-base-spacing-unit quadruple($inuit-base-spacing-unit);
+    max-height: 100vh;
+    max-width: 100vw;
+    overflow: auto;
 
-    > .header,
-    > .footer {
-      -webkit-flex: 0 0 auto;
-      flex: 0 0 auto;
+    &--sticky {
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-direction: column;
+      flex-direction: column;
+
+      > .header,
+      > .footer {
+        -webkit-flex: 0 0 auto;
+        flex: 0 0 auto;
+      }
     }
 
     > .form-fields {
@@ -74,6 +75,6 @@
   }
 
   &--compact {
-    min-width: $compact-form-width;
+    max-width: $compact-form-width;
   }
 }

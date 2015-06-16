@@ -9,6 +9,7 @@ var FormField = React.createClass({
   propTypes: {
     error: React.PropTypes.string,
     help: React.PropTypes.node,
+    hidden: React.PropTypes.bool,
     htmlFor: React.PropTypes.string,
     label: React.PropTypes.string,
     required: React.PropTypes.bool
@@ -57,6 +58,9 @@ var FormField = React.createClass({
     }
     if (this.props.required) {
       classes.push(CLASS_ROOT + "--required");
+    }
+    if (this.props.hidden) {
+      classes.push(CLASS_ROOT + "--hidden");
     }
     if (this.props.htmlFor) {
       classes.push(CLASS_ROOT + "--text");

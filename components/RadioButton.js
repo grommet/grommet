@@ -12,7 +12,8 @@ var RadioButton = React.createClass({
     id: React.PropTypes.string.isRequired,
     label: React.PropTypes.string.isRequired,
     name: React.PropTypes.string,
-    onChange: React.PropTypes.func
+    onChange: React.PropTypes.func,
+    value: React.PropTypes.string
   },
 
   render: function () {
@@ -26,6 +27,7 @@ var RadioButton = React.createClass({
           id={this.props.id} name={this.props.name} type="radio"
           checked={this.props.checked}
           defaultChecked={this.props.defaultChecked}
+          value={this.props.value}
           onChange={this.props.onChange} />
         <span className={CLASS_ROOT + "__control"}></span>
         <span className={CLASS_ROOT + "__label"}>
