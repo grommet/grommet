@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var chug = require('gulp-chug');
-var gulpWebpack = require('gulp-webpack');
+var gulpWebpack = require('webpack-stream');
 var sass = require('gulp-sass');
 var rename = require('gulp-rename');
 var minifyCss = require('gulp-minify-css');
