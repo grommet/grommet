@@ -1,8 +1,16 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 .radio-button {
-  margin-right: halve($inuit-base-spacing-unit);
+  margin-right: $inuit-base-spacing-unit;
   cursor: pointer;
+
+  &:hover {
+    .radio-button {
+      &__control {
+        border-color: $active-icon-color;
+      }
+    }
+  }
 
   &__input {
     opacity: 0;
@@ -12,12 +20,12 @@
       content: "";
       display: block;
       position: absolute;
-      top: 3px;
-      left: 3px;
-      width: $inuit-base-spacing-unit - 8;
-      height: $inuit-base-spacing-unit - 8;
+      top: 5px;
+      left: 5px;
+      width: halve($inuit-base-spacing-unit) - 2;
+      height: halve($inuit-base-spacing-unit) - 2;
       background-color: $brand-color;
-      border-radius: $inuit-base-spacing-unit - 8;
+      border-radius: halve($inuit-base-spacing-unit);
     }
 
     &:focus + .radio-button__control {
@@ -36,7 +44,30 @@
     vertical-align: middle;
     background-color: inherit;
     color: $brand-color-darker;
-    border: $input-border-width solid $border-color;
+    border: $control-border-width solid $icon-color;
     border-radius: $inuit-base-spacing-unit;
+  }
+
+  &--small {
+    .radio-button {
+      &__control {
+        top: -1px;
+        width: halve($inuit-base-spacing-unit);
+        height: halve($inuit-base-spacing-unit);
+        border-radius: halve($inuit-base-spacing-unit);
+      }
+
+      &__input {
+
+        &:checked + .radio-button__control:after {
+          content: "";
+          top: 2px;
+          left: 2px;
+          width: quarter($inuit-base-spacing-unit) - 2;
+          height: quarter($inuit-base-spacing-unit) - 2;
+          border-radius: quarter($inuit-base-spacing-unit) - 2;
+        }
+      }
+    }
   }
 }

@@ -44,10 +44,17 @@ var RadioButtonDoc = React.createClass({
           <h2>Example</h2>
 
           <div className="example">
-            <RadioButton id="choice1" name="choice" label="Choice 1" />
-            <RadioButton id="choice2" name="choice" label="Choice 2" />
+            <RadioButton id="choice1-1" name="choice1" label="Choice 1" />
+            <RadioButton id="choice1-2" name="choice1" label="Choice 2" />
           </div>
-          <pre><code className="html">{"<RadioButton id=\"\{choice\}\" name=\"choice\" label=\"Choice 1\"/>"}</code></pre>
+          <pre><code className="html">{"<RadioButton id=\"\{choice1-1\}\" name=\"choice\" label=\"Choice 1\"/>"}</code></pre>
+
+          <h3>Small (NOTE: under design discussion)</h3>
+          <div className="example">
+            <RadioButton id="choice2-1" name="choice2" label="Choice 3" small={true} />
+            <RadioButton id="choice2-2" name="choice2" label="Choice 4" small={true} />
+          </div>
+          <pre><code className="html">{"<RadioButton id=\"\{choice2-1\}\" name=\"choice\" label=\"Choice 3\" small={true}/>"}</code></pre>
 
         </section>
       </GrommetDocument>
