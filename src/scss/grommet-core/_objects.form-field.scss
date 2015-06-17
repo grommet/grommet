@@ -48,6 +48,7 @@
     > input[type=number],
     > select,
     > .search-input input,
+    > .calendar input,
     > textarea {
       border: none;
       padding: 0px;
@@ -79,11 +80,14 @@
       margin-bottom: quarter($inuit-base-spacing-unit);
     }
 
-    > .search-input {
+    > .search-input,
+    > .calendar {
       width: 100%;
 
-      .search-input__control {
+      .search-input__control,
+      .calendar__control {
         right: - halve($inuit-base-spacing-unit);
+        bottom: - quarter($inuit-base-spacing-unit);
       }
     }
 

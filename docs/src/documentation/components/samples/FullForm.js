@@ -13,6 +13,7 @@ var SearchInput = require('grommet/components/SearchInput');
 var Table = require('grommet/components/Table');
 var Footer = require('grommet/components/Footer');
 var Button = require('grommet/components/Button');
+var Calendar = require('grommet/components/Calendar');
 
 var FullForm = React.createClass({
 
@@ -47,6 +48,11 @@ var FullForm = React.createClass({
     });
   },
 
+  _onCalendarChange: function (value) {
+    console.log('!!! FullForm _onCalendarChange', value);
+    this.setState({calendarDate: value});
+  },
+
   _onSearch: function (text) {
     var searchInput = this.state.searchInput;
     var regexp = new RegExp('^' + text);
@@ -60,7 +66,8 @@ var FullForm = React.createClass({
   getInitialState: function () {
     return {
       rangeValue: 10,
-      searchInput: {suggestions: this._searchInputSuggestions}
+      searchInput: {suggestions: this._searchInputSuggestions},
+      calendarDate: (new Date()).toISOString()
     };
   },
 
@@ -142,6 +149,11 @@ var FullForm = React.createClass({
               <input id={p + "item9"} name="item-9" type="range"
                 min="1" max="20" defaultValue="10"
                 onChange={this._onChangeRange}/>
+            </FormField>
+            <FormField label="Item 10" htmlFor={p + "item10"}>
+              <Calendar id={p + "item10"} name="item-10"
+                value={this.state.calendarDate}
+                onChange={this._onCalendarChange} />
             </FormField>
           </fieldset>
         </FormFields>
