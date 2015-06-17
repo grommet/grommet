@@ -119,6 +119,11 @@ var FullForm = React.createClass({
                 <option>third</option>
               </select>
             </FormField>
+            <FormField label="Item 10" htmlFor={p + "item10"}>
+              <Calendar id={p + "item10"} name="item-10"
+                value={this.state.calendarDate}
+                onChange={this._onCalendarChange} />
+            </FormField>
           </fieldset>
           <fieldset>
             <legend>Another section</legend>
@@ -149,11 +154,6 @@ var FullForm = React.createClass({
               <input id={p + "item9"} name="item-9" type="range"
                 min="1" max="20" defaultValue="10"
                 onChange={this._onChangeRange}/>
-            </FormField>
-            <FormField label="Item 10" htmlFor={p + "item10"}>
-              <Calendar id={p + "item10"} name="item-10"
-                value={this.state.calendarDate}
-                onChange={this._onCalendarChange} />
             </FormField>
           </fieldset>
         </FormFields>
