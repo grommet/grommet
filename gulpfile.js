@@ -541,3 +541,7 @@ gulp.task('release:site', function() {
 gulp.task('release', function(done) {
   runSequence('release:bump', ['dist-bower', 'dist'], 'release:npm', 'release:bower', 'release:clean', 'release:site', done);
 });
+
+gulp.task('dev', function() {
+  console.error('Running "gulp dev" at Grommet root folder is not supported. If you want to start the website, run "gulp dev" at docs folder');
+});
