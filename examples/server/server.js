@@ -51,8 +51,10 @@ app.use('/socket.io', proxy('localhost:3000', {
 
 app.use('/invite', function(req, res) {
   var data = req.body;
-  data.channel = 'general';
-  request.post({uri: 'http://localhost:3000/invite', json: req.body}).pipe(res);
+  if (!data.channels) {
+    data.channels = ['general'];
+  }
+  request.post({uri: 'http://localhost:3000/invite', json: data}).pipe(res);
 });
 
 app.
