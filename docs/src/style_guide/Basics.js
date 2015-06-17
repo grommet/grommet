@@ -11,6 +11,7 @@ var CONTROL_ICONS = [
   {icon: 'DropCaret', labels: ['Drop caret']},
   {icon: 'Filter'},
   {icon: 'Search'},
+  {icon: 'Calendar'},
   {icon: 'Help'},
   {icon: 'Left', labels: ['Left', 'Previous']},
   {icon: 'Right', labels: ['Right', 'Next']},

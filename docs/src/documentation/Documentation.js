@@ -21,6 +21,7 @@ var Integration = require('./Integration');
 var ActionsDoc = require('./patterns/ActionsDoc');
 var AppDoc = require('./components/AppDoc');
 var ButtonDoc = require('./components/ButtonDoc');
+var CalendarDoc = require('./components/CalendarDoc');
 var ChartDoc = require('./components/ChartDoc');
 var CheckBoxDoc = require('./components/CheckBoxDoc');
 var DashboardDoc = require('./patterns/DashboardDoc');
@@ -77,6 +78,7 @@ var CONTENTS = [
     contents: [
       {route: 'doc_app', label: 'App', component: AppDoc},
       {route: 'doc_button', label: 'Button', component: ButtonDoc},
+      {route: 'doc_calendar', label: 'Calendar', component: CalendarDoc},
       {route: 'doc_chart', label: 'Chart', component: ChartDoc},
       {route: 'doc_check-box', label: 'CheckBox', component: CheckBoxDoc},
       {route: 'doc_distribution', label: 'Distribution', component: DistributionDoc},

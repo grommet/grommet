@@ -13,6 +13,9 @@ var Title = React.createClass({
     if (this.props.onClick) {
       classes.push("title--interactive");
     }
+    if (this.props.className) {
+      classes.push(this.props.className);
+    }
 
     return (
       <div className={classes.join(' ')} onClick={this.props.onClick}>

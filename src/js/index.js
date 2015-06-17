@@ -28,6 +28,7 @@ var Grommet = {
   Object: require('./components/Object'),
   TBD: require('./components/TBD'),
   Icons: {
+    Calendar: require('./components/icons/Calendar'),
     Clear: require('./components/icons/Clear'),
     DragHandle: require('./components/icons/DragHandle'),
     Edit: require('./components/icons/Edit'),
@@ -51,7 +52,8 @@ var Grommet = {
   // Stores
   SessionStore: require('./stores/SessionStore'),
   // Utils
-  Rest: require('./utils/Rest')
+  Rest: require('./utils/Rest'),
+  Validator: require('./utils/Validator')
 };
 
 module.exports = Grommet;
