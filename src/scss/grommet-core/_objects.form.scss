@@ -28,10 +28,24 @@
   }
 
   .layer & {
-    padding: $inuit-base-spacing-unit quadruple($inuit-base-spacing-unit);
     max-height: 100vh;
     max-width: 100vw;
     overflow: auto;
+
+    @include media-query(lap-and-up) {
+      padding: $inuit-base-spacing-unit quadruple($inuit-base-spacing-unit);
+    }
+
+    @include media-query(palm) {
+      padding: $inuit-base-spacing-unit;
+      width: 100vw;
+
+      > .form-fields > fieldset > .form-field,
+      > .form-fields > .form-field {
+        margin-left: - $inuit-base-spacing-unit;
+        margin-right: - $inuit-base-spacing-unit;
+      }
+    }
 
     &--sticky {
       display: -webkit-flex;
@@ -43,22 +57,6 @@
       > .footer {
         -webkit-flex: 0 0 auto;
         flex: 0 0 auto;
-      }
-    }
-
-    > .form-fields {
-      overflow: auto;
-    }
-
-    @include media-query(palm) {
-      > .form-fields {
-        margin-left: - $inuit-base-spacing-unit;
-        margin-right: - $inuit-base-spacing-unit;
-
-        > fieldset > *:not(.form-field) {
-          margin-left: $inuit-base-spacing-unit;
-          margin-right: $inuit-base-spacing-unit;
-        }
       }
     }
   }

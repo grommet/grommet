@@ -29,6 +29,7 @@
 
   &__closer {
     position: absolute;
+    z-index: 1;
 
     @include media-query(palm) {
       top: 0px;

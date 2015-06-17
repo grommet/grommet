@@ -4,6 +4,7 @@ var React = require('react');
 var GrommetDocument = require('grommet/components/Document');
 var FullForm = require('./samples/FullForm');
 var AddUserForm = require('./samples/AddUserForm');
+var ConfirmationForm = require('./samples/ConfirmationForm');
 
 var FormDoc = React.createClass({
 
@@ -65,6 +66,12 @@ var FormDoc = React.createClass({
           <h3>Add User</h3>
           <div className="example">
             <AddUserForm prefix="a-" onSubmit={this._onSubmit} onCancel={this._onCancel} />
+          </div>
+          <pre><code className="html">{"<Form onSubmit={...}> ..."}</code></pre>
+
+          <h3>Confirmation</h3>
+          <div className="example">
+            <ConfirmationForm prefix="a-" onSubmit={this._onSubmit} onCancel={this._onCancel} />
           </div>
           <pre><code className="html">{"<Form onSubmit={...}> ..."}</code></pre>
 

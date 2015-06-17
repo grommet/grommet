@@ -6,12 +6,12 @@
   border: $input-border-width solid $border-color;
   margin-bottom: - $input-border-width; // so borders overlap
   background-color: $form-field-background-color;
-  max-height: 100vh;
-  transition: all 0.4s;
 
   @include media-query(lap-and-up) {
     width: $form-width;
     max-width: 100%;
+    max-height: 100vh;
+    transition: all 0.4s;
 
     .form--compact & {
       width: $compact-form-width;
@@ -103,6 +103,7 @@
     }
 
     > .form-field:not(.form-field--hidden) {
+      width: auto;
       margin-top: halve($inuit-base-spacing-unit);
       border: none;
       border-top: 1px solid $border-color;
@@ -134,12 +135,15 @@
   }
 
   &--hidden {
-    max-height: 0px;
     border: none;
     margin: 0px;
     padding: 0px;
     overflow: hidden;
-    transition: all 0.2s;
+
+    @include media-query(lap-and-up) {
+      max-height: 0px;
+      transition: all 0.2s;
+    }
   }
 
   &--error {

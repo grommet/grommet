@@ -8,115 +8,61 @@ var FormFields = require('grommet/components/FormFields');
 var Header = require('grommet/components/Header');
 var FullForm = require('./samples/FullForm');
 var AddUserForm = require('./samples/AddUserForm');
-
-var SimpleDialog = React.createClass({
-  propTypes: {
-    onClose: React.PropTypes.func.isRequired
-  },
-
-  render: function () {
-    return (
-      <Layer onClose={this.props.onClose} closer={true}>
-        <Form>
-          <Header>
-            <h2>Title</h2>
-          </Header>
-          <FormFields>
-            <p>This is a simple dialog.</p>
-          </FormFields>
-        </Form>
-      </Layer>
-    );
-  }
-});
-
-var FormDialog = React.createClass({
-  propTypes: {
-    onClose: React.PropTypes.func.isRequired
-  },
-
-  _onSubmit: function (event) {
-    this.props.onClose(event);
-  },
-
-  render: function () {
-    return (
-      <Layer flush={true}>
-        <FullForm onCancel={this.props.onClose} onSubmit={this._onSubmit} />
-      </Layer>
-    );
-  }
-});
-
-var AddUserDialog = React.createClass({
-  propTypes: {
-    onClose: React.PropTypes.func.isRequired
-  },
-
-  _onSubmit: function (event) {
-    this.props.onClose(event);
-  },
-
-  render: function () {
-    return (
-      <Layer flush={true}>
-        <AddUserForm onCancel={this.props.onClose} onSubmit={this._onSubmit} />
-      </Layer>
-    );
-  }
-});
+var ConfirmationForm = require('./samples/ConfirmationForm');
 
 var LayerDoc = React.createClass({
 
-  _onOpenSimple: function () {
-    this.setState({simpleActive: true});
+  _onOpen: function (which) {
+    this.setState({active: which});
   },
 
-  _onCloseSimple: function () {
-    this.setState({simpleActive: false});
-  },
-
-  _onOpenForm: function () {
-    this.setState({formActive: true});
-  },
-
-  _onCloseForm: function (event) {
-    event.preventDefault();
-    this.setState({formActive: false});
-  },
-
-  _onOpenUserAdd: function () {
-    this.setState({addUserActive: true});
-  },
-
-  _onCloseUserAdd: function (event) {
-    event.preventDefault();
-    this.setState({addUserActive: false});
+  _onClose: function (event) {
+    if (event) {
+      event.preventDefault();
+    }
+    this.setState({active: null});
   },
 
   getInitialState: function () {
     return {
-      simpleActive: false,
-      formActive: false,
-      addUserActive: false
+      active: null
     };
   },
 
   render: function() {
-    var inline =
-    "<Layer>\n  ...\n</Layer>";
+    var inline = "<Layer>\n  ...\n</Layer>";
 
-    var simple = null;
-    if (this.state.simpleActive) {
-      simple = <SimpleDialog onClose={this._onCloseSimple} />;
-    }
-    var form = null;
-    if (this.state.formActive) {
-      form = <FormDialog onClose={this._onCloseForm} />;
-    }
-    var addUser = null;
-    if (this.state.addUserActive) {
-      addUser = <AddUserDialog onClose={this._onCloseUserAdd} />;
+    var activeLayer = null;
+    if (this.state.active) {
+      var form;
+      switch (this.state.active) {
+      case 'simple':
+        activeLayer = (
+          <Layer onClose={this._onClose} closer={true} flush={true}>
+            <Form>
+              <Header>
+                <h2>Title</h2>
+              </Header>
+              <FormFields>
+                <p>This is a simple dialog.</p>
+              </FormFields>
+            </Form>
+          </Layer>
+        );
+        break;
+      case 'mixed':
+        form = <FullForm onCancel={this._onClose} onSubmit={this._onClose} />;
+        break;
+      case 'add user':
+        form = <AddUserForm onCancel={this._onClose} onSubmit={this._onClose} />;
+        break;
+      case 'confirmation':
+        form = <ConfirmationForm onCancel={this._onClose} onSubmit={this._onClose} />;
+        break;
+      }
+      if (! activeLayer) {
+        activeLayer = <Layer flush={true}>{form}</Layer>;
+      }
     }
 
     return (
@@ -156,21 +102,25 @@ var LayerDoc = React.createClass({
           <h2>Examples</h2>
 
           <h3>Simple</h3>
-          <button onClick={this._onOpenSimple}>Simple</button>
-          {simple}
+          <button onClick={this._onOpen.bind(this, 'simple')}>Simple</button>
           <pre><code className="html">{"<Layer> ..."}</code></pre>
 
           <h3>Form</h3>
-          <button onClick={this._onOpenForm}>Form</button>
-          {form}
+          <button onClick={this._onOpen.bind(this, 'mixed')}>Form</button>
           <pre><code className="html">{"<Layer> ..."}</code></pre>
 
           <h3>Add User</h3>
-          <button onClick={this._onOpenUserAdd}>Add User</button>
-          {addUser}
+          <button onClick={this._onOpen.bind(this, 'add user')}>Add User</button>
+          <pre><code className="html">{"<Layer> ..."}</code></pre>
+
+          <h3>Confirmation</h3>
+          <button onClick={this._onOpen.bind(this, 'confirmation')}>Confirmation</button>
           <pre><code className="html">{"<Layer> ..."}</code></pre>
 
         </section>
+
+        {activeLayer}
+
       </GrommetDocument>
     );
   }

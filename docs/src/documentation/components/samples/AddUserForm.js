@@ -17,19 +17,13 @@ var AddUserForm = React.createClass({
 
   propTypes: {
     compact: React.PropTypes.bool,
-    invalid: React.PropTypes.bool,
     onCancel: React.PropTypes.func,
     onSubmit: React.PropTypes.func,
     prefix: React.PropTypes.string
   },
 
   getDefaultProps: function () {
-    return {prefix: 'ff'};
-  },
-
-  _validateField: function (field, test, message, errors, firstError) {
-    errors[field] = message;
-    return firstError || field;
+    return {prefix: 'auf'};
   },
 
   _validate: function (submitting) {
@@ -61,7 +55,7 @@ var AddUserForm = React.createClass({
   },
 
   _onChange: function (event) {
-    console.log('!!! FullForm changed', event.target, 'to', event.target.value);
+    console.log('!!! AddUserForm changed', event.target, 'to', event.target.value);
     var user = this.state.user;
     user[event.target.getAttribute('name')] = event.target.value;
     this.setState({user: user});
@@ -69,7 +63,7 @@ var AddUserForm = React.createClass({
   },
 
   _onChangeCheckBox: function (event) {
-    console.log('!!! FullForm checkbox changed', event.target, 'to', event.target.checked);
+    console.log('!!! AddUserForm checkbox changed', event.target, 'to', event.target.checked);
     var user = this.state.user;
     user[event.target.getAttribute('name')] = event.target.checked;
     this.setState({user: user});
