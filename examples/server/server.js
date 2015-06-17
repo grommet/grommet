@@ -37,20 +37,22 @@ app.use('/tour/', function (req, res) {
   res.redirect('/medium-app');
 });
 
-app.use('/slackin', proxy('grommet.io:3000', {
+app.use('/slackin', proxy('localhost:3000', {
   forwardPath: function(req, res) {
     return require('url').parse(req.url).path;
   }
 }));
 
-app.use('/socket.io', proxy('grommet.io:3000', {
+app.use('/socket.io', proxy('localhost:3000', {
   forwardPath: function(req, res) {
     return '/socket.io' + require('url').parse(req.url).path;
   }
 }));
 
 app.use('/invite', function(req, res) {
-  request.post({uri: 'http://grommet.io:3000/invite', json: req.body}).pipe(res);
+  var data = req.body;
+  data.channel = 'general';
+  request.post({uri: 'http://localhost:3000/invite', json: req.body}).pipe(res);
 });
 
 app.
