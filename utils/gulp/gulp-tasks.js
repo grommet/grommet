@@ -214,7 +214,10 @@ module.exports = function(gulp, opts) {
 
   gulp.task('dist', ['dist-preprocess'], function() {
     var env = assign({}, options.env, {
-      __DEV_MODE__: false
+      __DEV_MODE__: false,
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
     });
 
     var plugins = [
