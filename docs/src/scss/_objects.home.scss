@@ -97,7 +97,6 @@ $scale-background-color-top: rgba($scale-background-color, 0.85);
 
     a.button {
       @include inuit-font-size($inuit-heading-size-3);
-      padding: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit;
       color: $colored-text-color;
     }
 
