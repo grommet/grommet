@@ -11,7 +11,7 @@ var CalendarDoc = React.createClass({
   },
 
   getInitialState: function () {
-    return {value: (new Date()).toISOString()};
+    return {value: (new Date()).toISOString().slice(0, 10)};
   },
 
   render: function() {

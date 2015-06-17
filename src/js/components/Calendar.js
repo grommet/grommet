@@ -26,7 +26,7 @@ var Calendar = React.createClass({
   mixins: [ReactLayeredComponent, KeyboardAccelerators, Overlay],
 
   getDefaultProps: function () {
-    return {value: (new Date()).toISOString()};
+    return {value: (new Date()).toISOString().slice(0, 10)};
   },
 
   _onInputChange: function (event) {
@@ -43,7 +43,7 @@ var Calendar = React.createClass({
   },
 
   _onClickDay: function (date) {
-    this.props.onChange(date.toISOString());
+    this.props.onChange(date.toISOString().slice(0, 10));
   },
 
   _onPrevious: function (event) {
@@ -83,12 +83,28 @@ var Calendar = React.createClass({
     }
   },
 
-  getInitialState: function () {
-    return {
-      active: false,
-      current: moment(this.props.value).startOf('day'),
-      reference: moment(this.props.value).startOf('day')
+  _stateFromProps: function (props) {
+    var result = {
+      current: null,
+      reference: moment().startOf('day')
     };
+    var date;
+    try {
+      date = moment(props.value);
+      if (date.isValid()) {
+        result.current = moment(date).startOf('day');
+        result.reference = moment(date).startOf('day');
+      }
+    } catch (e) {
+      console.log(e.message);
+    }
+    return result;
+  },
+
+  getInitialState: function () {
+    var state = this._stateFromProps(this.props);
+    state.active = false;
+    return state;
   },
 
   componentDidMount: function () {
@@ -108,10 +124,8 @@ var Calendar = React.createClass({
   },
 
   componentWillReceiveProps: function (newProps) {
-    this.setState({
-      current: moment(newProps.value).startOf('day'),
-      reference: moment(newProps.value).startOf('day')
-    });
+    var state = this._stateFromProps(newProps);
+    this.setState(state);
   },
 
   componentWillUnmount: function () {
@@ -131,7 +145,7 @@ var Calendar = React.createClass({
       <div ref="component" className={classes.join(' ')}>
         <input className={CLASS_ROOT + "__input"}
           id={this.props.id} name={this.props.name}
-          value={this.state.current.format('YYYY-M-D')}
+          value={this.props.value}
           onChange={this._onInputChange} />
         <div className={CLASS_ROOT + "__control"} onClick={this._onOpen} >
           <CalendarIcon />
@@ -157,7 +171,7 @@ var Calendar = React.createClass({
         var days = [];
         for (var i = 0; i < 7; i += 1) {
           var classes = [CLASS_ROOT + "__day"];
-          if (date.isSame(this.state.current)) {
+          if (this.state.current && date.isSame(this.state.current)) {
             classes.push(CLASS_ROOT + "__day--active");
           }
           if (! date.isSame(reference, 'month')) {
