@@ -18,6 +18,8 @@
 
     @include media-query(palm) {
       padding: $inuit-base-spacing-unit;
+      border-bottom: 1px solid $border-color;
+      box-shadow: $layer-box-shadow;
     }
 
     @include media-query(lap-and-up) {
