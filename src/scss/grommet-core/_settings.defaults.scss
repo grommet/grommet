@@ -5,7 +5,7 @@ $border-radius: 4px !default;
 $header-height: round($inuit-base-spacing-unit * 3) !default;
 $large-header-height: round($inuit-base-spacing-unit * 4) !default;
 $small-header-height: round($inuit-base-spacing-unit * 2) !default;
-$footer-height: round($inuit-base-spacing-unit * 2) !default;
+$footer-height: round($inuit-base-spacing-unit * 1.5) !default;
 $graphic-height: round($inuit-base-spacing-unit * 16) !default; // 384px
 $small-graphic-height: round($inuit-base-spacing-unit * 8) !default; // 192px
 $large-graphic-height: round($inuit-base-spacing-unit * 24) !default; // 576px
@@ -19,6 +19,9 @@ $readable-text-width: round($inuit-base-spacing-unit * 24) !default; // 576px
 $panel-width: round($inuit-base-spacing-unit * 8) !default;
 $small-panel-width: round($inuit-base-spacing-unit * 6) !default;
 $large-panel-width: round($inuit-base-spacing-unit * 12) !default;
+
+$control-size: round($inuit-base-spacing-unit * 0.75) !default; // 18px
+$control-small-size: round($inuit-base-spacing-unit * 0.5) !default; // 12px
 
 $input-border-width: 1px !default;
 $control-border-width: 2px !default;

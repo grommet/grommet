@@ -38,15 +38,14 @@ $threshold-color: nth($brand-grey-colors, 1) !default;
 $focus-border-color: nth($brand-accent-colors, 1) !default;
 
 $button-background-color: $background-color !default;
-$button-border-color: #818181 !default;
-$button-primary-border-color: $brand-color !default;
-$button-alternate-border-color: nth($brand-accent-colors, 1) !default;
-$button-text-color: $text-color !default;
+$button-border-color: #999 !default;
+$button-text-color: $secondary-text-color !default;
+$button-primary-background-color: $brand-color !default;
+$button-primary-text-color: $colored-text-color !default;
+$button-accent-background-color: nth($brand-accent-colors, 1) !default;
+$button-accent-text-color: $colored-text-color !default;
 $button-hover-background-color: $hover-background-color !default;
 $button-hover-border-color: $brand-color;
-$button-primary-background-color: $brand-color !default;
-$button-primary-border-color: $brand-color !default;
-$button-primary-text-color: $colored-text-color !default;
 $button-disabled-background-color: #CBCBCB !default;
 
 $hover-background-color: rgba(0, 0, 0, 0.1);

@@ -1,8 +1,11 @@
 // (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
 
+$form-horizontal-padding: halve($inuit-base-spacing-unit);
+$form-vertical-padding: quarter($inuit-base-spacing-unit);
+
 .form-field {
   position: relative;
-  padding: quarter($inuit-base-spacing-unit) $inuit-base-spacing-unit;
+  padding: $form-vertical-padding $form-horizontal-padding;
   border: $input-border-width solid $border-color;
   margin-bottom: - $input-border-width; // so borders overlap
   background-color: $form-field-background-color;
@@ -19,6 +22,7 @@
   }
 
   @include media-query(palm) {
+    display: block;
     width: 100vw;
     border-left: none;
     border-right: none;
@@ -50,10 +54,14 @@
     > .search-input input,
     > .calendar input,
     > textarea {
+      display: block;
+      width: 100%;
       border: none;
       padding: 0px;
-      width: 100%;
-      margin-right: 0px;
+      margin-left: - $form-horizontal-padding;
+      margin-right: - $form-horizontal-padding;
+      padding-left: $form-horizontal-padding;
+      padding-right: $form-horizontal-padding;
       border-radius: 0px;
       @include inuit-font-size($content-font-size);
 
@@ -62,7 +70,15 @@
       }
     }
 
+    > input[type=range] {
+      margin-left: 0px;
+      margin-right: 0px;
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+
     > select {
+      display: block;
       background-position: center right;
     }
 
@@ -82,11 +98,18 @@
 
     > .search-input,
     > .calendar {
-      width: 100%;
+      display: block;
+      margin-left: - $form-horizontal-padding;
+      margin-right: - $form-horizontal-padding;
+
+      input {
+        margin-left: 0px;
+        margin-right: 0px;
+      }
 
       .search-input__control,
       .calendar__control {
-        right: - halve($inuit-base-spacing-unit);
+        right: 0px; //$form-horizontal-padding;
         bottom: - quarter($inuit-base-spacing-unit);
       }
     }
@@ -118,8 +141,7 @@
 
   &__help {
     display: block;
-    margin-top: quarter($inuit-base-spacing-unit);
-    line-height: $inuit-base-spacing-unit;
+    @include inuit-font-size($label-font-size - 1);
     color: $secondary-text-color;
   }
 
@@ -143,6 +165,10 @@
     margin: 0px;
     padding: 0px;
     overflow: hidden;
+
+    @include media-query(palm) {
+      display: none;
+    }
 
     @include media-query(lap-and-up) {
       max-height: 0px;

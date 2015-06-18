@@ -82,10 +82,10 @@ var FormField = React.createClass({
         <label className={CLASS_ROOT + "__label"} htmlFor={this.props.htmlFor}>
           {this.props.label}
         </label>
+        {help}
         <span ref="contents" className={CLASS_ROOT + "__contents"}>
           {this.props.children}
         </span>
-        {help}
       </div>
     );
   }

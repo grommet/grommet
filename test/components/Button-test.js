@@ -12,22 +12,20 @@ describe('Grommet Button', function() {
     GrommetTestUtils.componentShouldExist(Component, 'button--disabled');
   });
 
-  it('loads a large primary Button', function() {
+  it('loads a primary Button', function() {
     var Component = GrommetTestUtils.getComponent(__path__, null,
-      { label: 'Test Me', primary: true, large: true});
+      { label: 'Test Me', primary: true});
 
     GrommetTestUtils.componentShouldExist(Component, 'button', 'Test Me');
     GrommetTestUtils.componentShouldExist(Component, 'button--primary');
-    GrommetTestUtils.componentShouldExist(Component, 'button--large');
   });
 
-  it('loads a small alternate Button', function() {
+  it('loads an accent Button', function() {
     var Component = GrommetTestUtils.getComponent(__path__, null,
-      { label: 'Test Me', alternate: true, small: true});
+      { label: 'Test Me', accent: true});
 
     GrommetTestUtils.componentShouldExist(Component, 'button', 'Test Me');
-    GrommetTestUtils.componentShouldExist(Component, 'button--alternate');
-    GrommetTestUtils.componentShouldExist(Component, 'button--small');
+    GrommetTestUtils.componentShouldExist(Component, 'button--accent');
   });
 
   it('loads a custom className Button', function() {

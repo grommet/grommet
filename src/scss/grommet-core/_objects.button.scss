@@ -1,17 +1,19 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
+$button-height: round($inuit-base-spacing-unit * 1.5);
+
 @mixin basic-button {
-  height: double($inuit-base-spacing-unit);
-  padding: (halve($inuit-base-spacing-unit) - $button-border-width)
-    (double($inuit-base-spacing-unit) - $button-border-width);
+  height: $button-height;
+  padding-left: $button-height;
+  padding-right: $button-height;
   background-color: transparent;
   border: $button-border-width solid $button-border-color;
   border-radius: $border-radius;
   color: $button-text-color;
-  @include inuit-font-size(18px, $inuit-base-spacing-unit);
+  @include inuit-font-size(16px, $inuit-base-spacing-unit);
   text-transform: $button-text-transform;
   font-weight: $button-font-weight;
-  text-decoration: none;
+  //text-decoration: none;
   cursor: pointer;
   text-align: center;
   outline: none;
@@ -27,92 +29,59 @@ a.button {
 .button {
   @include basic-button();
 
-  &:hover {
-    border-width: $button-hover-border-width;
-    padding: (halve($inuit-base-spacing-unit) - $button-hover-border-width)
-      (double($inuit-base-spacing-unit) - $button-hover-border-width);
-  }
-
-  &:active {
+  &:hover:not(.button--disabled) {
     border-color: darken($button-border-color, 15%);
-    background-color: darken($button-border-color, 15%);
-    color: $colored-text-color;
+    color: darken($button-text-color, 15%);
   }
 
-  &:focus {
+  &:active:not(.button--disabled) {
+    border-color: darken($button-border-color, 25%);
+    color: darken($button-text-color, 25%);
+  }
+
+  &:focus:not(.button--disabled) {
     border-color: $focus-border-color;
     box-shadow: 0 0 1px 1px $focus-border-color;
   }
 
-  &--strong {
-    background-color: $button-border-color;
-  }
-
   &--primary {
-    border-color: $button-primary-border-color;
+    border-color: $button-primary-background-color;
+    background-color: $button-primary-background-color;
+    color: $button-primary-text-color;
 
-    &.button--strong {
-      background-color: $button-primary-border-color;
-      color: $colored-text-color;
+    &:hover:not(.button--disabled) {
+      border-color: darken($button-primary-background-color, 5%);
+      background-color: darken($button-primary-background-color, 5%);
+      color: $button-primary-text-color;
     }
 
-    &:active,
-    &.button--strong:active {
-      border-color: darken($button-primary-border-color, 15%);
-      background-color: darken($button-primary-border-color, 15%);
-    }
-  }
-
-  &--alternate {
-    border-color: $button-alternate-border-color;
-
-    &.button--strong {
-      background-color: $button-alternate-border-color;
-    }
-
-    &:active,
-    &.button--strong:active {
-      border-color: darken($button-alternate-border-color, 15%);
-      background-color: darken($button-alternate-border-color, 15%);
+    &:active:not(.button--disabled) {
+      border-color: darken($button-primary-background-color, 10%);
+      background-color: darken($button-primary-background-color, 10%);
+      color: $button-primary-text-color;
     }
   }
 
-  &--large {
-    height: round($inuit-base-spacing-unit * 3);
-    padding: ($inuit-base-spacing-unit - $button-border-width)
-      (double($inuit-base-spacing-unit) - $button-border-width);
+  &--accent {
+    border-color: $button-accent-background-color;
+    background-color: $button-accent-background-color;
+    color: $button-primary-text-color;
 
-    &:hover {
-      padding: ($inuit-base-spacing-unit - $button-hover-border-width)
-        (double($inuit-base-spacing-unit) - $button-hover-border-width);
+    &:hover:not(.button--disabled) {
+      border-color: darken($button-accent-background-color, 5%);
+      background-color: darken($button-accent-background-color, 5%);
+      color: $button-primary-text-color;
     }
-  }
 
-  &--small {
-    border: none;
-    height: $inuit-base-spacing-unit;
-    padding: 0px halve($inuit-base-spacing-unit);
-    @include inuit-font-size(16px, $inuit-base-spacing-unit);
-    color: $brand-link-color;
-    text-transform: none;
-    font-weight: normal;
-
-    &:hover {
-      border-width: 0px;
-      padding: 0px halve($inuit-base-spacing-unit);
+    &:active:not(.button--disabled) {
+      border-color: darken($button-accent-background-color, 10%);
+      background-color: darken($button-accent-background-color, 10%);
+      color: $button-primary-text-color;
     }
   }
 
   &--disabled {
     opacity: 0.2;
-    border-color: $button-disabled-background-color;
-    background-color: $button-disabled-background-color;
     cursor: default;
-
-    &:active {
-      color: $button-text-color;
-      border-color: $button-disabled-background-color;
-      background-color: $button-disabled-background-color;
-    }
   }
 }

@@ -67,7 +67,7 @@ var FullForm = React.createClass({
     return {
       rangeValue: 10,
       searchInput: {suggestions: this._searchInputSuggestions},
-      calendarDate: (new Date()).toISOString()
+      calendarDate: (new Date()).toISOString().slice(0, 10)
     };
   },
 
