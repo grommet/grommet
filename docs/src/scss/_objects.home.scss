@@ -103,6 +103,10 @@ $scale-background-color-top: rgba($scale-background-color, 0.85);
           margin-left: 0px;
         }
       }
+
+      .button {
+        padding: 0px $inuit-base-spacing-unit;
+      }
     }
   }
 
