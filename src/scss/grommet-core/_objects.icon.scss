@@ -58,7 +58,7 @@
 
   &-label {
     .status-icon__base {
-      fill: $icon-color;
+      fill: map-get($brand-status-colors, unknown);
     }
   }
 

@@ -11,11 +11,12 @@ var Disabled = React.createClass({
     }
     return (
       <svg className={className} viewBox="0 0 24 24" version="1.1">
-        <g className={"status-icon__base"} fill="#848484">
-          <path d="M12,0 L0,12 L12,24 L24,12 L12,0 L12,0 Z" />
+        <g className={"status-icon__base"} fill="#EDEDED">
+          <rect x="0" y="0" width="24" height="24"></rect>
         </g>
-        <g className={"status-icon__detail"} fill="#FFFFFF">
-          <circle cx="12" cy="12" r="5.5"></circle>
+        <g className={"status-icon__detail"} stroke="#FFFFFF" strokeWidth="2" fill="none">
+          <circle cx="12" cy="12" r="7" fill="none"/>
+          <path d="M7.3,7.3 L16.6,16.7"></path>
         </g>
       </svg>
     );
