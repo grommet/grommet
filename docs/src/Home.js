@@ -23,7 +23,6 @@ var Home = React.createClass({
   },
 
   render: function() {
-    var assetsPath = '/docs/assets/latest/';
     return (
       <div className="home">
         <Section className="home__introduction" centered={true}>
@@ -32,7 +31,7 @@ var Home = React.createClass({
           <h3>The most advanced UX framework for enterprise applications.</h3>
           <Menu direction="center">
             <span>
-              Grab the Grommet <a href={assetsPath + 'grommet_sticker_sheet.ai'} target="_blank">
+              Grab the Grommet <a href={'/docs/assets/latest/grommet_sticker_sheet.ai'} target="_blank">
                 Sticker Sheet <NextIcon />
               </a>
             </span>
