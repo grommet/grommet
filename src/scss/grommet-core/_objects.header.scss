@@ -69,6 +69,7 @@
     > .menu {
       -webkit-flex: 0 0 auto;
       flex: 0 0 auto;
+      @include inuit-font-size($header-font-size, inherit);
     }
 
     .status-icon {
