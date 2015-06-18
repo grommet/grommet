@@ -43,6 +43,20 @@ var LayerContainer = React.createClass({
     if (this.props.onClose) {
       this.startListeningToKeyboard({esc: this.props.onClose});
     }
+    var appElement = document.querySelectorAll('div.app')[0];
+    if (appElement) { // unit tests don't have an app
+      this._appScrollY = window.scrollY;
+      appElement.classList.add('app--layered');
+      window.scroll(0, 0);
+    }
+  },
+
+  componentWillUnmount: function() {
+    var appElement = document.querySelectorAll('div.app')[0];
+    if (appElement) { // unit tests don't have an app
+      appElement.classList.remove('app--layered');
+      window.scroll(0, this._appScrollY);
+    }
   },
 
   render: function () {

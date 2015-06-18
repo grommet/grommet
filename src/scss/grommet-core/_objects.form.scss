@@ -28,11 +28,11 @@
   }
 
   .layer & {
-    max-height: 100vh;
-    max-width: 100vw;
-    overflow: auto;
 
     @include media-query(lap-and-up) {
+      max-height: 100vh;
+      max-width: 100vw;
+      overflow: auto;
       padding: $inuit-base-spacing-unit quadruple($inuit-base-spacing-unit);
     }
 
