@@ -84,10 +84,17 @@ var CONTENTS = [
   },
   {route: "sg_showcase", label: 'Showcase', component: Showcase,
     contents: [
+      {id: "hpsw-analytics", label: 'Analytics'},
+      {id: "hpsw-big-data", label: 'Big Data'},
+      {id: "hpsw-cloud-analytics", label: 'Cloud Analytics'},
+      {id: "hpsw-business-analytics", label: 'IT Business Analytics'},
       {id: "oneview-dashboard", label: 'OneView Dashboard'},
-      {id: "oneview-masterpage", label: 'OneView Master Page'},
+      {id: "oneview-detail-page", label: 'OneView Detail Page'},
+      {id: "hpsw-ops-dashboard", label: 'Ops Dashboard'},
       {id: "propel-dashboard", label: 'Propel Dashboard'},
-      {id: "propel-prod-detail", label: 'Propel Product Detail'}
+      {id: "propel-prod-detail", label: 'Propel Product Detail'},
+      {id: "hpsw-service-anywhere", label: 'Service Anywhere'},
+      {id: "hpsw-web-inspect", label: 'Web Inspect'}
     ]
   }
 ];
