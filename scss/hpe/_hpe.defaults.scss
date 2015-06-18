@@ -5,11 +5,11 @@ $brand-color-lighter: desaturate(lighten($brand-color, 55%), 40%);
 $brand-neutral-colors: (#60798D, #617D78, #877B75);
 $brand-accent-colors: (#2AD2C9, #614767);
 $brand-status-colors: (
-  error: #FF454F,
-  warning: #F3B237,
-  ok: #00B388,
-  unknown: #848484,
-  disabled: #848484
+  error: #F04953,
+  warning: #FFD144,
+  ok: #08AA83,
+  unknown: #CCCCCC,
+  disabled: #EDEDED
 );
 $brand-link-color: #2883d7;
 $brand-grey-colors: (#333333, #3B3B3B, #434343, #666666);
