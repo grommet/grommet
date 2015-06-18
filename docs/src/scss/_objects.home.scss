@@ -78,26 +78,19 @@ $scale-background-color-top: rgba($scale-background-color, 0.85);
     }
   }
 
-  a.home__request-access {
-    position: relative;
-    top: round($inuit-base-spacing-unit * 2);
-    display: block;
-    color: $colored-text-color;
-
-    @include media-query(lap-and-up) {
-      display: none;
-    }
-  }
-
   &__scale.section {
     padding-bottom: round($inuit-base-spacing-unit * 6);
     background-color: inherit;
     background-image: linear-gradient($scale-background-color-top,
       $scale-background-color);
 
-    a.button {
-      @include inuit-font-size($inuit-heading-size-3);
+    .button {
+      //@include inuit-font-size($inuit-heading-size-3);
       color: $colored-text-color;
+
+      &:hover {
+        border-color: $colored-text-color;
+      }
     }
 
     @include media-query(palm) {

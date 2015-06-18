@@ -6,6 +6,7 @@ var Section = require('grommet/components/Section');
 var Tiles = require('grommet/components/Tiles');
 var Tile = require('grommet/components/Tile');
 var Menu = require('grommet/components/Menu');
+var Button = require('grommet/components/Button');
 var Link = require('react-router').Link;
 var ProcessAnimation = require('./img/ProcessAnimation');
 var Semantic = require('./img/Semantic');
@@ -16,6 +17,10 @@ var Console = require('./img/Console');
 var NextIcon = require('grommet/components/icons/Right');
 
 var Home = React.createClass({
+
+  _onClick: function () {
+    // no-op
+  },
 
   render: function() {
     var assetsPath = '/docs/assets/' + __GROMMET__.version + '/';
@@ -44,8 +49,12 @@ var Home = React.createClass({
           <h3>Grommet easily and efficiently scales your project with one code base,
             from phones to desktops, and everything in between.</h3>
           <Menu direction="left" colored={true}>
-            <Link to="style guide" className="button">Start Designing</Link>
-            <Link to="doc_getstarted" className="button">Start your Project</Link>
+            <Link to="style guide">
+              <Button label="Start Designing" onClick={this._onClick} />
+            </Link>
+            <Link to="doc_getstarted">
+              <Button label="Start Your Project" onClick={this._onClick} />
+            </Link>
           </Menu>
         </Section>
 
