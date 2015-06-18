@@ -71,11 +71,11 @@ var opts = {
       loaders: [
         {
           test: /style_guide(\/|\\)[^\/]*\.htm$/,
-          loader: 'jsx-loader!imports?React=react,Router=react-router,Link=>Router.Link!html-jsx-loader?group=true&__GROMMET_VERSION__=' + grommetVersion
+          loader: 'jsx-loader!imports?React=react,Router=react-router,Link=>Router.Link!html-jsx-loader?group=true'
         },
         {
           test: /documentation(\/|\\).*\.htm$|downloads(\/|\\).*\.htm$|style_guide(\/|\\).*\/.*\.htm$/,
-          loader: 'jsx-loader!imports?React=react,Router=react-router,Link=>Router.Link!html-jsx-loader?__GROMMET_VERSION__=' + grommetVersion
+          loader: 'jsx-loader!imports?React=react,Router=react-router,Link=>Router.Link!html-jsx-loader'
         }
       ]
     }
@@ -88,9 +88,6 @@ var opts = {
   env: {
     __THEME__: {
       generic: true
-    },
-    __GROMMET__: {
-      version: '"' + grommetVersion + '"'
     }
   },
   scsslint: true

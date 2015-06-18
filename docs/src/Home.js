@@ -23,7 +23,7 @@ var Home = React.createClass({
   },
 
   render: function() {
-    var assetsPath = '/docs/assets/' + __GROMMET__.version + '/';
+    var assetsPath = '/docs/assets/latest/';
     return (
       <div className="home">
         <Section className="home__introduction" centered={true}>

@@ -14,7 +14,6 @@ env:
 globals:
   __DEV__: true
   __THEME__: true
-  __GROMMET__: true
   __DEV_MODE__: true
   __SOCKET_HOST__: true
   IntlPolyfill: true
