@@ -2,8 +2,7 @@
 
 .menu {
   position: relative;
-  //display: inline-block;
-  //@include inuit-font-size($inuit-heading-size-4, inherit);
+  @include inuit-font-size($menu-font-size);
 
   a:not(.button) {
     color: lighten($text-color, 30%);
