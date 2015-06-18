@@ -69,8 +69,8 @@ select {
 
 @mixin range-thumb {
   position: relative;
-  height: $inuit-base-spacing-unit;
-  width: $inuit-base-spacing-unit;
+  height: $control-size;
+  width: $control-size;
   overflow: visible;
 }
 
@@ -78,7 +78,7 @@ input[type=range] {
   position: relative;
   -webkit-appearance: none;
   border-color: transparent;
-  height: $inuit-base-spacing-unit;
+  height: $control-size;
   padding: 0px;
   cursor: pointer;
   overflow-x: hidden;
@@ -102,16 +102,16 @@ input[type=range] {
   &::-webkit-slider-thumb {
     @include range-thumb();
     -webkit-appearance: none;
-    margin-top: - (round($inuit-base-spacing-unit * 0.45));
+    margin-top: - (round($control-size * 0.45));
   }
 
   &::-webkit-slider-thumb:before {
     content: "";
     position: absolute;
     left: -3000px;
-    right: halve($inuit-base-spacing-unit);
-    top: halve($inuit-base-spacing-unit) - ($control-border-width + 1);
-    bottom: halve($inuit-base-spacing-unit) - ($control-border-width + 1);
+    right: halve($control-size);
+    top: halve($control-size) - ($control-border-width + 1);
+    bottom: halve($control-size) - ($control-border-width + 1);
     background-color: $brand-color;
     pointer-events: none;
   }
@@ -120,9 +120,9 @@ input[type=range] {
     content: "";
     position: absolute;
     border: $control-border-width solid $icon-color;
-    height: $inuit-base-spacing-unit - ($control-border-width * 2);
-    width: $inuit-base-spacing-unit - ($control-border-width * 2);
-    border-radius: $inuit-base-spacing-unit;
+    height: $control-size - ($control-border-width * 2);
+    width: $control-size - ($control-border-width * 2);
+    border-radius: $control-size;
     background-color: $background-color;
     cursor: pointer;
   }
@@ -139,7 +139,7 @@ input[type=range] {
   &::-moz-range-thumb {
     @include range-thumb();
     // since the :before doesn't work on the thumb, restyle a bit
-    border-radius: $inuit-base-spacing-unit;
+    border-radius: $control-size;
     border: $control-border-width solid $icon-color;
     background-color: $background-color;
   }
@@ -176,9 +176,9 @@ input[type=range] {
   &::-ms-thumb {
     @include range-thumb();
     border: $control-border-width solid $icon-color;
-    height: $inuit-base-spacing-unit - ($control-border-width * 2);
-    width: $inuit-base-spacing-unit - ($control-border-width * 2);
-    border-radius: $inuit-base-spacing-unit;
+    height: $control-size - ($control-border-width * 2);
+    width: $control-size - ($control-border-width * 2);
+    border-radius: $control-size;
     background-color: $background-color;
   }
 

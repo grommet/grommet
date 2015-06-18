@@ -30,9 +30,10 @@
 
   &__control {
     position: relative;
+    top: -1px;
   	display: inline-block;
-    width: $inuit-base-spacing-unit;
-    height: $inuit-base-spacing-unit;
+    width: $control-size;
+    height: $control-size;
     margin-right: halve($inuit-base-spacing-unit);
     vertical-align: middle;
     background-color: inherit;
@@ -44,8 +45,8 @@
       top: -2px;
       left: -2px;
       display: none;
-      width: $inuit-base-spacing-unit;
-      height: $inuit-base-spacing-unit;
+      width: $control-size;
+      height: $control-size;
       stroke-width: round($control-border-width * 2);
       stroke: $brand-color;
     }
@@ -54,15 +55,14 @@
   &--small {
     .check-box {
       &__control {
-        top: -1px;
-        width: round($inuit-base-spacing-unit * 0.75);
-        height: round($inuit-base-spacing-unit * 0.75);
+        width: $control-small-size;
+        height: $control-small-size;
 
         &-check {
           top: -1.5px;
           left: -1px;
-          width: round($inuit-base-spacing-unit * 0.65);
-          height: round($inuit-base-spacing-unit * 0.65);
+          width: $control-small-size - 1;
+          height: $control-small-size - 1;
         }
       }
     }
@@ -77,9 +77,9 @@
     }
 
     .check-box__control {
-      width: double($inuit-base-spacing-unit);
-      height: $inuit-base-spacing-unit;
-      border-radius: $inuit-base-spacing-unit;
+      width: double($control-size);
+      height: $control-size;
+      border-radius: $control-size;
       background-color: $meter-background-color;
       border: none;
       transition: background-color 0.3s;
@@ -90,11 +90,11 @@
         position: absolute;
         top: 0px;
         left: 0px;
-        width: $inuit-base-spacing-unit;
-        height: $inuit-base-spacing-unit;
+        width: $control-size;
+        height: $control-size;
         background-color: #fff;
         border: $control-border-width solid $icon-color;
-        border-radius: $inuit-base-spacing-unit;
+        border-radius: $control-size;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
         transition: margin-left 0.3s;
       }
@@ -109,10 +109,10 @@
       &:checked + .check-box__control:after {
         top: 0px;
         left: 0px;
-        width: $inuit-base-spacing-unit;
-        height: $inuit-base-spacing-unit;
+        width: $control-size;
+        height: $control-size;
         background-color: #fff;
-        margin-left: $inuit-base-spacing-unit;
+        margin-left: $control-size;
       }
     }
   }
