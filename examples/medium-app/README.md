@@ -1,7 +1,7 @@
 # Grommet Example App: medium-app
 
 This app demonstrates a medium-sized application using [Modular Grommet](http://grommet.io/docs/documentation/modular-grommet).
-We demonstrate UI routing and some important patterns like Login, Resource Management (including WebSocket connections), and Search.
+We demonstrate UI routing and some important patterns like Login, Resource Management (including WebSocket connections), and Search. This application **must** have a back-end to perform login operations and manage resources.
 
 **IMPORTANT**: Make sure to run `npm install` at Grommet root folder.
 
