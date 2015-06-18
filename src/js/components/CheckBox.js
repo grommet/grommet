@@ -13,6 +13,7 @@ var CheckBox = React.createClass({
     label: React.PropTypes.string.isRequired,
     name: React.PropTypes.string,
     onChange: React.PropTypes.func,
+    small: React.PropTypes.bool,
     toggle: React.PropTypes.bool
   },
 
@@ -20,6 +21,9 @@ var CheckBox = React.createClass({
     var classes = [CLASS_ROOT];
     if (this.props.toggle) {
       classes.push(CLASS_ROOT + "--toggle");
+    }
+    if (this.props.small) {
+      classes.push(CLASS_ROOT + "--small");
     }
     if (this.props.className) {
       classes.push(this.props.className);
@@ -31,7 +35,12 @@ var CheckBox = React.createClass({
           checked={this.props.checked}
           defaultChecked={this.props.defaultChecked}
           onChange={this.props.onChange} />
-        <span className={CLASS_ROOT + "__control"}></span>
+        <span className={CLASS_ROOT + "__control"}>
+          <svg className={CLASS_ROOT + "__control-check"} viewBox="0 0 24 24"
+            preserveAspectRatio="xMidYMid meet">
+            <path fill="none" d="M6,11.3 L10.3,16 L18,6.2"></path>
+          </svg>
+        </span>
         <span className={CLASS_ROOT + "__label"}>
           {this.props.label}
         </span>
