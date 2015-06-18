@@ -3,21 +3,23 @@
 $brand-color-lighter: lighten($brand-color, 23%) !default;
 $brand-color-darker: darken($brand-color, 9%) !default;
 
-$background-color: #fff;
-$secondary-background-color: #f5f5f5;
-$hover-background-color: #eee;
-$colored-active-background-color: rgba(0, 0, 0, 0.2);
-$selected-background-color: rgba($brand-color, 0.2) !default;
-
-$border-color: #ccc;
-$strong-border-color: #000;
-
 $text-color: #333;
 $secondary-text-color: #777;
 $hover-text-color: #000;
 $colored-text-color: #fff;
 $inactive-colored-text-color: rgba(255, 255, 255, 0.7);
 $link-color: $brand-link-color !default;
+
+$background-color: #fff;
+$secondary-background-color: #f5f5f5;
+$hover-background-color: #eee;
+$hover-text-color: #000;
+$colored-active-background-color: rgba(0, 0, 0, 0.2);
+$selected-background-color: $brand-color !default;
+$selected-text-color: $colored-text-color !default;
+
+$border-color: #ccc;
+$strong-border-color: #000;
 
 // Control Icons
 
