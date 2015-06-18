@@ -63,12 +63,14 @@
         &.table__row--selected {
           td {
             background-color: $selected-background-color;
+            color: $selected-text-color;
           }
         }
 
         &:hover:not(.table__row--selected) {
           td {
             background-color: $hover-background-color;
+            color: $hover-text-color;
           }
         }
       }

@@ -115,8 +115,8 @@ $form-vertical-padding: quarter($inuit-base-spacing-unit);
     }
 
     > .table--selectable {
-      margin-left: - $inuit-base-spacing-unit;
-      margin-right: - $inuit-base-spacing-unit;
+      margin-left: - $form-horizontal-padding;
+      margin-right: - $form-horizontal-padding;
       @include inuit-font-size($content-font-size);
 
       table {
@@ -124,7 +124,7 @@ $form-vertical-padding: quarter($inuit-base-spacing-unit);
 
         td:first-child,
         th:first-child {
-          padding-left: $inuit-base-spacing-unit;
+          padding-left: $form-horizontal-padding;
         }
       }
     }
