@@ -63,10 +63,8 @@ select {
 
 @mixin range-track {
   width: 100%;
-  height: halve($inuit-base-spacing-unit);
-  cursor: pointer;
-  background: none;
-  border: $input-border-width solid $border-color;
+  height: $control-border-width;
+  background-color: $meter-background-color;
 }
 
 @mixin range-thumb {
@@ -82,6 +80,7 @@ input[type=range] {
   border-color: transparent;
   height: $inuit-base-spacing-unit;
   padding: 0px;
+  cursor: pointer;
   overflow-x: hidden;
 
   &:focus {
@@ -92,6 +91,10 @@ input[type=range] {
     border: none;
   }
 
+  &::-moz-focus-outer {
+    border: none;
+  }
+
   &::-webkit-slider-runnable-track {
     @include range-track();
   }
@@ -99,7 +102,7 @@ input[type=range] {
   &::-webkit-slider-thumb {
     @include range-thumb();
     -webkit-appearance: none;
-    margin-top: - (round($inuit-base-spacing-unit * (1/4)) + 1);
+    margin-top: - (round($inuit-base-spacing-unit * 0.45));
   }
 
   &::-webkit-slider-thumb:before {
@@ -107,8 +110,8 @@ input[type=range] {
     position: absolute;
     left: -3000px;
     right: halve($inuit-base-spacing-unit);
-    top: quarter($inuit-base-spacing-unit);
-    bottom: quarter($inuit-base-spacing-unit);
+    top: halve($inuit-base-spacing-unit) - ($control-border-width + 1);
+    bottom: halve($inuit-base-spacing-unit) - ($control-border-width + 1);
     background-color: $brand-color;
     pointer-events: none;
   }
@@ -116,14 +119,17 @@ input[type=range] {
   &::-webkit-slider-thumb:after {
     content: "";
     position: absolute;
-    border: 1px solid $border-color;
-    // -3 so we can see the thumb shadow
-    height: $inuit-base-spacing-unit - 3;
-    width: $inuit-base-spacing-unit - 3;
+    border: $control-border-width solid $icon-color;
+    height: $inuit-base-spacing-unit - ($control-border-width * 2);
+    width: $inuit-base-spacing-unit - ($control-border-width * 2);
     border-radius: $inuit-base-spacing-unit;
     background-color: $background-color;
     cursor: pointer;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  }
+
+  &:hover::-webkit-slider-thumb:after {
+    content: "";
+    border-color: $active-icon-color;
   }
 
   &::-moz-range-track {
@@ -134,8 +140,8 @@ input[type=range] {
     @include range-thumb();
     // since the :before doesn't work on the thumb, restyle a bit
     border-radius: $inuit-base-spacing-unit;
-    border: none;
-    background-color: $brand-color;
+    border: $control-border-width solid $icon-color;
+    background-color: $background-color;
   }
 
   // This isn't working
@@ -151,23 +157,32 @@ input[type=range] {
 
   &::-ms-track {
     @include range-track();
-    background: transparent;
+    //background: transparent;
     border-color: transparent;
-    border-width: 16px 0;
+    //border-width: 16px 0;
     color: transparent;
   }
 
   &::-ms-fill-lower {
     background: $brand-color;
-    border-radius: $border-radius;
+    border-color: transparent;
   }
 
   &::-ms-fill-upper {
-    background: $background-color;
-    border-radius: $border-radius;
+    background: $meter-background-color;
+    border-color: transparent;
   }
 
   &::-ms-thumb {
     @include range-thumb();
+    border: $control-border-width solid $icon-color;
+    height: $inuit-base-spacing-unit - ($control-border-width * 2);
+    width: $inuit-base-spacing-unit - ($control-border-width * 2);
+    border-radius: $inuit-base-spacing-unit;
+    background-color: $background-color;
+  }
+
+  &:hover::-ms-thumb {
+    border-color: $active-icon-color;
   }
 }
