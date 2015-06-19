@@ -80,6 +80,7 @@ $meter-large-circle-size: $large-panel-width;
       &__values .meter__bar {
         stroke-width: $meter-width;
         @include graph-stroke-color();
+        cursor: pointer;
 
         @include media-query(lap-and-up) {
           transition: stroke-width 0.2s;
@@ -377,12 +378,12 @@ $meter-large-circle-size: $large-panel-width;
           height: $panel-width - $inuit-base-spacing-unit;
         }
       }
-    }
 
-    &.meter--single {
-      &.meter--arc {
-        left: auto;
-        right: 0px;
+      &.meter--single {
+        .meter__active {
+          left: auto;
+          right: 0px;
+        }
       }
     }
   }
