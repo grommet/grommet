@@ -61,12 +61,16 @@ var MeterDoc = React.createClass({
             <dd>Smaller sized version.</dd>
             <dt><code>threshold   {"{number}"}</code></dt>
             <dd>Optional threshold value.</dd>
+            <dt><code>thresholds     {"[{value: , label: , colorIndex: }, ...]"}</code></dt>
+            <dd>An array of objects describing thresholds.</dd>
             <dt><code>type         bar|arc|circle</code></dt>
             <dd>Whether to draw a bar, an arc, or a circle.</dd>
             <dt><code>units       {"{string}"}</code></dt>
             <dd>Optional units to display next to the value label.</dd>
             <dt><code>value       {"{number}"}</code></dt>
             <dd>The current value.</dd>
+            <dt><code>vertical       true|false</code></dt>
+            <dd>Whether to orient a bar or arc Meter vertically.</dd>
           </dl>
         </section>
 
