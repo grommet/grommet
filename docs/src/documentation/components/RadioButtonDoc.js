@@ -6,6 +6,14 @@ var RadioButton = require('grommet/components/RadioButton');
 
 var RadioButtonDoc = React.createClass({
 
+  _onChange: function (choice) {
+    this.setState({choice: choice});
+  },
+
+  getInitialState: function () {
+    return {choice: 'choice-1'};
+  },
+
   render: function() {
     var inline = [
       "<RadioButton id=\"item2\" label=\"Item 1\">"
@@ -44,17 +52,14 @@ var RadioButtonDoc = React.createClass({
           <h2>Example</h2>
 
           <div className="example">
-            <RadioButton id="choice1-1" name="choice1" label="Choice 1" />
-            <RadioButton id="choice1-2" name="choice1" label="Choice 2" />
+            <RadioButton id="choice1-1" name="choice1" label="Choice 1"
+              checked={this.state.choice === 'choice-1'}
+              onChange={this._onChange.bind(this, 'choice-1')} />
+            <RadioButton id="choice1-2" name="choice1" label="Choice 2"
+              checked={this.state.choice === 'choice-2'}
+              onChange={this._onChange.bind(this, 'choice-2')} />
           </div>
           <pre><code className="html">{"<RadioButton id=\"\{choice1-1\}\" name=\"choice\" label=\"Choice 1\"/>"}</code></pre>
-
-          <h3>Small (NOTE: under design discussion)</h3>
-          <div className="example">
-            <RadioButton id="choice2-1" name="choice2" label="Choice 3" small={true} />
-            <RadioButton id="choice2-2" name="choice2" label="Choice 4" small={true} />
-          </div>
-          <pre><code className="html">{"<RadioButton id=\"\{choice2-1\}\" name=\"choice\" label=\"Choice 3\" small={true}/>"}</code></pre>
 
         </section>
       </GrommetDocument>

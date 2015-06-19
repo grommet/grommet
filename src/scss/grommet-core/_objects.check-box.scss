@@ -9,6 +9,14 @@
       &__control {
         border-color: $active-icon-color;
       }
+
+      &__input:checked + .check-box__control {
+        border-color: $active-icon-color;
+      }
+
+      &__label {
+        color: $hover-text-color;
+      }
     }
   }
 
@@ -17,8 +25,14 @@
     position: absolute;
 
     &:checked + .check-box__control {
+      border-color: $brand-color;
+
       .check-box__control-check {
         display: block;
+      }
+
+      + .check-box__label {
+        color: $text-color;
       }
     }
 
@@ -52,26 +66,20 @@
     }
   }
 
-  &--small {
-    .check-box {
-      &__control {
-        width: $control-small-size;
-        height: $control-small-size;
-
-        &-check {
-          top: -1.5px;
-          left: -1px;
-          width: $control-small-size - 1;
-          height: $control-small-size - 1;
-        }
-      }
-    }
+  &__label {
+    color: $secondary-text-color;
   }
 
   &--toggle {
 
     &:hover {
       .check-box__control:after {
+        content: "";
+        border-color: $active-icon-color;
+      }
+
+      .check-box__input:checked + .check-box__control:after {
+        content: "";
         border-color: $active-icon-color;
       }
     }
@@ -88,14 +96,14 @@
         content: "";
         display: block;
         position: absolute;
-        top: 0px;
+        top: - $control-border-width;
         left: 0px;
-        width: $control-size;
-        height: $control-size;
+        width: $control-size + double($control-border-width);
+        height: $control-size + double($control-border-width);
         background-color: #fff;
         border: $control-border-width solid $icon-color;
         border-radius: $control-size;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        //box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
         transition: margin-left 0.3s;
       }
     }
@@ -107,11 +115,9 @@
       }
 
       &:checked + .check-box__control:after {
-        top: 0px;
-        left: 0px;
-        width: $control-size;
-        height: $control-size;
+        content: "";
         background-color: #fff;
+        border-color: $brand-color;
         margin-left: $control-size;
       }
     }

@@ -1,6 +1,6 @@
 // (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
 
-$form-horizontal-padding: halve($inuit-base-spacing-unit);
+$form-horizontal-padding: round($inuit-base-spacing-unit * 0.75);
 $form-vertical-padding: quarter($inuit-base-spacing-unit);
 
 .form-field {
@@ -14,7 +14,7 @@ $form-vertical-padding: quarter($inuit-base-spacing-unit);
     width: $form-width;
     max-width: 100%;
     max-height: 100vh;
-    transition: all 0.4s;
+    transition: max-height 0.4s;
 
     .form--compact & {
       width: $compact-form-width;
@@ -92,8 +92,8 @@ $form-vertical-padding: quarter($inuit-base-spacing-unit);
     > .radio-button {
       display: block;
       @include inuit-font-size($content-font-size);
-      margin-top: quarter($inuit-base-spacing-unit);
-      margin-bottom: quarter($inuit-base-spacing-unit);
+      margin-top: double($form-vertical-padding);
+      margin-bottom: double($form-vertical-padding);
     }
 
     > .search-input,
@@ -110,7 +110,7 @@ $form-vertical-padding: quarter($inuit-base-spacing-unit);
       .search-input__control,
       .calendar__control {
         right: 0px; //$form-horizontal-padding;
-        bottom: - quarter($inuit-base-spacing-unit);
+        bottom: - $form-vertical-padding;
       }
     }
 
@@ -172,7 +172,7 @@ $form-vertical-padding: quarter($inuit-base-spacing-unit);
 
     @include media-query(lap-and-up) {
       max-height: 0px;
-      transition: all 0.2s;
+      transition: max-height 0.2s;
     }
   }
 

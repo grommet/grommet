@@ -57,12 +57,6 @@ var CheckBoxDoc = React.createClass({
           </div>
           <pre><code className="html">{"<CheckBox id=\"\{item3\}\" label=\"Item 3\" toggle={true} />"}</code></pre>
 
-          <h3>Small (NOTE: under design discussion)</h3>
-          <div className="example">
-            <CheckBox id="item4" label="Item 4" small={true} />
-          </div>
-          <pre><code className="html">{"<CheckBox id=\"\{item4\}\" label=\"Item 4\" small={true} />"}</code></pre>
-
         </section>
       </GrommetDocument>
     );

@@ -119,7 +119,7 @@ input[type=range] {
   &::-webkit-slider-thumb:after {
     content: "";
     position: absolute;
-    border: $control-border-width solid $icon-color;
+    border: $control-border-width solid $brand-color;
     height: $control-size - ($control-border-width * 2);
     width: $control-size - ($control-border-width * 2);
     border-radius: $control-size;
@@ -139,8 +139,10 @@ input[type=range] {
   &::-moz-range-thumb {
     @include range-thumb();
     // since the :before doesn't work on the thumb, restyle a bit
+    border: $control-border-width solid $brand-color;
+    height: $control-size - ($control-border-width * 2);
+    width: $control-size - ($control-border-width * 2);
     border-radius: $control-size;
-    border: $control-border-width solid $icon-color;
     background-color: $background-color;
   }
 
