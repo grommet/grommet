@@ -6,7 +6,6 @@ var FormFields = require('grommet/components/FormFields');
 var FormField = require('grommet/components/FormField');
 var Header = require('grommet/components/Header');
 var Menu = require('grommet/components/Menu');
-var CloseIcon = require('grommet/components/icons/Clear');
 var CheckBox = require('grommet/components/CheckBox');
 var RadioButton = require('grommet/components/RadioButton');
 var SearchInput = require('grommet/components/SearchInput');
@@ -78,11 +77,6 @@ var FullForm = React.createClass({
       <Form onSubmit={this.props.onSubmit} compact={this.props.compact}>
         <Header>
           <h1>Edit</h1>
-          <Menu>
-            <div onClick={this.props.onCancel}>
-              <CloseIcon />
-            </div>
-          </Menu>
         </Header>
         <FormFields>
           <fieldset>
@@ -158,10 +152,9 @@ var FullForm = React.createClass({
           </fieldset>
         </FormFields>
         <Footer>
-          <span></span>
-          <Menu direction="right">
-            <Button label="Cancel" onClick={this.props.onCancel} />
+          <Menu>
             <Button label="OK" primary={true} strong={true} onClick={this.props.onSubmit} />
+            <Button label="Cancel" onClick={this.props.onCancel} />
           </Menu>
         </Footer>
       </Form>

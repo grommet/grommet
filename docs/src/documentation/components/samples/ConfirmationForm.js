@@ -6,7 +6,6 @@ var FormFields = require('grommet/components/FormFields');
 var FormField = require('grommet/components/FormField');
 var Header = require('grommet/components/Header');
 var Menu = require('grommet/components/Menu');
-var CloseIcon = require('grommet/components/icons/Clear');
 var CheckBox = require('grommet/components/CheckBox');
 var Footer = require('grommet/components/Footer');
 var Button = require('grommet/components/Button');
@@ -52,11 +51,6 @@ var ConfirmationForm = React.createClass({
       <Form onSubmit={this._onSubmit} compact={this.props.compact}>
         <Header>
           <h1>Confirmation</h1>
-          <Menu>
-            <div onClick={this.props.onCancel}>
-              <CloseIcon />
-            </div>
-          </Menu>
         </Header>
         <FormFields>
           <fieldset>
@@ -69,8 +63,7 @@ var ConfirmationForm = React.createClass({
           </fieldset>
         </FormFields>
         <Footer>
-          <span></span>
-          <Menu direction="left">
+          <Menu>
             <Button label="Destroy" primary={true} strong={true}
               onClick={this._onSubmit} />
           </Menu>

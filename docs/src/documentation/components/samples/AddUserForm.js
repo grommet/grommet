@@ -6,7 +6,6 @@ var FormFields = require('grommet/components/FormFields');
 var FormField = require('grommet/components/FormField');
 var Header = require('grommet/components/Header');
 var Menu = require('grommet/components/Menu');
-var CloseIcon = require('grommet/components/icons/Clear');
 var CheckBox = require('grommet/components/CheckBox');
 var RadioButton = require('grommet/components/RadioButton');
 var Footer = require('grommet/components/Footer');
@@ -109,11 +108,6 @@ var AddUserForm = React.createClass({
       <Form onSubmit={this._onSubmit} compact={this.props.compact}>
         <Header>
           <h1>Add User</h1>
-          <Menu>
-            <div onClick={this.props.onCancel}>
-              <CloseIcon />
-            </div>
-          </Menu>
         </Header>
         <FormFields>
           <fieldset>
@@ -181,8 +175,7 @@ var AddUserForm = React.createClass({
           </fieldset>
         </FormFields>
         <Footer>
-          <span></span>
-          <Menu direction="left">
+          <Menu>
             <Button label="Add" primary={true} strong={true} onClick={this._onSubmit} />
           </Menu>
         </Footer>

@@ -12,8 +12,8 @@ var ConfirmationForm = require('./samples/ConfirmationForm');
 
 var LayerDoc = React.createClass({
 
-  _onOpen: function (which) {
-    this.setState({active: which});
+  _onOpen: function (which, align) {
+    this.setState({active: which, align: align});
   },
 
   _onClose: function (event) {
@@ -25,7 +25,8 @@ var LayerDoc = React.createClass({
 
   getInitialState: function () {
     return {
-      active: null
+      active: null,
+      align: 'center'
     };
   },
 
@@ -38,7 +39,8 @@ var LayerDoc = React.createClass({
       switch (this.state.active) {
       case 'simple':
         activeLayer = (
-          <Layer onClose={this._onClose} closer={true} flush={true}>
+          <Layer onClose={this._onClose} closer={true} flush={true}
+            align={this.state.align}>
             <Form>
               <Header>
                 <h2>Title</h2>
@@ -61,7 +63,7 @@ var LayerDoc = React.createClass({
         break;
       }
       if (! activeLayer) {
-        activeLayer = <Layer flush={true}>{form}</Layer>;
+        activeLayer = <Layer onClose={this._onClose} closer={true} flush={true} align={this.state.align}>{form}</Layer>;
       }
     }
 
@@ -102,20 +104,24 @@ var LayerDoc = React.createClass({
           <h2>Examples</h2>
 
           <h3>Simple</h3>
-          <button onClick={this._onOpen.bind(this, 'simple')}>Simple</button>
+          <button onClick={this._onOpen.bind(this, 'simple', 'top')}>Simple</button>
           <pre><code className="html">{"<Layer> ..."}</code></pre>
 
-          <h3>Form</h3>
-          <button onClick={this._onOpen.bind(this, 'mixed')}>Form</button>
+          <h3>Edit</h3>
+          <button onClick={this._onOpen.bind(this, 'mixed', 'right')}>Edit</button>
           <pre><code className="html">{"<Layer> ..."}</code></pre>
 
           <h3>Add User</h3>
-          <button onClick={this._onOpen.bind(this, 'add user')}>Add User</button>
+          <button onClick={this._onOpen.bind(this, 'add user', 'right')}>Add User</button>
           <pre><code className="html">{"<Layer> ..."}</code></pre>
 
           <h3>Confirmation</h3>
-          <button onClick={this._onOpen.bind(this, 'confirmation')}>Confirmation</button>
+          <button onClick={this._onOpen.bind(this, 'confirmation', 'right')}>Confirmation</button>
           <pre><code className="html">{"<Layer> ..."}</code></pre>
+
+          <h3>Edit, left</h3>
+          <button onClick={this._onOpen.bind(this, 'mixed', 'left')}>Edit</button>
+          <pre><code className="html">{"<Layer align=\"left\"> ..."}</code></pre>
 
         </section>
 

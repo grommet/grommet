@@ -98,7 +98,6 @@ var Meter = React.createClass({
   },
 
   _onActivate: function (index) {
-    console.log('!!! Meter _onActive', index);
     this.setState({initial: false, activeIndex: index});
   },
 
@@ -535,7 +534,6 @@ var Meter = React.createClass({
     } else if (this.state.series.length === 1) {
       classes.push(CLASS_ROOT + "--single");
     }
-    console.log('!!! Meter render', this.state.activeIndex);
     if (this.state.activeIndex !== null) {
       classes.push(CLASS_ROOT + "--active");
     }
