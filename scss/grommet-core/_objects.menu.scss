@@ -6,6 +6,7 @@
 
   a:not(.button) {
     color: lighten($text-color, 30%);
+    text-decoration: none;
 
     &:hover {
       color: $text-color;

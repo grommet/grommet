@@ -28,7 +28,7 @@ var Filter = React.createClass({
       <svg className={className} viewBox="0 0 48 48" version="1.1">
         <g fill="none">
           <polygon strokeWidth="2" points="14,15 24,27 34,15 	"/>
-          <line strokeWidth="2" x1="24" y1="27" x2="24" y2="36"/>
+          <line strokeWidth="2" x1="24" y1="27" x2="24" y2="34"/>
         </g>
         {badge}
       </svg>
