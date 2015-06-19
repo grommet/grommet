@@ -45,8 +45,9 @@ h5,
 }
 
 a {
-  text-decoration: none;
   color: $link-color;
+  -webkit-text-decoration: $brand-text-decoration;
+  text-decoration: $brand-text-decoration;
   cursor: pointer;
 
   &:hover {
