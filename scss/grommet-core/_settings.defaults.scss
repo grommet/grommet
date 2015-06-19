@@ -20,8 +20,7 @@ $panel-width: round($inuit-base-spacing-unit * 8) !default;
 $small-panel-width: round($inuit-base-spacing-unit * 6) !default;
 $large-panel-width: round($inuit-base-spacing-unit * 12) !default;
 
-$control-size: round($inuit-base-spacing-unit * 0.75) !default; // 18px
-$control-small-size: round($inuit-base-spacing-unit * 0.5) !default; // 12px
+$control-size: $inuit-base-spacing-unit !default; // 24px
 
 $input-border-width: 1px !default;
 $control-border-width: 2px !default;

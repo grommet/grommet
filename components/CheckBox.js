@@ -13,7 +13,6 @@ var CheckBox = React.createClass({
     label: React.PropTypes.string.isRequired,
     name: React.PropTypes.string,
     onChange: React.PropTypes.func,
-    small: React.PropTypes.bool,
     toggle: React.PropTypes.bool
   },
 
@@ -21,9 +20,6 @@ var CheckBox = React.createClass({
     var classes = [CLASS_ROOT];
     if (this.props.toggle) {
       classes.push(CLASS_ROOT + "--toggle");
-    }
-    if (this.props.small) {
-      classes.push(CLASS_ROOT + "--small");
     }
     if (this.props.className) {
       classes.push(this.props.className);

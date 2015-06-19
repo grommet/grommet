@@ -20,10 +20,9 @@
     margin-right: $inuit-base-spacing-unit;
 
     legend {
-      @include inuit-font-size(36px);
+      @include inuit-font-size(24px);
       font-weight: 600;
       margin-bottom: halve($inuit-base-spacing-unit);
-      color: $secondary-text-color;
     }
   }
 
@@ -33,7 +32,7 @@
       max-height: 100vh;
       max-width: 100vw;
       overflow: auto;
-      padding: $inuit-base-spacing-unit quadruple($inuit-base-spacing-unit);
+      padding: round($inuit-base-spacing-unit * 0.75) double($inuit-base-spacing-unit) double($inuit-base-spacing-unit);
     }
 
     @include media-query(palm) {

@@ -9,6 +9,14 @@
       &__control {
         border-color: $active-icon-color;
       }
+
+      &__input:checked + .radio-button__control {
+        border-color: $active-icon-color;
+      }
+
+      &__label {
+        color: $hover-text-color;
+      }
     }
   }
 
@@ -16,14 +24,22 @@
     opacity: 0;
     position: absolute;
 
+    &:checked + .radio-button__control {
+      border-color: $brand-color;
+
+      + .radio-button__label {
+        color: $text-color;
+      }
+    }
+
     &:checked + .radio-button__control:after {
       content: "";
       display: block;
       position: absolute;
-      top: 4px;
-      left: 4px;
-      width: halve($control-size) - 3;
-      height: halve($control-size) - 3;
+      top: quarter($control-size) - 1;
+      left: quarter($control-size) - 1;
+      width: halve($control-size) - 2;
+      height: halve($control-size) - 2;
       background-color: $brand-color;
       border-radius: halve($control-size);
     }
@@ -48,26 +64,7 @@
     border-radius: $control-size;
   }
 
-  &--small {
-    .radio-button {
-      &__control {
-        top: -1px;
-        width: $control-small-size;
-        height: $control-small-size;
-        border-radius: $control-small-size;
-      }
-
-      &__input {
-
-        &:checked + .radio-button__control:after {
-          content: "";
-          top: 2px;
-          left: 2px;
-          width: halve($control-small-size) - 2;
-          height: halve($control-small-size) - 2;
-          border-radius: halve($control-small-size) - 2;
-        }
-      }
-    }
+  &__label {
+    color: $secondary-text-color;
   }
 }

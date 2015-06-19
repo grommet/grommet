@@ -13,15 +13,11 @@ var RadioButton = React.createClass({
     label: React.PropTypes.string.isRequired,
     name: React.PropTypes.string,
     onChange: React.PropTypes.func,
-    small: React.PropTypes.bool,
     value: React.PropTypes.string
   },
 
   render: function () {
     var classes = [CLASS_ROOT];
-    if (this.props.small) {
-      classes.push(CLASS_ROOT + "--small");
-    }
     if (this.props.className) {
       classes.push(this.props.className);
     }
