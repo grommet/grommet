@@ -59,6 +59,15 @@ module.exports = function(gulp, options, webpackConfig, dist) {
     var server = new WebpackDevServer(webpack(devWebpackConfig), devServerConfig);
     server.use('/', function(req, res, next) {
 
+      var acceptLanguageHeader = req.headers['accept-language'];
+
+      if (acceptLanguageHeader) {
+        var acceptedLanguages = acceptLanguageHeader.match(/[a-zA-z\-]{2,10}/g);
+        if (acceptedLanguages) {
+          res.cookie('languages', JSON.stringify(acceptedLanguages));
+        }
+      }
+
       if (req.url.match(/.+index.js$/)) {
         res.redirect(301, '/index.js');
       } else if (req.url.match(/.+\/img\//)) { // img
