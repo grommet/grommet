@@ -33,6 +33,19 @@ router.get('/', function (req, res) {
   res.redirect('/docs');
 });
 
+app.use('/', function(req, res, next) {
+  var acceptLanguageHeader = req.headers['accept-language'];
+
+  if (acceptLanguageHeader) {
+    var acceptedLanguages = acceptLanguageHeader.match(/[a-zA-z\-]{2,10}/g);
+    if (acceptedLanguages) {
+      res.cookie('languages', JSON.stringify(acceptedLanguages));
+    }
+  }
+
+  next();
+});
+
 app.use('/tour/', function (req, res) {
   res.redirect('/medium-app');
 });
