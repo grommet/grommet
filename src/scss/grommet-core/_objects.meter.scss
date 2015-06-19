@@ -1,6 +1,14 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 $meter-bar-length: round($inuit-base-spacing-unit * 8);
+$meter-width: round($inuit-base-spacing-unit * 0.75);
+$meter-inactive-width: round($inuit-base-spacing-unit * 0.25);
+$meter-threshold-width: round($inuit-base-spacing-unit * 0.25);
+$meter-circle-size: $panel-width;
+$meter-arc-size: $panel-width - double($inuit-base-spacing-unit);
+$meter-label-width: double($inuit-base-spacing-unit);
+$meter-small-circle-size: $small-panel-width;
+$meter-large-circle-size: $large-panel-width;
 
 @include keyframes(draw-meter) {
   0% {
@@ -35,14 +43,16 @@ $meter-bar-length: round($inuit-base-spacing-unit * 8);
   &__labels {
     display: -webkit-flex;
     display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
     color: $secondary-text-color;
     @include inuit-font-size($label-font-size);
   }
 
   &__label-min,
   &__label-max {
-    -webkit-flex: 1;
-    flex: 1;
+    -webkit-flex: 0 0 $meter-label-width;
+    flex: 0 0 $meter-label-width;
   }
 
   &__label-max {
@@ -63,26 +73,23 @@ $meter-bar-length: round($inuit-base-spacing-unit * 8);
 
       &__bar {
         stroke-linecap: butt;
-        stroke-dasharray: quadruple($panel-width) quadruple($panel-width);
+        stroke-dasharray: quadruple($meter-bar-length) quadruple($meter-bar-length);
         stroke-dashoffset: 0;
       }
 
       &__values .meter__bar {
-        stroke-width: $inuit-base-spacing-unit;
+        stroke-width: $meter-width;
         @include graph-stroke-color();
 
         @include media-query(lap-and-up) {
+          transition: stroke-width 0.2s;
           @include animation('draw-meter 1.5s');
         }
       }
 
       &__thresholds .meter__bar {
-        stroke-width: halve($inuit-base-spacing-unit);
+        stroke-width: $meter-threshold-width;
         @include graph-stroke-color-translucent(0.5);
-      }
-
-      &__threshold {
-        stroke-width: 1;
       }
 
       &__active {
@@ -95,10 +102,28 @@ $meter-bar-length: round($inuit-base-spacing-unit * 8);
           color: $secondary-text-color;
           margin-left: 0.5em;
         }
+
+        &-label {
+          width: 50%;
+          margin: 0px auto;
+          @include inuit-font-size($label-font-size, $label-font-size + 2);
+        }
       }
 
       &__labels-container {
         width: $meter-bar-length;
+      }
+    }
+
+    &.meter--active {
+      .meter {
+        &__values .meter__bar {
+          stroke-width: $meter-threshold-width;
+
+          &--active {
+            stroke-width: $meter-width;
+          }
+        }
       }
     }
   }
@@ -106,27 +131,27 @@ $meter-bar-length: round($inuit-base-spacing-unit * 8);
   &--circle,
   &--arc {
     @include media-query(palm) {
-      width: $panel-width;
+      width: $meter-circle-size;
       margin: 0px auto;
     }
 
     svg.meter__graphic {
       display: block;
-      width: $panel-width;
-      height: $panel-width;
+      width: $meter-circle-size;
+      height: $meter-circle-size;
     }
 
     .meter {
 
       &.series-pre {
         path {
-          stroke-dashoffset: quadruple($panel-width);
+          stroke-dashoffset: quadruple($meter-circle-size);
         }
       }
 
       &__slice {
         stroke-linecap: butt;
-        stroke-dasharray: quadruple($panel-width) quadruple($panel-width);
+        stroke-dasharray: quadruple($meter-circle-size) quadruple($meter-circle-size);
         stroke-dashoffset: 0;
         fill: none;
         cursor: pointer;
@@ -135,39 +160,36 @@ $meter-bar-length: round($inuit-base-spacing-unit * 8);
         &-indicator {
           stroke-linecap: round;
           stroke-width: 3;
-          @include graph-stroke-color;
-        }
-
-        &--active {
-          stroke-width: $inuit-base-spacing-unit;
+          stroke: #000;
+          //@include graph-stroke-color;
         }
       }
 
       &__values .meter__slice {
-        stroke-width: $inuit-base-spacing-unit;
+        stroke-width: $meter-width;
         @include graph-stroke-color();
 
         @include media-query(lap-and-up) {
+          transition: stroke-width 0.2s;
           @include animation('draw-stroke 3s');
         }
       }
 
       &__thresholds .meter__slice {
-        stroke-width: halve($inuit-base-spacing-unit);
+        stroke-width: $meter-threshold-width;
         @include graph-stroke-color-translucent(0.5);
       }
 
       &__threshold {
-        stroke-width: $inuit-base-spacing-unit;
+        //stroke-width: $inuit-base-spacing-unit;
         stroke-linecap: butt;
       }
 
       &__active {
         position: absolute;
-        top: 0px;
-        left: 0px;
-        width: $panel-width;
-        margin-top: round($inuit-base-spacing-unit * 3);
+        left: $meter-label-width;
+        // leave room for labels on either side
+        width: $meter-circle-size - double($meter-label-width);
         text-align: center;
         white-space: normal;
         pointer-events: none;
@@ -185,36 +207,55 @@ $meter-bar-length: round($inuit-base-spacing-unit * 8);
         }
 
         &-label {
-          width: 50%;
-          margin: 0px auto;
+          display: block;
+          text-align: center;
           @include inuit-font-size($label-font-size, $label-font-size + 2);
         }
       }
 
       &__labels-container {
-        width: $panel-width;
+        width: $meter-circle-size;
       }
 
       &__legend {
         margin: $inuit-base-spacing-unit 0 0;
       }
     }
+
+    &.meter--active {
+      .meter {
+        &__values .meter__slice {
+          stroke-width: $meter-threshold-width;
+
+          &--active {
+            stroke-width: $meter-width;
+          }
+        }
+      }
+    }
   }
 
   &--arc {
     svg.meter__graphic {
-      height: $panel-width - double($inuit-base-spacing-unit);
+      height: $meter-arc-size;
     }
 
-    .meter__labels-container {
-      padding-left: halve($inuit-base-spacing-unit);
-      padding-right: halve($inuit-base-spacing-unit);
+    .meter {
+      &__active {
+        bottom: 0px;
+      }
     }
   }
 
   &--circle {
     svg.meter__graphic {
-      height: $panel-width;
+      height: $meter-circle-size;
+    }
+
+    .meter {
+      &__active {
+        top: round($inuit-base-spacing-unit * 3);
+      }
     }
   }
 
@@ -232,8 +273,6 @@ $meter-bar-length: round($inuit-base-spacing-unit * 8);
       &__labels {
         -webkit-flex-direction: column;
         flex-direction: column;
-        -webkit-justify-content: space-between;
-        justify-content: space-between;
       }
 
       &__label-min,
@@ -257,6 +296,12 @@ $meter-bar-length: round($inuit-base-spacing-unit * 8);
         @include media-query(lap-and-up) {
           vertical-align: middle;
           margin: 0px 0px 0px 24px;
+        }
+      }
+
+      &__active {
+        &-label {
+          display: block;
         }
       }
     }
@@ -306,21 +351,38 @@ $meter-bar-length: round($inuit-base-spacing-unit * 8);
     &.meter--arc {
       svg.meter__graphic {
         display: inline;
-        width: $panel-width - double($inuit-base-spacing-unit);
-        height: $panel-width;
+        width: $meter-arc-size;
+        height: $meter-circle-size;
       }
 
-      .meter__labels-container {
-        display: inline-block;
-        vertical-align: top;
-        width: auto;
-        height: $panel-width;
-        padding-top: halve($inuit-base-spacing-unit);
-        padding-bottom: halve($inuit-base-spacing-unit);
-      }
+      .meter {
 
-      .meter__labels {
-        height: $panel-width - $inuit-base-spacing-unit;
+        &__active {
+          top: round($inuit-base-spacing-unit * 3);
+          width: halve($meter-arc-size);
+          text-align: right;
+        }
+
+        &__labels-container {
+          display: inline-block;
+          vertical-align: top;
+          width: auto;
+          height: $panel-width;
+          min-width: halve($meter-label-width);
+          padding-top: halve($inuit-base-spacing-unit);
+          padding-bottom: halve($inuit-base-spacing-unit);
+        }
+
+        &__labels {
+          height: $panel-width - $inuit-base-spacing-unit;
+        }
+      }
+    }
+
+    &.meter--single {
+      &.meter--arc {
+        left: auto;
+        right: 0px;
       }
     }
   }
@@ -329,11 +391,11 @@ $meter-bar-length: round($inuit-base-spacing-unit * 8);
     &.meter--bar {
 
       .meter__labels-container {
-        width: $small-panel-width;
+        width: $meter-small-circle-size;
       }
 
       svg.meter__graphic {
-        width: $small-panel-width;
+        width: $meter-small-circle-size;
       }
 
       .meter__active {
@@ -344,17 +406,23 @@ $meter-bar-length: round($inuit-base-spacing-unit * 8);
     &.meter--arc,
     &.meter--circle {
       svg.meter__graphic {
-        width: $small-panel-width;
-        height: $small-panel-width;
+        width: $meter-small-circle-size;
+        height: $meter-small-circle-size;
       }
 
       .meter__active {
-        width: $small-panel-width;
-        margin-top: round($inuit-base-spacing-unit * 2);
+        // leave room for labels on either side
+        width: $meter-small-circle-size - double($meter-label-width);
 
         &-value {
           @include inuit-font-size($small-large-number-font-size, inherit);
         }
+      }
+    }
+
+    &.meter--circle {
+      .meter__active {
+        top: round($inuit-base-spacing-unit * 2);
       }
     }
 
@@ -375,7 +443,7 @@ $meter-bar-length: round($inuit-base-spacing-unit * 8);
   &--large {
     &.meter--bar {
       svg.meter__graphic {
-        width: $large-panel-width;
+        width: $meter-large-circle-size;
         height: $inuit-base-spacing-unit + halve($inuit-base-spacing-unit);
       }
 
@@ -387,17 +455,22 @@ $meter-bar-length: round($inuit-base-spacing-unit * 8);
     &.meter--arc,
     &.meter--circle {
       svg.meter__graphic {
-        width: $large-panel-width;
-        height: $large-panel-width;
+        width: $meter-large-circle-size;
+        height: $meter-large-circle-size;
       }
 
       .meter__active {
-        width: $large-panel-width;
-        margin-top: round($inuit-base-spacing-unit * 4);
+        width: $meter-large-circle-size - double($meter-label-width);
 
         &-value {
           @include inuit-font-size($large-large-number-font-size, inherit);
         }
+      }
+    }
+
+    &.meter--circle {
+      .meter__active {
+        top: round($inuit-base-spacing-unit * 4);
       }
     }
 
@@ -423,7 +496,8 @@ $meter-bar-length: round($inuit-base-spacing-unit * 8);
   }
 
   &--loading {
-    .meter__thresholds {
+    .meter__thresholds,
+    .meter__active {
       display: none;
     }
   }

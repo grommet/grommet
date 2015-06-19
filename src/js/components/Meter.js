@@ -33,8 +33,8 @@ function arcCommands (x, y, radius, startAngle, endAngle) {
   return d;
 }
 
-function activeIndicatorCommands (x, y, radius, startAngle, endAngle) {
-  var point = polarToCartesian(x, y, radius - 30, endAngle - 1);
+function singleIndicatorCommands (x, y, radius, startAngle, endAngle, length) {
+  var point = polarToCartesian(x, y, radius - length, endAngle - 1);
   var start = polarToCartesian(x, y, radius, endAngle - 1);
   var d = ["M", start.x, start.y,
     "L", point.x, point.y
@@ -98,6 +98,7 @@ var Meter = React.createClass({
   },
 
   _onActivate: function (index) {
+    console.log('!!! Meter _onActive', index);
     this.setState({initial: false, activeIndex: index});
   },
 
@@ -133,17 +134,38 @@ var Meter = React.createClass({
     */
   },
 
-  _normalizeSeries: function (props, min, max) {
+  _normalizeSeries: function (props, min, max, thresholds) {
     var series = [];
     if (props.series) {
       series = props.series;
     } else if (props.value) {
-      //var remaining = max.value - props.value;
       series = [
-        {value: props.value, important: true} //,
-        //{value: remaining, colorIndex: 'unset'}
+        {value: props.value, important: true}
       ];
     }
+
+    // set color index
+    if (series.length === 1 && props.thresholds) {
+      var item = series[0];
+      if (! item.colorIndex) {
+        // see which threshold color index to use
+        var cumulative = 0;
+        thresholds.some(function (threshold) {
+          cumulative += threshold.value;
+          if (item.value < cumulative) {
+            item.colorIndex = threshold.colorIndex || 'graph-1';
+            return true;
+          }
+        });
+      }
+    } else {
+      series.forEach(function (item, index) {
+        if (! item.colorIndex) {
+          item.colorIndex = ('graph-' + (index + 1));
+        }
+      });
+    }
+
     return series;
   },
 
@@ -182,7 +204,10 @@ var Meter = React.createClass({
   },
 
   _importantIndex: function (series) {
-    var result = series.length - 1;
+    var result = null;
+    if (series.length === 1) {
+      result = 0;
+    }
     if (this.props.hasOwnProperty('important')) {
       result = this.props.important;
     }
@@ -252,13 +277,12 @@ var Meter = React.createClass({
     // Max could be provided in props or come from the total of
     // a multi-value series.
     var max = this._terminal(props.max || total);
-    // Normalize simple value prop to a series, if needed.
-    var series = this._normalizeSeries(props, min, max);
     // Normalize simple threshold prop to an array, if needed.
     var thresholds = this._normalizeThresholds(props, min, max);
+    // Normalize simple value prop to a series, if needed.
+    var series = this._normalizeSeries(props, min, max, thresholds);
     // Determine important index.
     var importantIndex = this._importantIndex(series);
-    ///total = this._seriesTotal(series);
     // Determine the viewBox dimensions
     var viewBoxDimensions = this._viewBoxDimensions();
 
@@ -318,9 +342,9 @@ var Meter = React.createClass({
     window.removeEventListener('resize', this._onResize);
   },
 
-  _itemColorIndex: function (item, index) {
-    return item.colorIndex || ('graph-' + (index + 1));
-  },
+  //_itemColorIndex: function (item, index) {
+  //  return item.colorIndex || ('graph-' + (index + 1));
+  //},
 
   _translateBarWidth: function (value) {
     return Math.round(this.state.scale * value);
@@ -345,12 +369,11 @@ var Meter = React.createClass({
     var commands;
 
     var paths = series.map(function (item, index) {
-      var colorIndex = this._itemColorIndex(item, index);
       classes = [CLASS_ROOT + "__bar"];
       if (index === this.state.activeIndex) {
         classes.push(CLASS_ROOT + "__bar--active");
       }
-      classes.push("color-index-" + colorIndex);
+      classes.push("color-index-" + item.colorIndex);
 
       var value = item.value - minRemaining;
       minRemaining = Math.max(0, minRemaining - item.value);
@@ -401,8 +424,7 @@ var Meter = React.createClass({
       if (index === this.state.activeIndex) {
         classes.push(CLASS_ROOT + "__slice--active");
       }
-      var colorIndex = this._itemColorIndex(item, index);
-      classes.push("color-index-" + colorIndex);
+      classes.push("color-index-" + item.colorIndex);
       endAngle = this._translateEndAngle(startAngle, item.value);
       commands = this._arcCommands(startAngle, endAngle);
 
@@ -431,21 +453,27 @@ var Meter = React.createClass({
     return paths;
   },
 
-  _renderActiveIndicator: function (series) {
-    var activeIndicator = null;
+  _renderSingleIndicator: function (series) {
+    var seriesIndicator = null;
     var startAngle = this.state.startAngle;
     series.forEach(function (item, index) {
-      var colorIndex = this._itemColorIndex(item, index);
       var endAngle = this._translateEndAngle(startAngle, item.value);
 
       if (index === this.state.activeIndex) {
+        var length;
+        if ('arc' === this.props.type) {
+          length = CIRCLE_RADIUS;
+        } else {
+          length = CIRCLE_RADIUS * 0.60;
+        }
         var indicatorCommands =
-          activeIndicatorCommands(CIRCLE_WIDTH / 2, CIRCLE_WIDTH / 2, CIRCLE_RADIUS,
+          singleIndicatorCommands(CIRCLE_WIDTH / 2, CIRCLE_WIDTH / 2, (CIRCLE_RADIUS * 1.1),
           startAngle + this.state.angleOffset,
-          endAngle + this.state.angleOffset);
-        activeIndicator = (
+          endAngle + this.state.angleOffset,
+          length);
+        seriesIndicator = (
           <path fill="none"
-            className={CLASS_ROOT + "__slice-indicator color-index-" + colorIndex}
+            className={CLASS_ROOT + "__slice-indicator color-index-" + item.colorIndex}
             d={indicatorCommands} />
         );
       }
@@ -453,39 +481,30 @@ var Meter = React.createClass({
       startAngle = endAngle;
     }, this);
 
-    return activeIndicator;
+    return seriesIndicator;
   },
 
   _renderActive: function () {
-    var result;
-    var active = this.state.series[this.state.activeIndex];
-    if ('arc' === this.props.type || 'circle' === this.props.type) {
-      result = (
-        <div className={CLASS_ROOT + "__active"}>
-          <div className={CLASS_ROOT + "__active-value large-number-font"}>
-            {active.value}
-            <span className={CLASS_ROOT + "__active-units large-number-font"}>
-              {this.props.units}
-            </span>
-          </div>
-          <div className={CLASS_ROOT + "__active-label"}>
-            {active.label}
-          </div>
-        </div>
-      );
-    } else if ('bar' === this.props.type) {
-      result = (
-        <span className={CLASS_ROOT + "__active"}>
-          <span className={CLASS_ROOT + "__active-value large-number-font"}>
-            {active.value}
-          </span>
+    var fields;
+    if (null === this.state.activeIndex) {
+      fields = {value: this.state.total, label: 'Total'};
+    } else {
+      var active = this.state.series[this.state.activeIndex];
+      fields = {value: active.value, label: active.label};
+    }
+    return (
+      <div className={CLASS_ROOT + "__active"}>
+        <span className={CLASS_ROOT + "__active-value large-number-font"}>
+          {fields.value}
           <span className={CLASS_ROOT + "__active-units large-number-font"}>
             {this.props.units}
           </span>
         </span>
-      );
-    }
-    return result;
+        <span className={CLASS_ROOT + "__active-label"}>
+          {fields.label}
+        </span>
+      </div>
+    );
   },
 
   _renderLegend: function () {
@@ -513,6 +532,12 @@ var Meter = React.createClass({
     }
     if (this.state.series.length === 0) {
       classes.push(CLASS_ROOT + "--loading");
+    } else if (this.state.series.length === 1) {
+      classes.push(CLASS_ROOT + "--single");
+    }
+    console.log('!!! Meter render', this.state.activeIndex);
+    if (this.state.activeIndex !== null) {
+      classes.push(CLASS_ROOT + "--active");
     }
     if (this.props.className) {
       classes.push(this.props.className);
@@ -520,11 +545,13 @@ var Meter = React.createClass({
 
     var values = null;
     var thresholds = null;
-    var activeIndicator = null;
+    var singleIndicator = null;
     if ('arc' === this.props.type || 'circle' === this.props.type) {
       values = this._renderArcOrCircle(this.state.series);
       thresholds = this._renderArcOrCircle(this.state.thresholds);
-      activeIndicator = this._renderActiveIndicator(this.state.series);
+      if (this.state.series.length === 1) {
+        singleIndicator = this._renderSingleIndicator(this.state.series);
+      }
     } else if ('bar' === this.props.type) {
       values = this._renderBar(this.state.series);
       thresholds = this._renderBar(this.state.thresholds);
@@ -547,10 +574,7 @@ var Meter = React.createClass({
       );
     }
 
-    var active = null;
-    if (this.state.activeIndex >= 0) {
-      active = this._renderActive();
-    }
+    var active = this._renderActive();
 
     var legend = null;
     if (this.props.legend) {
@@ -571,7 +595,7 @@ var Meter = React.createClass({
               <g className={CLASS_ROOT + "__values"}>
                 {values}
               </g>
-              {activeIndicator}
+              {singleIndicator}
             </svg>
             <div className={CLASS_ROOT + "__labels-container"}>
               <div className={CLASS_ROOT + "__labels"}>
