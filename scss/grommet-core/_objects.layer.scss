@@ -35,17 +35,9 @@
 
   &__closer {
     position: absolute;
+    top: 0px;
+    right: 0px;
     z-index: 1;
-
-    @include media-query(palm) {
-      top: 0px;
-      right: 0px;
-    }
-
-    @include media-query(lap-and-up) {
-      top: $inuit-base-spacing-unit;
-      right: $inuit-base-spacing-unit;
-    }
   }
 
   &--closeable {
@@ -83,6 +75,8 @@
       }
 
       .layer__container {
+        top: 0px;
+        bottom: 0px;
         left: 0px;
 
         @include media-query(lap-and-up) {
@@ -97,17 +91,31 @@
       }
 
       .layer__container {
+        top: 0px;
+        bottom: 0px;
         right: 0px;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        -webkit-justify-content: center;
+        justify-content: center;
+
+        @include media-query(lap-and-up) {
+          @include animation('slide-left 0.2s ease-in-out forwards');
+        }
       }
     }
 
     &-top:not(.layer--hidden) {
       @include media-query(lap-and-up) {
-        background-image: radial-gradient(circle at top left, $layer-background-color, $layer-background-color 20%, $layer-overlay-background-color); //$layer-overlay-background-color;
+        background-image: radial-gradient(circle at top, $layer-background-color, $layer-background-color 20%, $layer-overlay-background-color); //$layer-overlay-background-color;
       }
 
       .layer__container {
-        top: 0px;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
 
         @include media-query(lap-and-up) {
           @include animation('slide-down 0.2s ease-in-out forwards');
@@ -117,7 +125,7 @@
 
     &-bottom:not(.layer--hidden) {
       @include media-query(lap-and-up) {
-        background-image: radial-gradient(circle at bottom left, $layer-background-color, $layer-background-color 20%, $layer-overlay-background-color); //$layer-overlay-background-color;
+        background-image: radial-gradient(circle at bottom, $layer-background-color, $layer-background-color 20%, $layer-overlay-background-color); //$layer-overlay-background-color;
       }
 
       .layer__container {
@@ -175,6 +183,16 @@
 
   100% {
     left: 0px;
+  }
+}
+
+@include keyframes(slide-left) {
+  0% {
+    right: -100vw;
+  }
+
+  100% {
+    right: 0px;
   }
 }
 
