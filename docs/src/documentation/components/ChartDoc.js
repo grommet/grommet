@@ -3,6 +3,8 @@
 var React = require('react');
 var stringify = require("json-stringify-pretty-compact");
 var Chart = require('grommet/components/Chart');
+var Tiles = require('grommet/components/Tiles');
+var Tile = require('grommet/components/Tile');
 var GrommetDocument = require('grommet/components/Document');
 
 var inline =
@@ -14,6 +16,12 @@ var series = [
   {label: 'second', values: [[8, 4], [7, 2], [6, 3], [5, 4], [4, 3], [3, 0], [2, 1], [1, 0]],
     colorIndex: "graph-2"}
 ];
+
+var singleSeries = [
+  {values: [[8, 1], [7, 2], [6, 3], [5, 2], [4, 3], [3, 3], [2, 2], [1, 4]],
+    colorIndex: "graph-1"}
+];
+
 var seriesXAxis = [
   {label: 'May 22', value: series[0].values[0][0]},
   {label: 'May 21', value: series[0].values[1][0]},
@@ -35,7 +43,7 @@ var dateSeries = [
     [new Date(Date.parse("2015-05-17")), 1],
     [new Date(Date.parse("2015-05-16")), 4],
     [new Date(Date.parse("2015-05-15")), 2]
-  ], colorIndex: "graph-4"}
+  ], colorIndex: "graph-1"}
 ];
 
 var dateSeriesXAxis = [
@@ -47,6 +55,12 @@ var dateSeriesXAxis = [
   {label: 'May 17', value: dateSeries[0].values[5][0]},
   {label: 'May 16', value: dateSeries[0].values[6][0]},
   {label: 'May 15', value: dateSeries[0].values[7][0]}
+];
+
+var thresholds = [
+  {label: 'OK', value: 0, colorIndex: 'ok'},
+  {label: 'Warning', value: 3, colorIndex: 'warning'},
+  {label: 'Error', value: 4, colorIndex: 'error'}
 ];
 
 var ChartDoc = React.createClass({
@@ -71,10 +85,9 @@ var ChartDoc = React.createClass({
               correspond to, if any.</dd>
             <dt><code>large       true|false</code></dt>
             <dd>Larger sized version.</dd>
-            <dt><code>legend      true|false</code></dt>
-            <dd>Whether to show a legend.</dd>
-            <dt><code>legendTotal true|false</code></dt>
-            <dd>Whether to show a total in the legend.</dd>
+            <dt><code>legend      {"{position: overlay|after, total: true|false}"}</code></dt>
+            <dd>Whether to show a legend, where to place it,
+              and whether to show a total value.</dd>
             <dt><code>max         {"{number}"}</code></dt>
             <dd>The largest possible value.
               Defaults to the largest y value in the series data.</dd>
@@ -93,6 +106,8 @@ var ChartDoc = React.createClass({
             <dt><code>threshold    {"{number}"}</code></dt>
             <dd>Optional threshold value.</dd>
             <dt><code>type         line|bar|area</code></dt>
+            <dt><code>thresholds     {"[{value: , label: , colorIndex: }, ...]"}</code></dt>
+            <dd>An array of objects describing thresholds.</dd>
             <dd>Whether to draw a line graph, bar graph, or area graph.</dd>
             <dt><code>units        {"{string}"}</code></dt>
             <dd>Optional units to include.</dd>
@@ -106,105 +121,138 @@ var ChartDoc = React.createClass({
 
           <h3>Line</h3>
           <div className="example">
-          <Chart series={series} min={0} max={5} threshold={2} />
+          <Chart series={singleSeries} min={0} max={5} threshold={3} />
           </div>
           <pre><code className="html">
-            {"<Chart threshold={2} series={" + stringify(series) + "} />"}
+            {"<Chart threshold={2} series={" + stringify(singleSeries) + "} />"}
           </code></pre>
 
           <h3>Bar</h3>
           <div className="example">
-          <Chart series={series} min={0} threshold={2} type="bar" />
+          <Chart series={singleSeries} min={0} threshold={3} type="bar" />
           </div>
           <pre><code className="html">
             {"<Chart type=\"bar\" threshold={2}\n" +
-              " series={" + stringify(series) + "} />"}
+              " series={" + stringify(singleSeries) + "} />"}
           </code></pre>
 
           <h3>Area</h3>
           <div className="example">
-          <Chart series={series} min={0} max={5} threshold={2} type="area" />
+          <Chart series={singleSeries} min={0} max={5} threshold={3} type="area" />
           </div>
           <pre><code className="html">
-            {"<Chart type=\"area\" threshold={2}\n" +
-              " series={" + stringify(series) + "} />"}
+            {"<Chart type=\"area\" threshold={3}\n" +
+              " series={" + stringify(singleSeries) + "} />"}
           </code></pre>
 
           <h3>Bar, Legend, xAxis, and Units</h3>
           <div className="example">
-          <Chart series={series} min={0} threshold={2} type="bar" legend={true}
+          <Chart series={series} min={0} threshold={3} type="bar" legend={{}}
             xAxis={seriesXAxis}
             units="TB" />
           </div>
           <pre><code className="html">
-            {"<Chart type=\"bar\" threshold={2} legend=(true) units=\"TB\"\n" +
+            {"<Chart type=\"bar\" threshold={3} legend={{}} units=\"TB\"\n" +
               " xAxis={" + stringify(seriesXAxis) +  "}\n" +
               " series={" + stringify(series) + "} />"}
           </code></pre>
 
           <h3>Area, Legend, xAxis, and Units</h3>
           <div className="example">
-          <Chart series={series} min={0} max={5} threshold={2}
-            type="area" legend={true}
+          <Chart series={series} min={0} max={5} threshold={3}
+            type="area" legend={{}}
             xAxis={seriesXAxis}
-            units="TB" />
+            units="TB"
+            thresholds={thresholds} />
           </div>
           <pre><code className="html">
-            {"<Chart type=\"bar\" threshold={2}\n" +
-              " legend=(true) units=\"TB\"\n" +
+            {"<Chart type=\"bar\" threshold={3}\n" +
+              " legend={{}} units=\"TB\"\n" +
               " xAxis={" + stringify(seriesXAxis) +  "}\n" +
-              " series={" + stringify(series) + "} />"}
+              " series={" + stringify(series) + "}\n" +
+              " thresholds={" + stringify(thresholds) + "} />"}
           </code></pre>
 
           <h3>Small</h3>
           <div className="example">
-          <Chart series={series} min={0} threshold={2} type="bar" legend={true}
+          <Chart series={series} min={0} threshold={3} type="bar" legend={{}}
             xAxis={seriesXAxis}
             units="TB" small={true} />
           </div>
           <pre><code className="html">
-            {"<Chart type=\"bar\" small={true} threshold={2}\n" +
-              " legend=(true) units=\"TB\"\n xAxis={" +
+            {"<Chart type=\"bar\" small={true} threshold={3}\n" +
+              " legend={{}} units=\"TB\"\n xAxis={" +
               stringify(seriesXAxis) +  "}\n" +
               " series={" + stringify(series) + "} />"}
           </code></pre>
 
           <h3>Large, Legend total</h3>
           <div className="example">
-          <Chart series={series} min={0} threshold={2} type="bar"
-              legend={true} legendTotal={true}
+          <Chart series={series} min={0} threshold={3} type="bar"
+              legend={{total: true}}
             xAxis={seriesXAxis}
             units="TB" large={true} />
           </div>
           <pre><code className="html">
-            {"<Chart type=\"bar\" small={true} threshold={2}\n" +
-              " legend=(true) legendTotal={true} units=\"TB\"\n" +
+            {"<Chart type=\"bar\" small={true} threshold={3}\n" +
+              " legend={{total: true}} units=\"TB\"\n" +
               " xAxis={" + stringify(seriesXAxis) +  "}\n" +
               " series={" + stringify(series) + "} />"}
           </code></pre>
 
           <h3>Dates, Smooth</h3>
           <div className="example">
-          <Chart series={dateSeries} min={0} max={5} threshold={2}
-            type="area" smooth={true} legend={true}
+          <Chart series={dateSeries} min={0} max={5} threshold={3}
+            type="area" smooth={true} legend={{}}
             xAxis={dateSeriesXAxis} />
           </div>
           <pre><code className="html">
-            {"<Chart type=\"area\" smooth={true} threshold={2}\n" +
-              " legend={true}\n" +
+            {"<Chart type=\"area\" smooth={true} threshold={3}\n" +
+              " legend={{}}\n" +
               " xAxis={" + stringify(dateSeriesXAxis) +  "}\n" +
               " series={" + stringify(dateSeries) + "} />"}
           </code></pre>
 
+          <h3>Tiles</h3>
+          <div className="example">
+          <Tiles>
+            <Tile>
+              <Chart series={singleSeries} min={0} threshold={3} type="bar"
+                xAxis={seriesXAxis} small={true} units="TB" max={6}
+                legend={{position: 'after'}} />
+            </Tile>
+            <Tile>
+              <Chart series={series} min={0} threshold={3} type="bar"
+                xAxis={seriesXAxis} small={true} units="TB"
+                legend={{position: 'after'}} />
+            </Tile>
+            <Tile>
+              <Chart series={series} min={0} threshold={3} type="area"
+                xAxis={seriesXAxis} small={true} units="TB"
+                legend={{position: 'after'}} />
+            </Tile>
+            <Tile>
+              <Chart series={series} min={0} threshold={3} type="line"
+                xAxis={seriesXAxis} small={true} units="TB"
+                legend={{position: 'after'}} />
+            </Tile>
+          </Tiles>
+          </div>
+          <pre><code className="html">
+            {"<Tile>\n<Chart type=\"...\" threshold={3} legend={{position: after}} units=\"TB\"\n" +
+              " xAxis={" + stringify(seriesXAxis) +  "}\n" +
+              " series={" + stringify(series) + "} />\n</Tile>"}
+          </code></pre>
+
           <h3>Small, Loading</h3>
           <div className="example">
-          <Chart series={[]} min={0} threshold={2} type="bar" legend={true}
+          <Chart series={[]} min={0} threshold={3} type="bar" legend={{}}
             xAxis={[]}
             units="TB" small={true} />
           </div>
           <pre><code className="html">
-            {"<Chart type=\"bar\" small={true} threshold={2}\n" +
-              " legend=(true) units=\"TB\"\n xAxis={[]}\n" +
+            {"<Chart type=\"bar\" small={true} threshold={3}\n" +
+              " legend={{}} units=\"TB\"\n xAxis={[]}\n" +
               " series={[]} />"}
           </code></pre>
 

@@ -70,7 +70,7 @@ var Legend = React.createClass({
       }
 
       return (
-        <li key={item.label} className={legendClasses.join(' ')}
+        <li key={item.label || index} className={legendClasses.join(' ')}
           onClick={item.onClick}
           onMouseOver={this._onActive.bind(this, index)}
           onMouseOut={this._onActive.bind(this, this.props.activeIndex)} >

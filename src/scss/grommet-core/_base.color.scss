@@ -33,7 +33,8 @@ $unset-color: #ddd !default;
 
 $meter-color: $brand-color !default;
 $meter-background-color: #b2b2b2 !default;
-$threshold-color: nth($brand-grey-colors, 1) !default;
+$threshold-color: rgba($text-color, 0.2) !default;
+$cursor-color: $text-color !default;
 
 // Controls
 

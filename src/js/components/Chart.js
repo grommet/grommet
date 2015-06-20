@@ -5,18 +5,22 @@ var Legend = require('./Legend');
 
 var CLASS_ROOT = "chart";
 
-var DEFAULT_WIDTH = 400;
-var DEFAULT_HEIGHT = 200;
+var DEFAULT_WIDTH = 384;
+var DEFAULT_HEIGHT = 192;
 var XAXIS_HEIGHT = 24;
-var BAR_PADDING = 6;
+var YAXIS_WIDTH = 12;
+var BAR_PADDING = 2;
+var MIN_LABEL_WIDTH = 48;
 
 var Chart = React.createClass({
 
   propTypes: {
     important: React.PropTypes.number,
     large: React.PropTypes.bool,
-    legend: React.PropTypes.bool,
-    legendTotal: React.PropTypes.bool,
+    legend: React.PropTypes.shape({
+      position: React.PropTypes.oneOf(['over', 'after']),
+      total: React.PropTypes.bool
+    }),
     max: React.PropTypes.number,
     min: React.PropTypes.number,
     series: React.PropTypes.arrayOf(
@@ -36,6 +40,11 @@ var Chart = React.createClass({
     small: React.PropTypes.bool,
     smooth: React.PropTypes.bool,
     threshold: React.PropTypes.number,
+    thresholds: React.PropTypes.arrayOf(React.PropTypes.shape({
+      label: React.PropTypes.string,
+      value: React.PropTypes.number.isRequired,
+      colorIndex: React.PropTypes.string
+    })),
     type: React.PropTypes.oneOf(['line', 'bar', 'area']),
     units: React.PropTypes.string,
     xAxis: React.PropTypes.arrayOf(React.PropTypes.shape({
@@ -120,26 +129,30 @@ var Chart = React.createClass({
       minY = Math.min(minY, this.props.threshold);
       maxY = Math.max(maxY, this.props.threshold);
     }
+    if (this.props.thresholds) {
+      this.props.thresholds.forEach(function (obj) {
+        maxY = Math.max(maxY, obj.value);
+      });
+    }
     if (this.props.hasOwnProperty('min')) {
       minY = this.props.min;
     }
     if (this.props.hasOwnProperty('max')) {
       maxY = this.props.max;
     }
+    var graphWidth = (this.props.thresholds ? (width - YAXIS_WIDTH) : width);
+    var graphHeight = (xAxis ? (height - XAXIS_HEIGHT) : height);
     var spanX = maxX - minX;
     var spanY = maxY - minY;
-    var scaleX = (width / spanX);
-    var xStepWidth = (width / (xAxis.length - 1));
+    var scaleX = (graphWidth / spanX);
+    var xStepWidth = Math.round(graphWidth / (xAxis.length - 1));
     if ('bar' === this.props.type) {
       // allow room for bar width for last bar
-      xStepWidth = (width / xAxis.length);
-      scaleX = (width / (spanX + (spanX / (xAxis.length - 1))));
+      scaleX = (graphWidth / (spanX + (spanX / (xAxis.length - 1))));
+      xStepWidth = Math.round(graphWidth / xAxis.length);
     }
-    var scaleY = (height / spanY);
-    if (xAxis) {
-      // reserve room for the xAxis
-      scaleY = ((height - XAXIS_HEIGHT) / spanY);
-    }
+    var scaleY = (graphHeight / spanY);
+    var barPadding = Math.max(BAR_PADDING, Math.round(xStepWidth / 8));
 
     var result = {
       minX: minX,
@@ -150,7 +163,10 @@ var Chart = React.createClass({
       spanY: spanY,
       scaleX: scaleX,
       scaleY: scaleY,
+      graphWidth: graphWidth,
+      graphHeight: graphHeight,
       xStepWidth: xStepWidth,
+      barPadding: barPadding,
       xAxis: xAxis
     };
 
@@ -167,11 +183,12 @@ var Chart = React.createClass({
       var legendElement = this.refs.legend.getDOMNode();
       var legendRect = legendElement.getBoundingClientRect();
 
-      var left = cursorRect.left - rect.left + 1;
+      var left = cursorRect.left - rect.left - legendRect.width - 1;
       // if the legend would be outside the graphic, orient it to the right.
-      if ((left + legendRect.width) > rect.width) {
-        left -= legendRect.width + 3;
+      if (left < 0) {
+        left += legendRect.width + 2;
       }
+
       legendElement.style.left = '' + left + 'px ';
       legendElement.style.top = '' + (XAXIS_HEIGHT) + 'px ';
     }
@@ -181,7 +198,7 @@ var Chart = React.createClass({
   // redo the bounds calculations.
   // Called whenever the browser resizes or new properties arrive.
   _layout: function () {
-    if (this.props.legend) {
+    if (this.props.legend && 'below' !== this.props.legend.position) {
       this._alignLegend();
     }
     var element = this.refs.chart.getDOMNode();
@@ -242,7 +259,7 @@ var Chart = React.createClass({
   // Translates X value to X coordinate.
   _translateX: function (x) {
     var bounds = this.state.bounds;
-    return ((x - bounds.minX) * bounds.scaleX);
+    return Math.round((x - bounds.minX) * bounds.scaleX);
   },
 
   // Translates Y value to Y coordinate.
@@ -255,7 +272,7 @@ var Chart = React.createClass({
   // Translates Y value to graph height.
   _translateHeight: function (y) {
     var bounds = this.state.bounds;
-    return ((y - bounds.minY) * bounds.scaleY);
+    return Math.round((y - bounds.minY) * bounds.scaleY);
   },
 
   // Translates X and Y values to X and Y coordinates.
@@ -406,12 +423,12 @@ var Chart = React.createClass({
         var fill = 'url(#' + CLASS_ROOT + "__gradient-" + colorIndex + ')';
 
         return (
-          <rect key={item.label}
+          <rect key={item.label || seriesIndex}
             className={classes.join(' ')}
             fill={fill}
-            x={this._translateX(value[0]) + BAR_PADDING}
+            x={this._translateX(value[0]) + bounds.barPadding}
             y={this.state.height - (stepBarHeight + stepBarBase)}
-            width={bounds.xStepWidth - (2 * BAR_PADDING)}
+            width={bounds.xStepWidth - (2 * bounds.barPadding)}
             height={stepBarHeight} />
         );
       }, this);
@@ -457,38 +474,75 @@ var Chart = React.createClass({
     return <defs>{gradients}</defs>;
   },
 
+  _labelPosition: function (value, bounds) {
+    var x = this._translateX(value);
+    var startX = x;
+    var anchor;
+    if ('line' === this.props.type || 'area' === this.props.type) {
+      // Place the text in the middle for line and area type charts.
+      anchor = 'middle';
+      startX = x - (MIN_LABEL_WIDTH / 2);
+    }
+    if (x <= 0) {
+      // This is the first data point, align the text to the left edge.
+      x = 0;
+      startX = x;
+      anchor = 'start';
+    }
+    if (x >= (bounds.graphWidth - MIN_LABEL_WIDTH)) {
+      // This is the last data point, align the text to the right edge.
+      x = bounds.graphWidth;
+      startX = x - MIN_LABEL_WIDTH;
+      anchor = 'end';
+    } else if ('bar' === this.props.type) {
+      x += bounds.barPadding;
+      startX = x;
+    }
+    return {x: x, anchor: anchor, startX: startX, endX: startX + MIN_LABEL_WIDTH};
+  },
+
+  _labelOverlaps: function (pos1, pos2) {
+    return (pos1 && pos2 && pos1.endX > pos2.startX && pos1.startX < pos2.endX);
+  },
+
   // Converts the xAxis labels into texts.
   _renderXAxis: function () {
     var bounds = this.state.bounds;
-    var labelY = XAXIS_HEIGHT * 0.6;
+    var labelY = Math.round(XAXIS_HEIGHT * 0.6);
+    var priorPosition = null;
+    var activePosition = null;
+    if (bounds.xAxis && this.state.activeXIndex >= 0) {
+      activePosition =
+        this._labelPosition(bounds.xAxis[this.state.activeXIndex].value, bounds);
+    }
+    var lastPosition = null;
+    if (bounds.xAxis.length > 0) {
+      lastPosition =
+        this._labelPosition(bounds.xAxis[bounds.xAxis.length - 1].value, bounds);
+    }
 
     var labels = bounds.xAxis.map(function (obj, xIndex) {
       var classes = [CLASS_ROOT + "__xaxis-index"];
       if (xIndex === this.state.activeXIndex) {
         classes.push(CLASS_ROOT + "__xaxis-index--active");
       }
+      var position = this._labelPosition(obj.value, bounds);
 
-      var x = this._translateX(obj.value);
-      var anchor;
-      if ('line' === this.props.type || 'area' === this.props.type) {
-        // Place the text in the middle for line and area type charts.
-        anchor = 'middle';
-        if (x <= 0) {
-          // This is the first data point, align the text to the left edge.
-          x = 0;
-          anchor = 'start';
-        }
-        if (x >= this.state.width) {
-          // This is the last data point, align the text to the right edge.
-          x = this.state.width - 3;
-          anchor = 'end';
-        }
+      // Ensure we don't overlap labels. But, make sure we show the first and
+      // last ones.
+      if (this._labelOverlaps(position, activePosition) ||
+        (xIndex !== 0 && xIndex !== (bounds.xAxis.length - 1) &&
+          (this._labelOverlaps(position, priorPosition) ||
+          this._labelOverlaps(position, lastPosition)))) {
+        classes.push(CLASS_ROOT + "__xaxis-index--eclipse");
+      } else {
+        priorPosition = position;
       }
 
       return (
         <g key={xIndex} className={classes.join(' ')}>
-          <text x={x + BAR_PADDING} y={labelY}
-            textAnchor={anchor} fontSize={16}>
+          <text x={position.x} y={labelY}
+            textAnchor={position.anchor} fontSize={16}>
             {obj.label}
           </text>
         </g>
@@ -498,6 +552,42 @@ var Chart = React.createClass({
     return (
       <g ref="xAxis" className={CLASS_ROOT + "__xaxis"}>
         {labels}
+      </g>
+    );
+  },
+
+  // Vertical bars for thresholds.
+  _renderYAxis: function () {
+    var bounds = this.state.bounds;
+    var start = bounds.minY;
+    var end;
+    var width = Math.max(4, YAXIS_WIDTH / 2);
+
+    var bars = this.props.thresholds.map(function (item, index) {
+      var classes = [CLASS_ROOT + "__bar"];
+      classes.push("color-index-" + (item.colorIndex || ('graph-' + (index + 1))));
+      if (index < (this.props.thresholds.length - 1)) {
+        end = this.props.thresholds[index + 1].value;
+      } else {
+        end = bounds.maxY;
+      }
+      var height = this._translateHeight(end - start);
+      var y = this._translateY(end);
+      start = end;
+
+      return (
+        <rect key={index}
+          className={classes.join(' ')}
+          x={this.state.width - width}
+          y={y}
+          width={width}
+          height={height} />
+      );
+    }, this);
+
+    return (
+      <g ref="yAxis" className={CLASS_ROOT + "__yaxis"}>
+        {bars}
       </g>
     );
   },
@@ -548,9 +638,11 @@ var Chart = React.createClass({
   _renderCursor: function () {
     var value = this.props.series[0].values[this.state.activeXIndex];
     var coordinates = this._coordinates(value);
-    coordinates[0] += BAR_PADDING;
+    if ('bar' === this.props.type) {
+      coordinates[0] += this.state.bounds.barPadding;
+    }
     // Offset it just a little if it is at an edge.
-    var x = Math.max(1, Math.min(coordinates[0], this.state.width - 1));
+    var x = Math.max(1, Math.min(coordinates[0], this.state.bounds.graphWidth - 1));
     return (
       <g ref="cursor" className={CLASS_ROOT + "__cursor"}>
         <path fill="none" d={"M" + x + "," + XAXIS_HEIGHT + "L" + x + "," + this.state.height} />
@@ -568,10 +660,15 @@ var Chart = React.createClass({
         colorIndex: item.colorIndex
       };
     }, this);
+    var classes = [
+      CLASS_ROOT + "__legend",
+      CLASS_ROOT + "__legend--" + (this.props.legend.position || 'overlay')
+    ];
+
     return (
-      <Legend ref="legend" className={CLASS_ROOT + "__legend"}
+      <Legend ref="legend" className={classes.join(' ')}
         series={activeSeries}
-        total={this.props.legendTotal}
+        total={this.props.legend.total}
         units={this.props.units} />
     );
   },
@@ -630,6 +727,11 @@ var Chart = React.createClass({
       xAxis = this._renderXAxis();
     }
 
+    var yAxis = null;
+    if (this.props.thresholds) {
+      yAxis = this._renderYAxis();
+    }
+
     var frontBands = null;
     if (this.props.legend) {
       frontBands = this._renderXBands('front');
@@ -642,6 +744,7 @@ var Chart = React.createClass({
           preserveAspectRatio="none">
           {gradients}
           {xAxis}
+          {yAxis}
           <g className={CLASS_ROOT + "__values"}>{values}</g>
           {frontBands}
           {threshold}
