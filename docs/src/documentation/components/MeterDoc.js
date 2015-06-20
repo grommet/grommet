@@ -20,11 +20,19 @@ var thresholds = [
   {label: 'Error', value: 70, colorIndex: 'error'}
 ];
 
-var statusSeries = [
-  {label: 'OK', value: 60, colorIndex: 'ok'},
-  {label: 'Warning', value: 20, colorIndex: 'warning'},
-  {label: 'Error', value: 10, colorIndex: 'error'}
+var series = [
+  {label: 'Gen 7', value: 50},
+  {label: 'Gen 8', value: 200},
+  {label: 'Gen 9', value: 800},
+  {label: 'Gen 10', value: 300},
+  {label: 'Gen 11', value: 100}
 ];
+
+//var statusSeries = [
+//  {label: 'OK', value: 60, colorIndex: 'ok'},
+//  {label: 'Warning', value: 20, colorIndex: 'warning'},
+//  {label: 'Error', value: 10, colorIndex: 'error'}
+//];
 
 var MeterDoc = React.createClass({
 
@@ -155,7 +163,7 @@ var MeterDoc = React.createClass({
             {"<Meter type=\"arc\" value={" + simpleValue + "}\n" +
               " min={" + stringify(simpleMin) + "}\n" +
               " max={" + stringify(simpleMax) + "}\n" +
-              " thresholds={" + JSON.stringify(thresholds, null, '  ') + "}\n" +
+              " thresholds={" + stringify(thresholds) + "}\n" +
               " units=\"" + simpleUnits + "\" />"}
           </code></pre>
 
@@ -189,49 +197,49 @@ var MeterDoc = React.createClass({
 
           <h3>Bar, Series, Legend</h3>
           <div className="example">
-            <Meter legend={true} series={statusSeries} />
+            <Meter legend={true} series={series} />
           </div>
           <pre><code className="html">
             {"<Meter legend={true}\n " +
-              "series={" + JSON.stringify(statusSeries, null, '  ') + "}  />"}
+              "series={" + stringify(series) + "}  />"}
           </code></pre>
 
           <h3>Bar, Series, Legend, Vertical</h3>
           <div className="example">
-            <Meter legend={true} series={statusSeries} vertical={true} />
+            <Meter legend={true} series={series} vertical={true} />
           </div>
           <pre><code className="html">
             {"<Meter legend={true}\n" +
-              " series={" + JSON.stringify(statusSeries, null, '  ') + "}\n" +
+              " series={" + stringify(series) + "}\n" +
               " vertical={true} />"}
           </code></pre>
 
           <h3>Arc, Series, Legend</h3>
           <div className="example">
-            <Meter type="arc" legend={true} series={statusSeries} />
+            <Meter type="arc" legend={true} series={series} />
           </div>
           <pre><code className="html">
             {"<Meter type=\"arc\" legend={true}\n " +
-              "series={" + JSON.stringify(statusSeries, null, '  ') + "} />"}
+              "series={" + stringify(series) + "} />"}
           </code></pre>
 
           <h3>Arc, Series, Legend, Vertical</h3>
           <div className="example">
-            <Meter type="arc" legend={true} series={statusSeries} vertical={true} />
+            <Meter type="arc" legend={true} series={series} vertical={true} />
           </div>
           <pre><code className="html">
             {"<Meter type=\"arc\" legend={true}\n " +
-              "series={" + JSON.stringify(statusSeries, null, '  ') + "}\n" +
+              "series={" + stringify(series) + "}\n" +
               " vertical={true} />"}
           </code></pre>
 
           <h3>Circle, Series, Legend</h3>
           <div className="example">
-            <Meter type="circle" legend={true} series={statusSeries} />
+            <Meter type="circle" legend={true} series={series} />
           </div>
           <pre><code className="html">
             {"<Meter type=\"arc\" legend={true}\n " +
-              "series={" + JSON.stringify(statusSeries, null, '  ') + "} />"}
+              "series={" + stringify(series) + "} />"}
           </code></pre>
 
           <h3>Bar, Small</h3>
