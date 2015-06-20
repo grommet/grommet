@@ -52,14 +52,25 @@
   }
 
   &__threshold {
-    stroke-width: 1px;
+    stroke-width: 2px;
     stroke: $threshold-color;
+    pointer-events: none;
+  }
+
+  &__yaxis .chart__bar {
+    @include graph-fill-color-translucent(0.5);
   }
 
   &__xaxis {
     &-index {
       text {
         fill: $secondary-text-color;
+      }
+
+      &--eclipse {
+        text {
+          fill: transparent;
+        }
       }
 
       &--active {
@@ -79,24 +90,27 @@
   }
 
   &__cursor {
-    stroke: $focus-border-color;
-    stroke-width: 3;
+    stroke: $cursor-color;
+    stroke-width: 2;
     pointer-events: none;
   }
 
   &__legend {
-    padding: halve($inuit-base-spacing-unit);
-    pointer-events: none;
 
-    @include media-query(palm) {
-      margin: 0px auto;
-    }
+    &--overlay {
+      padding: halve($inuit-base-spacing-unit);
+      pointer-events: none;
 
-    @include media-query(lap-and-up) {
-      position: absolute;
-      left: 0px;
-      margin: 0px;
-      background-color: $active-background-color;
+      @include media-query(palm) {
+        margin: 0px auto;
+      }
+
+      @include media-query(lap-and-up) {
+        position: absolute;
+        left: 0px;
+        margin: 0px;
+        background-color: $active-background-color;
+      }
     }
   }
 
