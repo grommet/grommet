@@ -3,7 +3,6 @@ var react = require('gulp-react');
 var eslint = require('gulp-eslint');
 
 function failLintBuild() {
-  console.error('Lint failed');
   process.exit(1);
 }
 
@@ -17,9 +16,7 @@ module.exports = function(gulp, options) {
       var scsslint = require('gulp-scss-lint');
       return gulp.src(options.scssAssets || []).pipe(scsslint({
         'config': scssLintPath
-      }))
-        .pipe(scsslint.failReporter())
-        .on('error', failLintBuild);
+      })).pipe(scsslint.failReporter()).on('error', failLintBuild);
     }
   });
 
@@ -28,6 +25,6 @@ module.exports = function(gulp, options) {
       .pipe(react())
       .pipe(eslint(esLintPath))
       .pipe(eslint.formatEach())
-      .pipe(eslint.failOnError());
+      .pipe(eslint.failOnError()).on('error', failLintBuild);
   });
 };
