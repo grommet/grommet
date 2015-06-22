@@ -3,12 +3,6 @@ var path = require('path');
 var devGulpTasks = require('../src/utils/gulp/gulp-tasks');
 var chug = require('gulp-chug');
 
-var grommetVersion = require('../package.json').version;
-var bowerIgnores = [
-  'bower.json',
-  'sample-grommet.html'
-];
-
 var opts = {
   base: '../',
   dist: path.resolve(__dirname, '../docs/dist'),
@@ -32,17 +26,15 @@ var opts = {
     },
     {
       asset: 'design/**',
-      dist: 'docs/dist/assets/' + grommetVersion
-    },
-    {
-      asset: 'dist-bower/**',
-      dist: 'docs/dist/assets/' + grommetVersion,
-      ignores: bowerIgnores
+      dist: 'docs/dist/assets/latest'
     },
     {
       asset: 'dist-bower/**',
       dist: 'docs/dist/assets/latest',
-      ignores: bowerIgnores
+      ignores: [
+        'bower.json',
+        'sample-grommet.html'
+      ]
     }
   ],
   scssAssets: ['src/scss/grommet-core/**/*.scss', 'docs/src/scss/**/*.scss'],
