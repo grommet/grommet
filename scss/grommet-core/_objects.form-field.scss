@@ -44,6 +44,8 @@ $form-vertical-padding: quarter($inuit-base-spacing-unit);
 
   &__contents {
     display: block;
+    margin-left: - $form-horizontal-padding;
+    margin-right: - $form-horizontal-padding;
 
     > input[type=text],
     > input[type=range],
@@ -58,8 +60,6 @@ $form-vertical-padding: quarter($inuit-base-spacing-unit);
       width: 100%;
       border: none;
       padding: 0px;
-      margin-left: - $form-horizontal-padding;
-      margin-right: - $form-horizontal-padding;
       padding-left: $form-horizontal-padding;
       padding-right: $form-horizontal-padding;
       border-radius: 0px;
@@ -71,15 +71,16 @@ $form-vertical-padding: quarter($inuit-base-spacing-unit);
     }
 
     > input[type=range] {
-      margin-left: 0px;
-      margin-right: 0px;
+      width: calc(100% - #{double($form-horizontal-padding)});
+      margin-left: $form-horizontal-padding;
+      margin-right: $form-horizontal-padding;
       padding-left: 0px;
       padding-right: 0px;
     }
 
     > select {
       display: block;
-      background-position: center right;
+      background-position: center right $form-horizontal-padding;
     }
 
     // Prevent textarea from adding extra bottom margin
@@ -94,13 +95,13 @@ $form-vertical-padding: quarter($inuit-base-spacing-unit);
       @include inuit-font-size($content-font-size);
       margin-top: double($form-vertical-padding);
       margin-bottom: double($form-vertical-padding);
+      margin-left: $form-horizontal-padding;
+      margin-right: $form-horizontal-padding;
     }
 
     > .search-input,
     > .calendar {
       display: block;
-      margin-left: - $form-horizontal-padding;
-      margin-right: - $form-horizontal-padding;
 
       input {
         margin-left: 0px;
@@ -109,14 +110,12 @@ $form-vertical-padding: quarter($inuit-base-spacing-unit);
 
       .search-input__control,
       .calendar__control {
-        right: 0px; //$form-horizontal-padding;
+        right: quarter($inuit-base-spacing-unit);
         bottom: - $form-vertical-padding;
       }
     }
 
     > .table--selectable {
-      margin-left: - $form-horizontal-padding;
-      margin-right: - $form-horizontal-padding;
       @include inuit-font-size($content-font-size);
 
       table {
@@ -133,9 +132,11 @@ $form-vertical-padding: quarter($inuit-base-spacing-unit);
       width: auto;
       margin-top: halve($inuit-base-spacing-unit);
       border: none;
-      border-top: 1px solid $border-color;
-      padding-left: 0px;
-      padding-right: 0px;
+
+      > .form-field__label {
+        border-top: 1px solid $border-color;
+        padding-top: $form-vertical-padding;
+      }
     }
   }
 
