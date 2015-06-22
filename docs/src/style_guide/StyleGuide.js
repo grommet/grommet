@@ -88,6 +88,7 @@ var CONTENTS = [
       {id: "hpsw-big-data", label: 'Big Data'},
       {id: "hpsw-cloud-analytics", label: 'Cloud Analytics'},
       {id: "hpsw-business-analytics", label: 'IT Business Analytics'},
+      {id: "hpsw-login", label: 'Login'},
       {id: "oneview-dashboard", label: 'OneView Dashboard'},
       {id: "oneview-detail-page", label: 'OneView Detail Page'},
       {id: "hpsw-ops-dashboard", label: 'Ops Dashboard'},
