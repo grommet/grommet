@@ -43,6 +43,6 @@ describe('Grommet Layer', function() {
 
     TestUtils.renderIntoDocument(new TestParent());
 
-    GrommetTestUtils.layerShouldExist('Testing Layer');
+    GrommetTestUtils.layerShouldExist('layer', 'Testing Layer');
   });
 });

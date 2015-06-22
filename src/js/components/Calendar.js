@@ -195,7 +195,7 @@ var Calendar = React.createClass({
           onClick={this._onClose}>
           <Header>
             <Menu>
-              <span onClick={this._onPrevious}>
+              <span className={CLASS_ROOT + "__previous"} onClick={this._onPrevious}>
                 <PreviousIcon />
               </span>
             </Menu>
@@ -203,7 +203,7 @@ var Calendar = React.createClass({
               {this.state.reference.format('MMMM YYYY')}
             </Title>
             <Menu>
-              <span onClick={this._onNext}>
+              <span className={CLASS_ROOT + "__after"} onClick={this._onNext}>
                 <NextIcon />
               </span>
             </Menu>

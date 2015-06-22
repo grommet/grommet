@@ -24,10 +24,16 @@ module.exports = {
 
     expect(instance.length).toBe(0);
   },
-  layerShouldExist: function(assertContent) {
-    expect(document.body.getElementsByClassName('layer').length).toBe(1);
+  layerShouldExist: function(className, assertContent) {
+    expect(document.body.getElementsByClassName(className || 'layer').length).toBe(1);
     if (assertContent) {
       expect(document.body.getElementsByClassName('layer')[0].textContent).toBe(assertContent);
     }
+  },
+  layerShouldNotExist: function(className) {
+    expect(document.body.getElementsByClassName(className || 'layer').length).toBe(0);
+  },
+  getLayerChildNode: function(layerClassName, childClassName) {
+    return (document.body.getElementsByClassName(layerClassName || 'layer')[0]).getElementsByClassName(childClassName)[0];
   }
 };
