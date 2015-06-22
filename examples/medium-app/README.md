@@ -13,7 +13,7 @@ To run this application, execute the following commands:
     $ gulp dev
     ```
 
-  2. Start the back-end server:
+  2. Start the back-end server (needs to run in parallel to the development server from step 1):
 
     ```
     $ cd grommet/examples/server
