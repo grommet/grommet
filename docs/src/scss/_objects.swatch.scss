@@ -72,6 +72,10 @@
   vertical-align: top;
   text-align: center;
 
+  .status-icon {
+    margin-right: $inuit-base-spacing-unit;
+  }
+
   label {
     display: block;
     margin-top: halve($inuit-base-spacing-unit);

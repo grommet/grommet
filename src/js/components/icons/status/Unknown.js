@@ -11,11 +11,12 @@ var Unknown = React.createClass({
     }
     return (
       <svg className={className} viewBox="0 0 24 24" version="1.1">
-        <g className={"status-icon__base"} fill="#CCCCCC">
-          <rect transform="translate(12, 12) rotate(225) translate(-12, -12) " x="3.5" y="3.5" width="17" height="17"></rect>
+        <g className={"status-icon__base"}>
+          <path d="M12,2 C17.5,2 22,6.5 22,12 C22,17.5 17.5,22 12,22 C6.5,22 2,17.5 2,12 C2,6.5 6.5,2 12,2 L12,2 Z M12,0 C5.4,0 0,5.4 0,12 C0,18.6 5.4,24 12,24 C18.6,24 24,18.6 24,12 C24,5.4 18.6,0 12,0 L12,0 L12,0 Z" stroke="none"></path>
         </g>
-        <g className={"status-icon__detail"} fill="#FFFFFF">
-          <path d="M12.6,14.6 L11.4,14.6 L11.4,12.2 C11.4,11.9 11.7,11.6 12,11.6 C13,11.6 13.8,10.8 13.8,9.8 C13.8,9.3 13.6,8.9 13.3,8.6 C13,8.3 12.5,8.1 12,8.1 C11,8.1 10.2,8.9 10.2,9.9 L9,9.9 C9,8.3 10.3,7 12,7 C12.8,7 13.6,7.3 14.1,7.9 C14.6,8.5 15,9.2 15,9.9 C15,11.3 14,12.5 12.6,12.8 L12.6,14.6 L12.6,14.6 Z M11.4,17 L12.6,17 L12.6,15.8 L11.4,15.8 L11.4,17 L11.4,17 Z"></path>
+        <g className={"status-icon__detail"}>
+          <path d="M9,10.4 C9,8.8 10.4,7.6 12,7.6 C13.6,7.6 14.9,9 15,10.4 C15,11.7 14.1,12.7 12.9,13.1 C12.4,13.2 12,13.7 12,14.2 L12,15.5" fill="none" strokeWidth="2"></path>
+          <circle stroke="none" cx="12" cy="17.6" r="1"></circle>
         </g>
       </svg>
     );
