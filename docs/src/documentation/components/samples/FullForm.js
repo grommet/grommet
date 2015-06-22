@@ -152,7 +152,7 @@ var FullForm = React.createClass({
           </fieldset>
         </FormFields>
         <Footer>
-          <Menu>
+          <Menu direction="right">
             <Button label="OK" primary={true} strong={true} onClick={this.props.onSubmit} />
             <Button label="Cancel" onClick={this.props.onCancel} />
           </Menu>
