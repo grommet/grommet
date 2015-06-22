@@ -64,6 +64,14 @@
 
   &__detail {
     fill: $background-color;
+    stroke: $background-color;
+  }
+
+  &-unknown {
+    .status-icon__detail {
+      fill: map-get($brand-status-colors, unknown);
+      stroke: map-get($brand-status-colors, unknown);
+    }
   }
 
   &--large {
