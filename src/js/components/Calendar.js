@@ -30,7 +30,9 @@ var Calendar = React.createClass({
   },
 
   _onInputChange: function (event) {
-    this.props.onChange(event.target.value);
+    if (this.props.onChange) {
+      this.props.onChange(event.target.value);
+    }
   },
 
   _onOpen: function (event) {
@@ -43,18 +45,24 @@ var Calendar = React.createClass({
   },
 
   _onClickDay: function (date) {
-    this.props.onChange(date.toISOString().slice(0, 10));
+    if (this.props.onChange) {
+      this.props.onChange(date.toISOString().slice(0, 10));
+    }
   },
 
   _onPrevious: function (event) {
     event.stopPropagation();
-    event.nativeEvent.stopImmediatePropagation();
+    if (event.nativeEvent.stopImmediatePropagation) {
+      event.nativeEvent.stopImmediatePropagation();
+    }
     this.setState({reference: this.state.reference.subtract(1, 'month')});
   },
 
   _onNext: function (event) {
     event.stopPropagation();
-    event.nativeEvent.stopImmediatePropagation();
+    if (event.nativeEvent.stopImmediatePropagation) {
+      event.nativeEvent.stopImmediatePropagation();
+    }
     this.setState({reference: this.state.reference.add(1, 'month')});
   },
 
@@ -88,15 +96,10 @@ var Calendar = React.createClass({
       current: null,
       reference: moment().startOf('day')
     };
-    var date;
-    try {
-      date = moment(props.value);
-      if (date.isValid()) {
-        result.current = moment(date).startOf('day');
-        result.reference = moment(date).startOf('day');
-      }
-    } catch (e) {
-      console.log(e.message);
+    var date = moment(props.value);
+    if (date.isValid()) {
+      result.current = moment(date).startOf('day');
+      result.reference = moment(date).startOf('day');
     }
     return result;
   },
@@ -108,9 +111,7 @@ var Calendar = React.createClass({
   },
 
   componentDidMount: function () {
-    if (this.state.active) {
-      this._activation(this.state.active);
-    }
+    this._activation(this.state.active);
   },
 
   componentDidUpdate: function (prevProps, prevState) {
@@ -144,7 +145,7 @@ var Calendar = React.createClass({
     return (
       <div ref="component" className={classes.join(' ')}>
         <input className={CLASS_ROOT + "__input"}
-          id={this.props.id} name={this.props.name}
+          id={this.props.id} ref="calendarInput" name={this.props.name}
           value={this.props.value}
           onChange={this._onInputChange} />
         <div className={CLASS_ROOT + "__control"} onClick={this._onOpen} >
@@ -203,7 +204,7 @@ var Calendar = React.createClass({
               {this.state.reference.format('MMMM YYYY')}
             </Title>
             <Menu>
-              <span className={CLASS_ROOT + "__after"} onClick={this._onNext}>
+              <span className={CLASS_ROOT + "__next"} onClick={this._onNext}>
                 <NextIcon />
               </span>
             </Menu>

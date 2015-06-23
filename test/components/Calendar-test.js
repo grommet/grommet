@@ -5,6 +5,7 @@ var __path__ = '../../src/js/components/Calendar';
 var GrommetTestUtils = require('../mocks/GrommetTestUtils');
 
 var expect = require('expect');
+var today = (new Date()).toISOString().slice(0, 10);
 
 describe('Grommet Calendar', function() {
   beforeEach(function() {
@@ -25,20 +26,41 @@ describe('Grommet Calendar', function() {
     var TestUtils = React.addons.TestUtils;
 
     var calendarInput = TestUtils.findRenderedDOMComponentWithClass(Component, 'calendar__input');
-    expect(calendarInput.getDOMNode().value).toBe((new Date()).toISOString().slice(0, 10));
+    expect(calendarInput.getDOMNode().value).toBe(today);
 
   });
 
-  it('selects a previous date from the calendar', function() {
+  it('selects a date from the past', function(done) {
 
-    var Component = GrommetTestUtils.getComponent(__path__);
+    var React = require('react/addons');
+    var TestUtils = React.addons.TestUtils;
+    var Calendar = require(__path__);
+
+    var TestParent = React.createFactory(React.createClass({
+      getInitialState: function () {
+        return {
+          value: today
+        };
+      },
+
+      _onChange: function (date) {
+        expect(new Date(date).getTime()).toBeLessThan(new Date(today).getTime());
+        this.setState({value: date});
+        done();
+      },
+
+      render: function() {
+        return (
+          <Calendar onChange={this._onChange} value={this.state.value} />
+        );
+      }
+    }));
+
+    var Component = TestUtils.renderIntoDocument(new TestParent());
 
     GrommetTestUtils.componentShouldExist(Component, 'calendar');
     GrommetTestUtils.componentShouldExist(Component, 'calendar__control');
     GrommetTestUtils.layerShouldNotExist('calendar__layer');
-
-    var React = require('react/addons');
-    var TestUtils = React.addons.TestUtils;
 
     var calendarIcon = TestUtils.findRenderedDOMComponentWithClass(Component, 'calendar__control');
 
@@ -46,13 +68,103 @@ describe('Grommet Calendar', function() {
 
     GrommetTestUtils.layerShouldExist('calendar__layer');
 
-    /**var previousDateNode = GrommetTestUtils.getLayerChildNode('calendar__layer', 'calendar__previous');
+    var previousDateNode = GrommetTestUtils.getLayerChildNode('calendar__layer', 'calendar__previous');
 
     TestUtils.Simulate.click(previousDateNode);
 
     var dateInThePastNode = GrommetTestUtils.getLayerChildNode('calendar__layer', 'calendar__day');
 
-    TestUtils.Simulate.click(dateInThePastNode);**/
+    TestUtils.Simulate.click(dateInThePastNode);
+
   });
 
+  it('selects a date from the future', function(done) {
+
+    var React = require('react/addons');
+    var TestUtils = React.addons.TestUtils;
+    var Calendar = require(__path__);
+
+    var TestParent = React.createFactory(React.createClass({
+      getInitialState: function () {
+        return {
+          value: today
+        };
+      },
+
+      _onChange: function (date) {
+        expect(new Date(date).getTime()).toBeMoreThan(new Date(today).getTime());
+        this.setState({value: date});
+
+        done();
+      },
+
+      render: function() {
+        return (
+          <Calendar className="specialCalendar" onChange={this._onChange} value={this.state.value} />
+        );
+      }
+    }));
+
+    var Component = TestUtils.renderIntoDocument(new TestParent());
+
+    GrommetTestUtils.componentShouldExist(Component, 'calendar');
+    GrommetTestUtils.componentShouldExist(Component, 'calendar__control');
+    GrommetTestUtils.layerShouldNotExist('calendar__layer');
+
+    var calendarIcon = TestUtils.findRenderedDOMComponentWithClass(Component, 'calendar__control');
+
+    TestUtils.Simulate.click(calendarIcon.getDOMNode());
+
+    GrommetTestUtils.layerShouldExist('calendar__layer');
+
+    var previousDateNode = GrommetTestUtils.getLayerChildNode('calendar__layer', 'calendar__next');
+
+    TestUtils.Simulate.click(previousDateNode);
+
+    var dateInThePastNode = GrommetTestUtils.getLayerChildNode('calendar__layer', 'calendar__day');
+
+    TestUtils.Simulate.click(dateInThePastNode);
+
+    var calendar = TestUtils.findRenderedDOMComponentWithClass(Component, 'calendar');
+    React.unmountComponentAtNode(calendar.getDOMNode().parentNode);
+
+  });
+
+  it('enters a date manually', function(done) {
+
+    var React = require('react/addons');
+    var TestUtils = React.addons.TestUtils;
+    var Calendar = require(__path__);
+
+    var TestParent = React.createFactory(React.createClass({
+      getInitialState: function () {
+        return {
+          value: today
+        };
+      },
+
+      _onChange: function (date) {
+        console.log(date);
+        expect(new Date(date).getTime()).toBeMoreThan(new Date(today).getTime());
+        this.setState({value: date});
+
+        done();
+      },
+
+      render: function() {
+        return (
+          <Calendar onChange={this._onChange} value={this.state.value} />
+        );
+      }
+    }));
+
+    var Component = TestUtils.renderIntoDocument(new TestParent());
+
+    GrommetTestUtils.componentShouldExist(Component, 'calendar');
+    GrommetTestUtils.componentShouldExist(Component, 'calendar__input');
+
+    var inputNode = TestUtils.findRenderedDOMComponentWithClass(Component, 'calendar__input');
+    TestUtils.Simulate.change(inputNode, { target: { value: '2015-12-20' }});
+
+  });
 });
