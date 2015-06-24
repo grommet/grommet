@@ -72,7 +72,7 @@ app.use('/invite', function(req, res) {
 
 app.get('/assets/design/:name', function(req, res) {
   var options = {
-    root: __dirname + '/../../docs/dist/assets/design',
+    root: path.join(__dirname, '/../../docs/dist/assets/design'),
     dotfiles: 'deny',
     headers: {
         'x-timestamp': Date.now(),
@@ -87,11 +87,10 @@ app.get('/assets/design/:name', function(req, res) {
   // and this results in Safari attempting to show a preview of
   // the file in the browser.  So we'll check for Illustrator
   // files and handle them as a special case for now.
-  if( /\.ai$/.test(req.params.name) ) {
+  if (/\.ai$/.test(req.params.name) ) {
     res.type('application/illustrator');
-  }
-  else {
-    res.type(req.params.name)
+  } else {
+    res.type(req.params.name);
   }
 
   res.sendFile(req.params.name, options);
