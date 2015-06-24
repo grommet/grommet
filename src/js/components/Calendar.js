@@ -40,7 +40,7 @@ var Calendar = React.createClass({
     this.setState({active: true, activeSuggestionIndex: -1});
   },
 
-  _onClose: function (event) {
+  _onClose: function () {
     this.setState({active: false});
   },
 
@@ -56,7 +56,10 @@ var Calendar = React.createClass({
     if (event.nativeEvent && event.nativeEvent.stopImmediatePropagation) {
       event.nativeEvent.stopImmediatePropagation();
     }
-    this.setState({reference: this.state.reference.subtract(1, 'month')});
+    this.setState({
+      reference: this.state.reference.subtract(1, 'month'),
+      current: this.state.reference
+    });
   },
 
   _onNext: function (event) {
@@ -65,7 +68,63 @@ var Calendar = React.createClass({
     if (event.nativeEvent && event.nativeEvent.stopImmediatePropagation) {
       event.nativeEvent.stopImmediatePropagation();
     }
-    this.setState({reference: this.state.reference.add(1, 'month')});
+    this.setState({
+      reference: this.state.reference.add(1, 'month'),
+      current: this.state.reference
+    });
+  },
+
+  _onNextDay: function () {
+    event.preventDefault();
+    event.stopPropagation();
+    var nextDay = moment(this.state.current).add(1, 'days');
+
+    if (! nextDay.isSame(this.state.reference, 'month')) {
+      this.setState({reference: this.state.reference.add(1, 'month'), current: nextDay});
+    } else {
+      this.setState({current: nextDay});
+    }
+  },
+
+  _onPreviousDay: function () {
+    event.preventDefault();
+    event.stopPropagation();
+    var previousDay = moment(this.state.current).subtract(1, 'days');
+    if (! previousDay.isSame(this.state.reference, 'month')) {
+      this.setState({reference: this.state.reference.subtract(1, 'month'), current: previousDay});
+    } else {
+      this.setState({current: previousDay});
+    }
+  },
+
+  _onNextWeek: function (event) {
+    event.preventDefault();
+    event.stopPropagation();
+    var nextWeek = moment(this.state.current).add(1, 'week');
+
+    if (! nextWeek.isSame(this.state.reference, 'month')) {
+      this.setState({reference: this.state.reference.add(1, 'month'), current: nextWeek});
+    } else {
+      this.setState({current: nextWeek});
+    }
+  },
+
+  _onPreviousWeek: function (event) {
+    event.preventDefault();
+    event.stopPropagation();
+    var previousWeek = moment(this.state.current).subtract(1, 'week');
+    if (! previousWeek.isSame(this.state.reference, 'month')) {
+      this.setState({reference: this.state.reference.subtract(1, 'month'), current: previousWeek});
+    } else {
+      this.setState({current: previousWeek});
+    }
+  },
+
+  _onSelectDate: function (event) {
+    event.preventDefault();
+    event.stopPropagation();
+    this._onClickDay(this.state.current);
+    this._onClose();
   },
 
   _activation: function (active) {
@@ -73,8 +132,14 @@ var Calendar = React.createClass({
     var listeners = {
       esc: this._onClose,
       tab: this._onClose,
+      right: this._onNextDay,
+      left: this._onPreviousDay,
+      down: this._onNextWeek,
+      up: this._onPreviousWeek,
       shiftLeft: this._onPrevious,
-      shiftRight: this._onNext
+      shiftRight: this._onNext,
+      enter: this._onSelectDate,
+      space: this._onSelectDate
     };
 
     if (active) {

@@ -31,16 +31,18 @@ var KeyboardAccelerators = {
 
   _onKeyboardAcceleratorKeyPress: function (e) {
     var key = (e.keyCode ? e.keyCode : e.which);
-    if (this._keyboardAcceleratorHandlers.hasOwnProperty(key)) {
+    if (this._keyboardAcceleratorHandlers.hasOwnProperty(key) && !downs[KEYS.shift]) {
       this._keyboardAcceleratorHandlers[key](e);
     }
     downs[e.keyCode] = true;
   },
 
   _onKeyboardAcceleratorKeyUp: function (e) {
-    if (downs[KEYS.shift] && downs[KEYS.left]) {
+    if (downs[KEYS.shift] && downs[KEYS.left] &&
+      this._keyboardAcceleratorHandlers.shiftLeft) {
       this._keyboardAcceleratorHandlers.shiftLeft(e);
-    } else if (downs[KEYS.shift] && downs[KEYS.right]) {
+    } else if (downs[KEYS.shift] && downs[KEYS.right] &&
+      this._keyboardAcceleratorHandlers.shiftRight) {
       this._keyboardAcceleratorHandlers.shiftRight(e);
     }
 
