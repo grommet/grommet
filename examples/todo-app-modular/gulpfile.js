@@ -27,6 +27,11 @@ var opts = {
         path.resolve(__dirname, '../../node_modules')
       ]
     }
+  },
+  sync: {
+    hostname: 'grommet.io',
+    username: 'grommet',
+    remoteDestination: '/var/www/html/examples/todo-app-modular/dist'
   }
 };
 
