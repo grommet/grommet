@@ -104,7 +104,8 @@
     "glob": "^4.3.5",
     "rewire": "^2.3.3",
     "mocha-lcov-reporter": "^0.0.2",
-    "mkdirp": "^0.5.1"
+    "mkdirp": "^0.5.1",
+    "gulp-jsx-coverage": "^0.1.3"
   },
   "config": {
     "blanket": {
