@@ -13,8 +13,11 @@ var KEYS = {
   up: 38,
   right: 39,
   down: 40,
-  comma: 188
+  comma: 188,
+  shift: 16
 };
+
+var downs = [];
 
 // KeyboardAccelerators is a mixin for handling keyboard events.
 // Add listeners using startListeningToKeyboard().
@@ -31,6 +34,17 @@ var KeyboardAccelerators = {
     if (this._keyboardAcceleratorHandlers.hasOwnProperty(key)) {
       this._keyboardAcceleratorHandlers[key](e);
     }
+    downs[e.keyCode] = true;
+  },
+
+  _onKeyboardAcceleratorKeyUp: function (e) {
+    if (downs[KEYS.shift] && downs[KEYS.left]) {
+      this._keyboardAcceleratorHandlers.shiftLeft(e);
+    } else if (downs[KEYS.shift] && downs[KEYS.right]) {
+      this._keyboardAcceleratorHandlers.shiftRight(e);
+    }
+
+    downs[e.keyCode] = false;
   },
 
   // Add handlers for specific keys.
@@ -51,6 +65,7 @@ var KeyboardAccelerators = {
 
     if (keys > 0 && ! this._keyboardAcceleratorListening) {
       window.addEventListener("keydown", this._onKeyboardAcceleratorKeyPress);
+      window.addEventListener("keyup", this._onKeyboardAcceleratorKeyUp);
       this._keyboardAcceleratorListening = true;
     }
   },
@@ -81,6 +96,7 @@ var KeyboardAccelerators = {
 
     if (! handlers || 0 === keyCount) {
       window.removeEventListener("keydown", this._onKeyboardAcceleratorKeyPress);
+      window.removeEventListener("keyup", this._onKeyboardAcceleratorKeyUp);
       this._keyboardAcceleratorHandlers = {};
       this._keyboardAcceleratorListening = false;
     }

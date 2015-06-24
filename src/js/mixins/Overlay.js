@@ -2,6 +2,8 @@
 
 var DOM = require('../utils/DOM');
 
+var handler = null;
+
 // Overlay is a mixin for ensuring components layerd on top align with their initiating controls underneath.
 var Overlay = {
 
@@ -17,25 +19,23 @@ var Overlay = {
     this._overlay.layerElement = layerElement;
     this._overlay.align = align;
     this._overlay.scrollParents = DOM.findScrollParents(this._overlay.controlElement);
-    this._overlay.scrollParents.forEach(function (parent) {
-      parent.addEventListener('scroll', this.positionOverlay);
-    }, this);
+    handler = this.positionOverlay;
+    this._overlay.scrollParents[this._overlay.scrollParents.length - 1].addEventListener('scroll', handler);
     window.addEventListener('resize', this.positionOverlay);
 
     this.positionOverlay();
   },
 
   stopOverlay: function () {
-    if (this._overlay.controlElement) {
-      this._overlay.scrollParents.forEach(function (parent) {
-        parent.removeEventListener('scroll', this.positionOverlay);
-      }, this);
-      window.removeEventListener('resize', this.positionOverlay);
-      this._overlay.controlElement = null;
-      this._overlay.layerElement = null;
-      this._overlay.align = null;
-      this._overlay.scrollParents = [];
+    if (this._overlay.scrollParents.length > 0) {
+      this._overlay.scrollParents[this._overlay.scrollParents.length - 1].removeEventListener('scroll', handler);
     }
+    window.removeEventListener('resize', this.positionOverlay);
+    this._overlay.controlElement = null;
+    this._overlay.layerElement = null;
+    this._overlay.align = null;
+    this._overlay.scrollParents = [];
+    handler = null;
   },
 
   positionOverlay: function () {
