@@ -24,7 +24,6 @@ module.exports = function(gulp, options) {
         read: false
       }).pipe(mocha({
         reporter: 'spec'})).once('end', function() {
-  
           if (argv.w) {
             var watchFolders = options.testPaths.slice();
             options.jsAssets.forEach(function(jsAsset) {
@@ -51,7 +50,6 @@ module.exports = function(gulp, options) {
           } else {
             done();
           }
-  
         }).on('error', function(err) {
           console.error('Test failed:', err.stack || err);
           if (argv.w) {
@@ -59,7 +57,10 @@ module.exports = function(gulp, options) {
           } else {
             process.exit(1);
           }
-        }).on('end', jsxCoverage.colloectIstanbulCoverage(jsxCoverageOptions));
+        }).on('end', function() {
+          jsxCoverage.colloectIstanbulCoverage(jsxCoverageOptions);
+          console.log('Test coverage report available at coverage/lcov-report/index.html');
+        });
     } else {
       done();
     }
