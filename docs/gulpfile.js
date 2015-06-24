@@ -26,7 +26,7 @@ var opts = {
     },
     {
       asset: 'design/**',
-      dist: 'docs/dist/assets/latest'
+      dist: 'docs/dist/assets/design'
     },
     {
       asset: 'dist-bower/**',
