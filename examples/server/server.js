@@ -70,6 +70,32 @@ app.use('/invite', function(req, res) {
   request.post({uri: 'http://localhost:3000/invite', json: data}).pipe(res);
 });
 
+app.get('/assets/design/:name', function(req, res) {
+  var options = {
+    root: path.join(__dirname, '/../../docs/dist/assets/design'),
+    dotfiles: 'deny',
+    headers: {
+        'x-timestamp': Date.now(),
+        'x-sent': true
+    }
+  };
+
+  // Express uses the mime.lookup() method in the node-mime
+  // https://github.com/broofa/node-mime project to determine
+  // a file's mime type.  This method returns the mime type
+  // of 'application/postscript' for Adobe Illustrator files
+  // and this results in Safari attempting to show a preview of
+  // the file in the browser.  So we'll check for Illustrator
+  // files and handle them as a special case for now.
+  if (/\.ai$/.test(req.params.name) ) {
+    res.type('application/illustrator');
+  } else {
+    res.type(req.params.name);
+  }
+
+  res.sendFile(req.params.name, options);
+});
+
 app.
   use('/docs', docs).
   use('/rest', rest.router).

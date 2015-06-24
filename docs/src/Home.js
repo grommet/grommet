@@ -31,7 +31,7 @@ var Home = React.createClass({
           <h3>The most advanced UX framework for enterprise applications.</h3>
           <Menu direction="center">
             <span>
-              Grab the Grommet <a href={'/assets/latest/grommet_sticker_sheet.ai'} target="_blank">
+              Grab the Grommet <a href={'/assets/design/grommet_sticker_sheet.ai'} target="_blank">
                 Sticker Sheet <NextIcon />
               </a>
             </span>
