@@ -51,16 +51,18 @@ var Calendar = React.createClass({
   },
 
   _onPrevious: function (event) {
+    event.preventDefault();
     event.stopPropagation();
-    if (event.nativeEvent.stopImmediatePropagation) {
+    if (event.nativeEvent && event.nativeEvent.stopImmediatePropagation) {
       event.nativeEvent.stopImmediatePropagation();
     }
     this.setState({reference: this.state.reference.subtract(1, 'month')});
   },
 
   _onNext: function (event) {
+    event.preventDefault();
     event.stopPropagation();
-    if (event.nativeEvent.stopImmediatePropagation) {
+    if (event.nativeEvent && event.nativeEvent.stopImmediatePropagation) {
       event.nativeEvent.stopImmediatePropagation();
     }
     this.setState({reference: this.state.reference.add(1, 'month')});
@@ -70,7 +72,9 @@ var Calendar = React.createClass({
 
     var listeners = {
       esc: this._onClose,
-      tab: this._onClose
+      tab: this._onClose,
+      shiftLeft: this._onPrevious,
+      shiftRight: this._onNext
     };
 
     if (active) {
