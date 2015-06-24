@@ -12,6 +12,7 @@ var rest = require('./rest');
 var mediumApp = require('./medium-app');
 var mediumAppDev = require('./medium-app-dev');
 var ctoAppTuner = require('./cto-app-tuner');
+var todoAddModular = require('./todo-app-modular');
 var path = require('path');
 var proxy = require('express-http-proxy');
 //var demo = require('./demo');
@@ -102,6 +103,7 @@ app.
   use('/medium-app', mediumApp).
   use('/medium-app-dev', mediumAppDev).
   use('/cto-app-tuner', ctoAppTuner).
+  use('/todo-app-modular', todoAddModular).
   use('/assets', express.static(path.join(__dirname, '/../../docs/dist/assets'))).
   use('/assets', express.static('/usr/local/lib/node_modules/slackin/lib/assets')).
   use('/hello-world', express.static(path.join(__dirname, '/../hello-world'))).
