@@ -7,6 +7,7 @@ before_script:
 - npm install -g codeclimate-test-reporter
 - gem install scss-lint -v 0.38.0
 - gulp preprocess
+- cd examples/server && npm install
 after_script:
 - gulp blanket-lcov-reporter
 - gulp coveralls
