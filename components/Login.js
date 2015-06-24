@@ -27,12 +27,16 @@ var Login = React.createClass({
   },
 
   componentDidMount: function() {
-    window.addEventListener('resize', this._onResize);
-    setTimeout(this.adjustBackground, 300);
+    if (this.props.background) {
+      window.addEventListener('resize', this._onResize);
+      setTimeout(this.adjustBackground, 300);
+    }
   },
 
   componentWillUnmount: function() {
-    window.removeEventListener('resize', this._onResize);
+    if (this.props.background) {
+      window.removeEventListener('resize', this._onResize);
+    }
   },
 
   render: function() {
