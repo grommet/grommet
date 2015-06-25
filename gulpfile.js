@@ -2,8 +2,6 @@ var gulp = require('gulp');
 var path = require('path');
 var fs = require('fs');
 var coveralls = require('gulp-coveralls');
-var blanket = require('gulp-blanket-mocha');
-
 var gulpUtils = require('./gulpfile-utils');
 
 var opts = {
@@ -85,23 +83,8 @@ require('./src/utils/gulp/gulp-tasks')(gulp, opts);
 require('./gulpfile-grommet-dist')(gulp, opts);
 require('./gulpfile-grommet-release')(gulp, opts);
 
-gulp.task('blanket-lcov-reporter', function(done) {
-  require('./src/utils/test/test-compiler');
-  require('./src/utils/test/mocked-dom')('<html><body></body></html>');
-
-  gulp.src('./test/**/*.js', {
-    read: false
-  }).pipe(blanket({
-    instrument: [path.join(__dirname, 'src/js')],
-    captureFile: 'test/lcov.info',
-    reporter: 'mocha-lcov-reporter'
-  }));
-
-  done();
-});
-
 gulp.task('coveralls', function() {
-  var lcovPath = './test/lcov.info';
+  var lcovPath = './coverage/lcov.info';
   fs.exists(lcovPath, function(exists) {
     if (exists) {
       gulp.src(lcovPath).pipe(coveralls());

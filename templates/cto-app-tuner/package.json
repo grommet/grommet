@@ -52,7 +52,6 @@
     "gulp-eslint": "^0.12.0",
     "gulp-minify-css": "^1.1.0",
     "gulp-mocha": "^2.0.1",
-    "gulp-blanket-mocha": "^0.0.4",
     "gulp-nodemon": "^2.0.2",
     "gulp-preprocess": "^1.2.0",
     "gulp-react": "^3.0.1",

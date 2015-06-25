@@ -9,9 +9,8 @@ before_script:
 - gulp preprocess
 - cd examples/server && npm install && cd ../..
 after_script:
-- gulp blanket-lcov-reporter
 - gulp coveralls
-- codeclimate < test/lcov.info
+- codeclimate < coverage/lcov.info
 after_success:
 - |
   if [ "$TRAVIS_BRANCH" = "master" ]; then
