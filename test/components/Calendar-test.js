@@ -144,7 +144,6 @@ describe('Grommet Calendar', function() {
       },
 
       _onChange: function (date) {
-        console.log(date);
         expect(new Date(date).getTime()).toBeMoreThan(new Date(today).getTime());
         this.setState({value: date});
 

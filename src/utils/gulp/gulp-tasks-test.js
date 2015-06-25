@@ -1,14 +1,15 @@
+var jsxCoverageOptions = {
+  istanbul: {
+    coverageVariable: '__MY_TEST_COVERAGE__',
+    exclude: /node_modules|test/
+  },
+  coverage: {
+    reporters: ['lcov'],
+    directory: 'coverage'
+  }
+};
+
 module.exports = function(gulp, options) {
-  var jsxCoverageOptions = {
-    istanbul: {
-      coverageVariable: '__MY_TEST_COVERAGE__',
-      exclude: /node_modules|test/
-    },
-    coverage: {
-      reporters: ['lcov'],
-      directory: 'coverage'
-    }
-  };
 
   gulp.task('test', function(done) {
     if (options.testPaths) {
@@ -57,8 +58,7 @@ module.exports = function(gulp, options) {
           } else {
             process.exit(1);
           }
-        }).on('end', function() {
-          jsxCoverage.colloectIstanbulCoverage(jsxCoverageOptions);
+        }).on('end', jsxCoverage.colloectIstanbulCoverage(jsxCoverageOptions)).on('end', function() {
           console.log('Test coverage report available at coverage/lcov-report/index.html');
         });
     } else {
@@ -67,5 +67,3 @@ module.exports = function(gulp, options) {
   });
 
 };
-
-
