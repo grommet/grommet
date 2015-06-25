@@ -8,6 +8,8 @@ before_script:
 - gem install scss-lint -v 0.38.0
 - gulp preprocess
 - cd examples/server && npm install && cd ../..
+script:
+- npm test && gulp e2e
 after_success:
 - gulp coveralls
 - codeclimate < coverage/lcov.info
