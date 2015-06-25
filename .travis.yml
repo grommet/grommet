@@ -9,7 +9,7 @@ before_script:
 - gulp preprocess
 - cd examples/server && npm install && cd ../..
 script:
-- npm test && gulp e2e
+- npm test
 after_success:
 - gulp coveralls
 - codeclimate < coverage/lcov.info
