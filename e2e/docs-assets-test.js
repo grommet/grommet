@@ -21,7 +21,7 @@ describe('Docs website e2e', function () {
         if (err) {
           should.fail('Expected the title to be returned.');
         }
-        assert.equal(title, 'Grommet - U2ser Experience for the Enterprise');
+        assert.equal(title, 'Grommet - User Experience for the Enterprise');
         done();
       });
   });
