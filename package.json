@@ -94,7 +94,7 @@
     "eslint-plugin-react": "^2.4.0",
     "babel": "^5.3.3",
     "babel-eslint": "^3.1.9",
-    "jsdom": "~4.4.0",
+    "jsdom": "~3.1.2",
     "json5": "^0.4.0",
     "react-tools": "^0.13.1",
     "run-sequence": "^1.0.2",
