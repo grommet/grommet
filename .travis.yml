@@ -8,10 +8,9 @@ before_script:
 - gem install scss-lint -v 0.38.0
 - gulp preprocess
 - cd examples/server && npm install && cd ../..
-after_script:
+after_success:
 - gulp coveralls
 - codeclimate < coverage/lcov.info
-after_success:
 - |
   if [ "$TRAVIS_BRANCH" = "master" ]; then
     git config credential.helper "store --file=.git/credentials"
