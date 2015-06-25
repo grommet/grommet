@@ -3,6 +3,7 @@ var should = require('should');
 
 var client = require('webdriverio').remote({
   desiredCapabilities: {
+    logLevel: process.env.TRAVIS ? 'command' : 'silent',
     browserName: 'phantomjs'
   }
 }).init();
