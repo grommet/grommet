@@ -16,8 +16,10 @@ if (process.env.TRAVIS) {
     key: process.env.SAUCE_ACCESS_KEY,
     desiredCapabilities: {
       browserName: 'internet explorer',
-      name: 'Docs websites scenarios for internet explorer.',
-      tunnelIdentifier: process.env.TRAVIS_JOB_NUMBER
+      name: 'Docs website scenarios for internet explorer.',
+      tunnelIdentifier: process.env.TRAVIS_JOB_NUMBER,
+      build: process.env.TRAVIS_JOB_ID,
+      visibility: 'public'
     }
   };
 }

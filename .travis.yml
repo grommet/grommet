@@ -20,6 +20,7 @@ after_success:
     git config --global user.name "Grommet Community Bot"
     git config --global user.email "asouza@hp.com"
     gulp release:stable
+    curl -X PUT -s -d '{"passed": true}' -u ${SAUCE_USERNAME}:${SAUCE_ACCESS_KEY} https://saucelabs.com/rest/v1/${SAUCE_USERNAME}/jobs/${TRAVIS_JOB_ID}
   fi
 env:
   global:
