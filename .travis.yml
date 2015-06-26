@@ -9,7 +9,8 @@ before_script:
 - gulp preprocess
 - cd examples/server && npm install && cd ../..
 script:
-- npm test && '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && gulp e2e || false'
+- npm test
+- if [[ $TRAVIS_PULL_REQUEST == 'false' ]]; then gulp e2e; fi
 after_success:
 - gulp coveralls
 - codeclimate < coverage/lcov.info
