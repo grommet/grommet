@@ -3,6 +3,7 @@ var should = require('should');
 
 var options = {
   desiredCapabilities: {
+    logLevel: 'command',
     browserName: 'phantomjs'
   }
 };
@@ -18,7 +19,7 @@ if (process.env.TRAVIS) {
       browserName: 'internet explorer',
       name: 'Docs website scenarios for internet explorer.',
       tunnelIdentifier: process.env.TRAVIS_JOB_NUMBER,
-      build: process.env.TRAVIS_JOB_ID,
+      build: process.env.$TRAVIS_BUILD_NUMBER,
       visibility: 'public'
     }
   };
@@ -30,7 +31,13 @@ describe('Docs website e2e', function() {
   this.timeout(1000000);
 
   before(function(done) {
-    client.url('http://localhost:8000/docs/', done);
+    client.url('http://localhost:8000/docs/', function () {
+      client.sessions(function (id) {
+        console.log('Session ID is ' + id);
+        global.sessionId = id;
+        done();
+      });
+    });
   });
 
   it('loads the title for the docs home page', function(done) {

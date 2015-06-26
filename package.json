@@ -106,7 +106,8 @@
     "mocha-lcov-reporter": "^0.0.2",
     "mkdirp": "^0.5.1",
     "selenium-standalone": "^4.2.2",
-    "webdriverio": "^2.4.5"
+    "webdriverio": "^2.4.5",
+    "node-saucelabs": "^0.1.1"
   },
   "config": {
     "blanket": {
