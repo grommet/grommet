@@ -7,22 +7,20 @@ var options = {
   }
 };
 
-var client;
 if (process.env.TRAVIS) {
   options = {
+    logLevel: 'command',
     host: 'ondemand.saucelabs.com',
     port: 80,
     user: process.env.SAUCE_USERNAME,
     key: process.env.SAUCE_ACCESS_KEY,
     desiredCapabilities: {
-      browserName: 'chrome',
-      version: '27',
-      platform: ['Windows 7', 'Windows 8']
+      browserName: 'internet explorer'
     }
   };
 }
 
-client = require('webdriverio').remote(options).init();
+var client = require('webdriverio').remote(options).init();
 
 describe('Docs website e2e', function() {
   this.timeout(1000000);
