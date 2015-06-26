@@ -1,12 +1,21 @@
 var assert = require('assert');
 var should = require('should');
 
-var client = require('webdriverio').remote({
+var options = {
   desiredCapabilities: {
-    logLevel: process.env.TRAVIS ? 'command' : 'silent',
+    logLevel: 'silent',
     browserName: 'phantomjs'
   }
-}).init();
+};
+
+if (process.env.TRAVIS) {
+  options.host = 'ondemand.saucelabs.com';
+  options.port = 80;
+  options.user = process.env.SAUCE_USERNAME;
+  options.key = process.env.SAUCE_ACCESS_KEY;
+}
+
+var client = require('webdriverio').remote(options).init();
 
 describe('Docs website e2e', function () {
   this.timeout(5000);
