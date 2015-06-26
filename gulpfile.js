@@ -105,15 +105,21 @@ gulp.task('dev', function() {
 
 gulp.task('selenium', function(done) {
   selenium.install({
-    logger: function (message) { }
-  }, function (err) {
+    logger: function(message) {}
+  }, function(err) {
     if (err) {
       return done(err);
     }
 
-    selenium.start(function (err, child) {
+    selenium.start(function(err, child) {
       if (err) {
         return done(err);
+      }
+
+      if (process.env.TRAVIS) {
+        child.stderr.on('data', function(data) {
+          console.log(data.toString());
+        });
       }
 
       //saving the child to kill it later (oops)
@@ -125,27 +131,29 @@ gulp.task('selenium', function(done) {
 
 gulp.task('dist:docs', function() {
   return gulp.src('./docs/gulpfile.js', {
-      read: false
-    }).pipe(chug({
-      tasks: ['dist']
-    }));
+    read: false
+  }).pipe(chug({
+    tasks: ['dist']
+  }));
 });
 
 gulp.task('start:docs', ['dist:docs'], function() {
   return server.run(['./examples/server/server.js']);
 });
 
-gulp.task('integration', ['start:docs', 'selenium'], function () {
+gulp.task('integration', ['start:docs', 'selenium'], function() {
   var mocha = require('gulp-mocha');
-  return gulp.src('./test/integration/**/*.js', {read: false})
+  return gulp.src('./e2e/**/*.js', {
+    read: false
+  })
     .pipe(mocha()).on('error', function() {
-      selenium.child.kill();
-      server.stop();
-      process.exit(1);
-    });
+    selenium.child.kill();
+    server.stop();
+    process.exit(1);
+  });
 });
 
-gulp.task('e2e', ['integration'], function () {
+gulp.task('e2e', ['integration'], function() {
   selenium.child.kill();
   server.stop();
 });
