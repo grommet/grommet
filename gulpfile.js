@@ -141,33 +141,13 @@ gulp.task('start:docs', ['dist:docs'], function() {
   return server.run(['./examples/server/server.js']);
 });
 
-gulp.task('integration', ['start:docs', 'selenium'], function(done) {
+gulp.task('integration', ['start:docs', 'selenium'], function() {
   var mocha = require('gulp-mocha');
+
   return gulp.src('./e2e/**/*.js', {
     read: false
   })
-  .pipe(mocha()).on('end', function () {
-    if (process.env.TRAVIS) {
-      if (global.sessionId) {
-        var SauceLabs = require('node-saucelabs');
-
-        var account = new SauceLabs({
-          username: process.env.SAUCE_USERNAME,
-          password: process.env.SAUCE_ACCESS_KEY
-        });
-
-        account.updateJob(global.sessionId, { passed: true }, function (err) {
-          if (err) {
-            done(err);
-          }
-          console.log('Sucessfully updated job in Sauce Labs.');
-          done();
-        });
-      } else {
-        console.log('Session Id is not defined');
-      }
-    }
-  }).on('error', function() {
+  .pipe(mocha()).on('error', function() {
     selenium.child.kill();
     server.stop();
     process.exit(1);
