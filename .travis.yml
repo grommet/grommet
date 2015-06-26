@@ -30,6 +30,7 @@ after_success:
     gulp release:stable
   fi
 env:
+  matrix:
   - TEST_TYPE=build
   - TEST_TYPE=integration:osx:chrome
   - TEST_TYPE=integration:osx:safari

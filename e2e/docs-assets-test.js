@@ -45,7 +45,7 @@ describe('Docs website e2e', function() {
 
       sessionId = res.value['webdriver.remote.sessionid'];
       if (!sessionId) {
-        console.log('Could not define the sessionId for: ' + sessionId);
+        console.log('Could not define the sessionId');
       }
       done();
     });
