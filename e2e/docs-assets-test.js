@@ -58,7 +58,7 @@ describe('Docs website e2e', function() {
   var failed = false;
   afterEach(function(done) {
     if (process.env.TRAVIS) {
-      var authenticationKey = process.env.SAUCE_USERNAME + process.env.SAUCE_ACCESS_KEY;
+      var authenticationKey = process.env.SAUCE_USERNAME + ':' + process.env.SAUCE_ACCESS_KEY;
       var updateJobPath = 'https://' + authenticationKey + '@saucelabs.com/rest/v1/' + process.env.SAUCE_USERNAME + '/jobs/' + sessionId;
       if (this.currentTest.state == 'failed') {
         failed = true;
