@@ -9,6 +9,10 @@ var options = {
 };
 
 if (process.env.TRAVIS) {
+  var title = 'Grommet Website E2E tests for: ' +
+    process.env.E2E_BROWSER_NAME + ' version ' +
+    process.env.E2E_BROWSER_VERSION;
+
   options = {
     logLevel: 'command',
     host: 'ondemand.saucelabs.com',
@@ -16,8 +20,10 @@ if (process.env.TRAVIS) {
     user: process.env.SAUCE_USERNAME,
     key: process.env.SAUCE_ACCESS_KEY,
     desiredCapabilities: {
-      browserName: 'internet explorer',
-      name: 'Docs website scenarios for internet explorer.',
+      browserName: process.env.E2E_BROWSER_NAME,
+      version: process.env.E2E_BROWSER_VERSION,
+      platform: process.env.E2E_PLATFORM,
+      name: title,
       tunnelIdentifier: process.env.TRAVIS_JOB_NUMBER,
       build: process.env.TRAVIS_BUILD_NUMBER,
       visibility: 'public'
@@ -36,9 +42,10 @@ describe('Docs website e2e', function() {
       if (err) {
         console.log(err);
       }
+
       sessionId = res.value['webdriver.remote.sessionid'];
       if (!sessionId) {
-        console.log('Could not define the sessionId');
+        console.log('Could not define the sessionId for: ' + sessionId);
       }
       done();
     });

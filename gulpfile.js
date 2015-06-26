@@ -1,10 +1,7 @@
 var gulp = require('gulp');
-var chug = require('gulp-chug');
-var server = require('gulp-express');
 var path = require('path');
 var fs = require('fs');
 var coveralls = require('gulp-coveralls');
-var selenium = require('selenium-standalone');
 
 var gulpUtils = require('./gulpfile-utils');
 
@@ -86,6 +83,7 @@ require('./src/utils/gulp/gulp-tasks')(gulp, opts);
 
 require('./gulpfile-grommet-dist')(gulp, opts);
 require('./gulpfile-grommet-release')(gulp, opts);
+require('./gulpfile-grommet-e2e')(gulp);
 
 gulp.task('coveralls', function() {
   var lcovPath = './coverage/lcov.info';
@@ -101,60 +99,4 @@ gulp.task('coveralls', function() {
 
 gulp.task('dev', function() {
   console.error('Running "gulp dev" at Grommet root folder is not supported. If you want to start the website, run "gulp dev" at docs folder');
-});
-
-gulp.task('selenium', function(done) {
-  selenium.install({
-    logger: function(message) {}
-  }, function(err) {
-    if (err) {
-      return done(err);
-    }
-
-    selenium.start(function(err, child) {
-      if (err) {
-        return done(err);
-      }
-
-      if (process.env.TRAVIS) {
-        child.stderr.on('data', function(data) {
-          console.log(data.toString());
-        });
-      }
-
-      //saving the child to kill it later (oops)
-      selenium.child = child;
-      done();
-    });
-  });
-});
-
-gulp.task('dist:docs', function() {
-  return gulp.src('./docs/gulpfile.js', {
-    read: false
-  }).pipe(chug({
-    tasks: ['dist']
-  }));
-});
-
-gulp.task('start:docs', ['dist:docs'], function() {
-  return server.run(['./examples/server/server.js']);
-});
-
-gulp.task('integration', ['start:docs', 'selenium'], function() {
-  var mocha = require('gulp-mocha');
-
-  return gulp.src('./e2e/**/*.js', {
-    read: false
-  })
-  .pipe(mocha()).on('error', function() {
-    selenium.child.kill();
-    server.stop();
-    process.exit(1);
-  });
-});
-
-gulp.task('e2e', ['integration'], function() {
-  selenium.child.kill();
-  server.stop();
 });

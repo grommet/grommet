@@ -2,6 +2,9 @@ language: node_js
 node_js:
 - '0.12'
 sudo: false
+cache:
+  directories:
+  - node_modules
 before_script:
 - npm install -g gulp
 - npm install -g codeclimate-test-reporter
@@ -9,8 +12,12 @@ before_script:
 - gulp preprocess
 - cd examples/server && npm install && cd ../..
 script:
-- npm test
-- if [[ $TRAVIS_PULL_REQUEST == 'false' ]]; then gulp e2e; fi
+- |
+    if [ "$TEST_TYPE" = build ]; then
+      npm test
+    else
+      if [[ $TRAVIS_PULL_REQUEST == 'false' ]]; then gulp $TEST_TYPE; fi
+    fi
 after_success:
 - gulp coveralls
 - codeclimate < coverage/lcov.info
@@ -23,6 +30,17 @@ after_success:
     gulp release:stable
   fi
 env:
+  - TEST_TYPE=build
+  - TEST_TYPE=integration:osx:chrome
+  - TEST_TYPE=integration:osx:safari
+  - TEST_TYPE=integration:osx:firefox
+  - TEST_TYPE=integration:linux:chrome
+  - TEST_TYPE=integration:linux:opera
+  - TEST_TYPE=integration:linux:firefox
+  - TEST_TYPE=integration:windows:firefox
+  - TEST_TYPE=integration:windows:opera
+  - TEST_TYPE=integration:windows:chrome
+  - TEST_TYPE=integration:windows:ie
   global:
   - secure: TIpFQ9neUyaM8wSydTnN00Tg1/iZH6gkbZsX45HYNugVA37NzSEzHB6n+dA6ZJzY8gaMFVf62MqNAngQLh9pdyqbt2NwQ0zmYqGIe77Xzxa7hvBzogL+Cvook+0kQh/OORj2VFxnfIXlC9On8Tpgv6f3gnbNDDxIxJHhux+8viD23XQMpYvyY2y14/8K9UrrdnbBchX0L+7BVASUUatvF7UuQ2R424WqoSp72XfUDpJ5uX+lKAMsaLGXQvK9h8RqE8ZtSaAD0pg1/bBgsxryZMNGH+0gUWZJDgLTyocLyS6oDamgyx0JR6rXqEtv+Z9kDQPspYwd0fsoMivcXLImPFp/lCLWosuGNCJG61Rzdjl44dxnjgYmEwg1+siwZbbhSzh4UdVqkjUPmFT7rezrU1I/PGEhS1jNcZSFu24shatJXWYDXNEFsqURICPrKyP13UaNOc4utRhxvOqzIQyBUPtJKwORFRsMwQS3x/Q3UvCpeGpF1swR2F/TWijre4H/tuoRw79qe1UDKrEmT88uAFXy3ggA+D3MDOUal3DqAx2dp7kB5f2wyo0hgp6nbTXEtZYkvfy2u6IQU1bukEsUpc+h03If4WxXyNe6nMzxdGvJC7qWhscHNDlP6Q9jatifUdLUL0UESWC7c/xwt6L3u2hJuq3Y09QpzMe4tkaOHBw=
   - secure: eYLgtPf9wTVJnDTxvJfXzlSgzUWvJbrIQUKqkJb8dVuwInunzM0YIQqnIhIGcm5tR5kukjlAWkHzSMzpRkgVTI5xpQ2DFJrNcppyL1l/B0/hmzpm0z6ed/hV8YeGsfpQDT4aiJOAAfYToSOBSAcxmGh0kwOxJe7i09E5zRVGKdwcTkWwNVsjRdnDFTb8oG/sZbMwJQgSOx4mK4x4KGmlqF07HuVo4zvMjJN9OEQevZyaLI5jfjDN5hb11IDDM7Sr1B8geZ8yaPSwG9SbYEwpqNKl5bYiSKYr6GxICgT2Xt2VTfNyoOCLxR9XEV6DU3OaQXnwQmd810uMLSilP9pkK7ZUt93gwwyd5eRIws0aWHt2omFk4ry8UaBt1b4hie2SJVlE9QCbXvB8j6mU3I3Ti/R18gi8AQwzzV1gSXofp72jiQuV4AZ58HCrGHSwmSWxBy7xbBUThFkoMpu8FeGdi1oMfOmo+1Cl0sYikAM/9iD2fiG7KeyDAwnrUVfdAYQwIUBSZPy1EmgDRKMdoImSV2hnoC/U/KJgIqPOMcfsHUGWovS+nqk0siruXPN5uEUBLtQYAiVamI1iu8Rrr8yRipAuKzxHmT7cbG8ttan9JzKkFmr3Y8uk1H5i203H6ATkVTK9B5GSkXD11g7IinNGkd/tEZ1Oow431w6X3zgNFEU=
@@ -32,3 +50,17 @@ notifications:
     secure: KO4NG+slaqtFbK5T2FpkR8vgUPfZA5nf+oGDhOCFQXwfcEje/auWKdbSEzCMJ8RMl039wYjtz5iyN6bumD5FYuZFXAddeRiCtaIVqr/r6A536ldneQFTiieyeOYKJkh42hahjstcAKCv0mWr1GZGFc2cyNaoSZvE8/LNcOZy3Rne3ZPAgNMVKF3xkYFUzQOQLJsMEq7sW8LX+Z9zO+OAGjV3uEbiEYlS+N/0VW+ziz+TL+/gNf0rvzAjRd5v/VRudNxuVqx/frpYJzxGS6EHy1vVWFo6NomqBXHQvaEY+W+oorND6Jg0VNhJLCXOk2xxx0JZul2GurkQGex9b3UoARLTWarwOC9Vm/IhZ9Tc57H0U8B7Qxyb0KFacXJPeMqb2tPgNC0/wSIX8uLqlyUJnPqiRgII3W2V1YG3bWJssHNqg5F8WbD+kIphr4ghrW//8EZvcgVK/QS/yIXGLqKYygOYajXoHeb+dR0eCvE2b1wGG/EoZlZcaH2q9lE+1hmyli7MAW3aCmpCEoDUFPq5a8fcdDnYiGV5s1TPbPGvOsd2kYmeFnh71po+GgO07c+1QPLAXiW0YO8hzENi6HMcAdqcKMFXFWYD0fMNPSES/HwIFlAW/c1UBdh7KYCpZ4zljLrHyj1CAM8jXWJ7MTbJYsYHFNHA4eWNZotNLYvQgvs=
 addons:
   sauce_connect: true
+matrix:
+  fast_finish: true
+  allow_failures:
+    - env: TEST_TYPE=integration:osx:chrome
+    - env: TEST_TYPE=integration:osx:chrome
+    - env: TEST_TYPE=integration:osx:safari
+    - env: TEST_TYPE=integration:osx:firefox
+    - env: TEST_TYPE=integration:linux:chrome
+    - env: TEST_TYPE=integration:linux:opera
+    - env: TEST_TYPE=integration:linux:firefox
+    - env: TEST_TYPE=integration:windows:firefox
+    - env: TEST_TYPE=integration:windows:opera
+    - env: TEST_TYPE=integration:windows:chrome
+    - env: TEST_TYPE=integration:windows:ie
