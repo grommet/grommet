@@ -10,35 +10,19 @@ var options = {
 var client;
 if (process.env.TRAVIS) {
   options = {
-    browserA: {
-      host: 'ondemand.saucelabs.com',
-      port: 80,
-      user: process.env.SAUCE_USERNAME,
-      key: process.env.SAUCE_ACCESS_KEY,
-      desiredCapabilities: {
-        browserName: 'chrome',
-        version: '27',
-        platform: ['Windows 7', 'Windows 8']
-      }
-    },
-    browserB: {
-      host: 'ondemand.saucelabs.com',
-      port: 80,
-      user: process.env.SAUCE_USERNAME,
-      key: process.env.SAUCE_ACCESS_KEY,
-      desiredCapabilities: {
-        browserName: 'internet explorer',
-        version: '9',
-        platform: 'Windows 7'
-      }
+    host: 'ondemand.saucelabs.com',
+    port: 80,
+    user: process.env.SAUCE_USERNAME,
+    key: process.env.SAUCE_ACCESS_KEY,
+    desiredCapabilities: {
+      browserName: 'chrome',
+      version: '27',
+      platform: ['Windows 7', 'Windows 8']
     }
-
   };
-
-  client = require('webdriverio').multiremote(options).init();
-} else {
-  client = require('webdriverio').remote(options).init();
 }
+
+client = require('webdriverio').remote(options).init();
 
 describe('Docs website e2e', function() {
   this.timeout(1000000);
