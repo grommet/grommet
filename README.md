@@ -2,7 +2,7 @@
 
 [![Slack](http://alansouzati.github.io/artic/img/slack-badge.svg)](http://grommet.io/slackin)  [![Build Status](https://api.travis-ci.org/HewlettPackard/grommet.svg)](https://travis-ci.org/HewlettPackard/grommet)  [![Coverage Status](https://coveralls.io/repos/HewlettPackard/grommet/badge.svg)](https://coveralls.io/r/HewlettPackard/grommet) [![Code Climate](https://codeclimate.com/github/HewlettPackard/grommet/badges/gpa.svg)](https://codeclimate.com/github/HewlettPackard/grommet)
 
-[![Sauce Test Status](https://saucelabs.com/browser-matrix/alansouzati.svg)](https://saucelabs.com/u/alansouzati)
+[![Sauce Test Status](https://saucelabs.com/browser-matrix/alansouzahp.svg)](https://saucelabs.com/u/alansouzahp)
 
 <img align="right" height="260" src="http://grommet.io/docs/img/grommet.svg">
 
