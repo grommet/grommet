@@ -14,13 +14,17 @@
           Install <a href="http://git-scm.com/" target="_blank">Git</a>. For Windows, you may like <a href="http://msysgit.github.io/" target="_blank">Git for Windows</a>.
         </li>
         <li>
-          Install <a href="https://nodejs.org/" target="_blank">Node.js</a> <i>(at least Node 0.9+ and NPM 1.4.x+ required)</i>
+          Install <a href="https://nodejs.org/" target="_blank">Node.js</a> <i>(at least Node 0.10+ and NPM 1.4.x+ required)</i>
         </li>
         <li>
           <p>Setup your NPM proxy (only required if you&#39;re behind a proxy server).</p>
           <pre><code class="bash">
           {'npm config set http-proxy http://\{host\}:\{port\}'}</br>
           {'npm config set https-proxy https://\{host\}:\{port\}'}
+          </code></pre>
+          <p>If you find problems on downloading packages through https proxy, try using http protocol in your https-proxy variable, as in:</p>
+          <pre><code class="bash">
+          {'npm config set https-proxy http://\{host\}:\{port\}'}</br>
           </code></pre>
         </li>
       </ol>
@@ -29,13 +33,13 @@
         <h4>NPM</h4>
           <ol>
              <li>
-              <p>Install Gulp globally</p>
+              <p>Install Gulp globally (make sure to run as an admin).</p>
               <pre><code class="bash">
                 {'npm install -g gulp'}
               </code></pre>
             </li>
           	<li>
-              <p>Install Grommet globally</p>
+              <p>Install Grommet globally (make sure to run as an admin).</p>
               <pre><code class="bash">
                 {'npm install -g grommet'}
               </code></pre>
