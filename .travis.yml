@@ -5,6 +5,7 @@ sudo: false
 cache:
   directories:
   - node_modules
+  - examples/server/node_modules
 before_script:
 - npm install -g gulp
 - npm install -g codeclimate-test-reporter

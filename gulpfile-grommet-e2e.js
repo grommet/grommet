@@ -5,7 +5,7 @@ var selenium = require('selenium-standalone');
 module.exports = function(gulp) {
   gulp.task('selenium', function(done) {
     selenium.install({
-      logger: function(message) {}
+      logger: function() {}
     }, function(err) {
       if (err) {
         return done(err);
@@ -37,7 +37,7 @@ module.exports = function(gulp) {
     }));
   });
 
-  gulp.task('start:docs', function() {
+  gulp.task('start:docs', ['dist:docs'], function() {
     return server.run(['./examples/server/server.js']);
   });
 
@@ -46,7 +46,11 @@ module.exports = function(gulp) {
     server.stop();
   }
 
-  function runIntegration() {
+  function runIntegration(platform, browserName, version) {
+    process.env.E2E_PLATFORM = platform;
+    process.env.E2E_BROWSER_NAME = browserName;
+    process.env.E2E_BROWSER_VERSION = version;
+
     var mocha = require('gulp-mocha');
     return gulp.src('./e2e/**/*.js', {
       read: false
@@ -62,82 +66,52 @@ module.exports = function(gulp) {
   ** Windows e2e matrix
   **/
   gulp.task('integration:windows:ie', ['start:docs', 'selenium'], function() {
-    process.env.E2E_PLATFORM = 'Windows 7';
-    process.env.E2E_BROWSER_NAME = 'internet explorer';
-    process.env.E2E_BROWSER_VERSION = '11.0';
-    return runIntegration();
+    return runIntegration('Windows 7', 'internet explorer', '11.0');
   });
 
   gulp.task('integration:windows:chrome', ['start:docs', 'selenium'], function() {
-    process.env.E2E_PLATFORM = 'Windows 7';
-    process.env.E2E_BROWSER_NAME = 'chrome';
-    process.env.E2E_BROWSER_VERSION = '37.0';
-    return runIntegration();
+    return runIntegration('Windows 7', 'chrome', '37.0');
   });
 
   gulp.task('integration:windows:opera', ['start:docs', 'selenium'], function() {
-    process.env.E2E_PLATFORM = 'Windows 7';
-    process.env.E2E_BROWSER_NAME = 'opera';
-    process.env.E2E_BROWSER_VERSION = '11.64';
-    return runIntegration();
+    return runIntegration('Windows 7', 'opera', '11.64');
   });
 
   gulp.task('integration:windows:firefox', ['start:docs', 'selenium'], function() {
-    process.env.E2E_PLATFORM = 'Windows 7';
-    process.env.E2E_BROWSER_NAME = 'firefox';
-    process.env.E2E_BROWSER_VERSION = '32.0';
-    return runIntegration();
+    return runIntegration('Windows 7', 'firefox', '32.0');
   });
 
   /**
   ** Linux e2e matrix
   **/
   gulp.task('integration:linux:firefox', ['start:docs', 'selenium'], function() {
-    process.env.E2E_PLATFORM = 'Linux';
-    process.env.E2E_BROWSER_NAME = 'firefox';
-    process.env.E2E_BROWSER_VERSION = '32.0';
-    return runIntegration();
+    return runIntegration('Linux', 'firefox', '32.0');
   });
 
   gulp.task('integration:linux:opera', ['start:docs', 'selenium'], function() {
-    process.env.E2E_PLATFORM = 'Linux';
-    process.env.E2E_BROWSER_NAME = 'opera';
-    process.env.E2E_BROWSER_VERSION = '12.15';
-    return runIntegration();
+    return runIntegration('Linux', 'opera', '12.15');
   });
 
   gulp.task('integration:linux:chrome', ['start:docs', 'selenium'], function() {
-    process.env.E2E_PLATFORM = 'Linux';
-    process.env.E2E_BROWSER_NAME = 'chrome';
-    process.env.E2E_BROWSER_VERSION = '37.0';
-    return runIntegration();
+    return runIntegration('Linux', 'chrome', '37.0');
   });
 
   /**
   ** OSX e2e matrix
   **/
   gulp.task('integration:osx:firefox', ['start:docs', 'selenium'], function() {
-    process.env.E2E_PLATFORM = 'OS X 10.10';
-    process.env.E2E_BROWSER_NAME = 'firefox';
-    process.env.E2E_BROWSER_VERSION = '32.0';
-    return runIntegration();
+    return runIntegration('OS X 10.10', 'firefox', '32.0');
   });
 
   gulp.task('integration:osx:safari', ['start:docs', 'selenium'], function() {
-    process.env.E2E_PLATFORM = 'OS X 10.10';
-    process.env.E2E_BROWSER_NAME = 'safari';
-    process.env.E2E_BROWSER_VERSION = '8.0';
-    return runIntegration();
+    return runIntegration('OS X 10.10', 'safari', '8.0');
   });
 
   gulp.task('integration:osx:chrome', ['start:docs', 'selenium'], function() {
-    process.env.E2E_PLATFORM = 'OS X 10.10';
-    process.env.E2E_BROWSER_NAME = 'chrome';
-    process.env.E2E_BROWSER_VERSION = '37.0';
-    return runIntegration();
+    return runIntegration('OS X 10.10', 'chrome', '37.0');
   });
 
-  gulp.task('integration', ['start:docs', 'selenium'], function() {
+  gulp.task('integration:localhost', ['start:docs', 'selenium'], function() {
     return runIntegration();
   });
 
