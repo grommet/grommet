@@ -1,6 +1,7 @@
 var chug = require('gulp-chug');
 var server = require('gulp-express');
 var selenium = require('selenium-standalone');
+var runSequence = require('run-sequence');
 
 module.exports = function(gulp) {
   gulp.task('selenium', function(done) {
@@ -37,7 +38,7 @@ module.exports = function(gulp) {
     }));
   });
 
-  gulp.task('start:docs', ['dist:docs'], function() {
+  gulp.task('start:docs', function() {
     return server.run(['./examples/server/server.js']);
   });
 
@@ -73,12 +74,12 @@ module.exports = function(gulp) {
     return runIntegration('Windows 7', 'chrome', '37.0');
   });
 
-  gulp.task('integration:windows:opera', ['start:docs', 'selenium'], function() {
-    return runIntegration('Windows 7', 'opera', '11.64');
-  });
-
   gulp.task('integration:windows:firefox', ['start:docs', 'selenium'], function() {
     return runIntegration('Windows 7', 'firefox', '32.0');
+  });
+
+  gulp.task('integration:windows', function(done) {
+    return runSequence('integration:windows:ie', 'integration:windows:chrome', 'integration:windows:firefox', done);
   });
 
   /**
@@ -96,6 +97,10 @@ module.exports = function(gulp) {
     return runIntegration('Linux', 'chrome', '37.0');
   });
 
+  gulp.task('integration:linux', function(done) {
+    return runSequence('integration:linux:firefox', 'integration:linux:opera', 'integration:linux:chrome', done);
+  });
+
   /**
   ** OSX e2e matrix
   **/
@@ -109,6 +114,10 @@ module.exports = function(gulp) {
 
   gulp.task('integration:osx:chrome', ['start:docs', 'selenium'], function() {
     return runIntegration('OS X 10.10', 'chrome', '37.0');
+  });
+
+  gulp.task('integration:osx', function(done) {
+    return runSequence('integration:osx:firefox', 'integration:osx:safari', 'integration:osx:chrome', done);
   });
 
   gulp.task('integration:localhost', ['start:docs', 'selenium'], function() {
