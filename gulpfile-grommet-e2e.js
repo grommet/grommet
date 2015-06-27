@@ -23,8 +23,6 @@ module.exports = function(gulp) {
           });
         }
 
-        //saving the child to kill it later (oops)
-        selenium.child = child;
         done();
       });
     });
@@ -43,11 +41,6 @@ module.exports = function(gulp) {
     return server.run(['./examples/server/server.js']);
   });
 
-  function killProcess() {
-    selenium.child.kill();
-    server.stop();
-  }
-
   function runIntegration(platform, browserName, version) {
     process.env.E2E_PLATFORM = platform;
     process.env.E2E_BROWSER_NAME = browserName;
@@ -56,10 +49,7 @@ module.exports = function(gulp) {
     var mocha = require('gulp-mocha');
     return gulp.src('./e2e/**/*.js', {
       read: false
-    }).pipe(mocha()).on('end', function() {
-      killProcess();
-    }).on('error', function() {
-      killProcess();
+    }).pipe(mocha()).on('error', function() {
       process.exit(1);
     });
   }
@@ -132,12 +122,45 @@ module.exports = function(gulp) {
     }));
   });
 
-  gulp.task('integration:linux', ['start:docs', 'selenium'], function(done) {
-    return runSequence('integration:linux:firefox', 'integration:linux:opera', 'integration:linux:chrome', done);
+  gulp.task('integration:linux', ['start:docs', 'selenium'], function() {
+    gulp.src('./gulpfile.js', {
+      read: false
+    }).pipe(chug({
+      tasks: ['integration:linux:firefox']
+    }));
+
+    gulp.src('./gulpfile.js', {
+      read: false
+    }).pipe(chug({
+      tasks: ['integration:linux:opera']
+    }));
+
+    gulp.src('./gulpfile.js', {
+      read: false
+    }).pipe(chug({
+      tasks: ['integration:linux:chrome']
+    }));
+
   });
 
   gulp.task('integration:osx', ['start:docs', 'selenium'], function(done) {
-    return runSequence('integration:osx:firefox', 'integration:osx:safari', 'integration:osx:chrome', done);
+    gulp.src('./gulpfile.js', {
+      read: false
+    }).pipe(chug({
+      tasks: ['integration:osx:firefox']
+    }));
+
+    gulp.src('./gulpfile.js', {
+      read: false
+    }).pipe(chug({
+      tasks: ['integration:osx:safari']
+    }));
+
+    gulp.src('./gulpfile.js', {
+      read: false
+    }).pipe(chug({
+      tasks: ['integration:osx:chrome']
+    }));
   });
 
   gulp.task('integration:localhost', ['start:docs', 'selenium'], function() {
