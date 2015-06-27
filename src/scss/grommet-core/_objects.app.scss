@@ -37,14 +37,16 @@
   &--centered {
 
     > .header,
-    > div > .header {
+    > div > .header,
+    > .document > .document__content > .header {
       .header__content {
         @include centered-content();
       }
     }
 
     > .footer,
-    > div > .footer {
+    > div > .footer,
+    > .document > .document__content > .footer {
       padding-left: $inuit-base-spacing-unit;
       padding-right: $inuit-base-spacing-unit;
 
@@ -53,7 +55,6 @@
       }
     }
 
-    .document,
     .section {
       padding-left: $inuit-base-spacing-unit;
       padding-right: $inuit-base-spacing-unit;
@@ -61,16 +62,20 @@
       &__content {
         @include centered-content();
       }
+
+      .document {
+        padding-left: 0px;
+        padding-right: 0px;
+
+        &__content {
+          width: auto;
+          max-width: none;
+        }
+      }
     }
 
-    .section .document {
-      padding-left: 0px;
-      padding-right: 0px;
-
-      &__content {
-        width: auto;
-        max-width: none;
-      }
+    .split {
+      @include centered-content();
     }
   }
 

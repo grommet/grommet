@@ -1,11 +1,10 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-$button-height: round($inuit-base-spacing-unit * 1.5);
+$button-vertical-padding: quarter($inuit-base-spacing-unit) - $button-border-width;
+$button-horizontal-padding: round($inuit-base-spacing-unit * 1) - $button-border-width;
 
 @mixin basic-button {
-  height: $button-height;
-  padding-left: $button-height;
-  padding-right: $button-height;
+  padding: $button-vertical-padding $button-horizontal-padding;
   background-color: transparent;
   border: $button-border-width solid $button-border-color;
   border-radius: $border-radius;
@@ -78,6 +77,26 @@ a.button {
       background-color: darken($button-accent-background-color, 10%);
       color: $button-primary-text-color;
     }
+  }
+
+  [class*="background-color-index-"] & {
+    border-color: #ddd;
+    color: #ddd;
+
+    &:hover {
+      border-color: #fff;
+      color: #fff;
+    }
+
+    &.button--primary {
+      border-color: $button-primary-background-color;
+      color: $button-primary-text-color;
+    }
+  }
+
+  &--large {
+    @include inuit-font-size(18px);
+    padding: round($button-vertical-padding * 2.5) round($button-horizontal-padding * 1.5);
   }
 
   &--disabled {

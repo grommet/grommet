@@ -12,6 +12,7 @@ var Section = React.createClass({
     colorIndex: React.PropTypes.string,
     direction: React.PropTypes.oneOf(['up', 'down', 'left', 'right']),
     flush: React.PropTypes.bool,
+    full: React.PropTypes.bool,
     texture: React.PropTypes.string
   },
 
@@ -36,6 +37,9 @@ var Section = React.createClass({
     }
     if (this.props.flush) {
       classes.push(CLASS_ROOT + "--flush");
+    }
+    if (this.props.full) {
+      classes.push(CLASS_ROOT + "--full");
     }
     if (this.props.direction) {
       classes.push(CLASS_ROOT + "--" + this.props.direction);

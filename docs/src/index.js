@@ -3,9 +3,7 @@
 require('imports?this=>window!modernizr');
 
 if (! Modernizr.flexbox ||
-  ! Modernizr.localstorage ||
-  ! Modernizr.rgba ||
-  ! Modernizr.draganddrop) {
+  ! Modernizr.rgba) {
   alert('Unfortunately, your browser appears to be too old. ' +
     'We recommend the latest version of Chrome, Firefox, Safari, or Internet Explorer. ' +
     'If you are using the latest Internet Explorer, you will need to turn off Compatibility Mode.');
@@ -35,9 +33,10 @@ var Router = require('react-router');
 var Route = Router.Route;
 var Docs = require('./Docs');
 var Home = require('./Home');
-var StyleGuide = require('./style_guide/StyleGuide');
-var Documentation = require('./documentation/Documentation');
-var Downloads = require('./downloads/Downloads');
+var Introduction = require('./Introduction');
+var Design = require('./design/Design');
+var Develop = require('./develop/Develop');
+//var TBD = require('grommet/components/TBD');
 
 var IntlMixin = require('grommet/mixins/GrommetIntlMixin');
 
@@ -53,9 +52,9 @@ var DocsRouter = React.createClass({
 var routes = (
   <Route name="docs" path={rootPath} handler={DocsRouter}>
     <Route name="home" path={rootPath} handler={Home} />
-    {StyleGuide.routes()}
-    {Documentation.routes()}
-    <Route name="downloads" handler={Downloads} />
+    <Route name="introduction" handler={Introduction} />
+    {Design.routes()}
+    {Develop.routes()}
   </Route>
 );
 

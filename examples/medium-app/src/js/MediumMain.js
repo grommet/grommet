@@ -24,7 +24,7 @@ var MediumMain = React.createClass({
 
   render: function() {
     return (
-      <Sidebar primary={this.props.primary}>
+      <Sidebar primary={this.props.primary} fixed={true}>
         <Header large={true} flush={false}>
           <Title>
             <Logo />

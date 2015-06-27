@@ -2,14 +2,6 @@
 
 var React = require('react');
 var App = require('grommet/components/App');
-var Header = require('grommet/components/Header');
-var Title = require('grommet/components/Title');
-var Menu = require('grommet/components/Menu');
-var Label = require('grommet/components/Label');
-var Footer = require('grommet/components/Footer');
-var DesignIcon = require('./img/Design');
-var DevelopIcon = require('./img/Develop');
-var Link = require('react-router').Link;
 var RouteHandler = require('react-router').RouteHandler;
 
 var Docs = React.createClass({
@@ -19,51 +11,9 @@ var Docs = React.createClass({
   },
 
   render: function() {
-    var footerColorIndex = null;
-    var title = '';
-    if (this.context.router.isActive("home")) {
-      footerColorIndex = "grey-1";
-    } else {
-      title = (
-        <Title>
-          <Link to="docs">
-            <img src="img/grommet.svg" title="Grommet" />
-            Grommet
-          </Link>
-        </Title>
-      );
-    }
-
     return (
       <App className="docs">
-        <Header className="docs__header" primary={true} fixed={true} large={true} flush={false}>
-          {title}
-          <Menu direction="left">
-            <Link key="style-guide" to="style guide">
-              <Label text="Style Guide" icon={<DesignIcon />} />
-            </Link>
-            <Link key="documentation" to="documentation">
-              <Label text="Documentation" icon={<DevelopIcon />} />
-            </Link>
-            <Link key="downloads" to="downloads">
-              <Label text="Downloads" />
-            </Link>
-          </Menu>
-        </Header>
         <RouteHandler />
-        <Footer className="docs__footer" colorIndex={footerColorIndex} primary={true} centered={true}>
-          <h3>Build your ideas with Grommet by HP!</h3>
-          <div>
-            This work is licensed under the <a href="http://creativecommons.org/licenses/by/4.0/legalcode">Creative Commons Attribution 4.0 International License</a>.
-            <div>
-              <Menu label="Theme" direction="up" small={true}>
-                <a href="/docs/" className={this.props.theme === 'generic' ? 'active' : ''}>Grommet</a>
-                <a href="/docs/hpe/" className={this.props.theme === 'hpe' ? 'active' : ''}>HPE</a>
-                <a href="/docs/hpinc/" className={this.props.theme === 'hpinc' ? 'active' : ''}>HPInc</a>
-              </Menu>
-            </div>
-          </div>
-        </Footer>
       </App>
     );
   }

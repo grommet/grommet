@@ -14,15 +14,20 @@ li {
   max-width: $readable-text-width;
 }
 
+p {
+  margin-top: $inuit-base-spacing-unit;
+  margin-bottom: $inuit-base-spacing-unit;
+}
+
 h1,
 .h1 {
-  @include inuit-font-size(36px);
+  @include inuit-font-size(48px);
   font-weight: 600;
 }
 
 h2,
 .h2 {
-  @include inuit-font-size(24px);
+  @include inuit-font-size(36px);
   font-weight: normal;
 }
 
@@ -40,7 +45,7 @@ h4,
 
 h5,
 .h5 {
-  @include inuit-font-size(16px);
+  @include inuit-font-size(18px);
   font-weight: 100;
 }
 

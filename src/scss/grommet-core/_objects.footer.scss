@@ -81,4 +81,11 @@
       padding-right: 0px;
     }
   }
+
+  &--large {
+    .footer__content {
+      padding-top: $inuit-base-spacing-unit;
+      padding-bottom: $inuit-base-spacing-unit;
+    }
+  }
 }

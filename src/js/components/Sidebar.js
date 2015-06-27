@@ -8,7 +8,9 @@ var Sidebar = React.createClass({
 
   propTypes: {
     colorIndex: React.PropTypes.string,
-    primary: React.PropTypes.bool
+    fixed: React.PropTypes.bool,
+    primary: React.PropTypes.bool,
+    small: React.PropTypes.bool
   },
 
   getDefaultProps: function () {
@@ -19,6 +21,12 @@ var Sidebar = React.createClass({
     var classes = [CLASS_ROOT];
     if (this.props.primary) {
       classes.push(CLASS_ROOT + "--primary");
+    }
+    if (this.props.fixed) {
+      classes.push(CLASS_ROOT + "--fixed");
+    }
+    if (this.props.small) {
+      classes.push(CLASS_ROOT + "--small");
     }
     if (this.props.className) {
       classes.push(this.props.className);

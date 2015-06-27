@@ -12,8 +12,6 @@
   }
 
   &__wrapper {
-    background-color: $header-background-color;
-
     @include media-query(palm) {
       height: $small-header-height;
     }
@@ -69,7 +67,10 @@
     > .menu {
       -webkit-flex: 0 0 auto;
       flex: 0 0 auto;
-      @include inuit-font-size($header-font-size, inherit);
+
+      @include media-query(lap-and-up) {
+        @include inuit-font-size($header-font-size, inherit);
+      }
     }
 
     .status-icon {
@@ -127,6 +128,7 @@
       top: 0px;
       left: 0px;
       right: 0px;
+      background-color: $header-background-color;
       z-index: 3;
     }
 
@@ -160,15 +162,17 @@
     }
   }
 
+  &--float {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+  }
+
   &--primary {
     .header__wrapper,
     .header__content {
       border-bottom: none;
-    }
-
-    .header__content {
-      //-webkit-justify-content: space-between;
-      //justify-content: space-between;
     }
   }
 }

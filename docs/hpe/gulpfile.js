@@ -10,7 +10,7 @@ var opts = {
   copyAssets: [
     'docs/src/index.html',
     {
-      asset: 'docs/src/style_guide/img/**',
+      asset: 'docs/src/design/img/**',
       dist: 'docs/dist/hpe/img/'
     },
     {
@@ -22,7 +22,7 @@ var opts = {
       dist: 'docs/dist/hpe/img/'
     },
     {
-      asset: 'docs/src/documentation/img/**',
+      asset: 'docs/src/develop/img/**',
       dist: 'docs/dist/hpe/img/'
     }
   ],
@@ -46,16 +46,13 @@ var opts = {
     module: {
       loaders: [
         {
-          test: /style_guide(\/|\\)[^\/]*\.htm$/,
-          loader: 'jsx-loader!imports?React=react,Router=react-router,Link=>Router.Link!html-jsx-loader?group=true'
-        },
-        {
-          test: /documentation(\/|\\).*\.htm$|downloads(\/|\\).*\.htm$|style_guide(\/|\\).*\/.*\.htm$/,
+          test: /develop(\/|\\).*\.htm$|design(\/|\\)[^\/]*\.htm$|design(\/|\\).*\/.*\.htm$/,
           loader: 'jsx-loader!imports?React=react,Router=react-router,Link=>Router.Link!html-jsx-loader'
         }
       ]
     }
   },
+  devServerHost: 'localhost',
   devServerPort: 8003,
   devServerProxy: {
     "/rest/*": 'http://localhost:8000'

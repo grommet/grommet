@@ -119,9 +119,16 @@
 }
 
 .logo-icon {
-  display: inline-block;
   width: double($inuit-base-spacing-unit);
   height: double($inuit-base-spacing-unit);
-  vertical-align: middle;
-  margin-right: $inuit-base-spacing-unit;
+
+  &--small {
+    width: $inuit-base-spacing-unit;
+    height: $inuit-base-spacing-unit;
+  }
+
+  &--large {
+    width: quadruple($inuit-base-spacing-unit);
+    height: quadruple($inuit-base-spacing-unit);
+  }
 }

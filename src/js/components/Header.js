@@ -9,6 +9,7 @@ var Header = React.createClass({
   propTypes: {
     colorIndex: React.PropTypes.string,
     fixed: React.PropTypes.bool,
+    float: React.PropTypes.bool,
     flush: React.PropTypes.bool,
     large: React.PropTypes.bool,
     primary: React.PropTypes.bool,
@@ -68,6 +69,9 @@ var Header = React.createClass({
     if (this.props.fixed) {
       classes.push(CLASS_ROOT + "--fixed");
     }
+    if (this.props.float) {
+      classes.push(CLASS_ROOT + "--float");
+    }
     if (this.props.flush) {
       classes.push(CLASS_ROOT + "--flush");
     }
@@ -106,10 +110,10 @@ var Header = React.createClass({
     }
 
     return (
-      <div className={classes.join(' ')}>
+      <header className={classes.join(' ')}>
         {mirror}
         {content}
-      </div>
+      </header>
     );
   }
 

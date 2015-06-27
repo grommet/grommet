@@ -18,9 +18,9 @@ var Title = React.createClass({
     }
 
     return (
-      <div className={classes.join(' ')} onClick={this.props.onClick}>
+      <span className={classes.join(' ')} onClick={this.props.onClick}>
         {this.props.children}
-      </div>
+      </span>
     );
   }
 
