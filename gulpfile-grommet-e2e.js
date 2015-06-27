@@ -23,6 +23,8 @@ module.exports = function(gulp) {
           });
         }
 
+        //saving the child to kill it later (oops)
+        selenium.child = child;
         done();
       });
     });
@@ -33,13 +35,18 @@ module.exports = function(gulp) {
       read: false
     }).pipe(chug({
       tasks: ['dist'],
-      args: [ '--skipPreprocess']
+      args: ['--skipPreprocess']
     }));
   });
 
   gulp.task('start:docs', ['dist:docs'], function() {
     return server.run(['./examples/server/server.js']);
   });
+
+  function killProcess() {
+    selenium.child.kill();
+    server.stop();
+  }
 
   function runIntegration(platform, browserName, version) {
     process.env.E2E_PLATFORM = platform;
@@ -50,9 +57,14 @@ module.exports = function(gulp) {
     return gulp.src('./e2e/**/*.js', {
       read: false
     }).pipe(mocha()).on('error', function() {
+      killProcess();
       process.exit(1);
     });
   }
+
+  gulp.task('integration:clean', function () {
+    killProcess();
+  });
 
   /**
   ** Windows e2e matrix
@@ -67,6 +79,10 @@ module.exports = function(gulp) {
 
   gulp.task('integration:windows:firefox', function() {
     return runIntegration('Windows 7', 'firefox', '32.0');
+  });
+
+  gulp.task('integration:windows', ['start:docs', 'selenium'], function(done) {
+    return runSequence('integration:windows:ie', 'integration:windows:chrome', 'integration:windows:firefox', 'integration:clean', done);
   });
 
   /**
@@ -84,6 +100,10 @@ module.exports = function(gulp) {
     return runIntegration('Linux', 'chrome', '37.0');
   });
 
+  gulp.task('integration:linux', ['start:docs', 'selenium'], function(done) {
+    return runSequence('integration:linux:firefox', 'integration:linux:opera', 'integration:linux:chrome', 'integration:clean', done);
+  });
+
   /**
   ** OSX e2e matrix
   **/
@@ -99,72 +119,21 @@ module.exports = function(gulp) {
     return runIntegration('OS X 10.10', 'chrome', '37.0');
   });
 
-  /**
-  ** parallel distribution
-  */
-  gulp.task('integration:windows', ['start:docs', 'selenium'], function() {
-    gulp.src('./gulpfile.js', {
-      read: false
-    }).pipe(chug({
-      tasks: ['integration:windows:ie']
-    }));
-
-    gulp.src('./gulpfile.js', {
-      read: false
-    }).pipe(chug({
-      tasks: ['integration:windows:chrome']
-    }));
-
-    gulp.src('./gulpfile.js', {
-      read: false
-    }).pipe(chug({
-      tasks: ['integration:windows:firefox']
-    }));
-  });
-
-  gulp.task('integration:linux', ['start:docs', 'selenium'], function() {
-    gulp.src('./gulpfile.js', {
-      read: false
-    }).pipe(chug({
-      tasks: ['integration:linux:firefox']
-    }));
-
-    gulp.src('./gulpfile.js', {
-      read: false
-    }).pipe(chug({
-      tasks: ['integration:linux:opera']
-    }));
-
-    gulp.src('./gulpfile.js', {
-      read: false
-    }).pipe(chug({
-      tasks: ['integration:linux:chrome']
-    }));
-
-  });
-
   gulp.task('integration:osx', ['start:docs', 'selenium'], function(done) {
-    gulp.src('./gulpfile.js', {
-      read: false
-    }).pipe(chug({
-      tasks: ['integration:osx:firefox']
-    }));
-
-    gulp.src('./gulpfile.js', {
-      read: false
-    }).pipe(chug({
-      tasks: ['integration:osx:safari']
-    }));
-
-    gulp.src('./gulpfile.js', {
-      read: false
-    }).pipe(chug({
-      tasks: ['integration:osx:chrome']
-    }));
+    return runSequence('integration:osx:firefox', 'integration:osx:safari', 'integration:osx:chrome', 'integration:clean', done);
   });
 
-  gulp.task('integration:localhost', ['start:docs', 'selenium'], function() {
-    return runIntegration();
+  gulp.task('integration:localhost', ['start:docs', 'selenium'], function(done) {
+    var mocha = require('gulp-mocha');
+    gulp.src('./e2e/**/*.js', {
+      read: false
+    }).pipe(mocha()).on('end', function() {
+      killProcess();
+      done();
+    }).on('error', function() {
+      killProcess();
+      process.exit(1);
+    });
   });
 
 };
