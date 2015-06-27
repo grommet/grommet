@@ -6,7 +6,10 @@ var webpack = require('webpack');
 module.exports = function(gulp, options, webpackConfig, dist) {
 
   gulp.task('dist-preprocess', function(callback) {
-    if (options.distPreprocess) {
+    var argv = require('yargs').argv;
+    if (argv.skipPreprocess) {
+      runSequence('copy', callback);
+    } else if (options.distPreprocess) {
       if (process.env.CI) {
         runSequence('preprocess', options.distPreprocess, 'copy', callback);
       } else {
