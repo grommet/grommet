@@ -38,7 +38,7 @@ module.exports = function(gulp) {
     }));
   });
 
-  gulp.task('start:docs', function() {
+  gulp.task('start:docs', ['dist:docs'], function() {
     return server.run(['./examples/server/server.js']);
   });
 
