@@ -1,114 +1,19 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 .document {
-
   width: 100%;
+  padding-left: $inuit-base-spacing-unit;
+  padding-right: $inuit-base-spacing-unit;
 
   &--no-contents {
-    .document {
-      &__content {
-        padding-left: 0px;
-      }
+    .document__content {
+      padding-left: 0px;
     }
   }
 
-  section {
-    margin-top: $inuit-base-spacing-unit;
-    margin-bottom: $inuit-base-spacing-unit;
-    padding-top: $inuit-base-spacing-unit;
-  }
-
-  section,
-  header {
-
-    > img {
-      margin-top: double($inuit-base-spacing-unit);
-      margin-bottom: double($inuit-base-spacing-unit);
-      display: block;
-      max-width: $readable-text-width;
-
-      @include media-query(palm) {
-        max-width: 100%;
-      }
-    }
-
-    > iframe {
-      width: 100%;
-      max-width: $readable-text-width;
-      height: 400px;
-
-      @include media-query(palm) {
-        height: 250px;
-      }
-
-      @include media-query(lap) {
-        height: 250px;
-      }
-    }
-
-    > ol,
-    > ul {
-      @include media-query(palm) {
-        padding-left: $inuit-base-spacing-unit;
-        padding-right: $inuit-base-spacing-unit;
-        margin-left: 0px;
-        margin-bottom: $inuit-base-spacing-unit;
-      }
-    }
-
-    > dl {
-      > dt {
-        margin-top: $inuit-base-spacing-unit;
-        margin-bottom: quarter($inuit-base-spacing-unit);
-        text-transform: uppercase;
-
-        code {
-          text-transform: none;
-          white-space: pre-wrap;
-        }
-      }
-
-      > dd {
-        margin-left: 0px;
-
-        @include media-query(palm) {
-          padding-right: $inuit-base-spacing-unit;
-        }
-      }
-    }
-
-    > h2 {
-      position: relative;
-      padding-top: $inuit-base-spacing-unit;
-
-      &:after {
-        position: absolute;
-        content: '';
-        top: 0px;
-        left: 0px;
-        right: 0px;
-        border-top: 1px solid $border-color;
-
-        @include media-query(palm) {
-          //left: $inuit-base-spacing-unit;
-          //right: $inuit-base-spacing-unit;
-        }
-
-      }
-    }
-  }
-
-  section:first-child {
-    margin-top: 0px;
-    padding-top: 0px;
-
-    > h2 {
-      padding-top: 0px;
-    }
-
-    > h2:after {
-      border-top: none;
-    }
+  &--flush {
+    padding-left: 0px;
+    padding-right: 0px;
   }
 
 }

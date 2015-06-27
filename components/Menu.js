@@ -7,7 +7,7 @@ var Overlay = require('../mixins/Overlay');
 var MoreIcon = require('./icons/More');
 var DropCaretIcon = require('./icons/DropCaret');
 
-var ROOT_CLASS = "menu";
+var CLASS_ROOT = "menu";
 
 var MenuLayer = React.createClass({
 
@@ -28,19 +28,19 @@ var MenuLayer = React.createClass({
   },
 
   render: function () {
-    var classes = [ROOT_CLASS + "__layer"];
+    var classes = [CLASS_ROOT + "__layer"];
     if (this.props.direction) {
-      classes.push(ROOT_CLASS + "__layer--" + this.props.direction);
+      classes.push(CLASS_ROOT + "__layer--" + this.props.direction);
     }
     if (this.props.align) {
-      classes.push(ROOT_CLASS + "__layer--align-" + this.props.align);
+      classes.push(CLASS_ROOT + "__layer--align-" + this.props.align);
     }
 
     return (
-      <div id={this.props.id} className={classes.join(' ')}
+      <nav id={this.props.id} className={classes.join(' ')}
         onClick={this.props.onClick}>
         {this.props.children}
-      </div>
+      </nav>
     );
   }
 });
@@ -52,6 +52,7 @@ var Menu = React.createClass({
     closeOnClick: React.PropTypes.bool,
     collapse: React.PropTypes.bool,
     direction: React.PropTypes.oneOf(['up', 'down', 'left', 'right', 'center']),
+    flush: React.PropTypes.bool,
     icon: React.PropTypes.node,
     label: React.PropTypes.string,
     primary: React.PropTypes.bool,
@@ -67,6 +68,7 @@ var Menu = React.createClass({
       align: 'left',
       closeOnClick: true,
       direction: 'down',
+      flush: true,
       small: false
     };
   },
@@ -150,7 +152,7 @@ var Menu = React.createClass({
 
       var controlElement = this.refs.control.getDOMNode();
       var layerElement = document.getElementById(this.state.layerId);
-      var layerControlElement = layerElement.querySelectorAll("." + ROOT_CLASS + "__control")[0];
+      var layerControlElement = layerElement.querySelectorAll("." + CLASS_ROOT + "__control")[0];
       var layerControlIconElement = layerElement.querySelectorAll('svg, img')[0];
 
       // give layer control element the same line height and font size as the control
@@ -180,7 +182,7 @@ var Menu = React.createClass({
   _renderControl: function () {
     var result = null;
     var icon = null;
-    var controlClassName = ROOT_CLASS + "__control";
+    var controlClassName = CLASS_ROOT + "__control";
 
     var classes = [controlClassName];
 
@@ -232,13 +234,16 @@ var Menu = React.createClass({
   },
 
   render: function () {
-    var classes = this._classes(ROOT_CLASS);
+    var classes = this._classes(CLASS_ROOT);
     if (this.state.inline) {
-      classes.push(ROOT_CLASS + "--inline");
+      classes.push(CLASS_ROOT + "--inline");
+      if (this.props.flush) {
+        classes.push(CLASS_ROOT + "--flush");
+      }
     } else {
-      classes.push(ROOT_CLASS + "--controlled");
+      classes.push(CLASS_ROOT + "--controlled");
       if (this.props.label) {
-        classes.push(ROOT_CLASS + "--labelled");
+        classes.push(CLASS_ROOT + "--labelled");
       }
     }
     if (this.props.className) {
@@ -248,9 +253,9 @@ var Menu = React.createClass({
     if (this.state.inline) {
 
       return (
-        <div className={classes.join(' ')} onClick={this._onClose}>
+        <nav className={classes.join(' ')} onClick={this._onClose}>
           {this.props.children}
-        </div>
+        </nav>
       );
 
     } else {

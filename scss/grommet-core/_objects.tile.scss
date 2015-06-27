@@ -3,23 +3,23 @@
 .tiles {
   padding: halve($inuit-base-spacing-unit);
 
-  @include media-query(lap-and-up) {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-wrap: wrap;
-    flex-wrap: wrap;
+  //@include media-query(lap-and-up) {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
 
-    > .tile {
-      -webkit-flex: 0 0 round($inuit-base-spacing-unit * 8);
-      flex: 0 0 round($inuit-base-spacing-unit * 8);
-      flex-grow: 1;
+  > .tile {
+    -webkit-flex: 0 0 round($inuit-base-spacing-unit * 8);
+    flex: 0 0 round($inuit-base-spacing-unit * 8);
+    flex-grow: 1;
 
-      &--wide {
-        -webkit-flex-basis: 100%;
-        flex-basis: 100%;
-      }
+    &--wide {
+      -webkit-flex-basis: 100%;
+      flex-basis: 100%;
     }
   }
+  //}
 
   &--moreable {
     position: relative;
@@ -35,40 +35,40 @@
   }
 
   &--flush {
-    @include media-query(lap-and-up) {
-      margin: - $inuit-base-spacing-unit;
+    //@include media-query(lap-and-up) {
+    margin: - $inuit-base-spacing-unit;
 
-      @include media-query(lap-and-up) {
-        > .tile {
-          -webkit-flex: 0 0 round($inuit-base-spacing-unit * 7);
-          flex: 0 0 round($inuit-base-spacing-unit * 7);
-          flex-grow: 1;
-        }
-      }
+    > .tile {
+      -webkit-flex: 0 0 round($inuit-base-spacing-unit * 7);
+      flex: 0 0 round($inuit-base-spacing-unit * 7);
+      flex-grow: 1;
     }
+    //}
   }
 
   &--small {
-    @include media-query(lap-and-up) {
-      > .tile {
-        -webkit-flex-basis: round($inuit-base-spacing-unit * 4);
-        flex-basis: round($inuit-base-spacing-unit * 4);
-      }
+    //@include media-query(lap-and-up) {
+    > .tile {
+      -webkit-flex-basis: round($inuit-base-spacing-unit * 4);
+      flex-basis: round($inuit-base-spacing-unit * 4);
     }
+    //}
   }
 
   &--fill {
-    @include media-query(lap-and-up) {
-      -webkit-align-items: stretch;
-      align-items: stretch;
-      -webkit-align-content: stretch;
-      align-content: stretch;
+    //@include media-query(lap-and-up) {
+    //-webkit-align-items: stretch;
+    //align-items: stretch;
+    //-webkit-align-content: stretch;
+    //align-content: stretch;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
 
-      > .tile {
-        -webkit-flex-grow: 1;
-        flex-grow: 1;
-      }
-    }
+    //> .tile {
+      //-webkit-flex-grow: 1;
+      //flex-grow: 1;
+    //}
+    //}
   }
 }
 

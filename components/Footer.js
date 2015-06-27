@@ -11,6 +11,7 @@ var Footer = React.createClass({
     centered: React.PropTypes.bool,
     colorIndex: React.PropTypes.string,
     flush: React.PropTypes.bool,
+    large: React.PropTypes.bool,
     primary: React.PropTypes.bool,
     scrollTop: React.PropTypes.bool
   },
@@ -68,6 +69,9 @@ var Footer = React.createClass({
     }
     if (this.props.flush) {
       classes.push(CLASS_ROOT + "--flush");
+    }
+    if (this.props.large) {
+      classes.push(CLASS_ROOT + "--large");
     }
     if (this.props.colorIndex) {
       classes.push("background-color-index-" + this.props.colorIndex);

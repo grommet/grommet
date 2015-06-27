@@ -9,6 +9,7 @@ var Button = React.createClass({
   propTypes: {
     accent: React.PropTypes.bool,
     label: React.PropTypes.string.isRequired,
+    large: React.PropTypes.bool,
     onClick: React.PropTypes.func,
     primary: React.PropTypes.bool
   },
@@ -23,6 +24,9 @@ var Button = React.createClass({
     }
     if (! this.props.onClick) {
       classes.push(CLASS_ROOT + "--disabled");
+    }
+    if (this.props.large) {
+      classes.push(CLASS_ROOT + "--large");
     }
     if (this.props.className) {
       classes.push(this.props.className);

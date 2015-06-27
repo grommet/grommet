@@ -2,28 +2,20 @@
 
 var React = require('react');
 
-var CLASS_ROOT = "sidebar";
+var CLASS_ROOT = "headline";
 
-var Sidebar = React.createClass({
+var Headline = React.createClass({
 
   propTypes: {
     colorIndex: React.PropTypes.string,
-    fixed: React.PropTypes.bool,
-    primary: React.PropTypes.bool,
+    large: React.PropTypes.bool,
     small: React.PropTypes.bool
-  },
-
-  getDefaultProps: function () {
-    return {primary: false};
   },
 
   render: function() {
     var classes = [CLASS_ROOT];
-    if (this.props.primary) {
-      classes.push(CLASS_ROOT + "--primary");
-    }
-    if (this.props.fixed) {
-      classes.push(CLASS_ROOT + "--fixed");
+    if (this.props.large) {
+      classes.push(CLASS_ROOT + "--large");
     }
     if (this.props.small) {
       classes.push(CLASS_ROOT + "--small");
@@ -41,4 +33,4 @@ var Sidebar = React.createClass({
 
 });
 
-module.exports = Sidebar;
+module.exports = Headline;

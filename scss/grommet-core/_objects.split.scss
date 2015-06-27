@@ -5,7 +5,6 @@
   @include media-query(lap-and-up) {
     display: -webkit-flex;
     display: flex;
-    height: 100vh;
 
     > * {
       -webkit-flex: 1 0;
@@ -17,15 +16,15 @@
 
     &--flex-right {
       > *:first-child:not(:last-child) {
-        -webkit-flex: 0 0 $sidebar-width;
-        flex: 0 0 $sidebar-width;
+        -webkit-flex: 0 0 auto;
+        flex: 0 0 auto;
       }
     }
 
     &--flex-left {
       > *:last-child:not(:first-child) {
-        -webkit-flex: 0 0 $sidebar-width;
-        flex: 0 0 $sidebar-width;
+        -webkit-flex: 0 0 auto;
+        flex: 0 0 auto;
       }
     }
   }

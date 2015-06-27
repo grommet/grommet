@@ -1,0 +1,17 @@
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+
+.headline {
+  @include inuit-font-size(48px);
+  font-weight: 600;
+  margin-bottom: $inuit-base-spacing-unit;
+
+  &--large {
+    @include inuit-font-size(60px);
+    font-weight: 600;
+  }
+
+  &--small {
+    @include inuit-font-size(30px);
+    font-weight: 100;
+  }
+}

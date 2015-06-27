@@ -7,7 +7,8 @@ var CLASS_ROOT = "split";
 var Split = React.createClass({
 
   propTypes: {
-    flex: React.PropTypes.oneOf(['left', 'right', 'both'])
+    flex: React.PropTypes.oneOf(['left', 'right', 'both']),
+    stack: React.PropTypes.oneOf(['left', 'right'])
   },
 
   getDefaultProps: function () {
