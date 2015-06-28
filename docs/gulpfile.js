@@ -68,7 +68,6 @@ var opts = {
       ]
     }
   },
-  devServerHost: '*',
   devServerPort: 8002,
   devServerProxy: {
     "/rest/*": 'http://localhost:8000'
