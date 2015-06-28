@@ -89,6 +89,7 @@
     "gulp-prompt": "^0.1.2",
     "gulp-bump": "^0.3.0",
     "gulp-jsx-coverage": "^0.1.3",
+    "gulp-open": "^0.3.2",
     "webpack-stream": "^2.0.0",
     "eslint": "^0.21.2",
     "eslint-plugin-react": "^2.4.0",
