@@ -75,7 +75,7 @@ var Home = React.createClass({
               <Button label="All resources" onClick={this._onClick} large={true} />
             </Link>
           </Menu>
-          <p>or, grab your favorite stickersheet:</p>
+          <p>or, grab your favorite sticker sheet:</p>
           <Tiles small={true} fill={true}>
             <Tile>
               <img src="img/Adobe_Illustrator.png" title="Adobe Illustrator" />
@@ -111,7 +111,7 @@ var Home = React.createClass({
               <Button label="View tutorial" onClick={this._onClick} large={true} />
             </Link>
           </Menu>
-          <p>or, just copy and past into terminal:</p>
+          <p>or, just copy and paste into terminal:</p>
           <div className="console">
             <h2>Hello Grommet!</h2>
             <p>
