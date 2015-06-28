@@ -1,6 +1,8 @@
 var assign = require('object-assign');
 var webpack = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
+var open = require('gulp-open');
+var path = require('path');
 
 module.exports = function(gulp, options, webpackConfig, dist) {
   gulp.task('dev', ['preprocess'], function() {
@@ -91,8 +93,11 @@ module.exports = function(gulp, options, webpackConfig, dist) {
       if (err) {
         console.error('[webpack-dev-server] failed to start:', err);
       } else {
-        console.log('[webpack-dev-server] started:', 'Browse to http://' + host + ':' +
-          options.devServerPort + '/webpack-dev-server/');
+        console.log('[webpack-dev-server] started: opening the app in your default browser...');
+        gulp.src(path.join(dist, 'index.html'))
+        .pipe(open('<%file.path%>', {
+          url: 'http://' + host + ':' + options.devServerPort + '/webpack-dev-server/'
+        }));
       }
     });
 
