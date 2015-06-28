@@ -117,13 +117,15 @@ describe('Grommet Calendar', function() {
 
     GrommetTestUtils.layerShouldExist('calendar__layer');
 
-    var previousDateNode = GrommetTestUtils.getLayerChildNode('calendar__layer', 'calendar__next');
+    var nextDateNode = GrommetTestUtils.getLayerChildNode('calendar__layer', 'calendar__next');
 
-    TestUtils.Simulate.click(previousDateNode);
+    TestUtils.Simulate.click(nextDateNode);
+    TestUtils.Simulate.click(nextDateNode);
+    TestUtils.Simulate.click(nextDateNode);
 
-    var dateInThePastNode = GrommetTestUtils.getLayerChildNode('calendar__layer', 'calendar__day');
+    var dateInTheFuture = GrommetTestUtils.getLayerChildNode('calendar__layer', 'calendar__day');
 
-    TestUtils.Simulate.click(dateInThePastNode);
+    TestUtils.Simulate.click(dateInTheFuture);
 
     var calendar = TestUtils.findRenderedDOMComponentWithClass(Component, 'calendar');
     React.unmountComponentAtNode(calendar.getDOMNode().parentNode);
