@@ -108,7 +108,8 @@ gulp.task('export', function(done) {
       var map = path.join(grommetPath, 'examples/server/map.js');
       var serverDependencies = path.join(grommetPath, 'examples/server/package.json');
       var rest = path.join(grommetPath, 'examples/server/rest.js');
-      var serverFiles = [backendData, filter, generator, map, serverDependencies, rest];
+      var acceptLanguage = path.join(grommetPath, 'examples/server/accept-language.js');
+      var serverFiles = [backendData, filter, generator, map, serverDependencies, rest, acceptLanguage];
 
       fs.exists(exampleFolder, function(exists) {
         if (!exists) {
