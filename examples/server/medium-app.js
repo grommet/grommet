@@ -1,17 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var path = require('path');
-/*
-var httpProxy = require('http-proxy');
-
-var proxy = httpProxy.createProxyServer();
-
-router.all(/\/index.js|\/webpack-dev-server.js/, function (req, res) {
-  proxy.web(req, res, {
-    target: 'http://localhost:8001'
-  });
-});
-*/
 
 // convert static assets to correct relative path
 router.use('/', function (req, res, next) {

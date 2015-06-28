@@ -1,5 +1,5 @@
 {
-  "name": "medium-app",
+  "name": "<%= appName %>",
   "version": "0.1.2",
   "main": "src/js/index.js",
   "description": "Grommet Tour",
@@ -59,6 +59,7 @@
     "gulp-watch": "^4.2.4",
     "webpack-stream": "^2.0.0",
     "gulp-coveralls": "^0.1.4",
+    "gulp-open": "^0.3.2",
     "json5": "^0.4.0",
     "react-tools": "^0.13.1",
     "run-sequence": "^1.0.2",

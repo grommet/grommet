@@ -41,6 +41,7 @@
     "gulp-watch": "^4.2.4",
     "gulp-if": "^1.2.5",
     "gulp-mocha": "^2.0.1",
+    "gulp-open": "^0.3.2",
     "del": "^1.1.1",
     "run-sequence": "^1.0.2",
     "webpack": "1.9.10",

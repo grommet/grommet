@@ -101,7 +101,14 @@ gulp.task('export', function(done) {
       var grommetPath = getGrommetPath();
       var exampleFolder = path.join(grommetPath, 'examples/' + app);
       var templateFolder = path.join(grommetPath, 'templates/' + app + '/**');
-      var serverFolder = path.join(grommetPath, 'examples/server/**');
+
+      var backendData = path.join(grommetPath, 'examples/server/data.js');
+      var filter = path.join(grommetPath, 'examples/server/filter.js');
+      var generator = path.join(grommetPath, 'examples/server/generator.js');
+      var map = path.join(grommetPath, 'examples/server/map.js');
+      var serverDependencies = path.join(grommetPath, 'examples/server/package.json');
+      var rest = path.join(grommetPath, 'examples/server/rest.js');
+      var serverFiles = [backendData, filter, generator, map, serverDependencies, rest];
 
       fs.exists(exampleFolder, function(exists) {
         if (!exists) {
@@ -118,8 +125,12 @@ gulp.task('export', function(done) {
           '!' + exampleFolder + '/package.json',
           '!' + exampleFolder + '/README.md'
         ]).pipe(gulp.dest('./')).on('end', function() {
-          gulp.src(templateFolder).pipe(gulp.dest('./')).pipe(install()).on('finish', function() {
-            gulp.src(serverFolder).pipe(gulp.dest('./server')).pipe(install());
+          gulp.src(templateFolder).pipe(template({
+            appName: dest
+          })).pipe(gulp.dest('./')).pipe(install()).on('finish', function() {
+            if (app === 'medium-app') {
+              gulp.src(serverFiles).pipe(gulp.dest('./server')).pipe(install());
+            }
           });
         });
 
