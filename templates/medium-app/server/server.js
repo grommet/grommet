@@ -9,8 +9,6 @@ var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var rest = require('./rest');
 var path = require('path');
-var proxy = require('express-http-proxy');
-var request = require('request');
 
 var PORT = 8000;
 
@@ -28,18 +26,7 @@ router.get('/', function (req, res) {
   res.redirect('/<%= appName %>');
 });
 
-app.use('/', function(req, res, next) {
-  var acceptLanguageHeader = req.headers['accept-language'];
-
-  if (acceptLanguageHeader) {
-    var acceptedLanguages = acceptLanguageHeader.match(/[a-zA-z\-]{2,10}/g);
-    if (acceptedLanguages) {
-      res.cookie('languages', JSON.stringify(acceptedLanguages));
-    }
-  }
-
-  next();
-});
+app.use('/', require('./accept-language'));
 
 var path = require('path');
 

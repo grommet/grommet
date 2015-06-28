@@ -34,31 +34,20 @@ router.get('/', function (req, res) {
   res.redirect('/docs');
 });
 
-app.use('/', function(req, res, next) {
-  var acceptLanguageHeader = req.headers['accept-language'];
-
-  if (acceptLanguageHeader) {
-    var acceptedLanguages = acceptLanguageHeader.match(/[a-zA-z\-]{2,10}/g);
-    if (acceptedLanguages) {
-      res.cookie('languages', JSON.stringify(acceptedLanguages));
-    }
-  }
-
-  next();
-});
+app.use('/', require('./accept-language'));
 
 app.use('/tour/', function (req, res) {
   res.redirect('/medium-app');
 });
 
 app.use('/slackin', proxy('localhost:3000', {
-  forwardPath: function(req, res) {
+  forwardPath: function(req) {
     return require('url').parse(req.url).path;
   }
 }));
 
 app.use('/socket.io', proxy('localhost:3000', {
-  forwardPath: function(req, res) {
+  forwardPath: function(req) {
     return '/socket.io' + require('url').parse(req.url).path;
   }
 }));
