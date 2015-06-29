@@ -2,7 +2,7 @@
 
 var __path__ = '../../mocks/components/Activity-mock';
 
-var GrommetTestUtils = require('../../mocks/GrommetTestUtils');
+var GrommetTestUtils = require('../../../src/utils/test/GrommetTestUtils');
 var IndexQuery = require('../../../src/js/utils/IndexQuery');
 var expect = require('expect');
 

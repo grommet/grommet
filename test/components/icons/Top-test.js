@@ -1,8 +1,9 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-var __path__ = '../../src/js/components/icons/Top';
+var path = require('path');
+var __path__ = path.join(__dirname, '../../../src/js/components/icons/Top');
 
-var GrommetTestUtils = require('../../mocks/GrommetTestUtils');
+var GrommetTestUtils = require('../../../src/utils/test/GrommetTestUtils');
 
 describe('Grommet Top', function() {
   it('loads an top icon', function() {

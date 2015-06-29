@@ -66,4 +66,36 @@ module.exports = function(gulp, options) {
     }
   });
 
+  var selenium = require('selenium-standalone');
+
+  gulp.task('integration:clean', function () {
+    selenium.child.kill();
+  });
+
+  gulp.task('selenium', function(done) {
+
+    selenium.install({
+      logger: function() {}
+    }, function(err) {
+      if (err) {
+        return done(err);
+      }
+
+      selenium.start(function(err, child) {
+        if (err) {
+          return done(err);
+        }
+
+        if (process.env.TRAVIS) {
+          child.stderr.on('data', function(data) {
+            console.log(data.toString());
+          });
+        }
+
+        //saving the child to kill it later (oops)
+        selenium.child = child;
+        done();
+      });
+    });
+  });
 };

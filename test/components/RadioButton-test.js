@@ -1,8 +1,9 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-var __path__ = '../../src/js/components/RadioButton';
+var path = require('path');
+var __path__ = path.join(__dirname, '../../src/js/components/RadioButton');
 
-var GrommetTestUtils = require('../mocks/GrommetTestUtils');
+var GrommetTestUtils = require('../../src/utils/test/GrommetTestUtils');
 
 describe('Grommet RadioButton', function() {
   it('loads a basic RadioButton', function() {

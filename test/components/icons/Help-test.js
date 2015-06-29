@@ -1,8 +1,9 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-var __path__ = '../../src/js/components/icons/Help';
+var path = require('path');
+var __path__ = path.join(__dirname, '../../../src/js/components/icons/Help');
 
-var GrommetTestUtils = require('../../mocks/GrommetTestUtils');
+var GrommetTestUtils = require('../../../src/utils/test/GrommetTestUtils');
 
 describe('Grommet Help', function() {
   it('loads an help icon', function() {
