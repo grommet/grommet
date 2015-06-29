@@ -5,7 +5,7 @@ module.exports = function(markup) {
     return;
   }
 
-  var jsdom = require("jsdom").jsdom;
+  var jsdom = require("jsdom-no-contextify").jsdom;
   global.document = jsdom(markup || '');
   global.window = document.defaultView;
   global.navigator = {
