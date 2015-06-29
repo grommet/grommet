@@ -15,7 +15,7 @@ module.exports = function(gulp, options) {
     }));
   });
 
-  gulp.task('start:docs', function() {
+  gulp.task('start:docs', ['dist:docs'], function() {
     server.stop();
     return server.run(['./examples/server/server.js']);
   });
