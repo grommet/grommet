@@ -63,7 +63,7 @@ var opts = {
       loaders: [
         {
           test: /develop(\/|\\).*\.htm$|design(\/|\\)[^\/]*\.htm$|design(\/|\\).*\/.*\.htm$/,
-          loader: 'jsx-loader!imports?React=react,Router=react-router,Link=>Router.Link!html-jsx-loader'
+          loader: 'babel!imports?React=react,Router=react-router,Link=>Router.Link!html-jsx-loader'
         }
       ]
     }

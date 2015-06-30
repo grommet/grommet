@@ -34,7 +34,7 @@ var bowerWebpackConfig = {
     loaders: [
       {
         test: /\.js$/,
-        loader: 'jsx-loader'
+        loader: 'babel'
       },
       {
         test: /\.json$/,
