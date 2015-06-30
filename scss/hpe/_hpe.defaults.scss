@@ -1,6 +1,5 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-$brand-font-family: 'Metric', Arial, sans-serif;
 $brand-color: #00B388;
 $brand-color-lighter: desaturate(lighten($brand-color, 55%), 40%);
 $brand-neutral-colors: (#60798D, #617D78, #877B75);
@@ -47,7 +46,7 @@ $brand-graph-colors: (#FF8D6D, #877B75, #2AD2C9, #614767, #617D78);
 
 html,
 .brand-font {
-  font-family: $brand-font-family; 
+  font-family: 'Metric', Arial, sans-serif;
 }
 
 .large-number-font {
