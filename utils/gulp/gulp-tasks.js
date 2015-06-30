@@ -15,8 +15,7 @@ var webpackConfig = {
     loaders: [
       {
         test: /\.js$/,
-        loader: 'babel',
-        exclude: /(node_modules|bower_components|src\/lib)/
+        loader: 'jsx-loader'
       },
       {
         test: /\.json$/,
