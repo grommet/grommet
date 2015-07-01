@@ -3,6 +3,7 @@
 var React = require('react');
 
 var IntlMixin = require('../mixins/GrommetIntlMixin');
+var Locale = require('../utils/Locale');
 
 var App = React.createClass({
 
@@ -26,8 +27,14 @@ var App = React.createClass({
     if (this.props.inline) {
       classes.push("app--inline");
     }
+
     if (this.props.className) {
       classes.push(this.props.className);
+    }
+
+    var lang = Locale.getCurrentLocale();
+    if (this.props.lang) {
+      lang = this.props.lang;
     }
 
     //remove this when React 0.14 is released. This is required because context props are not being propagated to children.
@@ -39,8 +46,12 @@ var App = React.createClass({
       }
     }.bind(this));
 
+    if (!document.documentElement.getAttribute('lang')) {
+      document.documentElement.setAttribute('lang', lang);
+    }
+
     return (
-      <div className={classes.join(' ')}>
+      <div lang={lang} className={classes.join(' ')}>
         {children}
       </div>
     );
