@@ -1,5 +1,6 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
+$brand-font-family: 'HPSimplified', Arial, sans-serif;
 $brand-color: #0096D6;
 $brand-color-lighter: desaturate(lighten($brand-color, 50%), 20%);
 $brand-neutral-colors: (#545454, #767676, #989898);
@@ -19,11 +20,6 @@ $focus-border-color: #99d5ef;
 @font-face {
   font-family: "HPSimplified";
   src: url("~grommet/scss/hpinc/font/hps-me-w27-regular-woff.woff") format('woff');
-}
-
-html,
-.brand-font {
-  font-family: 'HPSimplified', Arial, sans-serif;
 }
 
 .control-icon {
