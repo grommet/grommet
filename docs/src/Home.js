@@ -50,7 +50,7 @@ var Home = React.createClass({
 
         <Section className="home__features" centered={true} full={true}
           colorIndex="neutral-2" texture={'url(img/home_features.png)'}>
-          <Headline>So little get’s you sooooooo much!</Headline>
+          <Headline>So little gets you sooooooo much!</Headline>
           <Headline small={true}>We’ve tried it all in enterprise and we think we’ve got a good foundation.</Headline>
           <Menu direction="center">
             <Link to="develop_architecture">
