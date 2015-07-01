@@ -19,24 +19,24 @@ $brand-graph-colors: (#FF8D6D, #877B75, #2AD2C9, #614767, #617D78);
 
 @font-face {
   font-family: "Metric";
-  src: url("~grommet/scss/hpe/font/MetricWeb-Regular.woff") format('woff');
+  src: url("http://hpefonts.s3.amazonaws.com/MetricWeb-Regular.woff") format('woff');
 }
 
 @font-face {
   font-family: "Metric";
-  src: url("~grommet/scss/hpe/font/MetricWeb-Bold.woff") format('woff');
+  src: url("http://hpefonts.s3.amazonaws.com/MetricWeb-Bold.woff") format('woff');
   font-weight: 700;
 }
 
 @font-face {
   font-family: "Metric";
-  src: url("~grommet/scss/hpe/font/MetricWeb-Semibold.woff") format('woff');
+  src: url("http://hpefonts.s3.amazonaws.com/MetricWeb-Semibold.woff") format('woff');
   font-weight: 600;
 }
 
 @font-face {
   font-family: "Metric";
-  src: url("~grommet/scss/hpe/font/MetricWeb-Light.woff") format('woff');
+  src: url("http://hpefonts.s3.amazonaws.com/MetricWeb-Light.woff") format('woff');
   font-weight: 100;
 }
 
