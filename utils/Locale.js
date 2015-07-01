@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 var merge = require('lodash/object/merge');
 var Cookies = require('./Cookies');
+var fallbackLocale = 'en-US';
 
 function normalizeLocale(locale) {
   var locales = locale.replace(/_/g, '-').split('-');
@@ -20,7 +21,7 @@ module.exports = {
       locale = window.navigator.languages ? window.navigator.languages[0] : (window.navigator.language || window.navigator.userLanguage);
     }
 
-    return normalizeLocale(locale);
+    return normalizeLocale(locale || fallbackLocale);
   },
 
   getLocaleData: function(appLocale) {
@@ -30,7 +31,7 @@ module.exports = {
       grommetMessages = require('../messages/' + locale);
     } catch (e) {
       console.warn(locale + ' not supported, fallback to English has been applied.');
-      locale = 'en-US';
+      locale = fallbackLocale;
       grommetMessages = require('../messages/en-US');
     }
 
