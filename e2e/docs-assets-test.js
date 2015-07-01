@@ -27,7 +27,7 @@ describe('Docs website e2e', function() {
 
   before(function(done) {
     GrommetE2EUtils.configureBrowser(browser, 'http://localhost:8000/docs/',
-     requestData, done);
+      requestData, done);
   });
 
   it('loads the title for the docs home page', function(done) {

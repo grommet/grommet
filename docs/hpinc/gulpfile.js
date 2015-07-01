@@ -47,7 +47,8 @@ var opts = {
       loaders: [
         {
           test: /develop(\/|\\).*\.htm$|design(\/|\\)[^\/]*\.htm$|design(\/|\\).*\/.*\.htm$/,
-          loader: 'babel!imports?React=react,Router=react-router,Link=>Router.Link!html-jsx-loader'
+          loader: 'babel!imports?React=react,Router=react-router,Link=>Router.Link!html-jsx-loader',
+          exclude: /(node_modules|bower_components)/
         }
       ]
     }
