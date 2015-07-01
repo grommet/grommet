@@ -148,7 +148,7 @@ Code Syntax
 How to Contribute to Grommet
 ----------------------------
 
-What the video below to learn how to contribute to Grommet. The Github
+Watch this [video](https://vimeo.com/129681048) to learn how to contribute to Grommet. The Github
 contribution workflow is somehow complex and we want to make sure we
 don't loose your contributions because of that.
 
