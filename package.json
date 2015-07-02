@@ -75,7 +75,7 @@
     "gulp-eslint": "^0.12.0",
     "gulp-minify-css": "^1.1.0",
     "gulp-mocha": "^2.0.1",
-    "gulp-express": "^0.3.5",
+    "gulp-live-server": "^0.0.21",
     "gulp-preprocess": "^1.2.0",
     "gulp-react": "^3.0.1",
     "gulp-rename": "^1.2.2",

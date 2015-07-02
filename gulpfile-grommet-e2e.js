@@ -1,5 +1,5 @@
 var chug = require('gulp-chug');
-var server = require('gulp-express');
+var gls = require('gulp-live-server');
 var runSequence = require('run-sequence');
 
 var GrommetTestUtils = require('./src/utils/test/GrommetE2EUtils');
@@ -15,9 +15,10 @@ module.exports = function(gulp, options) {
     }));
   });
 
+  var server = gls('./examples/server/server.js', {env: {SILENT_MODE: true}});
+
   gulp.task('start:docs', ['dist:docs'], function() {
-    server.stop();
-    return server.run(['./examples/server/server.js']);
+    server.start();
   });
 
   gulp.task('stop:docs', function() {
@@ -26,7 +27,7 @@ module.exports = function(gulp, options) {
 
   var onError = function() {
     server.stop();
-  }
+  };
 
   /**
   ** Windows e2e matrix

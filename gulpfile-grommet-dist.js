@@ -34,7 +34,8 @@ var bowerWebpackConfig = {
     loaders: [
       {
         test: /\.js$/,
-        loader: 'babel'
+        loader: 'babel',
+        exclude: /(node_modules|bower_components|src\/lib)/
       },
       {
         test: /\.json$/,
