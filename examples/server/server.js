@@ -26,7 +26,10 @@ app.use(compression());
 
 app.use(cookieParser());
 
-app.use(morgan('tiny'));
+if (!process.env.SILENT_MODE) {
+  app.use(morgan('tiny'));
+}
+
 
 app.use(bodyParser.json());
 
