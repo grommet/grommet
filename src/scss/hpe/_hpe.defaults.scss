@@ -17,32 +17,34 @@ $brand-text-decoration: underline solid $brand-color;
 $brand-grey-colors: (#333333, #3B3B3B, #434343, #666666);
 $brand-graph-colors: (#FF8D6D, #877B75, #2AD2C9, #614767, #617D78);
 
+$hpe-fonts-path: "http://hpefonts.s3.amazonaws.com";
+
 @font-face {
   font-family: "Metric";
-  src: url("http://hpefonts.s3.amazonaws.com/MetricWeb-Regular.woff") format('woff');
+  src: url("#{$hpe-fonts-path}/MetricWeb-Regular.woff") format('woff');
 }
 
 @font-face {
   font-family: "Metric";
-  src: url("http://hpefonts.s3.amazonaws.com/MetricWeb-Bold.woff") format('woff');
+  src: url("#{$hpe-fonts-path}/MetricWeb-Bold.woff") format('woff');
   font-weight: 700;
 }
 
 @font-face {
   font-family: "Metric";
-  src: url("http://hpefonts.s3.amazonaws.com/MetricWeb-Semibold.woff") format('woff');
+  src: url("#{$hpe-fonts-path}/MetricWeb-Semibold.woff") format('woff');
   font-weight: 600;
 }
 
 @font-face {
   font-family: "Metric";
-  src: url("http://hpefonts.s3.amazonaws.com/MetricWeb-Light.woff") format('woff');
+  src: url("#{$hpe-fonts-path}/MetricWeb-Light.woff") format('woff');
   font-weight: 100;
 }
 
 @font-face {
   font-family: "Simple";
-  src: url("~grommet/scss/hpe/font/SimRg.otf") format("opentype");
+  src: url("#{$hpe-fonts-path}/SimRg.otf") format("opentype");
 }
 
 .large-number-font {
