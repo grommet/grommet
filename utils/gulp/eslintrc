@@ -25,6 +25,9 @@ globals:
   afterEach: true
   before: true
   after: true
+  $: true
+  jQuery: true
+  React: true
 
 rules:
   # ERRORS

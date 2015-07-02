@@ -17,11 +17,9 @@ $brand-grey-colors: (#545454, #767676, #989898);
 $brand-graph-colors: (#0096D6, #C094bf, #99d5ef, #87898b, #b9b8bb);
 $focus-border-color: #99d5ef;
 
-$hpinc-fonts-path: "http://hpincfonts.s3.amazonaws.com";
-
 @font-face {
   font-family: "HPSimplified";
-  src: url("#{$hpinc-fonts-path}/hps-me-w27-regular-woff.woff") format('woff');
+  src: url("~grommet/scss/hpinc/font/hps-me-w27-regular-woff.woff") format('woff');
 }
 
 .control-icon {
