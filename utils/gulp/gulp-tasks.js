@@ -16,7 +16,11 @@ var webpackConfig = {
       {
         test: /\.js$/,
         loader: 'babel',
-        exclude: /(node_modules|bower_components|src\/lib)/
+        include: [
+          path.resolve(process.cwd(), "src"),
+          path.resolve(process.cwd(), "test"),
+          path.resolve(process.cwd(), "node_modules/grommet")
+        ]
       },
       {
         test: /\.json$/,
