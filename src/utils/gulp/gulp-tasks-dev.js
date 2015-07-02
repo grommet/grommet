@@ -41,6 +41,12 @@ module.exports = function(gulp, options, webpackConfig, dist) {
       });
     }
 
+    if (options.webpack.plugins) {
+      options.webpack.plugins.forEach(function(plugin) {
+        devWebpackConfig.plugins.push(plugin);
+      });
+    }
+
     devWebpackConfig.resolve.extensions = ['', '.js', '.json', '.htm', '.html', '.scss'];
 
     var devServerConfig = {

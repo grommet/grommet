@@ -61,6 +61,12 @@ module.exports = function(gulp, options, webpackConfig, dist) {
       });
     }
 
+    if (options.webpack.plugins) {
+      options.webpack.plugins.forEach(function(plugin) {
+        config.plugins.push(plugin);
+      });
+    }
+
     config.resolve.extensions = ['', '.js', '.json', '.htm', '.html', '.scss'];
 
     return gulp.src(options.mainJs)
