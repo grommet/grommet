@@ -38,10 +38,11 @@ var PeopleFinder = React.createClass({
 
   _onPeopleResponse: function (err, res) {
     if (err) {
-      this.setState({people: [], error: err});
-    } else if (res.ok) {
+      this.setState({people: [], error: err, changing: false});
+    } else if (res.ok && this.state.searchText) {
+      // don't keep result if we don't have search text anymore
       var result = res.body;
-      this.setState({people: result, error: null});
+      this.setState({people: result, error: null, changing: false});
     }
   },
 
@@ -65,9 +66,9 @@ var PeopleFinder = React.createClass({
   },
 
   _onSearchText: function (text) {
-    this.setState({initial: (! text), searchText: text}, this._pushState);
+    this.setState({initial: (! text), searchText: text, changing: true}, this._pushState);
     if (! text) {
-      this.setState({people: []});
+      this.setState({people: [], changing: false});
     } else {
       this._getPeople(text);
     }
@@ -115,6 +116,7 @@ var PeopleFinder = React.createClass({
 
     return {
       initial: (! searchText),
+      changing: false,
       searchText: searchText,
       people: [],
       uid: uid,
@@ -144,7 +146,7 @@ var PeopleFinder = React.createClass({
       );
     } else {
       contents = (
-        <People initial={this.state.initial}
+        <People initial={this.state.initial} changing={this.state.changing}
           searchText={this.state.searchText} onSearch={this._onSearchText}
           people={this.state.people} onSelect={this._onSelectPerson} />
       );

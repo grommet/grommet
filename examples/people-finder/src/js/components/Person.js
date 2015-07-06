@@ -91,17 +91,22 @@ var Person = React.createClass({
   },
 
   render: function() {
-    var title = this.getGrommetIntlMessage('People Finder');
+    var appTitle = this.getGrommetIntlMessage('People Finder');
     var person = this.props.person;
 
     var view;
     var viewLabel;
     if ('about' === this.state.view) {
       view = <About person={person}/>;
-      viewLabel = 'About ' + person.givenName;
+      viewLabel = 'About';
     } else if ('organization' === this.state.view) {
       view = <Organization person={person} onSelect={this.props.onSelect} />;
-      viewLabel = person.givenName + "'s Organization";
+      viewLabel = 'Organization';
+    }
+
+    var personTitle;
+    if (person.title) {
+      personTitle = person.title.replace(/&amp;/g, '&');
     }
 
     return (
@@ -111,15 +116,15 @@ var Person = React.createClass({
             <Header large={true} pad="medium">
               <Title onClick={this.props.onClose}>
                 <Logo />
-                {title}
+                {appTitle}
               </Title>
             </Header>
             <Section pad="medium">
               <h1>{person.cn}</h1>
               <div>
-                <img src={person.hpPictureURI} alt="picture" />
+                <img src={person.hpPictureURI || 'img/no-picture.png'} alt="picture" />
               </div>
-              <p>{person.title}</p>
+              <p>{personTitle}</p>
               <h2><a href={"mailto:" + person.uid}>{person.uid}</a></h2>
               <h3>{person.telephoneNumber}</h3>
             </Section>

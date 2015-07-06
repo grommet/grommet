@@ -28,6 +28,7 @@ var ListDoc = React.createClass({
     var schema = [
       "{",
       "  attribute: name,",
+      "  default:   string|node",
       "  image:     true|false,",
       "  label:     image label,",
       "  primary:   true|false,",

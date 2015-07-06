@@ -17,6 +17,7 @@ var List = React.createClass({
     onSelect: React.PropTypes.func,
     schema: React.PropTypes.arrayOf(React.PropTypes.shape({
       attribute: React.PropTypes.string,
+      default: React.PropTypes.node,
       image: React.PropTypes.bool,
       label: React.PropTypes.string,
       primary: React.PropTypes.bool,
@@ -64,16 +65,17 @@ var List = React.createClass({
 
   _renderValue: function (item, scheme) {
     var result;
+    var value = item[scheme.attribute] || scheme.default;
     if (scheme.image) {
-      if (typeof item[scheme.attribute] === 'string') {
-        result = <img src={item[scheme.attribute]} alt={scheme.label || 'image'} />;
+      if (typeof value === 'string') {
+        result = <img src={value} alt={scheme.label || 'image'} />;
       } else {
-        result = item[scheme.attribute];
+        result = value;
       }
     } else if (scheme.timestamp) {
-      result = this.getGrommetFormattedDate(item[scheme.attribute]);
+      result = this.getGrommetFormattedDate(value);
     } else {
-      result = item[scheme.attribute];
+      result = value;
     }
     return result;
   },
