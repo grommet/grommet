@@ -1,19 +1,19 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
+header.header {
+  @include inuit-font-size($header-font-size, inherit);
+
+  @include media-query(palm) {
+    height: $small-header-height;
+  }
+
+  @include media-query(lap-and-up) {
+    height: $header-height;
+  }
+}
+
 .header {
   width: 100%;
-
-  &header {
-    @include inuit-font-size($header-font-size, inherit);
-
-    @include media-query(palm) {
-      height: $small-header-height;
-    }
-
-    @include media-query(lap-and-up) {
-      height: $header-height;
-    }
-  }
 
   &__container {
 
