@@ -105,6 +105,7 @@ var Search = React.createClass({
     event.nativeEvent.stopImmediatePropagation();
   },
 
+  /*
   _layout: function () {
     if (window.innerWidth < 600) {
       this.setState({inline: false});
@@ -118,6 +119,7 @@ var Search = React.createClass({
     clearTimeout(this._resizeTimer);
     this._resizeTimer = setTimeout(this._layout, 50);
   },
+  */
 
   getInitialState: function () {
     return {
@@ -129,10 +131,12 @@ var Search = React.createClass({
     };
   },
 
+  /*
   componentDidMount: function () {
     window.addEventListener('resize', this._onResize);
     this._layout();
   },
+  */
 
   componentDidUpdate: function (prevProps, prevState) {
 
@@ -182,7 +186,7 @@ var Search = React.createClass({
 
   componentWillUnmount: function () {
     document.removeEventListener('click', this._onRemoveDrop);
-    window.removeEventListener('resize', this._onResize);
+    //window.removeEventListener('resize', this._onResize);
   },
 
   focus: function () {
