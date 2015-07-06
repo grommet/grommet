@@ -54,7 +54,7 @@ var PeopleFinder = React.createClass({
         // use as a raw filter
         filter = searchText;
       } else {
-        filter = '(cn=*' + searchText + '*)';
+        filter = '(|(cn=*' + searchText + '*)(uid=*' + searchText + '*))';
       }
       var params = merge({}, LDAP_BASE_PARAMS, {
         filter: filter,
