@@ -8,6 +8,7 @@ var Split = React.createClass({
 
   propTypes: {
     flex: React.PropTypes.oneOf(['left', 'right', 'both']),
+    separator: React.PropTypes.bool,
     stack: React.PropTypes.oneOf(['left', 'right'])
   },
 
@@ -56,6 +57,9 @@ var Split = React.createClass({
     var classes = [CLASS_ROOT];
     if (this.props.flex) {
       classes.push(CLASS_ROOT + "--flex-" + this.props.flex);
+    }
+    if (this.props.separator) {
+      classes.push(CLASS_ROOT + "--separator");
     }
     if (this.props.className) {
       classes.push(this.props.className);

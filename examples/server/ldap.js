@@ -27,8 +27,10 @@ router.get("/", function(req, res) {
     var entries = [];
     if (ldapErr) {
       console.log('client error:', ldapErr);
-      client.unbind();
-      client = null;
+      if (client) {
+        client.unbind();
+        client = null;
+      }
     } else {
       ldapRes.on('searchEntry', function (entry) {
         //console.log('entry: ', JSON.stringify(entry.object));

@@ -14,8 +14,10 @@ var Header = React.createClass({
     fixed: React.PropTypes.bool,
     float: React.PropTypes.bool,
     large: React.PropTypes.bool,
+    separator: React.PropTypes.oneOf(['top', 'bottom']),
     small: React.PropTypes.bool,
-    splash: React.PropTypes.bool
+    splash: React.PropTypes.bool,
+    tag: React.PropTypes.string
   }, Box.propTypes),
 
   getDefaultProps: function () {
@@ -23,7 +25,8 @@ var Header = React.createClass({
       pad: 'none',
       direction: 'row',
       align: 'center',
-      responsive: false
+      responsive: false,
+      tag: 'header'
     };
   },
 
@@ -83,6 +86,9 @@ var Header = React.createClass({
     if (this.props.splash) {
       classes.push(CLASS_ROOT + "--splash");
     }
+    if (this.props.separator) {
+      classes.push(CLASS_ROOT + "--separator-" + this.props.separator);
+    }
     if (this.props.className) {
       classes.push(this.props.className);
     }
@@ -92,7 +98,7 @@ var Header = React.createClass({
         <div className={containerClasses.join(' ')}>
           <div ref="mirror" className={CLASS_ROOT + "__mirror"}></div>
           <div className={CLASS_ROOT + "__wrapper"}>
-            <Box ref="content" tag="header" {...other} className={classes.join(' ')}>
+            <Box ref="content" tag={this.props.header} {...other} className={classes.join(' ')}>
               {this.props.children}
             </Box>
           </div>
@@ -100,7 +106,7 @@ var Header = React.createClass({
       );
     } else {
       return (
-        <Box tag="header" {...other} className={classes.join(' ')}
+        <Box tag={this.props.header} {...other} className={classes.join(' ')}
           containerClassName={containerClasses.join(' ')}>
           {this.props.children}
         </Box>

@@ -28,5 +28,15 @@
         flex-grow: 0;
       }
     }
+
+    &--separator {
+      > * {
+        border-right: 1px solid $strong-border-color;
+
+        &:last-child {
+          border-right: none;
+        }
+      }
+    }
   }
 }

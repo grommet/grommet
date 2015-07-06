@@ -4,6 +4,7 @@ var React = require('react');
 var merge = require('lodash/object/merge');
 var Article = require('grommet/components/Article');
 var List = require('grommet/components/List');
+var Header = require('grommet/components/Header');
 var Rest = require('grommet/utils/Rest');
 var Spinning = require('grommet/components/icons/Spinning');
 
@@ -96,14 +97,16 @@ var Organization = React.createClass({
     var team;
     if (this.state.team.length > 0) {
       team = [
-        <h4 key="label">{person.givenName + "'s Team"}</h4>,
+        <Header key="label" tag="h4" pad="medium" separator="top">
+          {person.givenName + "'s Team"}
+        </Header>,
         <List key="team" large={true} data={this.state.team} schema={PEOPLE_SCHEMA}
           onSelect={this.props.onSelect} />
       ];
     }
 
     return (
-      <Article pad="medium">
+      <Article>
         <List large={true} data={people} schema={PEOPLE_SCHEMA}
           onSelect={this.props.onSelect} />
         {team}
