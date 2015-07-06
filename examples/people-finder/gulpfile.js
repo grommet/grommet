@@ -21,8 +21,8 @@ var opts = {
   mainJs: 'examples/people-finder/src/js/index.js',
   mainScss: 'examples/people-finder/src/scss/index.scss',
   sync: {
-    hostname: 'grommet.io',
-    username: 'grommet',
+    hostname: 'grommet.usa.hp.com',
+    username: 'ligo',
     remoteDestination: '/var/www/html/examples/people-finder/dist'
   },
   webpack: {
