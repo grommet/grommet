@@ -8,11 +8,12 @@ var Search = require('grommet/components/Search');
 var Section = require('grommet/components/Section');
 var Box = require('grommet/components/Box');
 var List = require('grommet/components/List');
+var Spinning = require('grommet/components/icons/Spinning');
 var Logo = require('./Logo');
 
 var PEOPLE_SCHEMA = [
   {attribute: 'uid', uid: true},
-  {attribute: 'hpPictureThumbnailURI', image: true},
+  {attribute: 'hpPictureThumbnailURI', image: true, default: 'img/no-picture.png'},
   {attribute: 'cn', primary: true},
   {attribute: 'hpBusinessUnit', secondary: true}
 ];
@@ -20,6 +21,7 @@ var PEOPLE_SCHEMA = [
 var People = React.createClass({
 
   propTypes: {
+    changing: React.PropTypes.bool,
     initial: React.PropTypes.bool,
     onSearch: React.PropTypes.func.isRequired,
     onSelect: React.PropTypes.func.isRequired,
@@ -38,17 +40,23 @@ var People = React.createClass({
     var texture;
     var colorIndex = "neutral-1";
     var logo;
+
     if (this.props.initial) {
       texture = "url(img/people-finder-background.png)";
       colorIndex = "neutral-1-a";
       logo = <img src="img/hpesm_pri_grn_rev_rgb.svg" alt="logo" className="logo" />;
     }
 
+    var data = this.props.people;
+    if (this.props.changing) {
+      data = [{uid: 'spinner', hpPictureThumbnailURI: <Spinning />}];
+    }
+
     return (
       <Section texture={texture} full={true} pad="none">
         <Header key="header" large={true} pad="medium" float={this.props.initial}
-          colorIndex={colorIndex} splash={this.props.initial}>
-          <Box direction="row" align="center" className="flex-grow-1">
+          colorIndex={colorIndex} splash={this.props.initial} responsive={false}>
+          <Box direction="row" align="center" className="flex-grow-1" responsive={false}>
             <Title>
               <Logo />
               {title}
@@ -58,7 +66,7 @@ var People = React.createClass({
               onChange={this.props.onSearch} />
           </Box>
         </Header>
-        <List key="results" large={true} data={this.props.people}
+        <List key="results" large={true} data={data}
           schema={PEOPLE_SCHEMA} onSelect={this.props.onSelect} />
         {logo}
       </Section>
