@@ -3,7 +3,6 @@
 var path = require('path');
 var __path__ = path.join(__dirname, '../../src/js/components/Footer');
 
-var domEvents = require('../mocks/DOMEvents');
 var GrommetTestUtils = require('../../src/utils/test/GrommetTestUtils');
 
 describe('Grommet Footer', function() {
