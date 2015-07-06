@@ -15,7 +15,7 @@ var LDAP_BASE_PARAMS = {
 
 var PEOPLE_SCHEMA = [
   {attribute: 'uid', uid: true},
-  {attribute: 'hpPictureThumbnailURI', image: true},
+  {attribute: 'hpPictureThumbnailURI', image: true, default: 'img/no-picture.png'},
   {attribute: 'cn', primary: true},
   {attribute: 'hpBusinessUnit', secondary: true}
 ];
