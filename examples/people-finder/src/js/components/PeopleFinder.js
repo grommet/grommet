@@ -49,7 +49,6 @@ var PeopleFinder = React.createClass({
     // debounce
     clearTimeout(this._searchTimer);
     this._searchTimer = setTimeout(function () {
-      console.log('!!! PeopleFinder _getPeople', searchText);
       var filter;
       if (searchText[0] === '(') {
         // use as a raw filter
