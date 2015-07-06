@@ -12,7 +12,6 @@ var Grommet = {
   Form: require('./components/Form'),
   FormField: require('./components/FormField'),
   Header: require('./components/Header'),
-  Heading: require('./components/Heading'),
   Headline: require('./components/Headline'),
   Label: require('./components/Label'),
   List: require('./components/List'),
