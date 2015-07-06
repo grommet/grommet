@@ -82,7 +82,7 @@ var BoxDoc = React.createClass({
               <div>second</div>
             </Box>
           </div>
-          <pre><code className="html">{"<Box direction=\"row\" align=\"center\" colorIndex=\"neutral-1\" justify=\"between\" reverse={true} tag=\"aside\"> ..."}</code></pre>
+          <pre><code className="html">{"<Box direction=\"row\" align=\"center\" colorIndex=\"neutral-1\"\n  justify=\"between\" reverse={true} tag=\"aside\"> ..."}</code></pre>
 
         </section>
 
