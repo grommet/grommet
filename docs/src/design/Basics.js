@@ -75,7 +75,7 @@ var Basics = React.createClass({
     });
 
     return (
-  <div className="document">
+  <article>
     <header>
       <h1>Basics</h1>
     </header>
@@ -353,7 +353,7 @@ var Basics = React.createClass({
     </div>
 
   </section>
-    </div>
+    </article>
     );
   }
 });

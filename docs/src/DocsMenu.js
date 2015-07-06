@@ -8,7 +8,7 @@ var DocsMenu = React.createClass({
 
   propTypes: {
     contents: React.PropTypes.arrayOf(React.PropTypes.object),
-    direction: React.PropTypes.oneOf(['down', 'right']),
+    direction: React.PropTypes.oneOf(['column', 'row']),
     onClick: React.PropTypes.func
   },
 
@@ -43,7 +43,7 @@ var DocsMenu = React.createClass({
 
       if (!context || subItems) {
         return (
-          <Menu key={content.label} direction="down" align="left">
+          <Menu key={content.label} direction="column" align="start">
             {item}
             {subItems}
           </Menu>
@@ -58,8 +58,9 @@ var DocsMenu = React.createClass({
 
   render: function() {
     var menuItems = this._renderMenuItems(this.props.contents, this.context.router, null);
+    var pad = ('row' === this.props.direction ? 'none' : {horizontal: 'medium'});
     return (
-      <Menu direction={this.props.direction} align="top" flush={false}>
+      <Menu direction={this.props.direction} align="start" justify="between" pad={pad}>
         {menuItems}
       </Menu>
     );

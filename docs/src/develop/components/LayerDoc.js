@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var GrommetDocument = require('grommet/components/Document');
+var Article = require('grommet/components/Article');
 var Layer = require('grommet/components/Layer');
 var Header = require('grommet/components/Header');
 var Form = require('grommet/components/Form');
@@ -68,7 +68,7 @@ var LayerDoc = React.createClass({
     }
 
     return (
-      <GrommetDocument flush={false}>
+      <Article>
         <header>
           <h1>Layer</h1>
           <p>A modal overlay, often containing a <a>Form</a>.</p>
@@ -126,7 +126,7 @@ var LayerDoc = React.createClass({
 
         {activeLayer}
 
-      </GrommetDocument>
+      </Article>
     );
   }
 });

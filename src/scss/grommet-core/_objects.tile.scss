@@ -3,7 +3,6 @@
 .tiles {
   padding: halve($inuit-base-spacing-unit);
 
-  //@include media-query(lap-and-up) {
   display: -webkit-flex;
   display: flex;
   -webkit-flex-wrap: wrap;
@@ -19,7 +18,6 @@
       flex-basis: 100%;
     }
   }
-  //}
 
   &--moreable {
     position: relative;
@@ -35,7 +33,6 @@
   }
 
   &--flush {
-    //@include media-query(lap-and-up) {
     margin: - $inuit-base-spacing-unit;
 
     > .tile {
@@ -43,32 +40,18 @@
       flex: 0 0 round($inuit-base-spacing-unit * 7);
       flex-grow: 1;
     }
-    //}
   }
 
   &--small {
-    //@include media-query(lap-and-up) {
     > .tile {
       -webkit-flex-basis: round($inuit-base-spacing-unit * 4);
       flex-basis: round($inuit-base-spacing-unit * 4);
     }
-    //}
   }
 
   &--fill {
-    //@include media-query(lap-and-up) {
-    //-webkit-align-items: stretch;
-    //align-items: stretch;
-    //-webkit-align-content: stretch;
-    //align-content: stretch;
     -webkit-justify-content: space-around;
     justify-content: space-around;
-
-    //> .tile {
-      //-webkit-flex-grow: 1;
-      //flex-grow: 1;
-    //}
-    //}
   }
 }
 
@@ -76,28 +59,16 @@
   padding: halve($inuit-base-spacing-unit);
   overflow: hidden;
 
-  @include media-query(palm) {
-    margin: 0px;
-    border-radius: 0px;
-    text-align: center;
-  }
-
-  @include media-query(lap-and-up) {
-    -webkit-flex: 0 0 round($inuit-base-spacing-unit * 8);
-    flex: 0 0 round($inuit-base-spacing-unit * 8);
-    flex-grow: 1;
-  }
-
   .status-icon {
     margin-right: quarter($inuit-base-spacing-unit);
   }
 
-  > .header {
-    margin-bottom: $inuit-base-spacing-unit;
+  &.box--align-center {
+    text-align: center;
+  }
 
-    .header__content {
-      border-bottom: none;
-    }
+  > .chart {
+    width: 100%;
   }
 
   &--selectable {

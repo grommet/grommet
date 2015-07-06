@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var GrommetDocument = require('grommet/components/Document');
+var Article = require('grommet/components/Article');
 var GrommetMap = require('grommet/components/Map');
 
 var MapDoc = React.createClass({
@@ -36,7 +36,7 @@ var MapDoc = React.createClass({
     };
 
     return (
-      <GrommetDocument flush={false}>
+      <Article>
         <header>
           <h1>Map</h1>
           <p>Shows a linear meter graphic.</p>
@@ -64,7 +64,7 @@ var MapDoc = React.createClass({
 
         </section>
 
-      </GrommetDocument>
+      </Article>
     );
   }
 });

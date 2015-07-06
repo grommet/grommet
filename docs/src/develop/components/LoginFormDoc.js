@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var GrommetDocument = require('grommet/components/Document');
+var Article = require('grommet/components/Article');
 var LoginForm = require('grommet/components/LoginForm');
 var Logo = require('../../img/Logo');
 
@@ -10,7 +10,7 @@ var LoginFormDoc = React.createClass({
   render: function() {
     var inline = "<LoginForm onSubmit={...} />";
     return (
-      <GrommetDocument flush={false}>
+      <Article>
         <header>
           <h1>LoginForm</h1>
           <p>The form used to log in.</p>
@@ -54,7 +54,7 @@ var LoginFormDoc = React.createClass({
 
         </section>
 
-      </GrommetDocument>
+      </Article>
     );
   }
 });

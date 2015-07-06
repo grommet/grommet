@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var GrommetDocument = require('grommet/components/Document');
+var Article = require('grommet/components/Article');
 var RadioButton = require('grommet/components/RadioButton');
 
 var RadioButtonDoc = React.createClass({
@@ -19,7 +19,7 @@ var RadioButtonDoc = React.createClass({
       "<RadioButton id=\"item2\" label=\"Item 1\">"
     ].join("\n");
     return (
-      <GrommetDocument flush={false}>
+      <Article>
         <header>
           <h1>RadioButton</h1>
           <p>A radio button in a web form. We have a separate component from the
@@ -62,7 +62,7 @@ var RadioButtonDoc = React.createClass({
 
         </section>
 
-      </GrommetDocument>
+      </Article>
     );
   }
 });

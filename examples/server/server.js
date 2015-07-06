@@ -9,8 +9,10 @@ var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var docs = require('./docs');
 var rest = require('./rest');
+var ldap = require('./ldap');
 var mediumApp = require('./medium-app');
 var mediumAppDev = require('./medium-app-dev');
+var peopleFinder = require('./people-finder');
 var ctoAppTuner = require('./cto-app-tuner');
 var todoAddModular = require('./todo-app-modular');
 var path = require('path');
@@ -94,6 +96,8 @@ app.
   use('/rest', rest.router).
   use('/medium-app', mediumApp).
   use('/medium-app-dev', mediumAppDev).
+  use('/ldap', ldap).
+  use('/people-finder', peopleFinder).
   use('/cto-app-tuner', ctoAppTuner).
   use('/todo-app-modular', todoAddModular).
   use('/assets', express.static(path.join(__dirname, '/../../docs/dist/assets'))).

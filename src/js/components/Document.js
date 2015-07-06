@@ -10,7 +10,6 @@ var SCROLL_STEPS = 25;
 var GrommetDocument = React.createClass({
 
   propTypes: {
-    colorIndex: React.PropTypes.string,
     flush: React.PropTypes.bool,
     full: React.PropTypes.bool
   },
@@ -120,6 +119,7 @@ var GrommetDocument = React.createClass({
   },
 
   componentDidMount: function () {
+    console.warn('Warning: Grommet Document is deprecated. It has been superceded by Grommet Article.');
     if (this.props.full) {
       this._markInactive();
       var doc = this.refs.document.getDOMNode();
@@ -153,9 +153,6 @@ var GrommetDocument = React.createClass({
     }
     if (this.props.full) {
       classes.push(CLASS_ROOT + "--full");
-    }
-    if (this.props.colorIndex) {
-      classes.push("header-color-index-" + this.props.colorIndex);
     }
 
     return (

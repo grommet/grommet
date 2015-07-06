@@ -1,0 +1,143 @@
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+
+.box {
+  display: -webkit-flex;
+  display: flex;
+
+  &__container {
+    padding-left: $inuit-base-spacing-unit;
+    padding-right: $inuit-base-spacing-unit;
+
+    &--full {
+      width: 100vw;
+    }
+
+    &--full-horizontal {
+      width: 100vw;
+    }
+
+    .app--centered & > .box {
+      width: 100%;
+      max-width: $center-column-width;
+      margin-left: auto;
+      margin-right: auto;
+
+      @include media-query(palm) {
+        padding-left: 0px;
+        padding-right: 0px;
+      }
+    }
+  }
+
+  @include pad();
+
+  &--full {
+    width: 100vw;
+    min-height: 100vh;
+  }
+
+  &--full-horizontal {
+    width: 100vw;
+  }
+
+  &--full-vertical {
+    min-height: 100vh;
+  }
+
+  &--direction-row {
+    -webkit-flex-direction: row;
+    flex-direction: row;
+
+    &.box--reverse {
+      -webkit-flex-direction: row-reverse;
+      flex-direction: row-reverse;
+    }
+
+    @include media-query(palm) {
+      &.box--responsive {
+        -webkit-flex-direction: column;
+        flex-direction: column;
+
+        &.box--reverse {
+          -webkit-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+        }
+      }
+    }
+  }
+
+  &--direction-column {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+
+    &.box--reverse {
+      -webkit-flex-direction: column-reverse;
+      flex-direction: column-reverse;
+    }
+
+    > .header.box--direction-row,
+    > .footer.box--direction-row,
+    > .header__container--fixed {
+      -webkit-flex: 0 0 auto;
+      flex: 0 0 auto;
+    }
+  }
+
+  &--justify-start {
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+  }
+
+  &--justify-center {
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
+
+  &--justify-between {
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+  }
+
+  &--justify-end {
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+  }
+
+  &--align-start {
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+  }
+
+  &--align-center {
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  &--align-end {
+    -webkit-align-items: flex-end;
+    align-items: flex-end;
+  }
+
+  // temporary flex grow capability
+  > .flex-grow-1 {
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+  }
+
+  // deprecated options
+
+  &--direction-down,
+  &--direction-up {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+
+  &--direction-left {
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+  }
+
+  &--flush {
+    padding: 0px;
+  }
+}

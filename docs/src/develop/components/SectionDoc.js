@@ -1,5 +1,6 @@
 var React = require('react');
-var GrommetDocument = require('grommet/components/Document');
+var Link = require('react-router').Link;
+var Article = require('grommet/components/Article');
 var Section = require('grommet/components/Section');
 var Menu = require('grommet/components/Menu');
 
@@ -11,7 +12,7 @@ var inline =
 var SectionDoc = React.createClass({
   render: function() {
     return (
-      <GrommetDocument flush={false}>
+      <Article>
         <header>
           <h1>Section</h1>
           <p>Responsively grouping related contents inside a page.</p>
@@ -21,17 +22,8 @@ var SectionDoc = React.createClass({
         <section>
           <h2>Options</h2>
           <dl>
-            <dt><code>compact  true|false</code></dt>
-            <dd>Whether to have a reducted padding for the given section. Default is false.</dd>
-             <dt><code>colorIndex  {"{n}"}</code></dt>
-            <dd>Optional attribute which defines the color index to use for the section background.</dd>
-            <dt><code>direction  right|left|down|up</code></dt>
-            <dd>Which direction the contents should be laid out in. Default is down.</dd>
-            <dt><code>centered  true|false</code></dt>
-            <dd>Whether to centralize or not the content inside the section. Default is false.</dd>
-            <dt><code>texture  true|false</code></dt>
-            <dd>Optional attribute which applies a texture to the section background.</dd>
           </dl>
+          <p>Options for <Link to="develop_box">Box</Link> area also available.</p>
         </section>
 
         <section>
@@ -44,9 +36,9 @@ var SectionDoc = React.createClass({
                 <span>Link 1</span>
                 <span>Link 2</span>
               </Menu>
-              <GrommetDocument>
+              <Article>
                 <h2>Sample Content</h2>
-              </GrommetDocument>
+              </Article>
             </Section>
           </div>
           <pre><code className="html">
@@ -54,7 +46,7 @@ var SectionDoc = React.createClass({
           </code></pre>
         </section>
 
-      </GrommetDocument>
+      </Article>
     );
   }
 });

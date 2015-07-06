@@ -15,15 +15,17 @@ var DocsHeader = React.createClass({
 
   render: function() {
     return (
-      <Header primary={true} fixed={false}
-        float={this.props.float} large={true} flush={false}>
-        <Title>
+      <Header fixed={false} float={this.props.float} large={true}
+        appCentered={true} justify="between">
+        <Title responsive={false}>
           <Link to="docs">
             <GrommetLogo small={true} />
+          </Link>
+          <Link to="docs">
             Grommet
           </Link>
         </Title>
-        <Menu direction="left">
+        <Menu direction="row" responsive={false}>
           <Link to="design">Design</Link>
           <Link to="develop">Develop</Link>
         </Menu>

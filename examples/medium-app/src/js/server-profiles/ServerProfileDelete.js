@@ -89,8 +89,8 @@ var ServerProfileDelete = React.createClass({
     }
 
     return (
-      <Form flush={false}>
-        <Footer flush={false}>
+      <Form>
+        <Footer>
           <span></span>
           <Menu direction="left">
             {actions}

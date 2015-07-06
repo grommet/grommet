@@ -1,5 +1,5 @@
 var React = require('react');
-var GrommetDocument = require('grommet/components/Document');
+var Article = require('grommet/components/Article');
 var Title = require('grommet/components/Title');
 
 var inline =
@@ -10,7 +10,7 @@ var inline =
 var TitleDoc = React.createClass({
   render: function() {
     return (
-      <GrommetDocument flush={false}>
+      <Article>
         <header>
           <h1>Title</h1>
           <p>Title component usually rendered inside the Header.</p>
@@ -37,7 +37,7 @@ var TitleDoc = React.createClass({
           </code></pre>
         </section>
 
-      </GrommetDocument>
+      </Article>
     );
   }
 });

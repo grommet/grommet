@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var GrommetDocument = require('grommet/components/Document');
+var Article = require('grommet/components/Article');
 var FullForm = require('./samples/FullForm');
 var AddUserForm = require('./samples/AddUserForm');
 var ConfirmationForm = require('./samples/ConfirmationForm');
@@ -30,7 +30,7 @@ var FormDoc = React.createClass({
       "  <Footer>...</Footer>",
       "</Form>"].join("\n");
     return (
-      <GrommetDocument flush={false}>
+      <Article>
         <header>
           <h1>Form</h1>
           <p>A web form.</p>
@@ -76,7 +76,7 @@ var FormDoc = React.createClass({
 
         </section>
 
-      </GrommetDocument>
+      </Article>
     );
   }
 });

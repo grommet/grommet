@@ -1,27 +1,29 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
+var merge = require('lodash/object/merge');
+var pick = require('lodash/object/pick');
+var keys = require('lodash/object/keys');
+var Box = require('./Box');
 
 var CLASS_ROOT = "header";
 
 var Header = React.createClass({
 
-  propTypes: {
-    colorIndex: React.PropTypes.string,
+  propTypes: merge({
     fixed: React.PropTypes.bool,
     float: React.PropTypes.bool,
-    flush: React.PropTypes.bool,
     large: React.PropTypes.bool,
-    primary: React.PropTypes.bool,
-    small: React.PropTypes.bool
-  },
+    small: React.PropTypes.bool,
+    splash: React.PropTypes.bool
+  }, Box.propTypes),
 
   getDefaultProps: function () {
     return {
-      flush: true,
-      large: false,
-      primary: false,
-      small: false
+      pad: 'none',
+      direction: 'row',
+      align: 'center',
+      responsive: false
     };
   },
 
@@ -63,17 +65,14 @@ var Header = React.createClass({
 
   render: function() {
     var classes = [CLASS_ROOT];
-    if (this.props.primary) {
-      classes.push(CLASS_ROOT + "--primary");
-    }
+    var containerClasses = [CLASS_ROOT + "__container"];
+    var other = pick(this.props, keys(Box.propTypes));
     if (this.props.fixed) {
-      classes.push(CLASS_ROOT + "--fixed");
+      containerClasses.push(CLASS_ROOT + "__container--fixed");
     }
     if (this.props.float) {
       classes.push(CLASS_ROOT + "--float");
-    }
-    if (this.props.flush) {
-      classes.push(CLASS_ROOT + "--flush");
+      containerClasses.push(CLASS_ROOT + "__container--float");
     }
     if (this.props.large) {
       classes.push(CLASS_ROOT + "--large");
@@ -81,40 +80,32 @@ var Header = React.createClass({
     if (this.props.small) {
       classes.push(CLASS_ROOT + "--small");
     }
+    if (this.props.splash) {
+      classes.push(CLASS_ROOT + "--splash");
+    }
     if (this.props.className) {
       classes.push(this.props.className);
     }
 
-    var mirror = null;
     if (this.props.fixed) {
-      mirror = <div ref="mirror" className={CLASS_ROOT + "__mirror"}></div>;
-    }
-
-    var content = (
-      <div ref="content" className={CLASS_ROOT + "__content"}>
-        {this.props.children}
-      </div>
-    );
-    if (this.props.colorIndex || this.props.fixed) {
-      var wrapperClasses = [CLASS_ROOT + "__wrapper"];
-      if (this.props.colorIndex) {
-        wrapperClasses.push("background-color-index-" +
-          this.props.colorIndex);
-      }
-
-      content = (
-        <div className={wrapperClasses.join(' ')}>
-          {content}
+      return (
+        <div className={containerClasses.join(' ')}>
+          <div ref="mirror" className={CLASS_ROOT + "__mirror"}></div>
+          <div className={CLASS_ROOT + "__wrapper"}>
+            <Box ref="content" tag="header" {...other} className={classes.join(' ')}>
+              {this.props.children}
+            </Box>
+          </div>
         </div>
       );
+    } else {
+      return (
+        <Box tag="header" {...other} className={classes.join(' ')}
+          containerClassName={containerClasses.join(' ')}>
+          {this.props.children}
+        </Box>
+      );
     }
-
-    return (
-      <header className={classes.join(' ')}>
-        {mirror}
-        {content}
-      </header>
-    );
   }
 
 });

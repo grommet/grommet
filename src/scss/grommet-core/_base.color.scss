@@ -15,8 +15,10 @@ $secondary-background-color: #f5f5f5;
 $hover-background-color: #eee;
 $hover-text-color: #000;
 $colored-active-background-color: rgba(0, 0, 0, 0.2);
-$selected-background-color: $brand-color !default;
-$selected-text-color: $colored-text-color !default;
+$selected-background-color: $brand-color-lighter !default;
+$selected-text-color: $text-color !default;
+$selected-primary-background-color: $brand-color !default;
+$selected-primary-text-color: $colored-text-color !default;
 
 $border-color: #ccc;
 $strong-border-color: #000;
@@ -56,6 +58,8 @@ $layer-overlay-background-color: rgba(128, 128, 128, 0.6); ///rgba(255, 255, 255
 $layer-background-color: #fff !default; // rgba($background-color, 0.95); ///inherit; //rgba(255, 255, 255, 0.95);
 $layer-border: none !default; // 1px solid $brand-color;
 $layer-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3) !default;
+$drop-border: none !default; // 1px solid $brand-color;
+$drop-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3) !default;
 $form-field-background-color: #fff !default;
 $drop-background-color: rgba(255, 255, 255, 0.9);
 $header-background-color: rgba(255, 255, 255, 0.9);

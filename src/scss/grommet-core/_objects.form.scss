@@ -4,8 +4,11 @@
   position: relative;
 
   @include media-query(lap-and-up) {
-    max-width: $form-width;
+    width: $form-width;
+    max-width: 100%;
   }
+
+  @include pad();
 
   > .header .header__wrapper { // TODO: clean up
     background-color: inherit;
@@ -16,13 +19,27 @@
     margin: 0px;
     margin-bottom: 2rem;
     margin-top: $inuit-base-spacing-unit;
-    margin-left: $inuit-base-spacing-unit;
-    margin-right: $inuit-base-spacing-unit;
 
-    legend {
+    &:first-child {
+      margin-top: 0px;
+    }
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+
+    > legend {
       @include inuit-font-size(24px);
       font-weight: 600;
       margin-bottom: halve($inuit-base-spacing-unit);
+    }
+
+    > *:not(.form-field) + .form-field {
+      margin-top: halve($inuit-base-spacing-unit);
+    }
+
+    > .form-field + *:not(.form-field) {
+      margin-top: $inuit-base-spacing-unit;
     }
   }
 
@@ -36,8 +53,13 @@
     }
 
     @include media-query(palm) {
-      padding: $inuit-base-spacing-unit;
-      width: 100vw;
+      padding-left: $inuit-base-spacing-unit;
+      padding-right: $inuit-base-spacing-unit;
+      //width: 100%;
+
+      > .form-fields {
+        margin-top: $inuit-base-spacing-unit;
+      }
 
       > .form-fields > fieldset > .form-field,
       > .form-fields > .form-field {
@@ -62,13 +84,6 @@
 
   &--fill {
     min-width: 0px;
-  }
-
-  &--flush {
-    fieldset {
-      margin-left: 0px;
-      margin-right: 0px;
-    }
   }
 
   &--compact {

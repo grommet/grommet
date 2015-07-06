@@ -110,15 +110,15 @@
     &-top:not(.layer--hidden) {
       @include media-query(lap-and-up) {
         background-image: radial-gradient(circle at top, $layer-background-color, $layer-background-color 20%, $layer-overlay-background-color); //$layer-overlay-background-color;
-      }
 
-      .layer__container {
-        left: 50%;
-        -webkit-transform: translateX(-50%);
-        transform: translateX(-50%);
+        .layer__container {
+          left: 50%;
+          -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 
-        @include media-query(lap-and-up) {
-          @include animation('slide-down 0.2s ease-in-out forwards');
+          @include media-query(lap-and-up) {
+            @include animation('slide-down 0.2s ease-in-out forwards');
+          }
         }
       }
     }

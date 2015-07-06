@@ -1,5 +1,5 @@
 var React = require('react');
-var GrommetDocument = require('grommet/components/Document');
+var Article = require('grommet/components/Article');
 var App = require('grommet/components/App');
 var Header = require('grommet/components/Header');
 var Title = require('grommet/components/Title');
@@ -12,7 +12,7 @@ var inline =
 var AppDoc = React.createClass({
   render: function() {
     return (
-      <GrommetDocument flush={false}>
+      <Article>
 
         <header>
           <h1>App</h1>
@@ -46,7 +46,7 @@ var AppDoc = React.createClass({
           </code></pre>
         </section>
 
-      </GrommetDocument>
+      </Article>
     );
   }
 });

@@ -2,7 +2,7 @@
 
 var React = require('react');
 var stringify = require("json-stringify-pretty-compact");
-var GrommetDocument = require('grommet/components/Document');
+var Article = require('grommet/components/Article');
 var Distribution = require('grommet/components/Distribution');
 
 var inline =
@@ -19,7 +19,7 @@ var DistributionDoc = React.createClass({
 
   render: function() {
     return (
-      <GrommetDocument flush={false}>
+      <Article>
         <header>
           <h1>Distribution</h1>
           <p>Shows a graphic of relatively sized items.</p>
@@ -94,7 +94,7 @@ var DistributionDoc = React.createClass({
 
         </section>
 
-      </GrommetDocument>
+      </Article>
     );
   }
 });

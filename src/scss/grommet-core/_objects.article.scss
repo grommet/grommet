@@ -1,0 +1,11 @@
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+
+.article {
+  &--scroll-step {
+    text-align: center;
+  }
+}
+
+article:not(.article) {
+  width: 100%;
+}

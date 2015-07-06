@@ -1,5 +1,5 @@
 var React = require('react');
-var GrommetDocument = require('grommet/components/Document');
+var Article = require('grommet/components/Article');
 var Status = require('grommet/components/icons/Status');
 
 var inline =
@@ -8,7 +8,7 @@ var inline =
 var StatusDoc = React.createClass({
   render: function() {
     return (
-      <GrommetDocument flush={false}>
+      <Article>
         <header>
           <h1>Status</h1>
           <p>A status icon.</p>
@@ -72,7 +72,7 @@ var StatusDoc = React.createClass({
 
         </section>
 
-      </GrommetDocument>
+      </Article>
     );
   }
 });

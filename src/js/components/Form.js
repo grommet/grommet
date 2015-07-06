@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
+var keys = require('lodash/object/keys');
 
 var CLASS_ROOT = "form";
 
@@ -11,14 +12,21 @@ var Form = React.createClass({
     fill: React.PropTypes.bool,
     flush: React.PropTypes.bool,
     onSubmit: React.PropTypes.func,
-    className: React.PropTypes.string
+    pad: React.PropTypes.oneOfType([
+      React.PropTypes.oneOf(['none', 'small', 'medium', 'large']),
+      React.PropTypes.shape({
+        horizontal: React.PropTypes.oneOf(['none', 'small', 'medium', 'large']),
+        vertical: React.PropTypes.oneOf(['none', 'small', 'medium', 'large'])
+      })
+    ])
   },
 
   getDefaultProps: function () {
     return {
       compact: false,
       fill: false,
-      flush: true
+      flush: true,
+      pad: 'none'
     };
   },
 
@@ -30,8 +38,14 @@ var Form = React.createClass({
     if (this.props.fill) {
       classes.push(CLASS_ROOT + "--fill");
     }
-    if (this.props.flush) {
-      classes.push(CLASS_ROOT + "--flush");
+    if (this.props.pad) {
+      if (typeof this.props.pad === 'string') {
+        classes.push(CLASS_ROOT + "--pad-" + this.props.pad);
+      } else if (typeof this.props.pad === 'object') {
+        keys(this.props.pad).forEach(function (key) {
+          classes.push(CLASS_ROOT + '--pad-' + key + '-' + this.props.pad[key]);
+        });
+      }
     }
     if (this.props.className) {
       classes.push(this.props.className);

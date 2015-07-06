@@ -31,15 +31,8 @@
     }
   }
 
-  &__layer {
-    position: fixed;
-    // This element will be positioned by the Overlay mixin.
-    z-index: 10;
+  &__drop {
     @include inuit-font-size($inuit-heading-size-4, inherit);
-    background-color: $background-color;
-    border: $layer-border;
-    border-radius: $border-radius;
-    box-shadow: $layer-box-shadow;
 
     &--inline {
       margin-left: -1px;

@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var GrommetDocument = require('grommet/components/Document');
+var Article = require('grommet/components/Article');
 
 var RestDoc = React.createClass({
 
@@ -36,7 +36,7 @@ var RestDoc = React.createClass({
     ].join('\n');
 
     return (
-      <GrommetDocument flush={false}>
+      <Article>
         <header>
           <h1>Rest</h1>
           <p>Perform REST calls.
@@ -82,7 +82,7 @@ var RestDoc = React.createClass({
           </code></pre>
         </section>
 
-      </GrommetDocument>
+      </Article>
     );
   }
 });

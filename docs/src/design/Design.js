@@ -6,7 +6,7 @@ var Route = Router.Route;
 var RouteHandler = Router.RouteHandler;
 var Link = Router.Link;
 
-var GrommetDocument = require('grommet/components/Document');
+var Article = require('grommet/components/Article');
 var DocsHeader = require('../DocsHeader');
 var Section = require('grommet/components/Section');
 var DocsSplit = require('../DocsSplit');
@@ -78,10 +78,10 @@ var Design = React.createClass({
 
   render: function () {
     return (
-      <GrommetDocument>
+      <Article>
         <DocsHeader />
 
-        <Section flush={false} colorIndex="neutral-1">
+        <Section appCentered={true} colorIndex="neutral-1">
           <h1>Design</h1>
           <p>This application style guide was created by the designers at Hewlett
           Packard Enterprise. The guide covers the general design principles as well
@@ -90,18 +90,18 @@ var Design = React.createClass({
           quickly begin designing applications based on these styles and patterns.
           Finally, we've also created a web-based development platform that enables
           developers to quickly begin implementing enterprise applications.</p>
-          <Menu direction="right" flush={false}>
+          <Menu direction="row">
             <Link to="design_resources">
               <Button label="Resources" onClick={this._onClick} large={true} primary={true} />
             </Link>
           </Menu>
         </Section>
 
-        <Section flush={false}>
+        <Section appCentered={true}>
           <h2>Contents</h2>
-          <DocsMenu direction="right" contents={CONTENTS} />
+          <DocsMenu direction="row" contents={CONTENTS} />
         </Section>
-      </GrommetDocument>
+      </Article>
     );
   }
 });

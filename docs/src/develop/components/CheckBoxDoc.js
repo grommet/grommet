@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var GrommetDocument = require('grommet/components/Document');
+var Article = require('grommet/components/Article');
 var CheckBox = require('grommet/components/CheckBox');
 
 var CheckBoxDoc = React.createClass({
@@ -11,7 +11,7 @@ var CheckBoxDoc = React.createClass({
       "<CheckBox id=\"item2\" label=\"Item 1\">"
     ].join("\n");
     return (
-      <GrommetDocument flush={false}>
+      <Article>
         <header>
           <h1>CheckBox</h1>
           <p>A check box in a web form. We have a separate component from the
@@ -58,7 +58,7 @@ var CheckBoxDoc = React.createClass({
 
         </section>
 
-      </GrommetDocument>
+      </Article>
     );
   }
 });

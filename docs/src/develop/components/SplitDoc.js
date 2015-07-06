@@ -1,5 +1,5 @@
 var React = require('react');
-var GrommetDocument = require('grommet/components/Document');
+var Article = require('grommet/components/Article');
 var Split = require('grommet/components/Split');
 
 var inline =
@@ -10,7 +10,7 @@ var inline =
 var SplitDoc = React.createClass({
   render: function() {
     return (
-      <GrommetDocument flush={false}>
+      <Article>
         <header>
           <h1>Split</h1>
           <p>A full height container with two children laid out horizontally.</p>
@@ -41,7 +41,7 @@ var SplitDoc = React.createClass({
 
         </section>
 
-      </GrommetDocument>
+      </Article>
     );
   }
 });

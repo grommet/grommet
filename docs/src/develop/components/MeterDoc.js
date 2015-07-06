@@ -2,7 +2,7 @@
 
 var React = require('react');
 var stringify = require("json-stringify-pretty-compact");
-var GrommetDocument = require('grommet/components/Document');
+var Article = require('grommet/components/Article');
 var Meter = require('grommet/components/Meter');
 
 var inline =
@@ -38,7 +38,7 @@ var MeterDoc = React.createClass({
 
   render: function() {
     return (
-      <GrommetDocument flush={false}>
+      <Article>
         <header>
           <h1>Meter</h1>
           <p>Shows a bar, arc, or circular meter graphic.</p>
@@ -307,7 +307,7 @@ var MeterDoc = React.createClass({
 
         </section>
 
-      </GrommetDocument>
+      </Article>
     );
   }
 });

@@ -3,14 +3,14 @@
 var React = require('react');
 var Menu = require('../Menu');
 var FilterIcon = require('../icons/Filter');
-var Header = require('../Header');
+//var Header = require('../Header');
 var CheckBox = require('../CheckBox');
 var IndexQuery = require('../../utils/IndexQuery');
 //var StatusIcon = require('../icons/Status');
 //var Timestamp = require('react-time');
 var IntlMixin = require('../../mixins/GrommetIntlMixin');
-var ReactIntl = require('react-intl');
-var FormattedMessage = ReactIntl.FormattedMessage;
+//var ReactIntl = require('react-intl');
+//var FormattedMessage = ReactIntl.FormattedMessage;
 
 var CLASS_ROOT = "index-filters";
 
@@ -128,10 +128,9 @@ var IndexFilters = React.createClass({
 
         var components = [];
         components.push(
-          <Header key="label" className={CLASS_ROOT + "__filter-label"}
-            small={true} flush={false}>
+          <h4 key="label" className={CLASS_ROOT + "__filter-label"}>
             {this.getGrommetIntlMessage(attribute.label)}
-          </Header>
+          </h4>
         );
         components.push(
           <CheckBox key="all" className={CLASS_ROOT + "__filter-value"}
@@ -144,18 +143,20 @@ var IndexFilters = React.createClass({
         return components.concat(values);
       }, this);
 
+    /*
     var label = (
       <FormattedMessage
         message={this.getIntlMessage('IndexFilters.filters')}
         quantity={activeFilterCount} />
     );
+    */
 
     var icon = (<FilterIcon notifications={activeFilterCount} />);
 
     return (
       <Menu className={CLASS_ROOT + "__menu"} icon={icon}
-        align="right" direction="down" closeOnClick={false}>
-        {label}
+        dropAlign={{right: 'right'}} pad="medium"
+        direction="column" closeOnClick={false}>
         {filters}
       </Menu>
     );

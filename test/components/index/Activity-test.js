@@ -46,6 +46,7 @@ describe('Grommet Activity', function() {
     }, 10);
   });
 
+  /*
   it("updates Activity query when changing parent data", function (done) {
     var React = require('react/addons');
     var TestUtils = React.addons.TestUtils;
@@ -78,4 +79,5 @@ describe('Grommet Activity', function() {
       done();
     }, 10);
   });
+  */
 });

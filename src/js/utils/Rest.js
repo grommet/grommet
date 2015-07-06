@@ -2,7 +2,7 @@
 
 var request = require('superagent');
 
-var _headers = {};
+var _headers = {'Accept': 'application/json'};
 
 var _timeout = 10000; // 10s
 

@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
+var Article = require('grommet/components/Article');
 var GrommetDocument = require('grommet/components/Document');
 
 var DocumentDoc = React.createClass({
@@ -20,9 +21,11 @@ var DocumentDoc = React.createClass({
     ].join('\n');
 
     return (
-      <GrommetDocument flush={false}>
+      <Article>
         <header>
           <h1>Document</h1>
+          <p>NOTE: This component is deprecated and will be removed soon.
+            It has been superseded by the Article component.</p>
           <p>Styles standard HTML5 markup for use in documentation.</p>
           <pre><code className="html">{inline}</code></pre>
         </header>
@@ -45,7 +48,7 @@ var DocumentDoc = React.createClass({
 
         </section>
 
-      </GrommetDocument>
+      </Article>
     );
   }
 });

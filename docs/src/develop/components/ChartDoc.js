@@ -2,7 +2,7 @@
 
 var React = require('react');
 var stringify = require("json-stringify-pretty-compact");
-var GrommetDocument = require('grommet/components/Document');
+var Article = require('grommet/components/Article');
 var Chart = require('grommet/components/Chart');
 var Tiles = require('grommet/components/Tiles');
 var Tile = require('grommet/components/Tile');
@@ -67,7 +67,7 @@ var ChartDoc = React.createClass({
 
   render: function() {
     return (
-      <GrommetDocument flush={false}>
+      <Article>
         <header>
           <h1>Chart</h1>
           <p>Shows a graphical data chart.</p>
@@ -255,7 +255,7 @@ var ChartDoc = React.createClass({
 
         </section>
 
-      </GrommetDocument>
+      </Article>
     );
   }
 });

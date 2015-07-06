@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var GrommetDocument = require('grommet/components/Document');
+var Article = require('grommet/components/Article');
 var DocsHeader = require('./DocsHeader');
 var Footer = require('grommet/components/Footer');
 var Section = require('grommet/components/Section');
@@ -13,6 +13,18 @@ var Button = require('grommet/components/Button');
 var Link = require('react-router').Link;
 var GrommetLogo = require('grommet/components/icons/Grommet');
 
+var HomeSection = React.createClass({
+  render: function () {
+    return (
+      <Section {...this.props}
+        appCentered={true} justify="center" align="center" full={true}
+        textCentered={true} pad={{vertical: "large"}}>
+        {this.props.children}
+      </Section>
+    );
+  }
+});
+
 var Home = React.createClass({
 
   _onClick: function () {
@@ -21,22 +33,21 @@ var Home = React.createClass({
 
   render: function() {
     return (
-      <GrommetDocument className="home" flush={true} full={true}>
+      <Article className="home" scrollStep={true}>
 
         <DocsHeader float={true} />
 
-        <Section className="home__introduction" centered={true} full={true}
-          texture={'url(img/home_intro.png)'}>
+        <HomeSection texture={'url(img/home_intro.png)'}>
           <GrommetLogo large={true} />
           <Headline large={true}>Grommet</Headline>
           <Headline small={true}>The most advanced open source UX framework for
             enterprise applications.</Headline>
-        </Section>
+        </HomeSection>
 
-        <Section className="home__scale" centered={true} full={true} colorIndex="neutral-1">
+        <HomeSection colorIndex="neutral-1">
           <Headline>Create once and deliver everywhere.</Headline>
           <Headline small={true}>Application experiences that look great while solving problems.</Headline>
-          <Menu direction="center">
+          <Menu direction="row" justify="center">
             <Link to="design">
               <Button label="See more examples" onClick={this._onClick} large={true} primary={true} />
             </Link>
@@ -46,13 +57,12 @@ var Home = React.createClass({
           </Menu>
           <p></p>
           <img src="img/home_scale.png" alt="Tablet and Phone" />
-        </Section>
+        </HomeSection>
 
-        <Section className="home__features" centered={true} full={true}
-          colorIndex="neutral-2" texture={'url(img/home_features.png)'}>
+        <HomeSection colorIndex="neutral-2" texture={'url(img/home_features.png)'}>
           <Headline>So little gets you sooooooo much!</Headline>
           <Headline small={true}>We’ve tried it all in enterprise and we think we’ve got a good foundation.</Headline>
-          <Menu direction="center">
+          <Menu direction="row" justify="center">
             <Link to="develop_architecture">
               <Button label="Our architecture" onClick={this._onClick} large={true} primary={true} />
             </Link>
@@ -60,14 +70,13 @@ var Home = React.createClass({
               <Button label="How to use" onClick={this._onClick} large={true} />
             </Link>
           </Menu>
-        </Section>
+        </HomeSection>
 
-        <Section className="home__designer" centered={true} full={true}
-          texture={'url(img/home_design.png)'}>
+        <HomeSection texture={'url(img/home_design.png)'}>
           <Headline>Ready for your Design Workflow.</Headline>
           <Headline small={true}>All the resources you could possibly need! Sticker sheets, Stencils,
             PSDs, and more.</Headline>
-          <Menu direction="center">
+          <Menu direction="row" justify="center">
             <Link to="design">
               <Button label="Start designing" onClick={this._onClick} large={true} primary={true} />
             </Link>
@@ -77,33 +86,33 @@ var Home = React.createClass({
           </Menu>
           <p>or, grab your favorite sticker sheet:</p>
           <Tiles small={true} fill={true}>
-            <Tile>
+            <Tile align="center">
               <img src="img/Adobe_Illustrator.png" title="Adobe Illustrator" />
-              <div>Adobe Illustrator</div>
+              <label>Adobe Illustrator</label>
             </Tile>
-            <Tile>
+            <Tile align="center">
               <img src="img/Adobe_Photoshop.png" title="Adobe Photoshop" />
-              <div>Adobe Photoshop</div>
+              <label>Adobe Photoshop</label>
             </Tile>
-            <Tile>
+            <Tile align="center">
               <img src="img/Sketch.png" title="Sketch" />
-              <div>Sketch</div>
+              <label>Sketch</label>
             </Tile>
-            <Tile>
+            <Tile align="center">
               <img src="img/Axure.png" title="Axure" />
-              <div>Axure</div>
+              <label>Axure</label>
             </Tile>
-            <Tile>
+            <Tile align="center">
               <img src="img/Balsamiq.png" title="Balsamiq" />
-              <div>Balsamiq</div>
+              <label>Balsamiq</label>
             </Tile>
           </Tiles>
-        </Section>
+        </HomeSection>
 
-        <Section className="home__develop" centered={true} full={true} colorIndex="neutral-3">
+        <HomeSection colorIndex="neutral-3">
           <Headline>Develop your next project with Grommet.</Headline>
           <Headline small={true}>Let’s get an application on your local environment!</Headline>
-          <Menu direction="center">
+          <Menu direction="row" justify="center">
             <Link to="develop_getstarted">
               <Button label="Start project" onClick={this._onClick} large={true} primary={true} />
             </Link>
@@ -125,13 +134,13 @@ var Home = React.createClass({
               {"$ npm install -g grommet\n$ grommet init sample-app"}
             </code></pre>
           </div>
-        </Section>
+        </HomeSection>
 
-        <Section className="home__developer" centered={true} full={true}>
+        <HomeSection>
           <Headline>Built with the best stuff.</Headline>
           <Headline small={true}>The tools you know and love, all packaged together in one
             easy-to-use solution.</Headline>
-          <Menu direction="center">
+          <Menu direction="row" justify="center">
             <a href="https://github.com/HewlettPackard/grommet">
               <Button label="View project on Github" onClick={this._onClick} large={true} primary={true} />
             </a>
@@ -179,12 +188,12 @@ var Home = React.createClass({
               </a>
             </Tile>
           </Tiles>
-        </Section>
+        </HomeSection>
 
-        <Section className="home__social" centered={true} full={true} colorIndex="neutral-2">
+        <HomeSection colorIndex="neutral-2">
           <Headline>Let’s keep in touch!</Headline>
           <Headline small={true}>Follow us on the Grommet blog to get the latest updates.</Headline>
-          <Menu direction="center">
+          <Menu direction="row" justify="center">
             <Link to="develop_getstarted">
               <Button label="Grommet blog" onClick={this._onClick} large={true} primary={true} />
             </Link>
@@ -222,23 +231,23 @@ var Home = React.createClass({
               </a>
             </Tile>
           </Tiles>
-        </Section>
+        </HomeSection>
 
-        <Footer className="docs__footer" colorIndex="grey-1" primary={true} centered={true}>
+        <Footer className="docs__footer"
+          appCentered={true} direction="column" align="center" pad="large"
+          colorIndex="grey-1">
           <h3>Build your ideas with Grommet!</h3>
-          <div>
+          <p>
             This work is licensed under the <a href="http://creativecommons.org/licenses/by/4.0/legalcode">Creative Commons Attribution 4.0 International License</a>.
-            <div>
-              <Menu label="Theme" direction="up" small={true}>
-                <a href="/docs/" className={this.props.theme === 'generic' ? 'active' : ''}>Grommet</a>
-                <a href="/docs/hpe/" className={this.props.theme === 'hpe' ? 'active' : ''}>HPE</a>
-                <a href="/docs/hpinc/" className={this.props.theme === 'hpinc' ? 'active' : ''}>HPInc</a>
-              </Menu>
-            </div>
-          </div>
+          </p>
+          <Menu label="Theme">
+            <a href="/docs/" className={this.props.theme === 'generic' ? 'active' : ''}>Grommet</a>
+            <a href="/docs/hpe/" className={this.props.theme === 'hpe' ? 'active' : ''}>HPE</a>
+            <a href="/docs/hpinc/" className={this.props.theme === 'hpinc' ? 'active' : ''}>HPInc</a>
+          </Menu>
         </Footer>
 
-      </GrommetDocument>
+      </Article>
     );
   }
 

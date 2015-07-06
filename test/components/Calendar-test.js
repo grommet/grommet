@@ -61,19 +61,19 @@ describe('Grommet Calendar', function() {
 
     GrommetTestUtils.componentShouldExist(Component, 'calendar');
     GrommetTestUtils.componentShouldExist(Component, 'calendar__control');
-    GrommetTestUtils.layerShouldNotExist('calendar__layer');
+    GrommetTestUtils.layerShouldNotExist('calendar__drop');
 
     var calendarIcon = TestUtils.findRenderedDOMComponentWithClass(Component, 'calendar__control');
 
     TestUtils.Simulate.click(calendarIcon.getDOMNode());
 
-    GrommetTestUtils.layerShouldExist('calendar__layer');
+    GrommetTestUtils.layerShouldExist('calendar__drop');
 
-    var previousDateNode = GrommetTestUtils.getLayerChildNode('calendar__layer', 'calendar__previous');
+    var previousDateNode = GrommetTestUtils.getLayerChildNode('calendar__drop', 'calendar__previous');
 
     TestUtils.Simulate.click(previousDateNode);
 
-    var dateInThePastNode = GrommetTestUtils.getLayerChildNode('calendar__layer', 'calendar__day');
+    var dateInThePastNode = GrommetTestUtils.getLayerChildNode('calendar__drop', 'calendar__day');
 
     TestUtils.Simulate.click(dateInThePastNode);
 
@@ -110,21 +110,21 @@ describe('Grommet Calendar', function() {
 
     GrommetTestUtils.componentShouldExist(Component, 'calendar');
     GrommetTestUtils.componentShouldExist(Component, 'calendar__control');
-    GrommetTestUtils.layerShouldNotExist('calendar__layer');
+    GrommetTestUtils.layerShouldNotExist('calendar__drop');
 
     var calendarIcon = TestUtils.findRenderedDOMComponentWithClass(Component, 'calendar__control');
 
     TestUtils.Simulate.click(calendarIcon.getDOMNode());
 
-    GrommetTestUtils.layerShouldExist('calendar__layer');
+    GrommetTestUtils.layerShouldExist('calendar__drop');
 
-    var nextDateNode = GrommetTestUtils.getLayerChildNode('calendar__layer', 'calendar__next');
+    var nextDateNode = GrommetTestUtils.getLayerChildNode('calendar__drop', 'calendar__next');
 
     TestUtils.Simulate.click(nextDateNode);
     TestUtils.Simulate.click(nextDateNode);
     TestUtils.Simulate.click(nextDateNode);
 
-    var dateInTheFuture = GrommetTestUtils.getLayerChildNode('calendar__layer', 'calendar__day');
+    var dateInTheFuture = GrommetTestUtils.getLayerChildNode('calendar__drop', 'calendar__day');
 
     TestUtils.Simulate.click(dateInTheFuture);
 

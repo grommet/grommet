@@ -21,34 +21,20 @@
     right: halve($inuit-base-spacing-unit);
   }
 
-  &__layer {
-    position: fixed;
-    // This element will be positioned by the Overlay mixin.
-    z-index: 20;
-    background-color: $background-color;
-    border: $layer-border;
-    border-radius: $border-radius;
+  &__suggestions {
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
-    box-shadow: $layer-box-shadow;
+    margin: 0px;
+    list-style-type: none;
+  }
 
-    // need to be this specific to override browser default box-sizing
-    input[type="search"] {
-      width: 100%;
-      -webkit-box-sizing: border-box;
-         -moz-box-sizing: border-box;
-              box-sizing: border-box;
-      border-radius: 0px;
-    }
+  &__suggestion {
+    padding: quarter($inuit-base-spacing-unit) halve($inuit-base-spacing-unit);
+    cursor: pointer;
 
-    &-suggestion {
-      padding: quarter($inuit-base-spacing-unit) halve($inuit-base-spacing-unit);
-      cursor: pointer;
-
-      &:hover,
-      &--active {
-        background-color: $hover-background-color;
-      }
+    &:hover,
+    &--active {
+      background-color: $hover-background-color;
     }
   }
 

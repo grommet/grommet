@@ -26,9 +26,9 @@ var Patterns = React.createClass({
     ];
 
     return (
-  <div className="document">
-    <header className="large">
-      <h1 className="h1">Patterns</h1>
+  <article>
+    <header>
+      <h1>Patterns</h1>
     </header>
 
     <section>
@@ -101,7 +101,7 @@ var Patterns = React.createClass({
     </div>
 
   </section>
-      </div>
+      </article>
     );
   }
 });

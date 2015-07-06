@@ -174,7 +174,7 @@ var AddUserForm = React.createClass({
             </FormField>
           </fieldset>
         </FormFields>
-        <Footer>
+        <Footer pad={{vertical: 'medium'}}>
           <Menu>
             <Button label="Add" primary={true} strong={true} onClick={this._onSubmit} />
           </Menu>

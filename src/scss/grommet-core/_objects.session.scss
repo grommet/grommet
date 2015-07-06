@@ -5,7 +5,6 @@ $gravatar-border-width: 2px;
 .react-gravatar {
   border-radius: $inuit-base-spacing-unit;
   border: $gravatar-border-width solid transparent;
-  margin: 0px $inuit-base-spacing-unit;
   overflow: hidden;
   cursor: pointer;
   transition: all $base-animation-duration ease-in-out;

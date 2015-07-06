@@ -62,7 +62,7 @@ var ConfirmationForm = React.createClass({
             </FormField>
           </fieldset>
         </FormFields>
-        <Footer>
+        <Footer pad={{vertical: 'medium'}}>
           <Menu>
             <Button label="Destroy" primary={true} strong={true}
               onClick={this._onSubmit} />

@@ -4,6 +4,7 @@ var React = require('react');
 var Link = require('react-router').Link;
 var Split = require('grommet/components/Split');
 var Sidebar = require('grommet/components/Sidebar');
+var Article = require('grommet/components/Article');
 var Header = require('grommet/components/Header');
 var Title = require('grommet/components/Title');
 var Menu = require('grommet/components/Menu');
@@ -74,58 +75,58 @@ var DocsSplit = React.createClass({
 
   _renderTitle: function () {
     return (
-      <Title>
+      <Title responsive={false}>
         <Link to="docs">
           <GrommetLogo small={true} />
         </Link>
         {this.props.title}
-    </Title>
+      </Title>
     );
   },
 
   _renderMenu: function () {
-    var header;
+    var title = this._renderTitle();
+    var closer;
     if ('single' === this.state.responsive) {
-      var title = this._renderTitle();
-      header = (
-        <Header large={true} flush={false}>
-          {title}
-          <Menu direction="left">
-            <span onClick={this._onMenuClick}><CloseIcon /></span>
-          </Menu>
-        </Header>
+      closer = (
+        <Menu direction="row">
+          <span onClick={this._onMenuClick}><CloseIcon /></span>
+        </Menu>
       );
     }
     return (
       <Sidebar small={true}>
-        {header}
-        <DocsMenu direction="down" contents={this.props.contents}
+        <Header justify="between" large={true} pad={{horizontal: 'medium'}}>
+          {title}
+          {closer}
+        </Header>
+        <DocsMenu direction="column" contents={this.props.contents}
           onClick={this._onMenuClick} />
       </Sidebar>
     );
   },
 
   _renderDoc: function () {
-    var title = this._renderTitle();
-    var contents;
+    var header;
     if ('single' === this.state.responsive) {
-      contents = (
-        <Menu direction="left">
-          <a onClick={this._onMenuOpen}>Contents</a>
-        </Menu>
+      var title = this._renderTitle();
+      header = (
+        <Header justify="between" large={true}>
+          {title}
+          <Menu direction="row" responsive={false}>
+            <a onClick={this._onMenuOpen}>Contents</a>
+          </Menu>
+        </Header>
       );
+    } else {
+      header = <Header large={true} />;
     }
     return (
-      <div ref="doc">
-        <Header large={true} flush={false}>
-          {title}
-          {contents}
-        </Header>
-
+      <Article ref="doc" pad={{horizontal: 'medium'}}>
+        {header}
         {this.props.children}
-
-        <DocsFooter />
-      </div>
+        <DocsFooter centered={false} />
+      </Article>
     );
   },
 
@@ -135,7 +136,7 @@ var DocsSplit = React.createClass({
     if (this.state.showMenu) {
       left = this._renderMenu();
       if ('multiple' === this.state.responsive) {
-        right = this._renderDoc();
+        right = <div>{this._renderDoc()}</div>;
       }
     } else {
       left = this._renderDoc();

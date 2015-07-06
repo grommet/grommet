@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var GrommetDocument = require('grommet/components/Document');
+var Article = require('grommet/components/Article');
 var Table = require('grommet/components/Table');
 
 var TableDoc = React.createClass({
@@ -25,7 +25,7 @@ var TableDoc = React.createClass({
     ].join('\n');
 
     return (
-      <GrommetDocument flush={false}>
+      <Article>
         <header>
           <h1>Table</h1>
           <p>Table using standard HTML5 markup.</p>
@@ -84,7 +84,7 @@ var TableDoc = React.createClass({
 
         </section>
 
-      </GrommetDocument>
+      </Article>
     );
   }
 });

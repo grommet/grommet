@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var GrommetDocument = require('grommet/components/Document');
+var Article = require('grommet/components/Article');
 var Calendar = require('grommet/components/Calendar');
 
 var CalendarDoc = React.createClass({
@@ -18,7 +18,7 @@ var CalendarDoc = React.createClass({
     var inline =
       "<Calendar onChange={...} />";
     return (
-      <GrommetDocument flush={false}>
+      <Article>
 
         <header>
           <h1>Calendar</h1>
@@ -52,7 +52,7 @@ var CalendarDoc = React.createClass({
 
         </section>
 
-      </GrommetDocument>
+      </Article>
     );
   }
 });

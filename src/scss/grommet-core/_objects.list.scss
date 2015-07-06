@@ -1,0 +1,95 @@
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+
+.list {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  overflow: auto;
+
+  &__more {
+    padding-left: $inuit-base-spacing-unit;
+    padding-right: $inuit-base-spacing-unit;
+    padding-top: halve($inuit-base-spacing-unit);
+    padding-bottom: halve($inuit-base-spacing-unit);
+  }
+
+  .list-item {
+    padding-left: $inuit-base-spacing-unit;
+    padding-right: $inuit-base-spacing-unit;
+    padding-top: halve($inuit-base-spacing-unit);
+    padding-bottom: halve($inuit-base-spacing-unit);
+    border-bottom: 1px solid $border-color;
+    display: -webkit-flex;
+    display: flex;
+    max-width: none;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &__image {
+      height: $inuit-base-spacing-unit;
+      width: $inuit-base-spacing-unit;
+      margin-right: $inuit-base-spacing-unit;
+
+      img {
+        height: 100%;
+      }
+    }
+
+    &__text {
+      display: -webkit-flex;
+      display: flex;
+      -webkit-justify-content: space-between;
+      justify-content: space-between;
+      -webkit-flex: 1;
+      flex: 1;
+    }
+
+    &__annotation {
+      margin-left: $inuit-base-spacing-unit;
+      color: $secondary-text-color;
+    }
+
+    &--selectable {
+      cursor: pointer;
+
+      &:hover {
+        background-color: $hover-background-color;
+      }
+    }
+
+    &--selected {
+      background-color: $selected-background-color;
+      color: $selected-text-color;
+    }
+  }
+
+  &--small {
+    .list-item,
+    .list__more {
+      padding-top: quarter($inuit-base-spacing-unit);
+      padding-bottom: quarter($inuit-base-spacing-unit);
+      line-height: $inuit-base-spacing-unit;
+
+      &__image {
+        height: halve($inuit-base-spacing-unit);
+        width: halve($inuit-base-spacing-unit);
+      }
+    }
+  }
+
+  &--large {
+    .list-item,
+    .list__more {
+      padding-top: $inuit-base-spacing-unit;
+      padding-bottom: $inuit-base-spacing-unit;
+      line-height: double($inuit-base-spacing-unit);
+
+      &__image {
+        height: double($inuit-base-spacing-unit);
+        width: double($inuit-base-spacing-unit);
+      }
+    }
+  }
+}

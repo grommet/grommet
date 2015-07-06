@@ -6,7 +6,7 @@ var Route = Router.Route;
 var RouteHandler = Router.RouteHandler;
 var Link = Router.Link;
 
-var GrommetDocument = require('grommet/components/Document');
+var Article = require('grommet/components/Article');
 var DocsHeader = require('../DocsHeader');
 var Section = require('grommet/components/Section');
 var DocsSplit = require('../DocsSplit');
@@ -23,6 +23,8 @@ var Integration = require('./Integration');
 
 var ActionsDoc = require('./patterns/ActionsDoc');
 var AppDoc = require('./components/AppDoc');
+var ArticleDoc = require('./components/ArticleDoc');
+var BoxDoc = require('./components/BoxDoc');
 var ButtonDoc = require('./components/ButtonDoc');
 var CalendarDoc = require('./components/CalendarDoc');
 var ChartDoc = require('./components/ChartDoc');
@@ -35,6 +37,7 @@ var FormDoc = require('./components/FormDoc');
 var FormFieldDoc = require('./components/FormFieldDoc');
 var HeaderDoc = require('./components/HeaderDoc');
 var LayerDoc = require('./components/LayerDoc');
+var ListDoc = require('./components/ListDoc');
 var LoginFormDoc = require('./components/LoginFormDoc');
 var MapDoc = require('./components/MapDoc');
 var MenuDoc = require('./components/MenuDoc');
@@ -80,6 +83,8 @@ var CONTENTS = [
   {label: 'Components',
     contents: [
       {route: 'develop_app', label: 'App', component: AppDoc},
+      {route: 'develop_article', label: 'Article', component: ArticleDoc},
+      {route: 'develop_box', label: 'Box', component: BoxDoc},
       {route: 'develop_button', label: 'Button', component: ButtonDoc},
       {route: 'develop_calendar', label: 'Calendar', component: CalendarDoc},
       {route: 'develop_chart', label: 'Chart', component: ChartDoc},
@@ -91,6 +96,7 @@ var CONTENTS = [
       {route: 'develop_form-field', label: 'FormField', component: FormFieldDoc},
       {route: 'develop_header', label: 'Header', component: HeaderDoc},
       {route: 'develop_layer', label: 'Layer', component: LayerDoc},
+      {route: 'develop_list', label: 'List', component: ListDoc},
       {route: 'develop_login-form', label: 'LoginForm', component: LoginFormDoc},
       {route: 'develop_map', label: 'Map', component: MapDoc},
       {route: 'develop_menu', label: 'Menu', component: MenuDoc},
@@ -129,16 +135,16 @@ var Develop = React.createClass({
 
   render: function () {
     return (
-      <GrommetDocument>
+      <Article>
         <DocsHeader />
 
-        <Section flush={false} colorIndex="neutral-2">
+        <Section appCentered={true} colorIndex="neutral-2">
           <h1>Develop</h1>
           <p>Grommet was created to give developers and designers alike access to tools
           that otherwise are out of reach of most product teams. Grommet’s goal is to
           assist in creating experiences that work accross the many different interaction
           methods and screen sizes.</p>
-          <Menu direction="right" flush={false}>
+          <Menu direction="row">
             <Link to="develop_helloworld">
               <Button label="Hello Grommet!" onClick={this._onClick} large={true} primary={true} />
             </Link>
@@ -154,11 +160,11 @@ var Develop = React.createClass({
           </Menu>
         </Section>
 
-        <Section flush={false}>
+        <Section appCentered={true}>
           <h2>Contents</h2>
-          <DocsMenu direction="right" contents={CONTENTS} />
+          <DocsMenu direction="row" contents={CONTENTS} />
         </Section>
-      </GrommetDocument>
+      </Article>
     );
   }
 });

@@ -31,6 +31,10 @@ var webpackConfig = {
         loader: 'file-loader?mimetype=image/svg'
       },
       {
+        test: /\.png$/,
+        loader: 'file-loader?mimetype=image/png'
+      },
+      {
         test: /\.jpg$/,
         loader: 'file-loader?mimetype=image/jpg'
       },
@@ -47,6 +51,10 @@ var webpackConfig = {
         loader: 'style!css!sass?outputStyle=expanded&' +
           'includePaths[]=' +
           (path.resolve(process.cwd(), 'node_modules'))
+      },
+      {
+        test: /\.css$/,
+        loader: "style-loader!css-loader"
       }
     ]
   }

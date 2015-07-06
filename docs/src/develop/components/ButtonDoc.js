@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var GrommetDocument = require('grommet/components/Document');
+var Article = require('grommet/components/Article');
 var Button = require('grommet/components/Button');
 
 var ButtonDoc = React.createClass({
@@ -15,7 +15,7 @@ var ButtonDoc = React.createClass({
       "<Button label=\"Item 1\">"
     ].join("\n");
     return (
-      <GrommetDocument flush={false}>
+      <Article>
         <header>
           <h1>Button</h1>
           <p>A button. We have a separate component from the
@@ -73,7 +73,7 @@ var ButtonDoc = React.createClass({
 
         </section>
 
-      </GrommetDocument>
+      </Article>
     );
   }
 });

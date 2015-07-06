@@ -1,6 +1,6 @@
 // (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
 
-$form-horizontal-padding: round($inuit-base-spacing-unit * 0.75);
+$form-horizontal-padding: $inuit-base-spacing-unit; //round($inuit-base-spacing-unit * 0.75);
 $form-vertical-padding: quarter($inuit-base-spacing-unit);
 
 .form-field {
@@ -11,8 +11,8 @@ $form-vertical-padding: quarter($inuit-base-spacing-unit);
   background-color: $form-field-background-color;
 
   @include media-query(lap-and-up) {
-    width: $form-width;
-    max-width: 100%;
+    max-width: $form-width;
+    width: 100%;
     max-height: 100vh;
     transition: max-height 0.4s;
 
@@ -23,9 +23,6 @@ $form-vertical-padding: quarter($inuit-base-spacing-unit);
 
   @include media-query(palm) {
     display: block;
-    width: 100vw;
-    border-left: none;
-    border-right: none;
   }
 
   .form--fill & {

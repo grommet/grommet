@@ -1,12 +1,12 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var GrommetDocument = require('grommet/components/Document');
+var Article = require('grommet/components/Article');
 
 var ActionsDoc = React.createClass({
   render: function() {
     return (
-      <GrommetDocument flush={false}>
+      <Article>
         <header>
           <h1>Actions</h1>
           <p>TBD</p>
@@ -24,7 +24,7 @@ var ActionsDoc = React.createClass({
           <div className="tbd">TBD</div>
         </section>
 
-      </GrommetDocument>
+      </Article>
     );
   }
 });

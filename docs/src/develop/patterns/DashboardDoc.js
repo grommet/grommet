@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var GrommetDocument = require('grommet/components/Document');
+var Article = require('grommet/components/Article');
 var Title = require('grommet/components/Title');
 var Header = require('grommet/components/Header');
 var Search = require('grommet/components/Search');
@@ -31,7 +31,7 @@ var dateSeriesXAxis = [
 var DashboardDoc = React.createClass({
   render: function() {
     return (
-      <GrommetDocument flush={false}>
+      <Article>
         <header>
           <h1>Dashboard</h1>
           <p>The dashboard shows the most important information
@@ -78,7 +78,7 @@ var DashboardDoc = React.createClass({
           <div className="tbd">TBD</div>
         </section>
 
-      </GrommetDocument>
+      </Article>
     );
   }
 });

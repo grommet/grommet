@@ -1,0 +1,11 @@
+// (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
+
+.drop {
+  position: fixed;
+  z-index: 20;
+  background-color: $background-color;
+  border: $drop-border;
+  border-radius: $border-radius;
+  box-shadow: $drop-box-shadow;
+  overflow: auto;
+}

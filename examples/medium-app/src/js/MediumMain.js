@@ -25,7 +25,7 @@ var MediumMain = React.createClass({
   render: function() {
     return (
       <Sidebar primary={this.props.primary} fixed={true}>
-        <Header large={true} flush={false}>
+        <Header large={true} justify="between" pad={{horizontal: 'medium'}}>
           <Title>
             <Logo />
             <span>Medium App</span>
@@ -37,8 +37,8 @@ var MediumMain = React.createClass({
           </Menu>
         </Header>
         <MediumMainMenu />
-        <Footer>
-          <MediumSessionMenu direction="up" />
+        <Footer pad="medium">
+          <MediumSessionMenu dropAlign={{bottom: 'bottom'}} />
         </Footer>
       </Sidebar>
     );

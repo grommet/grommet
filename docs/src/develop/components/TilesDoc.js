@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var GrommetDocument = require('grommet/components/Document');
+var Article = require('grommet/components/Article');
 var Tiles = require('grommet/components/Tiles');
 var Tile = require('grommet/components/Tile');
 var Header = require('grommet/components/Header');
@@ -72,7 +72,7 @@ var TileDoc = React.createClass({
     ];
 
     return (
-      <GrommetDocument flush={false}>
+      <Article>
         <header>
           <h1>Tile(s)</h1>
           <p>Lay out equivalently sized tiles of content.</p>
@@ -135,7 +135,7 @@ var TileDoc = React.createClass({
 
         </section>
 
-      </GrommetDocument>
+      </Article>
     );
   }
 });

@@ -1,23 +1,27 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var ReactLayeredComponent = require('../mixins/ReactLayeredComponent');
+var merge = require('lodash/object/merge');
+var pick = require('lodash/object/pick');
+var keys = require('lodash/object/keys');
 var KeyboardAccelerators = require('../mixins/KeyboardAccelerators');
-var Overlay = require('../mixins/Overlay');
+var Drop = require('../utils/Drop');
+var Box = require('./Box');
 var MoreIcon = require('./icons/More');
 var DropCaretIcon = require('./icons/DropCaret');
 
 var CLASS_ROOT = "menu";
 
-var MenuLayer = React.createClass({
+// We have a separate module for the drop component so we can transfer the router context.
+var MenuDrop = React.createClass({
 
-  propTypes: {
-    align: React.PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
-    direction: React.PropTypes.oneOf(['up', 'down', 'left', 'right', 'center']),
+  propTypes: merge({
+    control: React.PropTypes.node,
+    dropAlign: Drop.alignPropType,
     id: React.PropTypes.string.isRequired,
     onClick: React.PropTypes.func.isRequired,
     router: React.PropTypes.func
-  },
+  }, Box.propTypes),
 
   childContextTypes: {
     router: React.PropTypes.func
@@ -28,36 +32,44 @@ var MenuLayer = React.createClass({
   },
 
   render: function () {
-    var classes = [CLASS_ROOT + "__layer"];
-    if (this.props.direction) {
-      classes.push(CLASS_ROOT + "__layer--" + this.props.direction);
+    var classes = [CLASS_ROOT + "__drop"];
+    var other = pick(this.props, keys(Box.propTypes));
+
+    var first = this.props.control;
+    var second = (
+      <Box tag="nav" {...other} >
+        {this.props.children}
+      </Box>
+    );
+    if (this.props.dropAlign.bottom) {
+      first = second;
+      second = this.props.control;
     }
-    if (this.props.align) {
-      classes.push(CLASS_ROOT + "__layer--align-" + this.props.align);
+    if (this.props.dropAlign.right) {
+      classes.push(CLASS_ROOT + "__drop--align-right");
     }
 
     return (
-      <nav id={this.props.id} className={classes.join(' ')}
+      <div id={this.props.id} className={classes.join(' ')}
         onClick={this.props.onClick}>
-        {this.props.children}
-      </nav>
+        {first}
+        {second}
+      </div>
     );
   }
 });
 
 var Menu = React.createClass({
 
-  propTypes: {
-    align: React.PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
+  propTypes: merge({
     closeOnClick: React.PropTypes.bool,
     collapse: React.PropTypes.bool,
-    direction: React.PropTypes.oneOf(['up', 'down', 'left', 'right', 'center']),
-    flush: React.PropTypes.bool,
+    dropAlign: Drop.alignPropType,
     icon: React.PropTypes.node,
     label: React.PropTypes.string,
     primary: React.PropTypes.bool,
     small: React.PropTypes.bool
-  },
+  }, Box.propTypes),
 
   contextTypes: {
     router: React.PropTypes.func
@@ -65,15 +77,16 @@ var Menu = React.createClass({
 
   getDefaultProps: function () {
     return {
-      align: 'left',
+      align: 'stretch',
       closeOnClick: true,
-      direction: 'down',
-      flush: true,
+      direction: 'column',
+      dropAlign: {top: 'top', left: 'left'},
+      pad: 'none',
       small: false
     };
   },
 
-  mixins: [ReactLayeredComponent, KeyboardAccelerators, Overlay],
+  mixins: [KeyboardAccelerators],
 
   _onOpen: function (event) {
     event.preventDefault();
@@ -110,7 +123,7 @@ var Menu = React.createClass({
     if (this.refs.control) {
       var controlElement = this.refs.control.getDOMNode();
       this.setState({
-        layerId: 'menu-layer-' + controlElement.getAttribute('data-reactid')
+        dropId: 'menu-drop-' + controlElement.getAttribute('data-reactid')
       });
     }
   },
@@ -137,7 +150,8 @@ var Menu = React.createClass({
     if (! this.state.active && prevState.active) {
       document.removeEventListener('click', this._onClose);
       this.stopListeningToKeyboard(activeKeyboardHandlers);
-      this.stopOverlay();
+      this._drop.remove();
+      this._drop = null;
     }
 
     // re-arm the space key in case we used it when active
@@ -149,34 +163,20 @@ var Menu = React.createClass({
     if (this.state.active && ! prevState.active) {
       document.addEventListener('click', this._onClose);
       this.startListeningToKeyboard(activeKeyboardHandlers);
+      this._drop = Drop.add(this.refs.control.getDOMNode(),
+        this._renderDrop(), this.props.dropAlign);
+    }
 
-      var controlElement = this.refs.control.getDOMNode();
-      var layerElement = document.getElementById(this.state.layerId);
-      var layerControlElement = layerElement.querySelectorAll("." + CLASS_ROOT + "__control")[0];
-      var layerControlIconElement = layerElement.querySelectorAll('svg, img')[0];
-
-      // give layer control element the same line height and font size as the control
-      var fontSize = window.getComputedStyle(controlElement).fontSize;
-      layerControlElement.style.fontSize = fontSize;
-      var height = controlElement.clientHeight;
-      if (layerControlIconElement &&
-        height <= (layerControlIconElement.clientHeight + 1)) {
-        // adjust to align with underlying control when control uses all height
-        if ('down' === this.props.direction) {
-          layerControlElement.style.marginTop = '-1px';
-        } else if ('up' === this.props.direction) {
-          layerControlElement.style.marginBottom = '1px';
-        }
-      }
-      layerControlElement.style.height = height + 'px';
-      layerControlElement.style.lineHeight = height + 'px';
-
-      this.startOverlay(controlElement, layerElement, this.props.align);
+    if (this.state.active) {
+      this._drop.render(this._renderDrop());
     }
   },
 
   componentWillUnmount: function () {
     document.removeEventListener('click', this._onClose);
+    if (this._drop) {
+      this._drop.remove();
+    }
   },
 
   _renderControl: function () {
@@ -214,6 +214,34 @@ var Menu = React.createClass({
     return result;
   },
 
+  _renderDrop: function() {
+    var other = pick(this.props, keys(Box.propTypes));
+
+    var controlContents = (
+      <div onClick={this._onClose}>
+        {this._renderControl()}
+      </div>
+    );
+
+    var onClick;
+    if (this.props.closeOnClick) {
+      onClick = this._onClose;
+    } else {
+      onClick = this._onSink;
+    }
+
+    return (
+      <MenuDrop router={this.context.router}
+        dropAlign={this.props.dropAlign}
+        {...other}
+        onClick={onClick}
+        id={this.state.dropId}
+        control={controlContents}>
+        {this.props.children}
+      </MenuDrop>
+    );
+  },
+
   _classes: function (prefix) {
     var classes = [prefix];
 
@@ -237,9 +265,6 @@ var Menu = React.createClass({
     var classes = this._classes(CLASS_ROOT);
     if (this.state.inline) {
       classes.push(CLASS_ROOT + "--inline");
-      if (this.props.flush) {
-        classes.push(CLASS_ROOT + "--flush");
-      }
     } else {
       classes.push(CLASS_ROOT + "--controlled");
       if (this.props.label) {
@@ -251,11 +276,12 @@ var Menu = React.createClass({
     }
 
     if (this.state.inline) {
+      var other = pick(this.props, keys(Box.propTypes));
 
       return (
-        <nav className={classes.join(' ')} onClick={this._onClose}>
+        <Box tag="nav" {...other} className={classes.join(' ')} onClick={this._onClose}>
           {this.props.children}
-        </nav>
+        </Box>
       );
 
     } else {
@@ -272,48 +298,6 @@ var Menu = React.createClass({
         </div>
       );
 
-    }
-  },
-
-  renderLayer: function() {
-    if (this.state.active) {
-
-      var controlContents = (
-        <div onClick={this._onClose}>
-          {this._renderControl()}
-        </div>
-      );
-
-      var first = null;
-      var second = null;
-      if ('up' === this.props.direction) {
-        first = this.props.children;
-        second = controlContents;
-      } else {
-        first = controlContents;
-        second = this.props.children;
-      }
-
-      var onClick;
-      if (this.props.closeOnClick) {
-        onClick = this._onClose;
-      } else {
-        onClick = this._onSink;
-      }
-
-      return (
-        <MenuLayer router={this.context.router}
-          align={this.props.align}
-          direction={this.props.direction}
-          onClick={onClick}
-          id={this.state.layerId}>
-          {first}
-          {second}
-        </MenuLayer>
-      );
-
-    } else {
-      return (<span />);
     }
   }
 

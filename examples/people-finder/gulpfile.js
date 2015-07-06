@@ -1,0 +1,49 @@
+var gulp = require('gulp');
+var path = require('path');
+var devGulpTasks = require('../../src/utils/gulp/gulp-tasks');
+
+var opts = {
+  base: '../../',
+  dist: path.resolve(__dirname, '../../examples/people-finder/dist/'),
+  copyAssets: [
+    'examples/people-finder/src/index.html',
+    {
+      asset: 'examples/people-finder/src/img/**',
+      dist: 'examples/people-finder/dist/img/'
+    },
+    {
+      asset: 'examples/people-finder/node_modules/leaflet/dist/images/**',
+      dist: 'examples/people-finder/dist/leaflet/images/'
+    }
+  ],
+  scssAssets: ['examples/people-finder/src/scss/**/*.scss'],
+  jsAssets: ['examples/people-finder/src/js/**/*.js'],
+  mainJs: 'examples/people-finder/src/js/index.js',
+  mainScss: 'examples/people-finder/src/scss/index.scss',
+  sync: {
+    hostname: 'grommet.io',
+    username: 'grommet',
+    remoteDestination: '/var/www/html/examples/people-finder/dist'
+  },
+  webpack: {
+    resolve: {
+      alias: { // TODO: remove, just for local dev
+        'grommet/scss': path.resolve(__dirname, '../../src/scss'),
+        'grommet': path.resolve(__dirname, '../../src/js')
+      },
+      root: [
+        path.resolve(__dirname, 'src/js'),
+        path.resolve(__dirname, 'src/scss'),
+        path.resolve(__dirname, '../../src/scss'),
+        path.resolve(__dirname, '../../node_modules'),
+        path.resolve(__dirname, 'node_modules')
+      ]
+    }
+  },
+  devServerPort: 9020,
+  devServerProxy: {
+    "/ldap/*": 'http://localhost:8000'
+  }
+};
+
+devGulpTasks(gulp, opts);

@@ -1,146 +1,23 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-.section {
-  padding-top: double($inuit-base-spacing-unit);
-  padding-bottom: double($inuit-base-spacing-unit);
+section:not(.section) {
+  padding-top: $inuit-base-spacing-unit;
+  padding-bottom: $inuit-base-spacing-unit;
 
-  &__content {
-    > h1,
-    > h2,
-    > h3,
-    > h4,
-    p {
-      padding-left: $inuit-base-spacing-unit;
-      padding-right: $inuit-base-spacing-unit;
-    }
-  }
-
-  &--right {
-    .section__content {
-      display: -webkit-flex;
-      display: flex;
-
-      @include flexible();
-
-      @include media-query(lap-and-up) {
-        > * {
-          margin-right: double($inuit-base-spacing-unit);
-
-          &:last-child {
-            margin-right: 0px;
-          }
-        }
-
-        > .menu:first-child {
-          -webkit-flex: 0 0 auto;
-          flex: 0 0 auto;
-          width: $nav-width;
-        }
-      }
-
-      @include media-query(palm) {
-        -webkit-flex-direction: column;
-        flex-direction: column;
-
-        > * {
-          margin-bottom: double($inuit-base-spacing-unit);
-          padding-bottom: double($inuit-base-spacing-unit);
-          //border-bottom: 1px solid $border-color;
-
-          &:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-          }
-        }
-      }
-    }
-  }
-
-  &--compact {
+  &:first-of-type {
+    margin-top: 0px;
     padding-top: 0px;
-    padding-bottom: 0px;
-
-    .section__content {
-      padding-top: halve($inuit-base-spacing-unit);
-      padding-bottom: halve($inuit-base-spacing-unit);
-    }
-  }
-
-  &--centered {
-    text-align: center;
-
-    .section__content {
-
-      > * {
-        margin-left: auto;
-        margin-right: auto;
-
-        @include media-query(lap-and-up) {
-          &.menu {
-            display: inline-block;
-          }
-        }
-      }
-    }
-  }
-
-  &--flush {
-    .section__content {
-      > h1,
-      > h2,
-      > h3,
-      > h4,
-      p {
-        padding-left: 0px;
-        padding-right: 0px;
-      }
-    }
-  }
-
-  &--full {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: column;
-    flex-direction: column;
-    -webkit-justify-content: center;
-    justify-content: center;
-    min-width: 100vw;
-    min-height: 100vh;
-
-    .section__content {
-      -webkit-flex: 0 0 auto;
-      flex: 0 0 auto;
-
-      @include media-query(lap-and-up) {
-        @for $i from 1 through 8 {
-          > *:nth-child(#{$i}) {
-            transition: opacity 1.2s ease-in-out #{(0.3 * ($i - 1)) + 's'};
-          }
-        }
-      }
-    }
-
-    @include media-query(lap-and-up) {
-      &.section--inactive {
-        .section__content > * {
-          opacity: 0;
-        }
-      }
-    }
   }
 }
 
-section:not(.section) {
-  margin-top: $inuit-base-spacing-unit;
-  margin-bottom: $inuit-base-spacing-unit;
-  padding-top: $inuit-base-spacing-unit;
+.section,
+section {
 
   > img {
-    margin-top: double($inuit-base-spacing-unit);
-    margin-bottom: double($inuit-base-spacing-unit);
+    margin-top: $inuit-base-spacing-unit;
+    margin-bottom: $inuit-base-spacing-unit;
     display: block;
-    max-width: $readable-text-width;
+    height: auto;
 
     @include media-query(palm) {
       max-width: 100%;
@@ -189,43 +66,6 @@ section:not(.section) {
       @include media-query(palm) {
         padding-right: $inuit-base-spacing-unit;
       }
-    }
-  }
-
-  > h2 {
-    position: relative;
-    padding-top: $inuit-base-spacing-unit;
-
-    &:after {
-      position: absolute;
-      content: '';
-      top: 0px;
-      left: 0px;
-      right: 0px;
-      border-top: 1px solid $border-color;
-
-      @include media-query(palm) {
-        //left: $inuit-base-spacing-unit;
-        //right: $inuit-base-spacing-unit;
-      }
-
-    }
-  }
-
-  &:first-of-type {
-    margin-top: 0px;
-    padding-top: 0px;
-
-    > h2 {
-      padding-top: 0px;
-    }
-
-    > h2:after {
-      border-top: none;
-    }
-
-    > p:first-child {
-      margin-top: 0px;
     }
   }
 }

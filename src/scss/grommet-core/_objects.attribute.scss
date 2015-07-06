@@ -1,8 +1,7 @@
 // (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
 
 .attribute {
-  padding: $inuit-base-spacing-unit $inuit-base-spacing-unit
-    halve($inuit-base-spacing-unit);
+  margin-bottom: halve($inuit-base-spacing-unit);
 
   @include media-query(lap-and-up) {
     width: $form-width;

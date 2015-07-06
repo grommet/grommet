@@ -4,6 +4,7 @@ var React = require('react');
 var Header = require('../Header');
 var Menu = require('../Menu');
 var Search = require('../Search');
+var Box = require('../Box');
 var IndexFilters = require('./IndexFilters');
 var IndexQuery = require('../../utils/IndexQuery');
 var IntlMixin = require('../../mixins/GrommetIntlMixin');
@@ -101,21 +102,25 @@ var IndexHeader = React.createClass({
 
     return (
       <Header className={classes.join(' ')}
-        fixed={this.props.fixed} flush={false} large={true}>
-        {navControl}
-        <Search className={CLASS_ROOT + "__search"}
-          inline={true}
-          placeHolder={this.getGrommetIntlMessage('Search') + ' ' + label}
-          defaultValue={searchText}
-          onChange={this._onSearchChange} />
-        {filters}
-        {addControl}
-        <span className={CLASS_ROOT + "__count"}>
-          {this.props.total}
-          <span className={outOfClasses.join(' ')}>
-            out of {this.props.unfilteredTotal}
+        fixed={this.props.fixed} pad="medium" justify="between" large={true}>
+        <Box direction="row" responsive={false} align="center">
+          {navControl}
+          <Search className={CLASS_ROOT + "__search"}
+            inline={true}
+            placeHolder={this.getGrommetIntlMessage('Search') + ' ' + label}
+            defaultValue={searchText}
+            onChange={this._onSearchChange} />
+        </Box>
+        <Box direction="row" responsive={false}>
+          {filters}
+          {addControl}
+          <span className={CLASS_ROOT + "__count"}>
+            {this.props.total}
+            <span className={outOfClasses.join(' ')}>
+              out of {this.props.unfilteredTotal}
+            </span>
           </span>
-        </span>
+        </Box>
       </Header>
     );
   }

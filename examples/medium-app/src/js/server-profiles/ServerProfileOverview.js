@@ -3,7 +3,7 @@
 var React = require('react');
 var Link = require('react-router').Link;
 var RestWatch = require('grommet/utils/RestWatch');
-var GrommetDocument = require('grommet/components/Document');
+var Article = require('grommet/components/Article');
 var Header = require('grommet/components/Header');
 var Section = require('grommet/components/Section');
 var ResourceNotifications = require('grommet/components/index/ResourceNotifications');
@@ -65,8 +65,8 @@ var ServerProfileOverview = React.createClass({
     var connections;
 
     return (
-      <GrommetDocument flush={false}>
-        <Header flush={false} small={true}>
+      <Article>
+        <Header pad={{horizontal: 'medium'}}>
           <span>
             <StatusIcon value={serverProfile.status} />
             {serverProfile.name}
@@ -75,7 +75,7 @@ var ServerProfileOverview = React.createClass({
 
         <ResourceNotifications resourceUri={this.state.uri} />
 
-        <Section compact={true} flush={false}>
+        <Section pad="medium">
           <Attribute label="Description">
             {serverProfile.description}
           </Attribute>
@@ -87,21 +87,21 @@ var ServerProfileOverview = React.createClass({
           </Attribute>
         </Section>
 
-        <Section compact={true} flush={false} colorIndex="neutral-1">
+        <Section pad="medium" colorIndex="neutral-1">
           <h2>Firmware</h2>
           <Attribute label="Firmware baseline">
             {serverProfile.firmwareBaseline}
           </Attribute>
         </Section>
 
-        <Section compact={true} flush={false} colorIndex="neutral-2">
+        <Section pad="medium" colorIndex="neutral-2">
           <h2>Connections</h2>
           <Tiles flush={false}>
             {connections}
           </Tiles>
         </Section>
 
-      </GrommetDocument>
+      </Article>
     );
   }
 });

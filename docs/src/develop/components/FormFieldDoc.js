@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var GrommetDocument = require('grommet/components/Document');
+var Article = require('grommet/components/Article');
 var FormField = require('grommet/components/FormField');
 var CheckBox = require('grommet/components/CheckBox');
 var RadioButton = require('grommet/components/RadioButton');
@@ -14,7 +14,7 @@ var FormFieldDoc = React.createClass({
       "  <input id=\"item1\" />",
       "</FormField>"].join("\n");
     return (
-      <GrommetDocument flush={false}>
+      <Article>
         <header>
           <h1>FormField</h1>
           <p>A field in a web form.</p>
@@ -74,7 +74,7 @@ var FormFieldDoc = React.createClass({
 
         </section>
 
-      </GrommetDocument>
+      </Article>
     );
   }
 });

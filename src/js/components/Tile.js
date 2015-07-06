@@ -1,22 +1,34 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
+var merge = require('lodash/object/merge');
+var pick = require('lodash/object/pick');
+var keys = require('lodash/object/keys');
+var Box = require('./Box');
 
 var CLASS_ROOT = "tile";
 
 var Tile = React.createClass({
 
-  propTypes: {
-    onClick: React.PropTypes.func,
+  propTypes: merge({
     selected: React.PropTypes.bool,
     status: React.PropTypes.string,
     wide: React.PropTypes.bool
+  }, Box.propTypes),
+
+  getDefaultProps: function () {
+    return {
+      pad: 'none',
+      direction: 'column',
+      align: 'center'
+    };
   },
 
   render: function() {
     var classes = [CLASS_ROOT];
+    var other = pick(this.props, keys(Box.propTypes));
     if (this.props.status) {
-      classes.push(CLASS_ROOT = "--status-" + this.props.status.toLowerCase());
+      classes.push(CLASS_ROOT + "--status-" + this.props.status.toLowerCase());
     }
     if (this.props.wide) {
       classes.push(CLASS_ROOT + "--wide");
@@ -32,9 +44,9 @@ var Tile = React.createClass({
     }
 
     return (
-      <div className={classes.join(' ')} onClick={this.props.onClick}>
+      <Box className={classes.join(' ')} {...other} onClick={this.props.onClick}>
         {this.props.children}
-      </div>
+      </Box>
     );
   }
 

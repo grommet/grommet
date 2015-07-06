@@ -13,18 +13,11 @@ describe('Grommet Header', function() {
     GrommetTestUtils.componentShouldExist(Component, 'header', 'Header');
   });
 
-  it('loads a primary Header', function() {
-    var React = require('react/addons');
-    var Component = GrommetTestUtils.getComponent(__path__, <h2>Header Primary</h2>, { primary: true });
-
-    GrommetTestUtils.componentShouldExist(Component, 'header--primary', 'Header Primary');
-  });
-
   it('loads a fixed Header', function() {
     var React = require('react/addons');
     var Component = GrommetTestUtils.getComponent(__path__, <h2>Header Fixed</h2>, { fixed: true });
 
-    GrommetTestUtils.componentShouldExist(Component, 'header--fixed', 'Header Fixed');
+    GrommetTestUtils.componentShouldExist(Component, 'header__container--fixed', 'Header Fixed');
   });
 
   it('loads a large Header', function() {

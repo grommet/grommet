@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var GrommetDocument = require('grommet/components/Document');
+var Article = require('grommet/components/Article');
 var Sidebar = require('grommet/components/Sidebar');
 var Header = require('grommet/components/Header');
 var Footer = require('grommet/components/Footer');
@@ -14,7 +14,7 @@ var Search = require('grommet/components/Search');
 var NavigationDoc = React.createClass({
   render: function() {
     return (
-      <GrommetDocument flush={false}>
+      <Article>
         <header>
           <h1>Navigation</h1>
         </header>
@@ -38,13 +38,13 @@ var NavigationDoc = React.createClass({
                   </div>
                 </Menu>
               </Header>
-              <Menu direction="down" flush={false}>
+              <Menu direction="column" flush={false}>
                 <a>First area</a>
                 <a>Second area</a>
                 <a>Third area</a>
               </Menu>
               <Footer>
-                <Menu icon={<Gravatar email="" default="mm" />} direction="up">
+                <Menu icon={<Gravatar email="" default="mm" />} dropAlign={{bottom: 'bottom'}}>
                   <a>Logout</a>
                 </Menu>
               </Footer>
@@ -72,7 +72,7 @@ var NavigationDoc = React.createClass({
           </div>
         </section>
 
-      </GrommetDocument>
+      </Article>
     );
   }
 });
