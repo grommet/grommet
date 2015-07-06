@@ -1,16 +1,14 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
+var List = require('../List');
 var IndexAttribute = require('./IndexAttribute');
-var InfiniteScroll = require('../../mixins/InfiniteScroll');
-var SpinningIcon = require('../icons/Spinning');
 
 var CLASS_ROOT = 'index-list';
 
 var IndexList = React.createClass({
 
   propTypes: {
-    flush: React.PropTypes.bool,
     options: React.PropTypes.shape({
       attributes: React.PropTypes.arrayOf(React.PropTypes.shape({
         attribute: React.PropTypes.string,
@@ -34,116 +32,56 @@ var IndexList = React.createClass({
     onSelect: React.PropTypes.func
   },
 
-  mixins: [InfiniteScroll],
-
-  getDefaultProps: function () {
-    return {flush: true};
-  },
-
-  _onClick: function (uri) {
-    this.props.onSelect(uri);
-  },
-
-  componentDidMount: function () {
-    if (this.props.onMore && this.refs.more) {
-      this.startListeningForScroll(this.refs.more.getDOMNode(),
-        this.props.onMore);
-    }
-  },
-
-  componentDidUpdate: function () {
-    this.stopListeningForScroll();
-    if (this.props.onMore && this.refs.more) {
-      this.startListeningForScroll(this.refs.more.getDOMNode(),
-        this.props.onMore);
-    }
-  },
-
-  componentWillUnmount: function () {
-    if (this.props.onMore) {
-      this.stopListeningForScroll();
-    }
+  _onSelect: function (item) {
+    this.props.onSelect(item.uri);
   },
 
   render: function () {
     var classes = [CLASS_ROOT];
-    if (this.props.flush) {
-      classes.push(CLASS_ROOT + "--flush");
-    }
     if (this.props.className) {
       classes.push(this.props.className);
     }
 
-    var items = null;
+    // build List scheme from attributes
+    var schema = [{attribute: 'uri', uid: true}];
+    this.props.options.attributes.forEach(function (attribute) {
+      if ('status' === attribute.attribute) {
+        schema.push({attribute: 'status', image: true});
+      } else if (1 === attribute.index) {
+        schema.push({attribute: attribute.attribute, primary: true});
+      } else if (2 === attribute.index) {
+        schema.push({attribute: attribute.attribute, secondary: true});
+      }
+    });
+
+    var data = [];
     if (this.props.result && this.props.result.items) {
-      items = this.props.result.items.map(function (item) {
-        var classes = [CLASS_ROOT + "__item"];
-        if (this.props.selection && item.uri === this.props.selection) {
-          classes.push(CLASS_ROOT + "__item--selected");
-        }
+      data = this.props.result.items.map(function (item) {
+        var dataItem = {uri: item.uri};
 
-        var headerValues = [];
-        var values = [];
-        var footerValues = [];
-
-        this.props.options.attributes.forEach(function (attribute) {
-          var value = (
-            <IndexAttribute key={attribute.attribute}
-              item={item} attribute={attribute} />
-          );
-          if (attribute.header) {
-            headerValues.push(value);
-          } else if (attribute.footer) {
-            footerValues.push(value);
-          } else {
-            values.push(value);
+        schema.forEach(function (scheme) {
+          if (! scheme.uid) {
+            dataItem[scheme.attribute] = (
+              <IndexAttribute key={scheme.attribute}
+                item={item} attribute={{attribute: scheme.attribute}} />
+            );
           }
         }, this);
 
-        var header = null;
-        if (headerValues.length > 0) {
-          header = (
-            <div className={CLASS_ROOT + "__item-header"}>
-              {headerValues}
-            </div>
-          );
-        }
-
-        var footer = null;
-        if (footerValues.length > 0) {
-          footer = (
-            <div className={CLASS_ROOT + "__item-footer"}>
-              {footerValues}
-            </div>
-          );
-        }
-
-        return (
-          <li key={item.uri} className={classes.join(' ')}
-            onClick={this._onClick.bind(this, item.uri)}>
-            {header}
-            {values}
-            {footer}
-          </li>
-        );
+        return dataItem;
       }, this);
     }
 
-    var more = null;
+    var onMore = null;
     if (this.props.result &&
       this.props.result.count < this.props.result.total) {
-      more = (
-        <div ref="more" className={CLASS_ROOT + "__more"}>
-          <SpinningIcon />
-        </div>
-      );
+      onMore = this.props.onMore;
     }
 
     return (
-      <ol className={classes.join(' ')}>
-        {items}
-        {more}
-      </ol>
+      <List className={classes.join(' ')}
+        schema={schema} data={data} selected={this.props.selection}
+        onMore={onMore} onSelect={this._onSelect} />
     );
   }
 

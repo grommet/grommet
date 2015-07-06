@@ -12,6 +12,7 @@
     "express-http-proxy": "^0.6.0",
     "json-server": "^0.5.5",
     "json-stringify-pretty-compact": "^1.0.1",
+    "ldapjs": "^0.7.1",
     "lodash": "^2.4.1",
     "morgan": "^1.5.0",
     "request": "^2.53.0",

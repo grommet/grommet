@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
+var Article = require('grommet/components/Article');
 var Header = require('grommet/components/Header');
 var Title = require('grommet/components/Title');
 var Menu = require('grommet/components/Menu');
@@ -74,8 +75,8 @@ var ServerProfileAdd = React.createClass({
     }
 
     return (
-      <div>
-        <Header flush={false} fixed={true} large={true}>
+      <Article>
+        <Header fixed={true} large={true} justify="between" pad={{horizontal: 'medium'}}>
           <Title>Add Server Profile</Title>
           <Menu>
             <Link to="server profiles"><CloseIcon /></Link>
@@ -86,7 +87,7 @@ var ServerProfileAdd = React.createClass({
           onSubmit={this._onSubmit} buttonLabel="Add"
           processingMessage={message} />
 
-      </div>
+      </Article>
     );
   }
 });

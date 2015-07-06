@@ -241,7 +241,7 @@ var ServerProfileForm = React.createClass({
     }
 
     return (
-      <Form flush={false}>
+      <Form pad="medium">
         <FormFields>
 
           <fieldset>
@@ -384,9 +384,9 @@ var ServerProfileForm = React.createClass({
 
         </FormFields>
 
-        <Footer flush={false}>
+        <Footer pad={{vertical: 'medium'}}>
           <span></span>
-          <Menu direction="left">
+          <Menu direction="row">
             {actions}
           </Menu>
         </Footer>

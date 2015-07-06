@@ -23,6 +23,16 @@
       color: $colored-text-color;
     }
   }
+
+  .background-color-index-neutral-#{$i}-a,
+  .background-color-index-neutral-#{$i+length($brand-neutral-colors)}-a {
+    background-color: rgba(nth($brand-neutral-colors, $i), 0.8);
+    color: $colored-text-color;
+
+    a {
+      color: $colored-text-color;
+    }
+  }
 }
 
 @for $i from 1 through length($brand-accent-colors) {

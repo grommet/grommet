@@ -2,9 +2,8 @@
 
 var React = require('react');
 var moment = require('moment');
-var ReactLayeredComponent = require('../mixins/ReactLayeredComponent');
 var KeyboardAccelerators = require('../mixins/KeyboardAccelerators');
-var Overlay = require('../mixins/Overlay');
+var Drop = require('../utils/Drop');
 var CalendarIcon = require('./icons/Calendar');
 var PreviousIcon = require('./icons/Left');
 var NextIcon = require('./icons/Right');
@@ -23,10 +22,12 @@ var Calendar = React.createClass({
     value: React.PropTypes.string
   },
 
-  mixins: [ReactLayeredComponent, KeyboardAccelerators, Overlay],
+  mixins: [KeyboardAccelerators],
 
   getDefaultProps: function () {
-    return {value: (new Date()).toISOString().slice(0, 10)};
+    return {
+      value: (new Date()).toISOString().slice(0, 10)
+    };
   },
 
   _onInputChange: function (event) {
@@ -37,11 +38,11 @@ var Calendar = React.createClass({
 
   _onOpen: function (event) {
     event.preventDefault();
-    this.setState({active: true, activeSuggestionIndex: -1});
+    this.setState({dropActive: true});
   },
 
   _onClose: function () {
-    this.setState({active: false});
+    this.setState({dropActive: false});
   },
 
   _onClickDay: function (date) {
@@ -127,7 +128,7 @@ var Calendar = React.createClass({
     this._onClose();
   },
 
-  _activation: function (active) {
+  _activation: function (dropActive) {
 
     var listeners = {
       esc: this._onClose,
@@ -142,21 +143,23 @@ var Calendar = React.createClass({
       space: this._onSelectDate
     };
 
-    if (active) {
+    if (dropActive) {
 
       document.addEventListener('click', this._onClose);
       this.startListeningToKeyboard(listeners);
 
-      var element = this.refs.component.getDOMNode();
-      var layerElement = document.getElementById(CLASS_ROOT + '-layer');
-      this.startOverlay(element, layerElement, 'below');
+      this._drop = Drop.add(this.refs.component.getDOMNode(),
+        this._renderDrop(), {top: 'bottom', left: 'left'});
 
     } else {
 
       document.removeEventListener('click', this._onClose);
       this.stopListeningToKeyboard(listeners);
-      this.stopOverlay();
 
+      if (this._drop) {
+        this._drop.remove();
+        this._drop = null;
+      }
     }
   },
 
@@ -175,21 +178,24 @@ var Calendar = React.createClass({
 
   getInitialState: function () {
     var state = this._stateFromProps(this.props);
-    state.active = false;
+    state.dropActive = false;
     return state;
   },
 
   componentDidMount: function () {
-    this._activation(this.state.active);
+    this._activation(this.state.dropActive);
   },
 
   componentDidUpdate: function (prevProps, prevState) {
     // Set up keyboard listeners appropriate to the current state.
-    if (! this.state.active && prevState.active) {
-      this._activation(this.state.active);
+    if (! this.state.dropActive && prevState.dropActive) {
+      this._activation(this.state.dropActive);
     }
-    if (this.state.active && ! prevState.active) {
-      this._activation(this.state.active);
+    if (this.state.dropActive && ! prevState.dropActive) {
+      this._activation(this.state.dropActive);
+    }
+    if (this.state.dropActive) {
+      this._drop.render(this._renderDrop());
     }
   },
 
@@ -202,9 +208,76 @@ var Calendar = React.createClass({
     this._activation(false);
   },
 
+  _renderDrop: function() {
+    var weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    var headerCells = weekDays.map(function (day) {
+      return <th key={day}>{day}</th>;
+    });
+
+    var reference = this.state.reference;
+    var start = moment(reference).startOf('month').startOf('week');
+    var end = moment(reference).endOf('month').endOf('week');
+    var date = moment(start);
+    var rows = [];
+
+    while (date.valueOf() <= end.valueOf()) {
+      var days = [];
+      for (var i = 0; i < 7; i += 1) {
+        var classes = [CLASS_ROOT + "__day"];
+        if (this.state.current && date.isSame(this.state.current)) {
+          classes.push(CLASS_ROOT + "__day--active");
+        }
+        if (! date.isSame(reference, 'month')) {
+          classes.push(CLASS_ROOT + "__day--other-month");
+        }
+        days.push(
+          <td key={date.valueOf()}>
+            <div className={classes.join(' ')}
+              onClick={this._onClickDay.bind(this, moment(date))}>
+              {date.date()}
+            </div>
+          </td>
+        );
+        date.add(1, 'days');
+      }
+      rows.push(<tr key={date.valueOf()}>{days}</tr>);
+    }
+
+    return (
+      <div id={CLASS_ROOT + "-drop"} className={CLASS_ROOT + "__drop"}
+        onClick={this._onClose}>
+        <Header justify="between">
+          <Menu>
+            <span className={CLASS_ROOT + "__previous"} onClick={this._onPrevious}>
+              <PreviousIcon />
+            </span>
+          </Menu>
+          <Title className={CLASS_ROOT + "__title"}>
+            {this.state.reference.format('MMMM YYYY')}
+          </Title>
+          <Menu>
+            <span className={CLASS_ROOT + "__next"} onClick={this._onNext}>
+              <NextIcon />
+            </span>
+          </Menu>
+        </Header>
+        <div className={CLASS_ROOT + "__grid"}>
+          <table>
+            <thead>
+              <tr>{headerCells}</tr>
+            </thead>
+            <tbody>
+              {rows}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    );
+  },
+
   render: function() {
     var classes = [CLASS_ROOT];
-    if (this.state.active) {
+    if (this.state.dropActive) {
       classes.push(CLASS_ROOT + "--active");
     }
     if (this.props.className) {
@@ -222,77 +295,6 @@ var Calendar = React.createClass({
         </div>
       </div>
     );
-  },
-
-  renderLayer: function() {
-    if (this.state.active) {
-      var weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-      var headerCells = weekDays.map(function (day) {
-        return <th key={day}>{day}</th>;
-      });
-
-      var reference = this.state.reference;
-      var start = moment(reference).startOf('month').startOf('week');
-      var end = moment(reference).endOf('month').endOf('week');
-      var date = moment(start);
-      var rows = [];
-
-      while (date.valueOf() <= end.valueOf()) {
-        var days = [];
-        for (var i = 0; i < 7; i += 1) {
-          var classes = [CLASS_ROOT + "__day"];
-          if (this.state.current && date.isSame(this.state.current)) {
-            classes.push(CLASS_ROOT + "__day--active");
-          }
-          if (! date.isSame(reference, 'month')) {
-            classes.push(CLASS_ROOT + "__day--other-month");
-          }
-          days.push(
-            <td key={date.valueOf()}>
-              <div className={classes.join(' ')}
-                onClick={this._onClickDay.bind(this, moment(date))}>
-                {date.date()}
-              </div>
-            </td>
-          );
-          date.add(1, 'days');
-        }
-        rows.push(<tr key={date.valueOf()}>{days}</tr>);
-      }
-
-      return (
-        <div id={CLASS_ROOT + "-layer"} className={CLASS_ROOT + "__layer"}
-          onClick={this._onClose}>
-          <Header>
-            <Menu>
-              <span className={CLASS_ROOT + "__previous"} onClick={this._onPrevious}>
-                <PreviousIcon />
-              </span>
-            </Menu>
-            <Title className={CLASS_ROOT + "__title"}>
-              {this.state.reference.format('MMMM YYYY')}
-            </Title>
-            <Menu>
-              <span className={CLASS_ROOT + "__next"} onClick={this._onNext}>
-                <NextIcon />
-              </span>
-            </Menu>
-          </Header>
-          <div className={CLASS_ROOT + "__grid"}>
-            <table>
-              <thead>
-                <tr>{headerCells}</tr>
-              </thead>
-              <tbody>
-                {rows}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      );
-    } else {
-      return (<span />);
-    }
   }
 
 });

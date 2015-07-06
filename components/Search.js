@@ -1,9 +1,8 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var ReactLayeredComponent = require('../mixins/ReactLayeredComponent');
 var KeyboardAccelerators = require('../mixins/KeyboardAccelerators');
-var Overlay = require('../mixins/Overlay');
+var Drop = require('../utils/Drop');
 var SearchIcon = require('./icons/Search');
 var IntlMixin = require('../mixins/GrommetIntlMixin');
 
@@ -12,37 +11,39 @@ var CLASS_ROOT = "search";
 var Search = React.createClass({
 
   propTypes: {
-    align: React.PropTypes.oneOf(['left', 'right']),
     defaultValue: React.PropTypes.string,
+    dropAlign: Drop.alignPropType,
     inline: React.PropTypes.bool,
     onChange: React.PropTypes.func,
     placeHolder: React.PropTypes.string,
-    suggestions: React.PropTypes.arrayOf(React.PropTypes.string)
+    suggestions: React.PropTypes.arrayOf(React.PropTypes.string),
+    value: React.PropTypes.string
   },
 
   getDefaultProps: function () {
     return {
       align: 'left',
       inline: false,
-      placeHolder: 'Search'
+      placeHolder: 'Search',
+      dropAlign: {top: 'top', left: 'left'}
     };
   },
 
-  mixins: [ReactLayeredComponent, KeyboardAccelerators, Overlay, IntlMixin],
+  mixins: [KeyboardAccelerators, IntlMixin],
 
-  _onAddLayer: function (event) {
+  _onAddDrop: function (event) {
     event.preventDefault();
-    this.setState({layer: true, activeSuggestionIndex: -1});
+    this.setState({dropActive: true, activeSuggestionIndex: -1});
   },
 
-  _onRemoveLayer: function () {
-    this.setState({layer: false});
+  _onRemoveDrop: function () {
+    this.setState({dropActive: false});
   },
 
   _onFocusControl: function () {
     this.setState({
       controlFocused: true,
-      layer: true,
+      dropActive: true,
       activeSuggestionIndex: -1
     });
   },
@@ -54,13 +55,13 @@ var Search = React.createClass({
   _onFocusInput: function () {
     this.refs.input.getDOMNode().select();
     this.setState({
-      layer: (! this.state.inline || this.props.suggestions),
+      dropActive: (! this.state.inline || this.props.suggestions),
       activeSuggestionIndex: -1
     });
   },
 
   _onBlurInput: function () {
-    //this.setState({layer: false});
+    //this.setState({drop: false});
   },
 
   _onChangeInput: function (event) {
@@ -89,14 +90,14 @@ var Search = React.createClass({
         this.props.onChange(text);
       }
     }
-    this._onRemoveLayer();
+    this._onRemoveDrop();
   },
 
   _onClickSuggestion: function (item) {
     if (this.props.onChange) {
       this.props.onChange(item);
     }
-    this._onRemoveLayer();
+    this._onRemoveDrop();
   },
 
   _onSink: function (event) {
@@ -123,7 +124,7 @@ var Search = React.createClass({
       align: 'left',
       controlFocused: false,
       inline: this.props.inline,
-      layer: false,
+      dropActive: false,
       activeSuggestionIndex: -1
     };
   },
@@ -138,14 +139,14 @@ var Search = React.createClass({
     // Set up keyboard listeners appropriate to the current state.
 
     var activeKeyboardHandlers = {
-      esc: this._onRemoveLayer,
-      tab: this._onRemoveLayer,
+      esc: this._onRemoveDrop,
+      tab: this._onRemoveDrop,
       up: this._onPreviousSuggestion,
       down: this._onNextSuggestion,
       enter: this._onEnter
     };
     var focusedKeyboardHandlers = {
-      space: this._onAddLayer
+      space: this._onAddDrop
     };
 
     // the order here is important, need to turn off keys before turning on
@@ -154,48 +155,33 @@ var Search = React.createClass({
       this.stopListeningToKeyboard(focusedKeyboardHandlers);
     }
 
-    if (! this.state.layer && prevState.layer) {
-      document.removeEventListener('click', this._onRemoveLayer);
+    if (! this.state.dropActive && prevState.dropActive) {
+      document.removeEventListener('click', this._onRemoveDrop);
       this.stopListeningToKeyboard(activeKeyboardHandlers);
-      this.stopOverlay();
+      if (this._drop) {
+        this._drop.remove();
+        this._drop = null;
+      }
     }
 
     if (this.state.controlFocused && ! prevState.controlFocused) {
       this.startListeningToKeyboard(focusedKeyboardHandlers);
     }
 
-    if (this.state.layer && ! prevState.layer) {
-      document.addEventListener('click', this._onRemoveLayer);
+    if (this.state.dropActive && ! prevState.dropActive) {
+      document.addEventListener('click', this._onRemoveDrop);
       this.startListeningToKeyboard(activeKeyboardHandlers);
 
       var baseElement =
         (this.refs.control ? this.refs.control : this.refs.input).getDOMNode();
-      var layerElement = document.getElementById('search-layer');
-      var layerControlElement = layerElement.querySelectorAll('.search__control')[0];
-      var layerControlIconElement = layerElement.querySelectorAll('svg')[0];
-      var inputElement = layerElement.querySelectorAll('.search__input')[0];
+      this._drop = Drop.add(baseElement, this._renderDrop(), this.props.dropAlign);
 
-      // give input element the same line height and font size as the control
-      var fontSize = window.getComputedStyle(baseElement).fontSize;
-      inputElement.style.fontSize = fontSize;
-      var height = baseElement.clientHeight;
-      if (layerControlIconElement && height <= layerControlIconElement.clientHeight) {
-        // adjust to align with underlying control when control uses all height
-        layerControlElement.style.marginTop = '-2px';
-      }
-      inputElement.style.height = height + 'px';
-      if (layerControlElement) {
-        layerControlElement.style.height = height + 'px';
-        layerControlElement.style.lineHeight = height + 'px';
-      }
-
-      this.startOverlay(baseElement, layerElement, this.props.align);
-      inputElement.focus();
+      document.getElementById('search-drop-input').focus();
     }
   },
 
   componentWillUnmount: function () {
-    document.removeEventListener('click', this._onRemoveLayer);
+    document.removeEventListener('click', this._onRemoveDrop);
     window.removeEventListener('resize', this._onResize);
   },
 
@@ -223,11 +209,62 @@ var Search = React.createClass({
     } else {
       classes.push(prefix + "--controlled");
     }
-    if (this.props.align) {
-      classes.push(prefix + "--align-" + this.props.align);
-    }
 
     return classes;
+  },
+
+  _renderDrop: function() {
+    var classes = this._classes(CLASS_ROOT + "__drop");
+
+    var suggestions = null;
+    if (this.props.suggestions) {
+      suggestions = this.props.suggestions.map(function (item, index) {
+        var classes = [CLASS_ROOT + "__suggestion"];
+        if (index === this.state.activeSuggestionIndex) {
+          classes.push(CLASS_ROOT + "__suggestion--active");
+        }
+        return (
+          <div key={item}
+            className={classes.join(' ')}
+            onClick={this._onClickSuggestion.bind(this, item)}>
+            {item}
+          </div>
+        );
+      }, this);
+    }
+
+    var contents = (
+      <div className={CLASS_ROOT + "__drop-contents"} onClick={this._onSink}>
+        <input id="search-drop-input" type="search"
+          defaultValue={this.props.defaultValue}
+          value={this.props.value}
+          className={CLASS_ROOT + "__input" }
+          onChange={this._onChangeInput} />
+        <div className={CLASS_ROOT + "__suggestions"}>
+          {suggestions}
+        </div>
+      </div>
+    );
+
+    if (! this.state.inline) {
+      var control = this._createControl();
+      var rightAlign = (! this.props.dropAlign.left);
+      var first = rightAlign ? contents : control;
+      var second = rightAlign ? control : contents;
+
+      contents = (
+        <div className={CLASS_ROOT + "__drop-header"}>
+          {first}
+          {second}
+        </div>
+      );
+    }
+
+    return (
+      <div id="search-drop" className={classes.join(' ')}>
+        {contents}
+      </div>
+    );
   },
 
   render: function () {
@@ -245,7 +282,8 @@ var Search = React.createClass({
         <div className={classes.join(' ')}>
           <input ref="input" type="search"
             placeholder={this.getGrommetIntlMessage(this.props.placeHolder)}
-            value={this.props.defaultValue}
+            defaultValue={this.props.defaultValue}
+            value={this.props.value}
             className={CLASS_ROOT + "__input" }
             readOnly={readOnly}
             onFocus={this._onFocusInput}
@@ -261,71 +299,12 @@ var Search = React.createClass({
       return (
         <div ref="control" className={classes.join(' ')}
           tabIndex="0"
-          onClick={this._onAddLayer}
+          onClick={this._onAddDrop}
           onFocus={this._onFocusControl}
           onBlur={this._onBlurControl}>
           {controlContents}
         </div>
       );
-    }
-  },
-
-  renderLayer: function() {
-    if (this.state.layer) {
-
-      var classes = this._classes(CLASS_ROOT + "__layer");
-
-      var suggestions = null;
-      if (this.props.suggestions) {
-        suggestions = this.props.suggestions.map(function (item, index) {
-          var classes = [CLASS_ROOT + "__suggestion"];
-          if (index === this.state.activeSuggestionIndex) {
-            classes.push(CLASS_ROOT + "__suggestion--active");
-          }
-          return (
-            <div key={item}
-              className={classes.join(' ')}
-              onClick={this._onClickSuggestion.bind(this, item)}>
-              {item}
-            </div>
-          );
-        }, this);
-      }
-
-      var contents = (
-        <div className={CLASS_ROOT + "__layer-contents"} onClick={this._onSink}>
-          <input type="search"
-            defaultValue={this.props.defaultValue}
-            className={CLASS_ROOT + "__input" }
-            onChange={this._onChangeInput} />
-          <div className={CLASS_ROOT + "__suggestions"}>
-            {suggestions}
-          </div>
-        </div>
-      );
-
-      if (! this.state.inline) {
-        var control = this._createControl();
-        var rightAlign = ('right' === this.props.align);
-        var first = rightAlign ? contents : control;
-        var second = rightAlign ? control : contents;
-
-        contents = (
-          <div className={CLASS_ROOT + "__layer-header"}>
-            {first}
-            {second}
-          </div>
-        );
-      }
-
-      return (
-        <div id="search-layer" className={classes.join(' ')}>
-          {contents}
-        </div>
-      );
-
-    } else { // no layer
-      return (<span />);
     }
   }
 

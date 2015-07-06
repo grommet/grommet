@@ -1,102 +1,42 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var Top = require('./icons/Top');
+var merge = require('lodash/object/merge');
+var pick = require('lodash/object/pick');
+var keys = require('lodash/object/keys');
+var Box = require('./Box');
 
 var CLASS_ROOT = "footer";
 
 var Footer = React.createClass({
 
-  propTypes: {
-    centered: React.PropTypes.bool,
-    colorIndex: React.PropTypes.string,
-    flush: React.PropTypes.bool,
+  propTypes: merge({
     large: React.PropTypes.bool,
-    primary: React.PropTypes.bool,
-    scrollTop: React.PropTypes.bool
-  },
+    small: React.PropTypes.bool
+  }, Box.propTypes),
 
   getDefaultProps: function () {
     return {
-      flush: true
+      pad: 'none',
+      direction: 'row',
+      responsive: false
     };
-  },
-
-  _updateState: function () {
-    this.setState({scrolled: this._scrollable.scrollTop > 0});
-  },
-
-  _onClickTop: function() {
-    this._scrollable.scrollTop = 0;
-  },
-
-  _onScroll: function() {
-    // debounce
-    clearTimeout(this._scrollTimer);
-    this._scrollTimer = setTimeout(this._updateState, 10);
-  },
-
-  getInitialState: function () {
-    return {scrolled: false};
-  },
-
-  componentDidMount: function () {
-    this._scrollable = this.refs.footer.getDOMNode().parentNode.parentNode;
-    this._scrollable.addEventListener("scroll", this._onScroll);
-  },
-
-  componentWillUnmount: function () {
-    this._scrollable.removeEventListener("scroll", this._onScroll);
-  },
-
-  componentWillReceiveProps: function() {
-    this.setState({scrolled: false});
-  },
-
-  componentDidUpdate: function() {
-    if (!this.state.scrolled) {
-      this._scrollable.scrollTop = 0;
-    }
   },
 
   render: function() {
     var classes = [CLASS_ROOT];
-    if (this.props.primary) {
-      classes.push(CLASS_ROOT + "--primary");
-    }
-    if (this.props.centered) {
-      classes.push(CLASS_ROOT + "--centered");
-    }
-    if (this.props.flush) {
-      classes.push(CLASS_ROOT + "--flush");
-    }
+    var other = pick(this.props, keys(Box.propTypes));
     if (this.props.large) {
       classes.push(CLASS_ROOT + "--large");
-    }
-    if (this.props.colorIndex) {
-      classes.push("background-color-index-" + this.props.colorIndex);
     }
     if (this.props.className) {
       classes.push(this.props.className);
     }
 
-    var top = null;
-    if (this.props.scrollTop && this.state.scrolled) {
-      top = (
-        <div className={CLASS_ROOT + "__top control-icon"}
-          onClick = {this._onClickTop}>
-          <Top />
-        </div>
-      );
-    }
-
     return (
-      <div ref="footer" className={classes.join(' ')}>
-        <div className={CLASS_ROOT + "__content"}>
-          {this.props.children}
-          {top}
-        </div>
-      </div>
+      <Box tag="footer" {...other} className={classes.join(' ')}>
+        {this.props.children}
+      </Box>
     );
   }
 

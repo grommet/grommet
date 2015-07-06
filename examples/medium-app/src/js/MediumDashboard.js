@@ -6,6 +6,7 @@ var IndexActions = require('grommet/actions/IndexActions');
 var Tiles = require('grommet/components/Tiles');
 var Tile = require('grommet/components/Tile');
 var Header = require('grommet/components/Header');
+var Box = require('grommet/components/Box');
 var Title = require('grommet/components/Title');
 var Search = require('grommet/components/Search');
 var MediumSessionMenu = require('./MediumSessionMenu');
@@ -130,7 +131,7 @@ var MediumDashboard = React.createClass({
         header = this.getGrommetIntlMessage(tile.name);
       }
       if (header) {
-        header = <Header small={true}><h4>{header}</h4></Header>;
+        header = <Header small={true}><h3>{header}</h3></Header>;
       }
 
       var contents = null;
@@ -162,8 +163,8 @@ var MediumDashboard = React.createClass({
 
     return (
       <div>
-        <Header fixed={true} flush={false} primary={true} large={true}>
-          <span>
+        <Header direction="row" justify="between" large={true} pad={{horizontal: 'medium'}}>
+          <Box direction="row" align="center">
             <span onMouseOver={this._onOverTitle}
               onMouseOut={this._onOutTitle}>
               <Title onClick={this._onClickTitle}>
@@ -172,8 +173,8 @@ var MediumDashboard = React.createClass({
               </Title>
             </span>
             <Search ref="search" inline={true} />
-          </span>
-          <MediumSessionMenu align="right"/>
+          </Box>
+          <MediumSessionMenu dropAlign={{right: 'right'}} />
         </Header>
         <Tiles fill={true} flush={false}>
           {tiles}

@@ -1,11 +1,20 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
+var Box = require('./Box');
 
 var Title = React.createClass({
 
   propTypes: {
     onClick: React.PropTypes.func
+  },
+
+  getDefaultProps: function () {
+    return {
+      align: "center",
+      direction: "row",
+      responsive: false
+    };
   },
 
   render: function() {
@@ -18,9 +27,9 @@ var Title = React.createClass({
     }
 
     return (
-      <span className={classes.join(' ')} onClick={this.props.onClick}>
+      <Box {...this.props} className={classes.join(' ')} onClick={this.props.onClick}>
         {this.props.children}
-      </span>
+      </Box>
     );
   }
 

@@ -2,6 +2,7 @@
 
 .radio-button {
   margin-right: $inuit-base-spacing-unit;
+  white-space: nowrap;
   cursor: pointer;
 
   &:hover {

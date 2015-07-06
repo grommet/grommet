@@ -22,16 +22,9 @@
     right: halve($inuit-base-spacing-unit);
   }
 
-  &__layer {
-    position: fixed;
-    // This element will be positioned by the Overlay mixin.
-    z-index: 20;
-    background-color: $background-color;
-    border: $layer-border;
-    border-radius: $border-radius;
+  &__drop {
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
-    box-shadow: $layer-box-shadow;
   }
 
   &__title {
@@ -63,6 +56,7 @@
     cursor: pointer;
     width: $inuit-base-spacing-unit;
     height: $inuit-base-spacing-unit;
+    transition: background-color 0.3s;
 
     &:hover {
       background-color: $hover-background-color;

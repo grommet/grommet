@@ -42,3 +42,8 @@ $fade-in-duration: 0.5s;
     @content;
   }
 }
+
+@mixin transform($args...) {
+  -webkit-transform: $args;
+  transform: $args;
+}

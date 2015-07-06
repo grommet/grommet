@@ -66,15 +66,8 @@
     }
   }
 
-  &__layer {
-    position: fixed;
-    z-index: 20;
+  &__drop {
     @include inuit-font-size($inuit-base-font-size, inherit);
-    background-color: $background-color;
-    border: $layer-border;
-    border-radius: $border-radius;
-    box-shadow: $layer-box-shadow;
-    overflow: auto;
 
     .menu__control {
       &-label {
@@ -97,22 +90,11 @@
       }
     }
 
-    > .check-box,
-    > .radio-button {
-      margin: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit;
+    .check-box,
+    .radio-button {
+      margin-top: halve($inuit-base-spacing-unit);
+      margin-bottom: halve($inuit-base-spacing-unit);
     }
-
-    //&--down {
-    //  .menu__control:not(.menu__control--fixed-label) {
-    //    margin-top: -3px;
-    //  }
-    //
-    //  &.menu__layer--small {
-    //    .menu__control:not(.menu__control--fixed-label) {
-    //      margin-top: -1px;
-    //    }
-    //  }
-    //}
 
     &--align-right {
       .menu__control {
@@ -135,143 +117,26 @@
     overflow: hidden;
 
     &.menu {
-      &--left {
-        margin-left: $inuit-base-spacing-unit;
-        margin-right: $inuit-base-spacing-unit;
+      &--row,
+      &--right { // --right is deprecated
+        > * {
+          margin-left: 0px;
+          margin-right: $inuit-base-spacing-unit;
 
+          &:last-child {
+            margin-right: 0px;
+          }
+        }
+      }
+
+      &--row.box--justify-end,
+      &--left { // --left is deprecated
         > * {
           margin-left: $inuit-base-spacing-unit;
           margin-right: 0px;
 
           &:first-child {
             margin-left: 0px;
-          }
-
-          &.menu--down {
-            vertical-align: top;
-          }
-        }
-
-        &.menu--flush {
-          margin-left: 0px;
-          margin-right: 0px;
-        }
-      }
-
-      &--right {
-        margin-left: $inuit-base-spacing-unit;
-        margin-right: $inuit-base-spacing-unit;
-
-        > * {
-          margin-left: 0px;
-          margin-right: $inuit-base-spacing-unit;
-          //margin-bottom: $inuit-base-spacing-unit;
-
-          &:last-child {
-            margin-right: 0px;
-          }
-
-          &.menu--down {
-            vertical-align: top;
-            margin-bottom: $inuit-base-spacing-unit;
-          }
-        }
-
-        &.menu--flush {
-          margin-left: 0px;
-          margin-right: 0px;
-        }
-      }
-
-      &--down {
-
-        @include media-query(palm) {
-          &:empty {
-            width: 0;
-            margin: 0;
-            padding: 0;
-          }
-        }
-
-        > *:not(.button) {
-          margin-left: $inuit-base-spacing-unit;
-          margin-right: $inuit-base-spacing-unit;
-
-          &.menu--down {
-            margin-bottom: $inuit-base-spacing-unit;
-          }
-        }
-
-        > a {
-          padding-top: round($inuit-base-spacing-unit * 0.125);
-          padding-bottom: round($inuit-base-spacing-unit * 0.125);
-        }
-
-        &.menu--flush {
-          > * {
-            margin-left: 0px;
-            margin-right: 0px;
-          }
-        }
-      }
-
-      &--center {
-
-        @include media-query(palm) {
-          display: block;
-        }
-
-        > * {
-          margin-right: $inuit-base-spacing-unit;
-
-          @include media-query(palm) {
-            display: block;
-            margin-right: 0px;
-            margin-bottom: $inuit-base-spacing-unit;
-
-            .button {
-              display: block;
-              width: 100%;
-            }
-          }
-        }
-      }
-    }
-
-    [class*="background-color-index-"] & {
-
-      a,
-      a:hover,
-      a.active {
-        color: inherit;
-      }
-
-      &.menu--left,
-      &.menu--right {
-        a {
-          text-decoration: none;
-
-          &:hover:not(.active):not(.button) {
-            text-decoration: underline;
-          }
-        }
-      }
-
-      &.menu--down {
-        a {
-          padding: halve($inuit-base-spacing-unit);
-          border: 1px solid transparent;
-
-          &:hover {
-            text-decoration: none;
-
-            &:not(.active) {
-              border-color: $colored-active-background-color;
-            }
-          }
-
-          &.active {
-            background-color: $colored-active-background-color;
           }
         }
       }
@@ -297,18 +162,9 @@
   }
 
   &--primary {
-    display: block;
-    max-height: 100vh;
-    overflow: auto;
-
-    > .header:first-child {
-      margin-left: - $inuit-base-spacing-unit;
-      margin-right: - $inuit-base-spacing-unit;
-      margin-bottom: $inuit-base-spacing-unit;
-    }
 
     > a:not(.button) {
-      padding: quarter($inuit-base-spacing-unit) $inuit-base-spacing-unit;
+      padding: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit;
 
       &:hover {
         text-decoration: none;
@@ -319,8 +175,8 @@
       }
 
       &.active {
-        color: $text-color;
-        background-color: $selected-background-color;
+        color: $selected-primary-text-color;
+        background-color: $selected-primary-background-color;
       }
     }
 
@@ -337,23 +193,7 @@
 }
 
 .menu--inline.menu,
-.menu__layer {
-
-  &--left {
-    text-align: right;
-
-    > * {
-      display: inline-block;
-    }
-  }
-
-  &--right {
-    text-align: left;
-
-    > * {
-      display: inline-block;
-    }
-  }
+.menu__drop {
 
   &--small {
     font-size: 1em;
@@ -377,26 +217,23 @@
     }
   }
 
-  &--down,
-  &--up {
-    > * {
-      display: block;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      margin: 0px;
-      padding: halve($inuit-base-spacing-unit) 0px;
-      margin-top: $inuit-base-spacing-unit;
-      //border-top: 1px solid $border-color;
+  &.box--direction-column {
+    .menu {
       min-width: $nav-width;
+      margin-bottom: round($inuit-base-spacing-unit * 1.5);
+    }
+  }
 
-      &:first-child {
-        margin-top: 0px;
+  @include media-query(palm) {
+    &.box--responsive {
+      > * {
+        margin-left: 0px;
+        margin-right: 0px;
+      }
+
+      .button {
+        width: 100%;
+        margin-bottom: halve($inuit-base-spacing-unit);
       }
     }
   }

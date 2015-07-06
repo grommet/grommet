@@ -3,6 +3,7 @@
 var Grommet = {
   // Components
   App: require('./components/App'),
+  Article: require('./components/Article'),
   Button: require('./components/Button'),
   CheckBox: require('./components/CheckBox'),
   Document: require('./components/Document'),
@@ -13,6 +14,8 @@ var Grommet = {
   Header: require('./components/Header'),
   Headline: require('./components/Headline'),
   Label: require('./components/Label'),
+  List: require('./components/List'),
+  ListItem: require('./components/ListItem'),
   Login: require('./components/Login'),
   LoginForm: require('./components/LoginForm'),
   Menu: require('./components/Menu'),

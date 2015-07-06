@@ -2,6 +2,7 @@
 
 .check-box {
   margin-right: halve($inuit-base-spacing-unit);
+  white-space: nowrap;
   cursor: pointer;
 
   &:hover {
