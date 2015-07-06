@@ -20,9 +20,11 @@ var SplitDoc = React.createClass({
         <section>
           <h2>Options</h2>
           <dl>
-            <dt><code>flex  both|left|right</code></dt>
+            <dt><code>flex      both|left|right</code></dt>
             <dd>Which side to give flexible space to.
               The default value is 'both'.</dd>
+            <dt><code>separator  true|false</code></dt>
+            <dd>Whether to include a separator between the children.</dd>
           </dl>
         </section>
 

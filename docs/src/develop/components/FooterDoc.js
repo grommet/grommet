@@ -30,6 +30,8 @@ var FooterDoc = React.createClass({
           <dl>
             <dt><code>large       true|false</code></dt>
             <dd>Larger sized version.</dd>
+            <dt><code>separator   true|false</code></dt>
+            <dd>Whether there is a separator above the footer.</dd>
             <dt><code>small       true|false</code></dt>
             <dd>Smaller sized version.</dd>
           </dl>

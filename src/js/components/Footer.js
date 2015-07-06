@@ -12,6 +12,7 @@ var Footer = React.createClass({
 
   propTypes: merge({
     large: React.PropTypes.bool,
+    separator: React.PropTypes.bool,
     small: React.PropTypes.bool
   }, Box.propTypes),
 
@@ -28,6 +29,9 @@ var Footer = React.createClass({
     var other = pick(this.props, keys(Box.propTypes));
     if (this.props.large) {
       classes.push(CLASS_ROOT + "--large");
+    }
+    if (this.props.separator) {
+      classes.push(CLASS_ROOT + "--separator");
     }
     if (this.props.className) {
       classes.push(this.props.className);
