@@ -164,7 +164,7 @@ var MediumDashboard = React.createClass({
     return (
       <div>
         <Header direction="row" justify="between" large={true} pad={{horizontal: 'medium'}}>
-          <Box direction="row" align="center">
+          <Box direction="row" align="center" responsive={false}>
             <span onMouseOver={this._onOverTitle}
               onMouseOut={this._onOutTitle}>
               <Title onClick={this._onClickTitle}>

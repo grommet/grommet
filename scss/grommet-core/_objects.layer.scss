@@ -13,6 +13,14 @@
     overflow: none;
   }
 
+  &__overlay {
+    @include media-query(palm) {
+      &:not(.layer__overlay--hidden) + * {
+        display: none;
+      }
+    }
+  }
+
   &__container {
     background-color: $layer-background-color;
 
@@ -144,6 +152,10 @@
           left: -100vw;
         }
       }
+    }
+
+    @include media-query(palm) {
+      display: none;
     }
 
     @include media-query(lap-and-up) {
