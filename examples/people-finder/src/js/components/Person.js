@@ -113,8 +113,8 @@ var Person = React.createClass({
       <Split flex="left" separator={true}>
         <div>
           <Article align="start">
-            <Header large={true} pad="medium" separator="bottom">
-              <Title onClick={this.props.onClose}>
+            <Header large={true} pad={{horizontal: "medium"}} separator="bottom">
+              <Title onClick={this.props.onClose} responsive={false}>
                 <Logo />
                 {appTitle}
               </Title>
@@ -133,7 +133,7 @@ var Person = React.createClass({
           </Article>
         </div>
         <div>
-            <Header large={true} pad="medium" justify="between" separator="bottom">
+            <Header large={true} pad={{horizontal: "medium"}} justify="between" separator="bottom">
             <h3>{viewLabel}</h3>
             <Menu collapse={true} dropAlign={{right: 'right'}}>
               <a onClick={this._onAbout}>About</a>

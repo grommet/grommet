@@ -3,6 +3,7 @@
 var React = require('react');
 var Article = require('grommet/components/Article');
 var Section = require('grommet/components/Section');
+var Header = require('grommet/components/Header');
 var Attribute = require('grommet/components/Attribute');
 
 var About = React.createClass({
@@ -22,9 +23,9 @@ var About = React.createClass({
   render: function() {
     var person = this.props.person;
     return (
-      <Article pad={{horizontal: "medium"}}>
-        <Section pad="none">
-          <h4>Employment</h4>
+      <Article pad={{horizontal: 'medium'}}>
+        <Section>
+          <Header tag="h4">Employment</Header>
           {this._renderAttribute("Status", person.hpStatus)}
           {this._renderAttribute("Job Function", person.hpJobFunction)}
           {this._renderAttribute("Job Family", person.hpJobFamily)}
@@ -32,15 +33,15 @@ var About = React.createClass({
           {this._renderAttribute("Payroll Country Code", person.hpPayrollCountryCode)}
           {this._renderAttribute("NT User ID", person.ntUserDomainId)}
         </Section>
-        <Section pad="none">
-          <h4>Site</h4>
+        <Section>
+          <Header tag="h4" separator="top">Site</Header>
           {this._renderAttribute("Building", person.buildingName)}
           {this._renderAttribute("Floor", person.hpFloor)}
           {this._renderAttribute("Post", person.hpPost)}
           {this._renderAttribute("Mailstop", person.mailStop)}
         </Section>
-        <Section pad="none">
-          <h4>Administration</h4>
+        <Section>
+          <Header tag="h4" separator="top">Administration</Header>
           {this._renderAttribute("Location Code", person.hpLocationCode)}
           {this._renderAttribute("Lighthouse Cost Center", person.hpLHCostCenter)}
           {this._renderAttribute("MRU Code", person.hpMRUCode)}

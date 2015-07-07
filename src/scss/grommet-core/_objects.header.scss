@@ -148,10 +148,12 @@ header.header {
 
   &--separator {
     &-top {
+      padding-top: quarter($inuit-base-spacing-unit);
       border-top: 1px solid $border-color;
     }
 
     &-bottom {
+      padding-bottom: quarter($inuit-base-spacing-unit);
       border-bottom: 1px solid $border-color;
     }
   }
