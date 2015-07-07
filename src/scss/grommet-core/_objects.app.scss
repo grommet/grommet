@@ -40,7 +40,7 @@
     }
   }
 
-  &--layered {
+  &--layered-x {
     @include media-query(palm) {
       position: absolute;
       top: 0px;
