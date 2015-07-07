@@ -50,7 +50,7 @@ describe('Docs website e2e', function() {
         should.fail('Expected to find design link.', err);
       }
       expect(text).toBe('Design');
-      var buttonSelector = '.section:first-of-type a:nth-child(1)';
+      var buttonSelector = '.background-color-index-neutral-1 a:nth-child(1)';
       browser.click(selector).getText(buttonSelector).then(function(text) {
         expect(text).toBe('Resources');
 
@@ -79,7 +79,7 @@ describe('Docs website e2e', function() {
         should.fail('Expected to find design link.', err);
       }
       expect(text).toBe('Design');
-      var buttonSelector = '.section:first-of-type a:nth-child(1)';
+      var buttonSelector = '.background-color-index-neutral-1 a:nth-child(1)';
       browser.click(selector).getText(buttonSelector).then(function(text) {
         expect(text).toBe('Resources');
 
@@ -108,7 +108,7 @@ describe('Docs website e2e', function() {
         should.fail('Expected to find design link.', err);
       }
       expect(text).toBe('Design');
-      var buttonSelector = '.section:first-of-type a:nth-child(1)';
+      var buttonSelector = '.background-color-index-neutral-1 a:nth-child(1)';
       browser.click(selector).getText(buttonSelector).then(function(text) {
         expect(text).toBe('Resources');
 
@@ -137,7 +137,7 @@ describe('Docs website e2e', function() {
         should.fail('Expected to find design link.', err);
       }
       expect(text).toBe('Design');
-      var buttonSelector = '.section:first-of-type a:nth-child(1)';
+      var buttonSelector = '.background-color-index-neutral-1 a:nth-child(1)';
       browser.click(selector).getText(buttonSelector).then(function(text) {
         expect(text).toBe('Resources');
 
