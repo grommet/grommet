@@ -87,11 +87,6 @@
       > *:not(:first-child) {
         display: none;
       }
-
-      svg:not(.control-icon),
-      img {
-        margin-right: 0px;
-      }
     }
   }
 }

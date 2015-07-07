@@ -123,7 +123,7 @@ var HeaderDoc = React.createClass({
 
           <h3>Tag, Separator</h3>
           <div className="example">
-            <Header tag="h4" separator="top" pad={{vertical: 'small'}}>Heading Text</Header>
+            <Header tag="h4" separator="top">Heading Text</Header>
           </div>
           <pre><code className="html">{"<Header tag=\"h4\" separator=\"top\" pad={{vertical: 'small'}}> ..."}</code></pre>
 
