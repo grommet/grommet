@@ -4,6 +4,7 @@ var path = require('path');
 var __path__ = path.join(__dirname, '../../../src/js/components/icons/Status');
 
 var GrommetTestUtils = require('../../../src/utils/test/GrommetTestUtils');
+var expect = require('expect');
 
 describe('Grommet Status', function() {
   it('loads an status-icon icon', function() {
@@ -34,6 +35,17 @@ describe('Grommet Status', function() {
     var Component = GrommetTestUtils.getComponent(__path__, null, { value: 'ok'});
 
     GrommetTestUtils.componentShouldExist(Component, 'status-icon-ok');
+
+    var React = require('react/addons');
+    var TestUtils = React.addons.TestUtils;
+    var svgInstance = TestUtils.findRenderedDOMComponentWithClass(Component, 'status-icon-ok');
+
+    expect(svgInstance.props.role).toBe('img');
+    expect(svgInstance.props['aria-labelledby']).toBe('title');
+
+    var titleInstance = TestUtils.findRenderedDOMComponentWithTag(svgInstance, 'title');
+
+    expect(titleInstance.props.id).toBe('title');
 
     Component = GrommetTestUtils.getComponent(__path__, null, { value: 'normal'});
 
@@ -73,4 +85,5 @@ describe('Grommet Status', function() {
 
     GrommetTestUtils.componentShouldExist(Component, 'status-icon-label');
   });
+
 });

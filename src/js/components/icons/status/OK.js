@@ -10,7 +10,9 @@ var OK = React.createClass({
       className += ' ' + this.props.className;
     }
     return (
-      <svg className={className} viewBox="0 0 24 24" version="1.1">
+      <svg className={className} viewBox="0 0 24 24"
+        role="img" aria-labelledby="title" version="1.1">
+        <title id="title">Ok</title>
         <g className={"status-icon__base"}>
           <circle cx="12" cy="12" r="12" stroke="none"/>
         </g>
