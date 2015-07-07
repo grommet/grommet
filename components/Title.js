@@ -3,24 +3,30 @@
 var React = require('react');
 var Box = require('./Box');
 
+var CLASS_ROOT = "title";
+
 var Title = React.createClass({
 
   propTypes: {
-    onClick: React.PropTypes.func
+    onClick: React.PropTypes.func,
+    responsive: React.PropTypes.bool
   },
 
   getDefaultProps: function () {
     return {
       align: "center",
       direction: "row",
-      responsive: false
+      responsive: true
     };
   },
 
   render: function() {
-    var classes = ["title"];
+    var classes = [CLASS_ROOT];
+    if (this.props.responsive) {
+      classes.push(CLASS_ROOT + "--responsive");
+    }
     if (this.props.onClick) {
-      classes.push("title--interactive");
+      classes.push(CLASS_ROOT + "--interactive");
     }
     if (this.props.className) {
       classes.push(this.props.className);

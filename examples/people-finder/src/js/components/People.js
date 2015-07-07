@@ -54,7 +54,8 @@ var People = React.createClass({
 
     return (
       <Section texture={texture} full={true} pad="none">
-        <Header key="header" large={true} pad="medium" float={this.props.initial}
+        <Header key="header" large={true} pad={{horizontal: "medium"}}
+          float={this.props.initial}
           colorIndex={colorIndex} splash={this.props.initial} responsive={false}>
           <Box direction="row" align="center" className="flex-grow-1" responsive={false}>
             <Title>
