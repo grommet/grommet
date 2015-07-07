@@ -4,12 +4,12 @@
   margin-bottom: halve($inuit-base-spacing-unit);
 
   @include media-query(lap-and-up) {
-    width: $form-width;
-    max-width: 100%;
+    //width: $form-width;
+    //max-width: 100%;
 
-    .form--compact & {
-      width: $compact-form-width;
-    }
+    //.form--compact & {
+      //width: $compact-form-width;
+    //}
   }
 
   @include media-query(palm) {
