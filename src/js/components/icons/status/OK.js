@@ -1,8 +1,11 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
+var IntlMixin = require('../../../mixins/GrommetIntlMixin');
 
 var OK = React.createClass({
+
+  mixins: [IntlMixin],
 
   render: function() {
     var className = 'status-icon status-icon-ok';
@@ -12,7 +15,7 @@ var OK = React.createClass({
     return (
       <svg className={className} viewBox="0 0 24 24"
         role="img" aria-labelledby="title" version="1.1">
-        <title id="title">Ok</title>
+        <title id="title">{this.getGrommetIntlMessage('OK')}</title>
         <g className={"status-icon__base"}>
           <circle cx="12" cy="12" r="12" stroke="none"/>
         </g>
