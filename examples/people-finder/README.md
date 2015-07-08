@@ -13,12 +13,11 @@ To run this application, execute the following commands:
     $ cd grommet/examples/server
     $ npm install
     $ node server.js
-   ``` 
+   ```
 
-  2. Install people-finder dependencies and start server
+  2. Start people-finder development server
     ```
     $ cd grommet/examples/people-finder
-    $ npm install
     $ gulp dev
     ```
 
