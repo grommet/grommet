@@ -55,7 +55,8 @@
     "react-time": "^2.4.0",
     "reflux": "^0.2.7",
     "superagent": "^1.1.0",
-    "yargs": "^3.8.0"
+    "yargs": "^3.8.0",
+    "leaflet": "^0.7.3"
   },
   "devDependencies": {
     "del": "^1.1.1",
