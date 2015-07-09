@@ -37,8 +37,8 @@ var Organization = React.createClass({
       var managers = this.state.managers;
       managers.unshift(manager);
       this.setState({managers: managers, error: null});
-      // 10 limit is to guard against bugs in the code
-      if (manager.manager && manager.manager !== manager.dn && managers.length <= 10) {
+      // 20 limit is to guard against bugs in the code
+      if (manager.manager && manager.manager !== manager.dn && managers.length <= 20) {
         this._getManager(manager.manager);
       } else {
         this.setState({busy: false});
@@ -63,8 +63,9 @@ var Organization = React.createClass({
   },
 
   _getRelatedDetails: function (props) {
+    this.setState({team: [], managers: []});
     if (props.person.dn) {
-      this.setState({team: [], managers: [], busy: true});
+      this.setState({busy: true});
       var params = merge({}, LDAP_BASE_PARAMS, {
         filter: '(manager=' + props.person.dn + ')',
         attributes: ['cn', 'uid', 'hpPictureThumbnailURI', 'hpBusinessUnit']
@@ -83,16 +84,20 @@ var Organization = React.createClass({
   },
 
   componentWillReceiveProps: function (newProps) {
-    this._getRelatedDetails(newProps);
+    if (newProps.person.dn !== this.props.person.dn) {
+      this._getRelatedDetails(newProps);
+    }
   },
 
   render: function() {
     var person = this.props.person;
-    var people;
-    if (this.state.busy) {
-      people = [{uid: 'spinner', hpPictureThumbnailURI: <Spinning />}, person];
-    } else {
-      people = this.state.managers.concat(person);
+    var people = [];
+    if (person.uid) {
+      if (this.state.busy) {
+        people = [{uid: 'spinner', hpPictureThumbnailURI: <Spinning />}, person];
+      } else {
+        people = this.state.managers.concat(person);
+      }
     }
     var team;
     if (this.state.team.length > 0) {

@@ -10,10 +10,6 @@ var opts = {
     {
       asset: 'examples/people-finder/src/img/**',
       dist: 'examples/people-finder/dist/img/'
-    },
-    {
-      asset: 'examples/people-finder/node_modules/leaflet/dist/images/**',
-      dist: 'examples/people-finder/dist/leaflet/images/'
     }
   ],
   scssAssets: ['examples/people-finder/src/scss/**/*.scss'],
