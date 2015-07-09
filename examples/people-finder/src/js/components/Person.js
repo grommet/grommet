@@ -10,10 +10,9 @@ var Section = require('grommet/components/Section');
 var Menu = require('grommet/components/Menu');
 var SearchIcon = require('grommet/components/icons/Search');
 var Logo = require('./Logo');
-var Map = require('./Map');
+var PersonMap = require('./PersonMap');
 var About = require('./About');
 var Organization = require('./Organization');
-var Rest = require('grommet/utils/Rest');
 
 var Person = React.createClass({
 
@@ -79,7 +78,7 @@ var Person = React.createClass({
               <h2><a href={"mailto:" + person.uid}>{person.uid}</a></h2>
               <h3>{person.telephoneNumber}</h3>
             </Section>
-            <Map person={person} />
+            <PersonMap person={person} />
           </Article>
         </div>
         <div>
