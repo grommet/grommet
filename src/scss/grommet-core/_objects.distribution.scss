@@ -12,9 +12,57 @@
 
   &__box {
     @include graph-fill-color();
+  }
+
+  &__icons {
+    @include graph-stroke-color();
+  }
+
+  &__label {
+    position: absolute;
+    padding: $inuit-base-spacing-unit;
+    font-family: $brand-large-number-font-family;
+    color: $colored-text-color;
+    text-align: center;
+
+    &-value {
+      @include inuit-font-size($large-number-font-size);
+      font-weight: bold;
+    }
+
+    &-units {
+      @include inuit-font-size($inuit-heading-size-3, inherit);
+      margin-left: quarter($inuit-base-spacing-unit);
+      font-weight: normal;
+    }
 
     &-label {
-      fill: $active-background-color;
+      display: block;
+      text-align: center;
+    }
+
+    &--small {
+      padding: halve($inuit-base-spacing-unit);
+
+      .distribution__label-value {
+        @include inuit-font-size($small-large-number-font-size);
+      }
+    }
+
+    &--icons {
+      background-color: $active-background-color;
+      color: $text-color;
+
+      .label {
+        &-units {
+          color: $secondary-text-color;
+        }
+
+        &-label {
+          display: block;
+          text-align: center;
+        }
+      }
     }
   }
 
