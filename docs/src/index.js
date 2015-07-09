@@ -1,6 +1,6 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-require('imports?this=>window!modernizr');
+require('modernizr');
 
 if (! Modernizr.flexbox ||
   ! Modernizr.rgba) {
