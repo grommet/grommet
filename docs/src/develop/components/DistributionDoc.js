@@ -45,7 +45,7 @@ var iconSeriesDoc = iconSeries.map(function (item) {
       height: item.icon.height,
       svgElement: "<JSX SVG element>"
     }
-  }
+  };
 });
 
 var DistributionDoc = React.createClass({
