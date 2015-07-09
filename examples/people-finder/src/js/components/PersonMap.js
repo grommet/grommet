@@ -3,10 +3,9 @@
 var React = require('react');
 var Leaflet = require('leaflet');
 var Section = require('grommet/components/Section');
-var Box = require('grommet/components/Box');
 var Rest = require('grommet/utils/Rest');
 
-var Map = React.createClass({
+var PersonMap = React.createClass({
 
   propTypes: {
     person: React.PropTypes.object.isRequired
@@ -103,4 +102,4 @@ var Map = React.createClass({
 
 });
 
-module.exports = Map;
+module.exports = PersonMap;

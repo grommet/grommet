@@ -35,7 +35,7 @@ var PeopleFinder = React.createClass({
     }
     var state = {
       searchText: this.state.searchText,
-      uid: this.state.uid,
+      uid: this.state.uid
     };
     window.history.pushState(state, label, url);
   },
