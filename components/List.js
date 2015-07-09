@@ -12,6 +12,7 @@ var List = React.createClass({
 
   propTypes: {
     data: React.PropTypes.arrayOf(React.PropTypes.object).isRequired,
+    emptyIndicator: React.PropTypes.node,
     large: React.PropTypes.bool,
     onMore: React.PropTypes.func,
     onSelect: React.PropTypes.func,
@@ -128,7 +129,7 @@ var List = React.createClass({
       );
     }, this);
 
-    var more = null;
+    var more;
     if (this.props.onMore) {
       classes.push(CLASS_ROOT + "--moreable");
       more = (
@@ -138,8 +139,18 @@ var List = React.createClass({
       );
     }
 
+    var empty;
+    if (this.props.data.length === 0) {
+      empty = (
+        <li className={CLASS_ROOT + "__empty"}>
+          {this.props.emptyIndicator}
+        </li>
+      );
+    }
+
     return (
       <ul className={classes.join(' ')}>
+        {empty}
         {items}
         {more}
       </ul>

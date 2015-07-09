@@ -6,11 +6,17 @@
   padding: 0px;
   overflow: auto;
 
-  &__more {
+  &__more,
+  &__empty {
     padding-left: $inuit-base-spacing-unit;
     padding-right: $inuit-base-spacing-unit;
     padding-top: halve($inuit-base-spacing-unit);
     padding-bottom: halve($inuit-base-spacing-unit);
+  }
+
+  &__empty {
+    color: $secondary-text-color;
+    font-style: italic;
   }
 
   .list-item {
@@ -31,9 +37,13 @@
       height: $inuit-base-spacing-unit;
       width: $inuit-base-spacing-unit;
       margin-right: $inuit-base-spacing-unit;
+      overflow: hidden;
 
       img {
         height: 100%;
+        width: 100%;
+        max-width: none;
+        object-fit: cover;
       }
     }
 

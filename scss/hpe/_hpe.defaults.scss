@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 $brand-font-family: 'Metric', Arial, sans-serif;
+$brand-large-number-font-family: 'Simple', 'Metric', Arial, sans-serif;
 $brand-color: #00B388;
 $brand-color-lighter: desaturate(lighten($brand-color, 55%), 40%);
 $brand-neutral-colors: (#60798D, #617D78, #877B75);
@@ -45,10 +46,6 @@ $hpe-fonts-path: "https://hpefonts.s3.amazonaws.com";
 @font-face {
   font-family: "Simple";
   src: url("#{$hpe-fonts-path}/SimRg.otf") format("opentype");
-}
-
-.large-number-font {
-  font-family: 'Simple', 'Metric', Arial, sans-serif;
 }
 
 $button-accent-background-color: #FD8D71;

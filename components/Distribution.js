@@ -19,7 +19,12 @@ var Distribution = React.createClass({
       value: React.PropTypes.number.isRequired,
       colorIndex: React.PropTypes.string,
       important: React.PropTypes.bool,
-      onClick: React.PropTypes.func
+      onClick: React.PropTypes.func,
+      icon: {
+        width: React.PropTypes.number,
+        height: React.PropTypes.number,
+        svgElement: React.PropTypes.node
+      }
     })),
     small: React.PropTypes.bool,
     units: React.PropTypes.string,
@@ -41,13 +46,28 @@ var Distribution = React.createClass({
       this.setState({legendPosition: 'right'});
     }
 
-    var element = this.refs.box.getDOMNode();
-    var rect = element.getBoundingClientRect();
+    var graphic = this.refs.graphic.getDOMNode();
+    var rect = graphic.getBoundingClientRect();
     if (rect.width !== this.state.width || rect.height !== this.state.height) {
       this.setState({
         width: rect.width,
         height: rect.height
       });
+    }
+
+    // adjust box label positions
+    var container = this.refs.container.getDOMNode();
+    var labels = container.querySelectorAll('.distribution__label');
+    for (var i = 0; i < labels.length; i += 1) {
+      var label = labels[i];
+      label.style.top = null;
+      label.style.left = null;
+      var boxIndex = label.getAttribute('data-box-index');
+      var box = container.querySelectorAll('[data-index="' + boxIndex + '"]')[0];
+      var boxRect = box.getBoundingClientRect();
+      var labelRect = label.getBoundingClientRect();
+      label.style.top = ((boxRect.top - rect.top) + (boxRect.height / 2) - (labelRect.height / 2)) + 'px';
+      label.style.left = ((boxRect.left - rect.left) + (boxRect.width / 2) - (labelRect.width / 2)) + 'px';
     }
   },
 
@@ -141,14 +161,18 @@ var Distribution = React.createClass({
     }
 
     var boxes = [];
+    var labels = [];
     if (this.props.series) {
       var areaPer = (this.state.width * this.state.height) / this.state.total;
       var origin = [0, 0];
       var across = false;
       boxes = this.props.series.map(function (item, index) {
-        var classes = [CLASS_ROOT + "__box"];
+        var boxClasses = [CLASS_ROOT + "__box"];
+        var iconClasses = [CLASS_ROOT + "__icons"];
+        var labelClasses = [CLASS_ROOT + "__label"];
         var colorIndex = this._itemColorIndex(item, index);
-        classes.push("color-index-" + colorIndex);
+        boxClasses.push("color-index-" + colorIndex);
+        iconClasses.push("color-index-" + colorIndex);
         var x = origin[0];
         var y = origin[1];
         var width, height;
@@ -163,6 +187,7 @@ var Distribution = React.createClass({
           across = true;
           origin[0] += width;
         }
+
         var text = '' + item.value;
         if (this.props.units) {
           text += ' ' + this.props.units;
@@ -170,10 +195,57 @@ var Distribution = React.createClass({
         if (item.label) {
           text += ' ' + item.label;
         }
+
+        var contents;
+        if (item.icon) {
+          labelClasses.push(CLASS_ROOT + "__label--icons");
+          var icons = [];
+          // fill box with icons
+          var iconX = 0;
+          var iconY = 0;
+          var iconIndex = 1;
+          while (iconY < (height - item.icon.height)) {
+            while (iconX < (width - item.icon.width)) {
+              icons.push(
+                <g key={iconIndex}
+                  transform={"translate(" + (x + iconX) + "," + (y + iconY) + ")"}>
+                  {item.icon.svgElement}
+                </g>
+              );
+              iconX += item.icon.width;
+              iconIndex += 1;
+            }
+            iconY += item.icon.height;
+            iconX = 0;
+          }
+          contents = (
+            <g className={iconClasses.join(' ')}>
+              {icons}
+            </g>
+          );
+        } else {
+          contents = (
+            <rect className={boxClasses.join(' ')} x={x} y={y} width={width} height={height}></rect>
+          );
+        }
+
+        if (width < 144 || height < 144) {
+          labelClasses.push(CLASS_ROOT + "__label--small");
+        }
+
+        labels.push(
+          <div key={index} className={labelClasses.join(' ')} data-box-index={index}>
+            <span className={CLASS_ROOT + "__label-value"}>
+              {item.value}
+              <span className={CLASS_ROOT + "__label-units"}>{this.props.units}</span>
+            </span>
+            <span className={CLASS_ROOT + "__label-label"} y={24}>{item.label}</span>
+          </div>
+        );
+
         return (
-          <g key={index}>
-            <rect className={classes.join(' ')} x={x} y={y} width={width} height={height}></rect>
-            <text className={CLASS_ROOT + "__box-label"} x={x + 12} y={y + 24}>{text}</text>
+          <g key={index} data-index={index}>
+            {contents}
           </g>
         );
       }, this);
@@ -193,12 +265,13 @@ var Distribution = React.createClass({
     }
 
     return (
-      <div className={classes.join(' ')}>
-        <svg ref="box" className={CLASS_ROOT + "__graphic"}
+      <div ref="container" className={classes.join(' ')}>
+        <svg ref="graphic" className={CLASS_ROOT + "__graphic"}
           viewBox={"0 0 " + this.state.width + " " + this.state.height}
           preserveAspectRatio="none">
           {boxes}
         </svg>
+        {labels}
         {legend}
       </div>
     );
