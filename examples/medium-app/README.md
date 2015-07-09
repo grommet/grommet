@@ -1,5 +1,11 @@
 # Grommet Example App: medium-app
 
+## Demo
+[Live demo](http://grommet.io/medium-app) of an example "medium sized" application using Grommet. 
+
+Login credentials: `Username` any string that looks like an email address and any `Password` (not used or stored).
+
+## How To
 This app demonstrates a medium-sized application using [Modular Grommet](http://grommet.io/docs/documentation/modular-grommet).
 We demonstrate UI routing and some important patterns like Login, Resource Management (including WebSocket connections), and Search. This application **must** have a back-end to perform login operations and manage resources.
 
@@ -21,8 +27,6 @@ To run this application, execute the following commands:
     $ node server.js
     ```
 
-  3. Open [http://localhost:8001/webpack-dev-server/](http://localhost:8001/webpack-dev-server/)
-
-  4. For the login credentials: `Username` must be a valid email, and any `Password` is accepted at this point.
+  4. Login credentials: `Username` any string that looks like an email address and any `Password` (not used or stored).
 
   **NOTE**: If you want to use this application outside the Grommet context, checkout [Exporting Example Apps Wiki](https://github.com/HewlettPackard/grommet/wiki/Exporting-examples-from-Grommet).
