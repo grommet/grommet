@@ -33,7 +33,28 @@ var PeopleFinder = React.createClass({
       url += '?search=' + encodeURIComponent(this.state.searchText);
       label = this.state.searchText;
     }
-    window.history.pushState({}, label, url);
+    var state = {
+      searchText: this.state.searchText,
+      uid: this.state.uid
+    };
+    window.history.pushState(state, label, url);
+  },
+
+  _popState: function (event) {
+    if (event.state) {
+      this.setState({
+        uid: event.state.uid,
+        searchText: event.state.searchText,
+        person: {},
+        people: []
+      });
+      if (event.state.uid) {
+        this._getPerson(event.state.uid);
+      }
+      if (event.state.searchText) {
+        this._getPeople(event.state.searchText);
+      }
+    }
   },
 
   _onPeopleResponse: function (err, res) {
@@ -47,14 +68,19 @@ var PeopleFinder = React.createClass({
   },
 
   _getPeople: function (searchText) {
+    this.setState({changing: true});
     // debounce
     clearTimeout(this._searchTimer);
     this._searchTimer = setTimeout(function () {
       var filter;
       if (searchText[0] === '(') {
-        // use as a raw filter
+        // assume this is already a formal LDAP filter
         filter = searchText;
       } else {
+        // handle "Last, First" syntax
+        if (searchText.indexOf(',') !== -1) {
+          searchText = searchText.replace(/(.+),\s*(.+)/, "$2 $1");
+        }
         filter = '(|(cn=*' + searchText + '*)(uid=*' + searchText + '*))';
       }
       var params = merge({}, LDAP_BASE_PARAMS, {
@@ -66,7 +92,7 @@ var PeopleFinder = React.createClass({
   },
 
   _onSearchText: function (text) {
-    this.setState({initial: (! text), searchText: text, changing: true}, this._pushState);
+    this.setState({initial: (! text), searchText: text}, this._pushState);
     if (! text) {
       this.setState({people: [], changing: false});
     } else {
@@ -131,6 +157,7 @@ var PeopleFinder = React.createClass({
     if (this.state.uid) {
       this._getPerson(this.state.uid);
     }
+    window.onpopstate = this._popState;
   },
 
   componentDidUnmount: function () {

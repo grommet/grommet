@@ -48,8 +48,11 @@ var People = React.createClass({
     }
 
     var data = this.props.people;
+    var empty;
     if (this.props.changing) {
       data = [{uid: 'spinner', hpPictureThumbnailURI: <Spinning />}];
+    } else if (! this.props.initial && this.props.people.length === 0) {
+      empty = 'No matches';
     }
 
     return (
@@ -67,7 +70,7 @@ var People = React.createClass({
               onChange={this.props.onSearch} />
           </Box>
         </Header>
-        <List key="results" large={true} data={data}
+        <List key="results" large={true} data={data} emptyIndicator={empty}
           schema={PEOPLE_SCHEMA} onSelect={this.props.onSelect} />
         {logo}
       </Section>
