@@ -1,8 +1,8 @@
 # Grommet Example App: cto-app-tuner
 
-## Live Demo
+## Demo
 
-[Live Demo](http://grommet.io/cto-app-tuner) of a really simple application we used during the launch of Grommet.
+[Live demo](http://grommet.io/cto-app-tuner) of a really simple application we used during the launch of Grommet.
 
 ## How To
 
