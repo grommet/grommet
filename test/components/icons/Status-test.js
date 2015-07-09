@@ -41,11 +41,11 @@ describe('Grommet Status', function() {
     var svgInstance = TestUtils.findRenderedDOMComponentWithClass(Component, 'status-icon-ok');
 
     expect(svgInstance.props.role).toBe('img');
-    expect(svgInstance.props['aria-labelledby']).toBe('title');
+    expect(svgInstance.props['aria-labelledby']).toBe('title-icon-ok');
 
     var titleInstance = TestUtils.findRenderedDOMComponentWithTag(svgInstance, 'title');
 
-    expect(titleInstance.props.id).toBe('title');
+    expect(titleInstance.props.id).toBe('title-icon-ok');
 
     Component = GrommetTestUtils.getComponent(__path__, null, { value: 'normal'});
 
@@ -57,6 +57,17 @@ describe('Grommet Status', function() {
 
     GrommetTestUtils.componentShouldExist(Component, 'status-icon-error');
 
+    var React = require('react/addons');
+    var TestUtils = React.addons.TestUtils;
+    var svgInstance = TestUtils.findRenderedDOMComponentWithClass(Component, 'status-icon-error');
+
+    expect(svgInstance.props.role).toBe('img');
+    expect(svgInstance.props['aria-labelledby']).toBe('title-icon-error');
+
+    var titleInstance = TestUtils.findRenderedDOMComponentWithTag(svgInstance, 'title');
+
+    expect(titleInstance.props.id).toBe('title-icon-error');
+
     Component = GrommetTestUtils.getComponent(__path__, null, { value: 'critical'});
 
     GrommetTestUtils.componentShouldExist(Component, 'status-icon-error');
@@ -66,18 +77,51 @@ describe('Grommet Status', function() {
     var Component = GrommetTestUtils.getComponent(__path__, null, { value: 'warning'});
 
     GrommetTestUtils.componentShouldExist(Component, 'status-icon-warning');
+
+    var React = require('react/addons');
+    var TestUtils = React.addons.TestUtils;
+    var svgInstance = TestUtils.findRenderedDOMComponentWithClass(Component, 'status-icon-warning');
+
+    expect(svgInstance.props.role).toBe('img');
+    expect(svgInstance.props['aria-labelledby']).toBe('title-icon-warning');
+
+    var titleInstance = TestUtils.findRenderedDOMComponentWithTag(svgInstance, 'title');
+
+    expect(titleInstance.props.id).toBe('title-icon-warning');
   });
 
   it('loads a disabled status-icon', function() {
     var Component = GrommetTestUtils.getComponent(__path__, null, { value: 'disabled'});
 
     GrommetTestUtils.componentShouldExist(Component, 'status-icon-disabled');
+
+    var React = require('react/addons');
+    var TestUtils = React.addons.TestUtils;
+    var svgInstance = TestUtils.findRenderedDOMComponentWithClass(Component, 'status-icon-disabled');
+
+    expect(svgInstance.props.role).toBe('img');
+    expect(svgInstance.props['aria-labelledby']).toBe('title-icon-disabled');
+
+    var titleInstance = TestUtils.findRenderedDOMComponentWithTag(svgInstance, 'title');
+
+    expect(titleInstance.props.id).toBe('title-icon-disabled');
   });
 
   it('loads a unknown status-icon', function() {
     var Component = GrommetTestUtils.getComponent(__path__, null, { value: 'unknown'});
 
     GrommetTestUtils.componentShouldExist(Component, 'status-icon-unknown');
+
+    var React = require('react/addons');
+    var TestUtils = React.addons.TestUtils;
+    var svgInstance = TestUtils.findRenderedDOMComponentWithClass(Component, 'status-icon-unknown');
+
+    expect(svgInstance.props.role).toBe('img');
+    expect(svgInstance.props['aria-labelledby']).toBe('title-icon-unknown');
+
+    var titleInstance = TestUtils.findRenderedDOMComponentWithTag(svgInstance, 'title');
+
+    expect(titleInstance.props.id).toBe('title-icon-unknown');
   });
 
   it('loads a label status-icon', function() {
