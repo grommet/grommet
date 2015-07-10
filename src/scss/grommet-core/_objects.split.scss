@@ -7,8 +7,6 @@
     display: flex;
 
     > * {
-      -webkit-flex: 1 0 auto;
-      flex: 1 0 auto;
       position: relative;
       height: 100vh;
       overflow: auto;
@@ -16,16 +14,33 @@
 
     &--flex-right {
       > *:first-child:not(:last-child) {
-        -webkit-flex-grow: 0;
-        flex-grow: 0;
+        -webkit-flex: 0 0 auto;
+        flex: 0 0 auto;
+      }
+
+      > *:last-child {
+        -webkit-flex: 1;
+        flex: 1;
       }
     }
 
     &--flex-left {
       > *:last-child:not(:first-child),
       > .object {
-        -webkit-flex-grow: 0;
-        flex-grow: 0;
+        -webkit-flex: 0 0 auto;
+        flex: 0 0 auto;
+      }
+
+      > *:first-child {
+        -webkit-flex: 1;
+        flex: 1;
+      }
+    }
+
+    &--flex-both {
+      > * {
+        -webkit-flex: 1;
+        flex: 1;
       }
     }
 
