@@ -118,6 +118,24 @@
     align-items: flex-end;
   }
 
+  &--separator {
+    &-top {
+      border-top: 1px solid $border-color;
+    }
+
+    &-bottom {
+      border-bottom: 1px solid $border-color;
+    }
+
+    &-left {
+      border-left: 1px solid $border-color;
+    }
+
+    &-right {
+      border-right: 1px solid $border-color;
+    }
+  }
+
   // temporary flex grow capability
   > .flex-grow-1 {
     -webkit-flex-grow: 1;

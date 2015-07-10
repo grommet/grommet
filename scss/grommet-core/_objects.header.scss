@@ -2,16 +2,6 @@
 
 .header {
   width: 100%;
-
-  &--separator {
-    &-top {
-      border-top: 1px solid $border-color;
-    }
-
-    &-bottom {
-      border-bottom: 1px solid $border-color;
-    }
-  }
 }
 
 header.header {
@@ -66,7 +56,7 @@ header.header {
 }
 
 .header:not(header) {
-  &.header--separator {
+  &.box--separator {
     &-top {
       padding-top: quarter($inuit-base-spacing-unit);
     }

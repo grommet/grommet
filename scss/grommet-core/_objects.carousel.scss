@@ -1,0 +1,28 @@
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+
+.carousel {
+
+  &__controls {
+    width: 100%;
+    margin-top: halve($inuit-base-spacing-unit);
+    text-align: left;
+  }
+
+  &__control {
+    display: inline-block;
+    width: round($inuit-base-spacing-unit * 1.5);
+    height: round($inuit-base-spacing-unit * 1.5);
+    stroke: $icon-color;
+    fill: transparent;
+    cursor: pointer;
+
+    &:hover {
+      stroke: $active-icon-color;
+    }
+
+    &--active {
+      stroke: $brand-color;
+      fill: $brand-color;
+    }
+  }
+}
