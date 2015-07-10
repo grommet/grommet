@@ -33,8 +33,6 @@ var HeaderDoc = React.createClass({
             <dd>Whether the header floats above content underneath it.</dd>
             <dt><code>large       true|false</code></dt>
             <dd>Larger sized version.</dd>
-            <dt><code>separator   top|bottom</code></dt>
-            <dd>Add a separator.</dd>
             <dt><code>small       true|false</code></dt>
             <dd>Smaller sized version.</dd>
             <dt><code>splash      true|false</code></dt>

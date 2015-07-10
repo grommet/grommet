@@ -14,7 +14,6 @@ var Header = React.createClass({
     fixed: React.PropTypes.bool,
     float: React.PropTypes.bool,
     large: React.PropTypes.bool,
-    separator: React.PropTypes.oneOf(['top', 'bottom']),
     small: React.PropTypes.bool,
     splash: React.PropTypes.bool,
     tag: React.PropTypes.string
@@ -85,9 +84,6 @@ var Header = React.createClass({
     }
     if (this.props.splash) {
       classes.push(CLASS_ROOT + "--splash");
-    }
-    if (this.props.separator) {
-      classes.push(CLASS_ROOT + "--separator-" + this.props.separator);
     }
     if (this.props.className) {
       classes.push(this.props.className);

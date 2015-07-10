@@ -46,6 +46,8 @@ var BoxDoc = React.createClass({
             <dt><code>responsive   true|false</code></dt>
             <dd>Whether children laid out in a row direction should be
               switched to a column layout when the display area narrows.</dd>
+            <dt><code>separator   top|bottom|left|right</code></dt>
+            <dd>Add a separator.</dd>
             <dt><code>tag          {"{text}"}</code></dt>
             <dd>The DOM tag to use for the element.</dd>
             <dt><code>texture      {"{url}"}</code></dt>

@@ -5,6 +5,7 @@ var Grommet = {
   App: require('./components/App'),
   Article: require('./components/Article'),
   Button: require('./components/Button'),
+  Carousel: require('./components/Carousel'),
   CheckBox: require('./components/CheckBox'),
   Document: require('./components/Document'),
   Donut: require('./components/Donut'),

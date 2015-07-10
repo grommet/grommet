@@ -27,6 +27,7 @@ var ArticleDoc = require('./components/ArticleDoc');
 var BoxDoc = require('./components/BoxDoc');
 var ButtonDoc = require('./components/ButtonDoc');
 var CalendarDoc = require('./components/CalendarDoc');
+var CarouselDoc = require('./components/CarouselDoc');
 var ChartDoc = require('./components/ChartDoc');
 var CheckBoxDoc = require('./components/CheckBoxDoc');
 var DashboardDoc = require('./patterns/DashboardDoc');
@@ -87,6 +88,7 @@ var CONTENTS = [
       {route: 'develop_box', label: 'Box', component: BoxDoc},
       {route: 'develop_button', label: 'Button', component: ButtonDoc},
       {route: 'develop_calendar', label: 'Calendar', component: CalendarDoc},
+      {route: 'develop_carousel', label: 'Carousel', component: CarouselDoc},
       {route: 'develop_chart', label: 'Chart', component: ChartDoc},
       {route: 'develop_check-box', label: 'CheckBox', component: CheckBoxDoc},
       {route: 'develop_distribution', label: 'Distribution', component: DistributionDoc},
