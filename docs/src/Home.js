@@ -201,15 +201,15 @@ var Home = React.createClass({
           <p>We also pop our heads out at these place as well...</p>
           <Tiles fill={true}>
             <Tile>
-              <a href="https://twitter.com/grommetux">
-                <img src="img/twitter.png" title="Twitter" />
-                <div>@grommetux</div>
+              <a href="http://grommet.io/slackin">
+                <img src="img/slack.png" title="Slack" />
+                <div>grommet</div>
               </a>
             </Tile>
             <Tile>
-              <a href="https://grommet.slack.com">
-                <img src="img/slack.png" title="Slack" />
-                <div>grommet</div>
+              <a href="https://twitter.com/grommetux">
+                <img src="img/twitter.png" title="Twitter" />
+                <div>@grommetux</div>
               </a>
             </Tile>
             <Tile>
