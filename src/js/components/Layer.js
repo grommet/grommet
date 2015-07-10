@@ -2,12 +2,11 @@
 
 var React = require('react');
 var CloseIcon = require('./icons/Clear');
-var ReactLayeredComponent = require('../mixins/ReactLayeredComponent');
 var KeyboardAccelerators = require('../mixins/KeyboardAccelerators');
 
 var CLASS_ROOT = "layer";
 
-var LayerContainer = React.createClass({
+var LayerOverlay = React.createClass({
 
   propTypes: {
     align: React.PropTypes.oneOf(['center', 'top', 'bottom', 'left', 'right']),
@@ -42,12 +41,6 @@ var LayerContainer = React.createClass({
   componentDidMount: function () {
     if (this.props.onClose) {
       this.startListeningToKeyboard({esc: this.props.onClose});
-    }
-    var appElement = document.querySelectorAll('div.app')[0];
-    if (appElement) { // unit tests don't have an app
-      this._appScrollY = window.scrollY;
-      appElement.classList.add('app--layered');
-      window.scroll(0, 0);
     }
   },
 
@@ -126,23 +119,63 @@ var Layer = React.createClass({
     router: React.PropTypes.func
   },
 
-  mixins: [ReactLayeredComponent],
-
   getDefaultProps: function () {
     return {
       align: 'center'
     };
   },
 
-  render: function () {
-    return (<span></span>);
+  _addOverlay: function () {
+    var overlay = document.createElement('div');
+    if (overlay.classList) {
+      overlay.classList.add('layer__overlay');
+    } else {
+      // unit test version
+      overlay.className = 'layer__overlay';
+    }
+    this._overlay = document.body.insertBefore(overlay, document.body.firstChild);
+    this._overlay = overlay;
   },
 
-  renderLayer: function () {
-    return (
-      <LayerContainer {...this.props}
-        router={this.context.router} />
-    );
+  _renderOverlay: function () {
+    var content = (<LayerOverlay {...this.props} router={this.context.router} />);
+    React.render(content, this._overlay);
+    if (this.props.hidden) {
+      if (this._overlay.classList) {
+        this._overlay.classList.add('layer__overlay--hidden');
+      } else {
+        this._overlay.className = 'layer__overlay layer__overlay--hidden';
+      }
+    } else {
+      if (this._overlay.classList) {
+        this._overlay.classList.remove('layer__overlay--hidden');
+      } else {
+        this._overlay.className = 'layer__overlay';
+      }
+    }
+  },
+
+  _removeOverlay: function () {
+    React.unmountComponentAtNode(this._overlay);
+    document.body.removeChild(this._overlay);
+    this._overlay = null;
+  },
+
+  componentDidMount: function () {
+    this._addOverlay();
+    this._renderOverlay();
+  },
+
+  componentDidUpdate: function () {
+    this._renderOverlay();
+  },
+
+  componentWillUnmount: function () {
+    this._removeOverlay();
+  },
+
+  render: function () {
+    return (<span></span>);
   }
 
 });
