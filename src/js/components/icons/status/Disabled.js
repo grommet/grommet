@@ -15,7 +15,7 @@ var Disabled = React.createClass({
     return (
       <svg className={className} viewBox="0 0 24 24" role="img" aria-labelledby="title-icon-disabled" version="1.1">
         <title id="title-icon-disabled">{this.getGrommetIntlMessage('Disabled')}</title>
-	<g className={"status-icon__base"}>
+	      <g className={"status-icon__base"}>
           <rect role="presentation" x="0" y="0" width="24" height="24" stroke="none"></rect>
         </g>
         <g className={"status-icon__detail"} strokeWidth="2">
