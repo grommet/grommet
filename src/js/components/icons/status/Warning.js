@@ -16,7 +16,7 @@ var Warning = React.createClass({
     return (
       <svg className={className} viewBox="0 0 27 24" role="img" aria-labelledby="title-icon-warning" version="1.1">
         <title id="title-icon-warning">{this.getGrommetIntlMessage('Warning')}</title>
-	<g className={"status-icon__base"}>
+        <g className={"status-icon__base"}>
           <path role="presentation" d="M12,0 L0,22 L24,22 L12,0 L12,0 Z" stroke="none"></path>
         </g>
         <g className={"status-icon__detail"} strokeWi
