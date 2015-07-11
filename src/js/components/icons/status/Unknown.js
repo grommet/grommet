@@ -15,7 +15,7 @@ var Unknown = React.createClass({
     return (
       <svg className={className} viewBox="0 0 24 24" role="img" aria-labelledby="title-icon-unknown" version="1.1">
         <title id="title-icon-unknown">{this.getGrommetIntlMessage('Unknown')}</title>
-	<g className={"status-icon__base"}>
+        <g className={"status-icon__base"}>
           <path role="presentation" d="M12,2 C17.5,2 22,6.5 22,12 C22,17.5 17.5,22 12,22 C6.5,22 2,17.5 2,12 C2,6.5 6.5,2 12,2 L12,2 Z M12,0 C5.4,0 0,5.4 0,12 C0,18.6 5.4,24 12,24 C18.6,24 24,18.6 24,12 C24,5.4 18.6,0 12,0 L12,0 L12,0 Z" stroke="none"></path>
         </g>
         <g className={"status-icon__detail"}>
