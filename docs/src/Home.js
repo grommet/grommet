@@ -37,7 +37,7 @@ var Home = React.createClass({
 
         <DocsHeader float={true} />
 
-        <HomeSection texture={'url(img/home_intro.png)'}>
+        <HomeSection texture={'url(img/home_intro.png)'} primary={true}>
           <GrommetLogo large={true} />
           <Headline large={true}>Grommet</Headline>
           <Headline small={true}>The most advanced open source UX framework for

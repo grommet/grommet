@@ -2,6 +2,7 @@
 
 var React = require('react');
 var keys = require('lodash/object/keys');
+var SkipLinkAnchor = require('./SkipLinkAnchor');
 
 var CLASS_ROOT = "box";
 
@@ -26,6 +27,7 @@ var Box = React.createClass({
     ]),
     reverse: React.PropTypes.bool,
     responsive: React.PropTypes.bool,
+    primary: React.PropTypes.bool,
     separator: React.PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
     tag: React.PropTypes.string,
     textAlign: React.PropTypes.oneOf(['left', 'center', 'right']),
@@ -97,8 +99,16 @@ var Box = React.createClass({
       style.backgroundSize = "cover";
     }
 
+    var skipAnchorElement = null;
+    if (this.props.primary) {
+      skipAnchorElement = (
+        <SkipLinkAnchor label="Main Content" />
+      );
+    }
+
+    var boxBodyElement = null;
     if (this.props.appCentered) {
-      return (
+      boxBodyElement =  (
         <div className={containerClasses.join(' ')} style={style}
           onClick={this.props.onClick}>
           <this.props.tag className={classes.join(' ')}>
@@ -107,13 +117,20 @@ var Box = React.createClass({
         </div>
       );
     } else {
-      return (
+      boxBodyElement = (
         <this.props.tag className={classes.join(' ')} style={style}
           onClick={this.props.onClick}>
           {this.props.children}
         </this.props.tag>
       );
     }
+
+    return (
+      <div>
+        {skipAnchorElement}
+        {boxBodyElement}
+      </div>
+    );
   }
 
 });

@@ -143,6 +143,10 @@
   }
 
   &--hidden {
+
+    left: -10000px;
+    z-index: -1;
+
     &.layer--align {
 
       &-left {
@@ -160,6 +164,10 @@
 
     @include media-query(lap-and-up) {
       &.layer--peek {
+
+        left: 0;
+        z-index: 10;
+
         &.layer--align {
 
           &-left {
