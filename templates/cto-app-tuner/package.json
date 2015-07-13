@@ -27,7 +27,6 @@
     "inuit-shared": "~0.1.5",
     "lodash": "^3.8.0",
     "moment": "^2.8.3",
-    "object-assign": "^2.0.0",
     "react": "^0.13.1",
     "react-gravatar": "^1.0.0",
     "react-router": "^0.13.3",

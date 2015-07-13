@@ -46,7 +46,6 @@
     "run-sequence": "^1.0.2",
     "webpack": "1.9.10",
     "webpack-dev-server": "^1.8.0",
-    "object-assign": "^2.0.0",
     "babel-loader": "^5.2.2",
     "css-loader": "^0.10.1",
     "sass-loader": "^0.4.2",

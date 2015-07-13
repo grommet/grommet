@@ -1,6 +1,7 @@
 var runSequence = require('run-sequence');
 var gulpWebpack = require('webpack-stream');
-var assign = require('object-assign');
+var merge = require('lodash/object/merge');
+var extend = require('lodash/object/extend');
 var webpack = require('webpack');
 
 module.exports = function(gulp, options, webpackConfig, dist) {
@@ -25,12 +26,12 @@ module.exports = function(gulp, options, webpackConfig, dist) {
   });
 
   gulp.task('dist', ['dist-preprocess'], function() {
-    var env = assign({}, options.env, {
+    var env = merge({
       __DEV_MODE__: false,
       'process.env': {
         'NODE_ENV': JSON.stringify('production')
       }
-    });
+    }, options.env);
 
     var plugins = [
       new webpack.DefinePlugin(env)
@@ -47,9 +48,9 @@ module.exports = function(gulp, options, webpackConfig, dist) {
       }));
     }
 
-    var config = assign({}, webpackConfig, options.webpack || {}, {
+    var config = extend({
       plugins: plugins
-    });
+    }, webpackConfig, options.webpack || {});
 
     if (!config.resolve) {
       config.resolve = {};
@@ -58,12 +59,6 @@ module.exports = function(gulp, options, webpackConfig, dist) {
     if (options.webpack.module && options.webpack.module.loaders) {
       webpackConfig.module.loaders.forEach(function(loader) {
         config.module.loaders.push(loader);
-      });
-    }
-
-    if (options.webpack.plugins) {
-      options.webpack.plugins.forEach(function(plugin) {
-        config.plugins.push(plugin);
       });
     }
 
