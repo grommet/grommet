@@ -11,6 +11,7 @@
   > .tile {
     -webkit-flex: 0 0 round($inuit-base-spacing-unit * 8);
     flex: 0 0 round($inuit-base-spacing-unit * 8);
+    -webkit-flex-grow: 1;
     flex-grow: 1;
 
     &--wide {
@@ -38,6 +39,7 @@
     > .tile {
       -webkit-flex: 0 0 round($inuit-base-spacing-unit * 7);
       flex: 0 0 round($inuit-base-spacing-unit * 7);
+      -webkit-flex-grow: 1;
       flex-grow: 1;
     }
   }
