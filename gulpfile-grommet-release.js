@@ -23,15 +23,20 @@ module.exports = function(gulp, opts) {
           return true;
         }
       }, function(res) {
+        gulp.src('./docs/package.json')
+        .pipe(bump({
+          type: res.bump
+        })).pipe(gulp.dest('./docs'));
+
         gulp.src('./package.json')
-          .pipe(bump({
-            type: res.bump
-          }))
-          .pipe(gulp.dest('./')).on('end', function() {
+        .pipe(bump({
+          type: res.bump
+        }))
+        .pipe(gulp.dest('./')).on('end', function() {
           opts.copyAssets.push({
             filename: 'package.json',
             asset: JSON.stringify(gulpUtils.getPackageJSON(), null, 2)
-          });
+        });
           done();
         });
       }));
