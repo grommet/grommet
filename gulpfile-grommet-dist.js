@@ -5,7 +5,7 @@ var minifyCss = require('gulp-minify-css');
 var file = require('gulp-file');
 var preprocess = require('gulp-preprocess');
 var gulpif = require('gulp-if');
-var assign = require('object-assign');
+var merge = require('lodash/object/merge');
 var webpack = require('webpack');
 var path = require('path');
 var del = require('del');
@@ -60,7 +60,7 @@ var bowerWebpackConfig = {
   ]
 };
 
-var bowerMinWebpackConfig = assign({}, bowerWebpackConfig, {
+var bowerMinWebpackConfig = merge({}, bowerWebpackConfig, {
   output: {
     filename: 'grommet.min.js',
     libraryTarget: 'var',

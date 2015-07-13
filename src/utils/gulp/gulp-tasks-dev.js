@@ -1,4 +1,5 @@
-var assign = require('object-assign');
+var merge = require('lodash/object/merge');
+var extend = require('lodash/object/extend');
 var webpack = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
 var open = require('gulp-open');
@@ -7,11 +8,11 @@ var path = require('path');
 module.exports = function(gulp, options, webpackConfig, dist) {
   gulp.task('dev', ['preprocess'], function() {
 
-    var env = assign({}, options.env, {
+    var env = merge({}, options.env, {
       __DEV_MODE__: true
     });
 
-    var devWebpackConfig = assign({}, webpackConfig, options.webpack || {}, {
+    var devWebpackConfig = extend({}, webpackConfig, options.webpack || {}, {
       entry: {
         app: ['webpack/hot/dev-server', './' + options.mainJs]
       },

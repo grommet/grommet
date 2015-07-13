@@ -2,8 +2,6 @@ var gulp = require('gulp');
 var path = require('path');
 var devGulpTasks = require('../../src/utils/gulp/gulp-tasks');
 
-var grommetVersion = require('../../package.json').version;
-
 var opts = {
   base: '../../',
   dist: path.resolve(__dirname, '../../docs/dist/hpinc'),
