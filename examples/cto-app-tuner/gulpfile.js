@@ -6,7 +6,11 @@ var opts = {
   copyAssets: [
     'src/index.html',
     {
-      asset: 'src/img/**',
+      asset: path.resolve(__dirname, '../../src/img/mobile-app-icon.png'),
+      dist: 'dist/img/'
+    },
+    {
+      asset: path.resolve(__dirname, '../../src/img/shortcut-icon.png'),
       dist: 'dist/img/'
     }
   ],
