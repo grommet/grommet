@@ -4,7 +4,6 @@ module.exports = {
     var packageJSON = require('./package.json');
     delete packageJSON.config;
     delete packageJSON.scripts;
-    delete packageJSON.devDependencies;
     packageJSON.main = 'index.js';
     return packageJSON;
   }

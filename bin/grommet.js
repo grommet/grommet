@@ -2,10 +2,12 @@
 
 var gulp = require('gulp');
 var template = require('gulp-template');
+var file = require('gulp-file');
 var install = require('gulp-install');
 var path = require('path');
 var fs = require('fs');
 var mkdirp = require('mkdirp');
+var merge = require('lodash/object/merge');
 
 String.prototype.capitalize = function() {
   var words = this.split(' ');
@@ -59,6 +61,24 @@ function getGrommetPath() {
   return grommetPath;
 }
 
+function getPackageJSON(app, grommetPath) {
+  var grommetPackageJSON = require(path.join(grommetPath, 'package.json'));
+
+  var appPackageJSON = {
+    name: app,
+    version: grommetPackageJSON.version,
+    main: 'src/js/index.js',
+    dependencies: grommetPackageJSON.dependencies,
+    devDependencies: grommetPackageJSON.devDependencies,
+    engines: grommetPackageJSON.engines
+  };
+
+  appPackageJSON.dependencies.grommet = 'https://github.com/HewlettPackard' +
+    '/grommet.git#stable';
+
+  return appPackageJSON;
+}
+
 gulp.task('init', function(done) {
   mkdirp('./' + app, function(err) {
     if (err) {
@@ -70,22 +90,25 @@ gulp.task('init', function(done) {
       var templateFolder = path.join(grommetPath, 'templates/init/**');
       var mobileIcon = path.join(grommetPath, 'mobile-app-icon.png');
       var shortcutIcon = path.join(grommetPath, 'shortcut-icon.png');
-      var grommetVersion = require(path.join(grommetPath, 'package.json')).version;
+
+      var packageJSON = getPackageJSON(app, grommetPath);
 
       gulp.src(mobileIcon).pipe(gulp.dest('./src/img'));
       gulp.src(shortcutIcon).pipe(gulp.dest('./src/img'));
-
       gulp.src(templateFolder)
-        .pipe(template({
-          appName: app,
-          appTitle: title,
-          grommetVersion: grommetVersion
-        }))
-        .pipe(gulp.dest('./'))
-        .pipe(install())
-        .on('finish', function() {
-          done();
-        });
+      .pipe(template({
+        appName: app,
+        appTitle: title,
+        grommetVersion: packageJSON.version
+      }))
+      .pipe(gulp.dest('./'))
+      .on('finish', function() {
+        gulp.src('./').pipe(file('package.json',
+          JSON.stringify(packageJSON, null, 2))).pipe(gulp.dest('./'))
+          .pipe(install()).on('finish', function() {
+            done();
+          });
+      });
     }
   });
 
@@ -106,15 +129,20 @@ gulp.task('export', function(done) {
       var filter = path.join(grommetPath, 'examples/server/filter.js');
       var generator = path.join(grommetPath, 'examples/server/generator.js');
       var map = path.join(grommetPath, 'examples/server/map.js');
-      var serverDependencies = path.join(grommetPath, 'examples/server/package.json');
+      var serverDependencies = path.join(grommetPath,
+       'examples/server/package.json');
       var rest = path.join(grommetPath, 'examples/server/rest.js');
-      var acceptLanguage = path.join(grommetPath, 'examples/server/accept-language.js');
-      var serverFiles = [backendData, filter, generator, map, serverDependencies, rest, acceptLanguage];
+      var acceptLanguage = path.join(grommetPath,
+       'examples/server/accept-language.js');
+      var serverFiles = [backendData, filter, generator, map,
+       serverDependencies, rest, acceptLanguage];
 
       fs.exists(exampleFolder, function(exists) {
         if (!exists) {
           throw new Error('Could not find ' + exampleFolder);
         }
+
+        var packageJSON = getPackageJSON(dest, grommetPath);
 
         gulp.src([
           exampleFolder + '/**',
@@ -128,16 +156,22 @@ gulp.task('export', function(done) {
         ]).pipe(gulp.dest('./')).on('end', function() {
           gulp.src(templateFolder).pipe(template({
             appName: dest
-          })).pipe(gulp.dest('./')).pipe(install()).on('finish', function() {
+          })).pipe(gulp.dest('./')).on('finish', function() {
             if (app === 'medium-app') {
-              gulp.src(serverFiles).pipe(gulp.dest('./server')).pipe(install());
+              gulp.src(serverFiles).pipe(gulp.dest('./server'));
             }
-          });
-        });
 
-        process.on('exit', function () {
-          console.log('Successfully exported ' + app + ' to ' + dest + '.');
-          done();
+            //merging template NPM with application NPM
+            console.log(path.resolve('package.json'));
+            packageJSON = merge(packageJSON, require(path.resolve('package.json')));
+
+            gulp.src('./').pipe(file('package.json',
+            JSON.stringify(packageJSON, null, 2))).pipe(gulp.dest('./'))
+            .pipe(install()).on('finish', function() {
+              console.log('Successfully exported ' + app + ' to ' + dest + '.');
+              done();
+            });
+          });
         });
       });
     }

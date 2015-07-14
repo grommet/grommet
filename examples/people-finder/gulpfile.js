@@ -10,6 +10,14 @@ var opts = {
     {
       asset: 'examples/people-finder/src/img/**',
       dist: 'examples/people-finder/dist/img/'
+    },
+    {
+      asset: path.resolve(__dirname, '../../src/img/mobile-app-icon.png'),
+      dist: 'examples/people-finder/dist/img/'
+    },
+    {
+      asset: path.resolve(__dirname, '../../src/img/shortcut-icon.png'),
+      dist: 'examples/people-finder/dist/img/'
     }
   ],
   scssAssets: ['examples/people-finder/src/scss/**/*.scss'],
