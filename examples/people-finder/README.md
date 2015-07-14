@@ -7,7 +7,13 @@ We demonstrate mobile-first UI interactions that work great on desktop as well. 
 
 To run this application, execute the following commands:
 
-  1. Start the back-end server (needs to run in parallel to the development server from step 2):
+  1. Install people-finder specific NPM modules
+    ```
+    $ cd grommet/examples/people-finder
+    $ npm install
+    ```
+
+  2. Start the back-end server (needs to run in parallel to the development server from step 2):
 
     ```
     $ cd grommet/examples/server
@@ -15,7 +21,7 @@ To run this application, execute the following commands:
     $ node server.js
    ```
 
-  2. Start people-finder development server
+  3. Start people-finder development server
     ```
     $ cd grommet/examples/people-finder
     $ gulp dev

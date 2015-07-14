@@ -1,12 +1,7 @@
 {
   "name": "people-finder",
-  "version": "1.0.0",
-  "description": "Sample simple application",
-  "main": " ",
+  "version": "0.3.0",
   "dependencies": {
-    "grommet": "^0.2.4",
     "leaflet": "^0.7.3"
-  },
-  "author": "Eric Soderberg",
-  "license": "ISC"
+  }
 }

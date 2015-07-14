@@ -125,17 +125,25 @@ gulp.task('export', function(done) {
       var exampleFolder = path.join(grommetPath, 'examples/' + app);
       var templateFolder = path.join(grommetPath, 'templates/' + app + '/**');
 
-      var backendData = path.join(grommetPath, 'examples/server/data.js');
-      var filter = path.join(grommetPath, 'examples/server/filter.js');
-      var generator = path.join(grommetPath, 'examples/server/generator.js');
-      var map = path.join(grommetPath, 'examples/server/map.js');
-      var serverDependencies = path.join(grommetPath,
-       'examples/server/package.json');
-      var rest = path.join(grommetPath, 'examples/server/rest.js');
+      var serverFiles = [];
       var acceptLanguage = path.join(grommetPath,
-       'examples/server/accept-language.js');
-      var serverFiles = [backendData, filter, generator, map,
-       serverDependencies, rest, acceptLanguage];
+         'examples/server/accept-language.js');
+
+      if (app === 'medium-app') {
+        var backendData = path.join(grommetPath, 'examples/server/data.js');
+        var filter = path.join(grommetPath, 'examples/server/filter.js');
+        var generator = path.join(grommetPath, 'examples/server/generator.js');
+        var map = path.join(grommetPath, 'examples/server/map.js');
+        var serverDependencies = path.join(grommetPath,
+         'examples/server/package.json');
+        var rest = path.join(grommetPath, 'examples/server/rest.js');
+
+        serverFiles = [backendData, filter, generator, map,
+          serverDependencies, rest, acceptLanguage];
+      } else if (app === 'people-finder') {
+        var ldap = path.join(grommetPath, 'examples/server/ldap.js');
+        serverFiles = [ldap, acceptLanguage];
+      }
 
       fs.exists(exampleFolder, function(exists) {
         if (!exists) {
@@ -151,18 +159,16 @@ gulp.task('export', function(done) {
           '!' + exampleFolder + '/dist/',
           '!' + exampleFolder + '/dist/**',
           '!' + exampleFolder + '/gulpfile.js',
-          '!' + exampleFolder + '/package.json',
           '!' + exampleFolder + '/README.md'
         ]).pipe(gulp.dest('./')).on('end', function() {
           gulp.src(templateFolder).pipe(template({
             appName: dest
           })).pipe(gulp.dest('./')).on('finish', function() {
-            if (app === 'medium-app') {
+            if (app === 'medium-app' || app === 'people-finder') {
               gulp.src(serverFiles).pipe(gulp.dest('./server'));
             }
 
             //merging template NPM with application NPM
-            console.log(path.resolve('package.json'));
             packageJSON = merge(packageJSON, require(path.resolve('package.json')));
 
             gulp.src('package.json').pipe(file('package.json',
