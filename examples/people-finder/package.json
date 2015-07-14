@@ -1,0 +1,7 @@
+{
+  "name": "people-finder",
+  "version": "0.3.0",
+  "dependencies": {
+    "leaflet": "^0.7.3"
+  }
+}
