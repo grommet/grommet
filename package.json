@@ -57,6 +57,7 @@
     "gulp": "^3.8.11",
     "gulp-template": "^3.0.0",
     "gulp-install": "^0.4.0",
+    "gulp-file": "^0.2.0",
     "mkdirp": "^0.5.1"
   },
   "devDependencies": {
@@ -72,7 +73,6 @@
     "style-loader": "^0.12.0",
     "json-loader": "^0.5.1",
     "gulp-chug": "^0.4.2",
-    "gulp-file": "^0.2.0",
     "gulp-eslint": "^0.12.0",
     "gulp-minify-css": "^1.1.0",
     "gulp-mocha": "^2.0.1",

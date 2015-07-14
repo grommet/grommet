@@ -103,7 +103,7 @@ gulp.task('init', function(done) {
       }))
       .pipe(gulp.dest('./'))
       .on('finish', function() {
-        gulp.src('./').pipe(file('package.json',
+        gulp.src('package.json').pipe(file('package.json',
           JSON.stringify(packageJSON, null, 2))).pipe(gulp.dest('./'))
           .pipe(install()).on('finish', function() {
             done();
@@ -165,12 +165,12 @@ gulp.task('export', function(done) {
             console.log(path.resolve('package.json'));
             packageJSON = merge(packageJSON, require(path.resolve('package.json')));
 
-            gulp.src('./').pipe(file('package.json',
-            JSON.stringify(packageJSON, null, 2))).pipe(gulp.dest('./'))
-            .pipe(install()).on('finish', function() {
-              console.log('Successfully exported ' + app + ' to ' + dest + '.');
-              done();
-            });
+            gulp.src('package.json').pipe(file('package.json',
+              JSON.stringify(packageJSON, null, 2))).pipe(gulp.dest('./'))
+              .pipe(install()).on('finish', function() {
+                console.log('Successfully exported ' + app + ' to ' + dest + '.');
+                done();
+              });
           });
         });
       });
