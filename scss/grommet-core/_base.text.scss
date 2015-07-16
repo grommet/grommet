@@ -1,12 +1,9 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-$label-font-size: 14px;
-$content-font-size: 16px;
-$menu-font-size: 18px;
-$header-font-size: 24px;
-$large-number-font-size: 48px;
-$small-large-number-font-size: 28px;
-$large-large-number-font-size: 64px;
+html,
+body {
+  @include inuit-font-size($content-font-size, $inuit-base-spacing-unit);
+}
 
 p,
 dd,
@@ -17,55 +14,6 @@ li {
 p {
   margin-top: $inuit-base-spacing-unit;
   margin-bottom: $inuit-base-spacing-unit;
-}
-
-h1,
-.h1 {
-  @include inuit-font-size(48px);
-  font-weight: 600;
-}
-
-h2,
-.h2 {
-  @include inuit-font-size(36px);
-  font-weight: normal;
-}
-
-h3,
-.h3 {
-  @include inuit-font-size(24px);
-  font-weight: 100;
-}
-
-h4,
-.h4 {
-  @include inuit-font-size(18px);
-  font-weight: 100;
-}
-
-h5,
-.h5 {
-  @include inuit-font-size(18px);
-  font-weight: 100;
-}
-
-a {
-  color: $link-color;
-  -webkit-text-decoration: $brand-text-decoration;
-  text-decoration: $brand-text-decoration;
-  cursor: pointer;
-
-  &:hover {
-    text-decoration: underline;
-  }
-
-  &:visited {
-    color: $link-color;
-  }
-
-  &.active {
-    color: $text-color;
-  }
 }
 
 code.hljs {

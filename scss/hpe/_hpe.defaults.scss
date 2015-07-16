@@ -48,8 +48,11 @@ $hpe-fonts-path: "https://hpefonts.s3.amazonaws.com";
   src: url("#{$hpe-fonts-path}/SimRg.otf") format("opentype");
 }
 
-$button-accent-background-color: #FD8D71;
-$button-text-transform: uppercase;
+$button-border-color: #01a982;
+$button-text-color: #01a982;
+$control-brand-color: #049371;
+$button-accent-background-color: #ff8d6d;
+$button-accent-text-color: #333333;
 $button-font-weight: 600;
 $button-alternate-border-color: #FF8D6D;
 $border-radius: 0px;

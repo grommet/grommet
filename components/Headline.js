@@ -9,7 +9,8 @@ var Headline = React.createClass({
   propTypes: {
     colorIndex: React.PropTypes.string,
     large: React.PropTypes.bool,
-    small: React.PropTypes.bool
+    small: React.PropTypes.bool,
+    strong: React.PropTypes.bool
   },
 
   render: function() {
@@ -19,6 +20,9 @@ var Headline = React.createClass({
     }
     if (this.props.small) {
       classes.push(CLASS_ROOT + "--small");
+    }
+    if (this.props.strong) {
+      classes.push(CLASS_ROOT + "--strong");
     }
     if (this.props.className) {
       classes.push(this.props.className);

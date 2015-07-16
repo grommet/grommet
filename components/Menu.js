@@ -6,6 +6,7 @@ var pick = require('lodash/object/pick');
 var keys = require('lodash/object/keys');
 var KeyboardAccelerators = require('../mixins/KeyboardAccelerators');
 var Drop = require('../utils/Drop');
+var Responsive = require('../utils/Responsive');
 var Box = require('./Box');
 var MoreIcon = require('./icons/More');
 var DropCaretIcon = require('./icons/DropCaret');
@@ -18,6 +19,7 @@ var MenuDrop = React.createClass({
   propTypes: merge({
     control: React.PropTypes.node,
     dropAlign: Drop.alignPropType,
+    dropColorIndex: React.PropTypes.string,
     id: React.PropTypes.string.isRequired,
     onClick: React.PropTypes.func.isRequired,
     router: React.PropTypes.func
@@ -48,6 +50,9 @@ var MenuDrop = React.createClass({
     if (this.props.dropAlign.right) {
       classes.push(CLASS_ROOT + "__drop--align-right");
     }
+    if (this.props.dropColorIndex) {
+      classes.push("background-color-index-" + this.props.dropColorIndex);
+    }
 
     return (
       <div id={this.props.id} className={classes.join(' ')}
@@ -63,9 +68,11 @@ var Menu = React.createClass({
 
   propTypes: merge({
     closeOnClick: React.PropTypes.bool,
-    collapse: React.PropTypes.bool,
+    collapse: React.PropTypes.bool, // deprecated, remove in 0.5
     dropAlign: Drop.alignPropType,
+    dropColorIndex: React.PropTypes.string,
     icon: React.PropTypes.node,
+    inline: React.PropTypes.bool,
     label: React.PropTypes.string,
     primary: React.PropTypes.bool,
     small: React.PropTypes.bool
@@ -82,7 +89,8 @@ var Menu = React.createClass({
       direction: 'column',
       dropAlign: {top: 'top', left: 'left'},
       pad: 'none',
-      small: false
+      small: false,
+      responsive: true
     };
   },
 
@@ -111,11 +119,29 @@ var Menu = React.createClass({
     event.nativeEvent.stopImmediatePropagation();
   },
 
+  _onResponsive: function (small) {
+    // deactivate if we change resolutions
+    if (small) {
+      this.setState({inline: false, active: false});
+    } else {
+      this.setState({inline: this.props.inline, active: false});
+    }
+  },
+
   getInitialState: function () {
+    if (this.props.hasOwnProperty('collapse')) {
+      console.log('The Grommet Menu "collapse" property is deprecated. Please use "inline" instead.');
+    }
+    var inline;
+    if (this.props.hasOwnProperty('inline')) {
+      inline = this.props.inline;
+    } else {
+      inline = (! this.props.label && ! this.props.icon);
+    }
     return {
       controlFocused: false,
       active: false,
-      inline: (! this.props.label && ! this.props.icon && ! this.props.collapse)
+      inline: inline
     };
   },
 
@@ -125,6 +151,10 @@ var Menu = React.createClass({
       this.setState({
         dropId: 'menu-drop-' + controlElement.getAttribute('data-reactid')
       });
+    }
+
+    if (this.props.inline && this.props.responsive) {
+      this._responsive = Responsive.start(this._onResponsive);
     }
   },
 
@@ -176,6 +206,9 @@ var Menu = React.createClass({
     document.removeEventListener('click', this._onClose);
     if (this._drop) {
       this._drop.remove();
+    }
+    if (this._responsive) {
+      this._responsive.stop();
     }
   },
 
@@ -233,6 +266,7 @@ var Menu = React.createClass({
     return (
       <MenuDrop router={this.context.router}
         dropAlign={this.props.dropAlign}
+        dropColorIndex={this.props.dropColorIndex}
         {...other}
         onClick={onClick}
         id={this.state.dropId}

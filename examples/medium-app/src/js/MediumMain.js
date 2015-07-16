@@ -30,7 +30,7 @@ var MediumMain = React.createClass({
             <Logo />
             <span>Medium App</span>
           </Title>
-          <Menu>
+          <Menu responsive={false}>
             <div onClick={this.props.onClose}>
               <CloseIcon />
             </div>

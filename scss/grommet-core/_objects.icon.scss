@@ -29,6 +29,16 @@
     }
   }
 
+  [class*="background-color-index-"] & {
+    fill: $colored-icon-color;
+    stroke: $colored-icon-color;
+
+    &:hover {
+      fill: $active-colored-icon-color;
+      stroke: $active-colored-icon-color;
+    }
+  }
+
   &--active {
     fill: $active-icon-color;
     stroke: $active-icon-color;

@@ -4,16 +4,50 @@
   width: 100%;
 }
 
+h1,
+.h1 {
+  @include inuit-font-size(48px);
+  font-weight: 100;
+}
+
+h2,
+.h2 {
+  @include inuit-font-size(36px);
+  font-weight: 100;
+}
+
+h3,
+.h3 {
+  @include inuit-font-size(24px);
+  font-weight: 100;
+}
+
+h4,
+.h4 {
+  @include inuit-font-size(18px);
+  font-weight: 100;
+}
+
+h5,
+.h5 {
+  @include inuit-font-size(18px);
+  font-weight: 100;
+}
+
+h1.header,
+h2.header,
+h3.header,
+h4.header {
+  font-weight: 100;
+
+  &--strong {
+    font-weight: 700;
+  }
+}
+
 header.header {
   @include inuit-font-size($header-font-size, inherit);
-
-  @include media-query(palm) {
-    height: $small-header-height;
-  }
-
-  @include media-query(lap-and-up) {
-    height: $header-height;
-  }
+  min-height: $header-height;
 
   *:not(.header__container--float) > &--float {
     position: absolute;
@@ -30,14 +64,12 @@ header.header {
     }
   }
 
-  @include media-query(lap-and-up) {
-    &--large {
-      height: $large-header-height;
-    }
+  &--large {
+    height: $large-header-height;
+  }
 
-    &--small {
-      height: $small-header-height;
-    }
+  &--small {
+    height: $small-header-height;
   }
 
   @include transform(translate(0, 0));
@@ -102,41 +134,33 @@ div.header {
   }
 
   &__wrapper {
-    @include media-query(palm) {
-      height: $small-header-height;
+    height: $header-height;
+  }
+
+  &--large {
+    .header__wrapper {
+      height: $large-header-height;
     }
 
-    @include media-query(lap-and-up) {
-      height: $header-height;
+    .header__content {
+      line-height: $large-header-height;
     }
   }
 
-  @include media-query(lap-and-up) {
-    &--large {
-      .header__wrapper {
-        height: $large-header-height;
-      }
-
-      .header__content {
-        line-height: $large-header-height;
-      }
+  &--small {
+    .header__wrapper {
+      height: $small-header-height;
     }
 
-    &--small {
-      .header__wrapper {
-        height: $small-header-height;
-      }
+    .header__content {
+      line-height: $small-header-height;
 
-      .header__content {
-        line-height: $small-header-height;
-
-        //.header,
-        //.title {
-        //  svg {
-        //    height: $small-header-height - $inuit-base-spacing-unit;
-        //  }
-        //}
-      }
+      //.header,
+      //.title {
+      //  svg {
+      //    height: $small-header-height - $inuit-base-spacing-unit;
+      //  }
+      //}
     }
   }
 

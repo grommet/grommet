@@ -3,6 +3,7 @@
 var React = require('react');
 var KeyboardAccelerators = require('../mixins/KeyboardAccelerators');
 var Drop = require('../utils/Drop');
+var Responsive = require('../utils/Responsive');
 var SearchIcon = require('./icons/Search');
 var IntlMixin = require('../mixins/GrommetIntlMixin');
 
@@ -13,9 +14,11 @@ var Search = React.createClass({
   propTypes: {
     defaultValue: React.PropTypes.string,
     dropAlign: Drop.alignPropType,
+    dropColorIndex: React.PropTypes.string,
     inline: React.PropTypes.bool,
     onChange: React.PropTypes.func,
     placeHolder: React.PropTypes.string,
+    responsive: React.PropTypes.bool,
     suggestions: React.PropTypes.arrayOf(React.PropTypes.string),
     value: React.PropTypes.string
   },
@@ -25,7 +28,8 @@ var Search = React.createClass({
       align: 'left',
       inline: false,
       placeHolder: 'Search',
-      dropAlign: {top: 'top', left: 'left'}
+      dropAlign: {top: 'top', left: 'left'},
+      responsive: true
     };
   },
 
@@ -105,21 +109,13 @@ var Search = React.createClass({
     event.nativeEvent.stopImmediatePropagation();
   },
 
-  /*
-  _layout: function () {
-    if (window.innerWidth < 600) {
+  _onResponsive: function (small) {
+    if (small) {
       this.setState({inline: false});
     } else {
       this.setState({inline: this.props.inline});
     }
   },
-
-  _onResize: function () {
-    // debounce
-    clearTimeout(this._resizeTimer);
-    this._resizeTimer = setTimeout(this._layout, 50);
-  },
-  */
 
   getInitialState: function () {
     return {
@@ -131,12 +127,11 @@ var Search = React.createClass({
     };
   },
 
-  /*
   componentDidMount: function () {
-    window.addEventListener('resize', this._onResize);
-    this._layout();
+    if (this.props.inline && this.props.responsive) {
+      this._responsive = Responsive.start(this._onResponsive);
+    }
   },
-  */
 
   componentDidUpdate: function (prevProps, prevState) {
 
@@ -186,7 +181,9 @@ var Search = React.createClass({
 
   componentWillUnmount: function () {
     document.removeEventListener('click', this._onRemoveDrop);
-    //window.removeEventListener('resize', this._onResize);
+    if (this._responsive) {
+      this._responsive.stop();
+    }
   },
 
   focus: function () {
@@ -219,6 +216,9 @@ var Search = React.createClass({
 
   _renderDrop: function() {
     var classes = this._classes(CLASS_ROOT + "__drop");
+    if (this.props.dropColorIndex) {
+      classes.push("background-color-index-" + this.props.dropColorIndex);
+    }
 
     var suggestions = null;
     if (this.props.suggestions) {

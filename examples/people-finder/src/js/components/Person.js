@@ -82,9 +82,9 @@ var Person = React.createClass({
           </Article>
         </div>
         <div>
-            <Header large={true} pad={{horizontal: "medium"}} justify="between" separator="bottom">
+          <Header large={true} pad={{horizontal: "medium"}} justify="between" separator="bottom">
             <h3>{viewLabel}</h3>
-            <Menu collapse={true} dropAlign={{right: 'right'}}>
+            <Menu inline={false} dropAlign={{right: 'right'}}>
               <a onClick={this._onAbout}>About</a>
               <a onClick={this._onOrganization}>Organization</a>
             </Menu>
