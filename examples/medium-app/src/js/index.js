@@ -11,7 +11,7 @@ var Locale = require('grommet/utils/Locale');
 //var indexConfig = require('./IndexConfig'); /// TODO: refactor
 var Routes = require('./Routes');
 
-var hostName = __DEV_MODE__ ? "localhost:8000" : window.location.host;
+var hostName = __DEV_MODE__ ? "localhost:8010" : window.location.host;
 
 RestWatch.initialize('ws://' + hostName + '/rest/ws');
 
