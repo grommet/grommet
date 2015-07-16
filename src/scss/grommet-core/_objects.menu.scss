@@ -60,6 +60,8 @@
     }
 
     &--fixed-label {
+      white-space: nowrap;
+
       .menu__control-icon {
         display: none;
       }
