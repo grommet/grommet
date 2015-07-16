@@ -129,18 +129,7 @@ gulp.task('export', function(done) {
       var acceptLanguage = path.join(grommetPath,
          'examples/server/accept-language.js');
 
-      if (app === 'medium-app') {
-        var backendData = path.join(grommetPath, 'examples/server/data.js');
-        var filter = path.join(grommetPath, 'examples/server/filter.js');
-        var generator = path.join(grommetPath, 'examples/server/generator.js');
-        var map = path.join(grommetPath, 'examples/server/map.js');
-        var serverDependencies = path.join(grommetPath,
-         'examples/server/package.json');
-        var rest = path.join(grommetPath, 'examples/server/rest.js');
-
-        serverFiles = [backendData, filter, generator, map,
-          serverDependencies, rest, acceptLanguage];
-      } else if (app === 'people-finder') {
+      if (app === 'people-finder') {
         var ldap = path.join(grommetPath, 'examples/server/ldap.js');
         serverFiles = [ldap, acceptLanguage];
       }
@@ -164,7 +153,7 @@ gulp.task('export', function(done) {
           gulp.src(templateFolder).pipe(template({
             appName: dest
           })).pipe(gulp.dest('./')).on('finish', function() {
-            if (app === 'medium-app' || app === 'people-finder') {
+            if (app === 'people-finder') {
               gulp.src(serverFiles).pipe(gulp.dest('./server'));
             }
 

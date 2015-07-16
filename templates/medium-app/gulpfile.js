@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var path = require('path');
+var nodemon = require('gulp-nodemon');
 var devGulpTasks = require('grommet/utils/gulp/gulp-tasks');
 
 var opts = {
@@ -27,9 +28,16 @@ var opts = {
   },
   devServerPort: 8001,
   devServerProxy: {
-    "/rest/*": 'http://localhost:8000'
+    "/rest/*": 'http://localhost:8010'
   },
-  websocketHost: 'localhost:8000'
+  websocketHost: 'localhost:8010',
+  devPreprocess: ['start-backend']
 };
+
+gulp.task('start-backend', function() {
+  nodemon({
+    script: path.resolve(__dirname, 'server/server')
+  });
+});
 
 devGulpTasks(gulp, opts);

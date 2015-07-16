@@ -9,10 +9,11 @@
     "express-http-proxy": "^0.6.0",
     "json-server": "^0.5.5",
     "json-stringify-pretty-compact": "^1.0.1",
-    "lodash": "^3.8.0",
+    "ldapjs": "^0.7.1",
     "morgan": "^1.5.0",
     "request": "^2.53.0",
     "serve-static": "^1.7.1",
-    "ws": "^0.7.2"
+    "ws": "^0.7.2",
+    "gulp-nodemon": "^2.0.3"
   }
 }
