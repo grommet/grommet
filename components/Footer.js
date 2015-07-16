@@ -5,6 +5,7 @@ var merge = require('lodash/object/merge');
 var pick = require('lodash/object/pick');
 var keys = require('lodash/object/keys');
 var Box = require('./Box');
+var SkipLinkAnchor = require('./SkipLinkAnchor');
 
 var CLASS_ROOT = "footer";
 
@@ -34,9 +35,12 @@ var Footer = React.createClass({
     }
 
     return (
-      <Box tag="footer" {...other} className={classes.join(' ')}>
-        {this.props.children}
-      </Box>
+      <div>
+        <SkipLinkAnchor label="Footer" />
+        <Box tag="footer" {...other} className={classes.join(' ')}>
+          {this.props.children}
+        </Box>
+      </div>
     );
   }
 

@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
+var SkipLinks = require('./SkipLinks');
 
 var IntlMixin = require('../mixins/GrommetIntlMixin');
 var Locale = require('../utils/Locale');
@@ -52,6 +53,7 @@ var App = React.createClass({
 
     return (
       <div lang={lang} className={classes.join(' ')}>
+        <SkipLinks/>
         {children}
       </div>
     );
