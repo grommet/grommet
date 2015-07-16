@@ -140,8 +140,11 @@ var Chart = React.createClass({
     if (this.props.hasOwnProperty('max')) {
       maxY = this.props.max;
     }
-    var graphWidth = (this.props.thresholds ? (width - YAXIS_WIDTH) : width);
-    var graphHeight = (xAxis ? (height - XAXIS_HEIGHT) : height);
+    var thresholdWidth = (width - YAXIS_WIDTH);
+    var thresholdHeight = (height - XAXIS_HEIGHT);
+
+    var graphWidth = (this.props.thresholds ? thresholdWidth : width);
+    var graphHeight = (xAxis ? thresholdHeight : height);
     var spanX = maxX - minX;
     var spanY = maxY - minY;
     var scaleX = (graphWidth / spanX);
