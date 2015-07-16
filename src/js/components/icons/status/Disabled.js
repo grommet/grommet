@@ -16,11 +16,10 @@ var Disabled = React.createClass({
       <svg className={className} viewBox="0 0 24 24" role="img" aria-labelledby="title-icon-disabled" version="1.1">
         <title id="title-icon-disabled">{this.getGrommetIntlMessage('Disabled')}</title>
         <g className={"status-icon__base"}>
-          <rect role="presentation" x="0" y="0" width="24" height="24" stroke="none"></rect>
+          <path role="presentation" stroke="none" d="M21,24 L3,24 C1.3,24 0,22.7 0,21 L0,3 C0,1.3 1.3,0 3,0 L21,0 C22.7,0 24,1.3 24,3 L24,21 C24,22.7 22.7,24 21,24 L21,24 Z"></path>
         </g>
         <g className={"status-icon__detail"} strokeWidth="2">
-          <circle role="presentation" cx="12" cy="12" r="7" fill="none"/>
-          <path role="presentation" d="M7.3,7.3 L16.6,16.7" fill="none"></path>
+          <path d="M6,12 L18,12"></path>
         </g>
       </svg>
     );
