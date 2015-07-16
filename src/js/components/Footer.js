@@ -35,12 +35,10 @@ var Footer = React.createClass({
     }
 
     return (
-      <div>
+      <Box tag="footer" {...other} className={classes.join(' ')}>
         <SkipLinkAnchor label="Footer" />
-        <Box tag="footer" {...other} className={classes.join(' ')}>
-          {this.props.children}
-        </Box>
-      </div>
+        {this.props.children}
+      </Box>
     );
   }
 

@@ -8,13 +8,15 @@ var Box = require('./Box');
 var KeyboardAccelerators = require('../mixins/KeyboardAccelerators');
 var DOM = require('../utils/DOM');
 var Scroll = require('../utils/Scroll');
+var SkipLinkAnchor = require('./SkipLinkAnchor');
 
 var CLASS_ROOT = "article";
 
 var Article = React.createClass({
 
   propTypes: merge({
-    scrollStep: React.PropTypes.bool
+    scrollStep: React.PropTypes.bool,
+    primary: true
   }, Box.propTypes),
 
   mixins: [KeyboardAccelerators],
@@ -132,9 +134,15 @@ var Article = React.createClass({
       classes.push(CLASS_ROOT + "--scroll-step");
     }
 
+    var skipLinkAnchor = null;
+    if (this.props.primary) {
+      skipLinkAnchor = <SkipLinkAnchor label="Footer" />
+    }
     return (
       <Box ref="component" tag="article" {...other} className={classes.join(' ')}>
+        {skipLinkAnchor}
         {this.props.children}
+      }
       </Box>
     );
   }
