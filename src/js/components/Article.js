@@ -136,7 +136,7 @@ var Article = React.createClass({
 
     var skipLinkAnchor = null;
     if (this.props.primary) {
-      skipLinkAnchor = <SkipLinkAnchor label="Footer" />
+      skipLinkAnchor = <SkipLinkAnchor label="Footer" />;
     }
     return (
       <Box ref="component" tag="article" {...other} className={classes.join(' ')}>
