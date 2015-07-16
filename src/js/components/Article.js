@@ -142,7 +142,6 @@ var Article = React.createClass({
       <Box ref="component" tag="article" {...other} className={classes.join(' ')}>
         {skipLinkAnchor}
         {this.props.children}
-      }
       </Box>
     );
   }
