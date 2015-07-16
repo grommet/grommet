@@ -142,6 +142,7 @@ var Calendar = React.createClass({
       enter: this._onSelectDate,
       space: this._onSelectDate
     };
+    var document = React.findDOMNode(this).ownerDocument;
 
     if (dropActive) {
 
