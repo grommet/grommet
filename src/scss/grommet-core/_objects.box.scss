@@ -136,6 +136,28 @@
     }
   }
 
+  [class*="background-color-index-"] &[class*="box--separator"] {
+    border-color: $colored-border-color;
+  }
+
+  &--text-align {
+    &-left {
+      text-align: left;
+    }
+
+    &-center {
+      text-align: center;
+    }
+
+    &-right {
+      text-align: right;
+    }
+  }
+
+  &--responsive {
+    ///width: 100%;
+  }
+
   // temporary flex grow capability
   > .flex-grow-1 {
     -webkit-flex-grow: 1;

@@ -40,12 +40,12 @@ var MeterDoc = React.createClass({
     return (
       <Article>
         <header>
-          <h1>Meter</h1>
+          <h1>Meter X</h1>
           <p>Shows a bar, arc, or circular meter graphic.</p>
           <pre><code className="html">{inline}</code></pre>
         </header>
 
-        <section>
+        <section style={{display: 'none'}}>
           <h2>Options</h2>
           <dl>
             <dt><code>important   {"{number}"}</code></dt>

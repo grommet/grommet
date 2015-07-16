@@ -16,6 +16,10 @@
       > *:first-child:not(:last-child) {
         -webkit-flex: 0 0 auto;
         flex: 0 0 auto;
+
+        .app:not(.app--centered) & {
+          min-width: $sidebar-width;
+        }
       }
 
       > *:last-child {
@@ -29,6 +33,10 @@
       > .object {
         -webkit-flex: 0 0 auto;
         flex: 0 0 auto;
+
+        .app:not(.app--centered) & {
+          min-width: $sidebar-width;
+        }
       }
 
       > *:first-child {

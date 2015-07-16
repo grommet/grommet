@@ -26,50 +26,25 @@ var TileDoc = React.createClass({
       "  ...\n" +
       "</Tiles>";
 
-    var richTiles = [
-      (<Tile key={1}>
-        <Header>
-          <h4>First</h4>
-        </Header>
-        hello
-        <Footer>
-          <span></span>
-          <Menu icon={<Edit/>} align="right" direction="up">
-            <a>action 1</a>
-            <a>action 2</a>
-            <a>action 3</a>
-          </Menu>
-        </Footer>
-      </Tile>),
-      (<Tile key={2}>
-        <Header>
-          <h4>Second</h4>
-        </Header>
-        hello
-        <Footer>
-          <span></span>
-          <Menu icon={<Edit/>} align="right" direction="up">
-            <a>action 1</a>
-            <a>action 2</a>
-            <a>action 3</a>
-          </Menu>
-        </Footer>
-      </Tile>),
-      (<Tile key={3}>
-        <Header>
-          <h4>Third</h4>
-        </Header>
-        hello
-        <Footer>
-          <span></span>
-          <Menu icon={<Edit/>} align="right" direction="up">
-            <a>action 1</a>
-            <a>action 2</a>
-            <a>action 3</a>
-          </Menu>
-        </Footer>
-      </Tile>)
-    ];
+    var richTiles = [];
+    var index = 1;
+    while (index <= 8) {
+      richTiles.push(
+        <Tile key={index}>
+          <Header tag="h4" textAlign="center">{"Tile " + index}</Header>
+          hello
+          <Footer>
+            <span></span>
+            <Menu icon={<Edit/>} dropAlign={{bottom: 'bottom', right: 'right'}}>
+              <a>action 1</a>
+              <a>action 2</a>
+              <a>action 3</a>
+            </Menu>
+          </Footer>
+        </Tile>
+      );
+      index += 1;
+    }
 
     return (
       <Article>
@@ -131,6 +106,16 @@ var TileDoc = React.createClass({
           </div>
           <pre><code className="html">
             {"<Tiles fill={true}>\n  ...\n</Tiles>"}
+          </code></pre>
+
+          <h3>Row</h3>
+          <div className="example">
+            <Tiles fill={true} direction="row">
+              {richTiles}
+            </Tiles>
+          </div>
+          <pre><code className="html">
+            {"<Tiles fill={true} direction=\"row\">\n  ...\n</Tiles>"}
           </code></pre>
 
         </section>

@@ -2,6 +2,7 @@
 
 var React = require('react');
 var Article = require('grommet/components/Article');
+var Section = require('grommet/components/Section');
 var Button = require('grommet/components/Button');
 
 var ButtonDoc = React.createClass({
@@ -72,6 +73,19 @@ var ButtonDoc = React.createClass({
           <pre><code className="html">{"<Button label=\"Action\" />"}</code></pre>
 
         </section>
+
+        <Section colorIndex="neutral-1" pad="medium">
+          <h3>Colored context</h3>
+          <div className="example">
+            <Button label="Default" onClick={this._onClick} />
+          </div>
+          <div className="example">
+            <Button label="Primary" primary={true} onClick={this._onClick} />
+          </div>
+          <div className="example">
+            <Button label="Accent" accent={true} onClick={this._onClick} />
+          </div>
+        </Section>
 
       </Article>
     );

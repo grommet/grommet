@@ -6,7 +6,8 @@ $brand-color-darker: darken($brand-color, 9%) !default;
 $text-color: #333;
 $secondary-text-color: #777;
 $hover-text-color: #000;
-$colored-text-color: #fff;
+$colored-text-color: #eee;
+$active-colored-text-color: #fff;
 $inactive-colored-text-color: rgba(255, 255, 255, 0.7);
 $link-color: $brand-link-color !default;
 
@@ -22,12 +23,15 @@ $selected-primary-text-color: $colored-text-color !default;
 
 $border-color: #ccc;
 $strong-border-color: #000;
+$colored-border-color: #666;
 
 // Control Icons
 
 $icon-color: #999;
 $active-icon-color: #000;
 $disabled-icon-color: #ccc;
+$colored-icon-color: #ccc;
+$active-colored-icon-color: #fff;
 $icon-badge-background-color: $brand-color;
 $icon-badge-text-color: $colored-text-color;
 
@@ -41,17 +45,33 @@ $cursor-color: $text-color !default;
 // Controls
 
 $focus-border-color: nth($brand-accent-colors, 1) !default;
+$control-brand-color: $brand-color !default;
 
 $button-background-color: $background-color !default;
 $button-border-color: #999 !default;
 $button-text-color: $secondary-text-color !default;
 $button-primary-background-color: $brand-color !default;
-$button-primary-text-color: $colored-text-color !default;
+$button-primary-text-color: $active-colored-text-color !default;
 $button-accent-background-color: nth($brand-accent-colors, 1) !default;
-$button-accent-text-color: $colored-text-color !default;
+$button-accent-border-color: nth($brand-accent-colors, 1) !default;
+$button-accent-text-color: $active-colored-text-color !default;
 $button-hover-background-color: $hover-background-color !default;
 $button-hover-border-color: $brand-color;
 $button-disabled-background-color: #CBCBCB !default;
+$colored-button-background-color: transparent !default;
+$colored-button-border-color: $colored-text-color !default;
+$colored-button-text-color: $colored-text-color !default;
+$active-colored-button-border-color: $active-colored-text-color !default;
+$active-colored-button-text-color: $active-colored-text-color !default;
+$colored-button-primary-background-color: rgba(255, 255, 255, 0.8) !default;
+$colored-button-primary-border-color: transparent !default;
+$active-colored-button-primary-background-color: $active-colored-text-color !default;
+$active-colored-button-primary-border-color: transparent !default;
+$colored-button-accent-background-color: rgba(0, 0, 0, 0.2) !default;
+$colored-button-accent-border-color: transparent !default;
+$active-colored-button-accent-background-color: rgba(0, 0, 0, 0.3) !default;
+$active-colored-button-accent-border-color: transparent !default;
+
 
 $hover-background-color: rgba(0, 0, 0, 0.1);
 $layer-overlay-background-color: rgba(128, 128, 128, 0.6); ///rgba(255, 255, 255, 0.95); //rgba(0, 0, 0, 0.6);

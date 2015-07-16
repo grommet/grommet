@@ -1,0 +1,79 @@
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+
+a {
+  color: $link-color;
+  -webkit-text-decoration: $brand-text-decoration;
+  text-decoration: $brand-text-decoration;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:visited {
+    color: $link-color;
+  }
+
+  &.active {
+    color: $text-color;
+  }
+
+  [class*="background-color-index-"] &,
+  [class*="background-color-index-"] .menu &:not(.button) {
+    color: $colored-text-color;
+
+    .control-icon {
+      fill: $colored-text-color;
+      stroke: $colored-text-color;
+    }
+
+    &:hover {
+      color: $active-colored-text-color;
+
+      .control-icon {
+        fill: $active-colored-text-color;
+        stroke: $active-colored-text-color;
+      }
+    }
+  }
+
+  &.anchor {
+    &--primary {
+      @include inuit-font-size($control-font-size, $inuit-base-spacing-unit);
+      font-weight: 600;
+      color: $control-brand-color;
+      text-decoration: none;
+
+      .control-icon {
+        stroke: $control-brand-color;
+      }
+
+      &:hover {
+        .control-icon {
+          path,
+          polyline {
+            stroke-width: 3px;
+          }
+        }
+      }
+
+      [class*="background-color-index-"] & {
+        color: $colored-text-color;
+
+        .control-icon {
+          fill: $colored-text-color;
+          stroke: $colored-text-color;
+        }
+
+        &:hover {
+          color: $active-colored-text-color;
+
+          .control-icon {
+            fill: $active-colored-text-color;
+            stroke: $active-colored-text-color;
+          }
+        }
+      }
+    }
+  }
+}

@@ -14,8 +14,6 @@ var Title = React.createClass({
 
   getDefaultProps: function () {
     return {
-      align: "center",
-      direction: "row",
       responsive: true
     };
   },
@@ -33,7 +31,8 @@ var Title = React.createClass({
     }
 
     return (
-      <Box {...this.props} className={classes.join(' ')} onClick={this.props.onClick}>
+      <Box align="center" direction="row" responsive={false}
+        className={classes.join(' ')} onClick={this.props.onClick}>
         {this.props.children}
       </Box>
     );

@@ -53,7 +53,7 @@ var FooterDoc = React.createClass({
           <h3>Form footer right</h3>
           <div className="example">
             <Footer justify="end">
-              <Menu direction="row">
+              <Menu direction="row" justify="end">
                 <Button label="Cancel" onClick={this._onClick} />
                 <Button label="OK" primary={true} onClick={this._onClick} />
               </Menu>

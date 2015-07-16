@@ -16,6 +16,7 @@ var Header = React.createClass({
     large: React.PropTypes.bool,
     small: React.PropTypes.bool,
     splash: React.PropTypes.bool,
+    strong: React.PropTypes.bool,
     tag: React.PropTypes.string
   }, Box.propTypes),
 
@@ -84,6 +85,9 @@ var Header = React.createClass({
     }
     if (this.props.splash) {
       classes.push(CLASS_ROOT + "--splash");
+    }
+    if (this.props.strong) {
+      classes.push(CLASS_ROOT + "--strong");
     }
     if (this.props.className) {
       classes.push(this.props.className);

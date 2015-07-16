@@ -22,6 +22,7 @@ var Architecture = require('./Architecture');
 var Integration = require('./Integration');
 
 var ActionsDoc = require('./patterns/ActionsDoc');
+var AnchorDoc = require('./components/AnchorDoc');
 var AppDoc = require('./components/AppDoc');
 var ArticleDoc = require('./components/ArticleDoc');
 var BoxDoc = require('./components/BoxDoc');
@@ -83,6 +84,7 @@ var CONTENTS = [
   },
   {label: 'Components',
     contents: [
+      {route: 'develop_anchor', label: 'Anchor', component: AnchorDoc},
       {route: 'develop_app', label: 'App', component: AppDoc},
       {route: 'develop_article', label: 'Article', component: ArticleDoc},
       {route: 'develop_box', label: 'Box', component: BoxDoc},
@@ -148,16 +150,16 @@ var Develop = React.createClass({
           methods and screen sizes.</p>
           <Menu direction="row">
             <Link to="develop_helloworld">
-              <Button label="Hello Grommet!" onClick={this._onClick} large={true} primary={true} />
+              <Button label="Hello Grommet!" onClick={this._onClick} primary={true} />
             </Link>
             <Link to="develop_getstarted">
-              <Button label="Get Started" onClick={this._onClick} large={true} />
+              <Button label="Get Started" onClick={this._onClick} />
             </Link>
             <Link to="develop_tutorial">
-              <Button label="Tutorial" onClick={this._onClick} large={true} />
+              <Button label="Tutorial" onClick={this._onClick} />
             </Link>
             <Link to="develop_modulargrommet">
-              <Button label="Modular Grommet" onClick={this._onClick} large={true} />
+              <Button label="Modular Grommet" onClick={this._onClick} />
             </Link>
           </Menu>
         </Section>

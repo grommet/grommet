@@ -20,6 +20,16 @@ $meter-large-circle-size: $large-panel-width;
   }
 }
 
+@include keyframes(draw-arc) {
+  0% {
+    stroke-dashoffset: - $meter-circle-size;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
 .meter {
   display: inline-block;
   position: relative;
@@ -73,7 +83,7 @@ $meter-large-circle-size: $large-panel-width;
 
       &__bar {
         stroke-linecap: butt;
-        stroke-dasharray: quadruple($meter-bar-length) quadruple($meter-bar-length);
+        stroke-dasharray: $meter-bar-length $meter-bar-length;
         stroke-dashoffset: 0;
       }
 
@@ -84,7 +94,7 @@ $meter-large-circle-size: $large-panel-width;
 
         @include media-query(lap-and-up) {
           transition: stroke-width 0.2s;
-          @include animation('draw-meter 1.5s');
+          @include animation('draw-meter 1.5s linear');
         }
       }
 
@@ -172,7 +182,7 @@ $meter-large-circle-size: $large-panel-width;
 
         @include media-query(lap-and-up) {
           transition: stroke-width 0.2s;
-          @include animation('draw-stroke 3s');
+          @include animation('draw-arc 1.5s linear');
         }
       }
 

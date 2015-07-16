@@ -7,9 +7,9 @@ var keys = require('lodash/object/keys');
 var Box = require('./Box');
 var KeyboardAccelerators = require('../mixins/KeyboardAccelerators');
 var DOM = require('../utils/DOM');
+var Scroll = require('../utils/Scroll');
 
 var CLASS_ROOT = "article";
-var SCROLL_STEPS = 25;
 
 var Article = React.createClass({
 
@@ -24,34 +24,6 @@ var Article = React.createClass({
       pad: 'none',
       direction: 'column'
     };
-  },
-
-  _easeInOutQuad: function (t) {
-    return (t < .5 ?  2 * t * t : -1 + (4 - 2 * t) * t);
-  },
-
-  _scrollTo: function (delta) {
-    clearInterval(this._scrollToTimer);
-    var start = this._scrollParent.scrollTop;
-    var position = start + delta;
-    var step = 1;
-    this._scrollToTimer = setInterval(function () {
-      var next;
-      var easing = this._easeInOutQuad(step / SCROLL_STEPS);
-      if (position > start) {
-        next = Math.min(position, Math.max(this._scrollParent.scrollTop,
-          Math.round(start + ((position - start) * easing))));
-      } else {
-        next = Math.max(position, Math.min(this._scrollParent.scrollTop,
-          Math.round(start - ((start - position) * easing))));
-      }
-      this._scrollParent.scrollTop = next;
-      step += 1;
-      if (step > SCROLL_STEPS) {
-        // we're done
-        clearInterval(this._scrollToTimer);
-      }
-    }.bind(this), 8);
   },
 
   _markInactive: function () {
@@ -94,7 +66,7 @@ var Article = React.createClass({
       var rect = section.getBoundingClientRect();
       // 10 is for fuzziness
       if (rect.bottom > 10 && (event || rect.bottom < window.innerHeight)) {
-        this._scrollTo(rect.bottom);
+        Scroll.scrollBy(this._scrollParent, 'scrollTop', rect.bottom);
         break;
       }
     }
@@ -115,7 +87,7 @@ var Article = React.createClass({
         if (i > 0) {
           section = sections[i - 1];
           rect = section.getBoundingClientRect();
-          this._scrollTo(rect.top);
+          Scroll.scrollBy(this._scrollParent, 'scrollTop', rect.top);
         }
         break;
       }

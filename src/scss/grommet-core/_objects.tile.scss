@@ -1,6 +1,7 @@
 // (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
 
 .tiles {
+  width: 100%;
   padding: halve($inuit-base-spacing-unit);
 
   display: -webkit-flex;
@@ -20,6 +21,67 @@
     }
   }
 
+  &__container {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    align-items: center;
+    max-width: 100vw;
+
+    .tiles__left,
+    .tiles__right {
+      -webkit-flex: 0 0 auto;
+      flex: 0 0 auto;
+    }
+
+    .tiles {
+      overflow: auto;
+      -webkit-flex: 1;
+      flex: 1;
+      margin: 0px;
+      width: auto;
+    }
+  }
+
+  &--fill {
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+  }
+
+  &--flush {
+    margin: - $inuit-base-spacing-unit;
+    width: calc(100% + #{double($inuit-base-spacing-unit)});
+
+    > .tile {
+      -webkit-flex: 0 0 round($inuit-base-spacing-unit * 7);
+      flex: 0 0 round($inuit-base-spacing-unit * 7);
+      -webkit-flex-grow: 1;
+      flex-grow: 1;
+    }
+  }
+
+  &--direction {
+    &-row {
+      -webkit-flex-direction: row;
+      flex-direction: row;
+      -webkit-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+      -webkit-justify-content: flex-start;
+      justify-content: flex-start;
+    }
+
+    &-column {
+      -webkit-flex-direction: column;
+      flex-direction: column;
+      -webkit-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+      -webkit-justify-content: flex-start;
+      justify-content: flex-start;
+    }
+  }
+
   &--moreable {
     position: relative;
     padding-bottom: double($inuit-base-spacing-unit);
@@ -33,27 +95,11 @@
     }
   }
 
-  &--flush {
-    margin: - $inuit-base-spacing-unit;
-
-    > .tile {
-      -webkit-flex: 0 0 round($inuit-base-spacing-unit * 7);
-      flex: 0 0 round($inuit-base-spacing-unit * 7);
-      -webkit-flex-grow: 1;
-      flex-grow: 1;
-    }
-  }
-
   &--small {
     > .tile {
       -webkit-flex-basis: round($inuit-base-spacing-unit * 4);
       flex-basis: round($inuit-base-spacing-unit * 4);
     }
-  }
-
-  &--fill {
-    -webkit-justify-content: space-around;
-    justify-content: space-around;
   }
 }
 
@@ -84,5 +130,9 @@
     &:hover:not(.tile--selected) {
       background-color: $hover-background-color;
     }
+  }
+
+  &--eclipsed {
+    opacity: 0.2;
   }
 }

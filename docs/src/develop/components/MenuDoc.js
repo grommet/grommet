@@ -27,10 +27,11 @@ var MenuDoc = React.createClass({
             <dt><code>closeOnClick  true|false</code></dt>
             <dd>Indicates whether the opened menu drop down should close
             when clicked. Default is true.</dd>
-            <dt><code>collapse      true|false</code></dt>
-            <dd>Indicates that the menu should be collapsed and
-              the default collapsed icon should be shown as a
-              control to open it.</dd>
+            <dt><code>inline        true|false</code></dt>
+            <dd>Indicates whether the menu should be shown inline or
+              a control shown to open it in a drop down. If false,
+              the specified label or icon will be shown, if neither are
+              specified, a default icon will be shown.</dd>
             <dt><code>dropAlign     {"{left: left|right, right: left|right, top: top|bottom, bottom: top|bottom}"}</code></dt>
             <dd>Where to place the drop down.
               At most one of left or right and one of top or bottom should be specified.</dd>
@@ -40,6 +41,9 @@ var MenuDoc = React.createClass({
             <dt><code>label         {"{text}"}</code></dt>
             <dd>Indicates that the menu should be collapsed and the
               label shown as a control top open it.</dd>
+            <dt><code>responsive   true|false</code></dt>
+            <dd>Whether an inline menu should be automatically switched
+              to a control + drop down when the window size is reduced.</dd>
             <dt><code>small         true|false</code></dt>
             <dd>Indicates that the menu should be rendered in a small size.</dd>
           </dl>
@@ -79,7 +83,7 @@ var MenuDoc = React.createClass({
           </div>
           <pre><code className="html">{"<Menu direction=\"left\"> ..."}</code></pre>
 
-          <h3>label, (collapsed, down)</h3>
+          <h3>label, (not inline, down)</h3>
           <div className="example">
             <Menu label="Label">
               <a href="#" className="active">First</a>
@@ -89,9 +93,9 @@ var MenuDoc = React.createClass({
           </div>
           <pre><code className="html">{"<Menu label=\"Label\"> ..."}</code></pre>
 
-          <h3>collapse, (icon, down)</h3>
+          <h3>not inline, (icon, down)</h3>
           <div className="example">
-            <Menu collapse={true}>
+            <Menu inline={false}>
               <a href="#" className="active">First</a>
               <a href="#">Second</a>
               <a href="#">Third</a>
@@ -99,7 +103,7 @@ var MenuDoc = React.createClass({
           </div>
           <pre><code className="html">{"<Menu collapse={true}> ..."}</code></pre>
 
-          <h3>icon, (collapse, down)</h3>
+          <h3>icon, (not inline, down)</h3>
           <div className="example">
             <Menu icon={<Edit />}>
               <a href="#" className="active">First</a>
@@ -109,19 +113,19 @@ var MenuDoc = React.createClass({
           </div>
           <pre><code className="html">{"<Menu icon={<Grommet.Icons.Edit />}> ..."}</code></pre>
 
-          <h3>icon, (collapse, down), do not close on click</h3>
+          <h3>icon, (not inline, down), do not close on click, pad</h3>
           <div className="example">
-            <Menu icon={<Filter />} closeOnClick={false}>
+            <Menu icon={<Filter />} closeOnClick={false} pad="medium">
               <CheckBox id="check-1" label="first" />
               <CheckBox id="check-2" label="second" />
               <CheckBox id="check-3" label="third" />
             </Menu>
           </div>
-          <pre><code className="html">{"<Menu icon={<Grommet.Icons.Filter />} closeOnClick={false}> ..."}</code></pre>
+          <pre><code className="html">{"<Menu icon={<Grommet.Icons.Filter />} closeOnClick={false} pad=\"medium\"> ..."}</code></pre>
 
-          <h3>collapse, up</h3>
+          <h3>not inline, up</h3>
           <div className="example">
-            <Menu collapse={true} dropAlign={{bottom: "bottom"}}>
+            <Menu inline={false} dropAlign={{bottom: "bottom"}}>
               <a href="#" className="active">First</a>
               <a href="#">Second</a>
               <a href="#">Third</a>
@@ -129,9 +133,9 @@ var MenuDoc = React.createClass({
           </div>
           <pre><code className="html">{"<Menu collapse={true} dropAlign={{bottom: \"bottom\"}}> ..."}</code></pre>
 
-          <h3>collapse, small</h3>
+          <h3>not inline, small</h3>
           <div className="example">
-            <Menu collapse={true} small={true}>
+            <Menu inline={false} small={true}>
               <a href="#" className="active">First</a>
               <a href="#">Second</a>
               <a href="#">Third</a>

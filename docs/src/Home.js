@@ -146,7 +146,7 @@ var Home = React.createClass({
             </a>
           </Menu>
           <p>or, check out their sites, they have some cool stuff too...</p>
-          <Tiles small={true} fill={true}>
+          <Tiles small={true} fill={true} flush={false}>
             <Tile>
               <a href="http://www.w3.org/TR/html5/">
                 <img src="img/HTML5.png" title="HTML5" />
@@ -180,11 +180,6 @@ var Home = React.createClass({
             <Tile>
               <a href="http://webpack.github.io">
                 <img src="img/webpack.png" title="Webpack" />
-              </a>
-            </Tile>
-            <Tile>
-              <a href="https://github.com">
-                <img src="img/GitHub.png" title="GitHub" />
               </a>
             </Tile>
           </Tiles>

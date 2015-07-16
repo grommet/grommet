@@ -6,14 +6,10 @@
   font-weight: normal;
   margin-right: halve($inuit-base-spacing-unit);
   white-space: nowrap;
-
-  @include media-query(palm) {
-    @include inuit-font-size(24px, inherit);
-  }
+  @include inuit-font-size(24px, inherit);
 
   @include media-query(lap-and-up) {
-    @include inuit-font-size(24px, inherit);
-    font-weight: 600;
+    font-weight: 700;
   }
 
   a {
@@ -31,30 +27,38 @@
     }
   }
 
-  svg:not(.control-icon),
+  svg,
   img {
     margin-right: halve($inuit-base-spacing-unit);
 
-    @include media-query(palm) {
+    .header & {
+      height: double($inuit-base-spacing-unit);
+    }
+
+    .header.header--small & {
       height: halve($small-header-height);
     }
 
-    @include media-query(lap-and-up) {
-      height: double($inuit-base-spacing-unit);
-    }
+    //@include media-query(palm) {
+    //  height: halve($small-header-height);
+    //}
+
+    //@include media-query(lap-and-up) {
+    //  height: double($inuit-base-spacing-unit);
+    //}
   }
 
-  .logo-icon {
-    @include media-query(palm) {
-      width: halve($small-header-height);
-      height: halve($small-header-height);
-    }
+  //.logo-icon {
+    //@include media-query(palm) {
+    //  width: halve($small-header-height);
+    //  height: halve($small-header-height);
+    //}
 
-    @include media-query(lap-and-up) {
-      width: double($inuit-base-spacing-unit);
-      height: double($inuit-base-spacing-unit);
-    }
-  }
+    //@include media-query(lap-and-up) {
+    //  width: double($inuit-base-spacing-unit);
+    //  height: double($inuit-base-spacing-unit);
+    //}
+  //}
 
   &--interactive {
     &:hover {
@@ -63,21 +67,6 @@
 
       @include media-query(lap-and-up) {
         transition: color 0.3s;
-      }
-    }
-  }
-
-  &--menu {
-
-    .control-icon {
-      margin-left: halve($inuit-base-spacing-unit);
-    }
-
-    &:hover {
-      cursor: pointer;
-
-      .control-icon {
-        stroke: $brand-color;
       }
     }
   }

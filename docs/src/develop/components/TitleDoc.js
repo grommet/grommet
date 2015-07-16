@@ -20,8 +20,10 @@ var TitleDoc = React.createClass({
         <section>
           <h2>Options</h2>
           <dl>
-            <dt><code>nav  component</code></dt>
-            <dd>Optionally add a Nav component that will render the Menu for the app.</dd>
+            <dt><code>onClick        {"{func}"}</code></dt>
+            <dd>Click handler.</dd>
+            <dt><code>responsive   true|false</code></dt>
+            <dd>Whether to only display the logo when the display area narrows.</dd>
           </dl>
         </section>
 

@@ -10,6 +10,7 @@ var Box = React.createClass({
   propTypes: {
     align: React.PropTypes.oneOf(['start', 'center', 'between', 'end', 'stretch']),
     appCentered: React.PropTypes.bool,
+    backgroundImage: React.PropTypes.string,
     colorIndex: React.PropTypes.string,
     containerClassName: React.PropTypes.string,
     direction: React.PropTypes.oneOf(['row', 'column']),
@@ -27,6 +28,7 @@ var Box = React.createClass({
     responsive: React.PropTypes.bool,
     separator: React.PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
     tag: React.PropTypes.string,
+    textAlign: React.PropTypes.oneOf(['left', 'center', 'right']),
     texture: React.PropTypes.string
   },
 
@@ -39,17 +41,18 @@ var Box = React.createClass({
     };
   },
 
-  _addPropertyClass: function (classes, prefix, property) {
+  _addPropertyClass: function (classes, prefix, property, classProperty) {
     var choice = this.props[property];
+    var propertyPrefix = classProperty || property;
     if (choice) {
       if (typeof choice === 'string') {
-        classes.push(prefix + '--' + property + '-' + choice);
+        classes.push(prefix + '--' + propertyPrefix + '-' + choice);
       } else if (typeof choice === 'object') {
         keys(choice).forEach(function (key) {
-          classes.push(prefix + '--' + property + '-' + key + '-' + choice[key]);
+          classes.push(prefix + '--' + propertyPrefix + '-' + key + '-' + choice[key]);
         });
       } else {
-        classes.push(prefix + '--' + property);
+        classes.push(prefix + '--' + propertyPrefix);
       }
     }
   },
@@ -66,6 +69,7 @@ var Box = React.createClass({
     this._addPropertyClass(classes, CLASS_ROOT, 'responsive');
     this._addPropertyClass(classes, CLASS_ROOT, 'pad');
     this._addPropertyClass(classes, CLASS_ROOT, 'separator');
+    this._addPropertyClass(classes, CLASS_ROOT, 'textAlign', 'text-align');
 
     if (this.props.appCentered) {
       this._addPropertyClass(containerClasses, CLASS_ROOT + "__container", 'full');
@@ -88,6 +92,9 @@ var Box = React.createClass({
     var style = {};
     if (this.props.texture) {
       style.backgroundImage = this.props.texture;
+    } else if (this.props.backgroundImage) {
+      style.background = this.props.backgroundImage + " no-repeat center center";
+      style.backgroundSize = "cover";
     }
 
     if (this.props.appCentered) {

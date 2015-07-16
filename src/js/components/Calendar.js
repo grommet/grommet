@@ -247,15 +247,15 @@ var Calendar = React.createClass({
       <div id={CLASS_ROOT + "-drop"} className={CLASS_ROOT + "__drop"}
         onClick={this._onClose}>
         <Header justify="between">
-          <Menu>
+          <Menu responsive={false}>
             <span className={CLASS_ROOT + "__previous"} onClick={this._onPrevious}>
               <PreviousIcon />
             </span>
           </Menu>
-          <Title className={CLASS_ROOT + "__title"}>
+          <Title className={CLASS_ROOT + "__title"} responsive={false}>
             {this.state.reference.format('MMMM YYYY')}
           </Title>
-          <Menu>
+          <Menu responsive={false}>
             <span className={CLASS_ROOT + "__next"} onClick={this._onNext}>
               <NextIcon />
             </span>

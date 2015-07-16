@@ -17,7 +17,13 @@ var CONTROL_ICONS = [
   {icon: 'Right', labels: ['Right', 'Next']},
   {icon: 'Down'},
   {icon: 'Up'},
-  {icon: 'Top'}
+  {icon: 'Top'},
+  {icon: 'Person'},
+  {icon: 'World'},
+  {icon: 'Mail'},
+  {icon: 'Twitter'},
+  {icon: 'LinkedIn'},
+  {icon: 'Facebook'}
 ];
 
 CONTROL_ICONS.forEach(function (item) {

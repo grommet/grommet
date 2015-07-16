@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 $button-vertical-padding: quarter($inuit-base-spacing-unit) - $button-border-width;
-$button-horizontal-padding: round($inuit-base-spacing-unit * 1) - $button-border-width;
+$button-horizontal-padding: round($inuit-base-spacing-unit * 1.5) - $button-border-width;
 
 @mixin basic-button {
   padding: $button-vertical-padding $button-horizontal-padding;
@@ -9,19 +9,22 @@ $button-horizontal-padding: round($inuit-base-spacing-unit * 1) - $button-border
   border: $button-border-width solid $button-border-color;
   border-radius: $border-radius;
   color: $button-text-color;
-  @include inuit-font-size(16px, $inuit-base-spacing-unit);
+  @include inuit-font-size($control-font-size, $inuit-base-spacing-unit);
   text-transform: $button-text-transform;
   font-weight: $button-font-weight;
-  //text-decoration: none;
   cursor: pointer;
   text-align: center;
   outline: none;
+
+  @include media-query(lap-and-up) {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
 }
 
 input[type="button"],
 input[type="submit"],
-button,
-a.button {
+button:not(.button) {
   @include basic-button();
 }
 
@@ -29,13 +32,13 @@ a.button {
   @include basic-button();
 
   &:hover:not(.button--disabled) {
-    border-color: darken($button-border-color, 15%);
-    color: darken($button-text-color, 15%);
+    border-color: darken($button-border-color, 5%);
+    color: darken($button-text-color, 5%);
   }
 
   &:active:not(.button--disabled) {
-    border-color: darken($button-border-color, 25%);
-    color: darken($button-text-color, 25%);
+    border-color: darken($button-border-color, 10%);
+    color: darken($button-text-color, 10%);
   }
 
   &:focus:not(.button--disabled) {
@@ -64,43 +67,59 @@ a.button {
   &--accent {
     border-color: $button-accent-background-color;
     background-color: $button-accent-background-color;
-    color: $button-primary-text-color;
+    color: $button-accent-text-color;
 
     &:hover:not(.button--disabled) {
       border-color: darken($button-accent-background-color, 5%);
       background-color: darken($button-accent-background-color, 5%);
-      color: $button-primary-text-color;
+      color: $button-accent-text-color;
     }
 
     &:active:not(.button--disabled) {
       border-color: darken($button-accent-background-color, 10%);
       background-color: darken($button-accent-background-color, 10%);
-      color: $button-primary-text-color;
+      color: $button-accent-text-color;
     }
   }
 
   [class*="background-color-index-"] & {
-    border-color: #ddd;
-    color: #ddd;
+    background-color: $colored-button-background-color;
+    border-color: $colored-button-border-color;
+    color: $colored-button-text-color;
 
     &:hover {
-      border-color: #fff;
-      color: #fff;
+      border-color: $active-colored-button-border-color;
+      color: $active-colored-button-text-color;
     }
 
     &.button--primary {
-      border-color: $button-primary-background-color;
-      color: $button-primary-text-color;
+      background-color: $colored-button-primary-background-color;
+      border-color: $colored-button-primary-border-color;
+
+      &:hover {
+        background-color: $active-colored-button-primary-background-color;
+        border-color: $active-colored-button-primary-border-color;
+      }
+    }
+
+    &.button--accent {
+      background-color: $colored-button-accent-background-color;
+      border-color: $colored-button-accent-border-color;
+
+      &:hover {
+        background-color: $active-colored-button-accent-background-color;
+        border-color: $active-colored-button-accent-border-color;
+      }
     }
   }
 
   &--large {
-    @include inuit-font-size(18px);
-    padding: round($button-vertical-padding * 2.5) round($button-horizontal-padding * 1.5);
+    @include inuit-font-size($control-large-font-size, $inuit-base-spacing-unit);
+    padding: (round($inuit-base-spacing-unit * 0.75) - $button-border-width) (round($inuit-base-spacing-unit * 3) - $button-border-width);
   }
 
   &--disabled {
-    opacity: 0.2;
+    opacity: 0.3;
     cursor: default;
   }
 }

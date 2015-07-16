@@ -23,7 +23,7 @@ var SectionDoc = React.createClass({
           <h2>Options</h2>
           <dl>
           </dl>
-          <p>Options for <Link to="develop_box">Box</Link> area also available.</p>
+          <p>Options for <Link to="develop_box">Box</Link> are also available.</p>
         </section>
 
         <section>

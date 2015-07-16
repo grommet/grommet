@@ -68,6 +68,7 @@
 
   &__drop {
     @include inuit-font-size($inuit-base-font-size, inherit);
+    max-height: 100vh;
 
     .menu__control {
       &-label {
@@ -106,6 +107,14 @@
   &--controlled {
     display: inline-block;
     cursor: pointer;
+
+    .header & {
+      line-height: double($inuit-base-spacing-unit);
+    }
+
+    .header.header--small & {
+      line-height: halve($small-header-height);
+    }
   }
 
   &--labelled {
@@ -114,12 +123,12 @@
   }
 
   &--inline {
-    overflow: hidden;
+    ///overflow: hidden;
 
     &.menu {
       &--row,
       &--right { // --right is deprecated
-        > * {
+        > *:not(.control-icon) {
           margin-left: 0px;
           margin-right: $inuit-base-spacing-unit;
 
@@ -131,7 +140,7 @@
 
       &--row.box--justify-end,
       &--left { // --left is deprecated
-        > * {
+        > *:not(.control-icon) {
           margin-left: $inuit-base-spacing-unit;
           margin-right: 0px;
 
@@ -219,7 +228,7 @@
 
   &.box--direction-column {
     .menu {
-      min-width: $nav-width;
+      //min-width: $nav-width;
       margin-bottom: round($inuit-base-spacing-unit * 1.5);
     }
   }
@@ -235,6 +244,25 @@
         width: 100%;
         margin-bottom: halve($inuit-base-spacing-unit);
       }
+
+      .menu {
+        margin-bottom: round($inuit-base-spacing-unit * 1.5);
+      }
+    }
+  }
+}
+
+@include media-query(palm) {
+  .menu__drop {
+    width: 100vw;
+
+    .menu__control {
+      line-height: double($inuit-base-spacing-unit);
+    }
+
+    a,
+    .button {
+      width: 100%;
     }
   }
 }

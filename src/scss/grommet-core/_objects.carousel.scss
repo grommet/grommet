@@ -10,6 +10,16 @@
   100% { opacity: 1; }
 }
 
+@include keyframes(carousel-hide) {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@include keyframes(carousel-hide-1) {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
 .carousel {
   position: relative;
 
@@ -18,11 +28,19 @@
       .carousel__active {
         @include animation('carousel-reveal 1s');
       }
+
+      .carousel__prior {
+        @include animation('carousel-hide 1s');
+      }
     }
 
     &--toggle-1 {
       .carousel__active {
         @include animation('carousel-reveal-1 1s');
+      }
+
+      .carousel__prior {
+        @include animation('carousel-hide-1 1s');
       }
     }
   }
@@ -30,16 +48,18 @@
   &__active {
     position: relative;
     z-index: 1;
+    opacity: 1;
   }
 
   &__prior {
     position: absolute;
+    opacity: 0;
   }
 
   &__controls {
     width: 100%;
     margin-top: halve($inuit-base-spacing-unit);
-    text-align: left;
+    text-align: center;
   }
 
   &__control {

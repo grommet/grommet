@@ -34,6 +34,10 @@
   &__drop {
     @include inuit-font-size($inuit-heading-size-4, inherit);
 
+    @include media-query(palm) {
+      width: 100vw;
+    }
+
     &--inline {
       margin-left: -1px;
     }
@@ -49,12 +53,15 @@
     input {
       margin-right: 0px;
       box-sizing: border-box;
+
+      @include media-query(palm) {
+        width: calc(100vw - #{double($inuit-base-spacing-unit)});
+      }
     }
 
     .search__control {
       display: inline-block;
       vertical-align: top;
-      //margin-top: -3px;
     }
 
     .search__suggestion {
