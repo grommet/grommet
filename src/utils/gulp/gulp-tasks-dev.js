@@ -4,9 +4,19 @@ var webpack = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
 var open = require('gulp-open');
 var path = require('path');
+var runSequence = require('run-sequence');
 
 module.exports = function(gulp, options, webpackConfig, dist) {
-  gulp.task('dev', ['preprocess'], function() {
+
+  gulp.task('dev-preprocess', function(callback) {
+    if (options.devPreprocess) {
+      runSequence('preprocess', options.devPreprocess, callback);
+    } else {
+      runSequence('preprocess', callback);
+    }
+  });
+
+  gulp.task('dev', ['dev-preprocess'], function() {
 
     var env = merge({}, options.env, {
       __DEV_MODE__: true
