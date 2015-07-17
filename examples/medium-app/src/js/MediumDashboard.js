@@ -131,7 +131,7 @@ var MediumDashboard = React.createClass({
         header = this.getGrommetIntlMessage(tile.name);
       }
       if (header) {
-        header = <Header small={true}><h3>{header}</h3></Header>;
+        header = <Header tag="h3" small={true} justify="center">{header}</Header>;
       }
 
       var contents = null;
