@@ -4,6 +4,7 @@
   @include inuit-font-size(48px);
   font-weight: 100;
   margin-bottom: $inuit-base-spacing-unit;
+  max-width: 100%;
 
   &--large {
     @include inuit-font-size(60px);
