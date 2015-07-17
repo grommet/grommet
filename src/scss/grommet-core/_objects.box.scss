@@ -3,6 +3,9 @@
 .box {
   display: -webkit-flex;
   display: flex;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
 
   &__container {
     padding-left: $inuit-base-spacing-unit;
