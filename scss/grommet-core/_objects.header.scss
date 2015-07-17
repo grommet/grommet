@@ -4,34 +4,33 @@
   width: 100%;
 }
 
-h1,
-.h1 {
+h1 {
   @include inuit-font-size(48px);
-  font-weight: 100;
 }
 
-h2,
-.h2 {
+h2 {
   @include inuit-font-size(36px);
-  font-weight: 100;
 }
 
-h3,
-.h3 {
+h3 {
   @include inuit-font-size(24px);
-  font-weight: 100;
 }
 
+h4 {
+  @include inuit-font-size(18px);
+}
+
+h5 {
+  @include inuit-font-size(18px);
+}
+
+h1,
+h2,
+h3,
 h4,
-.h4 {
-  @include inuit-font-size(18px);
+h5 {
   font-weight: 100;
-}
-
-h5,
-.h5 {
-  @include inuit-font-size(18px);
-  font-weight: 100;
+  max-width: 100%;
 }
 
 h1.header,
