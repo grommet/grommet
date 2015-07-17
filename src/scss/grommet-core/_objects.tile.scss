@@ -28,6 +28,7 @@
     flex-direction: row;
     -webkit-align-items: center;
     align-items: center;
+    width: 100%;
     max-width: 100vw;
 
     .tiles__left,
@@ -37,11 +38,15 @@
     }
 
     .tiles {
-      overflow: auto;
       -webkit-flex: 1;
       flex: 1;
       margin: 0px;
-      width: auto;
+
+      &--direction-row {
+        width: 100%;
+        overflow-x: hidden;
+        overflow-y: visible;
+      }
     }
   }
 
