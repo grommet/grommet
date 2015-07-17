@@ -648,7 +648,7 @@ var Chart = React.createClass({
     var x = Math.max(1, Math.min(coordinates[0], this.state.bounds.graphWidth - 1));
     return (
       <g ref="cursor" className={CLASS_ROOT + "__cursor"}>
-        <path fill="none" d={"M" + x + "," + XAXIS_HEIGHT + "L" + x + "," + this.state.height} />
+        <line fill="none" x1={x} y1={XAXIS_HEIGHT} x2={x} y2={this.state.height} />
       </g>
     );
   },
