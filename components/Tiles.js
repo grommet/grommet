@@ -56,11 +56,12 @@ var Tiles = React.createClass({
   },
 
   _layout: function () {
-    // determine if we have more tiles than room to fit
-    var tiles = this.refs.tiles.getDOMNode();
-    this.setState({overflow: (tiles.scrollWidth > tiles.offsetWidth)});
-
     if ('row' === this.props.direction) {
+      // determine if we have more tiles than room to fit
+      var tiles = this.refs.tiles.getDOMNode();
+      // 20 is to allow some fuzziness as scrollbars come and go
+      this.setState({overflow: (tiles.scrollWidth > (tiles.offsetWidth + 20))});
+
       // mark any tiles that might be clipped
       var rect = tiles.getBoundingClientRect();
       var children = tiles.querySelectorAll('.tile');
@@ -104,8 +105,8 @@ var Tiles = React.createClass({
       window.addEventListener('resize', this._onResize);
       document.addEventListener('wheel', this._onWheel);
       this._trackHorizontalScroll();
+      this._layout();
     }
-    this._layout();
   },
 
   componentDidUpdate: function () {
