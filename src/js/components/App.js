@@ -14,10 +14,29 @@ var App = React.createClass({
     centered: React.PropTypes.bool
   },
 
+  getInitialState: function () {
+    return {
+      lang: 'en-US'
+    };
+  },
+
   getDefaultProps: function () {
     return {
       centered: true
     };
+  },
+
+  componentDidMount: function () {
+    var lang = Locale.getCurrentLocale();
+    if (this.props.lang) {
+      lang = this.props.lang;
+    }
+
+    if (!document.documentElement.getAttribute('lang')) {
+      document.documentElement.setAttribute('lang', lang);
+    }
+
+    this.setState({lang: lang});
   },
 
   render: function() {
@@ -33,11 +52,6 @@ var App = React.createClass({
       classes.push(this.props.className);
     }
 
-    var lang = Locale.getCurrentLocale();
-    if (this.props.lang) {
-      lang = this.props.lang;
-    }
-
     //remove this when React 0.14 is released. This is required because context props are not being propagated to children.
     var children = React.Children.map(this.props.children, function(child) {
       if (child) {
@@ -47,12 +61,8 @@ var App = React.createClass({
       }
     }.bind(this));
 
-    if (!document.documentElement.getAttribute('lang')) {
-      document.documentElement.setAttribute('lang', lang);
-    }
-
     return (
-      <div lang={lang} className={classes.join(' ')}>
+      <div lang={this.state.lang} className={classes.join(' ')}>
         <SkipLinks/>
         {children}
       </div>

@@ -24,6 +24,7 @@ var opts = {
   webpack: {
     resolve: {
       alias: { // TODO: remove, just for local dev
+        'grommet/scss': path.resolve(__dirname, '../../src/scss'),
         'grommet': path.resolve(__dirname, '../../src/js')
       },
       root: [

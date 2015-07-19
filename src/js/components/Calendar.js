@@ -75,7 +75,7 @@ var Calendar = React.createClass({
     });
   },
 
-  _onNextDay: function () {
+  _onNextDay: function (event) {
     event.preventDefault();
     event.stopPropagation();
     var nextDay = moment(this.state.current).add(1, 'days');
@@ -87,7 +87,7 @@ var Calendar = React.createClass({
     }
   },
 
-  _onPreviousDay: function () {
+  _onPreviousDay: function (event) {
     event.preventDefault();
     event.stopPropagation();
     var previousDay = moment(this.state.current).subtract(1, 'days');
