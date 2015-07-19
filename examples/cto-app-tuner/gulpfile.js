@@ -3,8 +3,9 @@ var path = require('path');
 var devGulpTasks = require('../../src/utils/gulp/gulp-tasks');
 
 var opts = {
+  base: '../../',
   copyAssets: [
-    'src/index.html',
+    'examples/cto-app-tuner/src/index.html',
     {
       asset: path.resolve(__dirname, '../../src/img/mobile-app-icon.png'),
       dist: 'dist/img/'
@@ -14,9 +15,9 @@ var opts = {
       dist: 'dist/img/'
     }
   ],
-  jsAssets: ['src/js/**/*.js'],
-  mainJs: 'src/js/index.js',
-  mainScss: 'src/scss/index.scss',
+  jsAssets: ['examples/cto-app-tuner/src/js/**/*.js'],
+  mainJs: 'examples/cto-app-tuner/src/js/index.js',
+  mainScss: 'examples/cto-app-tuner/src/scss/index.scss',
   sync: {
     hostname: 'grommet.io',
     username: 'grommet',

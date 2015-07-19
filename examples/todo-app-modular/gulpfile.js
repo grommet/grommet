@@ -3,20 +3,21 @@ var path = require('path');
 var devGulpTasks = require('../../src/utils/gulp/gulp-tasks');
 
 var opts = {
+  base: '../../',
   copyAssets: [
-    'src/index.html',
+    'examples/todo-app-modular/src/index.html',
     {
       asset: path.resolve(__dirname, '../../src/img/mobile-app-icon.png'),
-      dist: 'dist/img/'
+      dist: 'examples/todo-app-modular/dist/img/'
     },
     {
       asset: path.resolve(__dirname, '../../src/img/shortcut-icon.png'),
-      dist: 'dist/img/'
+      dist: 'examples/todo-app-modular/dist/img/'
     }
   ],
-  jsAssets: ['src/js/**/*.js'],
-  mainJs: 'src/js/index.js',
-  mainScss: 'src/scss/index.scss',
+  jsAssets: ['examples/todo-app-modular/src/js/**/*.js'],
+  mainJs: 'examples/todo-app-modular/src/js/index.js',
+  mainScss: 'examples/todo-app-modular/src/scss/index.scss',
   devServerPort: 9010,
   webpack: {
     resolve: {

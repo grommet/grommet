@@ -7,55 +7,6 @@ String.prototype.endsWith = function(suffix) {
   return this.indexOf(suffix, this.length - suffix.length) !== -1;
 };
 
-var webpackConfig = {
-  output: {
-    filename: 'index.js'
-  },
-  module: {
-    loaders: [
-      {
-        test: /\.js$/,
-        loader: 'babel',
-        exclude: /(node_modules\/intl|node_modules\/moment|bower_components|src\/lib)/
-      },
-      {
-        test: /\.json$/,
-        loader: 'json-loader'
-      },
-      {
-        test: /\.svg$/,
-        loader: 'file-loader?mimetype=image/svg'
-      },
-      {
-        test: /\.png$/,
-        loader: 'file-loader?mimetype=image/png'
-      },
-      {
-        test: /\.jpg$/,
-        loader: 'file-loader?mimetype=image/jpg'
-      },
-      {
-        test: /\.woff$/,
-        loader: 'file-loader?mimetype=application/font-woff'
-      },
-      {
-        test: /\.otf$/,
-        loader: 'file-loader?mimetype=application/font/opentype'
-      },
-      {
-        test: /\.scss$/,
-        loader: 'style!css!sass?outputStyle=expanded&' +
-          'includePaths[]=' +
-          (path.resolve(process.cwd(), 'node_modules'))
-      },
-      {
-        test: /\.css$/,
-        loader: "style-loader!css-loader"
-      }
-    ]
-  }
-};
-
 module.exports = function(gulp, opts) {
 
   runSequence = runSequence.use(gulp);
@@ -63,6 +14,56 @@ module.exports = function(gulp, opts) {
   var options = opts || {};
 
   var dist = options.dist || path.resolve(process.cwd(), 'dist');
+
+  var webpackConfig = {
+    output: {
+      filename: 'index.js'
+    },
+    module: {
+      loaders: [
+        {
+          test: /\.js$/,
+          loader: 'babel',
+          exclude: /(node_modules\/intl|node_modules\/moment|bower_components|src\/lib)/
+        },
+        {
+          test: /\.json$/,
+          loader: 'json-loader'
+        },
+        {
+          test: /\.svg$/,
+          loader: 'file-loader?mimetype=image/svg'
+        },
+        {
+          test: /\.png$/,
+          loader: 'file-loader?mimetype=image/png'
+        },
+        {
+          test: /\.jpg$/,
+          loader: 'file-loader?mimetype=image/jpg'
+        },
+        {
+          test: /\.woff$/,
+          loader: 'file-loader?mimetype=application/font-woff'
+        },
+        {
+          test: /\.otf$/,
+          loader: 'file-loader?mimetype=application/font/opentype'
+        },
+        {
+          test: /\.scss$/,
+          loader: 'style!css!sass?outputStyle=expanded&' +
+            'includePaths[]=' +
+            (path.resolve(options.base || process.cwd(), './node_modules'))
+        },
+        {
+          test: /\.css$/,
+          loader: 'style-loader!css-loader'
+        }
+      ]
+    }
+  };
+
   options.webpack = options.webpack || {};
 
   if (options.base) {

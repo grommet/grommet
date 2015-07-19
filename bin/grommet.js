@@ -169,9 +169,14 @@ gulp.task('export', function(done) {
             }
 
             //merging template NPM with application NPM
-            packageJSON = merge(packageJSON, require(path.resolve('package.json')));
+            try {
+              packageJSON = merge(packageJSON, require(path.resolve('package.json')));
+            } catch (e) {
+              // application NPM not existing
+              console.log('Application does not have specific NPM module.');
+            }
 
-            gulp.src('package.json').pipe(file('package.json',
+            gulp.src('./' + dest).pipe(file('package.json',
               JSON.stringify(packageJSON, null, 2))).pipe(gulp.dest('./'))
               .pipe(install()).on('finish', function() {
                 console.log('Successfully exported ' + app + ' to ' + dest + '.');

@@ -34,7 +34,8 @@ module.exports = function(gulp, options, webpackConfig, dist) {
     }, options.env);
 
     var plugins = [
-      new webpack.DefinePlugin(env)
+      new webpack.DefinePlugin(env),
+      new webpack.optimize.OccurenceOrderPlugin()
       //new webpack.optimize.DedupePlugin()
     ];
 
