@@ -1,0 +1,119 @@
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+
+$outer-pad: round($inuit-base-spacing-unit * 2);
+$inner-pad: round($inuit-base-spacing-unit * 0.25);
+
+.topology {
+  position: relative;
+
+  > .topology__parts {
+    > .topology__part {
+      margin: 0 $outer-pad $outer-pad 0;
+    }
+  }
+
+  &__canvas {
+    position: absolute;
+    pointer-events: none;
+  }
+
+  &__parts {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: stretch;
+    align-items: stretch;
+
+    > * {
+      -webkit-flex: 1;
+      flex: 1;
+    }
+
+    &--direction {
+      &-row {
+        -webkit-flex-direction: row;
+        flex-direction: row;
+      }
+
+      &-column {
+        -webkit-flex-direction: column;
+        flex-direction: column;
+      }
+    }
+  }
+
+  &__part {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: stretch;
+    align-items: stretch;
+
+    > * {
+      -webkit-flex: 0 0 auto;
+      flex: 0 0 auto;
+    }
+
+    &--demarcate {
+      border: 1px solid $border-color;
+
+      &.topology__part--empty {
+        background-color: $secondary-background-color;
+      }
+    }
+
+    &--direction {
+      &-row {
+        -webkit-flex-direction: row;
+        flex-direction: row;
+
+        &.topology__part--reverse {
+          -webkit-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+        }
+
+        > *:not(.topology__parts):not(.topology__part) {
+          margin-left: $inner-pad;
+          -webkit-align-self: center;
+          align-self: center;
+
+          &:last-child {
+            margin-right: $inner-pad;
+          }
+        }
+      }
+
+      &-column {
+        -webkit-flex-direction: column;
+        flex-direction: column;
+
+        &.topology__part--reverse {
+          -webkit-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+        }
+
+        > *:not(.topology__parts):not(.topology__part) {
+          margin-top: $inner-pad;
+          -webkit-align-self: center;
+          align-self: center;
+
+          &:last-child {
+            margin-bottom: $inner-pad;
+          }
+        }
+      }
+    }
+  }
+
+  &__label {
+    font-size: $label-font-size;
+    margin-left: halve($inuit-base-spacing-unit);
+    margin-right: halve($inuit-base-spacing-unit);
+  }
+
+  // put status icons above canvas so lines start under them
+  .status-icon {
+    position: relative;
+    z-index: 1;
+  }
+}

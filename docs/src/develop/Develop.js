@@ -57,6 +57,7 @@ var StatusDoc = require('./components/StatusDoc');
 var TableDoc = require('./components/TableDoc');
 var TilesDoc = require('./components/TilesDoc');
 var TitleDoc = require('./components/TitleDoc');
+var TopologyDoc = require('./components/TopologyDoc');
 
 //hjjs configuration
 require("!style!css!highlight.js/styles/github.css");
@@ -114,7 +115,8 @@ var CONTENTS = [
       {route: 'develop_status', label: 'Status', component: StatusDoc},
       {route: 'develop_table', label: 'Table', component: TableDoc},
       {route: 'develop_tiles', label: 'Tiles', component: TilesDoc},
-      {route: 'develop_title', label: 'Title', component: TitleDoc}
+      {route: 'develop_title', label: 'Title', component: TitleDoc},
+      {route: 'develop_topology', label: 'Topology', component: TopologyDoc}
     ]
   },
   {label: 'Utils',
