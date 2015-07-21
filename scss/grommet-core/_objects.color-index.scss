@@ -47,6 +47,18 @@
   }
 }
 
+@for $i from 1 through length($brand-graph-colors) {
+  .background-color-index-graph-#{$i},
+  .background-color-index-graph-#{$i+length($brand-graph-colors)} {
+    background-color: nth($brand-graph-colors, $i);
+
+    .button--primary,
+    .button--primary:hover {
+      color: nth($brand-graph-colors, $i);
+    }
+  }
+}
+
 [class*="background-color-index-"] {
   color: $colored-text-color;
 }

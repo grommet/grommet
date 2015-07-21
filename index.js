@@ -31,6 +31,7 @@ var Grommet = {
   Tiles: require('./components/Tiles'),
   Tile: require('./components/Tile'),
   Title: require('./components/Title'),
+  Topology: require('./components/Topology'),
   Object: require('./components/Object'),
   TBD: require('./components/TBD'),
   Icons: {
