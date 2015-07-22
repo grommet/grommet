@@ -12,8 +12,9 @@ var TBD = require('grommet/components/TBD');
 var MediumApp = require('./MediumApp');
 var MediumDashboard = require('./MediumDashboard');
 var MediumSplit = require('./MediumSplit');
-var Enclosures = require('./Enclosures');
-var Enclosure = require('./Enclosure');
+var Enclosures = require('./enclosures/Enclosures');
+var Enclosure = require('./enclosures/Enclosure');
+var EnclosureOverview = require('./enclosures/EnclosureOverview');
 var Overview = require('./Overview');
 var MediumMap = require('./MediumMap');
 var ServerHardwares = require('./ServerHardwares');
@@ -99,10 +100,13 @@ module.exports = {
             path={rootPath + "enclosures/"} handler={Enclosure}>
             <Route name="enclosure overview"
               path={rootPath + "enclosures/overview/*"}
-              handler={Overview} />
+              handler={EnclosureOverview} />
             <Route name="enclosure map"
               path={rootPath + "enclosures/map/*"}
               handler={MediumMap} />
+            <Route name="enclosure activity"
+              path={rootPath + "enclosures/activity/*"}
+              handler={TBD} />
           </Route>
         </Route>
         <Route name="server hardwares"
@@ -115,6 +119,9 @@ module.exports = {
             <Route name="server hardware map"
               path={rootPath + "server-hardware/map/*"}
               handler={MediumMap} />
+            <Route name="server hardware activity"
+              path={rootPath + "server-hardware/activity/*"}
+              handler={TBD} />
           </Route>
         </Route>
         <Route name="server profiles" handler={ServerProfiles}>
@@ -127,6 +134,9 @@ module.exports = {
             <Route name="server profile map"
               path={rootPath + "server-profiles/map/*"}
               handler={MediumMap} />
+            <Route name="server profile activity"
+              path={rootPath + "server-profiles/activity/*"}
+              handler={TBD} />
             <Route name="server profile edit"
               path={rootPath + "server-profiles/edit/*"}
               handler={ServerProfileEdit} />
@@ -135,6 +145,7 @@ module.exports = {
               handler={ServerProfileDelete} />
           </Route>
         </Route>
+        <Route name="switches" handler={TBD} />
         <Route name="reports" handler={TBD} />
       </Route>
       <Route name="dashboard-edit" path="dashboard/edit"

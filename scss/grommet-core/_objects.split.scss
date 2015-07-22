@@ -18,7 +18,7 @@
         flex: 0 0 auto;
 
         .app:not(.app--centered) & {
-          min-width: $sidebar-width;
+          width: $sidebar-width;
         }
       }
 
@@ -35,7 +35,7 @@
         flex: 0 0 auto;
 
         .app:not(.app--centered) & {
-          min-width: $sidebar-width;
+          width: $sidebar-width;
         }
       }
 

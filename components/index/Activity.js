@@ -41,12 +41,12 @@ var Activity = React.createClass({
     var defaultOpt = {
       view: 'table',
       attributes: [
-        {attribute: 'status', label: 'Status', index: 0, size: 'small', header: true,
+        {attribute: 'associatedResourceName', label: 'Resource', index: 0, size: 'medium'},
+        {attribute: 'status', label: 'Status', index: 1, size: 'small', header: true,
           filter: [
             'Error', 'Warning', 'OK', 'Unknown'
           ]},
-        {attribute: 'name', label: 'Name', index: 1},
-        {attribute: 'associatedResourceName', label: 'Resource', index: 2, size: 'medium'},
+        {attribute: 'name', label: 'Name', index: 2},
         {attribute: 'created', label: 'Time', index: 3,
           timestamp: true, size: 'medium', secondary: true, fitler: true},
         {attribute: 'state', label: 'State', index: 4, size: 'medium', secondary: true,

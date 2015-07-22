@@ -5,7 +5,8 @@ var MediumResource = require('./MediumResource');
 
 var VIEWS = [
   {label: 'Overview', name: 'overview', route: 'server hardware overview'},
-  {label: 'Map', name: 'map', route: 'server hardware map'}
+  {label: 'Map', name: 'map', route: 'server hardware map'},
+  {label: 'Activity', name: 'activity', route: 'server hardware activity'}
 ];
 
 var ServerHardware = React.createClass({

@@ -201,11 +201,13 @@ var MediumIndex = React.createClass({
       }
     } else {
       pane1 = this._renderIndex(navControl, addControl);
-      pane2 = <RouteHandler />;
+      if (resourceRouted) {
+        pane2 = <RouteHandler />;
+      }
     }
 
     return (
-      <Split onResponsive={this._onResponsive}>
+      <Split onResponsive={this._onResponsive} flex="right">
         {pane1}
         {pane2}
       </Split>
