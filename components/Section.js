@@ -2,12 +2,16 @@
 
 var React = require('react');
 var Box = require('./Box');
+var SkipLinkAnchor = require('./SkipLinkAnchor');
+var merge = require('lodash/object/merge');
 
 var CLASS_ROOT = "section";
 
 var Section = React.createClass({
 
-  propTypes: Box.propTypes,
+  propTypes: merge(Box.propTypes, {
+    primary: React.PropTypes.bool
+  }),
 
   getDefaultProps: function () {
     return {pad: {vertical: 'medium'}};
@@ -19,8 +23,14 @@ var Section = React.createClass({
       classes.push(this.props.className);
     }
 
+    var skipLinkAnchor = null;
+    if (this.props.primary) {
+      skipLinkAnchor = <SkipLinkAnchor label="Main Content" />;
+    }
+
     return (
       <Box tag="section" {...this.props} className={classes.join(' ')}>
+        {skipLinkAnchor}
         {this.props.children}
       </Box>
     );
