@@ -54,13 +54,42 @@ describe('Docs website e2e', function() {
       browser.click(selector).getText(buttonSelector).then(function(text) {
         expect(text).toBe('Resources');
 
-        var aiSelector = '#illustrator p:last-of-type a';
+        var aiSelector = '#illustrator p:last-of-type a:first-of-type';
         browser.click(buttonSelector).getText(aiSelector).then(function(text) {
           expect(text).toBe('Download Adobe Illustrator Sticker Sheet');
           browser.getAttribute(aiSelector, 'href').then(function(linkPath) {
             request.get(linkPath).end(function(err, res) {
               if (err) {
                 should.fail('Expected to send a request to ai asset.', err);
+              }
+              expect(res.status).toBe(200);
+              done();
+            });
+          });
+        });
+      });
+    });
+  });
+
+  it('downloads adobe illustrator pdf sticker sheet', function(done) {
+    var selector = '.header .menu a:nth-child(1)';
+
+    browser.getText(selector, function (err, text) {
+      if (err) {
+        should.fail('Expected to find design link.', err);
+      }
+      expect(text).toBe('Design');
+      var buttonSelector = '.background-color-index-neutral-1 a:nth-child(1)';
+      browser.click(selector).getText(buttonSelector).then(function(text) {
+        expect(text).toBe('Resources');
+
+        var pdfSelector = '#illustrator p:last-of-type a:last-of-type';
+        browser.click(buttonSelector).getText(pdfSelector).then(function(text) {
+          expect(text).toBe('pdf');
+          browser.getAttribute(pdfSelector, 'href').then(function(linkPath) {
+            request.get(linkPath).end(function(err, res) {
+              if (err) {
+                should.fail('Expected to send a request to pdf asset.', err);
               }
               expect(res.status).toBe(200);
               done();
