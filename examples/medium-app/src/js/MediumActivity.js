@@ -99,7 +99,7 @@ var MediumActivity = React.createClass({
     }
 
     return (
-      <Split onResponsive={this._onResponsive}>
+      <Split onResponsive={this._onResponsive} flex="left">
         {pane1}
         {pane2}
       </Split>

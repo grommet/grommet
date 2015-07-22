@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var MediumIndex = require('./MediumIndex');
+var MediumIndex = require('../MediumIndex');
 
 var OPTIONS = {
   label: "Enclosures",

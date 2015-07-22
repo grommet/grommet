@@ -109,7 +109,7 @@ var IndexTiles = React.createClass({
     }
 
     return (
-      <Tiles className={classes.join(' ')} onMore={onMore} flush={false}>
+      <Tiles className={classes.join(' ')} onMore={onMore} flush={true}>
         {tiles}
       </Tiles>
     );

@@ -56,8 +56,9 @@
   }
 
   &--flush {
-    margin: - $inuit-base-spacing-unit;
-    width: calc(100% + #{double($inuit-base-spacing-unit)});
+    //margin: - $inuit-base-spacing-unit;
+    //width: calc(100% + #{double($inuit-base-spacing-unit)});
+    padding: 0px;
 
     > .tile {
       -webkit-flex: 0 0 round($inuit-base-spacing-unit * 7);

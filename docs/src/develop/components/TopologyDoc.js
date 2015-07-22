@@ -43,12 +43,16 @@ var TopologyDoc = React.createClass({
           <p>An individual part. I Part can contain Parts or another Part.</p>
           <h4>Options</h4>
           <dl>
+            <dt><code>align        start|center|between|end|stretch</code></dt>
+            <dd>How to align the contents along the cross axis.</dd>
             <dt><code>demarcate    true|false</code></dt>
             <dd>Whether or not to visually demarcate the boundaries of the Part.</dd>
             <dt><code>direction    row|column</code></dt>
             <dd>The orientation to layout any child components in.</dd>
             <dt><code>id           {"{id}"}</code></dt>
             <dd>The id of this part. The id should at least be unique within the Topology.</dd>
+            <dt><code>justify      start|center|between|end</code></dt>
+            <dd>How to align the contents along the main axis.</dd>
             <dt><code>label        {"{label}"}</code></dt>
             <dd>The label of this part. This could be a part name or number, for example.</dd>
             <dt><code>reverse      true|false</code></dt>
@@ -63,6 +67,8 @@ var TopologyDoc = React.createClass({
           <dl>
             <dt><code>direction    row|column</code></dt>
             <dd>The orientation to layout the child components in.</dd>
+            <dt><code>uniform    true|false</code></dt>
+            <dd>Whether or not to all children should be the same size.</dd>
           </dl>
 
           <h3>Toplogy.Label</h3>
@@ -115,26 +121,30 @@ var TopologyDoc = React.createClass({
                     <Topology.Parts direction="row">
                       <Topology.Part className="em">
                         <Topology.Parts direction="column">
-                          <Topology.Part id="em1p1" status="ok" label="1" demarcate={false} />
-                          <Topology.Part id="em1p2" status="ok" label="2" demarcate={false} />
+                          <Topology.Part id="em1p1" status="ok" label="1"
+                            demarcate={false} align="center" />
+                          <Topology.Part id="em1p2" status="ok" label="2"
+                            demarcate={false} align="center" />
                         </Topology.Parts>
                       </Topology.Part>
-                      <Topology.Part className="fan" status="ok" label="1" />
+                      <Topology.Part className="fan" status="ok" label="1" align="center" />
                       <Topology.Part className="fan" />
-                      <Topology.Part className="fan" status="ok" label="3" />
+                      <Topology.Part className="fan" status="ok" label="3" align="center" />
                     </Topology.Parts>
                     <Topology.Part className="em"
                       label="HP Virtual Connect FlexFabric-20/40 F8 Module" />
                     <Topology.Parts direction="row">
                       <Topology.Part className="em">
                         <Topology.Parts direction="column">
-                          <Topology.Part id="em2p1" status="ok" label="1" demarcate={false} />
-                          <Topology.Part id="em2p2" status="ok" label="2" demarcate={false} />
+                          <Topology.Part id="em2p1" status="ok" label="1"
+                            demarcate={false} align="center" />
+                          <Topology.Part id="em2p2" status="ok" label="2"
+                            demarcate={false} align="center" />
                         </Topology.Parts>
                       </Topology.Part>
-                      <Topology.Part className="fan" status="ok" label="4" />
-                      <Topology.Part className="fan" status="ok" label="5" />
-                      <Topology.Part className="fan" status="ok" label="6" />
+                      <Topology.Part className="fan" status="ok" label="4" align="center" />
+                      <Topology.Part className="fan" status="ok" label="5" align="center" />
+                      <Topology.Part className="fan" status="ok" label="6" align="center" />
                     </Topology.Parts>
                   </Topology.Part>
 
@@ -194,26 +204,30 @@ var TopologyDoc = React.createClass({
                     <Topology.Parts direction="row">
                       <Topology.Part className="em">
                         <Topology.Parts direction="column">
-                          <Topology.Part id="em3p1" status="ok" label="1" demarcate={false} />
-                          <Topology.Part id="em3p2" status="ok" label="2" demarcate={false} />
+                          <Topology.Part id="em3p1" status="ok" label="1"
+                            demarcate={false} align="center" />
+                          <Topology.Part id="em3p2" status="ok" label="2"
+                            demarcate={false} align="center" />
                         </Topology.Parts>
                       </Topology.Part>
-                      <Topology.Part className="fan" status="ok" label="1" />
-                      <Topology.Part className="fan" status="ok" label="2" />
-                      <Topology.Part className="fan" status="ok" label="3" />
+                      <Topology.Part className="fan" status="ok" label="1" align="center" />
+                      <Topology.Part className="fan" status="ok" label="2" align="center" />
+                      <Topology.Part className="fan" status="ok" label="3" align="center" />
                     </Topology.Parts>
                     <Topology.Part className="em"
                       label="HP Virtual Connect FlexFabric-20/40 F8 Module" />
                     <Topology.Parts direction="row">
                       <Topology.Part className="em">
                         <Topology.Parts direction="column">
-                          <Topology.Part id="em4p1" status="ok" label="1" demarcate={false} />
-                          <Topology.Part id="em4p2" status="ok" label="2" demarcate={false} />
+                          <Topology.Part id="em4p1" status="ok" label="1"
+                            demarcate={false} align="center" />
+                          <Topology.Part id="em4p2" status="ok" label="2"
+                            demarcate={false} align="center" />
                         </Topology.Parts>
                       </Topology.Part>
-                      <Topology.Part className="fan" status="ok" label="4" />
-                      <Topology.Part className="fan" status="ok" label="5" />
-                      <Topology.Part className="fan" status="ok" label="6" />
+                      <Topology.Part className="fan" status="ok" label="4" align="center" />
+                      <Topology.Part className="fan" status="ok" label="5" align="center" />
+                      <Topology.Part className="fan" status="ok" label="6" align="center" />
                     </Topology.Parts>
                   </Topology.Part>
 

@@ -38,7 +38,10 @@ var SCHEMA = {
     }
   },
   "server-hardware": {
-    prefix: "enclosure 1, bay",
+    namer: function (index) {
+      // align name with enclosure use
+      return "enclosure " + Math.ceil(index / 16) + ", bay " + (((index - 1) % 16) + 1);
+    },
     indexAttributes: {
       model: {
         prefix: 'proliant bl460c gen'
@@ -246,7 +249,9 @@ function buildItems (categoryName) {
 
   for (var i = 1; i <= count; i++) {
     var name;
-    if (category.prefix) {
+    if (category.namer) {
+      name = category.namer(i);
+    } else if (category.prefix) {
       name = category.prefix + ' ' + i;
     } else if (category.names) {
       name = category.names[i % category.names.length];
