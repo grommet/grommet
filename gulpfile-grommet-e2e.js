@@ -15,7 +15,7 @@ module.exports = function(gulp, options) {
     }));
   });
 
-  var server = gls('./examples/server/server.js', {env: {SILENT_MODE: true}});
+  var server = gls('./server/server.js', {env: {SILENT_MODE: true}});
 
   gulp.task('start:docs', ['dist:docs'], function() {
     server.start();

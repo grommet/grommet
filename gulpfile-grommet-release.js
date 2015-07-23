@@ -189,27 +189,7 @@ module.exports = function(gulp, opts) {
     del.sync(['./tmp']);
   });
 
-  gulp.task('release:site', function() {
-    gulp.src('./docs/gulpfile.js', {
-      read: false
-    }).pipe(chug({
-      tasks: ['sync']
-    }));
-
-    gulp.src('./examples/server/gulpfile.js', {
-      read: false
-    }).pipe(chug({
-      tasks: ['sync']
-    }));
-
-    gulp.src('./examples/medium-app/gulpfile.js', {
-      read: false
-    }).pipe(chug({
-      tasks: ['sync']
-    }));
-  });
-
   gulp.task('release', function(done) {
-    runSequence('release:bump', ['dist-bower', 'dist'], 'release:npm', 'release:bower', 'release:clean', 'release:site', done);
+    runSequence('release:bump', ['dist-bower', 'dist'], 'release:npm', 'release:bower', 'release:clean', done);
   });
 };
