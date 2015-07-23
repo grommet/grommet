@@ -42,7 +42,7 @@ var opts = {
   mainJs: 'docs/src/index.js',
   mainScss: 'docs/src/scss/index.scss',
   sync: {
-    hostname: '15.126.219.8',
+    hostname: 'grommet.io',
     username: 'grommet',
     remoteDestination: '/var/www/html/docs/dist'
   },

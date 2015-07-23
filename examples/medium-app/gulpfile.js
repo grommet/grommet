@@ -38,6 +38,7 @@ var opts = {
     }
   },
   devServerPort: 8001,
+  // The 8010 port number needs to align with hostName in index.js
   devServerProxy: {
     "/rest/*": 'http://localhost:8010'
   },
