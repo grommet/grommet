@@ -14,7 +14,6 @@ before_script:
 - gulp preprocess
 - cd server && npm install && cd ..
 - cd docs && npm install && cd ..
-
 script:
 - |
     if [ "$TEST_TYPE" = build ]; then
