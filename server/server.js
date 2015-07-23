@@ -8,7 +8,12 @@ var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var path = require('path');
-var proxy = require('express-http-proxy');
+var httpProxy = require('http-proxy');
+
+var proxy = httpProxy.createProxyServer({
+  target: 'ws://localhost:8010',
+  ws: true
+});
 
 var request = require('request');
 
@@ -49,38 +54,30 @@ app.use('/tour/', function (req, res) {
   res.redirect('/medium-app');
 });
 
-app.use('/medium-app', proxy('localhost:8010', {
-  forwardPath: function(req) {
-    return '/medium-app' + require('url').parse(req.url).path;
-  }
-}));
+app.use('/medium-app', function(req, res){
+  proxy.web(req, res, { target: 'http://localhost:8010/medium-app/' });
+});
 
-//app.use('/people-finder', proxy('localhost:8020'));
+app.use('/people-finder', function(req, res){
+  proxy.web(req, res, { target: 'http://localhost:8020/' });
+});
 
+app.use('/ldap', function(req, res){
+  proxy.web(req, res, { target: 'http://localhost:8020/ldap' });
+});
 
-app.use('/ldap', proxy('localhost:8020', {
-  forwardPath: function(req) {
-    return '/ldap' + require('url').parse(req.url).path;
-  }
-}));
+app.use('/rest', function(req, res){
+  proxy.web(req, res, { target: 'http://localhost:8010/rest' });
+});
 
-app.use('/rest', proxy('localhost:8010', {
-  forwardPath: function(req) {
-    return '/rest' + require('url').parse(req.url).path;
-  }
-}));
+app.use('/slackin', function(req, res){
+  proxy.web(req, res, { target: 'http://localhost:3000/' });
+});
 
-app.use('/slackin', proxy('localhost:3000', {
-  forwardPath: function(req) {
-    return require('url').parse(req.url).path;
-  }
-}));
+app.use('/socket.io', function(req, res){
+  proxy.web(req, res, { target: 'http://localhost:3000/socket.io' });
+});
 
-app.use('/socket.io', proxy('localhost:3000', {
-  forwardPath: function(req) {
-    return '/socket.io' + require('url').parse(req.url).path;
-  }
-}));
 
 app.use('/invite', function(req, res) {
   var data = req.body;
@@ -126,6 +123,10 @@ app.
   use('', router);
 
 var server = http.createServer(app);
+
+server.on('upgrade', function (req, socket, head) {
+  proxy.ws(req, socket, head);
+});
 
 server.listen(PORT);
 
