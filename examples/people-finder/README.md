@@ -13,17 +13,8 @@ To run this application, execute the following commands:
     $ npm install
     ```
 
-  2. Start the back-end server (needs to run in parallel to the development server from step 2):
-
+  2. Start development server
     ```
-    $ cd grommet/examples/server
-    $ npm install
-    $ node server.js
-   ```
-
-  3. Start people-finder development server
-    ```
-    $ cd grommet/examples/people-finder
     $ gulp dev
     ```
 

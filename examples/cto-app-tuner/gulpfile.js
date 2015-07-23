@@ -19,7 +19,7 @@ var opts = {
   mainJs: 'examples/cto-app-tuner/src/js/index.js',
   mainScss: 'examples/cto-app-tuner/src/scss/index.scss',
   sync: {
-    hostname: 'grommet.io',
+    hostname: '15.126.219.8',
     username: 'grommet',
     remoteDestination: '/var/www/html/examples/cto-app-tuner/dist'
   },

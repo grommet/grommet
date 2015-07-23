@@ -1,7 +1,7 @@
 # Grommet Example App: medium-app
 
 ## Demo
-[Live demo](http://grommet.io/medium-app) of an example "medium sized" application using Grommet. 
+[Live demo](http://grommet.io/medium-app) of an example "medium sized" application using Grommet.
 
 Login credentials: `Username` any string that looks like an email address and any `Password` (not used or stored).
 
@@ -13,20 +13,17 @@ We demonstrate UI routing and some important patterns like Login, Resource Manag
 
 To run this application, execute the following commands:
 
-  1. Start the development server:
+  1. Install medium-app specific NPM modules
+    ```
+    $ cd grommet/examples/medium-app
+    $ npm install
+    ```
+  2. Start the development server
 
     ```
     $ gulp dev
     ```
 
-  2. Start the back-end server (needs to run in parallel to the development server from step 1):
-
-    ```
-    $ cd grommet/examples/server
-    $ npm install
-    $ node server.js
-    ```
-
-  4. Login credentials: `Username` any string that looks like an email address and any `Password` (not used or stored).
+  3. Login credentials: `Username` any string that looks like an email address and any `Password` (not used or stored).
 
   **NOTE**: If you want to use this application outside the Grommet context, checkout [Exporting Example Apps Wiki](https://github.com/HewlettPackard/grommet/wiki/Exporting-examples-from-Grommet).

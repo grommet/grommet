@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var path = require('path');
+var nodemon = require('gulp-nodemon');
 var devGulpTasks = require('../../src/utils/gulp/gulp-tasks');
 
 var opts = {
@@ -25,7 +26,7 @@ var opts = {
   mainJs: 'examples/people-finder/src/js/index.js',
   mainScss: 'examples/people-finder/src/scss/index.scss',
   sync: {
-    hostname: 'grommet.usa.hp.com',
+    hostname: '15.126.219.8',
     username: 'ligo',
     remoteDestination: '/var/www/html/examples/people-finder/dist'
   },
@@ -46,8 +47,15 @@ var opts = {
   },
   devServerPort: 9020,
   devServerProxy: {
-    "/ldap/*": 'http://localhost:8000'
-  }
+    "/ldap/*": 'http://localhost:8020'
+  },
+  devPreprocess: ['start-backend']
 };
+
+gulp.task('start-backend', function() {
+  nodemon({
+    script: path.resolve(__dirname, 'server/server')
+  });
+});
 
 devGulpTasks(gulp, opts);
