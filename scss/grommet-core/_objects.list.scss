@@ -27,6 +27,8 @@
     border-bottom: 1px solid $border-color;
     display: -webkit-flex;
     display: flex;
+    -webkit-align-items: center;
+    align-items: center;
     max-width: none;
 
     &:last-child {
@@ -80,7 +82,6 @@
     .list__more {
       padding-top: quarter($inuit-base-spacing-unit);
       padding-bottom: quarter($inuit-base-spacing-unit);
-      line-height: $inuit-base-spacing-unit;
 
       &__image {
         height: halve($inuit-base-spacing-unit);
@@ -94,7 +95,6 @@
     .list__more {
       padding-top: $inuit-base-spacing-unit;
       padding-bottom: $inuit-base-spacing-unit;
-      line-height: double($inuit-base-spacing-unit);
 
       &__image {
         height: double($inuit-base-spacing-unit);
