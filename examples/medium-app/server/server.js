@@ -7,9 +7,8 @@ var router = express.Router();
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
-var path = require('path');
-
 var rest = require('./rest');
+var path = require('path');
 
 var PORT = 8010;
 

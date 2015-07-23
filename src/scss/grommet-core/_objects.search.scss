@@ -55,7 +55,7 @@
       box-sizing: border-box;
 
       @include media-query(palm) {
-        width: calc(100vw - #{double($inuit-base-spacing-unit)});
+        width: calc(100vw - #{round($inuit-base-spacing-unit * 3)});
       }
     }
 
@@ -73,6 +73,10 @@
         background-color: $hover-background-color;
       }
     }
+
+    &--large {
+      line-height: quadruple($inuit-base-spacing-unit);
+    }
   }
 
   &--inline {
@@ -85,5 +89,9 @@
         border: none;
       }
     }
+  }
+
+  &--large {
+    line-height: quadruple($inuit-base-spacing-unit);
   }
 }

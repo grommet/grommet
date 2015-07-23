@@ -157,12 +157,9 @@
     }
   }
 
-  &--responsive {
-    ///width: 100%;
-  }
-
   // temporary flex grow capability
-  > .flex-grow-1 {
+  > .flex-grow-1, // deprecated, remove in 0.4
+  > .flex {
     -webkit-flex-grow: 1;
     flex-grow: 1;
   }

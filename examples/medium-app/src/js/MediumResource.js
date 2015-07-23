@@ -3,7 +3,6 @@
 var React = require('react');
 var RouteHandler = require('react-router').RouteHandler;
 var Link = require('react-router').Link;
-var Article = require('grommet/components/Article');
 var Header = require('grommet/components/Header');
 var Menu = require('grommet/components/Menu');
 var CloseIcon = require('grommet/components/icons/Clear');
@@ -72,14 +71,14 @@ var MediumResource = React.createClass({
       }, this);
 
       menu = (
-        <Menu label={this.getGrommetIntlMessage(this.state.view.label)}>
+        <Menu label={this.getGrommetIntlMessage(this.state.view.label)} large={true}>
           {menuOptions}
         </Menu>
       );
     }
 
     return (
-      <Article>
+      <div>
         <Header large={true} justify="between" fixed={true}>
           {menu}
           <Menu>
@@ -87,7 +86,7 @@ var MediumResource = React.createClass({
           </Menu>
         </Header>
         <RouteHandler />
-      </Article>
+      </div>
     );
   }
 

@@ -158,11 +158,11 @@ var Basics = React.createClass({
     <h3>Typography</h3>
     <p>Applications use the <span ref="fontName">Arial</span> font.  The
     typographic scale and styles can be found in the attached assets.</p>
-    <div className="font-sample h1">H1 font sample</div>
-    <div className="font-sample h2">H2 font sample</div>
-    <div className="font-sample h3">H3 font sample</div>
-    <div className="font-sample h4">H4 font sample</div>
-    <div className="font-sample h5">H5 font sample</div>
+    <h1 className="font-sample">H1 font sample</h1>
+    <h2 className="font-sample">H2 font sample</h2>
+    <h3 className="font-sample">H3 font sample</h3>
+    <h4 className="font-sample">H4 font sample</h4>
+    <h5 className="font-sample">H5 font sample</h5>
 
     <a className="anchor" id="writing-style"></a>
     <h3>Writing Style</h3>

@@ -48,10 +48,16 @@ $inner-pad: round($inuit-base-spacing-unit * 0.25);
     justify-content: center;
     -webkit-align-items: stretch;
     align-items: stretch;
+    overflow: hidden;
 
-    > * {
+    > *:not(.topology__parts) {
       -webkit-flex: 0 0 auto;
       flex: 0 0 auto;
+    }
+
+    > .topology__parts {
+      -webkit-flex-grow: 1;
+      flex-grow: 1;
     }
 
     &--demarcate {
@@ -59,7 +65,49 @@ $inner-pad: round($inuit-base-spacing-unit * 0.25);
 
       &.topology__part--empty {
         background-color: $secondary-background-color;
+        min-width: $inuit-base-spacing-unit;
+        min-height: $inuit-base-spacing-unit;
       }
+    }
+
+    &--justify-start {
+      -webkit-justify-content: flex-start;
+      justify-content: flex-start;
+    }
+
+    &--justify-center {
+      -webkit-justify-content: center;
+      justify-content: center;
+    }
+
+    &--justify-between {
+      -webkit-justify-content: space-between;
+      justify-content: space-between;
+    }
+
+    &--justify-end {
+      -webkit-justify-content: flex-end;
+      justify-content: flex-end;
+    }
+
+    &--align-start {
+      -webkit-align-items: flex-start;
+      align-items: flex-start;
+    }
+
+    &--align-center {
+      -webkit-align-items: center;
+      align-items: center;
+    }
+
+    &--align-end {
+      -webkit-align-items: flex-end;
+      align-items: flex-end;
+    }
+
+    &--align-stretch {
+      -webkit-align-items: stretch;
+      align-items: stretch;
     }
 
     &--direction {
@@ -73,13 +121,7 @@ $inner-pad: round($inuit-base-spacing-unit * 0.25);
         }
 
         > *:not(.topology__parts):not(.topology__part) {
-          margin-left: $inner-pad;
-          -webkit-align-self: center;
-          align-self: center;
-
-          &:last-child {
-            margin-right: $inner-pad;
-          }
+          margin: $inner-pad;
         }
       }
 
@@ -93,13 +135,7 @@ $inner-pad: round($inuit-base-spacing-unit * 0.25);
         }
 
         > *:not(.topology__parts):not(.topology__part) {
-          margin-top: $inner-pad;
-          -webkit-align-self: center;
-          align-self: center;
-
-          &:last-child {
-            margin-bottom: $inner-pad;
-          }
+          margin: $inner-pad;
         }
       }
     }

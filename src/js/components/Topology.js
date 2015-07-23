@@ -14,9 +14,11 @@ var Label = React.createClass({
 var Part = React.createClass({
 
   propTypes: {
+    align: React.PropTypes.oneOf(['start', 'center', 'between', 'end', 'stretch']),
     demarcate: React.PropTypes.bool,
     direction: React.PropTypes.oneOf(['row', 'column']).isRequired,
     id: React.PropTypes.string,
+    justify: React.PropTypes.oneOf(['start', 'center', 'between', 'end']),
     label: React.PropTypes.string,
     reverse: React.PropTypes.bool,
     status: React.PropTypes.string
@@ -25,21 +27,31 @@ var Part = React.createClass({
   getDefaultProps: function () {
     return {
       demarcate: true,
-      direction: 'row'
+      direction: 'row',
+      justify: 'center',
+      align: 'stretch'
     };
   },
 
   render: function () {
     var classes = [CLASS_ROOT + "__part"];
     classes.push(CLASS_ROOT + "__part--direction-" + this.props.direction);
+    classes.push(CLASS_ROOT + "__part--justify-" + this.props.justify);
+    classes.push(CLASS_ROOT + "__part--align-" + this.props.align);
     if (this.props.demarcate) {
       classes.push(CLASS_ROOT + "__part--demarcate");
     }
     if (this.props.reverse) {
       classes.push(CLASS_ROOT + "__part--reverse");
     }
-    if (! this.props.status && ! this.props.label
-      && React.Children.count(this.props.children) === 0) {
+    // handle undefined children
+    var realChildren = 0;
+    React.Children.forEach(this.props.children, function (child) {
+      if (child) {
+        realChildren += 1;
+      }
+    });
+    if (! this.props.status && ! this.props.label && realChildren === 0) {
       classes.push(CLASS_ROOT + "__part--empty");
     }
     if (this.props.className) {
@@ -69,13 +81,47 @@ var Part = React.createClass({
 
 var Parts = React.createClass({
   propTypes: {
-    direction: React.PropTypes.oneOf(['row', 'column']).isRequired
+    direction: React.PropTypes.oneOf(['row', 'column']).isRequired,
+    uniform: React.PropTypes.bool
   },
 
   getDefaultProps: function () {
     return {
       direction: 'column'
     };
+  },
+
+  _makeUniform: function () {
+    if (this.props.uniform) {
+      let parts = this.refs.component.getDOMNode().children;
+      // clear old basis
+      for (let i = 0; i < parts.length; i += 1) {
+        parts[i].style.webkitFlexBasis = null;
+        parts[i].style.flexBasis = null;
+      }
+      // find max
+      let max = 0;
+      for (let i = 0; i < parts.length; i += 1) {
+        if ('column' === this.props.direction) {
+          max = Math.max(max, parts[i].offsetHeight);
+        } else {
+          max = Math.max(max, parts[i].offsetWidth);
+        }
+      }
+      // set basis
+      for (let i = 0; i < parts.length; i += 1) {
+        parts[i].style.webkitFlexBasis = '' + max + 'px';
+        parts[i].style.flexBasis = '' + max + 'px';
+      }
+    }
+  },
+
+  componentDidMount: function () {
+    this._makeUniform();
+  },
+
+  componentDidUpdate: function () {
+    this._makeUniform();
   },
 
   render: function () {
@@ -85,7 +131,7 @@ var Parts = React.createClass({
       classes.push(this.props.className);
     }
     return (
-      <div className={classes.join(' ')}>
+      <div ref="component" className={classes.join(' ')}>
         {this.props.children}
       </div>
     );

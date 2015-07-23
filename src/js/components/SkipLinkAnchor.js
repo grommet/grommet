@@ -14,7 +14,7 @@ var SkipLinkAnchor = React.createClass({
   render: function () {
     var id = 'skip-link-' + this.props.label.toLowerCase().replace(/ /g, '_');
     return (
-      <div tabIndex="0" id={id} data-skip-label={this.getGrommetIntlMessage(this.props.label)} className="skip-link-anchor" />
+      <a tabIndex="-1" id={id} data-skip-label={this.getGrommetIntlMessage(this.props.label)} className="skip-link-anchor" />
     );
   }
 

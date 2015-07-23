@@ -16,7 +16,7 @@ var Article = React.createClass({
 
   propTypes: merge({
     scrollStep: React.PropTypes.bool,
-    primary: true
+    primary: React.PropTypes.bool
   }, Box.propTypes),
 
   mixins: [KeyboardAccelerators],
@@ -136,7 +136,7 @@ var Article = React.createClass({
 
     var skipLinkAnchor = null;
     if (this.props.primary) {
-      skipLinkAnchor = <SkipLinkAnchor label="Footer" />;
+      skipLinkAnchor = <SkipLinkAnchor label="Main Content" />;
     }
     return (
       <Box ref="component" tag="article" {...other} className={classes.join(' ')}>

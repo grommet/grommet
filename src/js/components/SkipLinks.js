@@ -11,8 +11,7 @@ var SkipLinks = React.createClass({
   mixins: [IntlMixin],
 
   componentDidMount: function () {
-    var _document = React.findDOMNode(this).ownerDocument;
-    var anchorElements = _document.querySelectorAll('[data-skip-label]');
+    var anchorElements = document.querySelectorAll('[data-skip-label]');
 
     var anchors = Array.prototype.map.call(anchorElements, function (anchorElement) {
       return {
@@ -36,13 +35,19 @@ var SkipLinks = React.createClass({
 
   _onBlur: function (event) {
     setTimeout(function () {
-      var _document = React.findDOMNode(this).ownerDocument;
       var skipLinksLayer = this.refs.skipLinksLayer.getDOMNode();
-      var activeElement = _document.activeElement;
+      var activeElement = document.activeElement;
       if (!DOM.isDescendant(skipLinksLayer, activeElement)) {
         this.setState({showLayer: false});
       }
     }.bind(this));
+  },
+
+  _onClick: function (destId) {
+    return function (event) {
+      var dest = document.getElementById(destId);
+      dest.focus();
+    };
   },
 
   render: function () {
@@ -52,6 +57,7 @@ var SkipLinks = React.createClass({
            href={'#' + anchor.id}
            onFocus={this._onFocus}
            onBlur={this._onBlur}
+           onClick={this._onClick(anchor.id)}
            key={anchor.id}
            aria-label={this.getGrommetIntlMessage('Skip to') + ' ' + anchor.label}>
           {anchor.label}
