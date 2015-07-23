@@ -46,7 +46,7 @@ h4.header {
 
 header.header {
   @include inuit-font-size($header-font-size, inherit);
-  min-height: $header-height;
+  height: $header-height;
 
   *:not(.header__container--float) > &--float {
     position: absolute;

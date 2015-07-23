@@ -164,7 +164,7 @@ var MediumDashboard = React.createClass({
     return (
       <div>
         <Header direction="row" justify="between" large={true} pad={{horizontal: 'medium'}}>
-          <Box direction="row" align="center" responsive={false}>
+          <Box direction="row" align="center" responsive={false} className="flex">
             <span onMouseOver={this._onOverTitle}
               onMouseOut={this._onOutTitle}>
               <Title onClick={this._onClickTitle}>
@@ -172,7 +172,7 @@ var MediumDashboard = React.createClass({
                 <span>Medium App</span>
               </Title>
             </span>
-            <Search ref="search" inline={true} />
+            <Search ref="search" inline={true} className="flex" />
           </Box>
           <MediumSessionMenu dropAlign={{right: 'right'}} />
         </Header>

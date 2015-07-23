@@ -71,7 +71,7 @@ var MediumResource = React.createClass({
       }, this);
 
       menu = (
-        <Menu label={this.getGrommetIntlMessage(this.state.view.label)}>
+        <Menu label={this.getGrommetIntlMessage(this.state.view.label)} large={true}>
           {menuOptions}
         </Menu>
       );

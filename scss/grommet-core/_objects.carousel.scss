@@ -22,6 +22,7 @@
 
 .carousel {
   position: relative;
+  max-width: 100%;
 
   @include media-query(lap-and-up) {
     &--toggle-0 {
