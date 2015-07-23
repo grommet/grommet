@@ -91,11 +91,7 @@ var IndexHeader = React.createClass({
 
     var navControl = null;
     if (this.props.navControl) {
-      navControl = (
-        <Menu className={CLASS_ROOT + "__nav-control"}>
-          {this.props.navControl}
-        </Menu>
-      );
+      navControl = this.props.navControl;
     }
 
     var label = this.getGrommetIntlMessage(this.props.options.label);
@@ -103,9 +99,9 @@ var IndexHeader = React.createClass({
     return (
       <Header className={classes.join(' ')}
         fixed={this.props.fixed} pad="medium" justify="between" large={true}>
-        <Box direction="row" responsive={false} align="center">
+        <Box direction="row" responsive={false} align="center" className="flex">
           {navControl}
-          <Search className={CLASS_ROOT + "__search"}
+          <Search className={CLASS_ROOT + "__search" + " flex"}
             inline={true}
             placeHolder={this.getGrommetIntlMessage('Search') + ' ' + label}
             defaultValue={searchText}

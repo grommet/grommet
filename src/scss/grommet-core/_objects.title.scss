@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 .title {
+  max-height: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
   font-weight: normal;
@@ -30,7 +31,7 @@
   svg,
   img {
     margin-right: halve($inuit-base-spacing-unit);
-
+    max-height: 100%;
   }
 
   &--interactive {

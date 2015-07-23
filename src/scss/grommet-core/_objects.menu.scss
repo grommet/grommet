@@ -2,7 +2,7 @@
 
 .menu {
   position: relative;
-  @include inuit-font-size($menu-font-size);
+  @include inuit-font-size($menu-font-size, inherit);
 
   a:not(.button) {
     color: lighten($text-color, 30%);
@@ -104,24 +104,32 @@
         text-align: right;
       }
     }
+
+    &--large {
+      .menu__control {
+        //height: quadruple($inuit-base-spacing-unit);
+        line-height: quadruple($inuit-base-spacing-unit);
+      }
+    }
   }
 
   &--controlled {
     display: inline-block;
     cursor: pointer;
 
-    .header & {
-      line-height: double($inuit-base-spacing-unit);
+    &.menu--large {
+      //height: quadruple($inuit-base-spacing-unit);
+      line-height: quadruple($inuit-base-spacing-unit);
     }
 
-    .header.header--small & {
-      line-height: halve($small-header-height);
+    &.menu--small {
+      height: $inuit-base-spacing-unit;
     }
   }
 
   &--labelled {
     padding-left: $inuit-base-spacing-unit;
-    padding-right: $inuit-base-spacing-unit;
+    //padding-right: $inuit-base-spacing-unit;
   }
 
   &--inline {
@@ -258,9 +266,9 @@
   .menu__drop {
     width: 100vw;
 
-    .menu__control {
-      line-height: double($inuit-base-spacing-unit);
-    }
+    //.menu__control {
+    //  line-height: double($inuit-base-spacing-unit);
+    //}
 
     a,
     .button {

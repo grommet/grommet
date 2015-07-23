@@ -60,7 +60,11 @@ var Tiles = React.createClass({
       // determine if we have more tiles than room to fit
       var tiles = this.refs.tiles.getDOMNode();
       // 20 is to allow some fuzziness as scrollbars come and go
-      this.setState({overflow: (tiles.scrollWidth > (tiles.offsetWidth + 20))});
+      this.setState({
+        overflow: (tiles.scrollWidth > (tiles.offsetWidth + 20)),
+        overflowStart: (tiles.scrollLeft <= 20),
+        overflowEnd: (tiles.scrollLeft >= (tiles.scrollWidth - tiles.offsetWidth))
+      });
 
       // mark any tiles that might be clipped
       var rect = tiles.getBoundingClientRect();
@@ -171,16 +175,20 @@ var Tiles = React.createClass({
 
     if (this.state.overflow) {
       classes.push(CLASS_ROOT + "--overflowed");
-      var left = (
-        <div className={CLASS_ROOT + "__left"} onClick={this._onLeft}>
-          <LeftIcon />
-        </div>
-      );
-      var right = (
-        <div className={CLASS_ROOT + "__right"} onClick={this._onRight}>
-          <RightIcon />
-        </div>
-      );
+      if (! this.state.overflowStart) {
+        var left = (
+          <div className={CLASS_ROOT + "__left"} onClick={this._onLeft}>
+            <LeftIcon />
+          </div>
+        );
+      }
+      if (! this.state.overflowEnd) {
+        var right = (
+          <div className={CLASS_ROOT + "__right"} onClick={this._onRight}>
+            <RightIcon />
+          </div>
+        );
+      }
 
       contents = (
         <div className={CLASS_ROOT + "__container"}>

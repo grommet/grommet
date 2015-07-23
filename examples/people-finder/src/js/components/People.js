@@ -60,12 +60,12 @@ var People = React.createClass({
         <Header key="header" large={true} pad={{horizontal: "medium"}}
           float={this.props.initial}
           colorIndex={colorIndex} splash={this.props.initial} responsive={false}>
-          <Box direction="row" align="center" className="flex-grow-1" responsive={false}>
+          <Box direction="row" align="center" className="flex" responsive={false}>
             <Title>
               <Logo />
               {title}
             </Title>
-            <Search ref="search" inline={true} className="flex-grow-1"
+            <Search ref="search" inline={true} className="flex"
               defaultValue={this.props.searchText}
               onChange={this.props.onSearch} />
           </Box>

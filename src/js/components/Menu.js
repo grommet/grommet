@@ -21,8 +21,10 @@ var MenuDrop = React.createClass({
     dropAlign: Drop.alignPropType,
     dropColorIndex: React.PropTypes.string,
     id: React.PropTypes.string.isRequired,
+    large: React.PropTypes.bool,
     onClick: React.PropTypes.func.isRequired,
-    router: React.PropTypes.func
+    router: React.PropTypes.func,
+    small: React.PropTypes.bool
   }, Box.propTypes),
 
   childContextTypes: {
@@ -53,6 +55,12 @@ var MenuDrop = React.createClass({
     if (this.props.dropColorIndex) {
       classes.push("background-color-index-" + this.props.dropColorIndex);
     }
+    if (this.props.large) {
+      classes.push(CLASS_ROOT + "__drop--large");
+    }
+    if (this.props.small) {
+      classes.push(CLASS_ROOT + "__drop--small");
+    }
 
     return (
       <div id={this.props.id} className={classes.join(' ')}
@@ -74,6 +82,7 @@ var Menu = React.createClass({
     icon: React.PropTypes.node,
     inline: React.PropTypes.bool,
     label: React.PropTypes.string,
+    large: React.PropTypes.bool,
     primary: React.PropTypes.bool,
     small: React.PropTypes.bool
   }, Box.propTypes),
@@ -130,7 +139,7 @@ var Menu = React.createClass({
 
   getInitialState: function () {
     if (this.props.hasOwnProperty('collapse')) {
-      console.log('The Grommet Menu "collapse" property is deprecated. Please use "inline" instead.');
+      console.log('The Grommet Menu "collapse" property is deprecated. Please use "inline" instead.'); // TODO: remove this message in version 0.4.0
     }
     var inline;
     if (this.props.hasOwnProperty('inline')) {
@@ -267,6 +276,8 @@ var Menu = React.createClass({
       <MenuDrop router={this.context.router}
         dropAlign={this.props.dropAlign}
         dropColorIndex={this.props.dropColorIndex}
+        small={this.props.small}
+        large={this.props.large}
         {...other}
         onClick={onClick}
         id={this.state.dropId}
@@ -284,6 +295,9 @@ var Menu = React.createClass({
     }
     if (this.props.align) {
       classes.push(prefix + "--align-" + this.props.align);
+    }
+    if (this.props.large) {
+      classes.push(prefix + "--large");
     }
     if (this.props.small) {
       classes.push(prefix + "--small");

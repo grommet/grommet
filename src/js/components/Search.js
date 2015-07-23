@@ -16,6 +16,7 @@ var Search = React.createClass({
     dropAlign: Drop.alignPropType,
     dropColorIndex: React.PropTypes.string,
     inline: React.PropTypes.bool,
+    large: React.PropTypes.bool,
     onChange: React.PropTypes.func,
     placeHolder: React.PropTypes.string,
     responsive: React.PropTypes.bool,
@@ -219,6 +220,9 @@ var Search = React.createClass({
     if (this.props.dropColorIndex) {
       classes.push("background-color-index-" + this.props.dropColorIndex);
     }
+    if (this.props.large) {
+      classes.push(CLASS_ROOT + "__drop--large");
+    }
 
     var suggestions = null;
     if (this.props.suggestions) {
@@ -274,6 +278,9 @@ var Search = React.createClass({
   render: function () {
 
     var classes = this._classes(CLASS_ROOT);
+    if (this.props.large) {
+      classes.push(CLASS_ROOT + "--large");
+    }
     if (this.props.className) {
       classes.push(this.props.className);
     }
