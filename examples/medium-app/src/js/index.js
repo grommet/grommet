@@ -11,9 +11,10 @@ var Locale = require('grommet/utils/Locale');
 //var indexConfig = require('./IndexConfig'); /// TODO: refactor
 var Routes = require('./Routes');
 
-var hostName = __DEV_MODE__ ? "localhost" : window.location.host.split(':')[0];
+// The port number needs to align with devServerProxy and websocketHost in gulpfile.js
+var hostName = __DEV_MODE__ ? 'localhost:8010' : window.location.host.split(':')[0];
 
-RestWatch.initialize('ws://' + hostName + ':8010/rest/ws');
+RestWatch.initialize('ws://' + hostName + '/rest/ws');
 
 Rest.setHeaders({
   'Accept': 'application/json',

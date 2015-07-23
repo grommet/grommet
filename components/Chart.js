@@ -385,11 +385,8 @@ var Chart = React.createClass({
           'L' + coordinates[0][0] + ',' + this.state.height + 'Z';
         commands += close;
 
-        // _renderGradients() constructs the fill gradient referred to here.
-        var fill = 'url(#' + CLASS_ROOT + "__gradient-" + colorIndex + ')';
-
         path = (
-          <path stroke="none" className={classes.join(' ')} fill={fill} d={commands} />
+          <path stroke="none" className={classes.join(' ')} d={commands} />
         );
       }
 
@@ -422,13 +419,9 @@ var Chart = React.createClass({
           classes.push(CLASS_ROOT + "__values-bar--active");
         }
 
-        // _renderGradients() constructs the fill gradient referred to here.
-        var fill = 'url(#' + CLASS_ROOT + "__gradient-" + colorIndex + ')';
-
         return (
           <rect key={item.label || seriesIndex}
             className={classes.join(' ')}
-            fill={fill}
             x={this._translateX(value[0]) + bounds.barPadding}
             y={this.state.height - (stepBarHeight + stepBarBase)}
             width={bounds.xStepWidth - (2 * bounds.barPadding)}
@@ -455,26 +448,6 @@ var Chart = React.createClass({
         <path fill="none" d={commands} />
       </g>
     );
-  },
-
-  // Creates the gradient definitions for the color indexes used.
-  _renderGradients: function () {
-    var gradients = this.props.series.map(function (item, seriesIndex) {
-      var colorIndex = this._itemColorIndex(item, seriesIndex);
-      // The id here must match the fill url used in _renderLineOrAreaValues().
-      // Actual coloring of the gradient is driven by the stylesheets.
-      return (
-        <linearGradient key={colorIndex}
-          id={CLASS_ROOT + "__gradient-" + colorIndex}
-          className={CLASS_ROOT + "__gradient color-index-" + colorIndex}
-          x1="0" x2="0" y1="0" y2="1">
-          <stop className={"begin"} offset="0"/>
-          <stop className={"mid"} offset="0.2"/>
-          <stop className={"end"} offset="1"/>
-        </linearGradient>
-      );
-    }, this);
-    return <defs>{gradients}</defs>;
   },
 
   _labelPosition: function (value, bounds) {
@@ -707,12 +680,6 @@ var Chart = React.createClass({
       );
     }
 
-    var gradients = null;
-    if (('area' === this.props.type || 'bar' === this.props.type) &&
-      this.state.activeXIndex >= 0) {
-      gradients = this._renderGradients();
-    }
-
     var threshold = null;
     if (this.props.threshold) {
       threshold = this._renderThreshold();
@@ -745,7 +712,6 @@ var Chart = React.createClass({
         <svg ref="chart" className={CLASS_ROOT + "__graphic"}
           viewBox={"0 0 " + this.state.width + " " + this.state.height}
           preserveAspectRatio="none">
-          {gradients}
           {xAxis}
           {yAxis}
           <g className={CLASS_ROOT + "__values"}>{values}</g>
