@@ -52,15 +52,16 @@ var Table = React.createClass({
 
     var parentElement = element.parentNode;
     if (element && parentElement.nodeName === 'TBODY') {
-      var selection;
-      for (selection = 0; selection < parentElement.childNodes.length; selection++) {
-        if (parentElement.childNodes[selection] === element) {
-          break;
-        }
-      }
-      this.setState({selection: selection});
+      this._clearSelection();
+      element.classList.add(CLASS_ROOT + "__row--selected");
       if (this.props.onSelect) {
-        this.props.onSelect(selection);
+        var idx;
+        for (idx = 0; idx < parentElement.childNodes.length; idx++) {
+          if (parentElement.childNodes[idx] === element) {
+            break;
+          }
+        }
+        this.props.onSelect(idx);
       }
     }
   },
