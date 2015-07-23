@@ -18,7 +18,7 @@ var opts = {
   mainJs: 'examples/medium-app/src/js/index.js',
   mainScss: 'examples/medium-app/src/scss/index.scss',
   sync: {
-    hostname: '15.126.219.8',
+    hostname: 'grommet.io',
     username: 'grommet',
     remoteDestination: '/var/www/html/examples/medium-app/dist'
   },
