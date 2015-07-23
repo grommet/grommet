@@ -49,11 +49,18 @@ var Table = React.createClass({
     while (element.nodeName !== 'TR') {
       element = element.parentNode;
     }
-    if (element && element.parentNode.nodeName === 'TBODY') {
-      this._clearSelection();
-      element.classList.add(CLASS_ROOT + "__row--selected");
+
+    var parentElement = element.parentNode;
+    if (element && parentElement.nodeName === 'TBODY') {
+      var selection;
+      for (selection = 0; selection < parentElement.childNodes.length; selection++) {
+        if (parentElement.childNodes[selection] === element) {
+          break;
+        }
+      }
+      this.setState({selection: selection});
       if (this.props.onSelect) {
-        this.props.onSelect(element);
+        this.props.onSelect(selection);
       }
     }
   },
