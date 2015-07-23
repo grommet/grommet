@@ -33,17 +33,18 @@
     }
 
     &-line {
-      stroke-width: 3px;
+      stroke-width: 6px;
       @include graph-stroke-color();
     }
 
-    //&-bar {
-    //  @include graph-fill-color-translucent(0.7);
+    &-bar,
+    &-area {
+      @include graph-fill-color-translucent(0.8);
 
-    //  &--active {
-    //    @include graph-fill-color();
-    //  }
-    //}
+      &--active {
+        @include graph-fill-color;
+      }
+    }
 
     &--loading {
       stroke-width: $inuit-base-spacing-unit;
