@@ -48,10 +48,7 @@ notifications:
   slack:
     secure: KO4NG+slaqtFbK5T2FpkR8vgUPfZA5nf+oGDhOCFQXwfcEje/auWKdbSEzCMJ8RMl039wYjtz5iyN6bumD5FYuZFXAddeRiCtaIVqr/r6A536ldneQFTiieyeOYKJkh42hahjstcAKCv0mWr1GZGFc2cyNaoSZvE8/LNcOZy3Rne3ZPAgNMVKF3xkYFUzQOQLJsMEq7sW8LX+Z9zO+OAGjV3uEbiEYlS+N/0VW+ziz+TL+/gNf0rvzAjRd5v/VRudNxuVqx/frpYJzxGS6EHy1vVWFo6NomqBXHQvaEY+W+oorND6Jg0VNhJLCXOk2xxx0JZul2GurkQGex9b3UoARLTWarwOC9Vm/IhZ9Tc57H0U8B7Qxyb0KFacXJPeMqb2tPgNC0/wSIX8uLqlyUJnPqiRgII3W2V1YG3bWJssHNqg5F8WbD+kIphr4ghrW//8EZvcgVK/QS/yIXGLqKYygOYajXoHeb+dR0eCvE2b1wGG/EoZlZcaH2q9lE+1hmyli7MAW3aCmpCEoDUFPq5a8fcdDnYiGV5s1TPbPGvOsd2kYmeFnh71po+GgO07c+1QPLAXiW0YO8hzENi6HMcAdqcKMFXFWYD0fMNPSES/HwIFlAW/c1UBdh7KYCpZ4zljLrHyj1CAM8jXWJ7MTbJYsYHFNHA4eWNZotNLYvQgvs=
 addons:
-- |
-    if ["$TEST_TYPE" != build]
-      sauce_connect: true
-    fi
+  sauce_connect: true
 matrix:
   fast_finish: true
   allow_failures:
