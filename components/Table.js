@@ -12,7 +12,8 @@ var Table = React.createClass({
     selection: React.PropTypes.number,
     onMore: React.PropTypes.func,
     scrollable: React.PropTypes.bool,
-    selectable: React.PropTypes.bool
+    selectable: React.PropTypes.bool,
+    onSelect: React.PropTypes.func
   },
 
   mixins: [InfiniteScroll],
@@ -21,7 +22,8 @@ var Table = React.createClass({
     return {
       selection: null,
       scrollable: false,
-      selectable: false
+      selectable: false,
+      onSelect: null
     };
   },
 
@@ -47,9 +49,20 @@ var Table = React.createClass({
     while (element.nodeName !== 'TR') {
       element = element.parentNode;
     }
-    if (element && element.parentNode.nodeName === 'TBODY') {
+
+    var parentElement = element.parentNode;
+    if (element && parentElement.nodeName === 'TBODY') {
       this._clearSelection();
       element.classList.add(CLASS_ROOT + "__row--selected");
+      if (this.props.onSelect) {
+        var idx;
+        for (idx = 0; idx < parentElement.childNodes.length; idx++) {
+          if (parentElement.childNodes[idx] === element) {
+            break;
+          }
+        }
+        this.props.onSelect(idx);
+      }
     }
   },
 
