@@ -7,9 +7,9 @@ gulp.task('sync', function() {
   gulp.src('.')
     .pipe(rsync({
       root: '.',
-      hostname: 'grommet.io',
+      hostname: '15.126.219.8',
       username: 'grommet',
-      destination: '/var/www/html/examples/server',
+      destination: '/var/www/html/server',
       recursive: true,
       relative: true,
       progress: true,
@@ -17,7 +17,7 @@ gulp.task('sync', function() {
       clean: true,
       silent: false,
       emptyDirectories: true,
-      exclude: ['.DS_Store', 'node_modules']
+      exclude: ['.DS_Store']
     }));
 });
 
@@ -28,9 +28,9 @@ gulp.task('dev', function() {
     console.log('[node-server] started: opening the app in your default browser...');
     //give sometime for the server to start
     setTimeout(function() {
-      gulp.src('../../docs/dist/index.html')
+      gulp.src('../dist/index.html')
       .pipe(open('<%file.path%>', {
-        url: 'http://localhost:8000/docs'
+        url: 'http://localhost:8020/'
       }));
     }, 500);
   });

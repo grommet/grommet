@@ -51,8 +51,9 @@ var People = React.createClass({
     var empty;
     if (this.props.changing) {
       data = [{uid: 'spinner', hpPictureThumbnailURI: <Spinning />}];
-    } else if (! this.props.initial && this.props.people.length === 0) {
+    } else if (! this.props.initial && !this.props.people) {
       empty = 'No matches';
+      data = [];
     }
 
     return (

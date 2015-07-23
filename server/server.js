@@ -7,19 +7,14 @@ var router = express.Router();
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
-var docs = require('./docs');
-var rest = require('./rest');
-var ldap = require('./ldap');
-var mediumApp = require('./medium-app');
-var mediumAppDev = require('./medium-app-dev');
-var peopleFinder = require('./people-finder');
-var marketing = require('./marketing');
-var ctoAppTuner = require('./cto-app-tuner');
-var todoAddModular = require('./todo-app-modular');
 var path = require('path');
 var proxy = require('express-http-proxy');
-//var demo = require('./demo');
+
 var request = require('request');
+
+var docs = require('./docs');
+var ctoAppTuner = require('./cto-app-tuner');
+var todoAppModular = require('./todo-app-modular');
 
 var PORT = 8000;
 
@@ -33,18 +28,47 @@ if (!process.env.SILENT_MODE) {
   app.use(morgan('tiny'));
 }
 
-
-app.use(bodyParser.json());
-
 router.get('/', function (req, res) {
   res.redirect('/docs');
 });
 
-app.use('/', require('./accept-language'));
+app.use('/', function(req, res, next) {
+  var acceptLanguageHeader = req.headers['accept-language'];
+
+  if (acceptLanguageHeader) {
+    var acceptedLanguages = acceptLanguageHeader.match(/[a-zA-z\-]{2,10}/g);
+    if (acceptedLanguages) {
+      res.cookie('languages', JSON.stringify(acceptedLanguages));
+    }
+  }
+
+  next();
+});
 
 app.use('/tour/', function (req, res) {
   res.redirect('/medium-app');
 });
+
+app.use('/medium-app', proxy('localhost:8010', {
+  forwardPath: function(req) {
+    return '/medium-app' + require('url').parse(req.url).path;
+  }
+}));
+
+//app.use('/people-finder', proxy('localhost:8020'));
+
+
+app.use('/ldap', proxy('localhost:8020', {
+  forwardPath: function(req) {
+    return '/ldap' + require('url').parse(req.url).path;
+  }
+}));
+
+app.use('/rest', proxy('localhost:8010', {
+  forwardPath: function(req) {
+    return '/rest' + require('url').parse(req.url).path;
+  }
+}));
 
 app.use('/slackin', proxy('localhost:3000', {
   forwardPath: function(req) {
@@ -68,7 +92,7 @@ app.use('/invite', function(req, res) {
 
 app.get('/assets/design/:name', function(req, res) {
   var options = {
-    root: path.join(__dirname, '/../../docs/dist/assets/design'),
+    root: path.join(__dirname, '/../docs/dist/assets/design'),
     dotfiles: 'deny',
     headers: {
         'x-timestamp': Date.now(),
@@ -94,22 +118,15 @@ app.get('/assets/design/:name', function(req, res) {
 
 app.
   use('/docs', docs).
-  use('/rest', rest.router).
-  use('/medium-app', mediumApp).
-  use('/medium-app-dev', mediumAppDev).
-  use('/ldap', ldap).
-  use('/people-finder', peopleFinder).
-  use('/marketing', marketing).
   use('/cto-app-tuner', ctoAppTuner).
-  use('/todo-app-modular', todoAddModular).
-  use('/assets', express.static(path.join(__dirname, '/../../docs/dist/assets'))).
+  use('/todo-app-modular', todoAppModular).
+  use('/hello-world', express.static(path.join(__dirname, '/../examples/hello-world'))).
+  use('/assets', express.static(path.join(__dirname, '/../docs/dist/assets'))).
   use('/assets', express.static('/usr/local/lib/node_modules/slackin/lib/assets')).
-  use('/hello-world', express.static(path.join(__dirname, '/../hello-world'))).
-  //use('/demo', demo).
   use('', router);
 
 var server = http.createServer(app);
 
-rest.setup(server);
-
 server.listen(PORT);
+
+console.log('Server started, listening at: http://localhost:' + PORT + '...');

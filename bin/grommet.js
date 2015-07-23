@@ -125,15 +125,6 @@ gulp.task('export', function(done) {
       var exampleFolder = path.join(grommetPath, 'examples/' + app);
       var templateFolder = path.join(grommetPath, 'templates/' + app + '/**');
 
-      var serverFiles = [];
-      var acceptLanguage = path.join(grommetPath,
-         'examples/server/accept-language.js');
-
-      if (app === 'people-finder') {
-        var ldap = path.join(grommetPath, 'examples/server/ldap.js');
-        serverFiles = [ldap, acceptLanguage];
-      }
-
       fs.exists(exampleFolder, function(exists) {
         if (!exists) {
           throw new Error('Could not find ' + exampleFolder);
@@ -153,9 +144,6 @@ gulp.task('export', function(done) {
           gulp.src(templateFolder).pipe(template({
             appName: dest
           })).pipe(gulp.dest('./')).on('finish', function() {
-            if (app === 'people-finder') {
-              gulp.src(serverFiles).pipe(gulp.dest('./server'));
-            }
 
             //merging template NPM with application NPM
             try {

@@ -9,9 +9,9 @@ var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var path = require('path');
 
-var rest = require('./rest');
+var ldap = require('./ldap');
 
-var PORT = 8010;
+var PORT = 8020;
 
 var app = express();
 
@@ -23,24 +23,16 @@ app.use(morgan('tiny'));
 
 app.use(bodyParser.json());
 
-var path = require('path');
+app.
+  use('/ldap', ldap).
+  use('', router);
 
-app.use('/medium-app/', express.static(path.join(__dirname, '/../dist')));
-app.get('/medium-app/*', function (req, res) {
+app.use('/', express.static(path.join(__dirname, '/../dist')));
+app.get('/*', function (req, res) {
   res.sendFile(path.resolve(path.join(__dirname, '/../dist/index.html')));
 });
 
-app.get('/', function (req, res) {
-  res.redirect('/medium-app');
-});
-
-app.
-  use('/rest', rest.router).
-  use('', router);
-
 var server = http.createServer(app);
-
-rest.setup(server);
 
 server.listen(PORT);
 

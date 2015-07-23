@@ -7,7 +7,7 @@ var ldap = require('ldapjs');
 var client;
 var timer;
 
-router.get("/", function(req, res) {
+router.get('/', function(req, res) {
   //console.log('!!! ldap', req.query);
 
   if (! client) {
@@ -40,11 +40,11 @@ router.get("/", function(req, res) {
         //console.log('referral: ', referral.uris.join());
       });
       ldapRes.on('error', function (err) {
-        console.log('error:', err.message, ' have ', entries.length);
+        //console.log('error:', err.message, ' have ', entries.length);
         res.send(entries);
       });
       ldapRes.on('end', function (result) {
-        //console.log('status: ', result.status, ' have ', entries.length);
+        console.log('status: ', result.status, ' have ', entries.length);
         res.send(entries);
       });
     }
