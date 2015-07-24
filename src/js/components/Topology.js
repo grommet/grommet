@@ -152,11 +152,15 @@ var Topology = React.createClass({
         colorIndex: React.PropTypes.string,
         ids: React.PropTypes.arrayOf(React.PropTypes.string).isRequired
       })
-    )
+    ),
+    linkOffset: React.PropTypes.number
   },
 
   getDefaultProps: function () {
-    return {links: []};
+    return {
+      links: [],
+      linkOffset: 18
+    };
   },
 
   _coords: function (id, canvasRect) {
@@ -187,6 +191,7 @@ var Topology = React.createClass({
       var context = canvasElement.getContext('2d');
       var canvasRect = canvasElement.getBoundingClientRect();
       context.clearRect(0, 0, canvasRect.width, canvasRect.height);
+      var linkOffset = this.props.linkOffset;
 
       this.props.links.forEach(function (link, linkIndex) {
 
@@ -220,11 +225,11 @@ var Topology = React.createClass({
             if (delta[0] > delta[1]) {
               // larger X delta
               cp1 = [p1[0],
-                Math.min(p1[1], p2[1]) + Math.max(18, (delta[1] / 2)) + (linkIndex * 2)];
+                Math.min(p1[1], p2[1]) + Math.max(linkOffset, (delta[1] / 2)) + (linkIndex * 2)];
               cp2 = [p2[0], cp1[1]];
             } else {
               // larger Y delta or equal
-              cp1 = [Math.min(p1[0], p2[0]) + Math.max(18, (delta[0] / 2) + (linkIndex * 2)),
+              cp1 = [Math.min(p1[0], p2[0]) + Math.max(linkOffset, (delta[0] / 2) + (linkIndex * 2)),
                 p1[1]];
               cp2 = [cp1[0], p2[1]];
             }
