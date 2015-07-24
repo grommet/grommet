@@ -54,7 +54,7 @@ module.exports = function(gulp, opts) {
           test: /\.scss$/,
           loader: 'style!css!sass?outputStyle=expanded&' +
             'includePaths[]=' +
-            (path.resolve(options.base || process.cwd(), './node_modules'))
+            (encodeURIComponent(path.resolve(options.base || process.cwd(), './node_modules')))
         },
         {
           test: /\.css$/,
