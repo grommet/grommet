@@ -6,11 +6,10 @@ var RestWatch = require('grommet/utils/RestWatch');
 var Article = require('grommet/components/Article');
 var Header = require('grommet/components/Header');
 var Section = require('grommet/components/Section');
-//var ResourceNotifications = require('grommet/components/index/ResourceNotifications');
+var ResourceNotifications = require('grommet/components/index/ResourceNotifications');
 var Attribute = require('grommet/components/Attribute');
 var StatusIcon = require('grommet/components/icons/Status');
 var Tiles = require('grommet/components/Tiles');
-//var Tile = require('grommet/components/Tile');
 
 var ServerProfileOverview = React.createClass({
 
@@ -73,7 +72,7 @@ var ServerProfileOverview = React.createClass({
           </span>
         </Header>
 
-        {/*<ResourceNotifications resourceUri={this.state.uri} />*/}
+        <ResourceNotifications resourceUri={this.state.uri} />
 
         <Section pad="medium">
           <Attribute label="Description">

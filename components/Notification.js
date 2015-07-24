@@ -62,8 +62,8 @@ var GrommetNotification = React.createClass({
         <span className={CLASS_ROOT + "__message"}>
           {this.props.message}
         </span>
-        {state}
         {timestamp}
+        {state}
         {this.props.children}
       </div>
     );
