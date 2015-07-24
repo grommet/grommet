@@ -34,7 +34,7 @@ var opts = {
     }
   },
   sync: {
-    hostname: '15.126.219.8',
+    hostname: 'grommet.io',
     username: 'grommet',
     remoteDestination: '/var/www/html/examples/todo-app-modular/dist'
   }

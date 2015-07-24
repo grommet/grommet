@@ -26,7 +26,7 @@ var opts = {
   mainJs: 'examples/people-finder/src/js/index.js',
   mainScss: 'examples/people-finder/src/scss/index.scss',
   sync: {
-    hostname: '15.126.219.8',
+    hostname: 'grommet.io',
     username: 'ligo',
     remoteDestination: '/var/www/html/examples/people-finder/dist'
   },

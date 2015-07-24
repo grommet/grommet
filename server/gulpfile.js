@@ -7,7 +7,7 @@ gulp.task('sync', function() {
   gulp.src('.')
     .pipe(rsync({
       root: '.',
-      hostname: '15.126.219.8',
+      hostname: 'grommet.io',
       username: 'grommet',
       destination: '/var/www/html/server',
       recursive: true,
@@ -17,7 +17,7 @@ gulp.task('sync', function() {
       clean: true,
       silent: false,
       emptyDirectories: true,
-      exclude: ['.DS_Store']
+      exclude: ['.DS_Store', 'node_modules']
     }));
 });
 
