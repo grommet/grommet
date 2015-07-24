@@ -20,6 +20,7 @@ var request = require('request');
 var docs = require('./docs');
 var ctoAppTuner = require('./cto-app-tuner');
 var todoAppModular = require('./todo-app-modular');
+var cabler = require('./cabler');
 
 var PORT = 8000;
 
@@ -116,6 +117,7 @@ app.
   use('/docs', docs).
   use('/cto-app-tuner', ctoAppTuner).
   use('/todo-app-modular', todoAppModular).
+  use('/cabler', cabler).
   use('/hello-world', express.static(path.join(__dirname, '/../examples/hello-world'))).
   use('/assets', express.static(path.join(__dirname, '/../docs/dist/assets'))).
   use('/assets', express.static('/usr/local/lib/node_modules/slackin/lib/assets')).

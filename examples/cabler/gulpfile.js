@@ -1,34 +1,33 @@
 var gulp = require('gulp');
 var path = require('path');
-var nodemon = require('gulp-nodemon');
 var devGulpTasks = require('../../src/utils/gulp/gulp-tasks');
 
 var opts = {
   base: '../../',
-  dist: path.resolve(__dirname, '../../examples/people-finder/dist/'),
+  dist: path.resolve(__dirname, '../../examples/cabler/dist/'),
   copyAssets: [
-    'examples/people-finder/src/index.html',
+    'examples/cabler/src/index.html',
     {
-      asset: 'examples/people-finder/src/img/**',
-      dist: 'examples/people-finder/dist/img/'
+      asset: 'examples/cabler/src/img/**',
+      dist: 'examples/cabler/dist/img/'
     },
     {
       asset: path.resolve(__dirname, '../../src/img/mobile-app-icon.png'),
-      dist: 'examples/people-finder/dist/img/'
+      dist: 'examples/cabler/dist/img/'
     },
     {
       asset: path.resolve(__dirname, '../../src/img/shortcut-icon.png'),
-      dist: 'examples/people-finder/dist/img/'
+      dist: 'examples/cabler/dist/img/'
     }
   ],
-  scssAssets: ['examples/people-finder/src/scss/**/*.scss'],
-  jsAssets: ['examples/people-finder/src/js/**/*.js'],
-  mainJs: 'examples/people-finder/src/js/index.js',
-  mainScss: 'examples/people-finder/src/scss/index.scss',
+  scssAssets: ['examples/cabler/src/scss/**/*.scss'],
+  jsAssets: ['examples/cabler/src/js/**/*.js'],
+  mainJs: 'examples/cabler/src/js/index.js',
+  mainScss: 'examples/cabler/src/scss/index.scss',
   sync: {
     hostname: 'grommet.usa.hp.com',
     username: 'ligo',
-    remoteDestination: '/var/www/html/examples/people-finder/dist'
+    remoteDestination: '/var/www/html/examples/cabler/dist'
   },
   webpack: {
     resolve: {
@@ -45,17 +44,7 @@ var opts = {
       ]
     }
   },
-  devServerPort: 9020,
-  devServerProxy: {
-    "/ldap/*": 'http://localhost:8020'
-  },
-  devPreprocess: ['start-backend']
+  devServerPort: 9021
 };
-
-gulp.task('start-backend', function() {
-  nodemon({
-    script: path.resolve(__dirname, 'server/server')
-  });
-});
 
 devGulpTasks(gulp, opts);
