@@ -1,7 +1,7 @@
 # Grommet Example App: medium-app
 
 ## Demo
-[Live demo](http://grommet.io/medium-app) of an example "medium sized" application using Grommet.
+[Live demo](http://grommet.io/medium-app/) of an example "medium sized" application using Grommet.
 
 Login credentials: `Username` any string that looks like an email address and any `Password` (not used or stored).
 
