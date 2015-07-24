@@ -11,8 +11,8 @@ var DropCaret = React.createClass({
     }
     return (
       <svg className={className} viewBox="0 0 48 48" version="1.1" >
-        <g stroke="none">
-          <polygon points="33.4,19.7 24.1,30.3 14.8,19.7" />
+        <g fill="none">
+          <polyline strokeWidth="2" strokeMiterlimit="10" points="34,19 24,29 14,19 "/>
         </g>
       </svg>
     );
