@@ -17,7 +17,42 @@ var KEYS = {
   shift: 16
 };
 
-var downs = [];
+var _keyboardAccelerators = {};
+var _listenersCounter = 0;
+var _listeners = [];
+var _isKeyboardAcceleratorListening = false;
+
+var _onKeyboardAcceleratorKeyPress = function (e) {
+  var key = (e.keyCode ? e.keyCode : e.which);
+  for (var i = _listenersCounter - 1; i >= 0; i--) {
+    var id = _listeners[i];
+    var handlers = _keyboardAccelerators[id].handlers;
+    var downs = _keyboardAccelerators[id].downs;
+    if (handlers.hasOwnProperty(key) && !downs[KEYS.shift]) {
+      var ret = handlers[key](e);
+      if (ret) {
+        break;
+      }
+    }
+    downs[e.keyCode] = true;
+  }
+};
+
+var _onKeyboardAcceleratorKeyUp = function (e) {
+  for (var i = _listenersCounter - 1; i >= 0; i--) {
+    var id = _listeners[i];
+    var handlers = _keyboardAccelerators[id].handlers;
+    var downs = _keyboardAccelerators[id].downs;
+    if (downs[KEYS.shift] && downs[KEYS.left] &&
+      handlers.shiftLeft) {
+      handlers.shiftLeft(e);
+    } else if (downs[KEYS.shift] && downs[KEYS.right] &&
+      handlers.shiftRight) {
+      handlers.shiftRight(e);
+    }
+    downs[e.keyCode] = false;
+  }
+};
 
 // KeyboardAccelerators is a mixin for handling keyboard events.
 // Add listeners using startListeningToKeyboard().
@@ -25,34 +60,62 @@ var downs = [];
 // When the component that includes this is unmounted, the keyboard event
 // listener is removed automatically.
 var KeyboardAccelerators = {
-
-  _keyboardAcceleratorHandlers: {},
-  _keyboardAcceleratorListening: false,
-
-  _onKeyboardAcceleratorKeyPress: function (e) {
-    var key = (e.keyCode ? e.keyCode : e.which);
-    if (this._keyboardAcceleratorHandlers.hasOwnProperty(key) && !downs[KEYS.shift]) {
-      this._keyboardAcceleratorHandlers[key](e);
-    }
-    downs[e.keyCode] = true;
+  _initKeyboardAccelerators: function () {
+    var id = this.getDOMNode().getAttribute('data-reactid');
+    _keyboardAccelerators[id] = {
+      handlers: {},
+      listening: false,
+      downs: []
+    };
   },
 
-  _onKeyboardAcceleratorKeyUp: function (e) {
-    if (downs[KEYS.shift] && downs[KEYS.left] &&
-      this._keyboardAcceleratorHandlers.shiftLeft) {
-      this._keyboardAcceleratorHandlers.shiftLeft(e);
-    } else if (downs[KEYS.shift] && downs[KEYS.right] &&
-      this._keyboardAcceleratorHandlers.shiftRight) {
-      this._keyboardAcceleratorHandlers.shiftRight(e);
-    }
+  _getKeyboardAcceleratorHandlers: function () {
+    var id = this.getDOMNode().getAttribute('data-reactid');
+    return _keyboardAccelerators[id].handlers;
+  },
 
-    downs[e.keyCode] = false;
+  _getDowns: function () {
+    var id = this.getDOMNode().getAttribute('data-reactid');
+    return _keyboardAccelerators[id].downs;
+  },
+
+  _isComponentListening: function () {
+    var id = this.getDOMNode().getAttribute('data-reactid');
+    for (var i = 0; i < _listenersCounter; i++) {
+      if (_listeners[i] === id) {
+        return true;
+      }
+    }
+    return false;
+  },
+
+  _subscribeComponent: function () {
+    var id = this.getDOMNode().getAttribute('data-reactid');
+    _listeners[_listenersCounter] = id;
+    _listenersCounter++;
+  },
+
+  _unsubscribeComponent: function () {
+    var id = this.getDOMNode().getAttribute('data-reactid');
+    var i = 0;
+    for (; i < _listenersCounter; i++) {
+      if (_listeners[i] == id) {
+        break;
+      }
+    }
+    for (; i < _listenersCounter - 1; i++) {
+      _listeners[i] = this.listeners[i + 1];
+    }
+    _listenersCounter--;
+    _listeners[_listenersCounter] = null;
+    delete _keyboardAccelerators[id];
   },
 
   // Add handlers for specific keys.
   // This function can be called multiple times, existing handlers will
   // be replaced, new handlers will be added.
   startListeningToKeyboard: function (handlers) {
+    this._initKeyboardAccelerators();
     var keys = 0;
     for (var key in handlers) {
       if (handlers.hasOwnProperty(key)) {
@@ -61,14 +124,19 @@ var KeyboardAccelerators = {
           keyCode = KEYS[key];
         }
         keys += 1;
-        this._keyboardAcceleratorHandlers[keyCode] = handlers[key];
+        this._getKeyboardAcceleratorHandlers()[keyCode] = handlers[key];
       }
     }
 
-    if (keys > 0 && ! this._keyboardAcceleratorListening) {
-      window.addEventListener("keydown", this._onKeyboardAcceleratorKeyPress);
-      window.addEventListener("keyup", this._onKeyboardAcceleratorKeyUp);
-      this._keyboardAcceleratorListening = true;
+    if (keys > 0) {
+      if (!_isKeyboardAcceleratorListening) {
+        window.addEventListener("keydown", _onKeyboardAcceleratorKeyPress);
+        window.addEventListener("keyup", _onKeyboardAcceleratorKeyUp);
+        _isKeyboardAcceleratorListening = true;
+      }
+      if (!this._isComponentListening()) {
+        this._subscribeComponent();
+      }
     }
   },
 
@@ -77,6 +145,9 @@ var KeyboardAccelerators = {
   // This function can be called multiple times, only the handlers
   // specified will be removed.
   stopListeningToKeyboard: function (handlers) {
+    if (!this._isComponentListening()) {
+      return;
+    }
     if (handlers) {
       for (var key in handlers) {
         if (handlers.hasOwnProperty(key)) {
@@ -84,23 +155,27 @@ var KeyboardAccelerators = {
           if (KEYS.hasOwnProperty(key)) {
             keyCode = KEYS[key];
           }
-          delete this._keyboardAcceleratorHandlers[keyCode];
+          delete this._getKeyboardAcceleratorHandlers()[keyCode];
         }
       }
     }
 
     var keyCount = 0;
-    for (var keyHandler in this._keyboardAcceleratorHandlers) {
-      if (this._keyboardAcceleratorHandlers.hasOwnProperty(keyHandler)) {
+    for (var keyHandler in this._getKeyboardAcceleratorHandlers()) {
+      if (this._getKeyboardAcceleratorHandlers().hasOwnProperty(keyHandler)) {
         keyCount += 1;
       }
     }
 
     if (! handlers || 0 === keyCount) {
-      window.removeEventListener("keydown", this._onKeyboardAcceleratorKeyPress);
-      window.removeEventListener("keyup", this._onKeyboardAcceleratorKeyUp);
-      this._keyboardAcceleratorHandlers = {};
-      this._keyboardAcceleratorListening = false;
+      this._initKeyboardAccelerators();
+      this._unsubscribeComponent();
+    }
+
+    if (_listenersCounter === 0) {
+      window.removeEventListener("keydown", _onKeyboardAcceleratorKeyPress);
+      window.removeEventListener("keyup", _onKeyboardAcceleratorKeyUp);
+      _isKeyboardAcceleratorListening = false;
     }
   },
 
