@@ -54,30 +54,29 @@ app.use('/tour/', function (req, res) {
   res.redirect('/medium-app');
 });
 
-app.use('/medium-app', function(req, res){
-  proxy.web(req, res, { target: 'http://localhost:8010/medium-app/' });
+app.use('/medium-app', function(req, res) {
+  proxy.web(req, res, { target: 'http://localhost:8010/medium-app' });
 });
 
-app.use('/people-finder', function(req, res){
+app.use('/people-finder', function(req, res) {
   proxy.web(req, res, { target: 'http://localhost:8020/' });
 });
 
-app.use('/ldap', function(req, res){
+app.use('/ldap', function(req, res) {
   proxy.web(req, res, { target: 'http://localhost:8020/ldap' });
 });
 
-app.use('/rest', function(req, res){
+app.use('/rest', function(req, res) {
   proxy.web(req, res, { target: 'http://localhost:8010/rest' });
 });
 
-app.use('/slackin', function(req, res){
+app.use('/slackin', function(req, res) {
   proxy.web(req, res, { target: 'http://localhost:3000/' });
 });
 
-app.use('/socket.io', function(req, res){
+app.use('/socket.io', function(req, res) {
   proxy.web(req, res, { target: 'http://localhost:3000/socket.io' });
 });
-
 
 app.use('/invite', function(req, res) {
   var data = req.body;
