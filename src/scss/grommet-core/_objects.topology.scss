@@ -7,8 +7,32 @@ $inner-pad: round($inuit-base-spacing-unit * 0.25);
   position: relative;
 
   > .topology__parts {
-    > .topology__part {
-      margin: 0 $outer-pad $outer-pad 0;
+
+    @include media-query(palm) {
+      -webkit-flex-direction: column;
+      flex-direction: column;
+    }
+
+    &--direction {
+      &-row {
+        > .topology__part {
+          margin-right: $outer-pad;
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+
+      &-column {
+        > .topology__part {
+          margin-bottom: $outer-pad;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
     }
   }
 
