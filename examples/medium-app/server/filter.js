@@ -150,11 +150,19 @@ function TextTerm (text) {
 function Expression () {
 
   this.op = function (op) {
-    if (this._op) {
-      // already have an op, nest
-      throw 'Multiple operations';
-    } else {
+    if (! this._op) {
       this._op = op;
+    } else {
+      // already have an op, nest
+      // If the right is a simple term, convert it to an expression.
+      if (! this._right._left) {
+        var expression = new Expression();
+        expression.addTerm(this._right);
+        expression.op(op);
+        this._right = expression;
+      } else {
+        throw 'Multiple operations';
+      }
     }
   };
 
