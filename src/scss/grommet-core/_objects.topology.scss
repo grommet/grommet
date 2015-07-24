@@ -15,11 +15,22 @@ $inner-pad: round($inuit-base-spacing-unit * 0.25);
 
     &--direction {
       &-row {
-        > .topology__part {
-          margin-right: $outer-pad;
 
-          &:last-child {
-            margin-right: 0;
+        > .topology__part {
+          @include media-query(lap-and-up) {
+            margin-right: $outer-pad;
+
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+
+          @include media-query(palm) {
+            margin-bottom: $outer-pad;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
           }
         }
       }
