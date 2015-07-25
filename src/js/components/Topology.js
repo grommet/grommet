@@ -355,7 +355,7 @@ var Topology = React.createClass({
       <div ref="topology" className={classes.join(' ')}>
         <canvas ref="canvas" className={CLASS_ROOT + "__canvas"}
           width={this.state.canvasWidth} height={this.state.canvasHeight} />
-        <div ref="contents">
+        <div ref="contents" className={CLASS_ROOT + "__contents"}>
           {this.props.children}
         </div>
         <div className={CLASS_ROOT + "__color-key"}>

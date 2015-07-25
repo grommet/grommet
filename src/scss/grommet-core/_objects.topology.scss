@@ -6,7 +6,7 @@ $inner-pad: round($inuit-base-spacing-unit * 0.25);
 .topology {
   position: relative;
 
-  > .topology__parts {
+  &__contents > .topology__parts {
 
     @include media-query(palm) {
       -webkit-flex-direction: column;
@@ -16,7 +16,7 @@ $inner-pad: round($inuit-base-spacing-unit * 0.25);
     &--direction {
       &-row {
 
-        > .topology__part {
+        &__contents > .topology__part {
           @include media-query(lap-and-up) {
             margin-right: $outer-pad;
 
@@ -36,7 +36,7 @@ $inner-pad: round($inuit-base-spacing-unit * 0.25);
       }
 
       &-column {
-        > .topology__part {
+        &__contents > .topology__part {
           margin-bottom: $outer-pad;
 
           &:last-child {

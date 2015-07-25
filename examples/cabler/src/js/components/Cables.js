@@ -49,7 +49,7 @@ var Cables = React.createClass({
       <Article>
         <Header pad={{horizontal: "medium"}} justify="between" fixed={true}>
           Cables
-          <Menu inline={true} direction="row" align="center">
+          <Menu inline={true} direction="row" align="center" responsive={false}>
             <Anchor href="" onClick={this.props.onClose}><CloseIcon /></Anchor>
           </Menu>
         </Header>
