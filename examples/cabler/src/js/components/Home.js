@@ -11,14 +11,25 @@ var Home = React.createClass({
     onConfigure: React.PropTypes.func.isRequired
   },
 
+  _onResponsive: function (responsive) {
+    this.setState({responsive: responsive});
+  },
+
   getInitialState: function () {
     return {data: null};
   },
 
   render: function() {
+    var image;
+    if ('multiple' === this.state.responsive) {
+      image = (
+        <Section full={true} pad="none"
+          texture="url(img/3PAR_ManPullingDriveSquattingHR.jpg)" />
+      );
+    }
     return (
-      <Split flex="left" separator={true}>
-        <Section full={true} pad="none" texture="url(img/3PAR_ManPullingDriveSquattingHR.jpg)" />
+      <Split flex="left" separator={true} onResponsive={this._onResponsive}>
+        {image}
         <Configuration onConfigure={this.props.onConfigure} />
       </Split>
     );
