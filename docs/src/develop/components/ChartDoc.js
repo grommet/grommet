@@ -2,6 +2,7 @@
 
 var React = require('react');
 var stringify = require("json-stringify-pretty-compact");
+var moment = require('moment');
 var Article = require('grommet/components/Article');
 var Chart = require('grommet/components/Chart');
 var Tiles = require('grommet/components/Tiles');
@@ -63,7 +64,33 @@ var thresholds = [
   {label: 'Error', value: 4, colorIndex: 'error'}
 ];
 
+var secondsSeries = [
+  {label: 'first', values: [], colorIndex: "graph-1"}
+];
+let now = moment();
+for (let i = 0; i < 90; i += 5) {
+  secondsSeries[0].values.push([
+    moment(now).subtract(i, 'seconds').unix(),
+    Math.ceil(Math.random() * 5)
+  ]);
+}
+
 var ChartDoc = React.createClass({
+
+  componentDidMount: function () {
+    this._timer = setInterval(function () {
+      secondsSeries[0].values.unshift([
+        moment().unix(),
+        Math.ceil(Math.random() * 5)
+      ]);
+      secondsSeries[0].values.pop();
+      this.forceUpdate();
+    }.bind(this), 5000);
+  },
+
+  componentWillUnmount: function () {
+    clearInterval(this._timer);
+  },
 
   render: function() {
     return (
@@ -208,6 +235,16 @@ var ChartDoc = React.createClass({
               " legend={{}}\n" +
               " xAxis={" + stringify(dateSeriesXAxis) +  "}\n" +
               " series={" + stringify(dateSeries) + "} />"}
+          </code></pre>
+
+          <h3>Ticker</h3>
+          <div className="example">
+          <Chart series={secondsSeries} min={0} max={5} threshold={3}
+            type="bar" legend={{}} />
+          </div>
+          <pre><code className="html">
+            {"<Chart type=\"bar\" threshold={3}\n" +
+              " legend={{}} series={...} />"}
           </code></pre>
 
           <h3>Tiles</h3>
