@@ -70,11 +70,11 @@ var ResourceMap = React.createClass({
 
   _layout: function () {
     var mapElement = this.refs.map.getDOMNode();
-    if (mapElement.clientWidth !== this.state.canvasWidth ||
-      mapElement.clientHeight !== this.state.canvasHeight) {
+    if (mapElement.scrollWidth !== this.state.canvasWidth ||
+      mapElement.scrollHeight !== this.state.canvasHeight) {
       this.setState({
-        canvasWidth: mapElement.clientWidth,
-        canvasHeight: mapElement.clientHeight
+        canvasWidth: mapElement.scrollWidth,
+        canvasHeight: mapElement.scrollHeight
       });
     }
   },

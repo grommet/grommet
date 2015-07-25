@@ -229,8 +229,12 @@ var Topology = React.createClass({
               cp2 = [p2[0], cp1[1]];
             } else {
               // larger Y delta or equal
-              cp1 = [Math.min(p1[0], p2[0]) + Math.max(linkOffset, (delta[0] / 2) + (linkIndex * 2)),
-                p1[1]];
+              let cp1xDelta = Math.max(linkOffset, (delta[0] / 2) + (linkIndex * 2));
+              if (p1[0] > p2[0]) {
+                cp1 = [p2[0] + cp1xDelta, p1[1]];
+              } else {
+                cp1 = [p1[0] - cp1xDelta, p1[1]];
+              }
               cp2 = [cp1[0], p2[1]];
             }
 
@@ -243,12 +247,12 @@ var Topology = React.createClass({
   },
 
   _layout: function () {
-    var element = this.refs.topology.getDOMNode();
-    if (element.clientWidth !== this.state.canvasWidth ||
-      element.clientHeight !== this.state.canvasHeight) {
+    var element = this.refs.contents.getDOMNode();
+    if (element.scrollWidth !== this.state.canvasWidth ||
+      element.scrollHeight !== this.state.canvasHeight) {
       this.setState({
-        canvasWidth: element.clientWidth,
-        canvasHeight: element.clientHeight
+        canvasWidth: element.scrollWidth,
+        canvasHeight: element.scrollHeight
       });
     }
   },
@@ -351,7 +355,9 @@ var Topology = React.createClass({
       <div ref="topology" className={classes.join(' ')}>
         <canvas ref="canvas" className={CLASS_ROOT + "__canvas"}
           width={this.state.canvasWidth} height={this.state.canvasHeight} />
-        {this.props.children}
+        <div ref="contents">
+          {this.props.children}
+        </div>
         <div className={CLASS_ROOT + "__color-key"}>
           {colorKeys}
         </div>
