@@ -132,7 +132,7 @@ var Diagram = React.createClass({
         <Article>
           <Header pad={{horizontal: "medium"}} justify="between">
             <Title onClick={this._onHome}>HP 3Par Storage Cabling</Title>
-            <Menu inline={true} direction="row" align="center">
+            <Menu inline={true} direction="row" align="center" responsive={false}>
               <Filter data={this.props.data} onChange={this._onFilterChange} />
               {cablesControl}
             </Menu>

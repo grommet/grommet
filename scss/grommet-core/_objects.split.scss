@@ -62,4 +62,16 @@
       }
     }
   }
+
+  @include media-query(palm) {
+    &--separator {
+      > * {
+        border-bottom: 1px solid $strong-border-color;
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+  }
 }
