@@ -26,16 +26,15 @@ var Diagram = React.createClass({
 
   _onToggleCables: function (event) {
     event.preventDefault();
-    if (this.state.showCables) {
-      this.props.data.cables.forEach(function (cable) {
-        cable.highlight = false;
-      });
-    }
     this.setState({showCables: ! this.state.showCables});
   },
 
   _onFilterChange: function () {
     this.forceUpdate();
+  },
+
+  _onResponsive: function (responsive) {
+    this.setState({responsive: responsive});
   },
 
   getInitialState: function () {
@@ -114,21 +113,15 @@ var Diagram = React.createClass({
   },
 
   render: function() {
-    var topology = this._renderTopology();
+    var article;
+    if (! this.state.showCables || 'multiple' === this.state.responsive) {
+      var cablesControl;
+      if (! this.state.showCables) {
+        cablesControl = <Anchor href="" onClick={this._onToggleCables}>Cables</Anchor>;
+      }
+      let topology = this._renderTopology();
 
-    var cablesControl;
-    var cables;
-    if (this.state.showCables) {
-      cables = (
-        <Cables cables={this.props.data.cables} onClose={this._onToggleCables}
-          onChange={this._onFilterChange} />
-      );
-    } else {
-      cablesControl = <Anchor href="" onClick={this._onToggleCables}>Cables</Anchor>;
-    }
-
-    return (
-      <Split flex="left" separator={true}>
+      article = (
         <Article>
           <Header pad={{horizontal: "medium"}} justify="between">
             <Title onClick={this._onHome}>HP 3Par Storage Cabling</Title>
@@ -141,6 +134,20 @@ var Diagram = React.createClass({
             {topology}
           </Section>
         </Article>
+      );
+    }
+
+    var cables;
+    if (this.state.showCables) {
+      cables = (
+        <Cables cables={this.props.data.cables} onClose={this._onToggleCables}
+          onChange={this._onFilterChange} />
+      );
+    }
+
+    return (
+      <Split flex="left" separator={true} onResponsive={this._onResponsive}>
+        {article}
         {cables}
       </Split>
     );

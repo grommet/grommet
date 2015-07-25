@@ -3,6 +3,8 @@
 var React = require('react');
 var FilterIcon = require('grommet/components/icons/Filter');
 var Menu = require('grommet/components/Menu');
+var Box = require('grommet/components/Box');
+var Anchor = require('grommet/components/Anchor');
 var CheckBox = require('grommet/components/CheckBox');
 
 var Filter = React.createClass({
@@ -26,6 +28,17 @@ var Filter = React.createClass({
 
   _onChange: function () {
 
+  },
+
+  _onReset: function (event) {
+    event.preventDefault();
+    this.props.data.nodes.forEach(function (node) {
+      node.highlight = false;
+    });
+    this.props.data.cables.forEach(function (cable, cableIndex) {
+      cable.highlight = false;
+    });
+    this.props.onChange();
   },
 
   render: function() {
@@ -55,24 +68,28 @@ var Filter = React.createClass({
 
     return (
       <Menu icon={<FilterIcon />}
-        dropAlign={{right: 'right'}} pad="medium"
+        dropAlign={{right: 'right'}} pad="none"
         direction="column" closeOnClick={false}>
 
-        {nodes}
+        <Anchor href="" onClick={this._onReset}>Reset</Anchor>
 
-        <h4>Ports</h4>
-        <CheckBox id="port-all"
-          label="All"
-          checked={true}
-          onChange={this._onChange} />
-        <CheckBox id="port-1"
-          label="DP-1"
-          checked={false}
-          onChange={this._onChange} />
-        <CheckBox id="port-2"
-          label="DP-2"
-          checked={false}
-          onChange={this._onChange} />
+        <Box pad="medium" direction="column">
+          {nodes}
+
+          <h4>Ports</h4>
+          <CheckBox id="port-all"
+            label="All"
+            checked={true}
+            onChange={this._onChange} />
+          <CheckBox id="port-1"
+            label="DP-1"
+            checked={false}
+            onChange={this._onChange} />
+          <CheckBox id="port-2"
+            label="DP-2"
+            checked={false}
+            onChange={this._onChange} />
+        </Box>
       </Menu>
     );
   }
