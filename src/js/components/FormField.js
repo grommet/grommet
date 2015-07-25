@@ -66,13 +66,13 @@ var FormField = React.createClass({
       classes.push(CLASS_ROOT + "--text");
     }
 
-    var error = null;
+    var error;
     if (this.props.error) {
       classes.push(CLASS_ROOT + "--error");
       error = <span className={CLASS_ROOT + "__error"}>{this.props.error}</span>;
     }
-    var help = null;
-    if (this.props.help) {
+    var help;
+    if (this.props.help !== null && this.props.help !== undefined) {
       help = <span className={CLASS_ROOT + "__help"}>{this.props.help}</span>;
     }
 

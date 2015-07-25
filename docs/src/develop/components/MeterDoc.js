@@ -4,6 +4,7 @@ var React = require('react');
 var stringify = require("json-stringify-pretty-compact");
 var Article = require('grommet/components/Article');
 var Meter = require('grommet/components/Meter');
+var FormField = require('grommet/components/FormField');
 
 var inline =
   "<Meter value={70} total={100} units=\"GB\" />";
@@ -36,11 +37,19 @@ var series = [
 
 var MeterDoc = React.createClass({
 
+  _onChangeSimpleValue: function (event) {
+    this.setState({simpleValue: parseInt(event.target.value)});
+  },
+
+  getInitialState: function () {
+    return {simpleValue: simpleValue};
+  },
+
   render: function() {
     return (
       <Article>
         <header>
-          <h1>Meter X</h1>
+          <h1>Meter</h1>
           <p>Shows a bar, arc, or circular meter graphic.</p>
           <pre><code className="html">{inline}</code></pre>
         </header>
@@ -86,52 +95,52 @@ var MeterDoc = React.createClass({
 
           <h3>Bar</h3>
           <div className="example">
-            <Meter value={simpleValue} />
+            <Meter value={this.state.simpleValue} />
           </div>
           <pre><code className="html">
-            {"<Meter value={" + simpleValue + "} />"}
+            {"<Meter value={" + this.state.simpleValue + "} />"}
           </code></pre>
 
           <h3>Bar, Vertical</h3>
           <div className="example">
-            <Meter value={simpleValue} vertical={true} />
+            <Meter value={this.state.simpleValue} vertical={true} />
           </div>
           <pre><code className="html">
-            {"<Meter value={" + simpleValue + "} vertical={true} />"}
+            {"<Meter value={" + this.state.simpleValue + "} vertical={true} />"}
           </code></pre>
 
           <h3>Arc</h3>
           <div className="example">
-            <Meter value={simpleValue} type="arc" />
+            <Meter value={this.state.simpleValue} type="arc" />
           </div>
           <pre><code className="html">
-            {"<Meter value={" + simpleValue + "} type=\"arc\" />"}
+            {"<Meter value={" + this.state.simpleValue + "} type=\"arc\" />"}
           </code></pre>
 
           <h3>Arc, Vertical</h3>
           <div className="example">
-            <Meter value={simpleValue} type="arc" vertical={true} />
+            <Meter value={this.state.simpleValue} type="arc" vertical={true} />
           </div>
           <pre><code className="html">
-            {"<Meter value={" + simpleValue + "} type=\"arc\" vertical={true} />"}
+            {"<Meter value={" + this.state.simpleValue + "} type=\"arc\" vertical={true} />"}
           </code></pre>
 
           <h3>Circle</h3>
           <div className="example">
-            <Meter value={simpleValue} type="circle" />
+            <Meter value={this.state.simpleValue} type="circle" />
           </div>
           <pre><code className="html">
-            {"<Meter value={" + simpleValue + "} type=\"circle\" />"}
+            {"<Meter value={" + this.state.simpleValue + "} type=\"circle\" />"}
           </code></pre>
 
           <h3>Bar, Min, Max, Units, Threshold</h3>
           <div className="example">
-            <Meter value={simpleValue} min={simpleMin}
+            <Meter value={this.state.simpleValue} min={simpleMin}
               max={simpleMax} threshold={simpleThreshold}
               units={simpleUnits} />
           </div>
           <pre><code className="html">
-            {"<Meter value={" + simpleValue + "}\n" +
+            {"<Meter value={" + this.state.simpleValue + "}\n" +
               " min={" + stringify(simpleMin) + "}\n" +
               " max={" + stringify(simpleMax) + "}\n" +
               " threshold={" + simpleThreshold + "}\n" +
@@ -140,12 +149,12 @@ var MeterDoc = React.createClass({
 
           <h3>Bar, Min, Max, Units, Thresholds, Vertical</h3>
           <div className="example">
-            <Meter value={simpleValue} min={simpleMin}
+            <Meter value={this.state.simpleValue} min={simpleMin}
               max={simpleMax} threshold={simpleThreshold}
               units={simpleUnits} vertical={true} />
           </div>
           <pre><code className="html">
-            {"<Meter value={" + simpleValue + "}\n" +
+            {"<Meter value={" + this.state.simpleValue + "}\n" +
               " min={" + stringify(simpleMin) + "}\n" +
               " max={" + stringify(simpleMax) + "}\n" +
               " threshold={" + simpleThreshold + "}\n" +
@@ -154,12 +163,12 @@ var MeterDoc = React.createClass({
 
           <h3>Arc, Min, Max, Units, Thresholds</h3>
           <div className="example">
-            <Meter type="arc" value={simpleValue} min={simpleMin}
+            <Meter type="arc" value={this.state.simpleValue} min={simpleMin}
               max={simpleMax} thresholds={thresholds}
               units={simpleUnits} />
           </div>
           <pre><code className="html">
-            {"<Meter type=\"arc\" value={" + simpleValue + "}\n" +
+            {"<Meter type=\"arc\" value={" + this.state.simpleValue + "}\n" +
               " min={" + stringify(simpleMin) + "}\n" +
               " max={" + stringify(simpleMax) + "}\n" +
               " thresholds={" + stringify(thresholds) + "}\n" +
@@ -168,12 +177,12 @@ var MeterDoc = React.createClass({
 
           <h3>Arc, Min, Max, Units, Thresholds, Vertical</h3>
           <div className="example">
-            <Meter type="arc" value={simpleValue} min={simpleMin}
+            <Meter type="arc" value={this.state.simpleValue} min={simpleMin}
               max={simpleMax} threshold={simpleThreshold}
               units={simpleUnits} vertical={true} />
           </div>
           <pre><code className="html">
-            {"<Meter type=\"arc\" value={" + simpleValue + "}\n" +
+            {"<Meter type=\"arc\" value={" + this.state.simpleValue + "}\n" +
               " min={" + stringify(simpleMin) + "}\n" +
               " max={" + stringify(simpleMax) + "}\n" +
               " threshold={" + simpleThreshold + "}\n" +
@@ -182,12 +191,12 @@ var MeterDoc = React.createClass({
 
           <h3>Circle, Min, Max, Units, Threshold</h3>
           <div className="example">
-            <Meter type="circle" value={simpleValue} min={simpleMin}
+            <Meter type="circle" value={this.state.simpleValue} min={simpleMin}
               max={simpleMax} threshold={simpleThreshold}
               units={simpleUnits} />
           </div>
           <pre><code className="html">
-            {"<Meter type=\"circle\" value={" + simpleValue + "}\n" +
+            {"<Meter type=\"circle\" value={" + this.state.simpleValue + "}\n" +
               " min={" + stringify(simpleMin) + "}\n" +
               " max={" + stringify(simpleMax) + "}\n" +
               " threshold={" + simpleThreshold + "}\n" +
@@ -243,50 +252,50 @@ var MeterDoc = React.createClass({
 
           <h3>Bar, Small</h3>
           <div className="example">
-            <Meter value={simpleValue} small={true} />
+            <Meter value={this.state.simpleValue} small={true} />
           </div>
           <pre><code className="html">
-            {"<Meter value={" + simpleValue + "} small={true} />"}
+            {"<Meter value={" + this.state.simpleValue + "} small={true} />"}
           </code></pre>
 
           <h3>Arc, Small</h3>
           <div className="example">
-            <Meter value={simpleValue} type="arc" small={true} />
+            <Meter value={this.state.simpleValue} type="arc" small={true} />
           </div>
           <pre><code className="html">
-            {"<Meter value={" + simpleValue + "} type=\"arc\" small={true} />"}
+            {"<Meter value={" + this.state.simpleValue + "} type=\"arc\" small={true} />"}
           </code></pre>
 
           <h3>Circle, Small</h3>
           <div className="example">
-            <Meter value={simpleValue} type="circle" small={true} />
+            <Meter value={this.state.simpleValue} type="circle" small={true} />
           </div>
           <pre><code className="html">
-            {"<Meter value={" + simpleValue + "} type=\"circle\" small={true} />"}
+            {"<Meter value={" + this.state.simpleValue + "} type=\"circle\" small={true} />"}
           </code></pre>
 
           <h3>Bar, Large</h3>
           <div className="example">
-            <Meter value={simpleValue} large={true} />
+            <Meter value={this.state.simpleValue} large={true} />
           </div>
           <pre><code className="html">
-            {"<Meter value={" + simpleValue + "} large={true} />"}
+            {"<Meter value={" + this.state.simpleValue + "} large={true} />"}
           </code></pre>
 
           <h3>Arc, Large</h3>
           <div className="example">
-            <Meter value={simpleValue} type="arc" large={true} />
+            <Meter value={this.state.simpleValue} type="arc" large={true} />
           </div>
           <pre><code className="html">
-            {"<Meter value={" + simpleValue + "} type=\"arc\" large={true} />"}
+            {"<Meter value={" + this.state.simpleValue + "} type=\"arc\" large={true} />"}
           </code></pre>
 
           <h3>Circle, Large</h3>
           <div className="example">
-            <Meter value={simpleValue} type="circle" large={true} />
+            <Meter value={this.state.simpleValue} type="circle" large={true} />
           </div>
           <pre><code className="html">
-            {"<Meter value={" + simpleValue + "} type=\"circle\" large={true} />"}
+            {"<Meter value={" + this.state.simpleValue + "} type=\"circle\" large={true} />"}
           </code></pre>
 
           <h3>Bar, Loading</h3>
@@ -305,6 +314,14 @@ var MeterDoc = React.createClass({
             {"<Meter value={undefined} type=\"arc\" />"}
           </code></pre>
 
+        </section>
+
+        <section>
+          <FormField label="Value" htmlFor={"value"} help={this.state.simpleValue}>
+            <input id={"value"} name="item-9" type="range"
+              min="0" max="80" value={this.state.simpleValue}
+              onChange={this._onChangeSimpleValue}/>
+          </FormField>
         </section>
 
       </Article>

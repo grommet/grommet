@@ -137,7 +137,7 @@ var Meter = React.createClass({
     var series = [];
     if (props.series) {
       series = props.series;
-    } else if (props.value) {
+    } else if (props.value || props.value === 0) {
       series = [
         {value: props.value, important: true}
       ];
