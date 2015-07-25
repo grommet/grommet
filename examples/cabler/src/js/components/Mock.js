@@ -20,6 +20,7 @@ var Mock = {
       ids.push(enclosure.slots[options.enclosureSlot].ports[options.inPort].id);
 
       options.cables.push({
+        node: options.node,
         colorIndex: "graph-" + options.colorIndex,
         index: options.cableIndex,
         ids: ids
@@ -36,18 +37,19 @@ var Mock = {
 
     // racks
     var data = {
+      configuration: configuration,
       racks: [],
-      cables: []
+      cables: [],
+      nodes: []
     };
 
-    let numRacks = Math.ceil((configuration.driveCount + configuration.nodeCount) / MAX_DEVICES_PER_RACK);
-    console.log('!!! Mock', configuration.driveCount + configuration.nodeCount, MAX_DEVICES_PER_RACK, (configuration.driveCount + configuration.nodeCount) / MAX_DEVICES_PER_RACK, numRacks);
+    let numRacks = Math.ceil((configuration.driveCount + configuration.nodeCount) /
+       MAX_DEVICES_PER_RACK);
     for (let i = 0; i < numRacks; i += 1) {
       data.racks.push({name: 'R' + i, contents: []});
     }
 
     // nodes
-    let nodes = [];
     for (let i = 0; i < configuration.nodeCount; i += 1) {
       let name = 'N' + i;
       let idPrefix = data.racks[0].name + ':' + name;
@@ -55,6 +57,7 @@ var Mock = {
       let node = {
         type: 'node',
         name: name,
+        highlight: false,
         slots: [
           {
             type: 'slot',
@@ -76,7 +79,7 @@ var Mock = {
       };
 
       data.racks[0].contents.unshift(node);
-      nodes.push(node);
+      data.nodes.push(node);
     }
 
     // drive enclosures
@@ -120,9 +123,9 @@ var Mock = {
     // cables
     var cableIndex = 1;
     var colorIndex = 1;
-    var enclosuresPerNode = Math.ceil(enclosures.length / nodes.length);
+    var enclosuresPerNode = Math.ceil(enclosures.length / data.nodes.length);
 
-    nodes.forEach(function (node, nodeIndex) {
+    data.nodes.forEach(function (node, nodeIndex) {
 
       let nodeEnclosures = enclosures.slice(enclosuresPerNode * nodeIndex,
         enclosuresPerNode * (nodeIndex + 1));
@@ -134,6 +137,7 @@ var Mock = {
 
       this._cableRun({
         cables: data.cables,
+        node: node,
         nodePortId: node.slots[0].ports[0].id,
         enclosures: runEnclosures,
         enclosureSlot: 1,
@@ -149,6 +153,7 @@ var Mock = {
 
       this._cableRun({
         cables: data.cables,
+        node: node,
         nodePortId: node.slots[1].ports[1].id,
         enclosures: runEnclosures,
         enclosureSlot: 0,
@@ -158,6 +163,8 @@ var Mock = {
         cableIndex: cableIndex
       });
 
+      cableIndex += runEnclosures.length;
+      colorIndex += 1;
       runEnclosures = [];
       for (let i = 1; i < nodeEnclosures.length; i = i + 2) {
         runEnclosures.push(nodeEnclosures[i]);
@@ -165,6 +172,7 @@ var Mock = {
 
       this._cableRun({
         cables: data.cables,
+        node: node,
         nodePortId: node.slots[1].ports[0].id,
         enclosures: runEnclosures,
         enclosureSlot: 1,
@@ -180,6 +188,7 @@ var Mock = {
 
       this._cableRun({
         cables: data.cables,
+        node: node,
         nodePortId: node.slots[0].ports[1].id,
         enclosures: runEnclosures,
         enclosureSlot: 0,

@@ -9,7 +9,10 @@ var CLASS_ROOT = "table";
 var Table = React.createClass({
 
   propTypes: {
-    selection: React.PropTypes.number,
+    selection: React.PropTypes.oneOfType([
+      React.PropTypes.number,
+      React.PropTypes.arrayOf(React.PropTypes.number)
+    ]),
     onMore: React.PropTypes.func,
     scrollable: React.PropTypes.bool,
     selectable: React.PropTypes.bool,
@@ -39,8 +42,14 @@ var Table = React.createClass({
     this._clearSelection();
     if (null !== this.state.selection) {
       var tbody = this.refs.table.getDOMNode().querySelectorAll('tbody')[0];
-      tbody.childNodes[this.state.selection].classList.
-        add(CLASS_ROOT + "__row--selected");
+      let selection = this.state.selection;
+      if (typeof selection === 'number') {
+        selection = [selection];
+      }
+      selection.forEach(function (rowIndex) {
+        tbody.childNodes[rowIndex].classList.
+          add(CLASS_ROOT + "__row--selected");
+      });
     }
   },
 

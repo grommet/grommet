@@ -18,7 +18,7 @@ $brand-text-decoration: underline solid $brand-color;
 $brand-grey-colors: (#333333, #3B3B3B, #434343, #666666);
 $brand-graph-colors: (#2AD2C9, #60798D, #614767, #877B75, #617D78);
 
-$hpe-fonts-path: "https://hpefonts.s3.amazonaws.com";
+$hpe-fonts-path: "https://hpefonts.s3.amazonaws.com" !default;
 
 @font-face {
   font-family: "Metric";

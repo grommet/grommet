@@ -12,17 +12,30 @@ var Cables = React.createClass({
 
   propTypes: {
     cables: React.PropTypes.arrayOf(React.PropTypes.object).isRequired,
+    onChange: React.PropTypes.func.isRequired,
     onClose: React.PropTypes.func.isRequired
   },
 
   _onSelect: function (index) {
-    // TODO
+    this.props.cables.forEach(function (cable, cableIndex) {
+      cable.highlight = (cableIndex === index);
+    });
+    this.props.onChange();
+  },
+
+  _onToggle: function (cable) {
+    cable.highlight = ! cable.highlight;
+    this.props.onChange();
   },
 
   render: function() {
-    var cables = this.props.cables.map(function (cable) {
+    var selection = [];
+    var cables = this.props.cables.map(function (cable, index) {
+      if (cable.highlight) {
+        selection.push(index);
+      }
       return (
-        <tr key={cable.index}>
+        <tr key={cable.index} onClick={this._onToggle.bind(this, cable)}>
           <td>{cable.index}</td>
           <td>1</td>
           <td>?</td>
@@ -30,7 +43,7 @@ var Cables = React.createClass({
           <td>{cable.ids[1]}</td>
         </tr>
       );
-    });
+    }, this);
 
     return (
       <Article>
@@ -40,7 +53,7 @@ var Cables = React.createClass({
             <Anchor href="" onClick={this.props.onClose}><CloseIcon /></Anchor>
           </Menu>
         </Header>
-        <Table selectable={true} onSelect={this._onSelect}>
+        <Table selectable={true} selection={selection}>
           <thead>
             <tr>
               <th>#</th>

@@ -26,7 +26,16 @@ var Diagram = React.createClass({
 
   _onToggleCables: function (event) {
     event.preventDefault();
+    if (this.state.showCables) {
+      this.props.data.cables.forEach(function (cable) {
+        cable.highlight = false;
+      });
+    }
     this.setState({showCables: ! this.state.showCables});
+  },
+
+  _onFilterChange: function () {
+    this.forceUpdate();
   },
 
   getInitialState: function () {
@@ -35,6 +44,8 @@ var Diagram = React.createClass({
 
   _renderTopology: function () {
     var racks;
+    var links = [];
+
     if (this.props.data) {
       racks = this.props.data.racks.map(function (rack) {
 
@@ -44,7 +55,8 @@ var Diagram = React.createClass({
 
             var ports = slot.ports.map(function (port) {
               return (
-                <Topology.Part key={port.name} label={port.name} id={port.id} />
+                <Topology.Part key={port.name} label={port.name} status="disabled"
+                  id={port.id} align="center" />
               );
             });
 
@@ -72,9 +84,28 @@ var Diagram = React.createClass({
           </Topology.Part>
         );
       });
+
+      links = this.props.data.cables;
+      if (this.props.data.nodes.filter(function (node) {
+        return node.highlight;
+      }).length > 0) {
+        // filter out unhighlighted cables
+        links = links.filter(function (cable) {
+          return cable.node.highlight;
+        });
+      }
+      if (this.props.data.cables.filter(function (cable) {
+        return cable.highlight;
+      }).length > 0) {
+        // filter out unhighlighted cables
+        links = links.filter(function (cable) {
+          return cable.highlight;
+        });
+      }
     }
+
     return (
-      <Topology links={this.props.data.cables} linkOffset={72}>
+      <Topology links={links} linkOffset={72}>
         <Topology.Parts direction="row">
           {racks}
         </Topology.Parts>
@@ -88,7 +119,10 @@ var Diagram = React.createClass({
     var cablesControl;
     var cables;
     if (this.state.showCables) {
-      cables = <Cables cables={this.props.data.cables} onClose={this._onToggleCables} />;
+      cables = (
+        <Cables cables={this.props.data.cables} onClose={this._onToggleCables}
+          onChange={this._onFilterChange} />
+      );
     } else {
       cablesControl = <Anchor href="" onClick={this._onToggleCables}>Cables</Anchor>;
     }
@@ -99,7 +133,7 @@ var Diagram = React.createClass({
           <Header pad={{horizontal: "medium"}} justify="between">
             <Title onClick={this._onHome}>HP 3Par Storage Cabling</Title>
             <Menu inline={true} direction="row" align="center">
-              <Filter />
+              <Filter data={this.props.data} onChange={this._onFilterChange} />
               {cablesControl}
             </Menu>
           </Header>

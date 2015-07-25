@@ -18,7 +18,11 @@ var opts = {
     {
       asset: path.resolve(__dirname, '../../src/img/shortcut-icon.png'),
       dist: 'examples/cabler/dist/img/'
-    }
+    },
+    {
+      asset: path.resolve(__dirname, '../../src/scss/hpe/font') + '/**',
+      dist: 'examples/cabler/dist/font/'
+    },
   ],
   scssAssets: ['examples/cabler/src/scss/**/*.scss'],
   jsAssets: ['examples/cabler/src/js/**/*.js'],
