@@ -42,7 +42,7 @@ describe('Docs website e2e', function() {
       });
   });
 
-  it('downloads adobe illustrator sticker sheet', function(done) {
+  it('downloads hpi general adobe illustrator sticker sheet', function(done) {
     var selector = '.header .menu a:nth-child(1)';
 
     browser.getText(selector, function (err, text) {
@@ -54,9 +54,9 @@ describe('Docs website e2e', function() {
       browser.click(selector).getText(buttonSelector).then(function(text) {
         expect(text).toBe('Resources');
 
-        var aiSelector = '#illustrator p:last-of-type a:first-of-type';
+        var aiSelector = '#hpi #hpi-ai-general';
         browser.click(buttonSelector).getText(aiSelector).then(function(text) {
-          expect(text).toBe('Download Adobe Illustrator Sticker Sheet');
+          expect(text).toBe('Download General Sticker Sheet');
           browser.getAttribute(aiSelector, 'href').then(function(linkPath) {
             request.get(linkPath).end(function(err, res) {
               if (err) {
@@ -71,7 +71,7 @@ describe('Docs website e2e', function() {
     });
   });
 
-  it('downloads adobe illustrator pdf sticker sheet', function(done) {
+  it('downloads hpi general adobe illustrator pdf sticker sheet', function(done) {
     var selector = '.header .menu a:nth-child(1)';
 
     browser.getText(selector, function (err, text) {
@@ -83,7 +83,7 @@ describe('Docs website e2e', function() {
       browser.click(selector).getText(buttonSelector).then(function(text) {
         expect(text).toBe('Resources');
 
-        var pdfSelector = '#illustrator p:last-of-type a:last-of-type';
+        var pdfSelector = '#hpi #hpi-ai-general-pdf';
         browser.click(buttonSelector).getText(pdfSelector).then(function(text) {
           expect(text).toBe('pdf');
           browser.getAttribute(pdfSelector, 'href').then(function(linkPath) {
@@ -100,7 +100,7 @@ describe('Docs website e2e', function() {
     });
   });
 
-  it('downloads sketch sticker sheet', function(done) {
+  it('downloads hpe general adobe illustrator sticker sheet', function(done) {
     var selector = '.header .menu a:nth-child(1)';
 
     browser.getText(selector, function (err, text) {
@@ -112,9 +112,241 @@ describe('Docs website e2e', function() {
       browser.click(selector).getText(buttonSelector).then(function(text) {
         expect(text).toBe('Resources');
 
-        var sketchSelector = '#sketch p:last-of-type a';
+        var aiSelector = '#hpe #hpe-ai-general';
+        browser.click(buttonSelector).getText(aiSelector).then(function(text) {
+          expect(text).toBe('Download General Sticker Sheet');
+          browser.getAttribute(aiSelector, 'href').then(function(linkPath) {
+            request.get(linkPath).end(function(err, res) {
+              if (err) {
+                should.fail('Expected to send a request to ai asset.', err);
+              }
+              expect(res.status).toBe(200);
+              done();
+            });
+          });
+        });
+      });
+    });
+  });
+
+  it('downloads hpe general adobe illustrator pdf sticker sheet', function(done) {
+    var selector = '.header .menu a:nth-child(1)';
+
+    browser.getText(selector, function (err, text) {
+      if (err) {
+        should.fail('Expected to find design link.', err);
+      }
+      expect(text).toBe('Design');
+      var buttonSelector = '.background-color-index-neutral-1 a:nth-child(1)';
+      browser.click(selector).getText(buttonSelector).then(function(text) {
+        expect(text).toBe('Resources');
+
+        var pdfSelector = '#hpe #hpe-ai-general-pdf';
+        browser.click(buttonSelector).getText(pdfSelector).then(function(text) {
+          expect(text).toBe('pdf');
+          browser.getAttribute(pdfSelector, 'href').then(function(linkPath) {
+            request.get(linkPath).end(function(err, res) {
+              if (err) {
+                should.fail('Expected to send a request to pdf asset.', err);
+              }
+              expect(res.status).toBe(200);
+              done();
+            });
+          });
+        });
+      });
+    });
+  });
+
+  it('downloads hpe classic adobe illustrator sticker sheet', function(done) {
+    var selector = '.header .menu a:nth-child(1)';
+
+    browser.getText(selector, function (err, text) {
+      if (err) {
+        should.fail('Expected to find design link.', err);
+      }
+      expect(text).toBe('Design');
+      var buttonSelector = '.background-color-index-neutral-1 a:nth-child(1)';
+      browser.click(selector).getText(buttonSelector).then(function(text) {
+        expect(text).toBe('Resources');
+
+        var aiSelector = '#hpe #hpe-ai-classic';
+        browser.click(buttonSelector).getText(aiSelector).then(function(text) {
+          expect(text).toBe('Download Classic Sticker Sheet');
+          browser.getAttribute(aiSelector, 'href').then(function(linkPath) {
+            request.get(linkPath).end(function(err, res) {
+              if (err) {
+                should.fail('Expected to send a request to ai asset.', err);
+              }
+              expect(res.status).toBe(200);
+              done();
+            });
+          });
+        });
+      });
+    });
+  });
+
+  it('downloads hpe classic adobe illustrator pdf sticker sheet', function(done) {
+    var selector = '.header .menu a:nth-child(1)';
+
+    browser.getText(selector, function (err, text) {
+      if (err) {
+        should.fail('Expected to find design link.', err);
+      }
+      expect(text).toBe('Design');
+      var buttonSelector = '.background-color-index-neutral-1 a:nth-child(1)';
+      browser.click(selector).getText(buttonSelector).then(function(text) {
+        expect(text).toBe('Resources');
+
+        var pdfSelector = '#hpe #hpe-ai-classic-pdf';
+        browser.click(buttonSelector).getText(pdfSelector).then(function(text) {
+          expect(text).toBe('pdf');
+          browser.getAttribute(pdfSelector, 'href').then(function(linkPath) {
+            request.get(linkPath).end(function(err, res) {
+              if (err) {
+                should.fail('Expected to send a request to pdf asset.', err);
+              }
+              expect(res.status).toBe(200);
+              done();
+            });
+          });
+        });
+      });
+    });
+  });
+
+  it('downloads hpe app-templates adobe illustrator sticker sheet', function(done) {
+    var selector = '.header .menu a:nth-child(1)';
+
+    browser.getText(selector, function (err, text) {
+      if (err) {
+        should.fail('Expected to find design link.', err);
+      }
+      expect(text).toBe('Design');
+      var buttonSelector = '.background-color-index-neutral-1 a:nth-child(1)';
+      browser.click(selector).getText(buttonSelector).then(function(text) {
+        expect(text).toBe('Resources');
+
+        var aiSelector = '#hpe #hpe-ai-app-templates';
+        browser.click(buttonSelector).getText(aiSelector).then(function(text) {
+          expect(text).toBe('Download App Templates Sticker Sheet');
+          browser.getAttribute(aiSelector, 'href').then(function(linkPath) {
+            request.get(linkPath).end(function(err, res) {
+              if (err) {
+                should.fail('Expected to send a request to ai asset.', err);
+              }
+              expect(res.status).toBe(200);
+              done();
+            });
+          });
+        });
+      });
+    });
+  });
+
+  it('downloads hpe app-templates adobe illustrator pdf sticker sheet', function(done) {
+    var selector = '.header .menu a:nth-child(1)';
+
+    browser.getText(selector, function (err, text) {
+      if (err) {
+        should.fail('Expected to find design link.', err);
+      }
+      expect(text).toBe('Design');
+      var buttonSelector = '.background-color-index-neutral-1 a:nth-child(1)';
+      browser.click(selector).getText(buttonSelector).then(function(text) {
+        expect(text).toBe('Resources');
+
+        var pdfSelector = '#hpe #hpe-ai-app-templates-pdf';
+        browser.click(buttonSelector).getText(pdfSelector).then(function(text) {
+          expect(text).toBe('pdf');
+          browser.getAttribute(pdfSelector, 'href').then(function(linkPath) {
+            request.get(linkPath).end(function(err, res) {
+              if (err) {
+                should.fail('Expected to send a request to pdf asset.', err);
+              }
+              expect(res.status).toBe(200);
+              done();
+            });
+          });
+        });
+      });
+    });
+  });
+
+  it('downloads hpe icons adobe illustrator sticker sheet', function(done) {
+    var selector = '.header .menu a:nth-child(1)';
+
+    browser.getText(selector, function (err, text) {
+      if (err) {
+        should.fail('Expected to find design link.', err);
+      }
+      expect(text).toBe('Design');
+      var buttonSelector = '.background-color-index-neutral-1 a:nth-child(1)';
+      browser.click(selector).getText(buttonSelector).then(function(text) {
+        expect(text).toBe('Resources');
+
+        var aiSelector = '#hpe #hpe-ai-icons';
+        browser.click(buttonSelector).getText(aiSelector).then(function(text) {
+          expect(text).toBe('Download Icons Sticker Sheet');
+          browser.getAttribute(aiSelector, 'href').then(function(linkPath) {
+            request.get(linkPath).end(function(err, res) {
+              if (err) {
+                should.fail('Expected to send a request to ai asset.', err);
+              }
+              expect(res.status).toBe(200);
+              done();
+            });
+          });
+        });
+      });
+    });
+  });
+
+  it('downloads hpe icons adobe illustrator pdf sticker sheet', function(done) {
+    var selector = '.header .menu a:nth-child(1)';
+
+    browser.getText(selector, function (err, text) {
+      if (err) {
+        should.fail('Expected to find design link.', err);
+      }
+      expect(text).toBe('Design');
+      var buttonSelector = '.background-color-index-neutral-1 a:nth-child(1)';
+      browser.click(selector).getText(buttonSelector).then(function(text) {
+        expect(text).toBe('Resources');
+
+        var pdfSelector = '#hpe #hpe-ai-icons-pdf';
+        browser.click(buttonSelector).getText(pdfSelector).then(function(text) {
+          expect(text).toBe('pdf');
+          browser.getAttribute(pdfSelector, 'href').then(function(linkPath) {
+            request.get(linkPath).end(function(err, res) {
+              if (err) {
+                should.fail('Expected to send a request to pdf asset.', err);
+              }
+              expect(res.status).toBe(200);
+              done();
+            });
+          });
+        });
+      });
+    });
+  });
+
+  it('downloads hpe sketch sticker sheet', function(done) {
+    var selector = '.header .menu a:nth-child(1)';
+
+    browser.getText(selector, function (err, text) {
+      if (err) {
+        should.fail('Expected to find design link.', err);
+      }
+      expect(text).toBe('Design');
+      var buttonSelector = '.background-color-index-neutral-1 a:nth-child(1)';
+      browser.click(selector).getText(buttonSelector).then(function(text) {
+        expect(text).toBe('Resources');
+
+        var sketchSelector = '#hpe #hpe-sk-general';
         browser.click(buttonSelector).getText(sketchSelector).then(function(text) {
-          expect(text).toBe('Download Sketch Sticker Sheet');
+          expect(text).toBe('Download Sticker Sheet');
           browser.getAttribute(sketchSelector, 'href').then(function(linkPath) {
             request.get(linkPath).end(function(err, res) {
               if (err) {
@@ -129,7 +361,7 @@ describe('Docs website e2e', function() {
     });
   });
 
-  it('downloads axure sticker sheet', function(done) {
+  it('downloads hpe axure stencils', function(done) {
     var selector = '.header .menu a:nth-child(1)';
 
     browser.getText(selector, function (err, text) {
@@ -141,9 +373,9 @@ describe('Docs website e2e', function() {
       browser.click(selector).getText(buttonSelector).then(function(text) {
         expect(text).toBe('Resources');
 
-        var axureSelector = '#axure p:last-of-type a';
+        var axureSelector = '#hpe #hpe-ax-general';
         browser.click(buttonSelector).getText(axureSelector).then(function(text) {
-          expect(text).toBe('Download Axure Stencils');
+          expect(text).toBe('Download Stencils');
           browser.getAttribute(axureSelector, 'href').then(function(linkPath) {
             request.get(linkPath).end(function(err, res) {
               if (err) {
@@ -158,7 +390,7 @@ describe('Docs website e2e', function() {
     });
   });
 
-  it('downloads balsamiq sticker sheet', function(done) {
+  it('downloads hpe balsamiq assets', function(done) {
     var selector = '.header .menu a:nth-child(1)';
 
     browser.getText(selector, function (err, text) {
@@ -170,9 +402,9 @@ describe('Docs website e2e', function() {
       browser.click(selector).getText(buttonSelector).then(function(text) {
         expect(text).toBe('Resources');
 
-        var balsamiqSelector = '#balsamiq p:last-of-type a';
+        var balsamiqSelector = '#hpe #hpe-bq-general';
         browser.click(buttonSelector).getText(balsamiqSelector).then(function(text) {
-          expect(text).toBe('Download Balsamiq Assets');
+          expect(text).toBe('Download Assets');
           browser.getAttribute(balsamiqSelector, 'href').then(function(linkPath) {
             request.get(linkPath).end(function(err, res) {
               if (err) {
