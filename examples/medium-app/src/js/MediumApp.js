@@ -17,14 +17,17 @@ var MediumApp = React.createClass({
   },
 
   _checkSession: function () {
+    if ( this.state.session.id && this.context.router.isActive('login')) {
+      Rest.setHeader('auth', this.state.session.id);
+    } 
+  },
+
+  _onSessionChange: function (session) {
     if (! this.state.session.id && ! this.context.router.isActive('login')) {
       this.context.router.transitionTo('login');
     } else {
       Rest.setHeader('auth', this.state.session.id);
     }
-  },
-
-  _onSessionChange: function (session) {
     this.setState({session: session}, this._checkSession);
   },
 
