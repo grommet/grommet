@@ -4,7 +4,6 @@ var React = require('react');
 var Header = require('grommet/components/Header');
 var Tiles = require('grommet/components/Tiles');
 var Tile = require('grommet/components/Tile');
-var Menu = require('grommet/components/Menu');
 var Meter = require('grommet/components/Meter');
 var Table = require('grommet/components/Table');
 var Button = require('grommet/components/Button');
