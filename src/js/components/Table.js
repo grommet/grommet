@@ -54,6 +54,10 @@ var Table = React.createClass({
   },
 
   _onClick: function (event) {
+    if (!this.props.selectable) {
+      return;
+    }
+
     var element = event.target;
     while (element.nodeName !== 'TR') {
       element = element.parentNode;
