@@ -15,6 +15,7 @@ module.exports = {
   Disabled: 'Disabled',
   Error: 'Error',
   Footer: 'Footer',
+  'Grommet Logo': 'Grommet Logo',
   loginInvalidPassword: 'Please provide Username and Password.',
   'Log In': 'Log In',
   Logout: 'Logout',
