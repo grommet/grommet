@@ -299,7 +299,7 @@ var Meter = React.createClass({
 
     if ('arc' === this.props.type) {
       state.startAngle = 60;
-      state.anglePer = 240.0 / total;
+      state.anglePer = (total === 0) ? 0 : 240.0 / total;
       if (this.props.vertical) {
         state.angleOffset = 90;
       } else {
@@ -307,7 +307,7 @@ var Meter = React.createClass({
       }
     } else if ('circle' === this.props.type) {
       state.startAngle = 1;
-      state.anglePer = 358.0 / total;
+      state.anglePer = (total === 0) ? 0 : 358.0 / total;
       state.angleOffset = 180;
     } else if ('bar' === this.props.type) {
       state.scale = BAR_LENGTH / (max.value - min.value);

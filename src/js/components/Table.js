@@ -94,22 +94,24 @@ var Table = React.createClass({
   },
 
   _alignMirror: function () {
-    var tableElement = this.refs.table.getDOMNode();
-    var cells = tableElement.querySelectorAll('thead tr th');
-    var mirrorElement = this.refs.mirror.getDOMNode();
-    var mirrorCells = mirrorElement.querySelectorAll('thead tr th');
+    if (this.refs.mirror) {
+      var tableElement = this.refs.table.getDOMNode();
+      var cells = tableElement.querySelectorAll('thead tr th');
+      var mirrorElement = this.refs.mirror.getDOMNode();
+      var mirrorCells = mirrorElement.querySelectorAll('thead tr th');
 
-    var rect = tableElement.getBoundingClientRect();
-    mirrorElement.style.width = '' + Math.floor(rect.right - rect.left) + 'px';
+      var rect = tableElement.getBoundingClientRect();
+      mirrorElement.style.width = '' + Math.floor(rect.right - rect.left) + 'px';
 
-    var height = 0;
-    for (var i = 0; i < cells.length; i++) {
-      rect = cells[i].getBoundingClientRect();
-      mirrorCells[i].style.width = '' + Math.floor(rect.right - rect.left) + 'px';
-      mirrorCells[i].style.height = '' + Math.floor(rect.bottom - rect.top) + 'px';
-      height = Math.max(height, Math.floor(rect.bottom - rect.top));
+      var height = 0;
+      for (var i = 0; i < cells.length; i++) {
+        rect = cells[i].getBoundingClientRect();
+        mirrorCells[i].style.width = '' + Math.floor(rect.right - rect.left) + 'px';
+        mirrorCells[i].style.height = '' + Math.floor(rect.bottom - rect.top) + 'px';
+        height = Math.max(height, Math.floor(rect.bottom - rect.top));
+      }
+      mirrorElement.style.height = '' + height + 'px';
     }
-    mirrorElement.style.height = '' + height + 'px';
   },
 
   getInitialState: function () {

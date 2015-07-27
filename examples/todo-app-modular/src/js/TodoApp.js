@@ -10,7 +10,7 @@ var TodoApp = React.createClass({
   render: function() {
     return (
       <App centered={false}>
-        <Header primary={true}>
+        <Header direction="row" justify="between" large={true} pad={{horizontal: 'medium'}}>
           <Title>Todo App Modular</Title>
         </Header>
         <TodoAppDashboard />

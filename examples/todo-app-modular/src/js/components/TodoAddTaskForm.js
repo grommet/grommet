@@ -19,7 +19,8 @@ var TodoAddTaskForm = React.createClass({
     return defaultState;
   },
 
-  _onSubmit: function () {
+  _onSubmit: function (event) {
+    event.preventDefault();
     if (this.state.item) {
       this.props.onSubmit({
         item: this.state.item,
@@ -39,7 +40,7 @@ var TodoAddTaskForm = React.createClass({
   render: function() {
     return (
       <Layer onClose={this.props.onClose} closer={true}>
-        <Form>
+        <Form onSubmit={this._onSubmit}>
           <header><h1>Add Task</h1></header>
           <FormFields>
             <fieldset>
@@ -55,13 +56,13 @@ var TodoAddTaskForm = React.createClass({
               </FormField>
             </fieldset>
           </FormFields>
+          <Footer pad={{vertical: 'medium'}}>
+            <Menu direction="row">
+              <Button label="OK" primary={true} onClick={this._onSubmit} />
+              <Button label="Cancel" onClick={this.props.onClose} />
+            </Menu>
+          </Footer>
         </Form>
-        <Footer>
-          <Menu direction="right">
-            <Button label="OK" primary={true} onClick={this._onSubmit} />
-            <Button label="Cancel" onClick={this.props.onClose} />
-          </Menu>
-        </Footer>
       </Layer>
     );
   }
