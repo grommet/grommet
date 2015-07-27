@@ -24,6 +24,8 @@ var StatusDoc = React.createClass({
             <dd>Smaller sized version.</dd>
             <dt><code>value       error|warning|ok|disabled|unknown</code></dt>
             <dd>Which status to indicate.</dd>
+            <dt><code>a11yTitle  {"{title}"}</code></dt>
+            <dd>Accessibility Title. If not set uses the default title of the status icon.</dd>
           </dl>
         </section>
 
@@ -40,10 +42,10 @@ var StatusDoc = React.createClass({
 
           <h3>Error</h3>
           <div className="example">
-            <Status value="error"/>
+            <Status value="error" a11yTitle="critical"/>
           </div>
           <pre><code className="html">
-            {"<Status value=\"error\">"}
+            {"<Status value=\"error\" a11yTitle=\"critical\">"}
           </code></pre>
 
           <h3>Warning</h3>

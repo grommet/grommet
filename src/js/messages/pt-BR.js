@@ -15,6 +15,7 @@ module.exports = {
   Disabled: 'Desabilitado',
   Error: 'Erro',
   Footer: 'Rodapé',
+  'Grommet Logo': 'Gromment Logomarca',  
   loginInvalidPassword: 'Por favor, informe Usuário e Senha.',
   'Log In': 'Logar',
   Logout: 'Deslogar',

@@ -15,7 +15,8 @@ var Status = React.createClass({
   propType: {
     large: React.PropTypes.bool,
     small: React.PropTypes.bool,
-    value: React.PropTypes.oneOf(['error', 'warning', 'ok', 'unknown', 'disabled'])
+    value: React.PropTypes.oneOf(['error', 'warning', 'ok', 'unknown', 'disabled']),
+    a11yTitle: React.PropTypes.string
   },
 
   getDefaultProps: function () {
@@ -38,23 +39,23 @@ var Status = React.createClass({
     switch (this.props.value.toLowerCase()) {
     case 'ok':
     case 'normal':
-      icon = (<OK className={className} />);
+      icon = (<OK className={className} a11yTitle={this.props.a11yTitle} />);
       break;
     case 'warning':
-      icon = (<Warning className={className} />);
+      icon = (<Warning className={className} a11yTitle={this.props.a11yTitle} />);
       break;
     case 'error':
     case 'critical':
-      icon = (<ErrorStatus className={className} />);
+      icon = (<ErrorStatus className={className} a11yTitle={this.props.a11yTitle} />);
       break;
     case 'disabled':
-      icon = (<Disabled className={className} />);
+      icon = (<Disabled className={className} a11yTitle={this.props.a11yTitle} />);
       break;
     case 'unknown':
-      icon = (<Unknown className={className} />);
+      icon = (<Unknown className={className} a11yTitle={this.props.a11yTitle} />);
       break;
     case 'label':
-      icon = (<Label className={className} />);
+      icon = (<Label className={className} a11yTitle={this.props.a11yTitle} />);
       break;
     }
     return icon;

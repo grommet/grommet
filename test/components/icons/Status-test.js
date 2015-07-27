@@ -41,11 +41,10 @@ describe('Grommet Status', function() {
     var svgInstance = TestUtils.findRenderedDOMComponentWithClass(Component, 'status-icon-ok');
 
     expect(svgInstance.props.role).toBe('img');
-    expect(svgInstance.props['aria-labelledby']).toBe('title-icon-ok');
 
     var titleInstance = TestUtils.findRenderedDOMComponentWithTag(svgInstance, 'title');
-
-    expect(titleInstance.props.id).toBe('title-icon-ok');
+    
+    expect(svgInstance.props['aria-labelledby']).toBe(titleInstance.props.id);
 
     Component = GrommetTestUtils.getComponent(__path__, null, { value: 'normal'});
 
@@ -60,13 +59,10 @@ describe('Grommet Status', function() {
     var React = require('react/addons');
     var TestUtils = React.addons.TestUtils;
     var svgInstance = TestUtils.findRenderedDOMComponentWithClass(Component, 'status-icon-error');
-
-    expect(svgInstance.props.role).toBe('img');
-    expect(svgInstance.props['aria-labelledby']).toBe('title-icon-error');
-
     var titleInstance = TestUtils.findRenderedDOMComponentWithTag(svgInstance, 'title');
 
-    expect(titleInstance.props.id).toBe('title-icon-error');
+    expect(svgInstance.props.role).toBe('img');
+    expect(svgInstance.props['aria-labelledby']).toBe(titleInstance.props.id);
 
     Component = GrommetTestUtils.getComponent(__path__, null, { value: 'critical'});
 
@@ -81,13 +77,10 @@ describe('Grommet Status', function() {
     var React = require('react/addons');
     var TestUtils = React.addons.TestUtils;
     var svgInstance = TestUtils.findRenderedDOMComponentWithClass(Component, 'status-icon-warning');
-
-    expect(svgInstance.props.role).toBe('img');
-    expect(svgInstance.props['aria-labelledby']).toBe('title-icon-warning');
-
     var titleInstance = TestUtils.findRenderedDOMComponentWithTag(svgInstance, 'title');
-
-    expect(titleInstance.props.id).toBe('title-icon-warning');
+    
+    expect(svgInstance.props.role).toBe('img');
+    expect(svgInstance.props['aria-labelledby']).toBe(titleInstance.props.id);
   });
 
   it('loads a disabled status-icon', function() {
@@ -98,13 +91,10 @@ describe('Grommet Status', function() {
     var React = require('react/addons');
     var TestUtils = React.addons.TestUtils;
     var svgInstance = TestUtils.findRenderedDOMComponentWithClass(Component, 'status-icon-disabled');
-
-    expect(svgInstance.props.role).toBe('img');
-    expect(svgInstance.props['aria-labelledby']).toBe('title-icon-disabled');
-
     var titleInstance = TestUtils.findRenderedDOMComponentWithTag(svgInstance, 'title');
 
-    expect(titleInstance.props.id).toBe('title-icon-disabled');
+    expect(svgInstance.props.role).toBe('img');
+    expect(svgInstance.props['aria-labelledby']).toBe(titleInstance.props.id);
   });
 
   it('loads a unknown status-icon', function() {
@@ -115,13 +105,10 @@ describe('Grommet Status', function() {
     var React = require('react/addons');
     var TestUtils = React.addons.TestUtils;
     var svgInstance = TestUtils.findRenderedDOMComponentWithClass(Component, 'status-icon-unknown');
-
-    expect(svgInstance.props.role).toBe('img');
-    expect(svgInstance.props['aria-labelledby']).toBe('title-icon-unknown');
-
     var titleInstance = TestUtils.findRenderedDOMComponentWithTag(svgInstance, 'title');
 
-    expect(titleInstance.props.id).toBe('title-icon-unknown');
+    expect(svgInstance.props.role).toBe('img');
+    expect(svgInstance.props['aria-labelledby']).toBe(titleInstance.props.id);
   });
 
   it('loads a label status-icon', function() {
