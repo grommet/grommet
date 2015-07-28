@@ -85,7 +85,7 @@ var TodoAppDashboard = React.createClass({
     return (
       <div>
         <Tiles fill={true} flush={false}>
-          <Tile direction="row" justify="center" align="center">
+          <Tile align="center">
             <Meter series={[
               getLabel('Fix Now', tasksMap.error, 'error'),
               getLabel('Remember', tasksMap.warning, 'warning'),
