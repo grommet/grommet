@@ -1,6 +1,6 @@
 {
   "name": "grommet",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "main": "src/js/index.js",
   "description": "The most advanced UX framework for enterprise applications.",
   "authors": [
@@ -58,7 +58,7 @@
     "gulp-install": "^0.4.0",
     "gulp-file": "^0.2.0",
     "mkdirp": "^0.5.1",
-    "node-uuid": "^1.4.0"  
+    "node-uuid": "^1.4.0"
   },
   "devDependencies": {
     "del": "^1.1.1",
