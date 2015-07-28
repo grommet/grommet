@@ -24,7 +24,7 @@ var thresholds = [
 var series = [
   {label: 'Gen 7', value: 50},
   {label: 'Gen 8', value: 200},
-  {label: 'Gen 9', value: 800},
+  {label: 'Gen 9', value: 100},
   {label: 'Gen 10', value: 300},
   {label: 'Gen 11', value: 100}
 ];
@@ -54,7 +54,7 @@ var MeterDoc = React.createClass({
           <pre><code className="html">{inline}</code></pre>
         </header>
 
-        <section style={{display: 'none'}}>
+        <section>
           <h2>Options</h2>
           <dl>
             <dt><code>important   {"{number}"}</code></dt>
@@ -79,8 +79,8 @@ var MeterDoc = React.createClass({
             <dd>Optional threshold value.</dd>
             <dt><code>thresholds     {"[{value: , label: , colorIndex: }, ...]"}</code></dt>
             <dd>An array of objects describing thresholds.</dd>
-            <dt><code>type         bar|arc|circle</code></dt>
-            <dd>Whether to draw a bar, an arc, or a circle.</dd>
+            <dt><code>type         bar|arc|circle|spiral</code></dt>
+            <dd>Whether to draw a bar, an arc, a circle, or a spiral.</dd>
             <dt><code>units       {"{string}"}</code></dt>
             <dd>Optional units to display next to the value label.</dd>
             <dt><code>value       {"{number}"}</code></dt>
@@ -131,6 +131,14 @@ var MeterDoc = React.createClass({
           </div>
           <pre><code className="html">
             {"<Meter value={" + this.state.simpleValue + "} type=\"circle\" />"}
+          </code></pre>
+
+          <h3>Spiral</h3>
+          <div className="example">
+            <Meter value={this.state.simpleValue} type="spiral" />
+          </div>
+          <pre><code className="html">
+            {"<Meter value={" + this.state.simpleValue + "} type=\"spiral\" />"}
           </code></pre>
 
           <h3>Bar, Min, Max, Units, Threshold</h3>
@@ -246,7 +254,16 @@ var MeterDoc = React.createClass({
             <Meter type="circle" legend={true} series={series} />
           </div>
           <pre><code className="html">
-            {"<Meter type=\"arc\" legend={true}\n " +
+            {"<Meter type=\"circle\" legend={true}\n " +
+              "series={" + stringify(series) + "} />"}
+          </code></pre>
+
+          <h3>Spiral, Series</h3>
+          <div className="example">
+            <Meter type="spiral" series={series} />
+          </div>
+          <pre><code className="html">
+            {"<Meter type=\"spiral\"\n " +
               "series={" + stringify(series) + "} />"}
           </code></pre>
 

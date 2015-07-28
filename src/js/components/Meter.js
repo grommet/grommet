@@ -14,6 +14,8 @@ var CIRCLE_RADIUS = 84;
 
 var ARC_HEIGHT = 144;
 
+var SPIRAL_THICKNESS = 24;
+
 function polarToCartesian (centerX, centerY, radius, angleInDegrees) {
   var angleInRadians = (angleInDegrees - 90) * Math.PI / 180.0;
   return {
@@ -22,9 +24,9 @@ function polarToCartesian (centerX, centerY, radius, angleInDegrees) {
   };
 }
 
-function arcCommands (x, y, radius, startAngle, endAngle) {
-  var start = polarToCartesian(x, y, radius, endAngle);
-  var end = polarToCartesian(x, y, radius, startAngle);
+function arcCommands (centerX, centerY, radius, startAngle, endAngle) {
+  var start = polarToCartesian(centerX, centerY, radius, endAngle);
+  var end = polarToCartesian(centerX, centerY, radius, startAngle);
   var arcSweep = endAngle - startAngle <= 180 ? "0" : "1";
   var d = [
     "M", start.x, start.y,
@@ -33,9 +35,9 @@ function arcCommands (x, y, radius, startAngle, endAngle) {
   return d;
 }
 
-function singleIndicatorCommands (x, y, radius, startAngle, endAngle, length) {
-  var point = polarToCartesian(x, y, radius - length, endAngle - 1);
-  var start = polarToCartesian(x, y, radius, endAngle - 1);
+function singleIndicatorCommands (centerX, centerY, radius, startAngle, endAngle, length) {
+  var point = polarToCartesian(centerX, centerY, radius - length, endAngle - 1);
+  var start = polarToCartesian(centerX, centerY, radius, endAngle - 1);
   var d = ["M", start.x, start.y,
     "L", point.x, point.y
   ].join(" ");
@@ -77,7 +79,7 @@ var Meter = React.createClass({
       value: React.PropTypes.number.isRequired,
       colorIndex: React.PropTypes.string
     })),
-    type: React.PropTypes.oneOf(['bar', 'arc', 'circle']),
+    type: React.PropTypes.oneOf(['bar', 'arc', 'circle', 'spiral']),
     units: React.PropTypes.string,
     value: React.PropTypes.number,
     vertical: React.PropTypes.bool
@@ -235,7 +237,15 @@ var Meter = React.createClass({
     return total;
   },
 
-  _viewBoxDimensions: function () {
+  _seriesMax: function (series) {
+    var max = 0;
+    series.some(function (item) {
+      max = Math.max(max, item.value);
+    });
+    return max;
+  },
+
+  _viewBoxDimensions: function (series) {
     var viewBoxHeight;
     var viewBoxWidth;
     if ('arc' === this.props.type) {
@@ -257,6 +267,11 @@ var Meter = React.createClass({
         viewBoxWidth = BAR_LENGTH;
         viewBoxHeight = BAR_THICKNESS;
       }
+    } else if ('spiral' === this.props.type) {
+      // Give the graphic just a bit of breathing room
+      // by not ending the spirals right at the center. (+1)
+      viewBoxWidth = Math.max(CIRCLE_WIDTH, SPIRAL_THICKNESS * (series.length + 1) * 2);
+      viewBoxHeight = viewBoxWidth;
     }
     return [viewBoxWidth, viewBoxHeight];
   },
@@ -271,11 +286,15 @@ var Meter = React.createClass({
     } else {
       total = 100;
     }
+    var seriesMax;
+    if (props.series && 'spiral' === props.type) {
+      seriesMax = this._seriesMax(props.series);
+    }
     // Normalize min and max
     var min = this._terminal(props.min || 0);
     // Max could be provided in props or come from the total of
     // a multi-value series.
-    var max = this._terminal(props.max || total);
+    var max = this._terminal(props.max || seriesMax || total);
     // Normalize simple threshold prop to an array, if needed.
     var thresholds = this._normalizeThresholds(props, min, max);
     // Normalize simple value prop to a series, if needed.
@@ -283,7 +302,7 @@ var Meter = React.createClass({
     // Determine important index.
     var importantIndex = this._importantIndex(series);
     // Determine the viewBox dimensions
-    var viewBoxDimensions = this._viewBoxDimensions();
+    var viewBoxDimensions = this._viewBoxDimensions(series);
 
     var state = {
       importantIndex: importantIndex,
@@ -311,6 +330,12 @@ var Meter = React.createClass({
       state.angleOffset = 180;
     } else if ('bar' === this.props.type) {
       state.scale = BAR_LENGTH / (max.value - min.value);
+    } else if ('spiral' === this.props.type) {
+      state.startAngle = 0;
+      state.anglePer = 270.0 / max.value;
+      state.angleOffset = 0;
+      // Start the spirals out near but not quite at the edge of the view box.
+      state.startRadius = Math.max(CIRCLE_RADIUS, SPIRAL_THICKNESS * (series.length + 0.5));
     }
 
     return state;
@@ -452,6 +477,53 @@ var Meter = React.createClass({
     return paths;
   },
 
+  _spiralCommands: function (startAngle, endAngle, radius) {
+    return arcCommands(this.state.viewBoxWidth / 2, this.state.viewBoxHeight / 2, radius,
+      startAngle + this.state.angleOffset,
+      endAngle + this.state.angleOffset);
+  },
+
+  _renderSpiral: function (series) {
+    var startAngle = this.state.startAngle;
+    var radius = this.state.startRadius;
+    var classes;
+    var endAngle;
+    var commands;
+
+    var paths = series.map(function (item, index) {
+      var classes = [CLASS_ROOT + "__slice"];
+      if (index === this.state.activeIndex) {
+        classes.push(CLASS_ROOT + "__slice--active");
+      }
+      classes.push("color-index-" + item.colorIndex);
+      endAngle = this._translateEndAngle(startAngle, item.value);
+      commands = this._spiralCommands(startAngle, endAngle, radius);
+
+      radius -= SPIRAL_THICKNESS;
+
+      return (
+        <path key={item.label || index} fill="none"
+          className={classes.join(' ')} d={commands}
+          onMouseOver={this._onActivate.bind(this, index)}
+          onMouseOut={this._onActivate.bind(this, this.state.importantIndex)}
+          onClick={item.onClick} />
+      );
+    }, this);
+
+    if (paths.length === 0) {
+      classes = [CLASS_ROOT + "__slice"];
+      classes.push(CLASS_ROOT + "__slice--loading");
+      classes.push("color-index-loading");
+      endAngle = this._translateEndAngle(this.state.startAngle, this.state.max.value);
+      commands = this._spiralCommands(this.state.startAngle, endAngle, radius);
+      paths.push(
+        <path key="loading" className={classes.join(' ')} d={commands} />
+      );
+    }
+
+    return paths;
+  },
+
   _renderSingleIndicator: function (series) {
     var seriesIndicator = null;
     var startAngle = this.state.startAngle;
@@ -491,18 +563,57 @@ var Meter = React.createClass({
       var active = this.state.series[this.state.activeIndex];
       fields = {value: active.value, label: active.label};
     }
+    var units;
+    if (this.props.units) {
+      units = (
+        <span className={CLASS_ROOT + "__active-units large-number-font"}>
+          {this.props.units}
+        </span>
+      );
+    }
     return (
       <div className={CLASS_ROOT + "__active"}>
         <span className={CLASS_ROOT + "__active-value large-number-font"}>
           {fields.value}
-          <span className={CLASS_ROOT + "__active-units large-number-font"}>
-            {this.props.units}
-          </span>
+          {units}
         </span>
         <span className={CLASS_ROOT + "__active-label"}>
           {fields.label}
         </span>
       </div>
+    );
+  },
+
+  _renderLabels: function (series) {
+    var x = (this.state.viewBoxWidth / 2) - (SPIRAL_THICKNESS / 2);
+    var y = (SPIRAL_THICKNESS * 0.75);
+    var labels = series.map(function (item, index) {
+      var classes = [CLASS_ROOT + "__label"];
+      if (index === this.state.activeIndex) {
+        classes.push(CLASS_ROOT + "__label--active");
+      }
+
+      var textX = x;
+      var textY = y;
+
+      y += SPIRAL_THICKNESS;
+
+      return (
+        <text key={item.label || index} x={textX} y={textY}
+          textAnchor="end" fontSize={16}
+          className={classes.join(' ')}
+          onMouseOver={this._onActivate.bind(this, index)}
+          onMouseOut={this._onActivate.bind(this, this.state.importantIndex)}
+          onClick={item.onClick} >
+          {item.label}
+        </text>
+      );
+    }, this);
+
+    return (
+      <g className={CLASS_ROOT + "__labels"}>
+        {labels}
+      </g>
     );
   },
 
@@ -541,9 +652,12 @@ var Meter = React.createClass({
       classes.push(this.props.className);
     }
 
-    var values = null;
-    var thresholds = null;
-    var singleIndicator = null;
+    var values;
+    var thresholds;
+    var singleIndicator;
+    var labels;
+    var width;
+    var height;
     if ('arc' === this.props.type || 'circle' === this.props.type) {
       values = this._renderArcOrCircle(this.state.series);
       thresholds = this._renderArcOrCircle(this.state.thresholds);
@@ -553,21 +667,48 @@ var Meter = React.createClass({
     } else if ('bar' === this.props.type) {
       values = this._renderBar(this.state.series);
       thresholds = this._renderBar(this.state.thresholds);
+    } else if ('spiral' === this.props.type) {
+      values = this._renderSpiral(this.state.series);
+      if (this.state.series.length === 1) {
+        singleIndicator = this._renderSingleIndicator(this.state.series);
+      }
+      labels = this._renderLabels(this.state.series);
+      width = this.state.viewBoxWidth;
+      height = this.state.viewBoxHeight;
     }
 
-    var minLabel = null;
+    if (thresholds) {
+      thresholds = (
+        <g className={CLASS_ROOT + "__thresholds"}>
+          {thresholds}
+        </g>
+      );
+    }
+
+    var minLabel;
     if (this.state.min.label) {
       minLabel = (
-        <div className={CLASS_ROOT + "__label-min"}>
+        <div className={CLASS_ROOT + "__minmax-min"}>
           {this.state.min.label}
         </div>
       );
     }
-    var maxLabel = null;
+    var maxLabel;
     if (this.state.max.label) {
       maxLabel = (
-        <div className={CLASS_ROOT + "__label-max"}>
+        <div className={CLASS_ROOT + "__minmax-max"}>
           {this.state.max.label}
+        </div>
+      );
+    }
+    var minMax;
+    if (minLabel || maxLabel) {
+      minMax = (
+        <div className={CLASS_ROOT + "__minmax-container"}>
+          <div className={CLASS_ROOT + "__minmax"}>
+            {minLabel}
+            {maxLabel}
+          </div>
         </div>
       );
     }
@@ -586,21 +727,15 @@ var Meter = React.createClass({
             <svg className={CLASS_ROOT + "__graphic"}
               viewBox={"0 0 " + this.state.viewBoxWidth +
                 " " + this.state.viewBoxHeight}
-              preserveAspectRatio="xMidYMid meet">
-              <g className={CLASS_ROOT + "__thresholds"}>
-                {thresholds}
-              </g>
+              preserveAspectRatio="xMidYMid meet" width={width} height={height}>
+              {thresholds}
               <g className={CLASS_ROOT + "__values"}>
                 {values}
               </g>
+              {labels}
               {singleIndicator}
             </svg>
-            <div className={CLASS_ROOT + "__labels-container"}>
-              <div className={CLASS_ROOT + "__labels"}>
-                {minLabel}
-                {maxLabel}
-              </div>
-            </div>
+            {minMax}
           </div>
           {active}
         </div>
