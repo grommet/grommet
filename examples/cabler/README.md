@@ -1,7 +1,10 @@
 # Grommet Example App: cabler
 
-This app demonstrates a small-sized application using [Modular Grommet](http://grommet.io/docs/documentation/modular-grommet).
-We demonstrate mobile-first UI interactions that work great on desktop as well. This an application created to demonstrate topology view of a server with their racks connections.
+## Demo
+
+[Live demo](http://grommet.io/cabler) of a small-sized application using [Modular Grommet](http://grommet.io/docs/documentation/modular-grommet).
+
+This an application demonstrates a graphical topology view of a hardware with inter-rack connections.  This example also demonstrates mobile-first UI interactions that also work great on desktop. 
 
 **IMPORTANT**: Make sure to run `npm install` at Grommet root folder.
 
