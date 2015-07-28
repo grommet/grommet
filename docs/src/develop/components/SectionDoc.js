@@ -22,6 +22,8 @@ var SectionDoc = React.createClass({
         <section>
           <h2>Options</h2>
           <dl>
+            <dt><code>primary      true|false</code></dt>
+            <dd>Whether it should be treated as main content or not. Used for Accessibility.</dd>
           </dl>
           <p>Options for <Link to="develop_box">Box</Link> are also available.</p>
         </section>
