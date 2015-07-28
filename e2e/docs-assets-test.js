@@ -56,7 +56,7 @@ describe('Docs website e2e', function() {
 
         var aiSelector = '#hpi #hpi-ai-general';
         browser.click(buttonSelector).getText(aiSelector).then(function(text) {
-          expect(text).toBe('Download General Sticker Sheet');
+          expect(text).toBe('General Sticker Sheet');
           browser.getAttribute(aiSelector, 'href').then(function(linkPath) {
             request.get(linkPath).end(function(err, res) {
               if (err) {
@@ -114,7 +114,7 @@ describe('Docs website e2e', function() {
 
         var aiSelector = '#hpe #hpe-ai-general';
         browser.click(buttonSelector).getText(aiSelector).then(function(text) {
-          expect(text).toBe('Download General Sticker Sheet');
+          expect(text).toBe('General Sticker Sheet');
           browser.getAttribute(aiSelector, 'href').then(function(linkPath) {
             request.get(linkPath).end(function(err, res) {
               if (err) {
@@ -172,7 +172,7 @@ describe('Docs website e2e', function() {
 
         var aiSelector = '#hpe #hpe-ai-classic';
         browser.click(buttonSelector).getText(aiSelector).then(function(text) {
-          expect(text).toBe('Download Classic Sticker Sheet');
+          expect(text).toBe('Classic Sticker Sheet');
           browser.getAttribute(aiSelector, 'href').then(function(linkPath) {
             request.get(linkPath).end(function(err, res) {
               if (err) {
@@ -230,7 +230,7 @@ describe('Docs website e2e', function() {
 
         var aiSelector = '#hpe #hpe-ai-app-templates';
         browser.click(buttonSelector).getText(aiSelector).then(function(text) {
-          expect(text).toBe('Download App Templates Sticker Sheet');
+          expect(text).toBe('Application Templates');
           browser.getAttribute(aiSelector, 'href').then(function(linkPath) {
             request.get(linkPath).end(function(err, res) {
               if (err) {
@@ -288,7 +288,7 @@ describe('Docs website e2e', function() {
 
         var aiSelector = '#hpe #hpe-ai-icons';
         browser.click(buttonSelector).getText(aiSelector).then(function(text) {
-          expect(text).toBe('Download Icons Sticker Sheet');
+          expect(text).toBe('Icon Sticker Sheet');
           browser.getAttribute(aiSelector, 'href').then(function(linkPath) {
             request.get(linkPath).end(function(err, res) {
               if (err) {
@@ -346,7 +346,7 @@ describe('Docs website e2e', function() {
 
         var sketchSelector = '#hpe #hpe-sk-general';
         browser.click(buttonSelector).getText(sketchSelector).then(function(text) {
-          expect(text).toBe('Download Sticker Sheet');
+          expect(text).toBe('Sketch Sticker Sheet');
           browser.getAttribute(sketchSelector, 'href').then(function(linkPath) {
             request.get(linkPath).end(function(err, res) {
               if (err) {
@@ -375,7 +375,7 @@ describe('Docs website e2e', function() {
 
         var axureSelector = '#hpe #hpe-ax-general';
         browser.click(buttonSelector).getText(axureSelector).then(function(text) {
-          expect(text).toBe('Download Stencils');
+          expect(text).toBe('Axure Stencils');
           browser.getAttribute(axureSelector, 'href').then(function(linkPath) {
             request.get(linkPath).end(function(err, res) {
               if (err) {
@@ -404,7 +404,7 @@ describe('Docs website e2e', function() {
 
         var balsamiqSelector = '#hpe #hpe-bq-general';
         browser.click(buttonSelector).getText(balsamiqSelector).then(function(text) {
-          expect(text).toBe('Download Assets');
+          expect(text).toBe('Balsamiq Assets');
           browser.getAttribute(balsamiqSelector, 'href').then(function(linkPath) {
             request.get(linkPath).end(function(err, res) {
               if (err) {
