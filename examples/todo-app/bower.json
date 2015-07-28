@@ -9,6 +9,6 @@
   	"Eric Soderberg"
   ],
   "dependencies": {
-    "grommet": "^0.2.2"
+    "grommet": "^0.3.0"
   }
 }
