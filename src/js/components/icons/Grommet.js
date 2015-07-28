@@ -8,7 +8,7 @@ var IntlMixin = require('../../mixins/GrommetIntlMixin');
 var Grommet = React.createClass({
 
   mixins: [IntlMixin],
-  
+
   propTypes: {
     small: React.PropTypes.bool,
     large: React.PropTypes.bool,
