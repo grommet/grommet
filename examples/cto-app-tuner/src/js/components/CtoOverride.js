@@ -6,6 +6,7 @@ var Form = require('grommet/components/Form');
 var FormFields = require('grommet/components/FormFields');
 var Footer = require('grommet/components/Footer');
 var Menu = require('grommet/components/Menu');
+var Button = require('grommet/components/Button');
 
 var CtoOverride = React.createClass({
 
@@ -23,10 +24,9 @@ var CtoOverride = React.createClass({
             <p>Are you prepared for this much fun?</p>
           </FormFields>
           <Footer>
-            <Menu direction="left">
-              <input type="submit" className="primary" value="Yes, of course"
-                onClick={this.props.onSubmit} />
-              <a onClick={this.props.onClose}>No</a>
+            <Menu direction="row">
+              <Button label="Yes, of course" primary={true} onClick={this.props.onSubmit} />
+              <Button label="No" onClick={this.props.onClose} />
             </Menu>
           </Footer>
         </Form>
