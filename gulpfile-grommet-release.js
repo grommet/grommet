@@ -100,31 +100,31 @@ module.exports = function(gulp, opts) {
 
         var version = 'v' + gulpUtils.getPackageJSON().version;
         process.chdir('./tmp/grommet-bower');
-        gulp.src('./')
+        gulp.src('./*')
           .pipe(git.add({
             args: '--all'
           }))
           .pipe(git.commit(version)).on('end', function() {
-          git.push('origin', 'master', function(err) {
-            if (err) {
-              throw err;
-            }
-
-            git.tag(version, version, function(err) {
+            git.push('origin', 'master', function(err) {
               if (err) {
                 throw err;
               }
 
-              git.push('origin', version, function(err) {
+              git.tag(version, version, function(err) {
                 if (err) {
                   throw err;
                 }
-                process.chdir(__dirname);
-                done();
+
+                git.push('origin', version, function(err) {
+                  if (err) {
+                    throw err;
+                  }
+                  process.chdir(__dirname);
+                  done();
+                });
               });
             });
           });
-        });
       }
     );
   });
