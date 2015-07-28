@@ -7,25 +7,17 @@ var Menu = require('grommet/components/Menu');
 var Anchor = require('grommet/components/Anchor');
 var CloseIcon = require('grommet/components/icons/Clear');
 var Table = require('grommet/components/Table');
+var Actions = require('../actions/Actions');
 
 var Cables = React.createClass({
 
   propTypes: {
     cables: React.PropTypes.arrayOf(React.PropTypes.object).isRequired,
-    onChange: React.PropTypes.func.isRequired,
     onClose: React.PropTypes.func.isRequired
   },
 
-  _onSelect: function (index) {
-    this.props.cables.forEach(function (cable, cableIndex) {
-      cable.highlight = (cableIndex === index);
-    });
-    this.props.onChange();
-  },
-
   _onToggle: function (cable) {
-    cable.highlight = ! cable.highlight;
-    this.props.onChange();
+    Actions.toggleCableHighlight(cable);
   },
 
   render: function() {

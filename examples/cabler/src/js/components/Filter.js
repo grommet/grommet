@@ -6,24 +6,20 @@ var Menu = require('grommet/components/Menu');
 var Box = require('grommet/components/Box');
 var Anchor = require('grommet/components/Anchor');
 var CheckBox = require('grommet/components/CheckBox');
+var Actions = require('../actions/Actions');
 
 var Filter = React.createClass({
 
   propTypes: {
-    data: React.PropTypes.object.isRequired,
-    onChange: React.PropTypes.func.isRequired
+    data: React.PropTypes.object.isRequired
   },
 
   _onChangeNode: function (node) {
-    node.highlight = ! node.highlight;
-    this.props.onChange();
+    Actions.toggleNodeHighlight(node);
   },
 
   _onChangeNodeAll: function () {
-    this.props.data.nodes.forEach(function (node) {
-      node.highlight = false;
-    });
-    this.props.onChange();
+    Actions.clearNodeHighlight();
   },
 
   _onChange: function () {
@@ -32,38 +28,35 @@ var Filter = React.createClass({
 
   _onReset: function (event) {
     event.preventDefault();
-    this.props.data.nodes.forEach(function (node) {
-      node.highlight = false;
-    });
-    this.props.data.cables.forEach(function (cable, cableIndex) {
-      cable.highlight = false;
-    });
-    this.props.onChange();
+    Actions.clearAllHighlights();
   },
 
   render: function() {
     var nodes = [];
-    var checkAll = true;
-    for (let i = 0; i < this.props.data.nodes.length; i += 1) {
-      let node = this.props.data.nodes[i];
-      if (node.highlight) {
-        checkAll = false;
+    // don't bother if there's only one node
+    if (this.props.data.nodes.length > 1) {
+      var checkAll = true;
+      for (let i = 0; i < this.props.data.nodes.length; i += 1) {
+        let node = this.props.data.nodes[i];
+        if (node.highlight) {
+          checkAll = false;
+        }
+        nodes.push(
+          <CheckBox id={"node-" + i} key={i}
+            label={this.props.data.nodes[i].name}
+            checked={node.highlight}
+            onChange={this._onChangeNode.bind(this, node)} />
+        );
       }
-      nodes.push(
-        <CheckBox id={"node-" + i} key={i}
-          label={this.props.data.nodes[i].name}
-          checked={node.highlight}
-          onChange={this._onChangeNode.bind(this, node)} />
-      );
-    }
-    if (nodes.length > 0) {
-      nodes.unshift(
-        <CheckBox id="node-all" key="all"
-          label="All"
-          checked={checkAll}
-          onChange={this._onChangeNodeAll} />
-      );
-      nodes.unshift(<h4 key="header">Nodes</h4>);
+      if (nodes.length > 1) {
+        nodes.unshift(
+          <CheckBox id="node-all" key="all"
+            label="All"
+            checked={checkAll}
+            onChange={this._onChangeNodeAll} />
+        );
+        nodes.unshift(<h4 key="header">Nodes</h4>);
+      }
     }
 
     return (

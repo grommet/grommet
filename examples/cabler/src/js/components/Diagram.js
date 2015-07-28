@@ -11,17 +11,17 @@ var Menu = require('grommet/components/Menu');
 var Anchor = require('grommet/components/Anchor');
 var Filter = require('./Filter');
 var Cables = require('./Cables');
+var Actions = require('../actions/Actions');
 
 var Diagram = React.createClass({
 
   propTypes: {
-    data: React.PropTypes.object,
-    onClose: React.PropTypes.func.isRequired
+    data: React.PropTypes.object
   },
 
   _onHome: function (event) {
     event.preventDefault();
-    this.props.onClose();
+    Actions.clearConfiguration();
   },
 
   _onToggleCables: function (event) {
@@ -124,7 +124,7 @@ var Diagram = React.createClass({
       article = (
         <Article>
           <Header pad={{horizontal: "medium"}} justify="between">
-            <Title onClick={this._onHome}>HP 3Par Storage Cabling</Title>
+            <Title onClick={this._onHome}>{this.props.data.title}</Title>
             <Menu inline={true} direction="row" align="center" responsive={false}>
               <Filter data={this.props.data} onChange={this._onFilterChange} />
               {cablesControl}
