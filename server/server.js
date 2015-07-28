@@ -79,7 +79,7 @@ app.use('/socket.io', function(req, res) {
   proxy.web(req, res, { target: 'http://localhost:3000/socket.io' });
 });
 
-app.use('/invite', function(req, res) {
+app.use('/invite', bodyParser.json(), function(req, res) {
   var data = req.body;
   if (!data.channels) {
     data.channels = ['general'];
