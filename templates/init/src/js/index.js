@@ -1,4 +1,4 @@
-require("../scss/index.scss");
+require('../scss/index.scss');
 
 var React = require('react');
 var App = require('grommet/components/App');
@@ -40,7 +40,7 @@ var Main = React.createClass({
   render: function() {
     return (
       <App centered={false}>
-        <Header primary={true}>
+        <Header direction="row" justify="between" large={true} pad={{horizontal: 'medium'}}>
           <Title><%= appTitle %></Title>
         </Header>
         <TodoAppDashboard tasks={this.state.tasks} />

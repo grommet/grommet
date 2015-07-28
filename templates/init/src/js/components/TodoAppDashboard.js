@@ -2,8 +2,7 @@ var React = require('react');
 var Header = require('grommet/components/Header');
 var Tiles = require('grommet/components/Tiles');
 var Tile = require('grommet/components/Tile');
-var Section = require('grommet/components/Section');
-var Donut = require('grommet/components/Donut');
+var Meter = require('grommet/components/Meter');
 var Table = require('grommet/components/Table');
 var Status = require('grommet/components/icons/Status');
 
@@ -39,15 +38,13 @@ var TodoAppDashboard = React.createClass({
     });
 
     return (
-      <Tiles>
-        <Tile>
-          <Section centered={true}>
-            <Donut series={[
-              getLabel('Fix Now', tasksMap.error, "error"),
-              getLabel('Remember', tasksMap.warning, "warning"),
-              getLabel('Enjoy', tasksMap.ok, "ok")
-            ]} />
-          </Section>
+      <Tiles fill={true} flush={false}>
+        <Tile align="center">
+          <Meter series={[
+            getLabel('Fix Now', tasksMap.error, "error"),
+            getLabel('Remember', tasksMap.warning, "warning"),
+            getLabel('Enjoy', tasksMap.ok, "ok")
+          ]} type="circle" />
         </Tile>
         <Tile>
           <Header><h3>My Tasks:</h3></Header>
