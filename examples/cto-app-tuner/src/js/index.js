@@ -91,7 +91,7 @@ var Main = React.createClass({
     var tuner = (
       <Sidebar primary={true}>
         <Form flush={false} fill={true}>
-          <Header flush={false}>
+          <Header direction="row" justify="between" pad={{horizontal: 'medium'}}>
             <h4>Tuner</h4>
             {closeControl}
           </Header>
@@ -120,7 +120,7 @@ var Main = React.createClass({
 
     var dashboard = (
       <div>
-        <Header primary={true} flush={false}>
+        <Header direction="row" justify="between" pad={{horizontal: 'medium'}}>
           <Title>CTO Application</Title>
           {editControl}
         </Header>
@@ -161,9 +161,15 @@ var Main = React.createClass({
             <Header small={true}>
               <h4>Fun Factor</h4>
             </Header>
-              <Chart series={series} min={0} max={10} threshold={6} type="area" legend={true}
-              xAxis={['Jun 3', 'Jun 2', 'Jun 1', 'May 31', 'May 30']}
-              units="Fun" small={true} smooth={true} />
+              <Chart series={series} max={10} threshold={6} type="area" legend={{}}
+              xAxis={[
+                { "label": "Jun 3", value: 5 },
+                { "label": "Jun 2", value: 4 },
+                { "label": "Jun 1", value: 3 },
+                { "label": "May 31", value: 2 },
+                { "label": "May 30", value: 1 }
+              ]}
+              units="Fun" smooth={true} />
           </Tile>
         </Tiles>
       </div>
