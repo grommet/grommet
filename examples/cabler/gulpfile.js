@@ -29,8 +29,8 @@ var opts = {
   mainJs: 'examples/cabler/src/js/index.js',
   mainScss: 'examples/cabler/src/scss/index.scss',
   sync: {
-    hostname: 'grommet.usa.hp.com',
-    username: 'ligo',
+    hostname: 'grommet.io',
+    username: 'grommet',
     remoteDestination: '/var/www/html/examples/cabler/dist'
   },
   webpack: {

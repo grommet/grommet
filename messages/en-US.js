@@ -29,7 +29,7 @@ module.exports = {
   Resource: 'Resource',
   Running: 'Running',
   Search: 'Search',
-  'Skip To': 'Skip To',
+  'Skip to': 'Skip to',
   State: 'State',
   Status: 'Status',
   Tasks: 'Tasks',
