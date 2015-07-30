@@ -15,6 +15,13 @@ var series = [
   {label: 'Fourth', value: 10}
 ];
 
+var seriesEmpty = [
+  {label: 'First', value: 40},
+  {label: 'Second', value: 30},
+  {label: 'Third', value: 30},
+  {label: 'Fourth', value: 0}
+];
+
 var iconSeries = [
   {label: 'Female', value: 60, icon: {
     width: 36, height: 36,
@@ -115,6 +122,15 @@ var DistributionDoc = React.createClass({
           <pre><code className="html">
             {"<Distribution large={true}\n " +
               "series={" + stringify(series, null, '  ') + "}  />"}
+          </code></pre>
+
+          <h3>Empty series</h3>
+          <div className="example">
+            <Distribution series={seriesEmpty} />
+          </div>
+          <pre><code className="html">
+            {"<Distribution large={true}\n " +
+              "series={" + stringify(seriesEmpty, null, '  ') + "}  />"}
           </code></pre>
 
           <h3>Icon</h3>

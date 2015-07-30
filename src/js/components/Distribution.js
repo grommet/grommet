@@ -166,7 +166,9 @@ var Distribution = React.createClass({
       var areaPer = (this.state.width * this.state.height) / this.state.total;
       var origin = [0, 0];
       var across = false;
-      boxes = this.props.series.map(function (item, index) {
+      boxes = this.props.series.filter(function(item) {
+        return item.value > 0;
+      }).map(function (item, index) {
         var boxClasses = [CLASS_ROOT + "__box"];
         var iconClasses = [CLASS_ROOT + "__icons"];
         var labelClasses = [CLASS_ROOT + "__label"];
