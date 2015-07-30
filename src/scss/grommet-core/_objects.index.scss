@@ -111,11 +111,6 @@
     > *:not(.header) {
       display: block;
     }
-
-    > *:not(.index-attribute--medium):not(.header):not(.footer) {
-      -webkit-flex: 1;
-      flex: 1;
-    }
   }
 }
 
