@@ -35,6 +35,9 @@
   }
 
   &--interactive {
+
+    cursor: pointer;
+
     &:hover {
       color: $brand-color;
       cursor: pointer;
