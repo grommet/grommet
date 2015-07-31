@@ -10,45 +10,52 @@ var FormFields = require('grommet/components/FormFields');
 var FormField = require('grommet/components/FormField');
 var Menu = require('grommet/components/Menu');
 var Button = require('grommet/components/Button');
+var Actions = require('../actions/Actions');
 
 var Configuration = React.createClass({
 
   propTypes: {
-    onConfigure: React.PropTypes.func.isRequired
+    data: React.PropTypes.object.isRequired
   },
 
   _onConfigure: function (event) {
     event.preventDefault();
     let configuration = {
       model: this.refs.model.getDOMNode().value,
-      nodeCount: parseInt(this.refs.nodes.getDOMNode().value),
-      driveCount: parseInt(this.refs.drives.getDOMNode().value)
+      numNodes: parseInt(this.refs.nodes.getDOMNode().value),
+      numDrives: parseInt(this.refs.drives.getDOMNode().value)
     };
-    this.props.onConfigure(configuration);
+    Actions.configure(configuration);
   },
 
   render: function() {
+    var configuration = this.props.data.configuration;
+    var options = this.props.data.models.map(function (model) {
+      return <option key={model}>{model}</option>;
+    });
+
     return (
       <Article>
         <Header fixed={true} pad={{horizontal: 'medium'}}>
-          <Title>HP 3Par Storage Cabling</Title>
+          <Title>{this.props.data.title}</Title>
         </Header>
         <Form pad="medium">
           <FormFields>
             <fieldset>
               <FormField label="Model" htmlFor={"model"}>
                 <select ref="model" id={"model"} name="model">
-                  <option>7200</option>
-                  <option>7400</option>
+                  {options}
                 </select>
               </FormField>
               <FormField label="Nodes" htmlFor={"nodes"}>
                 <input ref="nodes" id={"nodes"} name="nodes" type="number"
-                  min="1" max="4" step="1" defaultValue="2" />
+                  min="1" max={configuration.maxNodes} step="1"
+                  defaultValue={configuration.numNodes} />
               </FormField>
               <FormField label="Drives" htmlFor={"drives"}>
                 <input ref="drives" id={"drives"} name="drives" type="number"
-                  min="1" max="20" step="1" defaultValue="12" />
+                  min="1" max={configuration.maxDrives} step="1"
+                  defaultValue={configuration.numDrives} />
               </FormField>
             </fieldset>
           </FormFields>

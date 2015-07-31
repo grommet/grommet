@@ -46,11 +46,11 @@ $meter-large-circle-size: $large-panel-width;
     white-space: normal;
   }
 
-  &__labels-container {
+  &__minmax-container {
     display: block;
   }
 
-  &__labels {
+  &__minmax {
     display: -webkit-flex;
     display: flex;
     -webkit-justify-content: space-between;
@@ -121,7 +121,7 @@ $meter-large-circle-size: $large-panel-width;
         }
       }
 
-      &__labels-container {
+      &__minmax-container {
         width: $meter-bar-length;
       }
     }
@@ -140,16 +140,14 @@ $meter-large-circle-size: $large-panel-width;
   }
 
   &--circle,
-  &--arc {
+  &--arc,
+  &--spiral {
     @include media-query(palm) {
-      width: $meter-circle-size;
       margin: 0px auto;
     }
 
     svg.meter__graphic {
       display: block;
-      width: $meter-circle-size;
-      height: $meter-circle-size;
     }
 
     .meter {
@@ -195,11 +193,37 @@ $meter-large-circle-size: $large-panel-width;
         //stroke-width: $inuit-base-spacing-unit;
         stroke-linecap: butt;
       }
+    }
 
+    &.meter--active {
+      .meter {
+        &__values .meter__slice {
+          stroke-width: $meter-threshold-width;
+
+          &--active {
+            stroke-width: $meter-width;
+          }
+        }
+      }
+    }
+  }
+
+  &--circle,
+  &--arc {
+    @include media-query(palm) {
+      width: $meter-circle-size;
+    }
+
+    svg.meter__graphic {
+      width: $meter-circle-size;
+      height: $meter-circle-size;
+    }
+
+    .meter {
       &__active {
         position: absolute;
         left: $meter-label-width;
-        // leave room for labels on either side
+        // leave room for minmax on either side
         width: $meter-circle-size - double($meter-label-width);
         text-align: center;
         white-space: normal;
@@ -224,24 +248,12 @@ $meter-large-circle-size: $large-panel-width;
         }
       }
 
-      &__labels-container {
+      &__minmax-container {
         width: $meter-circle-size;
       }
 
       &__legend {
         margin: $inuit-base-spacing-unit 0 0;
-      }
-    }
-
-    &.meter--active {
-      .meter {
-        &__values .meter__slice {
-          stroke-width: $meter-threshold-width;
-
-          &--active {
-            stroke-width: $meter-width;
-          }
-        }
       }
     }
   }
@@ -270,6 +282,35 @@ $meter-large-circle-size: $large-panel-width;
     }
   }
 
+  &--spiral {
+    .meter {
+      &__active {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        white-space: normal;
+        text-align: right;
+        //margin-left: halve($inuit-base-spacing-unit);
+        @include inuit-font-size($inuit-heading-size-3);
+
+        &-units {
+          color: $secondary-text-color;
+          margin-left: 0.5em;
+        }
+
+        &-value {
+          display: block;
+          margin-bottom: quarter($inuit-base-spacing-unit);
+        }
+
+        &-label {
+          display: block;
+          @include inuit-font-size($label-font-size, $label-font-size + 2);
+        }
+      }
+    }
+  }
+
   &--vertical {
     .meter {
       &__active-graphic {
@@ -281,7 +322,7 @@ $meter-large-circle-size: $large-panel-width;
         white-space: nowrap;
       }
 
-      &__labels {
+      &__minmax {
         -webkit-flex-direction: column;
         flex-direction: column;
       }
@@ -342,7 +383,7 @@ $meter-large-circle-size: $large-panel-width;
         }
       }
 
-      .meter__labels-container {
+      .meter__minmax-container {
         position: absolute;
         top: 0px;
         left: $inuit-base-spacing-unit + halve($inuit-base-spacing-unit);
@@ -350,7 +391,7 @@ $meter-large-circle-size: $large-panel-width;
         height: $meter-bar-length;
       }
 
-      .meter__labels {
+      .meter__minmax {
         height: $meter-bar-length;
       }
 
@@ -374,7 +415,7 @@ $meter-large-circle-size: $large-panel-width;
           text-align: right;
         }
 
-        &__labels-container {
+        &__minmax-container {
           display: inline-block;
           vertical-align: top;
           width: auto;
@@ -384,7 +425,7 @@ $meter-large-circle-size: $large-panel-width;
           padding-bottom: halve($inuit-base-spacing-unit);
         }
 
-        &__labels {
+        &__minmax {
           height: $panel-width - $inuit-base-spacing-unit;
         }
       }
@@ -401,7 +442,7 @@ $meter-large-circle-size: $large-panel-width;
   &--small {
     &.meter--bar {
 
-      .meter__labels-container {
+      .meter__minmax-container {
         width: $meter-small-circle-size;
       }
 
@@ -422,7 +463,7 @@ $meter-large-circle-size: $large-panel-width;
       }
 
       .meter__active {
-        // leave room for labels on either side
+        // leave room for minmax on either side
         width: $meter-small-circle-size - double($meter-label-width);
 
         &-value {
@@ -496,7 +537,7 @@ $meter-large-circle-size: $large-panel-width;
     &-right {
       white-space: nowrap;
 
-      .meter__labels-container {
+      .meter__minmax-container {
         width: auto;
       }
 

@@ -1,76 +1,53 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
+var Reflux = require('reflux');
 var App = require('grommet/components/App');
+var Actions = require('../actions/Actions');
+var Store = require('../stores/Store');
 var Home = require('./Home');
 var Diagram = require('./Diagram');
-var Mock = require('./Mock');
 
 var Cabler = React.createClass({
 
+  mixins: [Reflux.ListenerMixin],
+
   _pushState: function () {
-    var label = 'Cabler';
-    var url = window.location.href.split('?')[0];
-    var state;
-    if (this.state.data) {
-      var configuration = this.state.data.configuration;
-      url += '?model=' + encodeURIComponent(configuration.model);
-      url += '&nodeCount=' + encodeURIComponent(configuration.nodeCount);
-      url += '&driveCount=' + encodeURIComponent(configuration.driveCount);
-      label = configuration.model;
-      state = {configuration: configuration};
+    if (this.state.path) {
+      window.history.pushState(this.state, this.state.historyLabel, this.state.path);
     }
-    window.history.pushState(state, label, url);
   },
 
   _popState: function (event) {
     if (event.state) {
-      var data = Mock.configure(event.state.configuration);
-      this.setState({data: data, home: false});
+      Actions.set(event.state);
     }
   },
 
-  _onConfigure: function (configuration) {
-    var data = Mock.configure(configuration);
-    this.setState({data: data, home: false}, this._pushState);
-  },
-
-  _onHome: function () {
-    this.setState({data: null, home: true}, this._pushState);
+  _onChange: function (data, fromSet) {
+    let push;
+    if (! fromSet) {
+      push = this._pushState;
+    }
+    this.setState(data, push);
   },
 
   getInitialState: function () {
-    var data = null;
-
-    var url = window.location.href;
-    var params = url.split('?');
-    if (params.length > 1) {
-      var configuration = {};
-      params[1].split('&').forEach(function (param) {
-        var parts = param.split('=');
-        configuration[parts[0]] = decodeURIComponent(parts[1]);
-      });
-      configuration.nodeCount = parseInt(configuration.nodeCount);
-      configuration.driveCount = parseInt(configuration.driveCount);
-      data = Mock.configure(configuration);
-    }
-
-    return {
-      data: data,
-      home: (null === data)
-    };
+    return Store.getInitialState();
   },
 
   componentDidMount: function () {
+    this.listenTo(Store, this._onChange);
     window.onpopstate = this._popState;
+    Actions.configureFromLocation(window.location.pathname, window.location.search);
   },
 
   render: function() {
     var contents;
-    if (this.state.home) {
-      contents = <Home onConfigure={this._onConfigure} />;
+    if (this.state.nodes.length === 0) {
+      contents = <Home data={this.state} />;
     } else {
-      contents = <Diagram data={this.state.data} onClose={this._onHome} />;
+      contents = <Diagram data={this.state} />;
     }
 
     return (

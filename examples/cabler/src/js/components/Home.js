@@ -8,7 +8,7 @@ var Configuration = require('./Configuration');
 var Home = React.createClass({
 
   propTypes: {
-    onConfigure: React.PropTypes.func.isRequired
+    data: React.PropTypes.object.isRequired
   },
 
   _onResponsive: function (responsive) {
@@ -16,7 +16,7 @@ var Home = React.createClass({
   },
 
   getInitialState: function () {
-    return {data: null};
+    return {};
   },
 
   render: function() {
@@ -27,10 +27,11 @@ var Home = React.createClass({
           texture="url(img/3PAR_ManPullingDriveSquattingHR.jpg)" />
       );
     }
+
     return (
       <Split flex="left" separator={true} onResponsive={this._onResponsive}>
         {image}
-        <Configuration onConfigure={this.props.onConfigure} />
+        <Configuration data={this.props.data} />
       </Split>
     );
   }
