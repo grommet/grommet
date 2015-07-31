@@ -10,7 +10,7 @@ var SkipLinks = React.createClass({
 
   mixins: [IntlMixin],
 
-  componentDidMount: function () {
+  _updateAnchors: function () {
     var anchorElements = document.querySelectorAll('[data-skip-label]');
 
     var anchors = Array.prototype.map.call(anchorElements, function (anchorElement) {
@@ -21,6 +21,21 @@ var SkipLinks = React.createClass({
     });
 
     this.setState({anchors: anchors});
+  },
+
+  componentDidMount: function () {
+    this._updateAnchors();
+  },
+
+  componentWillReceiveProps: function (newProps) {
+    this.setState({routeChanged: true});
+  },
+
+  componentDidUpdate: function () {
+    if (this.state.routeChanged) {
+      this._updateAnchors();
+      this.setState({routeChanged: false});
+    }
   },
 
   getInitialState: function () {
