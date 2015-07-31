@@ -10,7 +10,7 @@ var inline =
 var TitleDoc = React.createClass({
   render: function() {
     return (
-      <Article>
+      <Article primary={true}>
         <header>
           <h1>Title</h1>
           <p>Title component usually rendered inside the Header.</p>

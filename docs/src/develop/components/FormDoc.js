@@ -30,7 +30,7 @@ var FormDoc = React.createClass({
       "  <Footer>...</Footer>",
       "</Form>"].join("\n");
     return (
-      <Article>
+      <Article primary={true}>
         <header>
           <h1>Form</h1>
           <p>A web form.</p>

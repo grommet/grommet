@@ -47,7 +47,7 @@ var MeterDoc = React.createClass({
 
   render: function() {
     return (
-      <Article>
+      <Article primary={true}>
         <header>
           <h1>Meter</h1>
           <p>Shows a bar, arc, or circular meter graphic.</p>

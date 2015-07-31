@@ -15,7 +15,7 @@ var TileDoc = React.createClass({
       "</Carousel>";
 
     return (
-      <Article>
+      <Article primary={true}>
         <header>
           <h1>Carousel</h1>
           <p>Image carousel.</p>

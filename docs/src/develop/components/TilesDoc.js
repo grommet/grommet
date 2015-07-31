@@ -47,7 +47,7 @@ var TileDoc = React.createClass({
     }
 
     return (
-      <Article>
+      <Article primary={true}>
         <header>
           <h1>Tile(s)</h1>
           <p>Lay out equivalently sized tiles of content.</p>

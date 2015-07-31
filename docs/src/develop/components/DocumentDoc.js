@@ -21,7 +21,7 @@ var DocumentDoc = React.createClass({
     ].join('\n');
 
     return (
-      <Article>
+      <Article primary={true}>
         <header>
           <h1>Document</h1>
           <p>NOTE: This component is deprecated and will be removed soon.

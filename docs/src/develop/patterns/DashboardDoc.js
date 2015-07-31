@@ -31,7 +31,7 @@ var dateSeriesXAxis = [
 var DashboardDoc = React.createClass({
   render: function() {
     return (
-      <Article>
+      <Article primary={true}>
         <header>
           <h1>Dashboard</h1>
           <p>The dashboard shows the most important information

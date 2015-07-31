@@ -81,7 +81,7 @@ var Design = React.createClass({
       <Article>
         <DocsHeader />
 
-        <Section appCentered={true} colorIndex="neutral-1">
+        <Section appCentered={true} colorIndex="neutral-1" primary={true}>
           <h1>Design</h1>
           <p>This application style guide was created by the designers at Hewlett
           Packard Enterprise. The guide covers the general design principles as well

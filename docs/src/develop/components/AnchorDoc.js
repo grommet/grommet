@@ -16,7 +16,7 @@ var AnchorDoc = React.createClass({
       "<Anchor href=\"...\">label</Anchor"
     ].join("\n");
     return (
-      <Article>
+      <Article primary={true}>
         <header>
           <h1>Anchor</h1>
           <p>A button. We have a separate component from the

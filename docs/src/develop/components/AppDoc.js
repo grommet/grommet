@@ -12,7 +12,7 @@ var inline =
 var AppDoc = React.createClass({
   render: function() {
     return (
-      <Article>
+      <Article primary={true}>
 
         <header>
           <h1>App</h1>

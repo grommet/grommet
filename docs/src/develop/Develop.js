@@ -144,7 +144,7 @@ var Develop = React.createClass({
       <Article>
         <DocsHeader />
 
-        <Section appCentered={true} colorIndex="neutral-2">
+        <Section primary={true} appCentered={true} colorIndex="neutral-2">
           <h1>Develop</h1>
           <p>Grommet was created to give developers and designers alike access to tools
           that otherwise are out of reach of most product teams. Grommet’s goal is to

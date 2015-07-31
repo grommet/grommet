@@ -11,7 +11,7 @@ var CheckBoxDoc = React.createClass({
       "<CheckBox id=\"item2\" label=\"Item 1\">"
     ].join("\n");
     return (
-      <Article>
+      <Article primary={true}>
         <header>
           <h1>CheckBox</h1>
           <p>A check box in a web form. We have a separate component from the

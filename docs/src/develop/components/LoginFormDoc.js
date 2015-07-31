@@ -10,7 +10,7 @@ var LoginFormDoc = React.createClass({
   render: function() {
     var inline = "<LoginForm onSubmit={...} />";
     return (
-      <Article>
+      <Article primary={true}>
         <header>
           <h1>LoginForm</h1>
           <p>The form used to log in.</p>

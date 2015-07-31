@@ -10,7 +10,7 @@ var inline =
 var SplitDoc = React.createClass({
   render: function() {
     return (
-      <Article>
+      <Article primary={true}>
         <header>
           <h1>Split</h1>
           <p>A full height container with two children laid out horizontally.</p>

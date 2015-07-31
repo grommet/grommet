@@ -10,7 +10,7 @@ var inline =
 var SidebarDoc = React.createClass({
   render: function() {
     return (
-      <Article>
+      <Article primary={true}>
         <header>
           <h1>Sidebar</h1>
           <p>A full height, fixed width container.</p>
