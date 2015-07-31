@@ -55,8 +55,14 @@ app.use('/tour/', function (req, res) {
   res.redirect('/medium-app');
 });
 
-app.use('/medium-app', function(req, res) {
-  proxy.web(req, res, { target: 'http://localhost:8010/medium-app' });
+var mediumAppPath = '/medium-app';
+
+app.use(mediumAppPath, function(req, res) {
+  if (req.originalUrl === mediumAppPath) {
+    res.redirect(301, req.originalUrl + '/');
+  } else {
+    proxy.web(req, res, { target: 'http://localhost:8010/medium-app' });
+  }
 });
 
 app.use('/people-finder', function(req, res) {
