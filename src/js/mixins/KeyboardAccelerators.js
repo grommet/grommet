@@ -104,7 +104,7 @@ var KeyboardAccelerators = {
       }
     }
     for (; i < _listenersCounter - 1; i++) {
-      _listeners[i] = this.listeners[i + 1];
+      _listeners[i] = _listeners[i + 1];
     }
     _listenersCounter--;
     _listeners[_listenersCounter] = null;

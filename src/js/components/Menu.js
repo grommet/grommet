@@ -31,6 +31,46 @@ var MenuDrop = React.createClass({
     router: React.PropTypes.func
   },
 
+  mixins: [KeyboardAccelerators],
+
+  componentDidMount: function () {
+    this._keyboardHandlers = {
+      up: this._onUpKeyPress,
+      down: this._onDownKeyPress
+    };
+    this.startListeningToKeyboard(this._keyboardHandlers);
+  },
+
+  componentWillUnmount: function () {
+    this.stopListeningToKeyboard(this._keyboardHandlers);
+  },
+
+  _onUpKeyPress: function (event) {
+    if (!this.activeMenuItem) {
+      var menuItems = this.refs.navContainer.getDOMNode().childNodes;
+      var lastMenuItem = menuItems[menuItems.length - 1];
+      this.activeMenuItem = lastMenuItem;
+    } else if (this.activeMenuItem.previousSibling) {
+      this.activeMenuItem = this.activeMenuItem.previousSibling;
+    }
+
+    this.activeMenuItem.focus();
+    // Stops KeyboardAccelerators from calling the other listeners. Works limilar to event.stopPropagation().
+    return true;
+  },
+
+  _onDownKeyPress: function (event) {
+    if (!this.activeMenuItem) {
+      this.activeMenuItem = this.refs.navContainer.getDOMNode().childNodes[0];
+    } else if (this.activeMenuItem.nextSibling) {
+      this.activeMenuItem = this.activeMenuItem.nextSibling;
+    }
+
+    this.activeMenuItem.focus();
+    // Stops KeyboardAccelerators from calling the other listeners. Works limilar to event.stopPropagation().
+    return true;
+  },
+
   getChildContext: function () {
     return { router: this.props.router };
   },
@@ -41,7 +81,7 @@ var MenuDrop = React.createClass({
 
     var first = this.props.control;
     var second = (
-      <Box tag="nav" {...other} >
+      <Box ref="navContainer" tag="nav" {...other} >
         {this.props.children}
       </Box>
     );
@@ -107,19 +147,26 @@ var Menu = React.createClass({
 
   _onOpen: function (event) {
     event.preventDefault();
-    this.setState({active: true});
+    this.setState({state: 'expanded'});
   },
 
   _onClose: function () {
-    this.setState({active: false});
+    this.setState({state: 'collapsed'});
+    if (document.activeElement === this.getDOMNode()) {
+      this.setState({state: 'focused'});
+    } else {
+      this.getDOMNode().focus();
+    }
   },
 
   _onFocusControl: function () {
-    this.setState({controlFocused: true});
+    this.setState({state: 'focused'});
   },
 
   _onBlurControl: function () {
-    this.setState({controlFocused: false});
+    if (this.state.state === 'focused') {
+      this.setState({state: 'collapsed'});
+    }
   },
 
   _onSink: function (event) {
@@ -130,10 +177,14 @@ var Menu = React.createClass({
 
   _onResponsive: function (small) {
     // deactivate if we change resolutions
+    var newState = this.state.state;
+    if (this.state.state === 'expanded') {
+      newState = 'focused';
+    }
     if (small) {
-      this.setState({inline: false, active: false});
+      this.setState({inline: false, active: newState});
     } else {
-      this.setState({inline: this.props.inline, active: false});
+      this.setState({inline: this.props.inline, active: newState});
     }
   },
 
@@ -148,8 +199,8 @@ var Menu = React.createClass({
       inline = (! this.props.label && ! this.props.icon);
     }
     return {
-      controlFocused: false,
-      active: false,
+      // state may be 'collapsed', 'focused' or 'expanded' (active).
+      state: 'collapsed',
       inline: inline
     };
   },
@@ -180,34 +231,31 @@ var Menu = React.createClass({
       down: this._onOpen
     };
 
-    // the order here is important, need to turn off keys before turning on
-
-    if (! this.state.controlFocused && prevState.controlFocused) {
-      this.stopListeningToKeyboard(focusedKeyboardHandlers);
-    }
-
-    if (! this.state.active && prevState.active) {
-      document.removeEventListener('click', this._onClose);
-      this.stopListeningToKeyboard(activeKeyboardHandlers);
-      this._drop.remove();
-      this._drop = null;
-    }
-
-    // re-arm the space key in case we used it when active
-    if (this.state.controlFocused && (! prevState.controlFocused ||
-      (! this.state.active && prevState.active))) {
-      this.startListeningToKeyboard(focusedKeyboardHandlers);
-    }
-
-    if (this.state.active && ! prevState.active) {
-      document.addEventListener('click', this._onClose);
-      this.startListeningToKeyboard(activeKeyboardHandlers);
-      this._drop = Drop.add(this.refs.control.getDOMNode(),
-        this._renderDrop(), this.props.dropAlign);
-    }
-
-    if (this.state.active) {
-      this._drop.render(this._renderDrop());
+    switch (this.state.state) {
+      case 'collapsed':
+        this.stopListeningToKeyboard(focusedKeyboardHandlers);
+        this.stopListeningToKeyboard(activeKeyboardHandlers);
+        document.removeEventListener('click', this._onClose);
+        if (this._drop) {
+          this._drop.remove();
+          this._drop = null;
+        }
+        break;
+      case 'focused':
+        this.stopListeningToKeyboard(activeKeyboardHandlers);
+        this.startListeningToKeyboard(focusedKeyboardHandlers);
+        break;
+      case 'expanded':
+        this.stopListeningToKeyboard(focusedKeyboardHandlers);
+        this.startListeningToKeyboard(activeKeyboardHandlers);
+        if (prevState.state !== 'expanded') {
+          document.addEventListener('click', this._onClose);
+          this._drop = Drop.add(this.refs.control.getDOMNode(),
+            this._renderDrop(), this.props.dropAlign);
+          this._drop.container.focus();
+        }
+        this._drop.render(this._renderDrop());
+        break;
     }
   },
 
@@ -271,7 +319,6 @@ var Menu = React.createClass({
     } else {
       onClick = this._onSink;
     }
-
     return (
       <MenuDrop router={this.context.router}
         dropAlign={this.props.dropAlign}
@@ -348,7 +395,6 @@ var Menu = React.createClass({
 
     }
   }
-
 });
 
 module.exports = Menu;

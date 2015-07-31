@@ -87,7 +87,8 @@
       white-space: nowrap;
       display: block;
 
-      &:hover {
+      &:hover,
+      &:focus {
         text-decoration: none;
         background-color: $hover-background-color;
       }
