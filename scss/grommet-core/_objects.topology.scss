@@ -58,20 +58,19 @@ $inner-pad: round($inuit-base-spacing-unit * 0.25);
     -webkit-align-items: stretch;
     align-items: stretch;
 
-    > * {
-      -webkit-flex: 1;
-      flex: 1;
-    }
-
     &--direction {
       &-row {
         -webkit-flex-direction: row;
         flex-direction: row;
+        -webkit-flex-grow: 1;
+        flex-grow: 1;
       }
 
       &-column {
         -webkit-flex-direction: column;
         flex-direction: column;
+        -webkit-flex-grow: 1;
+        flex-grow: 1;
       }
     }
   }
@@ -85,14 +84,9 @@ $inner-pad: round($inuit-base-spacing-unit * 0.25);
     align-items: stretch;
     overflow: hidden;
 
-    > *:not(.topology__parts) {
-      -webkit-flex: 0 0 auto;
-      flex: 0 0 auto;
-    }
-
-    > .topology__parts {
-      -webkit-flex-grow: 1;
-      flex-grow: 1;
+    > .topology__parts .topology__part {
+      -webkit-flex: 1;
+      flex: 1;
     }
 
     &--demarcate {
