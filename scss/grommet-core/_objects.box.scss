@@ -109,6 +109,7 @@
   &--align-start {
     -webkit-align-items: flex-start;
     align-items: flex-start;
+    text-align: left;
   }
 
   &--align-center {
@@ -120,6 +121,7 @@
   &--align-end {
     -webkit-align-items: flex-end;
     align-items: flex-end;
+    text-align: right;
   }
 
   &--separator {
