@@ -3,8 +3,8 @@
 $brand-color-lighter: lighten($brand-color, 23%) !default;
 $brand-color-darker: darken($brand-color, 9%) !default;
 
-$text-color: #333;
-$secondary-text-color: #777;
+$text-color: #333 !default;
+$secondary-text-color: #777 !default;
 $hover-text-color: #000;
 $placeholder-text-color: #aaa;
 $colored-text-color: #eee;
