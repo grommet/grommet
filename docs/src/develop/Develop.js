@@ -20,6 +20,7 @@ var ModularGrommet = require('./ModularGrommet');
 var GetStarted = require('./GetStarted');
 var Architecture = require('./Architecture');
 var Integration = require('./Integration');
+var Accessibility = require('./Accessibility');
 
 var ActionsDoc = require('./patterns/ActionsDoc');
 var AnchorDoc = require('./components/AnchorDoc');
@@ -128,7 +129,8 @@ var CONTENTS = [
   {label: 'Reference',
     contents: [
       {route: 'develop_architecture', label: 'Architecture', component: Architecture},
-      {route: 'develop_integration', label: 'Integration', component: Integration}
+      {route: 'develop_integration', label: 'Integration', component: Integration},
+      {route: 'develop_accessibility', label: 'Accessibility', component: Accessibility}
     ]
   }
 ];
