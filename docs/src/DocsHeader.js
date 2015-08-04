@@ -19,9 +19,7 @@ var DocsHeader = React.createClass({
         appCentered={true} justify="between">
         <Title responsive={false}>
           <Link to="docs">
-            <GrommetLogo small={true} />
-          </Link>
-          <Link to="docs">
+            <GrommetLogo small={true} a11y-title=""/>
             Grommet
           </Link>
         </Title>
