@@ -18,7 +18,7 @@ var TopologyDoc = React.createClass({
       "</Topology>";
 
     return (
-      <Article>
+      <Article primary={true}>
         <header>
           <h1>Topology</h1>
           <p>Visualize structure and connectivity.</p>

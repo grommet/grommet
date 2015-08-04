@@ -16,7 +16,7 @@ var HeaderDoc = React.createClass({
     var inline =
     "<Header>\n  <Link to={route}>{label}</Link>\n  ...\n</Header>";
     return (
-      <Article>
+      <Article primary={true}>
         <header>
           <h1>Header</h1>
           <p>Combines Title and Menu elements responsively.</p>

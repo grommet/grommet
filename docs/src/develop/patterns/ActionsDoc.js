@@ -6,7 +6,7 @@ var Article = require('grommet/components/Article');
 var ActionsDoc = React.createClass({
   render: function() {
     return (
-      <Article>
+      <Article primary={true}>
         <header>
           <h1>Actions</h1>
           <p>TBD</p>

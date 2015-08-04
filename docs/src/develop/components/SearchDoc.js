@@ -18,7 +18,7 @@ var SearchDoc = React.createClass({
     var inline =
     "<Search onChange={...} />";
     return (
-      <Article>
+      <Article primary={true}>
         <header>
           <h1>Search</h1>
           <p>A responsive search control.</p>

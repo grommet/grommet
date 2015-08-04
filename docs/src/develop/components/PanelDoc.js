@@ -4,7 +4,7 @@ var Article = require('grommet/components/Article');
 var PanelDoc = React.createClass({
   render: function() {
     return (
-      <Article>
+      <Article primary={true}>
         <header>
           <h1>Panel</h1>
         </header>

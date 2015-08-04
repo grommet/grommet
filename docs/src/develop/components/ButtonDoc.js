@@ -16,7 +16,7 @@ var ButtonDoc = React.createClass({
       "<Button label=\"Item 1\">"
     ].join("\n");
     return (
-      <Article>
+      <Article primary={true}>
         <header>
           <h1>Button</h1>
           <p>A button. We have a separate component from the

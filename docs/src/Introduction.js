@@ -13,7 +13,7 @@ var Introduction = React.createClass({
       <Article>
         <DocsHeader />
 
-        <Section colorIndex="neutral-1">
+        <Section colorIndex="neutral-1" primary={true}>
           <h1>Introduction</h1>
         </Section>
 

@@ -68,7 +68,7 @@ var LayerDoc = React.createClass({
     }
 
     return (
-      <Article>
+      <Article primary={true}>
         <header>
           <h1>Layer</h1>
           <p>A modal overlay, often containing a <a>Form</a>.</p>

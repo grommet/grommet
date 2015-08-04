@@ -39,7 +39,7 @@ var ListDoc = React.createClass({
     ].join('\n');
 
     return (
-      <Article>
+      <Article primary={true}>
         <header>
           <h1>List</h1>
           <p>List of things.</p>

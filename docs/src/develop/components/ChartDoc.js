@@ -94,7 +94,7 @@ var ChartDoc = React.createClass({
 
   render: function() {
     return (
-      <Article>
+      <Article primary={true}>
         <header>
           <h1>Chart</h1>
           <p>Shows a graphical data chart.</p>

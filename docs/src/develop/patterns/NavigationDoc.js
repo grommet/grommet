@@ -14,7 +14,7 @@ var Search = require('grommet/components/Search');
 var NavigationDoc = React.createClass({
   render: function() {
     return (
-      <Article>
+      <Article primary={true}>
         <header>
           <h1>Navigation</h1>
         </header>

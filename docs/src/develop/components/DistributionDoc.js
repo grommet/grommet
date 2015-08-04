@@ -62,7 +62,7 @@ var DistributionDoc = React.createClass({
 
   render: function() {
     return (
-      <Article>
+      <Article primary={true}>
         <header>
           <h1>Distribution</h1>
           <p>Shows a graphic of relatively sized items.</p>

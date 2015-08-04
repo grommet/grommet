@@ -36,7 +36,7 @@ var MapDoc = React.createClass({
     };
 
     return (
-      <Article>
+      <Article primary={true}>
         <header>
           <h1>Map</h1>
           <p>Shows a linear meter graphic.</p>

@@ -14,7 +14,7 @@ var FormFieldDoc = React.createClass({
       "  <input id=\"item1\" />",
       "</FormField>"].join("\n");
     return (
-      <Article>
+      <Article primary={true}>
         <header>
           <h1>FormField</h1>
           <p>A field in a web form.</p>

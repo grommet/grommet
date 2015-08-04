@@ -22,7 +22,7 @@ var ArticleDoc = React.createClass({
     ].join('\n');
 
     return (
-      <Article>
+      <Article primary={true}>
         <header>
           <h1>Article</h1>
           <p>Styles standard HTML5 markup for use in articles.</p>

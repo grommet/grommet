@@ -17,7 +17,7 @@ var FooterDoc = React.createClass({
     var inline =
     "<Footer>\n  ...\n</Footer>";
     return (
-      <Article>
+      <Article primary={true}>
         <header>
           <h1>Footer</h1>
           <p>Put things at the bottom.</p>

@@ -28,7 +28,7 @@ var SearchInputDoc = React.createClass({
     var inline =
       "<SearchInput onChange={...} onSearch={...} />";
     return (
-      <Article>
+      <Article primary={true}>
         <header>
           <h1>SearchInput</h1>
           <p>An input field with a search control.</p>

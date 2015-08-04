@@ -8,7 +8,7 @@ var inline =
 var StatusDoc = React.createClass({
   render: function() {
     return (
-      <Article>
+      <Article primary={true}>
         <header>
           <h1>Status</h1>
           <p>A status icon.</p>

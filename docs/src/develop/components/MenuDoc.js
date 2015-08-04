@@ -14,7 +14,7 @@ var MenuDoc = React.createClass({
     var inline =
     "<Menu>\n  <Link to={route}>{label}</Link>\n  ...\n</Menu>";
     return (
-      <Article>
+      <Article primary={true}>
         <header>
           <h1>Menu</h1>
           <p>Presents a list of choices responsively.</p>

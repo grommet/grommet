@@ -12,7 +12,7 @@ var inline =
 var SectionDoc = React.createClass({
   render: function() {
     return (
-      <Article>
+      <Article primary={true}>
         <header>
           <h1>Section</h1>
           <p>Responsively grouping related contents inside a page.</p>

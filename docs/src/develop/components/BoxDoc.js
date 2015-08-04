@@ -10,7 +10,7 @@ var BoxDoc = React.createClass({
     var inline =
     "<Box>\n  ...\n</Box>";
     return (
-      <Article>
+      <Article primary={true}>
         <header>
           <h1>Box</h1>
           <p>General purpose flexible box layout. This does not support all of the

@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
+var Section = require('grommet/components/Section');
 
 var CONTROL_ICONS = [
   {icon: 'Add'},
@@ -85,14 +86,14 @@ var Basics = React.createClass({
     <header>
       <h1>Basics</h1>
     </header>
-    <section>
+    <Section appCentered={true} primary={true}>
       <p>Here you will find the core elements for the application style guide.
       The downloadable assets contain these core elements. Checkboxes, buttons,
       status icons and more are all described in these assets.
       Rather than documenting these in gory detail, we thought you would
       appreciate the brevity. We also think you really just want to see them anyway,
       so why waste your time?</p>
-    </section>
+    </Section>
   <section>
     <a className="anchor" id="color"></a>
     <h2>Color</h2>

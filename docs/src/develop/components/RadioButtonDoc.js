@@ -19,7 +19,7 @@ var RadioButtonDoc = React.createClass({
       "<RadioButton id=\"item2\" label=\"Item 1\">"
     ].join("\n");
     return (
-      <Article>
+      <Article primary={true}>
         <header>
           <h1>RadioButton</h1>
           <p>A radio button in a web form. We have a separate component from the

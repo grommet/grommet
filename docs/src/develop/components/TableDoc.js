@@ -25,7 +25,7 @@ var TableDoc = React.createClass({
     ].join('\n');
 
     return (
-      <Article>
+      <Article primary={true}>
         <header>
           <h1>Table</h1>
           <p>Table using standard HTML5 markup.</p>

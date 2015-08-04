@@ -18,7 +18,7 @@ var CalendarDoc = React.createClass({
     var inline =
       "<Calendar onChange={...} />";
     return (
-      <Article>
+      <Article primary={true}>
 
         <header>
           <h1>Calendar</h1>
