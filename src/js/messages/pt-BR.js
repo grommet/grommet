@@ -14,6 +14,7 @@ module.exports = {
   Critical: 'Crítico',
   Disabled: 'Desabilitado',
   Error: 'Erro',
+  Filter: 'Filtro',
   Footer: 'Rodapé',
   'Grommet Logo': 'Gromment Logomarca',
   loginInvalidPassword: 'Por favor, informe Usuário e Senha.',

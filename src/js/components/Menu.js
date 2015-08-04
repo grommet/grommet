@@ -39,6 +39,22 @@ var MenuDrop = React.createClass({
       down: this._onDownKeyPress
     };
     this.startListeningToKeyboard(this._keyboardHandlers);
+    var menuItems = this.refs.navContainer.getDOMNode().childNodes;
+    for (var i = 0; i < menuItems.length; i++) {
+      var classes = menuItems[i].className.split(/\s+/);
+      var tagName = menuItems[i].tagName.toLowerCase();
+      // want to skip items of the menu that are not focusable.
+      if (tagName !== 'button' && tagName !== 'a' && classes.indexOf('check-box') === -1) {
+        continue;
+      }
+      menuItems[i].setAttribute('role', 'menuitem');
+
+      if (!menuItems[i].getAttribute('id')) {
+        menuItems[i].setAttribute('id', menuItems[i].getAttribute('data-reactid'));
+      }
+      // aria-selected informs AT which menu item is selected for that menu container.
+      menuItems[i].setAttribute('aria-selected', classes.indexOf('active'));
+    }
   },
 
   componentWillUnmount: function () {
@@ -46,27 +62,56 @@ var MenuDrop = React.createClass({
   },
 
   _onUpKeyPress: function (event) {
+    event.preventDefault();
+    var menuItems = this.refs.navContainer.getDOMNode().childNodes;
     if (!this.activeMenuItem) {
-      var menuItems = this.refs.navContainer.getDOMNode().childNodes;
       var lastMenuItem = menuItems[menuItems.length - 1];
       this.activeMenuItem = lastMenuItem;
     } else if (this.activeMenuItem.previousSibling) {
       this.activeMenuItem = this.activeMenuItem.previousSibling;
     }
 
+    var classes = this.activeMenuItem.className.split(/\s+/);
+    var tagName = this.activeMenuItem.tagName.toLowerCase();
+    // want to skip items of the menu that are not focusable.
+    if (tagName !== 'button' && tagName !== 'a' && classes.indexOf('check-box') === -1) {
+      if (this.activeMenuItem === menuItems[0]) {
+        return true;
+      } else {
+        // If this item is not focusable, check the next item.
+        return this._onUpKeyPress(event);
+      }
+    }
+
     this.activeMenuItem.focus();
+    this.refs.menuDrop.getDOMNode().setAttribute('aria-activedescendant', this.activeMenuItem.getAttribute('id'));
     // Stops KeyboardAccelerators from calling the other listeners. Works limilar to event.stopPropagation().
     return true;
   },
 
   _onDownKeyPress: function (event) {
+    event.preventDefault();
+    var menuItems = this.refs.navContainer.getDOMNode().childNodes;
     if (!this.activeMenuItem) {
-      this.activeMenuItem = this.refs.navContainer.getDOMNode().childNodes[0];
+      this.activeMenuItem = menuItems[0];
     } else if (this.activeMenuItem.nextSibling) {
       this.activeMenuItem = this.activeMenuItem.nextSibling;
     }
 
+    var classes = this.activeMenuItem.className.split(/\s+/);
+    var tagName = this.activeMenuItem.tagName.toLowerCase();
+    // want to skip items of the menu that are not focusable.
+    if (tagName !== 'button' && tagName !== 'a' && classes.indexOf('check-box') === -1) {
+      if (this.activeMenuItem === menuItems[menuItems.length - 1]) {
+        return true;
+      } else {
+        // If this item is not focusable, check the next item.
+        return this._onDownKeyPress(event);
+      }
+    }
+
     this.activeMenuItem.focus();
+    this.refs.menuDrop.getDOMNode().setAttribute('aria-activedescendant', this.activeMenuItem.getAttribute('id'));
     // Stops KeyboardAccelerators from calling the other listeners. Works limilar to event.stopPropagation().
     return true;
   },
@@ -103,7 +148,7 @@ var MenuDrop = React.createClass({
     }
 
     return (
-      <div id={this.props.id} className={classes.join(' ')}
+      <div ref="menuDrop" id={this.props.id} className={classes.join(' ')}
         onClick={this.props.onClick}>
         {first}
         {second}
@@ -211,6 +256,23 @@ var Menu = React.createClass({
       this.setState({
         dropId: 'menu-drop-' + controlElement.getAttribute('data-reactid')
       });
+
+      controlElement.setAttribute('role', 'menu');
+      var expanded = this.state.state === 'expanded';
+      controlElement.setAttribute('aria-expanded', expanded);
+      if (this.props.label) {
+        controlElement.setAttribute('aria-label', this.props.label);
+      } else if (this.props.icon) {
+        try {
+          var icon = controlElement.getElementsByClassName('control-icon')[0];
+          if (!icon.getAttribute('id')) {
+            icon.setAttribute('id', icon.getAttribute('data-reactid'));
+          }
+          controlElement.setAttribute('aria-labelledby', icon.getAttribute('id'));
+        } catch (exception) {
+          console.log('Unable to add aria-label to Menu component.');
+        }
+      }
     }
 
     if (this.props.inline && this.props.responsive) {
@@ -222,9 +284,7 @@ var Menu = React.createClass({
     // Set up keyboard listeners appropriate to the current state.
 
     var activeKeyboardHandlers = {
-      esc: this._onClose,
-      space: this._onClose,
-      tab: this._onClose
+      esc: this._onClose
     };
     var focusedKeyboardHandlers = {
       space: this._onOpen,
@@ -256,6 +316,11 @@ var Menu = React.createClass({
         }
         this._drop.render(this._renderDrop());
         break;
+    }
+    if (this.refs.control) {
+      var controlElement = this.refs.control.getDOMNode();
+      var expanded = this.state.state === 'expanded';
+      controlElement.setAttribute('aria-expanded', expanded);
     }
   },
 
@@ -290,7 +355,7 @@ var Menu = React.createClass({
           <div className={controlClassName + "-icon"}>
             {icon}
           </div>
-          <span className={controlClassName + "-label"}>{this.props.label}</span>
+          <span tabindex="-1" className={controlClassName + "-label"}>{this.props.label}</span>
           <DropCaretIcon className={controlClassName + "-drop-icon"} />
         </div>
       );
@@ -320,7 +385,7 @@ var Menu = React.createClass({
       onClick = this._onSink;
     }
     return (
-      <MenuDrop router={this.context.router}
+      <MenuDrop tabIndex="-1" router={this.context.router}
         dropAlign={this.props.dropAlign}
         dropColorIndex={this.props.dropColorIndex}
         small={this.props.small}

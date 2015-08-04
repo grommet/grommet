@@ -14,6 +14,7 @@ module.exports = {
   Critical: 'Critical',
   Disabled: 'Disabled',
   Error: 'Error',
+  Filter: 'Filter',
   Footer: 'Footer',
   'Grommet Logo': 'Grommet Logo',
   loginInvalidPassword: 'Please provide Username and Password.',
