@@ -16,9 +16,9 @@ var series = [
 ];
 
 var seriesEmpty = [
-  {label: 'First', value: 40},
-  {label: 'Second', value: 30},
-  {label: 'Third', value: 30},
+  {label: 'First', value: 4},
+  {label: 'Second', value: 3},
+  {label: 'Third', value: 1},
   {label: 'Fourth', value: 0}
 ];
 
@@ -27,9 +27,10 @@ var iconSeries = [
     width: 36, height: 36,
     svgElement: (
       <g fill="none" strokeWidth={1}>
-        <circle strokeMiterlimit="10" cx="18.1" cy="13.7" r="5"/>
-        <path strokeMiterlimit="10" d="M26.1,26.7c0-4.4-3.6-8-8-8h0c-4.4,0-8,3.6-8,8"/>
-        <path strokeMiterlimit="10" d="M24.3,21.5c1.8-0.4,2.9-2.2,2.9-2.2c-4-1.7-4-4.2-4-5.6c-1.3,0.5-3,0-4-1c-1.7,1.8-4.2,2-6,1c0,1.4,0,3.9-4,5.6c0,0,1.1,1.8,2.9,2.2"/>
+        <path d="M20,36 L20,32"></path>
+        <path d="M24,13 C21.2,13 19,15.2 19,18 C19,22 15.9,23.9 15.9,23.9 C15.9,23.9 16.6,26 20,26 L21,26 C18.2,26 16,28.2 16,31 L16,36"></path>
+        <path d="M28,32 L28,36"></path>
+        <path d="M32,36 L32,31 C32,28.2 29.9,26 27.1,26 L27,26 C30.4,26 32.1,23.9 32.1,23.9 C32.1,23.9 29,22 29,18 C29,15.2 26.7,13 24,13"></path>
       </g>
     )}
   },
@@ -37,8 +38,10 @@ var iconSeries = [
     width: 36, height: 36,
     svgElement: (
       <g fill="none" strokeWidth={1}>
-        <circle strokeMiterlimit="10" cx="18.1" cy="13.7" r="5"/>
-        <path strokeMiterlimit="10" d="M26.1,26.7c0-4.4-3.6-8-8-8h0c-4.4,0-8,3.6-8,8"/>
+        <circle cx="24" cy="18" r="5"></circle>
+        <path d="M33,36 L33,31 C33,26.6 29.4,23 25,23 L23,23 C18.6,23 15,26.6 15,31 L15,36"></path>
+        <path d="M20,36 L20,31"></path>
+        <path d="M28,36 L28,31"></path>
       </g>
     )}
   }
@@ -76,8 +79,7 @@ var DistributionDoc = React.createClass({
             <dt><code>legendTotal true|false</code></dt>
             <dd>Whether to show a total in the legend.</dd>
             <dt><code>series     {"[{value: , label: , colorIndex: , onClick: , icon: }, ...]"}</code></dt>
-            <dd>An array of objects describing the data.
-              Either this or the <code>value</code> property must be provided.</dd>
+            <dd>An array of objects describing the data.</dd>
             <dt><code>small        true|false</code></dt>
             <dd>Smaller sized version.</dd>
             <dt><code>units       {"{string}"}</code></dt>

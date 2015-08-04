@@ -82,7 +82,7 @@ var Distribution = React.createClass({
   // Generates state based on the provided props.
   _stateFromProps: function (props) {
     var total;
-    if (props.series && props.series.length > 1) {
+    if (props.series) {
       total = this._seriesTotal(props.series);
     } else {
       total = 100;

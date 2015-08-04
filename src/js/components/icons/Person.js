@@ -11,9 +11,11 @@ var Person = React.createClass({
     }
     return (
       <svg className={className} viewBox="0 0 48 48" version="1.1">
-        <g fill="none">
-          <circle strokeWidth="2" cx="24.2" cy="19.2" r="6.7"></circle>
-          <path strokeWidth="2" d="M34.8,36.5 C34.8,30.6 30,25.8 24.1,25.8 L24.1,25.8 C18.2,25.8 13.4,30.6 13.4,36.5"></path>
+        <g fill="none" strokeWidth="2">
+          <circle cx="24" cy="18" r="5"></circle>
+          <path d="M33,36 L33,31 C33,26.6 29.4,23 25,23 L23,23 C18.6,23 15,26.6 15,31 L15,36"></path>
+          <path d="M20,36 L20,31"></path>
+          <path d="M28,36 L28,31"></path>
         </g>
       </svg>
     );
