@@ -185,7 +185,6 @@
 
     > a:not(.button) {
       padding: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit;
-      overflow: scroll;
       min-height: double($inuit-base-spacing-unit);
 
       &:hover {
