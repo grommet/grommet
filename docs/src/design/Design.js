@@ -92,7 +92,7 @@ var Design = React.createClass({
           developers to quickly begin implementing enterprise applications.</p>
           <Menu direction="row">
             <Link to="design_resources">
-              <Button label="Resources" onClick={this._onClick} primary={true} />
+              <Button id="resources-button" label="Resources" onClick={this._onClick} primary={true} />
             </Link>
           </Menu>
         </Section>

@@ -43,14 +43,14 @@ describe('Docs website e2e', function() {
   });
 
   it('downloads hpi general adobe illustrator sticker sheet', function(done) {
-    var selector = '.header .menu a:nth-child(1)';
+    var selector = '#design-link';
 
     browser.getText(selector, function (err, text) {
       if (err) {
         should.fail('Expected to find design link.', err);
       }
       expect(text).toBe('Design');
-      var buttonSelector = '.background-color-index-neutral-1 a:nth-child(1)';
+      var buttonSelector = '#resources-button';
       browser.click(selector).getText(buttonSelector).then(function(text) {
         expect(text).toBe('Resources');
 
@@ -72,14 +72,14 @@ describe('Docs website e2e', function() {
   });
 
   it('downloads hpi general adobe illustrator pdf sticker sheet', function(done) {
-    var selector = '.header .menu a:nth-child(1)';
+    var selector = '#design-link';
 
     browser.getText(selector, function (err, text) {
       if (err) {
         should.fail('Expected to find design link.', err);
       }
       expect(text).toBe('Design');
-      var buttonSelector = '.background-color-index-neutral-1 a:nth-child(1)';
+      var buttonSelector = '#resources-button';
       browser.click(selector).getText(buttonSelector).then(function(text) {
         expect(text).toBe('Resources');
 
@@ -101,14 +101,14 @@ describe('Docs website e2e', function() {
   });
 
   it('downloads hpe general adobe illustrator sticker sheet', function(done) {
-    var selector = '.header .menu a:nth-child(1)';
+    var selector = '#design-link';
 
     browser.getText(selector, function (err, text) {
       if (err) {
         should.fail('Expected to find design link.', err);
       }
       expect(text).toBe('Design');
-      var buttonSelector = '.background-color-index-neutral-1 a:nth-child(1)';
+      var buttonSelector = '#resources-button';
       browser.click(selector).getText(buttonSelector).then(function(text) {
         expect(text).toBe('Resources');
 
@@ -130,14 +130,14 @@ describe('Docs website e2e', function() {
   });
 
   it('downloads hpe general adobe illustrator pdf sticker sheet', function(done) {
-    var selector = '.header .menu a:nth-child(1)';
+    var selector = '#design-link';
 
     browser.getText(selector, function (err, text) {
       if (err) {
         should.fail('Expected to find design link.', err);
       }
       expect(text).toBe('Design');
-      var buttonSelector = '.background-color-index-neutral-1 a:nth-child(1)';
+      var buttonSelector = '#resources-button';
       browser.click(selector).getText(buttonSelector).then(function(text) {
         expect(text).toBe('Resources');
 
@@ -159,14 +159,14 @@ describe('Docs website e2e', function() {
   });
 
   it('downloads hpe classic adobe illustrator sticker sheet', function(done) {
-    var selector = '.header .menu a:nth-child(1)';
+    var selector = '#design-link';
 
     browser.getText(selector, function (err, text) {
       if (err) {
         should.fail('Expected to find design link.', err);
       }
       expect(text).toBe('Design');
-      var buttonSelector = '.background-color-index-neutral-1 a:nth-child(1)';
+      var buttonSelector = '#resources-button';
       browser.click(selector).getText(buttonSelector).then(function(text) {
         expect(text).toBe('Resources');
 
@@ -188,14 +188,14 @@ describe('Docs website e2e', function() {
   });
 
   it('downloads hpe classic adobe illustrator pdf sticker sheet', function(done) {
-    var selector = '.header .menu a:nth-child(1)';
+    var selector = '#design-link';
 
     browser.getText(selector, function (err, text) {
       if (err) {
         should.fail('Expected to find design link.', err);
       }
       expect(text).toBe('Design');
-      var buttonSelector = '.background-color-index-neutral-1 a:nth-child(1)';
+      var buttonSelector = '#resources-button';
       browser.click(selector).getText(buttonSelector).then(function(text) {
         expect(text).toBe('Resources');
 
@@ -217,14 +217,14 @@ describe('Docs website e2e', function() {
   });
 
   it('downloads hpe app-templates adobe illustrator sticker sheet', function(done) {
-    var selector = '.header .menu a:nth-child(1)';
+    var selector = '#design-link';
 
     browser.getText(selector, function (err, text) {
       if (err) {
         should.fail('Expected to find design link.', err);
       }
       expect(text).toBe('Design');
-      var buttonSelector = '.background-color-index-neutral-1 a:nth-child(1)';
+      var buttonSelector = '#resources-button';
       browser.click(selector).getText(buttonSelector).then(function(text) {
         expect(text).toBe('Resources');
 
@@ -246,14 +246,14 @@ describe('Docs website e2e', function() {
   });
 
   it('downloads hpe app-templates adobe illustrator pdf sticker sheet', function(done) {
-    var selector = '.header .menu a:nth-child(1)';
+    var selector = '#design-link';
 
     browser.getText(selector, function (err, text) {
       if (err) {
         should.fail('Expected to find design link.', err);
       }
       expect(text).toBe('Design');
-      var buttonSelector = '.background-color-index-neutral-1 a:nth-child(1)';
+      var buttonSelector = '#resources-button';
       browser.click(selector).getText(buttonSelector).then(function(text) {
         expect(text).toBe('Resources');
 
@@ -275,14 +275,14 @@ describe('Docs website e2e', function() {
   });
 
   it('downloads hpe icons adobe illustrator sticker sheet', function(done) {
-    var selector = '.header .menu a:nth-child(1)';
+    var selector = '#design-link';
 
     browser.getText(selector, function (err, text) {
       if (err) {
         should.fail('Expected to find design link.', err);
       }
       expect(text).toBe('Design');
-      var buttonSelector = '.background-color-index-neutral-1 a:nth-child(1)';
+      var buttonSelector = '#resources-button';
       browser.click(selector).getText(buttonSelector).then(function(text) {
         expect(text).toBe('Resources');
 
@@ -304,14 +304,14 @@ describe('Docs website e2e', function() {
   });
 
   it('downloads hpe icons adobe illustrator pdf sticker sheet', function(done) {
-    var selector = '.header .menu a:nth-child(1)';
+    var selector = '#design-link';
 
     browser.getText(selector, function (err, text) {
       if (err) {
         should.fail('Expected to find design link.', err);
       }
       expect(text).toBe('Design');
-      var buttonSelector = '.background-color-index-neutral-1 a:nth-child(1)';
+      var buttonSelector = '#resources-button';
       browser.click(selector).getText(buttonSelector).then(function(text) {
         expect(text).toBe('Resources');
 
@@ -333,14 +333,14 @@ describe('Docs website e2e', function() {
   });
 
   it('downloads hpe sketch sticker sheet', function(done) {
-    var selector = '.header .menu a:nth-child(1)';
+    var selector = '#design-link';
 
     browser.getText(selector, function (err, text) {
       if (err) {
         should.fail('Expected to find design link.', err);
       }
       expect(text).toBe('Design');
-      var buttonSelector = '.background-color-index-neutral-1 a:nth-child(1)';
+      var buttonSelector = '#resources-button';
       browser.click(selector).getText(buttonSelector).then(function(text) {
         expect(text).toBe('Resources');
 
@@ -362,14 +362,14 @@ describe('Docs website e2e', function() {
   });
 
   it('downloads hpe axure stencils', function(done) {
-    var selector = '.header .menu a:nth-child(1)';
+    var selector = '#design-link';
 
     browser.getText(selector, function (err, text) {
       if (err) {
         should.fail('Expected to find design link.', err);
       }
       expect(text).toBe('Design');
-      var buttonSelector = '.background-color-index-neutral-1 a:nth-child(1)';
+      var buttonSelector = '#resources-button';
       browser.click(selector).getText(buttonSelector).then(function(text) {
         expect(text).toBe('Resources');
 
@@ -391,14 +391,14 @@ describe('Docs website e2e', function() {
   });
 
   it('downloads hpe balsamiq assets', function(done) {
-    var selector = '.header .menu a:nth-child(1)';
+    var selector = '#design-link';
 
     browser.getText(selector, function (err, text) {
       if (err) {
         should.fail('Expected to find design link.', err);
       }
       expect(text).toBe('Design');
-      var buttonSelector = '.background-color-index-neutral-1 a:nth-child(1)';
+      var buttonSelector = '#resources-button';
       browser.click(selector).getText(buttonSelector).then(function(text) {
         expect(text).toBe('Resources');
 

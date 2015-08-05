@@ -26,8 +26,8 @@ var DocsHeader = React.createClass({
           </Link>
         </Title>
         <Menu direction="row" responsive={false}>
-          <Link to="design">Design</Link>
-          <Link to="develop">Develop</Link>
+          <Link id="design-link" to="design">Design</Link>
+          <Link id="develop-link" to="develop">Develop</Link>
         </Menu>
       </Header>
     );
