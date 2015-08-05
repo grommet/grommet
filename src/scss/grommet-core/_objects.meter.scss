@@ -7,6 +7,7 @@ $meter-threshold-width: round($inuit-base-spacing-unit * 0.25);
 $meter-circle-size: $panel-width;
 $meter-arc-size: $panel-width - double($inuit-base-spacing-unit);
 $meter-label-width: double($inuit-base-spacing-unit);
+$meter-active-offset: round($inuit-base-spacing-unit * 1.5);
 $meter-small-circle-size: $small-panel-width;
 $meter-large-circle-size: $large-panel-width;
 
@@ -222,9 +223,9 @@ $meter-large-circle-size: $large-panel-width;
     .meter {
       &__active {
         position: absolute;
-        left: $meter-label-width;
+        left: $meter-active-offset;
         // leave room for minmax on either side
-        width: $meter-circle-size - double($meter-label-width);
+        width: $meter-circle-size - double($meter-active-offset);
         text-align: center;
         white-space: normal;
         pointer-events: none;
@@ -411,7 +412,7 @@ $meter-large-circle-size: $large-panel-width;
 
         &__active {
           top: round($inuit-base-spacing-unit * 3);
-          width: $meter-arc-size - double($inuit-base-spacing-unit);
+          width: $meter-arc-size - $meter-active-offset;
           text-align: right;
         }
 
@@ -464,7 +465,7 @@ $meter-large-circle-size: $large-panel-width;
 
       .meter__active {
         // leave room for minmax on either side
-        width: $meter-small-circle-size - double($meter-label-width);
+        width: $meter-small-circle-size - double($meter-active-offset);
 
         &-value {
           @include inuit-font-size($small-large-number-font-size, inherit);
@@ -512,7 +513,7 @@ $meter-large-circle-size: $large-panel-width;
       }
 
       .meter__active {
-        width: $meter-large-circle-size - double($meter-label-width);
+        width: $meter-large-circle-size - double($meter-active-offset);
 
         &-value {
           @include inuit-font-size($large-large-number-font-size, inherit);
@@ -522,7 +523,7 @@ $meter-large-circle-size: $large-panel-width;
 
     &.meter--circle {
       .meter__active {
-        top: round($inuit-base-spacing-unit * 4);
+        top: round($inuit-base-spacing-unit * 5);
       }
     }
 
