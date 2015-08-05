@@ -7,13 +7,17 @@ var CLASS_ROOT = "split";
 var Split = React.createClass({
 
   propTypes: {
+    fixed: React.PropTypes.bool,
     flex: React.PropTypes.oneOf(['left', 'right', 'both']),
     separator: React.PropTypes.bool,
     stack: React.PropTypes.oneOf(['left', 'right'])
   },
 
   getDefaultProps: function () {
-    return {flex: 'both'};
+    return {
+      fixed: true,
+      flex: 'both'
+    };
   },
 
   _onResize: function () {
@@ -57,6 +61,9 @@ var Split = React.createClass({
     var classes = [CLASS_ROOT];
     if (this.props.flex) {
       classes.push(CLASS_ROOT + "--flex-" + this.props.flex);
+    }
+    if (this.props.fixed) {
+      classes.push(CLASS_ROOT + "--fixed");
     }
     if (this.props.separator) {
       classes.push(CLASS_ROOT + "--separator");

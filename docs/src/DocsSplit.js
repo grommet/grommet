@@ -143,7 +143,7 @@ var DocsSplit = React.createClass({
     }
 
     return (
-      <Split flex="right" onResponsive={this._onResponsive}>
+      <Split flex="right" fixed={false} onResponsive={this._onResponsive}>
         {left}
         {right}
       </Split>
