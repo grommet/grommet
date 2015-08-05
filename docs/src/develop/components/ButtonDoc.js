@@ -37,6 +37,8 @@ var ButtonDoc = React.createClass({
           <dd>Whether this is a primary button. There should be at most
             one per page or screen.</dd>
           </dl>
+          <dt><code>large         true|false</code></dt>
+          <dd>Whether this is a large button. Defaults to false.</dd>
         </section>
 
         <section>
