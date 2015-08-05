@@ -11,7 +11,8 @@ var Button = React.createClass({
     label: React.PropTypes.string.isRequired,
     large: React.PropTypes.bool,
     onClick: React.PropTypes.func,
-    primary: React.PropTypes.bool
+    primary: React.PropTypes.bool,
+    id: React.PropTypes.string
   },
 
   render: function () {
@@ -33,7 +34,7 @@ var Button = React.createClass({
     }
 
     return (
-      <button className={classes.join(' ')}
+      <button id={this.props.id} className={classes.join(' ')}
         onClick={this.props.onClick}>
         {this.props.label}
       </button>
