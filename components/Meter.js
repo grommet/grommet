@@ -15,6 +15,8 @@ var CIRCLE_RADIUS = 84;
 var ARC_HEIGHT = 144;
 
 var SPIRAL_THICKNESS = 24;
+// Allow for active value content next to a spiral meter
+var SPIRAL_TEXT_PADDING = 48;
 
 function polarToCartesian (centerX, centerY, radius, angleInDegrees) {
   var angleInRadians = (angleInDegrees - 90) * Math.PI / 180.0;
@@ -270,8 +272,8 @@ var Meter = React.createClass({
     } else if ('spiral' === this.props.type) {
       // Give the graphic just a bit of breathing room
       // by not ending the spirals right at the center. (+1)
-      viewBoxWidth = Math.max(CIRCLE_WIDTH, SPIRAL_THICKNESS * (series.length + 1) * 2);
-      viewBoxHeight = viewBoxWidth;
+      viewBoxHeight = Math.max(CIRCLE_WIDTH, SPIRAL_THICKNESS * (series.length + 1) * 2);
+      viewBoxWidth = viewBoxHeight + (2 * SPIRAL_TEXT_PADDING);
     }
     return [viewBoxWidth, viewBoxHeight];
   },
@@ -334,8 +336,9 @@ var Meter = React.createClass({
       state.startAngle = 0;
       state.anglePer = 270.0 / max.value;
       state.angleOffset = 0;
-      // Start the spirals out near but not quite at the edge of the view box.
-      state.startRadius = Math.max(CIRCLE_RADIUS, SPIRAL_THICKNESS * (series.length + 0.5));
+      // The last spiral ends out near but not quite at the edge of the view box.
+      state.startRadius = Math.max(CIRCLE_RADIUS, SPIRAL_THICKNESS * (series.length + 0.5)) -
+        ((series.length - 1) * SPIRAL_THICKNESS);
     }
 
     return state;
@@ -499,7 +502,7 @@ var Meter = React.createClass({
       endAngle = this._translateEndAngle(startAngle, item.value);
       commands = this._spiralCommands(startAngle, endAngle, radius);
 
-      radius -= SPIRAL_THICKNESS;
+      radius += SPIRAL_THICKNESS;
 
       return (
         <path key={item.label || index} fill="none"
@@ -532,16 +535,22 @@ var Meter = React.createClass({
 
       if (index === this.state.activeIndex) {
         var length;
+        var x;
+        var y;
         if ('arc' === this.props.type) {
           length = CIRCLE_RADIUS;
+          x = CIRCLE_WIDTH / 2;
+          y = CIRCLE_WIDTH / 2;
         } else {
           length = CIRCLE_RADIUS * 0.60;
+          x = this.state.viewBoxWidth / 2;
+          y = this.state.viewBoxHeight / 2;
         }
         var indicatorCommands =
-          singleIndicatorCommands(CIRCLE_WIDTH / 2, CIRCLE_WIDTH / 2, (CIRCLE_RADIUS * 1.1),
-          startAngle + this.state.angleOffset,
-          endAngle + this.state.angleOffset,
-          length);
+          singleIndicatorCommands(x, y, (CIRCLE_RADIUS * 1.1),
+            startAngle + this.state.angleOffset,
+            endAngle + this.state.angleOffset,
+            length);
         seriesIndicator = (
           <path fill="none"
             className={CLASS_ROOT + "__slice-indicator color-index-" + item.colorIndex}
@@ -586,7 +595,7 @@ var Meter = React.createClass({
 
   _renderLabels: function (series) {
     var x = (this.state.viewBoxWidth / 2) - (SPIRAL_THICKNESS / 2);
-    var y = (SPIRAL_THICKNESS * 0.75);
+    var y = (SPIRAL_THICKNESS * 0.75) + (SPIRAL_THICKNESS * (series.length - 1));
     var labels = series.map(function (item, index) {
       var classes = [CLASS_ROOT + "__label"];
       if (index === this.state.activeIndex) {
@@ -596,7 +605,7 @@ var Meter = React.createClass({
       var textX = x;
       var textY = y;
 
-      y += SPIRAL_THICKNESS;
+      y -= SPIRAL_THICKNESS;
 
       return (
         <text key={item.label || index} x={textX} y={textY}
