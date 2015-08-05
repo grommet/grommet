@@ -17,12 +17,12 @@
 
     &-label {
       display: inline-block;
-      width: quadruple($inuit-base-spacing-unit);
+      width: round($inuit-base-spacing-unit * 3);
     }
 
     &-value {
       display: inline-block;
-      width: double($inuit-base-spacing-unit);
+      width: round($inuit-base-spacing-unit * 3);
       text-align: right;
     }
 
