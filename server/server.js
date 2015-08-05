@@ -55,6 +55,12 @@ app.use('/tour/', function (req, res) {
   res.redirect('/medium-app');
 });
 
+// Redirect referneces to the original HPE sticker sheet
+// to the new master HPE sticker sheet.
+app.get('/assets/design/grommet_sticker_sheet.ai', function (req, res) {
+  res.redirect(301, '/assets/design/hpe/grommet-hpe-master.ai');
+});
+
 var mediumAppPath = '/medium-app';
 
 app.use(mediumAppPath, function(req, res) {
