@@ -29,11 +29,18 @@ var series = [
   {label: 'Gen 11', value: 100}
 ];
 
-//var statusSeries = [
-//  {label: 'OK', value: 60, colorIndex: 'ok'},
-//  {label: 'Warning', value: 20, colorIndex: 'warning'},
-//  {label: 'Error', value: 10, colorIndex: 'error'}
-//];
+var statusSeries = [
+  {label: 'OK', value: 70, colorIndex: 'ok'},
+  {label: 'Warning', value: 15, colorIndex: 'warning'},
+  {label: 'Error', value: 5, colorIndex: 'error'}
+];
+var statusSeriesMax = 90;
+
+var storageSeries = [
+  {label: 'Physical', value: 70},
+  {label: 'Subscribed', value: 120},
+  {label: 'Allocated', value: 50}
+];
 
 var MeterDoc = React.createClass({
 
@@ -258,13 +265,22 @@ var MeterDoc = React.createClass({
               "series={" + stringify(series) + "} />"}
           </code></pre>
 
-          <h3>Spiral, Series</h3>
+          <h3>Spiral, Series, Status</h3>
           <div className="example">
-            <Meter type="spiral" series={series} />
+            <Meter type="spiral" series={statusSeries} max={statusSeriesMax} />
+          </div>
+          <pre><code className="html">
+            {"<Meter type=\"spiral\" max={" + statusSeriesMax + "}\n " +
+              "series={" + stringify(statusSeries) + "} />"}
+          </code></pre>
+
+          <h3>Spiral, Series, Storage</h3>
+          <div className="example">
+            <Meter type="spiral" series={storageSeries} units="TB"/>
           </div>
           <pre><code className="html">
             {"<Meter type=\"spiral\"\n " +
-              "series={" + stringify(series) + "} />"}
+              "series={" + stringify(storageSeries) + "} />"}
           </code></pre>
 
           <h3>Bar, Small</h3>
