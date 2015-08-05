@@ -338,7 +338,7 @@ var Meter = React.createClass({
       state.angleOffset = 0;
       // The last spiral ends out near but not quite at the edge of the view box.
       state.startRadius = Math.max(CIRCLE_RADIUS, SPIRAL_THICKNESS * (series.length + 0.5)) -
-        ((series.length - 1) * SPIRAL_THICKNESS);
+        (Math.max(0, (series.length - 1)) * SPIRAL_THICKNESS);
     }
 
     return state;

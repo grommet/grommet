@@ -37,9 +37,9 @@ var statusSeries = [
 var statusSeriesMax = 90;
 
 var storageSeries = [
-  {label: 'Physical', value: 70},
-  {label: 'Subscribed', value: 120},
-  {label: 'Allocated', value: 50}
+  {label: 'Physical', value: 700},
+  {label: 'Subscribed', value: 1200},
+  {label: 'Allocated', value: 500}
 ];
 
 var MeterDoc = React.createClass({
@@ -246,13 +246,13 @@ var MeterDoc = React.createClass({
               "series={" + stringify(series) + "} />"}
           </code></pre>
 
-          <h3>Arc, Series, Legend, Vertical</h3>
+          <h3>Arc, Series, Legend, Vertical, Units</h3>
           <div className="example">
-            <Meter type="arc" legend={true} series={series} vertical={true} />
+            <Meter type="arc" legend={true} series={storageSeries} vertical={true} units="TB" />
           </div>
           <pre><code className="html">
-            {"<Meter type=\"arc\" legend={true}\n " +
-              "series={" + stringify(series) + "}\n" +
+            {"<Meter type=\"arc\" legend={true} units=\"TB\"\n " +
+              "series={" + stringify(storageSeries) + "}\n" +
               " vertical={true} />"}
           </code></pre>
 
@@ -279,7 +279,7 @@ var MeterDoc = React.createClass({
             <Meter type="spiral" series={storageSeries} units="TB"/>
           </div>
           <pre><code className="html">
-            {"<Meter type=\"spiral\"\n " +
+            {"<Meter type=\"spiral\" units=\"TB\"\n " +
               "series={" + stringify(storageSeries) + "} />"}
           </code></pre>
 
@@ -345,6 +345,14 @@ var MeterDoc = React.createClass({
           </div>
           <pre><code className="html">
             {"<Meter value={undefined} type=\"arc\" />"}
+          </code></pre>
+
+          <h3>Spiral, Loading</h3>
+          <div className="example">
+            <Meter value={undefined} type="spiral" />
+          </div>
+          <pre><code className="html">
+            {"<Meter value={undefined} type=\"spiral\" />"}
           </code></pre>
 
         </section>

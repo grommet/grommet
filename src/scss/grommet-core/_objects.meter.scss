@@ -411,7 +411,7 @@ $meter-large-circle-size: $large-panel-width;
 
         &__active {
           top: round($inuit-base-spacing-unit * 3);
-          width: halve($meter-arc-size);
+          width: $meter-arc-size - double($inuit-base-spacing-unit);
           text-align: right;
         }
 
