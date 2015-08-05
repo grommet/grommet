@@ -6,10 +6,12 @@
     display: -webkit-flex;
     display: flex;
 
-    > * {
-      position: relative;
-      height: 100vh;
-      overflow: auto;
+    &--fixed {
+      > * {
+        position: relative;
+        height: 100vh;
+        overflow: auto;
+      }
     }
 
     &--flex-right {

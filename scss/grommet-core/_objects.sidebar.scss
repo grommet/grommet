@@ -2,7 +2,7 @@
 
 .sidebar {
   background-color: $background-color;
-  height: 100vh;
+  min-height: 100vh;
 
   @include media-query(palm) {
     width: 100vw;
