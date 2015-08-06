@@ -90,14 +90,6 @@ var SearchInput = React.createClass({
     });
   },
 
-  _onBlur: function () {
-    this.setState({
-      focused: false,
-      dropActive: false,
-      activeSuggestionIndex: -1
-    });
-  },
-
   getInitialState: function () {
     return {
       dropActive: false,
@@ -209,8 +201,7 @@ var SearchInput = React.createClass({
           defaultValue={this._valueText(this.props.defaultValue)}
           placeholder={this.props.placeHolder}
           onChange={this._onInputChange}
-          onFocus={this._onFocus}
-          onBlur={this._onBlur} />
+          onFocus={this._onFocus} />
         <div className={CLASS_ROOT + "__control"} onClick={this._onAddDrop} >
           <SearchIcon />
         </div>
