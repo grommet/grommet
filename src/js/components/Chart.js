@@ -11,6 +11,8 @@ var XAXIS_HEIGHT = 24;
 var YAXIS_WIDTH = 12;
 var BAR_PADDING = 2;
 var MIN_LABEL_WIDTH = 48;
+var SPARKLINE_STEP_WIDTH = 6;
+var SPARKLINE_BAR_PADDING = 1;
 
 var Chart = React.createClass({
 
@@ -39,6 +41,7 @@ var Chart = React.createClass({
     ).isRequired,
     small: React.PropTypes.bool,
     smooth: React.PropTypes.bool,
+    sparkline: React.PropTypes.bool,
     threshold: React.PropTypes.number,
     thresholds: React.PropTypes.arrayOf(React.PropTypes.shape({
       label: React.PropTypes.string,
@@ -140,13 +143,17 @@ var Chart = React.createClass({
     if (this.props.hasOwnProperty('max')) {
       maxY = this.props.max;
     }
+    var spanX = maxX - minX;
+    var spanY = maxY - minY;
+
+    if (this.props.sparkline) {
+      width = spanX * (SPARKLINE_STEP_WIDTH + SPARKLINE_BAR_PADDING);
+    }
     var thresholdWidth = (width - YAXIS_WIDTH);
     var thresholdHeight = (height - XAXIS_HEIGHT);
 
     var graphWidth = (this.props.thresholds ? thresholdWidth : width);
-    var graphHeight = (xAxis ? thresholdHeight : height);
-    var spanX = maxX - minX;
-    var spanY = maxY - minY;
+    var graphHeight = (this.props.xAxis ? thresholdHeight : height);
     var scaleX = (graphWidth / spanX);
     var xStepWidth = Math.round(graphWidth / (xAxis.length - 1));
     if ('bar' === this.props.type) {
@@ -156,6 +163,10 @@ var Chart = React.createClass({
     }
     var scaleY = (graphHeight / spanY);
     var barPadding = Math.max(BAR_PADDING, Math.round(xStepWidth / 8));
+    if (this.props.sparkline) {
+      xStepWidth = SPARKLINE_STEP_WIDTH;
+      barPadding = SPARKLINE_BAR_PADDING;
+    }
 
     var result = {
       minX: minX,
@@ -207,11 +218,16 @@ var Chart = React.createClass({
     var element = this.refs.chart.getDOMNode();
     var rect = element.getBoundingClientRect();
     if (rect.width !== this.state.width || rect.height !== this.state.height) {
+      var bounds = this._bounds(this.props.series, this.props.xAxis,
+        rect.width, rect.height);
+      var width = rect.width;
+      if (this.props.sparkline) {
+        width = bounds.graphWidth;
+      }
       this.setState({
-        width: rect.width,
+        width: width,
         height: rect.height,
-        bounds: this._bounds(this.props.series, this.props.xAxis,
-          rect.width, rect.height)
+        bounds: bounds
       });
     }
   },
@@ -658,8 +674,11 @@ var Chart = React.createClass({
     if (this.props.large) {
       classes.push(CLASS_ROOT + "--large");
     }
+    if (this.props.sparkline) {
+      classes.push(CLASS_ROOT + "--sparkline");
+    }
 
-    var values = null;
+    var values = [];
     if ('line' === this.props.type || 'area' === this.props.type) {
       values = this._renderLinesOrAreas();
     } else if ('bar' === this.props.type) {

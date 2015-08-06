@@ -127,6 +127,8 @@ var ChartDoc = React.createClass({
             <dd>Smaller sized version.</dd>
             <dt><code>smooth       true|false</code></dt>
             <dd>For line and area charts, smooth the drawing.</dd>
+            <dt><code>sparkline    true|false</code></dt>
+            <dd>Sparkline sized version.</dd>
             <dt><code>threshold    {"{number}"}</code></dt>
             <dd>Optional threshold value.</dd>
             <dt><code>type         line|bar|area</code></dt>
@@ -213,7 +215,7 @@ var ChartDoc = React.createClass({
           <h3>Large, Legend total</h3>
           <div className="example">
           <Chart series={series} min={0} threshold={3} type="bar"
-              legend={{total: true}}
+            legend={{total: true}}
             xAxis={seriesXAxis}
             units="TB" large={true} />
           </div>
@@ -222,6 +224,26 @@ var ChartDoc = React.createClass({
               " legend={{total: true}} units=\"TB\"\n" +
               " xAxis={" + stringify(seriesXAxis) +  "}\n" +
               " series={" + stringify(series) + "} />"}
+          </code></pre>
+
+          <h3>Sparkline, Bar</h3>
+          <div className="example">
+          <Chart series={singleSeries} min={0} type="bar" sparkline={true} />
+          {singleSeries[0].values[0][0]}
+          </div>
+          <pre><code className="html">
+            {"<Chart type=\"bar\" sparkline={true}\n" +
+              " series={" + stringify(singleSeries) + "} />"}
+          </code></pre>
+
+          <h3>Sparkline, Area</h3>
+          <div className="example">
+          <Chart series={singleSeries} min={0} type="area" sparkline={true} />
+          {singleSeries[0].values[0][0]}
+          </div>
+          <pre><code className="html">
+            {"<Chart type=\"area\" sparkline={true}\n" +
+              " series={" + stringify(singleSeries) + "} />"}
           </code></pre>
 
           <h3>Dates, Smooth</h3>
