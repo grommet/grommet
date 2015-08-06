@@ -143,14 +143,14 @@
 
     @include media-query(palm) {
       &-left {
-        border-left: 0;
+        border-left: none;
         border-bottom: 1px solid $border-color;
         padding-top: $inuit-base-spacing-unit;
       }
 
       &-right {
-        border-right: 0;
-        border-bottom: 1px solid;
+        border-right: none;
+        border-bottom: 1px solid $border-color;
         padding-top: $inuit-base-spacing-unit;
       }
     }
