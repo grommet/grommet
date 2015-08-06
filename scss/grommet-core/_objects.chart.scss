@@ -133,4 +133,14 @@
       height: $large-graphic-height;
     }
   }
+
+  &--sparkline {
+    display: inline-block;
+    margin-right: quarter($inuit-base-spacing-unit);
+
+    .chart__graphic {
+      width: auto;
+      height: $sparkline-height;
+    }
+  }
 }

@@ -9,6 +9,7 @@ $footer-height: round($inuit-base-spacing-unit * 1.5) !default;
 $graphic-height: round($inuit-base-spacing-unit * 16) !default; // 384px
 $small-graphic-height: round($inuit-base-spacing-unit * 8) !default; // 192px
 $large-graphic-height: round($inuit-base-spacing-unit * 24) !default; // 576px
+$sparkline-height: $inuit-base-spacing-unit !default; // 24px
 
 $center-column-width: round($inuit-base-spacing-unit * 40) !default; // 960px;
 $sidebar-width: round($inuit-base-spacing-unit * 16) !default; // 384px
