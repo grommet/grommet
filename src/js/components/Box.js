@@ -26,6 +26,7 @@ var Box = React.createClass({
     ]),
     reverse: React.PropTypes.bool,
     responsive: React.PropTypes.bool,
+    media: React.PropTypes.string,
     separator: React.PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
     tag: React.PropTypes.string,
     textAlign: React.PropTypes.oneOf(['left', 'center', 'right']),
@@ -70,6 +71,7 @@ var Box = React.createClass({
     this._addPropertyClass(classes, CLASS_ROOT, 'pad');
     this._addPropertyClass(classes, CLASS_ROOT, 'separator');
     this._addPropertyClass(classes, CLASS_ROOT, 'textAlign', 'text-align');
+    this._addPropertyClass(classes, CLASS_ROOT, 'media');
 
     if (this.props.appCentered) {
       this._addPropertyClass(containerClasses, CLASS_ROOT + "__container", 'full');

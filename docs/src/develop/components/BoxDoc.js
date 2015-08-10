@@ -46,6 +46,8 @@ var BoxDoc = React.createClass({
             <dt><code>responsive   true|false</code></dt>
             <dd>Whether children laid out in a row direction should be
               switched to a column layout when the display area narrows.</dd>
+            <dt><code>media   lap-and-up|palm</code></dt>
+            <dd>Whether to show the box only for lap-and-up or palm size. Optional.</dd>
             <dt><code>separator   top|bottom|left|right</code></dt>
             <dd>Add a separator.</dd>
             <dt><code>tag          {"{text}"}</code></dt>
@@ -86,6 +88,15 @@ var BoxDoc = React.createClass({
           </div>
           <pre><code className="html">{"<Box direction=\"row\" align=\"center\" colorIndex=\"neutral-1\"\n  justify=\"between\" reverse={true} tag=\"aside\"> ..."}</code></pre>
 
+          <h3>Palm-only Box</h3>
+          <p>Set the browser size to mobile in order to see the box.</p>
+          <div className="example">
+            <Box colorIndex="neutral-2" direction="row" media="palm" align="center">
+              <div>first</div>
+              <div>second</div>
+            </Box>
+          </div>
+          <pre><code className="html">{"<Box colorIndex=\"neutral-2\" direction=\"row\" media=\"palm\" align=\"center\"> ..."}</code></pre>
         </section>
 
       </Article>
