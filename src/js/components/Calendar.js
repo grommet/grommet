@@ -26,7 +26,7 @@ var Calendar = React.createClass({
 
   getDefaultProps: function () {
     return {
-      value: (new Date()).toISOString().slice(0, 10)
+      value: moment().format('YYYY-MM-DD')
     };
   },
 
@@ -47,7 +47,7 @@ var Calendar = React.createClass({
 
   _onClickDay: function (date) {
     if (this.props.onChange) {
-      this.props.onChange(date.toISOString().slice(0, 10));
+      this.props.onChange(moment(date).format('YYYY-MM-DD'));
     }
   },
 
