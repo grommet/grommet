@@ -9,12 +9,13 @@ $form-vertical-padding: quarter($inuit-base-spacing-unit);
   border: $input-border-width solid $border-color;
   margin-bottom: - $input-border-width; // so borders overlap
   background-color: $form-field-background-color;
+  opacity: 1; // for --hidden
 
   @include media-query(lap-and-up) {
     max-width: $form-width;
     width: 100%;
     max-height: 100vh;
-    transition: max-height 0.4s;
+    transition: all 0.4s, padding-top 0.3s 0.1s, padding-bottom 0.3s 0.1s;
 
     .form--compact & {
       width: $compact-form-width;
@@ -125,7 +126,7 @@ $form-vertical-padding: quarter($inuit-base-spacing-unit);
       }
     }
 
-    > .form-field:not(.form-field--hidden) {
+    > .form-field {
       width: auto;
       margin-top: halve($inuit-base-spacing-unit);
       border: none;
@@ -133,6 +134,10 @@ $form-vertical-padding: quarter($inuit-base-spacing-unit);
       > .form-field__label {
         border-top: 1px solid $border-color;
         padding-top: $form-vertical-padding;
+      }
+
+      &--hidden {
+        margin-top: 0px;
       }
     }
   }
@@ -159,18 +164,20 @@ $form-vertical-padding: quarter($inuit-base-spacing-unit);
   }
 
   &--hidden {
-    border: none;
-    margin: 0px;
-    padding: 0px;
-    overflow: hidden;
 
     @include media-query(palm) {
       display: none;
     }
 
     @include media-query(lap-and-up) {
+      border: none;
+      margin-bottom: 0px;
+      padding-top: 0px;
+      padding-bottom: 0px;
+      opacity: 0;
+      overflow: hidden;
       max-height: 0px;
-      transition: max-height 0.2s;
+      transition: max-height 0.2s, all 0.4s;
     }
   }
 
