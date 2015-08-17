@@ -128,19 +128,18 @@ var IndexFilters = React.createClass({
 
         var components = [];
         components.push(
-          <h4 key="label" className={CLASS_ROOT + "__filter-label"}>
-            {this.getGrommetIntlMessage(attribute.label)}
-          </h4>
-        );
-        components.push(
-          <CheckBox key="all" className={CLASS_ROOT + "__filter-value"}
+          <CheckBox key={attribute.attribute + '-all'}
+            className={CLASS_ROOT + "__filter-value"}
             id={attribute.attribute + '-all'}
             label={this.getGrommetIntlMessage('All')}
             checked={this.state.data[attribute.attribute].all}
             onChange={this._onChangeAll
               .bind(this, attribute.attribute, attribute.filter)} />
         );
-        return components.concat(values);
+        return (<fieldset className={CLASS_ROOT}>
+                  <legend className={CLASS_ROOT + "__filter-legend"}>{this.getGrommetIntlMessage(attribute.label)}</legend>
+                  {components.concat(values)}
+                </fieldset>);
       }, this);
 
     /*

@@ -38,6 +38,8 @@ var CheckBoxDoc = React.createClass({
           <dd>Same as React {"<input onChange= >"}.</dd>
           <dt><code>toggle         true|false</code></dt>
           <dd>Whether to visualize it as a toggle switch.</dd>
+          <dt><code>ariaDescribedby {"{text}"}</code></dt>
+          <dd>Optional attribute to enhance accessibility in case the checkbox is used inside a context.</dd>
           </dl>
         </section>
 
