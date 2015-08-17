@@ -88,4 +88,24 @@
       padding-bottom: $inuit-base-spacing-unit;
     }
   }
+
+  &__container {
+    &--float {
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
+      padding-left: $inuit-base-spacing-unit;
+      padding-right: $inuit-base-spacing-unit;
+    }
+  }
+
+  *:not(.footer__container--float) > &--float {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    padding-left: $inuit-base-spacing-unit;
+    padding-right: $inuit-base-spacing-unit;
+  }
 }
