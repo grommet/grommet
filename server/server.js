@@ -35,11 +35,10 @@ if (!process.env.SILENT_MODE) {
 }
 
 router.get('/', function (req, res) {
-  console.log("'" + req.ip + "'");
-  if ( req.ip.match(/^16\./) ) {
+  if ( req.ip.match(/^15\./) ) {
     res.redirect('/docs/hpe');
   }
-  else if ( req.ip.match(/^15\./) ) {
+  else if ( req.ip.match(/^16\./) ) {
     res.redirect('/docs/hpinc');
   }
   else {
