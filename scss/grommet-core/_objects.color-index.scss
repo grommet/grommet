@@ -33,6 +33,16 @@
       color: nth($brand-accent-colors, $i);
     }
   }
+
+  .background-color-index-accent-#{$i}-a,
+  .background-color-index-accent-#{$i+length($brand-accent-colors)}-a {
+    background-color: rgba(nth($brand-accent-colors, $i), 0.8);
+
+    .button--primary,
+    .button--primary:hover {
+      color: rgba(nth($brand-accent-colors, $i), 0.8);
+    }
+  }
 }
 
 @for $i from 1 through length($brand-grey-colors) {
