@@ -10,7 +10,7 @@ describe('Grommet IndexAttribute', function() {
 
     var Component = GrommetTestUtils.getComponent(__path__, undefined, {
       item: {
-       data: 'testing'
+        data: 'testing'
       },
       attribute: {
         attribute: 'data'
@@ -55,7 +55,7 @@ describe('Grommet IndexAttribute', function() {
 
     var Component = GrommetTestUtils.getComponent(__path__, undefined, {
       item: {
-       data: 'testing'
+        data: 'testing'
       },
       attribute: {
         attribute: 'data',
@@ -70,7 +70,7 @@ describe('Grommet IndexAttribute', function() {
 
     var Component = GrommetTestUtils.getComponent(__path__, undefined, {
       item: {
-       status: 'ok'
+        status: 'ok'
       },
       attribute: {
         attribute: 'status'
@@ -84,7 +84,7 @@ describe('Grommet IndexAttribute', function() {
 
     var Component = GrommetTestUtils.getComponent(__path__, undefined, {
       item: {
-       data: 'testing'
+        data: 'testing'
       },
       attribute: {
         attribute: 'data',
@@ -99,7 +99,7 @@ describe('Grommet IndexAttribute', function() {
 
     var Component = GrommetTestUtils.getComponent(__path__, undefined, {
       item: {
-       data: 'testing'
+        data: 'testing'
       },
       attribute: {
         attribute: 'data'
@@ -115,7 +115,7 @@ describe('Grommet IndexAttribute', function() {
     var React = require('react/addons');
     var Component = GrommetTestUtils.getComponent(__path__, undefined, {
       item: {
-       data: 'testing'
+        data: 'testing'
       },
       attribute: {
         attribute: 'data',

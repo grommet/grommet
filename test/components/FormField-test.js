@@ -11,9 +11,9 @@ describe('Grommet FormField', function() {
 
     var Component = GrommetTestUtils.getComponent(__path__,
       <input id="item1" type="text" className="inputTest" />, {
-      label: 'Item 1',
-      htmlFor: 'item1'
-    });
+        label: 'Item 1',
+        htmlFor: 'item1'
+      });
 
     GrommetTestUtils.componentShouldExist(Component, 'form-field');
     GrommetTestUtils.componentShouldExist(Component, 'form-field--text');
@@ -25,9 +25,9 @@ describe('Grommet FormField', function() {
 
     var Component = GrommetTestUtils.getComponent(__path__,
       <input id="item1" type="text" className="inputTest" />, {
-      label: 'Item 1',
-      required: true
-    });
+        label: 'Item 1',
+        required: true
+      });
 
     GrommetTestUtils.componentShouldExist(Component, 'form-field');
     GrommetTestUtils.componentShouldExist(Component, 'form-field--required');
@@ -39,9 +39,9 @@ describe('Grommet FormField', function() {
 
     var Component = GrommetTestUtils.getComponent(__path__,
       <input id="item1" type="text" className="inputTest" />, {
-      label: 'Item 1',
-      help: 'This field is very important'
-    });
+        label: 'Item 1',
+        help: 'This field is very important'
+      });
 
     GrommetTestUtils.componentShouldExist(Component, 'form-field');
     GrommetTestUtils.componentShouldExist(Component, 'form-field__help',
@@ -54,9 +54,9 @@ describe('Grommet FormField', function() {
 
     var Component = GrommetTestUtils.getComponent(__path__,
       <input id="item1" type="text" className="inputTest" />, {
-      label: 'Item 1',
-      error: 'Field Test is required.'
-    });
+        label: 'Item 1',
+        error: 'Field Test is required.'
+      });
 
     GrommetTestUtils.componentShouldExist(Component, 'form-field');
     GrommetTestUtils.componentShouldExist(Component,

@@ -37,26 +37,26 @@ var Status = React.createClass({
     var className = classes.join(' ');
     var icon = (<span>{'?'}</span>);
     switch (this.props.value.toLowerCase()) {
-    case 'ok':
-    case 'normal':
-      icon = (<OK className={className} a11yTitle={this.props.a11yTitle} />);
-      break;
-    case 'warning':
-      icon = (<Warning className={className} a11yTitle={this.props.a11yTitle} />);
-      break;
-    case 'error':
-    case 'critical':
-      icon = (<ErrorStatus className={className} a11yTitle={this.props.a11yTitle} />);
-      break;
-    case 'disabled':
-      icon = (<Disabled className={className} a11yTitle={this.props.a11yTitle} />);
-      break;
-    case 'unknown':
-      icon = (<Unknown className={className} a11yTitle={this.props.a11yTitle} />);
-      break;
-    case 'label':
-      icon = (<Label className={className} a11yTitle={this.props.a11yTitle} />);
-      break;
+      case 'ok':
+      case 'normal':
+        icon = (<OK className={className} a11yTitle={this.props.a11yTitle} />);
+        break;
+      case 'warning':
+        icon = (<Warning className={className} a11yTitle={this.props.a11yTitle} />);
+        break;
+      case 'error':
+      case 'critical':
+        icon = (<ErrorStatus className={className} a11yTitle={this.props.a11yTitle} />);
+        break;
+      case 'disabled':
+        icon = (<Disabled className={className} a11yTitle={this.props.a11yTitle} />);
+        break;
+      case 'unknown':
+        icon = (<Unknown className={className} a11yTitle={this.props.a11yTitle} />);
+        break;
+      case 'label':
+        icon = (<Label className={className} a11yTitle={this.props.a11yTitle} />);
+        break;
     }
     return icon;
   }
