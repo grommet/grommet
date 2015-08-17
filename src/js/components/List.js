@@ -105,6 +105,7 @@ var List = React.createClass({
       var primary;
       var secondary;
       var selected;
+      var onClick;
 
       this.props.schema.forEach(function (scheme) {
         if (scheme.image) {
@@ -122,10 +123,14 @@ var List = React.createClass({
         }
       }, this);
 
+      if (this.props.onSelect) {
+        onClick = this._onClickItem.bind(this, item);
+      }
+
       return (
         <ListItem key={uid} image={image} label={primary}
           annotation={secondary} selected={selected}
-          onClick={this._onClickItem.bind(this, item)} />
+          onClick={onClick} />
       );
     }, this);
 
