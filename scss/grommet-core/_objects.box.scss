@@ -37,6 +37,9 @@
   &--full {
     width: 100vw;
     min-height: 100vh;
+    // min-height doesn't work for IE and vertical centering
+    // https://connect.microsoft.com/IE/feedback/details/816293/ie11-flexbox-with-min-height-not-vertically-aligning-with-align-items-center
+    height: 100%;
   }
 
   &--full-horizontal {
