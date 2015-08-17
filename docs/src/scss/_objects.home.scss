@@ -8,8 +8,15 @@
   background-color: #333;
   color: #fff;
   padding: double($inuit-base-spacing-unit);
-  max-width: $readable-text-width + double($inuit-base-spacing-unit);
   text-align: left;
+
+  @include media-query(lap-and-up) {
+    max-width: $readable-text-width + double($inuit-base-spacing-unit);
+  }
+
+  @include media-query(palm) {
+    max-width: 100vw;
+  }
 
   pre {
     border-left: 2px solid #ccc;
