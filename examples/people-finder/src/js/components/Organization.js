@@ -34,13 +34,19 @@ var Organization = React.createClass({
     } else if (res.ok) {
       var result = res.body;
       var manager = result[0];
-      var managers = this.state.managers;
-      managers.unshift(manager);
-      this.setState({managers: managers, error: null});
-      // 20 limit is to guard against bugs in the code
-      if (manager.manager && manager.manager !== manager.dn && managers.length <= 20) {
-        this._getManager(manager.manager);
+      // might not match if domain names are different
+      if (manager) {
+        var managers = this.state.managers;
+        managers.unshift(manager);
+        this.setState({managers: managers, error: null});
+        // 20 limit is to guard against bugs in the code
+        if (manager.manager && manager.manager !== manager.dn && managers.length <= 20) {
+          this._getManager(manager.manager);
+        } else {
+          this.setState({busy: false});
+        }
       } else {
+        console.log('Unknown manager', res.req.url);
         this.setState({busy: false});
       }
     }
