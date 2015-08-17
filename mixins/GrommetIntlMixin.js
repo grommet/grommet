@@ -10,9 +10,7 @@ function localesSupported() {
 }
 
 if (! localesSupported()) {
-  require('intl/Intl');
-  IntlPolyfill.__addLocaleData(require('intl/locale-data/json/en-US.json'));
-  IntlPolyfill.__addLocaleData(require('intl/locale-data/json/pt-BR.json'));
+  require('intl');
   Intl.NumberFormat = IntlPolyfill.NumberFormat;
   Intl.DateTimeFormat = IntlPolyfill.DateTimeFormat;
 }
@@ -43,8 +41,9 @@ module.exports = {
     return (
       <FormattedDate
         value={new Date(date)}
+        weekday="long"
         day="numeric"
-        month="numeric"
+        month="long"
         year="numeric"
         hour="numeric"
         minute="numeric"
