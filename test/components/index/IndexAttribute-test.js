@@ -39,6 +39,7 @@ describe('Grommet IndexAttribute', function() {
   it('loads a timestamp IndexAttribute component', function() {
 
     var Component = GrommetTestUtils.getComponent(__path__, undefined, {
+      locales: "en-US",
       item: {
         data: '05/11/2015'
       },
@@ -48,7 +49,7 @@ describe('Grommet IndexAttribute', function() {
       }
     });
 
-    GrommetTestUtils.componentShouldExist(Component, 'index-attribute', 'Monday, May 11, 2015, 12:00:00 AM');
+    GrommetTestUtils.componentShouldExist(Component, 'index-attribute', 'Mon, May 11, 2015, 12:00:00 AM');
   });
 
   it('loads a secondary IndexAttribute component', function() {

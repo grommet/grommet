@@ -33,7 +33,7 @@ describe('Grommet Alert', function() {
     );
 
     GrommetTestUtils.componentShouldExist(Component, 'alert');
-    GrommetTestUtils.componentShouldExist(Component, 'alert__timestamp', 'Tuesday, November 10, 2015, 3:10:09 AM');
+    GrommetTestUtils.componentShouldExist(Component, 'alert__timestamp', 'Tue, Nov 10, 2015, 3:10:09 AM');
   });
 
   it('loads a Alert component with created date in pt-BR locale', function() {
@@ -51,7 +51,7 @@ describe('Grommet Alert', function() {
     );
 
     GrommetTestUtils.componentShouldExist(Component, 'alert');
-    GrommetTestUtils.componentShouldExist(Component, 'alert__timestamp', 'terça-feira, 10 de novembro de 2015 3:10:09');
+    GrommetTestUtils.componentShouldExist(Component, 'alert__timestamp', 'ter, 10 de nov de 2015 3:10:09');
   });
 
 });
