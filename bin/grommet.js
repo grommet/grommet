@@ -61,7 +61,7 @@ function getGrommetPath() {
   return grommetPath;
 }
 
-function getPackageJSON(app, grommetPath) {
+function getPackageJSON(app, grommetPath, fixedVersion) {
   var grommetPackageJSON = require(path.join(grommetPath, 'package.json'));
 
   var appPackageJSON = {
@@ -73,8 +73,8 @@ function getPackageJSON(app, grommetPath) {
     engines: grommetPackageJSON.engines
   };
 
-  appPackageJSON.dependencies.grommet = 'https://github.com/HewlettPackard' +
-    '/grommet.git#stable';
+  appPackageJSON.dependencies.grommet = fixedVersion ? grommetPackageJSON.version :
+    'https://github.com/HewlettPackard/grommet.git#stable';
 
   return appPackageJSON;
 }
@@ -91,7 +91,7 @@ gulp.task('init', function(done) {
       var mobileIcon = path.join(grommetPath, 'mobile-app-icon.png');
       var shortcutIcon = path.join(grommetPath, 'shortcut-icon.png');
 
-      var packageJSON = getPackageJSON(app, grommetPath);
+      var packageJSON = getPackageJSON(app, grommetPath, true);
 
       gulp.src(mobileIcon).pipe(gulp.dest('./src/img'));
       gulp.src(shortcutIcon).pipe(gulp.dest('./src/img'));
