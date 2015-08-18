@@ -29,8 +29,8 @@ gulp.task('dev', function() {
     //give sometime for the server to start
     setTimeout(function() {
       gulp.src('../dist/index.html')
-      .pipe(open('<%file.path%>', {
-        url: 'http://localhost:8020/'
+      .pipe(open({
+        uri: 'http://localhost:8020/'
       }));
     }, 500);
   });

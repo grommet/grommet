@@ -113,8 +113,8 @@ module.exports = function(gulp, options, webpackConfig, dist) {
       } else {
         console.log('[webpack-dev-server] started: opening the app in your default browser...');
         gulp.src(path.join(dist, 'index.html'))
-        .pipe(open('<%file.path%>', {
-          url: 'http://' + host + ':' + options.devServerPort + '/webpack-dev-server/'
+        .pipe(open({
+          uri: 'http://' + host + ':' + options.devServerPort + '/webpack-dev-server/'
         }));
       }
     });
