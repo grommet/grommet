@@ -80,13 +80,13 @@ var TopologyDoc = React.createClass({
 
           <div className="example">
             <Topology links={[
-                {colorIndex: "graph-1", ids: ["s1p1", "s2p1"]},
-                {colorIndex: "graph-1", ids: ["s1p2", "s2p2"]},
-                {colorIndex: "graph-2", ids: ["em1p2", "em2p1"]},
-                {colorIndex: "graph-2", ids: ["em2p2", "em3p1"]},
-                {colorIndex: "graph-2", ids: ["em3p2", "em4p1"]},
-                {colorIndex: "graph-2", ids: ["em4p2", "em1p1"]}
-              ]}>
+              {colorIndex: "graph-1", ids: ["s1p1", "s2p1"]},
+              {colorIndex: "graph-1", ids: ["s1p2", "s2p2"]},
+              {colorIndex: "graph-2", ids: ["em1p2", "em2p1"]},
+              {colorIndex: "graph-2", ids: ["em2p2", "em3p1"]},
+              {colorIndex: "graph-2", ids: ["em3p2", "em4p1"]},
+              {colorIndex: "graph-2", ids: ["em4p2", "em1p1"]}
+            ]}>
               <Topology.Parts direction="row">
 
                 <Topology.Part className="rack" direction="column">

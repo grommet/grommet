@@ -37,30 +37,30 @@ var LayerDoc = React.createClass({
     if (this.state.active) {
       var form;
       switch (this.state.active) {
-      case 'simple':
-        activeLayer = (
-          <Layer onClose={this._onClose} closer={true} flush={true}
-            align={this.state.align}>
-            <Form>
-              <Header>
-                <h2>Title</h2>
-              </Header>
-              <FormFields>
-                <p>This is a simple dialog.</p>
-              </FormFields>
-            </Form>
-          </Layer>
-        );
-        break;
-      case 'mixed':
-        form = <FullForm onCancel={this._onClose} onSubmit={this._onClose} />;
-        break;
-      case 'add user':
-        form = <AddUserForm onCancel={this._onClose} onSubmit={this._onClose} />;
-        break;
-      case 'confirmation':
-        form = <ConfirmationForm onCancel={this._onClose} onSubmit={this._onClose} />;
-        break;
+        case 'simple':
+          activeLayer = (
+            <Layer onClose={this._onClose} closer={true} flush={true}
+              align={this.state.align}>
+              <Form>
+                <Header>
+                  <h2>Title</h2>
+                </Header>
+                <FormFields>
+                  <p>This is a simple dialog.</p>
+                </FormFields>
+              </Form>
+            </Layer>
+          );
+          break;
+        case 'mixed':
+          form = <FullForm onCancel={this._onClose} onSubmit={this._onClose} />;
+          break;
+        case 'add user':
+          form = <AddUserForm onCancel={this._onClose} onSubmit={this._onClose} />;
+          break;
+        case 'confirmation':
+          form = <ConfirmationForm onCancel={this._onClose} onSubmit={this._onClose} />;
+          break;
       }
       if (! activeLayer) {
         activeLayer = <Layer onClose={this._onClose} closer={true} flush={true} align={this.state.align}>{form}</Layer>;
