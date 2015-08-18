@@ -1,12 +1,13 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var path = require('path');
+var moment = require('moment');
 var __path__ = path.join(__dirname, '../../src/js/components/Calendar');
 
 var GrommetTestUtils = require('../../src/utils/test/GrommetTestUtils');
 
 var expect = require('expect');
-var today = (new Date()).toISOString().slice(0, 10);
+var today = moment().format('YYYY-MM-DD');
 
 describe('Grommet Calendar', function() {
   beforeEach(function() {
