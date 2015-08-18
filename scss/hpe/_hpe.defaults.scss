@@ -49,9 +49,15 @@ $hpe-fonts-path: "https://hpefonts.s3.amazonaws.com" !default;
 }
 
 $button-border-color: #01a982;
+$button-hover-border-color: $button-border-color;
 $button-text-color: #01a982;
+$button-hover-text-color: $button-text-color;
+$button-hover-primary-background-color: $brand-color;
+$button-active-primary-background-color: $brand-color;
 $control-brand-color: #049371;
 $button-accent-background-color: #ff8d6d;
+$button-hover-accent-background-color: $button-accent-background-color;
+$button-active-accent-background-color: $button-accent-background-color;
 $button-accent-text-color: #333333;
 $button-font-weight: 600;
 $button-alternate-border-color: #FF8D6D;

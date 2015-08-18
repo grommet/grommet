@@ -8,6 +8,7 @@ a {
 
   &:hover {
     text-decoration: underline;
+    color: $hover-text-color;
   }
 
   &:visited {
