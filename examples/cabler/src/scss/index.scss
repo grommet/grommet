@@ -6,3 +6,7 @@ $hpe-fonts-path: "/font";
 @import '~grommet/scss/hpe/hpe.defaults';
 
 @import '~grommet/scss/grommet-core/index';
+
+.topology {
+  font-family: monospace;
+}

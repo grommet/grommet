@@ -7,8 +7,13 @@ var Menu = require('grommet/components/Menu');
 var Edit = require('grommet/components/icons/Edit');
 var Filter = require('grommet/components/icons/Filter');
 var CheckBox = require('grommet/components/CheckBox');
+var Button = require('grommet/components/Button');
 
 var MenuDoc = React.createClass({
+
+  _onClick: function () {
+    // no-op
+  },
 
   render: function() {
     var inline =
@@ -139,6 +144,16 @@ var MenuDoc = React.createClass({
               <a href="#" className="active">First</a>
               <a href="#">Second</a>
               <a href="#">Third</a>
+            </Menu>
+          </div>
+          <pre><code className="html">{"<Menu collapse={true} small={true}> ..."}</code></pre>
+
+          <h3>button bar</h3>
+          <div className="example">
+            <Menu direction="row">
+              <Button label="Button 1" onClick={this._onClick} />
+              <Button label="Button 2" onClick={this._onClick} />
+              <Button label="Button 3" onClick={this._onClick} />
             </Menu>
           </div>
           <pre><code className="html">{"<Menu collapse={true} small={true}> ..."}</code></pre>

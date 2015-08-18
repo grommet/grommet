@@ -645,12 +645,16 @@ var Chart = React.createClass({
   // Builds a Legend appropriate for the currently active X index.
   _renderLegend: function () {
     var activeSeries = this.props.series.map(function (item) {
-      return {
-        label: item.label,
+      var datum = {
         value: item.values[this.state.activeXIndex][1],
-        units: item.units,
-        colorIndex: item.colorIndex
+        units: item.units
       };
+      // only show label and swatch if we have more than one series
+      if (this.props.series.length > 1) {
+        datum.label = item.label;
+        datum.colorIndex = item.colorIndex;
+      }
+      return datum;
     }, this);
     var classes = [
       CLASS_ROOT + "__legend",
