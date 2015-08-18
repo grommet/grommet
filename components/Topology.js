@@ -81,6 +81,7 @@ var Part = React.createClass({
 
 var Parts = React.createClass({
   propTypes: {
+    align: React.PropTypes.oneOf(['start', 'center', 'between', 'end', 'stretch']),
     direction: React.PropTypes.oneOf(['row', 'column']).isRequired,
     uniform: React.PropTypes.bool
   },
@@ -127,6 +128,9 @@ var Parts = React.createClass({
   render: function () {
     var classes = [CLASS_ROOT + "__parts"];
     classes.push(CLASS_ROOT + "__parts--direction-" + this.props.direction);
+    if (this.props.align) {
+      classes.push(CLASS_ROOT + "__parts--align-" + this.props.align);
+    }
     if (this.props.className) {
       classes.push(this.props.className);
     }

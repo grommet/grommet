@@ -69,20 +69,41 @@ var Legend = React.createClass({
         valueClasses.push("large-number-font");
       }
 
+      var swatch;
+      if (item.hasOwnProperty('colorIndex')) {
+        swatch = (
+          <svg className={CLASS_ROOT + "__item-swatch color-index-" + colorIndex}
+            viewBox="0 0 12 12">
+            <path className={item.className} d="M 5 0 l 0 12" />
+          </svg>
+        );
+      }
+
+      var label;
+      if (item.hasOwnProperty('label')) {
+        label = (
+          <span className={CLASS_ROOT + "__item-label"}>{item.label}</span>
+        );
+      }
+
+      var value;
+      if (item.hasOwnProperty('value')) {
+        value = (
+          <span className={valueClasses.join(' ')}>
+            {item.value}
+            <span className={CLASS_ROOT + "__item-units"}>{this.props.units}</span>
+          </span>
+        );
+      }
+
       return (
         <li key={item.label || index} className={legendClasses.join(' ')}
           onClick={item.onClick}
           onMouseOver={this._onActive.bind(this, index)}
           onMouseOut={this._onActive.bind(this, this.props.activeIndex)} >
-          <svg className={CLASS_ROOT + "__item-swatch color-index-" + colorIndex}
-            viewBox="0 0 12 12">
-            <path className={item.className} d="M 5 0 l 0 12" />
-          </svg>
-          <span className={CLASS_ROOT + "__item-label"}>{item.label}</span>
-          <span className={valueClasses.join(' ')}>
-            {item.value}
-            <span className={CLASS_ROOT + "__item-units"}>{this.props.units}</span>
-          </span>
+          {swatch}
+          {label}
+          {value}
         </li>
       );
     }, this);
