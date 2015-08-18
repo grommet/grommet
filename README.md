@@ -1,6 +1,6 @@
 # Grommet: The most advanced UX framework for enterprise apps
 
-[![Slack](http://alansouzati.github.io/artic/img/slack-badge.svg)](http://grommet.io/slackin)  [![Build Status](https://api.travis-ci.org/HewlettPackard/grommet.svg)](https://travis-ci.org/HewlettPackard/grommet)  [![Coverage Status](https://coveralls.io/repos/HewlettPackard/grommet/badge.svg)](https://coveralls.io/r/HewlettPackard/grommet) [![Code Climate](https://codeclimate.com/github/HewlettPackard/grommet/badges/gpa.svg)](https://codeclimate.com/github/HewlettPackard/grommet)
+[![Slack](http://alansouzati.github.io/artic/img/slack-badge.svg)](http://grommet.io/slackin)  [![Build Status](https://api.travis-ci.org/HewlettPackard/grommet.svg)](https://travis-ci.org/HewlettPackard/grommet)  [![Coverage Status](https://coveralls.io/repos/HewlettPackard/grommet/badge.svg)](https://coveralls.io/r/HewlettPackard/grommet) [![Code Climate](https://codeclimate.com/github/HewlettPackard/grommet/badges/gpa.svg)](https://codeclimate.com/github/HewlettPackard/grommet)  [![Dependency Status](https://david-dm.org/hewlettpackard/grommet.svg)](https://david-dm.org/hewlettpackard/grommet)  [![devDependency Status](https://david-dm.org/hewlettpackard/grommet/dev-status.svg)](https://david-dm.org/hewlettpackard/grommet#info=devDependencies)
 
 [![Sauce Test Status](https://saucelabs.com/browser-matrix/alansouzahp.svg)](https://saucelabs.com/u/alansouzahp)
 
