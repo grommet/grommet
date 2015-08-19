@@ -109,6 +109,8 @@ $form-vertical-padding: quarter($inuit-base-spacing-unit);
     > textarea {
       vertical-align: top;
       height: auto;
+      // Note that resize does nothing in IE and android
+      resize: vertical;
     }
 
     > .check-box,
