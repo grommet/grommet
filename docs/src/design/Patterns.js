@@ -10,6 +10,8 @@ var Search = require('grommet/components/Search');
 var Logo = require('../img/Logo');
 var Gravatar = require('react-gravatar');
 var Link = require('react-router').Link;
+var Article = require('grommet/components/Article');
+
 
 var Patterns = React.createClass({
   render: function () {
@@ -26,7 +28,7 @@ var Patterns = React.createClass({
     ];
 
     return (
-  <article>
+  <Article primary={true}>
     <header>
       <h1>Patterns</h1>
     </header>
@@ -40,68 +42,67 @@ var Patterns = React.createClass({
       same experience for the same tasks in other applications.</p>
     </section>
     <section>
-    <h2>Login</h2>
+      <h2>Login</h2>
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In diam risus,
-    fermentum at nisl pellentesque, iaculis mattis nisl. Duis dapibus.
-     <Link to="design_login">Read more</Link>
-    </p>
-    <div className="example">
-      <LoginForm rememberMe={true} forgotPassword={<a>Forgot password?</a>} />
-    </div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In diam risus, fermentum at nisl pellentesque, iaculis mattis nisl. Duis dapibus.
+        <Link to="design_login">Read more</Link>
+      </p>
+      <div className="example">
+        <LoginForm rememberMe={true} forgotPassword={<a>Forgot password?</a>} />
+      </div>
 
-  </section>
+    </section>
 
-  <section>
-    <h2>Header</h2>
+    <section>
+      <h2>Header</h2>
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In diam risus,
-    fermentum at nisl pellentesque, iaculis mattis nisl. Duis dapibus.
-     <Link to="design_header">Read more</Link>
-    </p>
-    <div className="example">
-      <Header>
-        <span>
-          <Title><Logo /> Title</Title>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In diam risus,
+      fermentum at nisl pellentesque, iaculis mattis nisl. Duis dapibus.
+       <Link to="design_header">Read more</Link>
+      </p>
+      <div className="example">
+        <Header>
+          <span>
+            <Title><Logo /> Title</Title>
+            <Search inline={true} />
+          </span>
+          <Menu direction="left">
+            <Gravatar email={'eric.soderberg@hp.com'} size={48} />
+          </Menu>
+        </Header>
+      </div>
+
+    </section>
+
+    <section>
+      <h2>Dashboard</h2>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In diam risus,
+      fermentum at nisl pellentesque, iaculis mattis nisl. Duis dapibus.
+       <Link to="design_dashboard">Read more</Link>
+      </p>
+      <div className="example">
+        <Meter type="circle" series={genericSeries} />
+        <Meter type="circle" series={statusSeries} />
+      </div>
+
+    </section>
+
+    <section>
+      <h2>Search</h2>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In diam risus,
+      fermentum at nisl pellentesque, iaculis mattis nisl. Duis dapibus.
+      <Link to="design_search">Read more</Link></p>
+
+      <div className="example">
+        <Header>
           <Search inline={true} />
-        </span>
-        <Menu direction="left">
-          <Gravatar email={'eric.soderberg@hp.com'} size={48} />
-        </Menu>
-      </Header>
-    </div>
+        </Header>
+      </div>
 
-  </section>
-
-  <section>
-    <h2>Dashboard</h2>
-
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In diam risus,
-    fermentum at nisl pellentesque, iaculis mattis nisl. Duis dapibus.
-     <Link to="design_dashboard">Read more</Link>
-    </p>
-    <div className="example">
-      <Meter type="circle" series={genericSeries} />
-      <Meter type="circle" series={statusSeries} />
-    </div>
-
-  </section>
-
-  <section>
-    <h2>Search</h2>
-
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In diam risus,
-    fermentum at nisl pellentesque, iaculis mattis nisl. Duis dapibus.
-    <Link to="design_search">Read more</Link></p>
-
-    <div className="example">
-      <Header>
-        <Search inline={true} />
-      </Header>
-    </div>
-
-  </section>
-      </article>
+    </section>
+  </Article>
     );
   }
 });

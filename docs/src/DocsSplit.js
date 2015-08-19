@@ -122,7 +122,7 @@ var DocsSplit = React.createClass({
       header = <Header large={true} />;
     }
     return (
-      <Article ref="doc" pad={{horizontal: 'medium'}}>
+      <Article primary={true} ref="doc" pad={{horizontal: 'medium'}}>
         {header}
         {this.props.children}
         <DocsFooter centered={false} />

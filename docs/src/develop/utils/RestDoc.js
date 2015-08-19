@@ -36,7 +36,7 @@ var RestDoc = React.createClass({
     ].join('\n');
 
     return (
-      <Article>
+      <Article primary={true}>
         <header>
           <h1>Rest</h1>
           <p>Perform REST calls.
