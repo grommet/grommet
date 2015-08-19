@@ -83,6 +83,7 @@ $form-vertical-padding: quarter($inuit-base-spacing-unit);
 
     // Prevent textarea from adding extra bottom margin
     > textarea {
+      resize: vertical;
       vertical-align: top;
       height: auto;
     }
