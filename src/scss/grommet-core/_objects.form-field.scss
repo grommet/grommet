@@ -78,7 +78,9 @@ $form-vertical-padding: quarter($inuit-base-spacing-unit);
 
     > select {
       display: block;
-      background-position: center right $form-horizontal-padding;
+      // TODO figure out how to make this consistent with intuit and not have magic numbers
+      background-position: center right #{$form-horizontal-padding - 6};
+      padding-left: #{$form-horizontal-padding - 2};
     }
 
     // Prevent textarea from adding extra bottom margin
