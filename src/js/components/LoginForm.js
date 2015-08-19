@@ -33,7 +33,8 @@ var LoginForm = React.createClass({
 
   getDefaultProps: function () {
     return ({
-      errors: []
+      errors: [],
+      usernameType: 'email'
     });
   },
 
@@ -82,21 +83,14 @@ var LoginForm = React.createClass({
         </div>
       );
     }
-    
-    var usernameType = 'email';
-    if (this.props.usernameType) {
-      if (this.props.usernameType === 'text') {
-        usernameType = this.props.usernameType;
-      }
-    }
-
+      
     return (
       <Form className={classes.join(' ')} onSubmit={this._onSubmit}>
         {logo}
         {title}
         <fieldset>
           <FormField htmlFor="username" label={this.getGrommetIntlMessage('Username')}>
-            <input id="username" ref="username" type={usernameType} />
+            <input id="username" ref="username" type={this.props.usernameType} />
           </FormField>
           <FormField htmlFor="password" label={this.getGrommetIntlMessage('Password')}>
             <input id="password" ref="password" type="password" />
