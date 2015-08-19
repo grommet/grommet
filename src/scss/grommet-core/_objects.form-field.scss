@@ -89,6 +89,22 @@ $form-vertical-padding: quarter($inuit-base-spacing-unit);
       text-shadow: 0 0 0 #000;
     }
 
+    // Disable IE's clear icon
+    ::-ms-clear {
+      display: none;
+    }
+
+    // Disable IE's select arrow
+    > select::-ms-expand {
+      display: none;
+    }
+
+    // Disable IE's background select
+    > select::-ms-value {
+      background: none;
+      color: inherit;
+    }
+
     // Prevent textarea from adding extra bottom margin
     > textarea {
       resize: vertical;
