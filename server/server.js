@@ -21,6 +21,7 @@ var docs = require('./docs');
 var ctoAppTuner = require('./cto-app-tuner');
 var todoAppModular = require('./todo-app-modular');
 var cabler = require('./cabler');
+var theme = require('./theme');
 
 var PORT = 8000;
 
@@ -35,15 +36,8 @@ if (!process.env.SILENT_MODE) {
 }
 
 router.get('/', function (req, res) {
-  if ( req.ip.match(/^15\./) ) {
-    res.redirect('/docs/hpe');
-  }
-  else if ( req.ip.match(/^16\./) ) {
-    res.redirect('/docs/hpinc');
-  }
-  else {
-    res.redirect('/docs');
-  }
+  var docpath = path.join('/docs/', theme.picker(req.ip));
+  res.redirect(docpath);
 });
 
 app.use('/', function(req, res, next) {
