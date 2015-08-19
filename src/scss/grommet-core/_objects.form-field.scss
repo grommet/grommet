@@ -83,6 +83,12 @@ $form-vertical-padding: quarter($inuit-base-spacing-unit);
       padding-left: #{$form-horizontal-padding - 2};
     }
 
+    // For dotted firefox outline
+    > select:-moz-focusring {
+      color: transparent;
+      text-shadow: 0 0 0 #000;
+    }
+
     // Prevent textarea from adding extra bottom margin
     > textarea {
       resize: vertical;
