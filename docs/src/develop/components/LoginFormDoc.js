@@ -20,6 +20,8 @@ var LoginFormDoc = React.createClass({
         <section>
           <h2>Options</h2>
           <dl>
+          <dt><code>usernameType           {"{string}"}</code></dt>
+          <dd>The type of username input text|<strong>email</strong></dd>
           <dt><code>errors          {"[{message}, ...]"}</code></dt>
           <dd>An array of error messages. Use this if there is a failure to log in.</dd>
           <dt><code>forgotPassword  {"{component}"}</code></dt>

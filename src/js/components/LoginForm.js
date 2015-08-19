@@ -15,6 +15,7 @@ var LoginForm = React.createClass({
   propTypes: {
     logo: React.PropTypes.node,
     title: React.PropTypes.string,
+    usernameType: React.PropTypes.string,
     rememberMe: React.PropTypes.bool,
     forgotPassword: React.PropTypes.node,
     errors: React.PropTypes.arrayOf(React.PropTypes.string),
@@ -32,7 +33,8 @@ var LoginForm = React.createClass({
 
   getDefaultProps: function () {
     return ({
-      errors: []
+      errors: [],
+      usernameType: 'email'
     });
   },
 
@@ -81,21 +83,21 @@ var LoginForm = React.createClass({
         </div>
       );
     }
-
+      
     return (
       <Form className={classes.join(' ')} onSubmit={this._onSubmit}>
         {logo}
         {title}
         <fieldset>
           <FormField htmlFor="username" label={this.getGrommetIntlMessage('Username')}>
-            <input id="username" ref="username" type="email" />
+            <input id="username" ref="username" type={this.props.usernameType} />
           </FormField>
           <FormField htmlFor="password" label={this.getGrommetIntlMessage('Password')}>
             <input id="password" ref="password" type="password" />
           </FormField>
         </fieldset>
         {errors}
-        <Button className={CLASS_ROOT + "__submit"} primary={true} strong={true}
+        <Button id={CLASS_ROOT + "__submit"} className={CLASS_ROOT + "__submit"} primary={true} strong={true}
           label={this.getGrommetIntlMessage('Log In')}
           onClick={this._onSubmit} />
         {footer}
