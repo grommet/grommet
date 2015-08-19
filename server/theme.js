@@ -4,7 +4,6 @@ var theme = module.exports = {};
 
 theme.picker = function( ip ) {
   var theme;
-  console.log("IP: '" + ip + "'");
 
   //
   // Automatically detect the them based on the requestor's IP
@@ -26,7 +25,6 @@ theme.picker = function( ip ) {
   else {
   	theme = "";
   }
-  console.log("Theme: '" + theme + "'");
 
   return theme;
 }
