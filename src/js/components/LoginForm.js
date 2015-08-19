@@ -97,7 +97,7 @@ var LoginForm = React.createClass({
           </FormField>
         </fieldset>
         {errors}
-        <Button id="login_button" className={CLASS_ROOT + "__submit"} primary={true} strong={true}
+        <Button id={CLASS_ROOT + "__submit"} className={CLASS_ROOT + "__submit"} primary={true} strong={true}
           label={this.getGrommetIntlMessage('Log In')}
           onClick={this._onSubmit} />
         {footer}
