@@ -36,9 +36,12 @@ var ButtonDoc = React.createClass({
           <dt><code>primary        true|false</code></dt>
           <dd>Whether this is a primary button. There should be at most
             one per page or screen.</dd>
-          </dl>
-          <dt><code>large         true|false</code></dt>
+          <dt><code>large          true|false</code></dt>
           <dd>Whether this is a large button. Defaults to false.</dd>
+          <dt><code>type           button|reset|submit</code></dt>
+          <dd>The type of button. Set the type to <code>submit</code>
+              for the default button on forms.  Defaults to <code>button</code>.</dd>
+          </dl>
         </section>
 
         <section>
