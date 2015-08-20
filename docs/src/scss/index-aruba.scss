@@ -1,0 +1,41 @@
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+
+@import '../../../src/scss/aruba/index';
+@import 'objects.home';
+@import 'objects.swatch';
+@import 'objects.process-animation';
+
+html {
+  font-family: $brand-font-family;
+}
+
+a.anchor {
+  display: block;
+  visibility: hidden;
+}
+
+.request-access fieldset:first-of-type {
+  padding-top: 0;
+}
+
+.document .example {
+  margin-bottom: $inuit-base-spacing-unit;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: inherit;
+  }
+}
+
+.generic-branding {
+  display: none;
+}
+
+.font-sample {
+  margin-left: double($inuit-base-spacing-unit);
+  margin-bottom: $inuit-base-spacing-unit;
+}

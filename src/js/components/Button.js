@@ -12,7 +12,14 @@ var Button = React.createClass({
     large: React.PropTypes.bool,
     onClick: React.PropTypes.func,
     primary: React.PropTypes.bool,
+    type: React.PropTypes.string,
     id: React.PropTypes.string
+  },
+
+  getDefaultProps: function () {
+    return {
+      type: "button"
+    };
   },
 
   render: function () {
@@ -34,7 +41,7 @@ var Button = React.createClass({
     }
 
     return (
-      <button id={this.props.id} className={classes.join(' ')}
+      <button id={this.props.id} type={this.props.type} className={classes.join(' ')}
         onClick={this.props.onClick}>
         {this.props.label}
       </button>
