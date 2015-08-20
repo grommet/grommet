@@ -33,7 +33,7 @@ var RestWatchDoc = React.createClass({
     ].join('\n');
 
     return (
-      <Article>
+      <Article primary={true}>
         <header>
           <h1>RestWatch</h1>
         </header>
