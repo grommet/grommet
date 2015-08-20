@@ -20,14 +20,7 @@
 
       &:last-child {
         margin-right: 0px;
-
-        @include media-query(palm) {
-          text-align: left;
-        }
-
-        @include media-query(lap) {
-          text-align: left;
-        }
+        text-align: left;
       }
     }
   }
@@ -40,6 +33,7 @@
       &__content {
         position: relative;
         color: $secondary-text-color;
+        display: block;
 
         p {
           padding-top: halve($inuit-base-spacing-unit);
@@ -47,14 +41,6 @@
           max-width: none;
           text-align: right;
           line-height: $inuit-base-spacing-unit;
-        }
-
-        @include media-query(palm) {
-          display: block;
-        }
-
-        @include media-query(lap) {
-          display: block;
         }
       }
     }

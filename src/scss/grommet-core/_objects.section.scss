@@ -32,10 +32,6 @@ section {
     @include media-query(palm) {
       height: 250px;
     }
-
-    @include media-query(lap) {
-      height: 250px;
-    }
   }
 
   > ol,
