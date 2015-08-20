@@ -55,7 +55,8 @@ function getGrommetPath() {
   });
 
   if (!grommetPath) {
-    console.log('Could not find Grommet!');
+    console.log("Could not find Grommet! " +
+                "Please make sure you've set NODE_PATH to your version of NPM");
     process.exit(1);
   }
   return grommetPath;
