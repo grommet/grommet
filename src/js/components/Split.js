@@ -37,7 +37,7 @@ var Split = React.createClass({
 
   _layout: function () {
     var splitElement = this.refs.split.getDOMNode();
-    if (splitElement.offsetWidth < 600) {
+    if (splitElement.offsetWidth < this._breakWidth) {
       this._setResponsive('single');
     } else {
       this._setResponsive('multiple');
@@ -49,6 +49,15 @@ var Split = React.createClass({
   },
 
   componentDidMount: function () {
+    // figure out the break width
+    this._breakWidth = 720; // default
+    // CSS stores the break width in a hidden pseudo element
+    var splitElement = this.refs.split.getDOMNode();
+    var after = window.getComputedStyle(splitElement, ':after');
+    if (after) {
+      this._breakWidth = after.getPropertyValue('width');
+    }
+
     window.addEventListener('resize', this._onResize);
     this._layout();
   },
