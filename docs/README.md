@@ -24,6 +24,8 @@ This is the source code for the [Grommet website](http://grommet.io). To run the
       //$ gulp dev-hpe
       //for HPInc themed version, run this instead:
       //$ gulp dev-hpinc
+      //for Aruba themed version, run this instead:
+      //$ gulp dev-aruba
       ```
 
   4. Create the Grommet website distribution:

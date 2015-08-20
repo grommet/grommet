@@ -35,6 +35,14 @@ router.get('/hpinc/*', function(req, res) {
   res.sendFile(path.join(__dirname, '/../docs/dist/hpinc/index.html'));
 });
 
+router.use('/aruba', function(req, res, next) {
+  translateStatics(req, res, next, 'aruba/');
+});
+router.use('/aruba', express.static(path.join(__dirname, '/../docs/dist/aruba')));
+router.get('/aruba/*', function(req, res) {
+  res.sendFile(path.join(__dirname, '/../docs/dist/aruba/index.html'));
+});
+
 router.use('/', function(req, res, next) {
   translateStatics(req, res, next, '');
 });

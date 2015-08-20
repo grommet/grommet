@@ -20,6 +20,10 @@ if (__THEME__.hpe) {
   require("index-hpinc.scss");
   rootPath = '/docs/hpinc/';
   theme = 'hpinc';
+} if (__THEME__.aruba) {
+  require("index-aruba.scss");
+  rootPath = '/docs/aruba/';
+  theme = 'aruba';
 } else if (__THEME__.generic) {
   require("index.scss");
 }
