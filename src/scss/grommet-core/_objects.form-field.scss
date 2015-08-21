@@ -78,8 +78,9 @@ $form-vertical-padding: quarter($inuit-base-spacing-unit);
 
     > select {
       display: block;
-      // TODO figure out how to make this consistent with intuit and not have magic numbers
-      background-position: center right #{$form-horizontal-padding - 6};
+      background-position: center right #{$form-horizontal-padding - quarter($inuit-base-spacing-unit)};
+      // This seems to be correct for only some browsers.
+      // Extra whitespace is added (by different amounts) by each browser's rendering engine
       padding-left: #{$form-horizontal-padding - 2};
     }
 
