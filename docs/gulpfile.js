@@ -74,11 +74,9 @@ var opts = {
   devServerProxy: {
     "/rest/*": 'http://localhost:8000'
   },
-  distPreprocess: ['dist-hpe', 'dist-hpinc', 'dist-bower'],
+  distPreprocess: ['dist-hpe', 'dist-hpinc', 'dist-bower', 'dist-aruba'],
   env: {
-    __THEME__: {
-      generic: true
-    }
+    __THEME__: '"grommet"'
   },
   scsslint: true
 };
@@ -109,6 +107,18 @@ gulp.task('dist-hpinc', function() {
 
 gulp.task('dev-hpinc', function() {
   return gulp.src('docs/hpinc/gulpfile.js', { read: false }).pipe(chug({
+     tasks: ['dev']
+  }));
+});
+
+gulp.task('dist-aruba', function() {
+  return gulp.src('docs/aruba/gulpfile.js', { read: false }).pipe(chug({
+     tasks: ['dist']
+  }));
+});
+
+gulp.task('dev-aruba', function() {
+  return gulp.src('docs/aruba/gulpfile.js', { read: false }).pipe(chug({
      tasks: ['dev']
   }));
 });

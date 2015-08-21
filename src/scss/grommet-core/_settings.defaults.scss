@@ -29,6 +29,14 @@ $button-border-width: 2px !default;
 $button-hover-border-width: 3px !default;
 $range-border-radius: 3px !default;
 
+$break-palm-max-width: 44.9375em !default;
+$break-lap-and-up-min-width: 45em !default;
+
+$breakpoints: (
+    "palm"          "screen and (max-width: #{$break-palm-max-width})",
+    "lap-and-up"    "screen and (min-width: #{$break-lap-and-up-min-width})"
+) !default;
+
 $button-text-transform: none !default;
 $button-font-weight: inherit !default;
 

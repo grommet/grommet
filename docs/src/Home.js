@@ -239,6 +239,7 @@ var Home = React.createClass({
             <a href="/docs/" className={this.props.theme === 'generic' ? 'active' : ''}>Grommet</a>
             <a href="/docs/hpe/" className={this.props.theme === 'hpe' ? 'active' : ''}>HPE</a>
             <a href="/docs/hpinc/" className={this.props.theme === 'hpinc' ? 'active' : ''}>HPInc</a>
+            <a href="/docs/aruba/" className={this.props.theme === 'aruba' ? 'active' : ''}>Aruba</a>
           </Menu>
         </Footer>
 

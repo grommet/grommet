@@ -94,6 +94,14 @@ module.exports = function(gulp, opts) {
       .pipe(minifyCss())
       .pipe(gulp.dest('dist/'));
 
+    gulp.src('src/scss/aruba/*.scss')
+      .pipe(sass({
+        includePaths: [path.resolve(__dirname, './node_modules')]
+      }))
+      .pipe(rename('grommet-aruba.min.css'))
+      .pipe(minifyCss())
+      .pipe(gulp.dest('dist/'));
+
     return gulp.src('src/scss/grommet-core/*.scss')
       .pipe(sass({
         includePaths: [path.resolve(__dirname, './node_modules')]
@@ -140,6 +148,8 @@ module.exports = function(gulp, opts) {
     distCss('src/scss/hpe/*.scss', 'grommet-hpe.min.css', true);
     distCss('src/scss/hpinc/*.scss', 'grommet-hpinc.css');
     distCss('src/scss/hpinc/*.scss', 'grommet-hpinc.min.css', true);
+    distCss('src/scss/aruba/*.scss', 'grommet-aruba.css');
+    distCss('src/scss/aruba/*.scss', 'grommet-aruba.min.css', true);
 
     //sample-grommet
     gulp.src('examples/todo-app/index.html')

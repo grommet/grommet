@@ -4,30 +4,30 @@ var devGulpTasks = require('../../src/utils/gulp/gulp-tasks');
 
 var opts = {
   base: '../../',
-  dist: path.resolve(__dirname, '../../docs/dist/hpinc'),
+  dist: path.resolve(__dirname, '../../docs/dist/aruba'),
   copyAssets: [
     'docs/src/index.html',
     {
       asset: 'docs/src/design/img/**',
-      dist: 'docs/dist/hpinc/img/'
+      dist: 'docs/dist/aruba/img/'
     },
     {
       asset: 'src/img/**',
-      dist: 'docs/dist/hpinc/img/'
+      dist: 'docs/dist/aruba/img/'
     },
     {
       asset: 'docs/src/img/**',
-      dist: 'docs/dist/hpinc/img/'
+      dist: 'docs/dist/aruba/img/'
     },
     {
       asset: 'docs/src/develop/img/**',
-      dist: 'docs/dist/hpinc/img/'
+      dist: 'docs/dist/aruba/img/'
     }
   ],
-  scssAssets: ['src/scss/grommet-core/**/*.scss', 'docs/src/scss/**/*.scss', 'src/scss/hpinc/**/*.scss'],
+  scssAssets: ['src/scss/grommet-core/**/*.scss', 'docs/src/scss/**/*.scss', 'src/scss/aruba/**/*.scss'],
   jsAssets: ['docs/src/**/*.js'],
   mainJs: 'docs/src/index.js',
-  mainScss: 'docs/src/scss/index-hpinc.scss',
+  mainScss: 'docs/src/scss/index-aruba.scss',
   webpack: {
     resolve: {
       alias: {
@@ -57,7 +57,7 @@ var opts = {
     "/rest/*": 'http://localhost:8000'
   },
   env: {
-    __THEME__: '"hpinc"'
+    __THEME__: '"aruba"'
   },
   scsslint: true
 };

@@ -2,6 +2,14 @@
 
 .split {
 
+  // Used by Split.js to determine when to break.
+  // Align with responsive settings used for $breakpoints.
+  &:after {
+    content: ' ';
+    display: none;
+    width: $break-lap-and-up-min-width;
+  }
+
   @include media-query(lap-and-up) {
     display: -webkit-flex;
     display: flex;
@@ -66,6 +74,7 @@
   }
 
   @include media-query(palm) {
+
     &--separator {
       > * {
         border-bottom: 1px solid $strong-border-color;
