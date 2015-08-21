@@ -65,11 +65,13 @@
       var again = false;
       if (document.body.classList.contains('loading')) {
         var ts = c.querySelectorAll('div.t.off');
-        var index = Math.floor(Math.random() * ts.length);
-        ts[index].classList.remove('off');
-        ts[index].classList.add('on');
-        if (ts.length > 1) {
-          again = true;
+        if (ts.length > 0) {
+          var index = Math.floor(Math.random() * ts.length);
+          ts[index].classList.remove('off');
+          ts[index].classList.add('on');
+          if (ts.length > 1) {
+            again = true;
+          }
         }
       }
       if (! again) {
