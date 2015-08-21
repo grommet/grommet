@@ -78,13 +78,40 @@ $form-vertical-padding: quarter($inuit-base-spacing-unit);
 
     > select {
       display: block;
-      background-position: center right $form-horizontal-padding;
+      background-position: center right #{$form-horizontal-padding - quarter($inuit-base-spacing-unit)};
+      // This seems to be correct for only some browsers.
+      // Extra whitespace is added (by different amounts) by each browser's rendering engine
+      padding-left: #{$form-horizontal-padding - 2};
+    }
+
+    // For dotted firefox outline
+    > select:-moz-focusring {
+      color: transparent;
+      text-shadow: 0 0 0 #000;
+    }
+
+    // Disable IE's clear icon
+    ::-ms-clear {
+      display: none;
+    }
+
+    // Disable IE's select arrow
+    > select::-ms-expand {
+      display: none;
+    }
+
+    // Disable IE's background select
+    > select::-ms-value {
+      background: none;
+      color: inherit;
     }
 
     // Prevent textarea from adding extra bottom margin
     > textarea {
       vertical-align: top;
       height: auto;
+      // Note that resize does nothing in IE/Edge
+      resize: vertical;
     }
 
     > .check-box,
