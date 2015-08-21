@@ -5,7 +5,11 @@
 // http://www.arubanetworks.com/assets/ds/DS_AW.pdf
 //
 $brand-font-family: 'Open Sans', Arial, sans-serif;
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("https://fonts.googleapis.com/css?family=Open+Sans");
+}
 
 $brand-color: #ff8300;
 $brand-color-lighter: desaturate(lighten($brand-color, 50%), 20%);

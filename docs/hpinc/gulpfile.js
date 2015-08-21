@@ -57,9 +57,7 @@ var opts = {
     "/rest/*": 'http://localhost:8000'
   },
   env: {
-    __THEME__: {
-      hpinc: true
-    }
+    __THEME__: '"hpinc"'
   },
   scsslint: true
 };

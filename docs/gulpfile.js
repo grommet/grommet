@@ -76,9 +76,7 @@ var opts = {
   },
   distPreprocess: ['dist-hpe', 'dist-hpinc', 'dist-bower', 'dist-aruba'],
   env: {
-    __THEME__: {
-      generic: true
-    }
+    __THEME__: '"grommet"'
   },
   scsslint: true
 };

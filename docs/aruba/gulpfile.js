@@ -57,9 +57,7 @@ var opts = {
     "/rest/*": 'http://localhost:8000'
   },
   env: {
-    __THEME__: {
-      aruba: true
-    }
+    __THEME__: '"aruba"'
   },
   scsslint: true
 };
