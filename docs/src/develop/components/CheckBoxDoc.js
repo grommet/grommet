@@ -34,6 +34,10 @@ var CheckBoxDoc = React.createClass({
           <dd>Same as React {"<input checked= >"}.</dd>
           <dt><code>defaultChecked  true|false</code></dt>
           <dd>Same as React {"<input defaultChecked= >"}.</dd>
+          <dt><code>disabled        true|false</code></dt>
+          <dd>Same as React {"<input disabled= >"}.
+            Also adds a hidden input element with the same name so
+            form submissions work.</dd>
           <dt><code>id              {"{text}"}</code></dt>
           <dd>The DOM id attribute value to use for the underlying
             {"<input>"} element.</dd>
@@ -56,7 +60,8 @@ var CheckBoxDoc = React.createClass({
 
           <h3>Basic</h3>
           <div className="example">
-            <CheckBox id="item2" name="item2" label="Item 2" checked={this.state.checked} onChange={this._onChange} />
+            <CheckBox id="item2" name="item2" label="Item 2"
+              checked={this.state.checked} onChange={this._onChange} />
           </div>
           <pre><code className="html">{"<CheckBox id=\"item2\" name=\"item2\" label=\"Item 2\" />"}</code></pre>
 
@@ -74,7 +79,8 @@ var CheckBoxDoc = React.createClass({
 
           <h3>Disabled Toggle</h3>
           <div className="example">
-            <CheckBox id="item5" name="item5" label="Item 5" toggle={true} disabled={true} checked={this.state.checked} />
+            <CheckBox id="item5" name="item5" label="Item 5" toggle={true}
+              disabled={true} checked={this.state.checked} />
           </div>
           <pre><code className="html">{"<CheckBox id=\"item5\" name=\"item5\" label=\"Item 5\" toggle={true} disabled={true} />"}</code></pre>
 
