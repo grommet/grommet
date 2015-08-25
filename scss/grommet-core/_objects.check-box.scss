@@ -3,9 +3,12 @@
 .check-box {
   margin-right: halve($inuit-base-spacing-unit);
   white-space: nowrap;
-  cursor: pointer;
 
-  &:hover {
+  &:not(.check-box--disabled) {
+    cursor: pointer;
+  }
+
+  &:hover:not(.check-box--disabled) {
     .check-box {
       &__control {
         border-color: $active-icon-color;
@@ -71,9 +74,15 @@
     color: $secondary-text-color;
   }
 
+  &--disabled {
+    .check-box__control {
+      opacity: 0.5;
+    }
+  }
+
   &--toggle {
 
-    &:hover {
+    &:hover:not(.check-box--disabled) {
       .check-box__control:after {
         content: "";
         border-color: $active-icon-color;
