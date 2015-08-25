@@ -67,6 +67,7 @@ var Meter = React.createClass({
       }),
       React.PropTypes.number
     ]),
+    size: React.PropTypes.oneOf(['small', 'medium', 'large']),
     series: React.PropTypes.arrayOf(React.PropTypes.shape({
       label: React.PropTypes.string,
       value: React.PropTypes.number.isRequired,
@@ -119,22 +120,6 @@ var Meter = React.createClass({
     } else if (ratio > 1.2) {
       this.setState({legendPosition: 'right'});
     }
-    /*
-    // content based on available real estate
-    var parentElement = this.refs.donut.getDOMNode().parentNode;
-    var width = parentElement.offsetWidth;
-    var height = parentElement.offsetHeight;
-    var donutHeight = BASE_SIZE;
-    if (this.props.partial) {
-      donutHeight = PARTIAL_SIZE;
-    }
-    if (height < donutHeight || width < BASE_SIZE ||
-      (width < (BASE_SIZE * 2) && height < (donutHeight * 2))) {
-      this.setState({size: 'small'});
-    } else {
-      this.setState({size: null});
-    }
-    */
   },
 
   _normalizeSeries: function (props, min, max, thresholds) {
@@ -341,6 +326,11 @@ var Meter = React.createClass({
         (Math.max(0, (series.length - 1)) * SPIRAL_THICKNESS);
     }
 
+    // normalize size
+    state.size = props.size ||
+      (props.small ? 'small' :
+        (props.large ? 'large' : null));
+
     return state;
   },
 
@@ -368,10 +358,6 @@ var Meter = React.createClass({
     clearTimeout(this._resizeTimer);
     window.removeEventListener('resize', this._onResize);
   },
-
-  //_itemColorIndex: function (item, index) {
-  //  return item.colorIndex || ('graph-' + (index + 1));
-  //},
 
   _translateBarWidth: function (value) {
     return Math.round(this.state.scale * value);
@@ -643,11 +629,8 @@ var Meter = React.createClass({
     if (this.props.vertical) {
       classes.push(CLASS_ROOT + "--vertical");
     }
-    if (this.props.small) {
-      classes.push(CLASS_ROOT + "--small");
-    }
-    if (this.props.large) {
-      classes.push(CLASS_ROOT + "--large");
+    if (this.state.size) {
+      classes.push(CLASS_ROOT + "--" + this.state.size);
     }
     if (this.state.series.length === 0) {
       classes.push(CLASS_ROOT + "--loading");
@@ -720,6 +703,7 @@ var Meter = React.createClass({
           </div>
         </div>
       );
+      classes.push(CLASS_ROOT + "--minmax");
     }
 
     var active = this._renderActive();
