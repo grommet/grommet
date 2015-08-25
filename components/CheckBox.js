@@ -44,8 +44,8 @@ var CheckBox = React.createClass({
         aria-lebelledby={labelId}>
         <input tabIndex="0" className={CLASS_ROOT + "__input"}
           id={this.props.id} name={this.props.name} type="checkbox"
-          checked={this.props.checked}
           disabled={this.props.disabled}
+          checked={this.props.checked}
           defaultChecked={this.props.defaultChecked}
           onChange={this.props.onChange} />
         <span className={CLASS_ROOT + "__control"}>
