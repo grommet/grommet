@@ -21,7 +21,7 @@ var BoxDoc = React.createClass({
         <section>
           <h2>Options</h2>
           <dl>
-            <dt><code>align        start|center|between|end|stretch</code></dt>
+            <dt><code>align        start|center|end</code></dt>
             <dd>How to align the contents along the cross axis.</dd>
             <dt><code>appCentered  true|false</code></dt>
             <dd>Whether the box background should stretch across an App that is centered.</dd>

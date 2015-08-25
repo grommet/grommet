@@ -4,8 +4,8 @@ var React = require('react');
 var Link = require('react-router').Link;
 var Article = require('grommet/components/Article');
 var Menu = require('grommet/components/Menu');
-var Edit = require('grommet/components/icons/Edit');
-var Filter = require('grommet/components/icons/Filter');
+var EditIcon = require('grommet/components/icons/Edit');
+var FilterIcon = require('grommet/components/icons/Filter');
 var CheckBox = require('grommet/components/CheckBox');
 var Button = require('grommet/components/Button');
 
@@ -76,7 +76,7 @@ var MenuDoc = React.createClass({
               <a href="#">Third</a>
             </Menu>
           </div>
-          <pre><code className="html">{"<Menu direction=\"right\"> ..."}</code></pre>
+          <pre><code className="html">{"<Menu direction=\"row\"> ..."}</code></pre>
 
           <h3>row, end, (inline)</h3>
           <div className="example">
@@ -86,7 +86,7 @@ var MenuDoc = React.createClass({
               <a href="#">Third</a>
             </Menu>
           </div>
-          <pre><code className="html">{"<Menu direction=\"left\"> ..."}</code></pre>
+          <pre><code className="html">{"<Menu direction=\"row\" justify=\"end\"> ..."}</code></pre>
 
           <h3>label, (not inline, down)</h3>
           <div className="example">
@@ -106,27 +106,27 @@ var MenuDoc = React.createClass({
               <a href="#">Third</a>
             </Menu>
           </div>
-          <pre><code className="html">{"<Menu collapse={true}> ..."}</code></pre>
+          <pre><code className="html">{"<Menu inline={false}> ..."}</code></pre>
 
           <h3>icon, (not inline, down)</h3>
           <div className="example">
-            <Menu icon={<Edit />}>
+            <Menu icon={<EditIcon />}>
               <a href="#" className="active">First</a>
               <a href="#">Second</a>
               <a href="#">Third</a>
             </Menu>
           </div>
-          <pre><code className="html">{"<Menu icon={<Grommet.Icons.Edit />}> ..."}</code></pre>
+          <pre><code className="html">{"<Menu icon={<EditIcon />}> ..."}</code></pre>
 
           <h3>icon, (not inline, down), do not close on click, pad</h3>
           <div className="example">
-            <Menu icon={<Filter />} closeOnClick={false} pad="medium">
+            <Menu icon={<FilterIcon />} closeOnClick={false} pad="medium">
               <CheckBox id="check-1" label="first" />
               <CheckBox id="check-2" label="second" />
               <CheckBox id="check-3" label="third" />
             </Menu>
           </div>
-          <pre><code className="html">{"<Menu icon={<Grommet.Icons.Filter />} closeOnClick={false} pad=\"medium\"> ..."}</code></pre>
+          <pre><code className="html">{"<Menu icon={<FilterIcon />} closeOnClick={false} pad=\"medium\"> ..."}</code></pre>
 
           <h3>not inline, up</h3>
           <div className="example">
@@ -136,7 +136,7 @@ var MenuDoc = React.createClass({
               <a href="#">Third</a>
             </Menu>
           </div>
-          <pre><code className="html">{"<Menu collapse={true} dropAlign={{bottom: \"bottom\"}}> ..."}</code></pre>
+          <pre><code className="html">{"<Menu inline={false} dropAlign={{bottom: \"bottom\"}}> ..."}</code></pre>
 
           <h3>not inline, small</h3>
           <div className="example">
@@ -146,7 +146,7 @@ var MenuDoc = React.createClass({
               <a href="#">Third</a>
             </Menu>
           </div>
-          <pre><code className="html">{"<Menu collapse={true} small={true}> ..."}</code></pre>
+          <pre><code className="html">{"<Menu inline={false} small={true}> ..."}</code></pre>
 
           <h3>button bar</h3>
           <div className="example">
@@ -156,7 +156,7 @@ var MenuDoc = React.createClass({
               <Button label="Button 3" onClick={this._onClick} />
             </Menu>
           </div>
-          <pre><code className="html">{"<Menu collapse={true} small={true}> ..."}</code></pre>
+          <pre><code className="html">{"<Menu direction=\"row\"> ..."}</code></pre>
 
         </section>
 
