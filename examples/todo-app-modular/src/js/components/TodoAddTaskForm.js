@@ -19,6 +19,10 @@ var TodoAddTaskForm = React.createClass({
     return defaultState;
   },
 
+  componentDidMount: function () {
+    this.refs.taskInput.getDOMNode().focus();
+  },
+
   _onSubmit: function (event) {
     event.preventDefault();
     if (this.state.item) {
@@ -45,7 +49,7 @@ var TodoAddTaskForm = React.createClass({
           <FormFields>
             <fieldset>
               <FormField label="Task" htmlFor="taskInput" help="what's to be done?">
-                <input id="taskInput" name="task" type="text" onChange={this._onItemChange} />
+                <input id="taskInput" name="task" type="text" ref="taskInput" onChange={this._onItemChange} />
               </FormField>
               <FormField label="Type" htmlFor="typeInput">
                 <select id="typeInput" name="type" onChange={this._onTypeChange}>
@@ -57,8 +61,8 @@ var TodoAddTaskForm = React.createClass({
             </fieldset>
           </FormFields>
           <Footer pad={{vertical: 'medium'}}>
-            <Menu>
-              <Button label="OK" primary={true} onClick={this._onSubmit} />
+            <Menu direction="row">
+              <Button label="OK" primary={true} onClick={this._onSubmit} type="submit"/>
               <Button label="Cancel" onClick={this.props.onClose} />
             </Menu>
           </Footer>
