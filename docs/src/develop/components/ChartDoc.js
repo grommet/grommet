@@ -183,18 +183,19 @@ var ChartDoc = React.createClass({
               " series={" + stringify(series) + "} />"}
           </code></pre>
 
-          <h3>Area, Legend, xAxis, and Units</h3>
+          <h3>Area, Legend, xAxis, Units, and Thresholds</h3>
           <div className="example">
           <Chart series={series} min={0} max={5} threshold={3}
             type="area" legend={{}}
-            xAxis={seriesXAxis}
+            xAxis={{placement: 'bottom', data: seriesXAxis}}
             units="TB"
             thresholds={thresholds} />
           </div>
           <pre><code className="html">
             {"<Chart type=\"bar\" threshold={3}\n" +
               " legend={{}} units=\"TB\"\n" +
-              " xAxis={" + stringify(seriesXAxis) +  "}\n" +
+              " xAxis={{placement: \"bottom\",\n" +
+              "   data:" + stringify(seriesXAxis) +  "}}\n" +
               " series={" + stringify(series) + "}\n" +
               " thresholds={" + stringify(thresholds) + "} />"}
           </code></pre>
