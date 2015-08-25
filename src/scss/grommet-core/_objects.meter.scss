@@ -553,12 +553,10 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
       height: $meter-size;
     }
 
-    .meter {
-      &__active {
-        top: 50%;
-        @include transform(translateX(-50%) translateY(-50%));
-        max-width: $meter-size - double($inuit-base-spacing-unit);
-      }
+    .meter__active {
+      top: 50%;
+      @include transform(translateX(-50%) translateY(-50%));
+      max-width: $meter-size - double($inuit-base-spacing-unit);
     }
 
     &.meter--small {
@@ -593,12 +591,10 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
         height: $meter-arc-size;
       }
 
-      .meter {
-        &__active {
-          top: round($meter-arc-size * 0.7);
-          @include transform(translateX(-50%));
-          max-width: $meter-size - round($inuit-base-spacing-unit * 3);
-        }
+      .meter__active {
+        top: round($meter-arc-size * 0.7);
+        @include transform(translateX(-50%));
+        max-width: $meter-size - round($inuit-base-spacing-unit * 3);
       }
 
       &.meter--legend-right {
@@ -613,11 +609,9 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
           height: $meter-arc-small-size;
         }
 
-        .meter {
-          &__active {
-            top: round($meter-arc-small-size * 0.7);
-            max-width: $meter-small-size - round($inuit-base-spacing-unit * 1.5);
-          }
+        .meter__active {
+          top: round($meter-arc-small-size * 0.7);
+          max-width: $meter-small-size - round($inuit-base-spacing-unit * 1.5);
         }
       }
 
@@ -627,10 +621,14 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
           height: $meter-arc-large-size;
         }
 
-        .meter {
-          &__active {
+        .meter__active {
+          top: round($meter-arc-large-size * 0.5);
+          max-width: $meter-large-size - round($inuit-base-spacing-unit * 4.5);
+        }
+
+        &.meter--single {
+          .meter__active {
             top: round($meter-arc-large-size * 0.7);
-            max-width: $meter-large-size - round($inuit-base-spacing-unit * 4.5);
           }
         }
       }
