@@ -12,7 +12,7 @@ var Button = React.createClass({
     large: React.PropTypes.bool,
     onClick: React.PropTypes.func,
     primary: React.PropTypes.bool,
-    type: React.PropTypes.string,
+    type: React.PropTypes.oneOf(['button', 'reset', 'submit']),
     id: React.PropTypes.string
   },
 
