@@ -1,8 +1,8 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-$meter-size: round($inuit-base-spacing-unit * 8);
-$meter-small-size: round($inuit-base-spacing-unit * 4);
-$meter-large-size: round($inuit-base-spacing-unit * 12);
+$meter-size: $graphic-size;
+$meter-small-size: $graphic-small-size;
+$meter-large-size: $graphic-large-size;
 
 $meter-width: round($inuit-base-spacing-unit * 0.75);
 $meter-inactive-width: round($inuit-base-spacing-unit * 0.25);

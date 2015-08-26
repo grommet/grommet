@@ -26,6 +26,7 @@ var Distribution = React.createClass({
         svgElement: React.PropTypes.node
       }
     })),
+    size: React.PropTypes.oneOf(['small', 'medium', 'large']),
     small: React.PropTypes.bool,
     units: React.PropTypes.string,
     vertical: React.PropTypes.bool
@@ -88,8 +89,14 @@ var Distribution = React.createClass({
       total = 100;
     }
 
+    // normalize size
+    var size = props.size ||
+      (props.small ? 'small' :
+        (props.large ? 'large' : null));
+
     var state = {
-      total: total
+      total: total,
+      size: size
     };
 
     return state;
@@ -139,14 +146,11 @@ var Distribution = React.createClass({
   render: function() {
     var classes = [CLASS_ROOT];
     classes.push(CLASS_ROOT + "--legend-" + this.state.legendPosition);
+    if (this.state.size) {
+      classes.push(CLASS_ROOT + "--" + this.state.size);
+    }
     if (this.props.vertical) {
       classes.push(CLASS_ROOT + "--vertical");
-    }
-    if (this.props.small) {
-      classes.push(CLASS_ROOT + "--small");
-    }
-    if (this.props.large) {
-      classes.push(CLASS_ROOT + "--large");
     }
     if (! this.props.series || this.props.series.length === 0) {
       classes.push(CLASS_ROOT + "--loading");

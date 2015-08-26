@@ -6,7 +6,7 @@
 
   &__graphic {
     width: 100%;
-    height: $graphic-height;
+    height: $graphic-size;
     max-height: calc(100vh - #{double($header-height)});
   }
 
@@ -73,13 +73,13 @@
 
   &--small {
     .distribution__graphic {
-      height: $small-graphic-height;
+      height: $graphic-small-size;
     }
   }
 
   &--large {
     .distribution__graphic {
-      height: $large-graphic-height;
+      height: $graphic-large-size;
     }
   }
 }
