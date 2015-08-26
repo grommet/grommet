@@ -13,6 +13,7 @@ var BAR_PADDING = 2;
 var MIN_LABEL_WIDTH = 48;
 var SPARKLINE_STEP_WIDTH = 6;
 var SPARKLINE_BAR_PADDING = 1;
+var POINT_RADIUS = 6;
 
 var Chart = React.createClass({
 
@@ -25,6 +26,7 @@ var Chart = React.createClass({
     }),
     max: React.PropTypes.number,
     min: React.PropTypes.number,
+    points: React.PropTypes.bool,
     series: React.PropTypes.arrayOf(
       React.PropTypes.shape({
         label: React.PropTypes.string,
@@ -176,15 +178,26 @@ var Chart = React.createClass({
     if (this.props.sparkline) {
       width = spanX * (SPARKLINE_STEP_WIDTH + SPARKLINE_BAR_PADDING);
     }
-    var thresholdWidth = (width - YAXIS_WIDTH);
-    var thresholdHeight = (height - XAXIS_HEIGHT);
 
-    var graphWidth = (this.props.thresholds ? thresholdWidth : width);
-    var graphHeight = (xAxis.placement ? thresholdHeight : height);
+    var graphWidth = width;
+    var graphHeight = height;
+    if (this.props.thresholds) {
+      graphWidth -= YAXIS_WIDTH;
+    }
+    if (xAxis.placement) {
+      graphHeight -= XAXIS_HEIGHT;
+    }
     var graphTop = ('top' === xAxis.placement ? XAXIS_HEIGHT : 0);
     // graphBottom is the bottom graph Y value
     var graphBottom = ('bottom' === xAxis.placement ?
       (height - XAXIS_HEIGHT) : height);
+
+    var graphLeft = 0;
+    var graphRight = graphWidth;
+    if (this.props.points) {
+      graphLeft += POINT_RADIUS + 2;
+      graphRight -= POINT_RADIUS + 2;
+    }
 
     var scaleX = (graphWidth / spanX);
     var xStepWidth = Math.round(graphWidth / (xAxis.data.length - 1));
@@ -213,6 +226,8 @@ var Chart = React.createClass({
       graphHeight: graphHeight,
       graphTop: graphTop,
       graphBottom: graphBottom,
+      graphLeft: graphLeft,
+      graphRight: graphRight,
       xStepWidth: xStepWidth,
       barPadding: barPadding,
       xAxis: xAxis
@@ -318,7 +333,8 @@ var Chart = React.createClass({
   // Translates X value to X coordinate.
   _translateX: function (x) {
     var bounds = this.state.bounds;
-    return Math.round((x - bounds.minX) * bounds.scaleX);
+    return Math.max(bounds.graphLeft,
+      Math.min(bounds.graphRight, Math.round((x - bounds.minX) * bounds.scaleX)));
   },
 
   // Translates Y value to Y coordinate.
@@ -400,11 +416,10 @@ var Chart = React.createClass({
       }, this);
 
       var colorIndex = this._itemColorIndex(item, seriesIndex);
-      var classes = [CLASS_ROOT + "__values-" + this.props.type,
-        "color-index-" + colorIndex];
       var commands = null;
       var controlCoordinates = null;
       var previousControlCoordinates = null;
+      var points = [];
 
       // Build the commands for this set of coordinates.
       coordinates.forEach(function (coordinate, index) {
@@ -427,30 +442,50 @@ var Chart = React.createClass({
             commands += " L" + coordinate.join(',');
           }
         }
+
+        if (this.props.points && ! this.props.sparkline) {
+          var x = Math.max(POINT_RADIUS + 1,
+            Math.min(bounds.graphWidth - (POINT_RADIUS + 1), coordinate[0]));
+          points.push(
+            <circle className={CLASS_ROOT + "__values-point color-index-" + colorIndex}
+              cx={x} cy={coordinate[1]} r={POINT_RADIUS} />
+          );
+        }
+
         previousControlCoordinates = controlCoordinates;
       }, this);
 
-      var path = null;
-      if ('line' === this.props.type) {
-        path = (
+
+      var linePath;
+      if ('line' === this.props.type || this.props.points) {
+        var classes = [CLASS_ROOT + "__values-line",
+          "color-index-" + colorIndex];
+        linePath = (
           <path fill="none" className={classes.join(' ')} d={commands} />
         );
-      } else if ('area' === this.props.type) {
+      }
+
+      var areaPath;
+      if ('area' === this.props.type) {
         // For area charts, close the path by drawing down to the bottom
         // and across to the bottom of where we started.
         var close = 'L' + coordinates[coordinates.length - 1][0] +
           ',' + bounds.graphBottom +
           'L' + coordinates[0][0] + ',' + bounds.graphBottom + 'Z';
-        commands += close;
+        var areaCommands = commands + close;
+        var classes = [CLASS_ROOT + "__values-area",
+          "color-index-" + colorIndex];
 
-        path = (
-          <path stroke="none" className={classes.join(' ')} d={commands} />
+        areaPath = (
+          <path stroke="none" className={classes.join(' ')} d={areaCommands} />
         );
       }
 
       return (
         <g key={seriesIndex}>
-          {path}
+          {areaPath}
+          {linePath}
+          {points}
         </g>
       );
     }, this);
@@ -683,9 +718,30 @@ var Chart = React.createClass({
     }
     // Offset it just a little if it is at an edge.
     var x = Math.max(1, Math.min(coordinates[0], this.state.bounds.graphWidth - 1));
+    var line = (
+      <line fill="none" x1={x} y1={bounds.graphTop} x2={x} y2={bounds.graphBottom} />
+    );
+
+    var points;
+    if (this.props.points) {
+      // for area and line charts, include a dot at the intersection
+      if ('line' === this.props.type || 'area' === this.props.type) {
+        points = this.props.series.map(function (item, seriesIndex) {
+          value = item.values[this.state.activeXIndex];
+          coordinates = this._coordinates(value);
+          var colorIndex = this._itemColorIndex(item, seriesIndex);
+          return (
+            <circle className={CLASS_ROOT + "__cursor-point color-index-" + colorIndex}
+              cx={x} cy={coordinates[1]} r={Math.round(POINT_RADIUS * 1.2)} />
+          );
+        }, this);
+      }
+    }
+
     return (
       <g ref="cursor" className={CLASS_ROOT + "__cursor"}>
-        <line fill="none" x1={x} y1={bounds.graphTop} x2={x} y2={bounds.graphBottom} />
+        {line}
+        {points}
       </g>
     );
   },
