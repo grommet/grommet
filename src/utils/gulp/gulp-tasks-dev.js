@@ -69,8 +69,15 @@ module.exports = function(gulp, options, webpackConfig, dist) {
         colors: true
       },
       publicPath: devWebpackConfig.output.publicPath,
+      watchOptions: {
+        poll: true
+      },
       historyApiFallback: true
     };
+
+    if (options.watchOptions) {
+      devServerConfig.watchOptions = options.watchOptions;
+    }
 
     if (options.devServerProxy) {
       devServerConfig.proxy = options.devServerProxy;
