@@ -8,7 +8,7 @@ var CLASS_ROOT = "box";
 var Box = React.createClass({
 
   propTypes: {
-    align: React.PropTypes.oneOf(['start', 'center', 'between', 'end', 'stretch']),
+    align: React.PropTypes.oneOf(['start', 'center', 'end']),
     appCentered: React.PropTypes.bool,
     backgroundImage: React.PropTypes.string,
     colorIndex: React.PropTypes.string,
