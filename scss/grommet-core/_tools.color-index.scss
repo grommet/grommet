@@ -19,14 +19,14 @@
 
   @for $i from 1 through length($brand-graph-colors) {
     &.color-index-graph-#{$i},
-    &.color-index-graph-#{$i+length($brand-graph-colors)} {
+    &.color-index-graph-#{$i + length($brand-graph-colors)} {
       stroke: nth($brand-graph-colors, $i);
     }
   }
 
   @for $i from 1 through length($brand-grey-colors) {
     &.color-index-grey-#{$i},
-    &.color-index-grey-#{$i+length($brand-grey-colors)} {
+    &.color-index-grey-#{$i + length($brand-grey-colors)} {
       stroke: nth($brand-grey-colors, $i);
     }
   }
@@ -45,7 +45,7 @@
 
   @for $i from 1 through length($brand-graph-colors) {
     &.color-index-graph-#{$i},
-    &.color-index-graph-#{$i+length($brand-graph-colors)} {
+    &.color-index-graph-#{$i + length($brand-graph-colors)} {
       stroke: rgba(nth($brand-graph-colors, $i), $opacity);
     }
   }
@@ -64,14 +64,14 @@
 
   @for $i from 1 through length($brand-graph-colors) {
     &.color-index-graph-#{$i},
-    &.color-index-graph-#{$i+length($brand-graph-colors)} {
+    &.color-index-graph-#{$i + length($brand-graph-colors)} {
       fill: nth($brand-graph-colors, $i);
     }
   }
 
   @for $i from 1 through length($brand-grey-colors) {
     &.color-index-grey-#{$i},
-    &.color-index-grey-#{$i+length($brand-grey-colors)} {
+    &.color-index-grey-#{$i + length($brand-grey-colors)} {
       fill: nth($brand-grey-colors, $i);
     }
   }
@@ -86,7 +86,7 @@
 
   @for $i from 1 through length($brand-graph-colors) {
     &.color-index-graph-#{$i},
-    &.color-index-graph-#{$i+length($brand-graph-colors)} {
+    &.color-index-graph-#{$i + length($brand-graph-colors)} {
       fill: rgba(nth($brand-graph-colors, $i), $opacity);
     }
   }
@@ -113,7 +113,7 @@
 
   @for $i from 1 through length($brand-graph-colors) {
     &.color-index-graph-#{$i},
-    &.color-index-graph-#{$i+length($brand-graph-colors)} {
+    &.color-index-graph-#{$i + length($brand-graph-colors)} {
       .begin {
         stop-color: nth($brand-graph-colors, $i);
       }
