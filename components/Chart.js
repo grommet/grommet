@@ -292,6 +292,10 @@ var Chart = React.createClass({
     if (props.hasOwnProperty('important')) {
       defaultXIndex = props.important;
     }
+    var activeXIndex = defaultXIndex;
+    if (this.state && this.state.activeXIndex >= 0) {
+      activeXIndex = this.state.activeXIndex;
+    }
     // normalize size
     var size = props.size ||
       (props.small ? 'small' :
@@ -299,7 +303,7 @@ var Chart = React.createClass({
     return {
       bounds: bounds,
       defaultXIndex: defaultXIndex,
-      activeXIndex: defaultXIndex,
+      activeXIndex: activeXIndex,
       width: width,
       height: height,
       size: size
