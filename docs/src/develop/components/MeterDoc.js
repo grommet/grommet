@@ -74,10 +74,10 @@ var MeterDoc = React.createClass({
               correspond to, if any.</dd>
             <dt><code>large       true|false</code></dt>
             <dd>Larger sized version. Deprecated, use <code>size</code>.</dd>
-            <dt><code>legend      true|false</code></dt>
-            <dd>Whether to show a legend.</dd>
-            <dt><code>legendTotal true|false</code></dt>
-            <dd>Whether to show a total in the legend.</dd>
+            <dt><code>legend      {"{placement: right|bottom, total: true|false}"}</code></dt>
+            <dd>Whether to show a legend. If showing, whether to include a total,
+              and where to place it. If placement is not specified, it will be
+              placed to match the aspect ratio of the window.</dd>
             <dt><code>max         {"{value: , label: }|{number}"}</code></dt>
             <dd>The largest possible value. Defaults to 100.</dd>
             <dt><code>min         {"{value: , label: }|{number}"}</code></dt>

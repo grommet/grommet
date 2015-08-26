@@ -44,6 +44,7 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
 
   &__active-graphic {
     position: relative;
+    display: inline-block;
   }
 
   &__labeled-graphic {
@@ -95,26 +96,22 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
       white-space: nowrap;
 
       .meter {
-
-        &__active-graphic {
-          display: inline-block;
-        }
-
         &__legend {
-          position: relative;
           vertical-align: top;
-          @include transform(translateY(-50%));
           margin-left: $inuit-base-spacing-unit;
+        }
+      }
+
+      &:not(.meter--tall-legend) {
+        .meter__legend {
+          position: relative;
+          @include transform(translateY(-50%));
         }
       }
     }
 
     &-bottom {
       .meter {
-        &__active-graphic {
-          display: block;
-        }
-
         &__legend {
           margin-top: $inuit-base-spacing-unit;
           display: block;

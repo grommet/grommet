@@ -41,7 +41,7 @@ var SCHEMA = {
     prefix: "enclosure 1, bay",
     indexAttributes: {
       model: {
-        prefix: 'proliant bl460c gen'
+        prefix: 'bl460c gen'
       }
     },
     associations: {

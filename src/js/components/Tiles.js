@@ -16,6 +16,7 @@ var Tiles = React.createClass({
     fill: React.PropTypes.bool,
     flush: React.PropTypes.bool,
     onMore: React.PropTypes.func,
+    size: React.PropTypes.oneOf(['small', 'medium', 'large']),
     small: React.PropTypes.bool
   },
 
@@ -146,7 +147,9 @@ var Tiles = React.createClass({
     if (this.props.flush) {
       classes.push(CLASS_ROOT + "--flush");
     }
-    if (this.props.small) {
+    if (this.props.size) {
+      classes.push(CLASS_ROOT + "--" + this.props.size);
+    } else if (this.props.small) {
       classes.push(CLASS_ROOT + "--small");
     }
     if (this.props.direction) {
