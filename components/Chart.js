@@ -39,6 +39,7 @@ var Chart = React.createClass({
         colorIndex: React.PropTypes.string
       })
     ).isRequired,
+    size: React.PropTypes.oneOf(['small', 'medium', 'large']),
     small: React.PropTypes.bool,
     smooth: React.PropTypes.bool,
     sparkline: React.PropTypes.bool,
@@ -180,7 +181,7 @@ var Chart = React.createClass({
 
     var graphWidth = (this.props.thresholds ? thresholdWidth : width);
     var graphHeight = (xAxis.placement ? thresholdHeight : height);
-    var graphTop = ('bottom' !== xAxis.placement ? XAXIS_HEIGHT : 0);
+    var graphTop = ('top' === xAxis.placement ? XAXIS_HEIGHT : 0);
     // graphBottom is the bottom graph Y value
     var graphBottom = ('bottom' === xAxis.placement ?
       (height - XAXIS_HEIGHT) : height);
@@ -222,7 +223,7 @@ var Chart = React.createClass({
 
   // Aligns the legend with the current position of the cursor, if any.
   _alignLegend: function () {
-    if (this.state.activeXIndex >= 0) {
+    if (this.state.activeXIndex >= 0 && this.refs.cursor) {
       var bounds = this.state.bounds;
       var cursorElement = this.refs.cursor.getDOMNode();
       var cursorRect = cursorElement.getBoundingClientRect();
@@ -276,12 +277,17 @@ var Chart = React.createClass({
     if (props.hasOwnProperty('important')) {
       defaultXIndex = props.important;
     }
+    // normalize size
+    var size = props.size ||
+      (props.small ? 'small' :
+        (props.large ? 'large' : null));
     return {
       bounds: bounds,
       defaultXIndex: defaultXIndex,
       activeXIndex: defaultXIndex,
       width: width,
-      height: height
+      height: height,
+      size: size
     };
   },
 
@@ -714,11 +720,8 @@ var Chart = React.createClass({
   render: function() {
     var classes = [CLASS_ROOT];
     classes.push(CLASS_ROOT + "--" + this.props.type);
-    if (this.props.small) {
-      classes.push(CLASS_ROOT + "--small");
-    }
-    if (this.props.large) {
-      classes.push(CLASS_ROOT + "--large");
+    if (this.state.size) {
+      classes.push(CLASS_ROOT + "--" + this.state.size);
     }
     if (this.props.sparkline) {
       classes.push(CLASS_ROOT + "--sparkline");
@@ -752,7 +755,8 @@ var Chart = React.createClass({
 
     var cursor = null;
     var legend = null;
-    if (this.props.legend && this.state.activeXIndex >= 0) {
+    if (this.props.legend && this.state.activeXIndex >= 0 &&
+      this.props.series[0].values.length > 0) {
       cursor = this._renderCursor();
       legend = this._renderLegend();
     }
