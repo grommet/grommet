@@ -69,9 +69,6 @@ module.exports = function(gulp, options, webpackConfig, dist) {
         colors: true
       },
       publicPath: devWebpackConfig.output.publicPath,
-      watchOptions: {
-        poll: true
-      },
       historyApiFallback: true
     };
 
