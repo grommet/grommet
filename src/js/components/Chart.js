@@ -13,6 +13,7 @@ var BAR_PADDING = 2;
 var MIN_LABEL_WIDTH = 48;
 var SPARKLINE_STEP_WIDTH = 6;
 var SPARKLINE_BAR_PADDING = 1;
+var POINT_RADIUS = 6;
 
 var Chart = React.createClass({
 
@@ -25,6 +26,7 @@ var Chart = React.createClass({
     }),
     max: React.PropTypes.number,
     min: React.PropTypes.number,
+    points: React.PropTypes.bool,
     series: React.PropTypes.arrayOf(
       React.PropTypes.shape({
         label: React.PropTypes.string,
@@ -39,6 +41,7 @@ var Chart = React.createClass({
         colorIndex: React.PropTypes.string
       })
     ).isRequired,
+    size: React.PropTypes.oneOf(['small', 'medium', 'large']),
     small: React.PropTypes.bool,
     smooth: React.PropTypes.bool,
     sparkline: React.PropTypes.bool,
@@ -50,13 +53,25 @@ var Chart = React.createClass({
     })),
     type: React.PropTypes.oneOf(['line', 'bar', 'area']),
     units: React.PropTypes.string,
-    xAxis: React.PropTypes.arrayOf(React.PropTypes.shape({
-      value: React.PropTypes.oneOfType([
-        React.PropTypes.number,
-        React.PropTypes.object // Date
-      ]).isRequired,
-      label: React.PropTypes.string.isRequired
-    }))
+    xAxis: React.PropTypes.oneOfType(
+      React.PropTypes.arrayOf(React.PropTypes.shape({
+        value: React.PropTypes.oneOfType([
+          React.PropTypes.number,
+          React.PropTypes.object // Date
+        ]).isRequired,
+        label: React.PropTypes.string.isRequired
+      })),
+      React.PropTypes.shape({
+        placement: React.PropTypes.oneOf(['top', 'bottom']),
+        data: React.PropTypes.arrayOf(React.PropTypes.shape({
+          value: React.PropTypes.oneOfType([
+            React.PropTypes.number,
+            React.PropTypes.object // Date
+          ]).isRequired,
+          label: React.PropTypes.string.isRequired
+        }).isRequired)
+      })
+    )
   },
 
   getDefaultProps: function () {
@@ -81,13 +96,27 @@ var Chart = React.createClass({
   },
 
   // Performs some initial calculations to make subsequent calculations easier.
-  _bounds: function (series, xAxis, width, height) {
+  _bounds: function (series, xAxisArg, width, height) {
+    // normalize xAxis
+    var xAxis;
+    if (xAxisArg) {
+      if (xAxisArg.data) {
+        xAxis = xAxisArg;
+      } else {
+        xAxis = {
+          data: xAxisArg,
+          placement: 'top'
+        };
+      }
+    } else {
+      xAxis = {data: []};
+    }
+
     // analyze series data
     var minX = null;
     var maxX = null;
     var minY = null;
     var maxY = null;
-    xAxis = xAxis || [];
 
     series.forEach(function (item) {
       item.values.forEach(function (value, xIndex) {
@@ -105,8 +134,8 @@ var Chart = React.createClass({
           minY = Math.min(minY, y);
           maxY = Math.max(maxY, y);
         }
-        if (xIndex >= xAxis.length) {
-          xAxis.push({value: x, label: ''});
+        if (xIndex >= xAxis.data.length) {
+          xAxis.data.push({value: x, label: ''});
         }
       });
     });
@@ -119,7 +148,7 @@ var Chart = React.createClass({
     }
 
     if ('bar' === this.props.type) {
-      xAxis.forEach(function (obj, xIndex) {
+      xAxis.data.forEach(function (obj, xIndex) {
         var sumY = 0;
         series.forEach(function (item) {
           sumY += item.values[xIndex][1];
@@ -149,17 +178,33 @@ var Chart = React.createClass({
     if (this.props.sparkline) {
       width = spanX * (SPARKLINE_STEP_WIDTH + SPARKLINE_BAR_PADDING);
     }
-    var thresholdWidth = (width - YAXIS_WIDTH);
-    var thresholdHeight = (height - XAXIS_HEIGHT);
 
-    var graphWidth = (this.props.thresholds ? thresholdWidth : width);
-    var graphHeight = (this.props.xAxis ? thresholdHeight : height);
+    var graphWidth = width;
+    var graphHeight = height;
+    if (this.props.thresholds) {
+      graphWidth -= YAXIS_WIDTH;
+    }
+    if (xAxis.placement) {
+      graphHeight -= XAXIS_HEIGHT;
+    }
+    var graphTop = ('top' === xAxis.placement ? XAXIS_HEIGHT : 0);
+    // graphBottom is the bottom graph Y value
+    var graphBottom = ('bottom' === xAxis.placement ?
+      (height - XAXIS_HEIGHT) : height);
+
+    var graphLeft = 0;
+    var graphRight = graphWidth;
+    if (this.props.points) {
+      graphLeft += POINT_RADIUS + 2;
+      graphRight -= POINT_RADIUS + 2;
+    }
+
     var scaleX = (graphWidth / spanX);
-    var xStepWidth = Math.round(graphWidth / (xAxis.length - 1));
+    var xStepWidth = Math.round(graphWidth / (xAxis.data.length - 1));
     if ('bar' === this.props.type) {
       // allow room for bar width for last bar
-      scaleX = (graphWidth / (spanX + (spanX / (xAxis.length - 1))));
-      xStepWidth = Math.round(graphWidth / xAxis.length);
+      scaleX = (graphWidth / (spanX + (spanX / (xAxis.data.length - 1))));
+      xStepWidth = Math.round(graphWidth / xAxis.data.length);
     }
     var scaleY = (graphHeight / spanY);
     var barPadding = Math.max(BAR_PADDING, Math.round(xStepWidth / 8));
@@ -179,6 +224,10 @@ var Chart = React.createClass({
       scaleY: scaleY,
       graphWidth: graphWidth,
       graphHeight: graphHeight,
+      graphTop: graphTop,
+      graphBottom: graphBottom,
+      graphLeft: graphLeft,
+      graphRight: graphRight,
       xStepWidth: xStepWidth,
       barPadding: barPadding,
       xAxis: xAxis
@@ -189,7 +238,8 @@ var Chart = React.createClass({
 
   // Aligns the legend with the current position of the cursor, if any.
   _alignLegend: function () {
-    if (this.state.activeXIndex >= 0) {
+    if (this.state.activeXIndex >= 0 && this.refs.cursor) {
+      var bounds = this.state.bounds;
       var cursorElement = this.refs.cursor.getDOMNode();
       var cursorRect = cursorElement.getBoundingClientRect();
       var element = this.refs.chart.getDOMNode();
@@ -204,7 +254,7 @@ var Chart = React.createClass({
       }
 
       legendElement.style.left = '' + left + 'px ';
-      legendElement.style.top = '' + (XAXIS_HEIGHT) + 'px ';
+      legendElement.style.top = '' + (bounds.graphTop) + 'px ';
     }
   },
 
@@ -242,12 +292,17 @@ var Chart = React.createClass({
     if (props.hasOwnProperty('important')) {
       defaultXIndex = props.important;
     }
+    // normalize size
+    var size = props.size ||
+      (props.small ? 'small' :
+        (props.large ? 'large' : null));
     return {
       bounds: bounds,
       defaultXIndex: defaultXIndex,
       activeXIndex: defaultXIndex,
       width: width,
-      height: height
+      height: height,
+      size: size
     };
   },
 
@@ -278,14 +333,16 @@ var Chart = React.createClass({
   // Translates X value to X coordinate.
   _translateX: function (x) {
     var bounds = this.state.bounds;
-    return Math.round((x - bounds.minX) * bounds.scaleX);
+    return Math.max(bounds.graphLeft,
+      Math.min(bounds.graphRight, Math.round((x - bounds.minX) * bounds.scaleX)));
   },
 
   // Translates Y value to Y coordinate.
   _translateY: function (y) {
+    var bounds = this.state.bounds;
     // leave room for line width since strokes are aligned to the center
     return Math.max(1,
-      (this.state.height - Math.max(1, this._translateHeight(y))));
+      (bounds.graphBottom - Math.max(1, this._translateHeight(y))));
   },
 
   // Translates Y value to graph height.
@@ -349,6 +406,7 @@ var Chart = React.createClass({
 
   // Converts the series data into paths for line or area types.
   _renderLinesOrAreas: function () {
+    var bounds = this.state.bounds;
     var values = this.props.series.map(function (item, seriesIndex) {
 
       // Get all coordinates up front so they are available
@@ -358,11 +416,10 @@ var Chart = React.createClass({
       }, this);
 
       var colorIndex = this._itemColorIndex(item, seriesIndex);
-      var classes = [CLASS_ROOT + "__values-" + this.props.type,
-        "color-index-" + colorIndex];
       var commands = null;
       var controlCoordinates = null;
       var previousControlCoordinates = null;
+      var points = [];
 
       // Build the commands for this set of coordinates.
       coordinates.forEach(function (coordinate, index) {
@@ -385,30 +442,50 @@ var Chart = React.createClass({
             commands += " L" + coordinate.join(',');
           }
         }
+
+        if (this.props.points && ! this.props.sparkline) {
+          var x = Math.max(POINT_RADIUS + 1,
+            Math.min(bounds.graphWidth - (POINT_RADIUS + 1), coordinate[0]));
+          points.push(
+            <circle className={CLASS_ROOT + "__values-point color-index-" + colorIndex}
+              cx={x} cy={coordinate[1]} r={POINT_RADIUS} />
+          );
+        }
+
         previousControlCoordinates = controlCoordinates;
       }, this);
 
-      var path = null;
-      if ('line' === this.props.type) {
-        path = (
+
+      var linePath;
+      if ('line' === this.props.type || this.props.points) {
+        var classes = [CLASS_ROOT + "__values-line",
+          "color-index-" + colorIndex];
+        linePath = (
           <path fill="none" className={classes.join(' ')} d={commands} />
         );
-      } else if ('area' === this.props.type) {
+      }
+
+      var areaPath;
+      if ('area' === this.props.type) {
         // For area charts, close the path by drawing down to the bottom
         // and across to the bottom of where we started.
         var close = 'L' + coordinates[coordinates.length - 1][0] +
-          ',' + this.state.height +
-          'L' + coordinates[0][0] + ',' + this.state.height + 'Z';
-        commands += close;
+          ',' + bounds.graphBottom +
+          'L' + coordinates[0][0] + ',' + bounds.graphBottom + 'Z';
+        var areaCommands = commands + close;
+        var classes = [CLASS_ROOT + "__values-area",
+          "color-index-" + colorIndex];
 
-        path = (
-          <path stroke="none" className={classes.join(' ')} d={commands} />
+        areaPath = (
+          <path stroke="none" className={classes.join(' ')} d={areaCommands} />
         );
       }
 
       return (
         <g key={seriesIndex}>
-          {path}
+          {areaPath}
+          {linePath}
+          {points}
         </g>
       );
     }, this);
@@ -420,7 +497,7 @@ var Chart = React.createClass({
   _renderBars: function () {
     var bounds = this.state.bounds;
 
-    var values = bounds.xAxis.map(function (obj, xIndex) {
+    var values = bounds.xAxis.data.map(function (obj, xIndex) {
       var baseY = bounds.minY;
       var stepBars = this.props.series.map(function (item, seriesIndex) {
 
@@ -500,20 +577,25 @@ var Chart = React.createClass({
   // Converts the xAxis labels into texts.
   _renderXAxis: function () {
     var bounds = this.state.bounds;
-    var labelY = Math.round(XAXIS_HEIGHT * 0.6);
+    var labelY;
+    if ('bottom' === bounds.xAxis.placement) {
+      labelY = this.state.height - Math.round(XAXIS_HEIGHT * 0.3);
+    } else {
+      labelY = Math.round(XAXIS_HEIGHT * 0.6);
+    }
     var priorPosition = null;
     var activePosition = null;
-    if (bounds.xAxis && this.state.activeXIndex >= 0) {
+    if (this.state.activeXIndex >= 0) {
       activePosition =
-        this._labelPosition(bounds.xAxis[this.state.activeXIndex].value, bounds);
+        this._labelPosition(bounds.xAxis.data[this.state.activeXIndex].value, bounds);
     }
     var lastPosition = null;
-    if (bounds.xAxis.length > 0) {
+    if (bounds.xAxis.data.length > 0) {
       lastPosition =
-        this._labelPosition(bounds.xAxis[bounds.xAxis.length - 1].value, bounds);
+        this._labelPosition(bounds.xAxis.data[bounds.xAxis.data.length - 1].value, bounds);
     }
 
-    var labels = bounds.xAxis.map(function (obj, xIndex) {
+    var labels = bounds.xAxis.data.map(function (obj, xIndex) {
       var classes = [CLASS_ROOT + "__xaxis-index"];
       if (xIndex === this.state.activeXIndex) {
         classes.push(CLASS_ROOT + "__xaxis-index--active");
@@ -523,7 +605,7 @@ var Chart = React.createClass({
       // Ensure we don't overlap labels. But, make sure we show the first and
       // last ones.
       if (this._labelOverlaps(position, activePosition) ||
-        (xIndex !== 0 && xIndex !== (bounds.xAxis.length - 1) &&
+        (xIndex !== 0 && xIndex !== (bounds.xAxis.data.length - 1) &&
           (this._labelOverlaps(position, priorPosition) ||
           this._labelOverlaps(position, lastPosition)))) {
         classes.push(CLASS_ROOT + "__xaxis-index--eclipse");
@@ -590,7 +672,7 @@ var Chart = React.createClass({
     var className = CLASS_ROOT + "__" + layer;
     var bounds = this.state.bounds;
 
-    var bands = bounds.xAxis.map(function (obj, xIndex) {
+    var bands = bounds.xAxis.data.map(function (obj, xIndex) {
       var classes = [className + "-xband"];
       if (xIndex === this.state.activeXIndex) {
         classes.push(className + "-xband--active");
@@ -628,6 +710,7 @@ var Chart = React.createClass({
 
   // Converts the active X index to a line.
   _renderCursor: function () {
+    var bounds = this.state.bounds;
     var value = this.props.series[0].values[this.state.activeXIndex];
     var coordinates = this._coordinates(value);
     if ('bar' === this.props.type) {
@@ -635,9 +718,30 @@ var Chart = React.createClass({
     }
     // Offset it just a little if it is at an edge.
     var x = Math.max(1, Math.min(coordinates[0], this.state.bounds.graphWidth - 1));
+    var line = (
+      <line fill="none" x1={x} y1={bounds.graphTop} x2={x} y2={bounds.graphBottom} />
+    );
+
+    var points;
+    if (this.props.points) {
+      // for area and line charts, include a dot at the intersection
+      if ('line' === this.props.type || 'area' === this.props.type) {
+        points = this.props.series.map(function (item, seriesIndex) {
+          value = item.values[this.state.activeXIndex];
+          coordinates = this._coordinates(value);
+          var colorIndex = this._itemColorIndex(item, seriesIndex);
+          return (
+            <circle className={CLASS_ROOT + "__cursor-point color-index-" + colorIndex}
+              cx={x} cy={coordinates[1]} r={Math.round(POINT_RADIUS * 1.2)} />
+          );
+        }, this);
+      }
+    }
+
     return (
       <g ref="cursor" className={CLASS_ROOT + "__cursor"}>
-        <line fill="none" x1={x} y1={XAXIS_HEIGHT} x2={x} y2={this.state.height} />
+        {line}
+        {points}
       </g>
     );
   },
@@ -672,11 +776,8 @@ var Chart = React.createClass({
   render: function() {
     var classes = [CLASS_ROOT];
     classes.push(CLASS_ROOT + "--" + this.props.type);
-    if (this.props.small) {
-      classes.push(CLASS_ROOT + "--small");
-    }
-    if (this.props.large) {
-      classes.push(CLASS_ROOT + "--large");
+    if (this.state.size) {
+      classes.push(CLASS_ROOT + "--" + this.state.size);
     }
     if (this.props.sparkline) {
       classes.push(CLASS_ROOT + "--sparkline");
@@ -710,7 +811,8 @@ var Chart = React.createClass({
 
     var cursor = null;
     var legend = null;
-    if (this.props.legend && this.state.activeXIndex >= 0) {
+    if (this.props.legend && this.state.activeXIndex >= 0 &&
+      this.props.series[0].values.length > 0) {
       cursor = this._renderCursor();
       legend = this._renderLegend();
     }

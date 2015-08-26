@@ -1,18 +1,18 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var path = require('path');
-var __path__ = path.join(__dirname, '../../../src/js/components/index/IndexMeter');
+var __path__ = path.join(__dirname, '../../../src/js/components/index/IndexAggregate');
 
 var GrommetTestUtils = require('../../../src/utils/test/GrommetTestUtils');
 var rewire = require('rewire');
 var expect = require('expect');
 
-describe('Grommet IndexMeter', function() {
-  it('loads a basic IndexMeter component', function(done) {
+describe('Grommet IndexAggregate', function() {
+  it('loads a basic IndexAggregate component', function(done) {
 
-    var IndexMeter = rewire(__path__);
+    var IndexAggregate = rewire(__path__);
     var IndexActions = require('../../mocks/components/IndexActions-mock').successGetAggregateAction();
-    IndexMeter.__set__('IndexActions', IndexActions);
+    IndexAggregate.__set__('IndexActions', IndexActions);
 
     var React = require('react/addons');
     var TestUtils = React.addons.TestUtils;
@@ -20,19 +20,18 @@ describe('Grommet IndexMeter', function() {
       attribute: 'status'
     };
 
-    var Component = TestUtils.renderIntoDocument(<IndexMeter params={params} />);
+    var Component = TestUtils.renderIntoDocument(<IndexAggregate params={params} />);
 
     IndexActions.getAggregate.completed.listen(function () {
       GrommetTestUtils.componentShouldExist(Component, 'meter');
-      GrommetTestUtils.componentShouldExist(Component, 'meter__legend');
       done();
     });
   });
 
   it('invokes the callback function  whenever a click happens in the series', function(done) {
-    var IndexMeter = rewire(__path__);
+    var IndexAggregate = rewire(__path__);
     var IndexActions = require('../../mocks/components/IndexActions-mock').successGetAggregateAction();
-    IndexMeter.__set__('IndexActions', IndexActions);
+    IndexAggregate.__set__('IndexActions', IndexActions);
 
     var React = require('react/addons');
     var TestUtils = React.addons.TestUtils;
@@ -46,10 +45,9 @@ describe('Grommet IndexMeter', function() {
 
     };
 
-    var Component = TestUtils.renderIntoDocument(<IndexMeter params={params} onClick={_onClick}/>);
+    var Component = TestUtils.renderIntoDocument(<IndexAggregate params={params} onClick={_onClick}/>);
 
     GrommetTestUtils.componentShouldExist(Component, 'meter');
-    GrommetTestUtils.componentShouldExist(Component, 'meter__legend');
 
     IndexActions.getAggregate.completed.listen(function () {
       var meterItemActive = TestUtils.findRenderedDOMComponentWithClass(Component, 'meter__bar--active');
@@ -61,9 +59,9 @@ describe('Grommet IndexMeter', function() {
   });
 
   it('invokes the callback function with query whenever a click happens in the series', function(done) {
-    var IndexMeter = rewire(__path__);
+    var IndexAggregate = rewire(__path__);
     var IndexActions = require('../../mocks/components/IndexActions-mock').successGetAggregateAction();
-    IndexMeter.__set__('IndexActions', IndexActions);
+    IndexAggregate.__set__('IndexActions', IndexActions);
 
     var React = require('react/addons');
     var TestUtils = React.addons.TestUtils;
@@ -84,10 +82,9 @@ describe('Grommet IndexMeter', function() {
       query = q;
     };
 
-    var Component = TestUtils.renderIntoDocument(<IndexMeter params={params} onClick={_onClick}/>);
+    var Component = TestUtils.renderIntoDocument(<IndexAggregate params={params} onClick={_onClick}/>);
 
     GrommetTestUtils.componentShouldExist(Component, 'meter');
-    GrommetTestUtils.componentShouldExist(Component, 'meter__legend');
 
     IndexActions.getAggregate.completed.listen(function () {
       var meterItemActive = TestUtils.findRenderedDOMComponentWithClass(Component, 'meter__bar--active');

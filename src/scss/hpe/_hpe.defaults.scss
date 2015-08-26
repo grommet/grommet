@@ -16,7 +16,7 @@ $brand-status-colors: (
 $brand-link-color: inherit;
 $brand-text-decoration: underline solid $brand-color;
 $brand-grey-colors: (#333333, #3B3B3B, #434343, #666666);
-$brand-graph-colors: (#2AD2C9, #425563, #5F7A76, #80746E, #614767);
+$brand-graph-colors: (lighten(#425563, 15%), lighten(#5F7A76, 20%), lighten(#80746E, 10%), lighten(#614767, 15%));
 
 $hpe-fonts-path: "https://hpefonts.s3.amazonaws.com" !default;
 

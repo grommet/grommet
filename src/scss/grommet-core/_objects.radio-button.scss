@@ -3,9 +3,12 @@
 .radio-button {
   margin-right: $inuit-base-spacing-unit;
   white-space: nowrap;
-  cursor: pointer;
 
-  &:hover {
+  &:not(.radio-button--disabled) {
+    cursor: pointer;
+  }
+
+  &:hover:not(.radio-button--disabled) {
     .radio-button {
       &__control {
         border-color: $active-icon-color;
@@ -67,5 +70,11 @@
 
   &__label {
     color: $secondary-text-color;
+  }
+
+  &--disabled {
+    .radio-button__control {
+      opacity: 0.5;
+    }
   }
 }

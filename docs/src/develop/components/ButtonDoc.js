@@ -32,7 +32,8 @@ var ButtonDoc = React.createClass({
           <dt><code>label          {"{text}"}</code></dt>
           <dd>Label text to place in the button.</dd>
           <dt><code>onClick        {"{func}"}</code></dt>
-          <dd>Click handler.</dd>
+          <dd>Click handler. Not providing an onClick function causes the
+            control to be disabled.</dd>
           <dt><code>primary        true|false</code></dt>
           <dd>Whether this is a primary button. There should be at most
             one per page or screen.</dd>

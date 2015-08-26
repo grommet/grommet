@@ -67,17 +67,21 @@ var thresholds = [
 var secondsSeries = [
   {label: 'first', values: [], colorIndex: "graph-1"}
 ];
-let now = moment();
-for (let i = 0; i < 90; i += 5) {
-  secondsSeries[0].values.push([
-    moment(now).subtract(i, 'seconds').unix(),
-    Math.ceil(Math.random() * 5)
-  ]);
+
+function buildSecondsSeries () {
+  let now = moment();
+  for (let i = 0; i < 90; i += 5) {
+    secondsSeries[0].values.push([
+      moment(now).subtract(i, 'seconds').unix(),
+      Math.ceil(Math.random() * 5)
+    ]);
+  }
 }
 
 var ChartDoc = React.createClass({
 
   componentDidMount: function () {
+    buildSecondsSeries();
     this._timer = setInterval(function () {
       secondsSeries[0].values.unshift([
         moment().unix(),
@@ -90,6 +94,7 @@ var ChartDoc = React.createClass({
 
   componentWillUnmount: function () {
     clearInterval(this._timer);
+    secondsSeries[0].values = [];
   },
 
   render: function() {
@@ -108,7 +113,7 @@ var ChartDoc = React.createClass({
             <dd>The index of the series data that the legend should
               correspond to, if any.</dd>
             <dt><code>large       true|false</code></dt>
-            <dd>Larger sized version.</dd>
+            <dd>Larger sized version. Deprecated, use <code>size</code>.</dd>
             <dt><code>legend      {"{position: overlay|after, total: true|false}"}</code></dt>
             <dd>Whether to show a legend, where to place it,
               and whether to show a total value.</dd>
@@ -118,13 +123,17 @@ var ChartDoc = React.createClass({
             <dt><code>min         {"{number}"}</code></dt>
             <dd>The smallest possible value.
               Defaults to the smallest y value in the series data.</dd>
+            <dt><code>points      true|false</code></dt>
+            <dd>For line and area charts, whether to draw individual data points.</dd>
             <dt><code>series       {"[{...}]"}</code></dt>
             <dd>An array of: <code>
               {"{label: <string>, colorIndex: <string>, values: [[x,y], ...]}"}
               </code>. The x values can be either numbers or Date objects.
               The y values should be numbers.</dd>
+            <dt><code>size         small|medium|large</code></dt>
+            <dd>The height of the Chart. Defaults to <code>medium</code>.</dd>
             <dt><code>small        true|false</code></dt>
-            <dd>Smaller sized version.</dd>
+            <dd>Smaller sized version. Deprecated, use <code>size</code>.</dd>
             <dt><code>smooth       true|false</code></dt>
             <dd>For line and area charts, smooth the drawing.</dd>
             <dt><code>sparkline    true|false</code></dt>
@@ -132,13 +141,13 @@ var ChartDoc = React.createClass({
             <dt><code>threshold    {"{number}"}</code></dt>
             <dd>Optional threshold value.</dd>
             <dt><code>type         line|bar|area</code></dt>
-            <dt><code>thresholds     {"[{value: , label: , colorIndex: }, ...]"}</code></dt>
+            <dt><code>thresholds   {"[{value: , label: , colorIndex: }, ...]"}</code></dt>
             <dd>An array of objects describing thresholds.</dd>
             <dd>Whether to draw a line graph, bar graph, or area graph.</dd>
             <dt><code>units        {"{string}"}</code></dt>
             <dd>Optional units to include.</dd>
-            <dt><code>xAxis        {"[{string}, ...]"}</code></dt>
-            <dd>Optional xAxis labels.</dd>
+            <dt><code>xAxis        {"{placement: top|bottom: data: [{string}, ...]}"}</code></dt>
+            <dd>Optional xAxis placement and labels.</dd>
           </dl>
         </section>
 
@@ -183,18 +192,19 @@ var ChartDoc = React.createClass({
               " series={" + stringify(series) + "} />"}
           </code></pre>
 
-          <h3>Area, Legend, xAxis, and Units</h3>
+          <h3>Area, Legend, xAxis, Units, Points, and Thresholds</h3>
           <div className="example">
           <Chart series={series} min={0} max={5} threshold={3}
-            type="area" legend={{}}
-            xAxis={seriesXAxis}
+            type="area" legend={{}} points={true}
+            xAxis={{placement: 'bottom', data: seriesXAxis}}
             units="TB"
             thresholds={thresholds} />
           </div>
           <pre><code className="html">
             {"<Chart type=\"bar\" threshold={3}\n" +
-              " legend={{}} units=\"TB\"\n" +
-              " xAxis={" + stringify(seriesXAxis) +  "}\n" +
+              " legend={{}} points={true} units=\"TB\"\n" +
+              " xAxis={{placement: \"bottom\",\n" +
+              "   data:" + stringify(seriesXAxis) +  "}}\n" +
               " series={" + stringify(series) + "}\n" +
               " thresholds={" + stringify(thresholds) + "} />"}
           </code></pre>
@@ -274,22 +284,22 @@ var ChartDoc = React.createClass({
           <Tiles>
             <Tile>
               <Chart series={singleSeries} min={0} threshold={3} type="bar"
-                xAxis={seriesXAxis} small={true} units="TB" max={6}
+                xAxis={seriesXAxis} units="TB" max={6}
                 legend={{position: 'after'}} />
             </Tile>
             <Tile>
               <Chart series={series} min={0} threshold={3} type="bar"
-                xAxis={seriesXAxis} small={true} units="TB"
+                xAxis={seriesXAxis} units="TB"
                 legend={{position: 'after'}} />
             </Tile>
             <Tile>
               <Chart series={series} min={0} threshold={3} type="area"
-                xAxis={seriesXAxis} small={true} units="TB"
+                xAxis={seriesXAxis} units="TB"
                 legend={{position: 'after'}} />
             </Tile>
             <Tile>
               <Chart series={series} min={0} threshold={3} type="line"
-                xAxis={seriesXAxis} small={true} units="TB"
+                xAxis={seriesXAxis} units="TB"
                 legend={{position: 'after'}} />
             </Tile>
           </Tiles>

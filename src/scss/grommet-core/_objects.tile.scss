@@ -10,14 +10,18 @@
   flex-wrap: wrap;
 
   > .tile {
-    -webkit-flex: 0 0 round($inuit-base-spacing-unit * 8);
-    flex: 0 0 round($inuit-base-spacing-unit * 8);
-    -webkit-flex-grow: 1;
-    flex-grow: 1;
+    -webkit-flex: 1 0 $tile-size;
+    flex: 1 0 $tile-size;
+    // don't count padding for flex basis
+    // this makes it easier to align tiles with graphic components
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
 
     &--wide {
       -webkit-flex-basis: 100%;
       flex-basis: 100%;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
     }
   }
 
@@ -59,13 +63,6 @@
     //margin: - $inuit-base-spacing-unit;
     //width: calc(100% + #{double($inuit-base-spacing-unit)});
     padding: 0px;
-
-    > .tile {
-      -webkit-flex: 0 0 round($inuit-base-spacing-unit * 7);
-      flex: 0 0 round($inuit-base-spacing-unit * 7);
-      -webkit-flex-grow: 1;
-      flex-grow: 1;
-    }
   }
 
   &--direction {
@@ -103,8 +100,15 @@
 
   &--small {
     > .tile {
-      -webkit-flex-basis: round($inuit-base-spacing-unit * 4);
-      flex-basis: round($inuit-base-spacing-unit * 4);
+      -webkit-flex-basis: $tile-small-size;
+      flex-basis: $tile-small-size;
+    }
+  }
+
+  &--large {
+    > .tile {
+      -webkit-flex-basis: $tile-large-size;
+      flex-basis: $tile-large-size;
     }
   }
 }

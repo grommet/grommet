@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var path = require('path');
 var devGulpTasks = require('grommet/utils/gulp/gulp-tasks');
 
 var opts = {
@@ -12,7 +13,8 @@ var opts = {
   jsAssets: ['src/js/**/*.js'],
   mainJs: 'src/js/index.js',
   mainScss: 'src/scss/index.scss',
-  devServerPort: 9000
+  devServerPort: 9000,
+  customEslintPath: path.resolve(__dirname, 'customEslintrc')
 };
 
 devGulpTasks(gulp, opts);

@@ -73,15 +73,17 @@ var DistributionDoc = React.createClass({
           <h2>Options</h2>
           <dl>
             <dt><code>large       true|false</code></dt>
-            <dd>Larger sized version.</dd>
+            <dd>Larger sized version. Deprecated, use <code>size</code>.</dd>
             <dt><code>legend      true|false</code></dt>
             <dd>Whether to show a legend.</dd>
             <dt><code>legendTotal true|false</code></dt>
             <dd>Whether to show a total in the legend.</dd>
             <dt><code>series     {"[{value: , label: , colorIndex: , onClick: , icon: }, ...]"}</code></dt>
             <dd>An array of objects describing the data.</dd>
+            <dt><code>size         small|medium|large</code></dt>
+            <dd>The height of the Distribution. Defaults to <code>medium</code>.</dd>
             <dt><code>small        true|false</code></dt>
-            <dd>Smaller sized version.</dd>
+            <dd>Smaller sized version. Deprecated, use <code>size</code>.</dd>
             <dt><code>units       {"{string}"}</code></dt>
             <dd>Optional units to display next to the value label.</dd>
           </dl>

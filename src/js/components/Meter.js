@@ -50,9 +50,14 @@ var Meter = React.createClass({
 
   propTypes: {
     important: React.PropTypes.number,
-    large: React.PropTypes.bool,
-    legend: React.PropTypes.bool,
-    legendTotal: React.PropTypes.bool,
+    large: React.PropTypes.bool, // DEPRECATED: remove in 0.5, use size
+    legend: React.PropTypes.oneOfType([
+      React.PropTypes.bool,
+      React.PropTypes.shape({
+        total: React.PropTypes.bool,
+        placement: React.PropTypes.oneOf(['right', 'bottom'])
+      })
+    ]),
     max: React.PropTypes.oneOfType([
       React.PropTypes.shape({
         value: React.PropTypes.number.isRequired,
@@ -67,6 +72,7 @@ var Meter = React.createClass({
       }),
       React.PropTypes.number
     ]),
+    size: React.PropTypes.oneOf(['small', 'medium', 'large']),
     series: React.PropTypes.arrayOf(React.PropTypes.shape({
       label: React.PropTypes.string,
       value: React.PropTypes.number.isRequired,
@@ -74,7 +80,7 @@ var Meter = React.createClass({
       important: React.PropTypes.bool,
       onClick: React.PropTypes.func
     })),
-    small: React.PropTypes.bool,
+    small: React.PropTypes.bool, // DEPRECATED: remove in 0.5, use size
     threshold: React.PropTypes.number,
     thresholds: React.PropTypes.arrayOf(React.PropTypes.shape({
       label: React.PropTypes.string,
@@ -112,29 +118,23 @@ var Meter = React.createClass({
   },
 
   _layout: function () {
-    // legendPosition based on available window orientation
-    var ratio = window.innerWidth / window.innerHeight;
-    if (ratio < 0.8) {
-      this.setState({legendPosition: 'bottom'});
-    } else if (ratio > 1.2) {
-      this.setState({legendPosition: 'right'});
+    if (this.state.placeLegend) {
+      // legendPlacement based on available window orientation
+      var ratio = window.innerWidth / window.innerHeight;
+      if (ratio < 0.8) {
+        this.setState({legendPlacement: 'bottom'});
+      } else if (ratio > 1.2) {
+        this.setState({legendPlacement: 'right'});
+      }
     }
-    /*
-    // content based on available real estate
-    var parentElement = this.refs.donut.getDOMNode().parentNode;
-    var width = parentElement.offsetWidth;
-    var height = parentElement.offsetHeight;
-    var donutHeight = BASE_SIZE;
-    if (this.props.partial) {
-      donutHeight = PARTIAL_SIZE;
+
+    if ('right' === this.state.legendPlacement) {
+      if (this.refs.legend) {
+        var graphicHeight = this.refs.activeGraphic.getDOMNode().offsetHeight;
+        var legendHeight = this.refs.legend.getDOMNode().offsetHeight;
+        this.setState({tallLegend: (legendHeight > graphicHeight)});
+      }
     }
-    if (height < donutHeight || width < BASE_SIZE ||
-      (width < (BASE_SIZE * 2) && height < (donutHeight * 2))) {
-      this.setState({size: 'small'});
-    } else {
-      this.setState({size: null});
-    }
-    */
   },
 
   _normalizeSeries: function (props, min, max, thresholds) {
@@ -341,12 +341,23 @@ var Meter = React.createClass({
         (Math.max(0, (series.length - 1)) * SPIRAL_THICKNESS);
     }
 
+    // normalize size
+    state.size = props.size || (props.small ? 'small' : (props.large ? 'large' : null));
+
+    // legend
+    state.placeLegend = ! (props.legend && props.legend.placement);
+    if (! state.placeLegend) {
+      state.legendPlacement = props.legend.placement;
+    }
+
     return state;
   },
 
   getInitialState: function() {
     var state = this._stateFromProps(this.props);
-    state.legendPosition = 'bottom';
+    if (state.placeLegend) {
+      state.legendPlacement = 'bottom';
+    }
     state.initial = true;
     return state;
   },
@@ -368,10 +379,6 @@ var Meter = React.createClass({
     clearTimeout(this._resizeTimer);
     window.removeEventListener('resize', this._onResize);
   },
-
-  //_itemColorIndex: function (item, index) {
-  //  return item.colorIndex || ('graph-' + (index + 1));
-  //},
 
   _translateBarWidth: function (value) {
     return Math.round(this.state.scale * value);
@@ -628,7 +635,7 @@ var Meter = React.createClass({
 
   _renderLegend: function () {
     return (
-      <Legend className={CLASS_ROOT + "__legend"}
+      <Legend ref="legend" className={CLASS_ROOT + "__legend"}
         series={this.state.series}
         units={this.props.units}
         activeIndex={this.state.activeIndex}
@@ -639,15 +646,11 @@ var Meter = React.createClass({
   render: function() {
     var classes = [CLASS_ROOT];
     classes.push(CLASS_ROOT + "--" + this.props.type);
-    classes.push(CLASS_ROOT + "--legend-" + this.state.legendPosition);
     if (this.props.vertical) {
       classes.push(CLASS_ROOT + "--vertical");
     }
-    if (this.props.small) {
-      classes.push(CLASS_ROOT + "--small");
-    }
-    if (this.props.large) {
-      classes.push(CLASS_ROOT + "--large");
+    if (this.state.size) {
+      classes.push(CLASS_ROOT + "--" + this.state.size);
     }
     if (this.state.series.length === 0) {
       classes.push(CLASS_ROOT + "--loading");
@@ -656,6 +659,9 @@ var Meter = React.createClass({
     }
     if (this.state.activeIndex !== null) {
       classes.push(CLASS_ROOT + "--active");
+    }
+    if (this.state.tallLegend) {
+      classes.push(CLASS_ROOT + "--tall-legend");
     }
     if (this.props.className) {
       classes.push(this.props.className);
@@ -720,18 +726,20 @@ var Meter = React.createClass({
           </div>
         </div>
       );
+      classes.push(CLASS_ROOT + "--minmax");
     }
 
     var active = this._renderActive();
 
-    var legend = null;
+    var legend;
     if (this.props.legend) {
       legend = this._renderLegend();
+      classes.push(CLASS_ROOT + "--legend-" + this.state.legendPlacement);
     }
 
     return (
       <div className={classes.join(' ')}>
-        <div className={CLASS_ROOT + "__active-graphic"}>
+        <div ref="activeGraphic" className={CLASS_ROOT + "__active-graphic"}>
           <div className={CLASS_ROOT + "__labeled-graphic"}>
             <svg className={CLASS_ROOT + "__graphic"}
               viewBox={"0 0 " + this.state.viewBoxWidth +

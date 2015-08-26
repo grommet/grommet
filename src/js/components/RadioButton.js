@@ -8,6 +8,7 @@ var RadioButton = React.createClass({
 
   propTypes: {
     checked: React.PropTypes.bool,
+    disabled: React.PropTypes.bool,
     defaultChecked: React.PropTypes.bool,
     id: React.PropTypes.string.isRequired,
     label: React.PropTypes.string.isRequired,
@@ -18,6 +19,9 @@ var RadioButton = React.createClass({
 
   render: function () {
     var classes = [CLASS_ROOT];
+    if (this.props.disabled) {
+      classes.push(CLASS_ROOT + "--disabled");
+    }
     if (this.props.className) {
       classes.push(this.props.className);
     }
@@ -25,6 +29,7 @@ var RadioButton = React.createClass({
       <label className={classes.join(' ')}>
         <input className={CLASS_ROOT + "__input"}
           id={this.props.id} name={this.props.name} type="radio"
+          disabled={this.props.disabled}
           checked={this.props.checked}
           defaultChecked={this.props.defaultChecked}
           value={this.props.value}

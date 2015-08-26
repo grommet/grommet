@@ -2,8 +2,10 @@
 
 var React = require('react');
 var Reflux = require('reflux');
-var Chart = require('../Chart');
+var Meter = require('../Meter');
+var Distribution = require('../Distribution');
 var IndexActions = require('../../actions/IndexActions');
+var IndexQuery = require('../../utils/IndexQuery');
 var IntlMixin = require('../../mixins/GrommetIntlMixin');
 
 var STATUS_IMPORTANCE = {
@@ -15,52 +17,61 @@ var STATUS_IMPORTANCE = {
   'Unknown': 5
 };
 
-var IndexHistory = React.createClass({
+var IndexAggregate = React.createClass({
 
   propTypes: {
     large: React.PropTypes.bool, // DEPRECATED: remove in 0.5, use size
+    legend: React.PropTypes.oneOfType([
+      React.PropTypes.bool,
+      React.PropTypes.shape({
+        total: React.PropTypes.bool,
+        placement: React.PropTypes.oneOf(['right', 'bottom'])
+      })
+    ]),
     params: React.PropTypes.shape({
       category: React.PropTypes.string,
       query: React.PropTypes.object,
-      attribute: React.PropTypes.string,
-      interval: React.PropTypes.string,
-      count: React.PropTypes.number
+      attribute: React.PropTypes.string
     }),
-    points: React.PropTypes.bool,
+    onClick: React.PropTypes.func,
     series: React.PropTypes.arrayOf(React.PropTypes.shape({
       label: React.PropTypes.string,
       value: React.PropTypes.number
     })),
     size: React.PropTypes.oneOf(['small', 'medium', 'large']),
     small: React.PropTypes.bool, // DEPRECATED: remove in 0.5, use size
-    smooth: React.PropTypes.bool,
     threshold: React.PropTypes.number,
-    type: React.PropTypes.oneOf(['bar', 'area', 'line'])
+    type: React.PropTypes.oneOf(['bar', 'arc', 'circle', 'distribution'])
   },
 
   mixins: [Reflux.ListenerMixin, IntlMixin],
 
+  _onClick: function (value) {
+    var query;
+    if (this.state.params.query) {
+      query = this.state.params.query.clone();
+    } else {
+      query = IndexQuery.create();
+    }
+    query.replaceAttributeValues(this.state.params.attribute, [value]);
+    this.props.onClick(query);
+  },
+
   _onGetAggregateCompleted: function (response, params, request) {
     response = response[0];
     if (params === this.state.params) {
-      var xAxis = [];
       var series = response.counts.map(function(count, index) {
-        var values = count.intervals.map(function (interval) {
-          var date = new Date(Date.parse(interval.start));
-          if (0 === index) {
-            xAxis.push({
-              label: (date.getMonth() + 1) + '/' + date.getDate(),
-              value: date
-            });
-          }
-          return [date, interval.count];
-        });
         var colorIndex = 'graph-' + (index + 1);
         if ('status' === this.state.params.attribute) {
           colorIndex = count.value.toLowerCase();
         }
         var label = this.getGrommetIntlMessage(count.value);
-        return {label: label, values: values, colorIndex: colorIndex};
+        return {
+          label: label,
+          value: count.count,
+          colorIndex: colorIndex,
+          onClick: this._onClick.bind(this, count.value)
+        };
       }, this);
       if ('status' === this.state.params.attribute) {
         // re-order by importance
@@ -70,7 +81,7 @@ var IndexHistory = React.createClass({
         // mark most severe as most important
         series[series.length - 1].important = true;
       }
-      this.setState({series: series, xAxis: xAxis, request: request});
+      this.setState({series: series, request: request});
     }
   },
 
@@ -109,19 +120,27 @@ var IndexHistory = React.createClass({
   },
 
   render: function () {
-    return (
-      <Chart series={this.state.series || []}
-        xAxis={this.state.xAxis || []}
-        legend={true}
-        legendTotal={true}
-        size={this.state.size}
-        smooth={this.props.smooth}
-        points={this.props.points}
-        type={this.props.type}
-        threshold={this.props.threshold} />
-    );
+    var component;
+    if ('distribution' === this.props.type) {
+      component = (
+        <Distribution series={this.state.series || []}
+          legend={true}
+          legendTotal={true}
+          size={this.state.size} />
+      );
+    } else {
+      component = (
+        <Meter series={this.state.series || []}
+          legend={this.props.legend}
+          size={this.state.size}
+          type={this.props.type}
+          threshold={this.props.threshold} />
+      );
+    }
+
+    return component;
   }
 
 });
 
-module.exports = IndexHistory;
+module.exports = IndexAggregate;

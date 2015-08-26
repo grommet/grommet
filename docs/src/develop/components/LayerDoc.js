@@ -95,7 +95,7 @@ var LayerDoc = React.createClass({
               Defaults to false.</dd>
             <dt><code>onClose  {"function () {...}"}</code></dt>
             <dd>Function that will be called when the user clicks on the
-              translucent background.</dd>
+              closer control. Clicking the closer control does not automatically cause the Layer to be removed. The recipient of this callback can still decide whether to continue rendering the Layer or not.</dd>
           </dl>
         </section>
 

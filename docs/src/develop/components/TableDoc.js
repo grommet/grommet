@@ -24,6 +24,32 @@ var TableDoc = React.createClass({
       "</Table>"
     ].join('\n');
 
+    var tableHeader = (
+      <thead>
+        <tr>
+          <th>header 1</th>
+          <th>header 2</th>
+        </tr>
+      </thead>
+    );
+
+    var tableBody = (
+      <tbody>
+        <tr>
+          <td>first</td>
+          <td>note 1</td>
+        </tr>
+        <tr>
+          <td>second</td>
+          <td>note 2</td>
+        </tr>
+        <tr>
+          <td>third</td>
+          <td>note 3</td>
+        </tr>
+      </tbody>
+    );
+
     return (
       <Article primary={true}>
         <header>
@@ -40,10 +66,11 @@ var TableDoc = React.createClass({
             <dt><code>onSelect      {"function (selection) {...}"}</code></dt>
             <dd>Function that will be called when the user selects a row.</dd>
             <dt><code>scrollable    true|false</code></dt>
-            <dt><code>selectable    true|false</code></dt>
-            <dd>Whether rows are selectable.</dd>
-            <dt><code>selection     number</code></dt>
-            <dd>The currently selected item.</dd>
+            <dt><code>selectable    true|false|multiple</code></dt>
+            <dd>Whether rows are selectable. <code>multiple</code> indicates
+              that multiple rows may be selected</dd>
+            <dt><code>selection     number|[number, ...]</code></dt>
+            <dd>The currently selected item(s).</dd>
           </dl>
         </section>
 
@@ -52,39 +79,22 @@ var TableDoc = React.createClass({
 
           <h3>Simple</h3>
           <div className="example">
-            <Table>
-              <tbody>
-                <tr>
-                  <td>first</td>
-                  <td>note 1</td>
-                </tr>
-                <tr>
-                  <td>second</td>
-                  <td>note 2</td>
-                </tr>
-              </tbody>
-            </Table>
+            <Table>{tableBody}</Table>
           </div>
 
           <h3>Selectable</h3>
           <div className="example">
             <Table selectable={true} selection={0}>
-              <thead>
-                <tr>
-                  <th>header 1</th>
-                  <th>header 2</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>first</td>
-                  <td>note 1</td>
-                </tr>
-                <tr>
-                  <td>second</td>
-                  <td>note 2</td>
-                </tr>
-              </tbody>
+              {tableHeader}
+              {tableBody}
+            </Table>
+          </div>
+
+          <h3>Multi-select</h3>
+          <div className="example">
+              <Table selectable="multiple" selection={[0, 2]}>
+              {tableHeader}
+              {tableBody}
             </Table>
           </div>
 

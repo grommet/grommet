@@ -20,7 +20,7 @@
 
   &__graphic {
     width: 100%;
-    height: $graphic-height;
+    height: $graphic-size;
     max-height: calc(100vh - #{double($header-height)});
   }
 
@@ -33,17 +33,23 @@
     }
 
     &-line {
-      stroke-width: 6px;
+      stroke-width: 3px;
       @include graph-stroke-color();
     }
 
     &-bar,
     &-area {
-      @include graph-fill-color-translucent(0.8);
+      @include graph-fill-color-translucent(0.7);
 
       &--active {
         @include graph-fill-color;
       }
+    }
+
+    &-point {
+      stroke-width: 3px;
+      @include graph-stroke-color();
+      fill: $background-color;
     }
 
     &--loading {
@@ -94,6 +100,11 @@
     stroke: $cursor-color;
     stroke-width: 2;
     pointer-events: none;
+
+    &-point {
+      stroke-width: 2;
+      @include graph-fill-color();
+    }
   }
 
   &__legend {
@@ -124,13 +135,13 @@
 
   &--small {
     .chart__graphic {
-      height: $small-graphic-height;
+      height: $graphic-small-size;
     }
   }
 
   &--large {
     .chart__graphic {
-      height: $large-graphic-height;
+      height: $graphic-large-size;
     }
   }
 
@@ -141,6 +152,13 @@
     .chart__graphic {
       width: auto;
       height: $sparkline-height;
+    }
+
+    .chart__values {
+      &-bar,
+      &-area {
+        @include graph-fill-color();
+      }
     }
   }
 }

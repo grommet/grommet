@@ -3,7 +3,7 @@
 @for $i from 1 through length($brand-neutral-colors) {
 
   .background-color-index-neutral-#{$i},
-  .background-color-index-neutral-#{$i+length($brand-neutral-colors)} {
+  .background-color-index-neutral-#{$i + length($brand-neutral-colors)} {
     background-color: nth($brand-neutral-colors, $i);
 
     .button--primary,
@@ -13,7 +13,7 @@
   }
 
   .background-color-index-neutral-#{$i}-a,
-  .background-color-index-neutral-#{$i+length($brand-neutral-colors)}-a {
+  .background-color-index-neutral-#{$i + length($brand-neutral-colors)}-a {
     background-color: rgba(nth($brand-neutral-colors, $i), 0.8);
 
     .button--primary,
@@ -25,7 +25,7 @@
 
 @for $i from 1 through length($brand-accent-colors) {
   .background-color-index-accent-#{$i},
-  .background-color-index-accent-#{$i+length($brand-accent-colors)} {
+  .background-color-index-accent-#{$i + length($brand-accent-colors)} {
     background-color: nth($brand-accent-colors, $i);
 
     .button--primary,
@@ -35,7 +35,7 @@
   }
 
   .background-color-index-accent-#{$i}-a,
-  .background-color-index-accent-#{$i+length($brand-accent-colors)}-a {
+  .background-color-index-accent-#{$i + length($brand-accent-colors)}-a {
     background-color: rgba(nth($brand-accent-colors, $i), 0.8);
 
     .button--primary,
@@ -47,7 +47,7 @@
 
 @for $i from 1 through length($brand-grey-colors) {
   .background-color-index-grey-#{$i},
-  .background-color-index-grey-#{$i+length($brand-grey-colors)} {
+  .background-color-index-grey-#{$i + length($brand-grey-colors)} {
     background-color: nth($brand-grey-colors, $i);
 
     .button--primary,
@@ -59,7 +59,7 @@
 
 @for $i from 1 through length($brand-graph-colors) {
   .background-color-index-graph-#{$i},
-  .background-color-index-graph-#{$i+length($brand-graph-colors)} {
+  .background-color-index-graph-#{$i + length($brand-graph-colors)} {
     background-color: nth($brand-graph-colors, $i);
 
     .button--primary,
