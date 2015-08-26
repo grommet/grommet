@@ -26,6 +26,7 @@ var IndexHistory = React.createClass({
       interval: React.PropTypes.string,
       count: React.PropTypes.number
     }),
+    points: React.PropTypes.bool,
     series: React.PropTypes.arrayOf(React.PropTypes.shape({
       label: React.PropTypes.string,
       value: React.PropTypes.number
@@ -115,6 +116,7 @@ var IndexHistory = React.createClass({
         legendTotal={true}
         size={this.state.size}
         smooth={this.props.smooth}
+        points={this.props.points}
         type={this.props.type}
         threshold={this.props.threshold} />
     );

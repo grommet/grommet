@@ -123,6 +123,8 @@ var ChartDoc = React.createClass({
             <dt><code>min         {"{number}"}</code></dt>
             <dd>The smallest possible value.
               Defaults to the smallest y value in the series data.</dd>
+            <dt><code>points      true|false</code></dt>
+            <dd>For line and area charts, whether to draw individual data points.</dd>
             <dt><code>series       {"[{...}]"}</code></dt>
             <dd>An array of: <code>
               {"{label: <string>, colorIndex: <string>, values: [[x,y], ...]}"}
@@ -190,17 +192,17 @@ var ChartDoc = React.createClass({
               " series={" + stringify(series) + "} />"}
           </code></pre>
 
-          <h3>Area, Legend, xAxis, Units, and Thresholds</h3>
+          <h3>Area, Legend, xAxis, Units, Points, and Thresholds</h3>
           <div className="example">
           <Chart series={series} min={0} max={5} threshold={3}
-            type="area" legend={{}}
+            type="area" legend={{}} points={true}
             xAxis={{placement: 'bottom', data: seriesXAxis}}
             units="TB"
             thresholds={thresholds} />
           </div>
           <pre><code className="html">
             {"<Chart type=\"bar\" threshold={3}\n" +
-              " legend={{}} units=\"TB\"\n" +
+              " legend={{}} points={true} units=\"TB\"\n" +
               " xAxis={{placement: \"bottom\",\n" +
               "   data:" + stringify(seriesXAxis) +  "}}\n" +
               " series={" + stringify(series) + "}\n" +
