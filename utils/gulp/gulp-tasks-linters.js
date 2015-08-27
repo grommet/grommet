@@ -2,6 +2,7 @@ var path = require('path');
 var react = require('gulp-react');
 var eslint = require('gulp-eslint');
 var merge = require('lodash/object/merge');
+var exec = require('child_process');
 
 function failLintBuild() {
   process.exit(1);
@@ -14,12 +15,25 @@ module.exports = function(gulp, options) {
   var customEslint = options.customEslintPath ?
     require(options.customEslintPath) : {};
 
+
+  function scssLintExists() {
+    var cmd = 'scss-lint'
+    var args = ['--version'];
+    var ret = exec.spawnSync(cmd, args);
+    return ret && (ret.error === undefined);
+  }
+
   gulp.task('scsslint', function() {
     if (options.scsslint) {
-      var scsslint = require('gulp-scss-lint');
-      return gulp.src(options.scssAssets || []).pipe(scsslint({
-        'config': scssLintPath
-      })).pipe(scsslint.failReporter()).on('error', failLintBuild);
+      if (scssLintExists()) {
+        var scsslint = require('gulp-scss-lint');
+        return gulp.src(options.scssAssets || []).pipe(scsslint({
+          'config': scssLintPath
+        })).pipe(scsslint.failReporter()).on('error', failLintBuild);
+      } else {
+        console.error('[scsslint] scsslint skipped!');
+        console.error('[scsslint] scss-lint is not installed. Please install ruby and the ruby gem scss-lint.');
+      }
     }
   });
 
