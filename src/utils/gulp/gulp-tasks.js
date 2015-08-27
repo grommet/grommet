@@ -13,6 +13,8 @@ module.exports = function(gulp, opts) {
 
   var options = opts || {};
 
+  options.scsslint = options.scsslint === undefined ? true : options.scsslint;
+
   var dist = options.dist || path.resolve(process.cwd(), 'dist');
 
   var webpackConfig = {

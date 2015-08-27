@@ -8,20 +8,19 @@ function failLintBuild() {
   process.exit(1);
 }
 
+function scssLintExists() {
+  var cmd = 'scss-lint'
+  var args = ['--version'];
+  var ret = exec.spawnSync(cmd, args);
+  return ret && (ret.error === undefined);
+}
+
 module.exports = function(gulp, options) {
 
   var scssLintPath = path.resolve(__dirname, 'scss-lint.yml');
   var esLintPath = path.resolve(__dirname, 'eslintrc');
   var customEslint = options.customEslintPath ?
     require(options.customEslintPath) : {};
-
-
-  function scssLintExists() {
-    var cmd = 'scss-lint'
-    var args = ['--version'];
-    var ret = exec.spawnSync(cmd, args);
-    return ret && (ret.error === undefined);
-  }
 
   gulp.task('scsslint', function() {
     if (options.scsslint) {
