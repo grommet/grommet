@@ -85,18 +85,20 @@ function nodeVersionSupported() {
   return Number(process.version.match(/^v(\d+\.\d+)/)[1]) >= 0.10;
 }
 
+var npmVersion;
 function npmVersionSupported() {
-  var cmd = 'scss-lint'
+  var cmd = 'npm'
   var args = ['--version'];
   var ret = exec.spawnSync(cmd, args);
-  console.log('npm version', Number(ret));
-  return ret && (ret.error === undefined) && Number(ret) >= 1.4;
+  npmVersion = Number(ret.stdout.toString().match(/^(\d+\.\d+)/)[1]);
+  return ret && (ret.error === undefined) && npmVersion  >= 1.4;
 }
 
 gulp.task('init', function(done) {
 
   if (!nodeVersionSupported() || !npmVersionSupported()) {
-    console.error('[grommet] Grommet requires Node v0.10+ and Npm 1.4.x+. Please make sure to have that in place');
+    console.error('[grommet] Grommet requires Node v0.10+ and NPM 1.4.x+.');
+    console.error('[grommet] Currently you have Node ' + process.version + ' and NPM ' + npmVersion);
     process.exit(1);
   }
 
