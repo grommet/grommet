@@ -1,6 +1,6 @@
 //based on https://github.com/danvk/mocha-react
 var fs = require('fs');
-var ReactTools = require('react-tools');
+var babel = require('babel-core');
 var origJs = require.extensions['.js'];
 
 // A module that exports a single, stubbed-out React Component.
@@ -28,9 +28,7 @@ function transform(filename) {
     return reactStub;
   } else {
     var content = fs.readFileSync(filename, 'utf8');
-    return ReactTools.transform(content, {
-      harmony: true
-    });
+    return babel.transform(content).code;
   }
 }
 
