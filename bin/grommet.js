@@ -87,7 +87,10 @@ function nodeVersionSupported() {
 
 var npmVersion;
 function npmVersionSupported() {
-  var cmd = 'npm'
+  var cmd = 'npm';
+  if (process.platform === 'win32') {
+    cmd += '.cmd';
+  }
   var args = ['--version'];
   var ret = exec.spawnSync(cmd, args);
   npmVersion = Number(ret.stdout.toString().match(/^(\d+\.\d+)/)[1]);
