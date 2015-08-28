@@ -1,6 +1,6 @@
 {
   "name": "grommet-docs",
-  "version": "0.3.2",
+  "version": "0.3.6",
   "main": "src/index.js",
   "description": "The most advanced UX framework for enterprise applications.",
   "authors": [

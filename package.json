@@ -1,6 +1,6 @@
 {
   "name": "grommet",
-  "version": "0.3.2",
+  "version": "0.3.6",
   "main": "src/js/index.js",
   "description": "The most advanced UX framework for enterprise applications.",
   "authors": [
@@ -20,8 +20,11 @@
   "bin": {
     "grommet": "./bin/grommet.js"
   },
+  "engineStrict": true,
+  "engine-strict": true,
   "engines": {
-    "node": ">= 0.9"
+    "node": ">= 0.10",
+    "npm": ">= 1.4"
   },
   "scripts": {
     "test": "gulp test"
@@ -99,7 +102,6 @@
     "babel-eslint": "^4.0.10",
     "babel-core": "^5.6.15",
     "jsdom-no-contextify": "~3.1.0",
-    "react-tools": "^0.13.1",
     "run-sequence": "^1.0.2",
     "webpack": "^1.9.11",
     "webpack-dev-server": "^1.8.0",
@@ -108,7 +110,8 @@
     "rewire": "^2.3.3",
     "mocha-lcov-reporter": "^0.0.2",
     "selenium-standalone": "^4.2.2",
-    "webdriverio": "^2.4.5"
+    "webdriverio": "^2.4.5",
+    "rimraf": "^2.4.3"
   },
   "config": {
     "blanket": {
