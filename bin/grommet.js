@@ -8,6 +8,7 @@ var path = require('path');
 var fs = require('fs');
 var mkdirp = require('mkdirp');
 var merge = require('lodash/object/merge');
+var exec = require('child_process');
 
 String.prototype.capitalize = function() {
   var words = this.split(' ');
@@ -80,7 +81,25 @@ function getPackageJSON(app, grommetPath, fixedVersion) {
   return appPackageJSON;
 }
 
+function nodeVersionSupported() {
+  return Number(process.version.match(/^v(\d+\.\d+)/)[1]) >= 0.10;
+}
+
+function npmVersionSupported() {
+  var cmd = 'scss-lint'
+  var args = ['--version'];
+  var ret = exec.spawnSync(cmd, args);
+  console.log('npm version', Number(ret));
+  return ret && (ret.error === undefined) && Number(ret) >= 1.4;
+}
+
 gulp.task('init', function(done) {
+
+  if (!nodeVersionSupported() || !npmVersionSupported()) {
+    console.error('[grommet] Grommet requires Node v0.10+ and Npm 1.4.x+. Please make sure to have that in place');
+    process.exit(1);
+  }
+
   mkdirp('./' + app, function(err) {
     if (err) {
       console.log('Error trying to create project: ' + err);
@@ -116,6 +135,12 @@ gulp.task('init', function(done) {
 });
 
 gulp.task('export', function(done) {
+
+  if (!nodeVersionSupported() || !npmVersionSupported()) {
+    console.error('[grommet] Grommet requires Node v0.10+ and Npm 1.4.x+. Please make sure to have that in place');
+    process.exit(1);
+  }
+
   mkdirp('./' + dest, function(err) {
     if (err) {
       console.log('Error trying to create project: ' + err);
