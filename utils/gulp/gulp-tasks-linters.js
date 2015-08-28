@@ -9,7 +9,10 @@ function failLintBuild() {
 }
 
 function scssLintExists() {
-  var cmd = 'scss-lint'
+  var cmd = 'scss-lint';
+  if (process.platform === 'win32') {
+    cmd += '.cmd';
+  }
   var args = ['--version'];
   var ret = exec.spawnSync(cmd, args);
   return ret && (ret.error === undefined);
