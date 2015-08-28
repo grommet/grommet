@@ -20,8 +20,11 @@
   "bin": {
     "grommet": "./bin/grommet.js"
   },
+  "engineStrict": true,
+  "engine-strict": true,
   "engines": {
-    "node": ">= 0.9"
+    "node": ">= 0.10",
+    "npm": ">= 1.4"
   },
   "dependencies": {
     "intl": "^1.0.0",
