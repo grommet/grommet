@@ -104,6 +104,16 @@ module.exports = function(gulp, opts) {
     del.sync([dist]);
   });
 
+  gulp.task('node-clean', function(done) {
+    require('rimraf')(path.resolve(process.cwd(), 'node_modules'), function (err) {
+      if(err) {
+        throw err;
+      }
+
+      done();
+    });
+  });
+
   require('./gulp-tasks-linters')(gulp, options);
   require('./gulp-tasks-test')(gulp, options);
   require('./gulp-tasks-dist')(gulp, options, webpackConfig, dist);

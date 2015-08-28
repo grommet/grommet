@@ -107,7 +107,8 @@
     "rewire": "^2.3.3",
     "mocha-lcov-reporter": "^0.0.2",
     "selenium-standalone": "^4.2.2",
-    "webdriverio": "^2.4.5"
+    "webdriverio": "^2.4.5",
+    "rimraf": "^2.4.3"
   },
   "config": {
     "blanket": {
