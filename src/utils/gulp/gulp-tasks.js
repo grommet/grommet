@@ -106,7 +106,7 @@ module.exports = function(gulp, opts) {
 
   gulp.task('node-clean', function(done) {
     require('rimraf')(path.resolve(process.cwd(), 'node_modules'), function (err) {
-      if(err) {
+      if (err) {
         throw err;
       }
 
