@@ -1,6 +1,4 @@
 {
   "rules": {
-    //add custom eslint rules here
-    //e.g. "no-unused-expressions": 1
   }
 }
