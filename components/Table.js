@@ -76,7 +76,7 @@ var Table = React.createClass({
         }
       }
 
-      var selection = []
+      var selection = [];
       if (this.state.selection) {
         selection = this.state.selection.slice(0);
       }
