@@ -38,6 +38,7 @@ rules:
   dot-notation: 2
   consistent-return: 2
   no-unused-vars: [2, args: none]
+  semi: [2, "always"]
 
   # DISABLED
   max-len: 0
