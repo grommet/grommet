@@ -11,11 +11,11 @@ var Logo = require('./MediumLogo');
 
 var MediumLogin = React.createClass({
 
-  mixins: [Reflux.ListenerMixin, IntlMixin],
-
   contextTypes: {
     router: React.PropTypes.func.isRequired
   },
+
+  mixins: [Reflux.ListenerMixin, IntlMixin],
 
   getInitialState: function () {
     return {session: SessionStore.getInitialState()};

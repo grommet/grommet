@@ -9,11 +9,11 @@ var IntlMixin = require('grommet/mixins/GrommetIntlMixin');
 
 var MediumSessionMenu = React.createClass({
 
-  mixins: [IntlMixin],
-
   propTypes: {
     dropAlign: Drop.alignPropType
   },
+
+  mixins: [IntlMixin],
 
   getDefaultProps: function () {
     return {direction: 'down'};

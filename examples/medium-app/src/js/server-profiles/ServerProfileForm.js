@@ -21,7 +21,7 @@ var BusyIcon = require('grommet/components/icons/Spinning');
 
 var ServerProfileForm = React.createClass({
 
-  propType: {
+  propTypes: {
     buttonLabel: React.PropTypes.string.isRequired,
     onSubmit: React.PropTypes.func.isRequired,
     processingMessage: React.PropTypes.string,
