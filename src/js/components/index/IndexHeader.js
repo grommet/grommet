@@ -13,8 +13,6 @@ var CLASS_ROOT = 'index-header';
 
 var IndexHeader = React.createClass({
 
-  mixins: [IntlMixin],
-
   propTypes: {
     options: React.PropTypes.shape({
       label: React.PropTypes.string,
@@ -35,6 +33,8 @@ var IndexHeader = React.createClass({
     addControl: React.PropTypes.node,
     navControl: React.PropTypes.node
   },
+
+  mixins: [IntlMixin],
 
   _onSearchChange: function (text) {
     var query = this.props.options.params.query;

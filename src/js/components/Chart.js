@@ -81,6 +81,30 @@ var Chart = React.createClass({
     };
   },
 
+  getInitialState: function () {
+    return this._stateFromProps(this.props, DEFAULT_WIDTH, DEFAULT_HEIGHT);
+  },
+
+  componentDidMount: function() {
+    window.addEventListener('resize', this._onResize);
+    this._onResize();
+  },
+
+  componentWillReceiveProps: function (newProps) {
+    var state = this._stateFromProps(newProps,
+      this.state.width, this.state.height);
+    this.setState(state);
+  },
+
+  componentDidUpdate: function () {
+    this._layout();
+  },
+
+  componentWillUnmount: function() {
+    clearTimeout(this._resizeTimer);
+    window.removeEventListener('resize', this._onResize);
+  },
+
   _onMouseOver: function (xIndex) {
     this.setState({activeXIndex: xIndex});
   },
@@ -308,30 +332,6 @@ var Chart = React.createClass({
       height: height,
       size: size
     };
-  },
-
-  getInitialState: function () {
-    return this._stateFromProps(this.props, DEFAULT_WIDTH, DEFAULT_HEIGHT);
-  },
-
-  componentDidMount: function() {
-    window.addEventListener('resize', this._onResize);
-    this._onResize();
-  },
-
-  componentWillUnmount: function() {
-    clearTimeout(this._resizeTimer);
-    window.removeEventListener('resize', this._onResize);
-  },
-
-  componentWillReceiveProps: function (newProps) {
-    var state = this._stateFromProps(newProps,
-      this.state.width, this.state.height);
-    this.setState(state);
-  },
-
-  componentDidUpdate: function () {
-    this._layout();
   },
 
   // Translates X value to X coordinate.

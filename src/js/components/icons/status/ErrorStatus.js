@@ -6,11 +6,11 @@ var uuid = require('node-uuid');
 
 var ErrorStatus = React.createClass({
 
-  mixins: [IntlMixin],
-
   propTypes: {
     a11yTitle: React.PropTypes.string
   },
+
+  mixins: [IntlMixin],
 
   render: function() {
     var className = 'status-icon status-icon-error';
@@ -20,7 +20,7 @@ var ErrorStatus = React.createClass({
     }
     if (typeof a11yTitle === "undefined") {
       // this.props.a11yTitle emplty string is an acceptable value. Only if undefined
-      // should use the default title value. 
+      // should use the default title value.
       a11yTitle = this.getGrommetIntlMessage('Error');
     }
     var errorTitleId = 'error-title-' + uuid.v1();

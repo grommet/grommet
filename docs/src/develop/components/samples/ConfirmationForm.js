@@ -23,6 +23,10 @@ var ConfirmationForm = React.createClass({
     return {prefix: 'cf'};
   },
 
+  getInitialState: function () {
+    return {acknowledged: false, error: null};
+  },
+
   _onSubmit: function (event) {
     event.preventDefault();
     if (this.state.acknowledged) {
@@ -38,10 +42,6 @@ var ConfirmationForm = React.createClass({
     if (acknowledged) {
       this.setState({error: null});
     }
-  },
-
-  getInitialState: function () {
-    return {acknowledged: false, error: null};
   },
 
   render: function() {

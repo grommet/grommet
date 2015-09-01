@@ -12,6 +12,13 @@ var ConfirmationForm = require('./samples/ConfirmationForm');
 
 var LayerDoc = React.createClass({
 
+  getInitialState: function () {
+    return {
+      active: null,
+      align: 'center'
+    };
+  },
+
   _onOpen: function (which, align) {
     this.setState({active: which, align: align});
   },
@@ -21,13 +28,6 @@ var LayerDoc = React.createClass({
       event.preventDefault();
     }
     this.setState({active: null});
-  },
-
-  getInitialState: function () {
-    return {
-      active: null,
-      align: 'center'
-    };
   },
 
   render: function() {

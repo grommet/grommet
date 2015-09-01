@@ -179,20 +179,20 @@ var Develop = React.createClass({
 
 var DevelopDocument = React.createClass({
 
-  _highlightCode: function () {
-    var domNode = this.getDOMNode();
-    var nodes = domNode.querySelectorAll('pre code');
-    for (var i = 0; i < nodes.length; i++) {
-      hljs.highlightBlock(nodes[i]);
-    }
-  },
-
   componentDidMount: function () {
     setTimeout(this._highlightCode, 1);
   },
 
   componentDidUpdate: function () {
     setTimeout(this._highlightCode, 1);
+  },
+
+  _highlightCode: function () {
+    var domNode = this.getDOMNode();
+    var nodes = domNode.querySelectorAll('pre code');
+    for (var i = 0; i < nodes.length; i++) {
+      hljs.highlightBlock(nodes[i]);
+    }
   },
 
   render: function () {

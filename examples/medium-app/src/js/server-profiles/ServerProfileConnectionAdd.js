@@ -22,6 +22,27 @@ var ServerProfileConnectionAdd = React.createClass({
     onClose: React.PropTypes.func.isRequired
   },
 
+  getInitialState: function () {
+    return {
+      connection: {
+        name: '',
+        type: 'Ethernet',
+        network: '',
+        bandwidth: 2.5,
+        port: 'Auto',
+        boot: 'Not bootable'
+      },
+      addedCount: 0,
+      primaryAction: 'Add',
+      networkSuggestions: []
+    };
+  },
+
+  componentDidMount: function () {
+    this._onNetworkSearch('');
+    this.refs.first.getDOMNode().focus();
+  },
+
   _onAdd: function (event) {
     event.preventDefault();
     this.props.onAdd(merge({}, this.state.connection));
@@ -83,27 +104,6 @@ var ServerProfileConnectionAdd = React.createClass({
       start: 0, count: 5};
     Rest.get('/rest/index/search-suggestions', params)
       .end(this._onNetworkSearchResponse);
-  },
-
-  getInitialState: function () {
-    return {
-      connection: {
-        name: '',
-        type: 'Ethernet',
-        network: '',
-        bandwidth: 2.5,
-        port: 'Auto',
-        boot: 'Not bootable'
-      },
-      addedCount: 0,
-      primaryAction: 'Add',
-      networkSuggestions: []
-    };
-  },
-
-  componentDidMount: function () {
-    this._onNetworkSearch('');
-    this.refs.first.getDOMNode().focus();
   },
 
   render: function () {

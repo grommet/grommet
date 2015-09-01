@@ -79,6 +79,43 @@ var Donut = React.createClass({
     };
   },
 
+  getInitialState: function() {
+    var series = this.props.series || this._generateSeries(this.props);
+    var importantIndex = this._importantIndex(series);
+    return {
+      initial: true,
+      importantIndex: importantIndex,
+      activeIndex: importantIndex,
+      legend: false,
+      orientation: 'portrait',
+      series: series
+    };
+  },
+
+  componentDidMount: function() {
+    console.log('Grommet Donut is deprecated. Please use Grommet Meter instead.');
+    this._initialTimer = setTimeout(this._initialTimeout, 10);
+    this.setState({initial: true, activeIndex: 0});
+    window.addEventListener('resize', this._onResize);
+    this._onResize();
+  },
+
+  componentWillReceiveProps: function (newProps) {
+    var series = newProps.series || this._generateSeries(newProps);
+    var importantIndex = this._importantIndex(series);
+    this.setState({
+      importantIndex: importantIndex,
+      activeIndex: importantIndex,
+      series: series
+    });
+  },
+
+  componentWillUnmount: function() {
+    clearTimeout(this._initialTimer);
+    clearTimeout(this._resizeTimer);
+    window.removeEventListener('resize', this._onResize);
+  },
+
   _initialTimeout: function () {
     this.setState({
       initial: false,
@@ -139,43 +176,6 @@ var Donut = React.createClass({
       }
     });
     return result;
-  },
-
-  getInitialState: function() {
-    var series = this.props.series || this._generateSeries(this.props);
-    var importantIndex = this._importantIndex(series);
-    return {
-      initial: true,
-      importantIndex: importantIndex,
-      activeIndex: importantIndex,
-      legend: false,
-      orientation: 'portrait',
-      series: series
-    };
-  },
-
-  componentDidMount: function() {
-    console.log('Grommet Donut is deprecated. Please use Grommet Meter instead.');
-    this._initialTimer = setTimeout(this._initialTimeout, 10);
-    this.setState({initial: true, activeIndex: 0});
-    window.addEventListener('resize', this._onResize);
-    this._onResize();
-  },
-
-  componentWillReceiveProps: function (newProps) {
-    var series = newProps.series || this._generateSeries(newProps);
-    var importantIndex = this._importantIndex(series);
-    this.setState({
-      importantIndex: importantIndex,
-      activeIndex: importantIndex,
-      series: series
-    });
-  },
-
-  componentWillUnmount: function() {
-    clearTimeout(this._initialTimer);
-    clearTimeout(this._resizeTimer);
-    window.removeEventListener('resize', this._onResize);
   },
 
   _itemColorIndex: function (item, index) {

@@ -16,8 +16,6 @@ var CLASS_ROOT = "index-filters";
 
 var IndexFilters = React.createClass({
 
-  mixins: [IntlMixin],
-
   propTypes: {
     options: React.PropTypes.shape({
       attributes: React.PropTypes.arrayOf(React.PropTypes.shape({
@@ -31,6 +29,16 @@ var IndexFilters = React.createClass({
       })
     }).isRequired,
     onQuery: React.PropTypes.func
+  },
+
+  mixins: [IntlMixin],
+
+  getInitialState: function () {
+    return {data: this._buildState(this.props.options)};
+  },
+
+  componentWillReceiveProps: function (newProps) {
+    this.setState({data: this._buildState(newProps.options)});
   },
 
   _notify: function () {
@@ -91,14 +99,6 @@ var IndexFilters = React.createClass({
         data[attribute.attribute] = values;
       });
     return data;
-  },
-
-  getInitialState: function () {
-    return {data: this._buildState(this.props.options)};
-  },
-
-  componentWillReceiveProps: function (newProps) {
-    this.setState({data: this._buildState(newProps.options)});
   },
 
   render: function() {

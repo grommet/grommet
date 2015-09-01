@@ -30,23 +30,6 @@ var Header = React.createClass({
     };
   },
 
-  _onResize: function () {
-    this._alignMirror();
-  },
-
-  _alignMirror: function () {
-    var contentElement = this.refs.content.getDOMNode();
-    var mirrorElement = this.refs.mirror.getDOMNode();
-
-    // constrain fixed content to the width of the mirror
-    var mirrorRect = mirrorElement.getBoundingClientRect();
-    contentElement.style.width = '' + Math.floor(mirrorRect.width) + 'px';
-
-    // align the mirror height with the content's height
-    var contentRect = contentElement.getBoundingClientRect();
-    mirrorElement.style.height = '' + Math.floor(contentRect.height) + 'px';
-  },
-
   componentDidMount: function () {
     if (this.props.fixed) {
       this._alignMirror();
@@ -64,6 +47,23 @@ var Header = React.createClass({
     if (this.props.fixed) {
       window.removeEventListener('resize', this._onResize);
     }
+  },
+
+  _onResize: function () {
+    this._alignMirror();
+  },
+
+  _alignMirror: function () {
+    var contentElement = this.refs.content.getDOMNode();
+    var mirrorElement = this.refs.mirror.getDOMNode();
+
+    // constrain fixed content to the width of the mirror
+    var mirrorRect = mirrorElement.getBoundingClientRect();
+    contentElement.style.width = '' + Math.floor(mirrorRect.width) + 'px';
+
+    // align the mirror height with the content's height
+    var contentRect = contentElement.getBoundingClientRect();
+    mirrorElement.style.height = '' + Math.floor(contentRect.height) + 'px';
   },
 
   render: function() {

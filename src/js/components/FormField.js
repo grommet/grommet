@@ -15,20 +15,6 @@ var FormField = React.createClass({
     required: React.PropTypes.bool
   },
 
-  _onFocus: function () {
-    this.setState({focus: true});
-  },
-
-  _onBlur: function () {
-    this.setState({focus: false});
-  },
-
-  _onClick: function () {
-    if (this._inputElement) {
-      this._inputElement.focus();
-    }
-  },
-
   getInitialState: function () {
     return {focus: false};
   },
@@ -48,6 +34,20 @@ var FormField = React.createClass({
       this._inputElement.removeEventListener('focus', this._onFocus);
       this._inputElement.removeEventListener('blur', this._onBlur);
       delete this._inputElement;
+    }
+  },
+
+  _onFocus: function () {
+    this.setState({focus: true});
+  },
+
+  _onBlur: function () {
+    this.setState({focus: false});
+  },
+
+  _onClick: function () {
+    if (this._inputElement) {
+      this._inputElement.focus();
     }
   },
 

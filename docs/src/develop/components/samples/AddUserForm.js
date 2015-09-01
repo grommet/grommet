@@ -25,6 +25,36 @@ var AddUserForm = React.createClass({
     return {prefix: 'auf'};
   },
 
+  getInitialState: function () {
+    return {
+      user: {
+        login: '',
+        name: '',
+        password: '',
+        role: 'specialized',
+        backupAdmin: false,
+        networkAdmin: false,
+        serverAdmin: false,
+        storageAdmin: false,
+        email: '',
+        officePhone: '',
+        mobilePhone: ''
+      },
+      validation: {errors: {}},
+      submitting: false
+    };
+  },
+
+  componentDidUpdate: function () {
+    var errors = document.querySelectorAll('.form-field--error');
+    if (errors.length > 0) {
+      var input = errors[0].querySelectorAll('input')[0];
+      if (input) {
+        input.focus();
+      }
+    }
+  },
+
   _validate: function (submitting) {
     var user = this.state.user;
 
@@ -67,36 +97,6 @@ var AddUserForm = React.createClass({
     user[event.target.getAttribute('name')] = event.target.checked;
     this.setState({user: user});
     this._validate(false);
-  },
-
-  getInitialState: function () {
-    return {
-      user: {
-        login: '',
-        name: '',
-        password: '',
-        role: 'specialized',
-        backupAdmin: false,
-        networkAdmin: false,
-        serverAdmin: false,
-        storageAdmin: false,
-        email: '',
-        officePhone: '',
-        mobilePhone: ''
-      },
-      validation: {errors: {}},
-      submitting: false
-    };
-  },
-
-  componentDidUpdate: function () {
-    var errors = document.querySelectorAll('.form-field--error');
-    if (errors.length > 0) {
-      var input = errors[0].querySelectorAll('input')[0];
-      if (input) {
-        input.focus();
-      }
-    }
   },
 
   render: function() {

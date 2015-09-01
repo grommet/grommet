@@ -19,6 +19,20 @@ var ServerProfileVolumeAdd = React.createClass({
     onClose: React.PropTypes.func.isRequired
   },
 
+  getInitialState: function () {
+    return {
+      volume: {
+        name: ''
+      },
+      addedCount: 0,
+      primaryAction: 'Add'
+    };
+  },
+
+  componentDidMount: function () {
+    this.refs.first.getDOMNode().focus();
+  },
+
   _onAdd: function (event) {
     event.preventDefault();
     this.props.onAdd(merge({}, this.state.volume));
@@ -43,20 +57,6 @@ var ServerProfileVolumeAdd = React.createClass({
     var volume = this.state.volume;
     volume[name] = event.target.value;
     this.setState({volume: volume});
-  },
-
-  getInitialState: function () {
-    return {
-      volume: {
-        name: ''
-      },
-      addedCount: 0,
-      primaryAction: 'Add'
-    };
-  },
-
-  componentDidMount: function () {
-    this.refs.first.getDOMNode().focus();
   },
 
   render: function () {

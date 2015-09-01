@@ -25,6 +25,14 @@ var MediumResource = React.createClass({
     router: React.PropTypes.func.isRequired
   },
 
+  getInitialState: function () {
+    return this._stateFromProps(this.props);
+  },
+
+  componentWillReceiveProps: function (newProps) {
+    this.setState(this._stateFromProps(newProps));
+  },
+
   _stateFromProps: function (props) {
     var router = this.context.router;
     var params = router.getCurrentParams();
@@ -41,14 +49,6 @@ var MediumResource = React.createClass({
       view: view,
       query: router.getCurrentQuery()
     };
-  },
-
-  getInitialState: function () {
-    return this._stateFromProps(this.props);
-  },
-
-  componentWillReceiveProps: function (newProps) {
-    this.setState(this._stateFromProps(newProps));
   },
 
   render: function () {

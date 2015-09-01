@@ -6,12 +6,12 @@ var uuid = require('node-uuid');
 
 var Filter = React.createClass({
 
-  mixins: [IntlMixin],
-
   propTypes: {
     a11yTitle: React.PropTypes.string,
     notifications: React.PropTypes.number
   },
+
+  mixins: [IntlMixin],
 
   render: function() {
     var className = 'control-icon control-icon-filter';

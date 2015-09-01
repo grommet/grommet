@@ -20,6 +20,28 @@ var Split = React.createClass({
     };
   },
 
+  getInitialState: function () {
+    return {responsive: null};
+  },
+
+  componentDidMount: function () {
+    // figure out the break width
+    this._breakWidth = 720; // default
+    // CSS stores the break width in a hidden pseudo element
+    var splitElement = this.refs.split.getDOMNode();
+    var after = window.getComputedStyle(splitElement, ':after');
+    if (after) {
+      this._breakWidth = after.getPropertyValue('width');
+    }
+
+    window.addEventListener('resize', this._onResize);
+    this._layout();
+  },
+
+  componentWillUnmount: function () {
+    window.removeEventListener('resize', this._onResize);
+  },
+
   _onResize: function () {
     // debounce
     clearTimeout(this._resizeTimer);
@@ -42,28 +64,6 @@ var Split = React.createClass({
     } else {
       this._setResponsive('multiple');
     }
-  },
-
-  getInitialState: function () {
-    return {responsive: null};
-  },
-
-  componentDidMount: function () {
-    // figure out the break width
-    this._breakWidth = 720; // default
-    // CSS stores the break width in a hidden pseudo element
-    var splitElement = this.refs.split.getDOMNode();
-    var after = window.getComputedStyle(splitElement, ':after');
-    if (after) {
-      this._breakWidth = after.getPropertyValue('width');
-    }
-
-    window.addEventListener('resize', this._onResize);
-    this._layout();
-  },
-
-  componentWillUnmount: function () {
-    window.removeEventListener('resize', this._onResize);
   },
 
   render: function() {

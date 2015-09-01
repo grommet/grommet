@@ -19,15 +19,15 @@ var MediumSessionMenu = React.createClass({
     return {direction: 'down'};
   },
 
-  _onLogout: function (event) {
-    event.preventDefault();
-    Actions.logout();
-  },
-
   getInitialState: function () {
     return {
       session: SessionStore.getInitialState()
     };
+  },
+
+  _onLogout: function (event) {
+    event.preventDefault();
+    Actions.logout();
   },
 
   render: function() {

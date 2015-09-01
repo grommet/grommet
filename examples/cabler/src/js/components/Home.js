@@ -11,12 +11,12 @@ var Home = React.createClass({
     data: React.PropTypes.object.isRequired
   },
 
-  _onResponsive: function (responsive) {
-    this.setState({responsive: responsive});
-  },
-
   getInitialState: function () {
     return {};
+  },
+
+  _onResponsive: function (responsive) {
+    this.setState({responsive: responsive});
   },
 
   render: function() {

@@ -7,11 +7,11 @@ var CLASS_ROOT = "object";
 
 var GrommetObject = React.createClass({
 
-  mixins: [IntlMixin],
-
   propTypes: {
     data: React.PropTypes.object
   },
+
+  mixins: [IntlMixin],
 
   _renderArray: function (array) {
     return array.map(function (item, index) {

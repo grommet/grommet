@@ -10,14 +10,6 @@ var SessionControl = React.createClass({
 
   mixins: [ReactLayeredComponent],
 
-  _onChange: function() {
-    this.setState({session: SessionStore.getAll()});
-  },
-
-  _onClick: function() {
-    this.setState({active: !this.state.active});
-  },
-
   getInitialState: function() {
     return {active: false, session: SessionStore.getAll()};
   },
@@ -28,6 +20,14 @@ var SessionControl = React.createClass({
 
   componentWillUnmount: function() {
     SessionStore.removeChangeListener(this._onChange);
+  },
+
+  _onChange: function() {
+    this.setState({session: SessionStore.getAll()});
+  },
+
+  _onClick: function() {
+    this.setState({active: !this.state.active});
   },
 
   renderLayer: function() {

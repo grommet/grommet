@@ -13,6 +13,19 @@ var Session = React.createClass({
 
   mixins: [KeyboardAccelerators, IntlMixin],
 
+  getInitialState: function() {
+    return SessionStore.getAll();
+  },
+
+  componentDidMount: function() {
+    SessionStore.addChangeListener(this._onChange);
+    this.startListeningToKeyboard({esc: this._onClose});
+  },
+
+  componentWillUnmount: function() {
+    SessionStore.removeChangeListener(this._onChange);
+  },
+
   _onChange: function() {
     this.setState(SessionStore.getAll());
   },
@@ -29,19 +42,6 @@ var Session = React.createClass({
     this.stopListeningToKeyboard();
     //SessionActions.logout();
     this.props.onRequestClose();
-  },
-
-  getInitialState: function() {
-    return SessionStore.getAll();
-  },
-
-  componentDidMount: function() {
-    SessionStore.addChangeListener(this._onChange);
-    this.startListeningToKeyboard({esc: this._onClose});
-  },
-
-  componentWillUnmount: function() {
-    SessionStore.removeChangeListener(this._onChange);
   },
 
   render: function() {

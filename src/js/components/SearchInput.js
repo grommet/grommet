@@ -41,55 +41,6 @@ var SearchInput = React.createClass({
 
   mixins: [KeyboardAccelerators],
 
-  _onInputChange: function (event) {
-    this.setState({dropActive: true, activeSuggestionIndex: -1});
-    this.props.onChange(event.target.value, false);
-  },
-
-  _onAddDrop: function (event) {
-    event.preventDefault();
-    this.setState({dropActive: true, activeSuggestionIndex: -1});
-  },
-
-  _onRemoveDrop: function () {
-    this.setState({dropActive: false});
-  },
-
-  _onNextSuggestion: function () {
-    var index = this.state.activeSuggestionIndex;
-    index = Math.min(index + 1, this.props.suggestions.length - 1);
-    this.setState({activeSuggestionIndex: index});
-  },
-
-  _onPreviousSuggestion: function () {
-    var index = this.state.activeSuggestionIndex;
-    index = Math.max(index - 1, 0);
-    this.setState({activeSuggestionIndex: index});
-  },
-
-  _onEnter: function () {
-    this.setState({dropActive: false});
-    if (this.state.activeSuggestionIndex >= 0) {
-      var suggestion = this.props.suggestions[this.state.activeSuggestionIndex];
-      this.setState({value: suggestion});
-      this.props.onChange(suggestion, true);
-    }
-  },
-
-  _onClickSuggestion: function (suggestion) {
-    this.setState({value: suggestion, dropActive: false});
-    this.props.onChange(suggestion, true);
-  },
-
-  _onFocus: function () {
-    this.refs.input.getDOMNode().select();
-    this.setState({
-      focused: true,
-      dropActive: false,
-      activeSuggestionIndex: -1
-    });
-  },
-
   getInitialState: function () {
     return {
       dropActive: false,
@@ -145,6 +96,55 @@ var SearchInput = React.createClass({
 
   componentWillUnmount: function () {
     document.removeEventListener('click', this._onRemoveDrop);
+  },
+
+  _onInputChange: function (event) {
+    this.setState({dropActive: true, activeSuggestionIndex: -1});
+    this.props.onChange(event.target.value, false);
+  },
+
+  _onAddDrop: function (event) {
+    event.preventDefault();
+    this.setState({dropActive: true, activeSuggestionIndex: -1});
+  },
+
+  _onRemoveDrop: function () {
+    this.setState({dropActive: false});
+  },
+
+  _onNextSuggestion: function () {
+    var index = this.state.activeSuggestionIndex;
+    index = Math.min(index + 1, this.props.suggestions.length - 1);
+    this.setState({activeSuggestionIndex: index});
+  },
+
+  _onPreviousSuggestion: function () {
+    var index = this.state.activeSuggestionIndex;
+    index = Math.max(index - 1, 0);
+    this.setState({activeSuggestionIndex: index});
+  },
+
+  _onEnter: function () {
+    this.setState({dropActive: false});
+    if (this.state.activeSuggestionIndex >= 0) {
+      var suggestion = this.props.suggestions[this.state.activeSuggestionIndex];
+      this.setState({value: suggestion});
+      this.props.onChange(suggestion, true);
+    }
+  },
+
+  _onClickSuggestion: function (suggestion) {
+    this.setState({value: suggestion, dropActive: false});
+    this.props.onChange(suggestion, true);
+  },
+
+  _onFocus: function () {
+    this.refs.input.getDOMNode().select();
+    this.setState({
+      focused: true,
+      dropActive: false,
+      activeSuggestionIndex: -1
+    });
   },
 
   _valueText: function (value) {

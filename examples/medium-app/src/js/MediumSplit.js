@@ -12,6 +12,23 @@ var MediumSplit = React.createClass({
     router: React.PropTypes.func.isRequired
   },
 
+  getInitialState: function () {
+    return {
+      responsive: null,
+      showMain: true,
+      reShowMain: true
+    };
+  },
+
+  componentWillReceiveProps: function () {
+    if ('single' === this.state.responsive) {
+      var routes = this.context.router.getCurrentRoutes();
+      if (this.state.currentRoute !== routes[routes.length - 1].name) {
+        this.setState({showMain: false});
+      }
+    }
+  },
+
   _onOpenMain: function () {
     this.setState({showMain: true});
     if ('multiple' === this.state.responsive) {
@@ -38,23 +55,6 @@ var MediumSplit = React.createClass({
     }
     if ('single' === responsive) {
       this.setState({showMain: false});
-    }
-  },
-
-  getInitialState: function () {
-    return {
-      responsive: null,
-      showMain: true,
-      reShowMain: true
-    };
-  },
-
-  componentWillReceiveProps: function () {
-    if ('single' === this.state.responsive) {
-      var routes = this.context.router.getCurrentRoutes();
-      if (this.state.currentRoute !== routes[routes.length - 1].name) {
-        this.setState({showMain: false});
-      }
     }
   },
 

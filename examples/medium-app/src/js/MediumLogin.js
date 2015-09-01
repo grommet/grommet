@@ -17,6 +17,14 @@ var MediumLogin = React.createClass({
     router: React.PropTypes.func.isRequired
   },
 
+  getInitialState: function () {
+    return {session: SessionStore.getInitialState()};
+  },
+
+  componentDidMount: function () {
+    this.listenTo(SessionStore, this._onSessionChange);
+  },
+
   _onSubmit: function (fields) {
     Actions.login(fields.username, fields.password);
   },
@@ -29,14 +37,6 @@ var MediumLogin = React.createClass({
     } else {
       this.setState({session: session});
     }
-  },
-
-  getInitialState: function () {
-    return {session: SessionStore.getInitialState()};
-  },
-
-  componentDidMount: function () {
-    this.listenTo(SessionStore, this._onSessionChange);
   },
 
   render: function () {

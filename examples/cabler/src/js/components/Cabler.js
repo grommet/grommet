@@ -12,6 +12,17 @@ var Cabler = React.createClass({
 
   mixins: [Reflux.ListenerMixin],
 
+  getInitialState: function () {
+    return Store.getInitialState();
+  },
+
+  componentDidMount: function () {
+    this.listenTo(Store, this._onChange);
+    window.onpopstate = this._popState;
+    this._noPush = true;
+    Actions.configureFromLocation(window.location.pathname, window.location.search);
+  },
+
   _pushState: function () {
     if (this.state.location) {
       window.history.pushState(this.state, this.state.location.label, this.state.location.path);
@@ -35,17 +46,6 @@ var Cabler = React.createClass({
       this._noPush = false;
     }
     this.replaceState(data, push);
-  },
-
-  getInitialState: function () {
-    return Store.getInitialState();
-  },
-
-  componentDidMount: function () {
-    this.listenTo(Store, this._onChange);
-    window.onpopstate = this._popState;
-    this._noPush = true;
-    Actions.configureFromLocation(window.location.pathname, window.location.search);
   },
 
   render: function() {

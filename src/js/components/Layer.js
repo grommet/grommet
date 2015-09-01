@@ -118,6 +118,19 @@ var Layer = React.createClass({
     };
   },
 
+  componentDidMount: function () {
+    this._addOverlay();
+    this._renderOverlay();
+  },
+
+  componentDidUpdate: function () {
+    this._renderOverlay();
+  },
+
+  componentWillUnmount: function () {
+    this._removeOverlay();
+  },
+
   _addOverlay: function () {
     var overlay = document.createElement('div');
     if (overlay.classList) {
@@ -152,19 +165,6 @@ var Layer = React.createClass({
     React.unmountComponentAtNode(this._overlay);
     document.body.removeChild(this._overlay);
     this._overlay = null;
-  },
-
-  componentDidMount: function () {
-    this._addOverlay();
-    this._renderOverlay();
-  },
-
-  componentDidUpdate: function () {
-    this._renderOverlay();
-  },
-
-  componentWillUnmount: function () {
-    this._removeOverlay();
   },
 
   render: function () {

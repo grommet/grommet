@@ -15,7 +15,8 @@ var defaultState = {
 };
 
 var TodoAddTaskForm = React.createClass({
-  setInitialState: function () {
+
+  getInitialState: function () {
     return defaultState;
   },
 

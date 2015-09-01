@@ -30,6 +30,38 @@ var Calendar = React.createClass({
     };
   },
 
+  getInitialState: function () {
+    var state = this._stateFromProps(this.props);
+    state.dropActive = false;
+    return state;
+  },
+
+  componentDidMount: function () {
+    this._activation(this.state.dropActive);
+  },
+
+  componentWillReceiveProps: function (newProps) {
+    var state = this._stateFromProps(newProps);
+    this.setState(state);
+  },
+
+  componentDidUpdate: function (prevProps, prevState) {
+    // Set up keyboard listeners appropriate to the current state.
+    if (! this.state.dropActive && prevState.dropActive) {
+      this._activation(this.state.dropActive);
+    }
+    if (this.state.dropActive && ! prevState.dropActive) {
+      this._activation(this.state.dropActive);
+    }
+    if (this.state.dropActive) {
+      this._drop.render(this._renderDrop());
+    }
+  },
+
+  componentWillUnmount: function () {
+    this._activation(false);
+  },
+
   _onInputChange: function (event) {
     if (this.props.onChange) {
       this.props.onChange(event.target.value);
@@ -174,38 +206,6 @@ var Calendar = React.createClass({
       result.reference = moment(date).startOf('day');
     }
     return result;
-  },
-
-  getInitialState: function () {
-    var state = this._stateFromProps(this.props);
-    state.dropActive = false;
-    return state;
-  },
-
-  componentDidMount: function () {
-    this._activation(this.state.dropActive);
-  },
-
-  componentDidUpdate: function (prevProps, prevState) {
-    // Set up keyboard listeners appropriate to the current state.
-    if (! this.state.dropActive && prevState.dropActive) {
-      this._activation(this.state.dropActive);
-    }
-    if (this.state.dropActive && ! prevState.dropActive) {
-      this._activation(this.state.dropActive);
-    }
-    if (this.state.dropActive) {
-      this._drop.render(this._renderDrop());
-    }
-  },
-
-  componentWillReceiveProps: function (newProps) {
-    var state = this._stateFromProps(newProps);
-    this.setState(state);
-  },
-
-  componentWillUnmount: function () {
-    this._activation(false);
   },
 
   _renderDrop: function() {

@@ -23,6 +23,45 @@ var PeopleFinder = React.createClass({
 
   mixins: [IntlMixin],
 
+  getInitialState: function () {
+    var url = window.location.href;
+
+    var searchText = '';
+    var parts = url.split('?search=');
+    if (parts.length > 1) {
+      searchText = decodeURIComponent(parts[1]);
+    }
+
+    var uid = null;
+    parts = url.split('?uid=');
+    if (parts.length > 1) {
+      uid = decodeURIComponent(parts[1]);
+    }
+
+    return {
+      initial: (! searchText),
+      changing: false,
+      searchText: searchText,
+      people: [],
+      uid: uid,
+      person: {}
+    };
+  },
+
+  componentDidMount: function () {
+    if (this.state.searchText) {
+      this._getPeople(this.state.searchText);
+    }
+    if (this.state.uid) {
+      this._getPerson(this.state.uid);
+    }
+    window.onpopstate = this._popState;
+  },
+
+  componentDidUnmount: function () {
+    clearTimeout(this._searchTimer);
+  },
+
   _pushState: function () {
     var label = this.getGrommetIntlMessage('People Finder');
     var url = window.location.href.split('?')[0];
@@ -123,45 +162,6 @@ var PeopleFinder = React.createClass({
 
   _onClosePerson: function () {
     this.setState({uid: null, person: {}}, this._pushState);
-  },
-
-  getInitialState: function () {
-    var url = window.location.href;
-
-    var searchText = '';
-    var parts = url.split('?search=');
-    if (parts.length > 1) {
-      searchText = decodeURIComponent(parts[1]);
-    }
-
-    var uid = null;
-    parts = url.split('?uid=');
-    if (parts.length > 1) {
-      uid = decodeURIComponent(parts[1]);
-    }
-
-    return {
-      initial: (! searchText),
-      changing: false,
-      searchText: searchText,
-      people: [],
-      uid: uid,
-      person: {}
-    };
-  },
-
-  componentDidMount: function () {
-    if (this.state.searchText) {
-      this._getPeople(this.state.searchText);
-    }
-    if (this.state.uid) {
-      this._getPerson(this.state.uid);
-    }
-    window.onpopstate = this._popState;
-  },
-
-  componentDidUnmount: function () {
-    clearTimeout(this._searchTimer);
   },
 
   render: function() {

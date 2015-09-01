@@ -11,23 +11,6 @@ var Overview = React.createClass({
     router: React.PropTypes.func.isRequired
   },
 
-  _onResponse: function (err, res) {
-    if (err && err.timeout > 1000) {
-      this.setState({error: 'Timeout', result: {}});
-    } else if (res.status === 400) {
-      Actions.logout();
-    } else if (!res.ok) {
-      this.setState({error: res.body || res.text, result: {}});
-    } else {
-      var result = res.body;
-      this.setState({resource: result, error: null});
-    }
-  },
-
-  _getData: function () {
-    Rest.get(this.state.uri).end(this._onResponse);
-  },
-
   getInitialState: function () {
     var router = this.context.router;
     return {
@@ -43,6 +26,23 @@ var Overview = React.createClass({
   componentWillReceiveProps: function () {
     var router = this.context.router;
     this.setState({uri: router.getCurrentParams().splat}, this._getData);
+  },
+
+  _onResponse: function (err, res) {
+    if (err && err.timeout > 1000) {
+      this.setState({error: 'Timeout', result: {}});
+    } else if (res.status === 400) {
+      Actions.logout();
+    } else if (!res.ok) {
+      this.setState({error: res.body || res.text, result: {}});
+    } else {
+      var result = res.body;
+      this.setState({resource: result, error: null});
+    }
+  },
+
+  _getData: function () {
+    Rest.get(this.state.uri).end(this._onResponse);
   },
 
   render: function () {

@@ -28,6 +28,20 @@ var Organization = React.createClass({
     person: React.PropTypes.object.isRequired
   },
 
+  getInitialState: function () {
+    return {team: [], managers: []};
+  },
+
+  componentDidMount: function () {
+    this._getRelatedDetails(this.props);
+  },
+
+  componentWillReceiveProps: function (newProps) {
+    if (newProps.person.dn !== this.props.person.dn) {
+      this._getRelatedDetails(newProps);
+    }
+  },
+
   _onManagerResponse: function (err, res) {
     if (err) {
       this.setState({staff: [], error: err});
@@ -78,20 +92,6 @@ var Organization = React.createClass({
       });
       Rest.get('/ldap/', params).end(this._onTeamResponse);
       this._getManager(props.person.manager);
-    }
-  },
-
-  getInitialState: function () {
-    return {team: [], managers: []};
-  },
-
-  componentDidMount: function () {
-    this._getRelatedDetails(this.props);
-  },
-
-  componentWillReceiveProps: function (newProps) {
-    if (newProps.person.dn !== this.props.person.dn) {
-      this._getRelatedDetails(newProps);
     }
   },
 

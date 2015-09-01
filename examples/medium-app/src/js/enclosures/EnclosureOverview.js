@@ -16,22 +16,6 @@ var EnclosureOverview = React.createClass({
     router: React.PropTypes.func.isRequired
   },
 
-  _onUpdateEnclosure: function (result) {
-    this.setState({enclosure: result});
-  },
-
-  _onUpdateMap: function (result) {
-    this.setState({map: result});
-  },
-
-  _getData: function () {
-    RestWatch.stop(this._watchEnclosure);
-    this._watchEnclosure = RestWatch.start(this.state.uri, null, this._onUpdateEnclosure);
-    RestWatch.stop(this._watchMap);
-    this._watchMap = RestWatch.start('/rest/index/trees/aggregated' + this.state.uri,
-      null, this._onUpdateMap);
-  },
-
   getInitialState: function () {
     var router = this.context.router;
     return {
@@ -54,6 +38,22 @@ var EnclosureOverview = React.createClass({
 
   componentWillUnmount: function () {
     RestWatch.stop(this._watchEnclosure);
+  },
+
+  _onUpdateEnclosure: function (result) {
+    this.setState({enclosure: result});
+  },
+
+  _onUpdateMap: function (result) {
+    this.setState({map: result});
+  },
+
+  _getData: function () {
+    RestWatch.stop(this._watchEnclosure);
+    this._watchEnclosure = RestWatch.start(this.state.uri, null, this._onUpdateEnclosure);
+    RestWatch.stop(this._watchMap);
+    this._watchMap = RestWatch.start('/rest/index/trees/aggregated' + this.state.uri,
+      null, this._onUpdateMap);
   },
 
   _renderBay: function (index, serverHardware) {

@@ -16,6 +16,27 @@ var MediumActivityResource = React.createClass({
     router: React.PropTypes.func.isRequired
   },
 
+  getInitialState: function () {
+    var router = this.context.router;
+    return {
+      uri: router.getCurrentParams().splat,
+      resource: {},
+      query: router.getCurrentQuery()
+    };
+  },
+
+  componentDidMount: function () {
+    this._getData();
+  },
+
+  componentWillReceiveProps: function () {
+    let router = this.context.router;
+    let uri = router.getCurrentParams().splat;
+    if (uri !== this.state.uri) {
+      this.setState({uri: uri}, this._getData);
+    }
+  },
+
   _onResponse: function (err, res) {
     if (err && err.timeout > 1000) {
       this.setState({error: 'Timeout', result: {}});
@@ -40,27 +61,6 @@ var MediumActivityResource = React.createClass({
 
   _getData: function () {
     Rest.get(this.state.uri).end(this._onResponse);
-  },
-
-  getInitialState: function () {
-    var router = this.context.router;
-    return {
-      uri: router.getCurrentParams().splat,
-      resource: {},
-      query: router.getCurrentQuery()
-    };
-  },
-
-  componentDidMount: function () {
-    this._getData();
-  },
-
-  componentWillReceiveProps: function () {
-    let router = this.context.router;
-    let uri = router.getCurrentParams().splat;
-    if (uri !== this.state.uri) {
-      this.setState({uri: uri}, this._getData);
-    }
   },
 
   render: function () {

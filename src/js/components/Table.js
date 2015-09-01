@@ -34,6 +34,48 @@ var Table = React.createClass({
     };
   },
 
+  getInitialState: function () {
+    return {selection: this.props.selection};
+  },
+
+  componentDidMount: function () {
+    this._alignSelection();
+    if (this.props.scrollable) {
+      this._buildMirror();
+      this._alignMirror();
+    }
+    if (this.props.onMore) {
+      this.startListeningForScroll(this.refs.more.getDOMNode(), this.props.onMore);
+    }
+    window.addEventListener('resize', this._onResize);
+  },
+
+  componentWillReceiveProps: function (newProps) {
+    if (newProps.hasOwnProperty('selection')) {
+      this.setState({selection: newProps.selection});
+    }
+  },
+
+  componentDidUpdate: function (prevProps, prevState) {
+    if (this.state.selection !== prevState.selection) {
+      this._alignSelection();
+    }
+    if (this.props.scrollable) {
+      this._alignMirror();
+    }
+    this.stopListeningForScroll();
+    if (this.props.onMore) {
+      this.startListeningForScroll(this.refs.more.getDOMNode(), this.props.onMore);
+    }
+  },
+
+  componentWillUnmount: function () {
+    if (this.props.onMore) {
+      this.stopListeningForScroll();
+    }
+    window.removeEventListener('resize', this._onResize);
+  },
+
   _clearSelected: function () {
     var rows = this.refs.table.getDOMNode()
       .querySelectorAll("." + SELECTED_CLASS);
@@ -147,48 +189,6 @@ var Table = React.createClass({
       }
       mirrorElement.style.height = '' + height + 'px';
     }
-  },
-
-  getInitialState: function () {
-    return {selection: this.props.selection};
-  },
-
-  componentDidMount: function () {
-    this._alignSelection();
-    if (this.props.scrollable) {
-      this._buildMirror();
-      this._alignMirror();
-    }
-    if (this.props.onMore) {
-      this.startListeningForScroll(this.refs.more.getDOMNode(), this.props.onMore);
-    }
-    window.addEventListener('resize', this._onResize);
-  },
-
-  componentWillReceiveProps: function (newProps) {
-    if (newProps.hasOwnProperty('selection')) {
-      this.setState({selection: newProps.selection});
-    }
-  },
-
-  componentDidUpdate: function (prevProps, prevState) {
-    if (this.state.selection !== prevState.selection) {
-      this._alignSelection();
-    }
-    if (this.props.scrollable) {
-      this._alignMirror();
-    }
-    this.stopListeningForScroll();
-    if (this.props.onMore) {
-      this.startListeningForScroll(this.refs.more.getDOMNode(), this.props.onMore);
-    }
-  },
-
-  componentWillUnmount: function () {
-    if (this.props.onMore) {
-      this.stopListeningForScroll();
-    }
-    window.removeEventListener('resize', this._onResize);
   },
 
   render: function () {

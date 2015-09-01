@@ -22,6 +22,18 @@ var DocsSplit = React.createClass({
     title: React.PropTypes.node.isRequired
   },
 
+  getInitialState: function () {
+    return {showMenu: true};
+  },
+
+  componentDidMount: function () {
+    this._scrollToAnchor();
+  },
+
+  componentDidUpdate: function () {
+    this._scrollToAnchor();
+  },
+
   _scrollToAnchor: function () {
     if (this.refs.doc) {
       var doc = this.refs.doc.getDOMNode();
@@ -59,18 +71,6 @@ var DocsSplit = React.createClass({
     if (this.props.onChange) {
       this.props.onChange();
     }
-  },
-
-  getInitialState: function () {
-    return {showMenu: true};
-  },
-
-  componentDidMount: function () {
-    this._scrollToAnchor();
-  },
-
-  componentDidUpdate: function () {
-    this._scrollToAnchor();
   },
 
   _renderTitle: function () {

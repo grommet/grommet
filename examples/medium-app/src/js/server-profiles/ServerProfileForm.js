@@ -28,6 +28,23 @@ var ServerProfileForm = React.createClass({
     serverProfile: React.PropTypes.object.isRequired
   },
 
+  getInitialState: function () {
+    return {
+      serverProfile: merge({}, this.props.serverProfile),
+      serverHardwareSuggestions: [],
+      firmwareSuggestions: []
+    };
+  },
+
+  componentDidMount: function () {
+    this._onServerHardwareSearch('');
+    this._onFirmwareSearch('');
+  },
+
+  componentWillReceiveProps: function (newProps) {
+    this.setState({serverProfile: newProps.serverProfile});
+  },
+
   _onSubmit: function (event) {
     event.preventDefault();
     this.props.onSubmit(this.state.serverProfile);
@@ -132,23 +149,6 @@ var ServerProfileForm = React.createClass({
     var serverProfile = this.state.serverProfile;
     serverProfile.volumes.splice(index, 1);
     this.setState({serverProfile: serverProfile});
-  },
-
-  getInitialState: function () {
-    return {
-      serverProfile: merge({}, this.props.serverProfile),
-      serverHardwareSuggestions: [],
-      firmwareSuggestions: []
-    };
-  },
-
-  componentDidMount: function () {
-    this._onServerHardwareSearch('');
-    this._onFirmwareSearch('');
-  },
-
-  componentWillReceiveProps: function (newProps) {
-    this.setState({serverProfile: newProps.serverProfile});
   },
 
   _renderConnections: function () {

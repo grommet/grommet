@@ -24,16 +24,16 @@ var Person = React.createClass({
 
   mixins: [IntlMixin],
 
+  getInitialState: function () {
+    return {view: 'organization'};
+  },
+
   _onAbout: function () {
     this.setState({view: 'about'});
   },
 
   _onOrganization: function () {
     this.setState({view: 'organization'});
-  },
-
-  getInitialState: function () {
-    return {view: 'organization'};
   },
 
   render: function() {
