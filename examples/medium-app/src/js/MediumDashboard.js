@@ -135,7 +135,7 @@ var MediumDashboard = React.createClass({
     } else if ((width / 660) > 3) {
       graphicSize = 'large';
     } else if ((height / roughRows) > 400) {
-      graphicSize = 'large'
+      graphicSize = 'large';
     }
 
     this.setState({graphicSize: graphicSize});
