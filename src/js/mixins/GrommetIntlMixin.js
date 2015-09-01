@@ -11,6 +11,8 @@ function localesSupported() {
 
 if (! localesSupported()) {
   require('intl');
+  require('intl/locale-data/jsonp/en-US.js');
+  require('intl/locale-data/jsonp/pt-BR.js');
   Intl.NumberFormat = IntlPolyfill.NumberFormat;
   Intl.DateTimeFormat = IntlPolyfill.DateTimeFormat;
 }
