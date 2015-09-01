@@ -23,6 +23,27 @@ var ResourceMap = React.createClass({
     }).isRequired
   },
 
+  getInitialState: function () {
+    return {canvasWidth: 100, canvasHeight: 100};
+  },
+
+  componentDidMount: function () {
+    window.addEventListener('resize', this._onResize);
+    this._layout();
+    clearTimeout(this._drawTimer);
+    this._drawTimer = setTimeout(this._draw, 50);
+  },
+
+  componentDidUpdate: function () {
+    this._layout();
+    clearTimeout(this._drawTimer);
+    this._drawTimer = setTimeout(this._draw, 50);
+  },
+
+  componentWillUnmount: function () {
+    window.removeEventListener('resize', this._onResize);
+  },
+
   _coords: function (id, canvasRect) {
     var element = document.getElementById(id);
     var rect = element.getBoundingClientRect();
@@ -91,27 +112,6 @@ var ResourceMap = React.createClass({
 
   _onLeave: function () {
     this.setState({activeId: null});
-  },
-
-  getInitialState: function () {
-    return {canvasWidth: 100, canvasHeight: 100};
-  },
-
-  componentDidMount: function () {
-    window.addEventListener('resize', this._onResize);
-    this._layout();
-    clearTimeout(this._drawTimer);
-    this._drawTimer = setTimeout(this._draw, 50);
-  },
-
-  componentDidUpdate: function () {
-    this._layout();
-    clearTimeout(this._drawTimer);
-    this._drawTimer = setTimeout(this._draw, 50);
-  },
-
-  componentWillUnmount: function () {
-    window.removeEventListener('resize', this._onResize);
   },
 
   _renderItems: function (items) {

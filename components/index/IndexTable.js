@@ -10,8 +10,6 @@ var CLASS_ROOT = 'index-table';
 
 var IndexTable = React.createClass({
 
-  mixins: [IntlMixin],
-
   propTypes: {
     options: React.PropTypes.shape({
       attributes: React.PropTypes.arrayOf(React.PropTypes.shape({
@@ -37,6 +35,16 @@ var IndexTable = React.createClass({
     onSelect: React.PropTypes.func
   },
 
+  mixins: [IntlMixin],
+
+  getInitialState: function () {
+    return {attributes: this._simplifyAttributes(this.props.options.attributes)};
+  },
+
+  componentWillReceiveProps: function (newProps) {
+    this.setState({attributes: this._simplifyAttributes(newProps.options.attributes)});
+  },
+
   _onClickRow: function (uri) {
     this.props.onSelect(uri);
   },
@@ -49,14 +57,6 @@ var IndexTable = React.createClass({
       .sort(function (a, b) {
         return a.index - b.index;
       });
-  },
-
-  getInitialState: function () {
-    return {attributes: this._simplifyAttributes(this.props.options.attributes)};
-  },
-
-  componentWillReceiveProps: function (newProps) {
-    this.setState({attributes: this._simplifyAttributes(newProps.options.attributes)});
   },
 
   render: function () {

@@ -8,12 +8,12 @@ var IntlMixin = require('../../mixins/GrommetIntlMixin');
 
 var Alert = React.createClass({
 
-  mixins: [IntlMixin],
-
   propTypes: {
     associatedResource: React.PropTypes.node,
     resource: React.PropTypes.object.isRequired
   },
+
+  mixins: [IntlMixin],
 
   render: function () {
     var resource = this.props.resource;

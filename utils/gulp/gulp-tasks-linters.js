@@ -1,5 +1,4 @@
 var path = require('path');
-var react = require('gulp-react');
 var eslint = require('gulp-eslint');
 var merge = require('lodash/object/merge');
 var exec = require('child_process');
@@ -44,7 +43,6 @@ module.exports = function(gulp, options) {
       configFile: esLintPath
     }, customEslint);
     return gulp.src(options.jsAssets || [])
-      .pipe(react())
       .pipe(eslint(eslintRules))
       .pipe(eslint.formatEach())
       .pipe(eslint.failOnError()).on('error', failLintBuild);

@@ -28,6 +28,37 @@ var Article = React.createClass({
     };
   },
 
+  getInitialState: function () {
+    return {scrollTop: 0};
+  },
+
+  componentDidMount: function () {
+    if (this.props.scrollStep) {
+      this._markInactive();
+      var articleElement = this.refs.component.getDOMNode();
+      this._scrollParent = DOM.findScrollParents(articleElement)[0];
+      document.addEventListener('wheel', this._onWheel);
+      this._scrollParent.addEventListener('scroll', this._onScroll);
+      this.startListeningToKeyboard({
+        up: this._onUp,
+        down: this._onDown
+      });
+    }
+  },
+
+  componentWillUnmount: function () {
+    if (this.props.scrollStep) {
+      document.removeEventListener('wheel', this._onWheel);
+      clearInterval(this._scrollToTimer);
+      this._scrollParent.removeEventListener('scroll', this._onScroll);
+      clearTimeout(this._scrollTimer);
+      this.stopListeningToKeyboard({
+        up: this._onUp,
+        down: this._onDown
+      });
+    }
+  },
+
   _markInactive: function () {
     var articleElement = this.refs.component.getDOMNode();
     var sections = articleElement.querySelectorAll('.section.box--full');
@@ -93,37 +124,6 @@ var Article = React.createClass({
         }
         break;
       }
-    }
-  },
-
-  getInitialState: function () {
-    return {scrollTop: 0};
-  },
-
-  componentDidMount: function () {
-    if (this.props.scrollStep) {
-      this._markInactive();
-      var articleElement = this.refs.component.getDOMNode();
-      this._scrollParent = DOM.findScrollParents(articleElement)[0];
-      document.addEventListener('wheel', this._onWheel);
-      this._scrollParent.addEventListener('scroll', this._onScroll);
-      this.startListeningToKeyboard({
-        up: this._onUp,
-        down: this._onDown
-      });
-    }
-  },
-
-  componentWillUnmount: function () {
-    if (this.props.scrollStep) {
-      document.removeEventListener('wheel', this._onWheel);
-      clearInterval(this._scrollToTimer);
-      this._scrollParent.removeEventListener('scroll', this._onScroll);
-      clearTimeout(this._scrollTimer);
-      this.stopListeningToKeyboard({
-        up: this._onUp,
-        down: this._onDown
-      });
     }
   },
 

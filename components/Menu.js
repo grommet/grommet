@@ -33,6 +33,10 @@ var MenuDrop = React.createClass({
 
   mixins: [KeyboardAccelerators],
 
+  getChildContext: function () {
+    return { router: this.props.router };
+  },
+
   componentDidMount: function () {
     this._keyboardHandlers = {
       up: this._onUpKeyPress,
@@ -116,10 +120,6 @@ var MenuDrop = React.createClass({
     return true;
   },
 
-  getChildContext: function () {
-    return { router: this.props.router };
-  },
-
   render: function () {
     var classes = [CLASS_ROOT + "__drop"];
     var other = pick(this.props, keys(Box.propTypes));
@@ -176,6 +176,8 @@ var Menu = React.createClass({
     router: React.PropTypes.func
   },
 
+  mixins: [KeyboardAccelerators],
+
   getDefaultProps: function () {
     return {
       align: 'stretch',
@@ -186,51 +188,6 @@ var Menu = React.createClass({
       small: false,
       responsive: true
     };
-  },
-
-  mixins: [KeyboardAccelerators],
-
-  _onOpen: function (event) {
-    event.preventDefault();
-    this.setState({state: 'expanded'});
-  },
-
-  _onClose: function () {
-    this.setState({state: 'collapsed'});
-    if (document.activeElement === this.getDOMNode()) {
-      this.setState({state: 'focused'});
-    } else {
-      this.getDOMNode().focus();
-    }
-  },
-
-  _onFocusControl: function () {
-    this.setState({state: 'focused'});
-  },
-
-  _onBlurControl: function () {
-    if (this.state.state === 'focused') {
-      this.setState({state: 'collapsed'});
-    }
-  },
-
-  _onSink: function (event) {
-    event.stopPropagation();
-    // need to go native to prevent closing via document
-    event.nativeEvent.stopImmediatePropagation();
-  },
-
-  _onResponsive: function (small) {
-    // deactivate if we change resolutions
-    var newState = this.state.state;
-    if (this.state.state === 'expanded') {
-      newState = 'focused';
-    }
-    if (small) {
-      this.setState({inline: false, active: newState});
-    } else {
-      this.setState({inline: this.props.inline, active: newState});
-    }
   },
 
   getInitialState: function () {
@@ -334,6 +291,49 @@ var Menu = React.createClass({
     }
   },
 
+  _onOpen: function (event) {
+    event.preventDefault();
+    this.setState({state: 'expanded'});
+  },
+
+  _onClose: function () {
+    this.setState({state: 'collapsed'});
+    if (document.activeElement === this.getDOMNode()) {
+      this.setState({state: 'focused'});
+    } else {
+      this.getDOMNode().focus();
+    }
+  },
+
+  _onFocusControl: function () {
+    this.setState({state: 'focused'});
+  },
+
+  _onBlurControl: function () {
+    if (this.state.state === 'focused') {
+      this.setState({state: 'collapsed'});
+    }
+  },
+
+  _onSink: function (event) {
+    event.stopPropagation();
+    // need to go native to prevent closing via document
+    event.nativeEvent.stopImmediatePropagation();
+  },
+
+  _onResponsive: function (small) {
+    // deactivate if we change resolutions
+    var newState = this.state.state;
+    if (this.state.state === 'expanded') {
+      newState = 'focused';
+    }
+    if (small) {
+      this.setState({inline: false, active: newState});
+    } else {
+      this.setState({inline: this.props.inline, active: newState});
+    }
+  },
+
   _renderControl: function () {
     var result = null;
     var icon = null;
@@ -355,7 +355,7 @@ var Menu = React.createClass({
           <div className={controlClassName + "-icon"}>
             {icon}
           </div>
-          <span tabindex="-1" className={controlClassName + "-label"}>{this.props.label}</span>
+          <span tabIndex="-1" className={controlClassName + "-label"}>{this.props.label}</span>
           <DropCaretIcon className={controlClassName + "-drop-icon"} />
         </div>
       );

@@ -22,6 +22,38 @@ var GrommetDocument = React.createClass({
     };
   },
 
+  getInitialState: function () {
+    return {scrollTop: 0};
+  },
+
+  componentDidMount: function () {
+    console.warn('Warning: Grommet Document is deprecated. It has been superceded by Grommet Article.');
+    if (this.props.full) {
+      this._markInactive();
+      var doc = this.refs.document.getDOMNode();
+      this._scrollParent = DOM.findScrollParents(doc)[0];
+      document.addEventListener('wheel', this._onWheel);
+      this._scrollParent.addEventListener('scroll', this._onScroll);
+      this.startListeningToKeyboard({
+        up: this._onUp,
+        down: this._onDown
+      });
+    }
+  },
+
+  componentWillUnmount: function () {
+    if (this.props.full) {
+      document.removeEventListener('wheel', this._onWheel);
+      clearInterval(this._scrollToTimer);
+      this._scrollParent.removeEventListener('scroll', this._onScroll);
+      clearTimeout(this._scrollTimer);
+      this.stopListeningToKeyboard({
+        up: this._onUp,
+        down: this._onDown
+      });
+    }
+  },
+
   _easeInOutQuad: function (t) {
     return (t < .5 ?  2 * t * t : -1 + (4 - 2 * t) * t);
   },
@@ -111,38 +143,6 @@ var GrommetDocument = React.createClass({
         this._scrollTo(rect.top);
         break;
       }
-    }
-  },
-
-  getInitialState: function () {
-    return {scrollTop: 0};
-  },
-
-  componentDidMount: function () {
-    console.warn('Warning: Grommet Document is deprecated. It has been superceded by Grommet Article.');
-    if (this.props.full) {
-      this._markInactive();
-      var doc = this.refs.document.getDOMNode();
-      this._scrollParent = DOM.findScrollParents(doc)[0];
-      document.addEventListener('wheel', this._onWheel);
-      this._scrollParent.addEventListener('scroll', this._onScroll);
-      this.startListeningToKeyboard({
-        up: this._onUp,
-        down: this._onDown
-      });
-    }
-  },
-
-  componentWillUnmount: function () {
-    if (this.props.full) {
-      document.removeEventListener('wheel', this._onWheel);
-      clearInterval(this._scrollToTimer);
-      this._scrollParent.removeEventListener('scroll', this._onScroll);
-      clearTimeout(this._scrollTimer);
-      this.stopListeningToKeyboard({
-        up: this._onUp,
-        down: this._onDown
-      });
     }
   },
 

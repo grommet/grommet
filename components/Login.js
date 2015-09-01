@@ -8,18 +8,6 @@ var Login = React.createClass({
     background: React.PropTypes.string
   },
 
-  _onResize: function() {
-    this.adjustBackground();
-  },
-
-  adjustBackground: function() {
-    // make sure the background always fills the screen, preserve aspect ratio
-    var windowRatio = window.innerWidth / window.innerHeight;
-    var image = this.refs.background.getDOMNode();
-    var imageRatio = image.scrollWidth / image.scrollHeight;
-    this.setState({orientation: (windowRatio < imageRatio) ? 'portrait' : 'landscape'});
-  },
-
   getInitialState: function() {
     return {
       orientation: null
@@ -29,7 +17,7 @@ var Login = React.createClass({
   componentDidMount: function() {
     if (this.props.background) {
       window.addEventListener('resize', this._onResize);
-      setTimeout(this.adjustBackground, 300);
+      setTimeout(this._adjustBackground, 300);
     }
   },
 
@@ -37,6 +25,18 @@ var Login = React.createClass({
     if (this.props.background) {
       window.removeEventListener('resize', this._onResize);
     }
+  },
+
+  _onResize: function() {
+    this._adjustBackground();
+  },
+
+  _adjustBackground: function() {
+    // make sure the background always fills the screen, preserve aspect ratio
+    var windowRatio = window.innerWidth / window.innerHeight;
+    var image = this.refs.background.getDOMNode();
+    var imageRatio = image.scrollWidth / image.scrollHeight;
+    this.setState({orientation: (windowRatio < imageRatio) ? 'portrait' : 'landscape'});
   },
 
   render: function() {

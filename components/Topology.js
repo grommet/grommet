@@ -92,6 +92,14 @@ var Parts = React.createClass({
     };
   },
 
+  componentDidMount: function () {
+    this._makeUniform();
+  },
+
+  componentDidUpdate: function () {
+    this._makeUniform();
+  },
+
   _makeUniform: function () {
     if (this.props.uniform) {
       let parts = this.refs.component.getDOMNode().children;
@@ -117,14 +125,6 @@ var Parts = React.createClass({
     }
   },
 
-  componentDidMount: function () {
-    this._makeUniform();
-  },
-
-  componentDidUpdate: function () {
-    this._makeUniform();
-  },
-
   render: function () {
     var classes = [CLASS_ROOT + "__parts"];
     classes.push(CLASS_ROOT + "__parts--direction-" + this.props.direction);
@@ -144,12 +144,6 @@ var Parts = React.createClass({
 
 var Topology = React.createClass({
 
-  statics: {
-    Parts: Parts,
-    Part: Part,
-    Label: Label
-  },
-
   propTypes: {
     links: React.PropTypes.arrayOf(
       React.PropTypes.shape({
@@ -160,11 +154,52 @@ var Topology = React.createClass({
     linkOffset: React.PropTypes.number
   },
 
+  statics: {
+    Parts: Parts,
+    Part: Part,
+    Label: Label
+  },
+
   getDefaultProps: function () {
     return {
       links: [],
       linkOffset: 18
     };
+  },
+
+  getInitialState: function () {
+    return {
+      canvasWidth: 100,
+      canvasHeight: 100,
+      highlighting: false,
+      highlights: {}
+    };
+  },
+
+  componentDidMount: function () {
+    var topology = React.findDOMNode(this.refs.topology);
+    topology.addEventListener('mousemove', this._onMouseMove);
+    topology.addEventListener('mouseleave', this._onMouseLeave);
+    window.addEventListener('resize', this._onResize);
+    this._layout();
+    this._cacheLinkIds(this.props.links);
+  },
+
+  componentWillReceiveProps: function (newProps) {
+    this._cacheLinkIds(newProps.links);
+  },
+
+  componentDidUpdate: function () {
+    this._layout();
+    this._draw();
+  },
+
+  componentWillUnmount: function () {
+    var topology = React.findDOMNode(this.refs.topology);
+    topology.removeEventListener('mousemove', this._onMouseMove);
+    topology.removeEventListener('mouseleave', this._onMouseLeave);
+    clearTimeout(this._resizeTimer);
+    window.removeEventListener('resize', this._onResize);
   },
 
   _coords: function (id, canvasRect) {
@@ -302,41 +337,6 @@ var Topology = React.createClass({
       });
     });
     this.setState({linkIds: linkIds});
-  },
-
-  getInitialState: function () {
-    return {
-      canvasWidth: 100,
-      canvasHeight: 100,
-      highlighting: false,
-      highlights: {}
-    };
-  },
-
-  componentDidMount: function () {
-    var topology = React.findDOMNode(this.refs.topology);
-    topology.addEventListener('mousemove', this._onMouseMove);
-    topology.addEventListener('mouseleave', this._onMouseLeave);
-    window.addEventListener('resize', this._onResize);
-    this._layout();
-    this._cacheLinkIds(this.props.links);
-  },
-
-  componentWillReceiveProps: function (newProps) {
-    this._cacheLinkIds(newProps.links);
-  },
-
-  componentDidUpdate: function () {
-    this._layout();
-    this._draw();
-  },
-
-  componentWillUnmount: function () {
-    var topology = React.findDOMNode(this.refs.topology);
-    topology.removeEventListener('mousemove', this._onMouseMove);
-    topology.removeEventListener('mouseleave', this._onMouseLeave);
-    clearTimeout(this._resizeTimer);
-    window.removeEventListener('resize', this._onResize);
   },
 
   render: function () {

@@ -39,12 +39,6 @@ var List = React.createClass({
     return {small: false};
   },
 
-  _onClickItem: function (item) {
-    if (this.props.onSelect) {
-      this.props.onSelect(item);
-    }
-  },
-
   componentDidMount: function () {
     if (this.props.onMore) {
       this.startListeningForScroll(this.refs.more.getDOMNode(), this.props.onMore);
@@ -61,6 +55,12 @@ var List = React.createClass({
   componentWillUnmount: function () {
     if (this.props.onMore) {
       this.stopListeningForScroll();
+    }
+  },
+
+  _onClickItem: function (item) {
+    if (this.props.onSelect) {
+      this.props.onSelect(item);
     }
   },
 

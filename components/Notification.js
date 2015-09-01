@@ -37,8 +37,10 @@ var GrommetNotification = React.createClass({
 
     var status;
     if (this.props.status) {
-      status = <StatusIcon className={CLASS_ROOT + "__status"}
-        value={this.props.status} small={true} />;
+      status = (
+        <StatusIcon className={CLASS_ROOT + "__status"}
+        value={this.props.status} small={true} />
+      );
     }
 
     var state;

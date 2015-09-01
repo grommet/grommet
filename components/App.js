@@ -8,21 +8,21 @@ var Locale = require('../utils/Locale');
 
 var App = React.createClass({
 
-  mixins: [IntlMixin],
-
   propTypes: {
     centered: React.PropTypes.bool
+  },
+
+  mixins: [IntlMixin],
+
+  getDefaultProps: function () {
+    return {
+      centered: true
+    };
   },
 
   getInitialState: function () {
     return {
       lang: 'en-US'
-    };
-  },
-
-  getDefaultProps: function () {
-    return {
-      centered: true
     };
   },
 

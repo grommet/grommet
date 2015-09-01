@@ -20,7 +20,6 @@
   "bin": {
     "grommet": "./bin/grommet.js"
   },
-  "engineStrict": true,
   "engine-strict": true,
   "engines": {
     "node": ">= 0.10",
@@ -77,7 +76,6 @@
     "gulp-mocha": "^2.0.1",
     "gulp-live-server": "^0.0.23",
     "gulp-preprocess": "^1.2.0",
-    "gulp-react": "^3.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-rsync": "0.0.5",
     "gulp-sass": "^2.0.4",
