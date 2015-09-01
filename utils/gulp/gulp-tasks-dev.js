@@ -105,16 +105,18 @@ module.exports = function(gulp, options, webpackConfig, dist) {
       }
     });
 
-    var host = options.devServerHost || 'localhost';
+    // Always open on all ports unless overridden
+    var host = options.devServerHost || '0.0.0.0';
 
     server.listen(options.devServerPort || 8080, host, function(err) {
       if (err) {
         console.error('[webpack-dev-server] failed to start:', err);
       } else {
+        var openHost = (host === '0.0.0.0') ? 'localhost' : host;
         console.log('[webpack-dev-server] started: opening the app in your default browser...');
         gulp.src(path.join(dist, 'index.html'))
         .pipe(open({
-          uri: 'http://' + host + ':' + options.devServerPort + '/webpack-dev-server/'
+          uri: 'http://' + openHost + ':' + options.devServerPort + '/webpack-dev-server/'
         }));
       }
     });
