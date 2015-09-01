@@ -7,7 +7,6 @@ var FilterIcon = require('../icons/Filter');
 var CheckBox = require('../CheckBox');
 var IndexQuery = require('../../utils/IndexQuery');
 //var StatusIcon = require('../icons/Status');
-//var Timestamp = require('react-time');
 var IntlMixin = require('../../mixins/GrommetIntlMixin');
 //var ReactIntl = require('react-intl');
 //var FormattedMessage = ReactIntl.FormattedMessage;

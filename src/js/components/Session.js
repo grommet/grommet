@@ -5,7 +5,6 @@ var SessionStore = require('../stores/SessionStore');
 //var SessionActions = require('../actions/SessionActions');
 var KeyboardAccelerators = require('../mixins/KeyboardAccelerators');
 var Gravatar = require('react-gravatar');
-var Timestamp = require('react-time');
 var IntlMixin = require('../mixins/GrommetIntlMixin');
 //var Link = require('../components/Link');
 
@@ -55,7 +54,7 @@ var Session = React.createClass({
             <div className={'session__name delta'}>{this.state.name}</div>
             <div className={'session__duration'}>
               {'Logged in '}
-              <Timestamp value={this.state.created} relative />
+              {this.getGrommetFormattedDate(this.state.created)}
             </div>
           </div>
           <ul className={'session__actions list-bare'}>
