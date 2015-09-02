@@ -9,6 +9,7 @@ var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var path = require('path');
 var httpProxy = require('http-proxy');
+var prerender = require('prerender-node');
 
 var proxy = httpProxy.createProxyServer({
   target: 'ws://localhost:8010',
@@ -30,6 +31,8 @@ var app = express();
 app.use(compression());
 
 app.use(cookieParser());
+
+app.use(require('prerender-node').set('prerenderToken', '4u2mrWTUsWw3ritba16x'));
 
 if (!process.env.SILENT_MODE) {
   app.use(morgan('tiny'));
