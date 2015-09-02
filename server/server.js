@@ -40,7 +40,7 @@ if (!process.env.SILENT_MODE) {
 
 router.get('/', function (req, res) {
   var docpath = path.join('/docs/', theme.picker(req.ip));
-  res.redirect(docpath);
+  res.redirect(301, docpath);
 });
 
 app.use('/', function(req, res, next) {
@@ -57,7 +57,7 @@ app.use('/', function(req, res, next) {
 });
 
 app.use('/tour/', function (req, res) {
-  res.redirect('/medium-app');
+  res.redirect(301, '/medium-app');
 });
 
 // Redirect referneces to the original HPE sticker sheet
