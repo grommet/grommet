@@ -24,8 +24,7 @@ var SkipLinks = React.createClass({
 
   componentDidUpdate: function () {
     if (this.state.routeChanged) {
-      this._updateAnchors();
-      this.setState({routeChanged: false});
+      this.setState({routeChanged: false}, this._updateAnchors);
     }
   },
 
@@ -42,20 +41,18 @@ var SkipLinks = React.createClass({
     this.setState({anchors: anchors});
   },
 
-  _onFocus: function (event) {
+  _onFocus: function () {
     if (!this.state.showLayer) {
       this.setState({showLayer: true});
     }
   },
 
-  _onBlur: function (event) {
-    setTimeout(function () {
-      var skipLinksLayer = this.refs.skipLinksLayer.getDOMNode();
-      var activeElement = document.activeElement;
-      if (!DOM.isDescendant(skipLinksLayer, activeElement)) {
-        this.setState({showLayer: false});
-      }
-    }.bind(this));
+  _onBlur: function () {
+    var skipLinksLayer = this.refs.skipLinksLayer.getDOMNode();
+    var activeElement = document.activeElement;
+    if (!DOM.isDescendant(skipLinksLayer, activeElement)) {
+      this.setState({showLayer: false});
+    }
   },
 
   _onClick: function (destId) {
