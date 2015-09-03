@@ -28,10 +28,6 @@ var Article = React.createClass({
     };
   },
 
-  getInitialState: function () {
-    return {scrollTop: 0};
-  },
-
   componentDidMount: function () {
     if (this.props.scrollStep) {
       this._markInactive();

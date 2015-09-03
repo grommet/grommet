@@ -1,71 +1,64 @@
-<!DOCTYPE html>
-<html>
-<body>
-  <article>
-    <header>
-      <h1>Modular Grommet</h1>
-    </header>
-    <section>
-      <p>
-       	This page will provide you with recommendations for creating a modular application using Grommet.
-      </p>
-      <p>
-      	In this exercise you will use the NPM version of Grommet. The <a data-to="develop_getstarted">Get Started</a> page provides instructions on installing Grommet with NPM.
-      </p>
-    </section>
-    <section>
-    	<h2>Application Structure</h2>
-    	<p>
-      	As your application grows, you will likely feel the need to divide your code into smaller modules. Dividing your code into modules is a common strategy for large-scale projects as it helps with parallel development and debugging. As a result, we recommend you structure your Grommet application as follows:
-      </p>
-    	<pre><code class="bash">
-        {"/sample-app\n  /src\n    /js\n      /actions\n      /constants\n      /components\n      /stores\n      index.js\n    /scss\n    index.html\n  gulpfile.js\n  package.json\n"}
-      </code></pre>
-      <p>
+<header>
+  <h1>Modular Grommet</h1>
+</header>
+<section>
+  <p>
+   	This page will provide you with recommendations for creating a modular application using Grommet.
+  </p>
+  <p>
+  	In this exercise you will use the NPM version of Grommet. The <a data-to="develop_getstarted">Get Started</a> page provides instructions on installing Grommet with NPM.
+  </p>
+</section>
+<section>
+	<h2>Application Structure</h2>
+	<p>
+  	As your application grows, you will likely feel the need to divide your code into smaller modules. Dividing your code into modules is a common strategy for large-scale projects as it helps with parallel development and debugging. As a result, we recommend you structure your Grommet application as follows:
+  </p>
+	<pre><code class="bash">
+    {"/sample-app\n  /src\n    /js\n      /actions\n      /constants\n      /components\n      /stores\n      index.js\n    /scss\n    index.html\n  gulpfile.js\n  package.json\n"}
+  </code></pre>
+  <p>
+    <ul>
+      <li><b>package.json</b>: required project descriptor for NPM. Used to describe project information and dependencies.</li>
+      <li><b>gulpfile.js</b>: describes the tasks available for the application that can be executed by Gulp.</li>
+      <li><b>src/js/index.js</b>: main project source file that will connect CommonJS modules containing the application features.</li>
+      <li><b>src/js/actions</b>: possible Flux actions that can be executed in your app.</li>
+      <li><b>src/js/constants</b>: all constants of the application.</li>
+      <li><b>src/js/components</b>: all the ReactJS components used in your application.</li>
+      <li><b>src/js/stores</b>: possible Flux stores that will handle back-end communication.</li>
+      <li><b>src/scss</b>: Sass folder that contains Grommet stylesheets.</li>
+      <li><b>src/index.html</b>: main html file to load the application single-page script.</li>
+    </ul>
+  </p>
+  <p>
+  	If you use the <code>grommet</code> command, it will generate your project following the recommended structure.  Grommet also includes a set of Gulp tasks that are intended to enable a highly productive developer experience and creation of production-ready apps.
+  </p>
+</section>
+<section>
+	<h2>Predefined Gulp Tasks</h2>
+	<p>
+		These Gulp tasks are available for you to run in the root folder of your application.
+		<ul>
+			<li><b>gulp dev</b>: starts-up a dev server with <a href="https://github.com/webpack/docs/wiki/hot-module-replacement-with-webpack" target="_blank">hot module replacement</a> enabled.</li>
+			<li><b>gulp dist</b>: generates a minified version of the project and places it under the <code>dist</code> folder. The content will be ready to deploy in an application server of your choice.</li>
+			<li><b>gulp jslint</b>: runs the <a href="http://www.jslint.com/" target="_blank">JavaScript linter</a> for all the files under <code>src/js</code>.</li>
+			<li><b>gulp scsslint</b>: runs the Sass linter for all the files under <code>src/scss</code>.
         <ul>
-          <li><b>package.json</b>: required project descriptor for NPM. Used to describe project information and dependencies.</li>
-          <li><b>gulpfile.js</b>: describes the tasks available for the application that can be executed by Gulp.</li>
-          <li><b>src/js/index.js</b>: main project source file that will connect CommonJS modules containing the application features.</li>
-          <li><b>src/js/actions</b>: possible Flux actions that can be executed in your app.</li>
-          <li><b>src/js/constants</b>: all constants of the application.</li>
-          <li><b>src/js/components</b>: all the ReactJS components used in your application.</li>
-          <li><b>src/js/stores</b>: possible Flux stores that will handle back-end communication.</li>
-          <li><b>src/scss</b>: Sass folder that contains Grommet stylesheets.</li>
-          <li><b>src/index.html</b>: main html file to load the application single-page script.</li>
+          <li>This task is disabled by default because it requires <a href="http://rubyinstaller.org/" target="_blank">Ruby</a> and <a href="https://github.com/brigade/scss-lint" target="_blank">scss-lint</a> to be installed.  Install these dependencies and then add the <code>scsslint: true</code> option to your gulpfile.js to enable Sass linting.</li>
         </ul>
-      </p>
-      <p>
-      	If you use the <code>grommet</code> command, it will generate your project following the recommended structure.  Grommet also includes a set of Gulp tasks that are intended to enable a highly productive developer experience and creation of production-ready apps.
-      </p>
-    </section>
-    <section>
-    	<h2>Predefined Gulp Tasks</h2>
-    	<p>
-    		These Gulp tasks are available for you to run in the root folder of your application.
-    		<ul>
-    			<li><b>gulp dev</b>: starts-up a dev server with <a href="https://github.com/webpack/docs/wiki/hot-module-replacement-with-webpack" target="_blank">hot module replacement</a> enabled.</li>
-    			<li><b>gulp dist</b>: generates a minified version of the project and places it under the <code>dist</code> folder. The content will be ready to deploy in an application server of your choice.</li>
-    			<li><b>gulp jslint</b>: runs the <a href="http://www.jslint.com/" target="_blank">JavaScript linter</a> for all the files under <code>src/js</code>.</li>
-    			<li><b>gulp scsslint</b>: runs the Sass linter for all the files under <code>src/scss</code>.
-            <ul>
-              <li>This task is disabled by default because it requires <a href="http://rubyinstaller.org/" target="_blank">Ruby</a> and <a href="https://github.com/brigade/scss-lint" target="_blank">scss-lint</a> to be installed.  Install these dependencies and then add the <code>scsslint: true</code> option to your gulpfile.js to enable Sass linting.</li>
-            </ul>
-          </li>
-    			<li><b>gulp sync</b>: synchronizes the content of the dist folder with the remote server.
-            <ul>
-              <li>
-                Only executed if <code>sync</code> option is provided in the gulpfile.js. The sync object schema follows:
-    			      <p>
-        				<pre><code class="json">
-        				   {"sync: {\n  hostname: 'fullly.qualified.domain.name',\n  username: 'username',\n  remoteDestination: '/absolute/path/on/remote/host'\n}"}
-        				</code></pre>
-        			</p>
-        			</li>
-            </ul>
-          </li>
-    		</ul>
-    	</p>
-    </section>
-  </article>
-</body>
-</html>
+      </li>
+			<li><b>gulp sync</b>: synchronizes the content of the dist folder with the remote server.
+        <ul>
+          <li>
+            Only executed if <code>sync</code> option is provided in the gulpfile.js. The sync object schema follows:
+			      <p>
+    				<pre><code class="json">
+    				   {"sync: {\n  hostname: 'fullly.qualified.domain.name',\n  username: 'username',\n  remoteDestination: '/absolute/path/on/remote/host'\n}"}
+    				</code></pre>
+    			</p>
+    			</li>
+        </ul>
+      </li>
+		</ul>
+	</p>
+</section>

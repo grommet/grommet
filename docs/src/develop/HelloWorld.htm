@@ -1,44 +1,37 @@
-<!DOCTYPE html>
-<html>
-<body>
-  <article>
-    <header>
-      <h1>Hello World</h1>
-    </header>
-    <section>
-      <p>
-        The easiest way to learn a framework is by writing a simple application.  In this section you will access the Grommet source from our server and you will be able to experiment with Grommet using just an HTML file and your browser.  You'll use hosted JavaScript files in this exercise which is not meant to be used in production.
-      </p>
-      <p>To get started, create a new HTML file on your computer and copy and paste the following code:</p>
-      <pre><div class="docs__code-heading"><a href="https://gist.githubusercontent.com/alansouzati/b5f370835a80b541ebe2/raw/ee16b4035118a6d6e7b1804c9c8ba1b4b761309b/grommet_hello_world.html" target="_blank">raw</a></div><code class="html">
+<header>
+  <h1>Hello World</h1>
+</header>
+<section>
+  <p>
+    The easiest way to learn a framework is by writing a simple application.  In this section you will access the Grommet source from our server and you will be able to experiment with Grommet using just an HTML file and your browser.  You'll use hosted JavaScript files in this exercise which is not meant to be used in production.
+  </p>
+  <p>To get started, create a new HTML file on your computer and copy and paste the following code:</p>
+  <pre><div class="docs__code-heading"><a href="https://gist.githubusercontent.com/alansouzati/b5f370835a80b541ebe2/raw/ee16b4035118a6d6e7b1804c9c8ba1b4b761309b/grommet_hello_world.html" target="_blank">raw</a></div><code class="html">
 &lt;!DOCTYPE html&gt;<br/>&lt;html&gt;<br/>&lt;head&gt;<br/>  &lt;meta charset=&quot;UTF-8&quot;&gt;<br/>  &lt;title&gt;Hello World!&lt;/title&gt;<br/>  &lt;link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400italic,400,700' rel='stylesheet' type='text/css'&gt;<br/>  &lt;link href='http://grommet.io/assets/latest/css/grommet.min.css' rel='stylesheet' type='text/css'&gt;<br/>  &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/react/0.13.1/react.js&quot;&gt;&lt;/script&gt;<br/>  &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/react/0.13.1/JSXTransformer.js&quot;&gt;&lt;/script&gt;<br/>  &lt;script src=&quot;http://grommet.io/assets/latest/grommet.min.js&quot;&gt;&lt;/script&gt;<br/>&lt;/head&gt;<br/>&lt;body&gt;<br/>  &lt;div id=&quot;content&quot;&gt;&lt;/div&gt;<br/>  &lt;script type=&quot;text/jsx&quot;&gt;<br/><br/>    var HelloWorldDashboard = React.createClass({"{"}<br/>      render: function () {"{"}<br/>        return (<br/>          &lt;Grommet.Tiles&gt;<br/>            &lt;Grommet.Tile align=&quot;start&quot;&gt;<br/>              &lt;p&gt;Hello from a Grommet page!&lt;/p&gt;<br/>              &lt;p&gt;Now, come back to the &lt;a href=&quot;http://grommet.io/docs/documentation#understanding-grommet&quot;&gt;Hello World&lt;/a&gt; guide to continue your Grommet exploration.&lt;/p&gt;<br/>            &lt;/Grommet.Tile&gt;<br/>          &lt;/Grommet.Tiles&gt;<br/>        );<br/>      {"}"}<br/>    {"}"});<br/><br/>    var App = React.createClass({"{"}<br/>      render: function() {"{"}<br/>        return (<br/>          &lt;Grommet.App&gt;<br/>            &lt;Grommet.Header direction=&quot;row&quot; justify=&quot;between&quot; large={"{"}true{"}"} pad={"{{"}horizontal: 'medium'{"}}"}&gt;<br/>              &lt;Grommet.Title&gt;Hello World&lt;/Grommet.Title&gt;<br/>            &lt;/Grommet.Header&gt;<br/>            &lt;Grommet.Section pad={"{{"}horizontal: 'medium'{"}}"}&gt;<br/>              &lt;HelloWorldDashboard /&gt;<br/>            &lt;/Grommet.Section&gt;<br/>          &lt;/Grommet.App&gt;<br/>        );<br/>      {"}"}<br/>    {"}"});<br/><br/>    var element = document.getElementById('content');<br/>    React.render(React.createElement(App), element);<br/>  &lt;/script&gt;<br/>&lt;/body&gt;<br/>&lt;/html&gt;
-      </code></pre>
-      <p>
-        If you open this HTML in your browser you should see the following:
-        <img src="img/sample-helloworld.png" title="Sample of Hello World dashboard"/>
-      </p>
-    </section>
-    <section>
-    	<a class="reference" id="understanding-grommet"> </a>
-      <h2>Understanding Grommet</h2>
-      <p>
-        In the example above you used 5 Grommet components: <a data-to="develop_app">App</a>, <a data-to="develop_header">Header</a>, <a data-to="develop_title">Title</a>, <a data-to="develop_section">Section</a>, and <a data-to="develop_tiles">Tiles</a>.
-        All of these are implemented using a mobile-first design approach. To test the responsiveness of your sample application, let's replace the existing Tiles by this:
-      </p>
-      <pre><div class="docs__code-heading"><a href="https://gist.githubusercontent.com/alansouzati/339b4e9b901c064605de/raw/c3fc1c9851b356130891bda866ef6357097e2a53/grommet_hello_world_extension.html" target="_blank">raw</a></div><code class="html">
+  </code></pre>
+  <p>
+    If you open this HTML in your browser you should see the following:
+    <img src="img/sample-helloworld.png" title="Sample of Hello World dashboard"/>
+  </p>
+</section>
+<section>
+	<a class="reference" id="understanding-grommet"> </a>
+  <h2>Understanding Grommet</h2>
+  <p>
+    In the example above you used 5 Grommet components: <a data-to="develop_app">App</a>, <a data-to="develop_header">Header</a>, <a data-to="develop_title">Title</a>, <a data-to="develop_section">Section</a>, and <a data-to="develop_tiles">Tiles</a>.
+    All of these are implemented using a mobile-first design approach. To test the responsiveness of your sample application, let's replace the existing Tiles by this:
+  </p>
+  <pre><div class="docs__code-heading"><a href="https://gist.githubusercontent.com/alansouzati/339b4e9b901c064605de/raw/c3fc1c9851b356130891bda866ef6357097e2a53/grommet_hello_world_extension.html" target="_blank">raw</a></div><code class="html">
 &lt;Grommet.Tiles&gt;<br/>  &lt;Grommet.Tile&gt;<br/>    &lt;Grommet.Header&gt;<br/>      &lt;h3&gt;I'm First&lt;/h3&gt;<br/>    &lt;/Grommet.Header&gt;<br/>    &lt;p&gt;Do I win a prize?&lt;/p&gt;<br/>  &lt;/Grommet.Tile&gt;<br/>  &lt;Grommet.Tile&gt;<br/>    &lt;Grommet.Header&gt;<br/>      &lt;h3&gt;I'm Second&lt;/h3&gt;<br/>    &lt;/Grommet.Header&gt;<br/>    &lt;p&gt;So close.&lt;/p&gt;<br/>  &lt;/Grommet.Tile&gt;<br/>  &lt;Grommet.Tile&gt;<br/>    &lt;Grommet.Header&gt;<br/>      &lt;h3&gt;I'm Third&lt;/h3&gt;<br/>    &lt;/Grommet.Header&gt;<br/>    &lt;p&gt;I'm just glad to be here.&lt;/p&gt;<br/>  &lt;/Grommet.Tile&gt;<br/>&lt;/Grommet.Tiles&gt;
-      </code></pre>
-      <p>
-        The updated application in a mobile browser should look like this:
-        <img src="img/sample-helloworld-responsive.png" title="Sample of Hello World responsive." />
-      </p>
-    </section>
-    <section>
-      <h2>Next Steps</h2>
-      <p>
-        Now that you've already played with Grommet, we recommend that you check out the <a data-to="develop_getstarted">Get Started</a> page and learn how to install Grommet in your local environment.
-      </p>
-    </section>
-  </article>
-</body>
-</html>
+  </code></pre>
+  <p>
+    The updated application in a mobile browser should look like this:
+    <img src="img/sample-helloworld-responsive.png" title="Sample of Hello World responsive." />
+  </p>
+</section>
+<section>
+  <h2>Next Steps</h2>
+  <p>
+    Now that you've already played with Grommet, we recommend that you check out the <a data-to="develop_getstarted">Get Started</a> page and learn how to install Grommet in your local environment.
+  </p>
+</section>
