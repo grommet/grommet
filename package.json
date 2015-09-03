@@ -23,7 +23,7 @@
   "engineStrict": true,
   "engine-strict": true,
   "engines": {
-    "node": ">= 0.10",
+    "node": ">= 0.12",
     "npm": ">= 1.4"
   },
   "scripts": {
