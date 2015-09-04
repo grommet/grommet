@@ -17,14 +17,6 @@ var ServerProfileOverview = React.createClass({
     router: React.PropTypes.func.isRequired
   },
 
-  _onUpdate: function (result) {
-    this.setState({serverProfile: result});
-  },
-
-  _getData: function () {
-    this._watch = RestWatch.start(this.state.uri, null, this._onUpdate);
-  },
-
   getInitialState: function () {
     var router = this.context.router;
     return {
@@ -47,6 +39,14 @@ var ServerProfileOverview = React.createClass({
 
   componentWillUnmount: function () {
     RestWatch.stop(this._watch);
+  },
+
+  _onUpdate: function (result) {
+    this.setState({serverProfile: result});
+  },
+
+  _getData: function () {
+    this._watch = RestWatch.start(this.state.uri, null, this._onUpdate);
   },
 
   render: function () {

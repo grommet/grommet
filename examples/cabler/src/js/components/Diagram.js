@@ -19,20 +19,6 @@ var Diagram = React.createClass({
     data: React.PropTypes.object
   },
 
-  _onHome: function (event) {
-    event.preventDefault();
-    Actions.clearConfiguration();
-  },
-
-  _onToggleCables: function (event) {
-    event.preventDefault();
-    this.setState({showCables: ! this.state.showCables});
-  },
-
-  _onResponsive: function (responsive) {
-    this.setState({responsive: responsive});
-  },
-
   getInitialState: function () {
     return {showCables: false};
   },
@@ -46,6 +32,20 @@ var Diagram = React.createClass({
         // TODO:
       }
     }
+  },
+
+  _onHome: function (event) {
+    event.preventDefault();
+    Actions.clearConfiguration();
+  },
+
+  _onToggleCables: function (event) {
+    event.preventDefault();
+    this.setState({showCables: ! this.state.showCables});
+  },
+
+  _onResponsive: function (responsive) {
+    this.setState({responsive: responsive});
   },
 
   _renderTopology: function () {

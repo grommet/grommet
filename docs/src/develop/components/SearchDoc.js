@@ -6,12 +6,12 @@ var Search = require('grommet/components/Search');
 
 var SearchDoc = React.createClass({
 
-  _onChange: function (value) {
-    this.setState({value: value});
-  },
-
   getInitialState: function () {
     return {value: "ite"};
+  },
+
+  _onChange: function (value) {
+    this.setState({value: value});
   },
 
   render: function() {

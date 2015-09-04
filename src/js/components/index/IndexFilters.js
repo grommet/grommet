@@ -7,7 +7,6 @@ var FilterIcon = require('../icons/Filter');
 var CheckBox = require('../CheckBox');
 var IndexQuery = require('../../utils/IndexQuery');
 //var StatusIcon = require('../icons/Status');
-//var Timestamp = require('react-time');
 var IntlMixin = require('../../mixins/GrommetIntlMixin');
 //var ReactIntl = require('react-intl');
 //var FormattedMessage = ReactIntl.FormattedMessage;
@@ -15,8 +14,6 @@ var IntlMixin = require('../../mixins/GrommetIntlMixin');
 var CLASS_ROOT = "index-filters";
 
 var IndexFilters = React.createClass({
-
-  mixins: [IntlMixin],
 
   propTypes: {
     options: React.PropTypes.shape({
@@ -31,6 +28,16 @@ var IndexFilters = React.createClass({
       })
     }).isRequired,
     onQuery: React.PropTypes.func
+  },
+
+  mixins: [IntlMixin],
+
+  getInitialState: function () {
+    return {data: this._buildState(this.props.options)};
+  },
+
+  componentWillReceiveProps: function (newProps) {
+    this.setState({data: this._buildState(newProps.options)});
   },
 
   _notify: function () {
@@ -91,14 +98,6 @@ var IndexFilters = React.createClass({
         data[attribute.attribute] = values;
       });
     return data;
-  },
-
-  getInitialState: function () {
-    return {data: this._buildState(this.props.options)};
-  },
-
-  componentWillReceiveProps: function (newProps) {
-    this.setState({data: this._buildState(newProps.options)});
   },
 
   render: function() {

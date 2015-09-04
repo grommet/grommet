@@ -10,8 +10,6 @@ var IntlMixin = require('grommet/mixins/GrommetIntlMixin');
 
 var MediumResource = React.createClass({
 
-  mixins: [IntlMixin],
-
   propTypes: {
     categoryRoute: React.PropTypes.string.isRequired,
     views: React.PropTypes.arrayOf(React.PropTypes.shape({
@@ -23,6 +21,16 @@ var MediumResource = React.createClass({
 
   contextTypes: {
     router: React.PropTypes.func.isRequired
+  },
+
+  mixins: [IntlMixin],
+
+  getInitialState: function () {
+    return this._stateFromProps(this.props);
+  },
+
+  componentWillReceiveProps: function (newProps) {
+    this.setState(this._stateFromProps(newProps));
   },
 
   _stateFromProps: function (props) {
@@ -41,14 +49,6 @@ var MediumResource = React.createClass({
       view: view,
       query: router.getCurrentQuery()
     };
-  },
-
-  getInitialState: function () {
-    return this._stateFromProps(this.props);
-  },
-
-  componentWillReceiveProps: function (newProps) {
-    this.setState(this._stateFromProps(newProps));
   },
 
   render: function () {

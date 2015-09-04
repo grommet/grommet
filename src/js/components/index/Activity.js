@@ -7,8 +7,6 @@ var IntlMixin = require('../../mixins/GrommetIntlMixin');
 
 var Activity = React.createClass({
 
-  mixins: [IntlMixin],
-
   propTypes: {
     label: React.PropTypes.string,
     onQuery: React.PropTypes.func,
@@ -20,6 +18,8 @@ var Activity = React.createClass({
       React.PropTypes.arrayOf(React.PropTypes.string)
     ])
   },
+
+  mixins: [IntlMixin],
 
   getInitialState: function () {
     var options;

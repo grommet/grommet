@@ -6,11 +6,11 @@ var uuid = require('node-uuid');
 
 var OK = React.createClass({
 
-  mixins: [IntlMixin],
-
   propTypes: {
     a11yTitle: React.PropTypes.string
   },
+
+  mixins: [IntlMixin],
 
   render: function() {
     var className = 'status-icon status-icon-ok';

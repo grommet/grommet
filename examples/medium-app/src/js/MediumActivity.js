@@ -14,6 +14,23 @@ var MediumActivity = React.createClass({
     router: React.PropTypes.func.isRequired
   },
 
+  getInitialState: function () {
+    return {query: null, selection: null};
+  },
+
+  componentWillMount: function () {
+    var router = this.context.router;
+    var queryText = router.getCurrentQuery().q;
+    if (queryText) {
+      this.setState({query: IndexQuery.create(queryText)});
+    }
+    this._setSelectionFromLocation();
+  },
+
+  componentWillReceiveProps: function () {
+    this._setSelectionFromLocation();
+  },
+
   _onSelect: function (selection) {
     var router = this.context.router;
     router.transitionTo('activity resource', {splat: selection},
@@ -43,23 +60,6 @@ var MediumActivity = React.createClass({
     if ('single' === responsive) {
       this.setState({showMain: false});
     }
-  },
-
-  getInitialState: function () {
-    return {query: null, selection: null};
-  },
-
-  componentWillMount: function () {
-    var router = this.context.router;
-    var queryText = router.getCurrentQuery().q;
-    if (queryText) {
-      this.setState({query: IndexQuery.create(queryText)});
-    }
-    this._setSelectionFromLocation();
-  },
-
-  componentWillReceiveProps: function () {
-    this._setSelectionFromLocation();
   },
 
   _renderActivity: function (navControl) {

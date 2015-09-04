@@ -24,6 +24,8 @@ var Search = React.createClass({
     value: React.PropTypes.string
   },
 
+  mixins: [KeyboardAccelerators, IntlMixin],
+
   getDefaultProps: function () {
     return {
       align: 'left',
@@ -34,7 +36,74 @@ var Search = React.createClass({
     };
   },
 
-  mixins: [KeyboardAccelerators, IntlMixin],
+  getInitialState: function () {
+    return {
+      align: 'left',
+      controlFocused: false,
+      inline: this.props.inline,
+      dropActive: false,
+      activeSuggestionIndex: -1
+    };
+  },
+
+  componentDidMount: function () {
+    if (this.props.inline && this.props.responsive) {
+      this._responsive = Responsive.start(this._onResponsive);
+    }
+  },
+
+  componentDidUpdate: function (prevProps, prevState) {
+
+    // Set up keyboard listeners appropriate to the current state.
+
+    var activeKeyboardHandlers = {
+      esc: this._onRemoveDrop,
+      tab: this._onRemoveDrop,
+      up: this._onPreviousSuggestion,
+      down: this._onNextSuggestion,
+      enter: this._onEnter
+    };
+    var focusedKeyboardHandlers = {
+      space: this._onAddDrop
+    };
+
+    // the order here is important, need to turn off keys before turning on
+
+    if (! this.state.controlFocused && prevState.controlFocused) {
+      this.stopListeningToKeyboard(focusedKeyboardHandlers);
+    }
+
+    if (! this.state.dropActive && prevState.dropActive) {
+      document.removeEventListener('click', this._onRemoveDrop);
+      this.stopListeningToKeyboard(activeKeyboardHandlers);
+      if (this._drop) {
+        this._drop.remove();
+        this._drop = null;
+      }
+    }
+
+    if (this.state.controlFocused && ! prevState.controlFocused) {
+      this.startListeningToKeyboard(focusedKeyboardHandlers);
+    }
+
+    if (this.state.dropActive && ! prevState.dropActive) {
+      document.addEventListener('click', this._onRemoveDrop);
+      this.startListeningToKeyboard(activeKeyboardHandlers);
+
+      var baseElement =
+        (this.refs.control ? this.refs.control : this.refs.input).getDOMNode();
+      this._drop = Drop.add(baseElement, this._renderDrop(), this.props.dropAlign);
+
+      document.getElementById('search-drop-input').focus();
+    }
+  },
+
+  componentWillUnmount: function () {
+    document.removeEventListener('click', this._onRemoveDrop);
+    if (this._responsive) {
+      this._responsive.stop();
+    }
+  },
 
   _onAddDrop: function (event) {
     event.preventDefault();
@@ -118,75 +187,6 @@ var Search = React.createClass({
     }
   },
 
-  getInitialState: function () {
-    return {
-      align: 'left',
-      controlFocused: false,
-      inline: this.props.inline,
-      dropActive: false,
-      activeSuggestionIndex: -1
-    };
-  },
-
-  componentDidMount: function () {
-    if (this.props.inline && this.props.responsive) {
-      this._responsive = Responsive.start(this._onResponsive);
-    }
-  },
-
-  componentDidUpdate: function (prevProps, prevState) {
-
-    // Set up keyboard listeners appropriate to the current state.
-
-    var activeKeyboardHandlers = {
-      esc: this._onRemoveDrop,
-      tab: this._onRemoveDrop,
-      up: this._onPreviousSuggestion,
-      down: this._onNextSuggestion,
-      enter: this._onEnter
-    };
-    var focusedKeyboardHandlers = {
-      space: this._onAddDrop
-    };
-
-    // the order here is important, need to turn off keys before turning on
-
-    if (! this.state.controlFocused && prevState.controlFocused) {
-      this.stopListeningToKeyboard(focusedKeyboardHandlers);
-    }
-
-    if (! this.state.dropActive && prevState.dropActive) {
-      document.removeEventListener('click', this._onRemoveDrop);
-      this.stopListeningToKeyboard(activeKeyboardHandlers);
-      if (this._drop) {
-        this._drop.remove();
-        this._drop = null;
-      }
-    }
-
-    if (this.state.controlFocused && ! prevState.controlFocused) {
-      this.startListeningToKeyboard(focusedKeyboardHandlers);
-    }
-
-    if (this.state.dropActive && ! prevState.dropActive) {
-      document.addEventListener('click', this._onRemoveDrop);
-      this.startListeningToKeyboard(activeKeyboardHandlers);
-
-      var baseElement =
-        (this.refs.control ? this.refs.control : this.refs.input).getDOMNode();
-      this._drop = Drop.add(baseElement, this._renderDrop(), this.props.dropAlign);
-
-      document.getElementById('search-drop-input').focus();
-    }
-  },
-
-  componentWillUnmount: function () {
-    document.removeEventListener('click', this._onRemoveDrop);
-    if (this._responsive) {
-      this._responsive.stop();
-    }
-  },
-
   focus: function () {
     var ref = this.refs.input || this.refs.control;
     if (ref) {
@@ -246,7 +246,7 @@ var Search = React.createClass({
         <input id="search-drop-input" type="search"
           defaultValue={this.props.defaultValue}
           value={this.props.value}
-          className={CLASS_ROOT + "__input" }
+          className={CLASS_ROOT + "__input"}
           onChange={this._onChangeInput} />
         <div className={CLASS_ROOT + "__suggestions"}>
           {suggestions}
@@ -295,7 +295,7 @@ var Search = React.createClass({
             placeholder={this.getGrommetIntlMessage(this.props.placeHolder)}
             defaultValue={this.props.defaultValue}
             value={this.props.value}
-            className={CLASS_ROOT + "__input" }
+            className={CLASS_ROOT + "__input"}
             readOnly={readOnly}
             onFocus={this._onFocusInput}
             onBlur={this._onBlurInput}

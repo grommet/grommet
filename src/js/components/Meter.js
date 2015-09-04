@@ -99,6 +99,33 @@ var Meter = React.createClass({
     };
   },
 
+  getInitialState: function() {
+    var state = this._stateFromProps(this.props);
+    if (state.placeLegend) {
+      state.legendPlacement = 'bottom';
+    }
+    state.initial = true;
+    return state;
+  },
+
+  componentDidMount: function() {
+    this._initialTimer = setTimeout(this._initialTimeout, 10);
+    window.addEventListener('resize', this._onResize);
+    this._onResize();
+  },
+
+  componentWillReceiveProps: function (newProps) {
+    var state = this._stateFromProps(newProps);
+    this.setState(state);
+    this._onResize();
+  },
+
+  componentWillUnmount: function() {
+    clearTimeout(this._initialTimer);
+    clearTimeout(this._resizeTimer);
+    window.removeEventListener('resize', this._onResize);
+  },
+
   _initialTimeout: function () {
     this.setState({
       initial: false,
@@ -351,33 +378,6 @@ var Meter = React.createClass({
     }
 
     return state;
-  },
-
-  getInitialState: function() {
-    var state = this._stateFromProps(this.props);
-    if (state.placeLegend) {
-      state.legendPlacement = 'bottom';
-    }
-    state.initial = true;
-    return state;
-  },
-
-  componentDidMount: function() {
-    this._initialTimer = setTimeout(this._initialTimeout, 10);
-    window.addEventListener('resize', this._onResize);
-    this._onResize();
-  },
-
-  componentWillReceiveProps: function (newProps) {
-    var state = this._stateFromProps(newProps);
-    this.setState(state);
-    this._onResize();
-  },
-
-  componentWillUnmount: function() {
-    clearTimeout(this._initialTimer);
-    clearTimeout(this._resizeTimer);
-    window.removeEventListener('resize', this._onResize);
   },
 
   _translateBarWidth: function (value) {

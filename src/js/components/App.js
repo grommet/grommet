@@ -8,21 +8,21 @@ var Locale = require('../utils/Locale');
 
 var App = React.createClass({
 
-  mixins: [IntlMixin],
-
   propTypes: {
     centered: React.PropTypes.bool
+  },
+
+  mixins: [IntlMixin],
+
+  getDefaultProps: function () {
+    return {
+      centered: true
+    };
   },
 
   getInitialState: function () {
     return {
       lang: 'en-US'
-    };
-  },
-
-  getDefaultProps: function () {
-    return {
-      centered: true
     };
   },
 
@@ -54,11 +54,9 @@ var App = React.createClass({
 
     //remove this when React 0.14 is released. This is required because context props are not being propagated to children.
     var children = React.Children.map(this.props.children, function(child) {
-      if (child) {
-        return React.cloneElement(child, this.getChildContext());
-      } else {
-        return null;
-      }
+      return React.isValidElement(child) ?
+        React.cloneElement(child, this.getChildContext()) :
+        child;
     }.bind(this));
 
     return (

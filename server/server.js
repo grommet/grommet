@@ -9,6 +9,7 @@ var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var path = require('path');
 var httpProxy = require('http-proxy');
+var prerender = require('prerender-node');
 
 var proxy = httpProxy.createProxyServer({
   target: 'ws://localhost:8010',
@@ -31,13 +32,15 @@ app.use(compression());
 
 app.use(cookieParser());
 
+app.use(require('prerender-node').set('prerenderToken', '4u2mrWTUsWw3ritba16x'));
+
 if (!process.env.SILENT_MODE) {
   app.use(morgan('tiny'));
 }
 
 router.get('/', function (req, res) {
   var docpath = path.join('/docs/', theme.picker(req.ip));
-  res.redirect(docpath);
+  res.redirect(301, docpath);
 });
 
 app.use('/', function(req, res, next) {
@@ -54,7 +57,7 @@ app.use('/', function(req, res, next) {
 });
 
 app.use('/tour/', function (req, res) {
-  res.redirect('/medium-app');
+  res.redirect(301, '/medium-app');
 });
 
 // Redirect referneces to the original HPE sticker sheet

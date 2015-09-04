@@ -1,47 +1,40 @@
-<!DOCTYPE html>
-<html>
-<body>
-  <article>
-    <header>
-      <h1>Tutorial</h1>
-    </header>
-    <section>
-      <p>
-        In this exercise you will build a simple but interactive <a href="http://todomvc.com" target="_blank">TodoApp</a> which demonstrates the following features:
-        <ul>
-          <li>A dashboard with the list of existing tasks</li>
-          <li>Adding, removing, editing, and completing tasks</li>
-          <li>Managing labels and assigning them to tasks</li>
-        </ul>
-      </p>
-      <p>
-      	For this tutorial you will use the Bower distribution of Grommet. <a data-to="develop_getstarted">Get Started</a> page provides instructions on installing Grommet using Bower.
-      </p>
-      <p>
-      	If you want to skip this step-by-step tutorial, you can download the full version of this exercise from <a href="https://github.com/HewlettPackard/grommet/tree/master/examples/todo-app" target="_blank">Github</a>.
-      </p>
-    </section>
-    <section>
-    	<h2>TodoApp Dashboard</h2>
-    	<p>In this section you will create the main page for the TodoApp: the Dashboard. It includes a summary of the existing tasks in a Donut component and the current list of tasks.</p>
-    	<p>Create a new HTML file on your computer and copy and paste the following code:</p>
-    	<pre><div class="docs__code-heading"><a href="https://gist.githubusercontent.com/alansouzati/fe5a069b4d0b1a313677/raw/41b55328d7639871ae2b75b68feb853dd366d51d/grommet_tutorial_bower.html" target="_blank">raw</a></div><code class="html">
+<header>
+  <h1>Tutorial</h1>
+</header>
+<section>
+  <p>
+    In this exercise you will build a simple but interactive <a href="http://todomvc.com" target="_blank">TodoApp</a> which demonstrates the following features:
+    <ul>
+      <li>A dashboard with the list of existing tasks</li>
+      <li>Adding, removing, editing, and completing tasks</li>
+      <li>Managing labels and assigning them to tasks</li>
+    </ul>
+  </p>
+  <p>
+  	For this tutorial you will use the Bower distribution of Grommet. <a data-to="develop_getstarted">Get Started</a> page provides instructions on installing Grommet using Bower.
+  </p>
+  <p>
+  	If you want to skip this step-by-step tutorial, you can download the full version of this exercise from <a href="https://github.com/HewlettPackard/grommet/tree/master/examples/todo-app" target="_blank">Github</a>.
+  </p>
+</section>
+<section>
+	<h2>TodoApp Dashboard</h2>
+	<p>In this section you will create the main page for the TodoApp: the Dashboard. It includes a summary of the existing tasks in a Donut component and the current list of tasks.</p>
+	<p>Create a new HTML file on your computer and copy and paste the following code:</p>
+	<pre><div class="docs__code-heading"><a href="https://gist.githubusercontent.com/alansouzati/fe5a069b4d0b1a313677/raw/41b55328d7639871ae2b75b68feb853dd366d51d/grommet_tutorial_bower.html" target="_blank">raw</a></div><code class="html">
 &lt;!DOCTYPE html&gt;<br/>&lt;html&gt;<br/>&lt;head&gt;<br/>  &lt;meta charset=&quot;UTF-8&quot;&gt;<br/>  &lt;title&gt;Todo App&lt;/title&gt;<br/>  &lt;link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400italic,400,700" rel="stylesheet" type="text/css"&gt;<br/>  &lt;link href="bower_components/grommet/css/grommet-hpe.min.css" rel="stylesheet" type="text/css"&gt;<br/>  &lt;script src=&quot;bower_components/react/react.js&quot;&gt;&lt;/script&gt;<br/>  &lt;script src=&quot;bower_components/react/JSXTransformer.js&quot;&gt;&lt;/script&gt;<br/>  &lt;script src=&quot;bower_components/grommet/grommet.min.js&quot;&gt;&lt;/script&gt;<br/>&lt;/head&gt;<br/>&lt;body&gt;<br/>  &lt;div id=&quot;content&quot;&gt;&lt;/div&gt;<br/>  &lt;script type=&quot;text/jsx&quot;&gt;<br/><br/>  	function getLabel(label, count, colorIndex) {'{'}<br/>  		return {'{'}<br/>		    &quot;label&quot;: label,<br/>		    &quot;value&quot;: count,<br/>		    &quot;units&quot;: count &gt; 1 ? &quot;Tasks&quot; : 'Task',<br/>		    &quot;colorIndex&quot;: colorIndex<br/>		  {'}'};<br/>  	{'}'}<br/><br/>  	var TodoAppDashboard = React.createClass({'{'}<br/><br/>		  render: function () {'{'}<br/>		  	<br/>			  var tasksMap = {'{'}<br/>			  	error: 0,<br/>			  	ok: 0,<br/>			  	warning: 0<br/>			  {'}'};<br/><br/>		  	var items = this.props.tasks.map(function(task) {'{'}<br/>		  		<br/>		  		tasksMap[task.type] += 1;<br/><br/>		  		return (<br/>		  			&lt;tr&gt;<br/>		  			  &lt;td&gt;&lt;Grommet.Icons.Status value={'{'}task.type{'}'} small={'{'}true{'}'} /&gt;&lt;/td&gt;<br/>		  				&lt;td&gt;{'{'}task.item{'}'}&lt;/td&gt;<br/>		  			&lt;/tr&gt;<br/>		  		);<br/>		  	{'}'});<br/><br/>		    return (<br/>		      &lt;Grommet.Tiles&gt;<br/>		      	&lt;Grommet.Tile&gt;<br/>		      		&lt;Grommet.Section centered={'{'}true{'}'}&gt;<br/>		      			&lt;Grommet.Donut series={'{'}[<br/>		      				getLabel('Fix Now', tasksMap.error, &quot;error&quot;),<br/>		      				getLabel('Remember', tasksMap.warning, &quot;warning&quot;),<br/>		      				getLabel('Enjoy', tasksMap.ok, &quot;ok&quot;)<br/>							    ]{'}'}/&gt;<br/>		      		&lt;/Grommet.Section&gt;<br/>		      	&lt;/Grommet.Tile&gt;<br/>		      	&lt;Grommet.Tile&gt;<br/>		      		&lt;Grommet.Header&gt;&lt;h3&gt;My Tasks:&lt;/h3&gt;&lt;/Grommet.Header&gt;<br/>			        &lt;Grommet.Table&gt;<br/>			        	&lt;tbody&gt;<br/>			        		{'{'}items{'}'}<br/>			        	&lt;/tbody&gt;<br/>			        &lt;/Grommet.Table&gt;<br/>		      	&lt;/Grommet.Tile&gt;<br/>		      &lt;/Grommet.Tiles&gt;<br/>		    );<br/>		  {'}'}<br/>		{'}'});<br/><br/>		var App = React.createClass({'{'}<br/>			getInitialState: function() {'{'}<br/>				return {'{'}<br/>					tasks: [<br/>				  	{'{'}<br/>				  		type: 'error',<br/>				  		item: 'The coffee pot needs to be cleaned.'<br/>				  	{'}'},<br/>				  	{'{'}<br/>				  		type: 'ok',<br/>				  		item: 'It\'s going to be a sunny day tomorrow.'<br/>				  	{'}'},<br/>				  	{'{'}<br/>				  		type: 'warning',<br/>				  		item: 'Don\'t forget your anniversary in two weeks.'<br/>				  	{'}'},<br/>				  	{'{'}<br/>				  		type: 'warning',<br/>				  		item: 'Pay my late bills.'<br/>				  	{'}'},<br/>				  	{'{'}<br/>				  		type: 'ok',<br/>				  		item: 'Go to the Sharks game tomorrow.'<br/>				  	{'}'},<br/>				  	{'{'}<br/>				  		type: 'ok',<br/>				  		item: 'Go to Santa Cruz, it\'s summer time.'<br/>				  	{'}'},<br/>			  	]<br/>				{'}'};<br/>			{'}'},<br/>		  render: function() {'{'}<br/>		    return (<br/>		      &lt;Grommet.App centered={'{'}false{'}'}&gt;<br/>		        &lt;Grommet.Header primary={'{'}true{'}'}&gt;<br/>		          &lt;Grommet.Title&gt;Todo App&lt;/Grommet.Title&gt;<br/>		        &lt;/Grommet.Header&gt;<br/>		        &lt;TodoAppDashboard tasks={'{'}this.state.tasks{'}'} /&gt;<br/>		      &lt;/Grommet.App&gt;<br/>		    );<br/>		  {'}'}<br/>		{'}'});<br/><br/>		var element = document.getElementById('content');<br/>		React.render(React.createElement(App), element);<br/>  &lt;/script&gt;<br/>&lt;/body&gt;<br/>&lt;/html&gt;
-      </code></pre>
-      <p>
-        If you open this HTML file in your browser you should see the following:
-        <img src="img/todo-app-dashboard.png" title="Sample of Hello World dashboard"/>
-      </p>
-      <p>
-      	In the head tag of this markup React, JSXTransformer, and Grommet are loaded. Check out the <a data-to="develop_architecture">Architecture</a> page if you&#39;re curious to understand better about Grommet technology stack.
-      </p>
-      <p>
-      	The body tag has two main containers. The <i>content</i> div where React will load the Grommet components, and the script tag with the dashboard code in JSX format that will be further compiled by JSXTransformer.
-      </p>
-      <p>
-      	The best way to understand this script tag is by reading it from the bottom to the top. The last line of the script renders <i>App</i> component inside the main container. This component has a set of tasks as the initial state where 6 samples tasks are already provided (you&#39;ll remove that later in this exercise). The render function of this component loads the Grommet App with a Header (including the Title) and the TodoAppDashboard as the body. The TodoAppDashboard component has the set of tasks as a property and the render function includes two main Tiles. The first Tile is the Donut with the summary of the current tasks, and the second one is the actual list of tasks displayed in a simple table.
-      </p>
-    </section>
-  </article>
-</body>
-</html>
+  </code></pre>
+  <p>
+    If you open this HTML file in your browser you should see the following:
+    <img src="img/todo-app-dashboard.png" title="Sample of Hello World dashboard"/>
+  </p>
+  <p>
+  	In the head tag of this markup React, JSXTransformer, and Grommet are loaded. Check out the <a data-to="develop_architecture">Architecture</a> page if you&#39;re curious to understand better about Grommet technology stack.
+  </p>
+  <p>
+  	The body tag has two main containers. The <i>content</i> div where React will load the Grommet components, and the script tag with the dashboard code in JSX format that will be further compiled by JSXTransformer.
+  </p>
+  <p>
+  	The best way to understand this script tag is by reading it from the bottom to the top. The last line of the script renders <i>App</i> component inside the main container. This component has a set of tasks as the initial state where 6 samples tasks are already provided (you&#39;ll remove that later in this exercise). The render function of this component loads the Grommet App with a Header (including the Title) and the TodoAppDashboard as the body. The TodoAppDashboard component has the set of tasks as a property and the render function includes two main Tiles. The first Tile is the Donut with the summary of the current tasks, and the second one is the actual list of tasks displayed in a simple table.
+  </p>
+</section>

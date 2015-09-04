@@ -13,6 +13,25 @@ var ResourceNotifications = React.createClass({
     resourceUri: React.PropTypes.string.isRequired
   },
 
+  getInitialState: function () {
+    return {notifications: []};
+  },
+
+  componentDidMount: function () {
+    this._getData(this.props.resourceUri);
+  },
+
+  componentWillReceiveProps: function (newProps) {
+    if (newProps.resourceUri !== this.props.resourceUri) {
+      this.setState({runningUri: null});
+      this._getData(newProps.resourceUri);
+    }
+  },
+
+  componentWillUnmount: function () {
+    RestWatch.stop(this._watch);
+  },
+
   _onUpdate: function (result) {
     this.setState({notifications: result.items});
     // if we have a running task, remember it's uri so we keep it
@@ -50,25 +69,6 @@ var ResourceNotifications = React.createClass({
     };
     this._watch = RestWatch.start('/rest/index/resources',
       params, this._onUpdate);
-  },
-
-  getInitialState: function () {
-    return {notifications: []};
-  },
-
-  componentDidMount: function () {
-    this._getData(this.props.resourceUri);
-  },
-
-  componentWillReceiveProps: function (newProps) {
-    if (newProps.resourceUri !== this.props.resourceUri) {
-      this.setState({runningUri: null});
-      this._getData(newProps.resourceUri);
-    }
-  },
-
-  componentWillUnmount: function () {
-    RestWatch.stop(this._watch);
   },
 
   render: function () {

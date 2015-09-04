@@ -7,8 +7,6 @@ var CLASS_ROOT = "legend";
 
 var Legend = React.createClass({
 
-  mixins: [IntlMixin],
-
   propTypes: {
     activeIndex: React.PropTypes.number,
     onActive: React.PropTypes.func,
@@ -27,12 +25,7 @@ var Legend = React.createClass({
     value: React.PropTypes.number
   },
 
-  _onActive: function (index) {
-    this.setState({activeIndex: index});
-    if (this.props.onActive) {
-      this.props.onActive(index);
-    }
-  },
+  mixins: [IntlMixin],
 
   getInitialState: function () {
     return {activeIndex: this.props.activeIndex};
@@ -40,6 +33,13 @@ var Legend = React.createClass({
 
   componentWillReceiveProps: function (newProps) {
     this.setState({activeIndex: newProps.activeIndex});
+  },
+
+  _onActive: function (index) {
+    this.setState({activeIndex: index});
+    if (this.props.onActive) {
+      this.props.onActive(index);
+    }
   },
 
   _itemColorIndex: function (item, index) {

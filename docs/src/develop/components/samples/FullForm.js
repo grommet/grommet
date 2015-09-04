@@ -27,6 +27,14 @@ var FullForm = React.createClass({
     return {prefix: 'ff'};
   },
 
+  getInitialState: function () {
+    return {
+      rangeValue: 10,
+      searchInput: {suggestions: this._searchInputSuggestions},
+      calendarDate: (new Date()).toISOString().slice(0, 10)
+    };
+  },
+
   _searchInputSuggestions: ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight'],
 
   _onChangeRange: function (event) {
@@ -60,14 +68,6 @@ var FullForm = React.createClass({
         return regexp.test(value);
       });
     this.setState({searchInput: searchInput});
-  },
-
-  getInitialState: function () {
-    return {
-      rangeValue: 10,
-      searchInput: {suggestions: this._searchInputSuggestions},
-      calendarDate: (new Date()).toISOString().slice(0, 10)
-    };
   },
 
   render: function() {

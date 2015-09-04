@@ -17,6 +17,25 @@ var MediumMap = React.createClass({
 
   mixins: [Reflux.ListenerMixin, IntlMixin],
 
+  getInitialState: function () {
+    return {
+      uri: this.context.router.getCurrentParams().splat,
+      data: {categories: [], links: []}
+    };
+  },
+
+  componentDidMount: function () {
+    this._getData();
+  },
+
+  componentWillReceiveProps: function () {
+    var router = this.context.router;
+    var uri = router.getCurrentParams().splat;
+    if (uri !== this.state.uri) {
+      this.setState({uri: uri}, this._getData);
+    }
+  },
+
   _onGetMapCompleted: function (response) {
     var router = this.context.router;
     // require Routes lazily to avoid a circular dependency
@@ -64,25 +83,6 @@ var MediumMap = React.createClass({
   _getData: function () {
     this.listenTo(IndexActions.getMap.completed, this._onGetMapCompleted);
     IndexActions.getMap(this.state.uri, true);
-  },
-
-  getInitialState: function () {
-    return {
-      uri: this.context.router.getCurrentParams().splat,
-      data: {categories: [], links: []}
-    };
-  },
-
-  componentDidMount: function () {
-    this._getData();
-  },
-
-  componentWillReceiveProps: function () {
-    var router = this.context.router;
-    var uri = router.getCurrentParams().splat;
-    if (uri !== this.state.uri) {
-      this.setState({uri: uri}, this._getData);
-    }
   },
 
   _renderItem: function (item) {

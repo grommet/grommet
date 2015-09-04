@@ -48,6 +48,7 @@ var opts = {
 
 gulp.task('start-backend', function() {
   nodemon({
+    watch: ["examples/medium-app/server"],
     script: path.resolve(__dirname, 'server/server')
   });
 });

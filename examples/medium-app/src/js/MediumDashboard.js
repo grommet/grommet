@@ -72,10 +72,30 @@ var CONFIG = [
 
 var MediumDashboard = React.createClass({
 
-  mixins: [IntlMixin],
-
   contextTypes: {
     router: React.PropTypes.func.isRequired
+  },
+
+  mixins: [IntlMixin],
+
+  getInitialState: function () {
+    return {
+      tiles: CONFIG,
+      legendPlacement: 'bottom',
+      mainActive: false,
+      mainPeek: false
+    };
+  },
+
+  componentDidMount: function () {
+    this.refs.search.focus();
+    window.addEventListener('resize', this._onResize);
+    this._onResize();
+  },
+
+  componentWillUnmount: function () {
+    IndexActions.cleanup();
+    window.removeEventListener('resize', this._onResize);
   },
 
   _onOverTitle: function () {
@@ -135,7 +155,7 @@ var MediumDashboard = React.createClass({
     } else if ((width / 660) > 3) {
       graphicSize = 'large';
     } else if ((height / roughRows) > 400) {
-      graphicSize = 'large'
+      graphicSize = 'large';
     }
 
     this.setState({graphicSize: graphicSize});
@@ -145,26 +165,6 @@ var MediumDashboard = React.createClass({
     // debounce
     clearTimeout(this._timer);
     this._timer = setTimeout(this._layout, 500);
-  },
-
-  getInitialState: function () {
-    return {
-      tiles: CONFIG,
-      legendPlacement: 'bottom',
-      mainActive: false,
-      mainPeek: false
-    };
-  },
-
-  componentDidMount: function () {
-    this.refs.search.focus();
-    window.addEventListener('resize', this._onResize);
-    this._onResize();
-  },
-
-  componentWillUnmount: function () {
-    IndexActions.cleanup();
-    window.removeEventListener('resize', this._onResize);
   },
 
   render: function () {
@@ -191,15 +191,19 @@ var MediumDashboard = React.createClass({
 
       var contents = null;
       if (tile.history) {
-        contents = <IndexHistory params={tile.params} type={tile.type}
-          smooth={true} size={this.state.graphicSize} />;
+        contents = (
+          <IndexHistory params={tile.params} type={tile.type}
+            smooth={true} size={this.state.graphicSize} />
+        );
       } else {
-        contents = <IndexAggregate params={tile.params} type={tile.type}
-          legend={{placement: this.state.legendPlacement}}
-          size={this.state.graphicSize}
-          onClick={function (query) {
-            this._onClickSegment(tile, query);
-          }.bind(this)} />;
+        contents = (
+          <IndexAggregate params={tile.params} type={tile.type}
+            legend={{placement: this.state.legendPlacement}}
+            size={this.state.graphicSize}
+            onClick={function (query) {
+              this._onClickSegment(tile, query);
+            }.bind(this)} />
+        );
       }
 
       return (

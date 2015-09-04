@@ -45,16 +45,16 @@ var storageSeries = [
 
 var MeterDoc = React.createClass({
 
+  getInitialState: function () {
+    return {simpleValue: simpleValue};
+  },
+
   _onChangeSimpleValue: function (event) {
     this.setState({simpleValue: parseInt(event.target.value)});
   },
 
   _onChangeSize: function (size) {
     this.setState({size: size});
-  },
-
-  getInitialState: function () {
-    return {simpleValue: simpleValue};
   },
 
   render: function() {

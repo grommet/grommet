@@ -6,12 +6,12 @@ var RadioButton = require('grommet/components/RadioButton');
 
 var RadioButtonDoc = React.createClass({
 
-  _onChange: function (choice) {
-    this.setState({choice: choice});
-  },
-
   getInitialState: function () {
     return {choice: 'choice-1'};
+  },
+
+  _onChange: function (choice) {
+    this.setState({choice: choice});
   },
 
   render: function() {

@@ -6,12 +6,12 @@ var Calendar = require('grommet/components/Calendar');
 
 var CalendarDoc = React.createClass({
 
-  _onChange: function (value) {
-    this.setState({value: value});
-  },
-
   getInitialState: function () {
     return {value: (new Date()).toISOString().slice(0, 10)};
+  },
+
+  _onChange: function (value) {
+    this.setState({value: value});
   },
 
   render: function() {

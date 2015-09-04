@@ -40,6 +40,36 @@ var IndexHistory = React.createClass({
 
   mixins: [Reflux.ListenerMixin, IntlMixin],
 
+  getInitialState: function () {
+    return {
+      params: this.props.params,
+      series: (this.props.series || []),
+      size: this._normalizeSize(this.props)
+    };
+  },
+
+  componentDidMount: function () {
+    if (! this.props.series) {
+      this.listenTo(IndexActions.getAggregate.completed,
+        this._onGetAggregateCompleted);
+      IndexActions.getAggregate(this.state.params, true);
+    }
+  },
+
+  componentWillReceiveProps: function (newProps) {
+    this.setState({
+      params: newProps.params,
+      size: this._normalizeSize(newProps)
+    });
+    if (! newProps.series) {
+      IndexActions.getAggregate(newProps.params, true, this.state.request);
+    }
+  },
+
+  componentWillUnmount: function () {
+    IndexActions.stopWatching(this.state.request);
+  },
+
   _onGetAggregateCompleted: function (response, params, request) {
     response = response[0];
     if (params === this.state.params) {
@@ -76,36 +106,6 @@ var IndexHistory = React.createClass({
 
   _normalizeSize: function (props) {
     return props.size || (props.small ? 'small' : (props.large ? 'large' : null));
-  },
-
-  getInitialState: function () {
-    return {
-      params: this.props.params,
-      series: (this.props.series || []),
-      size: this._normalizeSize(this.props)
-    };
-  },
-
-  componentDidMount: function () {
-    if (! this.props.series) {
-      this.listenTo(IndexActions.getAggregate.completed,
-        this._onGetAggregateCompleted);
-      IndexActions.getAggregate(this.state.params, true);
-    }
-  },
-
-  componentWillReceiveProps: function (newProps) {
-    this.setState({
-      params: newProps.params,
-      size: this._normalizeSize(newProps)
-    });
-    if (! newProps.series) {
-      IndexActions.getAggregate(newProps.params, true, this.state.request);
-    }
-  },
-
-  componentWillUnmount: function () {
-    IndexActions.stopWatching(this.state.request);
   },
 
   render: function () {

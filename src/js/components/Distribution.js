@@ -32,6 +32,33 @@ var Distribution = React.createClass({
     vertical: React.PropTypes.bool
   },
 
+  getInitialState: function() {
+    var state = this._stateFromProps(this.props);
+    state.legendPosition = 'bottom';
+    state.width = DEFAULT_WIDTH;
+    state.height = DEFAULT_HEIGHT;
+    return state;
+  },
+
+  componentDidMount: function() {
+    this._initialTimer = setTimeout(this._initialTimeout, 10);
+    window.addEventListener('resize', this._onResize);
+    this._onResize();
+  },
+
+  componentWillReceiveProps: function (newProps) {
+    var state = this._stateFromProps(newProps);
+    state.width = this.state.width;
+    state.height = this.state.height;
+    this.setState(state);
+    this._onResize();
+  },
+
+  componentWillUnmount: function() {
+    clearTimeout(this._resizeTimer);
+    window.removeEventListener('resize', this._onResize);
+  },
+
   _onResize: function() {
     // debounce
     clearTimeout(this._resizeTimer);
@@ -100,33 +127,6 @@ var Distribution = React.createClass({
     };
 
     return state;
-  },
-
-  getInitialState: function() {
-    var state = this._stateFromProps(this.props);
-    state.legendPosition = 'bottom';
-    state.width = DEFAULT_WIDTH;
-    state.height = DEFAULT_HEIGHT;
-    return state;
-  },
-
-  componentDidMount: function() {
-    this._initialTimer = setTimeout(this._initialTimeout, 10);
-    window.addEventListener('resize', this._onResize);
-    this._onResize();
-  },
-
-  componentWillReceiveProps: function (newProps) {
-    var state = this._stateFromProps(newProps);
-    state.width = this.state.width;
-    state.height = this.state.height;
-    this.setState(state);
-    this._onResize();
-  },
-
-  componentWillUnmount: function() {
-    clearTimeout(this._resizeTimer);
-    window.removeEventListener('resize', this._onResize);
   },
 
   _itemColorIndex: function (item, index) {

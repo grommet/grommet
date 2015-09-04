@@ -10,6 +10,24 @@ var SkipLinks = React.createClass({
 
   mixins: [IntlMixin],
 
+  getInitialState: function () {
+    return {anchors: [], showLayer: false};
+  },
+
+  componentDidMount: function () {
+    this._updateAnchors();
+  },
+
+  componentWillReceiveProps: function (newProps) {
+    this.setState({routeChanged: true});
+  },
+
+  componentDidUpdate: function () {
+    if (this.state.routeChanged) {
+      this.setState({routeChanged: false}, this._updateAnchors);
+    }
+  },
+
   _updateAnchors: function () {
     var anchorElements = document.querySelectorAll('[data-skip-label]');
 
@@ -23,39 +41,18 @@ var SkipLinks = React.createClass({
     this.setState({anchors: anchors});
   },
 
-  componentDidMount: function () {
-    this._updateAnchors();
-  },
-
-  componentWillReceiveProps: function (newProps) {
-    this.setState({routeChanged: true});
-  },
-
-  componentDidUpdate: function () {
-    if (this.state.routeChanged) {
-      this._updateAnchors();
-      this.setState({routeChanged: false});
-    }
-  },
-
-  getInitialState: function () {
-    return {anchors: [], showLayer: false};
-  },
-
-  _onFocus: function (event) {
+  _onFocus: function () {
     if (!this.state.showLayer) {
       this.setState({showLayer: true});
     }
   },
 
-  _onBlur: function (event) {
-    setTimeout(function () {
-      var skipLinksLayer = this.refs.skipLinksLayer.getDOMNode();
-      var activeElement = document.activeElement;
-      if (!DOM.isDescendant(skipLinksLayer, activeElement)) {
-        this.setState({showLayer: false});
-      }
-    }.bind(this));
+  _onBlur: function () {
+    var skipLinksLayer = this.refs.skipLinksLayer.getDOMNode();
+    var activeElement = document.activeElement;
+    if (!DOM.isDescendant(skipLinksLayer, activeElement)) {
+      this.setState({showLayer: false});
+    }
   },
 
   _onClick: function (destId) {

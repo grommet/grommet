@@ -6,6 +6,10 @@ var SearchInput = require('grommet/components/SearchInput');
 
 var SearchInputDoc = React.createClass({
 
+  getInitialState: function () {
+    return {value: "one", suggestions: this._values};
+  },
+
   _values: ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight'],
 
   _onChange: function (value, selected) {
@@ -18,10 +22,6 @@ var SearchInputDoc = React.createClass({
       });
       this.setState({value: value, suggestions: suggestions});
     }
-  },
-
-  getInitialState: function () {
-    return {value: "one", suggestions: this._values};
   },
 
   render: function() {

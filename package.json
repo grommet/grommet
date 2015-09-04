@@ -20,7 +20,6 @@
   "bin": {
     "grommet": "./bin/grommet.js"
   },
-  "engineStrict": true,
   "engine-strict": true,
   "engines": {
     "node": ">= 0.10",
@@ -52,7 +51,6 @@
     "react-gravatar": "^2.0.0",
     "react-intl": "^1.2.0",
     "react-router": "^0.13.3",
-    "react-time": "^3.0.0",
     "reflux": "^0.2.7",
     "superagent": "^1.1.0",
     "yargs": "^3.8.0",
@@ -80,7 +78,6 @@
     "gulp-mocha": "^2.0.1",
     "gulp-live-server": "^0.0.23",
     "gulp-preprocess": "^1.2.0",
-    "gulp-react": "^3.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-rsync": "0.0.5",
     "gulp-sass": "^2.0.4",

@@ -15,6 +15,10 @@ var Carousel = React.createClass({
     return {single: true};
   },
 
+  getInitialState: function () {
+    return {activeIndex: 0, priorIndex: 0, sequence: 1};
+  },
+
   _onSelect: function (index) {
     if (index !== this.state.activeIndex) {
       this.setState({
@@ -23,10 +27,6 @@ var Carousel = React.createClass({
         sequence: this.state.sequence += 1
       });
     }
-  },
-
-  getInitialState: function () {
-    return {activeIndex: 0, priorIndex: 0, sequence: 1};
   },
 
   // children should be an array of Tile

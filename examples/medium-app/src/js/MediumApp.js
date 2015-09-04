@@ -10,26 +10,11 @@ var IntlMixin = require('grommet/mixins/GrommetIntlMixin');
 
 var MediumApp = React.createClass({
 
-  mixins: [Reflux.ListenerMixin, IntlMixin],
-
   contextTypes: {
     router: React.PropTypes.func.isRequired
   },
 
-  _checkSession: function () {
-    if ( this.state.session.id && this.context.router.isActive('login')) {
-      Rest.setHeader('auth', this.state.session.id);
-    } 
-  },
-
-  _onSessionChange: function (session) {
-    if (! this.state.session.id && ! this.context.router.isActive('login')) {
-      this.context.router.transitionTo('login');
-    } else {
-      Rest.setHeader('auth', this.state.session.id);
-    }
-    this.setState({session: session}, this._checkSession);
-  },
+  mixins: [Reflux.ListenerMixin, IntlMixin],
 
   getInitialState: function () {
     return {
@@ -40,6 +25,21 @@ var MediumApp = React.createClass({
   componentDidMount: function () {
     this.listenTo(SessionStore, this._onSessionChange);
     this._checkSession();
+  },
+
+  _checkSession: function () {
+    if ( this.state.session.id && this.context.router.isActive('login')) {
+      Rest.setHeader('auth', this.state.session.id);
+    }
+  },
+
+  _onSessionChange: function (session) {
+    if (! this.state.session.id && ! this.context.router.isActive('login')) {
+      this.context.router.transitionTo('login');
+    } else {
+      Rest.setHeader('auth', this.state.session.id);
+    }
+    this.setState({session: session}, this._checkSession);
   },
 
   render: function() {

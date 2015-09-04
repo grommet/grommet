@@ -46,6 +46,37 @@ var MediumIndex = React.createClass({
     router: React.PropTypes.func.isRequired
   },
 
+  getInitialState: function () {
+    var options = this.props.options;
+    var queryText = this.context.router.getCurrentQuery().q;
+    if (queryText) {
+      options = merge(this.props.options,
+        {params: {query: IndexQuery.create(queryText)}});
+    }
+    var state = {
+      options: options,
+      selection: null
+    };
+    if (this.props.manageData) {
+      state.result = {};
+    }
+    return state;
+  },
+
+  componentWillMount: function () {
+    this._setSelectionFromLocation();
+  },
+
+  componentDidMount: function () {
+    if (this.props.manageData) {
+      this._getData();
+    }
+  },
+
+  componentWillReceiveProps: function () {
+    this._setSelectionFromLocation();
+  },
+
   _onSelect: function (selection) {
     var router = this.context.router;
     // if we've already selected something, use the same route we are using now
@@ -122,37 +153,6 @@ var MediumIndex = React.createClass({
     if ('single' === responsive) {
       this.setState({showMain: false});
     }
-  },
-
-  getInitialState: function () {
-    var options = this.props.options;
-    var queryText = this.context.router.getCurrentQuery().q;
-    if (queryText) {
-      options = merge(this.props.options,
-        {params: {query: IndexQuery.create(queryText)}});
-    }
-    var state = {
-      options: options,
-      selection: null
-    };
-    if (this.props.manageData) {
-      state.result = {};
-    }
-    return state;
-  },
-
-  componentWillMount: function () {
-    this._setSelectionFromLocation();
-  },
-
-  componentDidMount: function () {
-    if (this.props.manageData) {
-      this._getData();
-    }
-  },
-
-  componentWillReceiveProps: function () {
-    this._setSelectionFromLocation();
   },
 
   _renderIndex: function (navControl, addControl) {

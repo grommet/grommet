@@ -5,13 +5,25 @@ var SessionStore = require('../stores/SessionStore');
 //var SessionActions = require('../actions/SessionActions');
 var KeyboardAccelerators = require('../mixins/KeyboardAccelerators');
 var Gravatar = require('react-gravatar');
-var Timestamp = require('react-time');
 var IntlMixin = require('../mixins/GrommetIntlMixin');
 //var Link = require('../components/Link');
 
 var Session = React.createClass({
 
   mixins: [KeyboardAccelerators, IntlMixin],
+
+  getInitialState: function() {
+    return SessionStore.getAll();
+  },
+
+  componentDidMount: function() {
+    SessionStore.addChangeListener(this._onChange);
+    this.startListeningToKeyboard({esc: this._onClose});
+  },
+
+  componentWillUnmount: function() {
+    SessionStore.removeChangeListener(this._onChange);
+  },
 
   _onChange: function() {
     this.setState(SessionStore.getAll());
@@ -31,19 +43,6 @@ var Session = React.createClass({
     this.props.onRequestClose();
   },
 
-  getInitialState: function() {
-    return SessionStore.getAll();
-  },
-
-  componentDidMount: function() {
-    SessionStore.addChangeListener(this._onChange);
-    this.startListeningToKeyboard({esc: this._onClose});
-  },
-
-  componentWillUnmount: function() {
-    SessionStore.removeChangeListener(this._onChange);
-  },
-
   render: function() {
     return (
       <div className={'session'} onClick={this._onClose}>
@@ -55,7 +54,7 @@ var Session = React.createClass({
             <div className={'session__name delta'}>{this.state.name}</div>
             <div className={'session__duration'}>
               {'Logged in '}
-              <Timestamp value={this.state.created} relative />
+              {this.getGrommetFormattedDate(this.state.created)}
             </div>
           </div>
           <ul className={'session__actions list-bare'}>

@@ -8,6 +8,10 @@ var MAX_DEVICES_PER_RACK = 12;
 
 var Store = Reflux.createStore({
 
+  getInitialState: function () {
+    return this._data;
+  },
+
   _data: {
     title: APP_TITLE,
     // configuration options
@@ -38,7 +42,7 @@ var Store = Reflux.createStore({
     this.listenTo(Actions.clearAllNodeHighlights, this._onClearAllNodeHighlights);
     this.listenTo(Actions.toggleDataPathHighlight, this._onToggleDataPathHighlight);
     this.listenTo(Actions.clearAllDataPathHighlights, this._onClearAllDataPathHighlights);
-    this.listenTo(Actions.toggleNodeDataPathHighlight, this._onToggleNodeDataPathHighlight)
+    this.listenTo(Actions.toggleNodeDataPathHighlight, this._onToggleNodeDataPathHighlight);
     this.listenTo(Actions.toggleCableHighlight, this._onToggleCableHighlight);
     this.listenTo(Actions.clearAllHighlights, this._onClearAllHighlights);
   },
@@ -368,10 +372,6 @@ var Store = Reflux.createStore({
     });
     this._buildLinks(this._data.topologyData);
     this.trigger(this._data);
-  },
-
-  getInitialState: function () {
-    return this._data;
   }
 });
 

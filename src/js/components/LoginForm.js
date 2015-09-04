@@ -10,8 +10,6 @@ var CLASS_ROOT = "login-form";
 
 var LoginForm = React.createClass({
 
-  mixins: [IntlMixin],
-
   propTypes: {
     logo: React.PropTypes.node,
     title: React.PropTypes.string,
@@ -22,14 +20,7 @@ var LoginForm = React.createClass({
     onSubmit: React.PropTypes.func
   },
 
-  _onSubmit: function (event) {
-    event.preventDefault();
-    var username = this.refs.username.getDOMNode().value.trim();
-    var password = this.refs.password.getDOMNode().value.trim();
-    if (this.props.onSubmit) {
-      this.props.onSubmit({username: username, password: password});
-    }
-  },
+  mixins: [IntlMixin],
 
   getDefaultProps: function () {
     return ({
@@ -40,6 +31,15 @@ var LoginForm = React.createClass({
 
   componentDidMount: function() {
     this.refs.username.getDOMNode().focus();
+  },
+
+  _onSubmit: function (event) {
+    event.preventDefault();
+    var username = this.refs.username.getDOMNode().value.trim();
+    var password = this.refs.password.getDOMNode().value.trim();
+    if (this.props.onSubmit) {
+      this.props.onSubmit({username: username, password: password});
+    }
   },
 
   render: function() {
@@ -83,7 +83,7 @@ var LoginForm = React.createClass({
         </div>
       );
     }
-      
+
     return (
       <Form className={classes.join(' ')} onSubmit={this._onSubmit}>
         {logo}

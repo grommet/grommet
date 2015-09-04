@@ -15,8 +15,6 @@ var CLASS_ROOT = 'index';
 
 var Index = React.createClass({
 
-  mixins: [Reflux.ListenerMixin, IntlMixin],
-
   propTypes: {
     flush: React.PropTypes.bool,
     options: React.PropTypes.shape({
@@ -58,6 +56,8 @@ var Index = React.createClass({
     onMore: React.PropTypes.func
   },
 
+  mixins: [Reflux.ListenerMixin, IntlMixin],
+
   getDefaultProps: function () {
     return ({
       options: {
@@ -66,6 +66,30 @@ var Index = React.createClass({
         view: "tiles"
       }
     });
+  },
+
+  getInitialState: function () {
+    return {options: this.props.options, result: (this.props.result || {})};
+  },
+
+  componentDidMount: function () {
+    if (! this.props.result) {
+      IndexActions.setup(this.state.options);
+      this.listenTo(IndexStore, this._onIndexChange);
+    }
+  },
+
+  componentWillReceiveProps: function (newProps) {
+    this.setState({options: newProps.options});
+    if (newProps.result) {
+      this.setState({result: newProps.result});
+    }
+  },
+
+  componentWillUnmount: function () {
+    if (! this.props.result) {
+      IndexActions.cleanup();
+    }
   },
 
   _onQuery: function (query) {
@@ -92,30 +116,6 @@ var Index = React.createClass({
 
   _onIndexChange: function (data) {
     this.setState(data);
-  },
-
-  getInitialState: function () {
-    return {options: this.props.options, result: (this.props.result || {})};
-  },
-
-  componentWillReceiveProps: function (newProps) {
-    this.setState({options: newProps.options});
-    if (newProps.result) {
-      this.setState({result: newProps.result});
-    }
-  },
-
-  componentDidMount: function () {
-    if (! this.props.result) {
-      IndexActions.setup(this.state.options);
-      this.listenTo(IndexStore, this._onIndexChange);
-    }
-  },
-
-  componentWillUnmount: function () {
-    if (! this.props.result) {
-      IndexActions.cleanup();
-    }
   },
 
   render: function () {
