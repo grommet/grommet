@@ -180,7 +180,6 @@ var Menu = React.createClass({
 
   getDefaultProps: function () {
     return {
-      align: 'stretch',
       closeOnClick: true,
       direction: 'column',
       dropAlign: {top: 'top', left: 'left'},
@@ -404,9 +403,6 @@ var Menu = React.createClass({
 
     if (this.props.direction) {
       classes.push(prefix + "--" + this.props.direction);
-    }
-    if (this.props.align) {
-      classes.push(prefix + "--align-" + this.props.align);
     }
     if (this.props.large) {
       classes.push(prefix + "--large");
