@@ -72,6 +72,10 @@ module.exports = function(gulp, options, webpackConfig, dist) {
       historyApiFallback: true
     };
 
+    if (options.watchOptions) {
+      devServerConfig.watchOptions = options.watchOptions;
+    }
+
     if (options.devServerProxy) {
       devServerConfig.proxy = options.devServerProxy;
     }
