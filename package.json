@@ -59,7 +59,8 @@
     "gulp-install": "^0.5.0",
     "gulp-file": "^0.2.0",
     "mkdirp": "^0.5.1",
-    "node-uuid": "^1.4.0"
+    "node-uuid": "^1.4.0",
+    "shelljs": "0.5.3"
   },
   "devDependencies": {
     "del": "^1.1.1",

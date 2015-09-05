@@ -1,20 +1,14 @@
 var path = require('path');
 var eslint = require('gulp-eslint');
 var merge = require('lodash/object/merge');
-var exec = require('child_process');
+var shelljs = require('shelljs');
 
 function failLintBuild() {
   process.exit(1);
 }
 
 function scssLintExists() {
-  var cmd = 'scss-lint';
-  if (process.platform === 'win32') {
-    cmd += '.cmd';
-  }
-  var args = ['--version'];
-  var ret = exec.spawnSync(cmd, args);
-  return ret && (ret.error === undefined);
+  return shelljs.which('scss-lint');
 }
 
 module.exports = function(gulp, options) {

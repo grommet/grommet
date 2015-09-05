@@ -8,7 +8,7 @@ var path = require('path');
 var fs = require('fs');
 var mkdirp = require('mkdirp');
 var merge = require('lodash/object/merge');
-var exec = require('child_process');
+var shelljs = require('shelljs');
 
 String.prototype.capitalize = function() {
   var words = this.split(' ');
@@ -87,14 +87,8 @@ function nodeVersionSupported() {
 
 var npmVersion;
 function npmVersionSupported() {
-  var cmd = 'npm';
-  if (process.platform === 'win32') {
-    cmd += '.cmd';
-  }
-  var args = ['--version'];
-  var ret = exec.spawnSync(cmd, args);
-  npmVersion = Number(ret.stdout.toString().match(/^(\d+\.\d+)/)[1]);
-  return ret && (ret.error === undefined) && npmVersion  >= 1.4;
+  npmVersion = Number(shelljs.exec('npm --version').output.toString().match(/^(\d+\.\d+)/)[1]);
+  return npmVersion  >= 1.4;
 }
 
 gulp.task('init', function(done) {
