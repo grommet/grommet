@@ -3,6 +3,7 @@
 var React = require('react');
 var Header = require('grommet/components/Header');
 var Title = require('grommet/components/Title');
+var Box = require('grommet/components/Box');
 var GrommetLogo = require('grommet/components/icons/Grommet');
 var Menu = require('grommet/components/Menu');
 var Link = require('react-router').Link;
@@ -19,8 +20,10 @@ var DocsHeader = React.createClass({
         appCentered={true} justify="between">
         <Title responsive={false}>
           <Link to="docs">
-            <GrommetLogo small={true} a11yTitle=""/>
-            Grommet
+            <Box align="center" direction="row">
+              <GrommetLogo small={true} a11yTitle=""/>
+              Grommet
+            </Box>
           </Link>
         </Title>
         <Menu direction="row" responsive={false}>
