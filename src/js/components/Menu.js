@@ -45,7 +45,7 @@ var MenuDrop = React.createClass({
     this.startListeningToKeyboard(this._keyboardHandlers);
     var menuItems = this.refs.navContainer.getDOMNode().childNodes;
     for (var i = 0; i < menuItems.length; i++) {
-      var classes = menuItems[i].className.split(/\s+/);
+      var classes = menuItems[i].className.toString();
       var tagName = menuItems[i].tagName.toLowerCase();
       // want to skip items of the menu that are not focusable.
       if (tagName !== 'button' && tagName !== 'a' && classes.indexOf('check-box') === -1) {
@@ -202,7 +202,8 @@ var Menu = React.createClass({
     return {
       // state may be 'collapsed', 'focused' or 'expanded' (active).
       state: 'collapsed',
-      inline: inline
+      inline: inline,
+      dropId: 'menuDrop'
     };
   },
 
@@ -329,7 +330,11 @@ var Menu = React.createClass({
     if (small) {
       this.setState({inline: false, active: newState});
     } else {
-      this.setState({inline: this.props.inline, active: newState});
+      this.setState({
+        inline: this.props.inline,
+        active: newState,
+        state: 'collapsed'
+      });
     }
   },
 
