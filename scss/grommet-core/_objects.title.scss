@@ -50,6 +50,11 @@
 
   &--responsive {
     @include media-query(palm) {
+      svg,
+      img {
+        margin-right: 0px;
+      }
+
       > *:not(:first-child) {
         display: none;
       }
