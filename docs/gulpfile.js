@@ -8,6 +8,7 @@ var opts = {
   dist: path.resolve(__dirname, '../docs/dist'),
   copyAssets: [
     'docs/src/index.html',
+    'docs/src/robots.txt',
     {
       asset: 'docs/src/design/img/**',
       dist: 'docs/dist/img/'

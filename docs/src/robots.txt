@@ -1,0 +1,3 @@
+Disallow: /docs/hpinc/
+Disallow: /docs/aruba/
+Disallow: /docs/hpe/
