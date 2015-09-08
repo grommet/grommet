@@ -24,46 +24,9 @@ var task = process.argv[2] || 'init';
 var app = process.argv[3] || 'app-name';
 var dest = process.argv[4] || app;
 var title = app.replace(/-|_/g, ' ').capitalize();
+var grommetPath = path.join(__dirname, '..');
 
-function getPossibleNodePaths() {
-  var splitter = (process.platform === 'win32') ? ';' : ':';
-  var paths = [];
-
-  if (process.env.NODE_PATH) {
-    paths = paths.concat(process.env.NODE_PATH.split(splitter));
-  }
-
-  if (process.platform === 'win32') {
-    paths.push(path.join(process.env.APPDATA, 'npm', 'node_modules'));
-  }
-
-  paths.push('/usr/lib/node_modules');
-  paths.push('/usr/local/lib/node_modules');
-
-  return paths;
-}
-
-function getGrommetPath() {
-
-  var grommetPath;
-  getPossibleNodePaths().some(function(nodePath) {
-    var possiblePath = path.join(nodePath, 'grommet');
-    if (fs.existsSync(possiblePath)) {
-      grommetPath = possiblePath;
-      return true;
-    }
-    return false;
-  });
-
-  if (!grommetPath) {
-    console.log("Could not find Grommet! " +
-                "Please make sure you've set NODE_PATH to your version of NPM");
-    process.exit(1);
-  }
-  return grommetPath;
-}
-
-function getPackageJSON(app, grommetPath, fixedVersion) {
+function getPackageJSON(app, fixedVersion) {
   var grommetPackageJSON = require(path.join(grommetPath, 'package.json'));
 
   var appPackageJSON = {
@@ -105,7 +68,6 @@ gulp.task('init', function(done) {
     } else {
       process.chdir('./' + app);
 
-      var grommetPath = getGrommetPath();
       var templateFolder = path.join(grommetPath, 'templates/init/**');
       var mobileIcon = path.join(grommetPath, 'mobile-app-icon.png');
       var shortcutIcon = path.join(grommetPath, 'shortcut-icon.png');
@@ -146,7 +108,6 @@ gulp.task('export', function(done) {
     } else {
       process.chdir('./' + dest);
 
-      var grommetPath = getGrommetPath();
       var exampleFolder = path.join(grommetPath, 'examples/' + app);
       var templateFolder = path.join(grommetPath, 'templates/' + app + '/**');
 
@@ -155,7 +116,7 @@ gulp.task('export', function(done) {
           throw new Error('Could not find ' + exampleFolder);
         }
 
-        var packageJSON = getPackageJSON(dest, grommetPath);
+        var packageJSON = getPackageJSON(dest);
 
         gulp.src([
           exampleFolder + '/**',
@@ -195,7 +156,7 @@ gulp.task('export', function(done) {
 var argv = require('yargs').argv;
 
 if (argv.version) {
-  console.log(require(path.join(getGrommetPath(), 'package.json')).version);
+  console.log(require(path.join(grommetPath, 'package.json')).version);
   process.exit(0);
 } else {
   gulp.start(task);
