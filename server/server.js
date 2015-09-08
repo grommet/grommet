@@ -130,6 +130,21 @@ app.get('/assets/design/:name', function(req, res) {
   res.sendFile(req.params.name, options);
 });
 
+// The robots.txt file must be at the root of the webserver
+// in order for bots to find locate it.  Without this function,
+// the file is hosted under the /docs directory.
+app.get('/robots.txt', function(req, res) {
+  var options = {
+    root: path.join(__dirname, '/../docs/dist'),
+    dotfiles: 'deny',
+    headers: {
+        'x-timestamp': Date.now(),
+        'x-sent': true
+    }
+  };
+  res.sendFile('robots.txt', options);
+});
+
 app.
   use('/docs', docs).
   use('/cto-app-tuner', ctoAppTuner).
