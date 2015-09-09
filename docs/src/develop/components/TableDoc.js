@@ -6,6 +6,23 @@ var Table = require('grommet/components/Table');
 
 var TableDoc = React.createClass({
 
+  getInitialState: function () {
+    return {
+      singleSelection: [0]
+    };
+  },
+
+  // single selection is managed by the caller via state.singleSelection
+  _onSingleSelect: function (selection) {
+    //console.log('!!! selection:', selection);
+    this.setState({singleSelection: selection});
+  },
+
+  // multiple selection is managed by the Table
+  _onMultipleSelect: function (selection) {
+    //console.log('!!! selection:', selection);
+  },
+
   render: function() {
     var inline = [
       "<Table>",
@@ -84,7 +101,7 @@ var TableDoc = React.createClass({
 
           <h3>Selectable</h3>
           <div className="example">
-            <Table selectable={true} selection={0}>
+            <Table selectable={true} selection={this.state.singleSelection} onSelect={this._onSingleSelect}>
               {tableHeader}
               {tableBody}
             </Table>
@@ -92,7 +109,7 @@ var TableDoc = React.createClass({
 
           <h3>Multi-select</h3>
           <div className="example">
-              <Table selectable="multiple" selection={[0, 2]}>
+              <Table selectable="multiple" onSelect={this._onMultipleSelect}>
               {tableHeader}
               {tableBody}
             </Table>
