@@ -5,12 +5,15 @@
   overflow: hidden;
   text-overflow: ellipsis;
   font-weight: normal;
-  margin-right: halve($inuit-base-spacing-unit);
   white-space: nowrap;
   @include inuit-font-size(24px, inherit);
 
   @include media-query(lap-and-up) {
     font-weight: 700;
+  }
+
+  > *:not(:last-child) {
+    margin-right: halve($inuit-base-spacing-unit);
   }
 
   a {
@@ -30,8 +33,11 @@
 
   svg,
   img {
-    margin-right: halve($inuit-base-spacing-unit);
     max-height: 100%;
+
+    &:not(:last-child) {
+      margin-right: halve($inuit-base-spacing-unit);
+    }
   }
 
   &--interactive {
