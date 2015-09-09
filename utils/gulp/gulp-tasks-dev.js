@@ -18,7 +18,8 @@ module.exports = function(gulp, options, webpackConfig, dist) {
   gulp.task('dev', ['dev-preprocess'], function() {
 
     var env = merge({}, options.env, {
-      __DEV_MODE__: true
+      __DEV_MODE__: true,
+      NODE_ENV: "\"development\""
     });
 
     var devWebpackConfig = merge({}, webpackConfig, {

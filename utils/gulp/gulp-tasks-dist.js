@@ -28,9 +28,7 @@ module.exports = function(gulp, options, webpackConfig, dist) {
   gulp.task('dist', ['dist-preprocess'], function() {
     var env = merge({
       __DEV_MODE__: false,
-      'process.env': {
-        'NODE_ENV': JSON.stringify('production')
-      }
+      NODE_ENV: "\"production\""
     }, options.env);
 
     var plugins = [
