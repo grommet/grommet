@@ -1,7 +1,6 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var uuid = require('node-uuid');
 
 var CLASS_ROOT = "check-box";
 
@@ -21,7 +20,7 @@ var CheckBox = React.createClass({
 
   render: function () {
     var classes = [CLASS_ROOT];
-    var labelId = 'checkbox-label-' + uuid.v1();
+    var labelId = 'checkbox-label-' + new Date().getTime();
     var hidden;
     if (this.props.toggle) {
       classes.push(CLASS_ROOT + "--toggle");

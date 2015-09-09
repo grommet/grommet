@@ -2,7 +2,6 @@
 
 var React = require('react');
 var CLASS_ROOT = "logo-icon";
-var uuid = require('node-uuid');
 var IntlMixin = require('../../mixins/GrommetIntlMixin');
 
 var Grommet = React.createClass({
@@ -30,7 +29,7 @@ var Grommet = React.createClass({
     if (this.props.className) {
       classes.push(this.props.className);
     }
-    var logoTitleId = 'grommet-logo-title-' + uuid.v1();
+    var logoTitleId = 'grommet-logo-title-' + new Date().getTime();
     return (
       <svg className={classes.join(' ')} viewBox="0 0 140 140" version="1.1" role="img" aria-labelledby={logoTitleId}>
         <title id={logoTitleId}>{this.getGrommetIntlMessage(this.props.a11yTitle)}</title>
