@@ -2,7 +2,6 @@
 
 var React = require('react');
 var IntlMixin = require('../../mixins/GrommetIntlMixin');
-var uuid = require('node-uuid');
 
 var Filter = React.createClass({
 
@@ -25,7 +24,7 @@ var Filter = React.createClass({
       // should it use the default title value
       a11yTitle = this.getGrommetIntlMessage('Filter');
     }
-    var filterTitleId = 'ok-title-' + uuid.v1();
+    var filterTitleId = 'ok-title-' + new Date().getTime();
 
     var badge = null;
     if (this.props.notifications) {
