@@ -2,6 +2,21 @@
 
 .header {
   width: 100%;
+
+  &.box {
+    > *:not(:last-child) {
+      margin-right: halve($inuit-base-spacing-unit);
+    }
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
 
 h1 {
@@ -102,6 +117,8 @@ header.header {
 div.header {
 
   &__container {
+    -webkit-flex-shrink: 0;
+    flex-shrink: 0;
 
     &--fixed {
       position: relative;
