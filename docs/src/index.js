@@ -13,7 +13,7 @@ require("index-" + __THEME__ + ".scss");
 var rootPath = '/docs/' + ('grommet' === __THEME__ ? '' : __THEME__ + '/');
 var theme = __THEME__;
 
-if (__DEV_MODE__) {
+if (NODE_ENV === 'development') {
   rootPath = "/"; // webpack-dev-server
 }
 
