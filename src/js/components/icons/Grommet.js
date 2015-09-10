@@ -29,7 +29,7 @@ var Grommet = React.createClass({
     if (this.props.className) {
       classes.push(this.props.className);
     }
-    var logoTitleId = 'grommet-logo-title-' + new Date().getTime();
+    var logoTitleId = 'grommet-logo-title';
     return (
       <svg className={classes.join(' ')} viewBox="0 0 140 140" version="1.1" role="img" aria-labelledby={logoTitleId}>
         <title id={logoTitleId}>{this.getGrommetIntlMessage(this.props.a11yTitle)}</title>

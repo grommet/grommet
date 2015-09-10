@@ -21,7 +21,7 @@ var Warning = React.createClass({
       // should use the default title value.
       a11yTitle = this.getGrommetIntlMessage('Warning');
     }
-    var warningTitleId = 'warning-title-' + new Date().getTime();
+    var warningTitleId = 'warning-title';
     return (
       <svg className={className} viewBox="0 0 27 24" role="img" aria-labelledby={warningTitleId} version="1.1">
         <title id={warningTitleId}>{a11yTitle}</title>

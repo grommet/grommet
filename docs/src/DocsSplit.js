@@ -23,7 +23,7 @@ var DocsSplit = React.createClass({
   },
 
   getInitialState: function () {
-    return {showMenu: true};
+    return {showMenu: true, responsive: 'multiple'};
   },
 
   componentDidMount: function () {

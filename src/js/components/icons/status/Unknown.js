@@ -2,6 +2,7 @@
 
 var React = require('react');
 var IntlMixin = require('../../../mixins/GrommetIntlMixin');
+
 var Unknown = React.createClass({
 
   mixins: [IntlMixin],
@@ -17,7 +18,7 @@ var Unknown = React.createClass({
       // should use the default title value.
       a11yTitle = this.getGrommetIntlMessage('Unknown');
     }
-    var unknownTitleId = 'unknown-title-' + new Date().getTime();
+    var unknownTitleId = 'unknown-title';
     return (
       <svg className={className} viewBox="0 0 24 24" role="img" aria-labelledby={unknownTitleId} version="1.1">
         <title id={unknownTitleId}>{a11yTitle}</title>

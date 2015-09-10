@@ -22,7 +22,7 @@ var Disabled = React.createClass({
       // should use the default title value.
       a11yTitle = this.getGrommetIntlMessage('Disabled');
     }
-    var disabledTitleId = 'disabled-title-' + new Date().getTime();
+    var disabledTitleId = 'disabled-title';
     return (
       <svg className={className} viewBox="0 0 24 24" role="img" aria-labelledby={disabledTitleId} version="1.1">
         <title id={disabledTitleId}>{a11yTitle}</title>
