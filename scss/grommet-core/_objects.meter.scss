@@ -435,7 +435,6 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
         stroke-dasharray: quadruple($meter-size) quadruple($meter-size);
         stroke-dashoffset: 0;
         fill: none;
-        cursor: pointer;
         stroke: $meter-background-color;
 
         &-indicator {
@@ -449,6 +448,7 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
       &__values .meter__slice {
         stroke-width: $meter-width;
         @include graph-stroke-color();
+        cursor: pointer;
 
         @include media-query(lap-and-up) {
           transition: stroke-width 0.2s;
