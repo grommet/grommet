@@ -45,6 +45,7 @@ var PORT = 8000;
 
 var app = express();
 
+app.set('views', path.resolve(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(compression());

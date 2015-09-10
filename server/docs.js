@@ -15,7 +15,7 @@ var routesMap = {
 
 function themeCompiler(theme) {
   return sass.renderSync({
-    file: '../docs/node_modules/grommet/scss/' + theme + '/index',
+    file: path.resolve(__dirname, '../docs/node_modules/grommet/scss/' + theme + '/index'),
     includePaths: [path.resolve(__dirname, '../node_modules')]
   });
 }
