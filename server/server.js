@@ -19,9 +19,6 @@ var request = require('request');
 
 var webpackRequire = require('enhanced-require')(module, {
   resolve: {
-    alias: {
-      'grommet': path.resolve(__dirname, '../src/js')
-    },
     loaders: [
       {
         test: /\.js$/,
