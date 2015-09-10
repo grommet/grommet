@@ -41,34 +41,25 @@ var AnchorDoc = React.createClass({
 
           <h3>Default</h3>
           <div className="example">
-            <Anchor href="" onClick={this._onClick}>text</Anchor>
+            <Anchor href="" onClick={this._onClick}>Text</Anchor>
           </div>
-          <pre><code className="html">{"<Anchor href=\"...\" onClick={...}>text</Anchor>"}</code></pre>
+          <pre><code className="html">{"<Anchor href=\"\" onClick={this._onClick}>Text</Anchor>"}</code></pre>
 
           <h3>Primary</h3>
           <div className="example">
             <Anchor href="" primary={true} onClick={this._onClick}>Text</Anchor>
           </div>
-          <pre><code className="html">{"<Anchor label=\"Action\" primary={true} onClick={...} />"}</code></pre>
-
-          <h3>Disabled</h3>
-          <div className="example">
-            <Anchor href="">text</Anchor>
-          </div>
-          <pre><code className="html">{"<Button label=\"Action\" />"}</code></pre>
+          <pre><code className="html">{"<Anchor href=\"\" label=\"Text\" primary={true} onClick={this._onClick} />"}</code></pre>
 
         </section>
 
         <Section colorIndex="neutral-1" pad="medium">
           <h3>Colored context</h3>
           <div className="example">
-            <Anchor href="" onClick={this._onClick}>text</Anchor>
+            <Anchor href="" onClick={this._onClick}>Text</Anchor>
           </div>
           <div className="example">
             <Anchor href="" primary={true} onClick={this._onClick}>Text</Anchor>
-          </div>
-          <div className="example">
-            <Anchor href="" onClick={this._onClick}>text</Anchor>
           </div>
         </Section>
 

@@ -14,13 +14,12 @@ var TableDoc = React.createClass({
 
   // single selection is managed by the caller via state.singleSelection
   _onSingleSelect: function (selection) {
-    //console.log('!!! selection:', selection);
     this.setState({singleSelection: selection});
   },
 
   // multiple selection is managed by the Table
   _onMultipleSelect: function (selection) {
-    //console.log('!!! selection:', selection);
+    // no-op
   },
 
   render: function() {
@@ -79,7 +78,13 @@ var TableDoc = React.createClass({
           <h2>Options</h2>
           <dl>
             <dt><code>onMore        {"function () {...}"}</code></dt>
-            <dd>Function that will be called when more data is needed.</dd>
+            <dd>Function that will be called when more data is needed. When this
+              callback is provided, it is an indication that more data could be
+              added if the user scrolls to the bottom of the table. When present,
+              Table will add a spinner to the bottom of the table and listen for
+              the user scrolling down such that it becomes visible. When the user
+              scrolls to the bottom, this callback will be called. The expectation
+              is that the the caller will add the next chunk of data into the table.</dd>
             <dt><code>onSelect      {"function (selection) {...}"}</code></dt>
             <dd>Function that will be called when the user selects a row.</dd>
             <dt><code>scrollable    true|false</code></dt>
