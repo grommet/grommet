@@ -22,7 +22,7 @@ var OK = React.createClass({
       // should it use the default title value
       a11yTitle = this.getGrommetIntlMessage('OK');
     }
-    var okTitleId = 'ok-title-' + new Date().getTime();
+    var okTitleId = 'ok-title';
     return (
       <svg className={className} viewBox="0 0 24 24" role="img" aria-labelledby={okTitleId} version="1.1">
         <title id={okTitleId}>{a11yTitle}</title>

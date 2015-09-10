@@ -20,7 +20,7 @@ var CheckBox = React.createClass({
 
   render: function () {
     var classes = [CLASS_ROOT];
-    var labelId = 'checkbox-label-' + new Date().getTime();
+    var labelId = 'checkbox-label';
     var hidden;
     if (this.props.toggle) {
       classes.push(CLASS_ROOT + "--toggle");

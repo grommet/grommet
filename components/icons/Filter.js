@@ -24,7 +24,7 @@ var Filter = React.createClass({
       // should it use the default title value
       a11yTitle = this.getGrommetIntlMessage('Filter');
     }
-    var filterTitleId = 'ok-title-' + new Date().getTime();
+    var filterTitleId = 'ok-title';
 
     var badge = null;
     if (this.props.notifications) {
