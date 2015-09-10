@@ -2,7 +2,6 @@
 
 var React = require('react');
 var IntlMixin = require('../../../mixins/GrommetIntlMixin');
-var uuid = require('node-uuid');
 
 var Warning = React.createClass({
 
@@ -22,7 +21,7 @@ var Warning = React.createClass({
       // should use the default title value.
       a11yTitle = this.getGrommetIntlMessage('Warning');
     }
-    var warningTitleId = 'warning-title-' + uuid.v1();
+    var warningTitleId = 'warning-title';
     return (
       <svg className={className} viewBox="0 0 27 24" role="img" aria-labelledby={warningTitleId} version="1.1">
         <title id={warningTitleId}>{a11yTitle}</title>

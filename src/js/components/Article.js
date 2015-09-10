@@ -129,6 +129,9 @@ var Article = React.createClass({
     if (this.props.scrollStep) {
       classes.push(CLASS_ROOT + "--scroll-step");
     }
+    if (this.props.className) {
+      classes.push(this.props.className);
+    }
 
     var skipLinkAnchor = null;
     if (this.props.primary) {

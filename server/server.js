@@ -9,7 +9,6 @@ var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var path = require('path');
 var httpProxy = require('http-proxy');
-var prerender = require('prerender-node');
 
 var proxy = httpProxy.createProxyServer({
   target: 'ws://localhost:8010',
@@ -18,7 +17,25 @@ var proxy = httpProxy.createProxyServer({
 
 var request = require('request');
 
-var docs = require('./docs');
+var webpackRequire = require('enhanced-require')(module, {
+  resolve: {
+    loaders: [
+      {
+        test: /\.js$/,
+        loader: 'babel',
+        exclude: /(node_modules\/intl|node_modules\/moment|node_modules\/react|node_modules\/node-sass)/
+      },
+      {
+        test: /develop(\/|\\).*\.htm$|design(\/|\\)[^\/]*\.htm$|design(\/|\\).*\/.*\.htm$/,
+        loader: 'babel!imports?React=react,Router=react-router,Link=>Router.Link!html-jsx-loader',
+        exclude: /(node_modules|bower_components)/
+      }
+    ],
+    extensions: ['', '.js', '.json', '.htm', '.html', '.scss', '.md']
+  }
+});
+
+var docs = webpackRequire('./docs');
 var ctoAppTuner = require('./cto-app-tuner');
 var todoAppModular = require('./todo-app-modular');
 var cabler = require('./cabler');
@@ -28,11 +45,12 @@ var PORT = 8000;
 
 var app = express();
 
+app.set('views', path.resolve(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
 app.use(compression());
 
 app.use(cookieParser());
-
-app.use(require('prerender-node').set('prerenderToken', '4u2mrWTUsWw3ritba16x'));
 
 if (!process.env.SILENT_MODE) {
   app.use(morgan('tiny'));
@@ -128,6 +146,21 @@ app.get('/assets/design/:name', function(req, res) {
   }
 
   res.sendFile(req.params.name, options);
+});
+
+// The robots.txt file must be at the root of the webserver
+// in order for bots to find locate it.  Without this function,
+// the file is hosted under the /docs directory.
+app.get('/robots.txt', function(req, res) {
+  var options = {
+    root: path.join(__dirname, '/../docs/dist'),
+    dotfiles: 'deny',
+    headers: {
+      'x-timestamp': Date.now(),
+      'x-sent': true
+    }
+  };
+  res.sendFile('robots.txt', options);
 });
 
 app.

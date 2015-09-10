@@ -380,6 +380,16 @@ var Meter = React.createClass({
     return state;
   },
 
+  _interactionListeners: function (interactive, item, index) {
+    var result = {};
+    if (interactive) {
+      result.onOver = this._onActivate.bind(this, index);
+      result.onOut = this._onActivate.bind(this, this.state.importantIndex);
+      result.onClick = item.onClick;
+    }
+    return result;
+  },
+
   _translateBarWidth: function (value) {
     return Math.round(this.state.scale * value);
   },
@@ -396,7 +406,7 @@ var Meter = React.createClass({
     return commands;
   },
 
-  _renderBar: function (series) {
+  _renderBar: function (series, interactive) {
     var start = 0;
     var minRemaining = this.state.min.value;
     var classes;
@@ -415,11 +425,12 @@ var Meter = React.createClass({
       commands = this._barCommands(start, distance);
       start += distance;
 
+      var listeners = this._interactionListeners(interactive, item, index);
+
       return (
         <path key={index} className={classes.join(' ')} d={commands}
-          onMouseOver={this._onActivate.bind(this, index)}
-          onMouseOut={this._onActivate.bind(this, this.state.importantIndex)}
-          onClick={item.onClick} />
+          onMouseOver={listeners.onOver} onMouseOut={listeners.onOut}
+          onClick={listeners.onClick} />
       );
     }, this);
 
@@ -447,7 +458,7 @@ var Meter = React.createClass({
       endAngle + this.state.angleOffset);
   },
 
-  _renderArcOrCircle: function (series) {
+  _renderArcOrCircle: function (series, interactive) {
     var startAngle = this.state.startAngle;
     var classes;
     var endAngle;
@@ -464,12 +475,13 @@ var Meter = React.createClass({
 
       startAngle = endAngle;
 
+      var listeners = this._interactionListeners(interactive, item, index);
+
       return (
         <path key={item.label || index} fill="none"
           className={classes.join(' ')} d={commands}
-          onMouseOver={this._onActivate.bind(this, index)}
-          onMouseOut={this._onActivate.bind(this, this.state.importantIndex)}
-          onClick={item.onClick} />
+          onMouseOver={listeners.onOver} onMouseOut={listeners.onOut}
+          onClick={listeners.onClick} />
       );
     }, this);
 
@@ -493,7 +505,7 @@ var Meter = React.createClass({
       endAngle + this.state.angleOffset);
   },
 
-  _renderSpiral: function (series) {
+  _renderSpiral: function (series, interactive) {
     var startAngle = this.state.startAngle;
     var radius = this.state.startRadius;
     var classes;
@@ -511,12 +523,13 @@ var Meter = React.createClass({
 
       radius += SPIRAL_THICKNESS;
 
+      var listeners = this._interactionListeners(interactive, item, index);
+
       return (
         <path key={item.label || index} fill="none"
           className={classes.join(' ')} d={commands}
-          onMouseOver={this._onActivate.bind(this, index)}
-          onMouseOut={this._onActivate.bind(this, this.state.importantIndex)}
-          onClick={item.onClick} />
+          onMouseOver={listeners.onOver} onMouseOut={listeners.onOut}
+          onClick={listeners.onClick} />
       );
     }, this);
 
@@ -674,16 +687,16 @@ var Meter = React.createClass({
     var width;
     var height;
     if ('arc' === this.props.type || 'circle' === this.props.type) {
-      values = this._renderArcOrCircle(this.state.series);
+      values = this._renderArcOrCircle(this.state.series, true);
       thresholds = this._renderArcOrCircle(this.state.thresholds);
       if (this.state.series.length === 1) {
         singleIndicator = this._renderSingleIndicator(this.state.series);
       }
     } else if ('bar' === this.props.type) {
-      values = this._renderBar(this.state.series);
+      values = this._renderBar(this.state.series, true);
       thresholds = this._renderBar(this.state.thresholds);
     } else if ('spiral' === this.props.type) {
-      values = this._renderSpiral(this.state.series);
+      values = this._renderSpiral(this.state.series, true);
       if (this.state.series.length === 1) {
         singleIndicator = this._renderSingleIndicator(this.state.series);
       }

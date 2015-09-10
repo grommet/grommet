@@ -1,5 +1,4 @@
 var merge = require('lodash/object/merge');
-var extend = require('lodash/object/extend');
 var webpack = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
 var open = require('gulp-open');
@@ -19,10 +18,11 @@ module.exports = function(gulp, options, webpackConfig, dist) {
   gulp.task('dev', ['dev-preprocess'], function() {
 
     var env = merge({}, options.env, {
-      __DEV_MODE__: true
+      __DEV_MODE__: true,
+      NODE_ENV: "\"development\""
     });
 
-    var devWebpackConfig = extend({}, webpackConfig, options.webpack || {}, {
+    var devWebpackConfig = merge({}, webpackConfig, {
       entry: {
         app: ['webpack/hot/dev-server', './' + options.mainJs]
       },
@@ -33,24 +33,25 @@ module.exports = function(gulp, options, webpackConfig, dist) {
         publicPath: '/'
       },
 
-      devtool: 'inline-source-map',
+      devtool: 'inline-source-map'
 
-      plugins: [
-        new webpack.HotModuleReplacementPlugin(),
-        new webpack.DefinePlugin(env)
-      ]
-
-    });
+    }, options.webpack || {});
 
     if (!devWebpackConfig.resolve) {
       devWebpackConfig.resolve = {};
     }
 
+    devWebpackConfig.module.loaders = webpackConfig.module.loaders;
     if (options.webpack.module && options.webpack.module.loaders) {
-      webpackConfig.module.loaders.forEach(function(loader) {
+      options.webpack.module.loaders.forEach(function(loader) {
         devWebpackConfig.module.loaders.push(loader);
       });
     }
+
+    devWebpackConfig.plugins = [
+      new webpack.HotModuleReplacementPlugin(),
+      new webpack.DefinePlugin(env)
+    ];
 
     if (options.webpack.plugins) {
       options.webpack.plugins.forEach(function(plugin) {
@@ -72,6 +73,10 @@ module.exports = function(gulp, options, webpackConfig, dist) {
       historyApiFallback: true
     };
 
+    if (options.watchOptions) {
+      devServerConfig.watchOptions = options.watchOptions;
+    }
+
     if (options.devServerProxy) {
       devServerConfig.proxy = options.devServerProxy;
     }
@@ -88,9 +93,7 @@ module.exports = function(gulp, options, webpackConfig, dist) {
         }
       }
 
-      if (req.url.match(/.+index.js$/)) {
-        res.redirect(301, '/index.js');
-      } else if (req.url.match(/.+\/img\//)) { // img
+      if (req.url.match(/.+\/img\//)) { // img
         res.redirect(301, req.url.replace(/.*\/(img\/.*)$/, '/$1'));
       } else if (req.url.match(/\/img\//)) { // img
         next();

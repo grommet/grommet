@@ -13,6 +13,7 @@
     "morgan": "^1.5.0",
     "request": "^2.53.0",
     "gulp-nodemon": "^2.0.3",
-    "prerender-node": "^2.0.2"
+    "enhanced-require": "^0.4.2",
+    "ejs": "^0.8.5"
   }
 }

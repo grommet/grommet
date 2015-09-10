@@ -10,43 +10,18 @@ if (! Modernizr.flexbox ||
 }
 
 require("index-" + __THEME__ + ".scss");
-var rootPath = '/docs/' + ('grommet' === __THEME__ ? '' : __THEME__ + '/');
-var theme = __THEME__;
-
-if (__DEV_MODE__) {
-  rootPath = "/"; // webpack-dev-server
-}
+require("!style!css!highlight.js/styles/github.css");
 
 var React = require('react');
 var Router = require('react-router');
-var Route = Router.Route;
-var Docs = require('./Docs');
-var Home = require('./Home');
-var Introduction = require('./Introduction');
-var Design = require('./design/Design');
-var Develop = require('./develop/Develop');
-//var TBD = require('grommet/components/TBD');
 
-var IntlMixin = require('grommet/mixins/GrommetIntlMixin');
+var rootPath = '/docs/' + ('grommet' === __THEME__ ? '' : __THEME__ + '/');
 
-var DocsRouter = React.createClass({
-  mixins: [IntlMixin],
-  render: function() {
-    return (
-      <Docs theme={theme} />
-    );
-  }
-});
+if (NODE_ENV === 'development') {
+  rootPath = "/"; // webpack-dev-server
+}
 
-var routes = (
-  <Route name="docs" path={rootPath} handler={DocsRouter}>
-    <Route name="home" path={rootPath} handler={Home} />
-    <Route name="introduction" handler={Introduction} />
-    {Design.routes()}
-    {Develop.routes()}
-  </Route>
-);
-
+var routes = require('./routes')(rootPath);
 var router = Router.create({routes: routes, location: Router.HistoryLocation});
 
 router.run(function (Handler) {

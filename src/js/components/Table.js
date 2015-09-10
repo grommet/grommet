@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
+var isEqual = require('lodash/lang/isEqual');
 var SpinningIcon = require('./icons/Spinning');
 var InfiniteScroll = require('../mixins/InfiniteScroll');
 
@@ -27,15 +28,13 @@ var Table = React.createClass({
 
   getDefaultProps: function () {
     return {
-      selection: null,
       scrollable: false,
-      selectable: false,
-      onSelect: null
+      selectable: false
     };
   },
 
   getInitialState: function () {
-    return {selection: this.props.selection};
+    return {selection: this._normalizeSelection(this.props.selection)};
   },
 
   componentDidMount: function () {
@@ -52,12 +51,12 @@ var Table = React.createClass({
 
   componentWillReceiveProps: function (newProps) {
     if (newProps.hasOwnProperty('selection')) {
-      this.setState({selection: newProps.selection});
+      this.setState({selection: this._normalizeSelection(newProps.selection)});
     }
   },
 
   componentDidUpdate: function (prevProps, prevState) {
-    if (this.state.selection !== prevState.selection) {
+    if (! isEqual(this.state.selection, prevState.selection)) {
       this._alignSelection();
     }
     if (this.props.scrollable) {
@@ -76,6 +75,18 @@ var Table = React.createClass({
     window.removeEventListener('resize', this._onResize);
   },
 
+  _normalizeSelection: function (selection) {
+    var result;
+    if (undefined === selection || null === selection) {
+      result = [];
+    } else if (typeof selection === 'number') {
+      result = [selection];
+    } else {
+      result = selection;
+    }
+    return result;
+  },
+
   _clearSelected: function () {
     var rows = this.refs.table.getDOMNode()
       .querySelectorAll("." + SELECTED_CLASS);
@@ -88,11 +99,7 @@ var Table = React.createClass({
     this._clearSelected();
     if (null !== this.state.selection) {
       var tbody = this.refs.table.getDOMNode().querySelectorAll('tbody')[0];
-      let selection = this.state.selection;
-      if (typeof selection === 'number') {
-        selection = [selection];
-      }
-      selection.forEach(function (rowIndex) {
+      this.state.selection.forEach(function (rowIndex) {
         tbody.childNodes[rowIndex].classList.add(SELECTED_CLASS);
       });
     }
@@ -118,16 +125,35 @@ var Table = React.createClass({
         }
       }
 
-      var selection = [];
-      if (this.state.selection) {
-        selection = this.state.selection.slice(0);
-      }
+      var selection = this.state.selection.slice(0);
+      var selectionIndex = selection.indexOf(index);
 
-      if ('multiple' === this.props.selectable &&
+      if ('multiple' === this.props.selectable && event.shiftKey) {
+
+        // select from nearest selected item to the currently selected item
+        var closestIndex = -1;
+        selection.forEach(function (selectIndex, arrayIndex) {
+          if (-1 === closestIndex) {
+            closestIndex = selectIndex;
+          } else if (Math.abs(index - selectIndex) < Math.abs(index - closestIndex)) {
+            closestIndex = selectIndex;
+          }
+        });
+        for (var i = index; i !== closestIndex; ) {
+          selection.push(i);
+          if (closestIndex < index) {
+            i -= 1;
+          } else {
+            i += 1;
+          }
+        }
+        // remove text selection
+        window.getSelection().removeAllRanges();
+
+      } else if (('multiple' === this.props.selectable || -1 !== selectionIndex) &&
         (event.ctrlKey || event.metaKey)) {
 
         // toggle
-        var selectionIndex = selection.indexOf(index);
         if (-1 === selectionIndex) {
           element.classList.add(SELECTED_CLASS);
           selection.push(index);

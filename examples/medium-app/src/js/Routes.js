@@ -29,7 +29,7 @@ var MediumActivity = require('./MediumActivity');
 var MediumActivityResource = require('./MediumActivityResource');
 
 var rootPath = "/medium-app/";
-if (__DEV_MODE__) {
+if (NODE_ENV === 'development') {
   rootPath = "/"; // webpack-dev-server
 }
 

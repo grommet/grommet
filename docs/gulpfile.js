@@ -8,6 +8,7 @@ var opts = {
   dist: path.resolve(__dirname, '../docs/dist'),
   copyAssets: [
     'docs/src/index.html',
+    'docs/src/robots.txt',
     {
       asset: 'docs/src/design/img/**',
       dist: 'docs/dist/img/'
@@ -124,3 +125,22 @@ gulp.task('dev-aruba', function() {
 });
 
 devGulpTasks(gulp, opts);
+
+gulp.task('sync-all', ['syncPre'], function() {
+  var rsync = require('gulp-rsync');
+  gulp.src(path.resolve(__dirname, '../docs'))
+    .pipe(rsync({
+      root: path.resolve(__dirname, '../docs'),
+      hostname: 'grommet.io',
+      username: 'grommet',
+      destination: '/var/www/html/docs',
+      recursive: true,
+      relative: true,
+      progress: true,
+      incremental: true,
+      clean: true,
+      silent: false,
+      emptyDirectories: true,
+      exclude: ['.DS_Store', 'node_modules', '.git']
+    }));
+});

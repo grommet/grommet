@@ -2,12 +2,12 @@
 
 var theme = module.exports = {};
 
-theme.picker = function( ip ) {
+theme.picker = function(ip) {
   var theme;
 
   //
   // Automatically detect the them based on the requestor's IP
-  // with the following network address assumptions. 
+  // with the following network address assumptions.
   // HPInc theme:   15.0.0.0 - 15.103.255.255
   // HPE theme:     15.104.0.0 - 16.x.x.x
   // Grommet theme: anything else
@@ -16,13 +16,10 @@ theme.picker = function( ip ) {
   //
   if( ip.match(/^15\.([0-9]|[1-9][0-9]|1(0[0-3]))\.([0-9]|[1-9][0-9]|1([0-9][0-9])|2([0-4][0-9]|5[0-5]))\.([0-9]|[1-9][0-9]|1([0-9][0-9])|2([0-4][0-9]|5[0-5]))$/) ) {
   	theme = "hpinc";
-  }
-  else if ( ip.match(/^16\./) ||
-  			ip.match(/^15\.(1(0[4-9]|[1-9][0-9])|2([0-4][0-9]|5[0-5]))\.([0-9]|[1-9][0-9]|1([0-9][0-9])|2([0-4][0-9]|5[0-5]))\.([0-9]|[1-9][0-9]|1([0-9][0-9])|2([0-4][0-9]|5[0-5]))$/) ) {
+  } else if ( ip.match(/^16\./) ||
+  	ip.match(/^15\.(1(0[4-9]|[1-9][0-9])|2([0-4][0-9]|5[0-5]))\.([0-9]|[1-9][0-9]|1([0-9][0-9])|2([0-4][0-9]|5[0-5]))\.([0-9]|[1-9][0-9]|1([0-9][0-9])|2([0-4][0-9]|5[0-5]))$/) ) {
     theme = "hpe";
-	
-  }
-  else {
+  } else {
   	theme = "";
   }
 

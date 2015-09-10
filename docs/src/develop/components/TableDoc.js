@@ -6,6 +6,22 @@ var Table = require('grommet/components/Table');
 
 var TableDoc = React.createClass({
 
+  getInitialState: function () {
+    return {
+      singleSelection: [0]
+    };
+  },
+
+  // single selection is managed by the caller via state.singleSelection
+  _onSingleSelect: function (selection) {
+    this.setState({singleSelection: selection});
+  },
+
+  // multiple selection is managed by the Table
+  _onMultipleSelect: function (selection) {
+    // no-op
+  },
+
   render: function() {
     var inline = [
       "<Table>",
@@ -62,7 +78,13 @@ var TableDoc = React.createClass({
           <h2>Options</h2>
           <dl>
             <dt><code>onMore        {"function () {...}"}</code></dt>
-            <dd>Function that will be called when more data is needed.</dd>
+            <dd>Function that will be called when more data is needed. When this
+              callback is provided, it is an indication that more data could be
+              added if the user scrolls to the bottom of the table. When present,
+              Table will add a spinner to the bottom of the table and listen for
+              the user scrolling down such that it becomes visible. When the user
+              scrolls to the bottom, this callback will be called. The expectation
+              is that the the caller will add the next chunk of data into the table.</dd>
             <dt><code>onSelect      {"function (selection) {...}"}</code></dt>
             <dd>Function that will be called when the user selects a row.</dd>
             <dt><code>scrollable    true|false</code></dt>
@@ -84,7 +106,7 @@ var TableDoc = React.createClass({
 
           <h3>Selectable</h3>
           <div className="example">
-            <Table selectable={true} selection={0}>
+            <Table selectable={true} selection={this.state.singleSelection} onSelect={this._onSingleSelect}>
               {tableHeader}
               {tableBody}
             </Table>
@@ -92,7 +114,7 @@ var TableDoc = React.createClass({
 
           <h3>Multi-select</h3>
           <div className="example">
-              <Table selectable="multiple" selection={[0, 2]}>
+              <Table selectable="multiple" onSelect={this._onMultipleSelect}>
               {tableHeader}
               {tableBody}
             </Table>
