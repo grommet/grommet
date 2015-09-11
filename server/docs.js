@@ -5,14 +5,15 @@ var path = require('path');
 var React = require('react');
 var Router = require('react-router');
 var sass = require('node-sass');
+var theme = require('./theme');
 
 var docsRoutes = require(path.resolve(__dirname, '../docs/src/routes'));
 
 var routesMap = {
   'grommet-core': docsRoutes('/docs/'),
-  aruba: docsRoutes('/docs/aruba'),
-  hpe: docsRoutes('/docs/hpe'),
-  hpinc: docsRoutes('/docs/hpinc')
+  aruba: docsRoutes('/docs/aruba/'),
+  hpe: docsRoutes('/docs/hpe/'),
+  hpinc: docsRoutes('/docs/hpinc/')
 }
 
 function themeCompiler(theme) {
@@ -40,21 +41,22 @@ function translateStatics(req, res, next, theme) {
 }
 
 function processPage(req, res, theme) {
-  var reactRouter = Router.create({location: '/docs' + req.url, routes: routesMap[theme]});
+
+  var path = (req.url === '/' && theme !== 'grommet-core') ? ('/' + theme) : '';
+
+  var reactRouter = Router.create({location: '/docs' + path + req.url, routes: routesMap[theme]});
+
   reactRouter.run(function(Handler, state) {
     var html = React.renderToString(<Handler/>);
     res.render('index.ejs', {appBody: html, styleContent: '<style>' + themeCompiler(theme).css + '</style>'});
   });
 }
 
-router.use('/hpe', function(req, res, next) {
-  translateStatics(req, res, next, 'hpe/');
-});
 router.use('/hpe', function (req, res, next) {
   if (req.url === '/') {
     processPage(req, res, 'hpe');
   } else {
-    next();
+    translateStatics(req, res, next, 'hpe/');
   }
 });
 router.use('/hpe', express.static(path.join(__dirname, '/../docs/dist/hpe')));
@@ -62,14 +64,11 @@ router.get('/hpe/*', function(req, res) {
   processPage(req, res, 'hpe');
 });
 
-router.use('/hpinc', function(req, res, next) {
-  translateStatics(req, res, next, 'hpinc/');
-});
 router.use('/hpinc', function (req, res, next) {
   if (req.url === '/') {
     processPage(req, res, 'hpinc');
   } else {
-    next();
+    translateStatics(req, res, next, 'hpinc/');
   }
 });
 router.use('/hpinc', express.static(path.join(__dirname, '/../docs/dist/hpinc')));
@@ -77,14 +76,11 @@ router.get('/hpinc/*', function(req, res) {
   processPage(req, res, 'hpinc');
 });
 
-router.use('/aruba', function(req, res, next) {
-  translateStatics(req, res, next, 'aruba/');
-});
 router.use('/aruba', function (req, res, next) {
   if (req.url === '/') {
     processPage(req, res, 'aruba');
   } else {
-    next();
+    translateStatics(req, res, next, 'aruba/');
   }
 });
 router.use('/aruba', express.static(path.join(__dirname, '/../docs/dist/aruba')));
@@ -92,14 +88,11 @@ router.get('/aruba/*', function(req, res) {
   processPage(req, res, 'aruba');
 });
 
-router.use('/', function(req, res, next) {
-  translateStatics(req, res, next, '');
-});
 router.use('/', function (req, res, next) {
   if (req.url === '/') {
     processPage(req, res, 'grommet-core');
   } else {
-    next();
+    translateStatics(req, res, next, '');
   }
 });
 router.use('/', express.static(path.join(__dirname, '/../docs/dist')));

@@ -3,7 +3,7 @@
 var compression = require('compression');
 var express = require('express');
 var http = require("http");
-var router = express.Router();
+var router = express.Router({strict: true});
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
@@ -60,6 +60,24 @@ router.get('/', function (req, res) {
   var docpath = path.join('/docs/', theme.picker(req.ip));
   res.redirect(301, docpath);
 });
+
+router.all('/docs', function (req, res) {
+  res.redirect(301, req.url + '/');
+});
+
+router.all('/docs/hpe', function (req, res) {
+  res.redirect(301, req.url + '/');
+});
+
+router.all('/docs/aruba', function (req, res) {
+  res.redirect(301, req.url + '/');
+});
+
+router.all('/docs/hpinc', function (req, res) {
+  res.redirect(301, req.url + '/');
+});
+
+router.use('/docs/', docs);
 
 app.use('/', function(req, res, next) {
   var acceptLanguageHeader = req.headers['accept-language'];
@@ -164,14 +182,13 @@ app.get('/robots.txt', function(req, res) {
 });
 
 app.
-  use('/docs', docs).
+  use('', router).
   use('/cto-app-tuner', ctoAppTuner).
   use('/todo-app-modular', todoAppModular).
   use('/cabler', cabler).
   use('/hello-world', express.static(path.join(__dirname, '/../examples/hello-world'))).
   use('/assets', express.static(path.join(__dirname, '/../docs/dist/assets'))).
-  use('/assets', express.static('/usr/local/lib/node_modules/slackin/lib/assets')).
-  use('', router);
+  use('/assets', express.static('/usr/local/lib/node_modules/slackin/lib/assets'));
 
 var server = http.createServer(app);
 
