@@ -2,10 +2,15 @@ language: node_js
 node_js:
 - '0.12'
 sudo: false
+cache:
+  directories:
+  - node_modules
+  - server/node_modules
+  - docs/node_modules
 before_script:
 - npm install -g gulp
 - npm install -g codeclimate-test-reporter
-- gem install scss-lint -v 0.38.0
+- gem install scss_lint -v 0.38.0
 - gulp preprocess
 - cd server && npm install && cd ..
 - cd docs && npm install && cd ..
