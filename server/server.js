@@ -16,26 +16,7 @@ var proxy = httpProxy.createProxyServer({
 });
 
 var request = require('request');
-
-var webpackRequire = require('enhanced-require')(module, {
-  resolve: {
-    loaders: [
-      {
-        test: /\.js$/,
-        loader: 'babel',
-        exclude: /(node_modules\/intl|node_modules\/moment|node_modules\/react|node_modules\/node-sass)/
-      },
-      {
-        test: /develop(\/|\\).*\.htm$|design(\/|\\)[^\/]*\.htm$|design(\/|\\).*\/.*\.htm$/,
-        loader: 'babel!imports?React=react,Router=react-router,Link=>Router.Link!html-jsx-loader',
-        exclude: /(node_modules|bower_components)/
-      }
-    ],
-    extensions: ['', '.js', '.json', '.htm', '.html', '.scss', '.md']
-  }
-});
-
-var docs = webpackRequire('./docs');
+var docs = require('./docs');
 var ctoAppTuner = require('./cto-app-tuner');
 var todoAppModular = require('./todo-app-modular');
 var cabler = require('./cabler');

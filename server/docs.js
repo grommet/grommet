@@ -7,7 +7,7 @@ var Router = require('react-router');
 var sass = require('node-sass');
 var theme = require('./theme');
 
-var docsRoutes = require(path.resolve(__dirname, '../docs/src/routes'));
+var docsRoutes = require('./backend-routes.js');
 
 var routesMap = {
   'grommet-core': docsRoutes('/docs/'),
@@ -19,7 +19,8 @@ var routesMap = {
 function themeCompiler(theme) {
   return sass.renderSync({
     file: path.resolve(__dirname, '../docs/node_modules/grommet/scss/' + theme + '/index'),
-    includePaths: [path.resolve(__dirname, '../node_modules')]
+    includePaths: [path.resolve(__dirname, '../node_modules')],
+    outputStyle: 'compressed'
   });
 }
 
@@ -47,7 +48,8 @@ function processPage(req, res, theme) {
   var reactRouter = Router.create({location: '/docs' + path + req.url, routes: routesMap[theme]});
 
   reactRouter.run(function(Handler, state) {
-    var html = React.renderToString(<Handler/>);
+    var Component = React.createFactory(Handler);
+    var html = React.renderToString(Component({}));
     res.render('index.ejs', {appBody: html, styleContent: '<style>' + themeCompiler(theme).css + '</style>'});
   });
 }
