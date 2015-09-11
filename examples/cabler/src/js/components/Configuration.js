@@ -29,8 +29,9 @@ var Configuration = React.createClass({
   },
 
   render: function() {
+    var options = this.props.data.configurationOptions;
     var configuration = this.props.data.configuration;
-    var options = this.props.data.models.map(function (model) {
+    var models = options.models.map(function (model) {
       return <option key={model}>{model}</option>;
     });
 
@@ -44,17 +45,17 @@ var Configuration = React.createClass({
             <fieldset>
               <FormField label="Model" htmlFor={"model"}>
                 <select ref="model" id={"model"} name="model">
-                  {options}
+                  {models}
                 </select>
               </FormField>
               <FormField label="Nodes" htmlFor={"nodes"}>
                 <input ref="nodes" id={"nodes"} name="nodes" type="number"
-                  min="1" max={configuration.maxNodes} step="1"
+                  min="1" max={options.maxNodes} step="1"
                   defaultValue={configuration.numNodes} />
               </FormField>
               <FormField label="Drives" htmlFor={"drives"}>
                 <input ref="drives" id={"drives"} name="drives" type="number"
-                  min="1" max={configuration.maxDrives} step="1"
+                  min="1" max={options.maxDrives} step="1"
                   defaultValue={configuration.numDrives} />
               </FormField>
             </fieldset>

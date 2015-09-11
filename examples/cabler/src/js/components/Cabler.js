@@ -12,26 +12,6 @@ var Cabler = React.createClass({
 
   mixins: [Reflux.ListenerMixin],
 
-  _pushState: function () {
-    if (this.state.path) {
-      window.history.pushState(this.state, this.state.historyLabel, this.state.path);
-    }
-  },
-
-  _popState: function (event) {
-    if (event.state) {
-      Actions.set(event.state);
-    }
-  },
-
-  _onChange: function (data, fromSet) {
-    let push;
-    if (! fromSet) {
-      push = this._pushState;
-    }
-    this.setState(data, push);
-  },
-
   getInitialState: function () {
     return Store.getInitialState();
   },
@@ -39,15 +19,41 @@ var Cabler = React.createClass({
   componentDidMount: function () {
     this.listenTo(Store, this._onChange);
     window.onpopstate = this._popState;
+    this._noPush = true;
     Actions.configureFromLocation(window.location.pathname, window.location.search);
+  },
+
+  _pushState: function () {
+    if (this.state.location) {
+      window.history.pushState(this.state, this.state.location.label, this.state.location.path);
+    }
+  },
+
+  _popState: function (event) {
+    this._noPush = true;
+    if (event.state) {
+      Actions.set(event.state);
+    } else {
+      //Actions.clearConfiguration();
+    }
+  },
+
+  _onChange: function (data) {
+    let push;
+    if (! this._noPush) {
+      push = this._pushState;
+    } else {
+      this._noPush = false;
+    }
+    this.replaceState(data, push);
   },
 
   render: function() {
     var contents;
-    if (this.state.nodes.length === 0) {
-      contents = <Home data={this.state} />;
-    } else {
+    if (this.state.topologyData) {
       contents = <Diagram data={this.state} />;
+    } else {
+      contents = <Home data={this.state} />;
     }
 
     return (

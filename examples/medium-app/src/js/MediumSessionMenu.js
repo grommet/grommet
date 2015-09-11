@@ -9,25 +9,25 @@ var IntlMixin = require('grommet/mixins/GrommetIntlMixin');
 
 var MediumSessionMenu = React.createClass({
 
-  mixins: [IntlMixin],
-
   propTypes: {
     dropAlign: Drop.alignPropType
   },
 
+  mixins: [IntlMixin],
+
   getDefaultProps: function () {
     return {direction: 'down'};
-  },
-
-  _onLogout: function (event) {
-    event.preventDefault();
-    Actions.logout();
   },
 
   getInitialState: function () {
     return {
       session: SessionStore.getInitialState()
     };
+  },
+
+  _onLogout: function (event) {
+    event.preventDefault();
+    Actions.logout();
   },
 
   render: function() {

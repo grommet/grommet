@@ -16,6 +16,29 @@ var ServerProfileAdd = React.createClass({
     router: React.PropTypes.func.isRequired
   },
 
+  getInitialState: function () {
+    return {
+      serverProfile: {
+        category: 'server-profiles',
+        name: '',
+        description: '',
+        serverHardware: {},
+        affinity: 'Device bay',
+        firmware: '',
+        connections: [],
+        manageLocalStorage: false,
+        logicalDrive: 'None',
+        logicalDriveBootable: false,
+        logicalDriveInitialize: false,
+        manageSanStorage: false,
+        hostOsType: 'Windows 2012',
+        volumes: [],
+        manageBootOrder: false
+      },
+      adding: false
+    };
+  },
+
   _onTaskResponse: function (err, res) {
     if (err) {
       throw err;
@@ -43,29 +66,6 @@ var ServerProfileAdd = React.createClass({
     // POST it to the back end and make sure it passes initial muster.
     Rest.post('/rest/server-profiles', serverProfile)
       .end(this._onAddResponse);
-  },
-
-  getInitialState: function () {
-    return {
-      serverProfile: {
-        category: 'server-profiles',
-        name: '',
-        description: '',
-        serverHardware: {},
-        affinity: 'Device bay',
-        firmware: '',
-        connections: [],
-        manageLocalStorage: false,
-        logicalDrive: 'None',
-        logicalDriveBootable: false,
-        logicalDriveInitialize: false,
-        manageSanStorage: false,
-        hostOsType: 'Windows 2012',
-        volumes: [],
-        manageBootOrder: false
-      },
-      adding: false
-    };
   },
 
   render: function () {

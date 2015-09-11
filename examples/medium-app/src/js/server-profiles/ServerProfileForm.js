@@ -21,11 +21,28 @@ var BusyIcon = require('grommet/components/icons/Spinning');
 
 var ServerProfileForm = React.createClass({
 
-  propType: {
+  propTypes: {
     buttonLabel: React.PropTypes.string.isRequired,
     onSubmit: React.PropTypes.func.isRequired,
     processingMessage: React.PropTypes.string,
     serverProfile: React.PropTypes.object.isRequired
+  },
+
+  getInitialState: function () {
+    return {
+      serverProfile: merge({}, this.props.serverProfile),
+      serverHardwareSuggestions: [],
+      firmwareSuggestions: []
+    };
+  },
+
+  componentDidMount: function () {
+    this._onServerHardwareSearch('');
+    this._onFirmwareSearch('');
+  },
+
+  componentWillReceiveProps: function (newProps) {
+    this.setState({serverProfile: newProps.serverProfile});
   },
 
   _onSubmit: function (event) {
@@ -132,23 +149,6 @@ var ServerProfileForm = React.createClass({
     var serverProfile = this.state.serverProfile;
     serverProfile.volumes.splice(index, 1);
     this.setState({serverProfile: serverProfile});
-  },
-
-  getInitialState: function () {
-    return {
-      serverProfile: merge({}, this.props.serverProfile),
-      serverHardwareSuggestions: [],
-      firmwareSuggestions: []
-    };
-  },
-
-  componentDidMount: function () {
-    this._onServerHardwareSearch('');
-    this._onFirmwareSearch('');
-  },
-
-  componentWillReceiveProps: function (newProps) {
-    this.setState({serverProfile: newProps.serverProfile});
   },
 
   _renderConnections: function () {

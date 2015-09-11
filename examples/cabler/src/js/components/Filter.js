@@ -11,7 +11,7 @@ var Actions = require('../actions/Actions');
 var Filter = React.createClass({
 
   propTypes: {
-    data: React.PropTypes.object.isRequired
+    topologyData: React.PropTypes.object.isRequired
   },
 
   _onChangeNode: function (node) {
@@ -19,11 +19,15 @@ var Filter = React.createClass({
   },
 
   _onChangeNodeAll: function () {
-    Actions.clearNodeHighlight();
+    Actions.clearAllNodeHighlights();
   },
 
-  _onChange: function () {
+  _onChangeDataPath: function (dataPath) {
+    Actions.toggleDataPathHighlight(dataPath);
+  },
 
+  _onChangeDataPathAll: function () {
+    Actions.clearAllDataPathHighlights();
   },
 
   _onReset: function (event) {
@@ -32,18 +36,19 @@ var Filter = React.createClass({
   },
 
   render: function() {
-    var nodes = [];
+    let topologyData = this.props.topologyData;
+    let nodes = [];
     // don't bother if there's only one node
-    if (this.props.data.nodes.length > 1) {
-      var checkAll = true;
-      for (let i = 0; i < this.props.data.nodes.length; i += 1) {
-        let node = this.props.data.nodes[i];
+    if (topologyData.nodes.length > 1) {
+      let checkAll = true;
+      for (let i = 0; i < topologyData.nodes.length; i += 1) {
+        let node = topologyData.nodes[i];
         if (node.highlight) {
           checkAll = false;
         }
         nodes.push(
           <CheckBox id={"node-" + i} key={i}
-            label={this.props.data.nodes[i].name}
+            label={topologyData.nodes[i].name}
             checked={node.highlight}
             onChange={this._onChangeNode.bind(this, node)} />
         );
@@ -59,6 +64,28 @@ var Filter = React.createClass({
       }
     }
 
+    let dataPaths = [];
+    let checkAll = true;
+    for (let i = 0; i < topologyData.dataPaths.length; i += 1) {
+      let dataPath = topologyData.dataPaths[i];
+      if (dataPath.highlight) {
+        checkAll = false;
+      }
+      dataPaths.push(
+        <CheckBox id={"data-path-" + (i + 1)} key={i}
+          label={dataPath.name}
+          checked={dataPath.highlight}
+          onChange={this._onChangeDataPath.bind(this, dataPath)} />
+      );
+    }
+    dataPaths.unshift(
+      <CheckBox id="data-path-all" key="all"
+        label="All"
+        checked={checkAll}
+        onChange={this._onChangeDataPathAll} />
+    );
+    dataPaths.unshift(<h4 key="header">Data Paths</h4>);
+
     return (
       <Menu icon={<FilterIcon />}
         dropAlign={{right: 'right'}} pad="none"
@@ -68,20 +95,7 @@ var Filter = React.createClass({
 
         <Box pad="medium" direction="column">
           {nodes}
-
-          <h4>Ports</h4>
-          <CheckBox id="port-all"
-            label="All"
-            checked={true}
-            onChange={this._onChange} />
-          <CheckBox id="port-1"
-            label="DP-1"
-            checked={false}
-            onChange={this._onChange} />
-          <CheckBox id="port-2"
-            label="DP-2"
-            checked={false}
-            onChange={this._onChange} />
+          {dataPaths}
         </Box>
       </Menu>
     );

@@ -54,6 +54,7 @@ var opts = {
 
 gulp.task('start-backend', function() {
   nodemon({
+    watch: ["examples/people-finder/server"],
     script: path.resolve(__dirname, 'server/server')
   });
 });

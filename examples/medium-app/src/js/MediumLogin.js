@@ -11,10 +11,18 @@ var Logo = require('./MediumLogo');
 
 var MediumLogin = React.createClass({
 
-  mixins: [Reflux.ListenerMixin, IntlMixin],
-
   contextTypes: {
     router: React.PropTypes.func.isRequired
+  },
+
+  mixins: [Reflux.ListenerMixin, IntlMixin],
+
+  getInitialState: function () {
+    return {session: SessionStore.getInitialState()};
+  },
+
+  componentDidMount: function () {
+    this.listenTo(SessionStore, this._onSessionChange);
   },
 
   _onSubmit: function (fields) {
@@ -29,14 +37,6 @@ var MediumLogin = React.createClass({
     } else {
       this.setState({session: session});
     }
-  },
-
-  getInitialState: function () {
-    return {session: SessionStore.getInitialState()};
-  },
-
-  componentDidMount: function () {
-    this.listenTo(SessionStore, this._onSessionChange);
   },
 
   render: function () {

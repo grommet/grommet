@@ -13,7 +13,7 @@ var MediumSessionMenu = require('./MediumSessionMenu');
 var Layer = require('grommet/components/Layer');
 var Logo = require('./MediumLogo');
 var MediumMain = require('./MediumMain');
-var IndexMeter = require('grommet/components/index/IndexMeter');
+var IndexAggregate = require('grommet/components/index/IndexAggregate');
 var IndexHistory = require('grommet/components/index/IndexHistory');
 var IndexQuery = require('grommet/utils/IndexQuery');
 var IntlMixin = require('grommet/mixins/GrommetIntlMixin');
@@ -34,7 +34,7 @@ var CONFIG = [
   {
     name: 'Active Alerts',
     route: 'activity',
-    type: 'arc',
+    type: 'circle',
     params: {
       category: 'alerts',
       query: IndexQuery.create('state:Active'),
@@ -42,22 +42,60 @@ var CONFIG = [
     }
   },
   {
+    name: 'Server Profiles',
+    route: 'server profiles',
+    type: 'circle',
+    params: {
+      category: 'server-profiles',
+      attribute: 'status'
+    }
+  },
+  {
     name: 'Server Hardware',
     route: 'server hardwares',
-    type: 'arc',
+    type: 'circle',
     params: {
       category: 'server-hardware',
       attribute: 'model'
+    }
+  },
+  {
+    name: 'Tasks',
+    route: 'activity',
+    type: 'distribution',
+    params: {
+      category: 'tasks',
+      attribute: 'name'
     }
   }
 ];
 
 var MediumDashboard = React.createClass({
 
-  mixins: [IntlMixin],
-
   contextTypes: {
     router: React.PropTypes.func.isRequired
+  },
+
+  mixins: [IntlMixin],
+
+  getInitialState: function () {
+    return {
+      tiles: CONFIG,
+      legendPlacement: 'bottom',
+      mainActive: false,
+      mainPeek: false
+    };
+  },
+
+  componentDidMount: function () {
+    this.refs.search.focus();
+    window.addEventListener('resize', this._onResize);
+    this._onResize();
+  },
+
+  componentWillUnmount: function () {
+    IndexActions.cleanup();
+    window.removeEventListener('resize', this._onResize);
   },
 
   _onOverTitle: function () {
@@ -80,36 +118,53 @@ var MediumDashboard = React.createClass({
     this.context.router.transitionTo(tile.route, {}, {q: query.fullText});
   },
 
+  _layout: function () {
+    var wideTileCount = 0;
+    var normalTileCount = 0;
+    // set wide chart count according to the space we have
+    var dataPoints = Math.round(Math.max(4, window.innerWidth / 48));
+    var tiles = this.state.tiles.map(function (tile) {
+      if (tile.wide) {
+        wideTileCount += 1;
+        return merge(tile, {params: {count: dataPoints}});
+      } else {
+        normalTileCount += 1;
+        return tile;
+      }
+    });
+    this.setState({tiles: tiles});
+
+    // set legend placement
+    var width = window.innerWidth;
+    var height = window.innerHeight - 100;
+    var ratio = width / height;
+    if (ratio < 1.1) {
+      this.setState({legendPlacement: 'bottom'});
+    } else if (ratio > 1.3) {
+      this.setState({legendPlacement: 'right'});
+    }
+
+    // set graphic size
+    // TODO: These numbers are empirical. Redo to be more formal.
+    var graphicSize;
+    var roughRows = Math.ceil(wideTileCount + (normalTileCount / 3));
+    if ((width / 300) < 3) {
+      graphicSize = 'small';
+    } else if ((height / roughRows) < 300) {
+      graphicSize = 'small';
+    } else if ((width / 660) > 3) {
+      graphicSize = 'large';
+    } else if ((height / roughRows) > 400) {
+      graphicSize = 'large';
+    }
+
+    this.setState({graphicSize: graphicSize});
+  },
+
   _onResize: function () {
     // debounce
     clearTimeout(this._timer);
-    this._timer = setTimeout(function () {
-      // set wide chart count according to the space we have
-      var count = Math.round(Math.max(4, window.innerWidth / 48));
-      var tiles = this.state.tiles.map(function (tile) {
-        if (tile.wide) {
-          return merge(tile, {params: {count: count}});
-        } else {
-          return tile;
-        }
-      });
-      this.setState({tiles: tiles});
-    }.bind(this), 500);
-  },
-
-  getInitialState: function () {
-    return {tiles: CONFIG, mainActive: false, mainPeek: false};
-  },
-
-  componentDidMount: function () {
-    this.refs.search.focus();
-    window.addEventListener('resize', this._onResize);
-    this._onResize();
-  },
-
-  componentWillUnmount: function () {
-    IndexActions.cleanup();
-    window.removeEventListener('resize', this._onResize);
+    this._timer = setTimeout(this._layout, 500);
   },
 
   render: function () {
@@ -136,17 +191,23 @@ var MediumDashboard = React.createClass({
 
       var contents = null;
       if (tile.history) {
-        contents = <IndexHistory params={tile.params} type={tile.type}
-          small={true} smooth={true} />;
+        contents = (
+          <IndexHistory params={tile.params} type={tile.type}
+            smooth={true} size={this.state.graphicSize} />
+        );
       } else {
-        contents = <IndexMeter params={tile.params} type={tile.type}
-          onClick={function (query) {
-            this._onClickSegment(tile, query);
-          }.bind(this)} />;
+        contents = (
+          <IndexAggregate params={tile.params} type={tile.type}
+            legend={{placement: this.state.legendPlacement}}
+            size={this.state.graphicSize}
+            onClick={function (query) {
+              this._onClickSegment(tile, query);
+            }.bind(this)} />
+        );
       }
 
       return (
-        <Tile key={index} wide={tile.wide}>
+        <Tile key={index} wide={tile.wide} pad="medium">
           {header}
           {contents}
         </Tile>

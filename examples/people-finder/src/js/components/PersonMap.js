@@ -11,6 +11,18 @@ var PersonMap = React.createClass({
     person: React.PropTypes.object.isRequired
   },
 
+  getInitialState: function () {
+    return {busy: false};
+  },
+
+  componentDidMount: function () {
+    this._getGeocode(this.props);
+  },
+
+  componentWillReceiveProps: function (newProps) {
+    this._getGeocode(newProps);
+  },
+
   _onGeocodeResponse: function (err, res) {
     if (! err && res.ok && res.body && res.body[0]) {
       var place = res.body[0];
@@ -65,18 +77,6 @@ var PersonMap = React.createClass({
         .get("http://nominatim.openstreetmap.org/search", params)
         .end(this._onGeocodeResponse);
     }
-  },
-
-  getInitialState: function () {
-    return {busy: false};
-  },
-
-  componentDidMount: function () {
-    this._getGeocode(this.props);
-  },
-
-  componentWillReceiveProps: function (newProps) {
-    this._getGeocode(newProps);
   },
 
   render: function() {

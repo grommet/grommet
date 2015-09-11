@@ -9,6 +9,9 @@ var Actions = Reflux.createActions({
   'clearConfiguration': {},
   'toggleNodeHighlight': {},
   'clearAllNodeHighlights': {},
+  'toggleDataPathHighlight': {},
+  'clearAllDataPathHighlights': {},
+  'toggleNodeDataPathHighlight': {},
   'toggleCableHighlight': {},
   'clearAllHighlights': {}
 });

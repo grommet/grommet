@@ -13,6 +13,27 @@ var ServerProfileDelete = React.createClass({
     router: React.PropTypes.func.isRequired
   },
 
+  getInitialState: function () {
+    var router = this.context.router;
+    return {
+      uri: router.getCurrentParams().splat,
+      serverProfile: {},
+      deleting: false
+    };
+  },
+
+  componentDidMount: function () {
+    this._getData();
+  },
+
+  componentWillReceiveProps: function () {
+    var router = this.context.router;
+    var uri = router.getCurrentParams().splat;
+    if (uri !== this.state.uri) {
+      this.setState({uri: uri}, this._getData);
+    }
+  },
+
   _onTaskResponse: function (err, res) {
     if (err) {
       throw err;
@@ -54,27 +75,6 @@ var ServerProfileDelete = React.createClass({
 
   _getData: function () {
     Rest.get(this.state.uri).end(this._onGetResponse);
-  },
-
-  getInitialState: function () {
-    var router = this.context.router;
-    return {
-      uri: router.getCurrentParams().splat,
-      serverProfile: {},
-      deleting: false
-    };
-  },
-
-  componentDidMount: function () {
-    this._getData();
-  },
-
-  componentWillReceiveProps: function () {
-    var router = this.context.router;
-    var uri = router.getCurrentParams().splat;
-    if (uri !== this.state.uri) {
-      this.setState({uri: uri}, this._getData);
-    }
   },
 
   render: function () {

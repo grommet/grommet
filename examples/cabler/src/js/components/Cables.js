@@ -7,6 +7,7 @@ var Menu = require('grommet/components/Menu');
 var Anchor = require('grommet/components/Anchor');
 var CloseIcon = require('grommet/components/icons/Clear');
 var Table = require('grommet/components/Table');
+var Legend = require('grommet/components/Legend');
 var Actions = require('../actions/Actions');
 
 var Cables = React.createClass({
@@ -20,13 +21,39 @@ var Cables = React.createClass({
     Actions.toggleCableHighlight(cable);
   },
 
+  _onToggleNodeDataPath: function (node, dataPath) {
+    Actions.toggleNodeDataPathHighlight(node, dataPath);
+  },
+
   render: function() {
     var selection = [];
-    var cables = this.props.cables.map(function (cable, index) {
-      if (cable.highlight) {
-        selection.push(index);
+    var cables = [];
+    var dataPath;
+    var node;
+    this.props.cables.forEach(function (cable) {
+      if (cable.dataPath !== dataPath || cable.node !== node) {
+        if (cable.dataPath.highlight && cable.node.highlight) {
+          selection.push(cables.length);
+        }
+        let series = [{
+          label: cable.node.name + ' ' + cable.dataPath.name,
+          colorIndex: cable.dataPath.colorIndex
+        }];
+        cables.push(
+          <tr key={cable.node.name + cable.dataPath.name}
+            onClick={this._onToggleNodeDataPath.bind(this, cable.node, cable.dataPath)}>
+            <td colSpan="5">
+              <Legend series={series} />
+            </td>
+          </tr>
+        );
+        dataPath = cable.dataPath;
+        node = cable.node;
       }
-      return (
+      if (cable.highlight) {
+        selection.push(cables.length);
+      }
+      cables.push(
         <tr key={cable.index} onClick={this._onToggle.bind(this, cable)}>
           <td>{cable.index}</td>
           <td>1</td>
