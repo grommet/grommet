@@ -6,7 +6,6 @@ var React = require('react');
 var Router = require('react-router');
 var sass = require('node-sass');
 
-console.log('#', __dirname, path.resolve(__dirname, '../docs/src/routes'));
 var docsRoutes = require(path.resolve(__dirname, '../docs/src/routes'));
 
 var routesMap = {
