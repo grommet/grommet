@@ -51,13 +51,13 @@ var AnchorDoc = React.createClass({
           <div className="example">
             <Anchor href="" primary={true} onClick={this._onClick}>Text</Anchor>
           </div>
-          <pre><code className="html">{"<Anchor href=\"\" label=\"Text\" primary={true} onClick={this._onClick} />"}</code></pre>
+          <pre><code className="html">{"<Anchor href=\"\" primary={true} onClick={this._onClick}>Text</Anchor>"}</code></pre>
 
           <h3>Target</h3>
           <div className="example">
             <Anchor href="" target="_blank" onClick={this._onClick}>Text</Anchor>
           </div>
-          <pre><code className="html">{"<Anchor href=\"\" label=\"Text\" target=\"_blank\" onClick={this._onClick} />"}</code></pre>
+          <pre><code className="html">{"<Anchor href=\"\" target=\"_blank\" onClick={this._onClick}>Text</Anchor>"}</code></pre>
 
         </section>
 
