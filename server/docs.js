@@ -6,11 +6,14 @@ var React = require('react');
 var Router = require('react-router');
 var sass = require('node-sass');
 
+console.log('#', __dirname, path.resolve(__dirname, '../docs/src/routes'));
+var docsRoutes = require(path.resolve(__dirname, '../docs/src/routes'));
+
 var routesMap = {
-  'grommet-core': require('../docs/src/routes')('/docs/'),
-  aruba: require('../docs/src/routes')('/docs/aruba'),
-  hpe: require('../docs/src/routes')('/docs/hpe'),
-  hpinc: require('../docs/src/routes')('/docs/hpinc')
+  'grommet-core': docsRoutes('/docs/'),
+  aruba: docsRoutes('/docs/aruba'),
+  hpe: docsRoutes('/docs/hpe'),
+  hpinc: docsRoutes('/docs/hpinc')
 }
 
 function themeCompiler(theme) {
