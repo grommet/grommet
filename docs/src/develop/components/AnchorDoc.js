@@ -27,8 +27,10 @@ var AnchorDoc = React.createClass({
         <section>
           <h2>Options</h2>
           <dl>
-          <dt><code>href          {"{location}"}</code></dt>
+          <dt><code>href           {"{location}"}</code></dt>
           <dd>Hyperlink reference to place in the anchor.</dd>
+          <dt><code>target         {"{location}"}</code></dt>
+          <dd>Target of the link, examples targets=_blank|_self|_parent|_top|framename.</dd>
           <dt><code>onClick        {"{func}"}</code></dt>
           <dd>Click handler.</dd>
           <dt><code>primary        true|false</code></dt>
@@ -50,6 +52,12 @@ var AnchorDoc = React.createClass({
             <Anchor href="" primary={true} onClick={this._onClick}>Text</Anchor>
           </div>
           <pre><code className="html">{"<Anchor href=\"\" label=\"Text\" primary={true} onClick={this._onClick} />"}</code></pre>
+
+          <h3>Target</h3>
+          <div className="example">
+            <Anchor href="" target="_blank" onClick={this._onClick}>Text</Anchor>
+          </div>
+          <pre><code className="html">{"<Anchor href=\"\" label=\"Text\" target=\"_blank\" onClick={this._onClick} />"}</code></pre>
 
         </section>
 
