@@ -10,7 +10,7 @@ var theme = require('./theme');
 var fs = require('fs');
 
 function getThemeCss(theme) {
-  var extension = theme !== 'grommet-core' ? ('-' + theme) + '.min.css' : '-grommet.min.css';
+  var extension = theme !== 'grommet-core' ? ('-' + theme) + '.min.css' : '-vanilla.min.css';
   return fs.readFileSync(path.resolve(__dirname, 'css/' + 'docs' + extension), 'utf8');
 }
 

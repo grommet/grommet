@@ -12,7 +12,7 @@ if (! Modernizr.flexbox ||
 var React = require('react');
 var Router = require('react-router');
 
-var rootPath = '/docs/' + ('grommet' === __THEME__ ? '' : __THEME__ + '/');
+var rootPath = '/docs/' + ('vanilla' === __THEME__ ? '' : __THEME__ + '/');
 
 if (NODE_ENV === 'development') {
   require("index-" + __THEME__ + ".scss");

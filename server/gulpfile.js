@@ -31,7 +31,7 @@ gulp.task('dev', function() {
     setTimeout(function() {
       gulp.src('../dist/index.html')
       .pipe(open({
-        uri: 'http://localhost:8020/'
+        uri: 'http://localhost:8000/'
       }));
     }, 500);
   });
