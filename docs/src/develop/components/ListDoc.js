@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var Article = require('grommet/components/Article');
+var DocsArticle = require('../../DocsArticle');
 var List = require('grommet/components/List');
 
 var SCHEMA = [
@@ -39,12 +39,10 @@ var ListDoc = React.createClass({
     ].join('\n');
 
     return (
-      <Article primary={true}>
-        <header>
-          <h1>List</h1>
-          <p>List of things.</p>
-          <pre><code className="html hljs xml">{inline}</code></pre>
-        </header>
+      <DocsArticle title="List" colorIndex="neutral-3">
+
+        <p>List of things.</p>
+        <pre><code className="html hljs xml">{inline}</code></pre>
 
         <section>
           <h2>Options</h2>
@@ -52,19 +50,21 @@ var ListDoc = React.createClass({
             <dt><code>data        {"[{...}, ...]"}</code></dt>
             <dd>The data set.</dd>
             <dt><code>large       true|false</code></dt>
-            <dd>Larger sized version.</dd>
+            <dd>Larger sized version. Deprecated, use <code>size</code>.</dd>
             <dt><code>onMore      {"function () {...}"}</code></dt>
             <dd>Function that will be called when more data is needed.</dd>
             <dt><code>onSelect    {"function (datum) {...}"}</code></dt>
             <dd>Function that will be called when the user selects an item.</dd>
-            <dt><code>schema        {"[{...}, ...]"}</code></dt>
+            <dt><code>schema      {"[{...}, ...]"}</code></dt>
             <dd>An array of objects describing the data.
             <code>{schema}</code>
             </dd>
             <dt><code>selected    {"uid|[uid, ...]"}</code></dt>
             <dd>The currently selected items.</dd>
+            <dt><code>size        small|medium|large</code></dt>
+            <dd>The size of the Header. Defaults to <code>medium</code>.</dd>
             <dt><code>small       true|false</code></dt>
-            <dd>Smaller sized version.</dd>
+            <dd>Smaller sized version. Deprecated, use <code>size</code>.</dd>
           </dl>
         </section>
 
@@ -88,7 +88,7 @@ var ListDoc = React.createClass({
 
         </section>
 
-      </Article>
+      </DocsArticle>
     );
   }
 });

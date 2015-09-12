@@ -4,19 +4,6 @@
   position: relative;
   @include inuit-font-size($menu-font-size, inherit);
 
-  a:not(.button) {
-    color: lighten($text-color, 30%);
-    text-decoration: none;
-
-    &:hover {
-      color: $text-color;
-    }
-
-    &.active {
-      color: $brand-color-darker;
-    }
-  }
-
   &:focus {
     outline: none;
 
@@ -30,6 +17,19 @@
       border: 1px solid $focus-border-color;
       box-shadow: 0 0 1px 1px $focus-border-color;
       pointer-events: none;
+    }
+  }
+
+  a:not(.button) {
+    text-decoration: none;
+    margin-bottom: quarter($inuit-base-spacing-unit);
+
+    &:hover {
+      color: $text-color;
+    }
+
+    &.active {
+      color: $brand-color-darker;
     }
   }
 
@@ -139,7 +139,7 @@
     &.menu {
       &--row,
       &--right { // --right is deprecated
-        > *:not(.control-icon) {
+        > *:not(.control-icon):not(.button) {
           margin-left: 0px;
           margin-right: $inuit-base-spacing-unit;
 
@@ -185,6 +185,7 @@
 
     > a:not(.button) {
       padding: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit;
+      margin-bottom: 0px;
 
       &:hover {
         text-decoration: none;
@@ -213,8 +214,8 @@
 
   @include media-query(palm) {
     &.box--responsive {
-      width: 100%;
-      padding: 0px;
+      //width: 100%;
+      //padding: 0px;
     }
   }
 }
@@ -240,7 +241,13 @@
     }
 
     a {
-      padding: halve(halve($inuit-base-spacing-unit)) halve($inuit-base-spacing-unit);
+      padding: quarter($inuit-base-spacing-unit) halve($inuit-base-spacing-unit);
+    }
+  }
+
+  &--large {
+    a {
+      padding: $inuit-base-spacing-unit double($inuit-base-spacing-unit);
     }
   }
 

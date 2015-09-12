@@ -6,7 +6,6 @@ var Header = require('grommet/components/Header');
 var Title = require('grommet/components/Title');
 var Search = require('grommet/components/Search');
 var Section = require('grommet/components/Section');
-var Box = require('grommet/components/Box');
 var List = require('grommet/components/List');
 var Spinning = require('grommet/components/icons/Spinning');
 var Logo = require('./Logo');
@@ -61,15 +60,13 @@ var People = React.createClass({
         <Header key="header" large={true} pad={{horizontal: "medium"}}
           float={this.props.initial}
           colorIndex={colorIndex} splash={this.props.initial} responsive={false}>
-          <Box direction="row" align="center" className="flex" responsive={false}>
-            <Title>
-              <Logo />
-              {title}
-            </Title>
-            <Search ref="search" inline={true} className="flex"
-              defaultValue={this.props.searchText}
-              onChange={this.props.onSearch} />
-          </Box>
+          <Title>
+            <Logo />
+            {title}
+          </Title>
+          <Search ref="search" inline={true} className="flex"
+            defaultValue={this.props.searchText}
+            onChange={this.props.onSearch} />
         </Header>
         <List key="results" large={true} data={data} emptyIndicator={empty}
           schema={PEOPLE_SCHEMA} onSelect={this.props.onSelect} />

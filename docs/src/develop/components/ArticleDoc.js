@@ -2,6 +2,7 @@
 
 var React = require('react');
 var Link = require('react-router').Link;
+var DocsArticle = require('../../DocsArticle');
 var Article = require('grommet/components/Article');
 var Header = require('grommet/components/Header');
 var Section = require('grommet/components/Section');
@@ -22,12 +23,10 @@ var ArticleDoc = React.createClass({
     ].join('\n');
 
     return (
-      <Article primary={true}>
-        <header>
-          <h1>Article</h1>
-          <p>Styles standard HTML5 markup for use in articles.</p>
-          <pre><code className="html hljs xml">{inline}</code></pre>
-        </header>
+      <DocsArticle title="Article" colorIndex="neutral-3">
+
+        <p>Styles standard HTML5 markup for use in articles.</p>
+        <pre><code className="html hljs xml">{inline}</code></pre>
 
         <section>
           <h2>Options</h2>
@@ -55,7 +54,7 @@ var ArticleDoc = React.createClass({
 
         </section>
 
-      </Article>
+      </DocsArticle>
     );
   }
 });

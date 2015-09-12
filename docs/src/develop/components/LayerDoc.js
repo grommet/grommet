@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var Article = require('grommet/components/Article');
+var DocsArticle = require('../../DocsArticle');
 var Layer = require('grommet/components/Layer');
 var Header = require('grommet/components/Header');
 var Form = require('grommet/components/Form');
@@ -68,12 +68,10 @@ var LayerDoc = React.createClass({
     }
 
     return (
-      <Article primary={true}>
-        <header>
-          <h1>Layer</h1>
-          <p>A modal overlay, often containing a <a>Form</a>.</p>
-          <pre><code className="html hljs xml">{inline}</code></pre>
-        </header>
+      <DocsArticle title="Layer" colorIndex="neutral-3">
+
+        <p>A modal overlay, often containing a <a>Form</a>.</p>
+        <pre><code className="html hljs xml">{inline}</code></pre>
 
         <section>
           <h2>Options</h2>
@@ -126,7 +124,7 @@ var LayerDoc = React.createClass({
 
         {activeLayer}
 
-      </Article>
+      </DocsArticle>
     );
   }
 });

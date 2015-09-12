@@ -80,7 +80,7 @@ var opts = {
     'dist-hpe', 'dist-hpinc', 'dist-bower', 'dist-aruba'
   ],
   env: {
-    __THEME__: '"grommet"'
+    __THEME__: '"vanilla"'
   },
   scsslint: true
 };

@@ -2,7 +2,7 @@
 
 var React = require('react');
 var stringify = require("json-stringify-pretty-compact");
-var Article = require('grommet/components/Article');
+var DocsArticle = require('../../DocsArticle');
 var Meter = require('grommet/components/Meter');
 var FormField = require('grommet/components/FormField');
 var RadioButton = require('grommet/components/RadioButton');
@@ -59,12 +59,10 @@ var MeterDoc = React.createClass({
 
   render: function() {
     return (
-      <Article primary={true}>
-        <header>
-          <h1>Meter</h1>
-          <p>Shows a bar, arc, or circular meter graphic.</p>
-          <pre><code className="html hljs xml">{inline}</code></pre>
-        </header>
+      <DocsArticle title="Meter" colorIndex="neutral-3">
+
+        <p>Shows a bar, arc, or circular meter graphic.</p>
+        <pre><code className="html hljs xml">{inline}</code></pre>
 
         <section>
           <h2>Options</h2>
@@ -383,7 +381,7 @@ var MeterDoc = React.createClass({
           </FormField>
         </section>
 
-      </Article>
+      </DocsArticle>
     );
   }
 });

@@ -6,13 +6,11 @@ var Route = Router.Route;
 var RouteHandler = Router.RouteHandler;
 var Link = Router.Link;
 
-var Article = require('grommet/components/Article');
-var DocsHeader = require('../DocsHeader');
-var Section = require('grommet/components/Section');
 var DocsSplit = require('../DocsSplit');
-var DocsMenu = require('../DocsMenu');
+var DocsArticle = require('../DocsArticle');
+var DocsHtmlArticle = require('../DocsHtmlArticle');
 var Menu = require('grommet/components/Menu');
-var Button = require('grommet/components/Button');
+var Anchor = require('grommet/components/Anchor');
 
 var HelloWorld = require('./HelloWorld');
 var Tutorial = require('./Tutorial');
@@ -34,7 +32,6 @@ var ChartDoc = require('./components/ChartDoc');
 var CheckBoxDoc = require('./components/CheckBoxDoc');
 var DashboardDoc = require('./patterns/DashboardDoc');
 var DistributionDoc = require('./components/DistributionDoc');
-var DocumentDoc = require('./components/DocumentDoc');
 var FooterDoc = require('./components/FooterDoc');
 var FormDoc = require('./components/FormDoc');
 var FormFieldDoc = require('./components/FormFieldDoc');
@@ -46,6 +43,7 @@ var MapDoc = require('./components/MapDoc');
 var MenuDoc = require('./components/MenuDoc');
 var MeterDoc = require('./components/MeterDoc');
 var NavigationDoc = require('./patterns/NavigationDoc');
+var ParagraphDoc = require('./components/ParagraphDoc');
 var RadioButtonDoc = require('./components/RadioButtonDoc');
 var RestDoc = require('./utils/RestDoc');
 var RestWatchDoc = require('./utils/RestWatchDoc');
@@ -70,10 +68,14 @@ hljs.registerLanguage('scss', require('highlight.js/lib/languages/scss'));
 var CONTENTS = [
   {label: 'Guides',
     contents: [
-      {route: 'develop_helloworld', label: 'Hello World', component: HelloWorld},
-      {route: 'develop_getstarted', label: 'Get Started', component: GetStarted},
-      {route: 'develop_tutorial', label: 'Tutorial', component: Tutorial},
-      {route: 'develop_modulargrommet', label: 'Modular Grommet', component: ModularGrommet}
+      {route: 'develop_helloworld', label: 'Hello World',
+        component: DocsHtmlArticle.wrap(HelloWorld, 'neutral-1')},
+      {route: 'develop_getstarted', label: 'Get Started',
+        component: DocsHtmlArticle.wrap(GetStarted, 'neutral-1')},
+      {route: 'develop_tutorial', label: 'Tutorial',
+        component: DocsHtmlArticle.wrap(Tutorial, 'neutral-1')},
+      {route: 'develop_modulargrommet', label: 'Modular Grommet',
+        component: DocsHtmlArticle.wrap(ModularGrommet, 'neutral-1')}
     ]
   },
   {label: 'Patterns',
@@ -95,7 +97,6 @@ var CONTENTS = [
       {route: 'develop_chart', label: 'Chart', component: ChartDoc},
       {route: 'develop_check-box', label: 'CheckBox', component: CheckBoxDoc},
       {route: 'develop_distribution', label: 'Distribution', component: DistributionDoc},
-      {route: 'develop_document', label: 'Document', component: DocumentDoc},
       {route: 'develop_footer', label: 'Footer', component: FooterDoc},
       {route: 'develop_form', label: 'Form', component: FormDoc},
       {route: 'develop_form-field', label: 'FormField', component: FormFieldDoc},
@@ -106,6 +107,7 @@ var CONTENTS = [
       {route: 'develop_map', label: 'Map', component: MapDoc},
       {route: 'develop_menu', label: 'Menu', component: MenuDoc},
       {route: 'develop_meter', label: 'Meter', component: MeterDoc},
+      {route: 'develop_paragraph', label: 'Paragraph', component: ParagraphDoc},
       {route: 'develop_radio-button', label: 'RadioButton', component: RadioButtonDoc},
       {route: 'develop_search', label: 'Search', component: SearchDoc},
       {route: 'develop_search-input', label: 'SearchInput', component: SearchInputDoc},
@@ -127,8 +129,10 @@ var CONTENTS = [
   },
   {label: 'Reference',
     contents: [
-      {route: 'develop_architecture', label: 'Architecture', component: Architecture},
-      {route: 'develop_integration', label: 'Integration', component: Integration},
+      {route: 'develop_architecture', label: 'Architecture',
+        component: DocsHtmlArticle.wrap(Architecture, 'neutral-5')},
+      {route: 'develop_integration', label: 'Integration',
+        component: DocsHtmlArticle.wrap(Integration, 'neutral-5')},
       {route: 'develop_accessibility', label: 'Accessibility', component: Accessibility}
     ]
   }
@@ -136,42 +140,37 @@ var CONTENTS = [
 
 var Develop = React.createClass({
 
-  _onClick: function () {
-    // no-op
+  contextTypes: {
+    router: React.PropTypes.func.isRequired
   },
 
   render: function () {
+    var title = <Link to="develop">Develop</Link>;
     return (
-      <Article>
-        <DocsHeader />
-
-        <Section primary={true} appCentered={true} colorIndex="neutral-2">
-          <h1>Develop</h1>
-          <p>Grommet was created to give developers and designers alike access to tools
-          that otherwise are out of reach of most product teams. Grommet’s goal is to
-          assist in creating experiences that work accross the many different interaction
-          methods and screen sizes.</p>
-          <Menu direction="row">
-            <Link to="develop_helloworld">
-              <Button label="Hello Grommet!" onClick={this._onClick} primary={true} />
-            </Link>
-            <Link to="develop_getstarted">
-              <Button label="Get Started" onClick={this._onClick} />
-            </Link>
-            <Link to="develop_tutorial">
-              <Button label="Tutorial" onClick={this._onClick} />
-            </Link>
-            <Link to="develop_modulargrommet">
-              <Button label="Modular Grommet" onClick={this._onClick} />
-            </Link>
-          </Menu>
-        </Section>
-
-        <Section appCentered={true}>
-          <h2>Contents</h2>
-          <DocsMenu direction="row" contents={CONTENTS} />
-        </Section>
-      </Article>
+      <DocsSplit title={title} contents={CONTENTS} onChange={this._highlightCode}>
+        <DocsArticle title="Develop" colorIndex="neutral-1">
+          <section>
+            <p>Grommet was created to give developers and designers alike access to tools
+            that otherwise are out of reach of most product teams. Grommet’s goal is to
+            assist in creating experiences that work accross the many different interaction
+            methods and screen sizes.</p>
+            <Menu direction="column">
+              <Link to='develop_helloworld'>
+                <Anchor tag="span" primary={true}>Hello Grommet!</Anchor>
+              </Link>
+              <Link to='develop_getstarted'>
+                <Anchor tag="span" primary={true}>Get Started</Anchor>
+              </Link>
+              <Link to='develop_tutorial'>
+                <Anchor tag="span" primary={true}>Tutorial</Anchor>
+              </Link>
+              <Link to='develop_modulargrommet'>
+                <Anchor tag="span" primary={true}>Modular Grommet</Anchor>
+              </Link>
+            </Menu>
+          </section>
+        </DocsArticle>
+      </DocsSplit>
     );
   }
 });

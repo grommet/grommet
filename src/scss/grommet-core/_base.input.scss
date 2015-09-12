@@ -60,9 +60,9 @@ select {
   background: $small-drop-caret no-repeat center right;
   cursor: pointer;
 
-  &:hover {
-    background-color: $button-hover-background-color;
-  }
+  //&:hover {
+  //  background-color: $button-hover-background-color;
+  //}
 
   &::-moz-focus-inner {
     border: none;

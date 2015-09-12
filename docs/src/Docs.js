@@ -12,7 +12,7 @@ var Docs = React.createClass({
 
   render: function() {
     return (
-      <App className="docs">
+      <App className="docs" centered={false}>
         <RouteHandler />
       </App>
     );

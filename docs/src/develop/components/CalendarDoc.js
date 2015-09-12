@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var Article = require('grommet/components/Article');
+var DocsArticle = require('../../DocsArticle');
 var Calendar = require('grommet/components/Calendar');
 
 var CalendarDoc = React.createClass({
@@ -18,13 +18,10 @@ var CalendarDoc = React.createClass({
     var inline =
       "<Calendar onChange={...} />";
     return (
-      <Article primary={true}>
+      <DocsArticle title="Calendar" colorIndex="neutral-3">
 
-        <header>
-          <h1>Calendar</h1>
-          <p>An input field for a date.</p>
-          <pre><code className="html hljs xml">{inline}</code></pre>
-        </header>
+        <p>An input field for a date.</p>
+        <pre><code className="html hljs xml">{inline}</code></pre>
 
         <section>
           <h2>Options</h2>
@@ -52,7 +49,7 @@ var CalendarDoc = React.createClass({
 
         </section>
 
-      </Article>
+      </DocsArticle>
     );
   }
 });

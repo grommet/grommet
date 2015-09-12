@@ -3,7 +3,7 @@
 var React = require('react');
 var stringify = require("json-stringify-pretty-compact");
 var moment = require('moment');
-var Article = require('grommet/components/Article');
+var DocsArticle = require('../../DocsArticle');
 var Chart = require('grommet/components/Chart');
 var Tiles = require('grommet/components/Tiles');
 var Tile = require('grommet/components/Tile');
@@ -99,12 +99,10 @@ var ChartDoc = React.createClass({
 
   render: function() {
     return (
-      <Article primary={true}>
-        <header>
-          <h1>Chart</h1>
-          <p>Shows a graphical data chart.</p>
-          <pre><code className="html hljs xml">{inline}</code></pre>
-        </header>
+      <DocsArticle title="Chart" colorIndex="neutral-3">
+
+        <p>Shows a graphical data chart.</p>
+        <pre><code className="html hljs xml">{inline}</code></pre>
 
         <section>
           <h2>Options</h2>
@@ -324,7 +322,7 @@ var ChartDoc = React.createClass({
 
         </section>
 
-      </Article>
+      </DocsArticle>
     );
   }
 });

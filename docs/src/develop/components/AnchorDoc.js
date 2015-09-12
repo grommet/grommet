@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var Article = require('grommet/components/Article');
+var DocsArticle = require('../../DocsArticle');
 var Section = require('grommet/components/Section');
 var Anchor = require('grommet/components/Anchor');
 
@@ -15,24 +15,28 @@ var AnchorDoc = React.createClass({
     var inline = [
       "<Anchor href=\"...\">label</Anchor>"
     ].join("\n");
+
     return (
-      <Article primary={true}>
-        <header>
-          <h1>Anchor</h1>
-          <p>A button. We have a separate component from the
-          browser base so we can style it.</p>
-          <pre><code className="html hljs xml">{inline}</code></pre>
-        </header>
+      <DocsArticle title="Anchor" colorIndex="neutral-3">
+
+        <p>A text link. We have a separate component from the
+        browser base so we can style it.</p>
+        <pre><code className="html hljs xml">{inline}</code></pre>
 
         <section>
           <h2>Options</h2>
           <dl>
-          <dt><code>href          {"{location}"}</code></dt>
+          <dt><code>href           {"{location}"}</code></dt>
           <dd>Hyperlink reference to place in the anchor.</dd>
           <dt><code>onClick        {"{func}"}</code></dt>
           <dd>Click handler.</dd>
           <dt><code>primary        true|false</code></dt>
           <dd>Whether this is a primary anchor.</dd>
+          <dt><code>tag            {"{text}"}</code></dt>
+          <dd>The DOM tag to use for the element. The default is {'<a>'}.
+            This should be used in conjunction with components like
+            Link from React Router. In this case, Link controls the
+            navigation while Anchor controls the styling.</dd>
           </dl>
         </section>
 
@@ -53,7 +57,7 @@ var AnchorDoc = React.createClass({
 
         </section>
 
-        <Section colorIndex="neutral-1" pad="medium">
+        <Section colorIndex="neutral-1" pad="large">
           <h3>Colored context</h3>
           <div className="example">
             <Anchor href="" onClick={this._onClick}>Text</Anchor>
@@ -63,7 +67,7 @@ var AnchorDoc = React.createClass({
           </div>
         </Section>
 
-      </Article>
+      </DocsArticle>
     );
   }
 });

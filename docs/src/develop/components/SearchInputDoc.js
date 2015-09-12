@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var Article = require('grommet/components/Article');
+var DocsArticle = require('../../DocsArticle');
 var SearchInput = require('grommet/components/SearchInput');
 
 var SearchInputDoc = React.createClass({
@@ -28,12 +28,10 @@ var SearchInputDoc = React.createClass({
     var inline =
       "<SearchInput onChange={...} onSearch={...} />";
     return (
-      <Article primary={true}>
-        <header>
-          <h1>SearchInput</h1>
-          <p>An input field with a search control.</p>
-          <pre><code className="html hljs xml">{inline}</code></pre>
-        </header>
+      <DocsArticle title="SearchInput" colorIndex="neutral-3">
+
+        <p>An input field with a search control.</p>
+        <pre><code className="html hljs xml">{inline}</code></pre>
 
         <section>
           <h2>Options</h2>
@@ -69,7 +67,7 @@ var SearchInputDoc = React.createClass({
 
         </section>
 
-      </Article>
+      </DocsArticle>
     );
   }
 });

@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var Article = require('grommet/components/Article');
+var DocsArticle = require('../../DocsArticle');
 var RadioButton = require('grommet/components/RadioButton');
 
 var RadioButtonDoc = React.createClass({
@@ -19,13 +19,11 @@ var RadioButtonDoc = React.createClass({
       "<RadioButton id=\"item2\" label=\"Item 1\">"
     ].join("\n");
     return (
-      <Article primary={true}>
-        <header>
-          <h1>RadioButton</h1>
-          <p>A radio button in a web form. We have a separate component from the
+      <DocsArticle title="RadioButton" colorIndex="neutral-3">
+
+        <p>A radio button in a web form. We have a separate component from the
           browser base so we can style it.</p>
-          <pre><code className="html hljs xml">{inline}</code></pre>
-        </header>
+        <pre><code className="html hljs xml">{inline}</code></pre>
 
         <section>
           <h2>Options</h2>
@@ -76,7 +74,7 @@ var RadioButtonDoc = React.createClass({
 
         </section>
 
-      </Article>
+      </DocsArticle>
     );
   }
 });

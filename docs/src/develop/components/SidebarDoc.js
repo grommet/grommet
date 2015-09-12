@@ -1,5 +1,5 @@
 var React = require('react');
-var Article = require('grommet/components/Article');
+var DocsArticle = require('../../DocsArticle');
 var Sidebar = require('grommet/components/Sidebar');
 
 var inline =
@@ -10,18 +10,23 @@ var inline =
 var SidebarDoc = React.createClass({
   render: function() {
     return (
-      <Article primary={true}>
-        <header>
-          <h1>Sidebar</h1>
-          <p>A full height, fixed width container.</p>
-          <pre><code className="html hljs xml">{inline}</code></pre>
-        </header>
+      <DocsArticle title="Sidebar" colorIndex="neutral-3">
+
+        <p>A full height, fixed width container.</p>
+        <pre><code className="html hljs xml">{inline}</code></pre>
 
         <section>
           <h2>Options</h2>
           <dl>
-            <dt><code>primary  true|false</code></dt>
+            <dt><code>fixed      true|false</code></dt>
+            <dd>Whether any contained Header and Footer should be fixed to
+              the top and bottom.</dd>
+            <dt><code>primary    true|false</code></dt>
             <dd>Whether this is the primary application sidebar or not.</dd>
+            <dt><code>size       small|medium|large</code></dt>
+            <dd>The size of the Sidebar. Defaults to <code>medium</code>.</dd>
+            <dt><code>small      true|false</code></dt>
+            <dd>Smaller sized version. Deprecated, use <code>size</code>.</dd>
           </dl>
         </section>
 
@@ -30,7 +35,7 @@ var SidebarDoc = React.createClass({
 
           <div className="example">
             <Sidebar primary={true}>
-              <p>Sample Content</p>
+              <p>Sample Content One</p>
             </Sidebar>
           </div>
           <pre><code className="html hljs xml">
@@ -39,7 +44,7 @@ var SidebarDoc = React.createClass({
 
         </section>
 
-      </Article>
+      </DocsArticle>
     );
   }
 });

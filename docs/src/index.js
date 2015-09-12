@@ -26,7 +26,11 @@ router.run(function (Handler) {
   var element = document.getElementById('content');
   var locale = window.navigator.userLanguage || window.navigator.language;
   React.render(<Handler locales={locale} />, element);
-  document.querySelectorAll('.docs')[0].scrollTop = 0;
+  // scroll to top of document when navigating
+  var docElements = document.querySelectorAll('.docs__doc');
+  if (docElements.length > 0) {
+    docElements[0].scrollTop = 0;
+  }
 });
 
 document.body.classList.remove('loading');

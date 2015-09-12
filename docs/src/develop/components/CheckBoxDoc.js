@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var Article = require('grommet/components/Article');
+var DocsArticle = require('../../DocsArticle');
 var CheckBox = require('grommet/components/CheckBox');
 
 var CheckBoxDoc = React.createClass({
@@ -19,13 +19,11 @@ var CheckBoxDoc = React.createClass({
       "<CheckBox id=\"item2\" label=\"Item 1\">"
     ].join("\n");
     return (
-      <Article primary={true}>
-        <header>
-          <h1>CheckBox</h1>
-          <p>A check box in a web form. We have a separate component from the
+      <DocsArticle title="CheckBox" colorIndex="neutral-3">
+
+        <p>A check box in a web form. We have a separate component from the
           browser base so we can style it.</p>
-          <pre><code className="html hljs xml">{inline}</code></pre>
-        </header>
+        <pre><code className="html hljs xml">{inline}</code></pre>
 
         <section>
           <h2>Options</h2>
@@ -86,7 +84,7 @@ var CheckBoxDoc = React.createClass({
 
         </section>
 
-      </Article>
+      </DocsArticle>
     );
   }
 });

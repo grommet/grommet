@@ -206,8 +206,10 @@ var MediumIndex = React.createClass({
       }
     }
 
+    var flex = ('tiles' === this.props.options.view ? "both" : "right");
+
     return (
-      <Split onResponsive={this._onResponsive} flex="right">
+      <Split onResponsive={this._onResponsive} flex={flex}>
         {pane1}
         {pane2}
       </Split>

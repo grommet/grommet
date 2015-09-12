@@ -46,16 +46,10 @@ h4,
 h5 {
   font-weight: 100;
   max-width: 100%;
-}
 
-h1.header,
-h2.header,
-h3.header,
-h4.header {
-  font-weight: 100;
-
-  &--strong {
-    font-weight: 700;
+  &.header--strong,
+  > strong {
+    font-weight: 600;
   }
 }
 

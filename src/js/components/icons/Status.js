@@ -13,14 +13,27 @@ var CLASS_ROOT = "status-icon";
 var Status = React.createClass({
 
   propType: {
+    a11yTitle: React.PropTypes.string,
     large: React.PropTypes.bool,
     small: React.PropTypes.bool,
-    value: React.PropTypes.oneOf(['error', 'warning', 'ok', 'unknown', 'disabled']),
-    a11yTitle: React.PropTypes.string
+    size: React.PropTypes.oneOf(['small', 'medium', 'large']),
+    value: React.PropTypes.oneOf(['error', 'warning', 'ok', 'unknown', 'disabled'])
   },
 
   getDefaultProps: function () {
     return {value: 'unknown'};
+  },
+
+  getInitialState: function() {
+    return this._stateFromProps(this.props);
+  },
+
+  componentWillReceiveProps: function (newProps) {
+    this.setState(this._stateFromProps(newProps));
+  },
+
+  _stateFromProps: function (props) {
+    return {size: props.size || (props.small ? 'small' : (props.large ? 'large' : null))};
   },
 
   render: function() {
@@ -28,11 +41,8 @@ var Status = React.createClass({
     if (this.props.className) {
       classes.push(this.props.className);
     }
-    if (this.props.small) {
-      classes.push(CLASS_ROOT + "--small");
-    }
-    if (this.props.large) {
-      classes.push(CLASS_ROOT + "--large");
+    if (this.state.size) {
+      classes.push(CLASS_ROOT + "--" + this.state.size);
     }
     var className = classes.join(' ');
     var icon = (<span>{'?'}</span>);

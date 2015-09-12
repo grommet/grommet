@@ -2,7 +2,7 @@
 
 var React = require('react');
 var Link = require('react-router').Link;
-var Article = require('grommet/components/Article');
+var DocsArticle = require('../../DocsArticle');
 var Header = require('grommet/components/Header');
 var Menu = require('grommet/components/Menu');
 var Search = require('grommet/components/Search');
@@ -16,12 +16,10 @@ var HeaderDoc = React.createClass({
     var inline =
     "<Header>\n  <Link to={route}>{label}</Link>\n  ...\n</Header>";
     return (
-      <Article primary={true}>
-        <header>
-          <h1>Header</h1>
-          <p>Combines Title and Menu elements responsively.</p>
-          <pre><code className="html hljs xml">{inline}</code></pre>
-        </header>
+      <DocsArticle title="Header" colorIndex="neutral-3">
+
+        <p>Combines Title and Menu elements responsively.</p>
+        <pre><code className="html hljs xml">{inline}</code></pre>
 
         <section>
           <h2>Options</h2>
@@ -32,9 +30,11 @@ var HeaderDoc = React.createClass({
             <dt><code>float       true|false</code></dt>
             <dd>Whether the header floats above content underneath it.</dd>
             <dt><code>large       true|false</code></dt>
-            <dd>Larger sized version.</dd>
+            <dd>Larger sized version. Deprecated, use <code>size</code>.</dd>
+            <dt><code>size        small|medium|large</code></dt>
+            <dd>The size of the Header. Defaults to <code>medium</code>.</dd>
             <dt><code>small       true|false</code></dt>
-            <dd>Smaller sized version.</dd>
+            <dd>Smaller sized version. Deprecated, use <code>size</code>.</dd>
             <dt><code>splash      true|false</code></dt>
             <dd>Whether to render it in a style suitable for a splash screen.</dd>
           </dl>
@@ -82,7 +82,7 @@ var HeaderDoc = React.createClass({
 
           <h3>Large</h3>
           <div className="example">
-            <Header large={true} justify="between">
+            <Header size="large" justify="between">
               <Title><Logo /> Title</Title>
               <Menu icon={<Edit />} dropAlign={{right: "right"}}>
                 <a href="#" className="active">First</a>
@@ -91,11 +91,11 @@ var HeaderDoc = React.createClass({
               </Menu>
             </Header>
           </div>
-          <pre><code className="html hljs xml">{"<Header large={true}> ..."}</code></pre>
+          <pre><code className="html hljs xml">{"<Header size=\"large\"> ..."}</code></pre>
 
           <h3>Small</h3>
           <div className="example">
-            <Header small={true} justify="between">
+            <Header size="small" justify="between">
               <Title><Logo /> Title</Title>
               <Menu icon={<Edit />} dropAlign={{right: "right"}}>
                 <a href="#" className="active">First</a>
@@ -104,11 +104,11 @@ var HeaderDoc = React.createClass({
               </Menu>
             </Header>
           </div>
-          <pre><code className="html hljs xml">{"<Header small={true}> ..."}</code></pre>
+          <pre><code className="html hljs xml">{"<Header size=\"small\"> ..."}</code></pre>
 
           <h3>Title menu and icon Menu</h3>
           <div className="example">
-            <Header large={true} justify="between">
+            <Header size="large" justify="between">
               <Title onClick={function () {}}><Logo /> Title</Title>
               <Menu icon={<Edit />} dropAlign={{right: "right"}}>
                 <a href="#" className="active">First</a>
@@ -117,7 +117,7 @@ var HeaderDoc = React.createClass({
               </Menu>
             </Header>
           </div>
-          <pre><code className="html hljs xml">{"<Header large={true}> ..."}</code></pre>
+          <pre><code className="html hljs xml">{"<Header size=\"large\"> ..."}</code></pre>
 
           <h3>Tag, Separator</h3>
           <div className="example">
@@ -127,7 +127,7 @@ var HeaderDoc = React.createClass({
 
         </section>
 
-      </Article>
+      </DocsArticle>
     );
   }
 });

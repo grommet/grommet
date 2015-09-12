@@ -1,22 +1,19 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var Article = require('grommet/components/Article');
+var DocsArticle = require('../../DocsArticle');
 var Box = require('grommet/components/Box');
 
 var BoxDoc = React.createClass({
 
   render: function() {
-    var inline =
-    "<Box>\n  ...\n</Box>";
+    var inline = "<Box>\n  ...\n</Box>";
     return (
-      <Article primary={true}>
-        <header>
-          <h1>Box</h1>
-          <p>General purpose flexible box layout. This does not support all of the
-            <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">flexbox capabilities</a>.</p>
-          <pre><code className="html hljs xml">{inline}</code></pre>
-        </header>
+      <DocsArticle title="Box" colorIndex="neutral-3">
+
+        <p>General purpose flexible box layout. This does not support all of the
+          <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">flexbox capabilities</a>.</p>
+        <pre><code className="html hljs xml">{inline}</code></pre>
 
         <section>
           <h2>Options</h2>
@@ -88,7 +85,7 @@ var BoxDoc = React.createClass({
 
         </section>
 
-      </Article>
+      </DocsArticle>
     );
   }
 });
