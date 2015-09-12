@@ -166,6 +166,10 @@ gulp.task('generate-server-routes', function() {
         ]
       },
       resolve: {
+        alias: {
+          'grommet/scss': path.resolve(__dirname, '../src/scss'),
+          'grommet': path.resolve(__dirname, '../src/js')
+        },
         extensions: ['', '.js', '.json', '.htm', '.html', '.scss', '.md']
       },
       externals: nodeModules,
@@ -195,4 +199,5 @@ gulp.task('generate-server-styles', function() {
   generateStyle('aruba');
   generateStyle('hpe');
   generateStyle('hpinc');
+  generateStyle('vanilla');
 });
