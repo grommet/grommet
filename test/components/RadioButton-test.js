@@ -17,4 +17,30 @@ describe('Grommet RadioButton', function() {
       'radio-button__label', 'Test Label');
   });
 
+  it('loads a disabled RadioButton', function () {
+    var Component = GrommetTestUtils.getComponent(__path__, undefined, {
+      id: 'radio-id',
+      label: 'Test Label',
+      disabled: true
+    });
+
+    GrommetTestUtils.componentShouldExist(Component, 'radio-button');
+    GrommetTestUtils.componentShouldExist(Component,
+      'radio-button__label', 'Test Label');
+    GrommetTestUtils.componentShouldExist(Component, 'radio-button--disabled');
+  });
+
+  it('loads a basic RadioButton with an additional class', function() {
+    var Component = GrommetTestUtils.getComponent(__path__, undefined, {
+      id: 'radio-id',
+      label: 'Test Label',
+      className: 'test'
+    });
+
+    GrommetTestUtils.componentShouldExist(Component, 'radio-button');
+    GrommetTestUtils.componentShouldExist(Component, 'test');
+    GrommetTestUtils.componentShouldExist(Component,
+      'radio-button__label', 'Test Label');
+  });
+
 });
