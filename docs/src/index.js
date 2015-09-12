@@ -9,15 +9,13 @@ if (! Modernizr.flexbox ||
     'If you are using the latest Internet Explorer, you will need to turn off Compatibility Mode.');
 }
 
-require("index-" + __THEME__ + ".scss");
-require("!style!css!highlight.js/styles/github.css");
-
 var React = require('react');
 var Router = require('react-router');
 
 var rootPath = '/docs/' + ('grommet' === __THEME__ ? '' : __THEME__ + '/');
 
 if (NODE_ENV === 'development') {
+  require("index-" + __THEME__ + ".scss");
   rootPath = "/"; // webpack-dev-server
 }
 

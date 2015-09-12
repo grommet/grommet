@@ -14,7 +14,7 @@
 	<p>
   	As your application grows, you will likely feel the need to divide your code into smaller modules. Dividing your code into modules is a common strategy for large-scale projects as it helps with parallel development and debugging. As a result, we recommend you structure your Grommet application as follows:
   </p>
-	<pre><code class="bash">
+	<pre><code class="hljs bash">
     {"/sample-app\n  /src\n    /js\n      /actions\n      /constants\n      /components\n      /stores\n      index.js\n    /scss\n    index.html\n  gulpfile.js\n  package.json\n"}
   </code></pre>
   <p>
@@ -52,7 +52,7 @@
           <li>
             Only executed if <code>sync</code> option is provided in the gulpfile.js. The sync object schema follows:
 			      <p>
-    				<pre><code class="json">
+    				<pre><code class="hljs json">
     				   {"sync: {\n  hostname: 'fullly.qualified.domain.name',\n  username: 'username',\n  remoteDestination: '/absolute/path/on/remote/host'\n}"}
     				</code></pre>
     			</p>

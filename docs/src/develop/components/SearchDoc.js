@@ -22,7 +22,7 @@ var SearchDoc = React.createClass({
         <header>
           <h1>Search</h1>
           <p>A responsive search control.</p>
-          <pre><code className="html">{inline}</code></pre>
+          <pre><code className="html hljs xml">{inline}</code></pre>
         </header>
 
         <section>
@@ -54,13 +54,13 @@ var SearchDoc = React.createClass({
           <div className="example">
             <Search />
           </div>
-          <pre><code className="html">{"<Search />"}</code></pre>
+          <pre><code className="html hljs xml">{"<Search />"}</code></pre>
 
           <h3>Left</h3>
           <div className="example">
             <Search dropAlign={{right: 'right'}} />
           </div>
-          <pre><code className="html">{"<Search dropAlign={{right: \"right\"}} />"}</code></pre>
+          <pre><code className="html hljs xml">{"<Search dropAlign={{right: \"right\"}} />"}</code></pre>
 
           <h3>Suggestions and Default Value</h3>
           <div className="example">
@@ -68,14 +68,14 @@ var SearchDoc = React.createClass({
               suggestions={['item 1', 'item 2', 'item 3']}
               onChange={this._onChange} />
           </div>
-          <pre><code className="html">{"<Search defaultValue=\"" +
+          <pre><code className="html hljs xml">{"<Search defaultValue=\"" +
             this.state.value + "\" suggestions={...} />"}</code></pre>
 
           <h3>Inline</h3>
           <div className="example">
             <Search inline={true}/>
           </div>
-          <pre><code className="html">{"<Search inline={true}/>"}</code></pre>
+          <pre><code className="html hljs xml">{"<Search inline={true}/>"}</code></pre>
 
           <h3>Inline, Default Value, and Suggestions</h3>
           <div className="example">
@@ -83,7 +83,7 @@ var SearchDoc = React.createClass({
               suggestions={['item 1', 'item 2', 'item 3']}
               onChange={this._onChange} />
           </div>
-          <pre><code className="html">{"<Search inline={true} value=\"" +
+          <pre><code className="html hljs xml">{"<Search inline={true} value=\"" +
             this.state.value + "\" suggestions={[...]}/>"}</code></pre>
 
         </section>

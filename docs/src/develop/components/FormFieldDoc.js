@@ -18,7 +18,7 @@ var FormFieldDoc = React.createClass({
         <header>
           <h1>FormField</h1>
           <p>A field in a web form.</p>
-          <pre><code className="html">{inline}</code></pre>
+          <pre><code className="html hljs xml">{inline}</code></pre>
         </header>
 
         <section>
@@ -44,7 +44,7 @@ var FormFieldDoc = React.createClass({
               <input id="item1" type="text" />
             </FormField>
           </div>
-          <pre><code className="html">{"<FormField label=\"Item 1\" htmlFor=\"item1\">\n  <input id=\"\{id\}\" type=\"text\"/>\n</FormField>"}</code></pre>
+          <pre><code className="html hljs xml">{"<FormField label=\"Item 1\" htmlFor=\"item1\">\n  <input id=\"\{id\}\" type=\"text\"/>\n</FormField>"}</code></pre>
 
           <h3>Text input with errors</h3>
           <div className="example">
@@ -52,7 +52,7 @@ var FormFieldDoc = React.createClass({
               <input id="item1" type="text" />
             </FormField>
           </div>
-          <pre><code className="html">{"<FormField label=\"Item 1\" htmlFor=\"item1\" error=\"error text\">\n  <input id=\"\{id\}\" type=\"text\"/>\n</FormField>"}</code></pre>
+          <pre><code className="html hljs xml">{"<FormField label=\"Item 1\" htmlFor=\"item1\" error=\"error text\">\n  <input id=\"\{id\}\" type=\"text\"/>\n</FormField>"}</code></pre>
 
 
           <h3>Checkbox</h3>
@@ -61,7 +61,7 @@ var FormFieldDoc = React.createClass({
               <CheckBox id="item2" label="Item 2" />
             </FormField>
           </div>
-          <pre><code className="html">{"<FormField>\n  <CheckBox id=\"\{item2\}\" label=\"Item 2\"/>\n</FormField>"}</code></pre>
+          <pre><code className="html hljs xml">{"<FormField>\n  <CheckBox id=\"\{item2\}\" label=\"Item 2\"/>\n</FormField>"}</code></pre>
 
           <h3>RadioButton with help</h3>
           <div className="example">
@@ -70,7 +70,7 @@ var FormFieldDoc = React.createClass({
               <RadioButton id="item3-2" label="choice 2" name="choice"/>
             </FormField>
           </div>
-          <pre><code className="html">{"<FormField help=\"help text\">\n  <RadioButton id=\"\{item3-1\}\" label=\"choice 1\" name=\"choice\"/>\n  <RadioButton id=\"\{item3-2\}\" label=\"choice 2\" name=\"choice\"/>\n</FormField>"}</code></pre>
+          <pre><code className="html hljs xml">{"<FormField help=\"help text\">\n  <RadioButton id=\"\{item3-1\}\" label=\"choice 1\" name=\"choice\"/>\n  <RadioButton id=\"\{item3-2\}\" label=\"choice 2\" name=\"choice\"/>\n</FormField>"}</code></pre>
 
         </section>
 

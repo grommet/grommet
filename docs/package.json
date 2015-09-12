@@ -22,6 +22,7 @@
     "grommet": "https://github.com/HewlettPackard/grommet.git#stable"
   },
   "devDependencies": {
-    "html-jsx-loader": "^0.1.12"
+    "html-jsx-loader": "^0.1.12",
+    "highlight-loader": "^0.4.5"
   }
 }

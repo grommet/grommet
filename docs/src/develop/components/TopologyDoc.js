@@ -22,7 +22,7 @@ var TopologyDoc = React.createClass({
         <header>
           <h1>Topology</h1>
           <p>Visualize structure and connectivity.</p>
-          <pre><code className="html">{inline}</code></pre>
+          <pre><code className="html hljs xml">{inline}</code></pre>
         </header>
 
         <section>

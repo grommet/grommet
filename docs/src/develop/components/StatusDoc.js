@@ -12,7 +12,7 @@ var StatusDoc = React.createClass({
         <header>
           <h1>Status</h1>
           <p>A status icon.</p>
-          <pre><code className="html">{inline}</code></pre>
+          <pre><code className="html hljs xml">{inline}</code></pre>
         </header>
 
         <section>
@@ -36,7 +36,7 @@ var StatusDoc = React.createClass({
           <div className="example">
             <Status value="ok"/>
           </div>
-          <pre><code className="html">
+          <pre><code className="html hljs xml">
             {"<Status value=\"ok\">"}
           </code></pre>
 
@@ -44,7 +44,7 @@ var StatusDoc = React.createClass({
           <div className="example">
             <Status value="error" a11yTitle="critical"/>
           </div>
-          <pre><code className="html">
+          <pre><code className="html hljs xml">
             {"<Status value=\"error\" a11yTitle=\"critical\">"}
           </code></pre>
 
@@ -52,7 +52,7 @@ var StatusDoc = React.createClass({
           <div className="example">
             <Status value="warning"/>
           </div>
-          <pre><code className="html">
+          <pre><code className="html hljs xml">
             {"<Status value=\"warning\">"}
           </code></pre>
 
@@ -60,7 +60,7 @@ var StatusDoc = React.createClass({
           <div className="example">
             <Status value="disabled"/>
           </div>
-          <pre><code className="html">
+          <pre><code className="html hljs xml">
             {"<Status value=\"disabled\">"}
           </code></pre>
 
@@ -68,7 +68,7 @@ var StatusDoc = React.createClass({
           <div className="example">
             <Status value="unknown"/>
           </div>
-          <pre><code className="html">
+          <pre><code className="html hljs xml">
             {"<Status value=\"unknown\">"}
           </code></pre>
 

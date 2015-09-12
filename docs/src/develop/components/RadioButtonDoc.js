@@ -24,7 +24,7 @@ var RadioButtonDoc = React.createClass({
           <h1>RadioButton</h1>
           <p>A radio button in a web form. We have a separate component from the
           browser base so we can style it.</p>
-          <pre><code className="html">{inline}</code></pre>
+          <pre><code className="html hljs xml">{inline}</code></pre>
         </header>
 
         <section>
@@ -61,7 +61,7 @@ var RadioButtonDoc = React.createClass({
               checked={this.state.choice === 'choice-2'}
               onChange={this._onChange.bind(this, 'choice-2')} />
           </div>
-          <pre><code className="html">{"<RadioButton id=\"\{choice1-1\}\" name=\"choice\" label=\"Choice 1\"/>"}</code></pre>
+          <pre><code className="html hljs xml">{"<RadioButton id=\"\{choice1-1\}\" name=\"choice\" label=\"Choice 1\"/>"}</code></pre>
 
           <h3>Disabled</h3>
           <div className="example">
@@ -72,7 +72,7 @@ var RadioButtonDoc = React.createClass({
               checked={this.state.choice === 'choice-2'} disabled={true}
               onChange={this._onChange.bind(this, 'choice-2')} />
           </div>
-          <pre><code className="html">{"<RadioButton id=\"\{choice1-1\}\" name=\"choice\" label=\"Choice 1\" disabled={true}/>"}</code></pre>
+          <pre><code className="html hljs xml">{"<RadioButton id=\"\{choice1-1\}\" name=\"choice\" label=\"Choice 1\" disabled={true}/>"}</code></pre>
 
         </section>
 

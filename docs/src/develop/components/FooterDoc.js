@@ -22,7 +22,7 @@ var FooterDoc = React.createClass({
           <h1>Footer</h1>
           <p>Put things at the bottom.</p>
 
-          <pre><code className="html">{inline}</code></pre>
+          <pre><code className="html hljs xml">{inline}</code></pre>
         </header>
 
         <section>
@@ -48,7 +48,7 @@ var FooterDoc = React.createClass({
               </Menu>
             </Footer>
           </div>
-          <pre><code className="html">{"<Footer> ..."}</code></pre>
+          <pre><code className="html hljs xml">{"<Footer> ..."}</code></pre>
 
           <h3>Form footer right</h3>
           <div className="example">
@@ -59,7 +59,7 @@ var FooterDoc = React.createClass({
               </Menu>
             </Footer>
           </div>
-          <pre><code className="html">{"<Footer justify=\"end\"> ..."}</code></pre>
+          <pre><code className="html hljs xml">{"<Footer justify=\"end\"> ..."}</code></pre>
 
         </section>
 

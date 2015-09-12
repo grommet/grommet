@@ -19,7 +19,7 @@ var TileDoc = React.createClass({
         <header>
           <h1>Carousel</h1>
           <p>Image carousel.</p>
-          <pre><code className="html">{inline}</code></pre>
+          <pre><code className="html hljs xml">{inline}</code></pre>
         </header>
 
         <section>
@@ -31,7 +31,7 @@ var TileDoc = React.createClass({
               <img src="img/carousel-2.png" />
             </Carousel>
           </div>
-          <pre><code className="html">
+          <pre><code className="html hljs xml">
             {"<Carousel>\n  <img />\n    ...\n</Carousel>"}
           </code></pre>
 

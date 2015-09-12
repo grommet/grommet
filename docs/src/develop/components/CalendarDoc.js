@@ -23,7 +23,7 @@ var CalendarDoc = React.createClass({
         <header>
           <h1>Calendar</h1>
           <p>An input field for a date.</p>
-          <pre><code className="html">{inline}</code></pre>
+          <pre><code className="html hljs xml">{inline}</code></pre>
         </header>
 
         <section>
@@ -48,7 +48,7 @@ var CalendarDoc = React.createClass({
             <Calendar id="item1" name="item-1"
               onChange={this._onChange} value={this.state.value} />
           </div>
-          <pre><code className="html">{"<Calendar value={...} onChange={...} />"}</code></pre>
+          <pre><code className="html hljs xml">{"<Calendar value={...} onChange={...} />"}</code></pre>
 
         </section>
 

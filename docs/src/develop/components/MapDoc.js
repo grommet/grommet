@@ -40,7 +40,7 @@ var MapDoc = React.createClass({
         <header>
           <h1>Map</h1>
           <p>Shows a linear meter graphic.</p>
-          <pre><code className="html">{inline}</code></pre>
+          <pre><code className="html hljs xml">{inline}</code></pre>
         </header>
 
         <section>
@@ -58,7 +58,7 @@ var MapDoc = React.createClass({
           <div className="example">
             <GrommetMap data={data} />
           </div>
-          <pre><code className="html">
+          <pre><code className="html hljs xml">
             {"<Map data={...} />"}
           </code></pre>
 

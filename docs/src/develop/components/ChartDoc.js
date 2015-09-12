@@ -103,7 +103,7 @@ var ChartDoc = React.createClass({
         <header>
           <h1>Chart</h1>
           <p>Shows a graphical data chart.</p>
-          <pre><code className="html">{inline}</code></pre>
+          <pre><code className="html hljs xml">{inline}</code></pre>
         </header>
 
         <section>
@@ -158,7 +158,7 @@ var ChartDoc = React.createClass({
           <div className="example">
           <Chart series={singleSeries} min={0} max={5} threshold={3} />
           </div>
-          <pre><code className="html">
+          <pre><code className="html hljs xml">
             {"<Chart threshold={2} series={" + stringify(singleSeries) + "} />"}
           </code></pre>
 
@@ -166,7 +166,7 @@ var ChartDoc = React.createClass({
           <div className="example">
           <Chart series={singleSeries} min={0} threshold={3} type="bar" />
           </div>
-          <pre><code className="html">
+          <pre><code className="html hljs xml">
             {"<Chart type=\"bar\" threshold={2}\n" +
               " series={" + stringify(singleSeries) + "} />"}
           </code></pre>
@@ -175,7 +175,7 @@ var ChartDoc = React.createClass({
           <div className="example">
           <Chart series={singleSeries} min={0} max={5} threshold={3} type="area" />
           </div>
-          <pre><code className="html">
+          <pre><code className="html hljs xml">
             {"<Chart type=\"area\" threshold={3}\n" +
               " series={" + stringify(singleSeries) + "} />"}
           </code></pre>
@@ -186,7 +186,7 @@ var ChartDoc = React.createClass({
             xAxis={seriesXAxis}
             units="TB" />
           </div>
-          <pre><code className="html">
+          <pre><code className="html hljs xml">
             {"<Chart type=\"bar\" threshold={3} legend={{}} units=\"TB\"\n" +
               " xAxis={" + stringify(seriesXAxis) +  "}\n" +
               " series={" + stringify(series) + "} />"}
@@ -200,7 +200,7 @@ var ChartDoc = React.createClass({
             units="TB"
             thresholds={thresholds} />
           </div>
-          <pre><code className="html">
+          <pre><code className="html hljs xml">
             {"<Chart type=\"bar\" threshold={3}\n" +
               " legend={{}} points={true} units=\"TB\"\n" +
               " xAxis={{placement: \"bottom\",\n" +
@@ -215,7 +215,7 @@ var ChartDoc = React.createClass({
             xAxis={seriesXAxis}
             units="TB" small={true} />
           </div>
-          <pre><code className="html">
+          <pre><code className="html hljs xml">
             {"<Chart type=\"bar\" small={true} threshold={3}\n" +
               " legend={{}} units=\"TB\"\n xAxis={" +
               stringify(seriesXAxis) +  "}\n" +
@@ -229,7 +229,7 @@ var ChartDoc = React.createClass({
             xAxis={seriesXAxis}
             units="TB" large={true} />
           </div>
-          <pre><code className="html">
+          <pre><code className="html hljs xml">
             {"<Chart type=\"bar\" small={true} threshold={3}\n" +
               " legend={{total: true}} units=\"TB\"\n" +
               " xAxis={" + stringify(seriesXAxis) +  "}\n" +
@@ -241,7 +241,7 @@ var ChartDoc = React.createClass({
           <Chart series={singleSeries} min={0} type="bar" sparkline={true} />
           {singleSeries[0].values[0][0]}
           </div>
-          <pre><code className="html">
+          <pre><code className="html hljs xml">
             {"<Chart type=\"bar\" sparkline={true}\n" +
               " series={" + stringify(singleSeries) + "} />"}
           </code></pre>
@@ -251,7 +251,7 @@ var ChartDoc = React.createClass({
           <Chart series={singleSeries} min={0} type="area" sparkline={true} />
           {singleSeries[0].values[0][0]}
           </div>
-          <pre><code className="html">
+          <pre><code className="html hljs xml">
             {"<Chart type=\"area\" sparkline={true}\n" +
               " series={" + stringify(singleSeries) + "} />"}
           </code></pre>
@@ -262,7 +262,7 @@ var ChartDoc = React.createClass({
             type="area" smooth={true} legend={{}}
             xAxis={dateSeriesXAxis} />
           </div>
-          <pre><code className="html">
+          <pre><code className="html hljs xml">
             {"<Chart type=\"area\" smooth={true} threshold={3}\n" +
               " legend={{}}\n" +
               " xAxis={" + stringify(dateSeriesXAxis) +  "}\n" +
@@ -274,7 +274,7 @@ var ChartDoc = React.createClass({
           <Chart series={secondsSeries} min={0} max={5} threshold={3}
             type="bar" legend={{}} />
           </div>
-          <pre><code className="html">
+          <pre><code className="html hljs xml">
             {"<Chart type=\"bar\" threshold={3}\n" +
               " legend={{}} series={...} />"}
           </code></pre>
@@ -304,7 +304,7 @@ var ChartDoc = React.createClass({
             </Tile>
           </Tiles>
           </div>
-          <pre><code className="html">
+          <pre><code className="html hljs xml">
             {"<Tile>\n<Chart type=\"...\" threshold={3} legend={{position: after}} units=\"TB\"\n" +
               " xAxis={" + stringify(seriesXAxis) +  "}\n" +
               " series={" + stringify(series) + "} />\n</Tile>"}
@@ -316,7 +316,7 @@ var ChartDoc = React.createClass({
             xAxis={[]}
             units="TB" small={true} />
           </div>
-          <pre><code className="html">
+          <pre><code className="html hljs xml">
             {"<Chart type=\"bar\" small={true} threshold={3}\n" +
               " legend={{}} units=\"TB\"\n xAxis={[]}\n" +
               " series={[]} />"}

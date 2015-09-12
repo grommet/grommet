@@ -51,7 +51,7 @@ var TileDoc = React.createClass({
         <header>
           <h1>Tile(s)</h1>
           <p>Lay out equivalently sized tiles of content.</p>
-          <pre><code className="html">{inline}</code></pre>
+          <pre><code className="html hljs xml">{inline}</code></pre>
         </header>
 
         <section>
@@ -84,7 +84,7 @@ var TileDoc = React.createClass({
               </Tile>
             </Tiles>
           </div>
-          <pre><code className="html">
+          <pre><code className="html hljs xml">
             {"<Tiles>\n  <Tile>\n    ...\n  </Tile>\n  ...\n</Tiles>"}
           </code></pre>
 
@@ -94,7 +94,7 @@ var TileDoc = React.createClass({
               {richTiles}
             </Tiles>
           </div>
-          <pre><code className="html">
+          <pre><code className="html hljs xml">
             {"<Tiles>\n  <Tile>\n    ...\n  </Tile>\n  ...\n</Tiles>"}
           </code></pre>
 
@@ -104,7 +104,7 @@ var TileDoc = React.createClass({
               {richTiles}
             </Tiles>
           </div>
-          <pre><code className="html">
+          <pre><code className="html hljs xml">
             {"<Tiles fill={true}>\n  ...\n</Tiles>"}
           </code></pre>
 
@@ -114,7 +114,7 @@ var TileDoc = React.createClass({
               {richTiles}
             </Tiles>
           </div>
-          <pre><code className="html">
+          <pre><code className="html hljs xml">
             {"<Tiles fill={true} direction=\"row\">\n  ...\n</Tiles>"}
           </code></pre>
 

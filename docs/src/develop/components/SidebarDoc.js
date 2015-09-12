@@ -14,7 +14,7 @@ var SidebarDoc = React.createClass({
         <header>
           <h1>Sidebar</h1>
           <p>A full height, fixed width container.</p>
-          <pre><code className="html">{inline}</code></pre>
+          <pre><code className="html hljs xml">{inline}</code></pre>
         </header>
 
         <section>
@@ -33,7 +33,7 @@ var SidebarDoc = React.createClass({
               <p>Sample Content</p>
             </Sidebar>
           </div>
-          <pre><code className="html">
+          <pre><code className="html hljs xml">
             {"<Sidebar primary={true}>\n  <p>\n    Sample Content One\n  </p>\n</Sidebar>"}
           </code></pre>
 

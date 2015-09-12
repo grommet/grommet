@@ -21,7 +21,7 @@ var ButtonDoc = React.createClass({
           <h1>Button</h1>
           <p>A button. We have a separate component from the
           browser base so we can style it.</p>
-          <pre><code className="html">{inline}</code></pre>
+          <pre><code className="html hljs xml">{inline}</code></pre>
         </header>
 
         <section>
@@ -52,31 +52,31 @@ var ButtonDoc = React.createClass({
           <div className="example">
             <Button label="Action" onClick={this._onClick} />
           </div>
-          <pre><code className="html">{"<Button label=\"Action\" onClick={...} />"}</code></pre>
+          <pre><code className="html hljs xml">{"<Button label=\"Action\" onClick={...} />"}</code></pre>
 
           <h3>Primary</h3>
           <div className="example">
             <Button label="Action" primary={true} onClick={this._onClick} />
           </div>
-          <pre><code className="html">{"<Button label=\"Action\" primary={true} onClick={...} />"}</code></pre>
+          <pre><code className="html hljs xml">{"<Button label=\"Action\" primary={true} onClick={...} />"}</code></pre>
 
           <h3>Accent</h3>
           <div className="example">
             <Button label="Action" accent={true} onClick={this._onClick} />
           </div>
-          <pre><code className="html">{"<Button label=\"Action\" accent={true} onClick={...} />"}</code></pre>
+          <pre><code className="html hljs xml">{"<Button label=\"Action\" accent={true} onClick={...} />"}</code></pre>
 
           <h3>Large</h3>
           <div className="example">
             <Button label="Action" onClick={this._onClick} large={true} />
           </div>
-          <pre><code className="html">{"<Button label=\"Action\" onClick={...} large={true} />"}</code></pre>
+          <pre><code className="html hljs xml">{"<Button label=\"Action\" onClick={...} large={true} />"}</code></pre>
 
           <h3>Disabled</h3>
           <div className="example">
             <Button label="Action" />
           </div>
-          <pre><code className="html">{"<Button label=\"Action\" />"}</code></pre>
+          <pre><code className="html hljs xml">{"<Button label=\"Action\" />"}</code></pre>
 
         </section>
 

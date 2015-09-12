@@ -71,7 +71,7 @@ var TableDoc = React.createClass({
         <header>
           <h1>Table</h1>
           <p>Table using standard HTML5 markup.</p>
-          <pre><code className="html">{inline}</code></pre>
+          <pre><code className="html hljs xml">{inline}</code></pre>
         </header>
 
         <section>

@@ -32,7 +32,7 @@ var SearchInputDoc = React.createClass({
         <header>
           <h1>SearchInput</h1>
           <p>An input field with a search control.</p>
-          <pre><code className="html">{inline}</code></pre>
+          <pre><code className="html hljs xml">{inline}</code></pre>
         </header>
 
         <section>
@@ -65,7 +65,7 @@ var SearchInputDoc = React.createClass({
               onSearch={this._onSearch}
               suggestions={this.state.suggestions} />
           </div>
-          <pre><code className="html">{"<SearchInput value=\"" + this.state.value + "\" />"}</code></pre>
+          <pre><code className="html hljs xml">{"<SearchInput value=\"" + this.state.value + "\" />"}</code></pre>
 
         </section>
 

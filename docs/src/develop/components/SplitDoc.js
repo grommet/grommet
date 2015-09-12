@@ -14,7 +14,7 @@ var SplitDoc = React.createClass({
         <header>
           <h1>Split</h1>
           <p>A full height container with two children laid out horizontally.</p>
-          <pre><code className="html">{inline}</code></pre>
+          <pre><code className="html hljs xml">{inline}</code></pre>
         </header>
 
         <section>
@@ -37,7 +37,7 @@ var SplitDoc = React.createClass({
               <p>Sample Content Two</p>
             </Split>
           </div>
-          <pre><code className="html">
+          <pre><code className="html hljs xml">
             {"<Split>\n  <p>\n    Sample Content One\n  </p>\n</Split>"}
           </code></pre>
 

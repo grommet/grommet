@@ -27,7 +27,7 @@ var DocumentDoc = React.createClass({
           <p>NOTE: This component is deprecated and will be removed soon.
             It has been superseded by the Article component.</p>
           <p>Styles standard HTML5 markup for use in documentation.</p>
-          <pre><code className="html">{inline}</code></pre>
+          <pre><code className="html hljs xml">{inline}</code></pre>
         </header>
 
         <section>

@@ -14,7 +14,7 @@ var LoginFormDoc = React.createClass({
         <header>
           <h1>LoginForm</h1>
           <p>The form used to log in.</p>
-          <pre><code className="html">{inline}</code></pre>
+          <pre><code className="html hljs xml">{inline}</code></pre>
         </header>
 
         <section>
@@ -44,7 +44,7 @@ var LoginFormDoc = React.createClass({
           <div className="example">
             <LoginForm />
           </div>
-          <pre><code className="html">{"<LoginForm onSubmit={...}/>"}</code></pre>
+          <pre><code className="html hljs xml">{"<LoginForm onSubmit={...}/>"}</code></pre>
 
           <h3>Full</h3>
           <div className="example">
@@ -52,7 +52,7 @@ var LoginFormDoc = React.createClass({
               rememberMe={true} forgotPassword={<a>Forgot password?</a>}
               errors={["Invalid username or password."]}/>
           </div>
-          <pre><code className="html">{"<LoginForm\n  logo={<Logo />}\n  title=\"Product Name\"\n  rememberMe={true}\n  forgotPassword={<a>...</a>}\n  onSubmit={...}\n  errors={[\"Invalid username or password.\"]}\n/>"}</code></pre>
+          <pre><code className="html hljs xml">{"<LoginForm\n  logo={<Logo />}\n  title=\"Product Name\"\n  rememberMe={true}\n  forgotPassword={<a>...</a>}\n  onSubmit={...}\n  errors={[\"Invalid username or password.\"]}\n/>"}</code></pre>
 
         </section>
 

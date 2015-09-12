@@ -17,7 +17,7 @@ var AppDoc = React.createClass({
         <header>
           <h1>App</h1>
           <p>Grommet main container, usually containing Header and Footer.</p>
-          <pre><code className="html">{inline}</code></pre>
+          <pre><code className="html hljs xml">{inline}</code></pre>
         </header>
 
         <section>
@@ -41,7 +41,7 @@ var AppDoc = React.createClass({
               </Header>
             </App>
           </div>
-          <pre><code className="html">
+          <pre><code className="html hljs xml">
             {"<App>\n  <Header>\n    <Title>\n      My App\n    </Title>\n  </Header>\n  ...\n</App>"}
           </code></pre>
         </section>

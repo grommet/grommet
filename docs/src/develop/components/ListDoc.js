@@ -43,7 +43,7 @@ var ListDoc = React.createClass({
         <header>
           <h1>List</h1>
           <p>List of things.</p>
-          <pre><code className="html">{inline}</code></pre>
+          <pre><code className="html hljs xml">{inline}</code></pre>
         </header>
 
         <section>

@@ -9239,6 +9239,16 @@ module.exports =
 	    return state;
 	  },
 
+	  _interactionListeners: function _interactionListeners(interactive, item, index) {
+	    var result = {};
+	    if (interactive) {
+	      result.onOver = this._onActivate.bind(this, index);
+	      result.onOut = this._onActivate.bind(this, this.state.importantIndex);
+	      result.onClick = item.onClick;
+	    }
+	    return result;
+	  },
+
 	  _translateBarWidth: function _translateBarWidth(value) {
 	    return Math.round(this.state.scale * value);
 	  },
@@ -9253,7 +9263,7 @@ module.exports =
 	    return commands;
 	  },
 
-	  _renderBar: function _renderBar(series) {
+	  _renderBar: function _renderBar(series, interactive) {
 	    var start = 0;
 	    var minRemaining = this.state.min.value;
 	    var classes;
@@ -9272,10 +9282,11 @@ module.exports =
 	      commands = this._barCommands(start, distance);
 	      start += distance;
 
+	      var listeners = this._interactionListeners(interactive, item, index);
+
 	      return React.createElement('path', { key: index, className: classes.join(' '), d: commands,
-	        onMouseOver: this._onActivate.bind(this, index),
-	        onMouseOut: this._onActivate.bind(this, this.state.importantIndex),
-	        onClick: item.onClick });
+	        onMouseOver: listeners.onOver, onMouseOut: listeners.onOut,
+	        onClick: listeners.onClick });
 	    }, this);
 
 	    if (paths.length === 0) {
@@ -9297,7 +9308,7 @@ module.exports =
 	    return arcCommands(CIRCLE_WIDTH / 2, CIRCLE_WIDTH / 2, CIRCLE_RADIUS, startAngle + this.state.angleOffset, endAngle + this.state.angleOffset);
 	  },
 
-	  _renderArcOrCircle: function _renderArcOrCircle(series) {
+	  _renderArcOrCircle: function _renderArcOrCircle(series, interactive) {
 	    var startAngle = this.state.startAngle;
 	    var classes;
 	    var endAngle;
@@ -9314,11 +9325,12 @@ module.exports =
 
 	      startAngle = endAngle;
 
+	      var listeners = this._interactionListeners(interactive, item, index);
+
 	      return React.createElement('path', { key: item.label || index, fill: 'none',
 	        className: classes.join(' '), d: commands,
-	        onMouseOver: this._onActivate.bind(this, index),
-	        onMouseOut: this._onActivate.bind(this, this.state.importantIndex),
-	        onClick: item.onClick });
+	        onMouseOver: listeners.onOver, onMouseOut: listeners.onOut,
+	        onClick: listeners.onClick });
 	    }, this);
 
 	    if (paths.length === 0) {
@@ -9337,7 +9349,7 @@ module.exports =
 	    return arcCommands(this.state.viewBoxWidth / 2, this.state.viewBoxHeight / 2, radius, startAngle + this.state.angleOffset, endAngle + this.state.angleOffset);
 	  },
 
-	  _renderSpiral: function _renderSpiral(series) {
+	  _renderSpiral: function _renderSpiral(series, interactive) {
 	    var startAngle = this.state.startAngle;
 	    var radius = this.state.startRadius;
 	    var classes;
@@ -9355,11 +9367,12 @@ module.exports =
 
 	      radius += SPIRAL_THICKNESS;
 
+	      var listeners = this._interactionListeners(interactive, item, index);
+
 	      return React.createElement('path', { key: item.label || index, fill: 'none',
 	        className: classes.join(' '), d: commands,
-	        onMouseOver: this._onActivate.bind(this, index),
-	        onMouseOut: this._onActivate.bind(this, this.state.importantIndex),
-	        onClick: item.onClick });
+	        onMouseOver: listeners.onOver, onMouseOut: listeners.onOut,
+	        onClick: listeners.onClick });
 	    }, this);
 
 	    if (paths.length === 0) {
@@ -9510,16 +9523,16 @@ module.exports =
 	    var width;
 	    var height;
 	    if ('arc' === this.props.type || 'circle' === this.props.type) {
-	      values = this._renderArcOrCircle(this.state.series);
+	      values = this._renderArcOrCircle(this.state.series, true);
 	      thresholds = this._renderArcOrCircle(this.state.thresholds);
 	      if (this.state.series.length === 1) {
 	        singleIndicator = this._renderSingleIndicator(this.state.series);
 	      }
 	    } else if ('bar' === this.props.type) {
-	      values = this._renderBar(this.state.series);
+	      values = this._renderBar(this.state.series, true);
 	      thresholds = this._renderBar(this.state.thresholds);
 	    } else if ('spiral' === this.props.type) {
-	      values = this._renderSpiral(this.state.series);
+	      values = this._renderSpiral(this.state.series, true);
 	      if (this.state.series.length === 1) {
 	        singleIndicator = this._renderSingleIndicator(this.state.series);
 	      }
@@ -10987,11 +11000,11 @@ module.exports =
 	  displayName: 'DevelopDocument',
 
 	  componentDidMount: function componentDidMount() {
-	    setTimeout(this._highlightCode, 1);
+	    this._highlightCode();
 	  },
 
 	  componentDidUpdate: function componentDidUpdate() {
-	    setTimeout(this._highlightCode, 1);
+	    this._highlightCode();
 	  },
 
 	  _highlightCode: function _highlightCode() {
@@ -11094,7 +11107,7 @@ module.exports =
 	          ),
 	          React.createElement(
 	            "code",
-	            { className: "html" },
+	            { className: "html hljs xml" },
 	            "<!DOCTYPE html>",
 	            React.createElement("br", null),
 	            "<html>",
@@ -11260,7 +11273,7 @@ module.exports =
 	          ),
 	          React.createElement(
 	            "code",
-	            { className: "html" },
+	            { className: "hljs html" },
 	            "<Grommet.Tiles>",
 	            React.createElement("br", null),
 	            "  <Grommet.Tile>",
@@ -11441,7 +11454,7 @@ module.exports =
 	          ),
 	          React.createElement(
 	            "code",
-	            { className: "html" },
+	            { className: "hljs html" },
 	            "<!DOCTYPE html>",
 	            React.createElement("br", null),
 	            "<html>",
@@ -11852,7 +11865,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            "code",
-	            { className: "bash" },
+	            { className: "hljs bash" },
 	            "/sample-app\n  /src\n    /js\n      /actions\n      /constants\n      /components\n      /stores\n      index.js\n    /scss\n    index.html\n  gulpfile.js\n  package.json\n"
 	          )
 	        ),
@@ -12105,7 +12118,7 @@ module.exports =
 	                  null,
 	                  React.createElement(
 	                    "code",
-	                    { className: "json" },
+	                    { className: "hljs json" },
 	                    "sync: {\n  hostname: 'fullly.qualified.domain.name',\n  username: 'username',\n  remoteDestination: '/absolute/path/on/remote/host'\n}"
 	                  )
 	                ),
@@ -12213,7 +12226,7 @@ module.exports =
 	              null,
 	              React.createElement(
 	                "code",
-	                { className: "bash" },
+	                { className: "hljs bash" },
 	                'npm config set proxy http://\{host\}:\{port\}',
 	                React.createElement("br", null),
 	                'npm config set https-proxy https://\{host\}:\{port\}'
@@ -12229,7 +12242,7 @@ module.exports =
 	              null,
 	              React.createElement(
 	                "code",
-	                { className: "bash" },
+	                { className: "hljs bash" },
 	                'npm config set https-proxy http://\{host\}:\{port\}',
 	                React.createElement("br", null)
 	              )
@@ -12267,7 +12280,7 @@ module.exports =
 	              null,
 	              React.createElement(
 	                "code",
-	                { className: "bash" },
+	                { className: "hljs bash" },
 	                'npm install -g gulp'
 	              )
 	            )
@@ -12285,7 +12298,7 @@ module.exports =
 	              null,
 	              React.createElement(
 	                "code",
-	                { className: "bash" },
+	                { className: "hljs bash" },
 	                'npm install -g grommet'
 	              )
 	            )
@@ -12303,7 +12316,7 @@ module.exports =
 	              null,
 	              React.createElement(
 	                "code",
-	                { className: "bash" },
+	                { className: "hljs bash" },
 	                'grommet init sample-app',
 	                React.createElement("br", null),
 	                'cd sample-app'
@@ -12323,7 +12336,7 @@ module.exports =
 	              null,
 	              React.createElement(
 	                "code",
-	                { className: "bash" },
+	                { className: "hljs bash" },
 	                'gulp dev'
 	              )
 	            )
@@ -12386,7 +12399,7 @@ module.exports =
 	              null,
 	              React.createElement(
 	                "code",
-	                { className: "bash" },
+	                { className: "hljs bash" },
 	                'npm install -g bower'
 	              )
 	            )
@@ -12413,7 +12426,7 @@ module.exports =
 	              null,
 	              React.createElement(
 	                "code",
-	                { className: "bash" },
+	                { className: "hljs bash" },
 	                'set HTTPS_PROXY=https://\{host\}:\{port\}'
 	              )
 	            ),
@@ -12431,7 +12444,7 @@ module.exports =
 	              null,
 	              React.createElement(
 	                "code",
-	                { className: "bash" },
+	                { className: "hljs bash" },
 	                'export HTTPS_PROXY=https://\{host\}:\{port\}'
 	              )
 	            )
@@ -12449,7 +12462,7 @@ module.exports =
 	              null,
 	              React.createElement(
 	                "code",
-	                { className: "bash" },
+	                { className: "hljs bash" },
 	                'bower install grommet'
 	              )
 	            ),
@@ -12478,7 +12491,7 @@ module.exports =
 	              null,
 	              React.createElement(
 	                "code",
-	                { className: "bash" },
+	                { className: "hljs bash" },
 	                "bower_components/grommet/sample-grommet.html"
 	              )
 	            ),
@@ -12830,7 +12843,7 @@ module.exports =
 	                  null,
 	                  React.createElement(
 	                    'code',
-	                    { className: 'html' },
+	                    { className: 'html hljs xml' },
 	                    "<Status value=\"error\">"
 	                  )
 	                )
@@ -12852,7 +12865,7 @@ module.exports =
 	                  null,
 	                  React.createElement(
 	                    'code',
-	                    { className: 'html' },
+	                    { className: 'html hljs xml' },
 	                    "<Status value=\"error\" a11yTitle=\"critical\">"
 	                  )
 	                )
@@ -12890,7 +12903,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<App lang=\"en-US\">\n  ...\n</App>"
 	          )
 	        ),
@@ -12914,7 +12927,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<App>\n" + "  <Article>\n" + "    <Header>\n" + "      <h1>Title</h1>\n" + "    </Header>\n" + "    <Section primary={true}>\n" + "      <h2>Heading</h2>\n" + "      <p>Lorem ipsum ...</p>\n" + "    </Section>\n" + "  </Article>\n" + "</App>"
 	          )
 	        )
@@ -13691,7 +13704,7 @@ module.exports =
 	  },
 
 	  render: function render() {
-	    var inline = ["<Anchor href=\"...\">label</Anchor"].join("\n");
+	    var inline = ["<Anchor href=\"...\">label</Anchor>"].join("\n");
 	    return React.createElement(
 	      Article,
 	      { primary: true },
@@ -13713,7 +13726,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            inline
 	          )
 	        )
@@ -13802,7 +13815,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Anchor href=\"\" onClick={this._onClick}>Text</Anchor>"
 	          )
 	        ),
@@ -13825,7 +13838,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Anchor href=\"\" label=\"Text\" primary={true} onClick={this._onClick} />"
 	          )
 	        )
@@ -13952,7 +13965,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            inline
 	          )
 	        )
@@ -14033,7 +14046,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<App>\n  <Header>\n    <Title>\n      My App\n    </Title>\n  </Header>\n  ...\n</App>"
 	          )
 	        )
@@ -14085,7 +14098,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            inline
 	          )
 	        )
@@ -14218,7 +14231,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            inline
 	          )
 	        )
@@ -14470,7 +14483,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Box> ..."
 	          )
 	        ),
@@ -14502,7 +14515,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Box direction=\"row\"> ..."
 	          )
 	        ),
@@ -14535,7 +14548,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Box direction=\"row\" align=\"center\" colorIndex=\"neutral-1\"\n  justify=\"between\" reverse={true} tag=\"aside\"> ..."
 	          )
 	        )
@@ -14589,7 +14602,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            inline
 	          )
 	        )
@@ -14728,7 +14741,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Button label=\"Action\" onClick={...} />"
 	          )
 	        ),
@@ -14747,7 +14760,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Button label=\"Action\" primary={true} onClick={...} />"
 	          )
 	        ),
@@ -14766,7 +14779,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Button label=\"Action\" accent={true} onClick={...} />"
 	          )
 	        ),
@@ -14785,7 +14798,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Button label=\"Action\" onClick={...} large={true} />"
 	          )
 	        ),
@@ -14804,7 +14817,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Button label=\"Action\" />"
 	          )
 	        )
@@ -14885,7 +14898,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            inline
 	          )
 	        )
@@ -14982,7 +14995,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Calendar value={...} onChange={...} />"
 	          )
 	        )
@@ -15382,7 +15395,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            inline
 	          )
 	        )
@@ -15410,7 +15423,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Carousel>\n  <img />\n    ...\n</Carousel>"
 	          )
 	        )
@@ -15596,7 +15609,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            inline
 	          )
 	        )
@@ -15894,7 +15907,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Chart threshold={2} series={" + stringify(singleSeries) + "} />"
 	          )
 	        ),
@@ -15913,7 +15926,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Chart type=\"bar\" threshold={2}\n" + " series={" + stringify(singleSeries) + "} />"
 	          )
 	        ),
@@ -15932,7 +15945,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Chart type=\"area\" threshold={3}\n" + " series={" + stringify(singleSeries) + "} />"
 	          )
 	        ),
@@ -15953,7 +15966,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Chart type=\"bar\" threshold={3} legend={{}} units=\"TB\"\n" + " xAxis={" + stringify(seriesXAxis) + "}\n" + " series={" + stringify(series) + "} />"
 	          )
 	        ),
@@ -15976,7 +15989,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Chart type=\"bar\" threshold={3}\n" + " legend={{}} points={true} units=\"TB\"\n" + " xAxis={{placement: \"bottom\",\n" + "   data:" + stringify(seriesXAxis) + "}}\n" + " series={" + stringify(series) + "}\n" + " thresholds={" + stringify(thresholds) + "} />"
 	          )
 	        ),
@@ -15997,7 +16010,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Chart type=\"bar\" small={true} threshold={3}\n" + " legend={{}} units=\"TB\"\n xAxis={" + stringify(seriesXAxis) + "}\n" + " series={" + stringify(series) + "} />"
 	          )
 	        ),
@@ -16019,7 +16032,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Chart type=\"bar\" small={true} threshold={3}\n" + " legend={{total: true}} units=\"TB\"\n" + " xAxis={" + stringify(seriesXAxis) + "}\n" + " series={" + stringify(series) + "} />"
 	          )
 	        ),
@@ -16039,7 +16052,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Chart type=\"bar\" sparkline={true}\n" + " series={" + stringify(singleSeries) + "} />"
 	          )
 	        ),
@@ -16059,7 +16072,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Chart type=\"area\" sparkline={true}\n" + " series={" + stringify(singleSeries) + "} />"
 	          )
 	        ),
@@ -16080,7 +16093,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Chart type=\"area\" smooth={true} threshold={3}\n" + " legend={{}}\n" + " xAxis={" + stringify(dateSeriesXAxis) + "}\n" + " series={" + stringify(dateSeries) + "} />"
 	          )
 	        ),
@@ -16100,7 +16113,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Chart type=\"bar\" threshold={3}\n" + " legend={{}} series={...} />"
 	          )
 	        ),
@@ -16150,7 +16163,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Tile>\n<Chart type=\"...\" threshold={3} legend={{position: after}} units=\"TB\"\n" + " xAxis={" + stringify(seriesXAxis) + "}\n" + " series={" + stringify(series) + "} />\n</Tile>"
 	          )
 	        ),
@@ -16171,7 +16184,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Chart type=\"bar\" small={true} threshold={3}\n" + " legend={{}} units=\"TB\"\n xAxis={[]}\n" + " series={[]} />"
 	          )
 	        )
@@ -17133,7 +17146,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            inline
 	          )
 	        )
@@ -17318,7 +17331,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<CheckBox id=\"item2\" name=\"item2\" label=\"Item 2\" />"
 	          )
 	        ),
@@ -17337,7 +17350,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<CheckBox id=\"item3\" name=\"item3\" label=\"Item 3\" toggle={true} />"
 	          )
 	        ),
@@ -17356,7 +17369,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<CheckBox id=\"item4\" name=\"item4\" label=\"Item 4\" disabled=\{true\} />"
 	          )
 	        ),
@@ -17376,7 +17389,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<CheckBox id=\"item5\" name=\"item5\" label=\"Item 5\" toggle={true} disabled={true} />"
 	          )
 	        )
@@ -18232,7 +18245,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            inline
 	          )
 	        )
@@ -18508,7 +18521,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            inline
 	          )
 	        )
@@ -18597,7 +18610,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Footer> ..."
 	          )
 	        ),
@@ -18625,7 +18638,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Footer justify=\"end\"> ..."
 	          )
 	        )
@@ -18684,7 +18697,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            inline
 	          )
 	        )
@@ -18754,7 +18767,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Form onSubmit={...}> ..."
 	          )
 	        ),
@@ -18773,7 +18786,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Form onSubmit={...} compact={true}> ..."
 	          )
 	        ),
@@ -18792,7 +18805,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Form onSubmit={...}> ..."
 	          )
 	        ),
@@ -18811,7 +18824,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Form onSubmit={...}> ..."
 	          )
 	        )
@@ -19808,7 +19821,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            inline
 	          )
 	        )
@@ -19913,7 +19926,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<FormField label=\"Item 1\" htmlFor=\"item1\">\n  <input id=\"\{id\}\" type=\"text\"/>\n</FormField>"
 	          )
 	        ),
@@ -19936,7 +19949,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<FormField label=\"Item 1\" htmlFor=\"item1\" error=\"error text\">\n  <input id=\"\{id\}\" type=\"text\"/>\n</FormField>"
 	          )
 	        ),
@@ -19959,7 +19972,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<FormField>\n  <CheckBox id=\"\{item2\}\" label=\"Item 2\"/>\n</FormField>"
 	          )
 	        ),
@@ -19983,7 +19996,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<FormField help=\"help text\">\n  <RadioButton id=\"\{item3-1\}\" label=\"choice 1\" name=\"choice\"/>\n  <RadioButton id=\"\{item3-2\}\" label=\"choice 2\" name=\"choice\"/>\n</FormField>"
 	          )
 	        )
@@ -20038,7 +20051,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            inline
 	          )
 	        )
@@ -20169,7 +20182,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Header> ..."
 	          )
 	        ),
@@ -20216,7 +20229,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Header> ..."
 	          )
 	        ),
@@ -20263,7 +20276,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Header> ..."
 	          )
 	        ),
@@ -20310,7 +20323,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Header large={true}> ..."
 	          )
 	        ),
@@ -20357,7 +20370,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Header small={true}> ..."
 	          )
 	        ),
@@ -20404,7 +20417,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Header large={true}> ..."
 	          )
 	        ),
@@ -20427,7 +20440,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Header tag=\"h4\" separator=\"top\" pad={{vertical: 'small'}}> ..."
 	          )
 	        )
@@ -20559,7 +20572,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            inline
 	          )
 	        )
@@ -20686,7 +20699,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Layer> ..."
 	          )
 	        ),
@@ -20705,7 +20718,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Layer> ..."
 	          )
 	        ),
@@ -20724,7 +20737,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Layer> ..."
 	          )
 	        ),
@@ -20743,7 +20756,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Layer> ..."
 	          )
 	        ),
@@ -20762,7 +20775,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Layer align=\"left\"> ..."
 	          )
 	        )
@@ -20819,7 +20832,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            inline
 	          )
 	        )
@@ -21264,7 +21277,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            inline
 	          )
 	        )
@@ -21414,7 +21427,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<LoginForm onSubmit={...}/>"
 	          )
 	        ),
@@ -21439,7 +21452,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<LoginForm\n  logo={<Logo />}\n  title=\"Product Name\"\n  rememberMe={true}\n  forgotPassword={<a>...</a>}\n  onSubmit={...}\n  errors={[\"Invalid username or password.\"]}\n/>"
 	          )
 	        )
@@ -21494,7 +21507,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            inline
 	          )
 	        )
@@ -21550,7 +21563,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Map data={...} />"
 	          )
 	        )
@@ -21795,7 +21808,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            inline
 	          )
 	        )
@@ -21966,7 +21979,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Menu> ..."
 	          )
 	        ),
@@ -22003,7 +22016,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Menu direction=\"row\"> ..."
 	          )
 	        ),
@@ -22040,7 +22053,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Menu direction=\"row\" justify=\"end\"> ..."
 	          )
 	        ),
@@ -22077,7 +22090,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Menu label=\"Label\"> ..."
 	          )
 	        ),
@@ -22114,7 +22127,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Menu inline={false}> ..."
 	          )
 	        ),
@@ -22151,7 +22164,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Menu icon={<EditIcon />}> ..."
 	          )
 	        ),
@@ -22176,7 +22189,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Menu icon={<FilterIcon />} closeOnClick={false} pad=\"medium\"> ..."
 	          )
 	        ),
@@ -22213,7 +22226,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Menu inline={false} dropAlign={{bottom: \"bottom\"}}> ..."
 	          )
 	        ),
@@ -22250,7 +22263,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Menu inline={false} small={true}> ..."
 	          )
 	        ),
@@ -22275,7 +22288,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Menu direction=\"row\"> ..."
 	          )
 	        )
@@ -22355,7 +22368,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            inline
 	          )
 	        )
@@ -22631,7 +22644,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Meter value={" + this.state.simpleValue + "} />"
 	          )
 	        ),
@@ -22650,7 +22663,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Meter value={" + this.state.simpleValue + "} vertical={true} />"
 	          )
 	        ),
@@ -22669,7 +22682,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Meter value={" + this.state.simpleValue + "} type=\"arc\" />"
 	          )
 	        ),
@@ -22688,7 +22701,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Meter value={" + this.state.simpleValue + "} type=\"arc\" vertical={true} />"
 	          )
 	        ),
@@ -22707,7 +22720,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Meter value={" + this.state.simpleValue + "} type=\"circle\" />"
 	          )
 	        ),
@@ -22726,7 +22739,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Meter value={" + this.state.simpleValue + "} type=\"spiral\" />"
 	          )
 	        ),
@@ -22747,7 +22760,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Meter value={" + this.state.simpleValue + "}\n" + " min={" + stringify(simpleMin) + "}\n" + " max={" + stringify(simpleMax) + "}\n" + " threshold={" + simpleThreshold + "}\n" + " units=\"" + simpleUnits + "\" />"
 	          )
 	        ),
@@ -22768,7 +22781,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Meter value={" + this.state.simpleValue + "}\n" + " min={" + stringify(simpleMin) + "}\n" + " max={" + stringify(simpleMax) + "}\n" + " threshold={" + simpleThreshold + "}\n" + " units=\"" + simpleUnits + "\" vertical={true} />"
 	          )
 	        ),
@@ -22789,7 +22802,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Meter type=\"arc\" value={" + this.state.simpleValue + "}\n" + " min={" + stringify(simpleMin) + "}\n" + " max={" + stringify(simpleMax) + "}\n" + " thresholds={" + stringify(thresholds) + "}\n" + " units=\"" + simpleUnits + "\" />"
 	          )
 	        ),
@@ -22810,7 +22823,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Meter type=\"arc\" value={" + this.state.simpleValue + "}\n" + " min={" + stringify(simpleMin) + "}\n" + " max={" + stringify(simpleMax) + "}\n" + " threshold={" + simpleThreshold + "}\n" + " units=\"" + simpleUnits + "\" vertical={true} />"
 	          )
 	        ),
@@ -22831,7 +22844,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Meter type=\"circle\" value={" + this.state.simpleValue + "}\n" + " min={" + stringify(simpleMin) + "}\n" + " max={" + stringify(simpleMax) + "}\n" + " threshold={" + simpleThreshold + "}\n" + " units=\"" + simpleUnits + "\" />"
 	          )
 	        ),
@@ -22850,7 +22863,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Meter legend={true}\n " + "series={" + stringify(series) + "}  />"
 	          )
 	        ),
@@ -22869,7 +22882,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Meter legend={true}\n" + " series={" + stringify(series) + "}\n" + " vertical={true} />"
 	          )
 	        ),
@@ -22888,7 +22901,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Meter type=\"arc\" legend={true}\n " + "series={" + stringify(series) + "} />"
 	          )
 	        ),
@@ -22907,7 +22920,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Meter type=\"arc\" legend={true} units=\"TB\"\n " + "series={" + stringify(storageSeries) + "}\n" + " vertical={true} />"
 	          )
 	        ),
@@ -22926,7 +22939,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Meter type=\"circle\" legend={true}\n " + "series={" + stringify(series) + "} />"
 	          )
 	        ),
@@ -22945,7 +22958,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Meter type=\"spiral\" max={" + statusSeriesMax + "}\n " + "series={" + stringify(statusSeries) + "} />"
 	          )
 	        ),
@@ -22964,7 +22977,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Meter type=\"spiral\" units=\"TB\"\n " + "series={" + stringify(storageSeries) + "} />"
 	          )
 	        ),
@@ -22983,7 +22996,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Meter value={" + this.state.simpleValue + "} size=\"small\" />"
 	          )
 	        ),
@@ -23002,7 +23015,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Meter value={" + this.state.simpleValue + "} type=\"arc\" size=\"small\" />"
 	          )
 	        ),
@@ -23021,7 +23034,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Meter value={" + this.state.simpleValue + "} type=\"circle\" size=\"small\" />"
 	          )
 	        ),
@@ -23040,7 +23053,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Meter value={" + this.state.simpleValue + "} size=\"large\" />"
 	          )
 	        ),
@@ -23059,7 +23072,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Meter value={" + this.state.simpleValue + "} type=\"arc\" size=\"large\" />"
 	          )
 	        ),
@@ -23078,7 +23091,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Meter value={" + this.state.simpleValue + "} type=\"circle\" size=\"large\" />"
 	          )
 	        ),
@@ -23097,7 +23110,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Meter value={undefined} />"
 	          )
 	        ),
@@ -23116,7 +23129,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Meter value={undefined} type=\"arc\" />"
 	          )
 	        ),
@@ -23135,7 +23148,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Meter value={undefined} type=\"spiral\" />"
 	          )
 	        )
@@ -23370,7 +23383,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            inline
 	          )
 	        )
@@ -23530,7 +23543,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<RadioButton id=\"\{choice1-1\}\" name=\"choice\" label=\"Choice 1\"/>"
 	          )
 	        ),
@@ -23554,7 +23567,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<RadioButton id=\"\{choice1-1\}\" name=\"choice\" label=\"Choice 1\" disabled={true}/>"
 	          )
 	        )
@@ -23998,7 +24011,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            inline
 	          )
 	        )
@@ -24144,7 +24157,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Search />"
 	          )
 	        ),
@@ -24163,7 +24176,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Search dropAlign={{right: \"right\"}} />"
 	          )
 	        ),
@@ -24184,7 +24197,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Search defaultValue=\"" + this.state.value + "\" suggestions={...} />"
 	          )
 	        ),
@@ -24203,7 +24216,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Search inline={true}/>"
 	          )
 	        ),
@@ -24224,7 +24237,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Search inline={true} value=\"" + this.state.value + "\" suggestions={[...]}/>"
 	          )
 	        )
@@ -24291,7 +24304,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            inline
 	          )
 	        )
@@ -24435,7 +24448,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<SearchInput value=\"" + this.state.value + "\" />"
 	          )
 	        )
@@ -24485,7 +24498,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            inline
 	          )
 	        )
@@ -24577,7 +24590,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Section direction=\"right\">\n  <Menu>\n    ...\n  </Menu>\n  <Document>\n    <h2>\n      Sample Content\n    </h2>\n  </Document>\n</Section>"
 	          )
 	        )
@@ -24625,7 +24638,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            inline
 	          )
 	        )
@@ -24683,7 +24696,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Sidebar primary={true}>\n  <p>\n    Sample Content One\n  </p>\n</Sidebar>"
 	          )
 	        )
@@ -24731,7 +24744,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            inline
 	          )
 	        )
@@ -24808,7 +24821,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Split>\n  <p>\n    Sample Content One\n  </p>\n</Split>"
 	          )
 	        )
@@ -24856,7 +24869,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            inline
 	          )
 	        )
@@ -24954,7 +24967,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Status value=\"ok\">"
 	          )
 	        ),
@@ -24973,7 +24986,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Status value=\"error\" a11yTitle=\"critical\">"
 	          )
 	        ),
@@ -24992,7 +25005,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Status value=\"warning\">"
 	          )
 	        ),
@@ -25011,7 +25024,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Status value=\"disabled\">"
 	          )
 	        ),
@@ -25030,7 +25043,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Status value=\"unknown\">"
 	          )
 	        )
@@ -25162,7 +25175,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            inline
 	          )
 	        )
@@ -25396,7 +25409,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            inline
 	          )
 	        )
@@ -25497,7 +25510,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Tiles>\n  <Tile>\n    ...\n  </Tile>\n  ...\n</Tiles>"
 	          )
 	        ),
@@ -25520,7 +25533,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Tiles>\n  <Tile>\n    ...\n  </Tile>\n  ...\n</Tiles>"
 	          )
 	        ),
@@ -25543,7 +25556,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Tiles fill={true}>\n  ...\n</Tiles>"
 	          )
 	        ),
@@ -25566,7 +25579,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Tiles fill={true} direction=\"row\">\n  ...\n</Tiles>"
 	          )
 	        )
@@ -25614,7 +25627,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            inline
 	          )
 	        )
@@ -25688,7 +25701,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            "<Title>\n  Sample Title\n</Title>"
 	          )
 	        )
@@ -25738,7 +25751,7 @@ module.exports =
 	          null,
 	          React.createElement(
 	            'code',
-	            { className: 'html' },
+	            { className: 'html hljs xml' },
 	            inline
 	          )
 	        )

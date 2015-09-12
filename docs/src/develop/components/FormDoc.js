@@ -34,7 +34,7 @@ var FormDoc = React.createClass({
         <header>
           <h1>Form</h1>
           <p>A web form.</p>
-          <pre><code className="html">{inline}</code></pre>
+          <pre><code className="html hljs xml">{inline}</code></pre>
         </header>
 
         <section>
@@ -54,25 +54,25 @@ var FormDoc = React.createClass({
           <div className="example">
             <FullForm prefix="a-" onSubmit={this._onSubmit} onCancel={this._onCancel} />
           </div>
-          <pre><code className="html">{"<Form onSubmit={...}> ..."}</code></pre>
+          <pre><code className="html hljs xml">{"<Form onSubmit={...}> ..."}</code></pre>
 
           <h3>Compact</h3>
           <div className="example">
             <FullForm prefix="b-" onSubmit={this._onSubmit} compact={true} onCancel={this._onCancel} />
           </div>
-          <pre><code className="html">{"<Form onSubmit={...} compact={true}> ..."}</code></pre>
+          <pre><code className="html hljs xml">{"<Form onSubmit={...} compact={true}> ..."}</code></pre>
 
           <h3>Add User</h3>
           <div className="example">
             <AddUserForm prefix="a-" onSubmit={this._onSubmit} onCancel={this._onCancel} />
           </div>
-          <pre><code className="html">{"<Form onSubmit={...}> ..."}</code></pre>
+          <pre><code className="html hljs xml">{"<Form onSubmit={...}> ..."}</code></pre>
 
           <h3>Confirmation</h3>
           <div className="example">
             <ConfirmationForm prefix="a-" onSubmit={this._onSubmit} onCancel={this._onCancel} />
           </div>
-          <pre><code className="html">{"<Form onSubmit={...}> ..."}</code></pre>
+          <pre><code className="html hljs xml">{"<Form onSubmit={...}> ..."}</code></pre>
 
         </section>
 

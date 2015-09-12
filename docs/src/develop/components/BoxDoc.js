@@ -15,7 +15,7 @@ var BoxDoc = React.createClass({
           <h1>Box</h1>
           <p>General purpose flexible box layout. This does not support all of the
             <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">flexbox capabilities</a>.</p>
-          <pre><code className="html">{inline}</code></pre>
+          <pre><code className="html hljs xml">{inline}</code></pre>
         </header>
 
         <section>
@@ -65,7 +65,7 @@ var BoxDoc = React.createClass({
               <div>second</div>
             </Box>
           </div>
-          <pre><code className="html">{"<Box> ..."}</code></pre>
+          <pre><code className="html hljs xml">{"<Box> ..."}</code></pre>
 
           <h3>Row</h3>
           <div className="example">
@@ -74,7 +74,7 @@ var BoxDoc = React.createClass({
               <div>second</div>
             </Box>
           </div>
-          <pre><code className="html">{"<Box direction=\"row\"> ..."}</code></pre>
+          <pre><code className="html hljs xml">{"<Box direction=\"row\"> ..."}</code></pre>
 
           <h3>Kitchen sink</h3>
           <div className="example">
@@ -84,7 +84,7 @@ var BoxDoc = React.createClass({
               <div>second</div>
             </Box>
           </div>
-          <pre><code className="html">{"<Box direction=\"row\" align=\"center\" colorIndex=\"neutral-1\"\n  justify=\"between\" reverse={true} tag=\"aside\"> ..."}</code></pre>
+          <pre><code className="html hljs xml">{"<Box direction=\"row\" align=\"center\" colorIndex=\"neutral-1\"\n  justify=\"between\" reverse={true} tag=\"aside\"> ..."}</code></pre>
 
         </section>
 

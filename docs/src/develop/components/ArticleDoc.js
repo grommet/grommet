@@ -26,7 +26,7 @@ var ArticleDoc = React.createClass({
         <header>
           <h1>Article</h1>
           <p>Styles standard HTML5 markup for use in articles.</p>
-          <pre><code className="html">{inline}</code></pre>
+          <pre><code className="html hljs xml">{inline}</code></pre>
         </header>
 
         <section>

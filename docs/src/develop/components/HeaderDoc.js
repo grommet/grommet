@@ -20,7 +20,7 @@ var HeaderDoc = React.createClass({
         <header>
           <h1>Header</h1>
           <p>Combines Title and Menu elements responsively.</p>
-          <pre><code className="html">{inline}</code></pre>
+          <pre><code className="html hljs xml">{inline}</code></pre>
         </header>
 
         <section>
@@ -51,7 +51,7 @@ var HeaderDoc = React.createClass({
               <Search inline={true} />
             </Header>
           </div>
-          <pre><code className="html">{"<Header> ..."}</code></pre>
+          <pre><code className="html hljs xml">{"<Header> ..."}</code></pre>
 
           <h3>Title, inline Menu, and Search</h3>
           <div className="example">
@@ -65,7 +65,7 @@ var HeaderDoc = React.createClass({
               </Menu>
             </Header>
           </div>
-          <pre><code className="html">{"<Header> ..."}</code></pre>
+          <pre><code className="html hljs xml">{"<Header> ..."}</code></pre>
 
           <h3>Logo, title and icon Menu</h3>
           <div className="example">
@@ -78,7 +78,7 @@ var HeaderDoc = React.createClass({
               </Menu>
             </Header>
           </div>
-          <pre><code className="html">{"<Header> ..."}</code></pre>
+          <pre><code className="html hljs xml">{"<Header> ..."}</code></pre>
 
           <h3>Large</h3>
           <div className="example">
@@ -91,7 +91,7 @@ var HeaderDoc = React.createClass({
               </Menu>
             </Header>
           </div>
-          <pre><code className="html">{"<Header large={true}> ..."}</code></pre>
+          <pre><code className="html hljs xml">{"<Header large={true}> ..."}</code></pre>
 
           <h3>Small</h3>
           <div className="example">
@@ -104,7 +104,7 @@ var HeaderDoc = React.createClass({
               </Menu>
             </Header>
           </div>
-          <pre><code className="html">{"<Header small={true}> ..."}</code></pre>
+          <pre><code className="html hljs xml">{"<Header small={true}> ..."}</code></pre>
 
           <h3>Title menu and icon Menu</h3>
           <div className="example">
@@ -117,13 +117,13 @@ var HeaderDoc = React.createClass({
               </Menu>
             </Header>
           </div>
-          <pre><code className="html">{"<Header large={true}> ..."}</code></pre>
+          <pre><code className="html hljs xml">{"<Header large={true}> ..."}</code></pre>
 
           <h3>Tag, Separator</h3>
           <div className="example">
             <Header tag="h4" separator="top">Heading Text</Header>
           </div>
-          <pre><code className="html">{"<Header tag=\"h4\" separator=\"top\" pad={{vertical: 'small'}}> ..."}</code></pre>
+          <pre><code className="html hljs xml">{"<Header tag=\"h4\" separator=\"top\" pad={{vertical: 'small'}}> ..."}</code></pre>
 
         </section>
 

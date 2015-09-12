@@ -14,7 +14,7 @@ var TitleDoc = React.createClass({
         <header>
           <h1>Title</h1>
           <p>Title component usually rendered inside the Header.</p>
-          <pre><code className="html">{inline}</code></pre>
+          <pre><code className="html hljs xml">{inline}</code></pre>
         </header>
 
         <section>
@@ -34,7 +34,7 @@ var TitleDoc = React.createClass({
           <div className="example">
             <Title>Sample Title</Title>
           </div>
-          <pre><code className="html">
+          <pre><code className="html hljs xml">
             {"<Title>\n  Sample Title\n</Title>"}
           </code></pre>
         </section>

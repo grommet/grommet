@@ -179,11 +179,11 @@ var Develop = React.createClass({
 var DevelopDocument = React.createClass({
 
   componentDidMount: function () {
-    setTimeout(this._highlightCode, 1);
+    this._highlightCode();
   },
 
   componentDidUpdate: function () {
-    setTimeout(this._highlightCode, 1);
+    this._highlightCode();
   },
 
   _highlightCode: function () {

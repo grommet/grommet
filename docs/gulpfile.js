@@ -75,7 +75,10 @@ var opts = {
   devServerProxy: {
     "/rest/*": 'http://localhost:8000'
   },
-  distPreprocess: ['dist-hpe', 'dist-hpinc', 'dist-bower', 'dist-aruba'],
+  distPreprocess: [
+    'generate-server-routes', 'generate-server-styles',
+    'dist-hpe', 'dist-hpinc', 'dist-bower', 'dist-aruba'
+  ],
   env: {
     __THEME__: '"grommet"'
   },
@@ -125,3 +128,71 @@ gulp.task('dev-aruba', function() {
 });
 
 devGulpTasks(gulp, opts);
+
+var webpack = require('webpack');
+var gulpWebpack = require('webpack-stream');
+var fs = require('fs');
+
+var nodeModules = {};
+fs.readdirSync(path.join(__dirname, '../node_modules'))
+  .filter(function(x) {
+    return ['.bin'].indexOf(x) === -1;
+  })
+  .forEach(function(mod) {
+    nodeModules[mod] = 'commonjs ' + mod;
+  });
+
+gulp.task('generate-server-routes', function() {
+  return gulp.src(path.join(__dirname, 'src/routes.js'))
+    .pipe(gulpWebpack({
+      target: 'node',
+      output: {
+        path: path.join(__dirname, '../server'),
+        filename: 'server-routes.js',
+        libraryTarget: 'commonjs2'
+      },
+      module: {
+        loaders: [
+          {
+            test: /\.js$/,
+            loader: 'babel',
+            exclude: /(node_modules\/intl|node_modules\/moment|node_modules\/react|node_modules\/node-sass)/
+          },
+          {
+            test: /develop(\/|\\).*\.htm$|design(\/|\\)[^\/]*\.htm$|design(\/|\\).*\/.*\.htm$/,
+            loader: 'babel!imports?React=react,Router=react-router,Link=>Router.Link!html-jsx-loader',
+            exclude: /(node_modules|bower_components)/
+          }
+        ]
+      },
+      resolve: {
+        extensions: ['', '.js', '.json', '.htm', '.html', '.scss', '.md']
+      },
+      externals: nodeModules,
+      plugins: [
+        new webpack.DefinePlugin({
+          NODE_ENV: "\"production\""
+        })
+      ]
+    }))
+    .pipe(gulp.dest(path.join(__dirname, '../server')));
+});
+
+var sass = require('node-sass');
+
+function generateStyle(theme) {
+  var compiledSass = sass.renderSync({
+    file: path.resolve(__dirname, 'src/scss/index-' + theme + '.scss'),
+    includePaths: [path.resolve(__dirname, '../node_modules')],
+    outputStyle: 'compressed'
+  });
+
+  fs.writeFileSync(path.resolve(__dirname, '../server/css/docs-' + theme + '.min.css'), compiledSass.css);
+}
+
+gulp.task('generate-server-styles', function() {
+  generateStyle('grommet');
+  generateStyle('aruba');
+  generateStyle('hpe');
+  generateStyle('hpinc');
+});

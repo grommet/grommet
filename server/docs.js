@@ -7,21 +7,11 @@ var Router = require('react-router');
 var sass = require('node-sass');
 var theme = require('./theme');
 
-var docsRoutes = require('./backend-routes.js');
+var fs = require('fs');
 
-var routesMap = {
-  'grommet-core': docsRoutes('/docs/'),
-  aruba: docsRoutes('/docs/aruba/'),
-  hpe: docsRoutes('/docs/hpe/'),
-  hpinc: docsRoutes('/docs/hpinc/')
-}
-
-function themeCompiler(theme) {
-  return sass.renderSync({
-    file: path.resolve(__dirname, '../docs/node_modules/grommet/scss/' + theme + '/index'),
-    includePaths: [path.resolve(__dirname, '../node_modules')],
-    outputStyle: 'compressed'
-  });
+function getThemeCss(theme) {
+  var extension = theme !== 'grommet-core' ? ('-' + theme) + '.min.css' : '-grommet.min.css';
+  return fs.readFileSync(path.resolve(__dirname, 'css/' + 'docs' + extension), 'utf8');
 }
 
 // Convert static resources defined by relative URLs when using HTML5 pushState
@@ -43,14 +33,20 @@ function translateStatics(req, res, next, theme) {
 
 function processPage(req, res, theme) {
 
-  var path = (req.url === '/' && theme !== 'grommet-core') ? ('/' + theme) : '';
+  delete require.cache[require.resolve('./server-routes.js')];
+  var docsRoutes = require('./server-routes.js');
 
-  var reactRouter = Router.create({location: '/docs' + path + req.url, routes: routesMap[theme]});
+  var path = theme !== 'grommet-core' ? ('/' + theme) : '';
+
+  var reactRouter = Router.create({
+    location: '/docs' + path + req.url.replace(path, ''),
+    routes: docsRoutes('/docs' + path + '/')
+  });
 
   reactRouter.run(function(Handler, state) {
     var Component = React.createFactory(Handler);
     var html = React.renderToString(Component({}));
-    res.render('index.ejs', {appBody: html, styleContent: '<style>' + themeCompiler(theme).css + '</style>'});
+    res.render('index.ejs', {appBody: html, styleContent: '<style>' + getThemeCss(theme) + '</style>'});
   });
 }
 

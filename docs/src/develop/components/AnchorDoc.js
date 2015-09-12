@@ -13,7 +13,7 @@ var AnchorDoc = React.createClass({
 
   render: function() {
     var inline = [
-      "<Anchor href=\"...\">label</Anchor"
+      "<Anchor href=\"...\">label</Anchor>"
     ].join("\n");
     return (
       <Article primary={true}>
@@ -21,7 +21,7 @@ var AnchorDoc = React.createClass({
           <h1>Anchor</h1>
           <p>A button. We have a separate component from the
           browser base so we can style it.</p>
-          <pre><code className="html">{inline}</code></pre>
+          <pre><code className="html hljs xml">{inline}</code></pre>
         </header>
 
         <section>
@@ -43,13 +43,13 @@ var AnchorDoc = React.createClass({
           <div className="example">
             <Anchor href="" onClick={this._onClick}>Text</Anchor>
           </div>
-          <pre><code className="html">{"<Anchor href=\"\" onClick={this._onClick}>Text</Anchor>"}</code></pre>
+          <pre><code className="html hljs xml">{"<Anchor href=\"\" onClick={this._onClick}>Text</Anchor>"}</code></pre>
 
           <h3>Primary</h3>
           <div className="example">
             <Anchor href="" primary={true} onClick={this._onClick}>Text</Anchor>
           </div>
-          <pre><code className="html">{"<Anchor href=\"\" label=\"Text\" primary={true} onClick={this._onClick} />"}</code></pre>
+          <pre><code className="html hljs xml">{"<Anchor href=\"\" label=\"Text\" primary={true} onClick={this._onClick} />"}</code></pre>
 
         </section>
 

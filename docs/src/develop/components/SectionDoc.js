@@ -16,7 +16,7 @@ var SectionDoc = React.createClass({
         <header>
           <h1>Section</h1>
           <p>Responsively grouping related contents inside a page.</p>
-          <pre><code className="html">{inline}</code></pre>
+          <pre><code className="html hljs xml">{inline}</code></pre>
         </header>
 
         <section>
@@ -43,7 +43,7 @@ var SectionDoc = React.createClass({
               </Article>
             </Section>
           </div>
-          <pre><code className="html">
+          <pre><code className="html hljs xml">
             {"<Section direction=\"right\">\n  <Menu>\n    ...\n  </Menu>\n  <Document>\n    <h2>\n      Sample Content\n    </h2>\n  </Document>\n</Section>"}
           </code></pre>
         </section>

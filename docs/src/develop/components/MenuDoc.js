@@ -23,7 +23,7 @@ var MenuDoc = React.createClass({
         <header>
           <h1>Menu</h1>
           <p>Presents a list of choices responsively.</p>
-          <pre><code className="html">{inline}</code></pre>
+          <pre><code className="html hljs xml">{inline}</code></pre>
         </header>
 
         <section>
@@ -66,7 +66,7 @@ var MenuDoc = React.createClass({
               <a href="#">Third</a>
             </Menu>
           </div>
-          <pre><code className="html">{"<Menu> ..."}</code></pre>
+          <pre><code className="html hljs xml">{"<Menu> ..."}</code></pre>
 
           <h3>row, (inline)</h3>
           <div className="example">
@@ -76,7 +76,7 @@ var MenuDoc = React.createClass({
               <a href="#">Third</a>
             </Menu>
           </div>
-          <pre><code className="html">{"<Menu direction=\"row\"> ..."}</code></pre>
+          <pre><code className="html hljs xml">{"<Menu direction=\"row\"> ..."}</code></pre>
 
           <h3>row, end, (inline)</h3>
           <div className="example">
@@ -86,7 +86,7 @@ var MenuDoc = React.createClass({
               <a href="#">Third</a>
             </Menu>
           </div>
-          <pre><code className="html">{"<Menu direction=\"row\" justify=\"end\"> ..."}</code></pre>
+          <pre><code className="html hljs xml">{"<Menu direction=\"row\" justify=\"end\"> ..."}</code></pre>
 
           <h3>label, (not inline, down)</h3>
           <div className="example">
@@ -96,7 +96,7 @@ var MenuDoc = React.createClass({
               <a href="#">Third</a>
             </Menu>
           </div>
-          <pre><code className="html">{"<Menu label=\"Label\"> ..."}</code></pre>
+          <pre><code className="html hljs xml">{"<Menu label=\"Label\"> ..."}</code></pre>
 
           <h3>not inline, (icon, down)</h3>
           <div className="example">
@@ -106,7 +106,7 @@ var MenuDoc = React.createClass({
               <a href="#">Third</a>
             </Menu>
           </div>
-          <pre><code className="html">{"<Menu inline={false}> ..."}</code></pre>
+          <pre><code className="html hljs xml">{"<Menu inline={false}> ..."}</code></pre>
 
           <h3>icon, (not inline, down)</h3>
           <div className="example">
@@ -116,7 +116,7 @@ var MenuDoc = React.createClass({
               <a href="#">Third</a>
             </Menu>
           </div>
-          <pre><code className="html">{"<Menu icon={<EditIcon />}> ..."}</code></pre>
+          <pre><code className="html hljs xml">{"<Menu icon={<EditIcon />}> ..."}</code></pre>
 
           <h3>icon, (not inline, down), do not close on click, pad</h3>
           <div className="example">
@@ -126,7 +126,7 @@ var MenuDoc = React.createClass({
               <CheckBox id="check-3" label="third" />
             </Menu>
           </div>
-          <pre><code className="html">{"<Menu icon={<FilterIcon />} closeOnClick={false} pad=\"medium\"> ..."}</code></pre>
+          <pre><code className="html hljs xml">{"<Menu icon={<FilterIcon />} closeOnClick={false} pad=\"medium\"> ..."}</code></pre>
 
           <h3>not inline, up</h3>
           <div className="example">
@@ -136,7 +136,7 @@ var MenuDoc = React.createClass({
               <a href="#">Third</a>
             </Menu>
           </div>
-          <pre><code className="html">{"<Menu inline={false} dropAlign={{bottom: \"bottom\"}}> ..."}</code></pre>
+          <pre><code className="html hljs xml">{"<Menu inline={false} dropAlign={{bottom: \"bottom\"}}> ..."}</code></pre>
 
           <h3>not inline, small</h3>
           <div className="example">
@@ -146,7 +146,7 @@ var MenuDoc = React.createClass({
               <a href="#">Third</a>
             </Menu>
           </div>
-          <pre><code className="html">{"<Menu inline={false} small={true}> ..."}</code></pre>
+          <pre><code className="html hljs xml">{"<Menu inline={false} small={true}> ..."}</code></pre>
 
           <h3>button bar</h3>
           <div className="example">
@@ -156,7 +156,7 @@ var MenuDoc = React.createClass({
               <Button label="Button 3" onClick={this._onClick} />
             </Menu>
           </div>
-          <pre><code className="html">{"<Menu direction=\"row\"> ..."}</code></pre>
+          <pre><code className="html hljs xml">{"<Menu direction=\"row\"> ..."}</code></pre>
 
         </section>
 
