@@ -1,0 +1,71 @@
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+
+$button-accent-color: nth($brand-accent-colors, 1);
+$hover-darken: 15%;
+$active-darken: 20%;
+
+.button {
+
+  &:hover:not(.button--disabled) {
+    border-color: darken($brand-color, $hover-darken);
+  }
+
+  &:active:not(.button--disabled) {
+    border-color: darken($brand-color, $active-darken);
+  }
+
+  &--primary {
+
+    &:hover:not(.button--disabled) {
+      border-color: darken($brand-color, $hover-darken);
+      background-color: darken($brand-color, $hover-darken);
+    }
+
+    &:active:not(.button--disabled) {
+      border-color: darken($brand-color, $active-darken);
+      background-color: darken($brand-color, $active-darken);
+    }
+  }
+
+  &--secondary {
+
+    &:hover:not(.button--disabled) {
+      border-color: darken($button-secondary-color, $hover-darken);
+    }
+
+    &:active:not(.button--disabled) {
+      border-color: darken($button-secondary-color, $active-darken);
+    }
+  }
+
+  &--accent {
+
+    &:hover:not(.button--disabled) {
+      border-color: darken($button-accent-color, $hover-darken);
+    }
+
+    &:active:not(.button--disabled) {
+      border-color: darken($button-accent-color, $active-darken);
+    }
+  }
+
+  [class*="background-color-index-"] & {
+
+    &:hover {
+      border-color: darken($colored-border-color, $hover-darken);
+    }
+
+    &.button--primary {
+      &:hover {
+        border-color: darken($brand-color, $hover-darken);
+        background-color: darken($brand-color, $hover-darken);
+      }
+    }
+
+    &.button--accent {
+      &:hover {
+        border-color: darken($button-accent-color, $hover-darken);
+      }
+    }
+  }
+}

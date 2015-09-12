@@ -2,7 +2,7 @@
 
 $brand-font-family: 'Metric', Arial, sans-serif;
 $brand-large-number-font-family: 'Simple', 'Metric', Arial, sans-serif;
-$brand-color: #00B388;
+$brand-color: #01a982;
 $brand-color-lighter: desaturate(lighten($brand-color, 55%), 40%);
 $brand-neutral-colors: (#425563, #5F7A76, #80746E);
 $brand-accent-colors: (#2AD2C9, #614767);
@@ -48,17 +48,6 @@ $hpe-fonts-path: "https://hpefonts.s3.amazonaws.com" !default;
   src: url("#{$hpe-fonts-path}/SimRg.otf") format("opentype");
 }
 
-$button-border-color: #01a982;
-$button-hover-border-color: $button-border-color;
-$button-text-color: #01a982;
-$button-hover-text-color: $button-text-color;
-$button-hover-primary-background-color: $brand-color;
-$button-active-primary-background-color: $brand-color;
+$button-accent-color: #ff8d6d;
 $control-brand-color: #049371;
-$button-accent-background-color: #ff8d6d;
-$button-hover-accent-background-color: $button-accent-background-color;
-$button-active-accent-background-color: $button-accent-background-color;
-$button-accent-text-color: #333333;
-$button-font-weight: 600;
-$button-alternate-border-color: #FF8D6D;
 $border-radius: 0px;

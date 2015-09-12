@@ -1,12 +1,9 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-// Unbranded Grommet purple
-// http://paletton.com/#uid=14m0u0kon++cB+MiX+Yub+WLPZB
-
-$brand-color: #8C50FF !default;
-$brand-neutral-colors: (#5d0cfb, #7026ff, #767676) !default;
-$brand-accent-colors: (#c3a4fe, #a577ff) !default;
-$brand-link-color: #8C50FF !default;
+$brand-color: #FF856B !default;
+$brand-neutral-colors: (#2E738E, #E29643, #767676) !default;
+$brand-accent-colors: (#70ABC1, #FFCA90) !default;
+$brand-link-color: #FF8706 !default;
 $brand-status-colors: (
   error: #FF856B,
   warning: #FFB86B,
@@ -14,7 +11,7 @@ $brand-status-colors: (
   unknown: #a8a8a8,
   disabled: #EDEDED
 ) !default;
-$brand-grey-colors: (#333333, #444444, #555555, #666666) !default;
+$brand-grey-colors: (#333333, #3B3B3B, #434343, #666666) !default;
 @if not variable-exists(brand-graph-colors) {
   $brand-graph-colors: ();
   $brand-graph-colors: join($brand-graph-colors, $brand-accent-colors);

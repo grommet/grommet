@@ -7,14 +7,26 @@ var CLASS_ROOT = "sidebar";
 var Sidebar = React.createClass({
 
   propTypes: {
-    colorIndex: React.PropTypes.string,
     fixed: React.PropTypes.bool,
     primary: React.PropTypes.bool,
+    size: React.PropTypes.oneOf(['small', 'medium', 'large']),
     small: React.PropTypes.bool
   },
 
   getDefaultProps: function () {
     return {primary: false};
+  },
+
+  getInitialState: function() {
+    return this._stateFromProps(this.props);
+  },
+
+  componentWillReceiveProps: function (newProps) {
+    this.setState(this._stateFromProps(newProps));
+  },
+
+  _stateFromProps: function (props) {
+    return {size: props.size || (props.small ? 'small' : (props.large ? 'large' : null))};
   },
 
   render: function() {
@@ -25,8 +37,8 @@ var Sidebar = React.createClass({
     if (this.props.fixed) {
       classes.push(CLASS_ROOT + "--fixed");
     }
-    if (this.props.small) {
-      classes.push(CLASS_ROOT + "--small");
+    if (this.state.size) {
+      classes.push(CLASS_ROOT + "--" + this.state.size);
     }
     if (this.props.className) {
       classes.push(this.props.className);

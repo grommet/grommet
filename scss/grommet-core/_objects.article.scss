@@ -6,6 +6,40 @@
   &--scroll-step {
     text-align: center;
   }
+
+  // put padding on contents
+  &.box--pad-horizontal {
+
+    &-small {
+      padding-left: 0px;
+      padding-right: 0px;
+
+      > * {
+        padding-left: halve($inuit-base-spacing-unit);
+        padding-right: halve($inuit-base-spacing-unit);
+      }
+    }
+
+    &-medium {
+      padding-left: 0px;
+      padding-right: 0px;
+
+      > * {
+        padding-left: $inuit-base-spacing-unit;
+        padding-right: $inuit-base-spacing-unit;
+      }
+    }
+
+    &-large {
+      padding-left: 0px;
+      padding-right: 0px;
+
+      > * {
+        padding-left: double($inuit-base-spacing-unit);
+        padding-right: double($inuit-base-spacing-unit);
+      }
+    }
+  }
 }
 
 article:not(.article) {

@@ -53,7 +53,6 @@ var Search = React.createClass({
   },
 
   componentDidUpdate: function (prevProps, prevState) {
-
     // Set up keyboard listeners appropriate to the current state.
 
     var activeKeyboardHandlers = {
@@ -87,7 +86,13 @@ var Search = React.createClass({
     }
 
     if (this.state.dropActive && ! prevState.dropActive) {
-      document.addEventListener('click', this._onRemoveDrop);
+      // Slow down adding the click handler,
+      // otherwise the drop will close when the mouse is released.
+      // Not observable in Safari, 1ms is sufficient for Chrome, Firefox needs 100ms though. :(
+      // TODO: re-evaluate how to solve this without a timeout.
+      setTimeout(function () {
+        document.addEventListener('click', this._onRemoveDrop);
+      }.bind(this), 100);
       this.startListeningToKeyboard(activeKeyboardHandlers);
 
       var baseElement =

@@ -9,8 +9,7 @@ var Split = React.createClass({
   propTypes: {
     fixed: React.PropTypes.bool,
     flex: React.PropTypes.oneOf(['left', 'right', 'both']),
-    separator: React.PropTypes.bool,
-    stack: React.PropTypes.oneOf(['left', 'right'])
+    separator: React.PropTypes.bool
   },
 
   getDefaultProps: function () {
@@ -31,7 +30,7 @@ var Split = React.createClass({
     var splitElement = this.refs.split.getDOMNode();
     var after = window.getComputedStyle(splitElement, ':after');
     if (after) {
-      this._breakWidth = after.getPropertyValue('width');
+      this._breakWidth = parseInt(after.getPropertyValue('width'), 10);
     }
 
     window.addEventListener('resize', this._onResize);

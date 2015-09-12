@@ -1,0 +1,21 @@
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+
+.paragraph {
+
+  &--small {
+    @include inuit-font-size($paragraph-small-font-size);
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  &--large {
+    @include inuit-font-size($paragraph-large-font-size);
+
+    a {
+      color: $brand-color;
+      font-weight: 600;
+    }
+  }
+}
