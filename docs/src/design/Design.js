@@ -96,7 +96,7 @@ var Design = React.createClass({
             developers to quickly begin implementing enterprise applications.</p>
             <Menu direction="column">
               <Link to='design_resources'>
-                <Anchor tag="span" primary={true}>Resources</Anchor>
+                <Anchor id="resources-button" tag="span" primary={true}>Resources</Anchor>
               </Link>
             </Menu>
           </Section>
