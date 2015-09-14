@@ -13,10 +13,19 @@ describe('Grommet CheckBox', function() {
     GrommetTestUtils.componentShouldExist(Component, 'check-box__label', 'Test Me');
   });
 
+  it('loads a disabled CheckBox', function() {
+    var Component = GrommetTestUtils.getComponent(__path__, null, { id: 'sample-check', label: 'Test Me', disabled: true});
+
+    GrommetTestUtils.componentShouldExist(Component, 'check-box');
+    GrommetTestUtils.componentShouldExist(Component, 'check-box__label', 'Test Me');
+    GrommetTestUtils.componentShouldExist(Component, 'check-box--disabled');
+  });
+
   it('loads a custom className CheckBox', function() {
     var Component = GrommetTestUtils.getComponent(__path__, null, { id: 'sample-check', className: 'testing', label: 'Custom class'});
 
     GrommetTestUtils.componentShouldExist(Component, 'check-box');
     GrommetTestUtils.componentShouldExist(Component, 'check-box__label', 'Custom class');
+    GrommetTestUtils.componentShouldExist(Component, 'testing');
   });
 });

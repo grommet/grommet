@@ -6,7 +6,6 @@ var IndexActions = require('grommet/actions/IndexActions');
 var Tiles = require('grommet/components/Tiles');
 var Tile = require('grommet/components/Tile');
 var Header = require('grommet/components/Header');
-var Box = require('grommet/components/Box');
 var Title = require('grommet/components/Title');
 var Search = require('grommet/components/Search');
 var MediumSessionMenu = require('./MediumSessionMenu');
@@ -225,16 +224,14 @@ var MediumDashboard = React.createClass({
     return (
       <div>
         <Header direction="row" justify="between" large={true} pad={{horizontal: 'medium'}}>
-          <Box direction="row" align="center" responsive={false} className="flex">
-            <span onMouseOver={this._onOverTitle}
-              onMouseOut={this._onOutTitle}>
-              <Title onClick={this._onClickTitle}>
-                <Logo />
-                <span>Medium App</span>
-              </Title>
-            </span>
-            <Search ref="search" inline={true} className="flex" />
-          </Box>
+          <span onMouseOver={this._onOverTitle}
+            onMouseOut={this._onOutTitle}>
+            <Title onClick={this._onClickTitle}>
+              <Logo />
+              <span>Medium App</span>
+            </Title>
+          </span>
+          <Search ref="search" inline={true} className="flex" />
           <MediumSessionMenu dropAlign={{right: 'right'}} />
         </Header>
         <Tiles fill={true} flush={false}>

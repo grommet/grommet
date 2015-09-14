@@ -6,15 +6,13 @@ var Route = Router.Route;
 var RouteHandler = Router.RouteHandler;
 var Link = Router.Link;
 
-var Article = require('grommet/components/Article');
-var DocsHeader = require('../DocsHeader');
 var Section = require('grommet/components/Section');
 var DocsSplit = require('../DocsSplit');
-var DocsMenu = require('../DocsMenu');
+var DocsArticle = require('../DocsArticle');
+var DocsHtmlArticle = require('../DocsHtmlArticle');
 var Menu = require('grommet/components/Menu');
-var Button = require('grommet/components/Button');
+var Anchor = require('grommet/components/Anchor');
 
-//var Introduction = require('./Introduction');
 var Philosophy = require('./Philosophy');
 var Basics = require('./Basics');
 var Patterns = require('./Patterns');
@@ -25,7 +23,8 @@ var Resources = require('./Resources');
 
 var CONTENTS = [
   //{route: "design_introduction", label: 'Introduction', component: Introduction},
-  {route: "design_philosophy", label: 'Philosophy', component: Philosophy,
+  {route: "design_philosophy", label: 'Philosophy',
+    component: DocsHtmlArticle.wrap(Philosophy, 'neutral-1'),
     contents: [
       {label: 'Best Practices', id: 'best-practices'},
       {label: 'Usability', id: 'usability'},
@@ -33,7 +32,8 @@ var CONTENTS = [
       {label: 'Mobile', id: 'mobile'},
       {label: 'Accessibility', id: 'accessibility'}
     ]},
-  {route: "design_basics", label: 'Basics', component: Basics,
+  {route: "design_basics", label: 'Basics',
+    component: DocsHtmlArticle.wrap(Basics, 'neutral-2'),
     contents: [
       {label: 'Color', id: 'color'},
       {label: 'Text', id: 'text'},
@@ -43,15 +43,18 @@ var CONTENTS = [
       {label: 'Capitalization', id: 'capitalization'},
       {label: 'Icons', id: 'icons'}
     ]},
-  {route: "design_patterns", label: 'Patterns', component: Patterns,
+  {route: "design_patterns", label: 'Patterns',
+    component: DocsHtmlArticle.wrap(Patterns, 'neutral-3'),
     contents: [
-      {route: "design_login", label: 'Login', component: Login},
+      {route: "design_login", label: 'Login',
+        component: DocsHtmlArticle.wrap(Login, 'neutral-3')},
       {route: "design_header", label: 'Header', component: TBD},
       {route: "design_dashboard", label: 'Dashboard', component: TBD},
       {route: "design_search", label: 'Search', component: TBD}
     ]
   },
-  {route: "design_showcase", label: 'Showcase', component: Showcase,
+  {route: "design_showcase", label: 'Showcase',
+    component: DocsHtmlArticle.wrap(Showcase, 'neutral-4'),
     contents: [
       {id: "hpsw-analytics", label: 'Analytics'},
       {id: "hpsw-big-data", label: 'Big Data'},
@@ -67,41 +70,38 @@ var CONTENTS = [
       {id: "hpsw-web-inspect", label: 'Web Inspect'}
     ]
   },
-  {route: "design_resources", label: 'Resources', component: Resources}
+  {route: "design_resources", label: 'Resources',
+    component: DocsHtmlArticle.wrap(Resources, 'neutral-5')}
 ];
 
 var Design = React.createClass({
 
-  _onClick: function () {
-    // no-op
+  contextTypes: {
+    router: React.PropTypes.func.isRequired
   },
 
   render: function () {
+    var title = <Link to="design">Design</Link>;
     return (
-      <Article>
-        <DocsHeader />
+      <DocsSplit title={title} contents={CONTENTS} onChange={this._highlightCode}>
+        <DocsArticle title="Design" colorIndex="neutral-2">
 
-        <Section appCentered={true} colorIndex="neutral-1" primary={true}>
-          <h1>Design</h1>
-          <p>This application style guide was created by the designers at Hewlett
-          Packard Enterprise. The guide covers the general design principles as well
-          as specific design guidelines. You'll also find downloadable assets for the
-          basic elements of the application style. These are meant to help designers
-          quickly begin designing applications based on these styles and patterns.
-          Finally, we've also created a web-based development platform that enables
-          developers to quickly begin implementing enterprise applications.</p>
-          <Menu direction="row">
-            <Link to="design_resources">
-              <Button id="resources-button" label="Resources" onClick={this._onClick} primary={true} />
-            </Link>
-          </Menu>
-        </Section>
-
-        <Section appCentered={true}>
-          <h2>Contents</h2>
-          <DocsMenu direction="row" contents={CONTENTS} />
-        </Section>
-      </Article>
+          <Section primary={true}>
+            <p>This application style guide was created by the designers at Hewlett
+            Packard Enterprise. The guide covers the general design principles as well
+            as specific design guidelines. You'll also find downloadable assets for the
+            basic elements of the application style. These are meant to help designers
+            quickly begin designing applications based on these styles and patterns.
+            Finally, we've also created a web-based development platform that enables
+            developers to quickly begin implementing enterprise applications.</p>
+            <Menu direction="column">
+              <Link to='design_resources'>
+                <Anchor tag="span" primary={true}>Resources</Anchor>
+              </Link>
+            </Menu>
+          </Section>
+        </DocsArticle>
+      </DocsSplit>
     );
   }
 });

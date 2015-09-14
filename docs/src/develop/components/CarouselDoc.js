@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var Article = require('grommet/components/Article');
+var DocsArticle = require('../../DocsArticle');
 var Carousel = require('grommet/components/Carousel');
 
 var TileDoc = React.createClass({
@@ -15,12 +15,10 @@ var TileDoc = React.createClass({
       "</Carousel>";
 
     return (
-      <Article primary={true}>
-        <header>
-          <h1>Carousel</h1>
-          <p>Image carousel.</p>
-          <pre><code className="html">{inline}</code></pre>
-        </header>
+      <DocsArticle title="Carousel" colorIndex="neutral-3">
+
+        <p>Image carousel.</p>
+        <pre><code className="html hljs xml">{inline}</code></pre>
 
         <section>
           <h2>Example</h2>
@@ -31,13 +29,13 @@ var TileDoc = React.createClass({
               <img src="img/carousel-2.png" />
             </Carousel>
           </div>
-          <pre><code className="html">
+          <pre><code className="html hljs xml">
             {"<Carousel>\n  <img />\n    ...\n</Carousel>"}
           </code></pre>
 
         </section>
 
-      </Article>
+      </DocsArticle>
     );
   }
 });

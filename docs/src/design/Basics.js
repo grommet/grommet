@@ -244,7 +244,7 @@ var Basics = React.createClass({
       <li>Last years messages, before 12:00 am this year:
         <ul>
           <li><code>&lt;month&gt; &lt;day&gt; &lt;year&gt; &lt;HH:MM[:SS] am/pm&gt;</code></li>
-          <li>1/1/2011 10:10:05 am</li>
+          <li>1-1-2014 10:10:05 am</li>
         </ul>
       </li>
     </ol>

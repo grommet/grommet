@@ -18,10 +18,10 @@
   },
   "dependencies": {
     "highlight.js": "^8.5.0",
-    "json-stringify-pretty-compact": "^1.0.1",
-    "grommet": "https://github.com/HewlettPackard/grommet.git#stable"
+    "json-stringify-pretty-compact": "^1.0.1"
   },
   "devDependencies": {
-    "html-jsx-loader": "^0.1.12"
+    "html-jsx-loader": "^0.1.12",
+    "highlight-loader": "^0.4.5"
   }
 }

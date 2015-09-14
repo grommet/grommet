@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var Article = require('grommet/components/Article');
+var DocsArticle = require('../DocsArticle');
 var Section = require('grommet/components/Section');
 var Table = require('grommet/components/Table');
 var Status = require('grommet/components/icons/Status');
@@ -14,11 +14,9 @@ var Accessibility = React.createClass({
 
   render: function() {
     return (
-      <Article primary={true}>
-        <header>
-          <h1>Accessibility</h1>
-          <p>Accessibility guidelines.</p>
-        </header>
+      <DocsArticle title="Accessibility" colorIndex="neutral-5">
+
+        <p>Accessibility guidelines.</p>
 
         <Section>
           <h2>Accessibility features in Grommet</h2>
@@ -38,11 +36,11 @@ var Accessibility = React.createClass({
             <tbody>
               <tr>
                 <td><Status value="error"/></td>
-                <td><pre><code className="html">{"<Status value=\"error\">"}</code></pre></td>
+                <td><pre><code className="html hljs xml">{"<Status value=\"error\">"}</code></pre></td>
               </tr>
               <tr>
                 <td><Status value="error" a11yTitle="critical"/></td>
-                <td><pre><code className="html">{"<Status value=\"error\" a11yTitle=\"critical\">"}</code></pre></td>
+                <td><pre><code className="html hljs xml">{"<Status value=\"error\" a11yTitle=\"critical\">"}</code></pre></td>
               </tr>
             </tbody>
           </Table>
@@ -60,13 +58,13 @@ var Accessibility = React.createClass({
             If the lang attribute is not explicitly set in the html element, Grommet will specify the lang attribute according to the user browser’s locale. In addition to the html element, lang attribute can be set on other elements like App.
           </p>
           <h4>Example</h4>
-          <pre><code className="html">
+          <pre><code className="html hljs xml">
             {"<App lang=\"en-US\">\n  ...\n</App>"}
           </code></pre>
           <h3>Skip Links</h3>
           <p>Grommet has skip links that make it easy to skip repetitive content. Grommet skip links have two locations: Skip to Main Content and Skip to Footer. To set the "Skip to Main Content" link in Grommet, an attribute primary="true" needs to be added to the main content element. The "Skip to Footer" link is added by default with the Footer component. </p>
           <h4>Example:</h4>
-          <pre><code className="html">
+          <pre><code className="html hljs xml">
             {"<App>\n" +
             "  <Article>\n" +
             "    <Header>\n" +
@@ -80,7 +78,7 @@ var Accessibility = React.createClass({
             "</App>"}
           </code></pre>
         </Section>
-      </Article>
+      </DocsArticle>
     );
   }
 });

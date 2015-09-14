@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var Article = require('grommet/components/Article');
+var DocsArticle = require('../../DocsArticle');
 var Title = require('grommet/components/Title');
 var Header = require('grommet/components/Header');
 var Search = require('grommet/components/Search');
@@ -31,16 +31,14 @@ var dateSeriesXAxis = [
 var DashboardDoc = React.createClass({
   render: function() {
     return (
-      <Article primary={true}>
-        <header>
-          <h1>Dashboard</h1>
-          <p>The dashboard shows the most important information
-          in the simplest way possible. Content on the dashboard
-          provides direct navigation to further detail.</p>
-          <p>Typically it is the initial content shown after logging in.
-          And, because the content is navigable, the dashboard functions
-          well as a home page.</p>
-        </header>
+      <DocsArticle title="Dashboard" colorIndex="neutral-2">
+
+        <p>The dashboard shows the most important information
+        in the simplest way possible. Content on the dashboard
+        provides direct navigation to further detail.</p>
+        <p>Typically it is the initial content shown after logging in.
+        And, because the content is navigable, the dashboard functions
+        well as a home page.</p>
 
         <section>
           <h2>Example</h2>
@@ -78,7 +76,7 @@ var DashboardDoc = React.createClass({
           <div className="tbd">TBD</div>
         </section>
 
-      </Article>
+      </DocsArticle>
     );
   }
 });

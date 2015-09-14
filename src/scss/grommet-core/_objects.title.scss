@@ -9,7 +9,7 @@
   @include inuit-font-size(24px, inherit);
 
   @include media-query(lap-and-up) {
-    font-weight: 700;
+    font-weight: 600;
   }
 
   > *:not(:last-child) {

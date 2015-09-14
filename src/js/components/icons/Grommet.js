@@ -7,9 +7,10 @@ var IntlMixin = require('../../mixins/GrommetIntlMixin');
 var Grommet = React.createClass({
 
   propTypes: {
-    small: React.PropTypes.bool,
+    a11yTitle: React.PropTypes.string,
     large: React.PropTypes.bool,
-    a11yTitle: React.PropTypes.string
+    size: React.PropTypes.oneOf(['small', 'medium', 'large']),
+    small: React.PropTypes.bool
   },
 
   mixins: [IntlMixin],
@@ -20,10 +21,10 @@ var Grommet = React.createClass({
 
   render: function() {
     var classes = [CLASS_ROOT];
-    if (this.props.small) {
+    if (this.props.small || 'small' === this.props.size) {
       classes.push(CLASS_ROOT + "--small");
     }
-    if (this.props.large) {
+    if (this.props.large || 'large' === this.props.size) {
       classes.push(CLASS_ROOT + "--large");
     }
     if (this.props.className) {

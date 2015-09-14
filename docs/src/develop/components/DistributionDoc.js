@@ -2,7 +2,7 @@
 
 var React = require('react');
 var stringify = require("json-stringify-pretty-compact");
-var Article = require('grommet/components/Article');
+var DocsArticle = require('../../DocsArticle');
 var Distribution = require('grommet/components/Distribution');
 
 var inline =
@@ -62,12 +62,10 @@ var DistributionDoc = React.createClass({
 
   render: function() {
     return (
-      <Article primary={true}>
-        <header>
-          <h1>Distribution</h1>
-          <p>Shows a graphic of relatively sized items.</p>
-          <pre><code className="html">{inline}</code></pre>
-        </header>
+      <DocsArticle title="Distribution" colorIndex="neutral-3">
+
+        <p>Shows a graphic of relatively sized items.</p>
+        <pre><code className="html hljs xml">{inline}</code></pre>
 
         <section>
           <h2>Options</h2>
@@ -96,7 +94,7 @@ var DistributionDoc = React.createClass({
           <div className="example">
             <Distribution series={series} />
           </div>
-          <pre><code className="html">
+          <pre><code className="html hljs xml">
             {"<Distribution\n " +
               "series={" + stringify(series, null, '  ') + "}  />"}
           </code></pre>
@@ -105,7 +103,7 @@ var DistributionDoc = React.createClass({
           <div className="example">
             <Distribution legend={true} series={series} />
           </div>
-          <pre><code className="html">
+          <pre><code className="html hljs xml">
             {"<Distribution legend={true}\n " +
               "series={" + stringify(series, null, '  ') + "}  />"}
           </code></pre>
@@ -114,7 +112,7 @@ var DistributionDoc = React.createClass({
           <div className="example">
             <Distribution small={true} series={series} />
           </div>
-          <pre><code className="html">
+          <pre><code className="html hljs xml">
             {"<Distribution small={true}\n " +
               "series={" + stringify(series, null, '  ') + "}  />"}
           </code></pre>
@@ -123,7 +121,7 @@ var DistributionDoc = React.createClass({
           <div className="example">
             <Distribution large={true} series={series} />
           </div>
-          <pre><code className="html">
+          <pre><code className="html hljs xml">
             {"<Distribution large={true}\n " +
               "series={" + stringify(series, null, '  ') + "}  />"}
           </code></pre>
@@ -132,7 +130,7 @@ var DistributionDoc = React.createClass({
           <div className="example">
             <Distribution series={seriesEmpty} />
           </div>
-          <pre><code className="html">
+          <pre><code className="html hljs xml">
             {"<Distribution large={true}\n " +
               "series={" + stringify(seriesEmpty, null, '  ') + "}  />"}
           </code></pre>
@@ -141,7 +139,7 @@ var DistributionDoc = React.createClass({
           <div className="example">
             <Distribution series={iconSeries} units="%"/>
           </div>
-          <pre><code className="html">
+          <pre><code className="html hljs xml">
             {"<Distribution\n " +
               "series={" + stringify(iconSeriesDoc, null, '  ') + "}  />"}
           </code></pre>
@@ -150,13 +148,13 @@ var DistributionDoc = React.createClass({
           <div className="example">
             <Distribution />
           </div>
-          <pre><code className="html">
+          <pre><code className="html hljs xml">
             {"<Distribution />"}
           </code></pre>
 
         </section>
 
-      </Article>
+      </DocsArticle>
     );
   }
 });

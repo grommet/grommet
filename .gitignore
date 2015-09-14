@@ -16,3 +16,5 @@ notes.txt
 **coverage**
 **lcov.info**
 **.publish**
+server/css**
+server/server-routes.js

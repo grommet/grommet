@@ -10,7 +10,6 @@ $button-horizontal-padding: round($inuit-base-spacing-unit * 1.5) - $button-bord
   border-radius: $border-radius;
   color: $button-text-color;
   @include inuit-font-size($control-font-size, $inuit-base-spacing-unit);
-  text-transform: $button-text-transform;
   font-weight: $button-font-weight;
   cursor: pointer;
   text-align: center;
@@ -31,91 +30,32 @@ button:not(.button) {
 .button {
   @include basic-button();
 
-  &:hover:not(.button--disabled) {
-    border-color: $button-hover-border-color;
-    color: $button-hover-text-color;
-  }
-
-  &:active:not(.button--disabled) {
-    border-color: $button-active-border-color;
-    color: $button-active-text-color;
-  }
-
   &:focus:not(.button--disabled) {
     border-color: $focus-border-color;
     box-shadow: 0 0 1px 1px $focus-border-color;
   }
 
   &--primary {
-    border-color: $button-primary-background-color;
-    background-color: $button-primary-background-color;
-    color: $button-primary-text-color;
+    border-color: $brand-color;
+    background-color: $brand-color;
+    color: $colored-text-color;
+  }
 
-    &:hover:not(.button--disabled) {
-      border-color: $button-hover-primary-background-color;
-      background-color: $button-hover-primary-background-color;
-      color: $button-primary-text-color;
-    }
-
-    &:active:not(.button--disabled) {
-      border-color: $button-active-primary-background-color;
-      background-color: $button-active-primary-background-color;
-      color: $button-primary-text-color;
-    }
+  &--secondary {
+    border-color: $button-secondary-color;
   }
 
   &--accent {
-    border-color: $button-accent-background-color;
-    background-color: $button-accent-background-color;
-    color: $button-accent-text-color;
-
-    &:hover:not(.button--disabled) {
-      border-color: $button-hover-accent-background-color;
-      background-color: $button-hover-accent-background-color;
-      color: $button-accent-text-color;
-    }
-
-    &:active:not(.button--disabled) {
-      border-color: $button-active-accent-background-color;
-      background-color: $button-active-accent-background-color;
-      color: $button-accent-text-color;
-    }
+    border-color: $button-accent-color;
   }
 
-  [class*="background-color-index-"] & {
-    background-color: $colored-button-background-color;
-    border-color: $colored-button-border-color;
-    color: $colored-button-text-color;
-
-    &:hover {
-      border-color: $active-colored-button-border-color;
-      color: $active-colored-button-text-color;
-    }
-
-    &.button--primary {
-      background-color: $colored-button-primary-background-color;
-      border-color: $colored-button-primary-border-color;
-
-      &:hover {
-        background-color: $active-colored-button-primary-background-color;
-        border-color: $active-colored-button-primary-border-color;
-      }
-    }
+  [class*="background-color-index-"] &:not(.button--primary) {
+    border-color: $colored-border-color;
+    color: $colored-text-color;
 
     &.button--accent {
-      background-color: $colored-button-accent-background-color;
-      border-color: $colored-button-accent-border-color;
-
-      &:hover {
-        background-color: $active-colored-button-accent-background-color;
-        border-color: $active-colored-button-accent-border-color;
-      }
+      border-color: $button-accent-color;
     }
-  }
-
-  &--large {
-    @include inuit-font-size($control-large-font-size, $inuit-base-spacing-unit);
-    padding: (round($inuit-base-spacing-unit * 0.75) - $button-border-width) (round($inuit-base-spacing-unit * 3) - $button-border-width);
   }
 
   &--disabled {

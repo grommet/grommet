@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var Article = require('grommet/components/Article');
+var DocsArticle = require('../../DocsArticle');
 var LoginForm = require('grommet/components/LoginForm');
 var Logo = require('../../img/Logo');
 
@@ -10,18 +10,16 @@ var LoginFormDoc = React.createClass({
   render: function() {
     var inline = "<LoginForm onSubmit={...} />";
     return (
-      <Article primary={true}>
-        <header>
-          <h1>LoginForm</h1>
-          <p>The form used to log in.</p>
-          <pre><code className="html">{inline}</code></pre>
-        </header>
+      <DocsArticle title="LoginForm" colorIndex="neutral-3">
+
+        <p>The form used to log in.</p>
+        <pre><code className="html hljs xml">{inline}</code></pre>
 
         <section>
           <h2>Options</h2>
           <dl>
-          <dt><code>usernameType           {"{string}"}</code></dt>
-          <dd>The type of username input text|<strong>email</strong></dd>
+          <dt><code>usernameType    text|email</code></dt>
+          <dd>The type of username input. Defaults to email.</dd>
           <dt><code>errors          {"[{message}, ...]"}</code></dt>
           <dd>An array of error messages. Use this if there is a failure to log in.</dd>
           <dt><code>forgotPassword  {"{component}"}</code></dt>
@@ -44,7 +42,7 @@ var LoginFormDoc = React.createClass({
           <div className="example">
             <LoginForm />
           </div>
-          <pre><code className="html">{"<LoginForm onSubmit={...}/>"}</code></pre>
+          <pre><code className="html hljs xml">{"<LoginForm onSubmit={...}/>"}</code></pre>
 
           <h3>Full</h3>
           <div className="example">
@@ -52,11 +50,11 @@ var LoginFormDoc = React.createClass({
               rememberMe={true} forgotPassword={<a>Forgot password?</a>}
               errors={["Invalid username or password."]}/>
           </div>
-          <pre><code className="html">{"<LoginForm\n  logo={<Logo />}\n  title=\"Product Name\"\n  rememberMe={true}\n  forgotPassword={<a>...</a>}\n  onSubmit={...}\n  errors={[\"Invalid username or password.\"]}\n/>"}</code></pre>
+          <pre><code className="html hljs xml">{"<LoginForm\n  logo={<Logo />}\n  title=\"Product Name\"\n  rememberMe={true}\n  forgotPassword={<a>...</a>}\n  onSubmit={...}\n  errors={[\"Invalid username or password.\"]}\n/>"}</code></pre>
 
         </section>
 
-      </Article>
+      </DocsArticle>
     );
   }
 });

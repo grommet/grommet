@@ -14,6 +14,7 @@ var Header = React.createClass({
     fixed: React.PropTypes.bool,
     float: React.PropTypes.bool,
     large: React.PropTypes.bool,
+    size: React.PropTypes.oneOf(['small', 'medium', 'large']),
     small: React.PropTypes.bool,
     splash: React.PropTypes.bool,
     strong: React.PropTypes.bool,
@@ -30,11 +31,19 @@ var Header = React.createClass({
     };
   },
 
+  getInitialState: function() {
+    return this._stateFromProps(this.props);
+  },
+
   componentDidMount: function () {
     if (this.props.fixed) {
       this._alignMirror();
       window.addEventListener('resize', this._onResize);
     }
+  },
+
+  componentWillReceiveProps: function (newProps) {
+    this.setState(this._stateFromProps(newProps));
   },
 
   componentDidUpdate: function () {
@@ -47,6 +56,10 @@ var Header = React.createClass({
     if (this.props.fixed) {
       window.removeEventListener('resize', this._onResize);
     }
+  },
+
+  _stateFromProps: function (props) {
+    return {size: props.size || (props.small ? 'small' : (props.large ? 'large' : null))};
   },
 
   _onResize: function () {
@@ -77,11 +90,8 @@ var Header = React.createClass({
       classes.push(CLASS_ROOT + "--float");
       containerClasses.push(CLASS_ROOT + "__container--float");
     }
-    if (this.props.large) {
-      classes.push(CLASS_ROOT + "--large");
-    }
-    if (this.props.small) {
-      classes.push(CLASS_ROOT + "--small");
+    if (this.state.size) {
+      classes.push(CLASS_ROOT + "--" + this.state.size);
     }
     if (this.props.splash) {
       classes.push(CLASS_ROOT + "--splash");

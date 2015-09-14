@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var Article = require('grommet/components/Article');
+var DocsArticle = require('../../DocsArticle');
 var CheckBox = require('grommet/components/CheckBox');
 
 var CheckBoxDoc = React.createClass({
@@ -19,13 +19,11 @@ var CheckBoxDoc = React.createClass({
       "<CheckBox id=\"item2\" label=\"Item 1\">"
     ].join("\n");
     return (
-      <Article primary={true}>
-        <header>
-          <h1>CheckBox</h1>
-          <p>A check box in a web form. We have a separate component from the
+      <DocsArticle title="CheckBox" colorIndex="neutral-3">
+
+        <p>A check box in a web form. We have a separate component from the
           browser base so we can style it.</p>
-          <pre><code className="html">{inline}</code></pre>
-        </header>
+        <pre><code className="html hljs xml">{inline}</code></pre>
 
         <section>
           <h2>Options</h2>
@@ -63,30 +61,30 @@ var CheckBoxDoc = React.createClass({
             <CheckBox id="item2" name="item2" label="Item 2"
               checked={this.state.checked} onChange={this._onChange} />
           </div>
-          <pre><code className="html">{"<CheckBox id=\"item2\" name=\"item2\" label=\"Item 2\" />"}</code></pre>
+          <pre><code className="html hljs xml">{"<CheckBox id=\"item2\" name=\"item2\" label=\"Item 2\" />"}</code></pre>
 
           <h3>Toggle</h3>
           <div className="example">
             <CheckBox id="item3" name="item3" label="Item 3" toggle={true} />
           </div>
-          <pre><code className="html">{"<CheckBox id=\"item3\" name=\"item3\" label=\"Item 3\" toggle={true} />"}</code></pre>
+          <pre><code className="html hljs xml">{"<CheckBox id=\"item3\" name=\"item3\" label=\"Item 3\" toggle={true} />"}</code></pre>
 
           <h3>Disabled</h3>
           <div className="example">
             <CheckBox id="item4" name="item4" label="Item 4" disabled={true} checked={this.state.checked} />
           </div>
-          <pre><code className="html">{"<CheckBox id=\"item4\" name=\"item4\" label=\"Item 4\" disabled=\{true\} />"}</code></pre>
+          <pre><code className="html hljs xml">{"<CheckBox id=\"item4\" name=\"item4\" label=\"Item 4\" disabled=\{true\} />"}</code></pre>
 
           <h3>Disabled Toggle</h3>
           <div className="example">
             <CheckBox id="item5" name="item5" label="Item 5" toggle={true}
               disabled={true} checked={this.state.checked} />
           </div>
-          <pre><code className="html">{"<CheckBox id=\"item5\" name=\"item5\" label=\"Item 5\" toggle={true} disabled={true} />"}</code></pre>
+          <pre><code className="html hljs xml">{"<CheckBox id=\"item5\" name=\"item5\" label=\"Item 5\" toggle={true} disabled={true} />"}</code></pre>
 
         </section>
 
-      </Article>
+      </DocsArticle>
     );
   }
 });

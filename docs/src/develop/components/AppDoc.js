@@ -1,5 +1,5 @@
 var React = require('react');
-var Article = require('grommet/components/Article');
+var DocsArticle = require('../../DocsArticle');
 var App = require('grommet/components/App');
 var Header = require('grommet/components/Header');
 var Title = require('grommet/components/Title');
@@ -12,13 +12,10 @@ var inline =
 var AppDoc = React.createClass({
   render: function() {
     return (
-      <Article primary={true}>
+      <DocsArticle title="App" colorIndex="neutral-3">
 
-        <header>
-          <h1>App</h1>
-          <p>Grommet main container, usually containing Header and Footer.</p>
-          <pre><code className="html">{inline}</code></pre>
-        </header>
+        <p>Grommet main container, usually containing Header and Footer.</p>
+        <pre><code className="html hljs xml">{inline}</code></pre>
 
         <section>
           <h2>Options</h2>
@@ -41,12 +38,12 @@ var AppDoc = React.createClass({
               </Header>
             </App>
           </div>
-          <pre><code className="html">
+          <pre><code className="html hljs xml">
             {"<App>\n  <Header>\n    <Title>\n      My App\n    </Title>\n  </Header>\n  ...\n</App>"}
           </code></pre>
         </section>
 
-      </Article>
+      </DocsArticle>
     );
   }
 });

@@ -1,5 +1,5 @@
 var React = require('react');
-var Article = require('grommet/components/Article');
+var DocsArticle = require('../../DocsArticle');
 var Status = require('grommet/components/icons/Status');
 
 var inline =
@@ -8,24 +8,24 @@ var inline =
 var StatusDoc = React.createClass({
   render: function() {
     return (
-      <Article primary={true}>
-        <header>
-          <h1>Status</h1>
-          <p>A status icon.</p>
-          <pre><code className="html">{inline}</code></pre>
-        </header>
+      <DocsArticle title="Status" colorIndex="neutral-3">
+
+        <p>A status icon.</p>
+        <pre><code className="html hljs xml">{inline}</code></pre>
 
         <section>
           <h2>Options</h2>
           <dl>
-            <dt><code>large       true|false</code></dt>
-            <dd>Larger sized version.</dd>
-            <dt><code>small       true|false</code></dt>
-            <dd>Smaller sized version.</dd>
-            <dt><code>value       error|warning|ok|disabled|unknown</code></dt>
-            <dd>Which status to indicate.</dd>
             <dt><code>a11yTitle  {"{title}"}</code></dt>
             <dd>Accessibility Title. If not set uses the default title of the status icon.</dd>
+            <dt><code>large       true|false</code></dt>
+            <dd>Larger sized version. Deprecated, use <code>size</code>.</dd>
+            <dt><code>size        small|medium|large</code></dt>
+            <dd>The size of the Status icon. Defaults to <code>medium</code>.</dd>
+            <dt><code>small       true|false</code></dt>
+            <dd>Smaller sized version. Deprecated, use <code>size</code>.</dd>
+            <dt><code>value       error|warning|ok|disabled|unknown</code></dt>
+            <dd>Which status to indicate.</dd>
           </dl>
         </section>
 
@@ -36,7 +36,7 @@ var StatusDoc = React.createClass({
           <div className="example">
             <Status value="ok"/>
           </div>
-          <pre><code className="html">
+          <pre><code className="html hljs xml">
             {"<Status value=\"ok\">"}
           </code></pre>
 
@@ -44,7 +44,7 @@ var StatusDoc = React.createClass({
           <div className="example">
             <Status value="error" a11yTitle="critical"/>
           </div>
-          <pre><code className="html">
+          <pre><code className="html hljs xml">
             {"<Status value=\"error\" a11yTitle=\"critical\">"}
           </code></pre>
 
@@ -52,7 +52,7 @@ var StatusDoc = React.createClass({
           <div className="example">
             <Status value="warning"/>
           </div>
-          <pre><code className="html">
+          <pre><code className="html hljs xml">
             {"<Status value=\"warning\">"}
           </code></pre>
 
@@ -60,7 +60,7 @@ var StatusDoc = React.createClass({
           <div className="example">
             <Status value="disabled"/>
           </div>
-          <pre><code className="html">
+          <pre><code className="html hljs xml">
             {"<Status value=\"disabled\">"}
           </code></pre>
 
@@ -68,13 +68,29 @@ var StatusDoc = React.createClass({
           <div className="example">
             <Status value="unknown"/>
           </div>
-          <pre><code className="html">
+          <pre><code className="html hljs xml">
             {"<Status value=\"unknown\">"}
+          </code></pre>
+
+          <h3>Small</h3>
+          <div className="example">
+            <Status value="ok" size="small"/>
+          </div>
+          <pre><code className="html">
+            {"<Status value=\"ok\" size=\"small\">"}
+          </code></pre>
+
+          <h3>Large</h3>
+          <div className="example">
+            <Status value="ok" size="large"/>
+          </div>
+          <pre><code className="html">
+            {"<Status value=\"ok\" size=\"large\">"}
           </code></pre>
 
         </section>
 
-      </Article>
+      </DocsArticle>
     );
   }
 });

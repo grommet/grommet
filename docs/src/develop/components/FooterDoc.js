@@ -2,7 +2,7 @@
 
 var React = require('react');
 var Link = require('react-router').Link;
-var Article = require('grommet/components/Article');
+var DocsArticle = require('../../DocsArticle');
 var Footer = require('grommet/components/Footer');
 var Menu = require('grommet/components/Menu');
 var Button = require('grommet/components/Button');
@@ -17,13 +17,10 @@ var FooterDoc = React.createClass({
     var inline =
     "<Footer>\n  ...\n</Footer>";
     return (
-      <Article primary={true}>
-        <header>
-          <h1>Footer</h1>
-          <p>Put things at the bottom.</p>
+      <DocsArticle title="Footer" colorIndex="neutral-3">
 
-          <pre><code className="html">{inline}</code></pre>
-        </header>
+        <p>Put things at the bottom.</p>
+        <pre><code className="html hljs xml">{inline}</code></pre>
 
         <section>
           <h2>Options</h2>
@@ -48,7 +45,7 @@ var FooterDoc = React.createClass({
               </Menu>
             </Footer>
           </div>
-          <pre><code className="html">{"<Footer> ..."}</code></pre>
+          <pre><code className="html hljs xml">{"<Footer> ..."}</code></pre>
 
           <h3>Form footer right</h3>
           <div className="example">
@@ -59,11 +56,11 @@ var FooterDoc = React.createClass({
               </Menu>
             </Footer>
           </div>
-          <pre><code className="html">{"<Footer justify=\"end\"> ..."}</code></pre>
+          <pre><code className="html hljs xml">{"<Footer justify=\"end\"> ..."}</code></pre>
 
         </section>
 
-      </Article>
+      </DocsArticle>
     );
   }
 });

@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var Article = require('grommet/components/Article');
+var DocsArticle = require('../../DocsArticle');
 var FullForm = require('./samples/FullForm');
 var AddUserForm = require('./samples/AddUserForm');
 var ConfirmationForm = require('./samples/ConfirmationForm');
@@ -30,12 +30,10 @@ var FormDoc = React.createClass({
       "  <Footer>...</Footer>",
       "</Form>"].join("\n");
     return (
-      <Article primary={true}>
-        <header>
-          <h1>Form</h1>
-          <p>A web form.</p>
-          <pre><code className="html">{inline}</code></pre>
-        </header>
+      <DocsArticle title="Form" colorIndex="neutral-3">
+
+        <p>A web form.</p>
+        <pre><code className="html hljs xml">{inline}</code></pre>
 
         <section>
           <h2>Options</h2>
@@ -54,29 +52,29 @@ var FormDoc = React.createClass({
           <div className="example">
             <FullForm prefix="a-" onSubmit={this._onSubmit} onCancel={this._onCancel} />
           </div>
-          <pre><code className="html">{"<Form onSubmit={...}> ..."}</code></pre>
+          <pre><code className="html hljs xml">{"<Form onSubmit={...}> ..."}</code></pre>
 
           <h3>Compact</h3>
           <div className="example">
             <FullForm prefix="b-" onSubmit={this._onSubmit} compact={true} onCancel={this._onCancel} />
           </div>
-          <pre><code className="html">{"<Form onSubmit={...} compact={true}> ..."}</code></pre>
+          <pre><code className="html hljs xml">{"<Form onSubmit={...} compact={true}> ..."}</code></pre>
 
           <h3>Add User</h3>
           <div className="example">
             <AddUserForm prefix="a-" onSubmit={this._onSubmit} onCancel={this._onCancel} />
           </div>
-          <pre><code className="html">{"<Form onSubmit={...}> ..."}</code></pre>
+          <pre><code className="html hljs xml">{"<Form onSubmit={...}> ..."}</code></pre>
 
           <h3>Confirmation</h3>
           <div className="example">
             <ConfirmationForm prefix="a-" onSubmit={this._onSubmit} onCancel={this._onCancel} />
           </div>
-          <pre><code className="html">{"<Form onSubmit={...}> ..."}</code></pre>
+          <pre><code className="html hljs xml">{"<Form onSubmit={...}> ..."}</code></pre>
 
         </section>
 
-      </Article>
+      </DocsArticle>
     );
   }
 });

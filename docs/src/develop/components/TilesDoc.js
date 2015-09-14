@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var Article = require('grommet/components/Article');
+var DocsArticle = require('../../DocsArticle');
 var Tiles = require('grommet/components/Tiles');
 var Tile = require('grommet/components/Tile');
 var Header = require('grommet/components/Header');
@@ -47,12 +47,10 @@ var TileDoc = React.createClass({
     }
 
     return (
-      <Article primary={true}>
-        <header>
-          <h1>Tile(s)</h1>
-          <p>Lay out equivalently sized tiles of content.</p>
-          <pre><code className="html">{inline}</code></pre>
-        </header>
+      <DocsArticle title="Tile(s)" colorIndex="neutral-3">
+
+        <p>Lay out equivalently sized tiles of content.</p>
+        <pre><code className="html hljs xml">{inline}</code></pre>
 
         <section>
           <h2>Options</h2>
@@ -84,7 +82,7 @@ var TileDoc = React.createClass({
               </Tile>
             </Tiles>
           </div>
-          <pre><code className="html">
+          <pre><code className="html hljs xml">
             {"<Tiles>\n  <Tile>\n    ...\n  </Tile>\n  ...\n</Tiles>"}
           </code></pre>
 
@@ -94,7 +92,7 @@ var TileDoc = React.createClass({
               {richTiles}
             </Tiles>
           </div>
-          <pre><code className="html">
+          <pre><code className="html hljs xml">
             {"<Tiles>\n  <Tile>\n    ...\n  </Tile>\n  ...\n</Tiles>"}
           </code></pre>
 
@@ -104,7 +102,7 @@ var TileDoc = React.createClass({
               {richTiles}
             </Tiles>
           </div>
-          <pre><code className="html">
+          <pre><code className="html hljs xml">
             {"<Tiles fill={true}>\n  ...\n</Tiles>"}
           </code></pre>
 
@@ -114,13 +112,13 @@ var TileDoc = React.createClass({
               {richTiles}
             </Tiles>
           </div>
-          <pre><code className="html">
+          <pre><code className="html hljs xml">
             {"<Tiles fill={true} direction=\"row\">\n  ...\n</Tiles>"}
           </code></pre>
 
         </section>
 
-      </Article>
+      </DocsArticle>
     );
   }
 });
