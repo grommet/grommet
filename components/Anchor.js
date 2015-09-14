@@ -10,6 +10,7 @@ var Anchor = React.createClass({
   propTypes: {
     href: React.PropTypes.string.isRequired,
     tag: React.PropTypes.string,
+    target: React.PropTypes.string,
     onClick: React.PropTypes.func,
     primary: React.PropTypes.bool
   },
@@ -35,6 +36,7 @@ var Anchor = React.createClass({
     return (
       <this.props.tag className={classes.join(' ')}
         href={this.props.href}
+        target={this.props.target}
         onClick={this.props.onClick}>
         {icon}
         {this.props.children}
