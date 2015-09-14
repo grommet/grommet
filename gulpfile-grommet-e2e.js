@@ -10,8 +10,7 @@ module.exports = function(gulp, options) {
     return gulp.src('./docs/gulpfile.js', {
       read: false
     }).pipe(chug({
-      tasks: ['dist'],
-      args: ['--skipPreprocess']
+      tasks: ['dist']
     }));
   });
 
