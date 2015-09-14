@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var Article = require('grommet/components/Article');
+var DocsArticle = require('../../DocsArticle');
 var Sidebar = require('grommet/components/Sidebar');
 var Header = require('grommet/components/Header');
 var Footer = require('grommet/components/Footer');
@@ -14,10 +14,7 @@ var Search = require('grommet/components/Search');
 var NavigationDoc = React.createClass({
   render: function() {
     return (
-      <Article primary={true}>
-        <header>
-          <h1>Navigation</h1>
-        </header>
+      <DocsArticle title="Navigation" colorIndex="neutral-2">
 
         <section>
           <h2>Primary menu</h2>
@@ -72,7 +69,7 @@ var NavigationDoc = React.createClass({
           </div>
         </section>
 
-      </Article>
+      </DocsArticle>
     );
   }
 });

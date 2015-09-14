@@ -1,3 +1,4 @@
+<article>
 <header>
   <h1>Get Started</h1>
 </header>
@@ -17,12 +18,12 @@
     </li>
     <li>
       <p>Setup your NPM proxy (only required if you&#39;re behind a proxy server).</p>
-      <pre><code class="bash">
+      <pre><code class="hljs bash">
       {'npm config set proxy http://\{host\}:\{port\}'}</br>
       {'npm config set https-proxy https://\{host\}:\{port\}'}
       </code></pre>
       <p>If you find problems on downloading packages through https proxy, try using http protocol in your https-proxy variable, as in:</p>
-      <pre><code class="bash">
+      <pre><code class="hljs bash">
       {'npm config set https-proxy http://\{host\}:\{port\}'}</br>
       </code></pre>
     </li>
@@ -33,26 +34,26 @@
       <ol>
         <li>
           <p>Install Gulp globally (make sure to run as an admin).</p>
-          <pre><code class="bash">
+          <pre><code class="hljs bash">
             {'npm install -g gulp'}
           </code></pre>
         </li>
       	<li>
           <p>Install Grommet globally (make sure to run as an admin).</p>
-          <pre><code class="bash">
+          <pre><code class="hljs bash">
             {'npm install -g grommet'}
           </code></pre>
         </li>
         <li>
         	<p>Use the Grommet generator to bootstrap your new app</p>
-        	<pre><code class="bash">
+        	<pre><code class="hljs bash">
             {'grommet init sample-app'}</br>
             {'cd sample-app'}
           </code></pre>
         </li>
         <li>
         	<p>Start a development server with hot reload enabled</p>
-        	<pre><code class="bash">
+        	<pre><code class="hljs bash">
             {'gulp dev'}
           </code></pre>
         </li>
@@ -68,31 +69,31 @@
       <ol>
       	<li>
       		<p>Install <a href="http://bower.io/" target="_blank">Bower</a> <i>(at least 1.x required)</i></p>
-      		<pre><code class="bash">
+      		<pre><code class="hljs bash">
           {'npm install -g bower'}
           </code></pre>
       	</li>
         <li>
           <p>Create environment variable with your proxy settings (only required if you&#39;re behind a proxy server)</p>
           <p><b>Windows</b></p>
-          <pre><code class="bash">
+          <pre><code class="hljs bash">
             {'set HTTPS_PROXY=https://\{host\}:\{port\}'}
           </code></pre>
           <p><b>Linux/OS X</b></p>
-          <pre><code class="bash">
+          <pre><code class="hljs bash">
             {'export HTTPS_PROXY=https://\{host\}:\{port\}'}
           </code></pre>
         </li>
         <li>
           <p>Install Grommet</p>
-          <pre><code class="bash">
+          <pre><code class="hljs bash">
             {'bower install grommet'}
           </code></pre>
           <p>At this point, a <i>bower_components</i> folder will be created which contains Grommet and its dependencies.</p>
         </li>
         <li>
           <p>Open sample application in the browser</p>
-          <pre><code class="bash">bower_components/grommet/sample-grommet.html</code></pre> <p>You can now play with Grommet using local Bower.</p>
+          <pre><code class="hljs bash">bower_components/grommet/sample-grommet.html</code></pre> <p>You can now play with Grommet using local Bower.</p>
         </li>
         <li>
           <p>Checkout the <a data-to="develop_tutorial">Tutorial</a> page to understand this sample app better.</p>
@@ -105,3 +106,4 @@
     We recommend that you check out the <a data-to="develop_architecture">Architecture</a> page and learn how Grommet works internally.
   </p>
 </section>
+</article>

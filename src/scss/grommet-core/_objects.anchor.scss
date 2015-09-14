@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-a {
+a,
+.anchor {
   color: $link-color;
   -webkit-text-decoration: $brand-text-decoration;
   text-decoration: $brand-text-decoration;

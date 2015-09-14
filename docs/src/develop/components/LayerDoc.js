@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var Article = require('grommet/components/Article');
+var DocsArticle = require('../../DocsArticle');
 var Layer = require('grommet/components/Layer');
 var Header = require('grommet/components/Header');
 var Form = require('grommet/components/Form');
@@ -68,12 +68,10 @@ var LayerDoc = React.createClass({
     }
 
     return (
-      <Article primary={true}>
-        <header>
-          <h1>Layer</h1>
-          <p>A modal overlay, often containing a <a>Form</a>.</p>
-          <pre><code className="html">{inline}</code></pre>
-        </header>
+      <DocsArticle title="Layer" colorIndex="neutral-3">
+
+        <p>A modal overlay, often containing a <a>Form</a>.</p>
+        <pre><code className="html hljs xml">{inline}</code></pre>
 
         <section>
           <h2>Options</h2>
@@ -104,29 +102,29 @@ var LayerDoc = React.createClass({
 
           <h3>Simple</h3>
           <button onClick={this._onOpen.bind(this, 'simple', 'top')}>Simple</button>
-          <pre><code className="html">{"<Layer> ..."}</code></pre>
+          <pre><code className="html hljs xml">{"<Layer> ..."}</code></pre>
 
           <h3>Edit</h3>
           <button onClick={this._onOpen.bind(this, 'mixed', 'right')}>Edit</button>
-          <pre><code className="html">{"<Layer> ..."}</code></pre>
+          <pre><code className="html hljs xml">{"<Layer> ..."}</code></pre>
 
           <h3>Add User</h3>
           <button onClick={this._onOpen.bind(this, 'add user', 'right')}>Add User</button>
-          <pre><code className="html">{"<Layer> ..."}</code></pre>
+          <pre><code className="html hljs xml">{"<Layer> ..."}</code></pre>
 
           <h3>Confirmation</h3>
           <button onClick={this._onOpen.bind(this, 'confirmation', 'right')}>Confirmation</button>
-          <pre><code className="html">{"<Layer> ..."}</code></pre>
+          <pre><code className="html hljs xml">{"<Layer> ..."}</code></pre>
 
           <h3>Edit, left</h3>
           <button onClick={this._onOpen.bind(this, 'mixed', 'left')}>Edit</button>
-          <pre><code className="html">{"<Layer align=\"left\"> ..."}</code></pre>
+          <pre><code className="html hljs xml">{"<Layer align=\"left\"> ..."}</code></pre>
 
         </section>
 
         {activeLayer}
 
-      </Article>
+      </DocsArticle>
     );
   }
 });

@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var Article = require('grommet/components/Article');
+var DocsArticle = require('../../DocsArticle');
 
 var RestDoc = React.createClass({
 
@@ -36,14 +36,12 @@ var RestDoc = React.createClass({
     ].join('\n');
 
     return (
-      <Article primary={true}>
-        <header>
-          <h1>Rest</h1>
-          <p>Perform REST calls.
+      <DocsArticle title="Rest" colorIndex="neutral-4">
+
+        <p>Perform REST calls.
           Uses <a href="https://github.com/visionmedia/superagent">superagent</a> under
           the hood.</p>
-          <pre><code className="javascript">{inline}</code></pre>
-        </header>
+        <pre><code className="javascript">{inline}</code></pre>
 
         <section>
           <h2>Methods</h2>
@@ -82,7 +80,7 @@ var RestDoc = React.createClass({
           </code></pre>
         </section>
 
-      </Article>
+      </DocsArticle>
     );
   }
 });

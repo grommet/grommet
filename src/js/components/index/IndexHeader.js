@@ -99,14 +99,12 @@ var IndexHeader = React.createClass({
     return (
       <Header className={classes.join(' ')}
         fixed={this.props.fixed} pad="medium" justify="between" large={true}>
-        <Box direction="row" responsive={false} align="center" className="flex">
-          {navControl}
-          <Search className={CLASS_ROOT + "__search" + " flex"}
-            inline={true}
-            placeHolder={this.getGrommetIntlMessage('Search') + ' ' + label}
-            defaultValue={searchText}
-            onChange={this._onSearchChange} />
-        </Box>
+        {navControl}
+        <Search className={CLASS_ROOT + "__search" + " flex"}
+          inline={true}
+          placeHolder={this.getGrommetIntlMessage('Search') + ' ' + label}
+          defaultValue={searchText}
+          onChange={this._onSearchChange} />
         <Box direction="row" responsive={false}>
           {filters}
           {addControl}

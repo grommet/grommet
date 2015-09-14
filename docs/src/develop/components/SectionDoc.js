@@ -1,7 +1,8 @@
 var React = require('react');
 var Link = require('react-router').Link;
-var Article = require('grommet/components/Article');
+var DocsArticle = require('../../DocsArticle');
 var Section = require('grommet/components/Section');
+var Header = require('grommet/components/Header');
 var Menu = require('grommet/components/Menu');
 
 var inline =
@@ -12,12 +13,10 @@ var inline =
 var SectionDoc = React.createClass({
   render: function() {
     return (
-      <Article primary={true}>
-        <header>
-          <h1>Section</h1>
-          <p>Responsively grouping related contents inside a page.</p>
-          <pre><code className="html">{inline}</code></pre>
-        </header>
+      <DocsArticle title="Section" colorIndex="neutral-3">
+
+        <p>Responsively grouping related contents inside a page.</p>
+        <pre><code className="html hljs xml">{inline}</code></pre>
 
         <section>
           <h2>Options</h2>
@@ -31,24 +30,25 @@ var SectionDoc = React.createClass({
         <section>
           <h2>Examples</h2>
 
-          <h3>Menu and Document</h3>
           <div className="example">
-            <Section direction="right">
-              <Menu>
-                <span>Link 1</span>
-                <span>Link 2</span>
-              </Menu>
-              <Article>
-                <h2>Sample Content</h2>
-              </Article>
+            <Section>
+              <Header>
+                <h3>Sample Content</h3>
+                <Menu direction="row">
+                  <span>Link 1</span>
+                  <span>Link 2</span>
+                </Menu>
+              </Header>
+              <p>Lorem ipsum ...
+              </p>
             </Section>
           </div>
-          <pre><code className="html">
-            {"<Section direction=\"right\">\n  <Menu>\n    ...\n  </Menu>\n  <Document>\n    <h2>\n      Sample Content\n    </h2>\n  </Document>\n</Section>"}
+          <pre><code className="html hljs xml">
+            {"<Section>\n  <Header>\n    <h3>Sample Content</h3>\n    <Menu direction=\"row\">\n      ...\n    </Menu>\n  </Header>\n  <p>\n    Lorem ipsum ...\n  </p>\n</Section>"}
           </code></pre>
         </section>
 
-      </Article>
+      </DocsArticle>
     );
   }
 });

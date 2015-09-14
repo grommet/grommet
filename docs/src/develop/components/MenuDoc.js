@@ -2,7 +2,7 @@
 
 var React = require('react');
 var Link = require('react-router').Link;
-var Article = require('grommet/components/Article');
+var DocsArticle = require('../../DocsArticle');
 var Menu = require('grommet/components/Menu');
 var EditIcon = require('grommet/components/icons/Edit');
 var FilterIcon = require('grommet/components/icons/Filter');
@@ -19,12 +19,10 @@ var MenuDoc = React.createClass({
     var inline =
     "<Menu>\n  <Link to={route}>{label}</Link>\n  ...\n</Menu>";
     return (
-      <Article primary={true}>
-        <header>
-          <h1>Menu</h1>
-          <p>Presents a list of choices responsively.</p>
-          <pre><code className="html">{inline}</code></pre>
-        </header>
+      <DocsArticle title="Menu" colorIndex="neutral-3">
+
+        <p>Presents a list of choices responsively.</p>
+        <pre><code className="html hljs xml">{inline}</code></pre>
 
         <section>
           <h2>Options</h2>
@@ -38,7 +36,11 @@ var MenuDoc = React.createClass({
               the specified label or icon will be shown, if neither are
               specified, a default icon will be shown.</dd>
             <dt><code>dropAlign     {"{left: left|right, right: left|right, top: top|bottom, bottom: top|bottom}"}</code></dt>
-            <dd>Where to place the drop down.
+            <dd>Where to place the drop down. The keys correspond to a side
+              of the drop down. The values correspond to a side of the control.
+              For instance, <code>{"{left: 'left', top: 'bottom'}"}</code>
+              would align the left edges and the top of the drop down to the
+              bottom of the control.
               At most one of left or right and one of top or bottom should be specified.</dd>
             <dt><code>icon          {"{icon}"}</code></dt>
             <dd>Indicates that the menu should be collapsed and the
@@ -46,7 +48,7 @@ var MenuDoc = React.createClass({
             <dt><code>label         {"{text}"}</code></dt>
             <dd>Indicates that the menu should be collapsed and the
               label shown as a control top open it.</dd>
-            <dt><code>responsive   true|false</code></dt>
+            <dt><code>responsive    true|false</code></dt>
             <dd>Whether an inline menu should be automatically switched
               to a control + drop down when the window size is reduced.</dd>
             <dt><code>small         true|false</code></dt>
@@ -66,7 +68,7 @@ var MenuDoc = React.createClass({
               <a href="#">Third</a>
             </Menu>
           </div>
-          <pre><code className="html">{"<Menu> ..."}</code></pre>
+          <pre><code className="html hljs xml">{"<Menu> ..."}</code></pre>
 
           <h3>row, (inline)</h3>
           <div className="example">
@@ -76,7 +78,7 @@ var MenuDoc = React.createClass({
               <a href="#">Third</a>
             </Menu>
           </div>
-          <pre><code className="html">{"<Menu direction=\"row\"> ..."}</code></pre>
+          <pre><code className="html hljs xml">{"<Menu direction=\"row\"> ..."}</code></pre>
 
           <h3>row, end, (inline)</h3>
           <div className="example">
@@ -86,7 +88,7 @@ var MenuDoc = React.createClass({
               <a href="#">Third</a>
             </Menu>
           </div>
-          <pre><code className="html">{"<Menu direction=\"row\" justify=\"end\"> ..."}</code></pre>
+          <pre><code className="html hljs xml">{"<Menu direction=\"row\" justify=\"end\"> ..."}</code></pre>
 
           <h3>label, (not inline, down)</h3>
           <div className="example">
@@ -96,7 +98,7 @@ var MenuDoc = React.createClass({
               <a href="#">Third</a>
             </Menu>
           </div>
-          <pre><code className="html">{"<Menu label=\"Label\"> ..."}</code></pre>
+          <pre><code className="html hljs xml">{"<Menu label=\"Label\"> ..."}</code></pre>
 
           <h3>not inline, (icon, down)</h3>
           <div className="example">
@@ -106,7 +108,7 @@ var MenuDoc = React.createClass({
               <a href="#">Third</a>
             </Menu>
           </div>
-          <pre><code className="html">{"<Menu inline={false}> ..."}</code></pre>
+          <pre><code className="html hljs xml">{"<Menu inline={false}> ..."}</code></pre>
 
           <h3>icon, (not inline, down)</h3>
           <div className="example">
@@ -116,7 +118,7 @@ var MenuDoc = React.createClass({
               <a href="#">Third</a>
             </Menu>
           </div>
-          <pre><code className="html">{"<Menu icon={<EditIcon />}> ..."}</code></pre>
+          <pre><code className="html hljs xml">{"<Menu icon={<EditIcon />}> ..."}</code></pre>
 
           <h3>icon, (not inline, down), do not close on click, pad</h3>
           <div className="example">
@@ -126,7 +128,7 @@ var MenuDoc = React.createClass({
               <CheckBox id="check-3" label="third" />
             </Menu>
           </div>
-          <pre><code className="html">{"<Menu icon={<FilterIcon />} closeOnClick={false} pad=\"medium\"> ..."}</code></pre>
+          <pre><code className="html hljs xml">{"<Menu icon={<FilterIcon />} closeOnClick={false} pad=\"medium\"> ..."}</code></pre>
 
           <h3>not inline, up</h3>
           <div className="example">
@@ -136,7 +138,7 @@ var MenuDoc = React.createClass({
               <a href="#">Third</a>
             </Menu>
           </div>
-          <pre><code className="html">{"<Menu inline={false} dropAlign={{bottom: \"bottom\"}}> ..."}</code></pre>
+          <pre><code className="html hljs xml">{"<Menu inline={false} dropAlign={{bottom: \"bottom\"}}> ..."}</code></pre>
 
           <h3>not inline, small</h3>
           <div className="example">
@@ -146,7 +148,7 @@ var MenuDoc = React.createClass({
               <a href="#">Third</a>
             </Menu>
           </div>
-          <pre><code className="html">{"<Menu inline={false} small={true}> ..."}</code></pre>
+          <pre><code className="html hljs xml">{"<Menu inline={false} small={true}> ..."}</code></pre>
 
           <h3>button bar</h3>
           <div className="example">
@@ -156,11 +158,11 @@ var MenuDoc = React.createClass({
               <Button label="Button 3" onClick={this._onClick} />
             </Menu>
           </div>
-          <pre><code className="html">{"<Menu direction=\"row\"> ..."}</code></pre>
+          <pre><code className="html hljs xml">{"<Menu direction=\"row\"> ..."}</code></pre>
 
         </section>
 
-      </Article>
+      </DocsArticle>
     );
   }
 });

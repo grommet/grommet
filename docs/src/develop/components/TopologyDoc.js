@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var Article = require('grommet/components/Article');
+var DocsArticle = require('../../DocsArticle');
 var Topology = require('grommet/components/Topology');
 
 var TopologyDoc = React.createClass({
@@ -18,12 +18,10 @@ var TopologyDoc = React.createClass({
       "</Topology>";
 
     return (
-      <Article primary={true}>
-        <header>
-          <h1>Topology</h1>
-          <p>Visualize structure and connectivity.</p>
-          <pre><code className="html">{inline}</code></pre>
-        </header>
+      <DocsArticle title="Topology" colorIndex="neutral-3">
+
+        <p>Visualize structure and connectivity.</p>
+        <pre><code className="htm hljs xmll">{inline}</code></pre>
 
         <section>
           <h2>Options</h2>
@@ -67,7 +65,7 @@ var TopologyDoc = React.createClass({
           <dl>
             <dt><code>direction    row|column</code></dt>
             <dd>The orientation to layout the child components in.</dd>
-            <dt><code>uniform    true|false</code></dt>
+            <dt><code>uniform      true|false</code></dt>
             <dd>Whether or not to all children should be the same size.</dd>
           </dl>
 
@@ -239,7 +237,7 @@ var TopologyDoc = React.createClass({
 
         </section>
 
-      </Article>
+      </DocsArticle>
     );
   }
 });

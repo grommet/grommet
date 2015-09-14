@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var Article = require('grommet/components/Article');
+var DocsArticle = require('../../DocsArticle');
 var Table = require('grommet/components/Table');
 
 var TableDoc = React.createClass({
@@ -67,12 +67,10 @@ var TableDoc = React.createClass({
     );
 
     return (
-      <Article primary={true}>
-        <header>
-          <h1>Table</h1>
-          <p>Table using standard HTML5 markup.</p>
-          <pre><code className="html">{inline}</code></pre>
-        </header>
+      <DocsArticle title="Table" colorIndex="neutral-3">
+
+        <p>Table using standard HTML5 markup.</p>
+        <pre><code className="html hljs xml">{inline}</code></pre>
 
         <section>
           <h2>Options</h2>
@@ -122,7 +120,7 @@ var TableDoc = React.createClass({
 
         </section>
 
-      </Article>
+      </DocsArticle>
     );
   }
 });

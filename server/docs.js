@@ -5,19 +5,13 @@ var path = require('path');
 var React = require('react');
 var Router = require('react-router');
 var sass = require('node-sass');
+var theme = require('./theme');
 
-var routesMap = {
-  'grommet-core': require('../docs/src/routes')('/docs/'),
-  aruba: require('../docs/src/routes')('/docs/aruba'),
-  hpe: require('../docs/src/routes')('/docs/hpe'),
-  hpinc: require('../docs/src/routes')('/docs/hpinc')
-}
+var fs = require('fs');
 
-function themeCompiler(theme) {
-  return sass.renderSync({
-    file: path.resolve(__dirname, '../docs/node_modules/grommet/scss/' + theme + '/index'),
-    includePaths: [path.resolve(__dirname, '../node_modules')]
-  });
+function getThemeCss(theme) {
+  var extension = theme !== 'grommet-core' ? ('-' + theme) + '.min.css' : '-vanilla.min.css';
+  return fs.readFileSync(path.resolve(__dirname, 'css/' + 'docs' + extension), 'utf8');
 }
 
 // Convert static resources defined by relative URLs when using HTML5 pushState
@@ -38,21 +32,29 @@ function translateStatics(req, res, next, theme) {
 }
 
 function processPage(req, res, theme) {
-  var reactRouter = Router.create({location: '/docs' + req.url, routes: routesMap[theme]});
+
+  delete require.cache[require.resolve('./server-routes.js')];
+  var docsRoutes = require('./server-routes.js');
+
+  var path = theme !== 'grommet-core' ? ('/' + theme) : '';
+
+  var reactRouter = Router.create({
+    location: '/docs' + path + req.url.replace(path, ''),
+    routes: docsRoutes('/docs' + path + '/')
+  });
+
   reactRouter.run(function(Handler, state) {
-    var html = React.renderToString(<Handler/>);
-    res.render('index.ejs', {appBody: html, styleContent: '<style>' + themeCompiler(theme).css + '</style>'});
+    var Component = React.createFactory(Handler);
+    var html = React.renderToString(Component({}));
+    res.render('index.ejs', {appBody: html, styleContent: '<style>' + getThemeCss(theme) + '</style>'});
   });
 }
 
-router.use('/hpe', function(req, res, next) {
-  translateStatics(req, res, next, 'hpe/');
-});
 router.use('/hpe', function (req, res, next) {
   if (req.url === '/') {
     processPage(req, res, 'hpe');
   } else {
-    next();
+    translateStatics(req, res, next, 'hpe/');
   }
 });
 router.use('/hpe', express.static(path.join(__dirname, '/../docs/dist/hpe')));
@@ -60,14 +62,11 @@ router.get('/hpe/*', function(req, res) {
   processPage(req, res, 'hpe');
 });
 
-router.use('/hpinc', function(req, res, next) {
-  translateStatics(req, res, next, 'hpinc/');
-});
 router.use('/hpinc', function (req, res, next) {
   if (req.url === '/') {
     processPage(req, res, 'hpinc');
   } else {
-    next();
+    translateStatics(req, res, next, 'hpinc/');
   }
 });
 router.use('/hpinc', express.static(path.join(__dirname, '/../docs/dist/hpinc')));
@@ -75,14 +74,11 @@ router.get('/hpinc/*', function(req, res) {
   processPage(req, res, 'hpinc');
 });
 
-router.use('/aruba', function(req, res, next) {
-  translateStatics(req, res, next, 'aruba/');
-});
 router.use('/aruba', function (req, res, next) {
   if (req.url === '/') {
     processPage(req, res, 'aruba');
   } else {
-    next();
+    translateStatics(req, res, next, 'aruba/');
   }
 });
 router.use('/aruba', express.static(path.join(__dirname, '/../docs/dist/aruba')));
@@ -90,14 +86,11 @@ router.get('/aruba/*', function(req, res) {
   processPage(req, res, 'aruba');
 });
 
-router.use('/', function(req, res, next) {
-  translateStatics(req, res, next, '');
-});
 router.use('/', function (req, res, next) {
   if (req.url === '/') {
     processPage(req, res, 'grommet-core');
   } else {
-    next();
+    translateStatics(req, res, next, '');
   }
 });
 router.use('/', express.static(path.join(__dirname, '/../docs/dist')));

@@ -6,15 +6,6 @@ var CLASS_ROOT = "carousel";
 
 var Carousel = React.createClass({
 
-  propTypes: {
-    auto: React.PropTypes.bool,
-    single: React.PropTypes.bool
-  },
-
-  getDefaultProps: function () {
-    return {single: true};
-  },
-
   getInitialState: function () {
     return {activeIndex: 0, priorIndex: 0, sequence: 1};
   },
@@ -33,9 +24,6 @@ var Carousel = React.createClass({
   render: function () {
     var classes = [CLASS_ROOT];
     classes.push(CLASS_ROOT + "--toggle-" + (this.state.sequence % 2));
-    if (this.props.single) {
-      classes.push(CLASS_ROOT + "--single");
-    }
     if (this.props.className) {
       classes.push(this.props.className);
     }

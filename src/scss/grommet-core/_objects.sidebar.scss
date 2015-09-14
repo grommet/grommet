@@ -21,7 +21,7 @@
     > * {
       -webkit-flex: 1;
       flex: 1;
-      overflow: auto; ///
+      overflow: auto;
 
       &.header,
       &.footer {
@@ -32,13 +32,18 @@
   }
 
   &--primary {
-    background-image: linear-gradient(to left, #dfdfdf, #f5f5f5 10px);
-    background-color: none;
+    background-color: $secondary-background-color;
   }
 
   &--small {
     @include media-query(lap-and-up) {
-      width: halve($sidebar-width);
+      width: $sidebar-small-width;
+    }
+  }
+
+  &--large {
+    @include media-query(lap-and-up) {
+      width: $sidebar-large-width;
     }
   }
 }

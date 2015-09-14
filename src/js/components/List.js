@@ -30,6 +30,7 @@ var List = React.createClass({
       React.PropTypes.string, // uid
       React.PropTypes.arrayOf(React.PropTypes.string)
     ]),
+    size: React.PropTypes.oneOf(['small', 'medium', 'large']),
     small: React.PropTypes.bool
   },
 
@@ -39,10 +40,18 @@ var List = React.createClass({
     return {small: false};
   },
 
+  getInitialState: function() {
+    return this._stateFromProps(this.props);
+  },
+
   componentDidMount: function () {
     if (this.props.onMore) {
       this.startListeningForScroll(this.refs.more.getDOMNode(), this.props.onMore);
     }
+  },
+
+  componentWillReceiveProps: function (newProps) {
+    this.setState(this._stateFromProps(newProps));
   },
 
   componentDidUpdate: function () {
@@ -56,6 +65,10 @@ var List = React.createClass({
     if (this.props.onMore) {
       this.stopListeningForScroll();
     }
+  },
+
+  _stateFromProps: function (props) {
+    return {size: props.size || (props.small ? 'small' : (props.large ? 'large' : null))};
   },
 
   _onClickItem: function (item) {
@@ -89,11 +102,8 @@ var List = React.createClass({
     if (true || this.props.flush) {
       classes.push(CLASS_ROOT + "--flush");
     }
-    if (this.props.small) {
-      classes.push(CLASS_ROOT + "--small");
-    }
-    if (this.props.large) {
-      classes.push(CLASS_ROOT + "--large");
+    if (this.state.size) {
+      classes.push(CLASS_ROOT + "--" + this.state.size);
     }
     if (this.props.className) {
       classes.push(this.props.className);

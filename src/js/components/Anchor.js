@@ -9,8 +9,13 @@ var Anchor = React.createClass({
 
   propTypes: {
     href: React.PropTypes.string.isRequired,
+    tag: React.PropTypes.string,
     onClick: React.PropTypes.func,
     primary: React.PropTypes.bool
+  },
+
+  getDefaultProps: function () {
+    return {tag: 'a'};
   },
 
   render: function () {
@@ -28,12 +33,12 @@ var Anchor = React.createClass({
     }
 
     return (
-      <a className={classes.join(' ')}
+      <this.props.tag className={classes.join(' ')}
         href={this.props.href}
         onClick={this.props.onClick}>
         {icon}
         {this.props.children}
-      </a>
+      </this.props.tag>
     );
   }
 

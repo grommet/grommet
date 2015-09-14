@@ -16,13 +16,12 @@ var DocsHeader = React.createClass({
 
   render: function() {
     return (
-      <Header fixed={false} float={this.props.float} large={true}
+      <Header fixed={false} float={this.props.float} size="large"
         appCentered={true} justify="between">
         <Title responsive={false}>
           <Link to="docs">
             <Box align="center" direction="row">
-              <GrommetLogo small={true} a11yTitle=""/>
-              Grommet
+              <GrommetLogo a11yTitle=""/>
             </Box>
           </Link>
         </Title>

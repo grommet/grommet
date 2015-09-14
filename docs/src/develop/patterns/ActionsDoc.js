@@ -1,16 +1,14 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var Article = require('grommet/components/Article');
+var DocsArticle = require('../../DocsArticle');
 
 var ActionsDoc = React.createClass({
   render: function() {
     return (
-      <Article primary={true}>
-        <header>
-          <h1>Actions</h1>
-          <p>TBD</p>
-        </header>
+      <DocsArticle title="Actions" colorIndex="neutral-2">
+
+        <p>TBD</p>
 
         <section>
           <h2>Example</h2>
@@ -24,7 +22,7 @@ var ActionsDoc = React.createClass({
           <div className="tbd">TBD</div>
         </section>
 
-      </Article>
+      </DocsArticle>
     );
   }
 });

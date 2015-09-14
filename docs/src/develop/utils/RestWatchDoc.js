@@ -1,7 +1,8 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var Article = require('grommet/components/Article');
+var DocsArticle = require('../../DocsArticle');
+
 
 var RestWatchDoc = React.createClass({
 
@@ -33,10 +34,7 @@ var RestWatchDoc = React.createClass({
     ].join('\n');
 
     return (
-      <Article primary={true}>
-        <header>
-          <h1>RestWatch</h1>
-        </header>
+      <DocsArticle title="RestWatch" colorIndex="neutral-4">
 
         <section>
           <p>Attempts to use WebSocket to receive asynchronous updates
@@ -85,7 +83,7 @@ var RestWatchDoc = React.createClass({
           </code></pre>
         </section>
 
-      </Article>
+      </DocsArticle>
     );
   }
 });
