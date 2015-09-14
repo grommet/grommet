@@ -24,7 +24,7 @@ var requestData = {
 };
 
 describe('Docs website e2e', function() {
-  this.timeout(50000);
+  this.timeout(100000);
 
   beforeEach(function(done) {
     GrommetE2EUtils.configureBrowser(browser, 'http://localhost:8000/docs/',
