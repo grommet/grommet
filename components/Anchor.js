@@ -34,7 +34,7 @@ var Anchor = React.createClass({
     }
 
     return (
-      <this.props.tag className={classes.join(' ')}
+      <this.props.tag id={this.props.id} className={classes.join(' ')}
         href={this.props.href}
         target={this.props.target}
         onClick={this.props.onClick}>
