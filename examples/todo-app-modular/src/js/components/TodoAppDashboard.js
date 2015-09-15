@@ -66,9 +66,8 @@ var TodoAppDashboard = React.createClass({
           <td width="10%"><Status value={task.type} small={true} /></td>
           <td>{task.item}</td>
           <td width="10%">
-            <div onClick={this._onRequestForDelete.bind(this, index)}>
-              <CloseIcon small={true} />
-            </div>
+            <CloseIcon onClick={this._onRequestForDelete.bind(this, index)}
+              a11yRole="button" a11yTitle={"Delete " + task.item + " task"} />
           </td>
         </tr>
       );

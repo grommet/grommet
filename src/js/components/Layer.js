@@ -18,7 +18,8 @@ var LayerOverlay = React.createClass({
     hidden: React.PropTypes.bool,
     peek: React.PropTypes.bool,
     onClose: React.PropTypes.func,
-    router: React.PropTypes.func
+    router: React.PropTypes.func,
+    a11yCloserTitle: React.PropTypes.string
   },
 
   childContextTypes: {
@@ -42,6 +43,10 @@ var LayerOverlay = React.createClass({
     if (appElement) { // unit tests don't have an app
       appElement.classList.remove('app--layered');
       window.scroll(0, this._appScrollY);
+    }
+
+    if (this.props.onClose) {
+      this.stopListeningToKeyboard({esc: this.props.onClose});
     }
   },
 
@@ -67,20 +72,12 @@ var LayerOverlay = React.createClass({
     if (this.props.closer) {
       classes.push(CLASS_ROOT + "--closeable");
 
-      if (true === this.props.closer) {
-        closer = (
-          <div className={CLASS_ROOT + "__closer"}
-            onClick={this.props.onClose}>
-            <CloseIcon />
-          </div>
-        );
-      } else {
-        closer = (
-          <div className={CLASS_ROOT + "__closer"}>
-            {this.props.closer}
-          </div>
-        );
-      }
+      closer = (
+        <div className={CLASS_ROOT + "__closer"}>
+          <CloseIcon onClick={this.props.onClose} a11yTitle={this.props.a11yCloserTitle}
+            a11yRole="button" />
+        </div>
+      );
     }
 
     return (

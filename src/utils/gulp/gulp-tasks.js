@@ -17,17 +17,19 @@ module.exports = function(gulp, opts) {
 
   var dist = options.dist || path.resolve(process.cwd(), 'dist');
 
+  var jsLoader = options.jsLoader || {
+    test: /\.js$/,
+    loader: 'babel',
+    exclude: /(node_modules\/intl|node_modules\/moment|bower_components|src\/lib)/
+  };
+
   var webpackConfig = {
     output: {
       filename: 'index.js'
     },
     module: {
       loaders: [
-        {
-          test: /\.js$/,
-          loader: 'babel',
-          exclude: /(node_modules\/intl|node_modules\/moment|bower_components|src\/lib)/
-        },
+        jsLoader,
         {
           test: /\.json$/,
           loader: 'json-loader'

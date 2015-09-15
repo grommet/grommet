@@ -191,6 +191,8 @@ function generateStyle(theme) {
     outputStyle: 'compressed'
   });
 
+  var mkdirp = require('mkdirp');
+  mkdirp.sync(path.resolve(__dirname, '../server/css'));
   fs.writeFileSync(path.resolve(__dirname, '../server/css/docs-' + theme + '.min.css'), compiledSass.css);
 }
 

@@ -10,19 +10,14 @@ module.exports = function(gulp, options) {
     return gulp.src('./docs/gulpfile.js', {
       read: false
     }).pipe(chug({
-      tasks: ['dist'],
-      args: ['--skipPreprocess']
+      tasks: ['dist']
     }));
   });
 
   var server = gls('./server/server.js', {env: {SILENT_MODE: true}});
 
-  gulp.task('start:docs', ['dist:docs'], function(done) {
-    console.log('Starting the website server');
+  gulp.task('start:docs', ['dist:docs'], function() {
     server.start();
-    setTimeout(function () {
-      done();
-    }, 15000);
   });
 
   gulp.task('stop:docs', function() {
