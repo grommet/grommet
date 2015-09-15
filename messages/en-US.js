@@ -8,6 +8,7 @@ module.exports = {
   Alerts: 'Alerts',
   All: 'All',
   Category: 'Category',
+  Clear: 'Clear',
   Cleared: 'Cleared',
   Completed: 'Completed',
   created: 'Created',
