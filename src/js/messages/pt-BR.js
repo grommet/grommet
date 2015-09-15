@@ -8,6 +8,7 @@ module.exports = {
   Alerts: 'Alertas',
   All: 'Todos',
   Category: 'Categoria',
+  Clear: 'Limpar',
   Cleared: 'Livre',
   Completed: 'Completado',
   created: 'Criado',
