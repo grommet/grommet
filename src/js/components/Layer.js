@@ -18,7 +18,8 @@ var LayerOverlay = React.createClass({
     hidden: React.PropTypes.bool,
     peek: React.PropTypes.bool,
     onClose: React.PropTypes.func,
-    router: React.PropTypes.func
+    router: React.PropTypes.func,
+    a11yCloserTitle: React.PropTypes.string
   },
 
   childContextTypes: {
@@ -73,7 +74,8 @@ var LayerOverlay = React.createClass({
 
       closer = (
         <div className={CLASS_ROOT + "__closer"}>
-          <CloseIcon onClick={this.props.onClose} />
+          <CloseIcon onClick={this.props.onClose} a11yTitle={this.props.a11yCloserTitle}
+            a11yRole="button" />
         </div>
       );
     }

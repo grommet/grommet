@@ -44,7 +44,7 @@ var TodoAddTaskForm = React.createClass({
 
   render: function() {
     return (
-      <Layer onClose={this.props.onClose} closer={true}>
+      <Layer onClose={this.props.onClose} closer={true} a11yCloserTitle={'Close the Add Task Form'}>
         <Form onSubmit={this._onSubmit}>
           <header><h1>Add Task</h1></header>
           <FormFields>
