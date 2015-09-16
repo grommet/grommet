@@ -68,6 +68,7 @@ var LayerOverlay = React.createClass({
 
     items = DOMUtils.filterByFocusable(items);
 
+    console.log(items);
     if (event.shiftKey) {
       if (event.target === items[0]) {
         items[items.length - 1].focus();
@@ -194,7 +195,7 @@ var Layer = React.createClass({
         this._overlay.className = 'layer__overlay layer__overlay--hidden';
       }
 
-      this._handleAriaHidden(this.props.hidden);
+      this._handleAriaHidden(true);
     } else {
       if (this._overlay.classList) {
         this._overlay.classList.remove('layer__overlay--hidden');
@@ -202,7 +203,7 @@ var Layer = React.createClass({
         this._overlay.className = 'layer__overlay';
       }
 
-      this._handleAriaHidden(this.props.hidden);
+      this._handleAriaHidden(false);
     }
   },
 

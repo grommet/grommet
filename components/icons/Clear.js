@@ -41,6 +41,13 @@ var Clear = React.createClass({
     }
   },
 
+  _handleClick: function (e) {
+    e.preventDefault();
+    if (this.props.onClick) {
+      this.props.onClick();
+    }
+  },
+
   render: function() {
     var className = 'control-icon control-icon-clear';
     if (this.props.className) {
@@ -55,14 +62,17 @@ var Clear = React.createClass({
     }
 
     return (
-      <svg className={className} viewBox="0 0 48 48" tabIndex="0"
-        version="1.1" role={this.props.a11yRole} aria-labelledby={this.props.a11yId} onClick={this.props.onClick}>
+      <a href="#" onClick={this._handleClick} role={this.props.a11yRole}
+          aria-labelledby={this.props.a11yId}>
         <title id={this.props.a11yId}>{a11yTitle}</title>
-        <g fill="none">
-          <line strokeWidth="2" x1="14" y1="14" x2="34" y2="34"/>
-          <line strokeWidth="2" x1="14" y1="34" x2="34" y2="14"/>
-        </g>
-      </svg>
+        <svg className={className} viewBox="0 0 48 48"
+          version="1.1" >
+            <g fill="none">
+              <line strokeWidth="2" x1="14" y1="14" x2="34" y2="34"/>
+              <line strokeWidth="2" x1="14" y1="34" x2="34" y2="14"/>
+            </g>
+        </svg>
+      </a>
     );
   }
 
