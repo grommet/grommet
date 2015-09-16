@@ -12,10 +12,12 @@
     padding-right: $inuit-base-spacing-unit;
 
     &--full {
+      max-width: 100%;
       width: 100vw;
     }
 
     &--full-horizontal {
+      max-width: 100%;
       width: 100vw;
     }
 
@@ -35,6 +37,7 @@
   @include pad();
 
   &--full {
+    max-width: 100%;
     width: 100vw;
     min-height: 100vh;
     // min-height doesn't work for IE and vertical centering
@@ -43,6 +46,7 @@
   }
 
   &--full-horizontal {
+    max-width: 100%;
     width: 100vw;
   }
 
