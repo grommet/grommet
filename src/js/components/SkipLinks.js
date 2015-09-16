@@ -77,6 +77,7 @@ var SkipLinks = React.createClass({
       );
     }.bind(this));
 
+    console.log(this.state.showLayer, anchorElements.length);
     return (
       <div className="skip-links">
         <Layer hidden={!this.state.showLayer}>
