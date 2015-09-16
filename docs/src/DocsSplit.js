@@ -39,7 +39,7 @@ var DocsSplit = React.createClass({
       var doc = this.refs.doc.getDOMNode();
       var hash = window.location.hash.slice(1);
       if (hash) {
-        var anchor = doc.querySelectorAll('[id=' + hash + ']')[0];
+        var anchor = document.querySelectorAll('[id=' + hash + ']')[0];
         var scrollParent = DOM.findScrollParents(anchor)[0];
         scrollParent.scrollTop = anchor.offsetTop;
       } else {

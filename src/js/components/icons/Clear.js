@@ -35,15 +35,18 @@ var Clear = React.createClass({
     }
   },
 
-  _handleKeyboardEvent: function () {
+  _handleKeyboardEvent: function (e) {
     if (document.activeElement === this.getDOMNode()) {
+      e.preventDefault();
+      e.stopPropagation();
       this.props.onClick();
     }
   },
 
   _handleClick: function (e) {
-    e.preventDefault();
     if (this.props.onClick) {
+      e.preventDefault();
+      e.stopPropagation();
       this.props.onClick();
     }
   },
