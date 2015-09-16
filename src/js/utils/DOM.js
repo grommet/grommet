@@ -30,7 +30,7 @@ module.exports = {
   filterByFocusable: function(elements) {
     return Array.prototype.filter.call(elements || [], function(element) {
       var currentTag = element.tagName.toLowerCase();
-      var validTags = /(svg|a|area|input|select|textarea|button|iframe|object|embed)$/;
+      var validTags = /(svg|a|area|input|select|textarea|button|iframe)$/;
       var isValidTag = currentTag.match(validTags) && element.focus;
 
       if (currentTag === 'a') {
