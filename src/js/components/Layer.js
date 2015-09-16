@@ -171,6 +171,18 @@ var Layer = React.createClass({
     this._overlay = overlay;
   },
 
+  _handleAriaHidden: function (hideOverlay) {
+    this._overlay.setAttribute('aria-hidden', hideOverlay);
+
+    Array.prototype.forEach.call(document.body.childNodes, function (currentChild) {
+      if (currentChild !== this._overlay &&
+        currentChild.nodeType === 1 &&
+        currentChild.tagName.toLowerCase() !== 'script') {
+        currentChild.setAttribute('aria-hidden', !hideOverlay);
+      }
+    }.bind(this));
+  },
+
   _renderOverlay: function () {
     var content = (<LayerOverlay {...this.props} router={this.context.router} />);
     React.render(content, this._overlay);
@@ -182,7 +194,7 @@ var Layer = React.createClass({
         this._overlay.className = 'layer__overlay layer__overlay--hidden';
       }
 
-      this._overlay.setAttribute('aria-hidden', 'true');
+      this._handleAriaHidden(this.props.hidden);
     } else {
       if (this._overlay.classList) {
         this._overlay.classList.remove('layer__overlay--hidden');
@@ -190,28 +202,12 @@ var Layer = React.createClass({
         this._overlay.className = 'layer__overlay';
       }
 
-      this._overlay.setAttribute('aria-hidden', 'false');
-
-      Array.prototype.forEach.call(document.body.childNodes, function (currentChild) {
-        if (currentChild !== this._overlay &&
-          currentChild.nodeType === 1 &&
-          currentChild.tagName.toLowerCase() !== 'script') {
-          currentChild.setAttribute('aria-hidden', 'true');
-        }
-      }.bind(this));
+      this._handleAriaHidden(this.props.hidden);
     }
   },
 
   _removeOverlay: function () {
-    this._overlay.setAttribute('aria-hidden', 'true');
-
-    Array.prototype.forEach.call(document.body.childNodes, function (currentChild) {
-      if (currentChild !== this._overlay &&
-        currentChild.nodeType === 1 &&
-        currentChild.tagName.toLowerCase() !== 'script') {
-        currentChild.setAttribute('aria-hidden', 'false');
-      }
-    }.bind(this));
+    this._handleAriaHidden(true);
 
     React.unmountComponentAtNode(this._overlay);
     document.body.removeChild(this._overlay);
