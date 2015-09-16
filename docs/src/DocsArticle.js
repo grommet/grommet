@@ -18,7 +18,7 @@ var DocsArticle = React.createClass({
 
   render: function() {
     return (
-      <Article primary={true} pad={{horizontal: 'large'}}>
+      <Article pad={{horizontal: 'large'}}>
         <Header size="large" colorIndex={this.props.colorIndex}>
           <h1>{this.props.title}</h1>
         </Header>
