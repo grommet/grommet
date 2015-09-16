@@ -1,5 +1,4 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
-
 module.exports = {
   findScrollParents: function (element) {
     var result = [];
@@ -26,5 +25,18 @@ module.exports = {
       node = node.parentNode;
     }
     return false;
+  },
+
+  filterByFocusable: function(elements) {
+    return Array.prototype.filter.call(elements, function(element) {
+      var currentTag = element.tagName.toLowerCase();
+      var isValidTag = currentTag.match(/(svg|a|area|input|select|textarea|button|iframe|object|embed)$/);
+
+      if (currentTag === 'a') {
+        return isValidTag && element.childNodes.length > 0;
+      }
+
+      return isValidTag;
+    });
   }
 };

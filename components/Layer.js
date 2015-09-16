@@ -3,6 +3,7 @@
 var React = require('react');
 var CloseIcon = require('./icons/Clear');
 var KeyboardAccelerators = require('../mixins/KeyboardAccelerators');
+var DOMUtils = require('../utils/DOM');
 
 var CLASS_ROOT = "layer";
 
@@ -34,7 +35,10 @@ var LayerOverlay = React.createClass({
 
   componentDidMount: function () {
     if (this.props.onClose) {
-      this.startListeningToKeyboard({esc: this.props.onClose});
+      this.startListeningToKeyboard({
+        tab: this._processTab,
+        esc: this.props.onClose
+      });
     }
   },
 
@@ -46,7 +50,28 @@ var LayerOverlay = React.createClass({
     }
 
     if (this.props.onClose) {
-      this.stopListeningToKeyboard({esc: this.props.onClose});
+      this.stopListeningToKeyboard({
+        tab: this._processTab,
+        esc: this.props.onClose
+      });
+    }
+  },
+
+  _processTab: function (event) {
+    var items = this.refs.background.getDOMNode().getElementsByTagName('*');
+
+    items = DOMUtils.filterByFocusable(items);
+
+    if (event.shiftKey) {
+      if (event.target === items[0]) {
+        items[items.length - 1].focus();
+        event.preventDefault();
+      }
+    } else {
+      if (event.target === items[items.length - 1]) {
+        items[0].focus();
+        event.preventDefault();
+      }
     }
   },
 
@@ -143,22 +168,45 @@ var Layer = React.createClass({
   _renderOverlay: function () {
     var content = (<LayerOverlay {...this.props} router={this.context.router} />);
     React.render(content, this._overlay);
+
     if (this.props.hidden) {
       if (this._overlay.classList) {
         this._overlay.classList.add('layer__overlay--hidden');
       } else {
         this._overlay.className = 'layer__overlay layer__overlay--hidden';
       }
+
+      this._overlay.setAttribute('aria-hidden', 'true');
     } else {
       if (this._overlay.classList) {
         this._overlay.classList.remove('layer__overlay--hidden');
       } else {
         this._overlay.className = 'layer__overlay';
       }
+
+      this._overlay.setAttribute('aria-hidden', 'false');
+
+      Array.prototype.forEach.call(document.body.childNodes, function (currentChild) {
+        if (currentChild !== this._overlay &&
+          currentChild.nodeType === 1 &&
+          currentChild.tagName.toLowerCase() !== 'script') {
+          currentChild.setAttribute('aria-hidden', 'true');
+        }
+      }.bind(this));
     }
   },
 
   _removeOverlay: function () {
+    this._overlay.setAttribute('aria-hidden', 'true');
+
+    Array.prototype.forEach.call(document.body.childNodes, function (currentChild) {
+      if (currentChild !== this._overlay &&
+        currentChild.nodeType === 1 &&
+        currentChild.tagName.toLowerCase() !== 'script') {
+        currentChild.setAttribute('aria-hidden', 'false');
+      }
+    }.bind(this));
+
     React.unmountComponentAtNode(this._overlay);
     document.body.removeChild(this._overlay);
     this._overlay = null;

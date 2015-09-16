@@ -107,26 +107,34 @@ var Calendar = React.createClass({
     });
   },
 
-  _onNextDay: function (event) {
-    event.preventDefault();
-    event.stopPropagation();
-    var nextDay = moment(this.state.current).add(1, 'days');
-
-    if (! nextDay.isSame(this.state.reference, 'month')) {
-      this.setState({reference: this.state.reference.add(1, 'month'), current: nextDay});
+  _onNextDayOrMonth: function (event) {
+    if (event.shiftKey) {
+      this._onNext(event);
     } else {
-      this.setState({current: nextDay});
+      event.preventDefault();
+      event.stopPropagation();
+      var nextDay = moment(this.state.current).add(1, 'days');
+
+      if (! nextDay.isSame(this.state.reference, 'month')) {
+        this.setState({reference: this.state.reference.add(1, 'month'), current: nextDay});
+      } else {
+        this.setState({current: nextDay});
+      }
     }
   },
 
-  _onPreviousDay: function (event) {
-    event.preventDefault();
-    event.stopPropagation();
-    var previousDay = moment(this.state.current).subtract(1, 'days');
-    if (! previousDay.isSame(this.state.reference, 'month')) {
-      this.setState({reference: this.state.reference.subtract(1, 'month'), current: previousDay});
+  _onPreviousDayOrMonth: function (event) {
+    if (event.shiftKey) {
+      this._onPrevious(event);
     } else {
-      this.setState({current: previousDay});
+      event.preventDefault();
+      event.stopPropagation();
+      var previousDay = moment(this.state.current).subtract(1, 'days');
+      if (! previousDay.isSame(this.state.reference, 'month')) {
+        this.setState({reference: this.state.reference.subtract(1, 'month'), current: previousDay});
+      } else {
+        this.setState({current: previousDay});
+      }
     }
   },
 
@@ -165,12 +173,10 @@ var Calendar = React.createClass({
     var listeners = {
       esc: this._onClose,
       tab: this._onClose,
-      right: this._onNextDay,
-      left: this._onPreviousDay,
+      right: this._onNextDayOrMonth,
+      left: this._onPreviousDayOrMonth,
       down: this._onNextWeek,
       up: this._onPreviousWeek,
-      shiftLeft: this._onPrevious,
-      shiftRight: this._onNext,
       enter: this._onSelectDate,
       space: this._onSelectDate
     };

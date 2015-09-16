@@ -14,7 +14,7 @@ var Clear = React.createClass({
   mixins: [IntlMixin, KeyboardAccelerators],
 
   getDefaultProps: function () {
-    return {a11yRole: 'img'};
+    return {a11yRole: 'img', a11yId: 'clear-title'};
   },
 
   componentDidMount: function () {
@@ -56,8 +56,8 @@ var Clear = React.createClass({
 
     return (
       <svg className={className} viewBox="0 0 48 48" tabIndex="0"
-        version="1.1" role={this.props.a11yRole} aria-labelledby="clear-title" onClick={this.props.onClick}>
-        <title id="clear-title">{a11yTitle}</title>
+        version="1.1" role={this.props.a11yRole} aria-labelledby={this.props.a11yId} onClick={this.props.onClick}>
+        <title id={this.props.a11yId}>{a11yTitle}</title>
         <g fill="none">
           <line strokeWidth="2" x1="14" y1="14" x2="34" y2="34"/>
           <line strokeWidth="2" x1="14" y1="34" x2="34" y2="14"/>
