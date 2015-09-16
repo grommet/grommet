@@ -34,6 +34,12 @@ var LayerOverlay = React.createClass({
   },
 
   componentDidMount: function () {
+    var items = this.refs.background.getDOMNode().getElementsByTagName('*');
+    var firstFocusable = DOMUtils.getBestFirstFocusable(items);
+    if (firstFocusable) {
+      firstFocusable.focus();
+    }
+
     if (this.props.onClose) {
       this.startListeningToKeyboard({
         tab: this._processTab,

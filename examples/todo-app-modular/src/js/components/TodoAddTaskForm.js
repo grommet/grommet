@@ -20,10 +20,6 @@ var TodoAddTaskForm = React.createClass({
     return defaultState;
   },
 
-  componentDidMount: function () {
-    this.refs.taskInput.getDOMNode().focus();
-  },
-
   _onSubmit: function (event) {
     event.preventDefault();
     if (this.state.item) {
