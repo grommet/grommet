@@ -34,6 +34,7 @@ var LayerOverlay = React.createClass({
   },
 
   componentDidMount: function () {
+
     var items = this.refs.background.getDOMNode().getElementsByTagName('*');
     var firstFocusable = DOMUtils.getBestFirstFocusable(items);
     if (firstFocusable) {
@@ -68,7 +69,6 @@ var LayerOverlay = React.createClass({
 
     items = DOMUtils.filterByFocusable(items);
 
-    console.log(items);
     if (event.shiftKey) {
       if (event.target === items[0]) {
         items[items.length - 1].focus();
@@ -148,6 +148,7 @@ var Layer = React.createClass({
   },
 
   componentDidMount: function () {
+    this._originalFocusedElement = document.activeElement;
     this._addOverlay();
     this._renderOverlay();
   },
@@ -157,6 +158,11 @@ var Layer = React.createClass({
   },
 
   componentWillUnmount: function () {
+
+    if (this._originalFocusedElement) {
+      this._originalFocusedElement.focus();
+    }
+
     this._removeOverlay();
   },
 
