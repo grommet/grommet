@@ -47,7 +47,7 @@ var Home = React.createClass({
         <HomeSection colorIndex="neutral-1">
           <Headline>Create once and deliver everywhere.</Headline>
           <Headline small={true}>Application experiences that look great while solving problems.</Headline>
-          <Menu direction="row" justify="center">
+          <Menu direction="row" justify="center" full="true">
             <Link to="design">
               <Button label="See more examples" onClick={this._onClick} large={true} primary={true} />
             </Link>
