@@ -107,7 +107,8 @@ var MeterDoc = React.createClass({
 
           <h3>Bar</h3>
           <div className="example">
-            <Meter value={this.state.simpleValue} size={this.state.size} />
+            <Meter a11yTitleId='meter-title-1' a11yDescId='meter-desc-1'
+              value={this.state.simpleValue} size={this.state.size} />
           </div>
           <pre><code className="html hljs xml">
             {"<Meter value={" + this.state.simpleValue + "} />"}
@@ -115,7 +116,8 @@ var MeterDoc = React.createClass({
 
           <h3>Bar, Vertical</h3>
           <div className="example">
-            <Meter value={this.state.simpleValue} size={this.state.size} vertical={true} />
+            <Meter a11yTitleId='meter-title-2' a11yDescId='meter-desc-2'
+              value={this.state.simpleValue} size={this.state.size} vertical={true} />
           </div>
           <pre><code className="html hljs xml">
             {"<Meter value={" + this.state.simpleValue + "} vertical={true} />"}
@@ -123,7 +125,8 @@ var MeterDoc = React.createClass({
 
           <h3>Arc</h3>
           <div className="example">
-            <Meter value={this.state.simpleValue} size={this.state.size} type="arc" />
+            <Meter a11yTitleId='meter-title-3' a11yDescId='meter-desc-3'
+              value={this.state.simpleValue} size={this.state.size} type="arc" />
           </div>
           <pre><code className="html hljs xml">
             {"<Meter value={" + this.state.simpleValue + "} type=\"arc\" />"}
@@ -131,7 +134,8 @@ var MeterDoc = React.createClass({
 
           <h3>Arc, Vertical</h3>
           <div className="example">
-            <Meter value={this.state.simpleValue} size={this.state.size} type="arc" vertical={true} />
+            <Meter a11yTitleId='meter-title-4' a11yDescId='meter-desc-4'
+              value={this.state.simpleValue} size={this.state.size} type="arc" vertical={true} />
           </div>
           <pre><code className="html hljs xml">
             {"<Meter value={" + this.state.simpleValue + "} type=\"arc\" vertical={true} />"}
@@ -139,7 +143,8 @@ var MeterDoc = React.createClass({
 
           <h3>Circle</h3>
           <div className="example">
-            <Meter value={this.state.simpleValue} size={this.state.size} type="circle" />
+            <Meter a11yTitleId='meter-title-5' a11yDescId='meter-desc-5'
+              value={this.state.simpleValue} size={this.state.size} type="circle" />
           </div>
           <pre><code className="html hljs xml">
             {"<Meter value={" + this.state.simpleValue + "} type=\"circle\" />"}
@@ -147,7 +152,8 @@ var MeterDoc = React.createClass({
 
           <h3>Spiral</h3>
           <div className="example">
-            <Meter value={this.state.simpleValue} size={this.state.size} type="spiral" />
+            <Meter a11yTitleId='meter-title-6' a11yDescId='meter-desc-6'
+              value={this.state.simpleValue} size={this.state.size} type="spiral" />
           </div>
           <pre><code className="html hljs xml">
             {"<Meter value={" + this.state.simpleValue + "} type=\"spiral\" />"}
@@ -155,7 +161,8 @@ var MeterDoc = React.createClass({
 
           <h3>Bar, Min, Max, Units, Threshold</h3>
           <div className="example">
-            <Meter value={this.state.simpleValue} size={this.state.size}
+            <Meter a11yTitleId='meter-title-7' a11yDescId='meter-desc-7'
+              value={this.state.simpleValue} size={this.state.size}
               min={simpleMin} max={simpleMax} threshold={simpleThreshold}
               units={simpleUnits} />
           </div>
@@ -169,7 +176,8 @@ var MeterDoc = React.createClass({
 
           <h3>Bar, Min, Max, Units, Thresholds, Vertical</h3>
           <div className="example">
-            <Meter value={this.state.simpleValue} size={this.state.size}
+            <Meter a11yTitleId='meter-title-8' a11yDescId='meter-desc-8'
+              value={this.state.simpleValue} size={this.state.size}
               min={simpleMin} max={simpleMax} threshold={simpleThreshold}
               units={simpleUnits} vertical={true} />
           </div>
@@ -183,7 +191,8 @@ var MeterDoc = React.createClass({
 
           <h3>Arc, Min, Max, Units, Thresholds</h3>
           <div className="example">
-            <Meter type="arc" value={this.state.simpleValue} size={this.state.size}
+            <Meter a11yTitleId='meter-title-9' a11yDescId='meter-desc-9'
+              type="arc" value={this.state.simpleValue} size={this.state.size}
               min={simpleMin} max={simpleMax} thresholds={thresholds}
               units={simpleUnits} />
           </div>
@@ -197,7 +206,8 @@ var MeterDoc = React.createClass({
 
           <h3>Arc, Min, Max, Units, Thresholds, Vertical</h3>
           <div className="example">
-            <Meter type="arc" value={this.state.simpleValue} size={this.state.size}
+            <Meter a11yTitleId='meter-title-10' a11yDescId='meter-desc-10'
+              type="arc" value={this.state.simpleValue} size={this.state.size}
               min={simpleMin} max={simpleMax} threshold={simpleThreshold}
               units={simpleUnits} vertical={true} />
           </div>
@@ -211,7 +221,8 @@ var MeterDoc = React.createClass({
 
           <h3>Circle, Min, Max, Units, Threshold</h3>
           <div className="example">
-            <Meter type="circle" value={this.state.simpleValue} size={this.state.size}
+            <Meter a11yTitleId='meter-title-11' a11yDescId='meter-desc-11'
+              type="circle" value={this.state.simpleValue} size={this.state.size}
               min={simpleMin} max={simpleMax} threshold={simpleThreshold}
               units={simpleUnits} />
           </div>
@@ -225,7 +236,8 @@ var MeterDoc = React.createClass({
 
           <h3>Bar, Series, Legend</h3>
           <div className="example">
-            <Meter legend={true} series={series} size={this.state.size} />
+            <Meter a11yTitleId='meter-title-12' a11yDescId='meter-desc-12'
+              legend={true} series={series} size={this.state.size} />
           </div>
           <pre><code className="html hljs xml">
             {"<Meter legend={true}\n " +
@@ -234,7 +246,8 @@ var MeterDoc = React.createClass({
 
           <h3>Bar, Series, Legend, Vertical</h3>
           <div className="example">
-            <Meter legend={true} series={series} size={this.state.size} vertical={true} />
+            <Meter a11yTitleId='meter-title-13' a11yDescId='meter-desc-13'
+              legend={true} series={series} size={this.state.size} vertical={true} />
           </div>
           <pre><code className="html hljs xml">
             {"<Meter legend={true}\n" +
@@ -244,7 +257,8 @@ var MeterDoc = React.createClass({
 
           <h3>Arc, Series, Legend</h3>
           <div className="example">
-            <Meter type="arc" legend={true} series={series} size={this.state.size} />
+            <Meter a11yTitleId='meter-title-14' a11yDescId='meter-desc-14'
+              type="arc" legend={true} series={series} size={this.state.size} />
           </div>
           <pre><code className="html hljs xml">
             {"<Meter type=\"arc\" legend={true}\n " +
@@ -253,7 +267,8 @@ var MeterDoc = React.createClass({
 
           <h3>Arc, Series, Legend, Vertical, Units</h3>
           <div className="example">
-            <Meter type="arc" legend={true} series={storageSeries} size={this.state.size} vertical={true} units="TB" />
+            <Meter a11yTitleId='meter-title-15' a11yDescId='meter-desc-15'
+              type="arc" legend={true} series={storageSeries} size={this.state.size} vertical={true} units="TB" />
           </div>
           <pre><code className="html hljs xml">
             {"<Meter type=\"arc\" legend={true} units=\"TB\"\n " +
@@ -263,7 +278,8 @@ var MeterDoc = React.createClass({
 
           <h3>Circle, Series, Legend</h3>
           <div className="example">
-            <Meter type="circle" legend={true} series={series} size={this.state.size} />
+            <Meter a11yTitleId='meter-title-16' a11yDescId='meter-desc-16'
+              type="circle" legend={true} series={series} size={this.state.size} />
           </div>
           <pre><code className="html hljs xml">
             {"<Meter type=\"circle\" legend={true}\n " +
@@ -272,7 +288,8 @@ var MeterDoc = React.createClass({
 
           <h3>Spiral, Series, Status</h3>
           <div className="example">
-            <Meter type="spiral" series={statusSeries} size={this.state.size} max={statusSeriesMax} />
+            <Meter a11yTitleId='meter-title-17' a11yDescId='meter-desc-17'
+              type="spiral" series={statusSeries} size={this.state.size} max={statusSeriesMax} />
           </div>
           <pre><code className="html hljs xml">
             {"<Meter type=\"spiral\" max={" + statusSeriesMax + "}\n " +
@@ -281,7 +298,8 @@ var MeterDoc = React.createClass({
 
           <h3>Spiral, Series, Storage</h3>
           <div className="example">
-            <Meter type="spiral" series={storageSeries} size={this.state.size} units="TB"/>
+            <Meter a11yTitleId='meter-title-18' a11yDescId='meter-desc-18'
+              type="spiral" series={storageSeries} size={this.state.size} units="TB"/>
           </div>
           <pre><code className="html hljs xml">
             {"<Meter type=\"spiral\" units=\"TB\"\n " +
@@ -290,7 +308,8 @@ var MeterDoc = React.createClass({
 
           <h3>Bar, Small</h3>
           <div className="example">
-            <Meter value={this.state.simpleValue} size="small" />
+            <Meter a11yTitleId='meter-title-19' a11yDescId='meter-desc-19'
+              value={this.state.simpleValue} size="small" />
           </div>
           <pre><code className="html hljs xml">
             {"<Meter value={" + this.state.simpleValue + "} size=\"small\" />"}
@@ -298,7 +317,8 @@ var MeterDoc = React.createClass({
 
           <h3>Arc, Small</h3>
           <div className="example">
-            <Meter value={this.state.simpleValue} type="arc" size="small" />
+            <Meter a11yTitleId='meter-title-20' a11yDescId='meter-desc-20'
+              value={this.state.simpleValue} type="arc" size="small" />
           </div>
           <pre><code className="html hljs xml">
             {"<Meter value={" + this.state.simpleValue + "} type=\"arc\" size=\"small\" />"}
@@ -306,7 +326,8 @@ var MeterDoc = React.createClass({
 
           <h3>Circle, Small</h3>
           <div className="example">
-            <Meter value={this.state.simpleValue} type="circle" size="small" />
+            <Meter a11yTitleId='meter-title-21' a11yDescId='meter-desc-21'
+              value={this.state.simpleValue} type="circle" size="small" />
           </div>
           <pre><code className="html hljs xml">
             {"<Meter value={" + this.state.simpleValue + "} type=\"circle\" size=\"small\" />"}
@@ -314,7 +335,8 @@ var MeterDoc = React.createClass({
 
           <h3>Bar, Large</h3>
           <div className="example">
-            <Meter value={this.state.simpleValue} size="large" />
+            <Meter a11yTitleId='meter-title-22' a11yDescId='meter-desc-22'
+              value={this.state.simpleValue} size="large" />
           </div>
           <pre><code className="html hljs xml">
             {"<Meter value={" + this.state.simpleValue + "} size=\"large\" />"}
@@ -322,7 +344,8 @@ var MeterDoc = React.createClass({
 
           <h3>Arc, Large</h3>
           <div className="example">
-            <Meter value={this.state.simpleValue} type="arc" size="large" />
+            <Meter a11yTitleId='meter-title-23' a11yDescId='meter-desc-23'
+              value={this.state.simpleValue} type="arc" size="large" />
           </div>
           <pre><code className="html hljs xml">
             {"<Meter value={" + this.state.simpleValue + "} type=\"arc\" size=\"large\" />"}
@@ -330,7 +353,8 @@ var MeterDoc = React.createClass({
 
           <h3>Circle, Large</h3>
           <div className="example">
-            <Meter value={this.state.simpleValue} type="circle" size="large" />
+            <Meter a11yTitleId='meter-title-24' a11yDescId='meter-desc-24'
+              value={this.state.simpleValue} type="circle" size="large" />
           </div>
           <pre><code className="html hljs xml">
             {"<Meter value={" + this.state.simpleValue + "} type=\"circle\" size=\"large\" />"}
@@ -338,7 +362,8 @@ var MeterDoc = React.createClass({
 
           <h3>Bar, Loading</h3>
           <div className="example">
-            <Meter value={undefined} size={this.state.size} />
+            <Meter a11yTitleId='meter-title-25' a11yDescId='meter-desc-25'
+              value={undefined} size={this.state.size} />
           </div>
           <pre><code className="html hljs xml">
             {"<Meter value={undefined} />"}
@@ -346,7 +371,8 @@ var MeterDoc = React.createClass({
 
           <h3>Arc, Loading</h3>
           <div className="example">
-            <Meter value={undefined} size={this.state.size} type="arc" />
+            <Meter a11yTitleId='meter-title-26' a11yDescId='meter-desc-26'
+              value={undefined} size={this.state.size} type="arc" />
           </div>
           <pre><code className="html hljs xml">
             {"<Meter value={undefined} type=\"arc\" />"}
@@ -354,7 +380,8 @@ var MeterDoc = React.createClass({
 
           <h3>Spiral, Loading</h3>
           <div className="example">
-            <Meter value={undefined} size={this.state.size} type="spiral" />
+            <Meter a11yTitleId='meter-title-27' a11yDescId='meter-desc-27'
+              value={undefined} size={this.state.size} type="spiral" />
           </div>
           <pre><code className="html hljs xml">
             {"<Meter value={undefined} type=\"spiral\" />"}
