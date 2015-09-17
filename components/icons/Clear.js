@@ -7,14 +7,19 @@ var KeyboardAccelerators = require('../../mixins/KeyboardAccelerators');
 var Clear = React.createClass({
 
   propTypes: {
+    onClick: React.PropTypes.func,
     a11yTitle: React.PropTypes.string,
-    onClick: React.PropTypes.func
+    a11yTitleId: React.PropTypes.string,
+    a11yRole: React.PropTypes.string
   },
 
   mixins: [IntlMixin, KeyboardAccelerators],
 
   getDefaultProps: function () {
-    return {a11yRole: 'img', a11yId: 'clear-title'};
+    return {
+      a11yRole: 'button',
+      a11yTitleId: 'clear-title'
+    };
   },
 
   componentDidMount: function () {
@@ -57,17 +62,14 @@ var Clear = React.createClass({
       className += ' ' + this.props.className;
     }
 
-    var a11yTitle = this.getGrommetIntlMessage(this.props.a11yTitle);
-    if (typeof this.props.a11yTitle === "undefined") {
-      // this.props.a11yTitle emplty string is an acceptable value. Only if undefined
-      // should use the default title value.
-      a11yTitle = this.getGrommetIntlMessage('Clear');
-    }
+    var a11yTitle = this.getGrommetIntlMessage(
+      typeof this.props.a11yTitle !== "undefined" ?
+        this.props.a11yTitle : 'Clear');
 
     return (
       <a href="#" onClick={this._handleClick} role={this.props.a11yRole}
-          aria-labelledby={this.props.a11yId}>
-        <title id={this.props.a11yId}>{a11yTitle}</title>
+        aria-labelledby={this.props.a11yTitleId}>
+        <title id={this.props.a11yTitleId}>{a11yTitle}</title>
         <svg className={className} viewBox="0 0 48 48"
           version="1.1" >
             <g fill="none">

@@ -168,6 +168,9 @@ var Layer = React.createClass({
 
   _addOverlay: function () {
     var overlay = document.createElement('div');
+    if (this.props.id) {
+      overlay.id = this.props.id;
+    }
     if (overlay.classList) {
       overlay.classList.add('layer__overlay');
     } else {
@@ -184,6 +187,7 @@ var Layer = React.createClass({
     Array.prototype.forEach.call(document.body.childNodes, function (currentChild) {
       if (currentChild !== this._overlay &&
         currentChild.nodeType === 1 &&
+        currentChild.id !== 'skip-link-layer' &&
         currentChild.tagName.toLowerCase() !== 'script') {
         currentChild.setAttribute('aria-hidden', !hideOverlay);
       }

@@ -79,7 +79,7 @@ var SkipLinks = React.createClass({
 
     return (
       <div className="skip-links">
-        <Layer hidden={!this.state.showLayer}>
+        <Layer id="skip-link-layer" hidden={!this.state.showLayer}>
           <div ref="skipLinksLayer">
             <h2>{this.getGrommetIntlMessage('Skip to')}:</h2>
             <Menu direction="row">
