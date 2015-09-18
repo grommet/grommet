@@ -433,12 +433,10 @@ var Meter = React.createClass({
       var listeners = this._interactionListeners(interactive, item, index);
 
       return (
-        <a href="#" tabIndex="0"
+        <path key={index} className={classes.join(' ')} d={commands} tabIndex="0"
           onFocus={listeners.onOver} onBlur={listeners.onOut}
           onMouseOver={listeners.onOver} onMouseOut={listeners.onOut}
-          onClick={listeners.onClick} role="img" aria-labelledby={this.props.a11yDescId}>
-          <path key={index} className={classes.join(' ')} d={commands} />
-        </a>
+          onClick={listeners.onClick} role="img" aria-labelledby={this.props.a11yDescId} />
       );
     } else {
       return (
