@@ -8,10 +8,11 @@ var FormField = require('grommet/components/FormField');
 var Footer = require('grommet/components/Footer');
 var Menu = require('grommet/components/Menu');
 var Button = require('grommet/components/Button');
+var Box = require('grommet/components/Box');
 
 var defaultState = {
   item: undefined,
-  type: undefined
+  status: undefined
 };
 
 var TodoAddTaskForm = React.createClass({
@@ -25,7 +26,7 @@ var TodoAddTaskForm = React.createClass({
     if (this.state.item) {
       this.props.onSubmit({
         item: this.state.item,
-        type: this.state.type || 'ok'
+        status: this.state.status || 'ok'
       });
     }
   },
@@ -34,33 +35,42 @@ var TodoAddTaskForm = React.createClass({
     this.setState({item: event.target.value});
   },
 
-  _onTypeChange: function (event) {
-    this.setState({type: event.target.value});
+  _onStatusChange: function (event) {
+    this.setState({status: event.target.value});
   },
 
   render: function() {
     return (
-      <Layer onClose={this.props.onClose} closer={true} a11yCloserTitle={'Close the Add Task Form'}>
+      <Layer onClose={this.props.onClose} closer={true}
+        a11yCloserTitle={'Close the Add Task Form'}>
         <Form onSubmit={this._onSubmit}>
           <header><h1>Add Task</h1></header>
           <FormFields>
             <fieldset>
-              <FormField label="Task" htmlFor="taskInput" help="what's to be done?">
-                <input id="taskInput" name="task" type="text" ref="taskInput" onChange={this._onItemChange} />
+              <FormField label="Task" htmlFor="taskInput"
+                help="what's to be done?">
+                <input id="taskInput" name="task" type="text"
+                  ref="taskInput" onChange={this._onItemChange} />
               </FormField>
-              <FormField label="Type" htmlFor="typeInput">
-                <select id="typeInput" name="type" onChange={this._onTypeChange}>
-                  <option>ok</option>
-                  <option>warning</option>
-                  <option>error</option>
+              <FormField label="Status" htmlFor="statusInput">
+                <select id="statusInput" name="status"
+                  onChange={this._onStatusChange}>
+                  <option value="ok">Done</option>
+                  <option value="warning">Due Soon</option>
+                  <option value="error">Past Due</option>
                 </select>
               </FormField>
             </fieldset>
           </FormFields>
           <Footer pad={{vertical: 'medium'}}>
-            <Menu direction="row">
-              <Button label="OK" primary={true} onClick={this._onSubmit} type="submit"/>
-              <Button label="Cancel" onClick={this.props.onClose} />
+            <Menu direction="row" responsive={false}>
+              <Box>
+                <Button label="OK" primary={true}
+                  onClick={this._onSubmit} type="submit"/>
+              </Box>
+              <Box>
+                <Button label="Cancel" onClick={this.props.onClose} />
+              </Box>
             </Menu>
           </Footer>
         </Form>
