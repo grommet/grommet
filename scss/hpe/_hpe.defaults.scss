@@ -9,7 +9,7 @@ $brand-accent-colors: (#2AD2C9, #614767);
 $brand-status-colors: (
   error: #F04953,
   warning: #FFD144,
-  ok: #08AA83,
+  ok: $brand-color,
   unknown: #CCCCCC,
   disabled: #EDEDED
 );
