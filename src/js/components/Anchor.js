@@ -8,7 +8,7 @@ var CLASS_ROOT = "anchor";
 var Anchor = React.createClass({
 
   propTypes: {
-    href: React.PropTypes.string.isRequired,
+    href: React.PropTypes.string,
     tag: React.PropTypes.string,
     target: React.PropTypes.string,
     onClick: React.PropTypes.func,

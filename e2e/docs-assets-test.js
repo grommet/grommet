@@ -158,6 +158,64 @@ describe('Docs website e2e', function() {
     });
   });
 
+  it('downloads hpe data adobe illustrator sticker sheet', function(done) {
+    var selector = '#design-link';
+
+    browser.getText(selector, function (err, text) {
+      if (err) {
+        should.fail('Expected to find design link.', err);
+      }
+      expect(text).toBe('Design');
+      var buttonSelector = '#resources-button';
+      browser.click(selector).getText(buttonSelector).then(function(text) {
+        expect(text).toBe('Resources');
+
+        var aiSelector = '#hpe #hpe-ai-data';
+        browser.click(buttonSelector).getText(aiSelector).then(function(text) {
+          expect(text).toBe('Data Sticker Sheet');
+          browser.getAttribute(aiSelector, 'href').then(function(linkPath) {
+            request.get(linkPath).end(function(err, res) {
+              if (err) {
+                should.fail('Expected to send a request to ai asset.', err);
+              }
+              expect(res.status).toBe(200);
+              done();
+            });
+          });
+        });
+      });
+    });
+  });
+
+  it('downloads hpe data adobe illustrator pdf sticker sheet', function(done) {
+    var selector = '#design-link';
+
+    browser.getText(selector, function (err, text) {
+      if (err) {
+        should.fail('Expected to find design link.', err);
+      }
+      expect(text).toBe('Design');
+      var buttonSelector = '#resources-button';
+      browser.click(selector).getText(buttonSelector).then(function(text) {
+        expect(text).toBe('Resources');
+
+        var pdfSelector = '#hpe #hpe-ai-data-pdf';
+        browser.click(buttonSelector).getText(pdfSelector).then(function(text) {
+          expect(text).toBe('pdf');
+          browser.getAttribute(pdfSelector, 'href').then(function(linkPath) {
+            request.get(linkPath).end(function(err, res) {
+              if (err) {
+                should.fail('Expected to send a request to pdf asset.', err);
+              }
+              expect(res.status).toBe(200);
+              done();
+            });
+          });
+        });
+      });
+    });
+  });
+
   it('downloads hpe classic adobe illustrator sticker sheet', function(done) {
     var selector = '#design-link';
 
@@ -230,7 +288,7 @@ describe('Docs website e2e', function() {
 
         var aiSelector = '#hpe #hpe-ai-app-templates';
         browser.click(buttonSelector).getText(aiSelector).then(function(text) {
-          expect(text).toBe('Application Templates');
+          expect(text).toBe('App Templates Sticker Sheet');
           browser.getAttribute(aiSelector, 'href').then(function(linkPath) {
             request.get(linkPath).end(function(err, res) {
               if (err) {

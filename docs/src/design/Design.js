@@ -86,7 +86,7 @@ var Design = React.createClass({
       <DocsSplit title={title} contents={CONTENTS} onChange={this._highlightCode}>
         <DocsArticle title="Design" colorIndex="neutral-2">
 
-          <Section primary={true}>
+          <Section>
             <p>This application style guide was created by the designers at Hewlett
             Packard Enterprise. The guide covers the general design principles as well
             as specific design guidelines. You'll also find downloadable assets for the

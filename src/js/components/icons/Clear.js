@@ -7,14 +7,19 @@ var KeyboardAccelerators = require('../../mixins/KeyboardAccelerators');
 var Clear = React.createClass({
 
   propTypes: {
+    onClick: React.PropTypes.func,
     a11yTitle: React.PropTypes.string,
-    onClick: React.PropTypes.func
+    a11yTitleId: React.PropTypes.string,
+    a11yRole: React.PropTypes.string
   },
 
   mixins: [IntlMixin, KeyboardAccelerators],
 
   getDefaultProps: function () {
-    return {a11yRole: 'img'};
+    return {
+      a11yRole: 'button',
+      a11yTitleId: 'clear-title'
+    };
   },
 
   componentDidMount: function () {
@@ -35,8 +40,18 @@ var Clear = React.createClass({
     }
   },
 
-  _handleKeyboardEvent: function () {
+  _handleKeyboardEvent: function (e) {
     if (document.activeElement === this.getDOMNode()) {
+      e.preventDefault();
+      e.stopPropagation();
+      this.props.onClick();
+    }
+  },
+
+  _handleClick: function (e) {
+    if (this.props.onClick) {
+      e.preventDefault();
+      e.stopPropagation();
       this.props.onClick();
     }
   },
@@ -47,22 +62,22 @@ var Clear = React.createClass({
       className += ' ' + this.props.className;
     }
 
-    var a11yTitle = this.getGrommetIntlMessage(this.props.a11yTitle);
-    if (typeof this.props.a11yTitle === "undefined") {
-      // this.props.a11yTitle emplty string is an acceptable value. Only if undefined
-      // should use the default title value.
-      a11yTitle = this.getGrommetIntlMessage('Clear');
-    }
+    var a11yTitle = this.getGrommetIntlMessage(
+      typeof this.props.a11yTitle !== "undefined" ?
+        this.props.a11yTitle : 'Clear');
 
     return (
-      <svg className={className} viewBox="0 0 48 48" tabIndex="0"
-        version="1.1" role={this.props.a11yRole} aria-labelledby="clear-title" onClick={this.props.onClick}>
-        <title id="clear-title">{a11yTitle}</title>
-        <g fill="none">
-          <line strokeWidth="2" x1="14" y1="14" x2="34" y2="34"/>
-          <line strokeWidth="2" x1="14" y1="34" x2="34" y2="14"/>
-        </g>
-      </svg>
+      <a href="#" onClick={this._handleClick} role={this.props.a11yRole}
+        aria-labelledby={this.props.a11yTitleId}>
+        <title id={this.props.a11yTitleId}>{a11yTitle}</title>
+        <svg className={className} viewBox="0 0 48 48"
+          version="1.1" >
+            <g fill="none">
+              <line strokeWidth="2" x1="14" y1="14" x2="34" y2="34"/>
+              <line strokeWidth="2" x1="14" y1="34" x2="34" y2="14"/>
+            </g>
+        </svg>
+      </a>
     );
   }
 

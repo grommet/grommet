@@ -15,7 +15,7 @@
   }
 
   @include media-query(palm) {
-    max-width: 100vw;
+    max-width: 100%;
   }
 
   pre {

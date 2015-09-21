@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
+var Section = require('grommet/components/Section');
 var Header = require('grommet/components/Header');
 var Tiles = require('grommet/components/Tiles');
 var Tile = require('grommet/components/Tile');
@@ -15,7 +16,6 @@ function getLabel(label, count, colorIndex) {
   return {
     "label": label,
     "value": count,
-    "units": count > 1 ? "Tasks" : 'Task',
     "colorIndex": colorIndex
   };
 }
@@ -59,15 +59,16 @@ var TodoAppDashboard = React.createClass({
 
     var tasks = this.state.tasks.map(function(task, index) {
 
-      tasksMap[task.type] += 1;
+      tasksMap[task.status] += 1;
 
       return (
         <tr id={index} key={"task_" + index}>
-          <td width="10%"><Status value={task.type} small={true} /></td>
+          <td width="10%"><Status value={task.status} small={true} /></td>
           <td>{task.item}</td>
           <td width="10%">
             <CloseIcon onClick={this._onRequestForDelete.bind(this, index)}
-              a11yRole="button" a11yTitle={"Delete " + task.item + " task"} />
+              a11yTitleId={'delete-icon-' + index}
+              a11yTitle={"Delete " + task.item + " task"} />
           </td>
         </tr>
       );
@@ -82,14 +83,14 @@ var TodoAppDashboard = React.createClass({
     }
 
     return (
-      <div>
+      <Section primary={true}>
         <Tiles fill={true} flush={false}>
           <Tile align="center">
             <Meter series={[
-              getLabel('Fix Now', tasksMap.error, 'error'),
-              getLabel('Remember', tasksMap.warning, 'warning'),
-              getLabel('Enjoy', tasksMap.ok, 'ok')
-            ]} type="circle" />
+              getLabel('Past Due', tasksMap.error, 'error'),
+              getLabel('Due Soon', tasksMap.warning, 'warning'),
+              getLabel('Done', tasksMap.ok, 'ok')
+            ]} type="circle" units="Tasks" />
           </Tile>
           <Tile align="start">
             <Header><h3>My Tasks:</h3></Header>
@@ -103,7 +104,7 @@ var TodoAppDashboard = React.createClass({
           </Tile>
         </Tiles>
         {addTask}
-      </div>
+      </Section>
     );
   }
 });

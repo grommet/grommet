@@ -27,30 +27,11 @@ var _onKeyboardAcceleratorKeyPress = function (e) {
   for (var i = _listenersCounter - 1; i >= 0; i--) {
     var id = _listeners[i];
     var handlers = _keyboardAccelerators[id].handlers;
-    var downs = _keyboardAccelerators[id].downs;
-    if (handlers.hasOwnProperty(key) && !downs[KEYS.shift]) {
-      var ret = handlers[key](e);
-      if (ret) {
+    if (handlers.hasOwnProperty(key)) {
+      if (handlers[key](e)) {
         break;
       }
     }
-    downs[e.keyCode] = true;
-  }
-};
-
-var _onKeyboardAcceleratorKeyUp = function (e) {
-  for (var i = _listenersCounter - 1; i >= 0; i--) {
-    var id = _listeners[i];
-    var handlers = _keyboardAccelerators[id].handlers;
-    var downs = _keyboardAccelerators[id].downs;
-    if (downs[KEYS.shift] && downs[KEYS.left] &&
-      handlers.shiftLeft) {
-      handlers.shiftLeft(e);
-    } else if (downs[KEYS.shift] && downs[KEYS.right] &&
-      handlers.shiftRight) {
-      handlers.shiftRight(e);
-    }
-    downs[e.keyCode] = false;
   }
 };
 
@@ -63,9 +44,7 @@ var KeyboardAccelerators = {
   _initKeyboardAccelerators: function () {
     var id = this.getDOMNode().getAttribute('data-reactid');
     _keyboardAccelerators[id] = {
-      handlers: {},
-      listening: false,
-      downs: []
+      handlers: {}
     };
   },
 
@@ -131,7 +110,6 @@ var KeyboardAccelerators = {
     if (keys > 0) {
       if (!_isKeyboardAcceleratorListening) {
         window.addEventListener("keydown", _onKeyboardAcceleratorKeyPress);
-        window.addEventListener("keyup", _onKeyboardAcceleratorKeyUp);
         _isKeyboardAcceleratorListening = true;
       }
       if (!this._isComponentListening()) {
@@ -174,7 +152,6 @@ var KeyboardAccelerators = {
 
     if (_listenersCounter === 0) {
       window.removeEventListener("keydown", _onKeyboardAcceleratorKeyPress);
-      window.removeEventListener("keyup", _onKeyboardAcceleratorKeyUp);
       _isKeyboardAcceleratorListening = false;
     }
   },

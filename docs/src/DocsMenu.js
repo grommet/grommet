@@ -10,7 +10,7 @@ var DocsMenu = React.createClass({
     contents: React.PropTypes.arrayOf(React.PropTypes.object),
     direction: React.PropTypes.oneOf(['column', 'row']),
     onClick: React.PropTypes.func,
-    title: React.PropTypes.string
+    title: React.PropTypes.object
   },
 
   contextTypes: {

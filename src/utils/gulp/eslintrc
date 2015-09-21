@@ -60,6 +60,7 @@ rules:
   no-extend-native: 0
   block-scoped-var: 0
   quotes: 0
+  jsx-quotes: 0
 
   # REACT DISABLED
   react/display-name: 0
@@ -75,7 +76,6 @@ rules:
   react/jsx-curly-spacing: 1
   react/jsx-no-duplicate-props: 1
   react/jsx-no-undef: 1
-  react/jsx-quotes: 1
   react/jsx-uses-react: 1
   react/jsx-uses-vars: 1
   react/no-danger: 1

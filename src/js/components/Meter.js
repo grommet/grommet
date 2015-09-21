@@ -1,6 +1,8 @@
 // (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
+var IntlMixin = require('../mixins/GrommetIntlMixin');
+
 var Legend = require('./Legend');
 
 var CLASS_ROOT = "meter";
@@ -44,6 +46,16 @@ function singleIndicatorCommands (centerX, centerY, radius, startAngle, endAngle
     "L", point.x, point.y
   ].join(" ");
   return d;
+}
+
+function getThresholdsString(thresholds) {
+  var thresholdsArray = [', Thresholds: '];
+
+  thresholds.forEach(function (threshold) {
+    thresholdsArray.push(threshold.label + ': ' + threshold.value);
+  });
+
+  return thresholdsArray.join(' ');
 }
 
 var Meter = React.createClass({
@@ -90,12 +102,22 @@ var Meter = React.createClass({
     type: React.PropTypes.oneOf(['bar', 'arc', 'circle', 'spiral']),
     units: React.PropTypes.string,
     value: React.PropTypes.number,
-    vertical: React.PropTypes.bool
+    vertical: React.PropTypes.bool,
+    a11yRole: React.PropTypes.string,
+    a11yTitle: React.PropTypes.string,
+    a11yTitleId: React.PropTypes.string,
+    a11yDescId: React.PropTypes.string,
+    a11yDesc: React.PropTypes.string
   },
+
+  mixins: [IntlMixin],
 
   getDefaultProps: function () {
     return {
-      type: 'bar'
+      type: 'bar',
+      a11yRole: 'img',
+      a11yTitleId: 'meter-title',
+      a11yDescId: 'meter-desc'
     };
   },
 
@@ -406,6 +428,23 @@ var Meter = React.createClass({
     return commands;
   },
 
+  _buildPath: function (commands, interactive, item, index, classes) {
+    if (interactive) {
+      var listeners = this._interactionListeners(interactive, item, index);
+
+      return (
+        <path key={index} className={classes.join(' ')} d={commands} tabIndex="0"
+          onFocus={listeners.onOver} onBlur={listeners.onOut}
+          onMouseOver={listeners.onOver} onMouseOut={listeners.onOut}
+          onClick={listeners.onClick} role="img" aria-labelledby={this.props.a11yDescId} />
+      );
+    } else {
+      return (
+        <path key={index} className={classes.join(' ')} d={commands} />
+      );
+    }
+  },
+
   _renderBar: function (series, interactive) {
     var start = 0;
     var minRemaining = this.state.min.value;
@@ -425,13 +464,7 @@ var Meter = React.createClass({
       commands = this._barCommands(start, distance);
       start += distance;
 
-      var listeners = this._interactionListeners(interactive, item, index);
-
-      return (
-        <path key={index} className={classes.join(' ')} d={commands}
-          onMouseOver={listeners.onOver} onMouseOut={listeners.onOut}
-          onClick={listeners.onClick} />
-      );
+      return this._buildPath(commands, interactive, item, index, classes);
     }, this);
 
     if (paths.length === 0) {
@@ -475,14 +508,7 @@ var Meter = React.createClass({
 
       startAngle = endAngle;
 
-      var listeners = this._interactionListeners(interactive, item, index);
-
-      return (
-        <path key={item.label || index} fill="none"
-          className={classes.join(' ')} d={commands}
-          onMouseOver={listeners.onOver} onMouseOut={listeners.onOut}
-          onClick={listeners.onClick} />
-      );
+      return this._buildPath(commands, interactive, item, index, classes);
     }, this);
 
     if (paths.length === 0) {
@@ -523,14 +549,7 @@ var Meter = React.createClass({
 
       radius += SPIRAL_THICKNESS;
 
-      var listeners = this._interactionListeners(interactive, item, index);
-
-      return (
-        <path key={item.label || index} fill="none"
-          className={classes.join(' ')} d={commands}
-          onMouseOver={listeners.onOver} onMouseOut={listeners.onOut}
-          onClick={listeners.onClick} />
-      );
+      return this._buildPath(commands, interactive, item, index, classes);
     }, this);
 
     if (paths.length === 0) {
@@ -584,7 +603,7 @@ var Meter = React.createClass({
     return seriesIndicator;
   },
 
-  _renderActive: function () {
+  _getActiveFields: function () {
     var fields;
     if (null === this.state.activeIndex) {
       fields = {value: this.state.total, label: 'Total'};
@@ -592,6 +611,13 @@ var Meter = React.createClass({
       var active = this.state.series[this.state.activeIndex];
       fields = {value: active.value, label: active.label};
     }
+
+    return fields;
+  },
+
+  _renderActive: function () {
+
+    var fields = this._getActiveFields();
     var units;
     if (this.props.units) {
       units = (
@@ -601,8 +627,9 @@ var Meter = React.createClass({
       );
     }
     return (
-      <div className={CLASS_ROOT + "__active"}>
-        <span className={CLASS_ROOT + "__active-value large-number-font"}>
+      <div aria-hidden="true" role="presentation" className={CLASS_ROOT + "__active"}>
+        <span
+          className={CLASS_ROOT + "__active-value large-number-font"}>
           {fields.value}
           {units}
         </span>
@@ -686,17 +713,18 @@ var Meter = React.createClass({
     var labels;
     var width;
     var height;
+
     if ('arc' === this.props.type || 'circle' === this.props.type) {
-      values = this._renderArcOrCircle(this.state.series, true);
+      values = this._renderArcOrCircle(this.state.series, this.props.series);
       thresholds = this._renderArcOrCircle(this.state.thresholds);
       if (this.state.series.length === 1) {
         singleIndicator = this._renderSingleIndicator(this.state.series);
       }
     } else if ('bar' === this.props.type) {
-      values = this._renderBar(this.state.series, true);
+      values = this._renderBar(this.state.series, this.props.series);
       thresholds = this._renderBar(this.state.thresholds);
     } else if ('spiral' === this.props.type) {
-      values = this._renderSpiral(this.state.series, true);
+      values = this._renderSpiral(this.state.series, this.props.series);
       if (this.state.series.length === 1) {
         singleIndicator = this._renderSingleIndicator(this.state.series);
       }
@@ -750,21 +778,59 @@ var Meter = React.createClass({
       classes.push(CLASS_ROOT + "--legend-" + this.state.legendPlacement);
     }
 
+    var a11yRole = this.props.series ? 'chart' : this.props.a11yRole;
+
+    var defaultTitle;
+    if (!this.props.a11yTitle) {
+      defaultTitle = [
+        'Meter, ',
+        'Type: ',
+        (this.props.vertical ? 'vertical ' : '') + this.props.type
+      ].join(' ').trim();
+    }
+    var a11yTitle = this.getGrommetIntlMessage(
+      typeof this.props.a11yTitle !== "undefined" ?
+        this.props.a11yTitle : defaultTitle);
+
+    var defaultA11YDesc;
+    if (this.props.a11yTitle !== "undefined") {
+      var fields = this._getActiveFields();
+      defaultA11YDesc = [
+        ', Value: ',
+        fields.value,
+        this.props.units || '',
+        fields.label,
+        this.state.min.label ? ', Minimum: ' + this.state.min.label : '',
+        this.state.max.label ? ', Maximum: ' + this.state.max.label : '',
+        this.props.threshold ? ', Threshold: ' + this.props.threshold : '',
+        this.props.thresholds ? getThresholdsString(this.props.thresholds) : ''
+      ].join(' ').trim();
+    }
+
+    var a11yDesc = this.getGrommetIntlMessage(
+      typeof this.props.a11yTitle !== "undefined" ?
+        this.props.a11yTitle : defaultA11YDesc);
+
     return (
       <div className={classes.join(' ')}>
         <div ref="activeGraphic" className={CLASS_ROOT + "__active-graphic"}>
           <div className={CLASS_ROOT + "__labeled-graphic"}>
-            <svg className={CLASS_ROOT + "__graphic"}
-              viewBox={"0 0 " + this.state.viewBoxWidth +
-                " " + this.state.viewBoxHeight}
-              preserveAspectRatio="xMidYMid meet" width={width} height={height}>
-              {thresholds}
-              <g className={CLASS_ROOT + "__values"}>
-                {values}
-              </g>
-              {labels}
-              {singleIndicator}
-            </svg>
+            <a href="#" role={a11yRole} tabIndex="0"
+              aria-labelledby={this.props.a11yTitleId + ' ' + this.props.a11yDescId}>
+              <title id={this.props.a11yTitleId}>{this.getGrommetIntlMessage(a11yTitle)}</title>
+              <svg className={CLASS_ROOT + "__graphic"}
+                viewBox={"0 0 " + this.state.viewBoxWidth +
+                  " " + this.state.viewBoxHeight}
+                preserveAspectRatio="xMidYMid meet" width={width} height={height}>
+                <desc id={this.props.a11yDescId}>{this.getGrommetIntlMessage(a11yDesc)}</desc>
+                {thresholds}
+                <g className={CLASS_ROOT + "__values"}>
+                  {values}
+                </g>
+                {labels}
+                {singleIndicator}
+              </svg>
+            </a>
             {minMax}
           </div>
           {active}

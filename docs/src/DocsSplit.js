@@ -3,6 +3,7 @@
 var React = require('react');
 var Link = require('react-router').Link;
 var Split = require('grommet/components/Split');
+var Article = require('grommet/components/Article');
 var Sidebar = require('grommet/components/Sidebar');
 var Header = require('grommet/components/Header');
 var Title = require('grommet/components/Title');
@@ -38,7 +39,7 @@ var DocsSplit = React.createClass({
       var doc = this.refs.doc.getDOMNode();
       var hash = window.location.hash.slice(1);
       if (hash) {
-        var anchor = doc.querySelectorAll('[id=' + hash + ']')[0];
+        var anchor = document.querySelectorAll('[id=' + hash + ']')[0];
         var scrollParent = DOM.findScrollParents(anchor)[0];
         scrollParent.scrollTop = anchor.offsetTop;
       } else {
@@ -123,10 +124,12 @@ var DocsSplit = React.createClass({
       //header = <Header large={true} />;
     }
     return (
-      <div ref="doc" className="docs-split__doc">
-        {header}
-        {this.props.children}
-      </div>
+      <Article primary={true}>
+        <div ref="doc" className="docs-split__doc">
+          {header}
+          {this.props.children}
+        </div>
+      </Article>
     );
   },
 
