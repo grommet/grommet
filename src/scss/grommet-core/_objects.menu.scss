@@ -32,7 +32,7 @@
       color: $brand-color-darker;
     }
   }
-  
+
   &--full {
     max-width: 100%;
     width: 100vw;
@@ -147,13 +147,13 @@
         > *:not(.control-icon):not(.button) {
           margin-left: 0px;
           margin-right: $inuit-base-spacing-unit;
-          
+
           &:last-child {
             margin-right: 0px;
           }
         }
       }
-      
+
       &.box--direction-row.box--responsive {
         @include media-query(palm) {
           > * {
