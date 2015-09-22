@@ -47,7 +47,7 @@ var Home = React.createClass({
         <HomeSection colorIndex="neutral-1">
           <Headline>Create once and deliver everywhere.</Headline>
           <Headline small={true}>Application experiences that look great while solving problems.</Headline>
-          <Menu direction="row" justify="center">
+          <Menu direction="row" justify="center" full="horizontal">
             <Link to="design">
               <Button label="See more examples" onClick={this._onClick} large={true} primary={true} />
             </Link>
@@ -62,7 +62,7 @@ var Home = React.createClass({
         <HomeSection colorIndex="neutral-2" texture={'url(img/home_features.png)'}>
           <Headline>So little gets you sooooooo much!</Headline>
           <Headline small={true}>We’ve tried it all in enterprise and we think we’ve got a good foundation.</Headline>
-          <Menu direction="row" justify="center">
+          <Menu direction="row" justify="center" full="horizontal">
             <Link to="develop_architecture">
               <Button label="Our architecture" onClick={this._onClick} large={true} primary={true} />
             </Link>
@@ -76,7 +76,7 @@ var Home = React.createClass({
           <Headline>Ready for your Design Workflow.</Headline>
           <Headline small={true}>All the resources you could possibly need! Sticker sheets, Stencils,
             PSDs, and more.</Headline>
-          <Menu direction="row" justify="center">
+          <Menu direction="row" justify="center" full="horizontal">
             <Link to="design">
               <Button label="Start designing" onClick={this._onClick} large={true} primary={true} />
             </Link>
@@ -112,7 +112,7 @@ var Home = React.createClass({
         <HomeSection colorIndex="neutral-3">
           <Headline>Develop your next project with Grommet.</Headline>
           <Headline small={true}>Let’s get an application on your local environment!</Headline>
-          <Menu direction="row" justify="center">
+          <Menu direction="row" justify="center" full="horizontal">
             <Link to="develop_getstarted">
               <Button label="Start project" onClick={this._onClick} large={true} primary={true} />
             </Link>
@@ -140,7 +140,7 @@ var Home = React.createClass({
           <Headline>Built with the best stuff.</Headline>
           <Headline small={true}>The tools you know and love, all packaged together in one
             easy-to-use solution.</Headline>
-          <Menu direction="row" justify="center">
+          <Menu direction="row" justify="center" full="horizontal">
             <a href="https://github.com/HewlettPackard/grommet">
               <Button label="View project on Github" onClick={this._onClick} large={true} primary={true} />
             </a>
@@ -188,7 +188,7 @@ var Home = React.createClass({
         <HomeSection colorIndex="neutral-2">
           <Headline>Let’s keep in touch!</Headline>
           <Headline small={true}>Follow us on the Grommet blog to get the latest updates.</Headline>
-          <Menu direction="row" justify="center">
+          <Menu direction="row" justify="center" full="horizontal">
             <Link to="develop_getstarted">
               <Button label="Grommet blog" onClick={this._onClick} large={true} primary={true} />
             </Link>
