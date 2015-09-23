@@ -39,6 +39,6 @@ module.exports = function(gulp, options) {
     return gulp.src(options.jsAssets || [])
       .pipe(eslint(eslintRules))
       .pipe(eslint.formatEach())
-      .pipe(eslint.failOnError()).on('error', failLintBuild);
+      .pipe(eslint.failOnError());
   });
 };
