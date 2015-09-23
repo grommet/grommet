@@ -3,10 +3,6 @@ var eslint = require('gulp-eslint');
 var merge = require('lodash/object/merge');
 var shelljs = require('shelljs');
 
-function failLintBuild() {
-  process.exit(1);
-}
-
 function scssLintExists() {
   return shelljs.which('scss-lint');
 }
@@ -24,7 +20,7 @@ module.exports = function(gulp, options) {
         var scsslint = require('gulp-scss-lint');
         return gulp.src(options.scssAssets || []).pipe(scsslint({
           'config': scssLintPath
-        })).pipe(scsslint.failReporter()).on('error', failLintBuild);
+        })).pipe(scsslint.failReporter());
       } else {
         console.error('[scsslint] scsslint skipped!');
         console.error('[scsslint] scss-lint is not installed. Please install ruby and the ruby gem scss-lint.');
@@ -39,6 +35,6 @@ module.exports = function(gulp, options) {
     return gulp.src(options.jsAssets || [])
       .pipe(eslint(eslintRules))
       .pipe(eslint.formatEach())
-      .pipe(eslint.failOnError()).on('error', failLintBuild);
+      .pipe(eslint.failOnError());
   });
 };
