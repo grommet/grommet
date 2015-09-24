@@ -53,6 +53,7 @@ var SectionDoc = require('./components/SectionDoc');
 var SidebarDoc = require('./components/SidebarDoc');
 var SplitDoc = require('./components/SplitDoc');
 var StatusDoc = require('./components/StatusDoc');
+var TabsDoc = require('./components/TabsDoc');
 var TableDoc = require('./components/TableDoc');
 var TilesDoc = require('./components/TilesDoc');
 var TitleDoc = require('./components/TitleDoc');
@@ -115,6 +116,7 @@ var CONTENTS = [
       {route: 'develop_sidebar', label: 'Sidebar', component: SidebarDoc},
       {route: 'develop_split', label: 'Split', component: SplitDoc},
       {route: 'develop_status', label: 'Status', component: StatusDoc},
+      {route: 'develop_tabs', label: 'Tabs', component: TabsDoc},
       {route: 'develop_table', label: 'Table', component: TableDoc},
       {route: 'develop_tiles', label: 'Tiles', component: TilesDoc},
       {route: 'develop_title', label: 'Title', component: TitleDoc},
