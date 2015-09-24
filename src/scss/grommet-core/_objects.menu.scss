@@ -288,6 +288,7 @@
 
 @include media-query(palm) {
   .menu__drop {
+    max-width: 100%;
     width: 100vw;
 
     //.menu__control {
