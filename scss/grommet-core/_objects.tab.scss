@@ -1,0 +1,28 @@
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+
+.tab {
+
+  padding: halve($inuit-base-spacing-unit);
+
+  &__label {
+    cursor: pointer;
+    padding-bottom: halve($inuit-base-spacing-unit);
+    font-weight: 600;
+    color: $secondary-text-color;
+  }
+
+  &--active {
+
+    .tab__label {
+      color: #000;
+      border-bottom: 4px solid #000;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    .tab__label {
+      border-bottom: 4px solid;
+    }
+  }
+}
