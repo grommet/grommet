@@ -1,7 +1,13 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 .header {
-  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 960px;
+ 
+  &--full-width {
+     width: 100%;
+  }
 
   &.box {
     > *:not(:last-child) {

@@ -13,6 +13,7 @@ var Header = React.createClass({
   propTypes: merge({
     fixed: React.PropTypes.bool,
     float: React.PropTypes.bool,
+    fullWidth: React.PropTypes.bool,
     large: React.PropTypes.bool,
     size: React.PropTypes.oneOf(['small', 'medium', 'large']),
     small: React.PropTypes.bool,
@@ -25,6 +26,7 @@ var Header = React.createClass({
     return {
       pad: 'none',
       direction: 'row',
+      fullWidth: true,
       align: 'center',
       responsive: false,
       tag: 'header'
@@ -90,6 +92,9 @@ var Header = React.createClass({
       classes.push(CLASS_ROOT + "--float");
       containerClasses.push(CLASS_ROOT + "__container--float");
     }
+    if (this.props.fullWidth) {
+       classes.push(CLASS_ROOT + "--full-width");
+     }
     if (this.state.size) {
       classes.push(CLASS_ROOT + "--" + this.state.size);
     }
