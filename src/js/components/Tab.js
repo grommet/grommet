@@ -25,10 +25,10 @@ var Tab = React.createClass({
     }
 
     return (
-      <li role="tab" className={classes.join(' ')} id={this.props.id}
-        aria-expanded={this.props.active} aria-selected={this.props.active}>
-        <a href="#" className={CLASS_ROOT + "__link"} aria-labelledby={this.props.id}
-          onClick={this._onClickTab}>
+      <li className={classes.join(' ')} id={this.props.id}>
+        <a role="tab" href="#" onClick={this._onClickTab}
+          aria-expanded={this.props.active} aria-selected={this.props.active}
+          className={CLASS_ROOT + "__link"} aria-labelledby={this.props.id}>
           <label className={CLASS_ROOT + '__label'} htmlFor={this.props.id}>
             {this.props.title}
           </label>
