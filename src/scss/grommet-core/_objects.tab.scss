@@ -4,6 +4,17 @@
 
   padding: halve($inuit-base-spacing-unit);
 
+  a {
+    text-decoration: none;
+
+    &:focus {
+
+      .tab__label {
+        border-bottom: 4px solid;
+      }
+    }
+  }
+
   &__label {
     cursor: pointer;
     padding-bottom: halve($inuit-base-spacing-unit);
@@ -21,6 +32,7 @@
 
   &:hover,
   &:focus {
+
     .tab__label {
       border-bottom: 4px solid;
     }

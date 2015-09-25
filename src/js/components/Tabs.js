@@ -2,7 +2,8 @@
 
 var React = require('react');
 
-var KeyboardAccelerators = require('../mixins/KeyboardAccelerators');
+var IntlMixin = require('../mixins/GrommetIntlMixin');
+
 var Box = require('./Box');
 
 var CLASS_ROOT = "tabs";
@@ -13,7 +14,7 @@ var Tabs = React.createClass({
     activeIndex: React.PropTypes.number
   },
 
-  mixins: [KeyboardAccelerators],
+  mixins: [IntlMixin],
 
   getDefaultProps: function () {
     return {
@@ -27,27 +28,6 @@ var Tabs = React.createClass({
     };
   },
 
-  componentDidMount: function () {
-    this.startListeningToKeyboard({
-      enter: this._processTab
-    });
-  },
-
-  componentWillUnmount: function () {
-    this.stopListeningToKeyboard({
-      enter: this._processTab
-    });
-  },
-
-  _processTab: function(event) {
-    var tabs = this.refs.tabs.getDOMNode().childNodes;
-    Array.prototype.forEach.call(tabs, function (currentTab, index) {
-      if (currentTab === event.target) {
-        this._activateTab(index);
-      }
-    }.bind(this));
-  },
-
   _activateTab: function (index) {
     this.setState({activeIndex: index});
   },
@@ -56,6 +36,7 @@ var Tabs = React.createClass({
     var classes = [CLASS_ROOT];
 
     var activeContainer;
+    var activeTitle;
 
     var tabs = React.Children.map(this.props.children, function(tab, index) {
 
@@ -65,6 +46,7 @@ var Tabs = React.createClass({
 
       if (isTabActive) {
         activeContainer = tabProps.children;
+        activeTitle = tabProps.title;
       }
 
       return React.cloneElement(tab, {
@@ -78,12 +60,15 @@ var Tabs = React.createClass({
 
     return (
       <div role="tablist">
-        <ul ref="tabs" className={classes.join(' ')}>
+        <ul className={classes.join(' ')}>
           {tabs}
         </ul>
-        <div ref="tabContent" aria-labelledby={"tabs-" + this.state.activeIndex}
-          role="tabpanel" tabIndex="0">
-          <Box className={CLASS_ROOT + '__content'} >
+        <div ref="tabContent" tabIndex="0" aria-labelledby="content_description"
+          role="tabpanel">
+          <title id="content_description">
+            {activeTitle + ' ' + this.getGrommetIntlMessage('Tab Contents')}
+          </title>
+          <Box className={CLASS_ROOT + '__content'} aria-labelledby="content_description">
             {activeContainer}
           </Box>
         </div>
