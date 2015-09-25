@@ -18,22 +18,25 @@ var Tab = React.createClass({
 
   componentDidMount: function () {
     this.startListeningToKeyboard({
-      space: this._onClickTab
+      space: this._processSpace
     });
   },
 
   componentWillUnmount: function () {
     this.stopListeningToKeyboard({
-      space: this._onClickTab
+      space: this._processSpace
     });
   },
 
-  _onClickTab: function (event) {
-    console.log(event.target);
+  _processSpace: function (event) {
     if (event.target === this.refs.tab.getDOMNode()) {
-      event.preventDefault();
-      this.props.onRequestForActive();
+      this._onClickTab(event);
     }
+  },
+
+  _onClickTab: function (event) {
+    event.preventDefault();
+    this.props.onRequestForActive();
   },
 
   render: function() {
