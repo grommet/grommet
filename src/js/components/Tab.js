@@ -2,6 +2,8 @@
 
 var React = require('react');
 
+var KeyboardAccelerators = require('../mixins/KeyboardAccelerators');
+
 var CLASS_ROOT = "tab";
 
 var Tab = React.createClass({
@@ -12,9 +14,26 @@ var Tab = React.createClass({
     id: React.PropTypes.string
   },
 
+  mixins: [KeyboardAccelerators],
+
+  componentDidMount: function () {
+    this.startListeningToKeyboard({
+      space: this._onClickTab
+    });
+  },
+
+  componentWillUnmount: function () {
+    this.stopListeningToKeyboard({
+      space: this._onClickTab
+    });
+  },
+
   _onClickTab: function (event) {
-    event.preventDefault();
-    this.props.onRequestForActive();
+    console.log(event.target);
+    if (event.target === this.refs.tab.getDOMNode()) {
+      event.preventDefault();
+      this.props.onRequestForActive();
+    }
   },
 
   render: function() {
@@ -26,7 +45,7 @@ var Tab = React.createClass({
 
     return (
       <li className={classes.join(' ')} id={this.props.id}>
-        <a role="tab" href="#" onClick={this._onClickTab}
+        <a ref="tab" role="tab" href="#" onClick={this._onClickTab}
           aria-expanded={this.props.active} aria-selected={this.props.active}
           className={CLASS_ROOT + "__link"} aria-labelledby={this.props.id}>
           <label className={CLASS_ROOT + '__label'} htmlFor={this.props.id}>
