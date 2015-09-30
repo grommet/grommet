@@ -164,7 +164,6 @@ var Menu = React.createClass({
     collapse: React.PropTypes.bool, // deprecated, remove in 0.5
     dropAlign: Drop.alignPropType,
     dropColorIndex: React.PropTypes.string,
-    full: React.PropTypes.bool,
     icon: React.PropTypes.node,
     inline: React.PropTypes.bool,
     label: React.PropTypes.string,
@@ -184,7 +183,6 @@ var Menu = React.createClass({
       closeOnClick: true,
       direction: 'column',
       dropAlign: {top: 'top', left: 'left'},
-      full: false,
       pad: 'none',
       small: false,
       responsive: true
@@ -419,9 +417,6 @@ var Menu = React.createClass({
     }
     if (this.props.primary) {
       classes.push(prefix + "--primary");
-    }
-    if (this.props.full) {
-      classes.push(prefix + "--full");
     }
 
     return classes;

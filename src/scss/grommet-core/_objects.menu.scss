@@ -32,11 +32,6 @@
       color: $brand-color-darker;
     }
   }
-  
-  &--full {
-    max-width: 100%;
-    width: 100vw;
-  }
 
   &__control {
     cursor: pointer;
@@ -147,13 +142,13 @@
         > *:not(.control-icon):not(.button) {
           margin-left: 0px;
           margin-right: $inuit-base-spacing-unit;
-          
+
           &:last-child {
             margin-right: 0px;
           }
         }
       }
-      
+
       &.box--direction-row.box--responsive {
         @include media-query(palm) {
           > * {
@@ -293,6 +288,7 @@
 
 @include media-query(palm) {
   .menu__drop {
+    max-width: 100%;
     width: 100vw;
 
     //.menu__control {
