@@ -25,12 +25,18 @@ var ListItem = React.createClass({
     if (this.props.className) {
       classes.push(this.props.className);
     }
-
-    return (
-      <li className={classes.join(' ')} onClick={this.props.onClick}>
+    var image;
+    if (this.props.image) {
+      image = (
         <span className={CLASS_ROOT + "__image"}>
           {this.props.image}
         </span>
+      );
+    }
+
+    return (
+      <li className={classes.join(' ')} onClick={this.props.onClick}>
+        {image}
         <span className={CLASS_ROOT + "__text"}>
           <span className={CLASS_ROOT + "__label"}>{this.props.label}</span>
           <span className={CLASS_ROOT + "__annotation"}>{this.props.annotation}</span>

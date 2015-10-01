@@ -1,18 +1,15 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-var merge = require('lodash/object/merge');
 var React = require('react');
 var App = require('grommet/components/App');
 var IntlMixin = require('grommet/mixins/GrommetIntlMixin');
-var Rest = require('grommet/utils/Rest');
+var Finder = require('./Finder');
 var People = require('./People');
+var Groups = require('./Groups');
+var Locations = require('./Locations');
 var Person = require('./Person');
-
-var LDAP_BASE_PARAMS = {
-  url: encodeURIComponent('ldap://ldap.hp.com'),
-  base: encodeURIComponent('ou=people,o=hp.com'),
-  scope: 'sub'
-};
+var Group = require('./Group');
+var LocationComponent = require('./Location');
 
 /*
  * The PeopleFinder module controls the browser location and interacts with the
@@ -24,57 +21,48 @@ var PeopleFinder = React.createClass({
   mixins: [IntlMixin],
 
   getInitialState: function () {
-    var url = window.location.href;
-
-    var searchText = '';
-    var parts = url.split('?search=');
-    if (parts.length > 1) {
-      searchText = decodeURIComponent(parts[1]);
-    }
-
-    var uid = null;
-    parts = url.split('?uid=');
-    if (parts.length > 1) {
-      uid = decodeURIComponent(parts[1]);
-    }
+    var params = this._paramsFromQuery(window.location.search);
+    var searchText = params.search || '';
+    var scope = params.scope || 'People';
+    var id = params.id || null;
 
     return {
       initial: (! searchText),
-      changing: false,
+      scope: scope,
       searchText: searchText,
-      people: [],
-      uid: uid,
-      person: {}
+      id: id
     };
   },
 
   componentDidMount: function () {
-    if (this.state.searchText) {
-      this._getPeople(this.state.searchText);
-    }
-    if (this.state.uid) {
-      this._getPerson(this.state.uid);
-    }
     window.onpopstate = this._popState;
   },
 
-  componentDidUnmount: function () {
-    clearTimeout(this._searchTimer);
+  _paramsFromQuery: function (query) {
+    var params = {};
+    query.replace(/(^\?)/,'').split('&').forEach(function (p) {
+      var parts = p.split('=');
+      params[parts[0]] = decodeURIComponent(parts[1]);
+    });
+    return params;
   },
 
   _pushState: function () {
-    var label = this.getGrommetIntlMessage('People Finder');
-    var url = window.location.href.split('?')[0];
-    if (this.state.uid) {
-      url += '?uid=' + encodeURIComponent(this.state.uid);
-      label = this.state.uid;
-    } else if (this.state.searchText) {
-      url += '?search=' + encodeURIComponent(this.state.searchText);
+    var url = window.location.href.split('?')[0] + '?';
+    url += 'scope=' + encodeURIComponent(this.state.scope);
+    var label = this.state.scope + ' Finder';
+    if (this.state.searchText) {
+      url += '&search=' + encodeURIComponent(this.state.searchText);
       label = this.state.searchText;
     }
+    if (this.state.id) {
+      url += '&id=' + encodeURIComponent(this.state.id);
+      label = this.state.id;
+    }
     var state = {
+      scope: this.state.scope,
       searchText: this.state.searchText,
-      uid: this.state.uid
+      id: this.state.id
     };
     window.history.pushState(state, label, url);
   },
@@ -82,102 +70,97 @@ var PeopleFinder = React.createClass({
   _popState: function (event) {
     if (event.state) {
       this.setState({
-        uid: event.state.uid,
+        scope: event.state.scope,
         searchText: event.state.searchText,
-        person: {},
-        people: []
+        id: event.state.id
       });
-      if (event.state.uid) {
-        this._getPerson(event.state.uid);
-      }
-      if (event.state.searchText) {
-        this._getPeople(event.state.searchText);
-      }
     }
-  },
-
-  _onPeopleResponse: function (err, res) {
-    if (err) {
-      this.setState({people: [], error: err, changing: false});
-    } else if (res.ok && this.state.searchText) {
-      // don't keep result if we don't have search text anymore
-      var result = res.body;
-      this.setState({people: result, error: null, changing: false});
-    }
-  },
-
-  _getPeople: function (searchText) {
-    this.setState({changing: true});
-    // debounce
-    clearTimeout(this._searchTimer);
-    this._searchTimer = setTimeout(function () {
-      var filter;
-      if (searchText[0] === '(') {
-        // assume this is already a formal LDAP filter
-        filter = searchText;
-      } else {
-        // handle "Last, First" syntax
-        if (searchText.indexOf(',') !== -1) {
-          searchText = searchText.replace(/(.+),\s*(.+)/, "$2 $1");
-        }
-        filter = '(|(cn=*' + searchText + '*)(uid=*' + searchText + '*))';
-      }
-      var params = merge({}, LDAP_BASE_PARAMS, {
-        filter: filter,
-        attributes: ['cn', 'uid', 'hpPictureThumbnailURI', 'hpBusinessUnit']
-      });
-      Rest.get('/ldap/', params).end(this._onPeopleResponse);
-    }.bind(this), 500);
   },
 
   _onSearchText: function (text) {
     this.setState({initial: (! text), searchText: text}, this._pushState);
-    if (! text) {
-      this.setState({people: [], changing: false});
-    } else {
-      this._getPeople(text);
-    }
   },
 
-  _onPersonResponse: function (err, res) {
-    if (err) {
-      this.setState({person: {}, error: err});
-    } else if (res.ok) {
-      var result = res.body;
-      this.setState({person: result[0], error: null});
-    }
-  },
-
-  _getPerson: function (uid) {
-    var params = merge({}, LDAP_BASE_PARAMS, {
-      filter: '(uid=' + uid + ')'
-    });
-    Rest.get('/ldap/', params).end(this._onPersonResponse);
+  _onScope: function (scope) {
+    this.setState({scope: scope}, this._pushState);
   },
 
   _onSelectPerson: function (person) {
-    this.setState({uid: person.uid, person: {}}, this._pushState);
-    this._getPerson(person.uid);
+    this.setState({id: person.uid, scope: 'People'}, this._pushState);
   },
 
-  _onClosePerson: function () {
-    this.setState({uid: null, person: {}}, this._pushState);
+  _onSelectGroup: function (group) {
+    this.setState({id: group.cn, scope: 'Groups'}, this._pushState);
+  },
+
+  _onSelectLocation: function (locationArg) {
+    this.setState({id: locationArg.hpRealEstateID, scope: 'Locations'}, this._pushState);
+  },
+
+  _onCloseItem: function () {
+    this.setState({id: null}, this._pushState);
   },
 
   render: function() {
     var contents;
-    if (this.state.uid) {
+    var title = this.state.scope + " Finder";
+    var list;
+    if ('People' === this.state.scope) {
+
+      if (this.state.id) {
+        contents = (
+          <Person uid={this.state.id}
+            onSelectPerson={this._onSelectPerson}
+            onSelectGroup={this._onSelectGroup}
+            onClose={this._onCloseItem} />
+        );
+      } else {
+        list = (
+          <People searchText={this.state.searchText}
+            onSelect={this._onSelectPerson} />
+        );
+      }
+
+    } else if ('Groups' === this.state.scope) {
+
+      if (this.state.id) {
+        contents = (
+          <Group cn={this.state.id} onSelect={this._onSelectPerson}
+            onClose={this._onCloseItem} />
+        );
+      } else {
+        list = (
+          <Groups searchText={this.state.searchText}
+            onSelect={this._onSelectGroup} />
+        );
+      }
+
+    } else if ('Locations' === this.state.scope) {
+
+      if (this.state.id) {
+        contents = (
+          <LocationComponent hpRealEstateID={this.state.id}
+            onClose={this._onCloseItem} />
+        );
+      } else {
+        list = (
+          <Locations searchText={this.state.searchText}
+            onSelect={this._onSelectLocation} />
+        );
+      }
+
+    }
+
+    if (! contents) {
       contents = (
-        <Person uid={this.state.uid} person={this.state.person}
-          onClose={this._onClosePerson} onSelect={this._onSelectPerson} />
-      );
-    } else {
-      contents = (
-        <People initial={this.state.initial} changing={this.state.changing}
-          searchText={this.state.searchText} onSearch={this._onSearchText}
-          people={this.state.people} onSelect={this._onSelectPerson} />
+        <Finder title={title} initial={this.state.initial}
+          onScope={this._onScope}
+          searchText={this.state.searchText} onSearch={this._onSearchText}>
+          {list}
+        </Finder>
       );
     }
+
     return (
       <App centered={false}>
         {contents}

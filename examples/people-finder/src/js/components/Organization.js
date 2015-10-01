@@ -87,7 +87,7 @@ var Organization = React.createClass({
     if (props.person.dn) {
       this.setState({busy: true});
       var params = merge({}, LDAP_BASE_PARAMS, {
-        filter: '(manager=' + props.person.dn + ')',
+        filter: encodeURIComponent('(&(hpStatus=Active)(manager=' + props.person.dn + '))'),
         attributes: ['cn', 'uid', 'hpPictureThumbnailURI', 'hpBusinessUnit']
       });
       Rest.get('/ldap/', params).end(this._onTeamResponse);
