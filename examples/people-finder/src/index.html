@@ -11,6 +11,9 @@
   <style>
   body.loading {margin: 0px; width: 100vw; height: 100vh;
     background-image: radial-gradient(circle at 50% 15%, #fff, #fff 30%, #ccc);
+    -webkit-animation: draw 3s infinite linear alternate;
+    -moz-animation: draw 3s infinite linear alternate;
+    animation: draw 3s infinite linear alternate;
   }
   body.loading #content {
     position: relative;
@@ -22,61 +25,51 @@
     position: absolute; display: block; width: 140px; height: 140px;
     top: calc(50vh - 70px); left: calc(50vw - 70px);
   }
-  div.t {
-    display: inline-block;
-    box-sizing: border-box;
-    margin: 0px;
-    width: 10vw;
-    height: 10vh;
-    background-color: #e2e2e2;
+  body.loading #logo path,
+  body.loading #logo ellipse {
+    stroke-dasharray: 140px 240px;
+    stroke-dashoffset: 0;
+    -webkit-animation: draw 3s infinite linear alternate;
+    -moz-animation: draw 3s infinite linear alternate;
+    animation: draw 3s infinite linear alternate;
   }
-  div.t.on {
-    -webkit-animation: pulse 3s infinite linear alternate;
-    -moz-animation: pulse 3s infinite linear alternate;
-    animation: pulse 3s infinite linear alternate;
+  @-webkit-keyframes draw {
+    0%, 5% { stroke-dashoffset: 140px; }
+    90%, 100% { stroke-dashoffset: 0; }
   }
-  div.t.on:hover {
-    -webkit-animation: none;
-    background-color: #ccc;
+  @-moz-keyframes draw {
+    0%, 5% { stroke-dashoffset: 140px; }
+    90%, 100% { stroke-dashoffset: 0; }
   }
-  @-webkit-keyframes pulse {
-    100% { background-color: #fff; }
-  }
-  @-moz-keyframes pulse {
-    100% { background-color: #fff; }
-  }
-  @keyframes pulse {
-    100% { background-color: #fff; }
+  @keyframes draw {
+    0%, 5% { stroke-dashoffset: 140px; }
+    90%, 100% { stroke-dashoffset: 0; }
   }
   </style>
 </head>
 <body class="loading">
   <div id="content">
-    <svg id="logo" viewBox="0 0 140 140" version="1.1">
-      <path d="M119.49603,20.5014878 L100.989057,39.0094878 C105.89805,43.9184878 109.859044,49.7734878 111.669042,55.3734878 C122.692025,89.4684878 93.3250687,120.604488 59.5321185,112.820488 C44.9911399,109.470488 30.5211612,94.9984878 27.1751661,80.4564878 C20.432176,51.1514878 42.9571429,25.1854878 71.2931012,25.9974878 L93.3090687,3.98048778 C86.0960794,1.43348778 78.3420908,0.0304877767 70.2641027,0.000487776719 C32.014159,-0.141512223 0.549205302,30.7384878 0.00720609982,68.9844878 C-0.547793083,108.124488 31.0271604,140.024488 70.045103,139.999488 C108.802046,139.975488 140,108.756488 140,70.0004878 C140,50.6694878 132.164012,33.1694878 119.49603,20.5014878 L119.49603,20.5014878 Z" fill="#8C50FF"></path>
-      <path d="M27.1736636,80.457549 C30.5194807,94.999549 44.98869,109.472549 59.5288954,112.821549 C93.3190487,120.605549 122.685444,89.469549 111.663046,55.374549 C109.852145,49.774549 105.891362,43.918549 100.98363,39.010549 L69.9953234,70.000549 L100.083679,70.001549 C100.083679,86.762549 86.3804279,100.322549 69.5663468,100.089549 C53.4302287,99.865549 40.23095,86.746549 39.9119674,70.611549 C39.7429767,62.061549 43.140791,54.304549 48.7174862,48.725549 L48.6404904,48.648549 L71.2872528,25.998549 C42.9548011,25.186549 20.4310321,51.152549 27.1736636,80.457549 L27.1736636,80.457549 Z" fill="#333333"></path>
+    <svg id="logo" viewBox="0 0 130 108" version="1.1">
+      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(2.000000, 3.000000)" stroke="#00B388" stroke-width="5">
+          <ellipse cx="63.1" cy="36.8" rx="20.8" ry="21"></ellipse>
+          <path d="M94.4,105 L94.4,88.8 C94.4,70.9 80.7,57.8 62.9,57.8 L63.6,57.8 C45.8,57.8 31.9,70.9 31.9,88.8 L31.9,105"></path>
+          <path d="M77.5,105 L77.5,88.8"></path>
+          <path d="M48.8,88.8 L48.8,105"></path>
+          <path d="M83.8,39.1 C83.9,39.1 83.9,39.2 83.9,39.2 C86.9,41 90.5,42.1 94.2,42.1 L94.5,42.1 C106,42.1 115.3,32.7 115.3,21.1 C115.3,9.5 106,0.1 94.5,0.1 C83.8,0.1 74.9,8.3 73.8,18.8"></path>
+          <path d="M52.6,18.8 C51.5,8.3 42.7,0.1 31.9,0.1 C20.4,0.1 11.1,9.5 11.1,21.1 C11.1,32.7 20.4,42.1 31.9,42.1 L32.2,42.1 C35.9,42 39.4,41 42.5,39.2 C42.6,39.2 42.6,39.1 42.6,39.1"></path>
+          <path d="M125.6,89.3 L125.6,73.1 C125.6,55.2 111.9,42.1 94.1,42.1 L94.3,42.1"></path>
+          <path d="M108.7,89.3 L108.7,73.1"></path>
+          <path d="M31.9,42.1 L32.2,42.1 C35.9,42 39.4,41 42.5,39.2 C42.6,39.2 42.6,39.1 42.6,39.1"></path>
+          <path d="M31.9,42.1 L32.1,42.1 C14.3,42.1 0.6,55.2 0.6,73.1 L0.6,89.3"></path>
+          <path d="M17.5,73.1 L17.5,89.3"></path>
+          <path d="M114.9,24.6 C107.8,24.5 101.5,20.8 97.8,15.2 C94.1,20.9 87.7,24.6 80.4,24.6"></path>
+          <path d="M25.8,15.8 L25.8,1.3"></path>
+          <path d="M38,15.8 L38,1.3"></path>
+          <path d="M4,15.8 L63.2,15.8"></path>
+        </g>
+      </g>
     </svg>
-    <script>
-    var c = document.getElementById("content");
-    for (var i = 0; i < 100; i += 1) {
-      c.insertAdjacentHTML('beforeend', '<div class="t off"></div>');
-    }
-    var timer = setInterval(function () {
-      var again = false;
-      if (document.body.classList.contains('loading')) {
-        var ts = c.querySelectorAll('div.t.off');
-        var index = Math.floor(Math.random() * ts.length);
-        ts[index].classList.remove('off');
-        ts[index].classList.add('on');
-        if (ts.length > 1) {
-          again = true;
-        }
-      }
-      if (! again) {
-        clearInterval(timer);
-      }
-    }, 100)
-    </script>
   </div>
   <script src="index.js"></script>
 </body>
