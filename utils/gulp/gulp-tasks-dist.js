@@ -62,7 +62,7 @@ module.exports = function(gulp, options, webpackConfig, dist) {
     }
 
     config.resolve.extensions = merge(config.resolve.extensions || [],
-      ['', '.js', '.json', '.htm', '.html', '.scss', '.md']);
+      ['', '.js', '.json', '.htm', '.html', '.scss', '.md', '.svg']);
 
     return gulp.src(options.mainJs)
       .pipe(gulpWebpack(config))

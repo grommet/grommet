@@ -70,6 +70,8 @@
     "style-loader": "^0.12.0",
     "json-loader": "^0.5.1",
     "gulp-chug": "^0.4.2",
+    "grommet-icon-loader": "^0.0.6",
+    "svgo-loader": "^1.1.0",
     "gulp-eslint": "^1.0.0",
     "gulp-minify-css": "^1.1.0",
     "gulp-mocha": "^2.0.1",

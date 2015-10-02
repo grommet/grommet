@@ -9,6 +9,20 @@
   fill: $icon-color;
   stroke: $icon-color;
 
+  *:not([stroke]) {
+    &[fill="none"] {
+      stroke-width: 0;
+    }
+  }
+
+  *[stroke] {
+    stroke: inherit;
+  }
+
+  *[fill*="#"] {
+    fill: inherit;
+  }
+
   @include media-query(lap-and-up) {
     transition: all $base-animation-duration ease-in-out;
   }

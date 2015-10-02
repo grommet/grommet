@@ -13,6 +13,7 @@ var Button = React.createClass({
     onClick: React.PropTypes.func,
     primary: React.PropTypes.bool,
     secondary: React.PropTypes.bool,
+    icon: React.PropTypes.bool,
     type: React.PropTypes.oneOf(['button', 'reset', 'submit'])
   },
 
@@ -40,10 +41,17 @@ var Button = React.createClass({
       classes.push(this.props.className);
     }
 
+    var content = this.props.label;
+    if (this.props.type === 'icon') {
+      classes.push(CLASS_ROOT + "--icon");
+      content = this.props.children;
+      this.props.type = 'button';
+    }
+
     return (
       <button id={this.props.id} type={this.props.type} className={classes.join(' ')}
         onClick={this.props.onClick}>
-        {this.props.label}
+        {content}
       </button>
     );
   }
