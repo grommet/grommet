@@ -69,6 +69,9 @@ var opts = {
       library: 'Grommet'
     },
     resolve: {
+      alias: {
+        'grommet': path.resolve(__dirname, 'src/js')
+      },
       modulesDirectories: ['node_modules', 'src/js', 'src/scss']
     },
     externals: {
