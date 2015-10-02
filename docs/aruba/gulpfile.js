@@ -31,6 +31,7 @@ var opts = {
   webpack: {
     resolve: {
       alias: {
+        'grommet/img': path.resolve(__dirname, '../../src/img'),
         'grommet/scss': path.resolve(__dirname, '../../src/scss'),
         'grommet': path.resolve(__dirname, '../../src/js')
       },
