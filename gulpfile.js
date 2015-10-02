@@ -18,7 +18,10 @@ var opts = {
       asset: 'src/utils/**',
       dist: 'dist/utils/'
     },
-    'src/img/**',
+    {
+      asset: 'src/img/**',
+      dist: 'dist/img/'
+    },
     {
       asset: 'bin/**',
       dist: 'dist/bin/'

@@ -8,9 +8,9 @@ require('./mocked-dom')('<html><body></body></html>');
 
 module.exports = function(blanket) {
 
-  var origJs = require.extensions['.js'];
+  var origJs = require.extensions['.js', '.svg'];
 
-  require.extensions['.js'] = function(localModule, filename) {
+  require.extensions['.js', '.svg'] = function(localModule, filename) {
     // short-circuit for common case.
     if (filename.match(/node_modules/)) {
       return origJs(localModule, filename);

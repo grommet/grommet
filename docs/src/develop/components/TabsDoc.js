@@ -11,6 +11,7 @@ var Form = require('grommet/components/Form');
 var TabsDoc = React.createClass({
 
   render: function() {
+
     var inline =
       "<Tabs>\n" +
       "  <Tab>\n" +

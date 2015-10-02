@@ -4,35 +4,27 @@ var React = require('react');
 var Section = require('grommet/components/Section');
 
 var CONTROL_ICONS = [
-  {icon: 'Add'},
-  {icon: 'Clear', labels: ['Clear', 'Close', 'Remove']},
-  {icon: 'Edit', labels: ['Edit', 'Settings', 'Actions']},
-  {icon: 'More'},
-  {icon: 'DragHandle', labels: ['Drag handle']},
-  {icon: 'DropCaret', labels: ['Drop caret']},
-  {icon: 'Filter'},
-  {icon: 'Search'},
-  {icon: 'Calendar'},
-  {icon: 'Help'},
-  {icon: 'Left', labels: ['Left', 'Previous']},
-  {icon: 'Right', labels: ['Right', 'Next']},
-  {icon: 'Down'},
-  {icon: 'Up'},
-  {icon: 'Top'},
-  {icon: 'Person'},
-  {icon: 'World'},
-  {icon: 'Mail'},
-  {icon: 'Twitter'},
-  {icon: 'LinkedIn'},
-  {icon: 'Facebook'}
+  {component: require('grommet/img/icons/add'), labels: ['Add']},
+  {component: require('grommet/img/icons/close'), labels: ['Clear', 'Close', 'Remove']},
+  {component: require('grommet/img/icons/edit'), labels: ['Edit', 'Settings', 'Actions']},
+  {component: require('grommet/img/icons/more'), labels: ['More']},
+  {component: require('grommet/img/icons/drag'), labels: ['Drag handle']},
+  {component: require('grommet/img/icons/down'), labels: ['Drop caret']},
+  {component: require('grommet/img/icons/filter'), labels: ['Filter']},
+  {component: require('grommet/img/icons/search'), labels: ['Search']},
+  {component: require('grommet/img/icons/calendar'), labels: ['Calendar']},
+  {component: require('grommet/img/icons/help'), labels: ['Help']},
+  {component: require('grommet/img/icons/link-previous'), labels: ['Left', 'Previous']},
+  {component: require('grommet/img/icons/link-next'), labels: ['Right', 'Next']},
+  {component: require('grommet/img/icons/link-up'), labels: ['Up']},
+  {component: require('grommet/img/icons/link-top'), labels: ['Top']},
+  {component: require('grommet/img/icons/user'), labels: ['User']},
+  {component: require('grommet/img/icons/language'), labels: ['Language']},
+  {component: require('grommet/img/icons/mail'), labels: ['Mail']},
+  {component: require('grommet/img/icons/social-twitter'), labels: ['Twitter']},
+  {component: require('grommet/img/icons/social-linkedin'), labels: ['LinkedIn']},
+  {component: require('grommet/img/icons/social-facebook'), labels: ['Facebook']}
 ];
-
-CONTROL_ICONS.forEach(function (item) {
-  item.component = require('grommet/components/icons/' + item.icon);
-  if (! item.labels) {
-    item.labels = [item.icon];
-  }
-});
 
 var Spinning = require('grommet/components/icons/Spinning');
 var Status = require('grommet/components/icons/Status');

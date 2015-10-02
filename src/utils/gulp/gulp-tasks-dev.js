@@ -60,7 +60,7 @@ module.exports = function(gulp, options, webpackConfig, dist) {
     }
 
     devWebpackConfig.resolve.extensions = merge(devWebpackConfig.resolve.extensions || [],
-      ['', '.js', '.json', '.htm', '.html', '.scss', '.md']);
+      ['', '.js', '.json', '.htm', '.html', '.scss', '.md', '.svg']);
 
     var devServerConfig = {
       contentBase: dist,
