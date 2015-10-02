@@ -231,7 +231,9 @@ var Distribution = React.createClass({
           );
         } else {
           contents = (
-            <rect className={boxClasses.join(' ')} x={x} y={y} width={width} height={height}></rect>
+            <rect className={boxClasses.join(' ')}
+              x={x} y={y} width={width} height={height}>
+            </rect>
           );
         }
 
@@ -250,7 +252,7 @@ var Distribution = React.createClass({
         );
 
         return (
-          <g key={index} data-index={index}>
+          <g key={index} data-index={index} onClick={item.onClick}>
             {contents}
           </g>
         );
