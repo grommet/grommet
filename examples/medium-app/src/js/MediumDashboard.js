@@ -20,6 +20,7 @@ var Link = require('react-router').Link;
 
 var CONFIG = [
   {
+    name: 'Server Profile Changes',
     history: true,
     type: 'area',
     wide: true,
@@ -52,19 +53,10 @@ var CONFIG = [
   {
     name: 'Server Hardware',
     route: 'server hardwares',
-    type: 'circle',
+    type: 'distribution',
     params: {
       category: 'server-hardware',
       attribute: 'model'
-    }
-  },
-  {
-    name: 'Tasks',
-    route: 'activity',
-    type: 'distribution',
-    params: {
-      category: 'tasks',
-      attribute: 'name'
     }
   }
 ];
