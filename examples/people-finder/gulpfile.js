@@ -18,7 +18,7 @@ var opts = {
   mainJs: 'examples/people-finder/src/js/index.js',
   mainScss: 'examples/people-finder/src/scss/index.scss',
   sync: {
-    hostname: 'grommet.usa.hp.com',
+    hostname: 'ligo.us.rdlabs.hpecorp.net',
     username: 'ligo',
     remoteDestination: '/var/www/html/examples/people-finder/dist'
   },

@@ -57,7 +57,7 @@ var PersonGroups = React.createClass({
         scope: 'sub',
         filter: encodeURIComponent(filter),
         attributes: config.attributesFromSchema(this.state.scope.schema)
-      }
+      };
       Rest.get('/ldap/', params).end(this._onGroupsResponse);
     }
   },
