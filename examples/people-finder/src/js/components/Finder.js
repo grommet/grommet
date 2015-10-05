@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
+var IntlMixin = require('grommet/mixins/GrommetIntlMixin');
 var Header = require('grommet/components/Header');
 var Menu = require('grommet/components/Menu');
 var Anchor = require('grommet/components/Anchor');
@@ -11,6 +12,7 @@ var Section = require('grommet/components/Section');
 var Paragraph = require('grommet/components/Paragraph');
 var Box = require('grommet/components/Box');
 var Logo = require('./Logo');
+var config = require('../config');
 
 var Finder = React.createClass({
 
@@ -18,9 +20,11 @@ var Finder = React.createClass({
     initial: React.PropTypes.bool.isRequired,
     onScope: React.PropTypes.func.isRequired,
     onSearch: React.PropTypes.func.isRequired,
-    searchText: React.PropTypes.string.isRequired,
-    title: React.PropTypes.string.isRequired
+    scope: React.PropTypes.object.isRequired,
+    searchText: React.PropTypes.string.isRequired
   },
+
+  mixins: [IntlMixin],
 
   componentDidMount: function () {
     this.refs.search.focus();
@@ -35,8 +39,9 @@ var Finder = React.createClass({
   },
 
   render: function() {
+    var title = this.getGrommetIntlMessage(this.props.scope.label + " Finder");
     var texture;
-    var colorIndex = "neutral-1";
+    var colorIndex = this.props.scope.colorIndex;
     var footer;
 
     if (this.props.initial) {
@@ -53,6 +58,15 @@ var Finder = React.createClass({
       );
     }
 
+    var scopeAnchors = Object.keys(config.scopes).map(function (key) {
+      var scope = config.scopes[key];
+      return (
+        <Anchor key={key} onClick={this._onScope.bind(this, scope)}>
+          {this.getGrommetIntlMessage(scope.label)}
+        </Anchor>
+      );
+    }.bind(this));
+
     return (
       <Section texture={texture} full={true} pad="none">
         <Header key="header" large={true} pad={{horizontal: "medium"}}
@@ -60,15 +74,14 @@ var Finder = React.createClass({
           colorIndex={colorIndex} splash={this.props.initial} responsive={false}>
           <Title>
             <Logo reverse={true} />
-            {this.props.title}
+            {title}
           </Title>
           <Search ref="search" inline={true} className="flex"
+            placeHolder={this.getGrommetIntlMessage('Search')}
             defaultValue={this.props.searchText}
             onChange={this.props.onSearch} />
           <Menu inline={false}>
-            <Anchor onClick={this._onScope.bind(this, 'People')}>People</Anchor>
-            <Anchor onClick={this._onScope.bind(this, 'Groups')}>Groups</Anchor>
-            <Anchor onClick={this._onScope.bind(this, 'Locations')}>Locations</Anchor>
+            {scopeAnchors}
           </Menu>
         </Header>
         {this.props.children}

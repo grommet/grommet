@@ -1,6 +1,5 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-var merge = require('lodash/object/merge');
 var React = require('react');
 var IntlMixin = require('grommet/mixins/GrommetIntlMixin');
 var Rest = require('grommet/utils/Rest');
@@ -18,35 +17,29 @@ var Map = require('./Map');
 var About = require('./About');
 var PersonGroups = require('./PersonGroups');
 var Organization = require('./Organization');
-
-var LDAP_BASE = {
-  url: encodeURIComponent('ldap://ldap.hp.com'),
-  base: encodeURIComponent('ou=people,o=hp.com'),
-  scope: 'sub'
-};
+var config = require('../config');
 
 var Person = React.createClass({
 
   propTypes: {
+    id: React.PropTypes.string.isRequired,
     onClose: React.PropTypes.func.isRequired,
-    onSelectGroup: React.PropTypes.func.isRequired,
-    onSelectPerson: React.PropTypes.func.isRequired,
-    uid: React.PropTypes.string.isRequired
+    onSelect: React.PropTypes.func.isRequired
   },
 
   mixins: [IntlMixin],
 
   getInitialState: function () {
-    return {view: 'organization', person: {}};
+    return {view: 'organization', person: {}, scope: config.scopes.people};
   },
 
   componentDidMount: function () {
-    this._getPerson(this.props.uid);
+    this._getPerson(this.props.id);
   },
 
   componentWillReceiveProps: function (newProps) {
-    if (newProps.uid !== this.props.uid) {
-      this._getPerson(newProps.uid);
+    if (newProps.id !== this.props.id) {
+      this._getPerson(newProps.id);
     }
   },
 
@@ -59,10 +52,13 @@ var Person = React.createClass({
     }
   },
 
-  _getPerson: function (uid) {
-    var params = merge({}, LDAP_BASE, {
-      filter: '(uid=' + uid + ')'
-    });
+  _getPerson: function (id) {
+    var params = {
+      url: encodeURIComponent(config.ldap_base_url),
+      base: encodeURIComponent('ou=' + this.state.scope.ou + ',o=' + config.organization),
+      scope: 'sub',
+      filter: '(uid=' + id + ')'
+    };
     Rest.get('/ldap/', params).end(this._onPersonResponse);
   },
 
@@ -88,10 +84,10 @@ var Person = React.createClass({
       view = <About person={person}/>;
       viewLabel = 'About';
     } else if ('groups' === this.state.view) {
-      view = <PersonGroups person={person} onSelect={this.props.onSelectGroup} />;
+      view = <PersonGroups person={person} onSelect={this.props.onSelect} />;
       viewLabel = 'Groups';
     } else if ('organization' === this.state.view) {
-      view = <Organization person={person} onSelect={this.props.onSelectPerson} />;
+      view = <Organization person={person} onSelect={this.props.onSelect} />;
       viewLabel = 'Organization';
     }
 

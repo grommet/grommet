@@ -1,25 +1,12 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var merge = require('lodash/object/merge');
 var Article = require('grommet/components/Article');
 var List = require('grommet/components/List');
 var Header = require('grommet/components/Header');
 var Rest = require('grommet/utils/Rest');
 var Spinning = require('grommet/components/icons/Spinning');
-
-var LDAP_BASE_PARAMS = {
-  url: encodeURIComponent('ldap://ldap.hp.com'),
-  base: encodeURIComponent('ou=people,o=hp.com'),
-  scope: 'sub'
-};
-
-var PEOPLE_SCHEMA = [
-  {attribute: 'uid', uid: true},
-  {attribute: 'hpPictureThumbnailURI', image: true, default: 'img/no-picture.png'},
-  {attribute: 'cn', primary: true},
-  {attribute: 'hpBusinessUnit', secondary: true}
-];
+var config = require('../config');
 
 var Organization = React.createClass({
 
@@ -29,7 +16,7 @@ var Organization = React.createClass({
   },
 
   getInitialState: function () {
-    return {team: [], managers: []};
+    return {team: [], managers: [], scope: config.scopes.people};
   },
 
   componentDidMount: function () {
@@ -67,9 +54,11 @@ var Organization = React.createClass({
   },
 
   _getManager: function (managerDn) {
-    var params = merge({}, LDAP_BASE_PARAMS, {
-      base: managerDn
-    });
+    var params = {
+      url: encodeURIComponent(config.ldap_base_url),
+      base: managerDn,
+      scope: 'sub'
+    };
     Rest.get('/ldap/', params).end(this._onManagerResponse);
   },
 
@@ -86,11 +75,16 @@ var Organization = React.createClass({
     this.setState({team: [], managers: []});
     if (props.person.dn) {
       this.setState({busy: true});
-      var params = merge({}, LDAP_BASE_PARAMS, {
+
+      var params = {
+        url: encodeURIComponent(config.ldap_base_url),
+        base: encodeURIComponent('ou=' + this.state.scope.ou + ',o=' + config.organization),
+        scope: 'sub',
         filter: encodeURIComponent('(&(hpStatus=Active)(manager=' + props.person.dn + '))'),
-        attributes: ['cn', 'uid', 'hpPictureThumbnailURI', 'hpBusinessUnit']
-      });
+        attributes: config.attributesFromSchema(this.state.scope.schema)
+      };
       Rest.get('/ldap/', params).end(this._onTeamResponse);
+
       this._getManager(props.person.manager);
     }
   },
@@ -111,14 +105,14 @@ var Organization = React.createClass({
         <Header key="label" tag="h4" pad="medium" separator="top">
           {person.givenName + "'s Team"}
         </Header>,
-        <List key="team" large={true} data={this.state.team} schema={PEOPLE_SCHEMA}
+        <List key="team" large={true} data={this.state.team} schema={this.state.scope.schema}
           onSelect={this.props.onSelect} />
       ];
     }
 
     return (
       <Article>
-        <List large={true} data={people} schema={PEOPLE_SCHEMA}
+        <List large={true} data={people} schema={this.state.scope.schema}
           onSelect={this.props.onSelect} />
         {team}
       </Article>

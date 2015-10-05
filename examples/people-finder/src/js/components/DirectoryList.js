@@ -1,18 +1,17 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-var merge = require('lodash/object/merge');
 var React = require('react');
 var IntlMixin = require('grommet/mixins/GrommetIntlMixin');
 var Rest = require('grommet/utils/Rest');
 var List = require('grommet/components/List');
 var Spinning = require('grommet/components/icons/Spinning');
+var config = require('../config');
 
 var DirectoryList = React.createClass({
 
   propTypes: {
-    base: React.PropTypes.object.isRequired,
-    filter: React.PropTypes.string,
-    schema: React.PropTypes.arrayOf(React.PropTypes.object).isRequired,
+    scope: React.PropTypes.object.isRequired,
+    searchText: React.PropTypes.string,
     onSelect: React.PropTypes.func.isRequired
   },
 
@@ -26,12 +25,13 @@ var DirectoryList = React.createClass({
   },
 
   componentDidMount: function () {
-    this._search(this.props.filter, this._attributesFromSchema(this.props.schema));
+    this._queueSearch(this.props.searchText);
   },
 
   componentWillReceiveProps: function (newProps) {
-    if (newProps.filter !== this.props.filter) {
-      this._search(newProps.filter, this._attributesFromSchema(newProps.schema));
+    if (newProps.scope !== this.props.scope ||
+      newProps.searchText !== this.props.searchText) {
+      this._queueSearch(newProps.searchText);
     }
   },
 
@@ -39,54 +39,63 @@ var DirectoryList = React.createClass({
     clearTimeout(this._searchTimer);
   },
 
-  _attributesFromSchema: function (schema) {
-    return schema.map(function (item) {
-      return item.attribute;
-    });
-  },
-
   _onSearchResponse: function (err, res) {
     if (err) {
       this.setState({data: [], error: err, changing: false});
-    } else if (res.ok && this.props.filter) {
+    } else if (res.ok && this.props.searchText) {
       // don't keep result if we don't have search text anymore
       var result = res.body;
       this.setState({data: result, error: null, changing: false});
     }
   },
 
-  _search: function (filter, attributes) {
-    if (! filter) {
+  _search: function () {
+    var searchText = this.props.searchText;
+    var filter;
+    if (searchText[0] === '(') {
+      // assume this is already a formal LDAP filter
+      filter = encodeURIComponent(searchText);
+    } else {
+      filter = encodeURIComponent(this.props.scope.filterForSearch(searchText));
+    }
+
+    var params = {
+      url: encodeURIComponent(config.ldap_base_url),
+      base: encodeURIComponent('ou=' + this.props.scope.ou + ',o=' + config.organization),
+      scope: 'sub',
+      filter: filter,
+      attributes: config.attributesFromSchema(this.props.scope.schema)
+    };
+    Rest.get('/ldap/', params).end(this._onSearchResponse);
+  },
+
+  _queueSearch: function (searchText) {
+    clearTimeout(this._searchTimer);
+    if (! searchText) {
       this.setState({data: [], changing: false});
     } else {
       this.setState({changing: true});
       // debounce
-      clearTimeout(this._searchTimer);
-      this._searchTimer = setTimeout(function () {
-        var params = merge({}, this.props.base, {
-          filter: filter,
-          attributes: attributes
-        });
-        Rest.get('/ldap/', params).end(this._onSearchResponse);
-      }.bind(this), 500);
+      this._searchTimer = setTimeout(this._search, 500);
     }
   },
 
   render: function() {
+    var schema = this.props.scope.schema;
     var data = this.state.data;
     var empty;
     if (this.state.changing) {
       var busy = {uid: 'spinner'};
-      busy[this.props.schema[0].attribute] = <Spinning />;
+      busy[schema[0].attribute] = <Spinning />;
       data = [busy];
-    } else if (this.props.filter && this.state.data.length === 0) {
-      empty = 'No matches';
+    } else if (this.props.searchText && this.state.data.length === 0) {
+      empty = this.getGrommetIntlMessage('No matches');
       data = [];
     }
 
     return (
       <List key="results" large={true} data={data} emptyIndicator={empty}
-        schema={this.props.schema} onSelect={this.props.onSelect} />
+        schema={schema} onSelect={this.props.onSelect} />
     );
   }
 
