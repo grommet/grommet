@@ -8,6 +8,7 @@ var ListItem = React.createClass({
 
   propTypes: {
     annotation: React.PropTypes.node,
+    direction: React.PropTypes.oneOf(['row', 'column']),
     image: React.PropTypes.node,
     label: React.PropTypes.node,
     onClick: React.PropTypes.func,
@@ -21,6 +22,9 @@ var ListItem = React.createClass({
     }
     if (this.props.selected) {
       classes.push(CLASS_ROOT + "--selected");
+    }
+    if (this.props.direction) {
+      classes.push(CLASS_ROOT + "--" + this.props.direction);
     }
     if (this.props.className) {
       classes.push(this.props.className);
@@ -37,10 +41,14 @@ var ListItem = React.createClass({
     return (
       <li className={classes.join(' ')} onClick={this.props.onClick}>
         {image}
+        {/*}
         <span className={CLASS_ROOT + "__text"}>
+        {*/}
           <span className={CLASS_ROOT + "__label"}>{this.props.label}</span>
           <span className={CLASS_ROOT + "__annotation"}>{this.props.annotation}</span>
+        {/*}
         </span>
+        {*/}
       </li>
     );
   }

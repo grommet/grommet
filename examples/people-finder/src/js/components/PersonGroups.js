@@ -74,7 +74,7 @@ var PersonGroups = React.createClass({
 
     return (
       <List large={true} data={groups} schema={this.state.scope.schema}
-        onSelect={this._onSelectGroup} />
+        itemDirection="column" onSelect={this._onSelectGroup} />
     );
   }
 

@@ -40,6 +40,8 @@
       width: $inuit-base-spacing-unit;
       margin-right: $inuit-base-spacing-unit;
       overflow: hidden;
+      -webkit-flex: 0 0 auto;
+      flex: 0 0 auto;
 
       img {
         height: 100%;
@@ -49,14 +51,20 @@
       }
     }
 
-    &__text {
+    &__label,
+    &__annotation {
+      -webkit-flex: 1;
+      flex: 1;
+    }
+
+    /*&__text {
       display: -webkit-flex;
       display: flex;
       -webkit-justify-content: space-between;
       justify-content: space-between;
       -webkit-flex: 1;
       flex: 1;
-    }
+    }*/
 
     &__annotation {
       margin-left: $inuit-base-spacing-unit;
@@ -74,6 +82,19 @@
     &--selected {
       background-color: $selected-background-color;
       color: $selected-text-color;
+    }
+
+    &--row {
+      .list-item__annotation {
+        text-align: right;
+      }
+    }
+
+    &--column {
+      -webkit-flex-direction: column;
+      flex-direction: column;
+      -webkit-align-items: start;
+      align-items: start;
     }
   }
 

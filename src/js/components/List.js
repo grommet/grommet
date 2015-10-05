@@ -13,6 +13,7 @@ var List = React.createClass({
   propTypes: {
     data: React.PropTypes.arrayOf(React.PropTypes.object).isRequired,
     emptyIndicator: React.PropTypes.node,
+    itemDirection: React.PropTypes.oneOf(['row', 'column']),
     large: React.PropTypes.bool,
     onMore: React.PropTypes.func,
     onSelect: React.PropTypes.func,
@@ -37,7 +38,7 @@ var List = React.createClass({
   mixins: [InfiniteScroll, IntlMixin],
 
   getDefaultProps: function () {
-    return {small: false};
+    return {small: false, itemDirection: 'row'};
   },
 
   getInitialState: function() {
@@ -140,7 +141,7 @@ var List = React.createClass({
       return (
         <ListItem key={uid} image={image} label={primary}
           annotation={secondary} selected={selected}
-          onClick={onClick} />
+          direction={this.props.itemDirection} onClick={onClick} />
       );
     }, this);
 

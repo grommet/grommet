@@ -47,23 +47,25 @@ var ListDoc = React.createClass({
         <section>
           <h2>Options</h2>
           <dl>
-            <dt><code>data        {"[{...}, ...]"}</code></dt>
+            <dt><code>data           {"[{...}, ...]"}</code></dt>
             <dd>The data set.</dd>
-            <dt><code>large       true|false</code></dt>
+            <dt><code>itemDirection  row|column</code></dt>
+            <dd>Direction of the item content. Default is <code>row</code>.</dd>
+            <dt><code>large          true|false</code></dt>
             <dd>Larger sized version. Deprecated, use <code>size</code>.</dd>
-            <dt><code>onMore      {"function () {...}"}</code></dt>
+            <dt><code>onMore         {"function () {...}"}</code></dt>
             <dd>Function that will be called when more data is needed.</dd>
-            <dt><code>onSelect    {"function (datum) {...}"}</code></dt>
+            <dt><code>onSelect       {"function (datum) {...}"}</code></dt>
             <dd>Function that will be called when the user selects an item.</dd>
-            <dt><code>schema      {"[{...}, ...]"}</code></dt>
+            <dt><code>schema         {"[{...}, ...]"}</code></dt>
             <dd>An array of objects describing the data.
             <code>{schema}</code>
             </dd>
-            <dt><code>selected    {"uid|[uid, ...]"}</code></dt>
+            <dt><code>selected       {"uid|[uid, ...]"}</code></dt>
             <dd>The currently selected items.</dd>
-            <dt><code>size        small|medium|large</code></dt>
+            <dt><code>size           small|medium|large</code></dt>
             <dd>The size of the Header. Defaults to <code>medium</code>.</dd>
-            <dt><code>small       true|false</code></dt>
+            <dt><code>small          true|false</code></dt>
             <dd>Smaller sized version. Deprecated, use <code>size</code>.</dd>
           </dl>
         </section>
@@ -74,6 +76,11 @@ var ListDoc = React.createClass({
           <h3>Default</h3>
           <div className="example">
             <List schema={SCHEMA} data={DATA} />
+          </div>
+
+          <h3>Column</h3>
+          <div className="example">
+            <List schema={SCHEMA} data={DATA} itemDirection="column" />
           </div>
 
           <h3>Small</h3>
