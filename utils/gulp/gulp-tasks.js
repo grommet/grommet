@@ -35,7 +35,7 @@ module.exports = function(gulp, opts) {
           loader: 'json-loader'
         },
         {
-          test: /.*img\/icons.*\.svg$/,
+          test: /.*img(\/|\\)icons.*\.svg$/,
           loader: 'babel!grommet-icon!svgo'
         },
         {
