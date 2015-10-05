@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var CloseIcon = require('../../img/icons/close');
+var CloseIcon = require('./icons/Clear');
 var KeyboardAccelerators = require('../mixins/KeyboardAccelerators');
 var DOMUtils = require('../utils/DOM');
 var Button = require('./Button');
