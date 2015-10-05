@@ -1,6 +1,5 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-var merge = require('lodash/object/merge');
 var React = require('react');
 var IntlMixin = require('grommet/mixins/GrommetIntlMixin');
 var Rest = require('grommet/utils/Rest');
@@ -11,33 +10,28 @@ var Section = require('grommet/components/Section');
 var SearchIcon = require('grommet/components/icons/Search');
 var Logo = require('./Logo');
 var Map = require('./Map');
-
-var LDAP_BASE = {
-  url: encodeURIComponent('ldap://ldap.hp.com'),
-  base: encodeURIComponent('ou=locations,o=hp.com'),
-  scope: 'sub'
-};
+var config = require('../config');
 
 var LocationComponent = React.createClass({
 
   propTypes: {
-    onClose: React.PropTypes.func.isRequired,
-    hpRealEstateID: React.PropTypes.string.isRequired
+    id: React.PropTypes.string.isRequired,
+    onClose: React.PropTypes.func.isRequired
   },
 
   mixins: [IntlMixin],
 
   getInitialState: function () {
-    return {location: {}};
+    return {location: {}, scope: config.scopes.locations};
   },
 
   componentDidMount: function () {
-    this._getLocation(this.props.hpRealEstateID);
+    this._getLocation(this.props.id);
   },
 
   componentWillReceiveProps: function (newProps) {
-    if (newProps.cn !== this.props.cn) {
-      this._getGroup(newProps.cn);
+    if (newProps.id !== this.props.id) {
+      this._getLocation(newProps.id);
     }
   },
 
@@ -50,10 +44,13 @@ var LocationComponent = React.createClass({
     }
   },
 
-  _getLocation: function (hpRealEstateID) {
-    var params = merge({}, LDAP_BASE, {
-      filter: '(hpRealEstateID=' + hpRealEstateID + ')'
-    });
+  _getLocation: function (id) {
+    var params = {
+      url: encodeURIComponent(config.ldap_base_url),
+      base: encodeURIComponent('ou=' + this.state.scope.ou + ',o=' + config.organization),
+      scope: 'sub',
+      filter: '(hpRealEstateID=' + id + ')'
+    };
     Rest.get('/ldap/', params).end(this._onLocationResponse);
   },
 

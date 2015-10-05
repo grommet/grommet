@@ -1,6 +1,5 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-var merge = require('lodash/object/merge');
 var React = require('react');
 var IntlMixin = require('grommet/mixins/GrommetIntlMixin');
 var Rest = require('grommet/utils/Rest');
@@ -11,47 +10,30 @@ var Section = require('grommet/components/Section');
 var List = require('grommet/components/List');
 var SearchIcon = require('grommet/components/icons/Search');
 var Logo = require('./Logo');
-
-var LDAP_BASE = {
-  url: encodeURIComponent('ldap://ldap.hp.com'),
-  base: encodeURIComponent('ou=groups,o=hp.com'),
-  scope: 'sub'
-};
-
-var LDAP_PEOPLE_BASE = {
-  url: encodeURIComponent('ldap://ldap.hp.com'),
-  base: encodeURIComponent('ou=people,o=hp.com'),
-  scope: 'sub'
-};
-
-var OWNER_SCHEMA = [
-  {attribute: 'uid', uid: true},
-  {attribute: 'hpPictureThumbnailURI', image: true, default: 'img/no-picture.png'},
-  {attribute: 'cn', primary: true},
-  {attribute: 'hpBusinessUnit', secondary: true}
-];
+var config = require('../config');
 
 var Group = React.createClass({
 
   propTypes: {
+    id: React.PropTypes.string.isRequired,
     onClose: React.PropTypes.func.isRequired,
-    onSelect: React.PropTypes.func.isRequired,
-    cn: React.PropTypes.string.isRequired
+    onSelect: React.PropTypes.func.isRequired
   },
 
   mixins: [IntlMixin],
 
   getInitialState: function () {
-    return {group: {}, owners: []};
+    return {group: {}, owners: [], scope: config.scopes.groups,
+      peopleScope: config.scopes.people};
   },
 
   componentDidMount: function () {
-    this._getGroup(this.props.cn);
+    this._getGroup(this.props.id);
   },
 
   componentWillReceiveProps: function (newProps) {
-    if (newProps.cn !== this.props.cn) {
-      this._getGroup(newProps.cn);
+    if (newProps.id !== this.props.id) {
+      this._getGroup(newProps.id);
     }
   },
 
@@ -70,6 +52,7 @@ var Group = React.createClass({
     } else if (res.ok) {
       var group = res.body[0];
       this.setState({group: group, owners: [], error: null});
+
       if (group.owner) {
         var owners = Array.isArray(group.owner) ? group.owner : [group.owner];
         var filter = '(|' +
@@ -77,20 +60,30 @@ var Group = React.createClass({
           return ('(' + o.split(',')[0] + ')');
         }).join('') +
         ')';
-        var params = merge({}, LDAP_PEOPLE_BASE, {
+        var params = {
+          url: encodeURIComponent(config.ldap_base_url),
+          base: encodeURIComponent('ou=' + this.state.peopleScope.ou + ',o=' + config.organization),
+          scope: 'sub',
           filter: encodeURIComponent(filter),
-          attributes: ['cn', 'uid', 'hpPictureThumbnailURI', 'hpBusinessUnit']
-        });
+          attributes: config.attributesFromSchema(this.state.peopleScope.schema)
+        };
         Rest.get('/ldap/', params).end(this._onOwnersResponse);
       }
     }
   },
 
-  _getGroup: function (cn) {
-    var params = merge({}, LDAP_BASE, {
-      filter: '(cn=' + cn + ')'
-    });
+  _getGroup: function (id) {
+    var params = {
+      url: encodeURIComponent(config.ldap_base_url),
+      base: encodeURIComponent('ou=' + this.state.scope.ou + ',o=' + config.organization),
+      scope: 'sub',
+      filter: '(cn=' + id + ')'
+    };
     Rest.get('/ldap/', params).end(this._onGroupResponse);
+  },
+
+  _onSelectOwner: function (owner) {
+    this.props.onSelect(owner, this.state.peopleScope);
   },
 
   render: function() {
@@ -119,14 +112,14 @@ var Group = React.createClass({
           <Header tag="h1" justify="between">
             <span>{group.cn}</span>
           </Header>
-          {mails}
           <p>{group.description}</p>
+          {mails}
         </Section>
         <Header key="label" tag="h3" pad="medium">
           {"Owner" + (this.state.owners.length > 1 ? 's' : '')}
         </Header>
-        <List large={true} data={this.state.owners} schema={OWNER_SCHEMA}
-          onSelect={this.props.onSelect} />
+        <List large={true} data={this.state.owners} schema={this.state.peopleScope.schema}
+          onSelect={this._onSelectOwner} />
       </Article>
     );
   }

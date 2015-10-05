@@ -4,12 +4,11 @@ var React = require('react');
 var App = require('grommet/components/App');
 var IntlMixin = require('grommet/mixins/GrommetIntlMixin');
 var Finder = require('./Finder');
-var People = require('./People');
-var Groups = require('./Groups');
-var Locations = require('./Locations');
+var DirectoryList = require('./DirectoryList');
 var Person = require('./Person');
 var Group = require('./Group');
 var LocationComponent = require('./Location');
+var config = require('../config');
 
 /*
  * The PeopleFinder module controls the browser location and interacts with the
@@ -23,7 +22,7 @@ var PeopleFinder = React.createClass({
   getInitialState: function () {
     var params = this._paramsFromQuery(window.location.search);
     var searchText = params.search || '';
-    var scope = params.scope || 'People';
+    var scope = config.scopes[params.scope || 'people'];
     var id = params.id || null;
 
     return {
@@ -49,8 +48,8 @@ var PeopleFinder = React.createClass({
 
   _pushState: function () {
     var url = window.location.href.split('?')[0] + '?';
-    url += 'scope=' + encodeURIComponent(this.state.scope);
-    var label = this.state.scope + ' Finder';
+    url += 'scope=' + encodeURIComponent(this.state.scope.ou);
+    var label = this.getGrommetIntlMessage(this.state.scope.label + " Finder");
     if (this.state.searchText) {
       url += '&search=' + encodeURIComponent(this.state.searchText);
       label = this.state.searchText;
@@ -60,7 +59,7 @@ var PeopleFinder = React.createClass({
       label = this.state.id;
     }
     var state = {
-      scope: this.state.scope,
+      ou: this.state.scope.ou,
       searchText: this.state.searchText,
       id: this.state.id
     };
@@ -70,7 +69,7 @@ var PeopleFinder = React.createClass({
   _popState: function (event) {
     if (event.state) {
       this.setState({
-        scope: event.state.scope,
+        scope: config.scopes[event.state.ou],
         searchText: event.state.searchText,
         id: event.state.id
       });
@@ -85,16 +84,9 @@ var PeopleFinder = React.createClass({
     this.setState({scope: scope}, this._pushState);
   },
 
-  _onSelectPerson: function (person) {
-    this.setState({id: person.uid, scope: 'People'}, this._pushState);
-  },
-
-  _onSelectGroup: function (group) {
-    this.setState({id: group.cn, scope: 'Groups'}, this._pushState);
-  },
-
-  _onSelectLocation: function (locationArg) {
-    this.setState({id: locationArg.hpRealEstateID, scope: 'Locations'}, this._pushState);
+  _onSelect: function (item, scopeArg) {
+    var scope = scopeArg || this.state.scope;
+    this.setState({id: item[scope.id], scope: scope}, this._pushState);
   },
 
   _onCloseItem: function () {
@@ -103,62 +95,44 @@ var PeopleFinder = React.createClass({
 
   render: function() {
     var contents;
-    var title = this.state.scope + " Finder";
-    var list;
-    if ('People' === this.state.scope) {
 
-      if (this.state.id) {
+    if (this.state.id) {
+
+      if ('people' === this.state.scope.ou) {
+
         contents = (
-          <Person uid={this.state.id}
-            onSelectPerson={this._onSelectPerson}
-            onSelectGroup={this._onSelectGroup}
+          <Person id={this.state.id} onSelect={this._onSelect}
             onClose={this._onCloseItem} />
         );
-      } else {
-        list = (
-          <People searchText={this.state.searchText}
-            onSelect={this._onSelectPerson} />
-        );
-      }
 
-    } else if ('Groups' === this.state.scope) {
+      } else if ('groups' === this.state.scope.ou) {
 
-      if (this.state.id) {
         contents = (
-          <Group cn={this.state.id} onSelect={this._onSelectPerson}
+          <Group id={this.state.id} onSelect={this._onSelect}
             onClose={this._onCloseItem} />
         );
-      } else {
-        list = (
-          <Groups searchText={this.state.searchText}
-            onSelect={this._onSelectGroup} />
-        );
-      }
 
-    } else if ('Locations' === this.state.scope) {
+      } else if ('locations' === this.state.scope.ou) {
 
-      if (this.state.id) {
         contents = (
-          <LocationComponent hpRealEstateID={this.state.id}
+          <LocationComponent id={this.state.id}
             onClose={this._onCloseItem} />
         );
-      } else {
-        list = (
-          <Locations searchText={this.state.searchText}
-            onSelect={this._onSelectLocation} />
-        );
+
       }
 
-    }
+    } else {
 
-    if (! contents) {
       contents = (
-        <Finder title={title} initial={this.state.initial}
+        <Finder scope={this.state.scope} initial={this.state.initial}
           onScope={this._onScope}
           searchText={this.state.searchText} onSearch={this._onSearchText}>
-          {list}
+          <DirectoryList scope={this.state.scope}
+            searchText={this.state.searchText}
+            onSelect={this._onSelect} />
         </Finder>
       );
+
     }
 
     return (
