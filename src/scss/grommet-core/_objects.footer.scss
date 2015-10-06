@@ -5,9 +5,7 @@
   line-height: $footer-height;
 
   &__content {
-    display: -webkit-flex;
     display: flex;
-    -webkit-justify-content: space-between;
     justify-content: space-between;
     width: 100%;
     padding-left: $inuit-base-spacing-unit;

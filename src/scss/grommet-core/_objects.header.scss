@@ -109,7 +109,6 @@ header.header {
 div.header {
 
   &__container {
-    -webkit-flex-shrink: 0;
     flex-shrink: 0;
 
     &--fixed {

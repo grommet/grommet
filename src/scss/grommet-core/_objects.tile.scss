@@ -4,45 +4,34 @@
   width: 100%;
   padding: halve($inuit-base-spacing-unit);
 
-  display: -webkit-flex;
   display: flex;
-  -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
 
   > .tile {
-    -webkit-flex: 1 0 $tile-size;
     flex: 1 0 $tile-size;
     // don't count padding for flex basis
     // this makes it easier to align tiles with graphic components
-    -webkit-box-sizing: content-box;
     box-sizing: content-box;
 
     &--wide {
-      -webkit-flex-basis: 100%;
       flex-basis: 100%;
-      -webkit-box-sizing: border-box;
       box-sizing: border-box;
     }
   }
 
   &__container {
-    display: -webkit-flex;
     display: flex;
-    -webkit-flex-direction: row;
     flex-direction: row;
-    -webkit-align-items: center;
     align-items: center;
     width: 100vw;
     max-width: 100%;
 
     .tiles__left,
     .tiles__right {
-      -webkit-flex: 0 0 auto;
       flex: 0 0 auto;
     }
 
     .tiles {
-      -webkit-flex: 1;
       flex: 1;
       margin: 0px;
 
@@ -55,7 +44,6 @@
   }
 
   &--fill {
-    -webkit-justify-content: space-around;
     justify-content: space-around;
   }
 
@@ -67,20 +55,14 @@
 
   &--direction {
     &-row {
-      -webkit-flex-direction: row;
       flex-direction: row;
-      -webkit-flex-wrap: nowrap;
       flex-wrap: nowrap;
-      -webkit-justify-content: flex-start;
       justify-content: flex-start;
     }
 
     &-column {
-      -webkit-flex-direction: column;
       flex-direction: column;
-      -webkit-flex-wrap: nowrap;
       flex-wrap: nowrap;
-      -webkit-justify-content: flex-start;
       justify-content: flex-start;
     }
   }
@@ -100,14 +82,12 @@
 
   &--small {
     > .tile {
-      -webkit-flex-basis: $tile-small-size;
       flex-basis: $tile-small-size;
     }
   }
 
   &--large {
     > .tile {
-      -webkit-flex-basis: $tile-large-size;
       flex-basis: $tile-large-size;
     }
   }

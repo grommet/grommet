@@ -102,11 +102,8 @@
         top: 0px;
         bottom: 0px;
         right: 0px;
-        display: -webkit-flex;
         display: flex;
-        -webkit-flex-direction: column;
         flex-direction: column;
-        -webkit-justify-content: center;
         justify-content: center;
 
         @include media-query(lap-and-up) {

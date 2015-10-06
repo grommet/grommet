@@ -25,9 +25,7 @@
     padding-top: halve($inuit-base-spacing-unit);
     padding-bottom: halve($inuit-base-spacing-unit);
     border-bottom: 1px solid $border-color;
-    display: -webkit-flex;
     display: flex;
-    -webkit-align-items: center;
     align-items: center;
     max-width: none;
 
@@ -40,7 +38,6 @@
       width: $inuit-base-spacing-unit;
       margin-right: $inuit-base-spacing-unit;
       overflow: hidden;
-      -webkit-flex: 0 0 auto;
       flex: 0 0 auto;
 
       img {
@@ -53,18 +50,8 @@
 
     &__label,
     &__annotation {
-      -webkit-flex: 1;
       flex: 1;
     }
-
-    /*&__text {
-      display: -webkit-flex;
-      display: flex;
-      -webkit-justify-content: space-between;
-      justify-content: space-between;
-      -webkit-flex: 1;
-      flex: 1;
-    }*/
 
     &__annotation {
       margin-left: $inuit-base-spacing-unit;
@@ -91,9 +78,7 @@
     }
 
     &--column {
-      -webkit-flex-direction: column;
       flex-direction: column;
-      -webkit-align-items: start;
       align-items: start;
     }
   }
