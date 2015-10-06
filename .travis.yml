@@ -2,11 +2,6 @@ language: node_js
 node_js:
 - '0.12'
 sudo: false
-cache:
-  directories:
-  - node_modules
-  - server/node_modules
-  - docs/node_modules
 before_script:
 - npm install -g gulp
 - npm install -g codeclimate-test-reporter
