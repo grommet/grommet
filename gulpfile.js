@@ -57,6 +57,10 @@ var opts = {
   ],
   mainJs: 'src/js/index.js',
   mainScss: 'src/scss/grommet-core/index.scss',
+  icons: {
+    source: 'src/img/icons',
+    destination: 'src/js/components/icons/base'
+  },
   sync: {
     hostname: 'grommet.io',
     username: 'grommet',

@@ -2,6 +2,9 @@ var del = require('del');
 var file = require('gulp-file');
 var runSequence = require('run-sequence');
 var path = require('path');
+var fs = require('fs');
+var loader = require('grommet-icon-loader');
+var mkdirp = require('mkdirp');
 
 String.prototype.endsWith = function(suffix) {
   return this.indexOf(suffix, this.length - suffix.length) !== -1;
@@ -33,10 +36,6 @@ module.exports = function(gulp, opts) {
         {
           test: /\.json$/,
           loader: 'json-loader'
-        },
-        {
-          test: /.*img(\/|\\)icons.*\.svg$/,
-          loader: 'babel!grommet-icon!svgo'
         },
         {
           test: /\.png$/,
@@ -98,8 +97,73 @@ module.exports = function(gulp, opts) {
     });
   });
 
+  gulp.task('generate-icons', function(done) {
+    var basePath = options.base || process.cwd();
+    var iconsConfig = options.icons || {};
+    var iconsFolder = iconsConfig.source;
+    if (!path.isAbsolute(iconsConfig.source)) {
+      iconsFolder = path.resolve(basePath, iconsConfig.source || 'src/img/icons');
+    }
+
+    fs.readdir(iconsFolder, function(err, icons) {
+      if (icons) {
+        if (iconsConfig.destination) {
+          icons.forEach(function (icon, index) {
+
+            if (/\.svg$/.test(icon)) {
+              var iconPath = path.join(iconsFolder, icon);
+              var content = fs.readFileSync(iconPath, 'utf8');
+              var loaderContext = {
+                query: '?copyright=(C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.',
+                resourcePath: iconPath,
+                addDependency: function () {},
+                async: function() {
+                  return function(err, result) {
+                    var destinationPath = iconsConfig.destination;
+                    if (!path.isAbsolute(iconsConfig.destination)) {
+                      destinationPath = path.resolve(basePath, iconsConfig.destination);
+                    }
+
+                    mkdirp(destinationPath, function(err) {
+
+                      if (err) {
+                        throw err;
+                      }
+
+                      var componentName = icon.replace('.svg', '.js');
+                      componentName = componentName.replace(/^(.)|-([a-z])/g, function (g) {
+                        return g.length > 1 ? g[1].toUpperCase() : g.toUpperCase();
+                      });
+
+                      var destinationFile = path.resolve(destinationPath, componentName);
+
+                      fs.writeFile(destinationFile, result, function(err) {
+                        if (err) {
+                          throw err;
+                        }
+
+                        if (index === icons.length - 1) {
+                          done();
+                        }
+                      });
+                    });
+                  };
+                }
+              };
+              loader.apply(loaderContext, [content]);
+            }
+          });
+        } else {
+          console.log('Please specify the options.icons.destination property in your gulpfile.');
+        }
+      } else {
+        done();
+      }
+    });
+  });
+
   gulp.task('preprocess', function(callback) {
-    runSequence('clean', 'copy', 'jslint', 'scsslint', callback);
+    runSequence('clean', 'copy', 'generate-icons', 'jslint', 'scsslint', callback);
   });
 
   gulp.task('clean', function() {

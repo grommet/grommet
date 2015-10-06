@@ -1,8 +1,7 @@
 //based on https://github.com/danvk/mocha-react
 var fs = require('fs');
 var babel = require('babel-core');
-var loader = require('grommet-icon-loader');
-var origJs = require.extensions['.js', '.svg'];
+var origJs = require.extensions['.js'];
 
 // A module that exports a single, stubbed-out React Component.
 var reactStub = 'module.exports = require("react").createClass({render:function(){return null;}});';
@@ -24,40 +23,23 @@ function shouldStub(filename) {
 }
 
 // Transform a file via JSX/Harmony or stubbing.
-function transform(filename, done) {
+function transform(filename) {
   if (shouldStub(filename)) {
     return reactStub;
   } else {
     var content = fs.readFileSync(filename, 'utf8');
-
-    if (/\.svg$/.test(filename)) {
-
-      var loaderContext = {
-        resourcePath: filename,
-        addDependency: function () {},
-        async: function() {
-          return function(err, result) {
-            done(babel.transform(result).code);
-          };
-        }
-      };
-      loader.apply(loaderContext, [content]);
-    } else {
-      done(babel.transform(content).code);
-    }
+    return babel.transform(content).code;
   }
 }
 
 // Install the compiler.
-require.extensions['.js', '.svg'] = function(module, filename) {
+require.extensions['.js'] = function(module, filename) {
   // optimization: code in a distribution should never go through JSX compiler.
   if (filename.indexOf('node_modules/') >= 0) {
     return (origJs || require.extensions['.js'])(module, filename);
   }
 
-  return transform(filename, function(data) {
-    return module._compile(data, filename);
-  });
+  return module._compile(transform(filename), filename);
 };
 
 module.exports = {

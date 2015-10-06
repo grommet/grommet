@@ -17,6 +17,10 @@ var opts = {
   jsAssets: ['examples/medium-app/src/js/**/*.js'],
   mainJs: 'examples/medium-app/src/js/index.js',
   mainScss: 'examples/medium-app/src/scss/index.scss',
+  icons: {
+    source: path.resolve(__dirname, '../../src/img/icons'),
+    destination: path.resolve(__dirname, '../../src/js/components/icons/base')
+  },
   sync: {
     hostname: 'grommet.io',
     username: 'grommet',

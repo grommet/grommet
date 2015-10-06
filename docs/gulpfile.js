@@ -42,6 +42,10 @@ var opts = {
   jsAssets: ['docs/src/**/*.js'],
   mainJs: 'docs/src/index.js',
   mainScss: 'docs/src/scss/index.scss',
+  icons: {
+    source: path.resolve(__dirname, '../src/img/icons'),
+    destination: path.resolve(__dirname, '../src/js/components/icons/base')
+  },
   sync: {
     hostname: 'grommet.io',
     username: 'grommet',
@@ -50,7 +54,6 @@ var opts = {
   webpack: {
     resolve: {
       alias: {
-        'grommet/img': path.resolve(__dirname, '../src/img'),
         'grommet/scss': path.resolve(__dirname, '../src/scss'),
         'grommet': path.resolve(__dirname, '../src/js')
       },
@@ -163,10 +166,6 @@ gulp.task('generate-server-routes', function() {
             test: /develop(\/|\\).*\.htm$|design(\/|\\)[^\/]*\.htm$|design(\/|\\).*\/.*\.htm$/,
             loader: 'babel!imports?React=react,Router=react-router,Link=>Router.Link!html-jsx-loader',
             exclude: /(node_modules|bower_components)/
-          },
-          {
-            test: /.*img\/icons.*\.svg$/,
-            loader: 'babel!grommet-icon!svgo'
           }
         ]
       },

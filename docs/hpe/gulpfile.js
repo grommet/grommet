@@ -28,10 +28,13 @@ var opts = {
   jsAssets: ['docs/src/**/*.js'],
   mainJs: 'docs/src/index.js',
   mainScss: 'docs/src/scss/index-hpe.scss',
+  icons: {
+    source: path.resolve(__dirname, '../../src/img/icons'),
+    destination: path.resolve(__dirname, '../../src/js/components/icons/base')
+  },
   webpack: {
     resolve: {
       alias: {
-        'grommet/img': path.resolve(__dirname, '../../src/img'),
         'grommet/scss': path.resolve(__dirname, '../../src/scss'),
         'grommet': path.resolve(__dirname, '../../src/js')
       },
