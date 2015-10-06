@@ -70,7 +70,7 @@ var DocsMenu = React.createClass({
     var menuItems = this._renderMenuItems(this.props.contents, this.context.router, null);
     return (
       <Menu direction={this.props.direction} align="start" justify="between" primary={true}>
-        <Header tag="h2">{this.props.title}</Header>
+        <Header tag="h2" pad={{horizontal: 'medium'}}>{this.props.title}</Header>
         {menuItems}
       </Menu>
     );
