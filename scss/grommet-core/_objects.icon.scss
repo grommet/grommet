@@ -43,7 +43,7 @@
     }
   }
 
-  [class*="background-color-index-"] & {
+  [class*="background-color-index-"]:not[class*="background-color-index-light"] & {
     fill: $colored-icon-color;
     stroke: $colored-icon-color;
 
@@ -58,10 +58,6 @@
     stroke: $active-icon-color;
   }
 }
-
-//.drag-handle {
-//  margin-right: $inuit-base-spacing-unit - 10;
-//}
 
 .status-icon {
   width: $inuit-base-spacing-unit;
