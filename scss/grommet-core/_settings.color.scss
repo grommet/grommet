@@ -20,4 +20,5 @@ $brand-grey-colors: (#333333, #444444, #555555, #666666) !default;
   $brand-graph-colors: join($brand-graph-colors, $brand-accent-colors);
   $brand-graph-colors: join($brand-graph-colors, $brand-neutral-colors);
 };
+$brand-light-colors: (#f5f5f5) !default;
 $brand-text-decoration: none !default;

@@ -1,7 +1,6 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 .sidebar {
-  background-color: $background-color;
   min-height: 100vh;
 
   @include media-query(palm) {
@@ -14,19 +13,15 @@
   }
 
   &--fixed {
-    display: -webkit-flex;
     display: flex;
-    -webkit-flex-direction: column;
     flex-direction: column;
 
     > * {
-      -webkit-flex: 1;
       flex: 1;
       overflow: auto;
 
       &.header,
       &.footer {
-        -webkit-flex: 0 0 auto;
         flex: 0 0 auto;
       }
     }

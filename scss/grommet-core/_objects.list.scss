@@ -25,9 +25,7 @@
     padding-top: halve($inuit-base-spacing-unit);
     padding-bottom: halve($inuit-base-spacing-unit);
     border-bottom: 1px solid $border-color;
-    display: -webkit-flex;
     display: flex;
-    -webkit-align-items: center;
     align-items: center;
     max-width: none;
 
@@ -40,6 +38,7 @@
       width: $inuit-base-spacing-unit;
       margin-right: $inuit-base-spacing-unit;
       overflow: hidden;
+      flex: 0 0 auto;
 
       img {
         height: 100%;
@@ -49,12 +48,8 @@
       }
     }
 
-    &__text {
-      display: -webkit-flex;
-      display: flex;
-      -webkit-justify-content: space-between;
-      justify-content: space-between;
-      -webkit-flex: 1;
+    &__label,
+    &__annotation {
       flex: 1;
     }
 
@@ -74,6 +69,17 @@
     &--selected {
       background-color: $selected-background-color;
       color: $selected-text-color;
+    }
+
+    &--row {
+      .list-item__annotation {
+        text-align: right;
+      }
+    }
+
+    &--column {
+      flex-direction: column;
+      align-items: start;
     }
   }
 

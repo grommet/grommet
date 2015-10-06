@@ -69,14 +69,11 @@
     }
 
     &--sticky {
-      display: -webkit-flex;
       display: flex;
-      -webkit-flex-direction: column;
       flex-direction: column;
 
       > .header,
       > .footer {
-        -webkit-flex: 0 0 auto;
         flex: 0 0 auto;
       }
     }

@@ -47,3 +47,11 @@
 [class*="background-color-index-"] {
   color: $colored-text-color;
 }
+
+@for $i from 1 through length($brand-light-colors) {
+  .background-color-index-light-#{$i},
+  .background-color-index-light-#{$i + length($brand-light-colors)} {
+    background-color: nth($brand-light-colors, $i);
+    color: inherit;
+  }
+}

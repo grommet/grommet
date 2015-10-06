@@ -20,6 +20,10 @@
     }
   }
 
+  > * {
+    flex: 0 0 auto;
+  }
+
   a:not(.button) {
     text-decoration: none;
     margin-bottom: quarter($inuit-base-spacing-unit);

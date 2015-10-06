@@ -129,7 +129,7 @@ var PeopleFinder = React.createClass({
           searchText={this.state.searchText} onSearch={this._onSearchText}>
           <DirectoryList scope={this.state.scope}
             searchText={this.state.searchText}
-            onSelect={this._onSelect} />
+            onSelect={this._onSelect} onScope={this._onScope} />
         </Finder>
       );
 

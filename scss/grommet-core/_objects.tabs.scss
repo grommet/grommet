@@ -3,13 +3,9 @@
 .tabs {
   margin: 0;
   padding: 0;
-  display: -webkit-flex;
   display: flex;
-  -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-justify-content: center;
   justify-content: center;
-  -webkit-align-items: center;
   align-items: center;
   list-style: none;
   border-bottom: 1px solid $border-color;
