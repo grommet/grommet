@@ -18,6 +18,10 @@ var opts = {
   jsAssets: ['examples/todo-app-modular/src/js/**/*.js'],
   mainJs: 'examples/todo-app-modular/src/js/index.js',
   mainScss: 'examples/todo-app-modular/src/scss/index.scss',
+  icons: {
+    source: path.resolve(__dirname, '../../src/img/icons'),
+    destination: path.resolve(__dirname, '../../src/js/components/icons/base')
+  },
   devServerPort: 9010,
   webpack: {
     resolve: {

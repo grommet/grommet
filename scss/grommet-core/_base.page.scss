@@ -6,6 +6,6 @@ body {
   @include media-query(lap-and-up) {
     height: 100%;
     width: 100%;
-    overflow: hidden;
+    overflow: visible;
   }
 }

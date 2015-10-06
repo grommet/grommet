@@ -28,6 +28,10 @@ var opts = {
   jsAssets: ['examples/cabler/src/js/**/*.js'],
   mainJs: 'examples/cabler/src/js/index.js',
   mainScss: 'examples/cabler/src/scss/index.scss',
+  icons: {
+    source: path.resolve(__dirname, '../../src/img/icons'),
+    destination: path.resolve(__dirname, '../../src/js/components/icons/base')
+  },
   sync: {
     hostname: 'grommet.usa.hp.com',
     username: 'ligo',

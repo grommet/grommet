@@ -1,0 +1,38 @@
+// (C) Copyright 2014-2015 Hewlett-Packard Development Company
+
+var React = require('react');
+var IntlMixin = require('../../../mixins/GrommetIntlMixin');
+
+var Icon = React.createClass({
+
+  propTypes: {
+    a11yTitle: React.PropTypes.string,
+    a11yTitleId: React.PropTypes.string
+  },
+
+  mixins: [IntlMixin],
+
+  getDefaultProps: function () {
+    return {
+      a11yTitleId: 'map-location-title'
+    };
+  },
+
+  render: function() {
+    var className = 'control-icon control-icon-map-location';
+    if (this.props.className) {
+      className += ' ' + this.props.className;
+    }
+
+    var a11yTitle = this.getGrommetIntlMessage(
+      typeof this.props.a11yTitle !== "undefined" ?
+        this.props.a11yTitle : "map-location");
+
+    return (
+      <svg version="1.1" viewBox="0 0 48 48" width="48px" height="48px" className={className} aria-labelledby={this.props.a11yTitleId}><title id={this.props.a11yTitleId}>{a11yTitle}</title><g id="map-location"><rect id="_x2E_svg_145_" x="0" fill="none" width="48" height="48"/><line fill="none" stroke="#231F20" strokeWidth="2" strokeMiterlimit="10" x1="20.025" y1="18.9467" x2="20.025" y2="18.9467"/><path fill="none" stroke="#231F20" strokeWidth="2" strokeMiterlimit="10" d="M29.705,16.7667l5.32,2.28v15l-7-3l-8,3l-7-3v-15&#xA;&#x9;&#x9;l5.27,2.26 M20.025,33.9467v-11 M28.025,30.9467v-8 M24.025,11.9467c-3.1861,0-5.769,2.5829-5.769,5.769&#xA;&#x9;&#x9;c0,4.3989,5.769,9.2304,5.769,9.2304c2.2529-2.2529,5.769-4.7594,5.769-9.2304C29.794,14.5296,27.2111,11.9467,24.025,11.9467z"/><circle fill="#231F20" cx="24.025" cy="17.9467" r="2"/></g></svg>
+    );
+  }
+
+});
+
+module.exports = Icon;
