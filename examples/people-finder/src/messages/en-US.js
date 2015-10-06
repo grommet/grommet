@@ -7,5 +7,11 @@ module.exports = {
   'Groups': 'Groups',
   'Locations': 'Locations',
   'Search': 'Search',
-  'No matches': 'No matches'
+  'No matching people': 'No matching people',
+  'No matching groups': 'No matching groups',
+  'No matching locations': 'No matching locations',
+  'People matching': 'People matching {search}',
+  'Groups matching': 'Groups matching {search}',
+  'Locations matching': 'Locations matching {search}',
+  'Refine search to find more': 'Refine your search to find more.'
 };

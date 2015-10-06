@@ -2,9 +2,13 @@
 
 var React = require('react');
 var IntlMixin = require('grommet/mixins/GrommetIntlMixin');
+var ReactIntl = require('react-intl');
+var FormattedMessage = ReactIntl.FormattedMessage;
 var Rest = require('grommet/utils/Rest');
 var List = require('grommet/components/List');
 var Spinning = require('grommet/components/icons/Spinning');
+var Right = require('grommet/components/icons/Right');
+var Footer = require('grommet/components/Footer');
 var config = require('../config');
 
 var DirectoryList = React.createClass({
@@ -12,7 +16,8 @@ var DirectoryList = React.createClass({
   propTypes: {
     scope: React.PropTypes.object.isRequired,
     searchText: React.PropTypes.string,
-    onSelect: React.PropTypes.func.isRequired
+    onSelect: React.PropTypes.func.isRequired,
+    onScope: React.PropTypes.func.isRequired
   },
 
   mixins: [IntlMixin],
@@ -20,7 +25,8 @@ var DirectoryList = React.createClass({
   getInitialState: function () {
     return {
       changing: false,
-      data: []
+      data: [],
+      summaries: {}
     };
   },
 
@@ -39,13 +45,42 @@ var DirectoryList = React.createClass({
     clearTimeout(this._searchTimer);
   },
 
-  _onSearchResponse: function (err, res) {
+  _simulateItem: function (primary, uid, image) {
+    var item = {};
+    this.props.scope.schema.forEach(function (attr) {
+      if (attr.primary) {
+        // TODO: parameterize i18n
+        item[attr.attribute] = primary;
+      } else if (attr.uid) {
+        item[attr.attribute] = uid;
+      } else if (attr.image) {
+        item[attr.attribute] = image;
+      }
+    }.bind(this));
+    return item;
+  },
+
+  _onSearchResponse: function (scope, err, res) {
     if (err) {
       this.setState({data: [], error: err, changing: false});
     } else if (res.ok && this.props.searchText) {
       // don't keep result if we don't have search text anymore
-      var result = res.body;
-      this.setState({data: result, error: null, changing: false});
+      var state = {error: null, changing: false, summaries: this.state.summaries};
+      if (scope.ou === this.props.scope.ou) {
+        state.data = res.body;
+      } else if (res.body.length > 0) {
+        var message = (
+          <FormattedMessage message={scope.label + ' matching'}
+            search={this.props.searchText} />
+        );
+        var item = this._simulateItem(message, scope.ou, <Right />);
+        item._scope = scope;
+        state.summaries[scope.ou] = {
+          scope: scope,
+          item: item
+        };
+      }
+      this.setState(state);
     }
   },
 
@@ -66,17 +101,42 @@ var DirectoryList = React.createClass({
       filter: filter,
       attributes: config.attributesFromSchema(this.props.scope.schema)
     };
-    Rest.get('/ldap/', params).end(this._onSearchResponse);
+    Rest.get('/ldap/', params).end(function (err, res) {
+      this._onSearchResponse(this.props.scope, err, res);
+    }.bind(this));
+
+    // get other scopes lazily
+    this._searchTimer = setTimeout(function () {
+      Object.keys(config.scopes).map(function (key) {
+        var scope = config.scopes[key];
+        if (scope.ou !== this.props.scope.ou) {
+          params.base = encodeURIComponent('ou=' + scope.ou + ',o=' + config.organization);
+          params.filter = encodeURIComponent(scope.filterForSearch(searchText));
+          params.attributes = config.attributesFromSchema(scope.schema);
+          Rest.get('/ldap/', params).end(function (err, res) {
+            this._onSearchResponse(scope, err, res);
+          }.bind(this));
+        }
+      }.bind(this));
+    }.bind(this), 200);
   },
 
   _queueSearch: function (searchText) {
     clearTimeout(this._searchTimer);
     if (! searchText) {
-      this.setState({data: [], changing: false});
+      this.setState({data: [], summaries: {}, changing: false});
     } else {
-      this.setState({changing: true});
+      this.setState({summaries: {}, changing: true});
       // debounce
       this._searchTimer = setTimeout(this._search, 500);
+    }
+  },
+
+  _onSelect: function (item) {
+    if (item._scope) {
+      this.props.onScope(item._scope);
+    } else {
+      this.props.onSelect(item);
     }
   },
 
@@ -89,13 +149,32 @@ var DirectoryList = React.createClass({
       busy[schema[0].attribute] = <Spinning />;
       data = [busy];
     } else if (this.props.searchText && this.state.data.length === 0) {
-      empty = this.getGrommetIntlMessage('No matches');
+      empty = this.getGrommetIntlMessage('No matching ' + this.props.scope.label.toLowerCase());
       data = [];
     }
 
+    Object.keys(config.scopes).map(function (key) {
+      if (this.state.summaries[key]) {
+        var summary = this.state.summaries[key];
+        data = data.concat([summary.item]);
+      }
+    }.bind(this));
+
+    var more;
+    if (data.length >= 20) {
+      more = (
+        <Footer pad="medium">
+          {this.getGrommetIntlMessage('Refine search to find more')}
+        </Footer>
+      );
+    }
+
     return (
-      <List key="results" large={true} data={data} emptyIndicator={empty}
-        schema={schema} onSelect={this.props.onSelect} />
+      <div>
+        <List key="results" large={true} data={data} emptyIndicator={empty}
+          schema={schema} onSelect={this._onSelect} />,
+        {more}
+      </div>
     );
   }
 
