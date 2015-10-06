@@ -195,9 +195,15 @@
 
   &--primary {
 
+    > .menu {
+      width: 100%;
+    }
+
     > a:not(.button) {
       padding: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit;
+      border-right: quarter($inuit-base-spacing-unit) solid transparent;
       margin-bottom: 0px;
+      width: 100%;
 
       &:hover {
         text-decoration: none;
@@ -208,8 +214,7 @@
       }
 
       &.active {
-        color: $selected-primary-text-color;
-        background-color: $selected-primary-background-color;
+        border-color: $brand-color;
       }
     }
 
@@ -234,6 +239,10 @@
 
 .menu--inline.menu,
 .menu__drop {
+
+  a {
+    padding: quarter($inuit-base-spacing-unit) $inuit-base-spacing-unit;
+  }
 
   &--small {
     font-size: 1em;
