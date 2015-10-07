@@ -15,7 +15,7 @@
     margin: halve($inuit-base-spacing-unit);
 
     &--wide {
-      flex-basis: 100%;
+      flex-basis: calc(100% - #{$inuit-base-spacing-unit});
       box-sizing: border-box;
     }
   }
@@ -55,6 +55,10 @@
 
     > .tile {
       margin: 0px;
+
+      &--wide {
+        flex-basis: 100%;
+      }
     }
   }
 
