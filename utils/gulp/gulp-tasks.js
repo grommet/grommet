@@ -163,6 +163,8 @@ module.exports = function(gulp, opts) {
           done();
         }
       });
+    } else {
+      done();
     }
   });
 
