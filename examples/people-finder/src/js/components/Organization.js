@@ -66,7 +66,17 @@ var Organization = React.createClass({
     if (err) {
       this.setState({staff: [], error: err});
     } else if (res.ok) {
-      var result = res.body;
+      var result = res.body.sort(function (p1, p2) {
+        var n1 = p1.cn.toLowerCase();
+        var n2 = p2.cn.toLowerCase();
+        if (n1 > n2) {
+          return 1;
+        }
+        if (n1 < n2) {
+          return -1;
+        }
+        return 0;
+      });
       this.setState({team: result, error: null});
     }
   },

@@ -54,7 +54,7 @@ var Map = React.createClass({
   },
 
   _setMap: function () {
-    map = this.state.map;
+    var map = this.state.map;
     map.setView([this.state.latitude, this.state.longitude], 14);
     Leaflet.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
