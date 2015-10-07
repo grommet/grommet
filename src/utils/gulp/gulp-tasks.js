@@ -101,65 +101,69 @@ module.exports = function(gulp, opts) {
     var basePath = options.base || process.cwd();
     var iconsConfig = options.icons || {};
     var iconsFolder = iconsConfig.source;
-    if (!path.isAbsolute(iconsConfig.source)) {
-      iconsFolder = path.resolve(basePath, iconsConfig.source || 'src/img/icons');
-    }
+    if (iconsFolder) {
+      if (!path.isAbsolute(iconsConfig.source)) {
+        iconsFolder = path.resolve(basePath, iconsConfig.source || 'src/img/icons');
+      }
 
-    fs.readdir(iconsFolder, function(err, icons) {
-      if (icons) {
-        if (iconsConfig.destination) {
-          icons.forEach(function (icon, index) {
+      fs.readdir(iconsFolder, function(err, icons) {
+        if (icons) {
+          if (iconsConfig.destination) {
 
-            if (/\.svg$/.test(icon)) {
-              var iconPath = path.join(iconsFolder, icon);
-              var content = fs.readFileSync(iconPath, 'utf8');
-              var loaderContext = {
-                query: '?copyright=(C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.',
-                resourcePath: iconPath,
-                addDependency: function () {},
-                async: function() {
-                  return function(err, result) {
-                    var destinationPath = iconsConfig.destination;
-                    if (!path.isAbsolute(iconsConfig.destination)) {
-                      destinationPath = path.resolve(basePath, iconsConfig.destination);
-                    }
+            icons.forEach(function (icon, index) {
 
-                    mkdirp(destinationPath, function(err) {
-
-                      if (err) {
-                        throw err;
+              if (/\.svg$/.test(icon)) {
+                var iconPath = path.join(iconsFolder, icon);
+                var content = fs.readFileSync(iconPath, 'utf8');
+                var loaderContext = {
+                  query: '?copyright=(C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.',
+                  resourcePath: iconPath,
+                  addDependency: function () {},
+                  async: function() {
+                    return function(err, result) {
+                      var destinationPath = iconsConfig.destination;
+                      if (!path.isAbsolute(iconsConfig.destination)) {
+                        destinationPath = path.resolve(basePath, iconsConfig.destination);
                       }
 
-                      var componentName = icon.replace('.svg', '.js');
-                      componentName = componentName.replace(/^(.)|-([a-z])/g, function (g) {
-                        return g.length > 1 ? g[1].toUpperCase() : g.toUpperCase();
-                      });
+                      mkdirp(destinationPath, function(err) {
 
-                      var destinationFile = path.resolve(destinationPath, componentName);
-
-                      fs.writeFile(destinationFile, result, function(err) {
                         if (err) {
                           throw err;
                         }
 
-                        if (index === icons.length - 1) {
-                          done();
-                        }
+                        var componentName = icon.replace('.svg', '.js');
+                        componentName = componentName.replace(/^(.)|-([a-z])/g, function (g) {
+                          return g.length > 1 ? g[1].toUpperCase() : g.toUpperCase();
+                        });
+
+                        var destinationFile = path.resolve(destinationPath, componentName);
+
+                        fs.writeFile(destinationFile, result, function(err) {
+                          if (err) {
+                            throw err;
+                          }
+
+                          if (index === icons.length - 1) {
+
+                            done();
+                          }
+                        });
                       });
-                    });
-                  };
-                }
-              };
-              loader.apply(loaderContext, [content]);
-            }
-          });
+                    };
+                  }
+                };
+                loader.apply(loaderContext, [content]);
+              }
+            });
+          } else {
+            console.log('Please specify the options.icons.destination property in your gulpfile.');
+          }
         } else {
-          console.log('Please specify the options.icons.destination property in your gulpfile.');
+          done();
         }
-      } else {
-        done();
-      }
-    });
+      });
+    }
   });
 
   gulp.task('preprocess', function(callback) {
