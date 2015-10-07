@@ -4,6 +4,7 @@ var React = require('react');
 var IntlMixin = require('grommet/mixins/GrommetIntlMixin');
 var Rest = require('grommet/utils/Rest');
 var Split = require('grommet/components/Split');
+var Box = require('grommet/components/Box');
 var Header = require('grommet/components/Header');
 var Title = require('grommet/components/Title');
 var Article = require('grommet/components/Article');
@@ -110,18 +111,20 @@ var Person = React.createClass({
                 <SearchIcon />
               </span>
             </Header>
-            <Section pad="medium">
-              <Header tag="h1" justify="between">
-                <span>{person.cn}</span>
-                <a href={"http://directoryworks.core.hp.com/protected/people/view/person/normal/?dn=" + person.dn}><EditIcon /></a>
-              </Header>
-              <div>
+            <Box direction="row" pad="none">
+              <Box pad="medium">
                 <img src={person.hpPictureURI || 'img/no-picture.png'} alt="picture" />
-              </div>
-              <p>{personTitle}</p>
-              <h2><a href={"mailto:" + person.uid}>{person.uid}</a></h2>
-              <h3><a href={"tel:" + person.telephoneNumber}>{person.telephoneNumber}</a></h3>
-            </Section>
+              </Box>
+              <Section pad="medium" className="flex">
+                <Header tag="h1" justify="between">
+                  <span>{person.cn}</span>
+                  <a href={"http://directoryworks.core.hp.com/protected/people/view/person/normal/?dn=" + person.dn}><EditIcon /></a>
+                </Header>
+                <p>{personTitle}</p>
+                <h2><a href={"mailto:" + person.uid}>{person.uid}</a></h2>
+                <h3><a href={"tel:" + person.telephoneNumber}>{person.telephoneNumber}</a></h3>
+              </Section>
+            </Box>
             <Map title={person.o}
               street={person.street} city={person.l} state={person.st} country={person.c} />
           </Article>
