@@ -36,12 +36,14 @@ var opts = {
         path.resolve(__dirname, 'src/js'),
         path.resolve(__dirname, 'src/scss'),
         path.resolve(__dirname, '../../src/scss'),
+        path.resolve(__dirname, '../../src/lib'),
         path.resolve(__dirname, '../../node_modules'),
         path.resolve(__dirname, 'node_modules')
       ]
     }
   },
   devServerPort: 9020,
+  //devServerHost: '0.0.0.0',
   devServerProxy: {
     "/ldap/*": 'http://localhost:8020'
   },
