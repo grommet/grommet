@@ -198,7 +198,7 @@ var MediumDashboard = React.createClass({
       }
 
       return (
-        <Tile key={index} wide={tile.wide} pad="medium">
+        <Tile key={index} wide={tile.wide}>
           {header}
           {contents}
         </Tile>
