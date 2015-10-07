@@ -41,7 +41,7 @@ var SidebarDoc = React.createClass({
           <h2>Example</h2>
 
           <div className="example">
-            <Sidebar colorIndex="light-1">
+            <Sidebar colorIndex="light-2">
               <Header pad="medium">
                 <Title>Title</Title>
               </Header>
@@ -51,7 +51,7 @@ var SidebarDoc = React.createClass({
             </Sidebar>
           </div>
           <pre><code className="html hljs xml">
-            {"<Sidebar colorIndex=\"light-1\">\n  <p>\n    Sample Content One\n  </p>\n</Sidebar>"}
+            {"<Sidebar colorIndex=\"light-2\">\n  <p>\n    Sample Content One\n  </p>\n</Sidebar>"}
           </code></pre>
 
         </section>
