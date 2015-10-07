@@ -13,6 +13,7 @@ var LoginForm = React.createClass({
   propTypes: {
     logo: React.PropTypes.node,
     title: React.PropTypes.string,
+    secondaryText: React.PropTypes.string,
     usernameType: React.PropTypes.string,
     rememberMe: React.PropTypes.bool,
     forgotPassword: React.PropTypes.node,
@@ -62,23 +63,32 @@ var LoginForm = React.createClass({
     if (this.props.title) {
       title = (
         <h1 className={CLASS_ROOT + "__title"}>
-          {this.props.title}
+          <strong>{this.props.title}</strong>
         </h1>
       );
     }
 
+    var secondaryText = null;
+    if (this.props.secondaryText) {
+      secondaryText = (
+        <p className={CLASS_ROOT + "__secondary-text"}>
+          {this.props.secondaryText}
+        </p>
+      );
+    }
+
+    var rememberMe = null;
+    if (this.props.rememberMe) {
+      rememberMe = (
+        <CheckBox className={CLASS_ROOT + "__remember-me"}
+          id="remember-me" label={this.getGrommetIntlMessage('Remember me')} />
+      );
+    }
+
     var footer = null;
-    if (this.props.rememberMe || this.props.forgotPassword) {
-      var rememberMe = null;
-      if (this.props.rememberMe) {
-        rememberMe = (
-          <CheckBox className={CLASS_ROOT + "__remember-me"}
-            id="remember-me" label={this.getGrommetIntlMessage('Remember me')} />
-        );
-      }
+    if (this.props.forgotPassword) {
       footer = (
         <div className={CLASS_ROOT + "__footer"}>
-          {rememberMe}
           {this.props.forgotPassword}
         </div>
       );
@@ -88,6 +98,7 @@ var LoginForm = React.createClass({
       <Form className={classes.join(' ')} onSubmit={this._onSubmit}>
         {logo}
         {title}
+        {secondaryText}
         <fieldset>
           <FormField htmlFor="username" label={this.getGrommetIntlMessage('Username')}>
             <input id="username" ref="username" type={this.props.usernameType} />
@@ -97,6 +108,7 @@ var LoginForm = React.createClass({
           </FormField>
         </fieldset>
         {errors}
+        {rememberMe}
         <Button id={CLASS_ROOT + "__submit"} className={CLASS_ROOT + "__submit"} primary={true} strong={true}
           type="submit" label={this.getGrommetIntlMessage('Log In')}
           onClick={this._onSubmit} />
