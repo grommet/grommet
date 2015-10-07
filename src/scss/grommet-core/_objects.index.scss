@@ -35,7 +35,8 @@
     @include inuit-font-size($label-font-size, inherit);
 
     @include media-query(palm) {
-      margin-left: halve($inuit-base-spacing-unit);
+      display: none;
+      //margin-left: halve($inuit-base-spacing-unit);
     }
 
     @include media-query(lap-and-up) {
