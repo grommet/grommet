@@ -12,6 +12,7 @@
     // don't count padding for flex basis
     // this makes it easier to align tiles with graphic components
     box-sizing: content-box;
+    margin: halve($inuit-base-spacing-unit);
 
     &--wide {
       flex-basis: 100%;
@@ -51,6 +52,10 @@
     //margin: - $inuit-base-spacing-unit;
     //width: calc(100% + #{double($inuit-base-spacing-unit)});
     padding: 0px;
+
+    > .tile {
+      margin: 0px;
+    }
   }
 
   &--direction {
