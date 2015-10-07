@@ -79,9 +79,11 @@ var opts = {
   devServerProxy: {
     "/rest/*": 'http://localhost:8000'
   },
+  devPreprocess: ['generate-icons-map'],
   distPreprocess: [
-    'generate-server-routes', 'generate-server-styles',
-    'dist-hpe', 'dist-hpinc', 'dist-bower', 'dist-aruba'
+    'generate-icons-map', 'generate-server-routes',
+    'generate-server-styles', 'dist-hpe', 'dist-hpinc',
+    'dist-bower', 'dist-aruba'
   ],
   env: {
     __THEME__: '"vanilla"'
@@ -145,6 +147,43 @@ fs.readdirSync(path.join(__dirname, '../node_modules'))
   .forEach(function(mod) {
     nodeModules[mod] = 'commonjs ' + mod;
   });
+
+gulp.task('generate-icons-map', function (done) {
+  var iconsFolder = path.join(__dirname, '../src/img/icons');
+  var iconsMap = ['module.exports = {'];
+  fs.readdir(iconsFolder, function(err, icons) {
+    icons.forEach(function (icon, index) {
+
+      if (/\.svg$/.test(icon)) {
+        var componentName = icon.replace('.svg', '.js');
+        componentName = componentName.replace(/^(.)|-([a-z])/g, function (g) {
+          return g.length > 1 ? g[1].toUpperCase() : g.toUpperCase();
+        });
+
+        var grommetIconPath = "grommet/components/icons/base/";
+        iconsMap.push(
+          "\"" + icon.replace('.svg', '') + "\":" +
+          " require('" + grommetIconPath + componentName + "')"
+        );
+
+        if (index === icons.length - 1) {
+          iconsMap.push('};\n');
+
+          var destinationFile = path.join(__dirname, 'src/develop/components/iconsMap.js');
+          fs.writeFile(destinationFile, iconsMap.join(''), function(err) {
+            if (err) {
+              throw err;
+            }
+
+            done();
+          });
+        } else {
+          iconsMap.push(',');
+        }
+      }
+    });
+  });
+});
 
 gulp.task('generate-server-routes', function() {
   return gulp.src(path.join(__dirname, 'src/routes.js'))

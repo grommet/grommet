@@ -15,7 +15,9 @@ notes.txt
 **requests.csv**
 **coverage**
 **lcov.info**
+src/js/baseIcons.js
 **/src/js/components/icons/base*/**
+**iconsMap**
 **.publish**
 server/css**
 server/server-routes.js

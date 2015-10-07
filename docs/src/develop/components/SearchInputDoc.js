@@ -26,7 +26,7 @@ var SearchInputDoc = React.createClass({
 
   render: function() {
     var inline =
-      "<SearchInput onChange={...} onSearch={...} />";
+      "<SearchInput onChange={...} />";
     return (
       <DocsArticle title="SearchInput" colorIndex="neutral-3">
 
@@ -60,7 +60,6 @@ var SearchInputDoc = React.createClass({
           <div className="example">
             <SearchInput id="item2" name="item-2"
               value={this.state.value} onChange={this._onChange}
-              onSearch={this._onSearch}
               suggestions={this.state.suggestions} />
           </div>
           <pre><code className="html hljs xml">{"<SearchInput value=\"" + this.state.value + "\" />"}</code></pre>
