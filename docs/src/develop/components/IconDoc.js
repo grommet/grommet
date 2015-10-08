@@ -2,6 +2,7 @@
 
 var React = require('react');
 var DocsArticle = require('../../DocsArticle');
+var Header = require('grommet/components/Header');
 var SearchInput = require('grommet/components/SearchInput');
 var Tiles = require('grommet/components/Tiles');
 var Tile = require('grommet/components/Tile');
@@ -117,10 +118,11 @@ var IconDoc = React.createClass({
         </section>
 
         <section>
-          <h2>Search</h2>
-
-          <SearchInput id="iconSearchInput" name="iconSearchInput"
-            onChange={this._onChange} value={this.state.inputData} />
+          <Header tag="h2">
+            Icons
+            <SearchInput id="iconSearchInput" name="iconSearchInput"
+              onChange={this._onChange} value={this.state.inputData} />
+          </Header>
         </section>
 
         <section>
