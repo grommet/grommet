@@ -119,8 +119,10 @@ module.exports = function(gulp, opts) {
               if (/\.svg$/.test(icon)) {
                 var iconPath = path.join(iconInputFolder, icon);
                 var content = fs.readFileSync(iconPath, 'utf8');
+                var query = options.icons.context ? '?context=' + options.icons.context : '?context=grommet/';
+                query += '&copyright=(C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.';
                 var loaderContext = {
-                  query: '?copyright=(C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.',
+                  query: query,
                   resourcePath: iconPath,
                   addDependency: function () {},
                   async: function() {
