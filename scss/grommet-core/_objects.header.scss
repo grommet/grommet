@@ -61,6 +61,16 @@ h5 {
   > strong {
     font-weight: 600;
   }
+
+  a,
+  a.anchor {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
 
 header.header {
