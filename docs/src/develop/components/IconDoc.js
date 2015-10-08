@@ -69,13 +69,15 @@ var IconDoc = React.createClass({
   },
 
   render: function() {
-    var componentName = (this.state.value || '$iconName').replace(/^(.)|-([a-z])/g, function (g) {
-      return g.length > 1 ? g[1].toUpperCase() : g.toUpperCase();
-    });
+    var componentName = (this.state.value || '$iconName')
+      .replace(/^(.)|-([a-z])/g, function (g) {
+        return g.length > 1 ? g[1].toUpperCase() : g.toUpperCase();
+      });
+
     var inline = [
-      "var Icon = require('grommet/components/icons/base/" + componentName + "');",
-      "//or var Icon = Grommet.Icons.Base." + componentName,
-      "<Icon />"
+      "var " + componentName + " = require('grommet/components/icons/base/" + componentName + "');",
+      "//or var " + componentName + " = Grommet.Icons.Base." + componentName,
+      "<" + componentName + " />"
     ].join("\n");
 
     var endIndex = this.state.pageIndex * 50;
@@ -88,7 +90,8 @@ var IconDoc = React.createClass({
 
       var IconInstance = iconsMap[iconName];
       return (
-        <Tile key={'tile_' + index} direction="row" align="start" justify="start">
+        <Tile key={'tile_' + index} direction="row"
+          align="start" justify="start">
           <div onClick={this._onIconSelect}>
             <IconInstance />
             <span dangerouslySetInnerHTML={{__html: iconText}} />
@@ -112,8 +115,8 @@ var IconDoc = React.createClass({
         <section>
           <h2>Options</h2>
           <dl>
-            <dt><code>name           string</code></dt>
-            <dd>Name of the icon (e.g. 'social-github').</dd>
+            <dt><code>iconName           string</code></dt>
+            <dd>Name of the icon (e.g. 'SocialGithub').</dd>
           </dl>
         </section>
 
