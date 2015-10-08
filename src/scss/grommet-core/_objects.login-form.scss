@@ -6,9 +6,6 @@
   padding: $inuit-base-spacing-unit;
   padding-bottom: double($inuit-base-spacing-unit);
   background-color: $layer-background-color;
-  border: 1px solid $border-color;
-  border-radius: $border-radius;
-  box-shadow: $layer-box-shadow;
   text-align: center;
   z-index: 1;
   @include fade-in();
@@ -18,11 +15,8 @@
     border-radius: 0px;
   }
 
-  &__logo {
-    display: inline-block;
-    width: double($inuit-base-spacing-unit);
-    height: double($inuit-base-spacing-unit);
-    margin-bottom: $inuit-base-spacing-unit;
+  &__secondary-text {
+    color: $secondary-text-color;
   }
 
   fieldset {
@@ -34,6 +28,12 @@
       width: 100%;
       display: block;
     }
+  }
+
+  &__remember-me {
+    display: block;
+    margin-top: $inuit-base-spacing-unit;
+    text-align: left;
   }
 
   &__submit {
@@ -49,7 +49,9 @@
 
   &__footer {
     margin-top: halve($inuit-base-spacing-unit);
+    display: -webkit-flex;
     display: flex;
+    -webkit-justify-content: space-between;
     justify-content: space-between;
     // align line height with .form-field
     line-height: $inuit-base-spacing-unit + halve($inuit-base-spacing-unit);

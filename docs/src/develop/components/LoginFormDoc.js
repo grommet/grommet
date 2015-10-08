@@ -32,6 +32,8 @@ var LoginFormDoc = React.createClass({
           <dd>Whether to include a remember me input.</dd>
           <dt><code>title           {"{string}"}</code></dt>
           <dd>The product name.</dd>
+          <dt><code>secondaryText   {"{string}"}</code></dt>
+          <dd>Secondary text related to the product.</dd>
           </dl>
         </section>
 
@@ -46,7 +48,7 @@ var LoginFormDoc = React.createClass({
 
           <h3>Full</h3>
           <div className="example">
-            <LoginForm logo={<Logo />} title="Product Name"
+            <LoginForm logo={<Logo />} title="Product Name" secondaryText="Product Secondary Text"
               rememberMe={true} forgotPassword={<a>Forgot password?</a>}
               errors={["Invalid username or password."]}/>
           </div>

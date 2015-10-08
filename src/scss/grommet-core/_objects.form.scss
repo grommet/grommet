@@ -46,7 +46,7 @@
   .layer & {
 
     @include media-query(lap-and-up) {
-      max-height: 100vh;
+      max-height: 100%;
       max-width: 100%;
       overflow: auto;
       padding: round($inuit-base-spacing-unit * 0.75) double($inuit-base-spacing-unit) double($inuit-base-spacing-unit);
