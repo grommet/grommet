@@ -1,10 +1,13 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
+'use strict';
+
 var React = require('react');
 
 var CLASS_ROOT = "button";
 
 var Button = React.createClass({
+  displayName: 'Button',
 
   propTypes: {
     accent: React.PropTypes.bool,
@@ -17,13 +20,13 @@ var Button = React.createClass({
     type: React.PropTypes.oneOf(['button', 'reset', 'submit', 'icon'])
   },
 
-  getDefaultProps: function () {
+  getDefaultProps: function getDefaultProps() {
     return {
       type: "button"
     };
   },
 
-  render: function () {
+  render: function render() {
     var classes = [CLASS_ROOT];
     if (this.props.primary) {
       classes.push(CLASS_ROOT + "--primary");
@@ -34,7 +37,7 @@ var Button = React.createClass({
     if (this.props.accent) {
       classes.push(CLASS_ROOT + "--accent");
     }
-    if (! this.props.onClick) {
+    if (!this.props.onClick) {
       classes.push(CLASS_ROOT + "--disabled");
     }
     if (this.props.className) {
@@ -49,11 +52,11 @@ var Button = React.createClass({
       type = 'button';
     }
 
-    return (
-      <button id={this.props.id} type={type} className={classes.join(' ')}
-        onClick={this.props.onClick}>
-        {content}
-      </button>
+    return React.createElement(
+      'button',
+      { id: this.props.id, type: type, className: classes.join(' '),
+        onClick: this.props.onClick },
+      content
     );
   }
 

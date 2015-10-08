@@ -1,10 +1,13 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
+"use strict";
+
 var React = require('react');
 
 var CLASS_ROOT = "radio-button";
 
 var RadioButton = React.createClass({
+  displayName: "RadioButton",
 
   propTypes: {
     checked: React.PropTypes.bool,
@@ -17,7 +20,7 @@ var RadioButton = React.createClass({
     value: React.PropTypes.string
   },
 
-  render: function () {
+  render: function render() {
     var classes = [CLASS_ROOT];
     if (this.props.disabled) {
       classes.push(CLASS_ROOT + "--disabled");
@@ -25,20 +28,22 @@ var RadioButton = React.createClass({
     if (this.props.className) {
       classes.push(this.props.className);
     }
-    return (
-      <label className={classes.join(' ')}>
-        <input className={CLASS_ROOT + "__input"}
-          id={this.props.id} name={this.props.name} type="radio"
-          disabled={this.props.disabled}
-          checked={this.props.checked}
-          defaultChecked={this.props.defaultChecked}
-          value={this.props.value}
-          onChange={this.props.onChange} />
-        <span className={CLASS_ROOT + "__control"}></span>
-        <span className={CLASS_ROOT + "__label"}>
-          {this.props.label}
-        </span>
-      </label>
+    return React.createElement(
+      "label",
+      { className: classes.join(' ') },
+      React.createElement("input", { className: CLASS_ROOT + "__input",
+        id: this.props.id, name: this.props.name, type: "radio",
+        disabled: this.props.disabled,
+        checked: this.props.checked,
+        defaultChecked: this.props.defaultChecked,
+        value: this.props.value,
+        onChange: this.props.onChange }),
+      React.createElement("span", { className: CLASS_ROOT + "__control" }),
+      React.createElement(
+        "span",
+        { className: CLASS_ROOT + "__label" },
+        this.props.label
+      )
     );
   }
 

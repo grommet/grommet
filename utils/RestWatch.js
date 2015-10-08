@@ -1,5 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
+'use strict';
+
 var Rest = require('./Rest');
 
 var RECONNECT_TIMEOUT = 5000; // 5s
@@ -17,7 +19,7 @@ var state = {
 
 var RestWatch = {
 
-  _sendMessage: function(op, id, url, params) {
+  _sendMessage: function _sendMessage(op, id, url, params) {
     state.ws.send(JSON.stringify({
       op: op,
       id: id,
@@ -26,30 +28,30 @@ var RestWatch = {
     }));
   },
 
-  _onOpen: function() {
+  _onOpen: function _onOpen() {
     state.wsReady = true;
     // send any requests we have queued up
-    state.requests.forEach(function(request) {
+    state.requests.forEach(function (request) {
       this._sendMessage('start', request.id, request.url, request.params);
     }, this);
   },
 
-  _onError: function(error) {
+  _onError: function _onError(error) {
     console.log('!!! RestWatch _onError TODO', error);
   },
 
-  _onMessage: function(event) {
+  _onMessage: function _onMessage(event) {
     var message = JSON.parse(event.data);
     // Figure out which message this corresponds to so we
     // know which action to deliver the response with.
-    state.requests.some(function(request) {
+    state.requests.some(function (request) {
       if (request.id === message.id) {
         request.handler(message.result);
       }
     });
   },
 
-  _onClose: function() {
+  _onClose: function _onClose() {
     // lost connection, retry in a bit
     state.ws = null;
     state.wsReady = false;
@@ -57,30 +59,29 @@ var RestWatch = {
     state.timer = setTimeout(this.initialize.bind(this), RECONNECT_TIMEOUT);
   },
 
-  _getREST: function(request) {
+  _getREST: function _getREST(request) {
     request.pollBusy = true;
-    Rest.get(request.url, request.params)
-      .end(function(err, res) {
-        if (err) {
-          throw err;
-        }
+    Rest.get(request.url, request.params).end(function (err, res) {
+      if (err) {
+        throw err;
+      }
 
-        if (res.ok) {
-          request.handler(res.body);
-        }
-        request.pollBusy = false;
-      });
+      if (res.ok) {
+        request.handler(res.body);
+      }
+      request.pollBusy = false;
+    });
   },
 
-  _poll: function() {
-    state.requests.forEach(function(request) {
+  _poll: function _poll() {
+    state.requests.forEach(function (request) {
       if (!request.pollBusy) {
         this._getREST(request);
       }
     });
   },
 
-  initialize: function(socketUrl) {
+  initialize: function initialize(socketUrl) {
     if (!state.initialized && !state.ws && this.available() && (state.socketUrl || socketUrl)) {
       state.socketUrl = state.socketUrl || socketUrl;
       state.ws = new WebSocket(state.socketUrl);
@@ -92,11 +93,11 @@ var RestWatch = {
     }
   },
 
-  available: function() {
-    return ('WebSocket' in window || 'MozWebSocket' in window);
+  available: function available() {
+    return 'WebSocket' in window || 'MozWebSocket' in window;
   },
 
-  start: function(url, params, handler) {
+  start: function start(url, params, handler) {
     this.initialize();
     var request = {
       id: state.nextRequestId,
@@ -118,8 +119,8 @@ var RestWatch = {
     return request.id;
   },
 
-  stop: function(requestId) {
-    state.requests = state.requests.filter(function(request) {
+  stop: function stop(requestId) {
+    state.requests = state.requests.filter(function (request) {
       if (request.id === requestId) {
         if (state.wsReady) {
           this._sendMessage('stop', request.id);

@@ -1,5 +1,7 @@
 // (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
 
+'use strict';
+
 var React = require('react');
 var DOM = require('../utils/DOM');
 
@@ -33,31 +35,19 @@ var Drop = {
   //    right: left|right
   // }
 
-  add: function (control, content, align) {
+  add: function add(control, content, align) {
     // validate align
-    if (align && align.top &&
-      VERTICAL_ALIGN_OPTIONS.indexOf(align.top) === -1) {
-      console.warn("Warning: Invalid align.top value '" + align.top +
-        "' supplied to Drop," +
-        "expected one of [" + VERTICAL_ALIGN_OPTIONS.join(',') + "]");
+    if (align && align.top && VERTICAL_ALIGN_OPTIONS.indexOf(align.top) === -1) {
+      console.warn("Warning: Invalid align.top value '" + align.top + "' supplied to Drop," + "expected one of [" + VERTICAL_ALIGN_OPTIONS.join(',') + "]");
     }
-    if (align && align.bottom &&
-      VERTICAL_ALIGN_OPTIONS.indexOf(align.bottom) === -1) {
-      console.warn("Warning: Invalid align.bottom value '" + align.bottom +
-        "' supplied to Drop," +
-        "expected one of [" + VERTICAL_ALIGN_OPTIONS.join(',') + "]");
+    if (align && align.bottom && VERTICAL_ALIGN_OPTIONS.indexOf(align.bottom) === -1) {
+      console.warn("Warning: Invalid align.bottom value '" + align.bottom + "' supplied to Drop," + "expected one of [" + VERTICAL_ALIGN_OPTIONS.join(',') + "]");
     }
-    if (align && align.left &&
-      HORIZONTAL_ALIGN_OPTIONS.indexOf(align.left) === -1) {
-      console.warn("Warning: Invalid align.left value '" + align.left +
-        "' supplied to Drop," +
-        "expected one of [" + HORIZONTAL_ALIGN_OPTIONS.join(',') + "]");
+    if (align && align.left && HORIZONTAL_ALIGN_OPTIONS.indexOf(align.left) === -1) {
+      console.warn("Warning: Invalid align.left value '" + align.left + "' supplied to Drop," + "expected one of [" + HORIZONTAL_ALIGN_OPTIONS.join(',') + "]");
     }
-    if (align && align.right &&
-      HORIZONTAL_ALIGN_OPTIONS.indexOf(align.right) === -1) {
-      console.warn("Warning: Invalid align.right value '" + align.right +
-        "' supplied to Drop," +
-        "expected one of [" + HORIZONTAL_ALIGN_OPTIONS.join(',') + "]");
+    if (align && align.right && HORIZONTAL_ALIGN_OPTIONS.indexOf(align.right) === -1) {
+      console.warn("Warning: Invalid align.right value '" + align.right + "' supplied to Drop," + "expected one of [" + HORIZONTAL_ALIGN_OPTIONS.join(',') + "]");
     }
 
     // initialize data
@@ -70,10 +60,10 @@ var Drop = {
         right: align.right
       }
     };
-    if (! drop.align.top && ! drop.align.bottom) {
+    if (!drop.align.top && !drop.align.bottom) {
       drop.align.top = "top";
     }
-    if (! drop.align.left && ! drop.align.right) {
+    if (!drop.align.left && !drop.align.right) {
       drop.align.left = "left";
     }
 
@@ -104,13 +94,13 @@ var Drop = {
     return drop;
   },
 
-  _render: function (drop, content) {
+  _render: function _render(drop, content) {
     React.render(content, drop.container);
     // in case content changed, re-place
     setTimeout(this._place.bind(this, drop), 1);
   },
 
-  _remove: function (drop) {
+  _remove: function _remove(drop) {
     drop.scrollParents.forEach(function (scrollParent) {
       scrollParent.removeEventListener('scroll', drop.place);
     });
@@ -120,7 +110,7 @@ var Drop = {
     document.body.removeChild(drop.container);
   },
 
-  _place: function (drop) {
+  _place: function _place(drop) {
     var control = drop.control;
     var container = drop.container;
     var align = drop.align;
@@ -134,8 +124,7 @@ var Drop = {
     container.style.width = '';
     container.style.top = '';
 
-    var width = Math.min(
-      Math.max(controlRect.width, containerRect.width), windowWidth);
+    var width = Math.min(Math.max(controlRect.width, containerRect.width), windowWidth);
     var left;
     var top;
 
@@ -149,11 +138,11 @@ var Drop = {
       if ('left' === align.right) {
         left = controlRect.left - width;
       } else if ('right' === align.right) {
-        left = (controlRect.left + controlRect.width) - width;
+        left = controlRect.left + controlRect.width - width;
       }
     }
-    if ((left + width) > windowWidth) {
-      left -= ((left + width) - windowWidth);
+    if (left + width > windowWidth) {
+      left -= left + width - windowWidth;
     } else if (left < 0) {
       left = 0;
     }
@@ -168,18 +157,17 @@ var Drop = {
       if ('top' === align.bottom) {
         top = controlRect.top - containerRect.height;
       } else if ('bottom' === align.bottom) {
-        top = (controlRect.top + controlRect.height) - containerRect.height;
+        top = controlRect.top + controlRect.height - containerRect.height;
       }
     }
-    if ((top + containerRect.height) > windowHeight) {
+    if (top + containerRect.height > windowHeight) {
       // For now, just slide up so we can see it.
       // TODO: when we don't want to cover the control, like with SearchInput and Calendar,
       // add bottom margin to the control to allow the user to scroll down if needed.
       if (align.top === 'bottom') {
         top = controlRect.top - containerRect.height;
       } else {
-        top = Math.max(controlRect.bottom - containerRect.height,
-          top - ((top + containerRect.height) - windowHeight));
+        top = Math.max(controlRect.bottom - containerRect.height, top - (top + containerRect.height - windowHeight));
       }
     } else if (top < 0) {
       top = 0;

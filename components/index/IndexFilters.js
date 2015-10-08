@@ -1,5 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
+'use strict';
+
 var React = require('react');
 var Menu = require('../Menu');
 var FilterIcon = require('../icons/Filter');
@@ -14,6 +16,7 @@ var IntlMixin = require('../../mixins/GrommetIntlMixin');
 var CLASS_ROOT = "index-filters";
 
 var IndexFilters = React.createClass({
+  displayName: 'IndexFilters',
 
   propTypes: {
     options: React.PropTypes.shape({
@@ -32,15 +35,15 @@ var IndexFilters = React.createClass({
 
   mixins: [IntlMixin],
 
-  getInitialState: function () {
-    return {data: this._buildState(this.props.options)};
+  getInitialState: function getInitialState() {
+    return { data: this._buildState(this.props.options) };
   },
 
-  componentWillReceiveProps: function (newProps) {
-    this.setState({data: this._buildState(newProps.options)});
+  componentWillReceiveProps: function componentWillReceiveProps(newProps) {
+    this.setState({ data: this._buildState(newProps.options) });
   },
 
-  _notify: function () {
+  _notify: function _notify() {
     var query;
     if (this.props.options.params.query) {
       query = this.props.options.params.query.clone();
@@ -48,98 +51,90 @@ var IndexFilters = React.createClass({
       query = IndexQuery.create('');
     }
 
-    this.props.options.attributes
-      .filter(function (attribute) {
-        return attribute.hasOwnProperty('filter');
-      })
-      .forEach(function (attribute) {
-        var attributeData = this.state.data[attribute.attribute];
-        var activeValues = attribute.filter.filter(function (value) {
-          return attributeData[value];
-        });
-        query.replaceAttributeValues(attribute.attribute, activeValues);
-      }, this);
+    this.props.options.attributes.filter(function (attribute) {
+      return attribute.hasOwnProperty('filter');
+    }).forEach(function (attribute) {
+      var attributeData = this.state.data[attribute.attribute];
+      var activeValues = attribute.filter.filter(function (value) {
+        return attributeData[value];
+      });
+      query.replaceAttributeValues(attribute.attribute, activeValues);
+    }, this);
     this.props.onQuery(query);
   },
 
-  _onChange: function (attribute, value) {
+  _onChange: function _onChange(attribute, value) {
     var data = this.state.data;
-    data[attribute][value] = ! data[attribute][value];
+    data[attribute][value] = !data[attribute][value];
     data[attribute].all = false;
-    this.setState({data: data});
+    this.setState({ data: data });
     this._notify();
   },
 
-  _onChangeAll: function (attribute, values) {
+  _onChangeAll: function _onChangeAll(attribute, values) {
     var data = this.state.data;
     values.forEach(function (value) {
       data[attribute][value] = false;
     });
     data[attribute].all = true;
-    this.setState({data: data});
+    this.setState({ data: data });
     this._notify();
   },
 
-  _buildState: function (options) {
+  _buildState: function _buildState(options) {
     var query = options.params.query || IndexQuery.create('');
     var data = {};
-    options.attributes
-      .filter(function (attribute) {
-        return attribute.hasOwnProperty('filter');
-      })
-      .forEach(function (attribute) {
-        var values = {};
-        attribute.filter.forEach(function (value) {
-          values[value] =
-            query.hasToken({attribute: attribute.attribute, value: value});
-        });
-        values.all =
-          (query.attributeValues(attribute.attribute).length === 0);
-        data[attribute.attribute] = values;
+    options.attributes.filter(function (attribute) {
+      return attribute.hasOwnProperty('filter');
+    }).forEach(function (attribute) {
+      var values = {};
+      attribute.filter.forEach(function (value) {
+        values[value] = query.hasToken({ attribute: attribute.attribute, value: value });
       });
+      values.all = query.attributeValues(attribute.attribute).length === 0;
+      data[attribute.attribute] = values;
+    });
     return data;
   },
 
-  render: function() {
+  render: function render() {
     var activeFilterCount = 0;
 
-    var filters = this.props.options.attributes
-      .filter(function (attribute) {
-        return attribute.hasOwnProperty('filter');
-      })
-      .map(function (attribute) {
+    var filters = this.props.options.attributes.filter(function (attribute) {
+      return attribute.hasOwnProperty('filter');
+    }).map(function (attribute) {
 
-        var values = attribute.filter.map(function (value) {
-          var id = attribute.attribute + '-' + value;
-          var active = this.state.data[attribute.attribute][value];
-          if (active) {
-            activeFilterCount += 1;
-          }
-          var label = value ? this.getGrommetIntlMessage(value) : '';
-          return (
-            <CheckBox key={id} className={CLASS_ROOT + "__filter-value"}
-              id={id} label={label}
-              checked={active}
-              onChange={this._onChange
-                .bind(this, attribute.attribute, value)} />
-          );
-        }, this);
-
-        var components = [];
-        components.push(
-          <CheckBox key={attribute.attribute + '-all'}
-            className={CLASS_ROOT + "__filter-value"}
-            id={attribute.attribute + '-all'}
-            label={this.getGrommetIntlMessage('All')}
-            checked={this.state.data[attribute.attribute].all}
-            onChange={this._onChangeAll
-              .bind(this, attribute.attribute, attribute.filter)} />
-        );
-        return (<fieldset className={CLASS_ROOT}>
-                  <legend className={CLASS_ROOT + "__filter-legend"}>{this.getGrommetIntlMessage(attribute.label)}</legend>
-                  {components.concat(values)}
-                </fieldset>);
+      var values = attribute.filter.map(function (value) {
+        var id = attribute.attribute + '-' + value;
+        var active = this.state.data[attribute.attribute][value];
+        if (active) {
+          activeFilterCount += 1;
+        }
+        var label = value ? this.getGrommetIntlMessage(value) : '';
+        return React.createElement(CheckBox, { key: id, className: CLASS_ROOT + "__filter-value",
+          id: id, label: label,
+          checked: active,
+          onChange: this._onChange.bind(this, attribute.attribute, value) });
       }, this);
+
+      var components = [];
+      components.push(React.createElement(CheckBox, { key: attribute.attribute + '-all',
+        className: CLASS_ROOT + "__filter-value",
+        id: attribute.attribute + '-all',
+        label: this.getGrommetIntlMessage('All'),
+        checked: this.state.data[attribute.attribute].all,
+        onChange: this._onChangeAll.bind(this, attribute.attribute, attribute.filter) }));
+      return React.createElement(
+        'fieldset',
+        { className: CLASS_ROOT },
+        React.createElement(
+          'legend',
+          { className: CLASS_ROOT + "__filter-legend" },
+          this.getGrommetIntlMessage(attribute.label)
+        ),
+        components.concat(values)
+      );
+    }, this);
 
     /*
     var label = (
@@ -149,14 +144,14 @@ var IndexFilters = React.createClass({
     );
     */
 
-    var icon = (<FilterIcon notifications={activeFilterCount} />);
+    var icon = React.createElement(FilterIcon, { notifications: activeFilterCount });
 
-    return (
-      <Menu className={CLASS_ROOT + "__menu"} icon={icon}
-        dropAlign={{right: 'right'}} pad="medium"
-        direction="column" closeOnClick={false}>
-        {filters}
-      </Menu>
+    return React.createElement(
+      Menu,
+      { className: CLASS_ROOT + "__menu", icon: icon,
+        dropAlign: { right: 'right' }, pad: 'medium',
+        direction: 'column', closeOnClick: false },
+      filters
     );
   }
 

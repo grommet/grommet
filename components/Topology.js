@@ -1,17 +1,26 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
+'use strict';
+
 var React = require('react');
 var Status = require('./icons/Status');
 
 var CLASS_ROOT = "topology";
 
 var Label = React.createClass({
-  render: function () {
-    return (<span className={CLASS_ROOT + "__label"}>{this.props.children}</span>);
+  displayName: 'Label',
+
+  render: function render() {
+    return React.createElement(
+      'span',
+      { className: CLASS_ROOT + "__label" },
+      this.props.children
+    );
   }
 });
 
 var Part = React.createClass({
+  displayName: 'Part',
 
   propTypes: {
     align: React.PropTypes.oneOf(['start', 'center', 'between', 'end', 'stretch']),
@@ -24,7 +33,7 @@ var Part = React.createClass({
     status: React.PropTypes.string
   },
 
-  getDefaultProps: function () {
+  getDefaultProps: function getDefaultProps() {
     return {
       demarcate: true,
       direction: 'row',
@@ -33,7 +42,7 @@ var Part = React.createClass({
     };
   },
 
-  render: function () {
+  render: function render() {
     var classes = [CLASS_ROOT + "__part"];
     classes.push(CLASS_ROOT + "__part--direction-" + this.props.direction);
     classes.push(CLASS_ROOT + "__part--justify-" + this.props.justify);
@@ -51,7 +60,7 @@ var Part = React.createClass({
         realChildren += 1;
       }
     });
-    if (! this.props.status && ! this.props.label && realChildren === 0) {
+    if (!this.props.status && !this.props.label && realChildren === 0) {
       classes.push(CLASS_ROOT + "__part--empty");
     }
     if (this.props.className) {
@@ -60,57 +69,63 @@ var Part = React.createClass({
 
     var status;
     if (this.props.status) {
-      status = <Status value={this.props.status} small={true} />;
+      status = React.createElement(Status, { value: this.props.status, small: true });
     }
     var label;
     if (this.props.label) {
-      label = <Label>{this.props.label}</Label>;
+      label = React.createElement(
+        Label,
+        null,
+        this.props.label
+      );
     }
 
-    return (
-      <div className={classes.join(' ')} id={this.props.id}
-        onMouseEnter={this.props.onMouseEnter}
-        onMouseLeave={this.props.onMouseLeave}>
-        {status}
-        {label}
-        {this.props.children}
-      </div>
+    return React.createElement(
+      'div',
+      { className: classes.join(' '), id: this.props.id,
+        onMouseEnter: this.props.onMouseEnter,
+        onMouseLeave: this.props.onMouseLeave },
+      status,
+      label,
+      this.props.children
     );
   }
 });
 
 var Parts = React.createClass({
+  displayName: 'Parts',
+
   propTypes: {
     align: React.PropTypes.oneOf(['start', 'center', 'between', 'end', 'stretch']),
     direction: React.PropTypes.oneOf(['row', 'column']).isRequired,
     uniform: React.PropTypes.bool
   },
 
-  getDefaultProps: function () {
+  getDefaultProps: function getDefaultProps() {
     return {
       direction: 'column'
     };
   },
 
-  componentDidMount: function () {
+  componentDidMount: function componentDidMount() {
     this._makeUniform();
   },
 
-  componentDidUpdate: function () {
+  componentDidUpdate: function componentDidUpdate() {
     this._makeUniform();
   },
 
-  _makeUniform: function () {
+  _makeUniform: function _makeUniform() {
     if (this.props.uniform) {
-      let parts = this.refs.component.getDOMNode().children;
+      var parts = this.refs.component.getDOMNode().children;
       // clear old basis
-      for (let i = 0; i < parts.length; i += 1) {
+      for (var i = 0; i < parts.length; i += 1) {
         parts[i].style.webkitFlexBasis = null;
         parts[i].style.flexBasis = null;
       }
       // find max
-      let max = 0;
-      for (let i = 0; i < parts.length; i += 1) {
+      var max = 0;
+      for (var i = 0; i < parts.length; i += 1) {
         if ('column' === this.props.direction) {
           max = Math.max(max, parts[i].offsetHeight);
         } else {
@@ -118,14 +133,14 @@ var Parts = React.createClass({
         }
       }
       // set basis
-      for (let i = 0; i < parts.length; i += 1) {
+      for (var i = 0; i < parts.length; i += 1) {
         parts[i].style.webkitFlexBasis = '' + max + 'px';
         parts[i].style.flexBasis = '' + max + 'px';
       }
     }
   },
 
-  render: function () {
+  render: function render() {
     var classes = [CLASS_ROOT + "__parts"];
     classes.push(CLASS_ROOT + "__parts--direction-" + this.props.direction);
     if (this.props.align) {
@@ -134,23 +149,22 @@ var Parts = React.createClass({
     if (this.props.className) {
       classes.push(this.props.className);
     }
-    return (
-      <div ref="component" className={classes.join(' ')}>
-        {this.props.children}
-      </div>
+    return React.createElement(
+      'div',
+      { ref: 'component', className: classes.join(' ') },
+      this.props.children
     );
   }
 });
 
 var Topology = React.createClass({
+  displayName: 'Topology',
 
   propTypes: {
-    links: React.PropTypes.arrayOf(
-      React.PropTypes.shape({
-        colorIndex: React.PropTypes.string,
-        ids: React.PropTypes.arrayOf(React.PropTypes.string).isRequired
-      })
-    ),
+    links: React.PropTypes.arrayOf(React.PropTypes.shape({
+      colorIndex: React.PropTypes.string,
+      ids: React.PropTypes.arrayOf(React.PropTypes.string).isRequired
+    })),
     linkOffset: React.PropTypes.number
   },
 
@@ -160,14 +174,14 @@ var Topology = React.createClass({
     Label: Label
   },
 
-  getDefaultProps: function () {
+  getDefaultProps: function getDefaultProps() {
     return {
       links: [],
       linkOffset: 18
     };
   },
 
-  getInitialState: function () {
+  getInitialState: function getInitialState() {
     return {
       canvasWidth: 100,
       canvasHeight: 100,
@@ -176,7 +190,7 @@ var Topology = React.createClass({
     };
   },
 
-  componentDidMount: function () {
+  componentDidMount: function componentDidMount() {
     var topology = React.findDOMNode(this.refs.topology);
     topology.addEventListener('mousemove', this._onMouseMove);
     topology.addEventListener('mouseleave', this._onMouseLeave);
@@ -185,16 +199,16 @@ var Topology = React.createClass({
     this._cacheLinkIds(this.props.links);
   },
 
-  componentWillReceiveProps: function (newProps) {
+  componentWillReceiveProps: function componentWillReceiveProps(newProps) {
     this._cacheLinkIds(newProps.links);
   },
 
-  componentDidUpdate: function () {
+  componentDidUpdate: function componentDidUpdate() {
     this._layout();
     this._draw();
   },
 
-  componentWillUnmount: function () {
+  componentWillUnmount: function componentWillUnmount() {
     var topology = React.findDOMNode(this.refs.topology);
     topology.removeEventListener('mousemove', this._onMouseMove);
     topology.removeEventListener('mouseleave', this._onMouseLeave);
@@ -202,28 +216,25 @@ var Topology = React.createClass({
     window.removeEventListener('resize', this._onResize);
   },
 
-  _coords: function (id, canvasRect) {
+  _coords: function _coords(id, canvasRect) {
     var result;
-    let element = document.getElementById(id);
-    if (! element) {
+    var element = document.getElementById(id);
+    if (!element) {
       console.log('!!! Topology is unable to find the link target with id:', id);
       result = [0, 0];
     } else {
-      let rect = element.getBoundingClientRect();
+      var rect = element.getBoundingClientRect();
       // see if the element has a status child, use that if it does
-      let statusElements = element.querySelectorAll('.status-icon');
+      var statusElements = element.querySelectorAll('.status-icon');
       if (statusElements.length === 1) {
         rect = statusElements[0].getBoundingClientRect();
       }
-      result = [
-        rect.left - canvasRect.left + (rect.width / 2),
-        rect.top - canvasRect.top + (rect.height / 2)
-      ];
+      result = [rect.left - canvasRect.left + rect.width / 2, rect.top - canvasRect.top + rect.height / 2];
     }
     return result;
   },
 
-  _draw: function () {
+  _draw: function _draw() {
     var canvasElement = this.refs.canvas.getDOMNode();
     // don't draw if we don't have a canvas to draw on, such as a unit test
     if (canvasElement.getContext) {
@@ -234,9 +245,9 @@ var Topology = React.createClass({
 
       this.props.links.forEach(function (link, linkIndex) {
 
-        let key = this.refs[link.colorIndex];
-        let style = window.getComputedStyle(React.findDOMNode(key));
-        let color = style.getPropertyValue('background-color');
+        var key = this.refs[link.colorIndex];
+        var style = window.getComputedStyle(React.findDOMNode(key));
+        var color = style.getPropertyValue('background-color');
         context.strokeStyle = color;
         context.lineWidth = 2;
         if (this.state.highlighting) {
@@ -250,12 +261,12 @@ var Topology = React.createClass({
 
         link.ids.forEach(function (id, idIndex) {
           if (idIndex > 0) {
-            let p2 = this._coords(id, canvasRect);
+            var p2 = this._coords(id, canvasRect);
             var delta = [Math.abs(p1[0] - p2[0]), Math.abs(p1[1] - p2[1])];
             context.beginPath();
             context.moveTo(p1[0], p1[1]);
-            let cp1;
-            let cp2;
+            var cp1 = undefined;
+            var cp2 = undefined;
 
             if (this.state.highlights[id]) {
               context.lineWidth = 4;
@@ -263,12 +274,11 @@ var Topology = React.createClass({
 
             if (delta[0] > delta[1]) {
               // larger X delta
-              cp1 = [p1[0],
-                Math.min(p1[1], p2[1]) + Math.max(linkOffset, (delta[1] / 2)) + (linkIndex * 2)];
+              cp1 = [p1[0], Math.min(p1[1], p2[1]) + Math.max(linkOffset, delta[1] / 2) + linkIndex * 2];
               cp2 = [p2[0], cp1[1]];
             } else {
               // larger Y delta or equal
-              let cp1xDelta = Math.max(linkOffset, (delta[0] / 2) + (linkIndex * 2));
+              var cp1xDelta = Math.max(linkOffset, delta[0] / 2 + linkIndex * 2);
               if (p1[0] > p2[0]) {
                 cp1 = [p2[0] + cp1xDelta, p1[1]];
               } else {
@@ -285,10 +295,9 @@ var Topology = React.createClass({
     }
   },
 
-  _layout: function () {
+  _layout: function _layout() {
     var element = this.refs.contents.getDOMNode();
-    if (element.scrollWidth !== this.state.canvasWidth ||
-      element.scrollHeight !== this.state.canvasHeight) {
+    if (element.scrollWidth !== this.state.canvasWidth || element.scrollHeight !== this.state.canvasHeight) {
       this.setState({
         canvasWidth: element.scrollWidth,
         canvasHeight: element.scrollHeight
@@ -296,18 +305,18 @@ var Topology = React.createClass({
     }
   },
 
-  _onResize: function () {
+  _onResize: function _onResize() {
     // debounce
     clearTimeout(this._resizeTimer);
     this._resizeTimer = setTimeout(this._layout, 50);
   },
 
-  _highlight: function (element) {
-    let topology = React.findDOMNode(this.refs.topology);
-    let highlighting = false;
-    let highlights = {};
+  _highlight: function _highlight(element) {
+    var topology = React.findDOMNode(this.refs.topology);
+    var highlighting = false;
+    var highlights = {};
     while (element && element !== topology) {
-      let id = element.getAttribute('id');
+      var id = element.getAttribute('id');
       if (id && this.state.linkIds[id]) {
         // see if we are linking to this id
         highlighting = true;
@@ -315,20 +324,20 @@ var Topology = React.createClass({
       }
       element = element.parentNode;
     }
-    this.setState({highlighting: highlighting, highlights: highlights});
+    this.setState({ highlighting: highlighting, highlights: highlights });
   },
 
-  _onMouseMove: function (event) {
+  _onMouseMove: function _onMouseMove(event) {
     // debounce
     clearTimeout(this._mouseMoveTimer);
     this._mouseMoveTimer = setTimeout(this._highlight.bind(this, event.target), 100);
   },
 
-  _onMouseLeave: function () {
-    this.setState({highlights: {}});
+  _onMouseLeave: function _onMouseLeave() {
+    this.setState({ highlights: {} });
   },
 
-  _cacheLinkIds: function (links) {
+  _cacheLinkIds: function _cacheLinkIds(links) {
     // Remember which ids are used in links. This makes highlighting faster.
     var linkIds = {};
     links.forEach(function (link) {
@@ -336,10 +345,10 @@ var Topology = React.createClass({
         linkIds[id] = true;
       });
     });
-    this.setState({linkIds: linkIds});
+    this.setState({ linkIds: linkIds });
   },
 
-  render: function () {
+  render: function render() {
     var classes = [CLASS_ROOT];
     if (this.props.className) {
       classes.push(this.props.className);
@@ -348,24 +357,28 @@ var Topology = React.createClass({
     var colorKeys = [];
     var colors = {};
     this.props.links.forEach(function (link) {
-      if (link.colorIndex && ! colors[link.colorIndex]) {
-        colorKeys.push(<div key={link.colorIndex} ref={link.colorIndex}
-          className={"background-color-index-" + link.colorIndex}></div>);
+      if (link.colorIndex && !colors[link.colorIndex]) {
+        colorKeys.push(React.createElement('div', { key: link.colorIndex, ref: link.colorIndex,
+          className: "background-color-index-" + link.colorIndex }));
         colors[link.colorIndex] = true;
       }
     });
 
-    return (
-      <div ref="topology" className={classes.join(' ')}>
-        <canvas ref="canvas" className={CLASS_ROOT + "__canvas"}
-          width={this.state.canvasWidth} height={this.state.canvasHeight} />
-        <div ref="contents" className={CLASS_ROOT + "__contents"}>
-          {this.props.children}
-        </div>
-        <div className={CLASS_ROOT + "__color-key"}>
-          {colorKeys}
-        </div>
-      </div>
+    return React.createElement(
+      'div',
+      { ref: 'topology', className: classes.join(' ') },
+      React.createElement('canvas', { ref: 'canvas', className: CLASS_ROOT + "__canvas",
+        width: this.state.canvasWidth, height: this.state.canvasHeight }),
+      React.createElement(
+        'div',
+        { ref: 'contents', className: CLASS_ROOT + "__contents" },
+        this.props.children
+      ),
+      React.createElement(
+        'div',
+        { className: CLASS_ROOT + "__color-key" },
+        colorKeys
+      )
     );
   }
 

@@ -1,16 +1,19 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
+'use strict';
+
 var React = require('react');
 var IntlMixin = require('../../../mixins/GrommetIntlMixin');
 
 var Warning = React.createClass({
+  displayName: 'Warning',
 
   propTypes: {
     a11yTitle: React.PropTypes.string
   },
 
   mixins: [IntlMixin],
-  render: function() {
+  render: function render() {
     var className = 'status-icon status-icon-warning';
     var a11yTitle = this.getGrommetIntlMessage(this.props.a11yTitle);
     if (this.props.className) {
@@ -22,17 +25,25 @@ var Warning = React.createClass({
       a11yTitle = this.getGrommetIntlMessage('Warning');
     }
     var warningTitleId = 'warning-title';
-    return (
-      <svg className={className} viewBox="0 0 27 24" role="img" aria-labelledby={warningTitleId} version="1.1">
-        <title id={warningTitleId}>{a11yTitle}</title>
-        <g className={"status-icon__base"}>
-          <path role="presentation" d="M12,0 L0,22 L24,22 L12,0 L12,0 Z" stroke="none"></path>
-        </g>
-        <g className={"status-icon__detail"} strokeWidth="2" transform="translate(11.000000, 8.000000)">
-          <path role="presentation" d="M1,0 L1,6" fill="none"></path>
-          <path role="presentation" d="M1,8 L1,10" fill="none"></path>
-        </g>
-      </svg>
+    return React.createElement(
+      'svg',
+      { className: className, viewBox: '0 0 27 24', role: 'img', 'aria-labelledby': warningTitleId, version: '1.1' },
+      React.createElement(
+        'title',
+        { id: warningTitleId },
+        a11yTitle
+      ),
+      React.createElement(
+        'g',
+        { className: "status-icon__base" },
+        React.createElement('path', { role: 'presentation', d: 'M12,0 L0,22 L24,22 L12,0 L12,0 Z', stroke: 'none' })
+      ),
+      React.createElement(
+        'g',
+        { className: "status-icon__detail", strokeWidth: '2', transform: 'translate(11.000000, 8.000000)' },
+        React.createElement('path', { role: 'presentation', d: 'M1,0 L1,6', fill: 'none' }),
+        React.createElement('path', { role: 'presentation', d: 'M1,8 L1,10', fill: 'none' })
+      )
     );
   }
 

@@ -1,5 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
+'use strict';
+
 var React = require('react');
 var isEqual = require('lodash/lang/isEqual');
 var SpinningIcon = require('./icons/Spinning');
@@ -9,35 +11,30 @@ var CLASS_ROOT = "table";
 var SELECTED_CLASS = CLASS_ROOT + "__row--selected";
 
 var Table = React.createClass({
+  displayName: 'Table',
 
   propTypes: {
-    selection: React.PropTypes.oneOfType([
-      React.PropTypes.number,
-      React.PropTypes.arrayOf(React.PropTypes.number)
-    ]),
+    selection: React.PropTypes.oneOfType([React.PropTypes.number, React.PropTypes.arrayOf(React.PropTypes.number)]),
     onMore: React.PropTypes.func,
     scrollable: React.PropTypes.bool,
-    selectable: React.PropTypes.oneOfType([
-      React.PropTypes.bool,
-      React.PropTypes.oneOf(['multiple'])
-    ]),
+    selectable: React.PropTypes.oneOfType([React.PropTypes.bool, React.PropTypes.oneOf(['multiple'])]),
     onSelect: React.PropTypes.func
   },
 
   mixins: [InfiniteScroll],
 
-  getDefaultProps: function () {
+  getDefaultProps: function getDefaultProps() {
     return {
       scrollable: false,
       selectable: false
     };
   },
 
-  getInitialState: function () {
-    return {selection: this._normalizeSelection(this.props.selection)};
+  getInitialState: function getInitialState() {
+    return { selection: this._normalizeSelection(this.props.selection) };
   },
 
-  componentDidMount: function () {
+  componentDidMount: function componentDidMount() {
     this._alignSelection();
     if (this.props.scrollable) {
       this._buildMirror();
@@ -49,14 +46,14 @@ var Table = React.createClass({
     window.addEventListener('resize', this._onResize);
   },
 
-  componentWillReceiveProps: function (newProps) {
+  componentWillReceiveProps: function componentWillReceiveProps(newProps) {
     if (newProps.hasOwnProperty('selection')) {
-      this.setState({selection: this._normalizeSelection(newProps.selection)});
+      this.setState({ selection: this._normalizeSelection(newProps.selection) });
     }
   },
 
-  componentDidUpdate: function (prevProps, prevState) {
-    if (! isEqual(this.state.selection, prevState.selection)) {
+  componentDidUpdate: function componentDidUpdate(prevProps, prevState) {
+    if (!isEqual(this.state.selection, prevState.selection)) {
       this._alignSelection();
     }
     if (this.props.scrollable) {
@@ -68,14 +65,14 @@ var Table = React.createClass({
     }
   },
 
-  componentWillUnmount: function () {
+  componentWillUnmount: function componentWillUnmount() {
     if (this.props.onMore) {
       this.stopListeningForScroll();
     }
     window.removeEventListener('resize', this._onResize);
   },
 
-  _normalizeSelection: function (selection) {
+  _normalizeSelection: function _normalizeSelection(selection) {
     var result;
     if (undefined === selection || null === selection) {
       result = [];
@@ -87,15 +84,14 @@ var Table = React.createClass({
     return result;
   },
 
-  _clearSelected: function () {
-    var rows = this.refs.table.getDOMNode()
-      .querySelectorAll("." + SELECTED_CLASS);
+  _clearSelected: function _clearSelected() {
+    var rows = this.refs.table.getDOMNode().querySelectorAll("." + SELECTED_CLASS);
     for (var i = 0; i < rows.length; i++) {
       rows[i].classList.remove(SELECTED_CLASS);
     }
   },
 
-  _alignSelection: function () {
+  _alignSelection: function _alignSelection() {
     this._clearSelected();
     if (null !== this.state.selection) {
       var tbody = this.refs.table.getDOMNode().querySelectorAll('tbody')[0];
@@ -105,7 +101,7 @@ var Table = React.createClass({
     }
   },
 
-  _onClick: function (event) {
+  _onClick: function _onClick(event) {
     if (!this.props.selectable) {
       return;
     }
@@ -139,7 +135,7 @@ var Table = React.createClass({
             closestIndex = selectIndex;
           }
         });
-        for (var i = index; i !== closestIndex; ) {
+        for (var i = index; i !== closestIndex;) {
           selection.push(i);
           if (closestIndex < index) {
             i -= 1;
@@ -149,9 +145,7 @@ var Table = React.createClass({
         }
         // remove text selection
         window.getSelection().removeAllRanges();
-
-      } else if (('multiple' === this.props.selectable || -1 !== selectionIndex) &&
-        (event.ctrlKey || event.metaKey)) {
+      } else if (('multiple' === this.props.selectable || -1 !== selectionIndex) && (event.ctrlKey || event.metaKey)) {
 
         // toggle
         if (-1 === selectionIndex) {
@@ -161,16 +155,14 @@ var Table = React.createClass({
           element.classList.remove(SELECTED_CLASS);
           selection.splice(selectionIndex, 1);
         }
-
       } else {
 
         this._clearSelected();
         selection = [index];
         element.classList.add(SELECTED_CLASS);
-
       }
 
-      this.setState({selection: selection});
+      this.setState({ selection: selection });
 
       if (this.props.onSelect) {
         // notify caller that the selection has changed
@@ -182,11 +174,11 @@ var Table = React.createClass({
     }
   },
 
-  _onResize: function () {
+  _onResize: function _onResize() {
     this._alignMirror();
   },
 
-  _buildMirror: function () {
+  _buildMirror: function _buildMirror() {
     var tableElement = this.refs.table.getDOMNode();
     var cells = tableElement.querySelectorAll('thead tr th');
     var mirrorElement = this.refs.mirror.getDOMNode();
@@ -196,7 +188,7 @@ var Table = React.createClass({
     }
   },
 
-  _alignMirror: function () {
+  _alignMirror: function _alignMirror() {
     if (this.refs.mirror) {
       var tableElement = this.refs.table.getDOMNode();
       var cells = tableElement.querySelectorAll('thead tr th');
@@ -217,7 +209,7 @@ var Table = React.createClass({
     }
   },
 
-  render: function () {
+  render: function render() {
     var classes = [CLASS_ROOT];
     if (this.props.selectable) {
       classes.push(CLASS_ROOT + "--selectable");
@@ -231,32 +223,36 @@ var Table = React.createClass({
 
     var mirror = null;
     if (this.props.scrollable) {
-      mirror = (
-        <table ref="mirror" className={CLASS_ROOT + "__mirror"}>
-          <thead>
-            <tr></tr>
-          </thead>
-        </table>
+      mirror = React.createElement(
+        'table',
+        { ref: 'mirror', className: CLASS_ROOT + "__mirror" },
+        React.createElement(
+          'thead',
+          null,
+          React.createElement('tr', null)
+        )
       );
     }
 
     var more = null;
     if (this.props.onMore) {
-      more = (
-        <div ref="more" className={CLASS_ROOT + "__more"}>
-          <SpinningIcon />
-        </div>
+      more = React.createElement(
+        'div',
+        { ref: 'more', className: CLASS_ROOT + "__more" },
+        React.createElement(SpinningIcon, null)
       );
     }
 
-    return (
-      <div ref="container" className={classes.join(' ')}>
-        {mirror}
-        <table ref="table" className={CLASS_ROOT + "__table"} onClick={this._onClick}>
-          {this.props.children}
-        </table>
-        {more}
-      </div>
+    return React.createElement(
+      'div',
+      { ref: 'container', className: classes.join(' ') },
+      mirror,
+      React.createElement(
+        'table',
+        { ref: 'table', className: CLASS_ROOT + "__table", onClick: this._onClick },
+        this.props.children
+      ),
+      more
     );
   }
 

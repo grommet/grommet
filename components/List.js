@@ -1,5 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
+'use strict';
+
 var React = require('react');
 var ListItem = require('./ListItem');
 var SpinningIcon = require('./icons/Spinning');
@@ -9,6 +11,7 @@ var IntlMixin = require('../mixins/GrommetIntlMixin');
 var CLASS_ROOT = "list";
 
 var List = React.createClass({
+  displayName: 'List',
 
   propTypes: {
     data: React.PropTypes.arrayOf(React.PropTypes.object).isRequired,
@@ -19,7 +22,7 @@ var List = React.createClass({
     onSelect: React.PropTypes.func,
     schema: React.PropTypes.arrayOf(React.PropTypes.shape({
       attribute: React.PropTypes.string,
-      default: React.PropTypes.node,
+      'default': React.PropTypes.node,
       image: React.PropTypes.bool,
       label: React.PropTypes.string,
       primary: React.PropTypes.bool,
@@ -27,63 +30,61 @@ var List = React.createClass({
       timestamp: React.PropTypes.bool,
       uid: React.PropTypes.bool
     })).isRequired,
-    selected: React.PropTypes.oneOfType([
-      React.PropTypes.string, // uid
-      React.PropTypes.arrayOf(React.PropTypes.string)
-    ]),
+    selected: React.PropTypes.oneOfType([React.PropTypes.string, // uid
+    React.PropTypes.arrayOf(React.PropTypes.string)]),
     size: React.PropTypes.oneOf(['small', 'medium', 'large']),
     small: React.PropTypes.bool
   },
 
   mixins: [InfiniteScroll, IntlMixin],
 
-  getDefaultProps: function () {
-    return {small: false, itemDirection: 'row'};
+  getDefaultProps: function getDefaultProps() {
+    return { small: false, itemDirection: 'row' };
   },
 
-  getInitialState: function() {
+  getInitialState: function getInitialState() {
     return this._stateFromProps(this.props);
   },
 
-  componentDidMount: function () {
+  componentDidMount: function componentDidMount() {
     if (this.props.onMore) {
       this.startListeningForScroll(this.refs.more.getDOMNode(), this.props.onMore);
     }
   },
 
-  componentWillReceiveProps: function (newProps) {
+  componentWillReceiveProps: function componentWillReceiveProps(newProps) {
     this.setState(this._stateFromProps(newProps));
   },
 
-  componentDidUpdate: function () {
+  componentDidUpdate: function componentDidUpdate() {
     this.stopListeningForScroll();
     if (this.props.onMore) {
       this.startListeningForScroll(this.refs.more.getDOMNode(), this.props.onMore);
     }
   },
 
-  componentWillUnmount: function () {
+  componentWillUnmount: function componentWillUnmount() {
     if (this.props.onMore) {
       this.stopListeningForScroll();
     }
   },
 
-  _stateFromProps: function (props) {
-    return {size: props.size || (props.small ? 'small' : (props.large ? 'large' : null))};
+  _stateFromProps: function _stateFromProps(props) {
+    return { size: props.size || (props.small ? 'small' : props.large ? 'large' : null) };
   },
 
-  _onClickItem: function (item) {
+  _onClickItem: function _onClickItem(item) {
     if (this.props.onSelect) {
       this.props.onSelect(item);
     }
   },
 
-  _renderValue: function (item, scheme) {
+  _renderValue: function _renderValue(item, scheme) {
     var result;
-    var value = item[scheme.attribute] || scheme.default;
+    var value = item[scheme.attribute] || scheme['default'];
     if (scheme.image) {
       if (typeof value === 'string') {
-        result = <img src={value} alt={scheme.label || 'image'} />;
+        result = React.createElement('img', { src: value, alt: scheme.label || 'image' });
       } else {
         result = value;
       }
@@ -95,7 +96,7 @@ var List = React.createClass({
     return result;
   },
 
-  render: function () {
+  render: function render() {
     var classes = [CLASS_ROOT];
     if (true || this.props.fill) {
       classes.push(CLASS_ROOT + "--fill");
@@ -138,38 +139,36 @@ var List = React.createClass({
         onClick = this._onClickItem.bind(this, item);
       }
 
-      return (
-        <ListItem key={uid} image={image} label={primary}
-          annotation={secondary} selected={selected}
-          direction={this.props.itemDirection} onClick={onClick} />
-      );
+      return React.createElement(ListItem, { key: uid, image: image, label: primary,
+        annotation: secondary, selected: selected,
+        direction: this.props.itemDirection, onClick: onClick });
     }, this);
 
     var more;
     if (this.props.onMore) {
       classes.push(CLASS_ROOT + "--moreable");
-      more = (
-        <li ref="more" className={CLASS_ROOT + "__more"}>
-          <SpinningIcon />
-        </li>
+      more = React.createElement(
+        'li',
+        { ref: 'more', className: CLASS_ROOT + "__more" },
+        React.createElement(SpinningIcon, null)
       );
     }
 
     var empty;
     if (this.props.data.length === 0) {
-      empty = (
-        <li className={CLASS_ROOT + "__empty"}>
-          {this.props.emptyIndicator}
-        </li>
+      empty = React.createElement(
+        'li',
+        { className: CLASS_ROOT + "__empty" },
+        this.props.emptyIndicator
       );
     }
 
-    return (
-      <ul className={classes.join(' ')}>
-        {empty}
-        {items}
-        {more}
-      </ul>
+    return React.createElement(
+      'ul',
+      { className: classes.join(' ') },
+      empty,
+      items,
+      more
     );
   }
 

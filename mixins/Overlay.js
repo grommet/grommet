@@ -1,5 +1,7 @@
 // (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
 
+'use strict';
+
 var DOM = require('../utils/DOM');
 
 var handler = null;
@@ -14,7 +16,7 @@ var Overlay = {
     scrollParents: []
   },
 
-  startOverlay: function (controlElement, layerElement, align) {
+  startOverlay: function startOverlay(controlElement, layerElement, align) {
     this._overlay.controlElement = controlElement;
     this._overlay.layerElement = layerElement;
     this._overlay.align = align;
@@ -26,7 +28,7 @@ var Overlay = {
     this.positionOverlay();
   },
 
-  stopOverlay: function () {
+  stopOverlay: function stopOverlay() {
     if (this._overlay.scrollParents.length > 0) {
       this._overlay.scrollParents[this._overlay.scrollParents.length - 1].removeEventListener('scroll', handler);
     }
@@ -38,7 +40,7 @@ var Overlay = {
     handler = null;
   },
 
-  positionOverlay: function () {
+  positionOverlay: function positionOverlay() {
     var controlElement = this._overlay.controlElement;
     var layerElement = this._overlay.layerElement;
 
@@ -50,21 +52,18 @@ var Overlay = {
     layerElement.style.width = '';
     layerElement.style.top = '';
 
-    var width = Math.min(
-      Math.max(controlRect.width, layerElement.offsetWidth),
-        windowWidth);
+    var width = Math.min(Math.max(controlRect.width, layerElement.offsetWidth), windowWidth);
     // align right edge and make at least as wide as the control
-    var left = (controlRect.left + layerElement.offsetWidth) - width;
+    var left = controlRect.left + layerElement.offsetWidth - width;
     if ('right' === this._overlay.align) {
       // align right edge
-      left = (controlRect.left + controlRect.width) -
-        layerElement.offsetWidth;
+      left = controlRect.left + controlRect.width - layerElement.offsetWidth;
     } else {
       // align left edge
       left = controlRect.left;
     }
-    if ((left + width) > windowWidth) {
-      left -= ((left + width) - windowWidth);
+    if (left + width > windowWidth) {
+      left -= left + width - windowWidth;
     } else if (left < 0) {
       left = 0;
     }
@@ -72,11 +71,10 @@ var Overlay = {
     var top = controlRect.top;
     if ('up' === this.props.direction) {
       // align bottom edge
-      top = (controlRect.top + controlRect.height) -
-        layerElement.offsetHeight;
+      top = controlRect.top + controlRect.height - layerElement.offsetHeight;
     } else if ('below' === this._overlay.align) {
       // align top of layer to bottom of control
-      top = (controlRect.top + controlRect.height);
+      top = controlRect.top + controlRect.height;
     }
 
     // ensure height is within viewport
@@ -88,7 +86,7 @@ var Overlay = {
     layerElement.style.maxHeight = '' + maxHeight + 'px';
   },
 
-  componentWillUnmount: function () {
+  componentWillUnmount: function componentWillUnmount() {
     this.stopOverlay();
   }
 };

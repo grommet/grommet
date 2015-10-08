@@ -1,5 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
+'use strict';
+
 var React = require('react');
 var Section = require('../Section');
 var Header = require('../Header');
@@ -7,6 +9,7 @@ var StatusIcon = require('../icons/Status');
 var IntlMixin = require('../../mixins/GrommetIntlMixin');
 
 var Alert = React.createClass({
+  displayName: 'Alert',
 
   propTypes: {
     associatedResource: React.PropTypes.node,
@@ -15,7 +18,7 @@ var Alert = React.createClass({
 
   mixins: [IntlMixin],
 
-  render: function () {
+  render: function render() {
     var resource = this.props.resource;
     var status = resource.status || 'unknown';
     var createdDate;
@@ -23,17 +26,29 @@ var Alert = React.createClass({
       createdDate = this.getGrommetFormattedDate(resource.created);
     }
 
-    return (
-      <Section className="alert" pad={{horizontal: "medium"}}>
-        <Header>
-          <span>
-            <StatusIcon value={status.toLowerCase()} large={true} />
-            <h3>{resource.name}</h3>
-          </span>
-        </Header>
-        <span className="alert__timestamp">{createdDate}</span>
-        {this.props.associatedResource}
-      </Section>
+    return React.createElement(
+      Section,
+      { className: 'alert', pad: { horizontal: "medium" } },
+      React.createElement(
+        Header,
+        null,
+        React.createElement(
+          'span',
+          null,
+          React.createElement(StatusIcon, { value: status.toLowerCase(), large: true }),
+          React.createElement(
+            'h3',
+            null,
+            resource.name
+          )
+        )
+      ),
+      React.createElement(
+        'span',
+        { className: 'alert__timestamp' },
+        createdDate
+      ),
+      this.props.associatedResource
     );
   }
 

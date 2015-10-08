@@ -1,16 +1,19 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
+"use strict";
+
 var React = require('react');
 
 var CLASS_ROOT = "carousel";
 
 var Carousel = React.createClass({
+  displayName: "Carousel",
 
-  getInitialState: function () {
-    return {activeIndex: 0, priorIndex: 0, sequence: 1};
+  getInitialState: function getInitialState() {
+    return { activeIndex: 0, priorIndex: 0, sequence: 1 };
   },
 
-  _onSelect: function (index) {
+  _onSelect: function _onSelect(index) {
     if (index !== this.state.activeIndex) {
       this.setState({
         activeIndex: index,
@@ -21,9 +24,9 @@ var Carousel = React.createClass({
   },
 
   // children should be an array of Tile
-  render: function () {
+  render: function render() {
     var classes = [CLASS_ROOT];
-    classes.push(CLASS_ROOT + "--toggle-" + (this.state.sequence % 2));
+    classes.push(CLASS_ROOT + "--toggle-" + this.state.sequence % 2);
     if (this.props.className) {
       classes.push(this.props.className);
     }
@@ -40,26 +43,32 @@ var Carousel = React.createClass({
       } else if (index === this.state.priorIndex) {
         priorChild = child;
       }
-      return (
-        <svg className={controlClasses.join(' ')} viewBox="0 0 24 24" version="1.1"
-          onClick={this._onSelect.bind(this, index)}>
-          <circle cx={12} cy={12} r={6}></circle>
-        </svg>
+      return React.createElement(
+        "svg",
+        { className: controlClasses.join(' '), viewBox: "0 0 24 24", version: "1.1",
+          onClick: this._onSelect.bind(this, index) },
+        React.createElement("circle", { cx: 12, cy: 12, r: 6 })
       );
     }, this);
 
-    return (
-      <div className={classes.join(' ')}>
-        <div className={CLASS_ROOT + "__prior"}>
-          {priorChild}
-        </div>
-        <div className={CLASS_ROOT + "__active"}>
-          {activeChild}
-        </div>
-        <div className={CLASS_ROOT + "__controls"}>
-          {controls}
-        </div>
-      </div>
+    return React.createElement(
+      "div",
+      { className: classes.join(' ') },
+      React.createElement(
+        "div",
+        { className: CLASS_ROOT + "__prior" },
+        priorChild
+      ),
+      React.createElement(
+        "div",
+        { className: CLASS_ROOT + "__active" },
+        activeChild
+      ),
+      React.createElement(
+        "div",
+        { className: CLASS_ROOT + "__controls" },
+        controls
+      )
     );
   }
 

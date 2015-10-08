@@ -1,9 +1,12 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company
 
+'use strict';
+
 var React = require('react');
 var IntlMixin = require('../../../mixins/GrommetIntlMixin');
 
 var Icon = React.createClass({
+  displayName: 'Icon',
 
   propTypes: {
     a11yTitle: React.PropTypes.string,
@@ -12,24 +15,35 @@ var Icon = React.createClass({
 
   mixins: [IntlMixin],
 
-  getDefaultProps: function () {
+  getDefaultProps: function getDefaultProps() {
     return {
       a11yTitleId: 'select-title'
     };
   },
 
-  render: function() {
+  render: function render() {
     var className = 'control-icon control-icon-select';
     if (this.props.className) {
       className += ' ' + this.props.className;
     }
 
-    var a11yTitle = this.getGrommetIntlMessage(
-      typeof this.props.a11yTitle !== "undefined" ?
-        this.props.a11yTitle : "select");
+    var a11yTitle = this.getGrommetIntlMessage(typeof this.props.a11yTitle !== "undefined" ? this.props.a11yTitle : "select");
 
-    return (
-      <svg version="1.1" viewBox="0 0 48 48" width="48px" height="48px" className={className} aria-labelledby={this.props.a11yTitleId}><title id={this.props.a11yTitleId}>{a11yTitle}</title><g id="select"><rect id="_x2E_svg_194_" x="0" y="0" fill="none" width="48" height="48"/><line fill="none" stroke="#231F20" strokeWidth="2" strokeMiterlimit="10" strokeDasharray="6" x1="20" y1="15" x2="26" y2="15"/><path fill="none" stroke="#231F20" strokeWidth="2" strokeMiterlimit="10" d="M28.7411,29.9075l3.4465,4.5649L28.9853,37&#xA;&#x9;&#x9;l-3.4363-4.5514l-2.5946,3.3408L21.1,23l12.0055,5.3882L28.7411,29.9075z M31,18v-3h-3 M18,15h-3v3 M15,28v3h3 M31,20v4 M15,26v-6"/></g></svg>
+    return React.createElement(
+      'svg',
+      { version: '1.1', viewBox: '0 0 48 48', width: '48px', height: '48px', className: className, 'aria-labelledby': this.props.a11yTitleId },
+      React.createElement(
+        'title',
+        { id: this.props.a11yTitleId },
+        a11yTitle
+      ),
+      React.createElement(
+        'g',
+        { id: 'select' },
+        React.createElement('rect', { id: '_x2E_svg_194_', x: '0', y: '0', fill: 'none', width: '48', height: '48' }),
+        React.createElement('line', { fill: 'none', stroke: '#231F20', strokeWidth: '2', strokeMiterlimit: '10', strokeDasharray: '6', x1: '20', y1: '15', x2: '26', y2: '15' }),
+        React.createElement('path', { fill: 'none', stroke: '#231F20', strokeWidth: '2', strokeMiterlimit: '10', d: 'M28.7411,29.9075l3.4465,4.5649L28.9853,37 l-3.4363-4.5514l-2.5946,3.3408L21.1,23l12.0055,5.3882L28.7411,29.9075z M31,18v-3h-3 M18,15h-3v3 M15,28v3h3 M31,20v4 M15,26v-6' })
+      )
     );
   }
 

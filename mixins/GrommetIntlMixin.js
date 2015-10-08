@@ -1,15 +1,16 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
+'use strict';
+
 var supportedLocales = ['en-US', 'pt-BR'];
 
 function localesSupported() {
   return global.Intl && supportedLocales.every(function (locale) {
-    return Intl.NumberFormat.supportedLocalesOf(locale)[0] === locale &&
-            Intl.DateTimeFormat.supportedLocalesOf(locale)[0] === locale;
+    return Intl.NumberFormat.supportedLocalesOf(locale)[0] === locale && Intl.DateTimeFormat.supportedLocalesOf(locale)[0] === locale;
   });
 }
 
-if (! localesSupported()) {
+if (!localesSupported()) {
   require('intl');
   require('intl/locale-data/jsonp/en-US.js');
   require('intl/locale-data/jsonp/pt-BR.js');
@@ -25,7 +26,7 @@ var FormattedDate = ReactIntl.FormattedDate;
 module.exports = {
   mixins: [IntlMixin],
 
-  getChildContext: function () {
+  getChildContext: function getChildContext() {
     if (!this.props.locales && !this.context.locales) {
       this.context.locales = 'en-US';
     }
@@ -39,21 +40,19 @@ module.exports = {
     }
   },
 
-  getGrommetFormattedDate: function (date) {
-    return (
-      <FormattedDate
-        value={new Date(date)}
-        weekday="long"
-        day="numeric"
-        month="long"
-        year="numeric"
-        hour="numeric"
-        minute="numeric"
-        second="numeric" />
-    );
+  getGrommetFormattedDate: function getGrommetFormattedDate(date) {
+    return React.createElement(FormattedDate, {
+      value: new Date(date),
+      weekday: 'long',
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+      hour: 'numeric',
+      minute: 'numeric',
+      second: 'numeric' });
   },
 
-  getGrommetIntlMessage: function(messageKey) {
+  getGrommetIntlMessage: function getGrommetIntlMessage(messageKey) {
     var message = messageKey;
     if (messageKey) {
       try {

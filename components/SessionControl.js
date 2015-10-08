@@ -1,5 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
+'use strict';
+
 var React = require('react');
 var ReactLayeredComponent = require('../mixins/ReactLayeredComponent');
 var SessionStore = require('../stores/SessionStore');
@@ -7,44 +9,43 @@ var Session = require('../components/Session');
 var Gravatar = require('react-gravatar');
 
 var SessionControl = React.createClass({
+  displayName: 'SessionControl',
 
   mixins: [ReactLayeredComponent],
 
-  getInitialState: function() {
-    return {active: false, session: SessionStore.getAll()};
+  getInitialState: function getInitialState() {
+    return { active: false, session: SessionStore.getAll() };
   },
 
-  componentDidMount: function() {
+  componentDidMount: function componentDidMount() {
     SessionStore.addChangeListener(this._onChange);
   },
 
-  componentWillUnmount: function() {
+  componentWillUnmount: function componentWillUnmount() {
     SessionStore.removeChangeListener(this._onChange);
   },
 
-  _onChange: function() {
-    this.setState({session: SessionStore.getAll()});
+  _onChange: function _onChange() {
+    this.setState({ session: SessionStore.getAll() });
   },
 
-  _onClick: function() {
-    this.setState({active: !this.state.active});
+  _onClick: function _onClick() {
+    this.setState({ active: !this.state.active });
   },
 
-  renderLayer: function() {
-    if (! this.state.active) {
-      return <span />;
+  renderLayer: function renderLayer() {
+    if (!this.state.active) {
+      return React.createElement('span', null);
     } else {
-      return (
-        <Session onRequestClose={this._onClick} />
-      );
+      return React.createElement(Session, { onRequestClose: this._onClick });
     }
   },
 
-  render: function() {
-    return (
-      <div className={'session-control'} onClick={this._onClick}>
-        <Gravatar email={this.state.session.email || ''} size={48} />
-      </div>
+  render: function render() {
+    return React.createElement(
+      'div',
+      { className: 'session-control', onClick: this._onClick },
+      React.createElement(Gravatar, { email: this.state.session.email || '', size: 48 })
     );
   }
 

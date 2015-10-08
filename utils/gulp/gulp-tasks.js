@@ -1,5 +1,7 @@
 var del = require('del');
 var file = require('gulp-file');
+var gulpif = require('gulp-if');
+var babel = require('gulp-babel');
 var runSequence = require('run-sequence');
 var path = require('path');
 var fs = require('fs');
@@ -23,7 +25,7 @@ module.exports = function(gulp, opts) {
   var jsLoader = options.jsLoader || {
     test: /\.js$/,
     loader: 'babel',
-    exclude: /(node_modules\/intl|node_modules\/moment|bower_components|src\/lib)/
+    exclude: /(node_modules|bower_components|src\/lib)/
   };
 
   var webpackConfig = {
@@ -89,9 +91,11 @@ module.exports = function(gulp, opts) {
             assets.push('!' + asset + '**/' + ignore + '/**');
           });
         }
+
         gulp.src(assets, {
           dot: true
-        }).pipe(gulp.dest(copyAsset.dist ? copyAsset.dist : dist));
+        }).pipe(gulpif(copyAsset.babel, babel()))
+        .pipe(gulp.dest(copyAsset.dist ? copyAsset.dist : dist));
       }
 
     });

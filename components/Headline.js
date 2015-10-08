@@ -1,10 +1,13 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
+"use strict";
+
 var React = require('react');
 
 var CLASS_ROOT = "headline";
 
 var Headline = React.createClass({
+  displayName: "Headline",
 
   propTypes: {
     colorIndex: React.PropTypes.string,
@@ -13,7 +16,7 @@ var Headline = React.createClass({
     strong: React.PropTypes.bool
   },
 
-  render: function() {
+  render: function render() {
     var classes = [CLASS_ROOT];
     if (this.props.large) {
       classes.push(CLASS_ROOT + "--large");
@@ -28,10 +31,10 @@ var Headline = React.createClass({
       classes.push(this.props.className);
     }
 
-    return (
-      <div className={classes.join(' ')}>
-        {this.props.children}
-      </div>
+    return React.createElement(
+      "div",
+      { className: classes.join(' ') },
+      this.props.children
     );
   }
 

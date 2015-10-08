@@ -1,5 +1,9 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
+'use strict';
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var React = require('react');
 var merge = require('lodash/object/merge');
 var pick = require('lodash/object/pick');
@@ -9,6 +13,7 @@ var Box = require('./Box');
 var CLASS_ROOT = "header";
 
 var Header = React.createClass({
+  displayName: 'Header',
 
   propTypes: merge({
     fixed: React.PropTypes.bool,
@@ -21,7 +26,7 @@ var Header = React.createClass({
     tag: React.PropTypes.string
   }, Box.propTypes),
 
-  getDefaultProps: function () {
+  getDefaultProps: function getDefaultProps() {
     return {
       pad: 'none',
       direction: 'row',
@@ -31,42 +36,42 @@ var Header = React.createClass({
     };
   },
 
-  getInitialState: function() {
+  getInitialState: function getInitialState() {
     return this._stateFromProps(this.props);
   },
 
-  componentDidMount: function () {
+  componentDidMount: function componentDidMount() {
     if (this.props.fixed) {
       this._alignMirror();
       window.addEventListener('resize', this._onResize);
     }
   },
 
-  componentWillReceiveProps: function (newProps) {
+  componentWillReceiveProps: function componentWillReceiveProps(newProps) {
     this.setState(this._stateFromProps(newProps));
   },
 
-  componentDidUpdate: function () {
+  componentDidUpdate: function componentDidUpdate() {
     if (this.props.fixed) {
       this._alignMirror();
     }
   },
 
-  componentWillUnmount: function () {
+  componentWillUnmount: function componentWillUnmount() {
     if (this.props.fixed) {
       window.removeEventListener('resize', this._onResize);
     }
   },
 
-  _stateFromProps: function (props) {
-    return {size: props.size || (props.small ? 'small' : (props.large ? 'large' : null))};
+  _stateFromProps: function _stateFromProps(props) {
+    return { size: props.size || (props.small ? 'small' : props.large ? 'large' : null) };
   },
 
-  _onResize: function () {
+  _onResize: function _onResize() {
     this._alignMirror();
   },
 
-  _alignMirror: function () {
+  _alignMirror: function _alignMirror() {
     var contentElement = this.refs.content.getDOMNode();
     var mirrorElement = this.refs.mirror.getDOMNode();
 
@@ -79,7 +84,7 @@ var Header = React.createClass({
     mirrorElement.style.height = '' + Math.floor(contentRect.height) + 'px';
   },
 
-  render: function() {
+  render: function render() {
     var classes = [CLASS_ROOT];
     var containerClasses = [CLASS_ROOT + "__container"];
     var other = pick(this.props, keys(Box.propTypes));
@@ -104,22 +109,26 @@ var Header = React.createClass({
     }
 
     if (this.props.fixed) {
-      return (
-        <div className={containerClasses.join(' ')}>
-          <div ref="mirror" className={CLASS_ROOT + "__mirror"}></div>
-          <div className={CLASS_ROOT + "__wrapper"}>
-            <Box ref="content" tag={this.props.header} {...other} className={classes.join(' ')}>
-              {this.props.children}
-            </Box>
-          </div>
-        </div>
+      return React.createElement(
+        'div',
+        { className: containerClasses.join(' ') },
+        React.createElement('div', { ref: 'mirror', className: CLASS_ROOT + "__mirror" }),
+        React.createElement(
+          'div',
+          { className: CLASS_ROOT + "__wrapper" },
+          React.createElement(
+            Box,
+            _extends({ ref: 'content', tag: this.props.header }, other, { className: classes.join(' ') }),
+            this.props.children
+          )
+        )
       );
     } else {
-      return (
-        <Box tag={this.props.header} {...other} className={classes.join(' ')}
-          containerClassName={containerClasses.join(' ')}>
-          {this.props.children}
-        </Box>
+      return React.createElement(
+        Box,
+        _extends({ tag: this.props.header }, other, { className: classes.join(' '),
+          containerClassName: containerClasses.join(' ') }),
+        this.props.children
       );
     }
   }

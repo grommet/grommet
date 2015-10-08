@@ -1,5 +1,7 @@
 // (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
 
+'use strict';
+
 var React = require('react');
 var IntlMixin = require('../mixins/GrommetIntlMixin');
 
@@ -20,31 +22,26 @@ var SPIRAL_THICKNESS = 24;
 // Allow for active value content next to a spiral meter
 var SPIRAL_TEXT_PADDING = 48;
 
-function polarToCartesian (centerX, centerY, radius, angleInDegrees) {
+function polarToCartesian(centerX, centerY, radius, angleInDegrees) {
   var angleInRadians = (angleInDegrees - 90) * Math.PI / 180.0;
   return {
-    x: centerX + (radius * Math.cos(angleInRadians)),
-    y: centerY + (radius * Math.sin(angleInRadians))
+    x: centerX + radius * Math.cos(angleInRadians),
+    y: centerY + radius * Math.sin(angleInRadians)
   };
 }
 
-function arcCommands (centerX, centerY, radius, startAngle, endAngle) {
+function arcCommands(centerX, centerY, radius, startAngle, endAngle) {
   var start = polarToCartesian(centerX, centerY, radius, endAngle);
   var end = polarToCartesian(centerX, centerY, radius, startAngle);
   var arcSweep = endAngle - startAngle <= 180 ? "0" : "1";
-  var d = [
-    "M", start.x, start.y,
-    "A", radius, radius, 0, arcSweep, 0, end.x, end.y
-  ].join(" ");
+  var d = ["M", start.x, start.y, "A", radius, radius, 0, arcSweep, 0, end.x, end.y].join(" ");
   return d;
 }
 
-function singleIndicatorCommands (centerX, centerY, radius, startAngle, endAngle, length) {
+function singleIndicatorCommands(centerX, centerY, radius, startAngle, endAngle, length) {
   var point = polarToCartesian(centerX, centerY, radius - length, endAngle - 1);
   var start = polarToCartesian(centerX, centerY, radius, endAngle - 1);
-  var d = ["M", start.x, start.y,
-    "L", point.x, point.y
-  ].join(" ");
+  var d = ["M", start.x, start.y, "L", point.x, point.y].join(" ");
   return d;
 }
 
@@ -59,31 +56,23 @@ function getThresholdsString(thresholds) {
 }
 
 var Meter = React.createClass({
+  displayName: 'Meter',
 
   propTypes: {
     important: React.PropTypes.number,
     large: React.PropTypes.bool, // DEPRECATED: remove in 0.5, use size
-    legend: React.PropTypes.oneOfType([
-      React.PropTypes.bool,
-      React.PropTypes.shape({
-        total: React.PropTypes.bool,
-        placement: React.PropTypes.oneOf(['right', 'bottom'])
-      })
-    ]),
-    max: React.PropTypes.oneOfType([
-      React.PropTypes.shape({
-        value: React.PropTypes.number.isRequired,
-        label: React.PropTypes.string
-      }),
-      React.PropTypes.number
-    ]),
-    min: React.PropTypes.oneOfType([
-      React.PropTypes.shape({
-        value: React.PropTypes.number.isRequired,
-        label: React.PropTypes.string
-      }),
-      React.PropTypes.number
-    ]),
+    legend: React.PropTypes.oneOfType([React.PropTypes.bool, React.PropTypes.shape({
+      total: React.PropTypes.bool,
+      placement: React.PropTypes.oneOf(['right', 'bottom'])
+    })]),
+    max: React.PropTypes.oneOfType([React.PropTypes.shape({
+      value: React.PropTypes.number.isRequired,
+      label: React.PropTypes.string
+    }), React.PropTypes.number]),
+    min: React.PropTypes.oneOfType([React.PropTypes.shape({
+      value: React.PropTypes.number.isRequired,
+      label: React.PropTypes.string
+    }), React.PropTypes.number]),
     size: React.PropTypes.oneOf(['small', 'medium', 'large']),
     series: React.PropTypes.arrayOf(React.PropTypes.shape({
       label: React.PropTypes.string,
@@ -112,7 +101,7 @@ var Meter = React.createClass({
 
   mixins: [IntlMixin],
 
-  getDefaultProps: function () {
+  getDefaultProps: function getDefaultProps() {
     return {
       type: 'bar',
       a11yRole: 'img',
@@ -121,7 +110,7 @@ var Meter = React.createClass({
     };
   },
 
-  getInitialState: function() {
+  getInitialState: function getInitialState() {
     var state = this._stateFromProps(this.props);
     if (state.placeLegend) {
       state.legendPlacement = 'bottom';
@@ -130,25 +119,25 @@ var Meter = React.createClass({
     return state;
   },
 
-  componentDidMount: function() {
+  componentDidMount: function componentDidMount() {
     this._initialTimer = setTimeout(this._initialTimeout, 10);
     window.addEventListener('resize', this._onResize);
     this._onResize();
   },
 
-  componentWillReceiveProps: function (newProps) {
+  componentWillReceiveProps: function componentWillReceiveProps(newProps) {
     var state = this._stateFromProps(newProps);
     this.setState(state);
     this._onResize();
   },
 
-  componentWillUnmount: function() {
+  componentWillUnmount: function componentWillUnmount() {
     clearTimeout(this._initialTimer);
     clearTimeout(this._resizeTimer);
     window.removeEventListener('resize', this._onResize);
   },
 
-  _initialTimeout: function () {
+  _initialTimeout: function _initialTimeout() {
     this.setState({
       initial: false,
       activeIndex: this.state.importantIndex
@@ -156,24 +145,24 @@ var Meter = React.createClass({
     clearTimeout(this._timeout);
   },
 
-  _onActivate: function (index) {
-    this.setState({initial: false, activeIndex: index});
+  _onActivate: function _onActivate(index) {
+    this.setState({ initial: false, activeIndex: index });
   },
 
-  _onResize: function() {
+  _onResize: function _onResize() {
     // debounce
     clearTimeout(this._resizeTimer);
     this._resizeTimer = setTimeout(this._layout, 50);
   },
 
-  _layout: function () {
+  _layout: function _layout() {
     if (this.state.placeLegend) {
       // legendPlacement based on available window orientation
       var ratio = window.innerWidth / window.innerHeight;
       if (ratio < 0.8) {
-        this.setState({legendPlacement: 'bottom'});
+        this.setState({ legendPlacement: 'bottom' });
       } else if (ratio > 1.2) {
-        this.setState({legendPlacement: 'right'});
+        this.setState({ legendPlacement: 'right' });
       }
     }
 
@@ -181,25 +170,23 @@ var Meter = React.createClass({
       if (this.refs.legend) {
         var graphicHeight = this.refs.activeGraphic.getDOMNode().offsetHeight;
         var legendHeight = this.refs.legend.getDOMNode().offsetHeight;
-        this.setState({tallLegend: (legendHeight > graphicHeight)});
+        this.setState({ tallLegend: legendHeight > graphicHeight });
       }
     }
   },
 
-  _normalizeSeries: function (props, min, max, thresholds) {
+  _normalizeSeries: function _normalizeSeries(props, min, max, thresholds) {
     var series = [];
     if (props.series) {
       series = props.series;
     } else if (props.value || props.value === 0) {
-      series = [
-        {value: props.value, important: true}
-      ];
+      series = [{ value: props.value, important: true }];
     }
 
     // set color index
     if (series.length === 1 && props.thresholds) {
       var item = series[0];
-      if (! item.colorIndex) {
+      if (!item.colorIndex) {
         // see which threshold color index to use
         var cumulative = 0;
         thresholds.some(function (threshold) {
@@ -212,8 +199,8 @@ var Meter = React.createClass({
       }
     } else {
       series.forEach(function (item, index) {
-        if (! item.colorIndex) {
-          item.colorIndex = ('graph-' + (index + 1));
+        if (!item.colorIndex) {
+          item.colorIndex = 'graph-' + (index + 1);
         }
       });
     }
@@ -221,7 +208,7 @@ var Meter = React.createClass({
     return series;
   },
 
-  _normalizeThresholds: function (props, min, max) {
+  _normalizeThresholds: function _normalizeThresholds(props, min, max) {
     var thresholds = [];
     if (props.thresholds) {
       // Convert thresholds from absolute values to cummulative,
@@ -237,25 +224,20 @@ var Meter = React.createClass({
           thresholds[i - 1].value = threshold.value - total;
           total += thresholds[i - 1].value;
         }
-        if (i === (props.thresholds.length - 1)) {
+        if (i === props.thresholds.length - 1) {
           thresholds[i].value = max.value - total;
         }
       }
     } else if (props.threshold) {
       var remaining = max.value - props.threshold;
-      thresholds = [
-        {value: props.threshold, colorIndex: 'unset'},
-        {value: remaining, colorIndex: 'error'}
-      ];
+      thresholds = [{ value: props.threshold, colorIndex: 'unset' }, { value: remaining, colorIndex: 'error' }];
     } else {
-      thresholds = [
-        {value: max.value, colorIndex: 'unset'}
-      ];
+      thresholds = [{ value: max.value, colorIndex: 'unset' }];
     }
     return thresholds;
   },
 
-  _importantIndex: function (series) {
+  _importantIndex: function _importantIndex(series) {
     var result = null;
     if (series.length === 1) {
       result = 0;
@@ -273,14 +255,14 @@ var Meter = React.createClass({
   },
 
   // Normalize min or max to an object.
-  _terminal: function (terminal) {
+  _terminal: function _terminal(terminal) {
     if (typeof terminal === 'number') {
-      terminal = {value: terminal};
+      terminal = { value: terminal };
     }
     return terminal;
   },
 
-  _seriesTotal: function (series) {
+  _seriesTotal: function _seriesTotal(series) {
     var total = 0;
     series.some(function (item) {
       total += item.value;
@@ -288,7 +270,7 @@ var Meter = React.createClass({
     return total;
   },
 
-  _seriesMax: function (series) {
+  _seriesMax: function _seriesMax(series) {
     var max = 0;
     series.some(function (item) {
       max = Math.max(max, item.value);
@@ -296,7 +278,7 @@ var Meter = React.createClass({
     return max;
   },
 
-  _viewBoxDimensions: function (series) {
+  _viewBoxDimensions: function _viewBoxDimensions(series) {
     var viewBoxHeight;
     var viewBoxWidth;
     if ('arc' === this.props.type) {
@@ -322,13 +304,13 @@ var Meter = React.createClass({
       // Give the graphic just a bit of breathing room
       // by not ending the spirals right at the center. (+1)
       viewBoxHeight = Math.max(CIRCLE_WIDTH, SPIRAL_THICKNESS * (series.length + 1) * 2);
-      viewBoxWidth = viewBoxHeight + (2 * SPIRAL_TEXT_PADDING);
+      viewBoxWidth = viewBoxHeight + 2 * SPIRAL_TEXT_PADDING;
     }
     return [viewBoxWidth, viewBoxHeight];
   },
 
   // Generates state based on the provided props.
-  _stateFromProps: function (props) {
+  _stateFromProps: function _stateFromProps(props) {
     var total;
     if (props.series && props.series.length > 1) {
       total = this._seriesTotal(props.series);
@@ -369,7 +351,7 @@ var Meter = React.createClass({
 
     if ('arc' === this.props.type) {
       state.startAngle = 60;
-      state.anglePer = (total === 0) ? 0 : 240.0 / total;
+      state.anglePer = total === 0 ? 0 : 240.0 / total;
       if (this.props.vertical) {
         state.angleOffset = 90;
       } else {
@@ -377,7 +359,7 @@ var Meter = React.createClass({
       }
     } else if ('circle' === this.props.type) {
       state.startAngle = 1;
-      state.anglePer = (total === 0) ? 0 : 358.0 / total;
+      state.anglePer = total === 0 ? 0 : 358.0 / total;
       state.angleOffset = 180;
     } else if ('bar' === this.props.type) {
       state.scale = BAR_LENGTH / (max.value - min.value);
@@ -386,23 +368,22 @@ var Meter = React.createClass({
       state.anglePer = 270.0 / max.value;
       state.angleOffset = 0;
       // The last spiral ends out near but not quite at the edge of the view box.
-      state.startRadius = Math.max(CIRCLE_RADIUS, SPIRAL_THICKNESS * (series.length + 0.5)) -
-        (Math.max(0, (series.length - 1)) * SPIRAL_THICKNESS);
+      state.startRadius = Math.max(CIRCLE_RADIUS, SPIRAL_THICKNESS * (series.length + 0.5)) - Math.max(0, series.length - 1) * SPIRAL_THICKNESS;
     }
 
     // normalize size
-    state.size = props.size || (props.small ? 'small' : (props.large ? 'large' : null));
+    state.size = props.size || (props.small ? 'small' : props.large ? 'large' : null);
 
     // legend
-    state.placeLegend = ! (props.legend && props.legend.placement);
-    if (! state.placeLegend) {
+    state.placeLegend = !(props.legend && props.legend.placement);
+    if (!state.placeLegend) {
       state.legendPlacement = props.legend.placement;
     }
 
     return state;
   },
 
-  _interactionListeners: function (interactive, item, index) {
+  _interactionListeners: function _interactionListeners(interactive, item, index) {
     var result = {};
     if (interactive) {
       result.onOver = this._onActivate.bind(this, index);
@@ -412,40 +393,34 @@ var Meter = React.createClass({
     return result;
   },
 
-  _translateBarWidth: function (value) {
+  _translateBarWidth: function _translateBarWidth(value) {
     return Math.round(this.state.scale * value);
   },
 
-  _barCommands: function (start, distance) {
+  _barCommands: function _barCommands(start, distance) {
     var commands;
     if (this.props.vertical) {
-      commands = "M" + MID_BAR_THICKNESS + "," + (BAR_LENGTH - start) +
-        " L" + MID_BAR_THICKNESS + "," + (BAR_LENGTH - (start + distance));
+      commands = "M" + MID_BAR_THICKNESS + "," + (BAR_LENGTH - start) + " L" + MID_BAR_THICKNESS + "," + (BAR_LENGTH - (start + distance));
     } else {
-      commands = "M" + start + "," + MID_BAR_THICKNESS +
-        " L" + (start + distance) + "," + MID_BAR_THICKNESS;
+      commands = "M" + start + "," + MID_BAR_THICKNESS + " L" + (start + distance) + "," + MID_BAR_THICKNESS;
     }
     return commands;
   },
 
-  _buildPath: function (commands, interactive, item, index, classes) {
+  _buildPath: function _buildPath(commands, interactive, item, index, classes) {
     if (interactive) {
       var listeners = this._interactionListeners(interactive, item, index);
 
-      return (
-        <path key={index} className={classes.join(' ')} d={commands} tabIndex="0"
-          onFocus={listeners.onOver} onBlur={listeners.onOut}
-          onMouseOver={listeners.onOver} onMouseOut={listeners.onOut}
-          onClick={listeners.onClick} role="img" aria-labelledby={this.props.a11yDescId} />
-      );
+      return React.createElement('path', { key: index, className: classes.join(' '), d: commands, tabIndex: '0',
+        onFocus: listeners.onOver, onBlur: listeners.onOut,
+        onMouseOver: listeners.onOver, onMouseOut: listeners.onOut,
+        onClick: listeners.onClick, role: 'img', 'aria-labelledby': this.props.a11yDescId });
     } else {
-      return (
-        <path key={index} className={classes.join(' ')} d={commands} />
-      );
+      return React.createElement('path', { key: index, className: classes.join(' '), d: commands });
     }
   },
 
-  _renderBar: function (series, interactive) {
+  _renderBar: function _renderBar(series, interactive) {
     var start = 0;
     var minRemaining = this.state.min.value;
     var classes;
@@ -472,26 +447,21 @@ var Meter = React.createClass({
       classes.push(CLASS_ROOT + "__bar--loading");
       classes.push("color-index-loading");
       commands = this._barCommands(0, BAR_LENGTH);
-      paths.push(
-        <path key="loading" className={classes.join(' ')} d={commands} />
-      );
+      paths.push(React.createElement('path', { key: 'loading', className: classes.join(' '), d: commands }));
     }
 
     return paths;
   },
 
-  _translateEndAngle: function (startAngle, value) {
-    return Math.min(360, Math.max(0,
-      startAngle + (this.state.anglePer * value)));
+  _translateEndAngle: function _translateEndAngle(startAngle, value) {
+    return Math.min(360, Math.max(0, startAngle + this.state.anglePer * value));
   },
 
-  _arcCommands: function (startAngle, endAngle) {
-    return arcCommands(CIRCLE_WIDTH / 2, CIRCLE_WIDTH / 2, CIRCLE_RADIUS,
-      startAngle + this.state.angleOffset,
-      endAngle + this.state.angleOffset);
+  _arcCommands: function _arcCommands(startAngle, endAngle) {
+    return arcCommands(CIRCLE_WIDTH / 2, CIRCLE_WIDTH / 2, CIRCLE_RADIUS, startAngle + this.state.angleOffset, endAngle + this.state.angleOffset);
   },
 
-  _renderArcOrCircle: function (series, interactive) {
+  _renderArcOrCircle: function _renderArcOrCircle(series, interactive) {
     var startAngle = this.state.startAngle;
     var classes;
     var endAngle;
@@ -517,21 +487,17 @@ var Meter = React.createClass({
       classes.push("color-index-loading");
       endAngle = this._translateEndAngle(this.state.startAngle, this.state.max.value);
       commands = this._arcCommands(this.state.startAngle, endAngle);
-      paths.push(
-        <path key="loading" className={classes.join(' ')} d={commands} />
-      );
+      paths.push(React.createElement('path', { key: 'loading', className: classes.join(' '), d: commands }));
     }
 
     return paths;
   },
 
-  _spiralCommands: function (startAngle, endAngle, radius) {
-    return arcCommands(this.state.viewBoxWidth / 2, this.state.viewBoxHeight / 2, radius,
-      startAngle + this.state.angleOffset,
-      endAngle + this.state.angleOffset);
+  _spiralCommands: function _spiralCommands(startAngle, endAngle, radius) {
+    return arcCommands(this.state.viewBoxWidth / 2, this.state.viewBoxHeight / 2, radius, startAngle + this.state.angleOffset, endAngle + this.state.angleOffset);
   },
 
-  _renderSpiral: function (series, interactive) {
+  _renderSpiral: function _renderSpiral(series, interactive) {
     var startAngle = this.state.startAngle;
     var radius = this.state.startRadius;
     var classes;
@@ -558,15 +524,13 @@ var Meter = React.createClass({
       classes.push("color-index-loading");
       endAngle = this._translateEndAngle(this.state.startAngle, this.state.max.value);
       commands = this._spiralCommands(this.state.startAngle, endAngle, radius);
-      paths.push(
-        <path key="loading" className={classes.join(' ')} d={commands} />
-      );
+      paths.push(React.createElement('path', { key: 'loading', className: classes.join(' '), d: commands }));
     }
 
     return paths;
   },
 
-  _renderSingleIndicator: function (series) {
+  _renderSingleIndicator: function _renderSingleIndicator(series) {
     var seriesIndicator = null;
     var startAngle = this.state.startAngle;
     series.forEach(function (item, index) {
@@ -585,16 +549,10 @@ var Meter = React.createClass({
           x = this.state.viewBoxWidth / 2;
           y = this.state.viewBoxHeight / 2;
         }
-        var indicatorCommands =
-          singleIndicatorCommands(x, y, (CIRCLE_RADIUS * 1.1),
-            startAngle + this.state.angleOffset,
-            endAngle + this.state.angleOffset,
-            length);
-        seriesIndicator = (
-          <path fill="none"
-            className={CLASS_ROOT + "__slice-indicator color-index-" + item.colorIndex}
-            d={indicatorCommands} />
-        );
+        var indicatorCommands = singleIndicatorCommands(x, y, CIRCLE_RADIUS * 1.1, startAngle + this.state.angleOffset, endAngle + this.state.angleOffset, length);
+        seriesIndicator = React.createElement('path', { fill: 'none',
+          className: CLASS_ROOT + "__slice-indicator color-index-" + item.colorIndex,
+          d: indicatorCommands });
       }
 
       startAngle = endAngle;
@@ -603,46 +561,50 @@ var Meter = React.createClass({
     return seriesIndicator;
   },
 
-  _getActiveFields: function () {
+  _getActiveFields: function _getActiveFields() {
     var fields;
     if (null === this.state.activeIndex) {
-      fields = {value: this.state.total, label: 'Total'};
+      fields = { value: this.state.total, label: 'Total' };
     } else {
       var active = this.state.series[this.state.activeIndex];
-      fields = {value: active.value, label: active.label};
+      fields = { value: active.value, label: active.label };
     }
 
     return fields;
   },
 
-  _renderActive: function () {
+  _renderActive: function _renderActive() {
 
     var fields = this._getActiveFields();
     var units;
     if (this.props.units) {
-      units = (
-        <span className={CLASS_ROOT + "__active-units large-number-font"}>
-          {this.props.units}
-        </span>
+      units = React.createElement(
+        'span',
+        { className: CLASS_ROOT + "__active-units large-number-font" },
+        this.props.units
       );
     }
-    return (
-      <div aria-hidden="true" role="presentation" className={CLASS_ROOT + "__active"}>
-        <span
-          className={CLASS_ROOT + "__active-value large-number-font"}>
-          {fields.value}
-          {units}
-        </span>
-        <span className={CLASS_ROOT + "__active-label"}>
-          {fields.label}
-        </span>
-      </div>
+    return React.createElement(
+      'div',
+      { 'aria-hidden': 'true', role: 'presentation', className: CLASS_ROOT + "__active" },
+      React.createElement(
+        'span',
+        {
+          className: CLASS_ROOT + "__active-value large-number-font" },
+        fields.value,
+        units
+      ),
+      React.createElement(
+        'span',
+        { className: CLASS_ROOT + "__active-label" },
+        fields.label
+      )
     );
   },
 
-  _renderLabels: function (series) {
-    var x = (this.state.viewBoxWidth / 2) - (SPIRAL_THICKNESS / 2);
-    var y = (SPIRAL_THICKNESS * 0.75) + (SPIRAL_THICKNESS * (series.length - 1));
+  _renderLabels: function _renderLabels(series) {
+    var x = this.state.viewBoxWidth / 2 - SPIRAL_THICKNESS / 2;
+    var y = SPIRAL_THICKNESS * 0.75 + SPIRAL_THICKNESS * (series.length - 1);
     var labels = series.map(function (item, index) {
       var classes = [CLASS_ROOT + "__label"];
       if (index === this.state.activeIndex) {
@@ -654,36 +616,34 @@ var Meter = React.createClass({
 
       y -= SPIRAL_THICKNESS;
 
-      return (
-        <text key={item.label || index} x={textX} y={textY}
-          textAnchor="end" fontSize={16}
-          className={classes.join(' ')}
-          onMouseOver={this._onActivate.bind(this, index)}
-          onMouseOut={this._onActivate.bind(this, this.state.importantIndex)}
-          onClick={item.onClick} >
-          {item.label}
-        </text>
+      return React.createElement(
+        'text',
+        { key: item.label || index, x: textX, y: textY,
+          textAnchor: 'end', fontSize: 16,
+          className: classes.join(' '),
+          onMouseOver: this._onActivate.bind(this, index),
+          onMouseOut: this._onActivate.bind(this, this.state.importantIndex),
+          onClick: item.onClick },
+        item.label
       );
     }, this);
 
-    return (
-      <g className={CLASS_ROOT + "__labels"}>
-        {labels}
-      </g>
+    return React.createElement(
+      'g',
+      { className: CLASS_ROOT + "__labels" },
+      labels
     );
   },
 
-  _renderLegend: function () {
-    return (
-      <Legend ref="legend" className={CLASS_ROOT + "__legend"}
-        series={this.state.series}
-        units={this.props.units}
-        activeIndex={this.state.activeIndex}
-        onActive={this._onActive} />
-    );
+  _renderLegend: function _renderLegend() {
+    return React.createElement(Legend, { ref: 'legend', className: CLASS_ROOT + "__legend",
+      series: this.state.series,
+      units: this.props.units,
+      activeIndex: this.state.activeIndex,
+      onActive: this._onActive });
   },
 
-  render: function() {
+  render: function render() {
     var classes = [CLASS_ROOT];
     classes.push(CLASS_ROOT + "--" + this.props.type);
     if (this.props.vertical) {
@@ -734,38 +694,40 @@ var Meter = React.createClass({
     }
 
     if (thresholds) {
-      thresholds = (
-        <g className={CLASS_ROOT + "__thresholds"}>
-          {thresholds}
-        </g>
+      thresholds = React.createElement(
+        'g',
+        { className: CLASS_ROOT + "__thresholds" },
+        thresholds
       );
     }
 
     var minLabel;
     if (this.state.min.label) {
-      minLabel = (
-        <div className={CLASS_ROOT + "__minmax-min"}>
-          {this.state.min.label}
-        </div>
+      minLabel = React.createElement(
+        'div',
+        { className: CLASS_ROOT + "__minmax-min" },
+        this.state.min.label
       );
     }
     var maxLabel;
     if (this.state.max.label) {
-      maxLabel = (
-        <div className={CLASS_ROOT + "__minmax-max"}>
-          {this.state.max.label}
-        </div>
+      maxLabel = React.createElement(
+        'div',
+        { className: CLASS_ROOT + "__minmax-max" },
+        this.state.max.label
       );
     }
     var minMax;
     if (minLabel || maxLabel) {
-      minMax = (
-        <div className={CLASS_ROOT + "__minmax-container"}>
-          <div className={CLASS_ROOT + "__minmax"}>
-            {minLabel}
-            {maxLabel}
-          </div>
-        </div>
+      minMax = React.createElement(
+        'div',
+        { className: CLASS_ROOT + "__minmax-container" },
+        React.createElement(
+          'div',
+          { className: CLASS_ROOT + "__minmax" },
+          minLabel,
+          maxLabel
+        )
       );
       classes.push(CLASS_ROOT + "--minmax");
     }
@@ -782,61 +744,61 @@ var Meter = React.createClass({
 
     var defaultTitle;
     if (!this.props.a11yTitle) {
-      defaultTitle = [
-        'Meter, ',
-        'Type: ',
-        (this.props.vertical ? 'vertical ' : '') + this.props.type
-      ].join(' ').trim();
+      defaultTitle = ['Meter, ', 'Type: ', (this.props.vertical ? 'vertical ' : '') + this.props.type].join(' ').trim();
     }
-    var a11yTitle = this.getGrommetIntlMessage(
-      typeof this.props.a11yTitle !== "undefined" ?
-        this.props.a11yTitle : defaultTitle);
+    var a11yTitle = this.getGrommetIntlMessage(typeof this.props.a11yTitle !== "undefined" ? this.props.a11yTitle : defaultTitle);
 
     var defaultA11YDesc;
     if (this.props.a11yTitle !== "undefined") {
       var fields = this._getActiveFields();
-      defaultA11YDesc = [
-        ', Value: ',
-        fields.value,
-        this.props.units || '',
-        fields.label,
-        this.state.min.label ? ', Minimum: ' + this.state.min.label : '',
-        this.state.max.label ? ', Maximum: ' + this.state.max.label : '',
-        this.props.threshold ? ', Threshold: ' + this.props.threshold : '',
-        this.props.thresholds ? getThresholdsString(this.props.thresholds) : ''
-      ].join(' ').trim();
+      defaultA11YDesc = [', Value: ', fields.value, this.props.units || '', fields.label, this.state.min.label ? ', Minimum: ' + this.state.min.label : '', this.state.max.label ? ', Maximum: ' + this.state.max.label : '', this.props.threshold ? ', Threshold: ' + this.props.threshold : '', this.props.thresholds ? getThresholdsString(this.props.thresholds) : ''].join(' ').trim();
     }
 
-    var a11yDesc = this.getGrommetIntlMessage(
-      typeof this.props.a11yTitle !== "undefined" ?
-        this.props.a11yTitle : defaultA11YDesc);
+    var a11yDesc = this.getGrommetIntlMessage(typeof this.props.a11yTitle !== "undefined" ? this.props.a11yTitle : defaultA11YDesc);
 
-    return (
-      <div className={classes.join(' ')}>
-        <div ref="activeGraphic" className={CLASS_ROOT + "__active-graphic"}>
-          <div className={CLASS_ROOT + "__labeled-graphic"}>
-            <a href="#" role={a11yRole} tabIndex="0"
-              aria-labelledby={this.props.a11yTitleId + ' ' + this.props.a11yDescId}>
-              <title id={this.props.a11yTitleId}>{this.getGrommetIntlMessage(a11yTitle)}</title>
-              <svg className={CLASS_ROOT + "__graphic"}
-                viewBox={"0 0 " + this.state.viewBoxWidth +
-                  " " + this.state.viewBoxHeight}
-                preserveAspectRatio="xMidYMid meet" width={width} height={height}>
-                <desc id={this.props.a11yDescId}>{this.getGrommetIntlMessage(a11yDesc)}</desc>
-                {thresholds}
-                <g className={CLASS_ROOT + "__values"}>
-                  {values}
-                </g>
-                {labels}
-                {singleIndicator}
-              </svg>
-            </a>
-            {minMax}
-          </div>
-          {active}
-        </div>
-        {legend}
-      </div>
+    return React.createElement(
+      'div',
+      { className: classes.join(' ') },
+      React.createElement(
+        'div',
+        { ref: 'activeGraphic', className: CLASS_ROOT + "__active-graphic" },
+        React.createElement(
+          'div',
+          { className: CLASS_ROOT + "__labeled-graphic" },
+          React.createElement(
+            'a',
+            { href: '#', role: a11yRole, tabIndex: '0',
+              'aria-labelledby': this.props.a11yTitleId + ' ' + this.props.a11yDescId },
+            React.createElement(
+              'title',
+              { id: this.props.a11yTitleId },
+              this.getGrommetIntlMessage(a11yTitle)
+            ),
+            React.createElement(
+              'svg',
+              { className: CLASS_ROOT + "__graphic",
+                viewBox: "0 0 " + this.state.viewBoxWidth + " " + this.state.viewBoxHeight,
+                preserveAspectRatio: 'xMidYMid meet', width: width, height: height },
+              React.createElement(
+                'desc',
+                { id: this.props.a11yDescId },
+                this.getGrommetIntlMessage(a11yDesc)
+              ),
+              thresholds,
+              React.createElement(
+                'g',
+                { className: CLASS_ROOT + "__values" },
+                values
+              ),
+              labels,
+              singleIndicator
+            )
+          ),
+          minMax
+        ),
+        active
+      ),
+      legend
     );
   }
 

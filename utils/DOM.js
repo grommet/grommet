@@ -1,11 +1,13 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+'use strict';
+
 module.exports = {
-  findScrollParents: function (element) {
+  findScrollParents: function findScrollParents(element) {
     var result = [];
     var parent = element.parentNode;
     while (parent) {
       // account for border the lazy way for now
-      if (parent.scrollHeight > (parent.offsetHeight + 10)) {
+      if (parent.scrollHeight > parent.offsetHeight + 10) {
         result.push(parent);
       }
       parent = parent.parentNode;
@@ -16,7 +18,7 @@ module.exports = {
     return result;
   },
 
-  isDescendant: function (parent, child) {
+  isDescendant: function isDescendant(parent, child) {
     var node = child.parentNode;
     while (node != null) {
       if (node == parent) {
@@ -27,8 +29,8 @@ module.exports = {
     return false;
   },
 
-  filterByFocusable: function(elements) {
-    return Array.prototype.filter.call(elements || [], function(element) {
+  filterByFocusable: function filterByFocusable(elements) {
+    return Array.prototype.filter.call(elements || [], function (element) {
       var currentTag = element.tagName.toLowerCase();
       var validTags = /(svg|a|area|input|select|textarea|button|iframe)$/;
       var isValidTag = currentTag.match(validTags) && element.focus;
@@ -41,13 +43,13 @@ module.exports = {
     });
   },
 
-  getBestFirstFocusable: function (elements) {
+  getBestFirstFocusable: function getBestFirstFocusable(elements) {
     var bestFirstFocusable;
 
-    Array.prototype.some.call(elements || [], function(element) {
+    Array.prototype.some.call(elements || [], function (element) {
       var currentTag = element.tagName.toLowerCase();
       var isValidTag = currentTag.match(/(input|select|textarea)$/);
-      return isValidTag ? ((bestFirstFocusable = element), true) : false;
+      return isValidTag ? (bestFirstFocusable = element, true) : false;
     });
 
     if (!bestFirstFocusable) {

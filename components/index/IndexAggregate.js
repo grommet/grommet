@@ -1,5 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
+'use strict';
+
 var React = require('react');
 var Reflux = require('reflux');
 var Meter = require('../Meter');
@@ -18,16 +20,14 @@ var STATUS_IMPORTANCE = {
 };
 
 var IndexAggregate = React.createClass({
+  displayName: 'IndexAggregate',
 
   propTypes: {
     large: React.PropTypes.bool, // DEPRECATED: remove in 0.5, use size
-    legend: React.PropTypes.oneOfType([
-      React.PropTypes.bool,
-      React.PropTypes.shape({
-        total: React.PropTypes.bool,
-        placement: React.PropTypes.oneOf(['right', 'bottom'])
-      })
-    ]),
+    legend: React.PropTypes.oneOfType([React.PropTypes.bool, React.PropTypes.shape({
+      total: React.PropTypes.bool,
+      placement: React.PropTypes.oneOf(['right', 'bottom'])
+    })]),
     params: React.PropTypes.shape({
       category: React.PropTypes.string,
       query: React.PropTypes.object,
@@ -46,7 +46,7 @@ var IndexAggregate = React.createClass({
 
   mixins: [Reflux.ListenerMixin, IntlMixin],
 
-  _onClick: function (value) {
+  _onClick: function _onClick(value) {
     var query;
     if (this.state.params.query) {
       query = this.state.params.query.clone();
@@ -57,10 +57,10 @@ var IndexAggregate = React.createClass({
     this.props.onClick(query);
   },
 
-  _onGetAggregateCompleted: function (response, params, request) {
+  _onGetAggregateCompleted: function _onGetAggregateCompleted(response, params, request) {
     response = response[0];
     if (params === this.state.params) {
-      var series = response.counts.map(function(count, index) {
+      var series = response.counts.map(function (count, index) {
         var colorIndex = 'graph-' + (index + 1);
         if ('status' === this.state.params.attribute) {
           colorIndex = count.value.toLowerCase();
@@ -76,66 +76,61 @@ var IndexAggregate = React.createClass({
       if ('status' === this.state.params.attribute) {
         // re-order by importance
         series.sort(function (s1, s2) {
-          return (STATUS_IMPORTANCE[s2.label] - STATUS_IMPORTANCE[s1.label]);
+          return STATUS_IMPORTANCE[s2.label] - STATUS_IMPORTANCE[s1.label];
         });
         // mark most severe as most important
         series[series.length - 1].important = true;
       }
-      this.setState({series: series, request: request});
+      this.setState({ series: series, request: request });
     }
   },
 
-  _normalizeSize: function (props) {
-    return props.size || (props.small ? 'small' : (props.large ? 'large' : null));
+  _normalizeSize: function _normalizeSize(props) {
+    return props.size || (props.small ? 'small' : props.large ? 'large' : null);
   },
 
-  getInitialState: function () {
+  getInitialState: function getInitialState() {
     return {
       params: this.props.params,
-      series: (this.props.series || []),
+      series: this.props.series || [],
       size: this._normalizeSize(this.props)
     };
   },
 
-  componentDidMount: function () {
-    if (! this.props.series) {
-      this.listenTo(IndexActions.getAggregate.completed,
-        this._onGetAggregateCompleted);
+  componentDidMount: function componentDidMount() {
+    if (!this.props.series) {
+      this.listenTo(IndexActions.getAggregate.completed, this._onGetAggregateCompleted);
       IndexActions.getAggregate(this.state.params, true);
     }
   },
 
-  componentWillReceiveProps: function (newProps) {
+  componentWillReceiveProps: function componentWillReceiveProps(newProps) {
     this.setState({
       params: newProps.params,
       size: this._normalizeSize(newProps)
     });
-    if (! newProps.series) {
+    if (!newProps.series) {
       IndexActions.getAggregate(newProps.params, true, this.state.request);
     }
   },
 
-  componentWillUnmount: function () {
+  componentWillUnmount: function componentWillUnmount() {
     IndexActions.stopWatching(this.state.request);
   },
 
-  render: function () {
+  render: function render() {
     var component;
     if ('distribution' === this.props.type) {
-      component = (
-        <Distribution series={this.state.series || []}
-          legend={true}
-          legendTotal={true}
-          size={this.state.size} />
-      );
+      component = React.createElement(Distribution, { series: this.state.series || [],
+        legend: true,
+        legendTotal: true,
+        size: this.state.size });
     } else {
-      component = (
-        <Meter series={this.state.series || []}
-          legend={this.props.legend}
-          size={this.state.size}
-          type={this.props.type}
-          threshold={this.props.threshold} />
-      );
+      component = React.createElement(Meter, { series: this.state.series || [],
+        legend: this.props.legend,
+        size: this.state.size,
+        type: this.props.type,
+        threshold: this.props.threshold });
     }
 
     return component;

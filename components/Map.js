@@ -1,10 +1,13 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
+'use strict';
+
 var React = require('react');
 
 var CLASS_ROOT = "map";
 
 var ResourceMap = React.createClass({
+  displayName: 'ResourceMap',
 
   propTypes: {
     data: React.PropTypes.shape({
@@ -23,37 +26,34 @@ var ResourceMap = React.createClass({
     }).isRequired
   },
 
-  getInitialState: function () {
-    return {canvasWidth: 100, canvasHeight: 100};
+  getInitialState: function getInitialState() {
+    return { canvasWidth: 100, canvasHeight: 100 };
   },
 
-  componentDidMount: function () {
+  componentDidMount: function componentDidMount() {
     window.addEventListener('resize', this._onResize);
     this._layout();
     clearTimeout(this._drawTimer);
     this._drawTimer = setTimeout(this._draw, 50);
   },
 
-  componentDidUpdate: function () {
+  componentDidUpdate: function componentDidUpdate() {
     this._layout();
     clearTimeout(this._drawTimer);
     this._drawTimer = setTimeout(this._draw, 50);
   },
 
-  componentWillUnmount: function () {
+  componentWillUnmount: function componentWillUnmount() {
     window.removeEventListener('resize', this._onResize);
   },
 
-  _coords: function (id, canvasRect) {
+  _coords: function _coords(id, canvasRect) {
     var element = document.getElementById(id);
     var rect = element.getBoundingClientRect();
-    return [
-      rect.left - canvasRect.left + (rect.width / 2),
-      rect.top - canvasRect.top + (rect.height / 2)
-    ];
+    return [rect.left - canvasRect.left + rect.width / 2, rect.top - canvasRect.top + rect.height / 2];
   },
 
-  _draw: function () {
+  _draw: function _draw() {
     var canvasElement = this.refs.canvas.getDOMNode();
     var highlightCanvasElement = this.refs.highlightCanvas.getDOMNode();
     // don't draw if we don't have a canvas to draw on, such as a unit test
@@ -73,8 +73,7 @@ var ResourceMap = React.createClass({
         var parentCoords = this._coords(link.parentId, canvasRect);
         var childCoords = this._coords(link.childId, canvasRect);
 
-        if (this.state.activeId === link.parentId ||
-          this.state.activeId === link.childId) {
+        if (this.state.activeId === link.parentId || this.state.activeId === link.childId) {
           highlightContext.beginPath();
           highlightContext.moveTo(parentCoords[0], parentCoords[1]);
           highlightContext.lineTo(childCoords[0], childCoords[1]);
@@ -89,10 +88,9 @@ var ResourceMap = React.createClass({
     }
   },
 
-  _layout: function () {
+  _layout: function _layout() {
     var mapElement = this.refs.map.getDOMNode();
-    if (mapElement.scrollWidth !== this.state.canvasWidth ||
-      mapElement.scrollHeight !== this.state.canvasHeight) {
+    if (mapElement.scrollWidth !== this.state.canvasWidth || mapElement.scrollHeight !== this.state.canvasHeight) {
       this.setState({
         canvasWidth: mapElement.scrollWidth,
         canvasHeight: mapElement.scrollHeight
@@ -100,60 +98,60 @@ var ResourceMap = React.createClass({
     }
   },
 
-  _onResize: function () {
+  _onResize: function _onResize() {
     // debounce
     clearTimeout(this._layoutTimer);
     this._layoutTimer = setTimeout(this._layout, 50);
   },
 
-  _onEnter: function (id) {
-    this.setState({activeId: id});
+  _onEnter: function _onEnter(id) {
+    this.setState({ activeId: id });
   },
 
-  _onLeave: function () {
-    this.setState({activeId: null});
+  _onLeave: function _onLeave() {
+    this.setState({ activeId: null });
   },
 
-  _renderItems: function (items) {
+  _renderItems: function _renderItems(items) {
     return items.map(function (item, index) {
       var classes = [CLASS_ROOT + "__item"];
-      var active = this.state.activeId === item.id ||
-        this.props.data.links.some(function (link) {
-          return ((link.parentId === item.id ||
-            link.childId === item.id) &&
-            (link.parentId === this.state.activeId ||
-            link.childId === this.state.activeId));
-        }, this);
+      var active = this.state.activeId === item.id || this.props.data.links.some(function (link) {
+        return (link.parentId === item.id || link.childId === item.id) && (link.parentId === this.state.activeId || link.childId === this.state.activeId);
+      }, this);
       if (active) {
         classes.push(CLASS_ROOT + "__item--active");
       }
-      return (
-        <li key={index} id={item.id} className={classes.join(' ')}
-          onMouseEnter={this._onEnter.bind(this, item.id)}
-          onMouseLeave={this._onLeave.bind(this, item.id)}>
-          {item.node}
-        </li>
+      return React.createElement(
+        'li',
+        { key: index, id: item.id, className: classes.join(' '),
+          onMouseEnter: this._onEnter.bind(this, item.id),
+          onMouseLeave: this._onLeave.bind(this, item.id) },
+        item.node
       );
     }, this);
   },
 
-  _renderCategories: function (categories) {
+  _renderCategories: function _renderCategories(categories) {
     var result = categories.map(function (category) {
-      return (
-        <li key={category.id} className={CLASS_ROOT + "__category"}>
-          <ul className={CLASS_ROOT + "__category-items"}>
-            {this._renderItems(category.items)}
-          </ul>
-          <div className={CLASS_ROOT + "__category-label"}>
-            {category.label}
-          </div>
-        </li>
+      return React.createElement(
+        'li',
+        { key: category.id, className: CLASS_ROOT + "__category" },
+        React.createElement(
+          'ul',
+          { className: CLASS_ROOT + "__category-items" },
+          this._renderItems(category.items)
+        ),
+        React.createElement(
+          'div',
+          { className: CLASS_ROOT + "__category-label" },
+          category.label
+        )
       );
     }, this);
     return result;
   },
 
-  render: function() {
+  render: function render() {
     var classes = [CLASS_ROOT];
     if (this.props.className) {
       classes.push(this.props.className);
@@ -164,16 +162,18 @@ var ResourceMap = React.createClass({
       categories = this._renderCategories(this.props.data.categories);
     }
 
-    return (
-      <div ref="map" className={classes.join(' ')}>
-        <canvas ref="canvas" className={CLASS_ROOT + "__canvas"}
-          width={this.state.canvasWidth} height={this.state.canvasHeight} />
-        <canvas ref="highlightCanvas" className={CLASS_ROOT + "__canvas " + CLASS_ROOT + "__canvas--highlight"}
-          width={this.state.canvasWidth} height={this.state.canvasHeight} />
-        <ol className={CLASS_ROOT + "__categories"}>
-          {categories}
-        </ol>
-      </div>
+    return React.createElement(
+      'div',
+      { ref: 'map', className: classes.join(' ') },
+      React.createElement('canvas', { ref: 'canvas', className: CLASS_ROOT + "__canvas",
+        width: this.state.canvasWidth, height: this.state.canvasHeight }),
+      React.createElement('canvas', { ref: 'highlightCanvas', className: CLASS_ROOT + "__canvas " + CLASS_ROOT + "__canvas--highlight",
+        width: this.state.canvasWidth, height: this.state.canvasHeight }),
+      React.createElement(
+        'ol',
+        { className: CLASS_ROOT + "__categories" },
+        categories
+      )
     );
   }
 

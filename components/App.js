@@ -1,5 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
+'use strict';
+
 var React = require('react');
 var SkipLinks = require('./SkipLinks');
 
@@ -7,6 +9,7 @@ var IntlMixin = require('../mixins/GrommetIntlMixin');
 var Locale = require('../utils/Locale');
 
 var App = React.createClass({
+  displayName: 'App',
 
   propTypes: {
     centered: React.PropTypes.bool
@@ -14,19 +17,19 @@ var App = React.createClass({
 
   mixins: [IntlMixin],
 
-  getDefaultProps: function () {
+  getDefaultProps: function getDefaultProps() {
     return {
       centered: true
     };
   },
 
-  getInitialState: function () {
+  getInitialState: function getInitialState() {
     return {
       lang: 'en-US'
     };
   },
 
-  componentDidMount: function () {
+  componentDidMount: function componentDidMount() {
     var lang = Locale.getCurrentLocale();
     if (this.props.lang) {
       lang = this.props.lang;
@@ -36,10 +39,10 @@ var App = React.createClass({
       document.documentElement.setAttribute('lang', lang);
     }
 
-    this.setState({lang: lang});
+    this.setState({ lang: lang });
   },
 
-  render: function() {
+  render: function render() {
     var classes = ["app"];
     if (this.props.centered) {
       classes.push("app--centered");
@@ -53,17 +56,15 @@ var App = React.createClass({
     }
 
     //remove this when React 0.14 is released. This is required because context props are not being propagated to children.
-    var children = React.Children.map(this.props.children, function(child) {
-      return React.isValidElement(child) ?
-        React.cloneElement(child, this.getChildContext()) :
-        child;
-    }.bind(this));
+    var children = React.Children.map(this.props.children, (function (child) {
+      return React.isValidElement(child) ? React.cloneElement(child, this.getChildContext()) : child;
+    }).bind(this));
 
-    return (
-      <div lang={this.state.lang} className={classes.join(' ')}>
-        <SkipLinks/>
-        {children}
-      </div>
+    return React.createElement(
+      'div',
+      { lang: this.state.lang, className: classes.join(' ') },
+      React.createElement(SkipLinks, null),
+      children
     );
   }
 });

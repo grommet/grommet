@@ -1,7 +1,9 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
+'use strict';
+
 module.exports = {
-  validate: function (rules) {
+  validate: function validate(rules) {
     var result = {
       valid: true,
       errors: {},

@@ -19,7 +19,7 @@ var webpackRequire = require('enhanced-require')(module, {
       {
         test: /\.js$/,
         loader: 'babel',
-        exclude: /(node_modules\/intl|node_modules\/moment|node_modules\/react)/
+        exclude: /node_modules|bower_components/
       }
     ]
   }

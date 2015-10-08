@@ -1,5 +1,7 @@
 // (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
 
+"use strict";
+
 var DOM = require('../utils/DOM');
 
 var SCROLL_MORE_DELAY = 500; // when the user scrolls
@@ -13,20 +15,20 @@ var InfiniteScroll = {
     onEnd: null
   },
 
-  _onScroll: function () {
+  _onScroll: function _onScroll() {
     // delay a bit to ride out quick users
     clearTimeout(this._infiniteScroll.scrollTimer);
-    this._infiniteScroll.scrollTimer = setTimeout(function () {
+    this._infiniteScroll.scrollTimer = setTimeout((function () {
       // are we at the bottom?
       var parentRect = this._infiniteScroll.scrollParent.getBoundingClientRect();
       var indicatorRect = this._infiniteScroll.indicatorElement.getBoundingClientRect();
       if (indicatorRect.bottom <= parentRect.bottom) {
         this._infiniteScroll.onEnd();
       }
-    }.bind(this), SCROLL_MORE_DELAY);
+    }).bind(this), SCROLL_MORE_DELAY);
   },
 
-  startListeningForScroll: function (indicatorElement, onEnd) {
+  startListeningForScroll: function startListeningForScroll(indicatorElement, onEnd) {
     this._infiniteScroll.onEnd = onEnd;
     this._infiniteScroll.indicatorElement = indicatorElement;
     this._infiniteScroll.scrollParent = DOM.findScrollParents(indicatorElement)[0];
@@ -37,7 +39,7 @@ var InfiniteScroll = {
     }
   },
 
-  stopListeningForScroll: function () {
+  stopListeningForScroll: function stopListeningForScroll() {
     if (this._infiniteScroll.scrollParent) {
       clearTimeout(this._infiniteScroll.scrollTimer);
       this._infiniteScroll.scrollParent.removeEventListener("scroll", this._onScroll);
@@ -45,7 +47,7 @@ var InfiniteScroll = {
     }
   },
 
-  componentWillUnmount: function () {
+  componentWillUnmount: function componentWillUnmount() {
     this.stopListeningForScroll();
   }
 };

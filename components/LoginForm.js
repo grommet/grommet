@@ -1,5 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
+'use strict';
+
 var React = require('react');
 var Form = require('./Form');
 var FormField = require('./FormField');
@@ -9,6 +11,7 @@ var IntlMixin = require('../mixins/GrommetIntlMixin');
 var CLASS_ROOT = "login-form";
 
 var LoginForm = React.createClass({
+  displayName: 'LoginForm',
 
   propTypes: {
     logo: React.PropTypes.node,
@@ -22,48 +25,52 @@ var LoginForm = React.createClass({
 
   mixins: [IntlMixin],
 
-  getDefaultProps: function () {
-    return ({
+  getDefaultProps: function getDefaultProps() {
+    return {
       errors: [],
       usernameType: 'email'
-    });
+    };
   },
 
-  componentDidMount: function() {
+  componentDidMount: function componentDidMount() {
     this.refs.username.getDOMNode().focus();
   },
 
-  _onSubmit: function (event) {
+  _onSubmit: function _onSubmit(event) {
     event.preventDefault();
     var username = this.refs.username.getDOMNode().value.trim();
     var password = this.refs.password.getDOMNode().value.trim();
     if (this.props.onSubmit) {
-      this.props.onSubmit({username: username, password: password});
+      this.props.onSubmit({ username: username, password: password });
     }
   },
 
-  render: function() {
+  render: function render() {
     var classes = [CLASS_ROOT];
 
-    var errors = this.props.errors.map(function (error, index) {
-      return (<div key={index} className={CLASS_ROOT + "__error"}>{this.getGrommetIntlMessage(error)}</div>);
-    }.bind(this));
+    var errors = this.props.errors.map((function (error, index) {
+      return React.createElement(
+        'div',
+        { key: index, className: CLASS_ROOT + "__error" },
+        this.getGrommetIntlMessage(error)
+      );
+    }).bind(this));
 
     var logo = null;
     if (this.props.logo) {
-      logo = (
-        <div className={CLASS_ROOT + "__logo"}>
-          {this.props.logo}
-        </div>
+      logo = React.createElement(
+        'div',
+        { className: CLASS_ROOT + "__logo" },
+        this.props.logo
       );
     }
 
     var title = null;
     if (this.props.title) {
-      title = (
-        <h1 className={CLASS_ROOT + "__title"}>
-          {this.props.title}
-        </h1>
+      title = React.createElement(
+        'h1',
+        { className: CLASS_ROOT + "__title" },
+        this.props.title
       );
     }
 
@@ -71,37 +78,41 @@ var LoginForm = React.createClass({
     if (this.props.rememberMe || this.props.forgotPassword) {
       var rememberMe = null;
       if (this.props.rememberMe) {
-        rememberMe = (
-          <CheckBox className={CLASS_ROOT + "__remember-me"}
-            id="remember-me" label={this.getGrommetIntlMessage('Remember me')} />
-        );
+        rememberMe = React.createElement(CheckBox, { className: CLASS_ROOT + "__remember-me",
+          id: 'remember-me', label: this.getGrommetIntlMessage('Remember me') });
       }
-      footer = (
-        <div className={CLASS_ROOT + "__footer"}>
-          {rememberMe}
-          {this.props.forgotPassword}
-        </div>
+      footer = React.createElement(
+        'div',
+        { className: CLASS_ROOT + "__footer" },
+        rememberMe,
+        this.props.forgotPassword
       );
     }
 
-    return (
-      <Form className={classes.join(' ')} onSubmit={this._onSubmit}>
-        {logo}
-        {title}
-        <fieldset>
-          <FormField htmlFor="username" label={this.getGrommetIntlMessage('Username')}>
-            <input id="username" ref="username" type={this.props.usernameType} />
-          </FormField>
-          <FormField htmlFor="password" label={this.getGrommetIntlMessage('Password')}>
-            <input id="password" ref="password" type="password" />
-          </FormField>
-        </fieldset>
-        {errors}
-        <Button id={CLASS_ROOT + "__submit"} className={CLASS_ROOT + "__submit"} primary={true} strong={true}
-          type="submit" label={this.getGrommetIntlMessage('Log In')}
-          onClick={this._onSubmit} />
-        {footer}
-      </Form>
+    return React.createElement(
+      Form,
+      { className: classes.join(' '), onSubmit: this._onSubmit },
+      logo,
+      title,
+      React.createElement(
+        'fieldset',
+        null,
+        React.createElement(
+          FormField,
+          { htmlFor: 'username', label: this.getGrommetIntlMessage('Username') },
+          React.createElement('input', { id: 'username', ref: 'username', type: this.props.usernameType })
+        ),
+        React.createElement(
+          FormField,
+          { htmlFor: 'password', label: this.getGrommetIntlMessage('Password') },
+          React.createElement('input', { id: 'password', ref: 'password', type: 'password' })
+        )
+      ),
+      errors,
+      React.createElement(Button, { id: CLASS_ROOT + "__submit", className: CLASS_ROOT + "__submit", primary: true, strong: true,
+        type: 'submit', label: this.getGrommetIntlMessage('Log In'),
+        onClick: this._onSubmit }),
+      footer
     );
   }
 

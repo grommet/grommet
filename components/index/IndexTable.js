@@ -1,5 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
+'use strict';
+
 var React = require('react');
 var Table = require('../Table');
 var IndexAttribute = require('./IndexAttribute');
@@ -9,6 +11,7 @@ var IntlMixin = require('../../mixins/GrommetIntlMixin');
 var CLASS_ROOT = 'index-table';
 
 var IndexTable = React.createClass({
+  displayName: 'IndexTable',
 
   propTypes: {
     options: React.PropTypes.shape({
@@ -27,39 +30,35 @@ var IndexTable = React.createClass({
       items: React.PropTypes.arrayOf(React.PropTypes.object),
       error: React.PropTypes.string
     }),
-    selection: React.PropTypes.oneOfType([
-      React.PropTypes.string, // uri
-      React.PropTypes.arrayOf(React.PropTypes.string)
-    ]),
+    selection: React.PropTypes.oneOfType([React.PropTypes.string, // uri
+    React.PropTypes.arrayOf(React.PropTypes.string)]),
     onMore: React.PropTypes.func,
     onSelect: React.PropTypes.func
   },
 
   mixins: [IntlMixin],
 
-  getInitialState: function () {
-    return {attributes: this._simplifyAttributes(this.props.options.attributes)};
+  getInitialState: function getInitialState() {
+    return { attributes: this._simplifyAttributes(this.props.options.attributes) };
   },
 
-  componentWillReceiveProps: function (newProps) {
-    this.setState({attributes: this._simplifyAttributes(newProps.options.attributes)});
+  componentWillReceiveProps: function componentWillReceiveProps(newProps) {
+    this.setState({ attributes: this._simplifyAttributes(newProps.options.attributes) });
   },
 
-  _onClickRow: function (uri) {
+  _onClickRow: function _onClickRow(uri) {
     this.props.onSelect(uri);
   },
 
-  _simplifyAttributes: function (attributes) {
-    return attributes
-      .filter(function (attribute) {
-        return attribute.hasOwnProperty('index');
-      })
-      .sort(function (a, b) {
-        return a.index - b.index;
-      });
+  _simplifyAttributes: function _simplifyAttributes(attributes) {
+    return attributes.filter(function (attribute) {
+      return attribute.hasOwnProperty('index');
+    }).sort(function (a, b) {
+      return a.index - b.index;
+    });
   },
 
-  render: function () {
+  render: function render() {
     var classes = [CLASS_ROOT];
     if (this.props.className) {
       classes.push(this.props.className);
@@ -79,15 +78,15 @@ var IndexTable = React.createClass({
       var content = this.getGrommetIntlMessage(attribute.label);
       if ('status' === attribute.attribute) {
         classes.push(CLASS_ROOT + "__cell--icon");
-        content = (
-          <StatusIcon className={CLASS_ROOT + "__header-icon"} value={'label'} small={true} />
-        );
+        content = React.createElement(StatusIcon, { className: CLASS_ROOT + "__header-icon", value: 'label', small: true });
       } else {
         content = this.getGrommetIntlMessage(content);
       }
 
-      return (
-        <th key={attribute.attribute} className={classes.join(' ')}>{content}</th>
+      return React.createElement(
+        'th',
+        { key: attribute.attribute, className: classes.join(' ') },
+        content
       );
     }, this);
 
@@ -99,35 +98,46 @@ var IndexTable = React.createClass({
           selectionIndex = index;
         }
         var cells = attributes.map(function (attribute) {
-          return (
-            <td key={attribute.attribute}>
-              <IndexAttribute item={item} attribute={attribute} />
-            </td>
+          return React.createElement(
+            'td',
+            { key: attribute.attribute },
+            React.createElement(IndexAttribute, { item: item, attribute: attribute })
           );
         }, this);
-        return (
-          <tr key={item.uri} onClick={this._onClickRow.bind(this, item.uri)}>
-            {cells}
-          </tr>
+        return React.createElement(
+          'tr',
+          { key: item.uri, onClick: this._onClickRow.bind(this, item.uri) },
+          cells
         );
       }, this);
     }
 
     var onMore = null;
-    if (this.props.result &&
-      this.props.result.count < this.props.result.total) {
+    if (this.props.result && this.props.result.count < this.props.result.total) {
       onMore = this.props.onMore;
     }
 
-    return (
-      <Table className={classes.join(' ')}
-        selectable={true}
-        scrollable={true}
-        selection={selectionIndex}
-        onMore={onMore}>
-        <thead><tr>{headerCells}</tr></thead>
-        <tbody>{rows}</tbody>
-      </Table>
+    return React.createElement(
+      Table,
+      { className: classes.join(' '),
+        selectable: true,
+        scrollable: true,
+        selection: selectionIndex,
+        onMore: onMore },
+      React.createElement(
+        'thead',
+        null,
+        React.createElement(
+          'tr',
+          null,
+          headerCells
+        )
+      ),
+      React.createElement(
+        'tbody',
+        null,
+        rows
+      )
     );
   }
 

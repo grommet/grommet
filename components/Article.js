@@ -1,5 +1,9 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
+'use strict';
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var React = require('react');
 var merge = require('lodash/object/merge');
 var pick = require('lodash/object/pick');
@@ -13,6 +17,7 @@ var SkipLinkAnchor = require('./SkipLinkAnchor');
 var CLASS_ROOT = "article";
 
 var Article = React.createClass({
+  displayName: 'Article',
 
   propTypes: merge({
     scrollStep: React.PropTypes.bool,
@@ -21,14 +26,14 @@ var Article = React.createClass({
 
   mixins: [KeyboardAccelerators],
 
-  getDefaultProps: function () {
+  getDefaultProps: function getDefaultProps() {
     return {
       pad: 'none',
       direction: 'column'
     };
   },
 
-  componentDidMount: function () {
+  componentDidMount: function componentDidMount() {
     if (this.props.scrollStep) {
       this._markInactive();
       var articleElement = this.refs.component.getDOMNode();
@@ -42,7 +47,7 @@ var Article = React.createClass({
     }
   },
 
-  componentWillUnmount: function () {
+  componentWillUnmount: function componentWillUnmount() {
     if (this.props.scrollStep) {
       document.removeEventListener('wheel', this._onWheel);
       clearInterval(this._scrollToTimer);
@@ -55,13 +60,13 @@ var Article = React.createClass({
     }
   },
 
-  _markInactive: function () {
+  _markInactive: function _markInactive() {
     var articleElement = this.refs.component.getDOMNode();
     var sections = articleElement.querySelectorAll('.section.box--full');
     for (var i = 0; i < sections.length; i += 1) {
       var section = sections[i];
       var rect = section.getBoundingClientRect();
-      if (rect.top > (window.innerHeight - 10)) {
+      if (rect.top > window.innerHeight - 10) {
         section.classList.add('section--inactive');
       } else {
         section.classList.remove('section--inactive');
@@ -69,12 +74,12 @@ var Article = React.createClass({
     }
   },
 
-  _onScroll: function (event) {
+  _onScroll: function _onScroll(event) {
     clearTimeout(this._scrollTimer);
     this._scrollTimer = setTimeout(this._markInactive, 50);
   },
 
-  _onWheel: function (event) {
+  _onWheel: function _onWheel(event) {
     if (Math.abs(event.deltaY) > 100) {
       clearInterval(this._scrollTimer);
     } else if (event.deltaY > 5) {
@@ -84,7 +89,7 @@ var Article = React.createClass({
     }
   },
 
-  _onDown: function (event) {
+  _onDown: function _onDown(event) {
     if (event) {
       event.preventDefault();
     }
@@ -101,7 +106,7 @@ var Article = React.createClass({
     }
   },
 
-  _onUp: function (event) {
+  _onUp: function _onUp(event) {
     if (event) {
       event.preventDefault();
     }
@@ -111,8 +116,7 @@ var Article = React.createClass({
       var section = sections[i];
       var rect = section.getBoundingClientRect();
       // -10 is for fuzziness
-      if ((rect.top >= -10 || i === (sections.length - 1)) &&
-        (event || rect.top < window.innerHeight)) {
+      if ((rect.top >= -10 || i === sections.length - 1) && (event || rect.top < window.innerHeight)) {
         if (i > 0) {
           section = sections[i - 1];
           rect = section.getBoundingClientRect();
@@ -123,7 +127,7 @@ var Article = React.createClass({
     }
   },
 
-  render: function() {
+  render: function render() {
     var classes = [CLASS_ROOT];
     var other = pick(this.props, keys(Box.propTypes));
     if (this.props.scrollStep) {
@@ -135,13 +139,13 @@ var Article = React.createClass({
 
     var skipLinkAnchor = null;
     if (this.props.primary) {
-      skipLinkAnchor = <SkipLinkAnchor label="Main Content" />;
+      skipLinkAnchor = React.createElement(SkipLinkAnchor, { label: 'Main Content' });
     }
-    return (
-      <Box ref="component" tag="article" {...other} className={classes.join(' ')}>
-        {skipLinkAnchor}
-        {this.props.children}
-      </Box>
+    return React.createElement(
+      Box,
+      _extends({ ref: 'component', tag: 'article' }, other, { className: classes.join(' ') }),
+      skipLinkAnchor,
+      this.props.children
     );
   }
 });

@@ -1,5 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
+'use strict';
+
 var React = require('react');
 var StatusIcon = require('../icons/Status');
 var IntlMixin = require('../../mixins/GrommetIntlMixin');
@@ -7,6 +9,7 @@ var IntlMixin = require('../../mixins/GrommetIntlMixin');
 var CLASS_ROOT = "index-attribute";
 
 var IndexAttribute = React.createClass({
+  displayName: 'IndexAttribute',
 
   mixins: [IntlMixin],
 
@@ -19,7 +22,7 @@ var IndexAttribute = React.createClass({
     className: React.PropTypes.string
   },
 
-  render: function() {
+  render: function render() {
     var attribute = this.props.attribute;
 
     var classes = [CLASS_ROOT];
@@ -34,36 +37,38 @@ var IndexAttribute = React.createClass({
     }
 
     var item = this.props.item;
-    var content = (<span>'?'</span>);
+    var content = React.createElement(
+      'span',
+      null,
+      '\'?\''
+    );
     var value;
 
     if (attribute.hasOwnProperty('render')) {
 
       content = attribute.render(item);
-
     } else {
 
       if (item.hasOwnProperty(attribute.attribute)) {
         value = item[attribute.attribute];
-      } else if (item.attributes &&
-        item.attributes.hasOwnProperty(attribute.attribute)) {
+      } else if (item.attributes && item.attributes.hasOwnProperty(attribute.attribute)) {
         value = item.attributes[attribute.attribute];
       }
 
       if ('status' === attribute.attribute) {
-        content = (
-          <StatusIcon className={classes.join(' ')}
-            value={value.toLowerCase()} small={true} />
-        );
+        content = React.createElement(StatusIcon, { className: classes.join(' '),
+          value: value.toLowerCase(), small: true });
       } else if (attribute.timestamp) {
-        content = (
-          <span className={classes.join(' ')}>
-            {this.getGrommetFormattedDate(value)}
-          </span>
+        content = React.createElement(
+          'span',
+          { className: classes.join(' ') },
+          this.getGrommetFormattedDate(value)
         );
       } else {
-        content = (
-          <span className={classes.join(' ')}>{this.getGrommetIntlMessage(value)}</span>
+        content = React.createElement(
+          'span',
+          { className: classes.join(' ') },
+          this.getGrommetIntlMessage(value)
         );
       }
     }

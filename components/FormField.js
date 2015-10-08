@@ -1,10 +1,13 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
+'use strict';
+
 var React = require('react');
 
 var CLASS_ROOT = "form-field";
 
 var FormField = React.createClass({
+  displayName: 'FormField',
 
   propTypes: {
     error: React.PropTypes.string,
@@ -15,11 +18,11 @@ var FormField = React.createClass({
     required: React.PropTypes.bool
   },
 
-  getInitialState: function () {
-    return {focus: false};
+  getInitialState: function getInitialState() {
+    return { focus: false };
   },
 
-  componentDidMount: function () {
+  componentDidMount: function componentDidMount() {
     var contentsElement = this.refs.contents.getDOMNode();
     var inputElements = contentsElement.querySelectorAll('input, textarea, select');
     if (inputElements.length === 1) {
@@ -29,7 +32,7 @@ var FormField = React.createClass({
     }
   },
 
-  componentWillUnmount: function () {
+  componentWillUnmount: function componentWillUnmount() {
     if (this._inputElement) {
       this._inputElement.removeEventListener('focus', this._onFocus);
       this._inputElement.removeEventListener('blur', this._onBlur);
@@ -37,21 +40,21 @@ var FormField = React.createClass({
     }
   },
 
-  _onFocus: function () {
-    this.setState({focus: true});
+  _onFocus: function _onFocus() {
+    this.setState({ focus: true });
   },
 
-  _onBlur: function () {
-    this.setState({focus: false});
+  _onBlur: function _onBlur() {
+    this.setState({ focus: false });
   },
 
-  _onClick: function () {
+  _onClick: function _onClick() {
     if (this._inputElement) {
       this._inputElement.focus();
     }
   },
 
-  render: function () {
+  render: function render() {
     var classes = [CLASS_ROOT];
     if (this.state.focus) {
       classes.push(CLASS_ROOT + "--focus");
@@ -69,24 +72,36 @@ var FormField = React.createClass({
     var error;
     if (this.props.error) {
       classes.push(CLASS_ROOT + "--error");
-      error = <span className={CLASS_ROOT + "__error"}>{this.props.error}</span>;
+      error = React.createElement(
+        'span',
+        { className: CLASS_ROOT + "__error" },
+        this.props.error
+      );
     }
     var help;
     if (this.props.help !== null && this.props.help !== undefined) {
-      help = <span className={CLASS_ROOT + "__help"}>{this.props.help}</span>;
+      help = React.createElement(
+        'span',
+        { className: CLASS_ROOT + "__help" },
+        this.props.help
+      );
     }
 
-    return (
-      <div className={classes.join(' ')} onClick={this._onClick}>
-        {error}
-        <label className={CLASS_ROOT + "__label"} htmlFor={this.props.htmlFor}>
-          {this.props.label}
-        </label>
-        {help}
-        <span ref="contents" className={CLASS_ROOT + "__contents"}>
-          {this.props.children}
-        </span>
-      </div>
+    return React.createElement(
+      'div',
+      { className: classes.join(' '), onClick: this._onClick },
+      error,
+      React.createElement(
+        'label',
+        { className: CLASS_ROOT + "__label", htmlFor: this.props.htmlFor },
+        this.props.label
+      ),
+      help,
+      React.createElement(
+        'span',
+        { ref: 'contents', className: CLASS_ROOT + "__contents" },
+        this.props.children
+      )
     );
   }
 

@@ -1,11 +1,14 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
+'use strict';
+
 var React = require('react');
 var keys = require('lodash/object/keys');
 
 var CLASS_ROOT = "box";
 
 var Box = React.createClass({
+  displayName: 'Box',
 
   propTypes: {
     align: React.PropTypes.oneOf(['start', 'center', 'end']),
@@ -17,13 +20,10 @@ var Box = React.createClass({
     full: React.PropTypes.oneOf([true, 'horizontal', 'vertical', false]),
     onClick: React.PropTypes.func,
     justify: React.PropTypes.oneOf(['start', 'center', 'between', 'end']),
-    pad: React.PropTypes.oneOfType([
-      React.PropTypes.oneOf(['none', 'small', 'medium', 'large']),
-      React.PropTypes.shape({
-        horizontal: React.PropTypes.oneOf(['none', 'small', 'medium', 'large']),
-        vertical: React.PropTypes.oneOf(['none', 'small', 'medium', 'large'])
-      })
-    ]),
+    pad: React.PropTypes.oneOfType([React.PropTypes.oneOf(['none', 'small', 'medium', 'large']), React.PropTypes.shape({
+      horizontal: React.PropTypes.oneOf(['none', 'small', 'medium', 'large']),
+      vertical: React.PropTypes.oneOf(['none', 'small', 'medium', 'large'])
+    })]),
     reverse: React.PropTypes.bool,
     responsive: React.PropTypes.bool,
     separator: React.PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
@@ -32,7 +32,7 @@ var Box = React.createClass({
     texture: React.PropTypes.string
   },
 
-  getDefaultProps: function () {
+  getDefaultProps: function getDefaultProps() {
     return {
       direction: 'column',
       pad: 'none',
@@ -41,7 +41,7 @@ var Box = React.createClass({
     };
   },
 
-  _addPropertyClass: function (classes, prefix, property, classProperty) {
+  _addPropertyClass: function _addPropertyClass(classes, prefix, property, classProperty) {
     var choice = this.props[property];
     var propertyPrefix = classProperty || property;
     if (choice) {
@@ -57,7 +57,7 @@ var Box = React.createClass({
     }
   },
 
-  render: function() {
+  render: function render() {
     var classes = [CLASS_ROOT];
     var containerClasses = [CLASS_ROOT + "__container"];
     this._addPropertyClass(classes, CLASS_ROOT, 'flush');
@@ -98,20 +98,22 @@ var Box = React.createClass({
     }
 
     if (this.props.appCentered) {
-      return (
-        <div className={containerClasses.join(' ')} style={style}
-          onClick={this.props.onClick}>
-          <this.props.tag className={classes.join(' ')}>
-            {this.props.children}
-          </this.props.tag>
-        </div>
+      return React.createElement(
+        'div',
+        { className: containerClasses.join(' '), style: style,
+          onClick: this.props.onClick },
+        React.createElement(
+          this.props.tag,
+          { className: classes.join(' ') },
+          this.props.children
+        )
       );
     } else {
-      return (
-        <this.props.tag className={classes.join(' ')} style={style}
-          onClick={this.props.onClick}>
-          {this.props.children}
-        </this.props.tag>
+      return React.createElement(
+        this.props.tag,
+        { className: classes.join(' '), style: style,
+          onClick: this.props.onClick },
+        this.props.children
       );
     }
   }

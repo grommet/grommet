@@ -1,5 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
+'use strict';
+
 var React = require('react');
 var KeyboardAccelerators = require('../mixins/KeyboardAccelerators');
 var Drop = require('../utils/Drop');
@@ -10,6 +12,7 @@ var IntlMixin = require('../mixins/GrommetIntlMixin');
 var CLASS_ROOT = "search";
 
 var Search = React.createClass({
+  displayName: 'Search',
 
   propTypes: {
     defaultValue: React.PropTypes.string,
@@ -26,17 +29,17 @@ var Search = React.createClass({
 
   mixins: [KeyboardAccelerators, IntlMixin],
 
-  getDefaultProps: function () {
+  getDefaultProps: function getDefaultProps() {
     return {
       align: 'left',
       inline: false,
       placeHolder: 'Search',
-      dropAlign: {top: 'top', left: 'left'},
+      dropAlign: { top: 'top', left: 'left' },
       responsive: true
     };
   },
 
-  getInitialState: function () {
+  getInitialState: function getInitialState() {
     return {
       align: 'left',
       controlFocused: false,
@@ -46,13 +49,13 @@ var Search = React.createClass({
     };
   },
 
-  componentDidMount: function () {
+  componentDidMount: function componentDidMount() {
     if (this.props.inline && this.props.responsive) {
       this._responsive = Responsive.start(this._onResponsive);
     }
   },
 
-  componentDidUpdate: function (prevProps, prevState) {
+  componentDidUpdate: function componentDidUpdate(prevProps, prevState) {
     // Set up keyboard listeners appropriate to the current state.
 
     var activeKeyboardHandlers = {
@@ -68,11 +71,11 @@ var Search = React.createClass({
 
     // the order here is important, need to turn off keys before turning on
 
-    if (! this.state.controlFocused && prevState.controlFocused) {
+    if (!this.state.controlFocused && prevState.controlFocused) {
       this.stopListeningToKeyboard(focusedKeyboardHandlers);
     }
 
-    if (! this.state.dropActive && prevState.dropActive) {
+    if (!this.state.dropActive && prevState.dropActive) {
       document.removeEventListener('click', this._onRemoveDrop);
       this.stopListeningToKeyboard(activeKeyboardHandlers);
       if (this._drop) {
@@ -81,45 +84,44 @@ var Search = React.createClass({
       }
     }
 
-    if (this.state.controlFocused && ! prevState.controlFocused) {
+    if (this.state.controlFocused && !prevState.controlFocused) {
       this.startListeningToKeyboard(focusedKeyboardHandlers);
     }
 
-    if (this.state.dropActive && ! prevState.dropActive) {
+    if (this.state.dropActive && !prevState.dropActive) {
       // Slow down adding the click handler,
       // otherwise the drop will close when the mouse is released.
       // Not observable in Safari, 1ms is sufficient for Chrome, Firefox needs 100ms though. :(
       // TODO: re-evaluate how to solve this without a timeout.
-      setTimeout(function () {
+      setTimeout((function () {
         document.addEventListener('click', this._onRemoveDrop);
-      }.bind(this), 100);
+      }).bind(this), 100);
       this.startListeningToKeyboard(activeKeyboardHandlers);
 
-      var baseElement =
-        (this.refs.control ? this.refs.control : this.refs.input).getDOMNode();
+      var baseElement = (this.refs.control ? this.refs.control : this.refs.input).getDOMNode();
       this._drop = Drop.add(baseElement, this._renderDrop(), this.props.dropAlign);
 
       document.getElementById('search-drop-input').focus();
     }
   },
 
-  componentWillUnmount: function () {
+  componentWillUnmount: function componentWillUnmount() {
     document.removeEventListener('click', this._onRemoveDrop);
     if (this._responsive) {
       this._responsive.stop();
     }
   },
 
-  _onAddDrop: function (event) {
+  _onAddDrop: function _onAddDrop(event) {
     event.preventDefault();
-    this.setState({dropActive: true, activeSuggestionIndex: -1});
+    this.setState({ dropActive: true, activeSuggestionIndex: -1 });
   },
 
-  _onRemoveDrop: function () {
-    this.setState({dropActive: false});
+  _onRemoveDrop: function _onRemoveDrop() {
+    this.setState({ dropActive: false });
   },
 
-  _onFocusControl: function () {
+  _onFocusControl: function _onFocusControl() {
     this.setState({
       controlFocused: true,
       dropActive: true,
@@ -127,42 +129,42 @@ var Search = React.createClass({
     });
   },
 
-  _onBlurControl: function () {
-    this.setState({controlFocused: false});
+  _onBlurControl: function _onBlurControl() {
+    this.setState({ controlFocused: false });
   },
 
-  _onFocusInput: function () {
+  _onFocusInput: function _onFocusInput() {
     this.refs.input.getDOMNode().select();
     this.setState({
-      dropActive: (! this.state.inline || this.props.suggestions),
+      dropActive: !this.state.inline || this.props.suggestions,
       activeSuggestionIndex: -1
     });
   },
 
-  _onBlurInput: function () {
+  _onBlurInput: function _onBlurInput() {
     //this.setState({drop: false});
   },
 
-  _onChangeInput: function (event) {
-    this.setState({activeSuggestionIndex: -1});
+  _onChangeInput: function _onChangeInput(event) {
+    this.setState({ activeSuggestionIndex: -1 });
     if (this.props.onChange) {
       this.props.onChange(event.target.value);
     }
   },
 
-  _onNextSuggestion: function () {
+  _onNextSuggestion: function _onNextSuggestion() {
     var index = this.state.activeSuggestionIndex;
     index = Math.min(index + 1, this.props.suggestions.length - 1);
-    this.setState({activeSuggestionIndex: index});
+    this.setState({ activeSuggestionIndex: index });
   },
 
-  _onPreviousSuggestion: function () {
+  _onPreviousSuggestion: function _onPreviousSuggestion() {
     var index = this.state.activeSuggestionIndex;
     index = Math.max(index - 1, 0);
-    this.setState({activeSuggestionIndex: index});
+    this.setState({ activeSuggestionIndex: index });
   },
 
-  _onEnter: function () {
+  _onEnter: function _onEnter() {
     if (this.state.activeSuggestionIndex >= 0) {
       var text = this.props.suggestions[this.state.activeSuggestionIndex];
       if (this.props.onChange) {
@@ -172,43 +174,43 @@ var Search = React.createClass({
     this._onRemoveDrop();
   },
 
-  _onClickSuggestion: function (item) {
+  _onClickSuggestion: function _onClickSuggestion(item) {
     if (this.props.onChange) {
       this.props.onChange(item);
     }
     this._onRemoveDrop();
   },
 
-  _onSink: function (event) {
+  _onSink: function _onSink(event) {
     event.stopPropagation();
     event.nativeEvent.stopImmediatePropagation();
   },
 
-  _onResponsive: function (small) {
+  _onResponsive: function _onResponsive(small) {
     if (small) {
-      this.setState({inline: false});
+      this.setState({ inline: false });
     } else {
-      this.setState({inline: this.props.inline});
+      this.setState({ inline: this.props.inline });
     }
   },
 
-  focus: function () {
+  focus: function focus() {
     var ref = this.refs.input || this.refs.control;
     if (ref) {
       ref.getDOMNode().focus();
     }
   },
 
-  _createControl: function () {
+  _createControl: function _createControl() {
     var controlClassName = CLASS_ROOT + "__control";
-    return (
-      <div className={controlClassName}>
-        <SearchIcon />
-      </div>
+    return React.createElement(
+      'div',
+      { className: controlClassName },
+      React.createElement(SearchIcon, null)
     );
   },
 
-  _classes: function (prefix) {
+  _classes: function _classes(prefix) {
     var classes = [prefix];
 
     if (this.state.inline) {
@@ -220,7 +222,7 @@ var Search = React.createClass({
     return classes;
   },
 
-  _renderDrop: function() {
+  _renderDrop: function _renderDrop() {
     var classes = this._classes(CLASS_ROOT + "__drop");
     if (this.props.dropColorIndex) {
       classes.push("background-color-index-" + this.props.dropColorIndex);
@@ -236,51 +238,53 @@ var Search = React.createClass({
         if (index === this.state.activeSuggestionIndex) {
           classes.push(CLASS_ROOT + "__suggestion--active");
         }
-        return (
-          <div key={item}
-            className={classes.join(' ')}
-            onClick={this._onClickSuggestion.bind(this, item)}>
-            {item}
-          </div>
+        return React.createElement(
+          'div',
+          { key: item,
+            className: classes.join(' '),
+            onClick: this._onClickSuggestion.bind(this, item) },
+          item
         );
       }, this);
     }
 
-    var contents = (
-      <div className={CLASS_ROOT + "__drop-contents"} onClick={this._onSink}>
-        <input id="search-drop-input" type="search"
-          defaultValue={this.props.defaultValue}
-          value={this.props.value}
-          className={CLASS_ROOT + "__input"}
-          onChange={this._onChangeInput} />
-        <div className={CLASS_ROOT + "__suggestions"}>
-          {suggestions}
-        </div>
-      </div>
+    var contents = React.createElement(
+      'div',
+      { className: CLASS_ROOT + "__drop-contents", onClick: this._onSink },
+      React.createElement('input', { id: 'search-drop-input', type: 'search',
+        defaultValue: this.props.defaultValue,
+        value: this.props.value,
+        className: CLASS_ROOT + "__input",
+        onChange: this._onChangeInput }),
+      React.createElement(
+        'div',
+        { className: CLASS_ROOT + "__suggestions" },
+        suggestions
+      )
     );
 
-    if (! this.state.inline) {
+    if (!this.state.inline) {
       var control = this._createControl();
-      var rightAlign = (! this.props.dropAlign.left);
+      var rightAlign = !this.props.dropAlign.left;
       var first = rightAlign ? contents : control;
       var second = rightAlign ? control : contents;
 
-      contents = (
-        <div className={CLASS_ROOT + "__drop-header"}>
-          {first}
-          {second}
-        </div>
+      contents = React.createElement(
+        'div',
+        { className: CLASS_ROOT + "__drop-header" },
+        first,
+        second
       );
     }
 
-    return (
-      <div id="search-drop" className={classes.join(' ')}>
-        {contents}
-      </div>
+    return React.createElement(
+      'div',
+      { id: 'search-drop', className: classes.join(' ') },
+      contents
     );
   },
 
-  render: function () {
+  render: function render() {
 
     var classes = this._classes(CLASS_ROOT);
     if (this.props.large) {
@@ -294,32 +298,31 @@ var Search = React.createClass({
 
       var readOnly = this.props.suggestions ? true : false;
 
-      return (
-        <div className={classes.join(' ')}>
-          <input ref="input" type="search"
-            placeholder={this.getGrommetIntlMessage(this.props.placeHolder)}
-            defaultValue={this.props.defaultValue}
-            value={this.props.value}
-            className={CLASS_ROOT + "__input"}
-            readOnly={readOnly}
-            onFocus={this._onFocusInput}
-            onBlur={this._onBlurInput}
-            onChange={this._onChangeInput} />
-        </div>
+      return React.createElement(
+        'div',
+        { className: classes.join(' ') },
+        React.createElement('input', { ref: 'input', type: 'search',
+          placeholder: this.getGrommetIntlMessage(this.props.placeHolder),
+          defaultValue: this.props.defaultValue,
+          value: this.props.value,
+          className: CLASS_ROOT + "__input",
+          readOnly: readOnly,
+          onFocus: this._onFocusInput,
+          onBlur: this._onBlurInput,
+          onChange: this._onChangeInput })
       );
-
     } else {
 
       var controlContents = this._createControl();
 
-      return (
-        <div ref="control" className={classes.join(' ')}
-          tabIndex="0"
-          onClick={this._onAddDrop}
-          onFocus={this._onFocusControl}
-          onBlur={this._onBlurControl}>
-          {controlContents}
-        </div>
+      return React.createElement(
+        'div',
+        { ref: 'control', className: classes.join(' '),
+          tabIndex: '0',
+          onClick: this._onAddDrop,
+          onFocus: this._onFocusControl,
+          onBlur: this._onBlurControl },
+        controlContents
       );
     }
   }

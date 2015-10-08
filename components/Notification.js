@@ -1,5 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
+'use strict';
+
 var React = require('react');
 var IntlMixin = require('../mixins/GrommetIntlMixin');
 var StatusIcon = require('./icons/Status');
@@ -7,6 +9,7 @@ var StatusIcon = require('./icons/Status');
 var CLASS_ROOT = "notification";
 
 var GrommetNotification = React.createClass({
+  displayName: 'GrommetNotification',
 
   propTypes: {
     flush: React.PropTypes.bool,
@@ -18,14 +21,14 @@ var GrommetNotification = React.createClass({
 
   mixins: [IntlMixin],
 
-  getDefaultProps: function () {
+  getDefaultProps: function getDefaultProps() {
     return {
       flush: true,
       status: 'unknown'
     };
   },
 
-  render: function() {
+  render: function render() {
     var classes = [CLASS_ROOT];
     classes.push(CLASS_ROOT + "--" + this.props.status.toLowerCase());
     if (this.props.flush) {
@@ -37,37 +40,41 @@ var GrommetNotification = React.createClass({
 
     var status;
     if (this.props.status) {
-      status = (
-        <StatusIcon className={CLASS_ROOT + "__status"}
-        value={this.props.status} small={true} />
-      );
+      status = React.createElement(StatusIcon, { className: CLASS_ROOT + "__status",
+        value: this.props.status, small: true });
     }
 
     var state;
     if (this.props.state) {
-      state = <span className={CLASS_ROOT + "__state"}>{this.props.state}</span>;
+      state = React.createElement(
+        'span',
+        { className: CLASS_ROOT + "__state" },
+        this.props.state
+      );
     }
 
     var timestamp;
     if (this.props.timestamp) {
       var text = this.getGrommetFormattedDate(this.props.timestamp);
-      timestamp = (
-        <span className={CLASS_ROOT + "__timestamp"}>
-          {text}
-        </span>
+      timestamp = React.createElement(
+        'span',
+        { className: CLASS_ROOT + "__timestamp" },
+        text
       );
     }
 
-    return (
-      <div className={classes.join(' ')}>
-        {status}
-        <span className={CLASS_ROOT + "__message"}>
-          {this.props.message}
-        </span>
-        {timestamp}
-        {state}
-        {this.props.children}
-      </div>
+    return React.createElement(
+      'div',
+      { className: classes.join(' ') },
+      status,
+      React.createElement(
+        'span',
+        { className: CLASS_ROOT + "__message" },
+        this.props.message
+      ),
+      timestamp,
+      state,
+      this.props.children
     );
   }
 

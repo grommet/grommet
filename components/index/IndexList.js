@@ -1,5 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
+'use strict';
+
 var React = require('react');
 var List = require('../List');
 var IndexAttribute = require('./IndexAttribute');
@@ -7,6 +9,7 @@ var IndexAttribute = require('./IndexAttribute');
 var CLASS_ROOT = 'index-list';
 
 var IndexList = React.createClass({
+  displayName: 'IndexList',
 
   propTypes: {
     options: React.PropTypes.shape({
@@ -25,46 +28,42 @@ var IndexList = React.createClass({
       items: React.PropTypes.arrayOf(React.PropTypes.object),
       error: React.PropTypes.string
     }),
-    selection: React.PropTypes.oneOfType([
-      React.PropTypes.string, // uri
-      React.PropTypes.arrayOf(React.PropTypes.string)
-    ]),
+    selection: React.PropTypes.oneOfType([React.PropTypes.string, // uri
+    React.PropTypes.arrayOf(React.PropTypes.string)]),
     onSelect: React.PropTypes.func
   },
 
-  _onSelect: function (item) {
+  _onSelect: function _onSelect(item) {
     this.props.onSelect(item.uri);
   },
 
-  render: function () {
+  render: function render() {
     var classes = [CLASS_ROOT];
     if (this.props.className) {
       classes.push(this.props.className);
     }
 
     // build List scheme from attributes
-    var schema = [{attribute: 'uri', uid: true}];
+    var schema = [{ attribute: 'uri', uid: true }];
     this.props.options.attributes.forEach(function (attribute) {
       if ('status' === attribute.attribute) {
-        schema.push({attribute: 'status', image: true});
+        schema.push({ attribute: 'status', image: true });
       } else if (1 === attribute.index) {
-        schema.push({attribute: attribute.attribute, primary: true});
+        schema.push({ attribute: attribute.attribute, primary: true });
       } else if (2 === attribute.index) {
-        schema.push({attribute: attribute.attribute, secondary: true});
+        schema.push({ attribute: attribute.attribute, secondary: true });
       }
     });
 
     var data = [];
     if (this.props.result && this.props.result.items) {
       data = this.props.result.items.map(function (item) {
-        var dataItem = {uri: item.uri};
+        var dataItem = { uri: item.uri };
 
         schema.forEach(function (scheme) {
-          if (! scheme.uid) {
-            dataItem[scheme.attribute] = (
-              <IndexAttribute key={scheme.attribute}
-                item={item} attribute={{attribute: scheme.attribute}} />
-            );
+          if (!scheme.uid) {
+            dataItem[scheme.attribute] = React.createElement(IndexAttribute, { key: scheme.attribute,
+              item: item, attribute: { attribute: scheme.attribute } });
           }
         }, this);
 
@@ -73,16 +72,13 @@ var IndexList = React.createClass({
     }
 
     var onMore = null;
-    if (this.props.result &&
-      this.props.result.count < this.props.result.total) {
+    if (this.props.result && this.props.result.count < this.props.result.total) {
       onMore = this.props.onMore;
     }
 
-    return (
-      <List className={classes.join(' ')}
-        schema={schema} data={data} selected={this.props.selection}
-        onMore={onMore} onSelect={this._onSelect} />
-    );
+    return React.createElement(List, { className: classes.join(' '),
+      schema: schema, data: data, selected: this.props.selection,
+      onMore: onMore, onSelect: this._onSelect });
   }
 
 });

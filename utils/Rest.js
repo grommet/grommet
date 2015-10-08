@@ -1,8 +1,10 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
+'use strict';
+
 var request = require('superagent');
 
-var _headers = {'Accept': 'application/json'};
+var _headers = { 'Accept': 'application/json' };
 
 var _timeout = 10000; // 10s
 
@@ -28,54 +30,54 @@ function buildQueryParams(params) {
 
 var Rest = {
 
-  setTimeout: function (timeout) {
+  setTimeout: function setTimeout(timeout) {
     _timeout = timeout;
   },
 
-  setHeaders: function (headers) {
+  setHeaders: function setHeaders(headers) {
     _headers = headers;
   },
 
-  setHeader: function (name, value) {
+  setHeader: function setHeader(name, value) {
     _headers[name] = value;
   },
 
-  head: function (uri, params) {
+  head: function head(uri, params) {
     var op = request.head(uri).query(buildQueryParams(params));
     op.timeout(_timeout);
     op.set(_headers);
     return op;
   },
 
-  get: function (uri, params) {
+  get: function get(uri, params) {
     var op = request.get(uri).query(buildQueryParams(params));
     op.timeout(_timeout);
     op.set(_headers);
     return op;
   },
 
-  patch: function (uri, data) {
+  patch: function patch(uri, data) {
     var op = request.patch(uri).send(data);
     op.timeout(_timeout);
     op.set(_headers);
     return op;
   },
 
-  post: function (uri, data) {
+  post: function post(uri, data) {
     var op = request.post(uri).send(data);
     op.timeout(_timeout);
     op.set(_headers);
     return op;
   },
 
-  put: function (uri, data) {
+  put: function put(uri, data) {
     var op = request.put(uri).send(data);
     op.timeout(_timeout);
     op.set(_headers);
     return op;
   },
 
-  del: function (uri) {
+  del: function del(uri) {
     var op = request.del(uri);
     op.timeout(_timeout);
     op.set(_headers);

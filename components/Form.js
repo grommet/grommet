@@ -1,27 +1,27 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
+'use strict';
+
 var React = require('react');
 var keys = require('lodash/object/keys');
 
 var CLASS_ROOT = "form";
 
 var Form = React.createClass({
+  displayName: 'Form',
 
   propTypes: {
     compact: React.PropTypes.bool,
     fill: React.PropTypes.bool,
     flush: React.PropTypes.bool,
     onSubmit: React.PropTypes.func,
-    pad: React.PropTypes.oneOfType([
-      React.PropTypes.oneOf(['none', 'small', 'medium', 'large']),
-      React.PropTypes.shape({
-        horizontal: React.PropTypes.oneOf(['none', 'small', 'medium', 'large']),
-        vertical: React.PropTypes.oneOf(['none', 'small', 'medium', 'large'])
-      })
-    ])
+    pad: React.PropTypes.oneOfType([React.PropTypes.oneOf(['none', 'small', 'medium', 'large']), React.PropTypes.shape({
+      horizontal: React.PropTypes.oneOf(['none', 'small', 'medium', 'large']),
+      vertical: React.PropTypes.oneOf(['none', 'small', 'medium', 'large'])
+    })])
   },
 
-  getDefaultProps: function () {
+  getDefaultProps: function getDefaultProps() {
     return {
       compact: false,
       fill: false,
@@ -30,7 +30,7 @@ var Form = React.createClass({
     };
   },
 
-  render: function () {
+  render: function render() {
     var classes = [CLASS_ROOT];
     if (this.props.compact) {
       classes.push(CLASS_ROOT + "--compact");
@@ -50,10 +50,10 @@ var Form = React.createClass({
     if (this.props.className) {
       classes.push(this.props.className);
     }
-    return (
-      <form className={classes.join(' ')} onSubmit={this.props.onSubmit}>
-        {this.props.children}
-      </form>
+    return React.createElement(
+      'form',
+      { className: classes.join(' '), onSubmit: this.props.onSubmit },
+      this.props.children
     );
   }
 

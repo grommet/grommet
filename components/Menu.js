@@ -1,5 +1,9 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
+'use strict';
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var React = require('react');
 var merge = require('lodash/object/merge');
 var pick = require('lodash/object/pick');
@@ -15,6 +19,7 @@ var CLASS_ROOT = "menu";
 
 // We have a separate module for the drop component so we can transfer the router context.
 var MenuDrop = React.createClass({
+  displayName: 'MenuDrop',
 
   propTypes: merge({
     control: React.PropTypes.node,
@@ -33,11 +38,11 @@ var MenuDrop = React.createClass({
 
   mixins: [KeyboardAccelerators],
 
-  getChildContext: function () {
+  getChildContext: function getChildContext() {
     return { router: this.props.router };
   },
 
-  componentDidMount: function () {
+  componentDidMount: function componentDidMount() {
     this._keyboardHandlers = {
       up: this._onUpKeyPress,
       down: this._onDownKeyPress
@@ -61,11 +66,11 @@ var MenuDrop = React.createClass({
     }
   },
 
-  componentWillUnmount: function () {
+  componentWillUnmount: function componentWillUnmount() {
     this.stopListeningToKeyboard(this._keyboardHandlers);
   },
 
-  _onUpKeyPress: function (event) {
+  _onUpKeyPress: function _onUpKeyPress(event) {
     event.preventDefault();
     var menuItems = this.refs.navContainer.getDOMNode().childNodes;
     if (!this.activeMenuItem) {
@@ -93,7 +98,7 @@ var MenuDrop = React.createClass({
     return true;
   },
 
-  _onDownKeyPress: function (event) {
+  _onDownKeyPress: function _onDownKeyPress(event) {
     event.preventDefault();
     var menuItems = this.refs.navContainer.getDOMNode().childNodes;
     if (!this.activeMenuItem) {
@@ -120,15 +125,15 @@ var MenuDrop = React.createClass({
     return true;
   },
 
-  render: function () {
+  render: function render() {
     var classes = [CLASS_ROOT + "__drop"];
     var other = pick(this.props, keys(Box.propTypes));
 
     var first = this.props.control;
-    var second = (
-      <Box ref="navContainer" tag="nav" {...other} >
-        {this.props.children}
-      </Box>
+    var second = React.createElement(
+      Box,
+      _extends({ ref: 'navContainer', tag: 'nav' }, other),
+      this.props.children
     );
     if (this.props.dropAlign.bottom) {
       first = second;
@@ -147,17 +152,18 @@ var MenuDrop = React.createClass({
       classes.push(CLASS_ROOT + "__drop--small");
     }
 
-    return (
-      <div ref="menuDrop" id={this.props.id} className={classes.join(' ')}
-        onClick={this.props.onClick}>
-        {first}
-        {second}
-      </div>
+    return React.createElement(
+      'div',
+      { ref: 'menuDrop', id: this.props.id, className: classes.join(' '),
+        onClick: this.props.onClick },
+      first,
+      second
     );
   }
 });
 
 var Menu = React.createClass({
+  displayName: 'Menu',
 
   propTypes: merge({
     closeOnClick: React.PropTypes.bool,
@@ -178,18 +184,18 @@ var Menu = React.createClass({
 
   mixins: [KeyboardAccelerators],
 
-  getDefaultProps: function () {
+  getDefaultProps: function getDefaultProps() {
     return {
       closeOnClick: true,
       direction: 'column',
-      dropAlign: {top: 'top', left: 'left'},
+      dropAlign: { top: 'top', left: 'left' },
       pad: 'none',
       small: false,
       responsive: true
     };
   },
 
-  getInitialState: function () {
+  getInitialState: function getInitialState() {
     if (this.props.hasOwnProperty('collapse')) {
       console.log('The Grommet Menu "collapse" property is deprecated. Please use "inline" instead.'); // TODO: remove this message in version 0.4.0
     }
@@ -197,7 +203,7 @@ var Menu = React.createClass({
     if (this.props.hasOwnProperty('inline')) {
       inline = this.props.inline;
     } else {
-      inline = (! this.props.label && ! this.props.icon);
+      inline = !this.props.label && !this.props.icon;
     }
     return {
       // state may be 'collapsed', 'focused' or 'expanded' (active).
@@ -207,7 +213,7 @@ var Menu = React.createClass({
     };
   },
 
-  componentDidMount: function () {
+  componentDidMount: function componentDidMount() {
     if (this.refs.control) {
       var controlElement = this.refs.control.getDOMNode();
       this.setState({
@@ -237,7 +243,7 @@ var Menu = React.createClass({
     }
   },
 
-  componentDidUpdate: function (prevProps, prevState) {
+  componentDidUpdate: function componentDidUpdate(prevProps, prevState) {
     // Set up keyboard listeners appropriate to the current state.
 
     var activeKeyboardHandlers = {
@@ -267,8 +273,7 @@ var Menu = React.createClass({
         this.startListeningToKeyboard(activeKeyboardHandlers);
         if (prevState.state !== 'expanded') {
           document.addEventListener('click', this._onClose);
-          this._drop = Drop.add(this.refs.control.getDOMNode(),
-            this._renderDrop(), this.props.dropAlign);
+          this._drop = Drop.add(this.refs.control.getDOMNode(), this._renderDrop(), this.props.dropAlign);
           this._drop.container.focus();
         }
         this._drop.render(this._renderDrop());
@@ -281,7 +286,7 @@ var Menu = React.createClass({
     }
   },
 
-  componentWillUnmount: function () {
+  componentWillUnmount: function componentWillUnmount() {
     document.removeEventListener('click', this._onClose);
     if (this._drop) {
       this._drop.remove();
@@ -291,44 +296,44 @@ var Menu = React.createClass({
     }
   },
 
-  _onOpen: function (event) {
+  _onOpen: function _onOpen(event) {
     event.preventDefault();
-    this.setState({state: 'expanded'});
+    this.setState({ state: 'expanded' });
   },
 
-  _onClose: function () {
-    this.setState({state: 'collapsed'});
+  _onClose: function _onClose() {
+    this.setState({ state: 'collapsed' });
     if (document.activeElement === this.getDOMNode()) {
-      this.setState({state: 'focused'});
+      this.setState({ state: 'focused' });
     } else {
       this.getDOMNode().focus();
     }
   },
 
-  _onFocusControl: function () {
-    this.setState({state: 'focused'});
+  _onFocusControl: function _onFocusControl() {
+    this.setState({ state: 'focused' });
   },
 
-  _onBlurControl: function () {
+  _onBlurControl: function _onBlurControl() {
     if (this.state.state === 'focused') {
-      this.setState({state: 'collapsed'});
+      this.setState({ state: 'collapsed' });
     }
   },
 
-  _onSink: function (event) {
+  _onSink: function _onSink(event) {
     event.stopPropagation();
     // need to go native to prevent closing via document
     event.nativeEvent.stopImmediatePropagation();
   },
 
-  _onResponsive: function (small) {
+  _onResponsive: function _onResponsive(small) {
     // deactivate if we change resolutions
     var newState = this.state.state;
     if (this.state.state === 'expanded') {
       newState = 'focused';
     }
     if (small) {
-      this.setState({inline: false, active: newState});
+      this.setState({ inline: false, active: newState });
     } else {
       this.setState({
         inline: this.props.inline,
@@ -338,7 +343,7 @@ var Menu = React.createClass({
     }
   },
 
-  _renderControl: function () {
+  _renderControl: function _renderControl() {
     var result = null;
     var icon = null;
     var controlClassName = CLASS_ROOT + "__control";
@@ -350,36 +355,42 @@ var Menu = React.createClass({
       icon = this.props.icon;
     } else {
       classes.push(controlClassName + "--fixed-label");
-      icon = <MoreIcon />;
+      icon = React.createElement(MoreIcon, null);
     }
 
     if (this.props.label) {
-      result = (
-        <div className={classes.join(' ')}>
-          <div className={controlClassName + "-icon"}>
-            {icon}
-          </div>
-          <span tabIndex="-1" className={controlClassName + "-label"}>{this.props.label}</span>
-          <DropCaretIcon className={controlClassName + "-drop-icon"} />
-        </div>
+      result = React.createElement(
+        'div',
+        { className: classes.join(' ') },
+        React.createElement(
+          'div',
+          { className: controlClassName + "-icon" },
+          icon
+        ),
+        React.createElement(
+          'span',
+          { tabIndex: '-1', className: controlClassName + "-label" },
+          this.props.label
+        ),
+        React.createElement(DropCaretIcon, { className: controlClassName + "-drop-icon" })
       );
     } else {
-      result = (
-        <div className={controlClassName}>
-          {icon}
-        </div>
+      result = React.createElement(
+        'div',
+        { className: controlClassName },
+        icon
       );
     }
     return result;
   },
 
-  _renderDrop: function() {
+  _renderDrop: function _renderDrop() {
     var other = pick(this.props, keys(Box.propTypes));
 
-    var controlContents = (
-      <div onClick={this._onClose}>
-        {this._renderControl()}
-      </div>
+    var controlContents = React.createElement(
+      'div',
+      { onClick: this._onClose },
+      this._renderControl()
     );
 
     var onClick;
@@ -388,22 +399,22 @@ var Menu = React.createClass({
     } else {
       onClick = this._onSink;
     }
-    return (
-      <MenuDrop tabIndex="-1" router={this.context.router}
-        dropAlign={this.props.dropAlign}
-        dropColorIndex={this.props.dropColorIndex}
-        small={this.props.small}
-        large={this.props.large}
-        {...other}
-        onClick={onClick}
-        id={this.state.dropId}
-        control={controlContents}>
-        {this.props.children}
-      </MenuDrop>
+    return React.createElement(
+      MenuDrop,
+      _extends({ tabIndex: '-1', router: this.context.router,
+        dropAlign: this.props.dropAlign,
+        dropColorIndex: this.props.dropColorIndex,
+        small: this.props.small,
+        large: this.props.large
+      }, other, {
+        onClick: onClick,
+        id: this.state.dropId,
+        control: controlContents }),
+      this.props.children
     );
   },
 
-  _classes: function (prefix) {
+  _classes: function _classes(prefix) {
     var classes = [prefix];
 
     if (this.props.direction) {
@@ -422,7 +433,7 @@ var Menu = React.createClass({
     return classes;
   },
 
-  render: function () {
+  render: function render() {
     var classes = this._classes(CLASS_ROOT);
     if (this.state.inline) {
       classes.push(CLASS_ROOT + "--inline");
@@ -439,26 +450,24 @@ var Menu = React.createClass({
     if (this.state.inline) {
       var other = pick(this.props, keys(Box.propTypes));
 
-      return (
-        <Box tag="nav" {...other} className={classes.join(' ')} onClick={this._onClose}>
-          {this.props.children}
-        </Box>
+      return React.createElement(
+        Box,
+        _extends({ tag: 'nav' }, other, { className: classes.join(' '), onClick: this._onClose }),
+        this.props.children
       );
-
     } else {
 
       var controlContents = this._renderControl();
 
-      return (
-        <div ref="control" className={classes.join(' ')}
-          tabIndex="0"
-          onClick={this._onOpen}
-          onFocus={this._onFocusControl}
-          onBlur={this._onBlurControl}>
-          {controlContents}
-        </div>
+      return React.createElement(
+        'div',
+        { ref: 'control', className: classes.join(' '),
+          tabIndex: '0',
+          onClick: this._onOpen,
+          onFocus: this._onFocusControl,
+          onBlur: this._onBlurControl },
+        controlContents
       );
-
     }
   }
 });

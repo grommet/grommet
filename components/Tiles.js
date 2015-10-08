@@ -1,5 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
+'use strict';
+
 var React = require('react');
 var SpinningIcon = require('./icons/Spinning');
 var LeftIcon = require('./icons/Left');
@@ -10,6 +12,7 @@ var InfiniteScroll = require('../mixins/InfiniteScroll');
 var CLASS_ROOT = "tiles";
 
 var Tiles = React.createClass({
+  displayName: 'Tiles',
 
   propTypes: {
     direction: React.PropTypes.oneOf(['row', 'column']),
@@ -22,7 +25,7 @@ var Tiles = React.createClass({
 
   mixins: [InfiniteScroll],
 
-  getDefaultProps: function () {
+  getDefaultProps: function getDefaultProps() {
     return {
       flush: true,
       fill: false,
@@ -30,23 +33,23 @@ var Tiles = React.createClass({
     };
   },
 
-  _onLeft: function () {
+  _onLeft: function _onLeft() {
     var tiles = this.refs.tiles.getDOMNode();
-    Scroll.scrollBy(tiles, 'scrollLeft', - tiles.offsetWidth);
+    Scroll.scrollBy(tiles, 'scrollLeft', -tiles.offsetWidth);
   },
 
-  _onRight: function () {
+  _onRight: function _onRight() {
     var tiles = this.refs.tiles.getDOMNode();
     Scroll.scrollBy(tiles, 'scrollLeft', tiles.offsetWidth);
   },
 
-  _onScrollHorizontal: function () {
+  _onScrollHorizontal: function _onScrollHorizontal() {
     // debounce
     clearTimeout(this._scrollTimer);
     this._scrollTimer = setTimeout(this._layout, 50);
   },
 
-  _onWheel: function (event) {
+  _onWheel: function _onWheel(event) {
     if (Math.abs(event.deltaX) > 100) {
       clearInterval(this._scrollTimer);
     } else if (event.deltaX > 5) {
@@ -56,15 +59,15 @@ var Tiles = React.createClass({
     }
   },
 
-  _layout: function () {
+  _layout: function _layout() {
     if ('row' === this.props.direction) {
       // determine if we have more tiles than room to fit
       var tiles = this.refs.tiles.getDOMNode();
       // 20 is to allow some fuzziness as scrollbars come and go
       this.setState({
-        overflow: (tiles.scrollWidth > (tiles.offsetWidth + 20)),
-        overflowStart: (tiles.scrollLeft <= 20),
-        overflowEnd: (tiles.scrollLeft >= (tiles.scrollWidth - tiles.offsetWidth))
+        overflow: tiles.scrollWidth > tiles.offsetWidth + 20,
+        overflowStart: tiles.scrollLeft <= 20,
+        overflowEnd: tiles.scrollLeft >= tiles.scrollWidth - tiles.offsetWidth
       });
 
       // mark any tiles that might be clipped
@@ -74,8 +77,7 @@ var Tiles = React.createClass({
         var child = children[i];
         var childRect = child.getBoundingClientRect();
         // 12 accounts for padding
-        if ((childRect.left + 12) < rect.left ||
-          (childRect.right - 12) > rect.right) {
+        if (childRect.left + 12 < rect.left || childRect.right - 12 > rect.right) {
           child.classList.add('tile--eclipsed');
         } else {
           child.classList.remove('tile--eclipsed');
@@ -84,25 +86,25 @@ var Tiles = React.createClass({
     }
   },
 
-  _onResize: function () {
+  _onResize: function _onResize() {
     // debounce
     clearTimeout(this._resizeTimer);
     this._resizeTimer = setTimeout(this._layout, 50);
   },
 
-  getInitialState: function () {
-    return {overflow: false};
+  getInitialState: function getInitialState() {
+    return { overflow: false };
   },
 
-  _trackHorizontalScroll: function () {
-    if (this.state.overflow && ! this._tracking) {
+  _trackHorizontalScroll: function _trackHorizontalScroll() {
+    if (this.state.overflow && !this._tracking) {
       var tiles = this.refs.tiles.getDOMNode();
       tiles.addEventListener('scroll', this._onScrollHorizontal);
       this._tracking = true;
     }
   },
 
-  componentDidMount: function () {
+  componentDidMount: function componentDidMount() {
     if (this.props.onMore) {
       this.startListeningForScroll(this.refs.more.getDOMNode(), this.props.onMore);
     }
@@ -114,7 +116,7 @@ var Tiles = React.createClass({
     }
   },
 
-  componentDidUpdate: function () {
+  componentDidUpdate: function componentDidUpdate() {
     this.stopListeningForScroll();
     if (this.props.onMore) {
       this.startListeningForScroll(this.refs.more.getDOMNode(), this.props.onMore);
@@ -124,7 +126,7 @@ var Tiles = React.createClass({
     }
   },
 
-  componentWillUnmount: function () {
+  componentWillUnmount: function componentWillUnmount() {
     if (this.props.onMore) {
       this.stopListeningForScroll();
     }
@@ -139,7 +141,7 @@ var Tiles = React.createClass({
   },
 
   // children should be an array of Tile
-  render: function () {
+  render: function render() {
     var classes = [CLASS_ROOT];
     if (this.props.fill) {
       classes.push(CLASS_ROOT + "--fill");
@@ -162,43 +164,43 @@ var Tiles = React.createClass({
     var more = null;
     if (this.props.onMore) {
       classes.push(CLASS_ROOT + "--moreable");
-      more = (
-        <div ref="more" className={CLASS_ROOT + "__more"}>
-          <SpinningIcon />
-        </div>
+      more = React.createElement(
+        'div',
+        { ref: 'more', className: CLASS_ROOT + "__more" },
+        React.createElement(SpinningIcon, null)
       );
     }
 
-    var contents = (
-      <div ref="tiles" className={classes.join(' ')}>
-        {this.props.children}
-        {more}
-      </div>
+    var contents = React.createElement(
+      'div',
+      { ref: 'tiles', className: classes.join(' ') },
+      this.props.children,
+      more
     );
 
     if (this.state.overflow) {
       classes.push(CLASS_ROOT + "--overflowed");
-      if (! this.state.overflowStart) {
-        var left = (
-          <div className={CLASS_ROOT + "__left"} onClick={this._onLeft}>
-            <LeftIcon />
-          </div>
+      if (!this.state.overflowStart) {
+        var left = React.createElement(
+          'div',
+          { className: CLASS_ROOT + "__left", onClick: this._onLeft },
+          React.createElement(LeftIcon, null)
         );
       }
-      if (! this.state.overflowEnd) {
-        var right = (
-          <div className={CLASS_ROOT + "__right"} onClick={this._onRight}>
-            <RightIcon />
-          </div>
+      if (!this.state.overflowEnd) {
+        var right = React.createElement(
+          'div',
+          { className: CLASS_ROOT + "__right", onClick: this._onRight },
+          React.createElement(RightIcon, null)
         );
       }
 
-      contents = (
-        <div className={CLASS_ROOT + "__container"}>
-          {left}
-          {contents}
-          {right}
-        </div>
+      contents = React.createElement(
+        'div',
+        { className: CLASS_ROOT + "__container" },
+        left,
+        contents,
+        right
       );
     }
 

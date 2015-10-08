@@ -1,5 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
+'use strict';
+
 var React = require('react');
 var Reflux = require('reflux');
 var merge = require('lodash/object/merge');
@@ -14,6 +16,7 @@ var IntlMixin = require('../../mixins/GrommetIntlMixin');
 var CLASS_ROOT = 'index';
 
 var Index = React.createClass({
+  displayName: 'Index',
 
   propTypes: {
     flush: React.PropTypes.bool,
@@ -29,17 +32,12 @@ var Index = React.createClass({
       })),
       view: React.PropTypes.oneOf(["table", "tiles", "list"]),
       params: React.PropTypes.shape({
-        category: React.PropTypes.oneOfType([
-          React.PropTypes.string,
-          React.PropTypes.arrayOf(React.PropTypes.string)
-        ]),
+        category: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.arrayOf(React.PropTypes.string)]),
         query: React.PropTypes.object
       })
     }),
-    selection: React.PropTypes.oneOfType([
-      React.PropTypes.string, // uri
-      React.PropTypes.arrayOf(React.PropTypes.string)
-    ]),
+    selection: React.PropTypes.oneOfType([React.PropTypes.string, // uri
+    React.PropTypes.arrayOf(React.PropTypes.string)]),
     onSelect: React.PropTypes.func,
     onQuery: React.PropTypes.func,
     addControl: React.PropTypes.node,
@@ -58,43 +56,43 @@ var Index = React.createClass({
 
   mixins: [Reflux.ListenerMixin, IntlMixin],
 
-  getDefaultProps: function () {
-    return ({
+  getDefaultProps: function getDefaultProps() {
+    return {
       options: {
-        attributes: [{name: 'name', label: 'Name', index: 0}],
+        attributes: [{ name: 'name', label: 'Name', index: 0 }],
         flush: true,
         view: "tiles"
       }
-    });
+    };
   },
 
-  getInitialState: function () {
-    return {options: this.props.options, result: (this.props.result || {})};
+  getInitialState: function getInitialState() {
+    return { options: this.props.options, result: this.props.result || {} };
   },
 
-  componentDidMount: function () {
-    if (! this.props.result) {
+  componentDidMount: function componentDidMount() {
+    if (!this.props.result) {
       IndexActions.setup(this.state.options);
       this.listenTo(IndexStore, this._onIndexChange);
     }
   },
 
-  componentWillReceiveProps: function (newProps) {
-    this.setState({options: newProps.options});
+  componentWillReceiveProps: function componentWillReceiveProps(newProps) {
+    this.setState({ options: newProps.options });
     if (newProps.result) {
-      this.setState({result: newProps.result});
+      this.setState({ result: newProps.result });
     }
   },
 
-  componentWillUnmount: function () {
-    if (! this.props.result) {
+  componentWillUnmount: function componentWillUnmount() {
+    if (!this.props.result) {
       IndexActions.cleanup();
     }
   },
 
-  _onQuery: function (query) {
-    if (! this.props.result) {
-      var params = merge(this.state.options.params, {query: query});
+  _onQuery: function _onQuery(query) {
+    if (!this.props.result) {
+      var params = merge(this.state.options.params, { query: query });
       IndexActions.getItems(params, true, this.state.request);
     }
     if (this.props.onQuery) {
@@ -102,23 +100,22 @@ var Index = React.createClass({
     }
   },
 
-  _onMore: function () {
+  _onMore: function _onMore() {
     // do we have more we could show?
     var result = this.state.result;
     if (result.count < result.total) {
       // get one more page's worth of data
       var params = this.state.options.params;
-      params = merge(params,
-        {count: (params.count + (this.state.options.pageSize || 20))});
+      params = merge(params, { count: params.count + (this.state.options.pageSize || 20) });
       IndexActions.getItems(params, true, this.state.request);
     }
   },
 
-  _onIndexChange: function (data) {
+  _onIndexChange: function _onIndexChange(data) {
     this.setState(data);
   },
 
-  render: function () {
+  render: function render() {
     var classes = [CLASS_ROOT];
     if (this.props.className) {
       classes.push(this.props.className);
@@ -128,63 +125,61 @@ var Index = React.createClass({
     var result = this.state.result;
 
     var onMore = this.props.onMore;
-    if (! this.props.result && ! onMore) {
+    if (!this.props.result && !onMore) {
       onMore = this._onMore;
     }
 
     var view = null;
     if ('table' === options.view) {
-      view = (
-        <IndexTable options={options} result={result}
-          flush={this.props.flush}
-          selection={this.props.selection}
-          onSelect={this.props.onSelect}
-          onMore={onMore} />
-      );
+      view = React.createElement(IndexTable, { options: options, result: result,
+        flush: this.props.flush,
+        selection: this.props.selection,
+        onSelect: this.props.onSelect,
+        onMore: onMore });
     } else if ('tiles' === options.view) {
-      view = (
-        <IndexTiles options={options} result={result}
-          flush={this.props.flush}
-          selection={this.props.selection}
-          onSelect={this.props.onSelect}
-          onMore={onMore} />
-      );
+      view = React.createElement(IndexTiles, { options: options, result: result,
+        flush: this.props.flush,
+        selection: this.props.selection,
+        onSelect: this.props.onSelect,
+        onMore: onMore });
     } else if ('list' === options.view) {
-      view = (
-        <IndexList options={options} result={result}
-          flush={this.props.flush}
-          selection={this.props.selection}
-          onSelect={this.props.onSelect}
-          onMore={onMore} />
-      );
+      view = React.createElement(IndexList, { options: options, result: result,
+        flush: this.props.flush,
+        selection: this.props.selection,
+        onSelect: this.props.onSelect,
+        onMore: onMore });
     }
 
     var error = null;
     if (this.state.error) {
-      error = (
-        <div className={CLASS_ROOT + "__error"}>
-          {this.state.error}
-        </div>
+      error = React.createElement(
+        'div',
+        { className: CLASS_ROOT + "__error" },
+        this.state.error
       );
     }
 
-    return (
-      <div className={classes.join(' ')}>
-        <div className={CLASS_ROOT + "__container"}>
-          <IndexHeader className={CLASS_ROOT + "__header"}
-            options={options}
-            total={result.total}
-            fixed={true}
-            unfilteredTotal={result.unfilteredTotal}
-            onQuery={this._onQuery}
-            addControl={this.props.addControl}
-            navControl={this.props.navControl} />
-          {error}
-          <div ref="items" className={CLASS_ROOT + "__items"}>
-            {view}
-          </div>
-        </div>
-      </div>
+    return React.createElement(
+      'div',
+      { className: classes.join(' ') },
+      React.createElement(
+        'div',
+        { className: CLASS_ROOT + "__container" },
+        React.createElement(IndexHeader, { className: CLASS_ROOT + "__header",
+          options: options,
+          total: result.total,
+          fixed: true,
+          unfilteredTotal: result.unfilteredTotal,
+          onQuery: this._onQuery,
+          addControl: this.props.addControl,
+          navControl: this.props.navControl }),
+        error,
+        React.createElement(
+          'div',
+          { ref: 'items', className: CLASS_ROOT + "__items" },
+          view
+        )
+      )
     );
   }
 

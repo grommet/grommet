@@ -1,13 +1,15 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
+"use strict";
+
 module.exports = {
-  toSentenceCase: function(text) {
-    return text.replace(/\w\S*/g, function(txt) {
+  toSentenceCase: function toSentenceCase(text) {
+    return text.replace(/\w\S*/g, function (txt) {
       return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
     });
   },
 
-  quoteIfNecessary: function(text) {
+  quoteIfNecessary: function quoteIfNecessary(text) {
     // quote if there are embedded spaces
     if (text.indexOf(' ') !== -1) {
       text = "'" + text + "'";
@@ -15,10 +17,9 @@ module.exports = {
     return text;
   },
 
-  unquoteIfNecessary: function(text) {
+  unquoteIfNecessary: function unquoteIfNecessary(text) {
     // remove surrounding quotes
-    if ((text[0] === '\'' && text[text.length - 1] === '\'') ||
-      (text[0] === '"' && text[text.length - 1] === '"')) {
+    if (text[0] === '\'' && text[text.length - 1] === '\'' || text[0] === '"' && text[text.length - 1] === '"') {
       text = text.slice(1, text.length - 1);
     }
     return text;

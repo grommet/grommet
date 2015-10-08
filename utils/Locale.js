@@ -1,4 +1,6 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+'use strict';
+
 var merge = require('lodash/object/merge');
 var Cookies = require('./Cookies');
 var fallbackLocale = 'en-US';
@@ -14,17 +16,17 @@ function normalizeLocale(locale) {
 }
 
 module.exports = {
-  getCurrentLocale: function() {
+  getCurrentLocale: function getCurrentLocale() {
     var cookieLanguages = Cookies.get('languages');
     var locale = cookieLanguages ? JSON.parse(cookieLanguages)[0] : undefined;
     if (!locale) {
-      locale = window.navigator.languages ? window.navigator.languages[0] : (window.navigator.language || window.navigator.userLanguage);
+      locale = window.navigator.languages ? window.navigator.languages[0] : window.navigator.language || window.navigator.userLanguage;
     }
 
     return normalizeLocale(locale || fallbackLocale);
   },
 
-  getLocaleData: function(appLocale) {
+  getLocaleData: function getLocaleData(appLocale) {
     var locale = this.getCurrentLocale();
     var grommetMessages;
     try {

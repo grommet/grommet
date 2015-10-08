@@ -1,5 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
+'use strict';
+
 var Reflux = require('reflux');
 var Actions = require('../actions/Actions');
 var Cookies = require('../utils/Cookies');
@@ -19,7 +21,7 @@ var SessionStore = Reflux.createStore({
     loginError: null // {message: , resolution: }
   },
 
-  init: function () {
+  init: function init() {
     this._data.id = Cookies.get(TOKEN);
     this._data.name = Cookies.get(USER);
     this._data.created = Cookies.get(LOGIN_TIME);
@@ -30,7 +32,7 @@ var SessionStore = Reflux.createStore({
     this.listenTo(Actions.logout, this._onLogout);
   },
 
-  _onLoginCompleted: function (username, id) {
+  _onLoginCompleted: function _onLoginCompleted(username, id) {
     this._data.id = id;
     this._data.name = username;
     this._data.created = new Date();
@@ -45,7 +47,7 @@ var SessionStore = Reflux.createStore({
     this.trigger(this._data);
   },
 
-  _onLoginFailed: function (error, response) {
+  _onLoginFailed: function _onLoginFailed(error, response) {
     this._data.loginError = {
       message: response.message,
       resolution: response.resolution
@@ -53,7 +55,7 @@ var SessionStore = Reflux.createStore({
     this.trigger(this._data);
   },
 
-  _onLogout: function () {
+  _onLogout: function _onLogout() {
     this._data.id = null;
     this._data.name = null;
     this._data.created = null;
@@ -65,7 +67,7 @@ var SessionStore = Reflux.createStore({
     this.trigger(this._data);
   },
 
-  getInitialState: function () {
+  getInitialState: function getInitialState() {
     return this._data;
   }
 });

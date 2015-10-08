@@ -1,5 +1,9 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
+'use strict';
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var React = require('react');
 var CloseIcon = require('./icons/base/Close');
 var KeyboardAccelerators = require('../mixins/KeyboardAccelerators');
@@ -9,13 +13,11 @@ var Button = require('./Button');
 var CLASS_ROOT = "layer";
 
 var LayerOverlay = React.createClass({
+  displayName: 'LayerOverlay',
 
   propTypes: {
     align: React.PropTypes.oneOf(['center', 'top', 'bottom', 'left', 'right']),
-    closer: React.PropTypes.oneOfType([
-      React.PropTypes.node,
-      React.PropTypes.bool
-    ]),
+    closer: React.PropTypes.oneOfType([React.PropTypes.node, React.PropTypes.bool]),
     flush: React.PropTypes.bool,
     hidden: React.PropTypes.bool,
     peek: React.PropTypes.bool,
@@ -30,11 +32,11 @@ var LayerOverlay = React.createClass({
 
   mixins: [KeyboardAccelerators],
 
-  getChildContext: function () {
-    return {router: this.props.router};
+  getChildContext: function getChildContext() {
+    return { router: this.props.router };
   },
 
-  componentDidMount: function () {
+  componentDidMount: function componentDidMount() {
 
     var items = this.refs.background.getDOMNode().getElementsByTagName('*');
     var firstFocusable = DOMUtils.getBestFirstFocusable(items);
@@ -50,9 +52,10 @@ var LayerOverlay = React.createClass({
     }
   },
 
-  componentWillUnmount: function() {
+  componentWillUnmount: function componentWillUnmount() {
     var appElement = document.querySelectorAll('div.app')[0];
-    if (appElement) { // unit tests don't have an app
+    if (appElement) {
+      // unit tests don't have an app
       appElement.classList.remove('app--layered');
       window.scroll(0, this._appScrollY);
     }
@@ -65,7 +68,7 @@ var LayerOverlay = React.createClass({
     }
   },
 
-  _processTab: function (event) {
+  _processTab: function _processTab(event) {
     var items = this.refs.background.getDOMNode().getElementsByTagName('*');
 
     items = DOMUtils.filterByFocusable(items);
@@ -83,7 +86,7 @@ var LayerOverlay = React.createClass({
     }
   },
 
-  render: function () {
+  render: function render() {
     var classes = [CLASS_ROOT];
     if (this.props.align) {
       classes.push(CLASS_ROOT + "--align-" + this.props.align);
@@ -105,34 +108,36 @@ var LayerOverlay = React.createClass({
     if (this.props.closer) {
       classes.push(CLASS_ROOT + "--closeable");
 
-      closer = (
-        <div className={CLASS_ROOT + "__closer"}>
-          <Button type='icon' onClick={this.props.onClose}>
-            <CloseIcon a11yTitle={this.props.a11yCloserTitle} />
-          </Button>
-        </div>
+      closer = React.createElement(
+        'div',
+        { className: CLASS_ROOT + "__closer" },
+        React.createElement(
+          Button,
+          { type: 'icon', onClick: this.props.onClose },
+          React.createElement(CloseIcon, { a11yTitle: this.props.a11yCloserTitle })
+        )
       );
     }
 
-    return (
-      <div ref="background" className={classes.join(' ')}>
-        <div className={CLASS_ROOT + "__container"}>
-          {closer}
-          {this.props.children}
-        </div>
-      </div>
+    return React.createElement(
+      'div',
+      { ref: 'background', className: classes.join(' ') },
+      React.createElement(
+        'div',
+        { className: CLASS_ROOT + "__container" },
+        closer,
+        this.props.children
+      )
     );
   }
 });
 
 var Layer = React.createClass({
+  displayName: 'Layer',
 
   propTypes: {
     align: React.PropTypes.oneOf(['center', 'top', 'bottom', 'left', 'right']),
-    closer: React.PropTypes.oneOfType([
-      React.PropTypes.node,
-      React.PropTypes.bool
-    ]),
+    closer: React.PropTypes.oneOfType([React.PropTypes.node, React.PropTypes.bool]),
     flush: React.PropTypes.bool,
     hidden: React.PropTypes.bool,
     peek: React.PropTypes.bool,
@@ -143,23 +148,23 @@ var Layer = React.createClass({
     router: React.PropTypes.func
   },
 
-  getDefaultProps: function () {
+  getDefaultProps: function getDefaultProps() {
     return {
       align: 'center'
     };
   },
 
-  componentDidMount: function () {
+  componentDidMount: function componentDidMount() {
     this._originalFocusedElement = document.activeElement;
     this._addOverlay();
     this._renderOverlay();
   },
 
-  componentDidUpdate: function () {
+  componentDidUpdate: function componentDidUpdate() {
     this._renderOverlay();
   },
 
-  componentWillUnmount: function () {
+  componentWillUnmount: function componentWillUnmount() {
 
     if (this._originalFocusedElement) {
       this._originalFocusedElement.focus();
@@ -168,7 +173,7 @@ var Layer = React.createClass({
     this._removeOverlay();
   },
 
-  _addOverlay: function () {
+  _addOverlay: function _addOverlay() {
     var overlay = document.createElement('div');
     if (this.props.id) {
       overlay.id = this.props.id;
@@ -183,21 +188,18 @@ var Layer = React.createClass({
     this._overlay = overlay;
   },
 
-  _handleAriaHidden: function (hideOverlay) {
+  _handleAriaHidden: function _handleAriaHidden(hideOverlay) {
     this._overlay.setAttribute('aria-hidden', hideOverlay);
 
-    Array.prototype.forEach.call(document.body.childNodes, function (currentChild) {
-      if (currentChild !== this._overlay &&
-        currentChild.nodeType === 1 &&
-        currentChild.id !== 'skip-link-layer' &&
-        currentChild.tagName.toLowerCase() !== 'script') {
+    Array.prototype.forEach.call(document.body.childNodes, (function (currentChild) {
+      if (currentChild !== this._overlay && currentChild.nodeType === 1 && currentChild.id !== 'skip-link-layer' && currentChild.tagName.toLowerCase() !== 'script') {
         currentChild.setAttribute('aria-hidden', !hideOverlay);
       }
-    }.bind(this));
+    }).bind(this));
   },
 
-  _renderOverlay: function () {
-    var content = (<LayerOverlay {...this.props} router={this.context.router} />);
+  _renderOverlay: function _renderOverlay() {
+    var content = React.createElement(LayerOverlay, _extends({}, this.props, { router: this.context.router }));
     React.render(content, this._overlay);
 
     if (this.props.hidden) {
@@ -219,7 +221,7 @@ var Layer = React.createClass({
     }
   },
 
-  _removeOverlay: function () {
+  _removeOverlay: function _removeOverlay() {
     this._handleAriaHidden(true);
 
     React.unmountComponentAtNode(this._overlay);
@@ -227,8 +229,8 @@ var Layer = React.createClass({
     this._overlay = null;
   },
 
-  render: function () {
-    return (<span></span>);
+  render: function render() {
+    return React.createElement('span', null);
   }
 
 });

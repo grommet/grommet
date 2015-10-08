@@ -1,10 +1,13 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
+'use strict';
+
 var React = require('react');
 
 var CLASS_ROOT = "split";
 
 var Split = React.createClass({
+  displayName: 'Split',
 
   propTypes: {
     fixed: React.PropTypes.bool,
@@ -12,18 +15,18 @@ var Split = React.createClass({
     separator: React.PropTypes.bool
   },
 
-  getDefaultProps: function () {
+  getDefaultProps: function getDefaultProps() {
     return {
       fixed: true,
       flex: 'both'
     };
   },
 
-  getInitialState: function () {
-    return {responsive: null};
+  getInitialState: function getInitialState() {
+    return { responsive: null };
   },
 
-  componentDidMount: function () {
+  componentDidMount: function componentDidMount() {
     // figure out the break width
     this._breakWidth = 720; // default
     // CSS stores the break width in a hidden pseudo element
@@ -37,26 +40,26 @@ var Split = React.createClass({
     this._layout();
   },
 
-  componentWillUnmount: function () {
+  componentWillUnmount: function componentWillUnmount() {
     window.removeEventListener('resize', this._onResize);
   },
 
-  _onResize: function () {
+  _onResize: function _onResize() {
     // debounce
     clearTimeout(this._resizeTimer);
     this._resizeTimer = setTimeout(this._layout, 50);
   },
 
-  _setResponsive: function (responsive) {
+  _setResponsive: function _setResponsive(responsive) {
     if (this.state.responsive !== responsive) {
-      this.setState({responsive: responsive});
+      this.setState({ responsive: responsive });
       if (this.props.onResponsive) {
         this.props.onResponsive(responsive);
       }
     }
   },
 
-  _layout: function () {
+  _layout: function _layout() {
     var splitElement = this.refs.split.getDOMNode();
     if (splitElement.offsetWidth < this._breakWidth) {
       this._setResponsive('single');
@@ -65,7 +68,7 @@ var Split = React.createClass({
     }
   },
 
-  render: function() {
+  render: function render() {
     var classes = [CLASS_ROOT];
     if (this.props.flex) {
       classes.push(CLASS_ROOT + "--flex-" + this.props.flex);
@@ -80,10 +83,10 @@ var Split = React.createClass({
       classes.push(this.props.className);
     }
 
-    return (
-      <div ref="split" className={classes.join(' ')}>
-        {this.props.children}
-      </div>
+    return React.createElement(
+      'div',
+      { ref: 'split', className: classes.join(' ') },
+      this.props.children
     );
   }
 });
