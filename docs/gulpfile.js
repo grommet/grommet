@@ -199,7 +199,7 @@ gulp.task('generate-server-routes', function() {
           {
             test: /\.js$/,
             loader: 'babel',
-            exclude: /(node_modules\/intl|node_modules\/moment|node_modules\/react|node_modules\/node-sass)/
+            exclude: /(node_modules|bower_components)/
           },
           {
             test: /develop(\/|\\).*\.htm$|design(\/|\\)[^\/]*\.htm$|design(\/|\\).*\/.*\.htm$/,

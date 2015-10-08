@@ -9,7 +9,10 @@ var opts = {
   dist: path.resolve(__dirname, 'dist'),
   copyAssets: [
     'README.md',
-    'src/js/**',
+    {
+      asset: 'src/js/**',
+      babel: true
+    },
     {
       asset: 'src/scss/**',
       dist: 'dist/scss/'
