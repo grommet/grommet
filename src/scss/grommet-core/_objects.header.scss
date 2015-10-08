@@ -38,7 +38,9 @@ h2 {
 }
 
 h3 {
-  @include inuit-font-size(24px);
+  // inuit-font-size sets the line-height to 24px when the font size is 24px.
+  // We want a bit more leading between lines than that.
+  @include inuit-font-size(24px, 28px);
 }
 
 h4 {
