@@ -82,7 +82,7 @@ var opts = {
       'react': 'React'
     }
   },
-  distPreprocess: ['dist-css'],
+  distPreprocess: ['generate-index-icons', 'dist-css'],
   scsslint: true,
   testPaths: [
     'test/**/*.js'

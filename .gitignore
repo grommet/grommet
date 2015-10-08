@@ -18,6 +18,7 @@ notes.txt
 src/js/baseIcons.js
 **/src/js/components/icons/base*/**
 **iconsMap**
+**index-icons**
 **.publish**
 server/css**
 server/server-routes.js
