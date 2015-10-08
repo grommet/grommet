@@ -100,20 +100,20 @@ module.exports = function(gulp, opts) {
   gulp.task('generate-icons', function(done) {
     var basePath = options.base || process.cwd();
     var iconsConfig = options.icons || {};
-    var iconsFolder = iconsConfig.source;
-    if (iconsFolder) {
+    var iconInputFolder = iconsConfig.source;
+    if (iconInputFolder) {
       if (!path.isAbsolute(iconsConfig.source)) {
-        iconsFolder = path.resolve(basePath, iconsConfig.source || 'src/img/icons');
+        iconInputFolder = path.resolve(basePath, iconsConfig.source || 'src/img/icons');
       }
 
-      fs.readdir(iconsFolder, function(err, icons) {
+      fs.readdir(iconInputFolder, function(err, icons) {
         if (icons) {
           if (iconsConfig.destination) {
 
             icons.forEach(function (icon, index) {
 
               if (/\.svg$/.test(icon)) {
-                var iconPath = path.join(iconsFolder, icon);
+                var iconPath = path.join(iconInputFolder, icon);
                 var content = fs.readFileSync(iconPath, 'utf8');
                 var loaderContext = {
                   query: '?copyright=(C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.',
@@ -121,12 +121,14 @@ module.exports = function(gulp, opts) {
                   addDependency: function () {},
                   async: function() {
                     return function(err, result) {
-                      var destinationPath = iconsConfig.destination;
+                      var iconDestFolder = iconsConfig.destination;
                       if (!path.isAbsolute(iconsConfig.destination)) {
-                        destinationPath = path.resolve(basePath, iconsConfig.destination);
+                        iconDestFolder = path.resolve(basePath, iconsConfig.destination);
                       }
 
-                      mkdirp(destinationPath, function(err) {
+                      del.sync([iconDestFolder]);
+
+                      mkdirp(iconDestFolder, function(err) {
 
                         if (err) {
                           throw err;
@@ -137,7 +139,7 @@ module.exports = function(gulp, opts) {
                           return g.length > 1 ? g[1].toUpperCase() : g.toUpperCase();
                         });
 
-                        var destinationFile = path.resolve(destinationPath, componentName);
+                        var destinationFile = path.resolve(iconDestFolder, componentName);
 
                         fs.writeFile(destinationFile, result, function(err) {
                           if (err) {
