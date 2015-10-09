@@ -1,77 +1,63 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var IntlMixin = require('grommet/mixins/GrommetIntlMixin');
-var Header = require('grommet/components/Header');
-var Title = require('grommet/components/Title');
-var Search = require('grommet/components/Search');
-var Section = require('grommet/components/Section');
-var List = require('grommet/components/List');
-var Spinning = require('grommet/components/icons/Spinning');
-var Logo = require('./Logo');
+var DirectoryList = require('./DirectoryList');
 
-var PEOPLE_SCHEMA = [
-  {attribute: 'uid', uid: true},
+var LDAP_BASE = {
+  url: encodeURIComponent('ldap://ldap.hp.com'),
+  base: encodeURIComponent('ou=people,o=hp.com'),
+  scope: 'sub'
+};
+
+var SCHEMA = [
   {attribute: 'hpPictureThumbnailURI', image: true, default: 'img/no-picture.png'},
   {attribute: 'cn', primary: true},
-  {attribute: 'hpBusinessUnit', secondary: true}
+  {attribute: 'hpBusinessUnit', secondary: true},
+  {attribute: 'uid', uid: true}
 ];
 
 var People = React.createClass({
 
   propTypes: {
-    changing: React.PropTypes.bool,
-    initial: React.PropTypes.bool,
-    onSearch: React.PropTypes.func.isRequired,
-    onSelect: React.PropTypes.func.isRequired,
-    people: React.PropTypes.arrayOf(React.PropTypes.object).isRequired,
-    searchText: React.PropTypes.string.isRequired
+    searchText: React.PropTypes.string,
+    onSelect: React.PropTypes.func.isRequired
   },
 
-  mixins: [IntlMixin],
+  getInitialState: function () {
+    var filter = this._filterForSearch(this.props.searchText);
+    return {filter: filter};
+  },
 
-  componentDidMount: function () {
-    this.refs.search.focus();
+  componentWillReceiveProps: function (newProps) {
+    if (newProps.searchText !== this.props.searchText) {
+      var filter = this._filterForSearch(newProps.searchText);
+      this.setState({filter: filter});
+    }
+  },
+
+  _filterForSearch: function (searchText) {
+    var filter;
+    if (searchText) {
+      if (searchText[0] === '(') {
+        // assume this is already a formal LDAP filter
+        filter = encodeURIComponent(searchText);
+      } else {
+        // handle "Last, First" syntax
+        if (searchText.indexOf(',') !== -1) {
+          searchText = searchText.replace(/(.+),\s*(.+)/, "$2 $1");
+        }
+        // only return Active employees
+        filter = encodeURIComponent('(&(hpStatus=Active)' +
+          '(|(cn=*' + searchText + '*)(uid=*' + searchText + '*)))');
+      }
+    }
+    return filter;
   },
 
   render: function() {
-    var title = this.getGrommetIntlMessage('People Finder');
-    var texture;
-    var colorIndex = "neutral-1";
-    var logo;
-
-    if (this.props.initial) {
-      texture = "url(img/people-finder-background.png)";
-      colorIndex = "neutral-1-a";
-      logo = <img src="img/hpesm_pri_grn_rev_rgb.svg" alt="logo" className="logo" />;
-    }
-
-    var data = this.props.people;
-    var empty;
-    if (this.props.changing) {
-      data = [{uid: 'spinner', hpPictureThumbnailURI: <Spinning />}];
-    } else if (! this.props.initial && !this.props.people) {
-      empty = 'No matches';
-      data = [];
-    }
-
     return (
-      <Section texture={texture} full={true} pad="none">
-        <Header key="header" large={true} pad={{horizontal: "medium"}}
-          float={this.props.initial}
-          colorIndex={colorIndex} splash={this.props.initial} responsive={false}>
-          <Title>
-            <Logo />
-            {title}
-          </Title>
-          <Search ref="search" inline={true} className="flex"
-            defaultValue={this.props.searchText}
-            onChange={this.props.onSearch} />
-        </Header>
-        <List key="results" large={true} data={data} emptyIndicator={empty}
-          schema={PEOPLE_SCHEMA} onSelect={this.props.onSelect} />
-        {logo}
-      </Section>
+      <DirectoryList base={LDAP_BASE} schema={SCHEMA}
+        filter={this.state.filter} onSelect={this.props.onSelect} />
     );
   }
 

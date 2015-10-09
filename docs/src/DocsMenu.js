@@ -3,6 +3,7 @@
 var React = require('react');
 var Link = require('react-router').Link;
 var Menu = require('grommet/components/Menu');
+var Header = require('grommet/components/Header');
 
 var DocsMenu = React.createClass({
 
@@ -27,14 +28,22 @@ var DocsMenu = React.createClass({
         if (content.id) {
           href += '#' + content.id;
         }
-        item = <Link key={content.label} to={href} onClick={this.props.onClick}>{content.label}</Link>;
+        item = (
+          <Link key={content.label} to={href} onClick={this.props.onClick}>
+            {content.label}
+          </Link>
+        );
         //item = <a key={content.label} href={href}>{content.label}</a>;
       } else {
         item = content.label;
       }
 
       if (! context) {
-        item = <h3 key={content.label}><strong>{item}</strong></h3>;
+        item = (
+          <Header tag="h3" key={content.label} pad={{horizontal: 'medium'}}>
+            <strong>{item}</strong>
+          </Header>
+        );
       }
 
       var subItems;
@@ -44,7 +53,7 @@ var DocsMenu = React.createClass({
 
       if (!context || subItems) {
         return (
-          <Menu key={content.label} direction="column" align="start">
+          <Menu key={content.label} direction="column" align="start" primary={true}>
             {item}
             {subItems}
           </Menu>
@@ -59,10 +68,9 @@ var DocsMenu = React.createClass({
 
   render: function() {
     var menuItems = this._renderMenuItems(this.props.contents, this.context.router, null);
-    var pad = ('row' === this.props.direction ? 'none' : {horizontal: 'medium'});
     return (
-      <Menu direction={this.props.direction} align="start" justify="between" pad={pad}>
-        <h2>{this.props.title}</h2>
+      <Menu direction={this.props.direction} align="start" justify="between" primary={true}>
+        <Header tag="h2" pad={{horizontal: 'medium'}}>{this.props.title}</Header>
         {menuItems}
       </Menu>
     );

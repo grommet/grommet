@@ -96,7 +96,7 @@ var DocsSplit = React.createClass({
       );
     }
     return (
-      <Sidebar size="small" primary={true}>
+      <Sidebar size="small" primary={true} separator="right">
         <Header justify="between" large={true} pad={{horizontal: 'medium'}}>
           {title}
           {closer}

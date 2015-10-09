@@ -30,6 +30,11 @@
   .background-color-index-grey-#{$i + length($brand-grey-colors)} {
     background-color: nth($brand-grey-colors, $i);
   }
+
+  .background-color-index-grey-#{$i}-a,
+  .background-color-index-grey-#{$i + length($brand-grey-colors)}-a {
+    background-color: rgba(nth($brand-grey-colors, $i), 0.8);
+  }
 }
 
 @for $i from 1 through length($brand-graph-colors) {
@@ -41,4 +46,12 @@
 
 [class*="background-color-index-"] {
   color: $colored-text-color;
+}
+
+@for $i from 1 through length($brand-light-colors) {
+  .background-color-index-light-#{$i},
+  .background-color-index-light-#{$i + length($brand-light-colors)} {
+    background-color: nth($brand-light-colors, $i);
+    color: inherit;
+  }
 }

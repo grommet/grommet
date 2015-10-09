@@ -5,9 +5,7 @@
   line-height: $footer-height;
 
   &__content {
-    display: -webkit-flex;
     display: flex;
-    -webkit-justify-content: space-between;
     justify-content: space-between;
     width: 100%;
     padding-left: $inuit-base-spacing-unit;
@@ -88,10 +86,8 @@
 
   *:not(.footer__container--float) > &--float {
     position: absolute;
-    top: 0px;
+    bottom: 0px;
     left: 0px;
     right: 0px;
-    padding-left: $inuit-base-spacing-unit;
-    padding-right: $inuit-base-spacing-unit;
   }
 }

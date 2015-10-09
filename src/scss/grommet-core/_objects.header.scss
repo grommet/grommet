@@ -1,7 +1,17 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 .header {
+  height: $header-height;
   width: 100%;
+  margin-bottom: 0px;
+
+  &--large {
+    height: $large-header-height;
+  }
+
+  &--small {
+    height: $small-header-height;
+  }
 
   &.box {
     > *:not(:last-child) {
@@ -19,65 +29,20 @@
   }
 }
 
-h1 {
-  @include inuit-font-size(48px);
-}
-
-h2 {
-  @include inuit-font-size(36px);
-}
-
-h3 {
-  @include inuit-font-size(24px);
-}
-
-h4 {
-  @include inuit-font-size(18px);
-}
-
-h5 {
-  @include inuit-font-size(18px);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-  font-weight: 100;
-  max-width: 100%;
-
-  &.header--strong,
-  > strong {
-    font-weight: 600;
-  }
-}
-
 header.header {
   @include inuit-font-size($header-font-size, inherit);
-  height: $header-height;
 
   *:not(.header__container--float) > &--float {
     position: absolute;
     top: 0px;
     left: 0px;
     right: 0px;
-    padding-left: $inuit-base-spacing-unit;
-    padding-right: $inuit-base-spacing-unit;
   }
 
   &--primary {
     .header__wrapper {
       border-bottom: none;
     }
-  }
-
-  &--large {
-    height: $large-header-height;
-  }
-
-  &--small {
-    height: $small-header-height;
   }
 
   @include transform(translate(0, 0));
@@ -111,7 +76,6 @@ header.header {
 div.header {
 
   &__container {
-    -webkit-flex-shrink: 0;
     flex-shrink: 0;
 
     &--fixed {

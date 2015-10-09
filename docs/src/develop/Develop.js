@@ -36,6 +36,7 @@ var FooterDoc = require('./components/FooterDoc');
 var FormDoc = require('./components/FormDoc');
 var FormFieldDoc = require('./components/FormFieldDoc');
 var HeaderDoc = require('./components/HeaderDoc');
+var IconDoc = require('./components/IconDoc');
 var LayerDoc = require('./components/LayerDoc');
 var ListDoc = require('./components/ListDoc');
 var LoginFormDoc = require('./components/LoginFormDoc');
@@ -53,6 +54,7 @@ var SectionDoc = require('./components/SectionDoc');
 var SidebarDoc = require('./components/SidebarDoc');
 var SplitDoc = require('./components/SplitDoc');
 var StatusDoc = require('./components/StatusDoc');
+var TabsDoc = require('./components/TabsDoc');
 var TableDoc = require('./components/TableDoc');
 var TilesDoc = require('./components/TilesDoc');
 var TitleDoc = require('./components/TitleDoc');
@@ -101,6 +103,7 @@ var CONTENTS = [
       {route: 'develop_form', label: 'Form', component: FormDoc},
       {route: 'develop_form-field', label: 'FormField', component: FormFieldDoc},
       {route: 'develop_header', label: 'Header', component: HeaderDoc},
+      {route: 'develop_icon', label: 'Icon', component: IconDoc},
       {route: 'develop_layer', label: 'Layer', component: LayerDoc},
       {route: 'develop_list', label: 'List', component: ListDoc},
       {route: 'develop_login-form', label: 'LoginForm', component: LoginFormDoc},
@@ -115,6 +118,7 @@ var CONTENTS = [
       {route: 'develop_sidebar', label: 'Sidebar', component: SidebarDoc},
       {route: 'develop_split', label: 'Split', component: SplitDoc},
       {route: 'develop_status', label: 'Status', component: StatusDoc},
+      {route: 'develop_tabs', label: 'Tabs', component: TabsDoc},
       {route: 'develop_table', label: 'Table', component: TableDoc},
       {route: 'develop_tiles', label: 'Tiles', component: TilesDoc},
       {route: 'develop_title', label: 'Title', component: TitleDoc},

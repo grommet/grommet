@@ -73,9 +73,7 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
   }
 
   &__minmax {
-    display: -webkit-flex;
     display: flex;
-    -webkit-justify-content: space-between;
     justify-content: space-between;
     color: $secondary-text-color;
     @include inuit-font-size($label-font-size);
@@ -83,7 +81,6 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
 
   &__label-min,
   &__label-max {
-    -webkit-flex: 0 0 $meter-label-width;
     flex: 0 0 $meter-label-width;
   }
 
@@ -157,7 +154,6 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
       }
 
       &__minmax {
-        -webkit-flex-direction: column;
         flex-direction: column;
         height: 100%;
       }
@@ -168,18 +164,15 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
 
       &__label-min,
       &__label-max {
-        -webkit-flex: 0 0 auto;
         flex: 0 0 auto;
         text-align: left;
       }
 
       &__label-min {
-        -webkit-order: 1;
         order: 1;
       }
 
       &__label-max {
-        -webkit-order: 0;
         order: 0;
       }
 

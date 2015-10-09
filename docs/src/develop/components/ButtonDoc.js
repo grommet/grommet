@@ -37,7 +37,7 @@ var ButtonDoc = React.createClass({
             one per page or screen.</dd>
           <dt><code>secondary      true|false</code></dt>
           <dd>Whether this is a secondary button.</dd>
-          <dt><code>type           button|reset|submit</code></dt>
+          <dt><code>type           button|reset|submit|icon</code></dt>
           <dd>The type of button. Set the type to <code>submit</code>
               for the default button on forms.  Defaults to <code>button</code>.</dd>
           </dl>

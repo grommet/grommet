@@ -1,7 +1,6 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 .box {
-  display: -webkit-flex;
   display: flex;
   background-position: center center;
   background-size: cover;
@@ -55,21 +54,17 @@
   }
 
   &--direction-row {
-    -webkit-flex-direction: row;
     flex-direction: row;
 
     &.box--reverse {
-      -webkit-flex-direction: row-reverse;
       flex-direction: row-reverse;
     }
 
     @include media-query(palm) {
       &.box--responsive {
-        -webkit-flex-direction: column;
         flex-direction: column;
 
         &.box--reverse {
-          -webkit-flex-direction: column-reverse;
           flex-direction: column-reverse;
         }
       }
@@ -77,54 +72,44 @@
   }
 
   &--direction-column {
-    -webkit-flex-direction: column;
     flex-direction: column;
 
     &.box--reverse {
-      -webkit-flex-direction: column-reverse;
       flex-direction: column-reverse;
     }
 
     > .header.box--direction-row,
     > .footer.box--direction-row,
     > .header__container--fixed {
-      -webkit-flex: 0 0 auto;
       flex: 0 0 auto;
     }
   }
 
   &--justify-start {
-    -webkit-justify-content: flex-start;
     justify-content: flex-start;
   }
 
   &--justify-center {
-    -webkit-justify-content: center;
     justify-content: center;
   }
 
   &--justify-between {
-    -webkit-justify-content: space-between;
     justify-content: space-between;
   }
 
   &--justify-end {
-    -webkit-justify-content: flex-end;
     justify-content: flex-end;
   }
 
   &--align-start {
-    -webkit-align-items: flex-start;
     align-items: flex-start;
   }
 
   &--align-center {
-    -webkit-align-items: center;
     align-items: center;
   }
 
   &--align-end {
-    -webkit-align-items: flex-end;
     align-items: flex-end;
   }
 
@@ -149,13 +134,13 @@
       &-left {
         border-left: none;
         border-bottom: 1px solid $border-color;
-        padding-top: $inuit-base-spacing-unit;
+        //padding-top: $inuit-base-spacing-unit;
       }
 
       &-right {
         border-right: none;
         border-bottom: 1px solid $border-color;
-        padding-top: $inuit-base-spacing-unit;
+        //padding-top: $inuit-base-spacing-unit;
       }
     }
   }
@@ -181,7 +166,6 @@
   // temporary flex grow capability
   > .flex-grow-1, // deprecated, remove in 0.4
   > .flex {
-    -webkit-flex-grow: 1;
     flex-grow: 1;
   }
 
@@ -189,12 +173,10 @@
 
   &--direction-down,
   &--direction-up {
-    -webkit-flex-direction: column;
     flex-direction: column;
   }
 
   &--direction-left {
-    -webkit-justify-content: flex-end;
     justify-content: flex-end;
   }
 

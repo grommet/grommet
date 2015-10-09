@@ -33,10 +33,9 @@ module.exports = function(gulp, options) {
             watch(watchFolders, function() {
               gulp.src(options.testPaths, {
                 read: false
-              })
-                .pipe(mocha({
-                  reporter: 'spec'
-                })).once('end', function() {
+              }).pipe(mocha({
+                reporter: 'spec'
+              })).once('end', function() {
                 console.log('Watching for changes...');
               }).on('error', function(err) {
                 console.error('Test failed:', err.stack || err);

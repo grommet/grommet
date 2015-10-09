@@ -46,8 +46,8 @@
   .layer & {
 
     @include media-query(lap-and-up) {
-      max-height: 100vh;
-      max-width: 100vw;
+      max-height: 100%;
+      max-width: 100%;
       overflow: auto;
       padding: round($inuit-base-spacing-unit * 0.75) double($inuit-base-spacing-unit) double($inuit-base-spacing-unit);
     }
@@ -69,14 +69,11 @@
     }
 
     &--sticky {
-      display: -webkit-flex;
       display: flex;
-      -webkit-flex-direction: column;
       flex-direction: column;
 
       > .header,
       > .footer {
-        -webkit-flex: 0 0 auto;
         flex: 0 0 auto;
       }
     }

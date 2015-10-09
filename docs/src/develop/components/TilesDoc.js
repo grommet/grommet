@@ -55,13 +55,20 @@ var TileDoc = React.createClass({
         <section>
           <h2>Options</h2>
           <dl>
+            <dt><code>direction    row|column</code></dt>
+            <dd>The orientation of the contained tiles.</dd>
             <dt><code>fill        true|false</code></dt>
             <dd>Whether the contents expand to fill all of the available space.</dd>
             <dt><code>flush       true|false</code></dt>
             <dd>Whether the contents are flush with the left and right edges or not.
-              Defaults to true.</dd>
+              Defaults to true. When flush, there is no padding around the outside
+              or between the contained tiles.</dd>
+            <dt><code>onMore         {"function () {...}"}</code></dt>
+            <dd>Function that will be called when more data is needed.</dd>
+            <dt><code>size        small|medium|large</code></dt>
+            <dd>The width of the contained tiles. Defaults to <code>medium</code>.</dd>
             <dt><code>small       true|false</code></dt>
-            <dd>Smaller sized version.</dd>
+            <dd>Smaller sized version. Deprecated, use <code>size</code>.</dd>
           </dl>
         </section>
 

@@ -9,7 +9,10 @@ var opts = {
   dist: path.resolve(__dirname, 'dist'),
   copyAssets: [
     'README.md',
-    'src/js/**',
+    {
+      asset: 'src/js/**',
+      babel: true
+    },
     {
       asset: 'src/scss/**',
       dist: 'dist/scss/'
@@ -18,7 +21,10 @@ var opts = {
       asset: 'src/utils/**',
       dist: 'dist/utils/'
     },
-    'src/img/**',
+    {
+      asset: 'src/img/**',
+      dist: 'dist/img/'
+    },
     {
       asset: 'bin/**',
       dist: 'dist/bin/'
@@ -54,6 +60,11 @@ var opts = {
   ],
   mainJs: 'src/js/index.js',
   mainScss: 'src/scss/grommet-core/index.scss',
+  icons: {
+    source: 'src/img/icons',
+    destination: 'src/js/components/icons/base',
+    context: '../../../'
+  },
   sync: {
     hostname: 'grommet.io',
     username: 'grommet',
@@ -66,13 +77,16 @@ var opts = {
       library: 'Grommet'
     },
     resolve: {
+      alias: {
+        'grommet': path.resolve(__dirname, 'src/js')
+      },
       modulesDirectories: ['node_modules', 'src/js', 'src/scss']
     },
     externals: {
       'react': 'React'
     }
   },
-  distPreprocess: ['dist-css'],
+  distPreprocess: ['generate-index-icons', 'dist-css'],
   scsslint: true,
   testPaths: [
     'test/**/*.js'
