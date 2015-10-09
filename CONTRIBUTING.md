@@ -3,11 +3,11 @@ Contribution Guide
 
 Grommet is divided into a few projects.
 
--   [grommet](https://github.com/HewlettPackard/grommet) - the primary
+-   [grommet](https://github.com/grommet/grommet) - the primary
     Grommet project
--   [grommet-bower](https://github.com/HewlettPackard/grommet-bower) -
+-   [grommet-bower](https://github.com/grommet/grommet-bower) -
     the Bower distribution of Grommet
--   [html-jsx-loader](https://github.com/HewlettPackard/html-jsx-loader) -
+-   [html-jsx-loader](https://github.com/grommet/html-jsx-loader) -
     a html loader module to convert HTML to JSX for Webpack used as part
     of the documentation
 
@@ -15,18 +15,18 @@ Contributing
 ------------
 
 The best way to collaborate with the project contributors is through
-GitHub: <https://github.com/HewlettPackard/grommet>.
+GitHub: <https://github.com/grommet/grommet>.
 
 -   If you want to contribute design assets or style guide revisions,
     please open a [GitHub pull
-    request](https://github.com/HewlettPackard/grommet/pulls) or open a
-    [GitHub issue](https://github.com/HewlettPackard/grommet/issues).
+    request](https://github.com/grommet/grommet/pulls) or open a
+    [GitHub issue](https://github.com/grommet/grommet/issues).
 -   If you want to contribute code by either fixing a problem or
     creating a new feature, please open a [GitHub pull
-    request](https://github.com/HewlettPackard/grommet/pulls).
+    request](https://github.com/grommet/grommet/pulls).
 -   If you want to raise an issue such as a defect or an enhancement
     request please open a [GitHub
-    issue](https://github.com/HewlettPackard/grommet/issues) while
+    issue](https://github.com/grommet/grommet/issues) while
     keeping the following in mind:
     -   Try to reduce your code to the bare minimum required to
         reproduce the issue.
@@ -161,4 +161,4 @@ This contribution guide was inspired by the contribution guides for the
 projects.
 
 Found an error in the documentation? [File an
-issue](https://github.com/HewlettPackard/grommet/issues).
+issue](https://github.com/grommet/grommet/issues).
