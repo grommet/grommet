@@ -39,7 +39,7 @@ function getPackageJSON(app, fixedVersion) {
   };
 
   appPackageJSON.dependencies.grommet = fixedVersion ? grommetPackageJSON.version :
-    'https://github.com/HewlettPackard/grommet.git#stable';
+    'https://github.com/grommet/grommet.git#stable';
 
   return appPackageJSON;
 }

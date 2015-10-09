@@ -26,4 +26,4 @@ To run this application, execute the following commands:
 
   3. Login credentials: `Username` any string that looks like an email address and any `Password` (not used or stored).
 
-  **NOTE**: If you want to use this application outside the Grommet context, checkout [Exporting Example Apps Wiki](https://github.com/HewlettPackard/grommet/wiki/Exporting-examples-from-Grommet).
+  **NOTE**: If you want to use this application outside the Grommet context, checkout [Exporting Example Apps Wiki](https://github.com/grommet/grommet/wiki/Exporting-examples-from-Grommet).

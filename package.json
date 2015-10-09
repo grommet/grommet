@@ -10,11 +10,11 @@
     "Eric Soderberg"
   ],
   "homepage": "http://grommet.io",
-  "bugs": "https://github.com/HewlettPackard/grommet/issues",
+  "bugs": "https://github.com/grommet/grommet/issues",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/HewlettPackard/grommet.git"
+    "url": "https://github.com/grommet/grommet.git"
   },
   "preferGlobal": true,
   "bin": {

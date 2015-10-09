@@ -88,7 +88,7 @@ module.exports = function(gulp, opts) {
   });
 
   gulp.task('release:bower', ['release:createTmp'], function(done) {
-    git.clone('https://github.com/HewlettPackard/grommet-bower.git',
+    git.clone('https://github.com/grommet/grommet-bower.git',
       {
         cwd: './tmp/'
       },
@@ -131,7 +131,7 @@ module.exports = function(gulp, opts) {
 
   gulp.task('release:stable', ['dist', 'release:createTmp'], function(done) {
     if (process.env.CI) {
-      git.clone('https://' + process.env.GH_TOKEN + '@github.com/HewlettPackard/grommet.git',
+      git.clone('https://' + process.env.GH_TOKEN + '@github.com/grommet/grommet.git',
         {
           cwd: './tmp/'
         },

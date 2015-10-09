@@ -18,4 +18,4 @@ To run this application, execute the following commands:
     $ gulp dev
     ```
 
-**NOTE**: If you want to use this application outside the Grommet context, checkout [Exporting Example Apps Wiki](https://github.com/HewlettPackard/grommet/wiki/Exporting-examples-from-Grommet).
+**NOTE**: If you want to use this application outside the Grommet context, checkout [Exporting Example Apps Wiki](https://github.com/grommet/grommet/wiki/Exporting-examples-from-Grommet).

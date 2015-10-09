@@ -141,7 +141,7 @@ var Home = React.createClass({
           <Headline small={true}>The tools you know and love, all packaged together in one
             easy-to-use solution.</Headline>
           <Menu direction="row" justify="center" full="horizontal">
-            <a href="https://github.com/HewlettPackard/grommet">
+            <a href="https://github.com/grommet/grommet">
               <Button label="View project on Github" onClick={this._onClick} large={true} primary={true} />
             </a>
           </Menu>
