@@ -46,6 +46,8 @@ $breakpoints: (
     "lap-and-up"    "screen and (min-width: #{$break-lap-and-up-min-width})"
 ) !default;
 
+$brand-link-text-decoration: none !default;
+
 $button-text-transform: none !default;
 $button-font-weight: 600 !default;
 
