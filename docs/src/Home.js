@@ -87,23 +87,23 @@ var Home = React.createClass({
           <p>or, grab your favorite sticker sheet:</p>
           <Tiles small={true} fill={true}>
             <Tile align="center">
-              <img src="img/Adobe_Illustrator.png" title="Adobe Illustrator" />
+              <img src="img/Adobe_Illustrator.png" alt="Adobe Illustrator"/>
               <label>Adobe Illustrator</label>
             </Tile>
             <Tile align="center">
-              <img src="img/Adobe_Photoshop.png" title="Adobe Photoshop" />
+              <img src="img/Adobe_Photoshop.png" alt="Adobe Photoshop" />
               <label>Adobe Photoshop</label>
             </Tile>
             <Tile align="center">
-              <img src="img/Sketch.png" title="Sketch" />
+              <img src="img/Sketch.png" alt="Sketch" />
               <label>Sketch</label>
             </Tile>
             <Tile align="center">
-              <img src="img/Axure.png" title="Axure" />
+              <img src="img/Axure.png" alt="Axure" />
               <label>Axure</label>
             </Tile>
             <Tile align="center">
-              <img src="img/Balsamiq.png" title="Balsamiq" />
+              <img src="img/Balsamiq.png" alt="Balsamiq" />
               <label>Balsamiq</label>
             </Tile>
           </Tiles>
@@ -149,37 +149,37 @@ var Home = React.createClass({
           <Tiles small={true} fill={true} flush={false}>
             <Tile>
               <a href="http://www.w3.org/TR/html5/">
-                <img src="img/HTML5.png" title="HTML5" />
+                <img src="img/HTML5.png" alt="HTML5" />
               </a>
             </Tile>
             <Tile>
               <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3">
-                <img src="img/CSS3.png" title="CSS3" />
+                <img src="img/CSS3.png" alt="CSS3" />
               </a>
             </Tile>
             <Tile>
               <a href="https://nodejs.org">
-                <img src="img/NodeJS.png" title="NodeJS" />
+                <img src="img/NodeJS.png" alt="NodeJS" />
               </a>
             </Tile>
             <Tile>
               <a href="https://github.com/inuitcss">
-                <img src="img/InuitCSS.png" title="InuitCSS" />
+                <img src="img/InuitCSS.png" alt="InuitCSS" />
               </a>
             </Tile>
             <Tile>
               <a href="http://facebook.github.io/react/">
-                <img src="img/reactjs.png" title="ReactJS" />
+                <img src="img/reactjs.png" alt="ReactJS" />
               </a>
             </Tile>
             <Tile>
               <a href="http://gulpjs.com">
-                <img src="img/gulp.png" title="Gulp" />
+                <img src="img/gulp.png" alt="Gulp" />
               </a>
             </Tile>
             <Tile>
               <a href="http://webpack.github.io">
-                <img src="img/webpack.png" title="Webpack" />
+                <img src="img/webpack.png" alt="Webpack" />
               </a>
             </Tile>
           </Tiles>
@@ -197,31 +197,31 @@ var Home = React.createClass({
           <Tiles fill={true}>
             <Tile>
               <a href="http://grommet.io/slackin">
-                <img src="img/slack.png" title="Slack" />
+                <img src="img/slack.png" alt="Slack" />
                 <div>grommet</div>
               </a>
             </Tile>
             <Tile>
               <a href="https://twitter.com/grommetux">
-                <img src="img/twitter.png" title="Twitter" />
+                <img src="img/twitter.png" alt="Twitter" />
                 <div>@grommetux</div>
               </a>
             </Tile>
             <Tile>
               <a href="https://www.facebook.com/grommetux">
-                <img src="img/facebook.png" title="Facebook" />
+                <img src="img/facebook.png" alt="Facebook" />
                 <div>grommetux</div>
               </a>
             </Tile>
             <Tile>
               <a href="https://vimeo.com/grommetux">
-                <img src="img/vimeo.png" title="Vimeo" />
+                <img src="img/vimeo.png" alt="Vimeo" />
                 <div>grommetux</div>
               </a>
             </Tile>
             <Tile>
               <a href="http://youtube.com">
-                <img src="img/youtube.png" title="Youtube" />
+                <img src="img/youtube.png" alt="Youtube" />
                 <div>grommetux</div>
               </a>
             </Tile>
