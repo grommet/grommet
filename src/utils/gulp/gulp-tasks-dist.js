@@ -55,6 +55,10 @@ module.exports = function(gulp, options, webpackConfig, dist) {
       config.resolve = {};
     }
 
+    if (!config.resolveLoader) {
+      config.resolveLoader = {};
+    }
+
     if (options.webpack.module && options.webpack.module.loaders) {
       webpackConfig.module.loaders.forEach(function(loader) {
         config.module.loaders.push(loader);
@@ -63,6 +67,12 @@ module.exports = function(gulp, options, webpackConfig, dist) {
 
     config.resolve.extensions = merge(config.resolve.extensions || [],
       ['', '.js', '.json', '.htm', '.html', '.scss', '.md', '.svg']);
+
+    config.resolve.modulesDirectories = merge(config.resolve.modulesDirectories || [],
+      ['node_modules/grommet/node_modules', 'node_modules']);
+
+    config.resolveLoader.modulesDirectories = merge(config.resolveLoader.modulesDirectories || [],
+      ['node_modules/grommet/node_modules', 'node_modules']);
 
     return gulp.src(options.mainJs)
       .pipe(gulpWebpack(config))
