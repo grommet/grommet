@@ -3,8 +3,8 @@
 a,
 .anchor {
   color: $link-color;
-  -webkit-text-decoration: $brand-text-decoration;
-  text-decoration: $brand-text-decoration;
+  -webkit-text-decoration: $brand-link-text-decoration;
+  text-decoration: $brand-link-text-decoration;
   cursor: pointer;
 
   &:hover {
