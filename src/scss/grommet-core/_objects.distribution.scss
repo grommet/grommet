@@ -12,6 +12,7 @@
 
   &__box {
     @include graph-fill-color();
+    cursor: pointer;
   }
 
   &__icons {
@@ -24,6 +25,7 @@
     font-family: $brand-large-number-font-family;
     color: $colored-text-color;
     text-align: center;
+    pointer-events: none;
 
     &-value {
       @include inuit-font-size($large-number-font-size);

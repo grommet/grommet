@@ -1,9 +1,10 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var CloseIcon = require('./icons/Clear');
+var CloseIcon = require('./icons/base/Close');
 var KeyboardAccelerators = require('../mixins/KeyboardAccelerators');
 var DOMUtils = require('../utils/DOM');
+var Button = require('./Button');
 
 var CLASS_ROOT = "layer";
 
@@ -106,8 +107,9 @@ var LayerOverlay = React.createClass({
 
       closer = (
         <div className={CLASS_ROOT + "__closer"}>
-          <CloseIcon onClick={this.props.onClose} a11yTitle={this.props.a11yCloserTitle}
-            a11yRole="button" />
+          <Button type='icon' onClick={this.props.onClose}>
+            <CloseIcon a11yTitle={this.props.a11yCloserTitle} />
+          </Button>
         </div>
       );
     }

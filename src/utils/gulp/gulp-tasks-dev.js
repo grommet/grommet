@@ -41,6 +41,10 @@ module.exports = function(gulp, options, webpackConfig, dist) {
       devWebpackConfig.resolve = {};
     }
 
+    if (!devWebpackConfig.resolveLoader) {
+      devWebpackConfig.resolveLoader = {};
+    }
+
     devWebpackConfig.module.loaders = webpackConfig.module.loaders;
     if (options.webpack.module && options.webpack.module.loaders) {
       options.webpack.module.loaders.forEach(function(loader) {
@@ -60,7 +64,13 @@ module.exports = function(gulp, options, webpackConfig, dist) {
     }
 
     devWebpackConfig.resolve.extensions = merge(devWebpackConfig.resolve.extensions || [],
-      ['', '.js', '.json', '.htm', '.html', '.scss', '.md']);
+      ['', '.js', '.json', '.htm', '.html', '.scss', '.md', '.svg']);
+
+    devWebpackConfig.resolve.modulesDirectories = merge(devWebpackConfig.resolve.modulesDirectories || [],
+      ['node_modules/grommet/node_modules', 'node_modules']);
+
+    devWebpackConfig.resolveLoader.modulesDirectories = merge(devWebpackConfig.resolveLoader.modulesDirectories || [],
+      ['node_modules/grommet/node_modules', 'node_modules']);
 
     var devServerConfig = {
       contentBase: dist,

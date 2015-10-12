@@ -20,6 +20,10 @@
     }
   }
 
+  > * {
+    flex: 0 0 auto;
+  }
+
   a:not(.button) {
     text-decoration: none;
     margin-bottom: quarter($inuit-base-spacing-unit);
@@ -191,9 +195,15 @@
 
   &--primary {
 
+    > .menu {
+      width: 100%;
+    }
+
     > a:not(.button) {
-      padding: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit;
+      padding: quarter($inuit-base-spacing-unit) $inuit-base-spacing-unit;
+      border-right: quarter($inuit-base-spacing-unit) solid transparent;
       margin-bottom: 0px;
+      width: 100%;
 
       &:hover {
         text-decoration: none;
@@ -204,8 +214,7 @@
       }
 
       &.active {
-        color: $selected-primary-text-color;
-        background-color: $selected-primary-background-color;
+        border-color: $brand-color;
       }
     }
 
@@ -248,20 +257,19 @@
       }
     }
 
-    a {
+    > a {
       padding: quarter($inuit-base-spacing-unit) halve($inuit-base-spacing-unit);
     }
   }
 
   &--large {
-    a {
+    > a {
       padding: $inuit-base-spacing-unit double($inuit-base-spacing-unit);
     }
   }
 
   &.box--direction-column {
     .menu {
-      //min-width: $nav-width;
       margin-bottom: round($inuit-base-spacing-unit * 1.5);
     }
   }
@@ -290,10 +298,6 @@
   .menu__drop {
     max-width: 100%;
     width: 100vw;
-
-    //.menu__control {
-    //  line-height: double($inuit-base-spacing-unit);
-    //}
 
     a,
     .button {

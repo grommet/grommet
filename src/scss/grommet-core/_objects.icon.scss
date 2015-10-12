@@ -9,6 +9,20 @@
   fill: $icon-color;
   stroke: $icon-color;
 
+  *:not([stroke]) {
+    &[fill="none"] {
+      stroke-width: 0;
+    }
+  }
+
+  *[stroke] {
+    stroke: inherit;
+  }
+
+  *[fill*="#"] {
+    fill: inherit;
+  }
+
   @include media-query(lap-and-up) {
     transition: all $base-animation-duration ease-in-out;
   }
@@ -29,7 +43,7 @@
     }
   }
 
-  [class*="background-color-index-"] & {
+  [class*="background-color-index-"]:not[class*="background-color-index-light"] & {
     fill: $colored-icon-color;
     stroke: $colored-icon-color;
 
@@ -44,10 +58,6 @@
     stroke: $active-icon-color;
   }
 }
-
-//.drag-handle {
-//  margin-right: $inuit-base-spacing-unit - 10;
-//}
 
 .status-icon {
   width: $inuit-base-spacing-unit;

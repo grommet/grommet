@@ -5,6 +5,52 @@ body {
   @include inuit-font-size($content-font-size, $inuit-base-spacing-unit);
 }
 
+h1 {
+  @include inuit-font-size(48px);
+}
+
+h2 {
+  @include inuit-font-size(36px);
+}
+
+h3 {
+  // inuit-font-size sets the line-height to 24px when the font size is 24px.
+  // We want a bit more leading between lines than that.
+  @include inuit-font-size(24px, 28px);
+}
+
+h4 {
+  @include inuit-font-size(18px);
+}
+
+h5 {
+  @include inuit-font-size(18px);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 100;
+  max-width: 100%;
+
+  &.header--strong,
+  > strong {
+    font-weight: 600;
+  }
+
+  a,
+  a.anchor {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
 p,
 dd,
 li {

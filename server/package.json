@@ -14,6 +14,7 @@
     "request": "^2.53.0",
     "gulp-nodemon": "^2.0.3",
     "enhanced-require": "^0.4.2",
-    "ejs": "^0.8.5"
+    "ejs": "^0.8.5",
+    "react-router": "^0.13.3"
   }
 }

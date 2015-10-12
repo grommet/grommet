@@ -78,7 +78,7 @@ var DocsSplit = React.createClass({
       <Title responsive={false}>
         <Link to="docs">
           <Box align="center" direction="row">
-            <GrommetLogo a11yTitle=""/>
+            <GrommetLogo />
           </Box>
         </Link>
       </Title>
@@ -96,7 +96,7 @@ var DocsSplit = React.createClass({
       );
     }
     return (
-      <Sidebar size="small" primary={true}>
+      <Sidebar size="small" primary={true} separator="right">
         <Header justify="between" large={true} pad={{horizontal: 'medium'}}>
           {title}
           {closer}

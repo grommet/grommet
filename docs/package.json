@@ -10,15 +10,16 @@
     "Eric Soderberg"
   ],
   "homepage": "http://grommet.io",
-  "bugs": "https://github.com/HewlettPackard/grommet/issues",
+  "bugs": "https://github.com/grommet/grommet/issues",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/HewlettPackard/grommet.git"
+    "url": "https://github.com/grommet/grommet.git"
   },
   "dependencies": {
     "highlight.js": "^8.5.0",
-    "json-stringify-pretty-compact": "^1.0.1"
+    "json-stringify-pretty-compact": "^1.0.1",
+    "react-router": "^0.13.3"
   },
   "devDependencies": {
     "html-jsx-loader": "^0.1.12",

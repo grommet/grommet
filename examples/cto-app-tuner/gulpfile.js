@@ -18,6 +18,10 @@ var opts = {
   jsAssets: ['examples/cto-app-tuner/src/js/**/*.js'],
   mainJs: 'examples/cto-app-tuner/src/js/index.js',
   mainScss: 'examples/cto-app-tuner/src/scss/index.scss',
+  icons: {
+    source: path.resolve(__dirname, '../../src/img/icons'),
+    destination: path.resolve(__dirname, '../../src/js/components/icons/base')
+  },
   sync: {
     hostname: 'grommet.io',
     username: 'grommet',

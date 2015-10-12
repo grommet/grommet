@@ -2,8 +2,8 @@
 
 var DOM = require('../utils/DOM');
 
-var SCROLL_MORE_DELAY = 2000; // when the user scrolls
-var SCROLL_MORE_INITIAL_DELAY = 200; // when we start out at the bottom already
+var SCROLL_MORE_DELAY = 500; // when the user scrolls
+var SCROLL_MORE_INITIAL_DELAY = 50; // when we start out at the bottom already
 
 var InfiniteScroll = {
 

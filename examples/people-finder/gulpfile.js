@@ -11,22 +11,18 @@ var opts = {
     {
       asset: 'examples/people-finder/src/img/**',
       dist: 'examples/people-finder/dist/img/'
-    },
-    {
-      asset: path.resolve(__dirname, '../../src/img/mobile-app-icon.png'),
-      dist: 'examples/people-finder/dist/img/'
-    },
-    {
-      asset: path.resolve(__dirname, '../../src/img/shortcut-icon.png'),
-      dist: 'examples/people-finder/dist/img/'
     }
   ],
   scssAssets: ['examples/people-finder/src/scss/**/*.scss'],
   jsAssets: ['examples/people-finder/src/js/**/*.js'],
   mainJs: 'examples/people-finder/src/js/index.js',
   mainScss: 'examples/people-finder/src/scss/index.scss',
+  icons: {
+    source: path.resolve(__dirname, '../../src/img/icons'),
+    destination: path.resolve(__dirname, '../../src/js/components/icons/base')
+  },
   sync: {
-    hostname: 'grommet.usa.hp.com',
+    hostname: 'ligo.us.rdlabs.hpecorp.net',
     username: 'ligo',
     remoteDestination: '/var/www/html/examples/people-finder/dist'
   },
@@ -40,12 +36,14 @@ var opts = {
         path.resolve(__dirname, 'src/js'),
         path.resolve(__dirname, 'src/scss'),
         path.resolve(__dirname, '../../src/scss'),
+        path.resolve(__dirname, '../../src/lib'),
         path.resolve(__dirname, '../../node_modules'),
         path.resolve(__dirname, 'node_modules')
       ]
     }
   },
   devServerPort: 9020,
+  //devServerHost: '0.0.0.0',
   devServerProxy: {
     "/ldap/*": 'http://localhost:8020'
   },

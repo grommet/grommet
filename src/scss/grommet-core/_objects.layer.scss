@@ -33,7 +33,7 @@
     @include media-query(lap-and-up) {
       position: absolute;
       max-height: 100vh;
-      max-width: 100%;
+      max-width: 100vw;
       padding: round($inuit-base-spacing-unit * 0.75) double($inuit-base-spacing-unit) double($inuit-base-spacing-unit);
       border-radius: $border-radius;
       box-shadow: $layer-box-shadow;
@@ -102,11 +102,8 @@
         top: 0px;
         bottom: 0px;
         right: 0px;
-        display: -webkit-flex;
         display: flex;
-        -webkit-flex-direction: column;
         flex-direction: column;
-        -webkit-justify-content: center;
         justify-content: center;
 
         @include media-query(lap-and-up) {

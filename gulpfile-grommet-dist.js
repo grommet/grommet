@@ -8,6 +8,7 @@ var gulpif = require('gulp-if');
 var merge = require('lodash/object/merge');
 var webpack = require('webpack');
 var path = require('path');
+var fs = require('fs');
 var del = require('del');
 var runSequence = require('run-sequence');
 
@@ -77,6 +78,44 @@ var bowerMinWebpackConfig = merge({}, bowerWebpackConfig, {
 });
 
 module.exports = function(gulp, opts) {
+
+  gulp.task('generate-index-icons', ['generate-icons'], function (done) {
+    var iconsFolder = path.join(__dirname, 'src/img/icons');
+    var iconsMap = ['module.exports = {'];
+    fs.readdir(iconsFolder, function(err, icons) {
+      icons.forEach(function (icon, index) {
+
+        if (/\.svg$/.test(icon)) {
+          var componentName = icon.replace('.svg', '.js');
+          componentName = componentName.replace(/^(.)|-([a-z])/g, function (g) {
+            return g.length > 1 ? g[1].toUpperCase() : g.toUpperCase();
+          });
+
+          var grommetIconPath = "./components/icons/base/";
+          iconsMap.push(
+            "\"" + componentName.replace('.js', '') + "\":" +
+            " require('" + grommetIconPath + componentName + "')"
+          );
+
+          if (index === icons.length - 1) {
+            iconsMap.push('};\n');
+
+            var destinationFile = path.join(__dirname, 'src/js/index-icons.js');
+            fs.writeFile(destinationFile, iconsMap.join(''), function(err) {
+              if (err) {
+                throw err;
+              }
+
+              done();
+            });
+          } else {
+            iconsMap.push(',');
+          }
+        }
+      });
+    });
+  });
+
   gulp.task('dist-css', function() {
     gulp.src('src/scss/hpinc/*.scss')
       .pipe(sass({
@@ -135,7 +174,7 @@ module.exports = function(gulp, opts) {
     distBower(bowerMinWebpackConfig);
   });
 
-  gulp.task('dist-bower:preprocess', function(done) {
+  gulp.task('dist-bower:preprocess', ['generate-index-icons'], function(done) {
     del.sync(['dist-bower']);
     runSequence(['dist-bower:exploded', 'dist-bower:minified'], done);
   });

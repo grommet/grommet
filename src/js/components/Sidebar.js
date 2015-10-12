@@ -1,20 +1,27 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
+var merge = require('lodash/object/merge');
+var pick = require('lodash/object/pick');
+var keys = require('lodash/object/keys');
+var Box = require('./Box');
 
 var CLASS_ROOT = "sidebar";
 
 var Sidebar = React.createClass({
 
-  propTypes: {
+  propTypes: merge({
     fixed: React.PropTypes.bool,
-    primary: React.PropTypes.bool,
+    primary: React.PropTypes.bool, // Deprecated
     size: React.PropTypes.oneOf(['small', 'medium', 'large']),
-    small: React.PropTypes.bool
-  },
+    small: React.PropTypes.bool // Deprecated
+  }, Box.propTypes),
 
   getDefaultProps: function () {
-    return {primary: false};
+    return {
+      direction: 'column',
+      primary: false
+    };
   },
 
   getInitialState: function() {
@@ -31,6 +38,7 @@ var Sidebar = React.createClass({
 
   render: function() {
     var classes = [CLASS_ROOT];
+    var other = pick(this.props, keys(Box.propTypes));
     if (this.props.primary) {
       classes.push(CLASS_ROOT + "--primary");
     }
@@ -45,9 +53,9 @@ var Sidebar = React.createClass({
     }
 
     return (
-      <div className={classes.join(' ')}>
+      <Box {...other} className={classes.join(' ')}>
         {this.props.children}
-      </div>
+      </Box>
     );
   }
 

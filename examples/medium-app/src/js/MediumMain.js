@@ -24,7 +24,7 @@ var MediumMain = React.createClass({
 
   render: function() {
     return (
-      <Sidebar primary={this.props.primary} fixed={true}>
+      <Sidebar colorIndex="light-2" fixed={true} separator="right">
         <Header large={true} justify="between" pad={{horizontal: 'medium'}}>
           <Title>
             <Logo />

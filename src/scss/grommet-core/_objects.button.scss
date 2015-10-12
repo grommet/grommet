@@ -49,6 +49,13 @@ button:not(.button) {
     border-color: $button-accent-color;
   }
 
+  &--icon {
+    border: none;
+    padding: 0;
+    width: double($inuit-base-spacing-unit);
+    height: double($inuit-base-spacing-unit);
+  }
+
   [class*="background-color-index-"] &:not(.button--primary) {
     border-color: $colored-border-color;
     color: $colored-text-color;

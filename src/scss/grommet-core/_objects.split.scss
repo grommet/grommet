@@ -17,7 +17,6 @@
   }
 
   @include media-query(lap-and-up) {
-    display: -webkit-flex;
     display: flex;
 
     &--fixed {
@@ -31,12 +30,10 @@
 
     &--flex-right {
       > *:first-child:not(:last-child) {
-        -webkit-flex: 0 0 auto;
         flex: 0 0 auto;
       }
 
       > *:last-child {
-        -webkit-flex: 1;
         flex: 1;
       }
     }
@@ -44,19 +41,16 @@
     &--flex-left {
       > *:last-child:not(:first-child),
       > .object {
-        -webkit-flex: 0 0 auto;
         flex: 0 0 auto;
       }
 
       > *:first-child {
-        -webkit-flex: 1;
         flex: 1;
       }
     }
 
     &--flex-both {
       > * {
-        -webkit-flex: 1;
         flex: 1;
       }
     }
