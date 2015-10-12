@@ -2,7 +2,7 @@
 
 @mixin center-content {
   width: 100%;
-  max-width: $center-content-width;
+  max-width: $center-column-width;
   margin-left: auto;
   margin-right: auto;
 }

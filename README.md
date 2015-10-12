@@ -1,6 +1,6 @@
 # Grommet: The most advanced UX framework for enterprise apps
 
-[![Slack](http://alansouzati.github.io/artic/img/slack-badge.svg)](http://grommet.io/slackin)  [![Build Status](https://api.travis-ci.org/HewlettPackard/grommet.svg)](https://travis-ci.org/HewlettPackard/grommet)  [![Coverage Status](https://coveralls.io/repos/HewlettPackard/grommet/badge.svg)](https://coveralls.io/r/HewlettPackard/grommet) [![Code Climate](https://codeclimate.com/github/HewlettPackard/grommet/badges/gpa.svg)](https://codeclimate.com/github/HewlettPackard/grommet)  [![Dependency Status](https://david-dm.org/hewlettpackard/grommet.svg)](https://david-dm.org/hewlettpackard/grommet)  [![devDependency Status](https://david-dm.org/hewlettpackard/grommet/dev-status.svg)](https://david-dm.org/hewlettpackard/grommet#info=devDependencies)
+[![Slack](http://alansouzati.github.io/artic/img/slack-badge.svg)](http://grommet.io/slackin)  [![Build Status](https://api.travis-ci.org/grommet/grommet.svg)](https://travis-ci.org/grommet/grommet)  [![Coverage Status](https://coveralls.io/repos/grommet/grommet/badge.svg)](https://coveralls.io/r/grommet/grommet) [![Code Climate](https://codeclimate.com/github/grommet/grommet/badges/gpa.svg)](https://codeclimate.com/github/grommet/grommet)  [![Dependency Status](https://david-dm.org/grommet/grommet.svg)](https://david-dm.org/grommet/grommet)  [![devDependency Status](https://david-dm.org/grommet/grommet/dev-status.svg)](https://david-dm.org/grommet/grommet#info=devDependencies)
 
 [![Sauce Test Status](https://saucelabs.com/browser-matrix/alansouzahp.svg)](https://saucelabs.com/u/alansouzahp)
 
@@ -12,7 +12,7 @@ Visit the [grommet.io](http://grommet.io/) website for more information.
 
 ### Support / Contributing
 
-Before opening an issue or pull request, please read the [Contributing](https://github.com/HewlettPackard/grommet/blob/master/CONTRIBUTING.md) guide.
+Before opening an issue or pull request, please read the [Contributing](https://github.com/grommet/grommet/blob/master/CONTRIBUTING.md) guide.
 
 ### Hello World
 
@@ -36,8 +36,8 @@ Before opening an issue or pull request, please read the [Contributing](https://
 
 ### Build
 
-  Refer to the [Grommet Build Wiki](https://github.com/HewlettPackard/grommet/wiki/Building-Grommet) for instructions on how to install your local copy of Grommet.
+  Refer to the [Grommet Build Wiki](https://github.com/grommet/grommet/wiki/Building-Grommet) for instructions on how to install your local copy of Grommet.
 
 ### Release History
 
-  See the [Change Log](https://github.com/HewlettPackard/grommet/wiki/Change-Log).
+  See the [Change Log](https://github.com/grommet/grommet/wiki/Change-Log).
