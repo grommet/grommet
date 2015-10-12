@@ -29,7 +29,7 @@
     margin-bottom: quarter($inuit-base-spacing-unit);
 
     &:hover {
-      color: $text-color;
+      color: $link-hover-color;
     }
 
     &.active {

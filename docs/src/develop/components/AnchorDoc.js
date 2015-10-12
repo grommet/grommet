@@ -63,6 +63,14 @@ var AnchorDoc = React.createClass({
           </div>
           <pre><code className="html">{"<Anchor href=\"\" target=\"_blank\" onClick={this._onClick}>Text</Anchor>"}</code></pre>
 
+          <h3>In a Header</h3>
+          <div className="example">
+            <h3>
+              <Anchor href="" onClick={this._onClick}>Text</Anchor>
+            </h3>
+          </div>
+          <pre><code className="html hljs xml">{"<h3><Anchor href=\"\" onClick={this._onClick}>Text</Anchor></h3>"}</code></pre>
+
         </section>
 
         <Section colorIndex="neutral-1" pad="large">
