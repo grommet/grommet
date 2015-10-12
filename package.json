@@ -97,7 +97,8 @@
     "webpack": "^1.9.11",
     "webpack-dev-server": "^1.8.0",
     "webpack-stream": "^2.0.0",
-    "yargs": "^3.8.0"
+    "yargs": "^3.8.0",
+    "path-is-absolute": "^1.0.0"
   },
   "devDependencies": {
     "gulp-chug": "^0.4.2",
