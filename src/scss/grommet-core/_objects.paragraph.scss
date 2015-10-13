@@ -11,7 +11,14 @@
   }
 
   &--large {
-    @include inuit-font-size($paragraph-large-font-size);
+    // inuit-font-size sets the line-height to 24px when the font size is 24px.
+    // We want a bit more leading between lines than that.
+    // See also base.text h3
+    @if $paragraph-large-font-size == 24px {
+      @include inuit-font-size($paragraph-large-font-size, 28px);
+    } @else {
+      @include inuit-font-size($paragraph-large-font-size);
+    }
 
     a {
       color: $brand-color;
