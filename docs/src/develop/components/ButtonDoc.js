@@ -76,6 +76,11 @@ var ButtonDoc = React.createClass({
           </div>
           <pre><code className="html hljs xml">{"<Button label=\"Action\" />"}</code></pre>
 
+          <h3>Long</h3>
+          <div className="example">
+            <Button label="Action with a really long name that should be shortened" onClick={this._onClick} />
+          </div>
+
         </section>
 
         <Section colorIndex="neutral-1" pad="medium">
