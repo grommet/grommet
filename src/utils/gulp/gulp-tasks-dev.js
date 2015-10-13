@@ -8,7 +8,10 @@ var runSequence = require('run-sequence');
 module.exports = function(gulp, options, webpackConfig, dist) {
 
   gulp.task('dev-preprocess', function(callback) {
-    if (options.devPreprocess) {
+    var argv = require('yargs').argv;
+    if (argv.skipPreprocess) {
+      runSequence('copy', callback);
+    } else if (options.devPreprocess) {
       runSequence('preprocess', options.devPreprocess, callback);
     } else {
       runSequence('preprocess', callback);
