@@ -52,7 +52,7 @@ var LoginFormDoc = React.createClass({
               rememberMe={true} forgotPassword={<a>Forgot password?</a>}
               errors={["Invalid username or password."]}/>
           </div>
-          <pre><code className="html hljs xml">{"<LoginForm\n  logo={<Logo />}\n  title=\"Product Name\"\n  rememberMe={true}\n  forgotPassword={<a>...</a>}\n  onSubmit={...}\n  errors={[\"Invalid username or password.\"]}\n/>"}</code></pre>
+          <pre><code className="html hljs xml">{"<LoginForm\n  logo={<Logo />}\n  title=\"Product Name\"\n  secondaryText=\"Product Secondary Text\"\n  rememberMe={true}\n  forgotPassword={<a>...</a>}\n  onSubmit={...}\n  errors={[\"Invalid username or password.\"]}\n/>"}</code></pre>
 
         </section>
 
