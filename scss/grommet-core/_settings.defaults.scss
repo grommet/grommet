@@ -32,6 +32,9 @@ $tile-extra-large-size: round($inuit-base-spacing-unit * 24) !default;
 
 $control-size: $inuit-base-spacing-unit !default; // 24px
 
+$button-min-width: round($inuit-base-spacing-unit * 5) !default;
+$button-max-width: round($inuit-base-spacing-unit * 16) !default;
+
 $input-border-width: 1px !default;
 $control-border-width: 2px !default;
 $button-border-width: 2px !default;
