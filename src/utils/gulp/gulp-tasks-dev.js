@@ -130,9 +130,11 @@ module.exports = function(gulp, options, webpackConfig, dist) {
       } else {
         var openHost = (host === '0.0.0.0') ? 'localhost' : host;
         console.log('[webpack-dev-server] started: opening the app in your default browser...');
+        var suffix = options.publicPath ? options.publicPath + '/' : '';
+        var openURL = 'http://' + openHost + ':' + options.devServerPort + '/webpack-dev-server/' + suffix;
         gulp.src(path.join(dist, 'index.html'))
         .pipe(open({
-          uri: 'http://' + openHost + ':' + options.devServerPort + '/webpack-dev-server/'
+          uri: openURL
         }));
       }
     });
