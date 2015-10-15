@@ -8,7 +8,7 @@ var React = require('react');
 var merge = require('lodash/object/merge');
 var pick = require('lodash/object/pick');
 var keys = require('lodash/object/keys');
-var KeyboardAccelerators = require('../mixins/KeyboardAccelerators');
+var KeyboardAccelerators = require('../utils/KeyboardAccelerators');
 var Drop = require('../utils/Drop');
 var Responsive = require('../utils/Responsive');
 var Box = require('./Box');
@@ -36,8 +36,6 @@ var MenuDrop = React.createClass({
     router: React.PropTypes.func
   },
 
-  mixins: [KeyboardAccelerators],
-
   getChildContext: function getChildContext() {
     return { router: this.props.router };
   },
@@ -47,7 +45,7 @@ var MenuDrop = React.createClass({
       up: this._onUpKeyPress,
       down: this._onDownKeyPress
     };
-    this.startListeningToKeyboard(this._keyboardHandlers);
+    KeyboardAccelerators.startListeningToKeyboard(this, this._keyboardHandlers);
     var menuItems = this.refs.navContainer.getDOMNode().childNodes;
     for (var i = 0; i < menuItems.length; i++) {
       var classes = menuItems[i].className.toString();
@@ -67,7 +65,7 @@ var MenuDrop = React.createClass({
   },
 
   componentWillUnmount: function componentWillUnmount() {
-    this.stopListeningToKeyboard(this._keyboardHandlers);
+    KeyboardAccelerators.stopListeningToKeyboard(this, this._keyboardHandlers);
   },
 
   _onUpKeyPress: function _onUpKeyPress(event) {
@@ -182,8 +180,6 @@ var Menu = React.createClass({
     router: React.PropTypes.func
   },
 
-  mixins: [KeyboardAccelerators],
-
   getDefaultProps: function getDefaultProps() {
     return {
       closeOnClick: true,
@@ -256,8 +252,8 @@ var Menu = React.createClass({
 
     switch (this.state.state) {
       case 'collapsed':
-        this.stopListeningToKeyboard(focusedKeyboardHandlers);
-        this.stopListeningToKeyboard(activeKeyboardHandlers);
+        KeyboardAccelerators.stopListeningToKeyboard(this, focusedKeyboardHandlers);
+        KeyboardAccelerators.stopListeningToKeyboard(this, activeKeyboardHandlers);
         document.removeEventListener('click', this._onClose);
         if (this._drop) {
           this._drop.remove();
@@ -265,12 +261,12 @@ var Menu = React.createClass({
         }
         break;
       case 'focused':
-        this.stopListeningToKeyboard(activeKeyboardHandlers);
-        this.startListeningToKeyboard(focusedKeyboardHandlers);
+        KeyboardAccelerators.stopListeningToKeyboard(this, activeKeyboardHandlers);
+        KeyboardAccelerators.startListeningToKeyboard(this, focusedKeyboardHandlers);
         break;
       case 'expanded':
-        this.stopListeningToKeyboard(focusedKeyboardHandlers);
-        this.startListeningToKeyboard(activeKeyboardHandlers);
+        KeyboardAccelerators.stopListeningToKeyboard(this, focusedKeyboardHandlers);
+        KeyboardAccelerators.startListeningToKeyboard(this, activeKeyboardHandlers);
         if (prevState.state !== 'expanded') {
           document.addEventListener('click', this._onClose);
           this._drop = Drop.add(this.refs.control.getDOMNode(), this._renderDrop(), this.props.dropAlign);
@@ -288,6 +284,7 @@ var Menu = React.createClass({
 
   componentWillUnmount: function componentWillUnmount() {
     document.removeEventListener('click', this._onClose);
+    KeyboardAccelerators.stopListeningToKeyboard(this);
     if (this._drop) {
       this._drop.remove();
     }
