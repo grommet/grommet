@@ -9,12 +9,12 @@ module.exports = function(gulp, options, webpackConfig, dist) {
   gulp.task('dist-preprocess', function(callback) {
     var argv = require('yargs').argv;
     if (argv.skipPreprocess) {
-      runSequence('copy', callback);
+      callback();
     } else if (options.distPreprocess) {
       if (process.env.CI) {
         runSequence('preprocess', options.distPreprocess, 'copy', callback);
       } else {
-        runSequence('preprocess', options.distPreprocess, 'copy', 'test', callback);
+        runSequence('preprocess', options.distPreprocess, 'copy', callback); ///'test', callback);
       }
     } else {
       if (process.env.CI) {

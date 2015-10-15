@@ -1,6 +1,7 @@
 // (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
+var ReactDOM = require('react-dom');
 var IntlMixin = require('../mixins/GrommetIntlMixin');
 
 var Legend = require('./Legend');
@@ -179,8 +180,8 @@ var Meter = React.createClass({
 
     if ('right' === this.state.legendPlacement) {
       if (this.refs.legend) {
-        var graphicHeight = this.refs.activeGraphic.getDOMNode().offsetHeight;
-        var legendHeight = this.refs.legend.getDOMNode().offsetHeight;
+        var graphicHeight = this.refs.activeGraphic.offsetHeight;
+        var legendHeight = ReactDOM.findDOMNode(this.refs.legend).offsetHeight;
         this.setState({tallLegend: (legendHeight > graphicHeight)});
       }
     }

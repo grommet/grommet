@@ -47,7 +47,7 @@ var List = React.createClass({
 
   componentDidMount: function () {
     if (this.props.onMore) {
-      this.startListeningForScroll(this.refs.more.getDOMNode(), this.props.onMore);
+      this.startListeningForScroll(this.refs.more, this.props.onMore);
     }
   },
 
@@ -58,7 +58,7 @@ var List = React.createClass({
   componentDidUpdate: function () {
     this.stopListeningForScroll();
     if (this.props.onMore) {
-      this.startListeningForScroll(this.refs.more.getDOMNode(), this.props.onMore);
+      this.startListeningForScroll(this.refs.more, this.props.onMore);
     }
   },
 

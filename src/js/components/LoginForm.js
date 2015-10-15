@@ -31,13 +31,13 @@ var LoginForm = React.createClass({
   },
 
   componentDidMount: function() {
-    this.refs.username.getDOMNode().focus();
+    this.refs.username.focus();
   },
 
   _onSubmit: function (event) {
     event.preventDefault();
-    var username = this.refs.username.getDOMNode().value.trim();
-    var password = this.refs.password.getDOMNode().value.trim();
+    var username = this.refs.username.value.trim();
+    var password = this.refs.password.value.trim();
     if (this.props.onSubmit) {
       this.props.onSubmit({username: username, password: password});
     }

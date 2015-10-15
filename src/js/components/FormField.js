@@ -20,7 +20,7 @@ var FormField = React.createClass({
   },
 
   componentDidMount: function () {
-    var contentsElement = this.refs.contents.getDOMNode();
+    var contentsElement = this.refs.contents;
     var inputElements = contentsElement.querySelectorAll('input, textarea, select');
     if (inputElements.length === 1) {
       this._inputElement = inputElements[0];

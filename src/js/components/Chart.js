@@ -264,9 +264,9 @@ var Chart = React.createClass({
   _alignLegend: function () {
     if (this.state.activeXIndex >= 0 && this.refs.cursor) {
       var bounds = this.state.bounds;
-      var cursorElement = this.refs.cursor.getDOMNode();
+      var cursorElement = this.refs.cursor;
       var cursorRect = cursorElement.getBoundingClientRect();
-      var element = this.refs.chart.getDOMNode();
+      var element = this.refs.chart;
       var rect = element.getBoundingClientRect();
       var legendElement = this.refs.legend.getDOMNode();
       var legendRect = legendElement.getBoundingClientRect();
@@ -289,7 +289,7 @@ var Chart = React.createClass({
     if (this.props.legend && 'below' !== this.props.legend.position) {
       this._alignLegend();
     }
-    var element = this.refs.chart.getDOMNode();
+    var element = this.refs.chart;
     var rect = element.getBoundingClientRect();
     if (rect.width !== this.state.width || rect.height !== this.state.height) {
       var bounds = this._bounds(this.props.series, this.props.xAxis,
