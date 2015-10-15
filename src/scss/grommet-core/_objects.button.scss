@@ -16,7 +16,6 @@ $button-horizontal-padding: round($inuit-base-spacing-unit * 1.5) - $button-bord
   outline: none;
 
   @include media-query(lap-and-up) {
-    -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
