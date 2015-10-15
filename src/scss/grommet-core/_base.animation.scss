@@ -44,5 +44,6 @@ $fade-in-duration: 0.5s;
 }
 
 @mixin transform($args...) {
+  -webkit-transform: $args;
   transform: $args;
 }
