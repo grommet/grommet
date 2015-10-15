@@ -6,17 +6,17 @@ a,
   text-decoration: $brand-text-decoration;
   cursor: pointer;
 
-  &:hover {
-    text-decoration: underline;
-    color: $hover-text-color;
-  }
-
   &:visited {
     color: $link-color;
   }
 
   &.active {
     color: $text-color;
+  }
+
+  &:hover {
+    text-decoration: underline;
+    color: $link-hover-color;
   }
 
   [class*="background-color-index-"]:not[class*="background-color-index-light"] &,

@@ -8,7 +8,10 @@ var runSequence = require('run-sequence');
 module.exports = function(gulp, options, webpackConfig, dist) {
 
   gulp.task('dev-preprocess', function(callback) {
-    if (options.devPreprocess) {
+    var argv = require('yargs').argv;
+    if (argv.skipPreprocess) {
+      runSequence('copy', callback);
+    } else if (options.devPreprocess) {
       runSequence('preprocess', options.devPreprocess, callback);
     } else {
       runSequence('preprocess', callback);
@@ -41,6 +44,10 @@ module.exports = function(gulp, options, webpackConfig, dist) {
       devWebpackConfig.resolve = {};
     }
 
+    if (!devWebpackConfig.resolveLoader) {
+      devWebpackConfig.resolveLoader = {};
+    }
+
     devWebpackConfig.module.loaders = webpackConfig.module.loaders;
     if (options.webpack.module && options.webpack.module.loaders) {
       options.webpack.module.loaders.forEach(function(loader) {
@@ -61,6 +68,12 @@ module.exports = function(gulp, options, webpackConfig, dist) {
 
     devWebpackConfig.resolve.extensions = merge(devWebpackConfig.resolve.extensions || [],
       ['', '.js', '.json', '.htm', '.html', '.scss', '.md', '.svg']);
+
+    devWebpackConfig.resolve.modulesDirectories = merge(devWebpackConfig.resolve.modulesDirectories || [],
+      ['node_modules/grommet/node_modules', 'node_modules']);
+
+    devWebpackConfig.resolveLoader.modulesDirectories = merge(devWebpackConfig.resolveLoader.modulesDirectories || [],
+      ['node_modules/grommet/node_modules', 'node_modules']);
 
     var devServerConfig = {
       contentBase: dist,
@@ -117,9 +130,11 @@ module.exports = function(gulp, options, webpackConfig, dist) {
       } else {
         var openHost = (host === '0.0.0.0') ? 'localhost' : host;
         console.log('[webpack-dev-server] started: opening the app in your default browser...');
+        var suffix = options.publicPath ? options.publicPath + '/' : '';
+        var openURL = 'http://' + openHost + ':' + options.devServerPort + '/webpack-dev-server/' + suffix;
         gulp.src(path.join(dist, 'index.html'))
         .pipe(open({
-          uri: 'http://' + openHost + ':' + options.devServerPort + '/webpack-dev-server/'
+          uri: openURL
         }));
       }
     });

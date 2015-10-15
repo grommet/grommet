@@ -7,6 +7,7 @@ var path = require('path');
 var fs = require('fs');
 var loader = require('grommet-icon-loader');
 var mkdirp = require('mkdirp');
+var pathIsAbsolute = require('path-is-absolute');
 
 String.prototype.endsWith = function(suffix) {
   return this.indexOf(suffix, this.length - suffix.length) !== -1;
@@ -59,7 +60,9 @@ module.exports = function(gulp, opts) {
           test: /\.scss$/,
           loader: 'style!css!sass?outputStyle=expanded&' +
             'includePaths[]=' +
-            (encodeURIComponent(path.resolve(options.base || process.cwd(), './node_modules')))
+            (encodeURIComponent(path.resolve(options.base || process.cwd(), './node_modules'))) +
+            '&includePaths[]=' +
+            (encodeURIComponent(path.resolve(options.base || process.cwd(), './node_modules/grommet/node_modules')))
         },
         {
           test: /\.css$/,
@@ -106,7 +109,7 @@ module.exports = function(gulp, opts) {
     var iconsConfig = options.icons || {};
     var iconInputFolder = iconsConfig.source;
     if (iconInputFolder) {
-      if (!path.isAbsolute(iconsConfig.source)) {
+      if (!pathIsAbsolute(iconsConfig.source)) {
         iconInputFolder = path.resolve(basePath, iconsConfig.source || 'src/img/icons');
       }
 
@@ -128,7 +131,7 @@ module.exports = function(gulp, opts) {
                   async: function() {
                     return function(err, result) {
                       var iconDestFolder = iconsConfig.destination;
-                      if (!path.isAbsolute(iconsConfig.destination)) {
+                      if (!pathIsAbsolute(iconsConfig.destination)) {
                         iconDestFolder = path.resolve(basePath, iconsConfig.destination);
                       }
 

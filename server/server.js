@@ -18,7 +18,7 @@ var proxy = httpProxy.createProxyServer({
 var request = require('request');
 var docs = require('./docs');
 var ctoAppTuner = require('./cto-app-tuner');
-var todoAppModular = require('./todo-app-modular');
+var grommetTodo = require('./grommet-todo');
 var cabler = require('./cabler');
 var theme = require('./theme');
 
@@ -40,6 +40,10 @@ if (!process.env.SILENT_MODE) {
 router.get('/', function (req, res) {
   var docpath = path.join('/docs/', theme.picker(req.ip));
   res.redirect(301, docpath);
+});
+
+router.get('/todo-app-modular', function (req, res) {
+  res.redirect(301, '/grommet-todo');
 });
 
 router.all('/docs', function (req, res) {
@@ -165,7 +169,7 @@ app.get('/robots.txt', function(req, res) {
 app.
   use('', router).
   use('/cto-app-tuner', ctoAppTuner).
-  use('/todo-app-modular', todoAppModular).
+  use('/grommet-todo', grommetTodo).
   use('/cabler', cabler).
   use('/hello-world', express.static(path.join(__dirname, '/../examples/hello-world'))).
   use('/assets', express.static(path.join(__dirname, '/../docs/dist/assets'))).

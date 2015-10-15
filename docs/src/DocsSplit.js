@@ -78,7 +78,7 @@ var DocsSplit = React.createClass({
       <Title responsive={false}>
         <Link to="docs">
           <Box align="center" direction="row">
-            <GrommetLogo a11yTitle=""/>
+            <GrommetLogo />
           </Box>
         </Link>
       </Title>
