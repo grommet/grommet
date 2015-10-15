@@ -18,7 +18,6 @@ $button-horizontal-padding: round($inuit-base-spacing-unit) - $button-border-wid
   max-width: $button-max-width;
 
   @include media-query(lap-and-up) {
-    -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
