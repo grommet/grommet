@@ -2,7 +2,7 @@
 
 var React = require('react');
 var CloseIcon = require('./icons/base/Close');
-var KeyboardAccelerators = require('../mixins/KeyboardAccelerators');
+var KeyboardAccelerators = require('../utils/KeyboardAccelerators');
 var DOMUtils = require('../utils/DOM');
 var Button = require('./Button');
 
@@ -28,8 +28,6 @@ var LayerOverlay = React.createClass({
     router: React.PropTypes.func
   },
 
-  mixins: [KeyboardAccelerators],
-
   getChildContext: function () {
     return {router: this.props.router};
   },
@@ -43,7 +41,7 @@ var LayerOverlay = React.createClass({
     }
 
     if (this.props.onClose) {
-      this.startListeningToKeyboard({
+      KeyboardAccelerators.startListeningToKeyboard(this, {
         tab: this._processTab,
         esc: this.props.onClose
       });
@@ -58,7 +56,7 @@ var LayerOverlay = React.createClass({
     }
 
     if (this.props.onClose) {
-      this.stopListeningToKeyboard({
+      KeyboardAccelerators.stopListeningToKeyboard(this, {
         tab: this._processTab,
         esc: this.props.onClose
       });

@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var KeyboardAccelerators = require('../mixins/KeyboardAccelerators');
+var KeyboardAccelerators = require('../utils/KeyboardAccelerators');
 var Drop = require('../utils/Drop');
 var Responsive = require('../utils/Responsive');
 var SearchIcon = require('./icons/Search');
@@ -24,7 +24,7 @@ var Search = React.createClass({
     value: React.PropTypes.string
   },
 
-  mixins: [KeyboardAccelerators, IntlMixin],
+  mixins: [IntlMixin],
 
   getDefaultProps: function () {
     return {
@@ -69,12 +69,12 @@ var Search = React.createClass({
     // the order here is important, need to turn off keys before turning on
 
     if (! this.state.controlFocused && prevState.controlFocused) {
-      this.stopListeningToKeyboard(focusedKeyboardHandlers);
+      KeyboardAccelerators.stopListeningToKeyboard(this, focusedKeyboardHandlers);
     }
 
     if (! this.state.dropActive && prevState.dropActive) {
       document.removeEventListener('click', this._onRemoveDrop);
-      this.stopListeningToKeyboard(activeKeyboardHandlers);
+      KeyboardAccelerators.stopListeningToKeyboard(this, activeKeyboardHandlers);
       if (this._drop) {
         this._drop.remove();
         this._drop = null;
@@ -82,7 +82,7 @@ var Search = React.createClass({
     }
 
     if (this.state.controlFocused && ! prevState.controlFocused) {
-      this.startListeningToKeyboard(focusedKeyboardHandlers);
+      KeyboardAccelerators.startListeningToKeyboard(this, focusedKeyboardHandlers);
     }
 
     if (this.state.dropActive && ! prevState.dropActive) {
@@ -93,7 +93,7 @@ var Search = React.createClass({
       setTimeout(function () {
         document.addEventListener('click', this._onRemoveDrop);
       }.bind(this), 100);
-      this.startListeningToKeyboard(activeKeyboardHandlers);
+      KeyboardAccelerators.startListeningToKeyboard(this, activeKeyboardHandlers);
 
       var baseElement =
         (this.refs.control ? this.refs.control : this.refs.input).getDOMNode();
@@ -105,6 +105,7 @@ var Search = React.createClass({
 
   componentWillUnmount: function () {
     document.removeEventListener('click', this._onRemoveDrop);
+    KeyboardAccelerators.stopListeningToKeyboard(this);
     if (this._responsive) {
       this._responsive.stop();
     }

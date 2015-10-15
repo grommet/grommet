@@ -2,7 +2,7 @@
 
 var React = require('react');
 var IntlMixin = require('../../mixins/GrommetIntlMixin');
-var KeyboardAccelerators = require('../../mixins/KeyboardAccelerators');
+var KeyboardAccelerators = require('../../utils/KeyboardAccelerators');
 
 var Clear = React.createClass({
 
@@ -24,7 +24,7 @@ var Clear = React.createClass({
 
   componentDidMount: function () {
     if (this.props.onClick) {
-      this.startListeningToKeyboard({
+      KeyboardAccelerators.startListeningToKeyboard(this, {
         enter: this._handleKeyboardEvent,
         space: this._handleKeyboardEvent
       });
@@ -33,7 +33,7 @@ var Clear = React.createClass({
 
   componentWillUnmount: function () {
     if (this.props.onClick) {
-      this.stopListeningToKeyboard({
+      KeyboardAccelerators.stopListeningToKeyboard(this, {
         enter: this._handleKeyboardEvent,
         space: this._handleKeyboardEvent
       });

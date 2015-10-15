@@ -76,6 +76,7 @@ var Grommet = {
   // Utils
   Cookies: require('./utils/Cookies'),
   DOM: require('./utils/DOM'),
+  KeyboardAccelerators: require('./utils/KeyboardAccelerators'),
   Locale: require('./utils/Locale'),
   Rest: require('./utils/Rest'),
   RestWatch: require('./utils/RestWatch'),
