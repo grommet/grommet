@@ -82,7 +82,9 @@
     "mkdirp": "^0.5.1",
     "moment": "^2.8.3",
     "node-sass": "^3.2.0",
+    "path-is-absolute": "^1.0.0",
     "react": "^0.14.0",
+    "react-dom": "^0.14.0",
     "react-gravatar": "^2.0.0",
     "react-intl": "^1.2.0",
     "rimraf": "^2.4.3",
@@ -96,8 +98,7 @@
     "webpack": "^1.9.11",
     "webpack-dev-server": "^1.8.0",
     "webpack-stream": "^2.0.0",
-    "yargs": "^3.8.0",
-    "path-is-absolute": "^1.0.0"
+    "yargs": "^3.8.0"
   },
   "devDependencies": {
     "gulp-chug": "^0.4.2",
