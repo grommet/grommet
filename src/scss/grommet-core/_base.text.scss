@@ -62,6 +62,10 @@ p {
   margin-bottom: $inuit-base-spacing-unit;
 }
 
+blockquote {
+  @include inuit-font-size(36px);
+}
+
 code.hljs {
   border: 1px solid $border-color;
 }

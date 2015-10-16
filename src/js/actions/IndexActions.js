@@ -69,10 +69,9 @@ function get(url, params, action, context) {
 }
 
 function startWatching(url, params, action, context) {
-  var request = RestWatch.start(url, normalizeParams(params),
-    function (result) {
-      action.completed(result, context, request);
-    });
+  var request = RestWatch.start(url, normalizeParams(params), function (result) {
+    action.completed(result, context, request);
+  });
   requests.push(request);
 }
 

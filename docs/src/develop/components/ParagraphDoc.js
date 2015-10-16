@@ -54,6 +54,19 @@ var ParagraphDoc = React.createClass({
 
         </section>
 
+
+        <section>
+          <h2>Misc base text elements</h2>
+          <div className="example">
+            <h1><strong>H1</strong> Light</h1>
+            <h2><strong>H2</strong> Light</h2>
+            <h3><strong>H3</strong> Light</h3>
+            <h4><strong>H4</strong> Light</h4>
+            <h5><strong>H5</strong> Light</h5>
+            <blockquote>Blockquote</blockquote>
+          </div>
+        </section>
+
       </DocsArticle>
     );
   }

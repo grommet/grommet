@@ -106,6 +106,13 @@ var IconDoc = React.createClass({
       moreIcons = this._onMoreIcons;
     }
 
+    var Icon;
+    if (iconsMap.hasOwnProperty(this.state.value)) {
+      Icon = iconsMap[this.state.value];
+    } else {
+      Icon = iconsMap.cloud; // just picking one as an example
+    }
+
     return (
       <DocsArticle title="Icon" colorIndex="neutral-3">
 
@@ -115,9 +122,31 @@ var IconDoc = React.createClass({
         <section>
           <h2>Options</h2>
           <dl>
-            <dt><code>iconName           string</code></dt>
+            <dt><code>colorIndex   {"{category}-{index}"}</code></dt>
+            <dd>The color identifier to use for the stroke color.
+              For example: <code>"brand"</code></dd>
+            <dt><code>iconName     string</code></dt>
             <dd>Name of the icon (e.g. 'SocialGithub').</dd>
+            <dt><code>large        true|false</code></dt>
+            <dd>Larger sized version.</dd>
           </dl>
+        </section>
+
+        <section>
+          <h2>Examples</h2>
+
+          <h3>Default</h3>
+          <div className="example">
+            <Icon />
+          </div>
+          <pre><code className="html hljs xml">{"<SomeIcon /> ..."}</code></pre>
+
+          <h3>Large, colored</h3>
+          <div className="example">
+            <Icon large={true} colorIndex="brand" />
+          </div>
+          <pre><code className="html hljs xml">{"<SomeIcon large={true} colorIndex=\"brand\" /> ..."}</code></pre>
+
         </section>
 
         <section>
@@ -126,9 +155,6 @@ var IconDoc = React.createClass({
             <SearchInput id="iconSearchInput" name="iconSearchInput"
               onChange={this._onChange} value={this.state.inputData} />
           </Header>
-        </section>
-
-        <section>
           <Tiles flush={true} onMore={moreIcons}>
             {tiles}
           </Tiles>
