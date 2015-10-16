@@ -9,6 +9,7 @@ $form-vertical-padding: quarter($inuit-base-spacing-unit);
   border: $input-border-width solid $border-color;
   margin-bottom: - $input-border-width; // so borders overlap
   background-color: $form-field-background-color;
+  color: $text-color;
   opacity: 1; // for --hidden
 
   @include media-query(lap-and-up) {
