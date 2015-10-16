@@ -23,11 +23,16 @@
     fill: inherit;
   }
 
+  @include graph-stroke-color();
+  @include graph-fill-color();
+
   @include media-query(lap-and-up) {
     transition: all $base-animation-duration ease-in-out;
   }
 
-  &:hover {
+  a > &:hover,
+  .anchor > &:hover,
+  .button > &:hover {
     fill: $active-icon-color;
     stroke: $active-icon-color;
   }
@@ -47,7 +52,9 @@
     fill: $colored-icon-color;
     stroke: $colored-icon-color;
 
-    &:hover {
+    a > &:hover,
+    .anchor > &:hover,
+    .button > &:hover {
       fill: $active-colored-icon-color;
       stroke: $active-colored-icon-color;
     }
@@ -56,6 +63,11 @@
   &--active {
     fill: $active-icon-color;
     stroke: $active-icon-color;
+  }
+
+  &--large {
+    width: round($inuit-base-spacing-unit * 4);
+    height: round($inuit-base-spacing-unit * 4);
   }
 }
 

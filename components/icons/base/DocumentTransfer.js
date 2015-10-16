@@ -5,12 +5,16 @@
 var React = require('react');
 var IntlMixin = require('../../../mixins/GrommetIntlMixin');
 
+var CLASS_ROOT = "control-icon";
+
 var Icon = React.createClass({
   displayName: 'Icon',
 
   propTypes: {
     a11yTitle: React.PropTypes.string,
-    a11yTitleId: React.PropTypes.string
+    a11yTitleId: React.PropTypes.string,
+    colorIndex: React.PropTypes.string,
+    large: React.PropTypes.bool
   },
 
   mixins: [IntlMixin],
@@ -22,16 +26,22 @@ var Icon = React.createClass({
   },
 
   render: function render() {
-    var className = 'control-icon control-icon-document-transfer';
+    var classes = [CLASS_ROOT, CLASS_ROOT + '-document-transfer'];
+    if (this.props.large) {
+      classes.push(CLASS_ROOT + "--large");
+    }
+    if (this.props.colorIndex) {
+      classes.push("color-index-" + this.props.colorIndex);
+    }
     if (this.props.className) {
-      className += ' ' + this.props.className;
+      classes.push(this.props.className);
     }
 
     var a11yTitle = this.getGrommetIntlMessage(typeof this.props.a11yTitle !== "undefined" ? this.props.a11yTitle : "document-transfer");
 
     return React.createElement(
       'svg',
-      { version: '1.1', viewBox: '0 0 48 48', width: '48px', height: '48px', className: className, 'aria-labelledby': this.props.a11yTitleId },
+      { version: '1.1', viewBox: '0 0 48 48', width: '48px', height: '48px', className: classes.join(' '), 'aria-labelledby': this.props.a11yTitleId },
       React.createElement(
         'title',
         { id: this.props.a11yTitleId },
