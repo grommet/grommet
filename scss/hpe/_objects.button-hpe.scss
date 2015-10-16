@@ -8,27 +8,23 @@ $button-accent-color: #ff8d6d;
   &:not(.button--disabled) {
 
     &:hover {
-      -webkit-box-shadow: 0px 0px 0px 2px $button-border-color;
       box-shadow: 0px 0px 0px 2px $button-border-color;
     }
 
     &.button--primary {
       &:hover {
-        -webkit-box-shadow: 0px 0px 0px 2px $brand-color;
         box-shadow: 0px 0px 0px 2px $brand-color;
       }
     }
 
     &.button--secondary {
       &:hover {
-        -webkit-box-shadow: 0px 0px 0px 2px $button-secondary-color;
         box-shadow: 0px 0px 0px 2px $button-secondary-color;
       }
     }
 
     &.button--accent {
       &:hover {
-        -webkit-box-shadow: 0px 0px 0px 2px $button-accent-color;
         box-shadow: 0px 0px 0px 2px $button-accent-color;
       }
     }
@@ -36,27 +32,23 @@ $button-accent-color: #ff8d6d;
     [class*="background-color-index-"] & {
 
       &:hover {
-        -webkit-box-shadow: 0px 0px 0px 2px $colored-border-color;
         box-shadow: 0px 0px 0px 2px $colored-border-color;
       }
 
       &.button--primary {
         &:hover {
-          -webkit-box-shadow: 0px 0px 0px 2px $brand-color;
           box-shadow: 0px 0px 0px 2px $brand-color;
         }
       }
 
       &.button--secondary {
         &:hover {
-          -webkit-box-shadow: 0px 0px 0px 2px $colored-border-color;
           box-shadow: 0px 0px 0px 2px $colored-border-color;
         }
       }
 
       &.button--accent {
         &:hover {
-          -webkit-box-shadow: 0px 0px 0px 2px $button-accent-color;
           box-shadow: 0px 0px 0px 2px $button-accent-color;
         }
       }

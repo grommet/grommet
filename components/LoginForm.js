@@ -16,6 +16,7 @@ var LoginForm = React.createClass({
   propTypes: {
     logo: React.PropTypes.node,
     title: React.PropTypes.string,
+    secondaryText: React.PropTypes.string,
     usernameType: React.PropTypes.string,
     rememberMe: React.PropTypes.bool,
     forgotPassword: React.PropTypes.node,
@@ -70,21 +71,34 @@ var LoginForm = React.createClass({
       title = React.createElement(
         'h1',
         { className: CLASS_ROOT + "__title" },
-        this.props.title
+        React.createElement(
+          'strong',
+          null,
+          this.props.title
+        )
       );
     }
 
+    var secondaryText = null;
+    if (this.props.secondaryText) {
+      secondaryText = React.createElement(
+        'p',
+        { className: CLASS_ROOT + "__secondary-text" },
+        this.props.secondaryText
+      );
+    }
+
+    var rememberMe = null;
+    if (this.props.rememberMe) {
+      rememberMe = React.createElement(CheckBox, { className: CLASS_ROOT + "__remember-me",
+        id: 'remember-me', label: this.getGrommetIntlMessage('Remember me') });
+    }
+
     var footer = null;
-    if (this.props.rememberMe || this.props.forgotPassword) {
-      var rememberMe = null;
-      if (this.props.rememberMe) {
-        rememberMe = React.createElement(CheckBox, { className: CLASS_ROOT + "__remember-me",
-          id: 'remember-me', label: this.getGrommetIntlMessage('Remember me') });
-      }
+    if (this.props.forgotPassword) {
       footer = React.createElement(
         'div',
         { className: CLASS_ROOT + "__footer" },
-        rememberMe,
         this.props.forgotPassword
       );
     }
@@ -94,6 +108,7 @@ var LoginForm = React.createClass({
       { className: classes.join(' '), onSubmit: this._onSubmit },
       logo,
       title,
+      secondaryText,
       React.createElement(
         'fieldset',
         null,
@@ -109,6 +124,7 @@ var LoginForm = React.createClass({
         )
       ),
       errors,
+      rememberMe,
       React.createElement(Button, { id: CLASS_ROOT + "__submit", className: CLASS_ROOT + "__submit", primary: true, strong: true,
         type: 'submit', label: this.getGrommetIntlMessage('Log In'),
         onClick: this._onSubmit }),
