@@ -34,7 +34,7 @@ var LayerOverlay = React.createClass({
 
   componentDidMount: function () {
 
-    var items = this.refs.background.getDOMNode().getElementsByTagName('*');
+    var items = this.refs.background.getElementsByTagName('*');
     var firstFocusable = DOMUtils.getBestFirstFocusable(items);
     if (firstFocusable) {
       firstFocusable.focus();
@@ -64,7 +64,7 @@ var LayerOverlay = React.createClass({
   },
 
   _processTab: function (event) {
-    var items = this.refs.background.getDOMNode().getElementsByTagName('*');
+    var items = this.refs.background.getElementsByTagName('*');
 
     items = DOMUtils.filterByFocusable(items);
 

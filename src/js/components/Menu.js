@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
+var ReactDOM = require('react-dom');
 var merge = require('lodash/object/merge');
 var pick = require('lodash/object/pick');
 var keys = require('lodash/object/keys');
@@ -41,7 +42,7 @@ var MenuDrop = React.createClass({
       down: this._onDownKeyPress
     };
     KeyboardAccelerators.startListeningToKeyboard(this, this._keyboardHandlers);
-    var menuItems = this.refs.navContainer.getDOMNode().childNodes;
+    var menuItems = ReactDom.findDOMNode(this.refs.navContainer).childNodes;
     for (var i = 0; i < menuItems.length; i++) {
       var classes = menuItems[i].className.toString();
       var tagName = menuItems[i].tagName.toLowerCase();
@@ -65,7 +66,7 @@ var MenuDrop = React.createClass({
 
   _onUpKeyPress: function (event) {
     event.preventDefault();
-    var menuItems = this.refs.navContainer.getDOMNode().childNodes;
+    var menuItems = ReactDom.findDOMNode(this.refs.navContainer).childNodes;
     if (!this.activeMenuItem) {
       var lastMenuItem = menuItems[menuItems.length - 1];
       this.activeMenuItem = lastMenuItem;
@@ -86,14 +87,14 @@ var MenuDrop = React.createClass({
     }
 
     this.activeMenuItem.focus();
-    this.refs.menuDrop.getDOMNode().setAttribute('aria-activedescendant', this.activeMenuItem.getAttribute('id'));
+    this.refs.menuDrop.setAttribute('aria-activedescendant', this.activeMenuItem.getAttribute('id'));
     // Stops KeyboardAccelerators from calling the other listeners. Works limilar to event.stopPropagation().
     return true;
   },
 
   _onDownKeyPress: function (event) {
     event.preventDefault();
-    var menuItems = this.refs.navContainer.getDOMNode().childNodes;
+    var menuItems = ReactDom.findDOMNode(this.refs.navContainer).childNodes;
     if (!this.activeMenuItem) {
       this.activeMenuItem = menuItems[0];
     } else if (this.activeMenuItem.nextSibling) {
@@ -113,7 +114,7 @@ var MenuDrop = React.createClass({
     }
 
     this.activeMenuItem.focus();
-    this.refs.menuDrop.getDOMNode().setAttribute('aria-activedescendant', this.activeMenuItem.getAttribute('id'));
+    this.refs.menuDrop.setAttribute('aria-activedescendant', this.activeMenuItem.getAttribute('id'));
     // Stops KeyboardAccelerators from calling the other listeners. Works limilar to event.stopPropagation().
     return true;
   },
@@ -205,7 +206,7 @@ var Menu = React.createClass({
 
   componentDidMount: function () {
     if (this.refs.control) {
-      var controlElement = this.refs.control.getDOMNode();
+      var controlElement = this.refs.control;
       this.setState({
         dropId: 'menu-drop-' + controlElement.getAttribute('data-reactid')
       });
@@ -263,7 +264,7 @@ var Menu = React.createClass({
         KeyboardAccelerators.startListeningToKeyboard(this, activeKeyboardHandlers);
         if (prevState.state !== 'expanded') {
           document.addEventListener('click', this._onClose);
-          this._drop = Drop.add(this.refs.control.getDOMNode(),
+          this._drop = Drop.add(this.refs.control,
             this._renderDrop(), this.props.dropAlign);
           this._drop.container.focus();
         }
@@ -271,7 +272,7 @@ var Menu = React.createClass({
         break;
     }
     if (this.refs.control) {
-      var controlElement = this.refs.control.getDOMNode();
+      var controlElement = this.refs.control;
       var expanded = this.state.state === 'expanded';
       controlElement.setAttribute('aria-expanded', expanded);
     }
@@ -295,10 +296,11 @@ var Menu = React.createClass({
 
   _onClose: function () {
     this.setState({state: 'collapsed'});
-    if (document.activeElement === this.getDOMNode()) {
+    var element = ReactDOM.findDOMNode(this);
+    if (document.activeElement === element) {
       this.setState({state: 'focused'});
     } else {
-      this.getDOMNode().focus();
+      element.focus();
     }
   },
 

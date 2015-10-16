@@ -96,7 +96,7 @@ var Search = React.createClass({
       KeyboardAccelerators.startListeningToKeyboard(this, activeKeyboardHandlers);
 
       var baseElement =
-        (this.refs.control ? this.refs.control : this.refs.input).getDOMNode();
+        (this.refs.control ? this.refs.control : this.refs.input);
       this._drop = Drop.add(baseElement, this._renderDrop(), this.props.dropAlign);
 
       document.getElementById('search-drop-input').focus();
@@ -133,7 +133,7 @@ var Search = React.createClass({
   },
 
   _onFocusInput: function () {
-    this.refs.input.getDOMNode().select();
+    this.refs.input.select();
     this.setState({
       dropActive: (! this.state.inline || this.props.suggestions),
       activeSuggestionIndex: -1
@@ -196,7 +196,7 @@ var Search = React.createClass({
   focus: function () {
     var ref = this.refs.input || this.refs.control;
     if (ref) {
-      ref.getDOMNode().focus();
+      ref.focus();
     }
   },
 
