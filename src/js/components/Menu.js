@@ -42,7 +42,7 @@ var MenuDrop = React.createClass({
       down: this._onDownKeyPress
     };
     KeyboardAccelerators.startListeningToKeyboard(this, this._keyboardHandlers);
-    var menuItems = ReactDom.findDOMNode(this.refs.navContainer).childNodes;
+    var menuItems = ReactDOM.findDOMNode(this.refs.navContainer).childNodes;
     for (var i = 0; i < menuItems.length; i++) {
       var classes = menuItems[i].className.toString();
       var tagName = menuItems[i].tagName.toLowerCase();
@@ -66,7 +66,7 @@ var MenuDrop = React.createClass({
 
   _onUpKeyPress: function (event) {
     event.preventDefault();
-    var menuItems = ReactDom.findDOMNode(this.refs.navContainer).childNodes;
+    var menuItems = ReactDOM.findDOMNode(this.refs.navContainer).childNodes;
     if (!this.activeMenuItem) {
       var lastMenuItem = menuItems[menuItems.length - 1];
       this.activeMenuItem = lastMenuItem;
@@ -94,7 +94,7 @@ var MenuDrop = React.createClass({
 
   _onDownKeyPress: function (event) {
     event.preventDefault();
-    var menuItems = ReactDom.findDOMNode(this.refs.navContainer).childNodes;
+    var menuItems = ReactDOM.findDOMNode(this.refs.navContainer).childNodes;
     if (!this.activeMenuItem) {
       this.activeMenuItem = menuItems[0];
     } else if (this.activeMenuItem.nextSibling) {
