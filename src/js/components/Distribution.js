@@ -20,11 +20,11 @@ var Distribution = React.createClass({
       colorIndex: React.PropTypes.string,
       important: React.PropTypes.bool,
       onClick: React.PropTypes.func,
-      icon: {
+      icon: React.PropTypes.shape({
         width: React.PropTypes.number,
         height: React.PropTypes.number,
         svgElement: React.PropTypes.node
-      }
+      })
     })),
     size: React.PropTypes.oneOf(['small', 'medium', 'large']),
     small: React.PropTypes.bool,
@@ -74,7 +74,7 @@ var Distribution = React.createClass({
       this.setState({legendPosition: 'right'});
     }
 
-    var graphic = this.refs.graphic.getDOMNode();
+    var graphic = this.refs.graphic;
     var rect = graphic.getBoundingClientRect();
     if (rect.width !== this.state.width || rect.height !== this.state.height) {
       this.setState({
@@ -84,7 +84,7 @@ var Distribution = React.createClass({
     }
 
     // adjust box label positions
-    var container = this.refs.container.getDOMNode();
+    var container = this.refs.container;
     var labels = container.querySelectorAll('.distribution__label');
     for (var i = 0; i < labels.length; i += 1) {
       var label = labels[i];

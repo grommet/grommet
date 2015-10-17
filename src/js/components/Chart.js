@@ -1,6 +1,7 @@
 // (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
+var ReactDOM = require('react-dom');
 var Legend = require('./Legend');
 
 var CLASS_ROOT = "chart";
@@ -21,7 +22,7 @@ var Chart = React.createClass({
     important: React.PropTypes.number,
     large: React.PropTypes.bool,
     legend: React.PropTypes.shape({
-      position: React.PropTypes.oneOf(['over', 'after']),
+      position: React.PropTypes.oneOf(['overlay', 'after']),
       total: React.PropTypes.bool
     }),
     max: React.PropTypes.number,
@@ -53,7 +54,7 @@ var Chart = React.createClass({
     })),
     type: React.PropTypes.oneOf(['line', 'bar', 'area']),
     units: React.PropTypes.string,
-    xAxis: React.PropTypes.oneOfType(
+    xAxis: React.PropTypes.oneOfType([
       React.PropTypes.arrayOf(React.PropTypes.shape({
         value: React.PropTypes.oneOfType([
           React.PropTypes.number,
@@ -71,7 +72,7 @@ var Chart = React.createClass({
           label: React.PropTypes.string.isRequired
         }).isRequired)
       })
-    )
+    ])
   },
 
   getDefaultProps: function () {
@@ -268,7 +269,7 @@ var Chart = React.createClass({
       var cursorRect = cursorElement.getBoundingClientRect();
       var element = this.refs.chart;
       var rect = element.getBoundingClientRect();
-      var legendElement = this.refs.legend.getDOMNode();
+      var legendElement = ReactDOM.findDOMNode(this.refs.legend);
       var legendRect = legendElement.getBoundingClientRect();
 
       var left = cursorRect.left - rect.left - legendRect.width - 1;
