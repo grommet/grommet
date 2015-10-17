@@ -31,12 +31,12 @@ var Tiles = React.createClass({
   },
 
   _onLeft: function () {
-    var tiles = this.refs.tiles.getDOMNode();
+    var tiles = this.refs.tiles;
     Scroll.scrollBy(tiles, 'scrollLeft', - tiles.offsetWidth);
   },
 
   _onRight: function () {
-    var tiles = this.refs.tiles.getDOMNode();
+    var tiles = this.refs.tiles;
     Scroll.scrollBy(tiles, 'scrollLeft', tiles.offsetWidth);
   },
 
@@ -59,7 +59,7 @@ var Tiles = React.createClass({
   _layout: function () {
     if ('row' === this.props.direction) {
       // determine if we have more tiles than room to fit
-      var tiles = this.refs.tiles.getDOMNode();
+      var tiles = this.refs.tiles;
       // 20 is to allow some fuzziness as scrollbars come and go
       this.setState({
         overflow: (tiles.scrollWidth > (tiles.offsetWidth + 20)),
@@ -96,7 +96,7 @@ var Tiles = React.createClass({
 
   _trackHorizontalScroll: function () {
     if (this.state.overflow && ! this._tracking) {
-      var tiles = this.refs.tiles.getDOMNode();
+      var tiles = this.refs.tiles;
       tiles.addEventListener('scroll', this._onScrollHorizontal);
       this._tracking = true;
     }
@@ -104,7 +104,7 @@ var Tiles = React.createClass({
 
   componentDidMount: function () {
     if (this.props.onMore) {
-      this.startListeningForScroll(this.refs.more.getDOMNode(), this.props.onMore);
+      this.startListeningForScroll(this.refs.more, this.props.onMore);
     }
     if ('row' === this.props.direction) {
       window.addEventListener('resize', this._onResize);
@@ -117,7 +117,7 @@ var Tiles = React.createClass({
   componentDidUpdate: function () {
     this.stopListeningForScroll();
     if (this.props.onMore) {
-      this.startListeningForScroll(this.refs.more.getDOMNode(), this.props.onMore);
+      this.startListeningForScroll(this.refs.more, this.props.onMore);
     }
     if ('row' === this.props.direction) {
       this._trackHorizontalScroll();
@@ -132,7 +132,7 @@ var Tiles = React.createClass({
       window.removeEventListener('resize', this._onResize);
       document.removeEventListener('wheel', this._onWheel);
       if (this._tracking) {
-        var tiles = this.refs.tiles.getDOMNode();
+        var tiles = this.refs.tiles;
         tiles.removeEventListener('scroll', this._onScrollHorizontal);
       }
     }

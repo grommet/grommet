@@ -1,6 +1,7 @@
 // (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
+var ReactDOM = require('react-dom');
 var DOM = require('../utils/DOM');
 
 /*
@@ -86,7 +87,7 @@ var Drop = {
       drop.container.className += ' drop';
     }
     document.body.appendChild(drop.container);
-    React.render(content, drop.container);
+    ReactDOM.render(content, drop.container);
 
     drop.scrollParents = DOM.findScrollParents(drop.control);
     drop.place = this._place.bind(this, drop);
@@ -105,7 +106,7 @@ var Drop = {
   },
 
   _render: function (drop, content) {
-    React.render(content, drop.container);
+    ReactDOM.render(content, drop.container);
     // in case content changed, re-place
     setTimeout(this._place.bind(this, drop), 1);
   },
@@ -116,7 +117,7 @@ var Drop = {
     });
     window.removeEventListener('resize', drop.place);
 
-    React.unmountComponentAtNode(drop.container);
+    ReactDOM.unmountComponentAtNode(drop.container);
     document.body.removeChild(drop.container);
   },
 

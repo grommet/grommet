@@ -44,7 +44,7 @@ var Table = React.createClass({
       this._alignMirror();
     }
     if (this.props.onMore) {
-      this.startListeningForScroll(this.refs.more.getDOMNode(), this.props.onMore);
+      this.startListeningForScroll(this.refs.more, this.props.onMore);
     }
     window.addEventListener('resize', this._onResize);
   },
@@ -64,7 +64,7 @@ var Table = React.createClass({
     }
     this.stopListeningForScroll();
     if (this.props.onMore) {
-      this.startListeningForScroll(this.refs.more.getDOMNode(), this.props.onMore);
+      this.startListeningForScroll(this.refs.more, this.props.onMore);
     }
   },
 
@@ -88,7 +88,7 @@ var Table = React.createClass({
   },
 
   _clearSelected: function () {
-    var rows = this.refs.table.getDOMNode()
+    var rows = this.refs.table
       .querySelectorAll("." + SELECTED_CLASS);
     for (var i = 0; i < rows.length; i++) {
       rows[i].classList.remove(SELECTED_CLASS);
@@ -98,7 +98,7 @@ var Table = React.createClass({
   _alignSelection: function () {
     this._clearSelected();
     if (null !== this.state.selection) {
-      var tbody = this.refs.table.getDOMNode().querySelectorAll('tbody')[0];
+      var tbody = this.refs.table.querySelectorAll('tbody')[0];
       this.state.selection.forEach(function (rowIndex) {
         tbody.childNodes[rowIndex].classList.add(SELECTED_CLASS);
       });
@@ -187,9 +187,9 @@ var Table = React.createClass({
   },
 
   _buildMirror: function () {
-    var tableElement = this.refs.table.getDOMNode();
+    var tableElement = this.refs.table;
     var cells = tableElement.querySelectorAll('thead tr th');
-    var mirrorElement = this.refs.mirror.getDOMNode();
+    var mirrorElement = this.refs.mirror;
     var mirrorRow = mirrorElement.querySelectorAll('thead tr')[0];
     for (var i = 0; i < cells.length; i++) {
       mirrorRow.appendChild(cells[i].cloneNode(true));
@@ -198,9 +198,9 @@ var Table = React.createClass({
 
   _alignMirror: function () {
     if (this.refs.mirror) {
-      var tableElement = this.refs.table.getDOMNode();
+      var tableElement = this.refs.table;
       var cells = tableElement.querySelectorAll('thead tr th');
-      var mirrorElement = this.refs.mirror.getDOMNode();
+      var mirrorElement = this.refs.mirror;
       var mirrorCells = mirrorElement.querySelectorAll('thead tr th');
 
       var rect = tableElement.getBoundingClientRect();

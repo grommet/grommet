@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
+var ReactDOM = require('react-dom');
 var CloseIcon = require('./icons/base/Close');
 var KeyboardAccelerators = require('../utils/KeyboardAccelerators');
 var DOMUtils = require('../utils/DOM');
@@ -196,7 +197,7 @@ var Layer = React.createClass({
 
   _renderOverlay: function () {
     var content = (<LayerOverlay {...this.props} router={this.context.router} />);
-    React.render(content, this._overlay);
+    ReactDOM.render(content, this._overlay);
 
     if (this.props.hidden) {
       if (this._overlay.classList) {
@@ -220,7 +221,7 @@ var Layer = React.createClass({
   _removeOverlay: function () {
     this._handleAriaHidden(true);
 
-    React.unmountComponentAtNode(this._overlay);
+    ReactDOM.unmountComponentAtNode(this._overlay);
     document.body.removeChild(this._overlay);
     this._overlay = null;
   },
