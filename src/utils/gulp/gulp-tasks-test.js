@@ -26,7 +26,8 @@ module.exports = function(gulp, options) {
       jsxCoverage.initIstanbulHook(jsxCoverageOptions);
 
       glob.sync('**src/js/**/*.js').forEach(function (file) {
-        if (file.indexOf('lib') === -1 && file.indexOf('icons') === -1) {
+        if (file.indexOf('lib') === -1 &&
+          file.indexOf('icons') === -1) {
           require(path.resolve(file));
         }
       });
