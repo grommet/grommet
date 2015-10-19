@@ -1,30 +1,20 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
-var path = require('path');
-var __path__ = path.join(__dirname, '../../src/js/components/Anchor');
+import {expect} from 'chai';
+import React from 'react';
+import TestUtils from 'react-addons-test-utils';
 
-var GrommetTestUtils = require('../../src/utils/test/GrommetTestUtils');
+import Anchor from '../../src/js/components/Anchor';
 
 describe('Grommet Anchor', function() {
   it('loads a basic Anchor', function() {
-    var Component = GrommetTestUtils.getComponent(__path__, null, { href: 'test'});
+    const shallowRenderer = TestUtils.createRenderer();
+    shallowRenderer.render(React.createElement(Anchor, { href: 'test' }));
 
-    GrommetTestUtils.componentShouldExist(Component, 'anchor');
-    GrommetTestUtils.componentShouldExist(Component, 'anchor--disabled');
+    const anchorElement = shallowRenderer.getRenderOutput();
+
+    expect(anchorElement.props.className).to.equal('anchor anchor--disabled');
+    expect(anchorElement.props.href).to.equal('test');
   });
 
-  it('loads a primary Anchor', function() {
-    var Component = GrommetTestUtils.getComponent(__path__, null,
-      { href: 'test', primary: true});
-
-    GrommetTestUtils.componentShouldExist(Component, 'anchor');
-    GrommetTestUtils.componentShouldExist(Component, 'anchor--primary');
-  });
-
-  it('loads a custom className Anchor', function() {
-    var Component = GrommetTestUtils.getComponent(__path__, null,
-      { className: 'testing', href: 'test'});
-
-    GrommetTestUtils.componentShouldExist(Component, 'testing');
-  });
 });

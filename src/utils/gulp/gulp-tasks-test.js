@@ -1,15 +1,20 @@
-var jsxCoverageOptions = {
-  istanbul: {
-    coverageVariable: '__MY_TEST_COVERAGE__',
-    exclude: /node_modules|test/
-  },
-  coverage: {
-    reporters: ['lcov'],
-    directory: 'coverage'
-  }
-};
+var babel = require('gulp-babel');
+var glob = require('glob');
+var path = require('path');
 
 module.exports = function(gulp, options) {
+
+  var jsxCoverageOptions = {
+    src: options.testPaths || [],
+    istanbul: {
+      coverageVariable: '__MY_TEST_COVERAGE__',
+      exclude: /node_modules|test|icons|lib|index/
+    },
+    coverage: {
+      reporters: ['lcov'],
+      directory: 'coverage'
+    }
+  };
 
   gulp.task('test', function(done) {
     if (options.testPaths) {
@@ -17,13 +22,18 @@ module.exports = function(gulp, options) {
       var mocha = require('gulp-mocha');
       var watch = require('gulp-watch');
       var argv = require('yargs').argv;
-      require('../test/test-compiler');
-      require('../test/mocked-dom')('<html><body></body></html>');
 
       jsxCoverage.initIstanbulHook(jsxCoverageOptions);
+
+      glob.sync('**src/js/**/*.js').forEach(function (file) {
+        if (file.indexOf('lib') === -1 && file.indexOf('icons') === -1) {
+          require(path.resolve(file));
+        }
+      });
+
       gulp.src(options.testPaths, {
         read: false
-      }).pipe(mocha({
+      }).pipe(babel()).pipe(mocha({
         reporter: 'spec'})).once('end', function() {
           if (argv.w) {
             var watchFolders = options.testPaths.slice();

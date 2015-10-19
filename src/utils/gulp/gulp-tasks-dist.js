@@ -14,7 +14,7 @@ module.exports = function(gulp, options, webpackConfig, dist) {
       if (process.env.CI) {
         runSequence('preprocess', options.distPreprocess, 'copy', callback);
       } else {
-        runSequence('preprocess', options.distPreprocess, 'copy', callback); ///'test', callback);
+        runSequence('preprocess', options.distPreprocess, 'copy', 'test', callback);
       }
     } else {
       if (process.env.CI) {

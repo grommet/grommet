@@ -36,7 +36,6 @@
     "del": "^2.0.2",
     "eslint": "^1.1.0",
     "eslint-plugin-react": "^3.2.3",
-    "expect": "^1.6.0",
     "file-loader": "^0.8.1",
     "grommet-icon-loader": "^0.0.13",
     "gulp": "^3.9.0",
@@ -101,16 +100,13 @@
     "yargs": "^3.8.0"
   },
   "devDependencies": {
+    "chai": "^3.3.0",
+    "glob": "5.0.14",
+    "gulp-bump": "^1.0.0",
     "gulp-chug": "^0.4.2",
     "gulp-coveralls": "^0.1.4",
     "gulp-git": "^1.2.3",
-    "gulp-bump": "^1.0.0",
-    "rewire": "^2.3.3",
-    "should": "^7.0.4"
-  },
-  "config": {
-    "blanket": {
-      "loader": "../../../../../src/utils/test/blanket-stub-jsx.js"
-    }
+    "react-addons-test-utils": "^0.14.0",
+    "rewire": "^2.3.3"
   }
 }
