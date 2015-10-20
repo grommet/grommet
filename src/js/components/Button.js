@@ -51,7 +51,7 @@ var Button = React.createClass({
 
     return (
       <button id={this.props.id} type={type} className={classes.join(' ')}
-        onClick={this.props.onClick}>
+        onClick={this.props.onClick} disabled={! this.props.onClick}>
         {content}
       </button>
     );
