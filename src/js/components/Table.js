@@ -3,7 +3,7 @@
 var React = require('react');
 var isEqual = require('lodash/lang/isEqual');
 var SpinningIcon = require('./icons/Spinning');
-var InfiniteScroll = require('../mixins/InfiniteScroll');
+var InfiniteScroll = require('../utils/InfiniteScroll');
 
 var CLASS_ROOT = "table";
 var SELECTED_CLASS = CLASS_ROOT + "__row--selected";
@@ -24,8 +24,6 @@ var Table = React.createClass({
     onSelect: React.PropTypes.func
   },
 
-  mixins: [InfiniteScroll],
-
   getDefaultProps: function () {
     return {
       scrollable: false,
@@ -44,12 +42,16 @@ var Table = React.createClass({
       this._alignMirror();
     }
     if (this.props.onMore) {
-      this.startListeningForScroll(this.refs.more, this.props.onMore);
+      this._scroll = InfiniteScroll.startListeningForScroll(this.refs.more, this.props.onMore);
     }
     window.addEventListener('resize', this._onResize);
   },
 
   componentWillReceiveProps: function (newProps) {
+    if (this.props.onMore) {
+      InfiniteScroll.stopListeningForScroll(this._scroll);
+      this._scroll = null;
+    }
     if (newProps.hasOwnProperty('selection')) {
       this.setState({selection: this._normalizeSelection(newProps.selection)});
     }
@@ -62,15 +64,14 @@ var Table = React.createClass({
     if (this.props.scrollable) {
       this._alignMirror();
     }
-    this.stopListeningForScroll();
     if (this.props.onMore) {
-      this.startListeningForScroll(this.refs.more, this.props.onMore);
+      this._scroll = InfiniteScroll.startListeningForScroll(this.refs.more, this.props.onMore);
     }
   },
 
   componentWillUnmount: function () {
-    if (this.props.onMore) {
-      this.stopListeningForScroll();
+    if (this._onScroll) {
+      InfiniteScroll.stopListeningForScroll(this._scroll);
     }
     window.removeEventListener('resize', this._onResize);
   },

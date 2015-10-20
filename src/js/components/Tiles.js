@@ -5,7 +5,7 @@ var SpinningIcon = require('./icons/Spinning');
 var LeftIcon = require('./icons/Left');
 var RightIcon = require('./icons/Right');
 var Scroll = require('../utils/Scroll');
-var InfiniteScroll = require('../mixins/InfiniteScroll');
+var InfiniteScroll = require('../utils/InfiniteScroll');
 
 var CLASS_ROOT = "tiles";
 
@@ -19,8 +19,6 @@ var Tiles = React.createClass({
     size: React.PropTypes.oneOf(['small', 'medium', 'large']),
     small: React.PropTypes.bool
   },
-
-  mixins: [InfiniteScroll],
 
   getDefaultProps: function () {
     return {
@@ -36,7 +34,7 @@ var Tiles = React.createClass({
 
   componentDidMount: function () {
     if (this.props.onMore) {
-      this.startListeningForScroll(this.refs.more, this.props.onMore);
+      this._scroll = InfiniteScroll.startListeningForScroll(this.refs.more, this.props.onMore);
     }
     if ('row' === this.props.direction) {
       window.addEventListener('resize', this._onResize);
@@ -46,10 +44,16 @@ var Tiles = React.createClass({
     }
   },
 
-  componentDidUpdate: function () {
-    this.stopListeningForScroll();
+  componentWillReceiveProps: function (nextProps) {
     if (this.props.onMore) {
-      this.startListeningForScroll(this.refs.more, this.props.onMore);
+      InfiniteScroll.stopListeningForScroll(this._scroll);
+      this._scroll = null;
+    }
+  },
+
+  componentDidUpdate: function () {
+    if (this.props.onMore) {
+      this._scroll = InfiniteScroll.startListeningForScroll(this.refs.more, this.props.onMore);
     }
     if ('row' === this.props.direction) {
       this._trackHorizontalScroll();
@@ -57,8 +61,8 @@ var Tiles = React.createClass({
   },
 
   componentWillUnmount: function () {
-    if (this.props.onMore) {
-      this.stopListeningForScroll();
+    if (this._scroll) {
+      InfiniteScroll.stopListeningForScroll(this._scroll);
     }
     if ('row' === this.props.direction) {
       window.removeEventListener('resize', this._onResize);

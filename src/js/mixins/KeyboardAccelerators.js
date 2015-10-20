@@ -94,6 +94,7 @@ var KeyboardAccelerators = {
   // This function can be called multiple times, existing handlers will
   // be replaced, new handlers will be added.
   startListeningToKeyboard: function (handlers) {
+    console.warn('grommet/mixins/KeyboardAccelerators is deprecated. Please switch to grommet/utils/KeyboardAccelerators.');
     this._initKeyboardAccelerators();
     var keys = 0;
     for (var key in handlers) {

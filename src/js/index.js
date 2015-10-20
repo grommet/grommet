@@ -66,8 +66,7 @@ var Grommet = {
   },
   // Mixins
   Mixins: {
-    KeyboardAccelerators: require('./mixins/KeyboardAccelerators'),
-    ReactLayeredComponent: require('./mixins/ReactLayeredComponent')
+    KeyboardAccelerators: require('./mixins/KeyboardAccelerators')
   },
   // Utils
   Cookies: require('./utils/Cookies'),

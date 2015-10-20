@@ -3,7 +3,7 @@
 var React = require('react');
 var ListItem = require('./ListItem');
 var SpinningIcon = require('./icons/Spinning');
-var InfiniteScroll = require('../mixins/InfiniteScroll');
+var InfiniteScroll = require('../utils/InfiniteScroll');
 var IntlMixin = require('../mixins/GrommetIntlMixin');
 
 var CLASS_ROOT = "list";
@@ -35,7 +35,7 @@ var List = React.createClass({
     small: React.PropTypes.bool
   },
 
-  mixins: [InfiniteScroll, IntlMixin],
+  mixins: [IntlMixin],
 
   getDefaultProps: function () {
     return {small: false, itemDirection: 'row'};
@@ -47,24 +47,27 @@ var List = React.createClass({
 
   componentDidMount: function () {
     if (this.props.onMore) {
-      this.startListeningForScroll(this.refs.more, this.props.onMore);
+      this._scroll = InfiniteScroll.startListeningForScroll(this.refs.more, this.props.onMore);
     }
   },
 
-  componentWillReceiveProps: function (newProps) {
-    this.setState(this._stateFromProps(newProps));
+  componentWillReceiveProps: function (nextProps) {
+    if (this.props.onMore) {
+      InfiniteScroll.stopListeningForScroll(this._scroll);
+      this._scroll = null;
+    }
+    this.setState(this._stateFromProps(nextProps));
   },
 
   componentDidUpdate: function () {
-    this.stopListeningForScroll();
     if (this.props.onMore) {
-      this.startListeningForScroll(this.refs.more, this.props.onMore);
+      this._scroll = InfiniteScroll.startListeningForScroll(this.refs.more, this.props.onMore);
     }
   },
 
   componentWillUnmount: function () {
-    if (this.props.onMore) {
-      this.stopListeningForScroll();
+    if (this._onScroll) {
+      InfiniteScroll.stopListeningForScroll(this._scroll);
     }
   },
 
