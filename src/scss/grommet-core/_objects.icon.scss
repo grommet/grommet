@@ -154,6 +154,8 @@
   width: double($inuit-base-spacing-unit);
   height: double($inuit-base-spacing-unit);
 
+  @include graph-stroke-color();
+
   &--small {
     width: $inuit-base-spacing-unit;
     height: $inuit-base-spacing-unit;
