@@ -25,7 +25,7 @@ module.exports = function(gulp, opts) {
 
   var jsLoader = options.jsLoader || {
     test: /\.js$/,
-    loader: 'babel',
+    loader: 'babel-loader',
     exclude: /(node_modules|bower_components|src\/lib)/
   };
 
