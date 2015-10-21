@@ -1,6 +1,7 @@
 // (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
+var ReactDOM = require('react-dom');
 var moment = require('moment');
 var KeyboardAccelerators = require('../mixins/KeyboardAccelerators');
 var Drop = require('../utils/Drop');
@@ -186,7 +187,7 @@ var Calendar = React.createClass({
       document.addEventListener('click', this._onClose);
       this.startListeningToKeyboard(listeners);
 
-      this._drop = Drop.add(this.refs.component.getDOMNode(),
+      this._drop = Drop.add(ReactDOM.findDOMNode(this.refs.component),
         this._renderDrop(), {top: 'bottom', left: 'left'});
 
     } else {

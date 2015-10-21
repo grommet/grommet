@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
+var ReactDOM = require('react-dom');
 
 var KeyboardAccelerators = require('../mixins/KeyboardAccelerators');
 
@@ -29,7 +30,7 @@ var Tab = React.createClass({
   },
 
   _processSpace: function (event) {
-    if (event.target === this.refs.tab.getDOMNode()) {
+    if (event.target === ReactDOM.findDOMNode(this.refs.tab)) {
       this._onClickTab(event);
     }
   },

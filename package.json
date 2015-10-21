@@ -37,6 +37,7 @@
     "eslint": "^1.1.0",
     "eslint-plugin-react": "^3.2.3",
     "file-loader": "^0.8.1",
+    "glob": "5.0.14",
     "grommet-icon-loader": "^0.0.13",
     "gulp": "^3.9.0",
     "gulp-babel": "^5.2.1",
@@ -101,7 +102,6 @@
   },
   "devDependencies": {
     "chai": "^3.3.0",
-    "glob": "5.0.14",
     "gulp-bump": "^1.0.0",
     "gulp-chug": "^0.4.2",
     "gulp-coveralls": "^0.1.4",

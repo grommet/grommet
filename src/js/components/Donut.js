@@ -1,6 +1,7 @@
 // (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
+var ReactDOM = require('react-dom');
 var Legend = require('./Legend');
 
 var CLASS_ROOT = "donut";
@@ -137,7 +138,7 @@ var Donut = React.createClass({
       this.setState({orientation: 'landscape'});
     }
     // content based on avialable real estate
-    var parentElement = this.refs.donut.getDOMNode().parentNode;
+    var parentElement = ReactDOM.findDOMNode(this.refs.donut).parentNode;
     var width = parentElement.offsetWidth;
     var height = parentElement.offsetHeight;
     var donutHeight = BASE_SIZE;

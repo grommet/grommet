@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
+var ReactDOM = require('react-dom');
 var Layer = require('./Layer');
 var Menu = require('./Menu');
 var DOM = require('../utils/DOM');
@@ -48,7 +49,7 @@ var SkipLinks = React.createClass({
   },
 
   _onBlur: function () {
-    var skipLinksLayer = this.refs.skipLinksLayer.getDOMNode();
+    var skipLinksLayer = ReactDOM.findDOMNode(this.refs.skipLinksLayer);
     var activeElement = document.activeElement;
     if (!DOM.isDescendant(skipLinksLayer, activeElement)) {
       this.setState({showLayer: false});
