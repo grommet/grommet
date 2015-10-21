@@ -6,7 +6,7 @@ var merge = require('lodash/object/merge');
 var pick = require('lodash/object/pick');
 var keys = require('lodash/object/keys');
 var Box = require('./Box');
-var KeyboardAccelerators = require('../mixins/KeyboardAccelerators');
+var KeyboardAccelerators = require('../utils/KeyboardAccelerators');
 var DOM = require('../utils/DOM');
 var Scroll = require('../utils/Scroll');
 var SkipLinkAnchor = require('./SkipLinkAnchor');
@@ -19,8 +19,6 @@ var Article = React.createClass({
     scrollStep: React.PropTypes.bool,
     primary: React.PropTypes.bool
   }, Box.propTypes),
-
-  mixins: [KeyboardAccelerators],
 
   getDefaultProps: function () {
     return {
@@ -36,7 +34,7 @@ var Article = React.createClass({
       this._scrollParent = DOM.findScrollParents(articleElement)[0];
       document.addEventListener('wheel', this._onWheel);
       this._scrollParent.addEventListener('scroll', this._onScroll);
-      this.startListeningToKeyboard({
+      KeyboardAccelerators.startListeningToKeyboard(this, {
         up: this._onUp,
         down: this._onDown
       });
@@ -49,7 +47,7 @@ var Article = React.createClass({
       clearInterval(this._scrollToTimer);
       this._scrollParent.removeEventListener('scroll', this._onScroll);
       clearTimeout(this._scrollTimer);
-      this.stopListeningToKeyboard({
+      KeyboardAccelerators.stopListeningToKeyboard(this, {
         up: this._onUp,
         down: this._onDown
       });
