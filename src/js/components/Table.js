@@ -48,7 +48,7 @@ var Table = React.createClass({
   },
 
   componentWillReceiveProps: function (newProps) {
-    if (this.props.onMore) {
+    if (this._scroll) {
       InfiniteScroll.stopListeningForScroll(this._scroll);
       this._scroll = null;
     }
