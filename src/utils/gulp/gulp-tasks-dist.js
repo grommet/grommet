@@ -33,8 +33,8 @@ module.exports = function(gulp, options, webpackConfig, dist) {
 
     var plugins = [
       new webpack.DefinePlugin(env),
-      new webpack.optimize.OccurenceOrderPlugin()
-      //new webpack.optimize.DedupePlugin()
+      new webpack.optimize.OccurenceOrderPlugin(),
+      new webpack.optimize.DedupePlugin()
     ];
 
     var argv = require('yargs').argv;
