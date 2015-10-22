@@ -6,7 +6,7 @@ var StatusIcon = require('./icons/Status');
 
 var CLASS_ROOT = "notification";
 
-var GrommetNotification = React.createClass({
+var Notification = React.createClass({
 
   propTypes: {
     flush: React.PropTypes.bool,
@@ -73,4 +73,4 @@ var GrommetNotification = React.createClass({
 
 });
 
-module.exports = GrommetNotification;
+module.exports = Notification;
