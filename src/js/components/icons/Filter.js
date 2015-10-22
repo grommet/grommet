@@ -1,7 +1,8 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var IntlMixin = require('../../mixins/GrommetIntlMixin');
+var ReactIntl = require('react-intl');
+var FormattedMessage = ReactIntl.FormattedMessage;
 
 var Filter = React.createClass({
 
@@ -10,11 +11,12 @@ var Filter = React.createClass({
     notifications: React.PropTypes.number
   },
 
-  mixins: [IntlMixin],
-
   render: function() {
     var className = 'control-icon control-icon-filter';
-    var a11yTitle = this.getGrommetIntlMessage(this.props.a11yTitle);
+    var a11yTitle = (
+      <FormattedMessage id={this.props.a11yTitle} defaultMessage={this.props.a11yTitle} />
+    );
+
     if (this.props.className) {
       className += ' ' + this.props.className;
     }
@@ -22,7 +24,9 @@ var Filter = React.createClass({
     if (typeof this.props.a11yTitle === "undefined") {
       // this.props.a11yTitle emplty string is an acceptable value only if undefined
       // should it use the default title value
-      a11yTitle = this.getGrommetIntlMessage('Filter');
+      a11yTitle = (
+        <FormattedMessage id="Filter" defaultMessage="Filter" />
+      );
     }
     var filterTitleId = 'ok-title';
 

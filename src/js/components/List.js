@@ -1,10 +1,11 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
+var ReactIntl = require('react-intl');
+var FormattedDate = ReactIntl.FormattedDate;
 var ListItem = require('./ListItem');
 var SpinningIcon = require('./icons/Spinning');
 var InfiniteScroll = require('../utils/InfiniteScroll');
-var IntlMixin = require('../mixins/GrommetIntlMixin');
 
 var CLASS_ROOT = "list";
 
@@ -34,8 +35,6 @@ var List = React.createClass({
     size: React.PropTypes.oneOf(['small', 'medium', 'large']),
     small: React.PropTypes.bool
   },
-
-  mixins: [IntlMixin],
 
   getDefaultProps: function () {
     return {small: false, itemDirection: 'row'};
@@ -91,7 +90,16 @@ var List = React.createClass({
         result = value;
       }
     } else if (scheme.timestamp) {
-      result = this.getGrommetFormattedDate(value);
+      result = (
+        <FormattedDate value={new Date(date)}
+          weekday="long"
+          day="numeric"
+          month="long"
+          year="numeric"
+          hour="numeric"
+          minute="numeric"
+          second="numeric" />
+      );
     } else {
       result = value;
     }

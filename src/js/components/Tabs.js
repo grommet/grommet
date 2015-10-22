@@ -1,8 +1,8 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-
-var IntlMixin = require('../mixins/GrommetIntlMixin');
+var ReactIntl = require('react-intl');
+var FormattedMessage = ReactIntl.FormattedMessage;
 
 var Box = require('./Box');
 
@@ -13,8 +13,6 @@ var Tabs = React.createClass({
   propTypes: {
     activeIndex: React.PropTypes.number
   },
-
-  mixins: [IntlMixin],
 
   getDefaultProps: function () {
     return {
@@ -58,6 +56,10 @@ var Tabs = React.createClass({
       });
     }.bind(this));
 
+    var tabContentsLabel = (
+      <FormattedMessage id="Tab Contents" defaultMessage="Tab Contents" />
+    );
+
     return (
       <div role="tablist">
         <ul className={classes.join(' ')}>
@@ -66,7 +68,7 @@ var Tabs = React.createClass({
         <div ref="tabContent" tabIndex="0" aria-labelledby="content_description"
           role="tabpanel">
           <title id="content_description">
-            {activeTitle + ' ' + this.getGrommetIntlMessage('Tab Contents')}
+            {activeTitle + ' ' + tabContentsLabel}
           </title>
           <Box className={CLASS_ROOT + '__content'} aria-labelledby="content_description">
             {activeContainer}

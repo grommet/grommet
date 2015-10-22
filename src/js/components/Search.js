@@ -1,11 +1,13 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
+var ReactIntl = require('react-intl');
+var FormattedMessage = ReactIntl.FormattedMessage;
+
 var KeyboardAccelerators = require('../utils/KeyboardAccelerators');
 var Drop = require('../utils/Drop');
 var Responsive = require('../utils/Responsive');
 var SearchIcon = require('./icons/Search');
-var IntlMixin = require('../mixins/GrommetIntlMixin');
 
 var CLASS_ROOT = "search";
 
@@ -23,8 +25,6 @@ var Search = React.createClass({
     suggestions: React.PropTypes.arrayOf(React.PropTypes.string),
     value: React.PropTypes.string
   },
-
-  mixins: [IntlMixin],
 
   getDefaultProps: function () {
     return {
@@ -295,10 +295,15 @@ var Search = React.createClass({
 
       var readOnly = this.props.suggestions ? true : false;
 
+      var placeholderLabel = (
+        <FormattedMessage id={this.props.placeHolder}
+          defaultMessage={this.props.placeHolder} />
+      );
+
       return (
         <div className={classes.join(' ')}>
           <input ref="input" type="search"
-            placeholder={this.getGrommetIntlMessage(this.props.placeHolder)}
+            placeholder={placeholderLabel}
             defaultValue={this.props.defaultValue}
             value={this.props.value}
             className={CLASS_ROOT + "__input"}

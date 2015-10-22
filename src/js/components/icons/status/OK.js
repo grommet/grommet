@@ -1,7 +1,8 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var IntlMixin = require('../../../mixins/GrommetIntlMixin');
+var ReactIntl = require('react-intl');
+var FormattedMessage = ReactIntl.FormattedMessage;
 
 var OK = React.createClass({
 
@@ -9,23 +10,23 @@ var OK = React.createClass({
     a11yTitle: React.PropTypes.string
   },
 
-  mixins: [IntlMixin],
-
   render: function() {
     var className = 'status-icon status-icon-ok';
-    var a11yTitle = this.getGrommetIntlMessage(this.props.a11yTitle);
+    var a11yTitle = this.props.a11yTitle;
     if (this.props.className) {
       className += ' ' + this.props.className;
     }
     if (typeof this.props.a11yTitle === "undefined") {
       // this.props.a11yTitle emplty string is an acceptable value only if undefined
       // should it use the default title value
-      a11yTitle = this.getGrommetIntlMessage('OK');
+      a11yTitle = 'OK';
     }
     var okTitleId = 'ok-title';
     return (
       <svg className={className} viewBox="0 0 24 24" role="img" aria-labelledby={okTitleId} version="1.1">
-        <title id={okTitleId}>{a11yTitle}</title>
+        <title id={okTitleId}>
+          <FormattedMessage id={a11yTitle} defaultMessage={a11yTitle} />
+        </title>
         <g className={"status-icon__base"}>
           <circle role="presentation" cx="12" cy="12" r="12" stroke="none" />
         </g>

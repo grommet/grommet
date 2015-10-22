@@ -2,14 +2,14 @@
 
 var React = require('react');
 var ReactDOM = require('react-dom');
+var ReactIntl = require('react-intl');
+var FormattedMessage = ReactIntl.FormattedMessage;
+
 var Layer = require('./Layer');
 var Menu = require('./Menu');
 var DOM = require('../utils/DOM');
-var IntlMixin = require('../mixins/GrommetIntlMixin');
 
 var SkipLinks = React.createClass({
-
-  mixins: [IntlMixin],
 
   getInitialState: function () {
     return {anchors: [], showLayer: false};
@@ -64,6 +64,11 @@ var SkipLinks = React.createClass({
   },
 
   render: function () {
+
+    var skipToLabel = (
+      <FormattedMessage id="Skip to" defaultMessage="Skip to" />
+    );
+
     var anchorElements = this.state.anchors.map(function (anchor, index) {
       return (
         <a tabIndex="0"
@@ -72,7 +77,7 @@ var SkipLinks = React.createClass({
            onBlur={this._onBlur}
            onClick={this._onClick(anchor.id)}
            key={anchor.id}
-           aria-label={this.getGrommetIntlMessage('Skip to') + ' ' + anchor.label}>
+           aria-label={skipToLabel + anchor.label}>
           {anchor.label}
         </a>
       );
@@ -82,7 +87,7 @@ var SkipLinks = React.createClass({
       <div className="skip-links">
         <Layer id="skip-link-layer" hidden={!this.state.showLayer}>
           <div ref="skipLinksLayer">
-            <h2>{this.getGrommetIntlMessage('Skip to')}:</h2>
+            <h2>{skipToLabel}:</h2>
             <Menu direction="row">
               {anchorElements}
             </Menu>

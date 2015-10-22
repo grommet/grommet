@@ -22,6 +22,7 @@ module.exports = function(gulp, options) {
       var mocha = require('gulp-mocha');
       var watch = require('gulp-watch');
       var argv = require('yargs').argv;
+      require('../test/mocked-dom')('<html><body></body></html>');
 
       jsxCoverage.initIstanbulHook(jsxCoverageOptions);
 
