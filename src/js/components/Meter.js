@@ -107,7 +107,8 @@ var Meter = React.createClass({
     a11yTitle: React.PropTypes.string,
     a11yTitleId: React.PropTypes.string,
     a11yDescId: React.PropTypes.string,
-    a11yDesc: React.PropTypes.string
+    a11yDesc: React.PropTypes.string,
+    indicators: React.PropTypes.bool
   },
 
   mixins: [IntlMixin],
@@ -117,7 +118,8 @@ var Meter = React.createClass({
       type: 'bar',
       a11yRole: 'img',
       a11yTitleId: 'meter-title',
-      a11yDescId: 'meter-desc'
+      a11yDescId: 'meter-desc',
+      indicators:false,
     };
   },
 
@@ -364,7 +366,18 @@ var Meter = React.createClass({
       max: max,
       total: total,
       viewBoxWidth: viewBoxDimensions[0],
-      viewBoxHeight: viewBoxDimensions[1]
+      viewBoxHeight: viewBoxDimensions[1],      
+      highIndicator:0,
+      averageIndicator: 0,
+      averageSum: 0,
+      averageCounter: 0,
+      date1:"",
+      date2:"",
+      message:"",
+      showTooltip: false,
+      mouse: false,
+      mouseX: "0px",
+      mouseY: "0px"                
     };
 
     if ('arc' === this.props.type) {
@@ -431,7 +444,6 @@ var Meter = React.createClass({
   _buildPath: function (commands, interactive, item, index, classes) {
     if (interactive) {
       var listeners = this._interactionListeners(interactive, item, index);
-
       return (
         <path key={index} className={classes.join(' ')} d={commands} tabIndex="0"
           onFocus={listeners.onOver} onBlur={listeners.onOut}
@@ -440,7 +452,7 @@ var Meter = React.createClass({
       );
     } else {
       return (
-        <path key={index} className={classes.join(' ')} d={commands} />
+        <path key={index} className={classes.join(' ')} d={commands} onMouseOver={this._handleMouseOver.bind(index)} onMouseMove={this._handleMouseOver.bind(index)} onMouseOut={this._handleMouseOut.bind(index)}/>
       );
     }
   },
@@ -496,7 +508,6 @@ var Meter = React.createClass({
     var classes;
     var endAngle;
     var commands;
-
     var paths = series.map(function (item, index) {
       var classes = [CLASS_ROOT + "__slice"];
       if (index === this.state.activeIndex) {
@@ -537,7 +548,6 @@ var Meter = React.createClass({
     var classes;
     var endAngle;
     var commands;
-
     var paths = series.map(function (item, index) {
       var classes = [CLASS_ROOT + "__slice"];
       if (index === this.state.activeIndex) {
@@ -616,7 +626,6 @@ var Meter = React.createClass({
   },
 
   _renderActive: function () {
-
     var fields = this._getActiveFields();
     var units;
     if (this.props.units) {
@@ -683,6 +692,134 @@ var Meter = React.createClass({
     );
   },
 
+  _renderIndicators: function (type, id) {
+    //Render high and average indicator for all values
+    var start;
+    var commands;
+    var classes;
+    var angle;
+    var endangle;
+    var radio;
+    var indicator;
+    var index;
+    if (id === "high") {
+      indicator = this.state.highIndicator;
+      index = 1;
+    } else if (id === "average") {
+      indicator = this.state.averageIndicator;
+      index = 2;
+    }
+    if(this.props.type === "bar") {
+      classes = [CLASS_ROOT + "__bar", CLASS_ROOT + "__bar--active", "color-index-" + type];
+      start = this._translateBarWidth(indicator);
+      commands = this._barCommands(start, 1);
+    } else if (this.props.type === "arc" || this.props.type === "circle") {
+      angle = this.state.startAngle;
+      classes = [CLASS_ROOT + "__slice", CLASS_ROOT + "__slice--active", "color-index-" + type];
+      endangle = this._translateEndAngle(angle, indicator);
+      start = this._translateEndAngle(angle, indicator - 1);
+      commands = this._arcCommands(start, endangle);
+    } else if (this.props.type === "spiral") {
+      angle = this.state.startAngle;
+      classes = [CLASS_ROOT + "__slice", CLASS_ROOT + "__slice--active", "color-index-" + type];
+      endangle = this._translateEndAngle(angle, indicator);
+      start = this._translateEndAngle(angle, indicator - 1);
+      radio = this.state.startRadius;
+      commands = this._spiralCommands(start, endangle, radio);
+    }
+    return this._buildPath(commands, null, null, index, classes);
+  },
+
+  _maxValue: function() {
+    //Get high value for high indicator
+    var high = this._seriesMax(this.state.series);
+    if (high > this.state.highIndicator) {
+      this.state.highIndicator = high;
+      this.state.date1 = this._createDate("/");
+    }
+  },
+
+  _sumValues:function(e) {
+    //Acumulated values for average values
+    var sum = 0;
+    var self = this;
+    e.map(function(data, i) {
+      sum += data.value;
+      self.state.averageCounter += 1;
+    });
+    return sum;
+  },
+
+  _averageValue: function() {
+    //Get average value for average indicator
+    if (this.state.mouse === false) {
+      this.state.averageSum += this._sumValues(this.state.series);
+      this.state.averageIndicator = this.state.averageSum / this.state.averageCounter;
+      this.state.date2 = this._createDate("/");
+    }
+  },
+
+  _createDate: function(c){
+    //Make custom date for high and average indicators
+    var date = new Date();
+    var day = date.getDate();
+    if (date.getDate()<10)
+    day="0"+date.getDate();
+    var month = date.getMonth()+1;
+    if (date.getMonth()+1<10)
+    month="0"+date.getMonth()+1;
+    var year = date.getFullYear();
+    var hour = date.getHours();
+    if (date.getHours()<10)
+    hour="0"+date.getHours();
+    var mins = date.getMinutes();
+    if (date.getMinutes()<10)
+    mins="0"+date.getMinutes();
+    var secs = date.getSeconds();
+    if (date.getSeconds()<10)
+    secs="0"+date.getSeconds();
+    var fech;
+    if (c=="-") fech = month+"-"+day+"-"+year+" "+hour+":"+mins+":"+secs;
+    if (c=="/") fech = month+"/"+day+"/"+year+" "+hour+":"+mins+":"+secs;
+    return fech;
+  },
+
+   _handleMouseOver: function(i) {
+    //handle mouse over for indicators to show tooltip   
+    var message;
+    if (i.dispatchMarker === ".1.0.0.0.0.2.3.$1") {
+      this.setState({mouseY: i.clientY});
+      this.setState({mouseX: i.clientX});    
+      message = "-Value: " + this.state.highIndicator.toFixed(2) + " -Date:" + this.state.date1;
+      this.setState({message: message});
+      this.setState({showTooltip: true});
+    }
+    if (i.dispatchMarker === ".1.0.0.0.0.2.4.$2") {
+      this.setState({mouseY: i.clientY});
+      this.setState({mouseX: i.clientX});
+      message = "-Value: " + this.state.averageIndicator.toFixed(2) + " -Date:" + this.state.date2;
+      this.setState({message: message});
+      this.setState({showTooltip: true});
+    }
+    this.setState({mouse: true});
+  },
+
+  _handleMouseOut: function(i) {
+    //handle mouse out for indicators to hide tooltip
+    this.setState({message: ""});
+    this.setState({showTooltip: false});
+    this.setState({mouse: false});
+  },
+
+  _renderToolTip: function (){
+    // Render div for show tooltip
+    return(
+      <div ref="toolt" className="tooltip" style={{top:this.state.mouseY,left:this.state.mouseX}}>
+       {this.state.message}
+      </div>
+    )
+  },
+
   render: function() {
     var classes = [CLASS_ROOT];
     classes.push(CLASS_ROOT + "--" + this.props.type);
@@ -713,6 +850,22 @@ var Meter = React.createClass({
     var labels;
     var width;
     var height;
+    var hindicator;
+    var aindicator;
+    var tooltip;
+    
+    this._maxValue();
+    this._averageValue();
+
+    if (this.props.indicators === true) {
+      hindicator = this._renderIndicators("graph-3","high");
+      aindicator = this._renderIndicators("graph-2","average");
+    }
+
+    if (this.state.showTooltip === true) {
+      tooltip = this._renderToolTip();
+    }
+
 
     if ('arc' === this.props.type || 'circle' === this.props.type) {
       values = this._renderArcOrCircle(this.state.series, this.props.series);
@@ -817,6 +970,7 @@ var Meter = React.createClass({
           <div className={CLASS_ROOT + "__labeled-graphic"}>
             <a href="#" role={a11yRole} tabIndex="0"
               aria-labelledby={this.props.a11yTitleId + ' ' + this.props.a11yDescId}>
+              {tooltip}
               <title id={this.props.a11yTitleId}>{this.getGrommetIntlMessage(a11yTitle)}</title>
               <svg className={CLASS_ROOT + "__graphic"}
                 viewBox={"0 0 " + this.state.viewBoxWidth +
@@ -826,6 +980,12 @@ var Meter = React.createClass({
                 {thresholds}
                 <g className={CLASS_ROOT + "__values"}>
                   {values}
+                </g>
+                <g className={CLASS_ROOT + "__values"}>
+                  {hindicator}
+                </g>
+                <g className={CLASS_ROOT + "__values"}>
+                  {aindicator}
                 </g>
                 {labels}
                 {singleIndicator}
