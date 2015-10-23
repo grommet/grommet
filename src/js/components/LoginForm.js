@@ -23,6 +23,10 @@ var LoginForm = React.createClass({
     onSubmit: React.PropTypes.func
   },
 
+  contextTypes: {
+    intl: React.PropTypes.object.isRequired
+  },
+
   getDefaultProps: function () {
     return ({
       errors: [],
@@ -81,7 +85,9 @@ var LoginForm = React.createClass({
       );
     }
 
-    var rememberMeLabel = <FormattedMessage id="Remember me" defaultMessage="Remember me" />;
+    var rememberMeLabel = this.context.intl.formatMessage({
+      id: "Remember me", defaultMessage: "Remember me"
+    });
     var rememberMe = null;
     if (this.props.rememberMe) {
       rememberMe = (
@@ -99,9 +105,15 @@ var LoginForm = React.createClass({
       );
     }
 
-    var usernameLabel = <FormattedMessage id="Username" defaultMessage="Username" />;
-    var passwordLabel = <FormattedMessage id="Password" defaultMessage="Password" />;
-    var loginLabel = <FormattedMessage id="Log In" defaultMessage="Log In" />;
+    var usernameLabel = this.context.intl.formatMessage({
+      id: "Username", defaultMessage: "Username"
+    });
+    var passwordLabel = this.context.intl.formatMessage({
+      id: "Password", defaultMessage: "Password"
+    });
+    var loginLabel = this.context.intl.formatMessage({
+      id: "Log In", defaultMessage: "Log In"
+    });
 
     return (
       <Form className={classes.join(' ')} onSubmit={this._onSubmit}>

@@ -24,8 +24,8 @@ module.exports = {
     return normalizeLocale(locale || fallbackLocale);
   },
 
-  getLocaleData: function(appLocale) {
-    var locale = this.getCurrentLocale();
+  getLocaleData: function(appLocale, locale) {
+    var locale = locale || this.getCurrentLocale();
     var grommetMessages;
     try {
       grommetMessages = require('../messages/' + locale);

@@ -22,15 +22,17 @@ var LayerOverlay = React.createClass({
     peek: React.PropTypes.bool,
     onClose: React.PropTypes.func,
     router: React.PropTypes.func,
+    intl: React.PropTypes.object,
     a11yCloserTitle: React.PropTypes.string
   },
 
   childContextTypes: {
-    router: React.PropTypes.func
+    router: React.PropTypes.func,
+    intl: React.PropTypes.object
   },
 
   getChildContext: function () {
-    return {router: this.props.router};
+    return {router: this.props.router, intl: this.props.intl};
   },
 
   componentDidMount: function () {
@@ -139,7 +141,8 @@ var Layer = React.createClass({
   },
 
   contextTypes: {
-    router: React.PropTypes.func
+    router: React.PropTypes.func,
+    intl: React.PropTypes.object
   },
 
   getDefaultProps: function () {
@@ -196,7 +199,7 @@ var Layer = React.createClass({
   },
 
   _renderOverlay: function () {
-    var content = (<LayerOverlay {...this.props} router={this.context.router} />);
+    var content = (<LayerOverlay {...this.props} router={this.context.router} intl={this.context.intl} />);
     ReactDOM.render(content, this._overlay);
 
     if (this.props.hidden) {

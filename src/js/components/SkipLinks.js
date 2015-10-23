@@ -2,14 +2,16 @@
 
 var React = require('react');
 var ReactDOM = require('react-dom');
-var ReactIntl = require('react-intl');
-var FormattedMessage = ReactIntl.FormattedMessage;
 
 var Layer = require('./Layer');
 var Menu = require('./Menu');
 var DOM = require('../utils/DOM');
 
 var SkipLinks = React.createClass({
+
+  contextTypes: {
+    intl: React.PropTypes.object.isRequired
+  },
 
   getInitialState: function () {
     return {anchors: [], showLayer: false};
@@ -65,9 +67,9 @@ var SkipLinks = React.createClass({
 
   render: function () {
 
-    var skipToLabel = (
-      <FormattedMessage id="Skip to" defaultMessage="Skip to" />
-    );
+    var skipToLabel = this.context.intl.formatMessage({
+      id: "Skip to", defaultMessage: "Skip to"
+    });
 
     var anchorElements = this.state.anchors.map(function (anchor, index) {
       return (

@@ -1,8 +1,6 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var ReactIntl = require('react-intl');
-var FormattedMessage = ReactIntl.FormattedMessage;
 
 var Box = require('./Box');
 
@@ -12,6 +10,10 @@ var Tabs = React.createClass({
 
   propTypes: {
     activeIndex: React.PropTypes.number
+  },
+
+  contextTypes: {
+    intl: React.PropTypes.object.isRequired
   },
 
   getDefaultProps: function () {
@@ -56,9 +58,9 @@ var Tabs = React.createClass({
       });
     }.bind(this));
 
-    var tabContentsLabel = (
-      <FormattedMessage id="Tab Contents" defaultMessage="Tab Contents" />
-    );
+    var tabContentsLabel = this.context.intl.formatMessage({
+      id: "Tab Contents", defaultMessage: "Tab Contents"
+    });
 
     return (
       <div role="tablist">

@@ -1,8 +1,6 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var ReactIntl = require('react-intl');
-var FormattedMessage = ReactIntl.FormattedMessage;
 
 var SkipLinkAnchor = React.createClass({
 
@@ -10,12 +8,16 @@ var SkipLinkAnchor = React.createClass({
     label: React.PropTypes.string.isRequired
   },
 
+  contextTypes: {
+    intl: React.PropTypes.object
+  },
+
   render: function () {
     var id = 'skip-link-' + this.props.label.toLowerCase().replace(/ /g, '_');
 
-    var labelFormatted = (
-      <FormattedMessage id={this.props.label} defaultMessage={this.props.label} />
-    );
+    var labelFormatted = this.context.intl.formatMessage({
+      id: this.props.label, defaultMessage: this.props.labelFormatted
+    });
 
     return (
       <a tabIndex="-1" id={id} className="skip-link-anchor"
