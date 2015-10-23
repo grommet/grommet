@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-
+var PropTypes = React.PropTypes;
 var KeyboardAccelerators = require('../utils/KeyboardAccelerators');
 var Drop = require('../utils/Drop');
 var Responsive = require('../utils/Responsive');
@@ -12,16 +12,21 @@ var CLASS_ROOT = "search";
 var Search = React.createClass({
 
   propTypes: {
-    defaultValue: React.PropTypes.string,
+    defaultValue: PropTypes.string,
     dropAlign: Drop.alignPropType,
-    dropColorIndex: React.PropTypes.string,
-    inline: React.PropTypes.bool,
-    large: React.PropTypes.bool,
-    onChange: React.PropTypes.func,
-    placeHolder: React.PropTypes.string,
-    responsive: React.PropTypes.bool,
-    suggestions: React.PropTypes.arrayOf(React.PropTypes.string),
-    value: React.PropTypes.string
+    dropColorIndex: PropTypes.string,
+    inline: PropTypes.bool,
+    large: PropTypes.bool,
+    onChange: PropTypes.func,
+    placeHolder: PropTypes.string,
+    responsive: PropTypes.bool,
+    suggestions: PropTypes.arrayOf(PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.shape({
+        label: PropTypes.string.isRequired
+      })
+    ])),
+    value: PropTypes.string
   },
 
   contextTypes: {
@@ -51,6 +56,13 @@ var Search = React.createClass({
   componentDidMount: function () {
     if (this.props.inline && this.props.responsive) {
       this._responsive = Responsive.start(this._onResponsive);
+    }
+  },
+
+  componentWillReceiveProps: function (nextProps) {
+    if (nextProps.suggestions && nextProps.suggestions.length > 0 &&
+      ! this.state.dropActive && this.refs.input === document.activeElement) {
+      this.setState({dropActive: true});
     }
   },
 
@@ -102,6 +114,8 @@ var Search = React.createClass({
       this._drop = Drop.add(baseElement, this._renderDrop(), this.props.dropAlign);
 
       document.getElementById('search-drop-input').focus();
+    } else if (this._drop) {
+      this._drop.render(this._renderDrop());
     }
   },
 
@@ -110,6 +124,9 @@ var Search = React.createClass({
     KeyboardAccelerators.stopListeningToKeyboard(this);
     if (this._responsive) {
       this._responsive.stop();
+    }
+    if (this._drop) {
+      this._drop.remove();
     }
   },
 
@@ -137,7 +154,8 @@ var Search = React.createClass({
   _onFocusInput: function () {
     this.refs.input.select();
     this.setState({
-      dropActive: (! this.state.inline || this.props.suggestions),
+      dropActive: (! this.state.inline ||
+        (this.props.suggestions && this.props.suggestions.length > 0)),
       activeSuggestionIndex: -1
     });
   },
@@ -167,9 +185,9 @@ var Search = React.createClass({
 
   _onEnter: function () {
     if (this.state.activeSuggestionIndex >= 0) {
-      var text = this.props.suggestions[this.state.activeSuggestionIndex];
+      var suggestion = this.props.suggestions[this.state.activeSuggestionIndex];
       if (this.props.onChange) {
-        this.props.onChange(text);
+        this.props.onChange(suggestion);
       }
     }
     this._onRemoveDrop();
@@ -223,6 +241,16 @@ var Search = React.createClass({
     return classes;
   },
 
+  _renderSuggestionLabel: function (suggestion) {
+    var label;
+    if (suggestion.hasOwnProperty('label')) {
+      label = suggestion.label;
+    } else {
+      label = suggestion;
+    }
+    return label;
+  },
+
   _renderDrop: function() {
     var classes = this._classes(CLASS_ROOT + "__drop");
     if (this.props.dropColorIndex) {
@@ -240,10 +268,10 @@ var Search = React.createClass({
           classes.push(CLASS_ROOT + "__suggestion--active");
         }
         return (
-          <div key={item}
+          <div key={index}
             className={classes.join(' ')}
             onClick={this._onClickSuggestion.bind(this, item)}>
-            {item}
+            {this._renderSuggestionLabel(item)}
           </div>
         );
       }, this);
@@ -295,7 +323,7 @@ var Search = React.createClass({
 
     if (this.state.inline) {
 
-      var readOnly = this.props.suggestions ? true : false;
+      var readOnly = (this.props.suggestions && this.props.suggestions.length > 0) ? true : false;
 
       var placeholderLabel = this.context.intl.formatMessage({
         id: this.props.placeHolder, defaultMessage: this.props.placeHolder});
