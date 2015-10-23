@@ -5,6 +5,23 @@ var IntlProvider = require('react-intl').IntlProvider;
 var Locale = require('../utils/Locale');
 var SkipLinks = require('./SkipLinks');
 
+var supportedLocales = ['en-US', 'pt-BR'];
+
+function localesSupported() {
+  return global.Intl && supportedLocales.every(function (locale) {
+    return Intl.NumberFormat.supportedLocalesOf(locale)[0] === locale &&
+            Intl.DateTimeFormat.supportedLocalesOf(locale)[0] === locale;
+  });
+}
+
+if (! localesSupported()) {
+  require('intl');
+  require('intl/locale-data/jsonp/en-US.js');
+  require('intl/locale-data/jsonp/pt-BR.js');
+  Intl.NumberFormat = IntlPolyfill.NumberFormat;
+  Intl.DateTimeFormat = IntlPolyfill.DateTimeFormat;
+}
+
 var Locale = require('../utils/Locale');
 
 var App = React.createClass({
