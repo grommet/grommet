@@ -29,11 +29,15 @@ var MenuDrop = React.createClass({
   }, Box.propTypes),
 
   childContextTypes: {
-    router: React.PropTypes.func
+    router: React.PropTypes.func,
+    intl: React.PropTypes.object
   },
 
   getChildContext: function () {
-    return { router: this.props.router };
+    return {
+      router: this.props.router,
+      intl: this.props.intl
+    };
   },
 
   componentDidMount: function () {
@@ -172,7 +176,8 @@ var Menu = React.createClass({
   }, Box.propTypes),
 
   contextTypes: {
-    router: React.PropTypes.func
+    router: React.PropTypes.func,
+    intl: React.PropTypes.object
   },
 
   getDefaultProps: function () {
@@ -389,6 +394,7 @@ var Menu = React.createClass({
     }
     return (
       <MenuDrop tabIndex="-1" router={this.context.router}
+        intl={this.context.intl}
         dropAlign={this.props.dropAlign}
         dropColorIndex={this.props.dropColorIndex}
         small={this.props.small}
