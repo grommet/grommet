@@ -1,8 +1,6 @@
 // (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
 
 var React = require('react');
-var ReactIntl = require('react-intl');
-var FormattedMessage = ReactIntl.FormattedMessage;
 
 var CLASS_ROOT = "object";
 
@@ -47,12 +45,8 @@ var GrommetObject = React.createClass({
         }
         attrs.push(
           <li key={'n_' + name} className={classes.join(' ')}>
-            <span className={CLASS_ROOT + "__attribute-name"}>
-              <FormattedMessage id={name} defaultMessage={name} />
-            </span>
-            <span className={CLASS_ROOT + "__attribute-value"}>
-              <FormattedMessage id={value} defaultMessage={value} />
-            </span>
+            <span className={CLASS_ROOT + "__attribute-name"}>{name}</span>
+            <span className={CLASS_ROOT + "__attribute-value"}>{value}</span>
           </li>
         );
       }
