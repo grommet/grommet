@@ -38,7 +38,6 @@ var Search = React.createClass({
       align: 'left',
       inline: false,
       placeHolder: 'Search',
-      dropAlign: {top: 'top', left: 'left'},
       responsive: true
     };
   },
@@ -63,6 +62,8 @@ var Search = React.createClass({
     if (nextProps.suggestions && nextProps.suggestions.length > 0 &&
       ! this.state.dropActive && this.refs.input === document.activeElement) {
       this.setState({dropActive: true});
+    } else if (! nextProps.suggestions || nextProps.suggestions.length === 0) {
+      this.setState({dropActive: false});
     }
   },
 
@@ -109,11 +110,16 @@ var Search = React.createClass({
       }.bind(this), 100);
       KeyboardAccelerators.startListeningToKeyboard(this, activeKeyboardHandlers);
 
-      var baseElement =
-        (this.refs.control ? this.refs.control : this.refs.input);
-      this._drop = Drop.add(baseElement, this._renderDrop(), this.props.dropAlign);
+      var baseElement = this.refs.control || this.refs.input;
+      var dropAlign = this.props.dropAlign || {
+        top: (this.state.inline ? 'bottom' : 'top'),
+        left: 'left'
+      };
+      this._drop = Drop.add(baseElement, this._renderDrop(), dropAlign);
 
-      document.getElementById('search-drop-input').focus();
+      if (! this.state.inline) {
+        document.getElementById('search-drop-input').focus();
+      }
     } else if (this._drop) {
       this._drop.render(this._renderDrop());
     }
@@ -260,7 +266,18 @@ var Search = React.createClass({
       classes.push(CLASS_ROOT + "__drop--large");
     }
 
-    var suggestions = null;
+    var input;
+    if (! this.state.inline) {
+      input = (
+        <input id="search-drop-input" type="search"
+          defaultValue={this.props.defaultValue}
+          value={this.props.value}
+          className={CLASS_ROOT + "__input"}
+          onChange={this._onChangeInput} />
+      );
+    }
+
+    var suggestions;
     if (this.props.suggestions) {
       suggestions = this.props.suggestions.map(function (item, index) {
         var classes = [CLASS_ROOT + "__suggestion"];
@@ -279,11 +296,7 @@ var Search = React.createClass({
 
     var contents = (
       <div className={CLASS_ROOT + "__drop-contents"} onClick={this._onSink}>
-        <input id="search-drop-input" type="search"
-          defaultValue={this.props.defaultValue}
-          value={this.props.value}
-          className={CLASS_ROOT + "__input"}
-          onChange={this._onChangeInput} />
+        {input}
         <div className={CLASS_ROOT + "__suggestions"}>
           {suggestions}
         </div>
@@ -292,7 +305,7 @@ var Search = React.createClass({
 
     if (! this.state.inline) {
       var control = this._createControl();
-      var rightAlign = (! this.props.dropAlign.left);
+      var rightAlign = (this.props.dropAlign && ! this.props.dropAlign.left);
       var first = rightAlign ? contents : control;
       var second = rightAlign ? control : contents;
 
@@ -323,8 +336,6 @@ var Search = React.createClass({
 
     if (this.state.inline) {
 
-      var readOnly = (this.props.suggestions && this.props.suggestions.length > 0) ? true : false;
-
       var placeholderLabel = this.context.intl.formatMessage({
         id: this.props.placeHolder, defaultMessage: this.props.placeHolder});
 
@@ -335,7 +346,6 @@ var Search = React.createClass({
             defaultValue={this.props.defaultValue}
             value={this.props.value}
             className={CLASS_ROOT + "__input"}
-            readOnly={readOnly}
             onFocus={this._onFocusInput}
             onBlur={this._onBlurInput}
             onChange={this._onChangeInput} />

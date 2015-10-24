@@ -60,6 +60,7 @@ var Drop = {
         "' supplied to Drop," +
         "expected one of [" + HORIZONTAL_ALIGN_OPTIONS.join(',') + "]");
     }
+    align = align || {};
 
     // initialize data
     var drop = {
