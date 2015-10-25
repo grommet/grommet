@@ -1,4 +1,3 @@
-var chug = require('gulp-chug');
 var prompt = require('gulp-prompt');
 var bump = require('gulp-bump');
 var git = require('gulp-git');
