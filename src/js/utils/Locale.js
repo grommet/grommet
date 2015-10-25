@@ -15,6 +15,9 @@ function normalizeLocale(locale) {
 
 module.exports = {
   getCurrentLocale: function() {
+    if (typeof module !== 'undefined' && module.exports) {
+      return fallbackLocale;
+    }
     var cookieLanguages = Cookies.get('languages');
     var locale = cookieLanguages ? JSON.parse(cookieLanguages)[0] : undefined;
     if (!locale) {
@@ -24,8 +27,8 @@ module.exports = {
     return normalizeLocale(locale || fallbackLocale);
   },
 
-  getLocaleData: function(appLocale, locale) {
-    var locale = locale || this.getCurrentLocale();
+  getLocaleData: function(appLocale) {
+    var locale = this.getCurrentLocale();
     var grommetMessages;
     try {
       grommetMessages = require('../messages/' + locale);
