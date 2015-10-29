@@ -95,7 +95,6 @@ var Distribution = React.createClass({
       var box = container.querySelectorAll('[data-index="' + boxIndex + '"]')[0];
       var boxRect = box.getBoundingClientRect();
       var labelRect = label.getBoundingClientRect();
-      var labelPaddingTop = parseInt(window.getComputedStyle(label, null).getPropertyValue('padding-top'));
       if (labelRect.width > boxRect.width) {
         label.style.left = (boxRect.left  - rect.left) + 'px';
       } else {
