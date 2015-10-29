@@ -123,7 +123,7 @@ module.exports = function(gulp, opts) {
                 var iconPath = path.join(iconInputFolder, icon);
                 var content = fs.readFileSync(iconPath, 'utf8');
                 var query = options.icons.context ? '?context=' + options.icons.context : '?context=grommet/';
-                query += '&copyright=(C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.';
+                query += '&copyright=(C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP';
                 var loaderContext = {
                   query: query,
                   resourcePath: iconPath,

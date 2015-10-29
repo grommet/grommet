@@ -1,4 +1,4 @@
-// (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
 /*
  * Responsive is a utility for tracking the display size.

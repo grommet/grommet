@@ -1,4 +1,4 @@
-// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 var merge = require('lodash/object/merge');
 var Cookies = require('./Cookies');
 var fallbackLocale = 'en-US';

@@ -1,4 +1,4 @@
-// (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
 // Allow callers to use key labels instead of key code numbers.
 // This makes their code easier to read.
