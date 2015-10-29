@@ -81,12 +81,7 @@ var Drop = {
 
     // setup DOM
     drop.container = document.createElement('div');
-    if (drop.container.classList) {
-      drop.container.classList.add('drop');
-    } else {
-      // unit test version
-      drop.container.className += ' drop';
-    }
+    drop.container.className = 'drop';
     document.body.appendChild(drop.container);
     ReactDOM.render(content, drop.container);
 

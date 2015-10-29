@@ -7,7 +7,7 @@
   &:focus {
     outline: none;
 
-    &:after {
+    &:not(.menu--expanded):after {
       content: '';
       position: absolute;
       top: 0px;
