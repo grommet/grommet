@@ -44,7 +44,7 @@ var Form = React.createClass({
       } else if (typeof this.props.pad === 'object') {
         keys(this.props.pad).forEach(function (key) {
           classes.push(CLASS_ROOT + '--pad-' + key + '-' + this.props.pad[key]);
-        });
+        }.bind(this));
       }
     }
     if (this.props.className) {

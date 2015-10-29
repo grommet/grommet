@@ -1,6 +1,7 @@
 // (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
 
 .form {
+  box-sizing: border-box;
   position: relative;
 
   @include media-query(lap-and-up) {
