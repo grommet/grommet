@@ -15,9 +15,6 @@ function normalizeLocale(locale) {
 
 module.exports = {
   getCurrentLocale: function() {
-    if (typeof module !== 'undefined' && module.exports) {
-      return fallbackLocale;
-    }
     var cookieLanguages = Cookies.get('languages');
     var locale = cookieLanguages ? JSON.parse(cookieLanguages)[0] : undefined;
     if (!locale) {
@@ -27,18 +24,16 @@ module.exports = {
     return normalizeLocale(locale || fallbackLocale);
   },
 
-  getLocaleData: function(appLocale) {
+  getLocaleData: function(appMessages) {
     var locale = this.getCurrentLocale();
     var grommetMessages;
     try {
       grommetMessages = require('../messages/' + locale);
     } catch (e) {
-      console.warn(locale + ' not supported, fallback to English has been applied.');
-      locale = fallbackLocale;
-      grommetMessages = require('../messages/en-US');
+      grommetMessages = {};
     }
 
-    var messages = merge(grommetMessages, appLocale || {});
+    var messages = merge(grommetMessages, appMessages || {});
 
     return {
       locale: locale,
