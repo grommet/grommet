@@ -183,4 +183,18 @@
   &--flush {
     padding: 0px;
   }
+
+  &--media {
+    &-lap-and-up {
+      @include media-query(palm) {
+        display: none;
+      }
+    }
+
+    &-palm {
+      @include media-query(lap-and-up) {
+        display: none;
+      }
+    }
+  }
 }
