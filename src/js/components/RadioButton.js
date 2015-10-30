@@ -11,7 +11,7 @@ var RadioButton = React.createClass({
     disabled: React.PropTypes.bool,
     defaultChecked: React.PropTypes.bool,
     id: React.PropTypes.string.isRequired,
-    label: React.PropTypes.string.isRequired,
+    label: React.PropTypes.node.isRequired,
     name: React.PropTypes.string,
     onChange: React.PropTypes.func,
     value: React.PropTypes.string

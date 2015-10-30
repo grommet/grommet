@@ -7,11 +7,11 @@ var CLASS_ROOT = "form-field";
 var FormField = React.createClass({
 
   propTypes: {
-    error: React.PropTypes.string,
+    error: React.PropTypes.node,
     help: React.PropTypes.node,
     hidden: React.PropTypes.bool,
     htmlFor: React.PropTypes.string,
-    label: React.PropTypes.string,
+    label: React.PropTypes.node,
     required: React.PropTypes.bool
   },
 

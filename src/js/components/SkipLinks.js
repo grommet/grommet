@@ -2,16 +2,12 @@
 
 var React = require('react');
 var ReactDOM = require('react-dom');
-
+var FormattedMessage = require('react-intl').FormattedMessage;
 var Layer = require('./Layer');
 var Menu = require('./Menu');
 var DOM = require('../utils/DOM');
 
 var SkipLinks = React.createClass({
-
-  contextTypes: {
-    intl: React.PropTypes.object.isRequired
-  },
 
   getInitialState: function () {
     return {anchors: [], showLayer: false};
@@ -32,12 +28,12 @@ var SkipLinks = React.createClass({
   },
 
   _updateAnchors: function () {
-    var anchorElements = document.querySelectorAll('[data-skip-label]');
+    var anchorElements = document.querySelectorAll('.skip-link-anchor');
 
     var anchors = Array.prototype.map.call(anchorElements, function (anchorElement) {
       return {
         id: anchorElement.getAttribute('id'),
-        label: anchorElement.getAttribute('data-skip-label')
+        label: anchorElement.textContent
       };
     });
 
@@ -67,10 +63,6 @@ var SkipLinks = React.createClass({
 
   render: function () {
 
-    var skipToLabel = this.context.intl.formatMessage({
-      id: "Skip to", defaultMessage: "Skip to"
-    });
-
     var anchorElements = this.state.anchors.map(function (anchor, index) {
       return (
         <a tabIndex="0"
@@ -78,8 +70,7 @@ var SkipLinks = React.createClass({
            onFocus={this._onFocus}
            onBlur={this._onBlur}
            onClick={this._onClick(anchor.id)}
-           key={anchor.id}
-           aria-label={skipToLabel + anchor.label}>
+           key={anchor.id}>
           {anchor.label}
         </a>
       );
@@ -89,7 +80,9 @@ var SkipLinks = React.createClass({
       <div className="skip-links">
         <Layer id="skip-link-layer" hidden={!this.state.showLayer}>
           <div ref="skipLinksLayer">
-            <h2>{skipToLabel}:</h2>
+            <h2>
+              <FormattedMessage id="Skip to" defaultMessage="Skip to" />
+            </h2>
             <Menu direction="row">
               {anchorElements}
             </Menu>

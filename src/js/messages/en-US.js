@@ -34,6 +34,7 @@ module.exports = {
   'Skip to': 'Skip to',
   State: 'State',
   Status: 'Status',
+  'Tab Contents': '{activeTitle} Tab Contents',
   Tasks: 'Tasks',
   Time: 'Time',
   Total: 'Total',

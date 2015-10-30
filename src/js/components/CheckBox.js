@@ -11,7 +11,7 @@ var CheckBox = React.createClass({
     defaultChecked: React.PropTypes.bool,
     disabled: React.PropTypes.bool,
     id: React.PropTypes.string.isRequired,
-    label: React.PropTypes.string.isRequired,
+    label: React.PropTypes.node.isRequired,
     name: React.PropTypes.string,
     onChange: React.PropTypes.func,
     ariaDescribedby: React.PropTypes.string,

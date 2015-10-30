@@ -29,15 +29,10 @@ var Search = React.createClass({
     value: PropTypes.string
   },
 
-  contextTypes: {
-    intl: React.PropTypes.object.isRequired
-  },
-
   getDefaultProps: function () {
     return {
       align: 'left',
       inline: false,
-      placeHolder: 'Search',
       responsive: true
     };
   },
@@ -336,13 +331,10 @@ var Search = React.createClass({
 
     if (this.state.inline) {
 
-      var placeholderLabel = this.context.intl.formatMessage({
-        id: this.props.placeHolder, defaultMessage: this.props.placeHolder});
-
       return (
         <div className={classes.join(' ')}>
           <input ref="input" type="search"
-            placeholder={placeholderLabel}
+            placeholder={this.props.placeHolder}
             defaultValue={this.props.defaultValue}
             value={this.props.value}
             className={CLASS_ROOT + "__input"}

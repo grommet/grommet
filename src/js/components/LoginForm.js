@@ -23,10 +23,6 @@ var LoginForm = React.createClass({
     onSubmit: React.PropTypes.func
   },
 
-  contextTypes: {
-    intl: React.PropTypes.object.isRequired
-  },
-
   getDefaultProps: function () {
     return ({
       errors: [],
@@ -58,7 +54,7 @@ var LoginForm = React.createClass({
       );
     }.bind(this));
 
-    var logo = null;
+    var logo;
     if (this.props.logo) {
       logo = (
         <div className={CLASS_ROOT + "__logo"}>
@@ -67,7 +63,7 @@ var LoginForm = React.createClass({
       );
     }
 
-    var title = null;
+    var title;
     if (this.props.title) {
       title = (
         <h1 className={CLASS_ROOT + "__title"}>
@@ -76,7 +72,7 @@ var LoginForm = React.createClass({
       );
     }
 
-    var secondaryText = null;
+    var secondaryText;
     if (this.props.secondaryText) {
       secondaryText = (
         <p className={CLASS_ROOT + "__secondary-text"}>
@@ -85,18 +81,17 @@ var LoginForm = React.createClass({
       );
     }
 
-    var rememberMeLabel = this.context.intl.formatMessage({
-      id: "Remember me", defaultMessage: "Remember me"
-    });
-    var rememberMe = null;
+    var rememberMe;
     if (this.props.rememberMe) {
+
       rememberMe = (
         <CheckBox className={CLASS_ROOT + "__remember-me"}
-          id="remember-me" label={rememberMeLabel} />
+          id="remember-me"
+          label={<FormattedMessage id="Remember me" defaultMessage="Remember me" />} />
       );
     }
 
-    var footer = null;
+    var footer;
     if (this.props.forgotPassword) {
       footer = (
         <div className={CLASS_ROOT + "__footer"}>
@@ -105,15 +100,9 @@ var LoginForm = React.createClass({
       );
     }
 
-    var usernameLabel = this.context.intl.formatMessage({
-      id: "Username", defaultMessage: "Username"
-    });
-    var passwordLabel = this.context.intl.formatMessage({
-      id: "Password", defaultMessage: "Password"
-    });
-    var loginLabel = this.context.intl.formatMessage({
-      id: "Log In", defaultMessage: "Log In"
-    });
+    var username = <FormattedMessage id="Username" defaultMessage="Username" />;
+    var password = <FormattedMessage id="Password" defaultMessage="Password" />;
+    var login = <FormattedMessage id="Log In" defaultMessage="Log In" />;
 
     return (
       <Form className={classes.join(' ')} onSubmit={this._onSubmit}>
@@ -121,17 +110,17 @@ var LoginForm = React.createClass({
         {title}
         {secondaryText}
         <fieldset>
-          <FormField htmlFor="username" label={usernameLabel}>
+          <FormField htmlFor="username" label={username}>
             <input id="username" ref="username" type={this.props.usernameType} />
           </FormField>
-          <FormField htmlFor="password" label={passwordLabel}>
+          <FormField htmlFor="password" label={password}>
             <input id="password" ref="password" type="password" />
           </FormField>
         </fieldset>
         {errors}
         {rememberMe}
-        <Button id={CLASS_ROOT + "__submit"} className={CLASS_ROOT + "__submit"} primary={true} strong={true}
-          type="submit" label={loginLabel}
+        <Button id={CLASS_ROOT + "__submit"} className={CLASS_ROOT + "__submit"}
+          primary={true} strong={true} type="submit" label={login}
           onClick={this._onSubmit} />
         {footer}
       </Form>

@@ -11,7 +11,7 @@ import Legend from '../../src/js/components/Legend';
 describe('Grommet Legend', function() {
   it('loads a basic Legend', function() {
     var stateful = TestUtils.renderIntoDocument(
-      <IntlProvider>
+      <IntlProvider locale="en">
         <Legend total={true} series={[
           {"label": "Gen 7", "value": 50},
           {"label": "Gen 8", "value": 200}
