@@ -2,8 +2,7 @@
 
 var React = require('react');
 var ReactDOM = require('react-dom');
-var ReactIntl = require('react-intl');
-var FormattedMessage = ReactIntl.FormattedMessage;
+var FormattedMessage = require('./FormattedMessage');
 
 var Legend = require('./Legend');
 

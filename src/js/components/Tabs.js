@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 var React = require('react');
-var FormattedMessage = require('react-intl').FormattedMessage;
+var FormattedMessage = require('./FormattedMessage');
 var Box = require('./Box');
 
 var CLASS_ROOT = "tabs";

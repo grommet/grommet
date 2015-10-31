@@ -1,8 +1,7 @@
 // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
 var React = require('react');
-var ReactIntl = require('react-intl');
-var FormattedMessage = ReactIntl.FormattedMessage;
+var FormattedMessage = require('./FormattedMessage');
 
 var CLASS_ROOT = "legend";
 

@@ -11,7 +11,6 @@ var Grommet = {
   Chart: require('./components/Chart'),
   CheckBox: require('./components/CheckBox'),
   Distribution: require('./components/Distribution'),
-  Donut: require('./components/Donut'),
   Footer: require('./components/Footer'),
   Form: require('./components/Form'),
   FormField: require('./components/FormField'),

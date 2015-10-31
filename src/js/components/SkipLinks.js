@@ -2,7 +2,7 @@
 
 var React = require('react');
 var ReactDOM = require('react-dom');
-var FormattedMessage = require('react-intl').FormattedMessage;
+var FormattedMessage = require('./FormattedMessage');
 var Layer = require('./Layer');
 var Menu = require('./Menu');
 var DOM = require('../utils/DOM');
