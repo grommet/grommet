@@ -1,6 +1,7 @@
-// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 var React = require('react');
+var ReactDOM = require('react-dom');
 
 var CLASS_ROOT = "map";
 
@@ -54,8 +55,8 @@ var ResourceMap = React.createClass({
   },
 
   _draw: function () {
-    var canvasElement = this.refs.canvas.getDOMNode();
-    var highlightCanvasElement = this.refs.highlightCanvas.getDOMNode();
+    var canvasElement = ReactDOM.findDOMNode(this.refs.canvas);
+    var highlightCanvasElement = ReactDOM.findDOMNode(this.refs.highlightCanvas);
     // don't draw if we don't have a canvas to draw on, such as a unit test
     if (canvasElement.getContext) {
       var context = canvasElement.getContext('2d');
@@ -90,7 +91,7 @@ var ResourceMap = React.createClass({
   },
 
   _layout: function () {
-    var mapElement = this.refs.map.getDOMNode();
+    var mapElement = ReactDOM.findDOMNode(this.refs.map);
     if (mapElement.scrollWidth !== this.state.canvasWidth ||
       mapElement.scrollHeight !== this.state.canvasHeight) {
       this.setState({

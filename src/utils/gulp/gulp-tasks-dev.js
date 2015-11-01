@@ -10,7 +10,7 @@ module.exports = function(gulp, options, webpackConfig, dist) {
   gulp.task('dev-preprocess', function(callback) {
     var argv = require('yargs').argv;
     if (argv.skipPreprocess) {
-      runSequence('copy', callback);
+      callback();
     } else if (options.devPreprocess) {
       runSequence('preprocess', options.devPreprocess, callback);
     } else {

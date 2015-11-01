@@ -1,4 +1,4 @@
-// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 module.exports = {
   IndexFilters: {
@@ -34,6 +34,7 @@ module.exports = {
   'Skip to': 'Skip to',
   State: 'State',
   Status: 'Status',
+  'Tab Contents': '{activeTitle} Tab Contents',
   Tasks: 'Tasks',
   Time: 'Time',
   Total: 'Total',

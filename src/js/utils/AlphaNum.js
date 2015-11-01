@@ -1,4 +1,4 @@
-// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 module.exports = {
   // http://my.opera.com/GreyWyvern/blog/show.dml/1671288
@@ -27,7 +27,7 @@ module.exports = {
         if (c == aa[x] && d == bb[x]) {
           return c - d;
         } else {
-          return (aa[x] > bb[x]) ? 1 : -1;  
+          return (aa[x] > bb[x]) ? 1 : -1;
         }
       }
     }

@@ -1,8 +1,8 @@
-// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 var React = require('react');
 
-var KeyboardAccelerators = require('../mixins/KeyboardAccelerators');
+var KeyboardAccelerators = require('../utils/KeyboardAccelerators');
 
 var CLASS_ROOT = "tab";
 
@@ -14,22 +14,20 @@ var Tab = React.createClass({
     id: React.PropTypes.string
   },
 
-  mixins: [KeyboardAccelerators],
-
   componentDidMount: function () {
-    this.startListeningToKeyboard({
+    KeyboardAccelerators.startListeningToKeyboard(this, {
       space: this._processSpace
     });
   },
 
   componentWillUnmount: function () {
-    this.stopListeningToKeyboard({
+    KeyboardAccelerators.stopListeningToKeyboard(this, {
       space: this._processSpace
     });
   },
 
   _processSpace: function (event) {
-    if (event.target === this.refs.tab.getDOMNode()) {
+    if (event.target === this.refs.tab) {
       this._onClickTab(event);
     }
   },

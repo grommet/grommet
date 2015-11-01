@@ -1,6 +1,6 @@
-// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var findDOMNode = require('react').findDOMNode;
+var findDOMNode = require('react-dom').findDOMNode;
 
 // Allow callers to use key labels instead of key code numbers.
 // This makes their code easier to read.

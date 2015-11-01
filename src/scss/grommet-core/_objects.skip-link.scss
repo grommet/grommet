@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-html,
-.brand-font {
-  font-family: $brand-font-family;
+.skip-link-anchor {
+  width: 0;
+  height: 0;
+  overflow: hidden;
 }

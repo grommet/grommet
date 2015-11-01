@@ -1,11 +1,11 @@
-// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 var React = require('react');
 var SpinningIcon = require('./icons/Spinning');
 var LeftIcon = require('./icons/Left');
 var RightIcon = require('./icons/Right');
 var Scroll = require('../utils/Scroll');
-var InfiniteScroll = require('../mixins/InfiniteScroll');
+var InfiniteScroll = require('../utils/InfiniteScroll');
 
 var CLASS_ROOT = "tiles";
 
@@ -20,8 +20,6 @@ var Tiles = React.createClass({
     small: React.PropTypes.bool
   },
 
-  mixins: [InfiniteScroll],
-
   getDefaultProps: function () {
     return {
       flush: true,
@@ -30,13 +28,59 @@ var Tiles = React.createClass({
     };
   },
 
+  getInitialState: function () {
+    return {overflow: false};
+  },
+
+  componentDidMount: function () {
+    if (this.props.onMore) {
+      this._scroll = InfiniteScroll.startListeningForScroll(this.refs.more, this.props.onMore);
+    }
+    if ('row' === this.props.direction) {
+      window.addEventListener('resize', this._onResize);
+      document.addEventListener('wheel', this._onWheel);
+      this._trackHorizontalScroll();
+      this._layout();
+    }
+  },
+
+  componentWillReceiveProps: function (nextProps) {
+    if (this.props.onMore) {
+      InfiniteScroll.stopListeningForScroll(this._scroll);
+      this._scroll = null;
+    }
+  },
+
+  componentDidUpdate: function () {
+    if (this.props.onMore) {
+      this._scroll = InfiniteScroll.startListeningForScroll(this.refs.more, this.props.onMore);
+    }
+    if ('row' === this.props.direction) {
+      this._trackHorizontalScroll();
+    }
+  },
+
+  componentWillUnmount: function () {
+    if (this._scroll) {
+      InfiniteScroll.stopListeningForScroll(this._scroll);
+    }
+    if ('row' === this.props.direction) {
+      window.removeEventListener('resize', this._onResize);
+      document.removeEventListener('wheel', this._onWheel);
+      if (this._tracking) {
+        var tiles = this.refs.tiles;
+        tiles.removeEventListener('scroll', this._onScrollHorizontal);
+      }
+    }
+  },
+
   _onLeft: function () {
-    var tiles = this.refs.tiles.getDOMNode();
+    var tiles = this.refs.tiles;
     Scroll.scrollBy(tiles, 'scrollLeft', - tiles.offsetWidth);
   },
 
   _onRight: function () {
-    var tiles = this.refs.tiles.getDOMNode();
+    var tiles = this.refs.tiles;
     Scroll.scrollBy(tiles, 'scrollLeft', tiles.offsetWidth);
   },
 
@@ -59,7 +103,7 @@ var Tiles = React.createClass({
   _layout: function () {
     if ('row' === this.props.direction) {
       // determine if we have more tiles than room to fit
-      var tiles = this.refs.tiles.getDOMNode();
+      var tiles = this.refs.tiles;
       // 20 is to allow some fuzziness as scrollbars come and go
       this.setState({
         overflow: (tiles.scrollWidth > (tiles.offsetWidth + 20)),
@@ -90,51 +134,11 @@ var Tiles = React.createClass({
     this._resizeTimer = setTimeout(this._layout, 50);
   },
 
-  getInitialState: function () {
-    return {overflow: false};
-  },
-
   _trackHorizontalScroll: function () {
     if (this.state.overflow && ! this._tracking) {
-      var tiles = this.refs.tiles.getDOMNode();
+      var tiles = this.refs.tiles;
       tiles.addEventListener('scroll', this._onScrollHorizontal);
       this._tracking = true;
-    }
-  },
-
-  componentDidMount: function () {
-    if (this.props.onMore) {
-      this.startListeningForScroll(this.refs.more.getDOMNode(), this.props.onMore);
-    }
-    if ('row' === this.props.direction) {
-      window.addEventListener('resize', this._onResize);
-      document.addEventListener('wheel', this._onWheel);
-      this._trackHorizontalScroll();
-      this._layout();
-    }
-  },
-
-  componentDidUpdate: function () {
-    this.stopListeningForScroll();
-    if (this.props.onMore) {
-      this.startListeningForScroll(this.refs.more.getDOMNode(), this.props.onMore);
-    }
-    if ('row' === this.props.direction) {
-      this._trackHorizontalScroll();
-    }
-  },
-
-  componentWillUnmount: function () {
-    if (this.props.onMore) {
-      this.stopListeningForScroll();
-    }
-    if ('row' === this.props.direction) {
-      window.removeEventListener('resize', this._onResize);
-      document.removeEventListener('wheel', this._onWheel);
-      if (this._tracking) {
-        var tiles = this.refs.tiles.getDOMNode();
-        tiles.removeEventListener('scroll', this._onScrollHorizontal);
-      }
     }
   },
 

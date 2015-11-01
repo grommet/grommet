@@ -1,14 +1,13 @@
-// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 var React = require('react');
+var ReactDOM = require('react-dom');
+var FormattedMessage = require('./FormattedMessage');
 var Layer = require('./Layer');
 var Menu = require('./Menu');
 var DOM = require('../utils/DOM');
-var IntlMixin = require('../mixins/GrommetIntlMixin');
 
 var SkipLinks = React.createClass({
-
-  mixins: [IntlMixin],
 
   getInitialState: function () {
     return {anchors: [], showLayer: false};
@@ -29,12 +28,12 @@ var SkipLinks = React.createClass({
   },
 
   _updateAnchors: function () {
-    var anchorElements = document.querySelectorAll('[data-skip-label]');
+    var anchorElements = document.querySelectorAll('.skip-link-anchor');
 
     var anchors = Array.prototype.map.call(anchorElements, function (anchorElement) {
       return {
         id: anchorElement.getAttribute('id'),
-        label: anchorElement.getAttribute('data-skip-label')
+        label: anchorElement.textContent
       };
     });
 
@@ -48,7 +47,7 @@ var SkipLinks = React.createClass({
   },
 
   _onBlur: function () {
-    var skipLinksLayer = this.refs.skipLinksLayer.getDOMNode();
+    var skipLinksLayer = ReactDOM.findDOMNode(this.refs.skipLinksLayer);
     var activeElement = document.activeElement;
     if (!DOM.isDescendant(skipLinksLayer, activeElement)) {
       this.setState({showLayer: false});
@@ -63,6 +62,7 @@ var SkipLinks = React.createClass({
   },
 
   render: function () {
+
     var anchorElements = this.state.anchors.map(function (anchor, index) {
       return (
         <a tabIndex="0"
@@ -70,8 +70,7 @@ var SkipLinks = React.createClass({
            onFocus={this._onFocus}
            onBlur={this._onBlur}
            onClick={this._onClick(anchor.id)}
-           key={anchor.id}
-           aria-label={this.getGrommetIntlMessage('Skip to') + ' ' + anchor.label}>
+           key={anchor.id}>
           {anchor.label}
         </a>
       );
@@ -81,7 +80,9 @@ var SkipLinks = React.createClass({
       <div className="skip-links">
         <Layer id="skip-link-layer" hidden={!this.state.showLayer}>
           <div ref="skipLinksLayer">
-            <h2>{this.getGrommetIntlMessage('Skip to')}:</h2>
+            <h2>
+              <FormattedMessage id="Skip to" defaultMessage="Skip to" />
+            </h2>
             <Menu direction="row">
               {anchorElements}
             </Menu>

@@ -1,7 +1,7 @@
-// (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
 var React = require('react');
-var IntlMixin = require('../mixins/GrommetIntlMixin');
+var FormattedMessage = require('./FormattedMessage');
 
 var CLASS_ROOT = "legend";
 
@@ -24,8 +24,6 @@ var Legend = React.createClass({
     units: React.PropTypes.string,
     value: React.PropTypes.number
   },
-
-  mixins: [IntlMixin],
 
   getInitialState: function () {
     return {activeIndex: this.props.activeIndex};
@@ -113,7 +111,7 @@ var Legend = React.createClass({
       total = (
         <li className={CLASS_ROOT + "__total"}>
           <span className={CLASS_ROOT + "__total-label"}>
-            {this.getGrommetIntlMessage('Total')}
+            <FormattedMessage id="Total" defaultMessage="Total" />
           </span>
           <span className={CLASS_ROOT + "__total-value"}>
             {totalValue}

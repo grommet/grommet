@@ -9,7 +9,7 @@ module.exports = function(gulp, options, webpackConfig, dist) {
   gulp.task('dist-preprocess', function(callback) {
     var argv = require('yargs').argv;
     if (argv.skipPreprocess) {
-      runSequence('copy', callback);
+      callback();
     } else if (options.distPreprocess) {
       if (process.env.CI) {
         runSequence('preprocess', options.distPreprocess, 'copy', callback);
@@ -33,8 +33,8 @@ module.exports = function(gulp, options, webpackConfig, dist) {
 
     var plugins = [
       new webpack.DefinePlugin(env),
-      new webpack.optimize.OccurenceOrderPlugin()
-      //new webpack.optimize.DedupePlugin()
+      new webpack.optimize.OccurenceOrderPlugin(),
+      new webpack.optimize.DedupePlugin()
     ];
 
     var argv = require('yargs').argv;

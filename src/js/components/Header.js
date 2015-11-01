@@ -1,6 +1,7 @@
-// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 var React = require('react');
+var ReactDOM = require('react-dom');
 var merge = require('lodash/object/merge');
 var pick = require('lodash/object/pick');
 var keys = require('lodash/object/keys');
@@ -67,8 +68,8 @@ var Header = React.createClass({
   },
 
   _alignMirror: function () {
-    var contentElement = this.refs.content.getDOMNode();
-    var mirrorElement = this.refs.mirror.getDOMNode();
+    var contentElement = ReactDOM.findDOMNode(this.refs.content);
+    var mirrorElement = this.refs.mirror;
 
     // constrain fixed content to the width of the mirror
     var mirrorRect = mirrorElement.getBoundingClientRect();

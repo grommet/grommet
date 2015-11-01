@@ -1,12 +1,14 @@
-// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 var React = require('react');
-var IntlMixin = require('../mixins/GrommetIntlMixin');
+var ReactIntl = require('react-intl');
+var FormattedDate = ReactIntl.FormattedDate;
+
 var StatusIcon = require('./icons/Status');
 
 var CLASS_ROOT = "notification";
 
-var GrommetNotification = React.createClass({
+var Notification = React.createClass({
 
   propTypes: {
     flush: React.PropTypes.bool,
@@ -15,8 +17,6 @@ var GrommetNotification = React.createClass({
     status: React.PropTypes.string,
     timestamp: React.PropTypes.object // Date
   },
-
-  mixins: [IntlMixin],
 
   getDefaultProps: function () {
     return {
@@ -50,10 +50,20 @@ var GrommetNotification = React.createClass({
 
     var timestamp;
     if (this.props.timestamp) {
-      var text = this.getGrommetFormattedDate(this.props.timestamp);
+      var timestampFormatted = (
+        <FormattedDate value={this.props.timestamp}
+          weekday="long"
+          day="numeric"
+          month="long"
+          year="numeric"
+          hour="numeric"
+          minute="numeric"
+          second="numeric" />
+      );
+
       timestamp = (
         <span className={CLASS_ROOT + "__timestamp"}>
-          {text}
+          {timestampFormatted}
         </span>
       );
     }
@@ -73,4 +83,4 @@ var GrommetNotification = React.createClass({
 
 });
 
-module.exports = GrommetNotification;
+module.exports = Notification;
