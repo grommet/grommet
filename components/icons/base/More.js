@@ -1,9 +1,9 @@
-// (C) Copyright 2014-2015 Hewlett-Packard Development Company
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 'use strict';
 
 var React = require('react');
-var IntlMixin = require('../../../mixins/GrommetIntlMixin');
+var FormattedMessage = require('../../../components/FormattedMessage');
 
 var CLASS_ROOT = "control-icon";
 
@@ -16,8 +16,6 @@ var Icon = React.createClass({
     colorIndex: React.PropTypes.string,
     large: React.PropTypes.bool
   },
-
-  mixins: [IntlMixin],
 
   getDefaultProps: function getDefaultProps() {
     return {
@@ -37,7 +35,8 @@ var Icon = React.createClass({
       classes.push(this.props.className);
     }
 
-    var a11yTitle = this.getGrommetIntlMessage(typeof this.props.a11yTitle !== "undefined" ? this.props.a11yTitle : "more");
+    var titleLabel = typeof this.props.a11yTitle !== "undefined" ? this.props.a11yTitle : "more";
+    var a11yTitle = React.createElement(FormattedMessage, { id: titleLabel, defaultMessage: titleLabel });
 
     return React.createElement(
       'svg',

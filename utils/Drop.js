@@ -1,8 +1,9 @@
-// (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
 'use strict';
 
 var React = require('react');
+var ReactDOM = require('react-dom');
 var DOM = require('../utils/DOM');
 
 /*
@@ -49,6 +50,7 @@ var Drop = {
     if (align && align.right && HORIZONTAL_ALIGN_OPTIONS.indexOf(align.right) === -1) {
       console.warn("Warning: Invalid align.right value '" + align.right + "' supplied to Drop," + "expected one of [" + HORIZONTAL_ALIGN_OPTIONS.join(',') + "]");
     }
+    align = align || {};
 
     // initialize data
     var drop = {
@@ -69,14 +71,9 @@ var Drop = {
 
     // setup DOM
     drop.container = document.createElement('div');
-    if (drop.container.classList) {
-      drop.container.classList.add('drop');
-    } else {
-      // unit test version
-      drop.container.className += ' drop';
-    }
+    drop.container.className = 'drop';
     document.body.appendChild(drop.container);
-    React.render(content, drop.container);
+    ReactDOM.render(content, drop.container);
 
     drop.scrollParents = DOM.findScrollParents(drop.control);
     drop.place = this._place.bind(this, drop);
@@ -95,7 +92,7 @@ var Drop = {
   },
 
   _render: function _render(drop, content) {
-    React.render(content, drop.container);
+    ReactDOM.render(content, drop.container);
     // in case content changed, re-place
     setTimeout(this._place.bind(this, drop), 1);
   },
@@ -106,7 +103,7 @@ var Drop = {
     });
     window.removeEventListener('resize', drop.place);
 
-    React.unmountComponentAtNode(drop.container);
+    ReactDOM.unmountComponentAtNode(drop.container);
     document.body.removeChild(drop.container);
   },
 

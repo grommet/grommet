@@ -1,12 +1,13 @@
-// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 'use strict';
 
 var React = require('react');
+var ReactIntl = require('react-intl');
+var FormattedDate = ReactIntl.FormattedDate;
 var ListItem = require('./ListItem');
 var SpinningIcon = require('./icons/Spinning');
-var InfiniteScroll = require('../mixins/InfiniteScroll');
-var IntlMixin = require('../mixins/GrommetIntlMixin');
+var InfiniteScroll = require('../utils/InfiniteScroll');
 
 var CLASS_ROOT = "list";
 
@@ -36,8 +37,6 @@ var List = React.createClass({
     small: React.PropTypes.bool
   },
 
-  mixins: [InfiniteScroll, IntlMixin],
-
   getDefaultProps: function getDefaultProps() {
     return { small: false, itemDirection: 'row' };
   },
@@ -48,24 +47,27 @@ var List = React.createClass({
 
   componentDidMount: function componentDidMount() {
     if (this.props.onMore) {
-      this.startListeningForScroll(this.refs.more.getDOMNode(), this.props.onMore);
+      this._scroll = InfiniteScroll.startListeningForScroll(this.refs.more, this.props.onMore);
     }
   },
 
-  componentWillReceiveProps: function componentWillReceiveProps(newProps) {
-    this.setState(this._stateFromProps(newProps));
+  componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
+    if (this.props.onMore) {
+      InfiniteScroll.stopListeningForScroll(this._scroll);
+      this._scroll = null;
+    }
+    this.setState(this._stateFromProps(nextProps));
   },
 
   componentDidUpdate: function componentDidUpdate() {
-    this.stopListeningForScroll();
     if (this.props.onMore) {
-      this.startListeningForScroll(this.refs.more.getDOMNode(), this.props.onMore);
+      this._scroll = InfiniteScroll.startListeningForScroll(this.refs.more, this.props.onMore);
     }
   },
 
   componentWillUnmount: function componentWillUnmount() {
-    if (this.props.onMore) {
-      this.stopListeningForScroll();
+    if (this._onScroll) {
+      InfiniteScroll.stopListeningForScroll(this._scroll);
     }
   },
 
@@ -89,7 +91,14 @@ var List = React.createClass({
         result = value;
       }
     } else if (scheme.timestamp) {
-      result = this.getGrommetFormattedDate(value);
+      result = React.createElement(FormattedDate, { value: new Date(date),
+        weekday: 'long',
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric' });
     } else {
       result = value;
     }

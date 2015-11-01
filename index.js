@@ -1,4 +1,4 @@
-// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 'use strict';
 
 var Grommet = {
@@ -13,7 +13,6 @@ var Grommet = {
   Chart: require('./components/Chart'),
   CheckBox: require('./components/CheckBox'),
   Distribution: require('./components/Distribution'),
-  Donut: require('./components/Donut'),
   Footer: require('./components/Footer'),
   Form: require('./components/Form'),
   FormField: require('./components/FormField'),
@@ -68,13 +67,8 @@ var Grommet = {
   },
   // Mixins
   Mixins: {
-    KeyboardAccelerators: require('./mixins/KeyboardAccelerators'),
-    ReactLayeredComponent: require('./mixins/ReactLayeredComponent')
+    KeyboardAccelerators: require('./mixins/KeyboardAccelerators')
   },
-  // Actions
-  Actions: require('./actions/Actions'),
-  // Stores
-  SessionStore: require('./stores/SessionStore'),
   // Utils
   Cookies: require('./utils/Cookies'),
   DOM: require('./utils/DOM'),

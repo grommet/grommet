@@ -1,25 +1,23 @@
-// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 'use strict';
 
 var React = require('react');
-var IntlMixin = require('../../../mixins/GrommetIntlMixin');
+var FormattedMessage = require('../../FormattedMessage');
 
 var Unknown = React.createClass({
   displayName: 'Unknown',
 
-  mixins: [IntlMixin],
-
   render: function render() {
     var className = 'status-icon status-icon-unknown';
-    var a11yTitle = this.getGrommetIntlMessage(this.props.a11yTitle);
+    var a11yTitle = this.props.a11yTitle;
     if (this.props.className) {
       className += ' ' + this.props.className;
     }
     if (typeof this.props.a11yTitle === "undefined") {
       // this.props.a11yTitle emplty string is an acceptable value. Only if undefined
       // should use the default title value.
-      a11yTitle = this.getGrommetIntlMessage('Unknown');
+      a11yTitle = 'Unknown';
     }
     var unknownTitleId = 'unknown-title';
     return React.createElement(
@@ -28,7 +26,7 @@ var Unknown = React.createClass({
       React.createElement(
         'title',
         { id: unknownTitleId },
-        a11yTitle
+        React.createElement(FormattedMessage, { id: a11yTitle, defaultMessage: a11yTitle })
       ),
       React.createElement(
         'g',

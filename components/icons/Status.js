@@ -1,4 +1,4 @@
-// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 'use strict';
 
@@ -15,14 +15,6 @@ var CLASS_ROOT = "status-icon";
 var Status = React.createClass({
   displayName: 'Status',
 
-  propType: {
-    a11yTitle: React.PropTypes.string,
-    large: React.PropTypes.bool,
-    small: React.PropTypes.bool,
-    size: React.PropTypes.oneOf(['small', 'medium', 'large']),
-    value: React.PropTypes.oneOf(['error', 'warning', 'ok', 'unknown', 'disabled'])
-  },
-
   getDefaultProps: function getDefaultProps() {
     return { value: 'unknown' };
   },
@@ -33,6 +25,14 @@ var Status = React.createClass({
 
   componentWillReceiveProps: function componentWillReceiveProps(newProps) {
     this.setState(this._stateFromProps(newProps));
+  },
+
+  propType: {
+    a11yTitle: React.PropTypes.string,
+    large: React.PropTypes.bool,
+    small: React.PropTypes.bool,
+    size: React.PropTypes.oneOf(['small', 'medium', 'large']),
+    value: React.PropTypes.oneOf(['error', 'warning', 'ok', 'unknown', 'disabled'])
   },
 
   _stateFromProps: function _stateFromProps(props) {

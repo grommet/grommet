@@ -1,4 +1,4 @@
-// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 'use strict';
 
@@ -36,6 +36,7 @@ module.exports = {
   'Skip to': 'Saltar para',
   State: 'Estado',
   Status: 'Situaçāo',
+  'Tab Contents': '{activeTitle} Conteúdo da Tab',
   Tasks: 'Tarefas',
   Time: 'Data',
   Total: 'Total',

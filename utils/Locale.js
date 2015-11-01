@@ -1,4 +1,4 @@
-// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 'use strict';
 
 var merge = require('lodash/object/merge');
@@ -29,18 +29,16 @@ module.exports = {
     return normalizeLocale(locale || fallbackLocale);
   },
 
-  getLocaleData: function getLocaleData(appLocale) {
+  getLocaleData: function getLocaleData(appMessages) {
     var locale = this.getCurrentLocale();
     var grommetMessages;
     try {
       grommetMessages = require('../messages/' + locale);
     } catch (e) {
-      console.warn(locale + ' not supported, fallback to English has been applied.');
-      locale = fallbackLocale;
-      grommetMessages = require('../messages/en-US');
+      grommetMessages = {};
     }
 
-    var messages = merge(grommetMessages, appLocale || {});
+    var messages = merge(grommetMessages, appMessages || {});
 
     return {
       locale: locale,

@@ -1,8 +1,9 @@
-// (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
 'use strict';
 
 var React = require('react');
+var ReactDOM = require('react-dom');
 var Legend = require('./Legend');
 
 var CLASS_ROOT = "chart";
@@ -24,7 +25,7 @@ var Chart = React.createClass({
     important: React.PropTypes.number,
     large: React.PropTypes.bool,
     legend: React.PropTypes.shape({
-      position: React.PropTypes.oneOf(['over', 'after']),
+      position: React.PropTypes.oneOf(['overlay', 'after']),
       total: React.PropTypes.bool
     }),
     max: React.PropTypes.number,
@@ -48,7 +49,7 @@ var Chart = React.createClass({
     })),
     type: React.PropTypes.oneOf(['line', 'bar', 'area']),
     units: React.PropTypes.string,
-    xAxis: React.PropTypes.oneOfType(React.PropTypes.arrayOf(React.PropTypes.shape({
+    xAxis: React.PropTypes.oneOfType([React.PropTypes.arrayOf(React.PropTypes.shape({
       value: React.PropTypes.oneOfType([React.PropTypes.number, React.PropTypes.object // Date
       ]).isRequired,
       label: React.PropTypes.string.isRequired
@@ -59,7 +60,7 @@ var Chart = React.createClass({
         ]).isRequired,
         label: React.PropTypes.string.isRequired
       }).isRequired)
-    }))
+    })])
   },
 
   getDefaultProps: function getDefaultProps() {
@@ -250,11 +251,11 @@ var Chart = React.createClass({
   _alignLegend: function _alignLegend() {
     if (this.state.activeXIndex >= 0 && this.refs.cursor) {
       var bounds = this.state.bounds;
-      var cursorElement = this.refs.cursor.getDOMNode();
+      var cursorElement = this.refs.cursor;
       var cursorRect = cursorElement.getBoundingClientRect();
-      var element = this.refs.chart.getDOMNode();
+      var element = this.refs.chart;
       var rect = element.getBoundingClientRect();
-      var legendElement = this.refs.legend.getDOMNode();
+      var legendElement = ReactDOM.findDOMNode(this.refs.legend);
       var legendRect = legendElement.getBoundingClientRect();
 
       var left = cursorRect.left - rect.left - legendRect.width - 1;
@@ -275,7 +276,7 @@ var Chart = React.createClass({
     if (this.props.legend && 'below' !== this.props.legend.position) {
       this._alignLegend();
     }
-    var element = this.refs.chart.getDOMNode();
+    var element = this.refs.chart;
     var rect = element.getBoundingClientRect();
     if (rect.width !== this.state.width || rect.height !== this.state.height) {
       var bounds = this._bounds(this.props.series, this.props.xAxis, rect.width, rect.height);

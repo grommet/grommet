@@ -1,9 +1,8 @@
-// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 'use strict';
 
 var React = require('react');
-var IntlMixin = require('../mixins/GrommetIntlMixin');
 
 var CLASS_ROOT = "object";
 
@@ -13,8 +12,6 @@ var GrommetObject = React.createClass({
   propTypes: {
     data: React.PropTypes.object
   },
-
-  mixins: [IntlMixin],
 
   _renderArray: function _renderArray(array) {
     return array.map(function (item, index) {
@@ -59,12 +56,12 @@ var GrommetObject = React.createClass({
           React.createElement(
             'span',
             { className: CLASS_ROOT + "__attribute-name" },
-            this.getGrommetIntlMessage(name)
+            name
           ),
           React.createElement(
             'span',
             { className: CLASS_ROOT + "__attribute-value" },
-            this.getGrommetIntlMessage(value)
+            value
           )
         ));
       }

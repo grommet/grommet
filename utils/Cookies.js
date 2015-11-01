@@ -1,4 +1,4 @@
-// (C) Copyright 2015 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2015 Hewlett Packard Enterprise Development LP
 
 // Slightly modified version of the Mozilla Developer Network version.
 // renamed the module and the functions.

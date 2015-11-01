@@ -1,4 +1,4 @@
-// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 'use strict';
 
@@ -10,11 +10,11 @@ var FormField = React.createClass({
   displayName: 'FormField',
 
   propTypes: {
-    error: React.PropTypes.string,
+    error: React.PropTypes.node,
     help: React.PropTypes.node,
     hidden: React.PropTypes.bool,
     htmlFor: React.PropTypes.string,
-    label: React.PropTypes.string,
+    label: React.PropTypes.node,
     required: React.PropTypes.bool
   },
 
@@ -23,7 +23,7 @@ var FormField = React.createClass({
   },
 
   componentDidMount: function componentDidMount() {
-    var contentsElement = this.refs.contents.getDOMNode();
+    var contentsElement = this.refs.contents;
     var inputElements = contentsElement.querySelectorAll('input, textarea, select');
     if (inputElements.length === 1) {
       this._inputElement = inputElements[0];

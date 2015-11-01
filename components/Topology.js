@@ -1,8 +1,9 @@
-// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 'use strict';
 
 var React = require('react');
+var ReactDOM = require('react-dom');
 var Status = require('./icons/Status');
 
 var CLASS_ROOT = "topology";
@@ -117,7 +118,7 @@ var Parts = React.createClass({
 
   _makeUniform: function _makeUniform() {
     if (this.props.uniform) {
-      var parts = this.refs.component.getDOMNode().children;
+      var parts = ReactDOM.findDOMNode(this.refs.component).children;
       // clear old basis
       for (var i = 0; i < parts.length; i += 1) {
         parts[i].style.webkitFlexBasis = null;
@@ -235,7 +236,7 @@ var Topology = React.createClass({
   },
 
   _draw: function _draw() {
-    var canvasElement = this.refs.canvas.getDOMNode();
+    var canvasElement = ReactDOM.findDOMNode(this.refs.canvas);
     // don't draw if we don't have a canvas to draw on, such as a unit test
     if (canvasElement.getContext) {
       var context = canvasElement.getContext('2d');
@@ -296,7 +297,7 @@ var Topology = React.createClass({
   },
 
   _layout: function _layout() {
-    var element = this.refs.contents.getDOMNode();
+    var element = ReactDOM.findDOMNode(this.refs.contents);
     if (element.scrollWidth !== this.state.canvasWidth || element.scrollHeight !== this.state.canvasHeight) {
       this.setState({
         canvasWidth: element.scrollWidth,

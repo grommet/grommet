@@ -1,13 +1,13 @@
-// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 'use strict';
 
 var React = require('react');
+var PropTypes = React.PropTypes;
 var KeyboardAccelerators = require('../utils/KeyboardAccelerators');
 var Drop = require('../utils/Drop');
 var Responsive = require('../utils/Responsive');
 var SearchIcon = require('./icons/Search');
-var IntlMixin = require('../mixins/GrommetIntlMixin');
 
 var CLASS_ROOT = "search";
 
@@ -15,26 +15,24 @@ var Search = React.createClass({
   displayName: 'Search',
 
   propTypes: {
-    defaultValue: React.PropTypes.string,
+    defaultValue: PropTypes.string,
     dropAlign: Drop.alignPropType,
-    dropColorIndex: React.PropTypes.string,
-    inline: React.PropTypes.bool,
-    large: React.PropTypes.bool,
-    onChange: React.PropTypes.func,
-    placeHolder: React.PropTypes.string,
-    responsive: React.PropTypes.bool,
-    suggestions: React.PropTypes.arrayOf(React.PropTypes.string),
-    value: React.PropTypes.string
+    dropColorIndex: PropTypes.string,
+    inline: PropTypes.bool,
+    large: PropTypes.bool,
+    onChange: PropTypes.func,
+    placeHolder: PropTypes.string,
+    responsive: PropTypes.bool,
+    suggestions: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.shape({
+      label: PropTypes.string.isRequired
+    })])),
+    value: PropTypes.string
   },
-
-  mixins: [IntlMixin],
 
   getDefaultProps: function getDefaultProps() {
     return {
       align: 'left',
       inline: false,
-      placeHolder: 'Search',
-      dropAlign: { top: 'top', left: 'left' },
       responsive: true
     };
   },
@@ -52,6 +50,14 @@ var Search = React.createClass({
   componentDidMount: function componentDidMount() {
     if (this.props.inline && this.props.responsive) {
       this._responsive = Responsive.start(this._onResponsive);
+    }
+  },
+
+  componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
+    if (nextProps.suggestions && nextProps.suggestions.length > 0 && !this.state.dropActive && this.refs.input === document.activeElement) {
+      this.setState({ dropActive: true });
+    } else if (!nextProps.suggestions || nextProps.suggestions.length === 0) {
+      this.setState({ dropActive: false });
     }
   },
 
@@ -98,10 +104,18 @@ var Search = React.createClass({
       }).bind(this), 100);
       KeyboardAccelerators.startListeningToKeyboard(this, activeKeyboardHandlers);
 
-      var baseElement = (this.refs.control ? this.refs.control : this.refs.input).getDOMNode();
-      this._drop = Drop.add(baseElement, this._renderDrop(), this.props.dropAlign);
+      var baseElement = this.refs.control || this.refs.input;
+      var dropAlign = this.props.dropAlign || {
+        top: this.state.inline ? 'bottom' : 'top',
+        left: 'left'
+      };
+      this._drop = Drop.add(baseElement, this._renderDrop(), dropAlign);
 
-      document.getElementById('search-drop-input').focus();
+      if (!this.state.inline) {
+        document.getElementById('search-drop-input').focus();
+      }
+    } else if (this._drop) {
+      this._drop.render(this._renderDrop());
     }
   },
 
@@ -110,6 +124,9 @@ var Search = React.createClass({
     KeyboardAccelerators.stopListeningToKeyboard(this);
     if (this._responsive) {
       this._responsive.stop();
+    }
+    if (this._drop) {
+      this._drop.remove();
     }
   },
 
@@ -135,9 +152,9 @@ var Search = React.createClass({
   },
 
   _onFocusInput: function _onFocusInput() {
-    this.refs.input.getDOMNode().select();
+    this.refs.input.select();
     this.setState({
-      dropActive: !this.state.inline || this.props.suggestions,
+      dropActive: !this.state.inline || this.props.suggestions && this.props.suggestions.length > 0,
       activeSuggestionIndex: -1
     });
   },
@@ -167,9 +184,9 @@ var Search = React.createClass({
 
   _onEnter: function _onEnter() {
     if (this.state.activeSuggestionIndex >= 0) {
-      var text = this.props.suggestions[this.state.activeSuggestionIndex];
+      var suggestion = this.props.suggestions[this.state.activeSuggestionIndex];
       if (this.props.onChange) {
-        this.props.onChange(text);
+        this.props.onChange(suggestion);
       }
     }
     this._onRemoveDrop();
@@ -198,7 +215,7 @@ var Search = React.createClass({
   focus: function focus() {
     var ref = this.refs.input || this.refs.control;
     if (ref) {
-      ref.getDOMNode().focus();
+      ref.focus();
     }
   },
 
@@ -223,6 +240,16 @@ var Search = React.createClass({
     return classes;
   },
 
+  _renderSuggestionLabel: function _renderSuggestionLabel(suggestion) {
+    var label;
+    if (suggestion.hasOwnProperty('label')) {
+      label = suggestion.label;
+    } else {
+      label = suggestion;
+    }
+    return label;
+  },
+
   _renderDrop: function _renderDrop() {
     var classes = this._classes(CLASS_ROOT + "__drop");
     if (this.props.dropColorIndex) {
@@ -232,7 +259,16 @@ var Search = React.createClass({
       classes.push(CLASS_ROOT + "__drop--large");
     }
 
-    var suggestions = null;
+    var input;
+    if (!this.state.inline) {
+      input = React.createElement('input', { id: 'search-drop-input', type: 'search',
+        defaultValue: this.props.defaultValue,
+        value: this.props.value,
+        className: CLASS_ROOT + "__input",
+        onChange: this._onChangeInput });
+    }
+
+    var suggestions;
     if (this.props.suggestions) {
       suggestions = this.props.suggestions.map(function (item, index) {
         var classes = [CLASS_ROOT + "__suggestion"];
@@ -241,10 +277,10 @@ var Search = React.createClass({
         }
         return React.createElement(
           'div',
-          { key: item,
+          { key: index,
             className: classes.join(' '),
             onClick: this._onClickSuggestion.bind(this, item) },
-          item
+          this._renderSuggestionLabel(item)
         );
       }, this);
     }
@@ -252,11 +288,7 @@ var Search = React.createClass({
     var contents = React.createElement(
       'div',
       { className: CLASS_ROOT + "__drop-contents", onClick: this._onSink },
-      React.createElement('input', { id: 'search-drop-input', type: 'search',
-        defaultValue: this.props.defaultValue,
-        value: this.props.value,
-        className: CLASS_ROOT + "__input",
-        onChange: this._onChangeInput }),
+      input,
       React.createElement(
         'div',
         { className: CLASS_ROOT + "__suggestions" },
@@ -266,7 +298,7 @@ var Search = React.createClass({
 
     if (!this.state.inline) {
       var control = this._createControl();
-      var rightAlign = !this.props.dropAlign.left;
+      var rightAlign = this.props.dropAlign && !this.props.dropAlign.left;
       var first = rightAlign ? contents : control;
       var second = rightAlign ? control : contents;
 
@@ -297,17 +329,14 @@ var Search = React.createClass({
 
     if (this.state.inline) {
 
-      var readOnly = this.props.suggestions ? true : false;
-
       return React.createElement(
         'div',
         { className: classes.join(' ') },
         React.createElement('input', { ref: 'input', type: 'search',
-          placeholder: this.getGrommetIntlMessage(this.props.placeHolder),
+          placeholder: this.props.placeHolder,
           defaultValue: this.props.defaultValue,
           value: this.props.value,
           className: CLASS_ROOT + "__input",
-          readOnly: readOnly,
           onFocus: this._onFocusInput,
           onBlur: this._onBlurInput,
           onChange: this._onChangeInput })

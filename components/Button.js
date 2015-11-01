@@ -1,4 +1,4 @@
-// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 'use strict';
 
@@ -11,7 +11,7 @@ var Button = React.createClass({
 
   propTypes: {
     accent: React.PropTypes.bool,
-    label: React.PropTypes.string,
+    label: React.PropTypes.node,
     id: React.PropTypes.string,
     onClick: React.PropTypes.func,
     primary: React.PropTypes.bool,

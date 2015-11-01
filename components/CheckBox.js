@@ -1,4 +1,4 @@
-// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 'use strict';
 
@@ -14,7 +14,7 @@ var CheckBox = React.createClass({
     defaultChecked: React.PropTypes.bool,
     disabled: React.PropTypes.bool,
     id: React.PropTypes.string.isRequired,
-    label: React.PropTypes.string.isRequired,
+    label: React.PropTypes.node.isRequired,
     name: React.PropTypes.string,
     onChange: React.PropTypes.func,
     ariaDescribedby: React.PropTypes.string,

@@ -1,9 +1,10 @@
-// (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
 'use strict';
 
 var React = require('react');
-var IntlMixin = require('../mixins/GrommetIntlMixin');
+var ReactDOM = require('react-dom');
+var FormattedMessage = require('./FormattedMessage');
 
 var Legend = require('./Legend');
 
@@ -99,8 +100,6 @@ var Meter = React.createClass({
     a11yDesc: React.PropTypes.string
   },
 
-  mixins: [IntlMixin],
-
   getDefaultProps: function getDefaultProps() {
     return {
       type: 'bar',
@@ -168,8 +167,8 @@ var Meter = React.createClass({
 
     if ('right' === this.state.legendPlacement) {
       if (this.refs.legend) {
-        var graphicHeight = this.refs.activeGraphic.getDOMNode().offsetHeight;
-        var legendHeight = this.refs.legend.getDOMNode().offsetHeight;
+        var graphicHeight = this.refs.activeGraphic.offsetHeight;
+        var legendHeight = ReactDOM.findDOMNode(this.refs.legend).offsetHeight;
         this.setState({ tallLegend: legendHeight > graphicHeight });
       }
     }
@@ -746,7 +745,9 @@ var Meter = React.createClass({
     if (!this.props.a11yTitle) {
       defaultTitle = ['Meter, ', 'Type: ', (this.props.vertical ? 'vertical ' : '') + this.props.type].join(' ').trim();
     }
-    var a11yTitle = this.getGrommetIntlMessage(typeof this.props.a11yTitle !== "undefined" ? this.props.a11yTitle : defaultTitle);
+
+    var titleKey = typeof this.props.a11yTitle !== "undefined" ? this.props.a11yTitle : defaultTitle;
+    var a11yTitle = React.createElement(FormattedMessage, { id: titleKey, defaultMessage: titleKey });
 
     var defaultA11YDesc;
     if (this.props.a11yTitle !== "undefined") {
@@ -754,7 +755,8 @@ var Meter = React.createClass({
       defaultA11YDesc = [', Value: ', fields.value, this.props.units || '', fields.label, this.state.min.label ? ', Minimum: ' + this.state.min.label : '', this.state.max.label ? ', Maximum: ' + this.state.max.label : '', this.props.threshold ? ', Threshold: ' + this.props.threshold : '', this.props.thresholds ? getThresholdsString(this.props.thresholds) : ''].join(' ').trim();
     }
 
-    var a11yDesc = this.getGrommetIntlMessage(typeof this.props.a11yTitle !== "undefined" ? this.props.a11yTitle : defaultA11YDesc);
+    var descKey = typeof this.props.a11yTitle !== "undefined" ? this.props.a11yTitle : defaultA11YDesc;
+    var a11yDesc = React.createElement(FormattedMessage, { id: descKey, defaultMessage: descKey });
 
     return React.createElement(
       'div',
@@ -772,7 +774,7 @@ var Meter = React.createClass({
             React.createElement(
               'title',
               { id: this.props.a11yTitleId },
-              this.getGrommetIntlMessage(a11yTitle)
+              a11yTitle
             ),
             React.createElement(
               'svg',
@@ -782,7 +784,7 @@ var Meter = React.createClass({
               React.createElement(
                 'desc',
                 { id: this.props.a11yDescId },
-                this.getGrommetIntlMessage(a11yDesc)
+                a11yDesc
               ),
               thresholds,
               React.createElement(

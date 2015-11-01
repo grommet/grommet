@@ -1,11 +1,11 @@
-// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 'use strict';
 
 var React = require('react');
 var isEqual = require('lodash/lang/isEqual');
 var SpinningIcon = require('./icons/Spinning');
-var InfiniteScroll = require('../mixins/InfiniteScroll');
+var InfiniteScroll = require('../utils/InfiniteScroll');
 
 var CLASS_ROOT = "table";
 var SELECTED_CLASS = CLASS_ROOT + "__row--selected";
@@ -20,8 +20,6 @@ var Table = React.createClass({
     selectable: React.PropTypes.oneOfType([React.PropTypes.bool, React.PropTypes.oneOf(['multiple'])]),
     onSelect: React.PropTypes.func
   },
-
-  mixins: [InfiniteScroll],
 
   getDefaultProps: function getDefaultProps() {
     return {
@@ -41,12 +39,16 @@ var Table = React.createClass({
       this._alignMirror();
     }
     if (this.props.onMore) {
-      this.startListeningForScroll(this.refs.more.getDOMNode(), this.props.onMore);
+      this._scroll = InfiniteScroll.startListeningForScroll(this.refs.more, this.props.onMore);
     }
     window.addEventListener('resize', this._onResize);
   },
 
   componentWillReceiveProps: function componentWillReceiveProps(newProps) {
+    if (this._scroll) {
+      InfiniteScroll.stopListeningForScroll(this._scroll);
+      this._scroll = null;
+    }
     if (newProps.hasOwnProperty('selection')) {
       this.setState({ selection: this._normalizeSelection(newProps.selection) });
     }
@@ -59,15 +61,14 @@ var Table = React.createClass({
     if (this.props.scrollable) {
       this._alignMirror();
     }
-    this.stopListeningForScroll();
     if (this.props.onMore) {
-      this.startListeningForScroll(this.refs.more.getDOMNode(), this.props.onMore);
+      this._scroll = InfiniteScroll.startListeningForScroll(this.refs.more, this.props.onMore);
     }
   },
 
   componentWillUnmount: function componentWillUnmount() {
-    if (this.props.onMore) {
-      this.stopListeningForScroll();
+    if (this._onScroll) {
+      InfiniteScroll.stopListeningForScroll(this._scroll);
     }
     window.removeEventListener('resize', this._onResize);
   },
@@ -85,7 +86,7 @@ var Table = React.createClass({
   },
 
   _clearSelected: function _clearSelected() {
-    var rows = this.refs.table.getDOMNode().querySelectorAll("." + SELECTED_CLASS);
+    var rows = this.refs.table.querySelectorAll("." + SELECTED_CLASS);
     for (var i = 0; i < rows.length; i++) {
       rows[i].classList.remove(SELECTED_CLASS);
     }
@@ -94,7 +95,7 @@ var Table = React.createClass({
   _alignSelection: function _alignSelection() {
     this._clearSelected();
     if (null !== this.state.selection) {
-      var tbody = this.refs.table.getDOMNode().querySelectorAll('tbody')[0];
+      var tbody = this.refs.table.querySelectorAll('tbody')[0];
       this.state.selection.forEach(function (rowIndex) {
         tbody.childNodes[rowIndex].classList.add(SELECTED_CLASS);
       });
@@ -179,9 +180,9 @@ var Table = React.createClass({
   },
 
   _buildMirror: function _buildMirror() {
-    var tableElement = this.refs.table.getDOMNode();
+    var tableElement = this.refs.table;
     var cells = tableElement.querySelectorAll('thead tr th');
-    var mirrorElement = this.refs.mirror.getDOMNode();
+    var mirrorElement = this.refs.mirror;
     var mirrorRow = mirrorElement.querySelectorAll('thead tr')[0];
     for (var i = 0; i < cells.length; i++) {
       mirrorRow.appendChild(cells[i].cloneNode(true));
@@ -190,9 +191,9 @@ var Table = React.createClass({
 
   _alignMirror: function _alignMirror() {
     if (this.refs.mirror) {
-      var tableElement = this.refs.table.getDOMNode();
+      var tableElement = this.refs.table;
       var cells = tableElement.querySelectorAll('thead tr th');
-      var mirrorElement = this.refs.mirror.getDOMNode();
+      var mirrorElement = this.refs.mirror;
       var mirrorCells = mirrorElement.querySelectorAll('thead tr th');
 
       var rect = tableElement.getBoundingClientRect();
