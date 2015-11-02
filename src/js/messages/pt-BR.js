@@ -14,6 +14,7 @@ module.exports = {
   created: 'Criado',
   Critical: 'Crítico',
   Disabled: 'Desabilitado',
+  Email: 'Email',
   Error: 'Erro',
   Filter: 'Filtro',
   Footer: 'Rodapé',
