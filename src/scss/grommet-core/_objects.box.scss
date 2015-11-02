@@ -5,10 +5,6 @@
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  
-  > * {
-    max-width: 100%;
-  }
 
   &__container {
     padding-left: $inuit-base-spacing-unit;
@@ -77,6 +73,10 @@
 
   &--direction-column {
     flex-direction: column;
+    
+    > * {
+      max-width: 100%;
+    }
 
     &.box--reverse {
       flex-direction: column-reverse;
