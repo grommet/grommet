@@ -104,7 +104,12 @@ var LoginForm = React.createClass({
       );
     }
 
-    var username = React.createElement(FormattedMessage, { id: 'Username', defaultMessage: 'Username' });
+    var username;
+    if (this.props.usernameType === 'email') {
+      username = React.createElement(FormattedMessage, { id: 'Email', defaultMessage: 'Email' });
+    } else {
+      username = React.createElement(FormattedMessage, { id: 'Username', defaultMessage: 'Username' });
+    }
     var password = React.createElement(FormattedMessage, { id: 'Password', defaultMessage: 'Password' });
     var login = React.createElement(FormattedMessage, { id: 'Log In', defaultMessage: 'Log In' });
 

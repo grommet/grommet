@@ -16,6 +16,7 @@ module.exports = {
   created: 'Created',
   Critical: 'Critical',
   Disabled: 'Disabled',
+  Email: 'Email',
   Error: 'Error',
   Filter: 'Filter',
   Footer: 'Footer',
