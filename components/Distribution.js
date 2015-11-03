@@ -93,12 +93,20 @@ var Distribution = React.createClass({
       var label = labels[i];
       label.style.top = null;
       label.style.left = null;
+      label.style.maxWidth = null;
       var boxIndex = label.getAttribute('data-box-index');
       var box = container.querySelectorAll('[data-index="' + boxIndex + '"]')[0];
       var boxRect = box.getBoundingClientRect();
       var labelRect = label.getBoundingClientRect();
+      if (labelRect.width > boxRect.width) {
+        label.style.left = boxRect.left - rect.left + 'px';
+      } else {
+        label.style.left = boxRect.left - rect.left + boxRect.width / 2 - labelRect.width / 2 + 'px';
+      }
+      label.style.maxWidth = boxRect.width + 'px';
+      // have to set again after setting maxWidth in case text wraps and increases height
+      labelRect = label.getBoundingClientRect();
       label.style.top = boxRect.top - rect.top + boxRect.height / 2 - labelRect.height / 2 + 'px';
-      label.style.left = boxRect.left - rect.left + boxRect.width / 2 - labelRect.width / 2 + 'px';
     }
   },
 

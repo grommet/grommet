@@ -42,9 +42,9 @@ var Form = React.createClass({
       if (typeof this.props.pad === 'string') {
         classes.push(CLASS_ROOT + "--pad-" + this.props.pad);
       } else if (typeof this.props.pad === 'object') {
-        keys(this.props.pad).forEach(function (key) {
+        keys(this.props.pad).forEach((function (key) {
           classes.push(CLASS_ROOT + '--pad-' + key + '-' + this.props.pad[key]);
-        });
+        }).bind(this));
       }
     }
     if (this.props.className) {
