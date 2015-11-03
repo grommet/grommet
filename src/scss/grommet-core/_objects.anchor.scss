@@ -19,8 +19,8 @@ a,
     color: $link-hover-color;
   }
 
-  [class*="background-color-index-"]:not[class*="background-color-index-light"] &,
-  [class*="background-color-index-"]:not[class*="background-color-index-light"] .menu &:not(.button) {
+  [class*="background-color-index-"]:not([class*="background-color-index-light"]) &,
+  [class*="background-color-index-"]:not([class*="background-color-index-light"]) .menu &:not(.button) {
     color: $colored-text-color;
 
     .control-icon {
