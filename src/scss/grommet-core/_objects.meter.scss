@@ -285,7 +285,7 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
 
         &__graphic {
           width: $meter-size;
-          min-height: $inuit-base-spacing-unit;
+          height: $inuit-base-spacing-unit;
         }
 
         &__active {
@@ -341,7 +341,7 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
       white-space: nowrap;
 
       svg.meter__graphic {
-        min-width: $inuit-base-spacing-unit;
+        width: $inuit-base-spacing-unit;
         height: $meter-size;
       }
 
