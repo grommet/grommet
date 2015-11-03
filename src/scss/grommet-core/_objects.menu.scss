@@ -26,7 +26,6 @@
 
   a:not(.button) {
     text-decoration: none;
-    margin-bottom: quarter($inuit-base-spacing-unit);
 
     &:hover {
       color: $link-hover-color;
@@ -170,6 +169,12 @@
           &:first-child {
             margin-left: 0px;
           }
+        }
+      }
+
+      &.box--direction-column {
+        a:not(.button) {
+          margin-bottom: quarter($inuit-base-spacing-unit);
         }
       }
     }
