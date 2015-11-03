@@ -32,7 +32,8 @@
 
   a > &:hover,
   .anchor > &:hover,
-  .button > &:hover {
+  .button > &:hover,
+  .menu__control > &:hover {
     fill: $active-icon-color;
     stroke: $active-icon-color;
   }
