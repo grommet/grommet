@@ -107,7 +107,7 @@ var Legend = React.createClass({
         { key: item.label || index, className: legendClasses.join(' '),
           onClick: item.onClick,
           onMouseOver: this._onActive.bind(this, index),
-          onMouseOut: this._onActive.bind(this, this.props.activeIndex) },
+          onMouseOut: this._onActive.bind(this, null) },
         swatch,
         label,
         value
