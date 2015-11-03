@@ -566,15 +566,17 @@ var Meter = React.createClass({
       fields = { value: this.state.total, label: 'Total' };
     } else {
       var active = this.state.series[this.state.activeIndex];
-      fields = { value: active.value, label: active.label };
+      fields = { value: active.value, label: active.label, onClick: active.onClick };
     }
-
     return fields;
   },
 
   _renderActive: function _renderActive() {
-
     var fields = this._getActiveFields();
+    var classes = [CLASS_ROOT + "__active"];
+    if (fields.onClick) {
+      classes.push(CLASS_ROOT + "__active--active");
+    }
     var units;
     if (this.props.units) {
       units = React.createElement(
@@ -583,9 +585,11 @@ var Meter = React.createClass({
         this.props.units
       );
     }
+
     return React.createElement(
       'div',
-      { 'aria-hidden': 'true', role: 'presentation', className: CLASS_ROOT + "__active" },
+      { 'aria-hidden': 'true', role: 'presentation',
+        className: classes.join(' '), onClick: fields.onClick },
       React.createElement(
         'span',
         {
