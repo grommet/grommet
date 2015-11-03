@@ -608,15 +608,17 @@ var Meter = React.createClass({
       fields = {value: this.state.total, label: 'Total'};
     } else {
       var active = this.state.series[this.state.activeIndex];
-      fields = {value: active.value, label: active.label};
+      fields = {value: active.value, label: active.label, onClick: active.onClick};
     }
-
     return fields;
   },
 
   _renderActive: function () {
-
     var fields = this._getActiveFields();
+    var classes = [CLASS_ROOT + "__active"];
+    if (fields.onClick) {
+      classes.push(CLASS_ROOT + "__active--active");
+    }
     var units;
     if (this.props.units) {
       units = (
@@ -625,8 +627,10 @@ var Meter = React.createClass({
         </span>
       );
     }
+
     return (
-      <div aria-hidden="true" role="presentation" className={CLASS_ROOT + "__active"}>
+      <div aria-hidden="true" role="presentation"
+        className={classes.join(' ')} onClick={fields.onClick}>
         <span
           className={CLASS_ROOT + "__active-value large-number-font"}>
           {fields.value}

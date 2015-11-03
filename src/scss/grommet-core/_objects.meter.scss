@@ -55,6 +55,11 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
     white-space: normal;
     pointer-events: none;
 
+    &--active {
+      pointer-events: auto;
+      cursor: pointer;
+    }
+
     &-value {
       @include inuit-font-size($large-number-font-size, $inuit-heading-size-1 + 2);
       font-weight: bold;
@@ -480,6 +485,11 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
         white-space: normal;
         pointer-events: none;
         text-align: center;
+
+        &--active {
+          pointer-events: auto;
+          cursor: pointer;
+        }
       }
     }
   }
