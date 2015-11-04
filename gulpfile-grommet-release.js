@@ -35,7 +35,7 @@ module.exports = function(gulp, opts) {
           opts.copyAssets.push({
             filename: 'package.json',
             asset: JSON.stringify(gulpUtils.getPackageJSON(), null, 2)
-        });
+          });
           done();
         });
       }));
@@ -53,26 +53,26 @@ module.exports = function(gulp, opts) {
           args: '--all'
         }))
         .pipe(git.commit(version)).on('end', function() {
-        git.push('origin', 'master', function(err) {
-          if (err) {
-            throw err;
-          }
-
-          git.tag(version, version, function(err) {
+          git.push('origin', 'master', function(err) {
             if (err) {
               throw err;
             }
 
-            git.push('origin', version, function(err) {
+            git.tag(version, version, function(err) {
               if (err) {
                 throw err;
               }
-              process.chdir(__dirname);
-              done();
+
+              git.push('origin', version, function(err) {
+                if (err) {
+                  throw err;
+                }
+                process.chdir(__dirname);
+                done();
+              });
             });
           });
         });
-      });
     });
   });
 
@@ -145,6 +145,8 @@ module.exports = function(gulp, opts) {
               throw err;
             }
 
+            del.sync(['./**/*']);
+
             gulp.src('../../dist/**').pipe(gulp.dest('./')).on('end', function() {
               git.status({
                 args: '--porcelain'
@@ -159,15 +161,15 @@ module.exports = function(gulp, opts) {
                       args: '--all'
                     }))
                     .pipe(git.commit('Stable dev version update.')).on('end', function() {
-                    git.push('origin', 'stable', { quiet: true }, function(err) {
-                      if (err) {
-                        throw err;
-                      }
+                      git.push('origin', 'stable', { quiet: true }, function(err) {
+                        if (err) {
+                          throw err;
+                        }
 
-                      process.chdir(__dirname);
-                      done();
+                        process.chdir(__dirname);
+                        done();
+                      });
                     });
-                  });
                 } else {
                   console.log('No difference since last commit, skipping stable release.');
 
