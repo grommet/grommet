@@ -47,7 +47,7 @@ var Calendar = React.createClass({
   componentDidUpdate: function (prevProps, prevState) {
     // Set up keyboard listeners appropriate to the current state.
     if (prevState.dropActive !== this.state.dropActive) {
-      this._activation(prevState.dropActive || this.state.dropActive);
+      this._activation(this.state.dropActive);
     }
 
     if (this.state.dropActive) {
