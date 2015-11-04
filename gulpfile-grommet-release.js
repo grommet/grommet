@@ -145,7 +145,7 @@ module.exports = function(gulp, opts) {
               throw err;
             }
 
-            del('./**');
+            del.sync(['./**/*']);
 
             gulp.src('../../dist/**').pipe(gulp.dest('./')).on('end', function() {
               git.status({
