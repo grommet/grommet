@@ -4,7 +4,7 @@
 
 var React = require('react');
 var ReactIntl = require('react-intl');
-var FormattedDate = ReactIntl.FormattedDate;
+var FormattedTime = ReactIntl.FormattedTime;
 var ListItem = require('./ListItem');
 var SpinningIcon = require('./icons/Spinning');
 var InfiniteScroll = require('../utils/InfiniteScroll');
@@ -91,14 +91,12 @@ var List = React.createClass({
         result = value;
       }
     } else if (scheme.timestamp) {
-      result = React.createElement(FormattedDate, { value: new Date(date),
-        weekday: 'long',
+      result = React.createElement(FormattedTime, { value: value,
         day: 'numeric',
-        month: 'long',
-        year: 'numeric',
-        hour: 'numeric',
-        minute: 'numeric',
-        second: 'numeric' });
+        month: 'narrow',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit' });
     } else {
       result = value;
     }
