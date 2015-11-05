@@ -2,9 +2,15 @@
 
 'use strict';
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var React = require('react');
 var ReactIntl = require('react-intl');
 var FormattedDate = ReactIntl.FormattedDate;
+var merge = require('lodash/object/merge');
+var pick = require('lodash/object/pick');
+var keys = require('lodash/object/keys');
+var Box = require('./Box');
 
 var StatusIcon = require('./icons/Status');
 
@@ -13,27 +19,25 @@ var CLASS_ROOT = "notification";
 var Notification = React.createClass({
   displayName: 'Notification',
 
-  propTypes: {
-    flush: React.PropTypes.bool,
+  propTypes: merge({
     message: React.PropTypes.string.isRequired,
     state: React.PropTypes.string,
     status: React.PropTypes.string,
     timestamp: React.PropTypes.object // Date
-  },
+  }, Box.propTypes),
 
   getDefaultProps: function getDefaultProps() {
     return {
       flush: true,
-      status: 'unknown'
+      status: 'unknown',
+      pad: 'medium'
     };
   },
 
   render: function render() {
     var classes = [CLASS_ROOT];
+    var other = pick(this.props, keys(Box.propTypes));
     classes.push(CLASS_ROOT + "--" + this.props.status.toLowerCase());
-    if (this.props.flush) {
-      classes.push(CLASS_ROOT + "--flush");
-    }
     if (this.props.className) {
       classes.push(this.props.className);
     }
@@ -47,7 +51,7 @@ var Notification = React.createClass({
     var state;
     if (this.props.state) {
       state = React.createElement(
-        'span',
+        'div',
         { className: CLASS_ROOT + "__state" },
         this.props.state
       );
@@ -65,20 +69,24 @@ var Notification = React.createClass({
         second: 'numeric' });
 
       timestamp = React.createElement(
-        'span',
+        'div',
         { className: CLASS_ROOT + "__timestamp" },
         timestampFormatted
       );
     }
 
     return React.createElement(
-      'div',
-      { className: classes.join(' ') },
-      status,
+      Box,
+      _extends({ className: classes.join(' ') }, other),
       React.createElement(
-        'span',
-        { className: CLASS_ROOT + "__message" },
-        this.props.message
+        Box,
+        { direction: 'row', responsive: false },
+        status,
+        React.createElement(
+          'span',
+          { className: CLASS_ROOT + "__message" },
+          this.props.message
+        )
       ),
       timestamp,
       state,
