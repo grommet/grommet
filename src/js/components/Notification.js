@@ -3,6 +3,10 @@
 var React = require('react');
 var ReactIntl = require('react-intl');
 var FormattedDate = ReactIntl.FormattedDate;
+var merge = require('lodash/object/merge');
+var pick = require('lodash/object/pick');
+var keys = require('lodash/object/keys');
+var Box = require('./Box');
 
 var StatusIcon = require('./icons/Status');
 
@@ -10,27 +14,25 @@ var CLASS_ROOT = "notification";
 
 var Notification = React.createClass({
 
-  propTypes: {
-    flush: React.PropTypes.bool,
+  propTypes: merge({
     message: React.PropTypes.string.isRequired,
     state: React.PropTypes.string,
     status: React.PropTypes.string,
     timestamp: React.PropTypes.object // Date
-  },
+  }, Box.propTypes),
 
   getDefaultProps: function () {
     return {
       flush: true,
-      status: 'unknown'
+      status: 'unknown',
+      pad: 'medium'
     };
   },
 
   render: function() {
     var classes = [CLASS_ROOT];
+    var other = pick(this.props, keys(Box.propTypes));
     classes.push(CLASS_ROOT + "--" + this.props.status.toLowerCase());
-    if (this.props.flush) {
-      classes.push(CLASS_ROOT + "--flush");
-    }
     if (this.props.className) {
       classes.push(this.props.className);
     }
@@ -45,7 +47,7 @@ var Notification = React.createClass({
 
     var state;
     if (this.props.state) {
-      state = <span className={CLASS_ROOT + "__state"}>{this.props.state}</span>;
+      state = <div className={CLASS_ROOT + "__state"}>{this.props.state}</div>;
     }
 
     var timestamp;
@@ -62,22 +64,24 @@ var Notification = React.createClass({
       );
 
       timestamp = (
-        <span className={CLASS_ROOT + "__timestamp"}>
+        <div className={CLASS_ROOT + "__timestamp"}>
           {timestampFormatted}
-        </span>
+        </div>
       );
     }
 
     return (
-      <div className={classes.join(' ')}>
-        {status}
-        <span className={CLASS_ROOT + "__message"}>
-          {this.props.message}
-        </span>
+      <Box className={classes.join(' ')} {...other}>
+        <Box direction="row" responsive={false}>
+          {status}
+          <span className={CLASS_ROOT + "__message"}>
+            {this.props.message}
+          </span>
+        </Box>
         {timestamp}
         {state}
         {this.props.children}
-      </div>
+      </Box>
     );
   }
 
