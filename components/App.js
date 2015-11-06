@@ -55,7 +55,6 @@ var App = React.createClass({
   },
 
   render: function render() {
-    console.log('test stable cache invalidation');
     var classes = ["app"];
     if (this.props.centered) {
       classes.push("app--centered");
