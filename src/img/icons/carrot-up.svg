@@ -1,9 +1,28 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="XMLID_61_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
-<g id="carrot-up">
-	<rect id="_x2E_svg_253_" x="0" y="0" fill="none" width="48" height="48"/>
-	<polygon fill="#231F20" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" points="16.8571,29 31.1429,29 24,19 	"/>
-</g>
-</svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xml:space="preserve"
+   enable-background="new 0 0 48 48"
+   viewBox="0 0 48 48"
+   y="0px"
+   x="0px"
+   id="XMLID_61_"
+   version="1.1"><metadata
+     id="metadata11"><rdf:RDF><cc:Work
+         rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+     id="defs9" /><g
+     id="carrot-up"><rect
+       height="48"
+       width="48"
+       fill="none"
+       y="0"
+       x="0"
+       id="_x2E_svg_253_" /></g><path
+     id="path3344"
+     d="m 24.395508,38.716805 0,-3.714844 2.498047,2.96875 0.765625,-0.644532 -3.263672,-3.878906 0,-6.179688 6.304687,0 -0.109374,-0.591797 c 0,0 -0.796678,-4.264937 -1.976563,-8.539062 -0.589943,-2.137064 -1.27372,-4.275671 -2.017578,-5.91211 -0.371929,-0.818219 -0.755833,-1.511953 -1.177735,-2.03125 -0.4219,-0.519296 -0.912883,-0.912968 -1.52539,-0.910156 -0.610671,0.0028 -1.095633,0.402175 -1.509766,0.923828 -0.414132,0.521653 -0.788794,1.216239 -1.15039,2.035156 -0.723194,1.637834 -1.38149,3.774834 -1.947266,5.910156 -1.131552,4.270646 -1.882813,8.527344 -1.882812,8.527344 l -0.103516,0.587891 6.095703,0 0,6.027345 -3.390625,4.031249 0.763672,0.644532 2.626953,-3.121094 0,3.867188 1,0 z m 5.074219,-12.44922 -10.953125,0 c 0.09081,-0.5049 0.657739,-3.674765 1.61914,-7.390625 l 5.03125,0 0,-1 -4.759765,0 c 0.525018,-1.923585 1.115507,-3.817587 1.740234,-5.232422 0.341715,-0.773891 0.694838,-1.407413 1.019531,-1.816406 0.324693,-0.408993 0.590145,-0.544278 0.730469,-0.544922 0.144117,-6.62e-4 0.414969,0.133451 0.746094,0.541016 0.331125,0.407564 0.691463,1.041162 1.042969,1.814453 0.215805,0.474757 0.427757,1.013905 0.636718,1.578125 l -2.802734,0 0,1 3.160156,0 c 0.341749,1.010957 0.667987,2.096035 0.96875,3.185546 0.399295,1.446441 0.714994,2.757418 0.988281,3.945313 l -6.570312,-0.04687 -0.0059,1 6.80664,0.04687 c 0.337652,1.533235 0.548228,2.639587 0.601563,2.919917 z"
+     style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" /></svg>
