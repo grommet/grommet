@@ -1,10 +1,28 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="XMLID_307_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
-<g id="carrot-down">
-	<rect id="_x2E_svg_7_" x="0" y="0" fill="none" width="48" height="48"/>
-	<polygon id="drop-carrot" fill="#231F20" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" points="16.8571,19 
-		31.1428,19 24,29 	"/>
-</g>
-</svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xml:space="preserve"
+   enable-background="new 0 0 48 48"
+   viewBox="0 0 48 48"
+   y="0px"
+   x="0px"
+   id="XMLID_307_"
+   version="1.1"><metadata
+     id="metadata10"><rdf:RDF><cc:Work
+         rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+     id="defs8" /><g
+     id="carrot-down"><rect
+       height="48"
+       width="48"
+       fill="none"
+       y="0"
+       x="0"
+       id="_x2E_svg_7_" /></g><path
+     id="path3344"
+     d="M 23.703125 8.0839844 L 23.703125 11.798828 L 21.205078 8.8300781 L 20.439453 9.4746094 L 23.703125 13.353516 L 23.703125 19.533203 L 17.398438 19.533203 L 17.507812 20.125 C 17.507812 20.125 18.30449 24.389937 19.484375 28.664062 C 20.074318 30.801126 20.758095 32.939733 21.501953 34.576172 C 21.873882 35.394391 22.257786 36.088125 22.679688 36.607422 C 23.101588 37.126718 23.592571 37.52039 24.205078 37.517578 C 24.815749 37.514778 25.300711 37.115403 25.714844 36.59375 C 26.128976 36.072097 26.503638 35.377511 26.865234 34.558594 C 27.588428 32.92076 28.246724 30.78376 28.8125 28.648438 C 29.944052 24.377792 30.695313 20.121094 30.695312 20.121094 L 30.798828 19.533203 L 24.703125 19.533203 L 24.703125 13.505859 L 28.09375 9.4746094 L 27.330078 8.8300781 L 24.703125 11.951172 L 24.703125 8.0839844 L 23.703125 8.0839844 z M 18.628906 20.533203 L 29.582031 20.533203 C 29.491224 21.038103 28.924292 24.207968 27.962891 27.923828 L 22.931641 27.923828 L 22.931641 28.923828 L 27.691406 28.923828 C 27.166388 30.847413 26.575899 32.741415 25.951172 34.15625 C 25.609457 34.930141 25.256334 35.563663 24.931641 35.972656 C 24.606948 36.381649 24.341496 36.516934 24.201172 36.517578 C 24.057055 36.51824 23.786203 36.384127 23.455078 35.976562 C 23.123953 35.568998 22.763615 34.9354 22.412109 34.162109 C 22.196304 33.687352 21.984352 33.148204 21.775391 32.583984 L 24.578125 32.583984 L 24.578125 31.583984 L 21.417969 31.583984 C 21.07622 30.573027 20.749982 29.487949 20.449219 28.398438 C 20.049924 26.951997 19.734225 25.64102 19.460938 24.453125 L 26.03125 24.5 L 26.037109 23.5 L 19.230469 23.453125 C 18.892817 21.919885 18.682241 20.813533 18.628906 20.533203 z "
+     style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" /></svg>
