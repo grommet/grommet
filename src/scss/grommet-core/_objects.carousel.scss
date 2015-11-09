@@ -23,6 +23,8 @@
 .carousel {
   position: relative;
   max-width: 100%;
+  overflow: hidden;
+  height: 280px;
 
   @include media-query(lap-and-up) {
     &--toggle-0 {
@@ -46,34 +48,36 @@
     }
   }
 
-  &__active {
-    position: relative;
-    z-index: 1;
-    opacity: 1;
-  }
-
-  &__prior {
+  &__track {
+    display: flex;
+    max-width: none;
     position: absolute;
-    opacity: 0;
+    top: 0;
+    bottom: 0;
+    transition: all 0.8s;
+
+    & > * {
+      flex: 1;
+    }
   }
 
   &__controls {
     width: 100%;
-    margin-top: halve($inuit-base-spacing-unit);
+    position: absolute;
+    bottom: halve($inuit-base-spacing-unit);
     text-align: center;
+    z-index: 1;
   }
 
   &__control {
     display: inline-block;
     width: round($inuit-base-spacing-unit * 1.5);
     height: round($inuit-base-spacing-unit * 1.5);
-    stroke: $icon-color;
+    stroke: #fff;
     fill: transparent;
     cursor: pointer;
-
-    &:hover {
-      stroke: $active-icon-color;
-    }
+    filter: drop-shadow( 1px 1px 1px rgba(170, 170, 170, 0.5) );
+    -webkit-filter: drop-shadow( 1px 1px 1px rgba(170, 170, 170, 0.5) );
 
     &--active {
       stroke: $brand-color;
