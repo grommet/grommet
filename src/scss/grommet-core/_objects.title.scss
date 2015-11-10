@@ -1,4 +1,4 @@
-// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 .title {
   max-height: 100%;
@@ -44,13 +44,13 @@
 
     cursor: pointer;
 
+    @include media-query(lap-and-up) {
+      transition: color $base-animation-duration ease-in-out;
+    }
+
     &:hover {
       color: $brand-color;
       cursor: pointer;
-
-      @include media-query(lap-and-up) {
-        transition: color 0.3s;
-      }
     }
   }
 

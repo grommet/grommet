@@ -1,14 +1,17 @@
 var merge = require('lodash/object/merge');
 var webpack = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
-var open = require('gulp-open');
+var gulpOpen = require('gulp-open');
 var path = require('path');
 var runSequence = require('run-sequence');
 
 module.exports = function(gulp, options, webpackConfig, dist) {
 
   gulp.task('dev-preprocess', function(callback) {
-    if (options.devPreprocess) {
+    var argv = require('yargs').argv;
+    if (argv.skipPreprocess) {
+      callback();
+    } else if (options.devPreprocess) {
       runSequence('preprocess', options.devPreprocess, callback);
     } else {
       runSequence('preprocess', callback);
@@ -127,9 +130,11 @@ module.exports = function(gulp, options, webpackConfig, dist) {
       } else {
         var openHost = (host === '0.0.0.0') ? 'localhost' : host;
         console.log('[webpack-dev-server] started: opening the app in your default browser...');
+        var suffix = options.publicPath ? options.publicPath + '/' : '';
+        var openURL = 'http://' + openHost + ':' + options.devServerPort + '/webpack-dev-server/' + suffix;
         gulp.src(path.join(dist, 'index.html'))
-        .pipe(open({
-          uri: 'http://' + openHost + ':' + options.devServerPort + '/webpack-dev-server/'
+        .pipe(gulpOpen({
+          uri: openURL
         }));
       }
     });

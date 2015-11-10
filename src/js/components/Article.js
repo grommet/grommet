@@ -1,11 +1,12 @@
-// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 var React = require('react');
+var ReactDOM = require('react-dom');
 var merge = require('lodash/object/merge');
 var pick = require('lodash/object/pick');
 var keys = require('lodash/object/keys');
 var Box = require('./Box');
-var KeyboardAccelerators = require('../mixins/KeyboardAccelerators');
+var KeyboardAccelerators = require('../utils/KeyboardAccelerators');
 var DOM = require('../utils/DOM');
 var Scroll = require('../utils/Scroll');
 var SkipLinkAnchor = require('./SkipLinkAnchor');
@@ -19,8 +20,6 @@ var Article = React.createClass({
     primary: React.PropTypes.bool
   }, Box.propTypes),
 
-  mixins: [KeyboardAccelerators],
-
   getDefaultProps: function () {
     return {
       pad: 'none',
@@ -31,11 +30,11 @@ var Article = React.createClass({
   componentDidMount: function () {
     if (this.props.scrollStep) {
       this._markInactive();
-      var articleElement = this.refs.component.getDOMNode();
+      var articleElement = ReactDOM.findDOMNode(this.refs.component);
       this._scrollParent = DOM.findScrollParents(articleElement)[0];
       document.addEventListener('wheel', this._onWheel);
       this._scrollParent.addEventListener('scroll', this._onScroll);
-      this.startListeningToKeyboard({
+      KeyboardAccelerators.startListeningToKeyboard(this, {
         up: this._onUp,
         down: this._onDown
       });
@@ -48,7 +47,7 @@ var Article = React.createClass({
       clearInterval(this._scrollToTimer);
       this._scrollParent.removeEventListener('scroll', this._onScroll);
       clearTimeout(this._scrollTimer);
-      this.stopListeningToKeyboard({
+      KeyboardAccelerators.stopListeningToKeyboard(this, {
         up: this._onUp,
         down: this._onDown
       });
@@ -56,7 +55,7 @@ var Article = React.createClass({
   },
 
   _markInactive: function () {
-    var articleElement = this.refs.component.getDOMNode();
+    var articleElement = ReactDOM.findDOMNode(this.refs.component);
     var sections = articleElement.querySelectorAll('.section.box--full');
     for (var i = 0; i < sections.length; i += 1) {
       var section = sections[i];
@@ -88,7 +87,7 @@ var Article = React.createClass({
     if (event) {
       event.preventDefault();
     }
-    var articleElement = this.refs.component.getDOMNode();
+    var articleElement = ReactDOM.findDOMNode(this.refs.component);
     var sections = articleElement.querySelectorAll('.section.box--full');
     for (var i = 0; i < sections.length; i += 1) {
       var section = sections[i];
@@ -105,7 +104,7 @@ var Article = React.createClass({
     if (event) {
       event.preventDefault();
     }
-    var articleElement = this.refs.component.getDOMNode();
+    var articleElement = ReactDOM.findDOMNode(this.refs.component);
     var sections = articleElement.querySelectorAll('.section.box--full');
     for (var i = 0; i < sections.length; i += 1) {
       var section = sections[i];

@@ -1,4 +1,4 @@
-// (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
 .tiles {
   width: 100%;
@@ -11,8 +11,13 @@
     flex: 1 0 $tile-size;
     // don't count padding for flex basis
     // this makes it easier to align tiles with graphic components
-    box-sizing: content-box;
+    ////box-sizing: content-box;
     margin: halve($inuit-base-spacing-unit);
+    
+    > * {
+      // reset box sizing on tile's children
+      box-sizing: border-box;
+    }
 
     &--wide {
       flex-basis: calc(100% - #{$inuit-base-spacing-unit});

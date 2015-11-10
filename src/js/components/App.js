@@ -1,18 +1,31 @@
-// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 var React = require('react');
+var Locale = require('../utils/Locale');
 var SkipLinks = require('./SkipLinks');
 
-var IntlMixin = require('../mixins/GrommetIntlMixin');
-var Locale = require('../utils/Locale');
+var supportedLocales = ['en-US', 'pt-BR'];
+
+function localesSupported() {
+  return global.Intl && supportedLocales.every(function (locale) {
+    return Intl.NumberFormat.supportedLocalesOf(locale)[0] === locale &&
+            Intl.DateTimeFormat.supportedLocalesOf(locale)[0] === locale;
+  });
+}
+
+if (! localesSupported()) {
+  require('intl');
+  require('intl/locale-data/jsonp/en-US.js');
+  require('intl/locale-data/jsonp/pt-BR.js');
+  Intl.NumberFormat = IntlPolyfill.NumberFormat;
+  Intl.DateTimeFormat = IntlPolyfill.DateTimeFormat;
+}
 
 var App = React.createClass({
 
   propTypes: {
     centered: React.PropTypes.bool
   },
-
-  mixins: [IntlMixin],
 
   getDefaultProps: function () {
     return {
@@ -52,17 +65,10 @@ var App = React.createClass({
       classes.push(this.props.className);
     }
 
-    //remove this when React 0.14 is released. This is required because context props are not being propagated to children.
-    var children = React.Children.map(this.props.children, function(child) {
-      return React.isValidElement(child) ?
-        React.cloneElement(child, this.getChildContext()) :
-        child;
-    }.bind(this));
-
     return (
       <div lang={this.state.lang} className={classes.join(' ')}>
-        <SkipLinks/>
-        {children}
+        <SkipLinks />
+        {this.props.children}
       </div>
     );
   }

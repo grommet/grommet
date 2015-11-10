@@ -1,4 +1,4 @@
-// (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
 .menu {
   position: relative;
@@ -7,7 +7,7 @@
   &:focus {
     outline: none;
 
-    &:after {
+    &:not(.menu--expanded):after {
       content: '';
       position: absolute;
       top: 0px;
@@ -26,10 +26,9 @@
 
   a:not(.button) {
     text-decoration: none;
-    margin-bottom: quarter($inuit-base-spacing-unit);
 
     &:hover {
-      color: $text-color;
+      color: $link-hover-color;
     }
 
     &.active {
@@ -170,6 +169,12 @@
           &:first-child {
             margin-left: 0px;
           }
+        }
+      }
+
+      &.box--direction-column {
+        a:not(.button) {
+          margin-bottom: quarter($inuit-base-spacing-unit);
         }
       }
     }

@@ -1,4 +1,4 @@
-// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 .control-icon {
   display: inline-block;
@@ -23,11 +23,17 @@
     fill: inherit;
   }
 
+  @include graph-stroke-color();
+  @include graph-fill-color();
+
   @include media-query(lap-and-up) {
     transition: all $base-animation-duration ease-in-out;
   }
 
-  &:hover {
+  a > &:hover,
+  .anchor > &:hover,
+  .button > &:hover,
+  .menu__control > &:hover {
     fill: $active-icon-color;
     stroke: $active-icon-color;
   }
@@ -47,7 +53,9 @@
     fill: $colored-icon-color;
     stroke: $colored-icon-color;
 
-    &:hover {
+    a > &:hover,
+    .anchor > &:hover,
+    .button > &:hover {
       fill: $active-colored-icon-color;
       stroke: $active-colored-icon-color;
     }
@@ -56,6 +64,11 @@
   &--active {
     fill: $active-icon-color;
     stroke: $active-icon-color;
+  }
+
+  &--large {
+    width: round($inuit-base-spacing-unit * 4);
+    height: round($inuit-base-spacing-unit * 4);
   }
 }
 
@@ -141,6 +154,8 @@
 .logo-icon {
   width: double($inuit-base-spacing-unit);
   height: double($inuit-base-spacing-unit);
+
+  @include graph-stroke-color();
 
   &--small {
     width: $inuit-base-spacing-unit;

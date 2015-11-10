@@ -1,4 +1,4 @@
-// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 var React = require('react');
 
@@ -34,7 +34,7 @@ var Login = React.createClass({
   _adjustBackground: function() {
     // make sure the background always fills the screen, preserve aspect ratio
     var windowRatio = window.innerWidth / window.innerHeight;
-    var image = this.refs.background.getDOMNode();
+    var image = this.refs.background;
     var imageRatio = image.scrollWidth / image.scrollHeight;
     this.setState({orientation: (windowRatio < imageRatio) ? 'portrait' : 'landscape'});
   },

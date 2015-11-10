@@ -1,4 +1,4 @@
-// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 var React = require('react');
 var keys = require('lodash/object/keys');
@@ -44,7 +44,7 @@ var Form = React.createClass({
       } else if (typeof this.props.pad === 'object') {
         keys(this.props.pad).forEach(function (key) {
           classes.push(CLASS_ROOT + '--pad-' + key + '-' + this.props.pad[key]);
-        });
+        }.bind(this));
       }
     }
     if (this.props.className) {

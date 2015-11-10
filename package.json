@@ -1,6 +1,6 @@
 {
   "name": "grommet",
-  "version": "0.3.7",
+  "version": "0.4.0",
   "main": "src/js/index.js",
   "description": "The most advanced UX framework for enterprise applications.",
   "authors": [
@@ -36,9 +36,9 @@
     "del": "^2.0.2",
     "eslint": "^1.1.0",
     "eslint-plugin-react": "^3.2.3",
-    "expect": "^1.6.0",
     "file-loader": "^0.8.1",
-    "grommet-icon-loader": "^0.0.12",
+    "glob": "5.0.14",
+    "grommet-icon-loader": "^0.1.0",
     "gulp": "^3.9.0",
     "gulp-babel": "^5.2.1",
     "gulp-eslint": "^1.0.0",
@@ -82,10 +82,11 @@
     "mkdirp": "^0.5.1",
     "moment": "^2.8.3",
     "node-sass": "^3.2.0",
-    "react": "^0.13.1",
+    "path-is-absolute": "^1.0.0",
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0",
     "react-gravatar": "^2.0.0",
-    "react-intl": "^1.2.0",
-    "reflux": "^0.2.7",
+    "react-intl": "next",
     "rimraf": "^2.4.3",
     "run-sequence": "^1.0.2",
     "sass-loader": "^1.0.2",
@@ -97,20 +98,15 @@
     "webpack": "^1.9.11",
     "webpack-dev-server": "^1.8.0",
     "webpack-stream": "^2.0.0",
-    "yargs": "^3.8.0",
-    "path-is-absolute": "^1.0.0"
+    "yargs": "^3.8.0"
   },
   "devDependencies": {
+    "chai": "^3.3.0",
+    "gulp-bump": "^1.0.0",
     "gulp-chug": "^0.4.2",
     "gulp-coveralls": "^0.1.4",
     "gulp-git": "^1.2.3",
-    "gulp-bump": "^1.0.0",
-    "rewire": "^2.3.3",
-    "should": "^7.0.4"
-  },
-  "config": {
-    "blanket": {
-      "loader": "../../../../../src/utils/test/blanket-stub-jsx.js"
-    }
+    "react-addons-test-utils": "^0.14.0",
+    "rewire": "^2.3.3"
   }
 }

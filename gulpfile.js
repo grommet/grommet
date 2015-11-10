@@ -90,9 +90,6 @@ var opts = {
   scsslint: true,
   testPaths: [
     'test/**/*.js'
-  ],
-  e2ePaths: [
-    '/e2e/**/*.js'
   ]
 };
 
@@ -100,7 +97,6 @@ require('./src/utils/gulp/gulp-tasks')(gulp, opts);
 
 require('./gulpfile-grommet-dist')(gulp, opts);
 require('./gulpfile-grommet-release')(gulp, opts);
-require('./gulpfile-grommet-e2e')(gulp, opts);
 
 gulp.task('coveralls', function() {
   var lcovPath = './coverage/lcov.info';

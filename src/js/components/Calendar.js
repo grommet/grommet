@@ -1,8 +1,9 @@
-// (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
 var React = require('react');
+var ReactDOM = require('react-dom');
 var moment = require('moment');
-var KeyboardAccelerators = require('../mixins/KeyboardAccelerators');
+var KeyboardAccelerators = require('../utils/KeyboardAccelerators');
 var Drop = require('../utils/Drop');
 var CalendarIcon = require('./icons/base/Calendar');
 var PreviousIcon = require('./icons/Left');
@@ -21,8 +22,6 @@ var Calendar = React.createClass({
     onChange: React.PropTypes.func,
     value: React.PropTypes.string
   },
-
-  mixins: [KeyboardAccelerators],
 
   getDefaultProps: function () {
     return {
@@ -47,12 +46,10 @@ var Calendar = React.createClass({
 
   componentDidUpdate: function (prevProps, prevState) {
     // Set up keyboard listeners appropriate to the current state.
-    if (! this.state.dropActive && prevState.dropActive) {
+    if (prevState.dropActive !== this.state.dropActive) {
       this._activation(this.state.dropActive);
     }
-    if (this.state.dropActive && ! prevState.dropActive) {
-      this._activation(this.state.dropActive);
-    }
+
     if (this.state.dropActive) {
       this._drop.render(this._renderDrop());
     }
@@ -184,15 +181,15 @@ var Calendar = React.createClass({
     if (dropActive) {
 
       document.addEventListener('click', this._onClose);
-      this.startListeningToKeyboard(listeners);
+      KeyboardAccelerators.startListeningToKeyboard(this, listeners);
 
-      this._drop = Drop.add(this.refs.component.getDOMNode(),
+      this._drop = Drop.add(ReactDOM.findDOMNode(this.refs.component),
         this._renderDrop(), {top: 'bottom', left: 'left'});
 
     } else {
 
       document.removeEventListener('click', this._onClose);
-      this.stopListeningToKeyboard(listeners);
+      KeyboardAccelerators.stopListeningToKeyboard(this, listeners);
 
       if (this._drop) {
         this._drop.remove();

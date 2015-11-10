@@ -1,4 +1,4 @@
-// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 @mixin graph-stroke-color {
   &.color-index-loading {
@@ -9,6 +9,10 @@
 
   &.color-index-unset {
     stroke: $unset-color;
+  }
+
+  &.color-index-brand {
+    stroke: $brand-color;
   }
 
   @each $status, $color in $brand-status-colors {
@@ -37,6 +41,10 @@
     stroke: rgba($unset-color, $opacity);
   }
 
+  &.color-index-brand {
+    stroke: rgba($brand-color, $opacity);
+  }
+
   @each $status, $color in $brand-status-colors {
     &.color-index-#{$status} {
       stroke: rgba($color, $opacity);
@@ -54,6 +62,10 @@
 @mixin graph-fill-color {
   &.color-index-unset {
     fill: $unset-color;
+  }
+
+  &.color-index-brand {
+    fill: $brand-color;
   }
 
   @each $status, $color in $brand-status-colors {

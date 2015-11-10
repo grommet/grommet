@@ -1,4 +1,4 @@
-// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 #loading {
   position: absolute;
@@ -37,18 +37,6 @@
   &--centered {
     > .split {
       @include centered-content();
-    }
-  }
-
-  &--layered-x {
-    @include media-query(palm) {
-      position: absolute;
-      top: 0px;
-      bottom: 0px;
-      left: 0px;
-      right: 0px;
-      overflow: hidden;
-      opacity: 0.3;
     }
   }
 }

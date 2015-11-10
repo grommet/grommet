@@ -1,7 +1,8 @@
-// (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
 var React = require('react');
-var KeyboardAccelerators = require('../mixins/KeyboardAccelerators');
+var ReactDOM = require('react-dom');
+var KeyboardAccelerators = require('../utils/KeyboardAccelerators');
 var Drop = require('../utils/Drop');
 var SearchIcon = require('./icons/Search');
 
@@ -39,8 +40,6 @@ var SearchInput = React.createClass({
     ])
   },
 
-  mixins: [KeyboardAccelerators],
-
   getInitialState: function () {
     return {
       dropActive: false,
@@ -67,12 +66,12 @@ var SearchInput = React.createClass({
     // the order here is important, need to turn off keys before turning on
 
     if (! this.state.focused && prevState.focused) {
-      this.stopListeningToKeyboard(focusedKeyboardHandlers);
+      KeyboardAccelerators.stopListeningToKeyboard(this, focusedKeyboardHandlers);
     }
 
     if (! this.state.dropActive && prevState.dropActive) {
       document.removeEventListener('click', this._onRemoveDrop);
-      this.stopListeningToKeyboard(activeKeyboardHandlers);
+      KeyboardAccelerators.stopListeningToKeyboard(this, activeKeyboardHandlers);
       if (this._drop) {
         this._drop.remove();
         this._drop = null;
@@ -80,14 +79,14 @@ var SearchInput = React.createClass({
     }
 
     if (this.state.focused && ! prevState.focused) {
-      this.startListeningToKeyboard(focusedKeyboardHandlers);
+      KeyboardAccelerators.startListeningToKeyboard(this, focusedKeyboardHandlers);
     }
 
     if (this.state.dropActive && ! prevState.dropActive) {
       document.addEventListener('click', this._onRemoveDrop);
-      this.startListeningToKeyboard(activeKeyboardHandlers);
+      KeyboardAccelerators.startListeningToKeyboard(this, activeKeyboardHandlers);
 
-      this._drop = Drop.add(this.refs.component.getDOMNode(),
+      this._drop = Drop.add(ReactDOM.findDOMNode(this.refs.component),
         this._renderDrop(), {top: 'bottom', left: 'left'});
     } else if (this.state.dropActive && prevState.dropActive) {
       this._drop.render(this._renderDrop());
@@ -139,7 +138,7 @@ var SearchInput = React.createClass({
   },
 
   _onFocus: function () {
-    this.refs.input.getDOMNode().select();
+    ReactDOM.findDOMNode(this.refs.input).select();
     this.setState({
       focused: true,
       dropActive: false,

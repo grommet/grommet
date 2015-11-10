@@ -1,4 +1,4 @@
-// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 $meter-size: $graphic-size;
 $meter-small-size: $graphic-small-size;
@@ -54,6 +54,11 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
   &__active {
     white-space: normal;
     pointer-events: none;
+
+    &--active {
+      pointer-events: auto;
+      cursor: pointer;
+    }
 
     &-value {
       @include inuit-font-size($large-number-font-size, $inuit-heading-size-1 + 2);
@@ -280,7 +285,7 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
 
         &__graphic {
           width: $meter-size;
-          min-height: $inuit-base-spacing-unit;
+          height: $inuit-base-spacing-unit;
         }
 
         &__active {
@@ -336,7 +341,7 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
       white-space: nowrap;
 
       svg.meter__graphic {
-        min-width: $inuit-base-spacing-unit;
+        width: $inuit-base-spacing-unit;
         height: $meter-size;
       }
 
@@ -480,6 +485,11 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
         white-space: normal;
         pointer-events: none;
         text-align: center;
+
+        &--active {
+          pointer-events: auto;
+          cursor: pointer;
+        }
       }
     }
   }

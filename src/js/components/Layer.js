@@ -1,49 +1,46 @@
-// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 var React = require('react');
+var ReactDOM = require('react-dom');
 var CloseIcon = require('./icons/base/Close');
-var KeyboardAccelerators = require('../mixins/KeyboardAccelerators');
+var KeyboardAccelerators = require('../utils/KeyboardAccelerators');
 var DOMUtils = require('../utils/DOM');
 var Button = require('./Button');
 
 var CLASS_ROOT = "layer";
 
-var LayerOverlay = React.createClass({
+var LayerContents = React.createClass({
 
   propTypes: {
-    align: React.PropTypes.oneOf(['center', 'top', 'bottom', 'left', 'right']),
     closer: React.PropTypes.oneOfType([
       React.PropTypes.node,
       React.PropTypes.bool
     ]),
-    flush: React.PropTypes.bool,
-    hidden: React.PropTypes.bool,
-    peek: React.PropTypes.bool,
     onClose: React.PropTypes.func,
     router: React.PropTypes.func,
+    intl: React.PropTypes.object,
     a11yCloserTitle: React.PropTypes.string
   },
 
   childContextTypes: {
-    router: React.PropTypes.func
+    router: React.PropTypes.func,
+    intl: React.PropTypes.object
   },
 
-  mixins: [KeyboardAccelerators],
-
   getChildContext: function () {
-    return {router: this.props.router};
+    return {router: this.props.router, intl: this.props.intl};
   },
 
   componentDidMount: function () {
 
-    var items = this.refs.background.getDOMNode().getElementsByTagName('*');
+    var items = this.refs.container.getElementsByTagName('*');
     var firstFocusable = DOMUtils.getBestFirstFocusable(items);
     if (firstFocusable) {
       firstFocusable.focus();
     }
 
     if (this.props.onClose) {
-      this.startListeningToKeyboard({
+      KeyboardAccelerators.startListeningToKeyboard(this, {
         tab: this._processTab,
         esc: this.props.onClose
       });
@@ -51,14 +48,8 @@ var LayerOverlay = React.createClass({
   },
 
   componentWillUnmount: function() {
-    var appElement = document.querySelectorAll('div.app')[0];
-    if (appElement) { // unit tests don't have an app
-      appElement.classList.remove('app--layered');
-      window.scroll(0, this._appScrollY);
-    }
-
     if (this.props.onClose) {
-      this.stopListeningToKeyboard({
+      KeyboardAccelerators.stopListeningToKeyboard(this, {
         tab: this._processTab,
         esc: this.props.onClose
       });
@@ -66,7 +57,7 @@ var LayerOverlay = React.createClass({
   },
 
   _processTab: function (event) {
-    var items = this.refs.background.getDOMNode().getElementsByTagName('*');
+    var items = this.refs.background.getElementsByTagName('*');
 
     items = DOMUtils.filterByFocusable(items);
 
@@ -84,27 +75,8 @@ var LayerOverlay = React.createClass({
   },
 
   render: function () {
-    var classes = [CLASS_ROOT];
-    if (this.props.align) {
-      classes.push(CLASS_ROOT + "--align-" + this.props.align);
-    }
-    if (this.props.flush) {
-      classes.push(CLASS_ROOT + "--flush");
-    }
-    if (this.props.hidden) {
-      classes.push(CLASS_ROOT + "--hidden");
-    }
-    if (this.props.peek) {
-      classes.push(CLASS_ROOT + "--peek");
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
-
     var closer = null;
     if (this.props.closer) {
-      classes.push(CLASS_ROOT + "--closeable");
-
       closer = (
         <div className={CLASS_ROOT + "__closer"}>
           <Button type='icon' onClick={this.props.onClose}>
@@ -115,11 +87,9 @@ var LayerOverlay = React.createClass({
     }
 
     return (
-      <div ref="background" className={classes.join(' ')}>
-        <div className={CLASS_ROOT + "__container"}>
-          {closer}
-          {this.props.children}
-        </div>
+      <div ref="container" className={CLASS_ROOT + "__container"}>
+        {closer}
+        {this.props.children}
       </div>
     );
   }
@@ -140,7 +110,8 @@ var Layer = React.createClass({
   },
 
   contextTypes: {
-    router: React.PropTypes.func
+    router: React.PropTypes.func,
+    intl: React.PropTypes.object
   },
 
   getDefaultProps: function () {
@@ -151,12 +122,12 @@ var Layer = React.createClass({
 
   componentDidMount: function () {
     this._originalFocusedElement = document.activeElement;
-    this._addOverlay();
-    this._renderOverlay();
+    this._addLayer();
+    this._renderLayer();
   },
 
   componentDidUpdate: function () {
-    this._renderOverlay();
+    this._renderLayer();
   },
 
   componentWillUnmount: function () {
@@ -165,29 +136,47 @@ var Layer = React.createClass({
       this._originalFocusedElement.focus();
     }
 
-    this._removeOverlay();
+    this._removeLayer();
   },
 
-  _addOverlay: function () {
-    var overlay = document.createElement('div');
+  _classesFromProps: function () {
+    var classes = [CLASS_ROOT];
+    if (this.props.align) {
+      classes.push(CLASS_ROOT + "--align-" + this.props.align);
+    }
+    if (this.props.flush) {
+      classes.push(CLASS_ROOT + "--flush");
+    }
+    if (this.props.hidden) {
+      classes.push(CLASS_ROOT + "--hidden");
+    }
+    if (this.props.peek) {
+      classes.push(CLASS_ROOT + "--peek");
+    }
+    if (this.props.closer) {
+      classes.push(CLASS_ROOT + "--closeable");
+    }
+    if (this.props.className) {
+      classes.push(this.props.className);
+    }
+    return classes;
+  },
+
+  _addLayer: function () {
+    var element = document.createElement('div');
     if (this.props.id) {
-      overlay.id = this.props.id;
+      element.id = this.props.id;
     }
-    if (overlay.classList) {
-      overlay.classList.add('layer__overlay');
-    } else {
-      // unit test version
-      overlay.className = 'layer__overlay';
-    }
-    this._overlay = document.body.insertBefore(overlay, document.body.firstChild);
-    this._overlay = overlay;
+    element.className = this._classesFromProps().join(' ');
+    this._element = document.body.insertBefore(element, document.body.firstChild);
   },
 
   _handleAriaHidden: function (hideOverlay) {
-    this._overlay.setAttribute('aria-hidden', hideOverlay);
+    this._element.setAttribute('aria-hidden', hideOverlay);
 
+    // refactor
     Array.prototype.forEach.call(document.body.childNodes, function (currentChild) {
-      if (currentChild !== this._overlay &&
+      if (currentChild !== this._element &&
         currentChild.nodeType === 1 &&
         currentChild.id !== 'skip-link-layer' &&
         currentChild.tagName.toLowerCase() !== 'script') {
@@ -196,35 +185,20 @@ var Layer = React.createClass({
     }.bind(this));
   },
 
-  _renderOverlay: function () {
-    var content = (<LayerOverlay {...this.props} router={this.context.router} />);
-    React.render(content, this._overlay);
-
-    if (this.props.hidden) {
-      if (this._overlay.classList) {
-        this._overlay.classList.add('layer__overlay--hidden');
-      } else {
-        this._overlay.className = 'layer__overlay layer__overlay--hidden';
-      }
-
-      this._handleAriaHidden(true);
-    } else {
-      if (this._overlay.classList) {
-        this._overlay.classList.remove('layer__overlay--hidden');
-      } else {
-        this._overlay.className = 'layer__overlay';
-      }
-
-      this._handleAriaHidden(false);
-    }
+  _renderLayer: function () {
+    this._element.className = this._classesFromProps().join(' ');
+    var contents = (<LayerContents {...this.props} router={this.context.router} intl={this.context.intl} />);
+    ReactDOM.render(contents, this._element);
+    this._handleAriaHidden(this.props.hidden);
   },
 
-  _removeOverlay: function () {
+  _removeLayer: function () {
+    this._element.removeEventListener('animationend', this._onAnimationEnd);
     this._handleAriaHidden(true);
 
-    React.unmountComponentAtNode(this._overlay);
-    document.body.removeChild(this._overlay);
-    this._overlay = null;
+    ReactDOM.unmountComponentAtNode(this._element);
+    document.body.removeChild(this._element);
+    this._element = null;
   },
 
   render: function () {

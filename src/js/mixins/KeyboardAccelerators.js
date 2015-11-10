@@ -1,4 +1,4 @@
-// (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
 // Allow callers to use key labels instead of key code numbers.
 // This makes their code easier to read.
@@ -94,6 +94,7 @@ var KeyboardAccelerators = {
   // This function can be called multiple times, existing handlers will
   // be replaced, new handlers will be added.
   startListeningToKeyboard: function (handlers) {
+    console.warn('grommet/mixins/KeyboardAccelerators is deprecated. Please switch to grommet/utils/KeyboardAccelerators.');
     this._initKeyboardAccelerators();
     var keys = 0;
     for (var key in handlers) {

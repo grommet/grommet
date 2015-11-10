@@ -1,7 +1,7 @@
-// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-$button-vertical-padding: quarter($inuit-base-spacing-unit) - $button-border-width;
-$button-horizontal-padding: round($inuit-base-spacing-unit * 1.5) - $button-border-width;
+$button-vertical-padding: round($inuit-base-spacing-unit / 3) - $button-border-width;
+$button-horizontal-padding: round($inuit-base-spacing-unit) - $button-border-width;
 
 @mixin basic-button {
   padding: $button-vertical-padding $button-horizontal-padding;
@@ -14,9 +14,15 @@ $button-horizontal-padding: round($inuit-base-spacing-unit * 1.5) - $button-bord
   cursor: pointer;
   text-align: center;
   outline: none;
+  min-width: $button-min-width;
+  max-width: $button-max-width;
+  
+  &:focus:not(.button--disabled) {
+    border-color: $focus-border-color;
+    box-shadow: 0 0 1px 1px $focus-border-color;
+  }
 
   @include media-query(lap-and-up) {
-    -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
@@ -29,11 +35,6 @@ button:not(.button) {
 
 .button {
   @include basic-button();
-
-  &:focus:not(.button--disabled) {
-    border-color: $focus-border-color;
-    box-shadow: 0 0 1px 1px $focus-border-color;
-  }
 
   &--primary {
     border-color: $brand-color;

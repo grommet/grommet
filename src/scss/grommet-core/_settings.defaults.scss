@@ -1,4 +1,4 @@
-// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 $border-radius: 4px !default;
 
@@ -31,6 +31,9 @@ $tile-large-size: round($inuit-base-spacing-unit * 16) !default;
 $tile-extra-large-size: round($inuit-base-spacing-unit * 24) !default;
 
 $control-size: $inuit-base-spacing-unit !default; // 24px
+
+$button-min-width: round($inuit-base-spacing-unit * 5) !default;
+$button-max-width: round($inuit-base-spacing-unit * 16) !default;
 
 $input-border-width: 1px !default;
 $control-border-width: 2px !default;

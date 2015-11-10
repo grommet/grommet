@@ -1,36 +1,38 @@
-// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 var React = require('react');
-var IntlMixin = require('../mixins/GrommetIntlMixin');
+var ReactIntl = require('react-intl');
+var FormattedDate = ReactIntl.FormattedDate;
+var merge = require('lodash/object/merge');
+var pick = require('lodash/object/pick');
+var keys = require('lodash/object/keys');
+var Box = require('./Box');
+
 var StatusIcon = require('./icons/Status');
 
 var CLASS_ROOT = "notification";
 
-var GrommetNotification = React.createClass({
+var Notification = React.createClass({
 
-  propTypes: {
-    flush: React.PropTypes.bool,
+  propTypes: merge({
     message: React.PropTypes.string.isRequired,
     state: React.PropTypes.string,
     status: React.PropTypes.string,
     timestamp: React.PropTypes.object // Date
-  },
-
-  mixins: [IntlMixin],
+  }, Box.propTypes),
 
   getDefaultProps: function () {
     return {
       flush: true,
-      status: 'unknown'
+      status: 'unknown',
+      pad: 'medium'
     };
   },
 
   render: function() {
     var classes = [CLASS_ROOT];
+    var other = pick(this.props, keys(Box.propTypes));
     classes.push(CLASS_ROOT + "--" + this.props.status.toLowerCase());
-    if (this.props.flush) {
-      classes.push(CLASS_ROOT + "--flush");
-    }
     if (this.props.className) {
       classes.push(this.props.className);
     }
@@ -45,32 +47,44 @@ var GrommetNotification = React.createClass({
 
     var state;
     if (this.props.state) {
-      state = <span className={CLASS_ROOT + "__state"}>{this.props.state}</span>;
+      state = <div className={CLASS_ROOT + "__state"}>{this.props.state}</div>;
     }
 
     var timestamp;
     if (this.props.timestamp) {
-      var text = this.getGrommetFormattedDate(this.props.timestamp);
+      var timestampFormatted = (
+        <FormattedDate value={this.props.timestamp}
+          weekday="long"
+          day="numeric"
+          month="long"
+          year="numeric"
+          hour="numeric"
+          minute="numeric"
+          second="numeric" />
+      );
+
       timestamp = (
-        <span className={CLASS_ROOT + "__timestamp"}>
-          {text}
-        </span>
+        <div className={CLASS_ROOT + "__timestamp"}>
+          {timestampFormatted}
+        </div>
       );
     }
 
     return (
-      <div className={classes.join(' ')}>
-        {status}
-        <span className={CLASS_ROOT + "__message"}>
-          {this.props.message}
-        </span>
+      <Box className={classes.join(' ')} {...other}>
+        <Box direction="row" responsive={false}>
+          {status}
+          <span className={CLASS_ROOT + "__message"}>
+            {this.props.message}
+          </span>
+        </Box>
         {timestamp}
         {state}
         {this.props.children}
-      </div>
+      </Box>
     );
   }
 
 });
 
-module.exports = GrommetNotification;
+module.exports = Notification;

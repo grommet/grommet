@@ -1,9 +1,7 @@
-// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 var React = require('react');
-
-var IntlMixin = require('../mixins/GrommetIntlMixin');
-
+var FormattedMessage = require('./FormattedMessage');
 var Box = require('./Box');
 
 var CLASS_ROOT = "tabs";
@@ -13,8 +11,6 @@ var Tabs = React.createClass({
   propTypes: {
     activeIndex: React.PropTypes.number
   },
-
-  mixins: [IntlMixin],
 
   getDefaultProps: function () {
     return {
@@ -58,6 +54,9 @@ var Tabs = React.createClass({
       });
     }.bind(this));
 
+    // TODO: Since there could be multiple Tabs on the page, we need a more
+    // robust means of identifying the association between title and aria label.
+
     return (
       <div role="tablist">
         <ul className={classes.join(' ')}>
@@ -66,7 +65,8 @@ var Tabs = React.createClass({
         <div ref="tabContent" tabIndex="0" aria-labelledby="content_description"
           role="tabpanel">
           <title id="content_description">
-            {activeTitle + ' ' + this.getGrommetIntlMessage('Tab Contents')}
+            <FormattedMessage id="Tab Contents" activeTitle={activeTitle}
+              defaultMessage={activeTitle + ' Tab Contents'} />
           </title>
           <Box className={CLASS_ROOT + '__content'} aria-labelledby="content_description">
             {activeContainer}

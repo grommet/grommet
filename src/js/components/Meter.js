@@ -1,7 +1,8 @@
-// (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
 var React = require('react');
-var IntlMixin = require('../mixins/GrommetIntlMixin');
+var ReactDOM = require('react-dom');
+var FormattedMessage = require('./FormattedMessage');
 
 var Legend = require('./Legend');
 
@@ -110,8 +111,6 @@ var Meter = React.createClass({
     a11yDesc: React.PropTypes.string
   },
 
-  mixins: [IntlMixin],
-
   getDefaultProps: function () {
     return {
       type: 'bar',
@@ -157,6 +156,9 @@ var Meter = React.createClass({
   },
 
   _onActivate: function (index) {
+    if (index === null) {
+      index = this.state.importantIndex;
+    }
     this.setState({initial: false, activeIndex: index});
   },
 
@@ -179,8 +181,8 @@ var Meter = React.createClass({
 
     if ('right' === this.state.legendPlacement) {
       if (this.refs.legend) {
-        var graphicHeight = this.refs.activeGraphic.getDOMNode().offsetHeight;
-        var legendHeight = this.refs.legend.getDOMNode().offsetHeight;
+        var graphicHeight = this.refs.activeGraphic.offsetHeight;
+        var legendHeight = ReactDOM.findDOMNode(this.refs.legend).offsetHeight;
         this.setState({tallLegend: (legendHeight > graphicHeight)});
       }
     }
@@ -609,15 +611,17 @@ var Meter = React.createClass({
       fields = {value: this.state.total, label: 'Total'};
     } else {
       var active = this.state.series[this.state.activeIndex];
-      fields = {value: active.value, label: active.label};
+      fields = {value: active.value, label: active.label, onClick: active.onClick};
     }
-
     return fields;
   },
 
   _renderActive: function () {
-
     var fields = this._getActiveFields();
+    var classes = [CLASS_ROOT + "__active"];
+    if (fields.onClick) {
+      classes.push(CLASS_ROOT + "__active--active");
+    }
     var units;
     if (this.props.units) {
       units = (
@@ -626,8 +630,10 @@ var Meter = React.createClass({
         </span>
       );
     }
+
     return (
-      <div aria-hidden="true" role="presentation" className={CLASS_ROOT + "__active"}>
+      <div aria-hidden="true" role="presentation"
+        className={classes.join(' ')} onClick={fields.onClick}>
         <span
           className={CLASS_ROOT + "__active-value large-number-font"}>
           {fields.value}
@@ -679,7 +685,7 @@ var Meter = React.createClass({
         series={this.state.series}
         units={this.props.units}
         activeIndex={this.state.activeIndex}
-        onActive={this._onActive} />
+        onActive={this._onActivate} />
     );
   },
 
@@ -788,9 +794,10 @@ var Meter = React.createClass({
         (this.props.vertical ? 'vertical ' : '') + this.props.type
       ].join(' ').trim();
     }
-    var a11yTitle = this.getGrommetIntlMessage(
-      typeof this.props.a11yTitle !== "undefined" ?
-        this.props.a11yTitle : defaultTitle);
+
+    var titleKey = typeof this.props.a11yTitle !== "undefined" ?
+        this.props.a11yTitle : defaultTitle;
+    var a11yTitle = <FormattedMessage id={titleKey} defaultMessage={titleKey} />;
 
     var defaultA11YDesc;
     if (this.props.a11yTitle !== "undefined") {
@@ -807,9 +814,9 @@ var Meter = React.createClass({
       ].join(' ').trim();
     }
 
-    var a11yDesc = this.getGrommetIntlMessage(
-      typeof this.props.a11yTitle !== "undefined" ?
-        this.props.a11yTitle : defaultA11YDesc);
+    var descKey = typeof this.props.a11yTitle !== "undefined" ?
+        this.props.a11yTitle : defaultA11YDesc;
+    var a11yDesc = <FormattedMessage id={descKey} defaultMessage={descKey} />;
 
     return (
       <div className={classes.join(' ')}>
@@ -817,12 +824,12 @@ var Meter = React.createClass({
           <div className={CLASS_ROOT + "__labeled-graphic"}>
             <a href="#" role={a11yRole} tabIndex="0"
               aria-labelledby={this.props.a11yTitleId + ' ' + this.props.a11yDescId}>
-              <title id={this.props.a11yTitleId}>{this.getGrommetIntlMessage(a11yTitle)}</title>
+              <title id={this.props.a11yTitleId}>{a11yTitle}</title>
               <svg className={CLASS_ROOT + "__graphic"}
                 viewBox={"0 0 " + this.state.viewBoxWidth +
                   " " + this.state.viewBoxHeight}
                 preserveAspectRatio="xMidYMid meet" width={width} height={height}>
-                <desc id={this.props.a11yDescId}>{this.getGrommetIntlMessage(a11yDesc)}</desc>
+                <desc id={this.props.a11yDescId}>{a11yDesc}</desc>
                 {thresholds}
                 <g className={CLASS_ROOT + "__values"}>
                   {values}

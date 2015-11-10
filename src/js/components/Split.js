@@ -1,4 +1,4 @@
-// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 var React = require('react');
 
@@ -27,7 +27,7 @@ var Split = React.createClass({
     // figure out the break width
     this._breakWidth = 720; // default
     // CSS stores the break width in a hidden pseudo element
-    var splitElement = this.refs.split.getDOMNode();
+    var splitElement = this.refs.split;
     var after = window.getComputedStyle(splitElement, ':after');
     if (after) {
       this._breakWidth = parseInt(after.getPropertyValue('width'), 10);
@@ -57,7 +57,7 @@ var Split = React.createClass({
   },
 
   _layout: function () {
-    var splitElement = this.refs.split.getDOMNode();
+    var splitElement = this.refs.split;
     if (splitElement.offsetWidth < this._breakWidth) {
       this._setResponsive('single');
     } else {

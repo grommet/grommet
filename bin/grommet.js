@@ -2,12 +2,9 @@
 
 var gulp = require('gulp');
 var template = require('gulp-template');
-var file = require('gulp-file');
 var install = require('gulp-install');
 var path = require('path');
-var fs = require('fs');
 var mkdirp = require('mkdirp');
-var merge = require('lodash/object/merge');
 var shelljs = require('shelljs');
 
 String.prototype.capitalize = function() {
@@ -22,27 +19,8 @@ String.prototype.capitalize = function() {
 
 var task = process.argv[2] || 'init';
 var app = process.argv[3] || 'app-name';
-var dest = process.argv[4] || app;
 var title = app.replace(/-|_/g, ' ').capitalize();
 var grommetPath = path.join(__dirname, '..');
-
-function getPackageJSON(app, fixedVersion) {
-  var grommetPackageJSON = require(path.join(grommetPath, 'package.json'));
-
-  var appPackageJSON = {
-    name: app,
-    version: grommetPackageJSON.version,
-    main: 'src/js/index.js',
-    dependencies: grommetPackageJSON.dependencies,
-    devDependencies: grommetPackageJSON.devDependencies,
-    engines: grommetPackageJSON.engines
-  };
-
-  appPackageJSON.dependencies.grommet = fixedVersion ? grommetPackageJSON.version :
-    'https://github.com/grommet/grommet.git#stable';
-
-  return appPackageJSON;
-}
 
 function nodeVersionSupported() {
   return Number(process.version.match(/^v(\d+\.\d+)/)[1]) >= 0.10;
@@ -72,7 +50,7 @@ gulp.task('init', function(done) {
       var mobileIcon = path.join(grommetPath, 'mobile-app-icon.png');
       var shortcutIcon = path.join(grommetPath, 'shortcut-icon.png');
 
-      var packageJSON = getPackageJSON(app, grommetPath, true);
+      var packageJSON = require(path.join(grommetPath, 'package.json'));
 
       gulp.src(mobileIcon).pipe(gulp.dest('./src/img'));
       gulp.src(shortcutIcon).pipe(gulp.dest('./src/img'));
@@ -83,74 +61,16 @@ gulp.task('init', function(done) {
         grommetVersion: packageJSON.version
       }))
       .pipe(gulp.dest('./'))
-      .on('finish', function() {
-        gulp.src('package.json').pipe(file('package.json',
-          JSON.stringify(packageJSON, null, 2))).pipe(gulp.dest('./'))
-          .pipe(install()).on('finish', function() {
-            done();
-          });
+      .pipe(install()).on('finish', function() {
+        done();
       });
     }
   });
 
 });
 
-gulp.task('export', function(done) {
-
-  if (!nodeVersionSupported() || !npmVersionSupported()) {
-    console.error('[grommet] Grommet requires Node v0.10+ and Npm 1.4.x+. Please make sure to have that in place');
-    process.exit(1);
-  }
-
-  mkdirp('./' + dest, function(err) {
-    if (err) {
-      console.log('Error trying to create project: ' + err);
-    } else {
-      process.chdir('./' + dest);
-
-      var exampleFolder = path.join(grommetPath, 'examples/' + app);
-      var templateFolder = path.join(grommetPath, 'templates/' + app + '/**');
-
-      fs.exists(exampleFolder, function(exists) {
-        if (!exists) {
-          throw new Error('Could not find ' + exampleFolder);
-        }
-
-        var packageJSON = getPackageJSON(dest);
-
-        gulp.src([
-          exampleFolder + '/**',
-          '!' + exampleFolder + '/node_modules/',
-          '!' + exampleFolder + '/node_modules/**',
-          '!' + exampleFolder + '/dist/',
-          '!' + exampleFolder + '/dist/**',
-          '!' + exampleFolder + '/gulpfile.js',
-          '!' + exampleFolder + '/README.md'
-        ]).pipe(gulp.dest('./')).on('end', function() {
-          gulp.src(templateFolder).pipe(template({
-            appName: dest
-          })).pipe(gulp.dest('./')).on('finish', function() {
-
-            //merging template NPM with application NPM
-            try {
-              packageJSON = merge(packageJSON, require(path.resolve('package.json')));
-            } catch (e) {
-              // application NPM not existing
-              console.log('Application does not have specific NPM module.');
-            }
-
-            gulp.src('./' + dest).pipe(file('package.json',
-              JSON.stringify(packageJSON, null, 2))).pipe(gulp.dest('./'))
-              .pipe(install()).on('finish', function() {
-                console.log('Successfully exported ' + app + ' to ' + dest + '.');
-                done();
-              });
-          });
-        });
-      });
-    }
-  });
-
+gulp.task('export', function() {
+  console.log('[REMOVED] All the example apps now live outside Grommet. Checkout Grommet organization in Github to learn more (https://github.com/grommet).');
 });
 
 var argv = require('yargs').argv;

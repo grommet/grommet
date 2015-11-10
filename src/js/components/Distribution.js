@@ -1,4 +1,4 @@
-// (C) Copyright 2014 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
 var React = require('react');
 var Legend = require('./Legend');
@@ -20,11 +20,11 @@ var Distribution = React.createClass({
       colorIndex: React.PropTypes.string,
       important: React.PropTypes.bool,
       onClick: React.PropTypes.func,
-      icon: {
+      icon: React.PropTypes.shape({
         width: React.PropTypes.number,
         height: React.PropTypes.number,
         svgElement: React.PropTypes.node
-      }
+      })
     })),
     size: React.PropTypes.oneOf(['small', 'medium', 'large']),
     small: React.PropTypes.bool,
@@ -74,7 +74,7 @@ var Distribution = React.createClass({
       this.setState({legendPosition: 'right'});
     }
 
-    var graphic = this.refs.graphic.getDOMNode();
+    var graphic = this.refs.graphic;
     var rect = graphic.getBoundingClientRect();
     if (rect.width !== this.state.width || rect.height !== this.state.height) {
       this.setState({
@@ -84,18 +84,26 @@ var Distribution = React.createClass({
     }
 
     // adjust box label positions
-    var container = this.refs.container.getDOMNode();
+    var container = this.refs.container;
     var labels = container.querySelectorAll('.distribution__label');
     for (var i = 0; i < labels.length; i += 1) {
       var label = labels[i];
       label.style.top = null;
       label.style.left = null;
+      label.style.maxWidth = null;
       var boxIndex = label.getAttribute('data-box-index');
       var box = container.querySelectorAll('[data-index="' + boxIndex + '"]')[0];
       var boxRect = box.getBoundingClientRect();
       var labelRect = label.getBoundingClientRect();
+      if (labelRect.width > boxRect.width) {
+        label.style.left = (boxRect.left  - rect.left) + 'px';
+      } else {
+        label.style.left = ((boxRect.left - rect.left) + (boxRect.width / 2) - (labelRect.width / 2)) + 'px';
+      }
+      label.style.maxWidth = boxRect.width + 'px';
+      // have to set again after setting maxWidth in case text wraps and increases height
+      labelRect = label.getBoundingClientRect();
       label.style.top = ((boxRect.top - rect.top) + (boxRect.height / 2) - (labelRect.height / 2)) + 'px';
-      label.style.left = ((boxRect.left - rect.left) + (boxRect.width / 2) - (labelRect.width / 2)) + 'px';
     }
   },
 
