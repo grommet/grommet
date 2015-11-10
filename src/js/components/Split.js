@@ -37,8 +37,34 @@ var Split = React.createClass({
     this._layout();
   },
 
+  componentWillReceiveProps: function (nextProps) {
+    // If we change the number of visible children, trigger a resize event
+    // so things like Table header can adjust. This will go away once
+    // CSS supports per element media queries.
+    // The 500ms delay is loosely tied to the CSS animation duration.
+    // We want any animations to finish before triggering the resize.
+    // TODO: consider using an animation end event instead of a timer.
+    if (this._nonNullChildCount(nextProps) !== this._nonNullChildCount(this.props)) {
+      clearTimeout(this._resizeTimer);
+      this._resizeTimer = setTimeout(function () {
+        var event = document.createEvent('HTMLEvents');
+        event.initEvent('resize', true, false);
+        window.dispatchEvent(event);
+      }, 500);
+    }
+  },
+
   componentWillUnmount: function () {
     window.removeEventListener('resize', this._onResize);
+  },
+
+  // Support function for componentWillReceiveProps()
+  _nonNullChildCount: function (props) {
+    var result = 0;
+    React.Children.forEach(props.children, function (child) {
+      if (child !== null) result += 1;
+    });
+    return result;
   },
 
   _onResize: function () {
