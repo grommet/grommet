@@ -13,7 +13,7 @@
     // this makes it easier to align tiles with graphic components
     ////box-sizing: content-box;
     margin: halve($inuit-base-spacing-unit);
-    
+
     > * {
       // reset box sizing on tile's children
       box-sizing: border-box;
@@ -102,7 +102,14 @@
 
   &--large {
     > .tile {
-      flex-basis: $tile-large-size;
+
+      @include media-query(lap-and-up) {
+        flex-basis: $tile-large-size;
+      }
+
+      @include media-query(palm) {
+        flex-basis: 100%;
+      }
     }
   }
 }
