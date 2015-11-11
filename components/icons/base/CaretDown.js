@@ -19,12 +19,12 @@ var Icon = React.createClass({
 
   getDefaultProps: function getDefaultProps() {
     return {
-      a11yTitleId: 'carrot-up-title'
+      a11yTitleId: 'caret-down-title'
     };
   },
 
   render: function render() {
-    var classes = [CLASS_ROOT, CLASS_ROOT + '-carrot-up'];
+    var classes = [CLASS_ROOT, CLASS_ROOT + '-caret-down'];
     if (this.props.large) {
       classes.push(CLASS_ROOT + "--large");
     }
@@ -35,7 +35,7 @@ var Icon = React.createClass({
       classes.push(this.props.className);
     }
 
-    var titleLabel = typeof this.props.a11yTitle !== "undefined" ? this.props.a11yTitle : "carrot-up";
+    var titleLabel = typeof this.props.a11yTitle !== "undefined" ? this.props.a11yTitle : "caret-down";
     var a11yTitle = React.createElement(FormattedMessage, { id: titleLabel, defaultMessage: titleLabel });
 
     return React.createElement(
@@ -48,9 +48,9 @@ var Icon = React.createClass({
       ),
       React.createElement(
         'g',
-        { id: 'carrot-up' },
-        React.createElement('rect', { id: '_x2E_svg_253_', x: '0', y: '0', fill: 'none', width: '48', height: '48' }),
-        React.createElement('polygon', { fill: '#231F20', stroke: '#231F20', strokeWidth: '2', strokeMiterlimit: '10', points: '16.8571,29 31.1429,29 24,19 \t' })
+        { id: 'caret-down' },
+        React.createElement('rect', { id: '_x2E_svg_7_', x: '0', y: '0', fill: 'none', width: '48', height: '48' }),
+        React.createElement('polygon', { id: 'drop-carrot', fill: '#231F20', stroke: '#231F20', strokeWidth: '2', strokeMiterlimit: '10', points: '16.8571,19 31.1428,19 24,29 \t' })
       )
     );
   }
