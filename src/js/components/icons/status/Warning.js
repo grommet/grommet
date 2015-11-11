@@ -22,7 +22,7 @@ var Warning = React.createClass({
     }
     var warningTitleId = 'warning-title';
     return (
-      <svg className={className} viewBox="0 0 27 24" role="img" aria-labelledby={warningTitleId} version="1.1">
+      <svg className={className} viewBox="0 0 24 24" role="img" aria-labelledby={warningTitleId} version="1.1">
         <title id={warningTitleId}>
           <FormattedMessage id={a11yTitle} defaultMessage={a11yTitle} />
         </title>
