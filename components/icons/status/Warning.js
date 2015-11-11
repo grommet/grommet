@@ -26,7 +26,7 @@ var Warning = React.createClass({
     var warningTitleId = 'warning-title';
     return React.createElement(
       'svg',
-      { className: className, viewBox: '0 0 27 24', role: 'img', 'aria-labelledby': warningTitleId, version: '1.1' },
+      { className: className, viewBox: '0 0 24 24', role: 'img', 'aria-labelledby': warningTitleId, version: '1.1' },
       React.createElement(
         'title',
         { id: warningTitleId },
