@@ -3,6 +3,19 @@
 .menu {
   position: relative;
   @include inuit-font-size($menu-font-size, inherit);
+  
+  .header & {
+    
+    &--controlled,
+    &__control {
+      height: 100%;
+    }
+    
+    &__control {
+      line-height: double($inuit-base-spacing-unit);
+    }
+    
+  }
 
   &:focus {
     outline: none;
