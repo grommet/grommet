@@ -59,7 +59,6 @@ var Tabs = React.createClass({
 
     // TODO: Since there could be multiple Tabs on the page, we need a more
     // robust means of identifying the association between title and aria label.
-
     return React.createElement(
       'div',
       { role: 'tablist' },
@@ -76,7 +75,7 @@ var Tabs = React.createClass({
           'title',
           { id: 'content_description' },
           React.createElement(FormattedMessage, { id: 'Tab Contents', activeTitle: activeTitle,
-            defaultMessage: activeTitle + ' Tab Contents' })
+            defaultMessage: "Tab Contents" })
         ),
         React.createElement(
           Box,
