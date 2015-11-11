@@ -192,7 +192,7 @@ var Topology = React.createClass({
   },
 
   componentDidMount: function componentDidMount() {
-    var topology = React.findDOMNode(this.refs.topology);
+    var topology = ReactDOM.findDOMNode(this.refs.topology);
     topology.addEventListener('mousemove', this._onMouseMove);
     topology.addEventListener('mouseleave', this._onMouseLeave);
     window.addEventListener('resize', this._onResize);
@@ -210,7 +210,7 @@ var Topology = React.createClass({
   },
 
   componentWillUnmount: function componentWillUnmount() {
-    var topology = React.findDOMNode(this.refs.topology);
+    var topology = ReactDOM.findDOMNode(this.refs.topology);
     topology.removeEventListener('mousemove', this._onMouseMove);
     topology.removeEventListener('mouseleave', this._onMouseLeave);
     clearTimeout(this._resizeTimer);
@@ -247,7 +247,7 @@ var Topology = React.createClass({
       this.props.links.forEach(function (link, linkIndex) {
 
         var key = this.refs[link.colorIndex];
-        var style = window.getComputedStyle(React.findDOMNode(key));
+        var style = window.getComputedStyle(ReactDOM.findDOMNode(key));
         var color = style.getPropertyValue('background-color');
         context.strokeStyle = color;
         context.lineWidth = 2;
@@ -313,7 +313,7 @@ var Topology = React.createClass({
   },
 
   _highlight: function _highlight(element) {
-    var topology = React.findDOMNode(this.refs.topology);
+    var topology = ReactDOM.findDOMNode(this.refs.topology);
     var highlighting = false;
     var highlights = {};
     while (element && element !== topology) {
