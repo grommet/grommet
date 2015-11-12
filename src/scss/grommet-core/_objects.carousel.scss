@@ -34,8 +34,8 @@
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
-    filter: drop-shadow( 1px 1px 1px rgba(170, 170, 170, 0.5) );
-    -webkit-filter: drop-shadow( 1px 1px 1px rgba(170, 170, 170, 0.5) );
+    filter: drop-shadow(1px 1px 1px rgba(170, 170, 170, 0.5));
+    -webkit-filter: drop-shadow(1px 1px 1px rgba(170, 170, 170, 0.5));
 
     &--next {
       right: $inuit-base-spacing-unit;
@@ -68,8 +68,8 @@
     stroke: #fff;
     fill: transparent;
     cursor: pointer;
-    filter: drop-shadow( 1px 1px 1px rgba(170, 170, 170, 0.5) );
-    -webkit-filter: drop-shadow( 1px 1px 1px rgba(170, 170, 170, 0.5) );
+    filter: drop-shadow(1px 1px 1px rgba(170, 170, 170, 0.5));
+    -webkit-filter: drop-shadow(1px 1px 1px rgba(170, 170, 170, 0.5));
 
     &--active {
       stroke: $brand-color;

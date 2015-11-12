@@ -106,24 +106,25 @@ var Carousel = React.createClass({
     });
   },
 
-  _slidePrev: function(numSlides) {
+  _slidePrev: function() {
+    var numSlides = this.props.children.length;
     this.setState({
       activeIndex: (this.state.activeIndex + numSlides - 1) % numSlides
     });
   },
 
-  _slideNext: function(numSlides) {
+  _slideNext: function() {
+    var numSlides = this.props.children.length;
     this.setState({
       activeIndex: (this.state.activeIndex + 1) % numSlides
     });
   },
 
-  _renderPrevButton: function(numSlides) {
+  _renderPrevButton: function() {
     if (this.props.infinite || this.state.activeIndex !== 0) {
-
       return (
         <svg className={CLASS_ROOT + '__arrow ' + CLASS_ROOT + '__arrow--prev'} viewBox="0 0 36 72" version="1.1"
-          onClick={this._slidePrev.bind(this, numSlides)}>
+          onClick={this._slidePrev}>
           <line x1="36" y1="0" x2="0" y2="36" />
           <line x1="0" y1="36" x2="36" y2="72" />
         </svg>
@@ -131,12 +132,11 @@ var Carousel = React.createClass({
     }
   },
 
-  _renderNextButton: function(numSlides) {
+  _renderNextButton: function() {
     if (this.props.infinite || this.state.activeIndex !== this.props.children.length - 1) {
-
       return (
         <svg className={CLASS_ROOT + '__arrow ' + CLASS_ROOT + '__arrow--next'} viewBox="0 0 36 72" version="1.1"
-          onClick={this._slideNext.bind(this, numSlides)}>
+          onClick={this._slideNext}>
           <line x1="0" y1="0" x2="36" y2="36" />
           <line x1="36" y1="36" x2="0" y2="72" />
         </svg>
@@ -182,8 +182,8 @@ var Carousel = React.createClass({
         <div className={CLASS_ROOT + "__track"} style={{ width: trackWidth, marginLeft: trackPosition }}>
           {children}
         </div>
-        {this._renderPrevButton(children.length)}
-        {this._renderNextButton(children.length)}
+        {this._renderPrevButton()}
+        {this._renderNextButton()}
         <Box className={CLASS_ROOT + "__controls"} direction="row" justify="center" responsive={false}>
           {controls}
         </Box>
