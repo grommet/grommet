@@ -24,13 +24,24 @@ var LayerContents = React.createClass({
     a11yCloserTitle: React.PropTypes.string
   },
 
+  // Because Layer creates a new DOM render context, the context
+  // is not transfered. For now, we hard code these specific ones.
+  // TODO: Either figure out how to introspect the context and transfer
+  // whatever we find or have callers explicitly indicate which parts
+  // of the context to transfer somehow.
   childContextTypes: {
     router: React.PropTypes.func,
-    intl: React.PropTypes.object
+    intl: React.PropTypes.object,
+    store: React.PropTypes.object
   },
 
   getChildContext: function getChildContext() {
-    return { router: this.props.router, intl: this.props.intl };
+    console.log('!!! Layer getChildContext');
+    return {
+      router: this.props.router,
+      intl: this.props.intl,
+      store: this.props.store
+    };
   },
 
   componentDidMount: function componentDidMount() {
@@ -113,7 +124,8 @@ var Layer = React.createClass({
 
   contextTypes: {
     router: React.PropTypes.func,
-    intl: React.PropTypes.object
+    intl: React.PropTypes.object,
+    store: React.PropTypes.object
   },
 
   getDefaultProps: function getDefaultProps() {
@@ -186,7 +198,10 @@ var Layer = React.createClass({
 
   _renderLayer: function _renderLayer() {
     this._element.className = this._classesFromProps().join(' ');
-    var contents = React.createElement(LayerContents, _extends({}, this.props, { router: this.context.router, intl: this.context.intl }));
+    var contents = React.createElement(LayerContents, _extends({}, this.props, {
+      router: this.context.router,
+      intl: this.context.intl,
+      store: this.context.store }));
     ReactDOM.render(contents, this._element);
     this._handleAriaHidden(this.props.hidden);
   },
