@@ -14,14 +14,10 @@
   position: relative;
   max-width: 100%;
   overflow: hidden;
-  height: 280px;
 
   &__track {
     display: flex;
     max-width: none;
-    position: absolute;
-    top: 0;
-    bottom: 0;
     transition: all 0.8s;
 
     & > * {

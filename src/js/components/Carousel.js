@@ -10,12 +10,14 @@ var Carousel = React.createClass({
 
   propTypes: {
     autoplay: React.PropTypes.bool,
+    infinite: React.PropTypes.bool,
     persistentNav: React.PropTypes.bool
   },
 
   getDefaultProps: function () {
     return {
       autoplay: true,
+      infinite: true,
       persistentNav: true
     };
   },
@@ -38,10 +40,14 @@ var Carousel = React.createClass({
     if (this.props.autoplay) {
       this._setSlideInterval();
     }
+
+    window.addEventListener('resize', this._onWindowResize);
   },
 
   componentWillUnmount: function() {
     clearInterval(this.slide);
+
+    window.removeEventListener('resize', this._onWindowResize);
   },
 
   _setSlideInterval: function() {
@@ -74,6 +80,10 @@ var Carousel = React.createClass({
     if (!this.props.persistentNav) {
       this.setState({ hideControls: true });
     }
+  },
+
+  _onWindowResize: function () {
+    this.setState({ width: ReactDOM.findDOMNode(this.refs.carousel).offsetWidth });
   },
 
   _slidePrev: function(numSlides) {
@@ -139,12 +149,12 @@ var Carousel = React.createClass({
 
     return (
       <div ref="carousel" className={classes.join(' ')} onMouseEnter={this._onMouseOver} onMouseLeave={this._onMouseOut}>
-        <div className={CLASS_ROOT + "__track"} style={{ width: trackWidth, left: trackPosition }}>
+        <div className={CLASS_ROOT + "__track"} style={{ width: trackWidth, marginLeft: trackPosition }}>
           {children}
         </div>
         {this._renderPrevButton(children.length)}
         {this._renderNextButton(children.length)}
-        <Box className={CLASS_ROOT + "__controls"} direction="row" justify="center">
+        <Box className={CLASS_ROOT + "__controls"} direction="row" justify="center" responsive={false}>
           {controls}
         </Box>
       </div>
