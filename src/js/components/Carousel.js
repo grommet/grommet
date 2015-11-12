@@ -155,7 +155,7 @@ var Carousel = React.createClass({
     }
 
     var index = -1;
-    const children = this.props.children;
+    var children = this.props.children;
 
     var width = this.state.width;
     var trackWidth = width * children.length;
