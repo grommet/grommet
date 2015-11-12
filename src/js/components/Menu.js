@@ -5,6 +5,7 @@ var ReactDOM = require('react-dom');
 var merge = require('lodash/object/merge');
 var pick = require('lodash/object/pick');
 var keys = require('lodash/object/keys');
+var isArray = require('lodash.isarray');
 var KeyboardAccelerators = require('../utils/KeyboardAccelerators');
 var Drop = require('../utils/Drop');
 var Responsive = require('../utils/Responsive');
@@ -123,6 +124,16 @@ var MenuDrop = React.createClass({
     return true;
   },
 
+  _renderSubMenuLinks: function (menuItems) {
+    if (isArray(menuItems.props.children)) {
+      return menuItems.props.children.map(function(menuItem) {
+        return this._renderSubMenuLinks(menuItem);
+      }, this);
+    } else {
+      return menuItems;
+    }
+  },
+
   render: function () {
     var classes = [CLASS_ROOT + "__drop"];
     var other = pick(this.props, keys(Box.propTypes));
@@ -130,7 +141,7 @@ var MenuDrop = React.createClass({
     var first = this.props.control;
     var second = (
       <Box ref="navContainer" tag="nav" className={CLASS_ROOT + '__contents'} {...other} >
-        {this.props.children}
+        {(this.props.direction !== 'row') ? this.props.children : this._renderSubMenuLinks(this)}
       </Box>
     );
     if (this.props.dropAlign.bottom) {
@@ -148,6 +159,13 @@ var MenuDrop = React.createClass({
     }
     if (this.props.small) {
       classes.push(CLASS_ROOT + "__drop--small");
+    }
+    if (this.props.className) {
+      var classNames = this.props.className.split(" ");
+      classNames = classNames.map(function(className) {
+        return className + "__drop";
+      });
+      classes.push(classNames.join(" "));
     }
 
     return (
@@ -392,6 +410,7 @@ var Menu = React.createClass({
     }
     return (
       <MenuDrop tabIndex="-1" router={this.context.router}
+        className={this.props.className}
         intl={this.context.intl}
         dropAlign={this.props.dropAlign}
         dropColorIndex={this.props.dropColorIndex}
