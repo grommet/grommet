@@ -9,18 +9,21 @@ var CLASS_ROOT = "carousel";
 var Carousel = React.createClass({
 
   propTypes: {
-    autoplay: React.PropTypes.bool
+    autoplay: React.PropTypes.bool,
+    persistentNav: React.PropTypes.bool
   },
 
   getDefaultProps: function () {
     return {
-      autoplay: true
+      autoplay: true,
+      persistentNav: true
     };
   },
 
   getInitialState: function () {
     return {
       activeIndex: 0,
+      hideControls: !this.props.persistentNav,
       priorIndex: 0,
       sequence: 1,
       width: 0
@@ -54,11 +57,23 @@ var Carousel = React.createClass({
   },
 
   _onMouseOver: function() {
-    clearInterval(this.slide);
+    if (this.props.autoplay) {
+      clearInterval(this.slide);
+    }
+
+    if (!this.props.persistentNav) {
+      this.setState({ hideControls: false });
+    }
   },
 
   _onMouseOut: function() {
-    this._setSlideInterval();
+    if (this.props.autoplay) {
+      this._setSlideInterval();
+    }
+
+    if (!this.props.persistentNav) {
+      this.setState({ hideControls: true });
+    }
   },
 
   _slidePrev: function(numSlides) {
@@ -95,6 +110,10 @@ var Carousel = React.createClass({
       classes.push(this.props.className);
     }
 
+    if (this.state.hideControls) {
+      classes.push(CLASS_ROOT + '--hide-controls');
+    }
+
     var index = -1;
     const children = this.props.children.slice();
 
@@ -119,8 +138,8 @@ var Carousel = React.createClass({
     }, this);
 
     return (
-      <Box ref="carousel" className={classes.join(' ')}>
-        <div className={CLASS_ROOT + "__track"} style={{ width: trackWidth, left: trackPosition }} onMouseEnter={this._onMouseOver} onMouseLeave={this._onMouseOut}>
+      <div ref="carousel" className={classes.join(' ')} onMouseEnter={this._onMouseOver} onMouseLeave={this._onMouseOut}>
+        <div className={CLASS_ROOT + "__track"} style={{ width: trackWidth, left: trackPosition }}>
           {children}
         </div>
         {this._renderPrevButton(children.length)}
@@ -128,7 +147,7 @@ var Carousel = React.createClass({
         <Box className={CLASS_ROOT + "__controls"} direction="row" justify="center">
           {controls}
         </Box>
-      </Box>
+      </div>
     );
   }
 

@@ -5,17 +5,7 @@
   100% { opacity: 1; }
 }
 
-@include keyframes(carousel-reveal-1) {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
 @include keyframes(carousel-hide) {
-  0% { opacity: 1; }
-  100% { opacity: 0; }
-}
-
-@include keyframes(carousel-hide-1) {
   0% { opacity: 1; }
   100% { opacity: 0; }
 }
@@ -25,28 +15,6 @@
   max-width: 100%;
   overflow: hidden;
   height: 280px;
-
-  @include media-query(lap-and-up) {
-    &--toggle-0 {
-      .carousel__active {
-        @include animation('carousel-reveal 1s');
-      }
-
-      .carousel__prior {
-        @include animation('carousel-hide 1s');
-      }
-    }
-
-    &--toggle-1 {
-      .carousel__active {
-        @include animation('carousel-reveal-1 1s');
-      }
-
-      .carousel__prior {
-        @include animation('carousel-hide-1 1s');
-      }
-    }
-  }
 
   &__track {
     display: flex;
@@ -62,6 +30,7 @@
   }
 
   &__arrow {
+    @include animation('carousel-reveal 1s');
     z-index: 1;
     width: 36px;
     height: 72px;
@@ -87,6 +56,7 @@
   }
 
   &__controls {
+    @include animation('carousel-reveal 1s');
     margin-left: 50%;
     transform: translateX(-50%);
     position: absolute;
@@ -108,6 +78,14 @@
     &--active {
       stroke: $brand-color;
       fill: $brand-color;
+    }
+  }
+
+  &--hide-controls {
+    .carousel__arrow,
+    .carousel__controls {
+      opacity: 0;
+      @include animation('carousel-hide 1s');
     }
   }
 }
