@@ -1,7 +1,6 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 var React = require('react');
-var ReactDOM = require('react-dom');
 var Box = require('./Box');
 
 var CLASS_ROOT = "carousel";
@@ -10,6 +9,7 @@ var Carousel = React.createClass({
 
   propTypes: {
     autoplay: React.PropTypes.bool,
+    autoplaySpeed: React.PropTypes.number,
     infinite: React.PropTypes.bool,
     persistentNav: React.PropTypes.bool
   },
@@ -17,6 +17,7 @@ var Carousel = React.createClass({
   getDefaultProps: function () {
     return {
       autoplay: true,
+      autoplaySpeed: 5000,
       infinite: true,
       persistentNav: true
     };
@@ -34,7 +35,7 @@ var Carousel = React.createClass({
 
   componentDidMount: function() {
     this.setState({
-      width: ReactDOM.findDOMNode(this.refs.carousel).offsetWidth
+      width: this.refs.carousel.offsetWidth
     });
 
     if (this.props.autoplay) {
@@ -45,15 +46,15 @@ var Carousel = React.createClass({
   },
 
   componentWillUnmount: function() {
-    clearInterval(this.slide);
+    clearInterval(this.slideAnimation);
 
     window.removeEventListener('resize', this._onWindowResize);
   },
 
-  slide: null,
+  slideAnimation: null,
 
   _setSlideInterval: function() {
-    this.slide = setInterval(function() {
+    this.slideAnimation = setInterval(function() {
       var activeIndex = this.state.activeIndex;
       var numSlides = this.props.children.length;
 
@@ -62,9 +63,9 @@ var Carousel = React.createClass({
       });
 
       if (!this.props.infinite && activeIndex === numSlides - 1) {
-        clearInterval(this.slide);
+        clearInterval(this.slideAnimation);
       }
-    }.bind(this), 5000);
+    }.bind(this), this.props.autoplaySpeed);
   },
 
   _onSelect: function (index) {
@@ -77,7 +78,7 @@ var Carousel = React.createClass({
 
   _onMouseOver: function() {
     if (this.props.autoplay) {
-      clearInterval(this.slide);
+      clearInterval(this.slideAnimation);
     }
 
     if (!this.props.persistentNav) {
@@ -101,7 +102,7 @@ var Carousel = React.createClass({
 
   _onWindowResize: function () {
     this.setState({
-      width: ReactDOM.findDOMNode(this.refs.carousel).offsetWidth
+      width: this.refs.carousel.offsetWidth
     });
   },
 
