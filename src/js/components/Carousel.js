@@ -8,6 +8,16 @@ var CLASS_ROOT = "carousel";
 
 var Carousel = React.createClass({
 
+  propTypes: {
+    autoplay: React.PropTypes.bool
+  },
+
+  getDefaultProps: function () {
+    return {
+      autoplay: true
+    };
+  },
+
   getInitialState: function () {
     return {
       activeIndex: 0,
@@ -17,14 +27,38 @@ var Carousel = React.createClass({
     };
   },
 
+  slide: null,
+
   componentDidMount: function() {
     this.setState({ width: ReactDOM.findDOMNode(this.refs.carousel).offsetWidth });
+
+    if (this.props.autoplay) {
+      this._setSlideInterval();
+    }
+  },
+
+  componentWillUnmount: function() {
+    clearInterval(this.slide);
+  },
+
+  _setSlideInterval: function() {
+    this.slide = setInterval(function() {
+      this.setState({ activeIndex: (this.state.activeIndex + 1) % this.props.children.slice().length })
+    }.bind(this), 5000);
   },
 
   _onSelect: function (index) {
     if (index !== this.state.activeIndex) {
       this.setState({ activeIndex: index });
     }
+  },
+
+  _onMouseOver: function() {
+    clearInterval(this.slide);
+  },
+
+  _onMouseOut: function() {
+    this._setSlideInterval();
   },
 
   _slidePrev: function(numSlides) {
@@ -55,7 +89,6 @@ var Carousel = React.createClass({
     );
   },
 
-  // children should be an array of Tile
   render: function () {
     var classes = [CLASS_ROOT];
     if (this.props.className) {
@@ -87,7 +120,7 @@ var Carousel = React.createClass({
 
     return (
       <Box ref="carousel" className={classes.join(' ')}>
-        <div className={CLASS_ROOT + "__track"} style={{ width: trackWidth, left: trackPosition }}>
+        <div className={CLASS_ROOT + "__track"} style={{ width: trackWidth, left: trackPosition }} onMouseEnter={this._onMouseOver} onMouseLeave={this._onMouseOut}>
           {children}
         </div>
         {this._renderPrevButton(children.length)}
