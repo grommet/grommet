@@ -28,8 +28,8 @@
   &__arrow {
     @include animation('carousel-reveal 1s');
     z-index: 1;
-    width: 36px;
-    height: 72px;
+    width: $inuit-base-spacing-unit * 1.5;
+    height: $inuit-base-spacing-unit * 3;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -38,11 +38,11 @@
     -webkit-filter: drop-shadow( 1px 1px 1px rgba(170, 170, 170, 0.5) );
 
     &--next {
-      right: 24px;
+      right: $inuit-base-spacing-unit;
     }
 
     &--prev {
-      left: 24px;
+      left: $inuit-base-spacing-unit;
     }
 
     line {
