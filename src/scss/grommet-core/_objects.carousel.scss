@@ -61,8 +61,34 @@
     }
   }
 
+  &__arrow {
+    z-index: 1;
+    width: 36px;
+    height: 72px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    filter: drop-shadow( 1px 1px 1px rgba(170, 170, 170, 0.5) );
+    -webkit-filter: drop-shadow( 1px 1px 1px rgba(170, 170, 170, 0.5) );
+
+    &--next {
+      right: 24px;
+    }
+
+    &--prev {
+      left: 24px;
+    }
+
+    line {
+      stroke: #fff;
+      stroke-width: 2px;
+    }
+  }
+
   &__controls {
-    width: 100%;
+    margin-left: 50%;
+    transform: translateX(-50%);
     position: absolute;
     bottom: halve($inuit-base-spacing-unit);
     text-align: center;

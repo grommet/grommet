@@ -23,9 +23,36 @@ var Carousel = React.createClass({
 
   _onSelect: function (index) {
     if (index !== this.state.activeIndex) {
-      console.log(index);
       this.setState({ activeIndex: index });
     }
+  },
+
+  _slidePrev: function(numSlides) {
+    this.setState({ activeIndex: (this.state.activeIndex + numSlides - 1) % numSlides });
+  },
+
+  _slideNext: function(numSlides) {
+    this.setState({ activeIndex: (this.state.activeIndex + 1) % numSlides });
+  },
+
+  _renderPrevButton: function(numSlides) {
+    return (
+      <svg className={CLASS_ROOT + '__arrow ' + CLASS_ROOT + '__arrow--prev'} viewBox="0 0 36 72" version="1.1"
+        onClick={this._slidePrev.bind(this, numSlides)}>
+        <line x1="36" y1="0" x2="0" y2="36" />
+        <line x1="0" y1="36" x2="36" y2="72" />
+      </svg>
+    );
+  },
+
+  _renderNextButton: function(numSlides) {
+    return (
+      <svg className={CLASS_ROOT + '__arrow ' + CLASS_ROOT + '__arrow--next'} viewBox="0 0 36 72" version="1.1"
+        onClick={this._slideNext.bind(this, numSlides)}>
+        <line x1="0" y1="0" x2="36" y2="36" />
+        <line x1="36" y1="36" x2="0" y2="72" />
+      </svg>
+    );
   },
 
   // children should be an array of Tile
@@ -37,13 +64,6 @@ var Carousel = React.createClass({
 
     var index = -1;
     const children = this.props.children.slice();
-    // var slides = this.props.children.slice();
-    // slides.unshift(React.cloneElement(children[children.length - 1], {
-    //   key: -1
-    // }));
-    // slides.push(React.cloneElement(children[1], {
-    //   key: children.length
-    // }));
 
     var width = this.state.width;
     var trackWidth = width * children.length;
@@ -70,6 +90,8 @@ var Carousel = React.createClass({
         <div className={CLASS_ROOT + "__track"} style={{ width: trackWidth, left: trackPosition }}>
           {children}
         </div>
+        {this._renderPrevButton(children.length)}
+        {this._renderNextButton(children.length)}
         <Box className={CLASS_ROOT + "__controls"} direction="row" justify="center">
           {controls}
         </Box>
