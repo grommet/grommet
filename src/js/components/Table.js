@@ -32,7 +32,10 @@ var Table = React.createClass({
   },
 
   getInitialState: function () {
-    return {selection: this._normalizeSelection(this.props.selection)};
+    return {
+      selection: this._normalizeSelection(this.props.selection),
+      rebuildMirror: true
+    };
   },
 
   componentDidMount: function () {
@@ -55,11 +58,16 @@ var Table = React.createClass({
     if (newProps.hasOwnProperty('selection')) {
       this.setState({selection: this._normalizeSelection(newProps.selection)});
     }
+    this.setState({rebuildMirror: true});
   },
 
   componentDidUpdate: function (prevProps, prevState) {
     if (! isEqual(this.state.selection, prevState.selection)) {
       this._alignSelection();
+    }
+    if (this.state.rebuildMirror) {
+      this._buildMirror();
+      this.setState({rebuildMirror: false});
     }
     if (this.props.scrollable) {
       this._alignMirror();
@@ -192,6 +200,9 @@ var Table = React.createClass({
     var cells = tableElement.querySelectorAll('thead tr th');
     var mirrorElement = this.refs.mirror;
     var mirrorRow = mirrorElement.querySelectorAll('thead tr')[0];
+    while (mirrorRow.hasChildNodes()) {
+      mirrorRow.removeChild(mirrorRow.lastChild);
+    }
     for (var i = 0; i < cells.length; i++) {
       mirrorRow.appendChild(cells[i].cloneNode(true));
     }

@@ -5,18 +5,34 @@ var DOM = require('../utils/DOM');
 var SCROLL_MORE_DELAY = 500; // when the user scrolls
 var SCROLL_MORE_INITIAL_DELAY = 50; // when we start out at the bottom already
 
+function _evaluate(scrollState) {
+  if (scrollState.scrollParent) {
+    // are we at the bottom?
+    var bottom;
+    if (scrollState.scrollParent === document) {
+      bottom = window.innerHeight;
+    } else {
+      bottom = scrollState.scrollParent.getBoundingClientRect().bottom;
+    }
+    var indicatorRect = scrollState.indicatorElement.getBoundingClientRect();
+    if (indicatorRect.bottom <= bottom) {
+      scrollState.onEnd();
+    }
+  }
+}
+
 function _onScroll(scrollState) {
   // delay a bit to ride out quick users
   clearTimeout(scrollState.scrollTimer);
   scrollState.scrollTimer = setTimeout(function () {
-    if (scrollState.scrollParent) {
-      // are we at the bottom?
-      var parentRect = scrollState.scrollParent.getBoundingClientRect();
-      var indicatorRect = scrollState.indicatorElement.getBoundingClientRect();
-      if (indicatorRect.bottom <= parentRect.bottom) {
-        scrollState.onEnd();
-      }
-    }
+    _evaluate(scrollState);
+  }, SCROLL_MORE_DELAY);
+}
+
+function _onResize(scrollState) {
+  clearTimeout(scrollState.scrollTimer);
+  scrollState.scrollTimer = setTimeout(function () {
+    _evaluate(scrollState);
   }, SCROLL_MORE_DELAY);
 }
 
@@ -29,9 +45,13 @@ var InfiniteScroll = {
       scrollParent: DOM.findScrollParents(indicatorElement)[0]
     };
     scrollState.scrollParent.addEventListener("scroll", _onScroll.bind(null, scrollState));
-    // check in case we're already at the bottom
+    window.addEventListener("resize", _onResize.bind(null, scrollState));
+    // check in case we're already at the bottom and the indicator is visible
     if (scrollState.scrollParent === document) {
-      scrollState.scrollTimer = setTimeout(onEnd, SCROLL_MORE_INITIAL_DELAY);
+      var rect = indicatorElement.getBoundingClientRect();
+      if (rect.top < window.innerHeight) {
+        scrollState.scrollTimer = setTimeout(onEnd, SCROLL_MORE_INITIAL_DELAY);
+      }
     }
     return scrollState;
   },
@@ -40,6 +60,7 @@ var InfiniteScroll = {
     if (scrollState.scrollParent) {
       clearTimeout(scrollState.scrollTimer);
       scrollState.scrollParent.removeEventListener("scroll", _onScroll);
+      window.removeEventListener("resize", _onResize);
       scrollState.scrollParent = null;
     }
   }

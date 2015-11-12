@@ -56,7 +56,6 @@ var Tabs = React.createClass({
 
     // TODO: Since there could be multiple Tabs on the page, we need a more
     // robust means of identifying the association between title and aria label.
-
     return (
       <div role="tablist">
         <ul className={classes.join(' ')}>
@@ -66,7 +65,7 @@ var Tabs = React.createClass({
           role="tabpanel">
           <title id="content_description">
             <FormattedMessage id="Tab Contents" activeTitle={activeTitle}
-              defaultMessage={activeTitle + ' Tab Contents'} />
+              defaultMessage={"Tab Contents"} />
           </title>
           <Box className={CLASS_ROOT + '__content'} aria-labelledby="content_description">
             {activeContainer}

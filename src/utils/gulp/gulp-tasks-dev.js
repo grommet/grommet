@@ -1,7 +1,7 @@
 var merge = require('lodash/object/merge');
 var webpack = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
-var open = require('gulp-open');
+var gulpOpen = require('gulp-open');
 var path = require('path');
 var runSequence = require('run-sequence');
 
@@ -133,7 +133,7 @@ module.exports = function(gulp, options, webpackConfig, dist) {
         var suffix = options.publicPath ? options.publicPath + '/' : '';
         var openURL = 'http://' + openHost + ':' + options.devServerPort + '/webpack-dev-server/' + suffix;
         gulp.src(path.join(dist, 'index.html'))
-        .pipe(open({
+        .pipe(gulpOpen({
           uri: openURL
         }));
       }
