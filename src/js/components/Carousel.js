@@ -32,10 +32,10 @@ var Carousel = React.createClass({
     };
   },
 
-  slide: null,
-
   componentDidMount: function() {
-    this.setState({ width: ReactDOM.findDOMNode(this.refs.carousel).offsetWidth });
+    this.setState({
+      width: ReactDOM.findDOMNode(this.refs.carousel).offsetWidth
+    });
 
     if (this.props.autoplay) {
       this._setSlideInterval();
@@ -50,11 +50,18 @@ var Carousel = React.createClass({
     window.removeEventListener('resize', this._onWindowResize);
   },
 
+  slide: null,
+
   _setSlideInterval: function() {
     this.slide = setInterval(function() {
-      this.setState({ activeIndex: (this.state.activeIndex + 1) % this.props.children.slice().length })
+      var activeIndex = this.state.activeIndex;
+      var numSlides = this.props.children.length;
 
-      if (!this.props.infinite && this.state.activeIndex === this.props.children.slice().length - 1) {
+      this.setState({
+        activeIndex: (activeIndex + 1) % numSlides
+      });
+
+      if (!this.props.infinite && activeIndex === numSlides - 1) {
         clearInterval(this.slide);
       }
     }.bind(this), 5000);
@@ -62,7 +69,9 @@ var Carousel = React.createClass({
 
   _onSelect: function (index) {
     if (index !== this.state.activeIndex) {
-      this.setState({ activeIndex: index });
+      this.setState({
+        activeIndex: index
+      });
     }
   },
 
@@ -72,37 +81,44 @@ var Carousel = React.createClass({
     }
 
     if (!this.props.persistentNav) {
-      this.setState({ hideControls: false });
+      this.setState({
+        hideControls: false
+      });
     }
   },
 
   _onMouseOut: function() {
-    if (this.props.autoplay && !(!this.props.infinite && this.state.activeIndex === this.props.children.slice().length - 1)) {
+    if (this.props.autoplay && (this.props.infinite || this.state.activeIndex !== this.props.children.length - 1)) {
       this._setSlideInterval();
     }
 
     if (!this.props.persistentNav) {
-      this.setState({ hideControls: true });
+      this.setState({
+        hideControls: true
+      });
     }
   },
 
   _onWindowResize: function () {
-    this.setState({ width: ReactDOM.findDOMNode(this.refs.carousel).offsetWidth });
+    this.setState({
+      width: ReactDOM.findDOMNode(this.refs.carousel).offsetWidth
+    });
   },
 
   _slidePrev: function(numSlides) {
-    this.setState({ activeIndex: (this.state.activeIndex + numSlides - 1) % numSlides });
+    this.setState({
+      activeIndex: (this.state.activeIndex + numSlides - 1) % numSlides
+    });
   },
 
   _slideNext: function(numSlides) {
-    this.setState({ activeIndex: (this.state.activeIndex + 1) % numSlides });
+    this.setState({
+      activeIndex: (this.state.activeIndex + 1) % numSlides
+    });
   },
 
   _renderPrevButton: function(numSlides) {
-    if (!this.props.infinite && this.state.activeIndex === 0) {
-
-      return;
-    } else {
+    if (this.props.infinite || this.state.activeIndex !== 0) {
 
       return (
         <svg className={CLASS_ROOT + '__arrow ' + CLASS_ROOT + '__arrow--prev'} viewBox="0 0 36 72" version="1.1"
@@ -115,9 +131,8 @@ var Carousel = React.createClass({
   },
 
   _renderNextButton: function(numSlides) {
-    if (!this.props.infinite && this.state.activeIndex === this.props.children.slice().length - 1) {
-      return;
-    } else {
+    if (this.props.infinite || this.state.activeIndex !== this.props.children.length - 1) {
+
       return (
         <svg className={CLASS_ROOT + '__arrow ' + CLASS_ROOT + '__arrow--next'} viewBox="0 0 36 72" version="1.1"
           onClick={this._slideNext.bind(this, numSlides)}>
@@ -139,14 +154,14 @@ var Carousel = React.createClass({
     }
 
     var index = -1;
-    const children = this.props.children.slice();
+    const children = this.props.children;
 
     var width = this.state.width;
     var trackWidth = width * children.length;
 
     var trackPosition = -(width * this.state.activeIndex);
 
-    var controls = React.Children.map(this.props.children, function (child) {
+    var controls = React.Children.map(children, function (child) {
       index += 1;
       var controlClasses = [CLASS_ROOT + "__control"];
       if (index === this.state.activeIndex) {
