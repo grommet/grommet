@@ -53,6 +53,10 @@ var Carousel = React.createClass({
   _setSlideInterval: function() {
     this.slide = setInterval(function() {
       this.setState({ activeIndex: (this.state.activeIndex + 1) % this.props.children.slice().length })
+
+      if (!this.props.infinite && this.state.activeIndex === this.props.children.slice().length - 1) {
+        clearInterval(this.slide);
+      }
     }.bind(this), 5000);
   },
 
@@ -73,7 +77,7 @@ var Carousel = React.createClass({
   },
 
   _onMouseOut: function() {
-    if (this.props.autoplay) {
+    if (this.props.autoplay && !(!this.props.infinite && this.state.activeIndex === this.props.children.slice().length - 1)) {
       this._setSlideInterval();
     }
 
@@ -95,23 +99,33 @@ var Carousel = React.createClass({
   },
 
   _renderPrevButton: function(numSlides) {
-    return (
-      <svg className={CLASS_ROOT + '__arrow ' + CLASS_ROOT + '__arrow--prev'} viewBox="0 0 36 72" version="1.1"
-        onClick={this._slidePrev.bind(this, numSlides)}>
-        <line x1="36" y1="0" x2="0" y2="36" />
-        <line x1="0" y1="36" x2="36" y2="72" />
-      </svg>
-    );
+    if (!this.props.infinite && this.state.activeIndex === 0) {
+
+      return;
+    } else {
+
+      return (
+        <svg className={CLASS_ROOT + '__arrow ' + CLASS_ROOT + '__arrow--prev'} viewBox="0 0 36 72" version="1.1"
+          onClick={this._slidePrev.bind(this, numSlides)}>
+          <line x1="36" y1="0" x2="0" y2="36" />
+          <line x1="0" y1="36" x2="36" y2="72" />
+        </svg>
+      );
+    }
   },
 
   _renderNextButton: function(numSlides) {
-    return (
-      <svg className={CLASS_ROOT + '__arrow ' + CLASS_ROOT + '__arrow--next'} viewBox="0 0 36 72" version="1.1"
-        onClick={this._slideNext.bind(this, numSlides)}>
-        <line x1="0" y1="0" x2="36" y2="36" />
-        <line x1="36" y1="36" x2="0" y2="72" />
-      </svg>
-    );
+    if (!this.props.infinite && this.state.activeIndex === this.props.children.slice().length - 1) {
+      return;
+    } else {
+      return (
+        <svg className={CLASS_ROOT + '__arrow ' + CLASS_ROOT + '__arrow--next'} viewBox="0 0 36 72" version="1.1"
+          onClick={this._slideNext.bind(this, numSlides)}>
+          <line x1="0" y1="0" x2="36" y2="36" />
+          <line x1="36" y1="36" x2="0" y2="72" />
+        </svg>
+      );
+    }
   },
 
   render: function () {
