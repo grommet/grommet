@@ -3,6 +3,8 @@
 $gravatar-border-width: 2px;
 
 .react-gravatar {
+  width: double($inuit-base-spacing-unit);
+  height: double($inuit-base-spacing-unit);
   border-radius: $inuit-base-spacing-unit;
   border: $gravatar-border-width solid transparent;
   overflow: hidden;
@@ -11,16 +13,6 @@ $gravatar-border-width: 2px;
 
   &:hover {
     border-color: $brand-color;
-  }
-
-  @include media-query(palm) {
-    width: $small-header-height - $inuit-base-spacing-unit + ($gravatar-border-width * 2);
-    height: $small-header-height - $inuit-base-spacing-unit + ($gravatar-border-width * 2);
-  }
-
-  @include media-query(lap-and-up) {
-    width: $header-height - $inuit-base-spacing-unit + ($gravatar-border-width * 2);
-    height: $header-height - $inuit-base-spacing-unit + ($gravatar-border-width * 2);
   }
 }
 

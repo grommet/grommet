@@ -39,3 +39,10 @@ Before opening an issue or pull request, please read the [Contributing](https://
 ### Release History
 
   See the [Change Log](https://github.com/grommet/grommet/wiki/Change-Log).
+
+### Tools Behind Grommet
+
+ Grommet is produced using these great tools
+ * [Travis CI](https://travis-ci.org/) for continuous integration
+ * [Sauce Labs](https://saucelabs.com/) for automated browser testing
+ * [BrowserStack](https://www.browserstack.com) for manual browser testing
