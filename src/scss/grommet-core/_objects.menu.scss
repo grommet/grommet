@@ -5,16 +5,13 @@
   @include inuit-font-size($menu-font-size, inherit);
   
   .header & {
-    
-    &--controlled,
-    &__control {
+    &--controlled {
       height: 100%;
     }
     
-    &__control {
-      line-height: double($inuit-base-spacing-unit);
+    &__control--fixed-label {
+      font-size: $menu-font-size;
     }
-    
   }
 
   &:focus {
@@ -278,6 +275,14 @@
     > a {
       padding: quarter($inuit-base-spacing-unit) halve($inuit-base-spacing-unit);
     }
+  }
+  
+  .menu__control-label {
+    font-size: $control-font-size;
+  }
+  
+  a {
+    text-decoration: none;
   }
 
   &--large {
