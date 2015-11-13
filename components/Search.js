@@ -183,20 +183,20 @@ var Search = React.createClass({
   },
 
   _onEnter: function _onEnter() {
+    this._onRemoveDrop();
     if (this.state.activeSuggestionIndex >= 0) {
       var suggestion = this.props.suggestions[this.state.activeSuggestionIndex];
       if (this.props.onChange) {
         this.props.onChange(suggestion);
       }
     }
-    this._onRemoveDrop();
   },
 
   _onClickSuggestion: function _onClickSuggestion(item) {
+    this._onRemoveDrop();
     if (this.props.onChange) {
       this.props.onChange(item);
     }
-    this._onRemoveDrop();
   },
 
   _onSink: function _onSink(event) {
