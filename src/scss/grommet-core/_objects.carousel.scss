@@ -28,27 +28,38 @@
   &__arrow {
     @include animation('carousel-reveal 1s');
     z-index: 1;
-    width: $inuit-base-spacing-unit * 1.5;
-    height: $inuit-base-spacing-unit * 3;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
-    filter: drop-shadow(1px 1px 1px rgba(170, 170, 170, 0.5));
-    -webkit-filter: drop-shadow(1px 1px 1px rgba(170, 170, 170, 0.5));
+
+    .control-icon {
+      width: quadruple($inuit-base-spacing-unit);
+      height: quadruple($inuit-base-spacing-unit);
+      filter: drop-shadow(1px 1px 1px $button-drop-shadow-color);
+      -webkit-filter: drop-shadow(1px 1px 1px $button-drop-shadow-color);
+
+      polyline {
+        stroke: #fff;
+        stroke-width: 1px;
+      }
+    }
 
     &--next {
-      right: $inuit-base-spacing-unit;
+      right: 0;
     }
 
     &--prev {
-      left: $inuit-base-spacing-unit;
+      left: 0;
     }
+  }
 
-    line {
-      stroke: #fff;
-      stroke-width: 2px;
-    }
+  .control-icon-next {
+    right: 0;
+  }
+
+  .control-icon-previous {
+    left: 0;
   }
 
   &__controls {
@@ -68,8 +79,8 @@
     stroke: #fff;
     fill: transparent;
     cursor: pointer;
-    filter: drop-shadow(1px 1px 1px rgba(170, 170, 170, 0.5));
-    -webkit-filter: drop-shadow(1px 1px 1px rgba(170, 170, 170, 0.5));
+    filter: drop-shadow(1px 1px 1px $button-drop-shadow-color);
+    -webkit-filter: drop-shadow(1px 1px 1px $button-drop-shadow-color);
 
     &--active {
       stroke: $brand-color;
@@ -78,7 +89,8 @@
   }
 
   &--hide-controls {
-    .carousel__arrow,
+    .control-icon-previous,
+    .control-icon-next,
     .carousel__controls {
       opacity: 0;
       @include animation('carousel-hide 1s');

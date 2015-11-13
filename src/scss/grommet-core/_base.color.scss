@@ -53,6 +53,7 @@ $button-border-color: $brand-color !default;
 $button-text-color: $text-color !default;
 $button-secondary-color: rgba(#333, 0.6) !default;
 $button-accent-color: nth($brand-accent-colors, 1) !default;
+$button-drop-shadow-color: rgba(170, 170, 170, 0.5) !default;
 
 $hover-background-color: rgba(0, 0, 0, 0.1);
 $layer-overlay-background-color: rgba(128, 128, 128, 0.6); ///rgba(255, 255, 255, 0.95); //rgba(0, 0, 0, 0.6);

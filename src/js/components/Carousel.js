@@ -2,6 +2,8 @@
 
 var React = require('react');
 var Box = require('./Box');
+var Previous = require('./icons/base/Previous');
+var Next = require('./icons/base/Next');
 
 var CLASS_ROOT = "carousel";
 
@@ -46,15 +48,15 @@ var Carousel = React.createClass({
   },
 
   componentWillUnmount: function() {
-    clearInterval(this.slideAnimation);
+    clearInterval(this._slideAnimation);
 
     window.removeEventListener('resize', this._onWindowResize);
   },
 
-  slideAnimation: null,
+  _slideAnimation: null,
 
   _setSlideInterval: function() {
-    this.slideAnimation = setInterval(function() {
+    this._slideAnimation = setInterval(function() {
       var activeIndex = this.state.activeIndex;
       var numSlides = this.props.children.length;
 
@@ -63,7 +65,7 @@ var Carousel = React.createClass({
       });
 
       if (!this.props.infinite && activeIndex === numSlides - 1) {
-        clearInterval(this.slideAnimation);
+        clearInterval(this._slideAnimation);
       }
     }.bind(this), this.props.autoplaySpeed);
   },
@@ -78,7 +80,7 @@ var Carousel = React.createClass({
 
   _onMouseOver: function() {
     if (this.props.autoplay) {
-      clearInterval(this.slideAnimation);
+      clearInterval(this._slideAnimation);
     }
 
     if (!this.props.persistentNav) {
@@ -123,11 +125,9 @@ var Carousel = React.createClass({
   _renderPrevButton: function() {
     if (this.props.infinite || this.state.activeIndex !== 0) {
       return (
-        <svg className={CLASS_ROOT + '__arrow ' + CLASS_ROOT + '__arrow--prev'} viewBox="0 0 36 72" version="1.1"
-          onClick={this._slidePrev}>
-          <line x1="36" y1="0" x2="0" y2="36" />
-          <line x1="0" y1="36" x2="36" y2="72" />
-        </svg>
+        <div className={CLASS_ROOT + '__arrow ' + CLASS_ROOT + '__arrow--prev'} onClick={this._slidePrev}>
+          <Previous />
+        </div>
       );
     }
   },
@@ -135,23 +135,21 @@ var Carousel = React.createClass({
   _renderNextButton: function() {
     if (this.props.infinite || this.state.activeIndex !== this.props.children.length - 1) {
       return (
-        <svg className={CLASS_ROOT + '__arrow ' + CLASS_ROOT + '__arrow--next'} viewBox="0 0 36 72" version="1.1"
-          onClick={this._slideNext}>
-          <line x1="0" y1="0" x2="36" y2="36" />
-          <line x1="36" y1="36" x2="0" y2="72" />
-        </svg>
+        <div className={CLASS_ROOT + '__arrow ' + CLASS_ROOT + '__arrow--next'} onClick={this._slideNext}>
+          <Next />
+        </div>
       );
     }
   },
 
   render: function () {
     var classes = [CLASS_ROOT];
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
-
     if (this.state.hideControls) {
       classes.push(CLASS_ROOT + '--hide-controls');
+    }
+
+    if (this.props.className) {
+      classes.push(this.props.className);
     }
 
     var index = -1;
