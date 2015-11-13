@@ -5,17 +5,7 @@
   100% { opacity: 1; }
 }
 
-@include keyframes(carousel-reveal-1) {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
 @include keyframes(carousel-hide) {
-  0% { opacity: 1; }
-  100% { opacity: 0; }
-}
-
-@include keyframes(carousel-hide-1) {
   0% { opacity: 1; }
   100% { opacity: 0; }
 }
@@ -23,61 +13,87 @@
 .carousel {
   position: relative;
   max-width: 100%;
+  overflow: hidden;
 
-  @include media-query(lap-and-up) {
-    &--toggle-0 {
-      .carousel__active {
-        @include animation('carousel-reveal 1s');
-      }
+  &__track {
+    display: flex;
+    max-width: none;
+    transition: all 0.8s;
 
-      .carousel__prior {
-        @include animation('carousel-hide 1s');
-      }
-    }
-
-    &--toggle-1 {
-      .carousel__active {
-        @include animation('carousel-reveal-1 1s');
-      }
-
-      .carousel__prior {
-        @include animation('carousel-hide-1 1s');
-      }
+    > * {
+      flex: 1;
     }
   }
 
-  &__active {
-    position: relative;
+  &__arrow {
+    @include animation('carousel-reveal 1s');
     z-index: 1;
-    opacity: 1;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+
+    .control-icon {
+      width: quadruple($inuit-base-spacing-unit);
+      height: quadruple($inuit-base-spacing-unit);
+      filter: drop-shadow(1px 1px 1px $button-drop-shadow-color);
+      -webkit-filter: drop-shadow(1px 1px 1px $button-drop-shadow-color);
+
+      polyline {
+        stroke: #fff;
+        stroke-width: 1px;
+      }
+    }
+
+    &--next {
+      right: 0;
+    }
+
+    &--prev {
+      left: 0;
+    }
   }
 
-  &__prior {
-    position: absolute;
-    opacity: 0;
+  .control-icon-next {
+    right: 0;
+  }
+
+  .control-icon-previous {
+    left: 0;
   }
 
   &__controls {
-    width: 100%;
-    margin-top: halve($inuit-base-spacing-unit);
+    @include animation('carousel-reveal 1s');
+    margin-left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    bottom: halve($inuit-base-spacing-unit);
     text-align: center;
+    z-index: 1;
   }
 
   &__control {
     display: inline-block;
     width: round($inuit-base-spacing-unit * 1.5);
     height: round($inuit-base-spacing-unit * 1.5);
-    stroke: $icon-color;
+    stroke: #fff;
     fill: transparent;
     cursor: pointer;
-
-    &:hover {
-      stroke: $active-icon-color;
-    }
+    filter: drop-shadow(1px 1px 1px $button-drop-shadow-color);
+    -webkit-filter: drop-shadow(1px 1px 1px $button-drop-shadow-color);
 
     &--active {
       stroke: $brand-color;
       fill: $brand-color;
+    }
+  }
+
+  &--hide-controls {
+    .control-icon-previous,
+    .control-icon-next,
+    .carousel__controls {
+      opacity: 0;
+      @include animation('carousel-hide 1s');
     }
   }
 }
