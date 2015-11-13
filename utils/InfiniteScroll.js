@@ -17,7 +17,8 @@ function _evaluate(scrollState) {
       bottom = scrollState.scrollParent.getBoundingClientRect().bottom;
     }
     var indicatorRect = scrollState.indicatorElement.getBoundingClientRect();
-    if (indicatorRect.bottom <= bottom) {
+    // Only if bottom isn't zero. This can happen when content hasn't arrived yet.
+    if (bottom && indicatorRect.bottom <= bottom) {
       scrollState.onEnd();
     }
   }
