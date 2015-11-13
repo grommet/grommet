@@ -124,10 +124,10 @@ var MenuDrop = React.createClass({
     return true;
   },
 
-  _renderSubMenuLinks: function (menuItems) {
+  _renderNestedMenuLinks: function (menuItems) {
     if (isArray(menuItems.props.children)) {
       return menuItems.props.children.map(function(menuItem) {
-        return this._renderSubMenuLinks(menuItem);
+        return this._renderNestedMenuLinks(menuItem);
       }, this);
     } else {
       return menuItems;
@@ -141,7 +141,7 @@ var MenuDrop = React.createClass({
     var first = this.props.control;
     var second = (
       <Box ref="navContainer" tag="nav" className={CLASS_ROOT + '__contents'} {...other} >
-        {(this.props.direction !== 'row') ? this.props.children : this._renderSubMenuLinks(this)}
+        {(this.props.direction !== 'row') ? this.props.children : this._renderNestedMenuLinks(this)}
       </Box>
     );
     if (this.props.dropAlign.bottom) {
