@@ -12,10 +12,11 @@ var Anchor = React.createClass({
 
   propTypes: {
     href: React.PropTypes.string,
-    tag: React.PropTypes.string,
-    target: React.PropTypes.string,
+    id: React.PropTypes.string,
     onClick: React.PropTypes.func,
-    primary: React.PropTypes.bool
+    primary: React.PropTypes.bool,
+    tag: React.PropTypes.string,
+    target: React.PropTypes.string
   },
 
   getDefaultProps: function getDefaultProps() {

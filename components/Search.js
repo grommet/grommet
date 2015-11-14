@@ -18,6 +18,7 @@ var Search = React.createClass({
     defaultValue: PropTypes.string,
     dropAlign: Drop.alignPropType,
     dropColorIndex: PropTypes.string,
+    id: React.PropTypes.string,
     inline: PropTypes.bool,
     large: PropTypes.bool,
     onChange: PropTypes.func,
@@ -333,6 +334,7 @@ var Search = React.createClass({
         'div',
         { className: classes.join(' ') },
         React.createElement('input', { ref: 'input', type: 'search',
+          id: this.props.id,
           placeholder: this.props.placeHolder,
           defaultValue: this.props.defaultValue,
           value: this.props.value,
@@ -347,7 +349,8 @@ var Search = React.createClass({
 
       return React.createElement(
         'div',
-        { ref: 'control', className: classes.join(' '),
+        { ref: 'control', id: this.props.id,
+          className: classes.join(' '),
           tabIndex: '0',
           onClick: this._onAddDrop,
           onFocus: this._onFocusControl,
