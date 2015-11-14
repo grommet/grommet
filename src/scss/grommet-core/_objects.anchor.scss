@@ -24,16 +24,16 @@ a,
     color: $colored-text-color;
 
     .control-icon {
-      fill: $colored-text-color;
-      stroke: $colored-text-color;
+      fill: $colored-icon-color;
+      stroke: $colored-icon-color;
     }
 
     &:hover {
       color: $active-colored-text-color;
 
       .control-icon {
-        fill: $active-colored-text-color;
-        stroke: $active-colored-text-color;
+        fill: $active-colored-icon-color;
+        stroke: $active-colored-icon-color;
       }
     }
   }
