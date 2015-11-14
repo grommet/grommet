@@ -125,9 +125,9 @@ var MenuDrop = React.createClass({
 
   _renderNestedMenuLinks: function (menuItems) {
     if (Array.isArray(menuItems.props.children)) {
-      return menuItems.props.children.map(function(menuItem) {
+      return React.Children.map(menuItems.props.children, function (menuItem) {
         return this._renderNestedMenuLinks(menuItem);
-      }, this);
+      }.bind(this));
     } else {
       return menuItems;
     }
