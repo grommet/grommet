@@ -3,7 +3,7 @@
 .drop {
   position: fixed;
   z-index: 20;
-  background-color: $background-color;
+  background-color: rgba($background-color, 0.9);
   border: $drop-border;
   border-radius: $border-radius;
   box-shadow: $drop-box-shadow;

@@ -220,7 +220,8 @@ var Menu = React.createClass({
     if (this.refs.control) {
       var controlElement = this.refs.control;
       this.setState({
-        dropId: 'menu-drop-' + controlElement.getAttribute('data-reactid')
+        dropId: 'menu-drop-' + controlElement.getAttribute('data-reactid'),
+        controlHeight: this.refs.control.clientHeight + 'px'
       });
 
       controlElement.setAttribute('role', 'menu');
@@ -353,6 +354,7 @@ var Menu = React.createClass({
   _renderControl: function _renderControl() {
     var result = null;
     var icon = null;
+
     var controlClassName = CLASS_ROOT + "__control";
 
     var classes = [controlClassName];
@@ -376,7 +378,7 @@ var Menu = React.createClass({
         ),
         React.createElement(
           'span',
-          { tabIndex: '-1', className: controlClassName + "-label" },
+          { tabIndex: '-1', style: { lineHeight: this.state.controlHeight }, className: controlClassName + "-label" },
           this.props.label
         ),
         React.createElement(DropCaretIcon, { className: controlClassName + "-drop-icon" })
