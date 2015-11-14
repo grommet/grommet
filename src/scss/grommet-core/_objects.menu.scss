@@ -3,6 +3,16 @@
 .menu {
   position: relative;
   @include inuit-font-size($menu-font-size, inherit);
+  
+  .header & {
+    &--controlled {
+      height: 100%;
+    }
+    
+    &__control--fixed-label {
+      font-size: $menu-font-size;
+    }
+  }
 
   &:focus {
     outline: none;
@@ -295,6 +305,14 @@
     > a {
       padding: quarter($inuit-base-spacing-unit) halve($inuit-base-spacing-unit);
     }
+  }
+  
+  .menu__control-label {
+    font-size: $control-font-size;
+  }
+  
+  a {
+    text-decoration: none;
   }
 
   &--large {

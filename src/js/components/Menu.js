@@ -214,7 +214,8 @@ var Menu = React.createClass({
     if (this.refs.control) {
       var controlElement = this.refs.control;
       this.setState({
-        dropId: 'menu-drop-' + controlElement.getAttribute('data-reactid')
+        dropId: 'menu-drop-' + controlElement.getAttribute('data-reactid'),
+        controlHeight: this.refs.control.clientHeight + 'px'
       });
 
       controlElement.setAttribute('role', 'menu');
@@ -348,6 +349,7 @@ var Menu = React.createClass({
   _renderControl: function () {
     var result = null;
     var icon = null;
+
     var controlClassName = CLASS_ROOT + "__control";
 
     var classes = [controlClassName];
@@ -366,7 +368,7 @@ var Menu = React.createClass({
           <div className={controlClassName + "-icon"}>
             {icon}
           </div>
-          <span tabIndex="-1" className={controlClassName + "-label"}>{this.props.label}</span>
+          <span tabIndex="-1" style={{lineHeight: this.state.controlHeight}} className={controlClassName + "-label"}>{this.props.label}</span>
           <DropCaretIcon className={controlClassName + "-drop-icon"} />
         </div>
       );
