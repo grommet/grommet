@@ -8,12 +8,13 @@ var Button = React.createClass({
 
   propTypes: {
     accent: React.PropTypes.bool,
-    label: React.PropTypes.node,
+    fill: React.PropTypes.bool,
+    icon: React.PropTypes.bool,
     id: React.PropTypes.string,
+    label: React.PropTypes.node,
     onClick: React.PropTypes.func,
     primary: React.PropTypes.bool,
     secondary: React.PropTypes.bool,
-    icon: React.PropTypes.bool,
     type: React.PropTypes.oneOf(['button', 'reset', 'submit', 'icon'])
   },
 
@@ -36,6 +37,9 @@ var Button = React.createClass({
     }
     if (! this.props.onClick) {
       classes.push(CLASS_ROOT + "--disabled");
+    }
+    if (this.props.fill) {
+      classes.push(CLASS_ROOT + "--fill");
     }
     if (this.props.className) {
       classes.push(this.props.className);

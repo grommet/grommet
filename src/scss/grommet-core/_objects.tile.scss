@@ -6,9 +6,10 @@
 
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
 
   > .tile {
-    flex: 1 0 $tile-size;
+    flex: 0 0 $tile-size;
     // don't count padding for flex basis
     // this makes it easier to align tiles with graphic components
     ////box-sizing: content-box;
@@ -51,6 +52,10 @@
 
   &--fill {
     justify-content: space-around;
+
+    > .tile {
+      flex-grow: 1;
+    }
   }
 
   &--flush {
