@@ -168,6 +168,7 @@ var Menu = React.createClass({
     dropAlign: Drop.alignPropType,
     dropColorIndex: React.PropTypes.string,
     icon: React.PropTypes.node,
+    id: React.PropTypes.string,
     inline: React.PropTypes.bool,
     label: React.PropTypes.string,
     large: React.PropTypes.bool,
@@ -444,7 +445,8 @@ var Menu = React.createClass({
       var other = pick(this.props, keys(Box.propTypes));
 
       return (
-        <Box tag="nav" {...other} className={classes.join(' ')} onClick={this._onClose}>
+        <Box tag="nav" id={this.props.id} {...other} className={classes.join(' ')}
+          onClick={this._onClose}>
           {this.props.children}
         </Box>
       );
@@ -454,7 +456,8 @@ var Menu = React.createClass({
       var controlContents = this._renderControl();
 
       return (
-        <div ref="control" className={classes.join(' ')}
+        <div ref="control" id={this.props.id}
+          className={classes.join(' ')}
           tabIndex="0"
           onClick={this._onOpen}
           onFocus={this._onFocusControl}
