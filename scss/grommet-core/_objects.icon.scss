@@ -49,7 +49,7 @@
     }
   }
 
-  [class*="background-color-index-"]:not[class*="background-color-index-light"] & {
+  [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
     fill: $colored-icon-color;
     stroke: $colored-icon-color;
 
