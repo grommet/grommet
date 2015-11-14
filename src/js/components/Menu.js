@@ -5,7 +5,6 @@ var ReactDOM = require('react-dom');
 var merge = require('lodash/object/merge');
 var pick = require('lodash/object/pick');
 var keys = require('lodash/object/keys');
-var isArray = require('lodash/lang/isArray');
 var KeyboardAccelerators = require('../utils/KeyboardAccelerators');
 var Drop = require('../utils/Drop');
 var Responsive = require('../utils/Responsive');
@@ -125,7 +124,7 @@ var MenuDrop = React.createClass({
   },
 
   _renderNestedMenuLinks: function (menuItems) {
-    if (isArray(menuItems.props.children)) {
+    if (Array.isArray(menuItems.props.children)) {
       return menuItems.props.children.map(function(menuItem) {
         return this._renderNestedMenuLinks(menuItem);
       }, this);
