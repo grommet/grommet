@@ -5,66 +5,54 @@ $hover-darken: 15%;
 $active-darken: 20%;
 
 .button {
+  border-radius: 5px;
 
-  &:hover:not(.button--disabled) {
-    border-color: darken($brand-color, $hover-darken);
-  }
-
-  &:active:not(.button--disabled) {
-    border-color: darken($brand-color, $active-darken);
-  }
-
-  &--primary {
-
-    &:hover:not(.button--disabled) {
-      border-color: darken($brand-color, $hover-darken);
-      background-color: darken($brand-color, $hover-darken);
-    }
-
-    &:active:not(.button--disabled) {
-      border-color: darken($brand-color, $active-darken);
-      background-color: darken($brand-color, $active-darken);
-    }
-  }
-
-  &--secondary {
-
-    &:hover:not(.button--disabled) {
-      border-color: darken($button-secondary-color, $hover-darken);
-    }
-
-    &:active:not(.button--disabled) {
-      border-color: darken($button-secondary-color, $active-darken);
-    }
-  }
-
-  &--accent {
-
-    &:hover:not(.button--disabled) {
-      border-color: darken($button-accent-color, $hover-darken);
-    }
-
-    &:active:not(.button--disabled) {
-      border-color: darken($button-accent-color, $active-darken);
-    }
-  }
-
-  [class*="background-color-index-"] & {
+  &:not(.button--disabled) {
 
     &:hover {
-      border-color: darken($colored-border-color, $hover-darken);
+      box-shadow: 0px 0px 0px 2px $button-border-color;
     }
 
     &.button--primary {
       &:hover {
-        border-color: darken($brand-color, $hover-darken);
-        background-color: darken($brand-color, $hover-darken);
+        box-shadow: 0px 0px 0px 2px $brand-color;
+      }
+    }
+
+    &.button--secondary {
+      &:hover {
+        box-shadow: 0px 0px 0px 2px $button-secondary-color;
       }
     }
 
     &.button--accent {
       &:hover {
-        border-color: darken($button-accent-color, $hover-darken);
+        box-shadow: 0px 0px 0px 2px $button-accent-color;
+      }
+    }
+
+    [class*="background-color-index-"] & {
+
+      &:hover {
+        box-shadow: 0px 0px 0px 2px $colored-border-color;
+      }
+
+      &.button--primary {
+        &:hover {
+          box-shadow: 0px 0px 0px 2px $brand-color;
+        }
+      }
+
+      &.button--secondary {
+        &:hover {
+          box-shadow: 0px 0px 0px 2px $colored-border-color;
+        }
+      }
+
+      &.button--accent {
+        &:hover {
+          box-shadow: 0px 0px 0px 2px $button-accent-color;
+        }
       }
     }
   }
