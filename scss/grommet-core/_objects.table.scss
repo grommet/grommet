@@ -51,6 +51,10 @@
     text-align: center;
   }
 
+  &--scrollable {
+    position: relative;
+  }
+
   &--selectable {
     tbody {
       tr {
