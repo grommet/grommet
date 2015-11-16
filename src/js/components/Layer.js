@@ -34,7 +34,6 @@ var LayerContents = React.createClass({
   },
 
   getChildContext: function () {
-    console.log('!!! Layer getChildContext');
     return {
       router: this.props.router,
       intl: this.props.intl,
