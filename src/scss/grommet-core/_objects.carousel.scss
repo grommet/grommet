@@ -20,8 +20,8 @@
     max-width: none;
     transition: all 0.8s;
 
-    > * {
-      flex: 1;
+    .tiles > .tile > * {
+      width: 100%;
     }
   }
 
