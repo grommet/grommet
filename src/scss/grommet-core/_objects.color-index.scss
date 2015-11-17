@@ -52,6 +52,6 @@
   .background-color-index-light-#{$i},
   .background-color-index-light-#{$i + length($brand-light-colors)} {
     background-color: nth($brand-light-colors, $i);
-    color: inherit;
+    color: $text-color;
   }
 }
