@@ -9,13 +9,15 @@ var Split = React.createClass({
   propTypes: {
     fixed: React.PropTypes.bool,
     flex: React.PropTypes.oneOf(['left', 'right', 'both']),
+    priority: React.PropTypes.oneOf(['left', 'right']),
     separator: React.PropTypes.bool
   },
 
   getDefaultProps: function () {
     return {
       fixed: true,
-      flex: 'both'
+      flex: 'both',
+      priority: 'right'
     };
   },
 
@@ -84,10 +86,12 @@ var Split = React.createClass({
 
   _layout: function () {
     var splitElement = this.refs.split;
-    if (splitElement.offsetWidth < this._breakWidth) {
-      this._setResponsive('single');
-    } else {
-      this._setResponsive('multiple');
+    if (splitElement) {
+      if (splitElement.offsetWidth < this._breakWidth) {
+        this._setResponsive('single');
+      } else {
+        this._setResponsive('multiple');
+      }
     }
   },
 
@@ -106,9 +110,20 @@ var Split = React.createClass({
       classes.push(this.props.className);
     }
 
+    var children;
+    if ('single' === this.state.responsive) {
+      if ('left' === this.props.priority) {
+        children = React.Children.toArray(this.props.children)[0];
+      } else {
+        children = React.Children.toArray(this.props.children).pop();
+      }
+    } else {
+      children = this.props.children;
+    }
+
     return (
       <div ref="split" className={classes.join(' ')}>
-        {this.props.children}
+        {children}
       </div>
     );
   }

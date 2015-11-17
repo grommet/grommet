@@ -3,6 +3,16 @@
 .menu {
   position: relative;
   @include inuit-font-size($menu-font-size, inherit);
+  
+  .header & {
+    &--controlled {
+      height: 100%;
+    }
+    
+    &__control--fixed-label {
+      font-size: $menu-font-size;
+    }
+  }
 
   &:focus {
     outline: none;
@@ -245,6 +255,36 @@
 .menu--inline.menu,
 .menu__drop {
 
+  &.box--direction-column {
+    > .menu:not(:first-of-type) {
+      h2,
+      h3 {
+        margin-top: $inuit-base-spacing-unit;
+      }
+    }
+  }
+
+  > hr {
+    margin: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit
+      round($inuit-base-spacing-unit * 0.75);
+    height: 1px;
+    background-color: $border-color;
+    border: none;
+  }
+
+  // Customize the separator for nested menus
+  &.box.box--separator-top {
+    border-color: transparent;
+
+    &:before {
+      content: '';
+      margin: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit
+        round($inuit-base-spacing-unit * 0.75);
+      height: 1px;
+      background-color: $border-color;
+    }
+  }
+
   &--small {
     font-size: 1em;
 
@@ -266,16 +306,18 @@
       padding: quarter($inuit-base-spacing-unit) halve($inuit-base-spacing-unit);
     }
   }
+  
+  .menu__control-label {
+    font-size: $control-font-size;
+  }
+  
+  a {
+    text-decoration: none;
+  }
 
   &--large {
     > a {
       padding: $inuit-base-spacing-unit double($inuit-base-spacing-unit);
-    }
-  }
-
-  &.box--direction-column {
-    .menu {
-      margin-bottom: round($inuit-base-spacing-unit * 1.5);
     }
   }
 
