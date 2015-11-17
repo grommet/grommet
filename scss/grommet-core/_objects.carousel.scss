@@ -19,10 +19,10 @@
     display: flex;
     max-width: none;
     transition: all 0.8s;
+  }
 
-    > * {
-      flex: 1;
-    }
+  &__item > * {
+    width: 100%;
   }
 
   &__arrow {
