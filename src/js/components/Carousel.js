@@ -2,6 +2,8 @@
 
 var React = require('react');
 var Box = require('./Box');
+var Tiles = require('./Tiles');
+var Tile = require('./Tile');
 var Previous = require('./icons/base/Previous');
 var Next = require('./icons/base/Next');
 
@@ -160,6 +162,14 @@ var Carousel = React.createClass({
 
     var trackPosition = -(width * this.state.activeIndex);
 
+    var tiles = React.Children.map(children, function (child) {
+      return (
+        <Tile className={CLASS_ROOT + "__item"}>
+          {child}
+        </Tile>
+      );
+    }, this);
+
     var controls = React.Children.map(children, function (child) {
       index += 1;
       var controlClasses = [CLASS_ROOT + "__control"];
@@ -178,7 +188,9 @@ var Carousel = React.createClass({
     return (
       <div ref="carousel" className={classes.join(' ')} onMouseEnter={this._onMouseOver} onMouseLeave={this._onMouseOut}>
         <div className={CLASS_ROOT + "__track"} style={{ width: trackWidth, marginLeft: trackPosition }}>
-          {children}
+          <Tiles fill={true}>
+            {tiles}
+          </Tiles>
         </div>
         {this._renderPrevButton()}
         {this._renderNextButton()}
