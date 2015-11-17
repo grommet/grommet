@@ -164,7 +164,7 @@ var Carousel = React.createClass({
 
     var tiles = React.Children.map(children, function (child) {
       return (
-        <Tile>
+        <Tile className={CLASS_ROOT + "__item"}>
           {child}
         </Tile>
       );
