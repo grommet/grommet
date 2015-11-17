@@ -1,13 +1,13 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-$brand-color: #FF856B !default;
-$brand-neutral-colors: (#2E738E, #E29643, #767676) !default;
-$brand-accent-colors: (#70ABC1, #FFCA90) !default;
-$brand-link-color: #FF8706 !default;
+$brand-color: #865CD6 !default;
+$brand-neutral-colors: (#DC2878, #0A64A0) !default;
+$brand-accent-colors: (#00CCEB, #FF7D28) !default;
+$brand-link-color: #865CD6 !default;
 $brand-status-colors: (
-  error: #FF856B,
-  warning: #FFB86B,
-  ok: #4EB976,
+  error: #FF324D,
+  warning: #FFD602,
+  ok: #8CC800,
   unknown: #a8a8a8,
   disabled: #EDEDED
 ) !default;
@@ -17,3 +17,5 @@ $brand-grey-colors: (#333333, #3B3B3B, #434343, #666666) !default;
   $brand-graph-colors: join($brand-graph-colors, $brand-accent-colors);
   $brand-graph-colors: join($brand-graph-colors, $brand-neutral-colors);
 };
+
+$button-secondary-color: nth($brand-neutral-colors, 2);

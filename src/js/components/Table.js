@@ -34,7 +34,7 @@ var Table = React.createClass({
   getInitialState: function () {
     return {
       selection: this._normalizeSelection(this.props.selection),
-      rebuildMirror: true
+      rebuildMirror: this.props.scrollable
     };
   },
 
@@ -58,7 +58,7 @@ var Table = React.createClass({
     if (newProps.hasOwnProperty('selection')) {
       this.setState({selection: this._normalizeSelection(newProps.selection)});
     }
-    this.setState({rebuildMirror: true});
+    this.setState({rebuildMirror: newProps.scrollable});
   },
 
   componentDidUpdate: function (prevProps, prevState) {
