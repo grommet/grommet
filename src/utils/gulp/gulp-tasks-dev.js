@@ -77,7 +77,7 @@ module.exports = function(gulp, options, webpackConfig, dist) {
 
     var devServerConfig = {
       contentBase: dist,
-      hot: true,
+      hot: options.devServerDisableHot ? false : true,
       inline: true,
       stats: {
         colors: true
@@ -137,6 +137,18 @@ module.exports = function(gulp, options, webpackConfig, dist) {
           uri: openURL
         }));
       }
+    });
+
+    server.app.get('/reload', function(req, res) {
+      // Tell connected browsers to reload.
+      server.io.sockets.emit('ok');
+      res.sendStatus(200);
+    });
+
+    server.app.get('/invalid', function(req, res) {
+      // Tell connected browsers to reload.
+      server.io.sockets.emit('invalid');
+      res.sendStatus(200);
     });
 
   });
