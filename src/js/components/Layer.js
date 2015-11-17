@@ -29,6 +29,7 @@ var LayerContents = React.createClass({
   // of the context to transfer somehow.
   childContextTypes: {
     router: React.PropTypes.func,
+    history: React.PropTypes.object,
     intl: React.PropTypes.object,
     store: React.PropTypes.object
   },
@@ -36,6 +37,7 @@ var LayerContents = React.createClass({
   getChildContext: function () {
     return {
       router: this.props.router,
+      history: this.props.history,
       intl: this.props.intl,
       store: this.props.store
     };
@@ -121,6 +123,7 @@ var Layer = React.createClass({
 
   contextTypes: {
     router: React.PropTypes.func,
+    history: React.PropTypes.object,
     intl: React.PropTypes.object,
     store: React.PropTypes.object
   },
@@ -201,6 +204,7 @@ var Layer = React.createClass({
     var contents = (
       <LayerContents {...this.props}
         router={this.context.router}
+        history={this.context.history}
         intl={this.context.intl}
         store={this.context.store} />
     );
