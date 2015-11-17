@@ -188,7 +188,7 @@ var Carousel = React.createClass({
     return (
       <div ref="carousel" className={classes.join(' ')} onMouseEnter={this._onMouseOver} onMouseLeave={this._onMouseOut}>
         <div className={CLASS_ROOT + "__track"} style={{ width: trackWidth, marginLeft: trackPosition }}>
-          <Tiles>
+          <Tiles fill={true}>
             {tiles}
           </Tiles>
         </div>
