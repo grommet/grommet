@@ -680,10 +680,12 @@ var Meter = React.createClass({
   },
 
   _renderLegend: function () {
+    var total = (typeof this.props.legend === 'object' && this.props.legend.total);
     return (
       <Legend ref="legend" className={CLASS_ROOT + "__legend"}
         series={this.state.series}
         units={this.props.units}
+        total={total}
         activeIndex={this.state.activeIndex}
         onActive={this._onActivate} />
     );
