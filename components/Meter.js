@@ -642,9 +642,11 @@ var Meter = React.createClass({
   },
 
   _renderLegend: function _renderLegend() {
+    var total = typeof this.props.legend === 'object' && this.props.legend.total;
     return React.createElement(Legend, { ref: 'legend', className: CLASS_ROOT + "__legend",
       series: this.state.series,
       units: this.props.units,
+      total: total,
       activeIndex: this.state.activeIndex,
       onActive: this._onActivate });
   },
