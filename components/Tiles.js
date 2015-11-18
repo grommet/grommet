@@ -48,7 +48,7 @@ var Tiles = React.createClass({
   },
 
   componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
-    if (this.props.onMore) {
+    if (this._scroll) {
       InfiniteScroll.stopListeningForScroll(this._scroll);
       this._scroll = null;
     }
