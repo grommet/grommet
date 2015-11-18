@@ -52,13 +52,14 @@
   [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
     fill: $colored-icon-color;
     stroke: $colored-icon-color;
+  }
 
-    a > &:hover,
-    .anchor > &:hover,
-    .button > &:hover {
-      fill: $active-colored-icon-color;
-      stroke: $active-colored-icon-color;
-    }
+  [class*="background-color-index-"]:not([class*="background-color-index-light"]) a > &:hover,
+  [class*="background-color-index-"]:not([class*="background-color-index-light"]) .anchor > &:hover,
+  [class*="background-color-index-"]:not([class*="background-color-index-light"]) .button > &:hover,
+  [class*="background-color-index-"]:not([class*="background-color-index-light"]) .menu__control > &:hover {
+    fill: $active-colored-icon-color;
+    stroke: $active-colored-icon-color;
   }
 
   &--active {
