@@ -55,6 +55,8 @@ button:not(.button) {
     padding: 0;
     width: double($inuit-base-spacing-unit);
     height: double($inuit-base-spacing-unit);
+    min-width: 0;
+    max-width: none;
   }
 
   [class*="background-color-index-"] &:not(.button--primary) {
