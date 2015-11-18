@@ -5,7 +5,7 @@
   @include inuit-font-size($menu-font-size, inherit);
 
   .header & {
-    &--controlled {
+    &--controlled.menu--labelled {
       height: 100%;
     }
 
