@@ -27,6 +27,17 @@
       text-decoration: none;
     }
   }
+
+  .status-icon {
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+
+  > span {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
 }
 
 header.header {
