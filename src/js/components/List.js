@@ -59,7 +59,7 @@ var List = React.createClass({
   },
 
   componentDidUpdate: function () {
-    if (this.props.onMore) {
+    if (this.props.onMore && !this._scroll) {
       this._scroll = InfiniteScroll.startListeningForScroll(this.refs.more, this.props.onMore);
     }
   },
