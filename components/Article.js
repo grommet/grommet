@@ -34,11 +34,9 @@ var Article = React.createClass({
 
   componentDidMount: function componentDidMount() {
     if (this.props.scrollStep) {
-      this._markInactive();
       var articleElement = ReactDOM.findDOMNode(this.refs.component);
       this._scrollParent = DOM.findScrollParents(articleElement)[0];
       document.addEventListener('wheel', this._onWheel);
-      this._scrollParent.addEventListener('scroll', this._onScroll);
       KeyboardAccelerators.startListeningToKeyboard(this, {
         up: this._onUp,
         down: this._onDown
@@ -49,9 +47,6 @@ var Article = React.createClass({
   componentWillUnmount: function componentWillUnmount() {
     if (this.props.scrollStep) {
       document.removeEventListener('wheel', this._onWheel);
-      clearInterval(this._scrollToTimer);
-      this._scrollParent.removeEventListener('scroll', this._onScroll);
-      clearTimeout(this._scrollTimer);
       KeyboardAccelerators.stopListeningToKeyboard(this, {
         up: this._onUp,
         down: this._onDown
@@ -59,32 +54,24 @@ var Article = React.createClass({
     }
   },
 
-  _markInactive: function _markInactive() {
-    var articleElement = ReactDOM.findDOMNode(this.refs.component);
-    var sections = articleElement.querySelectorAll('.section.box--full');
-    for (var i = 0; i < sections.length; i += 1) {
-      var section = sections[i];
-      var rect = section.getBoundingClientRect();
-      if (rect.top > window.innerHeight - 10) {
-        section.classList.add('section--inactive');
-      } else {
-        section.classList.remove('section--inactive');
-      }
-    }
-  },
-
-  _onScroll: function _onScroll(event) {
-    clearTimeout(this._scrollTimer);
-    this._scrollTimer = setTimeout(this._markInactive, 50);
-  },
-
   _onWheel: function _onWheel(event) {
     if (Math.abs(event.deltaY) > 100) {
-      clearInterval(this._scrollTimer);
-    } else if (event.deltaY > 5) {
-      this._onDown();
-    } else if (event.deltaY < -5) {
-      this._onUp();
+      // The user is expressing a resolute interest in controlling the
+      // scrolling behavior. Stop doing any of our scroll step aligning
+      // until he stops expressing such interest.
+      clearInterval(this._wheelTimer);
+      clearInterval(this._wheelLongTimer);
+      this._wheelLongTimer = setTimeout((function () {
+        this._wheelLongTimer = null;
+      }).bind(this), 2000);
+    } else if (!this._wheelLongTimer) {
+      if (event.deltaY > 5) {
+        clearInterval(this._wheelTimer);
+        this._wheelTimer = setTimeout(this._onDown, 50);
+      } else if (event.deltaY < -5) {
+        clearInterval(this._wheelTimer);
+        this._wheelTimer = setTimeout(this._onUp, 50);
+      }
     }
   },
 
