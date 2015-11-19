@@ -57,7 +57,7 @@ var Search = React.createClass({
   componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
     if (nextProps.suggestions && nextProps.suggestions.length > 0 && !this.state.dropActive && this.refs.input === document.activeElement) {
       this.setState({ dropActive: true });
-    } else if (!nextProps.suggestions || nextProps.suggestions.length === 0) {
+    } else if ((!nextProps.suggestions || nextProps.suggestions.length === 0) && this.state.inline) {
       this.setState({ dropActive: false });
     }
   },
