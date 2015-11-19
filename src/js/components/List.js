@@ -65,7 +65,7 @@ var List = React.createClass({
   },
 
   componentWillUnmount: function () {
-    if (this._onScroll) {
+    if (this._scroll) {
       InfiniteScroll.stopListeningForScroll(this._scroll);
     }
   },
