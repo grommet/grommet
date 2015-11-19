@@ -55,7 +55,7 @@ var Tiles = React.createClass({
   },
 
   componentDidUpdate: function componentDidUpdate() {
-    if (this.props.onMore) {
+    if (this.props.onMore && !this._scroll) {
       this._scroll = InfiniteScroll.startListeningForScroll(this.refs.more, this.props.onMore);
     }
     if ('row' === this.props.direction) {

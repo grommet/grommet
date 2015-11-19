@@ -69,7 +69,7 @@ var Table = React.createClass({
     if (this.props.scrollable) {
       this._alignMirror();
     }
-    if (this.props.onMore) {
+    if (this.props.onMore && !this._scroll) {
       this._scroll = InfiniteScroll.startListeningForScroll(this.refs.more, this.props.onMore);
     }
   },

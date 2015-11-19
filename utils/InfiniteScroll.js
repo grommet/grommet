@@ -47,8 +47,12 @@ var InfiniteScroll = {
       indicatorElement: indicatorElement,
       scrollParent: DOM.findScrollParents(indicatorElement)[0]
     };
-    scrollState.scrollParent.addEventListener("scroll", _onScroll.bind(null, scrollState));
-    window.addEventListener("resize", _onResize.bind(null, scrollState));
+
+    scrollState._onResize = _onResize.bind(null, scrollState);
+    scrollState._onScroll = _onScroll.bind(null, scrollState);
+
+    scrollState.scrollParent.addEventListener("scroll", scrollState._onScroll);
+    window.addEventListener("resize", scrollState._onResize);
     // check in case we're already at the bottom and the indicator is visible
     if (scrollState.scrollParent === document) {
       var rect = indicatorElement.getBoundingClientRect();
@@ -62,8 +66,8 @@ var InfiniteScroll = {
   stopListeningForScroll: function stopListeningForScroll(scrollState) {
     if (scrollState.scrollParent) {
       clearTimeout(scrollState.scrollTimer);
-      scrollState.scrollParent.removeEventListener("scroll", _onScroll);
-      window.removeEventListener("resize", _onResize);
+      scrollState.scrollParent.removeEventListener("scroll", scrollState._onScroll);
+      window.removeEventListener("resize", scrollState._onResize);
       scrollState.scrollParent = null;
     }
   }
