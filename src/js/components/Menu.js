@@ -362,9 +362,14 @@ var Menu = React.createClass({
       icon = <MoreIcon />;
     }
 
+    var onClick;
+    if (this.props.closeOnClick) {
+      onClick = this._onClose;
+    }
+
     if (this.props.label) {
       result = (
-        <div className={classes.join(' ')} onClick={this._onClose}>
+        <div className={classes.join(' ')} onClick={onClick}>
           <div className={controlClassName + "-icon"}>
             {icon}
           </div>
@@ -374,7 +379,7 @@ var Menu = React.createClass({
       );
     } else {
       result = (
-        <div className={controlClassName} onClick={this._onClose}>
+        <div className={controlClassName} onClick={onClick}>
           {icon}
         </div>
       );
