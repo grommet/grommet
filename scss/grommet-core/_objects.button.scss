@@ -39,7 +39,7 @@ button:not(.button) {
   &--primary {
     border-color: $brand-color;
     background-color: $brand-color;
-    color: $colored-text-color;
+    color: $active-colored-text-color;
   }
 
   &--secondary {
