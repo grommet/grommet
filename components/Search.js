@@ -341,7 +341,8 @@ var Search = React.createClass({
           className: CLASS_ROOT + "__input",
           onFocus: this._onFocusInput,
           onBlur: this._onBlurInput,
-          onChange: this._onChangeInput })
+          onChange: this._onChangeInput }),
+        React.createElement(SearchIcon, null)
       );
     } else {
 
