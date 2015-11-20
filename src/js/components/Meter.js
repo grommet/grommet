@@ -247,7 +247,7 @@ var Meter = React.createClass({
       var remaining = max.value - props.threshold;
       thresholds = [
         {value: props.threshold, colorIndex: 'unset'},
-        {value: remaining, colorIndex: 'error'}
+        {value: remaining, colorIndex: 'critical'}
       ];
     } else {
       thresholds = [

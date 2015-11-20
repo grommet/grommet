@@ -179,7 +179,7 @@ $form-vertical-padding: quarter($inuit-base-spacing-unit);
   &__error {
     display: block;
     float: right;
-    color: map-get($brand-status-colors, error);
+    color: map-get($brand-status-colors, critical);
     line-height: $inuit-base-spacing-unit;
   }
 
@@ -211,7 +211,7 @@ $form-vertical-padding: quarter($inuit-base-spacing-unit);
 
   &--error {
     z-index: 1;
-    border-color: map-get($brand-status-colors, error);
+    border-color: map-get($brand-status-colors, critical);
   }
 
   &--focus {

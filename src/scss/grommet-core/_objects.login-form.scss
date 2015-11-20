@@ -43,7 +43,7 @@
 
   &__error {
     margin-bottom: halve($inuit-base-spacing-unit);
-    color: map-get($brand-status-colors, error);
+    color: map-get($brand-status-colors, critical);
     text-align: left;
   }
 

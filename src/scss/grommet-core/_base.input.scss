@@ -40,7 +40,7 @@ textarea {
   }
 
   &.error {
-    border-color: map-get($brand-status-colors, error);
+    border-color: map-get($brand-status-colors, critical);
   }
 }
 
