@@ -4,6 +4,7 @@
 
 var React = require('react');
 var OK = require('./status/OK');
+var CriticalStatus = require('./status/CriticalStatus');
 var ErrorStatus = require('./status/ErrorStatus');
 var Warning = require('./status/Warning');
 var Disabled = require('./status/Disabled');
@@ -32,7 +33,7 @@ var Status = React.createClass({
     large: React.PropTypes.bool,
     small: React.PropTypes.bool,
     size: React.PropTypes.oneOf(['small', 'medium', 'large']),
-    value: React.PropTypes.oneOf(['error', 'warning', 'ok', 'unknown', 'disabled'])
+    value: React.PropTypes.oneOf(['critical', 'warning', 'ok', 'unknown', 'disabled'])
   },
 
   _stateFromProps: function _stateFromProps(props) {
@@ -61,9 +62,12 @@ var Status = React.createClass({
       case 'warning':
         icon = React.createElement(Warning, { className: className, a11yTitle: this.props.a11yTitle });
         break;
+      // 'error' is deprecated, use 'critical'
       case 'error':
-      case 'critical':
         icon = React.createElement(ErrorStatus, { className: className, a11yTitle: this.props.a11yTitle });
+        break;
+      case 'critical':
+        icon = React.createElement(CriticalStatus, { className: className, a11yTitle: this.props.a11yTitle });
         break;
       case 'disabled':
         icon = React.createElement(Disabled, { className: className, a11yTitle: this.props.a11yTitle });
