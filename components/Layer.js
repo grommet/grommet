@@ -19,6 +19,7 @@ var LayerContents = React.createClass({
   propTypes: {
     closer: React.PropTypes.oneOfType([React.PropTypes.node, React.PropTypes.bool]),
     onClose: React.PropTypes.func,
+    history: React.PropTypes.object,
     router: React.PropTypes.func,
     intl: React.PropTypes.object,
     a11yCloserTitle: React.PropTypes.string

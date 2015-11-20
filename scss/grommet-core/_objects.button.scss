@@ -53,8 +53,8 @@ button:not(.button) {
   &--icon {
     border: none;
     padding: 0;
-    width: double($inuit-base-spacing-unit);
-    height: double($inuit-base-spacing-unit);
+    width: auto;
+    height: auto;
     min-width: 0;
     max-width: none;
   }
@@ -75,5 +75,6 @@ button:not(.button) {
 
   &--fill {
     width: 100%;
+    max-width: none;
   }
 }
