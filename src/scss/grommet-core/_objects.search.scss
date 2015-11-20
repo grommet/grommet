@@ -22,12 +22,7 @@
     margin-right: 0px;
 
     .header & {
-      padding: 0px halve($inuit-base-spacing-unit);
       font-size: inherit;
-
-      &:focus {
-        padding: 0px (halve($inuit-base-spacing-unit) - 1px);
-      }
     }
   }
 
@@ -39,16 +34,22 @@
       width: 100vw;
     }
 
-    &--inline {
-      margin-left: -1px;
-    }
-
     &-header {
       white-space: nowrap;
     }
 
-    &-contents {
-      display: block; //inline-block;
+    &--inline {
+      margin-left: -1px;
+
+      .search__drop-contents {
+        display: block;
+      }
+    }
+
+    &--controlled {
+      .search__drop-contents {
+        display: inline-block;
+      }
     }
 
     input {
@@ -82,14 +83,27 @@
   }
 
   &--inline {
+    position: relative;
+
     .search__input {
       width: 100%;
+      padding-right: (double($inuit-base-spacing-unit) - $input-border-width);
       box-sizing:  border-box;
 
-      .header & {
-        padding: 0px;
-        border: none;
+      &:focus {
+        padding-right: (double($inuit-base-spacing-unit) - ($input-border-width + 1));
       }
+
+      .header &:not(:focus) {
+        border-color: transparent;
+      }
+    }
+
+    .control-icon-search {
+      position: absolute;
+      right: 0px;
+      top: calc(50% - #{$inuit-base-spacing-unit});
+      pointer-events: none;
     }
   }
 

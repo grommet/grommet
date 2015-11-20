@@ -344,6 +344,7 @@ var Search = React.createClass({
             onFocus={this._onFocusInput}
             onBlur={this._onBlurInput}
             onChange={this._onChangeInput} />
+          <SearchIcon />
         </div>
       );
 
