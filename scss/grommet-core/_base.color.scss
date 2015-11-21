@@ -34,8 +34,8 @@ $active-icon-color: #000;
 $disabled-icon-color: #ccc;
 $colored-icon-color: #dbdbdb;
 $active-colored-icon-color: #fff;
-$icon-badge-background-color: $brand-color;
-$icon-badge-text-color: $colored-text-color;
+$icon-badge-background-color: nth($brand-accent-colors, 1);
+$icon-badge-text-color: $text-color;
 
 $unset-color: #ddd !default;
 
