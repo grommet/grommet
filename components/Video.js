@@ -38,6 +38,7 @@ var Video = React.createClass({
   },
 
   componentWillUnmount: function componentWillUnmount() {
+    var video = this.refs.video;
     video.removeEventListener('playing', this._onPlaying);
     video.removeEventListener('pause', this._onPause);
     video.removeEventListener('ended', this._onEnded);
