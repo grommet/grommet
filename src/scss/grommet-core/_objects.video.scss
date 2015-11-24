@@ -55,6 +55,7 @@
   }
 
   &__control {
+    flex: 0 0 auto;
     width: quadruple($inuit-base-spacing-unit);
     height: quadruple($inuit-base-spacing-unit);
     border-radius: double($inuit-base-spacing-unit);
