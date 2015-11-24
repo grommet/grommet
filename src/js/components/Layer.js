@@ -70,7 +70,7 @@ var LayerContents = React.createClass({
   },
 
   _processTab: function (event) {
-    var items = this.refs.background.getElementsByTagName('*');
+    var items = this.refs.container.getElementsByTagName('*');
 
     items = DOMUtils.filterByFocusable(items);
 
