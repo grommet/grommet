@@ -110,6 +110,10 @@ module.exports = function(gulp, options, webpackConfig, dist) {
         res.redirect(301, req.url.replace(/.*\/(img\/.*)$/, '/$1'));
       } else if (req.url.match(/\/img\//)) { // img
         next();
+      } else if (req.url.match(/.+\/video\//)) { // video
+        res.redirect(301, req.url.replace(/.*\/(video\/.*)$/, '/$1'));
+      } else if (req.url.match(/\/video\//)) { // video
+        next();
       } else if (req.url.match(/.+\/font\//)) { // font
         res.redirect(301, req.url.replace(/.*\/(font\/.*)$/, '/$1'));
       } else if (req.url.match(/\/font\//)) { // font
