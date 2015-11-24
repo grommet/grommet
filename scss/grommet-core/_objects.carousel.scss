@@ -97,3 +97,24 @@
     }
   }
 }
+
+.carousel-controls {
+  &__control {
+    width: round($inuit-base-spacing-unit * 1.5);
+    height: round($inuit-base-spacing-unit * 1.5);
+    stroke: #fff;
+    fill: transparent;
+    cursor: pointer;
+    filter: drop-shadow(1px 1px 1px $button-drop-shadow-color);
+    -webkit-filter: drop-shadow(1px 1px 1px $button-drop-shadow-color);
+
+    &:hover {
+      stroke-width: 2px;
+    }
+
+    &--active {
+      stroke: $brand-color;
+      fill: $brand-color;
+    }
+  }
+}
