@@ -30,7 +30,7 @@ var GrommetFormattedMessage = React.createClass({
     } else {
       result = React.createElement(
         'span',
-        null,
+        { id: this.props.id },
         this.props.defaultMessage || this.props.id
       );
     }
