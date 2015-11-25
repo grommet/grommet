@@ -12,6 +12,7 @@ var CLASS_ROOT = "footer";
 var Footer = React.createClass({
 
   propTypes: merge({
+    primary: React.PropTypes.bool,
     large: React.PropTypes.bool,
     small: React.PropTypes.bool,
     float: React.PropTypes.bool
@@ -40,10 +41,17 @@ var Footer = React.createClass({
       containerClasses.push(CLASS_ROOT + "__container--float");
     }
 
+    var footerSkipLink;
+    if (this.props.primary) {
+      footerSkipLink = (
+        <SkipLinkAnchor label="Footer" />
+      );
+    }
+
     return (
       <Box tag="footer" {...other} className={classes.join(' ')}
         containerClassName={containerClasses.join(' ')}>
-        <SkipLinkAnchor label="Footer" />
+        {footerSkipLink}
         {this.props.children}
       </Box>
     );
