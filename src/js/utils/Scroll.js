@@ -34,8 +34,12 @@ var Scroll = {
       component[property] = next;
       step += 1;
       if (step > SCROLL_STEPS) {
-        // we're done
+        // we're done, but the browser/OS might still be easing from a
+        // mouse wheel interaction. So, set it one more time after a bit.
         clearInterval(this._scrollToTimer);
+        this._scrollToTimer = setTimeout(function () {
+          component[property] = next;
+        }, 200);
       }
     }.bind(this), 8);
   }

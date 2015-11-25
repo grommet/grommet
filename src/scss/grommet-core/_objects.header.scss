@@ -101,8 +101,11 @@ div.header {
 
         .header {
           @include media-query(lap-and-up) {
-            background-color: $header-background-color;
             position: fixed;
+
+            &:not(.header--float) {
+              background-color: $header-background-color;
+            }
           }
         }
       }

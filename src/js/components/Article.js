@@ -7,17 +7,22 @@ var pick = require('lodash/object/pick');
 var keys = require('lodash/object/keys');
 var Box = require('./Box');
 var KeyboardAccelerators = require('../utils/KeyboardAccelerators');
-var DOM = require('../utils/DOM');
 var Scroll = require('../utils/Scroll');
 var SkipLinkAnchor = require('./SkipLinkAnchor');
+var CarouselControls = require('./CarouselControls');
+// var NextIcon = require('./icons/base/Next');
+// var PreviousIcon = require('./icons/base/Previous');
+// var UpIcon = require('./icons/base/Up');
+// var DownIcon = require('./icons/base/Down');
 
 var CLASS_ROOT = "article";
 
 var Article = React.createClass({
 
   propTypes: merge({
-    scrollStep: React.PropTypes.bool,
-    primary: React.PropTypes.bool
+    controls: React.PropTypes.bool,
+    primary: React.PropTypes.bool,
+    scrollStep: React.PropTypes.bool
   }, Box.propTypes),
 
   getDefaultProps: function () {
@@ -27,30 +32,44 @@ var Article = React.createClass({
     };
   },
 
+  getInitialState: function () {
+    return {selected: 1};
+  },
+
   componentDidMount: function () {
     if (this.props.scrollStep) {
-      var articleElement = ReactDOM.findDOMNode(this.refs.component);
-      this._scrollParent = DOM.findScrollParents(articleElement)[0];
+
+      var keys;
+      if ('row' === this.props.direction) {
+        keys = {left: this._onPrevious, right: this._onNext};
+      } else {
+        keys = {up: this._onPrevious, down: this._onNext};
+      }
+      KeyboardAccelerators.startListeningToKeyboard(this, keys);
+
       document.addEventListener('wheel', this._onWheel);
-      KeyboardAccelerators.startListeningToKeyboard(this, {
-        up: this._onUp,
-        down: this._onDown
-      });
+
+      this._scrollParent = ReactDOM.findDOMNode(this.refs.component);
     }
   },
 
   componentWillUnmount: function () {
     if (this.props.scrollStep) {
+      var keys;
+      if ('row' === this.props.direction) {
+        keys = {left: this._onPrevious, right: this._onNext};
+      } else {
+        keys = {up: this._onPrevious, down: this._onNext};
+      }
+      KeyboardAccelerators.stopListeningToKeyboard(this, keys);
+
       document.removeEventListener('wheel', this._onWheel);
-      KeyboardAccelerators.stopListeningToKeyboard(this, {
-        up: this._onUp,
-        down: this._onDown
-      });
     }
   },
 
   _onWheel: function (event) {
-    if (Math.abs(event.deltaY) > 100) {
+    var delta = ('row' === this.props.direction ? event.deltaX : event.deltaY);
+    if (Math.abs(delta) > 100) {
       // The user is expressing a resolute interest in controlling the
       // scrolling behavior. Stop doing any of our scroll step aligning
       // until he stops expressing such interest.
@@ -60,53 +79,91 @@ var Article = React.createClass({
         this._wheelLongTimer = null;
       }.bind(this), 2000);
     } else if (! this._wheelLongTimer) {
-      if (event.deltaY > 5) {
+      if (delta > 10) {
         clearInterval(this._wheelTimer);
-        this._wheelTimer = setTimeout(this._onDown, 50);
-      } else if (event.deltaY < -5) {
+        this._wheelTimer = setTimeout(this._onNext, 200);
+      } else if (delta < -10) {
         clearInterval(this._wheelTimer);
-        this._wheelTimer = setTimeout(this._onUp, 50);
+        this._wheelTimer = setTimeout(this._onPrevious, 200);
       }
     }
   },
 
-  _onDown: function (event) {
+  _onNext: function (event) {
     if (event) {
       event.preventDefault();
     }
     var articleElement = ReactDOM.findDOMNode(this.refs.component);
-    var sections = articleElement.querySelectorAll('.section.box--full');
-    for (var i = 0; i < sections.length; i += 1) {
-      var section = sections[i];
-      var rect = section.getBoundingClientRect();
+    var children = articleElement.children;
+    for (var i = 0; i < children.length; i += 1) {
+      var child = children[i];
+      var rect = child.getBoundingClientRect();
       // 10 is for fuzziness
-      if (rect.bottom > 10 && (event || rect.bottom < window.innerHeight)) {
-        Scroll.scrollBy(this._scrollParent, 'scrollTop', rect.bottom);
-        break;
+      if ('row' === this.props.direction) {
+        if (rect.right > 10 && (event || rect.right < window.innerWidth)) {
+          // Scroll.scrollBy(this._scrollParent, 'scrollLeft', rect.right);
+          // this.setState({selected: i + 2});
+          this._onSelect(i + 2);
+          break;
+        }
+      } else {
+        if (rect.bottom > 10 && (event || rect.bottom < window.innerHeight)) {
+          // Scroll.scrollBy(this._scrollParent, 'scrollTop', rect.bottom);
+          // this.setState({selected: i + 2});
+          this._onSelect(i + 2);
+          break;
+        }
       }
     }
   },
 
-  _onUp: function (event) {
+  _onPrevious: function (event) {
     if (event) {
       event.preventDefault();
     }
     var articleElement = ReactDOM.findDOMNode(this.refs.component);
-    var sections = articleElement.querySelectorAll('.section.box--full');
-    for (var i = 0; i < sections.length; i += 1) {
-      var section = sections[i];
-      var rect = section.getBoundingClientRect();
+    var children = articleElement.children;
+    for (var i = 0; i < children.length; i += 1) {
+      var child = children[i];
+      var rect = child.getBoundingClientRect();
       // -10 is for fuzziness
-      if ((rect.top >= -10 || i === (sections.length - 1)) &&
-        (event || rect.top < window.innerHeight)) {
-        if (i > 0) {
-          section = sections[i - 1];
-          rect = section.getBoundingClientRect();
-          Scroll.scrollBy(this._scrollParent, 'scrollTop', rect.top);
+      if ('row' === this.props.direction) {
+        if ((rect.left >= -10 || i === (children.length - 1)) &&
+          (event || rect.left < window.innerWidth)) {
+          if (i > 0) {
+            child = children[i - 1];
+            rect = child.getBoundingClientRect();
+            Scroll.scrollBy(this._scrollParent, 'scrollLeft', rect.left);
+            this.setState({selected: i});
+          }
+          break;
         }
-        break;
+      } else {
+        if ((rect.top >= -10 || i === (children.length - 1)) &&
+          (event || rect.top < window.innerHeight)) {
+          if (i > 0) {
+            child = children[i - 1];
+            rect = child.getBoundingClientRect();
+            Scroll.scrollBy(this._scrollParent, 'scrollTop', rect.top);
+            this.setState({selected: i});
+          }
+          break;
+        }
       }
     }
+  },
+
+  _onSelect: function (selected) {
+    var articleElement = ReactDOM.findDOMNode(this.refs.component);
+    var children = articleElement.children;
+    var child = children[selected - 1];
+    var rect = child.getBoundingClientRect();
+    if ('row' === this.props.direction) {
+      Scroll.scrollBy(this._scrollParent, 'scrollLeft', rect.left);
+    } else {
+      Scroll.scrollBy(this._scrollParent, 'scrollTop', rect.top);
+    }
+    this.setState({selected: selected});
   },
 
   render: function() {
@@ -123,10 +180,22 @@ var Article = React.createClass({
     if (this.props.primary) {
       skipLinkAnchor = <SkipLinkAnchor label="Main Content" />;
     }
+
+    var childCount = React.Children.count(this.props.children);
+    var controls;
+    if (this.props.controls) {
+      controls = (
+        <CarouselControls className={CLASS_ROOT + "__controls"}
+          count={childCount}
+          selected={this.state.selected} onChange={this._onSelect} />
+      );
+    }
+
     return (
       <Box ref="component" tag="article" {...other} className={classes.join(' ')}>
         {skipLinkAnchor}
         {this.props.children}
+        {controls}
       </Box>
     );
   }

@@ -1,12 +1,18 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 module.exports = {
-  findScrollParents: function (element) {
+  findScrollParents: function (element, horizontal) {
     var result = [];
     var parent = element.parentNode;
     while (parent) {
-      // account for border the lazy way for now
-      if (parent.scrollHeight > (parent.offsetHeight + 10)) {
-        result.push(parent);
+      // 10px is to account for borders and scrollbars in a lazy way
+      if (horizontal) {
+        if (parent.clientWidth && parent.scrollWidth > (parent.clientWidth + 10)) {
+          result.push(parent);
+        }
+      } else {
+        if (parent.clientHeight && parent.scrollHeight > (parent.clientHeight + 10)) {
+          result.push(parent);
+        }
       }
       parent = parent.parentNode;
     }

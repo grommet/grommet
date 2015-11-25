@@ -55,6 +55,11 @@ p,
 dd,
 li {
   max-width: $readable-text-width;
+  margin-left: 0px;
+}
+
+dd {
+  margin-bottom: halve($inuit-base-spacing-unit);
 }
 
 p {
