@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 var React = require('react');
-var FormattedMessage = require('./FormattedMessage');
+var Intl = require('../utils/Intl');
 var Box = require('./Box');
 
 var CLASS_ROOT = "tabs";
@@ -10,6 +10,10 @@ var Tabs = React.createClass({
 
   propTypes: {
     activeIndex: React.PropTypes.number
+  },
+
+  contextTypes: {
+    intl: React.PropTypes.object
   },
 
   getDefaultProps: function () {
@@ -54,6 +58,10 @@ var Tabs = React.createClass({
       });
     }.bind(this));
 
+    var tabContentTitle = Intl.getMessage(this.context.intl, 'Tab Contents', {
+      activeTitle: activeTitle
+    });
+
     // TODO: Since there could be multiple Tabs on the page, we need a more
     // robust means of identifying the association between title and aria label.
     return (
@@ -61,13 +69,10 @@ var Tabs = React.createClass({
         <ul className={classes.join(' ')}>
           {tabs}
         </ul>
-        <div ref="tabContent" tabIndex="0" aria-labelledby="content_description"
+        <div ref="tabContent" tabIndex="0" aria-label={tabContentTitle}
           role="tabpanel">
-          <title id="content_description">
-            <FormattedMessage id="Tab Contents" activeTitle={activeTitle}
-              defaultMessage={"Tab Contents"} />
-          </title>
-          <Box className={CLASS_ROOT + '__content'} aria-labelledby="content_description">
+          <Box className={CLASS_ROOT + '__content'}
+            aria-label={tabContentTitle}>
             {activeContainer}
           </Box>
         </div>
