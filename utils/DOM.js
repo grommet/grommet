@@ -2,13 +2,19 @@
 'use strict';
 
 module.exports = {
-  findScrollParents: function findScrollParents(element) {
+  findScrollParents: function findScrollParents(element, horizontal) {
     var result = [];
     var parent = element.parentNode;
     while (parent) {
-      // account for border the lazy way for now
-      if (parent.scrollHeight > parent.offsetHeight + 10) {
-        result.push(parent);
+      // 10px is to account for borders and scrollbars in a lazy way
+      if (horizontal) {
+        if (parent.clientWidth && parent.scrollWidth > parent.clientWidth + 10) {
+          result.push(parent);
+        }
+      } else {
+        if (parent.clientHeight && parent.scrollHeight > parent.clientHeight + 10) {
+          result.push(parent);
+        }
       }
       parent = parent.parentNode;
     }

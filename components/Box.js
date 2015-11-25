@@ -104,14 +104,14 @@ var Box = React.createClass({
           onClick: this.props.onClick },
         React.createElement(
           this.props.tag,
-          { className: classes.join(' ') },
+          { id: this.props.id, className: classes.join(' ') },
           this.props.children
         )
       );
     } else {
       return React.createElement(
         this.props.tag,
-        { className: classes.join(' '), style: style,
+        { id: this.props.id, className: classes.join(' '), style: style,
           onClick: this.props.onClick },
         this.props.children
       );

@@ -23,6 +23,11 @@ var CarouselControls = React.createClass({
   },
 
   render: function render() {
+    var classes = [CLASS_ROOT];
+    if (this.props.className) {
+      classes.push(this.props.className);
+    }
+
     var controls = [];
     for (var index = 1; index <= this.props.count; index++) {
       var controlClasses = [CLASS_ROOT + "__control"];
@@ -40,7 +45,7 @@ var CarouselControls = React.createClass({
 
     return React.createElement(
       Box,
-      { className: CLASS_ROOT, direction: 'row', justify: 'center', responsive: false },
+      { className: classes.join(' '), direction: 'row', justify: 'center', responsive: false },
       controls
     );
   }

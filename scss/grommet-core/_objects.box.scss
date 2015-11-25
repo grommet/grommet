@@ -74,9 +74,9 @@
   &--direction-column {
     flex-direction: column;
 
-    > *:not(p) {
-      max-width: 100%;
-    }
+    // > *:not(p) {
+    //   max-width: 100%;
+    // }
 
     &.box--reverse {
       flex-direction: column-reverse;
