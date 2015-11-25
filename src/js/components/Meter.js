@@ -2,9 +2,9 @@
 
 var React = require('react');
 var ReactDOM = require('react-dom');
-var FormattedMessage = require('./FormattedMessage');
 
 var Legend = require('./Legend');
+var Intl = require('../utils/Intl');
 
 var CLASS_ROOT = "meter";
 
@@ -109,6 +109,10 @@ var Meter = React.createClass({
     a11yTitleId: React.PropTypes.string,
     a11yDescId: React.PropTypes.string,
     a11yDesc: React.PropTypes.string
+  },
+
+  contextTypes: {
+    intl: React.PropTypes.object
   },
 
   getDefaultProps: function () {
@@ -799,7 +803,7 @@ var Meter = React.createClass({
 
     var titleKey = typeof this.props.a11yTitle !== "undefined" ?
         this.props.a11yTitle : defaultTitle;
-    var a11yTitle = <FormattedMessage id={titleKey} defaultMessage={titleKey} />;
+    var a11yTitle = Intl.getMessage(this.context.intl, titleKey);
 
     var defaultA11YDesc;
     if (this.props.a11yTitle !== "undefined") {
@@ -818,7 +822,7 @@ var Meter = React.createClass({
 
     var descKey = typeof this.props.a11yTitle !== "undefined" ?
         this.props.a11yTitle : defaultA11YDesc;
-    var a11yDesc = <FormattedMessage id={descKey} defaultMessage={descKey} />;
+    var a11yDesc = Intl.getMessage(this.context.intl, descKey);
 
     return (
       <div className={classes.join(' ')}>
