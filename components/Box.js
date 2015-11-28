@@ -2,8 +2,13 @@
 
 'use strict';
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var React = require('react');
 var keys = require('lodash/object/keys');
+
+var KeyboardAccelerators = require('../utils/KeyboardAccelerators');
+var Intl = require('../utils/Intl');
 
 var CLASS_ROOT = "box";
 
@@ -11,6 +16,7 @@ var Box = React.createClass({
   displayName: 'Box',
 
   propTypes: {
+    a11yTitle: React.PropTypes.string,
     align: React.PropTypes.oneOf(['start', 'center', 'end']),
     appCentered: React.PropTypes.bool,
     backgroundImage: React.PropTypes.string,
@@ -32,13 +38,48 @@ var Box = React.createClass({
     texture: React.PropTypes.string
   },
 
+  contextTypes: {
+    intl: React.PropTypes.object
+  },
+
   getDefaultProps: function getDefaultProps() {
     return {
+      a11yTitle: 'Box',
       direction: 'column',
       pad: 'none',
       tag: 'div',
       responsive: true
     };
+  },
+
+  componentDidMount: function componentDidMount() {
+    if (this.props.onClick) {
+      var clickCallback = (function () {
+        if (this.refs.boxContainer === document.activeElement) {
+          this.props.onClick();
+        }
+      }).bind(this);
+
+      KeyboardAccelerators.startListeningToKeyboard(this, {
+        enter: clickCallback,
+        space: clickCallback
+      });
+    }
+  },
+
+  componentWillUnmount: function componentWillUnmount() {
+    if (this.props.onClick) {
+      var clickCallback = function clickCallback() {
+        if (this.refs.boxContainer === document.activeElement) {
+          this.props.onClick();
+        }
+      };
+
+      KeyboardAccelerators.stopListeningToKeyboard(this, {
+        enter: clickCallback,
+        space: clickCallback
+      });
+    }
   },
 
   _addPropertyClass: function _addPropertyClass(classes, prefix, property, classProperty) {
@@ -97,11 +138,20 @@ var Box = React.createClass({
       style.backgroundSize = "cover";
     }
 
+    var boxLabel = Intl.getMessage(this.context.intl, this.props.a11yTitle);
+
+    var a11yProps = {};
+    if (this.props.onClick) {
+      a11yProps.tabIndex = 0;
+      a11yProps["aria-label"] = boxLabel;
+      a11yProps.role = 'link';
+    }
+
     if (this.props.appCentered) {
       return React.createElement(
         'div',
-        { className: containerClasses.join(' '), style: style,
-          onClick: this.props.onClick },
+        _extends({ ref: 'boxContainer', className: containerClasses.join(' '),
+          style: style, onClick: this.props.onClick }, a11yProps),
         React.createElement(
           this.props.tag,
           { id: this.props.id, className: classes.join(' ') },
@@ -111,8 +161,9 @@ var Box = React.createClass({
     } else {
       return React.createElement(
         this.props.tag,
-        { id: this.props.id, className: classes.join(' '), style: style,
-          onClick: this.props.onClick },
+        _extends({ ref: 'boxContainer', id: this.props.id,
+          className: classes.join(' '), style: style,
+          onClick: this.props.onClick }, a11yProps),
         this.props.children
       );
     }
