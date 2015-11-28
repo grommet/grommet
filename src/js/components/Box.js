@@ -3,11 +3,15 @@
 var React = require('react');
 var keys = require('lodash/object/keys');
 
+var KeyboardAccelerators = require('../utils/KeyboardAccelerators');
+var Intl = require('../utils/Intl');
+
 var CLASS_ROOT = "box";
 
 var Box = React.createClass({
 
   propTypes: {
+    a11yTitle: React.PropTypes.string,
     align: React.PropTypes.oneOf(['start', 'center', 'end']),
     appCentered: React.PropTypes.bool,
     backgroundImage: React.PropTypes.string,
@@ -32,13 +36,48 @@ var Box = React.createClass({
     texture: React.PropTypes.string
   },
 
+  contextTypes: {
+    intl: React.PropTypes.object
+  },
+
   getDefaultProps: function () {
     return {
+      a11yTitle: 'Box',
       direction: 'column',
       pad: 'none',
       tag: 'div',
       responsive: true
     };
+  },
+
+  componentDidMount: function () {
+    if (this.props.onClick) {
+      var clickCallback = function () {
+        if (this.refs.boxContainer === document.activeElement) {
+          this.props.onClick();
+        }
+      }.bind(this);
+
+      KeyboardAccelerators.startListeningToKeyboard(this, {
+        enter: clickCallback,
+        space: clickCallback
+      });
+    }
+  },
+
+  componentWillUnmount: function () {
+    if (this.props.onClick) {
+      var clickCallback = function () {
+        if (this.refs.boxContainer === document.activeElement) {
+          this.props.onClick();
+        }
+      };
+
+      KeyboardAccelerators.stopListeningToKeyboard(this, {
+        enter: clickCallback,
+        space: clickCallback
+      });
+    }
   },
 
   _addPropertyClass: function (classes, prefix, property, classProperty) {
@@ -97,10 +136,19 @@ var Box = React.createClass({
       style.backgroundSize = "cover";
     }
 
+    var boxLabel = Intl.getMessage(this.context.intl, this.props.a11yTitle);
+
+    var a11yProps = {};
+    if (this.props.onClick) {
+      a11yProps.tabIndex = 0;
+      a11yProps["aria-label"] = boxLabel;
+      a11yProps.role = 'link';
+    }
+
     if (this.props.appCentered) {
       return (
-        <div className={containerClasses.join(' ')} style={style}
-          onClick={this.props.onClick}>
+        <div ref="boxContainer" className={containerClasses.join(' ')}
+          style={style} onClick={this.props.onClick} {...a11yProps}>
           <this.props.tag id={this.props.id} className={classes.join(' ')}>
             {this.props.children}
           </this.props.tag>
@@ -108,8 +156,9 @@ var Box = React.createClass({
       );
     } else {
       return (
-        <this.props.tag id={this.props.id} className={classes.join(' ')} style={style}
-          onClick={this.props.onClick}>
+        <this.props.tag ref="boxContainer" id={this.props.id}
+          className={classes.join(' ')} style={style}
+          onClick={this.props.onClick} {...a11yProps}>
           {this.props.children}
         </this.props.tag>
       );

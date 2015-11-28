@@ -3,18 +3,26 @@
 var React = require('react');
 var Box = require('./Box');
 
+var Intl = require('../utils/Intl');
+
 var CLASS_ROOT = "title";
 
 var Title = React.createClass({
 
   propTypes: {
+    a11yTitle: React.PropTypes.string,
     onClick: React.PropTypes.func,
     responsive: React.PropTypes.bool
   },
 
+  contextTypes: {
+    intl: React.PropTypes.object
+  },
+
   getDefaultProps: function () {
     return {
-      responsive: true
+      responsive: true,
+      a11yTitle: 'Title'
     };
   },
 
@@ -30,9 +38,12 @@ var Title = React.createClass({
       classes.push(this.props.className);
     }
 
+    var a11yTitle = Intl.getMessage(this.context.intl, this.props.a11yTitle);
+
     return (
       <Box align="center" direction="row" responsive={false}
-        className={classes.join(' ')} onClick={this.props.onClick}>
+        className={classes.join(' ')} a11yTitle={a11yTitle}
+        onClick={this.props.onClick}>
         {this.props.children}
       </Box>
     );
