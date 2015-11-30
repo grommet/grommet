@@ -79,6 +79,15 @@ var SkipLinks = React.createClass({
       );
     }).bind(this));
 
+    var menuComponent;
+    if (anchorElements.length > 0) {
+      menuComponent = React.createElement(
+        Menu,
+        { direction: 'row' },
+        anchorElements
+      );
+    }
+
     return React.createElement(
       'div',
       { className: 'skip-links' },
@@ -93,11 +102,7 @@ var SkipLinks = React.createClass({
             null,
             React.createElement(FormattedMessage, { id: 'Skip to', defaultMessage: 'Skip to' })
           ),
-          React.createElement(
-            Menu,
-            { direction: 'row' },
-            anchorElements
-          )
+          menuComponent
         )
       )
     );

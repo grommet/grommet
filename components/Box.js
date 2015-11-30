@@ -138,10 +138,9 @@ var Box = React.createClass({
       style.backgroundSize = "cover";
     }
 
-    var boxLabel = Intl.getMessage(this.context.intl, this.props.a11yTitle);
-
     var a11yProps = {};
     if (this.props.onClick) {
+      var boxLabel = Intl.getMessage(this.context.intl, this.props.a11yTitle);
       a11yProps.tabIndex = 0;
       a11yProps["aria-label"] = boxLabel;
       a11yProps.role = 'link';
