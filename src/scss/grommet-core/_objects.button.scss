@@ -17,7 +17,7 @@ $button-horizontal-padding: round($inuit-base-spacing-unit) - $button-border-wid
   min-width: $button-min-width;
   max-width: $button-max-width;
 
-  &:focus:not(.button--disabled) {
+  &:focus:not(.button--disabled):not(.button--icon) {
     border-color: $focus-border-color;
     box-shadow: 0 0 1px 1px $focus-border-color;
   }

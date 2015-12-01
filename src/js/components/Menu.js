@@ -5,16 +5,19 @@ var ReactDOM = require('react-dom');
 var merge = require('lodash/object/merge');
 var pick = require('lodash/object/pick');
 var keys = require('lodash/object/keys');
+var Intl = require('../utils/Intl');
 var KeyboardAccelerators = require('../utils/KeyboardAccelerators');
 var Drop = require('../utils/Drop');
 var Responsive = require('../utils/Responsive');
 var Box = require('./Box');
+var Button = require('./Button');
 var MoreIcon = require('./icons/More');
 var DropCaretIcon = require('./icons/DropCaret');
 
 var CLASS_ROOT = "menu";
 
-// We have a separate module for the drop component so we can transfer the router context.
+// We have a separate module for the drop component
+// so we can transfer the router context.
 var MenuDrop = React.createClass({
 
   propTypes: merge({
@@ -53,16 +56,16 @@ var MenuDrop = React.createClass({
       var classes = menuItems[i].className.toString();
       var tagName = menuItems[i].tagName.toLowerCase();
       // want to skip items of the menu that are not focusable.
-      if (tagName !== 'button' && tagName !== 'a' && classes.indexOf('check-box') === -1) {
+      if (tagName !== 'button' && tagName !== 'a' &&
+        classes.indexOf('check-box') === -1) {
         continue;
       }
       menuItems[i].setAttribute('role', 'menuitem');
 
       if (!menuItems[i].getAttribute('id')) {
-        menuItems[i].setAttribute('id', menuItems[i].getAttribute('data-reactid'));
+        menuItems[i].setAttribute('id',
+          menuItems[i].getAttribute('data-reactid'));
       }
-      // aria-selected informs AT which menu item is selected for that menu container.
-      menuItems[i].setAttribute('aria-selected', classes.indexOf('active'));
     }
   },
 
@@ -83,7 +86,8 @@ var MenuDrop = React.createClass({
     var classes = this.activeMenuItem.className.split(/\s+/);
     var tagName = this.activeMenuItem.tagName.toLowerCase();
     // want to skip items of the menu that are not focusable.
-    if (tagName !== 'button' && tagName !== 'a' && classes.indexOf('check-box') === -1) {
+    if (tagName !== 'button' && tagName !== 'a' &&
+      classes.indexOf('check-box') === -1) {
       if (this.activeMenuItem === menuItems[0]) {
         return true;
       } else {
@@ -93,8 +97,10 @@ var MenuDrop = React.createClass({
     }
 
     this.activeMenuItem.focus();
-    this.refs.menuDrop.setAttribute('aria-activedescendant', this.activeMenuItem.getAttribute('id'));
-    // Stops KeyboardAccelerators from calling the other listeners. Works limilar to event.stopPropagation().
+    this.refs.menuDrop.setAttribute('aria-activedescendant',
+      this.activeMenuItem.getAttribute('id'));
+    // Stops KeyboardAccelerators from calling the other listeners.
+    // Works limilar to event.stopPropagation().
     return true;
   },
 
@@ -110,7 +116,8 @@ var MenuDrop = React.createClass({
     var classes = this.activeMenuItem.className.split(/\s+/);
     var tagName = this.activeMenuItem.tagName.toLowerCase();
     // want to skip items of the menu that are not focusable.
-    if (tagName !== 'button' && tagName !== 'a' && classes.indexOf('check-box') === -1) {
+    if (tagName !== 'button' && tagName !== 'a' &&
+      classes.indexOf('check-box') === -1) {
       if (this.activeMenuItem === menuItems[menuItems.length - 1]) {
         return true;
       } else {
@@ -120,8 +127,10 @@ var MenuDrop = React.createClass({
     }
 
     this.activeMenuItem.focus();
-    this.refs.menuDrop.setAttribute('aria-activedescendant', this.activeMenuItem.getAttribute('id'));
-    // Stops KeyboardAccelerators from calling the other listeners. Works limilar to event.stopPropagation().
+    this.refs.menuDrop.setAttribute('aria-activedescendant',
+      this.activeMenuItem.getAttribute('id'));
+    // Stops KeyboardAccelerators from calling the other listeners.
+    // Works limilar to event.stopPropagation().
     return true;
   },
 
@@ -131,7 +140,8 @@ var MenuDrop = React.createClass({
 
     var first = this.props.control;
     var second = (
-      <Box ref="navContainer" tag="nav" className={CLASS_ROOT + '__contents'} {...other} >
+      <Box ref="navContainer" tag="nav" {...other}
+        className={CLASS_ROOT + '__contents'}>
         {this.props.children}
       </Box>
     );
@@ -165,6 +175,7 @@ var MenuDrop = React.createClass({
 var Menu = React.createClass({
 
   propTypes: merge({
+    a11yTitle: React.PropTypes.string,
     closeOnClick: React.PropTypes.bool,
     collapse: React.PropTypes.bool, // deprecated, remove in 0.5
     dropAlign: Drop.alignPropType,
@@ -186,6 +197,7 @@ var Menu = React.createClass({
 
   getDefaultProps: function () {
     return {
+      a11yTitle: 'Menu',
       closeOnClick: true,
       direction: 'column',
       dropAlign: {top: 'top', left: 'left'},
@@ -196,9 +208,6 @@ var Menu = React.createClass({
   },
 
   getInitialState: function () {
-    if (this.props.hasOwnProperty('collapse')) {
-      console.log('The Grommet Menu "collapse" property is deprecated. Please use "inline" instead.'); // TODO: remove this message in version 0.4.0
-    }
     var inline;
     if (this.props.hasOwnProperty('inline')) {
       inline = this.props.inline;
@@ -220,23 +229,6 @@ var Menu = React.createClass({
         dropId: 'menu-drop-' + controlElement.getAttribute('data-reactid'),
         controlHeight: this.refs.control.clientHeight + 'px'
       });
-
-      controlElement.setAttribute('role', 'menu');
-      var expanded = this.state.state === 'expanded';
-      controlElement.setAttribute('aria-expanded', expanded);
-      if (this.props.label) {
-        controlElement.setAttribute('aria-label', this.props.label);
-      } else if (this.props.icon) {
-        try {
-          var icon = controlElement.getElementsByClassName('control-icon')[0];
-          if (!icon.getAttribute('id')) {
-            icon.setAttribute('id', icon.getAttribute('data-reactid'));
-          }
-          controlElement.setAttribute('aria-labelledby', icon.getAttribute('id'));
-        } catch (exception) {
-          console.log('Unable to add aria-label to Menu component.');
-        }
-      }
     }
 
     if (this.props.inline && this.props.responsive) {
@@ -245,15 +237,15 @@ var Menu = React.createClass({
   },
 
   componentDidUpdate: function (prevProps, prevState) {
-    // Set up keyboard listeners appropriate to the current state.
-
     if (this.state.state !== prevState.state) {
       var activeKeyboardHandlers = {
-        esc: this._onClose
+        esc: this._onClose,
+        tab: this._onClose
       };
       var focusedKeyboardHandlers = {
         space: this._onOpen,
-        down: this._onOpen
+        down: this._onOpen,
+        enter: this._onOpen
       };
 
       switch (this.state.state) {
@@ -280,13 +272,6 @@ var Menu = React.createClass({
           this._drop.render(this._renderDrop());
           break;
       }
-      if (this.refs.control) {
-        var controlElement = this.refs.control;
-        var expanded = this.state.state === 'expanded';
-        controlElement.setAttribute('aria-expanded', expanded);
-      }
-    } else if ('expanded' === this.state.state) {
-      this._drop.render(this._renderDrop());
     }
   },
 
@@ -301,8 +286,7 @@ var Menu = React.createClass({
     }
   },
 
-  _onOpen: function (event) {
-    event.preventDefault();
+  _onOpen: function () {
     this.setState({state: 'expanded'});
   },
 
@@ -313,16 +297,6 @@ var Menu = React.createClass({
       this.setState({state: 'focused'});
     } else {
       element.focus();
-    }
-  },
-
-  _onFocusControl: function () {
-    this.setState({state: 'focused'});
-  },
-
-  _onBlurControl: function () {
-    if (this.state.state === 'focused') {
-      this.setState({state: 'collapsed'});
     }
   },
 
@@ -349,7 +323,17 @@ var Menu = React.createClass({
     }
   },
 
-  _renderControl: function () {
+  _onFocusControl: function () {
+    this.setState({state: 'focused'});
+  },
+
+  _onBlurControl: function () {
+    if (this.state.state === 'focused') {
+      this.setState({state: 'collapsed'});
+    }
+  },
+
+  _renderControl: function (clickable) {
     var result = null;
     var icon = null;
 
@@ -365,6 +349,13 @@ var Menu = React.createClass({
       icon = <MoreIcon />;
     }
 
+    if (clickable) {
+      icon = (
+        <Button type="icon" onClick={this._onClose}>
+          {icon}
+        </Button>
+      );
+    }
     var onClick;
     if (this.props.closeOnClick) {
       onClick = this._onClose;
@@ -376,7 +367,10 @@ var Menu = React.createClass({
           <div className={controlClassName + "-icon"}>
             {icon}
           </div>
-          <span tabIndex="-1" style={{lineHeight: this.state.controlHeight}} className={controlClassName + "-label"}>{this.props.label}</span>
+          <span tabIndex="-1" style={{lineHeight: this.state.controlHeight}}
+            className={controlClassName + "-label"}>
+            {this.props.label}
+          </span>
           <DropCaretIcon className={controlClassName + "-drop-icon"} />
         </div>
       );
@@ -393,7 +387,7 @@ var Menu = React.createClass({
   _renderDrop: function() {
     var other = pick(this.props, keys(Box.propTypes));
 
-    var controlContents = this._renderControl();
+    var controlContents = this._renderControl(true);
 
     var onClick;
     if (this.props.closeOnClick) {
@@ -447,7 +441,6 @@ var Menu = React.createClass({
       if (this.props.label) {
         classes.push(CLASS_ROOT + "--labelled");
       }
-      classes.push(CLASS_ROOT + "--" + this.state.state);
     }
     if (this.props.className) {
       classes.push(this.props.className);
@@ -457,8 +450,8 @@ var Menu = React.createClass({
       var other = pick(this.props, keys(Box.propTypes));
 
       return (
-        <Box tag="nav" id={this.props.id} {...other} className={classes.join(' ')}
-          onClick={this._onClose}>
+        <Box tag="nav" id={this.props.id} {...other}
+          className={classes.join(' ')}>
           {this.props.children}
         </Box>
       );
@@ -467,11 +460,15 @@ var Menu = React.createClass({
 
       var controlContents = this._renderControl();
 
+      var menuTitle = Intl.getMessage(this.context.intl,
+        this.props.label || this.props.a11yTitle);
+
       return (
         <div ref="control" id={this.props.id}
           className={classes.join(' ')}
           tabIndex="0"
           onClick={this._onOpen}
+          role="link" aria-label={menuTitle}
           onFocus={this._onFocusControl}
           onBlur={this._onBlurControl}>
           {controlContents}
