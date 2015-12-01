@@ -5,7 +5,7 @@ $button-accent-color: #ff8d6d;
 .button {
   letter-spacing: 0.04167em;
 
-  &:not(.button--disabled) {
+  &:not(.button--disabled):not(.button--icon) {
 
     &:hover {
       box-shadow: 0px 0px 0px 2px $button-border-color;

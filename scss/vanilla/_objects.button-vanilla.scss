@@ -7,7 +7,7 @@ $active-darken: 20%;
 .button {
   border-radius: 5px;
 
-  &:not(.button--disabled) {
+  &:not(.button--disabled):not(.button--icon) {
 
     &:hover {
       box-shadow: 0px 0px 0px 2px $button-border-color;

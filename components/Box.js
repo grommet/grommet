@@ -69,16 +69,7 @@ var Box = React.createClass({
 
   componentWillUnmount: function componentWillUnmount() {
     if (this.props.onClick) {
-      var clickCallback = function clickCallback() {
-        if (this.refs.boxContainer === document.activeElement) {
-          this.props.onClick();
-        }
-      };
-
-      KeyboardAccelerators.stopListeningToKeyboard(this, {
-        enter: clickCallback,
-        space: clickCallback
-      });
+      KeyboardAccelerators.stopListeningToKeyboard(this);
     }
   },
 
