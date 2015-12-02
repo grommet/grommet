@@ -6,6 +6,10 @@
   background-size: cover;
   background-repeat: no-repeat;
 
+  img {
+    max-width: $readable-text-width;
+  }
+
   &__container {
     padding-left: $inuit-base-spacing-unit;
     padding-right: $inuit-base-spacing-unit;
