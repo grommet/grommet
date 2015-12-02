@@ -60,6 +60,11 @@ var Meter = React.createClass({
   displayName: 'Meter',
 
   propTypes: {
+    a11yRole: React.PropTypes.string,
+    a11yTitle: React.PropTypes.string,
+    a11yTitleId: React.PropTypes.string,
+    a11yDescId: React.PropTypes.string,
+    a11yDesc: React.PropTypes.string,
     important: React.PropTypes.number,
     large: React.PropTypes.bool, // DEPRECATED: remove in 0.5, use size
     legend: React.PropTypes.oneOfType([React.PropTypes.bool, React.PropTypes.shape({
@@ -92,12 +97,7 @@ var Meter = React.createClass({
     type: React.PropTypes.oneOf(['bar', 'arc', 'circle', 'spiral']),
     units: React.PropTypes.string,
     value: React.PropTypes.number,
-    vertical: React.PropTypes.bool,
-    a11yRole: React.PropTypes.string,
-    a11yTitle: React.PropTypes.string,
-    a11yTitleId: React.PropTypes.string,
-    a11yDescId: React.PropTypes.string,
-    a11yDesc: React.PropTypes.string
+    vertical: React.PropTypes.bool
   },
 
   contextTypes: {
@@ -106,10 +106,10 @@ var Meter = React.createClass({
 
   getDefaultProps: function getDefaultProps() {
     return {
-      type: 'bar',
       a11yRole: 'img',
       a11yTitleId: 'meter-title',
-      a11yDescId: 'meter-desc'
+      a11yDescId: 'meter-desc',
+      type: 'bar'
     };
   },
 
@@ -763,12 +763,12 @@ var Meter = React.createClass({
     var a11yTitle = Intl.getMessage(this.context.intl, titleKey);
 
     var defaultA11YDesc;
-    if (this.props.a11yTitle !== "undefined") {
+    if (this.props.a11yDesc !== "undefined") {
       var fields = this._getActiveFields();
       defaultA11YDesc = [', Value: ', fields.value, this.props.units || '', fields.label, this.state.min.label ? ', Minimum: ' + this.state.min.label : '', this.state.max.label ? ', Maximum: ' + this.state.max.label : '', this.props.threshold ? ', Threshold: ' + this.props.threshold : '', this.props.thresholds ? getThresholdsString(this.props.thresholds) : ''].join(' ').trim();
     }
 
-    var descKey = typeof this.props.a11yTitle !== "undefined" ? this.props.a11yTitle : defaultA11YDesc;
+    var descKey = typeof this.props.a11yDesc !== "undefined" ? this.props.a11yDesc : defaultA11YDesc;
     var a11yDesc = Intl.getMessage(this.context.intl, descKey);
 
     return React.createElement(

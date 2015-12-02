@@ -145,13 +145,13 @@ module.exports = function(gulp, options, webpackConfig, dist) {
 
     server.app.get('/reload', function(req, res) {
       // Tell connected browsers to reload.
-      server.io.sockets.emit('ok');
+      server.sockWrite(server.sockets, 'ok');
       res.sendStatus(200);
     });
 
     server.app.get('/invalid', function(req, res) {
-      // Tell connected browsers to reload.
-      server.io.sockets.emit('invalid');
+      // Tell connected browsers some change is about to happen.
+      server.sockWrite(server.sockets, 'invalid');
       res.sendStatus(200);
     });
 
