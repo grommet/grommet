@@ -20,6 +20,7 @@ var CarouselControls = require('./CarouselControls');
 // var DownIcon = require('./icons/base/Down');
 
 var CLASS_ROOT = "article";
+var DEFAULT_PLAY_INTERVAL = 10000; // 10s
 
 var Article = React.createClass({
   displayName: 'Article',
@@ -38,18 +39,18 @@ var Article = React.createClass({
   },
 
   getInitialState: function getInitialState() {
-    return { selected: 1 };
+    return { selected: 1, playing: false };
   },
 
   componentDidMount: function componentDidMount() {
     if (this.props.scrollStep) {
-
       var keys;
       if ('row' === this.props.direction) {
         keys = { left: this._onPrevious, right: this._onNext };
       } else {
         keys = { up: this._onPrevious, down: this._onNext };
       }
+      keys.space = this._onTogglePlay;
       KeyboardAccelerators.startListeningToKeyboard(this, keys);
 
       document.addEventListener('wheel', this._onWheel);
@@ -66,6 +67,7 @@ var Article = React.createClass({
       } else {
         keys = { up: this._onPrevious, down: this._onNext };
       }
+      keys.space = this._onTogglePlay;
       KeyboardAccelerators.stopListeningToKeyboard(this, keys);
 
       document.removeEventListener('wheel', this._onWheel);
@@ -94,36 +96,40 @@ var Article = React.createClass({
     }
   },
 
-  _onNext: function _onNext(event) {
+  _onNext: function _onNext(event, wrap) {
     if (event) {
+      this._stop();
       event.preventDefault();
     }
     var articleElement = ReactDOM.findDOMNode(this.refs.component);
     var children = articleElement.children;
-    for (var i = 0; i < children.length; i += 1) {
+    var advanced = false;
+    for (var i = 0; i < children.length - 1; i += 1) {
       var child = children[i];
       var rect = child.getBoundingClientRect();
       // 10 is for fuzziness
       if ('row' === this.props.direction) {
-        if (rect.right > 10 && (event || rect.right < window.innerWidth)) {
-          // Scroll.scrollBy(this._scrollParent, 'scrollLeft', rect.right);
-          // this.setState({selected: i + 2});
+        if (rect.right > 10 && i + 2 !== this.state.selected && (event || wrap || rect.right < window.innerWidth)) {
           this._onSelect(i + 2);
+          advanced = true;
           break;
         }
       } else {
-        if (rect.bottom > 10 && (event || rect.bottom < window.innerHeight)) {
-          // Scroll.scrollBy(this._scrollParent, 'scrollTop', rect.bottom);
-          // this.setState({selected: i + 2});
+        if (rect.bottom > 10 && i + 2 !== this.state.selected && (event || wrap || rect.bottom < window.innerHeight)) {
           this._onSelect(i + 2);
+          advanced = true;
           break;
         }
       }
+    }
+    if (wrap && !advanced) {
+      this._onSelect(1);
     }
   },
 
   _onPrevious: function _onPrevious(event) {
     if (event) {
+      this._stop();
       event.preventDefault();
     }
     var articleElement = ReactDOM.findDOMNode(this.refs.component);
@@ -153,6 +159,27 @@ var Article = React.createClass({
           break;
         }
       }
+    }
+  },
+
+  _start: function _start() {
+    this._playTimer = setInterval((function () {
+      this._onNext(null, true);
+    }).bind(this), DEFAULT_PLAY_INTERVAL);
+    this.setState({ playing: true });
+  },
+
+  _stop: function _stop() {
+    clearInterval(this._playTimer);
+    this.setState({ playing: false });
+  },
+
+  _onTogglePlay: function _onTogglePlay(event) {
+    event.preventDefault();
+    if (this.state.playing) {
+      this._stop();
+    } else {
+      this._start();
     }
   },
 
