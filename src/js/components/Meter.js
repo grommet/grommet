@@ -62,6 +62,11 @@ function getThresholdsString(thresholds) {
 var Meter = React.createClass({
 
   propTypes: {
+    a11yRole: React.PropTypes.string,
+    a11yTitle: React.PropTypes.string,
+    a11yTitleId: React.PropTypes.string,
+    a11yDescId: React.PropTypes.string,
+    a11yDesc: React.PropTypes.string,
     important: React.PropTypes.number,
     large: React.PropTypes.bool, // DEPRECATED: remove in 0.5, use size
     legend: React.PropTypes.oneOfType([
@@ -103,12 +108,7 @@ var Meter = React.createClass({
     type: React.PropTypes.oneOf(['bar', 'arc', 'circle', 'spiral']),
     units: React.PropTypes.string,
     value: React.PropTypes.number,
-    vertical: React.PropTypes.bool,
-    a11yRole: React.PropTypes.string,
-    a11yTitle: React.PropTypes.string,
-    a11yTitleId: React.PropTypes.string,
-    a11yDescId: React.PropTypes.string,
-    a11yDesc: React.PropTypes.string
+    vertical: React.PropTypes.bool
   },
 
   contextTypes: {
@@ -117,10 +117,10 @@ var Meter = React.createClass({
 
   getDefaultProps: function () {
     return {
-      type: 'bar',
       a11yRole: 'img',
       a11yTitleId: 'meter-title',
-      a11yDescId: 'meter-desc'
+      a11yDescId: 'meter-desc',
+      type: 'bar'
     };
   },
 
@@ -806,7 +806,7 @@ var Meter = React.createClass({
     var a11yTitle = Intl.getMessage(this.context.intl, titleKey);
 
     var defaultA11YDesc;
-    if (this.props.a11yTitle !== "undefined") {
+    if (this.props.a11yDesc !== "undefined") {
       var fields = this._getActiveFields();
       defaultA11YDesc = [
         ', Value: ',
@@ -820,8 +820,8 @@ var Meter = React.createClass({
       ].join(' ').trim();
     }
 
-    var descKey = typeof this.props.a11yTitle !== "undefined" ?
-        this.props.a11yTitle : defaultA11YDesc;
+    var descKey = typeof this.props.a11yDesc !== "undefined" ?
+        this.props.a11yDesc : defaultA11YDesc;
     var a11yDesc = Intl.getMessage(this.context.intl, descKey);
 
     return (
