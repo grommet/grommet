@@ -966,7 +966,15 @@ var Chart = React.createClass({
     var defaultA11YDesc = '';
     var descKey = typeof this.props.a11yDesc !== "undefined" ?
         this.props.a11yDesc : defaultA11YDesc;
-    var a11yDesc = Intl.getMessage(this.context.intl, descKey);
+
+    var a11yDescNode;
+    if (descKey) {
+      a11yDescNode = (
+        <desc id={this.props.a11yDescId}>
+          {Intl.getMessage(this.context.intl, descKey)}
+        </desc>
+      );
+    }
 
     return (
       <div className={classes.join(' ')}>
@@ -976,7 +984,7 @@ var Chart = React.createClass({
           aria-activedescendant={activeDescendant}
           aria-labelledby={this.props.a11yTitleId + ' ' + this.props.a11yDescId}>
           <title id={this.props.a11yTitleId}>{a11yTitle}</title>
-          <desc id={this.props.a11yDescId}>{a11yDesc}</desc>
+          {a11yDescNode}
           {xAxis}
           {yAxis}
           <g className={CLASS_ROOT + "__values"}>{values}</g>
