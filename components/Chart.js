@@ -6,6 +6,9 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var Legend = require('./Legend');
 
+var Intl = require('../utils/Intl');
+var KeyboardAccelerators = require('../utils/KeyboardAccelerators');
+
 var CLASS_ROOT = "chart";
 
 var DEFAULT_WIDTH = 384;
@@ -22,6 +25,10 @@ var Chart = React.createClass({
   displayName: 'Chart',
 
   propTypes: {
+    a11yTitle: React.PropTypes.string,
+    a11yTitleId: React.PropTypes.string,
+    a11yDescId: React.PropTypes.string,
+    a11yDesc: React.PropTypes.string,
     important: React.PropTypes.number,
     large: React.PropTypes.bool,
     legend: React.PropTypes.shape({
@@ -63,8 +70,14 @@ var Chart = React.createClass({
     })])
   },
 
+  contextTypes: {
+    intl: React.PropTypes.object
+  },
+
   getDefaultProps: function getDefaultProps() {
     return {
+      a11yTitleId: 'chart-title',
+      a11yDescId: 'chart-desc',
       min: 0,
       type: 'line'
     };
@@ -77,6 +90,15 @@ var Chart = React.createClass({
   componentDidMount: function componentDidMount() {
     window.addEventListener('resize', this._onResize);
     this._onResize();
+
+    //only add listerners if graph is interactive
+    if (this.props.legend) {
+      this._keyboardHandlers = {
+        left: this._onRequestForPreviousLegend,
+        right: this._onRequestForNextLegend
+      };
+      KeyboardAccelerators.startListeningToKeyboard(this, this._keyboardHandlers);
+    }
   },
 
   componentWillReceiveProps: function componentWillReceiveProps(newProps) {
@@ -91,6 +113,36 @@ var Chart = React.createClass({
   componentWillUnmount: function componentWillUnmount() {
     clearTimeout(this._resizeTimer);
     window.removeEventListener('resize', this._onResize);
+
+    if (this.props.legend) {
+      KeyboardAccelerators.stopListeningToKeyboard(this, this._keyboardHandlers);
+    }
+  },
+
+  _onRequestForNextLegend: function _onRequestForNextLegend() {
+    if (document.activeElement === this.refs.chart) {
+
+      var totalBandCount = ReactDOM.findDOMNode(this.refs.front).childNodes.length;
+
+      if (this.state.activeXIndex - 1 < 0) {
+        this._onMouseOver(totalBandCount - 1);
+      } else {
+        this._onMouseOver(--this.state.activeXIndex);
+      }
+    }
+  },
+
+  _onRequestForPreviousLegend: function _onRequestForPreviousLegend() {
+    if (document.activeElement === this.refs.chart) {
+
+      var totalBandCount = ReactDOM.findDOMNode(this.refs.front).childNodes.length;
+
+      if (this.state.activeXIndex + 1 >= totalBandCount) {
+        this._onMouseOver(0);
+      } else {
+        this._onMouseOver(++this.state.activeXIndex);
+      }
+    }
   },
 
   _onMouseOver: function _onMouseOver(xIndex) {
@@ -454,7 +506,7 @@ var Chart = React.createClass({
 
       return React.createElement(
         'g',
-        { key: seriesIndex },
+        { key: 'line_group_' + seriesIndex },
         areaPath,
         linePath,
         points
@@ -483,7 +535,7 @@ var Chart = React.createClass({
           classes.push(CLASS_ROOT + "__values-bar--active");
         }
 
-        return React.createElement('rect', { key: item.label || seriesIndex,
+        return React.createElement('rect', { key: 'bar_rect_' + item.label || seriesIndex,
           className: classes.join(' '),
           x: this._translateX(value[0]) + bounds.barPadding,
           y: this.state.height - (stepBarHeight + stepBarBase),
@@ -493,7 +545,7 @@ var Chart = React.createClass({
 
       return React.createElement(
         'g',
-        { key: xIndex },
+        { key: 'bar_' + xIndex },
         stepBars
       );
     }, this);
@@ -579,7 +631,7 @@ var Chart = React.createClass({
 
       return React.createElement(
         'g',
-        { key: xIndex, className: classes.join(' ') },
+        { key: 'x_axis_' + xIndex, className: classes.join(' ') },
         React.createElement(
           'text',
           { x: position.x, y: labelY,
@@ -615,7 +667,7 @@ var Chart = React.createClass({
       var y = this._translateY(end);
       start = end;
 
-      return React.createElement('rect', { key: index,
+      return React.createElement('rect', { key: 'y_rect_' + index,
         className: classes.join(' '),
         x: this.state.width - width,
         y: y,
@@ -628,6 +680,34 @@ var Chart = React.createClass({
       { ref: 'yAxis', className: CLASS_ROOT + "__yaxis" },
       bars
     );
+  },
+
+  _activeSeriesAsString: function _activeSeriesAsString() {
+    var total = 0;
+    var seriesText = this._getActiveSeries().map(function (currentSeries) {
+      total += currentSeries.value;
+
+      var stringify = [currentSeries.label];
+
+      if (currentSeries.value !== undefined) {
+        stringify.push(': ' + currentSeries.value);
+
+        if (currentSeries.units) {
+          stringify.push(' ' + currentSeries.units);
+        }
+      }
+
+      return stringify.join('');
+    }).join('; ');
+
+    var totalText = '';
+    if (this.props.legend.total) {
+      var totalMessage = Intl.getMessage(this.context.intl, 'Total');
+      totalText = totalMessage + ': ' + total + this.props.units || '';
+      seriesText += ', ' + totalText;
+    }
+
+    return seriesText;
   },
 
   // Create vertical rects for each X data point.
@@ -656,18 +736,29 @@ var Chart = React.createClass({
         onMouseOut = this._onMouseOut.bind(this, xIndex);
       }
 
+      var xBandId = this.props.a11yTitleId + '_x_band_' + xIndex;
+      var xBandTitleId = this.props.a11yTitleId + '_x_band_title_' + xIndex;
+
+      var seriesText = this._activeSeriesAsString();
+
       return React.createElement(
         'g',
-        { key: xIndex, className: classes.join(' '),
-          onMouseOver: onMouseOver, onMouseOut: onMouseOut },
-        React.createElement('rect', { className: className + "-xband-background",
+        { id: xBandId, key: xBandId, className: classes.join(' '),
+          onMouseOver: onMouseOver, onMouseOut: onMouseOut, role: 'gridcell',
+          'aria-labelledby': xBandTitleId },
+        React.createElement(
+          'title',
+          { id: xBandTitleId },
+          obj.label + ' ' + seriesText
+        ),
+        React.createElement('rect', { role: 'presentation', className: className + "-xband-background",
           x: x, y: 0, width: bounds.xStepWidth, height: this.state.height })
       );
     }, this);
 
     return React.createElement(
       'g',
-      { ref: layer, className: className },
+      { ref: layer, role: 'row', className: className },
       bands
     );
   },
@@ -706,20 +797,26 @@ var Chart = React.createClass({
     );
   },
 
-  // Builds a Legend appropriate for the currently active X index.
-  _renderLegend: function _renderLegend() {
-    var activeSeries = this.props.series.map(function (item) {
+  _getActiveSeries: function _getActiveSeries(addColorIndex) {
+    return this.props.series.map(function (item) {
       var datum = {
         value: item.values[this.state.activeXIndex][1],
-        units: item.units
+        units: item.units || this.props.units
       };
       // only show label and swatch if we have more than one series
       if (this.props.series.length > 1) {
         datum.label = item.label;
-        datum.colorIndex = item.colorIndex;
+        if (addColorIndex) {
+          datum.colorIndex = item.colorIndex;
+        }
       }
       return datum;
     }, this);
+  },
+
+  // Builds a Legend appropriate for the currently active X index.
+  _renderLegend: function _renderLegend() {
+    var activeSeries = this._getActiveSeries(true);
     var classes = [CLASS_ROOT + "__legend", CLASS_ROOT + "__legend--" + (this.props.legend.position || 'overlay')];
 
     return React.createElement(Legend, { ref: 'legend', className: classes.join(' '),
@@ -780,10 +877,28 @@ var Chart = React.createClass({
       yAxis = this._renderYAxis();
     }
 
-    var frontBands = null;
+    var frontBands;
+    var activeDescendant;
     if (this.props.legend) {
       frontBands = this._renderXBands('front');
+      activeDescendant = this.props.a11yTitleId + '_x_band_' + this.state.activeXIndex;
     }
+
+    var role = 'img';
+    if (activeDescendant) {
+      role = 'tablist';
+    }
+    var defaultTitle;
+    if (!this.props.a11yTitle) {
+      defaultTitle = ['Chart, ', 'Type: ', this.props.type].join(' ').trim();
+    }
+
+    var titleKey = typeof this.props.a11yTitle !== "undefined" ? this.props.a11yTitle : defaultTitle;
+    var a11yTitle = Intl.getMessage(this.context.intl, titleKey);
+
+    var defaultA11YDesc = '';
+    var descKey = typeof this.props.a11yDesc !== "undefined" ? this.props.a11yDesc : defaultA11YDesc;
+    var a11yDesc = Intl.getMessage(this.context.intl, descKey);
 
     return React.createElement(
       'div',
@@ -792,7 +907,19 @@ var Chart = React.createClass({
         'svg',
         { ref: 'chart', className: CLASS_ROOT + "__graphic",
           viewBox: "0 0 " + this.state.width + " " + this.state.height,
-          preserveAspectRatio: 'none' },
+          preserveAspectRatio: 'none', role: role, tabIndex: '0',
+          'aria-activedescendant': activeDescendant,
+          'aria-labelledby': this.props.a11yTitleId + ' ' + this.props.a11yDescId },
+        React.createElement(
+          'title',
+          { id: this.props.a11yTitleId },
+          a11yTitle
+        ),
+        React.createElement(
+          'desc',
+          { id: this.props.a11yDescId },
+          a11yDesc
+        ),
         xAxis,
         yAxis,
         React.createElement(
