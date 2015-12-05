@@ -898,7 +898,15 @@ var Chart = React.createClass({
 
     var defaultA11YDesc = '';
     var descKey = typeof this.props.a11yDesc !== "undefined" ? this.props.a11yDesc : defaultA11YDesc;
-    var a11yDesc = Intl.getMessage(this.context.intl, descKey);
+
+    var a11yDescNode;
+    if (descKey) {
+      a11yDescNode = React.createElement(
+        'desc',
+        { id: this.props.a11yDescId },
+        Intl.getMessage(this.context.intl, descKey)
+      );
+    }
 
     return React.createElement(
       'div',
@@ -915,11 +923,7 @@ var Chart = React.createClass({
           { id: this.props.a11yTitleId },
           a11yTitle
         ),
-        React.createElement(
-          'desc',
-          { id: this.props.a11yDescId },
-          a11yDesc
-        ),
+        a11yDescNode,
         xAxis,
         yAxis,
         React.createElement(
