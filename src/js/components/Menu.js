@@ -272,6 +272,8 @@ var Menu = React.createClass({
           this._drop.render(this._renderDrop());
           break;
       }
+    } else if (this.state.state === 'expanded') {
+      this._drop.render(this._renderDrop());
     }
   },
 
@@ -295,8 +297,6 @@ var Menu = React.createClass({
     var element = ReactDOM.findDOMNode(this);
     if (document.activeElement === element) {
       this.setState({state: 'focused'});
-    } else {
-      element.focus();
     }
   },
 
