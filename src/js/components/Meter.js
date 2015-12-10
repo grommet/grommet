@@ -1,53 +1,23 @@
-// (C) Copyright 2014 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
-var ReactDOM = require('react-dom');
+import React, { Component, PropTypes } from 'react';
+import ReactDOM from 'react-dom';
 
-var Legend = require('./Legend');
-var Intl = require('../utils/Intl');
+import Legend from './Legend';
+import Intl from '../utils/Intl';
+import Bar from './meter/Bar';
+import Spiral from './meter/Spiral';
+import Circle from './meter/Circle';
+import Arc from './meter/Arc';
 
-var CLASS_ROOT = "meter";
+const CLASS_ROOT = "meter";
 
-var BAR_LENGTH = 192;
-var BAR_THICKNESS = 24;
-var MID_BAR_THICKNESS = BAR_THICKNESS / 2;
-
-var CIRCLE_WIDTH = 192;
-var CIRCLE_RADIUS = 84;
-
-var ARC_HEIGHT = 144;
-
-var SPIRAL_THICKNESS = 24;
-// Allow for active value content next to a spiral meter
-var SPIRAL_TEXT_PADDING = 48;
-
-function polarToCartesian (centerX, centerY, radius, angleInDegrees) {
-  var angleInRadians = (angleInDegrees - 90) * Math.PI / 180.0;
-  return {
-    x: centerX + (radius * Math.cos(angleInRadians)),
-    y: centerY + (radius * Math.sin(angleInRadians))
-  };
-}
-
-function arcCommands (centerX, centerY, radius, startAngle, endAngle) {
-  var start = polarToCartesian(centerX, centerY, radius, endAngle);
-  var end = polarToCartesian(centerX, centerY, radius, startAngle);
-  var arcSweep = endAngle - startAngle <= 180 ? "0" : "1";
-  var d = [
-    "M", start.x, start.y,
-    "A", radius, radius, 0, arcSweep, 0, end.x, end.y
-  ].join(" ");
-  return d;
-}
-
-function singleIndicatorCommands (centerX, centerY, radius, startAngle, endAngle, length) {
-  var point = polarToCartesian(centerX, centerY, radius - length, endAngle - 1);
-  var start = polarToCartesian(centerX, centerY, radius, endAngle - 1);
-  var d = ["M", start.x, start.y,
-    "L", point.x, point.y
-  ].join(" ");
-  return d;
-}
+const TYPE_COMPONENT = {
+  'bar': Bar,
+  'circle': Circle,
+  'arc': Arc,
+  'spiral': Spiral
+};
 
 function getThresholdsString(thresholds) {
   var thresholdsArray = [', Thresholds: '];
@@ -59,120 +29,63 @@ function getThresholdsString(thresholds) {
   return thresholdsArray.join(' ');
 }
 
-var Meter = React.createClass({
+class Meter extends Component {
 
-  propTypes: {
-    a11yRole: React.PropTypes.string,
-    a11yTitle: React.PropTypes.string,
-    a11yTitleId: React.PropTypes.string,
-    a11yDescId: React.PropTypes.string,
-    a11yDesc: React.PropTypes.string,
-    important: React.PropTypes.number,
-    large: React.PropTypes.bool, // DEPRECATED: remove in 0.5, use size
-    legend: React.PropTypes.oneOfType([
-      React.PropTypes.bool,
-      React.PropTypes.shape({
-        total: React.PropTypes.bool,
-        placement: React.PropTypes.oneOf(['right', 'bottom'])
-      })
-    ]),
-    max: React.PropTypes.oneOfType([
-      React.PropTypes.shape({
-        value: React.PropTypes.number.isRequired,
-        label: React.PropTypes.string
-      }),
-      React.PropTypes.number
-    ]),
-    min: React.PropTypes.oneOfType([
-      React.PropTypes.shape({
-        value: React.PropTypes.number.isRequired,
-        label: React.PropTypes.string
-      }),
-      React.PropTypes.number
-    ]),
-    size: React.PropTypes.oneOf(['small', 'medium', 'large']),
-    series: React.PropTypes.arrayOf(React.PropTypes.shape({
-      label: React.PropTypes.string,
-      value: React.PropTypes.number.isRequired,
-      colorIndex: React.PropTypes.string,
-      important: React.PropTypes.bool,
-      onClick: React.PropTypes.func
-    })),
-    small: React.PropTypes.bool, // DEPRECATED: remove in 0.5, use size
-    threshold: React.PropTypes.number,
-    thresholds: React.PropTypes.arrayOf(React.PropTypes.shape({
-      label: React.PropTypes.string,
-      value: React.PropTypes.number.isRequired,
-      colorIndex: React.PropTypes.string
-    })),
-    type: React.PropTypes.oneOf(['bar', 'arc', 'circle', 'spiral']),
-    units: React.PropTypes.string,
-    value: React.PropTypes.number,
-    vertical: React.PropTypes.bool
-  },
+  constructor(props) {
+    super();
 
-  contextTypes: {
-    intl: React.PropTypes.object
-  },
+    this._initialTimeout = this._initialTimeout.bind(this);
+    this._layout = this._layout.bind(this);
+    this._onResize = this._onResize.bind(this);
+    this._onActivate = this._onActivate.bind(this);
 
-  getDefaultProps: function () {
-    return {
-      a11yRole: 'img',
-      a11yTitleId: 'meter-title',
-      a11yDescId: 'meter-desc',
-      type: 'bar'
-    };
-  },
-
-  getInitialState: function() {
-    var state = this._stateFromProps(this.props);
-    if (state.placeLegend) {
-      state.legendPlacement = 'bottom';
+    this.state = this._stateFromProps(props);
+    if (this.state.placeLegend) {
+      this.state.legendPlacement = 'bottom';
     }
-    state.initial = true;
-    return state;
-  },
+    this.state.initial = true;
+  }
 
-  componentDidMount: function() {
+  componentDidMount () {
     this._initialTimer = setTimeout(this._initialTimeout, 10);
     window.addEventListener('resize', this._onResize);
     this._onResize();
-  },
+  }
 
-  componentWillReceiveProps: function (newProps) {
-    var state = this._stateFromProps(newProps);
+  componentWillReceiveProps (nextProps) {
+    var state = this._stateFromProps(nextProps);
     this.setState(state);
     this._onResize();
-  },
+  }
 
-  componentWillUnmount: function() {
+  componentWillUnmount () {
     clearTimeout(this._initialTimer);
     clearTimeout(this._resizeTimer);
     window.removeEventListener('resize', this._onResize);
-  },
+  }
 
-  _initialTimeout: function () {
+  _initialTimeout () {
     this.setState({
       initial: false,
       activeIndex: this.state.importantIndex
     });
-    clearTimeout(this._timeout);
-  },
+    clearTimeout(this._initialTimer);
+  }
 
-  _onActivate: function (index) {
+  _onActivate (index) {
     if (index === null) {
       index = this.state.importantIndex;
     }
     this.setState({initial: false, activeIndex: index});
-  },
+  }
 
-  _onResize: function() {
+  _onResize () {
     // debounce
     clearTimeout(this._resizeTimer);
     this._resizeTimer = setTimeout(this._layout, 50);
-  },
+  }
 
-  _layout: function () {
+  _layout () {
     if (this.state.placeLegend) {
       // legendPlacement based on available window orientation
       var ratio = window.innerWidth / window.innerHeight;
@@ -190,9 +103,9 @@ var Meter = React.createClass({
         this.setState({tallLegend: (legendHeight > graphicHeight)});
       }
     }
-  },
+  }
 
-  _normalizeSeries: function (props, min, max, thresholds) {
+  _normalizeSeries (props, min, max, thresholds) {
     var series = [];
     if (props.series) {
       series = props.series;
@@ -225,9 +138,9 @@ var Meter = React.createClass({
     }
 
     return series;
-  },
+  }
 
-  _normalizeThresholds: function (props, min, max) {
+  _normalizeThresholds (props, min, max) {
     var thresholds = [];
     if (props.thresholds) {
       // Convert thresholds from absolute values to cummulative,
@@ -259,15 +172,15 @@ var Meter = React.createClass({
       ];
     }
     return thresholds;
-  },
+  }
 
-  _importantIndex: function (series) {
+  _importantIndex (props, series) {
     var result = null;
     if (series.length === 1) {
       result = 0;
     }
-    if (this.props.hasOwnProperty('important')) {
-      result = this.props.important;
+    if (props.hasOwnProperty('important')) {
+      result = props.important;
     }
     series.some(function (data, index) {
       if (data.important) {
@@ -276,65 +189,34 @@ var Meter = React.createClass({
       }
     });
     return result;
-  },
+  }
 
   // Normalize min or max to an object.
-  _terminal: function (terminal) {
+  _terminal (terminal) {
     if (typeof terminal === 'number') {
       terminal = {value: terminal};
     }
     return terminal;
-  },
+  }
 
-  _seriesTotal: function (series) {
+  _seriesTotal (series) {
     var total = 0;
     series.some(function (item) {
       total += item.value;
     });
     return total;
-  },
+  }
 
-  _seriesMax: function (series) {
+  _seriesMax (series) {
     var max = 0;
     series.some(function (item) {
       max = Math.max(max, item.value);
     });
     return max;
-  },
-
-  _viewBoxDimensions: function (series) {
-    var viewBoxHeight;
-    var viewBoxWidth;
-    if ('arc' === this.props.type) {
-      if (this.props.vertical) {
-        viewBoxWidth = ARC_HEIGHT;
-        viewBoxHeight = CIRCLE_WIDTH;
-      } else {
-        viewBoxWidth = CIRCLE_WIDTH;
-        viewBoxHeight = ARC_HEIGHT;
-      }
-    } else if ('circle' === this.props.type) {
-      viewBoxWidth = CIRCLE_WIDTH;
-      viewBoxHeight = CIRCLE_WIDTH;
-    } else if ('bar' === this.props.type) {
-      if (this.props.vertical) {
-        viewBoxWidth = BAR_THICKNESS;
-        viewBoxHeight = BAR_LENGTH;
-      } else {
-        viewBoxWidth = BAR_LENGTH;
-        viewBoxHeight = BAR_THICKNESS;
-      }
-    } else if ('spiral' === this.props.type) {
-      // Give the graphic just a bit of breathing room
-      // by not ending the spirals right at the center. (+1)
-      viewBoxHeight = Math.max(CIRCLE_WIDTH, SPIRAL_THICKNESS * (series.length + 1) * 2);
-      viewBoxWidth = viewBoxHeight + (2 * SPIRAL_TEXT_PADDING);
-    }
-    return [viewBoxWidth, viewBoxHeight];
-  },
+  }
 
   // Generates state based on the provided props.
-  _stateFromProps: function (props) {
+  _stateFromProps (props) {
     var total;
     if (props.series && props.series.length > 1) {
       total = this._seriesTotal(props.series);
@@ -357,9 +239,7 @@ var Meter = React.createClass({
     // Normalize simple value prop to a series, if needed.
     var series = this._normalizeSeries(props, min, max, thresholds);
     // Determine important index.
-    var importantIndex = this._importantIndex(series);
-    // Determine the viewBox dimensions
-    var viewBoxDimensions = this._viewBoxDimensions(series);
+    var importantIndex = this._importantIndex(props, series);
 
     var state = {
       importantIndex: importantIndex,
@@ -368,36 +248,8 @@ var Meter = React.createClass({
       thresholds: thresholds,
       min: min,
       max: max,
-      total: total,
-      viewBoxWidth: viewBoxDimensions[0],
-      viewBoxHeight: viewBoxDimensions[1]
+      total: total
     };
-
-    if ('arc' === this.props.type) {
-      state.startAngle = 60;
-      state.anglePer = (total === 0) ? 0 : 240.0 / total;
-      if (this.props.vertical) {
-        state.angleOffset = 90;
-      } else {
-        state.angleOffset = 180;
-      }
-    } else if ('circle' === this.props.type) {
-      state.startAngle = 1;
-      state.anglePer = (total === 0) ? 0 : 358.0 / total;
-      state.angleOffset = 180;
-    } else if ('bar' === this.props.type) {
-      state.scale = BAR_LENGTH / (max.value - min.value);
-    } else if ('spiral' === this.props.type) {
-      state.startAngle = 0;
-      state.anglePer = 270.0 / max.value;
-      state.angleOffset = 0;
-      // The last spiral ends out near but not quite at the edge of the view box.
-      state.startRadius = Math.max(CIRCLE_RADIUS, SPIRAL_THICKNESS * (series.length + 0.5)) -
-        (Math.max(0, (series.length - 1)) * SPIRAL_THICKNESS);
-    }
-
-    // normalize size
-    state.size = props.size || (props.small ? 'small' : (props.large ? 'large' : null));
 
     // legend
     state.placeLegend = ! (props.legend && props.legend.placement);
@@ -406,210 +258,9 @@ var Meter = React.createClass({
     }
 
     return state;
-  },
+  }
 
-  _interactionListeners: function (interactive, item, index) {
-    var result = {};
-    if (interactive) {
-      result.onOver = this._onActivate.bind(this, index);
-      result.onOut = this._onActivate.bind(this, this.state.importantIndex);
-      result.onClick = item.onClick;
-    }
-    return result;
-  },
-
-  _translateBarWidth: function (value) {
-    return Math.round(this.state.scale * value);
-  },
-
-  _barCommands: function (start, distance) {
-    var commands;
-    if (this.props.vertical) {
-      commands = "M" + MID_BAR_THICKNESS + "," + (BAR_LENGTH - start) +
-        " L" + MID_BAR_THICKNESS + "," + (BAR_LENGTH - (start + distance));
-    } else {
-      commands = "M" + start + "," + MID_BAR_THICKNESS +
-        " L" + (start + distance) + "," + MID_BAR_THICKNESS;
-    }
-    return commands;
-  },
-
-  _buildPath: function (commands, interactive, item, index, classes) {
-    if (interactive) {
-      var listeners = this._interactionListeners(interactive, item, index);
-
-      return (
-        <path key={index} className={classes.join(' ')} d={commands} tabIndex="0"
-          onFocus={listeners.onOver} onBlur={listeners.onOut}
-          onMouseOver={listeners.onOver} onMouseOut={listeners.onOut}
-          onClick={listeners.onClick} role="img" aria-labelledby={this.props.a11yDescId} />
-      );
-    } else {
-      return (
-        <path key={index} className={classes.join(' ')} d={commands} />
-      );
-    }
-  },
-
-  _renderBar: function (series, interactive) {
-    var start = 0;
-    var minRemaining = this.state.min.value;
-    var classes;
-    var commands;
-
-    var paths = series.map(function (item, index) {
-      classes = [CLASS_ROOT + "__bar"];
-      if (index === this.state.activeIndex) {
-        classes.push(CLASS_ROOT + "__bar--active");
-      }
-      classes.push("color-index-" + item.colorIndex);
-
-      var value = item.value - minRemaining;
-      minRemaining = Math.max(0, minRemaining - item.value);
-      var distance = this._translateBarWidth(value);
-      commands = this._barCommands(start, distance);
-      start += distance;
-
-      return this._buildPath(commands, interactive, item, index, classes);
-    }, this);
-
-    if (paths.length === 0) {
-      classes = [CLASS_ROOT + "__bar"];
-      classes.push(CLASS_ROOT + "__bar--loading");
-      classes.push("color-index-loading");
-      commands = this._barCommands(0, BAR_LENGTH);
-      paths.push(
-        <path key="loading" className={classes.join(' ')} d={commands} />
-      );
-    }
-
-    return paths;
-  },
-
-  _translateEndAngle: function (startAngle, value) {
-    return Math.min(360, Math.max(0,
-      startAngle + (this.state.anglePer * value)));
-  },
-
-  _arcCommands: function (startAngle, endAngle) {
-    return arcCommands(CIRCLE_WIDTH / 2, CIRCLE_WIDTH / 2, CIRCLE_RADIUS,
-      startAngle + this.state.angleOffset,
-      endAngle + this.state.angleOffset);
-  },
-
-  _renderArcOrCircle: function (series, interactive) {
-    var startAngle = this.state.startAngle;
-    var classes;
-    var endAngle;
-    var commands;
-
-    var paths = series.map(function (item, index) {
-      var classes = [CLASS_ROOT + "__slice"];
-      if (index === this.state.activeIndex) {
-        classes.push(CLASS_ROOT + "__slice--active");
-      }
-      classes.push("color-index-" + item.colorIndex);
-      endAngle = this._translateEndAngle(startAngle, item.value);
-      commands = this._arcCommands(startAngle, endAngle);
-
-      startAngle = endAngle;
-
-      return this._buildPath(commands, interactive, item, index, classes);
-    }, this);
-
-    if (paths.length === 0) {
-      classes = [CLASS_ROOT + "__slice"];
-      classes.push(CLASS_ROOT + "__slice--loading");
-      classes.push("color-index-loading");
-      endAngle = this._translateEndAngle(this.state.startAngle, this.state.max.value);
-      commands = this._arcCommands(this.state.startAngle, endAngle);
-      paths.push(
-        <path key="loading" className={classes.join(' ')} d={commands} />
-      );
-    }
-
-    return paths;
-  },
-
-  _spiralCommands: function (startAngle, endAngle, radius) {
-    return arcCommands(this.state.viewBoxWidth / 2, this.state.viewBoxHeight / 2, radius,
-      startAngle + this.state.angleOffset,
-      endAngle + this.state.angleOffset);
-  },
-
-  _renderSpiral: function (series, interactive) {
-    var startAngle = this.state.startAngle;
-    var radius = this.state.startRadius;
-    var classes;
-    var endAngle;
-    var commands;
-
-    var paths = series.map(function (item, index) {
-      var classes = [CLASS_ROOT + "__slice"];
-      if (index === this.state.activeIndex) {
-        classes.push(CLASS_ROOT + "__slice--active");
-      }
-      classes.push("color-index-" + item.colorIndex);
-      endAngle = this._translateEndAngle(startAngle, item.value);
-      commands = this._spiralCommands(startAngle, endAngle, radius);
-
-      radius += SPIRAL_THICKNESS;
-
-      return this._buildPath(commands, interactive, item, index, classes);
-    }, this);
-
-    if (paths.length === 0) {
-      classes = [CLASS_ROOT + "__slice"];
-      classes.push(CLASS_ROOT + "__slice--loading");
-      classes.push("color-index-loading");
-      endAngle = this._translateEndAngle(this.state.startAngle, this.state.max.value);
-      commands = this._spiralCommands(this.state.startAngle, endAngle, radius);
-      paths.push(
-        <path key="loading" className={classes.join(' ')} d={commands} />
-      );
-    }
-
-    return paths;
-  },
-
-  _renderSingleIndicator: function (series) {
-    var seriesIndicator = null;
-    var startAngle = this.state.startAngle;
-    series.forEach(function (item, index) {
-      var endAngle = this._translateEndAngle(startAngle, item.value);
-
-      if (index === this.state.activeIndex) {
-        var length;
-        var x;
-        var y;
-        if ('arc' === this.props.type) {
-          length = CIRCLE_RADIUS;
-          x = CIRCLE_WIDTH / 2;
-          y = CIRCLE_WIDTH / 2;
-        } else {
-          length = CIRCLE_RADIUS * 0.60;
-          x = this.state.viewBoxWidth / 2;
-          y = this.state.viewBoxHeight / 2;
-        }
-        var indicatorCommands =
-          singleIndicatorCommands(x, y, (CIRCLE_RADIUS * 1.1),
-            startAngle + this.state.angleOffset,
-            endAngle + this.state.angleOffset,
-            length);
-        seriesIndicator = (
-          <path fill="none"
-            className={CLASS_ROOT + "__slice-indicator color-index-" + item.colorIndex}
-            d={indicatorCommands} />
-        );
-      }
-
-      startAngle = endAngle;
-    }, this);
-
-    return seriesIndicator;
-  },
-
-  _getActiveFields: function () {
+  _getActiveFields () {
     var fields;
     if (null === this.state.activeIndex) {
       fields = {value: this.state.total, label: 'Total'};
@@ -618,18 +269,18 @@ var Meter = React.createClass({
       fields = {value: active.value, label: active.label, onClick: active.onClick};
     }
     return fields;
-  },
+  }
 
-  _renderActive: function () {
+  _renderActiveValue () {
     var fields = this._getActiveFields();
-    var classes = [CLASS_ROOT + "__active"];
+    var classes = [CLASS_ROOT + "__value"];
     if (fields.onClick) {
-      classes.push(CLASS_ROOT + "__active--active");
+      classes.push(CLASS_ROOT + "__value--active");
     }
     var units;
     if (this.props.units) {
       units = (
-        <span className={CLASS_ROOT + "__active-units large-number-font"}>
+        <span className={CLASS_ROOT + "__value-units large-number-font"}>
           {this.props.units}
         </span>
       );
@@ -639,120 +290,18 @@ var Meter = React.createClass({
       <div aria-hidden="true" role="presentation"
         className={classes.join(' ')} onClick={fields.onClick}>
         <span
-          className={CLASS_ROOT + "__active-value large-number-font"}>
+          className={CLASS_ROOT + "__value-value large-number-font"}>
           {fields.value}
           {units}
         </span>
-        <span className={CLASS_ROOT + "__active-label"}>
+        <span className={CLASS_ROOT + "__value-label"}>
           {fields.label}
         </span>
       </div>
     );
-  },
+  }
 
-  _renderLabels: function (series) {
-    var x = (this.state.viewBoxWidth / 2) - (SPIRAL_THICKNESS / 2);
-    var y = (SPIRAL_THICKNESS * 0.75) + (SPIRAL_THICKNESS * (series.length - 1));
-    var labels = series.map(function (item, index) {
-      var classes = [CLASS_ROOT + "__label"];
-      if (index === this.state.activeIndex) {
-        classes.push(CLASS_ROOT + "__label--active");
-      }
-
-      var textX = x;
-      var textY = y;
-
-      y -= SPIRAL_THICKNESS;
-
-      return (
-        <text key={item.label || index} x={textX} y={textY}
-          textAnchor="end" fontSize={16}
-          className={classes.join(' ')}
-          onMouseOver={this._onActivate.bind(this, index)}
-          onMouseOut={this._onActivate.bind(this, this.state.importantIndex)}
-          onClick={item.onClick} >
-          {item.label}
-        </text>
-      );
-    }, this);
-
-    return (
-      <g className={CLASS_ROOT + "__labels"}>
-        {labels}
-      </g>
-    );
-  },
-
-  _renderLegend: function () {
-    var total = (typeof this.props.legend === 'object' && this.props.legend.total);
-    return (
-      <Legend ref="legend" className={CLASS_ROOT + "__legend"}
-        series={this.state.series}
-        units={this.props.units}
-        total={total}
-        activeIndex={this.state.activeIndex}
-        onActive={this._onActivate} />
-    );
-  },
-
-  render: function() {
-    var classes = [CLASS_ROOT];
-    classes.push(CLASS_ROOT + "--" + this.props.type);
-    if (this.props.vertical) {
-      classes.push(CLASS_ROOT + "--vertical");
-    }
-    if (this.state.size) {
-      classes.push(CLASS_ROOT + "--" + this.state.size);
-    }
-    if (this.state.series.length === 0) {
-      classes.push(CLASS_ROOT + "--loading");
-    } else if (this.state.series.length === 1) {
-      classes.push(CLASS_ROOT + "--single");
-    }
-    if (this.state.activeIndex !== null) {
-      classes.push(CLASS_ROOT + "--active");
-    }
-    if (this.state.tallLegend) {
-      classes.push(CLASS_ROOT + "--tall-legend");
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
-
-    var values;
-    var thresholds;
-    var singleIndicator;
-    var labels;
-    var width;
-    var height;
-
-    if ('arc' === this.props.type || 'circle' === this.props.type) {
-      values = this._renderArcOrCircle(this.state.series, this.props.series);
-      thresholds = this._renderArcOrCircle(this.state.thresholds);
-      if (this.state.series.length === 1) {
-        singleIndicator = this._renderSingleIndicator(this.state.series);
-      }
-    } else if ('bar' === this.props.type) {
-      values = this._renderBar(this.state.series, this.props.series);
-      thresholds = this._renderBar(this.state.thresholds);
-    } else if ('spiral' === this.props.type) {
-      values = this._renderSpiral(this.state.series, this.props.series);
-      if (this.state.series.length === 1) {
-        singleIndicator = this._renderSingleIndicator(this.state.series);
-      }
-      labels = this._renderLabels(this.state.series);
-      width = this.state.viewBoxWidth;
-      height = this.state.viewBoxHeight;
-    }
-
-    if (thresholds) {
-      thresholds = (
-        <g className={CLASS_ROOT + "__thresholds"}>
-          {thresholds}
-        </g>
-      );
-    }
-
+  _renderMinMax (classes) {
     var minLabel;
     if (this.state.min.label) {
       minLabel = (
@@ -781,8 +330,51 @@ var Meter = React.createClass({
       );
       classes.push(CLASS_ROOT + "--minmax");
     }
+    return minMax;
+  }
 
-    var active = this._renderActive();
+  _renderLegend () {
+    var total = (typeof this.props.legend === 'object' && this.props.legend.total);
+    return (
+      <Legend ref="legend" className={CLASS_ROOT + "__legend"}
+        series={this.state.series}
+        units={this.props.units}
+        total={total}
+        activeIndex={this.state.activeIndex}
+        onActive={this._onActivate} />
+    );
+  }
+
+  render () {
+    var classes = [CLASS_ROOT];
+    classes.push(CLASS_ROOT + "--" + this.props.type);
+    if (this.props.vertical) {
+      classes.push(CLASS_ROOT + "--vertical");
+    }
+    if (this.props.stacked) {
+      classes.push(CLASS_ROOT + "--stacked");
+    }
+    if (this.props.size) {
+      classes.push(CLASS_ROOT + "--" + this.props.size);
+    }
+    if (this.state.series.length === 0) {
+      classes.push(CLASS_ROOT + "--loading");
+    } else if (this.state.series.length === 1) {
+      classes.push(CLASS_ROOT + "--single");
+    }
+    if (this.state.activeIndex !== null) {
+      classes.push(CLASS_ROOT + "--active");
+    }
+    if (this.state.tallLegend) {
+      classes.push(CLASS_ROOT + "--tall-legend");
+    }
+    if (this.props.className) {
+      classes.push(this.props.className);
+    }
+
+    var minMax = this._renderMinMax(classes);
+
+    var activeValue = this._renderActiveValue();
 
     var legend;
     if (this.props.legend) {
@@ -824,35 +416,99 @@ var Meter = React.createClass({
         this.props.a11yDesc : defaultA11YDesc;
     var a11yDesc = Intl.getMessage(this.context.intl, descKey);
 
+    var GraphicComponent = TYPE_COMPONENT[this.props.type];
+    var graphic = (
+      <GraphicComponent
+        a11yDesc={a11yDesc}
+        a11yDescId={this.props.a11yDescId}
+        activeIndex={this.state.activeIndex}
+        min={this.state.min} max={this.state.max}
+        onActivate={this._onActivate}
+        series={this.state.series}
+        stacked={this.props.stacked}
+        thresholds={this.state.thresholds}
+        total={this.state.total}
+        vertical={this.props.vertical} />
+    );
+
     return (
       <div className={classes.join(' ')}>
-        <div ref="activeGraphic" className={CLASS_ROOT + "__active-graphic"}>
-          <div className={CLASS_ROOT + "__labeled-graphic"}>
-            <a href="#" role={a11yRole} tabIndex="0"
+        <div ref="activeGraphic" className={CLASS_ROOT + "__value-container"}>
+          <div className={CLASS_ROOT + "__graphic-container"}>
+            <a href="#" role={a11yRole} tabIndex="0" className={CLASS_ROOT + "__aria"}
               aria-labelledby={this.props.a11yTitleId + ' ' + this.props.a11yDescId}>
               <title id={this.props.a11yTitleId}>{a11yTitle}</title>
-              <svg className={CLASS_ROOT + "__graphic"}
-                viewBox={"0 0 " + this.state.viewBoxWidth +
-                  " " + this.state.viewBoxHeight}
-                preserveAspectRatio="xMidYMid meet" width={width} height={height}>
-                <desc id={this.props.a11yDescId}>{a11yDesc}</desc>
-                {thresholds}
-                <g className={CLASS_ROOT + "__values"}>
-                  {values}
-                </g>
-                {labels}
-                {singleIndicator}
-              </svg>
+              {graphic}
             </a>
             {minMax}
           </div>
-          {active}
+          {activeValue}
         </div>
         {legend}
       </div>
     );
   }
 
-});
+}
+
+Meter.propTypes = {
+  a11yRole: PropTypes.string,
+  a11yTitle: PropTypes.string,
+  a11yTitleId: PropTypes.string,
+  a11yDescId: PropTypes.string,
+  a11yDesc: PropTypes.string,
+  important: PropTypes.number,
+  legend: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.shape({
+      total: PropTypes.bool,
+      placement: PropTypes.oneOf(['right', 'bottom'])
+    })
+  ]),
+  max: PropTypes.oneOfType([
+    PropTypes.shape({
+      value: PropTypes.number.isRequired,
+      label: PropTypes.string
+    }),
+    PropTypes.number
+  ]),
+  min: PropTypes.oneOfType([
+    PropTypes.shape({
+      value: PropTypes.number.isRequired,
+      label: PropTypes.string
+    }),
+    PropTypes.number
+  ]),
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  series: PropTypes.arrayOf(PropTypes.shape({
+    label: PropTypes.string,
+    value: PropTypes.number.isRequired,
+    colorIndex: PropTypes.string,
+    important: PropTypes.bool,
+    onClick: PropTypes.func
+  })),
+  stacked: PropTypes.bool,
+  threshold: PropTypes.number,
+  thresholds: PropTypes.arrayOf(PropTypes.shape({
+    label: PropTypes.string,
+    value: PropTypes.number.isRequired,
+    colorIndex: PropTypes.string
+  })),
+  type: PropTypes.oneOf(['bar', 'arc', 'circle', 'spiral']),
+  units: PropTypes.string,
+  value: PropTypes.number,
+  vertical: PropTypes.bool
+};
+
+Meter.defaultProps = {
+  a11yRole: 'img',
+  a11yTitleId: 'meter-title',
+  a11yDescId: 'meter-desc',
+  type: 'bar'
+};
+
+Meter.contextTypes = {
+  intl: PropTypes.object
+};
 
 module.exports = Meter;
