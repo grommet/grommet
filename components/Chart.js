@@ -535,6 +535,10 @@ var Chart = React.createClass({
           classes.push(CLASS_ROOT + "__values-bar--active");
         }
 
+        if ('bottom' === bounds.xAxis.placement) {
+          stepBarBase += XAXIS_HEIGHT;
+        }
+
         return React.createElement('rect', { key: 'bar_rect_' + item.label || seriesIndex,
           className: classes.join(' '),
           x: this._translateX(value[0]) + bounds.barPadding,
