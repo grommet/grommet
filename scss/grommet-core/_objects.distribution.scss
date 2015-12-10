@@ -24,10 +24,12 @@
     padding: $inuit-base-spacing-unit;
     font-family: $brand-large-number-font-family;
     color: $colored-text-color;
-    text-align: center;
+    overflow: hidden;
+    text-align: left;
     pointer-events: none;
 
     &-value {
+      display: block;
       @include inuit-font-size($large-number-font-size);
       font-weight: bold;
     }
@@ -40,7 +42,6 @@
 
     &-label {
       display: block;
-      text-align: center;
     }
 
     &--small {
@@ -51,18 +52,25 @@
       }
     }
 
+    &--thin {
+      .distribution__label-value,
+      .distribution__label-label {
+        display: inline-block;
+      }
+    }
+
     &--icons {
       background-color: $active-background-color;
       color: $text-color;
 
       .label {
+
         &-units {
           color: $secondary-text-color;
         }
 
         &-label {
           display: block;
-          text-align: center;
         }
       }
     }
@@ -71,6 +79,18 @@
   &__loading-indicator {
     stroke-width: $inuit-base-spacing-unit;
     @include graph-stroke-color();
+  }
+
+  &--icons {
+    .distribution {
+      &__label {
+        padding: 0 halve($inuit-base-spacing-unit) halve($inuit-base-spacing-unit) 0;
+
+        &-value {
+          line-height: 1;
+        }
+      }
+    }
   }
 
   &--small {
