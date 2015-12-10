@@ -240,7 +240,9 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
     .meter {
       &__slice {
         stroke-width: double($meter-slice-width);
+      }
 
+      &__values .meter__slice {
         &:hover {
           stroke-width: double($meter-slice-active-width);
         }
@@ -270,21 +272,21 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
     }
   }
 
-  // &.meter--active {
-  //   .meter {
-  //     &__values .meter__slice {
-  //       &:hover {
-  //         stroke-width: $meter-slice-active-width;
-  //       }
-  //     }
-  //   }
-  //
-  //   &:not(.meter--single) {
-  //     .meter__values .meter__slice.meter__slice--active {
-  //       stroke-width: $meter-slice-active-width;
-  //     }
-  //   }
-  // }
+  &.meter--active {
+    .meter {
+      &__values .meter__slice {
+        &:hover {
+          stroke-width: $meter-slice-active-width;
+        }
+      }
+    }
+
+    &:not(.meter--single) {
+      .meter__values .meter__slice.meter__slice--active {
+        stroke-width: $meter-slice-active-width;
+      }
+    }
+  }
 
   // BAR
 
