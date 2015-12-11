@@ -15,9 +15,9 @@ textarea {
   background-color: transparent; // inherit; doesn't work on IE
 
   &:focus {
-    padding: (halve($inuit-base-spacing-unit) - ($input-border-width + 1))
-      ($inuit-base-spacing-unit - ($input-border-width + 1));
-    border-width: $input-border-width + 1;
+    padding: (halve($inuit-base-spacing-unit) - $input-focus-border-width)
+      ($inuit-base-spacing-unit - $input-focus-border-width);
+    border-width: $input-focus-border-width;
     border-color: $focus-border-color;
     //box-shadow: 0 0 1px 1px $focus-border-color;
   }

@@ -102,12 +102,46 @@
     .control-icon-search {
       position: absolute;
       right: 0px;
-      top: calc(50% - #{$inuit-base-spacing-unit});
+      top: 50%;
+      transform: translateY(-50%);
       pointer-events: none;
     }
   }
 
+  &--small {
+    line-height: $inuit-base-spacing-unit;
+
+    .search__input {
+      @include inuit-font-size($label-font-size, $label-font-size);
+      padding: (halve($inuit-base-spacing-unit - $label-font-size) - $input-border-width)
+        ($label-font-size - $input-border-width);
+      padding-right: ($inuit-base-spacing-unit - $input-border-width);
+
+      &:focus {
+        padding: (halve($inuit-base-spacing-unit - $label-font-size) - $input-focus-border-width)
+          ($label-font-size - $input-focus-border-width);
+        padding-right: ($inuit-base-spacing-unit - $input-focus-border-width);
+      }
+    }
+
+    .control-icon-search {
+      height: $inuit-base-spacing-unit;
+      width: $inuit-base-spacing-unit;
+    }
+  }
+
   &--large {
-    line-height: quadruple($inuit-base-spacing-unit);
+    line-height: triple($inuit-base-spacing-unit);
+
+    .search__input {
+      @include inuit-font-size($large-number-font-size, double($inuit-base-spacing-unit));
+      padding: halve($inuit-base-spacing-unit - $large-number-font-size - $input-border-width)
+        ($large-number-font-size - $input-border-width);
+      padding-right: (double($inuit-base-spacing-unit) - $input-border-width);
+    }
+
+    .control-icon-search {
+      right: quarter($inuit-base-spacing-unit);
+    }
   }
 }
