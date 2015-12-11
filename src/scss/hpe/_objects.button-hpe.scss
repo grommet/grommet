@@ -5,7 +5,7 @@ $button-accent-color: #ff8d6d;
 .button {
   letter-spacing: 0.04167em;
 
-  &:not(.button--disabled):not(.button--icon) {
+  &:not(.button--disabled):not(.button--icon):not(.button--fill) {
 
     &:hover {
       box-shadow: 0px 0px 0px 2px $button-border-color;
@@ -52,6 +52,18 @@ $button-accent-color: #ff8d6d;
           box-shadow: 0px 0px 0px 2px $button-accent-color;
         }
       }
+    }
+  }
+
+  &--fill:not(.button--disabled):not(.button--icon) {
+    &:hover {
+      padding: ($button-vertical-padding - ($button-border-width))
+        ($button-horizontal-padding - ($button-border-width));
+      border-width: double($button-border-width);
+    }
+
+    @include media-query(lap-and-up) {
+      transition: none;
     }
   }
 }
