@@ -21,6 +21,7 @@ var Search = React.createClass({
     onChange: PropTypes.func,
     placeHolder: PropTypes.string,
     responsive: PropTypes.bool,
+    size: React.PropTypes.oneOf(['small', 'medium', 'large']),
     suggestions: PropTypes.arrayOf(PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.shape({
@@ -324,8 +325,11 @@ var Search = React.createClass({
   render: function () {
 
     var classes = this._classes(CLASS_ROOT);
-    if (this.props.large) {
+    if (this.props.large && ! this.props.size) {
       classes.push(CLASS_ROOT + "--large");
+    }
+    if (this.props.size) {
+      classes.push(CLASS_ROOT + "--" + this.props.size);
     }
     if (this.props.className) {
       classes.push(this.props.className);
