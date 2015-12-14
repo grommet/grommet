@@ -15,15 +15,10 @@
     &--small {
       width: $video-small-width;
 
-      .video__control {
+      .video__control.button--primary {
         width: double($inuit-base-spacing-unit);
         height: double($inuit-base-spacing-unit);
         border-radius: $inuit-base-spacing-unit;
-
-        .control-icon {
-          width: double($inuit-base-spacing-unit);
-          height: double($inuit-base-spacing-unit);
-        }
       }
     }
 
@@ -54,7 +49,7 @@
     border-radius: $border-radius;
   }
 
-  &__control {
+  &__control.button--primary {
     flex: 0 0 auto;
     width: quadruple($inuit-base-spacing-unit);
     height: quadruple($inuit-base-spacing-unit);
@@ -62,15 +57,7 @@
     background-color: rgba($brand-color, 0.7);
 
     &:hover {
-      .control-icon {
-        stroke: $active-colored-icon-color;
-      }
-    }
-
-    .control-icon {
-      width: quadruple($inuit-base-spacing-unit);
-      height: quadruple($inuit-base-spacing-unit);
-      stroke: $colored-icon-color;
+      background-color: $brand-color;
     }
   }
 

@@ -136,7 +136,9 @@ $form-vertical-padding: quarter($inuit-base-spacing-unit);
 
       .search-input__control,
       .calendar__control {
+        top: auto;
         right: quarter($inuit-base-spacing-unit);
+        transform: none;
         bottom: - $form-vertical-padding;
       }
     }

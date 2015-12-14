@@ -19,6 +19,11 @@ a,
     color: $link-hover-color;
   }
 
+  &__icon {
+    display: inline-block;
+    padding: halve($inuit-base-spacing-unit);
+  }
+
   [class*="background-color-index-"]:not([class*="background-color-index-light"]) &,
   [class*="background-color-index-"]:not([class*="background-color-index-light"]) .menu &:not(.button) {
     color: $colored-text-color;
@@ -31,7 +36,7 @@ a,
     &:hover {
       color: $active-colored-text-color;
 
-      .control-icon {
+     .control-icon {
         fill: $active-colored-icon-color;
         stroke: $active-colored-icon-color;
       }
@@ -47,19 +52,21 @@ a,
 
       .control-icon {
         stroke: $control-brand-color;
+        margin-right: halve($inuit-base-spacing-unit);
+      }
+
+      > span {
+        vertical-align: middle;
       }
 
       &:hover {
-        .control-icon {
+        > .control-icon {
           transform: translateX(round($inuit-base-spacing-unit * 0.125));
+          stroke: $control-brand-color;
 
           path,
           polyline {
             stroke-width: 3px;
-          }
-
-          &:hover {
-            stroke: $control-brand-color;
           }
         }
       }

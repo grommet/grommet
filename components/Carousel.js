@@ -6,6 +6,7 @@ var React = require('react');
 var Box = require('./Box');
 var Tiles = require('./Tiles');
 var Tile = require('./Tile');
+var Button = require('./Button');
 var Previous = require('./icons/base/Previous');
 var Next = require('./icons/base/Next');
 
@@ -130,9 +131,10 @@ var Carousel = React.createClass({
   _renderPrevButton: function _renderPrevButton() {
     if (this.props.infinite || this.state.activeIndex !== 0) {
       return React.createElement(
-        'div',
-        { className: CLASS_ROOT + '__arrow ' + CLASS_ROOT + '__arrow--prev', onClick: this._slidePrev },
-        React.createElement(Previous, null)
+        Button,
+        { className: CLASS_ROOT + '__arrow ' + CLASS_ROOT + '__arrow--prev',
+          type: 'icon', onClick: this._slidePrev },
+        React.createElement(Previous, { size: 'large' })
       );
     }
   },
@@ -140,9 +142,10 @@ var Carousel = React.createClass({
   _renderNextButton: function _renderNextButton() {
     if (this.props.infinite || this.state.activeIndex !== this.props.children.length - 1) {
       return React.createElement(
-        'div',
-        { className: CLASS_ROOT + '__arrow ' + CLASS_ROOT + '__arrow--next', onClick: this._slideNext },
-        React.createElement(Next, null)
+        Button,
+        { className: CLASS_ROOT + '__arrow ' + CLASS_ROOT + '__arrow--next',
+          type: 'icon', onClick: this._slideNext },
+        React.createElement(Next, { size: 'large' })
       );
     }
   },

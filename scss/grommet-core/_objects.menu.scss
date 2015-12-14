@@ -4,16 +4,6 @@
   position: relative;
   @include inuit-font-size($menu-font-size, inherit);
 
-  .header & {
-    &--controlled.menu--labelled {
-      height: 100%;
-    }
-
-    &__control--fixed-label {
-      font-size: $menu-font-size;
-    }
-  }
-
   &:focus {
     outline: none;
 
@@ -47,35 +37,14 @@
   }
 
   &__control {
-    cursor: pointer;
 
-    &-drop-icon {
-      width: $inuit-base-spacing-unit;
-      height: $inuit-base-spacing-unit;
-      margin-left: halve($inuit-base-spacing-unit);
-      // stroke: $icon-color;
-    }
+    .control-icon-down {
+      width: halve($inuit-base-spacing-unit);
+      height: halve($inuit-base-spacing-unit);
 
-    &--labelled {
-      @include media-query(palm) {
-        .menu__control-label,
-        .menu__control-drop-icon {
-          display: none;
-        }
-      }
-
-      @include media-query(lap-and-up) {
-        .menu__control-icon {
-          display: none;
-        }
-      }
-    }
-
-    &--fixed-label {
-      white-space: nowrap;
-
-      .menu__control-icon {
-        display: none;
+      path,
+      polyline {
+        stroke-width: 4px;
       }
     }
   }
@@ -84,16 +53,7 @@
     @include inuit-font-size($inuit-base-font-size, inherit);
     max-height: 100vh;
 
-    .menu__control {
-      &-label {
-        padding-left: $inuit-base-spacing-unit;
-      }
-
-      &-drop-icon {
-        display: none;
-      }
-    }
-
+    .anchor,
     a {
       padding: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit;
       white-space: nowrap;
@@ -113,14 +73,15 @@
     }
 
     &--align-right {
-      .menu__control {
-        text-align: right;
+      text-align: right;
+
+      .menu__contents {
+        text-align: left;
       }
     }
 
     &--large {
       .menu__control {
-        //height: quadruple($inuit-base-spacing-unit);
         line-height: quadruple($inuit-base-spacing-unit);
       }
     }
@@ -131,7 +92,6 @@
     cursor: pointer;
 
     &.menu--large {
-      //height: quadruple($inuit-base-spacing-unit);
       line-height: quadruple($inuit-base-spacing-unit);
     }
 
@@ -140,17 +100,21 @@
     }
   }
 
-  &--labelled {
-    padding-left: $inuit-base-spacing-unit;
-    //padding-right: $inuit-base-spacing-unit;
-  }
-
   &--inline {
-    ///overflow: hidden;
 
     &.menu {
-      &--row,
-      &--right { // --right is deprecated
+      &--row {
+        &.box--justify-end {
+          > *:not(.control-icon) {
+            margin-left: $inuit-base-spacing-unit;
+            margin-right: 0px;
+
+            &:first-child {
+              margin-left: 0px;
+            }
+          }
+        }
+
         > *:not(.control-icon):not(.button) {
           margin-left: 0px;
           margin-right: $inuit-base-spacing-unit;
@@ -165,18 +129,6 @@
         @include media-query(palm) {
           > * {
             margin-right: 0;
-          }
-        }
-      }
-
-      &--row.box--justify-end,
-      &--left { // --left is deprecated
-        > *:not(.control-icon) {
-          margin-left: $inuit-base-spacing-unit;
-          margin-right: 0px;
-
-          &:first-child {
-            margin-left: 0px;
           }
         }
       }

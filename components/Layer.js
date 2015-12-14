@@ -97,8 +97,9 @@ var LayerContents = React.createClass({
         { className: CLASS_ROOT + "__closer" },
         React.createElement(
           Button,
-          { type: 'icon', onClick: this.props.onClose },
-          React.createElement(CloseIcon, { a11yTitle: this.props.a11yCloserTitle })
+          { type: 'icon', onClick: this.props.onClose,
+            a11yTitle: this.props.a11yCloserTitle },
+          React.createElement(CloseIcon, null)
         )
       );
     }

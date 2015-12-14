@@ -2,59 +2,85 @@
 
 'use strict';
 
-var React = require('react');
-var FormattedMessage = require('../../../components/FormattedMessage');
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _componentsFormattedMessage = require('../../../components/FormattedMessage');
+
+var _componentsFormattedMessage2 = _interopRequireDefault(_componentsFormattedMessage);
 
 var CLASS_ROOT = "control-icon";
 
-var Icon = React.createClass({
-  displayName: 'Icon',
+var Icon = (function (_Component) {
+  _inherits(Icon, _Component);
 
-  propTypes: {
-    a11yTitle: React.PropTypes.string,
-    a11yTitleId: React.PropTypes.string,
-    colorIndex: React.PropTypes.string,
-    large: React.PropTypes.bool
-  },
+  function Icon() {
+    _classCallCheck(this, Icon);
 
-  getDefaultProps: function getDefaultProps() {
-    return {
-      a11yTitleId: 'actions-title'
-    };
-  },
-
-  render: function render() {
-    var classes = [CLASS_ROOT, CLASS_ROOT + '-actions'];
-    if (this.props.large) {
-      classes.push(CLASS_ROOT + "--large");
-    }
-    if (this.props.colorIndex) {
-      classes.push("color-index-" + this.props.colorIndex);
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
-
-    var titleLabel = typeof this.props.a11yTitle !== "undefined" ? this.props.a11yTitle : "actions";
-    var a11yTitle = React.createElement(FormattedMessage, { id: titleLabel, defaultMessage: titleLabel });
-
-    return React.createElement(
-      'svg',
-      { version: '1.1', viewBox: '0 0 48 48', width: '48px', height: '48px', className: classes.join(' '), 'aria-labelledby': this.props.a11yTitleId },
-      React.createElement(
-        'title',
-        { id: this.props.a11yTitleId },
-        a11yTitle
-      ),
-      React.createElement(
-        'g',
-        { id: 'actions' },
-        React.createElement('rect', { id: '_x2E_svg_2_', x: '0', y: '0', fill: 'none', width: '48', height: '48' }),
-        React.createElement('path', { fill: 'none', stroke: '#231F20', strokeWidth: '2', strokeMiterlimit: '10', d: 'M32,24c0,4.4183-3.5817,8-8,8s-8-3.5817-8-8 s3.5817-8,8-8S32,19.5817,32,24z M27,24c0-1.6542-1.3455-3-3-3s-3,1.3458-3,3s1.3455,3,3,3S27,25.6542,27,24z M24,12v4 M32,24h4 M24,36v-4 M12,24h4 M32.4853,15.5147l-2.8284,2.8284 M29.6569,29.6569l2.8284,2.8284 M18.3431,29.6569l-2.8284,2.8284 M15.5147,15.5147l2.8284,2.8284' })
-      )
-    );
+    _get(Object.getPrototypeOf(Icon.prototype), 'constructor', this).apply(this, arguments);
   }
 
-});
+  _createClass(Icon, [{
+    key: 'render',
+    value: function render() {
+      var classes = [CLASS_ROOT, CLASS_ROOT + '-actions'];
+      if (this.props.size) {
+        classes.push(CLASS_ROOT + "--" + this.props.size);
+      } else if (this.props.large) {
+        classes.push(CLASS_ROOT + "--large");
+      }
+      if (this.props.colorIndex) {
+        classes.push("color-index-" + this.props.colorIndex);
+      }
+      if (this.props.className) {
+        classes.push(this.props.className);
+      }
+
+      var titleLabel = typeof this.props.a11yTitle !== "undefined" ? this.props.a11yTitle : "actions";
+      var a11yTitle = _react2['default'].createElement(_componentsFormattedMessage2['default'], { id: titleLabel, defaultMessage: titleLabel });
+
+      return _react2['default'].createElement(
+        'svg',
+        { version: '1.1', viewBox: '0 0 24 24', width: '24px', height: '24px', className: classes.join(' '), 'aria-labelledby': this.props.a11yTitleId },
+        _react2['default'].createElement(
+          'title',
+          { id: this.props.a11yTitleId },
+          a11yTitle
+        ),
+        _react2['default'].createElement(
+          'g',
+          { id: 'actions' },
+          _react2['default'].createElement('rect', { id: '_x2E_svg_2_', x: '0', fill: 'none', width: '24', height: '24' }),
+          _react2['default'].createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M20,12c0,4.4183-3.5817,8-8,8s-8-3.5817-8-8\r s3.5817-8,8-8S20,7.5817,20,12z M15,12c0-1.6542-1.3455-3-3-3s-3,1.3458-3,3s1.3455,3,3,3S15,13.6542,15,12z M12,0v4 M20,12h4\r M12,24v-4 M0,12h4 M20.4853,3.5147l-2.8284,2.8284 M17.6569,17.6569l2.8284,2.8284 M6.3431,17.6569l-2.8284,2.8284 M3.5147,3.5147\r l2.8284,2.8284' })
+        )
+      );
+    }
+  }]);
+
+  return Icon;
+})(_react.Component);
+
+Icon.propTypes = {
+  a11yTitle: _react.PropTypes.string,
+  a11yTitleId: _react.PropTypes.string,
+  colorIndex: _react.PropTypes.string,
+  large: _react.PropTypes.bool,
+  size: _react.PropTypes.oneOf(['small', 'medium', 'large'])
+};
+
+Icon.defaultProps = {
+  a11yTitleId: '" + resolve.fileName + "-title'
+};
 
 module.exports = Icon;

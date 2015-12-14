@@ -2,62 +2,88 @@
 
 'use strict';
 
-var React = require('react');
-var FormattedMessage = require('../../../components/FormattedMessage');
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _componentsFormattedMessage = require('../../../components/FormattedMessage');
+
+var _componentsFormattedMessage2 = _interopRequireDefault(_componentsFormattedMessage);
 
 var CLASS_ROOT = "control-icon";
 
-var Icon = React.createClass({
-  displayName: 'Icon',
+var Icon = (function (_Component) {
+  _inherits(Icon, _Component);
 
-  propTypes: {
-    a11yTitle: React.PropTypes.string,
-    a11yTitleId: React.PropTypes.string,
-    colorIndex: React.PropTypes.string,
-    large: React.PropTypes.bool
-  },
+  function Icon() {
+    _classCallCheck(this, Icon);
 
-  getDefaultProps: function getDefaultProps() {
-    return {
-      a11yTitleId: 'platform-dropbox-title'
-    };
-  },
-
-  render: function render() {
-    var classes = [CLASS_ROOT, CLASS_ROOT + '-platform-dropbox'];
-    if (this.props.large) {
-      classes.push(CLASS_ROOT + "--large");
-    }
-    if (this.props.colorIndex) {
-      classes.push("color-index-" + this.props.colorIndex);
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
-
-    var titleLabel = typeof this.props.a11yTitle !== "undefined" ? this.props.a11yTitle : "platform-dropbox";
-    var a11yTitle = React.createElement(FormattedMessage, { id: titleLabel, defaultMessage: titleLabel });
-
-    return React.createElement(
-      'svg',
-      { version: '1.1', viewBox: '0 0 48 48', width: '48px', height: '48px', className: classes.join(' '), 'aria-labelledby': this.props.a11yTitleId },
-      React.createElement(
-        'title',
-        { id: this.props.a11yTitleId },
-        a11yTitle
-      ),
-      React.createElement(
-        'g',
-        { id: 'platform-dropbox' },
-        React.createElement('rect', { id: '_x2E_svg_295_', fill: 'none', width: '48', height: '48' }),
-        React.createElement('polygon', { points: '27.9955,13.8917 24,15.8961 32.006,19.8976 35.997,17.8961 \t' }),
-        React.createElement('polygon', { points: '27.9955,27.5735 27.3264,27.2404 23.991,25.5675 20.6751,27.23 20.006,27.5646 19.3383,27.2315 15.994,25.5601  15.994,30.997 24,35.0014 24,34.9865 32.006,30.9865 32.006,25.569 28.6647,27.2404 \t' }),
-        React.createElement('polygon', { points: '20.006,25.8947 24,23.8917 16.0149,19.8976 24,15.9066 20.006,13.9036 11.997,17.9051 15.9746,19.8976  11.997,21.8902 \t' }),
-        React.createElement('polygon', { points: '24,23.9021 27.9955,25.9036 35.997,21.9021 32.006,19.8976 \t' })
-      )
-    );
+    _get(Object.getPrototypeOf(Icon.prototype), 'constructor', this).apply(this, arguments);
   }
 
-});
+  _createClass(Icon, [{
+    key: 'render',
+    value: function render() {
+      var classes = [CLASS_ROOT, CLASS_ROOT + '-platform-dropbox'];
+      if (this.props.size) {
+        classes.push(CLASS_ROOT + "--" + this.props.size);
+      } else if (this.props.large) {
+        classes.push(CLASS_ROOT + "--large");
+      }
+      if (this.props.colorIndex) {
+        classes.push("color-index-" + this.props.colorIndex);
+      }
+      if (this.props.className) {
+        classes.push(this.props.className);
+      }
+
+      var titleLabel = typeof this.props.a11yTitle !== "undefined" ? this.props.a11yTitle : "platform-dropbox";
+      var a11yTitle = _react2['default'].createElement(_componentsFormattedMessage2['default'], { id: titleLabel, defaultMessage: titleLabel });
+
+      return _react2['default'].createElement(
+        'svg',
+        { version: '1.1', viewBox: '0 0 24.003 24', width: '24px', height: '24px', className: classes.join(' '), 'aria-labelledby': this.props.a11yTitleId },
+        _react2['default'].createElement(
+          'title',
+          { id: this.props.a11yTitleId },
+          a11yTitle
+        ),
+        _react2['default'].createElement(
+          'g',
+          { id: 'platform-dropbox' },
+          _react2['default'].createElement('rect', { id: '_x2E_svg_295_', x: '0.003', y: '0', fill: 'none', width: '24', height: '24' }),
+          _react2['default'].createElement('polygon', { points: '15.9985,1.8917 12.003,3.8961 20.009,7.8976 24,5.8961 \t' }),
+          _react2['default'].createElement('polygon', { points: '15.9985,15.5735 15.3293,15.2404 11.994,13.5675 8.6781,15.23 8.009,15.5646 7.3413,15.2315 3.997,13.5601 \r 3.997,18.997 12.003,23.0014 12.003,22.9865 20.009,18.9865 20.009,13.569 16.6677,15.2404 \t' }),
+          _react2['default'].createElement('polygon', { points: '8.009,13.8947 12.003,11.8917 4.0179,7.8976 12.003,3.9066 8.009,1.9036 0,5.9051 3.9776,7.8976 0,9.8902 \t' }),
+          _react2['default'].createElement('polygon', { points: '12.003,11.9021 15.9985,13.9036 24,9.9021 20.009,7.8976 \t' })
+        )
+      );
+    }
+  }]);
+
+  return Icon;
+})(_react.Component);
+
+Icon.propTypes = {
+  a11yTitle: _react.PropTypes.string,
+  a11yTitleId: _react.PropTypes.string,
+  colorIndex: _react.PropTypes.string,
+  large: _react.PropTypes.bool,
+  size: _react.PropTypes.oneOf(['small', 'medium', 'large'])
+};
+
+Icon.defaultProps = {
+  a11yTitleId: '" + resolve.fileName + "-title'
+};
 
 module.exports = Icon;

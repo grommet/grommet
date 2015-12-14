@@ -2,64 +2,90 @@
 
 'use strict';
 
-var React = require('react');
-var FormattedMessage = require('../../../components/FormattedMessage');
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _componentsFormattedMessage = require('../../../components/FormattedMessage');
+
+var _componentsFormattedMessage2 = _interopRequireDefault(_componentsFormattedMessage);
 
 var CLASS_ROOT = "control-icon";
 
-var Icon = React.createClass({
-  displayName: 'Icon',
+var Icon = (function (_Component) {
+  _inherits(Icon, _Component);
 
-  propTypes: {
-    a11yTitle: React.PropTypes.string,
-    a11yTitleId: React.PropTypes.string,
-    colorIndex: React.PropTypes.string,
-    large: React.PropTypes.bool
-  },
+  function Icon() {
+    _classCallCheck(this, Icon);
 
-  getDefaultProps: function getDefaultProps() {
-    return {
-      a11yTitleId: 'star-half-title'
-    };
-  },
-
-  render: function render() {
-    var classes = [CLASS_ROOT, CLASS_ROOT + '-star-half'];
-    if (this.props.large) {
-      classes.push(CLASS_ROOT + "--large");
-    }
-    if (this.props.colorIndex) {
-      classes.push("color-index-" + this.props.colorIndex);
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
-
-    var titleLabel = typeof this.props.a11yTitle !== "undefined" ? this.props.a11yTitle : "star-half";
-    var a11yTitle = React.createElement(FormattedMessage, { id: titleLabel, defaultMessage: titleLabel });
-
-    return React.createElement(
-      'svg',
-      { version: '1.1', viewBox: '0 0 48 48', width: '48px', height: '48px', className: classes.join(' '), 'aria-labelledby': this.props.a11yTitleId },
-      React.createElement(
-        'title',
-        { id: this.props.a11yTitleId },
-        a11yTitle
-      ),
-      React.createElement(
-        'g',
-        { id: 'star-half' },
-        React.createElement('rect', { id: '_x2E_svg_263_', x: '0', y: '0', fill: 'none', width: '48', height: '48' }),
-        React.createElement(
-          'g',
-          null,
-          React.createElement('path', { fill: '#231F20', d: 'M24,16.4721l2.2112,4.4223L26.7639,22H28h3.3418l-2.7919,2.9393l-0.7563,0.7962l0.2659,1.0654 l1.2409,4.9725l-4.2639-2.5836L24,28.5618l-1.0364,0.628l-4.2639,2.5836l1.2409-4.9725l0.2659-1.0654l-0.7563-0.7962L16.6582,22 H20h1.2361l0.5528-1.1056L24,16.4721 M24,12l-4,8h-8l6,6.3167L15.5836,36L24,30.9003L32.4164,36L30,26.3167L36,20h-8L24,12L24,12z ' })
-        ),
-        React.createElement('polygon', { fill: '#231F20', points: '24,30.9003 15.5836,36 18,26.3167 12,20 20,20 24,12 \t' })
-      )
-    );
+    _get(Object.getPrototypeOf(Icon.prototype), 'constructor', this).apply(this, arguments);
   }
 
-});
+  _createClass(Icon, [{
+    key: 'render',
+    value: function render() {
+      var classes = [CLASS_ROOT, CLASS_ROOT + '-star-half'];
+      if (this.props.size) {
+        classes.push(CLASS_ROOT + "--" + this.props.size);
+      } else if (this.props.large) {
+        classes.push(CLASS_ROOT + "--large");
+      }
+      if (this.props.colorIndex) {
+        classes.push("color-index-" + this.props.colorIndex);
+      }
+      if (this.props.className) {
+        classes.push(this.props.className);
+      }
+
+      var titleLabel = typeof this.props.a11yTitle !== "undefined" ? this.props.a11yTitle : "star-half";
+      var a11yTitle = _react2['default'].createElement(_componentsFormattedMessage2['default'], { id: titleLabel, defaultMessage: titleLabel });
+
+      return _react2['default'].createElement(
+        'svg',
+        { version: '1.1', viewBox: '0 0 24 24', width: '24px', height: '24px', className: classes.join(' '), 'aria-labelledby': this.props.a11yTitleId },
+        _react2['default'].createElement(
+          'title',
+          { id: this.props.a11yTitleId },
+          a11yTitle
+        ),
+        _react2['default'].createElement(
+          'g',
+          { id: 'star-half' },
+          _react2['default'].createElement('rect', { id: '_x2E_svg_263_', y: '0', fill: 'none', width: '24', height: '24' }),
+          _react2['default'].createElement(
+            'g',
+            null,
+            _react2['default'].createElement('path', { d: 'M12,4.4721l2.2112,4.4223L14.7639,10H16h3.3418l-2.7919,2.9393l-0.7563,0.7962l0.2659,1.0654l1.2409,4.9725\r l-4.2639-2.5836L12,16.5618l-1.0364,0.628l-4.2639,2.5836l1.2409-4.9725l0.2659-1.0654l-0.7563-0.7962L4.6582,10H8h1.2361\r l0.5528-1.1056L12,4.4721 M12,0L8,8H0l6,6.3167L3.5836,24L12,18.9003L20.4164,24L18,14.3167L24,8h-8L12,0L12,0z' })
+          ),
+          _react2['default'].createElement('polygon', { points: '12,18.9003 3.5836,24 6,14.3167 0,8 8,8 12,0 \t' })
+        )
+      );
+    }
+  }]);
+
+  return Icon;
+})(_react.Component);
+
+Icon.propTypes = {
+  a11yTitle: _react.PropTypes.string,
+  a11yTitleId: _react.PropTypes.string,
+  colorIndex: _react.PropTypes.string,
+  large: _react.PropTypes.bool,
+  size: _react.PropTypes.oneOf(['small', 'medium', 'large'])
+};
+
+Icon.defaultProps = {
+  a11yTitleId: '" + resolve.fileName + "-title'
+};
 
 module.exports = Icon;

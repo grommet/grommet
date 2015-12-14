@@ -8,11 +8,11 @@ var moment = require('moment');
 var KeyboardAccelerators = require('../utils/KeyboardAccelerators');
 var Drop = require('../utils/Drop');
 var CalendarIcon = require('./icons/base/Calendar');
-var PreviousIcon = require('./icons/Left');
-var NextIcon = require('./icons/Right');
+var PreviousIcon = require('./icons/base/LinkPrevious');
+var NextIcon = require('./icons/base/LinkNext');
 var Header = require('./Header');
-var Menu = require('./Menu');
 var Title = require('./Title');
+var Button = require('./Button');
 
 var CLASS_ROOT = "calendar";
 
@@ -265,13 +265,10 @@ var Calendar = React.createClass({
         Header,
         { justify: 'between' },
         React.createElement(
-          Menu,
-          { responsive: false },
-          React.createElement(
-            'span',
-            { className: CLASS_ROOT + "__previous", onClick: this._onPrevious },
-            React.createElement(PreviousIcon, null)
-          )
+          Button,
+          { className: CLASS_ROOT + "__previous", type: 'icon',
+            onClick: this._onPrevious },
+          React.createElement(PreviousIcon, null)
         ),
         React.createElement(
           Title,
@@ -279,13 +276,10 @@ var Calendar = React.createClass({
           this.state.reference.format('MMMM YYYY')
         ),
         React.createElement(
-          Menu,
-          { responsive: false },
-          React.createElement(
-            'span',
-            { className: CLASS_ROOT + "__next", onClick: this._onNext },
-            React.createElement(NextIcon, null)
-          )
+          Button,
+          { className: CLASS_ROOT + "__next", type: 'icon',
+            onClick: this._onNext },
+          React.createElement(NextIcon, null)
         )
       ),
       React.createElement(
@@ -330,8 +324,8 @@ var Calendar = React.createClass({
         value: this.props.value,
         onChange: this._onInputChange }),
       React.createElement(
-        'div',
-        { className: CLASS_ROOT + "__control", onClick: this._onOpen },
+        Button,
+        { className: CLASS_ROOT + "__control", type: 'icon', onClick: this._onOpen },
         React.createElement(CalendarIcon, null)
       )
     );

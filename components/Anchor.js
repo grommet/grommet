@@ -3,7 +3,7 @@
 'use strict';
 
 var React = require('react');
-var RightIcon = require('./icons/Right');
+var RightIcon = require('./icons/base/LinkNext');
 
 var CLASS_ROOT = "anchor";
 
@@ -36,6 +36,17 @@ var Anchor = React.createClass({
     if (this.props.className) {
       classes.push(this.props.className);
     }
+    var children = React.Children.map(this.props.children, function (child) {
+      if (child.type && 'Icon' === child.type.name) {
+        return React.createElement(
+          'span',
+          { className: CLASS_ROOT + "__icon" },
+          child
+        );
+      } else {
+        return child;
+      }
+    });
 
     return React.createElement(
       this.props.tag,
@@ -44,7 +55,7 @@ var Anchor = React.createClass({
         target: this.props.target,
         onClick: this.props.onClick },
       icon,
-      this.props.children
+      children
     );
   }
 

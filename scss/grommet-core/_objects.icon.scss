@@ -2,8 +2,8 @@
 
 .control-icon {
   display: inline-block;
-  width: double($inuit-base-spacing-unit);
-  height: double($inuit-base-spacing-unit);
+  width: $inuit-base-spacing-unit;
+  height: $inuit-base-spacing-unit;
   vertical-align: middle;
   cursor: pointer;
   fill: $icon-color;
@@ -30,10 +30,10 @@
     transition: all $base-animation-duration ease-in-out;
   }
 
-  a > &:hover,
-  .anchor > &:hover,
-  .button > &:hover,
-  .menu__control > &:hover {
+  a:hover &,
+  .anchor:hover &,
+  .button:hover &,
+  .menu__control:hover & {
     fill: $active-icon-color;
     stroke: $active-icon-color;
   }
@@ -49,15 +49,17 @@
     }
   }
 
-  [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+  [class*="background-color-index-"]:not([class*="background-color-index-light"]) &,
+  .button--primary & {
     fill: $colored-icon-color;
     stroke: $colored-icon-color;
   }
 
-  [class*="background-color-index-"]:not([class*="background-color-index-light"]) a > &:hover,
-  [class*="background-color-index-"]:not([class*="background-color-index-light"]) .anchor > &:hover,
-  [class*="background-color-index-"]:not([class*="background-color-index-light"]) .button > &:hover,
-  [class*="background-color-index-"]:not([class*="background-color-index-light"]) .menu__control > &:hover {
+  [class*="background-color-index-"]:not([class*="background-color-index-light"]) a:hover > &,
+  [class*="background-color-index-"]:not([class*="background-color-index-light"]) .anchor:hover > &,
+  [class*="background-color-index-"]:not([class*="background-color-index-light"]) .button:hover > &,
+  [class*="background-color-index-"]:not([class*="background-color-index-light"]) .menu__control:hover > &,
+  .button--primary:hover & {
     fill: $active-colored-icon-color;
     stroke: $active-colored-icon-color;
   }
@@ -68,8 +70,8 @@
   }
 
   &--large {
-    width: round($inuit-base-spacing-unit * 4);
-    height: round($inuit-base-spacing-unit * 4);
+    width: round($inuit-base-spacing-unit * 2);
+    height: round($inuit-base-spacing-unit * 2);
   }
 }
 
