@@ -196,8 +196,7 @@ var Menu = React.createClass({
       closeOnClick: true,
       direction: 'column',
       dropAlign: {top: 'top', left: 'left'},
-      pad: 'none',
-      responsive: true
+      pad: 'none'
     };
   },
 
@@ -208,11 +207,18 @@ var Menu = React.createClass({
     } else {
       inline = (! this.props.label && ! this.props.icon);
     }
+    var responsive;
+    if (this.props.hasOwnProperty('responsive')) {
+      responsive = this.props.responsive;
+    } else {
+      responsive = (inline && 'row' === this.props.direction);
+    }
     return {
       // state may be 'collapsed', 'focused' or 'expanded' (active).
       state: 'collapsed',
       initialInline: inline,
       inline: inline,
+      responsive: responsive,
       dropId: 'menuDrop',
       size: this.props.size || (this.small ? 'small' :
         (this.props.large ? 'large' : null))
@@ -228,7 +234,7 @@ var Menu = React.createClass({
       });
     }
 
-    if (this.props.responsive) {
+    if (this.state.responsive) {
       this._responsive = Responsive.start(this._onResponsive);
     }
   },
