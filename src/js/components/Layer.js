@@ -92,8 +92,9 @@ var LayerContents = React.createClass({
     if (this.props.closer) {
       closer = (
         <div className={CLASS_ROOT + "__closer"}>
-          <Button type='icon' onClick={this.props.onClose}>
-            <CloseIcon a11yTitle={this.props.a11yCloserTitle} />
+          <Button type='icon' onClick={this.props.onClose}
+            a11yTitle={this.props.a11yCloserTitle}>
+            <CloseIcon />
           </Button>
         </div>
       );

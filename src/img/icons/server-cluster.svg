@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!-- Generator: Adobe Illustrator 17.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="XMLID_139_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
+	 viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
 <g id="server-cluster">
-	<rect id="_x2E_svg_174_" x="0" y="0" fill="none" width="48" height="48"/>
-	<path fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" d="M35,20.34H13v-7h22V20.34z M35,20.34H13v7h22V20.34
-		z M35,27.34H13v7h22V27.34z"/>
-	<rect x="25" y="15.34" fill="#231F20" width="2" height="3"/>
-	<rect x="28" y="15.34" fill="#231F20" width="2" height="3"/>
-	<rect x="31" y="15.34" fill="#231F20" width="2" height="3"/>
-	<rect x="25" y="22.34" fill="#231F20" width="2" height="3"/>
-	<rect x="28" y="22.34" fill="#231F20" width="2" height="3"/>
-	<rect x="31" y="22.34" fill="#231F20" width="2" height="3"/>
-	<rect x="25" y="29.34" fill="#231F20" width="2" height="3"/>
-	<rect x="28" y="29.34" fill="#231F20" width="2" height="3"/>
-	<rect x="31" y="29.34" fill="#231F20" width="2" height="3"/>
+	<rect id="_x2E_svg_174_" y="0" fill="none" width="24" height="24"/>
+	<path fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" d="M23,8.34H1v-7h22V8.34z M23,8.34H1v7h22V8.34z
+		 M23,15.34H1v7h22V15.34z"/>
+	<rect x="13" y="3.34" width="2" height="3"/>
+	<rect x="16" y="3.34" width="2" height="3"/>
+	<rect x="19" y="3.34" width="2" height="3"/>
+	<rect x="13" y="10.34" width="2" height="3"/>
+	<rect x="16" y="10.34" width="2" height="3"/>
+	<rect x="19" y="10.34" width="2" height="3"/>
+	<rect x="13" y="17.34" width="2" height="3"/>
+	<rect x="16" y="17.34" width="2" height="3"/>
+	<rect x="19" y="17.34" width="2" height="3"/>
 </g>
 </svg>

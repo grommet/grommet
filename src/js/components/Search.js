@@ -1,11 +1,13 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 var React = require('react');
+var ReactDOM = require('react-dom');
 var PropTypes = React.PropTypes;
 var KeyboardAccelerators = require('../utils/KeyboardAccelerators');
 var Drop = require('../utils/Drop');
 var Responsive = require('../utils/Responsive');
-var SearchIcon = require('./icons/Search');
+var Button = require('./Button');
+var SearchIcon = require('./icons/base/Search');
 
 var CLASS_ROOT = "search";
 
@@ -108,7 +110,12 @@ var Search = React.createClass({
       }.bind(this), 100);
       KeyboardAccelerators.startListeningToKeyboard(this, activeKeyboardHandlers);
 
-      var baseElement = this.refs.control || this.refs.input;
+      var baseElement;
+      if (this.refs.control) {
+        baseElement = ReactDOM.findDOMNode(this.refs.control);
+      } else {
+        baseElement = this.refs.input;
+      }
       var dropAlign = this.props.dropAlign || {
         top: (this.state.inline ? 'bottom' : 'top'),
         left: 'left'
@@ -224,15 +231,6 @@ var Search = React.createClass({
     }
   },
 
-  _createControl: function () {
-    var controlClassName = CLASS_ROOT + "__control";
-    return (
-      <div className={controlClassName}>
-        <SearchIcon />
-      </div>
-    );
-  },
-
   _classes: function (prefix) {
     var classes = [prefix];
 
@@ -267,7 +265,7 @@ var Search = React.createClass({
     var input;
     if (! this.state.inline) {
       input = (
-        <input id="search-drop-input" type="search"
+        <input key="input" id="search-drop-input" type="search"
           defaultValue={this.props.defaultValue}
           value={this.props.value}
           className={CLASS_ROOT + "__input"}
@@ -290,29 +288,30 @@ var Search = React.createClass({
           </div>
         );
       }, this);
-    }
-
-    var contents = (
-      <div className={CLASS_ROOT + "__drop-contents"} onClick={this._onSink}>
-        {input}
-        <div className={CLASS_ROOT + "__suggestions"}>
+      suggestions = (
+        <div key="suggestions" className={CLASS_ROOT + "__suggestions"}>
           {suggestions}
         </div>
-      </div>
-    );
+      );
+    }
+
+    var contents = [input, suggestions];
 
     if (! this.state.inline) {
-      var control = this._createControl();
-      var rightAlign = (this.props.dropAlign && ! this.props.dropAlign.left);
-      var first = rightAlign ? contents : control;
-      var second = rightAlign ? control : contents;
-
-      contents = (
-        <div className={CLASS_ROOT + "__drop-header"}>
-          {first}
-          {second}
+      contents = [
+        <Button key="icon" type="icon"
+          className={CLASS_ROOT + "__drop-control"}
+          onClick={this._onRemoveDrop}>
+          <SearchIcon />
+        </Button>,
+        <div key="contents" className={CLASS_ROOT + "__drop-contents"}
+          onClick={this._onSink}>
+          {contents}
         </div>
-      );
+      ];
+      if (this.props.dropAlign && ! this.props.dropAlign.left) {
+        contents.reverse();
+      }
     }
 
     return (
@@ -325,11 +324,10 @@ var Search = React.createClass({
   render: function () {
 
     var classes = this._classes(CLASS_ROOT);
-    if (this.props.large && ! this.props.size) {
-      classes.push(CLASS_ROOT + "--large");
-    }
     if (this.props.size) {
       classes.push(CLASS_ROOT + "--" + this.props.size);
+    } else if (this.props.large && ! this.props.size) {
+      classes.push(CLASS_ROOT + "--large");
     }
     if (this.props.className) {
       classes.push(this.props.className);
@@ -354,17 +352,16 @@ var Search = React.createClass({
 
     } else {
 
-      var controlContents = this._createControl();
-
       return (
-        <div ref="control" id={this.props.id}
+        <Button ref="control" id={this.props.id}
           className={classes.join(' ')}
+          type="icon"
           tabIndex="0"
           onClick={this._onAddDrop}
           onFocus={this._onFocusControl}
           onBlur={this._onBlurControl}>
-          {controlContents}
-        </div>
+          <SearchIcon />
+        </Button>
       );
     }
   }

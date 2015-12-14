@@ -14,10 +14,6 @@
     cursor: pointer;
   }
 
-  &__control {
-    cursor: pointer;
-  }
-
   &__input {
     margin-right: 0px;
 
@@ -32,10 +28,6 @@
     @include media-query(palm) {
       max-width: 100%;
       width: 100vw;
-    }
-
-    &-header {
-      white-space: nowrap;
     }
 
     &--inline {
@@ -62,9 +54,9 @@
       }
     }
 
-    .search__control {
-      display: inline-block;
+    &-control {
       vertical-align: top;
+      height: double($inuit-base-spacing-unit);
     }
 
     .search__suggestion {
@@ -101,7 +93,7 @@
 
     .control-icon-search {
       position: absolute;
-      right: 0px;
+      right: halve($inuit-base-spacing-unit);
       top: 50%;
       transform: translateY(-50%);
       pointer-events: none;
@@ -125,8 +117,8 @@
     }
 
     .control-icon-search {
-      height: $inuit-base-spacing-unit;
-      width: $inuit-base-spacing-unit;
+      height: halve($inuit-base-spacing-unit);
+      width: halve($inuit-base-spacing-unit);
     }
   }
 
@@ -141,7 +133,7 @@
     }
 
     .control-icon-search {
-      right: quarter($inuit-base-spacing-unit);
+      right: $inuit-base-spacing-unit;
     }
   }
 }

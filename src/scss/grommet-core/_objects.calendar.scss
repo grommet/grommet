@@ -18,8 +18,9 @@
 
   &__control {
     position: absolute;
-    bottom: 0px;
+    top: 50%;
     right: halve($inuit-base-spacing-unit);
+    transform: translateY(-50%);
   }
 
   &__drop {

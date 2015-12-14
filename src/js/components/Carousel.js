@@ -4,6 +4,7 @@ var React = require('react');
 var Box = require('./Box');
 var Tiles = require('./Tiles');
 var Tile = require('./Tile');
+var Button = require('./Button');
 var Previous = require('./icons/base/Previous');
 var Next = require('./icons/base/Next');
 
@@ -127,9 +128,10 @@ var Carousel = React.createClass({
   _renderPrevButton: function() {
     if (this.props.infinite || this.state.activeIndex !== 0) {
       return (
-        <div className={CLASS_ROOT + '__arrow ' + CLASS_ROOT + '__arrow--prev'} onClick={this._slidePrev}>
-          <Previous />
-        </div>
+        <Button className={CLASS_ROOT + '__arrow ' + CLASS_ROOT + '__arrow--prev'}
+          type="icon" onClick={this._slidePrev}>
+          <Previous size="large" />
+        </Button>
       );
     }
   },
@@ -137,9 +139,10 @@ var Carousel = React.createClass({
   _renderNextButton: function() {
     if (this.props.infinite || this.state.activeIndex !== this.props.children.length - 1) {
       return (
-        <div className={CLASS_ROOT + '__arrow ' + CLASS_ROOT + '__arrow--next'} onClick={this._slideNext}>
-          <Next />
-        </div>
+        <Button className={CLASS_ROOT + '__arrow ' + CLASS_ROOT + '__arrow--next'}
+          type="icon" onClick={this._slideNext}>
+          <Next size="large" />
+        </Button>
       );
     }
   },

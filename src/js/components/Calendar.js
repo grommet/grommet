@@ -6,11 +6,11 @@ var moment = require('moment');
 var KeyboardAccelerators = require('../utils/KeyboardAccelerators');
 var Drop = require('../utils/Drop');
 var CalendarIcon = require('./icons/base/Calendar');
-var PreviousIcon = require('./icons/Left');
-var NextIcon = require('./icons/Right');
+var PreviousIcon = require('./icons/base/LinkPrevious');
+var NextIcon = require('./icons/base/LinkNext');
 var Header = require('./Header');
-var Menu = require('./Menu');
 var Title = require('./Title');
+var Button = require('./Button');
 
 var CLASS_ROOT = "calendar";
 
@@ -250,19 +250,17 @@ var Calendar = React.createClass({
       <div id={CLASS_ROOT + "-drop"} className={CLASS_ROOT + "__drop"}
         onClick={this._onClose}>
         <Header justify="between">
-          <Menu responsive={false}>
-            <span className={CLASS_ROOT + "__previous"} onClick={this._onPrevious}>
-              <PreviousIcon />
-            </span>
-          </Menu>
+          <Button className={CLASS_ROOT + "__previous"} type="icon"
+            onClick={this._onPrevious}>
+            <PreviousIcon />
+          </Button>
           <Title className={CLASS_ROOT + "__title"} responsive={false}>
             {this.state.reference.format('MMMM YYYY')}
           </Title>
-          <Menu responsive={false}>
-            <span className={CLASS_ROOT + "__next"} onClick={this._onNext}>
-              <NextIcon />
-            </span>
-          </Menu>
+          <Button className={CLASS_ROOT + "__next"} type="icon"
+            onClick={this._onNext}>
+            <NextIcon />
+          </Button>
         </Header>
         <div className={CLASS_ROOT + "__grid"}>
           <table>
@@ -293,9 +291,9 @@ var Calendar = React.createClass({
           id={this.props.id} ref="calendarInput" name={this.props.name}
           value={this.props.value}
           onChange={this._onInputChange} />
-        <div className={CLASS_ROOT + "__control"} onClick={this._onOpen} >
+        <Button className={CLASS_ROOT + "__control"} type="icon" onClick={this._onOpen}>
           <CalendarIcon />
-        </div>
+        </Button>
       </div>
     );
   }

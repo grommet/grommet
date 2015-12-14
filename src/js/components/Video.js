@@ -2,6 +2,7 @@
 
 var React = require('react');
 var PropTypes = React.PropTypes;
+var Button = require('./Button');
 var PlayIcon = require('./icons/base/Play');
 var PauseIcon = require('./icons/base/Pause');
 var RefreshIcon = require('./icons/base/Refresh');
@@ -104,9 +105,11 @@ var Video = React.createClass({
       classes.push(this.props.className);
     }
 
+    var controlIconSize = ('small' === this.props.size ? null : 'large');
     var controlIcon = (this.state.playing ?
-      <PauseIcon size="large" /> : (this.state.ended ?
-        <RefreshIcon size="large" /> : <PlayIcon size="large" />));
+      <PauseIcon size={controlIconSize} /> : (this.state.ended ?
+        <RefreshIcon size={controlIconSize} /> :
+          <PlayIcon size={controlIconSize} />));
 
     var title;
     if (this.props.title) {
@@ -159,9 +162,11 @@ var Video = React.createClass({
           {this.props.children}
         </video>
         <div className={CLASS_ROOT + '__summary'}>
-          <div className={CLASS_ROOT + '__control'} onClick={this._onClickControl}>
+          <Button className={CLASS_ROOT + '__control'} type="icon"
+            primary={true}
+            onClick={this._onClickControl}>
             {controlIcon}
-          </div>
+          </Button>
           {title}
         </div>
         {timeline}

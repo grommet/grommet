@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!-- Generator: Adobe Illustrator 17.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="XMLID_68_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
+	 viewBox="0 0 24 24.0117" enable-background="new 0 0 24 24.0117" xml:space="preserve">
 <g id="indicator">
-	<rect id="_x2E_svg_239_" x="0" y="0" fill="none" width="48" height="48"/>
-	<path fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" d="M22,35v-3c0-3.0938-1.5745-5.6785-2.8975-7.0015
-		C17.8184,23.7144,17,21.9536,17,19.9941c0-4.313,3.9007-7.7223,8.3667-6.8762c2.7529,0.5216,4.9634,2.7423,5.4984,5.4927
-		c0.4874,2.5056-0.3875,4.8077-1.9677,6.3878C27.5745,26.3215,26,28.9062,26,32v3h-2H22z M24,17c-1.6569,0-3,1.3431-3,3
-		s1.3431,3,3,3c1.6569,0,3-1.3431,3-3S25.6569,17,24,17z"/>
+	<rect id="_x2E_svg_239_" y="0.0117" fill="none" width="24" height="24"/>
+	<path fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" d="M10,23.0117v-3
+		c0-3.0938-1.5745-5.6785-2.8975-7.0015C5.8184,11.7261,5,9.9653,5,8.0058c0-4.313,3.9007-7.7223,8.3667-6.8762
+		c2.7529,0.5216,4.9634,2.7423,5.4984,5.4927c0.4874,2.5056-0.3875,4.8077-1.9677,6.3878C15.5745,14.3332,14,16.918,14,20.0117v3h-2
+		H10z M12,5.0117c-1.6569,0-3,1.3431-3,3s1.3431,3,3,3s3-1.3431,3-3S13.6569,5.0117,12,5.0117z"/>
 </g>
 </svg>

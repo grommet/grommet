@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 var React = require('react');
-var RightIcon = require('./icons/Right');
+var RightIcon = require('./icons/base/LinkNext');
 
 var CLASS_ROOT = "anchor";
 
@@ -33,6 +33,13 @@ var Anchor = React.createClass({
     if (this.props.className) {
       classes.push(this.props.className);
     }
+    var children = React.Children.map(this.props.children, function (child) {
+      if (child.type && 'Icon' === child.type.name) {
+        return <span className={CLASS_ROOT + "__icon"}>{child}</span>;
+      } else {
+        return child;
+      }
+    });
 
     return (
       <this.props.tag id={this.props.id} className={classes.join(' ')}
@@ -40,7 +47,7 @@ var Anchor = React.createClass({
         target={this.props.target}
         onClick={this.props.onClick}>
         {icon}
-        {this.props.children}
+        {children}
       </this.props.tag>
     );
   }

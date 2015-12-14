@@ -4,7 +4,8 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var KeyboardAccelerators = require('../utils/KeyboardAccelerators');
 var Drop = require('../utils/Drop');
-var SearchIcon = require('./icons/Search');
+var Button = require('./Button');
+var SearchIcon = require('./icons/base/Search');
 
 var CLASS_ROOT = "search-input";
 
@@ -201,9 +202,10 @@ var SearchInput = React.createClass({
           placeholder={this.props.placeHolder}
           onChange={this._onInputChange}
           onFocus={this._onFocus} />
-        <div className={CLASS_ROOT + "__control"} onClick={this._onAddDrop} >
+        <Button className={CLASS_ROOT + "__control"} type="icon"
+          onClick={this._onAddDrop} >
           <SearchIcon />
-        </div>
+        </Button>
       </div>
     );
   }

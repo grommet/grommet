@@ -45,18 +45,27 @@ var Button = React.createClass({
       classes.push(this.props.className);
     }
 
-    var content = this.props.label;
     var type = this.props.type;
     if (this.props.type === 'icon') {
       classes.push(CLASS_ROOT + "--icon");
-      content = this.props.children;
       type = 'button';
+    }
+
+    var children = React.Children.map(this.props.children, function (child) {
+      if (child && child.type && 'Icon' === child.type.name) {
+        return <span className={CLASS_ROOT + "__icon"}>{child}</span>;
+      } else {
+        return child;
+      }
+    });
+    if (! children) {
+      children = this.props.label;
     }
 
     return (
       <button id={this.props.id} type={type} className={classes.join(' ')}
         onClick={this.props.onClick} disabled={! this.props.onClick}>
-        {content}
+        {children}
       </button>
     );
   }

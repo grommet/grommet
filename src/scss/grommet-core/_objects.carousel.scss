@@ -34,8 +34,6 @@
     cursor: pointer;
 
     .control-icon {
-      width: quadruple($inuit-base-spacing-unit);
-      height: quadruple($inuit-base-spacing-unit);
       filter: drop-shadow(1px 1px 1px $button-drop-shadow-color);
       -webkit-filter: drop-shadow(1px 1px 1px $button-drop-shadow-color);
 
