@@ -125,7 +125,7 @@ var LoginForm = React.createClass({
         {rememberMe}
         <Button id={CLASS_ROOT + "__submit"} className={CLASS_ROOT + "__submit"}
           primary={true} strong={true} type="submit" label={login}
-          onClick={this._onSubmit} />
+          onClick={this.props.onSubmit ? this._onSubmit : null} />
         {footer}
       </Form>
     );

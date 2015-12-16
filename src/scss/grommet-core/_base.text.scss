@@ -6,7 +6,9 @@ body {
 }
 
 h1 {
-  @include inuit-font-size(48px);
+  // inuit-font-size sets the line-height to 1 (48px) when the font size is 48px.
+  // We want a bit more leading between lines than that. 1.125 (54 = 48 + 6)
+  @include inuit-font-size(48px, 1.125);
 }
 
 h2 {
@@ -15,8 +17,8 @@ h2 {
 
 h3 {
   // inuit-font-size sets the line-height to 24px when the font size is 24px.
-  // We want a bit more leading between lines than that.
-  @include inuit-font-size(24px, 28px);
+  // We want a bit more leading between lines than that. 1.25 (30 = 24 + 6)
+  @include inuit-font-size(24px, 1.25);
 }
 
 h4 {
