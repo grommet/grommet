@@ -38,8 +38,17 @@
       margin-top: halve($inuit-base-spacing-unit);
     }
 
-    > .form-field + *:not(.form-field) {
+    > .form-field + *:not(.form-field):not(.form-fields) {
       margin-top: $inuit-base-spacing-unit;
+    }
+
+    > .form-fields {
+      display: flex;
+      flex-direction: row;
+
+      .form-field {
+        margin-bottom: -1px;
+      }
     }
   }
 
