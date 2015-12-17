@@ -161,18 +161,22 @@ var Meter = (function (_Component) {
 
       // set color index
       if (series.length === 1 && props.thresholds) {
-        var item = series[0];
-        if (!item.colorIndex) {
-          // see which threshold color index to use
-          var cumulative = 0;
-          thresholds.some(function (threshold) {
-            cumulative += threshold.value;
-            if (item.value < cumulative) {
-              item.colorIndex = threshold.colorIndex || 'graph-1';
-              return true;
-            }
-          });
-        }
+        (function () {
+          var item = series[0];
+          if (!item.colorIndex) {
+            (function () {
+              // see which threshold color index to use
+              var cumulative = 0;
+              thresholds.some(function (threshold) {
+                cumulative += threshold.value;
+                if (item.value < cumulative) {
+                  item.colorIndex = threshold.colorIndex || 'graph-1';
+                  return true;
+                }
+              });
+            })();
+          }
+        })();
       } else {
         series.forEach(function (item, index) {
           if (!item.colorIndex) {
@@ -264,7 +268,7 @@ var Meter = (function (_Component) {
   }, {
     key: '_stateFromProps',
     value: function _stateFromProps(props) {
-      var total;
+      var total = undefined;
       if (props.series && props.series.length > 1) {
         total = this._seriesTotal(props.series);
       } else if (props.max && props.max.value) {
@@ -272,7 +276,7 @@ var Meter = (function (_Component) {
       } else {
         total = 100;
       }
-      var seriesMax;
+      var seriesMax = undefined;
       if (props.series && 'spiral' === props.type) {
         seriesMax = this._seriesMax(props.series);
       }
@@ -309,7 +313,7 @@ var Meter = (function (_Component) {
   }, {
     key: '_getActiveFields',
     value: function _getActiveFields() {
-      var fields;
+      var fields = undefined;
       if (null === this.state.activeIndex) {
         fields = { value: this.state.total, label: 'Total' };
       } else {
@@ -326,7 +330,7 @@ var Meter = (function (_Component) {
       if (fields.onClick) {
         classes.push(CLASS_ROOT + "__value--active");
       }
-      var units;
+      var units = undefined;
       if (this.props.units) {
         units = _react2['default'].createElement(
           'span',
@@ -356,7 +360,7 @@ var Meter = (function (_Component) {
   }, {
     key: '_renderMinMax',
     value: function _renderMinMax(classes) {
-      var minLabel;
+      var minLabel = undefined;
       if (this.state.min.label) {
         minLabel = _react2['default'].createElement(
           'div',
@@ -364,7 +368,7 @@ var Meter = (function (_Component) {
           this.state.min.label
         );
       }
-      var maxLabel;
+      var maxLabel = undefined;
       if (this.state.max.label) {
         maxLabel = _react2['default'].createElement(
           'div',
@@ -372,7 +376,7 @@ var Meter = (function (_Component) {
           this.state.max.label
         );
       }
-      var minMax;
+      var minMax = undefined;
       if (minLabel || maxLabel) {
         minMax = _react2['default'].createElement(
           'div',
@@ -432,7 +436,7 @@ var Meter = (function (_Component) {
 
       var activeValue = this._renderActiveValue();
 
-      var legend;
+      var legend = undefined;
       if (this.props.legend) {
         legend = this._renderLegend();
         classes.push(CLASS_ROOT + "--legend-" + this.state.legendPlacement);
@@ -440,7 +444,7 @@ var Meter = (function (_Component) {
 
       var a11yRole = this.props.series ? 'chart' : this.props.a11yRole;
 
-      var defaultTitle;
+      var defaultTitle = undefined;
       if (!this.props.a11yTitle) {
         defaultTitle = ['Meter, ', 'Type: ', (this.props.vertical ? 'vertical ' : '') + this.props.type].join(' ').trim();
       }
@@ -448,7 +452,7 @@ var Meter = (function (_Component) {
       var titleKey = typeof this.props.a11yTitle !== "undefined" ? this.props.a11yTitle : defaultTitle;
       var a11yTitle = _utilsIntl2['default'].getMessage(this.context.intl, titleKey);
 
-      var defaultA11YDesc;
+      var defaultA11YDesc = undefined;
       if (this.props.a11yDesc !== "undefined") {
         var fields = this._getActiveFields();
         defaultA11YDesc = [', Value: ', fields.value, this.props.units || '', fields.label, this.state.min.label ? ', Minimum: ' + this.state.min.label : '', this.state.max.label ? ', Maximum: ' + this.state.max.label : '', this.props.threshold ? ', Threshold: ' + this.props.threshold : '', this.props.thresholds ? getThresholdsString(this.props.thresholds) : ''].join(' ').trim();
@@ -470,28 +474,33 @@ var Meter = (function (_Component) {
         total: this.state.total,
         vertical: this.props.vertical });
 
+      var graphicContainer = undefined;
+      if (this.state.total > 0) {
+        graphicContainer = _react2['default'].createElement(
+          'div',
+          { className: CLASS_ROOT + "__graphic-container" },
+          _react2['default'].createElement(
+            'a',
+            { href: '#', role: a11yRole, tabIndex: '0', className: CLASS_ROOT + "__aria",
+              'aria-labelledby': this.props.a11yTitleId + ' ' + this.props.a11yDescId },
+            _react2['default'].createElement(
+              'title',
+              { id: this.props.a11yTitleId },
+              a11yTitle
+            ),
+            graphic
+          ),
+          minMax
+        );
+      }
+
       return _react2['default'].createElement(
         'div',
         { className: classes.join(' ') },
         _react2['default'].createElement(
           'div',
           { ref: 'activeGraphic', className: CLASS_ROOT + "__value-container" },
-          _react2['default'].createElement(
-            'div',
-            { className: CLASS_ROOT + "__graphic-container" },
-            _react2['default'].createElement(
-              'a',
-              { href: '#', role: a11yRole, tabIndex: '0', className: CLASS_ROOT + "__aria",
-                'aria-labelledby': this.props.a11yTitleId + ' ' + this.props.a11yDescId },
-              _react2['default'].createElement(
-                'title',
-                { id: this.props.a11yTitleId },
-                a11yTitle
-              ),
-              graphic
-            ),
-            minMax
-          ),
+          graphicContainer,
           activeValue
         ),
         legend
