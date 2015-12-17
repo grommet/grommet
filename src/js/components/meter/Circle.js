@@ -11,7 +11,7 @@ class Circle extends Graphic {
 
   _stateFromProps (props) {
     if (! props.stacked &&
-      props.series.length * RING_THICKNESS > CIRCLE_RADIUS) {
+      (props.series.length - 1) * RING_THICKNESS > CIRCLE_RADIUS) {
       console.warn("You cannot have more than " +
         Math.round(CIRCLE_RADIUS / RING_THICKNESS) +
         " data values in a circle Meter");
