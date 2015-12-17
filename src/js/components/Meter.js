@@ -20,7 +20,7 @@ const TYPE_COMPONENT = {
 };
 
 function getThresholdsString(thresholds) {
-  var thresholdsArray = [', Thresholds: '];
+  let thresholdsArray = [', Thresholds: '];
 
   thresholds.forEach(function (threshold) {
     thresholdsArray.push(threshold.label + ': ' + threshold.value);
@@ -53,7 +53,7 @@ class Meter extends Component {
   }
 
   componentWillReceiveProps (nextProps) {
-    var state = this._stateFromProps(nextProps);
+    let state = this._stateFromProps(nextProps);
     this.setState(state);
     this._onResize();
   }
@@ -88,7 +88,7 @@ class Meter extends Component {
   _layout () {
     if (this.state.placeLegend) {
       // legendPlacement based on available window orientation
-      var ratio = window.innerWidth / window.innerHeight;
+      let ratio = window.innerWidth / window.innerHeight;
       if (ratio < 0.8) {
         this.setState({legendPlacement: 'bottom'});
       } else if (ratio > 1.2) {
@@ -98,15 +98,15 @@ class Meter extends Component {
 
     if ('right' === this.state.legendPlacement) {
       if (this.refs.legend) {
-        var graphicHeight = this.refs.activeGraphic.offsetHeight;
-        var legendHeight = ReactDOM.findDOMNode(this.refs.legend).offsetHeight;
+        let graphicHeight = this.refs.activeGraphic.offsetHeight;
+        let legendHeight = ReactDOM.findDOMNode(this.refs.legend).offsetHeight;
         this.setState({tallLegend: (legendHeight > graphicHeight)});
       }
     }
   }
 
   _normalizeSeries (props, min, max, thresholds) {
-    var series = [];
+    let series = [];
     if (props.series) {
       series = props.series;
     } else if (props.value || props.value === 0) {
@@ -117,10 +117,10 @@ class Meter extends Component {
 
     // set color index
     if (series.length === 1 && props.thresholds) {
-      var item = series[0];
+      let item = series[0];
       if (! item.colorIndex) {
         // see which threshold color index to use
-        var cumulative = 0;
+        let cumulative = 0;
         thresholds.some(function (threshold) {
           cumulative += threshold.value;
           if (item.value < cumulative) {
@@ -141,13 +141,13 @@ class Meter extends Component {
   }
 
   _normalizeThresholds (props, min, max) {
-    var thresholds = [];
+    let thresholds = [];
     if (props.thresholds) {
       // Convert thresholds from absolute values to cummulative,
       // so we can re-use the series drawing code.
-      var total = 0;
-      for (var i = 0; i < props.thresholds.length; i += 1) {
-        var threshold = props.thresholds[i];
+      let total = 0;
+      for (let i = 0; i < props.thresholds.length; i += 1) {
+        let threshold = props.thresholds[i];
         thresholds.push({
           label: threshold.label,
           colorIndex: threshold.colorIndex
@@ -161,7 +161,7 @@ class Meter extends Component {
         }
       }
     } else if (props.threshold) {
-      var remaining = max.value - props.threshold;
+      let remaining = max.value - props.threshold;
       thresholds = [
         {value: props.threshold, colorIndex: 'unset'},
         {value: remaining, colorIndex: 'critical'}
@@ -175,7 +175,7 @@ class Meter extends Component {
   }
 
   _importantIndex (props, series) {
-    var result = null;
+    let result = null;
     if (series.length === 1) {
       result = 0;
     }
@@ -200,7 +200,7 @@ class Meter extends Component {
   }
 
   _seriesTotal (series) {
-    var total = 0;
+    let total = 0;
     series.some(function (item) {
       total += item.value;
     });
@@ -208,7 +208,7 @@ class Meter extends Component {
   }
 
   _seriesMax (series) {
-    var max = 0;
+    let max = 0;
     series.some(function (item) {
       max = Math.max(max, item.value);
     });
@@ -217,7 +217,7 @@ class Meter extends Component {
 
   // Generates state based on the provided props.
   _stateFromProps (props) {
-    var total;
+    let total;
     if (props.series && props.series.length > 1) {
       total = this._seriesTotal(props.series);
     } else if (props.max && props.max.value) {
@@ -225,23 +225,23 @@ class Meter extends Component {
     } else {
       total = 100;
     }
-    var seriesMax;
+    let seriesMax;
     if (props.series && 'spiral' === props.type) {
       seriesMax = this._seriesMax(props.series);
     }
     // Normalize min and max
-    var min = this._terminal(props.min || 0);
+    let min = this._terminal(props.min || 0);
     // Max could be provided in props or come from the total of
     // a multi-value series.
-    var max = this._terminal(props.max || seriesMax || total);
+    let max = this._terminal(props.max || seriesMax || total);
     // Normalize simple threshold prop to an array, if needed.
-    var thresholds = this._normalizeThresholds(props, min, max);
+    let thresholds = this._normalizeThresholds(props, min, max);
     // Normalize simple value prop to a series, if needed.
-    var series = this._normalizeSeries(props, min, max, thresholds);
+    let series = this._normalizeSeries(props, min, max, thresholds);
     // Determine important index.
-    var importantIndex = this._importantIndex(props, series);
+    let importantIndex = this._importantIndex(props, series);
 
-    var state = {
+    let state = {
       importantIndex: importantIndex,
       activeIndex: importantIndex,
       series: series,
@@ -261,23 +261,23 @@ class Meter extends Component {
   }
 
   _getActiveFields () {
-    var fields;
+    let fields;
     if (null === this.state.activeIndex) {
       fields = {value: this.state.total, label: 'Total'};
     } else {
-      var active = this.state.series[this.state.activeIndex];
+      let active = this.state.series[this.state.activeIndex];
       fields = {value: active.value, label: active.label, onClick: active.onClick};
     }
     return fields;
   }
 
   _renderActiveValue () {
-    var fields = this._getActiveFields();
-    var classes = [CLASS_ROOT + "__value"];
+    let fields = this._getActiveFields();
+    let classes = [CLASS_ROOT + "__value"];
     if (fields.onClick) {
       classes.push(CLASS_ROOT + "__value--active");
     }
-    var units;
+    let units;
     if (this.props.units) {
       units = (
         <span className={CLASS_ROOT + "__value-units large-number-font"}>
@@ -302,7 +302,7 @@ class Meter extends Component {
   }
 
   _renderMinMax (classes) {
-    var minLabel;
+    let minLabel;
     if (this.state.min.label) {
       minLabel = (
         <div className={CLASS_ROOT + "__minmax-min"}>
@@ -310,7 +310,7 @@ class Meter extends Component {
         </div>
       );
     }
-    var maxLabel;
+    let maxLabel;
     if (this.state.max.label) {
       maxLabel = (
         <div className={CLASS_ROOT + "__minmax-max"}>
@@ -318,7 +318,7 @@ class Meter extends Component {
         </div>
       );
     }
-    var minMax;
+    let minMax;
     if (minLabel || maxLabel) {
       minMax = (
         <div className={CLASS_ROOT + "__minmax-container"}>
@@ -334,7 +334,7 @@ class Meter extends Component {
   }
 
   _renderLegend () {
-    var total = (typeof this.props.legend === 'object' && this.props.legend.total);
+    let total = (typeof this.props.legend === 'object' && this.props.legend.total);
     return (
       <Legend ref="legend" className={CLASS_ROOT + "__legend"}
         series={this.state.series}
@@ -346,7 +346,7 @@ class Meter extends Component {
   }
 
   render () {
-    var classes = [CLASS_ROOT];
+    let classes = [CLASS_ROOT];
     classes.push(CLASS_ROOT + "--" + this.props.type);
     if (this.props.vertical) {
       classes.push(CLASS_ROOT + "--vertical");
@@ -372,19 +372,19 @@ class Meter extends Component {
       classes.push(this.props.className);
     }
 
-    var minMax = this._renderMinMax(classes);
+    let minMax = this._renderMinMax(classes);
 
-    var activeValue = this._renderActiveValue();
+    let activeValue = this._renderActiveValue();
 
-    var legend;
+    let legend;
     if (this.props.legend) {
       legend = this._renderLegend();
       classes.push(CLASS_ROOT + "--legend-" + this.state.legendPlacement);
     }
 
-    var a11yRole = this.props.series ? 'chart' : this.props.a11yRole;
+    let a11yRole = this.props.series ? 'chart' : this.props.a11yRole;
 
-    var defaultTitle;
+    let defaultTitle;
     if (!this.props.a11yTitle) {
       defaultTitle = [
         'Meter, ',
@@ -393,13 +393,13 @@ class Meter extends Component {
       ].join(' ').trim();
     }
 
-    var titleKey = typeof this.props.a11yTitle !== "undefined" ?
+    let titleKey = typeof this.props.a11yTitle !== "undefined" ?
         this.props.a11yTitle : defaultTitle;
-    var a11yTitle = Intl.getMessage(this.context.intl, titleKey);
+    let a11yTitle = Intl.getMessage(this.context.intl, titleKey);
 
-    var defaultA11YDesc;
+    let defaultA11YDesc;
     if (this.props.a11yDesc !== "undefined") {
-      var fields = this._getActiveFields();
+      let fields = this._getActiveFields();
       defaultA11YDesc = [
         ', Value: ',
         fields.value,
@@ -412,12 +412,12 @@ class Meter extends Component {
       ].join(' ').trim();
     }
 
-    var descKey = typeof this.props.a11yDesc !== "undefined" ?
+    let descKey = typeof this.props.a11yDesc !== "undefined" ?
         this.props.a11yDesc : defaultA11YDesc;
-    var a11yDesc = Intl.getMessage(this.context.intl, descKey);
+    let a11yDesc = Intl.getMessage(this.context.intl, descKey);
 
-    var GraphicComponent = TYPE_COMPONENT[this.props.type];
-    var graphic = (
+    let GraphicComponent = TYPE_COMPONENT[this.props.type];
+    let graphic = (
       <GraphicComponent
         a11yDesc={a11yDesc}
         a11yDescId={this.props.a11yDescId}
@@ -431,17 +431,24 @@ class Meter extends Component {
         vertical={this.props.vertical} />
     );
 
+    let graphicContainer;
+    if (this.state.total > 0) {
+      graphicContainer = (
+        <div className={CLASS_ROOT + "__graphic-container"}>
+          <a href="#" role={a11yRole} tabIndex="0" className={CLASS_ROOT + "__aria"}
+            aria-labelledby={this.props.a11yTitleId + ' ' + this.props.a11yDescId}>
+            <title id={this.props.a11yTitleId}>{a11yTitle}</title>
+            {graphic}
+          </a>
+          {minMax}
+        </div>
+      );
+    }
+
     return (
       <div className={classes.join(' ')}>
         <div ref="activeGraphic" className={CLASS_ROOT + "__value-container"}>
-          <div className={CLASS_ROOT + "__graphic-container"}>
-            <a href="#" role={a11yRole} tabIndex="0" className={CLASS_ROOT + "__aria"}
-              aria-labelledby={this.props.a11yTitleId + ' ' + this.props.a11yDescId}>
-              <title id={this.props.a11yTitleId}>{a11yTitle}</title>
-              {graphic}
-            </a>
-            {minMax}
-          </div>
+          {graphicContainer}
           {activeValue}
         </div>
         {legend}
