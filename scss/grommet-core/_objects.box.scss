@@ -47,6 +47,10 @@
     }
   }
 
+  &--wrap {
+    flex-wrap: wrap;
+  }
+
   @include pad();
 
   &--full {
