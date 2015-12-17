@@ -23,6 +23,7 @@ module.exports = {
   'Log In': 'Logar',
   Logout: 'Deslogar',
   'Main Content': 'Conteúdo Principal',
+  Menu: 'Menu',
   model: 'Modelo',
   modified: 'Modificado',
   Name: 'Nome',
