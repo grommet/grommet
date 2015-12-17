@@ -1,11 +1,12 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
-var merge = require('lodash/object/merge');
-var Cookies = require('./Cookies');
-var fallbackLocale = 'en-US';
+
+import Cookies from'./Cookies';
+
+let fallbackLocale = 'en-US';
 
 function normalizeLocale(locale) {
-  var locales = locale.replace(/_/g, '-').split('-');
-  var normalizedLocale = locales[0];
+  let locales = locale.replace(/_/g, '-').split('-');
+  let normalizedLocale = locales[0];
   if (locales.length > 1) {
     normalizedLocale += '-' + locales[1].toUpperCase();
   }
@@ -14,33 +15,34 @@ function normalizeLocale(locale) {
 }
 
 module.exports = {
-  getCurrentLocale: function() {
-    if (typeof module !== 'undefined' && module.exports) {
-      return fallbackLocale;
-    }
-    var cookieLanguages = Cookies.get('languages');
-    var locale = cookieLanguages ? JSON.parse(cookieLanguages)[0] : undefined;
-    if (!locale) {
-      locale = window.navigator.languages ? window.navigator.languages[0] : (window.navigator.language || window.navigator.userLanguage);
-    }
-
-    return normalizeLocale(locale || fallbackLocale);
+  setFallbackLocale(locale) {
+    fallbackLocale = normalizeLocale(locale);
   },
 
-  getLocaleData: function(appMessages) {
-    var locale = this.getCurrentLocale();
-    var grommetMessages;
+  getCurrentLocale() {
+    try {
+      let cookieLanguages = Cookies.get('languages');
+      let locale = cookieLanguages ? JSON.parse(cookieLanguages)[0] : undefined;
+      if (!locale) {
+        locale = window.navigator.languages ? window.navigator.languages[0] : (window.navigator.language || window.navigator.userLanguage);
+      }
+
+      return normalizeLocale(locale);
+    } catch (e) {
+      return fallbackLocale;
+    }
+  },
+
+  getLocaleData(appMessages = {}, locale = this.getCurrentLocale()) {
+    let grommetMessages;
     try {
       grommetMessages = require('../messages/' + locale);
     } catch (e) {
       grommetMessages = {};
     }
 
-    var messages = merge(grommetMessages, appMessages || {});
+    let messages = Object.assign(grommetMessages, appMessages);
 
-    return {
-      locale: locale,
-      messages: messages
-    };
+    return {locale, messages};
   }
 };
