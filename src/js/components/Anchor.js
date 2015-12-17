@@ -1,26 +1,12 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
-var RightIcon = require('./icons/base/LinkNext');
+import React, { Component, PropTypes } from 'react';
+import RightIcon from './icons/base/LinkNext';
 
-var CLASS_ROOT = "anchor";
+const CLASS_ROOT = "anchor";
 
-var Anchor = React.createClass({
-
-  propTypes: {
-    href: React.PropTypes.string,
-    id: React.PropTypes.string,
-    onClick: React.PropTypes.func,
-    primary: React.PropTypes.bool,
-    tag: React.PropTypes.string,
-    target: React.PropTypes.string
-  },
-
-  getDefaultProps: function () {
-    return {tag: 'a'};
-  },
-
-  render: function () {
+class Anchor extends Component {
+  render () {
     var classes = [CLASS_ROOT];
     var icon;
     if (this.props.primary) {
@@ -51,7 +37,19 @@ var Anchor = React.createClass({
       </this.props.tag>
     );
   }
+}
 
-});
+Anchor.propTypes = {
+  href: PropTypes.string,
+  id: PropTypes.string,
+  onClick: PropTypes.func,
+  primary: PropTypes.bool,
+  tag: PropTypes.string,
+  target: PropTypes.string
+};
+
+Anchor.defaultProps = {
+  tag: 'a'
+};
 
 module.exports = Anchor;

@@ -1,30 +1,11 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
+import React, { Component, PropTypes } from 'react';
 
-var CLASS_ROOT = "button";
+const CLASS_ROOT = "button";
 
-var Button = React.createClass({
-
-  propTypes: {
-    accent: React.PropTypes.bool,
-    fill: React.PropTypes.bool,
-    icon: React.PropTypes.bool,
-    id: React.PropTypes.string,
-    label: React.PropTypes.node,
-    onClick: React.PropTypes.func,
-    primary: React.PropTypes.bool,
-    secondary: React.PropTypes.bool,
-    type: React.PropTypes.oneOf(['button', 'reset', 'submit', 'icon'])
-  },
-
-  getDefaultProps: function () {
-    return {
-      type: "button"
-    };
-  },
-
-  render: function () {
+class Button extends Component {
+  render () {
     var classes = [CLASS_ROOT];
     if (this.props.primary) {
       classes.push(CLASS_ROOT + "--primary");
@@ -69,7 +50,22 @@ var Button = React.createClass({
       </button>
     );
   }
+}
 
-});
+Button.propTypes = {
+  accent: PropTypes.bool,
+  fill: PropTypes.bool,
+  icon: PropTypes.bool,
+  id: PropTypes.string,
+  label: PropTypes.node,
+  onClick: PropTypes.func,
+  primary: PropTypes.bool,
+  secondary: PropTypes.bool,
+  type: PropTypes.oneOf(['button', 'reset', 'submit', 'icon'])
+};
+
+Button.defaultProps = {
+  type: "button"
+};
 
 module.exports = Button;
