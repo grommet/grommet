@@ -36,7 +36,8 @@ var Box = React.createClass({
     texture: React.PropTypes.oneOfType([
       React.PropTypes.node,
       React.PropTypes.string
-    ])
+    ]),
+    wrap: React.PropTypes.bool
   },
 
   contextTypes: {
@@ -103,6 +104,7 @@ var Box = React.createClass({
     this._addPropertyClass(classes, CLASS_ROOT, 'pad');
     this._addPropertyClass(classes, CLASS_ROOT, 'separator');
     this._addPropertyClass(classes, CLASS_ROOT, 'textAlign', 'text-align');
+    this._addPropertyClass(classes, CLASS_ROOT, 'wrap');
 
     if (this.props.appCentered) {
       this._addPropertyClass(containerClasses, CLASS_ROOT + "__container", 'full');

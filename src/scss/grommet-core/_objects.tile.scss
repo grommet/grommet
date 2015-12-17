@@ -4,10 +4,6 @@
   width: 100%;
   padding: halve($inuit-base-spacing-unit);
 
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-
   > .tile {
     flex: 0 0 $tile-size;
     // don't count padding for flex basis
@@ -42,7 +38,7 @@
       flex: 1;
       margin: 0px;
 
-      &--direction-row {
+      &.box--direction-row {
         width: 100%;
         overflow-x: hidden;
         overflow-y: visible;
@@ -50,7 +46,7 @@
     }
   }
 
-  &--fill {
+  &--fill.box--wrap {
     justify-content: space-around;
 
     > .tile {
@@ -59,8 +55,6 @@
   }
 
   &--flush {
-    //margin: - $inuit-base-spacing-unit;
-    //width: calc(100% + #{double($inuit-base-spacing-unit)});
     padding: 0px;
 
     > .tile {
@@ -69,20 +63,6 @@
       &--wide {
         flex-basis: 100%;
       }
-    }
-  }
-
-  &--direction {
-    &-row {
-      flex-direction: row;
-      flex-wrap: nowrap;
-      justify-content: flex-start;
-    }
-
-    &-column {
-      flex-direction: column;
-      flex-wrap: nowrap;
-      justify-content: flex-start;
     }
   }
 
@@ -125,10 +105,6 @@
   .status-icon {
     margin-right: quarter($inuit-base-spacing-unit);
   }
-
-  // &.box--align-center {
-  //   text-align: center;
-  // }
 
   > .chart {
     width: 100%;
