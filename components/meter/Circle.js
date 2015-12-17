@@ -34,7 +34,7 @@ var Circle = (function (_Graphic) {
   _createClass(Circle, [{
     key: '_stateFromProps',
     value: function _stateFromProps(props) {
-      if (!props.stacked && props.series.length * RING_THICKNESS > CIRCLE_RADIUS) {
+      if (!props.stacked && (props.series.length - 1) * RING_THICKNESS > CIRCLE_RADIUS) {
         console.warn("You cannot have more than " + Math.round(CIRCLE_RADIUS / RING_THICKNESS) + " data values in a circle Meter");
       }
 
