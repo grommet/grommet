@@ -33,7 +33,7 @@
 
   svg,
   img {
-    max-height: $readable-text-width;
+    max-width: $image-width;
 
     &:not(:last-child) {
       margin-right: halve($inuit-base-spacing-unit);

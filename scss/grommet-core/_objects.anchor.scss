@@ -71,7 +71,7 @@ a,
         }
       }
 
-      [class*="background-color-index-"] & {
+      [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
         color: $colored-text-color;
 
         .control-icon {

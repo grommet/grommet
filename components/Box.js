@@ -35,7 +35,7 @@ var Box = React.createClass({
     separator: React.PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
     tag: React.PropTypes.string,
     textAlign: React.PropTypes.oneOf(['left', 'center', 'right']),
-    texture: React.PropTypes.string
+    texture: React.PropTypes.oneOfType([React.PropTypes.node, React.PropTypes.string])
   },
 
   contextTypes: {
@@ -122,11 +122,19 @@ var Box = React.createClass({
     }
 
     var style = {};
-    if (this.props.texture) {
+    if (this.props.texture && 'string' === typeof this.props.texture) {
       style.backgroundImage = this.props.texture;
     } else if (this.props.backgroundImage) {
       style.background = this.props.backgroundImage + " no-repeat center center";
       style.backgroundSize = "cover";
+    }
+    var texture;
+    if ('object' === typeof this.props.texture) {
+      texture = React.createElement(
+        'div',
+        { className: CLASS_ROOT + "__texture" },
+        this.props.texture
+      );
     }
 
     var a11yProps = {};
@@ -145,6 +153,7 @@ var Box = React.createClass({
         React.createElement(
           this.props.tag,
           { id: this.props.id, className: classes.join(' ') },
+          texture,
           this.props.children
         )
       );
@@ -154,6 +163,7 @@ var Box = React.createClass({
         _extends({ ref: 'boxContainer', id: this.props.id,
           className: classes.join(' '), style: style,
           onClick: this.props.onClick }, a11yProps),
+        texture,
         this.props.children
       );
     }

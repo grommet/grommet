@@ -25,6 +25,7 @@ module.exports = {
   'Log In': 'Log In',
   Logout: 'Logout',
   'Main Content': 'Main Content',
+  Menu: 'Menu',
   model: 'Model',
   modified: 'Modified',
   Name: 'Name',
