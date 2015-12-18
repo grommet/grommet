@@ -14,35 +14,33 @@ function normalizeLocale(locale) {
   return normalizedLocale;
 }
 
-module.exports = {
-  setLocale(locale) {
-    currentLocale = normalizeLocale(locale);
-  },
+export function setLocale(locale) {
+  currentLocale = normalizeLocale(locale);
+}
 
-  getCurrentLocale() {
-    try {
-      let cookieLanguages = Cookies.get('languages');
-      let locale = cookieLanguages ? JSON.parse(cookieLanguages)[0] : undefined;
-      if (!locale) {
-        locale = window.navigator.languages ? window.navigator.languages[0] : (window.navigator.language || window.navigator.userLanguage);
-      }
-
-      return normalizeLocale(locale);
-    } catch (e) {
-      return currentLocale;
-    }
-  },
-
-  getLocaleData(appMessages = {}, locale = this.getCurrentLocale()) {
-    let grommetMessages;
-    try {
-      grommetMessages = require('../messages/' + locale);
-    } catch (e) {
-      grommetMessages = {};
+export function getCurrentLocale() {
+  try {
+    let cookieLanguages = Cookies.get('languages');
+    let locale = cookieLanguages ? JSON.parse(cookieLanguages)[0] : undefined;
+    if (!locale) {
+      locale = window.navigator.languages ? window.navigator.languages[0] : (window.navigator.language || window.navigator.userLanguage);
     }
 
-    let messages = Object.assign(grommetMessages, appMessages);
-
-    return {locale, messages};
+    return normalizeLocale(locale);
+  } catch (e) {
+    return currentLocale;
   }
-};
+}
+
+export function getLocaleData(appMessages = {}, locale = getCurrentLocale()) {
+  let grommetMessages;
+  try {
+    grommetMessages = require('../messages/' + locale);
+  } catch (e) {
+    grommetMessages = {};
+  }
+
+  let messages = Object.assign(grommetMessages, appMessages);
+
+  return {locale, messages};
+}
