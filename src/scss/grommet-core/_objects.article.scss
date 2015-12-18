@@ -9,9 +9,33 @@
     width: 100vw;
     max-width: 100%;
 
-    > .article__controls {
+    > .article__control {
       position: fixed;
       z-index: 10;
+
+      &-up {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      &-down {
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      &-left {
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+      }
+
+      &-right {
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+      }
     }
 
     &.box--direction-column {
@@ -22,7 +46,7 @@
         overflow-x: auto;
       }
 
-      > .article__controls {
+      > .article__control-carousel {
         top: 50%;
         left: $inuit-base-spacing-unit;
         transform: translateY(-50%);
@@ -37,7 +61,7 @@
         overflow-y: auto;
       }
 
-      > .article__controls {
+      > .article__control-carousel {
         top: $inuit-base-spacing-unit;
         left: 50%;
         transform: translateX(-50%);

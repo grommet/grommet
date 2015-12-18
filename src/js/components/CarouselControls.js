@@ -1,26 +1,29 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
-var Box = require('./Box');
+import React, { Component, PropTypes } from 'react';
+import Box from './Box';
 
-var CLASS_ROOT = "carousel-controls";
+const CLASS_ROOT = "carousel-controls";
 
-var CarouselControls = React.createClass({
+class CarouselControls extends Component {
 
-  propTypes: {
-    count: React.PropTypes.number.isRequired,
-    onChange: React.PropTypes.func,
-    selected: React.PropTypes.number
-  },
+  constructor() {
+    super();
 
-  _onClick: function (index) {
+    this._onClick = this._onClick.bind(this);
+  }
+
+  _onClick (index) {
     if (this.props.onChange) {
       this.props.onChange(index);
     }
-  },
+  }
 
-  render: function () {
+  render () {
     var classes = [CLASS_ROOT];
+    if (this.props.direction) {
+      classes.push(CLASS_ROOT + "--" + this.props.direction);
+    }
     if (this.props.className) {
       classes.push(this.props.className);
     }
@@ -41,12 +44,20 @@ var CarouselControls = React.createClass({
     }
 
     return (
-      <Box className={classes.join(' ')} direction="row" justify="center" responsive={false}>
+      <Box className={classes.join(' ')} direction={this.props.direction}
+        justify="center" responsive={false}>
         {controls}
       </Box>
     );
   }
 
-});
+}
+
+CarouselControls.propTypes = {
+  count: PropTypes.number.isRequired,
+  direction: PropTypes.oneOf(['row', 'column']),
+  onChange: PropTypes.func,
+  selected: PropTypes.number
+};
 
 module.exports = CarouselControls;

@@ -1,43 +1,41 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
-var ReactDOM = require('react-dom');
-var merge = require('lodash/object/merge');
-var pick = require('lodash/object/pick');
-var keys = require('lodash/object/keys');
-var Box = require('./Box');
-var KeyboardAccelerators = require('../utils/KeyboardAccelerators');
-var Scroll = require('../utils/Scroll');
-var SkipLinkAnchor = require('./SkipLinkAnchor');
-var CarouselControls = require('./CarouselControls');
-// var NextIcon = require('./icons/base/Next');
-// var PreviousIcon = require('./icons/base/Previous');
-// var UpIcon = require('./icons/base/Up');
-// var DownIcon = require('./icons/base/Down');
+import React, { Component, PropTypes } from 'react';
+import ReactDOM from 'react-dom';
+import pick from 'lodash/object/pick';
+import keys from 'lodash/object/keys';
+import Box from './Box';
+import KeyboardAccelerators from '../utils/KeyboardAccelerators';
+import Scroll from '../utils/Scroll';
+import SkipLinkAnchor from './SkipLinkAnchor';
+// import CarouselControls from './CarouselControls';
+import Button from './Button';
+import NextIcon from './icons/base/Next';
+import PreviousIcon from './icons/base/Previous';
+import UpIcon from './icons/base/Up';
+import DownIcon from './icons/base/Down';
 
-var CLASS_ROOT = "article";
-var DEFAULT_PLAY_INTERVAL = 10000; // 10s
+const CLASS_ROOT = "article";
+const DEFAULT_PLAY_INTERVAL = 10000; // 10s
 
-var Article = React.createClass({
+class Article extends Component {
 
-  propTypes: merge({
-    controls: React.PropTypes.bool,
-    primary: React.PropTypes.bool,
-    scrollStep: React.PropTypes.bool
-  }, Box.propTypes),
+  constructor() {
+    super();
 
-  getDefaultProps: function () {
-    return {
-      pad: 'none',
-      direction: 'column'
+    this._onWheel = this._onWheel.bind(this);
+    this._onNext = this._onNext.bind(this);
+    this._onPrevious = this._onPrevious.bind(this);
+    this._onTogglePlay = this._onTogglePlay.bind(this);
+    this._onSelect = this._onSelect.bind(this);
+
+    this.state = {
+      activeIndex: 1,
+      playing: false
     };
-  },
+  }
 
-  getInitialState: function () {
-    return {selected: 1, playing: false};
-  },
-
-  componentDidMount: function () {
+  componentDidMount () {
     if (this.props.scrollStep) {
       var keys;
       if ('row' === this.props.direction) {
@@ -52,9 +50,9 @@ var Article = React.createClass({
 
       this._scrollParent = ReactDOM.findDOMNode(this.refs.component);
     }
-  },
+  }
 
-  componentWillUnmount: function () {
+  componentWillUnmount () {
     if (this.props.scrollStep) {
       var keys;
       if ('row' === this.props.direction) {
@@ -67,9 +65,9 @@ var Article = React.createClass({
 
       document.removeEventListener('wheel', this._onWheel);
     }
-  },
+  }
 
-  _onWheel: function (event) {
+  _onWheel (event) {
     var delta = ('row' === this.props.direction ? event.deltaX : event.deltaY);
     if (Math.abs(delta) > 100) {
       // The user is expressing a resolute interest in controlling the
@@ -89,9 +87,9 @@ var Article = React.createClass({
         this._wheelTimer = setTimeout(this._onPrevious, 200);
       }
     }
-  },
+  }
 
-  _onNext: function (event, wrap) {
+  _onNext (event, wrap) {
     if (event) {
       this._stop();
       event.preventDefault();
@@ -104,14 +102,14 @@ var Article = React.createClass({
       var rect = child.getBoundingClientRect();
       // 10 is for fuzziness
       if ('row' === this.props.direction) {
-        if (rect.right > 10 && (i + 2) !== this.state.selected &&
+        if (rect.right > 10 && (i + 2) !== this.state.activeIndex &&
           (event || wrap || rect.right < window.innerWidth)) {
           this._onSelect(i + 2);
           advanced = true;
           break;
         }
       } else {
-        if (rect.bottom > 10 && (i + 2) !== this.state.selected &&
+        if (rect.bottom > 10 && (i + 2) !== this.state.activeIndex &&
           (event || wrap || rect.bottom < window.innerHeight)) {
           this._onSelect(i + 2);
           advanced = true;
@@ -122,9 +120,9 @@ var Article = React.createClass({
     if (wrap && ! advanced) {
       this._onSelect(1);
     }
-  },
+  }
 
-  _onPrevious: function (event) {
+  _onPrevious (event) {
     if (event) {
       this._stop();
       event.preventDefault();
@@ -142,7 +140,7 @@ var Article = React.createClass({
             child = children[i - 1];
             rect = child.getBoundingClientRect();
             Scroll.scrollBy(this._scrollParent, 'scrollLeft', rect.left);
-            this.setState({selected: i});
+            this.setState({activeIndex: i});
           }
           break;
         }
@@ -153,49 +151,96 @@ var Article = React.createClass({
             child = children[i - 1];
             rect = child.getBoundingClientRect();
             Scroll.scrollBy(this._scrollParent, 'scrollTop', rect.top);
-            this.setState({selected: i});
+            this.setState({activeIndex: i});
           }
           break;
         }
       }
     }
-  },
+  }
 
-  _start: function () {
+  _start () {
     this._playTimer = setInterval(function () {
       this._onNext(null, true);
     }.bind(this), DEFAULT_PLAY_INTERVAL);
     this.setState({playing: true});
-  },
+  }
 
-  _stop: function () {
+  _stop () {
     clearInterval(this._playTimer);
     this.setState({playing: false});
-  },
+  }
 
-  _onTogglePlay: function (event) {
+  _onTogglePlay (event) {
     event.preventDefault();
     if (this.state.playing) {
       this._stop();
     } else {
       this._start();
     }
-  },
+  }
 
-  _onSelect: function (selected) {
+  _onSelect (activeIndex) {
     var articleElement = ReactDOM.findDOMNode(this.refs.component);
     var children = articleElement.children;
-    var child = children[selected - 1];
+    var child = children[activeIndex - 1];
     var rect = child.getBoundingClientRect();
     if ('row' === this.props.direction) {
       Scroll.scrollBy(this._scrollParent, 'scrollLeft', rect.left);
     } else {
       Scroll.scrollBy(this._scrollParent, 'scrollTop', rect.top);
     }
-    this.setState({selected: selected});
-  },
+    this.setState({activeIndex: activeIndex});
+  }
 
-  render: function() {
+  _renderControls () {
+    const CONTROL_CLASS_PREFIX =
+      CLASS_ROOT + "__control " + CLASS_ROOT + "__control-";
+    const CHILD_COUNT = React.Children.count(this.props.children);
+    var controls = [
+      // Don't use CarouselControls for now
+      // <CarouselControls key="carousel"
+      //   className={CONTROL_CLASS_PREFIX + "carousel"}
+      //   count={CHILD_COUNT}
+      //   direction={this.props.direction}
+      //   selected={this.state.activeIndex} onChange={this._onSelect} />
+    ];
+    if ('row' === this.props.direction) {
+      if (this.state.activeIndex > 1) {
+        controls.push(
+          <Button key="previous" type="icon"
+            className={CONTROL_CLASS_PREFIX + "left"}
+            onClick={this._onPrevious}><PreviousIcon /></Button>
+        );
+      }
+      if (this.state.activeIndex < CHILD_COUNT) {
+        controls.push(
+          <Button key="next" type="icon"
+            className={CONTROL_CLASS_PREFIX + "right"}
+            onClick={this._onNext}><NextIcon /></Button>
+        );
+      }
+    } else {
+      if (this.state.activeIndex > 1) {
+        controls.push(
+          <Button key="previous" type="icon"
+            className={CONTROL_CLASS_PREFIX + "up"}
+            onClick={this._onPrevious}><UpIcon /></Button>
+        );
+      }
+      if (this.state.activeIndex < CHILD_COUNT) {
+        controls.push(
+          <Button key="next" type="icon"
+            className={CONTROL_CLASS_PREFIX + "down"}
+            onClick={this._onNext}><DownIcon /></Button>
+        );
+      }
+    }
+
+    return controls;
+  }
+
+  render () {
     var classes = [CLASS_ROOT];
     var other = pick(this.props, keys(Box.propTypes));
     if (this.props.scrollStep) {
@@ -210,14 +255,9 @@ var Article = React.createClass({
       skipLinkAnchor = <SkipLinkAnchor label="Main Content" />;
     }
 
-    var childCount = React.Children.count(this.props.children);
     var controls;
     if (this.props.controls) {
-      controls = (
-        <CarouselControls className={CLASS_ROOT + "__controls"}
-          count={childCount}
-          selected={this.state.selected} onChange={this._onSelect} />
-      );
+      controls = this._renderControls();
     }
 
     return (
@@ -228,6 +268,18 @@ var Article = React.createClass({
       </Box>
     );
   }
-});
+}
+
+Article.propTypes = {
+  controls: PropTypes.bool,
+  primary: PropTypes.bool,
+  scrollStep: PropTypes.bool,
+  ...Box.propTypes
+};
+
+Article.defaultProps = {
+  pad: 'none',
+  direction: 'column'
+};
 
 module.exports = Article;
