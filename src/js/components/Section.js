@@ -1,23 +1,14 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
-var Box = require('./Box');
-var SkipLinkAnchor = require('./SkipLinkAnchor');
-var merge = require('lodash/object/merge');
+import React, { Component, PropTypes } from 'react';
+import Box from './Box';
+import SkipLinkAnchor from './SkipLinkAnchor';
 
-var CLASS_ROOT = "section";
+const CLASS_ROOT = "section";
 
-var Section = React.createClass({
+class Section extends Component {
 
-  propTypes: merge(Box.propTypes, {
-    primary: React.PropTypes.bool
-  }),
-
-  getDefaultProps: function () {
-    return {pad: {vertical: 'medium'}};
-  },
-
-  render: function() {
+  render () {
     var classes = [CLASS_ROOT];
     if (this.props.className) {
       classes.push(this.props.className);
@@ -36,6 +27,15 @@ var Section = React.createClass({
     );
   }
 
-});
+}
+
+Section.propTypes = {
+  primary: PropTypes.bool,
+  ...Box.propTypes
+};
+
+Section.defaultProps = {
+  pad: {vertical: 'medium'}
+};
 
 module.exports = Section;

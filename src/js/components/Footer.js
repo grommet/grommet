@@ -1,36 +1,22 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
-var merge = require('lodash/object/merge');
-var pick = require('lodash/object/pick');
-var keys = require('lodash/object/keys');
-var Box = require('./Box');
-var SkipLinkAnchor = require('./SkipLinkAnchor');
+import React, { Component, PropTypes } from 'react';
+import pick from 'lodash/object/pick';
+import keys from 'lodash/object/keys';
+import Box from './Box';
+import SkipLinkAnchor from './SkipLinkAnchor';
 
-var CLASS_ROOT = "footer";
+const CLASS_ROOT = "footer";
 
-var Footer = React.createClass({
+class Footer extends Component {
 
-  propTypes: merge({
-    primary: React.PropTypes.bool,
-    large: React.PropTypes.bool,
-    small: React.PropTypes.bool,
-    float: React.PropTypes.bool
-  }, Box.propTypes),
-
-  getDefaultProps: function () {
-    return {
-      pad: 'none',
-      direction: 'row',
-      responsive: false
-    };
-  },
-
-  render: function() {
+  render () {
     var classes = [CLASS_ROOT];
     var containerClasses = [CLASS_ROOT + "__container"];
     var other = pick(this.props, keys(Box.propTypes));
-    if (this.props.large) {
+    if (this.props.size) {
+      classes.push(CLASS_ROOT + "--" + this.props.size);
+    } else if (this.props.large) { // Deprecated
       classes.push(CLASS_ROOT + "--large");
     }
     if (this.props.className) {
@@ -57,6 +43,21 @@ var Footer = React.createClass({
     );
   }
 
-});
+}
+
+Footer.propTypes = {
+  primary: React.PropTypes.bool,
+  large: React.PropTypes.bool, // Deprecated
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  small: React.PropTypes.bool, // Deprecated
+  float: React.PropTypes.bool,
+  ...Box.propTypes
+};
+
+Footer.defaultProps = {
+  pad: 'none',
+  direction: 'row',
+  responsive: false
+};
 
 module.exports = Footer;

@@ -1,50 +1,40 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
-var ReactDOM = require('react-dom');
-var merge = require('lodash/object/merge');
-var pick = require('lodash/object/pick');
-var keys = require('lodash/object/keys');
-var Intl = require('../utils/Intl');
-var KeyboardAccelerators = require('../utils/KeyboardAccelerators');
-var Drop = require('../utils/Drop');
-var Responsive = require('../utils/Responsive');
-var Box = require('./Box');
-var Button = require('./Button');
-var MoreIcon = require('./icons/base/More');
-var DropCaretIcon = require('./icons/base/Down');
+import React, { Component, PropTypes } from 'react';
+import ReactDOM from 'react-dom';
+import pick from 'lodash/object/pick';
+import keys from 'lodash/object/keys';
+import Intl from '../utils/Intl';
+import KeyboardAccelerators from '../utils/KeyboardAccelerators';
+import Drop from '../utils/Drop';
+import Responsive from '../utils/Responsive';
+import Box from './Box';
+import Button from './Button';
+import MoreIcon from './icons/base/More';
+import DropCaretIcon from './icons/base/Down';
 
-var CLASS_ROOT = "menu";
+const CLASS_ROOT = "menu";
 
 // We have a separate module for the drop component
 // so we can transfer the router context.
-var MenuDrop = React.createClass({
+class MenuDrop extends Component {
 
-  propTypes: merge({
-    control: React.PropTypes.node,
-    dropAlign: Drop.alignPropType,
-    dropColorIndex: React.PropTypes.string,
-    id: React.PropTypes.string.isRequired,
-    onClick: React.PropTypes.func.isRequired,
-    router: React.PropTypes.func,
-    size: React.PropTypes.oneOf(['small', 'medium', 'large'])
-  }, Box.propTypes),
+  constructor() {
+    super();
 
-  childContextTypes: {
-    intl: React.PropTypes.object,
-    history: React.PropTypes.object,
-    router: React.PropTypes.func
-  },
+    this._onUpKeyPress = this._onUpKeyPress.bind(this);
+    this._onDownKeyPress = this._onDownKeyPress.bind(this);
+  }
 
-  getChildContext: function () {
+  getChildContext () {
     return {
       intl: this.props.intl,
       history: this.props.history,
       router: this.props.router
     };
-  },
+  }
 
-  componentDidMount: function () {
+  componentDidMount () {
     this._keyboardHandlers = {
       up: this._onUpKeyPress,
       down: this._onDownKeyPress
@@ -66,13 +56,13 @@ var MenuDrop = React.createClass({
           menuItems[i].getAttribute('data-reactid'));
       }
     }
-  },
+  }
 
-  componentWillUnmount: function () {
+  componentWillUnmount () {
     KeyboardAccelerators.stopListeningToKeyboard(this, this._keyboardHandlers);
-  },
+  }
 
-  _onUpKeyPress: function (event) {
+  _onUpKeyPress (event) {
     event.preventDefault();
     var menuItems = ReactDOM.findDOMNode(this.refs.navContainer).childNodes;
     if (!this.activeMenuItem) {
@@ -101,9 +91,9 @@ var MenuDrop = React.createClass({
     // Stops KeyboardAccelerators from calling the other listeners.
     // Works limilar to event.stopPropagation().
     return true;
-  },
+  }
 
-  _onDownKeyPress: function (event) {
+  _onDownKeyPress (event) {
     event.preventDefault();
     var menuItems = ReactDOM.findDOMNode(this.refs.navContainer).childNodes;
     if (!this.activeMenuItem) {
@@ -131,9 +121,9 @@ var MenuDrop = React.createClass({
     // Stops KeyboardAccelerators from calling the other listeners.
     // Works limilar to event.stopPropagation().
     return true;
-  },
+  }
 
-  render: function () {
+  render () {
     var classes = [CLASS_ROOT + "__drop"];
     var other = pick(this.props, keys(Box.propTypes));
 
@@ -164,68 +154,60 @@ var MenuDrop = React.createClass({
       </div>
     );
   }
-});
+}
 
-var Menu = React.createClass({
+MenuDrop.propTypes = {
+  control: PropTypes.node,
+  dropAlign: Drop.alignPropType,
+  dropColorIndex: PropTypes.string,
+  id: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+  router: PropTypes.func,
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  ...Box.propTypes
+};
 
-  propTypes: merge({
-    a11yTitle: React.PropTypes.string,
-    closeOnClick: React.PropTypes.bool,
-    collapse: React.PropTypes.bool, // deprecated, remove in 0.5
-    dropAlign: Drop.alignPropType,
-    dropColorIndex: React.PropTypes.string,
-    icon: React.PropTypes.node,
-    id: React.PropTypes.string,
-    inline: React.PropTypes.bool,
-    label: React.PropTypes.string,
-    large: React.PropTypes.bool,
-    primary: React.PropTypes.bool,
-    size: React.PropTypes.oneOf(['small', 'medium', 'large']),
-    small: React.PropTypes.bool
-  }, Box.propTypes),
+MenuDrop.childContextTypes = {
+  intl: PropTypes.object,
+  history: PropTypes.object,
+  router: PropTypes.func
+};
 
-  contextTypes: {
-    intl: React.PropTypes.object,
-    history: React.PropTypes.object,
-    router: React.PropTypes.func
-  },
+class Menu extends Component {
 
-  getDefaultProps: function () {
-    return {
-      a11yTitle: 'Menu',
-      closeOnClick: true,
-      direction: 'column',
-      dropAlign: {top: 'top', left: 'left'},
-      pad: 'none'
-    };
-  },
+  constructor(props) {
+    super(props);
 
-  getInitialState: function () {
+    this._onOpen = this._onOpen.bind(this);
+    this._onClose = this._onClose.bind(this);
+    this._onSink = this._onSink.bind(this);
+    this._onResponsive = this._onResponsive.bind(this);
+    this._onFocusControl = this._onFocusControl.bind(this);
+    this._onBlurControl = this._onBlurControl.bind(this);
+
     var inline;
-    if (this.props.hasOwnProperty('inline')) {
-      inline = this.props.inline;
+    if (props.hasOwnProperty('inline')) {
+      inline = props.inline;
     } else {
-      inline = (! this.props.label && ! this.props.icon);
+      inline = (! props.label && ! props.icon);
     }
     var responsive;
-    if (this.props.hasOwnProperty('responsive')) {
-      responsive = this.props.responsive;
+    if (props.hasOwnProperty('responsive')) {
+      responsive = props.responsive;
     } else {
-      responsive = (inline && 'row' === this.props.direction);
+      responsive = (inline && 'row' === props.direction);
     }
-    return {
+    this.state = {
       // state may be 'collapsed', 'focused' or 'expanded' (active).
       state: 'collapsed',
       initialInline: inline,
       inline: inline,
       responsive: responsive,
-      dropId: 'menuDrop',
-      size: this.props.size || (this.small ? 'small' :
-        (this.props.large ? 'large' : null))
+      dropId: 'menuDrop'
     };
-  },
+  }
 
-  componentDidMount: function () {
+  componentDidMount () {
     if (this.refs.control) {
       var controlElement = ReactDOM.findDOMNode(this.refs.control);
       this.setState({
@@ -237,9 +219,9 @@ var Menu = React.createClass({
     if (this.state.responsive) {
       this._responsive = Responsive.start(this._onResponsive);
     }
-  },
+  }
 
-  componentDidUpdate: function (prevProps, prevState) {
+  componentDidUpdate (prevProps, prevState) {
     if (this.state.state !== prevState.state) {
       var activeKeyboardHandlers = {
         esc: this._onClose,
@@ -278,9 +260,9 @@ var Menu = React.createClass({
     } else if (this.state.state === 'expanded') {
       this._drop.render(this._renderDrop());
     }
-  },
+  }
 
-  componentWillUnmount: function () {
+  componentWillUnmount () {
     document.removeEventListener('click', this._onClose);
     KeyboardAccelerators.stopListeningToKeyboard(this);
     if (this._drop) {
@@ -289,27 +271,27 @@ var Menu = React.createClass({
     if (this._responsive) {
       this._responsive.stop();
     }
-  },
+  }
 
-  _onOpen: function () {
+  _onOpen () {
     this.setState({state: 'expanded'});
-  },
+  }
 
-  _onClose: function () {
+  _onClose () {
     this.setState({state: 'collapsed'});
     var element = ReactDOM.findDOMNode(this);
     if (document.activeElement === element) {
       this.setState({state: 'focused'});
     }
-  },
+  }
 
-  _onSink: function (event) {
+  _onSink (event) {
     event.stopPropagation();
     // need to go native to prevent closing via document
     event.nativeEvent.stopImmediatePropagation();
-  },
+  }
 
-  _onResponsive: function (small) {
+  _onResponsive (small) {
     // deactivate if we change resolutions
     var newState = this.state.state;
     if (this.state.state === 'expanded') {
@@ -325,19 +307,19 @@ var Menu = React.createClass({
         controlCollapsed: false
       });
     }
-  },
+  }
 
-  _onFocusControl: function () {
+  _onFocusControl () {
     this.setState({state: 'focused'});
-  },
+  }
 
-  _onBlurControl: function () {
+  _onBlurControl () {
     if (this.state.state === 'focused') {
       this.setState({state: 'collapsed'});
     }
-  },
+  }
 
-  _renderControlContents: function (clickable) {
+  _renderControlContents (clickable) {
     var icon;
     var label;
 
@@ -362,9 +344,9 @@ var Menu = React.createClass({
       icon = <MoreIcon key="icon" />;
     }
     return [icon, label];
-  },
+  }
 
-  _renderDrop: function() {
+  _renderDrop () {
     var other = pick(this.props, keys(Box.propTypes));
 
     var control = (
@@ -396,9 +378,9 @@ var Menu = React.createClass({
         {this.props.children}
       </MenuDrop>
     );
-  },
+  }
 
-  _classes: function (prefix) {
+  _classes (prefix) {
     var classes = [prefix];
 
     if (this.props.direction) {
@@ -412,9 +394,9 @@ var Menu = React.createClass({
     }
 
     return classes;
-  },
+  }
 
-  render: function () {
+  render () {
     var classes = this._classes(CLASS_ROOT);
     if (this.state.inline) {
       classes.push(CLASS_ROOT + "--inline");
@@ -460,6 +442,35 @@ var Menu = React.createClass({
 
     }
   }
-});
+}
+
+Menu.propTypes = {
+  a11yTitle: PropTypes.string,
+  closeOnClick: PropTypes.bool,
+  collapse: PropTypes.bool, // deprecated, remove in 0.5
+  dropAlign: Drop.alignPropType,
+  dropColorIndex: PropTypes.string,
+  icon: PropTypes.node,
+  id: PropTypes.string,
+  inline: PropTypes.bool,
+  label: PropTypes.string,
+  primary: PropTypes.bool,
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  ...Box.propTypes
+};
+
+Menu.contextTypes = {
+  intl: PropTypes.object,
+  history: PropTypes.object,
+  router: PropTypes.func
+};
+
+Menu.defaultProps = {
+  a11yTitle: 'Menu',
+  closeOnClick: true,
+  direction: 'column',
+  dropAlign: {top: 'top', left: 'left'},
+  pad: 'none'
+};
 
 module.exports = Menu;

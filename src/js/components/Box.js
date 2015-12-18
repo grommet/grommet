@@ -1,60 +1,15 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
-var keys = require('lodash/object/keys');
+import React, { Component, PropTypes } from 'react';
+import keys from 'lodash/object/keys';
+import KeyboardAccelerators from '../utils/KeyboardAccelerators';
+import Intl from '../utils/Intl';
 
-var KeyboardAccelerators = require('../utils/KeyboardAccelerators');
-var Intl = require('../utils/Intl');
+const CLASS_ROOT = "box";
 
-var CLASS_ROOT = "box";
+class Box extends Component {
 
-var Box = React.createClass({
-
-  propTypes: {
-    a11yTitle: React.PropTypes.string,
-    align: React.PropTypes.oneOf(['start', 'center', 'end']),
-    appCentered: React.PropTypes.bool,
-    backgroundImage: React.PropTypes.string,
-    colorIndex: React.PropTypes.string,
-    containerClassName: React.PropTypes.string,
-    direction: React.PropTypes.oneOf(['row', 'column']),
-    full: React.PropTypes.oneOf([true, 'horizontal', 'vertical', false]),
-    onClick: React.PropTypes.func,
-    justify: React.PropTypes.oneOf(['start', 'center', 'between', 'end']),
-    pad: React.PropTypes.oneOfType([
-      React.PropTypes.oneOf(['none', 'small', 'medium', 'large']),
-      React.PropTypes.shape({
-        horizontal: React.PropTypes.oneOf(['none', 'small', 'medium', 'large']),
-        vertical: React.PropTypes.oneOf(['none', 'small', 'medium', 'large'])
-      })
-    ]),
-    reverse: React.PropTypes.bool,
-    responsive: React.PropTypes.bool,
-    separator: React.PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
-    tag: React.PropTypes.string,
-    textAlign: React.PropTypes.oneOf(['left', 'center', 'right']),
-    texture: React.PropTypes.oneOfType([
-      React.PropTypes.node,
-      React.PropTypes.string
-    ]),
-    wrap: React.PropTypes.bool
-  },
-
-  contextTypes: {
-    intl: React.PropTypes.object
-  },
-
-  getDefaultProps: function () {
-    return {
-      a11yTitle: 'Box',
-      direction: 'column',
-      pad: 'none',
-      tag: 'div',
-      responsive: true
-    };
-  },
-
-  componentDidMount: function () {
+  componentDidMount () {
     if (this.props.onClick) {
       var clickCallback = function () {
         if (this.refs.boxContainer === document.activeElement) {
@@ -67,15 +22,15 @@ var Box = React.createClass({
         space: clickCallback
       });
     }
-  },
+  }
 
-  componentWillUnmount: function () {
+  componentWillUnmount () {
     if (this.props.onClick) {
       KeyboardAccelerators.stopListeningToKeyboard(this);
     }
-  },
+  }
 
-  _addPropertyClass: function (classes, prefix, property, classProperty) {
+  _addPropertyClass (classes, prefix, property, classProperty) {
     var choice = this.props[property];
     var propertyPrefix = classProperty || property;
     if (choice) {
@@ -89,9 +44,9 @@ var Box = React.createClass({
         classes.push(prefix + '--' + propertyPrefix);
       }
     }
-  },
+  }
 
-  render: function() {
+  render () {
     var classes = [CLASS_ROOT];
     var containerClasses = [CLASS_ROOT + "__container"];
     this._addPropertyClass(classes, CLASS_ROOT, 'flush');
@@ -166,6 +121,48 @@ var Box = React.createClass({
     }
   }
 
-});
+}
+
+Box.propTypes = {
+  a11yTitle: PropTypes.string,
+  align: PropTypes.oneOf(['start', 'center', 'end']),
+  appCentered: PropTypes.bool,
+  backgroundImage: PropTypes.string,
+  colorIndex: PropTypes.string,
+  containerClassName: PropTypes.string,
+  direction: PropTypes.oneOf(['row', 'column']),
+  full: PropTypes.oneOf([true, 'horizontal', 'vertical', false]),
+  onClick: PropTypes.func,
+  justify: PropTypes.oneOf(['start', 'center', 'between', 'end']),
+  pad: PropTypes.oneOfType([
+    PropTypes.oneOf(['none', 'small', 'medium', 'large']),
+    PropTypes.shape({
+      horizontal: PropTypes.oneOf(['none', 'small', 'medium', 'large']),
+      vertical: PropTypes.oneOf(['none', 'small', 'medium', 'large'])
+    })
+  ]),
+  reverse: PropTypes.bool,
+  responsive: PropTypes.bool,
+  separator: PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
+  tag: PropTypes.string,
+  textAlign: PropTypes.oneOf(['left', 'center', 'right']),
+  texture: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.string
+  ]),
+  wrap: PropTypes.bool
+};
+
+Box.contextTypes = {
+  intl: PropTypes.object
+};
+
+Box.defaultProps = {
+  a11yTitle: 'Box',
+  direction: 'column',
+  pad: 'none',
+  tag: 'div',
+  responsive: true
+};
 
 module.exports = Box;

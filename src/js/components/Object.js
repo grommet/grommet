@@ -1,16 +1,12 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
+import React, { Component, PropTypes } from 'react';
 
-var CLASS_ROOT = "object";
+const CLASS_ROOT = "object";
 
-var GrommetObject = React.createClass({
+class GrommetObject extends Component {
 
-  propTypes: {
-    data: React.PropTypes.object
-  },
-
-  _renderArray: function (array) {
+  _renderArray (array) {
     return array.map(function (item, index) {
       var itemContent = item;
       if ('object' === typeof(item)) {
@@ -20,9 +16,9 @@ var GrommetObject = React.createClass({
         <li key={'i_' + index} className="list-item">{itemContent}</li>
       );
     }, this);
-  },
+  }
 
-  _renderObject: function (obj) {
+  _renderObject (obj) {
     var attrs = [];
     for (var name in obj) {
       if (obj.hasOwnProperty(name)) {
@@ -55,9 +51,9 @@ var GrommetObject = React.createClass({
     return (
       <ul>{attrs}</ul>
     );
-  },
+  }
 
-  render: function() {
+  render () {
     return (
       <div className={CLASS_ROOT}>
         <div className={CLASS_ROOT + "__container"}>
@@ -67,6 +63,10 @@ var GrommetObject = React.createClass({
     );
   }
 
-});
+}
+
+GrommetObject.propTypes = {
+  data: PropTypes.object
+};
 
 module.exports = GrommetObject;

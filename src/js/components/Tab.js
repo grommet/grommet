@@ -1,43 +1,43 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
+import React, { Component, PropTypes } from 'react';
+import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 
-var KeyboardAccelerators = require('../utils/KeyboardAccelerators');
+const CLASS_ROOT = "tab";
 
-var CLASS_ROOT = "tab";
+class Tab extends Component {
 
-var Tab = React.createClass({
+  constructor() {
+    super();
 
-  propTypes: {
-    title: React.PropTypes.string.isRequired,
-    active: React.PropTypes.bool,
-    id: React.PropTypes.string
-  },
+    this._processSpace = this._processSpace.bind(this);
+    this._onClickTab = this._onClickTab.bind(this);
+  }
 
-  componentDidMount: function () {
+  componentDidMount () {
     KeyboardAccelerators.startListeningToKeyboard(this, {
       space: this._processSpace
     });
-  },
+  }
 
-  componentWillUnmount: function () {
+  componentWillUnmount () {
     KeyboardAccelerators.stopListeningToKeyboard(this, {
       space: this._processSpace
     });
-  },
+  }
 
-  _processSpace: function (event) {
+  _processSpace (event) {
     if (event.target === this.refs.tab) {
       this._onClickTab(event);
     }
-  },
+  }
 
-  _onClickTab: function (event) {
+  _onClickTab (event) {
     event.preventDefault();
     this.props.onRequestForActive();
-  },
+  }
 
-  render: function() {
+  render () {
     var classes = [CLASS_ROOT];
 
     if (this.props.active) {
@@ -57,6 +57,12 @@ var Tab = React.createClass({
     );
   }
 
-});
+}
+
+Tab.propTypes = {
+  title: PropTypes.string.isRequired,
+  active: PropTypes.bool,
+  id: PropTypes.string
+};
 
 module.exports = Tab;

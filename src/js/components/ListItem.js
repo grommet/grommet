@@ -1,21 +1,12 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
+import React, { Component, PropTypes } from 'react';
 
-var CLASS_ROOT = "list-item";
+const CLASS_ROOT = "list-item";
 
-var ListItem = React.createClass({
+class ListItem extends Component {
 
-  propTypes: {
-    annotation: React.PropTypes.node,
-    direction: React.PropTypes.oneOf(['row', 'column']),
-    image: React.PropTypes.node,
-    label: React.PropTypes.node,
-    onClick: React.PropTypes.func,
-    selected: React.PropTypes.bool
-  },
-
-  render: function() {
+  render () {
     var classes = [CLASS_ROOT];
     if (this.props.onClick) {
       classes.push(CLASS_ROOT + "--selectable");
@@ -53,6 +44,15 @@ var ListItem = React.createClass({
     );
   }
 
-});
+}
+
+ListItem.propTypes = {
+  annotation: PropTypes.node,
+  direction: PropTypes.oneOf(['row', 'column']),
+  image: PropTypes.node,
+  label: PropTypes.node,
+  onClick: PropTypes.func,
+  selected: PropTypes.bool
+};
 
 module.exports = ListItem;

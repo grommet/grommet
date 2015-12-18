@@ -1,31 +1,21 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
+import React, { Component, PropTypes } from 'react';
 
-var CLASS_ROOT = "split";
+const CLASS_ROOT = "split";
 
-var Split = React.createClass({
+class Split extends Component {
 
-  propTypes: {
-    fixed: React.PropTypes.bool,
-    flex: React.PropTypes.oneOf(['left', 'right', 'both']),
-    priority: React.PropTypes.oneOf(['left', 'right']),
-    separator: React.PropTypes.bool
-  },
+  constructor () {
+    super();
 
-  getDefaultProps: function () {
-    return {
-      fixed: true,
-      flex: 'both',
-      priority: 'right'
-    };
-  },
+    this._onResize = this._onResize.bind(this);
+    this._layout = this._layout.bind(this);
 
-  getInitialState: function () {
-    return {responsive: null};
-  },
+    this.state = { responsive: null };
+  }
 
-  componentDidMount: function () {
+  componentDidMount () {
     // figure out the break width
     this._breakWidth = 720; // default
     // CSS stores the break width in a hidden pseudo element
@@ -37,9 +27,9 @@ var Split = React.createClass({
 
     window.addEventListener('resize', this._onResize);
     this._layout();
-  },
+  }
 
-  componentWillReceiveProps: function (nextProps) {
+  componentWillReceiveProps (nextProps) {
     // If we change the number of visible children, trigger a resize event
     // so things like Table header can adjust. This will go away once
     // CSS supports per element media queries.
@@ -54,37 +44,37 @@ var Split = React.createClass({
         window.dispatchEvent(event);
       }, 500);
     }
-  },
+  }
 
-  componentWillUnmount: function () {
+  componentWillUnmount () {
     window.removeEventListener('resize', this._onResize);
-  },
+  }
 
   // Support function for componentWillReceiveProps()
-  _nonNullChildCount: function (props) {
+  _nonNullChildCount (props) {
     var result = 0;
     React.Children.forEach(props.children, function (child) {
       if (child !== null) result += 1;
     });
     return result;
-  },
+  }
 
-  _onResize: function () {
+  _onResize () {
     // debounce
     clearTimeout(this._resizeTimer);
     this._resizeTimer = setTimeout(this._layout, 50);
-  },
+  }
 
-  _setResponsive: function (responsive) {
+  _setResponsive (responsive) {
     if (this.state.responsive !== responsive) {
       this.setState({responsive: responsive});
       if (this.props.onResponsive) {
         this.props.onResponsive(responsive);
       }
     }
-  },
+  }
 
-  _layout: function () {
+  _layout () {
     var splitElement = this.refs.split;
     if (splitElement) {
       if (splitElement.offsetWidth < this._breakWidth) {
@@ -93,9 +83,9 @@ var Split = React.createClass({
         this._setResponsive('multiple');
       }
     }
-  },
+  }
 
-  render: function() {
+  render () {
     var classes = [CLASS_ROOT];
     if (this.props.flex) {
       classes.push(CLASS_ROOT + "--flex-" + this.props.flex);
@@ -127,6 +117,19 @@ var Split = React.createClass({
       </div>
     );
   }
-});
+}
+
+Split.propTypes = {
+  fixed: PropTypes.bool,
+  flex: PropTypes.oneOf(['left', 'right', 'both']),
+  priority: PropTypes.oneOf(['left', 'right']),
+  separator: PropTypes.bool
+};
+
+Split.defaultProps = {
+  fixed: true,
+  flex: 'both',
+  priority: 'right'
+};
 
 module.exports = Split;

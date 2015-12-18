@@ -4,6 +4,11 @@ var React = require('react');
 
 var Settings = React.createClass({
 
+  componentDidMount: function() {
+    console.warn("Settings is deprecated and will be removed soon." +
+      "Please use Tiles instead.");
+  },
+
   render: function() {
     var panels = ['TBD 1', 'TBD 2'].map(function (tbd) {
       return (

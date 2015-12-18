@@ -1,10 +1,10 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
+import React, { Component } from 'react';
 
-var FormFields = React.createClass({
+class FormFields extends Component {
 
-  render: function () {
+  render () {
     var classes = ["form-fields"];
     if (this.props.className) {
       classes.push(this.props.className);
@@ -16,6 +16,6 @@ var FormFields = React.createClass({
     );
   }
 
-});
+}
 
 module.exports = FormFields;

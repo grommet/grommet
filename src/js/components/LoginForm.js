@@ -1,48 +1,36 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
-var FormattedMessage = require('./FormattedMessage');
+import React, { Component, PropTypes } from 'react';
+import FormattedMessage from './FormattedMessage';
+import Form from './Form';
+import FormField from './FormField';
+import CheckBox from './CheckBox';
+import Button from './Button';
 
-var Form = require('./Form');
-var FormField = require('./FormField');
-var CheckBox = require('./CheckBox');
-var Button = require('./Button');
-var CLASS_ROOT = "login-form";
+const CLASS_ROOT = "login-form";
 
-var LoginForm = React.createClass({
+class LoginForm extends Component {
 
-  propTypes: {
-    logo: React.PropTypes.node,
-    title: React.PropTypes.string,
-    secondaryText: React.PropTypes.string,
-    usernameType: React.PropTypes.string,
-    rememberMe: React.PropTypes.bool,
-    forgotPassword: React.PropTypes.node,
-    errors: React.PropTypes.arrayOf(React.PropTypes.string),
-    onSubmit: React.PropTypes.func
-  },
+  constructor() {
+    super();
 
-  getDefaultProps: function () {
-    return ({
-      errors: [],
-      usernameType: 'email'
-    });
-  },
+    this._onSubmit = this._onSubmit.bind(this);
+  }
 
-  componentDidMount: function() {
+  componentDidMount () {
     this.refs.username.focus();
-  },
+  }
 
-  _onSubmit: function (event) {
+  _onSubmit  (event) {
     event.preventDefault();
     var username = this.refs.username.value.trim();
     var password = this.refs.password.value.trim();
     if (this.props.onSubmit) {
       this.props.onSubmit({username: username, password: password});
     }
-  },
+  }
 
-  render: function() {
+  render () {
     var classes = [CLASS_ROOT];
 
     var errors = this.props.errors.map(function (error, index) {
@@ -131,6 +119,22 @@ var LoginForm = React.createClass({
     );
   }
 
-});
+}
+
+LoginForm.propTypes = {
+  logo: PropTypes.node,
+  title: PropTypes.string,
+  secondaryText: PropTypes.string,
+  usernameType: PropTypes.string,
+  rememberMe: PropTypes.bool,
+  forgotPassword: PropTypes.node,
+  errors: PropTypes.arrayOf(PropTypes.string),
+  onSubmit: PropTypes.func
+};
+
+LoginForm.defaultProps = {
+  errors: [],
+  usernameType: 'email'
+};
 
 module.exports = LoginForm;

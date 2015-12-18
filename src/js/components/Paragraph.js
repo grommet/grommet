@@ -1,16 +1,12 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
+import React, { Component, PropTypes } from 'react';
 
-var CLASS_ROOT = "paragraph";
+const CLASS_ROOT = "paragraph";
 
-var Paragraph = React.createClass({
+class Paragraph extends Component {
 
-  propTypes: {
-    size: React.PropTypes.oneOf(['small', 'medium', 'large'])
-  },
-
-  render: function () {
+  render () {
     var classes = [CLASS_ROOT];
     if (this.props.size) {
       classes.push(CLASS_ROOT + "--" + this.props.size);
@@ -23,6 +19,10 @@ var Paragraph = React.createClass({
     );
   }
 
-});
+}
+
+Paragraph.propTypes = {
+  size: PropTypes.oneOf(['small', 'medium', 'large'])
+};
 
 module.exports = Paragraph;

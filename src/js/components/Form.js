@@ -1,36 +1,13 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
-var keys = require('lodash/object/keys');
+import React, { Component, PropTypes } from 'react';
+import keys from 'lodash/object/keys';
 
-var CLASS_ROOT = "form";
+const CLASS_ROOT = "form";
 
-var Form = React.createClass({
+class Form extends Component {
 
-  propTypes: {
-    compact: React.PropTypes.bool,
-    fill: React.PropTypes.bool,
-    flush: React.PropTypes.bool,
-    onSubmit: React.PropTypes.func,
-    pad: React.PropTypes.oneOfType([
-      React.PropTypes.oneOf(['none', 'small', 'medium', 'large']),
-      React.PropTypes.shape({
-        horizontal: React.PropTypes.oneOf(['none', 'small', 'medium', 'large']),
-        vertical: React.PropTypes.oneOf(['none', 'small', 'medium', 'large'])
-      })
-    ])
-  },
-
-  getDefaultProps: function () {
-    return {
-      compact: false,
-      fill: false,
-      flush: true,
-      pad: 'none'
-    };
-  },
-
-  render: function () {
+  render () {
     var classes = [CLASS_ROOT];
     if (this.props.compact) {
       classes.push(CLASS_ROOT + "--compact");
@@ -57,6 +34,27 @@ var Form = React.createClass({
     );
   }
 
-});
+}
+
+Form.propTypes = {
+  compact: PropTypes.bool,
+  fill: PropTypes.bool,
+  flush: PropTypes.bool,
+  onSubmit: PropTypes.func,
+  pad: PropTypes.oneOfType([
+    PropTypes.oneOf(['none', 'small', 'medium', 'large']),
+    PropTypes.shape({
+      horizontal: PropTypes.oneOf(['none', 'small', 'medium', 'large']),
+      vertical: PropTypes.oneOf(['none', 'small', 'medium', 'large'])
+    })
+  ])
+};
+
+Form.defaultProps = {
+  compact: false,
+  fill: false,
+  flush: true,
+  pad: 'none'
+};
 
 module.exports = Form;

@@ -1,25 +1,22 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
+import React, { Component, PropTypes } from 'react';
 
-var CLASS_ROOT = "form-field";
+const CLASS_ROOT = "form-field";
 
-var FormField = React.createClass({
+class FormField extends Component {
 
-  propTypes: {
-    error: React.PropTypes.node,
-    help: React.PropTypes.node,
-    hidden: React.PropTypes.bool,
-    htmlFor: React.PropTypes.string,
-    label: React.PropTypes.node,
-    required: React.PropTypes.bool
-  },
+  constructor() {
+    super();
 
-  getInitialState: function () {
-    return {focus: false};
-  },
+    this._onFocus = this._onFocus.bind(this);
+    this._onBlur = this._onBlur.bind(this);
+    this._onClick = this._onClick.bind(this);
 
-  componentDidMount: function () {
+    this.state = { focus: false };
+  }
+
+  componentDidMount () {
     var contentsElement = this.refs.contents;
     var inputElements = contentsElement.querySelectorAll('input, textarea, select');
     if (inputElements.length === 1) {
@@ -27,31 +24,31 @@ var FormField = React.createClass({
       this._inputElement.addEventListener('focus', this._onFocus);
       this._inputElement.addEventListener('blur', this._onBlur);
     }
-  },
+  }
 
-  componentWillUnmount: function () {
+  componentWillUnmount () {
     if (this._inputElement) {
       this._inputElement.removeEventListener('focus', this._onFocus);
       this._inputElement.removeEventListener('blur', this._onBlur);
       delete this._inputElement;
     }
-  },
+  }
 
-  _onFocus: function () {
+  _onFocus () {
     this.setState({focus: true});
-  },
+  }
 
-  _onBlur: function () {
+  _onBlur () {
     this.setState({focus: false});
-  },
+  }
 
-  _onClick: function () {
+  _onClick () {
     if (this._inputElement) {
       this._inputElement.focus();
     }
-  },
+  }
 
-  render: function () {
+  render () {
     var classes = [CLASS_ROOT];
     if (this.state.focus) {
       classes.push(CLASS_ROOT + "--focus");
@@ -90,6 +87,15 @@ var FormField = React.createClass({
     );
   }
 
-});
+}
+
+FormField.propTypes = {
+  error: PropTypes.node,
+  help: PropTypes.node,
+  hidden: PropTypes.bool,
+  htmlFor: PropTypes.string,
+  label: PropTypes.node,
+  required: PropTypes.bool
+};
 
 module.exports = FormField;

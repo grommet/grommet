@@ -1,86 +1,53 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
-var ReactIntl = require('react-intl');
-var FormattedTime = ReactIntl.FormattedTime;
-var ListItem = require('./ListItem');
-var SpinningIcon = require('./icons/Spinning');
-var InfiniteScroll = require('../utils/InfiniteScroll');
+import React, { Component, PropTypes } from 'react';
+import { FormattedTime } from 'react-intl';
+import ListItem from './ListItem';
+import SpinningIcon from './icons/Spinning';
+import InfiniteScroll from '../utils/InfiniteScroll';
 
-var CLASS_ROOT = "list";
+const CLASS_ROOT = "list";
 
-var List = React.createClass({
+class List extends Component {
 
-  propTypes: {
-    data: React.PropTypes.arrayOf(React.PropTypes.object).isRequired,
-    emptyIndicator: React.PropTypes.node,
-    itemDirection: React.PropTypes.oneOf(['row', 'column']),
-    large: React.PropTypes.bool,
-    onMore: React.PropTypes.func,
-    onSelect: React.PropTypes.func,
-    schema: React.PropTypes.arrayOf(React.PropTypes.shape({
-      attribute: React.PropTypes.string,
-      default: React.PropTypes.node,
-      image: React.PropTypes.bool,
-      label: React.PropTypes.string,
-      primary: React.PropTypes.bool,
-      secondary: React.PropTypes.bool,
-      timestamp: React.PropTypes.bool,
-      uid: React.PropTypes.bool
-    })).isRequired,
-    selected: React.PropTypes.oneOfType([
-      React.PropTypes.string, // uid
-      React.PropTypes.arrayOf(React.PropTypes.string)
-    ]),
-    size: React.PropTypes.oneOf(['small', 'medium', 'large']),
-    small: React.PropTypes.bool
-  },
+  constructor() {
+    super();
 
-  getDefaultProps: function () {
-    return {small: false, itemDirection: 'row'};
-  },
+    this._onClickItem = this._onClickItem.bind(this);
+  }
 
-  getInitialState: function() {
-    return this._stateFromProps(this.props);
-  },
-
-  componentDidMount: function () {
+  componentDidMount () {
     if (this.props.onMore) {
       this._scroll = InfiniteScroll.startListeningForScroll(this.refs.more, this.props.onMore);
     }
-  },
+  }
 
-  componentWillReceiveProps: function (nextProps) {
+  componentWillReceiveProps (nextProps) {
     if (this._scroll) {
       InfiniteScroll.stopListeningForScroll(this._scroll);
       this._scroll = null;
     }
-    this.setState(this._stateFromProps(nextProps));
-  },
+  }
 
-  componentDidUpdate: function () {
+  componentDidUpdate () {
     if (this.props.onMore && !this._scroll) {
       this._scroll = InfiniteScroll.startListeningForScroll(this.refs.more, this.props.onMore);
     }
-  },
+  }
 
-  componentWillUnmount: function () {
+  componentWillUnmount () {
     if (this._scroll) {
       InfiniteScroll.stopListeningForScroll(this._scroll);
     }
-  },
+  }
 
-  _stateFromProps: function (props) {
-    return {size: props.size || (props.small ? 'small' : (props.large ? 'large' : null))};
-  },
-
-  _onClickItem: function (item) {
+  _onClickItem (item) {
     if (this.props.onSelect) {
       this.props.onSelect(item);
     }
-  },
+  }
 
-  _renderValue: function (item, scheme) {
+  _renderValue (item, scheme) {
     var result;
     var value = item[scheme.attribute] || scheme.default;
     if (scheme.image) {
@@ -102,9 +69,9 @@ var List = React.createClass({
       result = value;
     }
     return result;
-  },
+  }
 
-  render: function () {
+  render () {
     var classes = [CLASS_ROOT];
     if (true || this.props.fill) {
       classes.push(CLASS_ROOT + "--fill");
@@ -112,8 +79,8 @@ var List = React.createClass({
     if (true || this.props.flush) {
       classes.push(CLASS_ROOT + "--flush");
     }
-    if (this.state.size) {
-      classes.push(CLASS_ROOT + "--" + this.state.size);
+    if (this.props.size) {
+      classes.push(CLASS_ROOT + "--" + this.props.size);
     }
     if (this.props.className) {
       classes.push(this.props.className);
@@ -182,6 +149,36 @@ var List = React.createClass({
     );
   }
 
-});
+}
+
+List.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.object).isRequired,
+  emptyIndicator: PropTypes.node,
+  itemDirection: PropTypes.oneOf(['row', 'column']),
+  large: PropTypes.bool,
+  onMore: PropTypes.func,
+  onSelect: PropTypes.func,
+  schema: PropTypes.arrayOf(PropTypes.shape({
+    attribute: PropTypes.string,
+    default: PropTypes.node,
+    image: PropTypes.bool,
+    label: PropTypes.string,
+    primary: PropTypes.bool,
+    secondary: PropTypes.bool,
+    timestamp: PropTypes.bool,
+    uid: PropTypes.bool
+  })).isRequired,
+  selected: PropTypes.oneOfType([
+    PropTypes.string, // uid
+    PropTypes.arrayOf(PropTypes.string)
+  ]),
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  small: PropTypes.bool
+};
+
+List.defaultProps = {
+  small: false,
+  itemDirection: 'row'
+};
 
 module.exports = List;

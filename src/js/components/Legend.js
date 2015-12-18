@@ -1,50 +1,36 @@
 // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
-var FormattedMessage = require('./FormattedMessage');
+import React, { Component, PropTypes } from 'react';
+import FormattedMessage from './FormattedMessage';
 
-var CLASS_ROOT = "legend";
+const CLASS_ROOT = "legend";
 
-var Legend = React.createClass({
+class Legend extends Component {
 
-  propTypes: {
-    activeIndex: React.PropTypes.number,
-    onActive: React.PropTypes.func,
-    series: React.PropTypes.arrayOf(React.PropTypes.shape({
-      label: React.PropTypes.string,
-      value: React.PropTypes.number,
-      units: React.PropTypes.string,
-      colorIndex: React.PropTypes.oneOfType([
-        React.PropTypes.number, // 1-6
-        React.PropTypes.string // status
-      ]),
-      onClick: React.PropTypes.func
-    })).isRequired,
-    total: React.PropTypes.bool,
-    units: React.PropTypes.string,
-    value: React.PropTypes.number
-  },
+  constructor(props) {
+    super(props);
 
-  getInitialState: function () {
-    return {activeIndex: this.props.activeIndex};
-  },
+    this._onActive = this._onActive.bind(this);
+    
+    this.state = {activeIndex: this.props.activeIndex};
+  }
 
-  componentWillReceiveProps: function (newProps) {
+  componentWillReceiveProps (newProps) {
     this.setState({activeIndex: newProps.activeIndex});
-  },
+  }
 
-  _onActive: function (index) {
+  _onActive (index) {
     this.setState({activeIndex: index});
     if (this.props.onActive) {
       this.props.onActive(index);
     }
-  },
+  }
 
-  _itemColorIndex: function (item, index) {
+  _itemColorIndex (item, index) {
     return item.colorIndex || ('graph-' + (index + 1));
-  },
+  }
 
-  render: function () {
+  render () {
     var classes = [CLASS_ROOT];
     if (this.props.series.length === 1) {
       classes.push(CLASS_ROOT + "--single");
@@ -129,6 +115,24 @@ var Legend = React.createClass({
     );
   }
 
-});
+}
+
+Legend.propTypes = {
+  activeIndex: PropTypes.number,
+  onActive: PropTypes.func,
+  series: PropTypes.arrayOf(PropTypes.shape({
+    label: PropTypes.string,
+    value: PropTypes.number,
+    units: PropTypes.string,
+    colorIndex: PropTypes.oneOfType([
+      PropTypes.number, // 1-6
+      PropTypes.string // status
+    ]),
+    onClick: PropTypes.func
+  })).isRequired,
+  total: PropTypes.bool,
+  units: PropTypes.string,
+  value: PropTypes.number
+};
 
 module.exports = Legend;

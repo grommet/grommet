@@ -1,105 +1,39 @@
 // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
-var ReactDOM = require('react-dom');
-var Legend = require('./Legend');
+import React, { Component, PropTypes } from 'react';
+import ReactDOM from 'react-dom';
+import Legend from './Legend';
+import Intl from '../utils/Intl';
+import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 
-var Intl = require('../utils/Intl');
-var KeyboardAccelerators = require('../utils/KeyboardAccelerators');
+const CLASS_ROOT = "chart";
 
-var CLASS_ROOT = "chart";
+const DEFAULT_WIDTH = 384;
+const DEFAULT_HEIGHT = 192;
+const XAXIS_HEIGHT = 24;
+const YAXIS_WIDTH = 12;
+const BAR_PADDING = 2;
+const MIN_LABEL_WIDTH = 48;
+const SPARKLINE_STEP_WIDTH = 6;
+const SPARKLINE_BAR_PADDING = 1;
+const POINT_RADIUS = 6;
 
-var DEFAULT_WIDTH = 384;
-var DEFAULT_HEIGHT = 192;
-var XAXIS_HEIGHT = 24;
-var YAXIS_WIDTH = 12;
-var BAR_PADDING = 2;
-var MIN_LABEL_WIDTH = 48;
-var SPARKLINE_STEP_WIDTH = 6;
-var SPARKLINE_BAR_PADDING = 1;
-var POINT_RADIUS = 6;
+class Chart extends Component {
 
-var Chart = React.createClass({
+  constructor(props) {
+    super(props);
 
-  propTypes: {
-    a11yTitle: React.PropTypes.string,
-    a11yTitleId: React.PropTypes.string,
-    a11yDescId: React.PropTypes.string,
-    a11yDesc: React.PropTypes.string,
-    important: React.PropTypes.number,
-    large: React.PropTypes.bool,
-    legend: React.PropTypes.shape({
-      position: React.PropTypes.oneOf(['overlay', 'after']),
-      total: React.PropTypes.bool
-    }),
-    max: React.PropTypes.number,
-    min: React.PropTypes.number,
-    points: React.PropTypes.bool,
-    series: React.PropTypes.arrayOf(
-      React.PropTypes.shape({
-        label: React.PropTypes.string,
-        values: React.PropTypes.arrayOf(
-          React.PropTypes.arrayOf(
-            React.PropTypes.oneOfType([
-              React.PropTypes.number,
-              React.PropTypes.object // Date
-            ])
-          )
-        ).isRequired,
-        colorIndex: React.PropTypes.string
-      })
-    ).isRequired,
-    size: React.PropTypes.oneOf(['small', 'medium', 'large']),
-    small: React.PropTypes.bool,
-    smooth: React.PropTypes.bool,
-    sparkline: React.PropTypes.bool,
-    threshold: React.PropTypes.number,
-    thresholds: React.PropTypes.arrayOf(React.PropTypes.shape({
-      label: React.PropTypes.string,
-      value: React.PropTypes.number.isRequired,
-      colorIndex: React.PropTypes.string
-    })),
-    type: React.PropTypes.oneOf(['line', 'bar', 'area']),
-    units: React.PropTypes.string,
-    xAxis: React.PropTypes.oneOfType([
-      React.PropTypes.arrayOf(React.PropTypes.shape({
-        value: React.PropTypes.oneOfType([
-          React.PropTypes.number,
-          React.PropTypes.object // Date
-        ]).isRequired,
-        label: React.PropTypes.string.isRequired
-      })),
-      React.PropTypes.shape({
-        placement: React.PropTypes.oneOf(['top', 'bottom']),
-        data: React.PropTypes.arrayOf(React.PropTypes.shape({
-          value: React.PropTypes.oneOfType([
-            React.PropTypes.number,
-            React.PropTypes.object // Date
-          ]).isRequired,
-          label: React.PropTypes.string.isRequired
-        }).isRequired)
-      })
-    ])
-  },
+    this._onRequestForNextLegend = this._onRequestForNextLegend.bind(this);
+    this._onRequestForPreviousLegend = this._onRequestForPreviousLegend.bind(this);
+    this._onMouseOver = this._onMouseOver.bind(this);
+    this._onMouseOut = this._onMouseOut.bind(this);
+    this._onResize = this._onResize.bind(this);
+    this._layout = this._layout.bind(this);
 
-  contextTypes: {
-    intl: React.PropTypes.object
-  },
+    this.state = this._stateFromProps(props, DEFAULT_WIDTH, DEFAULT_HEIGHT);
+  }
 
-  getDefaultProps: function () {
-    return {
-      a11yTitleId: 'chart-title',
-      a11yDescId: 'chart-desc',
-      min: 0,
-      type: 'line'
-    };
-  },
-
-  getInitialState: function () {
-    return this._stateFromProps(this.props, DEFAULT_WIDTH, DEFAULT_HEIGHT);
-  },
-
-  componentDidMount: function() {
+  componentDidMount () {
     window.addEventListener('resize', this._onResize);
     this._onResize();
 
@@ -113,19 +47,19 @@ var Chart = React.createClass({
         this, this._keyboardHandlers
       );
     }
-  },
+  }
 
-  componentWillReceiveProps: function (newProps) {
+  componentWillReceiveProps (newProps) {
     var state = this._stateFromProps(newProps,
       this.state.width, this.state.height);
     this.setState(state);
-  },
+  }
 
-  componentDidUpdate: function () {
+  componentDidUpdate () {
     this._layout();
-  },
+  }
 
-  componentWillUnmount: function() {
+  componentWillUnmount () {
     clearTimeout(this._resizeTimer);
     window.removeEventListener('resize', this._onResize);
 
@@ -134,9 +68,9 @@ var Chart = React.createClass({
         this, this._keyboardHandlers
       );
     }
-  },
+  }
 
-  _onRequestForNextLegend: function () {
+  _onRequestForNextLegend () {
     if (document.activeElement === this.refs.chart) {
 
       var totalBandCount = (
@@ -149,9 +83,9 @@ var Chart = React.createClass({
         this._onMouseOver(--this.state.activeXIndex);
       }
     }
-  },
+  }
 
-  _onRequestForPreviousLegend: function () {
+  _onRequestForPreviousLegend () {
     if (document.activeElement === this.refs.chart) {
 
       var totalBandCount = (
@@ -164,24 +98,24 @@ var Chart = React.createClass({
         this._onMouseOver(++this.state.activeXIndex);
       }
     }
-  },
+  }
 
-  _onMouseOver: function (xIndex) {
+  _onMouseOver (xIndex) {
     this.setState({activeXIndex: xIndex});
-  },
+  }
 
-  _onMouseOut: function () {
+  _onMouseOut () {
     this.setState({activeXIndex: this.state.defaultXIndex});
-  },
+  }
 
-  _onResize: function() {
+  _onResize () {
     // debounce
     clearTimeout(this._resizeTimer);
     this._resizeTimer = setTimeout(this._layout, 50);
-  },
+  }
 
   // Performs some initial calculations to make subsequent calculations easier.
-  _bounds: function (series, xAxisArg, width, height) {
+  _bounds (series, xAxisArg, width, height) {
     // normalize xAxis
     var xAxis;
     if (xAxisArg) {
@@ -319,10 +253,10 @@ var Chart = React.createClass({
     };
 
     return result;
-  },
+  }
 
   // Aligns the legend with the current position of the cursor, if any.
-  _alignLegend: function () {
+  _alignLegend () {
     if (this.state.activeXIndex >= 0 && this.refs.cursor) {
       var bounds = this.state.bounds;
       var cursorElement = this.refs.cursor;
@@ -341,12 +275,12 @@ var Chart = React.createClass({
       legendElement.style.left = '' + left + 'px ';
       legendElement.style.top = '' + (bounds.graphTop) + 'px ';
     }
-  },
+  }
 
   // Adjusts the legend position and set the width, height, and
   // redo the bounds calculations.
   // Called whenever the browser resizes or new properties arrive.
-  _layout: function () {
+  _layout () {
     if (this.props.legend && 'below' !== this.props.legend.position) {
       this._alignLegend();
     }
@@ -365,10 +299,10 @@ var Chart = React.createClass({
         bounds: bounds
       });
     }
-  },
+  }
 
   // Generates state based on the provided props.
-  _stateFromProps: function (props, width, height) {
+  _stateFromProps (props, width, height) {
     var bounds = this._bounds(props.series, props.xAxis, width, height);
     var defaultXIndex = -1;
     if (props.series && props.series.length > 0) {
@@ -393,38 +327,38 @@ var Chart = React.createClass({
       height: height,
       size: size
     };
-  },
+  }
 
   // Translates X value to X coordinate.
-  _translateX: function (x) {
+  _translateX (x) {
     var bounds = this.state.bounds;
     return Math.max(bounds.graphLeft,
       Math.min(bounds.graphRight, Math.round((x - bounds.minX) * bounds.scaleX)));
-  },
+  }
 
   // Translates Y value to Y coordinate.
-  _translateY: function (y) {
+  _translateY (y) {
     var bounds = this.state.bounds;
     // leave room for line width since strokes are aligned to the center
     return Math.max(1,
       (bounds.graphBottom - Math.max(1, this._translateHeight(y))));
-  },
+  }
 
   // Translates Y value to graph height.
-  _translateHeight: function (y) {
+  _translateHeight (y) {
     var bounds = this.state.bounds;
     return Math.round((y - bounds.minY) * bounds.scaleY);
-  },
+  }
 
   // Translates X and Y values to X and Y coordinates.
-  _coordinates: function (point) {
+  _coordinates (point) {
     return [this._translateX(point[0]), this._translateY(point[1])];
-  },
+  }
 
   // Uses the provided colorIndex or provides one based on the seriesIndex.
-  _itemColorIndex: function (item, seriesIndex) {
+  _itemColorIndex (item, seriesIndex) {
     return item.colorIndex || ('graph-' + (seriesIndex + 1));
-  },
+  }
 
   // Determines what the appropriate control coordinates are on
   // either side of the coordinate at the specified index.
@@ -432,7 +366,7 @@ var Chart = React.createClass({
   // just looks at whether the line through this coordinate is
   // ascending, descending or not. Peaks, valleys, and flats are
   // treated the same.
-  _controlCoordinates: function (coordinates, index) {
+  _controlCoordinates (coordinates, index) {
     var current = coordinates[index];
     // Use previous and next coordinates when available, otherwise use
     // the current coordinate for them.
@@ -467,10 +401,10 @@ var Chart = React.createClass({
       second[1] = current[1] - deltaY;
     }
     return [first, second];
-  },
+  }
 
   // Converts the series data into paths for line or area types.
-  _renderLinesOrAreas: function () {
+  _renderLinesOrAreas () {
     var bounds = this.state.bounds;
     var values = this.props.series.map(function (item, seriesIndex) {
 
@@ -512,7 +446,8 @@ var Chart = React.createClass({
           var x = Math.max(POINT_RADIUS + 1,
             Math.min(bounds.graphWidth - (POINT_RADIUS + 1), coordinate[0]));
           points.push(
-            <circle className={CLASS_ROOT + "__values-point color-index-" + colorIndex}
+            <circle key={index}
+              className={CLASS_ROOT + "__values-point color-index-" + colorIndex}
               cx={x} cy={coordinate[1]} r={POINT_RADIUS} />
           );
         }
@@ -556,10 +491,10 @@ var Chart = React.createClass({
     }, this);
 
     return values;
-  },
+  }
 
   // Converts the series data into rects for bar types.
-  _renderBars: function () {
+  _renderBars () {
     var bounds = this.state.bounds;
 
     var values = bounds.xAxis.data.map(function (obj, xIndex) {
@@ -576,11 +511,11 @@ var Chart = React.createClass({
         if (! this.props.legend || xIndex === this.state.activeXIndex) {
           classes.push(CLASS_ROOT + "__values-bar--active");
         }
-        
+
         if ('bottom' === bounds.xAxis.placement) {
           stepBarBase += XAXIS_HEIGHT;
         }
-        
+
         return (
           <rect key={'bar_rect_' + item.label || seriesIndex}
             className={classes.join(' ')}
@@ -599,10 +534,10 @@ var Chart = React.createClass({
     }, this);
 
     return values;
-  },
+  }
 
   // Converts the threshold value into a line.
-  _renderThreshold: function () {
+  _renderThreshold () {
     var y = this._translateY(this.props.threshold);
     var commands = 'M0,' + y + 'L' + this.state.width + ',' + y;
     return (
@@ -610,9 +545,9 @@ var Chart = React.createClass({
         <path fill="none" d={commands} />
       </g>
     );
-  },
+  }
 
-  _labelPosition: function (value, bounds) {
+  _labelPosition (value, bounds) {
     var x = this._translateX(value);
     var startX = x;
     var anchor;
@@ -637,14 +572,14 @@ var Chart = React.createClass({
       startX = x;
     }
     return {x: x, anchor: anchor, startX: startX, endX: startX + MIN_LABEL_WIDTH};
-  },
+  }
 
-  _labelOverlaps: function (pos1, pos2) {
+  _labelOverlaps (pos1, pos2) {
     return (pos1 && pos2 && pos1.endX > pos2.startX && pos1.startX < pos2.endX);
-  },
+  }
 
   // Converts the xAxis labels into texts.
-  _renderXAxis: function () {
+  _renderXAxis () {
     var bounds = this.state.bounds;
     var labelY;
     if ('bottom' === bounds.xAxis.placement) {
@@ -697,10 +632,10 @@ var Chart = React.createClass({
         {labels}
       </g>
     );
-  },
+  }
 
   // Vertical bars for thresholds.
-  _renderYAxis: function () {
+  _renderYAxis () {
     var bounds = this.state.bounds;
     var start = bounds.minY;
     var end;
@@ -733,9 +668,9 @@ var Chart = React.createClass({
         {bars}
       </g>
     );
-  },
+  }
 
-  _activeSeriesAsString: function () {
+  _activeSeriesAsString () {
     var total = 0;
     var seriesText = this._getActiveSeries().map(function (currentSeries) {
       total += currentSeries.value;
@@ -763,11 +698,11 @@ var Chart = React.createClass({
     }
 
     return seriesText;
-  },
+  }
 
   // Create vertical rects for each X data point.
   // These are used to track the mouse hover.
-  _renderXBands: function (layer) {
+  _renderXBands (layer) {
     var className = CLASS_ROOT + "__" + layer;
     var bounds = this.state.bounds;
 
@@ -797,7 +732,7 @@ var Chart = React.createClass({
       var seriesText = this._activeSeriesAsString();
 
       return (
-        <g id={xBandId} key={xBandId} className={classes.join(' ')}
+        <g key={xBandId} id={xBandId} className={classes.join(' ')}
           onMouseOver={onMouseOver} onMouseOut={onMouseOut} role="gridcell"
           aria-labelledby={xBandTitleId}>
           <title id={xBandTitleId}>
@@ -814,10 +749,10 @@ var Chart = React.createClass({
         {bands}
       </g>
     );
-  },
+  }
 
   // Converts the active X index to a line.
-  _renderCursor: function () {
+  _renderCursor () {
     var bounds = this.state.bounds;
     var value = this.props.series[0].values[this.state.activeXIndex];
     var coordinates = this._coordinates(value);
@@ -839,7 +774,8 @@ var Chart = React.createClass({
           coordinates = this._coordinates(value);
           var colorIndex = this._itemColorIndex(item, seriesIndex);
           return (
-            <circle className={CLASS_ROOT + "__cursor-point color-index-" + colorIndex}
+            <circle key={seriesIndex}
+              className={CLASS_ROOT + "__cursor-point color-index-" + colorIndex}
               cx={x} cy={coordinates[1]} r={Math.round(POINT_RADIUS * 1.2)} />
           );
         }, this);
@@ -852,9 +788,9 @@ var Chart = React.createClass({
         {points}
       </g>
     );
-  },
+  }
 
-  _getActiveSeries: function (addColorIndex) {
+  _getActiveSeries (addColorIndex) {
     return this.props.series.map(function (item) {
       var datum = {
         value: item.values[this.state.activeXIndex][1],
@@ -869,10 +805,10 @@ var Chart = React.createClass({
       }
       return datum;
     }, this);
-  },
+  }
 
   // Builds a Legend appropriate for the currently active X index.
-  _renderLegend: function () {
+  _renderLegend () {
     var activeSeries = this._getActiveSeries(true);
     var classes = [
       CLASS_ROOT + "__legend",
@@ -885,9 +821,9 @@ var Chart = React.createClass({
         total={this.props.legend.total}
         units={this.props.units} />
     );
-  },
+  }
 
-  render: function() {
+  render () {
     var classes = [CLASS_ROOT];
     classes.push(CLASS_ROOT + "--" + this.props.type);
     if (this.state.size) {
@@ -1001,6 +937,78 @@ var Chart = React.createClass({
     );
   }
 
-});
+}
+
+Chart.propTypes = {
+  a11yTitle: PropTypes.string,
+  a11yTitleId: PropTypes.string,
+  a11yDescId: PropTypes.string,
+  a11yDesc: PropTypes.string,
+  important: PropTypes.number,
+  large: PropTypes.bool,
+  legend: PropTypes.shape({
+    position: PropTypes.oneOf(['overlay', 'after']),
+    total: PropTypes.bool
+  }),
+  max: PropTypes.number,
+  min: PropTypes.number,
+  points: PropTypes.bool,
+  series: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string,
+      values: PropTypes.arrayOf(
+        PropTypes.arrayOf(
+          PropTypes.oneOfType([
+            PropTypes.number,
+            PropTypes.object // Date
+          ])
+        )
+      ).isRequired,
+      colorIndex: PropTypes.string
+    })
+  ).isRequired,
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  small: PropTypes.bool,
+  smooth: PropTypes.bool,
+  sparkline: PropTypes.bool,
+  threshold: PropTypes.number,
+  thresholds: PropTypes.arrayOf(PropTypes.shape({
+    label: PropTypes.string,
+    value: PropTypes.number.isRequired,
+    colorIndex: PropTypes.string
+  })),
+  type: PropTypes.oneOf(['line', 'bar', 'area']),
+  units: PropTypes.string,
+  xAxis: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.shape({
+      value: PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.object // Date
+      ]).isRequired,
+      label: PropTypes.string.isRequired
+    })),
+    PropTypes.shape({
+      placement: PropTypes.oneOf(['top', 'bottom']),
+      data: PropTypes.arrayOf(PropTypes.shape({
+        value: PropTypes.oneOfType([
+          PropTypes.number,
+          PropTypes.object // Date
+        ]).isRequired,
+        label: PropTypes.string.isRequired
+      }).isRequired)
+    })
+  ])
+};
+
+Chart.contextTypes = {
+  intl: PropTypes.object
+};
+
+Chart.defaultProps = {
+  a11yTitleId: 'chart-title',
+  a11yDescId: 'chart-desc',
+  min: 0,
+  type: 'line'
+};
 
 module.exports = Chart;

@@ -1,62 +1,55 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
-var ReactDOM = require('react-dom');
+import React, { Component, PropTypes } from 'react';
 
-var CLASS_ROOT = "map";
+const CLASS_ROOT = "map";
 
-var ResourceMap = React.createClass({
+class ResourceMap extends Component {
 
-  propTypes: {
-    data: React.PropTypes.shape({
-      categories: React.PropTypes.arrayOf(React.PropTypes.shape({
-        id: React.PropTypes.string,
-        label: React.PropTypes.node,
-        items: React.PropTypes.arrayOf(React.PropTypes.shape({
-          id: React.PropTypes.string,
-          node: React.PropTypes.node
-        }))
-      })),
-      links: React.PropTypes.arrayOf(React.PropTypes.shape({
-        parentId: React.PropTypes.string,
-        childId: React.PropTypes.string
-      }))
-    }).isRequired
-  },
+  constructor() {
+    super();
 
-  getInitialState: function () {
-    return {canvasWidth: 100, canvasHeight: 100};
-  },
+    this._onResize = this._onResize.bind(this);
+    this._layout = this._layout.bind(this);
+    this._draw = this._draw.bind(this);
+    this._onEnter = this._onEnter.bind(this);
+    this._onLeave = this._onLeave.bind(this);
 
-  componentDidMount: function () {
+    this.state = {
+      canvasWidth: 100,
+      canvasHeight: 100
+    };
+  }
+
+  componentDidMount () {
     window.addEventListener('resize', this._onResize);
     this._layout();
     clearTimeout(this._drawTimer);
     this._drawTimer = setTimeout(this._draw, 50);
-  },
+  }
 
-  componentDidUpdate: function () {
+  componentDidUpdate () {
     this._layout();
     clearTimeout(this._drawTimer);
     this._drawTimer = setTimeout(this._draw, 50);
-  },
+  }
 
-  componentWillUnmount: function () {
+  componentWillUnmount () {
     window.removeEventListener('resize', this._onResize);
-  },
+  }
 
-  _coords: function (id, canvasRect) {
+  _coords (id, canvasRect) {
     var element = document.getElementById(id);
     var rect = element.getBoundingClientRect();
     return [
       rect.left - canvasRect.left + (rect.width / 2),
       rect.top - canvasRect.top + (rect.height / 2)
     ];
-  },
+  }
 
-  _draw: function () {
-    var canvasElement = ReactDOM.findDOMNode(this.refs.canvas);
-    var highlightCanvasElement = ReactDOM.findDOMNode(this.refs.highlightCanvas);
+  _draw () {
+    var canvasElement = this.refs.canvas;
+    var highlightCanvasElement = this.refs.highlightCanvas;
     // don't draw if we don't have a canvas to draw on, such as a unit test
     if (canvasElement.getContext) {
       var context = canvasElement.getContext('2d');
@@ -88,10 +81,10 @@ var ResourceMap = React.createClass({
         }
       }, this);
     }
-  },
+  }
 
-  _layout: function () {
-    var mapElement = ReactDOM.findDOMNode(this.refs.map);
+  _layout () {
+    var mapElement = this.refs.map;
     if (mapElement.scrollWidth !== this.state.canvasWidth ||
       mapElement.scrollHeight !== this.state.canvasHeight) {
       this.setState({
@@ -99,23 +92,23 @@ var ResourceMap = React.createClass({
         canvasHeight: mapElement.scrollHeight
       });
     }
-  },
+  }
 
-  _onResize: function () {
+  _onResize () {
     // debounce
     clearTimeout(this._layoutTimer);
     this._layoutTimer = setTimeout(this._layout, 50);
-  },
+  }
 
-  _onEnter: function (id) {
+  _onEnter (id) {
     this.setState({activeId: id});
-  },
+  }
 
-  _onLeave: function () {
+  _onLeave () {
     this.setState({activeId: null});
-  },
+  }
 
-  _renderItems: function (items) {
+  _renderItems (items) {
     return items.map(function (item, index) {
       var classes = [CLASS_ROOT + "__item"];
       var active = this.state.activeId === item.id ||
@@ -136,9 +129,9 @@ var ResourceMap = React.createClass({
         </li>
       );
     }, this);
-  },
+  }
 
-  _renderCategories: function (categories) {
+  _renderCategories (categories) {
     var result = categories.map(function (category) {
       return (
         <li key={category.id} className={CLASS_ROOT + "__category"}>
@@ -152,9 +145,9 @@ var ResourceMap = React.createClass({
       );
     }, this);
     return result;
-  },
+  }
 
-  render: function() {
+  render () {
     var classes = [CLASS_ROOT];
     if (this.props.className) {
       classes.push(this.props.className);
@@ -178,6 +171,23 @@ var ResourceMap = React.createClass({
     );
   }
 
-});
+}
+
+ResourceMap.propTypes = {
+  data: PropTypes.shape({
+    categories: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.string,
+      label: PropTypes.node,
+      items: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.string,
+        node: PropTypes.node
+      }))
+    })),
+    links: PropTypes.arrayOf(PropTypes.shape({
+      parentId: PropTypes.string,
+      childId: PropTypes.string
+    }))
+  }).isRequired
+};
 
 module.exports = ResourceMap;
