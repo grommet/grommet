@@ -114,10 +114,6 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
     }
   }
 
-  &__aria {
-    display: inline-block;
-  }
-
   &--legend {
     &-right {
       white-space: nowrap;
@@ -196,6 +192,14 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
       &__minmax {
         flex-direction: column;
         height: 100%;
+
+        &-min {
+          order: 1;
+        }
+
+        &-max {
+          order: 0;
+        }
       }
 
       &__label-min,
