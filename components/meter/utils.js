@@ -27,6 +27,8 @@ module.exports = {
     activeIndex: _react.PropTypes.number,
     a11yDesc: _react.PropTypes.string,
     a11yDescId: _react.PropTypes.string,
+    a11yTitle: _react.PropTypes.string,
+    a11yTitleId: _react.PropTypes.string,
     max: _react.PropTypes.shape({
       value: _react.PropTypes.number,
       label: _react.PropTypes.string
@@ -62,15 +64,27 @@ module.exports = {
     return Math.min(360, Math.max(0, startAngle + anglePer * value));
   },
 
-  buildPath: function buildPath(itemIndex, commands, classes, onActivate, onClick, a11yDescId) {
+  buildPath: function buildPath(itemIndex, commands, classes, onActivate, onClick, a11yDescId, a11yTitle) {
     if (onActivate) {
       var onOver = onActivate.bind(null, itemIndex);
       var onOut = onActivate.bind(null, null);
-      return _react2['default'].createElement('path', { key: itemIndex, className: classes.join(' '), d: commands,
-        tabIndex: '0',
-        onFocus: onOver, onBlur: onOut,
-        onMouseOver: onOver, onMouseOut: onOut,
-        onClick: onClick, role: 'img', 'aria-labelledby': a11yDescId });
+
+      var pathTitleId = 'title_' + a11yDescId;
+
+      return _react2['default'].createElement(
+        'g',
+        { key: itemIndex, id: a11yDescId, ref: a11yDescId,
+          role: 'gridcell', 'aria-labelledby': pathTitleId },
+        _react2['default'].createElement(
+          'title',
+          { id: pathTitleId },
+          a11yTitle
+        ),
+        _react2['default'].createElement('path', { className: classes.join(' '), d: commands,
+          onFocus: onOver, onBlur: onOut,
+          onMouseOver: onOver, onMouseOut: onOut,
+          onClick: onClick })
+      );
     } else {
       return _react2['default'].createElement('path', { key: itemIndex, className: classes.join(' '), d: commands });
     }

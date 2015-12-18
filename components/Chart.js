@@ -100,7 +100,9 @@ var Chart = (function (_Component) {
     }
   }, {
     key: '_onRequestForNextLegend',
-    value: function _onRequestForNextLegend() {
+    value: function _onRequestForNextLegend(e) {
+      e.stopPropagation();
+      e.stopImmediatePropagation();
       if (document.activeElement === this.refs.chart) {
 
         var totalBandCount = _reactDom2['default'].findDOMNode(this.refs.front).childNodes.length;
@@ -108,13 +110,15 @@ var Chart = (function (_Component) {
         if (this.state.activeXIndex - 1 < 0) {
           this._onMouseOver(totalBandCount - 1);
         } else {
-          this._onMouseOver(--this.state.activeXIndex);
+          this._onMouseOver(this.state.activeXIndex - 1);
         }
       }
     }
   }, {
     key: '_onRequestForPreviousLegend',
-    value: function _onRequestForPreviousLegend() {
+    value: function _onRequestForPreviousLegend(e) {
+      e.stopPropagation();
+      e.stopImmediatePropagation();
       if (document.activeElement === this.refs.chart) {
 
         var totalBandCount = _reactDom2['default'].findDOMNode(this.refs.front).childNodes.length;
@@ -122,7 +126,7 @@ var Chart = (function (_Component) {
         if (this.state.activeXIndex + 1 >= totalBandCount) {
           this._onMouseOver(0);
         } else {
-          this._onMouseOver(++this.state.activeXIndex);
+          this._onMouseOver(this.state.activeXIndex + 1);
         }
       }
     }
@@ -911,15 +915,13 @@ var Chart = (function (_Component) {
 
       var frontBands;
       var activeDescendant;
+      var role = 'img';
       if (this.props.legend) {
         frontBands = this._renderXBands('front');
         activeDescendant = this.props.a11yTitleId + '_x_band_' + this.state.activeXIndex;
-      }
-
-      var role = 'img';
-      if (activeDescendant) {
         role = 'tablist';
       }
+
       var defaultTitle;
       if (!this.props.a11yTitle) {
         defaultTitle = ['Chart, ', 'Type: ', this.props.type].join(' ').trim();

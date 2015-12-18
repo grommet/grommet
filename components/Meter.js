@@ -24,10 +24,6 @@ var _Legend = require('./Legend');
 
 var _Legend2 = _interopRequireDefault(_Legend);
 
-var _utilsIntl = require('../utils/Intl');
-
-var _utilsIntl2 = _interopRequireDefault(_utilsIntl);
-
 var _meterBar = require('./meter/Bar');
 
 var _meterBar2 = _interopRequireDefault(_meterBar);
@@ -52,16 +48,6 @@ var TYPE_COMPONENT = {
   'arc': _meterArc2['default'],
   'spiral': _meterSpiral2['default']
 };
-
-function getThresholdsString(thresholds) {
-  var thresholdsArray = [', Thresholds: '];
-
-  thresholds.forEach(function (threshold) {
-    thresholdsArray.push(threshold.label + ': ' + threshold.value);
-  });
-
-  return thresholdsArray.join(' ');
-}
 
 var Meter = (function (_Component) {
   _inherits(Meter, _Component);
@@ -199,7 +185,8 @@ var Meter = (function (_Component) {
           var threshold = props.thresholds[i];
           thresholds.push({
             label: threshold.label,
-            colorIndex: threshold.colorIndex
+            colorIndex: threshold.colorIndex,
+            ariaLabel: threshold.value + ' ' + (props.units || '') + ' ' + (threshold.label || '')
           });
           if (i > 0) {
             thresholds[i - 1].value = threshold.value - total;
@@ -211,7 +198,11 @@ var Meter = (function (_Component) {
         }
       } else if (props.threshold) {
         var remaining = max.value - props.threshold;
-        thresholds = [{ value: props.threshold, colorIndex: 'unset' }, { value: remaining, colorIndex: 'critical' }];
+        thresholds = [{
+          value: props.threshold,
+          colorIndex: 'unset',
+          ariaLabel: props.threshold + ' ' + (props.units || '')
+        }, { value: remaining, colorIndex: 'critical' }];
       } else {
         thresholds = [{ value: max.value, colorIndex: 'unset' }];
       }
@@ -318,6 +309,9 @@ var Meter = (function (_Component) {
         fields = { value: this.state.total, label: 'Total' };
       } else {
         var active = this.state.series[this.state.activeIndex];
+        if (!active) {
+          active = this.state.series[0];
+        }
         fields = { value: active.value, label: active.label, onClick: active.onClick };
       }
       return fields;
@@ -437,34 +431,23 @@ var Meter = (function (_Component) {
       var activeValue = this._renderActiveValue();
 
       var legend = undefined;
-      if (this.props.legend) {
-        legend = this._renderLegend();
-        classes.push(CLASS_ROOT + "--legend-" + this.state.legendPlacement);
+      var a11yRole = undefined;
+      if (this.props.legend || this.props.type === 'spiral') {
+        a11yRole = 'tablist';
+
+        if (this.props.legend) {
+          legend = this._renderLegend();
+          classes.push(CLASS_ROOT + "--legend-" + this.state.legendPlacement);
+        }
       }
-
-      var a11yRole = this.props.series ? 'chart' : this.props.a11yRole;
-
-      var defaultTitle = undefined;
-      if (!this.props.a11yTitle) {
-        defaultTitle = ['Meter, ', 'Type: ', (this.props.vertical ? 'vertical ' : '') + this.props.type].join(' ').trim();
-      }
-
-      var titleKey = typeof this.props.a11yTitle !== "undefined" ? this.props.a11yTitle : defaultTitle;
-      var a11yTitle = _utilsIntl2['default'].getMessage(this.context.intl, titleKey);
-
-      var defaultA11YDesc = undefined;
-      if (this.props.a11yDesc !== "undefined") {
-        var fields = this._getActiveFields();
-        defaultA11YDesc = [', Value: ', fields.value, this.props.units || '', fields.label, this.state.min.label ? ', Minimum: ' + this.state.min.label : '', this.state.max.label ? ', Maximum: ' + this.state.max.label : '', this.props.threshold ? ', Threshold: ' + this.props.threshold : '', this.props.thresholds ? getThresholdsString(this.props.thresholds) : ''].join(' ').trim();
-      }
-
-      var descKey = typeof this.props.a11yDesc !== "undefined" ? this.props.a11yDesc : defaultA11YDesc;
-      var a11yDesc = _utilsIntl2['default'].getMessage(this.context.intl, descKey);
 
       var GraphicComponent = TYPE_COMPONENT[this.props.type];
       var graphic = _react2['default'].createElement(GraphicComponent, {
-        a11yDesc: a11yDesc,
+        a11yTitle: this.props.a11yTitle,
+        a11yTitleId: this.props.a11yTitleId,
+        a11yDesc: this.props.a11yDesc,
         a11yDescId: this.props.a11yDescId,
+        a11yRole: a11yRole,
         activeIndex: this.state.activeIndex,
         min: this.state.min, max: this.state.max,
         onActivate: this._onActivate,
@@ -472,6 +455,7 @@ var Meter = (function (_Component) {
         stacked: this.props.stacked,
         thresholds: this.state.thresholds,
         total: this.state.total,
+        units: this.props.units,
         vertical: this.props.vertical });
 
       var graphicContainer = undefined;
@@ -479,17 +463,7 @@ var Meter = (function (_Component) {
         graphicContainer = _react2['default'].createElement(
           'div',
           { className: CLASS_ROOT + "__graphic-container" },
-          _react2['default'].createElement(
-            'a',
-            { href: '#', role: a11yRole, tabIndex: '0', className: CLASS_ROOT + "__aria",
-              'aria-labelledby': this.props.a11yTitleId + ' ' + this.props.a11yDescId },
-            _react2['default'].createElement(
-              'title',
-              { id: this.props.a11yTitleId },
-              a11yTitle
-            ),
-            graphic
-          ),
+          graphic,
           minMax
         );
       }
@@ -512,7 +486,6 @@ var Meter = (function (_Component) {
 })(_react.Component);
 
 Meter.propTypes = {
-  a11yRole: _react.PropTypes.string,
   a11yTitle: _react.PropTypes.string,
   a11yTitleId: _react.PropTypes.string,
   a11yDescId: _react.PropTypes.string,
@@ -552,7 +525,6 @@ Meter.propTypes = {
 };
 
 Meter.defaultProps = {
-  a11yRole: 'img',
   a11yTitleId: 'meter-title',
   a11yDescId: 'meter-desc',
   type: 'bar'
