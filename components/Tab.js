@@ -2,68 +2,99 @@
 
 'use strict';
 
-var React = require('react');
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
-var KeyboardAccelerators = require('../utils/KeyboardAccelerators');
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _utilsKeyboardAccelerators = require('../utils/KeyboardAccelerators');
+
+var _utilsKeyboardAccelerators2 = _interopRequireDefault(_utilsKeyboardAccelerators);
 
 var CLASS_ROOT = "tab";
 
-var Tab = React.createClass({
-  displayName: 'Tab',
+var Tab = (function (_Component) {
+  _inherits(Tab, _Component);
 
-  propTypes: {
-    title: React.PropTypes.string.isRequired,
-    active: React.PropTypes.bool,
-    id: React.PropTypes.string
-  },
+  function Tab() {
+    _classCallCheck(this, Tab);
 
-  componentDidMount: function componentDidMount() {
-    KeyboardAccelerators.startListeningToKeyboard(this, {
-      space: this._processSpace
-    });
-  },
+    _get(Object.getPrototypeOf(Tab.prototype), 'constructor', this).call(this);
 
-  componentWillUnmount: function componentWillUnmount() {
-    KeyboardAccelerators.stopListeningToKeyboard(this, {
-      space: this._processSpace
-    });
-  },
-
-  _processSpace: function _processSpace(event) {
-    if (event.target === this.refs.tab) {
-      this._onClickTab(event);
-    }
-  },
-
-  _onClickTab: function _onClickTab(event) {
-    event.preventDefault();
-    this.props.onRequestForActive();
-  },
-
-  render: function render() {
-    var classes = [CLASS_ROOT];
-
-    if (this.props.active) {
-      classes.push(CLASS_ROOT + "--active");
-    }
-
-    return React.createElement(
-      'li',
-      { className: classes.join(' '), id: this.props.id },
-      React.createElement(
-        'a',
-        { ref: 'tab', role: 'tab', href: '#', onClick: this._onClickTab,
-          'aria-expanded': this.props.active, 'aria-selected': this.props.active,
-          className: CLASS_ROOT + "__link", 'aria-labelledby': this.props.id },
-        React.createElement(
-          'label',
-          { className: CLASS_ROOT + '__label', htmlFor: this.props.id },
-          this.props.title
-        )
-      )
-    );
+    this._processSpace = this._processSpace.bind(this);
+    this._onClickTab = this._onClickTab.bind(this);
   }
 
-});
+  _createClass(Tab, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      _utilsKeyboardAccelerators2['default'].startListeningToKeyboard(this, {
+        space: this._processSpace
+      });
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      _utilsKeyboardAccelerators2['default'].stopListeningToKeyboard(this, {
+        space: this._processSpace
+      });
+    }
+  }, {
+    key: '_processSpace',
+    value: function _processSpace(event) {
+      if (event.target === this.refs.tab) {
+        this._onClickTab(event);
+      }
+    }
+  }, {
+    key: '_onClickTab',
+    value: function _onClickTab(event) {
+      event.preventDefault();
+      this.props.onRequestForActive();
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var classes = [CLASS_ROOT];
+
+      if (this.props.active) {
+        classes.push(CLASS_ROOT + "--active");
+      }
+
+      return _react2['default'].createElement(
+        'li',
+        { className: classes.join(' '), id: this.props.id },
+        _react2['default'].createElement(
+          'a',
+          { ref: 'tab', role: 'tab', href: '#', onClick: this._onClickTab,
+            'aria-expanded': this.props.active, 'aria-selected': this.props.active,
+            className: CLASS_ROOT + "__link", 'aria-labelledby': this.props.id },
+          _react2['default'].createElement(
+            'label',
+            { className: CLASS_ROOT + '__label', htmlFor: this.props.id },
+            this.props.title
+          )
+        )
+      );
+    }
+  }]);
+
+  return Tab;
+})(_react.Component);
+
+Tab.propTypes = {
+  title: _react.PropTypes.string.isRequired,
+  active: _react.PropTypes.bool,
+  id: _react.PropTypes.string
+};
 
 module.exports = Tab;

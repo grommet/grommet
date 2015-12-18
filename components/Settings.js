@@ -1,26 +1,30 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-'use strict';
+"use strict";
 
 var React = require('react');
 
 var Settings = React.createClass({
-  displayName: 'Settings',
+  displayName: "Settings",
+
+  componentDidMount: function componentDidMount() {
+    console.warn("Settings is deprecated and will be removed soon." + "Please use Tiles instead.");
+  },
 
   render: function render() {
     var panels = ['TBD 1', 'TBD 2'].map(function (tbd) {
       return React.createElement(
-        'li',
+        "li",
         { key: tbd, className: "settings__panel list-item box" },
         tbd
       );
     });
 
     return React.createElement(
-      'div',
+      "div",
       { className: "settings" },
       React.createElement(
-        'ol',
+        "ol",
         { className: "settings__panels list-inline" },
         panels
       )

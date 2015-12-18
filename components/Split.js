@@ -2,134 +2,164 @@
 
 'use strict';
 
-var React = require('react');
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
 
 var CLASS_ROOT = "split";
 
-var Split = React.createClass({
-  displayName: 'Split',
+var Split = (function (_Component) {
+  _inherits(Split, _Component);
 
-  propTypes: {
-    fixed: React.PropTypes.bool,
-    flex: React.PropTypes.oneOf(['left', 'right', 'both']),
-    priority: React.PropTypes.oneOf(['left', 'right']),
-    separator: React.PropTypes.bool
-  },
+  function Split() {
+    _classCallCheck(this, Split);
 
-  getDefaultProps: function getDefaultProps() {
-    return {
-      fixed: true,
-      flex: 'both',
-      priority: 'right'
-    };
-  },
+    _get(Object.getPrototypeOf(Split.prototype), 'constructor', this).call(this);
 
-  getInitialState: function getInitialState() {
-    return { responsive: null };
-  },
+    this._onResize = this._onResize.bind(this);
+    this._layout = this._layout.bind(this);
 
-  componentDidMount: function componentDidMount() {
-    // figure out the break width
-    this._breakWidth = 720; // default
-    // CSS stores the break width in a hidden pseudo element
-    var splitElement = this.refs.split;
-    var after = window.getComputedStyle(splitElement, ':after');
-    if (after) {
-      this._breakWidth = parseInt(after.getPropertyValue('width'), 10);
-    }
-
-    window.addEventListener('resize', this._onResize);
-    this._layout();
-  },
-
-  componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
-    // If we change the number of visible children, trigger a resize event
-    // so things like Table header can adjust. This will go away once
-    // CSS supports per element media queries.
-    // The 500ms delay is loosely tied to the CSS animation duration.
-    // We want any animations to finish before triggering the resize.
-    // TODO: consider using an animation end event instead of a timer.
-    if (this._nonNullChildCount(nextProps) !== this._nonNullChildCount(this.props)) {
-      clearTimeout(this._resizeTimer);
-      this._resizeTimer = setTimeout(function () {
-        var event = document.createEvent('HTMLEvents');
-        event.initEvent('resize', true, false);
-        window.dispatchEvent(event);
-      }, 500);
-    }
-  },
-
-  componentWillUnmount: function componentWillUnmount() {
-    window.removeEventListener('resize', this._onResize);
-  },
-
-  // Support function for componentWillReceiveProps()
-  _nonNullChildCount: function _nonNullChildCount(props) {
-    var result = 0;
-    React.Children.forEach(props.children, function (child) {
-      if (child !== null) result += 1;
-    });
-    return result;
-  },
-
-  _onResize: function _onResize() {
-    // debounce
-    clearTimeout(this._resizeTimer);
-    this._resizeTimer = setTimeout(this._layout, 50);
-  },
-
-  _setResponsive: function _setResponsive(responsive) {
-    if (this.state.responsive !== responsive) {
-      this.setState({ responsive: responsive });
-      if (this.props.onResponsive) {
-        this.props.onResponsive(responsive);
-      }
-    }
-  },
-
-  _layout: function _layout() {
-    var splitElement = this.refs.split;
-    if (splitElement) {
-      if (splitElement.offsetWidth < this._breakWidth) {
-        this._setResponsive('single');
-      } else {
-        this._setResponsive('multiple');
-      }
-    }
-  },
-
-  render: function render() {
-    var classes = [CLASS_ROOT];
-    if (this.props.flex) {
-      classes.push(CLASS_ROOT + "--flex-" + this.props.flex);
-    }
-    if (this.props.fixed) {
-      classes.push(CLASS_ROOT + "--fixed");
-    }
-    if (this.props.separator) {
-      classes.push(CLASS_ROOT + "--separator");
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
-
-    var children;
-    if ('single' === this.state.responsive) {
-      if ('left' === this.props.priority) {
-        children = React.Children.toArray(this.props.children)[0];
-      } else {
-        children = React.Children.toArray(this.props.children).pop();
-      }
-    } else {
-      children = this.props.children;
-    }
-
-    return React.createElement(
-      'div',
-      { ref: 'split', className: classes.join(' ') },
-      children
-    );
+    this.state = { responsive: null };
   }
-});
+
+  _createClass(Split, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      // figure out the break width
+      this._breakWidth = 720; // default
+      // CSS stores the break width in a hidden pseudo element
+      var splitElement = this.refs.split;
+      var after = window.getComputedStyle(splitElement, ':after');
+      if (after) {
+        this._breakWidth = parseInt(after.getPropertyValue('width'), 10);
+      }
+
+      window.addEventListener('resize', this._onResize);
+      this._layout();
+    }
+  }, {
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      // If we change the number of visible children, trigger a resize event
+      // so things like Table header can adjust. This will go away once
+      // CSS supports per element media queries.
+      // The 500ms delay is loosely tied to the CSS animation duration.
+      // We want any animations to finish before triggering the resize.
+      // TODO: consider using an animation end event instead of a timer.
+      if (this._nonNullChildCount(nextProps) !== this._nonNullChildCount(this.props)) {
+        clearTimeout(this._resizeTimer);
+        this._resizeTimer = setTimeout(function () {
+          var event = document.createEvent('HTMLEvents');
+          event.initEvent('resize', true, false);
+          window.dispatchEvent(event);
+        }, 500);
+      }
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      window.removeEventListener('resize', this._onResize);
+    }
+
+    // Support function for componentWillReceiveProps()
+  }, {
+    key: '_nonNullChildCount',
+    value: function _nonNullChildCount(props) {
+      var result = 0;
+      _react2['default'].Children.forEach(props.children, function (child) {
+        if (child !== null) result += 1;
+      });
+      return result;
+    }
+  }, {
+    key: '_onResize',
+    value: function _onResize() {
+      // debounce
+      clearTimeout(this._resizeTimer);
+      this._resizeTimer = setTimeout(this._layout, 50);
+    }
+  }, {
+    key: '_setResponsive',
+    value: function _setResponsive(responsive) {
+      if (this.state.responsive !== responsive) {
+        this.setState({ responsive: responsive });
+        if (this.props.onResponsive) {
+          this.props.onResponsive(responsive);
+        }
+      }
+    }
+  }, {
+    key: '_layout',
+    value: function _layout() {
+      var splitElement = this.refs.split;
+      if (splitElement) {
+        if (splitElement.offsetWidth < this._breakWidth) {
+          this._setResponsive('single');
+        } else {
+          this._setResponsive('multiple');
+        }
+      }
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var classes = [CLASS_ROOT];
+      if (this.props.flex) {
+        classes.push(CLASS_ROOT + "--flex-" + this.props.flex);
+      }
+      if (this.props.fixed) {
+        classes.push(CLASS_ROOT + "--fixed");
+      }
+      if (this.props.separator) {
+        classes.push(CLASS_ROOT + "--separator");
+      }
+      if (this.props.className) {
+        classes.push(this.props.className);
+      }
+
+      var children;
+      if ('single' === this.state.responsive) {
+        if ('left' === this.props.priority) {
+          children = _react2['default'].Children.toArray(this.props.children)[0];
+        } else {
+          children = _react2['default'].Children.toArray(this.props.children).pop();
+        }
+      } else {
+        children = this.props.children;
+      }
+
+      return _react2['default'].createElement(
+        'div',
+        { ref: 'split', className: classes.join(' ') },
+        children
+      );
+    }
+  }]);
+
+  return Split;
+})(_react.Component);
+
+Split.propTypes = {
+  fixed: _react.PropTypes.bool,
+  flex: _react.PropTypes.oneOf(['left', 'right', 'both']),
+  priority: _react.PropTypes.oneOf(['left', 'right']),
+  separator: _react.PropTypes.bool
+};
+
+Split.defaultProps = {
+  fixed: true,
+  flex: 'both',
+  priority: 'right'
+};
 
 module.exports = Split;
