@@ -1,44 +1,37 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
-var Box = require('./Box');
-var Tiles = require('./Tiles');
-var Tile = require('./Tile');
-var Button = require('./Button');
-var Previous = require('./icons/base/Previous');
-var Next = require('./icons/base/Next');
+import React, { Component, PropTypes } from 'react';
+import Box from './Box';
+import Tiles from './Tiles';
+import Tile from './Tile';
+import Button from './Button';
+import Previous from './icons/base/Previous';
+import Next from './icons/base/Next';
 
-var CLASS_ROOT = "carousel";
+const CLASS_ROOT = "carousel";
 
-var Carousel = React.createClass({
+class Carousel extends Component {
 
-  propTypes: {
-    autoplay: React.PropTypes.bool,
-    autoplaySpeed: React.PropTypes.number,
-    infinite: React.PropTypes.bool,
-    persistentNav: React.PropTypes.bool
-  },
+  constructor (props) {
+    super (props);
 
-  getDefaultProps: function () {
-    return {
-      autoplay: true,
-      autoplaySpeed: 5000,
-      infinite: true,
-      persistentNav: true
-    };
-  },
+    this._onSelect = this._onSelect.bind(this);
+    this._onMouseOver = this._onMouseOver.bind(this);
+    this._onMouseOut = this._onMouseOut.bind(this);
+    this._onResize = this._onResize.bind(this);
+    this._slidePrev = this._slidePrev.bind(this);
+    this._slideNext = this._slideNext.bind(this);
 
-  getInitialState: function () {
-    return {
+    this.state = {
       activeIndex: 0,
-      hideControls: !this.props.persistentNav,
+      hideControls: ! props.persistentNav,
       priorIndex: 0,
       sequence: 1,
       width: 0
     };
-  },
+  }
 
-  componentDidMount: function() {
+  componentDidMount () {
     this.setState({
       width: this.refs.carousel.offsetWidth
     });
@@ -47,18 +40,16 @@ var Carousel = React.createClass({
       this._setSlideInterval();
     }
 
-    window.addEventListener('resize', this._onWindowResize);
-  },
+    window.addEventListener('resize', this._onResize);
+  }
 
-  componentWillUnmount: function() {
+  componentWillUnmount () {
     clearInterval(this._slideAnimation);
 
-    window.removeEventListener('resize', this._onWindowResize);
-  },
+    window.removeEventListener('resize', this._onResize);
+  }
 
-  _slideAnimation: null,
-
-  _setSlideInterval: function() {
+  _setSlideInterval () {
     this._slideAnimation = setInterval(function() {
       var activeIndex = this.state.activeIndex;
       var numSlides = this.props.children.length;
@@ -71,17 +62,17 @@ var Carousel = React.createClass({
         clearInterval(this._slideAnimation);
       }
     }.bind(this), this.props.autoplaySpeed);
-  },
+  }
 
-  _onSelect: function (index) {
+  _onSelect (index) {
     if (index !== this.state.activeIndex) {
       this.setState({
         activeIndex: index
       });
     }
-  },
+  }
 
-  _onMouseOver: function() {
+  _onMouseOver () {
     if (this.props.autoplay) {
       clearInterval(this._slideAnimation);
     }
@@ -91,10 +82,12 @@ var Carousel = React.createClass({
         hideControls: false
       });
     }
-  },
+  }
 
-  _onMouseOut: function() {
-    if (this.props.autoplay && (this.props.infinite || this.state.activeIndex !== this.props.children.length - 1)) {
+  _onMouseOut () {
+    if (this.props.autoplay &&
+        (this.props.infinite ||
+          this.state.activeIndex !== this.props.children.length - 1)) {
       this._setSlideInterval();
     }
 
@@ -103,51 +96,54 @@ var Carousel = React.createClass({
         hideControls: true
       });
     }
-  },
+  }
 
-  _onWindowResize: function () {
+  _onResize () {
     this.setState({
       width: this.refs.carousel.offsetWidth
     });
-  },
+  }
 
-  _slidePrev: function() {
+  _slidePrev () {
     var numSlides = this.props.children.length;
     this.setState({
       activeIndex: (this.state.activeIndex + numSlides - 1) % numSlides
     });
-  },
+  }
 
-  _slideNext: function() {
+  _slideNext () {
     var numSlides = this.props.children.length;
     this.setState({
       activeIndex: (this.state.activeIndex + 1) % numSlides
     });
-  },
+  }
 
-  _renderPrevButton: function() {
+  _renderPrevButton () {
     if (this.props.infinite || this.state.activeIndex !== 0) {
       return (
-        <Button className={CLASS_ROOT + '__arrow ' + CLASS_ROOT + '__arrow--prev'}
+        <Button
+          className={CLASS_ROOT + '__arrow ' + CLASS_ROOT + '__arrow--prev'}
           type="icon" onClick={this._slidePrev}>
           <Previous size="large" />
         </Button>
       );
     }
-  },
+  }
 
-  _renderNextButton: function() {
-    if (this.props.infinite || this.state.activeIndex !== this.props.children.length - 1) {
+  _renderNextButton () {
+    if (this.props.infinite ||
+      this.state.activeIndex !== this.props.children.length - 1) {
       return (
-        <Button className={CLASS_ROOT + '__arrow ' + CLASS_ROOT + '__arrow--next'}
+        <Button
+          className={CLASS_ROOT + '__arrow ' + CLASS_ROOT + '__arrow--next'}
           type="icon" onClick={this._slideNext}>
           <Next size="large" />
         </Button>
       );
     }
-  },
+  }
 
-  render: function () {
+  render () {
     var classes = [CLASS_ROOT];
     if (this.state.hideControls) {
       classes.push(CLASS_ROOT + '--hide-controls');
@@ -181,7 +177,8 @@ var Carousel = React.createClass({
       }
 
       return (
-        <svg className={controlClasses.join(' ')} viewBox="0 0 24 24" version="1.1"
+        <svg className={controlClasses.join(' ')}
+          viewBox="0 0 24 24" version="1.1"
           onClick={this._onSelect.bind(this, index)}>
           <circle cx={12} cy={12} r={6}></circle>
         </svg>
@@ -189,21 +186,37 @@ var Carousel = React.createClass({
     }, this);
 
     return (
-      <div ref="carousel" className={classes.join(' ')} onMouseEnter={this._onMouseOver} onMouseLeave={this._onMouseOut}>
-        <div className={CLASS_ROOT + "__track"} style={{ width: trackWidth, marginLeft: trackPosition }}>
+      <div ref="carousel" className={classes.join(' ')}
+        onMouseEnter={this._onMouseOver} onMouseLeave={this._onMouseOut}>
+        <div className={CLASS_ROOT + "__track"}
+          style={{ width: trackWidth, marginLeft: trackPosition }}>
           <Tiles fill={true}>
             {tiles}
           </Tiles>
         </div>
         {this._renderPrevButton()}
         {this._renderNextButton()}
-        <Box className={CLASS_ROOT + "__controls"} direction="row" justify="center" responsive={false}>
+        <Box className={CLASS_ROOT + "__controls"} direction="row"
+          justify="center" responsive={false}>
           {controls}
         </Box>
       </div>
     );
   }
+}
 
-});
+Carousel.propTypes = {
+  autoplay: PropTypes.bool,
+  autoplaySpeed: PropTypes.number,
+  infinite: PropTypes.bool,
+  persistentNav: PropTypes.bool
+};
+
+Carousel.defaultProps = {
+  autoplay: true,
+  autoplaySpeed: 5000,
+  infinite: true,
+  persistentNav: true
+};
 
 module.exports = Carousel;

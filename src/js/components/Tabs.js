@@ -1,38 +1,28 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
-var Intl = require('../utils/Intl');
-var Box = require('./Box');
+import React, { Component, PropTypes } from 'react';
+import Intl from '../utils/Intl';
+import Box from './Box';
 
-var CLASS_ROOT = "tabs";
+const CLASS_ROOT = "tabs";
 
-var Tabs = React.createClass({
+class Tabs extends Component {
 
-  propTypes: {
-    activeIndex: React.PropTypes.number
-  },
+  constructor(props) {
+    super(props);
 
-  contextTypes: {
-    intl: React.PropTypes.object
-  },
+    this._activateTab = this._activateTab.bind(this);
 
-  getDefaultProps: function () {
-    return {
-      initialIndex: 0
+    this.state = {
+      activeIndex: props.initialIndex
     };
-  },
+  }
 
-  getInitialState: function () {
-    return {
-      activeIndex: this.props.initialIndex
-    };
-  },
-
-  _activateTab: function (index) {
+  _activateTab (index) {
     this.setState({activeIndex: index});
-  },
+  }
 
-  render: function() {
+  render () {
     var classes = [CLASS_ROOT];
 
     var activeContainer;
@@ -79,7 +69,18 @@ var Tabs = React.createClass({
       </div>
     );
   }
+}
 
-});
+Tabs.propTypes = {
+  activeIndex: PropTypes.number
+};
+
+Tabs.contextTypes = {
+  intl: PropTypes.object
+};
+
+Tabs.defaultProps = {
+  initialIndex: 0
+};
 
 module.exports = Tabs;

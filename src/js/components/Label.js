@@ -1,15 +1,9 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
+import React, { Component, PropTypes } from 'react';
 
-var Label = React.createClass({
-
-  propTypes: {
-    icon: React.PropTypes.node,
-    text: React.PropTypes.string
-  },
-
-  render: function() {
+class Label extends Component {
+  render () {
     var icon = null;
     var text = null;
     if (this.props.icon) {
@@ -25,7 +19,11 @@ var Label = React.createClass({
       </div>
     );
   }
+}
 
-});
+Label.propTypes = {
+  icon: PropTypes.node,
+  text: PropTypes.string
+};
 
 module.exports = Label;

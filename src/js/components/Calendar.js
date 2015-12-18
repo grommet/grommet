@@ -1,50 +1,50 @@
 // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
-var ReactDOM = require('react-dom');
-var moment = require('moment');
-var KeyboardAccelerators = require('../utils/KeyboardAccelerators');
-var Drop = require('../utils/Drop');
-var CalendarIcon = require('./icons/base/Calendar');
-var PreviousIcon = require('./icons/base/LinkPrevious');
-var NextIcon = require('./icons/base/LinkNext');
-var Header = require('./Header');
-var Title = require('./Title');
-var Button = require('./Button');
+import React, { Component, PropTypes } from 'react';
+import ReactDOM from 'react-dom';
+import moment from 'moment';
+import KeyboardAccelerators from '../utils/KeyboardAccelerators';
+import Drop from '../utils/Drop';
+import CalendarIcon from './icons/base/Calendar';
+import PreviousIcon from './icons/base/LinkPrevious';
+import NextIcon from './icons/base/LinkNext';
+import Header from './Header';
+import Title from './Title';
+import Button from './Button';
 
-var CLASS_ROOT = "calendar";
+const CLASS_ROOT = "calendar";
 
-var Calendar = React.createClass({
+class Calendar extends Component {
 
-  propTypes: {
-    id: React.PropTypes.string,
-    name: React.PropTypes.string,
-    onChange: React.PropTypes.func,
-    value: React.PropTypes.string
-  },
+  constructor(props) {
+    super(props);
 
-  getDefaultProps: function () {
-    return {
-      value: moment().format('YYYY-MM-DD')
-    };
-  },
+    this._onInputChange = this._onInputChange.bind(this);
+    this._onOpen = this._onOpen.bind(this);
+    this._onClose = this._onClose.bind(this);
+    this._onClickDay = this._onClickDay.bind(this);
+    this._onPrevious = this._onPrevious.bind(this);
+    this._onNext = this._onNext.bind(this);
+    this._onNextDayOrMonth = this._onNextDayOrMonth.bind(this);
+    this._onPreviousDayOrMonth = this._onPreviousDayOrMonth.bind(this);
+    this._onNextWeek = this._onNextWeek.bind(this);
+    this._onPreviousWeek = this._onPreviousWeek.bind(this);
+    this._onSelectDate = this._onSelectDate.bind(this);
 
-  getInitialState: function () {
-    var state = this._stateFromProps(this.props);
-    state.dropActive = false;
-    return state;
-  },
+    this.state = this._stateFromProps(props);
+    this.state.dropActive = false;
+  }
 
-  componentDidMount: function () {
+  componentDidMount () {
     this._activation(this.state.dropActive);
-  },
+  }
 
-  componentWillReceiveProps: function (newProps) {
+  componentWillReceiveProps (newProps) {
     var state = this._stateFromProps(newProps);
     this.setState(state);
-  },
+  }
 
-  componentDidUpdate: function (prevProps, prevState) {
+  componentDidUpdate (prevProps, prevState) {
     // Set up keyboard listeners appropriate to the current state.
     if (prevState.dropActive !== this.state.dropActive) {
       this._activation(this.state.dropActive);
@@ -53,34 +53,34 @@ var Calendar = React.createClass({
     if (this.state.dropActive) {
       this._drop.render(this._renderDrop());
     }
-  },
+  }
 
-  componentWillUnmount: function () {
+  componentWillUnmount () {
     this._activation(false);
-  },
+  }
 
-  _onInputChange: function (event) {
+  _onInputChange (event) {
     if (this.props.onChange) {
       this.props.onChange(event.target.value);
     }
-  },
+  }
 
-  _onOpen: function (event) {
+  _onOpen (event) {
     event.preventDefault();
     this.setState({dropActive: true});
-  },
+  }
 
-  _onClose: function () {
+  _onClose () {
     this.setState({dropActive: false});
-  },
+  }
 
-  _onClickDay: function (date) {
+  _onClickDay (date) {
     if (this.props.onChange) {
       this.props.onChange(moment(date).format('YYYY-MM-DD'));
     }
-  },
+  }
 
-  _onPrevious: function (event) {
+  _onPrevious (event) {
     event.preventDefault();
     event.stopPropagation();
     if (event.nativeEvent && event.nativeEvent.stopImmediatePropagation) {
@@ -90,9 +90,9 @@ var Calendar = React.createClass({
       reference: this.state.reference.subtract(1, 'month'),
       current: this.state.reference
     });
-  },
+  }
 
-  _onNext: function (event) {
+  _onNext (event) {
     event.preventDefault();
     event.stopPropagation();
     if (event.nativeEvent && event.nativeEvent.stopImmediatePropagation) {
@@ -102,9 +102,9 @@ var Calendar = React.createClass({
       reference: this.state.reference.add(1, 'month'),
       current: this.state.reference
     });
-  },
+  }
 
-  _onNextDayOrMonth: function (event) {
+  _onNextDayOrMonth (event) {
     if (event.shiftKey) {
       this._onNext(event);
     } else {
@@ -118,9 +118,9 @@ var Calendar = React.createClass({
         this.setState({current: nextDay});
       }
     }
-  },
+  }
 
-  _onPreviousDayOrMonth: function (event) {
+  _onPreviousDayOrMonth (event) {
     if (event.shiftKey) {
       this._onPrevious(event);
     } else {
@@ -133,9 +133,9 @@ var Calendar = React.createClass({
         this.setState({current: previousDay});
       }
     }
-  },
+  }
 
-  _onNextWeek: function (event) {
+  _onNextWeek (event) {
     event.preventDefault();
     event.stopPropagation();
     var nextWeek = moment(this.state.current).add(1, 'week');
@@ -145,9 +145,9 @@ var Calendar = React.createClass({
     } else {
       this.setState({current: nextWeek});
     }
-  },
+  }
 
-  _onPreviousWeek: function (event) {
+  _onPreviousWeek (event) {
     event.preventDefault();
     event.stopPropagation();
     var previousWeek = moment(this.state.current).subtract(1, 'week');
@@ -156,16 +156,16 @@ var Calendar = React.createClass({
     } else {
       this.setState({current: previousWeek});
     }
-  },
+  }
 
-  _onSelectDate: function (event) {
+  _onSelectDate (event) {
     event.preventDefault();
     event.stopPropagation();
     this._onClickDay(this.state.current);
     this._onClose();
-  },
+  }
 
-  _activation: function (dropActive) {
+  _activation (dropActive) {
 
     var listeners = {
       esc: this._onClose,
@@ -196,9 +196,9 @@ var Calendar = React.createClass({
         this._drop = null;
       }
     }
-  },
+  }
 
-  _stateFromProps: function (props) {
+  _stateFromProps (props) {
     var result = {
       current: null,
       reference: moment().startOf('day')
@@ -209,9 +209,9 @@ var Calendar = React.createClass({
       result.reference = moment(date).startOf('day');
     }
     return result;
-  },
+  }
 
-  _renderDrop: function() {
+  _renderDrop () {
     var weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
     var headerCells = weekDays.map(function (day) {
       return <th key={day}>{day}</th>;
@@ -274,9 +274,9 @@ var Calendar = React.createClass({
         </div>
       </div>
     );
-  },
+  }
 
-  render: function() {
+  render () {
     var classes = [CLASS_ROOT];
     if (this.state.dropActive) {
       classes.push(CLASS_ROOT + "--active");
@@ -298,6 +298,17 @@ var Calendar = React.createClass({
     );
   }
 
-});
+}
+
+Calendar.propTypes = {
+  id: PropTypes.string,
+  name: PropTypes.string,
+  onChange: PropTypes.func,
+  value: PropTypes.string
+};
+
+Calendar.defaultProps = {
+  value: moment().format('YYYY-MM-DD')
+};
 
 module.exports = Calendar;

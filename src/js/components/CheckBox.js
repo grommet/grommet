@@ -1,24 +1,12 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
+import React, { Component, PropTypes } from 'react';
 
-var CLASS_ROOT = "check-box";
+const CLASS_ROOT = "check-box";
 
-var CheckBox = React.createClass({
+class CheckBox extends Component {
 
-  propTypes: {
-    checked: React.PropTypes.bool,
-    defaultChecked: React.PropTypes.bool,
-    disabled: React.PropTypes.bool,
-    id: React.PropTypes.string.isRequired,
-    label: React.PropTypes.node.isRequired,
-    name: React.PropTypes.string,
-    onChange: React.PropTypes.func,
-    ariaDescribedby: React.PropTypes.string,
-    toggle: React.PropTypes.bool
-  },
-
-  render: function () {
+  render () {
     var classes = [CLASS_ROOT];
     var labelId = 'checkbox-label';
     var hidden;
@@ -61,6 +49,18 @@ var CheckBox = React.createClass({
     );
   }
 
-});
+}
+
+CheckBox.propTypes = {
+  checked: PropTypes.bool,
+  defaultChecked: PropTypes.bool,
+  disabled: PropTypes.bool,
+  id: PropTypes.string.isRequired,
+  label: PropTypes.node.isRequired,
+  name: PropTypes.string,
+  onChange: PropTypes.func,
+  ariaDescribedby: PropTypes.string,
+  toggle: PropTypes.bool
+};
 
 module.exports = CheckBox;

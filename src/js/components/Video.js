@@ -1,90 +1,85 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
-var PropTypes = React.PropTypes;
-var Button = require('./Button');
-var PlayIcon = require('./icons/base/Play');
-var PauseIcon = require('./icons/base/Pause');
-var RefreshIcon = require('./icons/base/Refresh');
+import React, { Component, PropTypes } from 'react';
+import Button from './Button';
+import PlayIcon from './icons/base/Play';
+import PauseIcon from './icons/base/Pause';
+import RefreshIcon from './icons/base/Refresh';
 
-var CLASS_ROOT = "video";
+const CLASS_ROOT = "video";
 
-var Video = React.createClass({
+class Video extends Component {
 
-  propTypes: {
-    colorIndex: PropTypes.string,
-    duration: PropTypes.number,
-    full: PropTypes.oneOf([true, 'horizontal', 'vertical', false]),
-    poster: PropTypes.string,
-    size: React.PropTypes.oneOf(['small', 'medium', 'large']),
-    timeline: PropTypes.arrayOf(PropTypes.shape({
-      label: PropTypes.string,
-      time: PropTypes.number
-    })),
-    title: PropTypes.node
-  },
+  constructor () {
+    super();
 
-  getInitialState: function () {
-    return {playing: false, progress: 0};
-  },
+    this._onPlaying = this._onPlaying.bind(this);
+    this._onPause = this._onPause.bind(this);
+    this._onEnded = this._onEnded.bind(this);
+    this._onClickControl = this._onClickControl.bind(this);
+    this._onMouseMove = this._onMouseMove.bind(this);
+    this._onClickChapter = this._onClickChapter.bind(this);
 
-  componentDidMount: function () {
+    this.state = { playing: false, progress: 0 };
+  }
+
+  componentDidMount () {
     var video = this.refs.video;
     video.addEventListener('playing', this._onPlaying);
     video.addEventListener('pause', this._onPause);
     video.addEventListener('ended', this._onEnded);
-  },
+  }
 
-  componentWillUnmount: function () {
+  componentWillUnmount () {
     var video = this.refs.video;
     video.removeEventListener('playing', this._onPlaying);
     video.removeEventListener('pause', this._onPause);
     video.removeEventListener('ended', this._onEnded);
-  },
+  }
 
-  _onPlaying: function () {
+  _onPlaying () {
     var video = this.refs.video;
     this._progressTimer = setInterval(function () {
       this.setState({progress: this.state.progress + 0.5});
     }.bind(this), 500);
     this.setState({ playing: true, progress: video.currentTime, ended: null });
-  },
+  }
 
-  _onPause: function () {
+  _onPause () {
     clearInterval(this._progressTimer);
     this._progressTimer = null;
     this.setState({ playing: false });
-  },
+  }
 
-  _onEnded: function () {
+  _onEnded () {
     clearInterval(this._progressTimer);
     this._progressTimer = null;
     this.setState({ playing: false, ended: true });
-  },
+  }
 
-  _onClickControl: function () {
+  _onClickControl () {
     var video = this.refs.video;
     if (this.state.playing) {
       video.pause();
     } else {
       video.play();
     }
-  },
+  }
 
-  _onMouseMove: function () {
+  _onMouseMove () {
     this.setState({interacting: true});
     clearTimeout(this._moveTimer);
     this._moveTimer = setTimeout(function () {
       this.setState({interacting: false});
     }.bind(this), 1000);
-  },
+  }
 
-  _onClickChapter: function (time) {
+  _onClickChapter (time) {
     this.refs.video.currentTime = time;
     this.setState({progress: time});
-  },
+  }
 
-  render: function () {
+  render () {
     var classes = [CLASS_ROOT];
     if (this.props.size) {
       classes.push(CLASS_ROOT + "--" + this.props.size);
@@ -174,7 +169,19 @@ var Video = React.createClass({
       </div>
     );
   }
+}
 
-});
+Video.propTypes = {
+  colorIndex: PropTypes.string,
+  duration: PropTypes.number,
+  full: PropTypes.oneOf([true, 'horizontal', 'vertical', false]),
+  poster: PropTypes.string,
+  size: React.PropTypes.oneOf(['small', 'medium', 'large']),
+  timeline: PropTypes.arrayOf(PropTypes.shape({
+    label: PropTypes.string,
+    time: PropTypes.number
+  })),
+  title: PropTypes.node
+};
 
 module.exports = Video;

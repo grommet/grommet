@@ -1,23 +1,11 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
+import React, { Component, PropTypes } from 'react';
 
-var CLASS_ROOT = "radio-button";
+const CLASS_ROOT = "radio-button";
 
-var RadioButton = React.createClass({
-
-  propTypes: {
-    checked: React.PropTypes.bool,
-    disabled: React.PropTypes.bool,
-    defaultChecked: React.PropTypes.bool,
-    id: React.PropTypes.string.isRequired,
-    label: React.PropTypes.node.isRequired,
-    name: React.PropTypes.string,
-    onChange: React.PropTypes.func,
-    value: React.PropTypes.string
-  },
-
-  render: function () {
+class RadioButton extends Component {
+  render () {
     var classes = [CLASS_ROOT];
     if (this.props.disabled) {
       classes.push(CLASS_ROOT + "--disabled");
@@ -41,7 +29,17 @@ var RadioButton = React.createClass({
       </label>
     );
   }
+}
 
-});
+RadioButton.propTypes = {
+  checked: PropTypes.bool,
+  disabled: PropTypes.bool,
+  defaultChecked: PropTypes.bool,
+  id: PropTypes.string.isRequired,
+  label: PropTypes.node.isRequired,
+  name: PropTypes.string,
+  onChange: PropTypes.func,
+  value: PropTypes.string
+};
 
 module.exports = RadioButton;
