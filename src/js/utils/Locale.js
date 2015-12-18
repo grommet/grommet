@@ -1,8 +1,8 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-import Cookies from'./Cookies';
+import Cookies from './Cookies';
 
-let fallbackLocale = 'en-US';
+let currentLocale = 'en-US';
 
 function normalizeLocale(locale) {
   let locales = locale.replace(/_/g, '-').split('-');
@@ -15,8 +15,8 @@ function normalizeLocale(locale) {
 }
 
 module.exports = {
-  setFallbackLocale(locale) {
-    fallbackLocale = normalizeLocale(locale);
+  setLocale(locale) {
+    currentLocale = normalizeLocale(locale);
   },
 
   getCurrentLocale() {
@@ -29,7 +29,7 @@ module.exports = {
 
       return normalizeLocale(locale);
     } catch (e) {
-      return fallbackLocale;
+      return currentLocale;
     }
   },
 
