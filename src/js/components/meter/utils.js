@@ -21,6 +21,8 @@ module.exports = {
     activeIndex: PropTypes.number,
     a11yDesc: PropTypes.string,
     a11yDescId: PropTypes.string,
+    a11yTitle: PropTypes.string,
+    a11yTitleId: PropTypes.string,
     max: PropTypes.shape({
       value: PropTypes.number,
       label: PropTypes.string
@@ -59,16 +61,24 @@ module.exports = {
     return Math.min(360, Math.max(0, startAngle + (anglePer * value)));
   },
 
-  buildPath (itemIndex, commands, classes, onActivate, onClick, a11yDescId) {
+  buildPath (itemIndex, commands, classes, onActivate, onClick, a11yDescId, a11yTitle) {
     if (onActivate) {
       var onOver = onActivate.bind(null, itemIndex);
       var onOut = onActivate.bind(null, null);
+
+      let pathTitleId = `title_${a11yDescId}`;
+
       return (
-        <path key={itemIndex} className={classes.join(' ')} d={commands}
-          tabIndex="0"
-          onFocus={onOver} onBlur={onOut}
-          onMouseOver={onOver} onMouseOut={onOut}
-          onClick={onClick} role="img" aria-labelledby={a11yDescId} />
+        <g key={itemIndex} id={a11yDescId} ref={a11yDescId}
+          role="gridcell" aria-labelledby={pathTitleId}>
+          <title id={pathTitleId}>
+            {a11yTitle}
+          </title>
+          <path className={classes.join(' ')} d={commands}
+            onFocus={onOver} onBlur={onOut}
+            onMouseOver={onOver} onMouseOut={onOut}
+            onClick={onClick} />
+        </g>
       );
     } else {
       return (

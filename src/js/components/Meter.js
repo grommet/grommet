@@ -4,7 +4,6 @@ import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 
 import Legend from './Legend';
-import Intl from '../utils/Intl';
 import Bar from './meter/Bar';
 import Spiral from './meter/Spiral';
 import Circle from './meter/Circle';
@@ -18,16 +17,6 @@ const TYPE_COMPONENT = {
   'arc': Arc,
   'spiral': Spiral
 };
-
-function getThresholdsString(thresholds) {
-  let thresholdsArray = [', Thresholds: '];
-
-  thresholds.forEach(function (threshold) {
-    thresholdsArray.push(threshold.label + ': ' + threshold.value);
-  });
-
-  return thresholdsArray.join(' ');
-}
 
 class Meter extends Component {
 
@@ -150,7 +139,8 @@ class Meter extends Component {
         let threshold = props.thresholds[i];
         thresholds.push({
           label: threshold.label,
-          colorIndex: threshold.colorIndex
+          colorIndex: threshold.colorIndex,
+          ariaLabel: `${threshold.value} ${props.units || ''} ${threshold.label || ''}`
         });
         if (i > 0) {
           thresholds[i - 1].value = threshold.value - total;
@@ -163,7 +153,11 @@ class Meter extends Component {
     } else if (props.threshold) {
       let remaining = max.value - props.threshold;
       thresholds = [
-        {value: props.threshold, colorIndex: 'unset'},
+        {
+          value: props.threshold,
+          colorIndex: 'unset',
+          ariaLabel: `${props.threshold} ${props.units || ''}`
+        },
         {value: remaining, colorIndex: 'critical'}
       ];
     } else {
@@ -266,6 +260,9 @@ class Meter extends Component {
       fields = {value: this.state.total, label: 'Total'};
     } else {
       let active = this.state.series[this.state.activeIndex];
+      if (!active) {
+        active = this.state.series[0];
+      }
       fields = {value: active.value, label: active.label, onClick: active.onClick};
     }
     return fields;
@@ -377,50 +374,24 @@ class Meter extends Component {
     let activeValue = this._renderActiveValue();
 
     let legend;
-    if (this.props.legend) {
-      legend = this._renderLegend();
-      classes.push(CLASS_ROOT + "--legend-" + this.state.legendPlacement);
+    let a11yRole;
+    if (this.props.legend || this.props.type === 'spiral') {
+      a11yRole = 'tablist';
+
+      if (this.props.legend) {
+        legend = this._renderLegend();
+        classes.push(CLASS_ROOT + "--legend-" + this.state.legendPlacement);
+      }
     }
-
-    let a11yRole = this.props.series ? 'chart' : this.props.a11yRole;
-
-    let defaultTitle;
-    if (!this.props.a11yTitle) {
-      defaultTitle = [
-        'Meter, ',
-        'Type: ',
-        (this.props.vertical ? 'vertical ' : '') + this.props.type
-      ].join(' ').trim();
-    }
-
-    let titleKey = typeof this.props.a11yTitle !== "undefined" ?
-        this.props.a11yTitle : defaultTitle;
-    let a11yTitle = Intl.getMessage(this.context.intl, titleKey);
-
-    let defaultA11YDesc;
-    if (this.props.a11yDesc !== "undefined") {
-      let fields = this._getActiveFields();
-      defaultA11YDesc = [
-        ', Value: ',
-        fields.value,
-        this.props.units || '',
-        fields.label,
-        this.state.min.label ? ', Minimum: ' + this.state.min.label : '',
-        this.state.max.label ? ', Maximum: ' + this.state.max.label : '',
-        this.props.threshold ? ', Threshold: ' + this.props.threshold : '',
-        this.props.thresholds ? getThresholdsString(this.props.thresholds) : ''
-      ].join(' ').trim();
-    }
-
-    let descKey = typeof this.props.a11yDesc !== "undefined" ?
-        this.props.a11yDesc : defaultA11YDesc;
-    let a11yDesc = Intl.getMessage(this.context.intl, descKey);
 
     let GraphicComponent = TYPE_COMPONENT[this.props.type];
     let graphic = (
       <GraphicComponent
-        a11yDesc={a11yDesc}
+        a11yTitle={this.props.a11yTitle}
+        a11yTitleId={this.props.a11yTitleId}
+        a11yDesc={this.props.a11yDesc}
         a11yDescId={this.props.a11yDescId}
+        a11yRole={a11yRole}
         activeIndex={this.state.activeIndex}
         min={this.state.min} max={this.state.max}
         onActivate={this._onActivate}
@@ -428,6 +399,7 @@ class Meter extends Component {
         stacked={this.props.stacked}
         thresholds={this.state.thresholds}
         total={this.state.total}
+        units={this.props.units}
         vertical={this.props.vertical} />
     );
 
@@ -435,11 +407,7 @@ class Meter extends Component {
     if (this.state.total > 0) {
       graphicContainer = (
         <div className={CLASS_ROOT + "__graphic-container"}>
-          <a href="#" role={a11yRole} tabIndex="0" className={CLASS_ROOT + "__aria"}
-            aria-labelledby={this.props.a11yTitleId + ' ' + this.props.a11yDescId}>
-            <title id={this.props.a11yTitleId}>{a11yTitle}</title>
-            {graphic}
-          </a>
+          {graphic}
           {minMax}
         </div>
       );
@@ -459,7 +427,6 @@ class Meter extends Component {
 }
 
 Meter.propTypes = {
-  a11yRole: PropTypes.string,
   a11yTitle: PropTypes.string,
   a11yTitleId: PropTypes.string,
   a11yDescId: PropTypes.string,
@@ -508,7 +475,6 @@ Meter.propTypes = {
 };
 
 Meter.defaultProps = {
-  a11yRole: 'img',
   a11yTitleId: 'meter-title',
   a11yDescId: 'meter-desc',
   type: 'bar'
