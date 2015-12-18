@@ -143,6 +143,17 @@ $form-vertical-padding: quarter($inuit-base-spacing-unit);
       }
     }
 
+    > .number-input {
+      display: flex;
+      padding-right: quarter($inuit-base-spacing-unit);
+
+      input[type=number] {
+        display: inline-block;
+        flex: 1;
+        border: none;
+      }
+    }
+
     > .table--selectable {
       @include inuit-font-size($content-font-size);
 
