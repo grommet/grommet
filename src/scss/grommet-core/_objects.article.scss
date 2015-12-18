@@ -42,9 +42,9 @@
       overflow-x: hidden;
       overflow-y: auto;
 
-      > *:not(.article__controls) {
-        overflow-x: auto;
-      }
+      // > *:not(.article__controls) {
+      //   overflow-x: auto;
+      // }
 
       > .article__control-carousel {
         top: 50%;
@@ -54,7 +54,7 @@
     }
 
     &.box--direction-row {
-      overflow-x: audo;
+      overflow-x: auto;
       overflow-y: hidden;
 
       > *:not(.article__controls) {
