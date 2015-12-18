@@ -51,6 +51,7 @@ $form-vertical-padding: quarter($inuit-base-spacing-unit);
     > input[type=email],
     > input[type=password],
     > input[type=number],
+    > input[type=file],
     > select,
     > .search-input input,
     > .calendar input,
@@ -151,6 +152,14 @@ $form-vertical-padding: quarter($inuit-base-spacing-unit);
         display: inline-block;
         flex: 1;
         border: none;
+      }
+    }
+
+    > input[type=file] {
+      display: inline-block;
+
+      &::-webkit-file-upload-button {
+        float: right;
       }
     }
 
