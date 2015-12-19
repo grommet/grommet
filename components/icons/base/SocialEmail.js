@@ -84,4 +84,6 @@ Icon.defaultProps = {
   a11yTitleId: '" + resolve.fileName + "-title'
 };
 
+Icon.icon = true;
+
 module.exports = Icon;
