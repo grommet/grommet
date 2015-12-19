@@ -33,7 +33,7 @@ class Button extends Component {
     }
 
     var children = React.Children.map(this.props.children, function (child) {
-      if (child && child.icon) {
+      if (child && child.type.icon) {
         return <span className={CLASS_ROOT + "__icon"}>{child}</span>;
       } else {
         return child;
