@@ -57,7 +57,7 @@ var Button = (function (_Component) {
       }
 
       var children = _react2["default"].Children.map(this.props.children, function (child) {
-        if (child && child.icon) {
+        if (child && child.type.icon) {
           return _react2["default"].createElement(
             "span",
             { className: CLASS_ROOT + "__icon" },
