@@ -24,8 +24,8 @@ module.exports = function(gulp, opts) {
   var dist = options.dist || path.resolve(process.cwd(), 'dist');
 
   var jsLoader = options.jsLoader || {
-    test: /\.js$/,
-    loader: 'babel-loader',
+    test: /\.jsx?$/,
+    loader: 'react-hot!babel-loader',
     exclude: /(node_modules|bower_components|src\/lib)/
   };
 
