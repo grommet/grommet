@@ -43,6 +43,8 @@ module.exports = {
 
       if (currentTag === 'a') {
         return isValidTag && element.childNodes.length > 0;
+      } else if (currentTag === 'svg') {
+        return isValidTag && element.hasAttribute('tabindex');
       }
 
       return isValidTag;

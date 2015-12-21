@@ -92,19 +92,20 @@ var LayerContents = (function (_Component) {
     key: '_processTab',
     value: function _processTab(event) {
       var items = this.refs.container.getElementsByTagName('*');
-
       items = _utilsDOM2['default'].filterByFocusable(items);
 
-      if (event.shiftKey) {
-        if (event.target === items[0]) {
-          items[items.length - 1].focus();
-          event.preventDefault();
-        }
-      } else if (event.target === items[items.length - 1]) {
-        items[0].focus();
+      if (!items || items.length === 0) {
         event.preventDefault();
       } else {
-        event.preventDefault();
+        if (event.shiftKey) {
+          if (event.target === items[0]) {
+            items[items.length - 1].focus();
+            event.preventDefault();
+          }
+        } else if (event.target === items[items.length - 1]) {
+          items[0].focus();
+          event.preventDefault();
+        }
       }
     }
   }, {
@@ -117,9 +118,8 @@ var LayerContents = (function (_Component) {
           { className: CLASS_ROOT + "__closer" },
           _react2['default'].createElement(
             _Button2['default'],
-            { type: 'icon', onClick: this.props.onClose,
-              a11yTitle: this.props.a11yCloserTitle },
-            _react2['default'].createElement(_iconsBaseClose2['default'], null)
+            { type: 'icon', onClick: this.props.onClose },
+            _react2['default'].createElement(_iconsBaseClose2['default'], { a11yTitle: this.props.a11yCloserTitle })
           )
         );
       }
