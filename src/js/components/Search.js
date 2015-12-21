@@ -22,6 +22,7 @@ class Search extends Component {
     this._onFocusInput = this._onFocusInput.bind(this);
     this._onBlurInput = this._onBlurInput.bind(this);
     this._onChangeInput = this._onChangeInput.bind(this);
+    this._onKeyPress = this._onKeyPress.bind(this);
     this._onNextSuggestion = this._onNextSuggestion.bind(this);
     this._onPreviousSuggestion = this._onPreviousSuggestion.bind(this);
     this._onEnter = this._onEnter.bind(this);
@@ -169,6 +170,12 @@ class Search extends Component {
     }
   }
 
+  _onKeyPress (event) {
+    if (this.props.onKeyPress) {
+      this.props.onKeyPress(event);
+    }
+  }
+
   _onNextSuggestion () {
     var index = this.state.activeSuggestionIndex;
     index = Math.min(index + 1, this.props.suggestions.length - 1);
@@ -256,7 +263,8 @@ class Search extends Component {
           defaultValue={this.props.defaultValue}
           value={this.props.value}
           className={CLASS_ROOT + "__input"}
-          onChange={this._onChangeInput} />
+          onChange={this._onChangeInput}
+          onKeyPress={this._onKeyPress} />
       );
     }
 
@@ -332,7 +340,8 @@ class Search extends Component {
             className={CLASS_ROOT + "__input"}
             onFocus={this._onFocusInput}
             onBlur={this._onBlurInput}
-            onChange={this._onChangeInput} />
+            onChange={this._onChangeInput}
+            onKeyPress={this._onKeyPress} />
           <SearchIcon />
         </div>
       );
@@ -363,6 +372,7 @@ Search.propTypes = {
   inline: PropTypes.bool,
   large: PropTypes.bool,
   onChange: PropTypes.func,
+  onKeyPress: PropTypes.func,
   placeHolder: PropTypes.string,
   responsive: PropTypes.bool,
   size: React.PropTypes.oneOf(['small', 'medium', 'large']),
