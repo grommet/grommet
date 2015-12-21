@@ -53,19 +53,20 @@ class LayerContents extends Component {
 
   _processTab (event) {
     var items = this.refs.container.getElementsByTagName('*');
-
     items = DOMUtils.filterByFocusable(items);
 
-    if (event.shiftKey) {
-      if (event.target === items[0]) {
-        items[items.length - 1].focus();
-        event.preventDefault();
-      }
-    } else if (event.target === items[items.length - 1]) {
-      items[0].focus();
+    if (!items || items.length === 0) {
       event.preventDefault();
     } else {
-      event.preventDefault();
+      if (event.shiftKey) {
+        if (event.target === items[0]) {
+          items[items.length - 1].focus();
+          event.preventDefault();
+        }
+      } else if (event.target === items[items.length - 1]) {
+        items[0].focus();
+        event.preventDefault();
+      }
     }
   }
 
@@ -74,9 +75,8 @@ class LayerContents extends Component {
     if (this.props.closer) {
       closer = (
         <div className={CLASS_ROOT + "__closer"}>
-          <Button type='icon' onClick={this.props.onClose}
-            a11yTitle={this.props.a11yCloserTitle}>
-            <CloseIcon />
+          <Button type="icon" onClick={this.props.onClose}>
+            <CloseIcon a11yTitle={this.props.a11yCloserTitle} />
           </Button>
         </div>
       );
