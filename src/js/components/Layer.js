@@ -61,11 +61,11 @@ class LayerContents extends Component {
         items[items.length - 1].focus();
         event.preventDefault();
       }
+    } else if (event.target === items[items.length - 1]) {
+      items[0].focus();
+      event.preventDefault();
     } else {
-      if (event.target === items[items.length - 1]) {
-        items[0].focus();
-        event.preventDefault();
-      }
+      event.preventDefault();
     }
   }
 
