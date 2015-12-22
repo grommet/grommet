@@ -47,7 +47,7 @@ var Anchor = (function (_Component) {
         classes.push(this.props.className);
       }
       var children = _react2['default'].Children.map(this.props.children, function (child) {
-        if (child.type && 'Icon' === child.type.name) {
+        if (child && child.type && child.type.icon) {
           return _react2['default'].createElement(
             'span',
             { className: CLASS_ROOT + "__icon" },
