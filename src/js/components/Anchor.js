@@ -20,7 +20,7 @@ class Anchor extends Component {
       classes.push(this.props.className);
     }
     var children = React.Children.map(this.props.children, function (child) {
-      if (child.type && 'Icon' === child.type.name) {
+      if (child && child.type && 'Icon' === child.type.name) {
         return <span className={CLASS_ROOT + "__icon"}>{child}</span>;
       } else {
         return child;
