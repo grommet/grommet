@@ -2,7 +2,7 @@
 
 import { PropTypes } from 'react';
 
-module.exports = {
+export default {
   activeIndex: PropTypes.number,
   a11yDesc: PropTypes.string,
   a11yDescId: PropTypes.string,

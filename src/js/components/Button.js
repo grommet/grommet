@@ -4,7 +4,7 @@ import React, { Component, PropTypes } from 'react';
 
 const CLASS_ROOT = "button";
 
-class Button extends Component {
+export default class Button extends Component {
   render () {
     var classes = [CLASS_ROOT];
     if (this.props.primary) {
@@ -67,5 +67,3 @@ Button.propTypes = {
 Button.defaultProps = {
   type: "button"
 };
-
-module.exports = Button;

@@ -8,7 +8,7 @@ import RefreshIcon from './icons/base/Refresh';
 
 const CLASS_ROOT = "video";
 
-class Video extends Component {
+export default class Video extends Component {
 
   constructor () {
     super();
@@ -183,5 +183,3 @@ Video.propTypes = {
   })),
   title: PropTypes.node
 };
-
-module.exports = Video;

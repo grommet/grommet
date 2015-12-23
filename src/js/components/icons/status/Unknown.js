@@ -1,11 +1,10 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
-var FormattedMessage = require('../../FormattedMessage');
+import React, { Component } from 'react';
+import FormattedMessage from '../../FormattedMessage';
 
-var Unknown = React.createClass({
-
-  render: function() {
+export default class Unknown extends Component {
+  render() {
     var className = 'status-icon status-icon-unknown';
     var a11yTitle = this.props.a11yTitle;
     if (this.props.className) {
@@ -32,7 +31,4 @@ var Unknown = React.createClass({
       </svg>
     );
   }
-
-});
-
-module.exports = Unknown;
+}

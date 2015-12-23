@@ -1,10 +1,10 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var findDOMNode = require('react-dom').findDOMNode;
+import { findDOMNode } from 'react-dom';
 
 // Allow callers to use key labels instead of key code numbers.
 // This makes their code easier to read.
-var KEYS = {
+const KEYS = {
   backspace: 8,
   tab: 9,
   enter: 13,
@@ -24,7 +24,7 @@ var _listenersCounter = 0;
 var _listeners = [];
 var _isKeyboardAcceleratorListening = false;
 
-var _onKeyboardAcceleratorKeyPress = function (e) {
+var _onKeyboardAcceleratorKeyPress = (e) => {
   var key = (e.keyCode ? e.keyCode : e.which);
   for (var i = _listenersCounter - 1; i >= 0; i--) {
     var id = _listeners[i];
@@ -40,25 +40,25 @@ var _onKeyboardAcceleratorKeyPress = function (e) {
 // KeyboardAccelerators is a utility for handling keyboard events.
 // Add listeners using startListeningToKeyboard().
 // Remove listeners using stopListeningToKeyboard().
-var KeyboardAccelerators = {
-  _initKeyboardAccelerators: function (element) {
+export default {
+  _initKeyboardAccelerators (element) {
     var id = element.getAttribute('data-reactid');
     _keyboardAccelerators[id] = {
       handlers: {}
     };
   },
 
-  _getKeyboardAcceleratorHandlers: function (element) {
+  _getKeyboardAcceleratorHandlers (element) {
     var id = element.getAttribute('data-reactid');
     return _keyboardAccelerators[id].handlers;
   },
 
-  _getDowns: function (element) {
+  _getDowns (element) {
     var id = element.getAttribute('data-reactid');
     return _keyboardAccelerators[id].downs;
   },
 
-  _isComponentListening: function (element) {
+  _isComponentListening (element) {
     var id = element.getAttribute('data-reactid');
     for (var i = 0; i < _listenersCounter; i++) {
       if (_listeners[i] === id) {
@@ -68,13 +68,13 @@ var KeyboardAccelerators = {
     return false;
   },
 
-  _subscribeComponent: function (element) {
+  _subscribeComponent (element) {
     var id = element.getAttribute('data-reactid');
     _listeners[_listenersCounter] = id;
     _listenersCounter++;
   },
 
-  _unsubscribeComponent: function (element) {
+  _unsubscribeComponent (element) {
     var id = element.getAttribute('data-reactid');
     var i = 0;
     for (; i < _listenersCounter; i++) {
@@ -93,7 +93,7 @@ var KeyboardAccelerators = {
   // Add handlers for specific keys.
   // This function can be called multiple times, existing handlers will
   // be replaced, new handlers will be added.
-  startListeningToKeyboard: function (component, handlers) {
+  startListeningToKeyboard (component, handlers) {
     var element = findDOMNode(component);
     this._initKeyboardAccelerators(element);
     var keys = 0;
@@ -123,7 +123,7 @@ var KeyboardAccelerators = {
   // If no argument is passed in, all handlers are removed.
   // This function can be called multiple times, only the handlers
   // specified will be removed.
-  stopListeningToKeyboard: function (component, handlers) {
+  stopListeningToKeyboard (component, handlers) {
     var element = findDOMNode(component);
     if (!this._isComponentListening(element)) {
       return;
@@ -158,5 +158,3 @@ var KeyboardAccelerators = {
     }
   }
 };
-
-module.exports = KeyboardAccelerators;

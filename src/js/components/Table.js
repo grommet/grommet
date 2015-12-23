@@ -8,7 +8,7 @@ import InfiniteScroll from '../utils/InfiniteScroll';
 const CLASS_ROOT = "table";
 const SELECTED_CLASS = CLASS_ROOT + "__row--selected";
 
-class Table extends Component {
+export default class Table extends Component {
 
   constructor(props) {
     super(props);
@@ -276,5 +276,3 @@ Table.defaultProps = {
   scrollable: false,
   selectable: false
 };
-
-module.exports = Table;

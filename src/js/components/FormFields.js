@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 
-class FormFields extends Component {
+export default class FormFields extends Component {
 
   render () {
     var classes = ["form-fields"];
@@ -17,5 +17,3 @@ class FormFields extends Component {
   }
 
 }
-
-module.exports = FormFields;

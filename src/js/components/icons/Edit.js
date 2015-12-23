@@ -1,10 +1,9 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
+import React, { Component } from 'react';
 
-var Edit = React.createClass({
-
-  render: function() {
+export default class Edit extends Component {
+  render() {
     var className = 'control-icon control-icon-edit';
     if (this.props.className) {
       className += ' ' + this.props.className;
@@ -25,7 +24,4 @@ var Edit = React.createClass({
       </svg>
     );
   }
-
-});
-
-module.exports = Edit;
+}

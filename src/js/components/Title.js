@@ -6,7 +6,7 @@ import Intl from '../utils/Intl';
 
 const CLASS_ROOT = "title";
 
-class Title extends Component {
+export default class Title extends Component {
   render () {
     var classes = [CLASS_ROOT];
     if (this.props.responsive) {
@@ -45,5 +45,3 @@ Title.defaultProps = {
   responsive: true,
   a11yTitle: 'Title'
 };
-
-module.exports = Title;

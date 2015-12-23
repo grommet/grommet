@@ -8,7 +8,7 @@ import InfiniteScroll from '../utils/InfiniteScroll';
 
 const CLASS_ROOT = "list";
 
-class List extends Component {
+export default class List extends Component {
 
   constructor() {
     super();
@@ -180,5 +180,3 @@ List.defaultProps = {
   small: false,
   itemDirection: 'row'
 };
-
-module.exports = List;

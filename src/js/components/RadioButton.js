@@ -4,7 +4,7 @@ import React, { Component, PropTypes } from 'react';
 
 const CLASS_ROOT = "radio-button";
 
-class RadioButton extends Component {
+export default class RadioButton extends Component {
   render () {
     var classes = [CLASS_ROOT];
     if (this.props.disabled) {
@@ -41,5 +41,3 @@ RadioButton.propTypes = {
   onChange: PropTypes.func,
   value: PropTypes.string
 };
-
-module.exports = RadioButton;

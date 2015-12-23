@@ -1,10 +1,9 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
+import React, { Component } from 'react';
 
-var Mail = React.createClass({
-
-  render: function() {
+export default class Mail extends Component {
+  render() {
     var className = 'control-icon control-icon-mail';
     if (this.props.className) {
       className += ' ' + this.props.className;
@@ -20,7 +19,4 @@ var Mail = React.createClass({
       </svg>
     );
   }
-
-});
-
-module.exports = Mail;
+}

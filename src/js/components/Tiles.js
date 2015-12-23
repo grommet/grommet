@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
-import ReactDOM from 'react-dom';
+import { findDOMNode } from 'react-dom';
 import pick from 'lodash/object/pick';
 import keys from 'lodash/object/keys';
 import Box from './Box';
@@ -14,7 +14,7 @@ import InfiniteScroll from '../utils/InfiniteScroll';
 
 const CLASS_ROOT = "tiles";
 
-class Tiles extends Component {
+export default class Tiles extends Component {
 
   constructor () {
     super();
@@ -64,19 +64,19 @@ class Tiles extends Component {
       window.removeEventListener('resize', this._onResize);
       document.removeEventListener('wheel', this._onWheel);
       if (this._tracking) {
-        var tiles = ReactDOM.findDOMNode(this.refs.tiles);
+        var tiles = findDOMNode(this.refs.tiles);
         tiles.removeEventListener('scroll', this._onScrollHorizontal);
       }
     }
   }
 
   _onLeft () {
-    var tiles = ReactDOM.findDOMNode(this.refs.tiles);
+    var tiles = findDOMNode(this.refs.tiles);
     Scroll.scrollBy(tiles, 'scrollLeft', - tiles.offsetWidth);
   }
 
   _onRight () {
-    var tiles = ReactDOM.findDOMNode(this.refs.tiles);
+    var tiles = findDOMNode(this.refs.tiles);
     Scroll.scrollBy(tiles, 'scrollLeft', tiles.offsetWidth);
   }
 
@@ -99,7 +99,7 @@ class Tiles extends Component {
   _layout () {
     if ('row' === this.props.direction) {
       // determine if we have more tiles than room to fit
-      var tiles = ReactDOM.findDOMNode(this.refs.tiles);
+      var tiles = findDOMNode(this.refs.tiles);
       // 20 is to allow some fuzziness as scrollbars come and go
       this.setState({
         overflow: (tiles.scrollWidth > (tiles.offsetWidth + 20)),
@@ -132,7 +132,7 @@ class Tiles extends Component {
 
   _trackHorizontalScroll () {
     if (this.state.overflow && ! this._tracking) {
-      var tiles = ReactDOM.findDOMNode(this.refs.tiles);
+      var tiles = findDOMNode(this.refs.tiles);
       tiles.addEventListener('scroll', this._onScrollHorizontal);
       this._tracking = true;
     }
@@ -221,5 +221,3 @@ Tiles.defaultProps = {
   flush: true,
   justify: 'start'
 };
-
-module.exports = Tiles;

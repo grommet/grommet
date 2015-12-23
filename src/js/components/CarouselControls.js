@@ -5,7 +5,7 @@ import Box from './Box';
 
 const CLASS_ROOT = "carousel-controls";
 
-class CarouselControls extends Component {
+export default class CarouselControls extends Component {
 
   constructor() {
     super();
@@ -59,5 +59,3 @@ CarouselControls.propTypes = {
   onChange: PropTypes.func,
   selected: PropTypes.number
 };
-
-module.exports = CarouselControls;

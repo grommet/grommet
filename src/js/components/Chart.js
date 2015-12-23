@@ -18,7 +18,7 @@ const SPARKLINE_STEP_WIDTH = 6;
 const SPARKLINE_BAR_PADDING = 1;
 const POINT_RADIUS = 6;
 
-class Chart extends Component {
+export default class Chart extends Component {
 
   constructor(props) {
     super(props);
@@ -1014,5 +1014,3 @@ Chart.defaultProps = {
   min: 0,
   type: 'line'
 };
-
-module.exports = Chart;

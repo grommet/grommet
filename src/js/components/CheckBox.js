@@ -4,7 +4,7 @@ import React, { Component, PropTypes } from 'react';
 
 const CLASS_ROOT = "check-box";
 
-class CheckBox extends Component {
+export default class CheckBox extends Component {
 
   render () {
     var classes = [CLASS_ROOT];
@@ -62,5 +62,3 @@ CheckBox.propTypes = {
   ariaDescribedby: PropTypes.string,
   toggle: PropTypes.bool
 };
-
-module.exports = CheckBox;

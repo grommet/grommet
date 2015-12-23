@@ -1,80 +1,78 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
-var OK = require('./status/OK');
-var CriticalStatus = require('./status/CriticalStatus');
-var ErrorStatus = require('./status/ErrorStatus');
-var Warning = require('./status/Warning');
-var Disabled = require('./status/Disabled');
-var Unknown = require('./status/Unknown');
-var Label = require('./status/Label');
+import React, { Component, PropTypes } from 'react';
+import OK from './status/OK';
+import CriticalStatus from './status/CriticalStatus';
+import ErrorStatus from './status/ErrorStatus';
+import Warning from './status/Warning';
+import Disabled from './status/Disabled';
+import Unknown from './status/Unknown';
+import Label from './status/Label';
 
-var CLASS_ROOT = "status-icon";
+const CLASS_ROOT = "status-icon";
 
-var Status = React.createClass({
+export default class Status extends Component {
+  constructor(props, context) {
+    super(props, context);
+    this.state = this._stateFromProps(props);
+  }
 
-  getDefaultProps: function () {
-    return {value: 'unknown'};
-  },
-
-  getInitialState: function() {
-    return this._stateFromProps(this.props);
-  },
-
-  componentWillReceiveProps: function (newProps) {
+  componentWillReceiveProps(newProps) {
     this.setState(this._stateFromProps(newProps));
-  },
+  }
 
-  propType: {
-    a11yTitle: React.PropTypes.string,
-    large: React.PropTypes.bool,
-    small: React.PropTypes.bool,
-    size: React.PropTypes.oneOf(['small', 'medium', 'large']),
-    value: React.PropTypes.oneOf(['critical', 'warning', 'ok', 'unknown', 'disabled'])
-  },
+  _stateFromProps({size, small, large}) {
+    return {size: size || (small ? 'small' : (large ? 'large' : null))};
+  }
 
-  _stateFromProps: function (props) {
-    return {size: props.size || (props.small ? 'small' : (props.large ? 'large' : null))};
-  },
+  render() {
+    let classes = [CLASS_ROOT];
+    let { a11yTitle } = this.props;
+    let { size } = this.state;
 
-  render: function() {
-    var classes = [CLASS_ROOT];
     if (this.props.className) {
       classes.push(this.props.className);
     }
-    if (this.state.size) {
-      classes.push(CLASS_ROOT + "--" + this.state.size);
+    if (size) {
+      classes.push(CLASS_ROOT + "--" + size);
     }
-    var className = classes.join(' ');
-    var icon = (<span>{'?'}</span>);
+    let className = classes.join(' ');
+    let icon = (<span>{'?'}</span>);
     switch (this.props.value.toLowerCase()) {
       case 'ok':
       case 'normal':
-        icon = (<OK className={className} a11yTitle={this.props.a11yTitle} />);
+        icon = (<OK className={className} a11yTitle={a11yTitle} />);
         break;
       case 'warning':
-        icon = (<Warning className={className} a11yTitle={this.props.a11yTitle} />);
+        icon = (<Warning className={className} a11yTitle={a11yTitle} />);
         break;
       // 'error' is deprecated, use 'critical'
       case 'error':
-        icon = (<ErrorStatus className={className} a11yTitle={this.props.a11yTitle} />);
+        icon = (<ErrorStatus className={className} a11yTitle={a11yTitle} />);
         break;
       case 'critical':
-        icon = (<CriticalStatus className={className} a11yTitle={this.props.a11yTitle} />);
+        icon = (<CriticalStatus className={className} a11yTitle={a11yTitle} />);
         break;
       case 'disabled':
-        icon = (<Disabled className={className} a11yTitle={this.props.a11yTitle} />);
+        icon = (<Disabled className={className} a11yTitle={a11yTitle} />);
         break;
       case 'unknown':
-        icon = (<Unknown className={className} a11yTitle={this.props.a11yTitle} />);
+        icon = (<Unknown className={className} a11yTitle={a11yTitle} />);
         break;
       case 'label':
-        icon = (<Label className={className} a11yTitle={this.props.a11yTitle} />);
+        icon = (<Label className={className} a11yTitle={a11yTitle} />);
         break;
     }
     return icon;
   }
+}
 
-});
+Status.defaultProps = {value: 'unknown'};
 
-module.exports = Status;
+Status.propTypes = {
+  a11yTitle: PropTypes.string,
+  large: PropTypes.bool,
+  small: PropTypes.bool,
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  value: PropTypes.oneOf(['critical', 'warning', 'ok', 'unknown', 'disabled'])
+};

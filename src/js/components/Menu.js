@@ -17,7 +17,7 @@ const CLASS_ROOT = "menu";
 
 // We have a separate module for the drop component
 // so we can transfer the router context.
-class MenuDrop extends Component {
+export default class MenuDrop extends Component {
 
   constructor() {
     super();
@@ -472,5 +472,3 @@ Menu.defaultProps = {
   dropAlign: {top: 'top', left: 'left'},
   pad: 'none'
 };
-
-module.exports = Menu;

@@ -5,7 +5,7 @@ import keys from 'lodash/object/keys';
 
 const CLASS_ROOT = "form";
 
-class Form extends Component {
+export default class Form extends Component {
 
   render () {
     var classes = [CLASS_ROOT];
@@ -56,5 +56,3 @@ Form.defaultProps = {
   flush: true,
   pad: 'none'
 };
-
-module.exports = Form;

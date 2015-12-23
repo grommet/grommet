@@ -1,10 +1,9 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
+import React, { Component } from 'react';
 
-var Label = React.createClass({
-
-  render: function() {
+export default class Label extends Component {
+  render() {
     var className = 'status-icon status-icon-label';
     if (this.props.className) {
       className += ' ' + this.props.className;
@@ -17,7 +16,4 @@ var Label = React.createClass({
       </svg>
     );
   }
-
-});
-
-module.exports = Label;
+}

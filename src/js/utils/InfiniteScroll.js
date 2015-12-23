@@ -1,9 +1,9 @@
 // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
-var DOM = require('../utils/DOM');
+import DOM from '../utils/DOM';
 
-var SCROLL_MORE_DELAY = 500; // when the user scrolls
-var SCROLL_MORE_INITIAL_DELAY = 50; // when we start out at the bottom already
+const SCROLL_MORE_DELAY = 500; // when the user scrolls
+const SCROLL_MORE_INITIAL_DELAY = 50; // when we start out at the bottom already
 
 function _evaluate(scrollState) {
   if (scrollState.scrollParent) {
@@ -37,9 +37,9 @@ function _onResize(scrollState) {
   }, SCROLL_MORE_DELAY);
 }
 
-var InfiniteScroll = {
+export default {
 
-  startListeningForScroll: function (indicatorElement, onEnd) {
+  startListeningForScroll (indicatorElement, onEnd) {
     var scrollState = {
       onEnd: onEnd,
       indicatorElement: indicatorElement,
@@ -61,7 +61,7 @@ var InfiniteScroll = {
     return scrollState;
   },
 
-  stopListeningForScroll: function (scrollState) {
+  stopListeningForScroll (scrollState) {
     if (scrollState.scrollParent) {
       clearTimeout(scrollState.scrollTimer);
       scrollState.scrollParent.removeEventListener("scroll", scrollState._onScroll);
@@ -70,5 +70,3 @@ var InfiniteScroll = {
     }
   }
 };
-
-module.exports = InfiniteScroll;

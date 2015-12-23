@@ -4,7 +4,7 @@ import React, { Component, PropTypes } from 'react';
 
 const CLASS_ROOT = "map";
 
-class ResourceMap extends Component {
+export default class ResourceMap extends Component {
 
   constructor() {
     super();
@@ -189,5 +189,3 @@ ResourceMap.propTypes = {
     }))
   }).isRequired
 };
-
-module.exports = ResourceMap;

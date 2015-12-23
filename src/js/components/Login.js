@@ -1,45 +1,44 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
+import React, { Component, PropTypes } from 'react';
 
-var Login = React.createClass({
+export default class Login extends Component {
+  constructor(props, context) {
+    super(props, context);
+    this._adjustBackground = this._adjustBackground.bind(this);
+    this._onResize = this._onResize.bind(this);
 
-  propTypes: {
-    background: React.PropTypes.string
-  },
-
-  getInitialState: function() {
-    return {
+    this.state = {
       orientation: null
     };
-  },
+  }
 
-  componentDidMount: function() {
+  componentDidMount() {
     if (this.props.background) {
       window.addEventListener('resize', this._onResize);
       setTimeout(this._adjustBackground, 300);
     }
-  },
+  }
 
-  componentWillUnmount: function() {
+  componentWillUnmount() {
     if (this.props.background) {
       window.removeEventListener('resize', this._onResize);
     }
-  },
+  }
 
-  _onResize: function() {
+  _onResize() {
     this._adjustBackground();
-  },
+  }
 
-  _adjustBackground: function() {
+  _adjustBackground() {
     // make sure the background always fills the screen, preserve aspect ratio
     var windowRatio = window.innerWidth / window.innerHeight;
     var image = this.refs.background;
     var imageRatio = image.scrollWidth / image.scrollHeight;
     this.setState({orientation: (windowRatio < imageRatio) ? 'portrait' : 'landscape'});
-  },
+  }
 
-  render: function() {
+  render() {
     var background = null;
     if (this.props.background) {
       var classes = ['login__background'];
@@ -61,7 +60,8 @@ var Login = React.createClass({
       </div>
     );
   }
+}
 
-});
-
-module.exports = Login;
+Login.propTypes = {
+  background: PropTypes.string
+};

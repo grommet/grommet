@@ -1,10 +1,9 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
+import React, { Component } from 'react';
 
-var Help = React.createClass({
-
-  render: function() {
+export default class Help extends Component {
+  render() {
     var className = 'control-icon control-icon-help';
     if (this.props.className) {
       className += ' ' + this.props.className;
@@ -18,7 +17,4 @@ var Help = React.createClass({
       </svg>
     );
   }
-
-});
-
-module.exports = Help;
+}

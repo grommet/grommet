@@ -5,7 +5,7 @@ import RightIcon from './icons/base/LinkNext';
 
 const CLASS_ROOT = "anchor";
 
-class Anchor extends Component {
+export default class Anchor extends Component {
   render () {
     var classes = [CLASS_ROOT];
     var icon;
@@ -51,5 +51,3 @@ Anchor.propTypes = {
 Anchor.defaultProps = {
   tag: 'a'
 };
-
-module.exports = Anchor;

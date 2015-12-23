@@ -1,6 +1,6 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-module.exports = {
+export default {
   IndexFilters: {
     filters: '{quantity, plural,\n  =0 {Filtros}\n  =1 {um filtro}\n  other {# filtros}\n}'
   },

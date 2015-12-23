@@ -9,7 +9,7 @@ import Button from './Button';
 
 const CLASS_ROOT = "login-form";
 
-class LoginForm extends Component {
+export default class LoginForm extends Component {
 
   constructor() {
     super();
@@ -136,5 +136,3 @@ LoginForm.defaultProps = {
   errors: [],
   usernameType: 'email'
 };
-
-module.exports = LoginForm;

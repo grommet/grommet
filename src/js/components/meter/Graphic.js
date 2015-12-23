@@ -2,13 +2,13 @@
 
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
-import {classRoot, propTypes, buildPath} from './utils';
+import { classRoot, propTypes, buildPath } from './utils';
 import Intl from '../../utils/Intl';
 import KeyboardAccelerators from '../../utils/KeyboardAccelerators';
 
 const CLASS_ROOT = classRoot;
 
-class Graphic extends Component {
+export default class Graphic extends Component {
 
   constructor(props) {
     super();
@@ -274,5 +274,3 @@ Graphic.contextTypes = {
 Graphic.defaultProps = {
   a11yRole: 'img'
 };
-
-module.exports = Graphic;

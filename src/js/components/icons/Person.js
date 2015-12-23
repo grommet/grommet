@@ -1,14 +1,9 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
+import React, { Component, PropTypes } from 'react';
 
-var Person = React.createClass({
-
-  propTypes: {
-    onClick: React.PropTypes.func
-  },
-
-  render: function() {
+export default class Person extends Component {
+  render() {
     var className = 'control-icon control-icon-person';
     if (this.props.className) {
       className += ' ' + this.props.className;
@@ -25,7 +20,8 @@ var Person = React.createClass({
       </svg>
     );
   }
+}
 
-});
-
-module.exports = Person;
+Person.propTypes = {
+  onClick: PropTypes.func
+};

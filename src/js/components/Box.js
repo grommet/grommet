@@ -7,7 +7,7 @@ import Intl from '../utils/Intl';
 
 const CLASS_ROOT = "box";
 
-class Box extends Component {
+export default class Box extends Component {
 
   componentDidMount () {
     if (this.props.onClick) {
@@ -164,5 +164,3 @@ Box.defaultProps = {
   tag: 'div',
   responsive: true
 };
-
-module.exports = Box;

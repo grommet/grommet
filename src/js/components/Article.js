@@ -18,7 +18,7 @@ import DownIcon from './icons/base/Down';
 const CLASS_ROOT = "article";
 const DEFAULT_PLAY_INTERVAL = 10000; // 10s
 
-class Article extends Component {
+export default class Article extends Component {
 
   constructor() {
     super();
@@ -281,5 +281,3 @@ Article.defaultProps = {
   pad: 'none',
   direction: 'column'
 };
-
-module.exports = Article;

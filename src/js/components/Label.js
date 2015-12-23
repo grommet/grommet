@@ -2,7 +2,7 @@
 
 import React, { Component, PropTypes } from 'react';
 
-class Label extends Component {
+export default class Label extends Component {
   render () {
     var icon = null;
     var text = null;
@@ -25,5 +25,3 @@ Label.propTypes = {
   icon: PropTypes.node,
   text: PropTypes.string
 };
-
-module.exports = Label;

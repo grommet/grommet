@@ -9,7 +9,7 @@ import Button from './Button';
 
 const CLASS_ROOT = "layer";
 
-class LayerContents extends Component {
+export default class LayerContents extends Component {
 
   constructor() {
     super();
@@ -232,5 +232,3 @@ Layer.contextTypes = {
 Layer.defaultProps = {
   align: 'center'
 };
-
-module.exports = Layer;

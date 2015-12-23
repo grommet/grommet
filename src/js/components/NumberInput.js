@@ -7,7 +7,7 @@ import SubtractIcon from './icons/base/Subtract';
 
 const CLASS_ROOT = "number-input";
 
-class NumberInput extends Component {
+export default class NumberInput extends Component {
 
   constructor () {
     super();
@@ -85,5 +85,3 @@ NumberInput.propTypes = {
   step: PropTypes.number,
   value: PropTypes.number
 };
-
-module.exports = NumberInput;

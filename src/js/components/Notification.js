@@ -1,35 +1,18 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
-var ReactIntl = require('react-intl');
-var FormattedDate = ReactIntl.FormattedDate;
-var merge = require('lodash/object/merge');
-var pick = require('lodash/object/pick');
-var keys = require('lodash/object/keys');
-var Box = require('./Box');
+import React, { Component, PropTypes } from 'react';
+import { FormattedDate } from 'react-intl';
+import merge from 'lodash/object/merge';
+import pick from 'lodash/object/pick';
+import keys from 'lodash/object/keys';
+import Box from './Box';
 
-var StatusIcon = require('./icons/Status');
+import StatusIcon from './icons/Status';
 
 var CLASS_ROOT = "notification";
 
-var Notification = React.createClass({
-
-  propTypes: merge({
-    message: React.PropTypes.string.isRequired,
-    state: React.PropTypes.string,
-    status: React.PropTypes.string,
-    timestamp: React.PropTypes.object // Date
-  }, Box.propTypes),
-
-  getDefaultProps: function () {
-    return {
-      flush: true,
-      status: 'unknown',
-      pad: 'medium'
-    };
-  },
-
-  render: function() {
+export default class Notification extends Component {
+  render() {
     var classes = [CLASS_ROOT];
     var other = pick(this.props, keys(Box.propTypes));
     classes.push(CLASS_ROOT + "--" + this.props.status.toLowerCase());
@@ -84,7 +67,17 @@ var Notification = React.createClass({
       </Box>
     );
   }
+}
 
-});
+Notification.defaultProps = {
+  flush: true,
+  status: 'unknown',
+  pad: 'medium'
+};
 
-module.exports = Notification;
+Notification.propTypes = merge({
+  message: PropTypes.string.isRequired,
+  state: PropTypes.string,
+  status: PropTypes.string,
+  timestamp: PropTypes.object // Date
+}, Box.propTypes);

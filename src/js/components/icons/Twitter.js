@@ -1,10 +1,9 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
+import React, { Component } from 'react';
 
-var Twitter = React.createClass({
-
-  render: function() {
+export default class Twitter extends Component {
+  render() {
     var className = 'control-icon control-icon-twitter';
     if (this.props.className) {
       className += ' ' + this.props.className;
@@ -17,7 +16,4 @@ var Twitter = React.createClass({
       </svg>
     );
   }
-
-});
-
-module.exports = Twitter;
+}

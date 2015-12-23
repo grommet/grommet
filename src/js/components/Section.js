@@ -6,7 +6,7 @@ import SkipLinkAnchor from './SkipLinkAnchor';
 
 const CLASS_ROOT = "section";
 
-class Section extends Component {
+export default class Section extends Component {
 
   render () {
     var classes = [CLASS_ROOT];
@@ -37,5 +37,3 @@ Section.propTypes = {
 Section.defaultProps = {
   pad: {vertical: 'medium'}
 };
-
-module.exports = Section;

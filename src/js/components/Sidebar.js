@@ -7,7 +7,7 @@ import Box from './Box';
 
 const CLASS_ROOT = "sidebar";
 
-class Sidebar extends Component {
+export default class Sidebar extends Component {
 
   render () {
     var classes = [CLASS_ROOT];
@@ -45,5 +45,3 @@ Sidebar.defaultProps = {
   direction: 'column',
   primary: false
 };
-
-module.exports = Sidebar;

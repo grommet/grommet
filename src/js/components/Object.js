@@ -4,7 +4,7 @@ import React, { Component, PropTypes } from 'react';
 
 const CLASS_ROOT = "object";
 
-class GrommetObject extends Component {
+export default class GrommetObject extends Component {
 
   _renderArray (array) {
     return array.map(function (item, index) {
@@ -68,5 +68,3 @@ class GrommetObject extends Component {
 GrommetObject.propTypes = {
   data: PropTypes.object
 };
-
-module.exports = GrommetObject;
