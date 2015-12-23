@@ -6,7 +6,7 @@ import Status from './icons/Status';
 
 const CLASS_ROOT = "topology";
 
-export default class Label extends Component {
+class Label extends Component {
   render () {
     return (<span className={CLASS_ROOT + "__label"}>{this.props.children}</span>);
   }
@@ -139,7 +139,7 @@ Parts.defaultProps = {
   direction: 'column'
 };
 
-class Topology extends Component {
+export default class Topology extends Component {
 
   constructor () {
     super();

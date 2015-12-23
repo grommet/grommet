@@ -2,6 +2,14 @@
 
 import React, { PropTypes } from 'react';
 
+function polarToCartesian (centerX, centerY, radius, angleInDegrees) {
+  var angleInRadians = (angleInDegrees - 90) * Math.PI / 180.0;
+  return {
+    x: centerX + (radius * Math.cos(angleInRadians)),
+    y: centerY + (radius * Math.sin(angleInRadians))
+  };
+}
+
 export default {
 
   baseUnit: 24,
@@ -36,17 +44,11 @@ export default {
     units: PropTypes.string
   },
 
-  polarToCartesian (centerX, centerY, radius, angleInDegrees) {
-    var angleInRadians = (angleInDegrees - 90) * Math.PI / 180.0;
-    return {
-      x: centerX + (radius * Math.cos(angleInRadians)),
-      y: centerY + (radius * Math.sin(angleInRadians))
-    };
-  },
+  polarToCartesian: polarToCartesian,
 
-  arcCommands (centerX, centerY, radius, startAngle, endAngle) {
-    var start = this.polarToCartesian(centerX, centerY, radius, endAngle);
-    var end = this.polarToCartesian(centerX, centerY, radius, startAngle);
+  arcCommands: function (centerX, centerY, radius, startAngle, endAngle) {
+    var start = polarToCartesian(centerX, centerY, radius, endAngle);
+    var end = polarToCartesian(centerX, centerY, radius, startAngle);
     var arcSweep = endAngle - startAngle <= 180 ? "0" : "1";
     var d = [
       "M", start.x, start.y,
@@ -55,7 +57,7 @@ export default {
     return d;
   },
 
-  translateEndAngle (startAngle, anglePer, value) {
+  translateEndAngle: function (startAngle, anglePer, value) {
     return Math.min(360, Math.max(0, startAngle + (anglePer * value)));
   },
 
