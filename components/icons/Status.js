@@ -134,6 +134,6 @@ Status.propTypes = {
   large: _react.PropTypes.bool,
   small: _react.PropTypes.bool,
   size: _react.PropTypes.oneOf(['small', 'medium', 'large']),
-  value: _react.PropTypes.oneOf(['critical', 'warning', 'ok', 'unknown', 'disabled'])
+  value: _react.PropTypes.oneOf(['critical', 'warning', 'ok', 'unknown', 'disabled', 'Critical', 'Warning', 'OK', 'Unknown', 'Disabled'])
 };
 module.exports = exports['default'];
