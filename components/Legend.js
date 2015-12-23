@@ -152,7 +152,7 @@ var Legend = (function (_Component) {
 
       return _react2['default'].createElement(
         'ol',
-        { className: classes.join(' ') },
+        { className: classes.join(' '), role: 'presentation' },
         items.reverse(),
         total
       );

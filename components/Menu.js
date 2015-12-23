@@ -185,16 +185,22 @@ var MenuDrop = (function (_Component) {
       var classes = [CLASS_ROOT + "__drop"];
       var other = (0, _lodashObjectPick2['default'])(this.props, (0, _lodashObjectKeys2['default'])(_Box2['default'].propTypes));
 
-      var contents = [_react2['default'].cloneElement(this.props.control, { key: 'control' }), _react2['default'].createElement(
+      var contents = [];
+      if (this.props.control) {
+        contents.push(_react2['default'].cloneElement(this.props.control, { key: 'control' }));
+      }
+
+      contents.push(_react2['default'].createElement(
         _Box2['default'],
         _extends({ key: 'nav', ref: 'navContainer', tag: 'nav' }, other, {
           className: CLASS_ROOT + '__contents' }),
         this.props.children
-      )];
-      if (this.props.dropAlign.bottom) {
+      ));
+
+      if (this.props.dropAlign && this.props.dropAlign.bottom) {
         contents.reverse();
       }
-      if (this.props.dropAlign.right) {
+      if (this.props.dropAlign && this.props.dropAlign.right) {
         classes.push(CLASS_ROOT + "__drop--align-right");
       }
       if (this.props.dropColorIndex) {
@@ -216,13 +222,11 @@ var MenuDrop = (function (_Component) {
   return MenuDrop;
 })(_react.Component);
 
-exports['default'] = MenuDrop;
-
 MenuDrop.propTypes = _extends({
   control: _react.PropTypes.node,
   dropAlign: _utilsDrop2['default'].alignPropType,
   dropColorIndex: _react.PropTypes.string,
-  id: _react.PropTypes.string.isRequired,
+  id: _react.PropTypes.string,
   onClick: _react.PropTypes.func.isRequired,
   router: _react.PropTypes.func,
   size: _react.PropTypes.oneOf(['small', 'medium', 'large'])
@@ -519,6 +523,8 @@ var Menu = (function (_Component2) {
 
   return Menu;
 })(_react.Component);
+
+exports['default'] = Menu;
 
 Menu.propTypes = _extends({
   a11yTitle: _react.PropTypes.string,

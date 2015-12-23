@@ -39,7 +39,7 @@ var Anchor = (function (_Component) {
     key: 'render',
     value: function render() {
       var classes = [CLASS_ROOT];
-      var icon;
+      var icon = undefined;
       if (this.props.primary) {
         classes.push(CLASS_ROOT + "--primary");
         icon = _react2['default'].createElement(_iconsBaseLinkNext2['default'], null);
@@ -54,7 +54,7 @@ var Anchor = (function (_Component) {
         if (child && child.type && child.type.icon) {
           return _react2['default'].createElement(
             'span',
-            { className: CLASS_ROOT + "__icon" },
+            { className: CLASS_ROOT + '__icon' },
             child
           );
         } else {

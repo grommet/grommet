@@ -133,21 +133,17 @@ var SkipLinks = (function (_Component) {
       }
 
       return _react2['default'].createElement(
-        'div',
-        { className: 'skip-links' },
+        _Layer2['default'],
+        { id: 'skip-link-layer', hidden: !this.state.showLayer },
         _react2['default'].createElement(
-          _Layer2['default'],
-          { id: 'skip-link-layer', hidden: !this.state.showLayer },
+          'div',
+          { ref: 'skipLinksLayer' },
           _react2['default'].createElement(
-            'div',
-            { ref: 'skipLinksLayer' },
-            _react2['default'].createElement(
-              'h2',
-              null,
-              _react2['default'].createElement(_FormattedMessage2['default'], { id: 'Skip to', defaultMessage: 'Skip to' })
-            ),
-            menuComponent
-          )
+            'h2',
+            null,
+            _react2['default'].createElement(_FormattedMessage2['default'], { id: 'Skip to', defaultMessage: 'Skip to' })
+          ),
+          menuComponent
         )
       );
     }

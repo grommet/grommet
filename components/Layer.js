@@ -140,8 +140,6 @@ var LayerContents = (function (_Component) {
   return LayerContents;
 })(_react.Component);
 
-exports['default'] = LayerContents;
-
 LayerContents.propTypes = {
   closer: _react.PropTypes.oneOfType([_react.PropTypes.node, _react.PropTypes.bool]),
   onClose: _react.PropTypes.func,
@@ -271,6 +269,8 @@ var Layer = (function (_Component2) {
 
   return Layer;
 })(_react.Component);
+
+exports['default'] = Layer;
 
 Layer.propTypes = {
   align: _react.PropTypes.oneOf(['center', 'top', 'bottom', 'left', 'right']),

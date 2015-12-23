@@ -30,6 +30,11 @@ var DragHandle = (function (_Component) {
   }
 
   _createClass(DragHandle, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      console.warn('This icon has been deprecated. Please check http://www.grommet.io/docs/develop/icon for the new set of icons.');
+    }
+  }, {
     key: 'render',
     value: function render() {
       var className = 'control-icon control-icon-drag-handle';

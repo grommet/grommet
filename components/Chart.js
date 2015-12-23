@@ -120,9 +120,7 @@ var Chart = (function (_Component) {
     }
   }, {
     key: '_onRequestForPreviousLegend',
-    value: function _onRequestForPreviousLegend(e) {
-      e.stopPropagation();
-      e.stopImmediatePropagation();
+    value: function _onRequestForPreviousLegend() {
       if (document.activeElement === this.refs.chart) {
 
         var totalBandCount = _reactDom2['default'].findDOMNode(this.refs.front).childNodes.length;

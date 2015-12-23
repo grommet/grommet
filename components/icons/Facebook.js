@@ -30,6 +30,11 @@ var Facebook = (function (_Component) {
   }
 
   _createClass(Facebook, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      console.warn('This icon has been deprecated. Please check http://www.grommet.io/docs/develop/icon for the new set of icons.');
+    }
+  }, {
     key: 'render',
     value: function render() {
       var className = 'control-icon control-icon-facebook';
