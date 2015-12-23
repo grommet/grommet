@@ -2,7 +2,15 @@
 
 "use strict";
 
-var DOM = require('../utils/DOM');
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+var _utilsDOM = require('../utils/DOM');
+
+var _utilsDOM2 = _interopRequireDefault(_utilsDOM);
 
 var SCROLL_MORE_DELAY = 500; // when the user scrolls
 var SCROLL_MORE_INITIAL_DELAY = 50; // when we start out at the bottom already
@@ -39,13 +47,13 @@ function _onResize(scrollState) {
   }, SCROLL_MORE_DELAY);
 }
 
-var InfiniteScroll = {
+exports["default"] = {
 
   startListeningForScroll: function startListeningForScroll(indicatorElement, onEnd) {
     var scrollState = {
       onEnd: onEnd,
       indicatorElement: indicatorElement,
-      scrollParent: DOM.findScrollParents(indicatorElement)[0]
+      scrollParent: _utilsDOM2["default"].findScrollParents(indicatorElement)[0]
     };
 
     scrollState._onResize = _onResize.bind(null, scrollState);
@@ -72,5 +80,4 @@ var InfiniteScroll = {
     }
   }
 };
-
-module.exports = InfiniteScroll;
+module.exports = exports["default"];

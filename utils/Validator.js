@@ -2,7 +2,10 @@
 
 'use strict';
 
-module.exports = {
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+exports['default'] = {
   validate: function validate(rules) {
     var result = {
       valid: true,
@@ -32,3 +35,4 @@ module.exports = {
     return result;
   }
 };
+module.exports = exports['default'];

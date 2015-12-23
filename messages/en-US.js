@@ -2,7 +2,10 @@
 
 'use strict';
 
-module.exports = {
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+exports['default'] = {
   IndexFilters: {
     filters: '{quantity, plural,\n  =0 {Filters}\n  =1 {one filter}\n  other {# filters}\n}'
   },
@@ -63,3 +66,4 @@ module.exports = {
   Value: 'Value',
   Warning: 'Warning'
 };
+module.exports = exports['default'];

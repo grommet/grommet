@@ -6,9 +6,12 @@
 
 "use strict";
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 var SCROLL_STEPS = 25;
 
-var Scroll = {
+exports["default"] = {
 
   _easeInOutQuad: function _easeInOutQuad(t) {
     return t < .5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
@@ -44,5 +47,4 @@ var Scroll = {
     }).bind(this), 8);
   }
 };
-
-module.exports = Scroll;
+module.exports = exports["default"];

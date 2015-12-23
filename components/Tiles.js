@@ -2,6 +2,10 @@
 
 'use strict';
 
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -19,8 +23,6 @@ var _react = require('react');
 var _react2 = _interopRequireDefault(_react);
 
 var _reactDom = require('react-dom');
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
 
 var _lodashObjectPick = require('lodash/object/pick');
 
@@ -118,7 +120,7 @@ var Tiles = (function (_Component) {
         window.removeEventListener('resize', this._onResize);
         document.removeEventListener('wheel', this._onWheel);
         if (this._tracking) {
-          var tiles = _reactDom2['default'].findDOMNode(this.refs.tiles);
+          var tiles = (0, _reactDom.findDOMNode)(this.refs.tiles);
           tiles.removeEventListener('scroll', this._onScrollHorizontal);
         }
       }
@@ -126,13 +128,13 @@ var Tiles = (function (_Component) {
   }, {
     key: '_onLeft',
     value: function _onLeft() {
-      var tiles = _reactDom2['default'].findDOMNode(this.refs.tiles);
+      var tiles = (0, _reactDom.findDOMNode)(this.refs.tiles);
       _utilsScroll2['default'].scrollBy(tiles, 'scrollLeft', -tiles.offsetWidth);
     }
   }, {
     key: '_onRight',
     value: function _onRight() {
-      var tiles = _reactDom2['default'].findDOMNode(this.refs.tiles);
+      var tiles = (0, _reactDom.findDOMNode)(this.refs.tiles);
       _utilsScroll2['default'].scrollBy(tiles, 'scrollLeft', tiles.offsetWidth);
     }
   }, {
@@ -158,7 +160,7 @@ var Tiles = (function (_Component) {
     value: function _layout() {
       if ('row' === this.props.direction) {
         // determine if we have more tiles than room to fit
-        var tiles = _reactDom2['default'].findDOMNode(this.refs.tiles);
+        var tiles = (0, _reactDom.findDOMNode)(this.refs.tiles);
         // 20 is to allow some fuzziness as scrollbars come and go
         this.setState({
           overflow: tiles.scrollWidth > tiles.offsetWidth + 20,
@@ -192,7 +194,7 @@ var Tiles = (function (_Component) {
     key: '_trackHorizontalScroll',
     value: function _trackHorizontalScroll() {
       if (this.state.overflow && !this._tracking) {
-        var tiles = _reactDom2['default'].findDOMNode(this.refs.tiles);
+        var tiles = (0, _reactDom.findDOMNode)(this.refs.tiles);
         tiles.addEventListener('scroll', this._onScrollHorizontal);
         this._tracking = true;
       }
@@ -273,6 +275,8 @@ var Tiles = (function (_Component) {
   return Tiles;
 })(_react.Component);
 
+exports['default'] = Tiles;
+
 Tiles.propTypes = _extends({
   fill: _react.PropTypes.bool,
   flush: _react.PropTypes.bool,
@@ -284,5 +288,4 @@ Tiles.defaultProps = {
   flush: true,
   justify: 'start'
 };
-
-module.exports = Tiles;
+module.exports = exports['default'];

@@ -2,21 +2,17 @@
 
 'use strict';
 
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-function polarToCartesian(centerX, centerY, radius, angleInDegrees) {
-  var angleInRadians = (angleInDegrees - 90) * Math.PI / 180.0;
-  return {
-    x: centerX + radius * Math.cos(angleInRadians),
-    y: centerY + radius * Math.sin(angleInRadians)
-  };
-}
-
-module.exports = {
+exports['default'] = {
 
   baseUnit: 24,
   baseDimension: 192, // 24 * 8
@@ -50,11 +46,17 @@ module.exports = {
     units: _react.PropTypes.string
   },
 
-  polarToCartesian: polarToCartesian,
+  polarToCartesian: function polarToCartesian(centerX, centerY, radius, angleInDegrees) {
+    var angleInRadians = (angleInDegrees - 90) * Math.PI / 180.0;
+    return {
+      x: centerX + radius * Math.cos(angleInRadians),
+      y: centerY + radius * Math.sin(angleInRadians)
+    };
+  },
 
   arcCommands: function arcCommands(centerX, centerY, radius, startAngle, endAngle) {
-    var start = polarToCartesian(centerX, centerY, radius, endAngle);
-    var end = polarToCartesian(centerX, centerY, radius, startAngle);
+    var start = this.polarToCartesian(centerX, centerY, radius, endAngle);
+    var end = this.polarToCartesian(centerX, centerY, radius, startAngle);
     var arcSweep = endAngle - startAngle <= 180 ? "0" : "1";
     var d = ["M", start.x, start.y, "A", radius, radius, 0, arcSweep, 0, end.x, end.y].join(" ");
     return d;
@@ -91,3 +93,4 @@ module.exports = {
   }
 
 };
+module.exports = exports['default'];

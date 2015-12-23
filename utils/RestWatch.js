@@ -2,7 +2,15 @@
 
 'use strict';
 
-var Rest = require('./Rest');
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var _Rest = require('./Rest');
+
+var _Rest2 = _interopRequireDefault(_Rest);
 
 var RECONNECT_TIMEOUT = 5000; // 5s
 var POLL_TIMEOUT = 10000; // 10s
@@ -17,7 +25,7 @@ var state = {
   socketUrl: null
 };
 
-var RestWatch = {
+exports['default'] = {
 
   _sendMessage: function _sendMessage(op, id, url, params) {
     state.ws.send(JSON.stringify({
@@ -61,7 +69,7 @@ var RestWatch = {
 
   _getREST: function _getREST(request) {
     request.pollBusy = true;
-    Rest.get(request.url, request.params).end(function (err, res) {
+    _Rest2['default'].get(request.url, request.params).end(function (err, res) {
       if (err) {
         throw err;
       }
@@ -131,5 +139,4 @@ var RestWatch = {
     }, this);
   }
 };
-
-module.exports = RestWatch;
+module.exports = exports['default'];

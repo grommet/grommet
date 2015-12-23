@@ -2,9 +2,19 @@
 
 'use strict';
 
-var React = require('react');
-var ReactDOM = require('react-dom');
-var DOM = require('../utils/DOM');
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var _react = require('react');
+
+var _reactDom = require('react-dom');
+
+var _utilsDOM = require('../utils/DOM');
+
+var _utilsDOM2 = _interopRequireDefault(_utilsDOM);
 
 /*
  * Drop is a utility for rendering components like drop down menus layered above
@@ -14,14 +24,14 @@ var DOM = require('../utils/DOM');
 var VERTICAL_ALIGN_OPTIONS = ['top', 'bottom'];
 var HORIZONTAL_ALIGN_OPTIONS = ['right', 'left'];
 
-var Drop = {
+exports['default'] = {
 
   // How callers can validate a property for drop alignment which will be passed to add().
-  alignPropType: React.PropTypes.shape({
-    top: React.PropTypes.oneOf(VERTICAL_ALIGN_OPTIONS),
-    bottom: React.PropTypes.oneOf(VERTICAL_ALIGN_OPTIONS),
-    left: React.PropTypes.oneOf(HORIZONTAL_ALIGN_OPTIONS),
-    right: React.PropTypes.oneOf(HORIZONTAL_ALIGN_OPTIONS)
+  alignPropType: _react.PropTypes.shape({
+    top: _react.PropTypes.oneOf(VERTICAL_ALIGN_OPTIONS),
+    bottom: _react.PropTypes.oneOf(VERTICAL_ALIGN_OPTIONS),
+    left: _react.PropTypes.oneOf(HORIZONTAL_ALIGN_OPTIONS),
+    right: _react.PropTypes.oneOf(HORIZONTAL_ALIGN_OPTIONS)
   }),
 
   // Add a drop component.
@@ -73,9 +83,9 @@ var Drop = {
     drop.container = document.createElement('div');
     drop.container.className = 'drop';
     document.body.appendChild(drop.container);
-    ReactDOM.render(content, drop.container);
+    (0, _reactDom.render)(content, drop.container);
 
-    drop.scrollParents = DOM.findScrollParents(drop.control);
+    drop.scrollParents = _utilsDOM2['default'].findScrollParents(drop.control);
     drop.place = this._place.bind(this, drop);
     drop.render = this._render.bind(this, drop);
     drop.remove = this._remove.bind(this, drop);
@@ -92,7 +102,7 @@ var Drop = {
   },
 
   _render: function _render(drop, content) {
-    ReactDOM.render(content, drop.container);
+    (0, _reactDom.render)(content, drop.container);
     // in case content changed, re-place
     setTimeout(this._place.bind(this, drop), 1);
   },
@@ -103,7 +113,7 @@ var Drop = {
     });
     window.removeEventListener('resize', drop.place);
 
-    ReactDOM.unmountComponentAtNode(drop.container);
+    (0, _reactDom.unmountComponentAtNode)(drop.container);
     document.body.removeChild(drop.container);
   },
 
@@ -175,5 +185,4 @@ var Drop = {
     container.style.top = '' + top + 'px';
   }
 };
-
-module.exports = Drop;
+module.exports = exports['default'];

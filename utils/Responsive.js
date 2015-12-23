@@ -7,6 +7,9 @@
 
 'use strict';
 
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
 var SMALL_WIDTH_EM = 44.9375; // align with _settings.responsive.scss
 
 function _smallSize() {
@@ -18,7 +21,7 @@ function _smallSize() {
   return SMALL_WIDTH_EM * parseFloat(fontSize);
 }
 
-var Responsive = {
+exports['default'] = {
 
   // Track responsive sizing.
   //
@@ -68,5 +71,4 @@ var Responsive = {
     }
   }
 };
-
-module.exports = Responsive;
+module.exports = exports['default'];

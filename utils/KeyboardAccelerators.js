@@ -2,7 +2,11 @@
 
 'use strict';
 
-var findDOMNode = require('react-dom').findDOMNode;
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+
+var _reactDom = require('react-dom');
 
 // Allow callers to use key labels instead of key code numbers.
 // This makes their code easier to read.
@@ -42,7 +46,7 @@ var _onKeyboardAcceleratorKeyPress = function _onKeyboardAcceleratorKeyPress(e) 
 // KeyboardAccelerators is a utility for handling keyboard events.
 // Add listeners using startListeningToKeyboard().
 // Remove listeners using stopListeningToKeyboard().
-var KeyboardAccelerators = {
+exports['default'] = {
   _initKeyboardAccelerators: function _initKeyboardAccelerators(element) {
     var id = element.getAttribute('data-reactid');
     _keyboardAccelerators[id] = {
@@ -96,7 +100,7 @@ var KeyboardAccelerators = {
   // This function can be called multiple times, existing handlers will
   // be replaced, new handlers will be added.
   startListeningToKeyboard: function startListeningToKeyboard(component, handlers) {
-    var element = findDOMNode(component);
+    var element = (0, _reactDom.findDOMNode)(component);
     this._initKeyboardAccelerators(element);
     var keys = 0;
     for (var key in handlers) {
@@ -126,7 +130,7 @@ var KeyboardAccelerators = {
   // This function can be called multiple times, only the handlers
   // specified will be removed.
   stopListeningToKeyboard: function stopListeningToKeyboard(component, handlers) {
-    var element = findDOMNode(component);
+    var element = (0, _reactDom.findDOMNode)(component);
     if (!this._isComponentListening(element)) {
       return;
     }
@@ -160,5 +164,4 @@ var KeyboardAccelerators = {
     }
   }
 };
-
-module.exports = KeyboardAccelerators;
+module.exports = exports['default'];

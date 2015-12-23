@@ -29,7 +29,10 @@
 
 "use strict";
 
-var Cookies = {
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = {
   get: function get(sKey) {
     if (!sKey) {
       return null;
@@ -78,5 +81,4 @@ var Cookies = {
     return aKeys;
   }
 };
-
-module.exports = Cookies;
+module.exports = exports["default"];

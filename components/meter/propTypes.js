@@ -2,9 +2,13 @@
 
 'use strict';
 
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+
 var _react = require('react');
 
-module.exports = {
+exports['default'] = {
   activeIndex: _react.PropTypes.number,
   a11yDesc: _react.PropTypes.string,
   a11yDescId: _react.PropTypes.string,
@@ -35,3 +39,4 @@ module.exports = {
   units: _react.PropTypes.string,
   vertical: _react.PropTypes.bool
 };
+module.exports = exports['default'];

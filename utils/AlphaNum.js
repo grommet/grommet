@@ -2,7 +2,10 @@
 
 "use strict";
 
-module.exports = {
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = {
   // http://my.opera.com/GreyWyvern/blog/show.dml/1671288
   // Do not attempt to change '==' to '===' in the following
   // method. Avoid type comparison is done on purpose.
@@ -42,3 +45,4 @@ module.exports = {
     return aa.length - bb.length;
   }
 };
+module.exports = exports["default"];

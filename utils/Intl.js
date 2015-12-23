@@ -1,7 +1,10 @@
 // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 "use strict";
 
-module.exports = {
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = {
   getMessage: function getMessage(intl, key, values) {
     if (intl) {
       return intl.formatMessage({
@@ -13,3 +16,4 @@ module.exports = {
     }
   }
 };
+module.exports = exports["default"];

@@ -2,7 +2,15 @@
 
 'use strict';
 
-var request = require('superagent');
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var _superagent = require('superagent');
+
+var _superagent2 = _interopRequireDefault(_superagent);
 
 var _headers = { 'Accept': 'application/json' };
 
@@ -28,7 +36,7 @@ function buildQueryParams(params) {
   return result.join('&');
 }
 
-var Rest = {
+exports['default'] = {
 
   setTimeout: function setTimeout(timeout) {
     _timeout = timeout;
@@ -43,46 +51,45 @@ var Rest = {
   },
 
   head: function head(uri, params) {
-    var op = request.head(uri).query(buildQueryParams(params));
+    var op = _superagent2['default'].head(uri).query(buildQueryParams(params));
     op.timeout(_timeout);
     op.set(_headers);
     return op;
   },
 
   get: function get(uri, params) {
-    var op = request.get(uri).query(buildQueryParams(params));
+    var op = _superagent2['default'].get(uri).query(buildQueryParams(params));
     op.timeout(_timeout);
     op.set(_headers);
     return op;
   },
 
   patch: function patch(uri, data) {
-    var op = request.patch(uri).send(data);
+    var op = _superagent2['default'].patch(uri).send(data);
     op.timeout(_timeout);
     op.set(_headers);
     return op;
   },
 
   post: function post(uri, data) {
-    var op = request.post(uri).send(data);
+    var op = _superagent2['default'].post(uri).send(data);
     op.timeout(_timeout);
     op.set(_headers);
     return op;
   },
 
   put: function put(uri, data) {
-    var op = request.put(uri).send(data);
+    var op = _superagent2['default'].put(uri).send(data);
     op.timeout(_timeout);
     op.set(_headers);
     return op;
   },
 
   del: function del(uri) {
-    var op = request.del(uri);
+    var op = _superagent2['default'].del(uri);
     op.timeout(_timeout);
     op.set(_headers);
     return op;
   }
 };
-
-module.exports = Rest;
+module.exports = exports['default'];

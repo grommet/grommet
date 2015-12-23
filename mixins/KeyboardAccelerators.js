@@ -4,6 +4,9 @@
 // This makes their code easier to read.
 'use strict';
 
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
 var KEYS = {
   backspace: 8,
   tab: 9,
@@ -42,7 +45,7 @@ var _onKeyboardAcceleratorKeyPress = function _onKeyboardAcceleratorKeyPress(e) 
 // Remove listeners using stopListeningToKeyboard().
 // When the component that includes this is unmounted, the keyboard event
 // listener is removed automatically.
-var KeyboardAccelerators = {
+exports['default'] = {
   _initKeyboardAccelerators: function _initKeyboardAccelerators() {
     var id = this.getDOMNode().getAttribute('data-reactid');
     _keyboardAccelerators[id] = {
@@ -163,5 +166,4 @@ var KeyboardAccelerators = {
     this.stopListeningToKeyboard();
   }
 };
-
-module.exports = KeyboardAccelerators;
+module.exports = exports['default'];

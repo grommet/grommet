@@ -1,7 +1,10 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 'use strict';
 
-module.exports = {
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+exports['default'] = {
   findScrollParents: function findScrollParents(element, horizontal) {
     var result = [];
     var parent = element.parentNode;
@@ -67,3 +70,4 @@ module.exports = {
     return bestFirstFocusable;
   }
 };
+module.exports = exports['default'];
