@@ -12,6 +12,14 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+function polarToCartesian(centerX, centerY, radius, angleInDegrees) {
+  var angleInRadians = (angleInDegrees - 90) * Math.PI / 180.0;
+  return {
+    x: centerX + radius * Math.cos(angleInRadians),
+    y: centerY + radius * Math.sin(angleInRadians)
+  };
+}
+
 exports['default'] = {
 
   baseUnit: 24,
@@ -46,17 +54,11 @@ exports['default'] = {
     units: _react.PropTypes.string
   },
 
-  polarToCartesian: function polarToCartesian(centerX, centerY, radius, angleInDegrees) {
-    var angleInRadians = (angleInDegrees - 90) * Math.PI / 180.0;
-    return {
-      x: centerX + radius * Math.cos(angleInRadians),
-      y: centerY + radius * Math.sin(angleInRadians)
-    };
-  },
+  polarToCartesian: polarToCartesian,
 
   arcCommands: function arcCommands(centerX, centerY, radius, startAngle, endAngle) {
-    var start = this.polarToCartesian(centerX, centerY, radius, endAngle);
-    var end = this.polarToCartesian(centerX, centerY, radius, startAngle);
+    var start = polarToCartesian(centerX, centerY, radius, endAngle);
+    var end = polarToCartesian(centerX, centerY, radius, startAngle);
     var arcSweep = endAngle - startAngle <= 180 ? "0" : "1";
     var d = ["M", start.x, start.y, "A", radius, radius, 0, arcSweep, 0, end.x, end.y].join(" ");
     return d;

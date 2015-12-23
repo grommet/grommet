@@ -51,8 +51,6 @@ var Label = (function (_Component) {
   return Label;
 })(_react.Component);
 
-exports['default'] = Label;
-
 var Part = (function (_Component2) {
   _inherits(Part, _Component2);
 
@@ -442,6 +440,8 @@ var Topology = (function (_Component4) {
 
   return Topology;
 })(_react.Component);
+
+exports['default'] = Topology;
 
 Topology.propTypes = {
   links: _react.PropTypes.arrayOf(_react.PropTypes.shape({
