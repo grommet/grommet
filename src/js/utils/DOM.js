@@ -1,6 +1,6 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 export default {
-  findScrollParents: function (element, horizontal) {
+  findScrollParents (element, horizontal) {
     var result = [];
     var parent = element.parentNode;
     while (parent) {
@@ -22,7 +22,7 @@ export default {
     return result;
   },
 
-  isDescendant: function (parent, child) {
+  isDescendant (parent, child) {
     var node = child.parentNode;
     while (node != null) {
       if (node == parent) {
@@ -33,7 +33,7 @@ export default {
     return false;
   },
 
-  filterByFocusable: function(elements) {
+  filterByFocusable (elements) {
     return Array.prototype.filter.call(elements || [], function(element) {
       var currentTag = element.tagName.toLowerCase();
       var validTags = /(svg|a|area|input|select|textarea|button|iframe)$/;
@@ -49,7 +49,7 @@ export default {
     });
   },
 
-  getBestFirstFocusable: function (elements) {
+  getBestFirstFocusable (elements) {
     var bestFirstFocusable;
 
     Array.prototype.some.call(elements || [], function(element) {

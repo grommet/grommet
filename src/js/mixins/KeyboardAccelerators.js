@@ -41,24 +41,24 @@ var _onKeyboardAcceleratorKeyPress = function (e) {
 // When the component that includes this is unmounted, the keyboard event
 // listener is removed automatically.
 export default {
-  _initKeyboardAccelerators: function () {
+  _initKeyboardAccelerators () {
     var id = this.getDOMNode().getAttribute('data-reactid');
     _keyboardAccelerators[id] = {
       handlers: {}
     };
   },
 
-  _getKeyboardAcceleratorHandlers: function () {
+  _getKeyboardAcceleratorHandlers () {
     var id = this.getDOMNode().getAttribute('data-reactid');
     return _keyboardAccelerators[id].handlers;
   },
 
-  _getDowns: function () {
+  _getDowns () {
     var id = this.getDOMNode().getAttribute('data-reactid');
     return _keyboardAccelerators[id].downs;
   },
 
-  _isComponentListening: function () {
+  _isComponentListening () {
     var id = this.getDOMNode().getAttribute('data-reactid');
     for (var i = 0; i < _listenersCounter; i++) {
       if (_listeners[i] === id) {
@@ -68,13 +68,13 @@ export default {
     return false;
   },
 
-  _subscribeComponent: function () {
+  _subscribeComponent () {
     var id = this.getDOMNode().getAttribute('data-reactid');
     _listeners[_listenersCounter] = id;
     _listenersCounter++;
   },
 
-  _unsubscribeComponent: function () {
+  _unsubscribeComponent () {
     var id = this.getDOMNode().getAttribute('data-reactid');
     var i = 0;
     for (; i < _listenersCounter; i++) {
@@ -93,7 +93,7 @@ export default {
   // Add handlers for specific keys.
   // This function can be called multiple times, existing handlers will
   // be replaced, new handlers will be added.
-  startListeningToKeyboard: function (handlers) {
+  startListeningToKeyboard (handlers) {
     console.warn('grommet/mixins/KeyboardAccelerators is deprecated. Please switch to grommet/utils/KeyboardAccelerators.');
     this._initKeyboardAccelerators();
     var keys = 0;
@@ -123,7 +123,7 @@ export default {
   // If no argument is passed in, all handlers are removed.
   // This function can be called multiple times, only the handlers
   // specified will be removed.
-  stopListeningToKeyboard: function (handlers) {
+  stopListeningToKeyboard (handlers) {
     if (!this._isComponentListening()) {
       return;
     }
@@ -157,7 +157,7 @@ export default {
     }
   },
 
-  componentWillUnmount: function () {
+  componentWillUnmount () {
     this.stopListeningToKeyboard();
   }
 };

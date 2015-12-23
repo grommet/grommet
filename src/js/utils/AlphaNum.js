@@ -4,7 +4,7 @@ export default {
   // http://my.opera.com/GreyWyvern/blog/show.dml/1671288
   // Do not attempt to change '==' to '===' in the following
   // method. Avoid type comparison is done on purpose.
-  compare: function (a, b) {
+  compare (a, b) {
     function chunkify(t) {
       var tz = [], x = 0, y = -1, n = 0, i, j;
       while (t && (i = (j = t.charAt(x++)).charCodeAt(0))) {
