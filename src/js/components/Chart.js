@@ -50,7 +50,7 @@ class Chart extends Component {
   }
 
   componentWillReceiveProps (newProps) {
-    var state = this._stateFromProps(newProps,
+    let state = this._stateFromProps(newProps,
       this.state.width, this.state.height);
     this.setState(state);
   }
@@ -75,7 +75,7 @@ class Chart extends Component {
     e.stopImmediatePropagation();
     if (document.activeElement === this.refs.chart) {
 
-      var totalBandCount = (
+      let totalBandCount = (
         ReactDOM.findDOMNode(this.refs.front).childNodes.length
       );
 
@@ -92,7 +92,7 @@ class Chart extends Component {
     e.stopImmediatePropagation();
     if (document.activeElement === this.refs.chart) {
 
-      var totalBandCount = (
+      let totalBandCount = (
         ReactDOM.findDOMNode(this.refs.front).childNodes.length
       );
 
@@ -121,7 +121,7 @@ class Chart extends Component {
   // Performs some initial calculations to make subsequent calculations easier.
   _bounds (series, xAxisArg, width, height) {
     // normalize xAxis
-    var xAxis;
+    let xAxis;
     if (xAxisArg) {
       if (xAxisArg.data) {
         xAxis = xAxisArg;
@@ -136,15 +136,15 @@ class Chart extends Component {
     }
 
     // analyze series data
-    var minX = null;
-    var maxX = null;
-    var minY = null;
-    var maxY = null;
+    let minX = null;
+    let maxX = null;
+    let minY = null;
+    let maxY = null;
 
     series.forEach(function (item) {
       item.values.forEach(function (value, xIndex) {
-        var x = value[0];
-        var y = value[1];
+        let x = value[0];
+        let y = value[1];
 
         if (null === minX) {
           minX = x;
@@ -172,7 +172,7 @@ class Chart extends Component {
 
     if ('bar' === this.props.type) {
       xAxis.data.forEach(function (obj, xIndex) {
-        var sumY = 0;
+        let sumY = 0;
         series.forEach(function (item) {
           sumY += item.values[xIndex][1];
         });
@@ -195,48 +195,48 @@ class Chart extends Component {
     if (this.props.hasOwnProperty('max')) {
       maxY = this.props.max;
     }
-    var spanX = maxX - minX;
-    var spanY = maxY - minY;
+    let spanX = maxX - minX;
+    let spanY = maxY - minY;
 
     if (this.props.sparkline) {
       width = spanX * (SPARKLINE_STEP_WIDTH + SPARKLINE_BAR_PADDING);
     }
 
-    var graphWidth = width;
-    var graphHeight = height;
+    let graphWidth = width;
+    let graphHeight = height;
     if (this.props.thresholds) {
       graphWidth -= YAXIS_WIDTH;
     }
     if (xAxis.placement) {
       graphHeight -= XAXIS_HEIGHT;
     }
-    var graphTop = ('top' === xAxis.placement ? XAXIS_HEIGHT : 0);
+    let graphTop = ('top' === xAxis.placement ? XAXIS_HEIGHT : 0);
     // graphBottom is the bottom graph Y value
-    var graphBottom = ('bottom' === xAxis.placement ?
+    let graphBottom = ('bottom' === xAxis.placement ?
       (height - XAXIS_HEIGHT) : height);
 
-    var graphLeft = 0;
-    var graphRight = graphWidth;
+    let graphLeft = 0;
+    let graphRight = graphWidth;
     if (this.props.points) {
       graphLeft += POINT_RADIUS + 2;
       graphRight -= POINT_RADIUS + 2;
     }
 
-    var scaleX = (graphWidth / spanX);
-    var xStepWidth = Math.round(graphWidth / (xAxis.data.length - 1));
+    let scaleX = (graphWidth / spanX);
+    let xStepWidth = Math.round(graphWidth / (xAxis.data.length - 1));
     if ('bar' === this.props.type) {
       // allow room for bar width for last bar
       scaleX = (graphWidth / (spanX + (spanX / (xAxis.data.length - 1))));
       xStepWidth = Math.round(graphWidth / xAxis.data.length);
     }
-    var scaleY = (graphHeight / spanY);
-    var barPadding = Math.max(BAR_PADDING, Math.round(xStepWidth / 8));
+    let scaleY = (graphHeight / spanY);
+    let barPadding = Math.max(BAR_PADDING, Math.round(xStepWidth / 8));
     if (this.props.sparkline) {
       xStepWidth = SPARKLINE_STEP_WIDTH;
       barPadding = SPARKLINE_BAR_PADDING;
     }
 
-    var result = {
+    let result = {
       minX: minX,
       maxX: maxX,
       minY: minY,
@@ -262,15 +262,15 @@ class Chart extends Component {
   // Aligns the legend with the current position of the cursor, if any.
   _alignLegend () {
     if (this.state.activeXIndex >= 0 && this.refs.cursor) {
-      var bounds = this.state.bounds;
-      var cursorElement = this.refs.cursor;
-      var cursorRect = cursorElement.getBoundingClientRect();
-      var element = this.refs.chart;
-      var rect = element.getBoundingClientRect();
-      var legendElement = ReactDOM.findDOMNode(this.refs.legend);
-      var legendRect = legendElement.getBoundingClientRect();
+      let bounds = this.state.bounds;
+      let cursorElement = this.refs.cursor;
+      let cursorRect = cursorElement.getBoundingClientRect();
+      let element = this.refs.chart;
+      let rect = element.getBoundingClientRect();
+      let legendElement = ReactDOM.findDOMNode(this.refs.legend);
+      let legendRect = legendElement.getBoundingClientRect();
 
-      var left = cursorRect.left - rect.left - legendRect.width - 1;
+      let left = cursorRect.left - rect.left - legendRect.width - 1;
       // if the legend would be outside the graphic, orient it to the right.
       if (left < 0) {
         left += legendRect.width + 2;
@@ -288,12 +288,12 @@ class Chart extends Component {
     if (this.props.legend && 'below' !== this.props.legend.position) {
       this._alignLegend();
     }
-    var element = this.refs.chart;
-    var rect = element.getBoundingClientRect();
+    let element = this.refs.chart;
+    let rect = element.getBoundingClientRect();
     if (rect.width !== this.state.width || rect.height !== this.state.height) {
-      var bounds = this._bounds(this.props.series, this.props.xAxis,
+      let bounds = this._bounds(this.props.series, this.props.xAxis,
         rect.width, rect.height);
-      var width = rect.width;
+      let width = rect.width;
       if (this.props.sparkline) {
         width = bounds.graphWidth;
       }
@@ -307,20 +307,20 @@ class Chart extends Component {
 
   // Generates state based on the provided props.
   _stateFromProps (props, width, height) {
-    var bounds = this._bounds(props.series, props.xAxis, width, height);
-    var defaultXIndex = -1;
+    let bounds = this._bounds(props.series, props.xAxis, width, height);
+    let defaultXIndex = -1;
     if (props.series && props.series.length > 0) {
       defaultXIndex = 0;
     }
     if (props.hasOwnProperty('important')) {
       defaultXIndex = props.important;
     }
-    var activeXIndex = defaultXIndex;
+    let activeXIndex = defaultXIndex;
     if (this.state && this.state.activeXIndex >= 0) {
       activeXIndex = this.state.activeXIndex;
     }
     // normalize size
-    var size = props.size ||
+    let size = props.size ||
       (props.small ? 'small' :
         (props.large ? 'large' : null));
     return {
@@ -335,14 +335,14 @@ class Chart extends Component {
 
   // Translates X value to X coordinate.
   _translateX (x) {
-    var bounds = this.state.bounds;
+    let bounds = this.state.bounds;
     return Math.max(bounds.graphLeft,
       Math.min(bounds.graphRight, Math.round((x - bounds.minX) * bounds.scaleX)));
   }
 
   // Translates Y value to Y coordinate.
   _translateY (y) {
-    var bounds = this.state.bounds;
+    let bounds = this.state.bounds;
     // leave room for line width since strokes are aligned to the center
     return Math.max(1,
       (bounds.graphBottom - Math.max(1, this._translateHeight(y))));
@@ -350,7 +350,7 @@ class Chart extends Component {
 
   // Translates Y value to graph height.
   _translateHeight (y) {
-    var bounds = this.state.bounds;
+    let bounds = this.state.bounds;
     return Math.round((y - bounds.minY) * bounds.scaleY);
   }
 
@@ -371,25 +371,25 @@ class Chart extends Component {
   // ascending, descending or not. Peaks, valleys, and flats are
   // treated the same.
   _controlCoordinates (coordinates, index) {
-    var current = coordinates[index];
+    let current = coordinates[index];
     // Use previous and next coordinates when available, otherwise use
     // the current coordinate for them.
-    var previous = current;
+    let previous = current;
     if (index > 0) {
       previous = coordinates[index - 1];
     }
-    var next = current;
+    let next = current;
     if (index < coordinates.length - 1) {
       next = coordinates[index + 1];
     }
 
     // Put the control X coordinates midway between the coordinates.
-    var deltaX = (current[0] - previous[0]) / 2;
-    var deltaY;
+    let deltaX = (current[0] - previous[0]) / 2;
+    let deltaY;
 
     // Start with a flat slope. This works for peaks, valleys, and flats.
-    var first = [current[0] - deltaX, current[1]];
-    var second = [current[0] + deltaX, current[1]];
+    let first = [current[0] - deltaX, current[1]];
+    let second = [current[0] + deltaX, current[1]];
 
     if (previous[1] < current[1] && current[1] < next[1]) {
       // Ascending, use the minimum positive slope.
@@ -409,20 +409,20 @@ class Chart extends Component {
 
   // Converts the series data into paths for line or area types.
   _renderLinesOrAreas () {
-    var bounds = this.state.bounds;
-    var values = this.props.series.map(function (item, seriesIndex) {
+    let bounds = this.state.bounds;
+    let values = this.props.series.map(function (item, seriesIndex) {
 
       // Get all coordinates up front so they are available
       // if we are drawing a smooth chart.
-      var coordinates = item.values.map(function (value) {
+      let coordinates = item.values.map(function (value) {
         return this._coordinates(value);
       }, this);
 
-      var colorIndex = this._itemColorIndex(item, seriesIndex);
-      var commands = null;
-      var controlCoordinates = null;
-      var previousControlCoordinates = null;
-      var points = [];
+      let colorIndex = this._itemColorIndex(item, seriesIndex);
+      let commands = null;
+      let controlCoordinates = null;
+      let previousControlCoordinates = null;
+      let points = [];
 
       // Build the commands for this set of coordinates.
       coordinates.forEach(function (coordinate, index) {
@@ -447,7 +447,7 @@ class Chart extends Component {
         }
 
         if (this.props.points && ! this.props.sparkline) {
-          var x = Math.max(POINT_RADIUS + 1,
+          let x = Math.max(POINT_RADIUS + 1,
             Math.min(bounds.graphWidth - (POINT_RADIUS + 1), coordinate[0]));
           points.push(
             <circle key={index}
@@ -460,24 +460,24 @@ class Chart extends Component {
       }, this);
 
 
-      var linePath;
+      let linePath;
       if ('line' === this.props.type || this.props.points) {
-        var classes = [CLASS_ROOT + "__values-line",
+        let classes = [CLASS_ROOT + "__values-line",
           "color-index-" + colorIndex];
         linePath = (
           <path fill="none" className={classes.join(' ')} d={commands} />
         );
       }
 
-      var areaPath;
+      let areaPath;
       if ('area' === this.props.type) {
         // For area charts, close the path by drawing down to the bottom
         // and across to the bottom of where we started.
-        var close = 'L' + coordinates[coordinates.length - 1][0] +
+        let close = 'L' + coordinates[coordinates.length - 1][0] +
           ',' + bounds.graphBottom +
           'L' + coordinates[0][0] + ',' + bounds.graphBottom + 'Z';
-        var areaCommands = commands + close;
-        var classes = [CLASS_ROOT + "__values-area",
+        let areaCommands = commands + close;
+        let classes = [CLASS_ROOT + "__values-area",
           "color-index-" + colorIndex];
 
         areaPath = (
@@ -499,19 +499,19 @@ class Chart extends Component {
 
   // Converts the series data into rects for bar types.
   _renderBars () {
-    var bounds = this.state.bounds;
+    let bounds = this.state.bounds;
 
-    var values = bounds.xAxis.data.map(function (obj, xIndex) {
-      var baseY = bounds.minY;
-      var stepBars = this.props.series.map(function (item, seriesIndex) {
+    let values = bounds.xAxis.data.map(function (obj, xIndex) {
+      let baseY = bounds.minY;
+      let stepBars = this.props.series.map(function (item, seriesIndex) {
 
-        var colorIndex = item.colorIndex || ('graph-' + (seriesIndex + 1));
-        var value = item.values[xIndex];
-        var stepBarHeight = this._translateHeight(value[1]);
-        var stepBarBase = this._translateHeight(baseY);
+        let colorIndex = item.colorIndex || ('graph-' + (seriesIndex + 1));
+        let value = item.values[xIndex];
+        let stepBarHeight = this._translateHeight(value[1]);
+        let stepBarBase = this._translateHeight(baseY);
         baseY += value[1];
 
-        var classes = [CLASS_ROOT + "__values-bar", "color-index-" + colorIndex];
+        let classes = [CLASS_ROOT + "__values-bar", "color-index-" + colorIndex];
         if (! this.props.legend || xIndex === this.state.activeXIndex) {
           classes.push(CLASS_ROOT + "__values-bar--active");
         }
@@ -542,8 +542,8 @@ class Chart extends Component {
 
   // Converts the threshold value into a line.
   _renderThreshold () {
-    var y = this._translateY(this.props.threshold);
-    var commands = 'M0,' + y + 'L' + this.state.width + ',' + y;
+    let y = this._translateY(this.props.threshold);
+    let commands = 'M0,' + y + 'L' + this.state.width + ',' + y;
     return (
       <g className={CLASS_ROOT + "__threshold"}>
         <path fill="none" d={commands} />
@@ -552,9 +552,9 @@ class Chart extends Component {
   }
 
   _labelPosition (value, bounds) {
-    var x = this._translateX(value);
-    var startX = x;
-    var anchor;
+    let x = this._translateX(value);
+    let startX = x;
+    let anchor;
     if ('line' === this.props.type || 'area' === this.props.type) {
       // Place the text in the middle for line and area type charts.
       anchor = 'middle';
@@ -584,31 +584,31 @@ class Chart extends Component {
 
   // Converts the xAxis labels into texts.
   _renderXAxis () {
-    var bounds = this.state.bounds;
-    var labelY;
+    let bounds = this.state.bounds;
+    let labelY;
     if ('bottom' === bounds.xAxis.placement) {
       labelY = this.state.height - Math.round(XAXIS_HEIGHT * 0.3);
     } else {
       labelY = Math.round(XAXIS_HEIGHT * 0.6);
     }
-    var priorPosition = null;
-    var activePosition = null;
+    let priorPosition = null;
+    let activePosition = null;
     if (this.state.activeXIndex >= 0) {
       activePosition =
         this._labelPosition(bounds.xAxis.data[this.state.activeXIndex].value, bounds);
     }
-    var lastPosition = null;
+    let lastPosition = null;
     if (bounds.xAxis.data.length > 0) {
       lastPosition =
         this._labelPosition(bounds.xAxis.data[bounds.xAxis.data.length - 1].value, bounds);
     }
 
-    var labels = bounds.xAxis.data.map(function (obj, xIndex) {
-      var classes = [CLASS_ROOT + "__xaxis-index"];
+    let labels = bounds.xAxis.data.map(function (obj, xIndex) {
+      let classes = [CLASS_ROOT + "__xaxis-index"];
       if (xIndex === this.state.activeXIndex) {
         classes.push(CLASS_ROOT + "__xaxis-index--active");
       }
-      var position = this._labelPosition(obj.value, bounds);
+      let position = this._labelPosition(obj.value, bounds);
 
       // Ensure we don't overlap labels. But, make sure we show the first and
       // last ones.
@@ -640,21 +640,21 @@ class Chart extends Component {
 
   // Vertical bars for thresholds.
   _renderYAxis () {
-    var bounds = this.state.bounds;
-    var start = bounds.minY;
-    var end;
-    var width = Math.max(4, YAXIS_WIDTH / 2);
+    let bounds = this.state.bounds;
+    let start = bounds.minY;
+    let end;
+    let width = Math.max(4, YAXIS_WIDTH / 2);
 
-    var bars = this.props.thresholds.map(function (item, index) {
-      var classes = [CLASS_ROOT + "__bar"];
+    let bars = this.props.thresholds.map(function (item, index) {
+      let classes = [CLASS_ROOT + "__bar"];
       classes.push("color-index-" + (item.colorIndex || ('graph-' + (index + 1))));
       if (index < (this.props.thresholds.length - 1)) {
         end = this.props.thresholds[index + 1].value;
       } else {
         end = bounds.maxY;
       }
-      var height = this._translateHeight(end - start);
-      var y = this._translateY(end);
+      let height = this._translateHeight(end - start);
+      let y = this._translateY(end);
       start = end;
 
       return (
@@ -675,11 +675,11 @@ class Chart extends Component {
   }
 
   _activeSeriesAsString () {
-    var total = 0;
-    var seriesText = this._getActiveSeries().map(function (currentSeries) {
+    let total = 0;
+    let seriesText = this._getActiveSeries().map(function (currentSeries) {
       total += currentSeries.value;
 
-      var stringify = [
+      let stringify = [
         currentSeries.label
       ];
 
@@ -694,9 +694,9 @@ class Chart extends Component {
       return stringify.join('');
     }).join('; ');
 
-    var totalText = '';
+    let totalText = '';
     if (this.props.legend.total) {
-      var totalMessage = Intl.getMessage(this.context.intl, 'Total');
+      let totalMessage = Intl.getMessage(this.context.intl, 'Total');
       totalText = totalMessage + ': ' + total + this.props.units || '';
       seriesText += ', ' + totalText;
     }
@@ -707,33 +707,33 @@ class Chart extends Component {
   // Create vertical rects for each X data point.
   // These are used to track the mouse hover.
   _renderXBands (layer) {
-    var className = CLASS_ROOT + "__" + layer;
-    var bounds = this.state.bounds;
+    let className = CLASS_ROOT + "__" + layer;
+    let bounds = this.state.bounds;
 
-    var bands = bounds.xAxis.data.map(function (obj, xIndex) {
-      var classes = [className + "-xband"];
+    let bands = bounds.xAxis.data.map(function (obj, xIndex) {
+      let classes = [className + "-xband"];
       if (xIndex === this.state.activeXIndex) {
         classes.push(className + "-xband--active");
       }
 
       // For bar charts, the band is left aligned with the bars.
-      var x = this._translateX(obj.value);
+      let x = this._translateX(obj.value);
       if ('line' === this.props.type || 'area' === this.props.type) {
         // For line and area charts, the band is centered.
         x -= (bounds.xStepWidth / 2);
       }
 
-      var onMouseOver;
-      var onMouseOut;
+      let onMouseOver;
+      let onMouseOut;
       if ('front' === layer) {
         onMouseOver = this._onMouseOver.bind(this, xIndex);
         onMouseOut = this._onMouseOut.bind(this, xIndex);
       }
 
-      var xBandId = this.props.a11yTitleId + '_x_band_' + xIndex;
-      var xBandTitleId = this.props.a11yTitleId + '_x_band_title_' + xIndex;
+      let xBandId = this.props.a11yTitleId + '_x_band_' + xIndex;
+      let xBandTitleId = this.props.a11yTitleId + '_x_band_title_' + xIndex;
 
-      var seriesText = this._activeSeriesAsString();
+      let seriesText = this._activeSeriesAsString();
 
       return (
         <g key={xBandId} id={xBandId} className={classes.join(' ')}
@@ -757,26 +757,26 @@ class Chart extends Component {
 
   // Converts the active X index to a line.
   _renderCursor () {
-    var bounds = this.state.bounds;
-    var value = this.props.series[0].values[this.state.activeXIndex];
-    var coordinates = this._coordinates(value);
+    let bounds = this.state.bounds;
+    let value = this.props.series[0].values[this.state.activeXIndex];
+    let coordinates = this._coordinates(value);
     if ('bar' === this.props.type) {
       coordinates[0] += this.state.bounds.barPadding;
     }
     // Offset it just a little if it is at an edge.
-    var x = Math.max(1, Math.min(coordinates[0], this.state.bounds.graphWidth - 1));
-    var line = (
+    let x = Math.max(1, Math.min(coordinates[0], this.state.bounds.graphWidth - 1));
+    let line = (
       <line fill="none" x1={x} y1={bounds.graphTop} x2={x} y2={bounds.graphBottom} />
     );
 
-    var points;
+    let points;
     if (this.props.points) {
       // for area and line charts, include a dot at the intersection
       if ('line' === this.props.type || 'area' === this.props.type) {
         points = this.props.series.map(function (item, seriesIndex) {
           value = item.values[this.state.activeXIndex];
           coordinates = this._coordinates(value);
-          var colorIndex = this._itemColorIndex(item, seriesIndex);
+          let colorIndex = this._itemColorIndex(item, seriesIndex);
           return (
             <circle key={seriesIndex}
               className={CLASS_ROOT + "__cursor-point color-index-" + colorIndex}
@@ -796,7 +796,7 @@ class Chart extends Component {
 
   _getActiveSeries (addColorIndex) {
     return this.props.series.map(function (item) {
-      var datum = {
+      let datum = {
         value: item.values[this.state.activeXIndex][1],
         units: item.units || this.props.units
       };
@@ -813,8 +813,8 @@ class Chart extends Component {
 
   // Builds a Legend appropriate for the currently active X index.
   _renderLegend () {
-    var activeSeries = this._getActiveSeries(true);
-    var classes = [
+    let activeSeries = this._getActiveSeries(true);
+    let classes = [
       CLASS_ROOT + "__legend",
       CLASS_ROOT + "__legend--" + (this.props.legend.position || 'overlay')
     ];
@@ -827,8 +827,19 @@ class Chart extends Component {
     );
   }
 
+  _renderA11YTitle () {
+    let a11yTitle = this.props.a11yTitle;
+    if (!this.props.a11yTitle) {
+      let chartLabel = Intl.getMessage(this.context.intl, 'Chart');
+      let typeLabel = Intl.getMessage(this.context.intl, this.props.type);
+      a11yTitle = `${typeLabel} ${chartLabel}`;
+    }
+
+    return a11yTitle;
+  }
+
   render () {
-    var classes = [CLASS_ROOT];
+    let classes = [CLASS_ROOT];
     classes.push(CLASS_ROOT + "--" + this.props.type);
     if (this.state.size) {
       classes.push(CLASS_ROOT + "--" + this.state.size);
@@ -837,7 +848,7 @@ class Chart extends Component {
       classes.push(CLASS_ROOT + "--sparkline");
     }
 
-    var values = [];
+    let values = [];
     if ('line' === this.props.type || 'area' === this.props.type) {
       values = this._renderLinesOrAreas();
     } else if ('bar' === this.props.type) {
@@ -846,10 +857,10 @@ class Chart extends Component {
 
     if (values.length === 0) {
       classes.push(CLASS_ROOT + "--loading");
-      var valueClasses = [CLASS_ROOT + "__values"];
+      let valueClasses = [CLASS_ROOT + "__values"];
       valueClasses.push(CLASS_ROOT + "__values--loading");
       valueClasses.push("color-index-loading");
-      var commands = "M0," + (this.state.height / 2) +
+      let commands = "M0," + (this.state.height / 2) +
         " L" + this.state.width + "," + (this.state.height / 2);
       values.push(
         <g key="loading">
@@ -858,32 +869,32 @@ class Chart extends Component {
       );
     }
 
-    var threshold = null;
+    let threshold = null;
     if (this.props.threshold) {
       threshold = this._renderThreshold();
     }
 
-    var cursor = null;
-    var legend = null;
+    let cursor = null;
+    let legend = null;
     if (this.props.legend && this.state.activeXIndex >= 0 &&
       this.props.series[0].values.length > 0) {
       cursor = this._renderCursor();
       legend = this._renderLegend();
     }
 
-    var xAxis = null;
+    let xAxis = null;
     if (this.props.xAxis) {
       xAxis = this._renderXAxis();
     }
 
-    var yAxis = null;
+    let yAxis = null;
     if (this.props.thresholds) {
       yAxis = this._renderYAxis();
     }
 
-    var frontBands;
-    var activeDescendant;
-    var role = 'img';
+    let frontBands;
+    let activeDescendant;
+    let role = 'img';
     if (this.props.legend) {
       frontBands = this._renderXBands('front');
       activeDescendant = (
@@ -892,28 +903,19 @@ class Chart extends Component {
       role = 'tablist';
     }
 
-    var defaultTitle;
-    if (!this.props.a11yTitle) {
-      defaultTitle = [
-        'Chart, ',
-        'Type: ',
-        this.props.type
-      ].join(' ').trim();
+    let a11yTitle = this._renderA11YTitle();
+    let a11yTitleNode;
+    if (a11yTitle) {
+      a11yTitleNode = (
+        <title id={this.props.a11yTitleId}>{a11yTitle}</title>
+      );
     }
 
-    var titleKey = typeof this.props.a11yTitle !== "undefined" ?
-        this.props.a11yTitle : defaultTitle;
-    var a11yTitle = Intl.getMessage(this.context.intl, titleKey);
-
-    var defaultA11YDesc = '';
-    var descKey = typeof this.props.a11yDesc !== "undefined" ?
-        this.props.a11yDesc : defaultA11YDesc;
-
-    var a11yDescNode;
-    if (descKey) {
+    let a11yDescNode;
+    if (this.props.a11yDesc) {
       a11yDescNode = (
         <desc id={this.props.a11yDescId}>
-          {Intl.getMessage(this.context.intl, descKey)}
+          {this.props.a11yDesc}
         </desc>
       );
     }
@@ -925,7 +927,7 @@ class Chart extends Component {
           preserveAspectRatio="none" role={role} tabIndex="0"
           aria-activedescendant={activeDescendant}
           aria-labelledby={this.props.a11yTitleId + ' ' + this.props.a11yDescId}>
-          <title id={this.props.a11yTitleId}>{a11yTitle}</title>
+          {a11yTitleNode}
           {a11yDescNode}
           {xAxis}
           {yAxis}

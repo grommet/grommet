@@ -9,6 +9,12 @@ const RING_THICKNESS = baseUnit;
 
 class Circle extends Graphic {
 
+  constructor (props) {
+    super(props);
+    //needed in Graphic.js to fix minification issues
+    this.displayName = 'Circle';
+  }
+
   _stateFromProps (props) {
     if (! props.stacked &&
       (props.series.length - 1) * RING_THICKNESS > CIRCLE_RADIUS) {
@@ -38,5 +44,8 @@ class Circle extends Graphic {
       endAngle + this.state.angleOffset);
   }
 }
+
+//needed in Graphic.js to fix minification issues
+Circle.displayName = 'Circle';
 
 module.exports = Circle;

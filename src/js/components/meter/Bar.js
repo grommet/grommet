@@ -9,6 +9,12 @@ const MID_BAR_THICKNESS = BAR_THICKNESS / 2;
 
 class Bar extends Graphic {
 
+  constructor (props) {
+    super(props);
+    //needed in Graphic.js to fix minification issues
+    this.displayName = 'Bar';
+  }
+
   _viewBoxDimensions (props) {
     var viewBoxHeight;
     var viewBoxWidth;
@@ -62,5 +68,8 @@ class Bar extends Graphic {
     return commands;
   }
 }
+
+//needed in Graphic.js to fix minification issues
+Bar.displayName = 'Bar';
 
 module.exports = Bar;

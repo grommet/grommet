@@ -15,6 +15,12 @@ var SPIRAL_TEXT_PADDING = (baseUnit * 2);
 
 class Spiral extends Graphic {
 
+  constructor (props) {
+    super(props);
+    //needed in Graphic.js to fix minification issues
+    this.displayName = 'Spiral';
+  }
+
   _stateFromProps (props) {
     var viewBoxHeight = Math.max(SPIRAL_WIDTH,
       RING_THICKNESS * (props.series.length + 1) * 2);
@@ -85,5 +91,8 @@ class Spiral extends Graphic {
 Spiral.defaultProps = {
   thresholds: []
 };
+
+//needed in Graphic.js to fix minification issues
+Spiral.displayName = 'Spiral';
 
 module.exports = Spiral;
