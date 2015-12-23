@@ -29,6 +29,12 @@ function singleIndicatorCommands (centerX, centerY, radius, startAngle, endAngle
 
 export default class Arc extends Graphic {
 
+  constructor (props) {
+    super(props);
+    //needed in Graphic.js to fix minification issues
+    this.displayName = 'Arc';
+  }
+
   _viewBoxDimensions (props) {
     var viewBoxWidth;
     var viewBoxHeight;

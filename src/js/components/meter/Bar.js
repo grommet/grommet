@@ -1,13 +1,19 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-import { baseUnit, baseDimension } from './utils';
+import {baseUnit, baseDimension} from './utils';
 import Graphic from './Graphic';
 
 const BAR_LENGTH = baseDimension;
 const BAR_THICKNESS = baseUnit;
 const MID_BAR_THICKNESS = BAR_THICKNESS / 2;
 
-export default class Bar extends Graphic {
+class Bar extends Graphic {
+
+  constructor (props) {
+    super(props);
+    //needed in Graphic.js to fix minification issues
+    this.displayName = 'Bar';
+  }
 
   _viewBoxDimensions (props) {
     var viewBoxHeight;
@@ -62,3 +68,8 @@ export default class Bar extends Graphic {
     return commands;
   }
 }
+
+//needed in Graphic.js to fix minification issues
+Bar.displayName = 'Bar';
+
+module.exports = Bar;

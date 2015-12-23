@@ -178,7 +178,7 @@ export default class Graphic extends Component {
     let a11yTitle = this.props.a11yTitle;
     if (!a11yTitle) {
       let graphicTitle = Intl.getMessage(
-        this.context.intl, this.constructor.name
+        this.context.intl, this.displayName
       );
       let meterTitle = Intl.getMessage(this.context.intl, 'Meter');
 

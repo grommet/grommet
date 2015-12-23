@@ -1,13 +1,19 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-import { baseUnit, baseDimension, translateEndAngle, arcCommands } from './utils';
+import {baseUnit, baseDimension, translateEndAngle, arcCommands} from './utils';
 import Graphic from './Graphic';
 
 const CIRCLE_WIDTH = baseDimension;
 const CIRCLE_RADIUS = (baseDimension / 2) - (baseUnit / 2);
 const RING_THICKNESS = baseUnit;
 
-export default class Circle extends Graphic {
+class Circle extends Graphic {
+
+  constructor (props) {
+    super(props);
+    //needed in Graphic.js to fix minification issues
+    this.displayName = 'Circle';
+  }
 
   _stateFromProps (props) {
     if (! props.stacked &&
@@ -17,7 +23,7 @@ export default class Circle extends Graphic {
         " data values in a circle Meter");
     }
 
-    let state = {
+    var state = {
       startAngle: 1,
       anglePer: (! props.max) ? 0 : 358.0 / (props.max.value - props.min.value),
       angleOffset: 180,
@@ -29,12 +35,17 @@ export default class Circle extends Graphic {
   }
 
   _sliceCommands (trackIndex, item, startValue) {
-    let startAngle = translateEndAngle(this.state.startAngle, this.state.anglePer, startValue);
-    let endAngle = Math.max(startAngle + (RING_THICKNESS / 2),
+    var startAngle = translateEndAngle(this.state.startAngle, this.state.anglePer, startValue);
+    var endAngle = Math.max(startAngle + (RING_THICKNESS / 2),
       translateEndAngle(startAngle, this.state.anglePer, item.value));
-    let radius = Math.max(1, CIRCLE_RADIUS - (trackIndex * RING_THICKNESS));
+    var radius = Math.max(1, CIRCLE_RADIUS - (trackIndex * RING_THICKNESS));
     return arcCommands(CIRCLE_WIDTH / 2, CIRCLE_WIDTH / 2, radius,
       startAngle + this.state.angleOffset,
       endAngle + this.state.angleOffset);
   }
 }
+
+//needed in Graphic.js to fix minification issues
+Circle.displayName = 'Circle';
+
+module.exports = Circle;
