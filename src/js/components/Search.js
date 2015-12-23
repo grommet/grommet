@@ -10,7 +10,7 @@ import SearchIcon from './icons/base/Search';
 
 const CLASS_ROOT = "search";
 
-class Search extends Component {
+export default class Search extends Component {
 
   constructor(props) {
     super(props);
@@ -380,5 +380,3 @@ Search.defaultProps = {
   inline: false,
   responsive: true
 };
-
-module.exports = Search;

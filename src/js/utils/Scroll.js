@@ -4,11 +4,11 @@
  * Scroll provides smooth scrolling.
  */
 
-var SCROLL_STEPS = 25;
+const SCROLL_STEPS = 25;
 
-var Scroll = {
+export default {
 
-  _easeInOutQuad: function (t) {
+  _easeInOutQuad (t) {
     return (t < .5 ?  2 * t * t : -1 + (4 - 2 * t) * t);
   },
 
@@ -16,7 +16,7 @@ var Scroll = {
   // property: 'scrollTop' | 'scrollLeft'
   // delta: amount to scroll
 
-  scrollBy: function (component, property, delta) {
+  scrollBy (component, property, delta) {
     clearInterval(this._scrollToTimer);
     var start = component[property];
     var position = start + delta;
@@ -44,5 +44,3 @@ var Scroll = {
     }.bind(this), 8);
   }
 };
-
-module.exports = Scroll;

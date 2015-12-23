@@ -1,24 +1,12 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
-var FormattedMessage = require('../FormattedMessage');
+import React, { Component, PropTypes } from 'react';
+import FormattedMessage from '../FormattedMessage';
 
 var CLASS_ROOT = "logo-icon";
 
-var Grommet = React.createClass({
-
-  propTypes: {
-    a11yTitle: React.PropTypes.string,
-    large: React.PropTypes.bool,
-    size: React.PropTypes.oneOf(['small', 'medium', 'large']),
-    small: React.PropTypes.bool
-  },
-
-  getDefaultProps: function() {
-    return { a11yTitle: 'Grommet' };
-  },
-
-  render: function() {
+export default class Grommet extends Component {
+  render() {
     var classes = [CLASS_ROOT];
     if (this.props.small || 'small' === this.props.size) {
       classes.push(CLASS_ROOT + "--small");
@@ -49,7 +37,13 @@ var Grommet = React.createClass({
       </svg>
     );
   }
+}
 
-});
+Grommet.defaultProps = { a11yTitle: 'Grommet' };
 
-module.exports = Grommet;
+Grommet.propTypes = {
+  a11yTitle: PropTypes.string,
+  large: PropTypes.bool,
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  small: PropTypes.bool
+};

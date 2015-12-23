@@ -10,7 +10,7 @@ import Next from './icons/base/Next';
 
 const CLASS_ROOT = "carousel";
 
-class Carousel extends Component {
+export default class Carousel extends Component {
 
   constructor (props) {
     super (props);
@@ -218,5 +218,3 @@ Carousel.defaultProps = {
   infinite: true,
   persistentNav: true
 };
-
-module.exports = Carousel;

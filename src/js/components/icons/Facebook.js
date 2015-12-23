@@ -1,10 +1,9 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
+import React, { Component } from 'react';
 
-var Facebook = React.createClass({
-
-  render: function() {
+export default class Facebook extends Component {
+  render() {
     var className = 'control-icon control-icon-facebook';
     if (this.props.className) {
       className += ' ' + this.props.className;
@@ -17,7 +16,4 @@ var Facebook = React.createClass({
       </svg>
     );
   }
-
-});
-
-module.exports = Facebook;
+}

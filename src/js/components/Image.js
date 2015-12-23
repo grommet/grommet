@@ -4,7 +4,7 @@ import React, { Component, PropTypes } from 'react';
 
 const CLASS_ROOT = "image";
 
-class Image extends Component {
+export default class Image extends Component {
 
   render () {
     var classes = [CLASS_ROOT];
@@ -31,5 +31,3 @@ Image.propTypes = {
   src: PropTypes.string,
   size: PropTypes.oneOf(['small', 'medium', 'large'])
 };
-
-module.exports = Image;

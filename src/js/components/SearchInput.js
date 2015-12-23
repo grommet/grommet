@@ -9,7 +9,7 @@ import SearchIcon from './icons/base/Search';
 
 const CLASS_ROOT = "search-input";
 
-class SearchInput extends Component {
+export default class SearchInput extends Component {
 
   constructor(props) {
     super(props);
@@ -222,5 +222,3 @@ SearchInput.propTypes = {
     PropTypes.string
   ])
 };
-
-module.exports = SearchInput;

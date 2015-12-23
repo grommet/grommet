@@ -40,7 +40,7 @@ var _onKeyboardAcceleratorKeyPress = function (e) {
 // Remove listeners using stopListeningToKeyboard().
 // When the component that includes this is unmounted, the keyboard event
 // listener is removed automatically.
-var KeyboardAccelerators = {
+export default {
   _initKeyboardAccelerators: function () {
     var id = this.getDOMNode().getAttribute('data-reactid');
     _keyboardAccelerators[id] = {
@@ -161,5 +161,3 @@ var KeyboardAccelerators = {
     this.stopListeningToKeyboard();
   }
 };
-
-module.exports = KeyboardAccelerators;

@@ -1,8 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 import React from 'react';
-import {baseUnit, baseDimension, classRoot, translateEndAngle,
-  arcCommands, polarToCartesian} from './utils';
+import { baseUnit, baseDimension, classRoot, translateEndAngle, arcCommands, polarToCartesian } from './utils';
 import Graphic from './Graphic';
 
 const CLASS_ROOT = classRoot;
@@ -28,7 +27,7 @@ function singleIndicatorCommands (centerX, centerY, radius, startAngle, endAngle
   return d;
 }
 
-class Arc extends Graphic {
+export default class Arc extends Graphic {
 
   _viewBoxDimensions (props) {
     var viewBoxWidth;
@@ -96,5 +95,3 @@ class Arc extends Graphic {
     return indicator;
   }
 }
-
-module.exports = Arc;

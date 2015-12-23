@@ -4,7 +4,7 @@ import React, { Component, PropTypes } from 'react';
 
 const CLASS_ROOT = "form-field";
 
-class FormField extends Component {
+export default class FormField extends Component {
 
   constructor() {
     super();
@@ -97,5 +97,3 @@ FormField.propTypes = {
   label: PropTypes.node,
   required: PropTypes.bool
 };
-
-module.exports = FormField;

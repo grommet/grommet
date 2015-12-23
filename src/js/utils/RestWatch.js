@@ -1,11 +1,11 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var Rest = require('./Rest');
+import Rest from './Rest';
 
-var RECONNECT_TIMEOUT = 5000; // 5s
-var POLL_TIMEOUT = 10000; // 10s
+const RECONNECT_TIMEOUT = 5000; // 5s
+const POLL_TIMEOUT = 10000; // 10s
 
-var state = {
+let state = {
   ws: null,
   wsReady: false,
   timer: null,
@@ -15,9 +15,9 @@ var state = {
   socketUrl: null
 };
 
-var RestWatch = {
+export default {
 
-  _sendMessage: function(op, id, url, params) {
+  _sendMessage (op, id, url, params) {
     state.ws.send(JSON.stringify({
       op: op,
       id: id,
@@ -26,7 +26,7 @@ var RestWatch = {
     }));
   },
 
-  _onOpen: function() {
+  _onOpen () {
     state.wsReady = true;
     // send any requests we have queued up
     state.requests.forEach(function(request) {
@@ -34,11 +34,11 @@ var RestWatch = {
     }, this);
   },
 
-  _onError: function(error) {
+  _onError (error) {
     console.log('!!! RestWatch _onError TODO', error);
   },
 
-  _onMessage: function(event) {
+  _onMessage (event) {
     var message = JSON.parse(event.data);
     // Figure out which message this corresponds to so we
     // know which action to deliver the response with.
@@ -49,7 +49,7 @@ var RestWatch = {
     });
   },
 
-  _onClose: function() {
+  _onClose () {
     // lost connection, retry in a bit
     state.ws = null;
     state.wsReady = false;
@@ -57,7 +57,7 @@ var RestWatch = {
     state.timer = setTimeout(this.initialize.bind(this), RECONNECT_TIMEOUT);
   },
 
-  _getREST: function(request) {
+  _getREST (request) {
     request.pollBusy = true;
     Rest.get(request.url, request.params)
       .end(function(err, res) {
@@ -72,7 +72,7 @@ var RestWatch = {
       });
   },
 
-  _poll: function() {
+  _poll () {
     state.requests.forEach(function(request) {
       if (!request.pollBusy) {
         this._getREST(request);
@@ -80,7 +80,7 @@ var RestWatch = {
     });
   },
 
-  initialize: function(socketUrl) {
+  initialize (socketUrl) {
     if (!state.initialized && !state.ws && this.available() && (state.socketUrl || socketUrl)) {
       state.socketUrl = state.socketUrl || socketUrl;
       state.ws = new WebSocket(state.socketUrl);
@@ -92,11 +92,11 @@ var RestWatch = {
     }
   },
 
-  available: function() {
+  available () {
     return ('WebSocket' in window || 'MozWebSocket' in window);
   },
 
-  start: function(url, params, handler) {
+  start (url, params, handler) {
     this.initialize();
     var request = {
       id: state.nextRequestId,
@@ -118,7 +118,7 @@ var RestWatch = {
     return request.id;
   },
 
-  stop: function(requestId) {
+  stop (requestId) {
     state.requests = state.requests.filter(function(request) {
       if (request.id === requestId) {
         if (state.wsReady) {
@@ -130,5 +130,3 @@ var RestWatch = {
     }, this);
   }
 };
-
-module.exports = RestWatch;

@@ -1,10 +1,9 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
+import React, { Component } from 'react';
 
-var Search = React.createClass({
-
-  render: function() {
+export default class Search extends Component {
+  render() {
     var className = 'control-icon control-icon-search';
     if (this.props.className) {
       className += ' ' + this.props.className;
@@ -18,7 +17,4 @@ var Search = React.createClass({
       </svg>
     );
   }
-
-});
-
-module.exports = Search;
+}

@@ -8,7 +8,7 @@ import Box from './Box';
 
 const CLASS_ROOT = "header";
 
-class Header extends Component {
+export default class Header extends Component {
 
   constructor() {
     super();
@@ -116,5 +116,3 @@ Header.defaultProps = {
   responsive: false,
   tag: 'header'
 };
-
-module.exports = Header;

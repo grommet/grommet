@@ -11,7 +11,7 @@ const DEFAULT_HEIGHT = 200;
 const SMALL_HEIGHT = 120;
 const THIN_HEIGHT = 72;
 
-class Distribution extends Component {
+export default class Distribution extends Component {
 
   constructor(props) {
     super();
@@ -321,5 +321,3 @@ Distribution.propTypes = {
   units: PropTypes.string,
   vertical: PropTypes.bool
 };
-
-module.exports = Distribution;

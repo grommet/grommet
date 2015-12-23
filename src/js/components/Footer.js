@@ -8,7 +8,7 @@ import SkipLinkAnchor from './SkipLinkAnchor';
 
 const CLASS_ROOT = "footer";
 
-class Footer extends Component {
+export default class Footer extends Component {
 
   render () {
     var classes = [CLASS_ROOT];
@@ -46,11 +46,11 @@ class Footer extends Component {
 }
 
 Footer.propTypes = {
-  primary: React.PropTypes.bool,
-  large: React.PropTypes.bool, // Deprecated
+  primary: PropTypes.bool,
+  large: PropTypes.bool, // Deprecated
   size: PropTypes.oneOf(['small', 'medium', 'large']),
-  small: React.PropTypes.bool, // Deprecated
-  float: React.PropTypes.bool,
+  small: PropTypes.bool, // Deprecated
+  float: PropTypes.bool,
   ...Box.propTypes
 };
 
@@ -59,5 +59,3 @@ Footer.defaultProps = {
   direction: 'row',
   responsive: false
 };
-
-module.exports = Footer;

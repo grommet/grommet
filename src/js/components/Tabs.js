@@ -6,7 +6,7 @@ import Box from './Box';
 
 const CLASS_ROOT = "tabs";
 
-class Tabs extends Component {
+export default class Tabs extends Component {
 
   constructor(props) {
     super(props);
@@ -82,5 +82,3 @@ Tabs.contextTypes = {
 Tabs.defaultProps = {
   initialIndex: 0
 };
-
-module.exports = Tabs;

@@ -27,7 +27,7 @@
 |*|
 \*/
 
-var Cookies = {
+export default {
   get: function (sKey) {
     if (!sKey) { return null; }
     return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*" + encodeURIComponent(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null;
@@ -66,5 +66,3 @@ var Cookies = {
     return aKeys;
   }
 };
-
-module.exports = Cookies;

@@ -7,7 +7,7 @@ import Box from './Box';
 
 const CLASS_ROOT = "tile";
 
-class Tile extends Component {
+export default class Tile extends Component {
 
   render () {
     var classes = [CLASS_ROOT];
@@ -49,5 +49,3 @@ Tile.defaultProps = {
   direction: 'column',
   align: 'center'
 };
-
-module.exports = Tile;

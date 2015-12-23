@@ -4,7 +4,7 @@ import React, { Component, PropTypes } from 'react';
 
 const CLASS_ROOT = "paragraph";
 
-class Paragraph extends Component {
+export default class Paragraph extends Component {
 
   render () {
     var classes = [CLASS_ROOT];
@@ -24,5 +24,3 @@ class Paragraph extends Component {
 Paragraph.propTypes = {
   size: PropTypes.oneOf(['small', 'medium', 'large'])
 };
-
-module.exports = Paragraph;

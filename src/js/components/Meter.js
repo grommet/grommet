@@ -18,7 +18,7 @@ const TYPE_COMPONENT = {
   'spiral': Spiral
 };
 
-class Meter extends Component {
+export default class Meter extends Component {
 
   constructor(props) {
     super();
@@ -483,5 +483,3 @@ Meter.defaultProps = {
 Meter.contextTypes = {
   intl: PropTypes.object
 };
-
-module.exports = Meter;

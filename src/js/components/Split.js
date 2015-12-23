@@ -4,7 +4,7 @@ import React, { Component, PropTypes } from 'react';
 
 const CLASS_ROOT = "split";
 
-class Split extends Component {
+export default class Split extends Component {
 
   constructor () {
     super();
@@ -131,5 +131,3 @@ Split.defaultProps = {
   flex: 'both',
   priority: 'right'
 };
-
-module.exports = Split;

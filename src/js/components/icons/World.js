@@ -1,10 +1,9 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
+import React, { Component } from 'react';
 
-var World = React.createClass({
-
-  render: function() {
+export default class World extends Component {
+  render() {
     var className = 'control-icon control-icon-world';
     if (this.props.className) {
       className += ' ' + this.props.className;
@@ -20,7 +19,4 @@ var World = React.createClass({
       </svg>
     );
   }
-
-});
-
-module.exports = World;
+}

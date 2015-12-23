@@ -1,33 +1,36 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
-var ReactDOM = require('react-dom');
-var FormattedMessage = require('./FormattedMessage');
-var Layer = require('./Layer');
-var Menu = require('./Menu');
-var DOM = require('../utils/DOM');
+import React, { Component } from 'react';
+import { findDOMNode } from 'react-dom';
+import FormattedMessage from './FormattedMessage';
+import Layer from './Layer';
+import Menu from './Menu';
+import DOM from '../utils/DOM';
 
-var SkipLinks = React.createClass({
+export default class SkipLinks extends Component {
+  constructor(props, context) {
+    super(props, context);
+    this._onBlur = this._onBlur.bind(this);
+    this._onFocus = this._onFocus.bind(this);
+    this._updateAnchors = this._updateAnchors.bind(this);
+    this.state = {anchors: [], showLayer: false};
+  }
 
-  getInitialState: function () {
-    return {anchors: [], showLayer: false};
-  },
-
-  componentDidMount: function () {
+  componentDidMount() {
     this._updateAnchors();
-  },
+  }
 
-  componentWillReceiveProps: function (newProps) {
+  componentWillReceiveProps() {
     this.setState({routeChanged: true});
-  },
+  }
 
-  componentDidUpdate: function () {
+  componentDidUpdate() {
     if (this.state.routeChanged) {
       this.setState({routeChanged: false}, this._updateAnchors);
     }
-  },
+  }
 
-  _updateAnchors: function () {
+  _updateAnchors() {
     var anchorElements = document.querySelectorAll('.skip-link-anchor');
 
     var anchors = Array.prototype.map.call(anchorElements, function (anchorElement) {
@@ -38,30 +41,30 @@ var SkipLinks = React.createClass({
     });
 
     this.setState({anchors: anchors});
-  },
+  }
 
-  _onFocus: function () {
+  _onFocus() {
     if (!this.state.showLayer) {
       this.setState({showLayer: true});
     }
-  },
+  }
 
-  _onBlur: function () {
-    var skipLinksLayer = ReactDOM.findDOMNode(this.refs.skipLinksLayer);
+  _onBlur() {
+    var skipLinksLayer = findDOMNode(this.refs.skipLinksLayer);
     var activeElement = document.activeElement;
     if (!DOM.isDescendant(skipLinksLayer, activeElement)) {
       this.setState({showLayer: false});
     }
-  },
+  }
 
-  _onClick: function (destId) {
+  _onClick(destId) {
     return function (event) {
       var dest = document.getElementById(destId);
       dest.focus();
     };
-  },
+  }
 
-  render: function () {
+  render() {
 
     var anchorElements = this.state.anchors.map(function (anchor, index) {
       return (
@@ -98,6 +101,4 @@ var SkipLinks = React.createClass({
       </div>
     );
   }
-});
-
-module.exports = SkipLinks;
+}

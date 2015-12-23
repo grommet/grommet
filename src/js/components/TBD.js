@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 
-class TBD extends Component {
+export default class TBD extends Component {
   render () {
     return (
       <div className={"tbd"}>
@@ -11,5 +11,3 @@ class TBD extends Component {
     );
   }
 }
-
-module.exports = TBD;

@@ -1,8 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 import React from 'react';
-import {baseUnit, baseDimension, classRoot, translateEndAngle,
-  arcCommands} from './utils';
+import { baseUnit, baseDimension, classRoot, translateEndAngle, arcCommands } from './utils';
 import Graphic from './Graphic';
 
 const CLASS_ROOT = classRoot;
@@ -13,7 +12,7 @@ var RING_THICKNESS = baseUnit;
 // Allow for active value content next to a spiral meter
 var SPIRAL_TEXT_PADDING = (baseUnit * 2);
 
-class Spiral extends Graphic {
+export default class Spiral extends Graphic {
 
   _stateFromProps (props) {
     var viewBoxHeight = Math.max(SPIRAL_WIDTH,
@@ -85,5 +84,3 @@ class Spiral extends Graphic {
 Spiral.defaultProps = {
   thresholds: []
 };
-
-module.exports = Spiral;

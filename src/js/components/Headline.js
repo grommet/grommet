@@ -1,19 +1,11 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
+import React, { Component, PropTypes } from 'react';
 
-var CLASS_ROOT = "headline";
+const CLASS_ROOT = "headline";
 
-var Headline = React.createClass({
-
-  propTypes: {
-    colorIndex: React.PropTypes.string,
-    large: React.PropTypes.bool,
-    small: React.PropTypes.bool,
-    strong: React.PropTypes.bool
-  },
-
-  render: function() {
+export default class Headline extends Component {
+  render() {
     var classes = [CLASS_ROOT];
     if (this.props.large) {
       classes.push(CLASS_ROOT + "--large");
@@ -34,7 +26,11 @@ var Headline = React.createClass({
       </div>
     );
   }
+}
 
-});
-
-module.exports = Headline;
+Headline.propTypes = {
+  colorIndex: PropTypes.string,
+  large: PropTypes.bool,
+  small: PropTypes.bool,
+  strong: PropTypes.bool
+};

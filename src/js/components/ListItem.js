@@ -4,7 +4,7 @@ import React, { Component, PropTypes } from 'react';
 
 const CLASS_ROOT = "list-item";
 
-class ListItem extends Component {
+export default class ListItem extends Component {
 
   render () {
     var classes = [CLASS_ROOT];
@@ -54,5 +54,3 @@ ListItem.propTypes = {
   onClick: PropTypes.func,
   selected: PropTypes.bool
 };
-
-module.exports = ListItem;

@@ -14,7 +14,7 @@ import Button from './Button';
 
 const CLASS_ROOT = "calendar";
 
-class Calendar extends Component {
+export default class Calendar extends Component {
 
   constructor(props) {
     super(props);
@@ -310,5 +310,3 @@ Calendar.propTypes = {
 Calendar.defaultProps = {
   value: moment().format('YYYY-MM-DD')
 };
-
-module.exports = Calendar;

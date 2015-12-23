@@ -5,7 +5,7 @@ import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 
 const CLASS_ROOT = "tab";
 
-class Tab extends Component {
+export default class Tab extends Component {
 
   constructor() {
     super();
@@ -64,5 +64,3 @@ Tab.propTypes = {
   active: PropTypes.bool,
   id: PropTypes.string
 };
-
-module.exports = Tab;

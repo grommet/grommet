@@ -5,21 +5,11 @@
 // IntlProvider. The hope is that react-intl will change to obviate the
 // need for this component.
 
-var React = require('react');
-var FormattedMessage = require('react-intl').FormattedMessage;
+import React, { Component, PropTypes } from 'react';
+import { FormattedMessage } from 'react-intl';
 
-var GrommetFormattedMessage = React.createClass({
-
-  propTypes: {
-    id: React.PropTypes.string,
-    defaultMessage: React.PropTypes.string
-  },
-
-  contextTypes: {
-    intl: React.PropTypes.object
-  },
-
-  render: function() {
+export default class GrommetFormattedMessage extends Component {
+  render() {
     var result;
     if (this.context.intl) {
       result = (
@@ -36,7 +26,13 @@ var GrommetFormattedMessage = React.createClass({
 
     return result;
   }
+}
 
-});
+GrommetFormattedMessage.contextTypes = {
+  intl: PropTypes.object
+};
 
-module.exports = GrommetFormattedMessage;
+GrommetFormattedMessage.propTypes = {
+  id: PropTypes.string,
+  defaultMessage: PropTypes.string
+};

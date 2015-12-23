@@ -1,6 +1,6 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-module.exports = {
+export default {
   // http://my.opera.com/GreyWyvern/blog/show.dml/1671288
   // Do not attempt to change '==' to '===' in the following
   // method. Avoid type comparison is done on purpose.

@@ -1,16 +1,11 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
+import React, { Component, PropTypes } from 'react';
 
-var CLASS_ROOT = "attribute";
+const CLASS_ROOT = "attribute";
 
-var Attribute = React.createClass({
-
-  propTypes: {
-    label: React.PropTypes.string
-  },
-
-  render: function () {
+export default class Attribute extends Component {
+  render() {
     var classes = [CLASS_ROOT];
     return (
       <div className={classes.join(' ')}>
@@ -23,7 +18,8 @@ var Attribute = React.createClass({
       </div>
     );
   }
+}
 
-});
-
-module.exports = Attribute;
+Attribute.propTypes = {
+  label: PropTypes.string
+};

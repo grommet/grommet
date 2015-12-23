@@ -5,13 +5,13 @@ import FormattedMessage from './FormattedMessage';
 
 const CLASS_ROOT = "legend";
 
-class Legend extends Component {
+export default class Legend extends Component {
 
   constructor(props) {
     super(props);
 
     this._onActive = this._onActive.bind(this);
-    
+
     this.state = {activeIndex: this.props.activeIndex};
   }
 
@@ -134,5 +134,3 @@ Legend.propTypes = {
   units: PropTypes.string,
   value: PropTypes.number
 };
-
-module.exports = Legend;

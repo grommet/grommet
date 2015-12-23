@@ -1,12 +1,12 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
-import ReactDOM from 'react-dom';
+import { findDOMNode } from 'react-dom';
 import Status from './icons/Status';
 
 const CLASS_ROOT = "topology";
 
-class Label extends Component {
+export default class Label extends Component {
   render () {
     return (<span className={CLASS_ROOT + "__label"}>{this.props.children}</span>);
   }
@@ -216,7 +216,7 @@ class Topology extends Component {
       this.props.links.forEach(function (link, linkIndex) {
 
         let key = this.refs[link.colorIndex];
-        let style = window.getComputedStyle(ReactDOM.findDOMNode(key));
+        let style = window.getComputedStyle(findDOMNode(key));
         let color = style.getPropertyValue('background-color');
         context.strokeStyle = color;
         context.lineWidth = 2;
@@ -370,5 +370,3 @@ Topology.defaultProps = {
 Topology.Parts = Parts;
 Topology.Part = Part;
 Topology.Label = Label;
-
-module.exports = Topology;
