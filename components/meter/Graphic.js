@@ -220,7 +220,7 @@ var Graphic = (function (_Component) {
     value: function _renderA11YTitle() {
       var a11yTitle = this.props.a11yTitle;
       if (!a11yTitle) {
-        var graphicTitle = _utilsIntl2['default'].getMessage(this.context.intl, this.constructor.name);
+        var graphicTitle = _utilsIntl2['default'].getMessage(this.context.intl, this.displayName);
         var meterTitle = _utilsIntl2['default'].getMessage(this.context.intl, 'Meter');
 
         a11yTitle = graphicTitle + ' ' + meterTitle;

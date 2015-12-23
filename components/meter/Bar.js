@@ -25,11 +25,15 @@ var MID_BAR_THICKNESS = BAR_THICKNESS / 2;
 var Bar = (function (_Graphic) {
   _inherits(Bar, _Graphic);
 
-  function Bar() {
+  function Bar(props) {
     _classCallCheck(this, Bar);
 
-    _get(Object.getPrototypeOf(Bar.prototype), 'constructor', this).apply(this, arguments);
+    _get(Object.getPrototypeOf(Bar.prototype), 'constructor', this).call(this, props);
+    //needed in Graphic.js to fix minification issues
+    this.displayName = 'Bar';
   }
+
+  //needed in Graphic.js to fix minification issues
 
   _createClass(Bar, [{
     key: '_viewBoxDimensions',
@@ -90,5 +94,7 @@ var Bar = (function (_Graphic) {
 
   return Bar;
 })(_Graphic3['default']);
+
+Bar.displayName = 'Bar';
 
 module.exports = Bar;

@@ -40,10 +40,12 @@ function singleIndicatorCommands(centerX, centerY, radius, startAngle, endAngle,
 var Arc = (function (_Graphic) {
   _inherits(Arc, _Graphic);
 
-  function Arc() {
+  function Arc(props) {
     _classCallCheck(this, Arc);
 
-    _get(Object.getPrototypeOf(Arc.prototype), 'constructor', this).apply(this, arguments);
+    _get(Object.getPrototypeOf(Arc.prototype), 'constructor', this).call(this, props);
+    //needed in Graphic.js to fix minification issues
+    this.displayName = 'Arc';
   }
 
   _createClass(Arc, [{

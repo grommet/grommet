@@ -25,11 +25,15 @@ var RING_THICKNESS = _utils.baseUnit;
 var Circle = (function (_Graphic) {
   _inherits(Circle, _Graphic);
 
-  function Circle() {
+  function Circle(props) {
     _classCallCheck(this, Circle);
 
-    _get(Object.getPrototypeOf(Circle.prototype), 'constructor', this).apply(this, arguments);
+    _get(Object.getPrototypeOf(Circle.prototype), 'constructor', this).call(this, props);
+    //needed in Graphic.js to fix minification issues
+    this.displayName = 'Circle';
   }
+
+  //needed in Graphic.js to fix minification issues
 
   _createClass(Circle, [{
     key: '_stateFromProps',
@@ -60,5 +64,7 @@ var Circle = (function (_Graphic) {
 
   return Circle;
 })(_Graphic3['default']);
+
+Circle.displayName = 'Circle';
 
 module.exports = Circle;

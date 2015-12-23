@@ -33,10 +33,12 @@ var SPIRAL_TEXT_PADDING = _utils.baseUnit * 2;
 var Spiral = (function (_Graphic) {
   _inherits(Spiral, _Graphic);
 
-  function Spiral() {
+  function Spiral(props) {
     _classCallCheck(this, Spiral);
 
-    _get(Object.getPrototypeOf(Spiral.prototype), 'constructor', this).apply(this, arguments);
+    _get(Object.getPrototypeOf(Spiral.prototype), 'constructor', this).call(this, props);
+    //needed in Graphic.js to fix minification issues
+    this.displayName = 'Spiral';
   }
 
   _createClass(Spiral, [{
@@ -112,5 +114,8 @@ var Spiral = (function (_Graphic) {
 Spiral.defaultProps = {
   thresholds: []
 };
+
+//needed in Graphic.js to fix minification issues
+Spiral.displayName = 'Spiral';
 
 module.exports = Spiral;
