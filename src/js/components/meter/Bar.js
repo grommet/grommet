@@ -7,7 +7,7 @@ const BAR_LENGTH = baseDimension;
 const BAR_THICKNESS = baseUnit;
 const MID_BAR_THICKNESS = BAR_THICKNESS / 2;
 
-class Bar extends Graphic {
+export default class Bar extends Graphic {
 
   constructor (props) {
     super(props);
@@ -71,5 +71,3 @@ class Bar extends Graphic {
 
 //needed in Graphic.js to fix minification issues
 Bar.displayName = 'Bar';
-
-module.exports = Bar;

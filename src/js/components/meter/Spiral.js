@@ -13,7 +13,7 @@ var RING_THICKNESS = baseUnit;
 // Allow for active value content next to a spiral meter
 var SPIRAL_TEXT_PADDING = (baseUnit * 2);
 
-class Spiral extends Graphic {
+export default class Spiral extends Graphic {
 
   constructor (props) {
     super(props);
@@ -94,5 +94,3 @@ Spiral.defaultProps = {
 
 //needed in Graphic.js to fix minification issues
 Spiral.displayName = 'Spiral';
-
-module.exports = Spiral;

@@ -7,7 +7,7 @@ const CIRCLE_WIDTH = baseDimension;
 const CIRCLE_RADIUS = (baseDimension / 2) - (baseUnit / 2);
 const RING_THICKNESS = baseUnit;
 
-class Circle extends Graphic {
+export default class Circle extends Graphic {
 
   constructor (props) {
     super(props);
@@ -47,5 +47,3 @@ class Circle extends Graphic {
 
 //needed in Graphic.js to fix minification issues
 Circle.displayName = 'Circle';
-
-module.exports = Circle;
