@@ -4,7 +4,11 @@ import React, { Component, PropTypes } from 'react';
 var FormattedMessage = require('../FormattedMessage');
 
 export default class Filter extends Component {
-  render() {
+  componentDidMount () {
+    console.warn('This icon has been deprecated. Please check http://www.grommet.io/docs/develop/icon for the new set of icons.');
+  }
+
+  render () {
     var className = 'control-icon control-icon-filter';
     var a11yTitle = (
       <FormattedMessage id={this.props.a11yTitle} defaultMessage={this.props.a11yTitle} />

@@ -11,13 +11,14 @@ export default class CriticalStatus extends Component {
       className += ' ' + this.props.className;
     }
     if (typeof a11yTitle === "undefined") {
-      // this.props.a11yTitle emplty string is an acceptable value. Only if undefined
-      // should use the default title value.
+      // this.props.a11yTitle emplty string is an acceptable value.
+      // only if undefined should use the default title value.
       a11yTitle ='Critical';
     }
     var criticalTitleId = 'critical-title';
     return (
-      <svg className={className} viewBox="0 0 24 24" aria-labelledby={criticalTitleId} role="img" version="1.1">
+      <svg className={className} viewBox="0 0 24 24"
+        aria-labelledby={criticalTitleId} role="img" version="1.1">
         <title id={criticalTitleId}>
           <FormattedMessage id={a11yTitle} defaultMessage={a11yTitle} />
         </title>

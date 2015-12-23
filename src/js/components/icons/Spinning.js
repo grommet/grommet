@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 var CLASS_ROOT = "icon-spinning";
 
 export default class Spinning extends Component {
-  render() {
+  render () {
     var classes = [CLASS_ROOT];
     if (this.props.small) {
       classes.push(CLASS_ROOT + "--small");

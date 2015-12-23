@@ -8,7 +8,7 @@ import Menu from './Menu';
 import DOM from '../utils/DOM';
 
 export default class SkipLinks extends Component {
-  constructor(props, context) {
+  constructor (props, context) {
     super(props, context);
     this._onBlur = this._onBlur.bind(this);
     this._onFocus = this._onFocus.bind(this);
@@ -16,21 +16,21 @@ export default class SkipLinks extends Component {
     this.state = {anchors: [], showLayer: false};
   }
 
-  componentDidMount() {
+  componentDidMount () {
     this._updateAnchors();
   }
 
-  componentWillReceiveProps() {
+  componentWillReceiveProps () {
     this.setState({routeChanged: true});
   }
 
-  componentDidUpdate() {
+  componentDidUpdate () {
     if (this.state.routeChanged) {
       this.setState({routeChanged: false}, this._updateAnchors);
     }
   }
 
-  _updateAnchors() {
+  _updateAnchors () {
     var anchorElements = document.querySelectorAll('.skip-link-anchor');
 
     var anchors = Array.prototype.map.call(anchorElements, function (anchorElement) {
@@ -43,13 +43,13 @@ export default class SkipLinks extends Component {
     this.setState({anchors: anchors});
   }
 
-  _onFocus() {
+  _onFocus () {
     if (!this.state.showLayer) {
       this.setState({showLayer: true});
     }
   }
 
-  _onBlur() {
+  _onBlur () {
     var skipLinksLayer = findDOMNode(this.refs.skipLinksLayer);
     var activeElement = document.activeElement;
     if (!DOM.isDescendant(skipLinksLayer, activeElement)) {
@@ -57,14 +57,14 @@ export default class SkipLinks extends Component {
     }
   }
 
-  _onClick(destId) {
+  _onClick (destId) {
     return function (event) {
       var dest = document.getElementById(destId);
       dest.focus();
     };
   }
 
-  render() {
+  render () {
 
     var anchorElements = this.state.anchors.map(function (anchor, index) {
       return (
@@ -89,16 +89,14 @@ export default class SkipLinks extends Component {
     }
 
     return (
-      <div className="skip-links">
-        <Layer id="skip-link-layer" hidden={!this.state.showLayer}>
-          <div ref="skipLinksLayer">
-            <h2>
-              <FormattedMessage id="Skip to" defaultMessage="Skip to" />
-            </h2>
-            {menuComponent}
-          </div>
-        </Layer>
-      </div>
+      <Layer id="skip-link-layer" hidden={!this.state.showLayer}>
+        <div ref="skipLinksLayer">
+          <h2>
+            <FormattedMessage id="Skip to" defaultMessage="Skip to" />
+          </h2>
+          {menuComponent}
+        </div>
+      </Layer>
     );
   }
 }

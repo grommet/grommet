@@ -108,7 +108,7 @@ export default class Legend extends Component {
     }
 
     return (
-      <ol className={classes.join(' ')}>
+      <ol className={classes.join(' ')} role="presentation">
         {items.reverse()}
         {total}
       </ol>

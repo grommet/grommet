@@ -7,8 +7,8 @@ const CLASS_ROOT = "anchor";
 
 export default class Anchor extends Component {
   render () {
-    var classes = [CLASS_ROOT];
-    var icon;
+    let classes = [CLASS_ROOT];
+    let icon;
     if (this.props.primary) {
       classes.push(CLASS_ROOT + "--primary");
       icon = <RightIcon />;
@@ -19,9 +19,9 @@ export default class Anchor extends Component {
     if (this.props.className) {
       classes.push(this.props.className);
     }
-    var children = React.Children.map(this.props.children, function (child) {
+    let children = React.Children.map(this.props.children, function (child) {
       if (child && child.type && child.type.icon) {
-        return <span className={CLASS_ROOT + "__icon"}>{child}</span>;
+        return <span className={`${CLASS_ROOT}__icon`}>{child}</span>;
       } else {
         return child;
       }

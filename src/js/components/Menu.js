@@ -17,7 +17,7 @@ const CLASS_ROOT = "menu";
 
 // We have a separate module for the drop component
 // so we can transfer the router context.
-export default class MenuDrop extends Component {
+class MenuDrop extends Component {
 
   constructor() {
     super();
@@ -127,17 +127,24 @@ export default class MenuDrop extends Component {
     var classes = [CLASS_ROOT + "__drop"];
     var other = pick(this.props, keys(Box.propTypes));
 
-    var contents = [
-      React.cloneElement(this.props.control, {key: 'control'}),
+    var contents = [];
+    if (this.props.control) {
+      contents.push(
+        React.cloneElement(this.props.control, {key: 'control'})
+      );
+    }
+
+    contents.push(
       <Box key="nav" ref="navContainer" tag="nav" {...other}
         className={CLASS_ROOT + '__contents'}>
         {this.props.children}
       </Box>
-    ];
-    if (this.props.dropAlign.bottom) {
+    );
+
+    if (this.props.dropAlign && this.props.dropAlign.bottom) {
       contents.reverse();
     }
-    if (this.props.dropAlign.right) {
+    if (this.props.dropAlign && this.props.dropAlign.right) {
       classes.push(CLASS_ROOT + "__drop--align-right");
     }
     if (this.props.dropColorIndex) {
@@ -160,7 +167,7 @@ MenuDrop.propTypes = {
   control: PropTypes.node,
   dropAlign: Drop.alignPropType,
   dropColorIndex: PropTypes.string,
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
   onClick: PropTypes.func.isRequired,
   router: PropTypes.func,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
@@ -173,7 +180,7 @@ MenuDrop.childContextTypes = {
   router: PropTypes.func
 };
 
-class Menu extends Component {
+export default class Menu extends Component {
 
   constructor(props) {
     super(props);

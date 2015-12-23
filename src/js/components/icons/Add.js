@@ -3,7 +3,11 @@
 import React, { Component, PropTypes } from 'react';
 
 export default class Add extends Component {
-  render() {
+  componentDidMount () {
+    console.warn('This icon has been deprecated. Please check http://www.grommet.io/docs/develop/icon for the new set of icons.');
+  }
+
+  render () {
     var className = 'control-icon control-icon-add';
     if (this.props.className) {
       className += ' ' + this.props.className;

@@ -9,7 +9,7 @@ import Button from './Button';
 
 const CLASS_ROOT = "layer";
 
-export default class LayerContents extends Component {
+class LayerContents extends Component {
 
   constructor() {
     super();
@@ -115,7 +115,7 @@ LayerContents.childContextTypes = {
   store: PropTypes.object
 };
 
-class Layer extends Component {
+export default class Layer extends Component {
 
   componentDidMount () {
     this._originalFocusedElement = document.activeElement;

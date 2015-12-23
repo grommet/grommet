@@ -87,9 +87,7 @@ export default class Chart extends Component {
     }
   }
 
-  _onRequestForPreviousLegend (e) {
-    e.stopPropagation();
-    e.stopImmediatePropagation();
+  _onRequestForPreviousLegend () {
     if (document.activeElement === this.refs.chart) {
 
       let totalBandCount = (

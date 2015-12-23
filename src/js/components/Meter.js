@@ -20,7 +20,7 @@ const TYPE_COMPONENT = {
 
 export default class Meter extends Component {
 
-  constructor(props) {
+  constructor (props) {
     super();
 
     this._initialTimeout = this._initialTimeout.bind(this);

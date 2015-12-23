@@ -12,20 +12,20 @@ import Label from './status/Label';
 const CLASS_ROOT = "status-icon";
 
 export default class Status extends Component {
-  constructor(props, context) {
+  constructor (props, context) {
     super(props, context);
     this.state = this._stateFromProps(props);
   }
 
-  componentWillReceiveProps(newProps) {
+  componentWillReceiveProps (newProps) {
     this.setState(this._stateFromProps(newProps));
   }
 
-  _stateFromProps({size, small, large}) {
+  _stateFromProps ({size, small, large}) {
     return {size: size || (small ? 'small' : (large ? 'large' : null))};
   }
 
-  render() {
+  render () {
     let classes = [CLASS_ROOT];
     let { a11yTitle } = this.props;
     let { size } = this.state;
