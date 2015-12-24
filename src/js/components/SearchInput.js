@@ -79,9 +79,25 @@ export default class SearchInput extends Component {
     document.removeEventListener('click', this._onRemoveDrop);
   }
 
+  _fireDOMChange () {
+    var event = new Event('change', {
+      'bubbles': true,
+      'cancelable': true
+    });
+    // We use dispatchEvent to have the browser fill out the event fully.
+    this.refs.input.dispatchEvent(event);
+    // Manually dispatched events aren't delivered by React, so we notify too.
+    this.props.onDOMChange(event);
+  }
+
   _onInputChange (event) {
     this.setState({dropActive: true, activeSuggestionIndex: -1});
-    this.props.onChange(event.target.value, false);
+    if (this.props.onChange) {
+      this.props.onChange(event.target.value, false);
+    }
+    if (this.props.onDOMChange) {
+      this._fireDOMChange();
+    }
   }
 
   _onAddDrop (event) {
@@ -110,13 +126,23 @@ export default class SearchInput extends Component {
     if (this.state.activeSuggestionIndex >= 0) {
       var suggestion = this.props.suggestions[this.state.activeSuggestionIndex];
       this.setState({value: suggestion});
-      this.props.onChange(suggestion, true);
+      if (this.props.onChange) {
+        this.props.onChange(suggestion, true);
+      }
+      if (this.props.onSelect) {
+        this.props.onSelect(suggestion);
+      }
     }
   }
 
   _onClickSuggestion (suggestion) {
     this.setState({value: suggestion, dropActive: false});
-    this.props.onChange(suggestion, true);
+    if (this.props.onChange) {
+      this.props.onChange(suggestion, true);
+    }
+    if (this.props.onSelect) {
+      this.props.onSelect(suggestion);
+    }
   }
 
   _onFocus () {
@@ -204,6 +230,8 @@ SearchInput.propTypes = {
   id: PropTypes.string,
   name: PropTypes.string,
   onChange: PropTypes.func,
+  onDOMChange: PropTypes.func,
+  onSelect: PropTypes.func,
   placeHolder: PropTypes.string,
   suggestions: PropTypes.arrayOf(
     PropTypes.oneOfType([
