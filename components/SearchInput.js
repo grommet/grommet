@@ -117,10 +117,27 @@ var SearchInput = (function (_Component) {
       document.removeEventListener('click', this._onRemoveDrop);
     }
   }, {
+    key: '_fireDOMChange',
+    value: function _fireDOMChange() {
+      var event = new Event('change', {
+        'bubbles': true,
+        'cancelable': true
+      });
+      // We use dispatchEvent to have the browser fill out the event fully.
+      this.refs.input.dispatchEvent(event);
+      // Manually dispatched events aren't delivered by React, so we notify too.
+      this.props.onDOMChange(event);
+    }
+  }, {
     key: '_onInputChange',
     value: function _onInputChange(event) {
       this.setState({ dropActive: true, activeSuggestionIndex: -1 });
-      this.props.onChange(event.target.value, false);
+      if (this.props.onChange) {
+        this.props.onChange(event.target.value, false);
+      }
+      if (this.props.onDOMChange) {
+        this._fireDOMChange();
+      }
     }
   }, {
     key: '_onAddDrop',
@@ -154,14 +171,24 @@ var SearchInput = (function (_Component) {
       if (this.state.activeSuggestionIndex >= 0) {
         var suggestion = this.props.suggestions[this.state.activeSuggestionIndex];
         this.setState({ value: suggestion });
-        this.props.onChange(suggestion, true);
+        if (this.props.onChange) {
+          this.props.onChange(suggestion, true);
+        }
+        if (this.props.onSelect) {
+          this.props.onSelect(suggestion);
+        }
       }
     }
   }, {
     key: '_onClickSuggestion',
     value: function _onClickSuggestion(suggestion) {
       this.setState({ value: suggestion, dropActive: false });
-      this.props.onChange(suggestion, true);
+      if (this.props.onChange) {
+        this.props.onChange(suggestion, true);
+      }
+      if (this.props.onSelect) {
+        this.props.onSelect(suggestion);
+      }
     }
   }, {
     key: '_onFocus',
@@ -256,6 +283,8 @@ SearchInput.propTypes = {
   id: _react.PropTypes.string,
   name: _react.PropTypes.string,
   onChange: _react.PropTypes.func,
+  onDOMChange: _react.PropTypes.func,
+  onSelect: _react.PropTypes.func,
   placeHolder: _react.PropTypes.string,
   suggestions: _react.PropTypes.arrayOf(_react.PropTypes.oneOfType([_react.PropTypes.shape({
     label: _react.PropTypes.string,
