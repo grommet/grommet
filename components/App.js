@@ -87,8 +87,8 @@ var App = (function (_Component) {
       return _react2['default'].createElement(
         'div',
         { lang: this.state.lang, className: classes.join(' ') },
-        _react2['default'].createElement(_SkipLinks2['default'], null),
-        this.props.children
+        this.props.children,
+        _react2['default'].createElement(_SkipLinks2['default'], null)
       );
     }
   }]);

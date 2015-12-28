@@ -187,7 +187,7 @@ var SearchInput = (function (_Component) {
         this.props.onChange(suggestion, true);
       }
       if (this.props.onSelect) {
-        this.props.onSelect(suggestion);
+        this.props.onSelect({ target: this.refs.input, suggestion: suggestion });
       }
     }
   }, {

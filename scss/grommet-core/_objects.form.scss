@@ -52,42 +52,6 @@
     }
   }
 
-  .layer & {
-
-    @include media-query(lap-and-up) {
-      //max-height: 100%;
-      //max-width: 100%;
-      //overflow: auto;
-      padding: round($inuit-base-spacing-unit * 0.75) double($inuit-base-spacing-unit) double($inuit-base-spacing-unit);
-    }
-
-    @include media-query(palm) {
-      padding-left: $inuit-base-spacing-unit;
-      padding-right: $inuit-base-spacing-unit;
-      //width: 100%;
-
-      > .form-fields {
-        margin-top: $inuit-base-spacing-unit;
-      }
-
-      > .form-fields > fieldset > .form-field,
-      > .form-fields > .form-field {
-        margin-left: - $inuit-base-spacing-unit;
-        margin-right: - $inuit-base-spacing-unit;
-      }
-    }
-
-    &--sticky {
-      display: flex;
-      flex-direction: column;
-
-      > .header,
-      > .footer {
-        flex: 0 0 auto;
-      }
-    }
-  }
-
   &--fill {
     min-width: 0px;
   }

@@ -224,7 +224,15 @@ var Layer = (function (_Component2) {
         element.id = this.props.id;
       }
       element.className = this._classesFromProps().join(' ');
-      this._element = document.body.insertBefore(element, document.body.firstChild);
+      // insert before .app, if possible.
+      var appElements = document.querySelectorAll('.app');
+      var beforeElement;
+      if (appElements.length > 0) {
+        beforeElement = appElements[0];
+      } else {
+        beforeElement = document.body.firstChild;
+      }
+      this._element = beforeElement.parentNode.insertBefore(element, beforeElement);
     }
   }, {
     key: '_handleAriaHidden',
@@ -257,7 +265,7 @@ var Layer = (function (_Component2) {
       this._handleAriaHidden(true);
 
       _reactDom2['default'].unmountComponentAtNode(this._element);
-      document.body.removeChild(this._element);
+      this._element.parentNode.removeChild(this._element);
       this._element = null;
     }
   }, {
