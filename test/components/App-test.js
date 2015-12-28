@@ -46,7 +46,7 @@ describe('Grommet App', function() {
 
     expect(appElement.props.className).to.contain('app');
 
-    expect(appElement.props.children[1].props.children).to.equal(
+    expect(appElement.props.children[0].props.children).to.equal(
       "App Body"
     );
   });
