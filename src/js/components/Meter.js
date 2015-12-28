@@ -108,7 +108,12 @@ var Meter = React.createClass({
     a11yTitleId: React.PropTypes.string,
     a11yDescId: React.PropTypes.string,
     a11yDesc: React.PropTypes.string,
-    indicators: React.PropTypes.bool
+    indicators: React.PropTypes.bool,
+	maximum: React.PropTypes.number,
+	average: React.PropTypes.number,
+	timestamp: React.PropTypes.number,
+	date1: React.PropTypes.string, //date for maximum
+	date2: React.PropTypes.string, //date for average
   },
 
   mixins: [IntlMixin],
@@ -119,7 +124,7 @@ var Meter = React.createClass({
       a11yRole: 'img',
       a11yTitleId: 'meter-title',
       a11yDescId: 'meter-desc',
-      indicators:false,
+	  indicators: false
     };
   },
 
@@ -139,7 +144,13 @@ var Meter = React.createClass({
   },
 
   componentWillReceiveProps: function (newProps) {
+    var previo = this.state;
     var state = this._stateFromProps(newProps);
+    state.mouseX = previo.mouseX;
+    state.mouseY = previo.mouseY;
+    state.showTooltip = previo.showTooltip;
+    state.tooltipStyle = previo.tooltipStyle;
+    state.message = previo.message;
     this.setState(state);
     this._onResize();
   },
@@ -148,8 +159,8 @@ var Meter = React.createClass({
     clearTimeout(this._initialTimer);
     clearTimeout(this._resizeTimer);
     window.removeEventListener('resize', this._onResize);
-  },
-
+  },  
+  
   _initialTimeout: function () {
     this.setState({
       initial: false,
@@ -206,7 +217,7 @@ var Meter = React.createClass({
         var cumulative = 0;
         thresholds.some(function (threshold) {
           cumulative += threshold.value;
-          if (item.value < cumulative) {
+          if (item.value <= cumulative) {
             item.colorIndex = threshold.colorIndex || 'graph-1';
             return true;
           }
@@ -257,7 +268,7 @@ var Meter = React.createClass({
     return thresholds;
   },
 
-  _importantIndex: function (series) {
+  _importantIndex: function (series) { 
     var result = null;
     if (series.length === 1) {
       result = 0;
@@ -356,7 +367,20 @@ var Meter = React.createClass({
     var importantIndex = this._importantIndex(series);
     // Determine the viewBox dimensions
     var viewBoxDimensions = this._viewBoxDimensions(series);
-
+    var mouseX;
+    var mouseY;
+    if (props.mouseX>0) {
+        mouseX=props.mouseX;
+    }
+    else {
+        mouseX=0;
+    }
+    if (props.mouseY>0) {
+        mouseY=props.mouseY;
+    }
+    else {
+        mouseY=0;
+    }
     var state = {
       importantIndex: importantIndex,
       activeIndex: importantIndex,
@@ -366,18 +390,12 @@ var Meter = React.createClass({
       max: max,
       total: total,
       viewBoxWidth: viewBoxDimensions[0],
-      viewBoxHeight: viewBoxDimensions[1],      
-      highIndicator:0,
-      averageIndicator: 0,
-      averageSum: 0,
-      averageCounter: 0,
-      date1:"",
-      date2:"",
+      viewBoxHeight: viewBoxDimensions[1],
       message:"",
+	  tooltipStyle: "", 
       showTooltip: false,
-      mouse: false,
-      mouseX: "0px",
-      mouseY: "0px"                
+      mouseX: mouseX,
+      mouseY: mouseY                
     };
 
     if ('arc' === this.props.type) {
@@ -442,6 +460,7 @@ var Meter = React.createClass({
   },
 
   _buildPath: function (commands, interactive, item, index, classes) {
+	  //for build path onMouseMove={this._handleMouseOver.bind(null, index)} in case needed
     if (interactive) {
       var listeners = this._interactionListeners(interactive, item, index);
       return (
@@ -452,7 +471,7 @@ var Meter = React.createClass({
       );
     } else {
       return (
-        <path key={index} className={classes.join(' ')} d={commands} onMouseOver={this._handleMouseOver.bind(index)} onMouseMove={this._handleMouseOver.bind(index)} onMouseOut={this._handleMouseOut.bind(index)}/>
+        <path key={index} className={classes.join(' ')} d={commands} onMouseOver={this._handleMouseOver.bind(null, index)} onMouseOut={this._handleMouseOut.bind(null, index)}/>
       );
     }
   },
@@ -667,8 +686,8 @@ var Meter = React.createClass({
         <text key={item.label || index} x={textX} y={textY}
           textAnchor="end" fontSize={16}
           className={classes.join(' ')}
-          onMouseOver={this._onActivate.bind(this, index)}
-          onMouseOut={this._onActivate.bind(this, this.state.importantIndex)}
+          onMouseOver={this._onActivate.bind(null, index)}
+          onMouseOut={this._onActivate.bind(null, this.state.importantIndex)}
           onClick={item.onClick} >
           {item.label}
         </text>
@@ -692,8 +711,8 @@ var Meter = React.createClass({
     );
   },
 
-  _renderIndicators: function (type, id) {
-    //Render high and average indicator for all values
+  _renderIndicators: function (type, id, series) {
+    //Render maximum and average indicator for all values
     var start;
     var commands;
     var classes;
@@ -702,121 +721,113 @@ var Meter = React.createClass({
     var radio;
     var indicator;
     var index;
-    if (id === "high") {
-      indicator = this.state.highIndicator;
-      index = 1;
+    if (id === "maximum") {
+      indicator = this.props.maximum;
+      index = 10;
     } else if (id === "average") {
-      indicator = this.state.averageIndicator;
-      index = 2;
+      indicator = this.props.average;	
+      index = 20;
     }
     if(this.props.type === "bar") {
       classes = [CLASS_ROOT + "__bar", CLASS_ROOT + "__bar--active", "color-index-" + type];
       start = this._translateBarWidth(indicator);
-      commands = this._barCommands(start, 1);
+      commands = this._barCommands(start, 2);
     } else if (this.props.type === "arc" || this.props.type === "circle") {
       angle = this.state.startAngle;
       classes = [CLASS_ROOT + "__slice", CLASS_ROOT + "__slice--active", "color-index-" + type];
+      //classes = [CLASS_ROOT + "__slice", CLASS_ROOT + "__slice--active", "indicatorBar"];
       endangle = this._translateEndAngle(angle, indicator);
-      start = this._translateEndAngle(angle, indicator - 1);
+      start = this._translateEndAngle(angle, indicator - 2);
       commands = this._arcCommands(start, endangle);
     } else if (this.props.type === "spiral") {
       angle = this.state.startAngle;
       classes = [CLASS_ROOT + "__slice", CLASS_ROOT + "__slice--active", "color-index-" + type];
       endangle = this._translateEndAngle(angle, indicator);
-      start = this._translateEndAngle(angle, indicator - 1);
+      start = this._translateEndAngle(angle, indicator - 2);
       radio = this.state.startRadius;
       commands = this._spiralCommands(start, endangle, radio);
     }
     return this._buildPath(commands, null, null, index, classes);
   },
 
-  _maxValue: function() {
-    //Get high value for high indicator
-    var high = this._seriesMax(this.state.series);
-    if (high > this.state.highIndicator) {
-      this.state.highIndicator = high;
-      this.state.date1 = this._createDate("/");
-    }
-  },
-
-  _sumValues:function(e) {
-    //Acumulated values for average values
-    var sum = 0;
-    var self = this;
-    e.map(function(data, i) {
-      sum += data.value;
-      self.state.averageCounter += 1;
-    });
-    return sum;
-  },
-
-  _averageValue: function() {
-    //Get average value for average indicator
-    if (this.state.mouse === false) {
-      this.state.averageSum += this._sumValues(this.state.series);
-      this.state.averageIndicator = this.state.averageSum / this.state.averageCounter;
-      this.state.date2 = this._createDate("/");
-    }
-  },
-
-  _createDate: function(c){
-    //Make custom date for high and average indicators
-    var date = new Date();
-    var day = date.getDate();
-    if (date.getDate()<10)
-    day="0"+date.getDate();
-    var month = date.getMonth()+1;
-    if (date.getMonth()+1<10)
-    month="0"+date.getMonth()+1;
-    var year = date.getFullYear();
-    var hour = date.getHours();
-    if (date.getHours()<10)
-    hour="0"+date.getHours();
-    var mins = date.getMinutes();
-    if (date.getMinutes()<10)
-    mins="0"+date.getMinutes();
-    var secs = date.getSeconds();
-    if (date.getSeconds()<10)
-    secs="0"+date.getSeconds();
-    var fech;
-    if (c=="-") fech = month+"-"+day+"-"+year+" "+hour+":"+mins+":"+secs;
-    if (c=="/") fech = month+"/"+day+"/"+year+" "+hour+":"+mins+":"+secs;
-    return fech;
-  },
-
-   _handleMouseOver: function(i) {
-    //handle mouse over for indicators to show tooltip   
+   _handleMouseOver: function(d, i) {
+    //handle mouse over for indicators to show tooltip
     var message;
-    if (i.dispatchMarker === ".1.0.0.0.0.2.3.$1") {
-      this.setState({mouseY: i.clientY});
-      this.setState({mouseX: i.clientX});    
-      message = "-Value: " + this.state.highIndicator.toFixed(2) + " -Date:" + this.state.date1;
-      this.setState({message: message});
-      this.setState({showTooltip: true});
+    var positionMX;
+    var positionMY;
+    var positionAX;
+    var positionAY;
+    var tooltipstyleM;
+    var tooltipstyleA;
+    
+    if (this.props.maximum <= 35) {
+    	//left align
+        positionMX = i.clientX-170;
+        positionMY = i.clientY-27;
+        tooltipstyleM = "tooltipAruba rightarrow";
     }
-    if (i.dispatchMarker === ".1.0.0.0.0.2.4.$2") {
-      this.setState({mouseY: i.clientY});
-      this.setState({mouseX: i.clientX});
-      message = "-Value: " + this.state.averageIndicator.toFixed(2) + " -Date:" + this.state.date2;
-      this.setState({message: message});
-      this.setState({showTooltip: true});
+    else if (this.props.maximum > 35 && this.props.maximum < 65) {
+    	//center align
+    	positionMX = i.clientX-75;
+    	positionMY = i.clientY-80;
+    	tooltipstyleM = "tooltipAruba buttonarrow";
     }
-    this.setState({mouse: true});
+    else if (this.props.maximum >= 65) {
+    	//righ align
+    	positionMX = i.clientX+18;
+    	positionMY = i.clientY-27;
+    	tooltipstyleM = "tooltipAruba leftarrow";
+    }
+    
+    if (this.props.average <= 35) {
+    	//left align
+        positionAX = i.clientX-170;
+        positionAY = i.clientY-27;
+        tooltipstyleA = "tooltipAruba rightarrow";
+    }
+    else if (this.props.average > 35 && this.props.average < 65) {
+    	//center align
+        positionAX = i.clientX-75;
+        positionAY = i.clientY-80;
+        tooltipstyleA = "tooltipAruba buttonarrow";
+    }
+    else if (this.props.average >= 65) {
+    	//righ align
+        positionAX = i.clientX+18;
+        positionAY = i.clientY-27;
+        tooltipstyleA = "tooltipAruba leftarrow";
+    }
+    
+    if (d === 10) {
+      message = "Maximum: " + this.props.maximum + " Date: " + this.props.date1;
+      this.setState({message: message, showTooltip: true, mouseX: positionMX, mouseY: positionMY, tooltipStyle: tooltipstyleM });
+    }
+    if (d === 20) {
+      message = " Average: " + this.props.average + " Date: " + this.props.date2;
+      this.setState({message: message, showTooltip: true, mouseX: positionAX, mouseY: positionAY, tooltipStyle: tooltipstyleA });
+    }
   },
 
   _handleMouseOut: function(i) {
     //handle mouse out for indicators to hide tooltip
-    this.setState({message: ""});
-    this.setState({showTooltip: false});
-    this.setState({mouse: false});
+    this.setState({message: "", showTooltip: false});
   },
 
   _renderToolTip: function (){
     // Render div for show tooltip
+    var divStyle;
+    if (this.state.showTooltip == true) {
+        divStyle = {top:this.state.mouseY, left:this.state.mouseX, visibility: "visible"};
+    }
+    if (this.state.showTooltip == false) {
+        divStyle = {visibility: "hidden"};
+    }
     return(
-      <div ref="toolt" className="tooltip" style={{top:this.state.mouseY,left:this.state.mouseX}}>
-       {this.state.message}
-      </div>
+          <div>
+              <div id="tooltip" ref="tooltip" className={this.state.tooltipStyle} style={divStyle}>
+                  {this.state.message}
+              </div>
+          </div>
     )
   },
 
@@ -850,22 +861,19 @@ var Meter = React.createClass({
     var labels;
     var width;
     var height;
-    var hindicator;
-    var aindicator;
+    var maxindicator;
+    var avgindicator;
     var tooltip;
-    
-    this._maxValue();
-    this._averageValue();
-
     if (this.props.indicators === true) {
-      hindicator = this._renderIndicators("graph-3","high");
-      aindicator = this._renderIndicators("graph-2","average");
+    	if (this.props.maximum>0) {
+            maxindicator = this._renderIndicators("graph-max","maximum");
+            tooltip = this._renderToolTip();
+        }
+    	if (this.props.average>0) {
+            avgindicator = this._renderIndicators("graph-ave","average");
+            tooltip = this._renderToolTip();
+        }
     }
-
-    if (this.state.showTooltip === true) {
-      tooltip = this._renderToolTip();
-    }
-
 
     if ('arc' === this.props.type || 'circle' === this.props.type) {
       values = this._renderArcOrCircle(this.state.series, this.props.series);
@@ -968,7 +976,7 @@ var Meter = React.createClass({
       <div className={classes.join(' ')}>
         <div ref="activeGraphic" className={CLASS_ROOT + "__active-graphic"}>
           <div className={CLASS_ROOT + "__labeled-graphic"}>
-            <a href="#" role={a11yRole} tabIndex="0"
+            <a role={a11yRole} tabIndex="0"
               aria-labelledby={this.props.a11yTitleId + ' ' + this.props.a11yDescId}>
               {tooltip}
               <title id={this.props.a11yTitleId}>{this.getGrommetIntlMessage(a11yTitle)}</title>
@@ -982,10 +990,10 @@ var Meter = React.createClass({
                   {values}
                 </g>
                 <g className={CLASS_ROOT + "__values"}>
-                  {hindicator}
+                  {maxindicator}
                 </g>
                 <g className={CLASS_ROOT + "__values"}>
-                  {aindicator}
+                  {avgindicator}
                 </g>
                 {labels}
                 {singleIndicator}
