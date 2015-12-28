@@ -58,8 +58,8 @@ export default class App extends Component {
 
     return (
       <div lang={this.state.lang} className={classes.join(' ')}>
-        <SkipLinks />
         {this.props.children}
+        <SkipLinks />
       </div>
     );
   }

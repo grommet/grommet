@@ -165,7 +165,15 @@ export default class Layer extends Component {
       element.id = this.props.id;
     }
     element.className = this._classesFromProps().join(' ');
-    this._element = document.body.insertBefore(element, document.body.firstChild);
+    // insert before .app, if possible.
+    var appElements = document.querySelectorAll('.app');
+    var beforeElement;
+    if (appElements.length > 0) {
+      beforeElement = appElements[0];
+    } else {
+      beforeElement = document.body.firstChild;
+    }
+    this._element = beforeElement.parentNode.insertBefore(element, beforeElement);
   }
 
   _handleAriaHidden (hideOverlay) {
@@ -200,7 +208,7 @@ export default class Layer extends Component {
     this._handleAriaHidden(true);
 
     ReactDOM.unmountComponentAtNode(this._element);
-    document.body.removeChild(this._element);
+    this._element.parentNode.removeChild(this._element);
     this._element = null;
   }
 
