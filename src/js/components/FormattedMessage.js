@@ -33,6 +33,6 @@ GrommetFormattedMessage.contextTypes = {
 };
 
 GrommetFormattedMessage.propTypes = {
-  id: PropTypes.string,
+  id: PropTypes.string.isRequired,
   defaultMessage: PropTypes.string
 };
