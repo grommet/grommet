@@ -74,6 +74,6 @@ Status.propTypes = {
   large: PropTypes.bool,
   small: PropTypes.bool,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
-  value: PropTypes.oneOf(['critical', 'warning', 'ok', 'unknown', 'disabled',
-    'Critical', 'Warning', 'OK', 'Unknown', 'Disabled'])
+  value: PropTypes.oneOf(['critical', 'warning', 'ok', 'unknown', 'disabled', 'label',
+    'Critical', 'Warning', 'OK', 'Unknown', 'Disabled', 'Label'])
 };
