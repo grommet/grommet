@@ -73,13 +73,15 @@ var LoginForm = (function (_Component) {
     value: function render() {
       var classes = [CLASS_ROOT];
 
-      var errors = this.props.errors.map((function (error, index) {
-        return _react2['default'].createElement(
-          'div',
-          { key: index, className: CLASS_ROOT + "__error" },
-          _react2['default'].createElement(_FormattedMessage2['default'], { id: error, defaultMessage: error })
-        );
-      }).bind(this));
+      var errors = this.props.errors.map(function (error, index) {
+        if (error) {
+          return _react2['default'].createElement(
+            'div',
+            { key: index, className: CLASS_ROOT + "__error" },
+            _react2['default'].createElement(_FormattedMessage2['default'], { id: error, defaultMessage: error })
+          );
+        }
+      });
 
       var logo;
       if (this.props.logo) {

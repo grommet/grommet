@@ -65,7 +65,7 @@ GrommetFormattedMessage.contextTypes = {
 };
 
 GrommetFormattedMessage.propTypes = {
-  id: _react.PropTypes.string,
+  id: _react.PropTypes.string.isRequired,
   defaultMessage: _react.PropTypes.string
 };
 module.exports = exports['default'];
