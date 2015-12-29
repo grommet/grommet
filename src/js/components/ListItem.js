@@ -6,6 +6,10 @@ const CLASS_ROOT = "list-item";
 
 export default class ListItem extends Component {
 
+  componentDidMount () {
+    console.warn('ListItem is deprecated and will be removed in an upcoming version');
+  }
+
   render () {
     var classes = [CLASS_ROOT];
     if (this.props.onClick) {
@@ -32,14 +36,8 @@ export default class ListItem extends Component {
     return (
       <li className={classes.join(' ')} onClick={this.props.onClick}>
         {image}
-        {/*}
-        <span className={CLASS_ROOT + "__text"}>
-        {*/}
-          <span className={CLASS_ROOT + "__label"}>{this.props.label}</span>
-          <span className={CLASS_ROOT + "__annotation"}>{this.props.annotation}</span>
-        {/*}
-        </span>
-        {*/}
+        <span className={CLASS_ROOT + "__label"}>{this.props.label}</span>
+        <span className={CLASS_ROOT + "__annotation"}>{this.props.annotation}</span>
       </li>
     );
   }
