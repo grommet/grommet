@@ -22,10 +22,6 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactIntl = require('react-intl');
 
-var _ListItem = require('./ListItem');
-
-var _ListItem2 = _interopRequireDefault(_ListItem);
-
 var _iconsSpinning = require('./icons/Spinning');
 
 var _iconsSpinning2 = _interopRequireDefault(_iconsSpinning);
@@ -36,8 +32,138 @@ var _utilsInfiniteScroll2 = _interopRequireDefault(_utilsInfiniteScroll);
 
 var CLASS_ROOT = "list";
 
-var List = (function (_Component) {
-  _inherits(List, _Component);
+var SchemaPropType = _react.PropTypes.arrayOf(_react.PropTypes.shape({
+  attribute: _react.PropTypes.string,
+  'default': _react.PropTypes.node,
+  image: _react.PropTypes.bool,
+  label: _react.PropTypes.string,
+  primary: _react.PropTypes.bool,
+  secondary: _react.PropTypes.bool,
+  timestamp: _react.PropTypes.bool,
+  uid: _react.PropTypes.bool
+}));
+
+var ListItem = (function (_Component) {
+  _inherits(ListItem, _Component);
+
+  function ListItem() {
+    _classCallCheck(this, ListItem);
+
+    _get(Object.getPrototypeOf(ListItem.prototype), 'constructor', this).apply(this, arguments);
+  }
+
+  _createClass(ListItem, [{
+    key: '_renderValue',
+    value: function _renderValue(item, scheme) {
+      var result;
+      var value = item[scheme.attribute] || scheme['default'];
+      if (scheme.image) {
+        if (typeof value === 'string') {
+          result = _react2['default'].createElement('img', { src: value, alt: scheme.label || 'image' });
+        } else {
+          result = value;
+        }
+      } else if (scheme.timestamp) {
+        result = _react2['default'].createElement(_reactIntl.FormattedTime, { value: value,
+          day: 'numeric',
+          month: 'narrow',
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit' });
+      } else {
+        result = value;
+      }
+      return result;
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this = this;
+
+      var classes = [CLASS_ROOT + "-item"];
+      if (this.props.selected) {
+        classes.push(CLASS_ROOT + "-item--selected");
+      }
+      if (this.props.className) {
+        classes.push(this.props.className);
+      }
+
+      var contents = undefined;
+      if (this.props.renderItem) {
+
+        contents = this.props.renderItem(this.props.item);
+      } else {
+        (function () {
+
+          if (_this.props.direction) {
+            classes.push(CLASS_ROOT + "-item--" + _this.props.direction);
+          }
+
+          var item = _this.props.item;
+          var image = undefined;
+          var label = undefined;
+          var annotation = undefined;
+
+          _this.props.schema.forEach(function (scheme) {
+            if (scheme.image) {
+              image = _react2['default'].createElement(
+                'span',
+                { className: CLASS_ROOT + "-item__image" },
+                this._renderValue(item, scheme)
+              );
+            } else if (scheme.primary) {
+              label = _react2['default'].createElement(
+                'span',
+                { className: CLASS_ROOT + "-item__label" },
+                this._renderValue(item, scheme)
+              );
+            } else if (scheme.secondary) {
+              annotation = _react2['default'].createElement(
+                'span',
+                { className: CLASS_ROOT + "-item__annotation" },
+                this._renderValue(item, scheme)
+              );
+            }
+          }, _this);
+
+          contents = [image, _react2['default'].createElement(
+            'span',
+            { className: CLASS_ROOT + "-item__label" },
+            label
+          ), _react2['default'].createElement(
+            'span',
+            { className: CLASS_ROOT + "-item__annotation" },
+            annotation
+          )];
+        })();
+      }
+
+      if (this.props.onClick) {
+        classes.push(CLASS_ROOT + "-item--selectable");
+      }
+
+      return _react2['default'].createElement(
+        'li',
+        { className: classes.join(' '), onClick: this.props.onClick },
+        contents
+      );
+    }
+  }]);
+
+  return ListItem;
+})(_react.Component);
+
+ListItem.propTypes = {
+  direction: _react.PropTypes.oneOf(['row', 'column']),
+  item: _react.PropTypes.object.isRequired,
+  onClick: _react.PropTypes.func,
+  renderItem: _react.PropTypes.func,
+  schema: SchemaPropType,
+  selected: _react.PropTypes.bool
+};
+
+var List = (function (_Component2) {
+  _inherits(List, _Component2);
 
   function List() {
     _classCallCheck(this, List);
@@ -84,27 +210,28 @@ var List = (function (_Component) {
       }
     }
   }, {
-    key: '_renderValue',
-    value: function _renderValue(item, scheme) {
-      var result;
-      var value = item[scheme.attribute] || scheme['default'];
-      if (scheme.image) {
-        if (typeof value === 'string') {
-          result = _react2['default'].createElement('img', { src: value, alt: scheme.label || 'image' });
-        } else {
-          result = value;
+    key: '_renderItem',
+    value: function _renderItem(item) {
+      var uid = undefined;
+      var selected = undefined;
+      var onClick = undefined;
+
+      this.props.schema.forEach(function (scheme) {
+        if (scheme.uid) {
+          uid = item[scheme.attribute];
+          if (uid === this.props.selected) {
+            selected = true;
+          }
         }
-      } else if (scheme.timestamp) {
-        result = _react2['default'].createElement(_reactIntl.FormattedTime, { value: value,
-          day: 'numeric',
-          month: 'narrow',
-          hour: '2-digit',
-          minute: '2-digit',
-          second: '2-digit' });
-      } else {
-        result = value;
+      }, this);
+
+      if (this.props.onSelect) {
+        onClick = this._onClickItem.bind(this, item);
       }
-      return result;
+
+      return _react2['default'].createElement(ListItem, { key: uid, item: item, schema: this.props.schema,
+        direction: this.props.itemDirection,
+        selected: selected, onClick: onClick });
     }
   }, {
     key: 'render',
@@ -124,36 +251,7 @@ var List = (function (_Component) {
       }
 
       var items = this.props.data.map(function (item) {
-        var uid;
-        var image;
-        var primary;
-        var secondary;
-        var selected;
-        var onClick;
-
-        this.props.schema.forEach(function (scheme) {
-          if (scheme.image) {
-            image = this._renderValue(item, scheme);
-          } else if (scheme.primary) {
-            primary = this._renderValue(item, scheme);
-          } else if (scheme.secondary) {
-            secondary = this._renderValue(item, scheme);
-          }
-          if (scheme.uid) {
-            uid = item[scheme.attribute];
-            if (uid === this.props.selected) {
-              selected = true;
-            }
-          }
-        }, this);
-
-        if (this.props.onSelect) {
-          onClick = this._onClickItem.bind(this, item);
-        }
-
-        return _react2['default'].createElement(_ListItem2['default'], { key: uid, image: image, label: primary,
-          annotation: secondary, selected: selected,
-          direction: this.props.itemDirection, onClick: onClick });
+        return this._renderItem(item);
       }, this);
 
       var more;
@@ -197,16 +295,8 @@ List.propTypes = {
   large: _react.PropTypes.bool,
   onMore: _react.PropTypes.func,
   onSelect: _react.PropTypes.func,
-  schema: _react.PropTypes.arrayOf(_react.PropTypes.shape({
-    attribute: _react.PropTypes.string,
-    'default': _react.PropTypes.node,
-    image: _react.PropTypes.bool,
-    label: _react.PropTypes.string,
-    primary: _react.PropTypes.bool,
-    secondary: _react.PropTypes.bool,
-    timestamp: _react.PropTypes.bool,
-    uid: _react.PropTypes.bool
-  })).isRequired,
+  renderItem: _react.PropTypes.func,
+  schema: SchemaPropType,
   selected: _react.PropTypes.oneOfType([_react.PropTypes.string, // uid
   _react.PropTypes.arrayOf(_react.PropTypes.string)]),
   size: _react.PropTypes.oneOf(['small', 'medium', 'large']),
