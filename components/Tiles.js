@@ -103,7 +103,8 @@ var Tiles = (function (_Component) {
         window.addEventListener('resize', this._onResize);
         document.addEventListener('wheel', this._onWheel);
         this._trackHorizontalScroll();
-        this._layout();
+        // give browser a chance to stabilize
+        setTimeout(this._layout, 10);
       }
     }
   }, {
