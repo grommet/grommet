@@ -80,8 +80,9 @@ var Tile = (function (_Component) {
 exports['default'] = Tile;
 
 Tile.propTypes = _extends({
+  onClick: _react.PropTypes.func,
   selected: _react.PropTypes.bool,
-  status: _react.PropTypes.string,
+  status: _react.PropTypes.string, // deprecated, will be removed
   wide: _react.PropTypes.bool
 }, _Box2['default'].propTypes);
 

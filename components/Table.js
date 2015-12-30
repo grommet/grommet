@@ -32,8 +32,12 @@ var _utilsInfiniteScroll = require('../utils/InfiniteScroll');
 
 var _utilsInfiniteScroll2 = _interopRequireDefault(_utilsInfiniteScroll);
 
+var _utilsSelection = require('../utils/Selection');
+
+var _utilsSelection2 = _interopRequireDefault(_utilsSelection);
+
 var CLASS_ROOT = "table";
-var SELECTED_CLASS = CLASS_ROOT + "__row--selected";
+var SELECTED_CLASS = CLASS_ROOT + "-row--selected";
 
 var Table = (function (_Component) {
   _inherits(Table, _Component);
@@ -46,8 +50,11 @@ var Table = (function (_Component) {
     this._onClick = this._onClick.bind(this);
     this._onResize = this._onResize.bind(this);
 
+    if (props.selection) {
+      console.warn('The "selection" property of Table has been deprecated.' + ' Instead, use the "selected" property. The behavior is the same.' + ' The property name was changed to align with List and Tiles.');
+    }
     this.state = {
-      selection: this._normalizeSelection(props.selection),
+      selected: _utilsSelection2['default'].normalize(props.selected || props.selection),
       rebuildMirror: props.scrollable
     };
   }
@@ -55,7 +62,7 @@ var Table = (function (_Component) {
   _createClass(Table, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      this._alignSelection();
+      this._setSelection();
       if (this.props.scrollable) {
         this._buildMirror();
         this._alignMirror();
@@ -67,21 +74,23 @@ var Table = (function (_Component) {
     }
   }, {
     key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps(newProps) {
+    value: function componentWillReceiveProps(nextProps) {
       if (this._scroll) {
         _utilsInfiniteScroll2['default'].stopListeningForScroll(this._scroll);
         this._scroll = null;
       }
-      if (newProps.hasOwnProperty('selection')) {
-        this.setState({ selection: this._normalizeSelection(newProps.selection) });
+      if (nextProps.hasOwnProperty('selected') || nextProps.hasOwnProperty('selection')) {
+        this.setState({
+          selected: _utilsSelection2['default'].normalize(nextProps.selected || nextProps.selection)
+        });
       }
-      this.setState({ rebuildMirror: newProps.scrollable });
+      this.setState({ rebuildMirror: nextProps.scrollable });
     }
   }, {
     key: 'componentDidUpdate',
     value: function componentDidUpdate(prevProps, prevState) {
-      if (!(0, _lodashLangIsEqual2['default'])(this.state.selection, prevState.selection)) {
-        this._alignSelection();
+      if (!(0, _lodashLangIsEqual2['default'])(this.state.selected, prevState.selected)) {
+        this._setSelection();
       }
       if (this.state.rebuildMirror) {
         this._buildMirror();
@@ -103,36 +112,24 @@ var Table = (function (_Component) {
       window.removeEventListener('resize', this._onResize);
     }
   }, {
-    key: '_normalizeSelection',
-    value: function _normalizeSelection(selection) {
-      var result;
-      if (undefined === selection || null === selection) {
-        result = [];
-      } else if (typeof selection === 'number') {
-        result = [selection];
-      } else {
-        result = selection;
+    key: '_container',
+    value: function _container() {
+      var containerElement = this.refs.table;
+      var tableBodies = containerElement.getElementsByTagName("TBODY");
+      if (tableBodies.length > 0) {
+        containerElement = tableBodies[0];
       }
-      return result;
+      return containerElement;
     }
   }, {
-    key: '_clearSelected',
-    value: function _clearSelected() {
-      var rows = this.refs.table.querySelectorAll("." + SELECTED_CLASS);
-      for (var i = 0; i < rows.length; i++) {
-        rows[i].classList.remove(SELECTED_CLASS);
-      }
-    }
-  }, {
-    key: '_alignSelection',
-    value: function _alignSelection() {
-      this._clearSelected();
-      if (null !== this.state.selection) {
-        var tbody = this.refs.table.querySelectorAll('tbody')[0];
-        this.state.selection.forEach(function (rowIndex) {
-          tbody.childNodes[rowIndex].classList.add(SELECTED_CLASS);
-        });
-      }
+    key: '_setSelection',
+    value: function _setSelection() {
+      _utilsSelection2['default'].set({
+        containerElement: this._container(),
+        childSelector: 'tr',
+        selectedClass: SELECTED_CLASS,
+        selectedIndexes: this.state.selected
+      });
     }
   }, {
     key: '_onClick',
@@ -141,71 +138,21 @@ var Table = (function (_Component) {
         return;
       }
 
-      var element = event.target;
-      while (element.nodeName !== 'TR') {
-        element = element.parentNode;
-      }
+      var selected = _utilsSelection2['default'].click(event, {
+        containerElement: this._container(),
+        childSelector: 'tr',
+        selectedClass: SELECTED_CLASS,
+        multiSelect: 'multiple' === this.props.selectable,
+        priorSelectedIndexes: this.state.selected
+      });
+      this.setState({ selected: selected });
 
-      var parentElement = element.parentNode;
-      if (element && parentElement.nodeName === 'TBODY') {
-
-        var index;
-        for (index = 0; index < parentElement.childNodes.length; index++) {
-          if (parentElement.childNodes[index] === element) {
-            break;
-          }
+      if (this.props.onSelect) {
+        // notify caller that the selection has changed
+        if (selected.length === 1) {
+          selected = selected[0];
         }
-
-        var selection = this.state.selection.slice(0);
-        var selectionIndex = selection.indexOf(index);
-
-        if ('multiple' === this.props.selectable && event.shiftKey) {
-
-          // select from nearest selected item to the currently selected item
-          var closestIndex = -1;
-          selection.forEach(function (selectIndex, arrayIndex) {
-            if (-1 === closestIndex) {
-              closestIndex = selectIndex;
-            } else if (Math.abs(index - selectIndex) < Math.abs(index - closestIndex)) {
-              closestIndex = selectIndex;
-            }
-          });
-          for (var i = index; i !== closestIndex;) {
-            selection.push(i);
-            if (closestIndex < index) {
-              i -= 1;
-            } else {
-              i += 1;
-            }
-          }
-          // remove text selection
-          window.getSelection().removeAllRanges();
-        } else if (('multiple' === this.props.selectable || -1 !== selectionIndex) && (event.ctrlKey || event.metaKey)) {
-
-          // toggle
-          if (-1 === selectionIndex) {
-            element.classList.add(SELECTED_CLASS);
-            selection.push(index);
-          } else {
-            element.classList.remove(SELECTED_CLASS);
-            selection.splice(selectionIndex, 1);
-          }
-        } else {
-
-          this._clearSelected();
-          selection = [index];
-          element.classList.add(SELECTED_CLASS);
-        }
-
-        this.setState({ selection: selection });
-
-        if (this.props.onSelect) {
-          // notify caller that the selection has changed
-          if (selection.length === 1) {
-            selection = selection[0];
-          }
-          this.props.onSelect(selection);
-        }
+        this.props.onSelect(selected);
       }
     }
   }, {
@@ -305,15 +252,10 @@ var Table = (function (_Component) {
 exports['default'] = Table;
 
 Table.propTypes = {
-  selection: _react.PropTypes.oneOfType([_react.PropTypes.number, _react.PropTypes.arrayOf(_react.PropTypes.number)]),
   onMore: _react.PropTypes.func,
+  onSelect: _react.PropTypes.func,
   scrollable: _react.PropTypes.bool,
   selectable: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.oneOf(['multiple'])]),
-  onSelect: _react.PropTypes.func
-};
-
-Table.defaultProps = {
-  scrollable: false,
-  selectable: false
+  selected: _react.PropTypes.oneOfType([_react.PropTypes.number, _react.PropTypes.arrayOf(_react.PropTypes.number)])
 };
 module.exports = exports['default'];

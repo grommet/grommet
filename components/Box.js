@@ -186,6 +186,7 @@ Box.propTypes = {
   onClick: _react.PropTypes.func,
   justify: _react.PropTypes.oneOf(['start', 'center', 'between', 'end']),
   pad: _react.PropTypes.oneOfType([_react.PropTypes.oneOf(['none', 'small', 'medium', 'large']), _react.PropTypes.shape({
+    between: _react.PropTypes.oneOf(['none', 'small', 'medium', 'large']),
     horizontal: _react.PropTypes.oneOf(['none', 'small', 'medium', 'large']),
     vertical: _react.PropTypes.oneOf(['none', 'small', 'medium', 'large'])
   })]),

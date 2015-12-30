@@ -22,6 +22,10 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactIntl = require('react-intl');
 
+var _lodashLangIsEqual = require('lodash/lang/isEqual');
+
+var _lodashLangIsEqual2 = _interopRequireDefault(_lodashLangIsEqual);
+
 var _iconsSpinning = require('./icons/Spinning');
 
 var _iconsSpinning2 = _interopRequireDefault(_iconsSpinning);
@@ -30,8 +34,18 @@ var _utilsInfiniteScroll = require('../utils/InfiniteScroll');
 
 var _utilsInfiniteScroll2 = _interopRequireDefault(_utilsInfiniteScroll);
 
-var CLASS_ROOT = "list";
+var _utilsSelection = require('../utils/Selection');
 
+var _utilsSelection2 = _interopRequireDefault(_utilsSelection);
+
+var _ListItem = require('./ListItem');
+
+var _ListItem2 = _interopRequireDefault(_ListItem);
+
+var CLASS_ROOT = "list";
+var SELECTED_CLASS = CLASS_ROOT + "-item--selected";
+
+// SchemaPropType is deprecated
 var SchemaPropType = _react.PropTypes.arrayOf(_react.PropTypes.shape({
   attribute: _react.PropTypes.string,
   'default': _react.PropTypes.node,
@@ -43,16 +57,18 @@ var SchemaPropType = _react.PropTypes.arrayOf(_react.PropTypes.shape({
   uid: _react.PropTypes.bool
 }));
 
-var ListItem = (function (_Component) {
-  _inherits(ListItem, _Component);
+// SchemaListItem is deprecated, use ListItem child components inside a List instead
 
-  function ListItem() {
-    _classCallCheck(this, ListItem);
+var SchemaListItem = (function (_Component) {
+  _inherits(SchemaListItem, _Component);
 
-    _get(Object.getPrototypeOf(ListItem.prototype), 'constructor', this).apply(this, arguments);
+  function SchemaListItem() {
+    _classCallCheck(this, SchemaListItem);
+
+    _get(Object.getPrototypeOf(SchemaListItem.prototype), 'constructor', this).apply(this, arguments);
   }
 
-  _createClass(ListItem, [{
+  _createClass(SchemaListItem, [{
     key: '_renderValue',
     value: function _renderValue(item, scheme) {
       var result;
@@ -78,86 +94,60 @@ var ListItem = (function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this = this;
-
-      var classes = [CLASS_ROOT + "-item"];
-      if (this.props.selected) {
-        classes.push(CLASS_ROOT + "-item--selected");
-      }
-      if (this.props.className) {
-        classes.push(this.props.className);
+      var item = this.props.item;
+      var classes = [];
+      if (this.props.direction) {
+        classes.push(CLASS_ROOT + "-item--" + this.props.direction);
       }
 
-      var contents = undefined;
-      if (this.props.renderItem) {
+      var image = undefined;
+      var label = undefined;
+      var annotation = undefined;
 
-        contents = this.props.renderItem(this.props.item);
-      } else {
-        (function () {
-
-          if (_this.props.direction) {
-            classes.push(CLASS_ROOT + "-item--" + _this.props.direction);
-          }
-
-          var item = _this.props.item;
-          var image = undefined;
-          var label = undefined;
-          var annotation = undefined;
-
-          _this.props.schema.forEach(function (scheme) {
-            if (scheme.image) {
-              image = _react2['default'].createElement(
-                'span',
-                { className: CLASS_ROOT + "-item__image" },
-                this._renderValue(item, scheme)
-              );
-            } else if (scheme.primary) {
-              label = _react2['default'].createElement(
-                'span',
-                { className: CLASS_ROOT + "-item__label" },
-                this._renderValue(item, scheme)
-              );
-            } else if (scheme.secondary) {
-              annotation = _react2['default'].createElement(
-                'span',
-                { className: CLASS_ROOT + "-item__annotation" },
-                this._renderValue(item, scheme)
-              );
-            }
-          }, _this);
-
-          contents = [image, _react2['default'].createElement(
+      this.props.schema.forEach(function (scheme) {
+        if (scheme.image) {
+          image = _react2['default'].createElement(
             'span',
-            { className: CLASS_ROOT + "-item__label" },
-            label
-          ), _react2['default'].createElement(
+            { key: 'image', className: CLASS_ROOT + "-item__image" },
+            this._renderValue(item, scheme)
+          );
+        } else if (scheme.primary) {
+          label = _react2['default'].createElement(
             'span',
-            { className: CLASS_ROOT + "-item__annotation" },
-            annotation
-          )];
-        })();
-      }
+            { key: 'label', className: CLASS_ROOT + "-item__label" },
+            this._renderValue(item, scheme)
+          );
+        } else if (scheme.secondary) {
+          annotation = _react2['default'].createElement(
+            'span',
+            { key: 'annotation', className: CLASS_ROOT + "-item__annotation" },
+            this._renderValue(item, scheme)
+          );
+        }
+      }, this);
 
       if (this.props.onClick) {
         classes.push(CLASS_ROOT + "-item--selectable");
       }
 
       return _react2['default'].createElement(
-        'li',
-        { className: classes.join(' '), onClick: this.props.onClick },
-        contents
+        _ListItem2['default'],
+        { className: classes.join(' '), direction: this.props.direction,
+          selected: this.props.selected, onClick: this.props.onClick },
+        image,
+        label,
+        annotation
       );
     }
   }]);
 
-  return ListItem;
+  return SchemaListItem;
 })(_react.Component);
 
-ListItem.propTypes = {
+SchemaListItem.propTypes = {
   direction: _react.PropTypes.oneOf(['row', 'column']),
   item: _react.PropTypes.object.isRequired,
   onClick: _react.PropTypes.func,
-  renderItem: _react.PropTypes.func,
   schema: SchemaPropType,
   selected: _react.PropTypes.bool
 };
@@ -165,17 +155,23 @@ ListItem.propTypes = {
 var List = (function (_Component2) {
   _inherits(List, _Component2);
 
-  function List() {
+  function List(props) {
     _classCallCheck(this, List);
 
-    _get(Object.getPrototypeOf(List.prototype), 'constructor', this).call(this);
+    _get(Object.getPrototypeOf(List.prototype), 'constructor', this).call(this, props);
 
+    this._onClick = this._onClick.bind(this);
     this._onClickItem = this._onClickItem.bind(this);
+
+    this.state = {
+      selected: _utilsSelection2['default'].normalize(props.selected)
+    };
   }
 
   _createClass(List, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
+      this._setSelection();
       if (this.props.onMore) {
         this._scroll = _utilsInfiniteScroll2['default'].startListeningForScroll(this.refs.more, this.props.onMore);
       }
@@ -187,10 +183,18 @@ var List = (function (_Component2) {
         _utilsInfiniteScroll2['default'].stopListeningForScroll(this._scroll);
         this._scroll = null;
       }
+      if (nextProps.hasOwnProperty('selected')) {
+        this.setState({
+          selected: _utilsSelection2['default'].normalize(nextProps.selected)
+        });
+      }
     }
   }, {
     key: 'componentDidUpdate',
-    value: function componentDidUpdate() {
+    value: function componentDidUpdate(prevProps, prevState) {
+      if (!(0, _lodashLangIsEqual2['default'])(this.state.selected, prevState.selected)) {
+        this._setSelection();
+      }
       if (this.props.onMore && !this._scroll) {
         this._scroll = _utilsInfiniteScroll2['default'].startListeningForScroll(this.refs.more, this.props.onMore);
       }
@@ -200,6 +204,40 @@ var List = (function (_Component2) {
     value: function componentWillUnmount() {
       if (this._scroll) {
         _utilsInfiniteScroll2['default'].stopListeningForScroll(this._scroll);
+      }
+    }
+  }, {
+    key: '_setSelection',
+    value: function _setSelection() {
+      _utilsSelection2['default'].set({
+        containerElement: this.refs.list,
+        childSelector: '.list-item',
+        selectedClass: SELECTED_CLASS,
+        selectedIndexes: this.state.selected
+      });
+    }
+  }, {
+    key: '_onClick',
+    value: function _onClick(event) {
+      if (!this.props.selectable) {
+        return;
+      }
+
+      var selected = _utilsSelection2['default'].click(event, {
+        containerElement: this.refs.list,
+        childSelector: '.list-item',
+        selectedClass: SELECTED_CLASS,
+        multiSelect: 'multiple' === this.props.selectable,
+        priorSelectedIndexes: this.state.selected
+      });
+      this.setState({ selected: selected });
+
+      if (this.props.onSelect) {
+        // notify caller that the selection has changed
+        if (selected.length === 1) {
+          selected = selected[0];
+        }
+        this.props.onSelect(selected);
       }
     }
   }, {
@@ -229,7 +267,7 @@ var List = (function (_Component2) {
         onClick = this._onClickItem.bind(this, item);
       }
 
-      return _react2['default'].createElement(ListItem, { key: uid, item: item, schema: this.props.schema,
+      return _react2['default'].createElement(SchemaListItem, { key: uid, item: item, schema: this.props.schema,
         direction: this.props.itemDirection,
         selected: selected, onClick: onClick });
     }
@@ -237,22 +275,34 @@ var List = (function (_Component2) {
     key: 'render',
     value: function render() {
       var classes = [CLASS_ROOT];
-      if (true || this.props.fill) {
-        classes.push(CLASS_ROOT + "--fill");
-      }
-      if (true || this.props.flush) {
-        classes.push(CLASS_ROOT + "--flush");
-      }
       if (this.props.size) {
         classes.push(CLASS_ROOT + "--" + this.props.size);
+      }
+      if (this.props.selectable) {
+        classes.push(CLASS_ROOT + "--selectable");
       }
       if (this.props.className) {
         classes.push(this.props.className);
       }
 
-      var items = this.props.data.map(function (item) {
-        return this._renderItem(item);
-      }, this);
+      var children = undefined;
+      var empty = undefined;
+      if (this.props.data && this.props.schema) {
+        // Deprecated, will be removed soon.
+        children = this.props.data.map(function (item) {
+          return this._renderItem(item);
+        }, this);
+        if (this.props.data.length === 0) {
+          empty = _react2['default'].createElement(
+            'li',
+            { className: CLASS_ROOT + "__empty" },
+            this.props.emptyIndicator
+          );
+        }
+      } else {
+        children = this.props.children;
+        empty = this.props.emptyIndicator;
+      }
 
       var more;
       if (this.props.onMore) {
@@ -264,20 +314,11 @@ var List = (function (_Component2) {
         );
       }
 
-      var empty;
-      if (this.props.data.length === 0) {
-        empty = _react2['default'].createElement(
-          'li',
-          { className: CLASS_ROOT + "__empty" },
-          this.props.emptyIndicator
-        );
-      }
-
       return _react2['default'].createElement(
         'ul',
-        { className: classes.join(' ') },
+        { ref: 'list', className: classes.join(' '), onClick: this._onClick },
         empty,
-        items,
+        children,
         more
       );
     }
@@ -289,22 +330,18 @@ var List = (function (_Component2) {
 exports['default'] = List;
 
 List.propTypes = {
-  data: _react.PropTypes.arrayOf(_react.PropTypes.object).isRequired,
+  data: _react.PropTypes.arrayOf(_react.PropTypes.object), // deprecated, use child components
   emptyIndicator: _react.PropTypes.node,
-  itemDirection: _react.PropTypes.oneOf(['row', 'column']),
-  large: _react.PropTypes.bool,
+  itemDirection: _react.PropTypes.oneOf(['row', 'column']), // deprecated, use child components
   onMore: _react.PropTypes.func,
   onSelect: _react.PropTypes.func,
-  renderItem: _react.PropTypes.func,
-  schema: SchemaPropType,
-  selected: _react.PropTypes.oneOfType([_react.PropTypes.string, // uid
-  _react.PropTypes.arrayOf(_react.PropTypes.string)]),
-  size: _react.PropTypes.oneOf(['small', 'medium', 'large']),
-  small: _react.PropTypes.bool
+  schema: SchemaPropType, // deprecated, use child components
+  selectable: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.oneOf(['multiple'])]),
+  selected: _react.PropTypes.oneOfType([_react.PropTypes.number, _react.PropTypes.arrayOf(_react.PropTypes.number)]),
+  size: _react.PropTypes.oneOf(['small', 'medium', 'large']) // deprecated, use child components
 };
 
 List.defaultProps = {
-  small: false,
-  itemDirection: 'row'
+  itemDirection: 'row' // deprecated, use child components
 };
 module.exports = exports['default'];

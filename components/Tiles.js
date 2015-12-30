@@ -24,6 +24,10 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactDom = require('react-dom');
 
+var _lodashLangIsEqual = require('lodash/lang/isEqual');
+
+var _lodashLangIsEqual2 = _interopRequireDefault(_lodashLangIsEqual);
+
 var _lodashObjectPick = require('lodash/object/pick');
 
 var _lodashObjectPick2 = _interopRequireDefault(_lodashObjectPick);
@@ -60,28 +64,38 @@ var _utilsInfiniteScroll = require('../utils/InfiniteScroll');
 
 var _utilsInfiniteScroll2 = _interopRequireDefault(_utilsInfiniteScroll);
 
+var _utilsSelection = require('../utils/Selection');
+
+var _utilsSelection2 = _interopRequireDefault(_utilsSelection);
+
 var CLASS_ROOT = "tiles";
+var SELECTED_CLASS = "tile--selected";
 
 var Tiles = (function (_Component) {
   _inherits(Tiles, _Component);
 
-  function Tiles() {
+  function Tiles(props) {
     _classCallCheck(this, Tiles);
 
-    _get(Object.getPrototypeOf(Tiles.prototype), 'constructor', this).call(this);
+    _get(Object.getPrototypeOf(Tiles.prototype), 'constructor', this).call(this, props);
     this._onLeft = this._onLeft.bind(this);
     this._onRight = this._onRight.bind(this);
     this._onScrollHorizontal = this._onScrollHorizontal.bind(this);
     this._onWheel = this._onWheel.bind(this);
     this._onResize = this._onResize.bind(this);
     this._layout = this._layout.bind(this);
+    this._onClick = this._onClick.bind(this);
 
-    this.state = { overflow: false };
+    this.state = {
+      overflow: false,
+      selected: _utilsSelection2['default'].normalize(props.selected)
+    };
   }
 
   _createClass(Tiles, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
+      this._setSelection();
       if (this.props.onMore) {
         this._scroll = _utilsInfiniteScroll2['default'].startListeningForScroll(this.refs.more, this.props.onMore);
       }
@@ -102,7 +116,10 @@ var Tiles = (function (_Component) {
     }
   }, {
     key: 'componentDidUpdate',
-    value: function componentDidUpdate() {
+    value: function componentDidUpdate(prevProps, prevState) {
+      if (!(0, _lodashLangIsEqual2['default'])(this.state.selected, prevState.selected)) {
+        this._setSelection();
+      }
       if (this.props.onMore && !this._scroll) {
         this._scroll = _utilsInfiniteScroll2['default'].startListeningForScroll(this.refs.more, this.props.onMore);
       }
@@ -199,6 +216,40 @@ var Tiles = (function (_Component) {
         this._tracking = true;
       }
     }
+  }, {
+    key: '_setSelection',
+    value: function _setSelection() {
+      _utilsSelection2['default'].set({
+        containerElement: (0, _reactDom.findDOMNode)(this.refs.tiles),
+        childSelector: '.tile',
+        selectedClass: SELECTED_CLASS,
+        selectedIndexes: this.state.selected
+      });
+    }
+  }, {
+    key: '_onClick',
+    value: function _onClick(event) {
+      if (!this.props.selectable) {
+        return;
+      }
+
+      var selected = _utilsSelection2['default'].click(event, {
+        containerElement: (0, _reactDom.findDOMNode)(this.refs.tiles),
+        childSelector: '.tile',
+        selectedClass: SELECTED_CLASS,
+        multiSelect: 'multiple' === this.props.selectable,
+        priorSelectedIndexes: this.state.selected
+      });
+      this.setState({ selected: selected });
+
+      if (this.props.onSelect) {
+        // notify caller that the selection has changed
+        if (selected.length === 1) {
+          selected = selected[0];
+        }
+        this.props.onSelect(selected);
+      }
+    }
 
     // children should be an array of Tile
   }, {
@@ -213,6 +264,9 @@ var Tiles = (function (_Component) {
       }
       if (this.props.size) {
         classes.push(CLASS_ROOT + "--" + this.props.size);
+      }
+      if (this.props.selectable) {
+        classes.push(CLASS_ROOT + "--selectable");
       }
       if (this.props.className) {
         classes.push(this.props.className);
@@ -235,7 +289,8 @@ var Tiles = (function (_Component) {
         _extends({ ref: 'tiles' }, other, {
           wrap: this.props.direction ? false : true,
           direction: this.props.direction ? this.props.direction : 'row',
-          className: classes.join(' ') }),
+          className: classes.join(' '),
+          onClick: this._onClick }),
         this.props.children,
         more
       );
@@ -281,6 +336,9 @@ Tiles.propTypes = _extends({
   fill: _react.PropTypes.bool,
   flush: _react.PropTypes.bool,
   onMore: _react.PropTypes.func,
+  onSelect: _react.PropTypes.func,
+  selectable: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.oneOf(['multiple'])]),
+  selected: _react.PropTypes.oneOfType([_react.PropTypes.number, _react.PropTypes.arrayOf(_react.PropTypes.number)]),
   size: _react.PropTypes.oneOf(['small', 'medium', 'large'])
 }, _Box2['default'].propTypes);
 
