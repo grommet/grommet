@@ -2,11 +2,16 @@
 
 import React, { Component, PropTypes } from 'react';
 import { FormattedTime } from 'react-intl';
+import isEqual from 'lodash/lang/isEqual';
 import SpinningIcon from './icons/Spinning';
 import InfiniteScroll from '../utils/InfiniteScroll';
+import Selection from '../utils/Selection';
+import ListItem from './ListItem';
 
 const CLASS_ROOT = "list";
+const SELECTED_CLASS = CLASS_ROOT + "-item--selected";
 
+// SchemaPropType is deprecated
 const SchemaPropType = PropTypes.arrayOf(PropTypes.shape({
   attribute: PropTypes.string,
   default: PropTypes.node,
@@ -18,7 +23,8 @@ const SchemaPropType = PropTypes.arrayOf(PropTypes.shape({
   uid: PropTypes.bool
 }));
 
-class ListItem extends Component {
+// SchemaListItem is deprecated, use ListItem child components inside a List instead
+class SchemaListItem extends Component {
 
   _renderValue (item, scheme) {
     var result;
@@ -45,89 +51,76 @@ class ListItem extends Component {
   }
 
   render () {
-    let classes = [CLASS_ROOT + "-item"];
-    if (this.props.selected) {
-      classes.push(CLASS_ROOT + "-item--selected");
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
+    let item = this.props.item;
+    let classes = [];
+    if (this.props.direction) {
+      classes.push(CLASS_ROOT + "-item--" + this.props.direction);
     }
 
-    let contents;
-    if (this.props.renderItem) {
+    let image;
+    let label;
+    let annotation;
 
-      contents = this.props.renderItem(this.props.item);
-
-    } else {
-
-      if (this.props.direction) {
-        classes.push(CLASS_ROOT + "-item--" + this.props.direction);
+    this.props.schema.forEach(function (scheme) {
+      if (scheme.image) {
+        image = (
+          <span key="image" className={CLASS_ROOT + "-item__image"}>
+            {this._renderValue(item, scheme)}
+          </span>
+        );
+      } else if (scheme.primary) {
+        label = (
+          <span key="label" className={CLASS_ROOT + "-item__label"}>
+            {this._renderValue(item, scheme)}
+          </span>
+        );
+      } else if (scheme.secondary) {
+        annotation = (
+          <span key="annotation" className={CLASS_ROOT + "-item__annotation"}>
+            {this._renderValue(item, scheme)}
+          </span>
+        );
       }
-
-      let item = this.props.item;
-      let image;
-      let label;
-      let annotation;
-
-      this.props.schema.forEach(function (scheme) {
-        if (scheme.image) {
-          image = (
-            <span className={CLASS_ROOT + "-item__image"}>
-              {this._renderValue(item, scheme)}
-            </span>
-          );
-        } else if (scheme.primary) {
-          label = (
-            <span className={CLASS_ROOT + "-item__label"}>
-              {this._renderValue(item, scheme)}
-            </span>
-          );
-        } else if (scheme.secondary) {
-          annotation = (
-            <span className={CLASS_ROOT + "-item__annotation"}>
-              {this._renderValue(item, scheme)}
-            </span>
-          );
-        }
-      }, this);
-
-      contents = [
-        image,
-        <span className={CLASS_ROOT + "-item__label"}>{label}</span>,
-        <span className={CLASS_ROOT + "-item__annotation"}>{annotation}</span>
-      ];
-    }
+    }, this);
 
     if (this.props.onClick) {
       classes.push(CLASS_ROOT + "-item--selectable");
     }
 
     return (
-      <li className={classes.join(' ')} onClick={this.props.onClick}>
-        {contents}
-      </li>
+      <ListItem className={classes.join(' ')} direction={this.props.direction}
+        selected={this.props.selected} onClick={this.props.onClick}>
+        {image}
+        {label}
+        {annotation}
+      </ListItem>
     );
   }
 }
 
-ListItem.propTypes = {
+SchemaListItem.propTypes = {
   direction: PropTypes.oneOf(['row', 'column']),
   item: PropTypes.object.isRequired,
   onClick: PropTypes.func,
-  renderItem: PropTypes.func,
   schema: SchemaPropType,
   selected: PropTypes.bool
 };
 
 export default class List extends Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
+    this._onClick = this._onClick.bind(this);
     this._onClickItem = this._onClickItem.bind(this);
+
+    this.state = {
+      selected: Selection.normalize(props.selected)
+    };
   }
 
   componentDidMount () {
+    this._setSelection();
     if (this.props.onMore) {
       this._scroll = InfiniteScroll.startListeningForScroll(this.refs.more, this.props.onMore);
     }
@@ -138,9 +131,17 @@ export default class List extends Component {
       InfiniteScroll.stopListeningForScroll(this._scroll);
       this._scroll = null;
     }
+    if (nextProps.hasOwnProperty('selected')) {
+      this.setState({
+        selected: Selection.normalize(nextProps.selected)
+      });
+    }
   }
 
-  componentDidUpdate () {
+  componentDidUpdate (prevProps, prevState) {
+    if (! isEqual(this.state.selected, prevState.selected)) {
+      this._setSelection();
+    }
     if (this.props.onMore && !this._scroll) {
       this._scroll = InfiniteScroll.startListeningForScroll(this.refs.more, this.props.onMore);
     }
@@ -149,6 +150,38 @@ export default class List extends Component {
   componentWillUnmount () {
     if (this._scroll) {
       InfiniteScroll.stopListeningForScroll(this._scroll);
+    }
+  }
+
+  _setSelection () {
+    Selection.set({
+      containerElement: this.refs.list,
+      childSelector: '.list-item',
+      selectedClass: SELECTED_CLASS,
+      selectedIndexes: this.state.selected
+    });
+  }
+
+  _onClick (event) {
+    if (!this.props.selectable) {
+      return;
+    }
+
+    let selected = Selection.click(event, {
+      containerElement: this.refs.list,
+      childSelector: '.list-item',
+      selectedClass: SELECTED_CLASS,
+      multiSelect: ('multiple' === this.props.selectable),
+      priorSelectedIndexes: this.state.selected
+    });
+    this.setState({ selected: selected });
+
+    if (this.props.onSelect) {
+      // notify caller that the selection has changed
+      if (selected.length === 1) {
+        selected = selected[0];
+      }
+      this.props.onSelect(selected);
     }
   }
 
@@ -177,7 +210,7 @@ export default class List extends Component {
     }
 
     return (
-      <ListItem key={uid} item={item} schema={this.props.schema}
+      <SchemaListItem key={uid} item={item} schema={this.props.schema}
         direction={this.props.itemDirection}
         selected={selected} onClick={onClick} />
     );
@@ -185,22 +218,34 @@ export default class List extends Component {
 
   render () {
     var classes = [CLASS_ROOT];
-    if (true || this.props.fill) {
-      classes.push(CLASS_ROOT + "--fill");
-    }
-    if (true || this.props.flush) {
-      classes.push(CLASS_ROOT + "--flush");
-    }
     if (this.props.size) {
       classes.push(CLASS_ROOT + "--" + this.props.size);
+    }
+    if (this.props.selectable) {
+      classes.push(CLASS_ROOT + "--selectable");
     }
     if (this.props.className) {
       classes.push(this.props.className);
     }
 
-    var items = this.props.data.map(function (item) {
-      return this._renderItem(item);
-    }, this);
+    let children;
+    let empty;
+    if (this.props.data && this.props.schema) {
+      // Deprecated, will be removed soon.
+      children = this.props.data.map(function (item) {
+        return this._renderItem(item);
+      }, this);
+      if (this.props.data.length === 0) {
+        empty = (
+          <li className={CLASS_ROOT + "__empty"}>
+            {this.props.emptyIndicator}
+          </li>
+        );
+      }
+    } else {
+      children = this.props.children;
+      empty = this.props.emptyIndicator;
+    }
 
     var more;
     if (this.props.onMore) {
@@ -212,44 +257,34 @@ export default class List extends Component {
       );
     }
 
-    var empty;
-    if (this.props.data.length === 0) {
-      empty = (
-        <li className={CLASS_ROOT + "__empty"}>
-          {this.props.emptyIndicator}
-        </li>
-      );
-    }
-
     return (
-      <ul className={classes.join(' ')}>
+      <ul ref="list" className={classes.join(' ')} onClick={this._onClick}>
         {empty}
-        {items}
+        {children}
         {more}
       </ul>
     );
   }
-
 }
 
 List.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.object).isRequired,
+  data: PropTypes.arrayOf(PropTypes.object), // deprecated, use child components
   emptyIndicator: PropTypes.node,
-  itemDirection: PropTypes.oneOf(['row', 'column']),
-  large: PropTypes.bool,
+  itemDirection: PropTypes.oneOf(['row', 'column']), // deprecated, use child components
   onMore: PropTypes.func,
   onSelect: PropTypes.func,
-  renderItem: PropTypes.func,
-  schema: SchemaPropType,
-  selected: PropTypes.oneOfType([
-    PropTypes.string, // uid
-    PropTypes.arrayOf(PropTypes.string)
+  schema: SchemaPropType, // deprecated, use child components
+  selectable: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.oneOf(['multiple'])
   ]),
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
-  small: PropTypes.bool
+  selected: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.arrayOf(PropTypes.number)
+  ]),
+  size: PropTypes.oneOf(['small', 'medium', 'large']) // deprecated, use child components
 };
 
 List.defaultProps = {
-  small: false,
-  itemDirection: 'row'
+  itemDirection: 'row' // deprecated, use child components
 };

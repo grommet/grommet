@@ -137,6 +137,7 @@ Box.propTypes = {
   pad: PropTypes.oneOfType([
     PropTypes.oneOf(['none', 'small', 'medium', 'large']),
     PropTypes.shape({
+      between: PropTypes.oneOf(['none', 'small', 'medium', 'large']),
       horizontal: PropTypes.oneOf(['none', 'small', 'medium', 'large']),
       vertical: PropTypes.oneOf(['none', 'small', 'medium', 'large'])
     })

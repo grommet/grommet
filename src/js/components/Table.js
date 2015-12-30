@@ -4,9 +4,10 @@ import React, { Component, PropTypes } from 'react';
 import isEqual from 'lodash/lang/isEqual';
 import SpinningIcon from './icons/Spinning';
 import InfiniteScroll from '../utils/InfiniteScroll';
+import Selection from '../utils/Selection';
 
 const CLASS_ROOT = "table";
-const SELECTED_CLASS = CLASS_ROOT + "__row--selected";
+const SELECTED_CLASS = CLASS_ROOT + "-row--selected";
 
 export default class Table extends Component {
 
@@ -16,14 +17,19 @@ export default class Table extends Component {
     this._onClick = this._onClick.bind(this);
     this._onResize = this._onResize.bind(this);
 
+    if (props.selection) {
+      console.warn('The "selection" property of Table has been deprecated.' +
+      ' Instead, use the "selected" property. The behavior is the same.' +
+      ' The property name was changed to align with List and Tiles.');
+    }
     this.state = {
-      selection: this._normalizeSelection(props.selection),
+      selected: Selection.normalize(props.selected || props.selection),
       rebuildMirror: props.scrollable
     };
   }
 
   componentDidMount () {
-    this._alignSelection();
+    this._setSelection();
     if (this.props.scrollable) {
       this._buildMirror();
       this._alignMirror();
@@ -34,20 +40,22 @@ export default class Table extends Component {
     window.addEventListener('resize', this._onResize);
   }
 
-  componentWillReceiveProps (newProps) {
+  componentWillReceiveProps (nextProps) {
     if (this._scroll) {
       InfiniteScroll.stopListeningForScroll(this._scroll);
       this._scroll = null;
     }
-    if (newProps.hasOwnProperty('selection')) {
-      this.setState({selection: this._normalizeSelection(newProps.selection)});
+    if (nextProps.hasOwnProperty('selected') || nextProps.hasOwnProperty('selection')) {
+      this.setState({
+        selected: Selection.normalize(nextProps.selected || nextProps.selection)
+      });
     }
-    this.setState({rebuildMirror: newProps.scrollable});
+    this.setState({rebuildMirror: nextProps.scrollable});
   }
 
   componentDidUpdate (prevProps, prevState) {
-    if (! isEqual(this.state.selection, prevState.selection)) {
-      this._alignSelection();
+    if (! isEqual(this.state.selected, prevState.selected)) {
+      this._setSelection();
     }
     if (this.state.rebuildMirror) {
       this._buildMirror();
@@ -68,34 +76,22 @@ export default class Table extends Component {
     window.removeEventListener('resize', this._onResize);
   }
 
-  _normalizeSelection (selection) {
-    var result;
-    if (undefined === selection || null === selection) {
-      result = [];
-    } else if (typeof selection === 'number') {
-      result = [selection];
-    } else {
-      result = selection;
+  _container () {
+    let containerElement = this.refs.table;
+    let tableBodies = containerElement.getElementsByTagName("TBODY");
+    if (tableBodies.length > 0) {
+      containerElement = tableBodies[0];
     }
-    return result;
+    return containerElement;
   }
 
-  _clearSelected () {
-    var rows = this.refs.table
-      .querySelectorAll("." + SELECTED_CLASS);
-    for (var i = 0; i < rows.length; i++) {
-      rows[i].classList.remove(SELECTED_CLASS);
-    }
-  }
-
-  _alignSelection () {
-    this._clearSelected();
-    if (null !== this.state.selection) {
-      var tbody = this.refs.table.querySelectorAll('tbody')[0];
-      this.state.selection.forEach(function (rowIndex) {
-        tbody.childNodes[rowIndex].classList.add(SELECTED_CLASS);
-      });
-    }
+  _setSelection () {
+    Selection.set({
+      containerElement: this._container(),
+      childSelector: 'tr',
+      selectedClass: SELECTED_CLASS,
+      selectedIndexes: this.state.selected
+    });
   }
 
   _onClick (event) {
@@ -103,75 +99,21 @@ export default class Table extends Component {
       return;
     }
 
-    var element = event.target;
-    while (element.nodeName !== 'TR') {
-      element = element.parentNode;
-    }
+    let selected = Selection.click(event, {
+      containerElement: this._container(),
+      childSelector: 'tr',
+      selectedClass: SELECTED_CLASS,
+      multiSelect: ('multiple' === this.props.selectable),
+      priorSelectedIndexes: this.state.selected
+    });
+    this.setState({ selected: selected });
 
-    var parentElement = element.parentNode;
-    if (element && parentElement.nodeName === 'TBODY') {
-
-      var index;
-      for (index = 0; index < parentElement.childNodes.length; index++) {
-        if (parentElement.childNodes[index] === element) {
-          break;
-        }
+    if (this.props.onSelect) {
+      // notify caller that the selection has changed
+      if (selected.length === 1) {
+        selected = selected[0];
       }
-
-      var selection = this.state.selection.slice(0);
-      var selectionIndex = selection.indexOf(index);
-
-      if ('multiple' === this.props.selectable && event.shiftKey) {
-
-        // select from nearest selected item to the currently selected item
-        var closestIndex = -1;
-        selection.forEach(function (selectIndex, arrayIndex) {
-          if (-1 === closestIndex) {
-            closestIndex = selectIndex;
-          } else if (Math.abs(index - selectIndex) < Math.abs(index - closestIndex)) {
-            closestIndex = selectIndex;
-          }
-        });
-        for (var i = index; i !== closestIndex; ) {
-          selection.push(i);
-          if (closestIndex < index) {
-            i -= 1;
-          } else {
-            i += 1;
-          }
-        }
-        // remove text selection
-        window.getSelection().removeAllRanges();
-
-      } else if (('multiple' === this.props.selectable || -1 !== selectionIndex) &&
-        (event.ctrlKey || event.metaKey)) {
-
-        // toggle
-        if (-1 === selectionIndex) {
-          element.classList.add(SELECTED_CLASS);
-          selection.push(index);
-        } else {
-          element.classList.remove(SELECTED_CLASS);
-          selection.splice(selectionIndex, 1);
-        }
-
-      } else {
-
-        this._clearSelected();
-        selection = [index];
-        element.classList.add(SELECTED_CLASS);
-
-      }
-
-      this.setState({selection: selection});
-
-      if (this.props.onSelect) {
-        // notify caller that the selection has changed
-        if (selection.length === 1) {
-          selection = selection[0];
-        }
-        this.props.onSelect(selection);
-      }
+      this.props.onSelect(selected);
     }
   }
 
@@ -259,20 +201,15 @@ export default class Table extends Component {
 }
 
 Table.propTypes = {
-  selection: PropTypes.oneOfType([
-    PropTypes.number,
-    PropTypes.arrayOf(PropTypes.number)
-  ]),
   onMore: PropTypes.func,
+  onSelect: PropTypes.func,
   scrollable: PropTypes.bool,
   selectable: PropTypes.oneOfType([
     PropTypes.bool,
     PropTypes.oneOf(['multiple'])
   ]),
-  onSelect: PropTypes.func
-};
-
-Table.defaultProps = {
-  scrollable: false,
-  selectable: false
+  selected: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.arrayOf(PropTypes.number)
+  ])
 };

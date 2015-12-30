@@ -2,6 +2,7 @@
 
 import React, { Component, PropTypes } from 'react';
 import { findDOMNode } from 'react-dom';
+import isEqual from 'lodash/lang/isEqual';
 import pick from 'lodash/object/pick';
 import keys from 'lodash/object/keys';
 import Box from './Box';
@@ -11,24 +12,31 @@ import LeftIcon from './icons/base/LinkPrevious';
 import RightIcon from './icons/base/LinkNext';
 import Scroll from '../utils/Scroll';
 import InfiniteScroll from '../utils/InfiniteScroll';
+import Selection from '../utils/Selection';
 
 const CLASS_ROOT = "tiles";
+const SELECTED_CLASS = "tile--selected";
 
 export default class Tiles extends Component {
 
-  constructor () {
-    super();
+  constructor (props) {
+    super(props);
     this._onLeft = this._onLeft.bind(this);
     this._onRight = this._onRight.bind(this);
     this._onScrollHorizontal = this._onScrollHorizontal.bind(this);
     this._onWheel = this._onWheel.bind(this);
     this._onResize = this._onResize.bind(this);
     this._layout = this._layout.bind(this);
+    this._onClick = this._onClick.bind(this);
 
-    this.state = { overflow: false };
+    this.state = {
+      overflow: false,
+      selected: Selection.normalize(props.selected)
+    };
   }
 
   componentDidMount () {
+    this._setSelection();
     if (this.props.onMore) {
       this._scroll = InfiniteScroll.startListeningForScroll(this.refs.more, this.props.onMore);
     }
@@ -47,7 +55,10 @@ export default class Tiles extends Component {
     }
   }
 
-  componentDidUpdate () {
+  componentDidUpdate (prevProps, prevState) {
+    if (! isEqual(this.state.selected, prevState.selected)) {
+      this._setSelection();
+    }
     if (this.props.onMore && !this._scroll) {
       this._scroll = InfiniteScroll.startListeningForScroll(this.refs.more, this.props.onMore);
     }
@@ -138,6 +149,38 @@ export default class Tiles extends Component {
     }
   }
 
+  _setSelection () {
+    Selection.set({
+      containerElement: findDOMNode(this.refs.tiles),
+      childSelector: '.tile',
+      selectedClass: SELECTED_CLASS,
+      selectedIndexes: this.state.selected
+    });
+  }
+
+  _onClick (event) {
+    if (!this.props.selectable) {
+      return;
+    }
+
+    let selected = Selection.click(event, {
+      containerElement: findDOMNode(this.refs.tiles),
+      childSelector: '.tile',
+      selectedClass: SELECTED_CLASS,
+      multiSelect: ('multiple' === this.props.selectable),
+      priorSelectedIndexes: this.state.selected
+    });
+    this.setState({ selected: selected });
+
+    if (this.props.onSelect) {
+      // notify caller that the selection has changed
+      if (selected.length === 1) {
+        selected = selected[0];
+      }
+      this.props.onSelect(selected);
+    }
+  }
+
   // children should be an array of Tile
   render () {
     var classes = [CLASS_ROOT];
@@ -149,6 +192,9 @@ export default class Tiles extends Component {
     }
     if (this.props.size) {
       classes.push(CLASS_ROOT + "--" + this.props.size);
+    }
+    if (this.props.selectable) {
+      classes.push(CLASS_ROOT + "--selectable");
     }
     if (this.props.className) {
       classes.push(this.props.className);
@@ -170,7 +216,8 @@ export default class Tiles extends Component {
       <Box ref="tiles" {...other}
         wrap={this.props.direction ? false : true}
         direction={this.props.direction ? this.props.direction : 'row'}
-        className={classes.join(' ')}>
+        className={classes.join(' ')}
+        onClick={this._onClick}>
         {this.props.children}
         {more}
       </Box>
@@ -213,6 +260,15 @@ Tiles.propTypes = {
   fill: PropTypes.bool,
   flush: PropTypes.bool,
   onMore: PropTypes.func,
+  onSelect: PropTypes.func,
+  selectable: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.oneOf(['multiple'])
+  ]),
+  selected: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.arrayOf(PropTypes.number)
+  ]),
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   ...Box.propTypes
 };

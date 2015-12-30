@@ -83,6 +83,23 @@
     }
   }
 
+  &--selectable {
+    .list-item {
+      cursor: pointer;
+      transition: background-color 0.2s;
+
+      &--selected {
+        background-color: $selected-background-color;
+        color: $selected-text-color;
+      }
+
+      &:hover:not(.list-item--selected) {
+        background-color: $hover-background-color;
+        color: $hover-text-color;
+      }
+    }
+  }
+
   &--small {
     .list-item,
     .list__more {
@@ -107,10 +124,5 @@
         width: double($inuit-base-spacing-unit);
       }
     }
-  }
-
-  &--flush {
-    padding-left: 0px;
-    padding-right: 0px;
   }
 }

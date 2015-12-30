@@ -79,6 +79,23 @@
     }
   }
 
+  &--selectable {
+    .tile {
+      cursor: pointer;
+      transition: background-color 0.2s;
+
+      &--selected {
+        background-color: $selected-background-color;
+        color: $selected-text-color;
+      }
+
+      &:hover:not(.tile--selected) {
+        background-color: $hover-background-color;
+        color: $hover-text-color;
+      }
+    }
+  }
+
   &--small {
     > .tile {
       flex-basis: $tile-small-size;
@@ -116,10 +133,12 @@
 
     &.tile--selected {
       background-color: $selected-background-color;
+      color: $selected-text-color;
     }
 
     &:hover:not(.tile--selected) {
       background-color: $hover-background-color;
+      color: $hover-text-color;
     }
   }
 

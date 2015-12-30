@@ -38,8 +38,9 @@ export default class Tile extends Component {
 }
 
 Tile.propTypes = {
+  onClick: PropTypes.func,
   selected: PropTypes.bool,
-  status: PropTypes.string,
+  status: PropTypes.string, // deprecated, will be removed
   wide: PropTypes.bool,
   ...Box.propTypes
 };
