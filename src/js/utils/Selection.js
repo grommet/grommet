@@ -1,8 +1,10 @@
-// (C) Copyright 2014 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2015 Hewlett Packard Enterprise Development LP
+
+// Functions to manage selection via both child index and a specific class name.
 
 // Ensures it is an array.
-function normalize (selectedIndexes) {
-  var result;
+function normalizeIndexes (selectedIndexes) {
+  let result;
   if (undefined === selectedIndexes || null === selectedIndexes) {
     result = [];
   } else if (typeof selectedIndexes === 'number') {
@@ -15,7 +17,7 @@ function normalize (selectedIndexes) {
 
 // Clears any selected items
 // options: {containerElement: , selectedClass: }
-function clear (options) {
+function clearClass (options) {
   const items = options.containerElement
     .querySelectorAll("." + options.selectedClass);
   for (let i = 0; i < items.length; i++) {
@@ -25,8 +27,8 @@ function clear (options) {
 
 // Sets the selectedClass on all children whose index is in selectedIndexes.
 // options: {containerElement: , childSelector: , selectedClass: , selectedIndexes: []}
-function set (options) {
-  clear(options);
+function setClassFromIndexes (options) {
+  clearClass(options);
   if (options.selectedIndexes) {
     const items = options.containerElement
       .querySelectorAll(options.childSelector);
@@ -38,76 +40,110 @@ function set (options) {
   }
 }
 
-// Returns a new selectedIndexes array with the latest selected indexes
-// options: {containerElement: , childSelector: , selectedClass: ,
-//   multiSelect: true|false, priorSelectedIndexes: []}
-function click (event, options) {
+// Gets the selected selectedClass on all children whose index is in selectedIndexes.
+// options: {containerElement: , childSelector: , selectedClass: }
+function getIndexesFromClass (options) {
+  const items = options.containerElement
+    .querySelectorAll(options.childSelector);
+  let selectedIndexes = [];
+  for (let i = 0; i < items.length; i++) {
+    if (items[i].classList.contains(options.selectedClass)) {
+      selectedIndexes.push(i);
+    }
+  }
+  return selectedIndexes;
+}
 
+// Returns a new selectedIndexes array with the latest selected indexes
+// options: {containerElement: , childSelector: , //selectedClass: ,
+//   multiSelect: true|false, priorSelectedIndexes: []}
+function onClick (event, options) {
+
+  // Go up the DOM tree until we match the childSelector
   let item = event.target;
-  while (item && ! item.matches(options.childSelector)) {
-    item = item.parentNode;
+  if (item.matches) {
+    while (item && ! item.matches(options.childSelector)) {
+      item = item.parentNode;
+    }
+  } else if (item.matchesElement) {
+    while (item && ! item.matchesElement(options.childSelector)) {
+      item = item.parentNode;
+    }
   }
 
   // determine the index of the clicked element
-  let itemIndex = 0;
+  let indexInContainer = 0;
   let previousItem = item.previousSibling;
   while (previousItem != null) {
     previousItem = previousItem.previousSibling;
-    itemIndex += 1;
+    indexInContainer += 1;
   }
 
-  var selectedIndexes = options.priorSelectedIndexes.slice(0);
-  var selectedIndex = selectedIndexes.indexOf(itemIndex);
+  let selectedIndexes; // what will be returned
 
-  if (options.multiSelect && event.shiftKey) {
+  if (! event.ctrlKey && ! event.metaKey && ! event.shiftKey) {
 
-    // select from nearest selected item to the currently selected item
-    var closestIndex = -1;
-    selectedIndexes.forEach(function (selectIndex, arrayIndex) {
-      if (-1 === closestIndex) {
-        closestIndex = selectIndex;
-      } else if (Math.abs(itemIndex - selectIndex) < Math.abs(itemIndex - closestIndex)) {
-        closestIndex = selectIndex;
-      }
-    });
-    for (var i = itemIndex; i !== closestIndex; ) {
-      selectedIndexes.push(i);
-      if (closestIndex < itemIndex) {
-        i -= 1;
-      } else {
-        i += 1;
-      }
-    }
-
-    // Remove text selection. This often happens when multi-selecting
-    window.getSelection().removeAllRanges();
-
-  } else if ((options.multiSelect || -1 !== selectedIndex) &&
-    (event.ctrlKey || event.metaKey)) {
-
-    // toggle
-    if (-1 === selectedIndex) {
-      item.classList.add(options.selectedClass);
-      selectedIndexes.push(itemIndex);
-    } else {
-      item.classList.remove(options.selectedClass);
-      selectedIndexes.splice(selectedIndex, 1);
-    }
+    selectedIndexes = [indexInContainer];
 
   } else {
+    // was it selected?
+    let indexInPrior = options.priorSelectedIndexes.indexOf(indexInContainer);
 
-    clear(options);
-    selectedIndexes = [itemIndex];
-    item.classList.add(options.selectedClass);
+    if (! options.multiSelect) {
 
+      if (-1 !== indexInPrior && (event.ctrlKey || event.metaKey)) {
+        selectedIndexes = [];
+      } else {
+        selectedIndexes = options.priorSelectedIndexes;
+      }
+
+    } else { // multi-select
+
+      // make a copy of the prior list so we can modify it
+      selectedIndexes = options.priorSelectedIndexes.slice(0);
+
+      if (event.shiftKey) {
+
+        // select from nearest selected item to the currently selected item
+        let closestIndex = -1;
+        selectedIndexes.forEach(function (selectIndex, arrayIndex) {
+          if (-1 === closestIndex) {
+            closestIndex = selectIndex;
+          } else if (Math.abs(indexInContainer - selectIndex) < Math.abs(indexInContainer - closestIndex)) {
+            closestIndex = selectIndex;
+          }
+        });
+
+        for (var i = indexInContainer; i !== closestIndex; ) {
+          selectedIndexes.push(i);
+          if (closestIndex < indexInContainer) {
+            i -= 1;
+          } else {
+            i += 1;
+          }
+        }
+
+        // Remove text selection. This often happens when shift multi-selecting
+        window.getSelection().removeAllRanges();
+
+      } else {
+        // toggle
+        if (-1 === indexInPrior) {
+          selectedIndexes.push(indexInContainer);
+        } else {
+          selectedIndexes.splice(indexInPrior, 1);
+        }
+      }
+    }
   }
 
   return selectedIndexes;
 }
 
 export default {
-  normalize: normalize,
-  clear: clear,
-  set: set,
-  click: click
+  normalizeIndexes: normalizeIndexes,
+  clearClass: clearClass,
+  getIndexesFromClass: getIndexesFromClass,
+  setClassFromIndexes: setClassFromIndexes,
+  onClick: onClick
 };

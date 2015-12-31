@@ -23,7 +23,7 @@ export default class Table extends Component {
       ' The property name was changed to align with List and Tiles.');
     }
     this.state = {
-      selected: Selection.normalize(props.selected || props.selection),
+      selected: Selection.normalizeIndexes(props.selected || props.selection),
       rebuildMirror: props.scrollable
     };
   }
@@ -47,7 +47,7 @@ export default class Table extends Component {
     }
     if (nextProps.hasOwnProperty('selected') || nextProps.hasOwnProperty('selection')) {
       this.setState({
-        selected: Selection.normalize(nextProps.selected || nextProps.selection)
+        selected: Selection.normalizeIndexes(nextProps.selected || nextProps.selection)
       });
     }
     this.setState({rebuildMirror: nextProps.scrollable});
@@ -86,7 +86,7 @@ export default class Table extends Component {
   }
 
   _setSelection () {
-    Selection.set({
+    Selection.setClassFromIndexes({
       containerElement: this._container(),
       childSelector: 'tr',
       selectedClass: SELECTED_CLASS,
@@ -99,14 +99,17 @@ export default class Table extends Component {
       return;
     }
 
-    let selected = Selection.click(event, {
+    let selected = Selection.onClick(event, {
       containerElement: this._container(),
       childSelector: 'tr',
       selectedClass: SELECTED_CLASS,
       multiSelect: ('multiple' === this.props.selectable),
       priorSelectedIndexes: this.state.selected
     });
-    this.setState({ selected: selected });
+    // only set the selected state and classes if the caller isn't managing it.
+    if (! this.props.selected) {
+      this.setState({ selected: selected }, this._setSelection);
+    }
 
     if (this.props.onSelect) {
       // notify caller that the selection has changed

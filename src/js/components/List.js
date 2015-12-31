@@ -115,7 +115,7 @@ export default class List extends Component {
     this._onClickItem = this._onClickItem.bind(this);
 
     this.state = {
-      selected: Selection.normalize(props.selected)
+      selected: Selection.normalizeIndexes(props.selected)
     };
   }
 
@@ -133,7 +133,7 @@ export default class List extends Component {
     }
     if (nextProps.hasOwnProperty('selected')) {
       this.setState({
-        selected: Selection.normalize(nextProps.selected)
+        selected: Selection.normalizeIndexes(nextProps.selected)
       });
     }
   }
@@ -154,7 +154,7 @@ export default class List extends Component {
   }
 
   _setSelection () {
-    Selection.set({
+    Selection.setClassFromIndexes({
       containerElement: this.refs.list,
       childSelector: '.list-item',
       selectedClass: SELECTED_CLASS,
@@ -167,14 +167,17 @@ export default class List extends Component {
       return;
     }
 
-    let selected = Selection.click(event, {
+    let selected = Selection.onClick(event, {
       containerElement: this.refs.list,
       childSelector: '.list-item',
       selectedClass: SELECTED_CLASS,
       multiSelect: ('multiple' === this.props.selectable),
       priorSelectedIndexes: this.state.selected
     });
-    this.setState({ selected: selected });
+    // only set the selected state and classes if the caller isn't managing it.
+    if (! this.props.selected) {
+      this.setState({ selected: selected }, this._setSelection);
+    }
 
     if (this.props.onSelect) {
       // notify caller that the selection has changed

@@ -31,7 +31,7 @@ export default class Tiles extends Component {
 
     this.state = {
       overflow: false,
-      selected: Selection.normalize(props.selected)
+      selected: Selection.normalizeIndexes(props.selected)
     };
   }
 
@@ -50,6 +50,9 @@ export default class Tiles extends Component {
   }
 
   componentWillReceiveProps (nextProps) {
+    if (nextProps.selected) {
+      this.setState({ selected: Selection.normalizeIndexes(nextProps.selected) });
+    }
     if (this._scroll) {
       InfiniteScroll.stopListeningForScroll(this._scroll);
       this._scroll = null;
@@ -151,7 +154,7 @@ export default class Tiles extends Component {
   }
 
   _setSelection () {
-    Selection.set({
+    Selection.setClassFromIndexes({
       containerElement: findDOMNode(this.refs.tiles),
       childSelector: '.tile',
       selectedClass: SELECTED_CLASS,
@@ -164,14 +167,17 @@ export default class Tiles extends Component {
       return;
     }
 
-    let selected = Selection.click(event, {
+    let selected = Selection.onClick(event, {
       containerElement: findDOMNode(this.refs.tiles),
       childSelector: '.tile',
       selectedClass: SELECTED_CLASS,
       multiSelect: ('multiple' === this.props.selectable),
       priorSelectedIndexes: this.state.selected
     });
-    this.setState({ selected: selected });
+    // only set the selected state and classes if the caller isn't managing it.
+    if (! this.props.selected) {
+      this.setState({ selected: selected }, this._setSelection);
+    }
 
     if (this.props.onSelect) {
       // notify caller that the selection has changed
