@@ -13,14 +13,9 @@ $form-vertical-padding: quarter($inuit-base-spacing-unit);
   opacity: 1; // for --hidden
 
   @include media-query(lap-and-up) {
-    max-width: $form-width;
     width: 100%;
-    max-height: 100vh;
+    overflow: auto;
     transition: all 0.4s, padding-top 0.3s 0.1s, padding-bottom 0.3s 0.1s;
-
-    .form--compact & {
-      width: $compact-form-width;
-    }
   }
 
   @include media-query(palm) {
@@ -152,15 +147,22 @@ $form-vertical-padding: quarter($inuit-base-spacing-unit);
         display: inline-block;
         flex: 1;
         border: none;
+
+        // For some reason, .number-input input causes form fields to be
+        // too wide in compact forms.
+        .form--compact & {
+          width: round($inuit-base-spacing-unit * 6);
+        }
       }
     }
 
     > input[type=file] {
       display: inline-block;
 
-      &::-webkit-file-upload-button {
-        float: right;
-      }
+      // Turned off, overruns file name text on compact forms.
+      // &::-webkit-file-upload-button {
+      //   float: right;
+      // }
     }
 
     > .table--selectable {

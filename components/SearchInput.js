@@ -166,7 +166,8 @@ var SearchInput = (function (_Component) {
     }
   }, {
     key: '_onEnter',
-    value: function _onEnter() {
+    value: function _onEnter(event) {
+      event.preventDefault(); // prevent submitting forms
       this.setState({ dropActive: false });
       if (this.state.activeSuggestionIndex >= 0) {
         var suggestion = this.props.suggestions[this.state.activeSuggestionIndex];
