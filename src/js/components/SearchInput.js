@@ -121,7 +121,8 @@ export default class SearchInput extends Component {
     this.setState({activeSuggestionIndex: index});
   }
 
-  _onEnter () {
+  _onEnter (event) {
+    event.preventDefault(); // prevent submitting forms
     this.setState({dropActive: false});
     if (this.state.activeSuggestionIndex >= 0) {
       var suggestion = this.props.suggestions[this.state.activeSuggestionIndex];
