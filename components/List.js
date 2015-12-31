@@ -164,7 +164,7 @@ var List = (function (_Component2) {
     this._onClickItem = this._onClickItem.bind(this);
 
     this.state = {
-      selected: _utilsSelection2['default'].normalize(props.selected)
+      selected: _utilsSelection2['default'].normalizeIndexes(props.selected)
     };
   }
 
@@ -185,7 +185,7 @@ var List = (function (_Component2) {
       }
       if (nextProps.hasOwnProperty('selected')) {
         this.setState({
-          selected: _utilsSelection2['default'].normalize(nextProps.selected)
+          selected: _utilsSelection2['default'].normalizeIndexes(nextProps.selected)
         });
       }
     }
@@ -209,7 +209,7 @@ var List = (function (_Component2) {
   }, {
     key: '_setSelection',
     value: function _setSelection() {
-      _utilsSelection2['default'].set({
+      _utilsSelection2['default'].setClassFromIndexes({
         containerElement: this.refs.list,
         childSelector: '.list-item',
         selectedClass: SELECTED_CLASS,
@@ -223,14 +223,17 @@ var List = (function (_Component2) {
         return;
       }
 
-      var selected = _utilsSelection2['default'].click(event, {
+      var selected = _utilsSelection2['default'].onClick(event, {
         containerElement: this.refs.list,
         childSelector: '.list-item',
         selectedClass: SELECTED_CLASS,
         multiSelect: 'multiple' === this.props.selectable,
         priorSelectedIndexes: this.state.selected
       });
-      this.setState({ selected: selected });
+      // only set the selected state and classes if the caller isn't managing it.
+      if (!this.props.selected) {
+        this.setState({ selected: selected }, this._setSelection);
+      }
 
       if (this.props.onSelect) {
         // notify caller that the selection has changed

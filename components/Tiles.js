@@ -88,7 +88,7 @@ var Tiles = (function (_Component) {
 
     this.state = {
       overflow: false,
-      selected: _utilsSelection2['default'].normalize(props.selected)
+      selected: _utilsSelection2['default'].normalizeIndexes(props.selected)
     };
   }
 
@@ -110,6 +110,9 @@ var Tiles = (function (_Component) {
   }, {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
+      if (nextProps.selected) {
+        this.setState({ selected: _utilsSelection2['default'].normalizeIndexes(nextProps.selected) });
+      }
       if (this._scroll) {
         _utilsInfiniteScroll2['default'].stopListeningForScroll(this._scroll);
         this._scroll = null;
@@ -220,7 +223,7 @@ var Tiles = (function (_Component) {
   }, {
     key: '_setSelection',
     value: function _setSelection() {
-      _utilsSelection2['default'].set({
+      _utilsSelection2['default'].setClassFromIndexes({
         containerElement: (0, _reactDom.findDOMNode)(this.refs.tiles),
         childSelector: '.tile',
         selectedClass: SELECTED_CLASS,
@@ -234,14 +237,17 @@ var Tiles = (function (_Component) {
         return;
       }
 
-      var selected = _utilsSelection2['default'].click(event, {
+      var selected = _utilsSelection2['default'].onClick(event, {
         containerElement: (0, _reactDom.findDOMNode)(this.refs.tiles),
         childSelector: '.tile',
         selectedClass: SELECTED_CLASS,
         multiSelect: 'multiple' === this.props.selectable,
         priorSelectedIndexes: this.state.selected
       });
-      this.setState({ selected: selected });
+      // only set the selected state and classes if the caller isn't managing it.
+      if (!this.props.selected) {
+        this.setState({ selected: selected }, this._setSelection);
+      }
 
       if (this.props.onSelect) {
         // notify caller that the selection has changed

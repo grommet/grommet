@@ -54,7 +54,7 @@ var Table = (function (_Component) {
       console.warn('The "selection" property of Table has been deprecated.' + ' Instead, use the "selected" property. The behavior is the same.' + ' The property name was changed to align with List and Tiles.');
     }
     this.state = {
-      selected: _utilsSelection2['default'].normalize(props.selected || props.selection),
+      selected: _utilsSelection2['default'].normalizeIndexes(props.selected || props.selection),
       rebuildMirror: props.scrollable
     };
   }
@@ -81,7 +81,7 @@ var Table = (function (_Component) {
       }
       if (nextProps.hasOwnProperty('selected') || nextProps.hasOwnProperty('selection')) {
         this.setState({
-          selected: _utilsSelection2['default'].normalize(nextProps.selected || nextProps.selection)
+          selected: _utilsSelection2['default'].normalizeIndexes(nextProps.selected || nextProps.selection)
         });
       }
       this.setState({ rebuildMirror: nextProps.scrollable });
@@ -124,7 +124,7 @@ var Table = (function (_Component) {
   }, {
     key: '_setSelection',
     value: function _setSelection() {
-      _utilsSelection2['default'].set({
+      _utilsSelection2['default'].setClassFromIndexes({
         containerElement: this._container(),
         childSelector: 'tr',
         selectedClass: SELECTED_CLASS,
@@ -138,14 +138,17 @@ var Table = (function (_Component) {
         return;
       }
 
-      var selected = _utilsSelection2['default'].click(event, {
+      var selected = _utilsSelection2['default'].onClick(event, {
         containerElement: this._container(),
         childSelector: 'tr',
         selectedClass: SELECTED_CLASS,
         multiSelect: 'multiple' === this.props.selectable,
         priorSelectedIndexes: this.state.selected
       });
-      this.setState({ selected: selected });
+      // only set the selected state and classes if the caller isn't managing it.
+      if (!this.props.selected) {
+        this.setState({ selected: selected }, this._setSelection);
+      }
 
       if (this.props.onSelect) {
         // notify caller that the selection has changed
