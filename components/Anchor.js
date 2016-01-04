@@ -40,11 +40,12 @@ var Anchor = (function (_Component) {
     value: function render() {
       var classes = [CLASS_ROOT];
       var icon = undefined;
+
       if (this.props.primary) {
         classes.push(CLASS_ROOT + "--primary");
         icon = _react2['default'].createElement(_iconsBaseLinkNext2['default'], null);
       }
-      if (!this.props.onClick) {
+      if (!this.props.onClick && !this.props.href) {
         classes.push(CLASS_ROOT + "--disabled");
       }
       if (this.props.className) {
