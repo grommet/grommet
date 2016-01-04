@@ -34,10 +34,6 @@ var _lodashObjectKeys = require('lodash/object/keys');
 
 var _lodashObjectKeys2 = _interopRequireDefault(_lodashObjectKeys);
 
-var _utilsIntl = require('../utils/Intl');
-
-var _utilsIntl2 = _interopRequireDefault(_utilsIntl);
-
 var _utilsKeyboardAccelerators = require('../utils/KeyboardAccelerators');
 
 var _utilsKeyboardAccelerators2 = _interopRequireDefault(_utilsKeyboardAccelerators);
@@ -497,7 +493,7 @@ var Menu = (function (_Component2) {
         classes.push(CLASS_ROOT + "__control");
 
         var controlContents = this._renderControlContents();
-        var menuTitle = _utilsIntl2['default'].getMessage(this.context.intl, this.props.label || this.props.a11yTitle);
+        var menuTitle = this.props.a11yTitle || this.props.label;
 
         return _react2['default'].createElement(
           _Button2['default'],
@@ -521,7 +517,6 @@ var Menu = (function (_Component2) {
 exports['default'] = Menu;
 
 Menu.propTypes = _extends({
-  a11yTitle: _react.PropTypes.string,
   closeOnClick: _react.PropTypes.bool,
   collapse: _react.PropTypes.bool, // deprecated, remove in 0.5
   dropAlign: _utilsDrop2['default'].alignPropType,
