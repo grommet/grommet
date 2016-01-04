@@ -4,7 +4,6 @@ import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import pick from 'lodash/object/pick';
 import keys from 'lodash/object/keys';
-import Intl from '../utils/Intl';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 import Drop from '../utils/Drop';
 import Responsive from '../utils/Responsive';
@@ -424,8 +423,7 @@ export default class Menu extends Component {
       classes.push(CLASS_ROOT + "__control");
 
       var controlContents = this._renderControlContents();
-      var menuTitle = Intl.getMessage(this.context.intl,
-        this.props.label || this.props.a11yTitle);
+      var menuTitle = this.props.a11yTitle || this.props.label;
 
       return (
         <Button ref="control" type="icon" id={this.props.id}
@@ -445,7 +443,6 @@ export default class Menu extends Component {
 }
 
 Menu.propTypes = {
-  a11yTitle: PropTypes.string,
   closeOnClick: PropTypes.bool,
   collapse: PropTypes.bool, // deprecated, remove in 0.5
   dropAlign: Drop.alignPropType,
