@@ -31,8 +31,8 @@
   }
 
   a:hover &,
-  .anchor:hover &,
-  .button:hover &,
+  .anchor:hover:not(.anchor--disabled) &,
+  .button:hover:not(.anchor--disabled) &,
   .menu__control:hover & {
     fill: $active-icon-color;
     stroke: $active-icon-color;

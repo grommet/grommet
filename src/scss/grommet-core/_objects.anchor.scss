@@ -14,7 +14,7 @@ a,
     color: $text-color;
   }
 
-  &:hover {
+  &:hover:not(.anchor--disabled) {
     text-decoration: underline;
     color: $link-hover-color;
   }
@@ -33,7 +33,7 @@ a,
       stroke: $colored-icon-color;
     }
 
-    &:hover {
+    &:hover:not(.anchor--disabled) {
       color: $active-colored-text-color;
 
      .control-icon {
@@ -59,7 +59,7 @@ a,
         vertical-align: middle;
       }
 
-      &:hover {
+      &:hover:not(.anchor--disabled) {
         > .control-icon {
           transform: translateX(round($inuit-base-spacing-unit * 0.125));
           stroke: $control-brand-color;
@@ -79,7 +79,7 @@ a,
           stroke: $colored-text-color;
         }
 
-        &:hover {
+        &:hover:not(.anchor--disabled) {
           color: $active-colored-text-color;
 
           .control-icon {
@@ -88,6 +88,15 @@ a,
           }
         }
       }
+    }
+  }
+
+  &--disabled {
+    opacity: 0.3;
+    cursor: default;
+
+    .control-icon {
+      cursor: default;
     }
   }
 }

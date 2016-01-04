@@ -9,11 +9,15 @@ export default class Anchor extends Component {
   render () {
     let classes = [CLASS_ROOT];
     let icon;
+
+    let href = this.props.href;
+
     if (this.props.primary) {
       classes.push(CLASS_ROOT + "--primary");
       icon = <RightIcon />;
     }
     if (! this.props.onClick) {
+      href = undefined;
       classes.push(CLASS_ROOT + "--disabled");
     }
     if (this.props.className) {
@@ -29,7 +33,7 @@ export default class Anchor extends Component {
 
     return (
       <this.props.tag id={this.props.id} className={classes.join(' ')}
-        href={this.props.href}
+        href={href}
         target={this.props.target}
         onClick={this.props.onClick}>
         {icon}
