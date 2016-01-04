@@ -25,8 +25,18 @@ describe('Grommet Anchor', function() {
     const anchorElement = shallowRenderer.getRenderOutput();
 
     expect(anchorElement.props.className).to.contain('anchor--primary');
-    expect(anchorElement.props.className).to.contain('anchor--disabled');
     expect(anchorElement.props.href).to.equal('test');
+  });
+
+  it('loads a disabled Anchor', () => {
+    const shallowRenderer = TestUtils.createRenderer();
+    shallowRenderer.render(React.createElement(Anchor, {
+      primary: true
+    }));
+    const anchorElement = shallowRenderer.getRenderOutput();
+
+    expect(anchorElement.props.className).to.contain('anchor--primary');
+    expect(anchorElement.props.className).to.contain('anchor--disabled');
   });
 
   it('loads a clickable Anchor', () => {
