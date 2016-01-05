@@ -116,6 +116,7 @@ export default class Meter extends Component {
             item.colorIndex = threshold.colorIndex || 'graph-1';
             return true;
           }
+          return false;
         });
       }
     } else {
@@ -181,6 +182,7 @@ export default class Meter extends Component {
         result = index;
         return true;
       }
+      return false;
     });
     return result;
   }

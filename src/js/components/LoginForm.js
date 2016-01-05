@@ -34,13 +34,15 @@ export default class LoginForm extends Component {
     var classes = [CLASS_ROOT];
 
     var errors = this.props.errors.map(function (error, index) {
+      var errorComponent = undefined;
       if (error) {
-        return (
+        errorComponent = (
           <div key={index} className={CLASS_ROOT + "__error"}>
             <FormattedMessage id={error} defaultMessage={error} />
           </div>
         );
       }
+      return errorComponent;
     });
 
     var logo;

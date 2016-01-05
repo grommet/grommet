@@ -23,6 +23,7 @@ export default {
             result.firstError = result.firstError || rule.field;
             return true;
           }
+          return false;
         });
       }
     });

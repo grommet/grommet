@@ -119,8 +119,9 @@ export default class Carousel extends Component {
   }
 
   _renderPrevButton () {
+    let prevButton = undefined;
     if (this.props.infinite || this.state.activeIndex !== 0) {
-      return (
+      prevButton = (
         <Button
           className={CLASS_ROOT + '__arrow ' + CLASS_ROOT + '__arrow--prev'}
           type="icon" onClick={this._slidePrev}>
@@ -128,12 +129,15 @@ export default class Carousel extends Component {
         </Button>
       );
     }
+
+    return prevButton;
   }
 
   _renderNextButton () {
+    let nextButton = undefined;
     if (this.props.infinite ||
       this.state.activeIndex !== this.props.children.length - 1) {
-      return (
+      nextButton = (
         <Button
           className={CLASS_ROOT + '__arrow ' + CLASS_ROOT + '__arrow--next'}
           type="icon" onClick={this._slideNext}>
@@ -141,6 +145,8 @@ export default class Carousel extends Component {
         </Button>
       );
     }
+
+    return nextButton;
   }
 
   render () {
