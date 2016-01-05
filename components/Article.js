@@ -1,22 +1,12 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
-
 'use strict';
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
-var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
 var _react = require('react');
 
@@ -26,51 +16,59 @@ var _reactDom = require('react-dom');
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _lodashObjectPick = require('lodash/object/pick');
+var _pick = require('lodash/object/pick');
 
-var _lodashObjectPick2 = _interopRequireDefault(_lodashObjectPick);
+var _pick2 = _interopRequireDefault(_pick);
 
-var _lodashObjectKeys = require('lodash/object/keys');
+var _keys = require('lodash/object/keys');
 
-var _lodashObjectKeys2 = _interopRequireDefault(_lodashObjectKeys);
+var _keys2 = _interopRequireDefault(_keys);
 
 var _Box = require('./Box');
 
 var _Box2 = _interopRequireDefault(_Box);
 
-var _utilsKeyboardAccelerators = require('../utils/KeyboardAccelerators');
+var _KeyboardAccelerators = require('../utils/KeyboardAccelerators');
 
-var _utilsKeyboardAccelerators2 = _interopRequireDefault(_utilsKeyboardAccelerators);
+var _KeyboardAccelerators2 = _interopRequireDefault(_KeyboardAccelerators);
 
-var _utilsScroll = require('../utils/Scroll');
+var _Scroll = require('../utils/Scroll');
 
-var _utilsScroll2 = _interopRequireDefault(_utilsScroll);
+var _Scroll2 = _interopRequireDefault(_Scroll);
 
 var _SkipLinkAnchor = require('./SkipLinkAnchor');
 
 var _SkipLinkAnchor2 = _interopRequireDefault(_SkipLinkAnchor);
 
-// import CarouselControls from './CarouselControls';
-
 var _Button = require('./Button');
 
 var _Button2 = _interopRequireDefault(_Button);
 
-var _iconsBaseNext = require('./icons/base/Next');
+var _Next = require('./icons/base/Next');
 
-var _iconsBaseNext2 = _interopRequireDefault(_iconsBaseNext);
+var _Next2 = _interopRequireDefault(_Next);
 
-var _iconsBasePrevious = require('./icons/base/Previous');
+var _Previous = require('./icons/base/Previous');
 
-var _iconsBasePrevious2 = _interopRequireDefault(_iconsBasePrevious);
+var _Previous2 = _interopRequireDefault(_Previous);
 
-var _iconsBaseUp = require('./icons/base/Up');
+var _Up = require('./icons/base/Up');
 
-var _iconsBaseUp2 = _interopRequireDefault(_iconsBaseUp);
+var _Up2 = _interopRequireDefault(_Up);
 
-var _iconsBaseDown = require('./icons/base/Down');
+var _Down = require('./icons/base/Down');
 
-var _iconsBaseDown2 = _interopRequireDefault(_iconsBaseDown);
+var _Down2 = _interopRequireDefault(_Down);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+
+// import CarouselControls from './CarouselControls';
 
 var CLASS_ROOT = "article";
 var DEFAULT_PLAY_INTERVAL = 10000; // 10s
@@ -81,18 +79,19 @@ var Article = (function (_Component) {
   function Article() {
     _classCallCheck(this, Article);
 
-    _get(Object.getPrototypeOf(Article.prototype), 'constructor', this).call(this);
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Article).call(this));
 
-    this._onWheel = this._onWheel.bind(this);
-    this._onNext = this._onNext.bind(this);
-    this._onPrevious = this._onPrevious.bind(this);
-    this._onTogglePlay = this._onTogglePlay.bind(this);
-    this._onSelect = this._onSelect.bind(this);
+    _this._onWheel = _this._onWheel.bind(_this);
+    _this._onNext = _this._onNext.bind(_this);
+    _this._onPrevious = _this._onPrevious.bind(_this);
+    _this._onTogglePlay = _this._onTogglePlay.bind(_this);
+    _this._onSelect = _this._onSelect.bind(_this);
 
-    this.state = {
+    _this.state = {
       activeIndex: 1,
       playing: false
     };
+    return _this;
   }
 
   _createClass(Article, [{
@@ -106,11 +105,11 @@ var Article = (function (_Component) {
           keys = { up: this._onPrevious, down: this._onNext };
         }
         keys.space = this._onTogglePlay;
-        _utilsKeyboardAccelerators2['default'].startListeningToKeyboard(this, keys);
+        _KeyboardAccelerators2.default.startListeningToKeyboard(this, keys);
 
         document.addEventListener('wheel', this._onWheel);
 
-        this._scrollParent = _reactDom2['default'].findDOMNode(this.refs.component);
+        this._scrollParent = _reactDom2.default.findDOMNode(this.refs.component);
       }
     }
   }, {
@@ -124,7 +123,7 @@ var Article = (function (_Component) {
           keys = { up: this._onPrevious, down: this._onNext };
         }
         keys.space = this._onTogglePlay;
-        _utilsKeyboardAccelerators2['default'].stopListeningToKeyboard(this, keys);
+        _KeyboardAccelerators2.default.stopListeningToKeyboard(this, keys);
 
         document.removeEventListener('wheel', this._onWheel);
       }
@@ -159,7 +158,7 @@ var Article = (function (_Component) {
         this._stop();
         event.preventDefault();
       }
-      var articleElement = _reactDom2['default'].findDOMNode(this.refs.component);
+      var articleElement = _reactDom2.default.findDOMNode(this.refs.component);
       var children = articleElement.children;
       var advanced = false;
       for (var i = 0; i < children.length - 1; i += 1) {
@@ -191,7 +190,7 @@ var Article = (function (_Component) {
         this._stop();
         event.preventDefault();
       }
-      var articleElement = _reactDom2['default'].findDOMNode(this.refs.component);
+      var articleElement = _reactDom2.default.findDOMNode(this.refs.component);
       var children = articleElement.children;
       for (var i = 0; i < children.length; i += 1) {
         var child = children[i];
@@ -202,7 +201,7 @@ var Article = (function (_Component) {
             if (i > 0) {
               child = children[i - 1];
               rect = child.getBoundingClientRect();
-              _utilsScroll2['default'].scrollBy(this._scrollParent, 'scrollLeft', rect.left);
+              _Scroll2.default.scrollBy(this._scrollParent, 'scrollLeft', rect.left);
               this.setState({ activeIndex: i });
             }
             break;
@@ -212,7 +211,7 @@ var Article = (function (_Component) {
             if (i > 0) {
               child = children[i - 1];
               rect = child.getBoundingClientRect();
-              _utilsScroll2['default'].scrollBy(this._scrollParent, 'scrollTop', rect.top);
+              _Scroll2.default.scrollBy(this._scrollParent, 'scrollTop', rect.top);
               this.setState({ activeIndex: i });
             }
             break;
@@ -247,14 +246,14 @@ var Article = (function (_Component) {
   }, {
     key: '_onSelect',
     value: function _onSelect(activeIndex) {
-      var articleElement = _reactDom2['default'].findDOMNode(this.refs.component);
+      var articleElement = _reactDom2.default.findDOMNode(this.refs.component);
       var children = articleElement.children;
       var child = children[activeIndex - 1];
       var rect = child.getBoundingClientRect();
       if ('row' === this.props.direction) {
-        _utilsScroll2['default'].scrollBy(this._scrollParent, 'scrollLeft', rect.left);
+        _Scroll2.default.scrollBy(this._scrollParent, 'scrollLeft', rect.left);
       } else {
-        _utilsScroll2['default'].scrollBy(this._scrollParent, 'scrollTop', rect.top);
+        _Scroll2.default.scrollBy(this._scrollParent, 'scrollTop', rect.top);
       }
       this.setState({ activeIndex: activeIndex });
     }
@@ -262,7 +261,7 @@ var Article = (function (_Component) {
     key: '_renderControls',
     value: function _renderControls() {
       var CONTROL_CLASS_PREFIX = CLASS_ROOT + "__control " + CLASS_ROOT + "__control-";
-      var CHILD_COUNT = _react2['default'].Children.count(this.props.children);
+      var CHILD_COUNT = _react2.default.Children.count(this.props.children);
       var controls = [
         // Don't use CarouselControls for now
         // <CarouselControls key="carousel"
@@ -273,40 +272,40 @@ var Article = (function (_Component) {
       ];
       if ('row' === this.props.direction) {
         if (this.state.activeIndex > 1) {
-          controls.push(_react2['default'].createElement(
-            _Button2['default'],
+          controls.push(_react2.default.createElement(
+            _Button2.default,
             { key: 'previous', type: 'icon',
               className: CONTROL_CLASS_PREFIX + "left",
               onClick: this._onPrevious },
-            _react2['default'].createElement(_iconsBasePrevious2['default'], null)
+            _react2.default.createElement(_Previous2.default, null)
           ));
         }
         if (this.state.activeIndex < CHILD_COUNT) {
-          controls.push(_react2['default'].createElement(
-            _Button2['default'],
+          controls.push(_react2.default.createElement(
+            _Button2.default,
             { key: 'next', type: 'icon',
               className: CONTROL_CLASS_PREFIX + "right",
               onClick: this._onNext },
-            _react2['default'].createElement(_iconsBaseNext2['default'], null)
+            _react2.default.createElement(_Next2.default, null)
           ));
         }
       } else {
         if (this.state.activeIndex > 1) {
-          controls.push(_react2['default'].createElement(
-            _Button2['default'],
+          controls.push(_react2.default.createElement(
+            _Button2.default,
             { key: 'previous', type: 'icon',
               className: CONTROL_CLASS_PREFIX + "up",
               onClick: this._onPrevious },
-            _react2['default'].createElement(_iconsBaseUp2['default'], null)
+            _react2.default.createElement(_Up2.default, null)
           ));
         }
         if (this.state.activeIndex < CHILD_COUNT) {
-          controls.push(_react2['default'].createElement(
-            _Button2['default'],
+          controls.push(_react2.default.createElement(
+            _Button2.default,
             { key: 'next', type: 'icon',
               className: CONTROL_CLASS_PREFIX + "down",
               onClick: this._onNext },
-            _react2['default'].createElement(_iconsBaseDown2['default'], null)
+            _react2.default.createElement(_Down2.default, null)
           ));
         }
       }
@@ -317,7 +316,7 @@ var Article = (function (_Component) {
     key: 'render',
     value: function render() {
       var classes = [CLASS_ROOT];
-      var other = (0, _lodashObjectPick2['default'])(this.props, (0, _lodashObjectKeys2['default'])(_Box2['default'].propTypes));
+      var other = (0, _pick2.default)(this.props, (0, _keys2.default)(_Box2.default.propTypes));
       if (this.props.scrollStep) {
         classes.push(CLASS_ROOT + "--scroll-step");
       }
@@ -327,7 +326,7 @@ var Article = (function (_Component) {
 
       var skipLinkAnchor = null;
       if (this.props.primary) {
-        skipLinkAnchor = _react2['default'].createElement(_SkipLinkAnchor2['default'], { label: 'Main Content' });
+        skipLinkAnchor = _react2.default.createElement(_SkipLinkAnchor2.default, { label: 'Main Content' });
       }
 
       var controls;
@@ -335,8 +334,8 @@ var Article = (function (_Component) {
         controls = this._renderControls();
       }
 
-      return _react2['default'].createElement(
-        _Box2['default'],
+      return _react2.default.createElement(
+        _Box2.default,
         _extends({ ref: 'component', tag: 'article' }, other, { className: classes.join(' ') }),
         skipLinkAnchor,
         this.props.children,
@@ -348,16 +347,15 @@ var Article = (function (_Component) {
   return Article;
 })(_react.Component);
 
-exports['default'] = Article;
+exports.default = Article;
 
 Article.propTypes = _extends({
   controls: _react.PropTypes.bool,
   primary: _react.PropTypes.bool,
   scrollStep: _react.PropTypes.bool
-}, _Box2['default'].propTypes);
+}, _Box2.default.propTypes);
 
 Article.defaultProps = {
   pad: 'none',
   direction: 'column'
 };
-module.exports = exports['default'];

@@ -1,16 +1,14 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
-
 'use strict';
 
-Object.defineProperty(exports, '__esModule', {
+Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function polarToCartesian(centerX, centerY, radius, angleInDegrees) {
   var angleInRadians = (angleInDegrees - 90) * Math.PI / 180.0;
@@ -18,9 +16,9 @@ function polarToCartesian(centerX, centerY, radius, angleInDegrees) {
     x: centerX + radius * Math.cos(angleInRadians),
     y: centerY + radius * Math.sin(angleInRadians)
   };
-}
+} // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-exports['default'] = {
+exports.default = {
 
   baseUnit: 24,
   baseDimension: 192, // 24 * 8
@@ -75,24 +73,22 @@ exports['default'] = {
 
       var pathTitleId = 'title_' + a11yDescId;
 
-      return _react2['default'].createElement(
+      return _react2.default.createElement(
         'g',
         { key: itemIndex, id: a11yDescId, ref: a11yDescId,
           role: 'gridcell', 'aria-labelledby': pathTitleId },
-        _react2['default'].createElement(
+        _react2.default.createElement(
           'title',
           { id: pathTitleId },
           a11yTitle
         ),
-        _react2['default'].createElement('path', { className: classes.join(' '), d: commands,
+        _react2.default.createElement('path', { className: classes.join(' '), d: commands,
           onFocus: onOver, onBlur: onOut,
           onMouseOver: onOver, onMouseOut: onOut,
           onClick: onClick })
       );
     } else {
-      return _react2['default'].createElement('path', { key: itemIndex, className: classes.join(' '), d: commands });
+      return _react2.default.createElement('path', { key: itemIndex, className: classes.join(' '), d: commands });
     }
   }
-
 };
-module.exports = exports['default'];

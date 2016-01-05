@@ -1,14 +1,15 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
-
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = {
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+
+exports.default = {
   // http://my.opera.com/GreyWyvern/blog/show.dml/1671288
   // Do not attempt to change '==' to '===' in the following
   // method. Avoid type comparison is done on purpose.
+
   compare: function compare(a, b) {
     function chunkify(t) {
       var tz = [],
@@ -45,4 +46,3 @@ exports["default"] = {
     return aa.length - bb.length;
   }
 };
-module.exports = exports["default"];

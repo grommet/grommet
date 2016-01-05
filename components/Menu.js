@@ -1,22 +1,12 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
-
 'use strict';
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
-var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
 var _react = require('react');
 
@@ -26,25 +16,25 @@ var _reactDom = require('react-dom');
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _lodashObjectPick = require('lodash/object/pick');
+var _pick = require('lodash/object/pick');
 
-var _lodashObjectPick2 = _interopRequireDefault(_lodashObjectPick);
+var _pick2 = _interopRequireDefault(_pick);
 
-var _lodashObjectKeys = require('lodash/object/keys');
+var _keys = require('lodash/object/keys');
 
-var _lodashObjectKeys2 = _interopRequireDefault(_lodashObjectKeys);
+var _keys2 = _interopRequireDefault(_keys);
 
-var _utilsKeyboardAccelerators = require('../utils/KeyboardAccelerators');
+var _KeyboardAccelerators = require('../utils/KeyboardAccelerators');
 
-var _utilsKeyboardAccelerators2 = _interopRequireDefault(_utilsKeyboardAccelerators);
+var _KeyboardAccelerators2 = _interopRequireDefault(_KeyboardAccelerators);
 
-var _utilsDrop = require('../utils/Drop');
+var _Drop = require('../utils/Drop');
 
-var _utilsDrop2 = _interopRequireDefault(_utilsDrop);
+var _Drop2 = _interopRequireDefault(_Drop);
 
-var _utilsResponsive = require('../utils/Responsive');
+var _Responsive = require('../utils/Responsive');
 
-var _utilsResponsive2 = _interopRequireDefault(_utilsResponsive);
+var _Responsive2 = _interopRequireDefault(_Responsive);
 
 var _Box = require('./Box');
 
@@ -54,13 +44,21 @@ var _Button = require('./Button');
 
 var _Button2 = _interopRequireDefault(_Button);
 
-var _iconsBaseMore = require('./icons/base/More');
+var _More = require('./icons/base/More');
 
-var _iconsBaseMore2 = _interopRequireDefault(_iconsBaseMore);
+var _More2 = _interopRequireDefault(_More);
 
-var _iconsBaseDown = require('./icons/base/Down');
+var _Down = require('./icons/base/Down');
 
-var _iconsBaseDown2 = _interopRequireDefault(_iconsBaseDown);
+var _Down2 = _interopRequireDefault(_Down);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = "menu";
 
@@ -73,10 +71,11 @@ var MenuDrop = (function (_Component) {
   function MenuDrop() {
     _classCallCheck(this, MenuDrop);
 
-    _get(Object.getPrototypeOf(MenuDrop.prototype), 'constructor', this).call(this);
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(MenuDrop).call(this));
 
-    this._onUpKeyPress = this._onUpKeyPress.bind(this);
-    this._onDownKeyPress = this._onDownKeyPress.bind(this);
+    _this._onUpKeyPress = _this._onUpKeyPress.bind(_this);
+    _this._onDownKeyPress = _this._onDownKeyPress.bind(_this);
+    return _this;
   }
 
   _createClass(MenuDrop, [{
@@ -95,8 +94,8 @@ var MenuDrop = (function (_Component) {
         up: this._onUpKeyPress,
         down: this._onDownKeyPress
       };
-      _utilsKeyboardAccelerators2['default'].startListeningToKeyboard(this, this._keyboardHandlers);
-      var menuItems = _reactDom2['default'].findDOMNode(this.refs.navContainer).childNodes;
+      _KeyboardAccelerators2.default.startListeningToKeyboard(this, this._keyboardHandlers);
+      var menuItems = _reactDom2.default.findDOMNode(this.refs.navContainer).childNodes;
       for (var i = 0; i < menuItems.length; i++) {
         var classes = menuItems[i].className.toString();
         var tagName = menuItems[i].tagName.toLowerCase();
@@ -114,13 +113,13 @@ var MenuDrop = (function (_Component) {
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
-      _utilsKeyboardAccelerators2['default'].stopListeningToKeyboard(this, this._keyboardHandlers);
+      _KeyboardAccelerators2.default.stopListeningToKeyboard(this, this._keyboardHandlers);
     }
   }, {
     key: '_onUpKeyPress',
     value: function _onUpKeyPress(event) {
       event.preventDefault();
-      var menuItems = _reactDom2['default'].findDOMNode(this.refs.navContainer).childNodes;
+      var menuItems = _reactDom2.default.findDOMNode(this.refs.navContainer).childNodes;
       if (!this.activeMenuItem) {
         var lastMenuItem = menuItems[menuItems.length - 1];
         this.activeMenuItem = lastMenuItem;
@@ -150,7 +149,7 @@ var MenuDrop = (function (_Component) {
     key: '_onDownKeyPress',
     value: function _onDownKeyPress(event) {
       event.preventDefault();
-      var menuItems = _reactDom2['default'].findDOMNode(this.refs.navContainer).childNodes;
+      var menuItems = _reactDom2.default.findDOMNode(this.refs.navContainer).childNodes;
       if (!this.activeMenuItem) {
         this.activeMenuItem = menuItems[0];
       } else if (this.activeMenuItem.nextSibling) {
@@ -179,10 +178,10 @@ var MenuDrop = (function (_Component) {
     key: 'render',
     value: function render() {
       var classes = [CLASS_ROOT + "__drop"];
-      var other = (0, _lodashObjectPick2['default'])(this.props, (0, _lodashObjectKeys2['default'])(_Box2['default'].propTypes));
+      var other = (0, _pick2.default)(this.props, (0, _keys2.default)(_Box2.default.propTypes));
 
-      var contents = [_react2['default'].cloneElement(this.props.control, { key: 'control' }), _react2['default'].createElement(
-        _Box2['default'],
+      var contents = [_react2.default.cloneElement(this.props.control, { key: 'control' }), _react2.default.createElement(
+        _Box2.default,
         _extends({ key: 'nav', ref: 'navContainer', tag: 'nav' }, other, {
           className: CLASS_ROOT + '__contents' }),
         this.props.children
@@ -200,7 +199,7 @@ var MenuDrop = (function (_Component) {
         classes.push(CLASS_ROOT + "__drop--" + this.props.size);
       }
 
-      return _react2['default'].createElement(
+      return _react2.default.createElement(
         'div',
         { ref: 'menuDrop', id: this.props.id, className: classes.join(' '),
           onClick: this.props.onClick },
@@ -214,13 +213,13 @@ var MenuDrop = (function (_Component) {
 
 MenuDrop.propTypes = _extends({
   control: _react.PropTypes.node,
-  dropAlign: _utilsDrop2['default'].alignPropType,
+  dropAlign: _Drop2.default.alignPropType,
   dropColorIndex: _react.PropTypes.string,
   id: _react.PropTypes.string.isRequired,
   onClick: _react.PropTypes.func.isRequired,
   router: _react.PropTypes.func,
   size: _react.PropTypes.oneOf(['small', 'medium', 'large'])
-}, _Box2['default'].propTypes);
+}, _Box2.default.propTypes);
 
 MenuDrop.childContextTypes = {
   intl: _react.PropTypes.object,
@@ -234,14 +233,14 @@ var Menu = (function (_Component2) {
   function Menu(props) {
     _classCallCheck(this, Menu);
 
-    _get(Object.getPrototypeOf(Menu.prototype), 'constructor', this).call(this, props);
+    var _this2 = _possibleConstructorReturn(this, Object.getPrototypeOf(Menu).call(this, props));
 
-    this._onOpen = this._onOpen.bind(this);
-    this._onClose = this._onClose.bind(this);
-    this._onSink = this._onSink.bind(this);
-    this._onResponsive = this._onResponsive.bind(this);
-    this._onFocusControl = this._onFocusControl.bind(this);
-    this._onBlurControl = this._onBlurControl.bind(this);
+    _this2._onOpen = _this2._onOpen.bind(_this2);
+    _this2._onClose = _this2._onClose.bind(_this2);
+    _this2._onSink = _this2._onSink.bind(_this2);
+    _this2._onResponsive = _this2._onResponsive.bind(_this2);
+    _this2._onFocusControl = _this2._onFocusControl.bind(_this2);
+    _this2._onBlurControl = _this2._onBlurControl.bind(_this2);
 
     var inline;
     if (props.hasOwnProperty('inline')) {
@@ -255,7 +254,7 @@ var Menu = (function (_Component2) {
     } else {
       responsive = inline && 'row' === props.direction;
     }
-    this.state = {
+    _this2.state = {
       // state may be 'collapsed', 'focused' or 'expanded' (active).
       state: 'collapsed',
       initialInline: inline,
@@ -263,13 +262,14 @@ var Menu = (function (_Component2) {
       responsive: responsive,
       dropId: 'menuDrop'
     };
+    return _this2;
   }
 
   _createClass(Menu, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
       if (this.refs.control) {
-        var controlElement = _reactDom2['default'].findDOMNode(this.refs.control);
+        var controlElement = _reactDom2.default.findDOMNode(this.refs.control);
         this.setState({
           dropId: 'menu-drop-' + controlElement.getAttribute('data-reactid'),
           controlHeight: controlElement.clientHeight
@@ -277,7 +277,7 @@ var Menu = (function (_Component2) {
       }
 
       if (this.state.responsive) {
-        this._responsive = _utilsResponsive2['default'].start(this._onResponsive);
+        this._responsive = _Responsive2.default.start(this._onResponsive);
       }
     }
   }, {
@@ -296,8 +296,8 @@ var Menu = (function (_Component2) {
 
         switch (this.state.state) {
           case 'collapsed':
-            _utilsKeyboardAccelerators2['default'].stopListeningToKeyboard(this, focusedKeyboardHandlers);
-            _utilsKeyboardAccelerators2['default'].stopListeningToKeyboard(this, activeKeyboardHandlers);
+            _KeyboardAccelerators2.default.stopListeningToKeyboard(this, focusedKeyboardHandlers);
+            _KeyboardAccelerators2.default.stopListeningToKeyboard(this, activeKeyboardHandlers);
             document.removeEventListener('click', this._onClose);
             if (this._drop) {
               this._drop.remove();
@@ -305,14 +305,14 @@ var Menu = (function (_Component2) {
             }
             break;
           case 'focused':
-            _utilsKeyboardAccelerators2['default'].stopListeningToKeyboard(this, activeKeyboardHandlers);
-            _utilsKeyboardAccelerators2['default'].startListeningToKeyboard(this, focusedKeyboardHandlers);
+            _KeyboardAccelerators2.default.stopListeningToKeyboard(this, activeKeyboardHandlers);
+            _KeyboardAccelerators2.default.startListeningToKeyboard(this, focusedKeyboardHandlers);
             break;
           case 'expanded':
-            _utilsKeyboardAccelerators2['default'].stopListeningToKeyboard(this, focusedKeyboardHandlers);
-            _utilsKeyboardAccelerators2['default'].startListeningToKeyboard(this, activeKeyboardHandlers);
+            _KeyboardAccelerators2.default.stopListeningToKeyboard(this, focusedKeyboardHandlers);
+            _KeyboardAccelerators2.default.startListeningToKeyboard(this, activeKeyboardHandlers);
             document.addEventListener('click', this._onClose);
-            this._drop = _utilsDrop2['default'].add(_reactDom2['default'].findDOMNode(this.refs.control), this._renderDrop(), this.props.dropAlign);
+            this._drop = _Drop2.default.add(_reactDom2.default.findDOMNode(this.refs.control), this._renderDrop(), this.props.dropAlign);
             this._drop.container.focus();
             this._drop.render(this._renderDrop());
             break;
@@ -325,7 +325,7 @@ var Menu = (function (_Component2) {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
       document.removeEventListener('click', this._onClose);
-      _utilsKeyboardAccelerators2['default'].stopListeningToKeyboard(this);
+      _KeyboardAccelerators2.default.stopListeningToKeyboard(this);
       if (this._drop) {
         this._drop.remove();
       }
@@ -342,7 +342,7 @@ var Menu = (function (_Component2) {
     key: '_onClose',
     value: function _onClose() {
       this.setState({ state: 'collapsed' });
-      var element = _reactDom2['default'].findDOMNode(this);
+      var element = _reactDom2.default.findDOMNode(this);
       if (document.activeElement === element) {
         this.setState({ state: 'focused' });
       }
@@ -394,31 +394,31 @@ var Menu = (function (_Component2) {
       var controlClassName = CLASS_ROOT + "__control";
 
       if (this.props.icon) {
-        icon = _react2['default'].cloneElement(this.props.icon, { key: 'icon' });
+        icon = _react2.default.cloneElement(this.props.icon, { key: 'icon' });
         // icon = this.props.icon;
       }
       if (this.state.controlCollapsed) {
         if (!icon) {
-          icon = _react2['default'].createElement(_iconsBaseMore2['default'], { key: 'icon' });
+          icon = _react2.default.createElement(_More2.default, { key: 'icon' });
         }
       } else if (this.props.label) {
-        label = [_react2['default'].createElement(
+        label = [_react2.default.createElement(
           'span',
           { key: 'label', className: controlClassName + "-label" },
           this.props.label
-        ), _react2['default'].createElement(_iconsBaseDown2['default'], { key: 'caret' })];
+        ), _react2.default.createElement(_Down2.default, { key: 'caret' })];
       } else if (!icon) {
-        icon = _react2['default'].createElement(_iconsBaseMore2['default'], { key: 'icon' });
+        icon = _react2.default.createElement(_More2.default, { key: 'icon' });
       }
       return [icon, label];
     }
   }, {
     key: '_renderDrop',
     value: function _renderDrop() {
-      var other = (0, _lodashObjectPick2['default'])(this.props, (0, _lodashObjectKeys2['default'])(_Box2['default'].propTypes));
+      var other = (0, _pick2.default)(this.props, (0, _keys2.default)(_Box2.default.propTypes));
 
-      var control = _react2['default'].createElement(
-        _Button2['default'],
+      var control = _react2.default.createElement(
+        _Button2.default,
         { type: 'icon', className: CLASS_ROOT + "__control",
           style: { lineHeight: this.state.controlHeight + 'px' },
           onClick: this._onClose },
@@ -431,7 +431,7 @@ var Menu = (function (_Component2) {
       } else {
         onClick = this._onSink;
       }
-      return _react2['default'].createElement(
+      return _react2.default.createElement(
         MenuDrop,
         _extends({ tabIndex: '-1',
           intl: this.context.intl,
@@ -481,10 +481,10 @@ var Menu = (function (_Component2) {
       }
 
       if (this.state.inline) {
-        var other = (0, _lodashObjectPick2['default'])(this.props, (0, _lodashObjectKeys2['default'])(_Box2['default'].propTypes));
+        var other = (0, _pick2.default)(this.props, (0, _keys2.default)(_Box2.default.propTypes));
 
-        return _react2['default'].createElement(
-          _Box2['default'],
+        return _react2.default.createElement(
+          _Box2.default,
           _extends({ tag: 'nav', id: this.props.id }, other, {
             className: classes.join(' ') }),
           this.props.children
@@ -495,8 +495,8 @@ var Menu = (function (_Component2) {
         var controlContents = this._renderControlContents();
         var menuTitle = this.props.a11yTitle || this.props.label;
 
-        return _react2['default'].createElement(
-          _Button2['default'],
+        return _react2.default.createElement(
+          _Button2.default,
           { ref: 'control', type: 'icon', id: this.props.id,
             className: classes.join(' '),
             tabIndex: '0',
@@ -514,12 +514,12 @@ var Menu = (function (_Component2) {
   return Menu;
 })(_react.Component);
 
-exports['default'] = Menu;
+exports.default = Menu;
 
 Menu.propTypes = _extends({
   closeOnClick: _react.PropTypes.bool,
   collapse: _react.PropTypes.bool, // deprecated, remove in 0.5
-  dropAlign: _utilsDrop2['default'].alignPropType,
+  dropAlign: _Drop2.default.alignPropType,
   dropColorIndex: _react.PropTypes.string,
   icon: _react.PropTypes.node,
   id: _react.PropTypes.string,
@@ -527,7 +527,7 @@ Menu.propTypes = _extends({
   label: _react.PropTypes.string,
   primary: _react.PropTypes.bool,
   size: _react.PropTypes.oneOf(['small', 'medium', 'large'])
-}, _Box2['default'].propTypes);
+}, _Box2.default.propTypes);
 
 Menu.contextTypes = {
   intl: _react.PropTypes.object,
@@ -542,4 +542,3 @@ Menu.defaultProps = {
   dropAlign: { top: 'top', left: 'left' },
   pad: 'none'
 };
-module.exports = exports['default'];

@@ -1,10 +1,10 @@
-// (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = {
+// (C) Copyright 2014 Hewlett Packard Enterprise Development LP
+exports.default = {
   getMessage: function getMessage(intl, key, values) {
     if (intl) {
       return intl.formatMessage({
@@ -16,4 +16,3 @@ exports["default"] = {
     }
   }
 };
-module.exports = exports["default"];

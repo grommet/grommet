@@ -1,20 +1,10 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
-
 'use strict';
 
-Object.defineProperty(exports, '__esModule', {
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var _react = require('react');
 
@@ -28,29 +18,39 @@ var _Legend = require('./Legend');
 
 var _Legend2 = _interopRequireDefault(_Legend);
 
-var _meterBar = require('./meter/Bar');
+var _Bar = require('./meter/Bar');
 
-var _meterBar2 = _interopRequireDefault(_meterBar);
+var _Bar2 = _interopRequireDefault(_Bar);
 
-var _meterSpiral = require('./meter/Spiral');
+var _Spiral = require('./meter/Spiral');
 
-var _meterSpiral2 = _interopRequireDefault(_meterSpiral);
+var _Spiral2 = _interopRequireDefault(_Spiral);
 
-var _meterCircle = require('./meter/Circle');
+var _Circle = require('./meter/Circle');
 
-var _meterCircle2 = _interopRequireDefault(_meterCircle);
+var _Circle2 = _interopRequireDefault(_Circle);
 
-var _meterArc = require('./meter/Arc');
+var _Arc = require('./meter/Arc');
 
-var _meterArc2 = _interopRequireDefault(_meterArc);
+var _Arc2 = _interopRequireDefault(_Arc);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _typeof(obj) { return obj && typeof Symbol !== "undefined" && obj.constructor === Symbol ? "symbol" : typeof obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = "meter";
 
 var TYPE_COMPONENT = {
-  'bar': _meterBar2['default'],
-  'circle': _meterCircle2['default'],
-  'arc': _meterArc2['default'],
-  'spiral': _meterSpiral2['default']
+  'bar': _Bar2.default,
+  'circle': _Circle2.default,
+  'arc': _Arc2.default,
+  'spiral': _Spiral2.default
 };
 
 var Meter = (function (_Component) {
@@ -59,18 +59,19 @@ var Meter = (function (_Component) {
   function Meter(props) {
     _classCallCheck(this, Meter);
 
-    _get(Object.getPrototypeOf(Meter.prototype), 'constructor', this).call(this);
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Meter).call(this));
 
-    this._initialTimeout = this._initialTimeout.bind(this);
-    this._layout = this._layout.bind(this);
-    this._onResize = this._onResize.bind(this);
-    this._onActivate = this._onActivate.bind(this);
+    _this._initialTimeout = _this._initialTimeout.bind(_this);
+    _this._layout = _this._layout.bind(_this);
+    _this._onResize = _this._onResize.bind(_this);
+    _this._onActivate = _this._onActivate.bind(_this);
 
-    this.state = this._stateFromProps(props);
-    if (this.state.placeLegend) {
-      this.state.legendPlacement = 'bottom';
+    _this.state = _this._stateFromProps(props);
+    if (_this.state.placeLegend) {
+      _this.state.legendPlacement = 'bottom';
     }
-    this.state.initial = true;
+    _this.state.initial = true;
+    return _this;
   }
 
   _createClass(Meter, [{
@@ -134,7 +135,7 @@ var Meter = (function (_Component) {
       if ('right' === this.state.legendPlacement) {
         if (this.refs.legend) {
           var graphicHeight = this.refs.activeGraphic.offsetHeight;
-          var legendHeight = _reactDom2['default'].findDOMNode(this.refs.legend).offsetHeight;
+          var legendHeight = _reactDom2.default.findDOMNode(this.refs.legend).offsetHeight;
           this.setState({ tallLegend: legendHeight > graphicHeight });
         }
       }
@@ -163,6 +164,7 @@ var Meter = (function (_Component) {
                   item.colorIndex = threshold.colorIndex || 'graph-1';
                   return true;
                 }
+                return false;
               });
             })();
           }
@@ -227,11 +229,13 @@ var Meter = (function (_Component) {
           result = index;
           return true;
         }
+        return false;
       });
       return result;
     }
 
     // Normalize min or max to an object.
+
   }, {
     key: '_terminal',
     value: function _terminal(terminal) {
@@ -260,6 +264,7 @@ var Meter = (function (_Component) {
     }
 
     // Generates state based on the provided props.
+
   }, {
     key: '_stateFromProps',
     value: function _stateFromProps(props) {
@@ -330,25 +335,25 @@ var Meter = (function (_Component) {
       }
       var units = undefined;
       if (this.props.units) {
-        units = _react2['default'].createElement(
+        units = _react2.default.createElement(
           'span',
           { className: CLASS_ROOT + "__value-units large-number-font" },
           this.props.units
         );
       }
 
-      return _react2['default'].createElement(
+      return _react2.default.createElement(
         'div',
         { 'aria-hidden': 'true', role: 'presentation',
           className: classes.join(' '), onClick: fields.onClick },
-        _react2['default'].createElement(
+        _react2.default.createElement(
           'span',
           {
             className: CLASS_ROOT + "__value-value large-number-font" },
           fields.value,
           units
         ),
-        _react2['default'].createElement(
+        _react2.default.createElement(
           'span',
           { className: CLASS_ROOT + "__value-label" },
           fields.label
@@ -360,7 +365,7 @@ var Meter = (function (_Component) {
     value: function _renderMinMax(classes) {
       var minLabel = undefined;
       if (this.state.min.label) {
-        minLabel = _react2['default'].createElement(
+        minLabel = _react2.default.createElement(
           'div',
           { className: CLASS_ROOT + "__minmax-min" },
           this.state.min.label
@@ -368,7 +373,7 @@ var Meter = (function (_Component) {
       }
       var maxLabel = undefined;
       if (this.state.max.label) {
-        maxLabel = _react2['default'].createElement(
+        maxLabel = _react2.default.createElement(
           'div',
           { className: CLASS_ROOT + "__minmax-max" },
           this.state.max.label
@@ -376,10 +381,10 @@ var Meter = (function (_Component) {
       }
       var minMax = undefined;
       if (minLabel || maxLabel) {
-        minMax = _react2['default'].createElement(
+        minMax = _react2.default.createElement(
           'div',
           { className: CLASS_ROOT + "__minmax-container" },
-          _react2['default'].createElement(
+          _react2.default.createElement(
             'div',
             { className: CLASS_ROOT + "__minmax" },
             minLabel,
@@ -393,8 +398,8 @@ var Meter = (function (_Component) {
   }, {
     key: '_renderLegend',
     value: function _renderLegend() {
-      var total = typeof this.props.legend === 'object' && this.props.legend.total;
-      return _react2['default'].createElement(_Legend2['default'], { ref: 'legend', className: CLASS_ROOT + "__legend",
+      var total = _typeof(this.props.legend) === 'object' && this.props.legend.total;
+      return _react2.default.createElement(_Legend2.default, { ref: 'legend', className: CLASS_ROOT + "__legend",
         series: this.state.series,
         units: this.props.units,
         total: total,
@@ -446,7 +451,7 @@ var Meter = (function (_Component) {
       }
 
       var GraphicComponent = TYPE_COMPONENT[this.props.type];
-      var graphic = _react2['default'].createElement(GraphicComponent, {
+      var graphic = _react2.default.createElement(GraphicComponent, {
         a11yTitle: this.props.a11yTitle,
         a11yTitleId: this.props.a11yTitleId,
         a11yDesc: this.props.a11yDesc,
@@ -464,7 +469,7 @@ var Meter = (function (_Component) {
 
       var graphicContainer = undefined;
       if (this.state.total > 0) {
-        graphicContainer = _react2['default'].createElement(
+        graphicContainer = _react2.default.createElement(
           'div',
           { className: CLASS_ROOT + "__graphic-container" },
           graphic,
@@ -472,10 +477,10 @@ var Meter = (function (_Component) {
         );
       }
 
-      return _react2['default'].createElement(
+      return _react2.default.createElement(
         'div',
         { className: classes.join(' ') },
-        _react2['default'].createElement(
+        _react2.default.createElement(
           'div',
           { ref: 'activeGraphic', className: CLASS_ROOT + "__value-container" },
           graphicContainer,
@@ -489,7 +494,7 @@ var Meter = (function (_Component) {
   return Meter;
 })(_react.Component);
 
-exports['default'] = Meter;
+exports.default = Meter;
 
 Meter.propTypes = {
   a11yTitle: _react.PropTypes.string,
@@ -539,4 +544,3 @@ Meter.defaultProps = {
 Meter.contextTypes = {
   intl: _react.PropTypes.object
 };
-module.exports = exports['default'];

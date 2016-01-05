@@ -1,18 +1,17 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
 /*
  * Scroll provides smooth scrolling.
  */
 
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
 var SCROLL_STEPS = 25;
 
-exports["default"] = {
-
+exports.default = {
   _easeInOutQuad: function _easeInOutQuad(t) {
     return t < .5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
   },
@@ -47,4 +46,3 @@ exports["default"] = {
     }).bind(this), 8);
   }
 };
-module.exports = exports["default"];

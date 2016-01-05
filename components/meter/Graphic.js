@@ -1,22 +1,12 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
-
 'use strict';
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
-var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
 var _react = require('react');
 
@@ -28,13 +18,21 @@ var _reactDom2 = _interopRequireDefault(_reactDom);
 
 var _utils = require('./utils');
 
-var _utilsIntl = require('../../utils/Intl');
+var _Intl = require('../../utils/Intl');
 
-var _utilsIntl2 = _interopRequireDefault(_utilsIntl);
+var _Intl2 = _interopRequireDefault(_Intl);
 
-var _utilsKeyboardAccelerators = require('../../utils/KeyboardAccelerators');
+var _KeyboardAccelerators = require('../../utils/KeyboardAccelerators');
 
-var _utilsKeyboardAccelerators2 = _interopRequireDefault(_utilsKeyboardAccelerators);
+var _KeyboardAccelerators2 = _interopRequireDefault(_KeyboardAccelerators);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = _utils.classRoot;
 
@@ -44,11 +42,13 @@ var Graphic = (function (_Component) {
   function Graphic(props) {
     _classCallCheck(this, Graphic);
 
-    _get(Object.getPrototypeOf(Graphic.prototype), 'constructor', this).call(this);
-    this.state = this._stateFromProps(props);
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Graphic).call(this));
 
-    this._onRequestForNextLegend = this._onRequestForNextLegend.bind(this);
-    this._onRequestForPreviousLegend = this._onRequestForPreviousLegend.bind(this);
+    _this.state = _this._stateFromProps(props);
+
+    _this._onRequestForNextLegend = _this._onRequestForNextLegend.bind(_this);
+    _this._onRequestForPreviousLegend = _this._onRequestForPreviousLegend.bind(_this);
+    return _this;
   }
 
   _createClass(Graphic, [{
@@ -58,7 +58,7 @@ var Graphic = (function (_Component) {
         left: this._onRequestForPreviousLegend,
         right: this._onRequestForNextLegend
       };
-      _utilsKeyboardAccelerators2['default'].startListeningToKeyboard(this, this._keyboardHandlers);
+      _KeyboardAccelerators2.default.startListeningToKeyboard(this, this._keyboardHandlers);
     }
   }, {
     key: 'componentWillReceiveProps',
@@ -69,10 +69,11 @@ var Graphic = (function (_Component) {
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
-      _utilsKeyboardAccelerators2['default'].stopListeningToKeyboard(this, this._keyboardHandlers);
+      _KeyboardAccelerators2.default.stopListeningToKeyboard(this, this._keyboardHandlers);
     }
 
     // override
+
   }, {
     key: '_stateFromProps',
     value: function _stateFromProps(props) {
@@ -80,6 +81,7 @@ var Graphic = (function (_Component) {
     }
 
     // override
+
   }, {
     key: '_sliceCommands',
     value: function _sliceCommands(trackIndex, item, startValue) {
@@ -127,7 +129,7 @@ var Graphic = (function (_Component) {
       e.stopPropagation();
       e.stopImmediatePropagation();
       if (document.activeElement === this.refs.meter) {
-        var totalValueCount = _reactDom2['default'].findDOMNode(this.refs.meterValues).childNodes.length;
+        var totalValueCount = _reactDom2.default.findDOMNode(this.refs.meterValues).childNodes.length;
 
         if (this.props.activeIndex - 1 < 0) {
           this.props.onActivate(totalValueCount - 1);
@@ -142,7 +144,7 @@ var Graphic = (function (_Component) {
       e.stopPropagation();
       e.stopImmediatePropagation();
       if (document.activeElement === this.refs.meter) {
-        var totalValueCount = _reactDom2['default'].findDOMNode(this.refs.meterValues).childNodes.length;
+        var totalValueCount = _reactDom2.default.findDOMNode(this.refs.meterValues).childNodes.length;
 
         if (this.props.activeIndex + 1 >= totalValueCount) {
           this.props.onActivate(0);
@@ -158,25 +160,25 @@ var Graphic = (function (_Component) {
       classes.push(CLASS_ROOT + "__slice--loading");
       classes.push("color-index-loading");
       var commands = this._loadingCommands();
-      return [_react2['default'].createElement('path', { key: 'loading', className: classes.join(' '), d: commands })];
+      return [_react2.default.createElement('path', { key: 'loading', className: classes.join(' '), d: commands })];
     }
   }, {
     key: '_renderValues',
     value: function _renderValues() {
-      var _this = this;
+      var _this2 = this;
 
       var values = undefined;
       if (this.props.stacked) {
         values = this._renderTrack(this.props.series, 0);
       } else {
         values = this.props.series.map(function (item, index) {
-          return _this._renderSlice(index, item, index, _this.props.min.value);
+          return _this2._renderSlice(index, item, index, _this2.props.min.value);
         });
       }
       if (values.length === 0) {
         values = this._renderLoading();
       }
-      return _react2['default'].createElement(
+      return _react2.default.createElement(
         'g',
         { ref: 'meterValues', className: CLASS_ROOT + "__values", role: 'row' },
         values
@@ -185,7 +187,7 @@ var Graphic = (function (_Component) {
   }, {
     key: '_renderThresholds',
     value: function _renderThresholds() {
-      var _this2 = this;
+      var _this3 = this;
 
       var result = undefined;
       var thresholds = undefined;
@@ -193,11 +195,11 @@ var Graphic = (function (_Component) {
         thresholds = this._renderTrack(this.props.thresholds, 0, true);
       } else {
         thresholds = this.props.series.map(function (item, index) {
-          return _this2._renderTrack(_this2.props.thresholds, index, true);
+          return _this3._renderTrack(_this3.props.thresholds, index, true);
         });
       }
       if (thresholds.length > 0) {
-        result = _react2['default'].createElement(
+        result = _react2.default.createElement(
           'g',
           { className: CLASS_ROOT + "__thresholds" },
           thresholds
@@ -224,8 +226,8 @@ var Graphic = (function (_Component) {
     value: function _renderA11YTitle() {
       var a11yTitle = this.props.a11yTitle;
       if (!a11yTitle) {
-        var graphicTitle = _utilsIntl2['default'].getMessage(this.context.intl, this.displayName);
-        var meterTitle = _utilsIntl2['default'].getMessage(this.context.intl, 'Meter');
+        var graphicTitle = _Intl2.default.getMessage(this.context.intl, this.displayName);
+        var meterTitle = _Intl2.default.getMessage(this.context.intl, 'Meter');
 
         a11yTitle = graphicTitle + ' ' + meterTitle;
       }
@@ -235,28 +237,28 @@ var Graphic = (function (_Component) {
   }, {
     key: '_renderA11YDesc',
     value: function _renderA11YDesc() {
-      var _this3 = this;
+      var _this4 = this;
 
       var a11yDesc = this.props.a11yDesc;
       var units = this.props.units || '';
       if (!a11yDesc) {
-        var valueLabel = _utilsIntl2['default'].getMessage(this.context.intl, 'Value');
+        var valueLabel = _Intl2.default.getMessage(this.context.intl, 'Value');
         a11yDesc = ', ' + valueLabel + ': ' + this._renderTotal() + ' ' + units;
 
         if (this.props.min) {
-          var minLabel = _utilsIntl2['default'].getMessage(this.context.intl, 'Min');
+          var minLabel = _Intl2.default.getMessage(this.context.intl, 'Min');
           a11yDesc += ', ' + minLabel + ': ' + this.props.min.value + ' ' + units;
         }
 
         if (this.props.max) {
-          var maxLabel = _utilsIntl2['default'].getMessage(this.context.intl, 'Max');
+          var maxLabel = _Intl2.default.getMessage(this.context.intl, 'Max');
           a11yDesc += ', ' + maxLabel + ': ' + this.props.max.value + ' ' + units;
         }
 
         if (this.props.thresholds) {
           (function () {
-            var thresholdLabel = _utilsIntl2['default'].getMessage(_this3.context.intl, 'Threshold');
-            _this3.props.thresholds.forEach(function (threshold) {
+            var thresholdLabel = _Intl2.default.getMessage(_this4.context.intl, 'Threshold');
+            _this4.props.thresholds.forEach(function (threshold) {
               if (threshold.ariaLabel) {
                 a11yDesc += ', ' + thresholdLabel + ': ' + threshold.ariaLabel;
               }
@@ -284,7 +286,7 @@ var Graphic = (function (_Component) {
 
       var activeDescendant = this.props.a11yDescId + '_' + (this.props.activeIndex || 0);
 
-      return _react2['default'].createElement(
+      return _react2.default.createElement(
         'svg',
         { ref: 'meter', className: CLASS_ROOT + "__graphic",
           tabIndex: '0', role: this.props.a11yRole,
@@ -294,12 +296,12 @@ var Graphic = (function (_Component) {
           preserveAspectRatio: 'xMidYMid meet',
           'aria-activedescendant': activeDescendant,
           'aria-labelledby': this.props.a11yTitleId + ' ' + this.props.a11yDescId },
-        _react2['default'].createElement(
+        _react2.default.createElement(
           'title',
           { id: this.props.a11yTitleId },
           a11yTitle
         ),
-        _react2['default'].createElement(
+        _react2.default.createElement(
           'desc',
           { id: this.props.a11yDescId },
           a11yDesc
@@ -314,7 +316,7 @@ var Graphic = (function (_Component) {
   return Graphic;
 })(_react.Component);
 
-exports['default'] = Graphic;
+exports.default = Graphic;
 
 Graphic.propTypes = _extends({
   a11yRole: _react.PropTypes.string,
@@ -334,4 +336,3 @@ Graphic.contextTypes = {
 Graphic.defaultProps = {
   a11yRole: 'img'
 };
-module.exports = exports['default'];

@@ -1,18 +1,18 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
-
 'use strict';
 
-Object.defineProperty(exports, '__esModule', {
+Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 var _Rest = require('./Rest');
 
 var _Rest2 = _interopRequireDefault(_Rest);
 
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 var RECONNECT_TIMEOUT = 5000; // 5s
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+
 var POLL_TIMEOUT = 10000; // 10s
 
 var state = {
@@ -25,8 +25,7 @@ var state = {
   socketUrl: null
 };
 
-exports['default'] = {
-
+exports.default = {
   _sendMessage: function _sendMessage(op, id, url, params) {
     state.ws.send(JSON.stringify({
       op: op,
@@ -35,7 +34,6 @@ exports['default'] = {
       params: params
     }));
   },
-
   _onOpen: function _onOpen() {
     state.wsReady = true;
     // send any requests we have queued up
@@ -43,11 +41,9 @@ exports['default'] = {
       this._sendMessage('start', request.id, request.url, request.params);
     }, this);
   },
-
   _onError: function _onError(error) {
     console.log('!!! RestWatch _onError TODO', error);
   },
-
   _onMessage: function _onMessage(event) {
     var message = JSON.parse(event.data);
     // Figure out which message this corresponds to so we
@@ -58,7 +54,6 @@ exports['default'] = {
       }
     });
   },
-
   _onClose: function _onClose() {
     // lost connection, retry in a bit
     state.ws = null;
@@ -66,10 +61,9 @@ exports['default'] = {
     state.initialized = false;
     state.timer = setTimeout(this.initialize.bind(this), RECONNECT_TIMEOUT);
   },
-
   _getREST: function _getREST(request) {
     request.pollBusy = true;
-    _Rest2['default'].get(request.url, request.params).end(function (err, res) {
+    _Rest2.default.get(request.url, request.params).end(function (err, res) {
       if (err) {
         throw err;
       }
@@ -80,7 +74,6 @@ exports['default'] = {
       request.pollBusy = false;
     });
   },
-
   _poll: function _poll() {
     state.requests.forEach(function (request) {
       if (!request.pollBusy) {
@@ -88,7 +81,6 @@ exports['default'] = {
       }
     });
   },
-
   initialize: function initialize(socketUrl) {
     if (!state.initialized && !state.ws && this.available() && (state.socketUrl || socketUrl)) {
       state.socketUrl = state.socketUrl || socketUrl;
@@ -100,11 +92,9 @@ exports['default'] = {
       state.initialized = true;
     }
   },
-
   available: function available() {
     return 'WebSocket' in window || 'MozWebSocket' in window;
   },
-
   start: function start(url, params, handler) {
     this.initialize();
     var request = {
@@ -126,17 +116,16 @@ exports['default'] = {
     }
     return request.id;
   },
-
   stop: function stop(requestId) {
     state.requests = state.requests.filter(function (request) {
       if (request.id === requestId) {
         if (state.wsReady) {
           this._sendMessage('stop', request.id);
         }
+        return false;
       } else {
         return true;
       }
     }, this);
   }
 };
-module.exports = exports['default'];

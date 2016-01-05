@@ -1,30 +1,29 @@
-// (C) Copyright 2014 Hewlett Packard Enterprise Development LP
-
 'use strict';
 
-Object.defineProperty(exports, '__esModule', {
+Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 var _react = require('react');
 
 var _reactDom = require('react-dom');
 
-var _utilsDOM = require('../utils/DOM');
+var _DOM = require('../utils/DOM');
 
-var _utilsDOM2 = _interopRequireDefault(_utilsDOM);
+var _DOM2 = _interopRequireDefault(_DOM);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /*
  * Drop is a utility for rendering components like drop down menus layered above
  * their initiating controls.
  */
 
-var VERTICAL_ALIGN_OPTIONS = ['top', 'bottom'];
+var VERTICAL_ALIGN_OPTIONS = ['top', 'bottom']; // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
+
 var HORIZONTAL_ALIGN_OPTIONS = ['right', 'left'];
 
-exports['default'] = {
+exports.default = {
 
   // How callers can validate a property for drop alignment which will be passed to add().
   alignPropType: _react.PropTypes.shape({
@@ -85,7 +84,7 @@ exports['default'] = {
     document.body.appendChild(drop.container);
     (0, _reactDom.render)(content, drop.container);
 
-    drop.scrollParents = _utilsDOM2['default'].findScrollParents(drop.control);
+    drop.scrollParents = _DOM2.default.findScrollParents(drop.control);
     drop.place = this._place.bind(this, drop);
     drop.render = this._render.bind(this, drop);
     drop.remove = this._remove.bind(this, drop);
@@ -100,13 +99,11 @@ exports['default'] = {
 
     return drop;
   },
-
   _render: function _render(drop, content) {
     (0, _reactDom.render)(content, drop.container);
     // in case content changed, re-place
     setTimeout(this._place.bind(this, drop), 1);
   },
-
   _remove: function _remove(drop) {
     drop.scrollParents.forEach(function (scrollParent) {
       scrollParent.removeEventListener('scroll', drop.place);
@@ -116,7 +113,6 @@ exports['default'] = {
     (0, _reactDom.unmountComponentAtNode)(drop.container);
     document.body.removeChild(drop.container);
   },
-
   _place: function _place(drop) {
     var control = drop.control;
     var container = drop.container;
@@ -185,4 +181,3 @@ exports['default'] = {
     container.style.top = '' + top + 'px';
   }
 };
-module.exports = exports['default'];

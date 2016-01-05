@@ -1,24 +1,22 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
-
 'use strict';
 
-Object.defineProperty(exports, '__esModule', {
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = "map";
 
@@ -28,18 +26,19 @@ var ResourceMap = (function (_Component) {
   function ResourceMap() {
     _classCallCheck(this, ResourceMap);
 
-    _get(Object.getPrototypeOf(ResourceMap.prototype), 'constructor', this).call(this);
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(ResourceMap).call(this));
 
-    this._onResize = this._onResize.bind(this);
-    this._layout = this._layout.bind(this);
-    this._draw = this._draw.bind(this);
-    this._onEnter = this._onEnter.bind(this);
-    this._onLeave = this._onLeave.bind(this);
+    _this._onResize = _this._onResize.bind(_this);
+    _this._layout = _this._layout.bind(_this);
+    _this._draw = _this._draw.bind(_this);
+    _this._onEnter = _this._onEnter.bind(_this);
+    _this._onLeave = _this._onLeave.bind(_this);
 
-    this.state = {
+    _this.state = {
       canvasWidth: 100,
       canvasHeight: 100
     };
+    return _this;
   }
 
   _createClass(ResourceMap, [{
@@ -144,7 +143,7 @@ var ResourceMap = (function (_Component) {
         if (active) {
           classes.push(CLASS_ROOT + "__item--active");
         }
-        return _react2['default'].createElement(
+        return _react2.default.createElement(
           'li',
           { key: index, id: item.id, className: classes.join(' '),
             onMouseEnter: this._onEnter.bind(this, item.id),
@@ -157,15 +156,15 @@ var ResourceMap = (function (_Component) {
     key: '_renderCategories',
     value: function _renderCategories(categories) {
       var result = categories.map(function (category) {
-        return _react2['default'].createElement(
+        return _react2.default.createElement(
           'li',
           { key: category.id, className: CLASS_ROOT + "__category" },
-          _react2['default'].createElement(
+          _react2.default.createElement(
             'ul',
             { className: CLASS_ROOT + "__category-items" },
             this._renderItems(category.items)
           ),
-          _react2['default'].createElement(
+          _react2.default.createElement(
             'div',
             { className: CLASS_ROOT + "__category-label" },
             category.label
@@ -187,14 +186,14 @@ var ResourceMap = (function (_Component) {
         categories = this._renderCategories(this.props.data.categories);
       }
 
-      return _react2['default'].createElement(
+      return _react2.default.createElement(
         'div',
         { ref: 'map', className: classes.join(' ') },
-        _react2['default'].createElement('canvas', { ref: 'canvas', className: CLASS_ROOT + "__canvas",
+        _react2.default.createElement('canvas', { ref: 'canvas', className: CLASS_ROOT + "__canvas",
           width: this.state.canvasWidth, height: this.state.canvasHeight }),
-        _react2['default'].createElement('canvas', { ref: 'highlightCanvas', className: CLASS_ROOT + "__canvas " + CLASS_ROOT + "__canvas--highlight",
+        _react2.default.createElement('canvas', { ref: 'highlightCanvas', className: CLASS_ROOT + "__canvas " + CLASS_ROOT + "__canvas--highlight",
           width: this.state.canvasWidth, height: this.state.canvasHeight }),
-        _react2['default'].createElement(
+        _react2.default.createElement(
           'ol',
           { className: CLASS_ROOT + "__categories" },
           categories
@@ -206,7 +205,7 @@ var ResourceMap = (function (_Component) {
   return ResourceMap;
 })(_react.Component);
 
-exports['default'] = ResourceMap;
+exports.default = ResourceMap;
 
 ResourceMap.propTypes = {
   data: _react.PropTypes.shape({
@@ -224,4 +223,3 @@ ResourceMap.propTypes = {
     }))
   }).isRequired
 };
-module.exports = exports['default'];

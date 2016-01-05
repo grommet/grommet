@@ -1,52 +1,50 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
-
 'use strict';
 
-Object.defineProperty(exports, '__esModule', {
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _statusOK = require('./status/OK');
+var _OK = require('./status/OK');
 
-var _statusOK2 = _interopRequireDefault(_statusOK);
+var _OK2 = _interopRequireDefault(_OK);
 
-var _statusCriticalStatus = require('./status/CriticalStatus');
+var _CriticalStatus = require('./status/CriticalStatus');
 
-var _statusCriticalStatus2 = _interopRequireDefault(_statusCriticalStatus);
+var _CriticalStatus2 = _interopRequireDefault(_CriticalStatus);
 
-var _statusErrorStatus = require('./status/ErrorStatus');
+var _ErrorStatus = require('./status/ErrorStatus');
 
-var _statusErrorStatus2 = _interopRequireDefault(_statusErrorStatus);
+var _ErrorStatus2 = _interopRequireDefault(_ErrorStatus);
 
-var _statusWarning = require('./status/Warning');
+var _Warning = require('./status/Warning');
 
-var _statusWarning2 = _interopRequireDefault(_statusWarning);
+var _Warning2 = _interopRequireDefault(_Warning);
 
-var _statusDisabled = require('./status/Disabled');
+var _Disabled = require('./status/Disabled');
 
-var _statusDisabled2 = _interopRequireDefault(_statusDisabled);
+var _Disabled2 = _interopRequireDefault(_Disabled);
 
-var _statusUnknown = require('./status/Unknown');
+var _Unknown = require('./status/Unknown');
 
-var _statusUnknown2 = _interopRequireDefault(_statusUnknown);
+var _Unknown2 = _interopRequireDefault(_Unknown);
 
-var _statusLabel = require('./status/Label');
+var _Label = require('./status/Label');
 
-var _statusLabel2 = _interopRequireDefault(_statusLabel);
+var _Label2 = _interopRequireDefault(_Label);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = "status-icon";
 
@@ -56,8 +54,10 @@ var Status = (function (_Component) {
   function Status(props, context) {
     _classCallCheck(this, Status);
 
-    _get(Object.getPrototypeOf(Status.prototype), 'constructor', this).call(this, props, context);
-    this.state = this._stateFromProps(props);
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Status).call(this, props, context));
+
+    _this.state = _this._stateFromProps(props);
+    return _this;
   }
 
   _createClass(Status, [{
@@ -88,7 +88,7 @@ var Status = (function (_Component) {
         classes.push(CLASS_ROOT + "--" + size);
       }
       var className = classes.join(' ');
-      var icon = _react2['default'].createElement(
+      var icon = _react2.default.createElement(
         'span',
         null,
         '?'
@@ -96,26 +96,26 @@ var Status = (function (_Component) {
       switch (this.props.value.toLowerCase()) {
         case 'ok':
         case 'normal':
-          icon = _react2['default'].createElement(_statusOK2['default'], { className: className, a11yTitle: a11yTitle });
+          icon = _react2.default.createElement(_OK2.default, { className: className, a11yTitle: a11yTitle });
           break;
         case 'warning':
-          icon = _react2['default'].createElement(_statusWarning2['default'], { className: className, a11yTitle: a11yTitle });
+          icon = _react2.default.createElement(_Warning2.default, { className: className, a11yTitle: a11yTitle });
           break;
         // 'error' is deprecated, use 'critical'
         case 'error':
-          icon = _react2['default'].createElement(_statusErrorStatus2['default'], { className: className, a11yTitle: a11yTitle });
+          icon = _react2.default.createElement(_ErrorStatus2.default, { className: className, a11yTitle: a11yTitle });
           break;
         case 'critical':
-          icon = _react2['default'].createElement(_statusCriticalStatus2['default'], { className: className, a11yTitle: a11yTitle });
+          icon = _react2.default.createElement(_CriticalStatus2.default, { className: className, a11yTitle: a11yTitle });
           break;
         case 'disabled':
-          icon = _react2['default'].createElement(_statusDisabled2['default'], { className: className, a11yTitle: a11yTitle });
+          icon = _react2.default.createElement(_Disabled2.default, { className: className, a11yTitle: a11yTitle });
           break;
         case 'unknown':
-          icon = _react2['default'].createElement(_statusUnknown2['default'], { className: className, a11yTitle: a11yTitle });
+          icon = _react2.default.createElement(_Unknown2.default, { className: className, a11yTitle: a11yTitle });
           break;
         case 'label':
-          icon = _react2['default'].createElement(_statusLabel2['default'], { className: className, a11yTitle: a11yTitle });
+          icon = _react2.default.createElement(_Label2.default, { className: className, a11yTitle: a11yTitle });
           break;
       }
       return icon;
@@ -125,7 +125,7 @@ var Status = (function (_Component) {
   return Status;
 })(_react.Component);
 
-exports['default'] = Status;
+exports.default = Status;
 
 Status.defaultProps = { value: 'unknown' };
 
@@ -136,4 +136,3 @@ Status.propTypes = {
   size: _react.PropTypes.oneOf(['small', 'medium', 'large']),
   value: _react.PropTypes.oneOf(['critical', 'warning', 'ok', 'unknown', 'disabled', 'label', 'Critical', 'Warning', 'OK', 'Unknown', 'Disabled', 'Label'])
 };
-module.exports = exports['default'];

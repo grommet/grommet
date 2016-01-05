@@ -1,20 +1,10 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
-
 'use strict';
 
-Object.defineProperty(exports, '__esModule', {
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var _react = require('react');
 
@@ -23,6 +13,14 @@ var _react2 = _interopRequireDefault(_react);
 var _Legend = require('./Legend');
 
 var _Legend2 = _interopRequireDefault(_Legend);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = "distribution";
 
@@ -38,16 +36,17 @@ var Distribution = (function (_Component) {
   function Distribution(props) {
     _classCallCheck(this, Distribution);
 
-    _get(Object.getPrototypeOf(Distribution.prototype), 'constructor', this).call(this);
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Distribution).call(this));
 
-    this._onResize = this._onResize.bind(this);
-    this._layout = this._layout.bind(this);
+    _this._onResize = _this._onResize.bind(_this);
+    _this._layout = _this._layout.bind(_this);
     // this._onActive = this._onActive.bind(this);
 
-    this.state = this._stateFromProps(props);
-    this.state.legendPosition = 'bottom';
-    this.state.width = DEFAULT_WIDTH;
-    this.state.height = DEFAULT_HEIGHT;
+    _this.state = _this._stateFromProps(props);
+    _this.state.legendPosition = 'bottom';
+    _this.state.width = DEFAULT_WIDTH;
+    _this.state.height = DEFAULT_HEIGHT;
+    return _this;
   }
 
   _createClass(Distribution, [{
@@ -136,6 +135,7 @@ var Distribution = (function (_Component) {
     }
 
     // Generates state based on the provided props.
+
   }, {
     key: '_stateFromProps',
     value: function _stateFromProps(props) {
@@ -164,7 +164,7 @@ var Distribution = (function (_Component) {
   }, {
     key: '_renderLegend',
     value: function _renderLegend() {
-      return _react2['default'].createElement(_Legend2['default'], { className: CLASS_ROOT + "__legend",
+      return _react2.default.createElement(_Legend2.default, { className: CLASS_ROOT + "__legend",
         series: this.props.series,
         units: this.props.units,
         activeIndex: this.state.activeIndex,
@@ -213,7 +213,7 @@ var Distribution = (function (_Component) {
         var iconIndex = 1;
         while (iconY < height - item.icon.height) {
           while (iconX < width - item.icon.width) {
-            icons.push(_react2['default'].createElement(
+            icons.push(_react2.default.createElement(
               'g',
               { key: iconIndex,
                 transform: "translate(" + (x + iconX) + "," + (y + iconY) + ")" },
@@ -225,13 +225,13 @@ var Distribution = (function (_Component) {
           iconY += item.icon.height;
           iconX = 0;
         }
-        contents = _react2['default'].createElement(
+        contents = _react2.default.createElement(
           'g',
           { className: iconClasses.join(' ') },
           icons
         );
       } else {
-        contents = _react2['default'].createElement('rect', { className: boxClasses.join(' '),
+        contents = _react2.default.createElement('rect', { className: boxClasses.join(' '),
           x: x, y: y, width: width, height: height });
       }
 
@@ -243,27 +243,27 @@ var Distribution = (function (_Component) {
         labelClasses.push(CLASS_ROOT + "__label--thin");
       }
 
-      labels.push(_react2['default'].createElement(
+      labels.push(_react2.default.createElement(
         'div',
         { key: index, className: labelClasses.join(' '), 'data-box-index': index },
-        _react2['default'].createElement(
+        _react2.default.createElement(
           'span',
           { className: CLASS_ROOT + "__label-value" },
           item.value,
-          _react2['default'].createElement(
+          _react2.default.createElement(
             'span',
             { className: CLASS_ROOT + "__label-units" },
             this.props.units
           )
         ),
-        _react2['default'].createElement(
+        _react2.default.createElement(
           'span',
           { className: CLASS_ROOT + "__label-label" },
           item.label
         )
       ));
 
-      return _react2['default'].createElement(
+      return _react2.default.createElement(
         'g',
         { key: index, 'data-index': index, onClick: item.onClick },
         contents
@@ -317,17 +317,17 @@ var Distribution = (function (_Component) {
         var loadingClasses = [CLASS_ROOT + "__loading-indicator"];
         loadingClasses.push("color-index-loading");
         var commands = "M0," + this.state.height / 2 + " L" + this.state.width + "," + this.state.height / 2;
-        boxes.push(_react2['default'].createElement(
+        boxes.push(_react2.default.createElement(
           'g',
           { key: 'loading' },
-          _react2['default'].createElement('path', { stroke: 'none', className: loadingClasses.join(' '), d: commands })
+          _react2.default.createElement('path', { stroke: 'none', className: loadingClasses.join(' '), d: commands })
         ));
       }
 
-      return _react2['default'].createElement(
+      return _react2.default.createElement(
         'div',
         { ref: 'container', className: classes.join(' ') },
-        _react2['default'].createElement(
+        _react2.default.createElement(
           'svg',
           { ref: 'graphic', className: CLASS_ROOT + "__graphic",
             viewBox: "0 0 " + this.state.width + " " + this.state.height,
@@ -343,7 +343,7 @@ var Distribution = (function (_Component) {
   return Distribution;
 })(_react.Component);
 
-exports['default'] = Distribution;
+exports.default = Distribution;
 
 Distribution.propTypes = {
   large: _react.PropTypes.bool,
@@ -366,4 +366,3 @@ Distribution.propTypes = {
   units: _react.PropTypes.string,
   vertical: _react.PropTypes.bool
 };
-module.exports = exports['default'];

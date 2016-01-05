@@ -1,38 +1,38 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
-
 'use strict';
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
-var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _lodashObjectKeys = require('lodash/object/keys');
+var _keys = require('lodash/object/keys');
 
-var _lodashObjectKeys2 = _interopRequireDefault(_lodashObjectKeys);
+var _keys2 = _interopRequireDefault(_keys);
 
-var _utilsKeyboardAccelerators = require('../utils/KeyboardAccelerators');
+var _KeyboardAccelerators = require('../utils/KeyboardAccelerators');
 
-var _utilsKeyboardAccelerators2 = _interopRequireDefault(_utilsKeyboardAccelerators);
+var _KeyboardAccelerators2 = _interopRequireDefault(_KeyboardAccelerators);
 
-var _utilsIntl = require('../utils/Intl');
+var _Intl = require('../utils/Intl');
 
-var _utilsIntl2 = _interopRequireDefault(_utilsIntl);
+var _Intl2 = _interopRequireDefault(_Intl);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _typeof(obj) { return obj && typeof Symbol !== "undefined" && obj.constructor === Symbol ? "symbol" : typeof obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = "box";
 
@@ -42,7 +42,7 @@ var Box = (function (_Component) {
   function Box() {
     _classCallCheck(this, Box);
 
-    _get(Object.getPrototypeOf(Box.prototype), 'constructor', this).apply(this, arguments);
+    return _possibleConstructorReturn(this, Object.getPrototypeOf(Box).apply(this, arguments));
   }
 
   _createClass(Box, [{
@@ -55,7 +55,7 @@ var Box = (function (_Component) {
           }
         }).bind(this);
 
-        _utilsKeyboardAccelerators2['default'].startListeningToKeyboard(this, {
+        _KeyboardAccelerators2.default.startListeningToKeyboard(this, {
           enter: clickCallback,
           space: clickCallback
         });
@@ -65,7 +65,7 @@ var Box = (function (_Component) {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
       if (this.props.onClick) {
-        _utilsKeyboardAccelerators2['default'].stopListeningToKeyboard(this);
+        _KeyboardAccelerators2.default.stopListeningToKeyboard(this);
       }
     }
   }, {
@@ -76,8 +76,8 @@ var Box = (function (_Component) {
       if (choice) {
         if (typeof choice === 'string') {
           classes.push(prefix + '--' + propertyPrefix + '-' + choice);
-        } else if (typeof choice === 'object') {
-          (0, _lodashObjectKeys2['default'])(choice).forEach(function (key) {
+        } else if ((typeof choice === 'undefined' ? 'undefined' : _typeof(choice)) === 'object') {
+          (0, _keys2.default)(choice).forEach(function (key) {
             classes.push(prefix + '--' + propertyPrefix + '-' + key + '-' + choice[key]);
           });
         } else {
@@ -128,8 +128,8 @@ var Box = (function (_Component) {
         style.backgroundSize = "cover";
       }
       var texture;
-      if ('object' === typeof this.props.texture) {
-        texture = _react2['default'].createElement(
+      if ('object' === _typeof(this.props.texture)) {
+        texture = _react2.default.createElement(
           'div',
           { className: CLASS_ROOT + "__texture" },
           this.props.texture
@@ -138,18 +138,18 @@ var Box = (function (_Component) {
 
       var a11yProps = {};
       if (this.props.onClick) {
-        var boxLabel = _utilsIntl2['default'].getMessage(this.context.intl, this.props.a11yTitle);
+        var boxLabel = _Intl2.default.getMessage(this.context.intl, this.props.a11yTitle);
         a11yProps.tabIndex = 0;
         a11yProps["aria-label"] = boxLabel;
         a11yProps.role = 'link';
       }
 
       if (this.props.appCentered) {
-        return _react2['default'].createElement(
+        return _react2.default.createElement(
           'div',
           _extends({ ref: 'boxContainer', className: containerClasses.join(' '),
             style: style, onClick: this.props.onClick }, a11yProps),
-          _react2['default'].createElement(
+          _react2.default.createElement(
             this.props.tag,
             { id: this.props.id, className: classes.join(' ') },
             texture,
@@ -157,7 +157,7 @@ var Box = (function (_Component) {
           )
         );
       } else {
-        return _react2['default'].createElement(
+        return _react2.default.createElement(
           this.props.tag,
           _extends({ ref: 'boxContainer', id: this.props.id,
             className: classes.join(' '), style: style,
@@ -172,7 +172,7 @@ var Box = (function (_Component) {
   return Box;
 })(_react.Component);
 
-exports['default'] = Box;
+exports.default = Box;
 
 Box.propTypes = {
   a11yTitle: _react.PropTypes.string,
@@ -210,4 +210,3 @@ Box.defaultProps = {
   tag: 'div',
   responsive: true
 };
-module.exports = exports['default'];

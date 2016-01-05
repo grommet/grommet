@@ -1,20 +1,10 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
-
 'use strict';
 
-Object.defineProperty(exports, '__esModule', {
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var _react = require('react');
 
@@ -36,13 +26,21 @@ var _Button = require('./Button');
 
 var _Button2 = _interopRequireDefault(_Button);
 
-var _iconsBasePrevious = require('./icons/base/Previous');
+var _Previous = require('./icons/base/Previous');
 
-var _iconsBasePrevious2 = _interopRequireDefault(_iconsBasePrevious);
+var _Previous2 = _interopRequireDefault(_Previous);
 
-var _iconsBaseNext = require('./icons/base/Next');
+var _Next = require('./icons/base/Next');
 
-var _iconsBaseNext2 = _interopRequireDefault(_iconsBaseNext);
+var _Next2 = _interopRequireDefault(_Next);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = "carousel";
 
@@ -52,22 +50,23 @@ var Carousel = (function (_Component) {
   function Carousel(props) {
     _classCallCheck(this, Carousel);
 
-    _get(Object.getPrototypeOf(Carousel.prototype), 'constructor', this).call(this, props);
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Carousel).call(this, props));
 
-    this._onSelect = this._onSelect.bind(this);
-    this._onMouseOver = this._onMouseOver.bind(this);
-    this._onMouseOut = this._onMouseOut.bind(this);
-    this._onResize = this._onResize.bind(this);
-    this._slidePrev = this._slidePrev.bind(this);
-    this._slideNext = this._slideNext.bind(this);
+    _this._onSelect = _this._onSelect.bind(_this);
+    _this._onMouseOver = _this._onMouseOver.bind(_this);
+    _this._onMouseOut = _this._onMouseOut.bind(_this);
+    _this._onResize = _this._onResize.bind(_this);
+    _this._slidePrev = _this._slidePrev.bind(_this);
+    _this._slideNext = _this._slideNext.bind(_this);
 
-    this.state = {
+    _this.state = {
       activeIndex: 0,
       hideControls: !props.persistentNav,
       priorIndex: 0,
       sequence: 1,
       width: 0
     };
+    return _this;
   }
 
   _createClass(Carousel, [{
@@ -167,28 +166,34 @@ var Carousel = (function (_Component) {
   }, {
     key: '_renderPrevButton',
     value: function _renderPrevButton() {
+      var prevButton = undefined;
       if (this.props.infinite || this.state.activeIndex !== 0) {
-        return _react2['default'].createElement(
-          _Button2['default'],
+        prevButton = _react2.default.createElement(
+          _Button2.default,
           {
             className: CLASS_ROOT + '__arrow ' + CLASS_ROOT + '__arrow--prev',
             type: 'icon', onClick: this._slidePrev },
-          _react2['default'].createElement(_iconsBasePrevious2['default'], { size: 'large' })
+          _react2.default.createElement(_Previous2.default, { size: 'large' })
         );
       }
+
+      return prevButton;
     }
   }, {
     key: '_renderNextButton',
     value: function _renderNextButton() {
+      var nextButton = undefined;
       if (this.props.infinite || this.state.activeIndex !== this.props.children.length - 1) {
-        return _react2['default'].createElement(
-          _Button2['default'],
+        nextButton = _react2.default.createElement(
+          _Button2.default,
           {
             className: CLASS_ROOT + '__arrow ' + CLASS_ROOT + '__arrow--next',
             type: 'icon', onClick: this._slideNext },
-          _react2['default'].createElement(_iconsBaseNext2['default'], { size: 'large' })
+          _react2.default.createElement(_Next2.default, { size: 'large' })
         );
       }
+
+      return nextButton;
     }
   }, {
     key: 'render',
@@ -210,48 +215,48 @@ var Carousel = (function (_Component) {
 
       var trackPosition = -(width * this.state.activeIndex);
 
-      var tiles = _react2['default'].Children.map(children, function (child) {
-        return _react2['default'].createElement(
-          _Tile2['default'],
+      var tiles = _react2.default.Children.map(children, function (child) {
+        return _react2.default.createElement(
+          _Tile2.default,
           { className: CLASS_ROOT + "__item" },
           child
         );
       }, this);
 
-      var controls = _react2['default'].Children.map(children, function (child) {
+      var controls = _react2.default.Children.map(children, function (child) {
         index += 1;
         var controlClasses = [CLASS_ROOT + "__control"];
         if (index === this.state.activeIndex) {
           controlClasses.push(CLASS_ROOT + "__control--active");
         }
 
-        return _react2['default'].createElement(
+        return _react2.default.createElement(
           'svg',
           { className: controlClasses.join(' '),
             viewBox: '0 0 24 24', version: '1.1',
             onClick: this._onSelect.bind(this, index) },
-          _react2['default'].createElement('circle', { cx: 12, cy: 12, r: 6 })
+          _react2.default.createElement('circle', { cx: 12, cy: 12, r: 6 })
         );
       }, this);
 
-      return _react2['default'].createElement(
+      return _react2.default.createElement(
         'div',
         { ref: 'carousel', className: classes.join(' '),
           onMouseEnter: this._onMouseOver, onMouseLeave: this._onMouseOut },
-        _react2['default'].createElement(
+        _react2.default.createElement(
           'div',
           { className: CLASS_ROOT + "__track",
             style: { width: trackWidth, marginLeft: trackPosition } },
-          _react2['default'].createElement(
-            _Tiles2['default'],
+          _react2.default.createElement(
+            _Tiles2.default,
             { fill: true },
             tiles
           )
         ),
         this._renderPrevButton(),
         this._renderNextButton(),
-        _react2['default'].createElement(
-          _Box2['default'],
+        _react2.default.createElement(
+          _Box2.default,
           { className: CLASS_ROOT + "__controls", direction: 'row',
             justify: 'center', responsive: false },
           controls
@@ -263,7 +268,7 @@ var Carousel = (function (_Component) {
   return Carousel;
 })(_react.Component);
 
-exports['default'] = Carousel;
+exports.default = Carousel;
 
 Carousel.propTypes = {
   autoplay: _react.PropTypes.bool,
@@ -278,4 +283,3 @@ Carousel.defaultProps = {
   infinite: true,
   persistentNav: true
 };
-module.exports = exports['default'];

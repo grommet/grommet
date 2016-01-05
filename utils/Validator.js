@@ -1,11 +1,11 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
-
 'use strict';
 
-Object.defineProperty(exports, '__esModule', {
+Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports['default'] = {
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+
+exports.default = {
   validate: function validate(rules) {
     var result = {
       valid: true,
@@ -28,6 +28,7 @@ exports['default'] = {
             result.firstError = result.firstError || rule.field;
             return true;
           }
+          return false;
         });
       }
     });
@@ -35,4 +36,3 @@ exports['default'] = {
     return result;
   }
 };
-module.exports = exports['default'];

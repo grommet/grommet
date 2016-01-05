@@ -1,24 +1,22 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
-
 'use strict';
 
-Object.defineProperty(exports, '__esModule', {
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = "form-field";
 
@@ -28,13 +26,14 @@ var FormField = (function (_Component) {
   function FormField() {
     _classCallCheck(this, FormField);
 
-    _get(Object.getPrototypeOf(FormField.prototype), 'constructor', this).call(this);
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(FormField).call(this));
 
-    this._onFocus = this._onFocus.bind(this);
-    this._onBlur = this._onBlur.bind(this);
-    this._onClick = this._onClick.bind(this);
+    _this._onFocus = _this._onFocus.bind(_this);
+    _this._onBlur = _this._onBlur.bind(_this);
+    _this._onClick = _this._onClick.bind(_this);
 
-    this.state = { focus: false };
+    _this.state = { focus: false };
+    return _this;
   }
 
   _createClass(FormField, [{
@@ -97,7 +96,7 @@ var FormField = (function (_Component) {
       var error;
       if (this.props.error) {
         classes.push(CLASS_ROOT + "--error");
-        error = _react2['default'].createElement(
+        error = _react2.default.createElement(
           'span',
           { className: CLASS_ROOT + "__error" },
           this.props.error
@@ -105,24 +104,24 @@ var FormField = (function (_Component) {
       }
       var help;
       if (this.props.help !== null && this.props.help !== undefined) {
-        help = _react2['default'].createElement(
+        help = _react2.default.createElement(
           'span',
           { className: CLASS_ROOT + "__help" },
           this.props.help
         );
       }
 
-      return _react2['default'].createElement(
+      return _react2.default.createElement(
         'div',
         { className: classes.join(' '), onClick: this._onClick },
         error,
-        _react2['default'].createElement(
+        _react2.default.createElement(
           'label',
           { className: CLASS_ROOT + "__label", htmlFor: this.props.htmlFor },
           this.props.label
         ),
         help,
-        _react2['default'].createElement(
+        _react2.default.createElement(
           'span',
           { ref: 'contents', className: CLASS_ROOT + "__contents" },
           this.props.children
@@ -134,7 +133,7 @@ var FormField = (function (_Component) {
   return FormField;
 })(_react.Component);
 
-exports['default'] = FormField;
+exports.default = FormField;
 
 FormField.propTypes = {
   error: _react.PropTypes.node,
@@ -144,4 +143,3 @@ FormField.propTypes = {
   label: _react.PropTypes.node,
   required: _react.PropTypes.bool
 };
-module.exports = exports['default'];

@@ -1,10 +1,10 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 'use strict';
 
-Object.defineProperty(exports, '__esModule', {
+Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports['default'] = {
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+exports.default = {
   findScrollParents: function findScrollParents(element, horizontal) {
     var result = [];
     var parent = element.parentNode;
@@ -26,7 +26,6 @@ exports['default'] = {
     }
     return result;
   },
-
   isDescendant: function isDescendant(parent, child) {
     var node = child.parentNode;
     while (node != null) {
@@ -37,7 +36,6 @@ exports['default'] = {
     }
     return false;
   },
-
   filterByFocusable: function filterByFocusable(elements) {
     return Array.prototype.filter.call(elements || [], function (element) {
       var currentTag = element.tagName.toLowerCase();
@@ -53,7 +51,6 @@ exports['default'] = {
       return isValidTag;
     });
   },
-
   getBestFirstFocusable: function getBestFirstFocusable(elements) {
     var bestFirstFocusable;
 
@@ -70,4 +67,3 @@ exports['default'] = {
     return bestFirstFocusable;
   }
 };
-module.exports = exports['default'];

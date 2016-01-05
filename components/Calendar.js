@@ -1,20 +1,10 @@
-// (C) Copyright 2014 Hewlett Packard Enterprise Development LP
-
 'use strict';
 
-Object.defineProperty(exports, '__esModule', {
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var _react = require('react');
 
@@ -28,25 +18,25 @@ var _moment = require('moment');
 
 var _moment2 = _interopRequireDefault(_moment);
 
-var _utilsKeyboardAccelerators = require('../utils/KeyboardAccelerators');
+var _KeyboardAccelerators = require('../utils/KeyboardAccelerators');
 
-var _utilsKeyboardAccelerators2 = _interopRequireDefault(_utilsKeyboardAccelerators);
+var _KeyboardAccelerators2 = _interopRequireDefault(_KeyboardAccelerators);
 
-var _utilsDrop = require('../utils/Drop');
+var _Drop = require('../utils/Drop');
 
-var _utilsDrop2 = _interopRequireDefault(_utilsDrop);
+var _Drop2 = _interopRequireDefault(_Drop);
 
-var _iconsBaseCalendar = require('./icons/base/Calendar');
+var _Calendar = require('./icons/base/Calendar');
 
-var _iconsBaseCalendar2 = _interopRequireDefault(_iconsBaseCalendar);
+var _Calendar2 = _interopRequireDefault(_Calendar);
 
-var _iconsBaseLinkPrevious = require('./icons/base/LinkPrevious');
+var _LinkPrevious = require('./icons/base/LinkPrevious');
 
-var _iconsBaseLinkPrevious2 = _interopRequireDefault(_iconsBaseLinkPrevious);
+var _LinkPrevious2 = _interopRequireDefault(_LinkPrevious);
 
-var _iconsBaseLinkNext = require('./icons/base/LinkNext');
+var _LinkNext = require('./icons/base/LinkNext');
 
-var _iconsBaseLinkNext2 = _interopRequireDefault(_iconsBaseLinkNext);
+var _LinkNext2 = _interopRequireDefault(_LinkNext);
 
 var _Header = require('./Header');
 
@@ -60,6 +50,14 @@ var _Button = require('./Button');
 
 var _Button2 = _interopRequireDefault(_Button);
 
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
+
 var CLASS_ROOT = "calendar";
 
 var Calendar = (function (_Component) {
@@ -68,22 +66,23 @@ var Calendar = (function (_Component) {
   function Calendar(props) {
     _classCallCheck(this, Calendar);
 
-    _get(Object.getPrototypeOf(Calendar.prototype), 'constructor', this).call(this, props);
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Calendar).call(this, props));
 
-    this._onInputChange = this._onInputChange.bind(this);
-    this._onOpen = this._onOpen.bind(this);
-    this._onClose = this._onClose.bind(this);
-    this._onClickDay = this._onClickDay.bind(this);
-    this._onPrevious = this._onPrevious.bind(this);
-    this._onNext = this._onNext.bind(this);
-    this._onNextDayOrMonth = this._onNextDayOrMonth.bind(this);
-    this._onPreviousDayOrMonth = this._onPreviousDayOrMonth.bind(this);
-    this._onNextWeek = this._onNextWeek.bind(this);
-    this._onPreviousWeek = this._onPreviousWeek.bind(this);
-    this._onSelectDate = this._onSelectDate.bind(this);
+    _this._onInputChange = _this._onInputChange.bind(_this);
+    _this._onOpen = _this._onOpen.bind(_this);
+    _this._onClose = _this._onClose.bind(_this);
+    _this._onClickDay = _this._onClickDay.bind(_this);
+    _this._onPrevious = _this._onPrevious.bind(_this);
+    _this._onNext = _this._onNext.bind(_this);
+    _this._onNextDayOrMonth = _this._onNextDayOrMonth.bind(_this);
+    _this._onPreviousDayOrMonth = _this._onPreviousDayOrMonth.bind(_this);
+    _this._onNextWeek = _this._onNextWeek.bind(_this);
+    _this._onPreviousWeek = _this._onPreviousWeek.bind(_this);
+    _this._onSelectDate = _this._onSelectDate.bind(_this);
 
-    this.state = this._stateFromProps(props);
-    this.state.dropActive = false;
+    _this.state = _this._stateFromProps(props);
+    _this.state.dropActive = false;
+    return _this;
   }
 
   _createClass(Calendar, [{
@@ -136,7 +135,7 @@ var Calendar = (function (_Component) {
     key: '_onClickDay',
     value: function _onClickDay(date) {
       if (this.props.onChange) {
-        this.props.onChange((0, _moment2['default'])(date).format('YYYY-MM-DD'));
+        this.props.onChange((0, _moment2.default)(date).format('YYYY-MM-DD'));
       }
     }
   }, {
@@ -173,7 +172,7 @@ var Calendar = (function (_Component) {
       } else {
         event.preventDefault();
         event.stopPropagation();
-        var nextDay = (0, _moment2['default'])(this.state.current).add(1, 'days');
+        var nextDay = (0, _moment2.default)(this.state.current).add(1, 'days');
 
         if (!nextDay.isSame(this.state.reference, 'month')) {
           this.setState({ reference: this.state.reference.add(1, 'month'), current: nextDay });
@@ -190,7 +189,7 @@ var Calendar = (function (_Component) {
       } else {
         event.preventDefault();
         event.stopPropagation();
-        var previousDay = (0, _moment2['default'])(this.state.current).subtract(1, 'days');
+        var previousDay = (0, _moment2.default)(this.state.current).subtract(1, 'days');
         if (!previousDay.isSame(this.state.reference, 'month')) {
           this.setState({ reference: this.state.reference.subtract(1, 'month'), current: previousDay });
         } else {
@@ -203,7 +202,7 @@ var Calendar = (function (_Component) {
     value: function _onNextWeek(event) {
       event.preventDefault();
       event.stopPropagation();
-      var nextWeek = (0, _moment2['default'])(this.state.current).add(1, 'week');
+      var nextWeek = (0, _moment2.default)(this.state.current).add(1, 'week');
 
       if (!nextWeek.isSame(this.state.reference, 'month')) {
         this.setState({ reference: this.state.reference.add(1, 'month'), current: nextWeek });
@@ -216,7 +215,7 @@ var Calendar = (function (_Component) {
     value: function _onPreviousWeek(event) {
       event.preventDefault();
       event.stopPropagation();
-      var previousWeek = (0, _moment2['default'])(this.state.current).subtract(1, 'week');
+      var previousWeek = (0, _moment2.default)(this.state.current).subtract(1, 'week');
       if (!previousWeek.isSame(this.state.reference, 'month')) {
         this.setState({ reference: this.state.reference.subtract(1, 'month'), current: previousWeek });
       } else {
@@ -249,13 +248,13 @@ var Calendar = (function (_Component) {
       if (dropActive) {
 
         document.addEventListener('click', this._onClose);
-        _utilsKeyboardAccelerators2['default'].startListeningToKeyboard(this, listeners);
+        _KeyboardAccelerators2.default.startListeningToKeyboard(this, listeners);
 
-        this._drop = _utilsDrop2['default'].add(_reactDom2['default'].findDOMNode(this.refs.component), this._renderDrop(), { top: 'bottom', left: 'left' });
+        this._drop = _Drop2.default.add(_reactDom2.default.findDOMNode(this.refs.component), this._renderDrop(), { top: 'bottom', left: 'left' });
       } else {
 
         document.removeEventListener('click', this._onClose);
-        _utilsKeyboardAccelerators2['default'].stopListeningToKeyboard(this, listeners);
+        _KeyboardAccelerators2.default.stopListeningToKeyboard(this, listeners);
 
         if (this._drop) {
           this._drop.remove();
@@ -268,12 +267,12 @@ var Calendar = (function (_Component) {
     value: function _stateFromProps(props) {
       var result = {
         current: null,
-        reference: (0, _moment2['default'])().startOf('day')
+        reference: (0, _moment2.default)().startOf('day')
       };
-      var date = (0, _moment2['default'])(props.value);
+      var date = (0, _moment2.default)(props.value);
       if (date.isValid()) {
-        result.current = (0, _moment2['default'])(date).startOf('day');
-        result.reference = (0, _moment2['default'])(date).startOf('day');
+        result.current = (0, _moment2.default)(date).startOf('day');
+        result.reference = (0, _moment2.default)(date).startOf('day');
       }
       return result;
     }
@@ -282,7 +281,7 @@ var Calendar = (function (_Component) {
     value: function _renderDrop() {
       var weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
       var headerCells = weekDays.map(function (day) {
-        return _react2['default'].createElement(
+        return _react2.default.createElement(
           'th',
           { key: day },
           day
@@ -290,9 +289,9 @@ var Calendar = (function (_Component) {
       });
 
       var reference = this.state.reference;
-      var start = (0, _moment2['default'])(reference).startOf('month').startOf('week');
-      var end = (0, _moment2['default'])(reference).endOf('month').endOf('week');
-      var date = (0, _moment2['default'])(start);
+      var start = (0, _moment2.default)(reference).startOf('month').startOf('week');
+      var end = (0, _moment2.default)(reference).endOf('month').endOf('week');
+      var date = (0, _moment2.default)(start);
       var rows = [];
 
       while (date.valueOf() <= end.valueOf()) {
@@ -305,66 +304,66 @@ var Calendar = (function (_Component) {
           if (!date.isSame(reference, 'month')) {
             classes.push(CLASS_ROOT + "__day--other-month");
           }
-          days.push(_react2['default'].createElement(
+          days.push(_react2.default.createElement(
             'td',
             { key: date.valueOf() },
-            _react2['default'].createElement(
+            _react2.default.createElement(
               'div',
               { className: classes.join(' '),
-                onClick: this._onClickDay.bind(this, (0, _moment2['default'])(date)) },
+                onClick: this._onClickDay.bind(this, (0, _moment2.default)(date)) },
               date.date()
             )
           ));
           date.add(1, 'days');
         }
-        rows.push(_react2['default'].createElement(
+        rows.push(_react2.default.createElement(
           'tr',
           { key: date.valueOf() },
           days
         ));
       }
 
-      return _react2['default'].createElement(
+      return _react2.default.createElement(
         'div',
         { id: CLASS_ROOT + "-drop", className: CLASS_ROOT + "__drop",
           onClick: this._onClose },
-        _react2['default'].createElement(
-          _Header2['default'],
+        _react2.default.createElement(
+          _Header2.default,
           { justify: 'between' },
-          _react2['default'].createElement(
-            _Button2['default'],
+          _react2.default.createElement(
+            _Button2.default,
             { className: CLASS_ROOT + "__previous", type: 'icon',
               onClick: this._onPrevious },
-            _react2['default'].createElement(_iconsBaseLinkPrevious2['default'], null)
+            _react2.default.createElement(_LinkPrevious2.default, null)
           ),
-          _react2['default'].createElement(
-            _Title2['default'],
+          _react2.default.createElement(
+            _Title2.default,
             { className: CLASS_ROOT + "__title", responsive: false },
             this.state.reference.format('MMMM YYYY')
           ),
-          _react2['default'].createElement(
-            _Button2['default'],
+          _react2.default.createElement(
+            _Button2.default,
             { className: CLASS_ROOT + "__next", type: 'icon',
               onClick: this._onNext },
-            _react2['default'].createElement(_iconsBaseLinkNext2['default'], null)
+            _react2.default.createElement(_LinkNext2.default, null)
           )
         ),
-        _react2['default'].createElement(
+        _react2.default.createElement(
           'div',
           { className: CLASS_ROOT + "__grid" },
-          _react2['default'].createElement(
+          _react2.default.createElement(
             'table',
             null,
-            _react2['default'].createElement(
+            _react2.default.createElement(
               'thead',
               null,
-              _react2['default'].createElement(
+              _react2.default.createElement(
                 'tr',
                 null,
                 headerCells
               )
             ),
-            _react2['default'].createElement(
+            _react2.default.createElement(
               'tbody',
               null,
               rows
@@ -384,17 +383,17 @@ var Calendar = (function (_Component) {
         classes.push(this.props.className);
       }
 
-      return _react2['default'].createElement(
+      return _react2.default.createElement(
         'div',
         { ref: 'component', className: classes.join(' ') },
-        _react2['default'].createElement('input', { className: CLASS_ROOT + "__input",
+        _react2.default.createElement('input', { className: CLASS_ROOT + "__input",
           id: this.props.id, ref: 'calendarInput', name: this.props.name,
           value: this.props.value,
           onChange: this._onInputChange }),
-        _react2['default'].createElement(
-          _Button2['default'],
+        _react2.default.createElement(
+          _Button2.default,
           { className: CLASS_ROOT + "__control", type: 'icon', onClick: this._onOpen },
-          _react2['default'].createElement(_iconsBaseCalendar2['default'], null)
+          _react2.default.createElement(_Calendar2.default, null)
         )
       );
     }
@@ -403,7 +402,7 @@ var Calendar = (function (_Component) {
   return Calendar;
 })(_react.Component);
 
-exports['default'] = Calendar;
+exports.default = Calendar;
 
 Calendar.propTypes = {
   id: _react.PropTypes.string,
@@ -413,6 +412,5 @@ Calendar.propTypes = {
 };
 
 Calendar.defaultProps = {
-  value: (0, _moment2['default'])().format('YYYY-MM-DD')
+  value: (0, _moment2.default)().format('YYYY-MM-DD')
 };
-module.exports = exports['default'];

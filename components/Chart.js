@@ -1,20 +1,10 @@
-// (C) Copyright 2014 Hewlett Packard Enterprise Development LP
-
 'use strict';
 
-Object.defineProperty(exports, '__esModule', {
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var _react = require('react');
 
@@ -28,13 +18,21 @@ var _Legend = require('./Legend');
 
 var _Legend2 = _interopRequireDefault(_Legend);
 
-var _utilsIntl = require('../utils/Intl');
+var _Intl = require('../utils/Intl');
 
-var _utilsIntl2 = _interopRequireDefault(_utilsIntl);
+var _Intl2 = _interopRequireDefault(_Intl);
 
-var _utilsKeyboardAccelerators = require('../utils/KeyboardAccelerators');
+var _KeyboardAccelerators = require('../utils/KeyboardAccelerators');
 
-var _utilsKeyboardAccelerators2 = _interopRequireDefault(_utilsKeyboardAccelerators);
+var _KeyboardAccelerators2 = _interopRequireDefault(_KeyboardAccelerators);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = "chart";
 
@@ -54,16 +52,17 @@ var Chart = (function (_Component) {
   function Chart(props) {
     _classCallCheck(this, Chart);
 
-    _get(Object.getPrototypeOf(Chart.prototype), 'constructor', this).call(this, props);
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Chart).call(this, props));
 
-    this._onRequestForNextLegend = this._onRequestForNextLegend.bind(this);
-    this._onRequestForPreviousLegend = this._onRequestForPreviousLegend.bind(this);
-    this._onMouseOver = this._onMouseOver.bind(this);
-    this._onMouseOut = this._onMouseOut.bind(this);
-    this._onResize = this._onResize.bind(this);
-    this._layout = this._layout.bind(this);
+    _this._onRequestForNextLegend = _this._onRequestForNextLegend.bind(_this);
+    _this._onRequestForPreviousLegend = _this._onRequestForPreviousLegend.bind(_this);
+    _this._onMouseOver = _this._onMouseOver.bind(_this);
+    _this._onMouseOut = _this._onMouseOut.bind(_this);
+    _this._onResize = _this._onResize.bind(_this);
+    _this._layout = _this._layout.bind(_this);
 
-    this.state = this._stateFromProps(props, DEFAULT_WIDTH, DEFAULT_HEIGHT);
+    _this.state = _this._stateFromProps(props, DEFAULT_WIDTH, DEFAULT_HEIGHT);
+    return _this;
   }
 
   _createClass(Chart, [{
@@ -78,7 +77,7 @@ var Chart = (function (_Component) {
           left: this._onRequestForPreviousLegend,
           right: this._onRequestForNextLegend
         };
-        _utilsKeyboardAccelerators2['default'].startListeningToKeyboard(this, this._keyboardHandlers);
+        _KeyboardAccelerators2.default.startListeningToKeyboard(this, this._keyboardHandlers);
       }
     }
   }, {
@@ -99,7 +98,7 @@ var Chart = (function (_Component) {
       window.removeEventListener('resize', this._onResize);
 
       if (this.props.legend) {
-        _utilsKeyboardAccelerators2['default'].stopListeningToKeyboard(this, this._keyboardHandlers);
+        _KeyboardAccelerators2.default.stopListeningToKeyboard(this, this._keyboardHandlers);
       }
     }
   }, {
@@ -109,7 +108,7 @@ var Chart = (function (_Component) {
       e.stopImmediatePropagation();
       if (document.activeElement === this.refs.chart) {
 
-        var totalBandCount = _reactDom2['default'].findDOMNode(this.refs.front).childNodes.length;
+        var totalBandCount = _reactDom2.default.findDOMNode(this.refs.front).childNodes.length;
 
         if (this.state.activeXIndex - 1 < 0) {
           this._onMouseOver(totalBandCount - 1);
@@ -123,7 +122,7 @@ var Chart = (function (_Component) {
     value: function _onRequestForPreviousLegend() {
       if (document.activeElement === this.refs.chart) {
 
-        var totalBandCount = _reactDom2['default'].findDOMNode(this.refs.front).childNodes.length;
+        var totalBandCount = _reactDom2.default.findDOMNode(this.refs.front).childNodes.length;
 
         if (this.state.activeXIndex + 1 >= totalBandCount) {
           this._onMouseOver(0);
@@ -151,6 +150,7 @@ var Chart = (function (_Component) {
     }
 
     // Performs some initial calculations to make subsequent calculations easier.
+
   }, {
     key: '_bounds',
     value: function _bounds(series, xAxisArg, width, height) {
@@ -293,6 +293,7 @@ var Chart = (function (_Component) {
     }
 
     // Aligns the legend with the current position of the cursor, if any.
+
   }, {
     key: '_alignLegend',
     value: function _alignLegend() {
@@ -302,7 +303,7 @@ var Chart = (function (_Component) {
         var cursorRect = cursorElement.getBoundingClientRect();
         var element = this.refs.chart;
         var rect = element.getBoundingClientRect();
-        var legendElement = _reactDom2['default'].findDOMNode(this.refs.legend);
+        var legendElement = _reactDom2.default.findDOMNode(this.refs.legend);
         var legendRect = legendElement.getBoundingClientRect();
 
         var left = cursorRect.left - rect.left - legendRect.width - 1;
@@ -319,6 +320,7 @@ var Chart = (function (_Component) {
     // Adjusts the legend position and set the width, height, and
     // redo the bounds calculations.
     // Called whenever the browser resizes or new properties arrive.
+
   }, {
     key: '_layout',
     value: function _layout() {
@@ -342,6 +344,7 @@ var Chart = (function (_Component) {
     }
 
     // Generates state based on the provided props.
+
   }, {
     key: '_stateFromProps',
     value: function _stateFromProps(props, width, height) {
@@ -370,6 +373,7 @@ var Chart = (function (_Component) {
     }
 
     // Translates X value to X coordinate.
+
   }, {
     key: '_translateX',
     value: function _translateX(x) {
@@ -378,6 +382,7 @@ var Chart = (function (_Component) {
     }
 
     // Translates Y value to Y coordinate.
+
   }, {
     key: '_translateY',
     value: function _translateY(y) {
@@ -387,6 +392,7 @@ var Chart = (function (_Component) {
     }
 
     // Translates Y value to graph height.
+
   }, {
     key: '_translateHeight',
     value: function _translateHeight(y) {
@@ -395,6 +401,7 @@ var Chart = (function (_Component) {
     }
 
     // Translates X and Y values to X and Y coordinates.
+
   }, {
     key: '_coordinates',
     value: function _coordinates(point) {
@@ -402,6 +409,7 @@ var Chart = (function (_Component) {
     }
 
     // Uses the provided colorIndex or provides one based on the seriesIndex.
+
   }, {
     key: '_itemColorIndex',
     value: function _itemColorIndex(item, seriesIndex) {
@@ -414,6 +422,7 @@ var Chart = (function (_Component) {
     // just looks at whether the line through this coordinate is
     // ascending, descending or not. Peaks, valleys, and flats are
     // treated the same.
+
   }, {
     key: '_controlCoordinates',
     value: function _controlCoordinates(coordinates, index) {
@@ -452,6 +461,7 @@ var Chart = (function (_Component) {
     }
 
     // Converts the series data into paths for line or area types.
+
   }, {
     key: '_renderLinesOrAreas',
     value: function _renderLinesOrAreas() {
@@ -493,7 +503,7 @@ var Chart = (function (_Component) {
 
           if (this.props.points && !this.props.sparkline) {
             var x = Math.max(POINT_RADIUS + 1, Math.min(bounds.graphWidth - (POINT_RADIUS + 1), coordinate[0]));
-            points.push(_react2['default'].createElement('circle', { key: index,
+            points.push(_react2.default.createElement('circle', { key: index,
               className: CLASS_ROOT + "__values-point color-index-" + colorIndex,
               cx: x, cy: coordinate[1], r: POINT_RADIUS }));
           }
@@ -504,21 +514,21 @@ var Chart = (function (_Component) {
         var linePath = undefined;
         if ('line' === this.props.type || this.props.points) {
           var classes = [CLASS_ROOT + "__values-line", "color-index-" + colorIndex];
-          linePath = _react2['default'].createElement('path', { fill: 'none', className: classes.join(' '), d: commands });
+          linePath = _react2.default.createElement('path', { fill: 'none', className: classes.join(' '), d: commands });
         }
 
         var areaPath = undefined;
         if ('area' === this.props.type) {
           // For area charts, close the path by drawing down to the bottom
           // and across to the bottom of where we started.
-          var _close = 'L' + coordinates[coordinates.length - 1][0] + ',' + bounds.graphBottom + 'L' + coordinates[0][0] + ',' + bounds.graphBottom + 'Z';
-          var areaCommands = commands + _close;
+          var close = 'L' + coordinates[coordinates.length - 1][0] + ',' + bounds.graphBottom + 'L' + coordinates[0][0] + ',' + bounds.graphBottom + 'Z';
+          var areaCommands = commands + close;
           var classes = [CLASS_ROOT + "__values-area", "color-index-" + colorIndex];
 
-          areaPath = _react2['default'].createElement('path', { stroke: 'none', className: classes.join(' '), d: areaCommands });
+          areaPath = _react2.default.createElement('path', { stroke: 'none', className: classes.join(' '), d: areaCommands });
         }
 
-        return _react2['default'].createElement(
+        return _react2.default.createElement(
           'g',
           { key: 'line_group_' + seriesIndex },
           areaPath,
@@ -531,6 +541,7 @@ var Chart = (function (_Component) {
     }
 
     // Converts the series data into rects for bar types.
+
   }, {
     key: '_renderBars',
     value: function _renderBars() {
@@ -555,7 +566,7 @@ var Chart = (function (_Component) {
             stepBarBase += XAXIS_HEIGHT;
           }
 
-          return _react2['default'].createElement('rect', { key: 'bar_rect_' + item.label || seriesIndex,
+          return _react2.default.createElement('rect', { key: 'bar_rect_' + item.label || seriesIndex,
             className: classes.join(' '),
             x: this._translateX(value[0]) + bounds.barPadding,
             y: this.state.height - (stepBarHeight + stepBarBase),
@@ -563,7 +574,7 @@ var Chart = (function (_Component) {
             height: stepBarHeight });
         }, this);
 
-        return _react2['default'].createElement(
+        return _react2.default.createElement(
           'g',
           { key: 'bar_' + xIndex },
           stepBars
@@ -574,15 +585,16 @@ var Chart = (function (_Component) {
     }
 
     // Converts the threshold value into a line.
+
   }, {
     key: '_renderThreshold',
     value: function _renderThreshold() {
       var y = this._translateY(this.props.threshold);
       var commands = 'M0,' + y + 'L' + this.state.width + ',' + y;
-      return _react2['default'].createElement(
+      return _react2.default.createElement(
         'g',
         { className: CLASS_ROOT + "__threshold" },
-        _react2['default'].createElement('path', { fill: 'none', d: commands })
+        _react2.default.createElement('path', { fill: 'none', d: commands })
       );
     }
   }, {
@@ -620,6 +632,7 @@ var Chart = (function (_Component) {
     }
 
     // Converts the xAxis labels into texts.
+
   }, {
     key: '_renderXAxis',
     value: function _renderXAxis() {
@@ -655,10 +668,10 @@ var Chart = (function (_Component) {
           priorPosition = position;
         }
 
-        return _react2['default'].createElement(
+        return _react2.default.createElement(
           'g',
           { key: 'x_axis_' + xIndex, className: classes.join(' ') },
-          _react2['default'].createElement(
+          _react2.default.createElement(
             'text',
             { x: position.x, y: labelY,
               textAnchor: position.anchor, fontSize: 16 },
@@ -667,7 +680,7 @@ var Chart = (function (_Component) {
         );
       }, this);
 
-      return _react2['default'].createElement(
+      return _react2.default.createElement(
         'g',
         { ref: 'xAxis', className: CLASS_ROOT + "__xaxis" },
         labels
@@ -675,6 +688,7 @@ var Chart = (function (_Component) {
     }
 
     // Vertical bars for thresholds.
+
   }, {
     key: '_renderYAxis',
     value: function _renderYAxis() {
@@ -695,7 +709,7 @@ var Chart = (function (_Component) {
         var y = this._translateY(end);
         start = end;
 
-        return _react2['default'].createElement('rect', { key: 'y_rect_' + index,
+        return _react2.default.createElement('rect', { key: 'y_rect_' + index,
           className: classes.join(' '),
           x: this.state.width - width,
           y: y,
@@ -703,7 +717,7 @@ var Chart = (function (_Component) {
           height: height });
       }, this);
 
-      return _react2['default'].createElement(
+      return _react2.default.createElement(
         'g',
         { ref: 'yAxis', className: CLASS_ROOT + "__yaxis" },
         bars
@@ -731,7 +745,7 @@ var Chart = (function (_Component) {
 
       var totalText = '';
       if (this.props.legend.total) {
-        var totalMessage = _utilsIntl2['default'].getMessage(this.context.intl, 'Total');
+        var totalMessage = _Intl2.default.getMessage(this.context.intl, 'Total');
         totalText = totalMessage + ': ' + total + this.props.units || '';
         seriesText += ', ' + totalText;
       }
@@ -741,6 +755,7 @@ var Chart = (function (_Component) {
 
     // Create vertical rects for each X data point.
     // These are used to track the mouse hover.
+
   }, {
     key: '_renderXBands',
     value: function _renderXBands(layer) {
@@ -772,22 +787,22 @@ var Chart = (function (_Component) {
 
         var seriesText = this._activeSeriesAsString();
 
-        return _react2['default'].createElement(
+        return _react2.default.createElement(
           'g',
           { key: xBandId, id: xBandId, className: classes.join(' '),
             onMouseOver: onMouseOver, onMouseOut: onMouseOut, role: 'gridcell',
             'aria-labelledby': xBandTitleId },
-          _react2['default'].createElement(
+          _react2.default.createElement(
             'title',
             { id: xBandTitleId },
             obj.label + ' ' + seriesText
           ),
-          _react2['default'].createElement('rect', { role: 'presentation', className: className + "-xband-background",
+          _react2.default.createElement('rect', { role: 'presentation', className: className + "-xband-background",
             x: x, y: 0, width: bounds.xStepWidth, height: this.state.height })
         );
       }, this);
 
-      return _react2['default'].createElement(
+      return _react2.default.createElement(
         'g',
         { ref: layer, role: 'row', className: className },
         bands
@@ -795,6 +810,7 @@ var Chart = (function (_Component) {
     }
 
     // Converts the active X index to a line.
+
   }, {
     key: '_renderCursor',
     value: function _renderCursor() {
@@ -806,7 +822,7 @@ var Chart = (function (_Component) {
       }
       // Offset it just a little if it is at an edge.
       var x = Math.max(1, Math.min(coordinates[0], this.state.bounds.graphWidth - 1));
-      var line = _react2['default'].createElement('line', { fill: 'none', x1: x, y1: bounds.graphTop, x2: x, y2: bounds.graphBottom });
+      var line = _react2.default.createElement('line', { fill: 'none', x1: x, y1: bounds.graphTop, x2: x, y2: bounds.graphBottom });
 
       var points = undefined;
       if (this.props.points) {
@@ -816,14 +832,14 @@ var Chart = (function (_Component) {
             value = item.values[this.state.activeXIndex];
             coordinates = this._coordinates(value);
             var colorIndex = this._itemColorIndex(item, seriesIndex);
-            return _react2['default'].createElement('circle', { key: seriesIndex,
+            return _react2.default.createElement('circle', { key: seriesIndex,
               className: CLASS_ROOT + "__cursor-point color-index-" + colorIndex,
               cx: x, cy: coordinates[1], r: Math.round(POINT_RADIUS * 1.2) });
           }, this);
         }
       }
 
-      return _react2['default'].createElement(
+      return _react2.default.createElement(
         'g',
         { ref: 'cursor', className: CLASS_ROOT + "__cursor" },
         line,
@@ -850,13 +866,14 @@ var Chart = (function (_Component) {
     }
 
     // Builds a Legend appropriate for the currently active X index.
+
   }, {
     key: '_renderLegend',
     value: function _renderLegend() {
       var activeSeries = this._getActiveSeries(true);
       var classes = [CLASS_ROOT + "__legend", CLASS_ROOT + "__legend--" + (this.props.legend.position || 'overlay')];
 
-      return _react2['default'].createElement(_Legend2['default'], { ref: 'legend', className: classes.join(' '),
+      return _react2.default.createElement(_Legend2.default, { ref: 'legend', className: classes.join(' '),
         series: activeSeries,
         total: this.props.legend.total,
         units: this.props.units });
@@ -866,8 +883,8 @@ var Chart = (function (_Component) {
     value: function _renderA11YTitle() {
       var a11yTitle = this.props.a11yTitle;
       if (!this.props.a11yTitle) {
-        var chartLabel = _utilsIntl2['default'].getMessage(this.context.intl, 'Chart');
-        var typeLabel = _utilsIntl2['default'].getMessage(this.context.intl, this.props.type);
+        var chartLabel = _Intl2.default.getMessage(this.context.intl, 'Chart');
+        var typeLabel = _Intl2.default.getMessage(this.context.intl, this.props.type);
         a11yTitle = typeLabel + ' ' + chartLabel;
       }
 
@@ -898,10 +915,10 @@ var Chart = (function (_Component) {
         valueClasses.push(CLASS_ROOT + "__values--loading");
         valueClasses.push("color-index-loading");
         var commands = "M0," + this.state.height / 2 + " L" + this.state.width + "," + this.state.height / 2;
-        values.push(_react2['default'].createElement(
+        values.push(_react2.default.createElement(
           'g',
           { key: 'loading' },
-          _react2['default'].createElement('path', { stroke: 'none', className: valueClasses.join(' '), d: commands })
+          _react2.default.createElement('path', { stroke: 'none', className: valueClasses.join(' '), d: commands })
         ));
       }
 
@@ -939,7 +956,7 @@ var Chart = (function (_Component) {
       var a11yTitle = this._renderA11YTitle();
       var a11yTitleNode = undefined;
       if (a11yTitle) {
-        a11yTitleNode = _react2['default'].createElement(
+        a11yTitleNode = _react2.default.createElement(
           'title',
           { id: this.props.a11yTitleId },
           a11yTitle
@@ -948,17 +965,17 @@ var Chart = (function (_Component) {
 
       var a11yDescNode = undefined;
       if (this.props.a11yDesc) {
-        a11yDescNode = _react2['default'].createElement(
+        a11yDescNode = _react2.default.createElement(
           'desc',
           { id: this.props.a11yDescId },
           this.props.a11yDesc
         );
       }
 
-      return _react2['default'].createElement(
+      return _react2.default.createElement(
         'div',
         { className: classes.join(' ') },
-        _react2['default'].createElement(
+        _react2.default.createElement(
           'svg',
           { ref: 'chart', className: CLASS_ROOT + "__graphic",
             viewBox: "0 0 " + this.state.width + " " + this.state.height,
@@ -969,7 +986,7 @@ var Chart = (function (_Component) {
           a11yDescNode,
           xAxis,
           yAxis,
-          _react2['default'].createElement(
+          _react2.default.createElement(
             'g',
             { className: CLASS_ROOT + "__values" },
             values
@@ -986,7 +1003,7 @@ var Chart = (function (_Component) {
   return Chart;
 })(_react.Component);
 
-exports['default'] = Chart;
+exports.default = Chart;
 
 Chart.propTypes = {
   a11yTitle: _react.PropTypes.string,
@@ -1044,4 +1061,3 @@ Chart.defaultProps = {
   min: 0,
   type: 'line'
 };
-module.exports = exports['default'];

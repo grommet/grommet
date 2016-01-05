@@ -1,18 +1,18 @@
-// (C) Copyright 2014 Hewlett Packard Enterprise Development LP
-
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+var _DOM = require("../utils/DOM");
 
-var _utilsDOM = require('../utils/DOM');
+var _DOM2 = _interopRequireDefault(_DOM);
 
-var _utilsDOM2 = _interopRequireDefault(_utilsDOM);
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var SCROLL_MORE_DELAY = 500; // when the user scrolls
+// (C) Copyright 2014 Hewlett Packard Enterprise Development LP
+
 var SCROLL_MORE_INITIAL_DELAY = 50; // when we start out at the bottom already
 
 function _evaluate(scrollState) {
@@ -47,13 +47,12 @@ function _onResize(scrollState) {
   }, SCROLL_MORE_DELAY);
 }
 
-exports["default"] = {
-
+exports.default = {
   startListeningForScroll: function startListeningForScroll(indicatorElement, onEnd) {
     var scrollState = {
       onEnd: onEnd,
       indicatorElement: indicatorElement,
-      scrollParent: _utilsDOM2["default"].findScrollParents(indicatorElement)[0]
+      scrollParent: _DOM2.default.findScrollParents(indicatorElement)[0]
     };
 
     scrollState._onResize = _onResize.bind(null, scrollState);
@@ -70,7 +69,6 @@ exports["default"] = {
     }
     return scrollState;
   },
-
   stopListeningForScroll: function stopListeningForScroll(scrollState) {
     if (scrollState.scrollParent) {
       clearTimeout(scrollState.scrollTimer);
@@ -80,4 +78,3 @@ exports["default"] = {
     }
   }
 };
-module.exports = exports["default"];

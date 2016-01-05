@@ -1,11 +1,11 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
-
 'use strict';
 
-Object.defineProperty(exports, '__esModule', {
+Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports['default'] = {
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+
+exports.default = {
   IndexFilters: {
     filters: '{quantity, plural,\n  =0 {Filters}\n  =1 {one filter}\n  other {# filters}\n}'
   },
@@ -76,4 +76,3 @@ exports['default'] = {
   Value: 'Value',
   Warning: 'Warning'
 };
-module.exports = exports['default'];

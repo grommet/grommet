@@ -26,6 +26,7 @@ module.exports = function(gulp, options) {
         console.error('[scsslint] scss-lint is not installed. Please install ruby and the ruby gem scss-lint.');
       }
     }
+    return false;
   });
 
   gulp.task('jslint', function() {

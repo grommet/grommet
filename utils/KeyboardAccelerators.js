@@ -1,8 +1,6 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
-
 'use strict';
 
-Object.defineProperty(exports, '__esModule', {
+Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
@@ -23,7 +21,7 @@ var KEYS = {
   down: 40,
   comma: 188,
   shift: 16
-};
+}; // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 var _keyboardAccelerators = {};
 var _listenersCounter = 0;
@@ -46,24 +44,21 @@ var _onKeyboardAcceleratorKeyPress = function _onKeyboardAcceleratorKeyPress(e) 
 // KeyboardAccelerators is a utility for handling keyboard events.
 // Add listeners using startListeningToKeyboard().
 // Remove listeners using stopListeningToKeyboard().
-exports['default'] = {
+exports.default = {
   _initKeyboardAccelerators: function _initKeyboardAccelerators(element) {
     var id = element.getAttribute('data-reactid');
     _keyboardAccelerators[id] = {
       handlers: {}
     };
   },
-
   _getKeyboardAcceleratorHandlers: function _getKeyboardAcceleratorHandlers(element) {
     var id = element.getAttribute('data-reactid');
     return _keyboardAccelerators[id].handlers;
   },
-
   _getDowns: function _getDowns(element) {
     var id = element.getAttribute('data-reactid');
     return _keyboardAccelerators[id].downs;
   },
-
   _isComponentListening: function _isComponentListening(element) {
     var id = element.getAttribute('data-reactid');
     for (var i = 0; i < _listenersCounter; i++) {
@@ -73,13 +68,11 @@ exports['default'] = {
     }
     return false;
   },
-
   _subscribeComponent: function _subscribeComponent(element) {
     var id = element.getAttribute('data-reactid');
     _listeners[_listenersCounter] = id;
     _listenersCounter++;
   },
-
   _unsubscribeComponent: function _unsubscribeComponent(element) {
     var id = element.getAttribute('data-reactid');
     var i = 0;
@@ -164,4 +157,3 @@ exports['default'] = {
     }
   }
 };
-module.exports = exports['default'];

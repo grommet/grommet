@@ -1,13 +1,13 @@
-// (C) Copyright 2015 Hewlett Packard Enterprise Development LP
-
-// Functions to manage selection via both child index and a specific class name.
-
-// Ensures it is an array.
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+// (C) Copyright 2015 Hewlett Packard Enterprise Development LP
+
+// Functions to manage selection via both child index and a specific class name.
+
+// Ensures it is an array.
 function normalizeIndexes(selectedIndexes) {
   var result = undefined;
   if (undefined === selectedIndexes || null === selectedIndexes) {
@@ -146,11 +146,10 @@ function onClick(event, options) {
   return selectedIndexes;
 }
 
-exports["default"] = {
+exports.default = {
   normalizeIndexes: normalizeIndexes,
   clearClass: clearClass,
   getIndexesFromClass: getIndexesFromClass,
   setClassFromIndexes: setClassFromIndexes,
   onClick: onClick
 };
-module.exports = exports["default"];

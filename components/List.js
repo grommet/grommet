@@ -1,20 +1,10 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
-
 'use strict';
 
-Object.defineProperty(exports, '__esModule', {
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var _react = require('react');
 
@@ -22,25 +12,33 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactIntl = require('react-intl');
 
-var _lodashLangIsEqual = require('lodash/lang/isEqual');
+var _isEqual = require('lodash/lang/isEqual');
 
-var _lodashLangIsEqual2 = _interopRequireDefault(_lodashLangIsEqual);
+var _isEqual2 = _interopRequireDefault(_isEqual);
 
-var _iconsSpinning = require('./icons/Spinning');
+var _Spinning = require('./icons/Spinning');
 
-var _iconsSpinning2 = _interopRequireDefault(_iconsSpinning);
+var _Spinning2 = _interopRequireDefault(_Spinning);
 
-var _utilsInfiniteScroll = require('../utils/InfiniteScroll');
+var _InfiniteScroll = require('../utils/InfiniteScroll');
 
-var _utilsInfiniteScroll2 = _interopRequireDefault(_utilsInfiniteScroll);
+var _InfiniteScroll2 = _interopRequireDefault(_InfiniteScroll);
 
-var _utilsSelection = require('../utils/Selection');
+var _Selection = require('../utils/Selection');
 
-var _utilsSelection2 = _interopRequireDefault(_utilsSelection);
+var _Selection2 = _interopRequireDefault(_Selection);
 
 var _ListItem = require('./ListItem');
 
 var _ListItem2 = _interopRequireDefault(_ListItem);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = "list";
 var SELECTED_CLASS = CLASS_ROOT + "-item--selected";
@@ -48,7 +46,7 @@ var SELECTED_CLASS = CLASS_ROOT + "-item--selected";
 // SchemaPropType is deprecated
 var SchemaPropType = _react.PropTypes.arrayOf(_react.PropTypes.shape({
   attribute: _react.PropTypes.string,
-  'default': _react.PropTypes.node,
+  default: _react.PropTypes.node,
   image: _react.PropTypes.bool,
   label: _react.PropTypes.string,
   primary: _react.PropTypes.bool,
@@ -65,22 +63,22 @@ var SchemaListItem = (function (_Component) {
   function SchemaListItem() {
     _classCallCheck(this, SchemaListItem);
 
-    _get(Object.getPrototypeOf(SchemaListItem.prototype), 'constructor', this).apply(this, arguments);
+    return _possibleConstructorReturn(this, Object.getPrototypeOf(SchemaListItem).apply(this, arguments));
   }
 
   _createClass(SchemaListItem, [{
     key: '_renderValue',
     value: function _renderValue(item, scheme) {
       var result;
-      var value = item[scheme.attribute] || scheme['default'];
+      var value = item[scheme.attribute] || scheme.default;
       if (scheme.image) {
         if (typeof value === 'string') {
-          result = _react2['default'].createElement('img', { src: value, alt: scheme.label || 'image' });
+          result = _react2.default.createElement('img', { src: value, alt: scheme.label || 'image' });
         } else {
           result = value;
         }
       } else if (scheme.timestamp) {
-        result = _react2['default'].createElement(_reactIntl.FormattedTime, { value: value,
+        result = _react2.default.createElement(_reactIntl.FormattedTime, { value: value,
           day: 'numeric',
           month: 'narrow',
           hour: '2-digit',
@@ -106,19 +104,19 @@ var SchemaListItem = (function (_Component) {
 
       this.props.schema.forEach(function (scheme) {
         if (scheme.image) {
-          image = _react2['default'].createElement(
+          image = _react2.default.createElement(
             'span',
             { key: 'image', className: CLASS_ROOT + "-item__image" },
             this._renderValue(item, scheme)
           );
         } else if (scheme.primary) {
-          label = _react2['default'].createElement(
+          label = _react2.default.createElement(
             'span',
             { key: 'label', className: CLASS_ROOT + "-item__label" },
             this._renderValue(item, scheme)
           );
         } else if (scheme.secondary) {
-          annotation = _react2['default'].createElement(
+          annotation = _react2.default.createElement(
             'span',
             { key: 'annotation', className: CLASS_ROOT + "-item__annotation" },
             this._renderValue(item, scheme)
@@ -130,8 +128,8 @@ var SchemaListItem = (function (_Component) {
         classes.push(CLASS_ROOT + "-item--selectable");
       }
 
-      return _react2['default'].createElement(
-        _ListItem2['default'],
+      return _react2.default.createElement(
+        _ListItem2.default,
         { className: classes.join(' '), direction: this.props.direction,
           selected: this.props.selected, onClick: this.props.onClick },
         image,
@@ -158,14 +156,15 @@ var List = (function (_Component2) {
   function List(props) {
     _classCallCheck(this, List);
 
-    _get(Object.getPrototypeOf(List.prototype), 'constructor', this).call(this, props);
+    var _this2 = _possibleConstructorReturn(this, Object.getPrototypeOf(List).call(this, props));
 
-    this._onClick = this._onClick.bind(this);
-    this._onClickItem = this._onClickItem.bind(this);
+    _this2._onClick = _this2._onClick.bind(_this2);
+    _this2._onClickItem = _this2._onClickItem.bind(_this2);
 
-    this.state = {
-      selected: _utilsSelection2['default'].normalizeIndexes(props.selected)
+    _this2.state = {
+      selected: _Selection2.default.normalizeIndexes(props.selected)
     };
+    return _this2;
   }
 
   _createClass(List, [{
@@ -173,43 +172,43 @@ var List = (function (_Component2) {
     value: function componentDidMount() {
       this._setSelection();
       if (this.props.onMore) {
-        this._scroll = _utilsInfiniteScroll2['default'].startListeningForScroll(this.refs.more, this.props.onMore);
+        this._scroll = _InfiniteScroll2.default.startListeningForScroll(this.refs.more, this.props.onMore);
       }
     }
   }, {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
       if (this._scroll) {
-        _utilsInfiniteScroll2['default'].stopListeningForScroll(this._scroll);
+        _InfiniteScroll2.default.stopListeningForScroll(this._scroll);
         this._scroll = null;
       }
       if (nextProps.hasOwnProperty('selected')) {
         this.setState({
-          selected: _utilsSelection2['default'].normalizeIndexes(nextProps.selected)
+          selected: _Selection2.default.normalizeIndexes(nextProps.selected)
         });
       }
     }
   }, {
     key: 'componentDidUpdate',
     value: function componentDidUpdate(prevProps, prevState) {
-      if (!(0, _lodashLangIsEqual2['default'])(this.state.selected, prevState.selected)) {
+      if (!(0, _isEqual2.default)(this.state.selected, prevState.selected)) {
         this._setSelection();
       }
       if (this.props.onMore && !this._scroll) {
-        this._scroll = _utilsInfiniteScroll2['default'].startListeningForScroll(this.refs.more, this.props.onMore);
+        this._scroll = _InfiniteScroll2.default.startListeningForScroll(this.refs.more, this.props.onMore);
       }
     }
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
       if (this._scroll) {
-        _utilsInfiniteScroll2['default'].stopListeningForScroll(this._scroll);
+        _InfiniteScroll2.default.stopListeningForScroll(this._scroll);
       }
     }
   }, {
     key: '_setSelection',
     value: function _setSelection() {
-      _utilsSelection2['default'].setClassFromIndexes({
+      _Selection2.default.setClassFromIndexes({
         containerElement: this.refs.list,
         childSelector: '.list-item',
         selectedClass: SELECTED_CLASS,
@@ -223,7 +222,7 @@ var List = (function (_Component2) {
         return;
       }
 
-      var selected = _utilsSelection2['default'].onClick(event, {
+      var selected = _Selection2.default.onClick(event, {
         containerElement: this.refs.list,
         childSelector: '.list-item',
         selectedClass: SELECTED_CLASS,
@@ -270,7 +269,7 @@ var List = (function (_Component2) {
         onClick = this._onClickItem.bind(this, item);
       }
 
-      return _react2['default'].createElement(SchemaListItem, { key: uid, item: item, schema: this.props.schema,
+      return _react2.default.createElement(SchemaListItem, { key: uid, item: item, schema: this.props.schema,
         direction: this.props.itemDirection,
         selected: selected, onClick: onClick });
     }
@@ -296,7 +295,7 @@ var List = (function (_Component2) {
           return this._renderItem(item);
         }, this);
         if (this.props.data.length === 0) {
-          empty = _react2['default'].createElement(
+          empty = _react2.default.createElement(
             'li',
             { className: CLASS_ROOT + "__empty" },
             this.props.emptyIndicator
@@ -310,14 +309,14 @@ var List = (function (_Component2) {
       var more;
       if (this.props.onMore) {
         classes.push(CLASS_ROOT + "--moreable");
-        more = _react2['default'].createElement(
+        more = _react2.default.createElement(
           'li',
           { ref: 'more', className: CLASS_ROOT + "__more" },
-          _react2['default'].createElement(_iconsSpinning2['default'], null)
+          _react2.default.createElement(_Spinning2.default, null)
         );
       }
 
-      return _react2['default'].createElement(
+      return _react2.default.createElement(
         'ul',
         { ref: 'list', className: classes.join(' '), onClick: this._onClick },
         empty,
@@ -330,7 +329,7 @@ var List = (function (_Component2) {
   return List;
 })(_react.Component);
 
-exports['default'] = List;
+exports.default = List;
 
 List.propTypes = {
   data: _react.PropTypes.arrayOf(_react.PropTypes.object), // deprecated, use child components
@@ -347,4 +346,3 @@ List.propTypes = {
 List.defaultProps = {
   itemDirection: 'row' // deprecated, use child components
 };
-module.exports = exports['default'];

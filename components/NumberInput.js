@@ -1,20 +1,10 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
-
 'use strict';
 
-Object.defineProperty(exports, '__esModule', {
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var _react = require('react');
 
@@ -24,13 +14,21 @@ var _Button = require('./Button');
 
 var _Button2 = _interopRequireDefault(_Button);
 
-var _iconsBaseAdd = require('./icons/base/Add');
+var _Add = require('./icons/base/Add');
 
-var _iconsBaseAdd2 = _interopRequireDefault(_iconsBaseAdd);
+var _Add2 = _interopRequireDefault(_Add);
 
-var _iconsBaseSubtract = require('./icons/base/Subtract');
+var _Subtract = require('./icons/base/Subtract');
 
-var _iconsBaseSubtract2 = _interopRequireDefault(_iconsBaseSubtract);
+var _Subtract2 = _interopRequireDefault(_Subtract);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = "number-input";
 
@@ -40,10 +38,11 @@ var NumberInput = (function (_Component) {
   function NumberInput() {
     _classCallCheck(this, NumberInput);
 
-    _get(Object.getPrototypeOf(NumberInput.prototype), 'constructor', this).call(this);
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(NumberInput).call(this));
 
-    this._onAdd = this._onAdd.bind(this);
-    this._onSubtract = this._onSubtract.bind(this);
+    _this._onAdd = _this._onAdd.bind(_this);
+    _this._onSubtract = _this._onSubtract.bind(_this);
+    return _this;
   }
 
   _createClass(NumberInput, [{
@@ -82,12 +81,12 @@ var NumberInput = (function (_Component) {
         classes.push(this.props.className);
       }
 
-      return _react2['default'].createElement(
+      return _react2.default.createElement(
         'span',
         { className: classes.join(' '),
           'aria-describedby': this.props.ariaDescribedby,
           'aria-labelledby': labelId },
-        _react2['default'].createElement('input', { ref: 'input', tabIndex: '0', className: CLASS_ROOT + "__input",
+        _react2.default.createElement('input', { ref: 'input', tabIndex: '0', className: CLASS_ROOT + "__input",
           id: this.props.id, name: this.props.name, type: 'number',
           disabled: this.props.disabled,
           value: this.props.value,
@@ -96,17 +95,17 @@ var NumberInput = (function (_Component) {
           max: this.props.max,
           step: this.props.step,
           onChange: this.props.onChange }),
-        _react2['default'].createElement(
-          _Button2['default'],
+        _react2.default.createElement(
+          _Button2.default,
           { type: 'icon', className: CLASS_ROOT + "__subtract",
             onClick: this._onSubtract },
-          _react2['default'].createElement(_iconsBaseSubtract2['default'], null)
+          _react2.default.createElement(_Subtract2.default, null)
         ),
-        _react2['default'].createElement(
-          _Button2['default'],
+        _react2.default.createElement(
+          _Button2.default,
           { type: 'icon', className: CLASS_ROOT + "__add",
             onClick: this._onAdd },
-          _react2['default'].createElement(_iconsBaseAdd2['default'], null)
+          _react2.default.createElement(_Add2.default, null)
         )
       );
     }
@@ -115,7 +114,7 @@ var NumberInput = (function (_Component) {
   return NumberInput;
 })(_react.Component);
 
-exports['default'] = NumberInput;
+exports.default = NumberInput;
 
 NumberInput.propTypes = {
   ariaDescribedby: _react.PropTypes.string,
@@ -129,4 +128,3 @@ NumberInput.propTypes = {
   step: _react.PropTypes.number,
   value: _react.PropTypes.number
 };
-module.exports = exports['default'];

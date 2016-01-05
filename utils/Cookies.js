@@ -1,3 +1,8 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 // (C) Copyright 2015 Hewlett Packard Enterprise Development LP
 
 // Slightly modified version of the Mozilla Developer Network version.
@@ -27,12 +32,7 @@
 |*|
 \*/
 
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = {
+exports.default = {
   get: function get(sKey) {
     if (!sKey) {
       return null;
@@ -81,4 +81,3 @@ exports["default"] = {
     return aKeys;
   }
 };
-module.exports = exports["default"];

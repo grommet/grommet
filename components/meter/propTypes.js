@@ -1,14 +1,12 @@
-// (C) Copyright 2014 Hewlett Packard Enterprise Development LP
-
 'use strict';
 
-Object.defineProperty(exports, '__esModule', {
+Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
 var _react = require('react');
 
-exports['default'] = {
+exports.default = {
   activeIndex: _react.PropTypes.number,
   a11yDesc: _react.PropTypes.string,
   a11yDescId: _react.PropTypes.string,
@@ -38,5 +36,4 @@ exports['default'] = {
   total: _react.PropTypes.number.isRequired,
   units: _react.PropTypes.string,
   vertical: _react.PropTypes.bool
-};
-module.exports = exports['default'];
+}; // (C) Copyright 2014 Hewlett Packard Enterprise Development LP

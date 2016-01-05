@@ -1,6 +1,6 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 'use strict';
 
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 var Grommet = {
   // Components
   Anchor: require('./components/Anchor'),

@@ -1,20 +1,10 @@
-// (C) Copyright 2014 Hewlett Packard Enterprise Development LP
-
 'use strict';
 
-Object.defineProperty(exports, '__esModule', {
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var _react = require('react');
 
@@ -24,21 +14,29 @@ var _reactDom = require('react-dom');
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _utilsKeyboardAccelerators = require('../utils/KeyboardAccelerators');
+var _KeyboardAccelerators = require('../utils/KeyboardAccelerators');
 
-var _utilsKeyboardAccelerators2 = _interopRequireDefault(_utilsKeyboardAccelerators);
+var _KeyboardAccelerators2 = _interopRequireDefault(_KeyboardAccelerators);
 
-var _utilsDrop = require('../utils/Drop');
+var _Drop = require('../utils/Drop');
 
-var _utilsDrop2 = _interopRequireDefault(_utilsDrop);
+var _Drop2 = _interopRequireDefault(_Drop);
 
 var _Button = require('./Button');
 
 var _Button2 = _interopRequireDefault(_Button);
 
-var _iconsBaseSearch = require('./icons/base/Search');
+var _Search = require('./icons/base/Search');
 
-var _iconsBaseSearch2 = _interopRequireDefault(_iconsBaseSearch);
+var _Search2 = _interopRequireDefault(_Search);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = "search-input";
 
@@ -48,23 +46,24 @@ var SearchInput = (function (_Component) {
   function SearchInput(props) {
     _classCallCheck(this, SearchInput);
 
-    _get(Object.getPrototypeOf(SearchInput.prototype), 'constructor', this).call(this, props);
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(SearchInput).call(this, props));
 
-    this._onInputChange = this._onInputChange.bind(this);
-    this._onAddDrop = this._onAddDrop.bind(this);
-    this._onRemoveDrop = this._onRemoveDrop.bind(this);
-    this._onNextSuggestion = this._onNextSuggestion.bind(this);
-    this._onPreviousSuggestion = this._onPreviousSuggestion.bind(this);
-    this._onEnter = this._onEnter.bind(this);
-    this._onClickSuggestion = this._onClickSuggestion.bind(this);
-    this._onFocus = this._onFocus.bind(this);
+    _this._onInputChange = _this._onInputChange.bind(_this);
+    _this._onAddDrop = _this._onAddDrop.bind(_this);
+    _this._onRemoveDrop = _this._onRemoveDrop.bind(_this);
+    _this._onNextSuggestion = _this._onNextSuggestion.bind(_this);
+    _this._onPreviousSuggestion = _this._onPreviousSuggestion.bind(_this);
+    _this._onEnter = _this._onEnter.bind(_this);
+    _this._onClickSuggestion = _this._onClickSuggestion.bind(_this);
+    _this._onFocus = _this._onFocus.bind(_this);
 
-    this.state = {
+    _this.state = {
       dropActive: false,
       defaultValue: props.defaultValue,
       value: props.value,
       activeSuggestionIndex: -1
     };
+    return _this;
   }
 
   _createClass(SearchInput, [{
@@ -86,12 +85,12 @@ var SearchInput = (function (_Component) {
       // the order here is important, need to turn off keys before turning on
 
       if (!this.state.focused && prevState.focused) {
-        _utilsKeyboardAccelerators2['default'].stopListeningToKeyboard(this, focusedKeyboardHandlers);
+        _KeyboardAccelerators2.default.stopListeningToKeyboard(this, focusedKeyboardHandlers);
       }
 
       if (!this.state.dropActive && prevState.dropActive) {
         document.removeEventListener('click', this._onRemoveDrop);
-        _utilsKeyboardAccelerators2['default'].stopListeningToKeyboard(this, activeKeyboardHandlers);
+        _KeyboardAccelerators2.default.stopListeningToKeyboard(this, activeKeyboardHandlers);
         if (this._drop) {
           this._drop.remove();
           this._drop = null;
@@ -99,14 +98,14 @@ var SearchInput = (function (_Component) {
       }
 
       if (this.state.focused && !prevState.focused) {
-        _utilsKeyboardAccelerators2['default'].startListeningToKeyboard(this, focusedKeyboardHandlers);
+        _KeyboardAccelerators2.default.startListeningToKeyboard(this, focusedKeyboardHandlers);
       }
 
       if (this.state.dropActive && !prevState.dropActive) {
         document.addEventListener('click', this._onRemoveDrop);
-        _utilsKeyboardAccelerators2['default'].startListeningToKeyboard(this, activeKeyboardHandlers);
+        _KeyboardAccelerators2.default.startListeningToKeyboard(this, activeKeyboardHandlers);
 
-        this._drop = _utilsDrop2['default'].add(_reactDom2['default'].findDOMNode(this.refs.component), this._renderDrop(), { top: 'bottom', left: 'left' });
+        this._drop = _Drop2.default.add(_reactDom2.default.findDOMNode(this.refs.component), this._renderDrop(), { top: 'bottom', left: 'left' });
       } else if (this.state.dropActive && prevState.dropActive) {
         this._drop.render(this._renderDrop());
       }
@@ -194,7 +193,7 @@ var SearchInput = (function (_Component) {
   }, {
     key: '_onFocus',
     value: function _onFocus() {
-      _reactDom2['default'].findDOMNode(this.refs.input).select();
+      _reactDom2.default.findDOMNode(this.refs.input).select();
       this.setState({
         focused: true,
         dropActive: false,
@@ -224,7 +223,7 @@ var SearchInput = (function (_Component) {
           if (index === this.state.activeSuggestionIndex) {
             classes.push(CLASS_ROOT + "__suggestion--active");
           }
-          return _react2['default'].createElement(
+          return _react2.default.createElement(
             'li',
             { key: this._valueText(suggestion),
               className: classes.join(' '),
@@ -234,7 +233,7 @@ var SearchInput = (function (_Component) {
         }, this);
       }
 
-      return _react2['default'].createElement(
+      return _react2.default.createElement(
         'ol',
         { className: CLASS_ROOT + "__suggestions", onClick: this._onRemoveDrop },
         suggestions
@@ -251,21 +250,21 @@ var SearchInput = (function (_Component) {
         classes.push(this.props.className);
       }
 
-      return _react2['default'].createElement(
+      return _react2.default.createElement(
         'div',
         { ref: 'component', className: classes.join(' ') },
-        _react2['default'].createElement('input', { ref: 'input', className: CLASS_ROOT + "__input",
+        _react2.default.createElement('input', { ref: 'input', className: CLASS_ROOT + "__input",
           id: this.props.id, name: this.props.name,
           value: this._valueText(this.props.value),
           defaultValue: this._valueText(this.props.defaultValue),
           placeholder: this.props.placeHolder,
           onChange: this._onInputChange,
           onFocus: this._onFocus }),
-        _react2['default'].createElement(
-          _Button2['default'],
+        _react2.default.createElement(
+          _Button2.default,
           { className: CLASS_ROOT + "__control", type: 'icon',
             onClick: this._onAddDrop },
-          _react2['default'].createElement(_iconsBaseSearch2['default'], null)
+          _react2.default.createElement(_Search2.default, null)
         )
       );
     }
@@ -274,7 +273,7 @@ var SearchInput = (function (_Component) {
   return SearchInput;
 })(_react.Component);
 
-exports['default'] = SearchInput;
+exports.default = SearchInput;
 
 SearchInput.propTypes = {
   defaultValue: _react.PropTypes.oneOfType([_react.PropTypes.shape({
@@ -296,4 +295,3 @@ SearchInput.propTypes = {
     value: _react.PropTypes.string
   }), _react.PropTypes.string])
 };
-module.exports = exports['default'];

@@ -1,12 +1,12 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
 // Allow callers to use key labels instead of key code numbers.
 // This makes their code easier to read.
-'use strict';
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
 var KEYS = {
   backspace: 8,
   tab: 9,
@@ -45,24 +45,21 @@ var _onKeyboardAcceleratorKeyPress = function _onKeyboardAcceleratorKeyPress(e) 
 // Remove listeners using stopListeningToKeyboard().
 // When the component that includes this is unmounted, the keyboard event
 // listener is removed automatically.
-exports['default'] = {
+exports.default = {
   _initKeyboardAccelerators: function _initKeyboardAccelerators() {
     var id = this.getDOMNode().getAttribute('data-reactid');
     _keyboardAccelerators[id] = {
       handlers: {}
     };
   },
-
   _getKeyboardAcceleratorHandlers: function _getKeyboardAcceleratorHandlers() {
     var id = this.getDOMNode().getAttribute('data-reactid');
     return _keyboardAccelerators[id].handlers;
   },
-
   _getDowns: function _getDowns() {
     var id = this.getDOMNode().getAttribute('data-reactid');
     return _keyboardAccelerators[id].downs;
   },
-
   _isComponentListening: function _isComponentListening() {
     var id = this.getDOMNode().getAttribute('data-reactid');
     for (var i = 0; i < _listenersCounter; i++) {
@@ -72,13 +69,11 @@ exports['default'] = {
     }
     return false;
   },
-
   _subscribeComponent: function _subscribeComponent() {
     var id = this.getDOMNode().getAttribute('data-reactid');
     _listeners[_listenersCounter] = id;
     _listenersCounter++;
   },
-
   _unsubscribeComponent: function _unsubscribeComponent() {
     var id = this.getDOMNode().getAttribute('data-reactid');
     var i = 0;
@@ -161,9 +156,7 @@ exports['default'] = {
       _isKeyboardAcceleratorListening = false;
     }
   },
-
   componentWillUnmount: function componentWillUnmount() {
     this.stopListeningToKeyboard();
   }
 };
-module.exports = exports['default'];

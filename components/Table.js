@@ -1,40 +1,38 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
-
 'use strict';
 
-Object.defineProperty(exports, '__esModule', {
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _lodashLangIsEqual = require('lodash/lang/isEqual');
+var _isEqual = require('lodash/lang/isEqual');
 
-var _lodashLangIsEqual2 = _interopRequireDefault(_lodashLangIsEqual);
+var _isEqual2 = _interopRequireDefault(_isEqual);
 
-var _iconsSpinning = require('./icons/Spinning');
+var _Spinning = require('./icons/Spinning');
 
-var _iconsSpinning2 = _interopRequireDefault(_iconsSpinning);
+var _Spinning2 = _interopRequireDefault(_Spinning);
 
-var _utilsInfiniteScroll = require('../utils/InfiniteScroll');
+var _InfiniteScroll = require('../utils/InfiniteScroll');
 
-var _utilsInfiniteScroll2 = _interopRequireDefault(_utilsInfiniteScroll);
+var _InfiniteScroll2 = _interopRequireDefault(_InfiniteScroll);
 
-var _utilsSelection = require('../utils/Selection');
+var _Selection = require('../utils/Selection');
 
-var _utilsSelection2 = _interopRequireDefault(_utilsSelection);
+var _Selection2 = _interopRequireDefault(_Selection);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = "table";
 var SELECTED_CLASS = CLASS_ROOT + "-row--selected";
@@ -45,18 +43,19 @@ var Table = (function (_Component) {
   function Table(props) {
     _classCallCheck(this, Table);
 
-    _get(Object.getPrototypeOf(Table.prototype), 'constructor', this).call(this, props);
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Table).call(this, props));
 
-    this._onClick = this._onClick.bind(this);
-    this._onResize = this._onResize.bind(this);
+    _this._onClick = _this._onClick.bind(_this);
+    _this._onResize = _this._onResize.bind(_this);
 
     if (props.selection) {
       console.warn('The "selection" property of Table has been deprecated.' + ' Instead, use the "selected" property. The behavior is the same.' + ' The property name was changed to align with List and Tiles.');
     }
-    this.state = {
-      selected: _utilsSelection2['default'].normalizeIndexes(props.selected || props.selection),
+    _this.state = {
+      selected: _Selection2.default.normalizeIndexes(props.selected || props.selection),
       rebuildMirror: props.scrollable
     };
+    return _this;
   }
 
   _createClass(Table, [{
@@ -68,7 +67,7 @@ var Table = (function (_Component) {
         this._alignMirror();
       }
       if (this.props.onMore) {
-        this._scroll = _utilsInfiniteScroll2['default'].startListeningForScroll(this.refs.more, this.props.onMore);
+        this._scroll = _InfiniteScroll2.default.startListeningForScroll(this.refs.more, this.props.onMore);
       }
       window.addEventListener('resize', this._onResize);
     }
@@ -76,12 +75,12 @@ var Table = (function (_Component) {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
       if (this._scroll) {
-        _utilsInfiniteScroll2['default'].stopListeningForScroll(this._scroll);
+        _InfiniteScroll2.default.stopListeningForScroll(this._scroll);
         this._scroll = null;
       }
       if (nextProps.hasOwnProperty('selected') || nextProps.hasOwnProperty('selection')) {
         this.setState({
-          selected: _utilsSelection2['default'].normalizeIndexes(nextProps.selected || nextProps.selection)
+          selected: _Selection2.default.normalizeIndexes(nextProps.selected || nextProps.selection)
         });
       }
       this.setState({ rebuildMirror: nextProps.scrollable });
@@ -89,7 +88,7 @@ var Table = (function (_Component) {
   }, {
     key: 'componentDidUpdate',
     value: function componentDidUpdate(prevProps, prevState) {
-      if (!(0, _lodashLangIsEqual2['default'])(this.state.selected, prevState.selected)) {
+      if (!(0, _isEqual2.default)(this.state.selected, prevState.selected)) {
         this._setSelection();
       }
       if (this.state.rebuildMirror) {
@@ -100,14 +99,14 @@ var Table = (function (_Component) {
         this._alignMirror();
       }
       if (this.props.onMore && !this._scroll) {
-        this._scroll = _utilsInfiniteScroll2['default'].startListeningForScroll(this.refs.more, this.props.onMore);
+        this._scroll = _InfiniteScroll2.default.startListeningForScroll(this.refs.more, this.props.onMore);
       }
     }
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
       if (this._scroll) {
-        _utilsInfiniteScroll2['default'].stopListeningForScroll(this._scroll);
+        _InfiniteScroll2.default.stopListeningForScroll(this._scroll);
       }
       window.removeEventListener('resize', this._onResize);
     }
@@ -124,7 +123,7 @@ var Table = (function (_Component) {
   }, {
     key: '_setSelection',
     value: function _setSelection() {
-      _utilsSelection2['default'].setClassFromIndexes({
+      _Selection2.default.setClassFromIndexes({
         containerElement: this._container(),
         childSelector: 'tr',
         selectedClass: SELECTED_CLASS,
@@ -138,7 +137,7 @@ var Table = (function (_Component) {
         return;
       }
 
-      var selected = _utilsSelection2['default'].onClick(event, {
+      var selected = _Selection2.default.onClick(event, {
         containerElement: this._container(),
         childSelector: 'tr',
         selectedClass: SELECTED_CLASS,
@@ -215,31 +214,31 @@ var Table = (function (_Component) {
 
       var mirror = null;
       if (this.props.scrollable) {
-        mirror = _react2['default'].createElement(
+        mirror = _react2.default.createElement(
           'table',
           { ref: 'mirror', className: CLASS_ROOT + "__mirror" },
-          _react2['default'].createElement(
+          _react2.default.createElement(
             'thead',
             null,
-            _react2['default'].createElement('tr', null)
+            _react2.default.createElement('tr', null)
           )
         );
       }
 
       var more = null;
       if (this.props.onMore) {
-        more = _react2['default'].createElement(
+        more = _react2.default.createElement(
           'div',
           { ref: 'more', className: CLASS_ROOT + "__more" },
-          _react2['default'].createElement(_iconsSpinning2['default'], null)
+          _react2.default.createElement(_Spinning2.default, null)
         );
       }
 
-      return _react2['default'].createElement(
+      return _react2.default.createElement(
         'div',
         { ref: 'container', className: classes.join(' ') },
         mirror,
-        _react2['default'].createElement(
+        _react2.default.createElement(
           'table',
           { ref: 'table', className: CLASS_ROOT + "__table", onClick: this._onClick },
           this.props.children
@@ -252,7 +251,7 @@ var Table = (function (_Component) {
   return Table;
 })(_react.Component);
 
-exports['default'] = Table;
+exports.default = Table;
 
 Table.propTypes = {
   onMore: _react.PropTypes.func,
@@ -261,4 +260,3 @@ Table.propTypes = {
   selectable: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.oneOf(['multiple'])]),
   selected: _react.PropTypes.oneOfType([_react.PropTypes.number, _react.PropTypes.arrayOf(_react.PropTypes.number)])
 };
-module.exports = exports['default'];

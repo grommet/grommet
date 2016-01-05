@@ -1,24 +1,22 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
-
 'use strict';
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _componentsFormattedMessage = require('../../../components/FormattedMessage');
+var _FormattedMessage = require('../../../components/FormattedMessage');
 
-var _componentsFormattedMessage2 = _interopRequireDefault(_componentsFormattedMessage);
+var _FormattedMessage2 = _interopRequireDefault(_FormattedMessage);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = "control-icon";
 
@@ -28,7 +26,7 @@ var Icon = (function (_Component) {
   function Icon() {
     _classCallCheck(this, Icon);
 
-    _get(Object.getPrototypeOf(Icon.prototype), 'constructor', this).apply(this, arguments);
+    return _possibleConstructorReturn(this, Object.getPrototypeOf(Icon).apply(this, arguments));
   }
 
   _createClass(Icon, [{
@@ -48,21 +46,21 @@ var Icon = (function (_Component) {
       }
 
       var titleLabel = typeof this.props.a11yTitle !== "undefined" ? this.props.a11yTitle : "microphone";
-      var a11yTitle = _react2['default'].createElement(_componentsFormattedMessage2['default'], { id: titleLabel, defaultMessage: titleLabel });
+      var a11yTitle = _react2.default.createElement(_FormattedMessage2.default, { id: titleLabel, defaultMessage: titleLabel });
 
-      return _react2['default'].createElement(
+      return _react2.default.createElement(
         'svg',
         { version: '1.1', viewBox: '0 0 24 24.2101', width: '24px', height: '24px', className: classes.join(' '), 'aria-labelledby': this.props.a11yTitleId },
-        _react2['default'].createElement(
+        _react2.default.createElement(
           'title',
           { id: this.props.a11yTitleId },
           a11yTitle
         ),
-        _react2['default'].createElement(
+        _react2.default.createElement(
           'g',
           { id: 'microphone' },
-          _react2['default'].createElement('rect', { id: '_x2E_svg_21_', x: '0', y: '0', fill: 'none', width: '24', height: '24' }),
-          _react2['default'].createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M19.9997,9.2101v2.04\r c0,4.3892-3.5708,7.96-7.96,7.96h-0.0801c-4.3892,0-7.96-3.5708-7.96-7.96v-2.04 M15.9997,11.2501v-6.08\r c0-2.187-1.773-3.96-3.96-3.96h-0.08c-2.187,0-3.96,1.773-3.96,3.96v6.08c0,2.187,1.773,3.96,3.96,3.96h0.08\r C14.2267,15.2101,15.9997,13.4372,15.9997,11.2501z M11.9997,19.2101v5' })
+          _react2.default.createElement('rect', { id: '_x2E_svg_21_', x: '0', y: '0', fill: 'none', width: '24', height: '24' }),
+          _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M19.9997,9.2101v2.04\r c0,4.3892-3.5708,7.96-7.96,7.96h-0.0801c-4.3892,0-7.96-3.5708-7.96-7.96v-2.04 M15.9997,11.2501v-6.08\r c0-2.187-1.773-3.96-3.96-3.96h-0.08c-2.187,0-3.96,1.773-3.96,3.96v6.08c0,2.187,1.773,3.96,3.96,3.96h0.08\r C14.2267,15.2101,15.9997,13.4372,15.9997,11.2501z M11.9997,19.2101v5' })
         )
       );
     }

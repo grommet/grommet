@@ -1,22 +1,12 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
-
 'use strict';
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
-var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
 var _react = require('react');
 
@@ -24,17 +14,17 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactDom = require('react-dom');
 
-var _lodashLangIsEqual = require('lodash/lang/isEqual');
+var _isEqual = require('lodash/lang/isEqual');
 
-var _lodashLangIsEqual2 = _interopRequireDefault(_lodashLangIsEqual);
+var _isEqual2 = _interopRequireDefault(_isEqual);
 
-var _lodashObjectPick = require('lodash/object/pick');
+var _pick = require('lodash/object/pick');
 
-var _lodashObjectPick2 = _interopRequireDefault(_lodashObjectPick);
+var _pick2 = _interopRequireDefault(_pick);
 
-var _lodashObjectKeys = require('lodash/object/keys');
+var _keys = require('lodash/object/keys');
 
-var _lodashObjectKeys2 = _interopRequireDefault(_lodashObjectKeys);
+var _keys2 = _interopRequireDefault(_keys);
 
 var _Box = require('./Box');
 
@@ -44,29 +34,37 @@ var _Button = require('./Button');
 
 var _Button2 = _interopRequireDefault(_Button);
 
-var _iconsSpinning = require('./icons/Spinning');
+var _Spinning = require('./icons/Spinning');
 
-var _iconsSpinning2 = _interopRequireDefault(_iconsSpinning);
+var _Spinning2 = _interopRequireDefault(_Spinning);
 
-var _iconsBaseLinkPrevious = require('./icons/base/LinkPrevious');
+var _LinkPrevious = require('./icons/base/LinkPrevious');
 
-var _iconsBaseLinkPrevious2 = _interopRequireDefault(_iconsBaseLinkPrevious);
+var _LinkPrevious2 = _interopRequireDefault(_LinkPrevious);
 
-var _iconsBaseLinkNext = require('./icons/base/LinkNext');
+var _LinkNext = require('./icons/base/LinkNext');
 
-var _iconsBaseLinkNext2 = _interopRequireDefault(_iconsBaseLinkNext);
+var _LinkNext2 = _interopRequireDefault(_LinkNext);
 
-var _utilsScroll = require('../utils/Scroll');
+var _Scroll = require('../utils/Scroll');
 
-var _utilsScroll2 = _interopRequireDefault(_utilsScroll);
+var _Scroll2 = _interopRequireDefault(_Scroll);
 
-var _utilsInfiniteScroll = require('../utils/InfiniteScroll');
+var _InfiniteScroll = require('../utils/InfiniteScroll');
 
-var _utilsInfiniteScroll2 = _interopRequireDefault(_utilsInfiniteScroll);
+var _InfiniteScroll2 = _interopRequireDefault(_InfiniteScroll);
 
-var _utilsSelection = require('../utils/Selection');
+var _Selection = require('../utils/Selection');
 
-var _utilsSelection2 = _interopRequireDefault(_utilsSelection);
+var _Selection2 = _interopRequireDefault(_Selection);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = "tiles";
 var SELECTED_CLASS = "tile--selected";
@@ -77,19 +75,21 @@ var Tiles = (function (_Component) {
   function Tiles(props) {
     _classCallCheck(this, Tiles);
 
-    _get(Object.getPrototypeOf(Tiles.prototype), 'constructor', this).call(this, props);
-    this._onLeft = this._onLeft.bind(this);
-    this._onRight = this._onRight.bind(this);
-    this._onScrollHorizontal = this._onScrollHorizontal.bind(this);
-    this._onWheel = this._onWheel.bind(this);
-    this._onResize = this._onResize.bind(this);
-    this._layout = this._layout.bind(this);
-    this._onClick = this._onClick.bind(this);
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Tiles).call(this, props));
 
-    this.state = {
+    _this._onLeft = _this._onLeft.bind(_this);
+    _this._onRight = _this._onRight.bind(_this);
+    _this._onScrollHorizontal = _this._onScrollHorizontal.bind(_this);
+    _this._onWheel = _this._onWheel.bind(_this);
+    _this._onResize = _this._onResize.bind(_this);
+    _this._layout = _this._layout.bind(_this);
+    _this._onClick = _this._onClick.bind(_this);
+
+    _this.state = {
       overflow: false,
-      selected: _utilsSelection2['default'].normalizeIndexes(props.selected)
+      selected: _Selection2.default.normalizeIndexes(props.selected)
     };
+    return _this;
   }
 
   _createClass(Tiles, [{
@@ -97,7 +97,7 @@ var Tiles = (function (_Component) {
     value: function componentDidMount() {
       this._setSelection();
       if (this.props.onMore) {
-        this._scroll = _utilsInfiniteScroll2['default'].startListeningForScroll(this.refs.more, this.props.onMore);
+        this._scroll = _InfiniteScroll2.default.startListeningForScroll(this.refs.more, this.props.onMore);
       }
       if ('row' === this.props.direction) {
         window.addEventListener('resize', this._onResize);
@@ -111,21 +111,21 @@ var Tiles = (function (_Component) {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
       if (nextProps.selected) {
-        this.setState({ selected: _utilsSelection2['default'].normalizeIndexes(nextProps.selected) });
+        this.setState({ selected: _Selection2.default.normalizeIndexes(nextProps.selected) });
       }
       if (this._scroll) {
-        _utilsInfiniteScroll2['default'].stopListeningForScroll(this._scroll);
+        _InfiniteScroll2.default.stopListeningForScroll(this._scroll);
         this._scroll = null;
       }
     }
   }, {
     key: 'componentDidUpdate',
     value: function componentDidUpdate(prevProps, prevState) {
-      if (!(0, _lodashLangIsEqual2['default'])(this.state.selected, prevState.selected)) {
+      if (!(0, _isEqual2.default)(this.state.selected, prevState.selected)) {
         this._setSelection();
       }
       if (this.props.onMore && !this._scroll) {
-        this._scroll = _utilsInfiniteScroll2['default'].startListeningForScroll(this.refs.more, this.props.onMore);
+        this._scroll = _InfiniteScroll2.default.startListeningForScroll(this.refs.more, this.props.onMore);
       }
       if ('row' === this.props.direction) {
         this._trackHorizontalScroll();
@@ -135,7 +135,7 @@ var Tiles = (function (_Component) {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
       if (this._scroll) {
-        _utilsInfiniteScroll2['default'].stopListeningForScroll(this._scroll);
+        _InfiniteScroll2.default.stopListeningForScroll(this._scroll);
       }
       if ('row' === this.props.direction) {
         window.removeEventListener('resize', this._onResize);
@@ -150,13 +150,13 @@ var Tiles = (function (_Component) {
     key: '_onLeft',
     value: function _onLeft() {
       var tiles = (0, _reactDom.findDOMNode)(this.refs.tiles);
-      _utilsScroll2['default'].scrollBy(tiles, 'scrollLeft', -tiles.offsetWidth);
+      _Scroll2.default.scrollBy(tiles, 'scrollLeft', -tiles.offsetWidth);
     }
   }, {
     key: '_onRight',
     value: function _onRight() {
       var tiles = (0, _reactDom.findDOMNode)(this.refs.tiles);
-      _utilsScroll2['default'].scrollBy(tiles, 'scrollLeft', tiles.offsetWidth);
+      _Scroll2.default.scrollBy(tiles, 'scrollLeft', tiles.offsetWidth);
     }
   }, {
     key: '_onScrollHorizontal',
@@ -223,7 +223,7 @@ var Tiles = (function (_Component) {
   }, {
     key: '_setSelection',
     value: function _setSelection() {
-      _utilsSelection2['default'].setClassFromIndexes({
+      _Selection2.default.setClassFromIndexes({
         containerElement: (0, _reactDom.findDOMNode)(this.refs.tiles),
         childSelector: '.tile',
         selectedClass: SELECTED_CLASS,
@@ -237,7 +237,7 @@ var Tiles = (function (_Component) {
         return;
       }
 
-      var selected = _utilsSelection2['default'].onClick(event, {
+      var selected = _Selection2.default.onClick(event, {
         containerElement: (0, _reactDom.findDOMNode)(this.refs.tiles),
         childSelector: '.tile',
         selectedClass: SELECTED_CLASS,
@@ -259,6 +259,7 @@ var Tiles = (function (_Component) {
     }
 
     // children should be an array of Tile
+
   }, {
     key: 'render',
     value: function render() {
@@ -279,20 +280,20 @@ var Tiles = (function (_Component) {
         classes.push(this.props.className);
       }
 
-      var other = (0, _lodashObjectPick2['default'])(this.props, (0, _lodashObjectKeys2['default'])(_Box2['default'].propTypes));
+      var other = (0, _pick2.default)(this.props, (0, _keys2.default)(_Box2.default.propTypes));
 
       var more = null;
       if (this.props.onMore) {
         classes.push(CLASS_ROOT + "--moreable");
-        more = _react2['default'].createElement(
+        more = _react2.default.createElement(
           'div',
           { ref: 'more', className: CLASS_ROOT + "__more" },
-          _react2['default'].createElement(_iconsSpinning2['default'], null)
+          _react2.default.createElement(_Spinning2.default, null)
         );
       }
 
-      var contents = _react2['default'].createElement(
-        _Box2['default'],
+      var contents = _react2.default.createElement(
+        _Box2.default,
         _extends({ ref: 'tiles' }, other, {
           wrap: this.props.direction ? false : true,
           direction: this.props.direction ? this.props.direction : 'row',
@@ -305,23 +306,23 @@ var Tiles = (function (_Component) {
       if (this.state.overflow) {
         classes.push(CLASS_ROOT + "--overflowed");
         if (!this.state.overflowStart) {
-          var left = _react2['default'].createElement(
-            _Button2['default'],
+          var left = _react2.default.createElement(
+            _Button2.default,
             { className: CLASS_ROOT + "__left", type: 'icon',
               onClick: this._onLeft },
-            _react2['default'].createElement(_iconsBaseLinkPrevious2['default'], null)
+            _react2.default.createElement(_LinkPrevious2.default, null)
           );
         }
         if (!this.state.overflowEnd) {
-          var right = _react2['default'].createElement(
-            _Button2['default'],
+          var right = _react2.default.createElement(
+            _Button2.default,
             { className: CLASS_ROOT + "__right", type: 'icon',
               onClick: this._onRight },
-            _react2['default'].createElement(_iconsBaseLinkNext2['default'], null)
+            _react2.default.createElement(_LinkNext2.default, null)
           );
         }
 
-        contents = _react2['default'].createElement(
+        contents = _react2.default.createElement(
           'div',
           { className: CLASS_ROOT + "__container" },
           left,
@@ -337,7 +338,7 @@ var Tiles = (function (_Component) {
   return Tiles;
 })(_react.Component);
 
-exports['default'] = Tiles;
+exports.default = Tiles;
 
 Tiles.propTypes = _extends({
   fill: _react.PropTypes.bool,
@@ -347,10 +348,9 @@ Tiles.propTypes = _extends({
   selectable: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.oneOf(['multiple'])]),
   selected: _react.PropTypes.oneOfType([_react.PropTypes.number, _react.PropTypes.arrayOf(_react.PropTypes.number)]),
   size: _react.PropTypes.oneOf(['small', 'medium', 'large'])
-}, _Box2['default'].propTypes);
+}, _Box2.default.propTypes);
 
 Tiles.defaultProps = {
   flush: true,
   justify: 'start'
 };
-module.exports = exports['default'];

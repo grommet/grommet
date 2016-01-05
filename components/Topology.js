@@ -1,20 +1,10 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
-
 'use strict';
 
-Object.defineProperty(exports, '__esModule', {
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var _react = require('react');
 
@@ -22,9 +12,17 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactDom = require('react-dom');
 
-var _iconsStatus = require('./icons/Status');
+var _Status = require('./icons/Status');
 
-var _iconsStatus2 = _interopRequireDefault(_iconsStatus);
+var _Status2 = _interopRequireDefault(_Status);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = "topology";
 
@@ -34,13 +32,13 @@ var Label = (function (_Component) {
   function Label() {
     _classCallCheck(this, Label);
 
-    _get(Object.getPrototypeOf(Label.prototype), 'constructor', this).apply(this, arguments);
+    return _possibleConstructorReturn(this, Object.getPrototypeOf(Label).apply(this, arguments));
   }
 
   _createClass(Label, [{
     key: 'render',
     value: function render() {
-      return _react2['default'].createElement(
+      return _react2.default.createElement(
         'span',
         { className: CLASS_ROOT + "__label" },
         this.props.children
@@ -57,7 +55,7 @@ var Part = (function (_Component2) {
   function Part() {
     _classCallCheck(this, Part);
 
-    _get(Object.getPrototypeOf(Part.prototype), 'constructor', this).apply(this, arguments);
+    return _possibleConstructorReturn(this, Object.getPrototypeOf(Part).apply(this, arguments));
   }
 
   _createClass(Part, [{
@@ -75,7 +73,7 @@ var Part = (function (_Component2) {
       }
       // handle undefined children
       var realChildren = 0;
-      _react2['default'].Children.forEach(this.props.children, function (child) {
+      _react2.default.Children.forEach(this.props.children, function (child) {
         if (child) {
           realChildren += 1;
         }
@@ -89,18 +87,18 @@ var Part = (function (_Component2) {
 
       var status;
       if (this.props.status) {
-        status = _react2['default'].createElement(_iconsStatus2['default'], { value: this.props.status, small: true });
+        status = _react2.default.createElement(_Status2.default, { value: this.props.status, small: true });
       }
       var label;
       if (this.props.label) {
-        label = _react2['default'].createElement(
+        label = _react2.default.createElement(
           Label,
           null,
           this.props.label
         );
       }
 
-      return _react2['default'].createElement(
+      return _react2.default.createElement(
         'div',
         { className: classes.join(' '), id: this.props.id,
           onMouseEnter: this.props.onMouseEnter,
@@ -139,7 +137,7 @@ var Parts = (function (_Component3) {
   function Parts() {
     _classCallCheck(this, Parts);
 
-    _get(Object.getPrototypeOf(Parts.prototype), 'constructor', this).apply(this, arguments);
+    return _possibleConstructorReturn(this, Object.getPrototypeOf(Parts).apply(this, arguments));
   }
 
   _createClass(Parts, [{
@@ -189,7 +187,7 @@ var Parts = (function (_Component3) {
       if (this.props.className) {
         classes.push(this.props.className);
       }
-      return _react2['default'].createElement(
+      return _react2.default.createElement(
         'div',
         { ref: 'component', className: classes.join(' ') },
         this.props.children
@@ -216,19 +214,20 @@ var Topology = (function (_Component4) {
   function Topology() {
     _classCallCheck(this, Topology);
 
-    _get(Object.getPrototypeOf(Topology.prototype), 'constructor', this).call(this);
+    var _this4 = _possibleConstructorReturn(this, Object.getPrototypeOf(Topology).call(this));
 
-    this._layout = this._layout.bind(this);
-    this._onResize = this._onResize.bind(this);
-    this._onMouseMove = this._onMouseMove.bind(this);
-    this._onMouseLeave = this._onMouseLeave.bind(this);
+    _this4._layout = _this4._layout.bind(_this4);
+    _this4._onResize = _this4._onResize.bind(_this4);
+    _this4._onMouseMove = _this4._onMouseMove.bind(_this4);
+    _this4._onMouseLeave = _this4._onMouseLeave.bind(_this4);
 
-    this.state = {
+    _this4.state = {
       canvasWidth: 100,
       canvasHeight: 100,
       highlighting: false,
       highlights: {}
     };
+    return _this4;
   }
 
   _createClass(Topology, [{
@@ -413,23 +412,23 @@ var Topology = (function (_Component4) {
       var colors = {};
       this.props.links.forEach(function (link) {
         if (link.colorIndex && !colors[link.colorIndex]) {
-          colorKeys.push(_react2['default'].createElement('div', { key: link.colorIndex, ref: link.colorIndex,
+          colorKeys.push(_react2.default.createElement('div', { key: link.colorIndex, ref: link.colorIndex,
             className: "background-color-index-" + link.colorIndex }));
           colors[link.colorIndex] = true;
         }
       });
 
-      return _react2['default'].createElement(
+      return _react2.default.createElement(
         'div',
         { ref: 'topology', className: classes.join(' ') },
-        _react2['default'].createElement('canvas', { ref: 'canvas', className: CLASS_ROOT + "__canvas",
+        _react2.default.createElement('canvas', { ref: 'canvas', className: CLASS_ROOT + "__canvas",
           width: this.state.canvasWidth, height: this.state.canvasHeight }),
-        _react2['default'].createElement(
+        _react2.default.createElement(
           'div',
           { ref: 'contents', className: CLASS_ROOT + "__contents" },
           this.props.children
         ),
-        _react2['default'].createElement(
+        _react2.default.createElement(
           'div',
           { className: CLASS_ROOT + "__color-key" },
           colorKeys
@@ -441,7 +440,7 @@ var Topology = (function (_Component4) {
   return Topology;
 })(_react.Component);
 
-exports['default'] = Topology;
+exports.default = Topology;
 
 Topology.propTypes = {
   links: _react.PropTypes.arrayOf(_react.PropTypes.shape({
@@ -459,4 +458,3 @@ Topology.defaultProps = {
 Topology.Parts = Parts;
 Topology.Part = Part;
 Topology.Label = Label;
-module.exports = exports['default'];
