@@ -143,3 +143,4 @@ FormField.propTypes = {
   label: _react.PropTypes.node,
   required: _react.PropTypes.bool
 };
+module.exports = exports['default'];

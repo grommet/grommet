@@ -55,3 +55,4 @@ var DropCaret = (function (_Component) {
 })(_react.Component);
 
 exports.default = DropCaret;
+module.exports = exports['default'];

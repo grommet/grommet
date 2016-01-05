@@ -52,3 +52,4 @@ var Spinning = (function (_Component) {
 })(_react.Component);
 
 exports.default = Spinning;
+module.exports = exports['default'];

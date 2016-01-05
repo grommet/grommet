@@ -57,3 +57,4 @@ var More = (function (_Component) {
 })(_react.Component);
 
 exports.default = More;
+module.exports = exports['default'];

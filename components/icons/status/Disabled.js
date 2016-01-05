@@ -75,3 +75,4 @@ exports.default = Disabled;
 Disabled.propTypes = {
   a11yTitle: _react.PropTypes.string
 };
+module.exports = exports['default'];

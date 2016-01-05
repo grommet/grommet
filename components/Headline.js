@@ -65,3 +65,4 @@ Headline.propTypes = {
   small: _react.PropTypes.bool,
   strong: _react.PropTypes.bool
 };
+module.exports = exports['default'];

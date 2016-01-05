@@ -59,3 +59,4 @@ Image.propTypes = {
   src: _react.PropTypes.string,
   size: _react.PropTypes.oneOf(['small', 'medium', 'large'])
 };
+module.exports = exports['default'];

@@ -59,3 +59,4 @@ var Settings = (function (_Component) {
 })(_react.Component);
 
 exports.default = Settings;
+module.exports = exports['default'];

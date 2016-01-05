@@ -544,3 +544,4 @@ Meter.defaultProps = {
 Meter.contextTypes = {
   intl: _react.PropTypes.object
 };
+module.exports = exports['default'];

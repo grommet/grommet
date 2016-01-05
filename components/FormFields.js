@@ -46,3 +46,4 @@ var FormFields = (function (_Component) {
 })(_react.Component);
 
 exports.default = FormFields;
+module.exports = exports['default'];

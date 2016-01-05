@@ -87,3 +87,4 @@ Form.defaultProps = {
   flush: true,
   pad: 'none'
 };
+module.exports = exports['default'];

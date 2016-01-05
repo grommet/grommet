@@ -95,3 +95,4 @@ CheckBox.propTypes = {
   ariaDescribedby: _react.PropTypes.string,
   toggle: _react.PropTypes.bool
 };
+module.exports = exports['default'];

@@ -346,3 +346,4 @@ List.propTypes = {
 List.defaultProps = {
   itemDirection: 'row' // deprecated, use child components
 };
+module.exports = exports['default'];

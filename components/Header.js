@@ -164,3 +164,4 @@ Header.defaultProps = {
   responsive: false,
   tag: 'header'
 };
+module.exports = exports['default'];

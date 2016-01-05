@@ -89,3 +89,4 @@ Tile.defaultProps = {
   direction: 'column',
   align: 'center'
 };
+module.exports = exports['default'];

@@ -55,3 +55,4 @@ var Facebook = (function (_Component) {
 })(_react.Component);
 
 exports.default = Facebook;
+module.exports = exports['default'];

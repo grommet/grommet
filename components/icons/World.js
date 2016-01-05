@@ -58,3 +58,4 @@ var World = (function (_Component) {
 })(_react.Component);
 
 exports.default = World;
+module.exports = exports['default'];

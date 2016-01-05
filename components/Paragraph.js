@@ -53,3 +53,4 @@ exports.default = Paragraph;
 Paragraph.propTypes = {
   size: _react.PropTypes.oneOf(['small', 'medium', 'large'])
 };
+module.exports = exports['default'];

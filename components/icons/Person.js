@@ -63,3 +63,4 @@ exports.default = Person;
 Person.propTypes = {
   onClick: _react.PropTypes.func
 };
+module.exports = exports['default'];

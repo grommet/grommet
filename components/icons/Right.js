@@ -56,3 +56,4 @@ var Right = (function (_Component) {
 })(_react.Component);
 
 exports.default = Right;
+module.exports = exports['default'];

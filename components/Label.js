@@ -64,3 +64,4 @@ Label.propTypes = {
   icon: _react.PropTypes.node,
   text: _react.PropTypes.string
 };
+module.exports = exports['default'];

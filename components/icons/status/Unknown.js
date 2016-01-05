@@ -72,3 +72,4 @@ var Unknown = (function (_Component) {
 })(_react.Component);
 
 exports.default = Unknown;
+module.exports = exports['default'];

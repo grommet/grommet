@@ -93,3 +93,4 @@ Filter.propTypes = {
   a11yTitle: _react.PropTypes.string,
   notifications: _react.PropTypes.number
 };
+module.exports = exports['default'];

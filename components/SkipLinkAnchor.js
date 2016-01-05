@@ -48,3 +48,4 @@ exports.default = SkipLinkAnchor;
 SkipLinkAnchor.propTypes = {
   label: _react.PropTypes.node.isRequired
 };
+module.exports = exports['default'];

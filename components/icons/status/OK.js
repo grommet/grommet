@@ -75,3 +75,4 @@ exports.default = OK;
 OK.propTypes = {
   a11yTitle: _react.PropTypes.string
 };
+module.exports = exports['default'];

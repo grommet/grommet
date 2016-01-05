@@ -359,3 +359,4 @@ Article.defaultProps = {
   pad: 'none',
   direction: 'column'
 };
+module.exports = exports['default'];

@@ -42,3 +42,4 @@ var Dashboard = (function (_Component) {
 })(_react.Component);
 
 exports.default = Dashboard;
+module.exports = exports['default'];

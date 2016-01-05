@@ -298,3 +298,4 @@ Layer.contextTypes = {
 Layer.defaultProps = {
   align: 'center'
 };
+module.exports = exports['default'];

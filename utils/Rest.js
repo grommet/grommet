@@ -81,3 +81,4 @@ exports.default = {
     return op;
   }
 };
+module.exports = exports['default'];

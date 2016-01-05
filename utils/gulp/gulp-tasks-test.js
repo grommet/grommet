@@ -36,7 +36,7 @@ module.exports = function(gulp, options) {
         read: false
       }).pipe(babel({
         "presets": [ "es2015", "react" ],
-        "plugins": [ "transform-object-rest-spread" ]
+        "plugins": [ "transform-object-rest-spread", "add-module-exports" ]
       })).pipe(mocha({
         reporter: 'spec'})).once('end', function() {
           if (argv.w) {

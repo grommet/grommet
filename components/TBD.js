@@ -42,3 +42,4 @@ var TBD = (function (_Component) {
 })(_react.Component);
 
 exports.default = TBD;
+module.exports = exports['default'];

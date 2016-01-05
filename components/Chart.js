@@ -1061,3 +1061,4 @@ Chart.defaultProps = {
   min: 0,
   type: 'line'
 };
+module.exports = exports['default'];

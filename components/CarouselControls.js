@@ -89,3 +89,4 @@ CarouselControls.propTypes = {
   onChange: _react.PropTypes.func,
   selected: _react.PropTypes.number
 };
+module.exports = exports['default'];

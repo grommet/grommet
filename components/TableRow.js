@@ -60,3 +60,4 @@ TableRow.propTypes = {
   onClick: _react.PropTypes.func,
   selected: _react.PropTypes.bool
 };
+module.exports = exports['default'];

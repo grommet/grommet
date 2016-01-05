@@ -295,3 +295,4 @@ SearchInput.propTypes = {
     value: _react.PropTypes.string
   }), _react.PropTypes.string])
 };
+module.exports = exports['default'];

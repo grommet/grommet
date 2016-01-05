@@ -191,3 +191,4 @@ LoginForm.defaultProps = {
   errors: [],
   usernameType: 'email'
 };
+module.exports = exports['default'];

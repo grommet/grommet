@@ -124,3 +124,4 @@ Spiral.defaultProps = {
 
 //needed in Graphic.js to fix minification issues
 Spiral.displayName = 'Spiral';
+module.exports = exports['default'];

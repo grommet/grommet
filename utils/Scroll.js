@@ -46,3 +46,4 @@ exports.default = {
     }).bind(this), 8);
   }
 };
+module.exports = exports['default'];

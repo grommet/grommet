@@ -223,3 +223,4 @@ ResourceMap.propTypes = {
     }))
   }).isRequired
 };
+module.exports = exports['default'];

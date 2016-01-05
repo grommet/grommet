@@ -57,3 +57,4 @@ var Top = (function (_Component) {
 })(_react.Component);
 
 exports.default = Top;
+module.exports = exports['default'];

@@ -58,3 +58,4 @@ var SearchPlus = (function (_Component) {
 })(_react.Component);
 
 exports.default = SearchPlus;
+module.exports = exports['default'];

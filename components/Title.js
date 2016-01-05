@@ -82,3 +82,4 @@ Title.defaultProps = {
   responsive: true,
   a11yTitle: 'Title'
 };
+module.exports = exports['default'];

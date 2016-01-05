@@ -153,3 +153,4 @@ var SkipLinks = (function (_Component) {
 })(_react.Component);
 
 exports.default = SkipLinks;
+module.exports = exports['default'];

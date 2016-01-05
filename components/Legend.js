@@ -179,3 +179,4 @@ Legend.propTypes = {
   units: _react.PropTypes.string,
   value: _react.PropTypes.number
 };
+module.exports = exports['default'];

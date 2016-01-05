@@ -55,3 +55,4 @@ var Twitter = (function (_Component) {
 })(_react.Component);
 
 exports.default = Twitter;
+module.exports = exports['default'];

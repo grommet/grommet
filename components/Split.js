@@ -167,3 +167,4 @@ Split.defaultProps = {
   flex: 'both',
   priority: 'right'
 };
+module.exports = exports['default'];

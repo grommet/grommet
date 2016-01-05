@@ -37,3 +37,5 @@ exports.default = {
   units: _react.PropTypes.string,
   vertical: _react.PropTypes.bool
 }; // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
+
+module.exports = exports['default'];

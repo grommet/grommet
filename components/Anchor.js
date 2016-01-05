@@ -90,3 +90,4 @@ Anchor.propTypes = {
 Anchor.defaultProps = {
   tag: 'a'
 };
+module.exports = exports['default'];

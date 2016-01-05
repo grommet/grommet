@@ -181,3 +181,4 @@ exports.default = {
     container.style.top = '' + top + 'px';
   }
 };
+module.exports = exports['default'];

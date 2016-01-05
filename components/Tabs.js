@@ -122,3 +122,4 @@ Tabs.contextTypes = {
 Tabs.defaultProps = {
   initialIndex: 0
 };
+module.exports = exports['default'];

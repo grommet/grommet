@@ -56,3 +56,4 @@ var Up = (function (_Component) {
 })(_react.Component);
 
 exports.default = Up;
+module.exports = exports['default'];

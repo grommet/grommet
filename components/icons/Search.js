@@ -56,3 +56,4 @@ var Search = (function (_Component) {
 })(_react.Component);
 
 exports.default = Search;
+module.exports = exports['default'];

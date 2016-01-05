@@ -77,3 +77,4 @@ exports.default = CriticalStatus;
 CriticalStatus.propTypes = {
   a11yTitle: _react.PropTypes.string
 };
+module.exports = exports['default'];

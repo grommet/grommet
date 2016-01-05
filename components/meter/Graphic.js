@@ -336,3 +336,4 @@ Graphic.contextTypes = {
 Graphic.defaultProps = {
   a11yRole: 'img'
 };
+module.exports = exports['default'];

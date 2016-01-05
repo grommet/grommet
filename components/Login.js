@@ -98,3 +98,4 @@ exports.default = Login;
 Login.propTypes = {
   background: _react.PropTypes.string
 };
+module.exports = exports['default'];

@@ -414,3 +414,4 @@ Calendar.propTypes = {
 Calendar.defaultProps = {
   value: (0, _moment2.default)().format('YYYY-MM-DD')
 };
+module.exports = exports['default'];

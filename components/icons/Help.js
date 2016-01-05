@@ -56,3 +56,4 @@ var Help = (function (_Component) {
 })(_react.Component);
 
 exports.default = Help;
+module.exports = exports['default'];

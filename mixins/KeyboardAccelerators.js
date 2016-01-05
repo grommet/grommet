@@ -160,3 +160,4 @@ exports.default = {
     this.stopListeningToKeyboard();
   }
 };
+module.exports = exports['default'];

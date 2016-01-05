@@ -56,3 +56,4 @@ var Down = (function (_Component) {
 })(_react.Component);
 
 exports.default = Down;
+module.exports = exports['default'];

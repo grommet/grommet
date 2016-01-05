@@ -74,3 +74,4 @@ RadioButton.propTypes = {
   onChange: _react.PropTypes.func,
   value: _react.PropTypes.string
 };
+module.exports = exports['default'];

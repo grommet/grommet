@@ -58,3 +58,4 @@ exports.default = Attribute;
 Attribute.propTypes = {
   label: _react.PropTypes.string
 };
+module.exports = exports['default'];

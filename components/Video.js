@@ -240,3 +240,4 @@ Video.propTypes = {
   })),
   title: _react.PropTypes.node
 };
+module.exports = exports['default'];

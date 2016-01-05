@@ -101,3 +101,4 @@ Tab.propTypes = {
   active: _react.PropTypes.bool,
   id: _react.PropTypes.string
 };
+module.exports = exports['default'];

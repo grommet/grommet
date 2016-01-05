@@ -129,3 +129,4 @@ exports.default = {
     }, this);
   }
 };
+module.exports = exports['default'];

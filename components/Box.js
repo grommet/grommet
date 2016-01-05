@@ -210,3 +210,4 @@ Box.defaultProps = {
   tag: 'div',
   responsive: true
 };
+module.exports = exports['default'];

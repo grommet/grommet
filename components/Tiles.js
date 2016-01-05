@@ -354,3 +354,4 @@ Tiles.defaultProps = {
   flush: true,
   justify: 'start'
 };
+module.exports = exports['default'];

@@ -67,3 +67,4 @@ exports.default = {
     return bestFirstFocusable;
   }
 };
+module.exports = exports['default'];

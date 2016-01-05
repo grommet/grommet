@@ -366,3 +366,4 @@ Distribution.propTypes = {
   units: _react.PropTypes.string,
   vertical: _react.PropTypes.bool
 };
+module.exports = exports['default'];

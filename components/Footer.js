@@ -100,3 +100,4 @@ Footer.defaultProps = {
   direction: 'row',
   responsive: false
 };
+module.exports = exports['default'];

@@ -283,3 +283,4 @@ Carousel.defaultProps = {
   infinite: true,
   persistentNav: true
 };
+module.exports = exports['default'];

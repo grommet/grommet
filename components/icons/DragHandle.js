@@ -62,3 +62,4 @@ var DragHandle = (function (_Component) {
 })(_react.Component);
 
 exports.default = DragHandle;
+module.exports = exports['default'];

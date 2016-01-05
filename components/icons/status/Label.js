@@ -50,3 +50,4 @@ var Label = (function (_Component) {
 })(_react.Component);
 
 exports.default = Label;
+module.exports = exports['default'];

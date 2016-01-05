@@ -437,3 +437,4 @@ Search.defaultProps = {
   inline: false,
   responsive: true
 };
+module.exports = exports['default'];

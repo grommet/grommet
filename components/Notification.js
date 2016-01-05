@@ -133,3 +133,4 @@ Notification.propTypes = (0, _merge2.default)({
   status: _react.PropTypes.string,
   timestamp: _react.PropTypes.object // Date
 }, _Box2.default.propTypes);
+module.exports = exports['default'];

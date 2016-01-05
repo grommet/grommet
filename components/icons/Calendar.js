@@ -63,3 +63,4 @@ var Calendar = (function (_Component) {
 })(_react.Component);
 
 exports.default = Calendar;
+module.exports = exports['default'];

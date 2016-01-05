@@ -120,3 +120,4 @@ var Arc = (function (_Graphic) {
 })(_Graphic3.default);
 
 exports.default = Arc;
+module.exports = exports['default'];

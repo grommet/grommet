@@ -55,3 +55,4 @@ var LinkedIn = (function (_Component) {
 })(_react.Component);
 
 exports.default = LinkedIn;
+module.exports = exports['default'];

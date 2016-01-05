@@ -108,3 +108,4 @@ ListItem.propTypes = _extends({
 ListItem.defaultProps = {
   direction: 'row'
 };
+module.exports = exports['default'];

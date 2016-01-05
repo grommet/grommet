@@ -56,3 +56,4 @@ var Clear = (function (_Component) {
 })(_react.Component);
 
 exports.default = Clear;
+module.exports = exports['default'];

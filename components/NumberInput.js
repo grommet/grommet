@@ -128,3 +128,4 @@ NumberInput.propTypes = {
   step: _react.PropTypes.number,
   value: _react.PropTypes.number
 };
+module.exports = exports['default'];

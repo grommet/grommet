@@ -104,3 +104,4 @@ App.defaultProps = {
 App.propTypes = {
   centered: _react.PropTypes.bool
 };
+module.exports = exports['default'];

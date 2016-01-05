@@ -63,3 +63,4 @@ var Edit = (function (_Component) {
 })(_react.Component);
 
 exports.default = Edit;
+module.exports = exports['default'];

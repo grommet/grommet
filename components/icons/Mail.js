@@ -58,3 +58,4 @@ var Mail = (function (_Component) {
 })(_react.Component);
 
 exports.default = Mail;
+module.exports = exports['default'];

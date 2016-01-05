@@ -102,3 +102,4 @@ Button.propTypes = {
 Button.defaultProps = {
   type: "button"
 };
+module.exports = exports['default'];
