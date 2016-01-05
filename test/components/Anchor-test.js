@@ -31,7 +31,8 @@ describe('Grommet Anchor', function() {
   it('loads a disabled Anchor', () => {
     const shallowRenderer = TestUtils.createRenderer();
     shallowRenderer.render(React.createElement(Anchor, {
-      primary: true
+      primary: true,
+      disabled: true
     }));
     const anchorElement = shallowRenderer.getRenderOutput();
 
