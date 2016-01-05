@@ -43,7 +43,7 @@ var Anchor = (function (_Component) {
         classes.push(CLASS_ROOT + "--primary");
         icon = _react2.default.createElement(_LinkNext2.default, null);
       }
-      if (!this.props.onClick && !this.props.href) {
+      if (this.props.disabled) {
         classes.push(CLASS_ROOT + "--disabled");
       }
       if (this.props.className) {
@@ -79,6 +79,7 @@ var Anchor = (function (_Component) {
 exports.default = Anchor;
 
 Anchor.propTypes = {
+  disabled: _react.PropTypes.bool,
   href: _react.PropTypes.string,
   id: _react.PropTypes.string,
   onClick: _react.PropTypes.func,
