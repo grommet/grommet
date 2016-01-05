@@ -22,7 +22,7 @@
   "engine-strict": true,
   "engines": {
     "node": ">= 0.10",
-    "npm": ">= 1.4"
+    "npm": "^3.3.12"
   },
   "scripts": {
     "test": "gulp test"
