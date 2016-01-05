@@ -1,18 +1,10 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
-import pick from 'lodash/object/pick';
-import keys from 'lodash/object/keys';
 
 const CLASS_ROOT = "brick";
 
 export default class Brick extends Component {
-
-  render () {
-
-
-  }
-
   render() {
     var classes = [CLASS_ROOT];
     classes.push('docs-tile docs-tile--' + this.props.width + '-' + this.props.height);
@@ -31,7 +23,6 @@ export default class Brick extends Component {
       </div>
     );
   }
-
 }
 
 Brick.propTypes = {
@@ -39,7 +30,7 @@ Brick.propTypes = {
   route: React.PropTypes.string,
   width: React.PropTypes.number,
   height: React.PropTypes.number,
-  colorIndex: React.PropTypes.string,
+  colorIndex: React.PropTypes.string
 };
 
 Brick.defaultProps = {
