@@ -62,6 +62,9 @@ export default class FormField extends Component {
     if (this.props.htmlFor) {
       classes.push(CLASS_ROOT + "--text");
     }
+    if (this.props.className) {
+      classes.push(this.props.className);
+    }
 
     var error;
     if (this.props.error) {
