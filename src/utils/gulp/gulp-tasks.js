@@ -99,7 +99,10 @@ module.exports = function(gulp, opts) {
           dot: true
         }).pipe(gulpif(copyAsset.babel, babel({
           "presets": [ "es2015", "react" ],
-          "plugins": [ "transform-object-rest-spread", "add-module-exports" ]
+          "plugins": [
+            "transform-object-rest-spread",
+            "add-module-exports"
+          ]
         })))
         .pipe(gulp.dest(copyAsset.dist ? copyAsset.dist : dist));
       }
