@@ -12,14 +12,26 @@
     .check-box {
       &__control {
         border-color: $active-icon-color;
+
+        [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+          border-color: $active-colored-icon-color;
+        }
       }
 
       &__input:checked + .check-box__control {
         border-color: $active-icon-color;
+
+        [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+          border-color: $active-colored-icon-color;
+        }
       }
 
       &__label {
         color: $hover-text-color;
+
+        [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+          color: $active-colored-text-color;
+        }
       }
     }
   }
@@ -31,12 +43,20 @@
     &:checked + .check-box__control {
       border-color: $brand-color;
 
+      [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+        border-color: $active-colored-icon-color;
+      }
+
       .check-box__control-check {
         display: block;
       }
 
       + .check-box__label {
         color: $text-color;
+
+        [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+          color: $active-colored-text-color;
+        }
       }
     }
 
@@ -58,6 +78,10 @@
     border: $control-border-width solid $icon-color;
     border-radius: $border-radius;
 
+    [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+      border-color: $colored-icon-color;
+    }
+
     &-check {
       position: absolute;
       top: -2px;
@@ -67,11 +91,19 @@
       height: $control-size;
       stroke-width: round($control-border-width * 2);
       stroke: $brand-color;
+
+      [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+        stroke: $active-colored-icon-color;
+      }
     }
   }
 
   &__label {
     color: $secondary-text-color;
+
+    [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+      color: $colored-text-color;
+    }
   }
 
   &--disabled {
@@ -86,11 +118,21 @@
       .check-box__control:after {
         content: "";
         border-color: $active-icon-color;
+
+        [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+          background-color: $active-colored-icon-color;
+          border-color: $active-colored-icon-color;
+        }
       }
 
       .check-box__input:checked + .check-box__control:after {
         content: "";
         border-color: $active-icon-color;
+
+        [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+          background-color: $active-colored-icon-color;
+          border-color: $active-colored-icon-color;
+        }
       }
     }
 
@@ -101,6 +143,10 @@
       background-color: $meter-background-color;
       border: none;
       transition: background-color 0.3s;
+
+      [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+        background-color: $colored-meter-background-color;
+      }
 
       &:after {
         content: "";
@@ -115,6 +161,11 @@
         border-radius: $control-size;
         //box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
         transition: margin-left 0.3s;
+
+        [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+          background-color: transparent;
+          border-color: $colored-icon-color;
+        }
       }
     }
 
@@ -122,6 +173,14 @@
 
       &:checked + .check-box__control {
         background-color: $brand-color;
+
+        [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+          background-color: $colored-meter-background-color;
+
+          .check-box__control-check {
+            stroke: transparent;
+          }
+        }
       }
 
       &:checked + .check-box__control:after {
@@ -129,6 +188,10 @@
         background-color: #fff;
         border-color: $brand-color;
         margin-left: $control-size;
+
+        [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+          border-color: $colored-icon-color;
+        }
       }
     }
   }
