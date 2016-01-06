@@ -1,30 +1,34 @@
-require('../scss/index.scss');
+import '../scss/index.scss';
 
-var React = require('react');
-var App = require('grommet/components/App');
-var Header = require('grommet/components/Header');
-var Footer = require('grommet/components/Footer');
-var Title = require('grommet/components/Title');
-var TodoAppDashboard = require('./components/TodoAppDashboard');
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import App from 'grommet/components/App';
+import Header from 'grommet/components/Header';
+import Footer from 'grommet/components/Footer';
+import Title from 'grommet/components/Title';
+import TodoAppDashboard from './components/TodoAppDashboard';
 
-var Main = React.createClass({
-  render: function() {
+class Main extends Component {
+  render () {
     return (
       <App centered={false}>
-        <Header direction="row" justify="between" large={true} pad={{horizontal: 'medium'}}>
+        <Header direction="row" justify="between" large={true}
+          pad={{horizontal: 'medium'}}>
           <Title><%= appTitle %></Title>
         </Header>
         <TodoAppDashboard />
-        <Footer appCentered={true} direction="column"
+        <Footer primary={true} appCentered={true} direction="column"
           align="center" pad="small" colorIndex="grey-1">
-          <p>Build your ideas with <a href="http://grommet.io" target="_blank">Grommet</a>!</p>
+          <p>
+            Build your ideas with <a href="http://grommet.io" target="_blank">Grommet</a>!
+          </p>
         </Footer>
       </App>
     );
   }
-});
+};
 
-var element = document.getElementById('content');
-React.render(React.createElement(Main), element);
+let element = document.getElementById('content');
+ReactDOM.render(React.createElement(Main), element);
 
 document.body.classList.remove('loading');
