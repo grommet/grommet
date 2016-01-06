@@ -12,14 +12,26 @@
     .radio-button {
       &__control {
         border-color: $active-icon-color;
+
+        [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+          border-color: $active-colored-icon-color;
+        }
       }
 
       &__input:checked + .radio-button__control {
         border-color: $active-icon-color;
+
+        [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+          border-color: $active-colored-icon-color;
+        }
       }
 
       &__label {
         color: $hover-text-color;
+
+        [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+          color: $active-colored-text-color;
+        }
       }
     }
   }
@@ -31,8 +43,16 @@
     &:checked + .radio-button__control {
       border-color: $brand-color;
 
+      [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+        border-color: $active-colored-icon-color;
+      }
+
       + .radio-button__label {
         color: $text-color;
+
+        [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+          color: $active-colored-text-color;
+        }
       }
     }
 
@@ -46,6 +66,10 @@
       height: halve($control-size) - 2;
       background-color: $brand-color;
       border-radius: halve($control-size);
+
+      [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+        background-color: $active-colored-icon-color;
+      }
     }
 
     &:focus + .radio-button__control {
@@ -66,10 +90,18 @@
     color: $brand-color-darker;
     border: $control-border-width solid $icon-color;
     border-radius: $control-size;
+
+    [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+      border-color: $colored-icon-color;
+    }
   }
 
   &__label {
     color: $secondary-text-color;
+
+    [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+      color: $colored-text-color;
+    }
   }
 
   &--disabled {

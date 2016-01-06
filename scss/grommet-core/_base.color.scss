@@ -41,6 +41,7 @@ $unset-color: #ddd !default;
 
 $meter-color: $brand-color !default;
 $meter-background-color: #b2b2b2 !default;
+$colored-meter-background-color: rgba(#fff, 0.1) !default;
 $threshold-color: rgba($text-color, 0.2) !default;
 $cursor-color: $text-color !default;
 

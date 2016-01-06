@@ -77,6 +77,10 @@ select {
   width: 100%;
   height: $control-border-width;
   background-color: $meter-background-color;
+
+  [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+    background-color: $colored-meter-background-color;
+  }
 }
 
 @mixin range-thumb {
@@ -121,11 +125,15 @@ input[type=range] {
     content: "";
     position: absolute;
     left: -3000px;
-    right: halve($control-size);
+    right: $control-size;
     top: halve($control-size) - ($control-border-width + 1);
     bottom: halve($control-size) - ($control-border-width + 1);
     background-color: $brand-color;
     pointer-events: none;
+
+    [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+      background-color: #fff;
+    }
   }
 
   &::-webkit-slider-thumb:after {
@@ -137,11 +145,21 @@ input[type=range] {
     border-radius: $control-size;
     background-color: $background-color;
     cursor: pointer;
+
+    [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+      background-color: transparent;
+      border-color: $active-colored-icon-color;
+    }
   }
 
   &:hover::-webkit-slider-thumb:after {
     content: "";
     border-color: $active-icon-color;
+
+    [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+      background-color: $active-colored-icon-color;
+      border-color: $active-colored-icon-color;
+    }
   }
 
   &::-moz-range-track {
@@ -156,6 +174,20 @@ input[type=range] {
     width: $control-size - ($control-border-width * 2);
     border-radius: $control-size;
     background-color: $background-color;
+
+    [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+      border-color: $active-colored-icon-color;
+      background-color: transparent;
+    }
+  }
+
+  &::hover::-moz-range-thumb {
+    border-color: $active-icon-color;
+
+    [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+      border-color: $active-colored-icon-color;
+      background-color: $active-colored-icon-color;
+    }
   }
 
   // This isn't working
@@ -180,11 +212,19 @@ input[type=range] {
   &::-ms-fill-lower {
     background: $brand-color;
     border-color: transparent;
+
+    [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+      background: #fff;
+    }
   }
 
   &::-ms-fill-upper {
     background: $meter-background-color;
     border-color: transparent;
+
+    [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+      background: $colored-meter-background-color;
+    }
   }
 
   &::-ms-thumb {
@@ -194,9 +234,18 @@ input[type=range] {
     width: $control-size - ($control-border-width * 2);
     border-radius: $control-size;
     background-color: $background-color;
+
+    [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+      border-color: $active-colored-icon-color;
+    }
   }
 
   &:hover::-ms-thumb {
     border-color: $active-icon-color;
+
+    [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+      border-color: $active-colored-icon-color;
+      background-color: $active-colored-icon-color;
+    }
   }
 }
