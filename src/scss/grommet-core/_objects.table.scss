@@ -67,6 +67,11 @@
           td {
             background-color: $selected-background-color;
             color: $selected-text-color;
+
+            [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+              background-color: $colored-active-background-color;
+              color: $active-colored-text-color;
+            }
           }
         }
 
@@ -74,6 +79,10 @@
           td {
             background-color: $hover-background-color;
             color: $hover-text-color;
+
+            [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+              color: $active-colored-text-color;
+            }
           }
         }
       }
