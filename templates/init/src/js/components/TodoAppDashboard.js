@@ -1,11 +1,11 @@
-var React = require('react');
-var Header = require('grommet/components/Header');
-var Tiles = require('grommet/components/Tiles');
-var Tile = require('grommet/components/Tile');
-var Meter = require('grommet/components/Meter');
-var Table = require('grommet/components/Table');
-var Section = require('grommet/components/Section');
-var Status = require('grommet/components/icons/Status');
+import React, { Component } from 'react';
+import Header from 'grommet/components/Header';
+import Tiles from 'grommet/components/Tiles';
+import Tile from 'grommet/components/Tile';
+import Meter from 'grommet/components/Meter';
+import Table from 'grommet/components/Table';
+import Section from 'grommet/components/Section';
+import Status from 'grommet/components/icons/Status';
 
 function getLabel(label, count, colorIndex) {
   return {
@@ -15,22 +15,19 @@ function getLabel(label, count, colorIndex) {
   };
 }
 
-var TodoAppDashboard = React.createClass({
+export default class TodoAppDashboard extends Component {
 
-  getInitialState: function() {
-    return {
+  constructor () {
+    super();
+    this.state = {
       tasks: [
         {
-          status: 'error',
+          status: 'critical',
           item: 'Pay my rent.'
         },
         {
           status: 'ok',
           item: 'Walk with my dog this morning.'
-        },
-        {
-          status: 'warning',
-          item: 'Don\'t forget your anniversary in two weeks.'
         },
         {
           status: 'warning',
@@ -42,22 +39,22 @@ var TodoAppDashboard = React.createClass({
         }
       ]
     };
-  },
+  }
 
-  render: function () {
+  render () {
 
-    var tasksMap = {
-      error: 0,
+    let tasksMap = {
+      critical: 0,
       ok: 0,
       warning: 0
     };
 
-    var items = this.state.tasks.map(function(task) {
+    let items = this.state.tasks.map((task, index) => {
 
       tasksMap[task.status] += 1;
 
       return (
-        <tr>
+        <tr key={index}>
           <td><Status value={task.status} small={true} /></td>
           <td>{task.item}</td>
         </tr>
@@ -69,7 +66,7 @@ var TodoAppDashboard = React.createClass({
         <Tiles fill={true} flush={false}>
           <Tile align="center">
             <Meter series={[
-              getLabel('Past Due', tasksMap.error, "error"),
+              getLabel('Past Due', tasksMap.critical, "critical"),
               getLabel('Due Soon', tasksMap.warning, "warning"),
               getLabel('Done', tasksMap.ok, "ok")
             ]} type="circle" units="Tasks" />
@@ -86,6 +83,4 @@ var TodoAppDashboard = React.createClass({
       </Section>
     );
   }
-});
-
-module.exports = TodoAppDashboard;
+};

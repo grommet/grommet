@@ -54,7 +54,7 @@ gulp.task('init', function(done) {
 
       gulp.src(mobileIcon).pipe(gulp.dest('./src/img'));
       gulp.src(shortcutIcon).pipe(gulp.dest('./src/img'));
-      gulp.src(templateFolder)
+      gulp.src(templateFolder, { dot: true })
       .pipe(template({
         appName: app,
         appTitle: title,
