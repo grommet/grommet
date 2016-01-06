@@ -27,11 +27,19 @@
     &--full {
       max-width: 100%;
       width: 100vw;
+
+      .layer__container & {
+        width: calc(100vw - #{double($inuit-base-spacing-unit)});
+      }
     }
 
     &--full-horizontal {
       max-width: 100%;
       width: 100vw;
+
+      .layer__container & {
+        width: calc(100vw - #{double($inuit-base-spacing-unit)});
+      }
     }
 
     .app--centered & > .box {
@@ -61,11 +69,19 @@
     // min-height doesn't work for IE and vertical centering
     // https://connect.microsoft.com/IE/feedback/details/816293/ie11-flexbox-with-min-height-not-vertically-aligning-with-align-items-center
     height: 100%;
+
+    .layer__container & {
+      width: calc(100vw - #{double($inuit-base-spacing-unit)});
+    }
   }
 
   &--full-horizontal {
     max-width: 100%;
     width: 100vw;
+
+    .layer__container & {
+      width: calc(100vw - #{double($inuit-base-spacing-unit)});
+    }
   }
 
   &--full-vertical {
