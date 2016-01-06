@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import Anchor from './Anchor';
 
 const CLASS_ROOT = "brick";
 
@@ -19,7 +20,7 @@ export default class Brick extends Component {
     return (
       <div className={classes.join(' ')} onClick={this.props.onClick}>
         {this.props.children}
-        <Link to={this.props.route}><span>{this.props.label}</span></Link>
+        <Anchor href={this.props.route}><span>{this.props.label}</span></Anchor>
       </div>
     );
   }
