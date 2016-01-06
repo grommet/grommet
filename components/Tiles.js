@@ -233,10 +233,6 @@ var Tiles = (function (_Component) {
   }, {
     key: '_onClick',
     value: function _onClick(event) {
-      if (!this.props.selectable) {
-        return;
-      }
-
       var selected = _Selection2.default.onClick(event, {
         containerElement: (0, _reactDom.findDOMNode)(this.refs.tiles),
         childSelector: '.tile',
@@ -292,13 +288,18 @@ var Tiles = (function (_Component) {
         );
       }
 
+      var onClickHandler = undefined;
+      if (this.props.selectable) {
+        onClickHandler = this._onClick;
+      }
+
       var contents = _react2.default.createElement(
         _Box2.default,
         _extends({ ref: 'tiles' }, other, {
           wrap: this.props.direction ? false : true,
           direction: this.props.direction ? this.props.direction : 'row',
           className: classes.join(' '),
-          onClick: this._onClick }),
+          onClick: onClickHandler }),
         this.props.children,
         more
       );
