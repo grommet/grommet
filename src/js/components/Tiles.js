@@ -163,10 +163,6 @@ export default class Tiles extends Component {
   }
 
   _onClick (event) {
-    if (!this.props.selectable) {
-      return;
-    }
-
     let selected = Selection.onClick(event, {
       containerElement: findDOMNode(this.refs.tiles),
       childSelector: '.tile',
@@ -219,12 +215,17 @@ export default class Tiles extends Component {
       );
     }
 
+    let onClickHandler;
+    if (this.props.selectable) {
+      onClickHandler = this._onClick;
+    }
+
     var contents = (
       <Box ref="tiles" {...other}
         wrap={this.props.direction ? false : true}
         direction={this.props.direction ? this.props.direction : 'row'}
         className={classes.join(' ')}
-        onClick={this._onClick}>
+        onClick={onClickHandler}>
         {this.props.children}
         {more}
       </Box>
