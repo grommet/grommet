@@ -41,6 +41,7 @@ module.exports = function(gulp, options, webpackConfig, dist) {
 
     if (!argv.skipMinify) {
       plugins.push(new webpack.optimize.UglifyJsPlugin({
+        mangle: false,
         compress: {
           warnings: false
         }
