@@ -44,21 +44,21 @@ var _Button = require('./Button');
 
 var _Button2 = _interopRequireDefault(_Button);
 
-var _Next = require('./icons/base/Next');
+var _LinkNext = require('./icons/base/LinkNext');
 
-var _Next2 = _interopRequireDefault(_Next);
+var _LinkNext2 = _interopRequireDefault(_LinkNext);
 
-var _Previous = require('./icons/base/Previous');
+var _LinkPrevious = require('./icons/base/LinkPrevious');
 
-var _Previous2 = _interopRequireDefault(_Previous);
+var _LinkPrevious2 = _interopRequireDefault(_LinkPrevious);
 
-var _Up = require('./icons/base/Up');
+var _LinkUp = require('./icons/base/LinkUp');
 
-var _Up2 = _interopRequireDefault(_Up);
+var _LinkUp2 = _interopRequireDefault(_LinkUp);
 
-var _Down = require('./icons/base/Down');
+var _LinkDown = require('./icons/base/LinkDown');
 
-var _Down2 = _interopRequireDefault(_Down);
+var _LinkDown2 = _interopRequireDefault(_LinkDown);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -277,7 +277,7 @@ var Article = (function (_Component) {
             { key: 'previous', type: 'icon',
               className: CONTROL_CLASS_PREFIX + "left",
               onClick: this._onPrevious },
-            _react2.default.createElement(_Previous2.default, null)
+            _react2.default.createElement(_LinkPrevious2.default, { size: 'large' })
           ));
         }
         if (this.state.activeIndex < CHILD_COUNT) {
@@ -286,7 +286,7 @@ var Article = (function (_Component) {
             { key: 'next', type: 'icon',
               className: CONTROL_CLASS_PREFIX + "right",
               onClick: this._onNext },
-            _react2.default.createElement(_Next2.default, null)
+            _react2.default.createElement(_LinkNext2.default, { size: 'large' })
           ));
         }
       } else {
@@ -296,7 +296,7 @@ var Article = (function (_Component) {
             { key: 'previous', type: 'icon',
               className: CONTROL_CLASS_PREFIX + "up",
               onClick: this._onPrevious },
-            _react2.default.createElement(_Up2.default, null)
+            _react2.default.createElement(_LinkUp2.default, { size: 'large' })
           ));
         }
         if (this.state.activeIndex < CHILD_COUNT) {
@@ -305,7 +305,7 @@ var Article = (function (_Component) {
             { key: 'next', type: 'icon',
               className: CONTROL_CLASS_PREFIX + "down",
               onClick: this._onNext },
-            _react2.default.createElement(_Down2.default, null)
+            _react2.default.createElement(_LinkDown2.default, { size: 'large' })
           ));
         }
       }
