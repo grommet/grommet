@@ -1,0 +1,81 @@
+.brick {
+  box-shadow: 1px 1px 1px #eee;
+  padding: $inuit-base-spacing-unit;
+  position: relative;
+  margin: 0 10px 10px 0;
+  float: left;
+  max-width: calc(100% - 10px);
+
+  a {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+
+    span {
+      text-transform: uppercase;
+      text-decoration: none;
+      color: $text-color;
+      position: absolute;
+      left: $inuit-base-spacing-unit;
+      bottom: $inuit-base-spacing-unit;
+    }
+  }
+}
+
+.brick--1-1 {
+  width: calc(25% - 10px);
+
+  &:after {
+    padding-top: 100%;
+    display: block;
+    content: '';
+  }
+
+  @media only screen and (max-width: 1000px) {
+    width: calc(50% - 10px);
+  }
+}
+
+.brick--1-2 {
+  width: calc(25% - 10px);
+
+  &:after {
+    padding-top: calc(200% + 58px);
+    display: block;
+    content: '';
+  }
+
+  @media only screen and (max-width: 1000px) {
+    width: calc(50% - 10px);
+  }
+}
+
+.brick--2-1 {
+  width: calc(50% - 10px);
+
+  &:after {
+    padding-top: calc(50% - 28px);
+    display: block;
+    content: '';
+  }
+
+  @media only screen and (max-width: 1000px) {
+    width: calc(100% - 10px);
+  }
+}
+
+.brick--2-2 {
+  width: calc(50% - 10px);
+
+  &:after {
+    padding-top: 100%;
+    display: block;
+    content: '';
+  }
+
+  @media only screen and (max-width: 1000px) {
+    width: calc(100% - 10px);
+  }
+}

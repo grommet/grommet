@@ -1,7 +1,6 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 import React, { Component } from 'react';
-import Box from './Box';
 
 const CLASS_ROOT = "bricks";
 
@@ -14,9 +13,9 @@ export default class Bricks extends Component {
     }
 
     return (
-      <Box ref="bricks" className={classes.join(' ')}>
+      <div ref="bricks" className={classes.join(' ')}>
         {this.props.children}
-      </Box>
+      </div>
     );
   }
 }

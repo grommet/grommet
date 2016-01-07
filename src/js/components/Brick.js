@@ -8,7 +8,7 @@ const CLASS_ROOT = "brick";
 export default class Brick extends Component {
   render() {
     var classes = [CLASS_ROOT];
-    classes.push('docs-tile docs-tile--' + this.props.width + '-' + this.props.height);
+    classes.push('brick--' + this.props.width + '-' + this.props.height);
 
     if (this.props.colorIndex) {
       classes.push('background-color-index-' + this.props.colorIndex);
