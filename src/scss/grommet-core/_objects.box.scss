@@ -193,30 +193,42 @@
   }
 
   &--separator {
-    &-top {
+    &-top,
+    &-horizontal,
+    &-all {
       border-top: 1px solid $border-color;
     }
 
-    &-bottom {
+    &-bottom,
+    &-horizontal,
+    &-all {
       border-bottom: 1px solid $border-color;
     }
 
-    &-left {
+    &-left,
+    &-vertical,
+    &-all {
       border-left: 1px solid $border-color;
     }
 
-    &-right {
+    &-right,
+    &-vertical,
+    &-all {
       border-right: 1px solid $border-color;
     }
 
     @include media-query(palm) {
-      &-left {
+      &-left,
+      &-vertical,
+      &-all {
         border-left: none;
         border-bottom: 1px solid $border-color;
         //padding-top: $inuit-base-spacing-unit;
       }
 
-      &-right {
+      &-right,
+      &-vertical,
+      &-all {
         border-right: none;
         border-bottom: 1px solid $border-color;
         //padding-top: $inuit-base-spacing-unit;
