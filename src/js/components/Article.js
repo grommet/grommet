@@ -10,10 +10,10 @@ import Scroll from '../utils/Scroll';
 import SkipLinkAnchor from './SkipLinkAnchor';
 // import CarouselControls from './CarouselControls';
 import Button from './Button';
-import NextIcon from './icons/base/Next';
-import PreviousIcon from './icons/base/Previous';
-import UpIcon from './icons/base/Up';
-import DownIcon from './icons/base/Down';
+import NextIcon from './icons/base/LinkNext';
+import PreviousIcon from './icons/base/LinkPrevious';
+import UpIcon from './icons/base/LinkUp';
+import DownIcon from './icons/base/LinkDown';
 
 const CLASS_ROOT = "article";
 const DEFAULT_PLAY_INTERVAL = 10000; // 10s
@@ -210,14 +210,14 @@ export default class Article extends Component {
         controls.push(
           <Button key="previous" type="icon"
             className={CONTROL_CLASS_PREFIX + "left"}
-            onClick={this._onPrevious}><PreviousIcon /></Button>
+            onClick={this._onPrevious}><PreviousIcon size="large" /></Button>
         );
       }
       if (this.state.activeIndex < CHILD_COUNT) {
         controls.push(
           <Button key="next" type="icon"
             className={CONTROL_CLASS_PREFIX + "right"}
-            onClick={this._onNext}><NextIcon /></Button>
+            onClick={this._onNext}><NextIcon size="large" /></Button>
         );
       }
     } else {
@@ -225,14 +225,14 @@ export default class Article extends Component {
         controls.push(
           <Button key="previous" type="icon"
             className={CONTROL_CLASS_PREFIX + "up"}
-            onClick={this._onPrevious}><UpIcon /></Button>
+            onClick={this._onPrevious}><UpIcon size="large" /></Button>
         );
       }
       if (this.state.activeIndex < CHILD_COUNT) {
         controls.push(
           <Button key="next" type="icon"
             className={CONTROL_CLASS_PREFIX + "down"}
-            onClick={this._onNext}><DownIcon /></Button>
+            onClick={this._onNext}><DownIcon size="large" /></Button>
         );
       }
     }
