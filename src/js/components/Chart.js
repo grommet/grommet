@@ -41,7 +41,9 @@ export default class Chart extends Component {
     if (this.props.legend) {
       this._keyboardHandlers = {
         left: this._onRequestForPreviousLegend,
-        right: this._onRequestForNextLegend
+        up: this._onRequestForPreviousLegend,
+        right: this._onRequestForNextLegend,
+        down: this._onRequestForNextLegend
       };
       KeyboardAccelerators.startListeningToKeyboard(
         this, this._keyboardHandlers
@@ -71,8 +73,7 @@ export default class Chart extends Component {
   }
 
   _onRequestForNextLegend (e) {
-    e.stopPropagation();
-    e.stopImmediatePropagation();
+    e.preventDefault();
     if (document.activeElement === this.refs.chart) {
 
       let totalBandCount = (
@@ -87,7 +88,8 @@ export default class Chart extends Component {
     }
   }
 
-  _onRequestForPreviousLegend () {
+  _onRequestForPreviousLegend (e) {
+    e.preventDefault();
     if (document.activeElement === this.refs.chart) {
 
       let totalBandCount = (

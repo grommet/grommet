@@ -21,7 +21,9 @@ export default class Graphic extends Component {
   componentDidMount () {
     this._keyboardHandlers = {
       left: this._onRequestForPreviousLegend,
-      right: this._onRequestForNextLegend
+      up: this._onRequestForPreviousLegend,
+      right: this._onRequestForNextLegend,
+      down: this._onRequestForNextLegend
     };
     KeyboardAccelerators.startListeningToKeyboard(
       this, this._keyboardHandlers
@@ -84,8 +86,7 @@ export default class Graphic extends Component {
   }
 
   _onRequestForPreviousLegend (e) {
-    e.stopPropagation();
-    e.stopImmediatePropagation();
+    e.preventDefault();
     if (document.activeElement === this.refs.meter) {
       var totalValueCount = (
         ReactDOM.findDOMNode(this.refs.meterValues).childNodes.length
@@ -100,8 +101,7 @@ export default class Graphic extends Component {
   }
 
   _onRequestForNextLegend (e) {
-    e.stopPropagation();
-    e.stopImmediatePropagation();
+    e.preventDefault();
     if (document.activeElement === this.refs.meter) {
       var totalValueCount = (
         ReactDOM.findDOMNode(this.refs.meterValues).childNodes.length
