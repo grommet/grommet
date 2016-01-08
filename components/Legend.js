@@ -109,7 +109,7 @@ var Legend = (function (_Component) {
             _react2.default.createElement(
               'span',
               { className: CLASS_ROOT + "__item-units" },
-              this.props.units
+              item.units || this.props.units
             )
           );
         }

@@ -647,7 +647,7 @@ var Chart = (function (_Component) {
       }
       var priorPosition = null;
       var activePosition = null;
-      if (this.state.activeXIndex >= 0) {
+      if (this.state.activeXIndex >= 0 && bounds.xAxis.data.length > this.state.activeXIndex) {
         activePosition = this._labelPosition(bounds.xAxis.data[this.state.activeXIndex].value, bounds);
       }
       var lastPosition = null;
@@ -1025,6 +1025,7 @@ Chart.propTypes = {
     label: _react.PropTypes.string,
     values: _react.PropTypes.arrayOf(_react.PropTypes.arrayOf(_react.PropTypes.oneOfType([_react.PropTypes.number, _react.PropTypes.object // Date
     ]))).isRequired,
+    units: _react.PropTypes.string,
     colorIndex: _react.PropTypes.string
   })).isRequired,
   size: _react.PropTypes.oneOf(['small', 'medium', 'large']),
