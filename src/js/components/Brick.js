@@ -17,10 +17,17 @@ export default class Brick extends Component {
       classes.push(this.props.className);
     }
 
+    var label = <div className="brick--label"><span>{this.props.label}</span></div>;
+    if (this.props.route) {
+      label = <Anchor href={this.props.route} className="brick--label"><span>{this.props.label}</span></Anchor>;
+    }
+
     return (
       <div className={classes.join(' ')} onClick={this.props.onClick}>
-        {this.props.children}
-        <Anchor href={this.props.route}><span>{this.props.label}</span></Anchor>
+        <div className="brick--content-wrapper">
+          {this.props.children}
+        </div>
+        {label}
       </div>
     );
   }

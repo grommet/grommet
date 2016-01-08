@@ -1,12 +1,12 @@
 .brick {
-  box-shadow: 1px 1px 1px #eee;
+  box-shadow: 1px 1px 5px #eee;
   padding: $inuit-base-spacing-unit;
   position: relative;
   margin: 0 10px 10px 0;
   float: left;
   max-width: calc(100% - 10px);
 
-  a {
+  .brick--label {
     position: absolute;
     top: 0;
     right: 0;
@@ -21,6 +21,10 @@
       left: $inuit-base-spacing-unit;
       bottom: $inuit-base-spacing-unit;
     }
+  }
+
+  &[class*="background-color-index-"] span {
+    color: #fff;
   }
 }
 
@@ -78,4 +82,13 @@
   @media only screen and (max-width: 1000px) {
     width: calc(100% - 10px);
   }
+}
+
+.brick--content-wrapper {
+  position: absolute;
+  top: $inuit-base-spacing-unit;
+  bottom: $inuit-base-spacing-unit;
+  left: $inuit-base-spacing-unit;
+  right: $inuit-base-spacing-unit;
+  max-width: (100% - #{double($inuit-base-spacing-unit)});
 }

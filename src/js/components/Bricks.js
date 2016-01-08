@@ -13,7 +13,7 @@ export default class Bricks extends Component {
     }
 
     return (
-      <div ref="bricks" className={classes.join(' ')}>
+      <div className={classes.join(' ')}>
         {this.props.children}
       </div>
     );
