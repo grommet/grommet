@@ -593,7 +593,8 @@ export default class Chart extends Component {
     }
     let priorPosition = null;
     let activePosition = null;
-    if (this.state.activeXIndex >= 0) {
+    if (this.state.activeXIndex >= 0 &&
+      bounds.xAxis.data.length > this.state.activeXIndex) {
       activePosition =
         this._labelPosition(bounds.xAxis.data[this.state.activeXIndex].value, bounds);
     }
@@ -968,6 +969,7 @@ Chart.propTypes = {
           ])
         )
       ).isRequired,
+      units: PropTypes.string,
       colorIndex: PropTypes.string
     })
   ).isRequired,
