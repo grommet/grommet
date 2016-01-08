@@ -100,10 +100,15 @@ var Graphic = (function (_Component) {
 
       var commands = this._sliceCommands(trackIndex, item, startValue);
 
-      var a11yDescId = '' + (threshold ? 'threshold_' : '') + this.props.a11yDescId + '_' + itemIndex;
-      var a11yTitle = item.value + ' ' + (item.label || this.props.units || '');
+      var path = undefined;
+      if (threshold) {
+        path = (0, _utils.buildPath)(itemIndex, commands, classes, this.props.onActivate, item.onClick);
+      } else {
+        var a11yDescId = this.props.a11yDescId + '_' + itemIndex;
+        var a11yTitle = item.value + ' ' + (item.label || this.props.units || '');
 
-      var path = (0, _utils.buildPath)(itemIndex, commands, classes, this.props.onActivate, item.onClick, a11yDescId, a11yTitle);
+        path = (0, _utils.buildPath)(itemIndex, commands, classes, this.props.onActivate, item.onClick, a11yDescId, a11yTitle);
+      }
 
       return path;
     }
@@ -180,7 +185,7 @@ var Graphic = (function (_Component) {
       }
       return _react2.default.createElement(
         'g',
-        { ref: 'meterValues', className: CLASS_ROOT + "__values", role: 'row' },
+        { ref: 'meterValues', className: CLASS_ROOT + "__values", role: 'barGroup' },
         values
       );
     }

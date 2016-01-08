@@ -1,5 +1,7 @@
 'use strict';
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -16,7 +18,7 @@ function polarToCartesian(centerX, centerY, radius, angleInDegrees) {
     x: centerX + radius * Math.cos(angleInRadians),
     y: centerY + radius * Math.sin(angleInRadians)
   };
-} // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+}
 
 exports.default = {
 
@@ -71,17 +73,24 @@ exports.default = {
       var onOver = onActivate.bind(null, itemIndex);
       var onOut = onActivate.bind(null, null);
 
-      var pathTitleId = 'title_' + a11yDescId;
-
-      return _react2.default.createElement(
-        'g',
-        { key: itemIndex, id: a11yDescId, ref: a11yDescId,
-          role: 'gridcell', 'aria-labelledby': pathTitleId },
-        _react2.default.createElement(
+      var a11yRoles = {};
+      var titleComponent = undefined;
+      if (a11yTitle && a11yDescId) {
+        var pathTitleId = 'title_' + a11yDescId;
+        a11yRoles['aria-labelledby'] = pathTitleId;
+        a11yRoles.id = a11yDescId;
+        a11yRoles.role = 'tab';
+        titleComponent = _react2.default.createElement(
           'title',
           { id: pathTitleId },
           a11yTitle
-        ),
+        );
+      }
+
+      return _react2.default.createElement(
+        'g',
+        _extends({ key: itemIndex, ref: a11yDescId }, a11yRoles),
+        titleComponent,
         _react2.default.createElement('path', { className: classes.join(' '), d: commands,
           onFocus: onOver, onBlur: onOut,
           onMouseOver: onOver, onMouseOut: onOut,

@@ -595,7 +595,7 @@ var Chart = (function (_Component) {
       var commands = 'M0,' + y + 'L' + this.state.width + ',' + y;
       return _react2.default.createElement(
         'g',
-        { className: CLASS_ROOT + "__threshold" },
+        { className: CLASS_ROOT + "__threshold", role: 'presentation' },
         _react2.default.createElement('path', { fill: 'none', d: commands })
       );
     }
@@ -675,7 +675,7 @@ var Chart = (function (_Component) {
           { key: 'x_axis_' + xIndex, className: classes.join(' ') },
           _react2.default.createElement(
             'text',
-            { x: position.x, y: labelY,
+            { x: position.x, y: labelY, role: 'presentation',
               textAnchor: position.anchor, fontSize: 16 },
             obj.label
           )
@@ -792,7 +792,7 @@ var Chart = (function (_Component) {
         return _react2.default.createElement(
           'g',
           { key: xBandId, id: xBandId, className: classes.join(' '),
-            onMouseOver: onMouseOver, onMouseOut: onMouseOut, role: 'gridcell',
+            onMouseOver: onMouseOver, onMouseOut: onMouseOut, role: 'tab',
             'aria-labelledby': xBandTitleId },
           _react2.default.createElement(
             'title',
@@ -806,7 +806,7 @@ var Chart = (function (_Component) {
 
       return _react2.default.createElement(
         'g',
-        { ref: layer, role: 'row', className: className },
+        { ref: layer, role: 'barGroup', className: className },
         bands
       );
     }
@@ -843,7 +843,7 @@ var Chart = (function (_Component) {
 
       return _react2.default.createElement(
         'g',
-        { ref: 'cursor', className: CLASS_ROOT + "__cursor" },
+        { ref: 'cursor', role: 'presentation', className: CLASS_ROOT + "__cursor" },
         line,
         points
       );
