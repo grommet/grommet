@@ -545,7 +545,7 @@ export default class Chart extends Component {
     let y = this._translateY(this.props.threshold);
     let commands = 'M0,' + y + 'L' + this.state.width + ',' + y;
     return (
-      <g className={CLASS_ROOT + "__threshold"}>
+      <g className={CLASS_ROOT + "__threshold"} role="presentation">
         <path fill="none" d={commands} />
       </g>
     );
@@ -624,7 +624,7 @@ export default class Chart extends Component {
 
       return (
         <g key={'x_axis_' + xIndex} className={classes.join(' ')}>
-          <text x={position.x} y={labelY}
+          <text x={position.x} y={labelY} role="presentation"
             textAnchor={position.anchor} fontSize={16}>
             {obj.label}
           </text>
@@ -738,7 +738,7 @@ export default class Chart extends Component {
 
       return (
         <g key={xBandId} id={xBandId} className={classes.join(' ')}
-          onMouseOver={onMouseOver} onMouseOut={onMouseOut} role="gridcell"
+          onMouseOver={onMouseOver} onMouseOut={onMouseOut} role="tab"
           aria-labelledby={xBandTitleId}>
           <title id={xBandTitleId}>
             {obj.label + ' ' + seriesText}
@@ -750,7 +750,7 @@ export default class Chart extends Component {
     }, this);
 
     return (
-      <g ref={layer} role="row" className={className}>
+      <g ref={layer} role="barGroup" className={className}>
         {bands}
       </g>
     );
@@ -788,7 +788,7 @@ export default class Chart extends Component {
     }
 
     return (
-      <g ref="cursor" className={CLASS_ROOT + "__cursor"}>
+      <g ref="cursor" role="presentation" className={CLASS_ROOT + "__cursor"}>
         {line}
         {points}
       </g>

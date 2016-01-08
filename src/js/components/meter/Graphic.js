@@ -60,11 +60,17 @@ export default class Graphic extends Component {
 
     let commands = this._sliceCommands(trackIndex, item, startValue);
 
-    let a11yDescId = `${threshold ? 'threshold_' : ''}${this.props.a11yDescId}_${itemIndex}`;
-    let a11yTitle = `${item.value} ${item.label || this.props.units || ''}`;
+    let path;
+    if (threshold) {
+      path = buildPath(itemIndex, commands, classes,
+        this.props.onActivate, item.onClick);
+    } else {
+      let a11yDescId = `${this.props.a11yDescId}_${itemIndex}`;
+      let a11yTitle = `${item.value} ${item.label || this.props.units || ''}`;
 
-    let path = buildPath(itemIndex, commands, classes,
-      this.props.onActivate, item.onClick, a11yDescId, a11yTitle);
+      path = buildPath(itemIndex, commands, classes,
+        this.props.onActivate, item.onClick, a11yDescId, a11yTitle);
+    }
 
     return path;
   }
@@ -138,7 +144,7 @@ export default class Graphic extends Component {
       values = this._renderLoading();
     }
     return (
-      <g ref="meterValues" className={CLASS_ROOT + "__values"} role="row">
+      <g ref="meterValues" className={CLASS_ROOT + "__values"} role="barGroup">
         {values}
       </g>
     );
