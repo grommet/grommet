@@ -90,5 +90,5 @@
   bottom: $inuit-base-spacing-unit;
   left: $inuit-base-spacing-unit;
   right: $inuit-base-spacing-unit;
-  max-width: (100% - #{double($inuit-base-spacing-unit)});
+  max-width: calc(100% - #{double($inuit-base-spacing-unit)});
 }
