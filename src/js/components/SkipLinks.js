@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import { findDOMNode } from 'react-dom';
 import FormattedMessage from './FormattedMessage';
+import Box from './Box';
 import Layer from './Layer';
 import Menu from './Menu';
 import DOM from '../utils/DOM';
@@ -31,9 +32,9 @@ export default class SkipLinks extends Component {
   }
 
   _updateAnchors () {
-    var anchorElements = document.querySelectorAll('.skip-link-anchor');
+    let anchorElements = document.querySelectorAll('.skip-link-anchor');
 
-    var anchors = Array.prototype.map.call(anchorElements, function (anchorElement) {
+    let anchors = Array.prototype.map.call(anchorElements, function (anchorElement) {
       return {
         id: anchorElement.getAttribute('id'),
         label: anchorElement.textContent
@@ -50,8 +51,8 @@ export default class SkipLinks extends Component {
   }
 
   _onBlur () {
-    var skipLinksLayer = findDOMNode(this.refs.skipLinksLayer);
-    var activeElement = document.activeElement;
+    let skipLinksLayer = findDOMNode(this.refs.skipLinksLayer);
+    let activeElement = document.activeElement;
     if (!DOM.isDescendant(skipLinksLayer, activeElement)) {
       this.setState({showLayer: false});
     }
@@ -59,14 +60,14 @@ export default class SkipLinks extends Component {
 
   _onClick (destId) {
     return function (event) {
-      var dest = document.getElementById(destId);
+      let dest = document.getElementById(destId);
       dest.focus();
     };
   }
 
   render () {
 
-    var anchorElements = this.state.anchors.map(function (anchor, index) {
+    let anchorElements = this.state.anchors.map(function (anchor, index) {
       return (
         <a tabIndex="0"
            href={'#' + anchor.id}
@@ -79,7 +80,7 @@ export default class SkipLinks extends Component {
       );
     }.bind(this));
 
-    var menuComponent;
+    let menuComponent;
     if (anchorElements.length > 0) {
       menuComponent = (
         <Menu direction="row">
@@ -89,13 +90,14 @@ export default class SkipLinks extends Component {
     }
 
     return (
-      <Layer id="skip-link-layer" hidden={!this.state.showLayer}>
-        <div ref="skipLinksLayer">
+      <Layer id="skip-link-layer" hidden={!this.state.showLayer} align="top">
+        <Box ref="skipLinksLayer"
+          pad={{horizontal: 'small', vertical: 'medium'}}>
           <h2>
             <FormattedMessage id="Skip to" defaultMessage="Skip to" />
           </h2>
           {menuComponent}
-        </div>
+        </Box>
       </Layer>
     );
   }
