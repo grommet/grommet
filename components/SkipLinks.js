@@ -16,6 +16,10 @@ var _FormattedMessage = require('./FormattedMessage');
 
 var _FormattedMessage2 = _interopRequireDefault(_FormattedMessage);
 
+var _Box = require('./Box');
+
+var _Box2 = _interopRequireDefault(_Box);
+
 var _Layer = require('./Layer');
 
 var _Layer2 = _interopRequireDefault(_Layer);
@@ -123,7 +127,7 @@ var SkipLinks = (function (_Component) {
         );
       }).bind(this));
 
-      var menuComponent;
+      var menuComponent = undefined;
       if (anchorElements.length > 0) {
         menuComponent = _react2.default.createElement(
           _Menu2.default,
@@ -134,10 +138,11 @@ var SkipLinks = (function (_Component) {
 
       return _react2.default.createElement(
         _Layer2.default,
-        { id: 'skip-link-layer', hidden: !this.state.showLayer },
+        { id: 'skip-link-layer', hidden: !this.state.showLayer, align: 'top' },
         _react2.default.createElement(
-          'div',
-          { ref: 'skipLinksLayer' },
+          _Box2.default,
+          { ref: 'skipLinksLayer',
+            pad: { horizontal: 'small', vertical: 'medium' } },
           _react2.default.createElement(
             'h2',
             null,
