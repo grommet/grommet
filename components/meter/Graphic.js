@@ -56,7 +56,9 @@ var Graphic = (function (_Component) {
     value: function componentDidMount() {
       this._keyboardHandlers = {
         left: this._onRequestForPreviousLegend,
-        right: this._onRequestForNextLegend
+        up: this._onRequestForPreviousLegend,
+        right: this._onRequestForNextLegend,
+        down: this._onRequestForNextLegend
       };
       _KeyboardAccelerators2.default.startListeningToKeyboard(this, this._keyboardHandlers);
     }
@@ -126,8 +128,7 @@ var Graphic = (function (_Component) {
   }, {
     key: '_onRequestForPreviousLegend',
     value: function _onRequestForPreviousLegend(e) {
-      e.stopPropagation();
-      e.stopImmediatePropagation();
+      e.preventDefault();
       if (document.activeElement === this.refs.meter) {
         var totalValueCount = _reactDom2.default.findDOMNode(this.refs.meterValues).childNodes.length;
 
@@ -141,8 +142,7 @@ var Graphic = (function (_Component) {
   }, {
     key: '_onRequestForNextLegend',
     value: function _onRequestForNextLegend(e) {
-      e.stopPropagation();
-      e.stopImmediatePropagation();
+      e.preventDefault();
       if (document.activeElement === this.refs.meter) {
         var totalValueCount = _reactDom2.default.findDOMNode(this.refs.meterValues).childNodes.length;
 

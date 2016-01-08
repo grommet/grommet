@@ -75,7 +75,9 @@ var Chart = (function (_Component) {
       if (this.props.legend) {
         this._keyboardHandlers = {
           left: this._onRequestForPreviousLegend,
-          right: this._onRequestForNextLegend
+          up: this._onRequestForPreviousLegend,
+          right: this._onRequestForNextLegend,
+          down: this._onRequestForNextLegend
         };
         _KeyboardAccelerators2.default.startListeningToKeyboard(this, this._keyboardHandlers);
       }
@@ -104,8 +106,7 @@ var Chart = (function (_Component) {
   }, {
     key: '_onRequestForNextLegend',
     value: function _onRequestForNextLegend(e) {
-      e.stopPropagation();
-      e.stopImmediatePropagation();
+      e.preventDefault();
       if (document.activeElement === this.refs.chart) {
 
         var totalBandCount = _reactDom2.default.findDOMNode(this.refs.front).childNodes.length;
@@ -119,7 +120,8 @@ var Chart = (function (_Component) {
     }
   }, {
     key: '_onRequestForPreviousLegend',
-    value: function _onRequestForPreviousLegend() {
+    value: function _onRequestForPreviousLegend(e) {
+      e.preventDefault();
       if (document.activeElement === this.refs.chart) {
 
         var totalBandCount = _reactDom2.default.findDOMNode(this.refs.front).childNodes.length;

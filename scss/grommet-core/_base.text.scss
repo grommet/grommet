@@ -84,3 +84,7 @@ code.hljs {
 .secondary {
   color: $secondary-text-color;
 }
+
+.error {
+  color: map-get($brand-status-colors, critical);
+}

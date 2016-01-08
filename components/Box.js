@@ -192,7 +192,7 @@ Box.propTypes = {
   })]),
   reverse: _react.PropTypes.bool,
   responsive: _react.PropTypes.bool,
-  separator: _react.PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
+  separator: _react.PropTypes.oneOf(['top', 'bottom', 'left', 'right', 'horizontal', 'vertical', 'all']),
   tag: _react.PropTypes.string,
   textAlign: _react.PropTypes.oneOf(['left', 'center', 'right']),
   texture: _react.PropTypes.oneOfType([_react.PropTypes.node, _react.PropTypes.string]),
