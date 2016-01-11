@@ -6,6 +6,7 @@ import merge from 'lodash/object/merge';
 import pick from 'lodash/object/pick';
 import keys from 'lodash/object/keys';
 import Box from './Box';
+import Meter from './Meter';
 
 import StatusIcon from './icons/Status';
 
@@ -31,6 +32,15 @@ export default class Notification extends Component {
     var state;
     if (this.props.state) {
       state = <div className={CLASS_ROOT + "__state"}>{this.props.state}</div>;
+    }
+
+    var progress;
+    if (this.props.hasOwnProperty('percentComplete')) {
+      progress = (
+        <Meter units="%"
+          series={[{value: this.props.percentComplete, label: '', colorIndex: 'light-1'}]}
+          size="large" />
+      );
     }
 
     var timestamp;
@@ -63,6 +73,7 @@ export default class Notification extends Component {
         </Box>
         {timestamp}
         {state}
+        {progress}
         {this.props.children}
       </Box>
     );
@@ -77,6 +88,7 @@ Notification.defaultProps = {
 
 Notification.propTypes = merge({
   message: PropTypes.string.isRequired,
+  percentComplete: PropTypes.number,
   state: PropTypes.string,
   status: PropTypes.string,
   timestamp: PropTypes.object // Date

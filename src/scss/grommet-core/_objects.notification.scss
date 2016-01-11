@@ -4,6 +4,7 @@
 
   &__status {
     margin-right: halve($inuit-base-spacing-unit);
+    flex: 0 0 auto;
   }
 
   &__message {
