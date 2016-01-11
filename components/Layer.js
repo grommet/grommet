@@ -75,20 +75,18 @@ var LayerContents = (function (_Component) {
       }
 
       if (this.props.onClose) {
-        _KeyboardAccelerators2.default.startListeningToKeyboard(this, {
+        this._keyboardHandlers = {
           tab: this._processTab,
           esc: this.props.onClose
-        });
+        };
+        _KeyboardAccelerators2.default.startListeningToKeyboard(this, this._keyboardHandlers);
       }
     }
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
       if (this.props.onClose) {
-        _KeyboardAccelerators2.default.stopListeningToKeyboard(this, {
-          tab: this._processTab,
-          esc: this.props.onClose
-        });
+        _KeyboardAccelerators2.default.stopListeningToKeyboard(this, this._keyboardHandlers);
       }
     }
   }, {
@@ -237,13 +235,6 @@ var Layer = (function (_Component2) {
     key: '_handleAriaHidden',
     value: function _handleAriaHidden(hideOverlay) {
       this._element.setAttribute('aria-hidden', hideOverlay);
-
-      // refactor
-      Array.prototype.forEach.call(document.body.childNodes, (function (currentChild) {
-        if (currentChild !== this._element && currentChild.nodeType === 1 && currentChild.id !== 'skip-link-layer' && currentChild.tagName.toLowerCase() !== 'script') {
-          currentChild.setAttribute('aria-hidden', !hideOverlay);
-        }
-      }).bind(this));
     }
   }, {
     key: '_renderLayer',

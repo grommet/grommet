@@ -806,7 +806,7 @@ var Chart = (function (_Component) {
 
       return _react2.default.createElement(
         'g',
-        { ref: layer, role: 'barGroup', className: className },
+        { ref: layer, className: className },
         bands
       );
     }

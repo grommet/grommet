@@ -185,7 +185,7 @@ var Graphic = (function (_Component) {
       }
       return _react2.default.createElement(
         'g',
-        { ref: 'meterValues', className: CLASS_ROOT + "__values", role: 'barGroup' },
+        { ref: 'meterValues', className: CLASS_ROOT + "__values" },
         values
       );
     }
