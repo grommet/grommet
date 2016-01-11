@@ -9,6 +9,7 @@ const DEFAULT_WIDTH = 400;
 const DEFAULT_HEIGHT = 200;
 
 const SMALL_HEIGHT = 120;
+const XSMALL_HEIGHT = 60;
 const THIN_HEIGHT = 72;
 
 export default class Distribution extends Component {
@@ -206,7 +207,9 @@ export default class Distribution extends Component {
       );
     }
 
-    if (width < SMALL_HEIGHT || height < SMALL_HEIGHT) {
+    if (width < XSMALL_HEIGHT || height < XSMALL_HEIGHT) {
+      labelClasses.push(CLASS_ROOT + "__label--xsmall");
+    } else if (width < SMALL_HEIGHT || height < SMALL_HEIGHT) {
       labelClasses.push(CLASS_ROOT + "__label--small");
     }
 
