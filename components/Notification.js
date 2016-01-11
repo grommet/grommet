@@ -83,7 +83,7 @@ var Notification = (function (_Component) {
       }
 
       var progress;
-      if (this.props.hasOwnProperty('percentComplete')) {
+      if (this.props.percentComplete || 0 === this.props.percentComplete) {
         progress = _react2.default.createElement(_Meter2.default, { units: '%',
           series: [{ value: this.props.percentComplete, label: '', colorIndex: 'light-1' }],
           size: 'large' });
