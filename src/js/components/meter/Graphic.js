@@ -144,7 +144,7 @@ export default class Graphic extends Component {
       values = this._renderLoading();
     }
     return (
-      <g ref="meterValues" className={CLASS_ROOT + "__values"} role="barGroup">
+      <g ref="meterValues" className={CLASS_ROOT + "__values"}>
         {values}
       </g>
     );

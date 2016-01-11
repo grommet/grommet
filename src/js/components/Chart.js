@@ -750,7 +750,7 @@ export default class Chart extends Component {
     }, this);
 
     return (
-      <g ref={layer} role="barGroup" className={className}>
+      <g ref={layer} className={className}>
         {bands}
       </g>
     );

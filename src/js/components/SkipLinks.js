@@ -1,17 +1,17 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-import React, { Component } from 'react';
-import { findDOMNode } from 'react-dom';
+import React, { Component, PropTypes } from 'react';
 import FormattedMessage from './FormattedMessage';
 import Box from './Box';
 import Layer from './Layer';
 import Menu from './Menu';
-import DOM from '../utils/DOM';
+import KeyboardAccelerators from '../utils/KeyboardAccelerators';
+import Intl from '../utils/Intl';
 
 export default class SkipLinks extends Component {
   constructor (props, context) {
     super(props, context);
-    this._onBlur = this._onBlur.bind(this);
+    this._processTab = this._processTab.bind(this);
     this._onFocus = this._onFocus.bind(this);
     this._updateAnchors = this._updateAnchors.bind(this);
     this.state = {anchors: [], showLayer: false};
@@ -19,6 +19,13 @@ export default class SkipLinks extends Component {
 
   componentDidMount () {
     this._updateAnchors();
+
+    this._keyboardHandlers = {
+      tab: this._processTab
+    };
+    KeyboardAccelerators.startListeningToKeyboard(
+      this, this._keyboardHandlers
+    );
   }
 
   componentWillReceiveProps () {
@@ -29,6 +36,12 @@ export default class SkipLinks extends Component {
     if (this.state.routeChanged) {
       this.setState({routeChanged: false}, this._updateAnchors);
     }
+  }
+
+  componentWillUnmount () {
+    KeyboardAccelerators.stopListeningToKeyboard(
+      this, this._keyboardHandlers
+    );
   }
 
   _updateAnchors () {
@@ -50,10 +63,12 @@ export default class SkipLinks extends Component {
     }
   }
 
-  _onBlur () {
-    let skipLinksLayer = findDOMNode(this.refs.skipLinksLayer);
-    let activeElement = document.activeElement;
-    if (!DOM.isDescendant(skipLinksLayer, activeElement)) {
+  _processTab (event) {
+    var currentAnchor = document.activeElement;
+    var last = this.state.anchors.length - 1;
+
+    if ((event.shiftKey && currentAnchor.id === this.state.anchors[0].id) ||
+      (!event.shiftKey && currentAnchor.id === this.state.anchors[last].id)) {
       this.setState({showLayer: false});
     }
   }
@@ -62,19 +77,22 @@ export default class SkipLinks extends Component {
     return function (event) {
       let dest = document.getElementById(destId);
       dest.focus();
-    };
+      this.setState({showLayer: false});
+    }.bind(this);
   }
 
   render () {
 
     let anchorElements = this.state.anchors.map(function (anchor, index) {
+      let skipToLabel = Intl.getMessage(this.context.intl, 'Skip to');
+      let a11yLabel = `${skipToLabel} ${anchor.label}`;
       return (
-        <a tabIndex="0"
-           href={'#' + anchor.id}
+        <a href={'#' + anchor.id}
            onFocus={this._onFocus}
-           onBlur={this._onBlur}
            onClick={this._onClick(anchor.id)}
-           key={anchor.id}>
+           id={`skipLayer_${anchor.id}`}
+           key={anchor.id}
+           aria-label={a11yLabel}>
           {anchor.label}
         </a>
       );
@@ -102,3 +120,7 @@ export default class SkipLinks extends Component {
     );
   }
 }
+
+SkipLinks.contextTypes = {
+  intl: PropTypes.object
+};
