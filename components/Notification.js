@@ -30,6 +30,10 @@ var _Box = require('./Box');
 
 var _Box2 = _interopRequireDefault(_Box);
 
+var _Meter = require('./Meter');
+
+var _Meter2 = _interopRequireDefault(_Meter);
+
 var _Status = require('./icons/Status');
 
 var _Status2 = _interopRequireDefault(_Status);
@@ -78,6 +82,13 @@ var Notification = (function (_Component) {
         );
       }
 
+      var progress;
+      if (this.props.hasOwnProperty('percentComplete')) {
+        progress = _react2.default.createElement(_Meter2.default, { units: '%',
+          series: [{ value: this.props.percentComplete, label: '', colorIndex: 'light-1' }],
+          size: 'large' });
+      }
+
       var timestamp;
       if (this.props.timestamp) {
         var timestampFormatted = _react2.default.createElement(_reactIntl.FormattedDate, { value: this.props.timestamp,
@@ -111,6 +122,7 @@ var Notification = (function (_Component) {
         ),
         timestamp,
         state,
+        progress,
         this.props.children
       );
     }
@@ -129,6 +141,7 @@ Notification.defaultProps = {
 
 Notification.propTypes = (0, _merge2.default)({
   message: _react.PropTypes.string.isRequired,
+  percentComplete: _react.PropTypes.number,
   state: _react.PropTypes.string,
   status: _react.PropTypes.string,
   timestamp: _react.PropTypes.object // Date
