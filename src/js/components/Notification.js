@@ -35,7 +35,7 @@ export default class Notification extends Component {
     }
 
     var progress;
-    if (this.props.hasOwnProperty('percentComplete')) {
+    if (this.props.percentComplete || 0 === this.props.percentComplete) {
       progress = (
         <Meter units="%"
           series={[{value: this.props.percentComplete, label: '', colorIndex: 'light-1'}]}
