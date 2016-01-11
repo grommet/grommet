@@ -25,7 +25,7 @@ export default class Notification extends Component {
     if (this.props.status) {
       status = (
         <StatusIcon className={CLASS_ROOT + "__status"}
-        value={this.props.status} small={true} />
+        value={this.props.status} />
       );
     }
 
@@ -64,17 +64,18 @@ export default class Notification extends Component {
     }
 
     return (
-      <Box className={classes.join(' ')} {...other}>
-        <Box direction="row" responsive={false}>
-          {status}
+      <Box className={classes.join(' ')} direction="row" responsive={false}
+        {...other}>
+        {status}
+        <Box>
           <span className={CLASS_ROOT + "__message"}>
             {this.props.message}
           </span>
+          {timestamp}
+          {state}
+          {progress}
+          {this.props.children}
         </Box>
-        {timestamp}
-        {state}
-        {progress}
-        {this.props.children}
       </Box>
     );
   }
