@@ -28,6 +28,7 @@ var DEFAULT_WIDTH = 400;
 var DEFAULT_HEIGHT = 200;
 
 var SMALL_HEIGHT = 120;
+var XSMALL_HEIGHT = 60;
 var THIN_HEIGHT = 72;
 
 var Distribution = (function (_Component) {
@@ -235,7 +236,9 @@ var Distribution = (function (_Component) {
           x: x, y: y, width: width, height: height });
       }
 
-      if (width < SMALL_HEIGHT || height < SMALL_HEIGHT) {
+      if (width < XSMALL_HEIGHT || height < XSMALL_HEIGHT) {
+        labelClasses.push(CLASS_ROOT + "__label--xsmall");
+      } else if (width < SMALL_HEIGHT || height < SMALL_HEIGHT) {
         labelClasses.push(CLASS_ROOT + "__label--small");
       }
 
