@@ -70,7 +70,7 @@ var Notification = (function (_Component) {
       var status;
       if (this.props.status) {
         status = _react2.default.createElement(_Status2.default, { className: CLASS_ROOT + "__status",
-          value: this.props.status, small: true });
+          value: this.props.status });
       }
 
       var state;
@@ -109,21 +109,22 @@ var Notification = (function (_Component) {
 
       return _react2.default.createElement(
         _Box2.default,
-        _extends({ className: classes.join(' ') }, other),
+        _extends({ className: classes.join(' '), direction: 'row', responsive: false
+        }, other),
+        status,
         _react2.default.createElement(
           _Box2.default,
-          { direction: 'row', responsive: false },
-          status,
+          null,
           _react2.default.createElement(
             'span',
             { className: CLASS_ROOT + "__message" },
             this.props.message
-          )
-        ),
-        timestamp,
-        state,
-        progress,
-        this.props.children
+          ),
+          timestamp,
+          state,
+          progress,
+          this.props.children
+        )
       );
     }
   }]);
