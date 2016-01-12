@@ -22,6 +22,7 @@ export default class Tags extends Component {
       <Box {...other}
         className={classes.join(' ')}
         direction={this.props.direction ? this.props.direction : 'row'}
+        align={this.props.align ? this.props.align : 'start'}
         wrap={true}>
         {this.props.children}
       </Box>
