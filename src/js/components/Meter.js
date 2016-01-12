@@ -8,6 +8,7 @@ import Bar from './meter/Bar';
 import Spiral from './meter/Spiral';
 import Circle from './meter/Circle';
 import Arc from './meter/Arc';
+import Intl from '../utils/Intl';
 
 const CLASS_ROOT = "meter";
 
@@ -259,7 +260,7 @@ export default class Meter extends Component {
   _getActiveFields () {
     let fields;
     if (null === this.state.activeIndex) {
-      fields = {value: this.state.total, label: 'Total'};
+      fields = {value: this.state.total, label: Intl.getMessage(this.context.intl, 'Total')};
     } else {
       let active = this.state.series[this.state.activeIndex];
       if (!active) {
