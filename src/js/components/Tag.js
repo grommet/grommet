@@ -2,6 +2,8 @@
 
 import React, { Component } from 'react';
 import Anchor from './Anchor';
+import pick from 'lodash/object/pick';
+import keys from 'lodash/object/keys';
 
 const CLASS_ROOT = "tag";
 
@@ -14,10 +16,14 @@ export default class Tag extends Component {
       classes.push(this.props.className);
     }
 
+    var other = pick(this.props, keys(Anchor.propTypes));
+
     return (
       <div className={classes.join(' ')} onClick={this.props.onClick}>
         {this.props.children}
-        <Anchor href={this.props.route} className="tag--label"><span>{this.props.label}</span></Anchor>
+        <Anchor {...other} className="tag--label">
+          <span>{this.props.label}</span>
+        </Anchor>
       </div>
     );
   }
@@ -25,5 +31,6 @@ export default class Tag extends Component {
 
 Tag.propTypes = {
   label: React.PropTypes.string,
-  route: React.PropTypes.string
+  route: React.PropTypes.string,
+  ...Anchor.propTypes
 };
