@@ -34,6 +34,10 @@ var _Arc = require('./meter/Arc');
 
 var _Arc2 = _interopRequireDefault(_Arc);
 
+var _Intl = require('../utils/Intl');
+
+var _Intl2 = _interopRequireDefault(_Intl);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _typeof(obj) { return obj && typeof Symbol !== "undefined" && obj.constructor === Symbol ? "symbol" : typeof obj; }
@@ -315,7 +319,7 @@ var Meter = (function (_Component) {
     value: function _getActiveFields() {
       var fields = undefined;
       if (null === this.state.activeIndex) {
-        fields = { value: this.state.total, label: 'Total' };
+        fields = { value: this.state.total, label: _Intl2.default.getMessage(this.context.intl, 'Total') };
       } else {
         var active = this.state.series[this.state.activeIndex];
         if (!active) {
