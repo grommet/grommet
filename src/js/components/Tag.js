@@ -31,6 +31,5 @@ export default class Tag extends Component {
 
 Tag.propTypes = {
   label: React.PropTypes.string,
-  route: React.PropTypes.string,
   ...Anchor.propTypes
 };
