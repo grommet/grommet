@@ -7,6 +7,7 @@ import ErrorStatus from './status/ErrorStatus';
 import Warning from './status/Warning';
 import Disabled from './status/Disabled';
 import Unknown from './status/Unknown';
+import Blank from './status/Blank';
 import Label from './status/Label';
 
 const CLASS_ROOT = "status-icon";
@@ -37,30 +38,33 @@ export default class Status extends Component {
       classes.push(CLASS_ROOT + "--" + size);
     }
     let className = classes.join(' ');
-    let icon = (<span>{'?'}</span>);
+    let icon = <span>{'?'}</span>;
     switch (this.props.value.toLowerCase()) {
       case 'ok':
       case 'normal':
-        icon = (<OK className={className} a11yTitle={a11yTitle} />);
+        icon = <OK className={className} a11yTitle={a11yTitle} />;
         break;
       case 'warning':
-        icon = (<Warning className={className} a11yTitle={a11yTitle} />);
+        icon = <Warning className={className} a11yTitle={a11yTitle} />;
         break;
       // 'error' is deprecated, use 'critical'
       case 'error':
-        icon = (<ErrorStatus className={className} a11yTitle={a11yTitle} />);
+        icon = <ErrorStatus className={className} a11yTitle={a11yTitle} />;
         break;
       case 'critical':
-        icon = (<CriticalStatus className={className} a11yTitle={a11yTitle} />);
+        icon = <CriticalStatus className={className} a11yTitle={a11yTitle} />;
         break;
       case 'disabled':
-        icon = (<Disabled className={className} a11yTitle={a11yTitle} />);
+        icon = <Disabled className={className} a11yTitle={a11yTitle} />;
         break;
       case 'unknown':
-        icon = (<Unknown className={className} a11yTitle={a11yTitle} />);
+        icon = <Unknown className={className} a11yTitle={a11yTitle} />;
+        break;
+      case 'blank':
+        icon = <Blank className={className} a11yTitle={a11yTitle} />;
         break;
       case 'label':
-        icon = (<Label className={className} a11yTitle={a11yTitle} />);
+        icon = <Label className={className} a11yTitle={a11yTitle} />;
         break;
     }
     return icon;
