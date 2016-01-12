@@ -75,7 +75,9 @@ export default class Legend extends Component {
         value = (
           <span className={valueClasses.join(' ')}>
             {item.value}
-            <span className={CLASS_ROOT + "__item-units"}>{this.props.units}</span>
+            <span className={CLASS_ROOT + "__item-units"}>
+              {item.units || this.props.units}
+            </span>
           </span>
         );
       }

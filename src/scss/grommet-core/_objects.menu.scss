@@ -53,8 +53,7 @@
     @include inuit-font-size($inuit-base-font-size, inherit);
     max-height: 100vh;
 
-    .anchor,
-    a {
+    .anchor {
       padding: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit;
       white-space: nowrap;
       display: block;

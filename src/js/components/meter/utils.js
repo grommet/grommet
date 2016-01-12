@@ -66,14 +66,23 @@ export default {
       var onOver = onActivate.bind(null, itemIndex);
       var onOut = onActivate.bind(null, null);
 
-      let pathTitleId = `title_${a11yDescId}`;
-
-      return (
-        <g key={itemIndex} id={a11yDescId} ref={a11yDescId}
-          role="gridcell" aria-labelledby={pathTitleId}>
+      let a11yRoles = {};
+      let titleComponent;
+      if (a11yTitle && a11yDescId) {
+        let pathTitleId = `title_${a11yDescId}`;
+        a11yRoles['aria-labelledby'] = pathTitleId;
+        a11yRoles.id = a11yDescId;
+        a11yRoles.role = 'tab';
+        titleComponent = (
           <title id={pathTitleId}>
             {a11yTitle}
           </title>
+        );
+      }
+
+      return (
+        <g key={itemIndex} ref={a11yDescId} {...a11yRoles}>
+          {titleComponent}
           <path className={classes.join(' ')} d={commands}
             onFocus={onOver} onBlur={onOut}
             onMouseOver={onOver} onMouseOut={onOut}

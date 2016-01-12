@@ -6,6 +6,7 @@ import merge from 'lodash/object/merge';
 import pick from 'lodash/object/pick';
 import keys from 'lodash/object/keys';
 import Box from './Box';
+import Meter from './Meter';
 
 import StatusIcon from './icons/Status';
 
@@ -24,13 +25,22 @@ export default class Notification extends Component {
     if (this.props.status) {
       status = (
         <StatusIcon className={CLASS_ROOT + "__status"}
-        value={this.props.status} small={true} />
+        value={this.props.status} />
       );
     }
 
     var state;
     if (this.props.state) {
       state = <div className={CLASS_ROOT + "__state"}>{this.props.state}</div>;
+    }
+
+    var progress;
+    if (this.props.percentComplete || 0 === this.props.percentComplete) {
+      progress = (
+        <Meter units="%"
+          series={[{value: this.props.percentComplete, label: '', colorIndex: 'light-1'}]}
+          size="large" />
+      );
     }
 
     var timestamp;
@@ -54,16 +64,18 @@ export default class Notification extends Component {
     }
 
     return (
-      <Box className={classes.join(' ')} {...other}>
-        <Box direction="row" responsive={false}>
-          {status}
+      <Box className={classes.join(' ')} direction="row" responsive={false}
+        {...other}>
+        {status}
+        <Box>
           <span className={CLASS_ROOT + "__message"}>
             {this.props.message}
           </span>
+          {timestamp}
+          {state}
+          {progress}
+          {this.props.children}
         </Box>
-        {timestamp}
-        {state}
-        {this.props.children}
       </Box>
     );
   }
@@ -77,6 +89,7 @@ Notification.defaultProps = {
 
 Notification.propTypes = merge({
   message: PropTypes.string.isRequired,
+  percentComplete: PropTypes.number,
   state: PropTypes.string,
   status: PropTypes.string,
   timestamp: PropTypes.object // Date

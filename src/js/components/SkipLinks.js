@@ -1,16 +1,17 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-import React, { Component } from 'react';
-import { findDOMNode } from 'react-dom';
+import React, { Component, PropTypes } from 'react';
 import FormattedMessage from './FormattedMessage';
+import Box from './Box';
 import Layer from './Layer';
 import Menu from './Menu';
-import DOM from '../utils/DOM';
+import KeyboardAccelerators from '../utils/KeyboardAccelerators';
+import Intl from '../utils/Intl';
 
 export default class SkipLinks extends Component {
   constructor (props, context) {
     super(props, context);
-    this._onBlur = this._onBlur.bind(this);
+    this._processTab = this._processTab.bind(this);
     this._onFocus = this._onFocus.bind(this);
     this._updateAnchors = this._updateAnchors.bind(this);
     this.state = {anchors: [], showLayer: false};
@@ -18,6 +19,13 @@ export default class SkipLinks extends Component {
 
   componentDidMount () {
     this._updateAnchors();
+
+    this._keyboardHandlers = {
+      tab: this._processTab
+    };
+    KeyboardAccelerators.startListeningToKeyboard(
+      this, this._keyboardHandlers
+    );
   }
 
   componentWillReceiveProps () {
@@ -30,10 +38,16 @@ export default class SkipLinks extends Component {
     }
   }
 
-  _updateAnchors () {
-    var anchorElements = document.querySelectorAll('.skip-link-anchor');
+  componentWillUnmount () {
+    KeyboardAccelerators.stopListeningToKeyboard(
+      this, this._keyboardHandlers
+    );
+  }
 
-    var anchors = Array.prototype.map.call(anchorElements, function (anchorElement) {
+  _updateAnchors () {
+    let anchorElements = document.querySelectorAll('.skip-link-anchor');
+
+    let anchors = Array.prototype.map.call(anchorElements, function (anchorElement) {
       return {
         id: anchorElement.getAttribute('id'),
         label: anchorElement.textContent
@@ -49,37 +63,44 @@ export default class SkipLinks extends Component {
     }
   }
 
-  _onBlur () {
-    var skipLinksLayer = findDOMNode(this.refs.skipLinksLayer);
-    var activeElement = document.activeElement;
-    if (!DOM.isDescendant(skipLinksLayer, activeElement)) {
-      this.setState({showLayer: false});
+  _processTab (event) {
+    if (this.state.showLayer) {
+      var currentAnchor = document.activeElement;
+      var last = this.state.anchors.length - 1;
+
+      if ((event.shiftKey && currentAnchor.id === this.state.anchors[0].id) ||
+        (!event.shiftKey && currentAnchor.id === this.state.anchors[last].id)) {
+        this.setState({showLayer: false});
+      }
     }
   }
 
   _onClick (destId) {
     return function (event) {
-      var dest = document.getElementById(destId);
+      let dest = document.getElementById(destId);
       dest.focus();
-    };
+      this.setState({showLayer: false});
+    }.bind(this);
   }
 
   render () {
 
-    var anchorElements = this.state.anchors.map(function (anchor, index) {
+    let anchorElements = this.state.anchors.map(function (anchor, index) {
+      let skipToLabel = Intl.getMessage(this.context.intl, 'Skip to');
+      let a11yLabel = `${skipToLabel} ${anchor.label}`;
       return (
-        <a tabIndex="0"
-           href={'#' + anchor.id}
+        <a href={'#' + anchor.id}
            onFocus={this._onFocus}
-           onBlur={this._onBlur}
            onClick={this._onClick(anchor.id)}
-           key={anchor.id}>
+           id={`skipLayer_${anchor.id}`}
+           key={anchor.id}
+           aria-label={a11yLabel}>
           {anchor.label}
         </a>
       );
     }.bind(this));
 
-    var menuComponent;
+    let menuComponent;
     if (anchorElements.length > 0) {
       menuComponent = (
         <Menu direction="row">
@@ -89,14 +110,19 @@ export default class SkipLinks extends Component {
     }
 
     return (
-      <Layer id="skip-link-layer" hidden={!this.state.showLayer}>
-        <div ref="skipLinksLayer">
+      <Layer id="skip-link-layer" hidden={!this.state.showLayer} align="top">
+        <Box ref="skipLinksLayer"
+          pad={{horizontal: 'small', vertical: 'medium'}}>
           <h2>
             <FormattedMessage id="Skip to" defaultMessage="Skip to" />
           </h2>
           {menuComponent}
-        </div>
+        </Box>
       </Layer>
     );
   }
 }
+
+SkipLinks.contextTypes = {
+  intl: PropTypes.object
+};

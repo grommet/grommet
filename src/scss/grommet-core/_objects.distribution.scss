@@ -52,6 +52,14 @@
       }
     }
 
+    &--xsmall {
+      padding: 0 halve($inuit-base-spacing-unit);
+
+      .distribution__label-value {
+        @include inuit-font-size($small-large-number-font-size);
+      }
+    }
+
     &--thin {
       .distribution__label-value,
       .distribution__label-label {
