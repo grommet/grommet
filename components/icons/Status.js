@@ -34,6 +34,10 @@ var _Unknown = require('./status/Unknown');
 
 var _Unknown2 = _interopRequireDefault(_Unknown);
 
+var _Blank = require('./status/Blank');
+
+var _Blank2 = _interopRequireDefault(_Blank);
+
 var _Label = require('./status/Label');
 
 var _Label2 = _interopRequireDefault(_Label);
@@ -113,6 +117,9 @@ var Status = (function (_Component) {
           break;
         case 'unknown':
           icon = _react2.default.createElement(_Unknown2.default, { className: className, a11yTitle: a11yTitle });
+          break;
+        case 'blank':
+          icon = _react2.default.createElement(_Blank2.default, { className: className, a11yTitle: a11yTitle });
           break;
         case 'label':
           icon = _react2.default.createElement(_Label2.default, { className: className, a11yTitle: a11yTitle });
