@@ -10,13 +10,19 @@
     max-height: calc(100vh - #{double($header-height)});
   }
 
-  &__box {
-    @include graph-fill-color();
-    cursor: pointer;
-  }
+  &__item {
+    &--clickable {
+      cursor: pointer;
+    }
 
-  &__icons {
-    @include graph-stroke-color();
+    &-box {
+      @include graph-fill-color();
+    }
+
+    &-icons {
+      @include graph-stroke-color();
+    }
+
   }
 
   &__label {
@@ -44,20 +50,8 @@
       display: block;
     }
 
-    &--small {
-      padding: halve($inuit-base-spacing-unit);
-
-      .distribution__label-value {
-        @include inuit-font-size($small-large-number-font-size);
-      }
-    }
-
-    &--xsmall {
-      padding: 0 halve($inuit-base-spacing-unit);
-
-      .distribution__label-value {
-        @include inuit-font-size($small-large-number-font-size);
-      }
+    &--active {
+      color: $text-color;
     }
 
     &--thin {
@@ -96,6 +90,19 @@
 
         &-value {
           line-height: 1;
+        }
+      }
+    }
+  }
+
+  &--small-label {
+    .distribution {
+      &__label {
+        padding-top: 0px;
+        padding-left: halve(halve($inuit-base-spacing-unit));
+
+        &-value {
+          @include inuit-font-size($small-large-number-font-size);
         }
       }
     }

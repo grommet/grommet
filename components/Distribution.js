@@ -27,8 +27,7 @@ var CLASS_ROOT = "distribution";
 var DEFAULT_WIDTH = 400;
 var DEFAULT_HEIGHT = 200;
 
-var SMALL_HEIGHT = 120;
-var XSMALL_HEIGHT = 60;
+var SMALL_SIZE = 120;
 var THIN_HEIGHT = 72;
 
 var Distribution = (function (_Component) {
@@ -39,14 +38,16 @@ var Distribution = (function (_Component) {
 
     var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Distribution).call(this));
 
+    _this._onActivate = _this._onActivate.bind(_this);
+    _this._onDeactivate = _this._onDeactivate.bind(_this);
     _this._onResize = _this._onResize.bind(_this);
     _this._layout = _this._layout.bind(_this);
-    // this._onActive = this._onActive.bind(this);
 
     _this.state = _this._stateFromProps(props);
     _this.state.legendPosition = 'bottom';
     _this.state.width = DEFAULT_WIDTH;
     _this.state.height = DEFAULT_HEIGHT;
+    _this.state.activeIndex = -1;
     return _this;
   }
 
@@ -104,13 +105,13 @@ var Distribution = (function (_Component) {
       var labels = container.querySelectorAll('.distribution__label');
       for (var i = 0; i < labels.length; i += 1) {
         var label = labels[i];
-        label.style.top = null;
-        label.style.left = null;
-        label.style.maxWidth = null;
+        label.style.top = undefined;
+        label.style.left = undefined;
+        label.style.maxWidth = undefined;
         var boxIndex = label.getAttribute('data-box-index');
         var box = container.querySelectorAll('[data-index="' + boxIndex + '"]')[0];
         var boxRect = box.getBoundingClientRect();
-        // var labelRect = label.getBoundingClientRect();
+        // let labelRect = label.getBoundingClientRect();
         label.style.left = boxRect.left - rect.left + 'px';
         label.style.top = boxRect.top - rect.top + 'px';
         // if (labelRect.width > boxRect.width) {
@@ -140,7 +141,7 @@ var Distribution = (function (_Component) {
   }, {
     key: '_stateFromProps',
     value: function _stateFromProps(props) {
-      var total;
+      var total = undefined;
       if (props.series) {
         total = this._seriesTotal(props.series);
       } else {
@@ -148,7 +149,7 @@ var Distribution = (function (_Component) {
       }
 
       // normalize size
-      var size = props.size || (props.small ? 'small' : props.large ? 'large' : null);
+      var size = props.size || (props.small ? 'small' : props.large ? 'large' : undefined);
 
       var state = {
         total: total,
@@ -163,26 +164,69 @@ var Distribution = (function (_Component) {
       return item.colorIndex || 'graph-' + (index + 1);
     }
   }, {
+    key: '_onActivate',
+    value: function _onActivate(index) {
+      this.setState({ activeIndex: index });
+    }
+  }, {
+    key: '_onDeactivate',
+    value: function _onDeactivate() {
+      this.setState({ activeIndex: -1 });
+    }
+  }, {
     key: '_renderLegend',
     value: function _renderLegend() {
       return _react2.default.createElement(_Legend2.default, { className: CLASS_ROOT + "__legend",
         series: this.props.series,
         units: this.props.units,
         activeIndex: this.state.activeIndex,
-        onActive: this._onActive });
+        onActive: this._onActivate });
     }
   }, {
-    key: '_renderItem',
-    value: function _renderItem(item, index, placement, labels) {
-      var boxClasses = [CLASS_ROOT + "__box"];
-      var iconClasses = [CLASS_ROOT + "__icons"];
-      var labelClasses = [CLASS_ROOT + "__label"];
-      var colorIndex = this._itemColorIndex(item, index);
-      boxClasses.push("color-index-" + colorIndex);
-      iconClasses.push("color-index-" + colorIndex);
+    key: '_renderLabel',
+    value: function _renderLabel(item, index, boundingBox) {
+      var labelClasses = [CLASS_ROOT + '__label'];
+
+      if (item.icon) {
+        labelClasses.push(CLASS_ROOT + '__label--icons');
+      }
+
+      if (boundingBox.height < THIN_HEIGHT) {
+        labelClasses.push(CLASS_ROOT + '__label--thin');
+      }
+
+      if (index === this.state.activeIndex) {
+        labelClasses.push(CLASS_ROOT + '__label--active');
+      }
+
+      return _react2.default.createElement(
+        'div',
+        { key: index, className: labelClasses.join(' '),
+          'data-box-index': index },
+        _react2.default.createElement(
+          'span',
+          { className: CLASS_ROOT + '__label-value' },
+          item.value,
+          _react2.default.createElement(
+            'span',
+            { className: CLASS_ROOT + '__label-units' },
+            this.props.units
+          )
+        ),
+        _react2.default.createElement(
+          'span',
+          { className: CLASS_ROOT + '__label-label' },
+          item.label
+        )
+      );
+    }
+  }, {
+    key: '_updateItemPlacement',
+    value: function _updateItemPlacement(item, placement) {
       var x = placement.origin[0];
       var y = placement.origin[1];
-      var width, height;
+      var width = undefined,
+          height = undefined;
       if (placement.across) {
         width = this.state.width - x;
         height = placement.areaPer * item.value / width;
@@ -195,102 +239,121 @@ var Distribution = (function (_Component) {
         placement.origin[0] += width;
       }
 
-      var text = '' + item.value;
-      if (this.props.units) {
-        text += ' ' + this.props.units;
-      }
-      if (item.label) {
-        text += ' ' + item.label;
-      }
-
-      var contents;
       if (item.icon) {
         placement.icons = true;
-        labelClasses.push(CLASS_ROOT + "__label--icons");
-        var icons = [];
-        // fill box with icons
-        var iconX = 0;
-        var iconY = 0;
-        var iconIndex = 1;
-        while (iconY < height - item.icon.height) {
-          while (iconX < width - item.icon.width) {
-            icons.push(_react2.default.createElement(
-              'g',
-              { key: iconIndex,
-                transform: "translate(" + (x + iconX) + "," + (y + iconY) + ")" },
-              item.icon.svgElement
-            ));
-            iconX += item.icon.width;
-            iconIndex += 1;
-          }
-          iconY += item.icon.height;
-          iconX = 0;
+      }
+
+      return {
+        width: width,
+        height: height,
+        x: x,
+        y: y
+      };
+    }
+  }, {
+    key: '_renderItemBox',
+    value: function _renderItemBox(boundingBox, colorIndex) {
+      var boxClasses = [CLASS_ROOT + '__item-box'];
+      boxClasses.push('color-index-' + colorIndex);
+
+      return _react2.default.createElement('rect', { className: boxClasses.join(' '),
+        x: boundingBox.x, y: boundingBox.y,
+        width: boundingBox.width, height: boundingBox.height });
+    }
+  }, {
+    key: '_renderItemIcon',
+    value: function _renderItemIcon(item, boundingBox, colorIndex) {
+      var iconClasses = [CLASS_ROOT + '__item-icons'];
+      iconClasses.push('color-index-' + colorIndex);
+
+      var icons = [];
+      // fill box with icons
+      var iconX = 0;
+      var iconY = 0;
+      var iconIndex = 1;
+
+      while (iconY < boundingBox.height - item.icon.height) {
+        while (iconX < boundingBox.width - item.icon.width) {
+          var transform = 'translate(' + (boundingBox.x + iconX) + ', ' + (boundingBox.y + iconY) + ')';
+          icons.push(_react2.default.createElement(
+            'g',
+            { key: iconIndex, transform: transform },
+            item.icon.svgElement
+          ));
+          iconX += item.icon.width;
+          iconIndex += 1;
         }
-        contents = _react2.default.createElement(
-          'g',
-          { className: iconClasses.join(' ') },
-          icons
-        );
-      } else {
-        contents = _react2.default.createElement('rect', { className: boxClasses.join(' '),
-          x: x, y: y, width: width, height: height });
+        iconY += item.icon.height;
+        iconX = 0;
       }
-
-      if (width < XSMALL_HEIGHT || height < XSMALL_HEIGHT) {
-        labelClasses.push(CLASS_ROOT + "__label--xsmall");
-      } else if (width < SMALL_HEIGHT || height < SMALL_HEIGHT) {
-        labelClasses.push(CLASS_ROOT + "__label--small");
-      }
-
-      if (height < THIN_HEIGHT) {
-        labelClasses.push(CLASS_ROOT + "__label--thin");
-      }
-
-      labels.push(_react2.default.createElement(
-        'div',
-        { key: index, className: labelClasses.join(' '), 'data-box-index': index },
-        _react2.default.createElement(
-          'span',
-          { className: CLASS_ROOT + "__label-value" },
-          item.value,
-          _react2.default.createElement(
-            'span',
-            { className: CLASS_ROOT + "__label-units" },
-            this.props.units
-          )
-        ),
-        _react2.default.createElement(
-          'span',
-          { className: CLASS_ROOT + "__label-label" },
-          item.label
-        )
-      ));
 
       return _react2.default.createElement(
         'g',
-        { key: index, 'data-index': index, onClick: item.onClick },
+        { className: iconClasses.join(' ') },
+        icons
+      );
+    }
+  }, {
+    key: '_renderItem',
+    value: function _renderItem(item, index, boundingBox) {
+      var itemClass = CLASS_ROOT + '__item';
+      var itemClasses = [itemClass];
+
+      if (item.onClick) {
+        itemClasses.push(itemClass + '--clickable');
+      }
+
+      var colorIndex = this._itemColorIndex(item, index);
+
+      var contents = undefined;
+      if (item.icon) {
+        contents = this._renderItemIcon(item, boundingBox, colorIndex);
+      } else {
+        contents = this._renderItemBox(boundingBox, colorIndex);
+      }
+
+      return _react2.default.createElement(
+        'g',
+        { key: index, className: itemClasses.join(' '),
+          onMouseEnter: this._onActivate.bind(this, index),
+          onMouseLeave: this._onDeactivate,
+          'data-index': index, onClick: item.onClick },
         contents
+      );
+    }
+  }, {
+    key: '_renderLoading',
+    value: function _renderLoading() {
+      var loadingClasses = [CLASS_ROOT + '__loading-indicator'];
+      loadingClasses.push("color-index-loading");
+      var loadingHeight = this.state.height / 2;
+      var loadingWidth = this.state.width;
+      var commands = 'M0,' + loadingHeight + ' L' + loadingWidth + ',' + loadingHeight;
+
+      return _react2.default.createElement(
+        'g',
+        { key: 'loading' },
+        _react2.default.createElement('path', { stroke: 'none', className: loadingClasses.join(' '), d: commands })
       );
     }
   }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       var classes = [CLASS_ROOT];
-      classes.push(CLASS_ROOT + "--legend-" + this.state.legendPosition);
+      classes.push(CLASS_ROOT + '--legend-' + this.state.legendPosition);
       if (this.state.size) {
-        classes.push(CLASS_ROOT + "--" + this.state.size);
+        classes.push(CLASS_ROOT + '--' + this.state.size);
       }
       if (this.props.vertical) {
-        classes.push(CLASS_ROOT + "--vertical");
-      }
-      if (!this.props.series || this.props.series.length === 0) {
-        classes.push(CLASS_ROOT + "--loading");
+        classes.push(CLASS_ROOT + '--vertical');
       }
       if (this.props.className) {
         classes.push(this.props.className);
       }
 
-      var legend = null;
+      var legend = undefined;
       if (this.props.legend) {
         legend = this._renderLegend();
       }
@@ -298,33 +361,42 @@ var Distribution = (function (_Component) {
       var boxes = [];
       var labels = [];
       if (this.props.series) {
-        var placement = {
-          areaPer: this.state.width * this.state.height / this.state.total,
-          origin: [0, 0],
-          across: false,
-          icons: false
-        };
-        boxes = this.props.series.filter(function (item) {
-          return item.value > 0;
-        }).map(function (item, index) {
-          return this._renderItem(item, index, placement, labels);
-        }, this);
+        (function () {
+          var placement = {
+            areaPer: _this2.state.width * _this2.state.height / _this2.state.total,
+            origin: [0, 0],
+            across: false,
+            icons: false
+          };
 
-        if (placement.icons) {
-          classes.push(CLASS_ROOT + "--icons");
-        }
+          boxes = _this2.props.series.filter(function (item) {
+            return item.value > 0;
+          }).map(function (item, index) {
+
+            var boundingBox = this._updateItemPlacement(item, placement);
+
+            if (boundingBox.width < SMALL_SIZE || boundingBox.height < SMALL_SIZE) {
+              placement.smallLabel = true;
+            }
+
+            labels.push(this._renderLabel(item, index, boundingBox));
+
+            return this._renderItem(item, index, boundingBox);
+          }, _this2);
+
+          if (placement.icons) {
+            classes.push(CLASS_ROOT + '--icons');
+          }
+
+          if (placement.smallLabel) {
+            classes.push(CLASS_ROOT + '--small-label');
+          }
+        })();
       }
 
       if (boxes.length === 0) {
-        classes.push(CLASS_ROOT + "--loading");
-        var loadingClasses = [CLASS_ROOT + "__loading-indicator"];
-        loadingClasses.push("color-index-loading");
-        var commands = "M0," + this.state.height / 2 + " L" + this.state.width + "," + this.state.height / 2;
-        boxes.push(_react2.default.createElement(
-          'g',
-          { key: 'loading' },
-          _react2.default.createElement('path', { stroke: 'none', className: loadingClasses.join(' '), d: commands })
-        ));
+        classes.push(CLASS_ROOT + '--loading');
+        boxes.push(this._renderLoading());
       }
 
       return _react2.default.createElement(
@@ -332,8 +404,8 @@ var Distribution = (function (_Component) {
         { ref: 'container', className: classes.join(' ') },
         _react2.default.createElement(
           'svg',
-          { ref: 'graphic', className: CLASS_ROOT + "__graphic",
-            viewBox: "0 0 " + this.state.width + " " + this.state.height,
+          { ref: 'graphic', className: CLASS_ROOT + '__graphic',
+            viewBox: '0 0 ' + this.state.width + ' ' + this.state.height,
             preserveAspectRatio: 'none' },
           boxes
         ),
