@@ -304,7 +304,7 @@ Calendar.propTypes = {
   name: PropTypes.string,
   onChange: PropTypes.func,
   value: PropTypes.string,
-  weekDays: _react.PropTypes.array
+  weekDays: PropTypes.array
 };
 
 Calendar.defaultProps = {
