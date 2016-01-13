@@ -117,19 +117,6 @@ export default class Graphic extends Component {
     }
   }
 
-  _onEnter (event) {
-    if (document.activeElement === this.refs.meter) {
-      if (this.refs.activeMeterSlice) {
-        let index = this.refs.activeMeterSlice.getAttribute('data-index');
-
-        //trigger click on active meter slice
-        if (this.props.series[index].onClick) {
-          this.props.series[index].onClick();
-        }
-      }
-    }
-  }
-
   _onRequestForNextLegend (e) {
     e.preventDefault();
     if (document.activeElement === this.refs.meter) {
@@ -141,6 +128,19 @@ export default class Graphic extends Component {
         this.props.onActivate(0);
       } else {
         this.props.onActivate(this.props.activeIndex + 1);
+      }
+    }
+  }
+
+  _onEnter (event) {
+    if (document.activeElement === this.refs.meter) {
+      if (this.refs.activeMeterSlice) {
+        let index = this.refs.activeMeterSlice.getAttribute('data-index');
+
+        //trigger click on active meter slice
+        if (this.props.series[index].onClick) {
+          this.props.series[index].onClick();
+        }
       }
     }
   }

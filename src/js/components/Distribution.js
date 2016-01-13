@@ -1,7 +1,9 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
+import ReactDOM from 'react-dom';
 import Legend from './Legend';
+import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 
 const CLASS_ROOT = "distribution";
 
@@ -16,6 +18,9 @@ export default class Distribution extends Component {
   constructor(props) {
     super();
 
+    this._onEnter = this._onEnter.bind(this);
+    this._onPreviousDistribution = this._onPreviousDistribution.bind(this);
+    this._onNextDistribution = this._onNextDistribution.bind(this);
     this._onActivate = this._onActivate.bind(this);
     this._onDeactivate = this._onDeactivate.bind(this);
     this._onResize = this._onResize.bind(this);
@@ -25,11 +30,22 @@ export default class Distribution extends Component {
     this.state.legendPosition = 'bottom';
     this.state.width = DEFAULT_WIDTH;
     this.state.height = DEFAULT_HEIGHT;
-    this.state.activeIndex = -1;
+    this.state.activeIndex = 0;
   }
 
   componentDidMount () {
-    this._initialTimer = setTimeout(this._initialTimeout, 10);
+    this._keyboardHandlers = {
+      left: this._onPreviousDistribution,
+      up: this._onPreviousDistribution,
+      right: this._onNextDistribution,
+      down: this._onNextDistribution,
+      enter: this._onEnter,
+      space: this._onEnter
+    };
+    KeyboardAccelerators.startListeningToKeyboard(
+      this, this._keyboardHandlers
+    );
+
     window.addEventListener('resize', this._onResize);
     this._onResize();
   }
@@ -43,6 +59,10 @@ export default class Distribution extends Component {
   }
 
   componentWillUnmount () {
+    KeyboardAccelerators.stopListeningToKeyboard(
+      this, this._keyboardHandlers
+    );
+
     clearTimeout(this._resizeTimer);
     window.removeEventListener('resize', this._onResize);
   }
@@ -62,7 +82,7 @@ export default class Distribution extends Component {
       this.setState({legendPosition: 'right'});
     }
 
-    let graphic = this.refs.graphic;
+    let graphic = this.refs.distribution;
     let rect = graphic.getBoundingClientRect();
     if (rect.width !== this.state.width || rect.height !== this.state.height) {
       this.setState({
@@ -132,12 +152,59 @@ export default class Distribution extends Component {
     return item.colorIndex || ('graph-' + (index + 1));
   }
 
+  _onPreviousDistribution (e) {
+    e.preventDefault();
+    if (document.activeElement === this.refs.distribution) {
+      var totalDistributionCount = (
+        ReactDOM.findDOMNode(this.refs.distributionItems).childNodes.length
+      );
+
+      if (this.state.activeIndex - 1 < 0) {
+        this._onActivate(totalDistributionCount - 1);
+      } else {
+        this._onActivate(this.state.activeIndex - 1);
+      }
+    }
+  }
+
+  _onNextDistribution (e) {
+    e.preventDefault();
+    if (document.activeElement === this.refs.distribution) {
+      var totalDistributionCount = (
+        ReactDOM.findDOMNode(this.refs.distributionItems).childNodes.length
+      );
+
+      if (this.state.activeIndex + 1 >= totalDistributionCount) {
+        this._onActivate(0);
+      } else {
+        this._onActivate(this.state.activeIndex + 1);
+      }
+    }
+  }
+
+  _onEnter (event) {
+    if (document.activeElement === this.refs.distribution) {
+      if (this.refs.activeDistribution) {
+        let index = this.refs.activeDistribution.getAttribute('data-index');
+
+        let activeDistribution = this.props.series.filter(function(item) {
+          return item.value > 0;
+        })[index];
+
+        //trigger click on active distribution
+        if (activeDistribution.onClick) {
+          activeDistribution.onClick();
+        }
+      }
+    }
+  }
+
   _onActivate (index) {
     this.setState({activeIndex: index});
   }
 
   _onDeactivate () {
-    this.setState({activeIndex: -1});
+    this.setState({activeIndex: 0});
   }
 
   _renderLegend () {
@@ -167,14 +234,16 @@ export default class Distribution extends Component {
 
     return (
       <div key={index} className={labelClasses.join(' ')}
-        data-box-index={index}>
-        <span className={`${CLASS_ROOT}__label-value`}>
+        data-box-index={index} role="presentation">
+        <span className={`${CLASS_ROOT}__label-value`} role="presentation">
           {item.value}
-          <span className={`${CLASS_ROOT}__label-units`}>
+          <span className={`${CLASS_ROOT}__label-units`} role="presentation">
             {this.props.units}
           </span>
         </span>
-        <span className={`${CLASS_ROOT}__label-label`}>{item.label}</span>
+        <span className={`${CLASS_ROOT}__label-label`} role="presentation">
+          {item.label}
+        </span>
       </div>
     );
   }
@@ -212,7 +281,7 @@ export default class Distribution extends Component {
     boxClasses.push(`color-index-${colorIndex}`);
 
     return (
-      <rect className={boxClasses.join(' ')}
+      <rect className={boxClasses.join(' ')} role="presentation"
         x={boundingBox.x} y={boundingBox.y}
         width={boundingBox.width} height={boundingBox.height}>
       </rect>
@@ -247,7 +316,7 @@ export default class Distribution extends Component {
     }
 
     return (
-      <g className={iconClasses.join(' ')}>
+      <g className={iconClasses.join(' ')} role="presentation">
         {icons}
       </g>
     );
@@ -261,6 +330,11 @@ export default class Distribution extends Component {
       itemClasses.push(`${itemClass}--clickable`);
     }
 
+    let activeDistribution;
+    if (index === this.state.activeIndex) {
+      activeDistribution = 'activeDistribution';
+    }
+
     let colorIndex = this._itemColorIndex(item, index);
 
     let contents;
@@ -270,11 +344,19 @@ export default class Distribution extends Component {
       contents = this._renderItemBox(boundingBox, colorIndex);
     }
 
+    let distributionItemTitleId = `${this.props.a11yTitleId}_item_title_${index}`;
+
     return (
       <g key={index} className={itemClasses.join(' ')}
-        onMouseEnter={this._onActivate.bind(this, index)}
+        role="tab" onMouseOver={this._onActivate.bind(this, index)}
         onMouseLeave={this._onDeactivate}
+        id={`${this.props.a11yTitleId}_item_${index}`}
+        aria-labelledby={distributionItemTitleId}
+        ref={activeDistribution}
         data-index={index} onClick={item.onClick}>
+        <title id={distributionItemTitleId}>
+          {`${item.value} ${this.props.units || ''} ${item.label || ''}`}
+        </title>
         {contents}
       </g>
     );
@@ -347,17 +429,45 @@ export default class Distribution extends Component {
       }
     }
 
+    let role = 'tablist';
+    let a11yTitle = this.props.a11yTitle;
     if (boxes.length === 0) {
       classes.push(`${CLASS_ROOT}--loading`);
       boxes.push(this._renderLoading());
+      role = 'img';
+      a11yTitle = 'Loading Distribution';
+    }
+
+    let activeDescendant;
+    if (this.state.activeIndex >= 0) {
+      activeDescendant = `${this.props.a11yTitleId}_item_${this.state.activeIndex}`;
+    }
+
+    let a11yTitleNode = (
+      <title id={this.props.a11yTitleId}>{a11yTitle}</title>
+    );
+
+    let a11yDescNode;
+    if (this.props.a11yDesc) {
+      a11yDescNode = (
+        <desc id={this.props.a11yDescId}>
+          {this.props.a11yDesc}
+        </desc>
+      );
     }
 
     return (
       <div ref="container" className={classes.join(' ')}>
-        <svg ref="graphic" className={`${CLASS_ROOT}__graphic`}
+        <svg ref="distribution" className={`${CLASS_ROOT}__graphic`}
           viewBox={`0 0 ${this.state.width} ${this.state.height}`}
-          preserveAspectRatio="none">
-          {boxes}
+          preserveAspectRatio="none" tabIndex="0" role={role}
+          aria-activedescendant={activeDescendant}
+          aria-labelledby={this.props.a11yTitleId + ' ' + this.props.a11yDescId}>
+          {a11yTitleNode}
+          {a11yDescNode}
+          <g ref="distributionItems">
+            {boxes}
+          </g>
         </svg>
         {labels}
         {legend}
@@ -368,6 +478,10 @@ export default class Distribution extends Component {
 }
 
 Distribution.propTypes = {
+  a11yTitle: PropTypes.string,
+  a11yTitleId: PropTypes.string,
+  a11yDescId: PropTypes.string,
+  a11yDesc: PropTypes.string,
   large: PropTypes.bool,
   legend: PropTypes.bool,
   legendTotal: PropTypes.bool,
@@ -387,4 +501,10 @@ Distribution.propTypes = {
   small: PropTypes.bool,
   units: PropTypes.string,
   vertical: PropTypes.bool
+};
+
+Distribution.defaultProps = {
+  a11yTitleId: 'distribution-title',
+  a11yTitle: 'Distribution',
+  a11yDescId: 'distribution-desc'
 };
