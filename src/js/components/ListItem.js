@@ -65,5 +65,6 @@ ListItem.propTypes = {
 };
 
 ListItem.defaultProps = {
+  align: 'center',
   direction: 'row'
 };
