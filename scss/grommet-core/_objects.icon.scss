@@ -8,6 +8,7 @@
   cursor: pointer;
   fill: $icon-color;
   stroke: $icon-color;
+  flex: 0 0 auto;
 
   *:not([stroke]) {
     &[fill="none"] {
@@ -79,6 +80,7 @@
   width: $inuit-base-spacing-unit;
   height: $inuit-base-spacing-unit;
   vertical-align: middle;
+  flex: 0 0 auto;
 
   .status-icon__base {
     fill: map-get($brand-status-colors, unknown);
