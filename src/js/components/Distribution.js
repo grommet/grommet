@@ -8,8 +8,7 @@ const CLASS_ROOT = "distribution";
 const DEFAULT_WIDTH = 400;
 const DEFAULT_HEIGHT = 200;
 
-const SMALL_HEIGHT = 120;
-const XSMALL_HEIGHT = 60;
+const SMALL_SIZE = 120;
 const THIN_HEIGHT = 72;
 
 export default class Distribution extends Component {
@@ -17,14 +16,16 @@ export default class Distribution extends Component {
   constructor(props) {
     super();
 
+    this._onActivate = this._onActivate.bind(this);
+    this._onDeactivate = this._onDeactivate.bind(this);
     this._onResize = this._onResize.bind(this);
     this._layout = this._layout.bind(this);
-    // this._onActive = this._onActive.bind(this);
 
     this.state = this._stateFromProps(props);
     this.state.legendPosition = 'bottom';
     this.state.width = DEFAULT_WIDTH;
     this.state.height = DEFAULT_HEIGHT;
+    this.state.activeIndex = -1;
   }
 
   componentDidMount () {
@@ -34,7 +35,7 @@ export default class Distribution extends Component {
   }
 
   componentWillReceiveProps (newProps) {
-    var state = this._stateFromProps(newProps);
+    let state = this._stateFromProps(newProps);
     state.width = this.state.width;
     state.height = this.state.height;
     this.setState(state);
@@ -54,15 +55,15 @@ export default class Distribution extends Component {
 
   _layout () {
     // legendPosition based on available window orientation
-    var ratio = window.innerWidth / window.innerHeight;
+    let ratio = window.innerWidth / window.innerHeight;
     if (ratio < 0.8) {
       this.setState({legendPosition: 'bottom'});
     } else if (ratio > 1.2) {
       this.setState({legendPosition: 'right'});
     }
 
-    var graphic = this.refs.graphic;
-    var rect = graphic.getBoundingClientRect();
+    let graphic = this.refs.graphic;
+    let rect = graphic.getBoundingClientRect();
     if (rect.width !== this.state.width || rect.height !== this.state.height) {
       this.setState({
         width: rect.width,
@@ -71,17 +72,17 @@ export default class Distribution extends Component {
     }
 
     // adjust box label positions
-    var container = this.refs.container;
-    var labels = container.querySelectorAll('.distribution__label');
-    for (var i = 0; i < labels.length; i += 1) {
-      var label = labels[i];
-      label.style.top = null;
-      label.style.left = null;
-      label.style.maxWidth = null;
-      var boxIndex = label.getAttribute('data-box-index');
-      var box = container.querySelectorAll('[data-index="' + boxIndex + '"]')[0];
-      var boxRect = box.getBoundingClientRect();
-      // var labelRect = label.getBoundingClientRect();
+    let container = this.refs.container;
+    let labels = container.querySelectorAll('.distribution__label');
+    for (let i = 0; i < labels.length; i += 1) {
+      let label = labels[i];
+      label.style.top = undefined;
+      label.style.left = undefined;
+      label.style.maxWidth = undefined;
+      let boxIndex = label.getAttribute('data-box-index');
+      let box = container.querySelectorAll('[data-index="' + boxIndex + '"]')[0];
+      let boxRect = box.getBoundingClientRect();
+      // let labelRect = label.getBoundingClientRect();
       label.style.left = (boxRect.left - rect.left) + 'px';
       label.style.top = (boxRect.top - rect.top) + 'px';
       // if (labelRect.width > boxRect.width) {
@@ -98,7 +99,7 @@ export default class Distribution extends Component {
   }
 
   _seriesTotal (series) {
-    var total = 0;
+    let total = 0;
     series.some(function (item) {
       total += item.value;
     });
@@ -107,7 +108,7 @@ export default class Distribution extends Component {
 
   // Generates state based on the provided props.
   _stateFromProps (props) {
-    var total;
+    let total;
     if (props.series) {
       total = this._seriesTotal(props.series);
     } else {
@@ -115,11 +116,11 @@ export default class Distribution extends Component {
     }
 
     // normalize size
-    var size = props.size ||
+    let size = props.size ||
       (props.small ? 'small' :
-        (props.large ? 'large' : null));
+        (props.large ? 'large' : undefined));
 
-    var state = {
+    let state = {
       total: total,
       size: size
     };
@@ -131,26 +132,57 @@ export default class Distribution extends Component {
     return item.colorIndex || ('graph-' + (index + 1));
   }
 
+  _onActivate (index) {
+    this.setState({activeIndex: index});
+  }
+
+  _onDeactivate () {
+    this.setState({activeIndex: -1});
+  }
+
   _renderLegend () {
     return (
       <Legend className={CLASS_ROOT + "__legend"}
         series={this.props.series}
         units={this.props.units}
         activeIndex={this.state.activeIndex}
-        onActive={this._onActive} />
+        onActive={this._onActivate} />
     );
   }
 
-  _renderItem (item, index, placement, labels) {
-    var boxClasses = [CLASS_ROOT + "__box"];
-    var iconClasses = [CLASS_ROOT + "__icons"];
-    var labelClasses = [CLASS_ROOT + "__label"];
-    var colorIndex = this._itemColorIndex(item, index);
-    boxClasses.push("color-index-" + colorIndex);
-    iconClasses.push("color-index-" + colorIndex);
-    var x = placement.origin[0];
-    var y = placement.origin[1];
-    var width, height;
+  _renderLabel (item, index, boundingBox) {
+    let labelClasses = [`${CLASS_ROOT}__label`];
+
+    if (item.icon) {
+      labelClasses.push(`${CLASS_ROOT}__label--icons`);
+    }
+
+    if (boundingBox.height < THIN_HEIGHT) {
+      labelClasses.push(`${CLASS_ROOT}__label--thin`);
+    }
+
+    if (index === this.state.activeIndex) {
+      labelClasses.push(`${CLASS_ROOT}__label--active`);
+    }
+
+    return (
+      <div key={index} className={labelClasses.join(' ')}
+        data-box-index={index}>
+        <span className={`${CLASS_ROOT}__label-value`}>
+          {item.value}
+          <span className={`${CLASS_ROOT}__label-units`}>
+            {this.props.units}
+          </span>
+        </span>
+        <span className={`${CLASS_ROOT}__label-label`}>{item.label}</span>
+      </div>
+    );
+  }
+
+  _updateItemPlacement (item, placement) {
+    let x = placement.origin[0];
+    let y = placement.origin[1];
+    let width, height;
     if (placement.across) {
       width = this.state.width - x;
       height = (placement.areaPer * item.value) / width;
@@ -163,135 +195,167 @@ export default class Distribution extends Component {
       placement.origin[0] += width;
     }
 
-    var text = '' + item.value;
-    if (this.props.units) {
-      text += ' ' + this.props.units;
-    }
-    if (item.label) {
-      text += ' ' + item.label;
-    }
-
-    var contents;
     if (item.icon) {
       placement.icons = true;
-      labelClasses.push(CLASS_ROOT + "__label--icons");
-      var icons = [];
-      // fill box with icons
-      var iconX = 0;
-      var iconY = 0;
-      var iconIndex = 1;
-      while (iconY < (height - item.icon.height)) {
-        while (iconX < (width - item.icon.width)) {
-          icons.push(
-            <g key={iconIndex}
-              transform={"translate(" + (x + iconX) + "," + (y + iconY) + ")"}>
-              {item.icon.svgElement}
-            </g>
-          );
-          iconX += item.icon.width;
-          iconIndex += 1;
-        }
-        iconY += item.icon.height;
-        iconX = 0;
-      }
-      contents = (
-        <g className={iconClasses.join(' ')}>
-          {icons}
-        </g>
-      );
-    } else {
-      contents = (
-        <rect className={boxClasses.join(' ')}
-          x={x} y={y} width={width} height={height}>
-        </rect>
-      );
     }
 
-    if (width < XSMALL_HEIGHT || height < XSMALL_HEIGHT) {
-      labelClasses.push(CLASS_ROOT + "__label--xsmall");
-    } else if (width < SMALL_HEIGHT || height < SMALL_HEIGHT) {
-      labelClasses.push(CLASS_ROOT + "__label--small");
-    }
+    return {
+      width: width,
+      height: height,
+      x: x,
+      y: y
+    };
+  }
 
-    if (height < THIN_HEIGHT) {
-      labelClasses.push(CLASS_ROOT + "__label--thin");
-    }
-
-    labels.push(
-      <div key={index} className={labelClasses.join(' ')} data-box-index={index}>
-        <span className={CLASS_ROOT + "__label-value"}>
-          {item.value}
-          <span className={CLASS_ROOT + "__label-units"}>{this.props.units}</span>
-        </span>
-        <span className={CLASS_ROOT + "__label-label"}>{item.label}</span>
-      </div>
-    );
+  _renderItemBox (boundingBox, colorIndex) {
+    let boxClasses = [`${CLASS_ROOT}__item-box`];
+    boxClasses.push(`color-index-${colorIndex}`);
 
     return (
-      <g key={index} data-index={index} onClick={item.onClick}>
+      <rect className={boxClasses.join(' ')}
+        x={boundingBox.x} y={boundingBox.y}
+        width={boundingBox.width} height={boundingBox.height}>
+      </rect>
+    );
+  }
+
+  _renderItemIcon (item, boundingBox, colorIndex) {
+    let iconClasses = [`${CLASS_ROOT}__item-icons`];
+    iconClasses.push(`color-index-${colorIndex}`);
+
+    let icons = [];
+    // fill box with icons
+    let iconX = 0;
+    let iconY = 0;
+    let iconIndex = 1;
+
+    while (iconY < (boundingBox.height - item.icon.height)) {
+      while (iconX < (boundingBox.width - item.icon.width)) {
+        let transform = (
+          `translate(${boundingBox.x + iconX}, ${boundingBox.y + iconY})`
+        );
+        icons.push(
+          <g key={iconIndex} transform={transform}>
+            {item.icon.svgElement}
+          </g>
+        );
+        iconX += item.icon.width;
+        iconIndex += 1;
+      }
+      iconY += item.icon.height;
+      iconX = 0;
+    }
+
+    return (
+      <g className={iconClasses.join(' ')}>
+        {icons}
+      </g>
+    );
+  }
+
+  _renderItem (item, index, boundingBox) {
+    let itemClass = `${CLASS_ROOT}__item`;
+    let itemClasses = [itemClass];
+
+    if (item.onClick) {
+      itemClasses.push(`${itemClass}--clickable`);
+    }
+
+    let colorIndex = this._itemColorIndex(item, index);
+
+    let contents;
+    if (item.icon) {
+      contents = this._renderItemIcon(item, boundingBox, colorIndex);
+    } else {
+      contents = this._renderItemBox(boundingBox, colorIndex);
+    }
+
+    return (
+      <g key={index} className={itemClasses.join(' ')}
+        onMouseEnter={this._onActivate.bind(this, index)}
+        onMouseLeave={this._onDeactivate}
+        data-index={index} onClick={item.onClick}>
         {contents}
       </g>
     );
   }
 
+  _renderLoading () {
+    let loadingClasses = [`${CLASS_ROOT}__loading-indicator`];
+    loadingClasses.push("color-index-loading");
+    let loadingHeight = this.state.height / 2;
+    let loadingWidth = this.state.width;
+    let commands = `M0,${loadingHeight} L${loadingWidth},${loadingHeight}`;
+
+    return (
+      <g key="loading">
+        <path stroke="none" className={loadingClasses.join(' ')} d={commands} />
+      </g>
+    );
+  }
+
   render () {
-    var classes = [CLASS_ROOT];
-    classes.push(CLASS_ROOT + "--legend-" + this.state.legendPosition);
+    let classes = [CLASS_ROOT];
+    classes.push(`${CLASS_ROOT}--legend-${this.state.legendPosition}`);
     if (this.state.size) {
-      classes.push(CLASS_ROOT + "--" + this.state.size);
+      classes.push(`${CLASS_ROOT}--${this.state.size}`);
     }
     if (this.props.vertical) {
-      classes.push(CLASS_ROOT + "--vertical");
-    }
-    if (! this.props.series || this.props.series.length === 0) {
-      classes.push(CLASS_ROOT + "--loading");
+      classes.push(`${CLASS_ROOT}--vertical`);
     }
     if (this.props.className) {
       classes.push(this.props.className);
     }
 
-    var legend = null;
+    let legend;
     if (this.props.legend) {
       legend = this._renderLegend();
     }
 
-    var boxes = [];
-    var labels = [];
+    let boxes = [];
+    let labels = [];
     if (this.props.series) {
-      var placement = {
+      let placement = {
         areaPer: (this.state.width * this.state.height) / this.state.total,
         origin: [0, 0],
         across: false,
         icons: false
       };
+
       boxes = this.props.series.filter(function(item) {
         return item.value > 0;
       }).map(function (item, index) {
-        return this._renderItem(item, index, placement, labels);
+
+        let boundingBox = this._updateItemPlacement(item, placement);
+
+        if (boundingBox.width < SMALL_SIZE ||
+          boundingBox.height < SMALL_SIZE) {
+          placement.smallLabel = true;
+        }
+
+        labels.push(this._renderLabel(item, index, boundingBox));
+
+        return this._renderItem(item, index, boundingBox);
       }, this);
 
       if (placement.icons) {
-        classes.push(CLASS_ROOT + "--icons");
+        classes.push(`${CLASS_ROOT}--icons`);
+      }
+
+      if (placement.smallLabel) {
+        classes.push(`${CLASS_ROOT}--small-label`);
       }
     }
 
     if (boxes.length === 0) {
-      classes.push(CLASS_ROOT + "--loading");
-      var loadingClasses = [CLASS_ROOT + "__loading-indicator"];
-      loadingClasses.push("color-index-loading");
-      var commands = "M0," + (this.state.height / 2) +
-        " L" + this.state.width + "," + (this.state.height / 2);
-      boxes.push(
-        <g key="loading">
-          <path stroke="none" className={loadingClasses.join(' ')} d={commands} />
-        </g>
-      );
+      classes.push(`${CLASS_ROOT}--loading`);
+      boxes.push(this._renderLoading());
     }
 
     return (
       <div ref="container" className={classes.join(' ')}>
-        <svg ref="graphic" className={CLASS_ROOT + "__graphic"}
-          viewBox={"0 0 " + this.state.width + " " + this.state.height}
+        <svg ref="graphic" className={`${CLASS_ROOT}__graphic`}
+          viewBox={`0 0 ${this.state.width} ${this.state.height}`}
           preserveAspectRatio="none">
           {boxes}
         </svg>
