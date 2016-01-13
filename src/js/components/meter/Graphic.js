@@ -14,6 +14,7 @@ export default class Graphic extends Component {
     super();
     this.state = this._stateFromProps(props);
 
+    this._onEnter = this._onEnter.bind(this);
     this._onRequestForNextLegend = this._onRequestForNextLegend.bind(this);
     this._onRequestForPreviousLegend = this._onRequestForPreviousLegend.bind(this);
   }
@@ -23,7 +24,9 @@ export default class Graphic extends Component {
       left: this._onRequestForPreviousLegend,
       up: this._onRequestForPreviousLegend,
       right: this._onRequestForNextLegend,
-      down: this._onRequestForNextLegend
+      down: this._onRequestForNextLegend,
+      enter: this._onEnter,
+      space: this._onEnter
     };
     KeyboardAccelerators.startListeningToKeyboard(
       this, this._keyboardHandlers
@@ -53,7 +56,9 @@ export default class Graphic extends Component {
 
   _renderSlice (trackIndex, item, itemIndex, startValue, threshold) {
     let classes = [CLASS_ROOT + "__slice"];
+    let activeMeterSlice;
     if (itemIndex === this.props.activeIndex) {
+      activeMeterSlice = 'activeMeterSlice';
       classes.push(CLASS_ROOT + "__slice--active");
     }
     classes.push("color-index-" + item.colorIndex);
@@ -69,7 +74,8 @@ export default class Graphic extends Component {
       let a11yTitle = `${item.value} ${item.label || this.props.units || ''}`;
 
       path = buildPath(itemIndex, commands, classes,
-        this.props.onActivate, item.onClick, a11yDescId, a11yTitle);
+        this.props.onActivate, item.onClick, a11yDescId,
+        a11yTitle, activeMeterSlice);
     }
 
     return path;
@@ -102,6 +108,19 @@ export default class Graphic extends Component {
         this.props.onActivate(totalValueCount - 1);
       } else {
         this.props.onActivate(this.props.activeIndex - 1);
+      }
+    }
+  }
+
+  _onEnter (event) {
+    if (document.activeElement === this.refs.meter) {
+      if (this.refs.activeMeterSlice) {
+        let index = this.refs.activeMeterSlice.getAttribute('data-index');
+
+        //trigger click on active meter slice
+        if (this.props.series[index].onClick) {
+          this.props.series[index].onClick();
+        }
       }
     }
   }

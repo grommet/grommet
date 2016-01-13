@@ -61,14 +61,17 @@ export default {
     return Math.min(360, Math.max(0, startAngle + (anglePer * value)));
   },
 
-  buildPath (itemIndex, commands, classes, onActivate, onClick, a11yDescId, a11yTitle) {
+  buildPath (itemIndex, commands, classes, onActivate,
+    onClick, a11yDescId, a11yTitle, activeMeterSlice) {
     if (onActivate) {
       var onOver = onActivate.bind(null, itemIndex);
       var onOut = onActivate.bind(null, null);
 
       let a11yRoles = {};
       let titleComponent;
+      let activeSlice;
       if (a11yTitle && a11yDescId) {
+        activeSlice = activeMeterSlice;
         let pathTitleId = `title_${a11yDescId}`;
         a11yRoles['aria-labelledby'] = pathTitleId;
         a11yRoles.id = a11yDescId;
@@ -83,8 +86,8 @@ export default {
       return (
         <g key={itemIndex} ref={a11yDescId} {...a11yRoles}>
           {titleComponent}
-          <path className={classes.join(' ')} d={commands}
-            onFocus={onOver} onBlur={onOut}
+          <path ref={activeSlice} className={classes.join(' ')} d={commands}
+            onFocus={onOver} onBlur={onOut} data-index={itemIndex}
             onMouseOver={onOver} onMouseOut={onOut}
             onClick={onClick} />
         </g>

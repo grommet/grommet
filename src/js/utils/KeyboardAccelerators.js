@@ -20,21 +20,20 @@ const KEYS = {
 };
 
 var _keyboardAccelerators = {};
-var _listenersCounter = 0;
 var _listeners = [];
 var _isKeyboardAcceleratorListening = false;
 
 var _onKeyboardAcceleratorKeyPress = (e) => {
   var key = (e.keyCode ? e.keyCode : e.which);
-  for (var i = _listenersCounter - 1; i >= 0; i--) {
-    var id = _listeners[i];
-    var handlers = _keyboardAccelerators[id].handlers;
+  _listeners.reverse().some(function (listener) {
+    var handlers = _keyboardAccelerators[listener].handlers;
     if (handlers.hasOwnProperty(key)) {
       if (handlers[key](e)) {
-        break;
+        return true;
       }
     }
-  }
+    return false;
+  });
 };
 
 // KeyboardAccelerators is a utility for handling keyboard events.
@@ -60,33 +59,23 @@ export default {
 
   _isComponentListening (element) {
     var id = element.getAttribute('data-reactid');
-    for (var i = 0; i < _listenersCounter; i++) {
-      if (_listeners[i] === id) {
-        return true;
-      }
-    }
-    return false;
+
+    return _listeners.some(function (listener) {
+      return listener === id;
+    });
   },
 
   _subscribeComponent (element) {
     var id = element.getAttribute('data-reactid');
-    _listeners[_listenersCounter] = id;
-    _listenersCounter++;
+    _listeners.push(id);
   },
 
   _unsubscribeComponent (element) {
     var id = element.getAttribute('data-reactid');
-    var i = 0;
-    for (; i < _listenersCounter; i++) {
-      if (_listeners[i] == id) {
-        break;
-      }
-    }
-    for (; i < _listenersCounter - 1; i++) {
-      _listeners[i] = _listeners[i + 1];
-    }
-    _listenersCounter--;
-    _listeners[_listenersCounter] = null;
+
+    var removeListenerIndex = _listeners.indexOf(id);
+    _listeners.splice(removeListenerIndex, 1);
+
     delete _keyboardAccelerators[id];
   },
 
@@ -152,7 +141,7 @@ export default {
       this._unsubscribeComponent(element);
     }
 
-    if (_listenersCounter === 0) {
+    if (_listeners.length === 0) {
       window.removeEventListener("keydown", _onKeyboardAcceleratorKeyPress);
       _isKeyboardAcceleratorListening = false;
     }
