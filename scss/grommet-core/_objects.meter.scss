@@ -63,6 +63,7 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
   &__value {
     white-space: normal;
     pointer-events: none;
+    min-width: $inuit-base-spacing-unit * 3;
 
     &--active {
       pointer-events: auto;
