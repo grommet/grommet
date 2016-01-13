@@ -212,8 +212,7 @@ export default class Calendar extends Component {
   }
 
   _renderDrop () {
-    var weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-    var headerCells = weekDays.map(function (day) {
+    var headerCells =this.props.weekDays.map(function (day) {
       return <th key={day}>{day}</th>;
     });
 
@@ -304,9 +303,11 @@ Calendar.propTypes = {
   id: PropTypes.string,
   name: PropTypes.string,
   onChange: PropTypes.func,
-  value: PropTypes.string
+  value: PropTypes.string,
+  weekDays: _react.PropTypes.array
 };
 
 Calendar.defaultProps = {
-  value: moment().format('YYYY-MM-DD')
+  value: moment().format('YYYY-MM-DD'),
+  weekDays: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 };
