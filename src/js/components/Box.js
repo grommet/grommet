@@ -125,7 +125,7 @@ export default class Box extends Component {
 
 Box.propTypes = {
   a11yTitle: PropTypes.string,
-  align: PropTypes.oneOf(['start', 'center', 'end']),
+  align: PropTypes.oneOf(['start', 'center', 'end', 'stretch']),
   appCentered: PropTypes.bool,
   backgroundImage: PropTypes.string,
   colorIndex: PropTypes.string,
