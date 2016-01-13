@@ -373,12 +373,22 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
             margin-left: round($inuit-base-spacing-unit / 6);
           }
         }
+
+        &.meter--legend-right {
+          .meter__value {
+            min-width: $inuit-base-spacing-unit * 3.5;
+          }
+        }
       }
 
       &.meter--legend-right {
         .meter__legend {
           top: 0px;
           @include transform(none);
+        }
+
+        .meter__value {
+          min-width: $inuit-base-spacing-unit * 2;
         }
       }
 
@@ -390,6 +400,18 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
         .meter__value-value,
         .meter__value-units {
           @include inuit-font-size($inuit-base-font-size);
+        }
+
+        &.meter--legend-right {
+          .meter__value {
+            min-width: double($inuit-base-spacing-unit) * 0.875;
+          }
+
+          &.meter--stacked {
+            .meter__value {
+              min-width: $inuit-base-spacing-unit * 3;
+            }
+          }
         }
       }
 
@@ -443,6 +465,10 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
         .meter__legend {
           top: halve($meter-size);
         }
+
+        .meter__value {
+          min-width: $inuit-base-spacing-unit * 2 + halve($inuit-base-spacing-unit);
+        }
       }
 
       &.meter--small {
@@ -457,6 +483,10 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
         &.meter--legend-right {
           .meter__legend {
             top: halve($meter-small-size);
+          }
+
+          .meter__value {
+            min-width: double($inuit-base-spacing-unit) * 0.875;
           }
         }
       }
@@ -750,7 +780,7 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
         .meter {
           &__value {
             top: halve($meter-small-size);
-            margin-left: - ($meter-small-size - $meter-arc-small-size) + quarter($inuit-base-spacing-unit);
+            margin-left: - halve($inuit-base-spacing-unit);
           }
 
           &__minmax-container {
@@ -783,6 +813,18 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
           .meter__value {
             margin-left: - ($meter-small-size - $meter-arc-small-size) - round($inuit-base-spacing-unit * 1.5);
           }
+        }
+      }
+
+      &.meter--legend-right {
+        &.meter--small {
+          .meter__value {
+            min-width: $inuit-base-spacing-unit * 3 + halve(halve($inuit-base-spacing-unit));
+          }
+        }
+
+        .meter__value {
+          min-width: $inuit-base-spacing-unit * 5;
         }
       }
     }
