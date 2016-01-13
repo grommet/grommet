@@ -63,7 +63,7 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
   &__value {
     white-space: normal;
     pointer-events: none;
-    min-width: $inuit-base-spacing-unit * 3;
+    min-width: $inuit-base-spacing-unit * 5;
 
     &--active {
       pointer-events: auto;
@@ -306,7 +306,10 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
       &__values .meter__slice {
         // stroke-width: $meter-slice-width;
         @include graph-stroke-color();
-        cursor: pointer;
+
+        &--clickable {
+          cursor: pointer;
+        }
 
         @include media-query(lap-and-up) {
           transition: stroke-width 0.2s;
@@ -516,7 +519,10 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
       &__values .meter__slice {
         // stroke-width: $meter-slice-width;
         @include graph-stroke-color();
-        cursor: pointer;
+
+        &--clickable {
+          cursor: pointer;
+        }
 
         @include media-query(lap-and-up) {
           transition: stroke-width 0.2s;
