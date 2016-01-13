@@ -176,7 +176,7 @@ exports.default = Box;
 
 Box.propTypes = {
   a11yTitle: _react.PropTypes.string,
-  align: _react.PropTypes.oneOf(['start', 'center', 'end']),
+  align: _react.PropTypes.oneOf(['start', 'center', 'end', 'stretch']),
   appCentered: _react.PropTypes.bool,
   backgroundImage: _react.PropTypes.string,
   colorIndex: _react.PropTypes.string,

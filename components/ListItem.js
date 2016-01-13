@@ -107,6 +107,8 @@ ListItem.propTypes = _extends({
 
 ListItem.defaultProps = {
   align: 'center',
-  direction: 'row'
+  direction: 'row',
+  pad: { horizontal: 'medium', vertical: 'small' },
+  separator: 'bottom'
 };
 module.exports = exports['default'];
