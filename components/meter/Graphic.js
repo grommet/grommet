@@ -46,6 +46,7 @@ var Graphic = (function (_Component) {
 
     _this.state = _this._stateFromProps(props);
 
+    _this._onEnter = _this._onEnter.bind(_this);
     _this._onRequestForNextLegend = _this._onRequestForNextLegend.bind(_this);
     _this._onRequestForPreviousLegend = _this._onRequestForPreviousLegend.bind(_this);
     return _this;
@@ -58,7 +59,9 @@ var Graphic = (function (_Component) {
         left: this._onRequestForPreviousLegend,
         up: this._onRequestForPreviousLegend,
         right: this._onRequestForNextLegend,
-        down: this._onRequestForNextLegend
+        down: this._onRequestForNextLegend,
+        enter: this._onEnter,
+        space: this._onEnter
       };
       _KeyboardAccelerators2.default.startListeningToKeyboard(this, this._keyboardHandlers);
     }
@@ -93,7 +96,9 @@ var Graphic = (function (_Component) {
     key: '_renderSlice',
     value: function _renderSlice(trackIndex, item, itemIndex, startValue, threshold) {
       var classes = [CLASS_ROOT + "__slice"];
+      var activeMeterSlice = undefined;
       if (itemIndex === this.props.activeIndex) {
+        activeMeterSlice = 'activeMeterSlice';
         classes.push(CLASS_ROOT + "__slice--active");
       }
       classes.push("color-index-" + item.colorIndex);
@@ -107,7 +112,7 @@ var Graphic = (function (_Component) {
         var a11yDescId = this.props.a11yDescId + '_' + itemIndex;
         var a11yTitle = item.value + ' ' + (item.label || this.props.units || '');
 
-        path = (0, _utils.buildPath)(itemIndex, commands, classes, this.props.onActivate, item.onClick, a11yDescId, a11yTitle);
+        path = (0, _utils.buildPath)(itemIndex, commands, classes, this.props.onActivate, item.onClick, a11yDescId, a11yTitle, activeMeterSlice);
       }
 
       return path;
@@ -141,6 +146,20 @@ var Graphic = (function (_Component) {
           this.props.onActivate(totalValueCount - 1);
         } else {
           this.props.onActivate(this.props.activeIndex - 1);
+        }
+      }
+    }
+  }, {
+    key: '_onEnter',
+    value: function _onEnter(event) {
+      if (document.activeElement === this.refs.meter) {
+        if (this.refs.activeMeterSlice) {
+          var index = this.refs.activeMeterSlice.getAttribute('data-index');
+
+          //trigger click on active meter slice
+          if (this.props.series[index].onClick) {
+            this.props.series[index].onClick();
+          }
         }
       }
     }

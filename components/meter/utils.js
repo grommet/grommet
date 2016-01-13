@@ -68,14 +68,16 @@ exports.default = {
     return Math.min(360, Math.max(0, startAngle + anglePer * value));
   },
 
-  buildPath: function buildPath(itemIndex, commands, classes, onActivate, onClick, a11yDescId, a11yTitle) {
+  buildPath: function buildPath(itemIndex, commands, classes, onActivate, onClick, a11yDescId, a11yTitle, activeMeterSlice) {
     if (onActivate) {
       var onOver = onActivate.bind(null, itemIndex);
       var onOut = onActivate.bind(null, null);
 
       var a11yRoles = {};
       var titleComponent = undefined;
+      var activeSlice = undefined;
       if (a11yTitle && a11yDescId) {
+        activeSlice = activeMeterSlice;
         var pathTitleId = 'title_' + a11yDescId;
         a11yRoles['aria-labelledby'] = pathTitleId;
         a11yRoles.id = a11yDescId;
@@ -91,8 +93,8 @@ exports.default = {
         'g',
         _extends({ key: itemIndex, ref: a11yDescId }, a11yRoles),
         titleComponent,
-        _react2.default.createElement('path', { className: classes.join(' '), d: commands,
-          onFocus: onOver, onBlur: onOut,
+        _react2.default.createElement('path', { ref: activeSlice, className: classes.join(' '), d: commands,
+          onFocus: onOver, onBlur: onOut, 'data-index': itemIndex,
           onMouseOver: onOver, onMouseOut: onOut,
           onClick: onClick })
       );
