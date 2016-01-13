@@ -61,6 +61,11 @@ export default class Graphic extends Component {
       activeMeterSlice = 'activeMeterSlice';
       classes.push(CLASS_ROOT + "__slice--active");
     }
+
+    if (item.onClick) {
+      classes.push(CLASS_ROOT + "__slice--clickable");
+    }
+
     classes.push("color-index-" + item.colorIndex);
 
     let commands = this._sliceCommands(trackIndex, item, startValue);

@@ -45,6 +45,9 @@ export default class Legend extends Component {
       if (index === this.state.activeIndex) {
         legendClasses.push(CLASS_ROOT + "__item--active");
       }
+      if (item.onClick) {
+        legendClasses.push(CLASS_ROOT + "__item--clickable");
+      }
       var colorIndex = this._itemColorIndex(item, index);
       totalValue += item.value;
 
