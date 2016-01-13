@@ -106,6 +106,7 @@ ListItem.propTypes = _extends({
 });
 
 ListItem.defaultProps = {
+  align: 'center',
   direction: 'row'
 };
 module.exports = exports['default'];
