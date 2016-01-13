@@ -5,21 +5,30 @@
   padding: halve($inuit-base-spacing-unit);
 
   @include media-query(lap-and-up) {
-    &.box--direction-row > .tile {
-      flex: 0 0 $tile-size;
-      // don't count padding for flex basis
-      // this makes it easier to align tiles with graphic components
-      ////box-sizing: content-box;
-      margin: halve($inuit-base-spacing-unit);
+    &.box--direction-row {
 
-      > * {
-        // reset box sizing on tile's children
-        box-sizing: border-box;
+      > .tile {
+        flex: 0 0 $tile-size;
+        // don't count padding for flex basis
+        // this makes it easier to align tiles with graphic components
+        ////box-sizing: content-box;
+
+        > * {
+          // reset box sizing on tile's children
+          box-sizing: border-box;
+        }
+
+        &--wide {
+          box-sizing: border-box;
+        }
       }
 
-      &--wide {
-        flex-basis: calc(100% - #{$inuit-base-spacing-unit});
-        box-sizing: border-box;
+      &:not(.tiles--flush) > .tile {
+        margin: halve($inuit-base-spacing-unit);
+
+        &--wide {
+          flex-basis: calc(100% - #{$inuit-base-spacing-unit});
+        }
       }
     }
   }
