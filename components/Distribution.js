@@ -10,9 +10,17 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactDom = require('react-dom');
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
 var _Legend = require('./Legend');
 
 var _Legend2 = _interopRequireDefault(_Legend);
+
+var _KeyboardAccelerators = require('../utils/KeyboardAccelerators');
+
+var _KeyboardAccelerators2 = _interopRequireDefault(_KeyboardAccelerators);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -38,6 +46,9 @@ var Distribution = (function (_Component) {
 
     var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Distribution).call(this));
 
+    _this._onEnter = _this._onEnter.bind(_this);
+    _this._onPreviousDistribution = _this._onPreviousDistribution.bind(_this);
+    _this._onNextDistribution = _this._onNextDistribution.bind(_this);
     _this._onActivate = _this._onActivate.bind(_this);
     _this._onDeactivate = _this._onDeactivate.bind(_this);
     _this._onResize = _this._onResize.bind(_this);
@@ -47,14 +58,23 @@ var Distribution = (function (_Component) {
     _this.state.legendPosition = 'bottom';
     _this.state.width = DEFAULT_WIDTH;
     _this.state.height = DEFAULT_HEIGHT;
-    _this.state.activeIndex = -1;
+    _this.state.activeIndex = 0;
     return _this;
   }
 
   _createClass(Distribution, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      this._initialTimer = setTimeout(this._initialTimeout, 10);
+      this._keyboardHandlers = {
+        left: this._onPreviousDistribution,
+        up: this._onPreviousDistribution,
+        right: this._onNextDistribution,
+        down: this._onNextDistribution,
+        enter: this._onEnter,
+        space: this._onEnter
+      };
+      _KeyboardAccelerators2.default.startListeningToKeyboard(this, this._keyboardHandlers);
+
       window.addEventListener('resize', this._onResize);
       this._onResize();
     }
@@ -70,6 +90,8 @@ var Distribution = (function (_Component) {
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
+      _KeyboardAccelerators2.default.stopListeningToKeyboard(this, this._keyboardHandlers);
+
       clearTimeout(this._resizeTimer);
       window.removeEventListener('resize', this._onResize);
     }
@@ -91,7 +113,7 @@ var Distribution = (function (_Component) {
         this.setState({ legendPosition: 'right' });
       }
 
-      var graphic = this.refs.graphic;
+      var graphic = this.refs.distribution;
       var rect = graphic.getBoundingClientRect();
       if (rect.width !== this.state.width || rect.height !== this.state.height) {
         this.setState({
@@ -164,6 +186,52 @@ var Distribution = (function (_Component) {
       return item.colorIndex || 'graph-' + (index + 1);
     }
   }, {
+    key: '_onPreviousDistribution',
+    value: function _onPreviousDistribution(e) {
+      e.preventDefault();
+      if (document.activeElement === this.refs.distribution) {
+        var totalDistributionCount = _reactDom2.default.findDOMNode(this.refs.distributionItems).childNodes.length;
+
+        if (this.state.activeIndex - 1 < 0) {
+          this._onActivate(totalDistributionCount - 1);
+        } else {
+          this._onActivate(this.state.activeIndex - 1);
+        }
+      }
+    }
+  }, {
+    key: '_onNextDistribution',
+    value: function _onNextDistribution(e) {
+      e.preventDefault();
+      if (document.activeElement === this.refs.distribution) {
+        var totalDistributionCount = _reactDom2.default.findDOMNode(this.refs.distributionItems).childNodes.length;
+
+        if (this.state.activeIndex + 1 >= totalDistributionCount) {
+          this._onActivate(0);
+        } else {
+          this._onActivate(this.state.activeIndex + 1);
+        }
+      }
+    }
+  }, {
+    key: '_onEnter',
+    value: function _onEnter(event) {
+      if (document.activeElement === this.refs.distribution) {
+        if (this.refs.activeDistribution) {
+          var index = this.refs.activeDistribution.getAttribute('data-index');
+
+          var activeDistribution = this.props.series.filter(function (item) {
+            return item.value > 0;
+          })[index];
+
+          //trigger click on active distribution
+          if (activeDistribution.onClick) {
+            activeDistribution.onClick();
+          }
+        }
+      }
+    }
+  }, {
     key: '_onActivate',
     value: function _onActivate(index) {
       this.setState({ activeIndex: index });
@@ -171,7 +239,7 @@ var Distribution = (function (_Component) {
   }, {
     key: '_onDeactivate',
     value: function _onDeactivate() {
-      this.setState({ activeIndex: -1 });
+      this.setState({ activeIndex: 0 });
     }
   }, {
     key: '_renderLegend',
@@ -202,20 +270,20 @@ var Distribution = (function (_Component) {
       return _react2.default.createElement(
         'div',
         { key: index, className: labelClasses.join(' '),
-          'data-box-index': index },
+          'data-box-index': index, role: 'presentation' },
         _react2.default.createElement(
           'span',
-          { className: CLASS_ROOT + '__label-value' },
+          { className: CLASS_ROOT + '__label-value', role: 'presentation' },
           item.value,
           _react2.default.createElement(
             'span',
-            { className: CLASS_ROOT + '__label-units' },
+            { className: CLASS_ROOT + '__label-units', role: 'presentation' },
             this.props.units
           )
         ),
         _react2.default.createElement(
           'span',
-          { className: CLASS_ROOT + '__label-label' },
+          { className: CLASS_ROOT + '__label-label', role: 'presentation' },
           item.label
         )
       );
@@ -256,7 +324,7 @@ var Distribution = (function (_Component) {
       var boxClasses = [CLASS_ROOT + '__item-box'];
       boxClasses.push('color-index-' + colorIndex);
 
-      return _react2.default.createElement('rect', { className: boxClasses.join(' '),
+      return _react2.default.createElement('rect', { className: boxClasses.join(' '), role: 'presentation',
         x: boundingBox.x, y: boundingBox.y,
         width: boundingBox.width, height: boundingBox.height });
     }
@@ -289,7 +357,7 @@ var Distribution = (function (_Component) {
 
       return _react2.default.createElement(
         'g',
-        { className: iconClasses.join(' ') },
+        { className: iconClasses.join(' '), role: 'presentation' },
         icons
       );
     }
@@ -303,6 +371,11 @@ var Distribution = (function (_Component) {
         itemClasses.push(itemClass + '--clickable');
       }
 
+      var activeDistribution = undefined;
+      if (index === this.state.activeIndex) {
+        activeDistribution = 'activeDistribution';
+      }
+
       var colorIndex = this._itemColorIndex(item, index);
 
       var contents = undefined;
@@ -312,12 +385,22 @@ var Distribution = (function (_Component) {
         contents = this._renderItemBox(boundingBox, colorIndex);
       }
 
+      var distributionItemTitleId = this.props.a11yTitleId + '_item_title_' + index;
+
       return _react2.default.createElement(
         'g',
         { key: index, className: itemClasses.join(' '),
-          onMouseEnter: this._onActivate.bind(this, index),
+          role: 'tab', onMouseOver: this._onActivate.bind(this, index),
           onMouseLeave: this._onDeactivate,
+          id: this.props.a11yTitleId + '_item_' + index,
+          'aria-labelledby': distributionItemTitleId,
+          ref: activeDistribution,
           'data-index': index, onClick: item.onClick },
+        _react2.default.createElement(
+          'title',
+          { id: distributionItemTitleId },
+          item.value + ' ' + (this.props.units || '') + ' ' + (item.label || '')
+        ),
         contents
       );
     }
@@ -394,9 +477,33 @@ var Distribution = (function (_Component) {
         })();
       }
 
+      var role = 'tablist';
+      var a11yTitle = this.props.a11yTitle;
       if (boxes.length === 0) {
         classes.push(CLASS_ROOT + '--loading');
         boxes.push(this._renderLoading());
+        role = 'img';
+        a11yTitle = 'Loading Distribution';
+      }
+
+      var activeDescendant = undefined;
+      if (this.state.activeIndex >= 0) {
+        activeDescendant = this.props.a11yTitleId + '_item_' + this.state.activeIndex;
+      }
+
+      var a11yTitleNode = _react2.default.createElement(
+        'title',
+        { id: this.props.a11yTitleId },
+        a11yTitle
+      );
+
+      var a11yDescNode = undefined;
+      if (this.props.a11yDesc) {
+        a11yDescNode = _react2.default.createElement(
+          'desc',
+          { id: this.props.a11yDescId },
+          this.props.a11yDesc
+        );
       }
 
       return _react2.default.createElement(
@@ -404,10 +511,18 @@ var Distribution = (function (_Component) {
         { ref: 'container', className: classes.join(' ') },
         _react2.default.createElement(
           'svg',
-          { ref: 'graphic', className: CLASS_ROOT + '__graphic',
+          { ref: 'distribution', className: CLASS_ROOT + '__graphic',
             viewBox: '0 0 ' + this.state.width + ' ' + this.state.height,
-            preserveAspectRatio: 'none' },
-          boxes
+            preserveAspectRatio: 'none', tabIndex: '0', role: role,
+            'aria-activedescendant': activeDescendant,
+            'aria-labelledby': this.props.a11yTitleId + ' ' + this.props.a11yDescId },
+          a11yTitleNode,
+          a11yDescNode,
+          _react2.default.createElement(
+            'g',
+            { ref: 'distributionItems' },
+            boxes
+          )
         ),
         labels,
         legend
@@ -421,6 +536,10 @@ var Distribution = (function (_Component) {
 exports.default = Distribution;
 
 Distribution.propTypes = {
+  a11yTitle: _react.PropTypes.string,
+  a11yTitleId: _react.PropTypes.string,
+  a11yDescId: _react.PropTypes.string,
+  a11yDesc: _react.PropTypes.string,
   large: _react.PropTypes.bool,
   legend: _react.PropTypes.bool,
   legendTotal: _react.PropTypes.bool,
@@ -440,5 +559,11 @@ Distribution.propTypes = {
   small: _react.PropTypes.bool,
   units: _react.PropTypes.string,
   vertical: _react.PropTypes.bool
+};
+
+Distribution.defaultProps = {
+  a11yTitleId: 'distribution-title',
+  a11yTitle: 'Distribution',
+  a11yDescId: 'distribution-desc'
 };
 module.exports = exports['default'];
