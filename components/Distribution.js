@@ -22,6 +22,10 @@ var _KeyboardAccelerators = require('../utils/KeyboardAccelerators');
 
 var _KeyboardAccelerators2 = _interopRequireDefault(_KeyboardAccelerators);
 
+var _Intl = require('../utils/Intl');
+
+var _Intl2 = _interopRequireDefault(_Intl);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -124,7 +128,7 @@ var Distribution = (function (_Component) {
 
       // adjust box label positions
       var container = this.refs.container;
-      var labels = container.querySelectorAll('.distribution__label');
+      var labels = container.querySelectorAll('.' + CLASS_ROOT + '__label');
       for (var i = 0; i < labels.length; i += 1) {
         var label = labels[i];
         label.style.top = undefined;
@@ -270,20 +274,21 @@ var Distribution = (function (_Component) {
       return _react2.default.createElement(
         'div',
         { key: index, className: labelClasses.join(' '),
-          'data-box-index': index, role: 'presentation' },
+          'data-box-index': index, role: 'tab',
+          id: this.props.a11yTitleId + '_item_' + index },
         _react2.default.createElement(
           'span',
-          { className: CLASS_ROOT + '__label-value', role: 'presentation' },
+          { className: CLASS_ROOT + '__label-value' },
           item.value,
           _react2.default.createElement(
             'span',
-            { className: CLASS_ROOT + '__label-units', role: 'presentation' },
+            { className: CLASS_ROOT + '__label-units' },
             this.props.units
           )
         ),
         _react2.default.createElement(
           'span',
-          { className: CLASS_ROOT + '__label-label', role: 'presentation' },
+          { className: CLASS_ROOT + '__label-label' },
           item.label
         )
       );
@@ -324,7 +329,7 @@ var Distribution = (function (_Component) {
       var boxClasses = [CLASS_ROOT + '__item-box'];
       boxClasses.push('color-index-' + colorIndex);
 
-      return _react2.default.createElement('rect', { className: boxClasses.join(' '), role: 'presentation',
+      return _react2.default.createElement('rect', { className: boxClasses.join(' '),
         x: boundingBox.x, y: boundingBox.y,
         width: boundingBox.width, height: boundingBox.height });
     }
@@ -357,7 +362,7 @@ var Distribution = (function (_Component) {
 
       return _react2.default.createElement(
         'g',
-        { className: iconClasses.join(' '), role: 'presentation' },
+        { className: iconClasses.join(' ') },
         icons
       );
     }
@@ -385,22 +390,13 @@ var Distribution = (function (_Component) {
         contents = this._renderItemBox(boundingBox, colorIndex);
       }
 
-      var distributionItemTitleId = this.props.a11yTitleId + '_item_title_' + index;
-
       return _react2.default.createElement(
         'g',
         { key: index, className: itemClasses.join(' '),
-          role: 'tab', onMouseOver: this._onActivate.bind(this, index),
+          onMouseOver: this._onActivate.bind(this, index),
           onMouseLeave: this._onDeactivate,
-          id: this.props.a11yTitleId + '_item_' + index,
-          'aria-labelledby': distributionItemTitleId,
-          ref: activeDistribution,
+          ref: activeDistribution, role: 'presentation',
           'data-index': index, onClick: item.onClick },
-        _react2.default.createElement(
-          'title',
-          { id: distributionItemTitleId },
-          item.value + ' ' + (this.props.units || '') + ' ' + (item.label || '')
-        ),
         contents
       );
     }
@@ -478,12 +474,13 @@ var Distribution = (function (_Component) {
       }
 
       var role = 'tablist';
-      var a11yTitle = this.props.a11yTitle;
+      var a11yTitle = this.props.a11yTitle || _Intl2.default.getMessage(this.context.intl, 'Distribution');
+
       if (boxes.length === 0) {
         classes.push(CLASS_ROOT + '--loading');
         boxes.push(this._renderLoading());
         role = 'img';
-        a11yTitle = 'Loading Distribution';
+        a11yTitle = _Intl2.default.getMessage(this.context.intl, 'Loading');
       }
 
       var activeDescendant = undefined;
@@ -518,13 +515,13 @@ var Distribution = (function (_Component) {
             'aria-labelledby': this.props.a11yTitleId + ' ' + this.props.a11yDescId },
           a11yTitleNode,
           a11yDescNode,
-          _react2.default.createElement(
-            'g',
-            { ref: 'distributionItems' },
-            boxes
-          )
+          boxes
         ),
-        labels,
+        _react2.default.createElement(
+          'g',
+          { ref: 'distributionItems' },
+          labels
+        ),
         legend
       );
     }
@@ -534,6 +531,10 @@ var Distribution = (function (_Component) {
 })(_react.Component);
 
 exports.default = Distribution;
+
+Distribution.contextTypes = {
+  intl: _react.PropTypes.object
+};
 
 Distribution.propTypes = {
   a11yTitle: _react.PropTypes.string,
@@ -563,7 +564,6 @@ Distribution.propTypes = {
 
 Distribution.defaultProps = {
   a11yTitleId: 'distribution-title',
-  a11yTitle: 'Distribution',
   a11yDescId: 'distribution-desc'
 };
 module.exports = exports['default'];
