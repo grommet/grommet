@@ -87,7 +87,7 @@ export default class Notification extends Component {
 Notification.propTypes = merge({
   message: PropTypes.string.isRequired,
   percentComplete: PropTypes.number,
-  size: ProptTypes.oneOf(['small', 'medium', 'large']),
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
   state: PropTypes.string,
   status: PropTypes.string,
   timestamp: PropTypes.object // Date
