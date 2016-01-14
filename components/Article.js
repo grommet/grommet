@@ -316,7 +316,7 @@ var Article = (function (_Component) {
       var children = this.props.children;
       if (this.props.scrollStep || this.props.controls) {
         children = _react.Children.map(this.props.children, function (element, index) {
-          return _react2.default.cloneElement(element, { ref: index });
+          return element ? _react2.default.cloneElement(element, { ref: index }) : element;
         });
       }
 
