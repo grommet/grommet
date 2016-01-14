@@ -20,9 +20,9 @@ var _pick = require('lodash/object/pick');
 
 var _pick2 = _interopRequireDefault(_pick);
 
-var _keys = require('lodash/object/keys');
+var _keys3 = require('lodash/object/keys');
 
-var _keys2 = _interopRequireDefault(_keys);
+var _keys4 = _interopRequireDefault(_keys3);
 
 var _Box = require('./Box');
 
@@ -52,13 +52,13 @@ var _LinkPrevious = require('./icons/base/LinkPrevious');
 
 var _LinkPrevious2 = _interopRequireDefault(_LinkPrevious);
 
-var _LinkUp = require('./icons/base/LinkUp');
+var _Up = require('./icons/base/Up');
 
-var _LinkUp2 = _interopRequireDefault(_LinkUp);
+var _Up2 = _interopRequireDefault(_Up);
 
-var _LinkDown = require('./icons/base/LinkDown');
+var _Down = require('./icons/base/Down');
 
-var _LinkDown2 = _interopRequireDefault(_LinkDown);
+var _Down2 = _interopRequireDefault(_Down);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -88,7 +88,7 @@ var Article = (function (_Component) {
     _this._onSelect = _this._onSelect.bind(_this);
 
     _this.state = {
-      activeIndex: 1,
+      activeIndex: 0,
       playing: false
     };
     return _this;
@@ -98,14 +98,14 @@ var Article = (function (_Component) {
     key: 'componentDidMount',
     value: function componentDidMount() {
       if (this.props.scrollStep) {
-        var keys;
+        var _keys = undefined;
         if ('row' === this.props.direction) {
-          keys = { left: this._onPrevious, right: this._onNext };
+          _keys = { left: this._onPrevious, right: this._onNext };
         } else {
-          keys = { up: this._onPrevious, down: this._onNext };
+          _keys = { up: this._onPrevious, down: this._onNext };
         }
-        keys.space = this._onTogglePlay;
-        _KeyboardAccelerators2.default.startListeningToKeyboard(this, keys);
+        _keys.space = this._onTogglePlay;
+        _KeyboardAccelerators2.default.startListeningToKeyboard(this, _keys);
 
         document.addEventListener('wheel', this._onWheel);
 
@@ -116,14 +116,14 @@ var Article = (function (_Component) {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
       if (this.props.scrollStep) {
-        var keys;
+        var _keys2 = undefined;
         if ('row' === this.props.direction) {
-          keys = { left: this._onPrevious, right: this._onNext };
+          _keys2 = { left: this._onPrevious, right: this._onNext };
         } else {
-          keys = { up: this._onPrevious, down: this._onNext };
+          _keys2 = { up: this._onPrevious, down: this._onNext };
         }
-        keys.space = this._onTogglePlay;
-        _KeyboardAccelerators2.default.stopListeningToKeyboard(this, keys);
+        _keys2.space = this._onTogglePlay;
+        _KeyboardAccelerators2.default.stopListeningToKeyboard(this, _keys2);
 
         document.removeEventListener('wheel', this._onWheel);
       }
@@ -158,25 +158,20 @@ var Article = (function (_Component) {
         this._stop();
         event.preventDefault();
       }
-      var articleElement = _reactDom2.default.findDOMNode(this.refs.component);
-      var children = articleElement.children;
+      var childCount = _react2.default.Children.count(this.props.children);
+      var limit = 'row' === this.props.direction ? window.innerWidth : window.innerHeight;
       var advanced = false;
-      for (var i = 0; i < children.length - 1; i += 1) {
-        var child = children[i];
-        var rect = child.getBoundingClientRect();
-        // 10 is for fuzziness
-        if ('row' === this.props.direction) {
-          if (rect.right > 10 && i + 2 !== this.state.activeIndex && (event || wrap || rect.right < window.innerWidth)) {
-            this._onSelect(i + 2);
-            advanced = true;
-            break;
+      for (var index = 0; index < childCount; index += 1) {
+        var childElement = _reactDom2.default.findDOMNode(this.refs[index]);
+        var rect = childElement.getBoundingClientRect();
+        var edge = 'row' === this.props.direction ? rect.right : rect.bottom;
+        if (edge > 10 && (event || wrap || edge < limit)) {
+          // This is the first visible child, select the next one
+          if (index + 1 !== this.state.activeIndex) {
+            this._onSelect(index + 1);
           }
-        } else {
-          if (rect.bottom > 10 && i + 2 !== this.state.activeIndex && (event || wrap || rect.bottom < window.innerHeight)) {
-            this._onSelect(i + 2);
-            advanced = true;
-            break;
-          }
+          advanced = true;
+          break;
         }
       }
       if (wrap && !advanced) {
@@ -190,32 +185,18 @@ var Article = (function (_Component) {
         this._stop();
         event.preventDefault();
       }
-      var articleElement = _reactDom2.default.findDOMNode(this.refs.component);
-      var children = articleElement.children;
-      for (var i = 0; i < children.length; i += 1) {
-        var child = children[i];
-        var rect = child.getBoundingClientRect();
-        // -10 is for fuzziness
-        if ('row' === this.props.direction) {
-          if ((rect.left >= -10 || i === children.length - 1) && (event || rect.left < window.innerWidth)) {
-            if (i > 0) {
-              child = children[i - 1];
-              rect = child.getBoundingClientRect();
-              _Scroll2.default.scrollBy(this._scrollParent, 'scrollLeft', rect.left);
-              this.setState({ activeIndex: i });
-            }
-            break;
+      var childCount = _react2.default.Children.count(this.props.children);
+      var limit = 'row' === this.props.direction ? window.innerWidth : window.innerHeight;
+      for (var index = childCount - 1; index >= 0; index -= 1) {
+        var childElement = _reactDom2.default.findDOMNode(this.refs[index]);
+        var rect = childElement.getBoundingClientRect();
+        var edge = 'row' === this.props.direction ? rect.left : rect.top;
+        if (edge < limit && (event || edge > 10)) {
+          // This is the first visible child, select the previous one
+          if (index - 1 !== this.state.activeIndex) {
+            this._onSelect(index - 1);
           }
-        } else {
-          if ((rect.top >= -10 || i === children.length - 1) && (event || rect.top < window.innerHeight)) {
-            if (i > 0) {
-              child = children[i - 1];
-              rect = child.getBoundingClientRect();
-              _Scroll2.default.scrollBy(this._scrollParent, 'scrollTop', rect.top);
-              this.setState({ activeIndex: i });
-            }
-            break;
-          }
+          break;
         }
       }
     }
@@ -246,10 +227,8 @@ var Article = (function (_Component) {
   }, {
     key: '_onSelect',
     value: function _onSelect(activeIndex) {
-      var articleElement = _reactDom2.default.findDOMNode(this.refs.component);
-      var children = articleElement.children;
-      var child = children[activeIndex - 1];
-      var rect = child.getBoundingClientRect();
+      var childElement = _reactDom2.default.findDOMNode(this.refs[activeIndex]);
+      var rect = childElement.getBoundingClientRect();
       if ('row' === this.props.direction) {
         _Scroll2.default.scrollBy(this._scrollParent, 'scrollLeft', rect.left);
       } else {
@@ -261,17 +240,17 @@ var Article = (function (_Component) {
     key: '_renderControls',
     value: function _renderControls() {
       var CONTROL_CLASS_PREFIX = CLASS_ROOT + "__control " + CLASS_ROOT + "__control-";
-      var CHILD_COUNT = _react2.default.Children.count(this.props.children);
+      var childCount = _react2.default.Children.count(this.props.children);
       var controls = [
         // Don't use CarouselControls for now
         // <CarouselControls key="carousel"
         //   className={CONTROL_CLASS_PREFIX + "carousel"}
-        //   count={CHILD_COUNT}
+        //   count={childCount}
         //   direction={this.props.direction}
         //   selected={this.state.activeIndex} onChange={this._onSelect} />
       ];
       if ('row' === this.props.direction) {
-        if (this.state.activeIndex > 1) {
+        if (this.state.activeIndex > 0) {
           controls.push(_react2.default.createElement(
             _Button2.default,
             { key: 'previous', type: 'icon',
@@ -280,7 +259,7 @@ var Article = (function (_Component) {
             _react2.default.createElement(_LinkPrevious2.default, { size: 'large' })
           ));
         }
-        if (this.state.activeIndex < CHILD_COUNT) {
+        if (this.state.activeIndex < childCount - 1) {
           controls.push(_react2.default.createElement(
             _Button2.default,
             { key: 'next', type: 'icon',
@@ -290,22 +269,22 @@ var Article = (function (_Component) {
           ));
         }
       } else {
-        if (this.state.activeIndex > 1) {
+        if (this.state.activeIndex > 0) {
           controls.push(_react2.default.createElement(
             _Button2.default,
             { key: 'previous', type: 'icon',
               className: CONTROL_CLASS_PREFIX + "up",
               onClick: this._onPrevious },
-            _react2.default.createElement(_LinkUp2.default, { size: 'large' })
+            _react2.default.createElement(_Up2.default, null)
           ));
         }
-        if (this.state.activeIndex < CHILD_COUNT) {
+        if (this.state.activeIndex < childCount - 1) {
           controls.push(_react2.default.createElement(
             _Button2.default,
             { key: 'next', type: 'icon',
               className: CONTROL_CLASS_PREFIX + "down",
               onClick: this._onNext },
-            _react2.default.createElement(_LinkDown2.default, { size: 'large' })
+            _react2.default.createElement(_Down2.default, null)
           ));
         }
       }
@@ -316,7 +295,7 @@ var Article = (function (_Component) {
     key: 'render',
     value: function render() {
       var classes = [CLASS_ROOT];
-      var other = (0, _pick2.default)(this.props, (0, _keys2.default)(_Box2.default.propTypes));
+      var other = (0, _pick2.default)(this.props, (0, _keys4.default)(_Box2.default.propTypes));
       if (this.props.scrollStep) {
         classes.push(CLASS_ROOT + "--scroll-step");
       }
@@ -329,7 +308,7 @@ var Article = (function (_Component) {
         skipLinkAnchor = _react2.default.createElement(_SkipLinkAnchor2.default, { label: 'Main Content' });
       }
 
-      var controls;
+      var controls = undefined;
       if (this.props.controls) {
         controls = this._renderControls();
       }
@@ -338,7 +317,9 @@ var Article = (function (_Component) {
         _Box2.default,
         _extends({ ref: 'component', tag: 'article' }, other, { className: classes.join(' ') }),
         skipLinkAnchor,
-        this.props.children,
+        _react.Children.map(this.props.children, function (element, index) {
+          return _react2.default.cloneElement(element, { ref: index });
+        }),
         controls
       );
     }
