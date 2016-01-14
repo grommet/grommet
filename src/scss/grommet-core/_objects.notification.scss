@@ -16,6 +16,14 @@
     flex: 0 0 auto;
   }
 
+  &--small {
+    .notification {
+      &__message {
+        @include inuit-font-size($control-font-size, $inuit-base-spacing-unit);
+      }
+    }
+  }
+
   @each $status, $color in $brand-status-colors {
     &--#{$status} {
       background-color: $color;
