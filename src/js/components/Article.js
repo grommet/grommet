@@ -1,6 +1,6 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component, PropTypes, Children } from 'react';
 import ReactDOM from 'react-dom';
 import pick from 'lodash/object/pick';
 import keys from 'lodash/object/keys';
@@ -12,8 +12,8 @@ import SkipLinkAnchor from './SkipLinkAnchor';
 import Button from './Button';
 import NextIcon from './icons/base/LinkNext';
 import PreviousIcon from './icons/base/LinkPrevious';
-import UpIcon from './icons/base/LinkUp';
-import DownIcon from './icons/base/LinkDown';
+import UpIcon from './icons/base/Up';
+import DownIcon from './icons/base/Down';
 
 const CLASS_ROOT = "article";
 const DEFAULT_PLAY_INTERVAL = 10000; // 10s
@@ -30,14 +30,14 @@ export default class Article extends Component {
     this._onSelect = this._onSelect.bind(this);
 
     this.state = {
-      activeIndex: 1,
+      activeIndex: 0,
       playing: false
     };
   }
 
   componentDidMount () {
     if (this.props.scrollStep) {
-      var keys;
+      let keys;
       if ('row' === this.props.direction) {
         keys = {left: this._onPrevious, right: this._onNext};
       } else {
@@ -54,7 +54,7 @@ export default class Article extends Component {
 
   componentWillUnmount () {
     if (this.props.scrollStep) {
-      var keys;
+      let keys;
       if ('row' === this.props.direction) {
         keys = {left: this._onPrevious, right: this._onNext};
       } else {
@@ -68,7 +68,7 @@ export default class Article extends Component {
   }
 
   _onWheel (event) {
-    var delta = ('row' === this.props.direction ? event.deltaX : event.deltaY);
+    const delta = ('row' === this.props.direction ? event.deltaX : event.deltaY);
     if (Math.abs(delta) > 100) {
       // The user is expressing a resolute interest in controlling the
       // scrolling behavior. Stop doing any of our scroll step aligning
@@ -94,27 +94,21 @@ export default class Article extends Component {
       this._stop();
       event.preventDefault();
     }
-    var articleElement = ReactDOM.findDOMNode(this.refs.component);
-    var children = articleElement.children;
-    var advanced = false;
-    for (var i = 0; i < (children.length - 1); i += 1) {
-      var child = children[i];
-      var rect = child.getBoundingClientRect();
-      // 10 is for fuzziness
-      if ('row' === this.props.direction) {
-        if (rect.right > 10 && (i + 2) !== this.state.activeIndex &&
-          (event || wrap || rect.right < window.innerWidth)) {
-          this._onSelect(i + 2);
-          advanced = true;
-          break;
+    const childCount = React.Children.count(this.props.children);
+    const limit = ('row' === this.props.direction) ? window.innerWidth :
+      window.innerHeight;
+    let advanced = false;
+    for (let index = 0; index < childCount; index += 1) {
+      const childElement = ReactDOM.findDOMNode(this.refs[index]);
+      const rect = childElement.getBoundingClientRect();
+      const edge = ('row' === this.props.direction) ? rect.right : rect.bottom;
+      if (edge > 10 && (event || wrap || edge < limit)) {
+        // This is the first visible child, select the next one
+        if ((index + 1) !== this.state.activeIndex) {
+          this._onSelect(index + 1);
         }
-      } else {
-        if (rect.bottom > 10 && (i + 2) !== this.state.activeIndex &&
-          (event || wrap || rect.bottom < window.innerHeight)) {
-          this._onSelect(i + 2);
-          advanced = true;
-          break;
-        }
+        advanced = true;
+        break;
       }
     }
     if (wrap && ! advanced) {
@@ -127,34 +121,19 @@ export default class Article extends Component {
       this._stop();
       event.preventDefault();
     }
-    var articleElement = ReactDOM.findDOMNode(this.refs.component);
-    var children = articleElement.children;
-    for (var i = 0; i < children.length; i += 1) {
-      var child = children[i];
-      var rect = child.getBoundingClientRect();
-      // -10 is for fuzziness
-      if ('row' === this.props.direction) {
-        if ((rect.left >= -10 || i === (children.length - 1)) &&
-          (event || rect.left < window.innerWidth)) {
-          if (i > 0) {
-            child = children[i - 1];
-            rect = child.getBoundingClientRect();
-            Scroll.scrollBy(this._scrollParent, 'scrollLeft', rect.left);
-            this.setState({activeIndex: i});
-          }
-          break;
+    const childCount = React.Children.count(this.props.children);
+    const limit = ('row' === this.props.direction) ? window.innerWidth :
+      window.innerHeight;
+    for (let index = (childCount - 1); index >= 0; index -= 1) {
+      const childElement = ReactDOM.findDOMNode(this.refs[index]);
+      const rect = childElement.getBoundingClientRect();
+      const edge = ('row' === this.props.direction) ? rect.left : rect.top;
+      if (edge < limit && (event || edge > 10)) {
+        // This is the first visible child, select the previous one
+        if ((index - 1) !== this.state.activeIndex) {
+          this._onSelect(index - 1);
         }
-      } else {
-        if ((rect.top >= -10 || i === (children.length - 1)) &&
-          (event || rect.top < window.innerHeight)) {
-          if (i > 0) {
-            child = children[i - 1];
-            rect = child.getBoundingClientRect();
-            Scroll.scrollBy(this._scrollParent, 'scrollTop', rect.top);
-            this.setState({activeIndex: i});
-          }
-          break;
-        }
+        break;
       }
     }
   }
@@ -181,10 +160,8 @@ export default class Article extends Component {
   }
 
   _onSelect (activeIndex) {
-    var articleElement = ReactDOM.findDOMNode(this.refs.component);
-    var children = articleElement.children;
-    var child = children[activeIndex - 1];
-    var rect = child.getBoundingClientRect();
+    const childElement = ReactDOM.findDOMNode(this.refs[activeIndex]);
+    const rect = childElement.getBoundingClientRect();
     if ('row' === this.props.direction) {
       Scroll.scrollBy(this._scrollParent, 'scrollLeft', rect.left);
     } else {
@@ -196,24 +173,24 @@ export default class Article extends Component {
   _renderControls () {
     const CONTROL_CLASS_PREFIX =
       CLASS_ROOT + "__control " + CLASS_ROOT + "__control-";
-    const CHILD_COUNT = React.Children.count(this.props.children);
-    var controls = [
+    const childCount = React.Children.count(this.props.children);
+    let controls = [
       // Don't use CarouselControls for now
       // <CarouselControls key="carousel"
       //   className={CONTROL_CLASS_PREFIX + "carousel"}
-      //   count={CHILD_COUNT}
+      //   count={childCount}
       //   direction={this.props.direction}
       //   selected={this.state.activeIndex} onChange={this._onSelect} />
     ];
     if ('row' === this.props.direction) {
-      if (this.state.activeIndex > 1) {
+      if (this.state.activeIndex > 0) {
         controls.push(
           <Button key="previous" type="icon"
             className={CONTROL_CLASS_PREFIX + "left"}
             onClick={this._onPrevious}><PreviousIcon size="large" /></Button>
         );
       }
-      if (this.state.activeIndex < CHILD_COUNT) {
+      if (this.state.activeIndex < (childCount - 1)) {
         controls.push(
           <Button key="next" type="icon"
             className={CONTROL_CLASS_PREFIX + "right"}
@@ -221,18 +198,18 @@ export default class Article extends Component {
         );
       }
     } else {
-      if (this.state.activeIndex > 1) {
+      if (this.state.activeIndex > 0) {
         controls.push(
           <Button key="previous" type="icon"
             className={CONTROL_CLASS_PREFIX + "up"}
-            onClick={this._onPrevious}><UpIcon size="large" /></Button>
+            onClick={this._onPrevious}><UpIcon /></Button>
         );
       }
-      if (this.state.activeIndex < CHILD_COUNT) {
+      if (this.state.activeIndex < (childCount - 1)) {
         controls.push(
           <Button key="next" type="icon"
             className={CONTROL_CLASS_PREFIX + "down"}
-            onClick={this._onNext}><DownIcon size="large" /></Button>
+            onClick={this._onNext}><DownIcon /></Button>
         );
       }
     }
@@ -241,8 +218,8 @@ export default class Article extends Component {
   }
 
   render () {
-    var classes = [CLASS_ROOT];
-    var other = pick(this.props, keys(Box.propTypes));
+    let classes = [CLASS_ROOT];
+    const other = pick(this.props, keys(Box.propTypes));
     if (this.props.scrollStep) {
       classes.push(CLASS_ROOT + "--scroll-step");
     }
@@ -250,12 +227,12 @@ export default class Article extends Component {
       classes.push(this.props.className);
     }
 
-    var skipLinkAnchor = null;
+    let skipLinkAnchor = null;
     if (this.props.primary) {
       skipLinkAnchor = <SkipLinkAnchor label="Main Content" />;
     }
 
-    var controls;
+    let controls;
     if (this.props.controls) {
       controls = this._renderControls();
     }
@@ -263,7 +240,9 @@ export default class Article extends Component {
     return (
       <Box ref="component" tag="article" {...other} className={classes.join(' ')}>
         {skipLinkAnchor}
-        {this.props.children}
+        {Children.map(this.props.children, (element, index) => {
+          return React.cloneElement(element, { ref: index });
+        })}
         {controls}
       </Box>
     );
