@@ -240,7 +240,7 @@ export default class Article extends Component {
     let children = this.props.children;
     if (this.props.scrollStep || this.props.controls) {
       children = Children.map(this.props.children, (element, index) => {
-        return React.cloneElement(element, { ref: index });
+        return (element ? React.cloneElement(element, { ref: index }) : element);
       });
     }
 
