@@ -21,8 +21,8 @@ export default class Tags extends Component {
     return (
       <Box {...other}
         className={classes.join(' ')}
-        direction={this.props.direction ? this.props.direction : 'row'}
-        align={this.props.align ? this.props.align : 'start'}
+        direction={this.props.direction}
+        align={this.props.align}
         wrap={true}>
         {this.props.children}
       </Box>
@@ -32,4 +32,9 @@ export default class Tags extends Component {
 
 Tags.propTypes = {
   ...Box.propTypes
+};
+
+Tags.defaultProps = {
+  direction: 'row',
+  align: 'start'
 };
