@@ -4,6 +4,7 @@ import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import Legend from './Legend';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
+import Intl from '../utils/Intl';
 
 const CLASS_ROOT = "distribution";
 
@@ -93,7 +94,7 @@ export default class Distribution extends Component {
 
     // adjust box label positions
     let container = this.refs.container;
-    let labels = container.querySelectorAll('.distribution__label');
+    let labels = container.querySelectorAll(`.${CLASS_ROOT}__label`);
     for (let i = 0; i < labels.length; i += 1) {
       let label = labels[i];
       label.style.top = undefined;
@@ -234,14 +235,15 @@ export default class Distribution extends Component {
 
     return (
       <div key={index} className={labelClasses.join(' ')}
-        data-box-index={index} role="presentation">
-        <span className={`${CLASS_ROOT}__label-value`} role="presentation">
+        data-box-index={index} role="tab"
+        id={`${this.props.a11yTitleId}_item_${index}`}>
+        <span className={`${CLASS_ROOT}__label-value`}>
           {item.value}
-          <span className={`${CLASS_ROOT}__label-units`} role="presentation">
+          <span className={`${CLASS_ROOT}__label-units`}>
             {this.props.units}
           </span>
         </span>
-        <span className={`${CLASS_ROOT}__label-label`} role="presentation">
+        <span className={`${CLASS_ROOT}__label-label`}>
           {item.label}
         </span>
       </div>
@@ -281,7 +283,7 @@ export default class Distribution extends Component {
     boxClasses.push(`color-index-${colorIndex}`);
 
     return (
-      <rect className={boxClasses.join(' ')} role="presentation"
+      <rect className={boxClasses.join(' ')}
         x={boundingBox.x} y={boundingBox.y}
         width={boundingBox.width} height={boundingBox.height}>
       </rect>
@@ -316,7 +318,7 @@ export default class Distribution extends Component {
     }
 
     return (
-      <g className={iconClasses.join(' ')} role="presentation">
+      <g className={iconClasses.join(' ')}>
         {icons}
       </g>
     );
@@ -344,19 +346,12 @@ export default class Distribution extends Component {
       contents = this._renderItemBox(boundingBox, colorIndex);
     }
 
-    let distributionItemTitleId = `${this.props.a11yTitleId}_item_title_${index}`;
-
     return (
       <g key={index} className={itemClasses.join(' ')}
-        role="tab" onMouseOver={this._onActivate.bind(this, index)}
+        onMouseOver={this._onActivate.bind(this, index)}
         onMouseLeave={this._onDeactivate}
-        id={`${this.props.a11yTitleId}_item_${index}`}
-        aria-labelledby={distributionItemTitleId}
-        ref={activeDistribution}
+        ref={activeDistribution} role="presentation"
         data-index={index} onClick={item.onClick}>
-        <title id={distributionItemTitleId}>
-          {`${item.value} ${this.props.units || ''} ${item.label || ''}`}
-        </title>
         {contents}
       </g>
     );
@@ -430,12 +425,16 @@ export default class Distribution extends Component {
     }
 
     let role = 'tablist';
-    let a11yTitle = this.props.a11yTitle;
+    let a11yTitle = (
+      this.props.a11yTitle ||
+      Intl.getMessage(this.context.intl, 'Distribution')
+    );
+
     if (boxes.length === 0) {
       classes.push(`${CLASS_ROOT}--loading`);
       boxes.push(this._renderLoading());
       role = 'img';
-      a11yTitle = 'Loading Distribution';
+      a11yTitle = Intl.getMessage(this.context.intl, 'Loading');
     }
 
     let activeDescendant;
@@ -465,17 +464,21 @@ export default class Distribution extends Component {
           aria-labelledby={this.props.a11yTitleId + ' ' + this.props.a11yDescId}>
           {a11yTitleNode}
           {a11yDescNode}
-          <g ref="distributionItems">
-            {boxes}
-          </g>
+          {boxes}
         </svg>
-        {labels}
+        <g ref="distributionItems">
+          {labels}
+        </g>
         {legend}
       </div>
     );
   }
 
 }
+
+Distribution.contextTypes = {
+  intl: PropTypes.object
+};
 
 Distribution.propTypes = {
   a11yTitle: PropTypes.string,
@@ -505,6 +508,5 @@ Distribution.propTypes = {
 
 Distribution.defaultProps = {
   a11yTitleId: 'distribution-title',
-  a11yTitle: 'Distribution',
   a11yDescId: 'distribution-desc'
 };
