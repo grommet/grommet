@@ -63,6 +63,9 @@ var Notification = (function (_Component) {
       var classes = [CLASS_ROOT];
       var other = (0, _pick2.default)(this.props, (0, _keys2.default)(_Box2.default.propTypes));
       classes.push(CLASS_ROOT + "--" + this.props.status.toLowerCase());
+      if (this.props.size) {
+        classes.push(CLASS_ROOT + "--" + this.props.size.toLowerCase());
+      }
       if (this.props.className) {
         classes.push(this.props.className);
       }
@@ -70,7 +73,7 @@ var Notification = (function (_Component) {
       var status;
       if (this.props.status) {
         status = _react2.default.createElement(_Status2.default, { className: CLASS_ROOT + "__status",
-          value: this.props.status });
+          value: this.props.status, size: this.props.size });
       }
 
       var state;
@@ -134,17 +137,18 @@ var Notification = (function (_Component) {
 
 exports.default = Notification;
 
+Notification.propTypes = (0, _merge2.default)({
+  message: _react.PropTypes.string.isRequired,
+  percentComplete: _react.PropTypes.number,
+  size: _react.PropTypes.oneOf(['small', 'medium', 'large']),
+  state: _react.PropTypes.string,
+  status: _react.PropTypes.string,
+  timestamp: _react.PropTypes.object // Date
+}, _Box2.default.propTypes);
+
 Notification.defaultProps = {
   flush: true,
   status: 'unknown',
   pad: 'medium'
 };
-
-Notification.propTypes = (0, _merge2.default)({
-  message: _react.PropTypes.string.isRequired,
-  percentComplete: _react.PropTypes.number,
-  state: _react.PropTypes.string,
-  status: _react.PropTypes.string,
-  timestamp: _react.PropTypes.object // Date
-}, _Box2.default.propTypes);
 module.exports = exports['default'];
