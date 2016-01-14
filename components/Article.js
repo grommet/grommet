@@ -313,13 +313,18 @@ var Article = (function (_Component) {
         controls = this._renderControls();
       }
 
+      var children = this.props.children;
+      if (this.props.scrollStep || this.props.controls) {
+        children = _react.Children.map(this.props.children, function (element, index) {
+          return _react2.default.cloneElement(element, { ref: index });
+        });
+      }
+
       return _react2.default.createElement(
         _Box2.default,
         _extends({ ref: 'component', tag: 'article' }, other, { className: classes.join(' ') }),
         skipLinkAnchor,
-        _react.Children.map(this.props.children, function (element, index) {
-          return _react2.default.cloneElement(element, { ref: index });
-        }),
+        children,
         controls
       );
     }
