@@ -10,7 +10,7 @@ const CLASS_ROOT = "tag";
 export default class Tag extends Component {
 
   render () {
-    var classes = [CLASS_ROOT];
+    let classes = [CLASS_ROOT];
 
     if (this.props.className) {
       classes.push(this.props.className);
@@ -21,7 +21,7 @@ export default class Tag extends Component {
     return (
       <div className={classes.join(' ')} onClick={this.props.onClick}>
         {this.props.children}
-        <Anchor {...other} className="tag--label">
+        <Anchor {...other} className={`${CLASS_ROOT}--label`}>
           <span>{this.props.label}</span>
         </Anchor>
       </div>
