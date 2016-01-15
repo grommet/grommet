@@ -17,9 +17,18 @@ export default class Brick extends Component {
       classes.push(this.props.className);
     }
 
-    let label = <div className={`${CLASS_ROOT}--label`}><span>{this.props.label}</span></div>;
+    let label = (
+      <div className={`${CLASS_ROOT}--label`}>
+        <span>{this.props.label}</span>
+      </div>
+    );
+
     if (this.props.route) {
-      label = <Anchor href={this.props.route} className={`${CLASS_ROOT}--label`}><span>{this.props.label}</span></Anchor>;
+      label = (
+        <Anchor href={this.props.route} className={`${CLASS_ROOT}--label`}>
+          <span>{this.props.label}</span>
+        </Anchor>
+      );
     }
 
     return (
