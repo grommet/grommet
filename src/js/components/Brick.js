@@ -23,9 +23,9 @@ export default class Brick extends Component {
       </div>
     );
 
-    if (this.props.route) {
+    if (this.props.href) {
       label = (
-        <Anchor href={this.props.route} className={`${CLASS_ROOT}--label`}>
+        <Anchor href={this.props.href} className={`${CLASS_ROOT}--label`}>
           <span>{this.props.label}</span>
         </Anchor>
       );
@@ -44,7 +44,7 @@ export default class Brick extends Component {
 
 Brick.propTypes = {
   label: React.PropTypes.string,
-  route: React.PropTypes.string,
+  href: React.PropTypes.string,
   width: React.PropTypes.oneOf([1, 2]),
   height: React.PropTypes.oneOf([1, 2]),
   colorIndex: React.PropTypes.string
