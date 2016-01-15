@@ -7,8 +7,8 @@ const CLASS_ROOT = "brick";
 
 export default class Brick extends Component {
   render() {
-    var classes = [CLASS_ROOT];
-    classes.push('brick--' + this.props.width + '-' + this.props.height);
+    let classes = [CLASS_ROOT];
+    classes.push(`${CLASS_ROOT}--${this.props.width}-${this.props.height}`);
 
     if (this.props.colorIndex) {
       classes.push('background-color-index-' + this.props.colorIndex);
@@ -17,14 +17,14 @@ export default class Brick extends Component {
       classes.push(this.props.className);
     }
 
-    var label = <div className="brick--label"><span>{this.props.label}</span></div>;
+    let label = <div className={`${CLASS_ROOT}--label`}><span>{this.props.label}</span></div>;
     if (this.props.route) {
-      label = <Anchor href={this.props.route} className="brick--label"><span>{this.props.label}</span></Anchor>;
+      label = <Anchor href={this.props.route} className={`${CLASS_ROOT}--label`}><span>{this.props.label}</span></Anchor>;
     }
 
     return (
       <div className={classes.join(' ')} onClick={this.props.onClick}>
-        <div className="brick--content-wrapper">
+        <div className={`${CLASS_ROOT}--content-wrapper`}>
           {this.props.children}
         </div>
         {label}
