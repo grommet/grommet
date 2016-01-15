@@ -101,8 +101,10 @@
         padding-top: 0px;
         padding-left: halve(halve($inuit-base-spacing-unit));
 
-        &-value {
+        &-value,
+        &-units {
           @include inuit-font-size($small-large-number-font-size);
+          margin-right: 4px;
         }
       }
     }
@@ -117,6 +119,14 @@
   &--large {
     .distribution__graphic {
       height: $graphic-large-size;
+    }
+  }
+
+  &--full {
+    height: 100%;
+
+    .distribution__graphic {
+      height: 100%;
     }
   }
 }

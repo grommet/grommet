@@ -425,6 +425,9 @@ var Distribution = (function (_Component) {
       if (this.state.size) {
         classes.push(CLASS_ROOT + '--' + this.state.size);
       }
+      if (this.props.full) {
+        classes.push(CLASS_ROOT + '--full');
+      }
       if (this.props.vertical) {
         classes.push(CLASS_ROOT + '--vertical');
       }
@@ -518,7 +521,7 @@ var Distribution = (function (_Component) {
           boxes
         ),
         _react2.default.createElement(
-          'g',
+          'div',
           { ref: 'distributionItems' },
           labels
         ),
@@ -541,6 +544,7 @@ Distribution.propTypes = {
   a11yTitleId: _react.PropTypes.string,
   a11yDescId: _react.PropTypes.string,
   a11yDesc: _react.PropTypes.string,
+  full: _react.PropTypes.bool,
   large: _react.PropTypes.bool,
   legend: _react.PropTypes.bool,
   legendTotal: _react.PropTypes.bool,
