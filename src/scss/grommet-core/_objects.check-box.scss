@@ -36,6 +36,10 @@
     }
   }
 
+  > :first-child {
+    margin-right: halve($inuit-base-spacing-unit);
+  }
+
   &__input {
     opacity: 0;
     position: absolute;
@@ -99,7 +103,6 @@
 
   &__label {
     color: $secondary-text-color;
-    margin-left: halve($inuit-base-spacing-unit);
 
     [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
       color: $colored-text-color;

@@ -47,25 +47,32 @@ export default class CheckBox extends Component {
       classes.push(this.props.className);
     }
 
+    let children = [(
+      <span>
+        <input tabIndex="0" className={CLASS_ROOT + "__input"}
+               id={this.props.id} name={this.props.name} type="checkbox"
+               disabled={this.props.disabled}
+               checked={this.props.checked}
+               defaultChecked={this.props.defaultChecked}
+               onChange={this.props.onChange}
+               ref="input" />
+        <span className={CLASS_ROOT + "__control"}>
+          <svg className={CLASS_ROOT + "__control-check"} viewBox="0 0 24 24"
+               preserveAspectRatio="xMidYMid meet">
+            <path fill="none" d="M6,11.3 L10.3,16 L18,6.2"></path>
+          </svg>
+        </span>
+      </span>
+    ),
+      label
+    ];
+
     return (
       <label className={classes.join(' ')}
         aria-describedby={this.props.ariaDescribedby}
         aria-labelledby={labelId}>
-        <input tabIndex="0" className={CLASS_ROOT + "__input"}
-          id={this.props.id} name={this.props.name} type="checkbox"
-          disabled={this.props.disabled}
-          checked={this.props.checked}
-          defaultChecked={this.props.defaultChecked}
-          onChange={this.props.onChange}
-          ref="input" />
-        <span className={CLASS_ROOT + "__control"}>
-          <svg className={CLASS_ROOT + "__control-check"} viewBox="0 0 24 24"
-            preserveAspectRatio="xMidYMid meet">
-            <path fill="none" d="M6,11.3 L10.3,16 L18,6.2"></path>
-          </svg>
-        </span>
+        {this.props.reverse ? children.reverse() : children}
         {hidden}
-        {label}
       </label>
     );
   }
@@ -78,6 +85,7 @@ CheckBox.propTypes = {
   disabled: PropTypes.bool,
   id: PropTypes.string.isRequired,
   label: PropTypes.node,
+  reverse: PropTypes.bool,
   name: PropTypes.string,
   onChange: PropTypes.func,
   ariaDescribedby: PropTypes.string,
