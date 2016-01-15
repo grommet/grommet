@@ -38,7 +38,7 @@ export default class CheckBox extends Component {
     return (
       <label className={classes.join(' ')}
         aria-describedby={this.props.ariaDescribedby}
-        aria-lebelledby={labelId}>
+        aria-labelledby={labelId}>
         <input tabIndex="0" className={CLASS_ROOT + "__input"}
           id={this.props.id} name={this.props.name} type="checkbox"
           disabled={this.props.disabled}
