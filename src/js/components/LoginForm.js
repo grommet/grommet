@@ -21,12 +21,19 @@ export default class LoginForm extends Component {
     this.refs.username.focus();
   }
 
-  _onSubmit  (event) {
+  _onSubmit (event) {
     event.preventDefault();
-    var username = this.refs.username.value.trim();
-    var password = this.refs.password.value.trim();
+
+    let username = this.refs.username.value.trim();
+    let password = this.refs.password.value.trim();
+    let rememberMe;
+
+    if ('rememberMe' in this.refs) {
+      rememberMe = this.refs.rememberMe.checked;
+    }
+
     if (this.props.onSubmit) {
-      this.props.onSubmit({username: username, password: password});
+      this.props.onSubmit({username, password, rememberMe});
     }
   }
 
@@ -78,7 +85,8 @@ export default class LoginForm extends Component {
       rememberMe = (
         <CheckBox className={CLASS_ROOT + "__remember-me"}
           id="remember-me"
-          label={<FormattedMessage id="Remember me" defaultMessage="Remember me" />} />
+          label={<FormattedMessage id="Remember me" defaultMessage="Remember me" />}
+          ref="rememberMe" />
       );
     }
 

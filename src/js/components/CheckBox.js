@@ -6,6 +6,16 @@ const CLASS_ROOT = "check-box";
 
 export default class CheckBox extends Component {
 
+  set checked (value) {
+    if ('refs' in this) {
+      this.refs.input.checked = !!value;
+    }
+  }
+
+  get checked () {
+    return 'refs' in this ? this.refs.input.checked : null;
+  }
+
   render () {
     var classes = [CLASS_ROOT];
     var labelId = 'checkbox-label';
@@ -34,7 +44,8 @@ export default class CheckBox extends Component {
           disabled={this.props.disabled}
           checked={this.props.checked}
           defaultChecked={this.props.defaultChecked}
-          onChange={this.props.onChange} />
+          onChange={this.props.onChange}
+          ref="input" />
         <span className={CLASS_ROOT + "__control"}>
           <svg className={CLASS_ROOT + "__control-check"} viewBox="0 0 24 24"
             preserveAspectRatio="xMidYMid meet">
