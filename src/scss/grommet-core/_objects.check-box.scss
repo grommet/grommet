@@ -72,7 +72,6 @@
   	display: inline-block;
     width: $control-size;
     height: $control-size;
-    margin-right: halve($inuit-base-spacing-unit);
     vertical-align: middle;
     background-color: inherit;
     border: $control-border-width solid $icon-color;
@@ -100,6 +99,7 @@
 
   &__label {
     color: $secondary-text-color;
+    margin-left: halve($inuit-base-spacing-unit);
 
     [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
       color: $colored-text-color;

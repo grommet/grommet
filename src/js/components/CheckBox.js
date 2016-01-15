@@ -17,12 +17,23 @@ export default class CheckBox extends Component {
   }
 
   render () {
-    var classes = [CLASS_ROOT];
-    var labelId = 'checkbox-label';
-    var hidden;
+    let classes = [CLASS_ROOT];
+    let labelId = 'checkbox-label';
+    let label;
+    let hidden;
+
+    if (this.props.label) {
+      label = (
+        <span role="label" id={labelId} tabIndex="-1" className={CLASS_ROOT + "__label"}>
+          {this.props.label}
+        </span>
+      );
+    }
+
     if (this.props.toggle) {
       classes.push(CLASS_ROOT + "--toggle");
     }
+
     if (this.props.disabled) {
       classes.push(CLASS_ROOT + "--disabled");
       if (this.props.checked) {
@@ -31,6 +42,7 @@ export default class CheckBox extends Component {
         );
       }
     }
+
     if (this.props.className) {
       classes.push(this.props.className);
     }
@@ -53,9 +65,7 @@ export default class CheckBox extends Component {
           </svg>
         </span>
         {hidden}
-        <span role="label" id={labelId} tabIndex="-1" className={CLASS_ROOT + "__label"}>
-          {this.props.label}
-        </span>
+        {label}
       </label>
     );
   }
@@ -67,7 +77,7 @@ CheckBox.propTypes = {
   defaultChecked: PropTypes.bool,
   disabled: PropTypes.bool,
   id: PropTypes.string.isRequired,
-  label: PropTypes.node.isRequired,
+  label: PropTypes.node,
   name: PropTypes.string,
   onChange: PropTypes.func,
   ariaDescribedby: PropTypes.string,
