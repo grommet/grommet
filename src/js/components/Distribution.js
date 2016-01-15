@@ -377,6 +377,9 @@ export default class Distribution extends Component {
     if (this.state.size) {
       classes.push(`${CLASS_ROOT}--${this.state.size}`);
     }
+    if (this.props.full) {
+      classes.push(`${CLASS_ROOT}--full`);
+    }
     if (this.props.vertical) {
       classes.push(`${CLASS_ROOT}--vertical`);
     }
@@ -466,9 +469,9 @@ export default class Distribution extends Component {
           {a11yDescNode}
           {boxes}
         </svg>
-        <g ref="distributionItems">
+        <div ref="distributionItems">
           {labels}
-        </g>
+        </div>
         {legend}
       </div>
     );
@@ -485,6 +488,7 @@ Distribution.propTypes = {
   a11yTitleId: PropTypes.string,
   a11yDescId: PropTypes.string,
   a11yDesc: PropTypes.string,
+  full: PropTypes.bool,
   large: PropTypes.bool,
   legend: PropTypes.bool,
   legendTotal: PropTypes.bool,
