@@ -36,8 +36,8 @@ export default class Brick extends Component {
 Brick.propTypes = {
   label: React.PropTypes.string,
   route: React.PropTypes.string,
-  width: React.PropTypes.number,
-  height: React.PropTypes.number,
+  width: React.PropTypes.oneOf([1, 2]),
+  height: React.PropTypes.oneOf([1, 2]),
   colorIndex: React.PropTypes.string
 };
 
