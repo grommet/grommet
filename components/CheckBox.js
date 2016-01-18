@@ -34,31 +34,42 @@ var CheckBox = (function (_Component) {
     value: function render() {
       var classes = [CLASS_ROOT];
       var labelId = 'checkbox-label';
-      var hidden;
+      var label = undefined;
+      var hidden = undefined;
+
+      if (this.props.label) {
+        label = _react2.default.createElement(
+          'span',
+          { key: 'label', role: 'label', id: labelId, tabIndex: '-1', className: CLASS_ROOT + "__label" },
+          this.props.label
+        );
+      }
+
       if (this.props.toggle) {
         classes.push(CLASS_ROOT + "--toggle");
       }
+
       if (this.props.disabled) {
         classes.push(CLASS_ROOT + "--disabled");
         if (this.props.checked) {
           hidden = _react2.default.createElement('input', { name: this.props.name, type: 'hidden', value: 'true' });
         }
       }
+
       if (this.props.className) {
         classes.push(this.props.className);
       }
 
-      return _react2.default.createElement(
-        'label',
-        { className: classes.join(' '),
-          'aria-describedby': this.props.ariaDescribedby,
-          'aria-lebelledby': labelId },
+      var children = [_react2.default.createElement(
+        'span',
+        { key: 'checkbox' },
         _react2.default.createElement('input', { tabIndex: '0', className: CLASS_ROOT + "__input",
           id: this.props.id, name: this.props.name, type: 'checkbox',
           disabled: this.props.disabled,
           checked: this.props.checked,
           defaultChecked: this.props.defaultChecked,
-          onChange: this.props.onChange }),
+          onChange: this.props.onChange,
+          ref: 'input' }),
         _react2.default.createElement(
           'span',
           { className: CLASS_ROOT + "__control" },
@@ -68,14 +79,27 @@ var CheckBox = (function (_Component) {
               preserveAspectRatio: 'xMidYMid meet' },
             _react2.default.createElement('path', { fill: 'none', d: 'M6,11.3 L10.3,16 L18,6.2' })
           )
-        ),
-        hidden,
-        _react2.default.createElement(
-          'span',
-          { role: 'label', id: labelId, tabIndex: '-1', className: CLASS_ROOT + "__label" },
-          this.props.label
         )
+      ), label];
+
+      return _react2.default.createElement(
+        'label',
+        { className: classes.join(' '),
+          'aria-describedby': this.props.ariaDescribedby,
+          'aria-labelledby': labelId },
+        this.props.reverse ? children.reverse() : children,
+        hidden
       );
+    }
+  }, {
+    key: 'checked',
+    set: function set(value) {
+      if ('refs' in this) {
+        this.refs.input.checked = !!value;
+      }
+    },
+    get: function get() {
+      return 'refs' in this ? this.refs.input.checked : null;
     }
   }]);
 
@@ -89,7 +113,8 @@ CheckBox.propTypes = {
   defaultChecked: _react.PropTypes.bool,
   disabled: _react.PropTypes.bool,
   id: _react.PropTypes.string.isRequired,
-  label: _react.PropTypes.node.isRequired,
+  label: _react.PropTypes.node,
+  reverse: _react.PropTypes.bool,
   name: _react.PropTypes.string,
   onChange: _react.PropTypes.func,
   ariaDescribedby: _react.PropTypes.string,

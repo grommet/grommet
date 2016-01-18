@@ -61,10 +61,17 @@ var LoginForm = (function (_Component) {
     key: '_onSubmit',
     value: function _onSubmit(event) {
       event.preventDefault();
+
       var username = this.refs.username.value.trim();
       var password = this.refs.password.value.trim();
+      var rememberMe = undefined;
+
+      if ('rememberMe' in this.refs) {
+        rememberMe = this.refs.rememberMe.checked;
+      }
+
       if (this.props.onSubmit) {
-        this.props.onSubmit({ username: username, password: password });
+        this.props.onSubmit({ username: username, password: password, rememberMe: rememberMe });
       }
     }
   }, {
@@ -120,7 +127,8 @@ var LoginForm = (function (_Component) {
 
         rememberMe = _react2.default.createElement(_CheckBox2.default, { className: CLASS_ROOT + "__remember-me",
           id: 'remember-me',
-          label: _react2.default.createElement(_FormattedMessage2.default, { id: 'Remember me', defaultMessage: 'Remember me' }) });
+          label: _react2.default.createElement(_FormattedMessage2.default, { id: 'Remember me', defaultMessage: 'Remember me' }),
+          ref: 'rememberMe' });
       }
 
       var footer;
