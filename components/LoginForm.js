@@ -64,11 +64,7 @@ var LoginForm = (function (_Component) {
 
       var username = this.refs.username.value.trim();
       var password = this.refs.password.value.trim();
-      var rememberMe = undefined;
-
-      if ('rememberMe' in this.refs) {
-        rememberMe = this.refs.rememberMe.checked;
-      }
+      var rememberMe = this.refs.rememberMe && this.refs.rememberMe.checked;
 
       if (this.props.onSubmit) {
         this.props.onSubmit({ username: username, password: password, rememberMe: rememberMe });
@@ -84,27 +80,27 @@ var LoginForm = (function (_Component) {
         if (error) {
           errorComponent = _react2.default.createElement(
             'div',
-            { key: index, className: CLASS_ROOT + "__error" },
+            { key: index, className: CLASS_ROOT + '__error' },
             _react2.default.createElement(_FormattedMessage2.default, { id: error, defaultMessage: error })
           );
         }
         return errorComponent;
       });
 
-      var logo;
+      var logo = undefined;
       if (this.props.logo) {
         logo = _react2.default.createElement(
           'div',
-          { className: CLASS_ROOT + "__logo" },
+          { className: CLASS_ROOT + '__logo' },
           this.props.logo
         );
       }
 
-      var title;
+      var title = undefined;
       if (this.props.title) {
         title = _react2.default.createElement(
           'h1',
-          { className: CLASS_ROOT + "__title" },
+          { className: CLASS_ROOT + '__title' },
           _react2.default.createElement(
             'strong',
             null,
@@ -113,34 +109,36 @@ var LoginForm = (function (_Component) {
         );
       }
 
-      var secondaryText;
+      var secondaryText = undefined;
       if (this.props.secondaryText) {
         secondaryText = _react2.default.createElement(
           'p',
-          { className: CLASS_ROOT + "__secondary-text" },
+          { className: CLASS_ROOT + '__secondary-text' },
           this.props.secondaryText
         );
       }
 
-      var rememberMe;
+      var rememberMe = undefined;
       if (this.props.rememberMe) {
 
-        rememberMe = _react2.default.createElement(_CheckBox2.default, { className: CLASS_ROOT + "__remember-me",
+        var rememberMeLabel = _react2.default.createElement(_FormattedMessage2.default, { id: 'Remember me', defaultMessage: 'Remember me' });
+
+        rememberMe = _react2.default.createElement(_CheckBox2.default, { className: CLASS_ROOT + '__remember-me',
           id: 'remember-me',
-          label: _react2.default.createElement(_FormattedMessage2.default, { id: 'Remember me', defaultMessage: 'Remember me' }),
+          label: rememberMeLabel,
           ref: 'rememberMe' });
       }
 
-      var footer;
+      var footer = undefined;
       if (this.props.forgotPassword) {
         footer = _react2.default.createElement(
           'div',
-          { className: CLASS_ROOT + "__footer" },
+          { className: CLASS_ROOT + '__footer' },
           this.props.forgotPassword
         );
       }
 
-      var username;
+      var username = undefined;
       if (this.props.usernameType === 'email') {
         username = _react2.default.createElement(_FormattedMessage2.default, { id: 'Email', defaultMessage: 'Email' });
       } else {
@@ -171,8 +169,8 @@ var LoginForm = (function (_Component) {
         ),
         errors,
         rememberMe,
-        _react2.default.createElement(_Button2.default, { id: CLASS_ROOT + "__submit", className: CLASS_ROOT + "__submit",
-          primary: true, strong: true, type: 'submit', label: login,
+        _react2.default.createElement(_Button2.default, { id: CLASS_ROOT + '__submit', primary: true, strong: true,
+          className: CLASS_ROOT + '__submit', type: 'submit', label: login,
           onClick: this.props.onSubmit ? this._onSubmit : null }),
         footer
       );
@@ -185,14 +183,14 @@ var LoginForm = (function (_Component) {
 exports.default = LoginForm;
 
 LoginForm.propTypes = {
-  logo: _react.PropTypes.node,
-  title: _react.PropTypes.string,
-  secondaryText: _react.PropTypes.string,
-  usernameType: _react.PropTypes.string,
-  rememberMe: _react.PropTypes.bool,
-  forgotPassword: _react.PropTypes.node,
   errors: _react.PropTypes.arrayOf(_react.PropTypes.string),
-  onSubmit: _react.PropTypes.func
+  forgotPassword: _react.PropTypes.node,
+  logo: _react.PropTypes.node,
+  onSubmit: _react.PropTypes.func,
+  rememberMe: _react.PropTypes.bool,
+  secondaryText: _react.PropTypes.string,
+  title: _react.PropTypes.string,
+  usernameType: _react.PropTypes.string
 };
 
 LoginForm.defaultProps = {
