@@ -24,7 +24,7 @@ export default class CheckBox extends Component {
 
     if (this.props.label) {
       label = (
-        <span role="label" id={labelId} tabIndex="-1" className={CLASS_ROOT + "__label"}>
+        <span key="label" role="label" id={labelId} tabIndex="-1" className={CLASS_ROOT + "__label"}>
           {this.props.label}
         </span>
       );
@@ -48,7 +48,7 @@ export default class CheckBox extends Component {
     }
 
     let children = [(
-      <span>
+      <span key="checkbox">
         <input tabIndex="0" className={CLASS_ROOT + "__input"}
                id={this.props.id} name={this.props.name} type="checkbox"
                disabled={this.props.disabled}
