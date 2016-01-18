@@ -26,11 +26,7 @@ export default class LoginForm extends Component {
 
     let username = this.refs.username.value.trim();
     let password = this.refs.password.value.trim();
-    let rememberMe;
-
-    if ('rememberMe' in this.refs) {
-      rememberMe = this.refs.rememberMe.checked;
-    }
+    let rememberMe = this.refs.rememberMe && this.refs.rememberMe.checked;
 
     if (this.props.onSubmit) {
       this.props.onSubmit({username, password, rememberMe});
@@ -38,13 +34,13 @@ export default class LoginForm extends Component {
   }
 
   render () {
-    var classes = [CLASS_ROOT];
+    let classes = [CLASS_ROOT];
 
-    var errors = this.props.errors.map(function (error, index) {
-      var errorComponent = undefined;
+    let errors = this.props.errors.map(function (error, index) {
+      let errorComponent = undefined;
       if (error) {
         errorComponent = (
-          <div key={index} className={CLASS_ROOT + "__error"}>
+          <div key={index} className={`${CLASS_ROOT}__error`}>
             <FormattedMessage id={error} defaultMessage={error} />
           </div>
         );
@@ -52,61 +48,65 @@ export default class LoginForm extends Component {
       return errorComponent;
     });
 
-    var logo;
+    let logo;
     if (this.props.logo) {
       logo = (
-        <div className={CLASS_ROOT + "__logo"}>
+        <div className={`${CLASS_ROOT}__logo`}>
           {this.props.logo}
         </div>
       );
     }
 
-    var title;
+    let title;
     if (this.props.title) {
       title = (
-        <h1 className={CLASS_ROOT + "__title"}>
+        <h1 className={`${CLASS_ROOT}__title`}>
           <strong>{this.props.title}</strong>
         </h1>
       );
     }
 
-    var secondaryText;
+    let secondaryText;
     if (this.props.secondaryText) {
       secondaryText = (
-        <p className={CLASS_ROOT + "__secondary-text"}>
+        <p className={`${CLASS_ROOT}__secondary-text`}>
           {this.props.secondaryText}
         </p>
       );
     }
 
-    var rememberMe;
+    let rememberMe;
     if (this.props.rememberMe) {
 
+      let rememberMeLabel = (
+        <FormattedMessage id="Remember me" defaultMessage="Remember me" />
+      );
+
       rememberMe = (
-        <CheckBox className={CLASS_ROOT + "__remember-me"}
+        <CheckBox className={`${CLASS_ROOT}__remember-me`}
           id="remember-me"
-          label={<FormattedMessage id="Remember me" defaultMessage="Remember me" />}
+          label={rememberMeLabel}
           ref="rememberMe" />
       );
     }
 
-    var footer;
+    let footer;
     if (this.props.forgotPassword) {
       footer = (
-        <div className={CLASS_ROOT + "__footer"}>
+        <div className={`${CLASS_ROOT}__footer`}>
           {this.props.forgotPassword}
         </div>
       );
     }
 
-    var username;
+    let username;
     if (this.props.usernameType === 'email') {
       username = <FormattedMessage id="Email" defaultMessage="Email" />;
     } else {
       username = <FormattedMessage id="Username" defaultMessage="Username" />;
     }
-    var password = <FormattedMessage id="Password" defaultMessage="Password" />;
-    var login = <FormattedMessage id="Log In" defaultMessage="Log In" />;
+    let password = <FormattedMessage id="Password" defaultMessage="Password" />;
+    let login = <FormattedMessage id="Log In" defaultMessage="Log In" />;
 
     return (
       <Form className={classes.join(' ')} onSubmit={this._onSubmit}>
@@ -123,8 +123,8 @@ export default class LoginForm extends Component {
         </fieldset>
         {errors}
         {rememberMe}
-        <Button id={CLASS_ROOT + "__submit"} className={CLASS_ROOT + "__submit"}
-          primary={true} strong={true} type="submit" label={login}
+        <Button id={`${CLASS_ROOT}__submit`} primary={true} strong={true}
+          className={`${CLASS_ROOT}__submit`} type="submit" label={login}
           onClick={this.props.onSubmit ? this._onSubmit : null} />
         {footer}
       </Form>
@@ -134,14 +134,14 @@ export default class LoginForm extends Component {
 }
 
 LoginForm.propTypes = {
-  logo: PropTypes.node,
-  title: PropTypes.string,
-  secondaryText: PropTypes.string,
-  usernameType: PropTypes.string,
-  rememberMe: PropTypes.bool,
-  forgotPassword: PropTypes.node,
   errors: PropTypes.arrayOf(PropTypes.string),
-  onSubmit: PropTypes.func
+  forgotPassword: PropTypes.node,
+  logo: PropTypes.node,
+  onSubmit: PropTypes.func,
+  rememberMe: PropTypes.bool,
+  secondaryText: PropTypes.string,
+  title: PropTypes.string,
+  usernameType: PropTypes.string
 };
 
 LoginForm.defaultProps = {
