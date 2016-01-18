@@ -112,7 +112,11 @@ var SkipLinks = (function (_Component) {
         var currentAnchor = document.activeElement;
         var last = this.state.anchors.length - 1;
 
-        if (event.shiftKey && currentAnchor.id === this.state.anchors[0].id || !event.shiftKey && currentAnchor.id === this.state.anchors[last].id) {
+        var achorId = event.shiftKey ? this.state.anchors[0].id : this.state.anchors[last].id;
+
+        var targetId = 'skipLayer_' + achorId;
+
+        if (currentAnchor.id === targetId) {
           this.setState({ showLayer: false });
         }
       }
