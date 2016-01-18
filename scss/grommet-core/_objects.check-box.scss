@@ -184,16 +184,20 @@
             stroke: transparent;
           }
         }
-      }
 
-      &:checked + .check-box__control:after {
-        content: "";
-        background-color: #fff;
-        border-color: $brand-color;
-        margin-left: $control-size;
+        &:after {
+          content: "";
+          background-color: #fff;
+          border-color: $brand-color;
+          margin-left: $control-size;
 
-        [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
-          border-color: $colored-icon-color;
+          [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+            border-color: $colored-icon-color;
+          }
+        }
+
+        .check-box__control-check {
+          display: none;
         }
       }
     }

@@ -33,24 +33,25 @@ var CheckBox = (function (_Component) {
     key: 'render',
     value: function render() {
       var classes = [CLASS_ROOT];
-      var labelId = 'checkbox-label';
-      var label = undefined;
-      var hidden = undefined;
 
+      var label = undefined;
+      var labelId = CLASS_ROOT + '-label';
       if (this.props.label) {
         label = _react2.default.createElement(
           'span',
-          { key: 'label', role: 'label', id: labelId, tabIndex: '-1', className: CLASS_ROOT + "__label" },
+          { key: 'label', role: 'label', id: labelId,
+            className: CLASS_ROOT + '__label' },
           this.props.label
         );
       }
 
       if (this.props.toggle) {
-        classes.push(CLASS_ROOT + "--toggle");
+        classes.push(CLASS_ROOT + '--toggle');
       }
 
+      var hidden = undefined;
       if (this.props.disabled) {
-        classes.push(CLASS_ROOT + "--disabled");
+        classes.push(CLASS_ROOT + '--disabled');
         if (this.props.checked) {
           hidden = _react2.default.createElement('input', { name: this.props.name, type: 'hidden', value: 'true' });
         }
@@ -63,7 +64,7 @@ var CheckBox = (function (_Component) {
       var children = [_react2.default.createElement(
         'span',
         { key: 'checkbox' },
-        _react2.default.createElement('input', { tabIndex: '0', className: CLASS_ROOT + "__input",
+        _react2.default.createElement('input', { tabIndex: '0', className: CLASS_ROOT + '__input',
           id: this.props.id, name: this.props.name, type: 'checkbox',
           disabled: this.props.disabled,
           checked: this.props.checked,
@@ -72,10 +73,10 @@ var CheckBox = (function (_Component) {
           ref: 'input' }),
         _react2.default.createElement(
           'span',
-          { className: CLASS_ROOT + "__control" },
+          { className: CLASS_ROOT + '__control' },
           _react2.default.createElement(
             'svg',
-            { className: CLASS_ROOT + "__control-check", viewBox: '0 0 24 24',
+            { className: CLASS_ROOT + '__control-check', viewBox: '0 0 24 24',
               preserveAspectRatio: 'xMidYMid meet' },
             _react2.default.createElement('path', { fill: 'none', d: 'M6,11.3 L10.3,16 L18,6.2' })
           )
@@ -85,7 +86,6 @@ var CheckBox = (function (_Component) {
       return _react2.default.createElement(
         'label',
         { className: classes.join(' '),
-          'aria-describedby': this.props.ariaDescribedby,
           'aria-labelledby': labelId },
         this.props.reverse ? children.reverse() : children,
         hidden
@@ -114,10 +114,9 @@ CheckBox.propTypes = {
   disabled: _react.PropTypes.bool,
   id: _react.PropTypes.string.isRequired,
   label: _react.PropTypes.node,
-  reverse: _react.PropTypes.bool,
   name: _react.PropTypes.string,
   onChange: _react.PropTypes.func,
-  ariaDescribedby: _react.PropTypes.string,
+  reverse: _react.PropTypes.bool,
   toggle: _react.PropTypes.bool
 };
 module.exports = exports['default'];
