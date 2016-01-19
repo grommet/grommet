@@ -150,7 +150,7 @@ export default class SearchInput extends Component {
     ReactDOM.findDOMNode(this.refs.input).select();
     this.setState({
       focused: true,
-      dropActive: false,
+      dropActive: (this.props.suggestions && this.props.suggestions.length > 0),
       activeSuggestionIndex: -1
     });
   }
