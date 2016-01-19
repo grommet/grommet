@@ -15,7 +15,7 @@ import PreviousIcon from './icons/base/LinkPrevious';
 import UpIcon from './icons/base/Up';
 import DownIcon from './icons/base/Down';
 
-const CLASS_ROOT = "article";
+const CLASS_ROOT = 'article';
 const DEFAULT_PLAY_INTERVAL = 10000; // 10s
 
 export default class Article extends Component {
@@ -37,14 +37,12 @@ export default class Article extends Component {
 
   componentDidMount () {
     if (this.props.scrollStep) {
-      let keys;
+      this._keys = {up: this._onPrevious, down: this._onNext};
       if ('row' === this.props.direction) {
-        keys = {left: this._onPrevious, right: this._onNext};
-      } else {
-        keys = {up: this._onPrevious, down: this._onNext};
+        this._keys = {left: this._onPrevious, right: this._onNext};
       }
-      keys.space = this._onTogglePlay;
-      KeyboardAccelerators.startListeningToKeyboard(this, keys);
+      //keys.space = this._onTogglePlay;
+      KeyboardAccelerators.startListeningToKeyboard(this, this._keys);
 
       document.addEventListener('wheel', this._onWheel);
 
@@ -54,15 +52,7 @@ export default class Article extends Component {
 
   componentWillUnmount () {
     if (this.props.scrollStep) {
-      let keys;
-      if ('row' === this.props.direction) {
-        keys = {left: this._onPrevious, right: this._onNext};
-      } else {
-        keys = {up: this._onPrevious, down: this._onNext};
-      }
-      keys.space = this._onTogglePlay;
-      KeyboardAccelerators.stopListeningToKeyboard(this, keys);
-
+      KeyboardAccelerators.stopListeningToKeyboard(this, this._keys);
       document.removeEventListener('wheel', this._onWheel);
     }
   }
@@ -172,7 +162,7 @@ export default class Article extends Component {
 
   _renderControls () {
     const CONTROL_CLASS_PREFIX =
-      CLASS_ROOT + "__control " + CLASS_ROOT + "__control-";
+      `${CLASS_ROOT}__control ${CLASS_ROOT}__control`;
     const childCount = React.Children.count(this.props.children);
     let controls = [
       // Don't use CarouselControls for now
@@ -186,14 +176,14 @@ export default class Article extends Component {
       if (this.state.activeIndex > 0) {
         controls.push(
           <Button key="previous" type="icon"
-            className={CONTROL_CLASS_PREFIX + "left"}
+            className={`${CONTROL_CLASS_PREFIX}-left`}
             onClick={this._onPrevious}><PreviousIcon size="large" /></Button>
         );
       }
       if (this.state.activeIndex < (childCount - 1)) {
         controls.push(
           <Button key="next" type="icon"
-            className={CONTROL_CLASS_PREFIX + "right"}
+            className={`${CONTROL_CLASS_PREFIX}-right`}
             onClick={this._onNext}><NextIcon size="large" /></Button>
         );
       }
@@ -201,14 +191,14 @@ export default class Article extends Component {
       if (this.state.activeIndex > 0) {
         controls.push(
           <Button key="previous" type="icon"
-            className={CONTROL_CLASS_PREFIX + "up"}
+            className={`${CONTROL_CLASS_PREFIX}-up`}
             onClick={this._onPrevious}><UpIcon /></Button>
         );
       }
       if (this.state.activeIndex < (childCount - 1)) {
         controls.push(
           <Button key="next" type="icon"
-            className={CONTROL_CLASS_PREFIX + "down"}
+            className={`${CONTROL_CLASS_PREFIX}-down`}
             onClick={this._onNext}><DownIcon /></Button>
         );
       }
@@ -221,7 +211,7 @@ export default class Article extends Component {
     let classes = [CLASS_ROOT];
     const other = pick(this.props, keys(Box.propTypes));
     if (this.props.scrollStep) {
-      classes.push(CLASS_ROOT + "--scroll-step");
+      classes.push(`${CLASS_ROOT}--scroll-step`);
     }
     if (this.props.className) {
       classes.push(this.props.className);
