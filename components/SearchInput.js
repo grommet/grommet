@@ -196,7 +196,7 @@ var SearchInput = (function (_Component) {
       _reactDom2.default.findDOMNode(this.refs.input).select();
       this.setState({
         focused: true,
-        dropActive: false,
+        dropActive: this.props.suggestions && this.props.suggestions.length > 0,
         activeSuggestionIndex: -1
       });
     }
