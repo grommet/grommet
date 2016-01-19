@@ -1,0 +1,11 @@
+.tag {
+  background-color: $layer-overlay-background-color;
+  padding: $inuit-base-spacing-unit * 0.125 $inuit-base-spacing-unit * 0.25;
+  position: relative;
+  margin: 0 halve($inuit-base-spacing-unit) halve($inuit-base-spacing-unit) 0;
+
+  .tag--label {
+    color: #fff;
+    text-decoration: none;
+  }
+}
