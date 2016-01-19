@@ -126,6 +126,7 @@ var LoginForm = (function (_Component) {
         rememberMe = _react2.default.createElement(_CheckBox2.default, { className: CLASS_ROOT + '__remember-me',
           id: 'remember-me',
           label: rememberMeLabel,
+          defaultChecked: this.props.defaultValues.rememberMe,
           ref: 'rememberMe' });
       }
 
@@ -159,7 +160,8 @@ var LoginForm = (function (_Component) {
           _react2.default.createElement(
             _FormField2.default,
             { htmlFor: 'username', label: username },
-            _react2.default.createElement('input', { id: 'username', ref: 'username', type: this.props.usernameType })
+            _react2.default.createElement('input', { id: 'username', ref: 'username', type: this.props.usernameType,
+              defaultValue: this.props.defaultValues.username })
           ),
           _react2.default.createElement(
             _FormField2.default,
@@ -183,6 +185,10 @@ var LoginForm = (function (_Component) {
 exports.default = LoginForm;
 
 LoginForm.propTypes = {
+  defaultValues: _react.PropTypes.shape({
+    username: _react.PropTypes.string,
+    rememberMe: _react.PropTypes.bool
+  }),
   errors: _react.PropTypes.arrayOf(_react.PropTypes.string),
   forgotPassword: _react.PropTypes.node,
   logo: _react.PropTypes.node,
@@ -194,6 +200,10 @@ LoginForm.propTypes = {
 };
 
 LoginForm.defaultProps = {
+  defaultValues: {
+    username: '',
+    rememberMe: false
+  },
   errors: [],
   usernameType: 'email'
 };
