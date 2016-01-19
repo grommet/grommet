@@ -60,7 +60,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var CLASS_ROOT = "menu";
+var CLASS_ROOT = 'menu';
 
 // We have a separate module for the drop component
 // so we can transfer the router context.
@@ -90,6 +90,7 @@ var MenuDrop = (function (_Component) {
   }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
+      this._originalFocusedElement = document.activeElement;
       this._keyboardHandlers = {
         up: this._onUpKeyPress,
         down: this._onDownKeyPress
@@ -113,12 +114,12 @@ var MenuDrop = (function (_Component) {
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
+      this._originalFocusedElement.focus();
       _KeyboardAccelerators2.default.stopListeningToKeyboard(this, this._keyboardHandlers);
     }
   }, {
     key: '_onUpKeyPress',
     value: function _onUpKeyPress(event) {
-      event.preventDefault();
       var menuItems = _reactDom2.default.findDOMNode(this.refs.navContainer).childNodes;
       if (!this.activeMenuItem) {
         var lastMenuItem = menuItems[menuItems.length - 1];
@@ -148,7 +149,6 @@ var MenuDrop = (function (_Component) {
   }, {
     key: '_onDownKeyPress',
     value: function _onDownKeyPress(event) {
-      event.preventDefault();
       var menuItems = _reactDom2.default.findDOMNode(this.refs.navContainer).childNodes;
       if (!this.activeMenuItem) {
         this.activeMenuItem = menuItems[0];
@@ -177,7 +177,7 @@ var MenuDrop = (function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var classes = [CLASS_ROOT + "__drop"];
+      var classes = [CLASS_ROOT + '__drop'];
       var other = (0, _pick2.default)(this.props, (0, _keys2.default)(_Box2.default.propTypes));
 
       var contents = [_react2.default.cloneElement(this.props.control, { key: 'control' }), _react2.default.createElement(
@@ -190,13 +190,13 @@ var MenuDrop = (function (_Component) {
         contents.reverse();
       }
       if (this.props.dropAlign.right) {
-        classes.push(CLASS_ROOT + "__drop--align-right");
+        classes.push(CLASS_ROOT + '__drop--align-right');
       }
       if (this.props.dropColorIndex) {
-        classes.push("background-color-index-" + this.props.dropColorIndex);
+        classes.push('background-color-index-' + this.props.dropColorIndex);
       }
       if (this.props.size) {
-        classes.push(CLASS_ROOT + "__drop--" + this.props.size);
+        classes.push(CLASS_ROOT + '__drop--' + this.props.size);
       }
 
       return _react2.default.createElement(
@@ -242,13 +242,13 @@ var Menu = (function (_Component2) {
     _this2._onFocusControl = _this2._onFocusControl.bind(_this2);
     _this2._onBlurControl = _this2._onBlurControl.bind(_this2);
 
-    var inline;
+    var inline = undefined;
     if (props.hasOwnProperty('inline')) {
       inline = props.inline;
     } else {
       inline = !props.label && !props.icon;
     }
-    var responsive;
+    var responsive = undefined;
     if (props.hasOwnProperty('responsive')) {
       responsive = props.responsive;
     } else {
@@ -342,10 +342,6 @@ var Menu = (function (_Component2) {
     key: '_onClose',
     value: function _onClose() {
       this.setState({ state: 'collapsed' });
-      var element = _reactDom2.default.findDOMNode(this);
-      if (document.activeElement === element) {
-        this.setState({ state: 'focused' });
-      }
     }
   }, {
     key: '_onSink',
@@ -388,10 +384,10 @@ var Menu = (function (_Component2) {
   }, {
     key: '_renderControlContents',
     value: function _renderControlContents(clickable) {
-      var icon;
-      var label;
+      var icon = undefined;
+      var label = undefined;
 
-      var controlClassName = CLASS_ROOT + "__control";
+      var controlClassName = CLASS_ROOT + '__control';
 
       if (this.props.icon) {
         icon = _react2.default.cloneElement(this.props.icon, { key: 'icon' });
@@ -419,13 +415,13 @@ var Menu = (function (_Component2) {
 
       var control = _react2.default.createElement(
         _Button2.default,
-        { type: 'icon', className: CLASS_ROOT + "__control",
+        { type: 'icon', className: CLASS_ROOT + '__control',
           style: { lineHeight: this.state.controlHeight + 'px' },
           onClick: this._onClose },
         this._renderControlContents()
       );
 
-      var onClick;
+      var onClick = undefined;
       if (this.props.closeOnClick) {
         onClick = this._onClose;
       } else {
@@ -469,11 +465,11 @@ var Menu = (function (_Component2) {
     value: function render() {
       var classes = this._classes(CLASS_ROOT);
       if (this.state.inline) {
-        classes.push(CLASS_ROOT + "--inline");
+        classes.push(CLASS_ROOT + '--inline');
       } else {
-        classes.push(CLASS_ROOT + "--controlled");
+        classes.push(CLASS_ROOT + '--controlled');
         if (this.props.label) {
-          classes.push(CLASS_ROOT + "--labelled");
+          classes.push(CLASS_ROOT + '--labelled');
         }
       }
       if (this.props.className) {
@@ -490,7 +486,7 @@ var Menu = (function (_Component2) {
           this.props.children
         );
       } else {
-        classes.push(CLASS_ROOT + "__control");
+        classes.push(CLASS_ROOT + '__control');
 
         var controlContents = this._renderControlContents();
         var menuTitle = this.props.a11yTitle || this.props.label;
@@ -518,7 +514,6 @@ exports.default = Menu;
 
 Menu.propTypes = _extends({
   closeOnClick: _react.PropTypes.bool,
-  collapse: _react.PropTypes.bool, // deprecated, remove in 0.5
   dropAlign: _Drop2.default.alignPropType,
   dropColorIndex: _react.PropTypes.string,
   icon: _react.PropTypes.node,

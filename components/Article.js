@@ -20,9 +20,9 @@ var _pick = require('lodash/object/pick');
 
 var _pick2 = _interopRequireDefault(_pick);
 
-var _keys3 = require('lodash/object/keys');
+var _keys = require('lodash/object/keys');
 
-var _keys4 = _interopRequireDefault(_keys3);
+var _keys2 = _interopRequireDefault(_keys);
 
 var _Box = require('./Box');
 
@@ -70,7 +70,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 // import CarouselControls from './CarouselControls';
 
-var CLASS_ROOT = "article";
+var CLASS_ROOT = 'article';
 var DEFAULT_PLAY_INTERVAL = 10000; // 10s
 
 var Article = (function (_Component) {
@@ -98,14 +98,12 @@ var Article = (function (_Component) {
     key: 'componentDidMount',
     value: function componentDidMount() {
       if (this.props.scrollStep) {
-        var _keys = undefined;
+        this._keys = { up: this._onPrevious, down: this._onNext };
         if ('row' === this.props.direction) {
-          _keys = { left: this._onPrevious, right: this._onNext };
-        } else {
-          _keys = { up: this._onPrevious, down: this._onNext };
+          this._keys = { left: this._onPrevious, right: this._onNext };
         }
-        _keys.space = this._onTogglePlay;
-        _KeyboardAccelerators2.default.startListeningToKeyboard(this, _keys);
+        //keys.space = this._onTogglePlay;
+        _KeyboardAccelerators2.default.startListeningToKeyboard(this, this._keys);
 
         document.addEventListener('wheel', this._onWheel);
 
@@ -116,15 +114,7 @@ var Article = (function (_Component) {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
       if (this.props.scrollStep) {
-        var _keys2 = undefined;
-        if ('row' === this.props.direction) {
-          _keys2 = { left: this._onPrevious, right: this._onNext };
-        } else {
-          _keys2 = { up: this._onPrevious, down: this._onNext };
-        }
-        _keys2.space = this._onTogglePlay;
-        _KeyboardAccelerators2.default.stopListeningToKeyboard(this, _keys2);
-
+        _KeyboardAccelerators2.default.stopListeningToKeyboard(this, this._keys);
         document.removeEventListener('wheel', this._onWheel);
       }
     }
@@ -239,7 +229,7 @@ var Article = (function (_Component) {
   }, {
     key: '_renderControls',
     value: function _renderControls() {
-      var CONTROL_CLASS_PREFIX = CLASS_ROOT + "__control " + CLASS_ROOT + "__control-";
+      var CONTROL_CLASS_PREFIX = CLASS_ROOT + '__control ' + CLASS_ROOT + '__control';
       var childCount = _react2.default.Children.count(this.props.children);
       var controls = [
         // Don't use CarouselControls for now
@@ -254,7 +244,7 @@ var Article = (function (_Component) {
           controls.push(_react2.default.createElement(
             _Button2.default,
             { key: 'previous', type: 'icon',
-              className: CONTROL_CLASS_PREFIX + "left",
+              className: CONTROL_CLASS_PREFIX + '-left',
               onClick: this._onPrevious },
             _react2.default.createElement(_LinkPrevious2.default, { size: 'large' })
           ));
@@ -263,7 +253,7 @@ var Article = (function (_Component) {
           controls.push(_react2.default.createElement(
             _Button2.default,
             { key: 'next', type: 'icon',
-              className: CONTROL_CLASS_PREFIX + "right",
+              className: CONTROL_CLASS_PREFIX + '-right',
               onClick: this._onNext },
             _react2.default.createElement(_LinkNext2.default, { size: 'large' })
           ));
@@ -273,7 +263,7 @@ var Article = (function (_Component) {
           controls.push(_react2.default.createElement(
             _Button2.default,
             { key: 'previous', type: 'icon',
-              className: CONTROL_CLASS_PREFIX + "up",
+              className: CONTROL_CLASS_PREFIX + '-up',
               onClick: this._onPrevious },
             _react2.default.createElement(_Up2.default, null)
           ));
@@ -282,7 +272,7 @@ var Article = (function (_Component) {
           controls.push(_react2.default.createElement(
             _Button2.default,
             { key: 'next', type: 'icon',
-              className: CONTROL_CLASS_PREFIX + "down",
+              className: CONTROL_CLASS_PREFIX + '-down',
               onClick: this._onNext },
             _react2.default.createElement(_Down2.default, null)
           ));
@@ -295,9 +285,9 @@ var Article = (function (_Component) {
     key: 'render',
     value: function render() {
       var classes = [CLASS_ROOT];
-      var other = (0, _pick2.default)(this.props, (0, _keys4.default)(_Box2.default.propTypes));
+      var other = (0, _pick2.default)(this.props, (0, _keys2.default)(_Box2.default.propTypes));
       if (this.props.scrollStep) {
-        classes.push(CLASS_ROOT + "--scroll-step");
+        classes.push(CLASS_ROOT + '--scroll-step');
       }
       if (this.props.className) {
         classes.push(this.props.className);
