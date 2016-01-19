@@ -86,6 +86,7 @@ export default class LoginForm extends Component {
         <CheckBox className={`${CLASS_ROOT}__remember-me`}
           id="remember-me"
           label={rememberMeLabel}
+          defaultChecked={this.props.defaultValues.rememberMe}
           ref="rememberMe" />
       );
     }
@@ -115,7 +116,8 @@ export default class LoginForm extends Component {
         {secondaryText}
         <fieldset>
           <FormField htmlFor="username" label={username}>
-            <input id="username" ref="username" type={this.props.usernameType} />
+            <input id="username" ref="username" type={this.props.usernameType}
+              defaultValue={this.props.defaultValues.username} />
           </FormField>
           <FormField htmlFor="password" label={password}>
             <input id="password" ref="password" type="password" />
@@ -134,6 +136,10 @@ export default class LoginForm extends Component {
 }
 
 LoginForm.propTypes = {
+  defaultValues: PropTypes.shape({
+    username: PropTypes.string,
+    rememberMe: PropTypes.bool
+  }),
   errors: PropTypes.arrayOf(PropTypes.string),
   forgotPassword: PropTypes.node,
   logo: PropTypes.node,
@@ -145,6 +151,10 @@ LoginForm.propTypes = {
 };
 
 LoginForm.defaultProps = {
+  defaultValues: {
+    username: '',
+    rememberMe: false
+  },
   errors: [],
   usernameType: 'email'
 };
