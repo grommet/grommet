@@ -203,6 +203,9 @@ export default class Graphic extends Component {
     return null;
   }
 
+  _renderInlineLegend () {
+    return null;
+  }
 
   _renderA11YTitle () {
     let a11yTitle = this.props.a11yTitle;
@@ -257,6 +260,7 @@ export default class Graphic extends Component {
     let values = this._renderValues();
     let thresholds = this._renderThresholds();
     let topLayer = this._renderTopLayer();
+    let inlineLegend = this._renderInlineLegend();
 
     let a11yTitle = this._renderA11YTitle();
     let a11yDesc = this._renderA11YDesc();
@@ -279,6 +283,7 @@ export default class Graphic extends Component {
         <desc id={this.props.a11yDescId}>{a11yDesc}</desc>
         {thresholds}
         {values}
+        {inlineLegend}
         {topLayer}
       </svg>
     );

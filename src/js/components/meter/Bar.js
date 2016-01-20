@@ -1,5 +1,6 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
+import React from 'react';
 import {baseUnit, baseDimension} from './utils';
 import Graphic from './Graphic';
 
@@ -16,8 +17,8 @@ export default class Bar extends Graphic {
   }
 
   _viewBoxDimensions (props) {
-    var viewBoxHeight;
-    var viewBoxWidth;
+    let viewBoxHeight;
+    let viewBoxWidth;
     if (props.vertical) {
       if (props.stacked) {
         viewBoxWidth = BAR_THICKNESS;
@@ -31,15 +32,18 @@ export default class Bar extends Graphic {
         viewBoxHeight = BAR_THICKNESS;
       } else {
         viewBoxHeight = BAR_THICKNESS * Math.max(1, props.series.length);
+        if (props.legend && 'inline' === props.legend.placement) {
+          viewBoxHeight *= 2;
+        }
       }
     }
     return [viewBoxWidth, viewBoxHeight];
   }
 
   _stateFromProps (props) {
-    var viewBoxDimensions = this._viewBoxDimensions(props);
+    const viewBoxDimensions = this._viewBoxDimensions(props);
 
-    var state = {
+    const state = {
       scale: BAR_LENGTH / (props.max.value - props.min.value),
       viewBoxWidth: viewBoxDimensions[0],
       viewBoxHeight: viewBoxDimensions[1]
@@ -53,11 +57,17 @@ export default class Bar extends Graphic {
   }
 
   _sliceCommands (trackIndex, item, startValue) {
-    var value = item.value - this.props.min.value;
-    var start = this._translateBarWidth(startValue);
-    var distance = Math.max(MID_BAR_THICKNESS, this._translateBarWidth(value));
-    var commands;
-    var spot = (trackIndex * BAR_THICKNESS) + MID_BAR_THICKNESS;
+    const value = item.value - this.props.min.value;
+    const start = this._translateBarWidth(startValue);
+    const distance = Math.max(MID_BAR_THICKNESS, this._translateBarWidth(value));
+    let commands;
+    if (this.props.legend && 'inline' === this.props.legend.placement) {
+      trackIndex *= 2;
+    }
+    let spot = (trackIndex * BAR_THICKNESS) + MID_BAR_THICKNESS;
+    if (this.props.legend && 'inline' === this.props.legend.placement) {
+      spot += MID_BAR_THICKNESS;
+    }
     if (this.props.vertical) {
       commands = "M" + spot + "," + (BAR_LENGTH - start) +
         " L" + spot + "," + (BAR_LENGTH - (start + distance));
@@ -66,6 +76,43 @@ export default class Bar extends Graphic {
         " L" + (start + distance) + "," + spot;
     }
     return commands;
+  }
+
+  _renderInlineLegend () {
+    let result;
+    if (this.props.legend && 'inline' === this.props.legend.placement) {
+      result = this.props.series.map(function (item, index) {
+        const spot = (index * BAR_THICKNESS * 2) + MID_BAR_THICKNESS;
+
+        var label;
+        if (item.hasOwnProperty('label')) {
+          label = (
+            <text key="label" x="0" y={spot} role="presentation"
+              textAnchor="start" fontSize={16}>
+              {item.label}
+            </text>
+          );
+        }
+
+        var value;
+        if (item.hasOwnProperty('value')) {
+          let text = item.value;
+          if (item.units || this.props.units) {
+            text += ' ' + (item.units || this.props.units);
+          }
+          let x = this._translateBarWidth(this.props.max.value);
+          value = (
+            <text key="value" x={x} y={spot} role="presentation"
+              textAnchor="end" fontSize={16}>
+              {text}
+            </text>
+          );
+        }
+
+        return [label, value];
+      }, this);
+    }
+    return result;
   }
 }
 

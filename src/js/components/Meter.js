@@ -382,7 +382,9 @@ export default class Meter extends Component {
       a11yRole = 'tablist';
 
       if (this.props.legend) {
-        legend = this._renderLegend();
+        if ('inline' !== this.props.legend.placement) {
+          legend = this._renderLegend();
+        }
         classes.push(CLASS_ROOT + "--legend-" + this.state.legendPlacement);
       }
     }
@@ -397,6 +399,7 @@ export default class Meter extends Component {
         a11yRole={a11yRole}
         activeIndex={this.state.activeIndex}
         min={this.state.min} max={this.state.max}
+        legend={this.props.legend}
         onActivate={this._onActivate}
         series={this.state.series}
         stacked={this.props.stacked}
@@ -439,7 +442,7 @@ Meter.propTypes = {
     PropTypes.bool,
     PropTypes.shape({
       total: PropTypes.bool,
-      placement: PropTypes.oneOf(['right', 'bottom'])
+      placement: PropTypes.oneOf(['right', 'bottom', 'inline'])
     })
   ]),
   max: PropTypes.oneOfType([
