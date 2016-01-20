@@ -540,7 +540,7 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
         &-indicator {
           stroke-linecap: square;
           stroke-width: $meter-indicator-width;
-          stroke: #000;
+          stroke: $threshold-color;
           //@include graph-stroke-color;
         }
       }

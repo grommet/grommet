@@ -52,6 +52,10 @@ var _Down = require('./icons/base/Down');
 
 var _Down2 = _interopRequireDefault(_Down);
 
+var _Intl = require('../utils/Intl');
+
+var _Intl2 = _interopRequireDefault(_Intl);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -425,9 +429,14 @@ var Menu = (function (_Component2) {
     value: function _renderDrop() {
       var other = (0, _pick2.default)(this.props, (0, _keys2.default)(_Box2.default.propTypes));
 
+      var closeLabel = _Intl2.default.getMessage(this.context.intl, 'Close');
+      var menuLabel = _Intl2.default.getMessage(this.context.intl, 'Menu');
+      var menuTitle = closeLabel + ' ' + (this.props.a11yTitle || this.props.label) + ' ' + menuLabel;
+
       var control = _react2.default.createElement(
         _Button2.default,
         { type: 'icon', className: CLASS_ROOT + '__control',
+          a11yTitle: menuTitle,
           style: { lineHeight: this.state.controlHeight + 'px' },
           onClick: this._onClose },
         this._renderControlContents()
@@ -500,7 +509,9 @@ var Menu = (function (_Component2) {
         classes.push(CLASS_ROOT + '__control');
 
         var controlContents = this._renderControlContents();
-        var menuTitle = this.props.a11yTitle || this.props.label;
+        var openLabel = _Intl2.default.getMessage(this.context.intl, 'Open');
+        var menuLabel = _Intl2.default.getMessage(this.context.intl, 'Menu');
+        var menuTitle = openLabel + ' ' + (this.props.a11yTitle || this.props.label) + ' ' + menuLabel;
 
         return _react2.default.createElement(
           _Button2.default,
@@ -542,7 +553,6 @@ Menu.contextTypes = {
 };
 
 Menu.defaultProps = {
-  a11yTitle: 'Menu',
   closeOnClick: true,
   direction: 'column',
   dropAlign: { top: 'top', left: 'left' },
