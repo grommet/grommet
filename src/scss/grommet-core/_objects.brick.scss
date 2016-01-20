@@ -2,9 +2,9 @@
   box-shadow: 1px 1px 5px #eee;
   padding: $inuit-base-spacing-unit;
   position: relative;
-  margin: 0 10px 10px 0;
+  margin: 0 halve($inuit-base-spacing-unit) halve($inuit-base-spacing-unit) 0;
   float: left;
-  max-width: calc(100% - 10px);
+  max-width: calc(100% - #{halve($inuit-base-spacing-unit)});
 
   .brick--label {
     position: absolute;
@@ -29,7 +29,7 @@
 }
 
 .brick--1-1 {
-  width: calc(25% - 10px);
+  width: calc(25% - #{halve($inuit-base-spacing-unit)});
 
   &:after {
     padding-top: 100%;
@@ -37,41 +37,41 @@
     content: '';
   }
 
-  @media only screen and (max-width: 1000px) {
-    width: calc(50% - 10px);
+  @include media-query(portable) {
+    width: calc(50% - #{halve($inuit-base-spacing-unit)});
   }
 }
 
 .brick--1-2 {
-  width: calc(25% - 10px);
+  width: calc(25% - #{halve($inuit-base-spacing-unit)});
 
   &:after {
-    padding-top: calc(200% + 58px);
+    padding-top: calc(200% + #{halve($inuit-base-spacing-unit) * 5});
     display: block;
     content: '';
   }
 
-  @media only screen and (max-width: 1000px) {
-    width: calc(50% - 10px);
+  @include media-query(portable) {
+    width: calc(50% - #{halve($inuit-base-spacing-unit)});
   }
 }
 
 .brick--2-1 {
-  width: calc(50% - 10px);
+  width: calc(50% - #{halve($inuit-base-spacing-unit)});
 
   &:after {
-    padding-top: calc(50% - 28px);
+    padding-top: calc(50% - #{quarter($inuit-base-spacing-unit) * 5});
     display: block;
     content: '';
   }
 
-  @media only screen and (max-width: 1000px) {
-    width: calc(100% - 10px);
+  @include media-query(portable) {
+    width: calc(100% - #{halve($inuit-base-spacing-unit)});
   }
 }
 
 .brick--2-2 {
-  width: calc(50% - 10px);
+  width: calc(50% - #{halve($inuit-base-spacing-unit)});
 
   &:after {
     padding-top: 100%;
@@ -79,8 +79,8 @@
     content: '';
   }
 
-  @media only screen and (max-width: 1000px) {
-    width: calc(100% - 10px);
+  @include media-query(portable) {
+    width: calc(100% - #{halve($inuit-base-spacing-unit)});
   }
 }
 
