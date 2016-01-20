@@ -96,13 +96,14 @@ export default class Box extends Component {
       var boxLabel = Intl.getMessage(this.context.intl, this.props.a11yTitle);
       a11yProps.tabIndex = 0;
       a11yProps["aria-label"] = boxLabel;
-      a11yProps.role = 'link';
+      a11yProps.role = this.props.role || 'link';
     }
 
     if (this.props.appCentered) {
       return (
         <div ref="boxContainer" className={containerClasses.join(' ')}
-          style={style} onClick={this.props.onClick} {...a11yProps}>
+          style={style} onClick={this.props.onClick}
+          role={this.props.role} {...a11yProps}>
           <this.props.tag id={this.props.id} className={classes.join(' ')}>
             {texture}
             {this.props.children}
@@ -113,7 +114,8 @@ export default class Box extends Component {
       return (
         <this.props.tag ref="boxContainer" id={this.props.id}
           className={classes.join(' ')} style={style}
-          onClick={this.props.onClick} {...a11yProps}>
+          onClick={this.props.onClick} role={this.props.role}
+          tabIndex={this.props.tabIndex} {...a11yProps}>
           {texture}
           {this.props.children}
         </this.props.tag>
@@ -144,6 +146,7 @@ Box.propTypes = {
   ]),
   reverse: PropTypes.bool,
   responsive: PropTypes.bool,
+  role: PropTypes.string,
   separator: PropTypes.oneOf(['top', 'bottom', 'left', 'right', 'horizontal', 'vertical', 'all']),
   tag: PropTypes.string,
   textAlign: PropTypes.oneOf(['left', 'center', 'right']),

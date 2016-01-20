@@ -37,10 +37,14 @@ class MenuDrop extends Component {
     this._originalFocusedElement = document.activeElement;
     this._keyboardHandlers = {
       up: this._onUpKeyPress,
-      down: this._onDownKeyPress
+      left: this._onUpKeyPress,
+      down: this._onDownKeyPress,
+      right: this._onDownKeyPress
     };
     KeyboardAccelerators.startListeningToKeyboard(this, this._keyboardHandlers);
-    let menuItems = ReactDOM.findDOMNode(this.refs.navContainer).childNodes;
+
+    let container = ReactDOM.findDOMNode(this.refs.navContainer);
+    let menuItems = container.childNodes;
     for (let i = 0; i < menuItems.length; i++) {
       let classes = menuItems[i].className.toString();
       let tagName = menuItems[i].tagName.toLowerCase();
@@ -56,6 +60,10 @@ class MenuDrop extends Component {
           menuItems[i].getAttribute('data-reactid'));
       }
     }
+
+    container.setAttribute('aria-activedescendant',
+      menuItems[0].getAttribute('id'));
+    container.focus();
   }
 
   componentWillUnmount () {
@@ -64,7 +72,9 @@ class MenuDrop extends Component {
   }
 
   _onUpKeyPress (event) {
-    let menuItems = ReactDOM.findDOMNode(this.refs.navContainer).childNodes;
+    event.preventDefault();
+    var container = ReactDOM.findDOMNode(this.refs.navContainer);
+    let menuItems = container.childNodes;
     if (!this.activeMenuItem) {
       let lastMenuItem = menuItems[menuItems.length - 1];
       this.activeMenuItem = lastMenuItem;
@@ -86,7 +96,7 @@ class MenuDrop extends Component {
     }
 
     this.activeMenuItem.focus();
-    this.refs.menuDrop.setAttribute('aria-activedescendant',
+    container.setAttribute('aria-activedescendant',
       this.activeMenuItem.getAttribute('id'));
     // Stops KeyboardAccelerators from calling the other listeners.
     // Works limilar to event.stopPropagation().
@@ -94,7 +104,9 @@ class MenuDrop extends Component {
   }
 
   _onDownKeyPress (event) {
-    let menuItems = ReactDOM.findDOMNode(this.refs.navContainer).childNodes;
+    event.preventDefault();
+    var container = ReactDOM.findDOMNode(this.refs.navContainer);
+    let menuItems = container.childNodes;
     if (!this.activeMenuItem) {
       this.activeMenuItem = menuItems[0];
     } else if (this.activeMenuItem.nextSibling) {
@@ -115,7 +127,7 @@ class MenuDrop extends Component {
     }
 
     this.activeMenuItem.focus();
-    this.refs.menuDrop.setAttribute('aria-activedescendant',
+    container.setAttribute('aria-activedescendant',
       this.activeMenuItem.getAttribute('id'));
     // Stops KeyboardAccelerators from calling the other listeners.
     // Works limilar to event.stopPropagation().
@@ -126,10 +138,12 @@ class MenuDrop extends Component {
     let classes = [`${CLASS_ROOT}__drop`];
     let other = pick(this.props, keys(Box.propTypes));
 
+    delete other.onClick;
+
     let contents = [
       React.cloneElement(this.props.control, {key: 'control'}),
-      <Box key="nav" ref="navContainer" tag="nav" {...other}
-        className={`${CLASS_ROOT}__contents`}>
+      <Box key="nav" ref="navContainer" tabIndex="0"
+        role="menu" tag="nav" {...other} className={`${CLASS_ROOT}__contents`}>
         {this.props.children}
       </Box>
     ];
@@ -264,7 +278,6 @@ export default class Menu extends Component {
           document.addEventListener('click', this._onClose);
           this._drop = Drop.add(ReactDOM.findDOMNode(this.refs.control),
             this._renderDrop(), this.props.dropAlign);
-          this._drop.container.focus();
           this._drop.render(this._renderDrop());
           break;
       }
@@ -371,8 +384,7 @@ export default class Menu extends Component {
       onClick = this._onSink;
     }
     return (
-      <MenuDrop tabIndex="-1"
-        intl={this.context.intl}
+      <MenuDrop intl={this.context.intl}
         history={this.context.history}
         router={this.context.router}
         dropAlign={this.props.dropAlign}
@@ -439,7 +451,7 @@ export default class Menu extends Component {
           tabIndex="0"
           style={{lineHeight: this.state.controlHeight + 'px'}}
           onClick={this._onOpen}
-          role="link" aria-label={menuTitle}
+          a11yTitle={menuTitle}
           onFocus={this._onFocusControl}
           onBlur={this._onBlurControl}>
           {controlContents}
