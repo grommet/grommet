@@ -11,6 +11,7 @@ import Box from './Box';
 import Button from './Button';
 import MoreIcon from './icons/base/More';
 import DropCaretIcon from './icons/base/Down';
+import Intl from '../utils/Intl';
 
 const CLASS_ROOT = 'menu';
 
@@ -369,8 +370,15 @@ export default class Menu extends Component {
   _renderDrop () {
     let other = pick(this.props, keys(Box.propTypes));
 
+    let closeLabel = Intl.getMessage(this.context.intl, 'Close');
+    let menuLabel = Intl.getMessage(this.context.intl, 'Menu');
+    let menuTitle = (
+      `${closeLabel} ${this.props.a11yTitle || this.props.label} ${menuLabel}`
+    );
+
     let control = (
       <Button type="icon" className={`${CLASS_ROOT}__control`}
+        a11yTitle={menuTitle}
         style={{lineHeight: this.state.controlHeight + 'px'}}
         onClick={this._onClose}>
         {this._renderControlContents()}
@@ -443,7 +451,11 @@ export default class Menu extends Component {
       classes.push(`${CLASS_ROOT}__control`);
 
       let controlContents = this._renderControlContents();
-      let menuTitle = this.props.a11yTitle || this.props.label;
+      let openLabel = Intl.getMessage(this.context.intl, 'Open');
+      let menuLabel = Intl.getMessage(this.context.intl, 'Menu');
+      let menuTitle = (
+        `${openLabel} ${this.props.a11yTitle || this.props.label} ${menuLabel}`
+      );
 
       return (
         <Button ref="control" type="icon" id={this.props.id}
@@ -482,7 +494,6 @@ Menu.contextTypes = {
 };
 
 Menu.defaultProps = {
-  a11yTitle: 'Menu',
   closeOnClick: true,
   direction: 'column',
   dropAlign: {top: 'top', left: 'left'},
