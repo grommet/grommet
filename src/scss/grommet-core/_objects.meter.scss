@@ -60,6 +60,12 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
     }
   }
 
+  &__graphic {
+    &:focus {
+      outline: $focus-border-color solid 1px;
+    }
+  }
+
   &__value {
     white-space: normal;
     pointer-events: none;
