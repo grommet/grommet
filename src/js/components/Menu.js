@@ -401,7 +401,7 @@ export default class Menu extends Component {
     let closeLabel = Intl.getMessage(this.context.intl, 'Close');
     let menuLabel = Intl.getMessage(this.context.intl, 'Menu');
     let menuTitle = (
-      `${closeLabel} ${this.props.a11yTitle || this.props.label} ${menuLabel}`
+      `${closeLabel} ${this.props.a11yTitle || this.props.label || ''} ${menuLabel}`
     );
 
     let control = (
@@ -482,7 +482,7 @@ export default class Menu extends Component {
       let openLabel = Intl.getMessage(this.context.intl, 'Open');
       let menuLabel = Intl.getMessage(this.context.intl, 'Menu');
       let menuTitle = (
-        `${openLabel} ${this.props.a11yTitle || this.props.label} ${menuLabel}`
+        `${openLabel} ${this.props.a11yTitle || this.props.label || ''} ${menuLabel}`
       );
 
       return (
