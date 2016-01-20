@@ -56,6 +56,10 @@ var _Intl = require('../utils/Intl');
 
 var _Intl2 = _interopRequireDefault(_Intl);
 
+var _DOM = require('../utils/DOM');
+
+var _DOM2 = _interopRequireDefault(_DOM);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -79,6 +83,7 @@ var MenuDrop = (function (_Component) {
 
     _this._onUpKeyPress = _this._onUpKeyPress.bind(_this);
     _this._onDownKeyPress = _this._onDownKeyPress.bind(_this);
+    _this._processTab = _this._processTab.bind(_this);
     return _this;
   }
 
@@ -96,6 +101,7 @@ var MenuDrop = (function (_Component) {
     value: function componentDidMount() {
       this._originalFocusedElement = document.activeElement;
       this._keyboardHandlers = {
+        tab: this._processTab,
         up: this._onUpKeyPress,
         left: this._onUpKeyPress,
         down: this._onDownKeyPress,
@@ -120,13 +126,40 @@ var MenuDrop = (function (_Component) {
       }
 
       container.setAttribute('aria-activedescendant', menuItems[0].getAttribute('id'));
-      container.focus();
+
+      var menuDrop = _reactDom2.default.findDOMNode(this.refs.menuDrop);
+      var items = menuDrop.getElementsByTagName('*');
+      var firstFocusable = _DOM2.default.getBestFirstFocusable(items);
+      if (firstFocusable) {
+        firstFocusable.focus();
+      }
     }
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
       this._originalFocusedElement.focus();
       _KeyboardAccelerators2.default.stopListeningToKeyboard(this, this._keyboardHandlers);
+    }
+  }, {
+    key: '_processTab',
+    value: function _processTab(event) {
+      var container = _reactDom2.default.findDOMNode(this.refs.menuDrop);
+      var items = container.getElementsByTagName('*');
+      items = _DOM2.default.filterByFocusable(items);
+
+      if (!items || items.length === 0) {
+        event.preventDefault();
+      } else {
+        if (event.shiftKey) {
+          if (event.target === items[0]) {
+            items[items.length - 1].focus();
+            event.preventDefault();
+          }
+        } else if (event.target === items[items.length - 1]) {
+          items[0].focus();
+          event.preventDefault();
+        }
+      }
     }
   }, {
     key: '_onUpKeyPress',
@@ -199,7 +232,7 @@ var MenuDrop = (function (_Component) {
 
       var contents = [_react2.default.cloneElement(this.props.control, { key: 'control' }), _react2.default.createElement(
         _Box2.default,
-        _extends({ key: 'nav', ref: 'navContainer', tabIndex: '0',
+        _extends({ key: 'nav', ref: 'navContainer',
           role: 'menu', tag: 'nav' }, other, { className: CLASS_ROOT + '__contents' }),
         this.props.children
       )];
@@ -302,8 +335,7 @@ var Menu = (function (_Component2) {
     value: function componentDidUpdate(prevProps, prevState) {
       if (this.state.state !== prevState.state) {
         var activeKeyboardHandlers = {
-          esc: this._onClose,
-          tab: this._onClose
+          esc: this._onClose
         };
         var focusedKeyboardHandlers = {
           space: this._onOpen,
