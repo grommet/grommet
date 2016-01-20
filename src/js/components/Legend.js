@@ -97,6 +97,9 @@ export default class Legend extends Component {
       );
     }, this);
 
+    // build legend from bottom to top, to align with Meter bar stacking
+    items.reverse();
+
     var total = null;
     if (this.props.total && this.props.series.length > 1) {
       total = (
