@@ -155,16 +155,12 @@ export default class SearchInput extends Component {
     });
   }
 
-  _valueText (value) {
-    var text = '';
-    if (value) {
-      if ('string' === typeof value) {
-        text = value;
-      } else {
-        text = value.label || value.value;
-      }
+  _renderLabel (suggestion) {
+    if (typeof suggestion === 'object') {
+      return suggestion.label || suggestion.value;
+    } else {
+      return suggestion;
     }
-    return text;
   }
 
   _renderDrop () {
@@ -176,10 +172,10 @@ export default class SearchInput extends Component {
           classes.push(CLASS_ROOT + "__suggestion--active");
         }
         return (
-          <li key={this._valueText(suggestion)}
+          <li key={index}
             className={classes.join(' ')}
             onClick={this._onClickSuggestion.bind(this, suggestion)}>
-            {this._valueText(suggestion)}
+            {this._renderLabel(suggestion)}
           </li>
         );
       }, this);
@@ -205,8 +201,8 @@ export default class SearchInput extends Component {
       <div ref="component" className={classes.join(' ')}>
         <input ref="input" className={CLASS_ROOT + "__input"}
           id={this.props.id} name={this.props.name}
-          value={this._valueText(this.props.value)}
-          defaultValue={this._valueText(this.props.defaultValue)}
+          value={this._renderLabel(this.props.value)}
+          defaultValue={this._renderLabel(this.props.defaultValue)}
           placeholder={this.props.placeHolder}
           onChange={this._onInputChange}
           onFocus={this._onFocus} />
@@ -237,8 +233,8 @@ SearchInput.propTypes = {
   suggestions: PropTypes.arrayOf(
     PropTypes.oneOfType([
       PropTypes.shape({
-        label: PropTypes.string,
-        value: PropTypes.string
+        label: PropTypes.node,
+        value: PropTypes.any
       }),
       PropTypes.string
     ])
