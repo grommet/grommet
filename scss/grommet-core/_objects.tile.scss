@@ -123,6 +123,10 @@
       }
     }
   }
+
+  &:focus {
+    outline: $focus-border-color solid 1px;
+  }
 }
 
 .tile {
