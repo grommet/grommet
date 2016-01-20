@@ -10,6 +10,9 @@ exports.default = {
   activeIndex: _react.PropTypes.number,
   a11yDesc: _react.PropTypes.string,
   a11yDescId: _react.PropTypes.string,
+  legend: _react.PropTypes.shape({
+    position: _react.PropTypes.oneOf(['right', 'bottom', 'inline'])
+  }),
   max: _react.PropTypes.shape({
     value: _react.PropTypes.number,
     label: _react.PropTypes.string

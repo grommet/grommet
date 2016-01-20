@@ -547,12 +547,10 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
           stroke-linecap: square;
           stroke-width: $meter-indicator-width;
           stroke: $threshold-color;
-          //@include graph-stroke-color;
         }
       }
 
       &__values .meter__slice {
-        // stroke-width: $meter-slice-width;
         @include graph-stroke-color();
 
         &--clickable {

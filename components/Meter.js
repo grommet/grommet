@@ -449,7 +449,9 @@ var Meter = (function (_Component) {
         a11yRole = 'tablist';
 
         if (this.props.legend) {
-          legend = this._renderLegend();
+          if ('inline' !== this.props.legend.placement) {
+            legend = this._renderLegend();
+          }
           classes.push(CLASS_ROOT + "--legend-" + this.state.legendPlacement);
         }
       }
@@ -463,6 +465,7 @@ var Meter = (function (_Component) {
         a11yRole: a11yRole,
         activeIndex: this.state.activeIndex,
         min: this.state.min, max: this.state.max,
+        legend: this.props.legend,
         onActivate: this._onActivate,
         series: this.state.series,
         stacked: this.props.stacked,
@@ -508,7 +511,7 @@ Meter.propTypes = {
   important: _react.PropTypes.number,
   legend: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.shape({
     total: _react.PropTypes.bool,
-    placement: _react.PropTypes.oneOf(['right', 'bottom'])
+    placement: _react.PropTypes.oneOf(['right', 'bottom', 'inline'])
   })]),
   max: _react.PropTypes.oneOfType([_react.PropTypes.shape({
     value: _react.PropTypes.number.isRequired,

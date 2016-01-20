@@ -6,6 +6,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
 var _utils = require('./utils');
 
 var _Graphic2 = require('./Graphic');
@@ -41,8 +45,8 @@ var Bar = (function (_Graphic) {
   _createClass(Bar, [{
     key: '_viewBoxDimensions',
     value: function _viewBoxDimensions(props) {
-      var viewBoxHeight;
-      var viewBoxWidth;
+      var viewBoxHeight = undefined;
+      var viewBoxWidth = undefined;
       if (props.vertical) {
         if (props.stacked) {
           viewBoxWidth = BAR_THICKNESS;
@@ -56,6 +60,9 @@ var Bar = (function (_Graphic) {
           viewBoxHeight = BAR_THICKNESS;
         } else {
           viewBoxHeight = BAR_THICKNESS * Math.max(1, props.series.length);
+          if (props.legend && 'inline' === props.legend.placement) {
+            viewBoxHeight *= 2;
+          }
         }
       }
       return [viewBoxWidth, viewBoxHeight];
@@ -84,14 +91,58 @@ var Bar = (function (_Graphic) {
       var value = item.value - this.props.min.value;
       var start = this._translateBarWidth(startValue);
       var distance = Math.max(MID_BAR_THICKNESS, this._translateBarWidth(value));
-      var commands;
+      var commands = undefined;
+      if (this.props.legend && 'inline' === this.props.legend.placement) {
+        trackIndex *= 2;
+      }
       var spot = trackIndex * BAR_THICKNESS + MID_BAR_THICKNESS;
+      if (this.props.legend && 'inline' === this.props.legend.placement) {
+        spot += MID_BAR_THICKNESS;
+      }
       if (this.props.vertical) {
         commands = "M" + spot + "," + (BAR_LENGTH - start) + " L" + spot + "," + (BAR_LENGTH - (start + distance));
       } else {
         commands = "M" + start + "," + spot + " L" + (start + distance) + "," + spot;
       }
       return commands;
+    }
+  }, {
+    key: '_renderInlineLegend',
+    value: function _renderInlineLegend() {
+      var result = undefined;
+      if (this.props.legend && 'inline' === this.props.legend.placement) {
+        result = this.props.series.map(function (item, index) {
+          var spot = index * BAR_THICKNESS * 2 + MID_BAR_THICKNESS;
+
+          var label;
+          if (item.hasOwnProperty('label')) {
+            label = _react2.default.createElement(
+              'text',
+              { key: 'label', x: '0', y: spot, role: 'presentation',
+                textAnchor: 'start', fontSize: 16 },
+              item.label
+            );
+          }
+
+          var value;
+          if (item.hasOwnProperty('value')) {
+            var text = item.value;
+            if (item.units || this.props.units) {
+              text += ' ' + (item.units || this.props.units);
+            }
+            var x = this._translateBarWidth(this.props.max.value);
+            value = _react2.default.createElement(
+              'text',
+              { key: 'value', x: x, y: spot, role: 'presentation',
+                textAnchor: 'end', fontSize: 16 },
+              text
+            );
+          }
+
+          return [label, value];
+        }, this);
+      }
+      return result;
     }
   }]);
 

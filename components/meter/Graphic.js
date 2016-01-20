@@ -251,6 +251,11 @@ var Graphic = (function (_Component) {
       return null;
     }
   }, {
+    key: '_renderInlineLegend',
+    value: function _renderInlineLegend() {
+      return null;
+    }
+  }, {
     key: '_renderA11YTitle',
     value: function _renderA11YTitle() {
       var a11yTitle = this.props.a11yTitle;
@@ -309,6 +314,7 @@ var Graphic = (function (_Component) {
       var values = this._renderValues();
       var thresholds = this._renderThresholds();
       var topLayer = this._renderTopLayer();
+      var inlineLegend = this._renderInlineLegend();
 
       var a11yTitle = this._renderA11YTitle();
       var a11yDesc = this._renderA11YDesc();
@@ -337,6 +343,7 @@ var Graphic = (function (_Component) {
         ),
         thresholds,
         values,
+        inlineLegend,
         topLayer
       );
     }
