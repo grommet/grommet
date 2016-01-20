@@ -12,6 +12,7 @@ import Button from './Button';
 import MoreIcon from './icons/base/More';
 import DropCaretIcon from './icons/base/Down';
 import Intl from '../utils/Intl';
+import DOMUtils from '../utils/DOM';
 
 const CLASS_ROOT = 'menu';
 
@@ -24,6 +25,7 @@ class MenuDrop extends Component {
 
     this._onUpKeyPress = this._onUpKeyPress.bind(this);
     this._onDownKeyPress = this._onDownKeyPress.bind(this);
+    this._processTab = this._processTab.bind(this);
   }
 
   getChildContext () {
@@ -37,6 +39,7 @@ class MenuDrop extends Component {
   componentDidMount () {
     this._originalFocusedElement = document.activeElement;
     this._keyboardHandlers = {
+      tab: this._processTab,
       up: this._onUpKeyPress,
       left: this._onUpKeyPress,
       down: this._onDownKeyPress,
@@ -64,12 +67,38 @@ class MenuDrop extends Component {
 
     container.setAttribute('aria-activedescendant',
       menuItems[0].getAttribute('id'));
-    container.focus();
+
+    let menuDrop = ReactDOM.findDOMNode(this.refs.menuDrop);
+    var items = menuDrop.getElementsByTagName('*');
+    var firstFocusable = DOMUtils.getBestFirstFocusable(items);
+    if (firstFocusable) {
+      firstFocusable.focus();
+    }
   }
 
   componentWillUnmount () {
     this._originalFocusedElement.focus();
     KeyboardAccelerators.stopListeningToKeyboard(this, this._keyboardHandlers);
+  }
+
+  _processTab (event) {
+    let container = ReactDOM.findDOMNode(this.refs.menuDrop);
+    var items = container.getElementsByTagName('*');
+    items = DOMUtils.filterByFocusable(items);
+
+    if (!items || items.length === 0) {
+      event.preventDefault();
+    } else {
+      if (event.shiftKey) {
+        if (event.target === items[0]) {
+          items[items.length - 1].focus();
+          event.preventDefault();
+        }
+      } else if (event.target === items[items.length - 1]) {
+        items[0].focus();
+        event.preventDefault();
+      }
+    }
   }
 
   _onUpKeyPress (event) {
@@ -143,7 +172,7 @@ class MenuDrop extends Component {
 
     let contents = [
       React.cloneElement(this.props.control, {key: 'control'}),
-      <Box key="nav" ref="navContainer" tabIndex="0"
+      <Box key="nav" ref="navContainer"
         role="menu" tag="nav" {...other} className={`${CLASS_ROOT}__contents`}>
         {this.props.children}
       </Box>
@@ -238,8 +267,7 @@ export default class Menu extends Component {
   componentDidUpdate (prevProps, prevState) {
     if (this.state.state !== prevState.state) {
       let activeKeyboardHandlers = {
-        esc: this._onClose,
-        tab: this._onClose
+        esc: this._onClose
       };
       let focusedKeyboardHandlers = {
         space: this._onOpen,
