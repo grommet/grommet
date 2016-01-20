@@ -93,10 +93,14 @@ var MenuDrop = (function (_Component) {
       this._originalFocusedElement = document.activeElement;
       this._keyboardHandlers = {
         up: this._onUpKeyPress,
-        down: this._onDownKeyPress
+        left: this._onUpKeyPress,
+        down: this._onDownKeyPress,
+        right: this._onDownKeyPress
       };
       _KeyboardAccelerators2.default.startListeningToKeyboard(this, this._keyboardHandlers);
-      var menuItems = _reactDom2.default.findDOMNode(this.refs.navContainer).childNodes;
+
+      var container = _reactDom2.default.findDOMNode(this.refs.navContainer);
+      var menuItems = container.childNodes;
       for (var i = 0; i < menuItems.length; i++) {
         var classes = menuItems[i].className.toString();
         var tagName = menuItems[i].tagName.toLowerCase();
@@ -110,6 +114,9 @@ var MenuDrop = (function (_Component) {
           menuItems[i].setAttribute('id', menuItems[i].getAttribute('data-reactid'));
         }
       }
+
+      container.setAttribute('aria-activedescendant', menuItems[0].getAttribute('id'));
+      container.focus();
     }
   }, {
     key: 'componentWillUnmount',
@@ -120,7 +127,9 @@ var MenuDrop = (function (_Component) {
   }, {
     key: '_onUpKeyPress',
     value: function _onUpKeyPress(event) {
-      var menuItems = _reactDom2.default.findDOMNode(this.refs.navContainer).childNodes;
+      event.preventDefault();
+      var container = _reactDom2.default.findDOMNode(this.refs.navContainer);
+      var menuItems = container.childNodes;
       if (!this.activeMenuItem) {
         var lastMenuItem = menuItems[menuItems.length - 1];
         this.activeMenuItem = lastMenuItem;
@@ -141,7 +150,7 @@ var MenuDrop = (function (_Component) {
       }
 
       this.activeMenuItem.focus();
-      this.refs.menuDrop.setAttribute('aria-activedescendant', this.activeMenuItem.getAttribute('id'));
+      container.setAttribute('aria-activedescendant', this.activeMenuItem.getAttribute('id'));
       // Stops KeyboardAccelerators from calling the other listeners.
       // Works limilar to event.stopPropagation().
       return true;
@@ -149,7 +158,9 @@ var MenuDrop = (function (_Component) {
   }, {
     key: '_onDownKeyPress',
     value: function _onDownKeyPress(event) {
-      var menuItems = _reactDom2.default.findDOMNode(this.refs.navContainer).childNodes;
+      event.preventDefault();
+      var container = _reactDom2.default.findDOMNode(this.refs.navContainer);
+      var menuItems = container.childNodes;
       if (!this.activeMenuItem) {
         this.activeMenuItem = menuItems[0];
       } else if (this.activeMenuItem.nextSibling) {
@@ -169,7 +180,7 @@ var MenuDrop = (function (_Component) {
       }
 
       this.activeMenuItem.focus();
-      this.refs.menuDrop.setAttribute('aria-activedescendant', this.activeMenuItem.getAttribute('id'));
+      container.setAttribute('aria-activedescendant', this.activeMenuItem.getAttribute('id'));
       // Stops KeyboardAccelerators from calling the other listeners.
       // Works limilar to event.stopPropagation().
       return true;
@@ -180,10 +191,12 @@ var MenuDrop = (function (_Component) {
       var classes = [CLASS_ROOT + '__drop'];
       var other = (0, _pick2.default)(this.props, (0, _keys2.default)(_Box2.default.propTypes));
 
+      delete other.onClick;
+
       var contents = [_react2.default.cloneElement(this.props.control, { key: 'control' }), _react2.default.createElement(
         _Box2.default,
-        _extends({ key: 'nav', ref: 'navContainer', tag: 'nav' }, other, {
-          className: CLASS_ROOT + '__contents' }),
+        _extends({ key: 'nav', ref: 'navContainer', tabIndex: '0',
+          role: 'menu', tag: 'nav' }, other, { className: CLASS_ROOT + '__contents' }),
         this.props.children
       )];
       if (this.props.dropAlign.bottom) {
@@ -313,7 +326,6 @@ var Menu = (function (_Component2) {
             _KeyboardAccelerators2.default.startListeningToKeyboard(this, activeKeyboardHandlers);
             document.addEventListener('click', this._onClose);
             this._drop = _Drop2.default.add(_reactDom2.default.findDOMNode(this.refs.control), this._renderDrop(), this.props.dropAlign);
-            this._drop.container.focus();
             this._drop.render(this._renderDrop());
             break;
         }
@@ -429,8 +441,7 @@ var Menu = (function (_Component2) {
       }
       return _react2.default.createElement(
         MenuDrop,
-        _extends({ tabIndex: '-1',
-          intl: this.context.intl,
+        _extends({ intl: this.context.intl,
           history: this.context.history,
           router: this.context.router,
           dropAlign: this.props.dropAlign,
@@ -498,7 +509,7 @@ var Menu = (function (_Component2) {
             tabIndex: '0',
             style: { lineHeight: this.state.controlHeight + 'px' },
             onClick: this._onOpen,
-            role: 'link', 'aria-label': menuTitle,
+            a11yTitle: menuTitle,
             onFocus: this._onFocusControl,
             onBlur: this._onBlurControl },
           controlContents

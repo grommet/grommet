@@ -76,7 +76,8 @@ var Button = (function (_Component) {
       return _react2.default.createElement(
         "button",
         { id: this.props.id, type: type, className: classes.join(' '),
-          onClick: this.props.onClick, disabled: !this.props.onClick },
+          onClick: this.props.onClick, disabled: !this.props.onClick,
+          "aria-label": this.props.a11yTitle },
         children
       );
     }
@@ -88,6 +89,7 @@ var Button = (function (_Component) {
 exports.default = Button;
 
 Button.propTypes = {
+  a11yTitle: _react.PropTypes.string,
   accent: _react.PropTypes.bool,
   fill: _react.PropTypes.bool,
   icon: _react.PropTypes.bool,

@@ -32,6 +32,8 @@ var _Search2 = _interopRequireDefault(_Search);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _typeof(obj) { return obj && typeof Symbol !== "undefined" && obj.constructor === Symbol ? "symbol" : typeof obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -201,17 +203,13 @@ var SearchInput = (function (_Component) {
       });
     }
   }, {
-    key: '_valueText',
-    value: function _valueText(value) {
-      var text = '';
-      if (value) {
-        if ('string' === typeof value) {
-          text = value;
-        } else {
-          text = value.label || value.value;
-        }
+    key: '_renderLabel',
+    value: function _renderLabel(suggestion) {
+      if ((typeof suggestion === 'undefined' ? 'undefined' : _typeof(suggestion)) === 'object') {
+        return suggestion.label || suggestion.value;
+      } else {
+        return suggestion;
       }
-      return text;
     }
   }, {
     key: '_renderDrop',
@@ -225,10 +223,10 @@ var SearchInput = (function (_Component) {
           }
           return _react2.default.createElement(
             'li',
-            { key: this._valueText(suggestion),
+            { key: index,
               className: classes.join(' '),
               onClick: this._onClickSuggestion.bind(this, suggestion) },
-            this._valueText(suggestion)
+            this._renderLabel(suggestion)
           );
         }, this);
       }
@@ -255,8 +253,8 @@ var SearchInput = (function (_Component) {
         { ref: 'component', className: classes.join(' ') },
         _react2.default.createElement('input', { ref: 'input', className: CLASS_ROOT + "__input",
           id: this.props.id, name: this.props.name,
-          value: this._valueText(this.props.value),
-          defaultValue: this._valueText(this.props.defaultValue),
+          value: this._renderLabel(this.props.value),
+          defaultValue: this._renderLabel(this.props.defaultValue),
           placeholder: this.props.placeHolder,
           onChange: this._onInputChange,
           onFocus: this._onFocus }),
@@ -287,8 +285,8 @@ SearchInput.propTypes = {
   onSelect: _react.PropTypes.func,
   placeHolder: _react.PropTypes.string,
   suggestions: _react.PropTypes.arrayOf(_react.PropTypes.oneOfType([_react.PropTypes.shape({
-    label: _react.PropTypes.string,
-    value: _react.PropTypes.string
+    label: _react.PropTypes.node,
+    value: _react.PropTypes.any
   }), _react.PropTypes.string])),
   value: _react.PropTypes.oneOfType([_react.PropTypes.shape({
     label: _react.PropTypes.string,

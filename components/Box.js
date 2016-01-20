@@ -141,14 +141,15 @@ var Box = (function (_Component) {
         var boxLabel = _Intl2.default.getMessage(this.context.intl, this.props.a11yTitle);
         a11yProps.tabIndex = 0;
         a11yProps["aria-label"] = boxLabel;
-        a11yProps.role = 'link';
+        a11yProps.role = this.props.role || 'link';
       }
 
       if (this.props.appCentered) {
         return _react2.default.createElement(
           'div',
           _extends({ ref: 'boxContainer', className: containerClasses.join(' '),
-            style: style, onClick: this.props.onClick }, a11yProps),
+            style: style, onClick: this.props.onClick,
+            role: this.props.role }, a11yProps),
           _react2.default.createElement(
             this.props.tag,
             { id: this.props.id, className: classes.join(' ') },
@@ -161,7 +162,8 @@ var Box = (function (_Component) {
           this.props.tag,
           _extends({ ref: 'boxContainer', id: this.props.id,
             className: classes.join(' '), style: style,
-            onClick: this.props.onClick }, a11yProps),
+            onClick: this.props.onClick, role: this.props.role,
+            tabIndex: this.props.tabIndex }, a11yProps),
           texture,
           this.props.children
         );
@@ -192,6 +194,7 @@ Box.propTypes = {
   })]),
   reverse: _react.PropTypes.bool,
   responsive: _react.PropTypes.bool,
+  role: _react.PropTypes.string,
   separator: _react.PropTypes.oneOf(['top', 'bottom', 'left', 'right', 'horizontal', 'vertical', 'all']),
   tag: _react.PropTypes.string,
   textAlign: _react.PropTypes.oneOf(['left', 'center', 'right']),
