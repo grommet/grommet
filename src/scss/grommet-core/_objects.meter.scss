@@ -322,7 +322,8 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
         }
       }
 
-      &__thresholds .meter__slice {
+      &__thresholds .meter__slice,
+      &__tracks .meter__slice {
         // stroke-width: $meter-threshold-slice-width;
         @include graph-stroke-color-translucent(0.5);
       }
@@ -563,7 +564,8 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
         }
       }
 
-      &__thresholds .meter__slice {
+      &__thresholds .meter__slice,
+      &__tracks .meter__slice {
         // stroke-width: $meter-threshold-slice-width;
         @include graph-stroke-color-translucent(0.5);
       }
