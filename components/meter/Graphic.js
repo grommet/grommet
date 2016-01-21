@@ -95,36 +95,38 @@ var Graphic = (function (_Component) {
   }, {
     key: '_renderSlice',
     value: function _renderSlice(trackIndex, item, itemIndex, startValue, threshold) {
-      var classes = [CLASS_ROOT + "__slice"];
-      var activeMeterSlice = undefined;
-      if (itemIndex === this.props.activeIndex) {
-        activeMeterSlice = 'activeMeterSlice';
-        classes.push(CLASS_ROOT + "__slice--active");
-      }
-
-      if (item.onClick) {
-        classes.push(CLASS_ROOT + "__slice--clickable");
-      }
-
-      classes.push("color-index-" + item.colorIndex);
-
-      var commands = this._sliceCommands(trackIndex, item, startValue);
-
       var path = undefined;
-      if (threshold) {
-        path = (0, _utils.buildPath)(itemIndex, commands, classes, this.props.onActivate, item.onClick);
-      } else {
-        var a11yDescId = this.props.a11yDescId + '_' + itemIndex;
-        var a11yTitle = item.value + ' ' + (item.label || this.props.units || '');
+      if (!item.hidden) {
+        var classes = [CLASS_ROOT + "__slice"];
+        var activeMeterSlice = undefined;
+        if (itemIndex === this.props.activeIndex) {
+          activeMeterSlice = 'activeMeterSlice';
+          classes.push(CLASS_ROOT + "__slice--active");
+        }
 
-        path = (0, _utils.buildPath)(itemIndex, commands, classes, this.props.onActivate, item.onClick, a11yDescId, a11yTitle, activeMeterSlice);
+        if (item.onClick) {
+          classes.push(CLASS_ROOT + "__slice--clickable");
+        }
+
+        classes.push("color-index-" + item.colorIndex);
+
+        var commands = this._sliceCommands(trackIndex, item, startValue);
+
+        if (threshold) {
+          path = (0, _utils.buildPath)(itemIndex, commands, classes, this.props.onActivate, item.onClick);
+        } else {
+          var a11yDescId = this.props.a11yDescId + '_' + itemIndex;
+          var a11yTitle = item.value + ' ' + (item.label || this.props.units || '');
+
+          path = (0, _utils.buildPath)(itemIndex, commands, classes, this.props.onActivate, item.onClick, a11yDescId, a11yTitle, activeMeterSlice);
+        }
       }
 
       return path;
     }
   }, {
-    key: '_renderTrack',
-    value: function _renderTrack(series, trackIndex, threshold) {
+    key: '_renderSlices',
+    value: function _renderSlices(series, trackIndex, threshold) {
       var startValue = this.props.min.value;
 
       var paths = series.map(function (item, itemIndex) {
@@ -198,7 +200,7 @@ var Graphic = (function (_Component) {
 
       var values = undefined;
       if (this.props.stacked) {
-        values = this._renderTrack(this.props.series, 0);
+        values = this._renderSlices(this.props.series, 0);
       } else {
         values = this.props.series.map(function (item, index) {
           return _this2._renderSlice(index, item, index, _this2.props.min.value);
@@ -214,19 +216,30 @@ var Graphic = (function (_Component) {
       );
     }
   }, {
-    key: '_renderThresholds',
-    value: function _renderThresholds() {
+    key: '_renderTracks',
+    value: function _renderTracks() {
       var _this3 = this;
 
-      var result = undefined;
-      var thresholds = undefined;
+      var trackValue = { value: this.props.max.value, colorIndex: 'unset' };
+      var tracks = undefined;
       if (this.props.stacked) {
-        thresholds = this._renderTrack(this.props.thresholds, 0, true);
+        tracks = this._renderSlice(0, trackValue, 0, this.props.min.value, true);
       } else {
-        thresholds = this.props.series.map(function (item, index) {
-          return _this3._renderTrack(_this3.props.thresholds, index, true);
+        tracks = this.props.series.map(function (item, index) {
+          return _this3._renderSlice(index, trackValue, index, _this3.props.min.value, true);
         });
       }
+      return _react2.default.createElement(
+        'g',
+        { className: CLASS_ROOT + "__tracks" },
+        tracks
+      );
+    }
+  }, {
+    key: '_renderThresholds',
+    value: function _renderThresholds() {
+      var result = undefined;
+      var thresholds = this._renderSlices(this.props.thresholds, -0.4, true);
       if (thresholds.length > 0) {
         result = _react2.default.createElement(
           'g',
@@ -311,6 +324,7 @@ var Graphic = (function (_Component) {
         classes.push(this.props.className);
       }
 
+      var tracks = this._renderTracks();
       var values = this._renderValues();
       var thresholds = this._renderThresholds();
       var topLayer = this._renderTopLayer();
@@ -341,6 +355,7 @@ var Graphic = (function (_Component) {
           { id: this.props.a11yDescId },
           a11yDesc
         ),
+        tracks,
         thresholds,
         values,
         inlineLegend,
