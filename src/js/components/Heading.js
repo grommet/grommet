@@ -2,19 +2,19 @@
 
 import React, { Component, PropTypes } from 'react';
 
-const CLASS_ROOT = "heading";
+const CLASS_ROOT = 'heading';
 
 export default class Heading extends Component {
   render() {
-    var classes = [CLASS_ROOT];
+    let classes = [CLASS_ROOT];
     if (this.props.size == 'large') {
-      classes.push(CLASS_ROOT + "--large");
+      classes.push(`${CLASS_ROOT}--large`);
     }
     if (this.props.size == 'small') {
-      classes.push(CLASS_ROOT + "--small");
+      classes.push(`${CLASS_ROOT}--small`);
     }
     if (this.props.strong) {
-      classes.push(CLASS_ROOT + "--strong");
+      classes.push(`${CLASS_ROOT}--strong`);
     }
     if (this.props.className) {
       classes.push(this.props.className);
