@@ -42,6 +42,8 @@ var DEFAULT_HEIGHT = 200;
 var SMALL_SIZE = 120;
 var THIN_HEIGHT = 72;
 
+var GUTTER_SIZE = 4;
+
 var Distribution = (function (_Component) {
   _inherits(Distribution, _Component);
 
@@ -57,6 +59,7 @@ var Distribution = (function (_Component) {
     _this._onDeactivate = _this._onDeactivate.bind(_this);
     _this._onResize = _this._onResize.bind(_this);
     _this._layout = _this._layout.bind(_this);
+    _this._groupItems = _this._groupItems.bind(_this);
 
     _this.state = _this._stateFromProps(props);
     _this.state.legendPosition = 'bottom';
@@ -86,10 +89,15 @@ var Distribution = (function (_Component) {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(newProps) {
       var state = this._stateFromProps(newProps);
+      // preserve width and height we calculated already
       state.width = this.state.width;
       state.height = this.state.height;
-      this.setState(state);
-      this._onResize();
+      this.setState(state, this._layout);
+    }
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate() {
+      this._placeLabels();
     }
   }, {
     key: 'componentWillUnmount',
@@ -98,6 +106,74 @@ var Distribution = (function (_Component) {
 
       clearTimeout(this._resizeTimer);
       window.removeEventListener('resize', this._onResize);
+    }
+  }, {
+    key: '_seriesTotal',
+    value: function _seriesTotal(series) {
+      var total = 0;
+      series.some(function (item) {
+        total += item.value;
+      });
+      return total;
+    }
+
+    // Generates state based on the provided props.
+
+  }, {
+    key: '_stateFromProps',
+    value: function _stateFromProps(props) {
+      var total = undefined;
+      var allIcons = false;
+      if (props.series) {
+        total = this._seriesTotal(props.series);
+        allIcons = !props.series.some(function (item) {
+          return !item.icon;
+        });
+      } else {
+        total = 100;
+      }
+
+      return {
+        allIcons: allIcons,
+        groups: null,
+        total: total
+      };
+    }
+  }, {
+    key: '_groupItems',
+    value: function _groupItems() {
+      // group items to enable us to lay them out better
+      var width = this.state.width;
+      var height = this.state.height;
+      var areaPer = width * height / this.state.total;
+      var groups = [];
+      var group = undefined;
+      var targetValue = undefined;
+      var elapsedWidth = 0;
+      (this.props.series || []).filter(function (item) {
+        return item.value > 0;
+      }).forEach(function (item) {
+        if (!group || group.value >= targetValue) {
+          if (group) {
+            elapsedWidth += Math.round(areaPer * group.value / height);
+          }
+          group = { items: [], value: 0 };
+          groups.push(group);
+
+          // make the item as square as possible, without exceeding the height
+          var itemArea = areaPer * item.value;
+          var itemHeight = Math.min(height, Math.round(Math.sqrt(itemArea)));
+          var itemWidth = Math.round(itemArea / itemHeight);
+          // avoid slivers on the right
+          if (width - elapsedWidth - itemWidth < height / 2) {
+            itemWidth = width - elapsedWidth;
+          }
+          targetValue = Math.round(itemWidth * height / areaPer);
+        }
+        group.items.push(item);
+        group.value += item.value;
+      });
+      this.setState({ groups: groups });
     }
   }, {
     key: '_onResize',
@@ -119,14 +195,19 @@ var Distribution = (function (_Component) {
 
       var graphic = this.refs.distribution;
       var rect = graphic.getBoundingClientRect();
-      if (rect.width !== this.state.width || rect.height !== this.state.height) {
+      if (rect.width !== this.state.width || rect.height !== this.state.height || !this.state.groups) {
         this.setState({
           width: rect.width,
           height: rect.height
-        });
+        }, this._groupItems);
       }
-
-      // adjust box label positions
+    }
+  }, {
+    key: '_placeLabels',
+    value: function _placeLabels() {
+      // Align labels over their corresponding boxes
+      var graphic = this.refs.distribution;
+      var rect = graphic.getBoundingClientRect();
       var container = this.refs.container;
       var labels = container.querySelectorAll('.' + CLASS_ROOT + '__label');
       for (var i = 0; i < labels.length; i += 1) {
@@ -140,49 +221,9 @@ var Distribution = (function (_Component) {
         // let labelRect = label.getBoundingClientRect();
         label.style.left = boxRect.left - rect.left + 'px';
         label.style.top = boxRect.top - rect.top + 'px';
-        // if (labelRect.width > boxRect.width) {
-        //   label.style.left = (boxRect.left  - rect.left) + 'px';
-        // } else {
-        //   label.style.left = ((boxRect.left - rect.left) + (boxRect.width / 2) - (labelRect.width / 2)) + 'px';
-        // }
         label.style.maxWidth = boxRect.width + 'px';
         label.style.maxHeight = boxRect.height + 'px';
-        // have to set again after setting maxWidth in case text wraps and increases height
-        // labelRect = label.getBoundingClientRect();
-        // label.style.top = ((boxRect.top - rect.top) + (boxRect.height / 2) - (labelRect.height / 2)) + 'px';
       }
-    }
-  }, {
-    key: '_seriesTotal',
-    value: function _seriesTotal(series) {
-      var total = 0;
-      series.some(function (item) {
-        total += item.value;
-      });
-      return total;
-    }
-
-    // Generates state based on the provided props.
-
-  }, {
-    key: '_stateFromProps',
-    value: function _stateFromProps(props) {
-      var total = undefined;
-      if (props.series) {
-        total = this._seriesTotal(props.series);
-      } else {
-        total = 100;
-      }
-
-      // normalize size
-      var size = props.size || (props.small ? 'small' : props.large ? 'large' : undefined);
-
-      var state = {
-        total: total,
-        size: size
-      };
-
-      return state;
     }
   }, {
     key: '_itemColorIndex',
@@ -258,11 +299,15 @@ var Distribution = (function (_Component) {
     key: '_renderLabel',
     value: function _renderLabel(item, index, boundingBox) {
       var labelClasses = [CLASS_ROOT + '__label'];
-
+      if (!item.icon) {
+        labelClasses.push('color-index-' + this._itemColorIndex(item, index));
+      }
       if (item.icon) {
         labelClasses.push(CLASS_ROOT + '__label--icons');
       }
-
+      if (boundingBox.width < SMALL_SIZE || boundingBox.height < SMALL_SIZE) {
+        labelClasses.push(CLASS_ROOT + '__label--small');
+      }
       if (boundingBox.height < THIN_HEIGHT) {
         labelClasses.push(CLASS_ROOT + '__label--thin');
       }
@@ -270,6 +315,8 @@ var Distribution = (function (_Component) {
       if (index === this.state.activeIndex) {
         labelClasses.push(CLASS_ROOT + '__label--active');
       }
+
+      var value = item.labelValue !== undefined ? item.labelValue : item.value;
 
       return _react2.default.createElement(
         'div',
@@ -279,7 +326,7 @@ var Distribution = (function (_Component) {
         _react2.default.createElement(
           'span',
           { className: CLASS_ROOT + '__label-value' },
-          item.value,
+          value,
           _react2.default.createElement(
             'span',
             { className: CLASS_ROOT + '__label-units' },
@@ -296,42 +343,36 @@ var Distribution = (function (_Component) {
   }, {
     key: '_updateItemPlacement',
     value: function _updateItemPlacement(item, placement) {
-      var x = placement.origin[0];
-      var y = placement.origin[1];
-      var width = undefined,
-          height = undefined;
-      if (placement.across) {
-        width = this.state.width - x;
-        height = placement.areaPer * item.value / width;
-        placement.across = false;
-        placement.origin[1] += height;
-      } else {
-        height = this.state.height - y;
-        width = placement.areaPer * item.value / height;
-        placement.across = true;
-        placement.origin[0] += width;
-      }
-
-      if (item.icon) {
-        placement.icons = true;
-      }
-
-      return {
-        width: width,
-        height: height,
-        x: x,
-        y: y
+      var result = {
+        x: placement.group.x + placement.item.x,
+        y: placement.group.y + placement.item.y
       };
+      if (placement.across) {
+        result.width = placement.group.width - placement.item.x;
+        result.height = placement.areaPer * item.value / result.width;
+        placement.item.y += result.height;
+        placement.across = result.width < (placement.group.height - placement.item.y) * 1.5;
+      } else {
+        result.height = placement.group.height - placement.item.y;
+        result.width = placement.areaPer * item.value / result.height;
+        placement.item.x += result.width;
+        placement.across = result.height > (placement.group.width - placement.item.x) * 1.5;
+      }
+      return result;
     }
   }, {
     key: '_renderItemBox',
     value: function _renderItemBox(boundingBox, colorIndex) {
       var boxClasses = [CLASS_ROOT + '__item-box'];
-      boxClasses.push('color-index-' + colorIndex);
+      if (colorIndex) {
+        boxClasses.push('color-index-' + colorIndex);
+      }
 
       return _react2.default.createElement('rect', { className: boxClasses.join(' '),
-        x: boundingBox.x, y: boundingBox.y,
-        width: boundingBox.width, height: boundingBox.height });
+        x: boundingBox.x + GUTTER_SIZE / 2,
+        y: boundingBox.y + GUTTER_SIZE / 2,
+        width: boundingBox.width - GUTTER_SIZE,
+        height: boundingBox.height - GUTTER_SIZE });
     }
   }, {
     key: '_renderItemIcon',
@@ -401,6 +442,40 @@ var Distribution = (function (_Component) {
       );
     }
   }, {
+    key: '_renderItems',
+    value: function _renderItems() {
+      var placement = {
+        areaPer: this.state.width * this.state.height / this.state.total,
+        group: { x: 0, y: 0, width: 0, height: 0
+        },
+        item: { x: 0, y: 0 },
+        across: false,
+        icons: false
+      };
+      var index = 0;
+
+      var labels = [];
+      var boxes = this.state.groups.map(function (group) {
+
+        placement.group.x = placement.group.x + placement.group.width;
+        placement.group.y = 0;
+        placement.group.width = placement.areaPer * group.value / this.state.height;
+        placement.group.height = this.state.height;
+        placement.item = { x: 0, y: 0 };
+        placement.across = true;
+
+        return group.items.map(function (item) {
+          var boundingBox = this._updateItemPlacement(item, placement);
+          labels.push(this._renderLabel(item, index, boundingBox));
+          var result = this._renderItem(item, index, boundingBox);
+          index += 1;
+          return result;
+        }, this);
+      }, this);
+
+      return { boxes: boxes, labels: labels };
+    }
+  }, {
     key: '_renderLoading',
     value: function _renderLoading() {
       var loadingClasses = [CLASS_ROOT + '__loading-indicator'];
@@ -418,18 +493,19 @@ var Distribution = (function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this2 = this;
-
       var classes = [CLASS_ROOT];
       classes.push(CLASS_ROOT + '--legend-' + this.state.legendPosition);
-      if (this.state.size) {
-        classes.push(CLASS_ROOT + '--' + this.state.size);
+      if (this.props.size) {
+        classes.push(CLASS_ROOT + '--' + this.props.size);
       }
       if (this.props.full) {
         classes.push(CLASS_ROOT + '--full');
       }
       if (this.props.vertical) {
         classes.push(CLASS_ROOT + '--vertical');
+      }
+      if (this.state.allIcons) {
+        classes.push(CLASS_ROOT + '--icons');
       }
       if (this.props.className) {
         classes.push(this.props.className);
@@ -440,40 +516,21 @@ var Distribution = (function (_Component) {
         legend = this._renderLegend();
       }
 
+      var background = undefined;
+      if (!this.state.allIcons) {
+        background = _react2.default.createElement('rect', { className: CLASS_ROOT + '__background', x: 0, y: 0, stroke: 'none',
+          width: this.state.width, height: this.state.height });
+      }
+
       var boxes = [];
-      var labels = [];
-      if (this.props.series) {
-        (function () {
-          var placement = {
-            areaPer: _this2.state.width * _this2.state.height / _this2.state.total,
-            origin: [0, 0],
-            across: false,
-            icons: false
-          };
-
-          boxes = _this2.props.series.filter(function (item) {
-            return item.value > 0;
-          }).map(function (item, index) {
-
-            var boundingBox = this._updateItemPlacement(item, placement);
-
-            if (boundingBox.width < SMALL_SIZE || boundingBox.height < SMALL_SIZE) {
-              placement.smallLabel = true;
-            }
-
-            labels.push(this._renderLabel(item, index, boundingBox));
-
-            return this._renderItem(item, index, boundingBox);
-          }, _this2);
-
-          if (placement.icons) {
-            classes.push(CLASS_ROOT + '--icons');
-          }
-
-          if (placement.smallLabel) {
-            classes.push(CLASS_ROOT + '--small-label');
-          }
-        })();
+      var labels = undefined;
+      if (this.props.series && this.state.groups) {
+        var items = this._renderItems();
+        boxes = items.boxes;
+        labels = items.labels;
+        // if (placement.smallLabel) {
+        //   classes.push(`${CLASS_ROOT}--small-label`);
+        // }
       }
 
       var role = 'tablist';
@@ -516,6 +573,7 @@ var Distribution = (function (_Component) {
             preserveAspectRatio: 'none', tabIndex: '0', role: role,
             'aria-activedescendant': activeDescendant,
             'aria-labelledby': this.props.a11yTitleId + ' ' + this.props.a11yDescId },
+          background,
           a11yTitleNode,
           a11yDescNode,
           boxes
@@ -545,7 +603,6 @@ Distribution.propTypes = {
   a11yDescId: _react.PropTypes.string,
   a11yDesc: _react.PropTypes.string,
   full: _react.PropTypes.bool,
-  large: _react.PropTypes.bool,
   legend: _react.PropTypes.bool,
   legendTotal: _react.PropTypes.bool,
   series: _react.PropTypes.arrayOf(_react.PropTypes.shape({
@@ -561,7 +618,6 @@ Distribution.propTypes = {
     })
   })),
   size: _react.PropTypes.oneOf(['small', 'medium', 'large']),
-  small: _react.PropTypes.bool,
   units: _react.PropTypes.string,
   vertical: _react.PropTypes.bool
 };

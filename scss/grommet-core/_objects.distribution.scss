@@ -14,6 +14,10 @@
     }
   }
 
+  &__background {
+    fill: $secondary-background-color;
+  }
+
   &__item {
     &--clickable {
       cursor: pointer;
@@ -31,12 +35,12 @@
 
   &__label {
     position: absolute;
-    padding: $inuit-base-spacing-unit;
+    padding: quarter($inuit-base-spacing-unit) halve($inuit-base-spacing-unit);
     font-family: $brand-large-number-font-family;
-    color: $colored-text-color;
     overflow: hidden;
     text-align: left;
     pointer-events: none;
+    @include filled-text-color();
 
     &-value {
       display: block;
@@ -65,11 +69,26 @@
       }
     }
 
+    &--small {
+      // padding: 0 halve($inuit-base-spacing-unit)
+      //   halve($inuit-base-spacing-unit) quarter($inuit-base-spacing-unit);
+
+      .distribution__label-value,
+      .distribution__label-units {
+        @include inuit-font-size($small-large-number-font-size, 1);
+        margin-right: 4px;
+      }
+    }
+
     &--icons {
+      padding: 0 halve($inuit-base-spacing-unit) halve($inuit-base-spacing-unit) 0;
       background-color: $active-background-color;
       color: $text-color;
 
       .label {
+        &-value {
+          line-height: 1;
+        }
 
         &-units {
           color: $secondary-text-color;
@@ -99,20 +118,21 @@
     }
   }
 
-  &--small-label {
-    .distribution {
-      &__label {
-        padding-top: 0px;
-        padding-left: halve(halve($inuit-base-spacing-unit));
+  // &--small-label {
+  //   .distribution {
+  //     &__label {
+  //       padding-top: 0px;
 
-        &-value,
-        &-units {
-          @include inuit-font-size($small-large-number-font-size);
-          margin-right: 4px;
-        }
-      }
-    }
-  }
+  // padding-left: halve(halve($inuit-base-spacing-unit));
+  //
+  //       &-value,
+  //       &-units {
+  //         @include inuit-font-size($small-large-number-font-size);
+  //         margin-right: 4px;
+  //       }
+  //     }
+  //   }
+  // }
 
   &--small {
     .distribution__graphic {

@@ -46,16 +46,8 @@
         }
       }
 
-      // 63 was empircally determined based on HPE critical and warning colors
-      @if lightness($color) < 63 {
+      @if lightness($color) < $colored-text-color-lightness-threshold {
         color: $active-colored-text-color;
-      // } @else {
-      //   .notification__status .status-icon__base {
-      //     path {
-      //       stroke: #999;
-      //       stroke-width: 1px;
-      //     }
-      //   }
       }
     }
   }
