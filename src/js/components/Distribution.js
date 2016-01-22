@@ -28,7 +28,7 @@ export default class Distribution extends Component {
     this._onDeactivate = this._onDeactivate.bind(this);
     this._onResize = this._onResize.bind(this);
     this._layout = this._layout.bind(this);
-    this._groupItems = this._groupItems.bind(this);
+    this._placeItems = this._placeItems.bind(this);
 
     this.state = this._stateFromProps(props);
     this.state.legendPosition = 'bottom';
@@ -62,10 +62,6 @@ export default class Distribution extends Component {
     this.setState(state, this._layout);
   }
 
-  componentDidUpdate () {
-    this._placeLabels();
-  }
-
   componentWillUnmount () {
     KeyboardAccelerators.stopListeningToKeyboard(
       this, this._keyboardHandlers
@@ -77,8 +73,8 @@ export default class Distribution extends Component {
 
   _seriesTotal (series) {
     let total = 0;
-    series.some(function (item) {
-      total += item.value;
+    series.some(function (datum) {
+      total += datum.value;
     });
     return total;
   }
@@ -89,8 +85,8 @@ export default class Distribution extends Component {
     let allIcons = false;
     if (props.series) {
       total = this._seriesTotal(props.series);
-      allIcons = ! props.series.some((item) => {
-        return ! item.icon;
+      allIcons = ! props.series.some((datum) => {
+        return ! datum.icon;
       });
     } else {
       total = 100;
@@ -98,44 +94,104 @@ export default class Distribution extends Component {
 
     return {
       allIcons: allIcons,
-      groups: null,
+      items: null,
       total: total
     };
   }
 
-  _groupItems () {
-    // group items to enable us to lay them out better
+  _placeItems () {
     const width = this.state.width;
     const height = this.state.height;
     const areaPer = (width * height) / this.state.total;
-    let groups = [];
-    let group;
-    let targetValue;
-    let elapsedWidth = 0;
-    (this.props.series || []).filter(function(item) {
-      return item.value > 0;
-    }).forEach((item) => {
-      if (! group || group.value >= targetValue) {
-        if (group) {
-          elapsedWidth += Math.round(areaPer * group.value / height);
-        }
-        group = { items: [], value: 0 };
-        groups.push(group);
+    let remainingRect = { x: 0, y: 0, width: width, height: height };
+    let items = [];
+    let series = (this.props.series ? this.props.series.slice(0) : []);
 
-        // make the item as square as possible, without exceeding the height
-        const itemArea = areaPer * item.value;
-        const itemHeight = Math.min(height, Math.round(Math.sqrt(itemArea)));
-        let itemWidth = Math.round(itemArea / itemHeight);
-        // avoid slivers on the right
-        if (width - elapsedWidth - itemWidth < (height / 2)) {
-          itemWidth = width - elapsedWidth;
-        }
-        targetValue = Math.round((itemWidth * height) / areaPer);
+    while (series.length > 0) {
+      const datum = series.shift();
+      if (datum.value <= 0) {
+        continue;
       }
-      group.items.push(item);
-      group.value += item.value;
-    });
-    this.setState({ groups: groups });
+
+      // Start a new group.
+      let groupValue = datum.value;
+      let targetGroupValue;
+
+      // Make the first item as square as possible.
+      const itemArea = areaPer * datum.value;
+      const edgeLength = Math.round(Math.sqrt(itemArea));
+      let itemHeight;
+      let itemWidth;
+
+      // Figure out how much value we can fit inside a rectangle
+      // that takes the full minor axis length
+      if (remainingRect.width > remainingRect.height) {
+        // landscape, lay out left to right
+        itemHeight = Math.min(remainingRect.height, edgeLength);
+        itemWidth = Math.round(itemArea / itemHeight);
+        targetGroupValue = Math.round((itemWidth * remainingRect.height) / areaPer);
+      } else {
+        // portrait, lay out top to bottom
+        itemWidth = Math.min(remainingRect.width, edgeLength);
+        itemHeight = Math.round(itemArea / itemWidth);
+        targetGroupValue = Math.round((itemHeight * remainingRect.width) / areaPer);
+      }
+
+      // Group items until we reach the target group value.
+      let group = [datum];
+      while (groupValue < targetGroupValue && series.length > 0) {
+        const datum2 = series.shift();
+        groupValue += datum2.value;
+        group.push(datum2);
+      }
+
+      // Now that we know the actual value of the group, give it a
+      // rectangle whose area corresponds to the actual group value.
+      let groupRect;
+      if (remainingRect.width > remainingRect.height) {
+        // landscape, lay out left to right
+        groupRect = { x: remainingRect.x, y: remainingRect.y,
+          width: Math.round((areaPer * groupValue) / remainingRect.height),
+          height: remainingRect.height };
+        remainingRect.x += groupRect.width;
+        remainingRect.width -= groupRect.width;
+      } else {
+        // portrait, lay out top to bottom
+        groupRect = { x: remainingRect.x, y: remainingRect.y,
+          width: remainingRect.width,
+          height: Math.round((areaPer * groupValue) / remainingRect.width) };
+        remainingRect.y += groupRect.height;
+        remainingRect.height -= groupRect.height;
+      }
+
+      // Place items within the group rectangle.
+      // We take the full minor axis length and as much major axis length
+      // as needed to match the item's area.
+      group.forEach((datum) => {
+        let itemRect;
+        if (groupRect.width > groupRect.height) {
+          // landscape, use full height
+          itemRect = { x: groupRect.x, y: groupRect.y,
+            width: Math.round((areaPer * datum.value) / groupRect.height),
+            height: groupRect.height };
+          groupRect.x += itemRect.width;
+          groupRect.width -= itemRect.width;
+        } else {
+          // portrait, use full width
+          itemRect = { x: groupRect.x, y: groupRect.y,
+            width: groupRect.width,
+            height: Math.round((areaPer * datum.value) / groupRect.width) };
+          groupRect.y += itemRect.height;
+          groupRect.height -= itemRect.height;
+        }
+
+        // Save this so we can render the item's box and label
+        // in the correct location.
+        items.push({ datum: datum, rect: itemRect });
+      });
+    }
+
+    this.setState({ items: items });
   }
 
   _onResize () {
@@ -156,33 +212,11 @@ export default class Distribution extends Component {
     let graphic = this.refs.distribution;
     let rect = graphic.getBoundingClientRect();
     if (rect.width !== this.state.width || rect.height !== this.state.height ||
-      ! this.state.groups) {
+      ! this.state.items) {
       this.setState({
         width: rect.width,
         height: rect.height
-      }, this._groupItems);
-    }
-  }
-
-  _placeLabels () {
-    // Align labels over their corresponding boxes
-    let graphic = this.refs.distribution;
-    let rect = graphic.getBoundingClientRect();
-    let container = this.refs.container;
-    let labels = container.querySelectorAll(`.${CLASS_ROOT}__label`);
-    for (let i = 0; i < labels.length; i += 1) {
-      let label = labels[i];
-      label.style.top = undefined;
-      label.style.left = undefined;
-      label.style.maxWidth = undefined;
-      let boxIndex = label.getAttribute('data-box-index');
-      let box = container.querySelectorAll('[data-index="' + boxIndex + '"]')[0];
-      let boxRect = box.getBoundingClientRect();
-      // let labelRect = label.getBoundingClientRect();
-      label.style.left = (boxRect.left - rect.left) + 'px';
-      label.style.top = (boxRect.top - rect.top) + 'px';
-      label.style.maxWidth = boxRect.width + 'px';
-      label.style.maxHeight = boxRect.height + 'px';
+      }, this._placeItems);
     }
   }
 
@@ -255,18 +289,18 @@ export default class Distribution extends Component {
     );
   }
 
-  _renderLabel (item, index, boundingBox) {
+  _renderItemLabel (datum, itemRect, index) {
     let labelClasses = [`${CLASS_ROOT}__label`];
-    if (! item.icon) {
-      labelClasses.push('color-index-' + this._itemColorIndex(item, index));
+    if (! datum.icon) {
+      labelClasses.push('color-index-' + this._itemColorIndex(datum, index));
     }
-    if (item.icon) {
+    if (datum.icon) {
       labelClasses.push(`${CLASS_ROOT}__label--icons`);
     }
-    if (boundingBox.width < SMALL_SIZE || boundingBox.height < SMALL_SIZE) {
+    if (itemRect.width < SMALL_SIZE || itemRect.height < SMALL_SIZE) {
       labelClasses.push(`${CLASS_ROOT}__label--small`);
     }
-    if (boundingBox.height < THIN_HEIGHT) {
+    if (itemRect.height < THIN_HEIGHT) {
       labelClasses.push(`${CLASS_ROOT}__label--thin`);
     }
 
@@ -274,11 +308,13 @@ export default class Distribution extends Component {
       labelClasses.push(`${CLASS_ROOT}__label--active`);
     }
 
-    const value = (item.labelValue !== undefined ? item.labelValue : item.value);
+    const value = (datum.labelValue !== undefined ? datum.labelValue : datum.value);
 
     return (
       <div key={index} className={labelClasses.join(' ')}
         data-box-index={index} role="tab"
+        style={{ top: itemRect.y, left: itemRect.x, maxWidth: itemRect.width,
+          maxHeight: itemRect.height }}
         id={`${this.props.a11yTitleId}_item_${index}`}>
         <span className={`${CLASS_ROOT}__label-value`}>
           {value}
@@ -287,34 +323,13 @@ export default class Distribution extends Component {
           </span>
         </span>
         <span className={`${CLASS_ROOT}__label-label`}>
-          {item.label}
+          {datum.label}
         </span>
       </div>
     );
   }
 
-  _updateItemPlacement (item, placement) {
-    let result = {
-      x: placement.group.x + placement.item.x,
-      y: placement.group.y + placement.item.y
-    };
-    if (placement.across) {
-      result.width = placement.group.width - placement.item.x;
-      result.height = (placement.areaPer * item.value) / result.width;
-      placement.item.y += result.height;
-      placement.across = (result.width <
-        ((placement.group.height - placement.item.y) * 1.5));
-    } else {
-      result.height = placement.group.height - placement.item.y;
-      result.width = (placement.areaPer * item.value) / result.height;
-      placement.item.x += result.width;
-      placement.across = (result.height >
-        ((placement.group.width - placement.item.x) * 1.5));
-    }
-    return result;
-  }
-
-  _renderItemBox (boundingBox, colorIndex) {
+  _renderItemBox (itemRect, colorIndex) {
     let boxClasses = [`${CLASS_ROOT}__item-box`];
     if (colorIndex) {
       boxClasses.push(`color-index-${colorIndex}`);
@@ -322,15 +337,15 @@ export default class Distribution extends Component {
 
     return (
       <rect className={boxClasses.join(' ')}
-        x={boundingBox.x + (GUTTER_SIZE / 2)}
-        y={boundingBox.y + (GUTTER_SIZE / 2)}
-        width={boundingBox.width - GUTTER_SIZE}
-        height={boundingBox.height - GUTTER_SIZE}>
+        x={itemRect.x + (GUTTER_SIZE / 2)}
+        y={itemRect.y + (GUTTER_SIZE / 2)}
+        width={itemRect.width - GUTTER_SIZE}
+        height={itemRect.height - GUTTER_SIZE}>
       </rect>
     );
   }
 
-  _renderItemIcon (item, boundingBox, colorIndex) {
+  _renderItemIcon (icon, itemRect, colorIndex) {
     let iconClasses = [`${CLASS_ROOT}__item-icons`];
     iconClasses.push(`color-index-${colorIndex}`);
 
@@ -340,20 +355,20 @@ export default class Distribution extends Component {
     let iconY = 0;
     let iconIndex = 1;
 
-    while (iconY < (boundingBox.height - item.icon.height)) {
-      while (iconX < (boundingBox.width - item.icon.width)) {
+    while (iconY < (itemRect.height - icon.height)) {
+      while (iconX < (itemRect.width - icon.width)) {
         let transform = (
-          `translate(${boundingBox.x + iconX}, ${boundingBox.y + iconY})`
+          `translate(${itemRect.x + iconX}, ${itemRect.y + iconY})`
         );
         icons.push(
           <g key={iconIndex} transform={transform}>
-            {item.icon.svgElement}
+            {icon.svgElement}
           </g>
         );
-        iconX += item.icon.width;
+        iconX += icon.width;
         iconIndex += 1;
       }
-      iconY += item.icon.height;
+      iconY += icon.height;
       iconX = 0;
     }
 
@@ -364,11 +379,11 @@ export default class Distribution extends Component {
     );
   }
 
-  _renderItem (item, index, boundingBox) {
+  _renderItem (datum, rect, index) {
     let itemClass = `${CLASS_ROOT}__item`;
     let itemClasses = [itemClass];
 
-    if (item.onClick) {
+    if (datum.onClick) {
       itemClasses.push(`${itemClass}--clickable`);
     }
 
@@ -377,13 +392,13 @@ export default class Distribution extends Component {
       activeDistribution = 'activeDistribution';
     }
 
-    let colorIndex = this._itemColorIndex(item, index);
+    let colorIndex = this._itemColorIndex(datum, index);
 
     let contents;
-    if (item.icon) {
-      contents = this._renderItemIcon(item, boundingBox, colorIndex);
+    if (datum.icon) {
+      contents = this._renderItemIcon(datum.icon, rect, colorIndex);
     } else {
-      contents = this._renderItemBox(boundingBox, colorIndex);
+      contents = this._renderItemBox(rect, colorIndex);
     }
 
     return (
@@ -391,43 +406,22 @@ export default class Distribution extends Component {
         onMouseOver={this._onActivate.bind(this, index)}
         onMouseLeave={this._onDeactivate}
         ref={activeDistribution} role="presentation"
-        data-index={index} onClick={item.onClick}>
+        data-index={index} onClick={datum.onClick}>
         {contents}
       </g>
     );
   }
 
-  _renderItems () {
-    let placement = {
-      areaPer: (this.state.width * this.state.height) / this.state.total,
-      group: { x: 0, y: 0, width: 0, height: 0
-      },
-      item: { x: 0, y: 0 },
-      across: false,
-      icons: false
-    };
-    let index = 0;
-
-    let labels = [];
-    let boxes = this.state.groups.map(function(group) {
-
-      placement.group.x = placement.group.x + placement.group.width;
-      placement.group.y = 0;
-      placement.group.width = (placement.areaPer * group.value) / this.state.height;
-      placement.group.height = this.state.height;
-      placement.item = { x: 0, y: 0 };
-      placement.across = true;
-
-      return group.items.map(function (item) {
-        let boundingBox = this._updateItemPlacement(item, placement);
-        labels.push(this._renderLabel(item, index, boundingBox));
-        let result = this._renderItem(item, index, boundingBox);
-        index += 1;
-        return result;
-      }, this);
+  _renderBoxes () {
+    return this.state.items.map((item, index) => {
+      return this._renderItem(item.datum, item.rect, index);
     }, this);
+  }
 
-    return { boxes: boxes, labels: labels };
+  _renderLabels () {
+    return this.state.items.map((item, index) => {
+      return this._renderItemLabel(item.datum, item.rect, index);
+    }, this);
   }
 
   _renderLoading () {
@@ -478,13 +472,9 @@ export default class Distribution extends Component {
 
     let boxes = [];
     let labels;
-    if (this.props.series && this.state.groups) {
-      let items = this._renderItems();
-      boxes = items.boxes;
-      labels = items.labels;
-      // if (placement.smallLabel) {
-      //   classes.push(`${CLASS_ROOT}--small-label`);
-      // }
+    if (this.state.items) {
+      boxes = this._renderBoxes();
+      labels = this._renderLabels();
     }
 
     let role = 'tablist';
