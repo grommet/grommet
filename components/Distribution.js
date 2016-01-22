@@ -59,7 +59,7 @@ var Distribution = (function (_Component) {
     _this._onDeactivate = _this._onDeactivate.bind(_this);
     _this._onResize = _this._onResize.bind(_this);
     _this._layout = _this._layout.bind(_this);
-    _this._groupItems = _this._groupItems.bind(_this);
+    _this._placeItems = _this._placeItems.bind(_this);
 
     _this.state = _this._stateFromProps(props);
     _this.state.legendPosition = 'bottom';
@@ -95,11 +95,6 @@ var Distribution = (function (_Component) {
       this.setState(state, this._layout);
     }
   }, {
-    key: 'componentDidUpdate',
-    value: function componentDidUpdate() {
-      this._placeLabels();
-    }
-  }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
       _KeyboardAccelerators2.default.stopListeningToKeyboard(this, this._keyboardHandlers);
@@ -111,8 +106,8 @@ var Distribution = (function (_Component) {
     key: '_seriesTotal',
     value: function _seriesTotal(series) {
       var total = 0;
-      series.some(function (item) {
-        total += item.value;
+      series.some(function (datum) {
+        total += datum.value;
       });
       return total;
     }
@@ -126,8 +121,8 @@ var Distribution = (function (_Component) {
       var allIcons = false;
       if (props.series) {
         total = this._seriesTotal(props.series);
-        allIcons = !props.series.some(function (item) {
-          return !item.icon;
+        allIcons = !props.series.some(function (datum) {
+          return !datum.icon;
         });
       } else {
         total = 100;
@@ -135,45 +130,111 @@ var Distribution = (function (_Component) {
 
       return {
         allIcons: allIcons,
-        groups: null,
+        items: null,
         total: total
       };
     }
   }, {
-    key: '_groupItems',
-    value: function _groupItems() {
-      // group items to enable us to lay them out better
+    key: '_placeItems',
+    value: function _placeItems() {
       var width = this.state.width;
       var height = this.state.height;
       var areaPer = width * height / this.state.total;
-      var groups = [];
-      var group = undefined;
-      var targetValue = undefined;
-      var elapsedWidth = 0;
-      (this.props.series || []).filter(function (item) {
-        return item.value > 0;
-      }).forEach(function (item) {
-        if (!group || group.value >= targetValue) {
-          if (group) {
-            elapsedWidth += Math.round(areaPer * group.value / height);
-          }
-          group = { items: [], value: 0 };
-          groups.push(group);
+      var remainingRect = { x: 0, y: 0, width: width, height: height };
+      var items = [];
+      var series = this.props.series ? this.props.series.slice(0) : [];
 
-          // make the item as square as possible, without exceeding the height
-          var itemArea = areaPer * item.value;
-          var itemHeight = Math.min(height, Math.round(Math.sqrt(itemArea)));
-          var itemWidth = Math.round(itemArea / itemHeight);
-          // avoid slivers on the right
-          if (width - elapsedWidth - itemWidth < height / 2) {
-            itemWidth = width - elapsedWidth;
-          }
-          targetValue = Math.round(itemWidth * height / areaPer);
+      var _loop = function _loop() {
+        var datum = series.shift();
+        if (datum.value <= 0) {
+          return 'continue';
         }
-        group.items.push(item);
-        group.value += item.value;
-      });
-      this.setState({ groups: groups });
+
+        // Start a new group.
+        var groupValue = datum.value;
+        var targetGroupValue = undefined;
+
+        // Make the first item as square as possible.
+        var itemArea = areaPer * datum.value;
+        var edgeLength = Math.round(Math.sqrt(itemArea));
+        var itemHeight = undefined;
+        var itemWidth = undefined;
+
+        // Figure out how much value we can fit inside a rectangle
+        // that takes the full minor axis length
+        if (remainingRect.width > remainingRect.height) {
+          // landscape, lay out left to right
+          itemHeight = Math.min(remainingRect.height, edgeLength);
+          itemWidth = Math.round(itemArea / itemHeight);
+          targetGroupValue = Math.round(itemWidth * remainingRect.height / areaPer);
+        } else {
+          // portrait, lay out top to bottom
+          itemWidth = Math.min(remainingRect.width, edgeLength);
+          itemHeight = Math.round(itemArea / itemWidth);
+          targetGroupValue = Math.round(itemHeight * remainingRect.width / areaPer);
+        }
+
+        // Group items until we reach the target group value.
+        var group = [datum];
+        while (groupValue < targetGroupValue && series.length > 0) {
+          var datum2 = series.shift();
+          groupValue += datum2.value;
+          group.push(datum2);
+        }
+
+        // Now that we know the actual value of the group, give it a
+        // rectangle whose area corresponds to the actual group value.
+        var groupRect = undefined;
+        if (remainingRect.width > remainingRect.height) {
+          // landscape, lay out left to right
+          groupRect = { x: remainingRect.x, y: remainingRect.y,
+            width: Math.round(areaPer * groupValue / remainingRect.height),
+            height: remainingRect.height };
+          remainingRect.x += groupRect.width;
+          remainingRect.width -= groupRect.width;
+        } else {
+          // portrait, lay out top to bottom
+          groupRect = { x: remainingRect.x, y: remainingRect.y,
+            width: remainingRect.width,
+            height: Math.round(areaPer * groupValue / remainingRect.width) };
+          remainingRect.y += groupRect.height;
+          remainingRect.height -= groupRect.height;
+        }
+
+        // Place items within the group rectangle.
+        // We take the full minor axis length and as much major axis length
+        // as needed to match the item's area.
+        group.forEach(function (datum) {
+          var itemRect = undefined;
+          if (groupRect.width > groupRect.height) {
+            // landscape, use full height
+            itemRect = { x: groupRect.x, y: groupRect.y,
+              width: Math.round(areaPer * datum.value / groupRect.height),
+              height: groupRect.height };
+            groupRect.x += itemRect.width;
+            groupRect.width -= itemRect.width;
+          } else {
+            // portrait, use full width
+            itemRect = { x: groupRect.x, y: groupRect.y,
+              width: groupRect.width,
+              height: Math.round(areaPer * datum.value / groupRect.width) };
+            groupRect.y += itemRect.height;
+            groupRect.height -= itemRect.height;
+          }
+
+          // Save this so we can render the item's box and label
+          // in the correct location.
+          items.push({ datum: datum, rect: itemRect });
+        });
+      };
+
+      while (series.length > 0) {
+        var _ret = _loop();
+
+        if (_ret === 'continue') continue;
+      }
+
+      this.setState({ items: items });
     }
   }, {
     key: '_onResize',
@@ -195,34 +256,11 @@ var Distribution = (function (_Component) {
 
       var graphic = this.refs.distribution;
       var rect = graphic.getBoundingClientRect();
-      if (rect.width !== this.state.width || rect.height !== this.state.height || !this.state.groups) {
+      if (rect.width !== this.state.width || rect.height !== this.state.height || !this.state.items) {
         this.setState({
           width: rect.width,
           height: rect.height
-        }, this._groupItems);
-      }
-    }
-  }, {
-    key: '_placeLabels',
-    value: function _placeLabels() {
-      // Align labels over their corresponding boxes
-      var graphic = this.refs.distribution;
-      var rect = graphic.getBoundingClientRect();
-      var container = this.refs.container;
-      var labels = container.querySelectorAll('.' + CLASS_ROOT + '__label');
-      for (var i = 0; i < labels.length; i += 1) {
-        var label = labels[i];
-        label.style.top = undefined;
-        label.style.left = undefined;
-        label.style.maxWidth = undefined;
-        var boxIndex = label.getAttribute('data-box-index');
-        var box = container.querySelectorAll('[data-index="' + boxIndex + '"]')[0];
-        var boxRect = box.getBoundingClientRect();
-        // let labelRect = label.getBoundingClientRect();
-        label.style.left = boxRect.left - rect.left + 'px';
-        label.style.top = boxRect.top - rect.top + 'px';
-        label.style.maxWidth = boxRect.width + 'px';
-        label.style.maxHeight = boxRect.height + 'px';
+        }, this._placeItems);
       }
     }
   }, {
@@ -296,19 +334,19 @@ var Distribution = (function (_Component) {
         onActive: this._onActivate });
     }
   }, {
-    key: '_renderLabel',
-    value: function _renderLabel(item, index, boundingBox) {
+    key: '_renderItemLabel',
+    value: function _renderItemLabel(datum, itemRect, index) {
       var labelClasses = [CLASS_ROOT + '__label'];
-      if (!item.icon) {
-        labelClasses.push('color-index-' + this._itemColorIndex(item, index));
+      if (!datum.icon) {
+        labelClasses.push('color-index-' + this._itemColorIndex(datum, index));
       }
-      if (item.icon) {
+      if (datum.icon) {
         labelClasses.push(CLASS_ROOT + '__label--icons');
       }
-      if (boundingBox.width < SMALL_SIZE || boundingBox.height < SMALL_SIZE) {
+      if (itemRect.width < SMALL_SIZE || itemRect.height < SMALL_SIZE) {
         labelClasses.push(CLASS_ROOT + '__label--small');
       }
-      if (boundingBox.height < THIN_HEIGHT) {
+      if (itemRect.height < THIN_HEIGHT) {
         labelClasses.push(CLASS_ROOT + '__label--thin');
       }
 
@@ -316,12 +354,14 @@ var Distribution = (function (_Component) {
         labelClasses.push(CLASS_ROOT + '__label--active');
       }
 
-      var value = item.labelValue !== undefined ? item.labelValue : item.value;
+      var value = datum.labelValue !== undefined ? datum.labelValue : datum.value;
 
       return _react2.default.createElement(
         'div',
         { key: index, className: labelClasses.join(' '),
           'data-box-index': index, role: 'tab',
+          style: { top: itemRect.y, left: itemRect.x, maxWidth: itemRect.width,
+            maxHeight: itemRect.height },
           id: this.props.a11yTitleId + '_item_' + index },
         _react2.default.createElement(
           'span',
@@ -336,47 +376,27 @@ var Distribution = (function (_Component) {
         _react2.default.createElement(
           'span',
           { className: CLASS_ROOT + '__label-label' },
-          item.label
+          datum.label
         )
       );
     }
   }, {
-    key: '_updateItemPlacement',
-    value: function _updateItemPlacement(item, placement) {
-      var result = {
-        x: placement.group.x + placement.item.x,
-        y: placement.group.y + placement.item.y
-      };
-      if (placement.across) {
-        result.width = placement.group.width - placement.item.x;
-        result.height = placement.areaPer * item.value / result.width;
-        placement.item.y += result.height;
-        placement.across = result.width < (placement.group.height - placement.item.y) * 1.5;
-      } else {
-        result.height = placement.group.height - placement.item.y;
-        result.width = placement.areaPer * item.value / result.height;
-        placement.item.x += result.width;
-        placement.across = result.height > (placement.group.width - placement.item.x) * 1.5;
-      }
-      return result;
-    }
-  }, {
     key: '_renderItemBox',
-    value: function _renderItemBox(boundingBox, colorIndex) {
+    value: function _renderItemBox(itemRect, colorIndex) {
       var boxClasses = [CLASS_ROOT + '__item-box'];
       if (colorIndex) {
         boxClasses.push('color-index-' + colorIndex);
       }
 
       return _react2.default.createElement('rect', { className: boxClasses.join(' '),
-        x: boundingBox.x + GUTTER_SIZE / 2,
-        y: boundingBox.y + GUTTER_SIZE / 2,
-        width: boundingBox.width - GUTTER_SIZE,
-        height: boundingBox.height - GUTTER_SIZE });
+        x: itemRect.x + GUTTER_SIZE / 2,
+        y: itemRect.y + GUTTER_SIZE / 2,
+        width: itemRect.width - GUTTER_SIZE,
+        height: itemRect.height - GUTTER_SIZE });
     }
   }, {
     key: '_renderItemIcon',
-    value: function _renderItemIcon(item, boundingBox, colorIndex) {
+    value: function _renderItemIcon(icon, itemRect, colorIndex) {
       var iconClasses = [CLASS_ROOT + '__item-icons'];
       iconClasses.push('color-index-' + colorIndex);
 
@@ -386,18 +406,18 @@ var Distribution = (function (_Component) {
       var iconY = 0;
       var iconIndex = 1;
 
-      while (iconY < boundingBox.height - item.icon.height) {
-        while (iconX < boundingBox.width - item.icon.width) {
-          var transform = 'translate(' + (boundingBox.x + iconX) + ', ' + (boundingBox.y + iconY) + ')';
+      while (iconY < itemRect.height - icon.height) {
+        while (iconX < itemRect.width - icon.width) {
+          var transform = 'translate(' + (itemRect.x + iconX) + ', ' + (itemRect.y + iconY) + ')';
           icons.push(_react2.default.createElement(
             'g',
             { key: iconIndex, transform: transform },
-            item.icon.svgElement
+            icon.svgElement
           ));
-          iconX += item.icon.width;
+          iconX += icon.width;
           iconIndex += 1;
         }
-        iconY += item.icon.height;
+        iconY += icon.height;
         iconX = 0;
       }
 
@@ -409,11 +429,11 @@ var Distribution = (function (_Component) {
     }
   }, {
     key: '_renderItem',
-    value: function _renderItem(item, index, boundingBox) {
+    value: function _renderItem(datum, rect, index) {
       var itemClass = CLASS_ROOT + '__item';
       var itemClasses = [itemClass];
 
-      if (item.onClick) {
+      if (datum.onClick) {
         itemClasses.push(itemClass + '--clickable');
       }
 
@@ -422,13 +442,13 @@ var Distribution = (function (_Component) {
         activeDistribution = 'activeDistribution';
       }
 
-      var colorIndex = this._itemColorIndex(item, index);
+      var colorIndex = this._itemColorIndex(datum, index);
 
       var contents = undefined;
-      if (item.icon) {
-        contents = this._renderItemIcon(item, boundingBox, colorIndex);
+      if (datum.icon) {
+        contents = this._renderItemIcon(datum.icon, rect, colorIndex);
       } else {
-        contents = this._renderItemBox(boundingBox, colorIndex);
+        contents = this._renderItemBox(rect, colorIndex);
       }
 
       return _react2.default.createElement(
@@ -437,43 +457,27 @@ var Distribution = (function (_Component) {
           onMouseOver: this._onActivate.bind(this, index),
           onMouseLeave: this._onDeactivate,
           ref: activeDistribution, role: 'presentation',
-          'data-index': index, onClick: item.onClick },
+          'data-index': index, onClick: datum.onClick },
         contents
       );
     }
   }, {
-    key: '_renderItems',
-    value: function _renderItems() {
-      var placement = {
-        areaPer: this.state.width * this.state.height / this.state.total,
-        group: { x: 0, y: 0, width: 0, height: 0
-        },
-        item: { x: 0, y: 0 },
-        across: false,
-        icons: false
-      };
-      var index = 0;
+    key: '_renderBoxes',
+    value: function _renderBoxes() {
+      var _this2 = this;
 
-      var labels = [];
-      var boxes = this.state.groups.map(function (group) {
-
-        placement.group.x = placement.group.x + placement.group.width;
-        placement.group.y = 0;
-        placement.group.width = placement.areaPer * group.value / this.state.height;
-        placement.group.height = this.state.height;
-        placement.item = { x: 0, y: 0 };
-        placement.across = true;
-
-        return group.items.map(function (item) {
-          var boundingBox = this._updateItemPlacement(item, placement);
-          labels.push(this._renderLabel(item, index, boundingBox));
-          var result = this._renderItem(item, index, boundingBox);
-          index += 1;
-          return result;
-        }, this);
+      return this.state.items.map(function (item, index) {
+        return _this2._renderItem(item.datum, item.rect, index);
       }, this);
+    }
+  }, {
+    key: '_renderLabels',
+    value: function _renderLabels() {
+      var _this3 = this;
 
-      return { boxes: boxes, labels: labels };
+      return this.state.items.map(function (item, index) {
+        return _this3._renderItemLabel(item.datum, item.rect, index);
+      }, this);
     }
   }, {
     key: '_renderLoading',
@@ -524,13 +528,9 @@ var Distribution = (function (_Component) {
 
       var boxes = [];
       var labels = undefined;
-      if (this.props.series && this.state.groups) {
-        var items = this._renderItems();
-        boxes = items.boxes;
-        labels = items.labels;
-        // if (placement.smallLabel) {
-        //   classes.push(`${CLASS_ROOT}--small-label`);
-        // }
+      if (this.state.items) {
+        boxes = this._renderBoxes();
+        labels = this._renderLabels();
       }
 
       var role = 'tablist';
