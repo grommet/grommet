@@ -45,7 +45,8 @@ export default class Button extends Component {
 
     return (
       <button id={this.props.id} type={type} className={classes.join(' ')}
-        onClick={this.props.onClick} disabled={! this.props.onClick}>
+        onClick={this.props.onClick} disabled={! this.props.onClick}
+        aria-label={this.props.a11yTitle}>
         {children}
       </button>
     );
@@ -53,6 +54,7 @@ export default class Button extends Component {
 }
 
 Button.propTypes = {
+  a11yTitle: PropTypes.string,
   accent: PropTypes.bool,
   fill: PropTypes.bool,
   icon: PropTypes.bool,

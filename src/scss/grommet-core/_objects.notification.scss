@@ -1,33 +1,61 @@
 // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
 .notification {
+  @include inuit-font-size($control-font-size, $inuit-base-spacing-unit);
+
+  &__message {
+    @include inuit-font-size($control-large-font-size, $inuit-base-spacing-unit);
+
+    + * {
+      margin-top: $inuit-base-spacing-unit;
+    }
+  }
 
   &__status {
-    margin-right: halve($inuit-base-spacing-unit);
+    margin-right: $inuit-base-spacing-unit;
     flex: 0 0 auto;
   }
 
-  &__message {
-    margin-bottom: $inuit-base-spacing-unit;
-    vertical-align: middle;
+  &--small {
+    .notification {
+      &__message {
+        @include inuit-font-size($control-font-size, $inuit-base-spacing-unit);
+      }
+    }
   }
 
   @each $status, $color in $brand-status-colors {
     &--#{$status} {
       background-color: $color;
-      @include inuit-font-size($control-font-size, $inuit-base-spacing-unit);
+
+      .notification__status {
+        .status-icon__base {
+          fill: $active-colored-text-color;
+        }
+
+        .status-icon__detail {
+          stroke: $color;
+          fill: $color;
+        }
+
+        &.status-icon-unknown {
+          .status-icon__detail {
+            stroke: $active-colored-text-color;
+            fill: $active-colored-text-color;
+          }
+        }
+      }
 
       // 63 was empircally determined based on HPE critical and warning colors
       @if lightness($color) < 63 {
-        color: $colored-text-color;
-
-        .notification__status .status-icon__base {
-          fill: $colored-text-color;
-        }
-      } @else {
-        .notification__status .status-icon__base {
-          fill: $text-color;
-        }
+        color: $active-colored-text-color;
+      // } @else {
+      //   .notification__status .status-icon__base {
+      //     path {
+      //       stroke: #999;
+      //       stroke-width: 1px;
+      //     }
+      //   }
       }
     }
   }

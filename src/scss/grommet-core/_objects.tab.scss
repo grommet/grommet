@@ -7,8 +7,14 @@
   a {
     text-decoration: none;
 
-    &:focus {
+    &:hover,
+    &:visited,
+    &:link,
+    &:active {
+      text-decoration: none;
+    }
 
+    &:focus {
       .tab__label {
         border-bottom: 4px solid;
       }
@@ -32,7 +38,6 @@
 
   &:hover,
   &:focus {
-
     .tab__label {
       border-bottom: 4px solid;
     }

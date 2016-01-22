@@ -8,6 +8,7 @@ import Bar from './meter/Bar';
 import Spiral from './meter/Spiral';
 import Circle from './meter/Circle';
 import Arc from './meter/Arc';
+import Intl from '../utils/Intl';
 
 const CLASS_ROOT = "meter";
 
@@ -135,35 +136,32 @@ export default class Meter extends Component {
     if (props.thresholds) {
       // Convert thresholds from absolute values to cummulative,
       // so we can re-use the series drawing code.
-      let total = 0;
+      let priorValue = min.value;
+      thresholds.push({ hidden: true });
       for (let i = 0; i < props.thresholds.length; i += 1) {
         let threshold = props.thresholds[i];
+        // The value for the prior threshold ends at the beginning of this
+        // threshold. Series drawing code expects the end value.
+        thresholds[i].value = threshold.value - priorValue;
         thresholds.push({
           label: threshold.label,
           colorIndex: threshold.colorIndex,
           ariaLabel: `${threshold.value} ${props.units || ''} ${threshold.label || ''}`
         });
-        if (i > 0) {
-          thresholds[i - 1].value = threshold.value - total;
-          total += thresholds[i - 1].value;
-        }
+        priorValue = threshold.value;
         if (i === (props.thresholds.length - 1)) {
-          thresholds[i].value = max.value - total;
+          thresholds[thresholds.length-1].value = max.value - priorValue;
         }
       }
     } else if (props.threshold) {
-      let remaining = max.value - props.threshold;
+      // let remaining = max.value - props.threshold;
       thresholds = [
+        { value: props.threshold, hidden: true },
         {
-          value: props.threshold,
-          colorIndex: 'unset',
+          value: max.value - props.threshold,
+          colorIndex: 'critical',
           ariaLabel: `${props.threshold} ${props.units || ''}`
-        },
-        {value: remaining, colorIndex: 'critical'}
-      ];
-    } else {
-      thresholds = [
-        {value: max.value, colorIndex: 'unset'}
+        }
       ];
     }
     return thresholds;
@@ -259,7 +257,7 @@ export default class Meter extends Component {
   _getActiveFields () {
     let fields;
     if (null === this.state.activeIndex) {
-      fields = {value: this.state.total, label: 'Total'};
+      fields = {value: this.state.total, label: Intl.getMessage(this.context.intl, 'Total')};
     } else {
       let active = this.state.series[this.state.activeIndex];
       if (!active) {
@@ -381,7 +379,9 @@ export default class Meter extends Component {
       a11yRole = 'tablist';
 
       if (this.props.legend) {
-        legend = this._renderLegend();
+        if ('inline' !== this.props.legend.placement) {
+          legend = this._renderLegend();
+        }
         classes.push(CLASS_ROOT + "--legend-" + this.state.legendPlacement);
       }
     }
@@ -396,6 +396,7 @@ export default class Meter extends Component {
         a11yRole={a11yRole}
         activeIndex={this.state.activeIndex}
         min={this.state.min} max={this.state.max}
+        legend={this.props.legend}
         onActivate={this._onActivate}
         series={this.state.series}
         stacked={this.props.stacked}
@@ -438,7 +439,7 @@ Meter.propTypes = {
     PropTypes.bool,
     PropTypes.shape({
       total: PropTypes.bool,
-      placement: PropTypes.oneOf(['right', 'bottom'])
+      placement: PropTypes.oneOf(['right', 'bottom', 'inline'])
     })
   ]),
   max: PropTypes.oneOfType([

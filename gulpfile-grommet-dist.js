@@ -28,7 +28,8 @@ var bowerWebpackConfig = {
     extensions: ['', '.js', '.json', '.htm', '.html', '.scss']
   },
   externals: {
-    'react': 'React'
+    'react': 'React',
+    'react-dom': 'ReactDOM'
   },
   module: {
     loaders: [
@@ -191,9 +192,10 @@ module.exports = function(gulp, opts) {
 
     var bowerJSON = gulpUtils.getPackageJSON();
     bowerJSON.dependencies = {
-      'react': '^0.13.1',
+      'react': '^0.14.2',
       'grommet': '^' + bowerJSON.version
     };
+    bowerJSON.ignore = [];
     bowerJSON.main = 'grommet.js';
     delete bowerJSON.devDependencies;
     delete bowerJSON.scripts;

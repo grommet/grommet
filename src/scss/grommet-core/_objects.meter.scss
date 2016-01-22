@@ -60,6 +60,12 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
     }
   }
 
+  &__graphic {
+    &:focus {
+      outline: $focus-border-color solid 1px;
+    }
+  }
+
   &__value {
     white-space: normal;
     pointer-events: none;
@@ -305,7 +311,10 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
       &__values .meter__slice {
         // stroke-width: $meter-slice-width;
         @include graph-stroke-color();
-        cursor: pointer;
+
+        &--clickable {
+          cursor: pointer;
+        }
 
         @include media-query(lap-and-up) {
           transition: stroke-width 0.2s;
@@ -313,7 +322,8 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
         }
       }
 
-      &__thresholds .meter__slice {
+      &__thresholds .meter__slice,
+      &__tracks .meter__slice {
         // stroke-width: $meter-threshold-slice-width;
         @include graph-stroke-color-translucent(0.5);
       }
@@ -370,12 +380,22 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
             margin-left: round($inuit-base-spacing-unit / 6);
           }
         }
+
+        &.meter--legend-right {
+          .meter__value {
+            min-width: $inuit-base-spacing-unit * 3.5;
+          }
+        }
       }
 
       &.meter--legend-right {
         .meter__legend {
           top: 0px;
           @include transform(none);
+        }
+
+        .meter__value {
+          min-width: $inuit-base-spacing-unit * 2;
         }
       }
 
@@ -387,6 +407,18 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
         .meter__value-value,
         .meter__value-units {
           @include inuit-font-size($inuit-base-font-size);
+        }
+
+        &.meter--legend-right {
+          .meter__value {
+            min-width: double($inuit-base-spacing-unit) * 0.875;
+          }
+
+          &.meter--stacked {
+            .meter__value {
+              min-width: $inuit-base-spacing-unit * 3;
+            }
+          }
         }
       }
 
@@ -440,6 +472,10 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
         .meter__legend {
           top: halve($meter-size);
         }
+
+        .meter__value {
+          min-width: $inuit-base-spacing-unit * 2 + halve($inuit-base-spacing-unit);
+        }
       }
 
       &.meter--small {
@@ -454,6 +490,10 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
         &.meter--legend-right {
           .meter__legend {
             top: halve($meter-small-size);
+          }
+
+          .meter__value {
+            min-width: double($inuit-base-spacing-unit) * 0.875;
           }
         }
       }
@@ -507,15 +547,16 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
         &-indicator {
           stroke-linecap: square;
           stroke-width: $meter-indicator-width;
-          stroke: #000;
-          //@include graph-stroke-color;
+          stroke: $threshold-color;
         }
       }
 
       &__values .meter__slice {
-        // stroke-width: $meter-slice-width;
         @include graph-stroke-color();
-        cursor: pointer;
+
+        &--clickable {
+          cursor: pointer;
+        }
 
         @include media-query(lap-and-up) {
           transition: stroke-width 0.2s;
@@ -523,7 +564,8 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
         }
       }
 
-      &__thresholds .meter__slice {
+      &__thresholds .meter__slice,
+      &__tracks .meter__slice {
         // stroke-width: $meter-threshold-slice-width;
         @include graph-stroke-color-translucent(0.5);
       }
@@ -744,7 +786,7 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
         .meter {
           &__value {
             top: halve($meter-small-size);
-            margin-left: - ($meter-small-size - $meter-arc-small-size) + quarter($inuit-base-spacing-unit);
+            margin-left: - halve($inuit-base-spacing-unit);
           }
 
           &__minmax-container {
@@ -777,6 +819,18 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
           .meter__value {
             margin-left: - ($meter-small-size - $meter-arc-small-size) - round($inuit-base-spacing-unit * 1.5);
           }
+        }
+      }
+
+      &.meter--legend-right {
+        &.meter--small {
+          .meter__value {
+            min-width: $inuit-base-spacing-unit * 3 + halve(halve($inuit-base-spacing-unit));
+          }
+        }
+
+        .meter__value {
+          min-width: $inuit-base-spacing-unit * 5;
         }
       }
     }

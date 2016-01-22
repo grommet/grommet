@@ -17,6 +17,9 @@ export default class Notification extends Component {
     var classes = [CLASS_ROOT];
     var other = pick(this.props, keys(Box.propTypes));
     classes.push(CLASS_ROOT + "--" + this.props.status.toLowerCase());
+    if (this.props.size) {
+      classes.push(CLASS_ROOT + "--" + this.props.size.toLowerCase());
+    }
     if (this.props.className) {
       classes.push(this.props.className);
     }
@@ -25,7 +28,7 @@ export default class Notification extends Component {
     if (this.props.status) {
       status = (
         <StatusIcon className={CLASS_ROOT + "__status"}
-        value={this.props.status} small={true} />
+          value={this.props.status} size={this.props.size} />
       );
     }
 
@@ -64,32 +67,34 @@ export default class Notification extends Component {
     }
 
     return (
-      <Box className={classes.join(' ')} {...other}>
-        <Box direction="row" responsive={false}>
-          {status}
+      <Box className={classes.join(' ')} direction="row" responsive={false}
+        {...other}>
+        {status}
+        <Box>
           <span className={CLASS_ROOT + "__message"}>
             {this.props.message}
           </span>
+          {timestamp}
+          {state}
+          {progress}
+          {this.props.children}
         </Box>
-        {timestamp}
-        {state}
-        {progress}
-        {this.props.children}
       </Box>
     );
   }
 }
+
+Notification.propTypes = merge({
+  message: PropTypes.string.isRequired,
+  percentComplete: PropTypes.number,
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  state: PropTypes.string,
+  status: PropTypes.string,
+  timestamp: PropTypes.object // Date
+}, Box.propTypes);
 
 Notification.defaultProps = {
   flush: true,
   status: 'unknown',
   pad: 'medium'
 };
-
-Notification.propTypes = merge({
-  message: PropTypes.string.isRequired,
-  percentComplete: PropTypes.number,
-  state: PropTypes.string,
-  status: PropTypes.string,
-  timestamp: PropTypes.object // Date
-}, Box.propTypes);

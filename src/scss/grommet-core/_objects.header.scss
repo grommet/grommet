@@ -60,6 +60,14 @@ header.header {
   transition: -webkit-transform 0.5s;
   transition: transform 0.5s;
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    margin-bottom: 0;
+  }
+
   &.header--splash {
     @include transform(translate(0, 40vh));
   }

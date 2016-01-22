@@ -14,6 +14,7 @@ export default class Graphic extends Component {
     super();
     this.state = this._stateFromProps(props);
 
+    this._onEnter = this._onEnter.bind(this);
     this._onRequestForNextLegend = this._onRequestForNextLegend.bind(this);
     this._onRequestForPreviousLegend = this._onRequestForPreviousLegend.bind(this);
   }
@@ -23,7 +24,9 @@ export default class Graphic extends Component {
       left: this._onRequestForPreviousLegend,
       up: this._onRequestForPreviousLegend,
       right: this._onRequestForNextLegend,
-      down: this._onRequestForNextLegend
+      down: this._onRequestForNextLegend,
+      enter: this._onEnter,
+      space: this._onEnter
     };
     KeyboardAccelerators.startListeningToKeyboard(
       this, this._keyboardHandlers
@@ -52,30 +55,40 @@ export default class Graphic extends Component {
   }
 
   _renderSlice (trackIndex, item, itemIndex, startValue, threshold) {
-    let classes = [CLASS_ROOT + "__slice"];
-    if (itemIndex === this.props.activeIndex) {
-      classes.push(CLASS_ROOT + "__slice--active");
-    }
-    classes.push("color-index-" + item.colorIndex);
-
-    let commands = this._sliceCommands(trackIndex, item, startValue);
-
     let path;
-    if (threshold) {
-      path = buildPath(itemIndex, commands, classes,
-        this.props.onActivate, item.onClick);
-    } else {
-      let a11yDescId = `${this.props.a11yDescId}_${itemIndex}`;
-      let a11yTitle = `${item.value} ${item.label || this.props.units || ''}`;
+    if (! item.hidden) {
+      let classes = [CLASS_ROOT + "__slice"];
+      let activeMeterSlice;
+      if (itemIndex === this.props.activeIndex) {
+        activeMeterSlice = 'activeMeterSlice';
+        classes.push(CLASS_ROOT + "__slice--active");
+      }
 
-      path = buildPath(itemIndex, commands, classes,
-        this.props.onActivate, item.onClick, a11yDescId, a11yTitle);
+      if (item.onClick) {
+        classes.push(CLASS_ROOT + "__slice--clickable");
+      }
+
+      classes.push("color-index-" + item.colorIndex);
+
+      let commands = this._sliceCommands(trackIndex, item, startValue);
+
+      if (threshold) {
+        path = buildPath(itemIndex, commands, classes,
+          this.props.onActivate, item.onClick);
+      } else {
+        let a11yDescId = `${this.props.a11yDescId}_${itemIndex}`;
+        let a11yTitle = `${item.value} ${item.label || this.props.units || ''}`;
+
+        path = buildPath(itemIndex, commands, classes,
+          this.props.onActivate, item.onClick, a11yDescId,
+          a11yTitle, activeMeterSlice);
+      }
     }
 
     return path;
   }
 
-  _renderTrack (series, trackIndex, threshold) {
+  _renderSlices (series, trackIndex, threshold) {
     let startValue = this.props.min.value;
 
     let paths = series.map(function (item, itemIndex) {
@@ -121,6 +134,19 @@ export default class Graphic extends Component {
     }
   }
 
+  _onEnter (event) {
+    if (document.activeElement === this.refs.meter) {
+      if (this.refs.activeMeterSlice) {
+        let index = this.refs.activeMeterSlice.getAttribute('data-index');
+
+        //trigger click on active meter slice
+        if (this.props.series[index].onClick) {
+          this.props.series[index].onClick();
+        }
+      }
+    }
+  }
+
   _renderLoading () {
     let classes = [CLASS_ROOT + "__slice"];
     classes.push(CLASS_ROOT + "__slice--loading");
@@ -134,7 +160,7 @@ export default class Graphic extends Component {
   _renderValues () {
     let values;
     if (this.props.stacked) {
-      values = this._renderTrack(this.props.series, 0);
+      values = this._renderSlices(this.props.series, 0);
     } else {
       values = this.props.series.map((item, index) => {
         return this._renderSlice(index, item, index, this.props.min.value);
@@ -150,16 +176,26 @@ export default class Graphic extends Component {
     );
   }
 
-  _renderThresholds () {
-    let result;
-    let thresholds;
+  _renderTracks () {
+    const trackValue = { value: this.props.max.value, colorIndex: 'unset' };
+    let tracks;
     if (this.props.stacked) {
-      thresholds = this._renderTrack(this.props.thresholds, 0, true);
+      tracks = this._renderSlice(0, trackValue, 0, this.props.min.value, true);
     } else {
-      thresholds = this.props.series.map((item, index) => {
-        return this._renderTrack(this.props.thresholds, index, true);
+      tracks = this.props.series.map((item, index) => {
+        return this._renderSlice(index, trackValue, index, this.props.min.value, true);
       });
     }
+    return (
+      <g className={CLASS_ROOT + "__tracks"}>
+        {tracks}
+      </g>
+    );
+  }
+
+  _renderThresholds () {
+    let result;
+    let thresholds = this._renderSlices(this.props.thresholds, -0.4, true);
     if (thresholds.length > 0) {
       result = (
         <g className={CLASS_ROOT + "__thresholds"}>
@@ -179,6 +215,9 @@ export default class Graphic extends Component {
     return null;
   }
 
+  _renderInlineLegend () {
+    return null;
+  }
 
   _renderA11YTitle () {
     let a11yTitle = this.props.a11yTitle;
@@ -230,9 +269,11 @@ export default class Graphic extends Component {
       classes.push(this.props.className);
     }
 
+    let tracks = this._renderTracks();
     let values = this._renderValues();
     let thresholds = this._renderThresholds();
     let topLayer = this._renderTopLayer();
+    let inlineLegend = this._renderInlineLegend();
 
     let a11yTitle = this._renderA11YTitle();
     let a11yDesc = this._renderA11YDesc();
@@ -253,8 +294,10 @@ export default class Graphic extends Component {
           {a11yTitle}
         </title>
         <desc id={this.props.a11yDescId}>{a11yDesc}</desc>
+        {tracks}
         {thresholds}
         {values}
+        {inlineLegend}
         {topLayer}
       </svg>
     );

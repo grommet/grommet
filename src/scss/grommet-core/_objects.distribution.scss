@@ -8,15 +8,25 @@
     width: 100%;
     height: $graphic-size;
     max-height: calc(100vh - #{double($header-height)});
+
+    &:focus {
+      outline: $focus-border-color solid 1px;
+    }
   }
 
-  &__box {
-    @include graph-fill-color();
-    cursor: pointer;
-  }
+  &__item {
+    &--clickable {
+      cursor: pointer;
+    }
 
-  &__icons {
-    @include graph-stroke-color();
+    &-box {
+      @include graph-fill-color();
+    }
+
+    &-icons {
+      @include graph-stroke-color();
+    }
+
   }
 
   &__label {
@@ -44,12 +54,8 @@
       display: block;
     }
 
-    &--small {
-      padding: halve($inuit-base-spacing-unit);
-
-      .distribution__label-value {
-        @include inuit-font-size($small-large-number-font-size);
-      }
+    &--active {
+      color: $text-color;
     }
 
     &--thin {
@@ -93,6 +99,21 @@
     }
   }
 
+  &--small-label {
+    .distribution {
+      &__label {
+        padding-top: 0px;
+        padding-left: halve(halve($inuit-base-spacing-unit));
+
+        &-value,
+        &-units {
+          @include inuit-font-size($small-large-number-font-size);
+          margin-right: 4px;
+        }
+      }
+    }
+  }
+
   &--small {
     .distribution__graphic {
       height: $graphic-small-size;
@@ -102,6 +123,15 @@
   &--large {
     .distribution__graphic {
       height: $graphic-large-size;
+    }
+  }
+
+  &--full {
+    height: 100%;
+
+    .distribution__graphic {
+      height: 100%;
+      max-height: 100%;
     }
   }
 }
