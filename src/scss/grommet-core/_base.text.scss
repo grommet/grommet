@@ -73,6 +73,11 @@ blockquote {
   @include inuit-font-size(36px);
 }
 
+b,
+strong {
+  font-weight: 600;
+}
+
 code.hljs {
   border: 1px solid $border-color;
 }

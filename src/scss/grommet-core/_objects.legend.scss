@@ -33,7 +33,10 @@
   }
 
   &__item {
-    cursor: pointer;
+
+    &--clickable {
+      cursor: pointer;
+    }
 
     svg.legend__item-swatch {
       width: halve($inuit-base-spacing-unit);
@@ -95,4 +98,3 @@
     }
   }
 }
-

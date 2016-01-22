@@ -45,6 +45,9 @@ export default class Legend extends Component {
       if (index === this.state.activeIndex) {
         legendClasses.push(CLASS_ROOT + "__item--active");
       }
+      if (item.onClick) {
+        legendClasses.push(CLASS_ROOT + "__item--clickable");
+      }
       var colorIndex = this._itemColorIndex(item, index);
       totalValue += item.value;
 
@@ -93,6 +96,9 @@ export default class Legend extends Component {
         </li>
       );
     }, this);
+
+    // build legend from bottom to top, to align with Meter bar stacking
+    items.reverse();
 
     var total = null;
     if (this.props.total && this.props.series.length > 1) {
