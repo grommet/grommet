@@ -35,6 +35,13 @@
     }
   }
 
+  @for $i from 1 through length($brand-accent-colors) {
+    &.color-index-accent-#{$i},
+    &.color-index-accent-#{$i + length($brand-accent-colors)} {
+      stroke: nth($brand-accent-colors, $i);
+    }
+  }
+
   @for $i from 1 through length($brand-light-colors) {
     &.color-index-light-#{$i},
     &.color-index-light-#{$i + length($brand-light-colors)} {
@@ -64,6 +71,13 @@
       stroke: rgba(nth($brand-graph-colors, $i), $opacity);
     }
   }
+
+  @for $i from 1 through length($brand-accent-colors) {
+    &.color-index-accent-#{$i},
+    &.color-index-accent-#{$i + length($brand-accent-colors)} {
+      stroke: rgba(nth($brand-accent-colors, $i), $opacity);
+    }
+  }
 }
 
 @mixin graph-fill-color {
@@ -85,6 +99,13 @@
     &.color-index-graph-#{$i},
     &.color-index-graph-#{$i + length($brand-graph-colors)} {
       fill: nth($brand-graph-colors, $i);
+    }
+  }
+
+  @for $i from 1 through length($brand-accent-colors) {
+    &.color-index-accent-#{$i},
+    &.color-index-accent-#{$i + length($brand-accent-colors)} {
+      fill: nth($brand-accent-colors, $i);
     }
   }
 
@@ -145,6 +166,55 @@
       .end {
         stop-color: nth($brand-graph-colors, $i);
         stop-opacity: 0;
+      }
+    }
+  }
+}
+
+@mixin filled-text-color {
+  &.color-index-unset {
+    @if lightness($unset-color) < $colored-text-color-lightness-threshold {
+      color: $active-colored-text-color;
+    }
+  }
+
+  &.color-index-brand {
+    @if lightness($brand-color) < $colored-text-color-lightness-threshold {
+      color: $active-colored-text-color;
+    }
+  }
+
+  @each $status, $color in $brand-status-colors {
+    &.color-index-#{$status} {
+      @if lightness($color) < $colored-text-color-lightness-threshold {
+        color: $active-colored-text-color;
+      }
+    }
+  }
+
+  @for $i from 1 through length($brand-graph-colors) {
+    &.color-index-graph-#{$i},
+    &.color-index-graph-#{$i + length($brand-graph-colors)} {
+      @if lightness(nth($brand-graph-colors, $i)) < $colored-text-color-lightness-threshold {
+        color: $active-colored-text-color;
+      }
+    }
+  }
+
+  @for $i from 1 through length($brand-accent-colors) {
+    &.color-index-accent-#{$i},
+    &.color-index-accent-#{$i + length($brand-accent-colors)} {
+      @if lightness(nth($brand-accent-colors, $i)) < $colored-text-color-lightness-threshold {
+        color: $active-colored-text-color;
+      }
+    }
+  }
+
+  @for $i from 1 through length($brand-grey-colors) {
+    &.color-index-grey-#{$i},
+    &.color-index-grey-#{$i + length($brand-grey-colors)} {
+      @if lightness(nth($brand-grey-colors, $i)) < $colored-text-color-lightness-threshold {
+        color: $active-colored-text-color;
       }
     }
   }
