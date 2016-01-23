@@ -118,22 +118,6 @@
     }
   }
 
-  // &--small-label {
-  //   .distribution {
-  //     &__label {
-  //       padding-top: 0px;
-
-  // padding-left: halve(halve($inuit-base-spacing-unit));
-  //
-  //       &-value,
-  //       &-units {
-  //         @include inuit-font-size($small-large-number-font-size);
-  //         margin-right: 4px;
-  //       }
-  //     }
-  //   }
-  // }
-
   &--small {
     .distribution__graphic {
       height: $graphic-small-size;
