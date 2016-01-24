@@ -1,15 +1,31 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
+.background-color-index-unset {
+  @if lightness($unset-color) < $colored-text-color-lightness-threshold {
+    color: $active-colored-text-color;
+  }
+}
+
+.background-color-index-dark {
+  color: $active-colored-text-color;
+}
+
 @for $i from 1 through length($brand-neutral-colors) {
 
   .background-color-index-neutral-#{$i},
   .background-color-index-neutral-#{$i + length($brand-neutral-colors)} {
     background-color: nth($brand-neutral-colors, $i);
+    @if lightness(nth($brand-neutral-colors, $i)) < $colored-text-color-lightness-threshold {
+      color: $active-colored-text-color;
+    }
   }
 
   .background-color-index-neutral-#{$i}-a,
   .background-color-index-neutral-#{$i + length($brand-neutral-colors)}-a {
     background-color: rgba(nth($brand-neutral-colors, $i), 0.8);
+    @if lightness(nth($brand-neutral-colors, $i)) < $colored-text-color-lightness-threshold {
+      color: $active-colored-text-color;
+    }
   }
 }
 
@@ -17,11 +33,17 @@
   .background-color-index-accent-#{$i},
   .background-color-index-accent-#{$i + length($brand-accent-colors)} {
     background-color: nth($brand-accent-colors, $i);
+    @if lightness(nth($brand-accent-colors, $i)) < $colored-text-color-lightness-threshold {
+      color: $active-colored-text-color;
+    }
   }
 
   .background-color-index-accent-#{$i}-a,
   .background-color-index-accent-#{$i + length($brand-accent-colors)}-a {
     background-color: rgba(nth($brand-accent-colors, $i), 0.8);
+    @if lightness(nth($brand-accent-colors, $i)) < $colored-text-color-lightness-threshold {
+      color: $active-colored-text-color;
+    }
   }
 }
 
@@ -29,11 +51,17 @@
   .background-color-index-grey-#{$i},
   .background-color-index-grey-#{$i + length($brand-grey-colors)} {
     background-color: nth($brand-grey-colors, $i);
+    @if lightness(nth($brand-grey-colors, $i)) < $colored-text-color-lightness-threshold {
+      color: $active-colored-text-color;
+    }
   }
 
   .background-color-index-grey-#{$i}-a,
   .background-color-index-grey-#{$i + length($brand-grey-colors)}-a {
     background-color: rgba(nth($brand-grey-colors, $i), 0.8);
+    @if lightness(nth($brand-grey-colors, $i)) < $colored-text-color-lightness-threshold {
+      color: $active-colored-text-color;
+    }
   }
 }
 
@@ -41,11 +69,19 @@
   .background-color-index-graph-#{$i},
   .background-color-index-graph-#{$i + length($brand-graph-colors)} {
     background-color: nth($brand-graph-colors, $i);
+    @if lightness(nth($brand-graph-colors, $i)) < $colored-text-color-lightness-threshold {
+      color: $active-colored-text-color;
+    }
   }
 }
 
-[class*="background-color-index-"] {
-  color: $colored-text-color;
+@each $status, $color in $brand-status-colors {
+  .background-color-index-#{$status} {
+    background-color: $color;
+    @if lightness($color) < $colored-text-color-lightness-threshold {
+      color: $active-colored-text-color;
+    }
+  }
 }
 
 @for $i from 1 through length($brand-light-colors) {

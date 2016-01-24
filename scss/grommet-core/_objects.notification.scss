@@ -26,7 +26,7 @@
 
   @each $status, $color in $brand-status-colors {
     &--#{$status} {
-      background-color: $color;
+      // background-color comes from background-color-index
 
       .notification__status {
         .status-icon__base {
@@ -46,9 +46,9 @@
         }
       }
 
-      @if lightness($color) < $colored-text-color-lightness-threshold {
-        color: $active-colored-text-color;
-      }
+      // @if lightness($color) < $colored-text-color-lightness-threshold {
+      //   color: $active-colored-text-color;
+      // }
     }
   }
 }

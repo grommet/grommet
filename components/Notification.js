@@ -63,6 +63,7 @@ var Notification = (function (_Component) {
       var classes = [CLASS_ROOT];
       var other = (0, _pick2.default)(this.props, (0, _keys2.default)(_Box2.default.propTypes));
       classes.push(CLASS_ROOT + "--" + this.props.status.toLowerCase());
+      classes.push("background-color-index-" + this.props.status.toLowerCase());
       if (this.props.size) {
         classes.push(CLASS_ROOT + "--" + this.props.size.toLowerCase());
       }

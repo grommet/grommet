@@ -192,6 +192,15 @@
     }
   }
 
+  @for $i from 1 through length($brand-neutral-colors) {
+    &.color-index-neutral-#{$i},
+    &.color-index-neutral-#{$i + length($brand-neutral-colors)} {
+      @if lightness(nth($brand-neutral-colors, $i)) < $colored-text-color-lightness-threshold {
+        color: $active-colored-text-color;
+      }
+    }
+  }
+
   @for $i from 1 through length($brand-graph-colors) {
     &.color-index-graph-#{$i},
     &.color-index-graph-#{$i + length($brand-graph-colors)} {
