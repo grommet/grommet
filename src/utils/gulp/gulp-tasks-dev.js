@@ -27,7 +27,11 @@ module.exports = function(gulp, options, webpackConfig, dist) {
 
     var devWebpackConfig = merge({}, webpackConfig, {
       entry: {
-        app: ['webpack/hot/dev-server', './' + options.mainJs]
+        app: [
+          'webpack-dev-server/client?http://localhost:8001',
+          'webpack/hot/dev-server',
+          './' + options.mainJs
+        ]
       },
 
       output: {
