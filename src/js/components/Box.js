@@ -99,11 +99,19 @@ export default class Box extends Component {
       a11yProps.role = this.props.role || 'link';
     }
 
+    let eventRegex = /^on[A-Z].*$/;
+    let eventListeners = {};
+    Object.keys(this.props).forEach((prop) => {
+      if (eventRegex.test(prop)) {
+        eventListeners[prop] = this.props[prop];
+      }
+    });
+
     if (this.props.appCentered) {
       return (
         <div ref="boxContainer" className={containerClasses.join(' ')}
-          style={style} onClick={this.props.onClick}
-          role={this.props.role} {...a11yProps}>
+          style={style} role={this.props.role} {...a11yProps}
+          {...eventListeners}>
           <this.props.tag id={this.props.id} className={classes.join(' ')}>
             {texture}
             {this.props.children}
@@ -114,8 +122,8 @@ export default class Box extends Component {
       return (
         <this.props.tag ref="boxContainer" id={this.props.id}
           className={classes.join(' ')} style={style}
-          onClick={this.props.onClick} role={this.props.role}
-          tabIndex={this.props.tabIndex} {...a11yProps}>
+          role={this.props.role} tabIndex={this.props.tabIndex} {...a11yProps}
+          {...eventListeners}>
           {texture}
           {this.props.children}
         </this.props.tag>

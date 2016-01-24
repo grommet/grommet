@@ -23,6 +23,7 @@ export default class Article extends Component {
   constructor() {
     super();
 
+    this._onFocusChange = this._onFocusChange.bind(this);
     this._onWheel = this._onWheel.bind(this);
     this._onNext = this._onNext.bind(this);
     this._onPrevious = this._onPrevious.bind(this);
@@ -160,6 +161,15 @@ export default class Article extends Component {
     this.setState({activeIndex: activeIndex});
   }
 
+  _onFocusChange (e) {
+    React.Children.forEach(this.props.children, function(element, index) {
+      let parent = ReactDOM.findDOMNode(this.refs[index]);
+      if (parent.contains(e.target)) {
+        this._onSelect(index);
+      }
+    }.bind(this));
+  }
+
   _renderControls () {
     const CONTROL_CLASS_PREFIX =
       `${CLASS_ROOT}__control ${CLASS_ROOT}__control`;
@@ -235,7 +245,8 @@ export default class Article extends Component {
     }
 
     return (
-      <Box ref="component" tag="article" {...other} className={classes.join(' ')}>
+      <Box ref="component" tag="article" {...other}
+        className={classes.join(' ')} onFocus={this._onFocusChange}>
         {skipLinkAnchor}
         {children}
         {controls}
