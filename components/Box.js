@@ -88,6 +88,8 @@ var Box = (function (_Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       var classes = [CLASS_ROOT];
       var containerClasses = [CLASS_ROOT + "__container"];
       this._addPropertyClass(classes, CLASS_ROOT, 'flush');
@@ -144,12 +146,19 @@ var Box = (function (_Component) {
         a11yProps.role = this.props.role || 'link';
       }
 
+      var eventRegex = /^on[A-Z].*$/;
+      var eventListeners = {};
+      Object.keys(this.props).forEach(function (prop) {
+        if (eventRegex.test(prop)) {
+          eventListeners[prop] = _this2.props[prop];
+        }
+      });
+
       if (this.props.appCentered) {
         return _react2.default.createElement(
           'div',
           _extends({ ref: 'boxContainer', className: containerClasses.join(' '),
-            style: style, onClick: this.props.onClick,
-            role: this.props.role }, a11yProps),
+            style: style, role: this.props.role }, a11yProps, eventListeners),
           _react2.default.createElement(
             this.props.tag,
             { id: this.props.id, className: classes.join(' ') },
@@ -162,8 +171,7 @@ var Box = (function (_Component) {
           this.props.tag,
           _extends({ ref: 'boxContainer', id: this.props.id,
             className: classes.join(' '), style: style,
-            onClick: this.props.onClick, role: this.props.role,
-            tabIndex: this.props.tabIndex }, a11yProps),
+            role: this.props.role, tabIndex: this.props.tabIndex }, a11yProps, eventListeners),
           texture,
           this.props.children
         );

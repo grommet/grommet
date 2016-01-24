@@ -81,6 +81,7 @@ var Article = (function (_Component) {
 
     var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Article).call(this));
 
+    _this._onFocusChange = _this._onFocusChange.bind(_this);
     _this._onWheel = _this._onWheel.bind(_this);
     _this._onNext = _this._onNext.bind(_this);
     _this._onPrevious = _this._onPrevious.bind(_this);
@@ -227,6 +228,16 @@ var Article = (function (_Component) {
       this.setState({ activeIndex: activeIndex });
     }
   }, {
+    key: '_onFocusChange',
+    value: function _onFocusChange(e) {
+      _react2.default.Children.forEach(this.props.children, (function (element, index) {
+        var parent = _reactDom2.default.findDOMNode(this.refs[index]);
+        if (parent.contains(e.target)) {
+          this._onSelect(index);
+        }
+      }).bind(this));
+    }
+  }, {
     key: '_renderControls',
     value: function _renderControls() {
       var CONTROL_CLASS_PREFIX = CLASS_ROOT + '__control ' + CLASS_ROOT + '__control';
@@ -312,7 +323,8 @@ var Article = (function (_Component) {
 
       return _react2.default.createElement(
         _Box2.default,
-        _extends({ ref: 'component', tag: 'article' }, other, { className: classes.join(' ') }),
+        _extends({ ref: 'component', tag: 'article' }, other, {
+          className: classes.join(' '), onFocus: this._onFocusChange }),
         skipLinkAnchor,
         children,
         controls
