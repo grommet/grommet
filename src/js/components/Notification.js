@@ -17,6 +17,7 @@ export default class Notification extends Component {
     var classes = [CLASS_ROOT];
     var other = pick(this.props, keys(Box.propTypes));
     classes.push(CLASS_ROOT + "--" + this.props.status.toLowerCase());
+    classes.push("background-color-index-" + this.props.status.toLowerCase());
     if (this.props.size) {
       classes.push(CLASS_ROOT + "--" + this.props.size.toLowerCase());
     }
