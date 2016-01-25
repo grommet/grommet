@@ -46,6 +46,8 @@ export default class NumberInput extends Component {
     if (this.props.className) {
       classes.push(this.props.className);
     }
+    const onSubtract = (! this.props.disabled ? this._onSubtract : undefined);
+    const onAdd = (! this.props.disabled ? this._onAdd : undefined);
 
     return (
       <span className={classes.join(' ')}
@@ -63,10 +65,10 @@ export default class NumberInput extends Component {
           onChange={this.props.onChange} />
 
         <Button type="icon" className={CLASS_ROOT + "__subtract"}
-          onClick={this._onSubtract}><SubtractIcon /></Button>
+          onClick={onSubtract}><SubtractIcon /></Button>
 
         <Button type="icon" className={CLASS_ROOT + "__add"}
-          onClick={this._onAdd}><AddIcon /></Button>
+          onClick={onAdd}><AddIcon /></Button>
       </span>
     );
   }
