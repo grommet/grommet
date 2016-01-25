@@ -232,7 +232,7 @@ var Article = (function (_Component) {
     value: function _onFocusChange(e) {
       _react2.default.Children.forEach(this.props.children, (function (element, index) {
         var parent = _reactDom2.default.findDOMNode(this.refs[index]);
-        if (parent.contains(e.target)) {
+        if (parent && parent.contains(e.target)) {
           this._onSelect(index);
         }
       }).bind(this));

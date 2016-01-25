@@ -62,51 +62,58 @@ var Notification = (function (_Component) {
     value: function render() {
       var classes = [CLASS_ROOT];
       var other = (0, _pick2.default)(this.props, (0, _keys2.default)(_Box2.default.propTypes));
-      classes.push(CLASS_ROOT + "--" + this.props.status.toLowerCase());
-      classes.push("background-color-index-" + this.props.status.toLowerCase());
+      classes.push(CLASS_ROOT + '--' + this.props.status.toLowerCase());
+      classes.push('background-color-index-' + this.props.status.toLowerCase());
       if (this.props.size) {
-        classes.push(CLASS_ROOT + "--" + this.props.size.toLowerCase());
+        classes.push(CLASS_ROOT + '--' + this.props.size.toLowerCase());
       }
       if (this.props.className) {
         classes.push(this.props.className);
       }
 
-      var status;
+      var status = undefined;
       if (this.props.status) {
-        status = _react2.default.createElement(_Status2.default, { className: CLASS_ROOT + "__status",
+        status = _react2.default.createElement(_Status2.default, { className: CLASS_ROOT + '__status',
           value: this.props.status, size: this.props.size });
       }
 
-      var state;
+      var state = undefined;
       if (this.props.state) {
         state = _react2.default.createElement(
           'div',
-          { className: CLASS_ROOT + "__state" },
+          { className: CLASS_ROOT + '__state' },
           this.props.state
         );
       }
 
-      var progress;
+      var progress = undefined;
       if (this.props.percentComplete || 0 === this.props.percentComplete) {
         progress = _react2.default.createElement(_Meter2.default, { units: '%',
-          series: [{ value: this.props.percentComplete, label: '', colorIndex: 'light-1' }],
+          series: [{
+            value: this.props.percentComplete,
+            label: '',
+            colorIndex: 'light-1'
+          }],
           size: 'large' });
       }
 
-      var timestamp;
+      var timestamp = undefined;
       if (this.props.timestamp) {
-        var timestampFormatted = _react2.default.createElement(_reactIntl.FormattedDate, { value: this.props.timestamp,
-          weekday: 'long',
-          day: 'numeric',
-          month: 'long',
-          year: 'numeric',
-          hour: 'numeric',
-          minute: 'numeric',
-          second: 'numeric' });
+        var timestampFormatted = this.props.timestamp.toString();
+        if (this.context.intl) {
+          timestampFormatted = _react2.default.createElement(_reactIntl.FormattedDate, { value: this.props.timestamp,
+            weekday: 'long',
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+            second: 'numeric' });
+        }
 
         timestamp = _react2.default.createElement(
           'div',
-          { className: CLASS_ROOT + "__timestamp" },
+          { className: CLASS_ROOT + '__timestamp' },
           timestampFormatted
         );
       }
@@ -121,7 +128,7 @@ var Notification = (function (_Component) {
           null,
           _react2.default.createElement(
             'span',
-            { className: CLASS_ROOT + "__message" },
+            { className: CLASS_ROOT + '__message' },
             this.props.message
           ),
           timestamp,
@@ -146,6 +153,10 @@ Notification.propTypes = (0, _merge2.default)({
   status: _react.PropTypes.string,
   timestamp: _react.PropTypes.object // Date
 }, _Box2.default.propTypes);
+
+Notification.contextTypes = {
+  intl: _react.PropTypes.object
+};
 
 Notification.defaultProps = {
   flush: true,
