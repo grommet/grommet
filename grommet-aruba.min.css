@@ -1,4 +1,4 @@
-@font-face{font-family:Open Sans;src:url(https://fonts.googleapis.com/css?family=Open\ Sans)}.control-icon circle,.control-icon line,.control-icon path,.control-icon polygon,.control-icon polyline,.control-icon rect{stroke-width:4px;stroke-linecap:round;stroke-linejoin:round}
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);.control-icon circle,.control-icon line,.control-icon path,.control-icon polygon,.control-icon polyline,.control-icon rect{stroke-width:4px;stroke-linecap:round;stroke-linejoin:round}
 
 /*!
  * inuitcss, by @csswizardry
