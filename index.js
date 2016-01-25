@@ -30,6 +30,7 @@ var Grommet = {
   Map: require('./components/Map'),
   Menu: require('./components/Menu'),
   Meter: require('./components/Meter'),
+  Notification: require('./components/Notification'),
   NumberInput: require('./components/NumberInput'),
   RadioButton: require('./components/RadioButton'),
   Search: require('./components/Search'),
