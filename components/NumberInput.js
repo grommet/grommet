@@ -80,6 +80,8 @@ var NumberInput = (function (_Component) {
       if (this.props.className) {
         classes.push(this.props.className);
       }
+      var onSubtract = !this.props.disabled ? this._onSubtract : undefined;
+      var onAdd = !this.props.disabled ? this._onAdd : undefined;
 
       return _react2.default.createElement(
         'span',
@@ -98,13 +100,13 @@ var NumberInput = (function (_Component) {
         _react2.default.createElement(
           _Button2.default,
           { type: 'icon', className: CLASS_ROOT + "__subtract",
-            onClick: this._onSubtract },
+            onClick: onSubtract },
           _react2.default.createElement(_Subtract2.default, null)
         ),
         _react2.default.createElement(
           _Button2.default,
           { type: 'icon', className: CLASS_ROOT + "__add",
-            onClick: this._onAdd },
+            onClick: onAdd },
           _react2.default.createElement(_Add2.default, null)
         )
       );
