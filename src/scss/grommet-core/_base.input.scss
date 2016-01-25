@@ -14,6 +14,11 @@ textarea {
   margin-right: halve($inuit-base-spacing-unit);
   background-color: transparent; // inherit; doesn't work on IE
 
+  html.rtl & {
+    margin-right: 0;
+    margin-left: halve($inuit-base-spacing-unit);
+  }
+
   &:focus {
     padding: (halve($inuit-base-spacing-unit) - $input-focus-border-width)
       ($inuit-base-spacing-unit - $input-focus-border-width);

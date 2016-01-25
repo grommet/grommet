@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
-import RightIcon from './icons/base/LinkNext';
+import RightLeftIcon from './icons/LinkRightLeft';
 
 const CLASS_ROOT = "anchor";
 
@@ -12,7 +12,7 @@ export default class Anchor extends Component {
 
     if (this.props.primary) {
       classes.push(CLASS_ROOT + "--primary");
-      icon = <RightIcon />;
+      icon = <RightLeftIcon />;
     }
     if (this.props.disabled) {
       classes.push(CLASS_ROOT + "--disabled");
