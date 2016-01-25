@@ -164,7 +164,7 @@ export default class Article extends Component {
   _onFocusChange (e) {
     React.Children.forEach(this.props.children, function(element, index) {
       let parent = ReactDOM.findDOMNode(this.refs[index]);
-      if (parent.contains(e.target)) {
+      if (parent && parent.contains(e.target)) {
         this._onSelect(index);
       }
     }.bind(this));

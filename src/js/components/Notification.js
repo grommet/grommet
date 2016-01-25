@@ -10,58 +10,67 @@ import Meter from './Meter';
 
 import StatusIcon from './icons/Status';
 
-var CLASS_ROOT = "notification";
+let CLASS_ROOT = "notification";
 
 export default class Notification extends Component {
   render() {
-    var classes = [CLASS_ROOT];
-    var other = pick(this.props, keys(Box.propTypes));
-    classes.push(CLASS_ROOT + "--" + this.props.status.toLowerCase());
-    classes.push("background-color-index-" + this.props.status.toLowerCase());
+    let classes = [CLASS_ROOT];
+    let other = pick(this.props, keys(Box.propTypes));
+    classes.push(`${CLASS_ROOT}--${this.props.status.toLowerCase()}`);
+    classes.push(`background-color-index-${this.props.status.toLowerCase()}`);
     if (this.props.size) {
-      classes.push(CLASS_ROOT + "--" + this.props.size.toLowerCase());
+      classes.push(`${CLASS_ROOT}--${this.props.size.toLowerCase()}`);
     }
     if (this.props.className) {
       classes.push(this.props.className);
     }
 
-    var status;
+    let status;
     if (this.props.status) {
       status = (
-        <StatusIcon className={CLASS_ROOT + "__status"}
+        <StatusIcon className={`${CLASS_ROOT}__status`}
           value={this.props.status} size={this.props.size} />
       );
     }
 
-    var state;
+    let state;
     if (this.props.state) {
-      state = <div className={CLASS_ROOT + "__state"}>{this.props.state}</div>;
+      state = (
+        <div className={`${CLASS_ROOT}__state`}>{this.props.state}</div>
+      );
     }
 
-    var progress;
+    let progress;
     if (this.props.percentComplete || 0 === this.props.percentComplete) {
       progress = (
         <Meter units="%"
-          series={[{value: this.props.percentComplete, label: '', colorIndex: 'light-1'}]}
+          series={[{
+            value: this.props.percentComplete,
+            label: '',
+            colorIndex: 'light-1'
+          }]}
           size="large" />
       );
     }
 
-    var timestamp;
+    let timestamp;
     if (this.props.timestamp) {
-      var timestampFormatted = (
-        <FormattedDate value={this.props.timestamp}
-          weekday="long"
-          day="numeric"
-          month="long"
-          year="numeric"
-          hour="numeric"
-          minute="numeric"
-          second="numeric" />
-      );
+      let timestampFormatted = this.props.timestamp.toString();
+      if (this.context.intl) {
+        timestampFormatted = (
+          <FormattedDate value={this.props.timestamp}
+            weekday="long"
+            day="numeric"
+            month="long"
+            year="numeric"
+            hour="numeric"
+            minute="numeric"
+            second="numeric" />
+        );
+      }
 
       timestamp = (
-        <div className={CLASS_ROOT + "__timestamp"}>
+        <div className={`${CLASS_ROOT}__timestamp`}>
           {timestampFormatted}
         </div>
       );
@@ -72,7 +81,7 @@ export default class Notification extends Component {
         {...other}>
         {status}
         <Box>
-          <span className={CLASS_ROOT + "__message"}>
+          <span className={`${CLASS_ROOT}__message`}>
             {this.props.message}
           </span>
           {timestamp}
@@ -93,6 +102,10 @@ Notification.propTypes = merge({
   status: PropTypes.string,
   timestamp: PropTypes.object // Date
 }, Box.propTypes);
+
+Notification.contextTypes = {
+  intl: PropTypes.object
+};
 
 Notification.defaultProps = {
   flush: true,
