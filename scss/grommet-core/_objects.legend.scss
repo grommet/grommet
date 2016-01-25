@@ -7,6 +7,10 @@
   display: inline-block;
   margin: 0px;
 
+  html.rtl & {
+    text-align: right;
+  }
+
   &__item,
   &__total {
     color: $secondary-text-color;
@@ -24,11 +28,20 @@
       display: inline-block;
       width: round($inuit-base-spacing-unit * 3);
       text-align: right;
+
+      html.rtl & {
+        text-align: left;
+      }
     }
 
     &-units {
       display: inline-block;
       margin-left: quarter($inuit-base-spacing-unit);
+
+      html.rtl & {
+        margin-left: 0;
+        margin-right: quarter($inuit-base-spacing-unit);
+      }
     }
   }
 
@@ -46,6 +59,11 @@
       overflow: visible;
 
       @include graph-stroke-color();
+
+      html.rtl & {
+        margin-right: 0;
+        margin-left: halve($inuit-base-spacing-unit);
+      }
 
       path {
         stroke-width: halve($inuit-base-spacing-unit);
@@ -68,6 +86,11 @@
 
   &__total {
     margin-left: $inuit-base-spacing-unit;
+
+    html.rtl & {
+      margin-left: 0;
+      margin-right: $inuit-base-spacing-unit;
+    }
 
     > * {
       margin-top: quarter($inuit-base-spacing-unit);
@@ -94,6 +117,11 @@
         margin-left: quarter($inuit-base-spacing-unit);
         color: $secondary-text-color;
         font-weight: normal;
+
+        html.rtl & {
+          margin-left: 0;
+          margin-right: quarter($inuit-base-spacing-unit);
+        }
       }
     }
   }

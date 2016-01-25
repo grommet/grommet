@@ -14,6 +14,11 @@
 
   > *:not(:last-child) {
     margin-right: halve($inuit-base-spacing-unit);
+
+    html.rtl & {
+      margin-right: 0px;
+      margin-left: halve($inuit-base-spacing-unit);
+    }
   }
 
   a {

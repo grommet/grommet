@@ -91,6 +91,11 @@
     border: $control-border-width solid $icon-color;
     border-radius: $control-size;
 
+    html.rtl & {
+      margin-right: 0;
+      margin-left: halve($inuit-base-spacing-unit);
+    }
+
     [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
       border-color: $colored-icon-color;
     }

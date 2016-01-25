@@ -4,6 +4,11 @@
   margin-right: halve($inuit-base-spacing-unit);
   white-space: nowrap;
 
+  html.rtl & {
+    margin-right: $inuit-base-spacing-unit;
+    margin-left: halve($inuit-base-spacing-unit);
+  }
+
   &:not(.check-box--disabled) {
     cursor: pointer;
   }
@@ -38,6 +43,11 @@
 
   > :first-child {
     margin-right: halve($inuit-base-spacing-unit);
+
+    html.rtl & {
+      margin-right: 0;
+      margin-left: halve($inuit-base-spacing-unit);
+    }
   }
 
   &__input {

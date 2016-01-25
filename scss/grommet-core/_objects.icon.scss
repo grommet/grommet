@@ -172,3 +172,19 @@
     height: quadruple($inuit-base-spacing-unit);
   }
 }
+
+.right-left-icon {
+  &--left {
+    display: none;
+  }
+
+  html.rtl & {
+    &--left {
+      display: inline;
+    }
+
+    &--right {
+      display: none;
+    }
+  }
+}

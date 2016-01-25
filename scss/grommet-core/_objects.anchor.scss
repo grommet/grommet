@@ -53,6 +53,11 @@ a,
       .control-icon {
         stroke: $control-brand-color;
         margin-right: halve($inuit-base-spacing-unit);
+
+        html.rtl & {
+          margin-right: 0;
+          margin-left: halve($inuit-base-spacing-unit);
+        }
       }
 
       > span {

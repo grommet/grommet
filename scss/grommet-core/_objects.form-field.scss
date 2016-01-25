@@ -97,6 +97,10 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
       // Extra whitespace is added (by different amounts) by each browser's rendering engine
       padding-left: #{$form-horizontal-padding - 2};
 
+      html.rtl & {
+        background-position: center left #{$form-horizontal-padding - quarter($inuit-base-spacing-unit)};
+      }
+
       [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
         background-image: $colored-select-drop-caret;
       }
@@ -157,12 +161,22 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
         right: quarter($inuit-base-spacing-unit);
         transform: none;
         bottom: - $form-vertical-padding;
+
+        html.rtl & {
+          right: auto;
+          left: quarter($inuit-base-spacing-unit);
+        }
       }
     }
 
     > .number-input {
       display: flex;
       padding-right: quarter($inuit-base-spacing-unit);
+
+      html.rtl & {
+        padding-right: 0;
+        padding-left: quarter($inuit-base-spacing-unit);
+      }
 
       input[type=number] {
         display: inline-block;
@@ -230,6 +244,10 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
     float: right;
     color: map-get($brand-status-colors, critical);
     line-height: $inuit-base-spacing-unit;
+
+    html.rtl & {
+      float: left;
+    }
 
     [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
       // Red on anything dark looks terrible. Just use white.

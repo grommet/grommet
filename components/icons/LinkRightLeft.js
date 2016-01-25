@@ -10,9 +10,13 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _LinkRightLeft = require('./icons/LinkRightLeft');
+var _LinkNext = require('./base/LinkNext');
 
-var _LinkRightLeft2 = _interopRequireDefault(_LinkRightLeft);
+var _LinkNext2 = _interopRequireDefault(_LinkNext);
+
+var _LinkPrevious = require('./base/LinkPrevious');
+
+var _LinkPrevious2 = _interopRequireDefault(_LinkPrevious);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -22,73 +26,44 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var CLASS_ROOT = "anchor";
+var CLASS_ROOT = "right-left-icon";
 
-var Anchor = (function (_Component) {
-  _inherits(Anchor, _Component);
+var LinkRightLeft = (function (_Component) {
+  _inherits(LinkRightLeft, _Component);
 
-  function Anchor() {
-    _classCallCheck(this, Anchor);
+  function LinkRightLeft() {
+    _classCallCheck(this, LinkRightLeft);
 
-    return _possibleConstructorReturn(this, Object.getPrototypeOf(Anchor).apply(this, arguments));
+    return _possibleConstructorReturn(this, Object.getPrototypeOf(LinkRightLeft).apply(this, arguments));
   }
 
-  _createClass(Anchor, [{
+  _createClass(LinkRightLeft, [{
     key: 'render',
     value: function render() {
       var classes = [CLASS_ROOT];
-      var icon = undefined;
+      var _props = this.props;
+      var a11yTitle = _props.a11yTitle;
+      var size = _props.size;
 
-      if (this.props.primary) {
-        classes.push(CLASS_ROOT + "--primary");
-        icon = _react2.default.createElement(_LinkRightLeft2.default, null);
-      }
-      if (this.props.disabled) {
-        classes.push(CLASS_ROOT + "--disabled");
-      }
       if (this.props.className) {
         classes.push(this.props.className);
       }
-      var children = _react2.default.Children.map(this.props.children, function (child) {
-        if (child && child.type && child.type.icon) {
-          return _react2.default.createElement(
-            'span',
-            { className: CLASS_ROOT + '__icon' },
-            child
-          );
-        } else {
-          return child;
-        }
-      });
-
       return _react2.default.createElement(
-        this.props.tag,
-        { id: this.props.id, className: classes.join(' '),
-          href: this.props.href,
-          target: this.props.target,
-          onClick: this.props.onClick },
-        icon,
-        children
+        'span',
+        { className: classes.join(' ') },
+        _react2.default.createElement(_LinkNext2.default, { className: CLASS_ROOT + '--right', a11yTitle: a11yTitle, size: size }),
+        _react2.default.createElement(_LinkPrevious2.default, { className: CLASS_ROOT + '--left', a11yTitle: a11yTitle, size: size })
       );
     }
   }]);
 
-  return Anchor;
+  return LinkRightLeft;
 })(_react.Component);
 
-exports.default = Anchor;
+exports.default = LinkRightLeft;
 
-Anchor.propTypes = {
-  disabled: _react.PropTypes.bool,
-  href: _react.PropTypes.string,
-  id: _react.PropTypes.string,
-  onClick: _react.PropTypes.func,
-  primary: _react.PropTypes.bool,
-  tag: _react.PropTypes.string,
-  target: _react.PropTypes.string
-};
-
-Anchor.defaultProps = {
-  tag: 'a'
+LinkRightLeft.propTypes = {
+  a11yTitle: _react.PropTypes.string,
+  size: _react.PropTypes.oneOf(['small', 'medium', 'large'])
 };
 module.exports = exports['default'];
