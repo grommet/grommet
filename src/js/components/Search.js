@@ -340,15 +340,17 @@ export default class Search extends Component {
     } else {
 
       return (
-        <Button ref="control" id={this.props.id}
-          className={classes.join(' ')}
-          type="icon"
-          tabIndex="0"
-          onClick={this._onAddDrop}
-          onFocus={this._onFocusControl}
-          onBlur={this._onBlurControl}>
-          <SearchIcon />
-        </Button>
+        <span ref="control">
+          <Button id={this.props.id}
+            className={classes.join(' ')}
+            type="icon"
+            tabIndex="0"
+            onClick={this._onAddDrop}
+            onFocus={this._onFocusControl}
+            onBlur={this._onBlurControl}>
+            <SearchIcon />
+          </Button>
+        </span>
       );
     }
   }

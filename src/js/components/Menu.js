@@ -486,16 +486,18 @@ export default class Menu extends Component {
       );
 
       return (
-        <Button ref="control" type="icon" id={this.props.id}
-          className={classes.join(' ')}
-          tabIndex="0"
-          style={{lineHeight: this.state.controlHeight + 'px'}}
-          onClick={this._onOpen}
-          a11yTitle={menuTitle}
-          onFocus={this._onFocusControl}
-          onBlur={this._onBlurControl}>
-          {controlContents}
-        </Button>
+        <span ref="control">
+          <Button type="icon" id={this.props.id}
+            className={classes.join(' ')}
+            tabIndex="0"
+            style={{lineHeight: this.state.controlHeight + 'px'}}
+            onClick={this._onOpen}
+            a11yTitle={menuTitle}
+            onFocus={this._onFocusControl}
+            onBlur={this._onBlurControl}>
+            {controlContents}
+          </Button>
+        </span>
       );
 
     }
