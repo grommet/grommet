@@ -10,6 +10,14 @@
   color: $active-colored-text-color;
 }
 
+.background-color-index-brand {
+  background-color: $brand-color;
+
+  @if lightness($brand-color) < $colored-text-color-lightness-threshold {
+    color: $active-colored-text-color;
+  }
+}
+
 @for $i from 1 through length($brand-neutral-colors) {
 
   .background-color-index-neutral-#{$i},

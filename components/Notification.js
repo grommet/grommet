@@ -67,6 +67,9 @@ var Notification = (function (_Component) {
       if (this.props.size) {
         classes.push(CLASS_ROOT + '--' + this.props.size.toLowerCase());
       }
+      if (!this.props.onClick) {
+        classes.push(CLASS_ROOT + '--disabled');
+      }
       if (this.props.className) {
         classes.push(this.props.className);
       }
