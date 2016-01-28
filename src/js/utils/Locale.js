@@ -40,7 +40,7 @@ export function getLocaleData(appMessages = {}, locale = getCurrentLocale()) {
     grommetMessages = {};
   }
 
-  let messages = Object.assign(grommetMessages, appMessages);
+  let messages = { ...grommetMessages, ...appMessages };
 
   return {locale, messages};
 }
