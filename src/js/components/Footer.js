@@ -1,61 +1,64 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
-import pick from 'lodash/object/pick';
-import keys from 'lodash/object/keys';
+import React, { PropTypes } from 'react';
+import classnames from 'classnames';
 import Box from './Box';
 import SkipLinkAnchor from './SkipLinkAnchor';
 
-const CLASS_ROOT = "footer";
+const CLASS_ROOT = 'footer';
 
-export default class Footer extends Component {
-
-  render () {
-    var classes = [CLASS_ROOT];
-    var containerClasses = [CLASS_ROOT + "__container"];
-    var other = pick(this.props, keys(Box.propTypes));
-    if (this.props.size) {
-      classes.push(CLASS_ROOT + "--" + this.props.size);
-    } else if (this.props.large) { // Deprecated
-      classes.push(CLASS_ROOT + "--large");
+const Footer = props => {
+  if (!props.size) {
+    // Restore size value from deprecated props
+    if (props.small) {
+      props.size = 'small';
+    } else if (props.large) {
+      props.size = 'large';
     }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
-    if (this.props.float) {
-      classes.push(CLASS_ROOT + "--float");
-      containerClasses.push(CLASS_ROOT + "__container--float");
-    }
-
-    var footerSkipLink;
-    if (this.props.primary) {
-      footerSkipLink = (
-        <SkipLinkAnchor label="Footer" />
-      );
-    }
-
-    return (
-      <Box tag="footer" {...other} className={classes.join(' ')}
-        containerClassName={containerClasses.join(' ')}>
-        {footerSkipLink}
-        {this.props.children}
-      </Box>
-    );
   }
 
-}
+  let classes = classnames(
+    CLASS_ROOT,
+    props.className,
+    {
+      [`${CLASS_ROOT}--${props.size}`]: props.size,
+      [`${CLASS_ROOT}--float`]: props.float
+    }
+  );
+
+  let containerClasses = classnames(
+    `${CLASS_ROOT}__container`,
+    {
+      [`${CLASS_ROOT}__container--float`]: props.float
+    }
+  );
+
+  let footerSkipLink;
+  if (props.primary) {
+    footerSkipLink = <SkipLinkAnchor label="Footer" />;
+  }
+
+  return (
+    <Box tag="footer" {...props} className={classes}
+      containerClassName={containerClasses}>
+      {footerSkipLink}
+      {props.children}
+    </Box>
+  );
+};
 
 Footer.propTypes = {
-  primary: PropTypes.bool,
+  float: PropTypes.bool,
   large: PropTypes.bool, // Deprecated
   size: PropTypes.oneOf(['small', 'medium', 'large']),
+  primary: PropTypes.bool,
   small: PropTypes.bool, // Deprecated
-  float: PropTypes.bool,
   ...Box.propTypes
 };
 
 Footer.defaultProps = {
-  pad: 'none',
   direction: 'row',
   responsive: false
 };
+
+export default Footer;
