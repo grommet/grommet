@@ -29,6 +29,14 @@
     }
   }
 
+  &:not(.notification--disabled) {
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 0px 0px 0px 2px $brand-color;
+    }
+  }
+
   @each $status, $color in $brand-status-colors {
     &--#{$status} {
       // background-color comes from background-color-index
@@ -48,6 +56,12 @@
             stroke: $active-colored-text-color;
             fill: $active-colored-text-color;
           }
+        }
+      }
+
+      &:not(.notification--disabled) {
+        &:hover {
+          box-shadow: 0px 0px 0px 2px $color;
         }
       }
 
