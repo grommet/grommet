@@ -1,19 +1,21 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 
-export default class SkipLinkAnchor extends Component {
-  render() {
-    var id = 'skip-link-' + this.props.label.toLowerCase().replace(/ /g, '_');
+const SkipLinkAnchor = ({ label }) => {
+  let id = 'skip-link-' + label.toLowerCase().replace(/ /g, '_');
 
-    return (
-      <a tabIndex="-1" id={id} className="skip-link-anchor">
-        {this.props.label}
-      </a>
-    );
-  }
-}
+  return (
+    <a tabIndex="-1" id={id} className="skip-link-anchor">
+      {label}
+    </a>
+  );
+};
 
 SkipLinkAnchor.propTypes = {
   label: PropTypes.node.isRequired
 };
+
+SkipLinkAnchor.displayName = 'SkipLinkAnchor';
+
+export default SkipLinkAnchor;
