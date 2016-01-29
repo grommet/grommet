@@ -1,21 +1,18 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-import React, { Component } from 'react';
+import React from 'react';
+import classnames from 'classnames';
 
-const CLASS_ROOT = "bricks";
+const CLASS_ROOT = 'bricks';
 
-export default class Bricks extends Component {
-  render () {
-    var classes = [CLASS_ROOT];
+const Bricks = props => {
+  let classes = classnames(CLASS_ROOT, props.className);
 
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
+  return (
+    <div className={classes}>
+      {props.children}
+    </div>
+  );
+};
 
-    return (
-      <div className={classes.join(' ')}>
-        {this.props.children}
-      </div>
-    );
-  }
-}
+export default Bricks;
