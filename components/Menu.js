@@ -267,14 +267,14 @@ MenuDrop.propTypes = _extends({
   dropColorIndex: _react.PropTypes.string,
   id: _react.PropTypes.string.isRequired,
   onClick: _react.PropTypes.func.isRequired,
-  router: _react.PropTypes.func,
+  router: _react.PropTypes.any,
   size: _react.PropTypes.oneOf(['small', 'medium', 'large'])
 }, _Box2.default.propTypes);
 
 MenuDrop.childContextTypes = {
   intl: _react.PropTypes.object,
   history: _react.PropTypes.object,
-  router: _react.PropTypes.func
+  router: _react.PropTypes.any
 };
 
 var Menu = (function (_Component2) {
@@ -581,7 +581,7 @@ Menu.propTypes = _extends({
 Menu.contextTypes = {
   intl: _react.PropTypes.object,
   history: _react.PropTypes.object,
-  router: _react.PropTypes.func
+  router: _react.PropTypes.any
 };
 
 Menu.defaultProps = {

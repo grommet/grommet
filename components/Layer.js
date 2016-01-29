@@ -141,7 +141,7 @@ LayerContents.propTypes = {
   closer: _react.PropTypes.oneOfType([_react.PropTypes.node, _react.PropTypes.bool]),
   onClose: _react.PropTypes.func,
   history: _react.PropTypes.object,
-  router: _react.PropTypes.func,
+  router: _react.PropTypes.any,
   intl: _react.PropTypes.object,
   a11yCloserTitle: _react.PropTypes.string
 };
@@ -152,7 +152,7 @@ LayerContents.propTypes = {
 // whatever we find or have callers explicitly indicate which parts
 // of the context to transfer somehow.
 LayerContents.childContextTypes = {
-  router: _react.PropTypes.func,
+  router: _react.PropTypes.any,
   history: _react.PropTypes.object,
   intl: _react.PropTypes.object,
   store: _react.PropTypes.object
@@ -280,7 +280,7 @@ Layer.propTypes = {
 };
 
 Layer.contextTypes = {
-  router: _react.PropTypes.func,
+  router: _react.PropTypes.any,
   history: _react.PropTypes.object,
   intl: _react.PropTypes.object,
   store: _react.PropTypes.object
