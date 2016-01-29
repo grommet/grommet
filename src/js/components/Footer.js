@@ -39,7 +39,7 @@ const Footer = props => {
   }
 
   return (
-    <Box tag="footer" {...props} className={classes}
+    <Box {...props} tag="footer" className={classes}
       containerClassName={containerClasses}>
       {footerSkipLink}
       {props.children}
@@ -60,5 +60,7 @@ Footer.defaultProps = {
   direction: 'row',
   responsive: false
 };
+
+Footer.displayName = 'Footer';
 
 export default Footer;
