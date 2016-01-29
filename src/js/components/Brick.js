@@ -44,16 +44,16 @@ const Brick = props => {
     </div>
   );
 
-  if (props.href) {
+  if (props.href || props.onClick) {
     label = (
-      <Anchor href={props.href} className={`${CLASS_ROOT}--label`}>
+      <Anchor href={props.href} onClick={props.onClick} className={`${CLASS_ROOT}--label`}>
         <span>{props.label}</span>
       </Anchor>
     );
   }
 
   return (
-    <div className={classes} onClick={props.onClick}>
+    <div className={classes}>
       <div className={`${CLASS_ROOT}--content-wrapper`}>
         {props.children}
       </div>
@@ -66,6 +66,7 @@ Brick.propTypes = {
   colorIndex: PropTypes.string,
   href: PropTypes.string,
   label: PropTypes.string,
+  onClick: PropTypes.func,
   type: PropTypes.oneOf([TYPE_SMALL, TYPE_LARGE, TYPE_WIDE, TYPE_TALL])
 };
 
