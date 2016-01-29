@@ -1,7 +1,6 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
-import ReactDOM from 'react-dom';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 import Drop from '../utils/Drop';
 import Responsive from '../utils/Responsive';
@@ -99,7 +98,7 @@ export default class Search extends Component {
 
       var baseElement;
       if (this.refs.control) {
-        baseElement = ReactDOM.findDOMNode(this.refs.control);
+        baseElement = this.refs.control.firstChild;
       } else {
         baseElement = this.refs.input;
       }
@@ -340,7 +339,7 @@ export default class Search extends Component {
     } else {
 
       return (
-        <span ref="control">
+        <div ref="control">
           <Button id={this.props.id}
             className={classes.join(' ')}
             type="icon"
@@ -350,7 +349,7 @@ export default class Search extends Component {
             onBlur={this._onBlurControl}>
             <SearchIcon />
           </Button>
-        </span>
+        </div>
       );
     }
   }
