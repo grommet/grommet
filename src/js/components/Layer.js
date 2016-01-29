@@ -100,7 +100,7 @@ LayerContents.propTypes = {
   ]),
   onClose: PropTypes.func,
   history: PropTypes.object,
-  router: PropTypes.func,
+  router: PropTypes.any,
   intl: PropTypes.object,
   a11yCloserTitle: PropTypes.string
 };
@@ -111,7 +111,7 @@ LayerContents.propTypes = {
 // whatever we find or have callers explicitly indicate which parts
 // of the context to transfer somehow.
 LayerContents.childContextTypes = {
-  router: PropTypes.func,
+  router: PropTypes.any,
   history: PropTypes.object,
   intl: PropTypes.object,
   store: PropTypes.object
@@ -223,7 +223,7 @@ Layer.propTypes = {
 };
 
 Layer.contextTypes = {
-  router: PropTypes.func,
+  router: PropTypes.any,
   history: PropTypes.object,
   intl: PropTypes.object,
   store: PropTypes.object

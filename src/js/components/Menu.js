@@ -205,7 +205,7 @@ MenuDrop.propTypes = {
   dropColorIndex: PropTypes.string,
   id: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
-  router: PropTypes.func,
+  router: PropTypes.any,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   ...Box.propTypes
 };
@@ -213,7 +213,7 @@ MenuDrop.propTypes = {
 MenuDrop.childContextTypes = {
   intl: PropTypes.object,
   history: PropTypes.object,
-  router: PropTypes.func
+  router: PropTypes.any
 };
 
 export default class Menu extends Component {
@@ -518,7 +518,7 @@ Menu.propTypes = {
 Menu.contextTypes = {
   intl: PropTypes.object,
   history: PropTypes.object,
-  router: PropTypes.func
+  router: PropTypes.any
 };
 
 Menu.defaultProps = {
