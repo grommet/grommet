@@ -57,10 +57,10 @@ var Brick = function Brick(props) {
     )
   );
 
-  if (props.href) {
+  if (props.href || props.onClick) {
     label = _react2.default.createElement(
       _Anchor2.default,
-      { href: props.href, className: CLASS_ROOT + '--label' },
+      { href: props.href, onClick: props.onClick, className: CLASS_ROOT + '--label' },
       _react2.default.createElement(
         'span',
         null,
@@ -71,7 +71,7 @@ var Brick = function Brick(props) {
 
   return _react2.default.createElement(
     'div',
-    { className: classes, onClick: props.onClick },
+    { className: classes },
     _react2.default.createElement(
       'div',
       { className: CLASS_ROOT + '--content-wrapper' },
@@ -85,6 +85,7 @@ Brick.propTypes = {
   colorIndex: _react.PropTypes.string,
   href: _react.PropTypes.string,
   label: _react.PropTypes.string,
+  onClick: _react.PropTypes.func,
   type: _react.PropTypes.oneOf([TYPE_SMALL, TYPE_LARGE, TYPE_WIDE, TYPE_TALL])
 };
 
