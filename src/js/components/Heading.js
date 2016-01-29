@@ -22,7 +22,9 @@ export default class Heading extends Component {
 
     return (
       <this.props.tag className={classes.join(' ')}>
-        {this.props.children}
+        <span>
+          {this.props.children}
+        </span>
       </this.props.tag>
     );
   }
