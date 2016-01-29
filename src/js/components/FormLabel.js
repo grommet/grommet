@@ -15,7 +15,7 @@ export default class FormLabel extends Component {
     }
 
     return (
-      <label className={classes.join(' ')} htmlFor={this.props.for}>
+      <label className={classes.join(' ')} htmlFor={this.props.labelFor}>
         {this.props.children}
       </label>
     );
@@ -24,5 +24,5 @@ export default class FormLabel extends Component {
 
 FormLabel.propTypes = {
   uppercase: PropTypes.bool,
-  for: PropTypes.string
+  labelFor: PropTypes.string
 };
