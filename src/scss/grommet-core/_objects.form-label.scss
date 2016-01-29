@@ -1,0 +1,12 @@
+.form-label {
+  font-size: $control-font-size;
+  line-height: 20px;
+  font-weight: normal;
+  padding-bottom: $inuit-base-spacing-unit;
+  margin-bottom: 0;
+
+  &--uppercase {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+  }
+}
