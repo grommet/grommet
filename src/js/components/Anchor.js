@@ -3,6 +3,7 @@
 import React, { Children, PropTypes } from 'react';
 import classnames from 'classnames';
 import RightLeftIcon from './icons/LinkRightLeft';
+import iconsMap from '../index-icons';
 
 const CLASS_ROOT = 'anchor';
 
@@ -10,7 +11,12 @@ const Anchor = props => {
   let icon;
 
   if (props.primary) {
-    icon = <RightLeftIcon />;
+    if (props.customIcon && iconsMap.hasOwnProperty(props.customIcon)) {
+      let CustomIcon = iconsMap[props.customIcon];
+      icon = <CustomIcon />;
+    } else {
+      icon = <RightLeftIcon />;
+    }
   }
 
   let classes = classnames(
@@ -43,6 +49,7 @@ const Anchor = props => {
 
 
 Anchor.propTypes = {
+  customIcon: PropTypes.string,
   disabled: PropTypes.bool,
   href: PropTypes.string,
   id: PropTypes.string,
