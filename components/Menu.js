@@ -319,7 +319,7 @@ var Menu = (function (_Component2) {
     key: 'componentDidMount',
     value: function componentDidMount() {
       if (this.refs.control) {
-        var controlElement = _reactDom2.default.findDOMNode(this.refs.control);
+        var controlElement = this.refs.control.firstChild;
         this.setState({
           dropId: 'menu-drop-' + controlElement.getAttribute('data-reactid'),
           controlHeight: controlElement.clientHeight
@@ -361,7 +361,7 @@ var Menu = (function (_Component2) {
             _KeyboardAccelerators2.default.stopListeningToKeyboard(this, focusedKeyboardHandlers);
             _KeyboardAccelerators2.default.startListeningToKeyboard(this, activeKeyboardHandlers);
             document.addEventListener('click', this._onClose);
-            this._drop = _Drop2.default.add(_reactDom2.default.findDOMNode(this.refs.control), this._renderDrop(), this.props.dropAlign);
+            this._drop = _Drop2.default.add(this.refs.control, this._renderDrop(), this.props.dropAlign);
             this._drop.render(this._renderDrop());
             break;
         }
@@ -546,16 +546,20 @@ var Menu = (function (_Component2) {
         var menuTitle = openLabel + ' ' + (this.props.a11yTitle || this.props.label || '') + ' ' + menuLabel;
 
         return _react2.default.createElement(
-          _Button2.default,
-          { ref: 'control', type: 'icon', id: this.props.id,
-            className: classes.join(' '),
-            tabIndex: '0',
-            style: { lineHeight: this.state.controlHeight + 'px' },
-            onClick: this._onOpen,
-            a11yTitle: menuTitle,
-            onFocus: this._onFocusControl,
-            onBlur: this._onBlurControl },
-          controlContents
+          'div',
+          { ref: 'control' },
+          _react2.default.createElement(
+            _Button2.default,
+            { type: 'icon', id: this.props.id,
+              className: classes.join(' '),
+              tabIndex: '0',
+              style: { lineHeight: this.state.controlHeight + 'px' },
+              onClick: this._onOpen,
+              a11yTitle: menuTitle,
+              onFocus: this._onFocusControl,
+              onBlur: this._onBlurControl },
+            controlContents
+          )
         );
       }
     }

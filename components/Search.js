@@ -10,10 +10,6 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = require('react-dom');
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
 var _KeyboardAccelerators = require('../utils/KeyboardAccelerators');
 
 var _KeyboardAccelerators2 = _interopRequireDefault(_KeyboardAccelerators);
@@ -139,7 +135,7 @@ var Search = (function (_Component) {
 
         var baseElement;
         if (this.refs.control) {
-          baseElement = _reactDom2.default.findDOMNode(this.refs.control);
+          baseElement = this.refs.control.firstChild;
         } else {
           baseElement = this.refs.input;
         }
@@ -396,15 +392,19 @@ var Search = (function (_Component) {
       } else {
 
         return _react2.default.createElement(
-          _Button2.default,
-          { ref: 'control', id: this.props.id,
-            className: classes.join(' '),
-            type: 'icon',
-            tabIndex: '0',
-            onClick: this._onAddDrop,
-            onFocus: this._onFocusControl,
-            onBlur: this._onBlurControl },
-          _react2.default.createElement(_Search2.default, null)
+          'div',
+          { ref: 'control' },
+          _react2.default.createElement(
+            _Button2.default,
+            { id: this.props.id,
+              className: classes.join(' '),
+              type: 'icon',
+              tabIndex: '0',
+              onClick: this._onAddDrop,
+              onFocus: this._onFocusControl,
+              onBlur: this._onBlurControl },
+            _react2.default.createElement(_Search2.default, null)
+          )
         );
       }
     }
