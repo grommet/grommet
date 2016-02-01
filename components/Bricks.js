@@ -28,5 +28,7 @@ var Bricks = function Bricks(props) {
   );
 };
 
+Bricks.displayName = 'Bricks';
+
 exports.default = Bricks;
 module.exports = exports['default'];

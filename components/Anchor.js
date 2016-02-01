@@ -70,5 +70,7 @@ Anchor.defaultProps = {
   tag: 'a'
 };
 
+Anchor.displayName = 'Anchor';
+
 exports.default = Anchor;
 module.exports = exports['default'];

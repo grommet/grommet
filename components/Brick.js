@@ -93,5 +93,7 @@ Brick.defaultProps = {
   type: TYPE_SMALL
 };
 
+Brick.displayName = 'Brick';
+
 exports.default = Brick;
 module.exports = exports['default'];

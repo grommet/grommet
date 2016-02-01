@@ -35,5 +35,7 @@ Attribute.propTypes = {
   label: _react.PropTypes.string
 };
 
+Attribute.displayName = 'Attribute';
+
 exports.default = Attribute;
 module.exports = exports['default'];
