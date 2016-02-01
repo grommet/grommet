@@ -74,4 +74,6 @@ Brick.defaultProps = {
   type: TYPE_SMALL
 };
 
+Brick.displayName = 'Brick';
+
 export default Brick;

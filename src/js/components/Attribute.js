@@ -19,4 +19,6 @@ Attribute.propTypes = {
   label: PropTypes.string
 };
 
+Attribute.displayName = 'Attribute';
+
 export default Attribute;

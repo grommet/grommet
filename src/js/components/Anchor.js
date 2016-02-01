@@ -56,4 +56,6 @@ Anchor.defaultProps = {
   tag: 'a'
 };
 
+Anchor.displayName = 'Anchor';
+
 export default Anchor;

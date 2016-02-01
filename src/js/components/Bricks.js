@@ -15,4 +15,6 @@ const Bricks = props => {
   );
 };
 
+Bricks.displayName = 'Bricks';
+
 export default Bricks;
