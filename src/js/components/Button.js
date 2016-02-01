@@ -1,57 +1,46 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
+import classnames from 'classnames';
 
-const CLASS_ROOT = "button";
+const CLASS_ROOT = 'button';
 
-export default class Button extends Component {
-  render () {
-    var classes = [CLASS_ROOT];
-    if (this.props.primary) {
-      classes.push(CLASS_ROOT + "--primary");
+const Button = props => {
+  let classes = classnames(
+    CLASS_ROOT,
+    props.className,
+    {
+      [`${CLASS_ROOT}--primary`]: props.primary,
+      [`${CLASS_ROOT}--secondary`]: props.secondary,
+      [`${CLASS_ROOT}--accent`]: props.accent,
+      [`${CLASS_ROOT}--disabled`]: !props.onClick,
+      [`${CLASS_ROOT}--fill`]: props.fill,
+      [`${CLASS_ROOT}--icon`]: props.type === 'icon'
     }
-    if (this.props.secondary) {
-      classes.push(CLASS_ROOT + "--secondary");
-    }
-    if (this.props.accent) {
-      classes.push(CLASS_ROOT + "--accent");
-    }
-    if (! this.props.onClick) {
-      classes.push(CLASS_ROOT + "--disabled");
-    }
-    if (this.props.fill) {
-      classes.push(CLASS_ROOT + "--fill");
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
+  );
 
-    var type = this.props.type;
-    if (this.props.type === 'icon') {
-      classes.push(CLASS_ROOT + "--icon");
-      type = 'button';
+  let type = props.type === 'icon' ? 'button' : props.type;
+
+  let children = React.Children.map(props.children, child => {
+    if (child && child.type && child.type.icon) {
+      child = <span className={`${CLASS_ROOT}__icon`}>{child}</span>;
     }
 
-    var children = React.Children.map(this.props.children, function (child) {
-      if (child && child.type && child.type.icon) {
-        return <span className={CLASS_ROOT + "__icon"}>{child}</span>;
-      } else {
-        return child;
-      }
-    });
-    if (! children) {
-      children = this.props.label;
-    }
+    return child;
+  });
 
-    return (
-      <button id={this.props.id} type={type} className={classes.join(' ')}
-        onClick={this.props.onClick} disabled={! this.props.onClick}
-        aria-label={this.props.a11yTitle}>
-        {children}
-      </button>
-    );
+  if (!children) {
+    children = props.label;
   }
-}
+
+  return (
+    <button id={props.id} type={type} className={classes}
+      onClick={props.onClick} disabled={!props.onClick}
+      aria-label={props.a11yTitle}>
+      {children}
+    </button>
+  );
+};
 
 Button.propTypes = {
   a11yTitle: PropTypes.string,
@@ -67,5 +56,9 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-  type: "button"
+  type: 'button'
 };
+
+Button.displayName = 'Button';
+
+export default Button;

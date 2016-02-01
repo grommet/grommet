@@ -252,7 +252,7 @@ export default class Menu extends Component {
 
   componentDidMount () {
     if (this.refs.control) {
-      let controlElement = ReactDOM.findDOMNode(this.refs.control);
+      let controlElement = this.refs.control.firstChild;
       this.setState({
         dropId: 'menu-drop-' + controlElement.getAttribute('data-reactid'),
         controlHeight: controlElement.clientHeight
@@ -305,7 +305,7 @@ export default class Menu extends Component {
             this, activeKeyboardHandlers
           );
           document.addEventListener('click', this._onClose);
-          this._drop = Drop.add(ReactDOM.findDOMNode(this.refs.control),
+          this._drop = Drop.add(this.refs.control,
             this._renderDrop(), this.props.dropAlign);
           this._drop.render(this._renderDrop());
           break;
@@ -486,16 +486,18 @@ export default class Menu extends Component {
       );
 
       return (
-        <Button ref="control" type="icon" id={this.props.id}
-          className={classes.join(' ')}
-          tabIndex="0"
-          style={{lineHeight: this.state.controlHeight + 'px'}}
-          onClick={this._onOpen}
-          a11yTitle={menuTitle}
-          onFocus={this._onFocusControl}
-          onBlur={this._onBlurControl}>
-          {controlContents}
-        </Button>
+        <div ref="control">
+          <Button type="icon" id={this.props.id}
+            className={classes.join(' ')}
+            tabIndex="0"
+            style={{lineHeight: this.state.controlHeight + 'px'}}
+            onClick={this._onOpen}
+            a11yTitle={menuTitle}
+            onFocus={this._onFocusControl}
+            onBlur={this._onBlurControl}>
+            {controlContents}
+          </Button>
+        </div>
       );
 
     }
