@@ -1,6 +1,6 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-import React, { PropTypes } from 'react';
+import React, { Children, PropTypes } from 'react';
 import classnames from 'classnames';
 import RightLeftIcon from './icons/LinkRightLeft';
 import iconsMap from '../index-icons';
@@ -17,8 +17,15 @@ const Anchor = props => {
     icon = <RightLeftIcon />;
   }
 
-  if (icon && !(props.primary)) {
-    icon = (<span className={`${CLASS_ROOT}__icon`}>{icon}</span>);
+  if (props.icon && iconsMap.hasOwnProperty(props.icon)) {
+    let CustomIcon = iconsMap[props.icon];
+    if (props.primary) {
+      icon = <CustomIcon />;
+    } else {
+      icon = (<span className={`${CLASS_ROOT}__icon`}>{icon}</span>);
+    }
+  } else if (props.primary) {
+    icon = <RightLeftIcon />;
   }
 
   let classes = classnames(
@@ -30,13 +37,21 @@ const Anchor = props => {
     }
   );
 
+  let children = Children.map(props.children, child => {
+    if (child && child.type && child.type.icon) {
+      child = <span className={`${CLASS_ROOT}__icon`}>{child}</span>;
+    }
+
+    return child;
+  });
+
   return (
     <props.tag id={props.id} className={classes}
       href={props.href}
       target={props.target}
       onClick={props.onClick}>
       {(props.primary || props.icon)? icon : null}
-      {props.children}
+      {children}
     </props.tag>
   );
 };
