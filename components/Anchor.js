@@ -26,7 +26,6 @@ var Anchor = function Anchor(props) {
   var _classnames;
 
   var icon = undefined;
-
   if (props.icon) {
     var CustomIcon = _indexIcons2.default[props.icon];
     if (!CustomIcon) {
@@ -42,12 +41,12 @@ var Anchor = function Anchor(props) {
   if (icon && !props.primary) {
     icon = _react2.default.createElement(
       'span',
-      { className: CLASS_ROOT + '__icon' },
+      { className: CLASS_ROOT + '__icon-container' },
       icon
     );
   }
 
-  var classes = (0, _classnames3.default)(CLASS_ROOT, props.className, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--primary', props.primary), _defineProperty(_classnames, CLASS_ROOT + '--disabled', props.disabled), _classnames));
+  var classes = (0, _classnames3.default)(CLASS_ROOT, props.className, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--disabled', props.disabled), _defineProperty(_classnames, CLASS_ROOT + '--icon', icon), _defineProperty(_classnames, CLASS_ROOT + '--primary', props.primary), _classnames));
 
   var children = _react.Children.map(props.children, function (child) {
     if (child && child.type && child.type.icon) {

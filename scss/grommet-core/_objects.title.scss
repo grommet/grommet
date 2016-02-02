@@ -80,6 +80,5 @@
 
   &:focus {
     outline: $focus-border-color solid 1px;
-    outline-offset: halve(halve($inuit-base-spacing-unit));
   }
 }
