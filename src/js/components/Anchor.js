@@ -2,15 +2,27 @@
 
 import React, { Children, PropTypes } from 'react';
 import classnames from 'classnames';
-import RightLeftIcon from './icons/LinkRightLeft';
+import iconsMap from '../index-icons';
 
 const CLASS_ROOT = 'anchor';
 
 const Anchor = props => {
   let icon;
 
-  if (props.primary) {
-    icon = <RightLeftIcon />;
+  if (props.icon) {
+    let CustomIcon  = iconsMap[props.icon];
+    if (! CustomIcon) {
+      console.warn('Warning: Anchor is unable to find the icon with props.icon:', props.icon);
+    } else {
+      icon = <CustomIcon />;
+    }
+  } else if (props.primary) {
+    let LinkNextIcon = iconsMap.LinkNext;
+    icon = <LinkNextIcon />;
+  }
+
+  if (icon && !props.primary) {
+    icon = (<span className={`${CLASS_ROOT}__icon`}>{icon}</span>);
   }
 
   let classes = classnames(
@@ -43,6 +55,7 @@ const Anchor = props => {
 
 
 Anchor.propTypes = {
+  icon: PropTypes.string,
   disabled: PropTypes.bool,
   href: PropTypes.string,
   id: PropTypes.string,
