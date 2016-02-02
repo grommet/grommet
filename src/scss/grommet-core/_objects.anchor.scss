@@ -19,8 +19,7 @@ a,
     color: $link-hover-color;
   }
 
-  &__icon {
-    display: inline-block;
+  &__icon-container {
     padding: halve($inuit-base-spacing-unit);
   }
 
@@ -103,5 +102,13 @@ a,
     .control-icon {
       cursor: default;
     }
+  }
+
+  &--icon {
+    display: inline-block;
+  }
+
+  &:focus {
+    outline: $focus-border-color solid 1px;
   }
 }

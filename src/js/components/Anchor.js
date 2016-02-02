@@ -7,12 +7,15 @@ import iconsMap from '../index-icons';
 const CLASS_ROOT = 'anchor';
 
 const Anchor = props => {
-  let icon;
 
+  let icon;
   if (props.icon) {
     let CustomIcon  = iconsMap[props.icon];
     if (! CustomIcon) {
-      console.warn('Warning: Anchor is unable to find the icon with props.icon:', props.icon);
+      console.warn(
+        'Warning: Anchor is unable to find the icon with props.icon:',
+        props.icon
+      );
     } else {
       icon = <CustomIcon />;
     }
@@ -22,15 +25,16 @@ const Anchor = props => {
   }
 
   if (icon && !props.primary) {
-    icon = (<span className={`${CLASS_ROOT}__icon`}>{icon}</span>);
+    icon = (<span className={`${CLASS_ROOT}__icon-container`}>{icon}</span>);
   }
 
   let classes = classnames(
     CLASS_ROOT,
     props.className,
     {
-      [`${CLASS_ROOT}--primary`]: props.primary,
-      [`${CLASS_ROOT}--disabled`]: props.disabled
+      [`${CLASS_ROOT}--disabled`]: props.disabled,
+      [`${CLASS_ROOT}--icon`]: icon,
+      [`${CLASS_ROOT}--primary`]: props.primary
     }
   );
 
