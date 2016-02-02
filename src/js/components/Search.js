@@ -194,8 +194,9 @@ export default class Search extends Component {
   _onEnter (event) {
     event.preventDefault(); // prevent submitting forms
     this._onRemoveDrop();
+    var suggestion;
     if (this.state.activeSuggestionIndex >= 0) {
-      var suggestion = this.props.suggestions[this.state.activeSuggestionIndex];
+      suggestion = this.props.suggestions[this.state.activeSuggestionIndex];
       this.setState({value: suggestion});
       if (this.props.onChange) {
         this.props.onChange(suggestion, true);
