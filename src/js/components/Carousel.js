@@ -7,8 +7,9 @@ import Tile from './Tile';
 import Button from './Button';
 import Previous from './icons/base/Previous';
 import Next from './icons/base/Next';
+import Hammer from 'hammerjs';
 
-const CLASS_ROOT = "carousel";
+const CLASS_ROOT = 'carousel';
 
 export default class Carousel extends Component {
 
@@ -41,6 +42,17 @@ export default class Carousel extends Component {
     }
 
     window.addEventListener('resize', this._onResize);
+
+    this.hammer = new Hammer(this.refs.carousel);
+    this.hammer.get('swipe').set({direction: Hammer.DIRECTION_HORIZONTAL});
+    this.hammer.on('panend', (event) => {
+      console.log('panend');
+      if (event.direction === 4) {
+        this._slidePrev();
+      } else if (event.direction === 2) {
+        this._slideNext();
+      }
+    });
   }
 
   componentWillUnmount () {
