@@ -374,22 +374,20 @@ export default class Menu extends Component {
 
     let controlClassName = `${CLASS_ROOT}__control`;
 
+    // If this is a collapsed inline Menu, use any icon and/or label provided,
+    // revert to default icon if neither.
     if (this.props.icon) {
       icon = React.cloneElement(this.props.icon, {key: 'icon'});
-      // icon = this.props.icon;
     }
-    if (this.state.controlCollapsed) {
-      if (! icon) {
-        icon = <MoreIcon key="icon" />;
-      }
-    } else if (this.props.label) {
+    if (this.props.label) {
       label = [
         <span key="label" className={controlClassName + "-label"}>
           {this.props.label}
         </span>,
         <DropCaretIcon key="caret" />
       ];
-    } else if (! icon) {
+    }
+    if (! icon && ! label) {
       icon = <MoreIcon key="icon" />;
     }
     return [icon, label];
