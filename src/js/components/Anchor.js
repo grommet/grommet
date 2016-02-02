@@ -10,22 +10,20 @@ const CLASS_ROOT = 'anchor';
 const Anchor = props => {
   let icon;
 
-  if (props.icon && iconsMap.hasOwnProperty(props.icon)) {
-    let CustomIcon = iconsMap[props.icon];
-    icon = <CustomIcon />;
-  } else {
-    icon = <RightLeftIcon />;
-  }
+  if (props.icon && !iconsMap.hasOwnProperty(props.icon)) {
+    console.log('Warning: Anchor is unable to find the icon with props.icon:', props.icon);
 
-  if (props.icon && iconsMap.hasOwnProperty(props.icon)) {
-    let CustomIcon = iconsMap[props.icon];
     if (props.primary) {
-      icon = <CustomIcon />;
-    } else {
+      icon = <RightLeftIcon />;
+    }
+  }
+  if (props.icon && iconsMap.hasOwnProperty(props.icon)) {
+    let CustomIcon  = iconsMap[props.icon];
+    icon = <CustomIcon />;
+
+    if (!props.primary) {
       icon = (<span className={`${CLASS_ROOT}__icon`}>{icon}</span>);
     }
-  } else if (props.primary) {
-    icon = <RightLeftIcon />;
   }
 
   let classes = classnames(
@@ -50,7 +48,7 @@ const Anchor = props => {
       href={props.href}
       target={props.target}
       onClick={props.onClick}>
-      {(props.primary || props.icon)? icon : null}
+      {icon}
       {children}
     </props.tag>
   );
