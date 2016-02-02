@@ -59,10 +59,10 @@ $small-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAY
 
 select {
   border-color: $border-color;
-  padding-right: $inuit-base-spacing-unit;
+  padding-right: double($inuit-base-spacing-unit);
   -webkit-appearance: none;
   -moz-appearance: none;
-  background: $small-drop-caret no-repeat center right;
+  background: $small-drop-caret no-repeat center right halve($inuit-base-spacing-unit);
   cursor: pointer;
 
   //&:hover {
