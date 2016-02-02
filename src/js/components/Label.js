@@ -2,26 +2,27 @@
 
 import React, { Component, PropTypes } from 'react';
 
+const CLASS_ROOT = 'label';
+
 export default class Label extends Component {
-  render () {
-    var icon = null;
-    var text = null;
-    if (this.props.icon) {
-      icon = (<span className="label__icon control-icon">{this.props.icon}</span>);
+  render() {
+    let classes = [CLASS_ROOT];
+    if (this.props.uppercase) {
+      classes.push(`${CLASS_ROOT}--uppercase`);
     }
-    if (this.props.text) {
-      text = (<span className="label__text">{this.props.text}</span>);
+    if (this.props.className) {
+      classes.push(this.props.className);
     }
+
     return (
-      <div className="label">
-        {icon}
-        {text}
-      </div>
+      <label className={classes.join(' ')} htmlFor={this.props.labelFor}>
+        {this.props.children}
+      </label>
     );
   }
 }
 
 Label.propTypes = {
-  icon: PropTypes.node,
-  text: PropTypes.string
+  uppercase: PropTypes.bool,
+  labelFor: PropTypes.string
 };
