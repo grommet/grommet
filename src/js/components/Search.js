@@ -91,9 +91,7 @@ export default class Search extends Component {
       // otherwise the drop will close when the mouse is released.
       // Not observable in Safari, 1ms is sufficient for Chrome, Firefox needs 100ms though. :(
       // TODO: re-evaluate how to solve this without a timeout.
-      setTimeout(function () {
-        document.addEventListener('click', this._onRemoveDrop);
-      }.bind(this), 100);
+      document.addEventListener('click', this._onRemoveDrop);
       KeyboardAccelerators.startListeningToKeyboard(this, activeKeyboardHandlers);
 
       var baseElement;
@@ -161,10 +159,23 @@ export default class Search extends Component {
     //this.setState({drop: false});
   }
 
+
+  _fireDOMChange () {
+    var event = new Event('change', {
+      'bubbles': true,
+      'cancelable': true
+    });
+    this.refs.input.dispatchEvent(event);
+    this.props.onDOMChange(event.target.value, event);
+  }
+
   _onChangeInput (event) {
     this.setState({activeSuggestionIndex: -1});
     if (this.props.onChange) {
-      this.props.onChange(event.target.value);
+      this.props.onChange(event.target.value, false);
+    }
+    if (this.props.onDOMChange) {
+      this._fireDOMChange();
     }
   }
 
@@ -180,20 +191,43 @@ export default class Search extends Component {
     this.setState({activeSuggestionIndex: index});
   }
 
-  _onEnter () {
+  _onEnter (event) {
+    event.preventDefault(); // prevent submitting forms
     this._onRemoveDrop();
+    var suggestion;
     if (this.state.activeSuggestionIndex >= 0) {
-      var suggestion = this.props.suggestions[this.state.activeSuggestionIndex];
+      suggestion = this.props.suggestions[this.state.activeSuggestionIndex];
+      this.setState({value: suggestion});
       if (this.props.onChange) {
-        this.props.onChange(suggestion);
+        this.props.onChange(suggestion, true);
+      }
+      if (this.props.onSelect) {
+        this.props.onSelect({
+          target: this.refs.input || this.refs.control,
+          suggestion: suggestion
+        }, true);
+      }
+    } else {
+      if (this.props.onSelect) {
+        this.props.onSelect({
+          target: this.refs.input || this.refs.control,
+          suggestion: suggestion
+        }, false);
       }
     }
   }
 
-  _onClickSuggestion (item) {
+  _onClickSuggestion (suggestion) {
     this._onRemoveDrop();
+
     if (this.props.onChange) {
-      this.props.onChange(item);
+      this.props.onChange(suggestion, true);
+    }
+    if (this.props.onSelect) {
+      this.props.onSelect({
+        target: this.refs.input || this.refs.control,
+        suggestion: suggestion
+      }, true);
     }
   }
 
@@ -229,14 +263,12 @@ export default class Search extends Component {
     return classes;
   }
 
-  _renderSuggestionLabel (suggestion) {
-    var label;
-    if (suggestion.hasOwnProperty('label')) {
-      label = suggestion.label;
+  _renderLabel (suggestion) {
+    if (typeof suggestion === 'object') {
+      return suggestion.label || suggestion.value;
     } else {
-      label = suggestion;
+      return suggestion;
     }
-    return label;
   }
 
   _renderDrop () {
@@ -261,7 +293,7 @@ export default class Search extends Component {
 
     var suggestions;
     if (this.props.suggestions) {
-      suggestions = this.props.suggestions.map(function (item, index) {
+      suggestions = this.props.suggestions.map(function (suggestion, index) {
         var classes = [CLASS_ROOT + "__suggestion"];
         if (index === this.state.activeSuggestionIndex) {
           classes.push(CLASS_ROOT + "__suggestion--active");
@@ -269,8 +301,8 @@ export default class Search extends Component {
         return (
           <div key={index}
             className={classes.join(' ')}
-            onClick={this._onClickSuggestion.bind(this, item)}>
-            {this._renderSuggestionLabel(item)}
+            onClick={this._onClickSuggestion.bind(this, suggestion)}>
+            {this._renderLabel(suggestion)}
           </div>
         );
       }, this);
@@ -326,8 +358,8 @@ export default class Search extends Component {
           <input ref="input" type="search"
             id={this.props.id}
             placeholder={this.props.placeHolder}
-            defaultValue={this.props.defaultValue}
-            value={this.props.value}
+            defaultValue={this._renderLabel(this.props.defaultValue)}
+            value={this._renderLabel(this.props.value)}
             className={CLASS_ROOT + "__input"}
             onFocus={this._onFocusInput}
             onBlur={this._onBlurInput}
@@ -364,6 +396,8 @@ Search.propTypes = {
   inline: PropTypes.bool,
   large: PropTypes.bool,
   onChange: PropTypes.func,
+  onDOMChange: PropTypes.func,
+  onSelect: PropTypes.func,
   placeHolder: PropTypes.string,
   responsive: PropTypes.bool,
   size: React.PropTypes.oneOf(['small', 'medium', 'large']),
