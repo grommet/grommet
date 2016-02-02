@@ -1,6 +1,6 @@
 'use strict';
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -46,7 +46,7 @@ var SPARKLINE_STEP_WIDTH = 6;
 var SPARKLINE_BAR_PADDING = 1;
 var POINT_RADIUS = 6;
 
-var Chart = (function (_Component) {
+var Chart = function (_Component) {
   _inherits(Chart, _Component);
 
   function Chart(props) {
@@ -1003,7 +1003,7 @@ var Chart = (function (_Component) {
   }]);
 
   return Chart;
-})(_react.Component);
+}(_react.Component);
 
 exports.default = Chart;
 

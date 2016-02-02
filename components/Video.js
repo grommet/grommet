@@ -1,6 +1,6 @@
 'use strict';
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -36,7 +36,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var CLASS_ROOT = "video";
 
-var Video = (function (_Component) {
+var Video = function (_Component) {
   _inherits(Video, _Component);
 
   function Video() {
@@ -75,9 +75,9 @@ var Video = (function (_Component) {
     key: '_onPlaying',
     value: function _onPlaying() {
       var video = this.refs.video;
-      this._progressTimer = setInterval((function () {
+      this._progressTimer = setInterval(function () {
         this.setState({ progress: this.state.progress + 0.5 });
-      }).bind(this), 500);
+      }.bind(this), 500);
       this.setState({ playing: true, progress: video.currentTime, ended: null });
     }
   }, {
@@ -109,9 +109,9 @@ var Video = (function (_Component) {
     value: function _onMouseMove() {
       this.setState({ interacting: true });
       clearTimeout(this._moveTimer);
-      this._moveTimer = setTimeout((function () {
+      this._moveTimer = setTimeout(function () {
         this.setState({ interacting: false });
-      }).bind(this), 1000);
+      }.bind(this), 1000);
     }
   }, {
     key: '_onClickChapter',
@@ -224,7 +224,7 @@ var Video = (function (_Component) {
   }]);
 
   return Video;
-})(_react.Component);
+}(_react.Component);
 
 exports.default = Video;
 

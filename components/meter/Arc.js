@@ -1,6 +1,6 @@
 'use strict';
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -39,7 +39,7 @@ function singleIndicatorCommands(centerX, centerY, radius, startAngle, endAngle,
   return d;
 }
 
-var Arc = (function (_Graphic) {
+var Arc = function (_Graphic) {
   _inherits(Arc, _Graphic);
 
   function Arc(props) {
@@ -117,7 +117,7 @@ var Arc = (function (_Graphic) {
   }]);
 
   return Arc;
-})(_Graphic3.default);
+}(_Graphic3.default);
 
 exports.default = Arc;
 module.exports = exports['default'];

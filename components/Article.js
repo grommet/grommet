@@ -2,7 +2,7 @@
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -73,7 +73,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var CLASS_ROOT = 'article';
 var DEFAULT_PLAY_INTERVAL = 10000; // 10s
 
-var Article = (function (_Component) {
+var Article = function (_Component) {
   _inherits(Article, _Component);
 
   function Article() {
@@ -129,9 +129,9 @@ var Article = (function (_Component) {
         // until he stops expressing such interest.
         clearInterval(this._wheelTimer);
         clearInterval(this._wheelLongTimer);
-        this._wheelLongTimer = setTimeout((function () {
+        this._wheelLongTimer = setTimeout(function () {
           this._wheelLongTimer = null;
-        }).bind(this), 2000);
+        }.bind(this), 2000);
       } else if (!this._wheelLongTimer) {
         if (delta > 10) {
           clearInterval(this._wheelTimer);
@@ -194,9 +194,9 @@ var Article = (function (_Component) {
   }, {
     key: '_start',
     value: function _start() {
-      this._playTimer = setInterval((function () {
+      this._playTimer = setInterval(function () {
         this._onNext(null, true);
-      }).bind(this), DEFAULT_PLAY_INTERVAL);
+      }.bind(this), DEFAULT_PLAY_INTERVAL);
       this.setState({ playing: true });
     }
   }, {
@@ -230,12 +230,12 @@ var Article = (function (_Component) {
   }, {
     key: '_onFocusChange',
     value: function _onFocusChange(e) {
-      _react2.default.Children.forEach(this.props.children, (function (element, index) {
+      _react2.default.Children.forEach(this.props.children, function (element, index) {
         var parent = _reactDom2.default.findDOMNode(this.refs[index]);
         if (parent && parent.contains(e.target)) {
           this._onSelect(index);
         }
-      }).bind(this));
+      }.bind(this));
     }
   }, {
     key: '_renderControls',
@@ -333,7 +333,7 @@ var Article = (function (_Component) {
   }]);
 
   return Article;
-})(_react.Component);
+}(_react.Component);
 
 exports.default = Article;
 

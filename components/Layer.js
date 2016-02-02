@@ -2,7 +2,7 @@
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -42,7 +42,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var CLASS_ROOT = "layer";
 
-var LayerContents = (function (_Component) {
+var LayerContents = function (_Component) {
   _inherits(LayerContents, _Component);
 
   function LayerContents() {
@@ -135,7 +135,7 @@ var LayerContents = (function (_Component) {
   }]);
 
   return LayerContents;
-})(_react.Component);
+}(_react.Component);
 
 LayerContents.propTypes = {
   closer: _react.PropTypes.oneOfType([_react.PropTypes.node, _react.PropTypes.bool]),
@@ -158,7 +158,7 @@ LayerContents.childContextTypes = {
   store: _react.PropTypes.object
 };
 
-var Layer = (function (_Component2) {
+var Layer = function (_Component2) {
   _inherits(Layer, _Component2);
 
   function Layer() {
@@ -266,7 +266,7 @@ var Layer = (function (_Component2) {
   }]);
 
   return Layer;
-})(_react.Component);
+}(_react.Component);
 
 exports.default = Layer;
 

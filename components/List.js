@@ -1,6 +1,6 @@
 'use strict';
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -57,7 +57,7 @@ var SchemaPropType = _react.PropTypes.arrayOf(_react.PropTypes.shape({
 
 // SchemaListItem is deprecated, use ListItem child components inside a List instead
 
-var SchemaListItem = (function (_Component) {
+var SchemaListItem = function (_Component) {
   _inherits(SchemaListItem, _Component);
 
   function SchemaListItem() {
@@ -140,7 +140,7 @@ var SchemaListItem = (function (_Component) {
   }]);
 
   return SchemaListItem;
-})(_react.Component);
+}(_react.Component);
 
 SchemaListItem.propTypes = {
   direction: _react.PropTypes.oneOf(['row', 'column']),
@@ -150,7 +150,7 @@ SchemaListItem.propTypes = {
   selected: _react.PropTypes.bool
 };
 
-var List = (function (_Component2) {
+var List = function (_Component2) {
   _inherits(List, _Component2);
 
   function List(props) {
@@ -327,7 +327,7 @@ var List = (function (_Component2) {
   }]);
 
   return List;
-})(_react.Component);
+}(_react.Component);
 
 exports.default = List;
 

@@ -25,7 +25,7 @@ exports.default = {
     var start = component[property];
     var position = start + delta;
     var step = 1;
-    this._scrollToTimer = setInterval((function () {
+    this._scrollToTimer = setInterval(function () {
       var next;
       var easing = this._easeInOutQuad(step / SCROLL_STEPS);
       if (position > start) {
@@ -43,7 +43,7 @@ exports.default = {
           component[property] = next;
         }, 200);
       }
-    }).bind(this), 8);
+    }.bind(this), 8);
   }
 };
 module.exports = exports['default'];

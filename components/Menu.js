@@ -2,7 +2,7 @@
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -73,7 +73,7 @@ var CLASS_ROOT = 'menu';
 // We have a separate module for the drop component
 // so we can transfer the router context.
 
-var MenuDrop = (function (_Component) {
+var MenuDrop = function (_Component) {
   _inherits(MenuDrop, _Component);
 
   function MenuDrop() {
@@ -259,7 +259,7 @@ var MenuDrop = (function (_Component) {
   }]);
 
   return MenuDrop;
-})(_react.Component);
+}(_react.Component);
 
 MenuDrop.propTypes = _extends({
   control: _react.PropTypes.node,
@@ -277,7 +277,7 @@ MenuDrop.childContextTypes = {
   router: _react.PropTypes.any
 };
 
-var Menu = (function (_Component2) {
+var Menu = function (_Component2) {
   _inherits(Menu, _Component2);
 
   function Menu(props) {
@@ -437,21 +437,19 @@ var Menu = (function (_Component2) {
 
       var controlClassName = CLASS_ROOT + '__control';
 
+      // If this is a collapsed inline Menu, use any icon and/or label provided,
+      // revert to default icon if neither.
       if (this.props.icon) {
         icon = _react2.default.cloneElement(this.props.icon, { key: 'icon' });
-        // icon = this.props.icon;
       }
-      if (this.state.controlCollapsed) {
-        if (!icon) {
-          icon = _react2.default.createElement(_More2.default, { key: 'icon' });
-        }
-      } else if (this.props.label) {
+      if (this.props.label) {
         label = [_react2.default.createElement(
           'span',
           { key: 'label', className: controlClassName + "-label" },
           this.props.label
         ), _react2.default.createElement(_Down2.default, { key: 'caret' })];
-      } else if (!icon) {
+      }
+      if (!icon && !label) {
         icon = _react2.default.createElement(_More2.default, { key: 'icon' });
       }
       return [icon, label];
@@ -566,7 +564,7 @@ var Menu = (function (_Component2) {
   }]);
 
   return Menu;
-})(_react.Component);
+}(_react.Component);
 
 exports.default = Menu;
 

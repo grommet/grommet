@@ -1,6 +1,6 @@
 'use strict';
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -28,7 +28,7 @@ var BAR_LENGTH = _utils.baseDimension;
 var BAR_THICKNESS = _utils.baseUnit;
 var MID_BAR_THICKNESS = BAR_THICKNESS / 2;
 
-var Bar = (function (_Graphic) {
+var Bar = function (_Graphic) {
   _inherits(Bar, _Graphic);
 
   function Bar(props) {
@@ -147,7 +147,7 @@ var Bar = (function (_Graphic) {
   }]);
 
   return Bar;
-})(_Graphic3.default);
+}(_Graphic3.default);
 
 //needed in Graphic.js to fix minification issues
 

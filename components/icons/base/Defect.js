@@ -1,10 +1,16 @@
 'use strict';
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
+
+var _classnames2 = require('classnames');
+
+var _classnames3 = _interopRequireDefault(_classnames2);
 
 var _FormattedMessage = require('../../../components/FormattedMessage');
 
@@ -12,62 +18,45 @@ var _FormattedMessage2 = _interopRequireDefault(_FormattedMessage);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; } // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+var CLASS_ROOT = 'control-icon';
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+var Icon = function Icon(props) {
+  var _classnames;
 
-var CLASS_ROOT = "control-icon";
+  var a11yTitle = props.a11yTitle;
+  var a11yTitleId = props.a11yTitleId;
+  var className = props.className;
+  var colorIndex = props.colorIndex;
+  var large = props.large;
+  var size = props.size;
 
-var Icon = (function (_Component) {
-  _inherits(Icon, _Component);
-
-  function Icon() {
-    _classCallCheck(this, Icon);
-
-    return _possibleConstructorReturn(this, Object.getPrototypeOf(Icon).apply(this, arguments));
+  if (!size && large) {
+    size = 'large';
   }
 
-  _createClass(Icon, [{
-    key: 'render',
-    value: function render() {
-      var classes = [CLASS_ROOT, CLASS_ROOT + '-defect'];
-      if (this.props.size) {
-        classes.push(CLASS_ROOT + "--" + this.props.size);
-      } else if (this.props.large) {
-        classes.push(CLASS_ROOT + "--large");
-      }
-      if (this.props.colorIndex) {
-        classes.push("color-index-" + this.props.colorIndex);
-      }
-      if (this.props.className) {
-        classes.push(this.props.className);
-      }
+  var classes = (0, _classnames3.default)(CLASS_ROOT, CLASS_ROOT + '-defect', className, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--' + size, size), _defineProperty(_classnames, 'color-index-' + colorIndex, colorIndex), _classnames));
 
-      var titleLabel = typeof this.props.a11yTitle !== "undefined" ? this.props.a11yTitle : "defect";
-      var a11yTitle = _react2.default.createElement(_FormattedMessage2.default, { id: titleLabel, defaultMessage: titleLabel });
+  var titleLabel = a11yTitle || 'defect';
+  a11yTitle = _react2.default.createElement(_FormattedMessage2.default, { id: titleLabel, defaultMessage: titleLabel });
 
-      return _react2.default.createElement(
-        'svg',
-        { version: '1.1', viewBox: '0 0 24.0004 24', width: '24px', height: '24px', className: classes.join(' '), 'aria-labelledby': this.props.a11yTitleId },
-        _react2.default.createElement(
-          'title',
-          { id: this.props.a11yTitleId },
-          a11yTitle
-        ),
-        _react2.default.createElement(
-          'g',
-          { id: 'defect' },
-          _react2.default.createElement('rect', { id: '_x2E_svg_196_', x: '0', fill: 'none', width: '24', height: '24' }),
-          _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M19.0004,16.0796c0,3.822-3.178,6.9204-7,6.9204\r s-7-3.0984-7-6.9204V9.3529c1-0.5968,3.3059-2.3646,7.0368-2.3529c3.6859,0.0115,5.9632,1.7527,6.9632,2.3529\r C19.0004,13.7128,19.0004,11.7197,19.0004,16.0796z M12.0004,24V12 M0.8575,6c2.3571,3.25,5.1429,3,5.1429,3 M5.0804,17.08\r c-1.01,0.19-2.7,0.83-4.22,2.92 M0.0004,13h6 M18.0004,9c0,0,2.7857,0.25,5.1429-3 M23.1404,20c-1.52-2.09-3.21-2.73-4.22-2.92\r M18.0004,13h6 M16.5904,7.98c0.27-0.61,0.41-1.28,0.41-1.98c0-2.76-2.24-5-5-5s-5,2.24-5,5c0,0.71,0.15,1.38,0.41,1.99' })
-        )
-      );
-    }
-  }]);
-
-  return Icon;
-})(_react.Component);
+  return _react2.default.createElement(
+    'svg',
+    { version: '1.1', viewBox: '0 0 24.0004 24', width: '24px', height: '24px', className: classes, 'aria-labelledby': a11yTitleId },
+    _react2.default.createElement(
+      'title',
+      { id: a11yTitleId },
+      a11yTitle
+    ),
+    _react2.default.createElement(
+      'g',
+      { id: 'defect' },
+      _react2.default.createElement('rect', { id: '_x2E_svg_196_', x: '0', fill: 'none', width: '24', height: '24' }),
+      _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M19.0004,16.0796c0,3.822-3.178,6.9204-7,6.9204\r s-7-3.0984-7-6.9204V9.3529c1-0.5968,3.3059-2.3646,7.0368-2.3529c3.6859,0.0115,5.9632,1.7527,6.9632,2.3529\r C19.0004,13.7128,19.0004,11.7197,19.0004,16.0796z M12.0004,24V12 M0.8575,6c2.3571,3.25,5.1429,3,5.1429,3 M5.0804,17.08\r c-1.01,0.19-2.7,0.83-4.22,2.92 M0.0004,13h6 M18.0004,9c0,0,2.7857,0.25,5.1429-3 M23.1404,20c-1.52-2.09-3.21-2.73-4.22-2.92\r M18.0004,13h6 M16.5904,7.98c0.27-0.61,0.41-1.28,0.41-1.98c0-2.76-2.24-5-5-5s-5,2.24-5,5c0,0.71,0.15,1.38,0.41,1.99' })
+    )
+  );
+};
 
 Icon.propTypes = {
   a11yTitle: _react.PropTypes.string,
@@ -78,9 +67,10 @@ Icon.propTypes = {
 };
 
 Icon.defaultProps = {
-  a11yTitleId: '" + resolve.fileName + "-title'
+  a11yTitleId: 'defect-title'
 };
 
 Icon.icon = true;
 
-module.exports = Icon;
+exports.default = Icon;
+module.exports = exports['default'];

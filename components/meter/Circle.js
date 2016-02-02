@@ -1,6 +1,6 @@
 'use strict';
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -24,7 +24,7 @@ var CIRCLE_WIDTH = _utils.baseDimension;
 var CIRCLE_RADIUS = _utils.baseDimension / 2 - _utils.baseUnit / 2;
 var RING_THICKNESS = _utils.baseUnit;
 
-var Circle = (function (_Graphic) {
+var Circle = function (_Graphic) {
   _inherits(Circle, _Graphic);
 
   function Circle(props) {
@@ -66,7 +66,7 @@ var Circle = (function (_Graphic) {
   }]);
 
   return Circle;
-})(_Graphic3.default);
+}(_Graphic3.default);
 
 //needed in Graphic.js to fix minification issues
 

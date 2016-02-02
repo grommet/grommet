@@ -1,6 +1,6 @@
 'use strict';
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -26,7 +26,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var CLASS_ROOT = "topology";
 
-var Label = (function (_Component) {
+var Label = function (_Component) {
   _inherits(Label, _Component);
 
   function Label() {
@@ -47,9 +47,9 @@ var Label = (function (_Component) {
   }]);
 
   return Label;
-})(_react.Component);
+}(_react.Component);
 
-var Part = (function (_Component2) {
+var Part = function (_Component2) {
   _inherits(Part, _Component2);
 
   function Part() {
@@ -111,7 +111,7 @@ var Part = (function (_Component2) {
   }]);
 
   return Part;
-})(_react.Component);
+}(_react.Component);
 
 Part.propTypes = {
   align: _react.PropTypes.oneOf(['start', 'center', 'between', 'end', 'stretch']),
@@ -131,7 +131,7 @@ Part.defaultProps = {
   align: 'stretch'
 };
 
-var Parts = (function (_Component3) {
+var Parts = function (_Component3) {
   _inherits(Parts, _Component3);
 
   function Parts() {
@@ -196,7 +196,7 @@ var Parts = (function (_Component3) {
   }]);
 
   return Parts;
-})(_react.Component);
+}(_react.Component);
 
 Parts.propTypes = {
   align: _react.PropTypes.oneOf(['start', 'center', 'between', 'end', 'stretch']),
@@ -208,7 +208,7 @@ Parts.defaultProps = {
   direction: 'column'
 };
 
-var Topology = (function (_Component4) {
+var Topology = function (_Component4) {
   _inherits(Topology, _Component4);
 
   function Topology() {
@@ -438,7 +438,7 @@ var Topology = (function (_Component4) {
   }]);
 
   return Topology;
-})(_react.Component);
+}(_react.Component);
 
 exports.default = Topology;
 
