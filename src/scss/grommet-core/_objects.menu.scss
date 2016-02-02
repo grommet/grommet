@@ -235,13 +235,6 @@
       }
     }
   }
-
-  @include media-query(palm) {
-    &.box--responsive {
-      //width: 100%;
-      //padding: 0px;
-    }
-  }
 }
 
 .menu--inline.menu,
@@ -336,6 +329,5 @@
 @include media-query(palm) {
   .menu__drop {
     max-width: 100%;
-    width: 100vw;
   }
 }
