@@ -4,6 +4,7 @@ import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 import Box from './Box';
 import SkipLinkAnchor from './SkipLinkAnchor';
+import Props from '../utils/Props';
 
 const CLASS_ROOT = 'footer';
 
@@ -38,8 +39,10 @@ const Footer = props => {
     footerSkipLink = <SkipLinkAnchor label="Footer" />;
   }
 
+  let boxProps = Props.pick(props, Box);
+
   return (
-    <Box {...props} tag="footer" className={classes}
+    <Box {...boxProps} tag="footer" className={classes}
       containerClassName={containerClasses}>
       {footerSkipLink}
       {props.children}
