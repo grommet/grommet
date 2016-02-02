@@ -81,7 +81,8 @@ exports.default = {
     // setup DOM
     drop.container = document.createElement('div');
     drop.container.className = 'drop';
-    document.body.appendChild(drop.container);
+    // prepend in body to avoid browser scroll issues
+    document.body.insertBefore(drop.container, document.body.firstChild);
     (0, _reactDom.render)(content, drop.container);
 
     drop.scrollParents = _DOM2.default.findScrollParents(drop.control);
