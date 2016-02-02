@@ -1,24 +1,12 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
-
 .label {
-  @include media-query(palm) {
-    &__text {
-      display: none;
-    }
-  }
+  font-size: $control-font-size;
+  line-height: 20px;
+  font-weight: normal;
+  padding-bottom: $inuit-base-spacing-unit;
+  margin-bottom: 0;
 
-  @include media-query(lap-and-up) {
-    &__icon {
-      display: none;
-    }
-  }
-
-  a.active > & {
-    .label__icon.control-icon {
-      svg {
-        fill: $active-icon-color;
-        stroke: $active-icon-color;
-      }
-    }
+  &--uppercase {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
   }
 }
