@@ -12,9 +12,9 @@ var _classnames2 = require('classnames');
 
 var _classnames3 = _interopRequireDefault(_classnames2);
 
-var _LinkRightLeft = require('./icons/LinkRightLeft');
+var _indexIcons = require('../index-icons');
 
-var _LinkRightLeft2 = _interopRequireDefault(_LinkRightLeft);
+var _indexIcons2 = _interopRequireDefault(_indexIcons);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27,8 +27,24 @@ var Anchor = function Anchor(props) {
 
   var icon = undefined;
 
-  if (props.primary) {
-    icon = _react2.default.createElement(_LinkRightLeft2.default, null);
+  if (props.icon) {
+    var CustomIcon = _indexIcons2.default[props.icon];
+    if (!CustomIcon) {
+      console.warn('Warning: Anchor is unable to find the icon with props.icon:', props.icon);
+    } else {
+      icon = _react2.default.createElement(CustomIcon, null);
+    }
+  } else if (props.primary) {
+    var LinkNextIcon = _indexIcons2.default.LinkNext;
+    icon = _react2.default.createElement(LinkNextIcon, null);
+  }
+
+  if (icon && !props.primary) {
+    icon = _react2.default.createElement(
+      'span',
+      { className: CLASS_ROOT + '__icon' },
+      icon
+    );
   }
 
   var classes = (0, _classnames3.default)(CLASS_ROOT, props.className, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--primary', props.primary), _defineProperty(_classnames, CLASS_ROOT + '--disabled', props.disabled), _classnames));
@@ -57,6 +73,7 @@ var Anchor = function Anchor(props) {
 };
 
 Anchor.propTypes = {
+  icon: _react.PropTypes.string,
   disabled: _react.PropTypes.bool,
   href: _react.PropTypes.string,
   id: _react.PropTypes.string,
