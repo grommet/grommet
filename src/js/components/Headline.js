@@ -1,36 +1,34 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
+import classnames from 'classnames';
 
-const CLASS_ROOT = "headline";
+const CLASS_ROOT = 'headline';
 
-export default class Headline extends Component {
-  render() {
-    var classes = [CLASS_ROOT];
-    if (this.props.large) {
-      classes.push(CLASS_ROOT + "--large");
+const Headline = props => {
+  let classes = classnames(
+    CLASS_ROOT,
+    props.className,
+    {
+      [`${CLASS_ROOT}--large`]: props.large,
+      [`${CLASS_ROOT}--small`]: props.small,
+      [`${CLASS_ROOT}--strong`]: props.strong
     }
-    if (this.props.small) {
-      classes.push(CLASS_ROOT + "--small");
-    }
-    if (this.props.strong) {
-      classes.push(CLASS_ROOT + "--strong");
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
+  );
 
-    return (
-      <div className={classes.join(' ')}>
-        {this.props.children}
-      </div>
-    );
-  }
-}
+  return (
+    <div className={classes}>
+      {props.children}
+    </div>
+  );
+};
 
 Headline.propTypes = {
-  colorIndex: PropTypes.string,
   large: PropTypes.bool,
   small: PropTypes.bool,
   strong: PropTypes.bool
 };
+
+Headline.displayName = 'Headline';
+
+export default Headline;
