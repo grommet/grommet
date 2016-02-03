@@ -41,7 +41,7 @@ var Anchor = function Anchor(props) {
   if (icon && !props.primary) {
     icon = _react2.default.createElement(
       'span',
-      { className: CLASS_ROOT + '__icon-container' },
+      { className: CLASS_ROOT + '__icon' },
       icon
     );
   }
