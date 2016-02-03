@@ -177,6 +177,6 @@ Box.defaultProps = {
   direction: 'column',
   pad: 'none',
   tag: 'div',
-  texturePosition: 'center center',
+  texturePosition: 'center top',
   responsive: true
 };
