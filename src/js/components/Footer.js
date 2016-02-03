@@ -9,14 +9,6 @@ import Props from '../utils/Props';
 const CLASS_ROOT = 'footer';
 
 const Footer = props => {
-  if (!props.size) {
-    // Restore size value from deprecated props
-    if (props.small) {
-      props.size = 'small';
-    } else if (props.large) {
-      props.size = 'large';
-    }
-  }
 
   let classes = classnames(
     CLASS_ROOT,
@@ -52,10 +44,8 @@ const Footer = props => {
 
 Footer.propTypes = {
   float: PropTypes.bool,
-  large: PropTypes.bool, // Deprecated
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   primary: PropTypes.bool,
-  small: PropTypes.bool, // Deprecated
   ...Box.propTypes
 };
 
