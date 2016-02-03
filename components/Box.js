@@ -118,6 +118,15 @@ var Box = function (_Component) {
         }
       }
 
+      var a11yProps = {};
+      if (this.props.onClick) {
+        classes.push(CLASS_ROOT + "--clickable");
+        var boxLabel = _Intl2.default.getMessage(this.context.intl, this.props.a11yTitle);
+        a11yProps.tabIndex = 0;
+        a11yProps["aria-label"] = boxLabel;
+        a11yProps.role = this.props.role || 'link';
+      }
+
       if (this.props.className) {
         classes.push(this.props.className);
       }
@@ -129,21 +138,13 @@ var Box = function (_Component) {
         style.background = this.props.backgroundImage + " no-repeat center center";
         style.backgroundSize = "cover";
       }
-      var texture;
+      var texture = undefined;
       if ('object' === _typeof(this.props.texture)) {
         texture = _react2.default.createElement(
           'div',
           { className: CLASS_ROOT + "__texture" },
           this.props.texture
         );
-      }
-
-      var a11yProps = {};
-      if (this.props.onClick) {
-        var boxLabel = _Intl2.default.getMessage(this.context.intl, this.props.a11yTitle);
-        a11yProps.tabIndex = 0;
-        a11yProps["aria-label"] = boxLabel;
-        a11yProps.role = this.props.role || 'link';
       }
 
       var eventRegex = /^on[A-Z].*$/;
