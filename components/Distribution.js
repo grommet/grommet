@@ -1,5 +1,7 @@
 'use strict';
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 Object.defineProperty(exports, "__esModule", {
@@ -254,8 +256,8 @@ var Distribution = function (_Component) {
         this.setState({ legendPosition: 'right' });
       }
 
-      var graphic = this.refs.distribution;
-      var rect = graphic.getBoundingClientRect();
+      var container = this.refs.container;
+      var rect = container.getBoundingClientRect();
       if (rect.width !== this.state.width || rect.height !== this.state.height || !this.state.items) {
         this.setState({
           width: rect.width,
@@ -327,7 +329,7 @@ var Distribution = function (_Component) {
   }, {
     key: '_renderLegend',
     value: function _renderLegend() {
-      return _react2.default.createElement(_Legend2.default, { className: CLASS_ROOT + "__legend",
+      return _react2.default.createElement(_Legend2.default, { ref: 'legend', className: CLASS_ROOT + "__legend",
         series: this.props.series,
         units: this.props.units,
         activeIndex: this.state.activeIndex,
@@ -387,12 +389,21 @@ var Distribution = function (_Component) {
       if (colorIndex) {
         boxClasses.push('color-index-' + colorIndex);
       }
+      var boxRect = _extends({}, itemRect);
+      // leave a gutter between items, if we're not at the edge
+      if (0 !== boxRect.x && this.state.width > boxRect.x + boxRect.width) {
+        boxRect.x += GUTTER_SIZE / 2;
+        boxRect.width -= GUTTER_SIZE;
+      }
+      if (0 !== boxRect.y && this.state.height > boxRect.y + boxRect.height) {
+        boxRect.y += GUTTER_SIZE / 2;
+        boxRect.height -= GUTTER_SIZE;
+      }
 
       return _react2.default.createElement('rect', { className: boxClasses.join(' '),
-        x: itemRect.x + GUTTER_SIZE / 2,
-        y: itemRect.y + GUTTER_SIZE / 2,
-        width: itemRect.width - GUTTER_SIZE,
-        height: itemRect.height - GUTTER_SIZE });
+        x: boxRect.x, y: boxRect.y,
+        width: boxRect.width - GUTTER_SIZE,
+        height: boxRect.height - GUTTER_SIZE });
     }
   }, {
     key: '_renderItemIcon',
@@ -580,7 +591,7 @@ var Distribution = function (_Component) {
         ),
         _react2.default.createElement(
           'div',
-          { ref: 'distributionItems' },
+          { ref: 'distributionItems', className: CLASS_ROOT + '__labels' },
           labels
         ),
         legend

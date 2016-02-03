@@ -35,15 +35,6 @@ var CLASS_ROOT = 'footer';
 var Footer = function Footer(props) {
   var _classnames;
 
-  if (!props.size) {
-    // Restore size value from deprecated props
-    if (props.small) {
-      props.size = 'small';
-    } else if (props.large) {
-      props.size = 'large';
-    }
-  }
-
   var classes = (0, _classnames4.default)(CLASS_ROOT, props.className, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--' + props.size, props.size), _defineProperty(_classnames, CLASS_ROOT + '--float', props.float), _classnames));
 
   var containerClasses = (0, _classnames4.default)(CLASS_ROOT + '__container', _defineProperty({}, CLASS_ROOT + '__container--float', props.float));
@@ -66,10 +57,9 @@ var Footer = function Footer(props) {
 
 Footer.propTypes = _extends({
   float: _react.PropTypes.bool,
-  large: _react.PropTypes.bool, // Deprecated
   size: _react.PropTypes.oneOf(['small', 'medium', 'large']),
-  primary: _react.PropTypes.bool,
-  small: _react.PropTypes.bool }, _Box2.default.propTypes);
+  primary: _react.PropTypes.bool
+}, _Box2.default.propTypes);
 
 Footer.defaultProps = {
   direction: 'row',
