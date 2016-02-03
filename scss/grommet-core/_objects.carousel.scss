@@ -21,8 +21,13 @@
     transition: all 0.8s;
   }
 
-  &__item > * {
-    width: 100%;
+  .tiles.box--direction-row > .tile.carousel__item {
+    flex: 1 1 100%;
+    box-sizing: border-box;
+
+    > * {
+      width: 100%;
+    }
   }
 
   &__arrow {

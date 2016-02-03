@@ -249,7 +249,7 @@ var Carousel = function (_Component) {
             style: { width: trackWidth, marginLeft: trackPosition } },
           _react2.default.createElement(
             _Tiles2.default,
-            { fill: true },
+            { fill: true, responsive: false, wrap: false, direction: 'row' },
             tiles
           )
         ),
