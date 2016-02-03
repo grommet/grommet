@@ -25,7 +25,7 @@ const Anchor = props => {
   }
 
   if (icon && !props.primary) {
-    icon = (<span className={`${CLASS_ROOT}__icon-container`}>{icon}</span>);
+    icon = (<span className={`${CLASS_ROOT}__icon`}>{icon}</span>);
   }
 
   let classes = classnames(
