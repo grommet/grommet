@@ -19,7 +19,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var CLASS_ROOT = 'paragraph';
 
 var Paragraph = function Paragraph(props) {
-  var classes = (0, _classnames3.default)(CLASS_ROOT, _defineProperty({}, CLASS_ROOT + '--' + props.size, props.size));
+  var _classnames;
+
+  var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--' + props.size, props.size), _defineProperty(_classnames, CLASS_ROOT + '--align-' + props.align, props.align), _classnames));
 
   return _react2.default.createElement(
     'p',
@@ -29,6 +31,7 @@ var Paragraph = function Paragraph(props) {
 };
 
 Paragraph.propTypes = {
+  align: _react.PropTypes.oneOf(['start', 'center', 'end']),
   id: _react.PropTypes.string,
   size: _react.PropTypes.oneOf(['small', 'medium', 'large'])
 };
