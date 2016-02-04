@@ -10,6 +10,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _classnames2 = require('classnames');
+
+var _classnames3 = _interopRequireDefault(_classnames2);
+
 var _isEqual = require('lodash/lang/isEqual');
 
 var _isEqual2 = _interopRequireDefault(_isEqual);
@@ -28,14 +32,17 @@ var _Selection2 = _interopRequireDefault(_Selection);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var CLASS_ROOT = "table";
-var SELECTED_CLASS = CLASS_ROOT + "-row--selected";
+var CLASS_ROOT = 'table';
+var SELECTED_CLASS = CLASS_ROOT + '-row--selected';
+var MIN_CELL_WIDTH = 96;
 
 var Table = function (_Component) {
   _inherits(Table, _Component);
@@ -47,13 +54,15 @@ var Table = function (_Component) {
 
     _this._onClick = _this._onClick.bind(_this);
     _this._onResize = _this._onResize.bind(_this);
+    _this._layout = _this._layout.bind(_this);
 
     if (props.selection) {
       console.warn('The "selection" property of Table has been deprecated.' + ' Instead, use the "selected" property. The behavior is the same.' + ' The property name was changed to align with List and Tiles.');
     }
     _this.state = {
       selected: _Selection2.default.normalizeIndexes(props.selected || props.selection),
-      rebuildMirror: props.scrollable
+      rebuildMirror: props.scrollable,
+      small: false
     };
     return _this;
   }
@@ -62,13 +71,14 @@ var Table = function (_Component) {
     key: 'componentDidMount',
     value: function componentDidMount() {
       this._setSelection();
-      if (this.props.scrollable) {
+      if (this.props.scrollable && !this.state.small) {
         this._buildMirror();
         this._alignMirror();
       }
       if (this.props.onMore) {
         this._scroll = _InfiniteScroll2.default.startListeningForScroll(this.refs.more, this.props.onMore);
       }
+      this._adjustBodyCells();
       window.addEventListener('resize', this._onResize);
     }
   }, {
@@ -76,7 +86,7 @@ var Table = function (_Component) {
     value: function componentWillReceiveProps(nextProps) {
       if (this._scroll) {
         _InfiniteScroll2.default.stopListeningForScroll(this._scroll);
-        this._scroll = null;
+        this._scroll = undefined;
       }
       if (nextProps.hasOwnProperty('selected') || nextProps.hasOwnProperty('selection')) {
         this.setState({
@@ -91,16 +101,17 @@ var Table = function (_Component) {
       if (!(0, _isEqual2.default)(this.state.selected, prevState.selected)) {
         this._setSelection();
       }
-      if (this.state.rebuildMirror) {
+      if (this.state.rebuildMirror && !this.state.small) {
         this._buildMirror();
         this.setState({ rebuildMirror: false });
       }
-      if (this.props.scrollable) {
+      if (this.props.scrollable && !this.state.small) {
         this._alignMirror();
       }
       if (this.props.onMore && !this._scroll) {
         this._scroll = _InfiniteScroll2.default.startListeningForScroll(this.refs.more, this.props.onMore);
       }
+      this._adjustBodyCells();
     }
   }, {
     key: 'componentWillUnmount',
@@ -158,9 +169,38 @@ var Table = function (_Component) {
       }
     }
   }, {
+    key: '_adjustBodyCells',
+    value: function _adjustBodyCells() {
+      //adjust table body cells to have link to the header
+      //so that in responsive mode it displays the text as content in css
+      var headerCells = this.refs.table.querySelectorAll('thead th');
+      if (headerCells.length > 0) {
+        var rows = this.refs.table.querySelectorAll('tbody tr');
+
+        [].forEach.call(rows, function (row) {
+          [].forEach.call(row.cells, function (cell, index) {
+            cell.setAttribute('data-th', headerCells[index].innerText);
+          });
+        });
+      }
+    }
+  }, {
     key: '_onResize',
     value: function _onResize() {
       this._alignMirror();
+      this._layout();
+    }
+  }, {
+    key: '_layout',
+    value: function _layout() {
+      var availableSize = this.refs.container.offsetWidth;
+      var numberOfCells = this.refs.table.querySelectorAll('thead th').length;
+
+      if (numberOfCells * MIN_CELL_WIDTH > availableSize) {
+        this.setState({ small: true });
+      } else {
+        this.setState({ small: false });
+      }
     }
   }, {
     key: '_buildMirror',
@@ -168,12 +208,14 @@ var Table = function (_Component) {
       var tableElement = this.refs.table;
       var cells = tableElement.querySelectorAll('thead tr th');
       var mirrorElement = this.refs.mirror;
-      var mirrorRow = mirrorElement.querySelectorAll('thead tr')[0];
-      while (mirrorRow.hasChildNodes()) {
-        mirrorRow.removeChild(mirrorRow.lastChild);
-      }
-      for (var i = 0; i < cells.length; i++) {
-        mirrorRow.appendChild(cells[i].cloneNode(true));
+      if (mirrorElement) {
+        var mirrorRow = mirrorElement.querySelectorAll('thead tr')[0];
+        while (mirrorRow.hasChildNodes()) {
+          mirrorRow.removeChild(mirrorRow.lastChild);
+        }
+        for (var i = 0; i < cells.length; i++) {
+          mirrorRow.appendChild(cells[i].cloneNode(true));
+        }
       }
     }
   }, {
@@ -201,18 +243,11 @@ var Table = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var classes = [CLASS_ROOT];
-      if (this.props.selectable) {
-        classes.push(CLASS_ROOT + "--selectable");
-      }
-      if (this.props.scrollable) {
-        classes.push(CLASS_ROOT + "--scrollable");
-      }
-      if (this.props.className) {
-        classes.push(this.props.className);
-      }
+      var _classnames;
 
-      var mirror = null;
+      var classes = (0, _classnames3.default)(CLASS_ROOT, this.props.className, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--small', this.state.small), _defineProperty(_classnames, CLASS_ROOT + '--selectable', this.props.selectable), _defineProperty(_classnames, CLASS_ROOT + '--scrollable', this.props.scrollable), _classnames));
+
+      var mirror = undefined;
       if (this.props.scrollable) {
         mirror = _react2.default.createElement(
           'table',
@@ -225,7 +260,7 @@ var Table = function (_Component) {
         );
       }
 
-      var more = null;
+      var more = undefined;
       if (this.props.onMore) {
         more = _react2.default.createElement(
           'div',
@@ -236,11 +271,12 @@ var Table = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        { ref: 'container', className: classes.join(' ') },
+        { ref: 'container', className: classes },
         mirror,
         _react2.default.createElement(
           'table',
-          { ref: 'table', className: CLASS_ROOT + "__table", onClick: this._onClick },
+          { ref: 'table', className: CLASS_ROOT + "__table",
+            onClick: this._onClick },
           this.props.children
         ),
         more
