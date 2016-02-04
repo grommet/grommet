@@ -7,8 +7,8 @@ import iconsMap from '../index-icons';
 const CLASS_ROOT = 'button';
 
 const Button = props => {
-  const plain = (props.plain || (props.icon && ! props.label)
-    || 'icon' === props.type);
+  const plain = (props.plain !== undefined ? props.plain :
+    (props.icon && ! props.label) || 'icon' === props.type);
   let classes = classnames(
     CLASS_ROOT,
     props.className,
