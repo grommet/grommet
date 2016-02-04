@@ -318,7 +318,7 @@
     // }
 
     > a {
-      padding: quarter($inuit-base-spacing-unit) halve($inuit-base-spacing-unit);
+      padding: quarter($inuit-base-spacing-unit) 0;
     }
   }
 
@@ -326,7 +326,7 @@
     // @include inuit-font-size($content-font-size);
 
     > a {
-      padding: $inuit-base-spacing-unit double($inuit-base-spacing-unit);
+      padding: $inuit-base-spacing-unit 0;
     }
   }
 
