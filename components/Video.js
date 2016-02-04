@@ -124,7 +124,7 @@ var Video = function (_Component) {
     value: function render() {
       var classes = [CLASS_ROOT];
       if (this.props.size) {
-        classes.push(CLASS_ROOT + "--" + this.props.size);
+        classes.push(CLASS_ROOT + '--' + this.props.size);
       }
       if (this.props.full) {
         classes.push(CLASS_ROOT + '--full');
@@ -136,7 +136,7 @@ var Video = function (_Component) {
         classes.push(CLASS_ROOT + '--interacting');
       }
       if (this.props.colorIndex) {
-        classes.push("background-color-index-" + this.props.colorIndex);
+        classes.push('background-color-index-' + this.props.colorIndex);
       }
       if (this.props.className) {
         classes.push(this.props.className);
@@ -147,6 +147,7 @@ var Video = function (_Component) {
 
       var title;
       if (this.props.title) {
+        classes.push(CLASS_ROOT + '--titled');
         title = _react2.default.createElement(
           'div',
           { className: CLASS_ROOT + '__title' },
