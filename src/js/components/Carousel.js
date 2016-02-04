@@ -7,7 +7,12 @@ import Tile from './Tile';
 import Button from './Button';
 import Previous from './icons/base/Previous';
 import Next from './icons/base/Next';
-import Hammer from 'hammerjs';
+
+//
+let Hammer = function() {};
+if (typeof window !== 'undefined') {
+  Hammer = require('hammerjs');
+}
 
 const CLASS_ROOT = 'carousel';
 
@@ -44,9 +49,10 @@ export default class Carousel extends Component {
     window.addEventListener('resize', this._onResize);
 
     this.hammer = new Hammer(this.refs.carousel);
-    this.hammer.get('swipe').set({direction: Hammer.DIRECTION_HORIZONTAL});
+    this.hammer.get('swipe').set({
+      direction: Hammer.DIRECTION_HORIZONTAL
+    });
     this.hammer.on('panend', (event) => {
-      console.log('panend');
       if (event.direction === 4) {
         this._slidePrev();
       } else if (event.direction === 2) {
@@ -59,6 +65,12 @@ export default class Carousel extends Component {
     clearInterval(this._slideAnimation);
 
     window.removeEventListener('resize', this._onResize);
+
+    if (this.hammer) {
+      this.hammer.stop();
+      this.hammer.destroy();
+    }
+    this.hammer = null;
   }
 
   _setSlideInterval () {
