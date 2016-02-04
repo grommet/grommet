@@ -27,6 +27,7 @@ export default class Chart extends Component {
     this._onRequestForPreviousLegend = this._onRequestForPreviousLegend.bind(this);
     this._onMouseOver = this._onMouseOver.bind(this);
     this._onMouseOut = this._onMouseOut.bind(this);
+    this._onMouseLeave = this._onMouseLeave.bind(this);
     this._onResize = this._onResize.bind(this);
     this._layout = this._layout.bind(this);
 
@@ -105,11 +106,19 @@ export default class Chart extends Component {
   }
 
   _onMouseOver (xIndex) {
-    this.setState({activeXIndex: xIndex});
+    this.setState({activeXIndex: xIndex, hideLegend: false});
   }
 
   _onMouseOut () {
-    this.setState({activeXIndex: this.state.defaultXIndex});
+    this.setState({activeXIndex: this.state.defaultXIndex, hideLegend: false});
+  }
+
+  _onMouseLeave () {
+    let hideLegend = false;
+    if (this.props.legend.hoverOnly) {
+      hideLegend = true;
+    }
+    this.setState({activeXIndex: this.state.defaultXIndex, hideLegend: hideLegend});
   }
 
   _onResize () {
@@ -278,6 +287,13 @@ export default class Chart extends Component {
 
       legendElement.style.left = '' + left + 'px ';
       legendElement.style.top = '' + (bounds.graphTop) + 'px ';
+
+      let display = 'inline-block';
+      if (this.state.hideLegend && 'after' !== this.props.legend.position) {
+        display = 'none';
+      }
+      legendElement.style.display = display;
+      cursorElement.style.display = display;
     }
   }
 
@@ -319,6 +335,10 @@ export default class Chart extends Component {
     if (this.state && this.state.activeXIndex >= 0) {
       activeXIndex = this.state.activeXIndex;
     }
+    let hideLegend = this.props.legend.hoverOnly || false;
+    if (this.state && this.state.hideLegend) {
+      hideLegend = this.state.hideLegend;
+    }
     // normalize size
     let size = props.size ||
       (props.small ? 'small' :
@@ -327,6 +347,7 @@ export default class Chart extends Component {
       bounds: bounds,
       defaultXIndex: defaultXIndex,
       activeXIndex: activeXIndex,
+      hideLegend: hideLegend,
       width: width,
       height: height,
       size: size
@@ -921,11 +942,14 @@ export default class Chart extends Component {
       );
     }
 
+    let onMouseLeave = this._onMouseLeave.bind(this);
+
     return (
       <div className={classes.join(' ')}>
         <svg ref="chart" className={CLASS_ROOT + "__graphic"}
           viewBox={"0 0 " + this.state.width + " " + this.state.height}
           preserveAspectRatio="none" role={role} tabIndex="0"
+          onMouseLeave={onMouseLeave}
           aria-activedescendant={activeDescendant}
           aria-labelledby={this.props.a11yTitleId + ' ' + this.props.a11yDescId}>
           {a11yTitleNode}
