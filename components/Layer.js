@@ -119,7 +119,7 @@ var LayerContents = function (_Component) {
           { className: CLASS_ROOT + "__closer" },
           _react2.default.createElement(
             _Button2.default,
-            { type: 'icon', onClick: this.props.onClose },
+            { plain: true, onClick: this.props.onClose },
             _react2.default.createElement(_Close2.default, { a11yTitle: this.props.a11yCloserTitle })
           )
         );

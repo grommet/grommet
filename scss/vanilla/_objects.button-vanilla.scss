@@ -7,7 +7,7 @@ $active-darken: 20%;
 .button {
   border-radius: 5px;
 
-  &:not(.button--disabled):not(.button--icon):not(.button--fill) {
+  &:not(.button--disabled):not(.button--plain):not(.button--fill) {
 
     &:hover {
       box-shadow: 0px 0px 0px 2px $button-border-color;
@@ -57,7 +57,7 @@ $active-darken: 20%;
     }
   }
 
-  &--fill:not(.button--disabled):not(.button--icon) {
+  &--fill:not(.button--disabled):not(.button--plain) {
     &:hover {
       padding: ($button-vertical-padding - ($button-border-width))
         ($button-horizontal-padding - ($button-border-width));

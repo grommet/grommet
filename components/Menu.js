@@ -465,7 +465,7 @@ var Menu = function (_Component2) {
 
       var control = _react2.default.createElement(
         _Button2.default,
-        { type: 'icon', className: CLASS_ROOT + '__control',
+        { plain: true, className: CLASS_ROOT + '__control',
           a11yTitle: menuTitle,
           style: { lineHeight: this.state.controlHeight + 'px' },
           onClick: this._onClose },
@@ -548,7 +548,7 @@ var Menu = function (_Component2) {
           { ref: 'control' },
           _react2.default.createElement(
             _Button2.default,
-            { type: 'icon', id: this.props.id,
+            { plain: true, id: this.props.id,
               className: classes.join(' '),
               tabIndex: '0',
               style: { lineHeight: this.state.controlHeight + 'px' },

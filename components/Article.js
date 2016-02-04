@@ -254,7 +254,7 @@ var Article = function (_Component) {
         if (this.state.activeIndex > 0) {
           controls.push(_react2.default.createElement(
             _Button2.default,
-            { key: 'previous', type: 'icon',
+            { key: 'previous', plain: true,
               className: CONTROL_CLASS_PREFIX + '-left',
               onClick: this._onPrevious },
             _react2.default.createElement(_LinkPrevious2.default, { size: 'large' })
@@ -263,7 +263,7 @@ var Article = function (_Component) {
         if (this.state.activeIndex < childCount - 1) {
           controls.push(_react2.default.createElement(
             _Button2.default,
-            { key: 'next', type: 'icon',
+            { key: 'next', plain: true,
               className: CONTROL_CLASS_PREFIX + '-right',
               onClick: this._onNext },
             _react2.default.createElement(_LinkNext2.default, { size: 'large' })
@@ -273,7 +273,7 @@ var Article = function (_Component) {
         if (this.state.activeIndex > 0) {
           controls.push(_react2.default.createElement(
             _Button2.default,
-            { key: 'previous', type: 'icon',
+            { key: 'previous', plain: true,
               className: CONTROL_CLASS_PREFIX + '-up',
               onClick: this._onPrevious },
             _react2.default.createElement(_Up2.default, null)
@@ -282,7 +282,7 @@ var Article = function (_Component) {
         if (this.state.activeIndex < childCount - 1) {
           controls.push(_react2.default.createElement(
             _Button2.default,
-            { key: 'next', type: 'icon',
+            { key: 'next', plain: true,
               className: CONTROL_CLASS_PREFIX + '-down',
               onClick: this._onNext },
             _react2.default.createElement(_Down2.default, null)

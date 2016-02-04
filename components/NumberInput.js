@@ -14,14 +14,6 @@ var _Button = require('./Button');
 
 var _Button2 = _interopRequireDefault(_Button);
 
-var _Add = require('./icons/base/Add');
-
-var _Add2 = _interopRequireDefault(_Add);
-
-var _Subtract = require('./icons/base/Subtract');
-
-var _Subtract2 = _interopRequireDefault(_Subtract);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -97,18 +89,10 @@ var NumberInput = function (_Component) {
           max: this.props.max,
           step: this.props.step,
           onChange: this.props.onChange }),
-        _react2.default.createElement(
-          _Button2.default,
-          { type: 'icon', className: CLASS_ROOT + "__subtract",
-            onClick: onSubtract },
-          _react2.default.createElement(_Subtract2.default, null)
-        ),
-        _react2.default.createElement(
-          _Button2.default,
-          { type: 'icon', className: CLASS_ROOT + "__add",
-            onClick: onAdd },
-          _react2.default.createElement(_Add2.default, null)
-        )
+        _react2.default.createElement(_Button2.default, { icon: 'Subtract', className: CLASS_ROOT + "__subtract",
+          onClick: onSubtract }),
+        _react2.default.createElement(_Button2.default, { icon: 'Add', className: CLASS_ROOT + "__add",
+          onClick: onAdd })
       );
     }
   }]);

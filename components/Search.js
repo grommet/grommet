@@ -370,13 +370,9 @@ var Search = function (_Component) {
       var contents = [input, suggestions];
 
       if (!this.state.inline) {
-        contents = [_react2.default.createElement(
-          _Button2.default,
-          { key: 'icon', type: 'icon',
-            className: CLASS_ROOT + "__drop-control",
-            onClick: this._onRemoveDrop },
-          _react2.default.createElement(_Search2.default, null)
-        ), _react2.default.createElement(
+        contents = [_react2.default.createElement(_Button2.default, { key: 'icon', icon: 'Search',
+          className: CLASS_ROOT + "__drop-control",
+          onClick: this._onRemoveDrop }), _react2.default.createElement(
           'div',
           { key: 'contents', className: CLASS_ROOT + "__drop-contents",
             onClick: this._onSink },
@@ -428,17 +424,13 @@ var Search = function (_Component) {
         return _react2.default.createElement(
           'div',
           { ref: 'control' },
-          _react2.default.createElement(
-            _Button2.default,
-            { id: this.props.id,
-              className: classes.join(' '),
-              type: 'icon',
-              tabIndex: '0',
-              onClick: this._onAddDrop,
-              onFocus: this._onFocusControl,
-              onBlur: this._onBlurControl },
-            _react2.default.createElement(_Search2.default, null)
-          )
+          _react2.default.createElement(_Button2.default, { id: this.props.id,
+            className: classes.join(' '),
+            icon: 'Search',
+            tabIndex: '0',
+            onClick: this._onAddDrop,
+            onFocus: this._onFocusControl,
+            onBlur: this._onBlurControl })
         );
       }
     }

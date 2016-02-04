@@ -210,7 +210,7 @@ var Video = function (_Component) {
           { className: CLASS_ROOT + '__summary' },
           _react2.default.createElement(
             _Button2.default,
-            { className: CLASS_ROOT + '__control', type: 'icon',
+            { className: CLASS_ROOT + '__control', plain: true,
               primary: true,
               onClick: this._onClickControl },
             controlIcon

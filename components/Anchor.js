@@ -29,7 +29,7 @@ var Anchor = function Anchor(props) {
   if (props.icon) {
     var CustomIcon = _indexIcons2.default[props.icon];
     if (!CustomIcon) {
-      console.warn('Warning: Anchor is unable to find the icon with props.icon:', props.icon);
+      console.warn('Warning: Anchor is unable to find the icon named ' + props.icon);
     } else {
       icon = _react2.default.createElement(CustomIcon, null);
     }
@@ -60,6 +60,10 @@ var Anchor = function Anchor(props) {
     return child;
   });
 
+  if (!children) {
+    children = props.label;
+  }
+
   return _react2.default.createElement(
     props.tag,
     { id: props.id, className: classes,
@@ -76,6 +80,7 @@ Anchor.propTypes = {
   disabled: _react.PropTypes.bool,
   href: _react.PropTypes.string,
   id: _react.PropTypes.string,
+  label: _react.PropTypes.node,
   onClick: _react.PropTypes.func,
   primary: _react.PropTypes.bool,
   tag: _react.PropTypes.string,

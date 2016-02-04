@@ -26,18 +26,6 @@ var _Drop = require('../utils/Drop');
 
 var _Drop2 = _interopRequireDefault(_Drop);
 
-var _Calendar = require('./icons/base/Calendar');
-
-var _Calendar2 = _interopRequireDefault(_Calendar);
-
-var _LinkPrevious = require('./icons/base/LinkPrevious');
-
-var _LinkPrevious2 = _interopRequireDefault(_LinkPrevious);
-
-var _LinkNext = require('./icons/base/LinkNext');
-
-var _LinkNext2 = _interopRequireDefault(_LinkNext);
-
 var _Header = require('./Header');
 
 var _Header2 = _interopRequireDefault(_Header);
@@ -330,23 +318,15 @@ var Calendar = function (_Component) {
         _react2.default.createElement(
           _Header2.default,
           { justify: 'between' },
-          _react2.default.createElement(
-            _Button2.default,
-            { className: CLASS_ROOT + "__previous", type: 'icon',
-              onClick: this._onPrevious },
-            _react2.default.createElement(_LinkPrevious2.default, null)
-          ),
+          _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + "__previous", icon: 'LinkPrevious',
+            onClick: this._onPrevious }),
           _react2.default.createElement(
             _Title2.default,
             { className: CLASS_ROOT + "__title", responsive: false },
             this.state.reference.format('MMMM YYYY')
           ),
-          _react2.default.createElement(
-            _Button2.default,
-            { className: CLASS_ROOT + "__next", type: 'icon',
-              onClick: this._onNext },
-            _react2.default.createElement(_LinkNext2.default, null)
-          )
+          _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + "__next", icon: 'LinkNext',
+            onClick: this._onNext })
         ),
         _react2.default.createElement(
           'div',
@@ -390,11 +370,8 @@ var Calendar = function (_Component) {
           id: this.props.id, ref: 'calendarInput', name: this.props.name,
           value: this.props.value,
           onChange: this._onInputChange }),
-        _react2.default.createElement(
-          _Button2.default,
-          { className: CLASS_ROOT + "__control", type: 'icon', onClick: this._onOpen },
-          _react2.default.createElement(_Calendar2.default, null)
-        )
+        _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + "__control", icon: 'Calendar',
+          onClick: this._onOpen })
       );
     }
   }]);

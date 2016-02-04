@@ -172,7 +172,7 @@ var Carousel = function (_Component) {
           _Button2.default,
           {
             className: CLASS_ROOT + '__arrow ' + CLASS_ROOT + '__arrow--prev',
-            type: 'icon', onClick: this._slidePrev },
+            plain: true, onClick: this._slidePrev },
           _react2.default.createElement(_Previous2.default, { size: 'large' })
         );
       }
@@ -188,7 +188,7 @@ var Carousel = function (_Component) {
           _Button2.default,
           {
             className: CLASS_ROOT + '__arrow ' + CLASS_ROOT + '__arrow--next',
-            type: 'icon', onClick: this._slideNext },
+            plain: true, onClick: this._slideNext },
           _react2.default.createElement(_Next2.default, { size: 'large' })
         );
       }

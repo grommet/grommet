@@ -38,14 +38,6 @@ var _Spinning = require('./icons/Spinning');
 
 var _Spinning2 = _interopRequireDefault(_Spinning);
 
-var _LinkPrevious = require('./icons/base/LinkPrevious');
-
-var _LinkPrevious2 = _interopRequireDefault(_LinkPrevious);
-
-var _LinkNext = require('./icons/base/LinkNext');
-
-var _LinkNext2 = _interopRequireDefault(_LinkNext);
-
 var _Scroll = require('../utils/Scroll');
 
 var _Scroll2 = _interopRequireDefault(_Scroll);
@@ -307,20 +299,12 @@ var Tiles = function (_Component) {
       if (this.state.overflow) {
         classes.push(CLASS_ROOT + "--overflowed");
         if (!this.state.overflowStart) {
-          var left = _react2.default.createElement(
-            _Button2.default,
-            { className: CLASS_ROOT + "__left", type: 'icon',
-              onClick: this._onLeft },
-            _react2.default.createElement(_LinkPrevious2.default, null)
-          );
+          var left = _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + "__left", icon: 'LinkPrevious',
+            onClick: this._onLeft });
         }
         if (!this.state.overflowEnd) {
-          var right = _react2.default.createElement(
-            _Button2.default,
-            { className: CLASS_ROOT + "__right", type: 'icon',
-              onClick: this._onRight },
-            _react2.default.createElement(_LinkNext2.default, null)
-          );
+          var right = _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + "__right", icon: 'LinkNext',
+            onClick: this._onRight });
         }
 
         contents = _react2.default.createElement(
