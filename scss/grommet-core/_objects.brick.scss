@@ -6,12 +6,18 @@
   float: left;
   max-width: calc(100% - #{halve($inuit-base-spacing-unit)});
 
+  &:hover {
+    margin: -1px (halve($inuit-base-spacing-unit) - 1) (halve($inuit-base-spacing-unit) - 1) -1px;
+    max-width: calc(100% - #{halve($inuit-base-spacing-unit) - 2});
+  }
+
   .brick--label {
     position: absolute;
     top: 0;
     right: 0;
     left: 0;
     bottom: 0;
+    overflow: hidden;
 
     span {
       text-transform: uppercase;
@@ -37,8 +43,16 @@
     content: '';
   }
 
+  &:hover {
+    width: calc(25% - #{halve($inuit-base-spacing-unit) - 2});
+  }
+
   @include media-query(portable) {
     width: calc(50% - #{halve($inuit-base-spacing-unit)});
+
+    &:hover {
+      width: calc(50% - #{halve($inuit-base-spacing-unit) - 2});
+    }
   }
 }
 
@@ -51,8 +65,17 @@
     content: '';
   }
 
+  &:hover {
+    width: calc(25% - #{halve($inuit-base-spacing-unit) - 2});
+    margin: -2px (halve($inuit-base-spacing-unit) - 1) (halve($inuit-base-spacing-unit) - 2) -1px;
+  }
+
   @include media-query(portable) {
     width: calc(50% - #{halve($inuit-base-spacing-unit)});
+
+    &:hover {
+      width: calc(50% - #{halve($inuit-base-spacing-unit) - 2});
+    }
   }
 }
 
@@ -65,8 +88,16 @@
     content: '';
   }
 
+  &:hover {
+    width: calc(50% - #{halve($inuit-base-spacing-unit) - 2});
+  }
+
   @include media-query(portable) {
     width: calc(100% - #{halve($inuit-base-spacing-unit)});
+
+    &:hover {
+      width: calc(100% - #{halve($inuit-base-spacing-unit) - 2});
+    }
   }
 }
 
@@ -79,8 +110,16 @@
     content: '';
   }
 
+  &:hover {
+    width: calc(50% - #{halve($inuit-base-spacing-unit) - 2});
+  }
+
   @include media-query(portable) {
     width: calc(100% - #{halve($inuit-base-spacing-unit)});
+
+    &:hover {
+      width: calc(100% - #{halve($inuit-base-spacing-unit) - 2});
+    }
   }
 }
 

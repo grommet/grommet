@@ -1,5 +1,7 @@
 'use strict';
 
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -69,12 +71,30 @@ var Brick = function Brick(props) {
     );
   }
 
+  var style = {};
+  if (props.texture && 'string' === typeof props.texture) {
+    style.background = "url(" + props.texture + ") no-repeat center center";
+    style.backgroundSize = "cover";
+  } else if (props.backgroundImage) {
+    style.background = "url(" + props.backgroundImage + ") no-repeat center center";
+    style.backgroundSize = "cover";
+  }
+  var texture = undefined;
+  if ('object' === _typeof(props.texture)) {
+    texture = _react2.default.createElement(
+      'div',
+      { className: CLASS_ROOT + "__texture" },
+      props.texture
+    );
+  }
+
   return _react2.default.createElement(
     'div',
-    { className: classes },
+    { className: classes, style: style },
     _react2.default.createElement(
       'div',
       { className: CLASS_ROOT + '--content-wrapper' },
+      texture,
       props.children
     ),
     label
@@ -86,6 +106,7 @@ Brick.propTypes = {
   href: _react.PropTypes.string,
   label: _react.PropTypes.string,
   onClick: _react.PropTypes.func,
+  texture: _react.PropTypes.oneOfType([_react.PropTypes.node, _react.PropTypes.string]),
   type: _react.PropTypes.oneOf([TYPE_SMALL, TYPE_LARGE, TYPE_WIDE, TYPE_TALL])
 };
 
