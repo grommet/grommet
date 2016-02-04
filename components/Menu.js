@@ -485,7 +485,7 @@ var Menu = function (_Component2) {
           router: this.context.router,
           dropAlign: this.props.dropAlign,
           dropColorIndex: this.props.dropColorIndex,
-          size: this.state.size
+          size: this.props.size
         }, other, {
           onClick: onClick,
           id: this.state.dropId,
@@ -501,8 +501,8 @@ var Menu = function (_Component2) {
       if (this.props.direction) {
         classes.push(prefix + "--" + this.props.direction);
       }
-      if (this.state.size) {
-        classes.push(prefix + "--" + this.state.size);
+      if (this.props.size) {
+        classes.push(prefix + "--" + this.props.size);
       }
       if (this.props.primary) {
         classes.push(prefix + "--primary");
