@@ -45,6 +45,15 @@ button:not(.button) {
     border-color: $brand-color;
     background-color: $brand-color;
     color: $active-colored-text-color;
+
+    &:hover:not(.button--disabled) {
+      color: $active-colored-text-color;
+
+     .button__icon .control-icon {
+        fill: $active-colored-icon-color;
+        stroke: $active-colored-icon-color;
+      }
+    }
   }
 
   &--secondary {

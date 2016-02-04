@@ -25,7 +25,7 @@ var CLASS_ROOT = 'button';
 var Button = function Button(props) {
   var _classnames;
 
-  var plain = props.plain || props.icon && !props.label || 'icon' === props.type;
+  var plain = props.plain !== undefined ? props.plain : props.icon && !props.label || 'icon' === props.type;
   var classes = (0, _classnames3.default)(CLASS_ROOT, props.className, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--primary', props.primary), _defineProperty(_classnames, CLASS_ROOT + '--secondary', props.secondary), _defineProperty(_classnames, CLASS_ROOT + '--accent', props.accent), _defineProperty(_classnames, CLASS_ROOT + '--disabled', !props.onClick), _defineProperty(_classnames, CLASS_ROOT + '--fill', props.fill), _defineProperty(_classnames, CLASS_ROOT + '--plain', plain), _classnames));
 
   // if ('icon' === props.type) {
