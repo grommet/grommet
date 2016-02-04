@@ -157,7 +157,7 @@ export default class Video extends Component {
           {this.props.children}
         </video>
         <div className={CLASS_ROOT + '__summary'}>
-          <Button className={CLASS_ROOT + '__control'} type="icon"
+          <Button className={CLASS_ROOT + '__control'} plain={true}
             primary={true}
             onClick={this._onClickControl}>
             {controlIcon}

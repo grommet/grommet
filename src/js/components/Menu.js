@@ -403,7 +403,7 @@ export default class Menu extends Component {
     );
 
     let control = (
-      <Button type="icon" className={`${CLASS_ROOT}__control`}
+      <Button plain={true} className={`${CLASS_ROOT}__control`}
         a11yTitle={menuTitle}
         style={{lineHeight: this.state.controlHeight + 'px'}}
         onClick={this._onClose}>
@@ -485,7 +485,7 @@ export default class Menu extends Component {
 
       return (
         <div ref="control">
-          <Button type="icon" id={this.props.id}
+          <Button plain={true} id={this.props.id}
             className={classes.join(' ')}
             tabIndex="0"
             style={{lineHeight: this.state.controlHeight + 'px'}}

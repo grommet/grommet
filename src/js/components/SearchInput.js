@@ -5,7 +5,6 @@ import ReactDOM from 'react-dom';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 import Drop from '../utils/Drop';
 import Button from './Button';
-import SearchIcon from './icons/base/Search';
 
 const CLASS_ROOT = "search-input";
 
@@ -206,10 +205,8 @@ export default class SearchInput extends Component {
           placeholder={this.props.placeHolder}
           onChange={this._onInputChange}
           onFocus={this._onFocus} />
-        <Button className={CLASS_ROOT + "__control"} type="icon"
-          onClick={this._onAddDrop} >
-          <SearchIcon />
-        </Button>
+        <Button className={CLASS_ROOT + "__control"} icon="Search"
+          onClick={this._onAddDrop} />
       </div>
     );
   }

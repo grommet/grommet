@@ -5,9 +5,6 @@ import ReactDOM from 'react-dom';
 import moment from 'moment';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 import Drop from '../utils/Drop';
-import CalendarIcon from './icons/base/Calendar';
-import PreviousIcon from './icons/base/LinkPrevious';
-import NextIcon from './icons/base/LinkNext';
 import Header from './Header';
 import Title from './Title';
 import Button from './Button';
@@ -250,17 +247,13 @@ export default class Calendar extends Component {
       <div id={CLASS_ROOT + "-drop"} className={CLASS_ROOT + "__drop"}
         onClick={this._onClose}>
         <Header justify="between">
-          <Button className={CLASS_ROOT + "__previous"} type="icon"
-            onClick={this._onPrevious}>
-            <PreviousIcon />
-          </Button>
+          <Button className={CLASS_ROOT + "__previous"} icon="LinkPrevious"
+            onClick={this._onPrevious} />
           <Title className={CLASS_ROOT + "__title"} responsive={false}>
             {this.state.reference.format('MMMM YYYY')}
           </Title>
-          <Button className={CLASS_ROOT + "__next"} type="icon"
-            onClick={this._onNext}>
-            <NextIcon />
-          </Button>
+          <Button className={CLASS_ROOT + "__next"} icon="LinkNext"
+            onClick={this._onNext} />
         </Header>
         <div className={CLASS_ROOT + "__grid"}>
           <table>
@@ -291,9 +284,8 @@ export default class Calendar extends Component {
           id={this.props.id} ref="calendarInput" name={this.props.name}
           value={this.props.value}
           onChange={this._onInputChange} />
-        <Button className={CLASS_ROOT + "__control"} type="icon" onClick={this._onOpen}>
-          <CalendarIcon />
-        </Button>
+        <Button className={CLASS_ROOT + "__control"} icon="Calendar"
+          onClick={this._onOpen} />
       </div>
     );
   }

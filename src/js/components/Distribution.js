@@ -209,8 +209,8 @@ export default class Distribution extends Component {
       this.setState({legendPosition: 'right'});
     }
 
-    let graphic = this.refs.distribution;
-    let rect = graphic.getBoundingClientRect();
+    let container = this.refs.container;
+    let rect = container.getBoundingClientRect();
     if (rect.width !== this.state.width || rect.height !== this.state.height ||
       ! this.state.items) {
       this.setState({
@@ -281,7 +281,7 @@ export default class Distribution extends Component {
 
   _renderLegend () {
     return (
-      <Legend className={CLASS_ROOT + "__legend"}
+      <Legend ref="legend" className={CLASS_ROOT + "__legend"}
         series={this.props.series}
         units={this.props.units}
         activeIndex={this.state.activeIndex}
@@ -334,13 +334,24 @@ export default class Distribution extends Component {
     if (colorIndex) {
       boxClasses.push(`color-index-${colorIndex}`);
     }
+    let boxRect = { ...itemRect };
+    // leave a gutter between items, if we're not at the edge
+    if (0 !== boxRect.x &&
+      this.state.width > (boxRect.x + boxRect.width)) {
+      boxRect.x += (GUTTER_SIZE / 2);
+      boxRect.width -= GUTTER_SIZE;
+    }
+    if (0 !== boxRect.y &&
+      this.state.height > (boxRect.y + boxRect.height)) {
+      boxRect.y += (GUTTER_SIZE / 2);
+      boxRect.height -= GUTTER_SIZE;
+    }
 
     return (
       <rect className={boxClasses.join(' ')}
-        x={itemRect.x + (GUTTER_SIZE / 2)}
-        y={itemRect.y + (GUTTER_SIZE / 2)}
-        width={itemRect.width - GUTTER_SIZE}
-        height={itemRect.height - GUTTER_SIZE}>
+        x={boxRect.x} y={boxRect.y}
+        width={boxRect.width - GUTTER_SIZE}
+        height={boxRect.height - GUTTER_SIZE}>
       </rect>
     );
   }
@@ -520,7 +531,7 @@ export default class Distribution extends Component {
           {a11yDescNode}
           {boxes}
         </svg>
-        <div ref="distributionItems">
+        <div ref="distributionItems" className={`${CLASS_ROOT}__labels`}>
           {labels}
         </div>
         {legend}

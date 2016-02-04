@@ -19,7 +19,8 @@ a,
     color: $link-hover-color;
   }
 
-  &__icon-container {
+  &__icon {
+    display: inline-block;
     padding: halve($inuit-base-spacing-unit);
   }
 

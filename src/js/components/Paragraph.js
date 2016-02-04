@@ -1,26 +1,30 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
+import classnames from 'classnames';
 
-const CLASS_ROOT = "paragraph";
+const CLASS_ROOT = 'paragraph';
 
-export default class Paragraph extends Component {
-
-  render () {
-    var classes = [CLASS_ROOT];
-    if (this.props.size) {
-      classes.push(CLASS_ROOT + "--" + this.props.size);
+const Paragraph = props => {
+  var classes = classnames(
+    CLASS_ROOT,
+    {
+      [`${CLASS_ROOT}--${props.size}`]: props.size
     }
+  );
 
-    return (
-      <p id={this.props.id} className={classes.join(' ')}>
-        {this.props.children}
-      </p>
-    );
-  }
-
-}
+  return (
+    <p id={props.id} className={classes}>
+      {props.children}
+    </p>
+  );
+};
 
 Paragraph.propTypes = {
+  id: PropTypes.string,
   size: PropTypes.oneOf(['small', 'medium', 'large'])
 };
+
+Paragraph.displayName = 'Paragraph';
+
+export default Paragraph;

@@ -1,28 +1,31 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
+import classnames from 'classnames';
 
 const CLASS_ROOT = 'label';
 
-export default class Label extends Component {
-  render() {
-    let classes = [CLASS_ROOT];
-    if (this.props.uppercase) {
-      classes.push(`${CLASS_ROOT}--uppercase`);
+const Label = props => {
+  let classes = classnames(
+    CLASS_ROOT,
+    props.className,
+    {
+      [`${CLASS_ROOT}--uppercase`]: props.uppercase
     }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
+  );
 
-    return (
-      <label className={classes.join(' ')} htmlFor={this.props.labelFor}>
-        {this.props.children}
-      </label>
-    );
-  }
-}
+  return (
+    <label className={classes} htmlFor={props.labelFor}>
+      {props.children}
+    </label>
+  );
+};
 
 Label.propTypes = {
-  uppercase: PropTypes.bool,
-  labelFor: PropTypes.string
+  labelFor: PropTypes.string,
+  uppercase: PropTypes.bool
 };
+
+Label.displayName = 'Label';
+
+export default Label;
