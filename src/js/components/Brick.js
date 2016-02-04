@@ -52,9 +52,23 @@ const Brick = props => {
     );
   }
 
+  let style = {};
+  if (props.texture && 'string' === typeof props.texture) {
+    style.background = "url(" + props.texture + ") no-repeat center center";
+    style.backgroundSize = "cover";
+  } else if (props.backgroundImage) {
+    style.background = "url(" + props.backgroundImage + ") no-repeat center center";
+    style.backgroundSize = "cover";
+  }
+  let texture;
+  if ('object' === typeof props.texture) {
+    texture = <div className={CLASS_ROOT + "__texture"}>{props.texture}</div>;
+  }
+
   return (
-    <div className={classes}>
+    <div className={classes} style={style}>
       <div className={`${CLASS_ROOT}--content-wrapper`}>
+        {texture}
         {props.children}
       </div>
       {label}
@@ -67,6 +81,10 @@ Brick.propTypes = {
   href: PropTypes.string,
   label: PropTypes.string,
   onClick: PropTypes.func,
+  texture: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.string
+  ]),
   type: PropTypes.oneOf([TYPE_SMALL, TYPE_LARGE, TYPE_WIDE, TYPE_TALL])
 };
 
