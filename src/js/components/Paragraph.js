@@ -9,7 +9,8 @@ const Paragraph = props => {
   var classes = classnames(
     CLASS_ROOT,
     {
-      [`${CLASS_ROOT}--${props.size}`]: props.size
+      [`${CLASS_ROOT}--${props.size}`]: props.size,
+      [`${CLASS_ROOT}--align-${props.align}`]: props.align
     }
   );
 
@@ -21,6 +22,7 @@ const Paragraph = props => {
 };
 
 Paragraph.propTypes = {
+  align: PropTypes.oneOf(['start', 'center', 'end']),
   id: PropTypes.string,
   size: PropTypes.oneOf(['small', 'medium', 'large'])
 };
