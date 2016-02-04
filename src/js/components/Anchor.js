@@ -13,8 +13,7 @@ const Anchor = props => {
     let CustomIcon  = iconsMap[props.icon];
     if (! CustomIcon) {
       console.warn(
-        'Warning: Anchor is unable to find the icon with props.icon:',
-        props.icon
+        `Warning: Anchor is unable to find the icon named ${props.icon}`
       );
     } else {
       icon = <CustomIcon />;
@@ -25,7 +24,7 @@ const Anchor = props => {
   }
 
   if (icon && !props.primary) {
-    icon = (<span className={`${CLASS_ROOT}__icon`}>{icon}</span>);
+    icon = <span className={`${CLASS_ROOT}__icon`}>{icon}</span>;
   }
 
   let classes = classnames(
@@ -46,6 +45,10 @@ const Anchor = props => {
     return child;
   });
 
+  if (!children) {
+    children = props.label;
+  }
+
   return (
     <props.tag id={props.id} className={classes}
       href={props.href}
@@ -63,6 +66,7 @@ Anchor.propTypes = {
   disabled: PropTypes.bool,
   href: PropTypes.string,
   id: PropTypes.string,
+  label: PropTypes.node,
   onClick: PropTypes.func,
   primary: PropTypes.bool,
   tag: PropTypes.string,

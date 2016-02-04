@@ -317,11 +317,9 @@ export default class Search extends Component {
 
     if (! this.state.inline) {
       contents = [
-        <Button key="icon" type="icon"
+        <Button key="icon" icon="Search"
           className={CLASS_ROOT + "__drop-control"}
-          onClick={this._onRemoveDrop}>
-          <SearchIcon />
-        </Button>,
+          onClick={this._onRemoveDrop} />,
         <div key="contents" className={CLASS_ROOT + "__drop-contents"}
           onClick={this._onSink}>
           {contents}
@@ -374,13 +372,11 @@ export default class Search extends Component {
         <div ref="control">
           <Button id={this.props.id}
             className={classes.join(' ')}
-            type="icon"
+            icon="Search"
             tabIndex="0"
             onClick={this._onAddDrop}
             onFocus={this._onFocusControl}
-            onBlur={this._onBlurControl}>
-            <SearchIcon />
-          </Button>
+            onBlur={this._onBlurControl} />
         </div>
       );
     }

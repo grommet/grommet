@@ -8,8 +8,6 @@ import keys from 'lodash/object/keys';
 import Box from './Box';
 import Button from './Button';
 import SpinningIcon from './icons/Spinning';
-import LeftIcon from './icons/base/LinkPrevious';
-import RightIcon from './icons/base/LinkNext';
 import Scroll from '../utils/Scroll';
 import InfiniteScroll from '../utils/InfiniteScroll';
 import Selection from '../utils/Selection';
@@ -235,18 +233,14 @@ export default class Tiles extends Component {
       classes.push(CLASS_ROOT + "--overflowed");
       if (! this.state.overflowStart) {
         var left = (
-          <Button className={CLASS_ROOT + "__left"} type="icon"
-            onClick={this._onLeft}>
-            <LeftIcon />
-          </Button>
+          <Button className={CLASS_ROOT + "__left"} icon="LinkPrevious"
+            onClick={this._onLeft} />
         );
       }
       if (! this.state.overflowEnd) {
         var right = (
-          <Button className={CLASS_ROOT + "__right"} type="icon"
-            onClick={this._onRight}>
-            <RightIcon />
-          </Button>
+          <Button className={CLASS_ROOT + "__right"} icon="LinkNext"
+            onClick={this._onRight} />
         );
       }
 

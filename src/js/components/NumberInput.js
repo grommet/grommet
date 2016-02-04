@@ -2,8 +2,6 @@
 
 import React, { Component, PropTypes } from 'react';
 import Button from './Button';
-import AddIcon from './icons/base/Add';
-import SubtractIcon from './icons/base/Subtract';
 
 const CLASS_ROOT = "number-input";
 
@@ -64,11 +62,11 @@ export default class NumberInput extends Component {
           step={this.props.step}
           onChange={this.props.onChange} />
 
-        <Button type="icon" className={CLASS_ROOT + "__subtract"}
-          onClick={onSubtract}><SubtractIcon /></Button>
+        <Button icon="Subtract" className={CLASS_ROOT + "__subtract"}
+          onClick={onSubtract} />
 
-        <Button type="icon" className={CLASS_ROOT + "__add"}
-          onClick={onAdd}><AddIcon /></Button>
+        <Button icon="Add" className={CLASS_ROOT + "__add"}
+          onClick={onAdd} />
       </span>
     );
   }

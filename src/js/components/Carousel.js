@@ -124,7 +124,7 @@ export default class Carousel extends Component {
       prevButton = (
         <Button
           className={CLASS_ROOT + '__arrow ' + CLASS_ROOT + '__arrow--prev'}
-          type="icon" onClick={this._slidePrev}>
+          plain={true} onClick={this._slidePrev}>
           <Previous size="large" />
         </Button>
       );
@@ -140,7 +140,7 @@ export default class Carousel extends Component {
       nextButton = (
         <Button
           className={CLASS_ROOT + '__arrow ' + CLASS_ROOT + '__arrow--next'}
-          type="icon" onClick={this._slideNext}>
+          plain={true} onClick={this._slideNext}>
           <Next size="large" />
         </Button>
       );

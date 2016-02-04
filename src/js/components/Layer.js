@@ -77,7 +77,7 @@ class LayerContents extends Component {
     if (this.props.closer) {
       closer = (
         <div className={CLASS_ROOT + "__closer"}>
-          <Button type="icon" onClick={this.props.onClose}>
+          <Button plain={true} onClick={this.props.onClose}>
             <CloseIcon a11yTitle={this.props.a11yCloserTitle} />
           </Button>
         </div>
