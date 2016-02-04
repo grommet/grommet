@@ -90,6 +90,7 @@
 
   &:hover {
     width: calc(50% - #{halve($inuit-base-spacing-unit) - 2});
+    margin: -1px (halve($inuit-base-spacing-unit) - 1) halve($inuit-base-spacing-unit) -1px;
   }
 
   @include media-query(portable) {
