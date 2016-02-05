@@ -43,7 +43,7 @@ Before opening an issue or pull request, please read the [Contributing](https://
 ### Tools Behind Grommet
 
  Grommet is produced using these great tools
- * [Travis CI](https://travis-ci.org/) for continuous integration
+ * [Travis CI](https://travis-ci.org/grommet/grommet) for continuous integration
  * [Sauce Labs](https://saucelabs.com/) for automated browser testing
  * [BrowserStack](https://www.browserstack.com) for manual browser testing
- * [Waffle.io](https://waffle.io) for backlog tracking
+ * [Waffle.io](https://waffle.io/grommet/grommet) for backlog tracking
