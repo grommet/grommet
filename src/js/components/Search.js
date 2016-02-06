@@ -173,7 +173,7 @@ export default class Search extends Component {
     } else {
       value = document.getElementById('search-drop-input').value;
     }
-    this.props.onDOMChange(value);
+    this.props.onDOMChange(value, event);
   }
 
   _onChangeInput (event) {
@@ -218,7 +218,7 @@ export default class Search extends Component {
       if (this.props.onSelect) {
         this.props.onSelect({
           target: this.refs.input || this.refs.control,
-          suggestion: event.target.value
+          suggestion: suggestion
         }, false);
       }
     }
