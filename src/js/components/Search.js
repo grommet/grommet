@@ -232,7 +232,7 @@ export default class Search extends Component {
     }
     if (this.props.onSelect) {
       this.props.onSelect({
-        target: this.refs.input,
+        target: this.refs.input || this.refs.control,
         suggestion: suggestion
       }, true);
     }
