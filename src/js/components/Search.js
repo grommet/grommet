@@ -165,14 +165,21 @@ export default class Search extends Component {
       'bubbles': true,
       'cancelable': true
     });
-    this.refs.input.dispatchEvent(event);
-    this.props.onDOMChange(event.target.value, event);
+    var target = this.refs.input;
+    var value;
+    if (target) {
+      target.dispatchEvent(event);
+      value = event.target.value;
+    } else {
+      value = document.getElementById('search-drop-input').value;
+    }
+    this.props.onDOMChange(value);
   }
 
   _onChangeInput (event) {
     this.setState({activeSuggestionIndex: -1});
     if (this.props.onChange) {
-      this.props.onChange(event.target.value, false);
+      this.props.onChange(event.target.value);
     }
     if (this.props.onDOMChange) {
       this._fireDOMChange();
@@ -199,7 +206,7 @@ export default class Search extends Component {
       suggestion = this.props.suggestions[this.state.activeSuggestionIndex];
       this.setState({value: suggestion});
       if (this.props.onChange) {
-        this.props.onChange(suggestion, true);
+        this.props.onChange(suggestion);
       }
       if (this.props.onSelect) {
         this.props.onSelect({
@@ -211,7 +218,7 @@ export default class Search extends Component {
       if (this.props.onSelect) {
         this.props.onSelect({
           target: this.refs.input || this.refs.control,
-          suggestion: suggestion
+          suggestion: event.target.value
         }, false);
       }
     }
@@ -221,11 +228,11 @@ export default class Search extends Component {
     this._onRemoveDrop();
 
     if (this.props.onChange) {
-      this.props.onChange(suggestion, true);
+      this.props.onChange(suggestion);
     }
     if (this.props.onSelect) {
       this.props.onSelect({
-        target: this.refs.input || this.refs.control,
+        target: this.refs.input,
         suggestion: suggestion
       }, true);
     }
