@@ -375,7 +375,7 @@ export default class Meter extends Component {
 
     let legend;
     let a11yRole;
-    if (this.props.legend || this.props.type === 'spiral') {
+    if (this.props.legend || this.props.series) {
       a11yRole = 'tablist';
 
       if (this.props.legend) {
