@@ -71,8 +71,13 @@
   }
 
   &--large {
-    width: round($inuit-base-spacing-unit * 2);
-    height: round($inuit-base-spacing-unit * 2);
+    width: double($inuit-base-spacing-unit);
+    height: double($inuit-base-spacing-unit);
+  }
+
+  &--huge {
+    width: $inuit-base-spacing-unit * 12;
+    height: $inuit-base-spacing-unit * 12;
   }
 }
 
@@ -115,6 +120,11 @@
   &--large {
     width: double($inuit-base-spacing-unit);
     height: double($inuit-base-spacing-unit);
+  }
+
+  &--huge {
+    width: $inuit-base-spacing-unit * 12;
+    height: $inuit-base-spacing-unit * 12;
   }
 
   &--small {
@@ -170,6 +180,11 @@
   &--large {
     width: quadruple($inuit-base-spacing-unit);
     height: quadruple($inuit-base-spacing-unit);
+  }
+
+  &--huge {
+    width: $inuit-base-spacing-unit * 12;
+    height: $inuit-base-spacing-unit * 12;
   }
 }
 
