@@ -33,12 +33,13 @@
     cursor: pointer;
 
     &:hover {
+      z-index: 1;
       box-shadow: 0px 0px 0px 2px $brand-color;
     }
   }
 
   @each $status, $color in $brand-status-colors {
-    &--#{$status} {
+    &--status-#{$status} {
       // background-color comes from background-color-index
 
       .notification__status {

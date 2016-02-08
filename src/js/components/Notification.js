@@ -13,7 +13,7 @@ let CLASS_ROOT = 'notification';
 const Notification = (props, context) => {
   let classes = classnames(
     CLASS_ROOT,
-    `${CLASS_ROOT}--${props.status.toLowerCase()}`,
+    `${CLASS_ROOT}--status-${props.status.toLowerCase()}`,
     `background-color-index-${props.status.toLowerCase()}`,
     props.className,
     {
@@ -82,6 +82,7 @@ const Notification = (props, context) => {
         <span className={`${CLASS_ROOT}__message`}>
           {props.message}
         </span>
+        {props.context}
         {timestamp}
         {state}
         {progress}
@@ -92,6 +93,7 @@ const Notification = (props, context) => {
 };
 
 Notification.propTypes = {
+  context: PropTypes.node,
   message: PropTypes.string.isRequired,
   percentComplete: PropTypes.number,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
