@@ -6,6 +6,10 @@ a,
   text-decoration: $brand-link-text-decoration;
   cursor: pointer;
 
+  &.plain {
+    text-decoration: none;
+  }
+
   &:visited {
     color: $link-color;
   }
@@ -15,8 +19,11 @@ a,
   }
 
   &:hover:not(.anchor--disabled) {
-    text-decoration: underline;
     color: $link-hover-color;
+
+    &:not(.plain) {
+      text-decoration: underline;
+    }
   }
 
   &__icon {
