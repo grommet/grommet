@@ -41,7 +41,7 @@ var CLASS_ROOT = 'notification';
 var Notification = function Notification(props, context) {
   var _classnames;
 
-  var classes = (0, _classnames3.default)(CLASS_ROOT, CLASS_ROOT + '--' + props.status.toLowerCase(), 'background-color-index-' + props.status.toLowerCase(), props.className, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--' + props.size, props.size), _defineProperty(_classnames, CLASS_ROOT + '--disabled', !props.onClick), _classnames));
+  var classes = (0, _classnames3.default)(CLASS_ROOT, CLASS_ROOT + '--status-' + props.status.toLowerCase(), 'background-color-index-' + props.status.toLowerCase(), props.className, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--' + props.size, props.size), _defineProperty(_classnames, CLASS_ROOT + '--disabled', !props.onClick), _classnames));
 
   var status = undefined;
   if (props.status) {
@@ -104,6 +104,7 @@ var Notification = function Notification(props, context) {
         { className: CLASS_ROOT + '__message' },
         props.message
       ),
+      props.context,
       timestamp,
       state,
       progress,
@@ -113,6 +114,7 @@ var Notification = function Notification(props, context) {
 };
 
 Notification.propTypes = _extends({
+  context: _react.PropTypes.node,
   message: _react.PropTypes.string.isRequired,
   percentComplete: _react.PropTypes.number,
   size: _react.PropTypes.oneOf(['small', 'medium', 'large']),

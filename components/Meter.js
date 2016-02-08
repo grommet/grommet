@@ -444,7 +444,7 @@ var Meter = function (_Component) {
 
       var legend = undefined;
       var a11yRole = undefined;
-      if (this.props.legend || this.props.type === 'spiral') {
+      if (this.props.legend || this.props.series) {
         a11yRole = 'tablist';
 
         if (this.props.legend) {
