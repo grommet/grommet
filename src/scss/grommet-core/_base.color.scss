@@ -59,7 +59,7 @@ $button-accent-color: nth($brand-accent-colors, 1) !default;
 $button-drop-shadow-color: rgba(170, 170, 170, 0.5) !default;
 
 $hover-background-color: rgba(0, 0, 0, 0.1);
-$layer-overlay-background-color: rgba(128, 128, 128, 0.6); ///rgba(255, 255, 255, 0.95); //rgba(0, 0, 0, 0.6);
+$layer-overlay-background-color: rgba(0, 0, 0, 0.5);
 $layer-background-color: #fff !default; // rgba($background-color, 0.95); ///inherit; //rgba(255, 255, 255, 0.95);
 $layer-border: none !default; // 1px solid $brand-color;
 $layer-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3) !default;

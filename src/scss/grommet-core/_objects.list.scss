@@ -20,17 +20,11 @@
   }
 
   .list-item {
-    // padding-left: $inuit-base-spacing-unit;
-    // padding-right: $inuit-base-spacing-unit;
-    // padding-top: halve($inuit-base-spacing-unit);
-    // padding-bottom: halve($inuit-base-spacing-unit);
-    // border-bottom: 1px solid $border-color;
-    // display: flex;
     max-width: none;
 
-    // &:last-child {
-    //   border-bottom: none;
-    // }
+    &:focus {
+      outline: $focus-border-color solid 1px;
+    }
 
     &__image {
       height: $inuit-base-spacing-unit;
@@ -102,9 +96,6 @@
   &--small {
     .list-item,
     .list__more {
-      // padding-top: quarter($inuit-base-spacing-unit);
-      // padding-bottom: quarter($inuit-base-spacing-unit);
-
       &__image {
         height: halve($inuit-base-spacing-unit);
         width: halve($inuit-base-spacing-unit);
@@ -115,9 +106,6 @@
   &--large {
     .list-item,
     .list__more {
-      // padding-top: $inuit-base-spacing-unit;
-      // padding-bottom: $inuit-base-spacing-unit;
-
       &__image {
         height: double($inuit-base-spacing-unit);
         width: double($inuit-base-spacing-unit);

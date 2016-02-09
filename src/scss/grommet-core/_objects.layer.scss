@@ -10,6 +10,7 @@
     left: 0px;
     right: 0px;
     bottom: 0px;
+    background-color: $layer-overlay-background-color;
   }
 
   @include media-query(palm) {
@@ -61,8 +62,6 @@
     &-center:not(.layer--hidden) {
 
       @include media-query(lap-and-up) {
-        background-image: radial-gradient(circle at top, $layer-background-color, $layer-background-color 20%, $layer-overlay-background-color);
-
         .layer__container {
           left: 50%;
           top: 50%;
@@ -74,10 +73,6 @@
     }
 
     &-left:not(.layer--hidden) {
-      @include media-query(lap-and-up) {
-        background-image: radial-gradient(circle at left, $layer-background-color, $layer-background-color 20%, $layer-overlay-background-color);
-      }
-
       .layer__container {
         top: 0px;
         bottom: 0px;
@@ -92,10 +87,6 @@
       }
 
       html.rtl & {
-        @include media-query(lap-and-up) {
-          background-image: radial-gradient(circle at right, $layer-background-color, $layer-background-color 20%, $layer-overlay-background-color);
-        }
-
         .layer__container {
           left: auto;
           right: 0px;
@@ -108,10 +99,6 @@
     }
 
     &-right:not(.layer--hidden) {
-      @include media-query(lap-and-up) {
-        background-image: radial-gradient(circle at right, $layer-background-color, $layer-background-color 20%, $layer-overlay-background-color);
-      }
-
       .layer__container {
         top: 0px;
         bottom: 0px;
@@ -126,10 +113,6 @@
       }
 
       html.rtl & {
-        @include media-query(lap-and-up) {
-          background-image: radial-gradient(circle at left, $layer-background-color, $layer-background-color 20%, $layer-overlay-background-color);
-        }
-
         .layer__container {
           right: auto;
           left: 0px;
@@ -143,8 +126,6 @@
 
     &-top:not(.layer--hidden) {
       @include media-query(lap-and-up) {
-        background-image: radial-gradient(circle at top, $layer-background-color, $layer-background-color 20%, $layer-overlay-background-color);
-
         .layer__container {
           left: 50%;
           transform: translateX(-50%);
@@ -157,10 +138,6 @@
     }
 
     &-bottom:not(.layer--hidden) {
-      @include media-query(lap-and-up) {
-        background-image: radial-gradient(circle at bottom, $layer-background-color, $layer-background-color 20%, $layer-overlay-background-color);
-      }
-
       .layer__container {
         bottom: 0px;
       }
@@ -169,7 +146,8 @@
 
   &--hidden {
 
-    left: -10000px;
+    left: -100vw;
+    right: 100vw;
     z-index: -1;
 
     &.layer--align {
