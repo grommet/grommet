@@ -165,15 +165,10 @@ export default class Search extends Component {
       'bubbles': true,
       'cancelable': true
     });
-    var target = this.refs.input;
-    var value;
-    if (target) {
-      target.dispatchEvent(event);
-      value = event.target.value;
-    } else {
-      value = document.getElementById('search-drop-input').value;
-    }
-    this.props.onDOMChange(value, event);
+    var controlInput = document.getElementById('search-drop-input');
+    var target = this.refs.input || controlInput;
+    target.dispatchEvent(event);
+    this.props.onDOMChange(event);
   }
 
   _onChangeInput (event) {
