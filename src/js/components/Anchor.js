@@ -23,7 +23,7 @@ const Anchor = props => {
     icon = <LinkNextIcon />;
   }
 
-  if (icon && !props.primary) {
+  if (icon && !props.primary && !props.label) {
     icon = <span className={`${CLASS_ROOT}__icon`}>{icon}</span>;
   }
 
@@ -33,7 +33,8 @@ const Anchor = props => {
     {
       [`${CLASS_ROOT}--disabled`]: props.disabled,
       [`${CLASS_ROOT}--icon`]: icon,
-      [`${CLASS_ROOT}--primary`]: props.primary
+      [`${CLASS_ROOT}--primary`]: props.primary,
+      [`${CLASS_ROOT}--icon-label`]: icon && props.label
     }
   );
 
