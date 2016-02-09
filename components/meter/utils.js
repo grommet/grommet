@@ -57,6 +57,10 @@ exports.default = {
   polarToCartesian: polarToCartesian,
 
   arcCommands: function arcCommands(centerX, centerY, radius, startAngle, endAngle) {
+    // handle that we can't draw a complete circle
+    if (endAngle - startAngle >= 360) {
+      endAngle = startAngle + 359.99;
+    }
     var start = polarToCartesian(centerX, centerY, radius, endAngle);
     var end = polarToCartesian(centerX, centerY, radius, startAngle);
     var arcSweep = endAngle - startAngle <= 180 ? "0" : "1";

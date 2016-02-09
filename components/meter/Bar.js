@@ -90,7 +90,7 @@ var Bar = function (_Graphic) {
     value: function _sliceCommands(trackIndex, item, startValue) {
       var value = item.value - this.props.min.value;
       var start = this._translateBarWidth(startValue);
-      var distance = Math.max(MID_BAR_THICKNESS, this._translateBarWidth(value));
+      var distance = Math.max(item.value > 0 ? MID_BAR_THICKNESS : 0, this._translateBarWidth(value));
       var commands = undefined;
       if (this.props.legend && 'inline' === this.props.legend.placement) {
         trackIndex *= 2;
