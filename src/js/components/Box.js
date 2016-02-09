@@ -90,7 +90,8 @@ export default class Box extends Component {
 
     let style = {};
     if (this.props.texture && 'string' === typeof this.props.texture) {
-      style.backgroundImage = this.props.texture;
+      style.background = this.props.texture + " no-repeat " + this.props.texturePosition;
+      style.backgroundSize = "cover";
     } else if (this.props.backgroundImage) {
       style.background = this.props.backgroundImage + " no-repeat center center";
       style.backgroundSize = "cover";
@@ -163,6 +164,7 @@ Box.propTypes = {
     PropTypes.node,
     PropTypes.string
   ]),
+  texturePosition: PropTypes.string,
   wrap: PropTypes.bool
 };
 
@@ -175,5 +177,6 @@ Box.defaultProps = {
   direction: 'column',
   pad: 'none',
   tag: 'div',
+  texturePosition: 'center top',
   responsive: true
 };
