@@ -34,7 +34,7 @@ const Anchor = props => {
       [`${CLASS_ROOT}--disabled`]: props.disabled,
       [`${CLASS_ROOT}--icon`]: icon,
       [`${CLASS_ROOT}--primary`]: props.primary,
-      [`${CLASS_ROOT}--icon-label`]: icon && props.label
+      [`${CLASS_ROOT}--icon-label`]: icon && props.label && !props.primary
     }
   );
 
