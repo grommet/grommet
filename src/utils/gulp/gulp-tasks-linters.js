@@ -9,7 +9,7 @@ function scssLintExists() {
 
 module.exports = function(gulp, options) {
 
-  var scssLintPath = path.resolve(__dirname, 'scss-lint.yml');
+  var scssLintPath = options.scssLintPath || path.resolve(__dirname, 'scss-lint.yml');
   var esLintPath = path.resolve(__dirname, 'eslintrc');
   var customEslint = options.customEslintPath ?
     require(options.customEslintPath) : {};
