@@ -68,10 +68,13 @@
   }
 
   &--large {
-    .footer__content {
-      padding-top: $inuit-base-spacing-unit;
-      padding-bottom: $inuit-base-spacing-unit;
-    }
+    min-height: $large-footer-height;
+    line-height: $large-footer-height;
+  }
+
+  &--small {
+    min-height: $small-footer-height;
+    line-height: $small-footer-height;
   }
 
   &__container {

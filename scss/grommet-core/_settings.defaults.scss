@@ -6,6 +6,8 @@ $header-height: round($inuit-base-spacing-unit * 3) !default;
 $large-header-height: round($inuit-base-spacing-unit * 4) !default;
 $small-header-height: round($inuit-base-spacing-unit * 2) !default;
 $footer-height: round($inuit-base-spacing-unit * 1.5) !default;
+$small-footer-height: round($inuit-base-spacing-unit) !default;
+$large-footer-height: round($inuit-base-spacing-unit * 4) !default;
 $sparkline-height: $inuit-base-spacing-unit !default; // 24px
 
 $center-column-width: round($inuit-base-spacing-unit * 40) !default; // 960px;

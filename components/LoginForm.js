@@ -30,6 +30,10 @@ var _Button = require('./Button');
 
 var _Button2 = _interopRequireDefault(_Button);
 
+var _Footer = require('./Footer');
+
+var _Footer2 = _interopRequireDefault(_Footer);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -83,7 +87,7 @@ var LoginForm = function (_Component) {
         if (error) {
           errorComponent = _react2.default.createElement(
             'div',
-            { key: index, className: CLASS_ROOT + '__error' },
+            { key: index, className: CLASS_ROOT + '__error error' },
             _react2.default.createElement(_FormattedMessage2.default, { id: error, defaultMessage: error })
           );
         }
@@ -116,7 +120,7 @@ var LoginForm = function (_Component) {
       if (this.props.secondaryText) {
         secondaryText = _react2.default.createElement(
           'p',
-          { className: CLASS_ROOT + '__secondary-text' },
+          { className: CLASS_ROOT + '__secondary-text secondary' },
           this.props.secondaryText
         );
       }
@@ -133,11 +137,11 @@ var LoginForm = function (_Component) {
           ref: 'rememberMe' });
       }
 
-      var footer = undefined;
+      var forgot = undefined;
       if (this.props.forgotPassword) {
-        footer = _react2.default.createElement(
+        forgot = _react2.default.createElement(
           'div',
-          { className: CLASS_ROOT + '__footer' },
+          { className: CLASS_ROOT + '__forgot' },
           this.props.forgotPassword
         );
       }
@@ -154,9 +158,13 @@ var LoginForm = function (_Component) {
       return _react2.default.createElement(
         _Form2.default,
         { className: classes.join(' '), onSubmit: this._onSubmit },
-        logo,
-        title,
-        secondaryText,
+        _react2.default.createElement(
+          'div',
+          { className: CLASS_ROOT + '__header' },
+          logo,
+          title,
+          secondaryText
+        ),
         _react2.default.createElement(
           'fieldset',
           null,
@@ -170,14 +178,19 @@ var LoginForm = function (_Component) {
             _FormField2.default,
             { htmlFor: 'password', label: password },
             _react2.default.createElement('input', { id: 'password', ref: 'password', type: 'password' })
-          )
+          ),
+          errors
         ),
-        errors,
-        rememberMe,
-        _react2.default.createElement(_Button2.default, { id: CLASS_ROOT + '__submit', primary: true, strong: true,
-          className: CLASS_ROOT + '__submit', type: 'submit', label: login,
-          onClick: this.props.onSubmit ? this._onSubmit : null }),
-        footer
+        _react2.default.createElement(
+          _Footer2.default,
+          { align: this.props.align, size: 'small', direction: 'column',
+            pad: { vertical: 'medium', between: 'medium' } },
+          rememberMe,
+          _react2.default.createElement(_Button2.default, { id: CLASS_ROOT + '__submit', primary: true, strong: true,
+            className: CLASS_ROOT + '__submit', type: 'submit', label: login,
+            onClick: this.props.onSubmit ? this._onSubmit : null }),
+          forgot
+        )
       );
     }
   }]);
