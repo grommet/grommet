@@ -3,6 +3,8 @@
 .layer {
   position: relative;
   z-index: 10; // stay above app header
+  background-color: $layer-overlay-background-color;
+  height: 100vh;
 
   @include media-query(lap-and-up) {
     position: fixed;
@@ -10,7 +12,6 @@
     left: 0px;
     right: 0px;
     bottom: 0px;
-    background-color: $layer-overlay-background-color;
   }
 
   @include media-query(palm) {
@@ -24,8 +25,6 @@
 
     @include media-query(palm) {
       padding: 0 $inuit-base-spacing-unit;
-      border-bottom: 1px solid $border-color;
-      box-shadow: $layer-box-shadow;
     }
 
     @include media-query(lap-and-up) {
