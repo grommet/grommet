@@ -74,6 +74,9 @@ var LoginForm = function (_Component) {
     key: 'render',
     value: function render() {
       var classes = [CLASS_ROOT];
+      if (this.props.align) {
+        classes.push(CLASS_ROOT + '--align-' + this.props.align);
+      }
 
       var errors = this.props.errors.map(function (error, index) {
         var errorComponent = undefined;
@@ -185,6 +188,7 @@ var LoginForm = function (_Component) {
 exports.default = LoginForm;
 
 LoginForm.propTypes = {
+  align: _react.PropTypes.oneOf(['start', 'center', 'end', 'stretch']),
   defaultValues: _react.PropTypes.shape({
     username: _react.PropTypes.string,
     rememberMe: _react.PropTypes.bool
