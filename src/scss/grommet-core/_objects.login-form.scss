@@ -54,4 +54,30 @@
     // align line height with .form-field
     line-height: $inuit-base-spacing-unit + halve($inuit-base-spacing-unit);
   }
+
+  &--align {
+    &-start {
+      text-align: left;
+
+      html.rtl & {
+        text-align: right;
+      }
+
+      .login-form__submit {
+        width: auto;
+      }
+    }
+
+    &-end {
+      text-align: right;
+
+      html.rtl & {
+        text-align: left;
+      }
+
+      .login-form__submit {
+        width: auto;
+      }
+    }
+  }
 }

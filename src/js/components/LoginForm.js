@@ -35,6 +35,9 @@ export default class LoginForm extends Component {
 
   render () {
     let classes = [CLASS_ROOT];
+    if (this.props.align) {
+      classes.push(`${CLASS_ROOT}--align-${this.props.align}`);
+    }
 
     let errors = this.props.errors.map(function (error, index) {
       let errorComponent = undefined;
@@ -136,6 +139,7 @@ export default class LoginForm extends Component {
 }
 
 LoginForm.propTypes = {
+  align: PropTypes.oneOf(['start', 'center', 'end', 'stretch']),
   defaultValues: PropTypes.shape({
     username: PropTypes.string,
     rememberMe: PropTypes.bool
