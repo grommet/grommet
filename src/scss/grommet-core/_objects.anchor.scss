@@ -59,8 +59,9 @@ a,
         }
       }
     }
-    
-    &--primary, &--icon-label {
+
+    &--primary,
+    &--icon-label {
       @include inuit-font-size($control-font-size, $inuit-base-spacing-unit);
       font-weight: 600;
       color: $control-brand-color;
