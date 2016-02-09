@@ -3,6 +3,10 @@
 .notification {
   @include inuit-font-size($control-font-size, $inuit-base-spacing-unit);
 
+  &:focus {
+    outline: $focus-border-color solid 1px;
+  }
+
   &__message {
     @include inuit-font-size($control-large-font-size, $inuit-base-spacing-unit);
 
