@@ -59,7 +59,8 @@ export default class Bar extends Graphic {
   _sliceCommands (trackIndex, item, startValue) {
     const value = item.value - this.props.min.value;
     const start = this._translateBarWidth(startValue);
-    const distance = Math.max(MID_BAR_THICKNESS, this._translateBarWidth(value));
+    const distance = Math.max((item.value > 0 ? MID_BAR_THICKNESS : 0),
+      this._translateBarWidth(value));
     let commands;
     if (this.props.legend && 'inline' === this.props.legend.placement) {
       trackIndex *= 2;
