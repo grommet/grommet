@@ -210,15 +210,17 @@ var Search = function (_Component) {
         'bubbles': true,
         'cancelable': true
       });
-      this.refs.input.dispatchEvent(event);
-      this.props.onDOMChange(event.target.value, event);
+      var controlInput = document.getElementById('search-drop-input');
+      var target = this.refs.input || controlInput;
+      target.dispatchEvent(event);
+      this.props.onDOMChange(event);
     }
   }, {
     key: '_onChangeInput',
     value: function _onChangeInput(event) {
       this.setState({ activeSuggestionIndex: -1 });
       if (this.props.onChange) {
-        this.props.onChange(event.target.value, false);
+        this.props.onChange(event.target.value);
       }
       if (this.props.onDOMChange) {
         this._fireDOMChange();
@@ -248,7 +250,7 @@ var Search = function (_Component) {
         suggestion = this.props.suggestions[this.state.activeSuggestionIndex];
         this.setState({ value: suggestion });
         if (this.props.onChange) {
-          this.props.onChange(suggestion, true);
+          this.props.onChange(suggestion);
         }
         if (this.props.onSelect) {
           this.props.onSelect({
@@ -271,7 +273,7 @@ var Search = function (_Component) {
       this._onRemoveDrop();
 
       if (this.props.onChange) {
-        this.props.onChange(suggestion, true);
+        this.props.onChange(suggestion);
       }
       if (this.props.onSelect) {
         this.props.onSelect({
