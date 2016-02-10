@@ -232,23 +232,23 @@
       border-right: 1px solid $border-color;
     }
 
-    @include media-query(palm) {
-      &-left,
-      &-vertical,
-      &-all {
-        border-left: none;
-        border-bottom: 1px solid $border-color;
-        //padding-top: $inuit-base-spacing-unit;
-      }
-
-      &-right,
-      &-vertical,
-      &-all {
-        border-right: none;
-        border-bottom: 1px solid $border-color;
-        //padding-top: $inuit-base-spacing-unit;
-      }
-    }
+    // @include media-query(palm) {
+    //   &-left,
+    //   &-vertical,
+    //   &-all {
+    //     // border-left: none;
+    //     // border-bottom: 1px solid $border-color;
+    //     //padding-top: $inuit-base-spacing-unit;
+    //   }
+    //
+    //   &-right,
+    //   &-vertical,
+    //   &-all {
+    //     // border-right: none;
+    //     // border-bottom: 1px solid $border-color;
+    //     //padding-top: $inuit-base-spacing-unit;
+    //   }
+    // }
   }
 
   [class*="background-color-index-"] &[class*="box--separator"] {
