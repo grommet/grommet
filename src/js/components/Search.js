@@ -399,12 +399,15 @@ Search.propTypes = {
   placeHolder: PropTypes.string,
   responsive: PropTypes.bool,
   size: React.PropTypes.oneOf(['small', 'medium', 'large']),
-  suggestions: PropTypes.arrayOf(PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.shape({
-      label: PropTypes.string.isRequired
-    })
-  ])),
+  suggestions: PropTypes.arrayOf(
+    PropTypes.oneOfType([
+      PropTypes.shape({
+        label: PropTypes.node,
+        value: PropTypes.any
+      }),
+      PropTypes.string
+    ])
+  ),
   value: PropTypes.string
 };
 
