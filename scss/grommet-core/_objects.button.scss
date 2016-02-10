@@ -128,3 +128,11 @@ button:not(.button) {
     flex-grow: 1;
   }
 }
+
+a.button {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
