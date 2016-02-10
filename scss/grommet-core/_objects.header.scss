@@ -1,16 +1,16 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 .header {
-  height: $header-height;
+  min-height: $header-height;
   width: 100%;
   margin-bottom: 0px;
 
   &--large {
-    height: $large-header-height;
+    min-height: $large-header-height;
   }
 
   &--small {
-    height: $small-header-height;
+    min-height: $small-header-height;
   }
 
   &.box {
@@ -31,12 +31,6 @@
   .status-icon {
     flex-grow: 0;
     flex-shrink: 0;
-  }
-
-  > span {
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
   }
 }
 
