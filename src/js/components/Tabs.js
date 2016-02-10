@@ -14,8 +14,25 @@ export default class Tabs extends Component {
     this._activateTab = this._activateTab.bind(this);
 
     this.state = {
-      activeIndex: props.initialIndex
+      activeIndex: props.initialIndex,
+      justify: props.justify
     };
+  }
+
+  _addPropertyClass (classes, prefix, property, classProperty) {
+    var choice = this.props[property];
+    var propertyPrefix = classProperty || property;
+    if (choice) {
+      if (typeof choice === 'string') {
+        classes.push(prefix + '--' + propertyPrefix + '-' + choice);
+      } else if (typeof choice === 'object') {
+        keys(choice).forEach(function (key) {
+          classes.push(prefix + '--' + propertyPrefix + '-' + key + '-' + choice[key]);
+        });
+      } else {
+        classes.push(prefix + '--' + propertyPrefix);
+      }
+    }
   }
 
   _activateTab (index) {
@@ -24,6 +41,7 @@ export default class Tabs extends Component {
 
   render () {
     var classes = [CLASS_ROOT];
+    this._addPropertyClass(classes, CLASS_ROOT, 'justify');
 
     var activeContainer;
     var activeTitle;
@@ -52,6 +70,17 @@ export default class Tabs extends Component {
       activeTitle: activeTitle
     });
 
+    var tabsContentPad;
+    // assign appropriate pad for tabs__content based on justify prop
+    if (this.props.justify === 'start') {
+      tabsContentPad = {
+        horizontal: 'none',
+        vertical: 'medium'
+      };
+    } else {
+      tabsContentPad = 'medium';
+    }
+
     // TODO: Since there could be multiple Tabs on the page, we need a more
     // robust means of identifying the association between title and aria label.
     return (
@@ -62,7 +91,7 @@ export default class Tabs extends Component {
         <div ref="tabContent" tabIndex="0" aria-label={tabContentTitle}
           role="tabpanel">
           <Box className={CLASS_ROOT + '__content'}
-            aria-label={tabContentTitle}>
+            aria-label={tabContentTitle} pad={tabsContentPad}>
             {activeContainer}
           </Box>
         </div>
@@ -72,7 +101,8 @@ export default class Tabs extends Component {
 }
 
 Tabs.propTypes = {
-  activeIndex: PropTypes.number
+  activeIndex: PropTypes.number,
+  justify: PropTypes.oneOf(['start', 'center'])
 };
 
 Tabs.contextTypes = {
@@ -80,5 +110,6 @@ Tabs.contextTypes = {
 };
 
 Tabs.defaultProps = {
-  initialIndex: 0
+  initialIndex: 0,
+  justify: 'center'
 };

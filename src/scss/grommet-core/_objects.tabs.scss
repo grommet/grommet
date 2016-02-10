@@ -5,16 +5,25 @@
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   align-items: center;
   list-style: none;
   border-bottom: 1px solid $border-color;
 
   &__content {
-    padding: $inuit-base-spacing-unit;
-
     @include media-query(palm) {
       padding: $inuit-base-spacing-unit 0;
+    }
+  }
+
+  &--justify-center {
+    justify-content: center;
+  }
+
+  &--justify-start {
+    justify-content: flex-start;
+
+    @include media-query(portable) {
+      justify-content: center;
     }
   }
 }

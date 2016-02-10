@@ -4,6 +4,14 @@
 
   padding: halve($inuit-base-spacing-unit);
 
+  .tabs--justify-start &:first-of-type {
+      padding-left: 0;
+
+      @include media-query(portable) {
+        padding-left: auto;
+      }
+    }
+
   a {
     text-decoration: none;
 
