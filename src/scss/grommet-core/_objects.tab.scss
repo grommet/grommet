@@ -42,15 +42,14 @@
   &__label {
     cursor: pointer;
     padding-bottom: halve($inuit-base-spacing-unit);
-    font-weight: 600;
     color: $secondary-text-color;
   }
 
   &--active {
-
     .tab__label {
       color: #000;
       border-bottom: 4px solid #000;
+      font-weight: 600;
     }
   }
 
