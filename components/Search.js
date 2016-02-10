@@ -456,9 +456,10 @@ Search.propTypes = {
   placeHolder: _react.PropTypes.string,
   responsive: _react.PropTypes.bool,
   size: _react2.default.PropTypes.oneOf(['small', 'medium', 'large']),
-  suggestions: _react.PropTypes.arrayOf(_react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.shape({
-    label: _react.PropTypes.string.isRequired
-  })])),
+  suggestions: _react.PropTypes.arrayOf(_react.PropTypes.oneOfType([_react.PropTypes.shape({
+    label: _react.PropTypes.node,
+    value: _react.PropTypes.any
+  }), _react.PropTypes.string])),
   value: _react.PropTypes.string
 };
 
