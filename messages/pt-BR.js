@@ -36,6 +36,7 @@ exports.default = {
   filter: 'filtro',
   Footer: 'Rodapé',
   'Grommet Logo': 'Gromment Logomarca',
+  'Layer': 'Modal',
   'link-next': 'link-next',
   'link-previous': 'link-previous',
   'Loading': 'Carregando',

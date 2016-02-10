@@ -32,6 +32,10 @@ var _Button = require('./Button');
 
 var _Button2 = _interopRequireDefault(_Button);
 
+var _Intl = require('../utils/Intl');
+
+var _Intl2 = _interopRequireDefault(_Intl);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -81,6 +85,10 @@ var LayerContents = function (_Component) {
         };
         _KeyboardAccelerators2.default.startListeningToKeyboard(this, this._keyboardHandlers);
       }
+
+      if (this.props.a11yCloserTitle) {
+        console.log('a11yCloserTitle prop has been deprecated. Please use a11yTitle instead.');
+      }
     }
   }, {
     key: 'componentWillUnmount',
@@ -114,13 +122,18 @@ var LayerContents = function (_Component) {
     value: function render() {
       var closer = null;
       if (this.props.closer) {
+        //TODO: remove a11yCloserTitle after 0.6 release
+        var closeLabel = _Intl2.default.getMessage(this.context.intl, 'Close');
+        var layerLabel = _Intl2.default.getMessage(this.context.intl, 'Layer');
+        var a11yTitle = this.props.a11yCloserTitle || closeLabel + ' ' + (this.props.a11yTitle || '') + ' ' + layerLabel;
+
         closer = _react2.default.createElement(
           'div',
           { className: CLASS_ROOT + "__closer" },
           _react2.default.createElement(
             _Button2.default,
             { plain: true, onClick: this.props.onClose },
-            _react2.default.createElement(_Close2.default, { a11yTitle: this.props.a11yCloserTitle })
+            _react2.default.createElement(_Close2.default, { a11yTitle: a11yTitle })
           )
         );
       }
@@ -138,12 +151,14 @@ var LayerContents = function (_Component) {
 }(_react.Component);
 
 LayerContents.propTypes = {
+  //deprecated
+  a11yCloserTitle: _react.PropTypes.string,
+  a11yTitle: _react.PropTypes.string,
   closer: _react.PropTypes.oneOfType([_react.PropTypes.node, _react.PropTypes.bool]),
-  onClose: _react.PropTypes.func,
   history: _react.PropTypes.object,
-  router: _react.PropTypes.any,
   intl: _react.PropTypes.object,
-  a11yCloserTitle: _react.PropTypes.string
+  onClose: _react.PropTypes.func,
+  router: _react.PropTypes.any
 };
 
 // Because Layer creates a new DOM render context, the context
