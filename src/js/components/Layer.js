@@ -6,6 +6,7 @@ import CloseIcon from './icons/base/Close';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 import DOMUtils from '../utils/DOM';
 import Button from './Button';
+import Intl from '../utils/Intl';
 
 const CLASS_ROOT = "layer";
 
@@ -43,6 +44,10 @@ class LayerContents extends Component {
         this, this._keyboardHandlers
       );
     }
+
+    if (this.props.a11yCloserTitle) {
+      console.log('a11yCloserTitle prop has been deprecated. Please use a11yTitle instead.');
+    }
   }
 
   componentWillUnmount () {
@@ -75,10 +80,17 @@ class LayerContents extends Component {
   render () {
     var closer = null;
     if (this.props.closer) {
+      //TODO: remove a11yCloserTitle after 0.6 release
+      let closeLabel = Intl.getMessage(this.context.intl, 'Close');
+      let layerLabel = Intl.getMessage(this.context.intl, 'Layer');
+      let a11yTitle = this.props.a11yCloserTitle || (
+        `${closeLabel} ${this.props.a11yTitle || ''} ${layerLabel}`
+      );
+
       closer = (
         <div className={CLASS_ROOT + "__closer"}>
           <Button plain={true} onClick={this.props.onClose}>
-            <CloseIcon a11yTitle={this.props.a11yCloserTitle} />
+            <CloseIcon a11yTitle={a11yTitle} />
           </Button>
         </div>
       );
@@ -94,15 +106,17 @@ class LayerContents extends Component {
 }
 
 LayerContents.propTypes = {
+  //deprecated
+  a11yCloserTitle: PropTypes.string,
+  a11yTitle: PropTypes.string,
   closer: PropTypes.oneOfType([
     PropTypes.node,
     PropTypes.bool
   ]),
-  onClose: PropTypes.func,
   history: PropTypes.object,
-  router: PropTypes.any,
   intl: PropTypes.object,
-  a11yCloserTitle: PropTypes.string
+  onClose: PropTypes.func,
+  router: PropTypes.any
 };
 
 // Because Layer creates a new DOM render context, the context
