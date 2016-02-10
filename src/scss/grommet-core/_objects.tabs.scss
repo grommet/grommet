@@ -20,17 +20,18 @@
 
     &-start {
       justify-content: flex-start;
-
-      @include media-query(palm) {
-        flex-direction: column;
-      }
     }
-    
+
     &-end {
       justify-content: flex-end;
+    }
 
-      @include media-query(palm) {
-        flex-direction: column;
+    &-start,
+    &-end {
+      &.tabs--responsive {
+        @include media-query(palm) {
+          flex-direction: column;
+        }
       }
     }
   }
