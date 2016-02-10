@@ -6,21 +6,21 @@
 
   .tabs--justify-start &:first-of-type,
   .tabs--justify-end &:first-of-type {
-      padding-left: 0;
-
-      @include media-query(portable) {
-        padding-left: auto;
-      }
-    }
+    padding-left: 0;
+  }
 
   .tabs--justify-start &:last-of-type,
   .tabs--justify-end &:last-of-type {
-      padding-right: 0;
+    padding-right: 0;
+  }
 
-      @include media-query(portable) {
-        padding-right: auto;
-      }
+  .tabs--responsive &:first-of-type,
+  .tabs--responsive &:last-of-type {
+    @include media-query(palm) {
+      padding-left: halve($inuit-base-spacing-unit);
+      padding-right: halve($inuit-base-spacing-unit);
     }
+  }
 
   a {
     text-decoration: none;

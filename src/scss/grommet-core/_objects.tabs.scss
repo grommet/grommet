@@ -10,28 +10,28 @@
   border-bottom: 1px solid $border-color;
 
   &__content {
-    @include media-query(palm) {
-      padding: $inuit-base-spacing-unit 0;
-    }
+    padding: $inuit-base-spacing-unit 0;
   }
 
-  &--justify-center {
-    justify-content: center;
-  }
-
-  &--justify-start {
-    justify-content: flex-start;
-
-    @include media-query(portable) {
+  &--justify {
+    &-center {
       justify-content: center;
     }
-  }
 
-  &--justify-end {
-    justify-content: flex-end;
+    &-start {
+      justify-content: flex-start;
 
-    @include media-query(portable) {
-      justify-content: center;
+      @include media-query(palm) {
+        flex-direction: column;
+      }
+    }
+    
+    &-end {
+      justify-content: flex-end;
+
+      @include media-query(palm) {
+        flex-direction: column;
+      }
     }
   }
 }
