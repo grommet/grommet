@@ -115,7 +115,7 @@ export default class Chart extends Component {
 
   _onMouseLeave () {
     let hideLegend = false;
-    if (this.props.legend.hoverOnly) {
+    if (this.props.legend && this.props.legend.hoverOnly) {
       hideLegend = true;
     }
     this.setState({activeXIndex: this.state.defaultXIndex, hideLegend: hideLegend});
@@ -335,7 +335,7 @@ export default class Chart extends Component {
     if (this.state && this.state.activeXIndex >= 0) {
       activeXIndex = this.state.activeXIndex;
     }
-    let hideLegend = this.props.legend.hoverOnly || false;
+    let hideLegend = (this.props.legend && this.props.legend.hoverOnly) || false;
     if (this.state && this.state.hideLegend) {
       hideLegend = this.state.hideLegend;
     }
