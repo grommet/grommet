@@ -26,4 +26,12 @@
       justify-content: center;
     }
   }
+
+  &--justify-end {
+    justify-content: flex-end;
+
+    @include media-query(portable) {
+      justify-content: center;
+    }
+  }
 }

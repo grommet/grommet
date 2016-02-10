@@ -4,11 +4,21 @@
 
   padding: halve($inuit-base-spacing-unit);
 
-  .tabs--justify-start &:first-of-type {
+  .tabs--justify-start &:first-of-type,
+  .tabs--justify-end &:first-of-type {
       padding-left: 0;
 
       @include media-query(portable) {
         padding-left: auto;
+      }
+    }
+
+  .tabs--justify-start &:last-of-type,
+  .tabs--justify-end &:last-of-type {
+      padding-right: 0;
+
+      @include media-query(portable) {
+        padding-right: auto;
       }
     }
 

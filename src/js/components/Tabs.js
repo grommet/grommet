@@ -72,13 +72,13 @@ export default class Tabs extends Component {
 
     var tabsContentPad;
     // assign appropriate pad for tabs__content based on justify prop
-    if (this.props.justify === 'start') {
+    if (this.props.justify === 'center') {
+      tabsContentPad = 'medium';
+    } else {
       tabsContentPad = {
         horizontal: 'none',
         vertical: 'medium'
       };
-    } else {
-      tabsContentPad = 'medium';
     }
 
     // TODO: Since there could be multiple Tabs on the page, we need a more
@@ -102,7 +102,7 @@ export default class Tabs extends Component {
 
 Tabs.propTypes = {
   activeIndex: PropTypes.number,
-  justify: PropTypes.oneOf(['start', 'center'])
+  justify: PropTypes.oneOf(['start', 'center', 'end'])
 };
 
 Tabs.contextTypes = {
