@@ -51,7 +51,17 @@ a,
   }
 
   &.anchor {
+
     &--primary {
+      &:hover {
+        > .control-icon {
+          transform: translateX(round($inuit-base-spacing-unit * 0.125));
+        }
+      }
+    }
+
+    &--primary,
+    &--icon-label {
       @include inuit-font-size($control-font-size, $inuit-base-spacing-unit);
       font-weight: 600;
       color: $control-brand-color;
@@ -73,7 +83,6 @@ a,
 
       &:hover:not(.anchor--disabled) {
         > .control-icon {
-          transform: translateX(round($inuit-base-spacing-unit * 0.125));
           stroke: $control-brand-color;
 
           path,

@@ -38,7 +38,7 @@ var Anchor = function Anchor(props) {
     icon = _react2.default.createElement(LinkNextIcon, null);
   }
 
-  if (icon && !props.primary) {
+  if (icon && !props.primary && !props.label) {
     icon = _react2.default.createElement(
       'span',
       { className: CLASS_ROOT + '__icon' },
@@ -46,7 +46,7 @@ var Anchor = function Anchor(props) {
     );
   }
 
-  var classes = (0, _classnames3.default)(CLASS_ROOT, props.className, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--disabled', props.disabled), _defineProperty(_classnames, CLASS_ROOT + '--icon', icon), _defineProperty(_classnames, CLASS_ROOT + '--primary', props.primary), _classnames));
+  var classes = (0, _classnames3.default)(CLASS_ROOT, props.className, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--disabled', props.disabled), _defineProperty(_classnames, CLASS_ROOT + '--icon', icon), _defineProperty(_classnames, CLASS_ROOT + '--primary', props.primary), _defineProperty(_classnames, CLASS_ROOT + '--icon-label', icon && props.label), _classnames));
 
   var children = _react.Children.map(props.children, function (child) {
     if (child && child.type && child.type.icon) {
