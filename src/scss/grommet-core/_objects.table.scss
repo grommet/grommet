@@ -11,7 +11,7 @@
 
     &:before {
       font-weight: 100;
-      @include inuit-font-size(18px);
+      @include inuit-font-size($control-font-size, $inuit-base-spacing-unit);
       content: attr(data-th);
       display: block;
 
@@ -121,10 +121,6 @@
         }
       }
     }
-  }
-
-  @include media-query(palm) {
-    @include small-table();
   }
 
   &--small {

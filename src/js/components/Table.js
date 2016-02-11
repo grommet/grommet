@@ -9,6 +9,8 @@ import Selection from '../utils/Selection';
 
 const CLASS_ROOT = 'table';
 const SELECTED_CLASS = `${CLASS_ROOT}-row--selected`;
+// empirical number describing a minimum cell width for a
+// table to be presented in column-mode.
 const MIN_CELL_WIDTH = 96;
 
 export default class Table extends Component {
@@ -86,6 +88,7 @@ export default class Table extends Component {
     if (this._scroll) {
       InfiniteScroll.stopListeningForScroll(this._scroll);
     }
+    clearTimeout(this._resizeTimer);
     window.removeEventListener('resize', this._onResize);
   }
 
@@ -134,8 +137,10 @@ export default class Table extends Component {
   }
 
   _adjustBodyCells () {
-    //adjust table body cells to have link to the header
-    //so that in responsive mode it displays the text as content in css
+    // adjust table body cells to have link to the header
+    // so that in responsive mode it displays the text as content in css.
+    // IMPORTANT: non-text header cells, such as icon, are rendered as empty
+    // headers.
     let headerCells = this.refs.table.querySelectorAll('thead th');
     if (headerCells.length > 0) {
       let rows = this.refs.table.querySelectorAll('tbody tr');
@@ -149,11 +154,14 @@ export default class Table extends Component {
   }
 
   _onResize () {
-    this._alignMirror();
-    this._layout();
+    // debounce
+    clearTimeout(this._resizeTimer);
+    this._resizeTimer = setTimeout(this._layout, 50);
   }
 
   _layout () {
+    this._alignMirror();
+
     let availableSize = this.refs.container.offsetWidth;
     let numberOfCells = this.refs.table.querySelectorAll('thead th').length;
 
@@ -214,7 +222,7 @@ export default class Table extends Component {
     let mirror;
     if (this.props.scrollable) {
       mirror = (
-        <table ref="mirror" className={CLASS_ROOT + "__mirror"}>
+        <table ref="mirror" className={`${CLASS_ROOT}__mirror`}>
           <thead>
             <tr></tr>
           </thead>
@@ -225,7 +233,7 @@ export default class Table extends Component {
     let more;
     if (this.props.onMore) {
       more = (
-        <div ref="more" className={CLASS_ROOT + "__more"}>
+        <div ref="more" className={`${CLASS_ROOT}__more`}>
           <SpinningIcon />
         </div>
       );
@@ -234,7 +242,7 @@ export default class Table extends Component {
     return (
       <div ref="container" className={classes}>
         {mirror}
-        <table ref="table" className={CLASS_ROOT + "__table"}
+        <table ref="table" className={`${CLASS_ROOT}__table`}
           onClick={this._onClick}>
           {this.props.children}
         </table>
