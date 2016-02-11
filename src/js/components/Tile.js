@@ -1,41 +1,32 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
-import pick from 'lodash/object/pick';
-import keys from 'lodash/object/keys';
+import React, { PropTypes } from 'react';
+import classnames from 'classnames';
 import Box from './Box';
+import Props from '../utils/Props';
 
-const CLASS_ROOT = "tile";
+const CLASS_ROOT = 'tile';
 
-export default class Tile extends Component {
+const Tile = props => {
+  let classes = classnames(
+    CLASS_ROOT,
+    props.className,
+    {
+      [`${CLASS_ROOT}--status-${props.status}`]: props.status,
+      [`${CLASS_ROOT}--wide}`]: props.wide,
+      [`${CLASS_ROOT}--selectable}`]: props.onClick,
+      [`${CLASS_ROOT}--selected}`]: props.selected
+    }
+  );
 
-  render () {
-    var classes = [CLASS_ROOT];
-    var other = pick(this.props, keys(Box.propTypes));
-    if (this.props.status) {
-      classes.push(CLASS_ROOT + "--status-" + this.props.status.toLowerCase());
-    }
-    if (this.props.wide) {
-      classes.push(CLASS_ROOT + "--wide");
-    }
-    if (this.props.onClick) {
-      classes.push(CLASS_ROOT + "--selectable");
-    }
-    if (this.props.selected) {
-      classes.push(CLASS_ROOT + "--selected");
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
+  let boxProps = Props.pick(props, Box);
 
-    return (
-      <Box className={classes.join(' ')} {...other} onClick={this.props.onClick}>
-        {this.props.children}
-      </Box>
-    );
-  }
-
-}
+  return (
+    <Box {...boxProps} className={classes} onClick={props.onClick}>
+      {props.children}
+    </Box>
+  );
+};
 
 Tile.propTypes = {
   onClick: PropTypes.func,
@@ -46,7 +37,9 @@ Tile.propTypes = {
 };
 
 Tile.defaultProps = {
-  pad: 'none',
-  direction: 'column',
   align: 'center'
 };
+
+Tile.displayName = 'Tile';
+
+export default Tile;
