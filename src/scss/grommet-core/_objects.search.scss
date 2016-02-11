@@ -141,30 +141,66 @@
     line-height: triple($inuit-base-spacing-unit);
 
     .search__input {
-      @include inuit-font-size($large-number-font-size * 1.5, double($inuit-base-spacing-unit));
+      @include inuit-font-size($large-input-font-size, double($inuit-base-spacing-unit));
       padding: halve($inuit-base-spacing-unit);
-      padding-left: $inuit-base-spacing-unit * 3;
-      
+      padding-right: $inuit-base-spacing-unit * 3;
+        
       &:focus {
         padding: (halve($inuit-base-spacing-unit) - ($input-border-width))
           ($inuit-base-spacing-unit * 3 - $input-border-width);
-        padding-right: halve($inuit-base-spacing-unit) - ($input-border-width + 1);
-      }
-
-      @include media-query(palm) {
-        font-size: inherit;
-        padding-left: double($inuit-base-spacing-unit);
+        padding-left: halve($inuit-base-spacing-unit) - ($input-border-width + 1);
       }
     }
 
     .control-icon-search {
-      left: halve($inuit-base-spacing-unit);
+      right: $inuit-base-spacing-unit;
       width: double($inuit-base-spacing-unit);
       height: double($inuit-base-spacing-unit);
 
       @include media-query(palm) {
         width: $inuit-base-spacing-unit;
         height: $inuit-base-spacing-unit;
+      }
+    }
+  }
+
+  &--icon-align-start {
+    &.search--inline {
+      .search__input {
+        padding-left: (double($inuit-base-spacing-unit) - $input-border-width);
+        padding-right: ($inuit-base-spacing-unit - $input-border-width);
+
+        &:focus {
+          padding-left: (double($inuit-base-spacing-unit) - ($input-border-width + 1));
+          padding-right: ($inuit-base-spacing-unit - $input-border-width);
+        }
+      }
+
+      .control-icon-search {
+        left: halve($inuit-base-spacing-unit);
+      }
+    }
+
+    &.search--large {
+      .search__input {
+        padding: halve($inuit-base-spacing-unit);
+        padding-left: $inuit-base-spacing-unit * 3;
+        
+        &:focus {
+          padding: (halve($inuit-base-spacing-unit) - ($input-border-width))
+            ($inuit-base-spacing-unit * 3 - $input-border-width);
+          padding-right: halve($inuit-base-spacing-unit) - ($input-border-width + 1);
+
+          @include media-query(palm) {
+            padding-left: double($inuit-base-spacing-unit);
+          }
+        }
+
+        @include media-query(palm) {
+          font-size: inherit;
+          padding-left: double($inuit-base-spacing-unit);
+          line-height: halve($inuit-base-spacing-unit);
+        }
       }
     }
   }
