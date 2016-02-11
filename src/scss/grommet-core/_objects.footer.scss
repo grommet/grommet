@@ -5,6 +5,15 @@
   line-height: $footer-height;
   width: 100%;
 
+  &.box--direction-row {
+    > h1,
+    > h2,
+    > h3,
+    > h4 {
+      margin-bottom: 0px;
+    }
+  }
+
   &__content {
     display: flex;
     justify-content: space-between;
