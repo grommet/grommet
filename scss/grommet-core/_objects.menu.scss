@@ -35,6 +35,10 @@
 
     &.active {
       color: $brand-color-darker;
+
+      [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+        color: $active-colored-text-color;
+      }
     }
   }
 
