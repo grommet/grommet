@@ -293,4 +293,8 @@
   &--clickable {
     cursor: pointer;
   }
+
+  &:focus {
+    outline: $focus-border-color solid 1px;
+  }
 }
