@@ -20,7 +20,7 @@ module.exports = function(gulp, options) {
     }
   };
 
-  gulp.task('tests', function(done) {
+  gulp.task('test', function(done) {
     if (test.paths) {
       var jsxCoverage = require('gulp-jsx-coverage');
       var mocha = require('gulp-mocha');
