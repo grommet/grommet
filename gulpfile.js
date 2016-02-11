@@ -92,9 +92,8 @@ var opts = {
 
   test: {
     paths: ['test/**/*.js'],
-    globPath: '**/src/**/spec.js',
     // You may pass in a path or a custom config obj
-    pathToBabelRc: __dirname+'.bablercl'
+    pathToBabelRc: __dirname+'/.babelrc'
     // customBabelConfig: Object.assign({}, custom babelrc object)
   }
 };
