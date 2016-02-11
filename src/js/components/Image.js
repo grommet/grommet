@@ -9,6 +9,7 @@ const Image = props => {
   let { size, full } = props;
   let classes = classnames(
     CLASS_ROOT,
+    props.className,
     {
       [`${CLASS_ROOT}--${size}`]: size,
       [`${CLASS_ROOT}--full`]: typeof full === 'boolean' && full,
