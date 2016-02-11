@@ -104,6 +104,13 @@ a,
         }
       }
 
+      &.anchor--reverse {
+        .control-icon {
+          margin-right: 0;
+          margin-left: halve($inuit-base-spacing-unit);
+        }
+      }
+
       > span {
         vertical-align: middle;
       }
