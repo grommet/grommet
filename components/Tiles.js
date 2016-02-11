@@ -291,7 +291,8 @@ var Tiles = function (_Component) {
           wrap: this.props.direction ? false : true,
           direction: this.props.direction ? this.props.direction : 'row',
           className: classes.join(' '),
-          onClick: onClickHandler }),
+          onClick: onClickHandler,
+          focusable: false }),
         this.props.children,
         more
       );

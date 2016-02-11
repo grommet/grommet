@@ -121,10 +121,12 @@ var Box = function (_Component) {
       var a11yProps = {};
       if (this.props.onClick) {
         classes.push(CLASS_ROOT + "--clickable");
-        var boxLabel = _Intl2.default.getMessage(this.context.intl, this.props.a11yTitle);
-        a11yProps.tabIndex = 0;
-        a11yProps["aria-label"] = boxLabel;
-        a11yProps.role = this.props.role || 'link';
+        if (this.props.focusable) {
+          var boxLabel = _Intl2.default.getMessage(this.context.intl, this.props.a11yTitle);
+          a11yProps.tabIndex = 0;
+          a11yProps["aria-label"] = boxLabel;
+          a11yProps.role = this.props.role || 'link';
+        }
       }
 
       if (this.props.className) {
@@ -193,6 +195,7 @@ Box.propTypes = {
   colorIndex: _react.PropTypes.string,
   containerClassName: _react.PropTypes.string,
   direction: _react.PropTypes.oneOf(['row', 'column']),
+  focusable: _react.PropTypes.bool,
   full: _react.PropTypes.oneOf([true, 'horizontal', 'vertical', false]),
   onClick: _react.PropTypes.func,
   justify: _react.PropTypes.oneOf(['start', 'center', 'between', 'end']),
@@ -220,6 +223,7 @@ Box.defaultProps = {
   direction: 'column',
   pad: 'none',
   tag: 'div',
-  responsive: true
+  responsive: true,
+  focusable: true
 };
 module.exports = exports['default'];
