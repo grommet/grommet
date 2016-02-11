@@ -138,12 +138,11 @@
   }
 
   &--large {
-    line-height: triple($inuit-base-spacing-unit);
-
     .search__input {
       @include inuit-font-size($large-input-font-size, double($inuit-base-spacing-unit));
       padding: halve($inuit-base-spacing-unit);
       padding-right: $inuit-base-spacing-unit * 3;
+      line-height: normal;
         
       &:focus {
         padding: (halve($inuit-base-spacing-unit) - ($input-border-width))
@@ -199,7 +198,6 @@
         @include media-query(palm) {
           font-size: inherit;
           padding-left: double($inuit-base-spacing-unit);
-          line-height: halve($inuit-base-spacing-unit);
         }
       }
     }
