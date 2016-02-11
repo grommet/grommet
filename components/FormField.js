@@ -93,7 +93,7 @@ var FormField = function (_Component) {
         classes.push(this.props.className);
       }
 
-      var error;
+      var error = undefined;
       if (this.props.error) {
         classes.push(CLASS_ROOT + "--error");
         error = _react2.default.createElement(
@@ -102,7 +102,7 @@ var FormField = function (_Component) {
           this.props.error
         );
       }
-      var help;
+      var help = undefined;
       if (this.props.help !== null && this.props.help !== undefined) {
         help = _react2.default.createElement(
           'span',
@@ -111,15 +111,19 @@ var FormField = function (_Component) {
         );
       }
 
+      var labelNode = undefined;
+      if (this.props.label) {
+        labelNode = _react2.default.createElement(
+          'label',
+          { className: CLASS_ROOT + "__label", htmlFor: this.props.htmlFor },
+          this.props.label
+        );
+      }
       return _react2.default.createElement(
         'div',
         { className: classes.join(' '), onClick: this._onClick },
         error,
-        _react2.default.createElement(
-          'label',
-          { className: CLASS_ROOT + "__label", htmlFor: this.props.htmlFor },
-          this.props.label
-        ),
+        labelNode,
         help,
         _react2.default.createElement(
           'span',
