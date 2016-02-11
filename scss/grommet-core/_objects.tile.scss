@@ -29,7 +29,10 @@
   > .tile {
     flex-grow: 0;
     flex-shrink: 0;
-    flex-basis: $tile-size;
+
+    @include media-query(lap-and-up) {
+      flex-basis: $tile-size;
+    }
   }
 
   &:not(.tiles--flush) > .tile {
@@ -92,19 +95,16 @@
 
   &--small {
     > .tile {
-      flex-basis: $tile-small-size;
+      @include media-query(lap-and-up) {
+        flex-basis: $tile-small-size;
+      }
     }
   }
 
   &--large {
     > .tile {
-
       @include media-query(lap-and-up) {
         flex-basis: $tile-large-size;
-      }
-
-      @include media-query(palm) {
-        flex-basis: 100%;
       }
     }
   }
