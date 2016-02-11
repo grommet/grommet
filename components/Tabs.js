@@ -39,7 +39,8 @@ var Tabs = function (_Component) {
     _this._activateTab = _this._activateTab.bind(_this);
 
     _this.state = {
-      activeIndex: props.initialIndex
+      activeIndex: props.initialIndex,
+      justify: props.justify
     };
     return _this;
   }
@@ -53,6 +54,10 @@ var Tabs = function (_Component) {
     key: 'render',
     value: function render() {
       var classes = [CLASS_ROOT];
+      classes.push(CLASS_ROOT + '--justify-' + this.props.justify);
+      if (this.props.responsive) {
+        classes.push(CLASS_ROOT + '--responsive');
+      }
 
       var activeContainer;
       var activeTitle;
@@ -112,7 +117,9 @@ var Tabs = function (_Component) {
 exports.default = Tabs;
 
 Tabs.propTypes = {
-  activeIndex: _react.PropTypes.number
+  activeIndex: _react.PropTypes.number,
+  justify: _react.PropTypes.oneOf(['start', 'center', 'end']),
+  responsive: _react.PropTypes.bool
 };
 
 Tabs.contextTypes = {
@@ -120,6 +127,8 @@ Tabs.contextTypes = {
 };
 
 Tabs.defaultProps = {
-  initialIndex: 0
+  initialIndex: 0,
+  justify: 'center',
+  responsive: true
 };
 module.exports = exports['default'];
