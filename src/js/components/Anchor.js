@@ -43,8 +43,9 @@ export default class Anchor extends Component {
       {
         [`${CLASS_ROOT}--disabled`]: this.props.disabled,
         [`${CLASS_ROOT}--icon`]: icon,
+        [`${CLASS_ROOT}--icon-label`]: hasIcon && this.props.label,
         [`${CLASS_ROOT}--primary`]: this.props.primary,
-        [`${CLASS_ROOT}--icon-label`]: hasIcon && this.props.label
+        [`${CLASS_ROOT}--reverse`]: this.props.reverse
       }
     );
 
@@ -52,19 +53,21 @@ export default class Anchor extends Component {
       children = this.props.label;
     }
 
+    const first = this.props.reverse ? children : icon;
+    const second = this.props.reverse ? icon : children;
+
     return (
       <this.props.tag id={this.props.id} className={classes}
         href={this.props.href}
         target={this.props.target}
         onClick={this.props.onClick}
         aria-label={this.props.a11yTitle}>
-        {icon}
-        {children}
+        {first}
+        {second}
       </this.props.tag>
     );
   }
 };
-
 
 Anchor.propTypes = {
   a11yTitle: PropTypes.string,
@@ -76,7 +79,8 @@ Anchor.propTypes = {
   onClick: PropTypes.func,
   primary: PropTypes.bool,
   tag: PropTypes.string,
-  target: PropTypes.string
+  target: PropTypes.string,
+  reverse: PropTypes.bool
 };
 
 Anchor.defaultProps = {
