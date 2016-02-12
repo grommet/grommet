@@ -17,8 +17,10 @@ export default class FormField extends Component {
   }
 
   componentDidMount () {
-    var contentsElement = this.refs.contents;
-    var inputElements = contentsElement.querySelectorAll('input, textarea, select');
+    const contentsElement = this.refs.contents;
+    const inputElements = (
+      contentsElement.querySelectorAll('input, textarea, select')
+    );
     if (inputElements.length === 1) {
       this._inputElement = inputElements[0];
       this._inputElement.addEventListener('focus', this._onFocus);
@@ -49,7 +51,7 @@ export default class FormField extends Component {
   }
 
   render () {
-    var classes = [CLASS_ROOT];
+    let classes = [CLASS_ROOT];
     if (this.state.focus) {
       classes.push(CLASS_ROOT + "--focus");
     }
@@ -66,22 +68,28 @@ export default class FormField extends Component {
       classes.push(this.props.className);
     }
 
-    var error;
+    let error;
     if (this.props.error) {
       classes.push(CLASS_ROOT + "--error");
       error = <span className={CLASS_ROOT + "__error"}>{this.props.error}</span>;
     }
-    var help;
+    let help;
     if (this.props.help !== null && this.props.help !== undefined) {
       help = <span className={CLASS_ROOT + "__help"}>{this.props.help}</span>;
     }
 
-    return (
-      <div className={classes.join(' ')} onClick={this._onClick}>
-        {error}
+    let labelNode;
+    if (this.props.label) {
+      labelNode = (
         <label className={CLASS_ROOT + "__label"} htmlFor={this.props.htmlFor}>
           {this.props.label}
         </label>
+      );
+    }
+    return (
+      <div className={classes.join(' ')} onClick={this._onClick}>
+        {error}
+        {labelNode}
         {help}
         <span ref="contents" className={CLASS_ROOT + "__contents"}>
           {this.props.children}
