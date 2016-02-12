@@ -78,11 +78,14 @@ var Anchor = function (_Component) {
         return child;
       });
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, this.props.className, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--disabled', this.props.disabled), _defineProperty(_classnames, CLASS_ROOT + '--icon', icon), _defineProperty(_classnames, CLASS_ROOT + '--primary', this.props.primary), _defineProperty(_classnames, CLASS_ROOT + '--icon-label', hasIcon && this.props.label), _classnames));
+      var classes = (0, _classnames3.default)(CLASS_ROOT, this.props.className, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--disabled', this.props.disabled), _defineProperty(_classnames, CLASS_ROOT + '--icon', icon), _defineProperty(_classnames, CLASS_ROOT + '--icon-label', hasIcon && this.props.label), _defineProperty(_classnames, CLASS_ROOT + '--primary', this.props.primary), _defineProperty(_classnames, CLASS_ROOT + '--reverse', this.props.reverse), _classnames));
 
       if (!children) {
         children = this.props.label;
       }
+
+      var first = this.props.reverse ? children : icon;
+      var second = this.props.reverse ? icon : children;
 
       return _react2.default.createElement(
         this.props.tag,
@@ -91,8 +94,8 @@ var Anchor = function (_Component) {
           target: this.props.target,
           onClick: this.props.onClick,
           'aria-label': this.props.a11yTitle },
-        icon,
-        children
+        first,
+        second
       );
     }
   }]);
@@ -113,7 +116,8 @@ Anchor.propTypes = {
   onClick: _react.PropTypes.func,
   primary: _react.PropTypes.bool,
   tag: _react.PropTypes.string,
-  target: _react.PropTypes.string
+  target: _react.PropTypes.string,
+  reverse: _react.PropTypes.bool
 };
 
 Anchor.defaultProps = {
