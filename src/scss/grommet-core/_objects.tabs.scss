@@ -31,6 +31,7 @@
       &.tabs--responsive {
         @include media-query(palm) {
           flex-direction: column;
+          text-align: center;
         }
       }
     }
