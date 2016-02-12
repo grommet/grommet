@@ -65,19 +65,20 @@ var Anchor = function (_Component) {
         );
       }
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, this.props.className, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--disabled', this.props.disabled), _defineProperty(_classnames, CLASS_ROOT + '--icon', icon), _defineProperty(_classnames, CLASS_ROOT + '--primary', this.props.primary), _defineProperty(_classnames, CLASS_ROOT + '--icon-label', icon && this.props.label), _classnames));
-
+      var hasIcon = icon !== undefined;
       var children = _react.Children.map(this.props.children, function (child) {
         if (child && child.type && child.type.icon) {
+          hasIcon = true;
           child = _react2.default.createElement(
             'span',
             { className: CLASS_ROOT + '__icon' },
             child
           );
         }
-
         return child;
       });
+
+      var classes = (0, _classnames3.default)(CLASS_ROOT, this.props.className, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--disabled', this.props.disabled), _defineProperty(_classnames, CLASS_ROOT + '--icon', icon), _defineProperty(_classnames, CLASS_ROOT + '--primary', this.props.primary), _defineProperty(_classnames, CLASS_ROOT + '--icon-label', hasIcon && this.props.label), _classnames));
 
       if (!children) {
         children = this.props.label;
