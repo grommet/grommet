@@ -53,29 +53,19 @@ export default class Anchor extends Component {
       children = this.props.label;
     }
 
-    if (this.props.reverse) {
-      return (
-        <this.props.tag id={this.props.id} className={classes}
-          href={this.props.href}
-          target={this.props.target}
-          onClick={this.props.onClick}
-          aria-label={this.props.a11yTitle}>
-          {children}
-          {icon}
-        </this.props.tag>
-      );
-    } else {
-      return (
-        <this.props.tag id={this.props.id} className={classes}
-          href={this.props.href}
-          target={this.props.target}
-          onClick={this.props.onClick}
-          aria-label={this.props.a11yTitle}>
-          {icon}
-          {children}
-        </this.props.tag>
-      );
-    }
+    const first = this.props.reverse ? children : icon;
+    const second = this.props.reverse ? icon : children;
+
+    return (
+      <this.props.tag id={this.props.id} className={classes}
+        href={this.props.href}
+        target={this.props.target}
+        onClick={this.props.onClick}
+        aria-label={this.props.a11yTitle}>
+        {first}
+        {second}
+      </this.props.tag>
+    );
   }
 };
 
