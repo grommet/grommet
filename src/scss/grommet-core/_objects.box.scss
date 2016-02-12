@@ -134,6 +134,10 @@
       &.box--responsive {
         flex-direction: column;
 
+        &:not(.box--justify-center) {
+          align-items: stretch;
+        }
+
         &.box--reverse {
           flex-direction: column-reverse;
         }
