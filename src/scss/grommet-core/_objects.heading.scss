@@ -13,4 +13,26 @@
   &--strong {
     font-weight: 600;
   }
+
+  &--align {
+    &-start {
+      text-align: left;
+
+      html.rtl & {
+        text-align: right;
+      }
+    }
+
+    &-center {
+      text-align: center;
+    }
+
+    &-right {
+      text-align: right;
+
+      html.rtl & {
+        text-align: left;
+      }
+    }
+  }
 }
