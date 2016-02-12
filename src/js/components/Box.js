@@ -78,10 +78,12 @@ export default class Box extends Component {
     let a11yProps = {};
     if (this.props.onClick) {
       classes.push(CLASS_ROOT + "--clickable");
-      let boxLabel = Intl.getMessage(this.context.intl, this.props.a11yTitle);
-      a11yProps.tabIndex = 0;
-      a11yProps["aria-label"] = boxLabel;
-      a11yProps.role = this.props.role || 'link';
+      if (this.props.focusable) {
+        let boxLabel = Intl.getMessage(this.context.intl, this.props.a11yTitle);
+        a11yProps.tabIndex = 0;
+        a11yProps["aria-label"] = boxLabel;
+        a11yProps.role = this.props.role || 'link';
+      }
     }
 
     if (this.props.className) {
@@ -142,6 +144,7 @@ Box.propTypes = {
   colorIndex: PropTypes.string,
   containerClassName: PropTypes.string,
   direction: PropTypes.oneOf(['row', 'column']),
+  focusable: PropTypes.bool,
   full: PropTypes.oneOf([true, 'horizontal', 'vertical', false]),
   onClick: PropTypes.func,
   justify: PropTypes.oneOf(['start', 'center', 'between', 'end']),
@@ -175,5 +178,6 @@ Box.defaultProps = {
   direction: 'column',
   pad: 'none',
   tag: 'div',
-  responsive: true
+  responsive: true,
+  focusable: true
 };

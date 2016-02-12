@@ -28,6 +28,15 @@ export default class Anchor extends Component {
       icon = <span className={`${CLASS_ROOT}__icon`}>{icon}</span>;
     }
 
+    let hasIcon = icon !== undefined;
+    let children = Children.map(this.props.children, child => {
+      if (child && child.type && child.type.icon) {
+        hasIcon = true;
+        child = <span className={`${CLASS_ROOT}__icon`}>{child}</span>;
+      }
+      return child;
+    });
+
     let classes = classnames(
       CLASS_ROOT,
       this.props.className,
@@ -35,17 +44,9 @@ export default class Anchor extends Component {
         [`${CLASS_ROOT}--disabled`]: this.props.disabled,
         [`${CLASS_ROOT}--icon`]: icon,
         [`${CLASS_ROOT}--primary`]: this.props.primary,
-        [`${CLASS_ROOT}--icon-label`]: icon && this.props.label
+        [`${CLASS_ROOT}--icon-label`]: hasIcon && this.props.label
       }
     );
-
-    let children = Children.map(this.props.children, child => {
-      if (child && child.type && child.type.icon) {
-        child = <span className={`${CLASS_ROOT}__icon`}>{child}</span>;
-      }
-
-      return child;
-    });
 
     if (!children) {
       children = this.props.label;

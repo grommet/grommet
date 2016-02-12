@@ -29,7 +29,8 @@ export default class Tile extends Component {
     }
 
     return (
-      <Box className={classes.join(' ')} {...other} onClick={this.props.onClick}>
+      <Box className={classes.join(' ')} {...other}
+        onClick={this.props.onClick} a11yTitle={this.props.a11yTitle}>
         {this.props.children}
       </Box>
     );
