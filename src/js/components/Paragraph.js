@@ -8,6 +8,7 @@ const CLASS_ROOT = 'paragraph';
 const Paragraph = props => {
   var classes = classnames(
     CLASS_ROOT,
+    props.className,
     {
       [`${CLASS_ROOT}--${props.size}`]: props.size,
       [`${CLASS_ROOT}--align-${props.align}`]: props.align
