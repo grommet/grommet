@@ -54,6 +54,12 @@
   &--flush {
     .layer__container {
       padding: 0px;
+
+      @include media-query(palm) {
+        .box--full {
+          width: auto;
+        }
+      }
     }
   }
 
