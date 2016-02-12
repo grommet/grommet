@@ -66,7 +66,8 @@ var Tile = function (_Component) {
 
       return _react2.default.createElement(
         _Box2.default,
-        _extends({ className: classes.join(' ') }, other, { onClick: this.props.onClick }),
+        _extends({ className: classes.join(' ') }, other, {
+          onClick: this.props.onClick, a11yTitle: this.props.a11yTitle }),
         this.props.children
       );
     }
