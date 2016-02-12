@@ -139,10 +139,9 @@
 
   &--large {
     .search__input {
-      @include inuit-font-size($large-input-font-size, double($inuit-base-spacing-unit));
+      @include inuit-font-size($large-input-font-size, normal);
       padding: halve($inuit-base-spacing-unit) ($inuit-base-spacing-unit);
       padding-right: ($inuit-base-spacing-unit * 3);
-      line-height: normal;
 
       &:focus {
         padding: (halve($inuit-base-spacing-unit) - $input-border-width)
