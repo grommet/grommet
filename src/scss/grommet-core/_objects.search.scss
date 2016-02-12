@@ -143,7 +143,7 @@
       padding: halve($inuit-base-spacing-unit) ($inuit-base-spacing-unit);
       padding-right: ($inuit-base-spacing-unit * 3);
       line-height: normal;
-        
+      
       &:focus {
         padding: (halve($inuit-base-spacing-unit) - $input-border-width)
           ($inuit-base-spacing-unit * 3 - $input-border-width);
@@ -175,6 +175,11 @@
         width: $inuit-base-spacing-unit;
         height: $inuit-base-spacing-unit;
       }
+
+      @include media-query(lap-and-up) {
+        // prevent icon from growing on resize from 719px
+        transition: none;
+      }
     }
   }
 
@@ -199,7 +204,7 @@
       .search__input {
         padding-left: ($inuit-base-spacing-unit * 3);
         padding-right: $inuit-base-spacing-unit;
-        
+
         &:focus {
           padding-left: ($inuit-base-spacing-unit * 3 - $input-border-width);
           padding-right: ($inuit-base-spacing-unit - $input-border-width);
