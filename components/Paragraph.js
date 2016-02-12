@@ -21,7 +21,7 @@ var CLASS_ROOT = 'paragraph';
 var Paragraph = function Paragraph(props) {
   var _classnames;
 
-  var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--' + props.size, props.size), _defineProperty(_classnames, CLASS_ROOT + '--align-' + props.align, props.align), _classnames));
+  var classes = (0, _classnames3.default)(CLASS_ROOT, props.className, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--' + props.size, props.size), _defineProperty(_classnames, CLASS_ROOT + '--align-' + props.align, props.align), _classnames));
 
   return _react2.default.createElement(
     'p',
