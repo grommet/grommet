@@ -33,14 +33,14 @@ var Heading = function (_Component) {
     key: 'render',
     value: function render() {
       var classes = [CLASS_ROOT];
-      if (this.props.size == 'large') {
-        classes.push(CLASS_ROOT + '--large');
-      }
-      if (this.props.size == 'small') {
-        classes.push(CLASS_ROOT + '--small');
+      if (this.props.size) {
+        classes.push(CLASS_ROOT + '--' + this.props.size);
       }
       if (this.props.strong) {
         classes.push(CLASS_ROOT + '--strong');
+      }
+      if (this.props.align) {
+        classes.push(CLASS_ROOT + '--align-' + this.props.align);
       }
       if (this.props.className) {
         classes.push(this.props.className);
@@ -64,6 +64,7 @@ var Heading = function (_Component) {
 exports.default = Heading;
 
 Heading.propTypes = {
+  align: _react.PropTypes.oneOf(['start', 'center', 'end']),
   size: _react.PropTypes.string,
   strong: _react.PropTypes.bool,
   tag: _react.PropTypes.string
