@@ -54,6 +54,10 @@
   &--flush {
     .layer__container {
       padding: 0px;
+
+      .box--full {
+        width: auto;
+      }
     }
   }
 
