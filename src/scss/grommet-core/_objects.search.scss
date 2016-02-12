@@ -143,7 +143,7 @@
       padding: halve($inuit-base-spacing-unit) ($inuit-base-spacing-unit);
       padding-right: ($inuit-base-spacing-unit * 3);
       line-height: normal;
-      
+
       &:focus {
         padding: (halve($inuit-base-spacing-unit) - $input-border-width)
           ($inuit-base-spacing-unit * 3 - $input-border-width);
