@@ -25,28 +25,28 @@ $brand-graph-colors: (
   lighten(#614767, 15%)
 );
 
-$hpe-fonts-path: "https://hpefonts.s3.amazonaws.com" !default;
+$hpe-fonts-path: "https://hpefonts.s3.amazonaws.com/web" !default;
 
 @font-face {
   font-family: "Metric";
-  src: url("#{$hpe-fonts-path}/MetricWeb-Regular.woff") format('woff');
+  src: url("#{$hpe-fonts-path}/MetricHPE-Web-Regular.woff") format('woff');
 }
 
 @font-face {
   font-family: "Metric";
-  src: url("#{$hpe-fonts-path}/MetricWeb-Bold.woff") format('woff');
+  src: url("#{$hpe-fonts-path}/MetricHPE-Web-Bold.woff") format('woff');
   font-weight: 700;
 }
 
 @font-face {
   font-family: "Metric";
-  src: url("#{$hpe-fonts-path}/MetricWeb-Semibold.woff") format('woff');
+  src: url("#{$hpe-fonts-path}/MetricHPE-Web-Semibold.woff") format('woff');
   font-weight: 600;
 }
 
 @font-face {
   font-family: "Metric";
-  src: url("#{$hpe-fonts-path}/MetricWeb-Light.woff") format('woff');
+  src: url("#{$hpe-fonts-path}/MetricHPE-Web-Light.woff") format('woff');
   font-weight: 100;
 }
 
