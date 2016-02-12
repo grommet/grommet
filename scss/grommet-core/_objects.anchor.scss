@@ -99,15 +99,6 @@ a,
         vertical-align: middle;
       }
 
-      &:hover {
-        .control-icon {
-          path,
-          polyline {
-            stroke-width: 3px;
-          }
-        }
-      }
-
       [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
         color: $colored-text-color;
 
@@ -147,6 +138,11 @@ a,
         .control-icon {
           stroke: $control-brand-color;
           transform: translateX(round($inuit-base-spacing-unit * 0.125));
+
+          path,
+          polyline {
+            stroke-width: 3px;
+          }
         }
       }
 
