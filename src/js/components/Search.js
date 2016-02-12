@@ -350,9 +350,11 @@ export default class Search extends Component {
     if (this.props.className) {
       classes.push(this.props.className);
     }
+    if (this.props.iconAlign) {
+      classes.push(CLASS_ROOT + "--icon-align-" + this.props.iconAlign);
+    }
 
     if (this.state.inline) {
-
       return (
         <div className={classes.join(' ')}>
           <input ref="input" type="search"
@@ -390,6 +392,7 @@ Search.propTypes = {
   defaultValue: PropTypes.string,
   dropAlign: Drop.alignPropType,
   dropColorIndex: PropTypes.string,
+  iconAlign: React.PropTypes.oneOf(['start', 'end']),
   id: React.PropTypes.string,
   inline: PropTypes.bool,
   large: PropTypes.bool,
@@ -413,6 +416,7 @@ Search.propTypes = {
 
 Search.defaultProps = {
   align: 'left',
+  iconAlign: 'end',
   inline: false,
   responsive: true
 };
