@@ -404,9 +404,11 @@ var Search = function (_Component) {
       if (this.props.className) {
         classes.push(this.props.className);
       }
+      if (this.props.iconAlign) {
+        classes.push(CLASS_ROOT + "--icon-align-" + this.props.iconAlign);
+      }
 
       if (this.state.inline) {
-
         return _react2.default.createElement(
           'div',
           { className: classes.join(' ') },
@@ -447,6 +449,7 @@ Search.propTypes = {
   defaultValue: _react.PropTypes.string,
   dropAlign: _Drop2.default.alignPropType,
   dropColorIndex: _react.PropTypes.string,
+  iconAlign: _react2.default.PropTypes.oneOf(['start', 'end']),
   id: _react2.default.PropTypes.string,
   inline: _react.PropTypes.bool,
   large: _react.PropTypes.bool,
@@ -465,6 +468,7 @@ Search.propTypes = {
 
 Search.defaultProps = {
   align: 'left',
+  iconAlign: 'end',
   inline: false,
   responsive: true
 };
