@@ -26,47 +26,6 @@
     }
   }
 
-  &--align {
-    &-start {
-      text-align: left;
-
-      html.rtl & {
-        text-align: right;
-      }
-    }
-
-    &-center {
-      text-align: center;
-    }
-
-    &-right {
-      text-align: right;
-
-      html.rtl & {
-        text-align: left;
-      }
-    }
-  }
-
-  &--margin {
-    &-none {
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-
-    &-small {
-      margin-top: halve($inuit-base-spacing-unit);
-      margin-bottom: halve($inuit-base-spacing-unit);
-    }
-
-    &-medium {
-      margin-top: $inuit-base-spacing-unit;
-      margin-bottom: $inuit-base-spacing-unit;
-    }
-
-    &-large {
-      margin-top: double($inuit-base-spacing-unit);
-      margin-bottom: double($inuit-base-spacing-unit);
-    }
-  }
+  @include text-align();
+  @include margin();
 }

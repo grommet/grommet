@@ -1,0 +1,25 @@
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+
+@mixin margin {
+  &--margin {
+    &-none {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    &-small {
+      margin-top: halve($inuit-base-spacing-unit);
+      margin-bottom: halve($inuit-base-spacing-unit);
+    }
+
+    &-medium {
+      margin-top: $inuit-base-spacing-unit;
+      margin-bottom: $inuit-base-spacing-unit;
+    }
+
+    &-large {
+      margin-top: double($inuit-base-spacing-unit);
+      margin-bottom: double($inuit-base-spacing-unit);
+    }
+  }
+}

@@ -16,6 +16,9 @@ export default class Heading extends Component {
     if (this.props.align) {
       classes.push(`${CLASS_ROOT}--align-${this.props.align}`);
     }
+    if (this.props.margin) {
+      classes.push(`${CLASS_ROOT}--margin-${this.props.margin}`);
+    }
     if (this.props.className) {
       classes.push(this.props.className);
     }
@@ -32,6 +35,7 @@ export default class Heading extends Component {
 
 Heading.propTypes = {
   align: PropTypes.oneOf(['start', 'center', 'end']),
+  margin: PropTypes.oneOf(['none', 'small', 'medium', 'large']),
   size: PropTypes.string,
   strong: PropTypes.bool,
   tag: PropTypes.string
