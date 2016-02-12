@@ -21,7 +21,7 @@ var CLASS_ROOT = 'paragraph';
 var Paragraph = function Paragraph(props) {
   var _classnames;
 
-  var classes = (0, _classnames3.default)(CLASS_ROOT, props.className, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--' + props.size, props.size), _defineProperty(_classnames, CLASS_ROOT + '--align-' + props.align, props.align), _classnames));
+  var classes = (0, _classnames3.default)(CLASS_ROOT, props.className, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--' + props.size, props.size), _defineProperty(_classnames, CLASS_ROOT + '--align-' + props.align, props.align), _defineProperty(_classnames, CLASS_ROOT + '--margin-' + props.margin, props.margin), _classnames));
 
   return _react2.default.createElement(
     'p',
@@ -33,6 +33,7 @@ var Paragraph = function Paragraph(props) {
 Paragraph.propTypes = {
   align: _react.PropTypes.oneOf(['start', 'center', 'end']),
   id: _react.PropTypes.string,
+  margin: _react.PropTypes.oneOf(['none', 'small', 'medium', 'large']),
   size: _react.PropTypes.oneOf(['small', 'medium', 'large'])
 };
 
