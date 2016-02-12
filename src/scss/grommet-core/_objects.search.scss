@@ -140,14 +140,28 @@
   &--large {
     .search__input {
       @include inuit-font-size($large-input-font-size, double($inuit-base-spacing-unit));
-      padding: halve($inuit-base-spacing-unit);
-      padding-right: $inuit-base-spacing-unit * 3;
+      padding: halve($inuit-base-spacing-unit) ($inuit-base-spacing-unit);
+      padding-right: ($inuit-base-spacing-unit * 3);
       line-height: normal;
         
       &:focus {
-        padding: (halve($inuit-base-spacing-unit) - ($input-border-width))
+        padding: (halve($inuit-base-spacing-unit) - $input-border-width)
           ($inuit-base-spacing-unit * 3 - $input-border-width);
-        padding-left: halve($inuit-base-spacing-unit) - ($input-border-width + 1);
+        padding-left: ($inuit-base-spacing-unit - $input-border-width);
+
+        @include media-query(palm) {
+          padding: (halve($inuit-base-spacing-unit) - ($input-border-width + 1))
+            ($inuit-base-spacing-unit - ($input-border-width + 1));
+          padding-right: (double($inuit-base-spacing-unit) - ($input-border-width + 1));
+        }
+      }
+
+      @include media-query(palm) {
+        font-size: inherit;
+        padding: (halve($inuit-base-spacing-unit) - ($input-border-width))
+          ($inuit-base-spacing-unit - $input-border-width);
+        padding-right: (double($inuit-base-spacing-unit) - $input-border-width);
+        line-height: 1.5;
       }
     }
 
@@ -157,6 +171,7 @@
       height: double($inuit-base-spacing-unit);
 
       @include media-query(palm) {
+        right: halve($inuit-base-spacing-unit);
         width: $inuit-base-spacing-unit;
         height: $inuit-base-spacing-unit;
       }
@@ -182,22 +197,24 @@
 
     &.search--large {
       .search__input {
-        padding: halve($inuit-base-spacing-unit);
-        padding-left: $inuit-base-spacing-unit * 3;
+        padding-left: ($inuit-base-spacing-unit * 3);
+        padding-right: $inuit-base-spacing-unit;
         
         &:focus {
-          padding: (halve($inuit-base-spacing-unit) - ($input-border-width))
-            ($inuit-base-spacing-unit * 3 - $input-border-width);
-          padding-right: halve($inuit-base-spacing-unit) - ($input-border-width + 1);
+          padding-left: ($inuit-base-spacing-unit * 3 - $input-border-width);
+          padding-right: ($inuit-base-spacing-unit - $input-border-width);
 
           @include media-query(palm) {
-            padding-left: double($inuit-base-spacing-unit);
+            padding: (halve($inuit-base-spacing-unit) - ($input-border-width + 1))
+              ($inuit-base-spacing-unit - ($input-border-width + 1));
+            padding-left: (double($inuit-base-spacing-unit) - ($input-border-width + 1));
           }
         }
 
         @include media-query(palm) {
-          font-size: inherit;
-          padding-left: double($inuit-base-spacing-unit);
+          padding: (halve($inuit-base-spacing-unit) - $input-border-width)
+          ($inuit-base-spacing-unit - $input-border-width);
+          padding-left: (double($inuit-base-spacing-unit) - $input-border-width);
         }
       }
     }
