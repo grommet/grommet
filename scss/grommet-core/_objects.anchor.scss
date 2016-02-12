@@ -73,29 +73,13 @@ a,
 
   &.anchor {
 
-    &--primary {
-      &:hover {
-        .control-icon {
-          transform: translateX(round($inuit-base-spacing-unit * 0.125));
-        }
-      }
-
-      &.anchor--disabled {
-        .control-icon {
-          transform: none;
-        }
-      }
-    }
-
     &--primary,
     &--icon-label {
       @include inuit-font-size($control-font-size, $inuit-base-spacing-unit);
       font-weight: 600;
-      color: $control-brand-color;
       text-decoration: none;
 
       .control-icon {
-        stroke: $control-brand-color;
         margin-right: halve($inuit-base-spacing-unit);
 
         html.rtl & {
@@ -117,8 +101,6 @@ a,
 
       &:hover {
         .control-icon {
-          stroke: $control-brand-color;
-
           path,
           polyline {
             stroke-width: 3px;
@@ -150,6 +132,27 @@ a,
             fill: $colored-text-color;
             stroke: $colored-text-color;
           }
+        }
+      }
+    }
+
+    &--primary {
+      color: $control-brand-color;
+
+      .control-icon {
+        stroke: $control-brand-color;
+      }
+
+      &:hover {
+        .control-icon {
+          stroke: $control-brand-color;
+          transform: translateX(round($inuit-base-spacing-unit * 0.125));
+        }
+      }
+
+      &.anchor--disabled {
+        .control-icon {
+          transform: none;
         }
       }
     }
