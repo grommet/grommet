@@ -13,4 +13,7 @@
   &--strong {
     font-weight: 600;
   }
+
+  @include text-align();
+  @include margin();
 }

@@ -1,12 +1,12 @@
 .label {
-  font-size: $control-font-size;
-  line-height: 20px;
-  font-weight: normal;
-  padding-bottom: $inuit-base-spacing-unit;
-  margin-bottom: 0;
+  @include inuit-font-size($control-font-size);
+  margin-bottom: $inuit-base-spacing-unit;
 
   &--uppercase {
     text-transform: uppercase;
     letter-spacing: 0.2em;
   }
+
+  @include text-align();
+  @include margin();
 }

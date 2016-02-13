@@ -10,7 +10,8 @@ const Label = props => {
     CLASS_ROOT,
     props.className,
     {
-      [`${CLASS_ROOT}--uppercase`]: props.uppercase
+      [`${CLASS_ROOT}--uppercase`]: props.uppercase,
+      [`${CLASS_ROOT}--margin-${props.margin}`]: props.margin
     }
   );
 
@@ -23,6 +24,7 @@ const Label = props => {
 
 Label.propTypes = {
   labelFor: PropTypes.string,
+  margin: PropTypes.oneOf(['none', 'small', 'medium', 'large']),
   uppercase: PropTypes.bool
 };
 
