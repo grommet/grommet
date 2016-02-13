@@ -19,7 +19,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var CLASS_ROOT = 'label';
 
 var Label = function Label(props) {
-  var classes = (0, _classnames3.default)(CLASS_ROOT, props.className, _defineProperty({}, CLASS_ROOT + '--uppercase', props.uppercase));
+  var _classnames;
+
+  var classes = (0, _classnames3.default)(CLASS_ROOT, props.className, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--uppercase', props.uppercase), _defineProperty(_classnames, CLASS_ROOT + '--margin-' + props.margin, props.margin), _classnames));
 
   return _react2.default.createElement(
     'label',
@@ -30,6 +32,7 @@ var Label = function Label(props) {
 
 Label.propTypes = {
   labelFor: _react.PropTypes.string,
+  margin: _react.PropTypes.oneOf(['none', 'small', 'medium', 'large']),
   uppercase: _react.PropTypes.bool
 };
 

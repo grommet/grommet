@@ -42,6 +42,9 @@ var Heading = function (_Component) {
       if (this.props.align) {
         classes.push(CLASS_ROOT + '--align-' + this.props.align);
       }
+      if (this.props.margin) {
+        classes.push(CLASS_ROOT + '--margin-' + this.props.margin);
+      }
       if (this.props.className) {
         classes.push(this.props.className);
       }
@@ -65,6 +68,7 @@ exports.default = Heading;
 
 Heading.propTypes = {
   align: _react.PropTypes.oneOf(['start', 'center', 'end']),
+  margin: _react.PropTypes.oneOf(['none', 'small', 'medium', 'large']),
   size: _react.PropTypes.string,
   strong: _react.PropTypes.bool,
   tag: _react.PropTypes.string
