@@ -47,9 +47,8 @@
 
   &--active {
     .tab__label {
-      color: #000;
-      border-bottom: 4px solid #000;
-      font-weight: 600;
+      color: $hover-text-color;
+      border-bottom: 4px solid $hover-text-color;
     }
   }
 
