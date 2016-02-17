@@ -55,18 +55,13 @@ var Brick = function Brick(props) {
 
   var label = _react2.default.createElement(
     'div',
-    { className: CLASS_ROOT + '--label' },
+    { className: CLASS_ROOT + '__label' },
     _react2.default.createElement(
       'span',
       null,
       props.label
     )
   );
-
-  if (clickable) {
-    label = _react2.default.createElement(_Anchor2.default, { href: props.href || '#', onClick: props.onClick,
-      className: CLASS_ROOT + '--label', label: props.label });
-  }
 
   var style = {};
   if (props.texture && 'string' === typeof props.texture) {
@@ -86,15 +81,20 @@ var Brick = function Brick(props) {
   }
 
   return _react2.default.createElement(
-    'div',
-    { className: classes, style: style },
+    _Anchor2.default,
+    { href: props.href, onClick: props.onClick,
+      className: CLASS_ROOT + '__anchor' },
     _react2.default.createElement(
       'div',
-      { className: CLASS_ROOT + '--content-wrapper' },
-      texture,
-      props.children
-    ),
-    label
+      { className: classes, style: style },
+      _react2.default.createElement(
+        'div',
+        { className: CLASS_ROOT + '__container' },
+        texture,
+        props.children
+      ),
+      label
+    )
   );
 };
 
