@@ -24,9 +24,9 @@ $selected-text-color: $text-color !default;
 $selected-primary-background-color: $brand-color !default;
 $selected-primary-text-color: $colored-text-color !default;
 
-$border-color: #ccc;
+$border-color: rgba(0, 0, 0, 0.4);
 $strong-border-color: #000;
-$colored-border-color: #eee !default;
+$colored-border-color: rgba(255, 255, 255, 0.5) !default;
 
 // Control Icons
 
@@ -56,6 +56,7 @@ $button-text-color: $text-color !default;
 $button-secondary-color: rgba(#333, 0.6) !default;
 $button-accent-color: nth($brand-accent-colors, 1) !default;
 $button-drop-shadow-color: rgba(170, 170, 170, 0.5) !default;
+$button-colored-border-color: rgba(255, 255, 255, 0.7) !default;
 
 $hover-background-color: rgba(0, 0, 0, 0.1);
 $layer-overlay-background-color: rgba(0, 0, 0, 0.5);

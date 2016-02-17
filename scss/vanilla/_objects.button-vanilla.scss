@@ -34,7 +34,7 @@ $active-darken: 20%;
     [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
 
       &:hover {
-        box-shadow: 0px 0px 0px 2px $colored-border-color;
+        box-shadow: 0px 0px 0px 2px $button-colored-border-color;
       }
 
       &.button--primary {
@@ -45,7 +45,7 @@ $active-darken: 20%;
 
       &.button--secondary {
         &:hover {
-          box-shadow: 0px 0px 0px 2px $colored-border-color;
+          box-shadow: 0px 0px 0px 2px $button-colored-border-color;
         }
       }
 
