@@ -223,4 +223,11 @@
       }
     }
   }
+
+  &--fill {
+    width: 100%;
+    max-width: none;
+    //used to add full height for button inside a flex container
+    flex-grow: 1;
+  }
 }

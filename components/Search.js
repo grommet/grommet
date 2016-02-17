@@ -401,6 +401,9 @@ var Search = function (_Component) {
       } else if (this.props.large && !this.props.size) {
         classes.push(CLASS_ROOT + "--large");
       }
+      if (this.props.fill) {
+        classes.push(CLASS_ROOT + "--fill");
+      }
       if (this.props.className) {
         classes.push(this.props.className);
       }
@@ -449,6 +452,7 @@ Search.propTypes = {
   defaultValue: _react.PropTypes.string,
   dropAlign: _Drop2.default.alignPropType,
   dropColorIndex: _react.PropTypes.string,
+  fill: _react.PropTypes.bool,
   iconAlign: _react2.default.PropTypes.oneOf(['start', 'end']),
   id: _react2.default.PropTypes.string,
   inline: _react.PropTypes.bool,
