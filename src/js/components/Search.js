@@ -347,6 +347,9 @@ export default class Search extends Component {
     } else if (this.props.large && ! this.props.size) {
       classes.push(CLASS_ROOT + "--large");
     }
+    if (this.props.fill) {
+      classes.push(CLASS_ROOT + "--fill");
+    }
     if (this.props.className) {
       classes.push(this.props.className);
     }
@@ -392,6 +395,7 @@ Search.propTypes = {
   defaultValue: PropTypes.string,
   dropAlign: Drop.alignPropType,
   dropColorIndex: PropTypes.string,
+  fill: PropTypes.bool,
   iconAlign: React.PropTypes.oneOf(['start', 'end']),
   id: React.PropTypes.string,
   inline: PropTypes.bool,
