@@ -25,6 +25,8 @@
 
     @include media-query(palm) {
       padding: 0 $inuit-base-spacing-unit;
+      min-height: 100vh;
+      min-width: 100vw;
     }
 
     @include media-query(lap-and-up) {
