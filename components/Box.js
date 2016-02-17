@@ -26,6 +26,10 @@ var _Intl = require('../utils/Intl');
 
 var _Intl2 = _interopRequireDefault(_Intl);
 
+var _SkipLinkAnchor = require('./SkipLinkAnchor');
+
+var _SkipLinkAnchor2 = _interopRequireDefault(_SkipLinkAnchor);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -129,6 +133,12 @@ var Box = function (_Component) {
         }
       }
 
+      var skipLinkAnchor = undefined;
+      if (this.props.primary) {
+        var mainContentLabel = _Intl2.default.getMessage(this.context.intl, 'Main Content');
+        skipLinkAnchor = _react2.default.createElement(_SkipLinkAnchor2.default, { label: mainContentLabel });
+      }
+
       if (this.props.className) {
         classes.push(this.props.className);
       }
@@ -162,6 +172,7 @@ var Box = function (_Component) {
           'div',
           _extends({ ref: 'boxContainer', className: containerClasses.join(' '),
             style: style, role: this.props.role }, a11yProps, eventListeners),
+          skipLinkAnchor,
           _react2.default.createElement(
             this.props.tag,
             { id: this.props.id, className: classes.join(' ') },
@@ -175,6 +186,7 @@ var Box = function (_Component) {
           _extends({ ref: 'boxContainer', id: this.props.id,
             className: classes.join(' '), style: style,
             role: this.props.role, tabIndex: this.props.tabIndex }, a11yProps, eventListeners),
+          skipLinkAnchor,
           texture,
           this.props.children
         );
@@ -204,6 +216,7 @@ Box.propTypes = {
     horizontal: _react.PropTypes.oneOf(['none', 'small', 'medium', 'large']),
     vertical: _react.PropTypes.oneOf(['none', 'small', 'medium', 'large'])
   })]),
+  primary: _react.PropTypes.bool,
   reverse: _react.PropTypes.bool,
   responsive: _react.PropTypes.bool,
   role: _react.PropTypes.string,

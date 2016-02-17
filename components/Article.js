@@ -36,10 +36,6 @@ var _Scroll = require('../utils/Scroll');
 
 var _Scroll2 = _interopRequireDefault(_Scroll);
 
-var _SkipLinkAnchor = require('./SkipLinkAnchor');
-
-var _SkipLinkAnchor2 = _interopRequireDefault(_SkipLinkAnchor);
-
 var _Button = require('./Button');
 
 var _Button2 = _interopRequireDefault(_Button);
@@ -304,11 +300,6 @@ var Article = function (_Component) {
         classes.push(this.props.className);
       }
 
-      var skipLinkAnchor = null;
-      if (this.props.primary) {
-        skipLinkAnchor = _react2.default.createElement(_SkipLinkAnchor2.default, { label: 'Main Content' });
-      }
-
       var controls = undefined;
       if (this.props.controls) {
         controls = this._renderControls();
@@ -324,8 +315,8 @@ var Article = function (_Component) {
       return _react2.default.createElement(
         _Box2.default,
         _extends({ ref: 'component', tag: 'article' }, other, {
-          className: classes.join(' '), onFocus: this._onFocusChange }),
-        skipLinkAnchor,
+          className: classes.join(' '), onFocus: this._onFocusChange,
+          primary: this.props.primary }),
         children,
         controls
       );

@@ -49,7 +49,8 @@ var Footer = function Footer(props) {
   return _react2.default.createElement(
     _Box2.default,
     _extends({}, boxProps, { tag: 'footer', className: classes,
-      containerClassName: containerClasses }),
+      containerClassName: containerClasses,
+      primary: false }),
     footerSkipLink,
     props.children
   );

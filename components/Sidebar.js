@@ -37,7 +37,7 @@ var Sidebar = function Sidebar(props) {
 
   return _react2.default.createElement(
     _Box2.default,
-    _extends({}, boxProps, { className: classes }),
+    _extends({}, boxProps, { className: classes, primary: false }),
     props.children
   );
 };

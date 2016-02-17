@@ -233,7 +233,8 @@ var MenuDrop = function (_Component) {
       var contents = [_react2.default.cloneElement(this.props.control, { key: 'control' }), _react2.default.createElement(
         _Box2.default,
         _extends({ key: 'nav', ref: 'navContainer',
-          role: 'menu', tag: 'nav' }, other, { className: CLASS_ROOT + '__contents' }),
+          role: 'menu', tag: 'nav' }, other, { className: CLASS_ROOT + '__contents',
+          primary: false }),
         this.props.children
       )];
       if (this.props.dropAlign.bottom) {
@@ -532,7 +533,7 @@ var Menu = function (_Component2) {
         return _react2.default.createElement(
           _Box2.default,
           _extends({ tag: 'nav', id: this.props.id }, other, {
-            className: classes.join(' ') }),
+            className: classes.join(' '), primary: false }),
           this.props.children
         );
       } else {
