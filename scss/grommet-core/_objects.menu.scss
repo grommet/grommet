@@ -1,4 +1,4 @@
-// (C) Copyright 2014 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 .menu {
   position: relative;
@@ -195,29 +195,6 @@
     }
   }
 
-  // &--small {
-  //   @include inuit-font-size($small-menu-font-size);
-  //
-  //   .menu__control {
-  //
-  //     &-drop-icon {
-  //       margin-left: halve(halve($inuit-base-spacing-unit));
-  //
-  //       html.rtl & {
-  //         margin-left: 0;
-  //         margin-right: halve(halve($inuit-base-spacing-unit));
-  //       }
-  //     }
-  //
-  //     &-icon {
-  //       svg {
-  //         width: halve($inuit-base-spacing-unit) + quarter($inuit-base-spacing-unit);
-  //         height: halve($inuit-base-spacing-unit) + quarter($inuit-base-spacing-unit);
-  //       }
-  //     }
-  //   }
-  // }
-
   &--primary {
 
     > .menu {
@@ -228,7 +205,7 @@
       padding: quarter($inuit-base-spacing-unit) $inuit-base-spacing-unit;
       margin-bottom: 0px;
       width: 100%;
-      border-width: quarter($inuit-base-spacing-unit);
+      border-width: $active-border-width;
       border-color: transparent;
       border-right-style: solid;
 
@@ -304,31 +281,12 @@
   }
 
   &--small {
-    // @include inuit-font-size($content-font-size);
-    // font-size: 1em;
-
-    // .menu__control {
-    //
-    //   &-label {
-    //     padding: halve($inuit-base-spacing-unit);
-    //   }
-    //
-    //   &-icon {
-    //     svg {
-    //       width: halve($inuit-base-spacing-unit) + ($inuit-base-spacing-unit / 4);
-    //       height: halve($inuit-base-spacing-unit) + ($inuit-base-spacing-unit / 4);
-    //     }
-    //   }
-    // }
-
     > a {
       padding: quarter($inuit-base-spacing-unit) 0;
     }
   }
 
   &--large {
-    // @include inuit-font-size($content-font-size);
-
     > a {
       padding: $inuit-base-spacing-unit 0;
     }
