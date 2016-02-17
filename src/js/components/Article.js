@@ -7,7 +7,6 @@ import keys from 'lodash/object/keys';
 import Box from './Box';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 import Scroll from '../utils/Scroll';
-import SkipLinkAnchor from './SkipLinkAnchor';
 // import CarouselControls from './CarouselControls';
 import Button from './Button';
 import NextIcon from './icons/base/LinkNext';
@@ -227,11 +226,6 @@ export default class Article extends Component {
       classes.push(this.props.className);
     }
 
-    let skipLinkAnchor = null;
-    if (this.props.primary) {
-      skipLinkAnchor = <SkipLinkAnchor label="Main Content" />;
-    }
-
     let controls;
     if (this.props.controls) {
       controls = this._renderControls();
@@ -246,8 +240,8 @@ export default class Article extends Component {
 
     return (
       <Box ref="component" tag="article" {...other}
-        className={classes.join(' ')} onFocus={this._onFocusChange}>
-        {skipLinkAnchor}
+        className={classes.join(' ')} onFocus={this._onFocusChange}
+        primary={this.props.primary}>
         {children}
         {controls}
       </Box>
