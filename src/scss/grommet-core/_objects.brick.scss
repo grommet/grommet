@@ -94,8 +94,10 @@
 }
 
 a.brick__anchor {
+
   &:hover,
   &:focus {
+
     outline: none;
     
     .brick {
