@@ -239,7 +239,7 @@
   }
 }
 
-.menu--inline.menu,
+.menu--inline.menu:not(.box--direction-row),
 .menu__drop {
 
   > hr {
