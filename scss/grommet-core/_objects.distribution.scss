@@ -7,10 +7,6 @@
     width: 100%;
     height: $graphic-size;
     max-height: calc(100vh - #{double($header-height)});
-
-    &:focus {
-      outline: $focus-border-color solid 1px;
-    }
   }
 
   &__background {

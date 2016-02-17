@@ -29,6 +29,8 @@ var TYPE_WIDE = 'wide';
 var TYPE_TALL = 'tall';
 
 var Brick = function Brick(props) {
+  var _classnames;
+
   var widthUnit = 1;
   var heightUnit = 1;
 
@@ -47,7 +49,9 @@ var Brick = function Brick(props) {
       break;
   }
 
-  var classes = (0, _classnames3.default)(CLASS_ROOT, CLASS_ROOT + '--' + widthUnit + '-' + heightUnit, _defineProperty({}, 'background-color-index-' + props.colorIndex, props.colorIndex), props.className);
+  var clickable = props.href || props.onClick;
+
+  var classes = (0, _classnames3.default)(CLASS_ROOT, CLASS_ROOT + '--' + widthUnit + '-' + heightUnit, (_classnames = {}, _defineProperty(_classnames, 'background-color-index-' + props.colorIndex, props.colorIndex), _defineProperty(_classnames, CLASS_ROOT + '--clickable', clickable), _classnames), props.className);
 
   var label = _react2.default.createElement(
     'div',
@@ -59,16 +63,9 @@ var Brick = function Brick(props) {
     )
   );
 
-  if (props.href || props.onClick) {
-    label = _react2.default.createElement(
-      _Anchor2.default,
-      { href: props.href, onClick: props.onClick, className: CLASS_ROOT + '--label' },
-      _react2.default.createElement(
-        'span',
-        null,
-        props.label
-      )
-    );
+  if (clickable) {
+    label = _react2.default.createElement(_Anchor2.default, { href: props.href || '#', onClick: props.onClick,
+      className: CLASS_ROOT + '--label', label: props.label });
   }
 
   var style = {};
