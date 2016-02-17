@@ -29,8 +29,6 @@ var TYPE_WIDE = 'wide';
 var TYPE_TALL = 'tall';
 
 var Brick = function Brick(props) {
-  var _classnames;
-
   var widthUnit = 1;
   var heightUnit = 1;
 
@@ -49,9 +47,7 @@ var Brick = function Brick(props) {
       break;
   }
 
-  var clickable = props.href || props.onClick;
-
-  var classes = (0, _classnames3.default)(CLASS_ROOT, CLASS_ROOT + '--' + widthUnit + '-' + heightUnit, (_classnames = {}, _defineProperty(_classnames, 'background-color-index-' + props.colorIndex, props.colorIndex), _defineProperty(_classnames, CLASS_ROOT + '--clickable', clickable), _classnames), props.className);
+  var classes = (0, _classnames3.default)(CLASS_ROOT, CLASS_ROOT + '--' + widthUnit + '-' + heightUnit, _defineProperty({}, 'background-color-index-' + props.colorIndex, props.colorIndex), props.className);
 
   var label = _react2.default.createElement(
     'div',
@@ -80,22 +76,25 @@ var Brick = function Brick(props) {
     );
   }
 
-  return _react2.default.createElement(
-    _Anchor2.default,
-    { href: props.href, onClick: props.onClick,
-      className: CLASS_ROOT + '__anchor' },
+  var clickable = props.href || props.onClick;
+  var brickContainer = _react2.default.createElement(
+    'div',
+    { className: classes, style: style },
     _react2.default.createElement(
       'div',
-      { className: classes, style: style },
-      _react2.default.createElement(
-        'div',
-        { className: CLASS_ROOT + '__container' },
-        texture,
-        props.children
-      ),
-      label
-    )
+      { className: CLASS_ROOT + '__container' },
+      texture,
+      props.children
+    ),
+    label
   );
+
+  return clickable ? _react2.default.createElement(
+    _Anchor2.default,
+    { href: props.href, onClick: props.onClick,
+      className: CLASS_ROOT + '__anchor', tabIndex: '0' },
+    brickContainer
+  ) : brickContainer;
 };
 
 Brick.propTypes = {
