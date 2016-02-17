@@ -9,10 +9,6 @@
   list-style: none;
   border-bottom: 1px solid $border-color;
 
-  &__content {
-    padding: $inuit-base-spacing-unit 0;
-  }
-
   &--justify {
     &-center {
       justify-content: center;
