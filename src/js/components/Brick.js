@@ -42,17 +42,10 @@ const Brick = props => {
   );
 
   let label = (
-    <div className={`${CLASS_ROOT}--label`}>
+    <div className={`${CLASS_ROOT}__label`}>
       <span>{props.label}</span>
     </div>
   );
-
-  if (clickable) {
-    label = (
-      <Anchor href={props.href || '#'} onClick={props.onClick}
-        className={`${CLASS_ROOT}--label`} label={props.label} />
-    );
-  }
 
   let style = {};
   if (props.texture && 'string' === typeof props.texture) {
@@ -68,13 +61,16 @@ const Brick = props => {
   }
 
   return (
-    <div className={classes} style={style}>
-      <div className={`${CLASS_ROOT}--content-wrapper`}>
-        {texture}
-        {props.children}
+    <Anchor href={props.href} onClick={props.onClick}
+      className={`${CLASS_ROOT}__anchor`}>
+      <div className={classes} style={style}>
+        <div className={`${CLASS_ROOT}__container`}>
+          {texture}
+          {props.children}
+        </div>
+        {label}
       </div>
-      {label}
-    </div>
+    </Anchor>
   );
 };
 
