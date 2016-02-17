@@ -1,3 +1,20 @@
 @import 'hpe.defaults';
 @import '../grommet-core/index';
 @import 'objects.button-hpe';
+
+// Grommet core should handle this. For now, we put this here since the
+// HPE accent colors are light enough to be handled as light backgrounds.
+[class*="background-color-index"][class*="background-color-index-accent"]:not([class*="background-color-index-light"]) {
+  .box {
+    border-color: $text-color;
+  }
+
+  a,
+  .anchor {
+    color: $text-color;
+
+    &:hover {
+      color: $text-color;
+    }
+  }
+}
