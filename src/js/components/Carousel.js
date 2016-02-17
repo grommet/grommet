@@ -8,6 +8,8 @@ import Button from './Button';
 import Previous from './icons/base/Previous';
 import Next from './icons/base/Next';
 
+import DOM from '../utils/DOM';
+
 const CLASS_ROOT = "carousel";
 
 export default class Carousel extends Component {
@@ -21,13 +23,15 @@ export default class Carousel extends Component {
     this._onResize = this._onResize.bind(this);
     this._slidePrev = this._slidePrev.bind(this);
     this._slideNext = this._slideNext.bind(this);
+    this._handleScroll = this._handleScroll.bind(this);
 
     this.state = {
       activeIndex: 0,
       hideControls: ! props.persistentNav,
       priorIndex: 0,
       sequence: 1,
-      width: 0
+      width: 0,
+      slide: false
     };
   }
 
@@ -36,17 +40,45 @@ export default class Carousel extends Component {
       width: this.refs.carousel.offsetWidth
     });
 
-    if (this.props.autoplay) {
-      this._setSlideInterval();
-    }
-
     window.addEventListener('resize', this._onResize);
+
+    this._handleScroll();
+    var scrollParents = DOM.findScrollParents(this.refs.carousel);
+    scrollParents.forEach(function (scrollParent) {
+      scrollParent.addEventListener('scroll', this._handleScroll);
+    }.bind(this));
   }
 
   componentWillUnmount () {
     clearInterval(this._slideAnimation);
 
     window.removeEventListener('resize', this._onResize);
+
+    var scrollParents = DOM.findScrollParents(this.refs.carousel);
+    scrollParents.forEach(function (scrollParent) {
+      scrollParent.removeEventListener('scroll', this._handleScroll);
+    }.bind(this));
+  }
+
+  _handleScroll () {
+    var viewportHeight = document.documentElement.clientHeight;
+    var carouselTopPosition = this.refs.carousel.getBoundingClientRect().top;
+    var carouselHeight = this.refs.carousel.offsetHeight;
+    var startScroll = viewportHeight - (carouselHeight / 2);
+
+    if (this.props.autoplay && carouselTopPosition <= startScroll && carouselTopPosition >= -carouselHeight / 2) {
+      if (this.state.slide === false) {
+        this._setSlideInterval();
+        this.setState({
+          slide: true
+        });
+      }
+    } else {
+      clearInterval(this._slideAnimation);
+      this.setState({
+        slide: false
+      });
+    }
   }
 
   _setSlideInterval () {
