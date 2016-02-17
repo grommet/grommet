@@ -97,6 +97,7 @@ a.brick__anchor {
   &:hover,
   &:focus {
     outline: none;
+    
     .brick {
       z-index: 1;
       transition: transform 0.4s;
