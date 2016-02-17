@@ -34,10 +34,6 @@ a,
     text-decoration: none;
   }
 
-  &:focus {
-    outline: $focus-border-color solid 1px;
-  }
-
   &__icon {
     display: inline-block;
     padding: halve($inuit-base-spacing-unit);
