@@ -116,25 +116,23 @@
   }
 
   &--small {
-    line-height: $inuit-base-spacing-unit;
-
     .search__input {
-      @include inuit-font-size($label-font-size, $label-font-size);
-      padding: (halve($inuit-base-spacing-unit - $label-font-size) - $input-border-width)
-        ($label-font-size - $input-border-width);
+      @include inuit-font-size($control-font-size, inherit);
+      padding: (($inuit-base-spacing-unit - $control-font-size) - $input-border-width)
+        ($control-font-size - $input-border-width);
       padding-right: ($inuit-base-spacing-unit - $input-border-width);
 
       &:focus {
-        padding: (halve($inuit-base-spacing-unit - $label-font-size) - $input-focus-border-width)
-          ($label-font-size - $input-focus-border-width);
+        padding: (($inuit-base-spacing-unit - $control-font-size) - $input-focus-border-width)
+          ($control-font-size - $input-focus-border-width);
         padding-right: ($inuit-base-spacing-unit - $input-focus-border-width);
       }
     }
 
-    .control-icon-search {
-      height: halve($inuit-base-spacing-unit);
-      width: halve($inuit-base-spacing-unit);
-    }
+    // .control-icon-search {
+    //   height: halve($inuit-base-spacing-unit);
+    //   width: halve($inuit-base-spacing-unit);
+    // }
   }
 
   &--large {
