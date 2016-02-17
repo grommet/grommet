@@ -69,7 +69,7 @@ exports.default = Heading;
 Heading.propTypes = {
   align: _react.PropTypes.oneOf(['start', 'center', 'end']),
   margin: _react.PropTypes.oneOf(['none', 'small', 'medium', 'large']),
-  size: _react.PropTypes.string,
+  size: _react.PropTypes.oneOf(['small', 'medium', 'large']),
   strong: _react.PropTypes.bool,
   tag: _react.PropTypes.string
 };
