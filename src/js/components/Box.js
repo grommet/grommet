@@ -4,6 +4,7 @@ import React, { Component, PropTypes } from 'react';
 import keys from 'lodash/object/keys';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 import Intl from '../utils/Intl';
+import SkipLinkAnchor from './SkipLinkAnchor';
 
 const CLASS_ROOT = "box";
 
@@ -86,6 +87,14 @@ export default class Box extends Component {
       }
     }
 
+    let skipLinkAnchor;
+    if (this.props.primary) {
+      let mainContentLabel = (
+        Intl.getMessage(this.context.intl, 'Main Content')
+      );
+      skipLinkAnchor = <SkipLinkAnchor label={mainContentLabel} />;
+    }
+
     if (this.props.className) {
       classes.push(this.props.className);
     }
@@ -115,6 +124,7 @@ export default class Box extends Component {
         <div ref="boxContainer" className={containerClasses.join(' ')}
           style={style} role={this.props.role} {...a11yProps}
           {...eventListeners}>
+          {skipLinkAnchor}
           <this.props.tag id={this.props.id} className={classes.join(' ')}>
             {texture}
             {this.props.children}
@@ -127,6 +137,7 @@ export default class Box extends Component {
           className={classes.join(' ')} style={style}
           role={this.props.role} tabIndex={this.props.tabIndex} {...a11yProps}
           {...eventListeners}>
+          {skipLinkAnchor}
           {texture}
           {this.props.children}
         </this.props.tag>
@@ -156,6 +167,7 @@ Box.propTypes = {
       vertical: PropTypes.oneOf(['none', 'small', 'medium', 'large'])
     })
   ]),
+  primary: PropTypes.bool,
   reverse: PropTypes.bool,
   responsive: PropTypes.bool,
   role: PropTypes.string,

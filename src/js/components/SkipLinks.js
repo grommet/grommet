@@ -108,7 +108,7 @@ export default class SkipLinks extends Component {
     let menuComponent;
     if (anchorElements.length > 0) {
       menuComponent = (
-        <Menu direction="row">
+        <Menu direction="row" responsive={false}>
           {anchorElements}
         </Menu>
       );

@@ -173,7 +173,8 @@ class MenuDrop extends Component {
     let contents = [
       React.cloneElement(this.props.control, {key: 'control'}),
       <Box key="nav" ref="navContainer"
-        role="menu" tag="nav" {...other} className={`${CLASS_ROOT}__contents`}>
+        role="menu" tag="nav" {...other} className={`${CLASS_ROOT}__contents`}
+        primary={false}>
         {this.props.children}
       </Box>
     ];
@@ -468,7 +469,7 @@ export default class Menu extends Component {
 
       return (
         <Box tag="nav" id={this.props.id} {...other}
-          className={classes.join(' ')}>
+          className={classes.join(' ')} primary={false}>
           {this.props.children}
         </Box>
       );

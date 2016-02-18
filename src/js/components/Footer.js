@@ -35,7 +35,8 @@ const Footer = props => {
 
   return (
     <Box {...boxProps} tag="footer" className={classes}
-      containerClassName={containerClasses}>
+      containerClassName={containerClasses}
+      primary={false}>
       {footerSkipLink}
       {props.children}
     </Box>

@@ -108,7 +108,7 @@ button:not(.button) {
   }
 
   [class*="background-color-index-"]:not([class*="background-color-index-light"]) &:not(.button--primary) {
-    border-color: $colored-border-color;
+    border-color: $button-colored-border-color;
     color: $colored-text-color;
 
     &.button--accent {

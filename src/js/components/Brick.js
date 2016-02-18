@@ -29,26 +29,29 @@ const Brick = props => {
       break;
   }
 
+  let clickable = props.href || props.onClick;
+
   let classes = classnames(
     CLASS_ROOT,
     `${CLASS_ROOT}--${widthUnit}-${heightUnit}`,
     {
-      [`background-color-index-${props.colorIndex}`]: props.colorIndex
+      [`background-color-index-${props.colorIndex}`]: props.colorIndex,
+      [`${CLASS_ROOT}--clickable`]: clickable
     },
     props.className
   );
 
   let label = (
-    <div className={`${CLASS_ROOT}--label`}>
+    <div className={`${CLASS_ROOT}__label`}>
       <span>{props.label}</span>
     </div>
   );
 
-  if (props.href || props.onClick) {
+  if (clickable) {
     label = (
-      <Anchor href={props.href} onClick={props.onClick} className={`${CLASS_ROOT}--label`}>
-        <span>{props.label}</span>
-      </Anchor>
+      <Anchor href={props.href} onClick={props.onClick}
+        className={`${CLASS_ROOT}__label`}
+        label={props.label} />
     );
   }
 
@@ -67,7 +70,7 @@ const Brick = props => {
 
   return (
     <div className={classes} style={style}>
-      <div className={`${CLASS_ROOT}--content-wrapper`}>
+      <div className={`${CLASS_ROOT}__container`}>
         {texture}
         {props.children}
       </div>

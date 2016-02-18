@@ -32,7 +32,7 @@ $button-accent-color: #ff8d6d;
     [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
 
       &:hover {
-        box-shadow: 0px 0px 0px 2px $colored-border-color;
+        box-shadow: 0px 0px 0px 2px $button-colored-border-color;
       }
 
       &.button--primary {
@@ -43,7 +43,7 @@ $button-accent-color: #ff8d6d;
 
       &.button--secondary {
         &:hover {
-          box-shadow: 0px 0px 0px 2px $colored-border-color;
+          box-shadow: 0px 0px 0px 2px $button-colored-border-color;
         }
       }
 

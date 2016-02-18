@@ -268,7 +268,6 @@ export default class Search extends Component {
         [`background-color-index-${this.props.dropColorIndex}`]: this.props.dropColorIndex,
         [`${CLASS_ROOT}__drop`]: true,
         [`${CLASS_ROOT}__drop--controlled`]: !(this.state.inline),
-        [`${CLASS_ROOT}__drop--inline`]: this.state.inline,
         [`${CLASS_ROOT}__drop--large`]: this.props.large
       }
     );
@@ -336,14 +335,15 @@ export default class Search extends Component {
   render () {
     let classes = classnames(
       CLASS_ROOT,
-      this.props.className,
       {
         [`${CLASS_ROOT}--controlled`]: !(this.state.inline),
+        [`${CLASS_ROOT}----fill`]: this.props.fill,
         [`${CLASS_ROOT}--icon-align-${this.props.iconAlign}`]: this.props.iconAlign,
         [`${CLASS_ROOT}--inline`]: this.state.inline,
         [`${CLASS_ROOT}--large`]: this.props.large && ! this.props.size,
         [`${CLASS_ROOT}--${this.props.size}`]: this.props.size
-      }
+      },
+      this.props.className
     );
 
     if (this.state.inline) {
@@ -382,6 +382,7 @@ Search.propTypes = {
   defaultValue: PropTypes.string,
   dropAlign: Drop.alignPropType,
   dropColorIndex: PropTypes.string,
+  fill: PropTypes.bool,
   iconAlign: React.PropTypes.oneOf(['start', 'end']),
   id: React.PropTypes.string,
   inline: PropTypes.bool,

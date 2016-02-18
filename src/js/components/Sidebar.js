@@ -21,7 +21,7 @@ const Sidebar = props => {
   let boxProps = Props.pick(props, Box);
 
   return (
-    <Box {...boxProps} className={classes}>
+    <Box {...boxProps} className={classes} primary={false}>
       {props.children}
     </Box>
   );
