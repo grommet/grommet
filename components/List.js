@@ -298,7 +298,7 @@ var List = function (_Component2) {
       }
 
       var empty = undefined;
-      if (!this.props.data || this.props.data.length === 0) {
+      if (this.props.emptyIndicator && (!this.props.data || this.props.data.length === 0)) {
         empty = _react2.default.createElement(
           'li',
           { className: CLASS_ROOT + "__empty" },
