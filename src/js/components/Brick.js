@@ -29,11 +29,14 @@ const Brick = props => {
       break;
   }
 
+  let clickable = props.href || props.onClick;
+
   let classes = classnames(
     CLASS_ROOT,
     `${CLASS_ROOT}--${widthUnit}-${heightUnit}`,
     {
-      [`background-color-index-${props.colorIndex}`]: props.colorIndex
+      [`background-color-index-${props.colorIndex}`]: props.colorIndex,
+      [`${CLASS_ROOT}--clickable`]: clickable
     },
     props.className
   );
@@ -43,6 +46,14 @@ const Brick = props => {
       <span>{props.label}</span>
     </div>
   );
+
+  if (clickable) {
+    label = (
+      <Anchor href={props.href} onClick={props.onClick}
+        className={`${CLASS_ROOT}__label`}
+        label={props.label} />
+    );
+  }
 
   let style = {};
   if (props.texture && 'string' === typeof props.texture) {
@@ -57,8 +68,7 @@ const Brick = props => {
     texture = <div className={CLASS_ROOT + "__texture"}>{props.texture}</div>;
   }
 
-  let clickable = props.href || props.onClick;
-  let brickContainer = (
+  return (
     <div className={classes} style={style}>
       <div className={`${CLASS_ROOT}__container`}>
         {texture}
@@ -67,14 +77,6 @@ const Brick = props => {
       {label}
     </div>
   );
-
-  return clickable ? (
-    <Anchor href={props.href} onClick={props.onClick}
-      className={`${CLASS_ROOT}__anchor`} tabIndex="0">
-      {brickContainer}
-    </Anchor>
-  ) :
-  brickContainer;
 };
 
 Brick.propTypes = {
