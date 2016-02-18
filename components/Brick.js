@@ -95,8 +95,12 @@ var Brick = function Brick(props) {
   if (clickable) {
     return _react2.default.createElement(
       _Anchor2.default,
-      { href: props.href, onClick: props.onClick, className: classes, style: style },
-      brickContent
+      { href: props.href, onClick: props.onClick, className: classes },
+      _react2.default.createElement(
+        'div',
+        { className: CLASS_ROOT + '__background', style: style },
+        brickContent
+      )
     );
   } else {
     return _react2.default.createElement(
