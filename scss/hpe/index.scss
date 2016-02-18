@@ -6,7 +6,7 @@
 // HPE accent colors are light enough to be handled as light backgrounds.
 [class*="background-color-index"][class*="background-color-index-accent"]:not([class*="background-color-index-light"]) {
   .box {
-    border-color: rgba($text-color, 0.4);
+    border-color: $border-color;
   }
 
   a,
