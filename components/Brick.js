@@ -63,12 +63,6 @@ var Brick = function Brick(props) {
     )
   );
 
-  if (clickable) {
-    label = _react2.default.createElement(_Anchor2.default, { href: props.href, onClick: props.onClick,
-      className: CLASS_ROOT + '__label',
-      label: props.label });
-  }
-
   var style = {};
   if (props.texture && 'string' === typeof props.texture) {
     style.background = "url(" + props.texture + ") no-repeat center center";
@@ -86,9 +80,9 @@ var Brick = function Brick(props) {
     );
   }
 
-  return _react2.default.createElement(
+  var brickContent = _react2.default.createElement(
     'div',
-    { className: classes, style: style },
+    null,
     _react2.default.createElement(
       'div',
       { className: CLASS_ROOT + '__container' },
@@ -97,6 +91,20 @@ var Brick = function Brick(props) {
     ),
     label
   );
+
+  if (clickable) {
+    return _react2.default.createElement(
+      _Anchor2.default,
+      { href: props.href, onClick: props.onClick, className: classes, style: style },
+      brickContent
+    );
+  } else {
+    return _react2.default.createElement(
+      'div',
+      { className: classes, style: style },
+      brickContent
+    );
+  }
 };
 
 Brick.propTypes = {
