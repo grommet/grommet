@@ -337,7 +337,7 @@ export default class Search extends Component {
       CLASS_ROOT,
       {
         [`${CLASS_ROOT}--controlled`]: !(this.state.inline),
-        [`${CLASS_ROOT}----fill`]: this.props.fill,
+        [`${CLASS_ROOT}--fill`]: this.props.fill,
         [`${CLASS_ROOT}--icon-align-${this.props.iconAlign}`]: this.props.iconAlign,
         [`${CLASS_ROOT}--inline`]: this.state.inline,
         [`${CLASS_ROOT}--large`]: this.props.large && ! this.props.size,
