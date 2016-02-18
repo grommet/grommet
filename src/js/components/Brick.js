@@ -72,8 +72,10 @@ const Brick = props => {
 
   if (clickable) {
     return (
-      <Anchor href={props.href} onClick={props.onClick} className={classes} style={style}>
-        {brickContent}
+      <Anchor href={props.href} onClick={props.onClick} className={classes}>
+        <div className={`${CLASS_ROOT}__background`} style={style}>
+          {brickContent}
+        </div>
       </Anchor>
     );
   } else {

@@ -23,6 +23,14 @@
     }
   }
 
+  &__background {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
   &__container {
     position: absolute;
     top: $inuit-base-spacing-unit;
@@ -34,7 +42,7 @@
 
   &--clickable {
 
-    &:hover {
+    &:hover, &:focus {
       z-index: 1;
       transition: transform 0.4s;
       transform: scale(1.05);
