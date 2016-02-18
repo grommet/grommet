@@ -90,6 +90,7 @@ exports.default = {
     delete _keyboardAccelerators[id];
   },
 
+
   // Add handlers for specific keys.
   // This function can be called multiple times, existing handlers will
   // be replaced, new handlers will be added.
@@ -118,6 +119,7 @@ exports.default = {
       }
     }
   },
+
 
   // Remove handlers for all keys or specific keys.
   // If no argument is passed in, all handlers are removed.
