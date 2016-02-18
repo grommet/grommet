@@ -32,7 +32,7 @@
       text-decoration: none;
     }
 
-    &:focus {
+    &:focus:not(tab--active .tab__link) {
       .tab__label {
         border-color: $border-color;
       }
@@ -47,15 +47,15 @@
     border-bottom: $active-border-width solid transparent;
   }
 
-  &--active {
+  &--active,
+  &--active .tab__link:hover {
     .tab__label {
       color: $hover-text-color;
       border-color: $hover-text-color;
     }
   }
 
-  &:hover,
-  &:focus {
+  &:hover {
     .tab__label {
       border-color: $border-color;
     }
