@@ -85,7 +85,7 @@
     display: inline-block;
     width: round($inuit-base-spacing-unit * 1.5);
     height: round($inuit-base-spacing-unit * 1.5);
-    stroke: #fff;
+    stroke: $colored-icon-color;
     fill: transparent;
     cursor: pointer;
     filter: drop-shadow(1px 1px 1px $button-drop-shadow-color);
