@@ -32,7 +32,7 @@ var Image = function Image(props) {
 Image.propTypes = {
   full: _react.PropTypes.oneOf([true, 'horizontal', 'vertical', false]),
   src: _react.PropTypes.string,
-  size: _react.PropTypes.oneOf(['small', 'medium', 'large'])
+  size: _react.PropTypes.oneOf(['small', 'medium', 'large', 'thumb'])
 };
 
 Image.displayName = 'Image';
