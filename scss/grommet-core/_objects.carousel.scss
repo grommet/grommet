@@ -43,8 +43,14 @@
       -webkit-filter: drop-shadow(1px 1px 1px $button-drop-shadow-color);
 
       polyline {
-        stroke: #fff;
+        stroke: $colored-icon-color;
         stroke-width: 1px;
+      }
+    }
+
+    &:hover {
+      .control-icon polyline {
+        stroke: $active-colored-icon-color;
       }
     }
 
