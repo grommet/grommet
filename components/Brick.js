@@ -29,6 +29,8 @@ var TYPE_WIDE = 'wide';
 var TYPE_TALL = 'tall';
 
 var Brick = function Brick(props) {
+  var _classnames;
+
   var widthUnit = 1;
   var heightUnit = 1;
 
@@ -47,7 +49,9 @@ var Brick = function Brick(props) {
       break;
   }
 
-  var classes = (0, _classnames3.default)(CLASS_ROOT, CLASS_ROOT + '--' + widthUnit + '-' + heightUnit, _defineProperty({}, 'background-color-index-' + props.colorIndex, props.colorIndex), props.className);
+  var clickable = props.href || props.onClick;
+
+  var classes = (0, _classnames3.default)(CLASS_ROOT, CLASS_ROOT + '--' + widthUnit + '-' + heightUnit, (_classnames = {}, _defineProperty(_classnames, 'background-color-index-' + props.colorIndex, props.colorIndex), _defineProperty(_classnames, CLASS_ROOT + '--clickable', clickable), _classnames), props.className);
 
   var label = _react2.default.createElement(
     'div',
@@ -58,6 +62,12 @@ var Brick = function Brick(props) {
       props.label
     )
   );
+
+  if (clickable) {
+    label = _react2.default.createElement(_Anchor2.default, { href: props.href, onClick: props.onClick,
+      className: CLASS_ROOT + '__label',
+      label: props.label });
+  }
 
   var style = {};
   if (props.texture && 'string' === typeof props.texture) {
@@ -76,8 +86,7 @@ var Brick = function Brick(props) {
     );
   }
 
-  var clickable = props.href || props.onClick;
-  var brickContainer = _react2.default.createElement(
+  return _react2.default.createElement(
     'div',
     { className: classes, style: style },
     _react2.default.createElement(
@@ -88,13 +97,6 @@ var Brick = function Brick(props) {
     ),
     label
   );
-
-  return clickable ? _react2.default.createElement(
-    _Anchor2.default,
-    { href: props.href, onClick: props.onClick,
-      className: CLASS_ROOT + '__anchor', tabIndex: '0' },
-    brickContainer
-  ) : brickContainer;
 };
 
 Brick.propTypes = {

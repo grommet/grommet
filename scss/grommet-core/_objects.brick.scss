@@ -1,8 +1,8 @@
 .brick {
   padding: $inuit-base-spacing-unit;
   position: relative;
-  margin: 0 halve($inuit-base-spacing-unit) halve($inuit-base-spacing-unit) 0;
   float: left;
+  margin: 0 halve($inuit-base-spacing-unit) halve($inuit-base-spacing-unit) 0;
   max-width: calc(100% - #{halve($inuit-base-spacing-unit)});
 
   &__label {
@@ -30,6 +30,15 @@
     left: $inuit-base-spacing-unit;
     right: $inuit-base-spacing-unit;
     max-width: calc(100% - #{double($inuit-base-spacing-unit)});
+  }
+
+  &--clickable {
+
+    &:hover {
+      z-index: 1;
+      transition: transform 0.4s;
+      transform: scale(1.05);
+    }
   }
 
   &[class*="background-color-index-"] span {
@@ -89,21 +98,6 @@
 
     @include media-query(portable) {
       width: calc(100% - #{halve($inuit-base-spacing-unit)});
-    }
-  }
-}
-
-a.brick__anchor {
-
-  &:hover,
-  &:focus {
-
-    outline: none;
-    
-    .brick {
-      z-index: 1;
-      transition: transform 0.4s;
-      transform: scale(1.05);
     }
   }
 }
