@@ -288,22 +288,22 @@ var List = function (_Component2) {
       }
 
       var children = undefined;
-      var empty = undefined;
       if (this.props.data && this.props.schema) {
         // Deprecated, will be removed soon.
         children = this.props.data.map(function (item) {
           return this._renderItem(item);
         }, this);
-        if (this.props.data.length === 0) {
-          empty = _react2.default.createElement(
-            'li',
-            { className: CLASS_ROOT + "__empty" },
-            this.props.emptyIndicator
-          );
-        }
       } else {
         children = this.props.children;
-        empty = this.props.emptyIndicator;
+      }
+
+      var empty = undefined;
+      if (!this.props.data || this.props.data.length === 0) {
+        empty = _react2.default.createElement(
+          'li',
+          { className: CLASS_ROOT + "__empty" },
+          this.props.emptyIndicator
+        );
       }
 
       var more;
