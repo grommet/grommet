@@ -1,16 +1,20 @@
 'use strict';
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
+
+var _classnames4 = require('classnames');
+
+var _classnames5 = _interopRequireDefault(_classnames4);
 
 var _KeyboardAccelerators = require('../utils/KeyboardAccelerators');
 
@@ -33,6 +37,8 @@ var _Search = require('./icons/base/Search');
 var _Search2 = _interopRequireDefault(_Search);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -133,7 +139,7 @@ var Search = function (_Component) {
         document.addEventListener('click', this._onRemoveDrop);
         _KeyboardAccelerators2.default.startListeningToKeyboard(this, activeKeyboardHandlers);
 
-        var baseElement;
+        var baseElement = undefined;
         if (this.refs.control) {
           baseElement = this.refs.control.firstChild;
         } else {
@@ -245,7 +251,7 @@ var Search = function (_Component) {
     value: function _onEnter(event) {
       event.preventDefault(); // prevent submitting forms
       this._onRemoveDrop();
-      var suggestion;
+      var suggestion = undefined;
       if (this.state.activeSuggestionIndex >= 0) {
         suggestion = this.props.suggestions[this.state.activeSuggestionIndex];
         this.setState({ value: suggestion });
@@ -306,19 +312,6 @@ var Search = function (_Component) {
       }
     }
   }, {
-    key: '_classes',
-    value: function _classes(prefix) {
-      var classes = [prefix];
-
-      if (this.state.inline) {
-        classes.push(prefix + "--inline");
-      } else {
-        classes.push(prefix + "--controlled");
-      }
-
-      return classes;
-    }
-  }, {
     key: '_renderLabel',
     value: function _renderLabel(suggestion) {
       if ((typeof suggestion === 'undefined' ? 'undefined' : _typeof(suggestion)) === 'object') {
@@ -330,41 +323,37 @@ var Search = function (_Component) {
   }, {
     key: '_renderDrop',
     value: function _renderDrop() {
-      var classes = this._classes(CLASS_ROOT + "__drop");
-      if (this.props.dropColorIndex) {
-        classes.push("background-color-index-" + this.props.dropColorIndex);
-      }
-      if (this.props.large) {
-        classes.push(CLASS_ROOT + "__drop--large");
-      }
+      var _classnames;
 
-      var input;
+      var classes = (0, _classnames5.default)((_classnames = {}, _defineProperty(_classnames, 'background-color-index-' + this.props.dropColorIndex, this.props.dropColorIndex), _defineProperty(_classnames, CLASS_ROOT + '__drop', true), _defineProperty(_classnames, CLASS_ROOT + '__drop--controlled', !this.state.inline), _defineProperty(_classnames, CLASS_ROOT + '__drop--large', this.props.large), _classnames));
+
+      var input = undefined;
       if (!this.state.inline) {
         input = _react2.default.createElement('input', { key: 'input', id: 'search-drop-input', type: 'search',
           defaultValue: this.props.defaultValue,
           value: this.props.value,
-          className: CLASS_ROOT + "__input",
+          className: CLASS_ROOT + '__input',
           onChange: this._onChangeInput });
       }
 
-      var suggestions;
+      var suggestions = undefined;
       if (this.props.suggestions) {
         suggestions = this.props.suggestions.map(function (suggestion, index) {
-          var classes = [CLASS_ROOT + "__suggestion"];
-          if (index === this.state.activeSuggestionIndex) {
-            classes.push(CLASS_ROOT + "__suggestion--active");
-          }
+          var _classnames2;
+
+          var classes = (0, _classnames5.default)((_classnames2 = {}, _defineProperty(_classnames2, CLASS_ROOT + '__suggestion', true), _defineProperty(_classnames2, CLASS_ROOT + '__suggestion--active', index === this.state.activeSuggestionIndex), _classnames2));
+
           return _react2.default.createElement(
             'div',
             { key: index,
-              className: classes.join(' '),
+              className: classes,
               onClick: this._onClickSuggestion.bind(this, suggestion) },
             this._renderLabel(suggestion)
           );
         }, this);
         suggestions = _react2.default.createElement(
           'div',
-          { key: 'suggestions', className: CLASS_ROOT + "__suggestions" },
+          { key: 'suggestions', className: CLASS_ROOT + '__suggestions' },
           suggestions
         );
       }
@@ -373,10 +362,10 @@ var Search = function (_Component) {
 
       if (!this.state.inline) {
         contents = [_react2.default.createElement(_Button2.default, { key: 'icon', icon: 'Search',
-          className: CLASS_ROOT + "__drop-control",
+          className: CLASS_ROOT + '__drop-control',
           onClick: this._onRemoveDrop }), _react2.default.createElement(
           'div',
-          { key: 'contents', className: CLASS_ROOT + "__drop-contents",
+          { key: 'contents', className: CLASS_ROOT + '__drop-contents',
             onClick: this._onSink },
           contents
         )];
@@ -387,52 +376,38 @@ var Search = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        { id: 'search-drop', className: classes.join(' ') },
+        { id: 'search-drop', className: classes },
         contents
       );
     }
   }, {
     key: 'render',
     value: function render() {
+      var _classnames3;
 
-      var classes = this._classes(CLASS_ROOT);
-      if (this.props.size) {
-        classes.push(CLASS_ROOT + "--" + this.props.size);
-      } else if (this.props.large && !this.props.size) {
-        classes.push(CLASS_ROOT + "--large");
-      }
-      if (this.props.fill) {
-        classes.push(CLASS_ROOT + "--fill");
-      }
-      if (this.props.className) {
-        classes.push(this.props.className);
-      }
-      if (this.props.iconAlign) {
-        classes.push(CLASS_ROOT + "--icon-align-" + this.props.iconAlign);
-      }
+      var classes = (0, _classnames5.default)(CLASS_ROOT, (_classnames3 = {}, _defineProperty(_classnames3, CLASS_ROOT + '--controlled', !this.state.inline), _defineProperty(_classnames3, CLASS_ROOT + '--fill', this.props.fill), _defineProperty(_classnames3, CLASS_ROOT + '--icon-align-' + this.props.iconAlign, this.props.iconAlign), _defineProperty(_classnames3, CLASS_ROOT + '--inline', this.state.inline), _defineProperty(_classnames3, CLASS_ROOT + '--large', this.props.large && !this.props.size), _defineProperty(_classnames3, CLASS_ROOT + '--' + this.props.size, this.props.size), _classnames3), this.props.className);
 
       if (this.state.inline) {
         return _react2.default.createElement(
           'div',
-          { className: classes.join(' ') },
+          { className: classes },
           _react2.default.createElement('input', { ref: 'input', type: 'search',
             id: this.props.id,
             placeholder: this.props.placeHolder,
             defaultValue: this._renderLabel(this.props.defaultValue),
             value: this._renderLabel(this.props.value),
-            className: CLASS_ROOT + "__input",
+            className: CLASS_ROOT + '__input',
             onFocus: this._onFocusInput,
             onBlur: this._onBlurInput,
             onChange: this._onChangeInput }),
           _react2.default.createElement(_Search2.default, null)
         );
       } else {
-
         return _react2.default.createElement(
           'div',
           { ref: 'control' },
           _react2.default.createElement(_Button2.default, { id: this.props.id,
-            className: classes.join(' '),
+            className: classes,
             icon: 'Search',
             tabIndex: '0',
             onClick: this._onAddDrop,
@@ -447,7 +422,6 @@ var Search = function (_Component) {
 }(_react.Component);
 
 exports.default = Search;
-
 
 Search.propTypes = {
   defaultValue: _react.PropTypes.string,

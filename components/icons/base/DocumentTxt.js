@@ -32,7 +32,6 @@ var Icon = function Icon(props) {
   var large = props.large;
   var size = props.size;
 
-
   if (!size && large) {
     size = 'large';
   }
@@ -72,7 +71,7 @@ Icon.propTypes = {
   a11yTitleId: _react.PropTypes.string,
   colorIndex: _react.PropTypes.string,
   large: _react.PropTypes.bool,
-  size: _react.PropTypes.oneOf(['small', 'medium', 'large', 'huge'])
+  size: _react.PropTypes.oneOf(['small', 'medium', 'large'])
 };
 
 Icon.defaultProps = {
@@ -80,8 +79,6 @@ Icon.defaultProps = {
 };
 
 Icon.icon = true;
-
-Icon.displayName = 'DocumentTxt';
 
 exports.default = Icon;
 module.exports = exports['default'];

@@ -16,6 +16,8 @@
 
   &__input {
     margin-right: 0px;
+    border-radius: 0;
+    -webkit-appearance: none;
 
     .header & {
       font-size: inherit;
@@ -28,14 +30,6 @@
     @include media-query(palm) {
       max-width: 100%;
       width: 100vw;
-    }
-
-    &--inline {
-      margin-left: -1px;
-
-      .search__drop-contents {
-        display: block;
-      }
     }
 
     &--controlled {

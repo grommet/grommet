@@ -16,7 +16,6 @@ exports.default = {
     return t < .5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
   },
 
-
   // component: component to scroll
   // property: 'scrollTop' | 'scrollLeft'
   // delta: amount to scroll
