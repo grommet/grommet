@@ -16,6 +16,8 @@
 
   &__input {
     margin-right: 0px;
+    border-radius: 0;
+    -webkit-appearance: none;
 
     .header & {
       font-size: inherit;
