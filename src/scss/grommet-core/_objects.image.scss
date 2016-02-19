@@ -14,6 +14,13 @@
     width: $image-small-width;
   }
 
+  &--thumb {
+    width: double($inuit-base-spacing-unit);
+    height: double($inuit-base-spacing-unit);
+    flex: 0 0 auto;
+    object-fit: cover;
+  }
+
   &--full {
     width: 100%;
     height: 100%;

@@ -232,22 +232,23 @@ export default class List extends Component {
     }
 
     let children;
-    let empty;
     if (this.props.data && this.props.schema) {
       // Deprecated, will be removed soon.
       children = this.props.data.map(function (item) {
         return this._renderItem(item);
       }, this);
-      if (this.props.data.length === 0) {
-        empty = (
-          <li className={CLASS_ROOT + "__empty"}>
-            {this.props.emptyIndicator}
-          </li>
-        );
-      }
     } else {
       children = this.props.children;
-      empty = this.props.emptyIndicator;
+    }
+
+    let empty;
+    if (this.props.emptyIndicator &&
+      (! this.props.data || this.props.data.length === 0)) {
+      empty = (
+        <li className={CLASS_ROOT + "__empty"}>
+          {this.props.emptyIndicator}
+        </li>
+      );
     }
 
     var more;

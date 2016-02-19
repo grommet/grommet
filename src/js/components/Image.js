@@ -23,7 +23,7 @@ const Image = props => {
 Image.propTypes = {
   full: PropTypes.oneOf([true, 'horizontal', 'vertical', false]),
   src: PropTypes.string,
-  size: PropTypes.oneOf(['small', 'medium', 'large'])
+  size: PropTypes.oneOf(['small', 'medium', 'large', 'thumb'])
 };
 
 Image.displayName = 'Image';
