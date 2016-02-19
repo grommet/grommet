@@ -1,225 +1,204 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
-var isEqual = require('lodash/lang/isEqual');
-var SpinningIcon = require('./icons/Spinning');
-var InfiniteScroll = require('../utils/InfiniteScroll');
+import React, { Component, PropTypes } from 'react';
+import classnames from 'classnames';
+import isEqual from 'lodash/lang/isEqual';
+import SpinningIcon from './icons/Spinning';
+import InfiniteScroll from '../utils/InfiniteScroll';
+import Selection from '../utils/Selection';
 
-var CLASS_ROOT = "table";
-var SELECTED_CLASS = CLASS_ROOT + "__row--selected";
+const CLASS_ROOT = 'table';
+const SELECTED_CLASS = `${CLASS_ROOT}-row--selected`;
+// empirical number describing a minimum cell width for a
+// table to be presented in column-mode.
+const MIN_CELL_WIDTH = 96;
 
-var Table = React.createClass({
+export default class Table extends Component {
 
-  propTypes: {
-    selection: React.PropTypes.oneOfType([
-      React.PropTypes.number,
-      React.PropTypes.arrayOf(React.PropTypes.number)
-    ]),
-    onMore: React.PropTypes.func,
-    scrollable: React.PropTypes.bool,
-    selectable: React.PropTypes.oneOfType([
-      React.PropTypes.bool,
-      React.PropTypes.oneOf(['multiple'])
-    ]),
-    onSelect: React.PropTypes.func
-  },
+  constructor(props) {
+    super(props);
 
-  getDefaultProps: function () {
-    return {
-      scrollable: false,
-      selectable: false
+    this._onClick = this._onClick.bind(this);
+    this._onResize = this._onResize.bind(this);
+    this._layout = this._layout.bind(this);
+
+    if (props.selection) {
+      console.warn('The "selection" property of Table has been deprecated.' +
+      ' Instead, use the "selected" property. The behavior is the same.' +
+      ' The property name was changed to align with List and Tiles.');
+    }
+    this.state = {
+      selected: Selection.normalizeIndexes(props.selected || props.selection),
+      rebuildMirror: props.scrollable,
+      small: false
     };
-  },
+  }
 
-  getInitialState: function () {
-    return {
-      selection: this._normalizeSelection(this.props.selection),
-      rebuildMirror: this.props.scrollable
-    };
-  },
-
-  componentDidMount: function () {
-    this._alignSelection();
-    if (this.props.scrollable) {
+  componentDidMount () {
+    this._setSelection();
+    if (this.props.scrollable && ! this.state.small) {
       this._buildMirror();
       this._alignMirror();
     }
     if (this.props.onMore) {
-      this._scroll = InfiniteScroll.startListeningForScroll(this.refs.more, this.props.onMore);
+      this._scroll = InfiniteScroll.startListeningForScroll(
+        this.refs.more, this.props.onMore
+      );
     }
+    this._adjustBodyCells();
     window.addEventListener('resize', this._onResize);
-  },
+  }
 
-  componentWillReceiveProps: function (newProps) {
+  componentWillReceiveProps (nextProps) {
     if (this._scroll) {
       InfiniteScroll.stopListeningForScroll(this._scroll);
-      this._scroll = null;
+      this._scroll = undefined;
     }
-    if (newProps.hasOwnProperty('selection')) {
-      this.setState({selection: this._normalizeSelection(newProps.selection)});
+    if (nextProps.hasOwnProperty('selected') ||
+      nextProps.hasOwnProperty('selection')) {
+      this.setState({
+        selected: Selection.normalizeIndexes(
+          nextProps.selected || nextProps.selection
+        )
+      });
     }
-    this.setState({rebuildMirror: newProps.scrollable});
-  },
+    this.setState({rebuildMirror: nextProps.scrollable});
+  }
 
-  componentDidUpdate: function (prevProps, prevState) {
-    if (! isEqual(this.state.selection, prevState.selection)) {
-      this._alignSelection();
+  componentDidUpdate (prevProps, prevState) {
+    if (! isEqual(this.state.selected, prevState.selected)) {
+      this._setSelection();
     }
-    if (this.state.rebuildMirror) {
+    if (this.state.rebuildMirror && ! this.state.small) {
       this._buildMirror();
       this.setState({rebuildMirror: false});
     }
-    if (this.props.scrollable) {
+    if (this.props.scrollable && ! this.state.small) {
       this._alignMirror();
     }
-    if (this.props.onMore) {
-      this._scroll = InfiniteScroll.startListeningForScroll(this.refs.more, this.props.onMore);
+    if (this.props.onMore && !this._scroll) {
+      this._scroll = InfiniteScroll.startListeningForScroll(
+        this.refs.more, this.props.onMore
+      );
     }
-  },
+    this._adjustBodyCells();
+  }
 
-  componentWillUnmount: function () {
-    if (this._onScroll) {
+  componentWillUnmount () {
+    if (this._scroll) {
       InfiniteScroll.stopListeningForScroll(this._scroll);
     }
+    clearTimeout(this._resizeTimer);
     window.removeEventListener('resize', this._onResize);
-  },
+  }
 
-  _normalizeSelection: function (selection) {
-    var result;
-    if (undefined === selection || null === selection) {
-      result = [];
-    } else if (typeof selection === 'number') {
-      result = [selection];
-    } else {
-      result = selection;
+  _container () {
+    let containerElement = this.refs.table;
+    let tableBodies = containerElement.getElementsByTagName("TBODY");
+    if (tableBodies.length > 0) {
+      containerElement = tableBodies[0];
     }
-    return result;
-  },
+    return containerElement;
+  }
 
-  _clearSelected: function () {
-    var rows = this.refs.table
-      .querySelectorAll("." + SELECTED_CLASS);
-    for (var i = 0; i < rows.length; i++) {
-      rows[i].classList.remove(SELECTED_CLASS);
-    }
-  },
+  _setSelection () {
+    Selection.setClassFromIndexes({
+      containerElement: this._container(),
+      childSelector: 'tr',
+      selectedClass: SELECTED_CLASS,
+      selectedIndexes: this.state.selected
+    });
+  }
 
-  _alignSelection: function () {
-    this._clearSelected();
-    if (null !== this.state.selection) {
-      var tbody = this.refs.table.querySelectorAll('tbody')[0];
-      this.state.selection.forEach(function (rowIndex) {
-        tbody.childNodes[rowIndex].classList.add(SELECTED_CLASS);
-      });
-    }
-  },
-
-  _onClick: function (event) {
+  _onClick (event) {
     if (!this.props.selectable) {
       return;
     }
 
-    var element = event.target;
-    while (element.nodeName !== 'TR') {
-      element = element.parentNode;
+    let selected = Selection.onClick(event, {
+      containerElement: this._container(),
+      childSelector: 'tr',
+      selectedClass: SELECTED_CLASS,
+      multiSelect: ('multiple' === this.props.selectable),
+      priorSelectedIndexes: this.state.selected
+    });
+    // only set the selected state and classes if the caller isn't managing it.
+    if (! this.props.selected) {
+      this.setState({ selected: selected }, this._setSelection);
     }
 
-    var parentElement = element.parentNode;
-    if (element && parentElement.nodeName === 'TBODY') {
-
-      var index;
-      for (index = 0; index < parentElement.childNodes.length; index++) {
-        if (parentElement.childNodes[index] === element) {
-          break;
-        }
+    if (this.props.onSelect) {
+      // notify caller that the selection has changed
+      if (selected.length === 1) {
+        selected = selected[0];
       }
+      this.props.onSelect(selected);
+    }
+  }
 
-      var selection = this.state.selection.slice(0);
-      var selectionIndex = selection.indexOf(index);
+  _adjustBodyCells () {
+    // adjust table body cells to have link to the header
+    // so that in responsive mode it displays the text as content in css.
+    // IMPORTANT: non-text header cells, such as icon, are rendered as empty
+    // headers.
+    let headerCells = this.refs.table.querySelectorAll('thead th');
+    if (headerCells.length > 0) {
+      let rows = this.refs.table.querySelectorAll('tbody tr');
 
-      if ('multiple' === this.props.selectable && event.shiftKey) {
-
-        // select from nearest selected item to the currently selected item
-        var closestIndex = -1;
-        selection.forEach(function (selectIndex, arrayIndex) {
-          if (-1 === closestIndex) {
-            closestIndex = selectIndex;
-          } else if (Math.abs(index - selectIndex) < Math.abs(index - closestIndex)) {
-            closestIndex = selectIndex;
-          }
+      [].forEach.call(rows, (row) => {
+        [].forEach.call(row.cells, (cell, index) => {
+          cell.setAttribute('data-th', headerCells[index].innerText);
         });
-        for (var i = index; i !== closestIndex; ) {
-          selection.push(i);
-          if (closestIndex < index) {
-            i -= 1;
-          } else {
-            i += 1;
-          }
-        }
-        // remove text selection
-        window.getSelection().removeAllRanges();
-
-      } else if (('multiple' === this.props.selectable || -1 !== selectionIndex) &&
-        (event.ctrlKey || event.metaKey)) {
-
-        // toggle
-        if (-1 === selectionIndex) {
-          element.classList.add(SELECTED_CLASS);
-          selection.push(index);
-        } else {
-          element.classList.remove(SELECTED_CLASS);
-          selection.splice(selectionIndex, 1);
-        }
-
-      } else {
-
-        this._clearSelected();
-        selection = [index];
-        element.classList.add(SELECTED_CLASS);
-
-      }
-
-      this.setState({selection: selection});
-
-      if (this.props.onSelect) {
-        // notify caller that the selection has changed
-        if (selection.length === 1) {
-          selection = selection[0];
-        }
-        this.props.onSelect(selection);
-      }
+      });
     }
-  },
+  }
 
-  _onResize: function () {
+  _onResize () {
+    // debounce
+    clearTimeout(this._resizeTimer);
+    this._resizeTimer = setTimeout(this._layout, 50);
+  }
+
+  _layout () {
     this._alignMirror();
-  },
 
-  _buildMirror: function () {
-    var tableElement = this.refs.table;
-    var cells = tableElement.querySelectorAll('thead tr th');
-    var mirrorElement = this.refs.mirror;
-    var mirrorRow = mirrorElement.querySelectorAll('thead tr')[0];
-    while (mirrorRow.hasChildNodes()) {
-      mirrorRow.removeChild(mirrorRow.lastChild);
-    }
-    for (var i = 0; i < cells.length; i++) {
-      mirrorRow.appendChild(cells[i].cloneNode(true));
-    }
-  },
+    let availableSize = this.refs.container.offsetWidth;
+    let numberOfCells = this.refs.table.querySelectorAll('thead th').length;
 
-  _alignMirror: function () {
+    if ((numberOfCells * MIN_CELL_WIDTH) > availableSize) {
+      this.setState({small: true});
+    } else {
+      this.setState({small: false});
+    }
+  }
+
+  _buildMirror () {
+    let tableElement = this.refs.table;
+    let cells = tableElement.querySelectorAll('thead tr th');
+    let mirrorElement = this.refs.mirror;
+    if (mirrorElement) {
+      let mirrorRow = mirrorElement.querySelectorAll('thead tr')[0];
+      while (mirrorRow.hasChildNodes()) {
+        mirrorRow.removeChild(mirrorRow.lastChild);
+      }
+      for (let i = 0; i < cells.length; i++) {
+        mirrorRow.appendChild(cells[i].cloneNode(true));
+      }
+    }
+  }
+
+  _alignMirror () {
     if (this.refs.mirror) {
-      var tableElement = this.refs.table;
-      var cells = tableElement.querySelectorAll('thead tr th');
-      var mirrorElement = this.refs.mirror;
-      var mirrorCells = mirrorElement.querySelectorAll('thead tr th');
+      let tableElement = this.refs.table;
+      let cells = tableElement.querySelectorAll('thead tr th');
+      let mirrorElement = this.refs.mirror;
+      let mirrorCells = mirrorElement.querySelectorAll('thead tr th');
 
-      var rect = tableElement.getBoundingClientRect();
+      let rect = tableElement.getBoundingClientRect();
       mirrorElement.style.width = '' + Math.floor(rect.right - rect.left) + 'px';
 
-      var height = 0;
-      for (var i = 0; i < cells.length; i++) {
+      let height = 0;
+      for (let i = 0; i < cells.length; i++) {
         rect = cells[i].getBoundingClientRect();
         mirrorCells[i].style.width = '' + Math.floor(rect.right - rect.left) + 'px';
         mirrorCells[i].style.height = '' + Math.floor(rect.bottom - rect.top) + 'px';
@@ -227,24 +206,23 @@ var Table = React.createClass({
       }
       mirrorElement.style.height = '' + height + 'px';
     }
-  },
+  }
 
-  render: function () {
-    var classes = [CLASS_ROOT];
-    if (this.props.selectable) {
-      classes.push(CLASS_ROOT + "--selectable");
-    }
-    if (this.props.scrollable) {
-      classes.push(CLASS_ROOT + "--scrollable");
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
+  render () {
+    let classes = classnames(
+      CLASS_ROOT,
+      this.props.className,
+      {
+        [`${CLASS_ROOT}--small`]: this.state.small,
+        [`${CLASS_ROOT}--selectable`]: this.props.selectable,
+        [`${CLASS_ROOT}--scrollable`]: this.props.scrollable
+      }
+    );
 
-    var mirror = null;
+    let mirror;
     if (this.props.scrollable) {
       mirror = (
-        <table ref="mirror" className={CLASS_ROOT + "__mirror"}>
+        <table ref="mirror" className={`${CLASS_ROOT}__mirror`}>
           <thead>
             <tr></tr>
           </thead>
@@ -252,26 +230,38 @@ var Table = React.createClass({
       );
     }
 
-    var more = null;
+    let more;
     if (this.props.onMore) {
       more = (
-        <div ref="more" className={CLASS_ROOT + "__more"}>
+        <div ref="more" className={`${CLASS_ROOT}__more`}>
           <SpinningIcon />
         </div>
       );
     }
 
     return (
-      <div ref="container" className={classes.join(' ')}>
+      <div ref="container" className={classes}>
         {mirror}
-        <table ref="table" className={CLASS_ROOT + "__table"} onClick={this._onClick}>
+        <table ref="table" className={`${CLASS_ROOT}__table`}
+          onClick={this._onClick}>
           {this.props.children}
         </table>
         {more}
       </div>
     );
   }
+}
 
-});
-
-module.exports = Table;
+Table.propTypes = {
+  onMore: PropTypes.func,
+  onSelect: PropTypes.func,
+  scrollable: PropTypes.bool,
+  selectable: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.oneOf(['multiple'])
+  ]),
+  selected: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.arrayOf(PropTypes.number)
+  ])
+};

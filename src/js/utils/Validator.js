@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-module.exports = {
-  validate: function (rules) {
+export default {
+  validate (rules) {
     var result = {
       valid: true,
       errors: {},
@@ -23,6 +23,7 @@ module.exports = {
             result.firstError = result.firstError || rule.field;
             return true;
           }
+          return false;
         });
       }
     });

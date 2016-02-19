@@ -6,16 +6,14 @@
 //
 $brand-font-family: 'Open Sans', Arial, sans-serif;
 
-@font-face {
-  font-family: "Open Sans";
-  src: url("https://fonts.googleapis.com/css?family=Open+Sans");
-}
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 $brand-color: #ff8300;
 $brand-color-lighter: desaturate(lighten($brand-color, 50%), 20%);
 $brand-neutral-colors: (#545454, #767676, #989898);
 $brand-accent-colors: (#9fd4c9, #d5d848);
 $brand-status-colors: (
+  critical: #c8200d,
   error: #c8200d,
   warning: #e57118,
   ok: #2aac24,

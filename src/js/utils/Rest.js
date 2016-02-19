@@ -1,10 +1,10 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var request = require('superagent');
+import request from 'superagent';
 
-var _headers = {'Accept': 'application/json'};
+let _headers = {'Accept': 'application/json'};
 
-var _timeout = 10000; // 10s
+let _timeout = 10000; // 10s
 
 // convert params to string, to deal with array values
 function buildQueryParams(params) {
@@ -26,61 +26,59 @@ function buildQueryParams(params) {
   return result.join('&');
 }
 
-var Rest = {
+export default {
 
-  setTimeout: function (timeout) {
+  setTimeout (timeout) {
     _timeout = timeout;
   },
 
-  setHeaders: function (headers) {
+  setHeaders (headers) {
     _headers = headers;
   },
 
-  setHeader: function (name, value) {
+  setHeader (name, value) {
     _headers[name] = value;
   },
 
-  head: function (uri, params) {
+  head (uri, params) {
     var op = request.head(uri).query(buildQueryParams(params));
     op.timeout(_timeout);
     op.set(_headers);
     return op;
   },
 
-  get: function (uri, params) {
+  get (uri, params) {
     var op = request.get(uri).query(buildQueryParams(params));
     op.timeout(_timeout);
     op.set(_headers);
     return op;
   },
 
-  patch: function (uri, data) {
+  patch (uri, data) {
     var op = request.patch(uri).send(data);
     op.timeout(_timeout);
     op.set(_headers);
     return op;
   },
 
-  post: function (uri, data) {
+  post (uri, data) {
     var op = request.post(uri).send(data);
     op.timeout(_timeout);
     op.set(_headers);
     return op;
   },
 
-  put: function (uri, data) {
+  put (uri, data) {
     var op = request.put(uri).send(data);
     op.timeout(_timeout);
     op.set(_headers);
     return op;
   },
 
-  del: function (uri) {
+  del (uri) {
     var op = request.del(uri);
     op.timeout(_timeout);
     op.set(_headers);
     return op;
   }
 };
-
-module.exports = Rest;

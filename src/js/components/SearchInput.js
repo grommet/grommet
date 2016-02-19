@@ -1,55 +1,36 @@
 // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
-var ReactDOM = require('react-dom');
-var KeyboardAccelerators = require('../utils/KeyboardAccelerators');
-var Drop = require('../utils/Drop');
-var SearchIcon = require('./icons/Search');
+import React, { Component, PropTypes } from 'react';
+import ReactDOM from 'react-dom';
+import KeyboardAccelerators from '../utils/KeyboardAccelerators';
+import Drop from '../utils/Drop';
+import Button from './Button';
 
-var CLASS_ROOT = "search-input";
+const CLASS_ROOT = "search-input";
 
-var SearchInput = React.createClass({
+export default class SearchInput extends Component {
 
-  propTypes: {
-    defaultValue: React.PropTypes.oneOfType([
-      React.PropTypes.shape({
-        label: React.PropTypes.string,
-        value: React.PropTypes.string
-      }),
-      React.PropTypes.string
-    ]),
-    id: React.PropTypes.string,
-    name: React.PropTypes.string,
-    onChange: React.PropTypes.func,
-    placeHolder: React.PropTypes.string,
-    suggestions: React.PropTypes.arrayOf(
-      React.PropTypes.oneOfType([
-        React.PropTypes.shape({
-          label: React.PropTypes.string,
-          value: React.PropTypes.string
-        }),
-        React.PropTypes.string
-      ])
-    ),
-    value: React.PropTypes.oneOfType([
-      React.PropTypes.shape({
-        label: React.PropTypes.string,
-        value: React.PropTypes.string
-      }),
-      React.PropTypes.string
-    ])
-  },
+  constructor(props) {
+    super(props);
 
-  getInitialState: function () {
-    return {
+    this._onInputChange = this._onInputChange.bind(this);
+    this._onAddDrop = this._onAddDrop.bind(this);
+    this._onRemoveDrop = this._onRemoveDrop.bind(this);
+    this._onNextSuggestion = this._onNextSuggestion.bind(this);
+    this._onPreviousSuggestion = this._onPreviousSuggestion.bind(this);
+    this._onEnter = this._onEnter.bind(this);
+    this._onClickSuggestion = this._onClickSuggestion.bind(this);
+    this._onFocus = this._onFocus.bind(this);
+
+    this.state = {
       dropActive: false,
-      defaultValue: this.props.defaultValue,
-      value: this.props.value,
+      defaultValue: props.defaultValue,
+      value: props.value,
       activeSuggestionIndex: -1
     };
-  },
+  }
 
-  componentDidUpdate: function (prevProps, prevState) {
+  componentDidUpdate (prevProps, prevState) {
     // Set up keyboard listeners appropriate to the current state.
 
     var activeKeyboardHandlers = {
@@ -91,74 +72,97 @@ var SearchInput = React.createClass({
     } else if (this.state.dropActive && prevState.dropActive) {
       this._drop.render(this._renderDrop());
     }
-  },
+  }
 
-  componentWillUnmount: function () {
+  componentWillUnmount () {
     document.removeEventListener('click', this._onRemoveDrop);
-  },
+  }
 
-  _onInputChange: function (event) {
+  _fireDOMChange () {
+    var event = new Event('change', {
+      'bubbles': true,
+      'cancelable': true
+    });
+    // We use dispatchEvent to have the browser fill out the event fully.
+    this.refs.input.dispatchEvent(event);
+    // Manually dispatched events aren't delivered by React, so we notify too.
+    this.props.onDOMChange(event);
+  }
+
+  _onInputChange (event) {
     this.setState({dropActive: true, activeSuggestionIndex: -1});
-    this.props.onChange(event.target.value, false);
-  },
+    if (this.props.onChange) {
+      this.props.onChange(event.target.value, false);
+    }
+    if (this.props.onDOMChange) {
+      this._fireDOMChange();
+    }
+  }
 
-  _onAddDrop: function (event) {
+  _onAddDrop (event) {
     event.preventDefault();
     this.setState({dropActive: true, activeSuggestionIndex: -1});
-  },
+  }
 
-  _onRemoveDrop: function () {
+  _onRemoveDrop () {
     this.setState({dropActive: false});
-  },
+  }
 
-  _onNextSuggestion: function () {
+  _onNextSuggestion () {
     var index = this.state.activeSuggestionIndex;
     index = Math.min(index + 1, this.props.suggestions.length - 1);
     this.setState({activeSuggestionIndex: index});
-  },
+  }
 
-  _onPreviousSuggestion: function () {
+  _onPreviousSuggestion () {
     var index = this.state.activeSuggestionIndex;
     index = Math.max(index - 1, 0);
     this.setState({activeSuggestionIndex: index});
-  },
+  }
 
-  _onEnter: function () {
+  _onEnter (event) {
+    event.preventDefault(); // prevent submitting forms
     this.setState({dropActive: false});
     if (this.state.activeSuggestionIndex >= 0) {
       var suggestion = this.props.suggestions[this.state.activeSuggestionIndex];
       this.setState({value: suggestion});
+      if (this.props.onChange) {
+        this.props.onChange(suggestion, true);
+      }
+      if (this.props.onSelect) {
+        this.props.onSelect({target: this.refs.input, suggestion: suggestion});
+      }
+    }
+  }
+
+  _onClickSuggestion (suggestion) {
+    this.setState({value: suggestion, dropActive: false});
+    if (this.props.onChange) {
       this.props.onChange(suggestion, true);
     }
-  },
+    if (this.props.onSelect) {
+      this.props.onSelect({target: this.refs.input, suggestion: suggestion});
+    }
+  }
 
-  _onClickSuggestion: function (suggestion) {
-    this.setState({value: suggestion, dropActive: false});
-    this.props.onChange(suggestion, true);
-  },
-
-  _onFocus: function () {
+  _onFocus () {
     ReactDOM.findDOMNode(this.refs.input).select();
     this.setState({
       focused: true,
-      dropActive: false,
+      dropActive: (this.props.suggestions && this.props.suggestions.length > 0),
       activeSuggestionIndex: -1
     });
-  },
+  }
 
-  _valueText: function (value) {
-    var text = '';
-    if (value) {
-      if ('string' === typeof value) {
-        text = value;
-      } else {
-        text = value.label || value.value;
-      }
+  _renderLabel (suggestion) {
+    if (typeof suggestion === 'object') {
+      return suggestion.label || suggestion.value;
+    } else {
+      return suggestion;
     }
-    return text;
-  },
+  }
 
-  _renderDrop: function() {
+  _renderDrop () {
     var suggestions = null;
     if (this.props.suggestions) {
       suggestions = this.props.suggestions.map(function (suggestion, index) {
@@ -167,10 +171,10 @@ var SearchInput = React.createClass({
           classes.push(CLASS_ROOT + "__suggestion--active");
         }
         return (
-          <li key={this._valueText(suggestion)}
+          <li key={index}
             className={classes.join(' ')}
             onClick={this._onClickSuggestion.bind(this, suggestion)}>
-            {this._valueText(suggestion)}
+            {this._renderLabel(suggestion)}
           </li>
         );
       }, this);
@@ -181,9 +185,9 @@ var SearchInput = React.createClass({
         {suggestions}
       </ol>
     );
-  },
+  }
 
-  render: function() {
+  render () {
     var classes = [CLASS_ROOT];
     if (this.state.active) {
       classes.push(CLASS_ROOT + "--active");
@@ -196,18 +200,47 @@ var SearchInput = React.createClass({
       <div ref="component" className={classes.join(' ')}>
         <input ref="input" className={CLASS_ROOT + "__input"}
           id={this.props.id} name={this.props.name}
-          value={this._valueText(this.props.value)}
-          defaultValue={this._valueText(this.props.defaultValue)}
+          value={this._renderLabel(this.props.value)}
+          defaultValue={this._renderLabel(this.props.defaultValue)}
           placeholder={this.props.placeHolder}
           onChange={this._onInputChange}
           onFocus={this._onFocus} />
-        <div className={CLASS_ROOT + "__control"} onClick={this._onAddDrop} >
-          <SearchIcon />
-        </div>
+        <Button className={CLASS_ROOT + "__control"} icon="Search"
+          onClick={this._onAddDrop} />
       </div>
     );
   }
 
-});
+}
 
-module.exports = SearchInput;
+SearchInput.propTypes = {
+  defaultValue: PropTypes.oneOfType([
+    PropTypes.shape({
+      label: PropTypes.string,
+      value: PropTypes.string
+    }),
+    PropTypes.string
+  ]),
+  id: PropTypes.string,
+  name: PropTypes.string,
+  onChange: PropTypes.func,
+  onDOMChange: PropTypes.func,
+  onSelect: PropTypes.func,
+  placeHolder: PropTypes.string,
+  suggestions: PropTypes.arrayOf(
+    PropTypes.oneOfType([
+      PropTypes.shape({
+        label: PropTypes.node,
+        value: PropTypes.any
+      }),
+      PropTypes.string
+    ])
+  ),
+  value: PropTypes.oneOfType([
+    PropTypes.shape({
+      label: PropTypes.string,
+      value: PropTypes.string
+    }),
+    PropTypes.string
+  ])
+};

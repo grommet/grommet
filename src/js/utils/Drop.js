@@ -1,25 +1,25 @@
 // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
-var ReactDOM = require('react-dom');
-var DOM = require('../utils/DOM');
+import { PropTypes } from 'react';
+import { render, unmountComponentAtNode } from 'react-dom';
+import DOM from '../utils/DOM';
 
 /*
  * Drop is a utility for rendering components like drop down menus layered above
  * their initiating controls.
  */
 
-var VERTICAL_ALIGN_OPTIONS = ['top', 'bottom'];
-var HORIZONTAL_ALIGN_OPTIONS = ['right', 'left'];
+const VERTICAL_ALIGN_OPTIONS = ['top', 'bottom'];
+const HORIZONTAL_ALIGN_OPTIONS = ['right', 'left'];
 
-var Drop = {
+export default {
 
   // How callers can validate a property for drop alignment which will be passed to add().
-  alignPropType: React.PropTypes.shape({
-    top: React.PropTypes.oneOf(VERTICAL_ALIGN_OPTIONS),
-    bottom: React.PropTypes.oneOf(VERTICAL_ALIGN_OPTIONS),
-    left: React.PropTypes.oneOf(HORIZONTAL_ALIGN_OPTIONS),
-    right: React.PropTypes.oneOf(HORIZONTAL_ALIGN_OPTIONS)
+  alignPropType: PropTypes.shape({
+    top: PropTypes.oneOf(VERTICAL_ALIGN_OPTIONS),
+    bottom: PropTypes.oneOf(VERTICAL_ALIGN_OPTIONS),
+    left: PropTypes.oneOf(HORIZONTAL_ALIGN_OPTIONS),
+    right: PropTypes.oneOf(HORIZONTAL_ALIGN_OPTIONS)
   }),
 
   // Add a drop component.
@@ -34,7 +34,7 @@ var Drop = {
   //    right: left|right
   // }
 
-  add: function (control, content, align) {
+  add (control, content, align) {
     // validate align
     if (align && align.top &&
       VERTICAL_ALIGN_OPTIONS.indexOf(align.top) === -1) {
@@ -82,8 +82,9 @@ var Drop = {
     // setup DOM
     drop.container = document.createElement('div');
     drop.container.className = 'drop';
-    document.body.appendChild(drop.container);
-    ReactDOM.render(content, drop.container);
+    // prepend in body to avoid browser scroll issues
+    document.body.insertBefore(drop.container, document.body.firstChild);
+    render(content, drop.container);
 
     drop.scrollParents = DOM.findScrollParents(drop.control);
     drop.place = this._place.bind(this, drop);
@@ -101,23 +102,23 @@ var Drop = {
     return drop;
   },
 
-  _render: function (drop, content) {
-    ReactDOM.render(content, drop.container);
+  _render (drop, content) {
+    render(content, drop.container);
     // in case content changed, re-place
     setTimeout(this._place.bind(this, drop), 1);
   },
 
-  _remove: function (drop) {
+  _remove (drop) {
     drop.scrollParents.forEach(function (scrollParent) {
       scrollParent.removeEventListener('scroll', drop.place);
     });
     window.removeEventListener('resize', drop.place);
 
-    ReactDOM.unmountComponentAtNode(drop.container);
+    unmountComponentAtNode(drop.container);
     document.body.removeChild(drop.container);
   },
 
-  _place: function (drop) {
+  _place (drop) {
     var control = drop.control;
     var container = drop.container;
     var align = drop.align;
@@ -187,5 +188,3 @@ var Drop = {
     container.style.top = '' + top + 'px';
   }
 };
-
-module.exports = Drop;

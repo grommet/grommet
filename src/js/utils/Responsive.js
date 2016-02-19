@@ -5,7 +5,7 @@
  * It aligns with CSS media queries.
  */
 
-var SMALL_WIDTH_EM = 44.9375; // align with _settings.responsive.scss
+const SMALL_WIDTH_EM = 44.9375; // align with _settings.responsive.scss
 
 function _smallSize () {
   var fontSize = '16px';
@@ -16,7 +16,7 @@ function _smallSize () {
   return SMALL_WIDTH_EM * parseFloat(fontSize);
 }
 
-var Responsive = {
+export default {
 
   // Track responsive sizing.
   //
@@ -26,7 +26,7 @@ var Responsive = {
   // inside componentWillUnmount()
   //   this._responsive.stop()
 
-  start: function (func) {
+  start (func) {
     var responsive = {
       func: func,
       timer: null,
@@ -41,19 +41,19 @@ var Responsive = {
     return responsive;
   },
 
-  _stop: function (responsive) {
+  _stop (responsive) {
     clearTimeout(responsive.timer);
     window.removeEventListener('resize', responsive.onResize);
   },
 
-  _onResize: function (responsive) {
-    // debounce
-    clearTimeout(responsive.timer);
-    responsive.timer = setTimeout(responsive.layout, 50);
+  _onResize (responsive) {
+    // Don't debounce so we align more closely with how the stylesheets are
+    // processed.
+    responsive.layout();
   },
 
-  _check: function (responsive) {
-    if (window.innerWidth < responsive.smallSize) {
+  _check (responsive) {
+    if (window.innerWidth <= responsive.smallSize) {
       if (! responsive.small) {
         responsive.small = true;
         responsive.func(true);
@@ -66,5 +66,3 @@ var Responsive = {
     }
   }
 };
-
-module.exports = Responsive;

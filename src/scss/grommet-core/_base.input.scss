@@ -14,10 +14,15 @@ textarea {
   margin-right: halve($inuit-base-spacing-unit);
   background-color: transparent; // inherit; doesn't work on IE
 
+  html.rtl & {
+    margin-right: 0;
+    margin-left: halve($inuit-base-spacing-unit);
+  }
+
   &:focus {
-    padding: (halve($inuit-base-spacing-unit) - ($input-border-width + 1))
-      ($inuit-base-spacing-unit - ($input-border-width + 1));
-    border-width: 2px;
+    padding: (halve($inuit-base-spacing-unit) - $input-focus-border-width)
+      ($inuit-base-spacing-unit - $input-focus-border-width);
+    border-width: $input-focus-border-width;
     border-color: $focus-border-color;
     //box-shadow: 0 0 1px 1px $focus-border-color;
   }
@@ -40,7 +45,7 @@ textarea {
   }
 
   &.error {
-    border-color: map-get($brand-status-colors, error);
+    border-color: map-get($brand-status-colors, critical);
   }
 }
 
@@ -54,10 +59,10 @@ $small-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAY
 
 select {
   border-color: $border-color;
-  padding-right: $inuit-base-spacing-unit;
+  padding-right: double($inuit-base-spacing-unit);
   -webkit-appearance: none;
   -moz-appearance: none;
-  background: $small-drop-caret no-repeat center right;
+  background: $small-drop-caret no-repeat center right halve($inuit-base-spacing-unit);
   cursor: pointer;
 
   //&:hover {
@@ -77,6 +82,10 @@ select {
   width: 100%;
   height: $control-border-width;
   background-color: $meter-background-color;
+
+  [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+    background-color: $colored-meter-background-color;
+  }
 }
 
 @mixin range-thumb {
@@ -121,11 +130,15 @@ input[type=range] {
     content: "";
     position: absolute;
     left: -3000px;
-    right: halve($control-size);
+    right: $control-size;
     top: halve($control-size) - ($control-border-width + 1);
     bottom: halve($control-size) - ($control-border-width + 1);
     background-color: $brand-color;
     pointer-events: none;
+
+    [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+      background-color: #fff;
+    }
   }
 
   &::-webkit-slider-thumb:after {
@@ -137,11 +150,21 @@ input[type=range] {
     border-radius: $control-size;
     background-color: $background-color;
     cursor: pointer;
+
+    [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+      background-color: transparent;
+      border-color: $active-colored-icon-color;
+    }
   }
 
   &:hover::-webkit-slider-thumb:after {
     content: "";
     border-color: $active-icon-color;
+
+    [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+      background-color: $active-colored-icon-color;
+      border-color: $active-colored-icon-color;
+    }
   }
 
   &::-moz-range-track {
@@ -156,6 +179,20 @@ input[type=range] {
     width: $control-size - ($control-border-width * 2);
     border-radius: $control-size;
     background-color: $background-color;
+
+    [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+      border-color: $active-colored-icon-color;
+      background-color: transparent;
+    }
+  }
+
+  &::hover::-moz-range-thumb {
+    border-color: $active-icon-color;
+
+    [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+      border-color: $active-colored-icon-color;
+      background-color: $active-colored-icon-color;
+    }
   }
 
   // This isn't working
@@ -180,11 +217,19 @@ input[type=range] {
   &::-ms-fill-lower {
     background: $brand-color;
     border-color: transparent;
+
+    [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+      background: #fff;
+    }
   }
 
   &::-ms-fill-upper {
     background: $meter-background-color;
     border-color: transparent;
+
+    [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+      background: $colored-meter-background-color;
+    }
   }
 
   &::-ms-thumb {
@@ -194,9 +239,18 @@ input[type=range] {
     width: $control-size - ($control-border-width * 2);
     border-radius: $control-size;
     background-color: $background-color;
+
+    [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+      border-color: $active-colored-icon-color;
+    }
   }
 
   &:hover::-ms-thumb {
     border-color: $active-icon-color;
+
+    [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+      border-color: $active-colored-icon-color;
+      background-color: $active-colored-icon-color;
+    }
   }
 }

@@ -1,86 +1,32 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
-var ReactIntl = require('react-intl');
-var FormattedTime = ReactIntl.FormattedTime;
-var ListItem = require('./ListItem');
-var SpinningIcon = require('./icons/Spinning');
-var InfiniteScroll = require('../utils/InfiniteScroll');
+import React, { Component, PropTypes } from 'react';
+import { FormattedTime } from 'react-intl';
+import isEqual from 'lodash/lang/isEqual';
+import SpinningIcon from './icons/Spinning';
+import InfiniteScroll from '../utils/InfiniteScroll';
+import Selection from '../utils/Selection';
+import ListItem from './ListItem';
 
-var CLASS_ROOT = "list";
+const CLASS_ROOT = "list";
+const SELECTED_CLASS = CLASS_ROOT + "-item--selected";
 
-var List = React.createClass({
+// SchemaPropType is deprecated
+const SchemaPropType = PropTypes.arrayOf(PropTypes.shape({
+  attribute: PropTypes.string,
+  default: PropTypes.node,
+  image: PropTypes.bool,
+  label: PropTypes.string,
+  primary: PropTypes.bool,
+  secondary: PropTypes.bool,
+  timestamp: PropTypes.bool,
+  uid: PropTypes.bool
+}));
 
-  propTypes: {
-    data: React.PropTypes.arrayOf(React.PropTypes.object).isRequired,
-    emptyIndicator: React.PropTypes.node,
-    itemDirection: React.PropTypes.oneOf(['row', 'column']),
-    large: React.PropTypes.bool,
-    onMore: React.PropTypes.func,
-    onSelect: React.PropTypes.func,
-    schema: React.PropTypes.arrayOf(React.PropTypes.shape({
-      attribute: React.PropTypes.string,
-      default: React.PropTypes.node,
-      image: React.PropTypes.bool,
-      label: React.PropTypes.string,
-      primary: React.PropTypes.bool,
-      secondary: React.PropTypes.bool,
-      timestamp: React.PropTypes.bool,
-      uid: React.PropTypes.bool
-    })).isRequired,
-    selected: React.PropTypes.oneOfType([
-      React.PropTypes.string, // uid
-      React.PropTypes.arrayOf(React.PropTypes.string)
-    ]),
-    size: React.PropTypes.oneOf(['small', 'medium', 'large']),
-    small: React.PropTypes.bool
-  },
+// SchemaListItem is deprecated, use ListItem child components inside a List instead
+class SchemaListItem extends Component {
 
-  getDefaultProps: function () {
-    return {small: false, itemDirection: 'row'};
-  },
-
-  getInitialState: function() {
-    return this._stateFromProps(this.props);
-  },
-
-  componentDidMount: function () {
-    if (this.props.onMore) {
-      this._scroll = InfiniteScroll.startListeningForScroll(this.refs.more, this.props.onMore);
-    }
-  },
-
-  componentWillReceiveProps: function (nextProps) {
-    if (this.props.onMore) {
-      InfiniteScroll.stopListeningForScroll(this._scroll);
-      this._scroll = null;
-    }
-    this.setState(this._stateFromProps(nextProps));
-  },
-
-  componentDidUpdate: function () {
-    if (this.props.onMore) {
-      this._scroll = InfiniteScroll.startListeningForScroll(this.refs.more, this.props.onMore);
-    }
-  },
-
-  componentWillUnmount: function () {
-    if (this._onScroll) {
-      InfiniteScroll.stopListeningForScroll(this._scroll);
-    }
-  },
-
-  _stateFromProps: function (props) {
-    return {size: props.size || (props.small ? 'small' : (props.large ? 'large' : null))};
-  },
-
-  _onClickItem: function (item) {
-    if (this.props.onSelect) {
-      this.props.onSelect(item);
-    }
-  },
-
-  _renderValue: function (item, scheme) {
+  _renderValue (item, scheme) {
     var result;
     var value = item[scheme.attribute] || scheme.default;
     if (scheme.image) {
@@ -102,57 +48,208 @@ var List = React.createClass({
       result = value;
     }
     return result;
-  },
+  }
 
-  render: function () {
+  render () {
+    let item = this.props.item;
+    let classes = [];
+    if (this.props.direction) {
+      classes.push(CLASS_ROOT + "-item--" + this.props.direction);
+    }
+
+    let image;
+    let label;
+    let annotation;
+
+    this.props.schema.forEach(function (scheme) {
+      if (scheme.image) {
+        image = (
+          <span key="image" className={CLASS_ROOT + "-item__image"}>
+            {this._renderValue(item, scheme)}
+          </span>
+        );
+      } else if (scheme.primary) {
+        label = (
+          <span key="label" className={CLASS_ROOT + "-item__label"}>
+            {this._renderValue(item, scheme)}
+          </span>
+        );
+      } else if (scheme.secondary) {
+        annotation = (
+          <span key="annotation" className={CLASS_ROOT + "-item__annotation"}>
+            {this._renderValue(item, scheme)}
+          </span>
+        );
+      }
+    }, this);
+
+    if (this.props.onClick) {
+      classes.push(CLASS_ROOT + "-item--selectable");
+    }
+
+    return (
+      <ListItem className={classes.join(' ')} direction={this.props.direction}
+        selected={this.props.selected} onClick={this.props.onClick}>
+        {image}
+        {label}
+        {annotation}
+      </ListItem>
+    );
+  }
+}
+
+SchemaListItem.propTypes = {
+  direction: PropTypes.oneOf(['row', 'column']),
+  item: PropTypes.object.isRequired,
+  onClick: PropTypes.func,
+  schema: SchemaPropType,
+  selected: PropTypes.bool
+};
+
+export default class List extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this._onClick = this._onClick.bind(this);
+    this._onClickItem = this._onClickItem.bind(this);
+
+    this.state = {
+      selected: Selection.normalizeIndexes(props.selected)
+    };
+  }
+
+  componentDidMount () {
+    this._setSelection();
+    if (this.props.onMore) {
+      this._scroll = InfiniteScroll.startListeningForScroll(this.refs.more, this.props.onMore);
+    }
+  }
+
+  componentWillReceiveProps (nextProps) {
+    if (this._scroll) {
+      InfiniteScroll.stopListeningForScroll(this._scroll);
+      this._scroll = null;
+    }
+    if (nextProps.hasOwnProperty('selected')) {
+      this.setState({
+        selected: Selection.normalizeIndexes(nextProps.selected)
+      });
+    }
+  }
+
+  componentDidUpdate (prevProps, prevState) {
+    if (! isEqual(this.state.selected, prevState.selected)) {
+      this._setSelection();
+    }
+    if (this.props.onMore && !this._scroll) {
+      this._scroll = InfiniteScroll.startListeningForScroll(this.refs.more, this.props.onMore);
+    }
+  }
+
+  componentWillUnmount () {
+    if (this._scroll) {
+      InfiniteScroll.stopListeningForScroll(this._scroll);
+    }
+  }
+
+  _setSelection () {
+    Selection.setClassFromIndexes({
+      containerElement: this.refs.list,
+      childSelector: '.list-item',
+      selectedClass: SELECTED_CLASS,
+      selectedIndexes: this.state.selected
+    });
+  }
+
+  _onClick (event) {
+    if (!this.props.selectable) {
+      return;
+    }
+
+    let selected = Selection.onClick(event, {
+      containerElement: this.refs.list,
+      childSelector: '.list-item',
+      selectedClass: SELECTED_CLASS,
+      multiSelect: ('multiple' === this.props.selectable),
+      priorSelectedIndexes: this.state.selected
+    });
+    // only set the selected state and classes if the caller isn't managing it.
+    if (! this.props.selected) {
+      this.setState({ selected: selected }, this._setSelection);
+    }
+
+    if (this.props.onSelect) {
+      // notify caller that the selection has changed
+      if (selected.length === 1) {
+        selected = selected[0];
+      }
+      this.props.onSelect(selected);
+    }
+  }
+
+  _onClickItem (item) {
+    if (this.props.onSelect) {
+      this.props.onSelect(item);
+    }
+  }
+
+  _renderItem (item) {
+    let uid;
+    let selected;
+    let onClick;
+
+    this.props.schema.forEach(function (scheme) {
+      if (scheme.uid) {
+        uid = item[scheme.attribute];
+        if (uid === this.props.selected) {
+          selected = true;
+        }
+      }
+    }, this);
+
+    if (this.props.onSelect) {
+      onClick = this._onClickItem.bind(this, item);
+    }
+
+    return (
+      <SchemaListItem key={uid} item={item} schema={this.props.schema}
+        direction={this.props.itemDirection}
+        selected={selected} onClick={onClick} />
+    );
+  }
+
+  render () {
     var classes = [CLASS_ROOT];
-    if (true || this.props.fill) {
-      classes.push(CLASS_ROOT + "--fill");
+    if (this.props.size) {
+      classes.push(CLASS_ROOT + "--" + this.props.size);
     }
-    if (true || this.props.flush) {
-      classes.push(CLASS_ROOT + "--flush");
-    }
-    if (this.state.size) {
-      classes.push(CLASS_ROOT + "--" + this.state.size);
+    if (this.props.selectable) {
+      classes.push(CLASS_ROOT + "--selectable");
     }
     if (this.props.className) {
       classes.push(this.props.className);
     }
 
-    var items = this.props.data.map(function (item) {
-      var uid;
-      var image;
-      var primary;
-      var secondary;
-      var selected;
-      var onClick;
-
-      this.props.schema.forEach(function (scheme) {
-        if (scheme.image) {
-          image = this._renderValue(item, scheme);
-        } else if (scheme.primary) {
-          primary = this._renderValue(item, scheme);
-        } else if (scheme.secondary) {
-          secondary = this._renderValue(item, scheme);
-        }
-        if (scheme.uid) {
-          uid = item[scheme.attribute];
-          if (uid === this.props.selected) {
-            selected = true;
-          }
-        }
+    let children;
+    if (this.props.data && this.props.schema) {
+      // Deprecated, will be removed soon.
+      children = this.props.data.map(function (item) {
+        return this._renderItem(item);
       }, this);
+    } else {
+      children = this.props.children;
+    }
 
-      if (this.props.onSelect) {
-        onClick = this._onClickItem.bind(this, item);
-      }
-
-      return (
-        <ListItem key={uid} image={image} label={primary}
-          annotation={secondary} selected={selected}
-          direction={this.props.itemDirection} onClick={onClick} />
+    let empty;
+    if (this.props.emptyIndicator &&
+      (! this.props.data || this.props.data.length === 0)) {
+      empty = (
+        <li className={CLASS_ROOT + "__empty"}>
+          {this.props.emptyIndicator}
+        </li>
       );
-    }, this);
+    }
 
     var more;
     if (this.props.onMore) {
@@ -164,24 +261,34 @@ var List = React.createClass({
       );
     }
 
-    var empty;
-    if (this.props.data.length === 0) {
-      empty = (
-        <li className={CLASS_ROOT + "__empty"}>
-          {this.props.emptyIndicator}
-        </li>
-      );
-    }
-
     return (
-      <ul className={classes.join(' ')}>
+      <ul ref="list" className={classes.join(' ')} onClick={this._onClick}>
         {empty}
-        {items}
+        {children}
         {more}
       </ul>
     );
   }
+}
 
-});
+List.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.object), // deprecated, use child components
+  emptyIndicator: PropTypes.node,
+  itemDirection: PropTypes.oneOf(['row', 'column']), // deprecated, use child components
+  onMore: PropTypes.func,
+  onSelect: PropTypes.func,
+  schema: SchemaPropType, // deprecated, use child components
+  selectable: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.oneOf(['multiple'])
+  ]),
+  selected: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.arrayOf(PropTypes.number)
+  ]),
+  size: PropTypes.oneOf(['small', 'medium', 'large']) // deprecated, use child components
+};
 
-module.exports = List;
+List.defaultProps = {
+  itemDirection: 'row' // deprecated, use child components
+};

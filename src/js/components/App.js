@@ -1,10 +1,10 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
-var Locale = require('../utils/Locale');
-var SkipLinks = require('./SkipLinks');
+import React, { Component, PropTypes } from 'react';
+import { getCurrentLocale } from '../utils/Locale';
+import SkipLinks from './SkipLinks';
 
-var supportedLocales = ['en-US', 'pt-BR'];
+let supportedLocales = ['en-US', 'pt-BR'];
 
 function localesSupported() {
   return global.Intl && supportedLocales.every(function (locale) {
@@ -21,26 +21,17 @@ if (! localesSupported()) {
   Intl.DateTimeFormat = IntlPolyfill.DateTimeFormat;
 }
 
-var App = React.createClass({
+export default class App extends Component {
+  constructor(props, context) {
+    super(props, context);
 
-  propTypes: {
-    centered: React.PropTypes.bool
-  },
-
-  getDefaultProps: function () {
-    return {
-      centered: true
-    };
-  },
-
-  getInitialState: function () {
-    return {
+    this.state = {
       lang: 'en-US'
     };
-  },
+  }
 
-  componentDidMount: function () {
-    var lang = Locale.getCurrentLocale();
+  componentDidMount() {
+    var lang = getCurrentLocale();
     if (this.props.lang) {
       lang = this.props.lang;
     }
@@ -50,9 +41,9 @@ var App = React.createClass({
     }
 
     this.setState({lang: lang});
-  },
+  }
 
-  render: function() {
+  render() {
     var classes = ["app"];
     if (this.props.centered) {
       classes.push("app--centered");
@@ -67,11 +58,17 @@ var App = React.createClass({
 
     return (
       <div lang={this.state.lang} className={classes.join(' ')}>
-        <SkipLinks />
         {this.props.children}
+        <SkipLinks />
       </div>
     );
   }
-});
+}
 
-module.exports = App;
+App.defaultProps = {
+  centered: true
+};
+
+App.propTypes = {
+  centered: PropTypes.bool
+};

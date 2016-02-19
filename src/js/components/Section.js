@@ -1,41 +1,34 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
-var Box = require('./Box');
-var SkipLinkAnchor = require('./SkipLinkAnchor');
-var merge = require('lodash/object/merge');
+import React, { PropTypes } from 'react';
+import classnames from 'classnames';
+import Box from './Box';
+import Props from '../utils/Props';
 
-var CLASS_ROOT = "section";
+const CLASS_ROOT = 'section';
 
-var Section = React.createClass({
+const Section = props => {
+  var classes = classnames(CLASS_ROOT, props.className);
 
-  propTypes: merge(Box.propTypes, {
-    primary: React.PropTypes.bool
-  }),
+  let boxProps = Props.pick(props, Box);
 
-  getDefaultProps: function () {
-    return {pad: {vertical: 'medium'}};
-  },
+  return (
+    <Box {...boxProps} tag="section" className={classes}
+      primary={props.primary}>
+      {props.children}
+    </Box>
+  );
+};
 
-  render: function() {
-    var classes = [CLASS_ROOT];
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
+Section.propTypes = {
+  primary: PropTypes.bool,
+  ...Box.propTypes
+};
 
-    var skipLinkAnchor = null;
-    if (this.props.primary) {
-      skipLinkAnchor = <SkipLinkAnchor label="Main Content" />;
-    }
+Section.defaultProps = {
+  pad: {vertical: 'medium'}
+};
 
-    return (
-      <Box tag="section" {...this.props} className={classes.join(' ')}>
-        {skipLinkAnchor}
-        {this.props.children}
-      </Box>
-    );
-  }
+Section.displayName = 'Section';
 
-});
-
-module.exports = Section;
+export default Section;

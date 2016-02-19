@@ -14,20 +14,11 @@
     cursor: pointer;
   }
 
-  &__control {
-    cursor: pointer;
-  }
-
   &__input {
     margin-right: 0px;
 
     .header & {
-      padding: 0px halve($inuit-base-spacing-unit);
       font-size: inherit;
-
-      &:focus {
-        padding: 0px (halve($inuit-base-spacing-unit) - 1px);
-      }
     }
   }
 
@@ -41,14 +32,16 @@
 
     &--inline {
       margin-left: -1px;
+
+      .search__drop-contents {
+        display: block;
+      }
     }
 
-    &-header {
-      white-space: nowrap;
-    }
-
-    &-contents {
-      display: block; //inline-block;
+    &--controlled {
+      .search__drop-contents {
+        display: inline-block;
+      }
     }
 
     input {
@@ -61,9 +54,9 @@
       }
     }
 
-    .search__control {
-      display: inline-block;
+    &-control {
       vertical-align: top;
+      height: double($inuit-base-spacing-unit);
     }
 
     .search__suggestion {
@@ -82,18 +75,157 @@
   }
 
   &--inline {
+    position: relative;
+
     .search__input {
       width: 100%;
       box-sizing:  border-box;
+      padding-right: (double($inuit-base-spacing-unit) - $input-border-width);
 
-      .header & {
-        padding: 0px;
-        border: none;
+      &:focus {
+        padding-right: (double($inuit-base-spacing-unit) - ($input-border-width + 1));
+      }
+
+      html.rtl & {
+        padding-right: ($inuit-base-spacing-unit - $input-border-width);
+        padding-left: (double($inuit-base-spacing-unit) - $input-border-width);
+
+        &:focus {
+          padding-right: ($inuit-base-spacing-unit - ($input-border-width + 1));
+          padding-left: (double($inuit-base-spacing-unit) - ($input-border-width + 1));
+        }
+      }
+
+      .header &:not(:focus) {
+        border-color: transparent;
+      }
+    }
+
+    .control-icon-search {
+      position: absolute;
+      right: halve($inuit-base-spacing-unit);
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+
+      html.rtl & {
+        right: auto;
+        left: halve($inuit-base-spacing-unit);
       }
     }
   }
 
+  &--small {
+    .search__input {
+      @include inuit-font-size($control-font-size, inherit);
+      padding: (($inuit-base-spacing-unit - $control-font-size) - $input-border-width)
+        ($control-font-size - $input-border-width);
+      padding-right: ($inuit-base-spacing-unit - $input-border-width);
+
+      &:focus {
+        padding: (($inuit-base-spacing-unit - $control-font-size) - $input-focus-border-width)
+          ($control-font-size - $input-focus-border-width);
+        padding-right: ($inuit-base-spacing-unit - $input-focus-border-width);
+      }
+    }
+
+    // .control-icon-search {
+    //   height: halve($inuit-base-spacing-unit);
+    //   width: halve($inuit-base-spacing-unit);
+    // }
+  }
+
   &--large {
-    line-height: quadruple($inuit-base-spacing-unit);
+    .search__input {
+      @include inuit-font-size($large-input-font-size, normal);
+      padding: halve($inuit-base-spacing-unit) ($inuit-base-spacing-unit);
+      padding-right: ($inuit-base-spacing-unit * 3);
+
+      &:focus {
+        padding: (halve($inuit-base-spacing-unit) - $input-border-width)
+          ($inuit-base-spacing-unit * 3 - $input-border-width);
+        padding-left: ($inuit-base-spacing-unit - $input-border-width);
+
+        @include media-query(palm) {
+          padding: (halve($inuit-base-spacing-unit) - ($input-border-width + 1))
+            ($inuit-base-spacing-unit - ($input-border-width + 1));
+          padding-right: (double($inuit-base-spacing-unit) - ($input-border-width + 1));
+        }
+      }
+
+      @include media-query(palm) {
+        font-size: inherit;
+        padding: (halve($inuit-base-spacing-unit) - ($input-border-width))
+          ($inuit-base-spacing-unit - $input-border-width);
+        padding-right: (double($inuit-base-spacing-unit) - $input-border-width);
+        line-height: 1.5;
+      }
+    }
+
+    .control-icon-search {
+      right: $inuit-base-spacing-unit;
+      width: double($inuit-base-spacing-unit);
+      height: double($inuit-base-spacing-unit);
+
+      @include media-query(palm) {
+        right: halve($inuit-base-spacing-unit);
+        width: $inuit-base-spacing-unit;
+        height: $inuit-base-spacing-unit;
+      }
+
+      @include media-query(lap-and-up) {
+        // prevent icon from growing on resize from 719px
+        transition: none;
+      }
+    }
+  }
+
+  &--icon-align-start {
+    &.search--inline {
+      .search__input {
+        padding-left: (double($inuit-base-spacing-unit) - $input-border-width);
+        padding-right: ($inuit-base-spacing-unit - $input-border-width);
+
+        &:focus {
+          padding-left: (double($inuit-base-spacing-unit) - ($input-border-width + 1));
+          padding-right: ($inuit-base-spacing-unit - $input-border-width);
+        }
+      }
+
+      .control-icon-search {
+        left: halve($inuit-base-spacing-unit);
+      }
+    }
+
+    &.search--large {
+      .search__input {
+        padding-left: ($inuit-base-spacing-unit * 3);
+        padding-right: $inuit-base-spacing-unit;
+
+        &:focus {
+          padding-left: ($inuit-base-spacing-unit * 3 - $input-border-width);
+          padding-right: ($inuit-base-spacing-unit - $input-border-width);
+
+          @include media-query(palm) {
+            padding: (halve($inuit-base-spacing-unit) - ($input-border-width + 1))
+              ($inuit-base-spacing-unit - ($input-border-width + 1));
+            padding-left: (double($inuit-base-spacing-unit) - ($input-border-width + 1));
+          }
+        }
+
+        @include media-query(palm) {
+          padding: (halve($inuit-base-spacing-unit) - $input-border-width)
+          ($inuit-base-spacing-unit - $input-border-width);
+          padding-left: (double($inuit-base-spacing-unit) - $input-border-width);
+        }
+      }
+    }
+  }
+
+  &--fill {
+    width: 100%;
+    max-width: none;
+    //used to add full height for button inside a flex container
+    flex-grow: 1;
   }
 }

@@ -1,18 +1,8 @@
-// (C) Copyright 2014 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 .menu {
   position: relative;
-  @include inuit-font-size($menu-font-size, inherit);
-  
-  .header & {
-    &--controlled {
-      height: 100%;
-    }
-    
-    &__control--fixed-label {
-      font-size: $menu-font-size;
-    }
-  }
+  @include inuit-font-size($menu-font-size);
 
   &:focus {
     outline: none;
@@ -34,71 +24,54 @@
     flex: 0 0 auto;
   }
 
-  a:not(.button) {
+  a:not(.button),
+  .anchor {
     text-decoration: none;
 
     &:hover {
+      text-decoration: none;
       color: $link-hover-color;
     }
 
     &.active {
       color: $brand-color-darker;
+
+      [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+        color: $active-colored-text-color;
+      }
     }
   }
 
   &__control {
-    cursor: pointer;
 
-    &-drop-icon {
-      width: $inuit-base-spacing-unit;
-      height: $inuit-base-spacing-unit;
-      //margin-top: - quarter($inuit-base-spacing-unit);
-      margin-left: halve($inuit-base-spacing-unit);
-      stroke: $icon-color;
-    }
+    .control-icon-down {
+      width: halve($inuit-base-spacing-unit);
+      height: halve($inuit-base-spacing-unit);
 
-    &--labelled {
-      @include media-query(palm) {
-        .menu__control-label,
-        .menu__control-drop-icon {
-          display: none;
-        }
-      }
-
-      @include media-query(lap-and-up) {
-        .menu__control-icon {
-          display: none;
-        }
-      }
-    }
-
-    &--fixed-label {
-      white-space: nowrap;
-
-      .menu__control-icon {
-        display: none;
+      path,
+      polyline {
+        stroke-width: 4px;
       }
     }
   }
 
   &__drop {
-    @include inuit-font-size($inuit-base-font-size, inherit);
+    @include inuit-font-size($menu-font-size);
     max-height: 100vh;
 
-    .menu__control {
-      &-label {
-        padding-left: $inuit-base-spacing-unit;
-      }
+    a:not(.anchor--disabled) {
+      text-decoration: none;
 
-      &-drop-icon {
-        display: none;
+      &:hover {
+        text-decoration: none;
       }
     }
 
-    a {
+    .anchor {
       padding: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit;
       white-space: nowrap;
       display: block;
+      text-decoration: none;
 
       &:hover,
       &:focus {
@@ -107,23 +80,32 @@
       }
     }
 
-    .check-box,
-    .radio-button {
-      margin-top: halve($inuit-base-spacing-unit);
-      margin-bottom: halve($inuit-base-spacing-unit);
+    &--align-right {
+      text-align: right;
+
+      html.rtl & {
+        text-align: left;
+      }
+
+      .menu__contents {
+        text-align: left;
+
+        html.rtl & {
+          text-align: right;
+        }
+      }
     }
 
-    &--align-right {
-      .menu__control {
-        text-align: right;
-      }
+    &--small {
+      @include inuit-font-size($small-menu-font-size);
     }
 
     &--large {
-      .menu__control {
-        //height: quadruple($inuit-base-spacing-unit);
-        line-height: quadruple($inuit-base-spacing-unit);
-      }
+      @include inuit-font-size($large-menu-font-size);
+
+      // .menu__control {
+      //   line-height: quadruple($inuit-base-spacing-unit);
+      // }
     }
   }
 
@@ -131,33 +113,56 @@
     display: inline-block;
     cursor: pointer;
 
-    &.menu--large {
-      //height: quadruple($inuit-base-spacing-unit);
-      line-height: quadruple($inuit-base-spacing-unit);
-    }
-
-    &.menu--small {
-      height: $inuit-base-spacing-unit;
-    }
-  }
-
-  &--labelled {
-    padding-left: $inuit-base-spacing-unit;
-    //padding-right: $inuit-base-spacing-unit;
+    // &.menu--large {
+    //   line-height: quadruple($inuit-base-spacing-unit);
+    // }
+    //
+    // &.menu--small {
+    //   height: $inuit-base-spacing-unit;
+    // }
   }
 
   &--inline {
-    ///overflow: hidden;
 
     &.menu {
-      &--row,
-      &--right { // --right is deprecated
+      &--row {
+        line-height: double($inuit-base-spacing-unit);
+
+        &.box--justify-end {
+          > *:not(.control-icon) {
+            margin-left: $inuit-base-spacing-unit;
+            margin-right: 0;
+
+            &:first-child {
+              margin-left: 0;
+            }
+
+            html.rtl & {
+              margin-right: $inuit-base-spacing-unit;
+              margin-left: 0;
+
+              &:first-child {
+                margin-right: 0;
+              }
+            }
+          }
+        }
+
         > *:not(.control-icon):not(.button) {
-          margin-left: 0px;
+          margin-left: 0;
           margin-right: $inuit-base-spacing-unit;
 
           &:last-child {
-            margin-right: 0px;
+            margin-right: 0;
+          }
+
+          html.rtl & {
+            margin-right: 0;
+            margin-left: $inuit-base-spacing-unit;
+
+            &:last-child {
+              margin-left: 0;
+            }
           }
         }
       }
@@ -166,18 +171,10 @@
         @include media-query(palm) {
           > * {
             margin-right: 0;
-          }
-        }
-      }
 
-      &--row.box--justify-end,
-      &--left { // --left is deprecated
-        > *:not(.control-icon) {
-          margin-left: $inuit-base-spacing-unit;
-          margin-right: 0px;
-
-          &:first-child {
-            margin-left: 0px;
+            html.rtl & {
+              margin-left: 0;
+            }
           }
         }
       }
@@ -187,23 +184,13 @@
           margin-bottom: quarter($inuit-base-spacing-unit);
         }
       }
-    }
-  }
 
-  &--small {
-    @include inuit-font-size($inuit-base-font-size);
-
-    .menu__control {
-
-      &-drop-icon {
-        margin-left: halve(halve($inuit-base-spacing-unit));
+      &--small {
+        @include inuit-font-size($small-menu-font-size, inherit);
       }
 
-      &-icon {
-        svg {
-          width: halve($inuit-base-spacing-unit) + quarter($inuit-base-spacing-unit);
-          height: halve($inuit-base-spacing-unit) + quarter($inuit-base-spacing-unit);
-        }
+      &--large {
+        @include inuit-font-size($large-menu-font-size, inherit);
       }
     }
   }
@@ -216,9 +203,16 @@
 
     > a:not(.button) {
       padding: quarter($inuit-base-spacing-unit) $inuit-base-spacing-unit;
-      border-right: quarter($inuit-base-spacing-unit) solid transparent;
       margin-bottom: 0px;
       width: 100%;
+      border-width: $active-border-width;
+      border-color: transparent;
+      border-right-style: solid;
+
+      html.rtl & {
+        border-right-style: none;
+        border-left-style: solid;
+      }
 
       &:hover {
         text-decoration: none;
@@ -243,17 +237,26 @@
       }
     }
   }
-
-  @include media-query(palm) {
-    &.box--responsive {
-      //width: 100%;
-      //padding: 0px;
-    }
-  }
 }
 
-.menu--inline.menu,
+.menu--inline.menu:not(.box--direction-row),
 .menu__drop {
+
+  > hr {
+    margin: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit
+      round($inuit-base-spacing-unit * 0.75);
+    height: 1px;
+    background-color: $border-color;
+    border: none;
+  }
+
+  .menu__control-label {
+    font-size: $control-font-size;
+  }
+
+  a {
+    text-decoration: none;
+  }
 
   &.box--direction-column {
     > .menu:not(:first-of-type) {
@@ -262,14 +265,6 @@
         margin-top: $inuit-base-spacing-unit;
       }
     }
-  }
-
-  > hr {
-    margin: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit
-      round($inuit-base-spacing-unit * 0.75);
-    height: 1px;
-    background-color: $border-color;
-    border: none;
   }
 
   // Customize the separator for nested menus
@@ -286,38 +281,14 @@
   }
 
   &--small {
-    font-size: 1em;
-
-    .menu__control {
-
-      &-label {
-        padding: halve($inuit-base-spacing-unit);
-      }
-
-      &-icon {
-        svg {
-          width: halve($inuit-base-spacing-unit) + ($inuit-base-spacing-unit / 4);
-          height: halve($inuit-base-spacing-unit) + ($inuit-base-spacing-unit / 4);
-        }
-      }
-    }
-
     > a {
-      padding: quarter($inuit-base-spacing-unit) halve($inuit-base-spacing-unit);
+      padding: quarter($inuit-base-spacing-unit) 0;
     }
-  }
-  
-  .menu__control-label {
-    font-size: $control-font-size;
-  }
-  
-  a {
-    text-decoration: none;
   }
 
   &--large {
     > a {
-      padding: $inuit-base-spacing-unit double($inuit-base-spacing-unit);
+      padding: $inuit-base-spacing-unit 0;
     }
   }
 
@@ -344,11 +315,5 @@
 @include media-query(palm) {
   .menu__drop {
     max-width: 100%;
-    width: 100vw;
-
-    a,
-    .button {
-      width: 100%;
-    }
   }
 }

@@ -1,28 +1,35 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
+import React, { PropTypes } from 'react';
+import classnames from 'classnames';
 
-var CLASS_ROOT = "paragraph";
+const CLASS_ROOT = 'paragraph';
 
-var Paragraph = React.createClass({
-
-  propTypes: {
-    size: React.PropTypes.oneOf(['small', 'medium', 'large'])
-  },
-
-  render: function () {
-    var classes = [CLASS_ROOT];
-    if (this.props.size) {
-      classes.push(CLASS_ROOT + "--" + this.props.size);
+const Paragraph = props => {
+  var classes = classnames(
+    CLASS_ROOT,
+    props.className,
+    {
+      [`${CLASS_ROOT}--${props.size}`]: props.size,
+      [`${CLASS_ROOT}--align-${props.align}`]: props.align,
+      [`${CLASS_ROOT}--margin-${props.margin}`]: props.margin
     }
+  );
 
-    return (
-      <p id={this.props.id} className={classes.join(' ')}>
-        {this.props.children}
-      </p>
-    );
-  }
+  return (
+    <p id={props.id} className={classes}>
+      {props.children}
+    </p>
+  );
+};
 
-});
+Paragraph.propTypes = {
+  align: PropTypes.oneOf(['start', 'center', 'end']),
+  id: PropTypes.string,
+  margin: PropTypes.oneOf(['none', 'small', 'medium', 'large']),
+  size: PropTypes.oneOf(['small', 'medium', 'large'])
+};
 
-module.exports = Paragraph;
+Paragraph.displayName = 'Paragraph';
+
+export default Paragraph;

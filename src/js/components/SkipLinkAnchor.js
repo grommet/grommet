@@ -1,23 +1,21 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
+import React, { PropTypes } from 'react';
 
-var SkipLinkAnchor = React.createClass({
+const SkipLinkAnchor = ({ label }) => {
+  let id = 'skip-link-' + label.toLowerCase().replace(/ /g, '_');
 
-  propTypes: {
-    label: React.PropTypes.node.isRequired
-  },
+  return (
+    <a tabIndex="-1" id={id} className="skip-link-anchor">
+      {label}
+    </a>
+  );
+};
 
-  render: function () {
-    var id = 'skip-link-' + this.props.label.toLowerCase().replace(/ /g, '_');
+SkipLinkAnchor.propTypes = {
+  label: PropTypes.node.isRequired
+};
 
-    return (
-      <a tabIndex="-1" id={id} className="skip-link-anchor">
-        {this.props.label}
-      </a>
-    );
-  }
+SkipLinkAnchor.displayName = 'SkipLinkAnchor';
 
-});
-
-module.exports = SkipLinkAnchor;
+export default SkipLinkAnchor;

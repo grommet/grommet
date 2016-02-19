@@ -1,35 +1,34 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
-var FormattedMessage = require('./FormattedMessage');
-var Box = require('./Box');
+import React, { Component, PropTypes } from 'react';
+import Intl from '../utils/Intl';
+import Box from './Box';
 
-var CLASS_ROOT = "tabs";
+const CLASS_ROOT = "tabs";
 
-var Tabs = React.createClass({
+export default class Tabs extends Component {
 
-  propTypes: {
-    activeIndex: React.PropTypes.number
-  },
+  constructor(props) {
+    super(props);
 
-  getDefaultProps: function () {
-    return {
-      initialIndex: 0
+    this._activateTab = this._activateTab.bind(this);
+
+    this.state = {
+      activeIndex: props.initialIndex,
+      justify: props.justify
     };
-  },
+  }
 
-  getInitialState: function () {
-    return {
-      activeIndex: this.props.initialIndex
-    };
-  },
-
-  _activateTab: function (index) {
+  _activateTab (index) {
     this.setState({activeIndex: index});
-  },
+  }
 
-  render: function() {
+  render () {
     var classes = [CLASS_ROOT];
+    classes.push(CLASS_ROOT + '--justify-' + this.props.justify);
+    if (this.props.responsive) {
+      classes.push(CLASS_ROOT + '--responsive');
+    }
 
     var activeContainer;
     var activeTitle;
@@ -54,6 +53,10 @@ var Tabs = React.createClass({
       });
     }.bind(this));
 
+    var tabContentTitle = Intl.getMessage(this.context.intl, 'Tab Contents', {
+      activeTitle: activeTitle
+    });
+
     // TODO: Since there could be multiple Tabs on the page, we need a more
     // robust means of identifying the association between title and aria label.
     return (
@@ -61,20 +64,30 @@ var Tabs = React.createClass({
         <ul className={classes.join(' ')}>
           {tabs}
         </ul>
-        <div ref="tabContent" tabIndex="0" aria-labelledby="content_description"
+        <div ref="tabContent" tabIndex="0" aria-label={tabContentTitle}
           role="tabpanel">
-          <title id="content_description">
-            <FormattedMessage id="Tab Contents" activeTitle={activeTitle}
-              defaultMessage={"Tab Contents"} />
-          </title>
-          <Box className={CLASS_ROOT + '__content'} aria-labelledby="content_description">
+          <Box className={CLASS_ROOT + '__content'}
+            aria-label={tabContentTitle}>
             {activeContainer}
           </Box>
         </div>
       </div>
     );
   }
+}
 
-});
+Tabs.propTypes = {
+  activeIndex: PropTypes.number,
+  justify: PropTypes.oneOf(['start', 'center', 'end']),
+  responsive: PropTypes.bool
+};
 
-module.exports = Tabs;
+Tabs.contextTypes = {
+  intl: PropTypes.object
+};
+
+Tabs.defaultProps = {
+  initialIndex: 0,
+  justify: 'center',
+  responsive: true
+};

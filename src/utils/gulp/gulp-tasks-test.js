@@ -22,9 +22,8 @@ module.exports = function(gulp, options) {
       var mocha = require('gulp-mocha');
       var watch = require('gulp-watch');
       var argv = require('yargs').argv;
-      require('../test/mocked-dom')('<html><body></body></html>');
 
-      jsxCoverage.initIstanbulHook(jsxCoverageOptions);
+      jsxCoverage.initModuleLoaderHack(jsxCoverageOptions);
 
       glob.sync('**src/js/**/*.js').forEach(function (file) {
         if (file.indexOf('lib') === -1 &&
@@ -35,7 +34,13 @@ module.exports = function(gulp, options) {
 
       gulp.src(options.testPaths, {
         read: false
-      }).pipe(babel()).pipe(mocha({
+      }).pipe(babel({
+        "presets": [ "es2015", "react" ],
+        "plugins": [
+          "transform-object-rest-spread",
+          "add-module-exports"
+        ]
+      })).pipe(mocha({
         reporter: 'spec'})).once('end', function() {
           if (argv.w) {
             var watchFolders = options.testPaths.slice();
@@ -69,7 +74,7 @@ module.exports = function(gulp, options) {
           } else {
             process.exit(1);
           }
-        }).on('end', jsxCoverage.colloectIstanbulCoverage(jsxCoverageOptions)).on('end', function() {
+        }).on('end', jsxCoverage.collectIstanbulCoverage(jsxCoverageOptions)).on('end', function() {
           console.log('Test coverage report available at coverage/lcov-report/index.html');
         });
     } else {

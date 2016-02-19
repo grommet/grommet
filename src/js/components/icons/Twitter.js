@@ -1,10 +1,13 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
+import React, { Component } from 'react';
 
-var Twitter = React.createClass({
+export default class Twitter extends Component {
+  componentDidMount () {
+    console.warn('This icon has been deprecated. Please check http://www.grommet.io/docs/develop/icon for the new set of icons.');
+  }
 
-  render: function() {
+  render () {
     var className = 'control-icon control-icon-twitter';
     if (this.props.className) {
       className += ' ' + this.props.className;
@@ -17,7 +20,4 @@ var Twitter = React.createClass({
       </svg>
     );
   }
-
-});
-
-module.exports = Twitter;
+}

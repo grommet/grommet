@@ -7,7 +7,7 @@ $brand-color-lighter: desaturate(lighten($brand-color, 50%), 20%);
 $brand-neutral-colors: (#006996, #A65336, #A69136, #774677);
 $brand-accent-colors: (#E6734B, #E6C84B, #915591);
 $brand-status-colors: (
-  error: #F04B37,
+  critical: #F04B37,
   warning: #F0AA3C,
   ok: #509137,
   unknown: #848484,

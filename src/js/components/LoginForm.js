@@ -1,136 +1,170 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
-var FormattedMessage = require('./FormattedMessage');
+import React, { Component, PropTypes } from 'react';
+import FormattedMessage from './FormattedMessage';
+import Form from './Form';
+import FormField from './FormField';
+import CheckBox from './CheckBox';
+import Button from './Button';
+import Footer from './Footer';
 
-var Form = require('./Form');
-var FormField = require('./FormField');
-var CheckBox = require('./CheckBox');
-var Button = require('./Button');
-var CLASS_ROOT = "login-form";
+const CLASS_ROOT = "login-form";
 
-var LoginForm = React.createClass({
+export default class LoginForm extends Component {
 
-  propTypes: {
-    logo: React.PropTypes.node,
-    title: React.PropTypes.string,
-    secondaryText: React.PropTypes.string,
-    usernameType: React.PropTypes.string,
-    rememberMe: React.PropTypes.bool,
-    forgotPassword: React.PropTypes.node,
-    errors: React.PropTypes.arrayOf(React.PropTypes.string),
-    onSubmit: React.PropTypes.func
-  },
+  constructor() {
+    super();
 
-  getDefaultProps: function () {
-    return ({
-      errors: [],
-      usernameType: 'email'
-    });
-  },
+    this._onSubmit = this._onSubmit.bind(this);
+  }
 
-  componentDidMount: function() {
+  componentDidMount () {
     this.refs.username.focus();
-  },
+  }
 
-  _onSubmit: function (event) {
+  _onSubmit (event) {
     event.preventDefault();
-    var username = this.refs.username.value.trim();
-    var password = this.refs.password.value.trim();
+
+    let username = this.refs.username.value.trim();
+    let password = this.refs.password.value.trim();
+    let rememberMe = this.refs.rememberMe && this.refs.rememberMe.checked;
+
     if (this.props.onSubmit) {
-      this.props.onSubmit({username: username, password: password});
+      this.props.onSubmit({username, password, rememberMe});
     }
-  },
+  }
 
-  render: function() {
-    var classes = [CLASS_ROOT];
+  render () {
+    let classes = [CLASS_ROOT];
+    if (this.props.align) {
+      classes.push(`${CLASS_ROOT}--align-${this.props.align}`);
+    }
 
-    var errors = this.props.errors.map(function (error, index) {
-      return (
-        <div key={index} className={CLASS_ROOT + "__error"}>
-          <FormattedMessage id={error} defaultMessage={error} />
-        </div>
-      );
-    }.bind(this));
+    let errors = this.props.errors.map(function (error, index) {
+      let errorComponent = undefined;
+      if (error) {
+        errorComponent = (
+          <div key={index} className={`${CLASS_ROOT}__error error`}>
+            <FormattedMessage id={error} defaultMessage={error} />
+          </div>
+        );
+      }
+      return errorComponent;
+    });
 
-    var logo;
+    let logo;
     if (this.props.logo) {
       logo = (
-        <div className={CLASS_ROOT + "__logo"}>
+        <div className={`${CLASS_ROOT}__logo`}>
           {this.props.logo}
         </div>
       );
     }
 
-    var title;
+    let title;
     if (this.props.title) {
       title = (
-        <h1 className={CLASS_ROOT + "__title"}>
+        <h1 className={`${CLASS_ROOT}__title`}>
           <strong>{this.props.title}</strong>
         </h1>
       );
     }
 
-    var secondaryText;
+    let secondaryText;
     if (this.props.secondaryText) {
       secondaryText = (
-        <p className={CLASS_ROOT + "__secondary-text"}>
+        <p className={`${CLASS_ROOT}__secondary-text secondary`}>
           {this.props.secondaryText}
         </p>
       );
     }
 
-    var rememberMe;
+    let rememberMe;
     if (this.props.rememberMe) {
 
+      let rememberMeLabel = (
+        <FormattedMessage id="Remember me" defaultMessage="Remember me" />
+      );
+
       rememberMe = (
-        <CheckBox className={CLASS_ROOT + "__remember-me"}
+        <CheckBox className={`${CLASS_ROOT}__remember-me`}
           id="remember-me"
-          label={<FormattedMessage id="Remember me" defaultMessage="Remember me" />} />
+          label={rememberMeLabel}
+          defaultChecked={this.props.defaultValues.rememberMe}
+          ref="rememberMe" />
       );
     }
 
-    var footer;
+    let forgot;
     if (this.props.forgotPassword) {
-      footer = (
-        <div className={CLASS_ROOT + "__footer"}>
+      forgot = (
+        <div className={`${CLASS_ROOT}__forgot`}>
           {this.props.forgotPassword}
         </div>
       );
     }
 
-    var username;
+    let username;
     if (this.props.usernameType === 'email') {
       username = <FormattedMessage id="Email" defaultMessage="Email" />;
     } else {
       username = <FormattedMessage id="Username" defaultMessage="Username" />;
     }
-    var password = <FormattedMessage id="Password" defaultMessage="Password" />;
-    var login = <FormattedMessage id="Log In" defaultMessage="Log In" />;
+    let password = <FormattedMessage id="Password" defaultMessage="Password" />;
+    let login = <FormattedMessage id="Log In" defaultMessage="Log In" />;
 
     return (
       <Form className={classes.join(' ')} onSubmit={this._onSubmit}>
-        {logo}
-        {title}
-        {secondaryText}
+        <div className={`${CLASS_ROOT}__header`}>
+          {logo}
+          {title}
+          {secondaryText}
+        </div>
         <fieldset>
           <FormField htmlFor="username" label={username}>
-            <input id="username" ref="username" type={this.props.usernameType} />
+            <input id="username" ref="username" type={this.props.usernameType}
+              defaultValue={this.props.defaultValues.username} />
           </FormField>
           <FormField htmlFor="password" label={password}>
             <input id="password" ref="password" type="password" />
           </FormField>
+          {errors}
         </fieldset>
-        {errors}
-        {rememberMe}
-        <Button id={CLASS_ROOT + "__submit"} className={CLASS_ROOT + "__submit"}
-          primary={true} strong={true} type="submit" label={login}
-          onClick={this._onSubmit} />
-        {footer}
+        <Footer align={this.props.align} size="small" direction="column"
+          pad={{vertical: 'medium', between: 'medium'}}>
+          {rememberMe}
+          <Button id={`${CLASS_ROOT}__submit`} primary={true} strong={true}
+            className={`${CLASS_ROOT}__submit`} type="submit" label={login}
+            onClick={this.props.onSubmit ? this._onSubmit : null} />
+          {forgot}
+        </Footer>
       </Form>
     );
   }
 
-});
+}
 
-module.exports = LoginForm;
+LoginForm.propTypes = {
+  align: PropTypes.oneOf(['start', 'center', 'end', 'stretch']),
+  defaultValues: PropTypes.shape({
+    username: PropTypes.string,
+    rememberMe: PropTypes.bool
+  }),
+  errors: PropTypes.arrayOf(PropTypes.string),
+  forgotPassword: PropTypes.node,
+  logo: PropTypes.node,
+  onSubmit: PropTypes.func,
+  rememberMe: PropTypes.bool,
+  secondaryText: PropTypes.string,
+  title: PropTypes.string,
+  usernameType: PropTypes.string
+};
+
+LoginForm.defaultProps = {
+  defaultValues: {
+    username: '',
+    rememberMe: false
+  },
+  errors: [],
+  usernameType: 'email'
+};

@@ -58,10 +58,10 @@ $active-darken: 20%;
       }
     }
 
-    [class*="background-color-index-"] & {
+    [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
 
       &:hover {
-        border-color: darken($colored-border-color, $hover-darken);
+        border-color: darken($button-colored-border-color, $hover-darken);
       }
 
       &.button--primary {

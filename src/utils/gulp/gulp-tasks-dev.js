@@ -27,7 +27,11 @@ module.exports = function(gulp, options, webpackConfig, dist) {
 
     var devWebpackConfig = merge({}, webpackConfig, {
       entry: {
-        app: ['webpack/hot/dev-server', './' + options.mainJs]
+        app: [
+          'webpack-dev-server/client?http://' + (options.devServerHost || 'localhost')  + ':' + (options.devServerPort || '8080'),
+          'webpack/hot/dev-server',
+          './' + options.mainJs
+        ]
       },
 
       output: {
@@ -77,7 +81,7 @@ module.exports = function(gulp, options, webpackConfig, dist) {
 
     var devServerConfig = {
       contentBase: dist,
-      hot: true,
+      hot: options.devServerDisableHot ? false : true,
       inline: true,
       stats: {
         colors: true
@@ -110,6 +114,10 @@ module.exports = function(gulp, options, webpackConfig, dist) {
         res.redirect(301, req.url.replace(/.*\/(img\/.*)$/, '/$1'));
       } else if (req.url.match(/\/img\//)) { // img
         next();
+      } else if (req.url.match(/.+\/video\//)) { // video
+        res.redirect(301, req.url.replace(/.*\/(video\/.*)$/, '/$1'));
+      } else if (req.url.match(/\/video\//)) { // video
+        next();
       } else if (req.url.match(/.+\/font\//)) { // font
         res.redirect(301, req.url.replace(/.*\/(font\/.*)$/, '/$1'));
       } else if (req.url.match(/\/font\//)) { // font
@@ -137,6 +145,18 @@ module.exports = function(gulp, options, webpackConfig, dist) {
           uri: openURL
         }));
       }
+    });
+
+    server.app.get('/reload', function(req, res) {
+      // Tell connected browsers to reload.
+      server.sockWrite(server.sockets, 'ok');
+      res.sendStatus(200);
+    });
+
+    server.app.get('/invalid', function(req, res) {
+      // Tell connected browsers some change is about to happen.
+      server.sockWrite(server.sockets, 'invalid');
+      res.sendStatus(200);
     });
 
   });

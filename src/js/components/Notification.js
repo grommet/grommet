@@ -1,59 +1,61 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
-var ReactIntl = require('react-intl');
-var FormattedDate = ReactIntl.FormattedDate;
-var merge = require('lodash/object/merge');
-var pick = require('lodash/object/pick');
-var keys = require('lodash/object/keys');
-var Box = require('./Box');
+import React, { PropTypes } from 'react';
+import classnames from 'classnames';
+import { FormattedDate } from 'react-intl';
+import Box from './Box';
+import Meter from './Meter';
+import StatusIcon from './icons/Status';
+import Props from '../utils/Props';
 
-var StatusIcon = require('./icons/Status');
+let CLASS_ROOT = 'notification';
 
-var CLASS_ROOT = "notification";
-
-var Notification = React.createClass({
-
-  propTypes: merge({
-    message: React.PropTypes.string.isRequired,
-    state: React.PropTypes.string,
-    status: React.PropTypes.string,
-    timestamp: React.PropTypes.object // Date
-  }, Box.propTypes),
-
-  getDefaultProps: function () {
-    return {
-      flush: true,
-      status: 'unknown',
-      pad: 'medium'
-    };
-  },
-
-  render: function() {
-    var classes = [CLASS_ROOT];
-    var other = pick(this.props, keys(Box.propTypes));
-    classes.push(CLASS_ROOT + "--" + this.props.status.toLowerCase());
-    if (this.props.className) {
-      classes.push(this.props.className);
+const Notification = (props, context) => {
+  let classes = classnames(
+    CLASS_ROOT,
+    `${CLASS_ROOT}--status-${props.status.toLowerCase()}`,
+    `background-color-index-${props.status.toLowerCase()}`,
+    props.className,
+    {
+      [`${CLASS_ROOT}--${props.size}`]: props.size,
+      [`${CLASS_ROOT}--disabled`]: !props.onClick
     }
+  );
 
-    var status;
-    if (this.props.status) {
-      status = (
-        <StatusIcon className={CLASS_ROOT + "__status"}
-        value={this.props.status} small={true} />
-      );
-    }
+  let status;
+  if (props.status) {
+    status = (
+      <StatusIcon className={`${CLASS_ROOT}__status`}
+        value={props.status} size={props.size} />
+    );
+  }
 
-    var state;
-    if (this.props.state) {
-      state = <div className={CLASS_ROOT + "__state"}>{this.props.state}</div>;
-    }
+  let state;
+  if (props.state) {
+    state = (
+      <div className={`${CLASS_ROOT}__state`}>{props.state}</div>
+    );
+  }
 
-    var timestamp;
-    if (this.props.timestamp) {
-      var timestampFormatted = (
-        <FormattedDate value={this.props.timestamp}
+  let progress;
+  if (props.percentComplete || 0 === props.percentComplete) {
+    progress = (
+      <Meter units="%"
+        series={[{
+          value: props.percentComplete,
+          label: '',
+          colorIndex: 'light-1'
+        }]}
+        size="large" />
+    );
+  }
+
+  let timestamp;
+  if (props.timestamp) {
+    let timestampFormatted = props.timestamp.toString();
+    if (context.intl) {
+      timestampFormatted = (
+        <FormattedDate value={props.timestamp}
           weekday="long"
           day="numeric"
           month="long"
@@ -62,29 +64,55 @@ var Notification = React.createClass({
           minute="numeric"
           second="numeric" />
       );
-
-      timestamp = (
-        <div className={CLASS_ROOT + "__timestamp"}>
-          {timestampFormatted}
-        </div>
-      );
     }
 
-    return (
-      <Box className={classes.join(' ')} {...other}>
-        <Box direction="row" responsive={false}>
-          {status}
-          <span className={CLASS_ROOT + "__message"}>
-            {this.props.message}
-          </span>
-        </Box>
-        {timestamp}
-        {state}
-        {this.props.children}
-      </Box>
+    timestamp = (
+      <div className={`${CLASS_ROOT}__timestamp`}>
+        {timestampFormatted}
+      </div>
     );
   }
 
-});
+  let boxProps = Props.pick(props, Box);
 
-module.exports = Notification;
+  return (
+    <Box {...boxProps} className={classes} direction="row" responsive={false}>
+      {status}
+      <Box>
+        <span className={`${CLASS_ROOT}__message`}>
+          {props.message}
+        </span>
+        {props.context}
+        {timestamp}
+        {state}
+        {progress}
+        {props.children}
+      </Box>
+    </Box>
+  );
+};
+
+Notification.propTypes = {
+  context: PropTypes.node,
+  message: PropTypes.string.isRequired,
+  percentComplete: PropTypes.number,
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  state: PropTypes.string,
+  status: PropTypes.string,
+  timestamp: PropTypes.object, // Date
+  ...Box.propTypes
+};
+
+Notification.contextTypes = {
+  intl: PropTypes.object
+};
+
+Notification.defaultProps = {
+  flush: true,
+  status: 'unknown',
+  pad: 'medium'
+};
+
+Notification.displayName = 'Notification';
+
+export default Notification;

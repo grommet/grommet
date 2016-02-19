@@ -4,34 +4,11 @@
   width: 100%;
   padding: halve($inuit-base-spacing-unit);
 
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-
-  > .tile {
-    flex: 0 0 $tile-size;
-    // don't count padding for flex basis
-    // this makes it easier to align tiles with graphic components
-    ////box-sizing: content-box;
-    margin: halve($inuit-base-spacing-unit);
-
-    > * {
-      // reset box sizing on tile's children
-      box-sizing: border-box;
-    }
-
-    &--wide {
-      flex-basis: calc(100% - #{$inuit-base-spacing-unit});
-      box-sizing: border-box;
-    }
-  }
-
   &__container {
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 100vw;
-    max-width: 100%;
+    width: 100%;
 
     .tiles__left,
     .tiles__right {
@@ -42,15 +19,31 @@
       flex: 1;
       margin: 0px;
 
-      &--direction-row {
+      &.box--direction-row {
         width: 100%;
-        overflow-x: hidden;
-        overflow-y: visible;
+        overflow: hidden;
       }
     }
   }
 
-  &--fill {
+  > .tile {
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    @include media-query(lap-and-up) {
+      flex-basis: $tile-size;
+    }
+  }
+
+  &:not(.tiles--flush) > .tile {
+    margin: halve($inuit-base-spacing-unit);
+
+    &--wide {
+      flex-basis: calc(100% - #{$inuit-base-spacing-unit});
+    }
+  }
+
+  &--fill.box--wrap {
     justify-content: space-around;
 
     > .tile {
@@ -59,8 +52,6 @@
   }
 
   &--flush {
-    //margin: - $inuit-base-spacing-unit;
-    //width: calc(100% + #{double($inuit-base-spacing-unit)});
     padding: 0px;
 
     > .tile {
@@ -69,20 +60,6 @@
       &--wide {
         flex-basis: 100%;
       }
-    }
-  }
-
-  &--direction {
-    &-row {
-      flex-direction: row;
-      flex-wrap: nowrap;
-      justify-content: flex-start;
-    }
-
-    &-column {
-      flex-direction: column;
-      flex-wrap: nowrap;
-      justify-content: flex-start;
     }
   }
 
@@ -99,23 +76,41 @@
     }
   }
 
+  &--selectable {
+    .tile {
+      cursor: pointer;
+      transition: background-color 0.2s;
+
+      &--selected {
+        background-color: $selected-background-color;
+        color: $selected-text-color;
+      }
+
+      &:hover:not(.tile--selected) {
+        background-color: $hover-background-color;
+        color: $hover-text-color;
+      }
+    }
+  }
+
   &--small {
     > .tile {
-      flex-basis: $tile-small-size;
+      @include media-query(lap-and-up) {
+        flex-basis: $tile-small-size;
+      }
     }
   }
 
   &--large {
     > .tile {
-
       @include media-query(lap-and-up) {
         flex-basis: $tile-large-size;
       }
-
-      @include media-query(palm) {
-        flex-basis: 100%;
-      }
     }
+  }
+
+  &:focus {
+    outline: $focus-border-color solid 1px;
   }
 }
 
@@ -124,10 +119,11 @@
 
   .status-icon {
     margin-right: quarter($inuit-base-spacing-unit);
-  }
 
-  &.box--align-center {
-    text-align: center;
+    html.rtl & {
+      margin-right: 0;
+      margin-left: quarter($inuit-base-spacing-unit);
+    }
   }
 
   > .chart {
@@ -140,10 +136,12 @@
 
     &.tile--selected {
       background-color: $selected-background-color;
+      color: $selected-text-color;
     }
 
     &:hover:not(.tile--selected) {
       background-color: $hover-background-color;
+      color: $hover-text-color;
     }
   }
 

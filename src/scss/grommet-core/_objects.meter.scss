@@ -4,9 +4,10 @@ $meter-size: $graphic-size;
 $meter-small-size: $graphic-small-size;
 $meter-large-size: $graphic-large-size;
 
-$meter-width: round($inuit-base-spacing-unit * 0.75);
-$meter-inactive-width: round($inuit-base-spacing-unit * 0.25);
-$meter-threshold-width: round($inuit-base-spacing-unit * 0.25);
+$meter-slice-width: round($inuit-base-spacing-unit / 6);
+$meter-slice-active-width: round($inuit-base-spacing-unit / 2);
+$meter-threshold-slice-width: $meter-slice-width;
+$meter-indicator-width: round($inuit-base-spacing-unit / 6);
 
 $meter-arc-size: $meter-size - double($inuit-base-spacing-unit);
 $meter-arc-small-size: $meter-small-size - $inuit-base-spacing-unit;
@@ -38,20 +39,34 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
   display: inline-block;
   position: relative;
 
+  &__slice {
+    stroke-width: $meter-slice-width;
+  }
+
   &__threshold {
     stroke: $threshold-color;
   }
 
-  &__active-graphic {
+  &__value-container {
     position: relative;
     display: inline-block;
   }
 
-  &__labeled-graphic {
+  &__graphic-container {
     white-space: normal;
+
+    > a {
+      text-decoration: none;
+    }
   }
 
-  &__active {
+  &__graphic {
+    &:focus {
+      outline: $focus-border-color solid 1px;
+    }
+  }
+
+  &__value {
     white-space: normal;
     pointer-events: none;
 
@@ -70,6 +85,15 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
       margin-left: quarter($inuit-base-spacing-unit);
       color: $secondary-text-color;
       font-weight: normal;
+
+      html.rtl & {
+        margin-left: 0;
+        margin-right: quarter($inuit-base-spacing-unit);
+      }
+    }
+
+    &-label {
+      display: block;
     }
   }
 
@@ -93,6 +117,14 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
     text-align: right;
   }
 
+  &__label {
+    fill: $secondary-text-color;
+
+    &--active {
+      fill: $hover-text-color;
+    }
+  }
+
   &--legend {
     &-right {
       white-space: nowrap;
@@ -101,6 +133,11 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
         &__legend {
           vertical-align: top;
           margin-left: $inuit-base-spacing-unit;
+
+          html.rtl & {
+            margin-left: 0;
+            margin-right: $inuit-base-spacing-unit;
+          }
         }
       }
 
@@ -124,7 +161,13 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
 
   &:not(.meter--vertical) {
     .meter {
+
+      &__graphic-container {
+        display: inline-block;
+      }
+
       &__minmax-container {
+        display: block;
         width: $meter-size;
       }
 
@@ -153,18 +196,26 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
   &--vertical {
     .meter {
 
-      &__labeled-graphic {
+      &__graphic-container {
         display: inline-block;
         white-space: nowrap;
+      }
+
+      &__minmax-container {
+        height: $meter-size;
       }
 
       &__minmax {
         flex-direction: column;
         height: 100%;
-      }
 
-      &__minmax-container {
-        height: $meter-size;
+        &-min {
+          order: 1;
+        }
+
+        &-max {
+          order: 0;
+        }
       }
 
       &__label-min,
@@ -181,7 +232,7 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
         order: 0;
       }
 
-      &__active {
+      &__value {
         &-label {
           display: block;
         }
@@ -206,19 +257,31 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
   }
 
   &--small {
-    .meter__active {
-      &-value {
-        @include inuit-font-size($small-large-number-font-size);
+    .meter {
+      &__slice {
+        stroke-width: double($meter-slice-width);
       }
 
-      &-units {
-        @include inuit-font-size($small-large-number-units-font-size);
+      &__values .meter__slice {
+        &:hover {
+          stroke-width: double($meter-slice-active-width);
+        }
+      }
+
+      &__value {
+        &-value {
+          @include inuit-font-size($small-large-number-font-size);
+        }
+
+        &-units {
+          @include inuit-font-size($small-large-number-units-font-size);
+        }
       }
     }
   }
 
   &--large {
-    .meter__active {
+    .meter__value {
       &-value {
         @include inuit-font-size($large-large-number-font-size);
       }
@@ -231,13 +294,16 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
 
   &.meter--active {
     .meter {
-      &__values .meter__slice,
-      &__values .meter__bar {
-        stroke-width: $meter-threshold-width;
-
-        &--active {
-          stroke-width: $meter-width;
+      &__values .meter__slice {
+        &:hover {
+          stroke-width: $meter-slice-active-width;
         }
+      }
+    }
+
+    &:not(.meter--single) {
+      .meter__values .meter__slice.meter__slice--active {
+        stroke-width: $meter-slice-active-width;
       }
     }
   }
@@ -246,16 +312,19 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
 
   &--bar {
     .meter {
-      &__bar {
+      &__slice {
         stroke-linecap: butt;
         stroke-dasharray: $meter-size $meter-size;
         stroke-dashoffset: 0;
       }
 
-      &__values .meter__bar {
-        stroke-width: $meter-width;
+      &__values .meter__slice {
+        // stroke-width: $meter-slice-width;
         @include graph-stroke-color();
-        cursor: pointer;
+
+        &--clickable {
+          cursor: pointer;
+        }
 
         @include media-query(lap-and-up) {
           transition: stroke-width 0.2s;
@@ -263,15 +332,19 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
         }
       }
 
-      &__thresholds .meter__bar {
-        stroke-width: $meter-threshold-width;
+      &__thresholds .meter__slice,
+      &__tracks .meter__slice {
+        // stroke-width: $meter-threshold-slice-width;
         @include graph-stroke-color-translucent(0.5);
       }
 
-      &__active {
+      &__value {
+        text-align: left;
+
         &-label {
-          width: 50%;
-          margin: 0px auto;
+          // width: 50%;
+          // margin: 0px auto;
+          // margin-left: round($inuit-base-spacing-unit / 6);
           @include inuit-font-size($label-font-size, $label-font-size + 2);
         }
       }
@@ -279,19 +352,30 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
 
     &:not(.meter--vertical) {
       .meter {
-        &__labeled-graphic {
-          display: inline-block;
+        &__minmax-container {
+          // display: inline-block;
+
+          > a {
+            vertical-align: top;
+            display: block;
+            height: $inuit-base-spacing-unit;
+          }
         }
 
         &__graphic {
           width: $meter-size;
-          height: $inuit-base-spacing-unit;
+          height: 100%;
         }
 
-        &__active {
+        &__value {
           display: inline-block;
           vertical-align: top;
           margin-left: halve($inuit-base-spacing-unit);
+
+          html.rtl & {
+            margin-left: 0;
+            margin-right: halve($inuit-base-spacing-unit);
+          }
 
           &-value {
             @include inuit-font-size($number-font-size);
@@ -303,10 +387,35 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
         }
       }
 
+      &.meter--single,
+      &.meter--stacked {
+        .meter__value {
+          &-label {
+            display: inline-block;
+            margin-left: round($inuit-base-spacing-unit / 6);
+
+            html.rtl & {
+              margin-left: 0;
+              margin-right: round($inuit-base-spacing-unit / 6);
+            }
+          }
+        }
+
+        &.meter--legend-right {
+          .meter__value {
+            min-width: $inuit-base-spacing-unit * 3.5;
+          }
+        }
+      }
+
       &.meter--legend-right {
         .meter__legend {
           top: 0px;
           @include transform(none);
+        }
+
+        .meter__value {
+          min-width: $inuit-base-spacing-unit * 2;
         }
       }
 
@@ -315,9 +424,21 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
           width: $meter-small-size;
         }
 
-        .meter__active-value,
-        .meter__active-units {
+        .meter__value-value,
+        .meter__value-units {
           @include inuit-font-size($inuit-base-font-size);
+        }
+
+        &.meter--legend-right {
+          .meter__value {
+            min-width: double($inuit-base-spacing-unit) * 0.875;
+          }
+
+          &.meter--stacked {
+            .meter__value {
+              min-width: $inuit-base-spacing-unit * 3;
+            }
+          }
         }
       }
 
@@ -326,8 +447,13 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
           width: $meter-large-size;
         }
 
-        .meter__active {
+        .meter__value {
           margin-left: $inuit-base-font-size;
+
+          html.rtl & {
+            margin-left: 0;
+            margin-right: $inuit-base-font-size;
+          }
 
           &-value,
           &-units {
@@ -341,7 +467,6 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
       white-space: nowrap;
 
       svg.meter__graphic {
-        width: $inuit-base-spacing-unit;
         height: $meter-size;
       }
 
@@ -351,25 +476,29 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
           display: inline-block;
         }
 
-        &__active {
+        &__value {
           position: relative;
           vertical-align: top;
           top: halve($meter-size);
           @include transform(translateY(-50%));
           display: inline-block;
-          margin-left: halve($inuit-base-spacing-unit);
+          // margin-left: halve($inuit-base-spacing-unit);
         }
 
         &__minmax-container {
           position: absolute;
           top: 0px;
-          left: $inuit-base-spacing-unit + halve($inuit-base-spacing-unit);
+          left: $inuit-base-spacing-unit;
         }
       }
 
       &.meter--legend-right {
         .meter__legend {
           top: halve($meter-size);
+        }
+
+        .meter__value {
+          min-width: $inuit-base-spacing-unit * 2 + halve($inuit-base-spacing-unit);
         }
       }
 
@@ -378,13 +507,17 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
           height: $meter-small-size;
         }
 
-        .meter__active {
+        .meter__value {
           top: halve($meter-small-size);
         }
 
         &.meter--legend-right {
           .meter__legend {
             top: halve($meter-small-size);
+          }
+
+          .meter__value {
+            min-width: double($inuit-base-spacing-unit) * 0.875;
           }
         }
       }
@@ -394,7 +527,7 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
           height: $meter-large-size;
         }
 
-        .meter__active {
+        .meter__value {
           top: halve($meter-large-size);
         }
 
@@ -436,17 +569,18 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
         stroke: $meter-background-color;
 
         &-indicator {
-          stroke-linecap: round;
-          stroke-width: 3;
-          stroke: #000;
-          //@include graph-stroke-color;
+          stroke-linecap: square;
+          stroke-width: $meter-indicator-width;
+          stroke: $threshold-color;
         }
       }
 
       &__values .meter__slice {
-        stroke-width: $meter-width;
         @include graph-stroke-color();
-        cursor: pointer;
+
+        &--clickable {
+          cursor: pointer;
+        }
 
         @include media-query(lap-and-up) {
           transition: stroke-width 0.2s;
@@ -454,8 +588,9 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
         }
       }
 
-      &__thresholds .meter__slice {
-        stroke-width: $meter-threshold-width;
+      &__thresholds .meter__slice,
+      &__tracks .meter__slice {
+        // stroke-width: $meter-threshold-slice-width;
         @include graph-stroke-color-translucent(0.5);
       }
 
@@ -464,7 +599,7 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
         stroke-linecap: butt;
       }
 
-      &__active {
+      &__value {
         &-label {
           display: block;
         }
@@ -481,7 +616,7 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
     }
 
     .meter {
-      &__active {
+      &__value {
         white-space: normal;
         pointer-events: none;
         text-align: center;
@@ -501,7 +636,7 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
         width: $meter-size;
       }
 
-      &__active {
+      &__value {
         position: absolute;
         left: 50%;
       }
@@ -553,8 +688,8 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
       height: $meter-size;
     }
 
-    .meter__active {
-      top: 50%;
+    .meter__value {
+      top: halve($meter-size);
       @include transform(translateX(-50%) translateY(-50%));
       max-width: $meter-size - double($inuit-base-spacing-unit);
     }
@@ -565,7 +700,8 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
         height: $meter-small-size;
       }
 
-      .meter__active {
+      .meter__value {
+        top: halve($meter-small-size);
         max-width: $meter-small-size - $inuit-base-spacing-unit;
       }
     }
@@ -576,8 +712,17 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
         height: $meter-large-size;
       }
 
-      .meter__active {
+      .meter__value {
+        top: halve($meter-large-size);
         max-width: $meter-large-size - round($inuit-base-spacing-unit * 3);
+      }
+    }
+
+    &:not(.meter--stacked):not(.meter--single) {
+      .meter__value {
+        position: static;
+        margin: 0 auto;
+        @include transform(none);
       }
     }
   }
@@ -591,8 +736,8 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
         height: $meter-arc-size;
       }
 
-      .meter__active {
-        top: round($meter-arc-size * 0.7);
+      .meter__value {
+        top: halve($meter-size) + halve($inuit-base-spacing-unit);
         @include transform(translateX(-50%));
         max-width: $meter-size - round($inuit-base-spacing-unit * 3);
       }
@@ -609,8 +754,8 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
           height: $meter-arc-small-size;
         }
 
-        .meter__active {
-          top: round($meter-arc-small-size * 0.7);
+        .meter__value {
+          top: halve($meter-small-size) + halve($inuit-base-spacing-unit);
           max-width: $meter-small-size - round($inuit-base-spacing-unit * 1.5);
         }
       }
@@ -621,15 +766,9 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
           height: $meter-arc-large-size;
         }
 
-        .meter__active {
-          top: round($meter-arc-large-size * 0.5);
+        .meter__value {
+          top: halve($meter-large-size) + halve($inuit-base-spacing-unit);
           max-width: $meter-large-size - round($inuit-base-spacing-unit * 4.5);
-        }
-
-        &.meter--single {
-          .meter__active {
-            top: round($meter-arc-large-size * 0.7);
-          }
         }
       }
     }
@@ -644,13 +783,18 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
 
       .meter {
 
-        &__active {
+        &__value {
           position: relative;
           top: halve($meter-size);
           @include transform(translateY(-50%));
           display: inline-block;
-          margin-left: - ($meter-size - $meter-arc-size) + halve($inuit-base-spacing-unit);
+          margin-left: - ($meter-size - $meter-arc-size) + $inuit-base-spacing-unit;
           vertical-align: top;
+
+          html.rtl & {
+            margin-left: 0;
+            margin-right: - ($meter-size - $meter-arc-size) + $inuit-base-spacing-unit;
+          }
         }
 
         &__minmax-container {
@@ -659,6 +803,11 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
           margin-left: halve($inuit-base-spacing-unit);
           padding-top: halve($inuit-base-spacing-unit);
           padding-bottom: halve($inuit-base-spacing-unit);
+
+          html.rtl & {
+            margin-left: 0;
+            margin-right: halve($inuit-base-spacing-unit);
+          }
         }
       }
 
@@ -669,9 +818,14 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
         }
 
         .meter {
-          &__active {
+          &__value {
             top: halve($meter-small-size);
-            margin-left: - ($meter-small-size - $meter-arc-small-size) + quarter($inuit-base-spacing-unit);
+            margin-left: - halve($inuit-base-spacing-unit);
+
+            html.rtl & {
+              margin-left: 0;
+              margin-right: - halve($inuit-base-spacing-unit);
+            }
           }
 
           &__minmax-container {
@@ -688,34 +842,49 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
         }
 
         .meter {
-          &__active {
+          &__value {
             top: halve($meter-large-size);
             margin-left: - ($meter-large-size - $meter-arc-large-size) + $inuit-base-spacing-unit;
+
+            html.rtl & {
+              margin-left: 0;
+              margin-right: - ($meter-large-size - $meter-arc-large-size) + $inuit-base-spacing-unit;
+            }
           }
         }
       }
 
       &.meter--minmax {
-        .meter__active {
-          margin-left: - halve($meter-size) + halve($inuit-base-spacing-unit);
+        .meter__value {
+          margin-left: - halve($meter-size) + $inuit-base-spacing-unit;
+
+          html.rtl & {
+            margin-left: 0;
+            margin-right: - halve($meter-size) + $inuit-base-spacing-unit;
+          }
         }
 
         &.meter--small {
-          .meter__active {
+          .meter__value {
             margin-left: - ($meter-small-size - $meter-arc-small-size) - round($inuit-base-spacing-unit * 1.5);
+
+            html.rtl & {
+              margin-left: 0;
+              margin-right: - ($meter-small-size - $meter-arc-small-size) - round($inuit-base-spacing-unit * 1.5);
+            }
           }
         }
       }
 
-      &:not(.meter--single) {
-        .meter__active {
-          margin-left: - $meter-arc-size + double($inuit-base-spacing-unit);
+      &.meter--legend-right {
+        &.meter--small {
+          .meter__value {
+            min-width: $inuit-base-spacing-unit * 3 + halve(halve($inuit-base-spacing-unit));
+          }
         }
 
-        &.meter--small {
-          .meter__active {
-            margin-left: - $meter-arc-small-size + round($inuit-base-spacing-unit * 1.5);
-          }
+        .meter__value {
+          min-width: $inuit-base-spacing-unit * 5;
         }
       }
     }
@@ -725,7 +894,7 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
 
   &--spiral {
     .meter {
-      &__active {
+      &__value {
         position: absolute;
         top: 0px;
         right: 0px;
@@ -742,6 +911,11 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
           @include inuit-font-size($number-units-font-size);
           color: $secondary-text-color;
           margin-left: 0.2em;
+
+          html.rtl & {
+            margin-left: 0;
+            margin-right: 0.2em;
+          }
         }
 
         &-label {
@@ -754,7 +928,7 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
 
   &--loading {
     .meter__thresholds,
-    .meter__active {
+    .meter__value {
       display: none;
     }
   }

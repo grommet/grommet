@@ -1,25 +1,14 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
-var Box = require('./Box');
+import React, { Component, PropTypes } from 'react';
+import Box from './Box';
+import Intl from '../utils/Intl';
 
-var CLASS_ROOT = "title";
+const CLASS_ROOT = "title";
 
-var Title = React.createClass({
-
-  propTypes: {
-    onClick: React.PropTypes.func,
-    responsive: React.PropTypes.bool
-  },
-
-  getDefaultProps: function () {
-    return {
-      responsive: true
-    };
-  },
-
-  render: function() {
-    var classes = [CLASS_ROOT];
+export default class Title extends Component {
+  render () {
+    let classes = [CLASS_ROOT];
     if (this.props.responsive) {
       classes.push(CLASS_ROOT + "--responsive");
     }
@@ -30,14 +19,29 @@ var Title = React.createClass({
       classes.push(this.props.className);
     }
 
+    let a11yTitle = Intl.getMessage(this.context.intl, this.props.a11yTitle);
+
     return (
       <Box align="center" direction="row" responsive={false}
-        className={classes.join(' ')} onClick={this.props.onClick}>
+        className={classes.join(' ')} a11yTitle={a11yTitle}
+        onClick={this.props.onClick}>
         {this.props.children}
       </Box>
     );
   }
+}
 
-});
+Title.propTypes = {
+  a11yTitle: PropTypes.string,
+  onClick: PropTypes.func,
+  responsive: PropTypes.bool
+};
 
-module.exports = Title;
+Title.contextTypes = {
+  intl: PropTypes.object
+};
+
+Title.defaultProps = {
+  responsive: true,
+  a11yTitle: 'Title'
+};

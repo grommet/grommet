@@ -1,9 +1,9 @@
 // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
-var DOM = require('../utils/DOM');
+import DOM from '../utils/DOM';
 
-var SCROLL_MORE_DELAY = 500; // when the user scrolls
-var SCROLL_MORE_INITIAL_DELAY = 50; // when we start out at the bottom already
+const SCROLL_MORE_DELAY = 500; // when the user scrolls
+const SCROLL_MORE_INITIAL_DELAY = 50; // when we start out at the bottom already
 
 function _evaluate(scrollState) {
   if (scrollState.scrollParent) {
@@ -37,16 +37,20 @@ function _onResize(scrollState) {
   }, SCROLL_MORE_DELAY);
 }
 
-var InfiniteScroll = {
+export default {
 
-  startListeningForScroll: function (indicatorElement, onEnd) {
+  startListeningForScroll (indicatorElement, onEnd) {
     var scrollState = {
       onEnd: onEnd,
       indicatorElement: indicatorElement,
       scrollParent: DOM.findScrollParents(indicatorElement)[0]
     };
-    scrollState.scrollParent.addEventListener("scroll", _onScroll.bind(null, scrollState));
-    window.addEventListener("resize", _onResize.bind(null, scrollState));
+
+    scrollState._onResize = _onResize.bind(null, scrollState);
+    scrollState._onScroll = _onScroll.bind(null, scrollState);
+
+    scrollState.scrollParent.addEventListener("scroll", scrollState._onScroll);
+    window.addEventListener("resize", scrollState._onResize);
     // check in case we're already at the bottom and the indicator is visible
     if (scrollState.scrollParent === document) {
       var rect = indicatorElement.getBoundingClientRect();
@@ -57,14 +61,12 @@ var InfiniteScroll = {
     return scrollState;
   },
 
-  stopListeningForScroll: function (scrollState) {
+  stopListeningForScroll (scrollState) {
     if (scrollState.scrollParent) {
       clearTimeout(scrollState.scrollTimer);
-      scrollState.scrollParent.removeEventListener("scroll", _onScroll);
-      window.removeEventListener("resize", _onResize);
+      scrollState.scrollParent.removeEventListener("scroll", scrollState._onScroll);
+      window.removeEventListener("resize", scrollState._onResize);
       scrollState.scrollParent = null;
     }
   }
 };
-
-module.exports = InfiniteScroll;

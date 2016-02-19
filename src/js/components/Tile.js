@@ -1,30 +1,15 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
-var merge = require('lodash/object/merge');
-var pick = require('lodash/object/pick');
-var keys = require('lodash/object/keys');
-var Box = require('./Box');
+import React, { Component, PropTypes } from 'react';
+import pick from 'lodash/object/pick';
+import keys from 'lodash/object/keys';
+import Box from './Box';
 
-var CLASS_ROOT = "tile";
+const CLASS_ROOT = "tile";
 
-var Tile = React.createClass({
+export default class Tile extends Component {
 
-  propTypes: merge({
-    selected: React.PropTypes.bool,
-    status: React.PropTypes.string,
-    wide: React.PropTypes.bool
-  }, Box.propTypes),
-
-  getDefaultProps: function () {
-    return {
-      pad: 'none',
-      direction: 'column',
-      align: 'center'
-    };
-  },
-
-  render: function() {
+  render () {
     var classes = [CLASS_ROOT];
     var other = pick(this.props, keys(Box.propTypes));
     if (this.props.status) {
@@ -44,12 +29,25 @@ var Tile = React.createClass({
     }
 
     return (
-      <Box className={classes.join(' ')} {...other} onClick={this.props.onClick}>
+      <Box className={classes.join(' ')} {...other}
+        onClick={this.props.onClick} a11yTitle={this.props.a11yTitle}>
         {this.props.children}
       </Box>
     );
   }
 
-});
+}
 
-module.exports = Tile;
+Tile.propTypes = {
+  onClick: PropTypes.func,
+  selected: PropTypes.bool,
+  status: PropTypes.string, // deprecated, will be removed
+  wide: PropTypes.bool,
+  ...Box.propTypes
+};
+
+Tile.defaultProps = {
+  pad: 'none',
+  direction: 'column',
+  align: 'center'
+};

@@ -17,7 +17,8 @@
 
   &__control {
     position: absolute;
-    bottom: 0px;
+    top: 50%;
+    transform: translateY(-50%);
     right: halve($inuit-base-spacing-unit);
   }
 
@@ -29,7 +30,7 @@
   }
 
   &__suggestion {
-    padding: quarter($inuit-base-spacing-unit) halve($inuit-base-spacing-unit);
+    padding: quarter($inuit-base-spacing-unit) $inuit-base-spacing-unit;
     cursor: pointer;
 
     &:hover,

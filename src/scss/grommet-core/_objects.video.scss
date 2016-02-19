@@ -1,0 +1,127 @@
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+
+.video {
+  position: relative;
+  height: auto;
+
+  @include media-query(palm) {
+    max-width: 100%;
+    width: 100vw;
+  }
+
+  @include media-query(lap-and-up) {
+    // width: $video-width;
+
+    &--small {
+      width: $video-small-width;
+
+      .video__control.button--primary {
+        width: double($inuit-base-spacing-unit);
+        height: double($inuit-base-spacing-unit);
+        border-radius: $inuit-base-spacing-unit;
+      }
+    }
+
+    &--large {
+      width: $video-large-width;
+    }
+  }
+
+  &--full {
+    width: 100%;
+  }
+
+  video {
+    width: 100%;
+  }
+
+  &__summary {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    text-align: left;
+    padding: $inuit-base-spacing-unit;
+  }
+
+  &__control.button--primary {
+    flex: 0 0 auto;
+    width: quadruple($inuit-base-spacing-unit);
+    height: quadruple($inuit-base-spacing-unit);
+    border-radius: double($inuit-base-spacing-unit);
+    background-color: rgba($brand-color, 0.8);
+
+    &:hover {
+      background-color: $brand-color;
+    }
+  }
+
+  &__title {
+    margin-left: $inuit-base-spacing-unit;
+  }
+
+  &__timeline {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    height: round($inuit-base-spacing-unit * 3);
+    color: $colored-text-color;
+    background-color: rgba(nth($brand-grey-colors, 1), 0.7);
+
+    &-chapter {
+      position: absolute;
+      height: 100%;
+      padding-left: quarter($inuit-base-spacing-unit);
+      border-left: 2px solid $colored-icon-color;
+      text-align: left;
+      cursor: pointer;
+
+      &:hover {
+        color: $active-colored-text-color;
+        border-color: $active-colored-icon-color;
+      }
+
+      time {
+        display: block;
+        @include inuit-font-size($label-font-size, $inuit-base-spacing-unit);
+      }
+    }
+  }
+
+  &__progress {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    height: quarter($inuit-base-spacing-unit);
+    text-align: left;
+
+    &-meter {
+      height: 100%;
+      background-color: $brand-color;
+    }
+  }
+
+  &--titled {
+    .video__summary {
+      background-color: rgba(nth($brand-grey-colors, 1), 0.7);
+      color: $colored-text-color;
+      border-radius: $border-radius;
+      @include inuit-font-size($control-font-size);
+    }
+  }
+
+  &--playing:not(.video--interacting) {
+
+    .video__summary,
+    .video__timeline,
+    .video__progress {
+      opacity: 0;
+      transition: opacity 1s;
+    }
+  }
+
+}

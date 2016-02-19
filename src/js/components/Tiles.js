@@ -1,38 +1,40 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
-var SpinningIcon = require('./icons/Spinning');
-var LeftIcon = require('./icons/Left');
-var RightIcon = require('./icons/Right');
-var Scroll = require('../utils/Scroll');
-var InfiniteScroll = require('../utils/InfiniteScroll');
+import React, { Component, PropTypes } from 'react';
+import { findDOMNode } from 'react-dom';
+import isEqual from 'lodash/lang/isEqual';
+import pick from 'lodash/object/pick';
+import keys from 'lodash/object/keys';
+import Box from './Box';
+import Button from './Button';
+import SpinningIcon from './icons/Spinning';
+import Scroll from '../utils/Scroll';
+import InfiniteScroll from '../utils/InfiniteScroll';
+import Selection from '../utils/Selection';
 
-var CLASS_ROOT = "tiles";
+const CLASS_ROOT = "tiles";
+const SELECTED_CLASS = "tile--selected";
 
-var Tiles = React.createClass({
+export default class Tiles extends Component {
 
-  propTypes: {
-    direction: React.PropTypes.oneOf(['row', 'column']),
-    fill: React.PropTypes.bool,
-    flush: React.PropTypes.bool,
-    onMore: React.PropTypes.func,
-    size: React.PropTypes.oneOf(['small', 'medium', 'large']),
-    small: React.PropTypes.bool
-  },
+  constructor (props) {
+    super(props);
+    this._onLeft = this._onLeft.bind(this);
+    this._onRight = this._onRight.bind(this);
+    this._onScrollHorizontal = this._onScrollHorizontal.bind(this);
+    this._onWheel = this._onWheel.bind(this);
+    this._onResize = this._onResize.bind(this);
+    this._layout = this._layout.bind(this);
+    this._onClick = this._onClick.bind(this);
 
-  getDefaultProps: function () {
-    return {
-      flush: true,
-      fill: false,
-      small: false
+    this.state = {
+      overflow: false,
+      selected: Selection.normalizeIndexes(props.selected)
     };
-  },
+  }
 
-  getInitialState: function () {
-    return {overflow: false};
-  },
-
-  componentDidMount: function () {
+  componentDidMount () {
+    this._setSelection();
     if (this.props.onMore) {
       this._scroll = InfiniteScroll.startListeningForScroll(this.refs.more, this.props.onMore);
     }
@@ -40,27 +42,34 @@ var Tiles = React.createClass({
       window.addEventListener('resize', this._onResize);
       document.addEventListener('wheel', this._onWheel);
       this._trackHorizontalScroll();
-      this._layout();
+      // give browser a chance to stabilize
+      setTimeout(this._layout, 10);
     }
-  },
+  }
 
-  componentWillReceiveProps: function (nextProps) {
-    if (this.props.onMore) {
+  componentWillReceiveProps (nextProps) {
+    if (nextProps.selected) {
+      this.setState({ selected: Selection.normalizeIndexes(nextProps.selected) });
+    }
+    if (this._scroll) {
       InfiniteScroll.stopListeningForScroll(this._scroll);
       this._scroll = null;
     }
-  },
+  }
 
-  componentDidUpdate: function () {
-    if (this.props.onMore) {
+  componentDidUpdate (prevProps, prevState) {
+    if (! isEqual(this.state.selected, prevState.selected)) {
+      this._setSelection();
+    }
+    if (this.props.onMore && !this._scroll) {
       this._scroll = InfiniteScroll.startListeningForScroll(this.refs.more, this.props.onMore);
     }
     if ('row' === this.props.direction) {
       this._trackHorizontalScroll();
     }
-  },
+  }
 
-  componentWillUnmount: function () {
+  componentWillUnmount () {
     if (this._scroll) {
       InfiniteScroll.stopListeningForScroll(this._scroll);
     }
@@ -68,29 +77,29 @@ var Tiles = React.createClass({
       window.removeEventListener('resize', this._onResize);
       document.removeEventListener('wheel', this._onWheel);
       if (this._tracking) {
-        var tiles = this.refs.tiles;
+        var tiles = findDOMNode(this.refs.tiles);
         tiles.removeEventListener('scroll', this._onScrollHorizontal);
       }
     }
-  },
+  }
 
-  _onLeft: function () {
-    var tiles = this.refs.tiles;
+  _onLeft () {
+    var tiles = findDOMNode(this.refs.tiles);
     Scroll.scrollBy(tiles, 'scrollLeft', - tiles.offsetWidth);
-  },
+  }
 
-  _onRight: function () {
-    var tiles = this.refs.tiles;
+  _onRight () {
+    var tiles = findDOMNode(this.refs.tiles);
     Scroll.scrollBy(tiles, 'scrollLeft', tiles.offsetWidth);
-  },
+  }
 
-  _onScrollHorizontal: function () {
+  _onScrollHorizontal () {
     // debounce
     clearTimeout(this._scrollTimer);
     this._scrollTimer = setTimeout(this._layout, 50);
-  },
+  }
 
-  _onWheel: function (event) {
+  _onWheel (event) {
     if (Math.abs(event.deltaX) > 100) {
       clearInterval(this._scrollTimer);
     } else if (event.deltaX > 5) {
@@ -98,12 +107,12 @@ var Tiles = React.createClass({
     } else if (event.deltaX < -5) {
       this._onLeft();
     }
-  },
+  }
 
-  _layout: function () {
+  _layout () {
     if ('row' === this.props.direction) {
       // determine if we have more tiles than room to fit
-      var tiles = this.refs.tiles;
+      var tiles = findDOMNode(this.refs.tiles);
       // 20 is to allow some fuzziness as scrollbars come and go
       this.setState({
         overflow: (tiles.scrollWidth > (tiles.offsetWidth + 20)),
@@ -126,24 +135,55 @@ var Tiles = React.createClass({
         }
       }
     }
-  },
+  }
 
-  _onResize: function () {
+  _onResize () {
     // debounce
     clearTimeout(this._resizeTimer);
     this._resizeTimer = setTimeout(this._layout, 50);
-  },
+  }
 
-  _trackHorizontalScroll: function () {
+  _trackHorizontalScroll () {
     if (this.state.overflow && ! this._tracking) {
-      var tiles = this.refs.tiles;
+      var tiles = findDOMNode(this.refs.tiles);
       tiles.addEventListener('scroll', this._onScrollHorizontal);
       this._tracking = true;
     }
-  },
+  }
+
+  _setSelection () {
+    Selection.setClassFromIndexes({
+      containerElement: findDOMNode(this.refs.tiles),
+      childSelector: '.tile',
+      selectedClass: SELECTED_CLASS,
+      selectedIndexes: this.state.selected
+    });
+  }
+
+  _onClick (event) {
+    let selected = Selection.onClick(event, {
+      containerElement: findDOMNode(this.refs.tiles),
+      childSelector: '.tile',
+      selectedClass: SELECTED_CLASS,
+      multiSelect: ('multiple' === this.props.selectable),
+      priorSelectedIndexes: this.state.selected
+    });
+    // only set the selected state and classes if the caller isn't managing it.
+    if (! this.props.selected) {
+      this.setState({ selected: selected }, this._setSelection);
+    }
+
+    if (this.props.onSelect) {
+      // notify caller that the selection has changed
+      if (selected.length === 1) {
+        selected = selected[0];
+      }
+      this.props.onSelect(selected);
+    }
+  }
 
   // children should be an array of Tile
-  render: function () {
+  render () {
     var classes = [CLASS_ROOT];
     if (this.props.fill) {
       classes.push(CLASS_ROOT + "--fill");
@@ -153,15 +193,15 @@ var Tiles = React.createClass({
     }
     if (this.props.size) {
       classes.push(CLASS_ROOT + "--" + this.props.size);
-    } else if (this.props.small) {
-      classes.push(CLASS_ROOT + "--small");
     }
-    if (this.props.direction) {
-      classes.push(CLASS_ROOT + "--direction-" + this.props.direction);
+    if (this.props.selectable) {
+      classes.push(CLASS_ROOT + "--selectable");
     }
     if (this.props.className) {
       classes.push(this.props.className);
     }
+
+    var other = pick(this.props, keys(Box.propTypes));
 
     var more = null;
     if (this.props.onMore) {
@@ -173,27 +213,35 @@ var Tiles = React.createClass({
       );
     }
 
+    let onClickHandler;
+    if (this.props.selectable) {
+      onClickHandler = this._onClick;
+    }
+
     var contents = (
-      <div ref="tiles" className={classes.join(' ')}>
+      <Box ref="tiles" {...other}
+        wrap={this.props.direction ? false : true}
+        direction={this.props.direction ? this.props.direction : 'row'}
+        className={classes.join(' ')}
+        onClick={onClickHandler}
+        focusable={false}>
         {this.props.children}
         {more}
-      </div>
+      </Box>
     );
 
     if (this.state.overflow) {
       classes.push(CLASS_ROOT + "--overflowed");
       if (! this.state.overflowStart) {
         var left = (
-          <div className={CLASS_ROOT + "__left"} onClick={this._onLeft}>
-            <LeftIcon />
-          </div>
+          <Button className={CLASS_ROOT + "__left"} icon="LinkPrevious"
+            onClick={this._onLeft} />
         );
       }
       if (! this.state.overflowEnd) {
         var right = (
-          <div className={CLASS_ROOT + "__right"} onClick={this._onRight}>
-            <RightIcon />
-          </div>
+          <Button className={CLASS_ROOT + "__right"} icon="LinkNext"
+            onClick={this._onRight} />
         );
       }
 
@@ -209,6 +257,26 @@ var Tiles = React.createClass({
     return contents;
   }
 
-});
+}
 
-module.exports = Tiles;
+Tiles.propTypes = {
+  fill: PropTypes.bool,
+  flush: PropTypes.bool,
+  onMore: PropTypes.func,
+  onSelect: PropTypes.func,
+  selectable: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.oneOf(['multiple'])
+  ]),
+  selected: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.arrayOf(PropTypes.number)
+  ]),
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  ...Box.propTypes
+};
+
+Tiles.defaultProps = {
+  flush: true,
+  justify: 'start'
+};

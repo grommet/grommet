@@ -1,17 +1,13 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
+import React, { Component } from 'react';
 
-var TBD = React.createClass({
-
-  render: function() {
+export default class TBD extends Component {
+  render () {
     return (
       <div className={"tbd"}>
         {'TBD'}
       </div>
     );
   }
-
-});
-
-module.exports = TBD;
+}

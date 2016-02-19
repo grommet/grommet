@@ -2,10 +2,15 @@
 
 .form {
   position: relative;
+  width: $form-width;
+  max-width: 100%;
 
   @include media-query(lap-and-up) {
-    width: $form-width;
-    max-width: 100%;
+    // For some reason, Tiles inside FormField doesn't determine its
+    // width correctly. Enforce it here.
+    .form-field .tiles__container {
+      max-width: $form-width;
+    }
   }
 
   @include pad();
@@ -38,42 +43,19 @@
       margin-top: halve($inuit-base-spacing-unit);
     }
 
-    > .form-field + *:not(.form-field) {
+    > .form-field + *:not(.form-field):not(.form-fields) {
       margin-top: $inuit-base-spacing-unit;
     }
-  }
 
-  .layer & {
-
-    @include media-query(lap-and-up) {
-      //max-height: 100%;
-      //max-width: 100%;
-      //overflow: auto;
-      padding: round($inuit-base-spacing-unit * 0.75) double($inuit-base-spacing-unit) double($inuit-base-spacing-unit);
-    }
-
-    @include media-query(palm) {
-      padding-left: $inuit-base-spacing-unit;
-      padding-right: $inuit-base-spacing-unit;
-      //width: 100%;
-
-      > .form-fields {
-        margin-top: $inuit-base-spacing-unit;
-      }
-
-      > .form-fields > fieldset > .form-field,
-      > .form-fields > .form-field {
-        margin-left: - $inuit-base-spacing-unit;
-        margin-right: - $inuit-base-spacing-unit;
-      }
-    }
-
-    &--sticky {
+    > .form-fields {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
 
-      > .header,
-      > .footer {
+      .form-field {
+        margin-bottom: -1px;
+      }
+
+      > .button {
         flex: 0 0 auto;
       }
     }

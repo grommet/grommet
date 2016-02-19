@@ -1,16 +1,14 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
+import React, { Component, PropTypes } from 'react';
 var FormattedMessage = require('../FormattedMessage');
 
-var Filter = React.createClass({
+export default class Filter extends Component {
+  componentDidMount () {
+    console.warn('This icon has been deprecated. Please check http://www.grommet.io/docs/develop/icon for the new set of icons.');
+  }
 
-  propTypes: {
-    a11yTitle: React.PropTypes.string,
-    notifications: React.PropTypes.number
-  },
-
-  render: function() {
+  render () {
     var className = 'control-icon control-icon-filter';
     var a11yTitle = (
       <FormattedMessage id={this.props.a11yTitle} defaultMessage={this.props.a11yTitle} />
@@ -50,7 +48,9 @@ var Filter = React.createClass({
       </svg>
     );
   }
+}
 
-});
-
-module.exports = Filter;
+Filter.propTypes = {
+  a11yTitle: PropTypes.string,
+  notifications: PropTypes.number
+};

@@ -1,49 +1,39 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
-var keys = require('lodash/object/keys');
+import React, { Component, PropTypes } from 'react';
+import keys from 'lodash/object/keys';
+import KeyboardAccelerators from '../utils/KeyboardAccelerators';
+import Intl from '../utils/Intl';
+import SkipLinkAnchor from './SkipLinkAnchor';
 
-var CLASS_ROOT = "box";
+const CLASS_ROOT = "box";
 
-var Box = React.createClass({
+export default class Box extends Component {
 
-  propTypes: {
-    align: React.PropTypes.oneOf(['start', 'center', 'end']),
-    appCentered: React.PropTypes.bool,
-    backgroundImage: React.PropTypes.string,
-    colorIndex: React.PropTypes.string,
-    containerClassName: React.PropTypes.string,
-    direction: React.PropTypes.oneOf(['row', 'column']),
-    full: React.PropTypes.oneOf([true, 'horizontal', 'vertical', false]),
-    onClick: React.PropTypes.func,
-    justify: React.PropTypes.oneOf(['start', 'center', 'between', 'end']),
-    pad: React.PropTypes.oneOfType([
-      React.PropTypes.oneOf(['none', 'small', 'medium', 'large']),
-      React.PropTypes.shape({
-        horizontal: React.PropTypes.oneOf(['none', 'small', 'medium', 'large']),
-        vertical: React.PropTypes.oneOf(['none', 'small', 'medium', 'large'])
-      })
-    ]),
-    reverse: React.PropTypes.bool,
-    responsive: React.PropTypes.bool,
-    separator: React.PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
-    tag: React.PropTypes.string,
-    textAlign: React.PropTypes.oneOf(['left', 'center', 'right']),
-    texture: React.PropTypes.string
-  },
+  componentDidMount () {
+    if (this.props.onClick) {
+      let clickCallback = function () {
+        if (this.refs.boxContainer === document.activeElement) {
+          this.props.onClick();
+        }
+      }.bind(this);
 
-  getDefaultProps: function () {
-    return {
-      direction: 'column',
-      pad: 'none',
-      tag: 'div',
-      responsive: true
-    };
-  },
+      KeyboardAccelerators.startListeningToKeyboard(this, {
+        enter: clickCallback,
+        space: clickCallback
+      });
+    }
+  }
 
-  _addPropertyClass: function (classes, prefix, property, classProperty) {
-    var choice = this.props[property];
-    var propertyPrefix = classProperty || property;
+  componentWillUnmount () {
+    if (this.props.onClick) {
+      KeyboardAccelerators.stopListeningToKeyboard(this);
+    }
+  }
+
+  _addPropertyClass (classes, prefix, property, classProperty) {
+    let choice = this.props[property];
+    let propertyPrefix = classProperty || property;
     if (choice) {
       if (typeof choice === 'string') {
         classes.push(prefix + '--' + propertyPrefix + '-' + choice);
@@ -55,11 +45,11 @@ var Box = React.createClass({
         classes.push(prefix + '--' + propertyPrefix);
       }
     }
-  },
+  }
 
-  render: function() {
-    var classes = [CLASS_ROOT];
-    var containerClasses = [CLASS_ROOT + "__container"];
+  render () {
+    let classes = [CLASS_ROOT];
+    let containerClasses = [CLASS_ROOT + "__container"];
     this._addPropertyClass(classes, CLASS_ROOT, 'flush');
     this._addPropertyClass(classes, CLASS_ROOT, 'full');
     this._addPropertyClass(classes, CLASS_ROOT, 'direction');
@@ -70,6 +60,7 @@ var Box = React.createClass({
     this._addPropertyClass(classes, CLASS_ROOT, 'pad');
     this._addPropertyClass(classes, CLASS_ROOT, 'separator');
     this._addPropertyClass(classes, CLASS_ROOT, 'textAlign', 'text-align');
+    this._addPropertyClass(classes, CLASS_ROOT, 'wrap');
 
     if (this.props.appCentered) {
       this._addPropertyClass(containerClasses, CLASS_ROOT + "__container", 'full');
@@ -85,37 +76,120 @@ var Box = React.createClass({
       }
     }
 
+    let a11yProps = {};
+    if (this.props.onClick) {
+      classes.push(CLASS_ROOT + "--clickable");
+      if (this.props.focusable) {
+        let boxLabel = Intl.getMessage(this.context.intl, this.props.a11yTitle);
+        a11yProps.tabIndex = 0;
+        a11yProps["aria-label"] = boxLabel;
+        a11yProps.role = this.props.role || 'link';
+      }
+    }
+
+    let skipLinkAnchor;
+    if (this.props.primary) {
+      let mainContentLabel = (
+        Intl.getMessage(this.context.intl, 'Main Content')
+      );
+      skipLinkAnchor = <SkipLinkAnchor label={mainContentLabel} />;
+    }
+
     if (this.props.className) {
       classes.push(this.props.className);
     }
 
-    var style = {};
-    if (this.props.texture) {
+    let style = {};
+    if (this.props.texture && 'string' === typeof this.props.texture) {
       style.backgroundImage = this.props.texture;
     } else if (this.props.backgroundImage) {
       style.background = this.props.backgroundImage + " no-repeat center center";
       style.backgroundSize = "cover";
     }
+    let texture;
+    if ('object' === typeof this.props.texture) {
+      texture = <div className={CLASS_ROOT + "__texture"}>{this.props.texture}</div>;
+    }
+
+    let eventRegex = /^on[A-Z].*$/;
+    let eventListeners = {};
+    Object.keys(this.props).forEach((prop) => {
+      if (eventRegex.test(prop)) {
+        eventListeners[prop] = this.props[prop];
+      }
+    });
 
     if (this.props.appCentered) {
       return (
-        <div className={containerClasses.join(' ')} style={style}
-          onClick={this.props.onClick}>
-          <this.props.tag className={classes.join(' ')}>
+        <div ref="boxContainer" className={containerClasses.join(' ')}
+          style={style} role={this.props.role} {...a11yProps}
+          {...eventListeners}>
+          {skipLinkAnchor}
+          <this.props.tag id={this.props.id} className={classes.join(' ')}>
+            {texture}
             {this.props.children}
           </this.props.tag>
         </div>
       );
     } else {
       return (
-        <this.props.tag className={classes.join(' ')} style={style}
-          onClick={this.props.onClick}>
+        <this.props.tag ref="boxContainer" id={this.props.id}
+          className={classes.join(' ')} style={style}
+          role={this.props.role} tabIndex={this.props.tabIndex} {...a11yProps}
+          {...eventListeners}>
+          {skipLinkAnchor}
+          {texture}
           {this.props.children}
         </this.props.tag>
       );
     }
   }
 
-});
+}
 
-module.exports = Box;
+Box.propTypes = {
+  a11yTitle: PropTypes.string,
+  align: PropTypes.oneOf(['start', 'center', 'end', 'stretch']),
+  appCentered: PropTypes.bool,
+  backgroundImage: PropTypes.string,
+  colorIndex: PropTypes.string,
+  containerClassName: PropTypes.string,
+  direction: PropTypes.oneOf(['row', 'column']),
+  focusable: PropTypes.bool,
+  full: PropTypes.oneOf([true, 'horizontal', 'vertical', false]),
+  onClick: PropTypes.func,
+  justify: PropTypes.oneOf(['start', 'center', 'between', 'end']),
+  pad: PropTypes.oneOfType([
+    PropTypes.oneOf(['none', 'small', 'medium', 'large']),
+    PropTypes.shape({
+      between: PropTypes.oneOf(['none', 'small', 'medium', 'large']),
+      horizontal: PropTypes.oneOf(['none', 'small', 'medium', 'large']),
+      vertical: PropTypes.oneOf(['none', 'small', 'medium', 'large'])
+    })
+  ]),
+  primary: PropTypes.bool,
+  reverse: PropTypes.bool,
+  responsive: PropTypes.bool,
+  role: PropTypes.string,
+  separator: PropTypes.oneOf(['top', 'bottom', 'left', 'right', 'horizontal', 'vertical', 'all']),
+  tag: PropTypes.string,
+  textAlign: PropTypes.oneOf(['left', 'center', 'right']),
+  texture: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.string
+  ]),
+  wrap: PropTypes.bool
+};
+
+Box.contextTypes = {
+  intl: PropTypes.object
+};
+
+Box.defaultProps = {
+  a11yTitle: 'Box',
+  direction: 'column',
+  pad: 'none',
+  tag: 'div',
+  responsive: true,
+  focusable: true
+};

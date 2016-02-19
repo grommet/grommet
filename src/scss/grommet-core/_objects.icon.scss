@@ -2,12 +2,13 @@
 
 .control-icon {
   display: inline-block;
-  width: double($inuit-base-spacing-unit);
-  height: double($inuit-base-spacing-unit);
+  width: $inuit-base-spacing-unit;
+  height: $inuit-base-spacing-unit;
   vertical-align: middle;
   cursor: pointer;
   fill: $icon-color;
   stroke: $icon-color;
+  flex: 0 0 auto;
 
   *:not([stroke]) {
     &[fill="none"] {
@@ -30,12 +31,22 @@
     transition: all $base-animation-duration ease-in-out;
   }
 
-  a > &:hover,
-  .anchor > &:hover,
-  .button > &:hover,
-  .menu__control > &:hover {
+  a:hover &,
+  .anchor:hover &,
+  .button:hover &,
+  .menu__control:hover & {
     fill: $active-icon-color;
     stroke: $active-icon-color;
+  }
+
+  .anchor.anchor--disabled:hover & {
+    fill: $icon-color;
+    stroke: $icon-color;
+  }
+
+  .button.button--disabled:hover & {
+    fill: $icon-color;
+    stroke: $icon-color;
   }
 
   &__badge {
@@ -49,16 +60,19 @@
     }
   }
 
-  [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+  [class*="background-color-index-"]:not([class*="background-color-index-light"]) &:not([class*="color-index"]),
+  .button--primary & {
     fill: $colored-icon-color;
     stroke: $colored-icon-color;
+  }
 
-    a > &:hover,
-    .anchor > &:hover,
-    .button > &:hover {
-      fill: $active-colored-icon-color;
-      stroke: $active-colored-icon-color;
-    }
+  [class*="background-color-index-"]:not([class*="background-color-index-light"]) a:hover > &,
+  [class*="background-color-index-"]:not([class*="background-color-index-light"]) .anchor:hover > &,
+  [class*="background-color-index-"]:not([class*="background-color-index-light"]) .button:hover > &,
+  [class*="background-color-index-"]:not([class*="background-color-index-light"]) .menu__control:hover > &,
+  .button--primary:hover & {
+    fill: $active-colored-icon-color;
+    stroke: $active-colored-icon-color;
   }
 
   &--active {
@@ -67,8 +81,13 @@
   }
 
   &--large {
-    width: round($inuit-base-spacing-unit * 4);
-    height: round($inuit-base-spacing-unit * 4);
+    width: double($inuit-base-spacing-unit);
+    height: double($inuit-base-spacing-unit);
+  }
+
+  &--huge {
+    width: $inuit-base-spacing-unit * 12;
+    height: $inuit-base-spacing-unit * 12;
   }
 }
 
@@ -76,6 +95,7 @@
   width: $inuit-base-spacing-unit;
   height: $inuit-base-spacing-unit;
   vertical-align: middle;
+  flex: 0 0 auto;
 
   .status-icon__base {
     fill: map-get($brand-status-colors, unknown);
@@ -110,6 +130,11 @@
   &--large {
     width: double($inuit-base-spacing-unit);
     height: double($inuit-base-spacing-unit);
+  }
+
+  &--huge {
+    width: $inuit-base-spacing-unit * 12;
+    height: $inuit-base-spacing-unit * 12;
   }
 
   &--small {
@@ -165,5 +190,26 @@
   &--large {
     width: quadruple($inuit-base-spacing-unit);
     height: quadruple($inuit-base-spacing-unit);
+  }
+
+  &--huge {
+    width: $inuit-base-spacing-unit * 12;
+    height: $inuit-base-spacing-unit * 12;
+  }
+}
+
+.right-left-icon {
+  &--left {
+    display: none;
+  }
+
+  html.rtl & {
+    &--left {
+      display: inline;
+    }
+
+    &--right {
+      display: none;
+    }
   }
 }

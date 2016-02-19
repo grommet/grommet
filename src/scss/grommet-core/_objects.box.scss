@@ -6,6 +6,20 @@
   background-size: cover;
   background-repeat: no-repeat;
 
+  // img {
+  //   max-width: $readable-text-width;
+  // }
+
+  &__texture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+  }
+
   &__container {
     padding-left: $inuit-base-spacing-unit;
     padding-right: $inuit-base-spacing-unit;
@@ -13,11 +27,19 @@
     &--full {
       max-width: 100%;
       width: 100vw;
+
+      .layer__container & {
+        width: calc(100vw - #{double($inuit-base-spacing-unit)});
+      }
     }
 
     &--full-horizontal {
       max-width: 100%;
       width: 100vw;
+
+      .layer__container & {
+        width: calc(100vw - #{double($inuit-base-spacing-unit)});
+      }
     }
 
     .app--centered & > .box {
@@ -33,20 +55,33 @@
     }
   }
 
+  &--wrap {
+    flex-wrap: wrap;
+  }
+
   @include pad();
 
   &--full {
+    position: relative;
     max-width: 100%;
     width: 100vw;
     min-height: 100vh;
     // min-height doesn't work for IE and vertical centering
     // https://connect.microsoft.com/IE/feedback/details/816293/ie11-flexbox-with-min-height-not-vertically-aligning-with-align-items-center
     height: 100%;
+
+    .layer__container & {
+      width: calc(100vw - #{double($inuit-base-spacing-unit)});
+    }
   }
 
   &--full-horizontal {
     max-width: 100%;
     width: 100vw;
+
+    .layer__container & {
+      width: calc(100vw - #{double($inuit-base-spacing-unit)});
+    }
   }
 
   &--full-vertical {
@@ -60,9 +95,48 @@
       flex-direction: row-reverse;
     }
 
+    &.box--pad-between {
+      &-small {
+        > *:not(:last-child) {
+          margin-right: halve($inuit-base-spacing-unit);
+
+          html.rtl & {
+            margin-right: 0;
+            margin-left: halve($inuit-base-spacing-unit);
+          }
+        }
+      }
+
+      &-medium {
+        > *:not(:last-child) {
+          margin-right: $inuit-base-spacing-unit;
+
+          html.rtl & {
+            margin-right: 0;
+            margin-left: $inuit-base-spacing-unit;
+          }
+        }
+      }
+
+      &-large {
+        > *:not(:last-child) {
+          margin-right: double($inuit-base-spacing-unit);
+
+          html.rtl & {
+            margin-right: 0;
+            margin-left: double($inuit-base-spacing-unit);
+          }
+        }
+      }
+    }
+
     @include media-query(palm) {
       &.box--responsive {
         flex-direction: column;
+
+        &:not(.box--justify-center) {
+          align-items: stretch;
+        }
 
         &.box--reverse {
           flex-direction: column-reverse;
@@ -73,10 +147,10 @@
 
   &--direction-column {
     flex-direction: column;
-    
-    > * {
-      max-width: 100%;
-    }
+
+    // > *:not(p) {
+    //   max-width: 100%;
+    // }
 
     &.box--reverse {
       flex-direction: column-reverse;
@@ -86,6 +160,26 @@
     > .footer.box--direction-row,
     > .header__container--fixed {
       flex: 0 0 auto;
+    }
+
+    &.box--pad-between {
+      &-small {
+        > *:not(:last-child) {
+          margin-bottom: halve($inuit-base-spacing-unit);
+        }
+      }
+
+      &-medium {
+        > *:not(:last-child) {
+          margin-bottom: $inuit-base-spacing-unit;
+        }
+      }
+
+      &-large {
+        > *:not(:last-child) {
+          margin-bottom: double($inuit-base-spacing-unit);
+        }
+      }
     }
   }
 
@@ -118,35 +212,47 @@
   }
 
   &--separator {
-    &-top {
+    &-top,
+    &-horizontal,
+    &-all {
       border-top: 1px solid $border-color;
     }
 
-    &-bottom {
+    &-bottom,
+    &-horizontal,
+    &-all {
       border-bottom: 1px solid $border-color;
     }
 
-    &-left {
+    &-left,
+    &-vertical,
+    &-all {
       border-left: 1px solid $border-color;
     }
 
-    &-right {
+    &-right,
+    &-vertical,
+    &-all {
       border-right: 1px solid $border-color;
     }
 
-    @include media-query(palm) {
-      &-left {
-        border-left: none;
-        border-bottom: 1px solid $border-color;
-        //padding-top: $inuit-base-spacing-unit;
-      }
-
-      &-right {
-        border-right: none;
-        border-bottom: 1px solid $border-color;
-        //padding-top: $inuit-base-spacing-unit;
-      }
-    }
+    // @include media-query(palm) {
+    //   &-left,
+    //   &-vertical,
+    //   &-all {
+    //     // border-left: none;
+    //     // border-bottom: 1px solid $border-color;
+    //     //padding-top: $inuit-base-spacing-unit;
+    //   }
+    //
+    //   &-right,
+    //   &-vertical,
+    //   &-all {
+    //     // border-right: none;
+    //     // border-bottom: 1px solid $border-color;
+    //     //padding-top: $inuit-base-spacing-unit;
+    //   }
+    // }
   }
 
   [class*="background-color-index-"] &[class*="box--separator"] {
@@ -186,5 +292,9 @@
 
   &--flush {
     padding: 0px;
+  }
+
+  &--clickable {
+    cursor: pointer;
   }
 }

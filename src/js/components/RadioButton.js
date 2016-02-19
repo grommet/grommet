@@ -1,47 +1,47 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
+import React, { PropTypes } from 'react';
+import classnames from 'classnames';
 
-var CLASS_ROOT = "radio-button";
+const CLASS_ROOT = 'radio-button';
 
-var RadioButton = React.createClass({
-
-  propTypes: {
-    checked: React.PropTypes.bool,
-    disabled: React.PropTypes.bool,
-    defaultChecked: React.PropTypes.bool,
-    id: React.PropTypes.string.isRequired,
-    label: React.PropTypes.node.isRequired,
-    name: React.PropTypes.string,
-    onChange: React.PropTypes.func,
-    value: React.PropTypes.string
-  },
-
-  render: function () {
-    var classes = [CLASS_ROOT];
-    if (this.props.disabled) {
-      classes.push(CLASS_ROOT + "--disabled");
+const RadioButton = props => {
+  let classes = classnames(
+    CLASS_ROOT,
+    props.className,
+    {
+      [`${CLASS_ROOT}--disabled`]: props.disabled
     }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
-    return (
-      <label className={classes.join(' ')}>
-        <input className={CLASS_ROOT + "__input"}
-          id={this.props.id} name={this.props.name} type="radio"
-          disabled={this.props.disabled}
-          checked={this.props.checked}
-          defaultChecked={this.props.defaultChecked}
-          value={this.props.value}
-          onChange={this.props.onChange} />
-        <span className={CLASS_ROOT + "__control"}></span>
-        <span className={CLASS_ROOT + "__label"}>
-          {this.props.label}
+  );
+
+  return (
+    <label className={classes}>
+      <input className={`${CLASS_ROOT}__input`}
+        id={props.id} name={props.name} type="radio"
+        disabled={props.disabled}
+        checked={props.checked}
+        defaultChecked={props.defaultChecked}
+        value={props.value}
+        onChange={props.onChange} />
+      <span className={`${CLASS_ROOT}__control`}></span>
+        <span className={`${CLASS_ROOT}__label`}>
+          {props.label}
         </span>
-      </label>
-    );
-  }
+    </label>
+  );
+};
 
-});
+RadioButton.propTypes = {
+  checked: PropTypes.bool,
+  disabled: PropTypes.bool,
+  defaultChecked: PropTypes.bool,
+  id: PropTypes.string.isRequired,
+  label: PropTypes.node.isRequired,
+  name: PropTypes.string,
+  onChange: PropTypes.func,
+  value: PropTypes.string
+};
 
-module.exports = RadioButton;
+RadioButton.displayName = 'RadioButton';
+
+export default RadioButton;

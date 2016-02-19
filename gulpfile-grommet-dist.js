@@ -1,9 +1,8 @@
 var gulpWebpack = require('webpack-stream');
 var sass = require('gulp-sass');
 var rename = require('gulp-rename');
-var minifyCss = require('gulp-minify-css');
+var minifyCss = require('gulp-cssnano');
 var file = require('gulp-file');
-var preprocess = require('gulp-preprocess');
 var gulpif = require('gulp-if');
 var merge = require('lodash/object/merge');
 var webpack = require('webpack');
@@ -29,7 +28,8 @@ var bowerWebpackConfig = {
     extensions: ['', '.js', '.json', '.htm', '.html', '.scss']
   },
   externals: {
-    'react': 'React'
+    'react': 'React',
+    'react-dom': 'ReactDOM'
   },
   module: {
     loaders: [
@@ -190,21 +190,12 @@ module.exports = function(gulp, opts) {
     distCss('src/scss/aruba/*.scss', 'grommet-aruba.css');
     distCss('src/scss/aruba/*.scss', 'grommet-aruba.min.css', true);
 
-    //sample-grommet
-    gulp.src('examples/todo-app/index.html')
-      .pipe(preprocess({
-        context: {
-          NODE_ENV: 'production'
-        }
-      }))
-      .pipe(rename('sample-grommet.html'))
-      .pipe(gulp.dest('dist-bower'));
-
     var bowerJSON = gulpUtils.getPackageJSON();
     bowerJSON.dependencies = {
-      'react': '^0.13.1',
+      'react': '^0.14.2',
       'grommet': '^' + bowerJSON.version
     };
+    bowerJSON.ignore = [];
     bowerJSON.main = 'grommet.js';
     delete bowerJSON.devDependencies;
     delete bowerJSON.scripts;

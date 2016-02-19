@@ -1,12 +1,11 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
+import React, { Component } from 'react';
 
 var CLASS_ROOT = "icon-spinning";
 
-var Spinning = React.createClass({
-
-  render: function() {
+export default class Spinning extends Component {
+  render () {
     var classes = [CLASS_ROOT];
     if (this.props.small) {
       classes.push(CLASS_ROOT + "--small");
@@ -21,7 +20,4 @@ var Spinning = React.createClass({
       </svg>
     );
   }
-
-});
-
-module.exports = Spinning;
+}

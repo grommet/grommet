@@ -1,58 +1,57 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
+import React, { Component, PropTypes } from 'react';
 
-var CLASS_ROOT = "form-field";
+const CLASS_ROOT = "form-field";
 
-var FormField = React.createClass({
+export default class FormField extends Component {
 
-  propTypes: {
-    error: React.PropTypes.node,
-    help: React.PropTypes.node,
-    hidden: React.PropTypes.bool,
-    htmlFor: React.PropTypes.string,
-    label: React.PropTypes.node,
-    required: React.PropTypes.bool
-  },
+  constructor() {
+    super();
 
-  getInitialState: function () {
-    return {focus: false};
-  },
+    this._onFocus = this._onFocus.bind(this);
+    this._onBlur = this._onBlur.bind(this);
+    this._onClick = this._onClick.bind(this);
 
-  componentDidMount: function () {
-    var contentsElement = this.refs.contents;
-    var inputElements = contentsElement.querySelectorAll('input, textarea, select');
+    this.state = { focus: false };
+  }
+
+  componentDidMount () {
+    const contentsElement = this.refs.contents;
+    const inputElements = (
+      contentsElement.querySelectorAll('input, textarea, select')
+    );
     if (inputElements.length === 1) {
       this._inputElement = inputElements[0];
       this._inputElement.addEventListener('focus', this._onFocus);
       this._inputElement.addEventListener('blur', this._onBlur);
     }
-  },
+  }
 
-  componentWillUnmount: function () {
+  componentWillUnmount () {
     if (this._inputElement) {
       this._inputElement.removeEventListener('focus', this._onFocus);
       this._inputElement.removeEventListener('blur', this._onBlur);
       delete this._inputElement;
     }
-  },
+  }
 
-  _onFocus: function () {
+  _onFocus () {
     this.setState({focus: true});
-  },
+  }
 
-  _onBlur: function () {
+  _onBlur () {
     this.setState({focus: false});
-  },
+  }
 
-  _onClick: function () {
+  _onClick () {
     if (this._inputElement) {
       this._inputElement.focus();
     }
-  },
+  }
 
-  render: function () {
-    var classes = [CLASS_ROOT];
+  render () {
+    let classes = [CLASS_ROOT];
     if (this.state.focus) {
       classes.push(CLASS_ROOT + "--focus");
     }
@@ -65,23 +64,32 @@ var FormField = React.createClass({
     if (this.props.htmlFor) {
       classes.push(CLASS_ROOT + "--text");
     }
+    if (this.props.className) {
+      classes.push(this.props.className);
+    }
 
-    var error;
+    let error;
     if (this.props.error) {
       classes.push(CLASS_ROOT + "--error");
       error = <span className={CLASS_ROOT + "__error"}>{this.props.error}</span>;
     }
-    var help;
+    let help;
     if (this.props.help !== null && this.props.help !== undefined) {
       help = <span className={CLASS_ROOT + "__help"}>{this.props.help}</span>;
     }
 
-    return (
-      <div className={classes.join(' ')} onClick={this._onClick}>
-        {error}
+    let labelNode;
+    if (this.props.label) {
+      labelNode = (
         <label className={CLASS_ROOT + "__label"} htmlFor={this.props.htmlFor}>
           {this.props.label}
         </label>
+      );
+    }
+    return (
+      <div className={classes.join(' ')} onClick={this._onClick}>
+        {error}
+        {labelNode}
         {help}
         <span ref="contents" className={CLASS_ROOT + "__contents"}>
           {this.props.children}
@@ -90,6 +98,13 @@ var FormField = React.createClass({
     );
   }
 
-});
+}
 
-module.exports = FormField;
+FormField.propTypes = {
+  error: PropTypes.node,
+  help: PropTypes.node,
+  hidden: PropTypes.bool,
+  htmlFor: PropTypes.string,
+  label: PropTypes.node,
+  required: PropTypes.bool
+};

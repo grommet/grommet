@@ -83,7 +83,8 @@ var opts = {
       modulesDirectories: ['node_modules', 'src/js', 'src/scss']
     },
     externals: {
-      'react': 'React'
+      'react': 'React',
+      'react-dom': 'ReactDOM'
     }
   },
   distPreprocess: ['generate-index-icons', 'dist-css'],

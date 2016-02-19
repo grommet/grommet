@@ -1,36 +1,53 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
-var ReactDOM = require('react-dom');
-var FormattedMessage = require('./FormattedMessage');
-var Layer = require('./Layer');
-var Menu = require('./Menu');
-var DOM = require('../utils/DOM');
+import React, { Component, PropTypes } from 'react';
+import FormattedMessage from './FormattedMessage';
+import Box from './Box';
+import Layer from './Layer';
+import Menu from './Menu';
+import KeyboardAccelerators from '../utils/KeyboardAccelerators';
+import Intl from '../utils/Intl';
 
-var SkipLinks = React.createClass({
+export default class SkipLinks extends Component {
+  constructor (props, context) {
+    super(props, context);
+    this._processTab = this._processTab.bind(this);
+    this._onFocus = this._onFocus.bind(this);
+    this._updateAnchors = this._updateAnchors.bind(this);
+    this.state = {anchors: [], showLayer: false};
+  }
 
-  getInitialState: function () {
-    return {anchors: [], showLayer: false};
-  },
-
-  componentDidMount: function () {
+  componentDidMount () {
     this._updateAnchors();
-  },
 
-  componentWillReceiveProps: function (newProps) {
+    this._keyboardHandlers = {
+      tab: this._processTab
+    };
+    KeyboardAccelerators.startListeningToKeyboard(
+      this, this._keyboardHandlers
+    );
+  }
+
+  componentWillReceiveProps () {
     this.setState({routeChanged: true});
-  },
+  }
 
-  componentDidUpdate: function () {
+  componentDidUpdate () {
     if (this.state.routeChanged) {
       this.setState({routeChanged: false}, this._updateAnchors);
     }
-  },
+  }
 
-  _updateAnchors: function () {
-    var anchorElements = document.querySelectorAll('.skip-link-anchor');
+  componentWillUnmount () {
+    KeyboardAccelerators.stopListeningToKeyboard(
+      this, this._keyboardHandlers
+    );
+  }
 
-    var anchors = Array.prototype.map.call(anchorElements, function (anchorElement) {
+  _updateAnchors () {
+    let anchorElements = document.querySelectorAll('.skip-link-anchor');
+
+    let anchors = Array.prototype.map.call(anchorElements, function (anchorElement) {
       return {
         id: anchorElement.getAttribute('id'),
         label: anchorElement.textContent
@@ -38,59 +55,79 @@ var SkipLinks = React.createClass({
     });
 
     this.setState({anchors: anchors});
-  },
+  }
 
-  _onFocus: function () {
+  _onFocus () {
     if (!this.state.showLayer) {
       this.setState({showLayer: true});
     }
-  },
+  }
 
-  _onBlur: function () {
-    var skipLinksLayer = ReactDOM.findDOMNode(this.refs.skipLinksLayer);
-    var activeElement = document.activeElement;
-    if (!DOM.isDescendant(skipLinksLayer, activeElement)) {
-      this.setState({showLayer: false});
+  _processTab (event) {
+    if (this.state.showLayer) {
+      let currentAnchor = document.activeElement;
+      let last = this.state.anchors.length - 1;
+
+      let achorId = event.shiftKey ?
+        this.state.anchors[0].id :
+        this.state.anchors[last].id;
+
+      let targetId = `skipLayer_${achorId}`;
+
+      if (currentAnchor.id === targetId) {
+        this.setState({showLayer: false});
+      }
     }
-  },
+  }
 
-  _onClick: function (destId) {
+  _onClick (destId) {
     return function (event) {
-      var dest = document.getElementById(destId);
+      let dest = document.getElementById(destId);
       dest.focus();
-    };
-  },
+      this.setState({showLayer: false});
+    }.bind(this);
+  }
 
-  render: function () {
+  render () {
 
-    var anchorElements = this.state.anchors.map(function (anchor, index) {
+    let anchorElements = this.state.anchors.map(function (anchor, index) {
+      let skipToLabel = Intl.getMessage(this.context.intl, 'Skip to');
+      let a11yLabel = `${skipToLabel} ${anchor.label}`;
       return (
-        <a tabIndex="0"
-           href={'#' + anchor.id}
+        <a href={'#' + anchor.id}
            onFocus={this._onFocus}
-           onBlur={this._onBlur}
            onClick={this._onClick(anchor.id)}
-           key={anchor.id}>
+           id={`skipLayer_${anchor.id}`}
+           key={anchor.id}
+           aria-label={a11yLabel}>
           {anchor.label}
         </a>
       );
     }.bind(this));
 
+    let menuComponent;
+    if (anchorElements.length > 0) {
+      menuComponent = (
+        <Menu direction="row" responsive={false}>
+          {anchorElements}
+        </Menu>
+      );
+    }
+
     return (
-      <div className="skip-links">
-        <Layer id="skip-link-layer" hidden={!this.state.showLayer}>
-          <div ref="skipLinksLayer">
-            <h2>
-              <FormattedMessage id="Skip to" defaultMessage="Skip to" />
-            </h2>
-            <Menu direction="row">
-              {anchorElements}
-            </Menu>
-          </div>
-        </Layer>
-      </div>
+      <Layer id="skip-link-layer" hidden={!this.state.showLayer} align="top">
+        <Box ref="skipLinksLayer"
+          pad={{horizontal: 'small', vertical: 'medium'}}>
+          <h2>
+            <FormattedMessage id="Skip to" defaultMessage="Skip to" />
+          </h2>
+          {menuComponent}
+        </Box>
+      </Layer>
     );
   }
-});
+}
 
-module.exports = SkipLinks;
+SkipLinks.contextTypes = {
+  intl: PropTypes.object
+};

@@ -5,6 +5,15 @@
   line-height: $footer-height;
   width: 100%;
 
+  &.box--direction-row {
+    > h1,
+    > h2,
+    > h3,
+    > h4 {
+      margin-bottom: 0px;
+    }
+  }
+
   &__content {
     display: flex;
     justify-content: space-between;
@@ -68,10 +77,13 @@
   }
 
   &--large {
-    .footer__content {
-      padding-top: $inuit-base-spacing-unit;
-      padding-bottom: $inuit-base-spacing-unit;
-    }
+    min-height: $large-footer-height;
+    line-height: $large-footer-height;
+  }
+
+  &--small {
+    min-height: $small-footer-height;
+    line-height: $small-footer-height;
   }
 
   &__container {

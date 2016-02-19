@@ -1,50 +1,36 @@
 // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
-var FormattedMessage = require('./FormattedMessage');
+import React, { Component, PropTypes } from 'react';
+import FormattedMessage from './FormattedMessage';
 
-var CLASS_ROOT = "legend";
+const CLASS_ROOT = "legend";
 
-var Legend = React.createClass({
+export default class Legend extends Component {
 
-  propTypes: {
-    activeIndex: React.PropTypes.number,
-    onActive: React.PropTypes.func,
-    series: React.PropTypes.arrayOf(React.PropTypes.shape({
-      label: React.PropTypes.string,
-      value: React.PropTypes.number,
-      units: React.PropTypes.string,
-      colorIndex: React.PropTypes.oneOfType([
-        React.PropTypes.number, // 1-6
-        React.PropTypes.string // status
-      ]),
-      onClick: React.PropTypes.func
-    })).isRequired,
-    total: React.PropTypes.bool,
-    units: React.PropTypes.string,
-    value: React.PropTypes.number
-  },
+  constructor(props) {
+    super(props);
 
-  getInitialState: function () {
-    return {activeIndex: this.props.activeIndex};
-  },
+    this._onActive = this._onActive.bind(this);
 
-  componentWillReceiveProps: function (newProps) {
+    this.state = {activeIndex: this.props.activeIndex};
+  }
+
+  componentWillReceiveProps (newProps) {
     this.setState({activeIndex: newProps.activeIndex});
-  },
+  }
 
-  _onActive: function (index) {
+  _onActive (index) {
     this.setState({activeIndex: index});
     if (this.props.onActive) {
       this.props.onActive(index);
     }
-  },
+  }
 
-  _itemColorIndex: function (item, index) {
+  _itemColorIndex (item, index) {
     return item.colorIndex || ('graph-' + (index + 1));
-  },
+  }
 
-  render: function () {
+  render () {
     var classes = [CLASS_ROOT];
     if (this.props.series.length === 1) {
       classes.push(CLASS_ROOT + "--single");
@@ -58,6 +44,9 @@ var Legend = React.createClass({
       var legendClasses = [CLASS_ROOT + "__item"];
       if (index === this.state.activeIndex) {
         legendClasses.push(CLASS_ROOT + "__item--active");
+      }
+      if (item.onClick) {
+        legendClasses.push(CLASS_ROOT + "__item--clickable");
       }
       var colorIndex = this._itemColorIndex(item, index);
       totalValue += item.value;
@@ -89,7 +78,9 @@ var Legend = React.createClass({
         value = (
           <span className={valueClasses.join(' ')}>
             {item.value}
-            <span className={CLASS_ROOT + "__item-units"}>{this.props.units}</span>
+            <span className={CLASS_ROOT + "__item-units"}>
+              {item.units || this.props.units}
+            </span>
           </span>
         );
       }
@@ -105,6 +96,9 @@ var Legend = React.createClass({
         </li>
       );
     }, this);
+
+    // build legend from bottom to top, to align with Meter bar stacking
+    items.reverse();
 
     var total = null;
     if (this.props.total && this.props.series.length > 1) {
@@ -122,13 +116,29 @@ var Legend = React.createClass({
     }
 
     return (
-      <ol className={classes.join(' ')}>
+      <ol className={classes.join(' ')} role="presentation">
         {items.reverse()}
         {total}
       </ol>
     );
   }
 
-});
+}
 
-module.exports = Legend;
+Legend.propTypes = {
+  activeIndex: PropTypes.number,
+  onActive: PropTypes.func,
+  series: PropTypes.arrayOf(PropTypes.shape({
+    label: PropTypes.string,
+    value: PropTypes.number,
+    units: PropTypes.string,
+    colorIndex: PropTypes.oneOfType([
+      PropTypes.number, // 1-6
+      PropTypes.string // status
+    ]),
+    onClick: PropTypes.func
+  })).isRequired,
+  total: PropTypes.bool,
+  units: PropTypes.string,
+  value: PropTypes.number
+};

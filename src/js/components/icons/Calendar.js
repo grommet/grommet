@@ -1,10 +1,13 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
+import React, { Component } from 'react';
 
-var Calendar = React.createClass({
+export default class Calendar extends Component {
+  componentDidMount () {
+    console.warn('This icon has been deprecated. Please check http://www.grommet.io/docs/develop/icon for the new set of icons.');
+  }
 
-  render: function() {
+  render () {
     var className = 'control-icon control-icon-calendar';
     if (this.props.className) {
       className += ' ' + this.props.className;
@@ -23,7 +26,4 @@ var Calendar = React.createClass({
       </svg>
     );
   }
-
-});
-
-module.exports = Calendar;
+}

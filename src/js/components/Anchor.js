@@ -1,50 +1,88 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
-var RightIcon = require('./icons/Right');
+import React, { Children, Component, PropTypes } from 'react';
+import classnames from 'classnames';
+import iconsMap from '../index-icons';
 
-var CLASS_ROOT = "anchor";
+const CLASS_ROOT = 'anchor';
 
-var Anchor = React.createClass({
+export default class Anchor extends Component {
 
-  propTypes: {
-    href: React.PropTypes.string,
-    id: React.PropTypes.string,
-    onClick: React.PropTypes.func,
-    primary: React.PropTypes.bool,
-    tag: React.PropTypes.string,
-    target: React.PropTypes.string
-  },
-
-  getDefaultProps: function () {
-    return {tag: 'a'};
-  },
-
-  render: function () {
-    var classes = [CLASS_ROOT];
-    var icon;
-    if (this.props.primary) {
-      classes.push(CLASS_ROOT + "--primary");
-      icon = <RightIcon />;
+  render () {
+    let icon;
+    if (this.props.icon) {
+      let CustomIcon  = iconsMap[this.props.icon];
+      if (! CustomIcon) {
+        console.warn(
+          `Warning: Anchor is unable to find the icon named ${this.props.icon}`
+        );
+      } else {
+        icon = <CustomIcon />;
+      }
+    } else if (this.props.primary) {
+      let LinkNextIcon = iconsMap.LinkNext;
+      icon = <LinkNextIcon />;
     }
-    if (! this.props.onClick) {
-      classes.push(CLASS_ROOT + "--disabled");
+
+    if (icon && !this.props.primary && !this.props.label) {
+      icon = <span className={`${CLASS_ROOT}__icon`}>{icon}</span>;
     }
-    if (this.props.className) {
-      classes.push(this.props.className);
+
+    let hasIcon = icon !== undefined;
+    let children = Children.map(this.props.children, child => {
+      if (child && child.type && child.type.icon) {
+        hasIcon = true;
+        child = <span className={`${CLASS_ROOT}__icon`}>{child}</span>;
+      }
+      return child;
+    });
+
+    let classes = classnames(
+      CLASS_ROOT,
+      this.props.className,
+      {
+        [`${CLASS_ROOT}--disabled`]: this.props.disabled,
+        [`${CLASS_ROOT}--icon`]: icon,
+        [`${CLASS_ROOT}--icon-label`]: hasIcon && this.props.label,
+        [`${CLASS_ROOT}--primary`]: this.props.primary,
+        [`${CLASS_ROOT}--reverse`]: this.props.reverse
+      }
+    );
+
+    if (!children) {
+      children = this.props.label;
     }
+
+    const first = this.props.reverse ? children : icon;
+    const second = this.props.reverse ? icon : children;
 
     return (
-      <this.props.tag id={this.props.id} className={classes.join(' ')}
+      <this.props.tag id={this.props.id} className={classes}
         href={this.props.href}
         target={this.props.target}
-        onClick={this.props.onClick}>
-        {icon}
-        {this.props.children}
+        onClick={this.props.onClick}
+        aria-label={this.props.a11yTitle}>
+        {first}
+        {second}
       </this.props.tag>
     );
   }
+};
 
-});
+Anchor.propTypes = {
+  a11yTitle: PropTypes.string,
+  icon: PropTypes.string,
+  disabled: PropTypes.bool,
+  href: PropTypes.string,
+  id: PropTypes.string,
+  label: PropTypes.node,
+  onClick: PropTypes.func,
+  primary: PropTypes.bool,
+  tag: PropTypes.string,
+  target: PropTypes.string,
+  reverse: PropTypes.bool
+};
 
-module.exports = Anchor;
+Anchor.defaultProps = {
+  tag: 'a'
+};

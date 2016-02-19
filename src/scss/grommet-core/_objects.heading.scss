@@ -1,0 +1,19 @@
+.heading {
+  margin-bottom: halve($inuit-base-spacing-unit);
+  line-height: 1;
+
+  &--large {
+    font-size: 125%;
+  }
+
+  &--small {
+    font-size: 75%;
+  }
+
+  &--strong {
+    font-weight: 600;
+  }
+
+  @include text-align();
+  @include margin();
+}

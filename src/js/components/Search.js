@@ -1,69 +1,59 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
-var PropTypes = React.PropTypes;
-var KeyboardAccelerators = require('../utils/KeyboardAccelerators');
-var Drop = require('../utils/Drop');
-var Responsive = require('../utils/Responsive');
-var SearchIcon = require('./icons/Search');
+import React, { Component, PropTypes } from 'react';
+import KeyboardAccelerators from '../utils/KeyboardAccelerators';
+import Drop from '../utils/Drop';
+import Responsive from '../utils/Responsive';
+import Button from './Button';
+import SearchIcon from './icons/base/Search';
 
-var CLASS_ROOT = "search";
+const CLASS_ROOT = "search";
 
-var Search = React.createClass({
+export default class Search extends Component {
 
-  propTypes: {
-    defaultValue: PropTypes.string,
-    dropAlign: Drop.alignPropType,
-    dropColorIndex: PropTypes.string,
-    id: React.PropTypes.string,
-    inline: PropTypes.bool,
-    large: PropTypes.bool,
-    onChange: PropTypes.func,
-    placeHolder: PropTypes.string,
-    responsive: PropTypes.bool,
-    suggestions: PropTypes.arrayOf(PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.shape({
-        label: PropTypes.string.isRequired
-      })
-    ])),
-    value: PropTypes.string
-  },
+  constructor(props) {
+    super(props);
 
-  getDefaultProps: function () {
-    return {
-      align: 'left',
-      inline: false,
-      responsive: true
-    };
-  },
+    this._onAddDrop = this._onAddDrop.bind(this);
+    this._onRemoveDrop = this._onRemoveDrop.bind(this);
+    this._onFocusControl = this._onFocusControl.bind(this);
+    this._onBlurControl = this._onBlurControl.bind(this);
+    this._onFocusInput = this._onFocusInput.bind(this);
+    this._onBlurInput = this._onBlurInput.bind(this);
+    this._onChangeInput = this._onChangeInput.bind(this);
+    this._onNextSuggestion = this._onNextSuggestion.bind(this);
+    this._onPreviousSuggestion = this._onPreviousSuggestion.bind(this);
+    this._onEnter = this._onEnter.bind(this);
+    this._onClickSuggestion = this._onClickSuggestion.bind(this);
+    this._onSink = this._onSink.bind(this);
+    this._onResponsive = this._onResponsive.bind(this);
 
-  getInitialState: function () {
-    return {
+    this.state = {
       align: 'left',
       controlFocused: false,
-      inline: this.props.inline,
+      inline: props.inline,
       dropActive: false,
       activeSuggestionIndex: -1
     };
-  },
+  }
 
-  componentDidMount: function () {
+  componentDidMount () {
     if (this.props.inline && this.props.responsive) {
       this._responsive = Responsive.start(this._onResponsive);
     }
-  },
+  }
 
-  componentWillReceiveProps: function (nextProps) {
+  componentWillReceiveProps (nextProps) {
     if (nextProps.suggestions && nextProps.suggestions.length > 0 &&
       ! this.state.dropActive && this.refs.input === document.activeElement) {
       this.setState({dropActive: true});
-    } else if (! nextProps.suggestions || nextProps.suggestions.length === 0) {
+    } else if ((! nextProps.suggestions || nextProps.suggestions.length === 0) &&
+      this.state.inline) {
       this.setState({dropActive: false});
     }
-  },
+  }
 
-  componentDidUpdate: function (prevProps, prevState) {
+  componentDidUpdate (prevProps, prevState) {
     // Set up keyboard listeners appropriate to the current state.
 
     var activeKeyboardHandlers = {
@@ -101,12 +91,15 @@ var Search = React.createClass({
       // otherwise the drop will close when the mouse is released.
       // Not observable in Safari, 1ms is sufficient for Chrome, Firefox needs 100ms though. :(
       // TODO: re-evaluate how to solve this without a timeout.
-      setTimeout(function () {
-        document.addEventListener('click', this._onRemoveDrop);
-      }.bind(this), 100);
+      document.addEventListener('click', this._onRemoveDrop);
       KeyboardAccelerators.startListeningToKeyboard(this, activeKeyboardHandlers);
 
-      var baseElement = this.refs.control || this.refs.input;
+      var baseElement;
+      if (this.refs.control) {
+        baseElement = this.refs.control.firstChild;
+      } else {
+        baseElement = this.refs.input;
+      }
       var dropAlign = this.props.dropAlign || {
         top: (this.state.inline ? 'bottom' : 'top'),
         left: 'left'
@@ -119,9 +112,9 @@ var Search = React.createClass({
     } else if (this._drop) {
       this._drop.render(this._renderDrop());
     }
-  },
+  }
 
-  componentWillUnmount: function () {
+  componentWillUnmount () {
     document.removeEventListener('click', this._onRemoveDrop);
     KeyboardAccelerators.stopListeningToKeyboard(this);
     if (this._responsive) {
@@ -130,108 +123,137 @@ var Search = React.createClass({
     if (this._drop) {
       this._drop.remove();
     }
-  },
+  }
 
-  _onAddDrop: function (event) {
+  _onAddDrop (event) {
     event.preventDefault();
     this.setState({dropActive: true, activeSuggestionIndex: -1});
-  },
+  }
 
-  _onRemoveDrop: function () {
+  _onRemoveDrop () {
     this.setState({dropActive: false});
-  },
+  }
 
-  _onFocusControl: function () {
+  _onFocusControl () {
     this.setState({
       controlFocused: true,
       dropActive: true,
       activeSuggestionIndex: -1
     });
-  },
+  }
 
-  _onBlurControl: function () {
+  _onBlurControl () {
     this.setState({controlFocused: false});
-  },
+  }
 
-  _onFocusInput: function () {
+  _onFocusInput () {
     this.refs.input.select();
     this.setState({
       dropActive: (! this.state.inline ||
         (this.props.suggestions && this.props.suggestions.length > 0)),
       activeSuggestionIndex: -1
     });
-  },
+  }
 
-  _onBlurInput: function () {
+  _onBlurInput () {
     //this.setState({drop: false});
-  },
+  }
 
-  _onChangeInput: function (event) {
+
+  _fireDOMChange () {
+    var event = new Event('change', {
+      'bubbles': true,
+      'cancelable': true
+    });
+    var controlInput = document.getElementById('search-drop-input');
+    var target = this.refs.input || controlInput;
+    target.dispatchEvent(event);
+    this.props.onDOMChange(event);
+  }
+
+  _onChangeInput (event) {
     this.setState({activeSuggestionIndex: -1});
     if (this.props.onChange) {
       this.props.onChange(event.target.value);
     }
-  },
+    if (this.props.onDOMChange) {
+      this._fireDOMChange();
+    }
+  }
 
-  _onNextSuggestion: function () {
+  _onNextSuggestion () {
     var index = this.state.activeSuggestionIndex;
     index = Math.min(index + 1, this.props.suggestions.length - 1);
     this.setState({activeSuggestionIndex: index});
-  },
+  }
 
-  _onPreviousSuggestion: function () {
+  _onPreviousSuggestion () {
     var index = this.state.activeSuggestionIndex;
     index = Math.max(index - 1, 0);
     this.setState({activeSuggestionIndex: index});
-  },
+  }
 
-  _onEnter: function () {
+  _onEnter (event) {
+    event.preventDefault(); // prevent submitting forms
     this._onRemoveDrop();
+    var suggestion;
     if (this.state.activeSuggestionIndex >= 0) {
-      var suggestion = this.props.suggestions[this.state.activeSuggestionIndex];
+      suggestion = this.props.suggestions[this.state.activeSuggestionIndex];
+      this.setState({value: suggestion});
       if (this.props.onChange) {
         this.props.onChange(suggestion);
       }
+      if (this.props.onSelect) {
+        this.props.onSelect({
+          target: this.refs.input || this.refs.control,
+          suggestion: suggestion
+        }, true);
+      }
+    } else {
+      if (this.props.onSelect) {
+        this.props.onSelect({
+          target: this.refs.input || this.refs.control,
+          suggestion: suggestion
+        }, false);
+      }
     }
-  },
+  }
 
-  _onClickSuggestion: function (item) {
+  _onClickSuggestion (suggestion) {
     this._onRemoveDrop();
-    if (this.props.onChange) {
-      this.props.onChange(item);
-    }
-  },
 
-  _onSink: function (event) {
+    if (this.props.onChange) {
+      this.props.onChange(suggestion);
+    }
+    if (this.props.onSelect) {
+      this.props.onSelect({
+        target: this.refs.input || this.refs.control,
+        suggestion: suggestion
+      }, true);
+    }
+  }
+
+  _onSink (event) {
     event.stopPropagation();
     event.nativeEvent.stopImmediatePropagation();
-  },
+  }
 
-  _onResponsive: function (small) {
+  _onResponsive (small) {
     if (small) {
       this.setState({inline: false});
     } else {
       this.setState({inline: this.props.inline});
     }
-  },
+  }
 
-  focus: function () {
+  focus () {
     var ref = this.refs.input || this.refs.control;
     if (ref) {
       ref.focus();
     }
-  },
+  }
 
-  _createControl: function () {
-    var controlClassName = CLASS_ROOT + "__control";
-    return (
-      <div className={controlClassName}>
-        <SearchIcon />
-      </div>
-    );
-  },
-
-  _classes: function (prefix) {
+  _classes (prefix) {
     var classes = [prefix];
 
     if (this.state.inline) {
@@ -241,19 +263,17 @@ var Search = React.createClass({
     }
 
     return classes;
-  },
+  }
 
-  _renderSuggestionLabel: function (suggestion) {
-    var label;
-    if (suggestion.hasOwnProperty('label')) {
-      label = suggestion.label;
+  _renderLabel (suggestion) {
+    if (typeof suggestion === 'object') {
+      return suggestion.label || suggestion.value;
     } else {
-      label = suggestion;
+      return suggestion;
     }
-    return label;
-  },
+  }
 
-  _renderDrop: function() {
+  _renderDrop () {
     var classes = this._classes(CLASS_ROOT + "__drop");
     if (this.props.dropColorIndex) {
       classes.push("background-color-index-" + this.props.dropColorIndex);
@@ -265,7 +285,7 @@ var Search = React.createClass({
     var input;
     if (! this.state.inline) {
       input = (
-        <input id="search-drop-input" type="search"
+        <input key="input" id="search-drop-input" type="search"
           defaultValue={this.props.defaultValue}
           value={this.props.value}
           className={CLASS_ROOT + "__input"}
@@ -275,7 +295,7 @@ var Search = React.createClass({
 
     var suggestions;
     if (this.props.suggestions) {
-      suggestions = this.props.suggestions.map(function (item, index) {
+      suggestions = this.props.suggestions.map(function (suggestion, index) {
         var classes = [CLASS_ROOT + "__suggestion"];
         if (index === this.state.activeSuggestionIndex) {
           classes.push(CLASS_ROOT + "__suggestion--active");
@@ -283,34 +303,33 @@ var Search = React.createClass({
         return (
           <div key={index}
             className={classes.join(' ')}
-            onClick={this._onClickSuggestion.bind(this, item)}>
-            {this._renderSuggestionLabel(item)}
+            onClick={this._onClickSuggestion.bind(this, suggestion)}>
+            {this._renderLabel(suggestion)}
           </div>
         );
       }, this);
-    }
-
-    var contents = (
-      <div className={CLASS_ROOT + "__drop-contents"} onClick={this._onSink}>
-        {input}
-        <div className={CLASS_ROOT + "__suggestions"}>
+      suggestions = (
+        <div key="suggestions" className={CLASS_ROOT + "__suggestions"}>
           {suggestions}
         </div>
-      </div>
-    );
+      );
+    }
+
+    var contents = [input, suggestions];
 
     if (! this.state.inline) {
-      var control = this._createControl();
-      var rightAlign = (this.props.dropAlign && ! this.props.dropAlign.left);
-      var first = rightAlign ? contents : control;
-      var second = rightAlign ? control : contents;
-
-      contents = (
-        <div className={CLASS_ROOT + "__drop-header"}>
-          {first}
-          {second}
+      contents = [
+        <Button key="icon" icon="Search"
+          className={CLASS_ROOT + "__drop-control"}
+          onClick={this._onRemoveDrop} />,
+        <div key="contents" className={CLASS_ROOT + "__drop-contents"}
+          onClick={this._onSink}>
+          {contents}
         </div>
-      );
+      ];
+      if (this.props.dropAlign && ! this.props.dropAlign.left) {
+        contents.reverse();
+      }
     }
 
     return (
@@ -318,51 +337,90 @@ var Search = React.createClass({
         {contents}
       </div>
     );
-  },
+  }
 
-  render: function () {
+  render () {
 
     var classes = this._classes(CLASS_ROOT);
-    if (this.props.large) {
+    if (this.props.size) {
+      classes.push(CLASS_ROOT + "--" + this.props.size);
+    } else if (this.props.large && ! this.props.size) {
       classes.push(CLASS_ROOT + "--large");
+    }
+    if (this.props.fill) {
+      classes.push(CLASS_ROOT + "--fill");
     }
     if (this.props.className) {
       classes.push(this.props.className);
     }
+    if (this.props.iconAlign) {
+      classes.push(CLASS_ROOT + "--icon-align-" + this.props.iconAlign);
+    }
 
     if (this.state.inline) {
-
       return (
         <div className={classes.join(' ')}>
           <input ref="input" type="search"
             id={this.props.id}
             placeholder={this.props.placeHolder}
-            defaultValue={this.props.defaultValue}
-            value={this.props.value}
+            defaultValue={this._renderLabel(this.props.defaultValue)}
+            value={this._renderLabel(this.props.value)}
             className={CLASS_ROOT + "__input"}
             onFocus={this._onFocusInput}
             onBlur={this._onBlurInput}
             onChange={this._onChangeInput} />
+          <SearchIcon />
         </div>
       );
 
     } else {
 
-      var controlContents = this._createControl();
-
       return (
-        <div ref="control" id={this.props.id}
-          className={classes.join(' ')}
-          tabIndex="0"
-          onClick={this._onAddDrop}
-          onFocus={this._onFocusControl}
-          onBlur={this._onBlurControl}>
-          {controlContents}
+        <div ref="control">
+          <Button id={this.props.id}
+            className={classes.join(' ')}
+            icon="Search"
+            tabIndex="0"
+            onClick={this._onAddDrop}
+            onFocus={this._onFocusControl}
+            onBlur={this._onBlurControl} />
         </div>
       );
     }
   }
 
-});
+}
 
-module.exports = Search;
+Search.propTypes = {
+  defaultValue: PropTypes.string,
+  dropAlign: Drop.alignPropType,
+  dropColorIndex: PropTypes.string,
+  fill: PropTypes.bool,
+  iconAlign: React.PropTypes.oneOf(['start', 'end']),
+  id: React.PropTypes.string,
+  inline: PropTypes.bool,
+  large: PropTypes.bool,
+  onChange: PropTypes.func,
+  onDOMChange: PropTypes.func,
+  onSelect: PropTypes.func,
+  placeHolder: PropTypes.string,
+  responsive: PropTypes.bool,
+  size: React.PropTypes.oneOf(['small', 'medium', 'large']),
+  suggestions: PropTypes.arrayOf(
+    PropTypes.oneOfType([
+      PropTypes.shape({
+        label: PropTypes.node,
+        value: PropTypes.any
+      }),
+      PropTypes.string
+    ])
+  ),
+  value: PropTypes.string
+};
+
+Search.defaultProps = {
+  align: 'left',
+  iconAlign: 'end',
+  inline: false,
+  responsive: true
+};

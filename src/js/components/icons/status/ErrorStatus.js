@@ -1,15 +1,10 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
-var FormattedMessage = require('../../FormattedMessage');
+import React, { Component, PropTypes } from 'react';
+import FormattedMessage from '../../FormattedMessage';
 
-var ErrorStatus = React.createClass({
-
-  propTypes: {
-    a11yTitle: React.PropTypes.string
-  },
-
-  render: function() {
+export default class ErrorStatus extends Component {
+  render() {
     var className = 'status-icon status-icon-error';
     var a11yTitle = this.props.a11yTitle;
     if (this.props.className) {
@@ -36,7 +31,8 @@ var ErrorStatus = React.createClass({
       </svg>
     );
   }
+}
 
-});
-
-module.exports = ErrorStatus;
+ErrorStatus.propTypes = {
+  a11yTitle: PropTypes.string
+};

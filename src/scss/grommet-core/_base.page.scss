@@ -3,6 +3,11 @@
 // turn off webkit elastic scrolling
 html,
 body {
+
+  &.rtl {
+    direction: rtl;
+  }
+
   @include media-query(lap-and-up) {
     height: 100%;
     width: 100%;

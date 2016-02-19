@@ -1,29 +1,24 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
+import React, { PropTypes } from 'react';
 
-var CLASS_ROOT = "attribute";
+const CLASS_ROOT = 'attribute';
 
-var Attribute = React.createClass({
+const Attribute = ({ label, children }) => (
+  <div className={CLASS_ROOT}>
+    <label className={`${CLASS_ROOT}__label`}>
+      {label}
+    </label>
+    <span className={`${CLASS_ROOT}__contents`}>
+      {children}
+    </span>
+  </div>
+);
 
-  propTypes: {
-    label: React.PropTypes.string
-  },
+Attribute.propTypes = {
+  label: PropTypes.string
+};
 
-  render: function () {
-    var classes = [CLASS_ROOT];
-    return (
-      <div className={classes.join(' ')}>
-        <label className={CLASS_ROOT + "__label"}>
-          {this.props.label}
-        </label>
-        <span className={CLASS_ROOT + "__contents"}>
-          {this.props.children}
-        </span>
-      </div>
-    );
-  }
+Attribute.displayName = 'Attribute';
 
-});
-
-module.exports = Attribute;
+export default Attribute;

@@ -19,9 +19,14 @@
     display: flex;
     max-width: none;
     transition: all 0.8s;
+  }
+
+  .tiles.box--direction-row > .tile.carousel__item {
+    flex: 1 1 100%;
+    box-sizing: border-box;
 
     > * {
-      flex: 1;
+      width: 100%;
     }
   }
 
@@ -34,14 +39,18 @@
     cursor: pointer;
 
     .control-icon {
-      width: quadruple($inuit-base-spacing-unit);
-      height: quadruple($inuit-base-spacing-unit);
       filter: drop-shadow(1px 1px 1px $button-drop-shadow-color);
       -webkit-filter: drop-shadow(1px 1px 1px $button-drop-shadow-color);
 
       polyline {
-        stroke: #fff;
+        stroke: $colored-icon-color;
         stroke-width: 1px;
+      }
+    }
+
+    &:hover {
+      .control-icon polyline {
+        stroke: $active-colored-icon-color;
       }
     }
 
@@ -76,7 +85,7 @@
     display: inline-block;
     width: round($inuit-base-spacing-unit * 1.5);
     height: round($inuit-base-spacing-unit * 1.5);
-    stroke: #fff;
+    stroke: $colored-icon-color;
     fill: transparent;
     cursor: pointer;
     filter: drop-shadow(1px 1px 1px $button-drop-shadow-color);
@@ -94,6 +103,27 @@
     .carousel__controls {
       opacity: 0;
       @include animation('carousel-hide 1s');
+    }
+  }
+}
+
+.carousel-controls {
+  &__control {
+    width: round($inuit-base-spacing-unit * 1.5);
+    height: round($inuit-base-spacing-unit * 1.5);
+    stroke: #fff;
+    fill: transparent;
+    cursor: pointer;
+    filter: drop-shadow(1px 1px 1px $button-drop-shadow-color);
+    -webkit-filter: drop-shadow(1px 1px 1px $button-drop-shadow-color);
+
+    &:hover {
+      stroke-width: 2px;
+    }
+
+    &--active {
+      stroke: $brand-color;
+      fill: $brand-color;
     }
   }
 }

@@ -36,10 +36,24 @@ button:not(.button) {
 .button {
   @include basic-button();
 
+  &__icon {
+    display: inline-block;
+    padding: halve($inuit-base-spacing-unit);
+  }
+
   &--primary {
     border-color: $brand-color;
     background-color: $brand-color;
-    color: $colored-text-color;
+    color: $active-colored-text-color;
+
+    &:hover:not(.button--disabled) {
+      color: $active-colored-text-color;
+
+     .button__icon .control-icon {
+        fill: $active-colored-icon-color;
+        stroke: $active-colored-icon-color;
+      }
+    }
   }
 
   &--secondary {
@@ -50,15 +64,51 @@ button:not(.button) {
     border-color: $button-accent-color;
   }
 
-  &--icon {
+  &--plain {
     border: none;
     padding: 0;
-    width: double($inuit-base-spacing-unit);
-    height: double($inuit-base-spacing-unit);
+    width: auto;
+    height: auto;
+    min-width: 0;
+    max-width: none;
+
+    &.button--primary {
+      background-color: $brand-color;
+    }
+
+    > span:not(.button__icon) {
+      vertical-align: middle;
+
+      &:first-child {
+        margin-left: halve($inuit-base-spacing-unit);
+      }
+
+      &:last-child {
+        margin-right: halve($inuit-base-spacing-unit);
+      }
+    }
+
+    [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+      color: $colored-text-color;
+
+      .control-icon {
+        fill: $colored-icon-color;
+        stroke: $colored-icon-color;
+      }
+
+      &:hover {
+        color: $active-colored-text-color;
+
+       .control-icon {
+          fill: $active-colored-icon-color;
+          stroke: $active-colored-icon-color;
+        }
+      }
+    }
   }
 
-  [class*="background-color-index-"] &:not(.button--primary) {
-    border-color: $colored-border-color;
+  [class*="background-color-index-"]:not([class*="background-color-index-light"]) &:not(.button--primary) {
+    border-color: $button-colored-border-color;
     color: $colored-text-color;
 
     &.button--accent {
@@ -73,5 +123,16 @@ button:not(.button) {
 
   &--fill {
     width: 100%;
+    max-width: none;
+    //used to add full height for button inside a flex container
+    flex-grow: 1;
+  }
+}
+
+a.button {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
   }
 }

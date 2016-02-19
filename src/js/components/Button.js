@@ -1,66 +1,85 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
+import React, { Component, PropTypes } from 'react';
+import classnames from 'classnames';
+import iconsMap from '../index-icons';
 
-var CLASS_ROOT = "button";
+const CLASS_ROOT = 'button';
 
-var Button = React.createClass({
+export default class Button extends Component {
+  render () {
+    const plain = (this.props.plain !== undefined ? this.props.plain :
+      (this.props.icon && ! this.props.label) || 'icon' === this.props.type);
+    let classes = classnames(
+      CLASS_ROOT,
+      this.props.className,
+      {
+        [`${CLASS_ROOT}--primary`]: this.props.primary,
+        [`${CLASS_ROOT}--secondary`]: this.props.secondary,
+        [`${CLASS_ROOT}--accent`]: this.props.accent,
+        [`${CLASS_ROOT}--disabled`]: !this.props.onClick && !this.props.href,
+        [`${CLASS_ROOT}--fill`]: this.props.fill,
+        [`${CLASS_ROOT}--plain`]: plain
+      }
+    );
 
-  propTypes: {
-    accent: React.PropTypes.bool,
-    fill: React.PropTypes.bool,
-    icon: React.PropTypes.bool,
-    id: React.PropTypes.string,
-    label: React.PropTypes.node,
-    onClick: React.PropTypes.func,
-    primary: React.PropTypes.bool,
-    secondary: React.PropTypes.bool,
-    type: React.PropTypes.oneOf(['button', 'reset', 'submit', 'icon'])
-  },
+    // if ('icon' === this.props.type) {
+    //   console.warn('Button type="icon" is deprecated, use plain={true} instead.');
+    // }
 
-  getDefaultProps: function () {
-    return {
-      type: "button"
-    };
-  },
+    let type = this.props.type === 'icon' ? 'button' : this.props.type;
 
-  render: function () {
-    var classes = [CLASS_ROOT];
-    if (this.props.primary) {
-      classes.push(CLASS_ROOT + "--primary");
-    }
-    if (this.props.secondary) {
-      classes.push(CLASS_ROOT + "--secondary");
-    }
-    if (this.props.accent) {
-      classes.push(CLASS_ROOT + "--accent");
-    }
-    if (! this.props.onClick) {
-      classes.push(CLASS_ROOT + "--disabled");
-    }
-    if (this.props.fill) {
-      classes.push(CLASS_ROOT + "--fill");
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
+    let icon;
+    if (this.props.icon) {
+      let CustomIcon  = iconsMap[this.props.icon];
+      if (! CustomIcon) {
+        console.warn(
+          `Warning: Button is unable to find the icon named ${this.props.icon}`
+        );
+      } else {
+        icon = <span className={`${CLASS_ROOT}__icon`}><CustomIcon /></span>;
+      }
     }
 
-    var content = this.props.label;
-    var type = this.props.type;
-    if (this.props.type === 'icon') {
-      classes.push(CLASS_ROOT + "--icon");
-      content = this.props.children;
-      type = 'button';
+    let children = React.Children.map(this.props.children, child => {
+      if (child && child.type && child.type.icon) {
+        child = <span className={`${CLASS_ROOT}__icon`}>{child}</span>;
+      }
+
+      return child;
+    });
+
+    if (!children) {
+      children = this.props.label;
     }
+
+    let Tag = this.props.href ? 'a' : 'button';
 
     return (
-      <button id={this.props.id} type={type} className={classes.join(' ')}
-        onClick={this.props.onClick} disabled={! this.props.onClick}>
-        {content}
-      </button>
+      <Tag href={this.props.href} id={this.props.id} type={type}
+        className={classes} aria-label={this.props.a11yTitle}
+        onClick={this.props.onClick} disabled={!this.props.onClick}>
+        {icon}
+        {children}
+      </Tag>
     );
   }
+};
 
-});
+Button.propTypes = {
+  a11yTitle: PropTypes.string,
+  accent: PropTypes.bool,
+  fill: PropTypes.bool,
+  icon: PropTypes.string,
+  id: PropTypes.string,
+  label: PropTypes.node,
+  onClick: PropTypes.func,
+  plain: PropTypes.bool,
+  primary: PropTypes.bool,
+  secondary: PropTypes.bool,
+  type: PropTypes.oneOf(['button', 'reset', 'submit', 'icon']) // deprecate icon
+};
 
-module.exports = Button;
+Button.defaultProps = {
+  type: 'button'
+};

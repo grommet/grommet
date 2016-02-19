@@ -1,64 +1,44 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
-var merge = require('lodash/object/merge');
-var pick = require('lodash/object/pick');
-var keys = require('lodash/object/keys');
-var Box = require('./Box');
+import React, { PropTypes } from 'react';
+import classnames from 'classnames';
+import Box from './Box';
+import Props from '../utils/Props';
 
-var CLASS_ROOT = "sidebar";
+const CLASS_ROOT = 'sidebar';
 
-var Sidebar = React.createClass({
-
-  propTypes: merge({
-    fixed: React.PropTypes.bool,
-    primary: React.PropTypes.bool, // Deprecated
-    size: React.PropTypes.oneOf(['small', 'medium', 'large']),
-    small: React.PropTypes.bool // Deprecated
-  }, Box.propTypes),
-
-  getDefaultProps: function () {
-    return {
-      direction: 'column',
-      primary: false
-    };
-  },
-
-  getInitialState: function() {
-    return this._stateFromProps(this.props);
-  },
-
-  componentWillReceiveProps: function (newProps) {
-    this.setState(this._stateFromProps(newProps));
-  },
-
-  _stateFromProps: function (props) {
-    return {size: props.size || (props.small ? 'small' : (props.large ? 'large' : null))};
-  },
-
-  render: function() {
-    var classes = [CLASS_ROOT];
-    var other = pick(this.props, keys(Box.propTypes));
-    if (this.props.primary) {
-      classes.push(CLASS_ROOT + "--primary");
+const Sidebar = props => {
+  let classes = classnames(
+    CLASS_ROOT,
+    props.className,
+    {
+      [`${CLASS_ROOT}--primary`]: props.primary,
+      [`${CLASS_ROOT}--fixed`]: props.fixed,
+      [`${CLASS_ROOT}--${props.size}`]: props.size
     }
-    if (this.props.fixed) {
-      classes.push(CLASS_ROOT + "--fixed");
-    }
-    if (this.state.size) {
-      classes.push(CLASS_ROOT + "--" + this.state.size);
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
+  );
 
-    return (
-      <Box {...other} className={classes.join(' ')}>
-        {this.props.children}
-      </Box>
-    );
-  }
+  let boxProps = Props.pick(props, Box);
 
-});
+  return (
+    <Box {...boxProps} className={classes} primary={false}>
+      {props.children}
+    </Box>
+  );
+};
 
-module.exports = Sidebar;
+Sidebar.propTypes = {
+  fixed: PropTypes.bool,
+  primary: PropTypes.bool, // Deprecated
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  ...Box.propTypes
+};
+
+Sidebar.defaultProps = {
+  direction: 'column',
+  primary: false
+};
+
+Sidebar.displayName = 'Sidebar';
+
+export default Sidebar;

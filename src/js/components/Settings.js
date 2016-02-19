@@ -1,10 +1,14 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
+import React, { Component } from 'react';
 
-var Settings = React.createClass({
+export default class Settings extends Component {
+  componentDidMount() {
+    console.warn("Settings is deprecated and will be removed soon." +
+      "Please use Tiles instead.");
+  }
 
-  render: function() {
+  render() {
     var panels = ['TBD 1', 'TBD 2'].map(function (tbd) {
       return (
         <li key={tbd} className={"settings__panel list-item box"}>
@@ -21,7 +25,4 @@ var Settings = React.createClass({
       </div>
     );
   }
-
-});
-
-module.exports = Settings;
+}

@@ -1,21 +1,20 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
+import React from 'react';
+import classnames from 'classnames';
 
-var FormFields = React.createClass({
+const CLASS_ROOT = 'form-fields';
 
-  render: function () {
-    var classes = ["form-fields"];
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
-    return (
-      <div className={classes.join(' ')}>
-        {this.props.children}
-      </div>
-    );
-  }
+const FormFields = props => {
+  let classes = classnames(CLASS_ROOT, props.className);
 
-});
+  return (
+    <div className={classes}>
+      {props.children}
+    </div>
+  );
+};
 
-module.exports = FormFields;
+FormFields.displayName = 'FormFields';
+
+export default FormFields;

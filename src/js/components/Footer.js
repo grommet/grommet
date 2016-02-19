@@ -1,54 +1,60 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
-var merge = require('lodash/object/merge');
-var pick = require('lodash/object/pick');
-var keys = require('lodash/object/keys');
-var Box = require('./Box');
-var SkipLinkAnchor = require('./SkipLinkAnchor');
+import React, { PropTypes } from 'react';
+import classnames from 'classnames';
+import Box from './Box';
+import SkipLinkAnchor from './SkipLinkAnchor';
+import Props from '../utils/Props';
 
-var CLASS_ROOT = "footer";
+const CLASS_ROOT = 'footer';
 
-var Footer = React.createClass({
+const Footer = props => {
 
-  propTypes: merge({
-    large: React.PropTypes.bool,
-    small: React.PropTypes.bool,
-    float: React.PropTypes.bool
-  }, Box.propTypes),
-
-  getDefaultProps: function () {
-    return {
-      pad: 'none',
-      direction: 'row',
-      responsive: false
-    };
-  },
-
-  render: function() {
-    var classes = [CLASS_ROOT];
-    var containerClasses = [CLASS_ROOT + "__container"];
-    var other = pick(this.props, keys(Box.propTypes));
-    if (this.props.large) {
-      classes.push(CLASS_ROOT + "--large");
+  let classes = classnames(
+    CLASS_ROOT,
+    props.className,
+    {
+      [`${CLASS_ROOT}--${props.size}`]: props.size,
+      [`${CLASS_ROOT}--float`]: props.float
     }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
-    if (this.props.float) {
-      classes.push(CLASS_ROOT + "--float");
-      containerClasses.push(CLASS_ROOT + "__container--float");
-    }
+  );
 
-    return (
-      <Box tag="footer" {...other} className={classes.join(' ')}
-        containerClassName={containerClasses.join(' ')}>
-        <SkipLinkAnchor label="Footer" />
-        {this.props.children}
-      </Box>
-    );
+  let containerClasses = classnames(
+    `${CLASS_ROOT}__container`,
+    {
+      [`${CLASS_ROOT}__container--float`]: props.float
+    }
+  );
+
+  let footerSkipLink;
+  if (props.primary) {
+    footerSkipLink = <SkipLinkAnchor label="Footer" />;
   }
 
-});
+  let boxProps = Props.pick(props, Box);
 
-module.exports = Footer;
+  return (
+    <Box {...boxProps} tag="footer" className={classes}
+      containerClassName={containerClasses}
+      primary={false}>
+      {footerSkipLink}
+      {props.children}
+    </Box>
+  );
+};
+
+Footer.propTypes = {
+  float: PropTypes.bool,
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  primary: PropTypes.bool,
+  ...Box.propTypes
+};
+
+Footer.defaultProps = {
+  direction: 'row',
+  responsive: false
+};
+
+Footer.displayName = 'Footer';
+
+export default Footer;

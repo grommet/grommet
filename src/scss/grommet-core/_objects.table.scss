@@ -1,5 +1,34 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
+@mixin small-table {
+
+  thead {
+    display: none;
+  }
+
+  td {
+    display: block;
+
+    &:before {
+      font-weight: 100;
+      @include inuit-font-size($control-font-size, $inuit-base-spacing-unit);
+      content: attr(data-th);
+      display: block;
+
+      padding-right: halve($inuit-base-spacing-unit);
+    }
+  }
+
+  tr {
+    border-bottom: 1px solid $border-color;
+  }
+
+  td,
+  th {
+    padding-left: $inuit-base-spacing-unit;
+  }
+}
+
 .table {
 
   table {
@@ -29,7 +58,6 @@
   }
 
   &__mirror {
-
     position: absolute;
     top: 0px;
     left: 0px;
@@ -38,21 +66,26 @@
     > thead {
       position: fixed;
       background-color: $header-background-color;
-
-      @include media-query(palm) {
-        position: static;
-      }
     }
   }
 
   &__more {
     margin-top: $inuit-base-spacing-unit;
-    margin-bottom: $inuit-base-spacing-unit;
     text-align: center;
   }
 
   &--scrollable {
     position: relative;
+
+    .table__table {
+      thead {
+        visibility: hidden;
+      }
+
+      th {
+        border-bottom: none;
+      }
+    }
   }
 
   &--selectable {
@@ -64,20 +97,33 @@
           transition: background-color 0.2s;
         }
 
-        &.table__row--selected {
+        &.table-row--selected {
           td {
             background-color: $selected-background-color;
             color: $selected-text-color;
+
+            [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+              background-color: $colored-active-background-color;
+              color: $active-colored-text-color;
+            }
           }
         }
 
-        &:hover:not(.table__row--selected) {
+        &:hover:not(.table-row--selected) {
           td {
             background-color: $hover-background-color;
             color: $hover-text-color;
+
+            [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+              color: $active-colored-text-color;
+            }
           }
         }
       }
     }
+  }
+
+  &--small {
+    @include small-table();
   }
 }

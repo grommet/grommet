@@ -1,10 +1,13 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
+import React, { Component } from 'react';
 
-var DragHandle = React.createClass({
+export default class DragHandle extends Component {
+  componentDidMount () {
+    console.warn('This icon has been deprecated. Please check http://www.grommet.io/docs/develop/icon for the new set of icons.');
+  }
 
-  render: function() {
+  render () {
     var className = 'control-icon control-icon-drag-handle';
     if (this.props.className) {
       className += ' ' + this.props.className;
@@ -24,7 +27,4 @@ var DragHandle = React.createClass({
       </svg>
     );
   }
-
-});
-
-module.exports = DragHandle;
+}

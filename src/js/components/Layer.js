@@ -1,47 +1,33 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var React = require('react');
-var ReactDOM = require('react-dom');
-var CloseIcon = require('./icons/base/Close');
-var KeyboardAccelerators = require('../utils/KeyboardAccelerators');
-var DOMUtils = require('../utils/DOM');
-var Button = require('./Button');
+import React, { Component, PropTypes } from 'react';
+import ReactDOM from 'react-dom';
+import CloseIcon from './icons/base/Close';
+import KeyboardAccelerators from '../utils/KeyboardAccelerators';
+import DOMUtils from '../utils/DOM';
+import Button from './Button';
+import Intl from '../utils/Intl';
 
-var CLASS_ROOT = "layer";
+const CLASS_ROOT = "layer";
 
-var LayerContents = React.createClass({
+class LayerContents extends Component {
 
-  propTypes: {
-    closer: React.PropTypes.oneOfType([
-      React.PropTypes.node,
-      React.PropTypes.bool
-    ]),
-    onClose: React.PropTypes.func,
-    router: React.PropTypes.func,
-    intl: React.PropTypes.object,
-    a11yCloserTitle: React.PropTypes.string
-  },
+  constructor() {
+    super();
 
-  // Because Layer creates a new DOM render context, the context
-  // is not transfered. For now, we hard code these specific ones.
-  // TODO: Either figure out how to introspect the context and transfer
-  // whatever we find or have callers explicitly indicate which parts
-  // of the context to transfer somehow.
-  childContextTypes: {
-    router: React.PropTypes.func,
-    intl: React.PropTypes.object,
-    store: React.PropTypes.object
-  },
+    this._processTab = this._processTab.bind(this);
+  }
 
-  getChildContext: function () {
+  getChildContext () {
     return {
       router: this.props.router,
+      history: this.props.history,
       intl: this.props.intl,
       store: this.props.store
     };
-  },
+  }
 
-  componentDidMount: function () {
+  componentDidMount () {
 
     var items = this.refs.container.getElementsByTagName('*');
     var firstFocusable = DOMUtils.getBestFirstFocusable(items);
@@ -50,47 +36,61 @@ var LayerContents = React.createClass({
     }
 
     if (this.props.onClose) {
-      KeyboardAccelerators.startListeningToKeyboard(this, {
+      this._keyboardHandlers = {
         tab: this._processTab,
         esc: this.props.onClose
-      });
+      };
+      KeyboardAccelerators.startListeningToKeyboard(
+        this, this._keyboardHandlers
+      );
     }
-  },
 
-  componentWillUnmount: function() {
+    if (this.props.a11yCloserTitle) {
+      console.log('a11yCloserTitle prop has been deprecated. Please use a11yTitle instead.');
+    }
+  }
+
+  componentWillUnmount () {
     if (this.props.onClose) {
-      KeyboardAccelerators.stopListeningToKeyboard(this, {
-        tab: this._processTab,
-        esc: this.props.onClose
-      });
+      KeyboardAccelerators.stopListeningToKeyboard(
+        this, this._keyboardHandlers
+      );
     }
-  },
+  }
 
-  _processTab: function (event) {
-    var items = this.refs.background.getElementsByTagName('*');
-
+  _processTab (event) {
+    var items = this.refs.container.getElementsByTagName('*');
     items = DOMUtils.filterByFocusable(items);
 
-    if (event.shiftKey) {
-      if (event.target === items[0]) {
-        items[items.length - 1].focus();
-        event.preventDefault();
-      }
+    if (!items || items.length === 0) {
+      event.preventDefault();
     } else {
-      if (event.target === items[items.length - 1]) {
+      if (event.shiftKey) {
+        if (event.target === items[0]) {
+          items[items.length - 1].focus();
+          event.preventDefault();
+        }
+      } else if (event.target === items[items.length - 1]) {
         items[0].focus();
         event.preventDefault();
       }
     }
-  },
+  }
 
-  render: function () {
+  render () {
     var closer = null;
     if (this.props.closer) {
+      //TODO: remove a11yCloserTitle after 0.6 release
+      let closeLabel = Intl.getMessage(this.context.intl, 'Close');
+      let layerLabel = Intl.getMessage(this.context.intl, 'Layer');
+      let a11yTitle = this.props.a11yCloserTitle || (
+        `${closeLabel} ${this.props.a11yTitle || ''} ${layerLabel}`
+      );
+
       closer = (
         <div className={CLASS_ROOT + "__closer"}>
-          <Button type='icon' onClick={this.props.onClose}>
-            <CloseIcon a11yTitle={this.props.a11yCloserTitle} />
+          <Button plain={true} onClick={this.props.onClose}>
+            <CloseIcon a11yTitle={a11yTitle} />
           </Button>
         </div>
       );
@@ -103,54 +103,56 @@ var LayerContents = React.createClass({
       </div>
     );
   }
-});
+}
 
-var Layer = React.createClass({
+LayerContents.propTypes = {
+  //deprecated
+  a11yCloserTitle: PropTypes.string,
+  a11yTitle: PropTypes.string,
+  closer: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.bool
+  ]),
+  history: PropTypes.object,
+  intl: PropTypes.object,
+  onClose: PropTypes.func,
+  router: PropTypes.any
+};
 
-  propTypes: {
-    align: React.PropTypes.oneOf(['center', 'top', 'bottom', 'left', 'right']),
-    closer: React.PropTypes.oneOfType([
-      React.PropTypes.node,
-      React.PropTypes.bool
-    ]),
-    flush: React.PropTypes.bool,
-    hidden: React.PropTypes.bool,
-    peek: React.PropTypes.bool,
-    onClose: React.PropTypes.func
-  },
+// Because Layer creates a new DOM render context, the context
+// is not transfered. For now, we hard code these specific ones.
+// TODO: Either figure out how to introspect the context and transfer
+// whatever we find or have callers explicitly indicate which parts
+// of the context to transfer somehow.
+LayerContents.childContextTypes = {
+  router: PropTypes.any,
+  history: PropTypes.object,
+  intl: PropTypes.object,
+  store: PropTypes.object
+};
 
-  contextTypes: {
-    router: React.PropTypes.func,
-    intl: React.PropTypes.object,
-    store: React.PropTypes.object
-  },
+export default class Layer extends Component {
 
-  getDefaultProps: function () {
-    return {
-      align: 'center'
-    };
-  },
-
-  componentDidMount: function () {
+  componentDidMount () {
     this._originalFocusedElement = document.activeElement;
     this._addLayer();
     this._renderLayer();
-  },
+  }
 
-  componentDidUpdate: function () {
+  componentDidUpdate () {
     this._renderLayer();
-  },
+  }
 
-  componentWillUnmount: function () {
+  componentWillUnmount () {
 
     if (this._originalFocusedElement) {
       this._originalFocusedElement.focus();
     }
 
     this._removeLayer();
-  },
+  }
 
-  _classesFromProps: function () {
+  _classesFromProps () {
     var classes = [CLASS_ROOT];
     if (this.props.align) {
       classes.push(CLASS_ROOT + "--align-" + this.props.align);
@@ -171,56 +173,76 @@ var Layer = React.createClass({
       classes.push(this.props.className);
     }
     return classes;
-  },
+  }
 
-  _addLayer: function () {
+  _addLayer () {
     var element = document.createElement('div');
     if (this.props.id) {
       element.id = this.props.id;
     }
     element.className = this._classesFromProps().join(' ');
-    this._element = document.body.insertBefore(element, document.body.firstChild);
-  },
+    // insert before .app, if possible.
+    var appElements = document.querySelectorAll('.app');
+    var beforeElement;
+    if (appElements.length > 0) {
+      beforeElement = appElements[0];
+    } else {
+      beforeElement = document.body.firstChild;
+    }
+    this._element = beforeElement.parentNode.insertBefore(element, beforeElement);
+  }
 
-  _handleAriaHidden: function (hideOverlay) {
+  _handleAriaHidden (hideOverlay) {
     this._element.setAttribute('aria-hidden', hideOverlay);
+  }
 
-    // refactor
-    Array.prototype.forEach.call(document.body.childNodes, function (currentChild) {
-      if (currentChild !== this._element &&
-        currentChild.nodeType === 1 &&
-        currentChild.id !== 'skip-link-layer' &&
-        currentChild.tagName.toLowerCase() !== 'script') {
-        currentChild.setAttribute('aria-hidden', !hideOverlay);
-      }
-    }.bind(this));
-  },
-
-  _renderLayer: function () {
+  _renderLayer () {
     this._element.className = this._classesFromProps().join(' ');
     var contents = (
       <LayerContents {...this.props}
         router={this.context.router}
+        history={this.context.history}
         intl={this.context.intl}
         store={this.context.store} />
     );
     ReactDOM.render(contents, this._element);
     this._handleAriaHidden(this.props.hidden);
-  },
+  }
 
-  _removeLayer: function () {
+  _removeLayer () {
     this._element.removeEventListener('animationend', this._onAnimationEnd);
     this._handleAriaHidden(true);
 
     ReactDOM.unmountComponentAtNode(this._element);
-    document.body.removeChild(this._element);
+    this._element.parentNode.removeChild(this._element);
     this._element = null;
-  },
+  }
 
-  render: function () {
+  render () {
     return (<span></span>);
   }
 
-});
+}
 
-module.exports = Layer;
+Layer.propTypes = {
+  align: PropTypes.oneOf(['center', 'top', 'bottom', 'left', 'right']),
+  closer: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.bool
+  ]),
+  flush: PropTypes.bool,
+  hidden: PropTypes.bool,
+  peek: PropTypes.bool,
+  onClose: PropTypes.func
+};
+
+Layer.contextTypes = {
+  router: PropTypes.any,
+  history: PropTypes.object,
+  intl: PropTypes.object,
+  store: PropTypes.object
+};
+
+Layer.defaultProps = {
+  align: 'center'
+};

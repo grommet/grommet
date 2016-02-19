@@ -24,8 +24,8 @@ module.exports = function(gulp, opts) {
   var dist = options.dist || path.resolve(process.cwd(), 'dist');
 
   var jsLoader = options.jsLoader || {
-    test: /\.js$/,
-    loader: 'babel-loader',
+    test: /\.jsx?$/,
+    loader: 'react-hot!babel-loader',
     exclude: /(node_modules|bower_components|src\/lib)/
   };
 
@@ -97,7 +97,13 @@ module.exports = function(gulp, opts) {
 
         gulp.src(assets, {
           dot: true
-        }).pipe(gulpif(copyAsset.babel, babel()))
+        }).pipe(gulpif(copyAsset.babel, babel({
+          "presets": [ "es2015", "react" ],
+          "plugins": [
+            "transform-object-rest-spread",
+            "add-module-exports"
+          ]
+        })))
         .pipe(gulp.dest(copyAsset.dist ? copyAsset.dist : dist));
       }
 
