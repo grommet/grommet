@@ -16,8 +16,6 @@
 
   &__input {
     margin-right: 0px;
-    border-radius: 0;
-    -webkit-appearance: none;
 
     .header & {
       font-size: inherit;
@@ -75,6 +73,8 @@
       width: 100%;
       box-sizing:  border-box;
       padding-right: (double($inuit-base-spacing-unit) - $input-border-width);
+      border-radius: 0;
+      -webkit-appearance: none;
 
       &:focus {
         padding-right: (double($inuit-base-spacing-unit) - ($input-border-width + 1));
