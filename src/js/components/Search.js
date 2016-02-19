@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
+import classnames from 'classnames';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 import Drop from '../utils/Drop';
 import Responsive from '../utils/Responsive';
@@ -56,14 +57,14 @@ export default class Search extends Component {
   componentDidUpdate (prevProps, prevState) {
     // Set up keyboard listeners appropriate to the current state.
 
-    var activeKeyboardHandlers = {
+    let activeKeyboardHandlers = {
       esc: this._onRemoveDrop,
       tab: this._onRemoveDrop,
       up: this._onPreviousSuggestion,
       down: this._onNextSuggestion,
       enter: this._onEnter
     };
-    var focusedKeyboardHandlers = {
+    let focusedKeyboardHandlers = {
       space: this._onAddDrop
     };
 
@@ -94,13 +95,13 @@ export default class Search extends Component {
       document.addEventListener('click', this._onRemoveDrop);
       KeyboardAccelerators.startListeningToKeyboard(this, activeKeyboardHandlers);
 
-      var baseElement;
+      let baseElement;
       if (this.refs.control) {
         baseElement = this.refs.control.firstChild;
       } else {
         baseElement = this.refs.input;
       }
-      var dropAlign = this.props.dropAlign || {
+      let dropAlign = this.props.dropAlign || {
         top: (this.state.inline ? 'bottom' : 'top'),
         left: 'left'
       };
@@ -161,12 +162,12 @@ export default class Search extends Component {
 
 
   _fireDOMChange () {
-    var event = new Event('change', {
+    let event = new Event('change', {
       'bubbles': true,
       'cancelable': true
     });
-    var controlInput = document.getElementById('search-drop-input');
-    var target = this.refs.input || controlInput;
+    let controlInput = document.getElementById('search-drop-input');
+    let target = this.refs.input || controlInput;
     target.dispatchEvent(event);
     this.props.onDOMChange(event);
   }
@@ -182,13 +183,13 @@ export default class Search extends Component {
   }
 
   _onNextSuggestion () {
-    var index = this.state.activeSuggestionIndex;
+    let index = this.state.activeSuggestionIndex;
     index = Math.min(index + 1, this.props.suggestions.length - 1);
     this.setState({activeSuggestionIndex: index});
   }
 
   _onPreviousSuggestion () {
-    var index = this.state.activeSuggestionIndex;
+    let index = this.state.activeSuggestionIndex;
     index = Math.max(index - 1, 0);
     this.setState({activeSuggestionIndex: index});
   }
@@ -196,7 +197,7 @@ export default class Search extends Component {
   _onEnter (event) {
     event.preventDefault(); // prevent submitting forms
     this._onRemoveDrop();
-    var suggestion;
+    let suggestion;
     if (this.state.activeSuggestionIndex >= 0) {
       suggestion = this.props.suggestions[this.state.activeSuggestionIndex];
       this.setState({value: suggestion});
@@ -247,22 +248,10 @@ export default class Search extends Component {
   }
 
   focus () {
-    var ref = this.refs.input || this.refs.control;
+    let ref = this.refs.input || this.refs.control;
     if (ref) {
       ref.focus();
     }
-  }
-
-  _classes (prefix) {
-    var classes = [prefix];
-
-    if (this.state.inline) {
-      classes.push(prefix + "--inline");
-    } else {
-      classes.push(prefix + "--controlled");
-    }
-
-    return classes;
   }
 
   _renderLabel (suggestion) {
@@ -274,55 +263,59 @@ export default class Search extends Component {
   }
 
   _renderDrop () {
-    var classes = this._classes(CLASS_ROOT + "__drop");
-    if (this.props.dropColorIndex) {
-      classes.push("background-color-index-" + this.props.dropColorIndex);
-    }
-    if (this.props.large) {
-      classes.push(CLASS_ROOT + "__drop--large");
-    }
+    let classes = classnames (
+      {
+        [`background-color-index-${this.props.dropColorIndex}`]: this.props.dropColorIndex,
+        [`${CLASS_ROOT}__drop`]: true,
+        [`${CLASS_ROOT}__drop--controlled`]: !(this.state.inline),
+        [`${CLASS_ROOT}__drop--large`]: this.props.large
+      }
+    );
 
-    var input;
+    let input;
     if (! this.state.inline) {
       input = (
         <input key="input" id="search-drop-input" type="search"
           defaultValue={this.props.defaultValue}
           value={this.props.value}
-          className={CLASS_ROOT + "__input"}
+          className={`${CLASS_ROOT}__input`}
           onChange={this._onChangeInput} />
       );
     }
 
-    var suggestions;
+    let suggestions;
     if (this.props.suggestions) {
       suggestions = this.props.suggestions.map(function (suggestion, index) {
-        var classes = [CLASS_ROOT + "__suggestion"];
-        if (index === this.state.activeSuggestionIndex) {
-          classes.push(CLASS_ROOT + "__suggestion--active");
-        }
+        let classes = classnames(
+          {
+            [`${CLASS_ROOT}__suggestion`]: true,
+            [`${CLASS_ROOT}__suggestion--active`]: index === this.state.activeSuggestionIndex
+          }
+        );
+
         return (
           <div key={index}
-            className={classes.join(' ')}
+            className={classes}
             onClick={this._onClickSuggestion.bind(this, suggestion)}>
             {this._renderLabel(suggestion)}
           </div>
         );
       }, this);
       suggestions = (
-        <div key="suggestions" className={CLASS_ROOT + "__suggestions"}>
+        <div key="suggestions" className={`${CLASS_ROOT}__suggestions`}>
           {suggestions}
         </div>
       );
     }
 
-    var contents = [input, suggestions];
+    let contents = [input, suggestions];
 
     if (! this.state.inline) {
       contents = [
         <Button key="icon" icon="Search"
-          className={CLASS_ROOT + "__drop-control"}
+          className={`${CLASS_ROOT}__drop-control`}
           onClick={this._onRemoveDrop} />,
-        <div key="contents" className={CLASS_ROOT + "__drop-contents"}
+        <div key="contents" className={`${CLASS_ROOT}__drop-contents`}
           onClick={this._onSink}>
           {contents}
         </div>
@@ -333,39 +326,35 @@ export default class Search extends Component {
     }
 
     return (
-      <div id="search-drop" className={classes.join(' ')}>
+      <div id="search-drop" className={classes}>
         {contents}
       </div>
     );
   }
 
   render () {
-
-    var classes = this._classes(CLASS_ROOT);
-    if (this.props.size) {
-      classes.push(CLASS_ROOT + "--" + this.props.size);
-    } else if (this.props.large && ! this.props.size) {
-      classes.push(CLASS_ROOT + "--large");
-    }
-    if (this.props.fill) {
-      classes.push(CLASS_ROOT + "--fill");
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
-    if (this.props.iconAlign) {
-      classes.push(CLASS_ROOT + "--icon-align-" + this.props.iconAlign);
-    }
+    let classes = classnames(
+      CLASS_ROOT,
+      {
+        [`${CLASS_ROOT}--controlled`]: !(this.state.inline),
+        [`${CLASS_ROOT}--fill`]: this.props.fill,
+        [`${CLASS_ROOT}--icon-align-${this.props.iconAlign}`]: this.props.iconAlign,
+        [`${CLASS_ROOT}--inline`]: this.state.inline,
+        [`${CLASS_ROOT}--large`]: this.props.large && ! this.props.size,
+        [`${CLASS_ROOT}--${this.props.size}`]: this.props.size
+      },
+      this.props.className
+    );
 
     if (this.state.inline) {
       return (
-        <div className={classes.join(' ')}>
+        <div className={classes}>
           <input ref="input" type="search"
             id={this.props.id}
             placeholder={this.props.placeHolder}
             defaultValue={this._renderLabel(this.props.defaultValue)}
             value={this._renderLabel(this.props.value)}
-            className={CLASS_ROOT + "__input"}
+            className={`${CLASS_ROOT}__input`}
             onFocus={this._onFocusInput}
             onBlur={this._onBlurInput}
             onChange={this._onChangeInput} />
@@ -374,11 +363,10 @@ export default class Search extends Component {
       );
 
     } else {
-
       return (
         <div ref="control">
           <Button id={this.props.id}
-            className={classes.join(' ')}
+            className={classes}
             icon="Search"
             tabIndex="0"
             onClick={this._onAddDrop}
@@ -388,7 +376,6 @@ export default class Search extends Component {
       );
     }
   }
-
 }
 
 Search.propTypes = {
