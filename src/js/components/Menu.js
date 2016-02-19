@@ -164,6 +164,16 @@ class MenuDrop extends Component {
     return true;
   }
 
+  _renderNestedMenuLinks (menuItems) {
+    if (Array.isArray(menuItems.props.children)) {
+      return React.Children.map(menuItems.props.children, function (menuItem) {
+        return this._renderNestedMenuLinks(menuItem);
+      }.bind(this));
+    } else {
+      return menuItems;
+    }
+  }
+
   render () {
     let classes = [`${CLASS_ROOT}__drop`];
     let other = pick(this.props, keys(Box.propTypes));
@@ -175,7 +185,7 @@ class MenuDrop extends Component {
       <Box key="nav" ref="navContainer"
         role="menu" tag="nav" {...other} className={`${CLASS_ROOT}__contents`}
         primary={false}>
-        {this.props.children}
+        {(this.props.direction !== 'row') ? this.props.children : this._renderNestedMenuLinks(this)}
       </Box>
     ];
     if (this.props.dropAlign.bottom) {
@@ -189,6 +199,13 @@ class MenuDrop extends Component {
     }
     if (this.props.size) {
       classes.push(`${CLASS_ROOT}__drop--${this.props.size}`);
+    }
+    if (this.props.className) {
+      var classNames = this.props.className.split(" ");
+      classNames = classNames.map(function(className) {
+        return className + "__drop";
+      });
+      classes.push(classNames.join(" "));
     }
 
     return (
@@ -420,6 +437,7 @@ export default class Menu extends Component {
     }
     return (
       <MenuDrop intl={this.context.intl}
+        className={this.props.className}
         history={this.context.history}
         router={this.context.router}
         dropAlign={this.props.dropAlign}
