@@ -35,7 +35,6 @@
       max-width: 100%;
       overflow: auto;
       padding: 0 double($inuit-base-spacing-unit);
-      // padding: round($inuit-base-spacing-unit * 0.75) double($inuit-base-spacing-unit) double($inuit-base-spacing-unit);
       border-radius: $border-radius;
       box-shadow: $layer-box-shadow;
     }
@@ -56,10 +55,6 @@
   &--flush {
     .layer__container {
       padding: 0px;
-
-      .box--full {
-        width: auto;
-      }
     }
   }
 
@@ -82,9 +77,6 @@
         top: 0px;
         bottom: 0px;
         left: 0px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
 
         @include media-query(lap-and-up) {
           @include animation('slide-right 0.2s ease-in-out forwards');
@@ -108,9 +100,6 @@
         top: 0px;
         bottom: 0px;
         right: 0px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
 
         @include media-query(lap-and-up) {
           @include animation('slide-left 0.2s ease-in-out forwards');
