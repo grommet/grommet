@@ -80,11 +80,32 @@
       }
     }
 
+    .menu__control {
+      text-align: left;
+
+      html.rtl & {
+        text-align: right;
+      }
+    }
+
+    .menu__label {
+      padding: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit;
+      font-weight: 600;
+    }
+
     &--align-right {
       text-align: right;
 
       html.rtl & {
         text-align: left;
+      }
+
+      .menu__control {
+        text-align: right;
+
+        html.rtl & {
+          text-align: left;
+        }
       }
 
       .menu__contents {
