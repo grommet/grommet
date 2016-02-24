@@ -1,6 +1,6 @@
-// (C) Copyright 2014 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-.layer {
+.grommet.layer {
   position: relative;
   z-index: 10; // stay above app header
   background-color: $layer-overlay-background-color;
@@ -20,7 +20,7 @@
     }
   }
 
-  &__container {
+  .layer__container {
     background-color: $layer-background-color;
 
     @include media-query(palm) {
@@ -40,25 +40,25 @@
     }
   }
 
-  &__closer {
+  .layer__closer {
     position: absolute;
     top: 0px;
     right: 0px;
     z-index: 1;
 
-    html.rtl & {
+    .grommet.rtl & {
       right: auto;
       left: 0px;
     }
   }
 
-  &--flush {
+  &.layer--flush {
     .layer__container {
       padding: 0px;
     }
   }
 
-  &--align {
+  &.layer--align {
     &-center:not(.layer--hidden) {
 
       @include media-query(lap-and-up) {
@@ -83,7 +83,7 @@
         }
       }
 
-      html.rtl & {
+      .grommet.rtl & {
         .layer__container {
           left: auto;
           right: 0px;
@@ -106,7 +106,7 @@
         }
       }
 
-      html.rtl & {
+      .grommet.rtl & {
         .layer__container {
           right: auto;
           left: 0px;
@@ -138,7 +138,7 @@
     }
   }
 
-  &--hidden {
+  &.layer--hidden {
 
     left: -100vw;
     right: 100vw;

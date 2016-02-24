@@ -207,7 +207,7 @@ var Layer = function (_Component2) {
   }, {
     key: '_classesFromProps',
     value: function _classesFromProps() {
-      var classes = [CLASS_ROOT];
+      var classes = ['grommet', CLASS_ROOT];
       if (this.props.align) {
         classes.push(CLASS_ROOT + "--align-" + this.props.align);
       }

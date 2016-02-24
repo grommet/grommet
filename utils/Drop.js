@@ -80,7 +80,7 @@ exports.default = {
 
     // setup DOM
     drop.container = document.createElement('div');
-    drop.container.className = 'drop';
+    drop.container.className = 'grommet drop';
     // prepend in body to avoid browser scroll issues
     document.body.insertBefore(drop.container, document.body.firstChild);
     (0, _reactDom.render)(content, drop.container);

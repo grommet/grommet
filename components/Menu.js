@@ -272,9 +272,9 @@ var MenuDrop = function (_Component) {
 }(_react.Component);
 
 MenuDrop.propTypes = _extends({
+  colorIndex: _react.PropTypes.string,
   control: _react.PropTypes.node,
   dropAlign: _Drop2.default.alignPropType,
-  colorIndex: _react.PropTypes.string,
   id: _react.PropTypes.string.isRequired,
   onClick: _react.PropTypes.func.isRequired,
   router: _react.PropTypes.any,
@@ -282,8 +282,8 @@ MenuDrop.propTypes = _extends({
 }, _Box2.default.propTypes);
 
 MenuDrop.childContextTypes = {
-  intl: _react.PropTypes.object,
-  history: _react.PropTypes.object,
+  intl: _react.PropTypes.any,
+  history: _react.PropTypes.any,
   router: _react.PropTypes.any
 };
 
@@ -601,8 +601,8 @@ Menu.propTypes = _extends({
 }, _Box2.default.propTypes);
 
 Menu.contextTypes = {
-  intl: _react.PropTypes.object,
-  history: _react.PropTypes.object,
+  intl: _react.PropTypes.any,
+  history: _react.PropTypes.any,
   router: _react.PropTypes.any
 };
 

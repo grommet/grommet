@@ -24,6 +24,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
+var CLASS_ROOT = 'app';
+
 var supportedLocales = ['en-US', 'pt-BR'];
 
 function localesSupported() {
@@ -71,12 +73,12 @@ var App = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var classes = ["app"];
+      var classes = ["grommet", CLASS_ROOT];
       if (this.props.centered) {
-        classes.push("app--centered");
+        classes.push(CLASS_ROOT + '--centered');
       }
       if (this.props.inline) {
-        classes.push("app--inline");
+        classes.push(CLASS_ROOT + '--inline');
       }
 
       if (this.props.className) {
