@@ -4,35 +4,6 @@
   width: 100%;
   padding: halve($inuit-base-spacing-unit);
 
-  @include media-query(lap-and-up) {
-    &.box--direction-row {
-
-      > .tile {
-        flex: 0 0 $tile-size;
-        // don't count padding for flex basis
-        // this makes it easier to align tiles with graphic components
-        ////box-sizing: content-box;
-
-        > * {
-          // reset box sizing on tile's children
-          box-sizing: border-box;
-        }
-
-        &--wide {
-          box-sizing: border-box;
-        }
-      }
-
-      &:not(.tiles--flush) > .tile {
-        margin: halve($inuit-base-spacing-unit);
-
-        &--wide {
-          flex-basis: calc(100% - #{$inuit-base-spacing-unit});
-        }
-      }
-    }
-  }
-
   &__container {
     display: flex;
     flex-direction: row;
@@ -52,6 +23,23 @@
         width: 100%;
         overflow: hidden;
       }
+    }
+  }
+
+  > .tile {
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    @include media-query(lap-and-up) {
+      flex-basis: $tile-size;
+    }
+  }
+
+  &:not(.tiles--flush) > .tile {
+    margin: halve($inuit-base-spacing-unit);
+
+    &--wide {
+      flex-basis: calc(100% - #{$inuit-base-spacing-unit});
     }
   }
 
@@ -107,19 +95,16 @@
 
   &--small {
     > .tile {
-      flex-basis: $tile-small-size;
+      @include media-query(lap-and-up) {
+        flex-basis: $tile-small-size;
+      }
     }
   }
 
   &--large {
     > .tile {
-
       @include media-query(lap-and-up) {
         flex-basis: $tile-large-size;
-      }
-
-      @include media-query(palm) {
-        flex-basis: 100%;
       }
     }
   }

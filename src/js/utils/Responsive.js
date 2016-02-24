@@ -47,13 +47,13 @@ export default {
   },
 
   _onResize (responsive) {
-    // debounce
-    clearTimeout(responsive.timer);
-    responsive.timer = setTimeout(responsive.layout, 50);
+    // Don't debounce so we align more closely with how the stylesheets are
+    // processed.
+    responsive.layout();
   },
 
   _check (responsive) {
-    if (window.innerWidth < responsive.smallSize) {
+    if (window.innerWidth <= responsive.smallSize) {
       if (! responsive.small) {
         responsive.small = true;
         responsive.func(true);

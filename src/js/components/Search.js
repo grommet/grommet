@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
+import classnames from 'classnames';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 import Drop from '../utils/Drop';
 import Responsive from '../utils/Responsive';
@@ -56,14 +57,14 @@ export default class Search extends Component {
   componentDidUpdate (prevProps, prevState) {
     // Set up keyboard listeners appropriate to the current state.
 
-    var activeKeyboardHandlers = {
+    let activeKeyboardHandlers = {
       esc: this._onRemoveDrop,
       tab: this._onRemoveDrop,
       up: this._onPreviousSuggestion,
       down: this._onNextSuggestion,
       enter: this._onEnter
     };
-    var focusedKeyboardHandlers = {
+    let focusedKeyboardHandlers = {
       space: this._onAddDrop
     };
 
@@ -91,18 +92,16 @@ export default class Search extends Component {
       // otherwise the drop will close when the mouse is released.
       // Not observable in Safari, 1ms is sufficient for Chrome, Firefox needs 100ms though. :(
       // TODO: re-evaluate how to solve this without a timeout.
-      setTimeout(function () {
-        document.addEventListener('click', this._onRemoveDrop);
-      }.bind(this), 100);
+      document.addEventListener('click', this._onRemoveDrop);
       KeyboardAccelerators.startListeningToKeyboard(this, activeKeyboardHandlers);
 
-      var baseElement;
+      let baseElement;
       if (this.refs.control) {
         baseElement = this.refs.control.firstChild;
       } else {
         baseElement = this.refs.input;
       }
-      var dropAlign = this.props.dropAlign || {
+      let dropAlign = this.props.dropAlign || {
         top: (this.state.inline ? 'bottom' : 'top'),
         left: 'left'
       };
@@ -161,39 +160,77 @@ export default class Search extends Component {
     //this.setState({drop: false});
   }
 
+
+  _fireDOMChange () {
+    let event = new Event('change', {
+      'bubbles': true,
+      'cancelable': true
+    });
+    let controlInput = document.getElementById('search-drop-input');
+    let target = this.refs.input || controlInput;
+    target.dispatchEvent(event);
+    this.props.onDOMChange(event);
+  }
+
   _onChangeInput (event) {
     this.setState({activeSuggestionIndex: -1});
     if (this.props.onChange) {
       this.props.onChange(event.target.value);
     }
+    if (this.props.onDOMChange) {
+      this._fireDOMChange();
+    }
   }
 
   _onNextSuggestion () {
-    var index = this.state.activeSuggestionIndex;
+    let index = this.state.activeSuggestionIndex;
     index = Math.min(index + 1, this.props.suggestions.length - 1);
     this.setState({activeSuggestionIndex: index});
   }
 
   _onPreviousSuggestion () {
-    var index = this.state.activeSuggestionIndex;
+    let index = this.state.activeSuggestionIndex;
     index = Math.max(index - 1, 0);
     this.setState({activeSuggestionIndex: index});
   }
 
-  _onEnter () {
+  _onEnter (event) {
+    event.preventDefault(); // prevent submitting forms
     this._onRemoveDrop();
+    let suggestion;
     if (this.state.activeSuggestionIndex >= 0) {
-      var suggestion = this.props.suggestions[this.state.activeSuggestionIndex];
+      suggestion = this.props.suggestions[this.state.activeSuggestionIndex];
+      this.setState({value: suggestion});
       if (this.props.onChange) {
         this.props.onChange(suggestion);
+      }
+      if (this.props.onSelect) {
+        this.props.onSelect({
+          target: this.refs.input || this.refs.control,
+          suggestion: suggestion
+        }, true);
+      }
+    } else {
+      if (this.props.onSelect) {
+        this.props.onSelect({
+          target: this.refs.input || this.refs.control,
+          suggestion: suggestion
+        }, false);
       }
     }
   }
 
-  _onClickSuggestion (item) {
+  _onClickSuggestion (suggestion) {
     this._onRemoveDrop();
+
     if (this.props.onChange) {
-      this.props.onChange(item);
+      this.props.onChange(suggestion);
+    }
+    if (this.props.onSelect) {
+      this.props.onSelect({
+        target: this.refs.input || this.refs.control,
+        suggestion: suggestion
+      }, true);
     }
   }
 
@@ -211,86 +248,74 @@ export default class Search extends Component {
   }
 
   focus () {
-    var ref = this.refs.input || this.refs.control;
+    let ref = this.refs.input || this.refs.control;
     if (ref) {
       ref.focus();
     }
   }
 
-  _classes (prefix) {
-    var classes = [prefix];
-
-    if (this.state.inline) {
-      classes.push(prefix + "--inline");
+  _renderLabel (suggestion) {
+    if (typeof suggestion === 'object') {
+      return suggestion.label || suggestion.value;
     } else {
-      classes.push(prefix + "--controlled");
+      return suggestion;
     }
-
-    return classes;
-  }
-
-  _renderSuggestionLabel (suggestion) {
-    var label;
-    if (suggestion.hasOwnProperty('label')) {
-      label = suggestion.label;
-    } else {
-      label = suggestion;
-    }
-    return label;
   }
 
   _renderDrop () {
-    var classes = this._classes(CLASS_ROOT + "__drop");
-    if (this.props.dropColorIndex) {
-      classes.push("background-color-index-" + this.props.dropColorIndex);
-    }
-    if (this.props.large) {
-      classes.push(CLASS_ROOT + "__drop--large");
-    }
+    let classes = classnames (
+      {
+        [`background-color-index-${this.props.dropColorIndex}`]: this.props.dropColorIndex,
+        [`${CLASS_ROOT}__drop`]: true,
+        [`${CLASS_ROOT}__drop--controlled`]: !(this.state.inline),
+        [`${CLASS_ROOT}__drop--large`]: this.props.large
+      }
+    );
 
-    var input;
+    let input;
     if (! this.state.inline) {
       input = (
         <input key="input" id="search-drop-input" type="search"
           defaultValue={this.props.defaultValue}
           value={this.props.value}
-          className={CLASS_ROOT + "__input"}
+          className={`${CLASS_ROOT}__input`}
           onChange={this._onChangeInput} />
       );
     }
 
-    var suggestions;
+    let suggestions;
     if (this.props.suggestions) {
-      suggestions = this.props.suggestions.map(function (item, index) {
-        var classes = [CLASS_ROOT + "__suggestion"];
-        if (index === this.state.activeSuggestionIndex) {
-          classes.push(CLASS_ROOT + "__suggestion--active");
-        }
+      suggestions = this.props.suggestions.map(function (suggestion, index) {
+        let classes = classnames(
+          {
+            [`${CLASS_ROOT}__suggestion`]: true,
+            [`${CLASS_ROOT}__suggestion--active`]: index === this.state.activeSuggestionIndex
+          }
+        );
+
         return (
           <div key={index}
-            className={classes.join(' ')}
-            onClick={this._onClickSuggestion.bind(this, item)}>
-            {this._renderSuggestionLabel(item)}
+            className={classes}
+            onClick={this._onClickSuggestion.bind(this, suggestion)}>
+            {this._renderLabel(suggestion)}
           </div>
         );
       }, this);
       suggestions = (
-        <div key="suggestions" className={CLASS_ROOT + "__suggestions"}>
+        <div key="suggestions" className={`${CLASS_ROOT}__suggestions`}>
           {suggestions}
         </div>
       );
     }
 
-    var contents = [input, suggestions];
+    let contents = [input, suggestions];
 
     if (! this.state.inline) {
       contents = [
-        <Button key="icon" type="icon"
-          className={CLASS_ROOT + "__drop-control"}
-          onClick={this._onRemoveDrop}>
-          <SearchIcon />
-        </Button>,
-        <div key="contents" className={CLASS_ROOT + "__drop-contents"}
+        <Button key="icon" icon="Search"
+          className={`${CLASS_ROOT}__drop-control`}
+          onClick={this._onRemoveDrop} />,
+        <div key="contents" className={`${CLASS_ROOT}__drop-contents`}
           onClick={this._onSink}>
           {contents}
         </div>
@@ -301,34 +326,35 @@ export default class Search extends Component {
     }
 
     return (
-      <div id="search-drop" className={classes.join(' ')}>
+      <div id="search-drop" className={classes}>
         {contents}
       </div>
     );
   }
 
   render () {
-
-    var classes = this._classes(CLASS_ROOT);
-    if (this.props.size) {
-      classes.push(CLASS_ROOT + "--" + this.props.size);
-    } else if (this.props.large && ! this.props.size) {
-      classes.push(CLASS_ROOT + "--large");
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
+    let classes = classnames(
+      CLASS_ROOT,
+      {
+        [`${CLASS_ROOT}--controlled`]: !(this.state.inline),
+        [`${CLASS_ROOT}--fill`]: this.props.fill,
+        [`${CLASS_ROOT}--icon-align-${this.props.iconAlign}`]: this.props.iconAlign,
+        [`${CLASS_ROOT}--inline`]: this.state.inline,
+        [`${CLASS_ROOT}--large`]: this.props.large && ! this.props.size,
+        [`${CLASS_ROOT}--${this.props.size}`]: this.props.size
+      },
+      this.props.className
+    );
 
     if (this.state.inline) {
-
       return (
-        <div className={classes.join(' ')}>
+        <div className={classes}>
           <input ref="input" type="search"
             id={this.props.id}
             placeholder={this.props.placeHolder}
-            defaultValue={this.props.defaultValue}
-            value={this.props.value}
-            className={CLASS_ROOT + "__input"}
+            defaultValue={this._renderLabel(this.props.defaultValue)}
+            value={this._renderLabel(this.props.value)}
+            className={`${CLASS_ROOT}__input`}
             onFocus={this._onFocusInput}
             onBlur={this._onBlurInput}
             onChange={this._onChangeInput} />
@@ -337,47 +363,51 @@ export default class Search extends Component {
       );
 
     } else {
-
       return (
         <div ref="control">
           <Button id={this.props.id}
-            className={classes.join(' ')}
-            type="icon"
+            className={classes}
+            icon="Search"
             tabIndex="0"
             onClick={this._onAddDrop}
             onFocus={this._onFocusControl}
-            onBlur={this._onBlurControl}>
-            <SearchIcon />
-          </Button>
+            onBlur={this._onBlurControl} />
         </div>
       );
     }
   }
-
 }
 
 Search.propTypes = {
   defaultValue: PropTypes.string,
   dropAlign: Drop.alignPropType,
   dropColorIndex: PropTypes.string,
+  fill: PropTypes.bool,
+  iconAlign: React.PropTypes.oneOf(['start', 'end']),
   id: React.PropTypes.string,
   inline: PropTypes.bool,
   large: PropTypes.bool,
   onChange: PropTypes.func,
+  onDOMChange: PropTypes.func,
+  onSelect: PropTypes.func,
   placeHolder: PropTypes.string,
   responsive: PropTypes.bool,
   size: React.PropTypes.oneOf(['small', 'medium', 'large']),
-  suggestions: PropTypes.arrayOf(PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.shape({
-      label: PropTypes.string.isRequired
-    })
-  ])),
+  suggestions: PropTypes.arrayOf(
+    PropTypes.oneOfType([
+      PropTypes.shape({
+        label: PropTypes.node,
+        value: PropTypes.any
+      }),
+      PropTypes.string
+    ])
+  ),
   value: PropTypes.string
 };
 
 Search.defaultProps = {
   align: 'left',
+  iconAlign: 'end',
   inline: false,
   responsive: true
 };

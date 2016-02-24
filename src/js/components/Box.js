@@ -4,6 +4,7 @@ import React, { Component, PropTypes } from 'react';
 import keys from 'lodash/object/keys';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 import Intl from '../utils/Intl';
+import SkipLinkAnchor from './SkipLinkAnchor';
 
 const CLASS_ROOT = "box";
 
@@ -11,7 +12,7 @@ export default class Box extends Component {
 
   componentDidMount () {
     if (this.props.onClick) {
-      var clickCallback = function () {
+      let clickCallback = function () {
         if (this.refs.boxContainer === document.activeElement) {
           this.props.onClick();
         }
@@ -31,8 +32,8 @@ export default class Box extends Component {
   }
 
   _addPropertyClass (classes, prefix, property, classProperty) {
-    var choice = this.props[property];
-    var propertyPrefix = classProperty || property;
+    let choice = this.props[property];
+    let propertyPrefix = classProperty || property;
     if (choice) {
       if (typeof choice === 'string') {
         classes.push(prefix + '--' + propertyPrefix + '-' + choice);
@@ -47,8 +48,8 @@ export default class Box extends Component {
   }
 
   render () {
-    var classes = [CLASS_ROOT];
-    var containerClasses = [CLASS_ROOT + "__container"];
+    let classes = [CLASS_ROOT];
+    let containerClasses = [CLASS_ROOT + "__container"];
     this._addPropertyClass(classes, CLASS_ROOT, 'flush');
     this._addPropertyClass(classes, CLASS_ROOT, 'full');
     this._addPropertyClass(classes, CLASS_ROOT, 'direction');
@@ -75,28 +76,39 @@ export default class Box extends Component {
       }
     }
 
+    let a11yProps = {};
+    if (this.props.onClick) {
+      classes.push(CLASS_ROOT + "--clickable");
+      if (this.props.focusable) {
+        let boxLabel = Intl.getMessage(this.context.intl, this.props.a11yTitle);
+        a11yProps.tabIndex = 0;
+        a11yProps["aria-label"] = boxLabel;
+        a11yProps.role = this.props.role || 'link';
+      }
+    }
+
+    let skipLinkAnchor;
+    if (this.props.primary) {
+      let mainContentLabel = (
+        Intl.getMessage(this.context.intl, 'Main Content')
+      );
+      skipLinkAnchor = <SkipLinkAnchor label={mainContentLabel} />;
+    }
+
     if (this.props.className) {
       classes.push(this.props.className);
     }
 
-    var style = {};
+    let style = {};
     if (this.props.texture && 'string' === typeof this.props.texture) {
       style.backgroundImage = this.props.texture;
     } else if (this.props.backgroundImage) {
       style.background = this.props.backgroundImage + " no-repeat center center";
       style.backgroundSize = "cover";
     }
-    var texture;
+    let texture;
     if ('object' === typeof this.props.texture) {
       texture = <div className={CLASS_ROOT + "__texture"}>{this.props.texture}</div>;
-    }
-
-    var a11yProps = {};
-    if (this.props.onClick) {
-      var boxLabel = Intl.getMessage(this.context.intl, this.props.a11yTitle);
-      a11yProps.tabIndex = 0;
-      a11yProps["aria-label"] = boxLabel;
-      a11yProps.role = this.props.role || 'link';
     }
 
     let eventRegex = /^on[A-Z].*$/;
@@ -112,6 +124,7 @@ export default class Box extends Component {
         <div ref="boxContainer" className={containerClasses.join(' ')}
           style={style} role={this.props.role} {...a11yProps}
           {...eventListeners}>
+          {skipLinkAnchor}
           <this.props.tag id={this.props.id} className={classes.join(' ')}>
             {texture}
             {this.props.children}
@@ -124,6 +137,7 @@ export default class Box extends Component {
           className={classes.join(' ')} style={style}
           role={this.props.role} tabIndex={this.props.tabIndex} {...a11yProps}
           {...eventListeners}>
+          {skipLinkAnchor}
           {texture}
           {this.props.children}
         </this.props.tag>
@@ -141,6 +155,7 @@ Box.propTypes = {
   colorIndex: PropTypes.string,
   containerClassName: PropTypes.string,
   direction: PropTypes.oneOf(['row', 'column']),
+  focusable: PropTypes.bool,
   full: PropTypes.oneOf([true, 'horizontal', 'vertical', false]),
   onClick: PropTypes.func,
   justify: PropTypes.oneOf(['start', 'center', 'between', 'end']),
@@ -152,10 +167,11 @@ Box.propTypes = {
       vertical: PropTypes.oneOf(['none', 'small', 'medium', 'large'])
     })
   ]),
+  primary: PropTypes.bool,
   reverse: PropTypes.bool,
   responsive: PropTypes.bool,
   role: PropTypes.string,
-  separator: PropTypes.oneOf(['top', 'bottom', 'left', 'right', 'horizontal', 'vertical', 'all']),
+  separator: PropTypes.oneOf(['top', 'bottom', 'left', 'right', 'horizontal', 'vertical', 'all', 'none']),
   tag: PropTypes.string,
   textAlign: PropTypes.oneOf(['left', 'center', 'right']),
   texture: PropTypes.oneOfType([
@@ -174,5 +190,6 @@ Box.defaultProps = {
   direction: 'column',
   pad: 'none',
   tag: 'div',
-  responsive: true
+  responsive: true,
+  focusable: true
 };

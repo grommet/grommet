@@ -32,6 +32,7 @@ export default {
   filter: 'filter',
   Footer: 'Footer',
   'Grommet Logo': 'Grommet Logo',
+  'Layer': 'Layer',
   'link-next': 'link-next',
   'link-previous': 'link-previous',
   'Loading': 'Loading',

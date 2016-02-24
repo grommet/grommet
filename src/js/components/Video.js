@@ -82,19 +82,19 @@ export default class Video extends Component {
   render () {
     var classes = [CLASS_ROOT];
     if (this.props.size) {
-      classes.push(CLASS_ROOT + "--" + this.props.size);
+      classes.push(`${CLASS_ROOT}--${this.props.size}`);
     }
     if (this.props.full) {
-      classes.push(CLASS_ROOT + '--full');
+      classes.push(`${CLASS_ROOT}--full`);
     }
     if (this.state.playing) {
-      classes.push(CLASS_ROOT + '--playing');
+      classes.push(`${CLASS_ROOT}--playing`);
     }
     if (this.state.interacting) {
-      classes.push(CLASS_ROOT + '--interacting');
+      classes.push(`${CLASS_ROOT}--interacting`);
     }
     if (this.props.colorIndex) {
-      classes.push("background-color-index-" + this.props.colorIndex);
+      classes.push(`background-color-index-${this.props.colorIndex}`);
     }
     if (this.props.className) {
       classes.push(this.props.className);
@@ -108,8 +108,9 @@ export default class Video extends Component {
 
     var title;
     if (this.props.title) {
+      classes.push(`${CLASS_ROOT}--titled`);
       title = (
-        <div className={CLASS_ROOT + '__title'}>
+        <div className={`${CLASS_ROOT}__title`}>
           {this.props.title}
         </div>
       );
@@ -124,7 +125,7 @@ export default class Video extends Component {
         var time = Math.floor(chapter.time / 60) + ':' +
           (seconds < 10 ? '0' + seconds : seconds);
         return (
-          <div key={chapter.time} className={CLASS_ROOT + '__timeline-chapter'}
+          <div key={chapter.time} className={`${CLASS_ROOT}__timeline-chapter`}
             style={{left: percent.toString() + '%'}}
             onClick={this._onClickChapter.bind(this, chapter.time)}>
             <label>{chapter.label}</label>
@@ -134,7 +135,7 @@ export default class Video extends Component {
       }, this);
 
       timeline = (
-        <div className={CLASS_ROOT + '__timeline'}>
+        <div className={`${CLASS_ROOT}__timeline`}>
           {chapters}
         </div>
       );
@@ -144,8 +145,8 @@ export default class Video extends Component {
     if (this.props.duration) {
       var percent = Math.round((this.state.progress / this.props.duration) * 100);
       progress = (
-        <div className={CLASS_ROOT + '__progress'}>
-          <div className={CLASS_ROOT + '__progress-meter'}
+        <div className={`${CLASS_ROOT}__progress`}>
+          <div className={`${CLASS_ROOT}__progress-meter`}
             style={{width: percent.toString() + '%'}}></div>
         </div>
       );
@@ -156,8 +157,8 @@ export default class Video extends Component {
         <video ref="video" poster={this.props.poster}>
           {this.props.children}
         </video>
-        <div className={CLASS_ROOT + '__summary'}>
-          <Button className={CLASS_ROOT + '__control'} type="icon"
+        <div className={`${CLASS_ROOT}__summary`}>
+          <Button className={`${CLASS_ROOT}__control`} plain={true}
             primary={true}
             onClick={this._onClickControl}>
             {controlIcon}

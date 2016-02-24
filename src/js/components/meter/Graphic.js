@@ -283,8 +283,8 @@ export default class Graphic extends Component {
     return (
       <svg ref="meter" className={CLASS_ROOT + "__graphic"}
         tabIndex="0" role={this.props.a11yRole}
-        width={this.props.vertical ? null : this.state.viewBoxWidth}
-        height={this.props.vertical ? this.state.viewBoxHeight : null}
+        width={this.state.viewBoxWidth}
+        height={this.state.viewBoxHeight}
         viewBox={"0 0 " + this.state.viewBoxWidth +
           " " + this.state.viewBoxHeight}
         preserveAspectRatio="xMidYMid meet"

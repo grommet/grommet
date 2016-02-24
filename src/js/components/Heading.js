@@ -7,14 +7,17 @@ const CLASS_ROOT = 'heading';
 export default class Heading extends Component {
   render() {
     let classes = [CLASS_ROOT];
-    if (this.props.size == 'large') {
-      classes.push(`${CLASS_ROOT}--large`);
-    }
-    if (this.props.size == 'small') {
-      classes.push(`${CLASS_ROOT}--small`);
+    if (this.props.size) {
+      classes.push(`${CLASS_ROOT}--${this.props.size}`);
     }
     if (this.props.strong) {
       classes.push(`${CLASS_ROOT}--strong`);
+    }
+    if (this.props.align) {
+      classes.push(`${CLASS_ROOT}--align-${this.props.align}`);
+    }
+    if (this.props.margin) {
+      classes.push(`${CLASS_ROOT}--margin-${this.props.margin}`);
     }
     if (this.props.className) {
       classes.push(this.props.className);
@@ -31,7 +34,9 @@ export default class Heading extends Component {
 }
 
 Heading.propTypes = {
-  size: PropTypes.string,
+  align: PropTypes.oneOf(['start', 'center', 'end']),
+  margin: PropTypes.oneOf(['none', 'small', 'medium', 'large']),
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
   strong: PropTypes.bool,
   tag: PropTypes.string
 };

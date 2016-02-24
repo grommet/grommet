@@ -21,8 +21,13 @@
     transition: all 0.8s;
   }
 
-  &__item > * {
-    width: 100%;
+  .tiles.box--direction-row > .tile.carousel__item {
+    flex: 1 1 100%;
+    box-sizing: border-box;
+
+    > * {
+      width: 100%;
+    }
   }
 
   &__arrow {
@@ -38,8 +43,14 @@
       -webkit-filter: drop-shadow(1px 1px 1px $button-drop-shadow-color);
 
       polyline {
-        stroke: #fff;
+        stroke: $colored-icon-color;
         stroke-width: 1px;
+      }
+    }
+
+    &:hover {
+      .control-icon polyline {
+        stroke: $active-colored-icon-color;
       }
     }
 
@@ -74,7 +85,7 @@
     display: inline-block;
     width: round($inuit-base-spacing-unit * 1.5);
     height: round($inuit-base-spacing-unit * 1.5);
-    stroke: #fff;
+    stroke: $colored-icon-color;
     fill: transparent;
     cursor: pointer;
     filter: drop-shadow(1px 1px 1px $button-drop-shadow-color);

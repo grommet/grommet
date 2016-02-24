@@ -1,10 +1,28 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 .tab {
+  padding: 0 halve($inuit-base-spacing-unit);
 
-  padding: halve($inuit-base-spacing-unit);
+  .tabs--justify-start &:first-of-type,
+  .tabs--justify-end &:first-of-type {
+    padding-left: 0;
+  }
+
+  .tabs--justify-start &:last-of-type,
+  .tabs--justify-end &:last-of-type {
+    padding-right: 0;
+  }
+
+  .tabs--responsive &:first-of-type,
+  .tabs--responsive &:last-of-type {
+    @include media-query(palm) {
+      padding-left: halve($inuit-base-spacing-unit);
+      padding-right: halve($inuit-base-spacing-unit);
+    }
+  }
 
   a {
+    display: inline-block;
     text-decoration: none;
 
     &:hover,
@@ -14,32 +32,32 @@
       text-decoration: none;
     }
 
-    &:focus {
+    &:focus:not(tab--active .tab__link) {
       .tab__label {
-        border-bottom: 4px solid;
+        border-color: $border-color;
       }
     }
   }
 
   &__label {
+    display: inline-block;
     cursor: pointer;
-    padding-bottom: halve($inuit-base-spacing-unit);
-    font-weight: 600;
+    padding-bottom: quarter($inuit-base-spacing-unit) + $active-border-width;
     color: $secondary-text-color;
+    border-bottom: $active-border-width solid transparent;
   }
 
-  &--active {
-
+  &--active,
+  &--active .tab__link:hover {
     .tab__label {
-      color: #000;
-      border-bottom: 4px solid #000;
+      color: $hover-text-color;
+      border-color: $hover-text-color;
     }
   }
 
-  &:hover,
-  &:focus {
+  &:hover {
     .tab__label {
-      border-bottom: 4px solid;
+      border-color: $border-color;
     }
   }
 }

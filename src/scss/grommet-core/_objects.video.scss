@@ -44,9 +44,6 @@
     align-items: center;
     text-align: left;
     padding: $inuit-base-spacing-unit;
-    background-color: rgba(nth($brand-grey-colors, 1), 0.7);
-    color: $colored-text-color;
-    border-radius: $border-radius;
   }
 
   &__control.button--primary {
@@ -54,7 +51,7 @@
     width: quadruple($inuit-base-spacing-unit);
     height: quadruple($inuit-base-spacing-unit);
     border-radius: double($inuit-base-spacing-unit);
-    background-color: rgba($brand-color, 0.7);
+    background-color: rgba($brand-color, 0.8);
 
     &:hover {
       background-color: $brand-color;
@@ -105,6 +102,15 @@
     &-meter {
       height: 100%;
       background-color: $brand-color;
+    }
+  }
+
+  &--titled {
+    .video__summary {
+      background-color: rgba(nth($brand-grey-colors, 1), 0.7);
+      color: $colored-text-color;
+      border-radius: $border-radius;
+      @include inuit-font-size($control-font-size);
     }
   }
 

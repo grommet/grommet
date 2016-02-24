@@ -1,13 +1,17 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
+import classnames from 'classnames';
 import isEqual from 'lodash/lang/isEqual';
 import SpinningIcon from './icons/Spinning';
 import InfiniteScroll from '../utils/InfiniteScroll';
 import Selection from '../utils/Selection';
 
-const CLASS_ROOT = "table";
-const SELECTED_CLASS = CLASS_ROOT + "-row--selected";
+const CLASS_ROOT = 'table';
+const SELECTED_CLASS = `${CLASS_ROOT}-row--selected`;
+// empirical number describing a minimum cell width for a
+// table to be presented in column-mode.
+const MIN_CELL_WIDTH = 96;
 
 export default class Table extends Component {
 
@@ -16,6 +20,7 @@ export default class Table extends Component {
 
     this._onClick = this._onClick.bind(this);
     this._onResize = this._onResize.bind(this);
+    this._layout = this._layout.bind(this);
 
     if (props.selection) {
       console.warn('The "selection" property of Table has been deprecated.' +
@@ -24,30 +29,37 @@ export default class Table extends Component {
     }
     this.state = {
       selected: Selection.normalizeIndexes(props.selected || props.selection),
-      rebuildMirror: props.scrollable
+      rebuildMirror: props.scrollable,
+      small: false
     };
   }
 
   componentDidMount () {
     this._setSelection();
-    if (this.props.scrollable) {
+    if (this.props.scrollable && ! this.state.small) {
       this._buildMirror();
       this._alignMirror();
     }
     if (this.props.onMore) {
-      this._scroll = InfiniteScroll.startListeningForScroll(this.refs.more, this.props.onMore);
+      this._scroll = InfiniteScroll.startListeningForScroll(
+        this.refs.more, this.props.onMore
+      );
     }
+    this._adjustBodyCells();
     window.addEventListener('resize', this._onResize);
   }
 
   componentWillReceiveProps (nextProps) {
     if (this._scroll) {
       InfiniteScroll.stopListeningForScroll(this._scroll);
-      this._scroll = null;
+      this._scroll = undefined;
     }
-    if (nextProps.hasOwnProperty('selected') || nextProps.hasOwnProperty('selection')) {
+    if (nextProps.hasOwnProperty('selected') ||
+      nextProps.hasOwnProperty('selection')) {
       this.setState({
-        selected: Selection.normalizeIndexes(nextProps.selected || nextProps.selection)
+        selected: Selection.normalizeIndexes(
+          nextProps.selected || nextProps.selection
+        )
       });
     }
     this.setState({rebuildMirror: nextProps.scrollable});
@@ -57,22 +69,26 @@ export default class Table extends Component {
     if (! isEqual(this.state.selected, prevState.selected)) {
       this._setSelection();
     }
-    if (this.state.rebuildMirror) {
+    if (this.state.rebuildMirror && ! this.state.small) {
       this._buildMirror();
       this.setState({rebuildMirror: false});
     }
-    if (this.props.scrollable) {
+    if (this.props.scrollable && ! this.state.small) {
       this._alignMirror();
     }
     if (this.props.onMore && !this._scroll) {
-      this._scroll = InfiniteScroll.startListeningForScroll(this.refs.more, this.props.onMore);
+      this._scroll = InfiniteScroll.startListeningForScroll(
+        this.refs.more, this.props.onMore
+      );
     }
+    this._adjustBodyCells();
   }
 
   componentWillUnmount () {
     if (this._scroll) {
       InfiniteScroll.stopListeningForScroll(this._scroll);
     }
+    clearTimeout(this._resizeTimer);
     window.removeEventListener('resize', this._onResize);
   }
 
@@ -120,35 +136,69 @@ export default class Table extends Component {
     }
   }
 
+  _adjustBodyCells () {
+    // adjust table body cells to have link to the header
+    // so that in responsive mode it displays the text as content in css.
+    // IMPORTANT: non-text header cells, such as icon, are rendered as empty
+    // headers.
+    let headerCells = this.refs.table.querySelectorAll('thead th');
+    if (headerCells.length > 0) {
+      let rows = this.refs.table.querySelectorAll('tbody tr');
+
+      [].forEach.call(rows, (row) => {
+        [].forEach.call(row.cells, (cell, index) => {
+          cell.setAttribute('data-th', headerCells[index].innerText);
+        });
+      });
+    }
+  }
+
   _onResize () {
+    // debounce
+    clearTimeout(this._resizeTimer);
+    this._resizeTimer = setTimeout(this._layout, 50);
+  }
+
+  _layout () {
     this._alignMirror();
+
+    let availableSize = this.refs.container.offsetWidth;
+    let numberOfCells = this.refs.table.querySelectorAll('thead th').length;
+
+    if ((numberOfCells * MIN_CELL_WIDTH) > availableSize) {
+      this.setState({small: true});
+    } else {
+      this.setState({small: false});
+    }
   }
 
   _buildMirror () {
-    var tableElement = this.refs.table;
-    var cells = tableElement.querySelectorAll('thead tr th');
-    var mirrorElement = this.refs.mirror;
-    var mirrorRow = mirrorElement.querySelectorAll('thead tr')[0];
-    while (mirrorRow.hasChildNodes()) {
-      mirrorRow.removeChild(mirrorRow.lastChild);
-    }
-    for (var i = 0; i < cells.length; i++) {
-      mirrorRow.appendChild(cells[i].cloneNode(true));
+    let tableElement = this.refs.table;
+    let cells = tableElement.querySelectorAll('thead tr th');
+    let mirrorElement = this.refs.mirror;
+    if (mirrorElement) {
+      let mirrorRow = mirrorElement.querySelectorAll('thead tr')[0];
+      while (mirrorRow.hasChildNodes()) {
+        mirrorRow.removeChild(mirrorRow.lastChild);
+      }
+      for (let i = 0; i < cells.length; i++) {
+        mirrorRow.appendChild(cells[i].cloneNode(true));
+      }
     }
   }
 
   _alignMirror () {
     if (this.refs.mirror) {
-      var tableElement = this.refs.table;
-      var cells = tableElement.querySelectorAll('thead tr th');
-      var mirrorElement = this.refs.mirror;
-      var mirrorCells = mirrorElement.querySelectorAll('thead tr th');
+      let tableElement = this.refs.table;
+      let cells = tableElement.querySelectorAll('thead tr th');
+      let mirrorElement = this.refs.mirror;
+      let mirrorCells = mirrorElement.querySelectorAll('thead tr th');
 
-      var rect = tableElement.getBoundingClientRect();
+      let rect = tableElement.getBoundingClientRect();
       mirrorElement.style.width = '' + Math.floor(rect.right - rect.left) + 'px';
 
-      var height = 0;
-      for (var i = 0; i < cells.length; i++) {
+      let height = 0;
+      for (let i = 0; i < cells.length; i++) {
         rect = cells[i].getBoundingClientRect();
         mirrorCells[i].style.width = '' + Math.floor(rect.right - rect.left) + 'px';
         mirrorCells[i].style.height = '' + Math.floor(rect.bottom - rect.top) + 'px';
@@ -159,21 +209,20 @@ export default class Table extends Component {
   }
 
   render () {
-    var classes = [CLASS_ROOT];
-    if (this.props.selectable) {
-      classes.push(CLASS_ROOT + "--selectable");
-    }
-    if (this.props.scrollable) {
-      classes.push(CLASS_ROOT + "--scrollable");
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
+    let classes = classnames(
+      CLASS_ROOT,
+      this.props.className,
+      {
+        [`${CLASS_ROOT}--small`]: this.state.small,
+        [`${CLASS_ROOT}--selectable`]: this.props.selectable,
+        [`${CLASS_ROOT}--scrollable`]: this.props.scrollable
+      }
+    );
 
-    var mirror = null;
+    let mirror;
     if (this.props.scrollable) {
       mirror = (
-        <table ref="mirror" className={CLASS_ROOT + "__mirror"}>
+        <table ref="mirror" className={`${CLASS_ROOT}__mirror`}>
           <thead>
             <tr></tr>
           </thead>
@@ -181,26 +230,26 @@ export default class Table extends Component {
       );
     }
 
-    var more = null;
+    let more;
     if (this.props.onMore) {
       more = (
-        <div ref="more" className={CLASS_ROOT + "__more"}>
+        <div ref="more" className={`${CLASS_ROOT}__more`}>
           <SpinningIcon />
         </div>
       );
     }
 
     return (
-      <div ref="container" className={classes.join(' ')}>
+      <div ref="container" className={classes}>
         {mirror}
-        <table ref="table" className={CLASS_ROOT + "__table"} onClick={this._onClick}>
+        <table ref="table" className={`${CLASS_ROOT}__table`}
+          onClick={this._onClick}>
           {this.props.children}
         </table>
         {more}
       </div>
     );
   }
-
 }
 
 Table.propTypes = {

@@ -1,19 +1,20 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-import React, { Component } from 'react';
+import React from 'react';
+import classnames from 'classnames';
 
-export default class FormFields extends Component {
+const CLASS_ROOT = 'form-fields';
 
-  render () {
-    var classes = ["form-fields"];
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
-    return (
-      <div className={classes.join(' ')}>
-        {this.props.children}
-      </div>
-    );
-  }
+const FormFields = props => {
+  let classes = classnames(CLASS_ROOT, props.className);
 
-}
+  return (
+    <div className={classes}>
+      {props.children}
+    </div>
+  );
+};
+
+FormFields.displayName = 'FormFields';
+
+export default FormFields;

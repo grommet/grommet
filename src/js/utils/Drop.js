@@ -82,7 +82,8 @@ export default {
     // setup DOM
     drop.container = document.createElement('div');
     drop.container.className = 'drop';
-    document.body.appendChild(drop.container);
+    // prepend in body to avoid browser scroll issues
+    document.body.insertBefore(drop.container, document.body.firstChild);
     render(content, drop.container);
 
     drop.scrollParents = DOM.findScrollParents(drop.control);

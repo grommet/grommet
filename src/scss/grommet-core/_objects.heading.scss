@@ -1,16 +1,19 @@
 .heading {
   margin-bottom: halve($inuit-base-spacing-unit);
-  line-height: 1.2;
+  line-height: 1;
 
-  &--large span {
+  &--large {
     font-size: 125%;
   }
 
-  &--small span {
+  &--small {
     font-size: 75%;
   }
 
   &--strong {
     font-weight: 600;
   }
+
+  @include text-align();
+  @include margin();
 }

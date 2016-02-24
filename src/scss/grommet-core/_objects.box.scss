@@ -27,19 +27,11 @@
     &--full {
       max-width: 100%;
       width: 100vw;
-
-      .layer__container & {
-        width: calc(100vw - #{double($inuit-base-spacing-unit)});
-      }
     }
 
     &--full-horizontal {
       max-width: 100%;
       width: 100vw;
-
-      .layer__container & {
-        width: calc(100vw - #{double($inuit-base-spacing-unit)});
-      }
     }
 
     .app--centered & > .box {
@@ -69,19 +61,11 @@
     // min-height doesn't work for IE and vertical centering
     // https://connect.microsoft.com/IE/feedback/details/816293/ie11-flexbox-with-min-height-not-vertically-aligning-with-align-items-center
     height: 100%;
-
-    .layer__container & {
-      width: calc(100vw - #{double($inuit-base-spacing-unit)});
-    }
   }
 
   &--full-horizontal {
     max-width: 100%;
     width: 100vw;
-
-    .layer__container & {
-      width: calc(100vw - #{double($inuit-base-spacing-unit)});
-    }
   }
 
   &--full-vertical {
@@ -133,6 +117,10 @@
     @include media-query(palm) {
       &.box--responsive {
         flex-direction: column;
+
+        &:not(.box--justify-center) {
+          align-items: stretch;
+        }
 
         &.box--reverse {
           flex-direction: column-reverse;
@@ -232,23 +220,23 @@
       border-right: 1px solid $border-color;
     }
 
-    @include media-query(palm) {
-      &-left,
-      &-vertical,
-      &-all {
-        border-left: none;
-        border-bottom: 1px solid $border-color;
-        //padding-top: $inuit-base-spacing-unit;
-      }
-
-      &-right,
-      &-vertical,
-      &-all {
-        border-right: none;
-        border-bottom: 1px solid $border-color;
-        //padding-top: $inuit-base-spacing-unit;
-      }
-    }
+    // @include media-query(palm) {
+    //   &-left,
+    //   &-vertical,
+    //   &-all {
+    //     // border-left: none;
+    //     // border-bottom: 1px solid $border-color;
+    //     //padding-top: $inuit-base-spacing-unit;
+    //   }
+    //
+    //   &-right,
+    //   &-vertical,
+    //   &-all {
+    //     // border-right: none;
+    //     // border-bottom: 1px solid $border-color;
+    //     //padding-top: $inuit-base-spacing-unit;
+    //   }
+    // }
   }
 
   [class*="background-color-index-"] &[class*="box--separator"] {
@@ -275,6 +263,10 @@
     flex-grow: 1;
   }
 
+  > .no-flex {
+    flex: 0 0 auto;
+  }
+
   // deprecated options
 
   &--direction-down,
@@ -288,5 +280,9 @@
 
   &--flush {
     padding: 0px;
+  }
+
+  &--clickable {
+    cursor: pointer;
   }
 }

@@ -7,7 +7,6 @@ import keys from 'lodash/object/keys';
 import Box from './Box';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 import Scroll from '../utils/Scroll';
-import SkipLinkAnchor from './SkipLinkAnchor';
 // import CarouselControls from './CarouselControls';
 import Button from './Button';
 import NextIcon from './icons/base/LinkNext';
@@ -185,14 +184,14 @@ export default class Article extends Component {
     if ('row' === this.props.direction) {
       if (this.state.activeIndex > 0) {
         controls.push(
-          <Button key="previous" type="icon"
+          <Button key="previous" plain={true}
             className={`${CONTROL_CLASS_PREFIX}-left`}
             onClick={this._onPrevious}><PreviousIcon size="large" /></Button>
         );
       }
       if (this.state.activeIndex < (childCount - 1)) {
         controls.push(
-          <Button key="next" type="icon"
+          <Button key="next" plain={true}
             className={`${CONTROL_CLASS_PREFIX}-right`}
             onClick={this._onNext}><NextIcon size="large" /></Button>
         );
@@ -200,14 +199,14 @@ export default class Article extends Component {
     } else {
       if (this.state.activeIndex > 0) {
         controls.push(
-          <Button key="previous" type="icon"
+          <Button key="previous" plain={true}
             className={`${CONTROL_CLASS_PREFIX}-up`}
             onClick={this._onPrevious}><UpIcon /></Button>
         );
       }
       if (this.state.activeIndex < (childCount - 1)) {
         controls.push(
-          <Button key="next" type="icon"
+          <Button key="next" plain={true}
             className={`${CONTROL_CLASS_PREFIX}-down`}
             onClick={this._onNext}><DownIcon /></Button>
         );
@@ -227,11 +226,6 @@ export default class Article extends Component {
       classes.push(this.props.className);
     }
 
-    let skipLinkAnchor = null;
-    if (this.props.primary) {
-      skipLinkAnchor = <SkipLinkAnchor label="Main Content" />;
-    }
-
     let controls;
     if (this.props.controls) {
       controls = this._renderControls();
@@ -246,8 +240,8 @@ export default class Article extends Component {
 
     return (
       <Box ref="component" tag="article" {...other}
-        className={classes.join(' ')} onFocus={this._onFocusChange}>
-        {skipLinkAnchor}
+        className={classes.join(' ')} onFocus={this._onFocusChange}
+        primary={this.props.primary}>
         {children}
         {controls}
       </Box>

@@ -30,14 +30,6 @@
       width: 100vw;
     }
 
-    &--inline {
-      margin-left: -1px;
-
-      .search__drop-contents {
-        display: block;
-      }
-    }
-
     &--controlled {
       .search__drop-contents {
         display: inline-block;
@@ -81,6 +73,8 @@
       width: 100%;
       box-sizing:  border-box;
       padding-right: (double($inuit-base-spacing-unit) - $input-border-width);
+      border-radius: 0;
+      -webkit-appearance: none;
 
       &:focus {
         padding-right: (double($inuit-base-spacing-unit) - ($input-border-width + 1));
@@ -116,39 +110,116 @@
   }
 
   &--small {
-    line-height: $inuit-base-spacing-unit;
-
     .search__input {
-      @include inuit-font-size($label-font-size, $label-font-size);
-      padding: (halve($inuit-base-spacing-unit - $label-font-size) - $input-border-width)
-        ($label-font-size - $input-border-width);
+      @include inuit-font-size($control-font-size, inherit);
+      padding: (($inuit-base-spacing-unit - $control-font-size) - $input-border-width)
+        ($control-font-size - $input-border-width);
       padding-right: ($inuit-base-spacing-unit - $input-border-width);
 
       &:focus {
-        padding: (halve($inuit-base-spacing-unit - $label-font-size) - $input-focus-border-width)
-          ($label-font-size - $input-focus-border-width);
+        padding: (($inuit-base-spacing-unit - $control-font-size) - $input-focus-border-width)
+          ($control-font-size - $input-focus-border-width);
         padding-right: ($inuit-base-spacing-unit - $input-focus-border-width);
       }
     }
 
-    .control-icon-search {
-      height: halve($inuit-base-spacing-unit);
-      width: halve($inuit-base-spacing-unit);
-    }
+    // .control-icon-search {
+    //   height: halve($inuit-base-spacing-unit);
+    //   width: halve($inuit-base-spacing-unit);
+    // }
   }
 
   &--large {
-    line-height: triple($inuit-base-spacing-unit);
-
     .search__input {
-      @include inuit-font-size($large-number-font-size, double($inuit-base-spacing-unit));
-      padding: halve($inuit-base-spacing-unit - $large-number-font-size - $input-border-width)
-        ($large-number-font-size - $input-border-width);
-      padding-right: (double($inuit-base-spacing-unit) - $input-border-width);
+      @include inuit-font-size($large-input-font-size, normal);
+      padding: halve($inuit-base-spacing-unit) ($inuit-base-spacing-unit);
+      padding-right: ($inuit-base-spacing-unit * 3);
+
+      &:focus {
+        padding: (halve($inuit-base-spacing-unit) - $input-border-width)
+          ($inuit-base-spacing-unit * 3 - $input-border-width);
+        padding-left: ($inuit-base-spacing-unit - $input-border-width);
+
+        @include media-query(palm) {
+          padding: (halve($inuit-base-spacing-unit) - ($input-border-width + 1))
+            ($inuit-base-spacing-unit - ($input-border-width + 1));
+          padding-right: (double($inuit-base-spacing-unit) - ($input-border-width + 1));
+        }
+      }
+
+      @include media-query(palm) {
+        font-size: inherit;
+        padding: (halve($inuit-base-spacing-unit) - ($input-border-width))
+          ($inuit-base-spacing-unit - $input-border-width);
+        padding-right: (double($inuit-base-spacing-unit) - $input-border-width);
+        line-height: 1.5;
+      }
     }
 
     .control-icon-search {
       right: $inuit-base-spacing-unit;
+      width: double($inuit-base-spacing-unit);
+      height: double($inuit-base-spacing-unit);
+
+      @include media-query(palm) {
+        right: halve($inuit-base-spacing-unit);
+        width: $inuit-base-spacing-unit;
+        height: $inuit-base-spacing-unit;
+      }
+
+      @include media-query(lap-and-up) {
+        // prevent icon from growing on resize from 719px
+        transition: none;
+      }
     }
+  }
+
+  &--icon-align-start {
+    &.search--inline {
+      .search__input {
+        padding-left: (double($inuit-base-spacing-unit) - $input-border-width);
+        padding-right: ($inuit-base-spacing-unit - $input-border-width);
+
+        &:focus {
+          padding-left: (double($inuit-base-spacing-unit) - ($input-border-width + 1));
+          padding-right: ($inuit-base-spacing-unit - $input-border-width);
+        }
+      }
+
+      .control-icon-search {
+        left: halve($inuit-base-spacing-unit);
+      }
+    }
+
+    &.search--large {
+      .search__input {
+        padding-left: ($inuit-base-spacing-unit * 3);
+        padding-right: $inuit-base-spacing-unit;
+
+        &:focus {
+          padding-left: ($inuit-base-spacing-unit * 3 - $input-border-width);
+          padding-right: ($inuit-base-spacing-unit - $input-border-width);
+
+          @include media-query(palm) {
+            padding: (halve($inuit-base-spacing-unit) - ($input-border-width + 1))
+              ($inuit-base-spacing-unit - ($input-border-width + 1));
+            padding-left: (double($inuit-base-spacing-unit) - ($input-border-width + 1));
+          }
+        }
+
+        @include media-query(palm) {
+          padding: (halve($inuit-base-spacing-unit) - $input-border-width)
+          ($inuit-base-spacing-unit - $input-border-width);
+          padding-left: (double($inuit-base-spacing-unit) - $input-border-width);
+        }
+      }
+    }
+  }
+
+  &--fill {
+    width: 100%;
+    max-width: none;
+    //used to add full height for button inside a flex container
+    flex-grow: 1;
   }
 }

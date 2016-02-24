@@ -1,27 +1,33 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
+import classnames from 'classnames';
 
-export default class Label extends Component {
-  render () {
-    var icon = null;
-    var text = null;
-    if (this.props.icon) {
-      icon = (<span className="label__icon control-icon">{this.props.icon}</span>);
+const CLASS_ROOT = 'label';
+
+const Label = props => {
+  let classes = classnames(
+    CLASS_ROOT,
+    props.className,
+    {
+      [`${CLASS_ROOT}--uppercase`]: props.uppercase,
+      [`${CLASS_ROOT}--margin-${props.margin}`]: props.margin
     }
-    if (this.props.text) {
-      text = (<span className="label__text">{this.props.text}</span>);
-    }
-    return (
-      <div className="label">
-        {icon}
-        {text}
-      </div>
-    );
-  }
-}
+  );
+
+  return (
+    <label className={classes} htmlFor={props.labelFor}>
+      {props.children}
+    </label>
+  );
+};
 
 Label.propTypes = {
-  icon: PropTypes.node,
-  text: PropTypes.string
+  labelFor: PropTypes.string,
+  margin: PropTypes.oneOf(['none', 'small', 'medium', 'large']),
+  uppercase: PropTypes.bool
 };
+
+Label.displayName = 'Label';
+
+export default Label;

@@ -2,11 +2,10 @@
 
 .form {
   position: relative;
+  width: $form-width;
+  max-width: 100%;
 
   @include media-query(lap-and-up) {
-    width: $form-width;
-    max-width: 100%;
-
     // For some reason, Tiles inside FormField doesn't determine its
     // width correctly. Enforce it here.
     .form-field .tiles__container {

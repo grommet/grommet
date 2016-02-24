@@ -45,6 +45,15 @@ button:not(.button) {
     border-color: $brand-color;
     background-color: $brand-color;
     color: $active-colored-text-color;
+
+    &:hover:not(.button--disabled) {
+      color: $active-colored-text-color;
+
+     .button__icon .control-icon {
+        fill: $active-colored-icon-color;
+        stroke: $active-colored-icon-color;
+      }
+    }
   }
 
   &--secondary {
@@ -55,20 +64,20 @@ button:not(.button) {
     border-color: $button-accent-color;
   }
 
-  &--icon {
+  &--plain {
     border: none;
     padding: 0;
     width: auto;
     height: auto;
     min-width: 0;
     max-width: none;
+    font-weight: inherit;
 
     &.button--primary {
       background-color: $brand-color;
     }
 
     > span:not(.button__icon) {
-      vertical-align: middle;
 
       &:first-child {
         margin-left: halve($inuit-base-spacing-unit);
@@ -99,7 +108,7 @@ button:not(.button) {
   }
 
   [class*="background-color-index-"]:not([class*="background-color-index-light"]) &:not(.button--primary) {
-    border-color: $colored-border-color;
+    border-color: $button-colored-border-color;
     color: $colored-text-color;
 
     &.button--accent {
@@ -117,5 +126,13 @@ button:not(.button) {
     max-width: none;
     //used to add full height for button inside a flex container
     flex-grow: 1;
+  }
+}
+
+a.button {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
   }
 }

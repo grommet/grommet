@@ -69,7 +69,7 @@ export default class Arc extends Graphic {
 
   _sliceCommands (trackIndex, item, startValue) {
     var startAngle = translateEndAngle(this.state.startAngle, this.state.anglePer, startValue);
-    var endAngle = Math.max(startAngle + (RING_THICKNESS / 2),
+    var endAngle = Math.max(startAngle + (item.value > 0 ? (RING_THICKNESS / 2) : 0),
       translateEndAngle(startAngle, this.state.anglePer, item.value));
     var radius = Math.max(1, ARC_RADIUS - (trackIndex * RING_THICKNESS));
     return arcCommands(ARC_WIDTH / 2, ARC_WIDTH / 2, radius,

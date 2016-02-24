@@ -6,6 +6,10 @@ a,
   text-decoration: $brand-link-text-decoration;
   cursor: pointer;
 
+  &.plain {
+    text-decoration: none;
+  }
+
   &:visited {
     color: $link-color;
   }
@@ -14,9 +18,20 @@ a,
     color: $text-color;
   }
 
-  &:hover:not(.anchor--disabled) {
-    text-decoration: underline;
+  // While it's tempting to use :not(.anchor--disabled) here, that makes it
+  // messier for things like Menu to adjust styling in its context.
+  &:hover {
     color: $link-hover-color;
+    text-decoration: underline;
+  }
+
+  &.anchor--disabled:hover {
+    color: $link-color;
+  }
+
+  &.plain:hover,
+  &.button:hover {
+    text-decoration: none;
   }
 
   &__icon {
@@ -33,7 +48,7 @@ a,
       stroke: $colored-icon-color;
     }
 
-    &:hover:not(.anchor--disabled) {
+    &:hover {
       color: $active-colored-text-color;
 
      .control-icon {
@@ -41,17 +56,26 @@ a,
         stroke: $active-colored-icon-color;
       }
     }
+
+    &.anchor--disabled:hover {
+      color: $colored-text-color;
+
+      .control-icon {
+        fill: $colored-icon-color;
+        stroke: $colored-icon-color;
+      }
+    }
   }
 
   &.anchor {
-    &--primary {
+
+    &--primary,
+    &--icon-label {
       @include inuit-font-size($control-font-size, $inuit-base-spacing-unit);
       font-weight: 600;
-      color: $control-brand-color;
       text-decoration: none;
 
       .control-icon {
-        stroke: $control-brand-color;
         margin-right: halve($inuit-base-spacing-unit);
 
         html.rtl & {
@@ -60,20 +84,15 @@ a,
         }
       }
 
-      > span {
-        vertical-align: middle;
+      &.anchor--reverse {
+        .control-icon {
+          margin-right: 0;
+          margin-left: halve($inuit-base-spacing-unit);
+        }
       }
 
-      &:hover:not(.anchor--disabled) {
-        > .control-icon {
-          transform: translateX(round($inuit-base-spacing-unit * 0.125));
-          stroke: $control-brand-color;
-
-          path,
-          polyline {
-            stroke-width: 3px;
-          }
-        }
+      > span {
+        vertical-align: middle;
       }
 
       [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
@@ -84,13 +103,48 @@ a,
           stroke: $colored-text-color;
         }
 
-        &:hover:not(.anchor--disabled) {
+        &:hover {
           color: $active-colored-text-color;
 
           .control-icon {
             fill: $active-colored-text-color;
             stroke: $active-colored-text-color;
           }
+        }
+
+        &.anchor--disabled {
+          color: $colored-text-color;
+
+          .control-icon {
+            fill: $colored-text-color;
+            stroke: $colored-text-color;
+          }
+        }
+      }
+    }
+
+    &--primary {
+      color: $control-brand-color;
+
+      .control-icon {
+        stroke: $control-brand-color;
+      }
+
+      &:hover {
+        .control-icon {
+          stroke: $control-brand-color;
+          transform: translateX(round($inuit-base-spacing-unit * 0.125));
+
+          path,
+          polyline {
+            stroke-width: 3px;
+          }
+        }
+      }
+
+      &.anchor--disabled {
+        .control-icon {
+          transform: none;
         }
       }
     }
@@ -103,5 +157,9 @@ a,
     .control-icon {
       cursor: default;
     }
+  }
+
+  &--icon {
+    display: inline-block;
   }
 }

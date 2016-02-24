@@ -7,6 +7,7 @@ import Tile from './Tile';
 import Button from './Button';
 import Previous from './icons/base/Previous';
 import Next from './icons/base/Next';
+import DOM from '../utils/DOM';
 
 //
 let Hammer = function() {};
@@ -27,13 +28,15 @@ export default class Carousel extends Component {
     this._onResize = this._onResize.bind(this);
     this._slidePrev = this._slidePrev.bind(this);
     this._slideNext = this._slideNext.bind(this);
+    this._handleScroll = this._handleScroll.bind(this);
 
     this.state = {
       activeIndex: 0,
       hideControls: ! props.persistentNav,
       priorIndex: 0,
       sequence: 1,
-      width: 0
+      width: 0,
+      slide: false
     };
   }
 
@@ -41,10 +44,6 @@ export default class Carousel extends Component {
     this.setState({
       width: this.refs.carousel.offsetWidth
     });
-
-    if (this.props.autoplay) {
-      this._setSlideInterval();
-    }
 
     window.addEventListener('resize', this._onResize);
 
@@ -59,6 +58,12 @@ export default class Carousel extends Component {
         this._slideNext();
       }
     });
+
+    this._handleScroll();
+    var scrollParents = DOM.findScrollParents(this.refs.carousel);
+    scrollParents.forEach(function (scrollParent) {
+      scrollParent.addEventListener('scroll', this._handleScroll);
+    }.bind(this));
   }
 
   componentWillUnmount () {
@@ -71,6 +76,32 @@ export default class Carousel extends Component {
       this.hammer.destroy();
     }
     this.hammer = null;
+
+    var scrollParents = DOM.findScrollParents(this.refs.carousel);
+    scrollParents.forEach(function (scrollParent) {
+      scrollParent.removeEventListener('scroll', this._handleScroll);
+    }.bind(this));
+  }
+
+  _handleScroll () {
+    var viewportHeight = document.documentElement.clientHeight;
+    var carouselTopPosition = this.refs.carousel.getBoundingClientRect().top;
+    var carouselHeight = this.refs.carousel.offsetHeight;
+    var startScroll = viewportHeight - (carouselHeight / 2);
+
+    if (this.props.autoplay && carouselTopPosition <= startScroll && carouselTopPosition >= -carouselHeight / 2) {
+      if (this.state.slide === false) {
+        this._setSlideInterval();
+        this.setState({
+          slide: true
+        });
+      }
+    } else {
+      clearInterval(this._slideAnimation);
+      this.setState({
+        slide: false
+      });
+    }
   }
 
   _setSlideInterval () {
@@ -148,7 +179,7 @@ export default class Carousel extends Component {
       prevButton = (
         <Button
           className={CLASS_ROOT + '__arrow ' + CLASS_ROOT + '__arrow--prev'}
-          type="icon" onClick={this._slidePrev}>
+          plain={true} onClick={this._slidePrev}>
           <Previous size="large" />
         </Button>
       );
@@ -164,7 +195,7 @@ export default class Carousel extends Component {
       nextButton = (
         <Button
           className={CLASS_ROOT + '__arrow ' + CLASS_ROOT + '__arrow--next'}
-          type="icon" onClick={this._slideNext}>
+          plain={true} onClick={this._slideNext}>
           <Next size="large" />
         </Button>
       );
@@ -220,7 +251,7 @@ export default class Carousel extends Component {
         onMouseEnter={this._onMouseOver} onMouseLeave={this._onMouseOut}>
         <div className={CLASS_ROOT + "__track"}
           style={{ width: trackWidth, marginLeft: trackPosition }}>
-          <Tiles fill={true}>
+          <Tiles fill={true} responsive={false} wrap={false} direction="row">
             {tiles}
           </Tiles>
         </div>

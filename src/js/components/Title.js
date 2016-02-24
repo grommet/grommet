@@ -8,7 +8,7 @@ const CLASS_ROOT = "title";
 
 export default class Title extends Component {
   render () {
-    var classes = [CLASS_ROOT];
+    let classes = [CLASS_ROOT];
     if (this.props.responsive) {
       classes.push(CLASS_ROOT + "--responsive");
     }
@@ -19,7 +19,7 @@ export default class Title extends Component {
       classes.push(this.props.className);
     }
 
-    var a11yTitle = Intl.getMessage(this.context.intl, this.props.a11yTitle);
+    let a11yTitle = Intl.getMessage(this.context.intl, this.props.a11yTitle);
 
     return (
       <Box align="center" direction="row" responsive={false}

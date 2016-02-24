@@ -1,33 +1,24 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
+import classnames from 'classnames';
 import Box from './Box';
-import SkipLinkAnchor from './SkipLinkAnchor';
+import Props from '../utils/Props';
 
-const CLASS_ROOT = "section";
+const CLASS_ROOT = 'section';
 
-export default class Section extends Component {
+const Section = props => {
+  var classes = classnames(CLASS_ROOT, props.className);
 
-  render () {
-    var classes = [CLASS_ROOT];
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
+  let boxProps = Props.pick(props, Box);
 
-    var skipLinkAnchor = null;
-    if (this.props.primary) {
-      skipLinkAnchor = <SkipLinkAnchor label="Main Content" />;
-    }
-
-    return (
-      <Box tag="section" {...this.props} className={classes.join(' ')}>
-        {skipLinkAnchor}
-        {this.props.children}
-      </Box>
-    );
-  }
-
-}
+  return (
+    <Box {...boxProps} tag="section" className={classes}
+      primary={props.primary}>
+      {props.children}
+    </Box>
+  );
+};
 
 Section.propTypes = {
   primary: PropTypes.bool,
@@ -37,3 +28,7 @@ Section.propTypes = {
 Section.defaultProps = {
   pad: {vertical: 'medium'}
 };
+
+Section.displayName = 'Section';
+
+export default Section;

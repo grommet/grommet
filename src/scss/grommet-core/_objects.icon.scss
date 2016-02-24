@@ -32,11 +32,21 @@
   }
 
   a:hover &,
-  .anchor:hover:not(.anchor--disabled) &,
-  .button:hover:not(.anchor--disabled) &,
+  .anchor:hover &,
+  .button:hover &,
   .menu__control:hover & {
     fill: $active-icon-color;
     stroke: $active-icon-color;
+  }
+
+  .anchor.anchor--disabled:hover & {
+    fill: $icon-color;
+    stroke: $icon-color;
+  }
+
+  .button.button--disabled:hover & {
+    fill: $icon-color;
+    stroke: $icon-color;
   }
 
   &__badge {
@@ -50,7 +60,7 @@
     }
   }
 
-  [class*="background-color-index-"]:not([class*="background-color-index-light"]) &,
+  [class*="background-color-index-"]:not([class*="background-color-index-light"]) &:not([class*="color-index"]),
   .button--primary & {
     fill: $colored-icon-color;
     stroke: $colored-icon-color;
@@ -71,8 +81,13 @@
   }
 
   &--large {
-    width: round($inuit-base-spacing-unit * 2);
-    height: round($inuit-base-spacing-unit * 2);
+    width: double($inuit-base-spacing-unit);
+    height: double($inuit-base-spacing-unit);
+  }
+
+  &--huge {
+    width: $inuit-base-spacing-unit * 12;
+    height: $inuit-base-spacing-unit * 12;
   }
 }
 
@@ -115,6 +130,11 @@
   &--large {
     width: double($inuit-base-spacing-unit);
     height: double($inuit-base-spacing-unit);
+  }
+
+  &--huge {
+    width: $inuit-base-spacing-unit * 12;
+    height: $inuit-base-spacing-unit * 12;
   }
 
   &--small {
@@ -170,6 +190,11 @@
   &--large {
     width: quadruple($inuit-base-spacing-unit);
     height: quadruple($inuit-base-spacing-unit);
+  }
+
+  &--huge {
+    width: $inuit-base-spacing-unit * 12;
+    height: $inuit-base-spacing-unit * 12;
   }
 }
 

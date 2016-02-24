@@ -1,38 +1,31 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
-import pick from 'lodash/object/pick';
-import keys from 'lodash/object/keys';
+import React, { PropTypes } from 'react';
+import classnames from 'classnames';
 import Box from './Box';
+import Props from '../utils/Props';
 
-const CLASS_ROOT = "sidebar";
+const CLASS_ROOT = 'sidebar';
 
-export default class Sidebar extends Component {
-
-  render () {
-    var classes = [CLASS_ROOT];
-    var other = pick(this.props, keys(Box.propTypes));
-    if (this.props.primary) {
-      classes.push(CLASS_ROOT + "--primary");
+const Sidebar = props => {
+  let classes = classnames(
+    CLASS_ROOT,
+    props.className,
+    {
+      [`${CLASS_ROOT}--primary`]: props.primary,
+      [`${CLASS_ROOT}--fixed`]: props.fixed,
+      [`${CLASS_ROOT}--${props.size}`]: props.size
     }
-    if (this.props.fixed) {
-      classes.push(CLASS_ROOT + "--fixed");
-    }
-    if (this.props.size) {
-      classes.push(CLASS_ROOT + "--" + this.props.size);
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
+  );
 
-    return (
-      <Box {...other} className={classes.join(' ')}>
-        {this.props.children}
-      </Box>
-    );
-  }
+  let boxProps = Props.pick(props, Box);
 
-}
+  return (
+    <Box {...boxProps} className={classes} primary={false}>
+      {props.children}
+    </Box>
+  );
+};
 
 Sidebar.propTypes = {
   fixed: PropTypes.bool,
@@ -45,3 +38,7 @@ Sidebar.defaultProps = {
   direction: 'column',
   primary: false
 };
+
+Sidebar.displayName = 'Sidebar';
+
+export default Sidebar;

@@ -170,11 +170,21 @@ class MenuDrop extends Component {
 
     delete other.onClick;
 
+    // Put nestend Menus inline
+    const children = React.Children.map(this.props.children, (child) => {
+      let result = child;
+      if (child.type.prototype._renderMenuDrop) {
+        result = React.cloneElement(child, {inline: 'explode', direction: 'column'});
+      }
+      return result;
+    });
+
     let contents = [
-      React.cloneElement(this.props.control, {key: 'control'}),
+      React.cloneElement(this.props.control, {key: 'control', fill: true}),
       <Box key="nav" ref="navContainer"
-        role="menu" tag="nav" {...other} className={`${CLASS_ROOT}__contents`}>
-        {this.props.children}
+        role="menu" tag="nav" {...other} className={`${CLASS_ROOT}__contents`}
+        primary={false}>
+        {children}
       </Box>
     ];
     if (this.props.dropAlign.bottom) {
@@ -183,8 +193,8 @@ class MenuDrop extends Component {
     if (this.props.dropAlign.right) {
       classes.push(`${CLASS_ROOT}__drop--align-right`);
     }
-    if (this.props.dropColorIndex) {
-      classes.push(`background-color-index-${this.props.dropColorIndex}`);
+    if (this.props.colorIndex) {
+      classes.push(`background-color-index-${this.props.colorIndex}`);
     }
     if (this.props.size) {
       classes.push(`${CLASS_ROOT}__drop--${this.props.size}`);
@@ -202,7 +212,7 @@ class MenuDrop extends Component {
 MenuDrop.propTypes = {
   control: PropTypes.node,
   dropAlign: Drop.alignPropType,
-  dropColorIndex: PropTypes.string,
+  colorIndex: PropTypes.string,
   id: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
   router: PropTypes.any,
@@ -306,12 +316,12 @@ export default class Menu extends Component {
           );
           document.addEventListener('click', this._onClose);
           this._drop = Drop.add(this.refs.control,
-            this._renderDrop(), this.props.dropAlign);
-          this._drop.render(this._renderDrop());
+            this._renderMenuDrop(), this.props.dropAlign);
+          this._drop.render(this._renderMenuDrop());
           break;
       }
     } else if (this.state.state === 'expanded') {
-      this._drop.render(this._renderDrop());
+      this._drop.render(this._renderMenuDrop());
     }
   }
 
@@ -374,28 +384,26 @@ export default class Menu extends Component {
 
     let controlClassName = `${CLASS_ROOT}__control`;
 
+    // If this is a collapsed inline Menu, use any icon and/or label provided,
+    // revert to default icon if neither.
     if (this.props.icon) {
       icon = React.cloneElement(this.props.icon, {key: 'icon'});
-      // icon = this.props.icon;
     }
-    if (this.state.controlCollapsed) {
-      if (! icon) {
-        icon = <MoreIcon key="icon" />;
-      }
-    } else if (this.props.label) {
+    if (this.props.label) {
       label = [
         <span key="label" className={controlClassName + "-label"}>
           {this.props.label}
         </span>,
         <DropCaretIcon key="caret" />
       ];
-    } else if (! icon) {
+    }
+    if (! icon && ! label) {
       icon = <MoreIcon key="icon" />;
     }
     return [icon, label];
   }
 
-  _renderDrop () {
+  _renderMenuDrop () {
     let other = pick(this.props, keys(Box.propTypes));
 
     let closeLabel = Intl.getMessage(this.context.intl, 'Close');
@@ -405,7 +413,7 @@ export default class Menu extends Component {
     );
 
     let control = (
-      <Button type="icon" className={`${CLASS_ROOT}__control`}
+      <Button plain={true} className={`${CLASS_ROOT}__control`}
         a11yTitle={menuTitle}
         style={{lineHeight: this.state.controlHeight + 'px'}}
         onClick={this._onClose}>
@@ -424,8 +432,8 @@ export default class Menu extends Component {
         history={this.context.history}
         router={this.context.router}
         dropAlign={this.props.dropAlign}
-        dropColorIndex={this.props.dropColorIndex}
-        size={this.state.size}
+        colorIndex={this.props.dropColorIndex}
+        size={this.props.size}
         {...other}
         onClick={onClick}
         id={this.state.dropId}
@@ -441,8 +449,8 @@ export default class Menu extends Component {
     if (this.props.direction) {
       classes.push(prefix + "--" + this.props.direction);
     }
-    if (this.state.size) {
-      classes.push(prefix + "--" + this.state.size);
+    if (this.props.size) {
+      classes.push(prefix + "--" + this.props.size);
     }
     if (this.props.primary) {
       classes.push(prefix + "--primary");
@@ -467,10 +475,20 @@ export default class Menu extends Component {
 
     if (this.state.inline) {
       let other = pick(this.props, keys(Box.propTypes));
+      let label;
+      if ('explode' === this.state.inline) {
+        classes.push(`${CLASS_ROOT}--explode`);
+        label = (
+          <div className={`${CLASS_ROOT}__label`}>
+            {this.props.label}
+          </div>
+        );
+      }
 
       return (
         <Box tag="nav" id={this.props.id} {...other}
-          className={classes.join(' ')}>
+          className={classes.join(' ')} primary={false}>
+          {label}
           {this.props.children}
         </Box>
       );
@@ -487,7 +505,7 @@ export default class Menu extends Component {
 
       return (
         <div ref="control">
-          <Button type="icon" id={this.props.id}
+          <Button plain={true} id={this.props.id}
             className={classes.join(' ')}
             tabIndex="0"
             style={{lineHeight: this.state.controlHeight + 'px'}}
@@ -510,7 +528,7 @@ Menu.propTypes = {
   dropColorIndex: PropTypes.string,
   icon: PropTypes.node,
   id: PropTypes.string,
-  inline: PropTypes.bool,
+  inline: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf('expand')]),
   label: PropTypes.string,
   primary: PropTypes.bool,
   size: PropTypes.oneOf(['small', 'medium', 'large']),

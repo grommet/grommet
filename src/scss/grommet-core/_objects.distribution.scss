@@ -2,16 +2,11 @@
 
 .distribution {
   position: relative;
-  display: block;
 
   &__graphic {
     width: 100%;
     height: $graphic-size;
     max-height: calc(100vh - #{double($header-height)});
-
-    &:focus {
-      outline: $focus-border-color solid 1px;
-    }
   }
 
   &__background {
@@ -134,8 +129,10 @@
     height: 100%;
 
     .distribution__graphic {
-      height: 100%;
+      width: auto;
+      height: auto;
       max-height: 100%;
+      max-width: 100%;
     }
   }
 }

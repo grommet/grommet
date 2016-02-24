@@ -26,10 +26,12 @@ var _isKeyboardAcceleratorListening = false;
 var _onKeyboardAcceleratorKeyPress = (e) => {
   var key = (e.keyCode ? e.keyCode : e.which);
   _listeners.slice().reverse().some(function (listener) {
-    var handlers = _keyboardAccelerators[listener].handlers;
-    if (handlers.hasOwnProperty(key)) {
-      if (handlers[key](e)) {
-        return true;
+    if (_keyboardAccelerators[listener]) {
+      var handlers = _keyboardAccelerators[listener].handlers;
+      if (handlers.hasOwnProperty(key)) {
+        if (handlers[key](e)) {
+          return true;
+        }
       }
     }
     return false;

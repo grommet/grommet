@@ -6,6 +6,7 @@
   white-space: normal;
   display: inline-block;
   margin: 0px;
+  line-height: $inuit-base-spacing-unit;
 
   html.rtl & {
     text-align: right;
