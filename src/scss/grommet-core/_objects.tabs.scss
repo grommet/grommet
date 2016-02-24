@@ -23,6 +23,7 @@
     }
 
     &-start,
+    &-center,
     &-end {
       &.tabs--responsive {
         @include media-query(palm) {
