@@ -210,9 +210,9 @@ class MenuDrop extends Component {
 }
 
 MenuDrop.propTypes = {
+  colorIndex: PropTypes.string,
   control: PropTypes.node,
   dropAlign: Drop.alignPropType,
-  colorIndex: PropTypes.string,
   id: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
   router: PropTypes.any,
@@ -221,8 +221,8 @@ MenuDrop.propTypes = {
 };
 
 MenuDrop.childContextTypes = {
-  intl: PropTypes.object,
-  history: PropTypes.object,
+  intl: PropTypes.any,
+  history: PropTypes.any,
   router: PropTypes.any
 };
 
@@ -536,8 +536,8 @@ Menu.propTypes = {
 };
 
 Menu.contextTypes = {
-  intl: PropTypes.object,
-  history: PropTypes.object,
+  intl: PropTypes.any,
+  history: PropTypes.any,
   router: PropTypes.any
 };
 

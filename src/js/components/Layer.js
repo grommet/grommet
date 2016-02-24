@@ -153,7 +153,7 @@ export default class Layer extends Component {
   }
 
   _classesFromProps () {
-    var classes = [CLASS_ROOT];
+    var classes = ['grommet', CLASS_ROOT];
     if (this.props.align) {
       classes.push(CLASS_ROOT + "--align-" + this.props.align);
     }

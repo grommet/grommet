@@ -1,6 +1,6 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-a,
+.grommet a,
 .anchor {
   color: $link-color;
   text-decoration: $brand-link-text-decoration;
@@ -34,43 +34,15 @@ a,
     text-decoration: none;
   }
 
-  &__icon {
+  .anchor__icon {
     display: inline-block;
     padding: halve($inuit-base-spacing-unit);
   }
 
-  [class*="background-color-index-"]:not([class*="background-color-index-light"]) &,
-  [class*="background-color-index-"]:not([class*="background-color-index-light"]) .menu &:not(.button) {
-    color: $colored-text-color;
-
-    .control-icon {
-      fill: $colored-icon-color;
-      stroke: $colored-icon-color;
-    }
-
-    &:hover {
-      color: $active-colored-text-color;
-
-     .control-icon {
-        fill: $active-colored-icon-color;
-        stroke: $active-colored-icon-color;
-      }
-    }
-
-    &.anchor--disabled:hover {
-      color: $colored-text-color;
-
-      .control-icon {
-        fill: $colored-icon-color;
-        stroke: $colored-icon-color;
-      }
-    }
-  }
-
   &.anchor {
 
-    &--primary,
-    &--icon-label {
+    &.anchor--primary,
+    &.anchor--icon-label {
       @include inuit-font-size($control-font-size, $inuit-base-spacing-unit);
       font-weight: 600;
       text-decoration: none;
@@ -95,35 +67,35 @@ a,
         vertical-align: middle;
       }
 
-      [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
-        color: $colored-text-color;
-
-        .control-icon {
-          fill: $colored-text-color;
-          stroke: $colored-text-color;
-        }
-
-        &:hover {
-          color: $active-colored-text-color;
-
-          .control-icon {
-            fill: $active-colored-text-color;
-            stroke: $active-colored-text-color;
-          }
-        }
-
-        &.anchor--disabled {
-          color: $colored-text-color;
-
-          .control-icon {
-            fill: $colored-text-color;
-            stroke: $colored-text-color;
-          }
-        }
-      }
+      // [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+      //   color: $colored-text-color;
+      //
+      //   .control-icon {
+      //     fill: $colored-text-color;
+      //     stroke: $colored-text-color;
+      //   }
+      //
+      //   &:hover {
+      //     color: $active-colored-text-color;
+      //
+      //     .control-icon {
+      //       fill: $active-colored-text-color;
+      //       stroke: $active-colored-text-color;
+      //     }
+      //   }
+      //
+      //   &.anchor--disabled {
+      //     color: $colored-text-color;
+      //
+      //     .control-icon {
+      //       fill: $colored-text-color;
+      //       stroke: $colored-text-color;
+      //     }
+      //   }
+      // }
     }
 
-    &--primary {
+    &.anchor--primary {
       color: $control-brand-color;
 
       .control-icon {
@@ -150,7 +122,7 @@ a,
     }
   }
 
-  &--disabled {
+  &.anchor--disabled {
     opacity: 0.3;
     cursor: default;
 
@@ -159,7 +131,39 @@ a,
     }
   }
 
-  &--icon {
+  &.anchor--icon {
     display: inline-block;
+  }
+}
+
+.grommet {
+  [class*="background-color-index-"]:not([class*="background-color-index-light"]) {
+    a,
+    .anchor {
+      color: $colored-text-color;
+
+      .control-icon {
+        fill: $colored-icon-color;
+        stroke: $colored-icon-color;
+      }
+
+      &:hover {
+        color: $active-colored-text-color;
+
+       .control-icon {
+          fill: $active-colored-icon-color;
+          stroke: $active-colored-icon-color;
+        }
+      }
+
+      &.anchor--disabled:hover {
+        color: $colored-text-color;
+
+        .control-icon {
+          fill: $colored-icon-color;
+          stroke: $colored-icon-color;
+        }
+      }
+    }
   }
 }

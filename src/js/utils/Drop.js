@@ -81,7 +81,7 @@ export default {
 
     // setup DOM
     drop.container = document.createElement('div');
-    drop.container.className = 'drop';
+    drop.container.className = 'grommet drop';
     // prepend in body to avoid browser scroll issues
     document.body.insertBefore(drop.container, document.body.firstChild);
     render(content, drop.container);

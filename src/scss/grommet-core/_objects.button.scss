@@ -1,4 +1,4 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 $button-vertical-padding: round($inuit-base-spacing-unit / 3) - $button-border-width;
 $button-horizontal-padding: round($inuit-base-spacing-unit) - $button-border-width;
@@ -27,10 +27,12 @@ $button-horizontal-padding: round($inuit-base-spacing-unit) - $button-border-wid
   }
 }
 
-input[type="button"],
-input[type="submit"],
-button:not(.button) {
-  @include basic-button();
+.grommet {
+  input[type="button"],
+  input[type="submit"],
+  button:not(.button) {
+    @include basic-button();
+  }
 }
 
 .button {

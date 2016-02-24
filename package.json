@@ -63,7 +63,6 @@
     "gulp-watch": "^4.2.4",
     "imports-loader": "^0.6.3",
     "intl": "^1.0.0",
-    "inuit-box-sizing": "~0.2.0",
     "inuit-clearfix": "^0.2.1",
     "inuit-defaults": "~0.2.1",
     "inuit-functions": "~0.2.0",

@@ -4,6 +4,8 @@ import React, { Component, PropTypes } from 'react';
 import { getCurrentLocale } from '../utils/Locale';
 import SkipLinks from './SkipLinks';
 
+const CLASS_ROOT = 'app';
+
 let supportedLocales = ['en-US', 'pt-BR'];
 
 function localesSupported() {
@@ -44,12 +46,12 @@ export default class App extends Component {
   }
 
   render() {
-    var classes = ["app"];
+    var classes = ["grommet", CLASS_ROOT];
     if (this.props.centered) {
-      classes.push("app--centered");
+      classes.push(`${CLASS_ROOT}--centered`);
     }
     if (this.props.inline) {
-      classes.push("app--inline");
+      classes.push(`${CLASS_ROOT}--inline`);
     }
 
     if (this.props.className) {
