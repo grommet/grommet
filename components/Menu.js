@@ -230,12 +230,21 @@ var MenuDrop = function (_Component) {
 
       delete other.onClick;
 
-      var contents = [_react2.default.cloneElement(this.props.control, { key: 'control' }), _react2.default.createElement(
+      // Put nestend Menus inline
+      var children = _react2.default.Children.map(this.props.children, function (child) {
+        var result = child;
+        if (child.type.prototype._renderMenuDrop) {
+          result = _react2.default.cloneElement(child, { inline: 'explode', direction: 'column' });
+        }
+        return result;
+      });
+
+      var contents = [_react2.default.cloneElement(this.props.control, { key: 'control', fill: true }), _react2.default.createElement(
         _Box2.default,
         _extends({ key: 'nav', ref: 'navContainer',
           role: 'menu', tag: 'nav' }, other, { className: CLASS_ROOT + '__contents',
           primary: false }),
-        this.props.children
+        children
       )];
       if (this.props.dropAlign.bottom) {
         contents.reverse();
@@ -243,8 +252,8 @@ var MenuDrop = function (_Component) {
       if (this.props.dropAlign.right) {
         classes.push(CLASS_ROOT + '__drop--align-right');
       }
-      if (this.props.dropColorIndex) {
-        classes.push('background-color-index-' + this.props.dropColorIndex);
+      if (this.props.colorIndex) {
+        classes.push('background-color-index-' + this.props.colorIndex);
       }
       if (this.props.size) {
         classes.push(CLASS_ROOT + '__drop--' + this.props.size);
@@ -265,7 +274,7 @@ var MenuDrop = function (_Component) {
 MenuDrop.propTypes = _extends({
   control: _react.PropTypes.node,
   dropAlign: _Drop2.default.alignPropType,
-  dropColorIndex: _react.PropTypes.string,
+  colorIndex: _react.PropTypes.string,
   id: _react.PropTypes.string.isRequired,
   onClick: _react.PropTypes.func.isRequired,
   router: _react.PropTypes.any,
@@ -362,12 +371,12 @@ var Menu = function (_Component2) {
             _KeyboardAccelerators2.default.stopListeningToKeyboard(this, focusedKeyboardHandlers);
             _KeyboardAccelerators2.default.startListeningToKeyboard(this, activeKeyboardHandlers);
             document.addEventListener('click', this._onClose);
-            this._drop = _Drop2.default.add(this.refs.control, this._renderDrop(), this.props.dropAlign);
-            this._drop.render(this._renderDrop());
+            this._drop = _Drop2.default.add(this.refs.control, this._renderMenuDrop(), this.props.dropAlign);
+            this._drop.render(this._renderMenuDrop());
             break;
         }
       } else if (this.state.state === 'expanded') {
-        this._drop.render(this._renderDrop());
+        this._drop.render(this._renderMenuDrop());
       }
     }
   }, {
@@ -456,8 +465,8 @@ var Menu = function (_Component2) {
       return [icon, label];
     }
   }, {
-    key: '_renderDrop',
-    value: function _renderDrop() {
+    key: '_renderMenuDrop',
+    value: function _renderMenuDrop() {
       var other = (0, _pick2.default)(this.props, (0, _keys2.default)(_Box2.default.propTypes));
 
       var closeLabel = _Intl2.default.getMessage(this.context.intl, 'Close');
@@ -485,7 +494,7 @@ var Menu = function (_Component2) {
           history: this.context.history,
           router: this.context.router,
           dropAlign: this.props.dropAlign,
-          dropColorIndex: this.props.dropColorIndex,
+          colorIndex: this.props.dropColorIndex,
           size: this.props.size
         }, other, {
           onClick: onClick,
@@ -529,11 +538,21 @@ var Menu = function (_Component2) {
 
       if (this.state.inline) {
         var other = (0, _pick2.default)(this.props, (0, _keys2.default)(_Box2.default.propTypes));
+        var label = undefined;
+        if ('explode' === this.state.inline) {
+          classes.push(CLASS_ROOT + '--explode');
+          label = _react2.default.createElement(
+            'div',
+            { className: CLASS_ROOT + '__label' },
+            this.props.label
+          );
+        }
 
         return _react2.default.createElement(
           _Box2.default,
           _extends({ tag: 'nav', id: this.props.id }, other, {
             className: classes.join(' '), primary: false }),
+          label,
           this.props.children
         );
       } else {
@@ -575,7 +594,7 @@ Menu.propTypes = _extends({
   dropColorIndex: _react.PropTypes.string,
   icon: _react.PropTypes.node,
   id: _react.PropTypes.string,
-  inline: _react.PropTypes.bool,
+  inline: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.oneOf('expand')]),
   label: _react.PropTypes.string,
   primary: _react.PropTypes.bool,
   size: _react.PropTypes.oneOf(['small', 'medium', 'large'])

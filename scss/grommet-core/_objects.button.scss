@@ -71,13 +71,13 @@ button:not(.button) {
     height: auto;
     min-width: 0;
     max-width: none;
+    font-weight: inherit;
 
     &.button--primary {
       background-color: $brand-color;
     }
 
     > span:not(.button__icon) {
-      vertical-align: middle;
 
       &:first-child {
         margin-left: halve($inuit-base-spacing-unit);
