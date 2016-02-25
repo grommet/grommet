@@ -10,7 +10,7 @@ import Next from './icons/base/Next';
 import DOM from '../utils/DOM';
 
 // define window obj for react tests to run properly
-let Hammer = function() {};
+var Hammer = function() {};
 if (typeof window !== 'undefined') {
   Hammer = require('hammerjs');
 }
@@ -79,7 +79,7 @@ export default class Carousel extends Component {
       this.hammer.stop();
       this.hammer.destroy();
     }
-    this.hammer = null;
+    this.hammer = undefined;
   }
 
   _updateHammer () {
