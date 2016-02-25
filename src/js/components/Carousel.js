@@ -71,6 +71,10 @@ export default class Carousel extends Component {
       scrollParent.removeEventListener('scroll', this._handleScroll);
     }.bind(this));
 
+    this._unmountHammer();
+  }
+
+  _unmountHammer () {
     if (this.hammer) {
       this.hammer.stop();
       this.hammer.destroy();
