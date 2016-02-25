@@ -4,7 +4,7 @@
 
 // Grommet core should handle this. For now, we put this here since the
 // HPE accent colors are light enough to be handled as light backgrounds.
-[class*="background-color-index"][class*="background-color-index-accent"]:not([class*="background-color-index-light"]) {
+[class*="background-color-index"][class*="background-color-index-accent"]:not([class*="background-color-index-accent-2"]):not([class*="background-color-index-light"]) {
   .box {
     border-color: $border-color;
   }
@@ -14,7 +14,21 @@
     color: $text-color;
 
     &:hover {
-      color: $text-color;
+      color: $hover-text-color;
+    }
+
+    &.anchor--icon-label {
+      .control-icon {
+        fill: $text-color;
+        stroke: $text-color;
+      }
+
+      &:hover {
+        .control-icon {
+          fill: $hover-text-color;
+          stroke: $hover-text-color;
+        }
+      }
     }
   }
 }

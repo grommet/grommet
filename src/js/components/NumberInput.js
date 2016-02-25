@@ -15,10 +15,17 @@ export default class NumberInput extends Component {
   }
 
   _fireChange () {
-    var event = new Event('change', {
-      'bubbles': true,
-      'cancelable': true
-    });
+    let event;
+    try {
+      event = new Event('change', {
+        'bubbles': true,
+        'cancelable': true
+      });
+    } catch (e) {
+      // IE11 workaround.
+      event = document.createEvent('Event');
+      event.initEvent('change', true, true);
+    }
     // We use dispatchEvent to have the browser fill out the event fully.
     this.refs.input.dispatchEvent(event);
     // Manually dispatched events aren't delivered by React, so we notify too.
@@ -26,18 +33,38 @@ export default class NumberInput extends Component {
   }
 
   _onAdd () {
-    this.refs.input.stepUp();
+    const input = this.refs.input;
+    try {
+      input.stepUp();
+    } catch (e) {
+      // IE11 workaround. See known issue #5 at http://caniuse.com/#search=number
+      let value = parseInt(input.value, 10) + (this.props.step || 1);
+      if (this.props.max !== undefined) {
+        value = Math.min(value, this.props.max);
+      }
+      input.value = value;
+    }
     this._fireChange();
   }
 
   _onSubtract () {
-    this.refs.input.stepDown();
+    const input = this.refs.input;
+    try {
+      input.stepDown();
+    } catch (e) {
+      // IE11 workaround. See known issue #5 at http://caniuse.com/#search=number
+      let value = parseInt(input.value, 10) - (this.props.step || 1);
+      if (this.props.min !== undefined) {
+        value = Math.max(value, this.props.min);
+      }
+      input.value = value;
+    }
     this._fireChange();
   }
 
   render () {
-    var classes = [CLASS_ROOT];
-    var labelId = 'number-label';
+    let classes = [CLASS_ROOT];
+    const labelId = 'number-label';
     if (this.props.disabled) {
       classes.push(CLASS_ROOT + "--disabled");
     }

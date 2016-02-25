@@ -364,7 +364,8 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
 
         &__graphic {
           width: $meter-size;
-          height: 100%;
+          // Removed to avoid layout issues on IE11. Why was it here to begin with?
+          // height: 100%;
         }
 
         &__value {
