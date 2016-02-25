@@ -7,10 +7,15 @@ import Tile from './Tile';
 import Button from './Button';
 import Previous from './icons/base/Previous';
 import Next from './icons/base/Next';
-
 import DOM from '../utils/DOM';
 
-const CLASS_ROOT = "carousel";
+// define window obj for react tests to run properly
+let Hammer = function() {};
+if (typeof window !== 'undefined') {
+  Hammer = require('hammerjs');
+}
+
+const CLASS_ROOT = 'carousel';
 
 export default class Carousel extends Component {
 
@@ -42,11 +47,18 @@ export default class Carousel extends Component {
 
     window.addEventListener('resize', this._onResize);
 
+    this.hammer = new Hammer(this.refs.carousel);
+    this._updateHammer();
+
     this._handleScroll();
     var scrollParents = DOM.findScrollParents(this.refs.carousel);
     scrollParents.forEach(function (scrollParent) {
       scrollParent.addEventListener('scroll', this._handleScroll);
     }.bind(this));
+  }
+
+  componentDidUpdate () {
+    this._updateHammer();
   }
 
   componentWillUnmount () {
@@ -58,6 +70,33 @@ export default class Carousel extends Component {
     scrollParents.forEach(function (scrollParent) {
       scrollParent.removeEventListener('scroll', this._handleScroll);
     }.bind(this));
+
+    this._unmountHammer();
+  }
+
+  _unmountHammer () {
+    if (this.hammer) {
+      this.hammer.stop();
+      this.hammer.destroy();
+    }
+    this.hammer = undefined;
+  }
+
+  _updateHammer () {
+    if (this.hammer) {
+      this.hammer.get('swipe').set({
+        direction: Hammer.DIRECTION_HORIZONTAL
+      });
+
+      this.hammer.off('panend');
+      this.hammer.on('panend', (event) => {
+        if (event.direction === 4) {
+          this._slidePrev();
+        } else if (event.direction === 2) {
+          this._slideNext();
+        }
+      });
+    }
   }
 
   _handleScroll () {
