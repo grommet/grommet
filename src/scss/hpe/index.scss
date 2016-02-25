@@ -14,7 +14,21 @@
     color: $text-color;
 
     &:hover {
-      color: $text-color;
+      color: $hover-text-color;
+    }
+
+    &.anchor--icon-label {
+      .control-icon {
+        fill: $text-color;
+        stroke: $text-color;
+      }
+
+      &:hover {
+        .control-icon {
+          fill: $hover-text-color;
+          stroke: $hover-text-color;
+        }
+      }
     }
   }
 }
