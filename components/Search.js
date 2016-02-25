@@ -212,10 +212,17 @@ var Search = function (_Component) {
   }, {
     key: '_fireDOMChange',
     value: function _fireDOMChange() {
-      var event = new Event('change', {
-        'bubbles': true,
-        'cancelable': true
-      });
+      var event = undefined;
+      try {
+        event = new Event('change', {
+          'bubbles': true,
+          'cancelable': true
+        });
+      } catch (e) {
+        // IE11 workaround.
+        event = document.createEvent('Event');
+        event.initEvent('change', true, true);
+      }
       var controlInput = document.getElementById('search-drop-input');
       var target = this.refs.input || controlInput;
       target.dispatchEvent(event);

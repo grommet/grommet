@@ -116,10 +116,17 @@ var SearchInput = function (_Component) {
   }, {
     key: '_fireDOMChange',
     value: function _fireDOMChange() {
-      var event = new Event('change', {
-        'bubbles': true,
-        'cancelable': true
-      });
+      var event = undefined;
+      try {
+        event = new Event('change', {
+          'bubbles': true,
+          'cancelable': true
+        });
+      } catch (e) {
+        // IE11 workaround.
+        event = document.createEvent('Event');
+        event.initEvent('change', true, true);
+      }
       // We use dispatchEvent to have the browser fill out the event fully.
       this.refs.input.dispatchEvent(event);
       // Manually dispatched events aren't delivered by React, so we notify too.
