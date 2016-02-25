@@ -40,10 +40,17 @@ var NumberInput = function (_Component) {
   _createClass(NumberInput, [{
     key: '_fireChange',
     value: function _fireChange() {
-      var event = new Event('change', {
-        'bubbles': true,
-        'cancelable': true
-      });
+      var event = undefined;
+      try {
+        event = new Event('change', {
+          'bubbles': true,
+          'cancelable': true
+        });
+      } catch (e) {
+        // IE11 workaround.
+        event = document.createEvent('Event');
+        event.initEvent('change', true, true);
+      }
       // We use dispatchEvent to have the browser fill out the event fully.
       this.refs.input.dispatchEvent(event);
       // Manually dispatched events aren't delivered by React, so we notify too.
@@ -52,13 +59,33 @@ var NumberInput = function (_Component) {
   }, {
     key: '_onAdd',
     value: function _onAdd() {
-      this.refs.input.stepUp();
+      var input = this.refs.input;
+      try {
+        input.stepUp();
+      } catch (e) {
+        // IE11 workaround. See known issue #5 at http://caniuse.com/#search=number
+        var value = parseInt(input.value, 10) + (this.props.step || 1);
+        if (this.props.max !== undefined) {
+          value = Math.min(value, this.props.max);
+        }
+        input.value = value;
+      }
       this._fireChange();
     }
   }, {
     key: '_onSubtract',
     value: function _onSubtract() {
-      this.refs.input.stepDown();
+      var input = this.refs.input;
+      try {
+        input.stepDown();
+      } catch (e) {
+        // IE11 workaround. See known issue #5 at http://caniuse.com/#search=number
+        var value = parseInt(input.value, 10) - (this.props.step || 1);
+        if (this.props.min !== undefined) {
+          value = Math.max(value, this.props.min);
+        }
+        input.value = value;
+      }
       this._fireChange();
     }
   }, {
