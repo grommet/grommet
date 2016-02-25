@@ -10,7 +10,7 @@ import Next from './icons/base/Next';
 import DOM from '../utils/DOM';
 
 // define window obj for react tests to run properly
-var Hammer = function() {};
+let Hammer = function() {};
 if (typeof window !== 'undefined') {
   Hammer = require('hammerjs');
 }
