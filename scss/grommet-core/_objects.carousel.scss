@@ -105,6 +105,15 @@
       @include animation('carousel-hide 1s');
     }
   }
+
+  // Disable image dragging in carousel
+  img {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+  }
 }
 
 .carousel-controls {

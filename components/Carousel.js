@@ -46,7 +46,13 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var CLASS_ROOT = "carousel";
+// define window obj for react tests to run properly
+var Hammer = function Hammer() {};
+if (typeof window !== 'undefined') {
+  Hammer = require('hammerjs');
+}
+
+var CLASS_ROOT = 'carousel';
 
 var Carousel = function (_Component) {
   _inherits(Carousel, _Component);
@@ -84,11 +90,19 @@ var Carousel = function (_Component) {
 
       window.addEventListener('resize', this._onResize);
 
+      this.hammer = new Hammer(this.refs.carousel);
+      this._updateHammer();
+
       this._handleScroll();
       var scrollParents = _DOM2.default.findScrollParents(this.refs.carousel);
       scrollParents.forEach(function (scrollParent) {
         scrollParent.addEventListener('scroll', this._handleScroll);
       }.bind(this));
+    }
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate() {
+      this._updateHammer();
     }
   }, {
     key: 'componentWillUnmount',
@@ -101,6 +115,37 @@ var Carousel = function (_Component) {
       scrollParents.forEach(function (scrollParent) {
         scrollParent.removeEventListener('scroll', this._handleScroll);
       }.bind(this));
+
+      this._unmountHammer();
+    }
+  }, {
+    key: '_unmountHammer',
+    value: function _unmountHammer() {
+      if (this.hammer) {
+        this.hammer.stop();
+        this.hammer.destroy();
+      }
+      this.hammer = undefined;
+    }
+  }, {
+    key: '_updateHammer',
+    value: function _updateHammer() {
+      var _this2 = this;
+
+      if (this.hammer) {
+        this.hammer.get('swipe').set({
+          direction: Hammer.DIRECTION_HORIZONTAL
+        });
+
+        this.hammer.off('panend');
+        this.hammer.on('panend', function (event) {
+          if (event.direction === 4) {
+            _this2._slidePrev();
+          } else if (event.direction === 2) {
+            _this2._slideNext();
+          }
+        });
+      }
     }
   }, {
     key: '_handleScroll',
