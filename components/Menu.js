@@ -16,21 +16,33 @@ var _reactDom = require('react-dom');
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _pick = require('lodash/object/pick');
+var _classnames3 = require('classnames');
 
-var _pick2 = _interopRequireDefault(_pick);
+var _classnames4 = _interopRequireDefault(_classnames3);
 
-var _keys = require('lodash/object/keys');
+var _isFunction = require('lodash/lang/isFunction');
 
-var _keys2 = _interopRequireDefault(_keys);
+var _isFunction2 = _interopRequireDefault(_isFunction);
 
 var _KeyboardAccelerators = require('../utils/KeyboardAccelerators');
 
 var _KeyboardAccelerators2 = _interopRequireDefault(_KeyboardAccelerators);
 
+var _DOM = require('../utils/DOM');
+
+var _DOM2 = _interopRequireDefault(_DOM);
+
 var _Drop = require('../utils/Drop');
 
 var _Drop2 = _interopRequireDefault(_Drop);
+
+var _Intl = require('../utils/Intl');
+
+var _Intl2 = _interopRequireDefault(_Intl);
+
+var _Props = require('../utils/Props');
+
+var _Props2 = _interopRequireDefault(_Props);
 
 var _Responsive = require('../utils/Responsive');
 
@@ -44,23 +56,17 @@ var _Button = require('./Button');
 
 var _Button2 = _interopRequireDefault(_Button);
 
-var _More = require('./icons/base/More');
-
-var _More2 = _interopRequireDefault(_More);
-
 var _Down = require('./icons/base/Down');
 
 var _Down2 = _interopRequireDefault(_Down);
 
-var _Intl = require('../utils/Intl');
+var _More = require('./icons/base/More');
 
-var _Intl2 = _interopRequireDefault(_Intl);
-
-var _DOM = require('../utils/DOM');
-
-var _DOM2 = _interopRequireDefault(_DOM);
+var _More2 = _interopRequireDefault(_More);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -225,44 +231,47 @@ var MenuDrop = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var classes = [CLASS_ROOT + '__drop'];
-      var other = (0, _pick2.default)(this.props, (0, _keys2.default)(_Box2.default.propTypes));
+      var _classnames;
 
-      delete other.onClick;
+      var _props = this.props;
+      var dropAlign = _props.dropAlign;
+      var colorIndex = _props.colorIndex;
+      var size = _props.size;
+      var control = _props.control;
+      var id = _props.id;
+      var onClick = _props.onClick;
 
-      // Put nestend Menus inline
+      var boxProps = _Props2.default.pick(this.props, _Box2.default);
+
+      delete boxProps.onClick;
+
+      // Put nested Menus inline
       var children = _react2.default.Children.map(this.props.children, function (child) {
         var result = child;
-        if (child.type.prototype._renderMenuDrop) {
+        if (child && (0, _isFunction2.default)(child.type) && child.type.prototype._renderMenuDrop) {
           result = _react2.default.cloneElement(child, { inline: 'explode', direction: 'column' });
         }
         return result;
       });
 
-      var contents = [_react2.default.cloneElement(this.props.control, { key: 'control', fill: true }), _react2.default.createElement(
+      var contents = [_react2.default.cloneElement(control, { key: 'control', fill: true }), _react2.default.createElement(
         _Box2.default,
-        _extends({ key: 'nav', ref: 'navContainer',
-          role: 'menu', tag: 'nav' }, other, { className: CLASS_ROOT + '__contents',
+        _extends({}, boxProps, { key: 'nav', ref: 'navContainer',
+          role: 'menu', tag: 'nav', className: CLASS_ROOT + '__contents',
           primary: false }),
         children
       )];
-      if (this.props.dropAlign.bottom) {
+
+      if (dropAlign.bottom) {
         contents.reverse();
       }
-      if (this.props.dropAlign.right) {
-        classes.push(CLASS_ROOT + '__drop--align-right');
-      }
-      if (this.props.colorIndex) {
-        classes.push('background-color-index-' + this.props.colorIndex);
-      }
-      if (this.props.size) {
-        classes.push(CLASS_ROOT + '__drop--' + this.props.size);
-      }
+
+      var classes = (0, _classnames4.default)(CLASS_ROOT + '__drop', (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '__drop--align-right', dropAlign.right), _defineProperty(_classnames, 'background-color-index-' + colorIndex, colorIndex), _defineProperty(_classnames, CLASS_ROOT + '__drop--' + size, size), _classnames));
 
       return _react2.default.createElement(
         'div',
-        { ref: 'menuDrop', id: this.props.id, className: classes.join(' '),
-          onClick: this.props.onClick },
+        { ref: 'menuDrop', id: id, className: classes,
+          onClick: onClick },
         contents
       );
     }
@@ -271,7 +280,7 @@ var MenuDrop = function (_Component) {
   return MenuDrop;
 }(_react.Component);
 
-MenuDrop.propTypes = _extends({
+MenuDrop.propTypes = _extends({}, _Box2.default.propTypes, {
   colorIndex: _react.PropTypes.string,
   control: _react.PropTypes.node,
   dropAlign: _Drop2.default.alignPropType,
@@ -279,7 +288,7 @@ MenuDrop.propTypes = _extends({
   onClick: _react.PropTypes.func.isRequired,
   router: _react.PropTypes.any,
   size: _react.PropTypes.oneOf(['small', 'medium', 'large'])
-}, _Box2.default.propTypes);
+});
 
 MenuDrop.childContextTypes = {
   intl: _react.PropTypes.any,
@@ -441,11 +450,9 @@ var Menu = function (_Component2) {
     }
   }, {
     key: '_renderControlContents',
-    value: function _renderControlContents(clickable) {
-      var icon = undefined;
-      var label = undefined;
-
-      var controlClassName = CLASS_ROOT + '__control';
+    value: function _renderControlContents() {
+      var icon = undefined,
+          label = undefined;
 
       // If this is a collapsed inline Menu, use any icon and/or label provided,
       // revert to default icon if neither.
@@ -455,7 +462,7 @@ var Menu = function (_Component2) {
       if (this.props.label) {
         label = [_react2.default.createElement(
           'span',
-          { key: 'label', className: controlClassName + "-label" },
+          { key: 'label', className: CLASS_ROOT + '__control-label' },
           this.props.label
         ), _react2.default.createElement(_Down2.default, { key: 'caret' })];
       }
@@ -467,8 +474,6 @@ var Menu = function (_Component2) {
   }, {
     key: '_renderMenuDrop',
     value: function _renderMenuDrop() {
-      var other = (0, _pick2.default)(this.props, (0, _keys2.default)(_Box2.default.propTypes));
-
       var closeLabel = _Intl2.default.getMessage(this.context.intl, 'Close');
       var menuLabel = _Intl2.default.getMessage(this.context.intl, 'Menu');
       var menuTitle = closeLabel + ' ' + (this.props.a11yTitle || this.props.label || '') + ' ' + menuLabel;
@@ -482,21 +487,15 @@ var Menu = function (_Component2) {
         this._renderControlContents()
       );
 
-      var onClick = undefined;
-      if (this.props.closeOnClick) {
-        onClick = this._onClose;
-      } else {
-        onClick = this._onSink;
-      }
+      var boxProps = _Props2.default.pick(this.props, _Box2.default);
+      var onClick = this.props.closeOnClick ? this._onClose : this._onSink;
+
       return _react2.default.createElement(
         MenuDrop,
-        _extends({ intl: this.context.intl,
-          history: this.context.history,
-          router: this.context.router,
+        _extends({}, boxProps, this.context, {
           dropAlign: this.props.dropAlign,
           colorIndex: this.props.dropColorIndex,
-          size: this.props.size
-        }, other, {
+          size: this.props.size,
           onClick: onClick,
           id: this.state.dropId,
           control: control }),
@@ -504,43 +503,16 @@ var Menu = function (_Component2) {
       );
     }
   }, {
-    key: '_classes',
-    value: function _classes(prefix) {
-      var classes = [prefix];
-
-      if (this.props.direction) {
-        classes.push(prefix + "--" + this.props.direction);
-      }
-      if (this.props.size) {
-        classes.push(prefix + "--" + this.props.size);
-      }
-      if (this.props.primary) {
-        classes.push(prefix + "--primary");
-      }
-
-      return classes;
-    }
-  }, {
     key: 'render',
     value: function render() {
-      var classes = this._classes(CLASS_ROOT);
-      if (this.state.inline) {
-        classes.push(CLASS_ROOT + '--inline');
-      } else {
-        classes.push(CLASS_ROOT + '--controlled');
-        if (this.props.label) {
-          classes.push(CLASS_ROOT + '--labelled');
-        }
-      }
-      if (this.props.className) {
-        classes.push(this.props.className);
-      }
+      var _classnames2;
+
+      var classes = (0, _classnames4.default)(CLASS_ROOT, this.props.className, (_classnames2 = {}, _defineProperty(_classnames2, CLASS_ROOT + '--' + this.props.direction, this.props.direction), _defineProperty(_classnames2, CLASS_ROOT + '--' + this.props.size, this.props.size), _defineProperty(_classnames2, CLASS_ROOT + '--primary', this.props.primary), _defineProperty(_classnames2, CLASS_ROOT + '--inline', this.state.inline), _defineProperty(_classnames2, CLASS_ROOT + '--explode', 'explode' === this.state.inline), _defineProperty(_classnames2, CLASS_ROOT + '--controlled', !this.state.inline), _defineProperty(_classnames2, CLASS_ROOT + '__control', !this.state.inline), _defineProperty(_classnames2, CLASS_ROOT + '--labelled', !this.state.inline && this.props.label), _classnames2));
 
       if (this.state.inline) {
-        var other = (0, _pick2.default)(this.props, (0, _keys2.default)(_Box2.default.propTypes));
+        var boxProps = _Props2.default.pick(this.props, _Box2.default);
         var label = undefined;
         if ('explode' === this.state.inline) {
-          classes.push(CLASS_ROOT + '--explode');
           label = _react2.default.createElement(
             'div',
             { className: CLASS_ROOT + '__label' },
@@ -550,14 +522,12 @@ var Menu = function (_Component2) {
 
         return _react2.default.createElement(
           _Box2.default,
-          _extends({ tag: 'nav', id: this.props.id }, other, {
-            className: classes.join(' '), primary: false }),
+          _extends({}, boxProps, { tag: 'nav', id: this.props.id,
+            className: classes, primary: false }),
           label,
           this.props.children
         );
       } else {
-        classes.push(CLASS_ROOT + '__control');
-
         var controlContents = this._renderControlContents();
         var openLabel = _Intl2.default.getMessage(this.context.intl, 'Open');
         var menuLabel = _Intl2.default.getMessage(this.context.intl, 'Menu');
@@ -569,7 +539,7 @@ var Menu = function (_Component2) {
           _react2.default.createElement(
             _Button2.default,
             { plain: true, id: this.props.id,
-              className: classes.join(' '),
+              className: classes,
               tabIndex: '0',
               style: { lineHeight: this.state.controlHeight + 'px' },
               onClick: this._onOpen,
@@ -596,7 +566,6 @@ Menu.propTypes = _extends({
   id: _react.PropTypes.string,
   inline: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.oneOf('expand')]),
   label: _react.PropTypes.string,
-  primary: _react.PropTypes.bool,
   size: _react.PropTypes.oneOf(['small', 'medium', 'large'])
 }, _Box2.default.propTypes);
 
