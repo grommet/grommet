@@ -162,10 +162,17 @@ export default class Search extends Component {
 
 
   _fireDOMChange () {
-    let event = new Event('change', {
-      'bubbles': true,
-      'cancelable': true
-    });
+    let event;
+    try {
+      event = new Event('change', {
+        'bubbles': true,
+        'cancelable': true
+      });
+    } catch (e) {
+      // IE11 workaround.
+      event = document.createEvent('Event');
+      event.initEvent('change', true, true);
+    }
     let controlInput = document.getElementById('search-drop-input');
     let target = this.refs.input || controlInput;
     target.dispatchEvent(event);
