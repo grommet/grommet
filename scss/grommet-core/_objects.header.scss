@@ -1,22 +1,9 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 .header {
   min-height: $header-height;
   width: 100%;
   margin-bottom: 0px;
-
-  &.box--direction-row {
-    > *:not(:last-child) {
-      margin-right: halve($inuit-base-spacing-unit);
-    }
-
-    > h1,
-    > h2,
-    > h3,
-    > h4 {
-      margin-bottom: 0px;
-    }
-  }
 
   a {
     color: inherit;
@@ -31,35 +18,29 @@
     flex-grow: 0;
     flex-shrink: 0;
   }
+}
 
-  &--large {
-    min-height: $large-header-height;
+.header--large {
+  min-height: $large-header-height;
+
+  .header__content {
+    line-height: $large-header-height;
   }
+}
 
-  &--small {
-    min-height: $small-header-height;
+.header--small {
+  min-height: $small-header-height;
+
+  .header__content {
+    line-height: $small-header-height;
   }
 }
 
 header.header {
   @include inuit-font-size($header-font-size, inherit);
-
-  *:not(.header__container--float) > &--float {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-  }
-
-  &--primary {
-    .header__wrapper {
-      border-bottom: none;
-    }
-  }
-
-  @include transform(translate(0, 0));
-  transition: -webkit-transform 0.5s;
-  transition: transform 0.5s;
+  // @include transform(translate(0, 0));
+  // transition: -webkit-transform 0.5s;
+  // transition: transform 0.5s;
 
   h1,
   h2,
@@ -69,118 +50,114 @@ header.header {
     margin-bottom: 0;
   }
 
-  &.header--splash {
-    @include transform(translate(0, 40vh));
-  }
+  // &.box--direction-row {
+  //   > * {
+  //     margin-bottom: 0px;
+  //   }
+  // }
+}
 
-  &.box--direction-row {
-    > * {
-      margin-bottom: 0px;
-    }
+.header--splash {
+  @include transform(translate(0, 40vh));
+}
+
+*:not(.header__container--float) > header.header--float {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+header.header--primary {
+  .header__wrapper {
+    border-bottom: none;
   }
 }
 
 .header:not(header) {
-  &.box--separator {
-    &-top {
-      padding-top: quarter($inuit-base-spacing-unit);
-    }
+  &.box--separator-top {
+    padding-top: quarter($inuit-base-spacing-unit);
+  }
 
-    &-bottom {
-      padding-bottom: quarter($inuit-base-spacing-unit);
-    }
+  &.box--separator-bottom {
+    padding-bottom: quarter($inuit-base-spacing-unit);
   }
 }
 
 // header with container and wrapper elements
-div.header {
+.header__container {
+  flex-shrink: 0;
+}
 
-  &__container {
-    flex-shrink: 0;
+.header__container--fixed {
+  position: relative;
 
-    &--fixed {
-      position: relative;
+  .header__wrapper {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 3;
 
-      .header__wrapper {
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        right: 0px;
-        z-index: 3;
+    .header {
+      @include media-query(lap-and-up) {
+        position: fixed;
 
-        .header {
-          @include media-query(lap-and-up) {
-            position: fixed;
-
-            &:not(.header--float) {
-              background-color: $header-background-color;
-            }
-          }
+        &:not(.header--float) {
+          background-color: $header-background-color;
         }
       }
     }
+  }
+}
 
-    &--float {
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      right: 0px;
-      padding-left: $inuit-base-spacing-unit;
-      padding-right: $inuit-base-spacing-unit;
-    }
+.header__container--float {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  padding-left: $inuit-base-spacing-unit;
+  padding-right: $inuit-base-spacing-unit;
+}
+
+.header__wrapper {
+  height: $header-height;
+}
+
+.header__wrapper--large {
+  height: $large-header-height;
+}
+
+.header__wrapper--small {
+  height: $small-header-height;
+}
+
+.header--fixed {
+  .header__wrapper {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: $header-background-color;
+    z-index: 3;
   }
 
-  &__wrapper {
-    height: $header-height;
-  }
-
-  &--large {
+  &.header--primary {
     .header__wrapper {
-      height: $large-header-height;
-    }
-
-    .header__content {
-      line-height: $large-header-height;
-    }
-  }
-
-  &--small {
-    .header__wrapper {
-      height: $small-header-height;
-    }
-
-    .header__content {
-      line-height: $small-header-height;
-    }
-  }
-
-  &--fixed {
-    .header__wrapper {
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      right: 0px;
+      position: fixed;
       background-color: $header-background-color;
-      z-index: 3;
     }
 
-    &.header--primary {
-      .header__wrapper {
-        position: fixed;
-        background-color: $header-background-color;
-      }
-
-      .header__content {
-        position: static;
-        background-color: transparent;
-      }
+    .header__content {
+      position: static;
+      background-color: transparent;
     }
   }
+}
 
-  &--flush {
-    .header__wrapper {
-      padding-left: 0px;
-      padding-right: 0px;
-    }
+.header--flush {
+  .header__wrapper {
+    padding-left: 0px;
+    padding-right: 0px;
   }
 }

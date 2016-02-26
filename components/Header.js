@@ -85,33 +85,35 @@ var Header = function (_Component) {
 
       // constrain fixed content to the width of the mirror
       var mirrorRect = mirrorElement.getBoundingClientRect();
-      contentElement.style.width = '' + Math.floor(mirrorRect.width) + 'px';
+      contentElement.style.width = Math.floor(mirrorRect.width) + 'px';
 
       // align the mirror height with the content's height
       var contentRect = contentElement.getBoundingClientRect();
-      mirrorElement.style.height = '' + Math.floor(contentRect.height) + 'px';
+      mirrorElement.style.height = Math.floor(contentRect.height) + 'px';
     }
   }, {
     key: 'render',
     value: function render() {
       var classes = [CLASS_ROOT];
-      var containerClasses = [CLASS_ROOT + "__container"];
+      var containerClasses = [CLASS_ROOT + '__container'];
+      var wrapperClasses = [CLASS_ROOT + '__wrapper'];
       var other = (0, _pick2.default)(this.props, (0, _keys2.default)(_Box2.default.propTypes));
       if (this.props.fixed) {
-        containerClasses.push(CLASS_ROOT + "__container--fixed");
+        containerClasses.push(CLASS_ROOT + '__container--fixed');
       }
       if (this.props.float) {
-        classes.push(CLASS_ROOT + "--float");
-        containerClasses.push(CLASS_ROOT + "__container--float");
+        classes.push(CLASS_ROOT + '--float');
+        containerClasses.push(CLASS_ROOT + '__container--float');
       }
       if (this.props.size) {
-        classes.push(CLASS_ROOT + "--" + this.props.size);
+        classes.push(CLASS_ROOT + '--' + this.props.size);
+        wrapperClasses.push(CLASS_ROOT + '__wrapper--' + this.props.size);
       }
       if (this.props.splash) {
-        classes.push(CLASS_ROOT + "--splash");
+        classes.push(CLASS_ROOT + '--splash');
       }
       if (this.props.strong) {
-        classes.push(CLASS_ROOT + "--strong");
+        classes.push(CLASS_ROOT + '--strong');
       }
       if (this.props.className) {
         classes.push(this.props.className);
@@ -121,13 +123,14 @@ var Header = function (_Component) {
         return _react2.default.createElement(
           'div',
           { className: containerClasses.join(' ') },
-          _react2.default.createElement('div', { ref: 'mirror', className: CLASS_ROOT + "__mirror" }),
+          _react2.default.createElement('div', { ref: 'mirror', className: CLASS_ROOT + '__mirror' }),
           _react2.default.createElement(
             'div',
-            { className: CLASS_ROOT + "__wrapper" },
+            { className: wrapperClasses.join(' ') },
             _react2.default.createElement(
               _Box2.default,
-              _extends({ ref: 'content', tag: this.props.header }, other, { className: classes.join(' ') }),
+              _extends({ ref: 'content', tag: this.props.header }, other, {
+                className: classes.join(' ') }),
               this.props.children
             )
           )
@@ -158,7 +161,7 @@ Header.propTypes = _extends({
 }, _Box2.default.propTypes);
 
 Header.defaultProps = {
-  pad: 'none',
+  pad: { horizontal: 'none', vertical: 'none', between: 'small' },
   direction: 'row',
   align: 'center',
   responsive: false,
