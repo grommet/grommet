@@ -55,8 +55,6 @@
 
   &:hover {
     .menu__control-label {
-      color: $link-hover-color;
-
       [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
         color: $active-colored-text-color;
       }
@@ -71,7 +69,10 @@
     polyline {
       stroke-width: 4px;
     }
+  }
 
+  // Removing icon transition style for labeled menus
+  &.menu--labelled .control-icon {
     @include media-query(lap-and-up) {
       transition: none;
     }
