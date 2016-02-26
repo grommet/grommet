@@ -222,7 +222,7 @@
   border-right: 1px solid $border-color;
 }
 
-[class*="background-color-index-"] .box[class*="box--separator"] {
+#{$dark-background-context} .box[class*="box--separator"] {
   border-color: $colored-border-color;
 }
 
