@@ -149,7 +149,7 @@ var Search = function (_Component) {
           top: this.state.inline ? 'bottom' : 'top',
           left: 'left'
         };
-        this._drop = _Drop2.default.add(baseElement, this._renderDrop(), dropAlign);
+        this._drop = _Drop2.default.add(baseElement, this._renderDrop(), { align: dropAlign });
 
         if (!this.state.inline) {
           document.getElementById('search-drop-input').focus();

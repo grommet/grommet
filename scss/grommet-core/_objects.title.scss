@@ -58,7 +58,7 @@
       cursor: pointer;
     }
 
-    [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+    #{$dark-background-context} & {
       &:hover {
         color: $active-colored-text-color;
       }

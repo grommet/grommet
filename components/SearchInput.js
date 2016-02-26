@@ -103,7 +103,7 @@ var SearchInput = function (_Component) {
         document.addEventListener('click', this._onRemoveDrop);
         _KeyboardAccelerators2.default.startListeningToKeyboard(this, activeKeyboardHandlers);
 
-        this._drop = _Drop2.default.add(_reactDom2.default.findDOMNode(this.refs.component), this._renderDrop(), { top: 'bottom', left: 'left' });
+        this._drop = _Drop2.default.add(_reactDom2.default.findDOMNode(this.refs.component), this._renderDrop(), { align: { top: 'bottom', left: 'left' } });
       } else if (this.state.dropActive && prevState.dropActive) {
         this._drop.render(this._renderDrop());
       }

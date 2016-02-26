@@ -238,7 +238,7 @@ var Calendar = function (_Component) {
         document.addEventListener('click', this._onClose);
         _KeyboardAccelerators2.default.startListeningToKeyboard(this, listeners);
 
-        this._drop = _Drop2.default.add(_reactDom2.default.findDOMNode(this.refs.component), this._renderDrop(), { top: 'bottom', left: 'left' });
+        this._drop = _Drop2.default.add(_reactDom2.default.findDOMNode(this.refs.component), this._renderDrop(), { align: { top: 'bottom', left: 'left' } });
       } else {
 
         document.removeEventListener('click', this._onClose);

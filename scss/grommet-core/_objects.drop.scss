@@ -3,9 +3,12 @@
 .grommet.drop {
   position: fixed;
   z-index: 20;
-  background-color: rgba($background-color, 0.9);
-  border: $drop-border;
   border-radius: $border-radius;
-  box-shadow: $drop-box-shadow;
   overflow: auto;
+
+  &:not([class*="background-color-index-"]) {
+    background-color: $drop-background;
+    border: $drop-border;
+    box-shadow: $drop-box-shadow;
+  }
 }

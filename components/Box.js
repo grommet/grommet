@@ -96,7 +96,6 @@ var Box = function (_Component) {
 
       var classes = [CLASS_ROOT];
       var containerClasses = [CLASS_ROOT + "__container"];
-      this._addPropertyClass(classes, CLASS_ROOT, 'flush');
       this._addPropertyClass(classes, CLASS_ROOT, 'full');
       this._addPropertyClass(classes, CLASS_ROOT, 'direction');
       this._addPropertyClass(classes, CLASS_ROOT, 'justify');

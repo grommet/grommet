@@ -235,7 +235,6 @@ var MenuDrop = function (_Component) {
 
       var _props = this.props;
       var dropAlign = _props.dropAlign;
-      var colorIndex = _props.colorIndex;
       var size = _props.size;
       var control = _props.control;
       var id = _props.id;
@@ -266,7 +265,7 @@ var MenuDrop = function (_Component) {
         contents.reverse();
       }
 
-      var classes = (0, _classnames4.default)(CLASS_ROOT + '__drop', (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '__drop--align-right', dropAlign.right), _defineProperty(_classnames, 'background-color-index-' + colorIndex, colorIndex), _defineProperty(_classnames, CLASS_ROOT + '__drop--' + size, size), _classnames));
+      var classes = (0, _classnames4.default)(CLASS_ROOT + '__drop', (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '__drop--align-right', dropAlign.right), _defineProperty(_classnames, CLASS_ROOT + '__drop--' + size, size), _classnames));
 
       return _react2.default.createElement(
         'div',
@@ -281,7 +280,6 @@ var MenuDrop = function (_Component) {
 }(_react.Component);
 
 MenuDrop.propTypes = _extends({}, _Box2.default.propTypes, {
-  colorIndex: _react.PropTypes.string,
   control: _react.PropTypes.node,
   dropAlign: _Drop2.default.alignPropType,
   id: _react.PropTypes.string.isRequired,
@@ -380,7 +378,10 @@ var Menu = function (_Component2) {
             _KeyboardAccelerators2.default.stopListeningToKeyboard(this, focusedKeyboardHandlers);
             _KeyboardAccelerators2.default.startListeningToKeyboard(this, activeKeyboardHandlers);
             document.addEventListener('click', this._onClose);
-            this._drop = _Drop2.default.add(this.refs.control, this._renderMenuDrop(), this.props.dropAlign);
+            this._drop = _Drop2.default.add(this.refs.control, this._renderMenuDrop(), {
+              align: this.props.dropAlign,
+              colorIndex: this.props.dropColorIndex
+            });
             this._drop.render(this._renderMenuDrop());
             break;
         }
@@ -494,7 +495,6 @@ var Menu = function (_Component2) {
         MenuDrop,
         _extends({}, boxProps, this.context, {
           dropAlign: this.props.dropAlign,
-          colorIndex: this.props.dropColorIndex,
           size: this.props.size,
           onClick: onClick,
           id: this.state.dropId,

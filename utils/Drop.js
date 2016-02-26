@@ -1,5 +1,7 @@
 'use strict';
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -19,8 +21,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * their initiating controls.
  */
 
-var VERTICAL_ALIGN_OPTIONS = ['top', 'bottom']; // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
-
+var VERTICAL_ALIGN_OPTIONS = ['top', 'bottom'];
 var HORIZONTAL_ALIGN_OPTIONS = ['right', 'left'];
 
 exports.default = {
@@ -37,50 +38,62 @@ exports.default = {
   //
   // control - DOM element to anchor the overlay on
   // content - React node to render
-  // align -
-  // {
-  //    top: top|bottom
-  //    bottom: top|bottom
-  //    left: left|right
-  //    right: left|right
+  // options - {
+  //   align: {
+  //     top: top|bottom
+  //     bottom: top|bottom
+  //     left: left|right
+  //     right: left|right
+  //   },
+  //   className: <string>
+  //   colorIndex: <string>
   // }
 
-  add: function add(control, content, align) {
+  add: function add(control, content, options) {
+    // normalize for older interface that just had align content
+    if (options.top || options.bottom || options.left || options.right) {
+      options = { align: options };
+    }
     // validate align
-    if (align && align.top && VERTICAL_ALIGN_OPTIONS.indexOf(align.top) === -1) {
-      console.warn("Warning: Invalid align.top value '" + align.top + "' supplied to Drop," + "expected one of [" + VERTICAL_ALIGN_OPTIONS.join(',') + "]");
+    if (options && options.align && options.align.top && VERTICAL_ALIGN_OPTIONS.indexOf(options.align.top) === -1) {
+      console.warn("Warning: Invalid align.top value '" + options.align.top + "' supplied to Drop," + "expected one of [" + VERTICAL_ALIGN_OPTIONS.join(',') + "]");
     }
-    if (align && align.bottom && VERTICAL_ALIGN_OPTIONS.indexOf(align.bottom) === -1) {
-      console.warn("Warning: Invalid align.bottom value '" + align.bottom + "' supplied to Drop," + "expected one of [" + VERTICAL_ALIGN_OPTIONS.join(',') + "]");
+    if (options.align && options.align.bottom && VERTICAL_ALIGN_OPTIONS.indexOf(options.align.bottom) === -1) {
+      console.warn("Warning: Invalid align.bottom value '" + options.align.bottom + "' supplied to Drop," + "expected one of [" + VERTICAL_ALIGN_OPTIONS.join(',') + "]");
     }
-    if (align && align.left && HORIZONTAL_ALIGN_OPTIONS.indexOf(align.left) === -1) {
-      console.warn("Warning: Invalid align.left value '" + align.left + "' supplied to Drop," + "expected one of [" + HORIZONTAL_ALIGN_OPTIONS.join(',') + "]");
+    if (options.align && options.align.left && HORIZONTAL_ALIGN_OPTIONS.indexOf(options.align.left) === -1) {
+      console.warn("Warning: Invalid align.left value '" + options.align.left + "' supplied to Drop," + "expected one of [" + HORIZONTAL_ALIGN_OPTIONS.join(',') + "]");
     }
-    if (align && align.right && HORIZONTAL_ALIGN_OPTIONS.indexOf(align.right) === -1) {
-      console.warn("Warning: Invalid align.right value '" + align.right + "' supplied to Drop," + "expected one of [" + HORIZONTAL_ALIGN_OPTIONS.join(',') + "]");
+    if (options.align && options.align.right && HORIZONTAL_ALIGN_OPTIONS.indexOf(options.align.right) === -1) {
+      console.warn("Warning: Invalid align.right value '" + options.align.right + "' supplied to Drop," + "expected one of [" + HORIZONTAL_ALIGN_OPTIONS.join(',') + "]");
     }
-    align = align || {};
+    var align = options.align || {};
 
     // initialize data
     var drop = {
       control: control,
-      align: {
-        top: align.top,
-        bottom: align.bottom,
-        left: align.left,
-        right: align.right
-      }
+      options: _extends({}, options, {
+        align: {
+          top: align.top,
+          bottom: align.bottom,
+          left: align.left,
+          right: align.right
+        }
+      })
     };
-    if (!drop.align.top && !drop.align.bottom) {
-      drop.align.top = "top";
+    if (!drop.options.align.top && !drop.options.align.bottom) {
+      drop.options.align.top = "top";
     }
-    if (!drop.align.left && !drop.align.right) {
-      drop.align.left = "left";
+    if (!drop.options.align.left && !drop.options.align.right) {
+      drop.options.align.left = "left";
     }
 
     // setup DOM
     drop.container = document.createElement('div');
-    drop.container.className = 'grommet drop';
+    drop.container.className = 'grommet drop ' + drop.options.className;
+    if (drop.options.colorIndex) {
+      drop.container.className += ' background-color-index-' + drop.options.colorIndex;
+    }
     // prepend in body to avoid browser scroll issues
     document.body.insertBefore(drop.container, document.body.firstChild);
     (0, _reactDom.render)(content, drop.container);
@@ -117,7 +130,7 @@ exports.default = {
   _place: function _place(drop) {
     var control = drop.control;
     var container = drop.container;
-    var align = drop.align;
+    var align = drop.options.align;
     var controlRect = control.getBoundingClientRect();
     var containerRect = container.getBoundingClientRect();
     var windowWidth = window.innerWidth;

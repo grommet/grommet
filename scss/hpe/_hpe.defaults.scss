@@ -25,6 +25,16 @@ $brand-graph-colors: (
   lighten(#614767, 15%)
 );
 
+// accent-2 is dark, so turn off only 1 and 3
+$dark-background-context:
+  '[class*="background-color-index-"]' +
+  ':not([class*="background-color-index-accent-1"])' +
+  ':not([class*="background-color-index-accent-3"])' +
+  ':not([class*="background-color-index-light"])' +
+  ':not([class*="background-color-index-warning"])' +
+  ':not([class*="background-color-index-disabled"])' +
+  ':not([class*="background-color-index-unknown"])';
+
 $hpe-fonts-path: "https://hpefonts.s3.amazonaws.com/web" !default;
 
 @font-face {
