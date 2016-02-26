@@ -166,7 +166,7 @@ class MenuDrop extends Component {
   }
 
   render () {
-    let { dropAlign, colorIndex, size, control, id, onClick } = this.props;
+    let { dropAlign, size, control, id, onClick } = this.props;
     let boxProps = Props.pick(this.props, Box);
 
     delete boxProps.onClick;
@@ -197,7 +197,6 @@ class MenuDrop extends Component {
       `${CLASS_ROOT}__drop`,
       {
         [`${CLASS_ROOT}__drop--align-right`]: dropAlign.right,
-        [`background-color-index-${colorIndex}`]: colorIndex,
         [`${CLASS_ROOT}__drop--${size}`]: size
       }
     );
@@ -213,7 +212,6 @@ class MenuDrop extends Component {
 
 MenuDrop.propTypes = {
   ...Box.propTypes,
-  colorIndex: PropTypes.string,
   control: PropTypes.node,
   dropAlign: Drop.alignPropType,
   id: PropTypes.string.isRequired,
@@ -318,7 +316,11 @@ export default class Menu extends Component {
           );
           document.addEventListener('click', this._onClose);
           this._drop = Drop.add(this.refs.control,
-            this._renderMenuDrop(), this.props.dropAlign);
+            this._renderMenuDrop(),
+            {
+              align: this.props.dropAlign,
+              colorIndex: this.props.dropColorIndex
+            });
           this._drop.render(this._renderMenuDrop());
           break;
       }
@@ -424,7 +426,6 @@ export default class Menu extends Component {
     return (
       <MenuDrop {...boxProps} {...this.context}
         dropAlign={this.props.dropAlign}
-        colorIndex={this.props.dropColorIndex}
         size={this.props.size}
         onClick={onClick}
         id={this.state.dropId}

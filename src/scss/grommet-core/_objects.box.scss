@@ -1,4 +1,4 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 .box {
   display: flex;
@@ -6,256 +6,7 @@
   background-size: cover;
   background-repeat: no-repeat;
 
-  // img {
-  //   max-width: $readable-text-width;
-  // }
-
-  &__texture {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    overflow: hidden;
-  }
-
-  &__container {
-    padding-left: $inuit-base-spacing-unit;
-    padding-right: $inuit-base-spacing-unit;
-
-    &--full {
-      max-width: 100%;
-      width: 100vw;
-    }
-
-    &--full-horizontal {
-      max-width: 100%;
-      width: 100vw;
-    }
-
-    .app--centered & > .box {
-      width: 100%;
-      max-width: $center-column-width;
-      margin-left: auto;
-      margin-right: auto;
-
-      @include media-query(palm) {
-        padding-left: 0px;
-        padding-right: 0px;
-      }
-    }
-  }
-
-  &--wrap {
-    flex-wrap: wrap;
-  }
-
   @include pad();
-
-  &--full {
-    position: relative;
-    max-width: 100%;
-    width: 100vw;
-    min-height: 100vh;
-    // min-height doesn't work for IE and vertical centering
-    // https://connect.microsoft.com/IE/feedback/details/816293/ie11-flexbox-with-min-height-not-vertically-aligning-with-align-items-center
-    height: 100%;
-  }
-
-  &--full-horizontal {
-    max-width: 100%;
-    width: 100vw;
-  }
-
-  &--full-vertical {
-    min-height: 100vh;
-  }
-
-  &--direction-row {
-    flex-direction: row;
-
-    &.box--reverse {
-      flex-direction: row-reverse;
-    }
-
-    &.box--pad-between {
-      &-small {
-        > *:not(:last-child) {
-          margin-right: halve($inuit-base-spacing-unit);
-
-          html.rtl & {
-            margin-right: 0;
-            margin-left: halve($inuit-base-spacing-unit);
-          }
-        }
-      }
-
-      &-medium {
-        > *:not(:last-child) {
-          margin-right: $inuit-base-spacing-unit;
-
-          html.rtl & {
-            margin-right: 0;
-            margin-left: $inuit-base-spacing-unit;
-          }
-        }
-      }
-
-      &-large {
-        > *:not(:last-child) {
-          margin-right: double($inuit-base-spacing-unit);
-
-          html.rtl & {
-            margin-right: 0;
-            margin-left: double($inuit-base-spacing-unit);
-          }
-        }
-      }
-    }
-
-    @include media-query(palm) {
-      &.box--responsive {
-        flex-direction: column;
-
-        &:not(.box--justify-center) {
-          align-items: stretch;
-        }
-
-        &.box--reverse {
-          flex-direction: column-reverse;
-        }
-      }
-    }
-  }
-
-  &--direction-column {
-    flex-direction: column;
-
-    // > *:not(p) {
-    //   max-width: 100%;
-    // }
-
-    &.box--reverse {
-      flex-direction: column-reverse;
-    }
-
-    > .header.box--direction-row,
-    > .footer.box--direction-row,
-    > .header__container--fixed {
-      flex: 0 0 auto;
-    }
-
-    &.box--pad-between {
-      &-small {
-        > *:not(:last-child) {
-          margin-bottom: halve($inuit-base-spacing-unit);
-        }
-      }
-
-      &-medium {
-        > *:not(:last-child) {
-          margin-bottom: $inuit-base-spacing-unit;
-        }
-      }
-
-      &-large {
-        > *:not(:last-child) {
-          margin-bottom: double($inuit-base-spacing-unit);
-        }
-      }
-    }
-  }
-
-  &--justify-start {
-    justify-content: flex-start;
-  }
-
-  &--justify-center {
-    justify-content: center;
-  }
-
-  &--justify-between {
-    justify-content: space-between;
-  }
-
-  &--justify-end {
-    justify-content: flex-end;
-  }
-
-  &--align-start {
-    align-items: flex-start;
-  }
-
-  &--align-center {
-    align-items: center;
-  }
-
-  &--align-end {
-    align-items: flex-end;
-  }
-
-  &--separator {
-    &-top,
-    &-horizontal,
-    &-all {
-      border-top: 1px solid $border-color;
-    }
-
-    &-bottom,
-    &-horizontal,
-    &-all {
-      border-bottom: 1px solid $border-color;
-    }
-
-    &-left,
-    &-vertical,
-    &-all {
-      border-left: 1px solid $border-color;
-    }
-
-    &-right,
-    &-vertical,
-    &-all {
-      border-right: 1px solid $border-color;
-    }
-
-    // @include media-query(palm) {
-    //   &-left,
-    //   &-vertical,
-    //   &-all {
-    //     // border-left: none;
-    //     // border-bottom: 1px solid $border-color;
-    //     //padding-top: $inuit-base-spacing-unit;
-    //   }
-    //
-    //   &-right,
-    //   &-vertical,
-    //   &-all {
-    //     // border-right: none;
-    //     // border-bottom: 1px solid $border-color;
-    //     //padding-top: $inuit-base-spacing-unit;
-    //   }
-    // }
-  }
-
-  [class*="background-color-index-"] &[class*="box--separator"] {
-    border-color: $colored-border-color;
-  }
-
-  &--text-align {
-    &-left {
-      text-align: left;
-    }
-
-    &-center {
-      text-align: center;
-    }
-
-    &-right {
-      text-align: right;
-    }
-  }
 
   // temporary flex grow capability
   > .flex-grow-1, // deprecated, remove in 0.4
@@ -266,23 +17,229 @@
   > .no-flex {
     flex: 0 0 auto;
   }
+}
 
-  // deprecated options
+.box__texture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
 
-  &--direction-down,
-  &--direction-up {
-    flex-direction: column;
+.box__container {
+  padding-left: $inuit-base-spacing-unit;
+  padding-right: $inuit-base-spacing-unit;
+
+  .app--centered & > .box {
+    width: 100%;
+    max-width: $center-column-width;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include media-query(palm) {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+  }
+}
+
+.box__container--full {
+  max-width: 100%;
+  width: 100vw;
+}
+
+.box__container--full-horizontal {
+  max-width: 100%;
+  width: 100vw;
+}
+
+.box--wrap {
+  flex-wrap: wrap;
+}
+
+.box--full {
+  position: relative;
+  max-width: 100%;
+  width: 100vw;
+  min-height: 100vh;
+  // min-height doesn't work for IE and vertical centering
+  // https://connect.microsoft.com/IE/feedback/details/816293/ie11-flexbox-with-min-height-not-vertically-aligning-with-align-items-center
+  height: 100%;
+}
+
+.box--full-horizontal {
+  max-width: 100%;
+  width: 100vw;
+}
+
+.box--full-vertical {
+  min-height: 100vh;
+}
+
+.box--direction-row {
+  flex-direction: row;
+
+  &.box--reverse {
+    flex-direction: row-reverse;
   }
 
-  &--direction-left {
-    justify-content: flex-end;
+  &.box--pad-between {
+    &-small {
+      > *:not(:last-child) {
+        margin-right: halve($inuit-base-spacing-unit);
+
+        html.rtl & {
+          margin-right: 0;
+          margin-left: halve($inuit-base-spacing-unit);
+        }
+      }
+    }
+
+    &-medium {
+      > *:not(:last-child) {
+        margin-right: $inuit-base-spacing-unit;
+
+        html.rtl & {
+          margin-right: 0;
+          margin-left: $inuit-base-spacing-unit;
+        }
+      }
+    }
+
+    &-large {
+      > *:not(:last-child) {
+        margin-right: double($inuit-base-spacing-unit);
+
+        html.rtl & {
+          margin-right: 0;
+          margin-left: double($inuit-base-spacing-unit);
+        }
+      }
+    }
   }
 
-  &--flush {
-    padding: 0px;
+  @include media-query(palm) {
+    &.box--responsive {
+      flex-direction: column;
+
+      &:not(.box--justify-center) {
+        align-items: stretch;
+      }
+
+      &.box--reverse {
+        flex-direction: column-reverse;
+      }
+    }
+  }
+}
+
+.box--direction-column {
+  flex-direction: column;
+
+  &.box--reverse {
+    flex-direction: column-reverse;
   }
 
-  &--clickable {
-    cursor: pointer;
+  > .header.box--direction-row,
+  > .footer.box--direction-row,
+  > .header__container--fixed {
+    flex: 0 0 auto;
   }
+
+  &.box--pad-between {
+    &-small {
+      > *:not(:last-child) {
+        margin-bottom: halve($inuit-base-spacing-unit);
+      }
+    }
+
+    &-medium {
+      > *:not(:last-child) {
+        margin-bottom: $inuit-base-spacing-unit;
+      }
+    }
+
+    &-large {
+      > *:not(:last-child) {
+        margin-bottom: double($inuit-base-spacing-unit);
+      }
+    }
+  }
+}
+
+.box--justify-start {
+  justify-content: flex-start;
+}
+
+.box--justify-center {
+  justify-content: center;
+}
+
+.box--justify-between {
+  justify-content: space-between;
+}
+
+.box--justify-end {
+  justify-content: flex-end;
+}
+
+.box--align-start {
+  align-items: flex-start;
+}
+
+.box--align-center {
+  align-items: center;
+}
+
+.box--align-end {
+  align-items: flex-end;
+}
+
+.box--separator-top,
+.box--separator-horizontal,
+.box--separator-all {
+  border-top: 1px solid $border-color;
+}
+
+.box--separator-bottom,
+.box--separator-horizontal,
+.box--separator-all {
+  border-bottom: 1px solid $border-color;
+}
+
+.box--separator-left,
+.box--separator-vertical,
+.box--separator-all {
+  border-left: 1px solid $border-color;
+}
+
+.box--separator-right,
+.box--separator-vertical,
+.box--separator-all {
+  border-right: 1px solid $border-color;
+}
+
+[class*="background-color-index-"] .box[class*="box--separator"] {
+  border-color: $colored-border-color;
+}
+
+.box--text-align {
+  &-left {
+    text-align: left;
+  }
+
+  &-center {
+    text-align: center;
+  }
+
+  &-right {
+    text-align: right;
+  }
+}
+
+.box--clickable {
+  cursor: pointer;
 }

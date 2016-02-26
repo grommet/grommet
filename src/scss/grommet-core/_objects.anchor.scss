@@ -1,13 +1,18 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-.grommet a,
+.grommet a:not(.anchor),
 .anchor {
   color: $link-color;
   text-decoration: $brand-link-text-decoration;
   cursor: pointer;
 
-  &.plain {
+  &.plain
+  &.button {
     text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
   }
 
   &:visited {
@@ -24,146 +29,114 @@
     color: $link-hover-color;
     text-decoration: underline;
   }
+}
 
-  &.anchor--disabled:hover {
-    color: $link-color;
-  }
+.anchor--disabled:hover {
+  color: $link-color;
+}
 
-  &.plain:hover,
-  &.button:hover {
-    text-decoration: none;
-  }
+.anchor__icon {
+  display: inline-block;
+  padding: halve($inuit-base-spacing-unit);
+}
 
-  .anchor__icon {
-    display: inline-block;
-    padding: halve($inuit-base-spacing-unit);
-  }
+&.anchor--primary,
+&.anchor--icon-label {
+  @include inuit-font-size($control-font-size, $inuit-base-spacing-unit);
+  font-weight: 600;
+  text-decoration: none;
 
-  &.anchor {
+  .control-icon {
+    margin-right: halve($inuit-base-spacing-unit);
 
-    &.anchor--primary,
-    &.anchor--icon-label {
-      @include inuit-font-size($control-font-size, $inuit-base-spacing-unit);
-      font-weight: 600;
-      text-decoration: none;
-
-      .control-icon {
-        margin-right: halve($inuit-base-spacing-unit);
-
-        html.rtl & {
-          margin-right: 0;
-          margin-left: halve($inuit-base-spacing-unit);
-        }
-      }
-
-      &.anchor--reverse {
-        .control-icon {
-          margin-right: 0;
-          margin-left: halve($inuit-base-spacing-unit);
-        }
-      }
-
-      > span {
-        vertical-align: middle;
-      }
-
-      // [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
-      //   color: $colored-text-color;
-      //
-      //   .control-icon {
-      //     fill: $colored-text-color;
-      //     stroke: $colored-text-color;
-      //   }
-      //
-      //   &:hover {
-      //     color: $active-colored-text-color;
-      //
-      //     .control-icon {
-      //       fill: $active-colored-text-color;
-      //       stroke: $active-colored-text-color;
-      //     }
-      //   }
-      //
-      //   &.anchor--disabled {
-      //     color: $colored-text-color;
-      //
-      //     .control-icon {
-      //       fill: $colored-text-color;
-      //       stroke: $colored-text-color;
-      //     }
-      //   }
-      // }
+    html.rtl & {
+      margin-right: 0;
+      margin-left: halve($inuit-base-spacing-unit);
     }
+  }
 
-    &.anchor--primary {
-      color: $control-brand-color;
+  > span {
+    vertical-align: middle;
+  }
+}
 
-      .control-icon {
-        stroke: $control-brand-color;
-      }
+.anchor--reverse {
+  .control-icon {
+    margin-right: 0;
+    margin-left: halve($inuit-base-spacing-unit);
+  }
+}
 
-      &:hover {
-        .control-icon {
-          stroke: $control-brand-color;
-          transform: translateX(round($inuit-base-spacing-unit * 0.125));
+.anchor--primary {
+  color: $control-brand-color;
 
-          path,
-          polyline {
-            stroke-width: 3px;
-          }
-        }
-      }
+  .control-icon {
+    stroke: $control-brand-color;
+  }
 
-      &.anchor--disabled {
-        .control-icon {
-          transform: none;
-        }
+  &:hover {
+    .control-icon {
+      stroke: $control-brand-color;
+      transform: translateX(round($inuit-base-spacing-unit * 0.125));
+
+      path,
+      polyline {
+        stroke-width: 3px;
       }
     }
   }
 
   &.anchor--disabled {
-    opacity: 0.3;
-    cursor: default;
-
     .control-icon {
-      cursor: default;
+      transform: none;
     }
-  }
-
-  &.anchor--icon {
-    display: inline-block;
   }
 }
 
-.grommet {
-  [class*="background-color-index-"]:not([class*="background-color-index-light"]) {
-    a,
-    .anchor {
-      color: $colored-text-color;
+.anchor--disabled {
+  opacity: 0.3;
+  cursor: default;
 
-      .control-icon {
-        fill: $colored-icon-color;
-        stroke: $colored-icon-color;
-      }
+  .control-icon {
+    cursor: default;
+  }
+}
 
-      &:hover {
-        color: $active-colored-text-color;
+.anchor--icon {
+  display: inline-block;
+}
 
-       .control-icon {
-          fill: $active-colored-icon-color;
-          stroke: $active-colored-icon-color;
-        }
-      }
+.grommet #{$dark-background-context} a {
+  color: $colored-text-color;
 
-      &.anchor--disabled:hover {
-        color: $colored-text-color;
+  &:hover {
+    color: $active-colored-text-color;
+  }
+}
 
-        .control-icon {
-          fill: $colored-icon-color;
-          stroke: $colored-icon-color;
-        }
-      }
+#{$dark-background-context} .anchor {
+  color: $colored-text-color;
+
+  .control-icon {
+    fill: $colored-icon-color;
+    stroke: $colored-icon-color;
+  }
+
+  &:hover {
+    color: $active-colored-text-color;
+
+   .control-icon {
+      fill: $active-colored-icon-color;
+      stroke: $active-colored-icon-color;
+    }
+  }
+
+  &.anchor--disabled:hover {
+    color: $colored-text-color;
+
+    .control-icon {
+      fill: $colored-icon-color;
+      stroke: $colored-icon-color;
     }
   }
 }

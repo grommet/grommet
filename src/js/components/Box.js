@@ -50,7 +50,6 @@ export default class Box extends Component {
   render () {
     let classes = [CLASS_ROOT];
     let containerClasses = [CLASS_ROOT + "__container"];
-    this._addPropertyClass(classes, CLASS_ROOT, 'flush');
     this._addPropertyClass(classes, CLASS_ROOT, 'full');
     this._addPropertyClass(classes, CLASS_ROOT, 'direction');
     this._addPropertyClass(classes, CLASS_ROOT, 'justify');

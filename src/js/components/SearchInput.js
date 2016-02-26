@@ -68,7 +68,7 @@ export default class SearchInput extends Component {
       KeyboardAccelerators.startListeningToKeyboard(this, activeKeyboardHandlers);
 
       this._drop = Drop.add(ReactDOM.findDOMNode(this.refs.component),
-        this._renderDrop(), {top: 'bottom', left: 'left'});
+        this._renderDrop(), { align: {top: 'bottom', left: 'left'} });
     } else if (this.state.dropActive && prevState.dropActive) {
       this._drop.render(this._renderDrop());
     }

@@ -25,7 +25,7 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
     display: block;
   }
 
-  [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+  #{$dark-background-context} & {
     background-color: transparent;
     color: $colored-text-color;
   }
@@ -44,7 +44,7 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
   @include inuit-font-size($label-font-size, $inuit-base-spacing-unit);
   color: $secondary-text-color;
 
-  [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+  #{$dark-background-context} & {
     color: $colored-text-color;
   }
 }
@@ -76,7 +76,7 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
       padding: 0 $form-horizontal-padding;
     }
 
-    [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+    #{$dark-background-context} & {
       color: $active-colored-text-color;
     }
   }
@@ -114,7 +114,7 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
       background-position: center left #{$form-horizontal-padding - quarter($inuit-base-spacing-unit)};
     }
 
-    [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+    #{$dark-background-context} & {
       background-image: $colored-select-drop-caret;
     }
   }
@@ -247,7 +247,7 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
   @include inuit-font-size($label-font-size - 1);
   color: $secondary-text-color;
 
-  [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+  #{$dark-background-context} & {
     color: $colored-text-color;
   }
 }
@@ -262,7 +262,7 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
     float: left;
   }
 
-  [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+  #{$dark-background-context} & {
     // Red on anything dark looks terrible. Just use white.
     color: $colored-text-color;
   }

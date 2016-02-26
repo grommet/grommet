@@ -60,16 +60,16 @@
     }
   }
 
-  [class*="background-color-index-"]:not([class*="background-color-index-light"]) &:not([class*="color-index"]),
+  #{$dark-background-context} &:not([class*="color-index"]),
   .button--primary & {
     fill: $colored-icon-color;
     stroke: $colored-icon-color;
   }
 
-  [class*="background-color-index-"]:not([class*="background-color-index-light"]) a:hover > &,
-  [class*="background-color-index-"]:not([class*="background-color-index-light"]) .anchor:hover > &,
-  [class*="background-color-index-"]:not([class*="background-color-index-light"]) .button:hover > &,
-  [class*="background-color-index-"]:not([class*="background-color-index-light"]) .menu__control:hover > &,
+  #{$dark-background-context} a:hover > &,
+  #{$dark-background-context} .anchor:hover > &,
+  #{$dark-background-context} .button:hover > &,
+  #{$dark-background-context} .menu__control:hover > &,
   .button--primary:hover & {
     fill: $active-colored-icon-color;
     stroke: $active-colored-icon-color;

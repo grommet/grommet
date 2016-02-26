@@ -26,62 +26,76 @@ export default {
   //
   // control - DOM element to anchor the overlay on
   // content - React node to render
-  // align -
-  // {
-  //    top: top|bottom
-  //    bottom: top|bottom
-  //    left: left|right
-  //    right: left|right
+  // options - {
+  //   align: {
+  //     top: top|bottom
+  //     bottom: top|bottom
+  //     left: left|right
+  //     right: left|right
+  //   },
+  //   className: <string>
+  //   colorIndex: <string>
   // }
 
-  add (control, content, align) {
+  add (control, content, options) {
+    // normalize for older interface that just had align content
+    if (options.top || options.bottom || options.left || options.right) {
+      options = { align: options };
+    }
     // validate align
-    if (align && align.top &&
-      VERTICAL_ALIGN_OPTIONS.indexOf(align.top) === -1) {
-      console.warn("Warning: Invalid align.top value '" + align.top +
+    if (options && options.align && options.align.top &&
+      VERTICAL_ALIGN_OPTIONS.indexOf(options.align.top) === -1) {
+      console.warn("Warning: Invalid align.top value '" + options.align.top +
         "' supplied to Drop," +
         "expected one of [" + VERTICAL_ALIGN_OPTIONS.join(',') + "]");
     }
-    if (align && align.bottom &&
-      VERTICAL_ALIGN_OPTIONS.indexOf(align.bottom) === -1) {
-      console.warn("Warning: Invalid align.bottom value '" + align.bottom +
+    if (options.align && options.align.bottom &&
+      VERTICAL_ALIGN_OPTIONS.indexOf(options.align.bottom) === -1) {
+      console.warn("Warning: Invalid align.bottom value '" + options.align.bottom +
         "' supplied to Drop," +
         "expected one of [" + VERTICAL_ALIGN_OPTIONS.join(',') + "]");
     }
-    if (align && align.left &&
-      HORIZONTAL_ALIGN_OPTIONS.indexOf(align.left) === -1) {
-      console.warn("Warning: Invalid align.left value '" + align.left +
+    if (options.align && options.align.left &&
+      HORIZONTAL_ALIGN_OPTIONS.indexOf(options.align.left) === -1) {
+      console.warn("Warning: Invalid align.left value '" + options.align.left +
         "' supplied to Drop," +
         "expected one of [" + HORIZONTAL_ALIGN_OPTIONS.join(',') + "]");
     }
-    if (align && align.right &&
-      HORIZONTAL_ALIGN_OPTIONS.indexOf(align.right) === -1) {
-      console.warn("Warning: Invalid align.right value '" + align.right +
+    if (options.align && options.align.right &&
+      HORIZONTAL_ALIGN_OPTIONS.indexOf(options.align.right) === -1) {
+      console.warn("Warning: Invalid align.right value '" + options.align.right +
         "' supplied to Drop," +
         "expected one of [" + HORIZONTAL_ALIGN_OPTIONS.join(',') + "]");
     }
-    align = align || {};
+    const align = options.align || {};
 
     // initialize data
     var drop = {
       control: control,
-      align: {
-        top: align.top,
-        bottom: align.bottom,
-        left: align.left,
-        right: align.right
+      options: {
+        ...options,
+        align: {
+          top: align.top,
+          bottom: align.bottom,
+          left: align.left,
+          right: align.right
+        }
       }
     };
-    if (! drop.align.top && ! drop.align.bottom) {
-      drop.align.top = "top";
+    if (! drop.options.align.top && ! drop.options.align.bottom) {
+      drop.options.align.top = "top";
     }
-    if (! drop.align.left && ! drop.align.right) {
-      drop.align.left = "left";
+    if (! drop.options.align.left && ! drop.options.align.right) {
+      drop.options.align.left = "left";
     }
 
     // setup DOM
     drop.container = document.createElement('div');
-    drop.container.className = 'grommet drop';
+    drop.container.className = `grommet drop ${drop.options.className}`;
+    if (drop.options.colorIndex) {
+      drop.container.className +=
+        ` background-color-index-${drop.options.colorIndex}`;
+    }
     // prepend in body to avoid browser scroll issues
     document.body.insertBefore(drop.container, document.body.firstChild);
     render(content, drop.container);
@@ -121,7 +135,7 @@ export default {
   _place (drop) {
     var control = drop.control;
     var container = drop.container;
-    var align = drop.align;
+    var align = drop.options.align;
     var controlRect = control.getBoundingClientRect();
     var containerRect = container.getBoundingClientRect();
     var windowWidth = window.innerWidth;

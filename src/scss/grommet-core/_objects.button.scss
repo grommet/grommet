@@ -90,7 +90,7 @@ $button-horizontal-padding: round($inuit-base-spacing-unit) - $button-border-wid
       }
     }
 
-    [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+    #{$dark-background-context} & {
       color: $colored-text-color;
 
       .control-icon {
@@ -109,7 +109,7 @@ $button-horizontal-padding: round($inuit-base-spacing-unit) - $button-border-wid
     }
   }
 
-  [class*="background-color-index-"]:not([class*="background-color-index-light"]) &:not(.button--primary) {
+  #{$dark-background-context} &:not(.button--primary) {
     border-color: $button-colored-border-color;
     color: $colored-text-color;
 

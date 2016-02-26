@@ -181,7 +181,7 @@ export default class Calendar extends Component {
       KeyboardAccelerators.startListeningToKeyboard(this, listeners);
 
       this._drop = Drop.add(ReactDOM.findDOMNode(this.refs.component),
-        this._renderDrop(), {top: 'bottom', left: 'left'});
+        this._renderDrop(), { align: {top: 'bottom', left: 'left'} });
 
     } else {
 
