@@ -49,6 +49,17 @@
 }
 
 .menu__control {
+  &:focus:not(.button--disabled) {
+    box-shadow: inset 0 0 1px 2px $focus-border-color;
+  }
+
+  &:hover {
+    .menu__control-label {
+      [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+        color: $active-colored-text-color;
+      }
+    }
+  }
 
   .control-icon-down {
     width: halve($inuit-base-spacing-unit);
@@ -57,6 +68,13 @@
     path,
     polyline {
       stroke-width: 4px;
+    }
+  }
+
+  // Removing icon transition style for labeled menus
+  &.menu--labelled .control-icon {
+    @include media-query(lap-and-up) {
+      transition: none;
     }
   }
 }
