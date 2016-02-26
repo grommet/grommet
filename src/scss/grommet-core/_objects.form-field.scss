@@ -1,4 +1,4 @@
-// (C) Copyright 2014 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 $form-horizontal-padding: $inuit-base-spacing-unit; //round($inuit-base-spacing-unit * 0.75);
 $form-vertical-padding: quarter($inuit-base-spacing-unit);
@@ -37,257 +37,252 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
   &:last-child {
     margin-bottom: 0px;
   }
+}
 
-  &__label {
+.form-field__label {
+  display: block;
+  @include inuit-font-size($label-font-size, $inuit-base-spacing-unit);
+  color: $secondary-text-color;
+
+  [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+    color: $colored-text-color;
+  }
+}
+
+.form-field__contents {
+  display: block;
+  margin-left: - $form-horizontal-padding;
+  margin-right: - $form-horizontal-padding;
+
+  > input[type=text],
+  > input[type=range],
+  > input[type=email],
+  > input[type=password],
+  > input[type=number],
+  > input[type=file],
+  > select,
+  > .search-input input,
+  > .calendar input,
+  > textarea {
     display: block;
-    @include inuit-font-size($label-font-size, $inuit-base-spacing-unit);
-    color: $secondary-text-color;
+    width: 100%;
+    border: none;
+    padding: 0px;
+    padding-left: $form-horizontal-padding;
+    padding-right: $form-horizontal-padding;
+    border-radius: 0px;
+    @include inuit-font-size($content-font-size);
+
+    &:focus {
+      border: none;
+    }
 
     [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
-      color: $colored-text-color;
+      color: $active-colored-text-color;
     }
   }
 
-  &__contents {
-    display: block;
-    margin-left: - $form-horizontal-padding;
-    margin-right: - $form-horizontal-padding;
-
-    > input[type=text],
-    > input[type=range],
-    > input[type=email],
-    > input[type=password],
-    > input[type=number],
-    > input[type=file],
-    > select,
-    > .search-input input,
-    > .calendar input,
-    > textarea {
-      display: block;
-      width: 100%;
-      border: none;
-      padding: 0px;
-      padding-left: $form-horizontal-padding;
-      padding-right: $form-horizontal-padding;
-      border-radius: 0px;
-      @include inuit-font-size($content-font-size);
-
-      &:focus {
-        border: none;
-      }
-
-      [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
-        color: $active-colored-text-color;
-      }
-    }
-
-    > input[type=range] {
-      width: calc(100% - #{double($form-horizontal-padding)});
-      margin-left: $form-horizontal-padding;
-      margin-right: $form-horizontal-padding;
-      padding-left: 0px;
-      padding-right: 0px;
-    }
-
-    > select {
-      display: block;
-      background-image: $select-drop-caret;
-      background-position: center right #{$form-horizontal-padding - quarter($inuit-base-spacing-unit)};
-      // This seems to be correct for only some browsers.
-      // Extra whitespace is added (by different amounts) by each browser's rendering engine
-      padding-left: #{$form-horizontal-padding - 2};
-
-      html.rtl & {
-        background-position: center left #{$form-horizontal-padding - quarter($inuit-base-spacing-unit)};
-      }
-
-      [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
-        background-image: $colored-select-drop-caret;
-      }
-    }
-
-    // For dotted firefox outline
-    > select:-moz-focusring {
-      color: transparent;
-      text-shadow: 0 0 0 #000;
-    }
-
-    // Disable IE's clear icon
-    ::-ms-clear {
-      display: none;
-    }
-
-    // Disable IE's select arrow
-    > select::-ms-expand {
-      display: none;
-    }
-
-    // Disable IE's background select
-    > select::-ms-value {
-      background: none;
-      color: inherit;
-    }
-
-    // Prevent textarea from adding extra bottom margin
-    > textarea {
-      vertical-align: top;
-      height: auto;
-      // Note that resize does nothing in IE/Edge
-      resize: vertical;
-    }
-
-    > .check-box,
-    > .radio-button {
-      display: block;
-      @include inuit-font-size($content-font-size);
-      margin-top: double($form-vertical-padding);
-      margin-bottom: double($form-vertical-padding);
-      margin-left: $form-horizontal-padding;
-      margin-right: $form-horizontal-padding;
-    }
-
-    > .search-input,
-    > .calendar {
-      display: block;
-
-      input {
-        margin-left: 0px;
-        margin-right: 0px;
-      }
-
-      .search-input__control,
-      .calendar__control {
-        top: auto;
-        right: quarter($inuit-base-spacing-unit);
-        transform: none;
-        bottom: - $form-vertical-padding;
-
-        html.rtl & {
-          right: auto;
-          left: quarter($inuit-base-spacing-unit);
-        }
-      }
-    }
-
-    > .number-input {
-      display: flex;
-      padding-right: quarter($inuit-base-spacing-unit);
-
-      html.rtl & {
-        padding-right: 0;
-        padding-left: quarter($inuit-base-spacing-unit);
-      }
-
-      input[type=number] {
-        display: inline-block;
-        flex: 1;
-        border: none;
-
-        // For some reason, .number-input input causes form fields to be
-        // too wide in compact forms.
-        .form--compact & {
-          width: round($inuit-base-spacing-unit * 6);
-        }
-      }
-    }
-
-    > input[type=file] {
-      display: inline-block;
-
-      // Turned off, overruns file name text on compact forms.
-      // &::-webkit-file-upload-button {
-      //   float: right;
-      // }
-    }
-
-    > .table--selectable {
-      @include inuit-font-size($content-font-size);
-
-      table {
-        margin-bottom: 0px;
-
-        td:first-child,
-        th:first-child {
-          padding-left: $form-horizontal-padding;
-        }
-      }
-    }
-
-    > .form-field {
-      width: auto;
-      margin-top: halve($inuit-base-spacing-unit);
-      border: none;
-
-      > .form-field__label {
-        border-top: 1px solid $border-color;
-        padding-top: $form-vertical-padding;
-      }
-
-      &--hidden {
-        margin-top: 0px;
-      }
-    }
+  > input[type=range] {
+    width: calc(100% - #{double($form-horizontal-padding)});
+    margin-left: $form-horizontal-padding;
+    margin-right: $form-horizontal-padding;
+    padding-left: 0px;
+    padding-right: 0px;
   }
 
-  &__help {
+  > select {
     display: block;
-    @include inuit-font-size($label-font-size - 1);
-    color: $secondary-text-color;
-
-    [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
-      color: $colored-text-color;
-    }
-  }
-
-  &__error {
-    display: block;
-    float: right;
-    color: map-get($brand-status-colors, critical);
-    line-height: $inuit-base-spacing-unit;
+    background-image: $select-drop-caret;
+    background-position: center right #{$form-horizontal-padding - quarter($inuit-base-spacing-unit)};
+    // This seems to be correct for only some browsers.
+    // Extra whitespace is added (by different amounts) by each browser's rendering engine
+    padding-left: #{$form-horizontal-padding - 2};
 
     html.rtl & {
-      float: left;
+      background-position: center left #{$form-horizontal-padding - quarter($inuit-base-spacing-unit)};
     }
 
     [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
-      // Red on anything dark looks terrible. Just use white.
-      color: $colored-text-color;
+      background-image: $colored-select-drop-caret;
     }
   }
 
-  &--text {
-    cursor: pointer;
+  // For dotted firefox outline
+  > select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+  }
 
-    .form-field__label {
-      cursor: pointer;
+  // Disable IE's select arrow
+  > select::-ms-expand {
+    display: none;
+  }
+
+  // Disable IE's background select
+  > select::-ms-value {
+    background: none;
+    color: inherit;
+  }
+
+  // Prevent textarea from adding extra bottom margin
+  > textarea {
+    vertical-align: top;
+    height: auto;
+    // Note that resize does nothing in IE/Edge
+    resize: vertical;
+  }
+
+  > .check-box,
+  > .radio-button {
+    display: block;
+    @include inuit-font-size($content-font-size);
+    margin-top: double($form-vertical-padding);
+    margin-bottom: double($form-vertical-padding);
+    margin-left: $form-horizontal-padding;
+    margin-right: $form-horizontal-padding;
+  }
+
+  > .search-input,
+  > .calendar {
+    display: block;
+
+    input {
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+
+    .search-input__control,
+    .calendar__control {
+      top: auto;
+      right: quarter($inuit-base-spacing-unit);
+      transform: none;
+      bottom: - $form-vertical-padding;
+
+      html.rtl & {
+        right: auto;
+        left: quarter($inuit-base-spacing-unit);
+      }
     }
   }
 
-  &--hidden {
+  > .number-input {
+    display: flex;
+    padding-right: quarter($inuit-base-spacing-unit);
 
-    @include media-query(palm) {
-      display: none;
+    html.rtl & {
+      padding-right: 0;
+      padding-left: quarter($inuit-base-spacing-unit);
     }
 
-    @include media-query(lap-and-up) {
+    input[type=number] {
+      display: inline-block;
+      flex: 1;
       border: none;
-      margin-bottom: 0px;
-      padding-top: 0px;
-      padding-bottom: 0px;
-      opacity: 0;
-      overflow: hidden;
-      max-height: 0px;
-      transition: max-height 0.2s, all 0.4s;
+
+      // For some reason, .number-input input causes form fields to be
+      // too wide in compact forms.
+      .form--compact & {
+        width: round($inuit-base-spacing-unit * 6);
+      }
     }
   }
 
-  &--error {
-    z-index: 1;
-    border-color: map-get($brand-status-colors, critical);
+  > input[type=file] {
+    display: inline-block;
+
+    // Turned off, overruns file name text on compact forms.
+    // &::-webkit-file-upload-button {
+    //   float: right;
+    // }
   }
 
-  &--focus {
-    z-index: 2;
-    border-color: $focus-border-color;
+  > .table--selectable {
+    @include inuit-font-size($content-font-size);
+
+    table {
+      margin-bottom: 0px;
+
+      td:first-child,
+      th:first-child {
+        padding-left: $form-horizontal-padding;
+      }
+    }
   }
+
+  > .form-field {
+    width: auto;
+    margin-top: halve($inuit-base-spacing-unit);
+    border: none;
+
+    > .form-field__label {
+      border-top: 1px solid $border-color;
+      padding-top: $form-vertical-padding;
+    }
+  }
+}
+
+.form-field__contents--hidden {
+  margin-top: 0px;
+}
+
+.form-field__help {
+  display: block;
+  @include inuit-font-size($label-font-size - 1);
+  color: $secondary-text-color;
+
+  [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+    color: $colored-text-color;
+  }
+}
+
+.form-field__error {
+  display: block;
+  float: right;
+  color: map-get($brand-status-colors, critical);
+  line-height: $inuit-base-spacing-unit;
+
+  html.rtl & {
+    float: left;
+  }
+
+  [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+    // Red on anything dark looks terrible. Just use white.
+    color: $colored-text-color;
+  }
+}
+
+.form-field--text {
+  cursor: pointer;
+
+  .form-field__label {
+    cursor: pointer;
+  }
+}
+
+.form-field--hidden {
+
+  @include media-query(palm) {
+    display: none;
+  }
+
+  @include media-query(lap-and-up) {
+    border: none;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    opacity: 0;
+    overflow: hidden;
+    max-height: 0px;
+    transition: max-height 0.2s, all 0.4s;
+  }
+}
+
+.form-field--error {
+  z-index: 1;
+  border-color: map-get($brand-status-colors, critical);
+}
+
+.form-field--focus {
+  z-index: 2;
+  border-color: $focus-border-color;
 }
