@@ -45,32 +45,34 @@ export default class Header extends Component {
 
     // constrain fixed content to the width of the mirror
     var mirrorRect = mirrorElement.getBoundingClientRect();
-    contentElement.style.width = '' + Math.floor(mirrorRect.width) + 'px';
+    contentElement.style.width = `${Math.floor(mirrorRect.width)}px`;
 
     // align the mirror height with the content's height
     var contentRect = contentElement.getBoundingClientRect();
-    mirrorElement.style.height = '' + Math.floor(contentRect.height) + 'px';
+    mirrorElement.style.height = `${Math.floor(contentRect.height)}px`;
   }
 
   render () {
     var classes = [CLASS_ROOT];
-    var containerClasses = [CLASS_ROOT + "__container"];
+    var containerClasses = [`${CLASS_ROOT}__container`];
+    var wrapperClasses = [`${CLASS_ROOT}__wrapper`];
     var other = pick(this.props, keys(Box.propTypes));
     if (this.props.fixed) {
-      containerClasses.push(CLASS_ROOT + "__container--fixed");
+      containerClasses.push(`${CLASS_ROOT}__container--fixed`);
     }
     if (this.props.float) {
-      classes.push(CLASS_ROOT + "--float");
-      containerClasses.push(CLASS_ROOT + "__container--float");
+      classes.push(`${CLASS_ROOT}--float`);
+      containerClasses.push(`${CLASS_ROOT}__container--float`);
     }
     if (this.props.size) {
-      classes.push(CLASS_ROOT + "--" + this.props.size);
+      classes.push(`${CLASS_ROOT}--${this.props.size}`);
+      wrapperClasses.push(`${CLASS_ROOT}__wrapper--${this.props.size}`);
     }
     if (this.props.splash) {
-      classes.push(CLASS_ROOT + "--splash");
+      classes.push(`${CLASS_ROOT}--splash`);
     }
     if (this.props.strong) {
-      classes.push(CLASS_ROOT + "--strong");
+      classes.push(`${CLASS_ROOT}--strong`);
     }
     if (this.props.className) {
       classes.push(this.props.className);
@@ -79,9 +81,10 @@ export default class Header extends Component {
     if (this.props.fixed) {
       return (
         <div className={containerClasses.join(' ')}>
-          <div ref="mirror" className={CLASS_ROOT + "__mirror"}></div>
-          <div className={CLASS_ROOT + "__wrapper"}>
-            <Box ref="content" tag={this.props.header} {...other} className={classes.join(' ')}>
+          <div ref="mirror" className={`${CLASS_ROOT}__mirror`}></div>
+          <div className={wrapperClasses.join(' ')}>
+            <Box ref="content" tag={this.props.header} {...other}
+              className={classes.join(' ')}>
               {this.props.children}
             </Box>
           </div>
@@ -110,7 +113,7 @@ Header.propTypes = {
 };
 
 Header.defaultProps = {
-  pad: 'none',
+  pad: { horizontal: 'none', vertical: 'none', between: 'small'},
   direction: 'row',
   align: 'center',
   responsive: false,
