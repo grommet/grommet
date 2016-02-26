@@ -67,19 +67,31 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
     display: block;
     width: 100%;
     border: none;
-    padding: 0px;
-    padding-left: $form-horizontal-padding;
-    padding-right: $form-horizontal-padding;
+    padding: 0 $form-horizontal-padding;
     border-radius: 0px;
     @include inuit-font-size($content-font-size);
 
     &:focus {
       border: none;
+      padding: 0 $form-horizontal-padding;
     }
 
     [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
       color: $active-colored-text-color;
     }
+  }
+
+  > input[type=text],
+  > input[type=range],
+  > input[type=email],
+  > input[type=password],
+  > input[type=number],
+  > input[type=file],
+  > select,
+  > .search-input input,
+  > .calendar input {
+    // For IE11.
+    height: $inuit-base-spacing-unit;
   }
 
   > input[type=range] {
@@ -94,9 +106,9 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
     display: block;
     background-image: $select-drop-caret;
     background-position: center right #{$form-horizontal-padding - quarter($inuit-base-spacing-unit)};
-    // This seems to be correct for only some browsers.
-    // Extra whitespace is added (by different amounts) by each browser's rendering engine
-    padding-left: #{$form-horizontal-padding - 2};
+    // Extra padding is added by Firefox (more) and IE (less).
+    // Leave it alone as Safari, Chrome, and Opera don't want this.
+    // padding-left: #{$form-horizontal-padding - 2};
 
     html.rtl & {
       background-position: center left #{$form-horizontal-padding - quarter($inuit-base-spacing-unit)};
@@ -178,6 +190,11 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
       display: inline-block;
       flex: 1;
       border: none;
+      padding: 0 $form-horizontal-padding;
+
+      &:focus {
+        padding: 0 $form-horizontal-padding;
+      }
 
       // For some reason, .number-input input causes form fields to be
       // too wide in compact forms.
