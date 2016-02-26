@@ -63,12 +63,13 @@ var App = function (_Component) {
       if (this.props.lang) {
         lang = this.props.lang;
       }
-
       if (!document.documentElement.getAttribute('lang')) {
         document.documentElement.setAttribute('lang', lang);
       }
-
       this.setState({ lang: lang });
+
+      // Put the grommet class on the html element.
+      document.documentElement.classList.add('grommet');
     }
   }, {
     key: 'render',
