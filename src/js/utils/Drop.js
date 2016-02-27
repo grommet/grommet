@@ -91,7 +91,7 @@ export default {
 
     // setup DOM
     drop.container = document.createElement('div');
-    drop.container.className = `grommet drop ${drop.options.className}`;
+    drop.container.className = `grommet drop ${drop.options.className || ''}`;
     if (drop.options.colorIndex) {
       drop.container.className +=
         ` background-color-index-${drop.options.colorIndex}`;
@@ -138,6 +138,7 @@ export default {
     var align = drop.options.align;
     var controlRect = control.getBoundingClientRect();
     var containerRect = container.getBoundingClientRect();
+    var bodyRect = document.body.getBoundingClientRect();
     var windowWidth = window.innerWidth;
     var windowHeight = window.innerHeight;
 
@@ -199,6 +200,9 @@ export default {
 
     container.style.left = '' + left + 'px';
     container.style.width = '' + width + 'px';
-    container.style.top = '' + top + 'px';
+    // We use position:absolute and the body element's position
+    // to handle mobile browsers better. We used to use position:fixed
+    // but that didn't work on mobile browsers as well.
+    container.style.top = '' + (top - bodyRect.top) + 'px';
   }
 };
