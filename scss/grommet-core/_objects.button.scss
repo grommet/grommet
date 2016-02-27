@@ -33,108 +33,112 @@ $button-horizontal-padding: round($inuit-base-spacing-unit) - $button-border-wid
   button:not(.button) {
     @include basic-button();
   }
+
+  a.button {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
 
 .button {
   @include basic-button();
+}
 
-  &__icon {
-    display: inline-block;
-    padding: halve($inuit-base-spacing-unit);
-  }
+.button__icon {
+  display: inline-block;
+  padding: halve($inuit-base-spacing-unit);
+}
 
-  &--primary {
-    border-color: $brand-color;
-    background-color: $brand-color;
+.button--primary {
+  border-color: $brand-color;
+  background-color: $brand-color;
+  color: $active-colored-text-color;
+
+  &:hover:not(.button--disabled) {
     color: $active-colored-text-color;
 
-    &:hover:not(.button--disabled) {
+   .button__icon .control-icon {
+      fill: $active-colored-icon-color;
+      stroke: $active-colored-icon-color;
+    }
+  }
+}
+
+.button--secondary {
+  border-color: $button-secondary-color;
+}
+
+.button--accent {
+  border-color: $button-accent-color;
+}
+
+.button--plain {
+  border: none;
+  padding: 0;
+  width: auto;
+  height: auto;
+  min-width: 0;
+  max-width: none;
+  font-weight: inherit;
+
+  &.button--primary {
+    background-color: $brand-color;
+  }
+
+  > span:not(.button__icon) {
+
+    &:first-child {
+      margin-left: halve($inuit-base-spacing-unit);
+    }
+
+    &:last-child {
+      margin-right: halve($inuit-base-spacing-unit);
+    }
+  }
+
+  #{$dark-background-context} & {
+    color: $colored-text-color;
+
+    .control-icon {
+      fill: $colored-icon-color;
+      stroke: $colored-icon-color;
+    }
+
+    &:hover {
       color: $active-colored-text-color;
 
-     .button__icon .control-icon {
+     .control-icon {
         fill: $active-colored-icon-color;
         stroke: $active-colored-icon-color;
       }
     }
   }
+}
 
-  &--secondary {
-    border-color: $button-secondary-color;
-  }
+#{$dark-background-context} .button:not(.button--primary) {
+  border-color: $button-colored-border-color;
+  color: $colored-text-color;
 
-  &--accent {
+  &.button--accent {
     border-color: $button-accent-color;
-  }
-
-  &--plain {
-    border: none;
-    padding: 0;
-    width: auto;
-    height: auto;
-    min-width: 0;
-    max-width: none;
-    font-weight: inherit;
-
-    &.button--primary {
-      background-color: $brand-color;
-    }
-
-    > span:not(.button__icon) {
-
-      &:first-child {
-        margin-left: halve($inuit-base-spacing-unit);
-      }
-
-      &:last-child {
-        margin-right: halve($inuit-base-spacing-unit);
-      }
-    }
-
-    #{$dark-background-context} & {
-      color: $colored-text-color;
-
-      .control-icon {
-        fill: $colored-icon-color;
-        stroke: $colored-icon-color;
-      }
-
-      &:hover {
-        color: $active-colored-text-color;
-
-       .control-icon {
-          fill: $active-colored-icon-color;
-          stroke: $active-colored-icon-color;
-        }
-      }
-    }
-  }
-
-  #{$dark-background-context} &:not(.button--primary) {
-    border-color: $button-colored-border-color;
-    color: $colored-text-color;
-
-    &.button--accent {
-      border-color: $button-accent-color;
-    }
-  }
-
-  &--disabled {
-    opacity: 0.3;
-    cursor: default;
-  }
-
-  &--fill {
-    width: 100%;
-    max-width: none;
-    //used to add full height for button inside a flex container
-    flex-grow: 1;
   }
 }
 
-a.button {
-  text-decoration: none;
+.button--disabled {
+  opacity: 0.3;
+  cursor: default;
+}
 
-  &:hover {
-    text-decoration: none;
-  }
+.button--icon {
+  flex: 0 0 auto;
+}
+
+.button--fill {
+  width: 100%;
+  max-width: none;
+  //used to add full height for button inside a flex container
+  flex-grow: 1;
 }

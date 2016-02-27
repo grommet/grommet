@@ -45,7 +45,7 @@ var Button = function (_Component) {
       var _classnames;
 
       var plain = this.props.plain !== undefined ? this.props.plain : this.props.icon && !this.props.label || 'icon' === this.props.type;
-      var classes = (0, _classnames3.default)(CLASS_ROOT, this.props.className, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--primary', this.props.primary), _defineProperty(_classnames, CLASS_ROOT + '--secondary', this.props.secondary), _defineProperty(_classnames, CLASS_ROOT + '--accent', this.props.accent), _defineProperty(_classnames, CLASS_ROOT + '--disabled', !this.props.onClick && !this.props.href), _defineProperty(_classnames, CLASS_ROOT + '--fill', this.props.fill), _defineProperty(_classnames, CLASS_ROOT + '--plain', plain), _classnames));
+      var classes = (0, _classnames3.default)(CLASS_ROOT, this.props.className, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--primary', this.props.primary), _defineProperty(_classnames, CLASS_ROOT + '--secondary', this.props.secondary), _defineProperty(_classnames, CLASS_ROOT + '--accent', this.props.accent), _defineProperty(_classnames, CLASS_ROOT + '--disabled', !this.props.onClick && !this.props.href), _defineProperty(_classnames, CLASS_ROOT + '--fill', this.props.fill), _defineProperty(_classnames, CLASS_ROOT + '--plain', plain), _defineProperty(_classnames, CLASS_ROOT + '--icon', this.props.icon), _classnames));
 
       // if ('icon' === this.props.type) {
       //   console.warn('Button type="icon" is deprecated, use plain={true} instead.');
