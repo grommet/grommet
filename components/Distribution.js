@@ -617,7 +617,7 @@ Distribution.propTypes = {
   legend: _react.PropTypes.bool,
   legendTotal: _react.PropTypes.bool,
   series: _react.PropTypes.arrayOf(_react.PropTypes.shape({
-    label: _react.PropTypes.string,
+    label: _react.PropTypes.node,
     value: _react.PropTypes.number.isRequired,
     colorIndex: _react.PropTypes.string,
     important: _react.PropTypes.bool,
