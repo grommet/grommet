@@ -10,10 +10,6 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = require('react-dom');
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
 var _moment = require('moment');
 
 var _moment2 = _interopRequireDefault(_moment);
@@ -25,6 +21,8 @@ var _KeyboardAccelerators2 = _interopRequireDefault(_KeyboardAccelerators);
 var _Drop = require('../utils/Drop');
 
 var _Drop2 = _interopRequireDefault(_Drop);
+
+var _DOM = require('../utils/DOM');
 
 var _Header = require('./Header');
 
@@ -238,7 +236,9 @@ var Calendar = function (_Component) {
         document.addEventListener('click', this._onClose);
         _KeyboardAccelerators2.default.startListeningToKeyboard(this, listeners);
 
-        this._drop = _Drop2.default.add(_reactDom2.default.findDOMNode(this.refs.component), this._renderDrop(), { align: { top: 'bottom', left: 'left' } });
+        // If this is inside a FormField, place the drop in reference to it.
+        var control = (0, _DOM.findAncestor)(this.refs.component, 'form-field') || this.refs.component;
+        this._drop = _Drop2.default.add(control, this._renderDrop(), { align: { top: 'bottom', left: 'left' } });
       } else {
 
         document.removeEventListener('click', this._onClose);
