@@ -554,7 +554,7 @@ Distribution.propTypes = {
   legend: PropTypes.bool,
   legendTotal: PropTypes.bool,
   series: PropTypes.arrayOf(PropTypes.shape({
-    label: PropTypes.string,
+    label: PropTypes.node,
     value: PropTypes.number.isRequired,
     colorIndex: PropTypes.string,
     important: PropTypes.bool,
