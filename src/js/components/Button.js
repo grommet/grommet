@@ -19,7 +19,8 @@ export default class Button extends Component {
         [`${CLASS_ROOT}--accent`]: this.props.accent,
         [`${CLASS_ROOT}--disabled`]: !this.props.onClick && !this.props.href,
         [`${CLASS_ROOT}--fill`]: this.props.fill,
-        [`${CLASS_ROOT}--plain`]: plain
+        [`${CLASS_ROOT}--plain`]: plain,
+        [`${CLASS_ROOT}--icon`]: this.props.icon
       }
     );
 
