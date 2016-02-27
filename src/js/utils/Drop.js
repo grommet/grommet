@@ -136,9 +136,6 @@ export default {
     var control = drop.control;
     var container = drop.container;
     var align = drop.options.align;
-    var controlRect = control.getBoundingClientRect();
-    var containerRect = container.getBoundingClientRect();
-    var bodyRect = document.body.getBoundingClientRect();
     var windowWidth = window.innerWidth;
     var windowHeight = window.innerHeight;
 
@@ -146,12 +143,19 @@ export default {
     container.style.left = '';
     container.style.width = '';
     container.style.top = '';
+    container.style.maxHeight = '';
 
+    // get bounds
+    var controlRect = control.getBoundingClientRect();
+    var containerRect = container.getBoundingClientRect();
+    var bodyRect = document.body.getBoundingClientRect();
+
+    // set width
     var width = Math.min(
       Math.max(controlRect.width, containerRect.width), windowWidth);
-    var left;
-    var top;
 
+    // set left position
+    var left;
     if (align.left) {
       if ('left' === align.left) {
         left = controlRect.left;
@@ -171,38 +175,59 @@ export default {
       left = 0;
     }
 
+    // set top position
+    var top;
+    var maxHeight;
     if (align.top) {
       if ('top' === align.top) {
         top = controlRect.top;
-      } else if ('bottom' === align.top) {
-        top = controlRect.top + controlRect.height;
+        maxHeight = Math.min(windowHeight - controlRect.top, windowHeight);
+      } else {
+        top = controlRect.bottom;
+        maxHeight = Math.min(windowHeight - controlRect.bottom,
+          windowHeight - controlRect.height);
       }
     } else if (align.bottom) {
-      if ('top' === align.bottom) {
-        top = controlRect.top - containerRect.height;
-      } else if ('bottom' === align.bottom) {
-        top = (controlRect.top + controlRect.height) - containerRect.height;
-      }
-    }
-    if ((top + containerRect.height) > windowHeight) {
-      // For now, just slide up so we can see it.
-      // TODO: when we don't want to cover the control, like with SearchInput and Calendar,
-      // add bottom margin to the control to allow the user to scroll down if needed.
-      if (align.top === 'bottom') {
-        top = controlRect.top - containerRect.height;
+      if ('bottom' === align.bottom) {
+        top = Math.max(0, controlRect.bottom - containerRect.height);
+        maxHeight = Math.max(controlRect.bottom, 0);
       } else {
-        top = Math.max(controlRect.bottom - containerRect.height,
-          top - ((top + containerRect.height) - windowHeight));
+        top = Math.max(0, controlRect.top - containerRect.height);
+        maxHeight = Math.max(controlRect.top, 0);
       }
-    } else if (top < 0) {
-      top = 0;
     }
 
-    container.style.left = '' + left + 'px';
-    container.style.width = '' + width + 'px';
+    // if we can't fit it all, see if there's more room the other direction
+    if (containerRect.height > maxHeight) {
+      // We need more room than we have.
+      if (align.top && top > (windowHeight / 2)) {
+        // We put it below, but there's more room above, put it above
+        if (align.top === 'bottom') {
+          top = Math.max(controlRect.top - containerRect.height, 0);
+          maxHeight = controlRect.top;
+        } else {
+          top = Math.max(controlRect.bottom - containerRect.height, 0);
+          maxHeight = controlRect.bottom;
+        }
+      } else if (align.bottom && maxHeight < (windowHeight / 2)) {
+        // We put it above but there's more room below, put it below
+        if (align.bottom === 'bottom') {
+          top = controlRect.top;
+          maxHeight = Math.min(windowHeight - top, windowHeight);
+        } else {
+          top = controlRect.bottom;
+          maxHeight = Math.min(windowHeight - top,
+            windowHeight - controlRect.height);
+        }
+      }
+    }
+
+    container.style.left = `${left}px`;
+    container.style.width = `${width}px`;
     // We use position:absolute and the body element's position
     // to handle mobile browsers better. We used to use position:fixed
     // but that didn't work on mobile browsers as well.
-    container.style.top = '' + (top - bodyRect.top) + 'px';
+    container.style.top = `${top - bodyRect.top}px`;
+    container.style.maxHeight = `${maxHeight}px`;
   }
 };
