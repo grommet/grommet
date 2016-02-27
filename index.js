@@ -12,6 +12,7 @@ var Grommet = {
   Carousel: require('./components/Carousel'),
   Chart: require('./components/Chart'),
   CheckBox: require('./components/CheckBox'),
+  Columns: require('./components/Columns'),
   Distribution: require('./components/Distribution'),
   Footer: require('./components/Footer'),
   Form: require('./components/Form'),

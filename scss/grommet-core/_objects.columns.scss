@@ -1,0 +1,25 @@
+// (C) Copyright 2016 Hewlett Packard Enterprise Development LP
+
+.columns {
+  display: flex;
+  flex-direction: row;
+}
+
+.columns__column {
+  flex: 0 0 $tile-size;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.columns--small {
+  > .columns__column {
+    flex-basis: $tile-small-size;
+  }
+}
+
+.columns--large {
+  > .columns__column {
+    flex-basis: $tile-large-size;
+  }
+}
