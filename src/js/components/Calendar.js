@@ -1,10 +1,10 @@
 // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
-import ReactDOM from 'react-dom';
 import moment from 'moment';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 import Drop from '../utils/Drop';
+import { findAncestor } from '../utils/DOM';
 import Header from './Header';
 import Title from './Title';
 import Button from './Button';
@@ -180,7 +180,10 @@ export default class Calendar extends Component {
       document.addEventListener('click', this._onClose);
       KeyboardAccelerators.startListeningToKeyboard(this, listeners);
 
-      this._drop = Drop.add(ReactDOM.findDOMNode(this.refs.component),
+      // If this is inside a FormField, place the drop in reference to it.
+      const control =
+        findAncestor(this.refs.component, 'form-field') || this.refs.component;
+      this._drop = Drop.add(control,
         this._renderDrop(), { align: {top: 'bottom', left: 'left'} });
 
     } else {

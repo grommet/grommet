@@ -33,6 +33,17 @@ export default {
     return false;
   },
 
+  findAncestor (element, className) {
+    var node = element.parentNode;
+    while (node != null) {
+      if (node.classList && node.classList.contains(className)) {
+        break;
+      }
+      node = node.parentNode;
+    }
+    return node;
+  },
+
   filterByFocusable (elements) {
     return Array.prototype.filter.call(elements || [], function(element) {
       var currentTag = element.tagName.toLowerCase();

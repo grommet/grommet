@@ -1,9 +1,9 @@
 // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
-import ReactDOM from 'react-dom';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 import Drop from '../utils/Drop';
+import { findAncestor } from '../utils/DOM';
 import Button from './Button';
 
 const CLASS_ROOT = "search-input";
@@ -67,7 +67,10 @@ export default class SearchInput extends Component {
       document.addEventListener('click', this._onRemoveDrop);
       KeyboardAccelerators.startListeningToKeyboard(this, activeKeyboardHandlers);
 
-      this._drop = Drop.add(ReactDOM.findDOMNode(this.refs.component),
+      // If this is inside a FormField, place the drop in reference to it.
+      const control =
+        findAncestor(this.refs.component, 'form-field') || this.refs.component;
+      this._drop = Drop.add(control,
         this._renderDrop(), { align: {top: 'bottom', left: 'left'} });
     } else if (this.state.dropActive && prevState.dropActive) {
       this._drop.render(this._renderDrop());
@@ -153,12 +156,15 @@ export default class SearchInput extends Component {
   }
 
   _onFocus () {
-    ReactDOM.findDOMNode(this.refs.input).select();
     this.setState({
       focused: true,
       dropActive: (this.props.suggestions && this.props.suggestions.length > 0),
       activeSuggestionIndex: -1
     });
+    // delay to wait out subsequent render after state change
+    setTimeout(() => {
+      this.refs.input.select();
+    }, 10);
   }
 
   _renderLabel (suggestion) {
