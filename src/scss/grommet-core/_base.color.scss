@@ -17,7 +17,7 @@ $colored-text-color-lightness-threshold: 63 !default;
 
 $background-color: #fff;
 $secondary-background-color: #f5f5f5;
-$hover-background-color: #eee;
+$hover-background-color: rgba(#ddd, 0.5);
 $colored-active-background-color: rgba(0, 0, 0, 0.2);
 $selected-background-color: $brand-color-lighter !default;
 $selected-text-color: $text-color !default;
@@ -58,7 +58,6 @@ $button-accent-color: nth($brand-accent-colors, 1) !default;
 $button-drop-shadow-color: rgba(170, 170, 170, 0.5) !default;
 $button-colored-border-color: rgba(255, 255, 255, 0.7) !default;
 
-$hover-background-color: rgba(0, 0, 0, 0.1);
 $layer-overlay-background-color: rgba(0, 0, 0, 0.5);
 $layer-background-color: #fff !default; // rgba($background-color, 0.95); ///inherit; //rgba(255, 255, 255, 0.95);
 $layer-border: none !default; // 1px solid $brand-color;
