@@ -62,7 +62,7 @@ $hover-background-color: rgba(0, 0, 0, 0.1);
 $layer-overlay-background-color: rgba(0, 0, 0, 0.5);
 $layer-background-color: #fff !default; // rgba($background-color, 0.95); ///inherit; //rgba(255, 255, 255, 0.95);
 $layer-border: none !default; // 1px solid $brand-color;
-$layer-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3) !default;
+$layer-box-shadow: none !default; // 0px 2px 4px rgba(0, 0, 0, 0.3) !default;
 $drop-background: rgba(#f8f8f8, 0.95) !default;
 $drop-border: none !default; // 1px solid $border-color !default;
 $drop-box-shadow: none !default; // 0px 2px 4px rgba(0, 0, 0, 0.3) !default;
