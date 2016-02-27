@@ -55,7 +55,7 @@
 
   &:hover {
     .menu__control-label {
-      [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+      #{$dark-background-context} & {
         color: $active-colored-text-color;
       }
     }
