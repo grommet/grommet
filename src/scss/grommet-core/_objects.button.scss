@@ -132,7 +132,8 @@ $button-horizontal-padding: round($inuit-base-spacing-unit) - $button-border-wid
   cursor: default;
 }
 
-.button--icon {
+.button--icon,
+.button:not(.button--fill) {
   flex: 0 0 auto;
 }
 
