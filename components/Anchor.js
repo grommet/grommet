@@ -14,9 +14,9 @@ var _classnames2 = require('classnames');
 
 var _classnames3 = _interopRequireDefault(_classnames2);
 
-var _indexIcons = require('../index-icons');
+var _LinkNext = require('./icons/base/LinkNext');
 
-var _indexIcons2 = _interopRequireDefault(_indexIcons);
+var _LinkNext2 = _interopRequireDefault(_LinkNext);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -26,7 +26,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = 'anchor';
 
@@ -46,15 +46,9 @@ var Anchor = function (_Component) {
 
       var icon = undefined;
       if (this.props.icon) {
-        var CustomIcon = _indexIcons2.default[this.props.icon];
-        if (!CustomIcon) {
-          console.warn('Warning: Anchor is unable to find the icon named ' + this.props.icon);
-        } else {
-          icon = _react2.default.createElement(CustomIcon, null);
-        }
+        icon = this.props.icon;
       } else if (this.props.primary) {
-        var LinkNextIcon = _indexIcons2.default.LinkNext;
-        icon = _react2.default.createElement(LinkNextIcon, null);
+        icon = _react2.default.createElement(_LinkNext2.default, null);
       }
 
       if (icon && !this.props.primary && !this.props.label) {
@@ -108,9 +102,9 @@ exports.default = Anchor;
 
 Anchor.propTypes = {
   a11yTitle: _react.PropTypes.string,
-  icon: _react.PropTypes.string,
   disabled: _react.PropTypes.bool,
   href: _react.PropTypes.string,
+  icon: _react.PropTypes.element,
   id: _react.PropTypes.string,
   label: _react.PropTypes.node,
   onClick: _react.PropTypes.func,

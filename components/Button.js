@@ -14,10 +14,6 @@ var _classnames2 = require('classnames');
 
 var _classnames3 = _interopRequireDefault(_classnames2);
 
-var _indexIcons = require('../index-icons');
-
-var _indexIcons2 = _interopRequireDefault(_indexIcons);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -26,7 +22,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = 'button';
 
@@ -55,16 +51,11 @@ var Button = function (_Component) {
 
       var icon = undefined;
       if (this.props.icon) {
-        var CustomIcon = _indexIcons2.default[this.props.icon];
-        if (!CustomIcon) {
-          console.warn('Warning: Button is unable to find the icon named ' + this.props.icon);
-        } else {
-          icon = _react2.default.createElement(
-            'span',
-            { className: CLASS_ROOT + '__icon' },
-            _react2.default.createElement(CustomIcon, null)
-          );
-        }
+        icon = _react2.default.createElement(
+          'span',
+          { className: CLASS_ROOT + '__icon' },
+          this.props.icon
+        );
       }
 
       var children = _react2.default.Children.map(this.props.children, function (child) {
@@ -106,7 +97,7 @@ Button.propTypes = {
   a11yTitle: _react.PropTypes.string,
   accent: _react.PropTypes.bool,
   fill: _react.PropTypes.bool,
-  icon: _react.PropTypes.string,
+  icon: _react.PropTypes.element,
   id: _react.PropTypes.string,
   label: _react.PropTypes.node,
   onClick: _react.PropTypes.func,
