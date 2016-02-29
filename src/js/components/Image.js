@@ -1,23 +1,25 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 
 const CLASS_ROOT = 'image';
 
-const Image = props => {
-  let { size, full } = props;
-  let classes = classnames(
-    CLASS_ROOT,
-    props.className,
-    {
-      [`${CLASS_ROOT}--${size}`]: size,
-      [`${CLASS_ROOT}--full`]: typeof full === 'boolean' && full,
-      [`${CLASS_ROOT}--full-${full}`]: typeof full === 'string'
-    }
-  );
+export default class Image extends Component {
+  render () {
+    let { size, full } = this.props;
+    let classes = classnames(
+      CLASS_ROOT,
+      this.props.className,
+      {
+        [`${CLASS_ROOT}--${size}`]: size,
+        [`${CLASS_ROOT}--full`]: typeof full === 'boolean' && full,
+        [`${CLASS_ROOT}--full-${full}`]: typeof full === 'string'
+      }
+    );
 
-  return <img id={props.id} className={classes} src={props.src} />;
+    return <img id={this.props.id} className={classes} src={this.props.src} />;
+  }
 };
 
 Image.propTypes = {
@@ -25,7 +27,3 @@ Image.propTypes = {
   src: PropTypes.string,
   size: PropTypes.oneOf(['small', 'medium', 'large', 'thumb'])
 };
-
-Image.displayName = 'Image';
-
-export default Image;

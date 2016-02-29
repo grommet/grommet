@@ -1,30 +1,32 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import Box from './Box';
 import Props from '../utils/Props';
 
 const CLASS_ROOT = 'sidebar';
 
-const Sidebar = props => {
-  let classes = classnames(
-    CLASS_ROOT,
-    props.className,
-    {
-      [`${CLASS_ROOT}--primary`]: props.primary,
-      [`${CLASS_ROOT}--fixed`]: props.fixed,
-      [`${CLASS_ROOT}--${props.size}`]: props.size
-    }
-  );
+export default class Sidebar extends Component {
+  render () {
+    let classes = classnames(
+      CLASS_ROOT,
+      this.props.className,
+      {
+        [`${CLASS_ROOT}--primary`]: this.props.primary,
+        [`${CLASS_ROOT}--fixed`]: this.props.fixed,
+        [`${CLASS_ROOT}--${this.props.size}`]: this.props.size
+      }
+    );
 
-  let boxProps = Props.pick(props, Box);
+    let boxProps = Props.pick(this.props, Box);
 
-  return (
-    <Box {...boxProps} className={classes} primary={false}>
-      {props.children}
-    </Box>
-  );
+    return (
+      <Box {...boxProps} className={classes} primary={false}>
+        {this.props.children}
+      </Box>
+    );
+  }
 };
 
 Sidebar.propTypes = {
@@ -38,7 +40,3 @@ Sidebar.defaultProps = {
   direction: 'column',
   primary: false
 };
-
-Sidebar.displayName = 'Sidebar';
-
-export default Sidebar;

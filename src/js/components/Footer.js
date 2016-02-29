@@ -1,6 +1,6 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import Box from './Box';
 import SkipLinkAnchor from './SkipLinkAnchor';
@@ -8,39 +8,41 @@ import Props from '../utils/Props';
 
 const CLASS_ROOT = 'footer';
 
-const Footer = props => {
+export default class Footer extends Component {
 
-  let classes = classnames(
-    CLASS_ROOT,
-    props.className,
-    {
-      [`${CLASS_ROOT}--${props.size}`]: props.size,
-      [`${CLASS_ROOT}--float`]: props.float
+  render () {
+    let classes = classnames(
+      CLASS_ROOT,
+      this.props.className,
+      {
+        [`${CLASS_ROOT}--${this.props.size}`]: this.props.size,
+        [`${CLASS_ROOT}--float`]: this.props.float
+      }
+    );
+
+    let containerClasses = classnames(
+      `${CLASS_ROOT}__container`,
+      {
+        [`${CLASS_ROOT}__container--float`]: this.props.float
+      }
+    );
+
+    let footerSkipLink;
+    if (this.props.primary) {
+      footerSkipLink = <SkipLinkAnchor label="Footer" />;
     }
-  );
 
-  let containerClasses = classnames(
-    `${CLASS_ROOT}__container`,
-    {
-      [`${CLASS_ROOT}__container--float`]: props.float
-    }
-  );
+    let boxProps = Props.pick(this.props, Box);
 
-  let footerSkipLink;
-  if (props.primary) {
-    footerSkipLink = <SkipLinkAnchor label="Footer" />;
+    return (
+      <Box {...boxProps} tag="footer" className={classes}
+        containerClassName={containerClasses}
+        primary={false}>
+        {footerSkipLink}
+        {this.props.children}
+      </Box>
+    );
   }
-
-  let boxProps = Props.pick(props, Box);
-
-  return (
-    <Box {...boxProps} tag="footer" className={classes}
-      containerClassName={containerClasses}
-      primary={false}>
-      {footerSkipLink}
-      {props.children}
-    </Box>
-  );
 };
 
 Footer.propTypes = {
@@ -54,7 +56,3 @@ Footer.defaultProps = {
   direction: 'row',
   responsive: false
 };
-
-Footer.displayName = 'Footer';
-
-export default Footer;

@@ -1,6 +1,6 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import Anchor from './Anchor';
 
@@ -10,80 +10,82 @@ const TYPE_LARGE = 'large';
 const TYPE_WIDE = 'wide';
 const TYPE_TALL = 'tall';
 
-const Brick = props => {
-  let widthUnit = 1;
-  let heightUnit = 1;
+export default class Brick extends Component {
+  render () {
+    let widthUnit = 1;
+    let heightUnit = 1;
 
-  switch (props.type) {
-    case TYPE_LARGE:
-      widthUnit = 2;
-      heightUnit = 2;
-      break;
-    case TYPE_WIDE:
-      widthUnit = 2;
-      heightUnit = 1;
-      break;
-    case TYPE_TALL:
-      widthUnit = 1;
-      heightUnit = 2;
-      break;
-  }
+    switch (this.props.type) {
+      case TYPE_LARGE:
+        widthUnit = 2;
+        heightUnit = 2;
+        break;
+      case TYPE_WIDE:
+        widthUnit = 2;
+        heightUnit = 1;
+        break;
+      case TYPE_TALL:
+        widthUnit = 1;
+        heightUnit = 2;
+        break;
+    }
 
-  let clickable = props.href || props.onClick;
+    let clickable = this.props.href || this.props.onClick;
 
-  let classes = classnames(
-    CLASS_ROOT,
-    `${CLASS_ROOT}--${widthUnit}-${heightUnit}`,
-    {
-      [`background-color-index-${props.colorIndex}`]: props.colorIndex,
-      [`${CLASS_ROOT}--clickable`]: clickable
-    },
-    props.className
-  );
+    let classes = classnames(
+      CLASS_ROOT,
+      `${CLASS_ROOT}--${widthUnit}-${heightUnit}`,
+      {
+        [`background-color-index-${this.props.colorIndex}`]: this.props.colorIndex,
+        [`${CLASS_ROOT}--clickable`]: clickable
+      },
+      this.props.className
+    );
 
-  let label = (
-    <div className={`${CLASS_ROOT}__label`}>
-      <span>{props.label}</span>
-    </div>
-  );
-
-  let style = {};
-  if (props.texture && 'string' === typeof props.texture) {
-    style.background = "url(" + props.texture + ") no-repeat center center";
-    style.backgroundSize = "cover";
-  } else if (props.backgroundImage) {
-    style.background = "url(" + props.backgroundImage + ") no-repeat center center";
-    style.backgroundSize = "cover";
-  }
-  let texture;
-  if ('object' === typeof props.texture) {
-    texture = <div className={CLASS_ROOT + "__texture"}>{props.texture}</div>;
-  }
-
-  let brickContent = (
-    <div>
-      <div className={`${CLASS_ROOT}__container`}>
-        {texture}
-        {props.children}
+    let label = (
+      <div className={`${CLASS_ROOT}__label`}>
+        <span>{this.props.label}</span>
       </div>
-      {label}
-    </div>
-  );
+    );
 
-  if (clickable) {
-    return (
-      <Anchor href={props.href} onClick={props.onClick} className={classes}>
-        <div className={`${CLASS_ROOT}__background`} style={style}>
+    let style = {};
+    if (this.props.texture && 'string' === typeof this.props.texture) {
+      style.background = "url(" + this.props.texture + ") no-repeat center center";
+      style.backgroundSize = "cover";
+    } else if (this.props.backgroundImage) {
+      style.background = "url(" + this.props.backgroundImage + ") no-repeat center center";
+      style.backgroundSize = "cover";
+    }
+    let texture;
+    if ('object' === typeof this.props.texture) {
+      texture = <div className={CLASS_ROOT + "__texture"}>{this.props.texture}</div>;
+    }
+
+    let brickContent = (
+      <div>
+        <div className={`${CLASS_ROOT}__container`}>
+          {texture}
+          {this.props.children}
+        </div>
+        {label}
+      </div>
+    );
+
+    if (clickable) {
+      return (
+        <Anchor href={this.props.href} onClick={this.props.onClick} className={classes}>
+          <div className={`${CLASS_ROOT}__background`} style={style}>
+            {brickContent}
+          </div>
+        </Anchor>
+      );
+    } else {
+      return (
+        <div className={classes} style={style}>
           {brickContent}
         </div>
-      </Anchor>
-    );
-  } else {
-    return (
-      <div className={classes} style={style}>
-        {brickContent}
-      </div>
-    );
+      );
+    }
   }
 };
 
@@ -102,7 +104,3 @@ Brick.propTypes = {
 Brick.defaultProps = {
   type: TYPE_SMALL
 };
-
-Brick.displayName = 'Brick';
-
-export default Brick;
