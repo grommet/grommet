@@ -38,7 +38,7 @@
     "eslint-plugin-react": "^3.2.3",
     "file-loader": "^0.8.1",
     "glob": "^6.0.3",
-    "grommet-icon-loader": "^0.2.1",
+    "grommet-icon-loader": "^0.2.8",
     "gulp": "^3.9.0",
     "gulp-babel": "^6.1.1",
     "gulp-cssnano": "^2.0.1",
