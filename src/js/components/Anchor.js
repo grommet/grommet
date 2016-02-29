@@ -1,8 +1,8 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Children, Component, PropTypes } from 'react';
 import classnames from 'classnames';
-import iconsMap from '../index-icons';
+import LinkNextIcon from './icons/base/LinkNext';
 
 const CLASS_ROOT = 'anchor';
 
@@ -11,16 +11,8 @@ export default class Anchor extends Component {
   render () {
     let icon;
     if (this.props.icon) {
-      let CustomIcon  = iconsMap[this.props.icon];
-      if (! CustomIcon) {
-        console.warn(
-          `Warning: Anchor is unable to find the icon named ${this.props.icon}`
-        );
-      } else {
-        icon = <CustomIcon />;
-      }
+      icon = this.props.icon;
     } else if (this.props.primary) {
-      let LinkNextIcon = iconsMap.LinkNext;
       icon = <LinkNextIcon />;
     }
 
@@ -71,9 +63,9 @@ export default class Anchor extends Component {
 
 Anchor.propTypes = {
   a11yTitle: PropTypes.string,
-  icon: PropTypes.string,
   disabled: PropTypes.bool,
   href: PropTypes.string,
+  icon: PropTypes.element,
   id: PropTypes.string,
   label: PropTypes.node,
   onClick: PropTypes.func,

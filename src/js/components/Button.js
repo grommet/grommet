@@ -1,8 +1,7 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
-import iconsMap from '../index-icons';
 
 const CLASS_ROOT = 'button';
 
@@ -32,14 +31,7 @@ export default class Button extends Component {
 
     let icon;
     if (this.props.icon) {
-      let CustomIcon  = iconsMap[this.props.icon];
-      if (! CustomIcon) {
-        console.warn(
-          `Warning: Button is unable to find the icon named ${this.props.icon}`
-        );
-      } else {
-        icon = <span className={`${CLASS_ROOT}__icon`}><CustomIcon /></span>;
-      }
+      icon = <span className={`${CLASS_ROOT}__icon`}>{this.props.icon}</span>;
     }
 
     let children = React.Children.map(this.props.children, child => {
@@ -71,7 +63,7 @@ Button.propTypes = {
   a11yTitle: PropTypes.string,
   accent: PropTypes.bool,
   fill: PropTypes.bool,
-  icon: PropTypes.string,
+  icon: PropTypes.element,
   id: PropTypes.string,
   label: PropTypes.node,
   onClick: PropTypes.func,
