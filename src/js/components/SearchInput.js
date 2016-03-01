@@ -81,6 +81,9 @@ export default class SearchInput extends Component {
 
   componentWillUnmount () {
     document.removeEventListener('click', this._onRemoveDrop);
+    if (this._drop) {
+      this._drop.remove();
+    }
   }
 
   _fireDOMChange () {
@@ -160,7 +163,6 @@ export default class SearchInput extends Component {
   _onFocus () {
     this.setState({
       focused: true,
-      dropActive: (this.props.suggestions && this.props.suggestions.length > 0),
       activeSuggestionIndex: -1
     });
     // delay to wait out subsequent render after state change
