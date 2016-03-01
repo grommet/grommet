@@ -116,6 +116,9 @@ var SearchInput = function (_Component) {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
       document.removeEventListener('click', this._onRemoveDrop);
+      if (this._drop) {
+        this._drop.remove();
+      }
     }
   }, {
     key: '_fireDOMChange',
@@ -206,7 +209,6 @@ var SearchInput = function (_Component) {
 
       this.setState({
         focused: true,
-        dropActive: this.props.suggestions && this.props.suggestions.length > 0,
         activeSuggestionIndex: -1
       });
       // delay to wait out subsequent render after state change
