@@ -320,7 +320,7 @@ export default class Search extends Component {
 
     if (! this.state.inline) {
       contents = [
-        <Button key="icon" icon="Search"
+        <Button key="icon" icon={<SearchIcon />}
           className={`${CLASS_ROOT}__drop-control`}
           onClick={this._onRemoveDrop} />,
         <div key="contents" className={`${CLASS_ROOT}__drop-contents`}
@@ -375,7 +375,7 @@ export default class Search extends Component {
         <div ref="control">
           <Button id={this.props.id}
             className={classes}
-            icon="Search"
+            icon={<SearchIcon />}
             tabIndex="0"
             onClick={this._onAddDrop}
             onFocus={this._onFocusControl}

@@ -6,6 +6,8 @@ import Drop from '../utils/Drop';
 import { findAncestor } from '../utils/DOM';
 import Button from './Button';
 
+import SearchIcon from './icons/base/Search';
+
 const CLASS_ROOT = "search-input";
 
 export default class SearchInput extends Component {
@@ -218,7 +220,7 @@ export default class SearchInput extends Component {
           placeholder={this.props.placeHolder}
           onChange={this._onInputChange}
           onFocus={this._onFocus} />
-        <Button className={CLASS_ROOT + "__control"} icon="Search"
+        <Button className={CLASS_ROOT + "__control"} icon={<SearchIcon />}
           onClick={this._onAddDrop} />
       </div>
     );
