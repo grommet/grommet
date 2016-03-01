@@ -368,7 +368,7 @@ var Search = function (_Component) {
       var contents = [input, suggestions];
 
       if (!this.state.inline) {
-        contents = [_react2.default.createElement(_Button2.default, { key: 'icon', icon: 'Search',
+        contents = [_react2.default.createElement(_Button2.default, { key: 'icon', icon: _react2.default.createElement(_Search2.default, null),
           className: CLASS_ROOT + '__drop-control',
           onClick: this._onRemoveDrop }), _react2.default.createElement(
           'div',
@@ -415,7 +415,7 @@ var Search = function (_Component) {
           { ref: 'control' },
           _react2.default.createElement(_Button2.default, { id: this.props.id,
             className: classes,
-            icon: 'Search',
+            icon: _react2.default.createElement(_Search2.default, null),
             tabIndex: '0',
             onClick: this._onAddDrop,
             onFocus: this._onFocusControl,

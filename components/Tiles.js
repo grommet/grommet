@@ -50,6 +50,14 @@ var _Selection = require('../utils/Selection');
 
 var _Selection2 = _interopRequireDefault(_Selection);
 
+var _LinkPrevious = require('./icons/base/LinkPrevious');
+
+var _LinkPrevious2 = _interopRequireDefault(_LinkPrevious);
+
+var _LinkNext = require('./icons/base/LinkNext');
+
+var _LinkNext2 = _interopRequireDefault(_LinkNext);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -300,11 +308,11 @@ var Tiles = function (_Component) {
       if (this.state.overflow) {
         classes.push(CLASS_ROOT + "--overflowed");
         if (!this.state.overflowStart) {
-          var left = _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + "__left", icon: 'LinkPrevious',
+          var left = _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + "__left", icon: _react2.default.createElement(_LinkPrevious2.default, null),
             onClick: this._onLeft });
         }
         if (!this.state.overflowEnd) {
-          var right = _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + "__right", icon: 'LinkNext',
+          var right = _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + "__right", icon: _react2.default.createElement(_LinkNext2.default, null),
             onClick: this._onRight });
         }
 

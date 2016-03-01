@@ -26,6 +26,10 @@ var _Button = require('./Button');
 
 var _Button2 = _interopRequireDefault(_Button);
 
+var _Search = require('./icons/base/Search');
+
+var _Search2 = _interopRequireDefault(_Search);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -266,7 +270,7 @@ var SearchInput = function (_Component) {
           placeholder: this.props.placeHolder,
           onChange: this._onInputChange,
           onFocus: this._onFocus }),
-        _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + "__control", icon: 'Search',
+        _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + "__control", icon: _react2.default.createElement(_Search2.default, null),
           onClick: this._onAddDrop })
       );
     }

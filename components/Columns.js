@@ -10,7 +10,13 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _classnames2 = require('classnames');
+
+var _classnames3 = _interopRequireDefault(_classnames2);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -63,18 +69,17 @@ var Columns = function (_Component) {
         var childRect = child.getBoundingClientRect();
         count = Math.floor(rect.width / childRect.width);
       }
+
+      if (count === 0) {
+        count = 1;
+      }
+
       this.setState({ count: count });
     }
   }, {
     key: 'render',
     value: function render() {
-      var classes = [CLASS_ROOT];
-      if (this.props.size) {
-        classes.push(CLASS_ROOT + '--' + this.props.size);
-      }
-      if (this.props.className) {
-        classes.push(this.props.className);
-      }
+      var classes = (0, _classnames3.default)(CLASS_ROOT, this.props.className, _defineProperty({}, CLASS_ROOT + '--' + this.props.size, this.props.size));
 
       var children = _react2.default.Children.toArray(this.props.children);
       var childrenPerColumn = Math.floor(children.length / this.state.count);
@@ -95,7 +100,7 @@ var Columns = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        { ref: 'container', className: classes.join(' ') },
+        { ref: 'container', className: classes },
         columns
       );
     }
