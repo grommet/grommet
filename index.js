@@ -44,7 +44,6 @@ var Grommet = {
   Table: require('./components/Table'),
   TableRow: require('./components/TableRow'),
   Tabs: require('./components/Tabs'),
-  TableRow: require('./components/TableRow'),
   Tiles: require('./components/Tiles'),
   Tile: require('./components/Tile'),
   Title: require('./components/Title'),
