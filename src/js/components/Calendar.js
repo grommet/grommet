@@ -8,6 +8,9 @@ import { findAncestor } from '../utils/DOM';
 import Header from './Header';
 import Title from './Title';
 import Button from './Button';
+import CalendarIcon from './icons/base/Calendar';
+import LinkPreviousIcon from './icons/base/LinkPrevious';
+import LinkNextIcon from './icons/base/LinkNext';
 
 const CLASS_ROOT = "calendar";
 
@@ -250,12 +253,12 @@ export default class Calendar extends Component {
       <div id={CLASS_ROOT + "-drop"} className={CLASS_ROOT + "__drop"}
         onClick={this._onClose}>
         <Header justify="between">
-          <Button className={CLASS_ROOT + "__previous"} icon="LinkPrevious"
+          <Button className={CLASS_ROOT + "__previous"} icon={<LinkPreviousIcon />}
             onClick={this._onPrevious} />
           <Title className={CLASS_ROOT + "__title"} responsive={false}>
             {this.state.reference.format('MMMM YYYY')}
           </Title>
-          <Button className={CLASS_ROOT + "__next"} icon="LinkNext"
+          <Button className={CLASS_ROOT + "__next"} icon={<LinkNextIcon />}
             onClick={this._onNext} />
         </Header>
         <div className={CLASS_ROOT + "__grid"}>
@@ -287,7 +290,7 @@ export default class Calendar extends Component {
           id={this.props.id} ref="calendarInput" name={this.props.name}
           value={this.props.value}
           onChange={this._onInputChange} />
-        <Button className={CLASS_ROOT + "__control"} icon="Calendar"
+        <Button className={CLASS_ROOT + "__control"} icon={<CalendarIcon />}
           onClick={this._onOpen} />
       </div>
     );

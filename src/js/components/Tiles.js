@@ -12,6 +12,9 @@ import Scroll from '../utils/Scroll';
 import InfiniteScroll from '../utils/InfiniteScroll';
 import Selection from '../utils/Selection';
 
+import LinkPreviousIcon from './icons/base/LinkPrevious';
+import LinkNextIcon from './icons/base/LinkNext';
+
 const CLASS_ROOT = "tiles";
 const SELECTED_CLASS = "tile--selected";
 
@@ -234,13 +237,13 @@ export default class Tiles extends Component {
       classes.push(CLASS_ROOT + "--overflowed");
       if (! this.state.overflowStart) {
         var left = (
-          <Button className={CLASS_ROOT + "__left"} icon="LinkPrevious"
+          <Button className={CLASS_ROOT + "__left"} icon={<LinkPreviousIcon />}
             onClick={this._onLeft} />
         );
       }
       if (! this.state.overflowEnd) {
         var right = (
-          <Button className={CLASS_ROOT + "__right"} icon="LinkNext"
+          <Button className={CLASS_ROOT + "__right"} icon={<LinkNextIcon />}
             onClick={this._onRight} />
         );
       }

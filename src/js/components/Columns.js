@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
+import classnames from 'classnames';
 
 const CLASS_ROOT = 'columns';
 
@@ -37,17 +38,22 @@ export default class Columns extends Component {
       const childRect = child.getBoundingClientRect();
       count = Math.floor(rect.width / childRect.width);
     }
+
+    if (count === 0) {
+      count = 1;
+    }
+
     this.setState({ count: count });
   }
 
   render() {
-    let classes = [CLASS_ROOT];
-    if (this.props.size) {
-      classes.push(`${CLASS_ROOT}--${this.props.size}`);
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
+    let classes = classnames(
+      CLASS_ROOT,
+      this.props.className,
+      {
+        [`${CLASS_ROOT}--${this.props.size}`]: this.props.size
+      }
+    );
 
     const children = React.Children.toArray(this.props.children);
     const childrenPerColumn = Math.floor(children.length / this.state.count);
@@ -65,7 +71,7 @@ export default class Columns extends Component {
     ));
 
     return (
-      <div ref="container" className={classes.join(' ')}>
+      <div ref="container" className={classes}>
         {columns}
       </div>
     );
