@@ -17,7 +17,8 @@
     flex-direction: column;
 
     > * {
-      flex: 1;
+      //flex: 1 does not work with IE11.
+      flex: 1 1 auto;
       overflow: auto;
 
       &.header,
