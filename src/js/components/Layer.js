@@ -40,7 +40,7 @@ class LayerContents extends Component {
     };
 
     if (this.props.onClose) {
-      this._keyboardHandlers['esc'] = this.props.onClose;
+      this._keyboardHandlers.esc = this.props.onClose;
     }
 
     KeyboardAccelerators.startListeningToKeyboard(
