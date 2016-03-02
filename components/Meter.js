@@ -318,13 +318,20 @@ var Meter = function (_Component) {
     value: function _getActiveFields() {
       var fields = undefined;
       if (null === this.state.activeIndex) {
-        fields = { value: this.state.total, label: _Intl2.default.getMessage(this.context.intl, 'Total') };
+        fields = {
+          value: this.state.total,
+          label: _Intl2.default.getMessage(this.context.intl, 'Total')
+        };
       } else {
         var active = this.state.series[this.state.activeIndex];
         if (!active) {
           active = this.state.series[0];
         }
-        fields = { value: active.value, label: active.label, onClick: active.onClick };
+        fields = {
+          value: active.value,
+          label: active.label,
+          onClick: active.onClick
+        };
       }
       return fields;
     }
@@ -332,15 +339,15 @@ var Meter = function (_Component) {
     key: '_renderActiveValue',
     value: function _renderActiveValue() {
       var fields = this._getActiveFields();
-      var classes = [CLASS_ROOT + "__value"];
+      var classes = [CLASS_ROOT + '__value'];
       if (fields.onClick) {
-        classes.push(CLASS_ROOT + "__value--active");
+        classes.push(CLASS_ROOT + '__value--active');
       }
       var units = undefined;
       if (this.props.units) {
         units = _react2.default.createElement(
           'span',
-          { className: CLASS_ROOT + "__value-units large-number-font" },
+          { className: CLASS_ROOT + '__value-units large-number-font' },
           this.props.units
         );
       }
@@ -352,13 +359,13 @@ var Meter = function (_Component) {
         _react2.default.createElement(
           'span',
           {
-            className: CLASS_ROOT + "__value-value large-number-font" },
+            className: CLASS_ROOT + '__value-value large-number-font' },
           fields.value,
           units
         ),
         _react2.default.createElement(
           'span',
-          { className: CLASS_ROOT + "__value-label" },
+          { className: CLASS_ROOT + '__value-label' },
           fields.label
         )
       );
@@ -370,7 +377,7 @@ var Meter = function (_Component) {
       if (this.state.min.label) {
         minLabel = _react2.default.createElement(
           'div',
-          { className: CLASS_ROOT + "__minmax-min" },
+          { className: CLASS_ROOT + '__minmax-min' },
           this.state.min.label
         );
       }
@@ -378,7 +385,7 @@ var Meter = function (_Component) {
       if (this.state.max.label) {
         maxLabel = _react2.default.createElement(
           'div',
-          { className: CLASS_ROOT + "__minmax-max" },
+          { className: CLASS_ROOT + '__minmax-max' },
           this.state.max.label
         );
       }
@@ -386,15 +393,15 @@ var Meter = function (_Component) {
       if (minLabel || maxLabel) {
         minMax = _react2.default.createElement(
           'div',
-          { className: CLASS_ROOT + "__minmax-container" },
+          { className: CLASS_ROOT + '__minmax-container' },
           _react2.default.createElement(
             'div',
-            { className: CLASS_ROOT + "__minmax" },
+            { className: CLASS_ROOT + '__minmax' },
             minLabel,
             maxLabel
           )
         );
-        classes.push(CLASS_ROOT + "--minmax");
+        classes.push(CLASS_ROOT + '--minmax');
       }
       return minMax;
     }
@@ -402,7 +409,7 @@ var Meter = function (_Component) {
     key: '_renderLegend',
     value: function _renderLegend() {
       var total = _typeof(this.props.legend) === 'object' && this.props.legend.total;
-      return _react2.default.createElement(_Legend2.default, { ref: 'legend', className: CLASS_ROOT + "__legend",
+      return _react2.default.createElement(_Legend2.default, { ref: 'legend', className: CLASS_ROOT + '__legend',
         series: this.state.series,
         units: this.props.units,
         total: total,
@@ -413,26 +420,28 @@ var Meter = function (_Component) {
     key: 'render',
     value: function render() {
       var classes = [CLASS_ROOT];
-      classes.push(CLASS_ROOT + "--" + this.props.type);
+      classes.push(CLASS_ROOT + '--' + this.props.type);
       if (this.props.vertical) {
-        classes.push(CLASS_ROOT + "--vertical");
+        classes.push(CLASS_ROOT + '--vertical');
       }
       if (this.props.stacked) {
-        classes.push(CLASS_ROOT + "--stacked");
+        classes.push(CLASS_ROOT + '--stacked');
       }
       if (this.props.size) {
-        classes.push(CLASS_ROOT + "--" + this.props.size);
+        classes.push(CLASS_ROOT + '--' + this.props.size);
       }
       if (this.state.series.length === 0) {
-        classes.push(CLASS_ROOT + "--loading");
+        classes.push(CLASS_ROOT + '--loading');
       } else if (this.state.series.length === 1) {
-        classes.push(CLASS_ROOT + "--single");
+        classes.push(CLASS_ROOT + '--single');
+      } else {
+        classes.push(CLASS_ROOT + '--count-' + this.state.series.length);
       }
       if (this.state.activeIndex !== null) {
-        classes.push(CLASS_ROOT + "--active");
+        classes.push(CLASS_ROOT + '--active');
       }
       if (this.state.tallLegend) {
-        classes.push(CLASS_ROOT + "--tall-legend");
+        classes.push(CLASS_ROOT + '--tall-legend');
       }
       if (this.props.className) {
         classes.push(this.props.className);
@@ -451,7 +460,7 @@ var Meter = function (_Component) {
           if ('inline' !== this.props.legend.placement) {
             legend = this._renderLegend();
           }
-          classes.push(CLASS_ROOT + "--legend-" + this.state.legendPlacement);
+          classes.push(CLASS_ROOT + '--legend-' + this.state.legendPlacement);
         }
       }
 
@@ -477,7 +486,7 @@ var Meter = function (_Component) {
       if (this.state.total > 0) {
         graphicContainer = _react2.default.createElement(
           'div',
-          { className: CLASS_ROOT + "__graphic-container" },
+          { className: CLASS_ROOT + '__graphic-container' },
           graphic,
           minMax
         );
@@ -488,7 +497,7 @@ var Meter = function (_Component) {
         { className: classes.join(' ') },
         _react2.default.createElement(
           'div',
-          { ref: 'activeGraphic', className: CLASS_ROOT + "__value-container" },
+          { ref: 'activeGraphic', className: CLASS_ROOT + '__value-container' },
           graphicContainer,
           activeValue
         ),

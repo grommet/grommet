@@ -97,18 +97,18 @@ var Graphic = function (_Component) {
     value: function _renderSlice(trackIndex, item, itemIndex, startValue, threshold) {
       var path = undefined;
       if (!item.hidden) {
-        var classes = [CLASS_ROOT + "__slice"];
+        var classes = [CLASS_ROOT + '__slice'];
         var activeMeterSlice = undefined;
         if (itemIndex === this.props.activeIndex) {
           activeMeterSlice = 'activeMeterSlice';
-          classes.push(CLASS_ROOT + "__slice--active");
+          classes.push(CLASS_ROOT + '__slice--active');
         }
 
         if (item.onClick) {
           classes.push(CLASS_ROOT + "__slice--clickable");
         }
 
-        classes.push("color-index-" + item.colorIndex);
+        classes.push('color-index-' + item.colorIndex);
 
         var commands = this._sliceCommands(trackIndex, item, startValue);
 
@@ -187,8 +187,8 @@ var Graphic = function (_Component) {
   }, {
     key: '_renderLoading',
     value: function _renderLoading() {
-      var classes = [CLASS_ROOT + "__slice"];
-      classes.push(CLASS_ROOT + "__slice--loading");
+      var classes = [CLASS_ROOT + '__slice'];
+      classes.push(CLASS_ROOT + '__slice--loading');
       classes.push("color-index-loading");
       var commands = this._loadingCommands();
       return [_react2.default.createElement('path', { key: 'loading', className: classes.join(' '), d: commands })];
@@ -211,7 +211,7 @@ var Graphic = function (_Component) {
       }
       return _react2.default.createElement(
         'g',
-        { ref: 'meterValues', className: CLASS_ROOT + "__values" },
+        { ref: 'meterValues', className: CLASS_ROOT + '__values' },
         values
       );
     }
@@ -231,7 +231,7 @@ var Graphic = function (_Component) {
       }
       return _react2.default.createElement(
         'g',
-        { className: CLASS_ROOT + "__tracks" },
+        { className: CLASS_ROOT + '__tracks' },
         tracks
       );
     }
@@ -243,7 +243,7 @@ var Graphic = function (_Component) {
       if (thresholds.length > 0) {
         result = _react2.default.createElement(
           'g',
-          { className: CLASS_ROOT + "__thresholds" },
+          { className: CLASS_ROOT + '__thresholds' },
           thresholds
         );
       }
@@ -337,7 +337,7 @@ var Graphic = function (_Component) {
 
       return _react2.default.createElement(
         'svg',
-        { ref: 'meter', className: CLASS_ROOT + "__graphic",
+        { ref: 'meter', className: CLASS_ROOT + '__graphic',
           tabIndex: '0', role: this.props.a11yRole,
           width: this.state.viewBoxWidth,
           height: this.state.viewBoxHeight,
