@@ -251,7 +251,7 @@ var Layer = function (_Component2) {
   }, {
     key: '_handleAriaHidden',
     value: function _handleAriaHidden(hideOverlay) {
-      this._element.setAttribute('aria-hidden', hideOverlay);
+      this._element.setAttribute('aria-hidden', hideOverlay || false);
     }
   }, {
     key: '_renderLayer',
