@@ -1,6 +1,7 @@
 // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
+import classnames from 'classnames';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 import Drop from '../utils/Drop';
 import { findAncestor } from '../utils/DOM';
@@ -35,14 +36,14 @@ export default class SearchInput extends Component {
   componentDidUpdate (prevProps, prevState) {
     // Set up keyboard listeners appropriate to the current state.
 
-    var activeKeyboardHandlers = {
+    let activeKeyboardHandlers = {
       esc: this._onRemoveDrop,
       tab: this._onRemoveDrop,
       up: this._onPreviousSuggestion,
       down: this._onNextSuggestion,
       enter: this._onEnter
     };
-    var focusedKeyboardHandlers = {
+    let focusedKeyboardHandlers = {
       down: this._onAddDrop
     };
 
@@ -117,14 +118,14 @@ export default class SearchInput extends Component {
   _onAddDrop (event) {
     event.preventDefault();
     // Get values of suggestions, so we can highlight selected suggestion
-    var suggestionValues = this.props.suggestions.map((suggestion) => {
+    let suggestionValues = this.props.suggestions.map((suggestion) => {
       if (typeof suggestion === 'object') {
         return suggestion.value;
       } else {
         return suggestion;
       }
     });
-    var activeSuggestionIndex = suggestionValues.indexOf(this.props.value);
+    let activeSuggestionIndex = suggestionValues.indexOf(this.props.value);
 
     this.setState({
       dropActive: true,
@@ -137,13 +138,13 @@ export default class SearchInput extends Component {
   }
 
   _onNextSuggestion () {
-    var index = this.state.activeSuggestionIndex;
+    let index = this.state.activeSuggestionIndex;
     index = Math.min(index + 1, this.props.suggestions.length - 1);
     this.setState({activeSuggestionIndex: index});
   }
 
   _onPreviousSuggestion () {
-    var index = this.state.activeSuggestionIndex;
+    let index = this.state.activeSuggestionIndex;
     index = Math.max(index - 1, 0);
     this.setState({activeSuggestionIndex: index});
   }
@@ -152,7 +153,7 @@ export default class SearchInput extends Component {
     event.preventDefault(); // prevent submitting forms
     this.setState({dropActive: false});
     if (this.state.activeSuggestionIndex >= 0) {
-      var suggestion = this.props.suggestions[this.state.activeSuggestionIndex];
+      let suggestion = this.props.suggestions[this.state.activeSuggestionIndex];
       this.setState({value: suggestion});
       if (this.props.onChange) {
         this.props.onChange(suggestion, true);
@@ -193,16 +194,18 @@ export default class SearchInput extends Component {
   }
 
   _renderDrop () {
-    var suggestions = null;
+    let suggestions = null;
     if (this.props.suggestions) {
       suggestions = this.props.suggestions.map(function (suggestion, index) {
-        var classes = [CLASS_ROOT + "__suggestion"];
-        if (index === this.state.activeSuggestionIndex) {
-          classes.push(CLASS_ROOT + "__suggestion--active");
-        }
+        let classes = classnames(
+          {
+            [`${CLASS_ROOT}__suggestion`]: true,
+            [`${CLASS_ROOT}__suggestion--active`]: index === this.state.activeSuggestionIndex
+          }
+        );
         return (
           <li key={index}
-            className={classes.join(' ')}
+            className={classes}
             onClick={this._onClickSuggestion.bind(this, suggestion)}>
             {this._renderLabel(suggestion)}
           </li>
@@ -211,31 +214,31 @@ export default class SearchInput extends Component {
     }
 
     return (
-      <ol className={CLASS_ROOT + "__suggestions"} onClick={this._onRemoveDrop}>
+      <ol className={`${CLASS_ROOT}__suggestions`} onClick={this._onRemoveDrop}>
         {suggestions}
       </ol>
     );
   }
 
   render () {
-    var classes = [CLASS_ROOT];
-    if (this.state.active) {
-      classes.push(CLASS_ROOT + "--active");
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
+    let classes = classnames(
+      CLASS_ROOT,
+      {
+        [`${CLASS_ROOT}--active`]: this.state.active
+      },
+      this.props.className
+    );
 
     return (
-      <div ref="component" className={classes.join(' ')}>
-        <input ref="input" className={CLASS_ROOT + "__input"}
+      <div ref="component" className={classes}>
+        <input ref="input" className={`${CLASS_ROOT}__input`}
           id={this.props.id} name={this.props.name}
           value={this._renderLabel(this.props.value)}
           defaultValue={this._renderLabel(this.props.defaultValue)}
           placeholder={this.props.placeHolder}
           onChange={this._onInputChange}
           onFocus={this._onFocus} />
-        <Button className={CLASS_ROOT + "__control"} icon={<SearchIcon />}
+        <Button className={`${CLASS_ROOT}__control`} icon={<SearchIcon />}
           onClick={this._onAddDrop} />
       </div>
     );
