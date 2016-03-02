@@ -78,13 +78,15 @@ var LayerContents = function (_Component) {
         firstFocusable.focus();
       }
 
+      this._keyboardHandlers = {
+        tab: this._processTab
+      };
+
       if (this.props.onClose) {
-        this._keyboardHandlers = {
-          tab: this._processTab,
-          esc: this.props.onClose
-        };
-        _KeyboardAccelerators2.default.startListeningToKeyboard(this, this._keyboardHandlers);
+        this._keyboardHandlers.esc = this.props.onClose;
       }
+
+      _KeyboardAccelerators2.default.startListeningToKeyboard(this, this._keyboardHandlers);
 
       if (this.props.a11yCloserTitle) {
         console.log('a11yCloserTitle prop has been deprecated. Please use a11yTitle instead.');
@@ -121,7 +123,7 @@ var LayerContents = function (_Component) {
     key: 'render',
     value: function render() {
       var closer = null;
-      if (this.props.closer) {
+      if (this.props.onClose && this.props.closer) {
         //TODO: remove a11yCloserTitle after 0.6 release
         var closeLabel = _Intl2.default.getMessage(this.context.intl, 'Close');
         var layerLabel = _Intl2.default.getMessage(this.context.intl, 'Layer');
