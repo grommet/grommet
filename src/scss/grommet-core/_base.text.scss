@@ -88,6 +88,10 @@
     color: $secondary-text-color;
   }
 
+  .help {
+    color: $help-text-color;
+  }
+
   .error {
     color: map-get($brand-status-colors, critical);
   }
