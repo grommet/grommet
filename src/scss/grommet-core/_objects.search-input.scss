@@ -1,53 +1,54 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
+.grommet .search-input,
 .search-input {
   position: relative;
   display: inline-block;
-}
 
-.search-input__input {
-  width: 100%;
-  height: 100%;
-  display: block;
-  padding-right: round($inuit-base-spacing-unit * 2.5);
+  &__input {
+    width: 100%;
+    height: 100%;
+    display: block;
+    padding-right: round($inuit-base-spacing-unit * 2);
 
-  &:focus {
-    padding-right: round($inuit-base-spacing-unit * 2.5) - 1;
+    &:focus {
+      padding-right: round($inuit-base-spacing-unit * 2) - 1;
+    }
+
+    // Disable IE's clear icon
+    &::-ms-clear {
+      display: none;
+    }
   }
 
-  // Disable IE's clear icon
-  &::-ms-clear {
-    display: none;
+  &__control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: quarter($inuit-base-spacing-unit);
   }
-}
 
-.search-input__control {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: halve($inuit-base-spacing-unit);
-}
+  &__suggestions {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    margin: 0px;
+    list-style-type: none;
+  }
 
-.search-input__suggestions {
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
-  margin: 0px;
-  list-style-type: none;
-}
+  &__suggestion {
+    padding: quarter($inuit-base-spacing-unit) $inuit-base-spacing-unit;
+    cursor: pointer;
 
-.search-input__suggestion {
-  padding: quarter($inuit-base-spacing-unit) $inuit-base-spacing-unit;
-  cursor: pointer;
+    &:hover,
+    &--active {
+      background-color: $hover-background-color;
+    }
+  }
 
-  &:hover,
   &--active {
-    background-color: $hover-background-color;
-  }
-}
-
-.search-input--active {
-  .search-input__input {
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
+    .search-input__input {
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+    }
   }
 }
