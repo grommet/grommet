@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _classnames3 = require('classnames');
+
+var _classnames4 = _interopRequireDefault(_classnames3);
+
 var _KeyboardAccelerators = require('../utils/KeyboardAccelerators');
 
 var _KeyboardAccelerators2 = _interopRequireDefault(_KeyboardAccelerators);
@@ -31,6 +35,8 @@ var _Search = require('./icons/base/Search');
 var _Search2 = _interopRequireDefault(_Search);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -154,7 +160,20 @@ var SearchInput = function (_Component) {
     key: '_onAddDrop',
     value: function _onAddDrop(event) {
       event.preventDefault();
-      this.setState({ dropActive: true, activeSuggestionIndex: -1 });
+      // Get values of suggestions, so we can highlight selected suggestion
+      var suggestionValues = this.props.suggestions.map(function (suggestion) {
+        if ((typeof suggestion === 'undefined' ? 'undefined' : _typeof(suggestion)) === 'object') {
+          return suggestion.value;
+        } else {
+          return suggestion;
+        }
+      });
+      var activeSuggestionIndex = suggestionValues.indexOf(this.props.value);
+
+      this.setState({
+        dropActive: true,
+        activeSuggestionIndex: activeSuggestionIndex
+      });
     }
   }, {
     key: '_onRemoveDrop',
@@ -231,14 +250,13 @@ var SearchInput = function (_Component) {
       var suggestions = null;
       if (this.props.suggestions) {
         suggestions = this.props.suggestions.map(function (suggestion, index) {
-          var classes = [CLASS_ROOT + "__suggestion"];
-          if (index === this.state.activeSuggestionIndex) {
-            classes.push(CLASS_ROOT + "__suggestion--active");
-          }
+          var _classnames;
+
+          var classes = (0, _classnames4.default)((_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '__suggestion', true), _defineProperty(_classnames, CLASS_ROOT + '__suggestion--active', index === this.state.activeSuggestionIndex), _classnames));
           return _react2.default.createElement(
             'li',
             { key: index,
-              className: classes.join(' '),
+              className: classes,
               onClick: this._onClickSuggestion.bind(this, suggestion) },
             this._renderLabel(suggestion)
           );
@@ -247,32 +265,26 @@ var SearchInput = function (_Component) {
 
       return _react2.default.createElement(
         'ol',
-        { className: CLASS_ROOT + "__suggestions", onClick: this._onRemoveDrop },
+        { className: CLASS_ROOT + '__suggestions', onClick: this._onRemoveDrop },
         suggestions
       );
     }
   }, {
     key: 'render',
     value: function render() {
-      var classes = [CLASS_ROOT];
-      if (this.state.active) {
-        classes.push(CLASS_ROOT + "--active");
-      }
-      if (this.props.className) {
-        classes.push(this.props.className);
-      }
+      var classes = (0, _classnames4.default)(CLASS_ROOT, _defineProperty({}, CLASS_ROOT + '--active', this.state.active), this.props.className);
 
       return _react2.default.createElement(
         'div',
-        { ref: 'component', className: classes.join(' ') },
-        _react2.default.createElement('input', { ref: 'input', className: CLASS_ROOT + "__input",
+        { ref: 'component', className: classes },
+        _react2.default.createElement('input', { ref: 'input', className: CLASS_ROOT + '__input',
           id: this.props.id, name: this.props.name,
           value: this._renderLabel(this.props.value),
           defaultValue: this._renderLabel(this.props.defaultValue),
           placeholder: this.props.placeHolder,
           onChange: this._onInputChange,
           onFocus: this._onFocus }),
-        _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + "__control", icon: _react2.default.createElement(_Search2.default, null),
+        _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + '__control', icon: _react2.default.createElement(_Search2.default, null),
           onClick: this._onAddDrop })
       );
     }
