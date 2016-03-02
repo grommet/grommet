@@ -195,7 +195,7 @@ export default class Layer extends Component {
   }
 
   _handleAriaHidden (hideOverlay) {
-    this._element.setAttribute('aria-hidden', hideOverlay);
+    this._element.setAttribute('aria-hidden', hideOverlay || false);
   }
 
   _renderLayer () {
