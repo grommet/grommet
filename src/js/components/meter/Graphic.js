@@ -57,18 +57,18 @@ export default class Graphic extends Component {
   _renderSlice (trackIndex, item, itemIndex, startValue, threshold) {
     let path;
     if (! item.hidden) {
-      let classes = [CLASS_ROOT + "__slice"];
+      let classes = [`${CLASS_ROOT}__slice`];
       let activeMeterSlice;
       if (itemIndex === this.props.activeIndex) {
         activeMeterSlice = 'activeMeterSlice';
-        classes.push(CLASS_ROOT + "__slice--active");
+        classes.push(`${CLASS_ROOT}__slice--active`);
       }
 
       if (item.onClick) {
         classes.push(CLASS_ROOT + "__slice--clickable");
       }
 
-      classes.push("color-index-" + item.colorIndex);
+      classes.push(`color-index-${item.colorIndex}`);
 
       let commands = this._sliceCommands(trackIndex, item, startValue);
 
@@ -148,8 +148,8 @@ export default class Graphic extends Component {
   }
 
   _renderLoading () {
-    let classes = [CLASS_ROOT + "__slice"];
-    classes.push(CLASS_ROOT + "__slice--loading");
+    let classes = [`${CLASS_ROOT}__slice`];
+    classes.push(`${CLASS_ROOT}__slice--loading`);
     classes.push("color-index-loading");
     let commands = this._loadingCommands();
     return [
@@ -170,7 +170,7 @@ export default class Graphic extends Component {
       values = this._renderLoading();
     }
     return (
-      <g ref="meterValues" className={CLASS_ROOT + "__values"}>
+      <g ref="meterValues" className={`${CLASS_ROOT}__values`}>
         {values}
       </g>
     );
@@ -187,7 +187,7 @@ export default class Graphic extends Component {
       });
     }
     return (
-      <g className={CLASS_ROOT + "__tracks"}>
+      <g className={`${CLASS_ROOT}__tracks`}>
         {tracks}
       </g>
     );
@@ -198,7 +198,7 @@ export default class Graphic extends Component {
     let thresholds = this._renderSlices(this.props.thresholds, -0.4, true);
     if (thresholds.length > 0) {
       result = (
-        <g className={CLASS_ROOT + "__thresholds"}>
+        <g className={`${CLASS_ROOT}__thresholds`}>
           {thresholds}
         </g>
       );
@@ -281,7 +281,7 @@ export default class Graphic extends Component {
     let activeDescendant = `${this.props.a11yDescId}_${this.props.activeIndex || 0}`;
 
     return (
-      <svg ref="meter" className={CLASS_ROOT + "__graphic"}
+      <svg ref="meter" className={`${CLASS_ROOT}__graphic`}
         tabIndex="0" role={this.props.a11yRole}
         width={this.state.viewBoxWidth}
         height={this.state.viewBoxHeight}

@@ -123,7 +123,7 @@ export default class Meter extends Component {
     } else {
       series.forEach(function (item, index) {
         if (! item.colorIndex) {
-          item.colorIndex = ('graph-' + (index + 1));
+          item.colorIndex = `graph-${index + 1}`;
         }
       });
     }
@@ -257,27 +257,34 @@ export default class Meter extends Component {
   _getActiveFields () {
     let fields;
     if (null === this.state.activeIndex) {
-      fields = {value: this.state.total, label: Intl.getMessage(this.context.intl, 'Total')};
+      fields = {
+        value: this.state.total,
+        label: Intl.getMessage(this.context.intl, 'Total')
+      };
     } else {
       let active = this.state.series[this.state.activeIndex];
       if (!active) {
         active = this.state.series[0];
       }
-      fields = {value: active.value, label: active.label, onClick: active.onClick};
+      fields = {
+        value: active.value,
+        label: active.label,
+        onClick: active.onClick
+      };
     }
     return fields;
   }
 
   _renderActiveValue () {
     let fields = this._getActiveFields();
-    let classes = [CLASS_ROOT + "__value"];
+    let classes = [`${CLASS_ROOT}__value`];
     if (fields.onClick) {
-      classes.push(CLASS_ROOT + "__value--active");
+      classes.push(`${CLASS_ROOT}__value--active`);
     }
     let units;
     if (this.props.units) {
       units = (
-        <span className={CLASS_ROOT + "__value-units large-number-font"}>
+        <span className={`${CLASS_ROOT}__value-units large-number-font`}>
           {this.props.units}
         </span>
       );
@@ -287,11 +294,11 @@ export default class Meter extends Component {
       <div aria-hidden="true" role="presentation"
         className={classes.join(' ')} onClick={fields.onClick}>
         <span
-          className={CLASS_ROOT + "__value-value large-number-font"}>
+          className={`${CLASS_ROOT}__value-value large-number-font`}>
           {fields.value}
           {units}
         </span>
-        <span className={CLASS_ROOT + "__value-label"}>
+        <span className={`${CLASS_ROOT}__value-label`}>
           {fields.label}
         </span>
       </div>
@@ -302,7 +309,7 @@ export default class Meter extends Component {
     let minLabel;
     if (this.state.min.label) {
       minLabel = (
-        <div className={CLASS_ROOT + "__minmax-min"}>
+        <div className={`${CLASS_ROOT}__minmax-min`}>
           {this.state.min.label}
         </div>
       );
@@ -310,7 +317,7 @@ export default class Meter extends Component {
     let maxLabel;
     if (this.state.max.label) {
       maxLabel = (
-        <div className={CLASS_ROOT + "__minmax-max"}>
+        <div className={`${CLASS_ROOT}__minmax-max`}>
           {this.state.max.label}
         </div>
       );
@@ -318,14 +325,14 @@ export default class Meter extends Component {
     let minMax;
     if (minLabel || maxLabel) {
       minMax = (
-        <div className={CLASS_ROOT + "__minmax-container"}>
-          <div className={CLASS_ROOT + "__minmax"}>
+        <div className={`${CLASS_ROOT}__minmax-container`}>
+          <div className={`${CLASS_ROOT}__minmax`}>
             {minLabel}
             {maxLabel}
           </div>
         </div>
       );
-      classes.push(CLASS_ROOT + "--minmax");
+      classes.push(`${CLASS_ROOT}--minmax`);
     }
     return minMax;
   }
@@ -333,7 +340,7 @@ export default class Meter extends Component {
   _renderLegend () {
     let total = (typeof this.props.legend === 'object' && this.props.legend.total);
     return (
-      <Legend ref="legend" className={CLASS_ROOT + "__legend"}
+      <Legend ref="legend" className={`${CLASS_ROOT}__legend`}
         series={this.state.series}
         units={this.props.units}
         total={total}
@@ -344,26 +351,28 @@ export default class Meter extends Component {
 
   render () {
     let classes = [CLASS_ROOT];
-    classes.push(CLASS_ROOT + "--" + this.props.type);
+    classes.push(`${CLASS_ROOT}--${this.props.type}`);
     if (this.props.vertical) {
-      classes.push(CLASS_ROOT + "--vertical");
+      classes.push(`${CLASS_ROOT}--vertical`);
     }
     if (this.props.stacked) {
-      classes.push(CLASS_ROOT + "--stacked");
+      classes.push(`${CLASS_ROOT}--stacked`);
     }
     if (this.props.size) {
-      classes.push(CLASS_ROOT + "--" + this.props.size);
+      classes.push(`${CLASS_ROOT}--${this.props.size}`);
     }
     if (this.state.series.length === 0) {
-      classes.push(CLASS_ROOT + "--loading");
+      classes.push(`${CLASS_ROOT}--loading`);
     } else if (this.state.series.length === 1) {
-      classes.push(CLASS_ROOT + "--single");
+      classes.push(`${CLASS_ROOT}--single`);
+    } else {
+      classes.push(`${CLASS_ROOT}--count-${this.state.series.length}`);
     }
     if (this.state.activeIndex !== null) {
-      classes.push(CLASS_ROOT + "--active");
+      classes.push(`${CLASS_ROOT}--active`);
     }
     if (this.state.tallLegend) {
-      classes.push(CLASS_ROOT + "--tall-legend");
+      classes.push(`${CLASS_ROOT}--tall-legend`);
     }
     if (this.props.className) {
       classes.push(this.props.className);
@@ -382,7 +391,7 @@ export default class Meter extends Component {
         if ('inline' !== this.props.legend.placement) {
           legend = this._renderLegend();
         }
-        classes.push(CLASS_ROOT + "--legend-" + this.state.legendPlacement);
+        classes.push(`${CLASS_ROOT}--legend-${this.state.legendPlacement}`);
       }
     }
 
@@ -409,7 +418,7 @@ export default class Meter extends Component {
     let graphicContainer;
     if (this.state.total > 0) {
       graphicContainer = (
-        <div className={CLASS_ROOT + "__graphic-container"}>
+        <div className={`${CLASS_ROOT}__graphic-container`}>
           {graphic}
           {minMax}
         </div>
@@ -418,7 +427,7 @@ export default class Meter extends Component {
 
     return (
       <div className={classes.join(' ')}>
-        <div ref="activeGraphic" className={CLASS_ROOT + "__value-container"}>
+        <div ref="activeGraphic" className={`${CLASS_ROOT}__value-container`}>
           {graphicContainer}
           {activeValue}
         </div>
