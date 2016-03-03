@@ -71,7 +71,6 @@ var LayerContents = function (_Component) {
   }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
-
       var items = this.refs.container.getElementsByTagName('*');
       var firstFocusable = _DOM2.default.getBestFirstFocusable(items);
       if (firstFocusable) {
@@ -93,11 +92,16 @@ var LayerContents = function (_Component) {
       }
     }
   }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate() {
+      if (this.props.hidden) {
+        _KeyboardAccelerators2.default.stopListeningToKeyboard(this, this._keyboardHandlers);
+      };
+    }
+  }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
-      if (this.props.onClose) {
-        _KeyboardAccelerators2.default.stopListeningToKeyboard(this, this._keyboardHandlers);
-      }
+      _KeyboardAccelerators2.default.stopListeningToKeyboard(this, this._keyboardHandlers);
     }
   }, {
     key: '_processTab',
