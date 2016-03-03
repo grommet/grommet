@@ -54,6 +54,7 @@ export default class Box extends Component {
     this._addPropertyClass(classes, CLASS_ROOT, 'direction');
     this._addPropertyClass(classes, CLASS_ROOT, 'justify');
     this._addPropertyClass(classes, CLASS_ROOT, 'align');
+    this._addPropertyClass(classes, CLASS_ROOT, 'alignContent', 'align-content');
     this._addPropertyClass(classes, CLASS_ROOT, 'reverse');
     this._addPropertyClass(classes, CLASS_ROOT, 'responsive');
     this._addPropertyClass(classes, CLASS_ROOT, 'pad');
@@ -148,7 +149,8 @@ export default class Box extends Component {
 
 Box.propTypes = {
   a11yTitle: PropTypes.string,
-  align: PropTypes.oneOf(['start', 'center', 'end', 'stretch']),
+  align: PropTypes.oneOf(['start', 'center', 'end', 'baseline', 'stretch']),
+  alignContent: PropTypes.oneOf(['start', 'center', 'end', 'between', 'around', 'stretch']),
   appCentered: PropTypes.bool,
   backgroundImage: PropTypes.string,
   colorIndex: PropTypes.string,
