@@ -198,6 +198,30 @@
   align-items: flex-end;
 }
 
+.box--align-baseline {
+  align-items: baseline;
+}
+
+.box--align-content-start {
+  align-content: flex-start;
+}
+
+.box--align-content-end {
+  align-content: flex-end;
+}
+
+.box--align-content-center {
+  align-content: center;
+}
+
+.box--align-content-between {
+  align-content: space-between;
+}
+
+.box--align-content-around {
+  align-content: space-around;
+}
+
 .box--separator-top,
 .box--separator-horizontal,
 .box--separator-all {
