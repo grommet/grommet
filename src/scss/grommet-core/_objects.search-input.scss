@@ -5,6 +5,8 @@
   display: inline-block;
 }
 
+// Overwrite .grommet input styles for right-padding
+// so that icon does not overlap with input text.
 .grommet .search-input__input,
 .search-input__input {
   width: 100%;
