@@ -28,7 +28,6 @@ class LayerContents extends Component {
   }
 
   componentDidMount () {
-
     var items = this.refs.container.getElementsByTagName('*');
     var firstFocusable = DOMUtils.getBestFirstFocusable(items);
     if (firstFocusable) {
@@ -52,12 +51,18 @@ class LayerContents extends Component {
     }
   }
 
-  componentWillUnmount () {
-    if (this.props.onClose) {
+  componentDidUpdate () {
+    if (this.props.hidden) {
       KeyboardAccelerators.stopListeningToKeyboard(
         this, this._keyboardHandlers
       );
-    }
+    };
+  }
+
+  componentWillUnmount () {
+    KeyboardAccelerators.stopListeningToKeyboard(
+      this, this._keyboardHandlers
+    );
   }
 
   _processTab (event) {
