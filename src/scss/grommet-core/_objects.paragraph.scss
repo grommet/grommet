@@ -1,8 +1,11 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 .grommet .paragraph {
 
-  &.grommet--small {
+  @include text-align();
+  @include margin();
+
+  &.paragraph--small {
     @include inuit-font-size($paragraph-small-font-size);
 
     a {
@@ -10,7 +13,7 @@
     }
   }
 
-  &.grommet--large {
+  &.paragraph--large {
     // inuit-font-size sets the line-height to 24px when the font size is 24px.
     // We want a bit more leading between lines than that.
     // See also base.text h3
@@ -25,7 +28,4 @@
       font-weight: 600;
     }
   }
-
-  @include text-align();
-  @include margin();
 }
