@@ -200,7 +200,6 @@ var Search = function (_Component) {
     value: function _onFocusInput() {
       this.refs.input.select();
       this.setState({
-        dropActive: !this.state.inline || this.props.suggestions && this.props.suggestions.length > 0,
         activeSuggestionIndex: -1
       });
     }
