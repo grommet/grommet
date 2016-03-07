@@ -151,8 +151,6 @@ export default class Search extends Component {
   _onFocusInput () {
     this.refs.input.select();
     this.setState({
-      dropActive: (! this.state.inline ||
-        (this.props.suggestions && this.props.suggestions.length > 0)),
       activeSuggestionIndex: -1
     });
   }
