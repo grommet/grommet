@@ -284,6 +284,7 @@ export default class Search extends Component {
     if (! this.state.inline) {
       input = (
         <input key="input" id="search-drop-input" type="search"
+          autoComplete="off"
           defaultValue={this.props.defaultValue}
           value={this.props.value}
           className={`${CLASS_ROOT}__input`}
@@ -360,6 +361,7 @@ export default class Search extends Component {
           <input ref="input" type="search"
             id={this.props.id}
             placeholder={this.props.placeHolder}
+            autoComplete="off"
             defaultValue={this._renderLabel(this.props.defaultValue)}
             value={this._renderLabel(this.props.value)}
             className={`${CLASS_ROOT}__input`}

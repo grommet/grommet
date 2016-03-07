@@ -236,6 +236,7 @@ export default class SearchInput extends Component {
           value={this._renderLabel(this.props.value)}
           defaultValue={this._renderLabel(this.props.defaultValue)}
           placeholder={this.props.placeHolder}
+          autoComplete="off"
           onChange={this._onInputChange}
           onFocus={this._onFocus} />
         <Button className={`${CLASS_ROOT}__control`} icon={<SearchIcon />}
