@@ -282,6 +282,7 @@ var SearchInput = function (_Component) {
           value: this._renderLabel(this.props.value),
           defaultValue: this._renderLabel(this.props.defaultValue),
           placeholder: this.props.placeHolder,
+          autoComplete: 'off',
           onChange: this._onInputChange,
           onFocus: this._onFocus }),
         _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + '__control', icon: _react2.default.createElement(_Search2.default, null),

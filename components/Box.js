@@ -100,6 +100,7 @@ var Box = function (_Component) {
       this._addPropertyClass(classes, CLASS_ROOT, 'direction');
       this._addPropertyClass(classes, CLASS_ROOT, 'justify');
       this._addPropertyClass(classes, CLASS_ROOT, 'align');
+      this._addPropertyClass(classes, CLASS_ROOT, 'alignContent', 'align-content');
       this._addPropertyClass(classes, CLASS_ROOT, 'reverse');
       this._addPropertyClass(classes, CLASS_ROOT, 'responsive');
       this._addPropertyClass(classes, CLASS_ROOT, 'pad');
@@ -200,7 +201,8 @@ exports.default = Box;
 
 Box.propTypes = {
   a11yTitle: _react.PropTypes.string,
-  align: _react.PropTypes.oneOf(['start', 'center', 'end', 'stretch']),
+  align: _react.PropTypes.oneOf(['start', 'center', 'end', 'baseline', 'stretch']),
+  alignContent: _react.PropTypes.oneOf(['start', 'center', 'end', 'between', 'around', 'stretch']),
   appCentered: _react.PropTypes.bool,
   backgroundImage: _react.PropTypes.string,
   colorIndex: _react.PropTypes.string,

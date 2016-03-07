@@ -337,6 +337,7 @@ var Search = function (_Component) {
       var input = undefined;
       if (!this.state.inline) {
         input = _react2.default.createElement('input', { key: 'input', id: 'search-drop-input', type: 'search',
+          autoComplete: 'off',
           defaultValue: this.props.defaultValue,
           value: this.props.value,
           className: CLASS_ROOT + '__input',
@@ -401,6 +402,7 @@ var Search = function (_Component) {
           _react2.default.createElement('input', { ref: 'input', type: 'search',
             id: this.props.id,
             placeholder: this.props.placeHolder,
+            autoComplete: 'off',
             defaultValue: this._renderLabel(this.props.defaultValue),
             value: this._renderLabel(this.props.value),
             className: CLASS_ROOT + '__input',
