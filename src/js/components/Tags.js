@@ -1,40 +1,32 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-import React, { Component } from 'react';
+import React from 'react';
+import classnames from 'classnames';
 import Box from './Box';
-import pick from 'lodash/object/pick';
-import keys from 'lodash/object/keys';
 
-const CLASS_ROOT = "tags";
+const CLASS_ROOT = 'tags';
 
-export default class Tags extends Component {
+const Tags = props => {
+  let classes = classnames(CLASS_ROOT, props.className);
 
-  render () {
-    var classes = [CLASS_ROOT];
-
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
-
-    var other = pick(this.props, keys(Box.propTypes));
-
-    return (
-      <Box {...other}
-        className={classes.join(' ')}
-        direction={this.props.direction}
-        align={this.props.align}
-        wrap={true}>
-        {this.props.children}
-      </Box>
-    );
-  }
-}
-
-Tags.propTypes = {
-  ...Box.propTypes
+  return (
+    <Box {...props}
+      className={classes}
+      direction={props.direction}
+      align={props.align}
+      wrap={true}>
+      {props.children}
+    </Box>
+  );
 };
+
+Tags.propTypes = Box.propTypes;
 
 Tags.defaultProps = {
   direction: 'row',
   align: 'start'
 };
+
+Tags.displayName = 'Tags';
+
+export default Tags;
