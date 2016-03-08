@@ -15,6 +15,10 @@ const SMALL_SIZE = 120;
 const THIN_HEIGHT = 72;
 
 const GUTTER_SIZE = 4;
+// We pad the labels here instead of CSS to keep the DOM simple for handling
+// text overflow.
+const LABEL_PAD_VERTICAL = 6;
+const LABEL_PAD_HORIZONTAL = 12;
 
 export default class Distribution extends Component {
 
@@ -59,7 +63,8 @@ export default class Distribution extends Component {
     // preserve width and height we calculated already
     state.width = this.state.width;
     state.height = this.state.height;
-    this.setState(state, this._layout);
+    // _layout is only needed if the component area changes, just place items
+    this.setState(state, this._placeItems);
   }
 
   componentWillUnmount () {
@@ -94,9 +99,44 @@ export default class Distribution extends Component {
 
     return {
       allIcons: allIcons,
-      items: null,
       total: total
     };
+  }
+
+  _boxRect (itemRect, width, height) {
+    // leave a gutter between items, if we're not at the edge
+    let boxRect = { ...itemRect };
+    if (0 !== boxRect.x &&
+      width > (boxRect.x + boxRect.width)) {
+      boxRect.x += (GUTTER_SIZE / 2);
+      boxRect.width -= GUTTER_SIZE;
+    }
+    if (0 !== boxRect.y &&
+      height > (boxRect.y + boxRect.height)) {
+      boxRect.y += (GUTTER_SIZE / 2);
+      boxRect.height -= GUTTER_SIZE;
+    }
+    boxRect.width -= GUTTER_SIZE;
+    boxRect.height -= GUTTER_SIZE;
+    // flush the right edge
+    if (boxRect.x + boxRect.width > width - (2 * GUTTER_SIZE)) {
+      boxRect.width = width - boxRect.x;
+    }
+    // flush the bottom edge
+    if (boxRect.y + boxRect.height > height - (2 * GUTTER_SIZE)) {
+      boxRect.height = height - boxRect.y;
+    }
+    return boxRect;
+  }
+
+  _labelRect (boxRect) {
+    // pad the labels here to keep the DOM simple w.r.t overflow text
+    let labelRect = { ...boxRect };
+    labelRect.x += LABEL_PAD_HORIZONTAL;
+    labelRect.width -= (LABEL_PAD_HORIZONTAL * 2);
+    labelRect.y += LABEL_PAD_VERTICAL;
+    labelRect.height -= (LABEL_PAD_VERTICAL * 2);
+    return labelRect;
   }
 
   _placeItems () {
@@ -185,9 +225,14 @@ export default class Distribution extends Component {
           groupRect.height -= itemRect.height;
         }
 
+        let boxRect = this._boxRect(itemRect, width, height);
+        let labelRect = this._labelRect(boxRect);
+
         // Save this so we can render the item's box and label
         // in the correct location.
-        items.push({ datum: datum, rect: itemRect });
+
+        items.push({ datum: datum, rect: itemRect,
+          boxRect: boxRect, labelRect: labelRect });
       });
     }
 
@@ -209,13 +254,15 @@ export default class Distribution extends Component {
       this.setState({legendPosition: 'right'});
     }
 
-    let container = this.refs.container;
-    let rect = container.getBoundingClientRect();
-    if (rect.width !== this.state.width || rect.height !== this.state.height ||
+    const container = this.refs.container;
+    const rect = container.getBoundingClientRect();
+    const width = Math.round(rect.width);
+    const height = Math.round(rect.height);
+    if (width !== this.state.width || height !== this.state.height ||
       ! this.state.items) {
       this.setState({
-        width: rect.width,
-        height: rect.height
+        width: width,
+        height: height
       }, this._placeItems);
     }
   }
@@ -289,7 +336,7 @@ export default class Distribution extends Component {
     );
   }
 
-  _renderItemLabel (datum, itemRect, index) {
+  _renderItemLabel (datum, labelRect, index) {
     let labelClasses = [`${CLASS_ROOT}__label`];
     if (! datum.icon) {
       labelClasses.push('color-index-' + this._itemColorIndex(datum, index));
@@ -297,10 +344,10 @@ export default class Distribution extends Component {
     if (datum.icon) {
       labelClasses.push(`${CLASS_ROOT}__label--icons`);
     }
-    if (itemRect.width < SMALL_SIZE || itemRect.height < SMALL_SIZE) {
+    if (labelRect.width < SMALL_SIZE || labelRect.height < SMALL_SIZE) {
       labelClasses.push(`${CLASS_ROOT}__label--small`);
     }
-    if (itemRect.height < THIN_HEIGHT) {
+    if (labelRect.height < THIN_HEIGHT) {
       labelClasses.push(`${CLASS_ROOT}__label--thin`);
     }
 
@@ -313,8 +360,8 @@ export default class Distribution extends Component {
     return (
       <div key={index} className={labelClasses.join(' ')}
         data-box-index={index} role="tab"
-        style={{ top: itemRect.y, left: itemRect.x, maxWidth: itemRect.width,
-          maxHeight: itemRect.height }}
+        style={{ top: labelRect.y, left: labelRect.x, maxWidth: labelRect.width,
+          maxHeight: labelRect.height }}
         id={`${this.props.a11yTitleId}_item_${index}`}>
         <span className={`${CLASS_ROOT}__label-value`}>
           {value}
@@ -329,29 +376,16 @@ export default class Distribution extends Component {
     );
   }
 
-  _renderItemBox (itemRect, colorIndex) {
+  _renderItemBox (boxRect, colorIndex) {
     let boxClasses = [`${CLASS_ROOT}__item-box`];
     if (colorIndex) {
       boxClasses.push(`color-index-${colorIndex}`);
-    }
-    let boxRect = { ...itemRect };
-    // leave a gutter between items, if we're not at the edge
-    if (0 !== boxRect.x &&
-      this.state.width > (boxRect.x + boxRect.width)) {
-      boxRect.x += (GUTTER_SIZE / 2);
-      boxRect.width -= GUTTER_SIZE;
-    }
-    if (0 !== boxRect.y &&
-      this.state.height > (boxRect.y + boxRect.height)) {
-      boxRect.y += (GUTTER_SIZE / 2);
-      boxRect.height -= GUTTER_SIZE;
     }
 
     return (
       <rect className={boxClasses.join(' ')}
         x={boxRect.x} y={boxRect.y}
-        width={boxRect.width - GUTTER_SIZE}
-        height={boxRect.height - GUTTER_SIZE}>
+        width={boxRect.width} height={boxRect.height}>
       </rect>
     );
   }
@@ -425,13 +459,13 @@ export default class Distribution extends Component {
 
   _renderBoxes () {
     return this.state.items.map((item, index) => {
-      return this._renderItem(item.datum, item.rect, index);
+      return this._renderItem(item.datum, item.boxRect, index);
     }, this);
   }
 
   _renderLabels () {
     return this.state.items.map((item, index) => {
-      return this._renderItemLabel(item.datum, item.rect, index);
+      return this._renderItemLabel(item.datum, item.labelRect, index);
     }, this);
   }
 
