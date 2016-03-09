@@ -3,7 +3,6 @@
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import classnames from 'classnames';
-import isFunction from 'lodash/lang/isFunction';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 import DOMUtils from '../utils/DOM';
 import Drop from '../utils/Drop';
@@ -16,6 +15,10 @@ import DropCaretIcon from './icons/base/Down';
 import MoreIcon from './icons/base/More';
 
 const CLASS_ROOT = 'menu';
+
+function isFunction (obj) {
+  return obj && obj.constructor && obj.call && obj.apply;
+}
 
 // We have a separate module for the drop component
 // so we can transfer the router context.
@@ -167,7 +170,7 @@ class MenuDrop extends Component {
 
   render () {
     let { dropAlign, size, control, id, onClick } = this.props;
-    let boxProps = Props.pick(this.props, Box);
+    let boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
 
     delete boxProps.onClick;
 
@@ -420,7 +423,7 @@ export default class Menu extends Component {
       </Button>
     );
 
-    let boxProps = Props.pick(this.props, Box);
+    let boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
     let onClick = this.props.closeOnClick ? this._onClose : this._onSink;
 
     return (
@@ -452,7 +455,7 @@ export default class Menu extends Component {
     );
 
     if (this.state.inline) {
-      let boxProps = Props.pick(this.props, Box);
+      let boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
       let label;
       if ('explode' === this.state.inline) {
         label = (

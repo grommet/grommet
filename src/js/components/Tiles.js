@@ -2,9 +2,7 @@
 
 import React, { Component, PropTypes } from 'react';
 import { findDOMNode } from 'react-dom';
-import isEqual from 'lodash/lang/isEqual';
-import pick from 'lodash/object/pick';
-import keys from 'lodash/object/keys';
+import Props from '../utils/Props';
 import Box from './Box';
 import Button from './Button';
 import SpinningIcon from './icons/Spinning';
@@ -61,7 +59,7 @@ export default class Tiles extends Component {
   }
 
   componentDidUpdate (prevProps, prevState) {
-    if (! isEqual(this.state.selected, prevState.selected)) {
+    if (JSON.stringify(this.state.selected) !== JSON.stringify(prevState.selected)) {
       this._setSelection();
     }
     if (this.props.onMore && !this._scroll) {
@@ -204,7 +202,7 @@ export default class Tiles extends Component {
       classes.push(this.props.className);
     }
 
-    var other = pick(this.props, keys(Box.propTypes));
+    var other = Props.pick(this.props, Object.keys(Box.propTypes));
 
     var more = null;
     if (this.props.onMore) {

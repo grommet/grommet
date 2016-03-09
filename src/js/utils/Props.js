@@ -1,8 +1,13 @@
-import pick from 'lodash/object/pick';
-import keys from 'lodash/object/keys';
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 export default {
-  pick(props, comp) {
-    return pick(props, keys(comp.propTypes));
+  pick (props, fields) {
+    const has = (p) => props.hasOwnProperty(p);
+    const obj = {};
+    (fields || []).forEach((field) => {
+      if (has(field))
+        obj[field] = props[field];
+    });
+    return obj;
   }
 };

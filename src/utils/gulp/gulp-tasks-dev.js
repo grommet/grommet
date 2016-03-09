@@ -1,4 +1,3 @@
-var merge = require('lodash/object/merge');
 var webpack = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
 var gulpOpen = require('gulp-open');
@@ -20,12 +19,12 @@ module.exports = function(gulp, options, webpackConfig, dist) {
 
   gulp.task('dev', ['dev-preprocess'], function() {
 
-    var env = merge({}, options.env, {
+    var env = Object.assign({}, options.env, {
       __DEV_MODE__: true,
       NODE_ENV: "\"development\""
     });
 
-    var devWebpackConfig = merge({}, webpackConfig, {
+    var devWebpackConfig = Object.assign({}, webpackConfig, {
       entry: {
         app: [
           'webpack-dev-server/client?http://' + (options.devServerHost || 'localhost')  + ':' + (options.devServerPort || '8080'),
@@ -70,13 +69,13 @@ module.exports = function(gulp, options, webpackConfig, dist) {
       });
     }
 
-    devWebpackConfig.resolve.extensions = merge(devWebpackConfig.resolve.extensions || [],
+    devWebpackConfig.resolve.extensions = Object.assign(devWebpackConfig.resolve.extensions || [],
       ['', '.js', '.json', '.htm', '.html', '.scss', '.md', '.svg']);
 
-    devWebpackConfig.resolve.modulesDirectories = merge(devWebpackConfig.resolve.modulesDirectories || [],
+    devWebpackConfig.resolve.modulesDirectories = Object.assign(devWebpackConfig.resolve.modulesDirectories || [],
       ['node_modules/grommet/node_modules', 'node_modules']);
 
-    devWebpackConfig.resolveLoader.modulesDirectories = merge(devWebpackConfig.resolveLoader.modulesDirectories || [],
+    devWebpackConfig.resolveLoader.modulesDirectories = Object.assign(devWebpackConfig.resolveLoader.modulesDirectories || [],
       ['node_modules/grommet/node_modules', 'node_modules']);
 
     var devServerConfig = {

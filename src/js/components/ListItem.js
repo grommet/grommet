@@ -42,7 +42,7 @@ export default class ListItem extends Component {
       children = this.props.children;
     }
 
-    let boxProps = Props.pick(this.props, Box);
+    let boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
 
     return (
       <Box {...boxProps} tag="li" className={classes} onClick={this.props.onClick}>

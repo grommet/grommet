@@ -11,7 +11,7 @@ export default class Section extends Component {
   render () {
     var classes = classnames(CLASS_ROOT, this.props.className);
 
-    let boxProps = Props.pick(this.props, Box);
+    let boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
 
     return (
       <Box {...boxProps} tag="section" className={classes}

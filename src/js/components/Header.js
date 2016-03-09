@@ -2,8 +2,7 @@
 
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
-import pick from 'lodash/object/pick';
-import keys from 'lodash/object/keys';
+import Props from '../utils/Props';
 import Box from './Box';
 
 const CLASS_ROOT = "header";
@@ -56,7 +55,7 @@ export default class Header extends Component {
     var classes = [CLASS_ROOT];
     var containerClasses = [`${CLASS_ROOT}__container`];
     var wrapperClasses = [`${CLASS_ROOT}__wrapper`];
-    var other = pick(this.props, keys(Box.propTypes));
+    var other = Props.pick(this.props, Object.keys(Box.propTypes));
     if (this.props.fixed) {
       containerClasses.push(`${CLASS_ROOT}__container--fixed`);
     }

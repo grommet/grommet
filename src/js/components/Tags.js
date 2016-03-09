@@ -2,8 +2,7 @@
 
 import React, { Component } from 'react';
 import Box from './Box';
-import pick from 'lodash/object/pick';
-import keys from 'lodash/object/keys';
+import Props from '../utils/Props';
 
 const CLASS_ROOT = "tags";
 
@@ -16,7 +15,7 @@ export default class Tags extends Component {
       classes.push(this.props.className);
     }
 
-    var other = pick(this.props, keys(Box.propTypes));
+    var other = Props.pick(this.props, Object.keys(Box.propTypes));
 
     return (
       <Box {...other}

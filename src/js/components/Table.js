@@ -2,7 +2,6 @@
 
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
-import isEqual from 'lodash/lang/isEqual';
 import SpinningIcon from './icons/Spinning';
 import InfiniteScroll from '../utils/InfiniteScroll';
 import Selection from '../utils/Selection';
@@ -66,7 +65,7 @@ export default class Table extends Component {
   }
 
   componentDidUpdate (prevProps, prevState) {
-    if (! isEqual(this.state.selected, prevState.selected)) {
+    if (JSON.stringify(this.state.selected) !== JSON.stringify(prevState.selected)) {
       this._setSelection();
     }
     if (this.state.rebuildMirror && ! this.state.small) {

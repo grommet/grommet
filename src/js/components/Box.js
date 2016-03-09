@@ -1,7 +1,6 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
-import keys from 'lodash/object/keys';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 import Intl from '../utils/Intl';
 import SkipLinkAnchor from './SkipLinkAnchor';
@@ -38,7 +37,7 @@ export default class Box extends Component {
       if (typeof choice === 'string') {
         classes.push(prefix + '--' + propertyPrefix + '-' + choice);
       } else if (typeof choice === 'object') {
-        keys(choice).forEach(function (key) {
+        Object.keys(choice).forEach(function (key) {
           classes.push(prefix + '--' + propertyPrefix + '-' + key + '-' + choice[key]);
         });
       } else {

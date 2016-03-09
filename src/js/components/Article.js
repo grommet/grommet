@@ -2,10 +2,9 @@
 
 import React, { Component, PropTypes, Children } from 'react';
 import ReactDOM from 'react-dom';
-import pick from 'lodash/object/pick';
-import keys from 'lodash/object/keys';
 import Box from './Box';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
+import Props from '../utils/Props';
 import Scroll from '../utils/Scroll';
 // import CarouselControls from './CarouselControls';
 import Button from './Button';
@@ -218,7 +217,7 @@ export default class Article extends Component {
 
   render () {
     let classes = [CLASS_ROOT];
-    const other = pick(this.props, keys(Box.propTypes));
+    const other = Props.pick(this.props, Object.keys(Box.propTypes));
     if (this.props.scrollStep) {
       classes.push(`${CLASS_ROOT}--scroll-step`);
     }

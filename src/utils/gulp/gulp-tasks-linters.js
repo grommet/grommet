@@ -1,6 +1,5 @@
 var path = require('path');
 var eslint = require('gulp-eslint');
-var merge = require('lodash/object/merge');
 var shelljs = require('shelljs');
 
 function scssLintExists() {
@@ -30,7 +29,7 @@ module.exports = function(gulp, options) {
   });
 
   gulp.task('jslint', function() {
-    var eslintRules = merge({
+    var eslintRules = Object.assign({
       configFile: esLintPath
     }, customEslint);
     return gulp.src(options.jsAssets || [])

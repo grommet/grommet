@@ -19,7 +19,7 @@ export default class Sidebar extends Component {
       }
     );
 
-    let boxProps = Props.pick(this.props, Box);
+    let boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
 
     return (
       <Box {...boxProps} className={classes} primary={false}>

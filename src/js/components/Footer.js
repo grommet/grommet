@@ -32,7 +32,7 @@ export default class Footer extends Component {
       footerSkipLink = <SkipLinkAnchor label="Footer" />;
     }
 
-    let boxProps = Props.pick(this.props, Box);
+    let boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
 
     return (
       <Box {...boxProps} tag="footer" className={classes}

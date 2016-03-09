@@ -1,8 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
-import pick from 'lodash/object/pick';
-import keys from 'lodash/object/keys';
+import Props from '../utils/Props';
 import Box from './Box';
 
 const CLASS_ROOT = "tile";
@@ -11,7 +10,7 @@ export default class Tile extends Component {
 
   render () {
     var classes = [CLASS_ROOT];
-    var other = pick(this.props, keys(Box.propTypes));
+    var other = Props.pick(this.props, Object.keys(Box.propTypes));
     if (this.props.status) {
       classes.push(CLASS_ROOT + "--status-" + this.props.status.toLowerCase());
     }

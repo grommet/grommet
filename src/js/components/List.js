@@ -2,7 +2,6 @@
 
 import React, { Component, PropTypes } from 'react';
 import { FormattedTime } from 'react-intl';
-import isEqual from 'lodash/lang/isEqual';
 import SpinningIcon from './icons/Spinning';
 import InfiniteScroll from '../utils/InfiniteScroll';
 import Selection from '../utils/Selection';
@@ -139,7 +138,7 @@ export default class List extends Component {
   }
 
   componentDidUpdate (prevProps, prevState) {
-    if (! isEqual(this.state.selected, prevState.selected)) {
+    if (JSON.stringify(this.state.selected) !== JSON.stringify(prevState.selected)) {
       this._setSelection();
     }
     if (this.props.onMore && !this._scroll) {
