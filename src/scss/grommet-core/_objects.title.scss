@@ -36,9 +36,15 @@
     }
   }
 
+  span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   svg,
   img {
     max-width: $image-width;
+    flex: 0 0 auto;
 
     &:not(:last-child) {
       margin-right: halve($inuit-base-spacing-unit);
