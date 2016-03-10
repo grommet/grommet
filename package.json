@@ -21,7 +21,7 @@
   },
   "engine-strict": true,
   "engines": {
-    "node": ">= 0.10"
+    "node": ">= 4.4.0"
   },
   "scripts": {
     "test": "gulp test"
