@@ -7,7 +7,7 @@ export default class SkipLinkAnchor extends Component {
     let id = 'skip-link-' + this.props.label.toLowerCase().replace(/ /g, '_');
 
     return (
-      <a tabIndex="-1" id={id} className="skip-link-anchor">
+      <a tabIndex="-1" aria-hidden="true" id={id} className="skip-link-anchor">
         {this.props.label}
       </a>
     );

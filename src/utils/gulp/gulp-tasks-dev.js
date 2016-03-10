@@ -39,7 +39,7 @@ module.exports = function(gulp, options, webpackConfig, dist) {
         publicPath: '/'
       },
 
-      devtool: 'inline-source-map'
+      devtool: 'eval'
 
     }, options.webpack || {});
 
