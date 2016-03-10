@@ -1,4 +1,4 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 .check-box {
   margin-right: halve($inuit-base-spacing-unit);
@@ -14,29 +14,27 @@
   }
 
   &:hover:not(.check-box--disabled) {
-    .check-box {
-      &__control {
-        border-color: $active-icon-color;
+    .check-box__control {
+      border-color: $active-icon-color;
 
-        #{$dark-background-context} & {
-          border-color: $active-colored-icon-color;
-        }
+      #{$dark-background-context} & {
+        border-color: $active-colored-icon-color;
       }
+    }
 
-      &__input:checked + .check-box__control {
-        border-color: $active-icon-color;
+    .check-box__input:checked + .check-box__control {
+      border-color: $active-icon-color;
 
-        #{$dark-background-context} & {
-          border-color: $active-colored-icon-color;
-        }
+      #{$dark-background-context} & {
+        border-color: $active-colored-icon-color;
       }
+    }
 
-      &__label {
-        color: $hover-text-color;
+    .check-box__label {
+      color: $hover-text-color;
 
-        #{$dark-background-context} & {
-          color: $active-colored-text-color;
-        }
+      #{$dark-background-context} & {
+        color: $active-colored-text-color;
       }
     }
   }
@@ -49,166 +47,169 @@
       margin-left: halve($inuit-base-spacing-unit);
     }
   }
+}
 
-  &__input {
-    opacity: 0;
-    position: absolute;
+.check-box__input {
+  opacity: 0;
+  position: absolute;
 
-    &:checked + .check-box__control {
-      border-color: $brand-color;
+  &:checked + .check-box__control {
+    border-color: $brand-color;
+
+    #{$dark-background-context} & {
+      border-color: $active-colored-icon-color;
+    }
+
+    .check-box__control-check {
+      display: block;
+    }
+
+    + .check-box__label {
+      color: $text-color;
 
       #{$dark-background-context} & {
+        color: $active-colored-text-color;
+      }
+    }
+  }
+
+  &:focus + .check-box__control {
+    border-color: $focus-border-color;
+    box-shadow: 0 0 1px 1px $focus-border-color;
+  }
+}
+
+.check-box__control {
+  position: relative;
+  top: -1px;
+	display: inline-block;
+  width: $control-size;
+  height: $control-size;
+  vertical-align: middle;
+  background-color: inherit;
+  border: $control-border-width solid $icon-color;
+  border-radius: $border-radius;
+
+  #{$dark-background-context} & {
+    border-color: $colored-icon-color;
+  }
+}
+
+.check-box__control-check {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  display: none;
+  width: $control-size;
+  height: $control-size;
+  stroke-width: round($control-border-width * 2);
+  stroke: $brand-color;
+
+  #{$dark-background-context} & {
+    stroke: $active-colored-icon-color;
+  }
+}
+
+.check-box__label {
+  color: $secondary-text-color;
+
+  #{$dark-background-context} & {
+    color: $colored-text-color;
+  }
+}
+
+.check-box--disabled {
+  .check-box__control {
+    opacity: 0.5;
+  }
+}
+
+.check-box--toggle {
+
+  &:hover:not(.check-box--disabled) {
+    .check-box__control:after {
+      content: "";
+      border-color: $active-icon-color;
+
+      #{$dark-background-context} & {
+        background-color: $active-colored-icon-color;
         border-color: $active-colored-icon-color;
       }
-
-      .check-box__control-check {
-        display: block;
-      }
-
-      + .check-box__label {
-        color: $text-color;
-
-        #{$dark-background-context} & {
-          color: $active-colored-text-color;
-        }
-      }
     }
 
-    &:focus + .check-box__control {
-      border-color: $focus-border-color;
-      box-shadow: 0 0 1px 1px $focus-border-color;
-    }
-  }
-
-  &__control {
-    position: relative;
-    top: -1px;
-  	display: inline-block;
-    width: $control-size;
-    height: $control-size;
-    vertical-align: middle;
-    background-color: inherit;
-    border: $control-border-width solid $icon-color;
-    border-radius: $border-radius;
-
-    #{$dark-background-context} & {
-      border-color: $colored-icon-color;
-    }
-
-    &-check {
-      position: absolute;
-      top: -2px;
-      left: -2px;
-      display: none;
-      width: $control-size;
-      height: $control-size;
-      stroke-width: round($control-border-width * 2);
-      stroke: $brand-color;
+    .check-box__input:checked + .check-box__control:after {
+      content: "";
+      border-color: $active-icon-color;
 
       #{$dark-background-context} & {
-        stroke: $active-colored-icon-color;
+        background-color: $active-colored-icon-color;
+        border-color: $active-colored-icon-color;
       }
     }
   }
 
-  &__label {
-    color: $secondary-text-color;
+  // track
+  .check-box__control {
+    width: double($control-size);
+    height: $control-size;
+    border-radius: $control-size;
+    background-color: $meter-background-color;
+    border: none;
+    transition: background-color 0.3s;
 
     #{$dark-background-context} & {
-      color: $colored-text-color;
-    }
-  }
-
-  &--disabled {
-    .check-box__control {
-      opacity: 0.5;
-    }
-  }
-
-  &--toggle {
-
-    &:hover:not(.check-box--disabled) {
-      .check-box__control:after {
-        content: "";
-        border-color: $active-icon-color;
-
-        #{$dark-background-context} & {
-          background-color: $active-colored-icon-color;
-          border-color: $active-colored-icon-color;
-        }
-      }
-
-      .check-box__input:checked + .check-box__control:after {
-        content: "";
-        border-color: $active-icon-color;
-
-        #{$dark-background-context} & {
-          background-color: $active-colored-icon-color;
-          border-color: $active-colored-icon-color;
-        }
-      }
+      background-color: $colored-meter-background-color;
     }
 
-    .check-box__control {
-      width: double($control-size);
-      height: $control-size;
+    // knob
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: - $control-border-width;
+      left: 0px;
+      width: $control-size + double($control-border-width);
+      height: $control-size + double($control-border-width);
+      background-color: #fff;
+      border: $control-border-width solid $icon-color;
       border-radius: $control-size;
-      background-color: $meter-background-color;
-      border: none;
-      transition: background-color 0.3s;
+      //box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+      transition: margin-left 0.3s;
+      box-sizing: border-box;
+
+      #{$dark-background-context} & {
+        background-color: transparent;
+        border-color: $colored-icon-color;
+      }
+    }
+  }
+
+  .check-box__input {
+
+    &:checked + .check-box__control {
+      background-color: $brand-color;
 
       #{$dark-background-context} & {
         background-color: $colored-meter-background-color;
+
+        .check-box__control-check {
+          stroke: transparent;
+        }
       }
 
       &:after {
         content: "";
-        display: block;
-        position: absolute;
-        top: - $control-border-width;
-        left: 0px;
-        width: $control-size + double($control-border-width);
-        height: $control-size + double($control-border-width);
         background-color: #fff;
-        border: $control-border-width solid $icon-color;
-        border-radius: $control-size;
-        //box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-        transition: margin-left 0.3s;
+        border-color: $brand-color;
+        margin-left: $control-size;
 
         #{$dark-background-context} & {
-          background-color: transparent;
           border-color: $colored-icon-color;
         }
       }
-    }
 
-    .check-box__input {
-
-      &:checked + .check-box__control {
-        background-color: $brand-color;
-
-        #{$dark-background-context} & {
-          background-color: $colored-meter-background-color;
-
-          .check-box__control-check {
-            stroke: transparent;
-          }
-        }
-
-        &:after {
-          content: "";
-          background-color: #fff;
-          border-color: $brand-color;
-          margin-left: $control-size;
-
-          #{$dark-background-context} & {
-            border-color: $colored-icon-color;
-          }
-        }
-
-        .check-box__control-check {
-          display: none;
-        }
+      .check-box__control-check {
+        display: none;
       }
     }
   }
