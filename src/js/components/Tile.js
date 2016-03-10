@@ -9,8 +9,8 @@ const CLASS_ROOT = "tile";
 export default class Tile extends Component {
 
   render () {
-    var classes = [CLASS_ROOT];
-    var other = Props.pick(this.props, Object.keys(Box.propTypes));
+    const classes = [CLASS_ROOT];
+    const boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
     if (this.props.status) {
       classes.push(CLASS_ROOT + "--status-" + this.props.status.toLowerCase());
     }
@@ -28,8 +28,7 @@ export default class Tile extends Component {
     }
 
     return (
-      <Box className={classes.join(' ')} {...other}
-        onClick={this.props.onClick} a11yTitle={this.props.a11yTitle}>
+      <Box {...boxProps} className={classes.join(' ')}>
         {this.props.children}
       </Box>
     );
@@ -38,9 +37,7 @@ export default class Tile extends Component {
 }
 
 Tile.propTypes = {
-  onClick: PropTypes.func,
   selected: PropTypes.bool,
-  status: PropTypes.string, // deprecated, will be removed
   wide: PropTypes.bool,
   ...Box.propTypes
 };

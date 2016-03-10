@@ -7,8 +7,9 @@ import Intl from '../utils/Intl';
 const CLASS_ROOT = "title";
 
 export default class Title extends Component {
+
   render () {
-    let classes = [CLASS_ROOT];
+    const classes = [CLASS_ROOT];
     if (this.props.responsive) {
       classes.push(CLASS_ROOT + "--responsive");
     }
@@ -19,7 +20,8 @@ export default class Title extends Component {
       classes.push(this.props.className);
     }
 
-    let a11yTitle = Intl.getMessage(this.context.intl, this.props.a11yTitle);
+    const a11yTitle = this.props.a11yTitle ||
+      Intl.getMessage(this.context.intl, 'Title');
 
     return (
       <Box align="center" direction="row" responsive={false}
@@ -29,6 +31,7 @@ export default class Title extends Component {
       </Box>
     );
   }
+
 }
 
 Title.propTypes = {
@@ -42,6 +45,5 @@ Title.contextTypes = {
 };
 
 Title.defaultProps = {
-  responsive: true,
-  a11yTitle: 'Title'
+  responsive: true
 };

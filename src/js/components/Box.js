@@ -79,7 +79,8 @@ export default class Box extends Component {
     if (this.props.onClick) {
       classes.push(CLASS_ROOT + "--clickable");
       if (this.props.focusable) {
-        let boxLabel = Intl.getMessage(this.context.intl, this.props.a11yTitle);
+        let boxLabel = this.props.a11yTitle ||
+          Intl.getMessage(this.context.intl, 'Box');
         a11yProps.tabIndex = 0;
         a11yProps["aria-label"] = boxLabel;
         a11yProps.role = this.props.role || 'link';
@@ -186,7 +187,6 @@ Box.contextTypes = {
 };
 
 Box.defaultProps = {
-  a11yTitle: 'Box',
   direction: 'column',
   pad: 'none',
   tag: 'div',

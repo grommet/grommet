@@ -8,8 +8,9 @@ import Props from '../utils/Props';
 const CLASS_ROOT = 'list-item';
 
 export default class ListItem extends Component {
+
   render () {
-    let classes = classnames(
+    const classes = classnames(
       CLASS_ROOT,
       this.props.className,
       {
@@ -18,48 +19,20 @@ export default class ListItem extends Component {
       }
     );
 
-    let children;
-
-    if (this.props.label) {
-      let image;
-      if (this.props.image) {
-        image = (
-          <span className={`${CLASS_ROOT}__image`}>
-            {this.props.image}
-          </span>
-        );
-      }
-      children = [
-        image,
-        <span key="label" className={`${CLASS_ROOT}__label`}>
-          {this.props.label}
-        </span>,
-        <span key="annotation" className={`${CLASS_ROOT}__annotation`}>
-          {this.props.annotation}
-        </span>
-      ];
-    } else {
-      children = this.props.children;
-    }
-
-    let boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
+    const boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
 
     return (
-      <Box {...boxProps} tag="li" className={classes} onClick={this.props.onClick}>
-        {children}
+      <Box {...boxProps} tag="li" className={classes}>
+        {this.props.children}
       </Box>
     );
   }
+
 };
 
 ListItem.propTypes = {
-  onClick: PropTypes.func,
   selected: PropTypes.bool,
-  ...Box.propTypes,
-  // deprecated properties
-  annotation: PropTypes.node,
-  image: PropTypes.node,
-  label: PropTypes.node
+  ...Box.propTypes
 };
 
 ListItem.defaultProps = {
