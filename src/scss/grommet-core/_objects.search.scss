@@ -85,20 +85,22 @@
   .search__input {
     width: 100%;
     box-sizing:  border-box;
+    padding-left: (halve($inuit-base-spacing-unit) - $input-border-width);
     padding-right: (double($inuit-base-spacing-unit) - $input-border-width);
     border-radius: 0;
     -webkit-appearance: none;
 
     &:focus {
+      padding-left: (halve($inuit-base-spacing-unit) - ($input-border-width + 1));
       padding-right: (double($inuit-base-spacing-unit) - ($input-border-width + 1));
     }
 
     html.rtl & {
-      padding-right: ($inuit-base-spacing-unit - $input-border-width);
+      padding-right: (halve($inuit-base-spacing-unit) - $input-border-width);
       padding-left: (double($inuit-base-spacing-unit) - $input-border-width);
 
       &:focus {
-        padding-right: ($inuit-base-spacing-unit - ($input-border-width + 1));
+        padding-right: (halve($inuit-base-spacing-unit) - $input-border-width);
         padding-left: (double($inuit-base-spacing-unit) - ($input-border-width + 1));
       }
     }
