@@ -17,12 +17,6 @@ export default class Headline extends Component {
       },
       this.props.className
     );
-    if (this.props.large) {
-      console.warn('The "large" property of Headline is deprecated. Use size="large" instead.');
-    }
-    if (this.props.small) {
-      console.warn('The "small" property of Headline is deprecated. Use size="small" instead.');
-    }
 
     return (
       <div className={classes}>

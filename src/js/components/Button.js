@@ -8,7 +8,7 @@ const CLASS_ROOT = 'button';
 export default class Button extends Component {
   render () {
     const plain = (this.props.plain !== undefined ? this.props.plain :
-      (this.props.icon && ! this.props.label) || 'icon' === this.props.type);
+      (this.props.icon && ! this.props.label));
     let classes = classnames(
       CLASS_ROOT,
       this.props.className,
@@ -22,12 +22,6 @@ export default class Button extends Component {
         [`${CLASS_ROOT}--icon`]: this.props.icon
       }
     );
-
-    // if ('icon' === this.props.type) {
-    //   console.warn('Button type="icon" is deprecated, use plain={true} instead.');
-    // }
-
-    let type = this.props.type === 'icon' ? 'button' : this.props.type;
 
     let icon;
     if (this.props.icon) {
@@ -49,7 +43,7 @@ export default class Button extends Component {
     let Tag = this.props.href ? 'a' : 'button';
 
     return (
-      <Tag href={this.props.href} id={this.props.id} type={type}
+      <Tag href={this.props.href} id={this.props.id} type={this.props.type}
         className={classes} aria-label={this.props.a11yTitle}
         onClick={this.props.onClick} disabled={!this.props.onClick}>
         {icon}
@@ -70,7 +64,7 @@ Button.propTypes = {
   plain: PropTypes.bool,
   primary: PropTypes.bool,
   secondary: PropTypes.bool,
-  type: PropTypes.oneOf(['button', 'reset', 'submit', 'icon']) // deprecate icon
+  type: PropTypes.oneOf(['button', 'reset', 'submit'])
 };
 
 Button.defaultProps = {
