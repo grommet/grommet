@@ -10,6 +10,11 @@
 
   -moz-appearance: textfield;
 
+  // Disable Firefox invalid outline
+  &:invalid {
+    box-shadow: none;
+  }
+
   // Disable IE's clear icon
   &::-ms-clear {
     display: none;
