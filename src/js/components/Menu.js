@@ -170,8 +170,9 @@ class MenuDrop extends Component {
   }
 
   render () {
-    let { dropAlign, size, control, id, onClick } = this.props;
+    let { dropAlign, size, control, id, colorIndex, onClick } = this.props;
     let boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
+    delete boxProps.colorIndex; // manage colorIndex at the outer menuDrop element
 
     delete boxProps.onClick;
 
@@ -206,10 +207,10 @@ class MenuDrop extends Component {
     );
 
     return (
-      <div ref="menuDrop" id={id} className={classes}
+      <Box ref="menuDrop" id={id} className={classes} colorIndex={colorIndex}
         onClick={onClick}>
         {contents}
-      </div>
+      </Box>
     );
   }
 }
