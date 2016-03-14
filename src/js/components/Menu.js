@@ -36,7 +36,8 @@ class MenuDrop extends Component {
     return {
       intl: this.props.intl,
       history: this.props.history,
-      router: this.props.router
+      router: this.props.router,
+      store: this.props.store
     };
   }
 
@@ -220,13 +221,15 @@ MenuDrop.propTypes = {
   id: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
   router: PropTypes.any,
-  size: PropTypes.oneOf(['small', 'medium', 'large'])
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  store: PropTypes.any
 };
 
 MenuDrop.childContextTypes = {
   intl: PropTypes.any,
   history: PropTypes.any,
-  router: PropTypes.any
+  router: PropTypes.any,
+  store: PropTypes.any
 };
 
 export default class Menu extends Component {
@@ -515,7 +518,8 @@ Menu.propTypes = {
 Menu.contextTypes = {
   intl: PropTypes.any,
   history: PropTypes.any,
-  router: PropTypes.any
+  router: PropTypes.any,
+  store: PropTypes.any
 };
 
 Menu.defaultProps = {

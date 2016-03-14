@@ -20,9 +20,9 @@ class LayerContents extends Component {
 
   getChildContext () {
     return {
-      router: this.props.router,
       history: this.props.history,
       intl: this.props.intl,
+      router: this.props.router,
       store: this.props.store
     };
   }
@@ -123,7 +123,8 @@ LayerContents.propTypes = {
   history: PropTypes.object,
   intl: PropTypes.object,
   onClose: PropTypes.func,
-  router: PropTypes.any
+  router: PropTypes.any,
+  store: PropTypes.any
 };
 
 // Because Layer creates a new DOM render context, the context
@@ -132,9 +133,9 @@ LayerContents.propTypes = {
 // whatever we find or have callers explicitly indicate which parts
 // of the context to transfer somehow.
 LayerContents.childContextTypes = {
-  router: PropTypes.any,
   history: PropTypes.object,
   intl: PropTypes.object,
+  router: PropTypes.any,
   store: PropTypes.object
 };
 
@@ -207,9 +208,9 @@ export default class Layer extends Component {
     this._element.className = this._classesFromProps().join(' ');
     var contents = (
       <LayerContents {...this.props}
-        router={this.context.router}
         history={this.context.history}
         intl={this.context.intl}
+        router={this.context.router}
         store={this.context.store} />
     );
     ReactDOM.render(contents, this._element);
