@@ -26,6 +26,8 @@ export default class SkipLinks extends Component {
     KeyboardAccelerators.startListeningToKeyboard(
       this, this._keyboardHandlers
     );
+
+    document.addEventListener('DOMNodeInserted', this._updateAnchors);
   }
 
   componentWillReceiveProps () {
@@ -42,6 +44,7 @@ export default class SkipLinks extends Component {
     KeyboardAccelerators.stopListeningToKeyboard(
       this, this._keyboardHandlers
     );
+    document.removeEventListener('DOMNodeInserted', this._updateAnchors);
   }
 
   _updateAnchors () {
