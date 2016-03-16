@@ -156,6 +156,12 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
     margin-top: $inuit-base-spacing-unit;
     display: block;
   }
+
+  &.meter--legend-align-center {
+    .meter__legend {
+      text-align: center;
+    }
+  }
 }
 
 .meter:not(.meter--vertical) {

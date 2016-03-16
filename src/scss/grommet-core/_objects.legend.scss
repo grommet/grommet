@@ -26,6 +26,7 @@
 .legend__total-label {
   display: inline-block;
   min-width: round($inuit-base-spacing-unit * 3);
+  text-align: left;
 }
 
 .legend__item-value,
@@ -93,7 +94,8 @@
   color: $active-colored-text-color;
 }
 
-.legend__total {
+// need li to override .grommet li
+li.legend__total {
   margin-left: $inuit-base-spacing-unit;
 
   html.rtl & {

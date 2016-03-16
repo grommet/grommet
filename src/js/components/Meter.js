@@ -397,6 +397,9 @@ export default class Meter extends Component {
           }
         }
         classes.push(`${CLASS_ROOT}--legend-${this.state.legendPlacement}`);
+        if (this.props.legend.align) {
+          classes.push(`${CLASS_ROOT}--legend-align-${this.props.legend.align}`);
+        }
       }
     }
 
@@ -452,8 +455,9 @@ Meter.propTypes = {
   legend: PropTypes.oneOfType([
     PropTypes.bool,
     PropTypes.shape({
-      total: PropTypes.bool,
-      placement: PropTypes.oneOf(['right', 'bottom', 'inline'])
+      align: PropTypes.oneOf(['start', 'center', 'end']),
+      placement: PropTypes.oneOf(['right', 'bottom', 'inline']),
+      total: PropTypes.bool
     })
   ]),
   max: PropTypes.oneOfType([
