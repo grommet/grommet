@@ -2,6 +2,8 @@
 
 .image {
 
+  max-width: 100%;
+
   &--medium {
     width: $image-width;
   }
@@ -32,5 +34,14 @@
 
   &--full-vertical {
     height: 100%;
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__caption {
+    text-align: center;
+    padding: halve($inuit-base-spacing-unit);
   }
 }
