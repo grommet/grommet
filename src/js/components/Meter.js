@@ -379,17 +379,22 @@ export default class Meter extends Component {
     }
 
     let minMax = this._renderMinMax(classes);
-
     let activeValue = this._renderActiveValue();
-
     let legend;
     let a11yRole;
+
     if (this.props.legend || this.props.series) {
       a11yRole = 'tablist';
 
       if (this.props.legend) {
         if ('inline' !== this.props.legend.placement) {
           legend = this._renderLegend();
+        } else {
+          // Hide value (displaying total), if legend is inline
+          // and total is set to false
+          if (!(this.props.legend.total)) {
+            activeValue = null;
+          }
         }
         classes.push(`${CLASS_ROOT}--legend-${this.state.legendPlacement}`);
       }

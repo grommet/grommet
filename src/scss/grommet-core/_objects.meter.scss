@@ -65,6 +65,10 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
   &:focus {
     outline: $focus-border-color solid 1px;
   }
+
+  text {
+    fill: $secondary-text-color;
+  }
 }
 
 .meter__value {
