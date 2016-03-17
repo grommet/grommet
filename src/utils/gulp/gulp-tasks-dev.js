@@ -28,7 +28,7 @@ module.exports = function(gulp, options, webpackConfig, dist) {
       entry: {
         app: [
           'webpack-dev-server/client?http://' + (options.devServerHost || 'localhost')  + ':' + (options.devServerPort || '8080'),
-          'webpack/hot/dev-server',
+          'webpack/hot/only-dev-server',
           './' + options.mainJs
         ]
       },
