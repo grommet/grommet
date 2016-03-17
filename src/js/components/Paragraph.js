@@ -17,8 +17,10 @@ export default class Paragraph extends Component {
       }
     );
 
+    // we handle dangerouslySetInnerHTML to allow using Paragraph with Markdown.
     return (
-      <p id={this.props.id} className={classes}>
+      <p id={this.props.id} className={classes}
+        dangerouslySetInnerHTML={this.props.dangerouslySetInnerHTML}>
         {this.props.children}
       </p>
     );

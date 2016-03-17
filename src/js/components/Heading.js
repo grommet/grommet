@@ -23,11 +23,11 @@ export default class Heading extends Component {
       classes.push(this.props.className);
     }
 
+    // we handle dangerouslySetInnerHTML to allow using Heading with Markdown.
     return (
-      <this.props.tag className={classes.join(' ')}>
-        <span>
-          {this.props.children}
-        </span>
+      <this.props.tag id={this.props.id} className={classes.join(' ')}
+        dangerouslySetInnerHTML={this.props.dangerouslySetInnerHTML}>
+        {this.props.children}
       </this.props.tag>
     );
   }

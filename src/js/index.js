@@ -28,6 +28,7 @@ var Grommet = {
   Login: require('./components/Login'),
   LoginForm: require('./components/LoginForm'),
   Map: require('./components/Map'),
+  Markdown: require('./components/Markdown'),
   Menu: require('./components/Menu'),
   Meter: require('./components/Meter'),
   Notification: require('./components/Notification'),
