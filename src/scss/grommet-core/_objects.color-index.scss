@@ -63,4 +63,9 @@
   .background-color-index-light-#{$i + length($brand-light-colors)} {
     background-color: nth($brand-light-colors, $i);
   }
+
+  .background-color-index-light-#{$i}-a,
+  .background-color-index-light-#{$i + length($brand-light-colors)}-a {
+    background-color: rgba(nth($brand-light-colors, $i), 0.8);
+  }
 }
