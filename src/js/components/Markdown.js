@@ -3,10 +3,10 @@
 import React, { PropTypes, createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import marked from 'marked';
-import Paragraph from 'grommet/components/Paragraph';
-import Heading from 'grommet/components/Heading';
-import Anchor from 'grommet/components/Anchor';
-import Image from 'grommet/components/Image';
+import Paragraph from './Paragraph';
+import Heading from './Heading';
+import Anchor from './Anchor';
+import Image from './Image';
 
 function renderComponent(options={}, component, props) {
   const Component = options.component || component;
