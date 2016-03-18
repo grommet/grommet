@@ -99,7 +99,7 @@
 
     &.active,
     &:hover,
-    &:focus, {
+    &:focus {
       text-decoration: none;
       background-color: $hover-background-color;
       color: $link-hover-color;
