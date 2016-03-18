@@ -582,6 +582,25 @@ export default class Chart extends Component {
     return (pos1 && pos2 && pos1.endX > pos2.startX && pos1.startX < pos2.endX);
   }
 
+  _splitLabel (label, position, labelY) {
+    const delimiter = this.props.delimiter;
+    if (delimiter) {
+      var labelArray = label.split(',');
+      labelY = labelY - 5;
+      var tspans = labelArray.map(function (obj, index) {
+        var y = labelY + index*10;
+        return (    
+          <tspan x={position.x} y={y} fontSize={12}>
+            {obj}
+          </tspan>
+        );
+      }, this);
+      return tspans;
+    } else {
+      return label;
+    }
+  }
+
   // Converts the xAxis labels into texts.
   _renderXAxis () {
     let bounds = this.state.bounds;
@@ -622,11 +641,12 @@ export default class Chart extends Component {
         priorPosition = position;
       }
 
+      var label = this._splitLabel(obj.label, position, labelY);
       return (
         <g key={'x_axis_' + xIndex} className={classes.join(' ')}>
           <text x={position.x} y={labelY} role="presentation"
             textAnchor={position.anchor} fontSize={16}>
-            {obj.label}
+            {label}
           </text>
         </g>
       );
