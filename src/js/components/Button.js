@@ -19,7 +19,8 @@ export default class Button extends Component {
         [`${CLASS_ROOT}--disabled`]: !this.props.onClick && !this.props.href,
         [`${CLASS_ROOT}--fill`]: this.props.fill,
         [`${CLASS_ROOT}--plain`]: plain,
-        [`${CLASS_ROOT}--icon`]: this.props.icon
+        [`${CLASS_ROOT}--icon`]: this.props.icon,
+        [`${CLASS_ROOT}--align-${this.props.align}`]: this.props.align
       }
     );
 
@@ -56,6 +57,7 @@ export default class Button extends Component {
 Button.propTypes = {
   a11yTitle: PropTypes.string,
   accent: PropTypes.bool,
+  align: PropTypes.oneOf(['start', 'center', 'end']),
   fill: PropTypes.bool,
   icon: PropTypes.element,
   id: PropTypes.string,

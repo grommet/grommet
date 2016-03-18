@@ -50,6 +50,17 @@ $button-horizontal-padding: round($inuit-base-spacing-unit) - $button-border-wid
 .button__icon {
   display: inline-block;
   padding: halve($inuit-base-spacing-unit);
+
+  svg {
+    vertical-align: top;
+  }
+}
+
+.button:not(.button--plain) {
+  .button__icon {
+    padding: 0;
+    margin-right: halve($inuit-base-spacing-unit);
+  }
 }
 
 .button--primary {
@@ -73,6 +84,14 @@ $button-horizontal-padding: round($inuit-base-spacing-unit) - $button-border-wid
 
 .button--accent {
   border-color: $button-accent-color;
+}
+
+.button--align-start {
+  text-align: left;
+
+  html.rtl & {
+    text-align: right;
+  }
 }
 
 .button--plain {
