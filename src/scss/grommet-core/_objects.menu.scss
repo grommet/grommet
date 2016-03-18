@@ -97,10 +97,12 @@
     display: block;
     text-decoration: none;
 
+    &.active,
     &:hover,
-    &:focus {
+    &:focus, {
       text-decoration: none;
       background-color: $hover-background-color;
+      color: $link-hover-color;
     }
   }
 
