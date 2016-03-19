@@ -48,15 +48,16 @@ export default class Anchor extends Component {
     const first = this.props.reverse ? children : icon;
     const second = this.props.reverse ? icon : children;
 
+    const Component = this.props.tag;
     return (
-      <this.props.tag id={this.props.id} className={classes}
+      <Component id={this.props.id} className={classes}
         href={this.props.href}
         target={this.props.target}
         onClick={this.props.onClick}
         aria-label={this.props.a11yTitle}>
         {first}
         {second}
-      </this.props.tag>
+      </Component>
     );
   }
 };
