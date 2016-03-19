@@ -105,6 +105,9 @@ linters:
     enabled: true
     extra_properties: ['animate']
 
+  PseudoElement:
+    enabled: false
+
   QualifyingElement:
     enabled: true
     allow_element_with_attribute: true
@@ -168,7 +171,7 @@ linters:
     enabled: false
 
   UrlQuotes:
-    enabled: false
+    enabled: true
 
   VariableForProperty:
     enabled: false

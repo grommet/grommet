@@ -78,7 +78,7 @@ var bowerMinWebpackConfig = Object.assign({}, bowerWebpackConfig, {
 
 module.exports = function(gulp, opts) {
 
-  gulp.task('generate-index-icons', ['generate-icons'], function (done) {
+  gulp.task('generate-index-icons', function (done) {
     var iconsFolder = path.join(__dirname, 'src/img/icons');
     var iconsMap = ['module.exports = {'];
     fs.readdir(iconsFolder, function(err, icons) {
