@@ -27,6 +27,8 @@ export default class Article extends Component {
     this._onPrevious = this._onPrevious.bind(this);
     this._onTogglePlay = this._onTogglePlay.bind(this);
     this._onSelect = this._onSelect.bind(this);
+    this._checkControls = this._checkControls.bind(this);
+    this._checkPreviousNextControls = this._checkPreviousNextControls.bind(this);
 
     this.state = {
       activeIndex: 0,
@@ -56,6 +58,45 @@ export default class Article extends Component {
     }
   }
 
+  _checkPreviousNextControls (currentScroll, nextProp, prevProp) {
+    const nextStepNode = ReactDOM.findDOMNode(
+      this.refs[this.state.activeIndex + 1]
+    );
+
+    const previousStepNode = ReactDOM.findDOMNode(
+      this.refs[this.state.activeIndex - 1]
+    );
+
+    if (nextStepNode) {
+      const nextStepPosition = (
+        nextStepNode.getBoundingClientRect()[nextProp]
+      );
+
+      if (currentScroll > nextStepPosition / 2) {
+        this.setState({activeIndex: this.state.activeIndex + 1});
+      }
+    }
+
+    if (previousStepNode) {
+      const previousStepPosition = (
+        previousStepNode.getBoundingClientRect()[prevProp]
+      );
+
+      if (currentScroll < previousStepPosition / 2) {
+        this.setState({activeIndex: this.state.activeIndex - 1});
+      }
+    }
+  }
+
+  _checkControls () {
+    if (this.props.direction === 'row') {
+      const currentScroll = this.refs.component.refs.boxContainer.scrollLeft;
+      this._checkPreviousNextControls(currentScroll, 'left', 'right');
+    } else {
+      const currentScroll = this.refs.component.refs.boxContainer.scrollTop;
+      this._checkPreviousNextControls(currentScroll, 'top', 'bottom');
+    }
+  }
   _onWheel (event) {
     const delta = ('row' === this.props.direction ? event.deltaX : event.deltaY);
     if (Math.abs(delta) > 100) {
@@ -74,6 +115,9 @@ export default class Article extends Component {
       } else if (delta < -10) {
         clearInterval(this._wheelTimer);
         this._wheelTimer = setTimeout(this._onPrevious, 200);
+      } else {
+        clearInterval(this._controlTimer);
+        this._controlTimer = setTimeout(this._checkControls, 200);
       }
     }
   }

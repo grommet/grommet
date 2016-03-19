@@ -67,6 +67,14 @@
         transform: translateX(-50%);
       }
     }
+
+    @include media-query(palm) {
+      &.box--responsive {
+        &.box--direction-row {
+          flex-direction: row;
+        }
+      }
+    }
   }
 
   > * {
