@@ -4,6 +4,7 @@ import React, { Component, PropTypes, Children } from 'react';
 import ReactDOM from 'react-dom';
 import Box from './Box';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
+import DOMUtils from '../utils/DOM';
 import Props from '../utils/Props';
 import Scroll from '../utils/Scroll';
 // import CarouselControls from './CarouselControls';
@@ -194,13 +195,28 @@ export default class Article extends Component {
 
   _onSelect (activeIndex) {
     const childElement = ReactDOM.findDOMNode(this.refs[activeIndex]);
-    const rect = childElement.getBoundingClientRect();
-    if ('row' === this.props.direction) {
-      Scroll.scrollBy(this._scrollParent, 'scrollLeft', rect.left);
-    } else {
-      Scroll.scrollBy(this._scrollParent, 'scrollTop', rect.top);
+    if (activeIndex !== this.state.activeIndex && childElement) {
+      const rect = childElement.getBoundingClientRect();
+      if ('row' === this.props.direction) {
+        Scroll.scrollBy(this._scrollParent, 'scrollLeft', rect.left);
+      } else {
+        Scroll.scrollBy(this._scrollParent, 'scrollTop', rect.top);
+      }
+
+      this.setState({activeIndex: activeIndex}, () => {
+        var items = childElement.getElementsByTagName('*');
+        var firstFocusable = DOMUtils.getBestFirstFocusable(items);
+        if (firstFocusable) {
+          firstFocusable.focus();
+        } else {
+          this.refs[`anchor_step_${activeIndex}`].focus();
+        }
+
+        if (this.props.onFocusChange) {
+          this.props.onFocusChange(activeIndex);
+        }
+      });
     }
-    this.setState({activeIndex: activeIndex});
   }
 
   _onFocusChange (e) {
@@ -208,6 +224,7 @@ export default class Article extends Component {
       let parent = ReactDOM.findDOMNode(this.refs[index]);
       if (parent && parent.contains(e.target)) {
         this._onSelect(index);
+        return false;
       }
     }.bind(this));
   }
@@ -224,32 +241,34 @@ export default class Article extends Component {
       //   direction={this.props.direction}
       //   selected={this.state.activeIndex} onChange={this._onSelect} />
     ];
+
+    const a11yTitle = this.props.a11yTitle || {};
     if ('row' === this.props.direction) {
       if (this.state.activeIndex > 0) {
         controls.push(
-          <Button key="previous" plain={true}
+          <Button key="previous" plain={true} a11yTitle={a11yTitle.previous}
             className={`${CONTROL_CLASS_PREFIX}-left`}
-            onClick={this._onPrevious}><PreviousIcon size="large" /></Button>
+            onClick={this._onPrevious} icon={<PreviousIcon size="large" />} />
         );
       }
       if (this.state.activeIndex < (childCount - 1)) {
         controls.push(
-          <Button key="next" plain={true}
+          <Button key="next" plain={true} a11yTitle={a11yTitle.next}
             className={`${CONTROL_CLASS_PREFIX}-right`}
-            onClick={this._onNext}><NextIcon size="large" /></Button>
+            onClick={this._onNext} icon={<NextIcon size="large" />} />
         );
       }
     } else {
       if (this.state.activeIndex > 0) {
         controls.push(
-          <Button key="previous" plain={true}
+          <Button key="previous" plain={true} a11yTitle={a11yTitle.previous}
             className={`${CONTROL_CLASS_PREFIX}-up`}
             onClick={this._onPrevious}><UpIcon /></Button>
         );
       }
       if (this.state.activeIndex < (childCount - 1)) {
         controls.push(
-          <Button key="next" plain={true}
+          <Button key="next" plain={true} a11yTitle={a11yTitle.next}
             className={`${CONTROL_CLASS_PREFIX}-down`}
             onClick={this._onNext}><DownIcon /></Button>
         );
@@ -277,9 +296,26 @@ export default class Article extends Component {
     let children = this.props.children;
     if (this.props.scrollStep || this.props.controls) {
       children = Children.map(this.props.children, (element, index) => {
-        return (element ? React.cloneElement(element, { ref: index }) : element);
+        if (element) {
+          const elementClone = React.cloneElement(element, { ref: index });
+          let elementNode = elementClone;
+
+          if (this.props.controls) {
+            elementNode = (
+              <div>
+                <a tabIndex='-1' aria-hidden='true'
+                  ref={`anchor_step_${index}`} onFocus={element.props.onFocus} />
+                {elementClone}
+              </div>
+            );
+          }
+
+          return elementNode;
+        }
       });
     }
+
+    delete other.a11yTitle;
 
     return (
       <Box ref="component" tag="article" {...other}
@@ -296,7 +332,12 @@ Article.propTypes = {
   controls: PropTypes.bool,
   primary: PropTypes.bool,
   scrollStep: PropTypes.bool,
-  ...Box.propTypes
+  ...Box.propTypes,
+  a11yTitle: PropTypes.shape({
+    next: Props.string,
+    previous: Props.string
+  }),
+  onFocusChange: PropTypes.func
 };
 
 Article.defaultProps = {
