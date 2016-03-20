@@ -297,12 +297,19 @@ export default class Article extends Component {
     if (this.props.scrollStep || this.props.controls) {
       children = Children.map(this.props.children, (element, index) => {
         if (element) {
-          const elementClone = React.cloneElement(element, { ref: index });
+          const elementClone = React.cloneElement(element, {
+            ref: index
+          });
           let elementNode = elementClone;
+
+          let ariaHidden;
+          if (this.state.activeIndex !== index) {
+            ariaHidden = 'true';
+          }
 
           if (this.props.controls) {
             elementNode = (
-              <div>
+              <div aria-hidden={ariaHidden}>
                 <a tabIndex='-1' aria-hidden='true'
                   ref={`anchor_step_${index}`} onFocus={element.props.onFocus} />
                 {elementClone}
