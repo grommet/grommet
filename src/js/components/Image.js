@@ -9,7 +9,7 @@ const CLASS_ROOT = 'image';
 
 export default class Image extends Component {
   render () {
-    let { caption, className, full, id, size, src } = this.props;
+    let { alt, caption, className, full, id, size, src } = this.props;
     let classes = classnames(
       CLASS_ROOT,
       {
@@ -20,21 +20,25 @@ export default class Image extends Component {
       className
     );
 
-    return caption ? (
-      <figure className={classes}>
-        <img id={id} src={src} className={`${CLASS_ROOT}__image`} />
-        <figcaption className={`${CLASS_ROOT}__caption`}>
-          <Label>{caption}</Label>
-        </figcaption>
-      </figure>
+    const captionText = (typeof caption === 'string') ? caption : alt;
+    const containerClasses = classnames(classes, `${CLASS_ROOT}__container`);
+
+    return caption && captionText ? (
+      <span className={containerClasses}>
+        <img id={id} src={src} alt={alt} />
+        <Label className={`${CLASS_ROOT}__caption`}>{captionText}</Label>
+      </span>
     ) : (
-      <img id={id} src={src} className={classes} />
+      <img id={id} src={src} alt={alt} className={classes} />
     );
   }
 };
 
 Image.propTypes = {
-  caption: PropTypes.string,
+  alt: PropTypes.string,
+  caption: PropTypes.oneOfType([
+    PropTypes.bool, PropTypes.string
+  ]),
   className: PropTypes.string,
   full: PropTypes.oneOf([true, 'horizontal', 'vertical', false]),
   id: PropTypes.string,
