@@ -30,14 +30,8 @@ export default class SkipLinks extends Component {
     document.addEventListener('DOMNodeInserted', this._updateAnchors);
   }
 
-  componentWillReceiveProps () {
-    this.setState({routeChanged: true});
-  }
-
   componentDidUpdate () {
-    if (this.state.routeChanged) {
-      this.setState({routeChanged: false}, this._updateAnchors);
-    }
+    this._updateAnchors();
   }
 
   componentWillUnmount () {
@@ -48,16 +42,18 @@ export default class SkipLinks extends Component {
   }
 
   _updateAnchors () {
-    let anchorElements = document.querySelectorAll('.skip-link-anchor');
+    setTimeout(() => {
+      let anchorElements = document.querySelectorAll('.skip-link-anchor');
 
-    let anchors = Array.prototype.map.call(anchorElements, function (anchorElement) {
-      return {
-        id: anchorElement.getAttribute('id'),
-        label: anchorElement.textContent
-      };
-    });
+      let anchors = Array.prototype.map.call(anchorElements, function (anchorElement) {
+        return {
+          id: anchorElement.getAttribute('id'),
+          label: anchorElement.textContent
+        };
+      });
 
-    this.setState({anchors: anchors});
+      this.setState({anchors: anchors});
+    }, 100);
   }
 
   _onFocus () {
