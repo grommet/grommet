@@ -39,6 +39,8 @@ var Grommet = {
   Section: require('./components/Section'),
   Sidebar: require('./components/Sidebar'),
   Split: require('./components/Split'),
+  SkipLinkAnchor: require('./components/SkipLinkAnchor'),
+  SkipLinks: require('./components/SkipLinks'),
   Tab: require('./components/Tab'),
   Table: require('./components/Table'),
   TableRow: require('./components/TableRow'),
