@@ -9,12 +9,23 @@ import Markdown from '../../src/js/components/Markdown';
 describe('Grommet Markdown', function() {
   it('loads a paragraph Markdown', () => {
     const shallowRenderer = TestUtils.createRenderer();
-    shallowRenderer.render(React.createElement(Markdown, { content: 'test' }));
+    shallowRenderer.render(React.createElement(Markdown, {
+      content: 'test',
+      components: {
+        p: {
+          props: {
+            className: 'testing',
+            size: 'large'
+          }
+        }
+      }
+    }));
     const markdownElement = shallowRenderer.getRenderOutput();
 
-    expect(markdownElement.props.className).to.contain('markdown');
-    expect(markdownElement.props.dangerouslySetInnerHTML.__html)
-      .to.contain('<p class="paragraph">test</p>');
+    expect(markdownElement.props.children.length).to.equal(1);
+    const paragraph = markdownElement.props.children[0];
+    expect(paragraph.props.className).to.contain('testing');
+    expect(paragraph.props.size).to.equal('large');
   });
 
 });
