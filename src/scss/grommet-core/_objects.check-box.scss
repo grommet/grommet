@@ -178,7 +178,7 @@
       box-sizing: border-box;
 
       #{$dark-background-context} & {
-        background-color: transparent;
+        background-color: #fff;
         border-color: $colored-icon-color;
       }
     }
@@ -204,6 +204,7 @@
         margin-left: $control-size;
 
         #{$dark-background-context} & {
+          background-color: #fff;
           border-color: $colored-icon-color;
         }
       }
