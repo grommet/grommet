@@ -116,6 +116,9 @@ export default class Graphic extends Component {
       } else {
         this.props.onActivate(this.props.activeIndex - 1);
       }
+
+      //stop event propagation
+      return true;
     }
   }
 
@@ -131,6 +134,9 @@ export default class Graphic extends Component {
       } else {
         this.props.onActivate(this.props.activeIndex + 1);
       }
+
+      //stop event propagation
+      return true;
     }
   }
 
