@@ -201,7 +201,15 @@ export default class Layer extends Component {
   }
 
   _handleAriaHidden (hideOverlay) {
-    this._element.setAttribute('aria-hidden', hideOverlay || false);
+    const ariaHidden = hideOverlay || false;
+    this._element.setAttribute('aria-hidden', ariaHidden);
+    const grommetApps = document.querySelectorAll('.app');
+
+    if (grommetApps) {
+      Array.prototype.slice.call(grommetApps).forEach((grommetApp) => {
+        grommetApp.setAttribute('aria-hidden', !ariaHidden);
+      });
+    }
   }
 
   _renderLayer () {

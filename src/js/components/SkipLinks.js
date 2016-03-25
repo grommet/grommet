@@ -14,6 +14,7 @@ export default class SkipLinks extends Component {
     this._processTab = this._processTab.bind(this);
     this._onFocus = this._onFocus.bind(this);
     this._updateAnchors = this._updateAnchors.bind(this);
+    this._checkForSkipLink = this._checkForSkipLink.bind(this);
     this.state = {anchors: [], showLayer: false};
   }
 
@@ -27,33 +28,44 @@ export default class SkipLinks extends Component {
       this, this._keyboardHandlers
     );
 
-    document.addEventListener('DOMNodeInserted', this._updateAnchors);
+    document.addEventListener('DOMNodeInserted', this._checkForSkipLink);
+  }
+
+  componentWillReceiveProps () {
+    this.setState({routeChanged: true});
   }
 
   componentDidUpdate () {
-    this._updateAnchors();
+    if (this.state.routeChanged) {
+      this.setState({routeChanged: false}, this._updateAnchors);
+    }
   }
 
   componentWillUnmount () {
     KeyboardAccelerators.stopListeningToKeyboard(
       this, this._keyboardHandlers
     );
-    document.removeEventListener('DOMNodeInserted', this._updateAnchors);
+    document.removeEventListener('DOMNodeInserted', this._checkForSkipLink);
+  }
+
+  _checkForSkipLink (event) {
+    const skipLinks = document.querySelectorAll('.skip-link-anchor');
+    if (skipLinks.length > 0) {
+      this._updateAnchors();
+    }
   }
 
   _updateAnchors () {
-    setTimeout(() => {
-      let anchorElements = document.querySelectorAll('.skip-link-anchor');
+    let anchorElements = document.querySelectorAll('.skip-link-anchor');
 
-      let anchors = Array.prototype.map.call(anchorElements, function (anchorElement) {
-        return {
-          id: anchorElement.getAttribute('id'),
-          label: anchorElement.textContent
-        };
-      });
+    let anchors = Array.prototype.map.call(anchorElements, function (anchorElement) {
+      return {
+        id: anchorElement.getAttribute('id'),
+        label: anchorElement.textContent
+      };
+    });
 
-      this.setState({anchors: anchors});
-    }, 100);
+    this.setState({anchors: anchors, routeChanged: false});
   }
 
   _onFocus () {
