@@ -283,6 +283,9 @@ export default class Distribution extends Component {
       } else {
         this._onActivate(this.state.activeIndex - 1);
       }
+
+      //stop event propagation
+      return true;
     }
   }
 
@@ -298,6 +301,9 @@ export default class Distribution extends Component {
       } else {
         this._onActivate(this.state.activeIndex + 1);
       }
+
+      //stop event propagation
+      return true;
     }
   }
 

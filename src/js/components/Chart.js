@@ -85,6 +85,9 @@ export default class Chart extends Component {
       } else {
         this._onMouseOver(this.state.activeXIndex - 1);
       }
+
+      //stop event propagation
+      return true;
     }
   }
 
@@ -101,6 +104,9 @@ export default class Chart extends Component {
       } else {
         this._onMouseOver(this.state.activeXIndex + 1);
       }
+
+      //stop event propagation
+      return true;
     }
   }
 
