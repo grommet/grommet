@@ -52,6 +52,8 @@ export default class SkipLinks extends Component {
     const skipLinks = document.querySelectorAll('.skip-link-anchor');
     if (skipLinks.length > 0) {
       this._updateAnchors();
+    } else if (this.state.anchors.length > 0) {
+      this._updateAnchors();
     }
   }
 
