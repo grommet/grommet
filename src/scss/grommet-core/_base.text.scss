@@ -74,6 +74,8 @@
 
   blockquote {
     @include inuit-font-size(36px);
+    margin-top: $inuit-base-spacing-unit;
+    margin-bottom: $inuit-base-spacing-unit;
   }
 
   b,
