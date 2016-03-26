@@ -63,7 +63,6 @@
 
   .control-icon-down {
     width: halve($inuit-base-spacing-unit);
-    height: halve($inuit-base-spacing-unit);
 
     path,
     polyline {
@@ -342,5 +341,12 @@
 @include media-query(palm) {
   .menu__drop {
     max-width: 100%;
+
+    // remove extra space under mobile menu drop button
+    &.box--responsive {
+      .button {
+        margin-bottom: 0;
+      }
+    }
   }
 }

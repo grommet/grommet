@@ -71,7 +71,9 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
     border-radius: 0px;
     @include inuit-font-size($content-font-size);
 
-    &:focus {
+    // Do not apply padding to range, because it will squish
+    // the slider track on focus
+    &:focus:not(input[type=range]) {
       border: none;
       padding: 0 $form-horizontal-padding;
     }

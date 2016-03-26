@@ -122,49 +122,16 @@
     }
 
     &::-webkit-slider-thumb {
-      @include range-thumb();
       -webkit-appearance: none;
-      margin-top: - (round($control-size * 0.45));
-    }
-
-    &::-webkit-slider-thumb:before {
-      content: "";
-      position: absolute;
-      left: -3000px;
-      right: $control-size;
-      top: halve($control-size) - ($control-border-width + 1);
-      bottom: halve($control-size) - ($control-border-width + 1);
-      background-color: $brand-color;
-      pointer-events: none;
-
-      #{$dark-background-context} & {
-        background-color: #fff;
-      }
-    }
-
-    &::-webkit-slider-thumb:after {
-      content: "";
-      position: absolute;
+      @include range-thumb();
+      margin-top: -(round($control-size * 0.45));
       border: $control-border-width solid $brand-color;
-      height: $control-size - ($control-border-width * 2);
-      width: $control-size - ($control-border-width * 2);
       border-radius: $control-size;
       background-color: $background-color;
       cursor: pointer;
 
-      #{$dark-background-context} & {
-        background-color: transparent;
-        border-color: $active-colored-icon-color;
-      }
-    }
-
-    &:hover::-webkit-slider-thumb:after {
-      content: "";
-      border-color: $active-icon-color;
-
-      #{$dark-background-context} & {
-        background-color: $active-colored-icon-color;
-        border-color: $active-colored-icon-color;
+      &:hover {
+        border-color: $active-icon-color;
       }
     }
 
@@ -180,20 +147,10 @@
       width: $control-size - ($control-border-width * 2);
       border-radius: $control-size;
       background-color: $background-color;
-
-      #{$dark-background-context} & {
-        border-color: $active-colored-icon-color;
-        background-color: transparent;
-      }
     }
 
-    &::hover::-moz-range-thumb {
+    &:hover::-moz-range-thumb {
       border-color: $active-icon-color;
-
-      #{$dark-background-context} & {
-        border-color: $active-colored-icon-color;
-        background-color: $active-colored-icon-color;
-      }
     }
 
     // This isn't working
@@ -253,6 +210,20 @@
         border-color: $active-colored-icon-color;
         background-color: $active-colored-icon-color;
       }
+    }
+  }
+
+  #{$dark-background-context} input[type=range] {
+    &::-webkit-slider-thumb {
+      background-color: $active-colored-icon-color;
+      border: $control-border-width solid $active-colored-icon-color;
+    }
+  }
+
+  #{$dark-background-context} {
+    input[type=range]::-moz-range-thumb {
+      background-color: $active-colored-icon-color;
+      border: $control-border-width solid $active-colored-icon-color;
     }
   }
 }
