@@ -235,7 +235,7 @@ export default class Layer extends Component {
   }
 
   render () {
-    return (<span></span>);
+    return (<span style={{display: 'none'}} />);
   }
 
 }
