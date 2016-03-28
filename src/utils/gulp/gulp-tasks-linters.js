@@ -1,6 +1,7 @@
 var path = require('path');
 var eslint = require('gulp-eslint');
 var shelljs = require('shelljs');
+var deepAssign = require('deep-assign');
 
 function scssLintExists() {
   return shelljs.which('scss-lint');
@@ -29,7 +30,7 @@ module.exports = function(gulp, options) {
   });
 
   gulp.task('jslint', function() {
-    var eslintRules = Object.assign({
+    var eslintRules = deepAssign({
       configFile: esLintPath
     }, customEslint);
     return gulp.src(options.jsAssets || [])

@@ -1,6 +1,7 @@
 var runSequence = require('run-sequence');
 var gulpWebpack = require('webpack-stream');
 var webpack = require('webpack');
+var deepAssign = require('deep-assign');
 
 module.exports = function(gulp, options, webpackConfig, dist) {
 
@@ -24,7 +25,7 @@ module.exports = function(gulp, options, webpackConfig, dist) {
   });
 
   gulp.task('dist', ['dist-preprocess'], function() {
-    var env = Object.assign({
+    var env = deepAssign({
       __DEV_MODE__: false,
       NODE_ENV: "\"production\"",
       'process.env.NODE_ENV': '"production"'
@@ -46,7 +47,7 @@ module.exports = function(gulp, options, webpackConfig, dist) {
       }));
     }
 
-    var config = Object.assign({
+    var config = deepAssign({
       plugins: plugins
     }, webpackConfig, options.webpack || {});
 
@@ -64,13 +65,13 @@ module.exports = function(gulp, options, webpackConfig, dist) {
       });
     }
 
-    config.resolve.extensions = Object.assign(config.resolve.extensions || [],
+    config.resolve.extensions = deepAssign(config.resolve.extensions || [],
       ['', '.js', '.json', '.htm', '.html', '.scss', '.md', '.svg']);
 
-    config.resolve.modulesDirectories = Object.assign(config.resolve.modulesDirectories || [],
+    config.resolve.modulesDirectories = deepAssign(config.resolve.modulesDirectories || [],
       ['node_modules/grommet/node_modules', 'node_modules']);
 
-    config.resolveLoader.modulesDirectories = Object.assign(config.resolveLoader.modulesDirectories || [],
+    config.resolveLoader.modulesDirectories = deepAssign(config.resolveLoader.modulesDirectories || [],
       ['node_modules/grommet/node_modules', 'node_modules']);
 
     return gulp.src(options.mainJs)
