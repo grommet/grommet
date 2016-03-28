@@ -21,11 +21,8 @@
     }
 
     &:focus {
-      padding: (halve($inuit-base-spacing-unit) - $input-focus-border-width)
-        ($inuit-base-spacing-unit - $input-focus-border-width);
       border-width: $input-focus-border-width;
       border-color: $focus-border-color;
-      //box-shadow: 0 0 1px 1px $focus-border-color;
     }
 
     &::-moz-focus-inner {
