@@ -279,5 +279,6 @@ Tiles.propTypes = {
 
 Tiles.defaultProps = {
   flush: true,
-  justify: 'start'
+  justify: 'start',
+  pad: 'small'
 };

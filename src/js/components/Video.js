@@ -2,6 +2,7 @@
 
 import React, { Component, PropTypes } from 'react';
 import Button from './Button';
+import Box from './Box';
 import PlayIcon from './icons/base/Play';
 import PauseIcon from './icons/base/Pause';
 import RefreshIcon from './icons/base/Refresh';
@@ -110,9 +111,9 @@ export default class Video extends Component {
     if (this.props.title) {
       classes.push(`${CLASS_ROOT}--titled`);
       title = (
-        <div className={`${CLASS_ROOT}__title`}>
+        <Box align="center" justify="center" className={`${CLASS_ROOT}__title`}>
           {this.props.title}
-        </div>
+        </Box>
       );
     }
 
@@ -157,14 +158,16 @@ export default class Video extends Component {
         <video ref="video" poster={this.props.poster}>
           {this.props.children}
         </video>
-        <div className={`${CLASS_ROOT}__summary`}>
-          <Button className={`${CLASS_ROOT}__control`} plain={true}
-            primary={true}
-            onClick={this._onClickControl}>
-            {controlIcon}
-          </Button>
-          {title}
-        </div>
+        <Box pad="none" align="center" justify="center" className={`${CLASS_ROOT}__summary`}>
+          <Box pad="large" align="center" justify="center">
+            <Button className={`${CLASS_ROOT}__control`} plain={true}
+              primary={true}
+              onClick={this._onClickControl}>
+              {controlIcon}
+            </Button>
+            {title}
+          </Box>
+        </Box>
         {timeline}
         {progress}
       </div>
