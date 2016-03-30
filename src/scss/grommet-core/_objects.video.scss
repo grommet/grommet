@@ -45,6 +45,12 @@
     padding: $inuit-base-spacing-unit;
   }
 
+  &--video-header {
+    .video__summary {
+      padding: 0;
+    }
+  }
+
   &__control.button--primary {
     flex: 0 0 auto;
     width: quadruple($inuit-base-spacing-unit);
@@ -70,7 +76,8 @@
     color: $colored-text-color;
     background-color: rgba(nth($brand-grey-colors, 1), 0.7);
 
-    &-chapter {
+    &-chapter,
+    &-chapter-current {
       position: absolute;
       height: 100%;
       padding-left: quarter($inuit-base-spacing-unit);
@@ -87,6 +94,11 @@
         display: block;
         @include inuit-font-size($label-font-size, $inuit-base-spacing-unit);
       }
+    }
+
+    &-chapter-current {
+      color: nth($brand-accent-colors, 2);
+      border-color: nth($brand-accent-colors, 2);
     }
   }
 
@@ -113,14 +125,18 @@
     }
   }
 
-  &--playing:not(.video--interacting) {
+  &--playing {
+    &:not(.video--interacting) {
+      .video__control,
+      .video__timeline,
+      .video__progress {
+        opacity: 0;
+        transition: opacity 1s;
+      }
+    }
 
-    .video__summary,
-    .video__timeline,
-    .video__progress {
-      opacity: 0;
-      transition: opacity 1s;
+    .video__title {
+      visibility: hidden;
     }
   }
-
 }
