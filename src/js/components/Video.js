@@ -138,18 +138,9 @@ export default class Video extends Component {
       <Box>
       </Box>
     );
+
     if (this.props.videoHeader) {
       videoHeader = this.props.videoHeader;
-      if (fullScreenButton) {
-        let videoHeaderChildren = videoHeader.props.children;
-        let iconBox = (
-          <Box direction="row" responsive={false}>
-            {fullScreenButton}
-            {videoHeaderChildren[0, videoHeaderChildren.length - 1]}
-          </Box>
-        );
-        videoHeaderChildren.splice(-1, 1, iconBox);
-      }
     } else if (fullScreenButton) {
       // fallback to only displaying full screen icon in header
       // if allowing fullscreen
