@@ -7,6 +7,10 @@
   @include media-query(palm) {
     max-width: 100%;
     width: 100vw;
+
+    &__title {
+      visibility: hidden;
+    }
   }
 
   @include media-query(lap-and-up) {
