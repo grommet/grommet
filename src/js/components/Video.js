@@ -134,7 +134,10 @@ export default class Video extends Component {
       );
     }
 
-    var videoHeader;
+    var videoHeader = (
+      <Box>
+      </Box>
+    );
     if (this.props.videoHeader) {
       videoHeader = this.props.videoHeader;
       if (fullScreenButton) {
@@ -233,7 +236,7 @@ export default class Video extends Component {
             </Button>
             {title}
           </Box>
-          <Box pad="medium">
+          <Box>
           </Box>
         </Box>
         {timeline}

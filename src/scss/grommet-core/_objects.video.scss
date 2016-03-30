@@ -63,10 +63,6 @@
     }
   }
 
-  &__title {
-    margin-left: $inuit-base-spacing-unit;
-  }
-
   &__timeline {
     position: absolute;
     left: 0px;
@@ -97,8 +93,15 @@
     }
 
     &-chapter-current {
-      color: nth($brand-accent-colors, 2);
-      border-color: nth($brand-accent-colors, 2);
+      $brand-accent-color-index: 3;
+      @if ($brand-accent-color-index <= length($brand-accent-colors)) {
+        $chapter-current-color: nth($brand-accent-colors, $brand-accent-color-index);
+      }
+      @else {
+        $chapter-current-color: $brand-color;
+      }
+      color: $chapter-current-color;
+      border-color: $chapter-current-color;
     }
   }
 
