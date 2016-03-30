@@ -135,8 +135,7 @@ export default class Video extends Component {
     }
 
     var videoHeader = (
-      <Box>
-      </Box>
+      <Box />
     );
 
     if (this.props.videoHeader) {
@@ -170,7 +169,6 @@ export default class Video extends Component {
         var time = Math.floor(chapter.time / 60) + ':' +
           (seconds < 10 ? '0' + seconds : seconds);
         var currentProgress = this.state.progress;
-        var previousChapter = chapters[Math.max(0, index - 1)];
         var nextChapter = chapters[Math.min(chapters.length - 1, index + 1)];
         var timelineClass = `${CLASS_ROOT}__timeline-chapter`;
         if (currentProgress !== 0) {
@@ -227,8 +225,7 @@ export default class Video extends Component {
             </Button>
             {title}
           </Box>
-          <Box>
-          </Box>
+          <Box />
         </Box>
         {timeline}
         {progress}
