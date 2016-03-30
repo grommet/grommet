@@ -3,6 +3,7 @@
 import React, { Component, PropTypes } from 'react';
 import Button from './Button';
 import Box from './Box';
+import ExpandIcon from './icons/base/Expand';
 import PlayIcon from './icons/base/Play';
 import PauseIcon from './icons/base/Pause';
 import RefreshIcon from './icons/base/Refresh';
@@ -20,6 +21,7 @@ export default class Video extends Component {
     this._onClickControl = this._onClickControl.bind(this);
     this._onMouseMove = this._onMouseMove.bind(this);
     this._onClickChapter = this._onClickChapter.bind(this);
+    this._onFullScreen = this._onFullScreen.bind(this);
 
     this.state = { playing: false, progress: 0 };
   }
@@ -80,6 +82,19 @@ export default class Video extends Component {
     this.setState({progress: time});
   }
 
+  _onFullScreen () {
+    var video = this.refs.video;
+
+    // check if webkit and mozilla fullscreen is available
+    if (video.webkitRequestFullScreen) {
+      video.webkitRequestFullScreen();
+    } else if (video.mozRequestFullScreen) {
+      video.mozRequestFullScreen();
+    } else {
+      console.warn('Your browser doesn\'t support fullscreen.');
+    }
+  }
+
   render () {
     var classes = [CLASS_ROOT];
     if (this.props.size) {
@@ -94,6 +109,9 @@ export default class Video extends Component {
     if (this.state.interacting) {
       classes.push(`${CLASS_ROOT}--interacting`);
     }
+    if (this.props.videoHeader) {
+      classes.push(`${CLASS_ROOT}--video-header`);
+    }
     if (this.props.colorIndex) {
       classes.push(`background-color-index-${this.props.colorIndex}`);
     }
@@ -106,6 +124,38 @@ export default class Video extends Component {
       <PauseIcon size={controlIconSize} /> : (this.state.ended ?
         <RefreshIcon size={controlIconSize} /> :
           <PlayIcon size={controlIconSize} />));
+
+    var fullScreenButton;
+    if (this.props.allowFullScreen) {
+      fullScreenButton = (
+        <Button plain={true} onClick={this._onFullScreen}>
+          <ExpandIcon />
+        </Button>
+      );
+    }
+
+    var videoHeader;
+    if (this.props.videoHeader) {
+      videoHeader = this.props.videoHeader;
+      if (fullScreenButton) {
+        let videoHeaderChildren = videoHeader.props.children;
+        let iconBox = (
+          <Box direction="row" responsive={false}>
+            {fullScreenButton}
+            {videoHeaderChildren[0, videoHeaderChildren.length - 1]}
+          </Box>
+        );
+        videoHeaderChildren.splice(-1, 1, iconBox);
+      }
+    } else if (fullScreenButton) {
+      // fallback to only displaying full screen icon in header
+      // if allowing fullscreen
+      videoHeader = (
+        <Box align="end" full="horizontal">
+          {fullScreenButton}
+        </Box>
+      );
+    }
 
     var title;
     if (this.props.title) {
@@ -120,13 +170,23 @@ export default class Video extends Component {
     var timeline;
     if (this.props.timeline && this.props.duration) {
 
-      var chapters = this.props.timeline.map(function (chapter) {
+      var chapters = this.props.timeline.map(function (chapter, index, chapters) {
         var percent = Math.round((chapter.time / this.props.duration) * 100);
         var seconds = (chapter.time % 60);
         var time = Math.floor(chapter.time / 60) + ':' +
           (seconds < 10 ? '0' + seconds : seconds);
+        var currentProgress = this.state.progress;
+        var previousChapter = chapters[Math.max(0, index - 1)];
+        var nextChapter = chapters[Math.min(chapters.length - 1, index + 1)];
+        var timelineClass = `${CLASS_ROOT}__timeline-chapter`;
+        if (currentProgress !== 0) {
+          if (currentProgress >= chapter.time && currentProgress < nextChapter.time) {
+            timelineClass = `${CLASS_ROOT}__timeline-chapter-current`;
+          }
+        }
+
         return (
-          <div key={chapter.time} className={`${CLASS_ROOT}__timeline-chapter`}
+          <div key={chapter.time} className={timelineClass}
             style={{left: percent.toString() + '%'}}
             onClick={this._onClickChapter.bind(this, chapter.time)}>
             <label>{chapter.label}</label>
@@ -153,19 +213,27 @@ export default class Video extends Component {
       );
     }
 
+    var onClickControl = this._onClickControl;
+    if (this.props.onClick) {
+      onClickControl = this.props.onClick;
+    }
+
     return (
       <div className={classes.join(' ')} onMouseMove={this._onMouseMove}>
         <video ref="video" poster={this.props.poster}>
           {this.props.children}
         </video>
-        <Box pad="none" align="center" justify="center" className={`${CLASS_ROOT}__summary`}>
+        <Box pad="none" align="center" justify="between" className={`${CLASS_ROOT}__summary`}>
+          {videoHeader}
           <Box pad="large" align="center" justify="center">
             <Button className={`${CLASS_ROOT}__control`} plain={true}
               primary={true}
-              onClick={this._onClickControl}>
+              onClick={onClickControl}>
               {controlIcon}
             </Button>
             {title}
+          </Box>
+          <Box pad="medium">
           </Box>
         </Box>
         {timeline}
@@ -185,5 +253,8 @@ Video.propTypes = {
     label: PropTypes.string,
     time: PropTypes.number
   })),
-  title: PropTypes.node
+  title: PropTypes.node,
+  videoHeader: PropTypes.node,
+  onClick: PropTypes.func,
+  allowFullScreen: PropTypes.bool
 };
