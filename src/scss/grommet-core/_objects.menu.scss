@@ -82,6 +82,11 @@
   @include inuit-font-size($menu-font-size);
   max-height: 100vh;
 
+  // avoid flexbox shinking the content inside the drop container
+  > * {
+    flex-shrink: 0;
+  }
+
   a:not(.anchor--disabled) {
     text-decoration: none;
 
