@@ -91,13 +91,13 @@
       transform: none;
     }
   }
-}
 
-// Only animate icon when it's a primary anchor
-.anchor--primary.anchor--animate-icon {
-  &:hover {
-    .control-icon {
-      transform: translateX(round($inuit-base-spacing-unit * 0.125));
+  // Only animate icon when it's a primary anchor
+  &.anchor--animate-icon {
+    &:hover {
+      .control-icon {
+        transform: translateX(round($inuit-base-spacing-unit * 0.125));
+      }
     }
   }
 }
