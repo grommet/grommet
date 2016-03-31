@@ -33,6 +33,7 @@ export default class Anchor extends Component {
       CLASS_ROOT,
       this.props.className,
       {
+        [`${CLASS_ROOT}--animate-icon`]: hasIcon && this.props.animateIcon !== false,
         [`${CLASS_ROOT}--disabled`]: this.props.disabled,
         [`${CLASS_ROOT}--icon`]: icon,
         [`${CLASS_ROOT}--icon-label`]: hasIcon && this.props.label,
@@ -64,6 +65,7 @@ export default class Anchor extends Component {
 
 Anchor.propTypes = {
   a11yTitle: PropTypes.string,
+  animateIcon: PropTypes.bool,
   disabled: PropTypes.bool,
   href: PropTypes.string,
   icon: PropTypes.element,

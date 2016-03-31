@@ -78,7 +78,6 @@
   &:hover {
     .control-icon {
       stroke: $control-brand-color;
-      transform: translateX(round($inuit-base-spacing-unit * 0.125));
 
       path,
       polyline {
@@ -90,6 +89,15 @@
   &.anchor--disabled {
     .control-icon {
       transform: none;
+    }
+  }
+
+  // Only animate icon when it's a primary anchor
+  &.anchor--animate-icon {
+    &:hover {
+      .control-icon {
+        transform: translateX(round($inuit-base-spacing-unit * 0.125));
+      }
     }
   }
 }
