@@ -2,7 +2,8 @@
 
 .tiles {
   width: 100%;
-  padding: halve($inuit-base-spacing-unit);
+
+  @include pad();
 
   &__container {
     display: flex;
