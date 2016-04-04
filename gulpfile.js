@@ -89,9 +89,13 @@ var opts = {
   },
   distPreprocess: ['generate-index-icons', 'dist-css'],
   scsslint: true,
-  testPaths: [
-    'test/**/*.js'
-  ]
+
+  test: {
+    paths: ['test/**/*.js'],
+    // You may pass in a path or a custom config obj
+    pathToBabelRc: __dirname+'/.babelrc'
+    // customBabelConfig: Object.assign({}, custom babelrc object)
+  }
 };
 
 require('./src/utils/gulp/gulp-tasks')(gulp, opts);
