@@ -15,6 +15,7 @@ export default class Sidebar extends Component {
       {
         [`${CLASS_ROOT}--primary`]: this.props.primary,
         [`${CLASS_ROOT}--fixed`]: this.props.fixed,
+        [`${CLASS_ROOT}--full`]: this.props.full,
         [`${CLASS_ROOT}--${this.props.size}`]: this.props.size
       }
     );
@@ -33,10 +34,12 @@ Sidebar.propTypes = {
   fixed: PropTypes.bool,
   primary: PropTypes.bool, // Deprecated
   size: PropTypes.oneOf(['small', 'medium', 'large']),
+  full: PropTypes.bool,
   ...Box.propTypes
 };
 
 Sidebar.defaultProps = {
   direction: 'column',
-  primary: false
+  primary: false,
+  full: true
 };
