@@ -39,11 +39,15 @@ export default class Tile extends Component {
 Tile.propTypes = {
   selected: PropTypes.bool,
   wide: PropTypes.bool,
+  hoverStyle: PropTypes.string,
+  hoverColorIndex: PropTypes.string,
   ...Box.propTypes
 };
 
 Tile.defaultProps = {
   pad: 'none',
   direction: 'column',
-  align: 'center'
+  align: 'center',
+  hoverStyle: 'background',
+  hoverColorIndex: 'disabled'
 };
