@@ -1,8 +1,6 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 .sidebar {
-  min-height: 100vh;
-
   @include media-query(palm) {
     max-width: 100%;
     width: 100vw;
@@ -42,5 +40,9 @@
     @include media-query(lap-and-up) {
       width: $sidebar-large-width;
     }
+  }
+
+  &--full {
+    min-height: 100vh;
   }
 }
