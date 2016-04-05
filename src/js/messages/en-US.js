@@ -54,6 +54,7 @@ export default {
   Running: 'Running',
   Search: 'Search',
   'Skip to': 'Skip to',
+  Sort: 'Sort',
   State: 'State',
   Status: 'Status',
   'Tab Contents': '{activeTitle} Tab Contents',
