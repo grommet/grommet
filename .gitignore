@@ -22,3 +22,4 @@ src/js/baseIcons.js
 **.publish**
 server/css**
 server/server-routes.js
+.nyc_output
