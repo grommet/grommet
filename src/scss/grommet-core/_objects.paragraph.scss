@@ -5,12 +5,12 @@
   @include text-align();
   @include margin();
 
+  a {
+    text-decoration: none;
+  }
+
   &.paragraph--small {
     @include inuit-font-size($paragraph-small-font-size);
-
-    a {
-      text-decoration: none;
-    }
   }
 
   &.paragraph--large {
