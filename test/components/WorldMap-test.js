@@ -1,20 +1,22 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import {expect} from 'chai';
+import {test} from 'tape';
 import React from 'react';
 import TestUtils from 'react-addons-test-utils';
 
 import WorldMap from '../../src/js/components/WorldMap';
 
-describe('Grommet WorldMap', function() {
-  it('loads a WorldMap', () => {
-    const shallowRenderer = TestUtils.createRenderer();
-    shallowRenderer.render(React.createElement(WorldMap, {
-      series: [{continent: 'Australia'}]
-    }));
-    const worldMapElement = shallowRenderer.getRenderOutput();
+test('loads a WorldMap', (t) => {
+  t.plan(1);
+  const shallowRenderer = TestUtils.createRenderer();
+  shallowRenderer.render(React.createElement(WorldMap, {
+    series: [{continent: 'Australia'}]
+  }));
+  const worldMapElement = shallowRenderer.getRenderOutput();
 
-    expect(worldMapElement.props.className).to.contain('world-map');
-  });
-
+  if (worldMapElement.props.className.indexOf('world-map') > -1) {
+    t.pass('WorldMap has class');
+  } else {
+    t.fail('WorldMap does not have class');
+  }
 });

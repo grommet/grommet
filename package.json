@@ -54,6 +54,10 @@
     "superagent": "^1.1.0"
   },
   "devDependencies": {
+    "babel-plugin-add-module-exports": "^0.1.2",
+    "babel-plugin-transform-object-rest-spread": "^6.3.13",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
     "del": "^2.2.0",
     "grommet-toolbox": "^0.1.0",
     "gulp-bump": "^1.0.0",
