@@ -28,6 +28,7 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
   #{$dark-background-context} & {
     background-color: transparent;
     color: $colored-text-color;
+    border-color: $colored-border-color;
   }
 
   .form--fill & {
