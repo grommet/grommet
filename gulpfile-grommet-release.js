@@ -128,7 +128,7 @@ module.exports = function(gulp) {
     );
   });
 
-  gulp.task('release:stable', ['dist', 'release:createTmp'], function(done) {
+  gulp.task('release:stable', ['release:createTmp'], function(done) {
     if (process.env.CI) {
       git.clone('https://' + process.env.GH_TOKEN + '@github.com/grommet/grommet.git',
         {
