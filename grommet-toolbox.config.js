@@ -1,11 +1,17 @@
-var gulp = require('gulp');
-var path = require('path');
-var fs = require('fs');
-var coveralls = require('gulp-coveralls');
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var gulpUtils = require('./gulpfile-utils');
+import path from 'path';
 
-var opts = {
+export function getPackageJSON () {
+  delete require.cache[require.resolve('./package.json')];
+  var packageJSON = require('./package.json');
+  delete packageJSON.config;
+  delete packageJSON.scripts;
+  packageJSON.main = 'index.js';
+  return packageJSON;
+}
+
+export default {
   dist: path.resolve(__dirname, 'dist'),
   copyAssets: [
     'README.md',
@@ -43,7 +49,7 @@ var opts = {
     },
     {
       filename: 'package.json',
-      asset: JSON.stringify(gulpUtils.getPackageJSON(), null, 2)
+      asset: JSON.stringify(getPackageJSON(), null, 2)
     },
     {
       asset: 'src/utils/gulp/.eslintrc',
@@ -53,10 +59,11 @@ var opts = {
   scssAssets: ['src/scss/**/*.scss'],
   jsAssets: [
     'src/js/**/*.js',
-    'src/utils/**/*.js',
-    'test/**/*.js',
-    'examples/cto-app-tuner/src/**/*.js',
-    'examples/server/*.js'
+    '!src/js/components/icons/base/**',
+    '!src/js/index.js',
+    '!src/js/index-icons.js',
+    '!src/js/messages/**',
+    '!src/js/mixins/**'
   ],
   mainJs: 'src/js/index.js',
   mainScss: 'src/scss/grommet-core/index.scss',
@@ -68,7 +75,7 @@ var opts = {
   sync: {
     hostname: 'grommet.io',
     username: 'grommet',
-    remoteDestination: '/var/www/html/assets/' + gulpUtils.getPackageJSON().version
+    remoteDestination: '/var/www/html/assets/' + getPackageJSON().version
   },
   webpack: {
     output: {
@@ -93,24 +100,3 @@ var opts = {
     'test/**/*.js'
   ]
 };
-
-require('./src/utils/gulp/gulp-tasks')(gulp, opts);
-
-require('./gulpfile-grommet-dist')(gulp, opts);
-require('./gulpfile-grommet-release')(gulp, opts);
-
-gulp.task('coveralls', function() {
-  var lcovPath = './coverage/lcov.info';
-  fs.exists(lcovPath, function(exists) {
-    if (exists) {
-      gulp.src(lcovPath).pipe(coveralls());
-    } else {
-      console.error('Could not find lcov report file.');
-      process.exit(1);
-    }
-  });
-});
-
-gulp.task('dev', function() {
-  console.error('Running "gulp dev" at Grommet root folder is not supported. If you want to start the website, run "gulp dev" at docs folder');
-});

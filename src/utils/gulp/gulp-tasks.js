@@ -15,6 +15,8 @@ String.prototype.endsWith = function(suffix) {
 
 module.exports = function(gulp, opts) {
 
+  //deprecated in v0.5.5
+  console.warn('This utility has been deprecated, please use grommet-toolbox instead.');
   runSequence = runSequence.use(gulp);
 
   var options = opts || {};

@@ -1,11 +1,14 @@
 {
   "name": "<%= appName %>",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "main": "src/js/index.js",
   "dependencies": {
-    "grommet": "<%= grommetVersion %>",
-    "gulp": "^3.9.0"
+    "grommet": "<%= grommetVersion %>"
   },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "grommet-toolbox": "^0.1.0"
+  }
   "engines": {
     "node": ">= 0.10",
     "npm": ">= 1.4"

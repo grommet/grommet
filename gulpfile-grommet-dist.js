@@ -1,16 +1,16 @@
-var gulpWebpack = require('webpack-stream');
-var sass = require('gulp-sass');
-var rename = require('gulp-rename');
-var minifyCss = require('gulp-cssnano');
-var file = require('gulp-file');
-var gulpif = require('gulp-if');
-var webpack = require('webpack');
-var path = require('path');
-var fs = require('fs');
-var del = require('del');
-var runSequence = require('run-sequence');
+import gulpWebpack from 'webpack-stream';
+import sass from 'gulp-sass';
+import rename from 'gulp-rename';
+import minifyCss from 'gulp-cssnano';
+import file from 'gulp-file';
+import gulpif from 'gulp-if';
+import webpack from 'webpack';
+import path from 'path';
+import fs from 'fs';
+import del from 'del';
+import runSequence from 'run-sequence';
 
-var gulpUtils = require('./gulpfile-utils');
+import {getPackageJSON} from './grommet-toolbox.config';
 
 var bowerWebpackConfig = {
   output: {
@@ -76,7 +76,7 @@ var bowerMinWebpackConfig = Object.assign({}, bowerWebpackConfig, {
   ]
 });
 
-module.exports = function(gulp, opts) {
+module.exports = function(gulp) {
 
   gulp.task('generate-index-icons', function (done) {
     var iconsFolder = path.join(__dirname, 'src/img/icons');
@@ -160,7 +160,7 @@ module.exports = function(gulp, opts) {
   }
 
   function distBower(config) {
-    return gulp.src(opts.mainJs)
+    return gulp.src('src/js/index.js')
       .pipe(gulpWebpack(config))
       .pipe(gulp.dest('dist-bower'));
   }
@@ -189,7 +189,7 @@ module.exports = function(gulp, opts) {
     distCss('src/scss/aruba/*.scss', 'grommet-aruba.css');
     distCss('src/scss/aruba/*.scss', 'grommet-aruba.min.css', true);
 
-    var bowerJSON = gulpUtils.getPackageJSON();
+    var bowerJSON = getPackageJSON();
     bowerJSON.dependencies = {
       'react': '^0.14.2',
       'grommet': '^' + bowerJSON.version

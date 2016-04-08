@@ -22,3 +22,6 @@ src/js/baseIcons.js
 **.publish**
 server/css**
 server/server-routes.js
+.nyc_output
+grommet*.tgz
+grommet*licenses.json

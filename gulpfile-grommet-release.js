@@ -1,14 +1,14 @@
-var prompt = require('gulp-prompt');
-var bump = require('gulp-bump');
-var git = require('gulp-git');
-var del = require('del');
-var runSequence = require('run-sequence');
-var spawn = require('child_process').spawn;
-var mkdirp = require('mkdirp');
+import prompt from 'gulp-prompt';
+import bump from 'gulp-bump';
+import git from 'gulp-git';
+import del from 'del';
+import runSequence from 'run-sequence';
+import childProcess from 'child_process';
+import mkdirp from 'mkdirp';
 
-var gulpUtils = require('./gulpfile-utils');
+import grommetToolboxConfig, {getPackageJSON} from './grommet-toolbox.config';
 
-module.exports = function(gulp, opts) {
+module.exports = function(gulp) {
   gulp.task('release:bump', function(done) {
     gulp.src('./')
       .pipe(prompt.prompt({
@@ -32,9 +32,9 @@ module.exports = function(gulp, opts) {
           type: res.bump
         }))
         .pipe(gulp.dest('./')).on('end', function() {
-          opts.copyAssets.push({
+          grommetToolboxConfig.copyAssets.push({
             filename: 'package.json',
-            asset: JSON.stringify(gulpUtils.getPackageJSON(), null, 2)
+            asset: JSON.stringify(getPackageJSON(), null, 2)
           });
           done();
         });
@@ -43,11 +43,11 @@ module.exports = function(gulp, opts) {
 
   gulp.task('release:npm', function(done) {
     process.chdir('dist');
-    spawn('npm', ['publish'], {
+    childProcess.spawn('npm', ['publish'], {
       stdio: 'inherit'
     }).on('close', function() {
       process.chdir(__dirname);
-      var version = 'v' + gulpUtils.getPackageJSON().version;
+      var version = 'v' + getPackageJSON().version;
       gulp.src('./')
         .pipe(git.add({
           args: '--all'
@@ -97,7 +97,7 @@ module.exports = function(gulp, opts) {
         }
         gulp.src('./dist-bower/**').pipe(gulp.dest('./tmp/grommet-bower'));
 
-        var version = 'v' + gulpUtils.getPackageJSON().version;
+        var version = 'v' + getPackageJSON().version;
         process.chdir('./tmp/grommet-bower');
         gulp.src('./*')
           .pipe(git.add({
@@ -128,7 +128,7 @@ module.exports = function(gulp, opts) {
     );
   });
 
-  gulp.task('release:stable', ['dist', 'release:createTmp'], function(done) {
+  gulp.task('release:stable', ['release:createTmp'], function(done) {
     if (process.env.CI) {
       git.clone('https://' + process.env.GH_TOKEN + '@github.com/grommet/grommet.git',
         {
