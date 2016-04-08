@@ -1,7 +1,6 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
-import classnames from 'classnames';
 import Anchor from './Anchor';
 import SocialTwitterIcon from './icons/base/SocialTwitter';
 import SocialFacebookIcon from './icons/base/SocialFacebook';
@@ -43,7 +42,7 @@ SocialShare.propTypes = {
   type: PropTypes.oneOf(['facebook', 'twitter', 'linkedin', 'google']),
   title: PropTypes.string,
   text: PropTypes.string,
-  link: PropTypes.string
+  link: PropTypes.string.isRequired
 };
 
 SocialShare.defaultProps = {
