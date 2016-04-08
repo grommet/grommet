@@ -64,6 +64,9 @@ export default class FormField extends Component {
     if (this.props.htmlFor) {
       classes.push(CLASS_ROOT + "--text");
     }
+    if (this.props.button) {
+      classes.push(CLASS_ROOT + "--button");
+    }
     if (this.props.className) {
       classes.push(this.props.className);
     }
@@ -86,6 +89,7 @@ export default class FormField extends Component {
         </label>
       );
     }
+
     return (
       <div className={classes.join(' ')} onClick={this._onClick}>
         {error}
@@ -94,6 +98,7 @@ export default class FormField extends Component {
         <span ref="contents" className={CLASS_ROOT + "__contents"}>
           {this.props.children}
         </span>
+        {this.props.button}
       </div>
     );
   }
@@ -101,6 +106,7 @@ export default class FormField extends Component {
 }
 
 FormField.propTypes = {
+  button: PropTypes.element,
   error: PropTypes.node,
   help: PropTypes.node,
   hidden: PropTypes.bool,

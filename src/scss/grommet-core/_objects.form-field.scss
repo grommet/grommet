@@ -306,3 +306,19 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
   z-index: 2;
   border-color: $focus-border-color;
 }
+
+.form-field--button {
+  .form-field__contents > input[type=text] {
+    // set increase height of text input to match height of
+    // icon inside form field
+    height: $inuit-base-spacing-unit * 1.5;
+  }
+
+  .form-field__contents + .button {
+    // icon styling for Button component inside FormField
+    position: absolute;
+    top: 50%;
+    right: halve($inuit-base-spacing-unit);
+    transform: translateY(-50%);
+  }
+}
