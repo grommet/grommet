@@ -39,12 +39,13 @@ export default class SocialShare extends Component {
 };
 
 SocialShare.propTypes = {
-  type: PropTypes.oneOf(['facebook', 'twitter', 'linkedin', 'google']),
+  type: PropTypes.oneOf(['facebook', 'twitter', 'linkedin', 'google']).isRequired,
+  link: PropTypes.string.isRequired,
   title: PropTypes.string,
-  text: PropTypes.string,
-  link: PropTypes.string.isRequired
+  text: PropTypes.string
 };
 
 SocialShare.defaultProps = {
-  type: 'facebook'
+  title: '',
+  text: ''
 };
