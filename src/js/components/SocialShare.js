@@ -6,6 +6,7 @@ import SocialTwitterIcon from './icons/base/SocialTwitter';
 import SocialFacebookIcon from './icons/base/SocialFacebook';
 import SocialGoogleIcon from 'grommet/components/icons/base/SocialGoogle';
 import SocialLinkedinIcon from 'grommet/components/icons/base/SocialLinkedin';
+import SocialEmailIcon from 'grommet/components/icons/base/SocialEmail';
 
 export default class SocialShare extends Component {
   render () {
@@ -27,9 +28,12 @@ export default class SocialShare extends Component {
     } else if (type === 'google') {
       socialIcon = <SocialGoogleIcon />;
       href = `https://plus.google.com/share?url=${encodedLink}`;
-    } else {
+    } else if (type === 'facebook') {
       socialIcon = <SocialFacebookIcon />;
       href = `https://www.facebook.com/sharer/sharer.php?u=${encodedLink}`;
+    } else if (type === 'email') {
+      socialIcon = <SocialEmailIcon />;
+      href = `mailto:?subject=${encodedTitle}&body=${encodedText}%0D%0A${encodedLink}`;
     }
 
     return (
@@ -39,7 +43,7 @@ export default class SocialShare extends Component {
 };
 
 SocialShare.propTypes = {
-  type: PropTypes.oneOf(['facebook', 'twitter', 'linkedin', 'google']).isRequired,
+  type: PropTypes.oneOf(['email', 'facebook', 'twitter', 'linkedin', 'google']).isRequired,
   link: PropTypes.string.isRequired,
   title: PropTypes.string,
   text: PropTypes.string
