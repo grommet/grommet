@@ -11,6 +11,7 @@ before_script:
 - gem install scss_lint
 - gulp preprocess
 - gulp generate-index-icons
+- gulp dist-css
 script:
 - |
   if [ "$TEST_TYPE" = build ]; then
@@ -28,6 +29,7 @@ after_success:
       echo "https://${GH_TOKEN}:@github.com" > .git/credentials
       git config --global user.name "Grommet Community Bot"
       git config --global user.email "asouza@hp.com"
+      gulp dist --skipPreprocess
       gulp release:stable
     fi
   fi
