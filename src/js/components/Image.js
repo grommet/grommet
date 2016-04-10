@@ -21,15 +21,26 @@ export default class Image extends Component {
     );
 
     const captionText = (typeof caption === 'string') ? caption : alt;
-    const containerClasses = classnames(classes, `${CLASS_ROOT}__container`);
+    const imgNode = (
+      <img id={id} src={src} alt={alt} className={classes} />
+    );
 
+    const labelRoot = `${CLASS_ROOT}__caption`;
+    const labelClasses = classnames(
+      labelRoot,
+      {
+        [`${labelRoot}--${size}`]: size
+      }
+    );
     return caption && captionText ? (
-      <span className={containerClasses}>
-        <img id={id} src={src} alt={alt} />
-        <Label className={`${CLASS_ROOT}__caption`}>{captionText}</Label>
+      <span className={`${CLASS_ROOT}__container`}>
+        {imgNode}
+        <Label className={labelClasses}>
+          {captionText}
+        </Label>
       </span>
     ) : (
-      <img id={id} src={src} alt={alt} className={classes} />
+      imgNode
     );
   }
 };

@@ -44,5 +44,17 @@
   &__caption {
     text-align: center;
     padding: halve($inuit-base-spacing-unit);
+
+    &--medium {
+      max-width: $image-width;
+    }
+
+    &--large {
+      max-width: $image-large-width;
+    }
+
+    &--small {
+      max-width: $image-small-width;
+    }
   }
 }
