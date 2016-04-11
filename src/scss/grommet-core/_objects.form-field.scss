@@ -307,18 +307,27 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
   border-color: $focus-border-color;
 }
 
-.form-field--button {
-  .form-field__contents > input[type=text] {
-    // set increase height of text input to match height of
-    // icon inside form field
-    height: $inuit-base-spacing-unit * 1.5;
-  }
+// .form-field--button {
+//   .form-field__contents > input[type=text] {
+//     // set increase height of text input to match height of
+//     // icon inside form field
+//     height: $inuit-base-spacing-unit * 1.5;
+//   }
 
-  .form-field__contents + .button {
-    // icon styling for Button component inside FormField
-    position: absolute;
-    top: 50%;
-    right: halve($inuit-base-spacing-unit);
-    transform: translateY(-50%);
+//   .form-field__contents + .button {
+//     // icon styling for Button component inside FormField
+//     position: absolute;
+//     top: 50%;
+//     right: halve($inuit-base-spacing-unit);
+//     transform: translateY(-50%);
+//   }
+// }
+
+.form-field--size-large {
+  font-size: $paragraph-large-font-size;
+
+  input[type="text"] {
+    font-size: $paragraph-large-font-size;
+    height: auto;
   }
 }
