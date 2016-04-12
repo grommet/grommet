@@ -1,0 +1,42 @@
+// (C) Copyright 2014 Hewlett Packard Enterprise Development LP
+
+.factoid {
+  &--data {
+    margin: 0;
+    line-height: 1;
+
+    .control-icon {
+      fill: #333;
+      stroke: #333;
+      margin-left: halve($inuit-base-spacing-unit);
+      margin-right: halve($inuit-base-spacing-unit);
+    }
+  }
+
+  &--large .factoid--data {
+    font-size: $inuit-base-spacing-unit * 10;
+
+    .control-icon {
+      width: $inuit-base-spacing-unit * 6;
+      height: $inuit-base-spacing-unit * 6;
+    }
+  }
+
+  &--medium .factoid--data {
+    font-size: $inuit-base-spacing-unit * 5;
+
+    .control-icon {
+      width: $inuit-base-spacing-unit * 2.5;
+      height: $inuit-base-spacing-unit * 2.5;
+    }
+  }
+
+  &--small .factoid--data {
+    font-size: double($inuit-base-spacing-unit);
+
+    .control-icon {
+      width: $inuit-base-spacing-unit * 1.25;
+      height: $inuit-base-spacing-unit * 1.25;
+    }
+  }
+}
