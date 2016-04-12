@@ -115,5 +115,5 @@ FormField.propTypes = {
 };
 
 FormField.defaultProps = {
-  size: 'large'
+  size: 'medium'
 };

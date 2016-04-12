@@ -8,6 +8,28 @@
 
   @include pad();
 
+  @include media-query(palm) {
+    &.box--pad {
+      &-small,
+      &-horizontal-small {
+        padding-left: quarter($inuit-base-spacing-unit);
+        padding-right: quarter($inuit-base-spacing-unit);
+      }
+
+      &-medium,
+      &-horizontal-medium {
+        padding-left: halve($inuit-base-spacing-unit);
+        padding-right: halve($inuit-base-spacing-unit);
+      }
+
+      &-large,
+      &-horizontal-large {
+        padding-left: $inuit-base-spacing-unit;
+        padding-right: $inuit-base-spacing-unit;
+      }
+    }
+  }
+
   // temporary flex grow capability
   > .flex-grow-1, // deprecated, remove in 0.4
   > .flex {
