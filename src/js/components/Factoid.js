@@ -29,7 +29,7 @@ export default class Factoid extends Component {
 
     return (
       <div className={classes.join(' ')}>
-        <div className="factoid--data">{IconBefore}{this.props.data}{IconAfter}</div>
+        <div className={`${CLASS_ROOT}--main`}>{IconBefore}{this.props.text}{IconAfter}</div>
         <Paragraph size={this.props.size}>{this.props.caption}</Paragraph>
       </div>
     );
@@ -40,7 +40,7 @@ Factoid.propTypes = {
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   iconBefore: PropTypes.string,
   iconAfter: PropTypes.string,
-  data: PropTypes.string,
+  text: PropTypes.string,
   caption: PropTypes.string
 };
 

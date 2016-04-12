@@ -1,7 +1,7 @@
 // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
 .factoid {
-  &--data {
+  &--main {
     margin: 0;
     line-height: 1;
 
@@ -13,7 +13,7 @@
     }
   }
 
-  &--large .factoid--data {
+  &--large .factoid--main {
     font-size: $inuit-base-spacing-unit * 10;
 
     .control-icon {
@@ -22,7 +22,7 @@
     }
   }
 
-  &--medium .factoid--data {
+  &--medium .factoid--main {
     font-size: $inuit-base-spacing-unit * 5;
 
     .control-icon {
@@ -31,7 +31,7 @@
     }
   }
 
-  &--small .factoid--data {
+  &--small .factoid--main {
     font-size: double($inuit-base-spacing-unit);
 
     .control-icon {
