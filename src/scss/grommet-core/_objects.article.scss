@@ -1,85 +1,81 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 .article {
   position: relative;
 
-  &--scroll-step {
-    text-align: center;
-    height: 100vh;
-    width: 100vw;
-    max-width: 100%;
-
-    > .article__control {
-      position: fixed;
-      z-index: 10;
-
-      &-up {
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-      }
-
-      &-down {
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-      }
-
-      &-left {
-        top: 50%;
-        transform: translateY(-50%);
-        left: 0;
-      }
-
-      &-right {
-        top: 50%;
-        transform: translateY(-50%);
-        right: 0;
-      }
-    }
-
-    &.box--direction-column {
-      overflow-x: hidden;
-      overflow-y: auto;
-
-      // > *:not(.article__controls) {
-      //   overflow-x: auto;
-      // }
-
-      > .article__control-carousel {
-        top: 50%;
-        left: $inuit-base-spacing-unit;
-        transform: translateY(-50%);
-      }
-    }
-
-    &.box--direction-row {
-      overflow-x: auto;
-      overflow-y: hidden;
-
-      > *:not(.article__controls) {
-        overflow-y: auto;
-      }
-
-      > .article__control-carousel {
-        top: $inuit-base-spacing-unit;
-        left: 50%;
-        transform: translateX(-50%);
-      }
-    }
-
-    @include media-query(palm) {
-      &.box--responsive {
-        &.box--direction-row {
-          flex-direction: row;
-        }
-      }
-    }
-  }
-
   > * {
     flex: 0 0 auto;
   }
+}
+
+.article--scroll-step {
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+  max-width: 100%;
+
+  &.box--direction-column {
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    .article__control-carousel {
+      top: 50%;
+      left: $inuit-base-spacing-unit;
+      transform: translateY(-50%);
+    }
+  }
+
+  &.box--direction-row {
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    > *:not(.article__controls) {
+      overflow-y: auto;
+    }
+
+    .article__control-carousel {
+      top: $inuit-base-spacing-unit;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  @include media-query(palm) {
+    &.box--responsive {
+      &.box--direction-row {
+        flex-direction: row;
+      }
+    }
+  }
+}
+
+.article__control {
+  position: fixed;
+  z-index: 10;
+}
+
+.article__control-up {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.article__control-down {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.article__control-left {
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+}
+
+.article__control-right {
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
 }
 
 .grommet article:not(.article) {
