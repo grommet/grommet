@@ -1,35 +1,24 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
+import classnames from 'classnames';
 import Paragraph from './Paragraph';
 
 const CLASS_ROOT = 'factoid';
 
 export default class Factoid extends Component {
   render() {
-    let classes = [CLASS_ROOT];
-    let IconBefore = undefined;
-    let IconAfter = undefined;
-
-    if (this.props.size) {
-      classes.push(`${CLASS_ROOT}--${this.props.size}`);
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
-
-    if (this.props.iconBefore) {
-      const Icon = require('grommet/components/icons/base/' + this.props.iconBefore);
-      IconBefore = <Icon />;
-    }
-    if (this.props.iconAfter) {
-      const Icon = require('grommet/components/icons/base/' + this.props.iconAfter);
-      IconAfter = <Icon />;
-    }
+    let classes = classnames(
+      CLASS_ROOT,
+      this.props.className,
+      {
+        [`${CLASS_ROOT}--${this.props.size}`]: this.props.size
+      }
+    );
 
     return (
-      <div className={classes.join(' ')}>
-        <div className={`${CLASS_ROOT}--main`}>{IconBefore}{this.props.text}{IconAfter}</div>
+      <div className={classes}>
+        <div className={`${CLASS_ROOT}--main`}>{this.props.iconBefore}{this.props.text}{this.props.iconAfter}</div>
         <Paragraph size={this.props.size}>{this.props.caption}</Paragraph>
       </div>
     );
@@ -38,8 +27,8 @@ export default class Factoid extends Component {
 
 Factoid.propTypes = {
   size: PropTypes.oneOf(['small', 'medium', 'large']),
-  iconBefore: PropTypes.string,
-  iconAfter: PropTypes.string,
+  iconBefore: PropTypes.node,
+  iconAfter: PropTypes.node,
   text: PropTypes.string.isRequired,
   caption: PropTypes.string
 };
