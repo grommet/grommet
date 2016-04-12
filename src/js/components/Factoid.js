@@ -40,7 +40,7 @@ Factoid.propTypes = {
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   iconBefore: PropTypes.string,
   iconAfter: PropTypes.string,
-  text: PropTypes.string,
+  text: PropTypes.string.isRequired,
   caption: PropTypes.string
 };
 
