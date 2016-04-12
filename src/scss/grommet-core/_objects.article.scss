@@ -3,6 +3,12 @@
 .article {
   position: relative;
 
+  &__control {
+    .button__icon {
+      padding: $inuit-base-spacing-unit;
+    }
+  }
+
   &--scroll-step {
     text-align: center;
     height: 100vh;
