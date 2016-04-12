@@ -6,8 +6,8 @@
     line-height: 1;
 
     .control-icon {
-      fill: #333;
-      stroke: #333;
+      fill: $text-color;
+      stroke: $text-color;
       margin-left: halve($inuit-base-spacing-unit);
       margin-right: halve($inuit-base-spacing-unit);
     }
