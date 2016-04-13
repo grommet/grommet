@@ -306,3 +306,12 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
   z-index: 2;
   border-color: $focus-border-color;
 }
+
+.form-field--size-large {
+  font-size: $paragraph-large-font-size;
+
+  input[type="text"] {
+    font-size: $paragraph-large-font-size;
+    height: auto;
+  }
+}

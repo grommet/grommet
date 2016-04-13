@@ -52,6 +52,10 @@
 .article__control {
   position: fixed;
   z-index: 10;
+
+  .button__icon {
+    padding: $inuit-base-spacing-unit;
+  }
 }
 
 .article__control-up {
