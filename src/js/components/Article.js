@@ -23,7 +23,9 @@ export default class Article extends Component {
     super();
 
     this._onFocusChange = this._onFocusChange.bind(this);
+    this._onScroll = this._onScroll.bind(this);
     this._onWheel = this._onWheel.bind(this);
+    this._onResize = this._onResize.bind(this);
     this._onNext = this._onNext.bind(this);
     this._onPrevious = this._onPrevious.bind(this);
     this._onTogglePlay = this._onTogglePlay.bind(this);
@@ -47,6 +49,7 @@ export default class Article extends Component {
       KeyboardAccelerators.startListeningToKeyboard(this, this._keys);
 
       document.addEventListener('wheel', this._onWheel);
+      window.addEventListener('resize', this._onResize);
 
       this._scrollParent = ReactDOM.findDOMNode(this.refs.component);
 
@@ -58,6 +61,7 @@ export default class Article extends Component {
     if (this.props.scrollStep) {
       KeyboardAccelerators.stopListeningToKeyboard(this, this._keys);
       document.removeEventListener('wheel', this._onWheel);
+      window.removeEventListener('resize', this._onResize);
     }
   }
 
@@ -102,50 +106,108 @@ export default class Article extends Component {
       this._checkPreviousNextControls(currentScroll, 'top', 'bottom');
     }
   }
-  _onWheel (event) {
-    const delta = ('row' === this.props.direction ? event.deltaX : event.deltaY);
-    if (Math.abs(delta) > 100) {
-      // The user is expressing a resolute interest in controlling the
-      // scrolling behavior. Stop doing any of our scroll step aligning
-      // until he stops expressing such interest.
-      clearInterval(this._wheelTimer);
-      clearInterval(this._wheelLongTimer);
-      this._wheelLongTimer = setTimeout(function () {
-        this._wheelLongTimer = null;
-      }.bind(this), 2000);
-    } else if (! this._wheelLongTimer) {
-      if (delta > 10) {
-        clearInterval(this._wheelTimer);
-        this._wheelTimer = setTimeout(this._onNext, 200);
-      } else if (delta < -10) {
-        clearInterval(this._wheelTimer);
-        this._wheelTimer = setTimeout(this._onPrevious, 200);
-      } else {
-        clearInterval(this._controlTimer);
-        this._controlTimer = setTimeout(this._checkControls, 200);
+
+  _ignoreScrolling () {
+    // ignore scroll and wheel events for a while to avoid acceleration artifacts
+    this.setState({ ignoreScroll: true });
+    clearTimeout(this._ignoreScrollTimer);
+    this._ignoreScrollTimer = setTimeout(() => {
+      this.setState({ ignoreScroll: false });
+    }, 1000);
+  }
+
+  _onScroll (event) {
+    if (event.target === this._scrollParent) {
+      if ('row' === this.props.direction) {
+        if (! this.state.ignoreScroll) {
+          const { activeIndex } = this.state;
+          const childElement = ReactDOM.findDOMNode(this.refs[activeIndex]);
+          const rect = childElement.getBoundingClientRect();
+          if (rect.left < 0) {
+            // scrolling right
+            this._onNext();
+          } else {
+            // scrolling left
+            this._onPrevious();
+          }
+        }
       }
     }
   }
 
+  _onWheel (event) {
+    if ('row' === this.props.direction) {
+      // Horizontal scrolling.
+      if (! this.state.ignoreScroll) {
+        // Only step if the user isn't scrolling vertically
+        if (Math.abs(event.deltaY) < Math.abs(event.deltaX)) {
+          event.preventDefault();
+          // Constrain scrolling to lock on each section.
+          if (event.deltaX > 0) {
+            this._onNext();
+          } else {
+            this._onPrevious();
+          }
+        }
+      } else {
+        event.preventDefault();
+      }
+    } else {
+      // Vertical scrolling. Give the user lots of control.
+      const delta = event.deltaY;
+      if (Math.abs(delta) > 100) {
+        // The user is expressing a resolute interest in controlling the
+        // scrolling behavior. Stop doing any of our scroll step aligning
+        // until he stops expressing such interest.
+        clearInterval(this._wheelTimer);
+        clearInterval(this._wheelLongTimer);
+        this._wheelLongTimer = setTimeout(() => {
+          this._wheelLongTimer = null;
+        }, 2000);
+      } else if (! this._wheelLongTimer) {
+        if (delta > 10) {
+          clearInterval(this._wheelTimer);
+          this._wheelTimer = setTimeout(this._onNext, 200);
+        } else if (delta < -10) {
+          clearInterval(this._wheelTimer);
+          this._wheelTimer = setTimeout(this._onPrevious, 200);
+        } else {
+          clearInterval(this._controlTimer);
+          this._controlTimer = setTimeout(this._checkControls, 200);
+        }
+      }
+    }
+  }
+
+  _onResize () {
+    clearTimeout(this._resizeTimer);
+    this._resizeTimer = setTimeout(() => {
+      this._onSelect(this.state.activeIndex);
+    }, 50);
+  }
+
   _onNext (event, wrap) {
+    const { children, direction } = this.props;
+    const { activeIndex } = this.state;
     if (event) {
       this._stop();
       event.preventDefault();
     }
-    const childCount = React.Children.count(this.props.children);
-    const limit = ('row' === this.props.direction) ? window.innerWidth :
-      window.innerHeight;
+    const childCount = React.Children.count(children);
+    const limit = ('row' === direction) ? window.innerWidth : window.innerHeight;
     let advanced = false;
     for (let index = 0; index < childCount; index += 1) {
       const childElement = ReactDOM.findDOMNode(this.refs[index]);
       const rect = childElement.getBoundingClientRect();
-      const edge = ('row' === this.props.direction) ? rect.right : rect.bottom;
-      if (edge > 10 && (event || wrap || edge < limit)) {
-        // This is the first visible child, select the next one
-        if ((index + 1) !== this.state.activeIndex) {
-          this._onSelect(index + 1);
+      const edge = ('row' === direction) ? rect.right : rect.bottom;
+      if (edge > 0) {
+        if (event || wrap || edge <= limit) {
+          // This is the first visible child, select the next one
+          if ((index + 1) !== activeIndex) {
+            this._onSelect(index + 1);
+          }
+          advanced = true;
         }
-        advanced = true;
         break;
       }
     }
@@ -155,21 +217,24 @@ export default class Article extends Component {
   }
 
   _onPrevious (event) {
+    const { children, direction } = this.props;
+    const { activeIndex } = this.state;
     if (event) {
       this._stop();
       event.preventDefault();
     }
-    const childCount = React.Children.count(this.props.children);
-    const limit = ('row' === this.props.direction) ? window.innerWidth :
-      window.innerHeight;
+    const childCount = React.Children.count(children);
+    const limit = ('row' === direction) ? window.innerWidth : window.innerHeight;
     for (let index = (childCount - 1); index >= 0; index -= 1) {
       const childElement = ReactDOM.findDOMNode(this.refs[index]);
       const rect = childElement.getBoundingClientRect();
-      const edge = ('row' === this.props.direction) ? rect.left : rect.top;
-      if (edge < limit && (event || edge > 10)) {
-        // This is the first visible child, select the previous one
-        if ((index - 1) !== this.state.activeIndex) {
-          this._onSelect(index - 1);
+      const edge = ('row' === direction) ? rect.left : rect.top;
+      if (edge < limit) {
+        if (event || edge >= 0) {
+          // This is the first visible child, select the previous one
+          if ((index - 1) !== activeIndex) {
+            this._onSelect(index - 1);
+          }
         }
         break;
       }
@@ -177,9 +242,9 @@ export default class Article extends Component {
   }
 
   _start () {
-    this._playTimer = setInterval(function () {
+    this._playTimer = setInterval(() => {
       this._onNext(null, true);
-    }.bind(this), DEFAULT_PLAY_INTERVAL);
+    }, DEFAULT_PLAY_INTERVAL);
     this.setState({playing: true});
   }
 
@@ -199,7 +264,7 @@ export default class Article extends Component {
 
   _onSelect (activeIndex) {
     const childElement = ReactDOM.findDOMNode(this.refs[activeIndex]);
-    if (activeIndex !== this.state.activeIndex && childElement) {
+    if (childElement) {
       const rect = childElement.getBoundingClientRect();
       if ('row' === this.props.direction) {
         Scroll.scrollBy(this._scrollParent, 'scrollLeft', rect.left);
@@ -218,17 +283,19 @@ export default class Article extends Component {
           this.props.onFocusChange(activeIndex);
         }
       });
+
+      this._ignoreScrolling();
     }
   }
 
   _onFocusChange (e) {
-    React.Children.forEach(this.props.children, function(element, index) {
+    React.Children.forEach(this.props.children, (element, index) => {
       let parent = ReactDOM.findDOMNode(this.refs[index]);
       if (parent && parent.contains(e.target)) {
         this._onSelect(index);
         return false;
       }
-    }.bind(this));
+    });
   }
 
   _renderControls () {
@@ -329,6 +396,7 @@ export default class Article extends Component {
     return (
       <Box ref="component" tag="article" {...other}
         className={classes.join(' ')} onFocus={this._onFocusChange}
+        onScroll={this._onScroll}
         primary={this.props.primary}>
         {children}
         {controls}

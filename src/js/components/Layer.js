@@ -15,7 +15,7 @@ class LayerContents extends Component {
   constructor() {
     super();
 
-    this._handleClick = this._handleClick.bind(this);
+    this._onClick = this._onClick.bind(this);
     this._processTab = this._processTab.bind(this);
   }
 
@@ -41,7 +41,7 @@ class LayerContents extends Component {
 
     if (this.props.onClose) {
       this._keyboardHandlers.esc = this.props.onClose;
-      document.addEventListener('click', this._handleClick.bind(this));
+      document.addEventListener('click', this._onClick.bind(this));
     }
 
     KeyboardAccelerators.startListeningToKeyboard(
@@ -67,11 +67,11 @@ class LayerContents extends Component {
     );
 
     if (this.props.onClose) {
-      document.removeEventListener('click', this._handleClick.bind(this));
+      document.removeEventListener('click', this._onClick.bind(this));
     }
   }
 
-  _handleClick (event) {
+  _onClick (event) {
     const layerContents = this.refs.container;
     if (layerContents && !layerContents.contains(event.target)) {
       this.props.onClose();
