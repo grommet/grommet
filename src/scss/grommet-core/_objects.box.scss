@@ -9,7 +9,6 @@
   @include pad();
 
   // temporary flex grow capability
-  > .flex-grow-1, // deprecated, remove in 0.4
   > .flex {
     flex-grow: 1;
   }

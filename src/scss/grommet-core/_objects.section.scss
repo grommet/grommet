@@ -20,7 +20,7 @@ section {
     height: auto;
 
     @include media-query(palm) {
-      max-width: $readable-text-width;
+      max-width: 100%;
     }
   }
 
