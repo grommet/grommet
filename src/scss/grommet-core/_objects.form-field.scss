@@ -55,6 +55,18 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
   margin-left: - $form-horizontal-padding;
   margin-right: - $form-horizontal-padding;
 
+  > .box {
+    input {
+      border: none;
+      padding: 0;
+    }
+
+    .anchor {
+      color: $control-brand-color;
+      text-decoration: none;
+    }
+  }
+
   > input[type=text],
   > input[type=range],
   > input[type=email],
@@ -313,5 +325,11 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
   input[type="text"] {
     font-size: $paragraph-large-font-size;
     height: auto;
+  }
+}
+
+.form-field--strong {
+  input[type="text"] {
+    font-weight: 600;
   }
 }
