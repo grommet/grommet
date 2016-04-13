@@ -67,6 +67,9 @@ export default class FormField extends Component {
     if (this.props.size) {
       classes.push(CLASS_ROOT + "--size-" + this.props.size);
     }
+    if (this.props.strong) {
+      classes.push(`${CLASS_ROOT}--strong`);
+    }
     if (this.props.className) {
       classes.push(this.props.className);
     }
@@ -111,9 +114,11 @@ FormField.propTypes = {
   htmlFor: PropTypes.string,
   label: PropTypes.node,
   required: PropTypes.bool,
-  size: PropTypes.oneOf(['medium', 'large'])
+  size: PropTypes.oneOf(['medium', 'large']),
+  strong: PropTypes.bool
 };
 
 FormField.defaultProps = {
-  size: 'medium'
+  size: 'medium',
+  strong: false
 };
