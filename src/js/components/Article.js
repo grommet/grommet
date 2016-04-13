@@ -117,7 +117,7 @@ export default class Article extends Component {
   }
 
   _onScroll (event) {
-    if (event.target === this._scrollParent) {
+    if (event.currentTarget === this._scrollParent) {
       if ('row' === this.props.direction) {
         if (! this.state.ignoreScroll) {
           const { activeIndex } = this.state;
