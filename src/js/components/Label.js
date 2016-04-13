@@ -29,3 +29,7 @@ Label.propTypes = {
   margin: PropTypes.oneOf(['none', 'small', 'medium', 'large']),
   uppercase: PropTypes.bool
 };
+
+Label.defaultProps = {
+  margin: 'medium'
+};

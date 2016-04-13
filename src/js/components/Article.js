@@ -25,6 +25,8 @@ export default class Article extends Component {
     this._onFocusChange = this._onFocusChange.bind(this);
     this._onScroll = this._onScroll.bind(this);
     this._onWheel = this._onWheel.bind(this);
+    this._onTouchStart = this._onTouchStart.bind(this);
+    this._onTouchMove = this._onTouchMove.bind(this);
     this._onResize = this._onResize.bind(this);
     this._onNext = this._onNext.bind(this);
     this._onPrevious = this._onPrevious.bind(this);
@@ -117,7 +119,7 @@ export default class Article extends Component {
   }
 
   _onScroll (event) {
-    if (event.currentTarget === this._scrollParent) {
+    if (event.target === this._scrollParent) {
       if ('row' === this.props.direction) {
         if (! this.state.ignoreScroll) {
           const { activeIndex } = this.state;
@@ -139,8 +141,8 @@ export default class Article extends Component {
     if ('row' === this.props.direction) {
       // Horizontal scrolling.
       if (! this.state.ignoreScroll) {
-        // Only step if the user isn't scrolling vertically
-        if (Math.abs(event.deltaY) < Math.abs(event.deltaX)) {
+        // Only step if the user isn't scrolling vertically, bias vertically
+        if (Math.abs(event.deltaY) < Math.abs(event.deltaX * 2)) {
           event.preventDefault();
           // Constrain scrolling to lock on each section.
           if (event.deltaX > 0) {
@@ -179,6 +181,28 @@ export default class Article extends Component {
     }
   }
 
+  _onTouchStart (event) {
+    const touched = event.changedTouches[0];
+    this._touchStartX = touched.clientX;
+    this._touchStartY = touched.clientY;
+  }
+
+  _onTouchMove (event) {
+    if (! this.state.ignoreScroll) {
+      const touched = event.changedTouches[0];
+      const deltaX = touched.clientX - this._touchStartX;
+      const deltaY = touched.clientY - this._touchStartY;
+      // Only step if the user isn't scrolling vertically, bias vertically
+      if (Math.abs(deltaY) < Math.abs(deltaX * 2)) {
+        if (deltaX < 0) {
+          this._onNext();
+        } else {
+          this._onPrevious();
+        }
+      }
+    }
+  }
+
   _onResize () {
     clearTimeout(this._resizeTimer);
     this._resizeTimer = setTimeout(() => {
@@ -204,7 +228,7 @@ export default class Article extends Component {
         if (event || wrap || edge <= limit) {
           // This is the first visible child, select the next one
           if ((index + 1) !== activeIndex) {
-            this._onSelect(index + 1);
+            this._onSelect(Math.min(childCount - 1, index + 1));
           }
           advanced = true;
         }
@@ -233,7 +257,7 @@ export default class Article extends Component {
         if (event || edge >= 0) {
           // This is the first visible child, select the previous one
           if ((index - 1) !== activeIndex) {
-            this._onSelect(index - 1);
+            this._onSelect(Math.max(0, index - 1));
           }
         }
         break;
@@ -371,20 +395,20 @@ export default class Article extends Component {
           });
           let elementNode = elementClone;
 
-          let ariaHidden;
-          if (this.state.activeIndex !== index) {
-            ariaHidden = 'true';
-          }
+          // let ariaHidden;
+          // if (this.state.activeIndex !== index) {
+          //   ariaHidden = 'true';
+          // }
 
-          if (this.props.controls) {
-            elementNode = (
-              <div aria-hidden={ariaHidden}>
-                <a tabIndex='-1' aria-hidden='true'
-                  ref={`anchor_step_${index}`} onFocus={element.props.onFocus} />
-                {elementClone}
-              </div>
-            );
-          }
+          // if (this.props.controls) {
+          //   elementNode = (
+          //     <div aria-hidden={ariaHidden}>
+          //       <a tabIndex='-1' aria-hidden='true'
+          //         ref={`anchor_step_${index}`} onFocus={element.props.onFocus} />
+          //       {elementClone}
+          //     </div>
+          //   );
+          // }
 
           return elementNode;
         }
@@ -396,7 +420,8 @@ export default class Article extends Component {
     return (
       <Box ref="component" tag="article" {...other}
         className={classes.join(' ')} onFocus={this._onFocusChange}
-        onScroll={this._onScroll}
+        onScroll={this._onScroll} onTouchStart={this._onTouchStart}
+        onTouchMove={this._onTouchMove}
         primary={this.props.primary}>
         {children}
         {controls}

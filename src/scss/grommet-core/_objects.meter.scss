@@ -687,10 +687,6 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
 .meter--circle,
 .meter--arc {
 
-  @include media-query(palm) {
-    width: $meter-size;
-  }
-
   .meter__value {
     white-space: normal;
     pointer-events: none;

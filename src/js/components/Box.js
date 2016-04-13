@@ -60,6 +60,13 @@ export default class Box extends Component {
     this._addPropertyClass(classes, CLASS_ROOT, 'separator');
     this._addPropertyClass(classes, CLASS_ROOT, 'textAlign', 'text-align');
     this._addPropertyClass(classes, CLASS_ROOT, 'wrap');
+    if (this.props.hasOwnProperty('flex')) {
+      if (this.props.flex) {
+        classes.push('flex');
+      } else {
+        classes.push('no-flex');
+      }
+    }
 
     if (this.props.appCentered) {
       this._addPropertyClass(containerClasses, CLASS_ROOT + "__container", 'full');
@@ -157,6 +164,7 @@ Box.propTypes = {
   containerClassName: PropTypes.string,
   direction: PropTypes.oneOf(['row', 'column']),
   focusable: PropTypes.bool,
+  flex: PropTypes.bool,
   full: PropTypes.oneOf([true, 'horizontal', 'vertical', false]),
   onClick: PropTypes.func,
   justify: PropTypes.oneOf(['start', 'center', 'between', 'end']),
