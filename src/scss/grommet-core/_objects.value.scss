@@ -8,6 +8,7 @@
 .value__annotated {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   @include inuit-font-size($value-font-size);
 
@@ -22,7 +23,7 @@
 
 .value__label {
   display: inline-block;
-  margin-top: halve($inuit-base-spacing-unit);
+  margin-top: quarter($inuit-base-spacing-unit);
   @include inuit-font-size($control-font-size);
 }
 
@@ -39,12 +40,8 @@
     }
   }
 
-  .value__trend {
-    margin-right: $inuit-base-spacing-unit;
-  }
-
   .value__label {
-    margin-top: $inuit-base-spacing-unit;
+    margin-top: halve($inuit-base-spacing-unit);
     @include inuit-font-size($control-large-font-size);
   }
 }
@@ -57,5 +54,36 @@
   .value__label {
     margin-top: quarter($inuit-base-spacing-unit);
     @include inuit-font-size($label-font-size);
+  }
+}
+
+.value--huge {
+  .value__annotated {
+    @include inuit-font-size($value-huge-font-size);
+
+    .control-icon:first-child {
+      margin-right: double($inuit-base-spacing-unit);
+    }
+
+    .control-icon:last-child {
+      margin-left: double($inuit-base-spacing-unit);
+    }
+
+    @include media-query(palm) {
+      flex-direction: column;
+
+      .control-icon:first-child {
+        margin-right: 0;
+      }
+
+      .control-icon:last-child {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .value__label {
+    margin-top: double($inuit-base-spacing-unit);
+    @include inuit-font-size($value-font-size);
   }
 }

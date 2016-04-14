@@ -45,12 +45,12 @@ export default class Value extends Component {
     return (
       <div className={classes.join(' ')} onClick={this.props.onClick}>
         <div className={`${CLASS_ROOT}__annotated`}>
-          {this.props.trendIcon}
+          {this.props.icon}
           <span className={`${CLASS_ROOT}__value`}>
             {this.props.value}
           </span>
           {units}
-          {this.props.icon}
+          {this.props.trendIcon}
         </div>
         {label}
       </div>
@@ -65,7 +65,7 @@ Value.propTypes = {
   icon: PropTypes.node,
   label: PropTypes.string,
   onClick: PropTypes.func,
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  size: PropTypes.oneOf(['small', 'medium', 'large', 'huge']),
   trendIcon: PropTypes.node,
   value: PropTypes.number.isRequired,
   units: PropTypes.string
