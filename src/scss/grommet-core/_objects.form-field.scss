@@ -76,6 +76,7 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
   > select,
   > .search-input input,
   > .calendar input,
+  > .date-time input,
   > textarea {
     display: block;
     width: 100%;
@@ -104,7 +105,8 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
   > input[type=file],
   > select,
   > .search-input input,
-  > .calendar input {
+  > .calendar input,
+  > .date-time input {
     // For IE11.
     height: $inuit-base-spacing-unit;
   }
@@ -170,7 +172,8 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
   }
 
   > .search-input,
-  > .calendar {
+  > .calendar,
+  > .date-time {
     display: block;
 
     input {
