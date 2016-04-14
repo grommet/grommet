@@ -73,8 +73,7 @@ var Grommet = {
     Spinning: require('./components/icons/Spinning'),
     Status: require('./components/icons/Status'),
     Twitter: require('./components/icons/Twitter'),
-    World: require('./components/icons/World'),
-    Base: require('./index-icons')
+    World: require('./components/icons/World')
   },
   // Mixins
   Mixins: {
