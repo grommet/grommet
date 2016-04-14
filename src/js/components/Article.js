@@ -125,10 +125,10 @@ export default class Article extends Component {
           const { activeIndex } = this.state;
           const childElement = ReactDOM.findDOMNode(this.refs[activeIndex]);
           const rect = childElement.getBoundingClientRect();
-          if (rect.left < 0) {
+          if (rect.left < -1) {
             // scrolling right
             this._onNext();
-          } else {
+          } else if (rect.left > 1) {
             // scrolling left
             this._onPrevious();
           }
@@ -142,7 +142,8 @@ export default class Article extends Component {
       // Horizontal scrolling.
       if (! this.state.ignoreScroll) {
         // Only step if the user isn't scrolling vertically, bias vertically
-        if (Math.abs(event.deltaY * 4) < Math.abs(event.deltaX)) {
+        if (event.deltaX > 10 &&
+          Math.abs(event.deltaY * 4) < Math.abs(event.deltaX)) {
           event.preventDefault();
           // Constrain scrolling to lock on each section.
           if (event.deltaX > 0) {
