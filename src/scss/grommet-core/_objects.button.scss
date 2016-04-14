@@ -81,7 +81,7 @@ $button-horizontal-padding: round($inuit-base-spacing-unit) - $button-border-wid
 
   // used for control icons (e.g. in video)
   .control-icon {
-    @include icon-color($colored-icon-color);    
+    @include icon-color($colored-icon-color);
   }
 
   &:hover:not(.button--disabled) {
