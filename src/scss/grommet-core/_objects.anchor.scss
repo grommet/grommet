@@ -29,6 +29,8 @@
     color: $link-hover-color;
     text-decoration: underline;
   }
+
+  @include dark-background-context-icon();
 }
 
 .anchor--disabled:hover {
@@ -41,8 +43,7 @@
 
   &:hover {
     .control-icon {
-      fill: $active-icon-color;
-      stroke: $active-icon-color;
+      @include icon-color($active-icon-color);
     }
   }
 }
@@ -56,8 +57,7 @@
   .control-icon {
     vertical-align: middle;
     margin-right: halve($inuit-base-spacing-unit);
-    fill: $control-brand-color;
-    stroke: $control-brand-color;
+    @include icon-color($control-brand-color);
 
     html.rtl & {
       margin-right: 0;
@@ -71,12 +71,7 @@
 
   &:hover {
     .control-icon {
-      fill: $link-hover-color;
-
-      path,
-      polyline {
-        stroke-width: 3px;
-      }
+      @include icon-hover-bold($control-brand-color);
     }
   }
 }
@@ -90,27 +85,6 @@
 
 .anchor--primary {
   color: $control-brand-color;
-
-  .control-icon {
-    stroke: $control-brand-color;
-  }
-
-  &:hover {
-    .control-icon {
-      stroke: $control-brand-color;
-
-      path,
-      polyline {
-        stroke-width: 3px;
-      }
-    }
-  }
-
-  &.anchor--disabled {
-    .control-icon {
-      transform: none;
-    }
-  }
 
   // Only animate icon when it's a primary anchor
   &.anchor--animate-icon {
@@ -144,28 +118,11 @@
 }
 
 #{$dark-background-context} .anchor {
-  color: $colored-text-color;
-
-  .control-icon {
-    fill: $colored-icon-color;
-    stroke: $colored-icon-color;
-  }
-
-  &:hover {
-    color: $active-colored-text-color;
-
-   .control-icon {
-      fill: $active-colored-icon-color;
-      stroke: $active-colored-icon-color;
-    }
-  }
-
   &.anchor--disabled:hover {
     color: $colored-text-color;
 
     .control-icon {
-      fill: $colored-icon-color;
-      stroke: $colored-icon-color;
+      @include icon-color($colored-icon-color);
     }
   }
 }

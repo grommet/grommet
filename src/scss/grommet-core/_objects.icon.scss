@@ -31,22 +31,6 @@
     transition: all $base-animation-duration ease-in-out;
   }
 
-  .button:hover &,
-  .menu__control:hover & {
-    fill: $active-icon-color;
-    stroke: $active-icon-color;
-  }
-
-  .anchor.anchor--disabled:hover & {
-    fill: $icon-color;
-    stroke: $icon-color;
-  }
-
-  .button.button--disabled:hover & {
-    fill: $icon-color;
-    stroke: $icon-color;
-  }
-
   &__badge {
     circle {
       fill: $icon-badge-background-color;
@@ -58,19 +42,8 @@
     }
   }
 
-  #{$dark-background-context} &:not([class*="color-index"]),
-  .button--primary & {
-    fill: $colored-icon-color;
-    stroke: $colored-icon-color;
-  }
-
-  #{$dark-background-context} a:hover > &,
-  #{$dark-background-context} .anchor:hover > &,
-  #{$dark-background-context} .button:hover > &,
-  #{$dark-background-context} .menu__control:hover > &,
-  .button--primary:hover & {
-    fill: $active-colored-icon-color;
-    stroke: $active-colored-icon-color;
+  #{$dark-background-context} &:not([class*="color-index"]) {
+    @include icon-color($colored-icon-color);
   }
 
   &--active {
