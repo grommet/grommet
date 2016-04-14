@@ -38,6 +38,13 @@
 .anchor__icon {
   display: inline-block;
   padding: halve($inuit-base-spacing-unit);
+
+  &:hover {
+    .control-icon {
+      fill: $active-icon-color;
+      stroke: $active-icon-color;
+    }
+  }
 }
 
 &.anchor--primary,
@@ -49,6 +56,8 @@
   .control-icon {
     vertical-align: middle;
     margin-right: halve($inuit-base-spacing-unit);
+    fill: $control-brand-color;
+    stroke: $control-brand-color;
 
     html.rtl & {
       margin-right: 0;
@@ -58,6 +67,17 @@
 
   > span {
     vertical-align: middle;
+  }
+
+  &:hover {
+    .control-icon {
+      fill: $link-hover-color;
+
+      path,
+      polyline {
+        stroke-width: 3px;
+      }
+    }
   }
 }
 
@@ -78,7 +98,6 @@
   &:hover {
     .control-icon {
       stroke: $control-brand-color;
-
       path,
       polyline {
         stroke-width: 3px;

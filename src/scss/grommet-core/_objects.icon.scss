@@ -31,8 +31,6 @@
     transition: all $base-animation-duration ease-in-out;
   }
 
-  a:hover &,
-  .anchor:hover &,
   .button:hover &,
   .menu__control:hover & {
     fill: $active-icon-color;
