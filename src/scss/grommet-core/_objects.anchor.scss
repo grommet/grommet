@@ -33,10 +33,6 @@
   @include dark-background-context-icon();
 }
 
-.anchor--disabled:hover {
-  color: $link-color;
-}
-
 .anchor__icon {
   display: inline-block;
   padding: halve($inuit-base-spacing-unit);
@@ -69,7 +65,7 @@
     vertical-align: middle;
   }
 
-  &:hover {
+  &:hover:not(.anchor--disabled) {
     .control-icon {
       @include icon-hover-bold($control-brand-color);
     }
@@ -87,7 +83,7 @@
   color: $control-brand-color;
 
   // Only animate icon when it's a primary anchor
-  &.anchor--animate-icon {
+  &.anchor--animate-icon:not(.anchor--disabled) {
     &:hover {
       .control-icon {
         transform: translateX(round($inuit-base-spacing-unit * 0.125));
@@ -102,6 +98,11 @@
 
   .control-icon {
     cursor: default;
+  }
+
+  &:hover {
+    color: $link-color;
+    text-decoration: none;
   }
 }
 
