@@ -6,6 +6,15 @@ import TestUtils from 'react-addons-test-utils';
 
 import Anchor from '../../src/js/components/Anchor';
 
+const FakeIcon = () => {
+  return (
+    <svg version="1.1" viewBox="0 0 24 24.3616"
+      width="24px" height="24px" role="img" />
+  );
+};
+FakeIcon.icon = true;
+FakeIcon.displayName = 'Fake';
+
 test('loads a basic Anchor', (t) => {
   t.plan(2);
   const shallowRenderer = TestUtils.createRenderer();
@@ -82,4 +91,144 @@ test('loads a clickable Anchor', (t) => {
     t.fail('Anchor has disabled class');
   }
   t.equal(anchorElement.props.href, 'test', 'Anchor has test href');
+});
+
+test('loads an Anchor with an icon', (t) => {
+  t.plan(4);
+  const shallowRenderer = TestUtils.createRenderer();
+  shallowRenderer.render(React.createElement(Anchor, {
+    icon: <FakeIcon />
+  }));
+  const anchorElement = shallowRenderer.getRenderOutput();
+
+  if (anchorElement.props.className.indexOf('anchor') > -1) {
+    t.pass('Anchor has class');
+  } else {
+    t.fail('Anchor does not have anchor class');
+  }
+
+  if (anchorElement.props.className.indexOf('anchor--icon') !== -1) {
+    t.pass('Anchor has icon class');
+  } else {
+    t.fail('Anchor does not have icon class');
+  }
+
+  t.equal(
+    anchorElement.props.children.length, 2, 'Anchor has two children'
+  );
+  t.equal(
+    anchorElement.props.children[1], undefined, 'Anchor second child is undefined'
+  );
+});
+
+test('loads an Anchor with an icon and label', (t) => {
+  t.plan(4);
+  const shallowRenderer = TestUtils.createRenderer();
+  shallowRenderer.render(React.createElement(Anchor, {
+    icon: <FakeIcon />,
+    label: 'test'
+  }));
+  const anchorElement = shallowRenderer.getRenderOutput();
+
+  if (anchorElement.props.className.indexOf('anchor') > -1) {
+    t.pass('Anchor has class');
+  } else {
+    t.fail('Anchor does not have anchor class');
+  }
+
+  if (anchorElement.props.className.indexOf('anchor--icon-label') !== -1) {
+    t.pass('Anchor has icon-label class');
+  } else {
+    t.fail('Anchor does not have icon-label class');
+  }
+
+  t.equal(
+    anchorElement.props.children.length, 2, 'Anchor has two children'
+  );
+  t.equal(
+    anchorElement.props.children[1], 'test', 'Anchor has label'
+  );
+});
+
+test('loads an Anchor with an icon and label reverse', (t) => {
+  t.plan(4);
+  const shallowRenderer = TestUtils.createRenderer();
+  shallowRenderer.render(React.createElement(Anchor, {
+    icon: <FakeIcon />,
+    label: 'test',
+    reverse: true
+  }));
+  const anchorElement = shallowRenderer.getRenderOutput();
+
+  if (anchorElement.props.className.indexOf('anchor') > -1) {
+    t.pass('Anchor has class');
+  } else {
+    t.fail('Anchor does not have anchor class');
+  }
+
+  if (anchorElement.props.className.indexOf('anchor--icon-label') !== -1) {
+    t.pass('Anchor has icon-label class');
+  } else {
+    t.fail('Anchor does not have icon-label class');
+  }
+
+  t.equal(
+    anchorElement.props.children.length, 2, 'Anchor has two children'
+  );
+  t.equal(
+    anchorElement.props.children[0], 'test', 'Anchor has label'
+  );
+});
+
+test('loads an Anchor with a children icon', (t) => {
+  t.plan(4);
+  const shallowRenderer = TestUtils.createRenderer();
+  shallowRenderer.render(React.createElement(Anchor, {
+    children: <FakeIcon />
+  }));
+  const anchorElement = shallowRenderer.getRenderOutput();
+
+  if (anchorElement.props.className.indexOf('anchor') > -1) {
+    t.pass('Anchor has class');
+  } else {
+    t.fail('Anchor does not have anchor class');
+  }
+
+  if (anchorElement.props.className.indexOf('anchor--icon') !== -1) {
+    t.pass('Anchor has icon class');
+  } else {
+    t.fail('Anchor does not have icon class');
+  }
+
+  t.equal(
+    anchorElement.props.children.length, 2, 'Anchor has two children'
+  );
+  t.equal(
+    anchorElement.props.children[0], undefined, 'Anchor first child is undefined'
+  );
+});
+
+test('loads an Anchor with a children text', (t) => {
+  t.plan(4);
+  const shallowRenderer = TestUtils.createRenderer();
+  shallowRenderer.render(React.createElement(Anchor, {
+    children: 'test'
+  }));
+  const anchorElement = shallowRenderer.getRenderOutput();
+
+  if (anchorElement.props.className.indexOf('anchor') > -1) {
+    t.pass('Anchor has class');
+  } else {
+    t.fail('Anchor does not have anchor class');
+  }
+
+  t.equal(
+    anchorElement.props.children.length, 2, 'Anchor has two children'
+  );
+  t.equal(
+    anchorElement.props.children[0], undefined, 'Anchor first child is undefined'
+  );
+  t.equal(
+    anchorElement.props.children[1][0], 'test', 'Anchor has text children'
+  );
 });

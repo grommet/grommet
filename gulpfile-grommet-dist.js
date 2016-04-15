@@ -81,11 +81,9 @@ module.exports = function(gulp) {
   gulp.task('generate-index-icons', function (done) {
     var iconsFolder = path.join(__dirname, './src/img/icons');
     var iconsMap = ['module.exports = {'];
-    console.log('length of icons folder: ', iconsFolder);
     fs.readdir(iconsFolder, function(err, icons) {
       icons.forEach(function (icon, index) {
 
-        console.log('current icon: ', icon);
         if (/\.svg$/.test(icon)) {
           var componentName = icon.replace('.svg', '.js');
           componentName = componentName.replace(/^(.)|-([a-z])/g, function (g) {
@@ -102,7 +100,6 @@ module.exports = function(gulp) {
             iconsMap.push('};\n');
 
             var destinationFile = path.join(__dirname, './src/js/index-icons.js');
-            console.log('writing index icons at: ', destinationFile);
             fs.writeFile(destinationFile, iconsMap.join(''), function(err) {
               if (err) {
                 throw err;
