@@ -1,0 +1,101 @@
+// (C) Copyright 2016 Hewlett Packard Enterprise Development LP
+
+.value {
+  display: inline-block;
+  @include text-align();
+}
+
+.value__annotated {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  @include inuit-font-size($value-font-size);
+
+  .control-icon:first-child {
+    margin-right: quarter($inuit-base-spacing-unit);
+  }
+
+  .control-icon:last-child {
+    margin-left: quarter($inuit-base-spacing-unit);
+  }
+}
+
+.value__label {
+  display: inline-block;
+  margin-top: quarter($inuit-base-spacing-unit);
+  @include inuit-font-size($control-font-size);
+}
+
+.value--large {
+  .value__annotated {
+    @include inuit-font-size($value-large-font-size);
+
+    .control-icon:first-child {
+      margin-right: halve($inuit-base-spacing-unit);
+    }
+
+    .control-icon:last-child {
+      margin-left: halve($inuit-base-spacing-unit);
+    }
+  }
+
+  .value__label {
+    margin-top: halve($inuit-base-spacing-unit);
+    @include inuit-font-size($control-large-font-size);
+  }
+}
+
+.value--small {
+  .value__annotated {
+    @include inuit-font-size($value-small-font-size);
+  }
+
+  .value__label {
+    margin-top: quarter($inuit-base-spacing-unit);
+    @include inuit-font-size($label-font-size);
+  }
+}
+
+@include media-query(palm) {
+  // same as large
+  .value--xlarge {
+    .value__annotated {
+      @include inuit-font-size($value-large-font-size);
+
+      .control-icon:first-child {
+        margin-right: halve($inuit-base-spacing-unit);
+      }
+
+      .control-icon:last-child {
+        margin-left: halve($inuit-base-spacing-unit);
+      }
+    }
+
+    .value__label {
+      margin-top: halve($inuit-base-spacing-unit);
+      @include inuit-font-size($control-large-font-size);
+    }
+  }
+}
+
+@include media-query(lap-and-up) {
+  .value--xlarge {
+    .value__annotated {
+      @include inuit-font-size($value-xlarge-font-size);
+
+      .control-icon:first-child {
+        margin-right: ($inuit-base-spacing-unit);
+      }
+
+      .control-icon:last-child {
+        margin-left: ($inuit-base-spacing-unit);
+      }
+    }
+
+    .value__label {
+      margin-top: $inuit-base-spacing-unit;
+      @include inuit-font-size($value-font-size);
+    }
+  }
+}
