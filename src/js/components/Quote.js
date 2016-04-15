@@ -16,7 +16,6 @@ export default class Quote extends Component {
       {
         [`border-color-index-${this.props.borderColorIndex}`]: this.props.borderColorIndex,
         [`${CLASS_ROOT}--${this.props.size}`]: this.props.size,
-        [`${CLASS_ROOT}--emphasize-quote`]: this.props.emphasizeQuote,
         [`${CLASS_ROOT}--emphasize-credit`]: this.props.emphasizeCredit
       }
     );
@@ -25,10 +24,10 @@ export default class Quote extends Component {
 
     return (
       <Box {...boxProps} className={classes}>
-        {this.props.quote.map((quote, index) =>
-          <Paragraph key={`quote-body-${index}`} size="large" className={`${CLASS_ROOT}__body`}>{quote}</Paragraph>
-        )}
-        <Paragraph margin="none" className={`${CLASS_ROOT}__credit`}>{this.props.quoteCredit}</Paragraph>
+        <div>
+          {this.props.children}
+          <Paragraph className={`${CLASS_ROOT}__credit`}>{this.props.credit}</Paragraph>
+        </div>
       </Box>
     );
   }
@@ -37,16 +36,13 @@ export default class Quote extends Component {
 Quote.propTypes = {
   borderColorIndex: PropTypes.string,
   size: PropTypes.oneOf(['small', 'medium', 'large', 'full']),
-  quote: PropTypes.array.isRequired,
-  quoteCredit: PropTypes.string,
-  emphasizeQuote: PropTypes.bool,
+  credit: PropTypes.string,
   emphasizeCredit: PropTypes.bool,
   ...Box.propTypes
 };
 
 Quote.defaultProps = {
-  pad: 'large',
+  pad: {horizontal: 'large', vertical: 'small'},
   size: 'large',
-  emphasizeQuote: false,
   emphasizeCredit: true
 };
