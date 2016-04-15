@@ -23,6 +23,10 @@
   .border-color-index-neutral-#{$i},
   .border-color-index-neutral-#{$i + length($brand-neutral-colors)} {
     border-color: nth($brand-neutral-colors, $i);
+
+  .color-index-neutral-#{$i},
+  .color-index-neutral-#{$i + length($brand-neutral-colors)} {
+    color: nth($brand-neutral-colors, $i);
   }
 }
 
@@ -40,6 +44,10 @@
   .border-color-index-accent-#{$i},
   .border-color-index-accent-#{$i + length($brand-accent-colors)} {
     border-color: nth($brand-accent-colors, $i);
+
+  .color-index-accent-#{$i},
+  .color-index-accent-#{$i + length($brand-accent-colors)} {
+    color: nth($brand-accent-colors, $i);
   }
 }
 
@@ -79,6 +87,9 @@
 
   .border-color-index-#{$status} {
     border-color: $color;
+
+  .color-index-#{$status} {
+    color: $color;
   }
 }
 

@@ -79,7 +79,7 @@ var bowerMinWebpackConfig = Object.assign({}, bowerWebpackConfig, {
 module.exports = function(gulp) {
 
   gulp.task('generate-index-icons', function (done) {
-    var iconsFolder = path.join(__dirname, 'src/img/icons');
+    var iconsFolder = path.join(__dirname, './src/img/icons');
     var iconsMap = ['module.exports = {'];
     fs.readdir(iconsFolder, function(err, icons) {
       icons.forEach(function (icon, index) {
@@ -99,7 +99,7 @@ module.exports = function(gulp) {
           if (index === icons.length - 1) {
             iconsMap.push('};\n');
 
-            var destinationFile = path.join(__dirname, 'src/js/index-icons.js');
+            var destinationFile = path.join(__dirname, './src/js/index-icons.js');
             fs.writeFile(destinationFile, iconsMap.join(''), function(err) {
               if (err) {
                 throw err;
