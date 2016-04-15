@@ -56,6 +56,17 @@ $button-horizontal-padding: round($inuit-base-spacing-unit) - $button-border-wid
   }
 }
 
+.button,
+.button--icon,
+.button__icon {
+  &:hover {
+    .control-icon {
+      @include icon-color($active-icon-color);
+      transition: none;
+    }
+  }
+}
+
 .button:not(.button--plain) {
   .button__icon {
     padding: 0;
@@ -68,12 +79,16 @@ $button-horizontal-padding: round($inuit-base-spacing-unit) - $button-border-wid
   background-color: $brand-color;
   color: $active-colored-text-color;
 
+  // used for control icons (e.g. in video)
+  .control-icon {
+    @include icon-color($colored-icon-color);
+  }
+
   &:hover:not(.button--disabled) {
     color: $active-colored-text-color;
 
    .button__icon .control-icon {
-      fill: $active-colored-icon-color;
-      stroke: $active-colored-icon-color;
+      @include icon-color($active-colored-icon-color)
     }
   }
 }
@@ -118,23 +133,7 @@ $button-horizontal-padding: round($inuit-base-spacing-unit) - $button-border-wid
     }
   }
 
-  #{$dark-background-context} & {
-    color: $colored-text-color;
-
-    .control-icon {
-      fill: $colored-icon-color;
-      stroke: $colored-icon-color;
-    }
-
-    &:hover {
-      color: $active-colored-text-color;
-
-     .control-icon {
-        fill: $active-colored-icon-color;
-        stroke: $active-colored-icon-color;
-      }
-    }
-  }
+  @include dark-background-context-icon();
 }
 
 #{$dark-background-context} .button:not(.button--primary) {
