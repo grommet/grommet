@@ -9,8 +9,8 @@ before_script:
 - npm install -g gulp
 - npm install -g codeclimate-test-reporter
 - gem install scss_lint
-- gulp preprocess
 - gulp generate-index-icons
+- gulp preprocess
 - gulp dist-css
 script:
 - |
