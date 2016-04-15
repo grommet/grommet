@@ -20,6 +20,11 @@
     background-color: rgba(nth($brand-neutral-colors, $i), 0.8);
   }
 
+  .border-color-index-neutral-#{$i},
+  .border-color-index-neutral-#{$i + length($brand-neutral-colors)} {
+    border-color: nth($brand-neutral-colors, $i);
+  }
+
   .color-index-neutral-#{$i},
   .color-index-neutral-#{$i + length($brand-neutral-colors)} {
     color: nth($brand-neutral-colors, $i);
@@ -35,6 +40,11 @@
   .background-color-index-accent-#{$i}-a,
   .background-color-index-accent-#{$i + length($brand-accent-colors)}-a {
     background-color: rgba(nth($brand-accent-colors, $i), 0.8);
+  }
+
+  .border-color-index-accent-#{$i},
+  .border-color-index-accent-#{$i + length($brand-accent-colors)} {
+    border-color: nth($brand-accent-colors, $i);
   }
 
   .color-index-accent-#{$i},
@@ -53,6 +63,11 @@
   .background-color-index-grey-#{$i + length($brand-grey-colors)}-a {
     background-color: rgba(nth($brand-grey-colors, $i), 0.8);
   }
+
+  .border-color-index-grey-#{$i},
+  .border-color-index-grey-#{$i + length($brand-grey-colors)} {
+    border-color: nth($brand-grey-colors, $i);
+  }
 }
 
 @for $i from 1 through length($brand-graph-colors) {
@@ -60,11 +75,20 @@
   .background-color-index-graph-#{$i + length($brand-graph-colors)} {
     background-color: nth($brand-graph-colors, $i);
   }
+
+  .border-color-index-graph-#{$i},
+  .border-color-index-graph-#{$i + length($brand-graph-colors)} {
+    border-color: nth($brand-graph-colors, $i);
+  }
 }
 
 @each $status, $color in $brand-status-colors {
   .background-color-index-#{$status} {
     background-color: $color;
+  }
+
+  .border-color-index-#{$status} {
+    border-color: $color;
   }
 
   .color-index-#{$status} {
@@ -81,5 +105,10 @@
   .background-color-index-light-#{$i}-a,
   .background-color-index-light-#{$i + length($brand-light-colors)}-a {
     background-color: rgba(nth($brand-light-colors, $i), 0.8);
+  }
+
+  .border-color-index-light-#{$i},
+  .border-color-index-light-#{$i + length($brand-light-colors)} {
+    border-color: nth($brand-light-colors, $i);
   }
 }
