@@ -13,11 +13,11 @@
   @include inuit-font-size($value-font-size);
 
   .control-icon:first-child {
-    margin-right: halve($inuit-base-spacing-unit);
+    margin-right: quarter($inuit-base-spacing-unit);
   }
 
   .control-icon:last-child {
-    margin-left: halve($inuit-base-spacing-unit);
+    margin-left: quarter($inuit-base-spacing-unit);
   }
 }
 
@@ -32,11 +32,11 @@
     @include inuit-font-size($value-large-font-size);
 
     .control-icon:first-child {
-      margin-right: $inuit-base-spacing-unit;
+      margin-right: halve($inuit-base-spacing-unit);
     }
 
     .control-icon:last-child {
-      margin-left: $inuit-base-spacing-unit;
+      margin-left: halve($inuit-base-spacing-unit);
     }
   }
 
@@ -57,33 +57,45 @@
   }
 }
 
-.value--huge {
-  .value__annotated {
-    @include inuit-font-size($value-huge-font-size);
-
-    .control-icon:first-child {
-      margin-right: double($inuit-base-spacing-unit);
-    }
-
-    .control-icon:last-child {
-      margin-left: double($inuit-base-spacing-unit);
-    }
-
-    @include media-query(palm) {
-      flex-direction: column;
+@include media-query(palm) {
+  // same as large
+  .value--xlarge {
+    .value__annotated {
+      @include inuit-font-size($value-large-font-size);
 
       .control-icon:first-child {
-        margin-right: 0;
+        margin-right: halve($inuit-base-spacing-unit);
       }
 
       .control-icon:last-child {
-        margin-left: 0;
+        margin-left: halve($inuit-base-spacing-unit);
       }
     }
-  }
 
-  .value__label {
-    margin-top: double($inuit-base-spacing-unit);
-    @include inuit-font-size($value-font-size);
+    .value__label {
+      margin-top: halve($inuit-base-spacing-unit);
+      @include inuit-font-size($control-large-font-size);
+    }
+  }
+}
+
+@include media-query(lap-and-up) {
+  .value--xlarge {
+    .value__annotated {
+      @include inuit-font-size($value-xlarge-font-size);
+
+      .control-icon:first-child {
+        margin-right: ($inuit-base-spacing-unit);
+      }
+
+      .control-icon:last-child {
+        margin-left: ($inuit-base-spacing-unit);
+      }
+    }
+
+    .value__label {
+      margin-top: $inuit-base-spacing-unit;
+      @include inuit-font-size($value-font-size);
+    }
   }
 }

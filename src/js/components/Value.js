@@ -65,7 +65,7 @@ Value.propTypes = {
   icon: PropTypes.node,
   label: PropTypes.string,
   onClick: PropTypes.func,
-  size: PropTypes.oneOf(['small', 'medium', 'large', 'huge']),
+  size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
   trendIcon: PropTypes.node,
   value: PropTypes.number.isRequired,
   units: PropTypes.string
