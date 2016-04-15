@@ -99,7 +99,11 @@ class LayerContents extends Component {
 
   render () {
     var closer = null;
-    if (this.props.onClose && this.props.closer) {
+
+    if (typeof this.props.closer === 'object') {
+      closer = this.props.closer;
+
+    } else if (this.props.onClose && this.props.closer) {
       //TODO: remove a11yCloserTitle after 0.6 release
       let closeLabel = Intl.getMessage(this.context.intl, 'Close');
       let layerLabel = Intl.getMessage(this.context.intl, 'Layer');
