@@ -62,9 +62,19 @@ export default {
   },
 
   post (uri, data) {
-    var op = request.post(uri).send(data);
-    op.timeout(_timeout);
-    op.set(_headers);
+    var op = request.post(uri);
+    if(_headers.hasOwnProperty("Content-Type") && _headers["Content-Type"] === "multipart/form-data") {
+      Object.keys(data.fields).map(function(key) {
+        op.field(key, data.fields[key]);
+      });
+      Object.keys(data.formfiles).map(function(formfile) {
+        op.attach(formfile, data.fields[formfile]);
+      });
+    } else {
+      op.send(data);
+      op.timeout(_timeout);
+      op.set(_headers);
+    }
     return op;
   },
 
