@@ -14,6 +14,7 @@ export default class SocialShare extends Component {
 
     let socialIcon = undefined;
     let href = '';
+    let target = '_blank';
 
     const encodedLink = encodeURIComponent(link);
     const encodedTitle = encodeURIComponent(title);
@@ -34,10 +35,11 @@ export default class SocialShare extends Component {
     } else if (type === 'email') {
       socialIcon = <SocialEmailIcon />;
       href = `mailto:?subject=${encodedTitle}&body=${encodedText}%0D%0A${encodedLink}`;
+      target = '_self';
     }
 
     return (
-      <Anchor href={href} icon={socialIcon} target="_blank" />
+      <Anchor href={href} icon={socialIcon} target={target} />
     );
   }
 };
