@@ -5,15 +5,7 @@ import React from 'react';
 import TestUtils from 'react-addons-test-utils';
 
 import Anchor from '../../src/js/components/Anchor';
-
-const FakeIcon = () => {
-  return (
-    <svg version="1.1" viewBox="0 0 24 24.3616"
-      width="24px" height="24px" role="img" />
-  );
-};
-FakeIcon.icon = true;
-FakeIcon.displayName = 'Fake';
+import FakeIcon from '../mocks/FakeIcon';
 
 test('loads a basic Anchor', (t) => {
   t.plan(2);

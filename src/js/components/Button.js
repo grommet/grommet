@@ -9,6 +9,21 @@ export default class Button extends Component {
   render () {
     const plain = (this.props.plain !== undefined ? this.props.plain :
       (this.props.icon && ! this.props.label));
+
+    let icon;
+    if (this.props.icon) {
+      icon = <span className={`${CLASS_ROOT}__icon`}>{this.props.icon}</span>;
+    }
+
+    let hasIcon = icon !== undefined;
+    let children = React.Children.map(this.props.children, child => {
+      if (child && child.type && child.type.icon) {
+        hasIcon = true;
+        child = <span className={`${CLASS_ROOT}__icon`}>{child}</span>;
+      }
+      return child;
+    });
+
     let classes = classnames(
       CLASS_ROOT,
       this.props.className,
@@ -19,23 +34,10 @@ export default class Button extends Component {
         [`${CLASS_ROOT}--disabled`]: !this.props.onClick && !this.props.href,
         [`${CLASS_ROOT}--fill`]: this.props.fill,
         [`${CLASS_ROOT}--plain`]: plain,
-        [`${CLASS_ROOT}--icon`]: this.props.icon,
+        [`${CLASS_ROOT}--icon`]: this.props.icon || hasIcon,
         [`${CLASS_ROOT}--align-${this.props.align}`]: this.props.align
       }
     );
-
-    let icon;
-    if (this.props.icon) {
-      icon = <span className={`${CLASS_ROOT}__icon`}>{this.props.icon}</span>;
-    }
-
-    let children = React.Children.map(this.props.children, child => {
-      if (child && child.type && child.type.icon) {
-        child = <span className={`${CLASS_ROOT}__icon`}>{child}</span>;
-      }
-
-      return child;
-    });
 
     if (!children) {
       children = this.props.label;
