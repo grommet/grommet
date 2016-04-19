@@ -273,7 +273,7 @@ export default class Article extends Component {
     }
     const targetIndex = this._visibleIndexes()[0] + 1;
     if (targetIndex !== activeIndex) {
-      if (targetIndex < (childCount - 1)) {
+      if (targetIndex < childCount) {
         this._onSelect(Math.min(childCount - 1, targetIndex));
       } else if (wrap) {
         this._onSelect(1);
