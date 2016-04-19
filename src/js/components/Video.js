@@ -217,7 +217,7 @@ export default class Video extends Component {
         </video>
         <Box pad="none" align="center" justify={videoSummaryJustify} className={`${CLASS_ROOT}__summary`}>
           {videoHeader}
-          <Box pad="large" align="center" justify="center">
+          <Box pad="none" align="center" justify="center">
             <Button className={`${CLASS_ROOT}__control`} plain={true}
               primary={true} onClick={onClickControl} 
               icon={controlIcon} a11yTitle={a11yControlButtonTitle} />
