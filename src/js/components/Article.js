@@ -7,6 +7,7 @@ import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 import DOMUtils from '../utils/DOM';
 import Props from '../utils/Props';
 import Scroll from '../utils/Scroll';
+import Responsive from '../utils/Responsive';
 // import CarouselControls from './CarouselControls';
 import Button from './Button';
 import NextIcon from './icons/base/LinkNext';
@@ -19,8 +20,8 @@ const DEFAULT_PLAY_INTERVAL = 10000; // 10s
 
 export default class Article extends Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this._onFocusChange = this._onFocusChange.bind(this);
     this._onScroll = this._onScroll.bind(this);
@@ -34,10 +35,12 @@ export default class Article extends Component {
     this._onSelect = this._onSelect.bind(this);
     this._checkControls = this._checkControls.bind(this);
     this._checkPreviousNextControls = this._checkPreviousNextControls.bind(this);
+    this._onResponsive = this._onResponsive.bind(this);
 
     this.state = {
       activeIndex: 0,
-      playing: false
+      playing: false,
+      showControls: this.props.controls
     };
   }
 
@@ -56,6 +59,10 @@ export default class Article extends Component {
       this._scrollParent = ReactDOM.findDOMNode(this.refs.component);
 
       this._checkControls();
+
+      if ('row' === this.props.direction && this.props.scrollStep) {
+        this._responsive = Responsive.start(this._onResponsive);
+      }
     }
   }
 
@@ -64,6 +71,9 @@ export default class Article extends Component {
       KeyboardAccelerators.stopListeningToKeyboard(this, this._keys);
       document.removeEventListener('wheel', this._onWheel);
       window.removeEventListener('resize', this._onResize);
+    }
+    if (this._responsive) {
+      this._responsive.stop();
     }
   }
 
@@ -109,54 +119,55 @@ export default class Article extends Component {
     }
   }
 
-  _ignoreScrolling () {
-    // ignore scroll and wheel events for a while to avoid acceleration artifacts
-    this.setState({ ignoreScroll: true });
-    clearTimeout(this._ignoreScrollTimer);
-    this._ignoreScrollTimer = setTimeout(() => {
-      this.setState({ ignoreScroll: false });
-    }, 1000);
-  }
-
-  _onScroll (event) {
-    if (event.target === this._scrollParent) {
-      if ('row' === this.props.direction) {
-        if (! this.state.ignoreScroll) {
-          const { activeIndex } = this.state;
-          const childElement = ReactDOM.findDOMNode(this.refs[activeIndex]);
-          const rect = childElement.getBoundingClientRect();
-          if (rect.left < -1) {
-            // scrolling right
-            this._onNext();
-          } else if (rect.left > 1) {
-            // scrolling left
-            this._onPrevious();
-          }
+  _visibleIndexes () {
+    const { children, direction } = this.props;
+    let result = [];
+    const childCount = React.Children.count(children);
+    const limit = ('row' === direction) ? window.innerWidth : window.innerHeight;
+    for (let index = 0; index < childCount; index += 1) {
+      const childElement = ReactDOM.findDOMNode(this.refs[index]);
+      const rect = childElement.getBoundingClientRect();
+      // ignore small drifts of 10 pixels on either end
+      if ('row' === direction) {
+        if (rect.right > 10 && rect.left < (limit - 10)) {
+          result.push(index);
+        } else if (result.length > 0) {
+          break;
+        }
+      } else {
+        if (rect.bottom > 10 && rect.top < (limit - 10)) {
+          result.push(index);
+        } else if (result.length > 0) {
+          break;
         }
       }
     }
+    return result;
+  }
+
+  _shortTimer (name, duration) {
+    if (! this[name]) {
+      this[name] = true;
+    }
+    const timerName = `${this[name]}Timer`;
+    clearTimeout(this[timerName]);
+    this[timerName] = setTimeout(() => {
+      this[name] = false;
+    }, duration);
   }
 
   _onWheel (event) {
     if ('row' === this.props.direction) {
-      // Horizontal scrolling.
-      if (! this.state.ignoreScroll) {
-        // Only step if the user isn't scrolling vertically, bias vertically
-        if (event.deltaX > 10 &&
-          Math.abs(event.deltaY * 4) < Math.abs(event.deltaX)) {
-          event.preventDefault();
-          // Constrain scrolling to lock on each section.
-          if (event.deltaX > 0) {
-            this._onNext();
-          } else {
-            this._onPrevious();
-          }
+      if (this._scrollingHorizontally) {
+        // no-op
+      } else if (! this._scrollingVertically) {
+        if (Math.abs(event.deltaY) > Math.abs(event.deltaX)) {
+          // user is scrolling vertically
+          this._shortTimer('_scrollingVertically', 1000);
         }
-      } else {
-        event.preventDefault();
       }
     } else {
-      // Vertical scrolling. Give the user lots of control.
+      // Give the user lots of control.
       const delta = event.deltaY;
       if (Math.abs(delta) > 100) {
         // The user is expressing a resolute interest in controlling the
@@ -177,6 +188,47 @@ export default class Article extends Component {
         } else {
           clearInterval(this._controlTimer);
           this._controlTimer = setTimeout(this._checkControls, 200);
+        }
+      }
+    }
+  }
+
+  _onScroll (event) {
+    if ('row' === this.props.direction) {
+      if (event.target === this._scrollParent) {
+        // scrolling Article
+        if (this._scrollingVertically) {
+          // prevent Article horizontal scrolling while scrolling vertically
+          const { activeIndex } = this.state;
+          const childElement = ReactDOM.findDOMNode(this.refs[activeIndex]);
+          const rect = childElement.getBoundingClientRect();
+          this._scrollParent.scrollLeft += rect.left;
+        } else {
+          const scrollingRight = this._priorScrollLeft < this._scrollParent.scrollLeft;
+          // once we stop scrolling, align with child boundaries
+          clearTimeout(this._scrollTimer);
+          this._scrollTimer = setTimeout(() => {
+            const indexes = this._visibleIndexes();
+            if (indexes.length > 1 && scrollingRight) {
+              this._onSelect(indexes[1]);
+            } else {
+              this._onSelect(indexes[0]);
+            }
+          }, 100);
+          this._priorScrollLeft = this._scrollParent.scrollLeft;
+        }
+      } else if (event.target.parentNode === this._scrollParent) {
+        // scrolling child
+        // Has it scrolled near the bottom?
+        const grandchildren = event.target.children;
+        const lastGrandChild = grandchildren[grandchildren.length - 1];
+        const rect = lastGrandChild.getBoundingClientRect();
+        if (rect.bottom <= (window.innerHeight + 24)) {
+          // at the bottom
+          this.setState({ atBottom: true });
+        } else {
+          // not at the bottom
+          this.setState({ atBottom: false });
         }
       }
     }
@@ -212,57 +264,32 @@ export default class Article extends Component {
   }
 
   _onNext (event, wrap) {
-    const { children, direction } = this.props;
+    const { children } = this.props;
     const { activeIndex } = this.state;
+    const childCount = React.Children.count(children);
     if (event) {
       this._stop();
       event.preventDefault();
     }
-    const childCount = React.Children.count(children);
-    const limit = ('row' === direction) ? window.innerWidth : window.innerHeight;
-    let advanced = false;
-    for (let index = 0; index < childCount; index += 1) {
-      const childElement = ReactDOM.findDOMNode(this.refs[index]);
-      const rect = childElement.getBoundingClientRect();
-      const edge = ('row' === direction) ? rect.right : rect.bottom;
-      if (edge > 0) {
-        if (event || wrap || edge <= limit) {
-          // This is the first visible child, select the next one
-          if ((index + 1) !== activeIndex) {
-            this._onSelect(Math.min(childCount - 1, index + 1));
-          }
-          advanced = true;
-        }
-        break;
+    const targetIndex = this._visibleIndexes()[0] + 1;
+    if (targetIndex !== activeIndex) {
+      if (targetIndex < (childCount - 1)) {
+        this._onSelect(Math.min(childCount - 1, targetIndex));
+      } else if (wrap) {
+        this._onSelect(1);
       }
-    }
-    if (wrap && ! advanced) {
-      this._onSelect(1);
     }
   }
 
   _onPrevious (event) {
-    const { children, direction } = this.props;
     const { activeIndex } = this.state;
     if (event) {
       this._stop();
       event.preventDefault();
     }
-    const childCount = React.Children.count(children);
-    const limit = ('row' === direction) ? window.innerWidth : window.innerHeight;
-    for (let index = (childCount - 1); index >= 0; index -= 1) {
-      const childElement = ReactDOM.findDOMNode(this.refs[index]);
-      const rect = childElement.getBoundingClientRect();
-      const edge = ('row' === direction) ? rect.left : rect.top;
-      if (edge < limit) {
-        if (event || edge >= 0) {
-          // This is the first visible child, select the previous one
-          if ((index - 1) !== activeIndex) {
-            this._onSelect(Math.max(0, index - 1));
-          }
-        }
-        break;
-      }
+    const targetIndex = this._visibleIndexes()[0] - 1;
+    if (targetIndex !== activeIndex) {
+      this._onSelect(Math.max(0, targetIndex));
     }
   }
 
@@ -290,14 +317,29 @@ export default class Article extends Component {
   _onSelect (activeIndex) {
     const childElement = ReactDOM.findDOMNode(this.refs[activeIndex]);
     if (childElement) {
+      // scroll child to top
+      childElement.scrollTop = 0;
       const rect = childElement.getBoundingClientRect();
       if ('row' === this.props.direction) {
-        Scroll.scrollBy(this._scrollParent, 'scrollLeft', rect.left);
+        if (rect.left !== 0) {
+          this._scrollingHorizontally = true;
+          Scroll.scrollBy(this._scrollParent, 'scrollLeft', rect.left, () => {
+            this._scrollingHorizontally = false;
+          });
+        }
       } else {
-        Scroll.scrollBy(this._scrollParent, 'scrollTop', rect.top);
+        if (rect.top !== 0) {
+          this._scrollingVertically = true;
+          Scroll.scrollBy(this._scrollParent, 'scrollTop', rect.top, () => {
+            this._scrollingVertically = false;
+          });
+        }
       }
 
-      this.setState({activeIndex: activeIndex}, () => {
+      this.setState({
+        activeIndex: activeIndex,
+        atBottom: false
+      }, () => {
         var items = childElement.getElementsByTagName('*');
         var firstFocusable = DOMUtils.getBestFirstFocusable(items);
         if (!firstFocusable) {
@@ -308,8 +350,6 @@ export default class Article extends Component {
           this.props.onFocusChange(activeIndex);
         }
       });
-
-      this._ignoreScrolling();
     }
   }
 
@@ -321,6 +361,10 @@ export default class Article extends Component {
         return false;
       }
     });
+  }
+
+  _onResponsive (small) {
+    this.setState({ narrow: small });
   }
 
   _renderControls () {
@@ -338,19 +382,21 @@ export default class Article extends Component {
 
     const a11yTitle = this.props.a11yTitle || {};
     if ('row' === this.props.direction) {
-      if (this.state.activeIndex > 0) {
-        controls.push(
-          <Button key="previous" plain={true} a11yTitle={a11yTitle.previous}
-            className={`${CONTROL_CLASS_PREFIX}-left`}
-            onClick={this._onPrevious} icon={<PreviousIcon size="large" />} />
-        );
-      }
-      if (this.state.activeIndex < (childCount - 1)) {
-        controls.push(
-          <Button key="next" plain={true} a11yTitle={a11yTitle.next}
-            className={`${CONTROL_CLASS_PREFIX}-right`}
-            onClick={this._onNext} icon={<NextIcon size="large" />} />
-        );
+      if (! this.state.narrow || this.state.atBottom) {
+        if (this.state.activeIndex > 0) {
+          controls.push(
+            <Button key="previous" plain={true} a11yTitle={a11yTitle.previous}
+              className={`${CONTROL_CLASS_PREFIX}-left`}
+              onClick={this._onPrevious} icon={<PreviousIcon size="large" />} />
+          );
+        }
+        if (this.state.activeIndex < (childCount - 1)) {
+          controls.push(
+            <Button key="next" plain={true} a11yTitle={a11yTitle.next}
+              className={`${CONTROL_CLASS_PREFIX}-right`}
+              onClick={this._onNext} icon={<NextIcon size="large" />} />
+          );
+        }
       }
     } else {
       if (this.state.activeIndex > 0) {

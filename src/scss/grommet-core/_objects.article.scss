@@ -71,15 +71,29 @@
 }
 
 .article__control-left {
-  top: 50%;
-  transform: translateY(-50%);
-  left: 0;
+  @include media-query(lap-and-up) {
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  @include media-query(palm) {
+    left: 0;
+    bottom: 0;
+  }
 }
 
 .article__control-right {
-  top: 50%;
-  transform: translateY(-50%);
-  right: 0;
+  @include media-query(lap-and-up) {
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+  }
+
+  @include media-query(palm) {
+    right: 0;
+    bottom: 0;
+  }
 }
 
 .grommet article:not(.article) {
