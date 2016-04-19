@@ -1,5 +1,13 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
+@function tint($color, $percent) {
+  @return mix(white, $color, $percent);
+}
+
+@function generateTint1($color) {
+  @return tint($color, 5%);
+}
+
 #{$dark-background-context} {
   color: $active-colored-text-color;
 }
@@ -15,9 +23,19 @@
     background-color: nth($brand-neutral-colors, $i);
   }
 
+  .background-color-index-neutral-#{$i}-tint-1,
+  .background-color-index-neutral-#{$i + length($brand-neutral-colors)} {
+    background-color: generateTint1(nth($brand-neutral-colors, $i));
+  }
+
   .background-color-index-neutral-#{$i}-a,
   .background-color-index-neutral-#{$i + length($brand-neutral-colors)}-a {
     background-color: rgba(nth($brand-neutral-colors, $i), 0.8);
+  }
+
+  .background-color-index-neutral-#{$i}-tint-1-a,
+  .background-color-index-neutral-#{$i + length($brand-neutral-colors)}-tint-1-a {
+    background-color: rgba(generateTint1(nth($brand-neutral-colors, $i)), 0.8);
   }
 
   .border-color-index-neutral-#{$i},
@@ -25,9 +43,19 @@
     border-color: nth($brand-neutral-colors, $i);
   }
 
+  .border-color-index-neutral-#{$i}-tint-1,
+  .border-color-index-neutral-#{$i + length($brand-neutral-colors)}-tint-1 {
+    border-color: generateTint1(nth($brand-neutral-colors, $i));
+  }
+
   .color-index-neutral-#{$i},
   .color-index-neutral-#{$i + length($brand-neutral-colors)} {
     color: nth($brand-neutral-colors, $i);
+  }
+
+  .color-index-neutral-#{$i}-tint-1,
+  .color-index-neutral-#{$i + length($brand-neutral-colors)}-tint-1 {
+    color: generateTint1(nth($brand-neutral-colors, $i));
   }
 }
 
