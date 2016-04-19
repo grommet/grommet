@@ -28,6 +28,6 @@ gulp.task('coveralls', () => {
 
 gulp.task('dev', () =>
   console.error(
-    'Running "gulp dev" at Grommet root folder is not supported. If you want to start the website, run "gulp dev" at docs folder'
+    'Running "gulp dev" at Grommet root folder is not supported. To test Grommet components locally clone the grommet-docs repo into your project.'
   )
 );
