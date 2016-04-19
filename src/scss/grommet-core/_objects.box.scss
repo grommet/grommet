@@ -284,6 +284,10 @@
   align-items: baseline;
 }
 
+.box--align-stretch {
+  align-items: stretch;
+}
+
 .box--align-content-start {
   align-content: flex-start;
 }
@@ -302,6 +306,10 @@
 
 .box--align-content-around {
   align-content: space-around;
+}
+
+.box--align-content-stretch {
+  align-content: stretch;
 }
 
 .box--separator-top,
