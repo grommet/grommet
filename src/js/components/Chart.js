@@ -17,6 +17,7 @@ const MIN_LABEL_WIDTH = 48;
 const SPARKLINE_STEP_WIDTH = 6;
 const SPARKLINE_BAR_PADDING = 1;
 const POINT_RADIUS = 6;
+const BAR_SEGMENT_HEIGHT = 18; // 12 + 6 tied to stroke-dashoffset in CSS
 
 export default class Chart extends Component {
 
@@ -147,8 +148,8 @@ export default class Chart extends Component {
     let minY = null;
     let maxY = null;
 
-    series.forEach(function (item) {
-      item.values.forEach(function (value, xIndex) {
+    series.forEach((item) => {
+      item.values.forEach((value, xIndex) => {
         let x = value[0];
         let y = value[1];
 
@@ -177,9 +178,9 @@ export default class Chart extends Component {
     }
 
     if ('bar' === this.props.type) {
-      xAxis.data.forEach(function (obj, xIndex) {
+      xAxis.data.forEach((obj, xIndex) => {
         let sumY = 0;
-        series.forEach(function (item) {
+        series.forEach((item) => {
           sumY += item.values[xIndex][1];
         });
         maxY = Math.max(maxY, sumY);
@@ -191,7 +192,7 @@ export default class Chart extends Component {
       maxY = Math.max(maxY, this.props.threshold);
     }
     if (this.props.thresholds) {
-      this.props.thresholds.forEach(function (obj) {
+      this.props.thresholds.forEach((obj) => {
         maxY = Math.max(maxY, obj.value);
       });
     }
@@ -416,13 +417,13 @@ export default class Chart extends Component {
   // Converts the series data into paths for line or area types.
   _renderLinesOrAreas () {
     let bounds = this.state.bounds;
-    let values = this.props.series.map(function (item, seriesIndex) {
+    let values = this.props.series.map((item, seriesIndex) => {
 
       // Get all coordinates up front so they are available
       // if we are drawing a smooth chart.
-      let coordinates = item.values.map(function (value) {
+      let coordinates = item.values.map((value) => {
         return this._coordinates(value);
-      }, this);
+      });
 
       let colorIndex = this._itemColorIndex(item, seriesIndex);
       let commands = null;
@@ -431,7 +432,7 @@ export default class Chart extends Component {
       let points = [];
 
       // Build the commands for this set of coordinates.
-      coordinates.forEach(function (coordinate, index) {
+      coordinates.forEach((coordinate, index) => {
         if (this.props.smooth) {
           controlCoordinates = this._controlCoordinates(coordinates, index);
         }
@@ -463,7 +464,7 @@ export default class Chart extends Component {
         }
 
         previousControlCoordinates = controlCoordinates;
-      }, this);
+      });
 
 
       let linePath;
@@ -498,18 +499,19 @@ export default class Chart extends Component {
           {points}
         </g>
       );
-    }, this);
+    });
 
     return values;
   }
 
   // Converts the series data into rects for bar types.
   _renderBars () {
-    let bounds = this.state.bounds;
+    const { segmented } = this.props;
+    const { bounds } = this.state;
 
-    let values = bounds.xAxis.data.map(function (obj, xIndex) {
+    let values = bounds.xAxis.data.map((obj, xIndex) => {
       let baseY = bounds.minY;
-      let stepBars = this.props.series.map(function (item, seriesIndex) {
+      let stepBars = this.props.series.map((item, seriesIndex) => {
 
         let colorIndex = item.colorIndex || ('graph-' + (seriesIndex + 1));
         let value = item.values[xIndex];
@@ -526,22 +528,32 @@ export default class Chart extends Component {
           stepBarBase += XAXIS_HEIGHT;
         }
 
+        const width = bounds.xStepWidth - (2 * bounds.barPadding);
+        const x = (this._translateX(value[0]) + bounds.barPadding) +
+          (width / 2);
+
+        if (segmented) {
+          stepBarBase =
+            Math.floor(stepBarBase / BAR_SEGMENT_HEIGHT) * BAR_SEGMENT_HEIGHT;
+          stepBarHeight =
+            Math.floor(stepBarHeight / BAR_SEGMENT_HEIGHT) * BAR_SEGMENT_HEIGHT;
+        }
+        const y = this.state.height - (stepBarHeight + stepBarBase);
+
         return (
-          <rect key={'bar_rect_' + item.label || seriesIndex}
+          <line key={'bar_' + item.label || seriesIndex}
             className={classes.join(' ')}
-            x={this._translateX(value[0]) + bounds.barPadding}
-            y={this.state.height - (stepBarHeight + stepBarBase)}
-            width={bounds.xStepWidth - (2 * bounds.barPadding)}
-            height={stepBarHeight} />
+            x1={x} y1={y + stepBarHeight} x2={x} y2={y}
+            strokeWidth={width} />
         );
-      }, this);
+      });
 
       return (
         <g key={'bar_' + xIndex}>
           {stepBars}
         </g>
       );
-    }, this);
+    });
 
     return values;
   }
@@ -610,7 +622,7 @@ export default class Chart extends Component {
         this._labelPosition(bounds.xAxis.data[bounds.xAxis.data.length - 1].value, bounds);
     }
 
-    let labels = bounds.xAxis.data.map(function (obj, xIndex) {
+    let labels = bounds.xAxis.data.map((obj, xIndex) => {
       let classes = [CLASS_ROOT + "__xaxis-index"];
       if (xIndex === this.state.activeXIndex) {
         classes.push(CLASS_ROOT + "__xaxis-index--active");
@@ -636,7 +648,7 @@ export default class Chart extends Component {
           </text>
         </g>
       );
-    }, this);
+    });
 
     return (
       <g ref="xAxis" className={CLASS_ROOT + "__xaxis"}>
@@ -652,7 +664,7 @@ export default class Chart extends Component {
     let end;
     let width = Math.max(4, YAXIS_WIDTH / 2);
 
-    let bars = this.props.thresholds.map(function (item, index) {
+    let bars = this.props.thresholds.map((item, index) => {
       let classes = [CLASS_ROOT + "__bar"];
       classes.push("color-index-" + (item.colorIndex || ('graph-' + (index + 1))));
       if (index < (this.props.thresholds.length - 1)) {
@@ -672,7 +684,7 @@ export default class Chart extends Component {
           width={width}
           height={height} />
       );
-    }, this);
+    });
 
     return (
       <g ref="yAxis" className={CLASS_ROOT + "__yaxis"}>
@@ -683,7 +695,7 @@ export default class Chart extends Component {
 
   _activeSeriesAsString () {
     let total = 0;
-    let seriesText = this._getActiveSeries().map(function (currentSeries) {
+    let seriesText = this._getActiveSeries().map((currentSeries) => {
       total += currentSeries.value;
 
       let stringify = [
@@ -717,7 +729,7 @@ export default class Chart extends Component {
     let className = CLASS_ROOT + "__" + layer;
     let bounds = this.state.bounds;
 
-    let bands = bounds.xAxis.data.map(function (obj, xIndex) {
+    let bands = bounds.xAxis.data.map((obj, xIndex) => {
       let classes = [className + "-xband"];
       if (xIndex === this.state.activeXIndex) {
         classes.push(className + "-xband--active");
@@ -780,7 +792,7 @@ export default class Chart extends Component {
     if (this.props.points) {
       // for area and line charts, include a dot at the intersection
       if ('line' === this.props.type || 'area' === this.props.type) {
-        points = this.props.series.map(function (item, seriesIndex) {
+        points = this.props.series.map((item, seriesIndex) => {
           value = item.values[this.state.activeXIndex];
           coordinates = this._coordinates(value);
           let colorIndex = this._itemColorIndex(item, seriesIndex);
@@ -789,7 +801,7 @@ export default class Chart extends Component {
               className={CLASS_ROOT + "__cursor-point color-index-" + colorIndex}
               cx={x} cy={coordinates[1]} r={Math.round(POINT_RADIUS * 1.2)} />
           );
-        }, this);
+        });
       }
     }
 
@@ -802,7 +814,7 @@ export default class Chart extends Component {
   }
 
   _getActiveSeries (addColorIndex) {
-    return this.props.series.map(function (item) {
+    return this.props.series.map((item) => {
       let datum = {
         value: item.values[this.state.activeXIndex][1],
         units: item.units || this.props.units
@@ -815,7 +827,7 @@ export default class Chart extends Component {
         }
       }
       return datum;
-    }, this);
+    });
   }
 
   // Builds a Legend appropriate for the currently active X index.
@@ -850,6 +862,9 @@ export default class Chart extends Component {
     classes.push(CLASS_ROOT + "--" + this.props.type);
     if (this.state.size) {
       classes.push(CLASS_ROOT + "--" + this.state.size);
+    }
+    if (this.props.segmented) {
+      classes.push(CLASS_ROOT + "--segmented");
     }
     if (this.props.sparkline) {
       classes.push(CLASS_ROOT + "--sparkline");
@@ -964,6 +979,7 @@ Chart.propTypes = {
   max: PropTypes.number,
   min: PropTypes.number,
   points: PropTypes.bool,
+  segmented: PropTypes.bool,
   series: PropTypes.arrayOf(
     PropTypes.shape({
       label: PropTypes.string,

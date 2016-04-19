@@ -13,152 +13,154 @@
 .chart {
   position: relative;
   display: block;
+}
 
-  &__grid {
-    stroke: $border-color;
-  }
+.chart__grid {
+  stroke: $border-color;
+}
 
-  &__graphic {
-    width: 100%;
-    height: $graphic-size;
-    max-height: calc(100vh - #{double($header-height)});
-  }
+.chart__graphic {
+  width: 100%;
+  height: $graphic-size;
+  max-height: calc(100vh - #{double($header-height)});
+}
 
-  &__values {
+.chart__values {
 
-    @include media-query(lap-and-up) {
-      g {
-        @include animation('reveal-chart 1.5s');
-      }
-    }
-
-    &-line {
-      stroke-width: 3px;
-      @include graph-stroke-color();
-    }
-
-    &-bar,
-    &-area {
-      @include graph-fill-color-translucent(0.7);
-
-      &--active {
-        @include graph-fill-color;
-      }
-    }
-
-    &-point {
-      stroke-width: 3px;
-      @include graph-stroke-color();
-      fill: $background-color;
-    }
-
-    &--loading {
-      stroke-width: $inuit-base-spacing-unit;
-      @include graph-stroke-color();
+  @include media-query(lap-and-up) {
+    g {
+      @include animation('reveal-chart 1.5s');
     }
   }
+}
 
-  &__threshold {
-    stroke-width: 2px;
-    stroke: $threshold-color;
-    pointer-events: none;
+.chart__values-line {
+  stroke-width: 3px;
+  @include graph-stroke-color();
+}
+
+.chart__values-area {
+  @include graph-fill-color-translucent(0.7);
+}
+
+.chart__values-area--active {
+  @include graph-fill-color;
+}
+
+.chart__values-bar {
+  @include graph-stroke-color-translucent(0.7);
+
+  &--active {
+    @include graph-stroke-color;
+  }
+}
+
+.chart--segmented {
+  .chart__values-bar {
+    stroke-dasharray: 12 6;
+  }
+}
+
+.chart__values-point {
+  stroke-width: 3px;
+  @include graph-stroke-color();
+  fill: $background-color;
+}
+
+.chart__values--loading {
+  stroke-width: $inuit-base-spacing-unit;
+  @include graph-stroke-color();
+}
+
+.chart__threshold {
+  stroke-width: 2px;
+  stroke: $threshold-color;
+  pointer-events: none;
+}
+
+.chart__yaxis .chart__bar {
+  @include graph-fill-color-translucent(0.5);
+}
+
+.chart__xaxis-index {
+  text {
+    fill: $secondary-text-color;
+  }
+}
+
+.chart__xaxis-index--eclipse {
+  text {
+    fill: transparent;
+  }
+}
+
+.chart__xaxis-index--active {
+  text {
+    fill: $text-color;
+  }
+}
+
+.chart__front-xband-background {
+  fill: rgba(0, 0, 0, 0);
+}
+
+.chart__cursor {
+  stroke: $cursor-color;
+  stroke-width: 2;
+  pointer-events: none;
+}
+
+.chart__cursor-point {
+  stroke-width: 2;
+  @include graph-fill-color();
+}
+
+.chart__legend--overlay {
+  padding: halve($inuit-base-spacing-unit);
+  pointer-events: none;
+
+  @include media-query(palm) {
+    margin: 0px auto;
   }
 
-  &__yaxis .chart__bar {
-    @include graph-fill-color-translucent(0.5);
+  @include media-query(lap-and-up) {
+    position: absolute;
+    left: 0px;
+    margin: 0px;
+    background-color: $active-background-color;
+  }
+}
+
+.chart--area,
+.chart--bar {
+  .chart__gradient {
+    @include graph-fill-color-gradient();
+  }
+}
+
+.chart--small {
+  .chart__graphic {
+    height: $graphic-small-size;
+  }
+}
+
+.chart--large {
+  .chart__graphic {
+    height: $graphic-large-size;
+  }
+}
+
+.chart--sparkline {
+  display: inline-block;
+  margin-right: quarter($inuit-base-spacing-unit);
+
+  .chart__graphic {
+    width: auto;
+    height: $sparkline-height;
   }
 
-  &__xaxis {
-    &-index {
-      text {
-        fill: $secondary-text-color;
-      }
-
-      &--eclipse {
-        text {
-          fill: transparent;
-        }
-      }
-
-      &--active {
-        text {
-          fill: $text-color;
-        }
-      }
-    }
-  }
-
-  &__front {
-    &-xband {
-      &-background {
-        fill: rgba(0, 0, 0, 0);
-      }
-    }
-  }
-
-  &__cursor {
-    stroke: $cursor-color;
-    stroke-width: 2;
-    pointer-events: none;
-
-    &-point {
-      stroke-width: 2;
-      @include graph-fill-color();
-    }
-  }
-
-  &__legend {
-
-    &--overlay {
-      padding: halve($inuit-base-spacing-unit);
-      pointer-events: none;
-
-      @include media-query(palm) {
-        margin: 0px auto;
-      }
-
-      @include media-query(lap-and-up) {
-        position: absolute;
-        left: 0px;
-        margin: 0px;
-        background-color: $active-background-color;
-      }
-    }
-  }
-
-  &--area,
-  &--bar {
-    .chart__gradient {
-      @include graph-fill-color-gradient();
-    }
-  }
-
-  &--small {
-    .chart__graphic {
-      height: $graphic-small-size;
-    }
-  }
-
-  &--large {
-    .chart__graphic {
-      height: $graphic-large-size;
-    }
-  }
-
-  &--sparkline {
-    display: inline-block;
-    margin-right: quarter($inuit-base-spacing-unit);
-
-    .chart__graphic {
-      width: auto;
-      height: $sparkline-height;
-    }
-
-    .chart__values {
-      &-bar,
-      &-area {
-        @include graph-fill-color();
-      }
-    }
+  .chart__values-bar,
+  .chart__values-area {
+    @include graph-fill-color();
   }
 }
