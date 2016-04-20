@@ -40,8 +40,9 @@ class LayerContents extends Component {
     };
 
     if (this.props.onClose) {
+      const layerParent = this.refs.container.parentNode;
       this._keyboardHandlers.esc = this.props.onClose;
-      document.addEventListener('click', this._onClick.bind(this));
+      layerParent.addEventListener('click', this._onClick.bind(this));
     }
 
     KeyboardAccelerators.startListeningToKeyboard(
@@ -62,17 +63,20 @@ class LayerContents extends Component {
   }
 
   componentWillUnmount () {
+    const layerParent = this.refs.container.parentNode;
+
     KeyboardAccelerators.stopListeningToKeyboard(
       this, this._keyboardHandlers
     );
 
     if (this.props.onClose) {
-      document.removeEventListener('click', this._onClick.bind(this));
+      layerParent.removeEventListener('click', this._onClick.bind(this));
     }
   }
 
   _onClick (event) {
     const layerContents = this.refs.container;
+
     if (layerContents && !layerContents.contains(event.target)) {
       this.props.onClose();
     }
