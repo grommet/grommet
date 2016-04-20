@@ -292,7 +292,7 @@ export default class Chart extends Component {
   // redo the bounds calculations.
   // Called whenever the browser resizes or new properties arrive.
   _layout () {
-    if (this.props.legend && 'below' !== this.props.legend.position) {
+    if (this.props.legend && 'overlay' === this.props.legend.position) {
       this._alignLegend();
     }
     let element = this.refs.chart;
@@ -511,6 +511,7 @@ export default class Chart extends Component {
 
     let values = bounds.xAxis.data.map((obj, xIndex) => {
       let baseY = bounds.minY;
+      let legend = [];
       let stepBars = this.props.series.map((item, seriesIndex) => {
 
         let colorIndex = item.colorIndex || ('graph-' + (seriesIndex + 1));
@@ -520,7 +521,9 @@ export default class Chart extends Component {
         baseY += value[1];
 
         let classes = [CLASS_ROOT + "__values-bar", "color-index-" + colorIndex];
-        if (! this.props.legend || xIndex === this.state.activeXIndex) {
+        if (! this.props.legend ||
+          'inline' === this.props.legend.position ||
+          xIndex === this.state.activeXIndex) {
           classes.push(CLASS_ROOT + "__values-bar--active");
         }
 
@@ -531,7 +534,6 @@ export default class Chart extends Component {
         const width = bounds.xStepWidth - (2 * bounds.barPadding);
         const x = (this._translateX(value[0]) + bounds.barPadding) +
           (width / 2);
-
         if (segmented) {
           stepBarBase =
             Math.floor(stepBarBase / BAR_SEGMENT_HEIGHT) * BAR_SEGMENT_HEIGHT;
@@ -539,6 +541,15 @@ export default class Chart extends Component {
             Math.floor(stepBarHeight / BAR_SEGMENT_HEIGHT) * BAR_SEGMENT_HEIGHT;
         }
         const y = this.state.height - (stepBarHeight + stepBarBase);
+
+        if (this.props.legend && 'inline' === this.props.legend.position) {
+          legend.push(
+            <text key={'bar-value_' + item.label || seriesIndex}
+              x={x} y={y} role="presentation" textAnchor="middle" fontSize={24}>
+              {value[1]}
+            </text>
+          );
+        }
 
         return (
           <line key={'bar_' + item.label || seriesIndex}
@@ -551,6 +562,7 @@ export default class Chart extends Component {
       return (
         <g key={'bar_' + xIndex}>
           {stepBars}
+          {legend}
         </g>
       );
     });
@@ -765,7 +777,7 @@ export default class Chart extends Component {
             x={x} y={0} width={bounds.xStepWidth} height={this.state.height} />
         </g>
       );
-    }, this);
+    });
 
     return (
       <g ref={layer} className={className}>
@@ -898,7 +910,8 @@ export default class Chart extends Component {
 
     let cursor = null;
     let legend = null;
-    if (this.props.legend && this.state.activeXIndex >= 0 &&
+    if (this.props.legend && 'inline' !== this.props.legend.position &&
+      this.state.activeXIndex >= 0 &&
       this.props.series[0].values.length > 0) {
       cursor = this._renderCursor();
       legend = this._renderLegend();
@@ -973,7 +986,7 @@ Chart.propTypes = {
   important: PropTypes.number,
   large: PropTypes.bool,
   legend: PropTypes.shape({
-    position: PropTypes.oneOf(['overlay', 'after']),
+    position: PropTypes.oneOf(['overlay', 'after', 'inline']),
     total: PropTypes.bool
   }),
   max: PropTypes.number,
