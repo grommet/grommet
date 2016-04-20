@@ -476,7 +476,6 @@ export default class Article extends Component {
         onTouchMove={this._onTouchMove}
         primary={this.props.primary}>
         {children}
-        {controls}
       </Box>
     );
   }
