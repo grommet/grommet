@@ -32,11 +32,6 @@
     background-color: rgba(nth($brand-neutral-colors, $i), 0.8);
   }
 
-  .background-color-index-neutral-#{$i}-tint-1-a,
-  .background-color-index-neutral-#{$i + length($brand-neutral-colors)}-tint-1-a {
-    background-color: rgba(generate-tint-1(nth($brand-neutral-colors, $i)), 0.8);
-  }
-
   .border-color-index-neutral-#{$i},
   .border-color-index-neutral-#{$i + length($brand-neutral-colors)} {
     border-color: nth($brand-neutral-colors, $i);
