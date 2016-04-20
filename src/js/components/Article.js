@@ -440,7 +440,12 @@ export default class Article extends Component {
           const elementClone = React.cloneElement(element, {
             ref: index
           });
-          let elementNode = elementClone;
+          let elementNode = (
+            <div>
+              {elementClone}
+              {controls}
+            </div>
+          );
 
           // let ariaHidden;
           // if (this.state.activeIndex !== index) {
