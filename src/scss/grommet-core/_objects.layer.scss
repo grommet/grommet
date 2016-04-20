@@ -16,7 +16,9 @@
 
   @include media-query(palm) {
     &:not(.layer--hidden) + .app {
-      display: none;
+      visibility: hidden;
+      width: 0px;
+      height: 0px;
     }
   }
 
