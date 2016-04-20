@@ -48,12 +48,12 @@ export default {
   filterByFocusable (elements) {
     return Array.prototype.filter.call(elements || [], function(element) {
       var currentTag = element.tagName.toLowerCase();
-      var validTags = /(svg|a|area|input|select|textarea|button|iframe)$/;
+      var validTags = /(svg|a|area|input|select|textarea|button|iframe|div)$/;
       var isValidTag = currentTag.match(validTags) && element.focus;
 
       if (currentTag === 'a') {
-        return isValidTag && element.childNodes.length > 0;
-      } else if (currentTag === 'svg') {
+        return isValidTag && element.childNodes.length > 0 && element.getAttribute('href');
+      } else if (currentTag === 'svg' || currentTag === 'div') {
         return isValidTag && element.hasAttribute('tabindex');
       }
 
