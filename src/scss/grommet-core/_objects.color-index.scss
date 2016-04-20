@@ -17,7 +17,6 @@
 }
 
 @for $i from 1 through length($brand-neutral-colors) {
-
   .background-color-index-neutral-#{$i},
   .background-color-index-neutral-#{$i + length($brand-neutral-colors)} {
     background-color: nth($brand-neutral-colors, $i);
