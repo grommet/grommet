@@ -354,19 +354,19 @@
   .paragraph {
     width: 100%;
   }
-}
 
-.box--size-small {
-  width: $inuit-base-spacing-unit * 24;
-  max-width: calc(100% - #{double($inuit-base-spacing-unit)});
-}
+  &-small {
+    width: $inuit-base-spacing-unit * 24;
+    max-width: calc(100% - #{double($inuit-base-spacing-unit)});
+  }
 
-.box--size-medium {
-  width: $inuit-base-spacing-unit * 30;
-  max-width: calc(100% - #{double($inuit-base-spacing-unit)});
-}
+  &-medium {
+    width: $inuit-base-spacing-unit * 30;
+    max-width: calc(100% - #{double($inuit-base-spacing-unit)});
+  }
 
-.box--size-large {
-  width: $inuit-base-spacing-unit * 38.5;
-  max-width: calc(100% - #{double($inuit-base-spacing-unit)});
+  &-large {
+    width: $inuit-base-spacing-unit * 38.5;
+    max-width: calc(100% - #{double($inuit-base-spacing-unit)});
+  }
 }
