@@ -4,7 +4,7 @@
   @return mix(#ffffff, $color, $percent);
 }
 
-@function generate-tint-1($color) {
+@function generate-tint($color) {
   @return tint($color, 5%);
 }
 
@@ -22,9 +22,9 @@
     background-color: nth($brand-neutral-colors, $i);
   }
 
-  .background-color-index-neutral-#{$i}-tint-1,
+  .background-color-index-neutral-#{$i}-t,
   .background-color-index-neutral-#{$i + length($brand-neutral-colors)} {
-    background-color: generate-tint-1(nth($brand-neutral-colors, $i));
+    background-color: generate-tint(nth($brand-neutral-colors, $i));
   }
 
   .background-color-index-neutral-#{$i}-a,
@@ -37,9 +37,9 @@
     border-color: nth($brand-neutral-colors, $i);
   }
 
-  .border-color-index-neutral-#{$i}-tint-1,
-  .border-color-index-neutral-#{$i + length($brand-neutral-colors)}-tint-1 {
-    border-color: generate-tint-1(nth($brand-neutral-colors, $i));
+  .border-color-index-neutral-#{$i}-t,
+  .border-color-index-neutral-#{$i + length($brand-neutral-colors)}-t {
+    border-color: generate-tint(nth($brand-neutral-colors, $i));
   }
 
   .color-index-neutral-#{$i},
@@ -47,9 +47,9 @@
     color: nth($brand-neutral-colors, $i);
   }
 
-  .color-index-neutral-#{$i}-tint-1,
-  .color-index-neutral-#{$i + length($brand-neutral-colors)}-tint-1 {
-    color: generate-tint-1(nth($brand-neutral-colors, $i));
+  .color-index-neutral-#{$i}-t,
+  .color-index-neutral-#{$i + length($brand-neutral-colors)}-t {
+    color: generate-tint(nth($brand-neutral-colors, $i));
   }
 }
 
