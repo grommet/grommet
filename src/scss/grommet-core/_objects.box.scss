@@ -351,22 +351,25 @@
 }
 
 .box--size {
+  max-width: calc(100% - #{double($inuit-base-spacing-unit)});
+
   .paragraph {
     width: 100%;
   }
 
+  &-xsmall {
+    width: $size-xsmall;
+  }
+
   &-small {
-    width: $inuit-base-spacing-unit * 24;
-    max-width: calc(100% - #{double($inuit-base-spacing-unit)});
+    width: $size-small;
   }
 
   &-medium {
-    width: $inuit-base-spacing-unit * 30;
-    max-width: calc(100% - #{double($inuit-base-spacing-unit)});
+    width: $size-medium;
   }
 
   &-large {
-    width: $inuit-base-spacing-unit * 38.5;
-    max-width: calc(100% - #{double($inuit-base-spacing-unit)});
+    width: $size-large;
   }
 }

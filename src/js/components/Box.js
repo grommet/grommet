@@ -187,7 +187,7 @@ Box.propTypes = {
   responsive: PropTypes.bool,
   role: PropTypes.string,
   separator: PropTypes.oneOf(['top', 'bottom', 'left', 'right', 'horizontal', 'vertical', 'all', 'none']),
-  size: PropTypes.oneOf(['auto', 'small', 'medium', 'large', 'full']),
+  size: PropTypes.oneOf(['auto', 'xsmall', 'small', 'medium', 'large', 'full']),
   tag: PropTypes.string,
   textAlign: PropTypes.oneOf(['left', 'center', 'right']),
   texture: PropTypes.oneOfType([
