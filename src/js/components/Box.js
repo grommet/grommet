@@ -206,6 +206,5 @@ Box.defaultProps = {
   pad: 'none',
   tag: 'div',
   responsive: true,
-  focusable: true,
-  size: 'auto'
+  focusable: true
 };
