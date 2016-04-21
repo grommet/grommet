@@ -369,33 +369,39 @@ export default class Article extends Component {
   }
 
   _processTab (event) {
-    const chapter = ReactDOM.findDOMNode(
+    const findNode = node => ReactDOM.findDOMNode(node);
+    const { previous, next } = this.refs;
+
+    const previousBtn = findNode(previous);
+    const nextBtn = findNode(next);
+
+    const chapter = findNode(
       this.refs[`chapter_${this.state.activeIndex}`]
     );
-    var items = chapter.getElementsByTagName('*');
+
+    let items = chapter.getElementsByTagName('*');
     items = DOMUtils.filterByFocusable(items);
 
     if (items && items.length > 0) {
       if (event.shiftKey) {
-        if (document.activeElement === ReactDOM.findDOMNode(this.refs.previous)
-          || (document.activeElement === ReactDOM.findDOMNode(this.refs.next)
-          && this.state.activeIndex === 0)) {
+        if (document.activeElement === previousBtn ||
+          (document.activeElement === nextBtn && this.state.activeIndex === 0)) {
           items[items.length - 1].focus();
           event.preventDefault();
         } else if (document.activeElement === this.refs[`anchor_step_${this.state.activeIndex}`] ||
           event.target === items[0]) {
-          if (this.refs.next) {
-            ReactDOM.findDOMNode(this.refs.next).focus();
-          } else if (this.refs.previous) {
-            ReactDOM.findDOMNode(this.refs.previous).focus();
+          if (next) {
+            nextBtn.focus();
+          } else if (previous) {
+            previousBtn.focus();
           }
           event.preventDefault();
         }
       } else if (event.target === items[items.length - 1]) {
-        if (this.refs.previous) {
-          ReactDOM.findDOMNode(this.refs.previous).focus();
-        } else if (this.refs.next) {
-          ReactDOM.findDOMNode(this.refs.next).focus();
+        if (previous) {
+          items[0].focus()
+        } else if (next) {
+          nextBtn.focus();
         }
         event.preventDefault();
       }
@@ -491,6 +497,7 @@ export default class Article extends Component {
                 <a tabIndex="-1" aria-hidden='true'
                   ref={`anchor_step_${index}`} onFocus={element.props.onFocus} />
                 {elementClone}
+                {controls}
               </div>
             );
           }
@@ -509,7 +516,6 @@ export default class Article extends Component {
         onTouchMove={this._onTouchMove}
         primary={this.props.primary}>
         {children}
-        {controls}
       </Box>
     );
   }
