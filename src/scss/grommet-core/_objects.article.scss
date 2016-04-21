@@ -31,6 +31,12 @@
 
     > *:not(.article__controls) {
       overflow-y: auto;
+
+      // https://css-tricks.com/snippets/css/momentum-scrolling-on-ios-overflow-elements/
+      @include media-query(palm) {
+        overflow-y: scroll; // has to be scroll, not auto
+        -webkit-overflow-scrolling: touch;
+      }
     }
 
     .article__control-carousel {
