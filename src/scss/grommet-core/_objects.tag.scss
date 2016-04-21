@@ -5,6 +5,10 @@
   position: relative;
   opacity: 0.7;
 
+  @include media-query(palm) {
+    max-width: inherit;
+  }
+
   a,
   a:hover,
   .anchor:hover:not(.anchor--disabled) {
