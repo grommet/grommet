@@ -208,11 +208,13 @@ export default class Article extends Component {
           // once we stop scrolling, align with child boundaries
           clearTimeout(this._scrollTimer);
           this._scrollTimer = setTimeout(() => {
-            const indexes = this._visibleIndexes();
-            if (indexes.length > 1 && scrollingRight) {
-              this._onSelect(indexes[1]);
-            } else {
-              this._onSelect(indexes[0]);
+            if (! this._resizing) {
+              const indexes = this._visibleIndexes();
+              if (indexes.length > 1 && scrollingRight) {
+                this._onSelect(indexes[1]);
+              } else {
+                this._onSelect(indexes[0]);
+              }
             }
           }, 100);
           this._priorScrollLeft = this._scrollParent.scrollLeft;
@@ -260,6 +262,7 @@ export default class Article extends Component {
     clearTimeout(this._resizeTimer);
     this._resizeTimer = setTimeout(() => {
       this._onSelect(this.state.activeIndex);
+      this._shortTimer('_resizing', 1000);
     }, 50);
   }
 
