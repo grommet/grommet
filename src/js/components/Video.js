@@ -45,9 +45,11 @@ export default class Video extends Component {
 
   _onPlaying () {
     let video = this.refs.video;
-    this._progressTimer = setInterval(function () {
-      this.setState({progress: this.state.progress + 0.5});
-    }.bind(this), 500);
+    if (!this._progressTimer) {
+      this._progressTimer = setInterval(function () {
+        this.setState({progress: this.state.progress + 0.5});
+      }.bind(this), 500);
+    }
     this.setState({ playing: true, progress: video.currentTime, ended: null });
   }
 
