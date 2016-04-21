@@ -32,7 +32,6 @@ rules:
   space-before-blocks: 2
   indent: [2, 2, { SwitchCase: 1 }]
   brace-style: 2
-  space-after-keywords: 2
   comma-dangle: 2
   no-unused-expressions: 2
   block-scoped-var: 2
@@ -59,7 +58,6 @@ rules:
   no-alert: 0
   no-process-exit: 0
   no-extend-native: 0
-  block-scoped-var: 0
   quotes: 0
   jsx-quotes: 0
   consistent-return: 0
