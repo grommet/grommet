@@ -28,4 +28,9 @@
       font-weight: 600;
     }
   }
+
+  &.paragraph--width-large {
+    width: $inuit-base-spacing-unit * 30;
+    max-width: 100%;
+  }
 }
