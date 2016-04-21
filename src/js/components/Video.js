@@ -45,9 +45,11 @@ export default class Video extends Component {
 
   _onPlaying () {
     let video = this.refs.video;
-    this._progressTimer = setInterval(function () {
-      this.setState({progress: this.state.progress + 0.5});
-    }.bind(this), 500);
+    if (!this._progressTimer) {
+      this._progressTimer = setInterval(function () {
+        this.setState({progress: this.state.progress + 0.5});
+      }.bind(this), 500);
+    }
     this.setState({ playing: true, progress: video.currentTime, ended: null });
   }
 
@@ -172,11 +174,12 @@ export default class Video extends Component {
           (seconds < 10 ? '0' + seconds : seconds);
         let currentProgress = this.state.progress;
         let nextChapter = chapters[Math.min(chapters.length - 1, index + 1)];
+        let lastChapter = chapters[chapters.length - 1];
 
         let timelineClasses = classnames(
           `${CLASS_ROOT}__timeline-chapter`,
           {
-            [`${CLASS_ROOT}__timeline-active`]: (currentProgress !== 0 && currentProgress >= chapter.time && currentProgress < nextChapter.time)
+            [`${CLASS_ROOT}__timeline-active`]: (currentProgress !== 0 && ((currentProgress >= chapter.time && currentProgress < nextChapter.time) || (index === chapters.length - 1 && currentProgress >= lastChapter.time)))
           }
         );
 
@@ -199,7 +202,9 @@ export default class Video extends Component {
 
     let progress;
     if (this.props.duration) {
-      let percent = Math.round((this.state.progress / this.props.duration) * 100);
+      // making sure percent is <= 100,
+      // so that progress bar does not extend beyond container width
+      let percent = Math.min((Math.round((this.state.progress / this.props.duration) * 100)), 100);
       progress = (
         <div className={`${CLASS_ROOT}__progress`}>
           <div className={`${CLASS_ROOT}__progress-meter`}
