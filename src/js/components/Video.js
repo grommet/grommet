@@ -28,7 +28,7 @@ export default class Video extends Component {
     this._onClickChapter = this._onClickChapter.bind(this);
     this._onFullScreen = this._onFullScreen.bind(this);
 
-    this.state = { playing: false, progress: 0, responsive: false };
+    this.state = { playing: false, progress: 0, iconSize: 'large' };
   }
 
   componentDidMount () {
@@ -40,8 +40,8 @@ export default class Video extends Component {
   }
 
   componentWillReceiveProps (nextProps) {
-    // Dynamically modifying a source element and its attribute when 
-    // the element is already inserted in a video or audio element will 
+    // Dynamically modifying a source element and its attribute when
+    // the element is already inserted in a video or audio element will
     // have no effect.
     // From HTML Specs: https://html.spec.whatwg.org/multipage/embedded-content.html#the-source-element
     // Using forceUpdate to force redraw of video when receiving new <source>
@@ -61,9 +61,10 @@ export default class Video extends Component {
 
   _onResponsive (small) {
     if (small) {
-      this.setState({responsive: true});
+      this.setState({iconSize: 'small'});
     } else {
-      this.setState({responsive: false});
+      let iconSize = (('small' === this.props.size) ? null : 'large');
+      this.setState({iconSize: iconSize});
     }
   }
 
@@ -148,8 +149,7 @@ export default class Video extends Component {
       classes.push(this.props.className);
     }
 
-    let controlIconSize = (this.state.responsive ? 'small' : 
-      (('small' === this.props.size) ? null : 'large'));
+    let controlIconSize = this.state.iconSize;
     let controlIcon = (this.state.playing ?
       <PauseIcon size={controlIconSize} /> : (this.state.ended ?
         <RefreshIcon size={controlIconSize} /> :
