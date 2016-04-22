@@ -29,6 +29,8 @@
   "dependencies": {
     "classnames": "^2.2.3",
     "deep-assign": "^2.0.0",
+    "gulp-install": "^0.6.0",
+    "gulp-template": "^4.0.0",
     "hammerjs": "2.0.1",
     "intl": "^1.0.0",
     "inuit-clearfix": "^0.2.1",
@@ -46,11 +48,13 @@
     "inuit-responsive-tools": "~0.1.1",
     "inuit-shared": "~0.1.5",
     "markdown-to-jsx": "^2.0.0",
+    "mkdirp": "^0.5.1",
     "moment": "^2.8.3",
     "react": "^0.14.0",
     "react-dom": "^0.14.0",
     "react-gravatar": "^2.0.0",
     "react-intl": "^2.0.0-beta-2",
+    "shelljs": "^0.6.0",
     "superagent": "^1.1.0"
   },
   "devDependencies": {
