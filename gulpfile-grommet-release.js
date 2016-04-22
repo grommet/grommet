@@ -191,6 +191,6 @@ module.exports = function(gulp) {
   });
 
   gulp.task('release', function(done) {
-    runSequence('release:bump', ['dist-bower', 'dist'], 'release:npm', 'release:bower', 'release:clean', done);
+    runSequence('release:bump', 'dist-bower', 'dist', 'release:npm', 'release:bower', 'release:clean', done);
   });
 };
