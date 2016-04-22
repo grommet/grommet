@@ -37,6 +37,10 @@
 
   video {
     width: 100%;
+
+    .video--poster {
+      width: 100vw;
+    }
   }
 
   &__summary {
