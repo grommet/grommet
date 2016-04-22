@@ -9,5 +9,14 @@ export default {
         obj[field] = props[field];
     });
     return obj;
+  },
+  omit (props, fields) {
+    const obj = {};
+    Object.keys(props).forEach((p) => {
+      if ((fields || []).indexOf(p) === -1) {
+        obj[p] = props[p];
+      }
+    });
+    return obj;
   }
 };
