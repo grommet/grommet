@@ -57,6 +57,10 @@
   }
 }
 
+.value--align-center {
+  justify-content: center;
+}
+
 @include media-query(palm) {
   // same as large
   .value--xlarge {
