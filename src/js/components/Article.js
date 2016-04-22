@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes, Children } from 'react';
-import ReactDOM from 'react-dom';
+import {findDOMNode} from 'react-dom';
 import Box from './Box';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 import DOMUtils from '../utils/DOM';
@@ -36,7 +36,7 @@ export default class Article extends Component {
     this._checkControls = this._checkControls.bind(this);
     this._checkPreviousNextControls = this._checkPreviousNextControls.bind(this);
     this._onResponsive = this._onResponsive.bind(this);
-    this._processTab = this._processTab.bind(this);
+    this._updateHiddenElements = this._updateHiddenElements.bind(this);
 
     this.state = {
       activeIndex: 0,
@@ -51,9 +51,10 @@ export default class Article extends Component {
       if ('row' === this.props.direction) {
         this._keys = {
           left: this._onPrevious,
-          right: this._onNext,
-          tab: this._processTab
+          right: this._onNext
         };
+
+        this._updateHiddenElements();
       }
       //keys.space = this._onTogglePlay;
       KeyboardAccelerators.startListeningToKeyboard(this, this._keys);
@@ -61,7 +62,7 @@ export default class Article extends Component {
       document.addEventListener('wheel', this._onWheel);
       window.addEventListener('resize', this._onResize);
 
-      this._scrollParent = ReactDOM.findDOMNode(this.refs.component);
+      this._scrollParent = findDOMNode(this.refs.component);
 
       this._checkControls();
 
@@ -84,11 +85,11 @@ export default class Article extends Component {
 
   _checkPreviousNextControls (currentScroll, nextProp, prevProp) {
     if (currentScroll > 0) {
-      const nextStepNode = ReactDOM.findDOMNode(
+      const nextStepNode = findDOMNode(
         this.refs[this.state.activeIndex + 1]
       );
 
-      const previousStepNode = ReactDOM.findDOMNode(
+      const previousStepNode = findDOMNode(
         this.refs[this.state.activeIndex - 1]
       );
 
@@ -130,7 +131,7 @@ export default class Article extends Component {
     const childCount = React.Children.count(children);
     const limit = ('row' === direction) ? window.innerWidth : window.innerHeight;
     for (let index = 0; index < childCount; index += 1) {
-      const childElement = ReactDOM.findDOMNode(this.refs[index]);
+      const childElement = findDOMNode(this.refs[index]);
       const rect = childElement.getBoundingClientRect();
       // ignore small drifts of 10 pixels on either end
       if ('row' === direction) {
@@ -205,7 +206,7 @@ export default class Article extends Component {
         if (this._scrollingVertically) {
           // prevent Article horizontal scrolling while scrolling vertically
           const { activeIndex } = this.state;
-          const childElement = ReactDOM.findDOMNode(this.refs[activeIndex]);
+          const childElement = findDOMNode(this.refs[activeIndex]);
           const rect = childElement.getBoundingClientRect();
           this._scrollParent.scrollLeft += rect.left;
         } else {
@@ -321,7 +322,7 @@ export default class Article extends Component {
 
   _onSelect (activeIndex) {
     if (activeIndex !== this.state.activeIndex) {
-      const childElement = ReactDOM.findDOMNode(this.refs[activeIndex]);
+      const childElement = findDOMNode(this.refs[activeIndex]);
       if (childElement) {
         // scroll child to top
         childElement.scrollTop = 0;
@@ -348,6 +349,7 @@ export default class Article extends Component {
         }, () => {
           if (this.props.direction === 'row') {
             this.refs[`anchor_step_${activeIndex}`].focus();
+            this._updateHiddenElements();
           }
         });
       }
@@ -356,7 +358,7 @@ export default class Article extends Component {
 
   _onFocusChange (e) {
     React.Children.forEach(this.props.children, (element, index) => {
-      let parent = ReactDOM.findDOMNode(this.refs[index]);
+      let parent = findDOMNode(this.refs[index]);
       if (parent && parent.contains(e.target)) {
         this._onSelect(index);
         return false;
@@ -368,36 +370,31 @@ export default class Article extends Component {
     this.setState({ narrow: small });
   }
 
-  _processTab (event) {
-    const chapter = ReactDOM.findDOMNode(
-      this.refs[`chapter_${this.state.activeIndex}`]
+  _toggleDisableChapter (chapter, disabled) {
+    const elements = DOMUtils.filterByFocusable(
+      chapter.getElementsByTagName('*')
     );
-    var items = chapter.getElementsByTagName('*');
-    items = DOMUtils.filterByFocusable(items);
 
-    if (items && items.length > 0) {
-      if (event.shiftKey) {
-        if (document.activeElement === ReactDOM.findDOMNode(this.refs.previous)
-          || (document.activeElement === ReactDOM.findDOMNode(this.refs.next)
-          && this.state.activeIndex === 0)) {
-          items[items.length - 1].focus();
-          event.preventDefault();
-        } else if (document.activeElement === this.refs[`anchor_step_${this.state.activeIndex}`] ||
-          event.target === items[0]) {
-          if (this.refs.next) {
-            ReactDOM.findDOMNode(this.refs.next).focus();
-          } else if (this.refs.previous) {
-            ReactDOM.findDOMNode(this.refs.previous).focus();
-          }
-          event.preventDefault();
+    if (elements) {
+      elements.forEach((element) => {
+        if (disabled) {
+          element.setAttribute('disabled', 'disabled');
+        } else {
+          element.removeAttribute('disabled');
         }
-      } else if (event.target === items[items.length - 1]) {
-        if (this.refs.previous) {
-          ReactDOM.findDOMNode(this.refs.previous).focus();
-        } else if (this.refs.next) {
-          ReactDOM.findDOMNode(this.refs.next).focus();
-        }
-        event.preventDefault();
+
+        element.setAttribute('tabindex', disabled ? '-1' : '0');
+      });
+    }
+  }
+
+  _updateHiddenElements () {
+    for (let chapterIndex = 0; chapterIndex <= this.props.children.length - 1; chapterIndex++) {
+      const chapter = findDOMNode(this.refs[chapterIndex]).parentNode;
+      if(chapter.getAttribute('aria-hidden')) {
+        this._toggleDisableChapter(chapter, true);
+      } else {
+        this._toggleDisableChapter(chapter, false);
       }
     }
   }
@@ -489,7 +486,7 @@ export default class Article extends Component {
             elementNode = (
               <div ref={`chapter_${index}`} aria-hidden={ariaHidden}>
                 <a tabIndex="-1" aria-hidden='true'
-                  ref={`anchor_step_${index}`} onFocus={element.props.onFocus} />
+                  ref={`anchor_step_${index}`} />
                 {elementClone}
               </div>
             );
