@@ -320,6 +320,10 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
 .form-field--focus {
   z-index: 2;
   border-color: $focus-border-color;
+
+  #{$dark-background-context} & {
+    border-color: $focus-border-color;
+  }
 }
 
 .form-field--size-large {
