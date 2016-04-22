@@ -10,7 +10,6 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
   @include inuit-font-size($value-font-size);
 
   .control-icon:first-child {
@@ -56,6 +55,10 @@
     margin-top: quarter($inuit-base-spacing-unit);
     @include inuit-font-size($label-font-size);
   }
+}
+
+.value--align-center {
+  justify-content: center;
 }
 
 @include media-query(palm) {
