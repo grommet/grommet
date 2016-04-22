@@ -10,6 +10,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
   @include inuit-font-size($value-font-size);
 
   .control-icon:first-child {
