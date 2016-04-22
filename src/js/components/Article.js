@@ -479,7 +479,12 @@ export default class Article extends Component {
           const elementClone = React.cloneElement(element, {
             ref: index
           });
-          let elementNode = elementClone;
+          let elementNode = (
+            <div>
+              {elementClone}
+              {controls}
+            </div>
+          );
 
           let ariaHidden;
           if (this.state.activeIndex !== index) {
@@ -510,7 +515,6 @@ export default class Article extends Component {
         onTouchMove={this._onTouchMove}
         primary={this.props.primary}>
         {children}
-        {controls}
       </Box>
     );
   }
