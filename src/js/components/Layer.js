@@ -48,10 +48,6 @@ class LayerContents extends Component {
     KeyboardAccelerators.startListeningToKeyboard(
       this, this._keyboardHandlers
     );
-
-    if (this.props.a11yCloserTitle) {
-      console.log('a11yCloserTitle prop has been deprecated. Please use a11yTitle instead.');
-    }
   }
 
   componentDidUpdate () {
@@ -108,12 +104,10 @@ class LayerContents extends Component {
       closer = this.props.closer;
 
     } else if (this.props.onClose && this.props.closer) {
-      //TODO: remove a11yCloserTitle after 0.6 release
       let closeLabel = Intl.getMessage(this.context.intl, 'Close');
       let layerLabel = Intl.getMessage(this.context.intl, 'Layer');
-      let a11yTitle = this.props.a11yCloserTitle || (
-        `${closeLabel} ${this.props.a11yTitle || ''} ${layerLabel}`
-      );
+      let a11yTitle =
+        `${closeLabel} ${this.props.a11yTitle || ''} ${layerLabel}`;
 
       closer = (
         <div className={CLASS_ROOT + "__closer"}>
@@ -134,8 +128,6 @@ class LayerContents extends Component {
 }
 
 LayerContents.propTypes = {
-  //deprecated
-  a11yCloserTitle: PropTypes.string,
   a11yTitle: PropTypes.string,
   closer: PropTypes.oneOfType([
     PropTypes.node,

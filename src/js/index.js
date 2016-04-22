@@ -56,31 +56,10 @@ var Grommet = {
   Object: require('./components/Object'),
   TBD: require('./components/TBD'),
   Icons: {
-    Calendar: require('./components/icons/Calendar'),
-    Clear: require('./components/icons/Clear'),
-    DragHandle: require('./components/icons/DragHandle'),
-    Edit: require('./components/icons/Edit'),
-    Facebook: require('./components/icons/Facebook'),
-    Filter: require('./components/icons/Filter'),
     Grommet: require('./components/icons/Grommet'),
-    Help: require('./components/icons/Help'),
-    Left: require('./components/icons/Left'),
-    LinkedIn: require('./components/icons/LinkedIn'),
-    Mail: require('./components/icons/Mail'),
-    More: require('./components/icons/More'),
-    Person: require('./components/icons/Person'),
-    Right: require('./components/icons/Right'),
-    Search: require('./components/icons/Search'),
-    SearchPlus: require('./components/icons/SearchPlus'),
     Spinning: require('./components/icons/Spinning'),
     Status: require('./components/icons/Status'),
-    Twitter: require('./components/icons/Twitter'),
-    World: require('./components/icons/World'),
     Base: require('./index-icons')
-  },
-  // Mixins
-  Mixins: {
-    KeyboardAccelerators: require('./mixins/KeyboardAccelerators')
   },
   // Utils
   Cookies: require('./utils/Cookies'),

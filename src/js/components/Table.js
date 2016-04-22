@@ -21,13 +21,8 @@ export default class Table extends Component {
     this._onResize = this._onResize.bind(this);
     this._layout = this._layout.bind(this);
 
-    if (props.selection) {
-      console.warn('The "selection" property of Table has been deprecated.' +
-      ' Instead, use the "selected" property. The behavior is the same.' +
-      ' The property name was changed to align with List and Tiles.');
-    }
     this.state = {
-      selected: Selection.normalizeIndexes(props.selected || props.selection),
+      selected: Selection.normalizeIndexes(props.selected),
       rebuildMirror: props.scrollable,
       small: false
     };
@@ -53,12 +48,9 @@ export default class Table extends Component {
       InfiniteScroll.stopListeningForScroll(this._scroll);
       this._scroll = undefined;
     }
-    if (nextProps.hasOwnProperty('selected') ||
-      nextProps.hasOwnProperty('selection')) {
+    if (nextProps.hasOwnProperty('selected')) {
       this.setState({
-        selected: Selection.normalizeIndexes(
-          nextProps.selected || nextProps.selection
-        )
+        selected: Selection.normalizeIndexes(nextProps.selected)
       });
     }
     this.setState({rebuildMirror: nextProps.scrollable});

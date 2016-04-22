@@ -394,7 +394,6 @@ Search.propTypes = {
   iconAlign: React.PropTypes.oneOf(['start', 'end']),
   id: React.PropTypes.string,
   inline: PropTypes.bool,
-  large: PropTypes.bool,
   onChange: PropTypes.func,
   onDOMChange: PropTypes.func,
   onSelect: PropTypes.func,

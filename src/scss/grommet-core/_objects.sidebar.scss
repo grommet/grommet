@@ -26,10 +26,6 @@
     }
   }
 
-  &--primary {
-    background-color: $secondary-background-color;
-  }
-
   &--small {
     @include media-query(lap-and-up) {
       width: $sidebar-small-width;

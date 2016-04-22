@@ -984,7 +984,6 @@ Chart.propTypes = {
   a11yDescId: PropTypes.string,
   a11yDesc: PropTypes.string,
   important: PropTypes.number,
-  large: PropTypes.bool,
   legend: PropTypes.shape({
     position: PropTypes.oneOf(['overlay', 'after', 'inline']),
     total: PropTypes.bool
@@ -1009,7 +1008,6 @@ Chart.propTypes = {
     })
   ).isRequired,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
-  small: PropTypes.bool,
   smooth: PropTypes.bool,
   sparkline: PropTypes.bool,
   threshold: PropTypes.number,
