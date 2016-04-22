@@ -27,6 +27,11 @@
   &.paragraph--xlarge {
     font-size: $paragraph-xlarge-font-size;
     line-height: $paragraph-xlarge-line-height;
+
+    a {
+      color: $brand-color;
+      font-weight: 600;
+    }
   }
 
   &.paragraph--width-large {
