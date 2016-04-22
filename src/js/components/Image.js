@@ -9,7 +9,7 @@ const CLASS_ROOT = 'image';
 
 export default class Image extends Component {
   render () {
-    let { alt, caption, className, full, id, size, src } = this.props;
+    let { alt, caption, className, full, id, size, src, title } = this.props;
     let classes = classnames(
       CLASS_ROOT,
       {
@@ -22,7 +22,7 @@ export default class Image extends Component {
 
     const captionText = (typeof caption === 'string') ? caption : alt;
     const imgNode = (
-      <img id={id} src={src} alt={alt} className={classes} />
+      <img id={id} src={src} alt={alt} title={title} className={classes} />
     );
 
     const labelRoot = `${CLASS_ROOT}__caption`;
@@ -54,7 +54,8 @@ Image.propTypes = {
   full: PropTypes.oneOf([true, 'horizontal', 'vertical', false]),
   id: PropTypes.string,
   size: PropTypes.oneOf(['small', 'medium', 'large', 'thumb']),
-  src: PropTypes.string
+  src: PropTypes.string,
+  title: PropTypes.string
 };
 
 Image.defaultProps = {

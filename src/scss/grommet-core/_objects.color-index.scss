@@ -1,5 +1,13 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
+@function tint($color, $percent) {
+  @return mix(#ffffff, $color, $percent);
+}
+
+@function generate-tint($color) {
+  @return tint($color, 5%);
+}
+
 #{$dark-background-context} {
   color: $active-colored-text-color;
 }
@@ -9,10 +17,14 @@
 }
 
 @for $i from 1 through length($brand-neutral-colors) {
-
   .background-color-index-neutral-#{$i},
   .background-color-index-neutral-#{$i + length($brand-neutral-colors)} {
     background-color: nth($brand-neutral-colors, $i);
+  }
+
+  .background-color-index-neutral-#{$i}-t,
+  .background-color-index-neutral-#{$i + length($brand-neutral-colors)}-t {
+    background-color: generate-tint(nth($brand-neutral-colors, $i));
   }
 
   .background-color-index-neutral-#{$i}-a,
@@ -25,9 +37,19 @@
     border-color: nth($brand-neutral-colors, $i);
   }
 
+  .border-color-index-neutral-#{$i}-t,
+  .border-color-index-neutral-#{$i + length($brand-neutral-colors)}-t {
+    border-color: generate-tint(nth($brand-neutral-colors, $i));
+  }
+
   .color-index-neutral-#{$i},
   .color-index-neutral-#{$i + length($brand-neutral-colors)} {
     color: nth($brand-neutral-colors, $i);
+  }
+
+  .color-index-neutral-#{$i}-t,
+  .color-index-neutral-#{$i + length($brand-neutral-colors)}-t {
+    color: generate-tint(nth($brand-neutral-colors, $i));
   }
 }
 
@@ -35,6 +57,11 @@
   .background-color-index-accent-#{$i},
   .background-color-index-accent-#{$i + length($brand-accent-colors)} {
     background-color: nth($brand-accent-colors, $i);
+  }
+
+  .background-color-index-accent-#{$i}-t,
+  .background-color-index-accent-#{$i + length($brand-accent-colors)}-t {
+    background-color: generate-tint(nth($brand-accent-colors, $i));
   }
 
   .background-color-index-accent-#{$i}-a,
@@ -47,9 +74,19 @@
     border-color: nth($brand-accent-colors, $i);
   }
 
+  .border-color-index-accent-#{$i}-t,
+  .border-color-index-accent-#{$i + length($brand-accent-colors)}-t {
+    border-color: generate-tint(nth($brand-accent-colors, $i));
+  }
+
   .color-index-accent-#{$i},
   .color-index-accent-#{$i + length($brand-accent-colors)} {
     color: nth($brand-accent-colors, $i);
+  }
+
+  .color-index-accent-#{$i}-t,
+  .color-index-accent-#{$i + length($brand-accent-colors)}-t {
+    color: generate-tint(nth($brand-accent-colors, $i));
   }
 }
 
