@@ -64,21 +64,28 @@
     margin-left: 0px;
   }
 
+  p,
   dd {
-    margin-bottom: halve($inuit-base-spacing-unit);
     font-size: $paragraph-font-size;
     line-height: $paragraph-line-height;
     color: $paragraph-text-color;
     font-weight: 100;
   }
 
+  #{$dark-background-context} {
+    p,
+    dd {
+      color: $colored-text-color;
+    }
+  }
+
+  dd {
+    margin-bottom: halve($inuit-base-spacing-unit);
+  }
+
   p {
     margin-top: $inuit-base-spacing-unit;
     margin-bottom: $inuit-base-spacing-unit;
-    font-size: $paragraph-font-size;
-    line-height: $paragraph-line-height;
-    color: $paragraph-text-color;
-    font-weight: 100;
   }
 
   blockquote {
