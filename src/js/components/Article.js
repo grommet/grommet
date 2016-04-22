@@ -167,7 +167,7 @@ export default class Article extends Component {
       if (this._scrollingHorizontally) {
         // no-op
       } else if (! this._scrollingVertically) {
-        if (Math.abs(event.deltaY) > Math.abs(event.deltaX)) {
+        if (Math.abs(event.deltaY * 2) > Math.abs(event.deltaX)) {
           // user is scrolling vertically
           this._shortTimer('_scrollingVertically', 1000);
         }
