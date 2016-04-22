@@ -478,26 +478,13 @@ export default class Article extends Component {
     if (this.props.scrollStep || this.props.controls) {
       children = Children.map(this.props.children, (element, index) => {
         if (element) {
-          const elementClone = React.cloneElement(element, {
-            ref: index
+          return React.cloneElement(element, {
+            ref: index,
+            'aria-hidden': this.state.activeIndex !== index
           });
-          let elementNode = elementClone;
-
-          let ariaHidden;
-          if (this.state.activeIndex !== index) {
-            ariaHidden = 'true';
-          }
-
-          if (this.props.controls) {
-            elementNode = (
-              <div ref={`chapter_${index}`} aria-hidden={ariaHidden}>
-                {elementClone}
-              </div>
-            );
-          }
-
-          return elementNode;
         }
+
+        return undefined;
       });
     }
 

@@ -135,28 +135,30 @@ export default class Box extends Component {
       }
     });
 
+    const Component = this.props.tag;
+
     if (this.props.appCentered) {
       return (
         <div {...restProps} ref="boxContainer" className={containerClasses.join(' ')}
           style={style} role={this.props.role} {...a11yProps}
           {...eventListeners}>
           {skipLinkAnchor}
-          <this.props.tag id={this.props.id} className={classes.join(' ')}>
+          <Component id={this.props.id} className={classes.join(' ')}>
             {texture}
             {this.props.children}
-          </this.props.tag>
+          </Component>
         </div>
       );
     } else {
       return (
-        <this.props.tag {...restProps} ref="boxContainer" id={this.props.id}
+        <Component {...restProps} ref="boxContainer" id={this.props.id}
           className={classes.join(' ')} style={style}
           role={this.props.role} tabIndex={this.props.tabIndex} {...a11yProps}
           {...eventListeners}>
           {skipLinkAnchor}
           {texture}
           {this.props.children}
-        </this.props.tag>
+        </Component>
       );
     }
   }
