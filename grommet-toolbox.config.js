@@ -50,10 +50,6 @@ export default {
     {
       filename: 'package.json',
       asset: JSON.stringify(getPackageJSON(), null, 2)
-    },
-    {
-      asset: 'src/utils/gulp/.eslintrc',
-      dist: 'dist/utils/gulp/'
     }
   ],
   scssAssets: ['src/scss/**/*.scss'],
