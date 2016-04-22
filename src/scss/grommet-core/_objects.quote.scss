@@ -4,19 +4,15 @@
   max-width: calc(100vw - #{double($inuit-base-spacing-unit)});
 
   &--small {
-    width: $inuit-base-spacing-unit * 20;
+    width: $size-xsmall;
   }
 
   &--medium {
-    width: $inuit-base-spacing-unit * 26;
+    width: $size-small;
   }
 
   &--large {
-    width: $inuit-base-spacing-unit * 32;
-  }
-
-  &--full {
-    width: 100%;
+    width: $size-medium;
   }
 
   &--emphasize-credit &__credit {

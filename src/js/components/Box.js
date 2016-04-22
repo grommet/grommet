@@ -58,6 +58,7 @@ export default class Box extends Component {
     this._addPropertyClass(classes, CLASS_ROOT, 'responsive');
     this._addPropertyClass(classes, CLASS_ROOT, 'pad');
     this._addPropertyClass(classes, CLASS_ROOT, 'separator');
+    this._addPropertyClass(classes, CLASS_ROOT, 'size');
     this._addPropertyClass(classes, CLASS_ROOT, 'textAlign', 'text-align');
     this._addPropertyClass(classes, CLASS_ROOT, 'wrap');
     if (this.props.hasOwnProperty('flex')) {
@@ -65,6 +66,11 @@ export default class Box extends Component {
         classes.push('flex');
       } else {
         classes.push('no-flex');
+      }
+    }
+    if (this.props.hasOwnProperty('size')) {
+      if (this.props.size) {
+        classes.push(`${CLASS_ROOT}--size`);
       }
     }
 
@@ -181,6 +187,7 @@ Box.propTypes = {
   responsive: PropTypes.bool,
   role: PropTypes.string,
   separator: PropTypes.oneOf(['top', 'bottom', 'left', 'right', 'horizontal', 'vertical', 'all', 'none']),
+  size: PropTypes.oneOf(['auto', 'xsmall', 'small', 'medium', 'large', 'full']),
   tag: PropTypes.string,
   textAlign: PropTypes.oneOf(['left', 'center', 'right']),
   texture: PropTypes.oneOfType([

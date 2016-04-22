@@ -349,3 +349,27 @@
 .box--clickable {
   cursor: pointer;
 }
+
+.box--size {
+  max-width: calc(100% - #{double($inuit-base-spacing-unit)});
+
+  .paragraph {
+    width: 100%;
+  }
+
+  &-xsmall {
+    width: $size-xsmall;
+  }
+
+  &-small {
+    width: $size-small;
+  }
+
+  &-medium {
+    width: $size-medium;
+  }
+
+  &-large {
+    width: $size-large;
+  }
+}
