@@ -335,7 +335,7 @@ export default class Article extends Component {
           atBottom: false
         }, () => {
           if (this.props.direction === 'row') {
-            this.refs[`anchor_step_${activeIndex}`].focus();
+            this.refs.anchorStep.focus();
             this._updateHiddenElements();
           }
         });
@@ -393,12 +393,14 @@ export default class Article extends Component {
   }
 
   _updateHiddenElements () {
-    for (let chapterIndex = 0; chapterIndex <= this.props.children.length - 1; chapterIndex++) {
-      const chapter = findDOMNode(this.refs[chapterIndex]).parentNode;
-      if(chapter.getAttribute('aria-hidden')) {
-        this._toggleDisableChapter(chapter, true);
+    const component = findDOMNode(this.refs.component);
+    const children = component.children;
+    for (let i = 0; i < children.length; i++) {
+      const child = children[i];
+      if (child.getAttribute('aria-hidden')) {
+        this._toggleDisableChapter(child, true);
       } else {
-        this._toggleDisableChapter(chapter, false);
+        this._toggleDisableChapter(child, false);
       }
     }
   }
@@ -489,8 +491,6 @@ export default class Article extends Component {
           if (this.props.controls) {
             elementNode = (
               <div ref={`chapter_${index}`} aria-hidden={ariaHidden}>
-                <a tabIndex="-1" aria-hidden='true'
-                  ref={`anchor_step_${index}`} />
                 {elementClone}
               </div>
             );
@@ -509,6 +509,8 @@ export default class Article extends Component {
         onScroll={this._onScroll} onTouchStart={this._onTouchStart}
         onTouchMove={this._onTouchMove}
         primary={this.props.primary}>
+        <a tabIndex="-1" aria-hidden='true'
+          ref='anchorStep' />
         {children}
         {controls}
       </Box>
