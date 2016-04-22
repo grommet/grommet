@@ -37,6 +37,11 @@ export default class Video extends Component {
   }
 
   componentWillReceiveProps (nextProps) {
+    // Dynamically modifying a source element and its attribute when 
+    // the element is already inserted in a video or audio element will 
+    // have no effect.
+    // From HTML Specs: https://html.spec.whatwg.org/multipage/embedded-content.html#the-source-element
+    // Using forceUpdate to force redraw of video when receiving new <source>
     this.forceUpdate();
   }
 
