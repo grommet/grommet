@@ -65,6 +65,11 @@
     &:hover {
       background-color: $brand-color;
     }
+
+    @include media-query(palm) {
+      width: double($inuit-base-spacing-unit);
+      height: double($inuit-base-spacing-unit);
+    }
   }
 
   &__timeline {

@@ -4,6 +4,7 @@ import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 
 import Intl from '../utils/Intl';
+import Responsive from '../utils/Responsive';
 import Button from './Button';
 import Box from './Box';
 import ExpandIcon from './icons/base/Expand';
@@ -18,6 +19,7 @@ export default class Video extends Component {
   constructor () {
     super();
 
+    this._onResponsive = this._onResponsive.bind(this);
     this._onPlaying = this._onPlaying.bind(this);
     this._onPause = this._onPause.bind(this);
     this._onEnded = this._onEnded.bind(this);
@@ -26,10 +28,11 @@ export default class Video extends Component {
     this._onClickChapter = this._onClickChapter.bind(this);
     this._onFullScreen = this._onFullScreen.bind(this);
 
-    this.state = { playing: false, progress: 0 };
+    this.state = { playing: false, progress: 0, responsive: false };
   }
 
   componentDidMount () {
+    this._responsive = Responsive.start(this._onResponsive);
     let video = this.refs.video;
     video.addEventListener('playing', this._onPlaying);
     video.addEventListener('pause', this._onPause);
@@ -50,6 +53,18 @@ export default class Video extends Component {
     video.removeEventListener('playing', this._onPlaying);
     video.removeEventListener('pause', this._onPause);
     video.removeEventListener('ended', this._onEnded);
+
+    if (this._responsive) {
+      this._responsive.stop();
+    }
+  }
+
+  _onResponsive (small) {
+    if (small) {
+      this.setState({responsive: true});
+    } else {
+      this.setState({responsive: false});
+    }
   }
 
   _onPlaying () {
@@ -133,7 +148,8 @@ export default class Video extends Component {
       classes.push(this.props.className);
     }
 
-    let controlIconSize = ('small' === this.props.size ? null : 'large');
+    let controlIconSize = (this.state.responsive ? 'small' : 
+      (('small' === this.props.size) ? null : 'large'));
     let controlIcon = (this.state.playing ?
       <PauseIcon size={controlIconSize} /> : (this.state.ended ?
         <RefreshIcon size={controlIconSize} /> :
