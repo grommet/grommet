@@ -167,7 +167,7 @@ export default class Article extends Component {
       if (this._scrollingHorizontally) {
         // no-op
       } else if (! this._scrollingVertically) {
-        if (Math.abs(event.deltaY) > Math.abs(event.deltaX)) {
+        if (Math.abs(event.deltaY * 2) > Math.abs(event.deltaX)) {
           // user is scrolling vertically
           this._shortTimer('_scrollingVertically', 1000);
         }
@@ -324,27 +324,11 @@ export default class Article extends Component {
   }
 
   _onSelect (activeIndex) {
-    if (activeIndex !== this.state.activeIndex) {
-      const childElement = findDOMNode(this.refs[activeIndex]);
-      if (childElement) {
+    const childElement = findDOMNode(this.refs[activeIndex]);
+    if (childElement) {
+      if (activeIndex !== this.state.activeIndex) {
         // scroll child to top
         childElement.scrollTop = 0;
-        const rect = childElement.getBoundingClientRect();
-        if ('row' === this.props.direction) {
-          if (rect.left !== 0) {
-            this._scrollingHorizontally = true;
-            Scroll.scrollBy(this._scrollParent, 'scrollLeft', rect.left, () => {
-              this._scrollingHorizontally = false;
-            });
-          }
-        } else {
-          if (rect.top !== 0) {
-            this._scrollingVertically = true;
-            Scroll.scrollBy(this._scrollParent, 'scrollTop', rect.top, () => {
-              this._scrollingVertically = false;
-            });
-          }
-        }
 
         this.setState({
           activeIndex: activeIndex,
@@ -355,6 +339,23 @@ export default class Article extends Component {
             this._updateHiddenElements();
           }
         });
+      }
+
+      const rect = childElement.getBoundingClientRect();
+      if ('row' === this.props.direction) {
+        if (rect.left !== 0) {
+          this._scrollingHorizontally = true;
+          Scroll.scrollBy(this._scrollParent, 'scrollLeft', rect.left, () => {
+            this._scrollingHorizontally = false;
+          });
+        }
+      } else {
+        if (rect.top !== 0) {
+          this._scrollingVertically = true;
+          Scroll.scrollBy(this._scrollParent, 'scrollTop', rect.top, () => {
+            this._scrollingVertically = false;
+          });
+        }
       }
     }
   }
