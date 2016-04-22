@@ -36,6 +36,15 @@ export default class Video extends Component {
     video.addEventListener('ended', this._onEnded);
   }
 
+  componentWillReceiveProps (nextProps) {
+    // Dynamically modifying a source element and its attribute when 
+    // the element is already inserted in a video or audio element will 
+    // have no effect.
+    // From HTML Specs: https://html.spec.whatwg.org/multipage/embedded-content.html#the-source-element
+    // Using forceUpdate to force redraw of video when receiving new <source>
+    this.forceUpdate();
+  }
+
   componentWillUnmount () {
     let video = this.refs.video;
     video.removeEventListener('playing', this._onPlaying);
@@ -129,9 +138,9 @@ export default class Video extends Component {
       <PauseIcon size={controlIconSize} /> : (this.state.ended ?
         <RefreshIcon size={controlIconSize} /> :
           <PlayIcon size={controlIconSize} />));
-    let a11yControlButtonMessage = (this.state.playing ? 
-      'Pause Video' : (this.state.ended ? 
-        'Restart Video' : 
+    let a11yControlButtonMessage = (this.state.playing ?
+      'Pause Video' : (this.state.ended ?
+        'Restart Video' :
           'Play Video'));
     let a11yControlButtonTitle = Intl.getMessage(this.context.intl, a11yControlButtonMessage);
 
@@ -143,7 +152,7 @@ export default class Video extends Component {
       let a11yExpandButtonTitle = Intl.getMessage(this.context.intl, 'Toggle Fullscreen');
       // fallback to only displaying full screen icon in header
       // if allowing fullscreen
-      
+
       videoHeader = (
         <Box align="end" full="horizontal">
           <Button plain={true} onClick={this._onFullScreen}
@@ -224,7 +233,7 @@ export default class Video extends Component {
           {videoHeader}
           <Box pad="none" align="center" justify="center">
             <Button className={`${CLASS_ROOT}__control`} plain={true}
-              primary={true} onClick={onClickControl} 
+              primary={true} onClick={onClickControl}
               icon={controlIcon} a11yTitle={a11yControlButtonTitle} />
             {title}
           </Box>
