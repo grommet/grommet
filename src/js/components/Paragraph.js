@@ -32,6 +32,6 @@ Paragraph.propTypes = {
   align: PropTypes.oneOf(['start', 'center', 'end']),
   id: PropTypes.string,
   margin: PropTypes.oneOf(['none', 'small', 'medium', 'large']),
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
   width: PropTypes.oneOf(['small', 'medium', 'large'])
 };

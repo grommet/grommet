@@ -28,6 +28,9 @@ $border-color: rgba(0, 0, 0, 0.15);
 $strong-border-color: #000;
 $colored-border-color: rgba(255, 255, 255, 0.5) !default;
 
+$heading-text-color: $text-color !default;
+$paragraph-text-color: $secondary-text-color !default;
+
 // Control Icons
 
 $icon-color: #666; // meets AA accessibility

@@ -5,7 +5,6 @@ h4.heading,
 h5.heading,
 h6.heading {
   margin-bottom: halve($inuit-base-spacing-unit);
-  line-height: 1;
 
   &--large {
     font-size: 125%;
