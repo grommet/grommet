@@ -16,11 +16,13 @@ export default class Tile extends Component {
       console.log('Selected option has been deprecated, please use selected option at the Tiles level.');
     }
 
+    const statusClass = status ? status.toLowerCase() : undefined;
+
     const classes = classnames(
       CLASS_ROOT,
       className,
       {
-        [`${CLASS_ROOT}--status-${this.props.status.toLowerCase()}`]: status,
+        [`${CLASS_ROOT}--status-${statusClass}`]: status,
         [`${CLASS_ROOT}--wide`]: wide,
         [`${CLASS_ROOT}--selectable`]: onClick,
         [`${CLASS_ROOT}--selected`]: selected
@@ -30,7 +32,7 @@ export default class Tile extends Component {
     const boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
 
     return (
-      <Box {...boxProps} className={classes.join(' ')}>
+      <Box {...boxProps} className={classes}>
         {children}
       </Box>
     );
