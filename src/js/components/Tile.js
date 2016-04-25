@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
+import classnames from 'classnames';
 import Props from '../utils/Props';
 import Box from './Box';
 
@@ -9,27 +10,28 @@ const CLASS_ROOT = "tile";
 export default class Tile extends Component {
 
   render () {
-    const classes = [CLASS_ROOT];
+    const { children, className, onClick, wide, status, selected } = this.props;
+
+    if (selected) {
+      console.log('Selected option has been deprecated, please use selected option at the Tiles level.');
+    }
+
+    const classes = classnames(
+      CLASS_ROOT,
+      className,
+      {
+        [`${CLASS_ROOT}--status-${this.props.status.toLowerCase()}`]: status,
+        [`${CLASS_ROOT}--wide`]: wide,
+        [`${CLASS_ROOT}--selectable`]: onClick,
+        [`${CLASS_ROOT}--selected`]: selected
+      }
+    );
+
     const boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
-    if (this.props.status) {
-      classes.push(CLASS_ROOT + "--status-" + this.props.status.toLowerCase());
-    }
-    if (this.props.wide) {
-      classes.push(CLASS_ROOT + "--wide");
-    }
-    if (this.props.onClick) {
-      classes.push(CLASS_ROOT + "--selectable");
-    }
-    if (this.props.selected) {
-      classes.push(CLASS_ROOT + "--selected");
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
 
     return (
       <Box {...boxProps} className={classes.join(' ')}>
-        {this.props.children}
+        {children}
       </Box>
     );
   }
