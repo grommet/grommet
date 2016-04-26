@@ -1,0 +1,81 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+exports.default = {
+  findScrollParents: function findScrollParents(element, horizontal) {
+    var result = [];
+    var parent = element.parentNode;
+    while (parent && parent.getBoundingClientRect) {
+      var rect = parent.getBoundingClientRect();
+      // 10px is to account for borders and scrollbars in a lazy way
+      if (horizontal) {
+        if (rect.width && parent.scrollWidth > rect.width + 10) {
+          result.push(parent);
+        }
+      } else {
+        if (rect.height && parent.scrollHeight > rect.height + 10) {
+          result.push(parent);
+        }
+      }
+      parent = parent.parentNode;
+    }
+    if (result.length === 0) {
+      result.push(document);
+    }
+    return result;
+  },
+  isDescendant: function isDescendant(parent, child) {
+    var node = child.parentNode;
+    while (node != null) {
+      if (node == parent) {
+        return true;
+      }
+      node = node.parentNode;
+    }
+    return false;
+  },
+  findAncestor: function findAncestor(element, className) {
+    var node = element.parentNode;
+    while (node != null) {
+      if (node.classList && node.classList.contains(className)) {
+        break;
+      }
+      node = node.parentNode;
+    }
+    return node;
+  },
+  filterByFocusable: function filterByFocusable(elements) {
+    return Array.prototype.filter.call(elements || [], function (element) {
+      var currentTag = element.tagName.toLowerCase();
+      var validTags = /(svg|a|area|input|select|textarea|button|iframe|div)$/;
+      var isValidTag = currentTag.match(validTags) && element.focus;
+
+      if (currentTag === 'a') {
+        return isValidTag && element.childNodes.length > 0 && element.getAttribute('href');
+      } else if (currentTag === 'svg' || currentTag === 'div') {
+        return isValidTag && element.hasAttribute('tabindex');
+      }
+
+      return isValidTag;
+    });
+  },
+  getBestFirstFocusable: function getBestFirstFocusable(elements) {
+    var bestFirstFocusable;
+
+    Array.prototype.some.call(elements || [], function (element) {
+      var currentTag = element.tagName.toLowerCase();
+      var isValidTag = currentTag.match(/(input|select|textarea)$/);
+      return isValidTag ? (bestFirstFocusable = element, true) : false;
+    });
+
+    if (!bestFirstFocusable) {
+      bestFirstFocusable = this.filterByFocusable(elements)[0];
+    }
+
+    return bestFirstFocusable;
+  }
+};
+module.exports = exports['default'];
