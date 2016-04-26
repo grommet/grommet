@@ -11,6 +11,10 @@
     &__title {
       visibility: hidden;
     }
+
+    &__timeline {
+      visibility: hidden;
+    }
   }
 
   @include media-query(lap-and-up) {
