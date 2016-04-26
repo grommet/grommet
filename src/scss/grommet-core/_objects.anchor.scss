@@ -67,7 +67,7 @@
 
   &:hover:not(.anchor--disabled) {
     .control-icon {
-      @include icon-hover-bold($control-brand-color);
+      @include icon-hover-grow($control-brand-color);
     }
   }
 }

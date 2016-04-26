@@ -5,14 +5,10 @@
   stroke: $icon-color;
 }
 
-@mixin icon-hover-bold($icon-hover-color) {
+@mixin icon-hover-grow($icon-hover-color) {
   fill: $icon-hover-color;
   stroke: $icon-hover-color;
-
-  path,
-  polyline {
-    stroke-width: 3px;
-  }
+  transform: scale(1.1);
 }
 
 @mixin dark-background-context-icon {
