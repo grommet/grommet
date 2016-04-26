@@ -65,6 +65,11 @@
     &:hover {
       background-color: $brand-color;
     }
+
+    @include media-query(palm) {
+      width: double($inuit-base-spacing-unit);
+      height: double($inuit-base-spacing-unit);
+    }
   }
 
   &__timeline {
@@ -100,11 +105,13 @@
       $brand-accent-color-index: 3;
       @if ($brand-accent-color-index <= length($brand-accent-colors)) {
         $chapter-current-color: nth($brand-accent-colors, $brand-accent-color-index);
+        color: $chapter-current-color;
+        border-color: $chapter-current-color;
       } @else {
         $chapter-current-color: $brand-color;
+        color: $chapter-current-color;
+        border-color: $chapter-current-color;
       }
-      color: $chapter-current-color;
-      border-color: $chapter-current-color;
     }
   }
 

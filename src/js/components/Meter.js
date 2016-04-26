@@ -212,22 +212,25 @@ export default class Meter extends Component {
   // Generates state based on the provided props.
   _stateFromProps (props) {
     let total;
-    if (props.series && props.series.length > 1) {
+    if (props.series) {
       total = this._seriesTotal(props.series);
-    } else if (props.max && props.max.value) {
-      total = props.max.value;
+    } else if (props.hasOwnProperty('value')) {
+      total = props.value;
     } else {
-      total = 100;
+      total = 0;
     }
     let seriesMax;
-    if (props.series && 'spiral' === props.type) {
+    // only care about series max when there are multiple values
+    if (props.series && props.series.length > 1) {
       seriesMax = this._seriesMax(props.series);
     }
     // Normalize min and max
     let min = this._terminal(props.min || 0);
     // Max could be provided in props or come from the total of
     // a multi-value series.
-    let max = this._terminal(props.max || seriesMax || total);
+    let max = this._terminal(props.max ||
+      (props.stacked ? Math.max(seriesMax, total || 0, 100) :
+        (seriesMax || Math.max(total || 0, 100))));
     // Normalize simple threshold prop to an array, if needed.
     let thresholds = this._normalizeThresholds(props, min, max);
     // Normalize simple value prop to a series, if needed.
@@ -379,7 +382,10 @@ export default class Meter extends Component {
     }
 
     let minMax = this._renderMinMax(classes);
-    let activeValue = this._renderActiveValue();
+    let activeValue;
+    if (this.state.series.length > 0) {
+      activeValue = this._renderActiveValue();
+    }
     let legend;
     let a11yRole;
 
@@ -423,15 +429,12 @@ export default class Meter extends Component {
         vertical={this.props.vertical} />
     );
 
-    let graphicContainer;
-    if (this.state.total > 0) {
-      graphicContainer = (
-        <div className={`${CLASS_ROOT}__graphic-container`}>
-          {graphic}
-          {minMax}
-        </div>
-      );
-    }
+    const graphicContainer = (
+      <div className={`${CLASS_ROOT}__graphic-container`}>
+        {graphic}
+        {minMax}
+      </div>
+    );
 
     return (
       <div className={classes.join(' ')}>

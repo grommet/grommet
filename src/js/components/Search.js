@@ -180,9 +180,6 @@ export default class Search extends Component {
 
   _onChangeInput (event) {
     this.setState({activeSuggestionIndex: -1});
-    if (this.props.onChange) {
-      this.props.onChange(event.target.value);
-    }
     if (this.props.onDOMChange) {
       this._fireDOMChange();
     }
@@ -207,9 +204,6 @@ export default class Search extends Component {
     if (this.state.activeSuggestionIndex >= 0) {
       suggestion = this.props.suggestions[this.state.activeSuggestionIndex];
       this.setState({value: suggestion});
-      if (this.props.onChange) {
-        this.props.onChange(suggestion);
-      }
       if (this.props.onSelect) {
         this.props.onSelect({
           target: this.refs.input || this.refs.control,
@@ -229,9 +223,6 @@ export default class Search extends Component {
   _onClickSuggestion (suggestion) {
     this._onRemoveDrop();
 
-    if (this.props.onChange) {
-      this.props.onChange(suggestion);
-    }
     if (this.props.onSelect) {
       this.props.onSelect({
         target: this.refs.input || this.refs.control,
@@ -394,8 +385,6 @@ Search.propTypes = {
   iconAlign: React.PropTypes.oneOf(['start', 'end']),
   id: React.PropTypes.string,
   inline: PropTypes.bool,
-  large: PropTypes.bool,
-  onChange: PropTypes.func,
   onDOMChange: PropTypes.func,
   onSelect: PropTypes.func,
   placeHolder: PropTypes.string,

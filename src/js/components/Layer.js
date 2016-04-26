@@ -15,6 +15,7 @@ class LayerContents extends Component {
   constructor() {
     super();
 
+    this._onClick = this._onClick.bind(this);
     this._processTab = this._processTab.bind(this);
   }
 
@@ -39,16 +40,14 @@ class LayerContents extends Component {
     };
 
     if (this.props.onClose) {
+      const layerParent = this.refs.container.parentNode;
       this._keyboardHandlers.esc = this.props.onClose;
+      layerParent.addEventListener('click', this._onClick.bind(this));
     }
 
     KeyboardAccelerators.startListeningToKeyboard(
       this, this._keyboardHandlers
     );
-
-    if (this.props.a11yCloserTitle) {
-      console.log('a11yCloserTitle prop has been deprecated. Please use a11yTitle instead.');
-    }
   }
 
   componentDidUpdate () {
@@ -60,9 +59,23 @@ class LayerContents extends Component {
   }
 
   componentWillUnmount () {
+    const layerParent = this.refs.container.parentNode;
+
     KeyboardAccelerators.stopListeningToKeyboard(
       this, this._keyboardHandlers
     );
+
+    if (this.props.onClose) {
+      layerParent.removeEventListener('click', this._onClick.bind(this));
+    }
+  }
+
+  _onClick (event) {
+    const layerContents = this.refs.container;
+
+    if (layerContents && !layerContents.contains(event.target)) {
+      this.props.onClose();
+    }
   }
 
   _processTab (event) {
@@ -86,13 +99,15 @@ class LayerContents extends Component {
 
   render () {
     var closer = null;
-    if (this.props.onClose && this.props.closer) {
-      //TODO: remove a11yCloserTitle after 0.6 release
+
+    if (typeof this.props.closer === 'object') {
+      closer = this.props.closer;
+
+    } else if (this.props.onClose && this.props.closer) {
       let closeLabel = Intl.getMessage(this.context.intl, 'Close');
       let layerLabel = Intl.getMessage(this.context.intl, 'Layer');
-      let a11yTitle = this.props.a11yCloserTitle || (
-        `${closeLabel} ${this.props.a11yTitle || ''} ${layerLabel}`
-      );
+      let a11yTitle =
+        `${closeLabel} ${this.props.a11yTitle || ''} ${layerLabel}`;
 
       closer = (
         <div className={CLASS_ROOT + "__closer"}>
@@ -113,8 +128,6 @@ class LayerContents extends Component {
 }
 
 LayerContents.propTypes = {
-  //deprecated
-  a11yCloserTitle: PropTypes.string,
   a11yTitle: PropTypes.string,
   closer: PropTypes.oneOfType([
     PropTypes.node,

@@ -66,6 +66,8 @@ export default class Header extends Component {
     if (this.props.size) {
       classes.push(`${CLASS_ROOT}--${this.props.size}`);
       wrapperClasses.push(`${CLASS_ROOT}__wrapper--${this.props.size}`);
+      // don't transfer size to Box since it means something different
+      delete other.size;
     }
     if (this.props.splash) {
       classes.push(`${CLASS_ROOT}--splash`);

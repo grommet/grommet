@@ -46,7 +46,5 @@ Grommet.propTypes = {
   a11yTitle: React.PropTypes.string,
   a11yTitleId: PropTypes.string,
   colorIndex: PropTypes.string,
-  large: React.PropTypes.bool,
-  size: React.PropTypes.oneOf(['small', 'medium', 'large']),
-  small: React.PropTypes.bool
+  size: React.PropTypes.oneOf(['small', 'medium', 'large'])
 };

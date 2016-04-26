@@ -8,9 +8,10 @@ cache:
 before_script:
 - npm install -g gulp
 - npm install -g codeclimate-test-reporter
-- gem install scss_lint -v 0.38.0
-- gulp preprocess
+- gem install scss_lint
 - gulp generate-index-icons
+- gulp preprocess
+- gulp dist-css
 script:
 - |
   if [ "$TEST_TYPE" = build ]; then
@@ -28,6 +29,7 @@ after_success:
       echo "https://${GH_TOKEN}:@github.com" > .git/credentials
       git config --global user.name "Grommet Community Bot"
       git config --global user.email "asouza@hp.com"
+      gulp dist --skipPreprocess
       gulp release:stable
     fi
   fi

@@ -3,6 +3,7 @@
 import React, { Component, PropTypes } from 'react';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 import Intl from '../utils/Intl';
+import Props from '../utils/Props';
 import SkipLinkAnchor from './SkipLinkAnchor';
 
 const CLASS_ROOT = "box";
@@ -49,6 +50,7 @@ export default class Box extends Component {
   render () {
     let classes = [CLASS_ROOT];
     let containerClasses = [CLASS_ROOT + "__container"];
+    let restProps = Props.omit(this.props, Object.keys(Box.propTypes));
     this._addPropertyClass(classes, CLASS_ROOT, 'full');
     this._addPropertyClass(classes, CLASS_ROOT, 'direction');
     this._addPropertyClass(classes, CLASS_ROOT, 'justify');
@@ -58,8 +60,21 @@ export default class Box extends Component {
     this._addPropertyClass(classes, CLASS_ROOT, 'responsive');
     this._addPropertyClass(classes, CLASS_ROOT, 'pad');
     this._addPropertyClass(classes, CLASS_ROOT, 'separator');
+    this._addPropertyClass(classes, CLASS_ROOT, 'size');
     this._addPropertyClass(classes, CLASS_ROOT, 'textAlign', 'text-align');
     this._addPropertyClass(classes, CLASS_ROOT, 'wrap');
+    if (this.props.hasOwnProperty('flex')) {
+      if (this.props.flex) {
+        classes.push('flex');
+      } else {
+        classes.push('no-flex');
+      }
+    }
+    if (this.props.hasOwnProperty('size')) {
+      if (this.props.size) {
+        classes.push(`${CLASS_ROOT}--size`);
+      }
+    }
 
     if (this.props.appCentered) {
       this._addPropertyClass(containerClasses, CLASS_ROOT + "__container", 'full');
@@ -106,6 +121,7 @@ export default class Box extends Component {
       style.background = this.props.backgroundImage + " no-repeat center center";
       style.backgroundSize = "cover";
     }
+    style = {...style, ...restProps.style};
     let texture;
     if ('object' === typeof this.props.texture) {
       texture = <div className={CLASS_ROOT + "__texture"}>{this.props.texture}</div>;
@@ -119,28 +135,30 @@ export default class Box extends Component {
       }
     });
 
+    const Component = this.props.tag;
+
     if (this.props.appCentered) {
       return (
-        <div ref="boxContainer" className={containerClasses.join(' ')}
+        <div {...restProps} ref="boxContainer" className={containerClasses.join(' ')}
           style={style} role={this.props.role} {...a11yProps}
           {...eventListeners}>
           {skipLinkAnchor}
-          <this.props.tag id={this.props.id} className={classes.join(' ')}>
+          <Component id={this.props.id} className={classes.join(' ')}>
             {texture}
             {this.props.children}
-          </this.props.tag>
+          </Component>
         </div>
       );
     } else {
       return (
-        <this.props.tag ref="boxContainer" id={this.props.id}
+        <Component {...restProps} ref="boxContainer" id={this.props.id}
           className={classes.join(' ')} style={style}
           role={this.props.role} tabIndex={this.props.tabIndex} {...a11yProps}
           {...eventListeners}>
           {skipLinkAnchor}
           {texture}
           {this.props.children}
-        </this.props.tag>
+        </Component>
       );
     }
   }
@@ -153,10 +171,12 @@ Box.propTypes = {
   alignContent: PropTypes.oneOf(['start', 'center', 'end', 'between', 'around', 'stretch']),
   appCentered: PropTypes.bool,
   backgroundImage: PropTypes.string,
+  children: PropTypes.any,
   colorIndex: PropTypes.string,
   containerClassName: PropTypes.string,
   direction: PropTypes.oneOf(['row', 'column']),
   focusable: PropTypes.bool,
+  flex: PropTypes.bool,
   full: PropTypes.oneOf([true, 'horizontal', 'vertical', false]),
   onClick: PropTypes.func,
   justify: PropTypes.oneOf(['start', 'center', 'between', 'end']),
@@ -173,6 +193,7 @@ Box.propTypes = {
   responsive: PropTypes.bool,
   role: PropTypes.string,
   separator: PropTypes.oneOf(['top', 'bottom', 'left', 'right', 'horizontal', 'vertical', 'all', 'none']),
+  size: PropTypes.oneOf(['auto', 'xsmall', 'small', 'medium', 'large', 'full']),
   tag: PropTypes.string,
   textAlign: PropTypes.oneOf(['left', 'center', 'right']),
   texture: PropTypes.oneOfType([

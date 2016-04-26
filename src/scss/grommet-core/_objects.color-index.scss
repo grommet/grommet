@@ -1,5 +1,13 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
+@function tint($color, $percent) {
+  @return mix(#ffffff, $color, $percent);
+}
+
+@function generate-tint($color) {
+  @return tint($color, 5%);
+}
+
 #{$dark-background-context} {
   color: $active-colored-text-color;
 }
@@ -9,15 +17,39 @@
 }
 
 @for $i from 1 through length($brand-neutral-colors) {
-
   .background-color-index-neutral-#{$i},
   .background-color-index-neutral-#{$i + length($brand-neutral-colors)} {
     background-color: nth($brand-neutral-colors, $i);
   }
 
+  .background-color-index-neutral-#{$i}-t,
+  .background-color-index-neutral-#{$i + length($brand-neutral-colors)}-t {
+    background-color: generate-tint(nth($brand-neutral-colors, $i));
+  }
+
   .background-color-index-neutral-#{$i}-a,
   .background-color-index-neutral-#{$i + length($brand-neutral-colors)}-a {
     background-color: rgba(nth($brand-neutral-colors, $i), 0.8);
+  }
+
+  .border-color-index-neutral-#{$i},
+  .border-color-index-neutral-#{$i + length($brand-neutral-colors)} {
+    border-color: nth($brand-neutral-colors, $i);
+  }
+
+  .border-color-index-neutral-#{$i}-t,
+  .border-color-index-neutral-#{$i + length($brand-neutral-colors)}-t {
+    border-color: generate-tint(nth($brand-neutral-colors, $i));
+  }
+
+  .color-index-neutral-#{$i},
+  .color-index-neutral-#{$i + length($brand-neutral-colors)} {
+    color: nth($brand-neutral-colors, $i);
+  }
+
+  .color-index-neutral-#{$i}-t,
+  .color-index-neutral-#{$i + length($brand-neutral-colors)}-t {
+    color: generate-tint(nth($brand-neutral-colors, $i));
   }
 }
 
@@ -27,9 +59,34 @@
     background-color: nth($brand-accent-colors, $i);
   }
 
+  .background-color-index-accent-#{$i}-t,
+  .background-color-index-accent-#{$i + length($brand-accent-colors)}-t {
+    background-color: generate-tint(nth($brand-accent-colors, $i));
+  }
+
   .background-color-index-accent-#{$i}-a,
   .background-color-index-accent-#{$i + length($brand-accent-colors)}-a {
     background-color: rgba(nth($brand-accent-colors, $i), 0.8);
+  }
+
+  .border-color-index-accent-#{$i},
+  .border-color-index-accent-#{$i + length($brand-accent-colors)} {
+    border-color: nth($brand-accent-colors, $i);
+  }
+
+  .border-color-index-accent-#{$i}-t,
+  .border-color-index-accent-#{$i + length($brand-accent-colors)}-t {
+    border-color: generate-tint(nth($brand-accent-colors, $i));
+  }
+
+  .color-index-accent-#{$i},
+  .color-index-accent-#{$i + length($brand-accent-colors)} {
+    color: nth($brand-accent-colors, $i);
+  }
+
+  .color-index-accent-#{$i}-t,
+  .color-index-accent-#{$i + length($brand-accent-colors)}-t {
+    color: generate-tint(nth($brand-accent-colors, $i));
   }
 }
 
@@ -43,6 +100,11 @@
   .background-color-index-grey-#{$i + length($brand-grey-colors)}-a {
     background-color: rgba(nth($brand-grey-colors, $i), 0.8);
   }
+
+  .border-color-index-grey-#{$i},
+  .border-color-index-grey-#{$i + length($brand-grey-colors)} {
+    border-color: nth($brand-grey-colors, $i);
+  }
 }
 
 @for $i from 1 through length($brand-graph-colors) {
@@ -50,11 +112,24 @@
   .background-color-index-graph-#{$i + length($brand-graph-colors)} {
     background-color: nth($brand-graph-colors, $i);
   }
+
+  .border-color-index-graph-#{$i},
+  .border-color-index-graph-#{$i + length($brand-graph-colors)} {
+    border-color: nth($brand-graph-colors, $i);
+  }
 }
 
 @each $status, $color in $brand-status-colors {
   .background-color-index-#{$status} {
     background-color: $color;
+  }
+
+  .border-color-index-#{$status} {
+    border-color: $color;
+  }
+
+  .color-index-#{$status} {
+    color: $color;
   }
 }
 
@@ -67,5 +142,10 @@
   .background-color-index-light-#{$i}-a,
   .background-color-index-light-#{$i + length($brand-light-colors)}-a {
     background-color: rgba(nth($brand-light-colors, $i), 0.8);
+  }
+
+  .border-color-index-light-#{$i},
+  .border-color-index-light-#{$i + length($brand-light-colors)} {
+    border-color: nth($brand-light-colors, $i);
   }
 }

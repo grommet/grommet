@@ -28,6 +28,7 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
   #{$dark-background-context} & {
     background-color: transparent;
     color: $colored-text-color;
+    border-color: $colored-border-color;
   }
 
   .form--fill & {
@@ -54,6 +55,18 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
   margin-left: - $form-horizontal-padding;
   margin-right: - $form-horizontal-padding;
 
+  > .box {
+    input {
+      border: none;
+      padding: 0;
+    }
+
+    .anchor {
+      color: $control-brand-color;
+      text-decoration: none;
+    }
+  }
+
   > input[type=text],
   > input[type=range],
   > input[type=email],
@@ -63,6 +76,7 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
   > select,
   > .search-input input,
   > .calendar input,
+  > .date-time input,
   > textarea {
     display: block;
     width: 100%;
@@ -91,7 +105,8 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
   > input[type=file],
   > select,
   > .search-input input,
-  > .calendar input {
+  > .calendar input,
+  > .date-time input {
     // For IE11.
     height: $inuit-base-spacing-unit;
   }
@@ -157,7 +172,8 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
   }
 
   > .search-input,
-  > .calendar {
+  > .calendar,
+  > .date-time {
     display: block;
 
     input {
@@ -304,4 +320,23 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
 .form-field--focus {
   z-index: 2;
   border-color: $focus-border-color;
+
+  #{$dark-background-context} & {
+    border-color: $focus-border-color;
+  }
+}
+
+.form-field--size-large {
+  font-size: $paragraph-large-font-size;
+
+  input[type="text"] {
+    font-size: $paragraph-large-font-size;
+    height: auto;
+  }
+}
+
+.form-field--strong {
+  input[type="text"] {
+    font-weight: 600;
+  }
 }

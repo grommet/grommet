@@ -1,0 +1,21 @@
+.quote {
+  border-width: $inuit-base-spacing-unit;
+  border-style: solid;
+  max-width: calc(100vw - #{double($inuit-base-spacing-unit)});
+
+  &--small {
+    width: $size-xsmall;
+  }
+
+  &--medium {
+    width: $size-small;
+  }
+
+  &--large {
+    width: $size-medium;
+  }
+
+  &--emphasize-credit &__credit {
+    font-weight: 600;
+  }
+}

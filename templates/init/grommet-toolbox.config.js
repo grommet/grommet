@@ -1,8 +1,6 @@
-var gulp = require('gulp');
-var path = require('path');
-var devGulpTasks = require('grommet/utils/gulp/gulp-tasks');
+import path from 'path';
 
-var opts = {
+export default {
   copyAssets: [
     'src/index.html',
     {
@@ -17,5 +15,3 @@ var opts = {
   customEslintPath: path.resolve(__dirname, 'customEslintrc'),
   scsslint: true
 };
-
-devGulpTasks(gulp, opts);

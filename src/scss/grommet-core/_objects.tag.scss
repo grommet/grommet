@@ -5,6 +5,10 @@
   position: relative;
   opacity: 0.7;
 
+  @include media-query(palm) {
+    max-width: inherit;
+  }
+
   a,
   a:hover,
   .anchor:hover:not(.anchor--disabled) {
@@ -14,6 +18,15 @@
 
   &:hover {
     box-shadow: 0px 0px 0px 2px $button-secondary-color;
+    opacity: 1;
+  }
+}
+
+#{$dark-background-context} .tag {
+  border-color: $button-colored-border-color;
+
+  &:hover {
+    box-shadow: 0px 0px 0px 2px $button-colored-border-color;
     opacity: 1;
   }
 }

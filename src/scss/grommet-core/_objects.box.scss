@@ -9,7 +9,6 @@
   @include pad();
 
   // temporary flex grow capability
-  > .flex-grow-1, // deprecated, remove in 0.4
   > .flex {
     flex-grow: 1;
   }
@@ -119,6 +118,41 @@
         }
       }
     }
+
+    @include media-query(palm) {
+      &-small {
+        > *:not(:last-child) {
+          margin-right: quarter($inuit-base-spacing-unit);
+
+          html.rtl & {
+            margin-right: 0;
+            margin-left: quarter($inuit-base-spacing-unit);
+          }
+        }
+      }
+
+      &-medium {
+        > *:not(:last-child) {
+          margin-right: halve($inuit-base-spacing-unit);
+
+          html.rtl & {
+            margin-right: 0;
+            margin-left: halve($inuit-base-spacing-unit);
+          }
+        }
+      }
+
+      &-large {
+        > *:not(:last-child) {
+          margin-right: $inuit-base-spacing-unit;
+
+          html.rtl & {
+            margin-right: 0;
+            margin-left: $inuit-base-spacing-unit;
+          }
+        }
+      }
+    }
   }
 
   @include media-query(palm) {
@@ -131,6 +165,34 @@
 
       &.box--reverse {
         flex-direction: column-reverse;
+      }
+
+      &.box--pad-between {
+        // make sure between padding switches directions
+        // on responsive
+        &-small {
+          > *:not(:last-child) {
+            margin-left: 0;
+            margin-right: 0;
+            margin-bottom: quarter($inuit-base-spacing-unit);
+          }
+        }
+
+        &-medium {
+          > *:not(:last-child) {
+            margin-left: 0;
+            margin-right: 0;
+            margin-bottom: halve($inuit-base-spacing-unit);
+          }
+        }
+
+        &-large {
+          > *:not(:last-child) {
+            margin-left: 0;
+            margin-right: 0;
+            margin-bottom: $inuit-base-spacing-unit;
+          }
+        }
       }
     }
   }
@@ -165,6 +227,26 @@
     &-large {
       > *:not(:last-child) {
         margin-bottom: double($inuit-base-spacing-unit);
+      }
+    }
+
+    @include media-query(palm) {
+      &-small {
+        > *:not(:last-child) {
+          margin-bottom: quarter($inuit-base-spacing-unit);
+        }
+      }
+
+      &-medium {
+        > *:not(:last-child) {
+          margin-bottom: halve($inuit-base-spacing-unit);
+        }
+      }
+
+      &-large {
+        > *:not(:last-child) {
+          margin-bottom: $inuit-base-spacing-unit;
+        }
       }
     }
   }
@@ -266,4 +348,29 @@
 
 .box--clickable {
   cursor: pointer;
+}
+
+.box--size {
+  max-width: 100%;
+
+  .paragraph {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  &-xsmall {
+    width: $size-xsmall;
+  }
+
+  &-small {
+    width: $size-small;
+  }
+
+  &-medium {
+    width: $size-medium;
+  }
+
+  &-large {
+    width: $size-large;
+  }
 }

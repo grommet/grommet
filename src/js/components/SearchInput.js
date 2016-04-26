@@ -107,9 +107,6 @@ export default class SearchInput extends Component {
 
   _onInputChange (event) {
     this.setState({dropActive: true, activeSuggestionIndex: -1});
-    if (this.props.onChange) {
-      this.props.onChange(event.target.value, false);
-    }
     if (this.props.onDOMChange) {
       this._fireDOMChange();
     }
@@ -155,9 +152,6 @@ export default class SearchInput extends Component {
     if (this.state.activeSuggestionIndex >= 0) {
       let suggestion = this.props.suggestions[this.state.activeSuggestionIndex];
       this.setState({value: suggestion});
-      if (this.props.onChange) {
-        this.props.onChange(suggestion, true);
-      }
       if (this.props.onSelect) {
         this.props.onSelect({target: this.refs.input, suggestion: suggestion});
       }
@@ -166,9 +160,6 @@ export default class SearchInput extends Component {
 
   _onClickSuggestion (suggestion) {
     this.setState({value: suggestion, dropActive: false});
-    if (this.props.onChange) {
-      this.props.onChange(suggestion, true);
-    }
     if (this.props.onSelect) {
       this.props.onSelect({target: this.refs.input, suggestion: suggestion});
     }
@@ -257,7 +248,6 @@ SearchInput.propTypes = {
   ]),
   id: PropTypes.string,
   name: PropTypes.string,
-  onChange: PropTypes.func,
   onDOMChange: PropTypes.func,
   onSelect: PropTypes.func,
   placeHolder: PropTypes.string,

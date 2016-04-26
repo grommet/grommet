@@ -5,27 +5,37 @@
   @include text-align();
   @include margin();
 
-  &.paragraph--small {
-    @include inuit-font-size($paragraph-small-font-size);
+  a {
+    text-decoration: none;
+  }
 
-    a {
-      text-decoration: none;
-    }
+  &.paragraph--small {
+    font-size: $paragraph-small-font-size;
+    line-height: $paragraph-small-line-height;
   }
 
   &.paragraph--large {
-    // inuit-font-size sets the line-height to 24px when the font size is 24px.
-    // We want a bit more leading between lines than that.
-    // See also base.text h3
-    @if $paragraph-large-font-size == 24px {
-      @include inuit-font-size($paragraph-large-font-size, 28px);
-    } @else {
-      @include inuit-font-size($paragraph-large-font-size);
-    }
+    font-size: $paragraph-large-font-size;
+    line-height: $paragraph-large-line-height;
 
     a {
       color: $brand-color;
       font-weight: 600;
     }
+  }
+
+  &.paragraph--xlarge {
+    font-size: $paragraph-xlarge-font-size;
+    line-height: $paragraph-xlarge-line-height;
+
+    a {
+      color: $brand-color;
+      font-weight: 600;
+    }
+  }
+
+  &.paragraph--width-large {
+    width: $inuit-base-spacing-unit * 30;
+    max-width: 100%;
   }
 }

@@ -13,7 +13,8 @@ export default class Paragraph extends Component {
       {
         [`${CLASS_ROOT}--${this.props.size}`]: this.props.size,
         [`${CLASS_ROOT}--align-${this.props.align}`]: this.props.align,
-        [`${CLASS_ROOT}--margin-${this.props.margin}`]: this.props.margin
+        [`${CLASS_ROOT}--margin-${this.props.margin}`]: this.props.margin,
+        [`${CLASS_ROOT}--width-${this.props.width}`]: this.props.width
       }
     );
 
@@ -31,5 +32,6 @@ Paragraph.propTypes = {
   align: PropTypes.oneOf(['start', 'center', 'end']),
   id: PropTypes.string,
   margin: PropTypes.oneOf(['none', 'small', 'medium', 'large']),
-  size: PropTypes.oneOf(['small', 'medium', 'large'])
+  size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
+  width: PropTypes.oneOf(['small', 'medium', 'large'])
 };

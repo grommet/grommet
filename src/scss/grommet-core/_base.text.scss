@@ -4,31 +4,33 @@
   @include inuit-font-size($content-font-size, $inuit-base-spacing-unit);
 
   h1 {
-    // inuit-font-size sets the line-height to 1 (48px) when the font size is 48px.
-    // We want a bit more leading between lines than that. 1.125 (54 = 48 + 6)
-    @include inuit-font-size(48px, 1.125);
+    font-size: $h1-font-size;
+    line-height: $h1-line-height;
   }
 
   h2 {
-    @include inuit-font-size(36px);
+    font-size: $h2-font-size;
+    line-height: $h2-line-height;
   }
 
   h3 {
-    // inuit-font-size sets the line-height to 24px when the font size is 24px.
-    // We want a bit more leading between lines than that. 1.25 (30 = 24 + 6)
-    @include inuit-font-size(24px, 1.25);
+    font-size: $h3-font-size;
+    line-height: $h3-line-height;
   }
 
   h4 {
-    @include inuit-font-size(18px);
+    font-size: $h4-font-size;
+    line-height: $h4-line-height;
   }
 
   h5 {
-    @include inuit-font-size(17px);
+    font-size: $h5-font-size;
+    line-height: $h5-line-height;
   }
 
   h6 {
-    @include inuit-font-size(16px);
+    font-size: $h6-font-size;
+    line-height: $h6-line-height;
   }
 
   h1,
@@ -40,7 +42,6 @@
     font-weight: 100;
     max-width: 100%;
 
-    &.header--strong,
     > strong {
       font-weight: 600;
     }
@@ -61,6 +62,21 @@
   li {
     max-width: $readable-text-width;
     margin-left: 0px;
+  }
+
+  p,
+  dd {
+    font-size: $paragraph-font-size;
+    line-height: $paragraph-line-height;
+    color: $paragraph-text-color;
+    font-weight: 100;
+  }
+
+  #{$dark-background-context} {
+    p,
+    dd {
+      color: $colored-text-color;
+    }
   }
 
   dd {

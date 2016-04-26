@@ -29,15 +29,19 @@
     color: $link-hover-color;
     text-decoration: underline;
   }
-}
 
-.anchor--disabled:hover {
-  color: $link-color;
+  @include dark-background-context-icon();
 }
 
 .anchor__icon {
   display: inline-block;
   padding: halve($inuit-base-spacing-unit);
+
+  &:hover {
+    .control-icon {
+      @include icon-color($active-icon-color);
+    }
+  }
 }
 
 &.anchor--primary,
@@ -49,6 +53,7 @@
   .control-icon {
     vertical-align: middle;
     margin-right: halve($inuit-base-spacing-unit);
+    @include icon-color($control-brand-color);
 
     html.rtl & {
       margin-right: 0;
@@ -58,6 +63,12 @@
 
   > span {
     vertical-align: middle;
+  }
+
+  &:hover:not(.anchor--disabled) {
+    .control-icon {
+      @include icon-hover-bold($control-brand-color);
+    }
   }
 }
 
@@ -71,29 +82,8 @@
 .anchor--primary {
   color: $control-brand-color;
 
-  .control-icon {
-    stroke: $control-brand-color;
-  }
-
-  &:hover {
-    .control-icon {
-      stroke: $control-brand-color;
-
-      path,
-      polyline {
-        stroke-width: 3px;
-      }
-    }
-  }
-
-  &.anchor--disabled {
-    .control-icon {
-      transform: none;
-    }
-  }
-
   // Only animate icon when it's a primary anchor
-  &.anchor--animate-icon {
+  &.anchor--animate-icon:not(.anchor--disabled) {
     &:hover {
       .control-icon {
         transform: translateX(round($inuit-base-spacing-unit * 0.125));
@@ -108,6 +98,11 @@
 
   .control-icon {
     cursor: default;
+  }
+
+  &:hover {
+    color: $link-color;
+    text-decoration: none;
   }
 }
 
@@ -124,28 +119,11 @@
 }
 
 #{$dark-background-context} .anchor {
-  color: $colored-text-color;
-
-  .control-icon {
-    fill: $colored-icon-color;
-    stroke: $colored-icon-color;
-  }
-
-  &:hover {
-    color: $active-colored-text-color;
-
-   .control-icon {
-      fill: $active-colored-icon-color;
-      stroke: $active-colored-icon-color;
-    }
-  }
-
   &.anchor--disabled:hover {
     color: $colored-text-color;
 
     .control-icon {
-      fill: $colored-icon-color;
-      stroke: $colored-icon-color;
+      @include icon-color($colored-icon-color);
     }
   }
 }

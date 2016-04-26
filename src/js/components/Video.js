@@ -4,6 +4,7 @@ import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 
 import Intl from '../utils/Intl';
+import Responsive from '../utils/Responsive';
 import Button from './Button';
 import Box from './Box';
 import ExpandIcon from './icons/base/Expand';
@@ -18,6 +19,7 @@ export default class Video extends Component {
   constructor () {
     super();
 
+    this._onResponsive = this._onResponsive.bind(this);
     this._onPlaying = this._onPlaying.bind(this);
     this._onPause = this._onPause.bind(this);
     this._onEnded = this._onEnded.bind(this);
@@ -26,14 +28,24 @@ export default class Video extends Component {
     this._onClickChapter = this._onClickChapter.bind(this);
     this._onFullScreen = this._onFullScreen.bind(this);
 
-    this.state = { playing: false, progress: 0 };
+    this.state = { playing: false, progress: 0, iconSize: 'large' };
   }
 
   componentDidMount () {
+    this._responsive = Responsive.start(this._onResponsive);
     let video = this.refs.video;
     video.addEventListener('playing', this._onPlaying);
     video.addEventListener('pause', this._onPause);
     video.addEventListener('ended', this._onEnded);
+  }
+
+  componentWillReceiveProps (nextProps) {
+    // Dynamically modifying a source element and its attribute when
+    // the element is already inserted in a video or audio element will
+    // have no effect.
+    // From HTML Specs: https://html.spec.whatwg.org/multipage/embedded-content.html#the-source-element
+    // Using forceUpdate to force redraw of video when receiving new <source>
+    this.forceUpdate();
   }
 
   componentWillUnmount () {
@@ -41,13 +53,28 @@ export default class Video extends Component {
     video.removeEventListener('playing', this._onPlaying);
     video.removeEventListener('pause', this._onPause);
     video.removeEventListener('ended', this._onEnded);
+
+    if (this._responsive) {
+      this._responsive.stop();
+    }
+  }
+
+  _onResponsive (small) {
+    if (small) {
+      this.setState({iconSize: 'small'});
+    } else {
+      let iconSize = (('small' === this.props.size) ? null : 'large');
+      this.setState({iconSize: iconSize});
+    }
   }
 
   _onPlaying () {
     let video = this.refs.video;
-    this._progressTimer = setInterval(function () {
-      this.setState({progress: this.state.progress + 0.5});
-    }.bind(this), 500);
+    if (!this._progressTimer) {
+      this._progressTimer = setInterval(function () {
+        this.setState({progress: this.state.progress + 0.5});
+      }.bind(this), 500);
+    }
     this.setState({ playing: true, progress: video.currentTime, ended: null });
   }
 
@@ -122,14 +149,14 @@ export default class Video extends Component {
       classes.push(this.props.className);
     }
 
-    let controlIconSize = ('small' === this.props.size ? null : 'large');
+    let controlIconSize = this.state.iconSize;
     let controlIcon = (this.state.playing ?
       <PauseIcon size={controlIconSize} /> : (this.state.ended ?
         <RefreshIcon size={controlIconSize} /> :
           <PlayIcon size={controlIconSize} />));
-    let a11yControlButtonMessage = (this.state.playing ? 
-      'Pause Video' : (this.state.ended ? 
-        'Restart Video' : 
+    let a11yControlButtonMessage = (this.state.playing ?
+      'Pause Video' : (this.state.ended ?
+        'Restart Video' :
           'Play Video'));
     let a11yControlButtonTitle = Intl.getMessage(this.context.intl, a11yControlButtonMessage);
 
@@ -141,7 +168,7 @@ export default class Video extends Component {
       let a11yExpandButtonTitle = Intl.getMessage(this.context.intl, 'Toggle Fullscreen');
       // fallback to only displaying full screen icon in header
       // if allowing fullscreen
-      
+
       videoHeader = (
         <Box align="end" full="horizontal">
           <Button plain={true} onClick={this._onFullScreen}
@@ -172,11 +199,12 @@ export default class Video extends Component {
           (seconds < 10 ? '0' + seconds : seconds);
         let currentProgress = this.state.progress;
         let nextChapter = chapters[Math.min(chapters.length - 1, index + 1)];
+        let lastChapter = chapters[chapters.length - 1];
 
         let timelineClasses = classnames(
           `${CLASS_ROOT}__timeline-chapter`,
           {
-            [`${CLASS_ROOT}__timeline-active`]: (currentProgress !== 0 && currentProgress >= chapter.time && currentProgress < nextChapter.time)
+            [`${CLASS_ROOT}__timeline-active`]: (currentProgress !== 0 && ((currentProgress >= chapter.time && currentProgress < nextChapter.time) || (index === chapters.length - 1 && currentProgress >= lastChapter.time)))
           }
         );
 
@@ -199,7 +227,9 @@ export default class Video extends Component {
 
     let progress;
     if (this.props.duration) {
-      let percent = Math.round((this.state.progress / this.props.duration) * 100);
+      // making sure percent is <= 100,
+      // so that progress bar does not extend beyond container width
+      let percent = Math.min((Math.round((this.state.progress / this.props.duration) * 100)), 100);
       progress = (
         <div className={`${CLASS_ROOT}__progress`}>
           <div className={`${CLASS_ROOT}__progress-meter`}
@@ -217,9 +247,9 @@ export default class Video extends Component {
         </video>
         <Box pad="none" align="center" justify={videoSummaryJustify} className={`${CLASS_ROOT}__summary`}>
           {videoHeader}
-          <Box pad="large" align="center" justify="center">
+          <Box pad="none" align="center" justify="center">
             <Button className={`${CLASS_ROOT}__control`} plain={true}
-              primary={true} onClick={onClickControl} 
+              primary={true} onClick={onClickControl}
               icon={controlIcon} a11yTitle={a11yControlButtonTitle} />
             {title}
           </Box>

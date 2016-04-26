@@ -33,6 +33,8 @@ export default class Footer extends Component {
     }
 
     let boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
+    // don't transfer size to Box since it means something different
+    delete boxProps.size;
 
     return (
       <Box {...boxProps} tag="footer" className={classes}

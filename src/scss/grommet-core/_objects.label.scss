@@ -1,6 +1,5 @@
 .label {
   @include inuit-font-size($control-font-size);
-  margin-bottom: $inuit-base-spacing-unit;
 
   &--uppercase {
     text-transform: uppercase;

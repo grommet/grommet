@@ -10,12 +10,18 @@ const CLASS_ROOT = 'list-item';
 export default class ListItem extends Component {
 
   render () {
+    const { children, className, onClick, selected } = this.props;
+
+    if (selected) {
+      console.log('Selected option has been deprecated, please use selected option at the List level.');
+    }
+
     const classes = classnames(
       CLASS_ROOT,
-      this.props.className,
+      className,
       {
-        [`${CLASS_ROOT}--selected`]: this.props.selected,
-        [`${CLASS_ROOT}--selectable`]: this.props.onClick
+        [`${CLASS_ROOT}--selected`]: selected,
+        [`${CLASS_ROOT}--selectable`]: onClick
       }
     );
 
@@ -23,7 +29,7 @@ export default class ListItem extends Component {
 
     return (
       <Box {...boxProps} tag="li" className={classes}>
-        {this.props.children}
+        {children}
       </Box>
     );
   }

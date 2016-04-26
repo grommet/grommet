@@ -64,6 +64,12 @@ export default class FormField extends Component {
     if (this.props.htmlFor) {
       classes.push(CLASS_ROOT + "--text");
     }
+    if (this.props.size) {
+      classes.push(CLASS_ROOT + "--size-" + this.props.size);
+    }
+    if (this.props.strong) {
+      classes.push(`${CLASS_ROOT}--strong`);
+    }
     if (this.props.className) {
       classes.push(this.props.className);
     }
@@ -86,6 +92,7 @@ export default class FormField extends Component {
         </label>
       );
     }
+
     return (
       <div className={classes.join(' ')} onClick={this._onClick}>
         {error}
@@ -106,5 +113,12 @@ FormField.propTypes = {
   hidden: PropTypes.bool,
   htmlFor: PropTypes.string,
   label: PropTypes.node,
-  required: PropTypes.bool
+  required: PropTypes.bool,
+  size: PropTypes.oneOf(['medium', 'large']),
+  strong: PropTypes.bool
+};
+
+FormField.defaultProps = {
+  size: 'medium',
+  strong: false
 };

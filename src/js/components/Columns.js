@@ -56,7 +56,7 @@ export default class Columns extends Component {
     );
 
     const children = React.Children.toArray(this.props.children);
-    const childrenPerColumn = Math.floor(children.length / this.state.count);
+    const childrenPerColumn = Math.ceil(children.length / this.state.count);
     let groups = [];
     let offset = 0;
     while (groups.length < this.state.count) {

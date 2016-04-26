@@ -147,8 +147,22 @@
     }
   }
 
+  .anchor__icon {
+    padding-left: 0;
+    vertical-align: middle;
+  }
+
+  .anchor--reverse .anchor__icon {
+    padding-right: 0;
+  }
+
   &.menu__drop--small {
     @include inuit-font-size($small-menu-font-size);
+
+    .anchor__icon {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
   }
 
   &.menu__drop--large {
