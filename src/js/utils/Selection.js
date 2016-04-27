@@ -69,6 +69,10 @@ function onClick (event, options) {
     while (item && ! item.matchesElement(options.childSelector)) {
       item = item.parentNode;
     }
+  } else if (item.msMatchesSelector) {
+    while (item.msMatchesSelector && !item.msMatchesSelector(options.childSelector)) {
+      item = item.parentNode;
+    }
   }
 
   // determine the index of the clicked element
