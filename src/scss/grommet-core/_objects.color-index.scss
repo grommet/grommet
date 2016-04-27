@@ -51,6 +51,21 @@
   .color-index-neutral-#{$i + length($brand-neutral-colors)}-t {
     color: generate-tint(nth($brand-neutral-colors, $i));
   }
+
+  .hover-color-index-neutral-#{$i}--background:hover,
+  .hover-color-index-neutral-#{$i + length($brand-neutral-colors)}--background:hover {
+    background-color: rgba(nth($brand-neutral-colors, $i), 0.3);
+  }
+
+  .hover-color-index-neutral-#{$i}--border-small:hover,
+  .hover-color-index-neutral-#{$i + length($brand-neutral-colors)}--border-small:hover {
+    box-shadow: 0 0 0 1px nth($brand-neutral-colors, $i);
+  }
+
+  .hover-color-index-neutral-#{$i}--border-large:hover,
+  .hover-color-index-neutral-#{$i + length($brand-neutral-colors)}--border-large:hover {
+    box-shadow: 0 0 0 $inuit-base-spacing-unit nth($brand-neutral-colors, $i);
+  }
 }
 
 @for $i from 1 through length($brand-accent-colors) {
@@ -88,6 +103,21 @@
   .color-index-accent-#{$i + length($brand-accent-colors)}-t {
     color: generate-tint(nth($brand-accent-colors, $i));
   }
+
+  .hover-color-index-accent-#{$i}--background:hover,
+  .hover-color-index-accent-#{$i + length($brand-accent-colors)}--background:hover {
+    background-color: rgba(nth($brand-accent-colors, $i), 0.3);
+  }
+
+  .hover-color-index-accent-#{$i}--border-small:hover,
+  .hover-color-index-accent-#{$i + length($brand-accent-colors)}--border-small:hover {
+    box-shadow: 0 0 0 1px nth($brand-accent-colors, $i);
+  }
+
+  .hover-color-index-accent-#{$i}--border-large:hover,
+  .hover-color-index-accent-#{$i + length($brand-accent-colors)}--border-large:hover {
+    box-shadow: 0 0 0 $inuit-base-spacing-unit nth($brand-accent-colors, $i);
+  }
 }
 
 @for $i from 1 through length($brand-grey-colors) {
@@ -104,6 +134,21 @@
   .border-color-index-grey-#{$i},
   .border-color-index-grey-#{$i + length($brand-grey-colors)} {
     border-color: nth($brand-grey-colors, $i);
+  }
+
+  .hover-color-index-grey-#{$i}--background:hover,
+  .hover-color-index-grey-#{$i + length($brand-grey-colors)}--background:hover {
+    background-color: rgba(nth($brand-grey-colors, $i), 0.3);
+  }
+
+  .hover-color-index-grey-#{$i}--border-small:hover,
+  .hover-color-index-grey-#{$i + length($brand-grey-colors)}--border-small:hover {
+    box-shadow: 0 0 0 1px nth($brand-grey-colors, $i);
+  }
+
+  .hover-color-index-grey-#{$i}--border-large:hover,
+  .hover-color-index-grey-#{$i + length($brand-grey-colors)}--border-large:hover {
+    box-shadow: 0 0 0 $inuit-base-spacing-unit nth($brand-grey-colors, $i);
   }
 }
 
@@ -131,6 +176,18 @@
   .color-index-#{$status} {
     color: $color;
   }
+
+  .hover-color-index-#{$status}--background:hover {
+    background-color: rgba($color, 0.3);
+  }
+
+  .hover-color-index-#{$status}--border-small:hover {
+    box-shadow: 0 0 0 1px $color;
+  }
+
+  .hover-color-index-#{$status}--border-large:hover {
+    box-shadow: 0 0 0 $inuit-base-spacing-unit $color;
+  }
 }
 
 @for $i from 1 through length($brand-light-colors) {
@@ -147,5 +204,20 @@
   .border-color-index-light-#{$i},
   .border-color-index-light-#{$i + length($brand-light-colors)} {
     border-color: nth($brand-light-colors, $i);
+  }
+
+  .hover-color-index-light-#{$i}--background:hover,
+  .hover-color-index-light-#{$i + length($brand-light-colors)}--background:hover {
+    background-color: rgba(nth($brand-light-colors, $i), 0.3);
+  }
+
+  .hover-color-index-light-#{$i}--border-small:hover,
+  .hover-color-index-light-#{$i + length($brand-light-colors)}--border-small:hover {
+    box-shadow: 0 0 0 1px nth($brand-light-colors, $i);
+  }
+
+  .hover-color-index-light-#{$i}--border-large:hover,
+  .hover-color-index-light-#{$i + length($brand-light-colors)}--border-large:hover {
+    box-shadow: 0 0 0 $inuit-base-spacing-unit nth($brand-light-colors, $i);
   }
 }

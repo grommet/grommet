@@ -88,7 +88,6 @@
       }
 
       &:hover:not(.tile--selected) {
-        background-color: $hover-background-color;
         color: $hover-text-color;
       }
     }
@@ -117,6 +116,7 @@
 
 .tile {
   overflow: hidden;
+  transition: all 0.2s;
 
   .status-icon {
     margin-right: quarter($inuit-base-spacing-unit);

@@ -1,6 +1,6 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component, PropTypes, Children } from 'react';
 import { findDOMNode } from 'react-dom';
 import Props from '../utils/Props';
 import Box from './Box';
@@ -219,6 +219,19 @@ export default class Tiles extends Component {
       onClickHandler = this._onClick;
     }
 
+    let children = this.props.children;
+    children = Children.map(this.props.children, (element, index) => {
+      if (element) {
+        const elementClone = React.cloneElement(element, {
+          hoverBorder: !this.props.flush
+        });
+
+        return elementClone;
+      }
+
+      return undefined;
+    }, this);
+
     var contents = (
       <Box ref="tiles" {...other}
         wrap={this.props.direction ? false : true}
@@ -226,7 +239,7 @@ export default class Tiles extends Component {
         className={classes.join(' ')}
         onClick={onClickHandler}
         focusable={false}>
-        {this.props.children}
+        {children}
         {more}
       </Box>
     );

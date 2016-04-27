@@ -10,7 +10,7 @@ const CLASS_ROOT = "tile";
 export default class Tile extends Component {
 
   render () {
-    const { children, className, onClick, wide, status, selected } = this.props;
+    const { children, className, onClick, wide, status, selected, hoverStyle, hoverColorIndex, hoverBorder } = this.props;
 
     if (selected) {
       console.log('Selected option has been deprecated, please use selected option at the Tiles level.');
@@ -25,7 +25,8 @@ export default class Tile extends Component {
         [`${CLASS_ROOT}--status-${statusClass}`]: status,
         [`${CLASS_ROOT}--wide`]: wide,
         [`${CLASS_ROOT}--selectable`]: onClick,
-        [`${CLASS_ROOT}--selected`]: selected
+        [`${CLASS_ROOT}--selected`]: selected,
+        [`hover-color-index-${hoverColorIndex}--${hoverStyle}${(hoverStyle == 'border') ? ((hoverBorder) ? '-large' : '-small') : ''}`]: hoverStyle
       }
     );
 
