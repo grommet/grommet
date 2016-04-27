@@ -61,12 +61,9 @@ function onClick (event, options) {
 
   // Go up the DOM tree until we match the childSelector
   let item = event.target;
-  if (item.matches) {
-    while (item && ! item.matches(options.childSelector)) {
-      item = item.parentNode;
-    }
-  } else if (item.matchesElement) {
-    while (item && ! item.matchesElement(options.childSelector)) {
+  var matchFunction = item.matches || item.matchesElement || item.msMatchesSelector;
+  if (matchFunction) {
+    while (item && !matchFunction(options.childSelector)) {
       item = item.parentNode;
     }
   }
