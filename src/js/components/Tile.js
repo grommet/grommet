@@ -26,7 +26,7 @@ export default class Tile extends Component {
         [`${CLASS_ROOT}--wide`]: wide,
         [`${CLASS_ROOT}--selectable`]: onClick,
         [`${CLASS_ROOT}--selected`]: selected,
-        [`hover-color-index-${hoverColorIndex}--${hoverStyle}${(hoverStyle == 'border') ? ((hoverBorder) ? '-large' : '-small') : ''}`]: hoverStyle
+        [`${hoverStyle}${(hoverStyle == 'border') ? ((hoverBorder) ? '-large' : '-small') : ''}-hover-color-index-${hoverColorIndex}`]: hoverStyle
       }
     );
 
@@ -44,7 +44,7 @@ export default class Tile extends Component {
 Tile.propTypes = {
   selected: PropTypes.bool,
   wide: PropTypes.bool,
-  hoverStyle: PropTypes.oneOf(['border', 'background']),
+  hoverStyle: PropTypes.oneOf(['border', 'background', 'none']),
   hoverColorIndex: PropTypes.string,
   ...Box.propTypes
 };
@@ -53,6 +53,6 @@ Tile.defaultProps = {
   pad: 'none',
   direction: 'column',
   align: 'center',
-  hoverStyle: 'background',
+  hoverStyle: 'none',
   hoverColorIndex: 'disabled'
 };

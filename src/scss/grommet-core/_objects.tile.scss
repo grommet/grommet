@@ -87,7 +87,8 @@
         color: $selected-text-color;
       }
 
-      &:hover:not(.tile--selected) {
+      &:hover:not(.tile--selected):not([class*="background-hover-color-index-"]) {
+        background-color: $hover-background-color;
         color: $hover-text-color;
       }
     }

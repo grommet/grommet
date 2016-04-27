@@ -52,18 +52,18 @@
     color: generate-tint(nth($brand-neutral-colors, $i));
   }
 
-  .hover-color-index-neutral-#{$i}--background:hover,
-  .hover-color-index-neutral-#{$i + length($brand-neutral-colors)}--background:hover {
+  .background-hover-color-index-neutral-#{$i}:hover,
+  .background-hover-color-index-neutral-#{$i + length($brand-neutral-colors)}:hover {
     background-color: rgba(nth($brand-neutral-colors, $i), 0.3);
   }
 
-  .hover-color-index-neutral-#{$i}--border-small:hover,
-  .hover-color-index-neutral-#{$i + length($brand-neutral-colors)}--border-small:hover {
+  .border-small-hover-color-index-neutral-#{$i}:hover,
+  .border-small-hover-color-index-neutral-#{$i + length($brand-neutral-colors)}:hover {
     box-shadow: 0 0 0 1px nth($brand-neutral-colors, $i);
   }
 
-  .hover-color-index-neutral-#{$i}--border-large:hover,
-  .hover-color-index-neutral-#{$i + length($brand-neutral-colors)}--border-large:hover {
+  .border-large-hover-color-index-neutral-#{$i}:hover,
+  .border-large-hover-color-index-neutral-#{$i + length($brand-neutral-colors)}:hover {
     box-shadow: 0 0 0 $inuit-base-spacing-unit nth($brand-neutral-colors, $i);
   }
 }
@@ -104,18 +104,18 @@
     color: generate-tint(nth($brand-accent-colors, $i));
   }
 
-  .hover-color-index-accent-#{$i}--background:hover,
-  .hover-color-index-accent-#{$i + length($brand-accent-colors)}--background:hover {
+  .background-hover-color-index-accent-#{$i}:hover,
+  .background-hover-color-index-accent-#{$i + length($brand-accent-colors)}:hover {
     background-color: rgba(nth($brand-accent-colors, $i), 0.3);
   }
 
-  .hover-color-index-accent-#{$i}--border-small:hover,
-  .hover-color-index-accent-#{$i + length($brand-accent-colors)}--border-small:hover {
+  .border-smallhover-color-index-accent-#{$i}:hover,
+  .border-smallhover-color-index-accent-#{$i + length($brand-accent-colors)}:hover {
     box-shadow: 0 0 0 1px nth($brand-accent-colors, $i);
   }
 
-  .hover-color-index-accent-#{$i}--border-large:hover,
-  .hover-color-index-accent-#{$i + length($brand-accent-colors)}--border-large:hover {
+  .border-large-hover-color-index-accent-#{$i}:hover,
+  .border-large-hover-color-index-accent-#{$i + length($brand-accent-colors)}:hover {
     box-shadow: 0 0 0 $inuit-base-spacing-unit nth($brand-accent-colors, $i);
   }
 }
@@ -136,18 +136,18 @@
     border-color: nth($brand-grey-colors, $i);
   }
 
-  .hover-color-index-grey-#{$i}--background:hover,
-  .hover-color-index-grey-#{$i + length($brand-grey-colors)}--background:hover {
+  .background-hover-color-index-grey-#{$i}:hover,
+  .background-hover-color-index-grey-#{$i + length($brand-grey-colors)}:hover {
     background-color: rgba(nth($brand-grey-colors, $i), 0.3);
   }
 
-  .hover-color-index-grey-#{$i}--border-small:hover,
-  .hover-color-index-grey-#{$i + length($brand-grey-colors)}--border-small:hover {
+  .border-small-hover-color-index-grey-#{$i}:hover,
+  .border-small-hover-color-index-grey-#{$i + length($brand-grey-colors)}:hover {
     box-shadow: 0 0 0 1px nth($brand-grey-colors, $i);
   }
 
-  .hover-color-index-grey-#{$i}--border-large:hover,
-  .hover-color-index-grey-#{$i + length($brand-grey-colors)}--border-large:hover {
+  .border-large-hover-color-index-grey-#{$i}:hover,
+  .border-large-hover-color-index-grey-#{$i + length($brand-grey-colors)}:hover {
     box-shadow: 0 0 0 $inuit-base-spacing-unit nth($brand-grey-colors, $i);
   }
 }
@@ -177,15 +177,15 @@
     color: $color;
   }
 
-  .hover-color-index-#{$status}--background:hover {
+  .background-hover-color-index-#{$status}:hover {
     background-color: rgba($color, 0.3);
   }
 
-  .hover-color-index-#{$status}--border-small:hover {
+  .border-small-hover-color-index-#{$status}:hover {
     box-shadow: 0 0 0 1px $color;
   }
 
-  .hover-color-index-#{$status}--border-large:hover {
+  .border-large-hover-color-index-#{$status}:hover {
     box-shadow: 0 0 0 $inuit-base-spacing-unit $color;
   }
 }
@@ -206,18 +206,18 @@
     border-color: nth($brand-light-colors, $i);
   }
 
-  .hover-color-index-light-#{$i}--background:hover,
-  .hover-color-index-light-#{$i + length($brand-light-colors)}--background:hover {
+  .background-hover-color-index-light-#{$i}:hover,
+  .background-hover-color-index-light-#{$i + length($brand-light-colors)}:hover {
     background-color: rgba(nth($brand-light-colors, $i), 0.3);
   }
 
-  .hover-color-index-light-#{$i}--border-small:hover,
-  .hover-color-index-light-#{$i + length($brand-light-colors)}--border-small:hover {
+  .border-small-hover-color-index-light-#{$i}:hover,
+  .border-small-hover-color-index-light-#{$i + length($brand-light-colors)}:hover {
     box-shadow: 0 0 0 1px nth($brand-light-colors, $i);
   }
 
-  .hover-color-index-light-#{$i}--border-large:hover,
-  .hover-color-index-light-#{$i + length($brand-light-colors)}--border-large:hover {
+  .border-large-hover-color-index-light-#{$i}:hover,
+  .border-large-hover-color-index-light-#{$i + length($brand-light-colors)}:hover {
     box-shadow: 0 0 0 $inuit-base-spacing-unit nth($brand-light-colors, $i);
   }
 }
