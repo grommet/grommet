@@ -44,7 +44,7 @@ export default class Tile extends Component {
 Tile.propTypes = {
   selected: PropTypes.bool,
   wide: PropTypes.bool,
-  hoverStyle: PropTypes.string,
+  hoverStyle: PropTypes.oneOf(['border', 'background']),
   hoverColorIndex: PropTypes.string,
   ...Box.propTypes
 };
