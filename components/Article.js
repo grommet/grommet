@@ -96,7 +96,7 @@ var Article = function (_Component) {
     _this._updateHiddenElements = _this._updateHiddenElements.bind(_this);
 
     _this.state = {
-      activeIndex: 0,
+      selectedIndex: props.selected || 0,
       playing: false,
       showControls: _this.props.controls
     };
@@ -130,6 +130,15 @@ var Article = function (_Component) {
           this._responsive = _Responsive2.default.start(this._onResponsive);
         }
       }
+
+      this._onSelect(this.state.selectedIndex);
+    }
+  }, {
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(props) {
+      if (props.selected) {
+        this._onSelect(props.selected);
+      }
     }
   }, {
     key: 'componentWillUnmount',
@@ -147,23 +156,23 @@ var Article = function (_Component) {
     key: '_checkPreviousNextControls',
     value: function _checkPreviousNextControls(currentScroll, nextProp, prevProp) {
       if (currentScroll > 0) {
-        var nextStepNode = (0, _reactDom.findDOMNode)(this.refs[this.state.activeIndex + 1]);
+        var nextStepNode = (0, _reactDom.findDOMNode)(this.refs[this.state.selectedIndex + 1]);
 
-        var previousStepNode = (0, _reactDom.findDOMNode)(this.refs[this.state.activeIndex - 1]);
+        var previousStepNode = (0, _reactDom.findDOMNode)(this.refs[this.state.selectedIndex - 1]);
 
         if (nextStepNode) {
-          var nextStepPosition = nextStepNode.getBoundingClientRect()[nextProp] * (this.state.activeIndex + 1);
+          var nextStepPosition = nextStepNode.getBoundingClientRect()[nextProp] * (this.state.selectedIndex + 1);
 
           if (currentScroll > nextStepPosition) {
-            this.setState({ activeIndex: this.state.activeIndex + 1 });
+            this.setState({ selectedIndex: this.state.selectedIndex + 1 });
           }
         }
 
         if (previousStepNode) {
-          var previousStepPosition = previousStepNode.getBoundingClientRect()[prevProp] * this.state.activeIndex;
+          var previousStepPosition = previousStepNode.getBoundingClientRect()[prevProp] * this.state.selectedIndex;
 
           if (currentScroll < previousStepPosition) {
-            this.setState({ activeIndex: this.state.activeIndex - 1 });
+            this.setState({ selectedIndex: this.state.selectedIndex - 1 });
           }
         }
       }
@@ -273,9 +282,9 @@ var Article = function (_Component) {
           // scrolling Article
           if (this._scrollingVertically) {
             // prevent Article horizontal scrolling while scrolling vertically
-            var activeIndex = this.state.activeIndex;
+            var selectedIndex = this.state.selectedIndex;
 
-            var childElement = (0, _reactDom.findDOMNode)(this.refs[activeIndex]);
+            var childElement = (0, _reactDom.findDOMNode)(this.refs[selectedIndex]);
             var rect = childElement.getBoundingClientRect();
             this._scrollParent.scrollLeft += rect.left;
           } else {
@@ -343,7 +352,7 @@ var Article = function (_Component) {
 
       clearTimeout(this._resizeTimer);
       this._resizeTimer = setTimeout(function () {
-        _this5._onSelect(_this5.state.activeIndex);
+        _this5._onSelect(_this5.state.selectedIndex);
         _this5._shortTimer('_resizing', 1000);
       }, 50);
     }
@@ -351,7 +360,7 @@ var Article = function (_Component) {
     key: '_onNext',
     value: function _onNext(event, wrap) {
       var children = this.props.children;
-      var activeIndex = this.state.activeIndex;
+      var selectedIndex = this.state.selectedIndex;
 
       var childCount = _react2.default.Children.count(children);
       if (event) {
@@ -359,7 +368,7 @@ var Article = function (_Component) {
         event.preventDefault();
       }
       var targetIndex = this._visibleIndexes()[0] + 1;
-      if (targetIndex !== activeIndex) {
+      if (targetIndex !== selectedIndex) {
         if (targetIndex < childCount) {
           this._onSelect(Math.min(childCount - 1, targetIndex));
         } else if (wrap) {
@@ -370,14 +379,14 @@ var Article = function (_Component) {
   }, {
     key: '_onPrevious',
     value: function _onPrevious(event) {
-      var activeIndex = this.state.activeIndex;
+      var selectedIndex = this.state.selectedIndex;
 
       if (event) {
         this._stop();
         event.preventDefault();
       }
       var targetIndex = this._visibleIndexes()[0] - 1;
-      if (targetIndex !== activeIndex) {
+      if (targetIndex !== selectedIndex) {
         this._onSelect(Math.max(0, targetIndex));
       }
     }
@@ -409,19 +418,22 @@ var Article = function (_Component) {
     }
   }, {
     key: '_onSelect',
-    value: function _onSelect(activeIndex) {
+    value: function _onSelect(selectedIndex) {
       var _this7 = this;
 
-      var childElement = (0, _reactDom.findDOMNode)(this.refs[activeIndex]);
+      var childElement = (0, _reactDom.findDOMNode)(this.refs[selectedIndex]);
       if (childElement) {
-        if (activeIndex !== this.state.activeIndex) {
+        if (selectedIndex !== this.state.selectedIndex) {
           // scroll child to top
           childElement.scrollTop = 0;
 
           this.setState({
-            activeIndex: activeIndex,
+            selectedIndex: selectedIndex,
             atBottom: false
           }, function () {
+            if (_this7.props.onSelect) {
+              _this7.props.onSelect(selectedIndex);
+            }
             if (_this7.props.direction === 'row') {
               _this7.refs.anchorStep.focus();
               _this7._updateHiddenElements();
@@ -507,19 +519,19 @@ var Article = function (_Component) {
         //   className={CONTROL_CLASS_PREFIX + "carousel"}
         //   count={childCount}
         //   direction={this.props.direction}
-        //   selected={this.state.activeIndex} onChange={this._onSelect} />
+        //   selected={this.state.selectedIndex} onChange={this._onSelect} />
       ];
 
       var a11yTitle = this.props.a11yTitle || {};
       if ('row' === this.props.direction) {
         if (!this.state.narrow || this.state.atBottom) {
-          if (this.state.activeIndex > 0) {
+          if (this.state.selectedIndex > 0) {
             controls.push(_react2.default.createElement(_Button2.default, { key: 'previous', ref: 'previous',
               plain: true, a11yTitle: a11yTitle.previous,
               className: CONTROL_CLASS_PREFIX + '-left',
               onClick: this._onPrevious, icon: _react2.default.createElement(_LinkPrevious2.default, { size: 'large' }) }));
           }
-          if (this.state.activeIndex < childCount - 1) {
+          if (this.state.selectedIndex < childCount - 1) {
             controls.push(_react2.default.createElement(_Button2.default, { key: 'next', ref: 'next',
               plain: true, a11yTitle: a11yTitle.next,
               className: CONTROL_CLASS_PREFIX + '-right',
@@ -527,7 +539,7 @@ var Article = function (_Component) {
           }
         }
       } else {
-        if (this.state.activeIndex > 0) {
+        if (this.state.selectedIndex > 0) {
           controls.push(_react2.default.createElement(
             _Button2.default,
             { key: 'previous', ref: 'previous',
@@ -537,7 +549,7 @@ var Article = function (_Component) {
             _react2.default.createElement(_Up2.default, null)
           ));
         }
-        if (this.state.activeIndex < childCount - 1) {
+        if (this.state.selectedIndex < childCount - 1) {
           controls.push(_react2.default.createElement(
             _Button2.default,
             { key: 'next', ref: 'next', plain: true, a11yTitle: a11yTitle.next,
@@ -575,13 +587,13 @@ var Article = function (_Component) {
           if (element) {
             var elementClone = _react2.default.cloneElement(element, {
               ref: index,
-              'aria-hidden': _this9.state.activeIndex !== index
+              'aria-hidden': _this9.state.selectedIndex !== index
             });
 
             var elementNode = elementClone;
 
             var ariaHidden = void 0;
-            if (_this9.state.activeIndex !== index) {
+            if (_this9.state.selectedIndex !== index) {
               ariaHidden = 'true';
             }
 
@@ -629,10 +641,11 @@ Article.propTypes = _extends({
   scrollStep: _react.PropTypes.bool
 }, _Box2.default.propTypes, {
   a11yTitle: _react.PropTypes.shape({
-    next: _Props2.default.string,
-    previous: _Props2.default.string
+    next: _react.PropTypes.string,
+    previous: _react.PropTypes.string
   }),
-  onFocusChange: _react.PropTypes.func
+  onSelect: _react.PropTypes.func,
+  selected: _react.PropTypes.number
 });
 
 Article.defaultProps = {
