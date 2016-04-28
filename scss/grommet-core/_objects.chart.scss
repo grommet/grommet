@@ -37,21 +37,33 @@
 .chart__values-line {
   stroke-width: 3px;
   @include graph-stroke-color();
+
+  &--active {
+    cursor: pointer;
+  }
 }
 
 .chart__values-area {
   @include graph-fill-color-translucent(0.7);
+
+  &--active {
+    cursor: pointer;
+  }
 }
 
-.chart__values-area--active {
+.chart__values-area--highlight {
   @include graph-fill-color;
 }
 
 .chart__values-bar {
   @include graph-stroke-color-translucent(0.7);
 
-  &--active {
+  &--highlight {
     @include graph-stroke-color;
+  }
+
+  &--active {
+    cursor: pointer;
   }
 }
 
@@ -94,7 +106,7 @@
   }
 }
 
-.chart__xaxis-index--active {
+.chart__xaxis-index--highlight {
   text {
     fill: $text-color;
   }

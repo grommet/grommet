@@ -112,10 +112,10 @@ var Chart = function (_Component) {
 
         var totalBandCount = _reactDom2.default.findDOMNode(this.refs.front).childNodes.length;
 
-        if (this.state.activeXIndex - 1 < 0) {
+        if (this.state.highlightXIndex - 1 < 0) {
           this._onMouseOver(totalBandCount - 1);
         } else {
-          this._onMouseOver(this.state.activeXIndex - 1);
+          this._onMouseOver(this.state.highlightXIndex - 1);
         }
 
         //stop event propagation
@@ -130,10 +130,10 @@ var Chart = function (_Component) {
 
         var totalBandCount = _reactDom2.default.findDOMNode(this.refs.front).childNodes.length;
 
-        if (this.state.activeXIndex + 1 >= totalBandCount) {
+        if (this.state.highlightXIndex + 1 >= totalBandCount) {
           this._onMouseOver(0);
         } else {
-          this._onMouseOver(this.state.activeXIndex + 1);
+          this._onMouseOver(this.state.highlightXIndex + 1);
         }
 
         //stop event propagation
@@ -143,12 +143,12 @@ var Chart = function (_Component) {
   }, {
     key: '_onMouseOver',
     value: function _onMouseOver(xIndex) {
-      this.setState({ activeXIndex: xIndex });
+      this.setState({ highlightXIndex: xIndex });
     }
   }, {
     key: '_onMouseOut',
     value: function _onMouseOut() {
-      this.setState({ activeXIndex: this.state.defaultXIndex });
+      this.setState({ highlightXIndex: this.state.defaultXIndex });
     }
   }, {
     key: '_onResize',
@@ -186,8 +186,15 @@ var Chart = function (_Component) {
 
       series.forEach(function (item) {
         item.values.forEach(function (value, xIndex) {
-          var x = value[0];
-          var y = value[1];
+          var x = void 0,
+              y = void 0;
+          if (Array.isArray(value)) {
+            x = value[0];
+            y = value[1];
+          } else {
+            x = value.x;
+            y = value.y;
+          }
 
           if (null === minX) {
             minX = x;
@@ -217,7 +224,9 @@ var Chart = function (_Component) {
         xAxis.data.forEach(function (obj, xIndex) {
           var sumY = 0;
           series.forEach(function (item) {
-            sumY += item.values[xIndex][1];
+            var value = item.values[xIndex];
+            var y = Array.isArray(value) ? value[1] : value.y;
+            sumY += y;
           });
           maxY = Math.max(maxY, sumY);
         });
@@ -306,7 +315,7 @@ var Chart = function (_Component) {
   }, {
     key: '_alignLegend',
     value: function _alignLegend() {
-      if (this.state.activeXIndex >= 0 && this.refs.cursor) {
+      if (this.state.highlightXIndex >= 0 && this.refs.cursor) {
         var bounds = this.state.bounds;
         var cursorElement = this.refs.cursor;
         var cursorRect = cursorElement.getBoundingClientRect();
@@ -365,16 +374,16 @@ var Chart = function (_Component) {
       if (props.hasOwnProperty('important')) {
         defaultXIndex = props.important;
       }
-      var activeXIndex = defaultXIndex;
-      if (this.state && this.state.activeXIndex >= 0) {
-        activeXIndex = this.state.activeXIndex;
+      var highlightXIndex = defaultXIndex;
+      if (this.state && this.state.highlightXIndex >= 0) {
+        highlightXIndex = this.state.highlightXIndex;
       }
       // normalize size
       var size = props.size || (props.small ? 'small' : props.large ? 'large' : null);
       return {
         bounds: bounds,
         defaultXIndex: defaultXIndex,
-        activeXIndex: activeXIndex,
+        highlightXIndex: highlightXIndex,
         width: width,
         height: height,
         size: size
@@ -413,8 +422,17 @@ var Chart = function (_Component) {
 
   }, {
     key: '_coordinates',
-    value: function _coordinates(point) {
-      return [this._translateX(point[0]), this._translateY(point[1])];
+    value: function _coordinates(value) {
+      var x = void 0,
+          y = void 0;
+      if (Array.isArray(value)) {
+        x = value[0];
+        y = value[1];
+      } else {
+        x = value.x;
+        y = value.y;
+      }
+      return [this._translateX(x), this._translateY(y)];
     }
 
     // Uses the provided colorIndex or provides one based on the seriesIndex.
@@ -514,9 +532,10 @@ var Chart = function (_Component) {
 
           if (_this2.props.points && !_this2.props.sparkline) {
             var x = Math.max(POINT_RADIUS + 1, Math.min(bounds.graphWidth - (POINT_RADIUS + 1), coordinate[0]));
+            var value = item.values[index];
             points.push(_react2.default.createElement('circle', { key: index,
-              className: CLASS_ROOT + "__values-point color-index-" + colorIndex,
-              cx: x, cy: coordinate[1], r: POINT_RADIUS }));
+              className: CLASS_ROOT + '__values-point color-index-' + colorIndex,
+              cx: x, cy: coordinate[1], r: POINT_RADIUS, onClick: value.onClick }));
           }
 
           previousControlCoordinates = controlCoordinates;
@@ -524,7 +543,10 @@ var Chart = function (_Component) {
 
         var linePath = void 0;
         if ('line' === _this2.props.type || _this2.props.points) {
-          var classes = [CLASS_ROOT + "__values-line", "color-index-" + colorIndex];
+          var classes = [CLASS_ROOT + '__values-line', 'color-index-' + colorIndex];
+          if (item.onClick) {
+            classes.push(CLASS_ROOT + '__values-line--active');
+          }
           linePath = _react2.default.createElement('path', { fill: 'none', className: classes.join(' '), d: commands });
         }
 
@@ -534,14 +556,17 @@ var Chart = function (_Component) {
           // and across to the bottom of where we started.
           var close = 'L' + coordinates[coordinates.length - 1][0] + ',' + bounds.graphBottom + 'L' + coordinates[0][0] + ',' + bounds.graphBottom + 'Z';
           var areaCommands = commands + close;
-          var _classes = [CLASS_ROOT + "__values-area", "color-index-" + colorIndex];
+          var _classes = [CLASS_ROOT + '__values-area', 'color-index-' + colorIndex];
+          if (item.onClick) {
+            _classes.push(CLASS_ROOT + '__values-area--active');
+          }
 
           areaPath = _react2.default.createElement('path', { stroke: 'none', className: _classes.join(' '), d: areaCommands });
         }
 
         return _react2.default.createElement(
           'g',
-          { key: 'line_group_' + seriesIndex },
+          { key: 'line_group_' + seriesIndex, onClick: item.onClick },
           areaPath,
           linePath,
           points
@@ -569,13 +594,25 @@ var Chart = function (_Component) {
 
           var colorIndex = item.colorIndex || 'graph-' + (seriesIndex + 1);
           var value = item.values[xIndex];
-          var stepBarHeight = _this3._translateHeight(value[1]);
+          var valueX = void 0,
+              valueY = void 0;
+          if (Array.isArray(value)) {
+            valueX = value[0];
+            valueY = value[1];
+          } else {
+            valueX = value.x;
+            valueY = value.y;
+          }
+          var stepBarHeight = _this3._translateHeight(valueY);
           var stepBarBase = _this3._translateHeight(baseY);
-          baseY += value[1];
+          baseY += valueY;
 
-          var classes = [CLASS_ROOT + "__values-bar", "color-index-" + colorIndex];
-          if (!_this3.props.legend || 'inline' === _this3.props.legend.position || xIndex === _this3.state.activeXIndex) {
-            classes.push(CLASS_ROOT + "__values-bar--active");
+          var classes = [CLASS_ROOT + '__values-bar', 'color-index-' + colorIndex];
+          if (!_this3.props.legend || 'inline' === _this3.props.legend.position || xIndex === _this3.state.highlightXIndex) {
+            classes.push(CLASS_ROOT + '__values-bar--highlight');
+          }
+          if (value.onClick) {
+            classes.push(CLASS_ROOT + '__values-bar--active');
           }
 
           if ('bottom' === bounds.xAxis.placement) {
@@ -583,7 +620,7 @@ var Chart = function (_Component) {
           }
 
           var width = bounds.xStepWidth - 2 * bounds.barPadding;
-          var x = _this3._translateX(value[0]) + bounds.barPadding + width / 2;
+          var x = _this3._translateX(valueX) + bounds.barPadding + width / 2;
           if (segmented) {
             stepBarBase = Math.floor(stepBarBase / BAR_SEGMENT_HEIGHT) * BAR_SEGMENT_HEIGHT;
             stepBarHeight = Math.floor(stepBarHeight / BAR_SEGMENT_HEIGHT) * BAR_SEGMENT_HEIGHT;
@@ -602,7 +639,7 @@ var Chart = function (_Component) {
           return _react2.default.createElement('line', { key: 'bar_' + item.label || seriesIndex,
             className: classes.join(' '),
             x1: x, y1: y + stepBarHeight, x2: x, y2: y,
-            strokeWidth: width });
+            strokeWidth: width, onClick: value.onClick });
         });
 
         return _react2.default.createElement(
@@ -625,14 +662,14 @@ var Chart = function (_Component) {
       var commands = 'M0,' + y + 'L' + this.state.width + ',' + y;
       return _react2.default.createElement(
         'g',
-        { className: CLASS_ROOT + "__threshold", role: 'presentation' },
+        { className: CLASS_ROOT + '__threshold', role: 'presentation' },
         _react2.default.createElement('path', { fill: 'none', d: commands })
       );
     }
   }, {
     key: '_labelPosition',
-    value: function _labelPosition(value, bounds) {
-      var x = this._translateX(value);
+    value: function _labelPosition(valueX, bounds) {
+      var x = this._translateX(valueX);
       var startX = x;
       var anchor = void 0;
       if ('line' === this.props.type || 'area' === this.props.type) {
@@ -678,9 +715,9 @@ var Chart = function (_Component) {
         labelY = Math.round(XAXIS_HEIGHT * 0.6);
       }
       var priorPosition = null;
-      var activePosition = null;
-      if (this.state.activeXIndex >= 0 && bounds.xAxis.data.length > this.state.activeXIndex) {
-        activePosition = this._labelPosition(bounds.xAxis.data[this.state.activeXIndex].value, bounds);
+      var highlightPosition = null;
+      if (this.state.highlightXIndex >= 0 && bounds.xAxis.data.length > this.state.highlightXIndex) {
+        highlightPosition = this._labelPosition(bounds.xAxis.data[this.state.highlightXIndex].value, bounds);
       }
       var lastPosition = null;
       if (bounds.xAxis.data.length > 0) {
@@ -688,16 +725,16 @@ var Chart = function (_Component) {
       }
 
       var labels = bounds.xAxis.data.map(function (obj, xIndex) {
-        var classes = [CLASS_ROOT + "__xaxis-index"];
-        if (xIndex === _this4.state.activeXIndex) {
-          classes.push(CLASS_ROOT + "__xaxis-index--active");
+        var classes = [CLASS_ROOT + '__xaxis-index'];
+        if (xIndex === _this4.state.highlightXIndex) {
+          classes.push(CLASS_ROOT + '__xaxis-index--highlight');
         }
         var position = _this4._labelPosition(obj.value, bounds);
 
         // Ensure we don't overlap labels. But, make sure we show the first and
         // last ones.
-        if (_this4._labelOverlaps(position, activePosition) || xIndex !== 0 && xIndex !== bounds.xAxis.data.length - 1 && (_this4._labelOverlaps(position, priorPosition) || _this4._labelOverlaps(position, lastPosition))) {
-          classes.push(CLASS_ROOT + "__xaxis-index--eclipse");
+        if (_this4._labelOverlaps(position, highlightPosition) || xIndex !== 0 && xIndex !== bounds.xAxis.data.length - 1 && (_this4._labelOverlaps(position, priorPosition) || _this4._labelOverlaps(position, lastPosition))) {
+          classes.push(CLASS_ROOT + '__xaxis-index--eclipse');
         } else {
           priorPosition = position;
         }
@@ -716,7 +753,7 @@ var Chart = function (_Component) {
 
       return _react2.default.createElement(
         'g',
-        { ref: 'xAxis', className: CLASS_ROOT + "__xaxis" },
+        { ref: 'xAxis', className: CLASS_ROOT + '__xaxis' },
         labels
       );
     }
@@ -734,8 +771,8 @@ var Chart = function (_Component) {
       var width = Math.max(4, YAXIS_WIDTH / 2);
 
       var bars = this.props.thresholds.map(function (item, index) {
-        var classes = [CLASS_ROOT + "__bar"];
-        classes.push("color-index-" + (item.colorIndex || 'graph-' + (index + 1)));
+        var classes = [CLASS_ROOT + '__bar'];
+        classes.push('color-index-' + (item.colorIndex || 'graph-' + (index + 1)));
         if (index < _this5.props.thresholds.length - 1) {
           end = _this5.props.thresholds[index + 1].value;
         } else {
@@ -755,15 +792,15 @@ var Chart = function (_Component) {
 
       return _react2.default.createElement(
         'g',
-        { ref: 'yAxis', className: CLASS_ROOT + "__yaxis" },
+        { ref: 'yAxis', className: CLASS_ROOT + '__yaxis' },
         bars
       );
     }
   }, {
-    key: '_activeSeriesAsString',
-    value: function _activeSeriesAsString() {
+    key: '_highlightSeriesAsString',
+    value: function _highlightSeriesAsString() {
       var total = 0;
-      var seriesText = this._getActiveSeries().map(function (currentSeries) {
+      var seriesText = this._getHighlightSeries().map(function (currentSeries) {
         total += currentSeries.value;
 
         var stringify = [currentSeries.label];
@@ -797,13 +834,13 @@ var Chart = function (_Component) {
     value: function _renderXBands(layer) {
       var _this6 = this;
 
-      var className = CLASS_ROOT + "__" + layer;
+      var className = CLASS_ROOT + '__' + layer;
       var bounds = this.state.bounds;
 
       var bands = bounds.xAxis.data.map(function (obj, xIndex) {
-        var classes = [className + "-xband"];
-        if (xIndex === _this6.state.activeXIndex) {
-          classes.push(className + "-xband--active");
+        var classes = [className + '-xband'];
+        if (xIndex === _this6.state.highlightXIndex) {
+          classes.push(className + '-xband--highlight');
         }
 
         // For bar charts, the band is left aligned with the bars.
@@ -823,7 +860,7 @@ var Chart = function (_Component) {
         var xBandId = _this6.props.a11yTitleId + '_x_band_' + xIndex;
         var xBandTitleId = _this6.props.a11yTitleId + '_x_band_title_' + xIndex;
 
-        var seriesText = _this6._activeSeriesAsString();
+        var seriesText = _this6._highlightSeriesAsString();
 
         return _react2.default.createElement(
           'g',
@@ -835,7 +872,7 @@ var Chart = function (_Component) {
             { id: xBandTitleId },
             obj.label + ' ' + seriesText
           ),
-          _react2.default.createElement('rect', { role: 'presentation', className: className + "-xband-background",
+          _react2.default.createElement('rect', { role: 'presentation', className: className + '-xband-background',
             x: x, y: 0, width: bounds.xStepWidth, height: _this6.state.height })
         );
       });
@@ -847,7 +884,7 @@ var Chart = function (_Component) {
       );
     }
 
-    // Converts the active X index to a line.
+    // Converts the highlight X index to a line.
 
   }, {
     key: '_renderCursor',
@@ -855,7 +892,7 @@ var Chart = function (_Component) {
       var _this7 = this;
 
       var bounds = this.state.bounds;
-      var value = this.props.series[0].values[this.state.activeXIndex];
+      var value = this.props.series[0].values[this.state.highlightXIndex];
       var coordinates = this._coordinates(value);
       if ('bar' === this.props.type) {
         coordinates[0] += this.state.bounds.barPadding;
@@ -869,11 +906,11 @@ var Chart = function (_Component) {
         // for area and line charts, include a dot at the intersection
         if ('line' === this.props.type || 'area' === this.props.type) {
           points = this.props.series.map(function (item, seriesIndex) {
-            value = item.values[_this7.state.activeXIndex];
+            value = item.values[_this7.state.highlightXIndex];
             coordinates = _this7._coordinates(value);
             var colorIndex = _this7._itemColorIndex(item, seriesIndex);
             return _react2.default.createElement('circle', { key: seriesIndex,
-              className: CLASS_ROOT + "__cursor-point color-index-" + colorIndex,
+              className: CLASS_ROOT + '__cursor-point color-index-' + colorIndex,
               cx: x, cy: coordinates[1], r: Math.round(POINT_RADIUS * 1.2) });
           });
         }
@@ -881,19 +918,19 @@ var Chart = function (_Component) {
 
       return _react2.default.createElement(
         'g',
-        { ref: 'cursor', role: 'presentation', className: CLASS_ROOT + "__cursor" },
+        { ref: 'cursor', role: 'presentation', className: CLASS_ROOT + '__cursor' },
         line,
         points
       );
     }
   }, {
-    key: '_getActiveSeries',
-    value: function _getActiveSeries(addColorIndex) {
+    key: '_getHighlightSeries',
+    value: function _getHighlightSeries(addColorIndex) {
       var _this8 = this;
 
       return this.props.series.map(function (item) {
         var datum = {
-          value: item.values[_this8.state.activeXIndex][1],
+          value: item.values[_this8.state.highlightXIndex][1],
           units: item.units || _this8.props.units
         };
         // only show label and swatch if we have more than one series
@@ -907,16 +944,16 @@ var Chart = function (_Component) {
       });
     }
 
-    // Builds a Legend appropriate for the currently active X index.
+    // Builds a Legend appropriate for the currently highlight X index.
 
   }, {
     key: '_renderLegend',
     value: function _renderLegend() {
-      var activeSeries = this._getActiveSeries(true);
-      var classes = [CLASS_ROOT + "__legend", CLASS_ROOT + "__legend--" + (this.props.legend.position || 'overlay')];
+      var highlightSeries = this._getHighlightSeries(true);
+      var classes = [CLASS_ROOT + '__legend', CLASS_ROOT + '__legend--' + (this.props.legend.position || 'overlay')];
 
       return _react2.default.createElement(_Legend2.default, { ref: 'legend', className: classes.join(' '),
-        series: activeSeries,
+        series: highlightSeries,
         total: this.props.legend.total,
         units: this.props.units });
     }
@@ -936,15 +973,15 @@ var Chart = function (_Component) {
     key: 'render',
     value: function render() {
       var classes = [CLASS_ROOT];
-      classes.push(CLASS_ROOT + "--" + this.props.type);
+      classes.push(CLASS_ROOT + '--' + this.props.type);
       if (this.state.size) {
-        classes.push(CLASS_ROOT + "--" + this.state.size);
+        classes.push(CLASS_ROOT + '--' + this.state.size);
       }
       if (this.props.segmented) {
-        classes.push(CLASS_ROOT + "--segmented");
+        classes.push(CLASS_ROOT + '--segmented');
       }
       if (this.props.sparkline) {
-        classes.push(CLASS_ROOT + "--sparkline");
+        classes.push(CLASS_ROOT + '--sparkline');
       }
 
       var values = [];
@@ -955,9 +992,9 @@ var Chart = function (_Component) {
       }
 
       if (values.length === 0) {
-        classes.push(CLASS_ROOT + "--loading");
-        var valueClasses = [CLASS_ROOT + "__values"];
-        valueClasses.push(CLASS_ROOT + "__values--loading");
+        classes.push(CLASS_ROOT + '--loading');
+        var valueClasses = [CLASS_ROOT + '__values'];
+        valueClasses.push(CLASS_ROOT + '__values--loading');
         valueClasses.push("color-index-loading");
         var commands = "M0," + this.state.height / 2 + " L" + this.state.width + "," + this.state.height / 2;
         values.push(_react2.default.createElement(
@@ -974,7 +1011,7 @@ var Chart = function (_Component) {
 
       var cursor = null;
       var legend = null;
-      if (this.props.legend && 'inline' !== this.props.legend.position && this.state.activeXIndex >= 0 && this.props.series[0].values.length > 0) {
+      if (this.props.legend && 'inline' !== this.props.legend.position && this.state.highlightXIndex >= 0 && this.props.series[0].values.length > 0) {
         cursor = this._renderCursor();
         legend = this._renderLegend();
       }
@@ -994,7 +1031,7 @@ var Chart = function (_Component) {
       var role = 'img';
       if (this.props.legend) {
         frontBands = this._renderXBands('front');
-        activeDescendant = this.props.a11yTitleId + '_x_band_' + this.state.activeXIndex;
+        activeDescendant = this.props.a11yTitleId + '_x_band_' + this.state.highlightXIndex;
         role = 'tablist';
       }
 
@@ -1022,7 +1059,7 @@ var Chart = function (_Component) {
         { className: classes.join(' ') },
         _react2.default.createElement(
           'svg',
-          { ref: 'chart', className: CLASS_ROOT + "__graphic",
+          { ref: 'chart', className: CLASS_ROOT + '__graphic',
             viewBox: "0 0 " + this.state.width + " " + this.state.height,
             preserveAspectRatio: 'none', role: role, tabIndex: '0',
             'aria-activedescendant': activeDescendant,
@@ -1033,7 +1070,7 @@ var Chart = function (_Component) {
           yAxis,
           _react2.default.createElement(
             'g',
-            { className: CLASS_ROOT + "__values" },
+            { className: CLASS_ROOT + '__values' },
             values
           ),
           frontBands,
@@ -1066,11 +1103,17 @@ Chart.propTypes = {
   points: _react.PropTypes.bool,
   segmented: _react.PropTypes.bool,
   series: _react.PropTypes.arrayOf(_react.PropTypes.shape({
+    colorIndex: _react.PropTypes.string,
+    onClick: _react.PropTypes.func,
     label: _react.PropTypes.string,
-    values: _react.PropTypes.arrayOf(_react.PropTypes.arrayOf(_react.PropTypes.oneOfType([_react.PropTypes.number, _react.PropTypes.object // Date
-    ]))).isRequired,
     units: _react.PropTypes.string,
-    colorIndex: _react.PropTypes.string
+    values: _react.PropTypes.arrayOf(_react.PropTypes.oneOfType([_react.PropTypes.arrayOf(_react.PropTypes.oneOfType([_react.PropTypes.number, _react.PropTypes.object // Date
+    ])), _react.PropTypes.shape({
+      onClick: _react.PropTypes.func,
+      x: _react.PropTypes.oneOfType([_react.PropTypes.number, _react.PropTypes.object // Date
+      ]).isRequired,
+      y: _react.PropTypes.number.isRequired
+    })])).isRequired
   })).isRequired,
   size: _react.PropTypes.oneOf(['small', 'medium', 'large']),
   smooth: _react.PropTypes.bool,
