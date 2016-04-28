@@ -39,7 +39,7 @@ export default class Article extends Component {
     this._updateHiddenElements = this._updateHiddenElements.bind(this);
 
     this.state = {
-      activeIndex: 0,
+      selectedIndex: props.selected || 0,
       playing: false,
       showControls: this.props.controls
     };
@@ -70,6 +70,14 @@ export default class Article extends Component {
         this._responsive = Responsive.start(this._onResponsive);
       }
     }
+
+    this._onSelect(this.state.selectedIndex);
+  }
+
+  componentWillReceiveProps (props) {
+    if (props.selected) {
+      this._onSelect(props.selected);
+    }
   }
 
   componentWillUnmount () {
@@ -86,30 +94,30 @@ export default class Article extends Component {
   _checkPreviousNextControls (currentScroll, nextProp, prevProp) {
     if (currentScroll > 0) {
       const nextStepNode = findDOMNode(
-        this.refs[this.state.activeIndex + 1]
+        this.refs[this.state.selectedIndex + 1]
       );
 
       const previousStepNode = findDOMNode(
-        this.refs[this.state.activeIndex - 1]
+        this.refs[this.state.selectedIndex - 1]
       );
 
       if (nextStepNode) {
         const nextStepPosition = (
           nextStepNode.getBoundingClientRect()[nextProp]
-        ) * (this.state.activeIndex + 1);
+        ) * (this.state.selectedIndex + 1);
 
         if (currentScroll > nextStepPosition) {
-          this.setState({activeIndex: this.state.activeIndex + 1});
+          this.setState({selectedIndex: this.state.selectedIndex + 1});
         }
       }
 
       if (previousStepNode) {
         const previousStepPosition = (
           previousStepNode.getBoundingClientRect()[prevProp]
-        ) * this.state.activeIndex;
+        ) * this.state.selectedIndex;
 
         if (currentScroll < previousStepPosition) {
-          this.setState({activeIndex: this.state.activeIndex - 1});
+          this.setState({selectedIndex: this.state.selectedIndex - 1});
         }
       }
     }
@@ -205,8 +213,8 @@ export default class Article extends Component {
         // scrolling Article
         if (this._scrollingVertically) {
           // prevent Article horizontal scrolling while scrolling vertically
-          const { activeIndex } = this.state;
-          const childElement = findDOMNode(this.refs[activeIndex]);
+          const { selectedIndex } = this.state;
+          const childElement = findDOMNode(this.refs[selectedIndex]);
           const rect = childElement.getBoundingClientRect();
           this._scrollParent.scrollLeft += rect.left;
         } else {
@@ -267,21 +275,21 @@ export default class Article extends Component {
   _onResize () {
     clearTimeout(this._resizeTimer);
     this._resizeTimer = setTimeout(() => {
-      this._onSelect(this.state.activeIndex);
+      this._onSelect(this.state.selectedIndex);
       this._shortTimer('_resizing', 1000);
     }, 50);
   }
 
   _onNext (event, wrap) {
     const { children } = this.props;
-    const { activeIndex } = this.state;
+    const { selectedIndex } = this.state;
     const childCount = React.Children.count(children);
     if (event) {
       this._stop();
       event.preventDefault();
     }
     const targetIndex = this._visibleIndexes()[0] + 1;
-    if (targetIndex !== activeIndex) {
+    if (targetIndex !== selectedIndex) {
       if (targetIndex < childCount) {
         this._onSelect(Math.min(childCount - 1, targetIndex));
       } else if (wrap) {
@@ -291,13 +299,13 @@ export default class Article extends Component {
   }
 
   _onPrevious (event) {
-    const { activeIndex } = this.state;
+    const { selectedIndex } = this.state;
     if (event) {
       this._stop();
       event.preventDefault();
     }
     const targetIndex = this._visibleIndexes()[0] - 1;
-    if (targetIndex !== activeIndex) {
+    if (targetIndex !== selectedIndex) {
       this._onSelect(Math.max(0, targetIndex));
     }
   }
@@ -323,17 +331,20 @@ export default class Article extends Component {
     }
   }
 
-  _onSelect (activeIndex) {
-    const childElement = findDOMNode(this.refs[activeIndex]);
+  _onSelect (selectedIndex) {
+    const childElement = findDOMNode(this.refs[selectedIndex]);
     if (childElement) {
-      if (activeIndex !== this.state.activeIndex) {
+      if (selectedIndex !== this.state.selectedIndex) {
         // scroll child to top
         childElement.scrollTop = 0;
 
         this.setState({
-          activeIndex: activeIndex,
+          selectedIndex: selectedIndex,
           atBottom: false
         }, () => {
+          if (this.props.onSelect) {
+            this.props.onSelect(selectedIndex);
+          }
           if (this.props.direction === 'row') {
             this.refs.anchorStep.focus();
             this._updateHiddenElements();
@@ -415,13 +426,13 @@ export default class Article extends Component {
       //   className={CONTROL_CLASS_PREFIX + "carousel"}
       //   count={childCount}
       //   direction={this.props.direction}
-      //   selected={this.state.activeIndex} onChange={this._onSelect} />
+      //   selected={this.state.selectedIndex} onChange={this._onSelect} />
     ];
 
     const a11yTitle = this.props.a11yTitle || {};
     if ('row' === this.props.direction) {
       if (! this.state.narrow || this.state.atBottom) {
-        if (this.state.activeIndex > 0) {
+        if (this.state.selectedIndex > 0) {
           controls.push(
             <Button key="previous" ref='previous'
               plain={true} a11yTitle={a11yTitle.previous}
@@ -429,7 +440,7 @@ export default class Article extends Component {
               onClick={this._onPrevious} icon={<PreviousIcon size="large" />} />
           );
         }
-        if (this.state.activeIndex < (childCount - 1)) {
+        if (this.state.selectedIndex < (childCount - 1)) {
           controls.push(
             <Button key="next" ref='next'
               plain={true} a11yTitle={a11yTitle.next}
@@ -439,7 +450,7 @@ export default class Article extends Component {
         }
       }
     } else {
-      if (this.state.activeIndex > 0) {
+      if (this.state.selectedIndex > 0) {
         controls.push(
           <Button key="previous" ref='previous'
             plain={true} a11yTitle={a11yTitle.previous}
@@ -447,7 +458,7 @@ export default class Article extends Component {
             onClick={this._onPrevious}><UpIcon /></Button>
         );
       }
-      if (this.state.activeIndex < (childCount - 1)) {
+      if (this.state.selectedIndex < (childCount - 1)) {
         controls.push(
           <Button key="next" ref='next' plain={true} a11yTitle={a11yTitle.next}
             className={`${CONTROL_CLASS_PREFIX}-down`}
@@ -480,13 +491,13 @@ export default class Article extends Component {
         if (element) {
           const elementClone = React.cloneElement(element, {
             ref: index,
-            'aria-hidden': this.state.activeIndex !== index
+            'aria-hidden': this.state.selectedIndex !== index
           });
 
           let elementNode = elementClone;
 
           let ariaHidden;
-          if (this.state.activeIndex !== index) {
+          if (this.state.selectedIndex !== index) {
             ariaHidden = 'true';
           }
 
@@ -528,10 +539,11 @@ Article.propTypes = {
   scrollStep: PropTypes.bool,
   ...Box.propTypes,
   a11yTitle: PropTypes.shape({
-    next: Props.string,
-    previous: Props.string
+    next: PropTypes.string,
+    previous: PropTypes.string
   }),
-  onFocusChange: PropTypes.func
+  onSelect: PropTypes.func,
+  selected: PropTypes.number
 };
 
 Article.defaultProps = {
