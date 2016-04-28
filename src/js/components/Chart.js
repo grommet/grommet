@@ -81,10 +81,10 @@ export default class Chart extends Component {
         ReactDOM.findDOMNode(this.refs.front).childNodes.length
       );
 
-      if (this.state.activeXIndex - 1 < 0) {
+      if (this.state.highlightXIndex - 1 < 0) {
         this._onMouseOver(totalBandCount - 1);
       } else {
-        this._onMouseOver(this.state.activeXIndex - 1);
+        this._onMouseOver(this.state.highlightXIndex - 1);
       }
 
       //stop event propagation
@@ -100,10 +100,10 @@ export default class Chart extends Component {
         ReactDOM.findDOMNode(this.refs.front).childNodes.length
       );
 
-      if (this.state.activeXIndex + 1 >= totalBandCount) {
+      if (this.state.highlightXIndex + 1 >= totalBandCount) {
         this._onMouseOver(0);
       } else {
-        this._onMouseOver(this.state.activeXIndex + 1);
+        this._onMouseOver(this.state.highlightXIndex + 1);
       }
 
       //stop event propagation
@@ -112,11 +112,11 @@ export default class Chart extends Component {
   }
 
   _onMouseOver (xIndex) {
-    this.setState({activeXIndex: xIndex});
+    this.setState({highlightXIndex: xIndex});
   }
 
   _onMouseOut () {
-    this.setState({activeXIndex: this.state.defaultXIndex});
+    this.setState({highlightXIndex: this.state.defaultXIndex});
   }
 
   _onResize () {
@@ -150,8 +150,14 @@ export default class Chart extends Component {
 
     series.forEach((item) => {
       item.values.forEach((value, xIndex) => {
-        let x = value[0];
-        let y = value[1];
+        let x, y;
+        if (Array.isArray(value)) {
+          x = value[0];
+          y = value[1];
+        } else {
+          x = value.x;
+          y = value.y;
+        }
 
         if (null === minX) {
           minX = x;
@@ -181,7 +187,9 @@ export default class Chart extends Component {
       xAxis.data.forEach((obj, xIndex) => {
         let sumY = 0;
         series.forEach((item) => {
-          sumY += item.values[xIndex][1];
+          const value = item.values[xIndex];
+          const y = (Array.isArray(value) ? value[1] : value.y);
+          sumY += y;
         });
         maxY = Math.max(maxY, sumY);
       });
@@ -268,7 +276,7 @@ export default class Chart extends Component {
 
   // Aligns the legend with the current position of the cursor, if any.
   _alignLegend () {
-    if (this.state.activeXIndex >= 0 && this.refs.cursor) {
+    if (this.state.highlightXIndex >= 0 && this.refs.cursor) {
       let bounds = this.state.bounds;
       let cursorElement = this.refs.cursor;
       let cursorRect = cursorElement.getBoundingClientRect();
@@ -322,9 +330,9 @@ export default class Chart extends Component {
     if (props.hasOwnProperty('important')) {
       defaultXIndex = props.important;
     }
-    let activeXIndex = defaultXIndex;
-    if (this.state && this.state.activeXIndex >= 0) {
-      activeXIndex = this.state.activeXIndex;
+    let highlightXIndex = defaultXIndex;
+    if (this.state && this.state.highlightXIndex >= 0) {
+      highlightXIndex = this.state.highlightXIndex;
     }
     // normalize size
     let size = props.size ||
@@ -333,7 +341,7 @@ export default class Chart extends Component {
     return {
       bounds: bounds,
       defaultXIndex: defaultXIndex,
-      activeXIndex: activeXIndex,
+      highlightXIndex: highlightXIndex,
       width: width,
       height: height,
       size: size
@@ -362,8 +370,16 @@ export default class Chart extends Component {
   }
 
   // Translates X and Y values to X and Y coordinates.
-  _coordinates (point) {
-    return [this._translateX(point[0]), this._translateY(point[1])];
+  _coordinates (value) {
+    let x, y;
+    if (Array.isArray(value)) {
+      x = value[0];
+      y = value[1];
+    } else {
+      x = value.x;
+      y = value.y;
+    }
+    return [this._translateX(x), this._translateY(y)];
   }
 
   // Uses the provided colorIndex or provides one based on the seriesIndex.
@@ -456,21 +472,24 @@ export default class Chart extends Component {
         if (this.props.points && ! this.props.sparkline) {
           let x = Math.max(POINT_RADIUS + 1,
             Math.min(bounds.graphWidth - (POINT_RADIUS + 1), coordinate[0]));
+          const value = item.values[index];
           points.push(
             <circle key={index}
-              className={CLASS_ROOT + "__values-point color-index-" + colorIndex}
-              cx={x} cy={coordinate[1]} r={POINT_RADIUS} />
+              className={`${CLASS_ROOT}__values-point color-index-${colorIndex}`}
+              cx={x} cy={coordinate[1]} r={POINT_RADIUS} onClick={value.onClick} />
           );
         }
 
         previousControlCoordinates = controlCoordinates;
       });
 
-
       let linePath;
       if ('line' === this.props.type || this.props.points) {
-        let classes = [CLASS_ROOT + "__values-line",
-          "color-index-" + colorIndex];
+        let classes = [`${CLASS_ROOT}__values-line`,
+          `color-index-${colorIndex}`];
+        if (item.onClick) {
+          classes.push(`${CLASS_ROOT}__values-line--active`);
+        }
         linePath = (
           <path fill="none" className={classes.join(' ')} d={commands} />
         );
@@ -484,8 +503,11 @@ export default class Chart extends Component {
           ',' + bounds.graphBottom +
           'L' + coordinates[0][0] + ',' + bounds.graphBottom + 'Z';
         let areaCommands = commands + close;
-        let classes = [CLASS_ROOT + "__values-area",
-          "color-index-" + colorIndex];
+        let classes = [`${CLASS_ROOT}__values-area`,
+          `color-index-${colorIndex}`];
+        if (item.onClick) {
+          classes.push(`${CLASS_ROOT}__values-area--active`);
+        }
 
         areaPath = (
           <path stroke="none" className={classes.join(' ')} d={areaCommands} />
@@ -493,7 +515,7 @@ export default class Chart extends Component {
       }
 
       return (
-        <g key={'line_group_' + seriesIndex}>
+        <g key={`line_group_${seriesIndex}`} onClick={item.onClick}>
           {areaPath}
           {linePath}
           {points}
@@ -514,17 +536,28 @@ export default class Chart extends Component {
       let legend = [];
       let stepBars = this.props.series.map((item, seriesIndex) => {
 
-        let colorIndex = item.colorIndex || ('graph-' + (seriesIndex + 1));
-        let value = item.values[xIndex];
-        let stepBarHeight = this._translateHeight(value[1]);
+        const colorIndex = item.colorIndex || `graph-${(seriesIndex + 1)}`;
+        const value = item.values[xIndex];
+        let valueX, valueY;
+        if (Array.isArray(value)) {
+          valueX = value[0];
+          valueY = value[1];
+        } else {
+          valueX = value.x;
+          valueY = value.y;
+        }
+        let stepBarHeight = this._translateHeight(valueY);
         let stepBarBase = this._translateHeight(baseY);
-        baseY += value[1];
+        baseY += valueY;
 
-        let classes = [CLASS_ROOT + "__values-bar", "color-index-" + colorIndex];
+        let classes = [`${CLASS_ROOT}__values-bar`, `color-index-${colorIndex}`];
         if (! this.props.legend ||
           'inline' === this.props.legend.position ||
-          xIndex === this.state.activeXIndex) {
-          classes.push(CLASS_ROOT + "__values-bar--active");
+          xIndex === this.state.highlightXIndex) {
+          classes.push(`${CLASS_ROOT}__values-bar--highlight`);
+        }
+        if (value.onClick) {
+          classes.push(`${CLASS_ROOT}__values-bar--active`);
         }
 
         if ('bottom' === bounds.xAxis.placement) {
@@ -532,7 +565,7 @@ export default class Chart extends Component {
         }
 
         const width = bounds.xStepWidth - (2 * bounds.barPadding);
-        const x = (this._translateX(value[0]) + bounds.barPadding) +
+        const x = (this._translateX(valueX) + bounds.barPadding) +
           (width / 2);
         if (segmented) {
           stepBarBase =
@@ -555,7 +588,7 @@ export default class Chart extends Component {
           <line key={'bar_' + item.label || seriesIndex}
             className={classes.join(' ')}
             x1={x} y1={y + stepBarHeight} x2={x} y2={y}
-            strokeWidth={width} />
+            strokeWidth={width} onClick={value.onClick} />
         );
       });
 
@@ -575,14 +608,14 @@ export default class Chart extends Component {
     let y = this._translateY(this.props.threshold);
     let commands = 'M0,' + y + 'L' + this.state.width + ',' + y;
     return (
-      <g className={CLASS_ROOT + "__threshold"} role="presentation">
+      <g className={`${CLASS_ROOT}__threshold`} role="presentation">
         <path fill="none" d={commands} />
       </g>
     );
   }
 
-  _labelPosition (value, bounds) {
-    let x = this._translateX(value);
+  _labelPosition (valueX, bounds) {
+    let x = this._translateX(valueX);
     let startX = x;
     let anchor;
     if ('line' === this.props.type || 'area' === this.props.type) {
@@ -622,11 +655,11 @@ export default class Chart extends Component {
       labelY = Math.round(XAXIS_HEIGHT * 0.6);
     }
     let priorPosition = null;
-    let activePosition = null;
-    if (this.state.activeXIndex >= 0 &&
-      bounds.xAxis.data.length > this.state.activeXIndex) {
-      activePosition =
-        this._labelPosition(bounds.xAxis.data[this.state.activeXIndex].value, bounds);
+    let highlightPosition = null;
+    if (this.state.highlightXIndex >= 0 &&
+      bounds.xAxis.data.length > this.state.highlightXIndex) {
+      highlightPosition =
+        this._labelPosition(bounds.xAxis.data[this.state.highlightXIndex].value, bounds);
     }
     let lastPosition = null;
     if (bounds.xAxis.data.length > 0) {
@@ -635,19 +668,19 @@ export default class Chart extends Component {
     }
 
     let labels = bounds.xAxis.data.map((obj, xIndex) => {
-      let classes = [CLASS_ROOT + "__xaxis-index"];
-      if (xIndex === this.state.activeXIndex) {
-        classes.push(CLASS_ROOT + "__xaxis-index--active");
+      let classes = [`${CLASS_ROOT}__xaxis-index`];
+      if (xIndex === this.state.highlightXIndex) {
+        classes.push(`${CLASS_ROOT}__xaxis-index--highlight`);
       }
       let position = this._labelPosition(obj.value, bounds);
 
       // Ensure we don't overlap labels. But, make sure we show the first and
       // last ones.
-      if (this._labelOverlaps(position, activePosition) ||
+      if (this._labelOverlaps(position, highlightPosition) ||
         (xIndex !== 0 && xIndex !== (bounds.xAxis.data.length - 1) &&
           (this._labelOverlaps(position, priorPosition) ||
           this._labelOverlaps(position, lastPosition)))) {
-        classes.push(CLASS_ROOT + "__xaxis-index--eclipse");
+        classes.push(`${CLASS_ROOT}__xaxis-index--eclipse`);
       } else {
         priorPosition = position;
       }
@@ -663,7 +696,7 @@ export default class Chart extends Component {
     });
 
     return (
-      <g ref="xAxis" className={CLASS_ROOT + "__xaxis"}>
+      <g ref="xAxis" className={`${CLASS_ROOT}__xaxis`}>
         {labels}
       </g>
     );
@@ -677,8 +710,8 @@ export default class Chart extends Component {
     let width = Math.max(4, YAXIS_WIDTH / 2);
 
     let bars = this.props.thresholds.map((item, index) => {
-      let classes = [CLASS_ROOT + "__bar"];
-      classes.push("color-index-" + (item.colorIndex || ('graph-' + (index + 1))));
+      let classes = [`${CLASS_ROOT}__bar`];
+      classes.push(`color-index-${(item.colorIndex || ('graph-' + (index + 1)))}`);
       if (index < (this.props.thresholds.length - 1)) {
         end = this.props.thresholds[index + 1].value;
       } else {
@@ -699,15 +732,15 @@ export default class Chart extends Component {
     });
 
     return (
-      <g ref="yAxis" className={CLASS_ROOT + "__yaxis"}>
+      <g ref="yAxis" className={`${CLASS_ROOT}__yaxis`}>
         {bars}
       </g>
     );
   }
 
-  _activeSeriesAsString () {
+  _highlightSeriesAsString () {
     let total = 0;
-    let seriesText = this._getActiveSeries().map((currentSeries) => {
+    let seriesText = this._getHighlightSeries().map((currentSeries) => {
       total += currentSeries.value;
 
       let stringify = [
@@ -738,13 +771,13 @@ export default class Chart extends Component {
   // Create vertical rects for each X data point.
   // These are used to track the mouse hover.
   _renderXBands (layer) {
-    let className = CLASS_ROOT + "__" + layer;
+    let className = `${CLASS_ROOT}__${layer}`;
     let bounds = this.state.bounds;
 
     let bands = bounds.xAxis.data.map((obj, xIndex) => {
-      let classes = [className + "-xband"];
-      if (xIndex === this.state.activeXIndex) {
-        classes.push(className + "-xband--active");
+      let classes = [`${className}-xband`];
+      if (xIndex === this.state.highlightXIndex) {
+        classes.push(`${className}-xband--highlight`);
       }
 
       // For bar charts, the band is left aligned with the bars.
@@ -761,19 +794,19 @@ export default class Chart extends Component {
         onMouseOut = this._onMouseOut.bind(this, xIndex);
       }
 
-      let xBandId = this.props.a11yTitleId + '_x_band_' + xIndex;
-      let xBandTitleId = this.props.a11yTitleId + '_x_band_title_' + xIndex;
+      let xBandId = `${this.props.a11yTitleId}_x_band_${xIndex}`;
+      let xBandTitleId = `${this.props.a11yTitleId}_x_band_title_${xIndex}`;
 
-      let seriesText = this._activeSeriesAsString();
+      let seriesText = this._highlightSeriesAsString();
 
       return (
         <g key={xBandId} id={xBandId} className={classes.join(' ')}
           onMouseOver={onMouseOver} onMouseOut={onMouseOut} role="tab"
           aria-labelledby={xBandTitleId}>
           <title id={xBandTitleId}>
-            {obj.label + ' ' + seriesText}
+            {`${obj.label} ${seriesText}`}
           </title>
-          <rect role="presentation" className={className + "-xband-background"}
+          <rect role="presentation" className={`${className}-xband-background`}
             x={x} y={0} width={bounds.xStepWidth} height={this.state.height} />
         </g>
       );
@@ -786,10 +819,10 @@ export default class Chart extends Component {
     );
   }
 
-  // Converts the active X index to a line.
+  // Converts the highlight X index to a line.
   _renderCursor () {
     let bounds = this.state.bounds;
-    let value = this.props.series[0].values[this.state.activeXIndex];
+    let value = this.props.series[0].values[this.state.highlightXIndex];
     let coordinates = this._coordinates(value);
     if ('bar' === this.props.type) {
       coordinates[0] += this.state.bounds.barPadding;
@@ -805,12 +838,12 @@ export default class Chart extends Component {
       // for area and line charts, include a dot at the intersection
       if ('line' === this.props.type || 'area' === this.props.type) {
         points = this.props.series.map((item, seriesIndex) => {
-          value = item.values[this.state.activeXIndex];
+          value = item.values[this.state.highlightXIndex];
           coordinates = this._coordinates(value);
           let colorIndex = this._itemColorIndex(item, seriesIndex);
           return (
             <circle key={seriesIndex}
-              className={CLASS_ROOT + "__cursor-point color-index-" + colorIndex}
+              className={`${CLASS_ROOT}__cursor-point color-index-${colorIndex}`}
               cx={x} cy={coordinates[1]} r={Math.round(POINT_RADIUS * 1.2)} />
           );
         });
@@ -818,17 +851,17 @@ export default class Chart extends Component {
     }
 
     return (
-      <g ref="cursor" role="presentation" className={CLASS_ROOT + "__cursor"}>
+      <g ref="cursor" role="presentation" className={`${CLASS_ROOT}__cursor`}>
         {line}
         {points}
       </g>
     );
   }
 
-  _getActiveSeries (addColorIndex) {
+  _getHighlightSeries (addColorIndex) {
     return this.props.series.map((item) => {
       let datum = {
-        value: item.values[this.state.activeXIndex][1],
+        value: item.values[this.state.highlightXIndex][1],
         units: item.units || this.props.units
       };
       // only show label and swatch if we have more than one series
@@ -842,17 +875,17 @@ export default class Chart extends Component {
     });
   }
 
-  // Builds a Legend appropriate for the currently active X index.
+  // Builds a Legend appropriate for the currently highlight X index.
   _renderLegend () {
-    let activeSeries = this._getActiveSeries(true);
+    let highlightSeries = this._getHighlightSeries(true);
     let classes = [
-      CLASS_ROOT + "__legend",
-      CLASS_ROOT + "__legend--" + (this.props.legend.position || 'overlay')
+      `${CLASS_ROOT}__legend`,
+      `${CLASS_ROOT}__legend--${(this.props.legend.position || 'overlay')}`
     ];
 
     return (
       <Legend ref="legend" className={classes.join(' ')}
-        series={activeSeries}
+        series={highlightSeries}
         total={this.props.legend.total}
         units={this.props.units} />
     );
@@ -871,15 +904,15 @@ export default class Chart extends Component {
 
   render () {
     let classes = [CLASS_ROOT];
-    classes.push(CLASS_ROOT + "--" + this.props.type);
+    classes.push(`${CLASS_ROOT}--${this.props.type}`);
     if (this.state.size) {
-      classes.push(CLASS_ROOT + "--" + this.state.size);
+      classes.push(`${CLASS_ROOT}--${this.state.size}`);
     }
     if (this.props.segmented) {
-      classes.push(CLASS_ROOT + "--segmented");
+      classes.push(`${CLASS_ROOT}--segmented`);
     }
     if (this.props.sparkline) {
-      classes.push(CLASS_ROOT + "--sparkline");
+      classes.push(`${CLASS_ROOT}--sparkline`);
     }
 
     let values = [];
@@ -890,9 +923,9 @@ export default class Chart extends Component {
     }
 
     if (values.length === 0) {
-      classes.push(CLASS_ROOT + "--loading");
-      let valueClasses = [CLASS_ROOT + "__values"];
-      valueClasses.push(CLASS_ROOT + "__values--loading");
+      classes.push(`${CLASS_ROOT}--loading`);
+      let valueClasses = [`${CLASS_ROOT}__values`];
+      valueClasses.push(`${CLASS_ROOT}__values--loading`);
       valueClasses.push("color-index-loading");
       let commands = "M0," + (this.state.height / 2) +
         " L" + this.state.width + "," + (this.state.height / 2);
@@ -911,7 +944,7 @@ export default class Chart extends Component {
     let cursor = null;
     let legend = null;
     if (this.props.legend && 'inline' !== this.props.legend.position &&
-      this.state.activeXIndex >= 0 &&
+      this.state.highlightXIndex >= 0 &&
       this.props.series[0].values.length > 0) {
       cursor = this._renderCursor();
       legend = this._renderLegend();
@@ -933,7 +966,7 @@ export default class Chart extends Component {
     if (this.props.legend) {
       frontBands = this._renderXBands('front');
       activeDescendant = (
-        this.props.a11yTitleId + '_x_band_' + this.state.activeXIndex
+        `${this.props.a11yTitleId}_x_band_${this.state.highlightXIndex}`
       );
       role = 'tablist';
     }
@@ -957,7 +990,7 @@ export default class Chart extends Component {
 
     return (
       <div className={classes.join(' ')}>
-        <svg ref="chart" className={CLASS_ROOT + "__graphic"}
+        <svg ref="chart" className={`${CLASS_ROOT}__graphic`}
           viewBox={"0 0 " + this.state.width + " " + this.state.height}
           preserveAspectRatio="none" role={role} tabIndex="0"
           aria-activedescendant={activeDescendant}
@@ -966,7 +999,7 @@ export default class Chart extends Component {
           {a11yDescNode}
           {xAxis}
           {yAxis}
-          <g className={CLASS_ROOT + "__values"}>{values}</g>
+          <g className={`${CLASS_ROOT}__values`}>{values}</g>
           {frontBands}
           {threshold}
           {cursor}
@@ -994,17 +1027,28 @@ Chart.propTypes = {
   segmented: PropTypes.bool,
   series: PropTypes.arrayOf(
     PropTypes.shape({
+      colorIndex: PropTypes.string,
+      onClick: PropTypes.func,
       label: PropTypes.string,
-      values: PropTypes.arrayOf(
-        PropTypes.arrayOf(
-          PropTypes.oneOfType([
-            PropTypes.number,
-            PropTypes.object // Date
-          ])
-        )
-      ).isRequired,
       units: PropTypes.string,
-      colorIndex: PropTypes.string
+      values: PropTypes.arrayOf(
+        PropTypes.oneOfType([
+          PropTypes.arrayOf(
+            PropTypes.oneOfType([
+              PropTypes.number,
+              PropTypes.object // Date
+            ])
+          ),
+          PropTypes.shape({
+            onClick: PropTypes.func,
+            x: PropTypes.oneOfType([
+              PropTypes.number,
+              PropTypes.object // Date
+            ]).isRequired,
+            y: PropTypes.number.isRequired
+          })
+        ])
+      ).isRequired
     })
   ).isRequired,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
