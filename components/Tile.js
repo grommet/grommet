@@ -57,6 +57,9 @@ var Tile = function (_Component) {
       var wide = _props.wide;
       var status = _props.status;
       var selected = _props.selected;
+      var hoverStyle = _props.hoverStyle;
+      var hoverColorIndex = _props.hoverColorIndex;
+      var hoverBorder = _props.hoverBorder;
 
 
       if (selected) {
@@ -65,7 +68,7 @@ var Tile = function (_Component) {
 
       var statusClass = status ? status.toLowerCase() : undefined;
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, className, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--status-' + statusClass, status), _defineProperty(_classnames, CLASS_ROOT + '--wide', wide), _defineProperty(_classnames, CLASS_ROOT + '--selectable', onClick), _defineProperty(_classnames, CLASS_ROOT + '--selected', selected), _classnames));
+      var classes = (0, _classnames3.default)(CLASS_ROOT, className, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--status-' + statusClass, status), _defineProperty(_classnames, CLASS_ROOT + '--wide', wide), _defineProperty(_classnames, CLASS_ROOT + '--selectable', onClick), _defineProperty(_classnames, CLASS_ROOT + '--selected', selected), _defineProperty(_classnames, '' + hoverStyle + (hoverStyle == 'border' ? hoverBorder ? '-large' : '-small' : '') + '-hover-color-index-' + hoverColorIndex, hoverStyle), _classnames));
 
       var boxProps = _Props2.default.pick(this.props, Object.keys(_Box2.default.propTypes));
 
@@ -85,12 +88,16 @@ exports.default = Tile;
 
 Tile.propTypes = _extends({
   selected: _react.PropTypes.bool,
-  wide: _react.PropTypes.bool
+  wide: _react.PropTypes.bool,
+  hoverStyle: _react.PropTypes.oneOf(['border', 'background', 'none']),
+  hoverColorIndex: _react.PropTypes.string
 }, _Box2.default.propTypes);
 
 Tile.defaultProps = {
   pad: 'none',
   direction: 'column',
-  align: 'center'
+  align: 'center',
+  hoverStyle: 'none',
+  hoverColorIndex: 'disabled'
 };
 module.exports = exports['default'];

@@ -251,6 +251,8 @@ var Tiles = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       var classes = [CLASS_ROOT];
       if (this.props.fill) {
         classes.push(CLASS_ROOT + "--fill");
@@ -285,6 +287,19 @@ var Tiles = function (_Component) {
         onClickHandler = this._onClick;
       }
 
+      var children = this.props.children;
+      children = _react.Children.map(this.props.children, function (element, index) {
+        if (element) {
+          var elementClone = _react2.default.cloneElement(element, {
+            hoverBorder: !_this2.props.flush
+          });
+
+          return elementClone;
+        }
+
+        return undefined;
+      }, this);
+
       var contents = _react2.default.createElement(
         _Box2.default,
         _extends({ ref: 'tiles' }, other, {
@@ -293,7 +308,7 @@ var Tiles = function (_Component) {
           className: classes.join(' '),
           onClick: onClickHandler,
           focusable: false }),
-        this.props.children,
+        children,
         more
       );
 
