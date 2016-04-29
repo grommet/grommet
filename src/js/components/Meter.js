@@ -3,6 +3,7 @@
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 
+import Responsive from '../utils/Responsive';
 import Legend from './Legend';
 import Bar from './meter/Bar';
 import Spiral from './meter/Spiral';
@@ -24,6 +25,7 @@ export default class Meter extends Component {
   constructor (props) {
     super();
 
+    this._onResponsive = this._onResponsive.bind(this);
     this._initialTimeout = this._initialTimeout.bind(this);
     this._layout = this._layout.bind(this);
     this._onResize = this._onResize.bind(this);
@@ -34,9 +36,14 @@ export default class Meter extends Component {
       this.state.legendPlacement = 'bottom';
     }
     this.state.initial = true;
+    this.state.limitMeterSize = false;
   }
 
   componentDidMount () {
+    if (this.props.responsive) {
+      this._responsive = Responsive.start(this._onResponsive);
+    }
+
     this._initialTimer = setTimeout(this._initialTimeout, 10);
     window.addEventListener('resize', this._onResize);
     this._onResize();
@@ -52,6 +59,10 @@ export default class Meter extends Component {
     clearTimeout(this._initialTimer);
     clearTimeout(this._resizeTimer);
     window.removeEventListener('resize', this._onResize);
+
+    if (this._responsive) {
+      this._responsive.stop();
+    }
   }
 
   _initialTimeout () {
@@ -60,6 +71,14 @@ export default class Meter extends Component {
       activeIndex: this.state.importantIndex
     });
     clearTimeout(this._initialTimer);
+  }
+
+  _onResponsive (small) {
+    if (small) {
+      this.setState({limitMeterSize: true});
+    } else {
+      this.setState({limitMeterSize: false});
+    }
   }
 
   _onActivate (index) {
@@ -362,7 +381,12 @@ export default class Meter extends Component {
       classes.push(`${CLASS_ROOT}--stacked`);
     }
     if (this.props.size) {
-      classes.push(`${CLASS_ROOT}--${this.props.size}`);
+      let responsiveSize = this.props.size;
+      // shrink Meter to medium size if large and up
+      if (this.state.limitMeterSize && (this.props.size === 'large' || this.props.size === 'xlarge')) {
+        responsiveSize = 'medium';
+      }
+      classes.push(`${CLASS_ROOT}--${responsiveSize}`);
     }
     if (this.state.series.length === 0) {
       classes.push(`${CLASS_ROOT}--loading`);
@@ -495,7 +519,8 @@ Meter.propTypes = {
   type: PropTypes.oneOf(['bar', 'arc', 'circle', 'spiral']),
   units: PropTypes.string,
   value: PropTypes.number,
-  vertical: PropTypes.bool
+  vertical: PropTypes.bool,
+  responsive: PropTypes.bool
 };
 
 Meter.defaultProps = {
