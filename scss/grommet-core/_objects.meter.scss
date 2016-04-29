@@ -3,6 +3,7 @@
 $meter-size: $graphic-size;
 $meter-small-size: $graphic-small-size;
 $meter-large-size: $graphic-large-size;
+$meter-xlarge-size: $graphic-xlarge-size;
 
 $meter-slice-width: round($inuit-base-spacing-unit / 6);
 $meter-slice-active-width: round($inuit-base-spacing-unit / 2);
@@ -12,6 +13,7 @@ $meter-indicator-width: round($inuit-base-spacing-unit / 6);
 $meter-arc-size: $meter-size - double($inuit-base-spacing-unit);
 $meter-arc-small-size: $meter-small-size - $inuit-base-spacing-unit;
 $meter-arc-large-size: $meter-large-size - round($inuit-base-spacing-unit * 3);
+$meter-arc-xlarge-size: $meter-xlarge-size - round($inuit-base-spacing-unit * 4);
 $meter-label-width: double($inuit-base-spacing-unit);
 $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
 
@@ -190,6 +192,12 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
       width: $meter-large-size;
     }
   }
+
+  &.meter--xlarge {
+    .meter__minmax-container {
+      width: $meter-xlarge-size;
+    }
+  }
 }
 
 .meter--vertical {
@@ -245,6 +253,12 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
       height: $meter-large-size;
     }
   }
+
+  &.meter--xlarge {
+    .meter__minmax-container {
+      height: $meter-xlarge-size;
+    }
+  }
 }
 
 .meter--small {
@@ -276,6 +290,17 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
 
   .meter__value-units {
     @include inuit-font-size($large-large-number-units-font-size);
+  }
+}
+
+.meter--xlarge {
+
+  .meter__value-value {
+    @include inuit-font-size($xlarge-large-number-font-size);
+  }
+
+  .meter__value-units {
+    @include inuit-font-size($xlarge-large-number-units-font-size);
   }
 }
 
@@ -451,6 +476,43 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
         }
       }
     }
+
+    &.meter--xlarge {
+      svg.meter__graphic {
+        height: $meter-xlarge-size;
+        width: round($inuit-base-spacing-unit * 2);
+      }
+
+      &:not(.meter--stacked) {
+        &.meter--count-2 {
+          .meter__graphic {
+            width: round($inuit-base-spacing-unit * 4);
+          }
+        }
+
+        &.meter--count-3 {
+          .meter__graphic {
+            width: round($inuit-base-spacing-unit * 6);
+          }
+        }
+
+        &.meter--count-4 {
+          .meter__graphic {
+            width: round($inuit-base-spacing-unit * 8);
+          }
+        }
+      }
+
+      .meter__value {
+        top: halve($meter-xlarge-size);
+      }
+
+      &.meter--legend-right {
+        .meter__legend {
+          top: halve($meter-xlarge-size);
+        }
+      }
+    }
   }
 }
 
@@ -617,6 +679,49 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
       }
     }
   }
+
+  &.meter--xlarge {
+    line-height: round($inuit-base-spacing-unit * 2);
+
+    svg.meter__graphic {
+      width: $meter-xlarge-size;
+      height: round($inuit-base-spacing-unit * 2);
+    }
+
+    &:not(.meter--stacked) {
+      &.meter--count-2 {
+        .meter__graphic {
+          height: round($inuit-base-spacing-unit * 4);
+        }
+      }
+
+      &.meter--count-3 {
+        .meter__graphic {
+          height: round($inuit-base-spacing-unit * 6);
+        }
+      }
+
+      &.meter--count-4 {
+        .meter__graphic {
+          height: round($inuit-base-spacing-unit * 8);
+        }
+      }
+    }
+
+    .meter__value {
+      margin-left: $inuit-base-spacing-unit;
+
+      html.rtl & {
+        margin-left: 0;
+        margin-right: $inuit-base-spacing-unit;
+      }
+
+      &-value,
+      &-units {
+        @include inuit-font-size($number-font-size + 6, inherit);
+      }
+    }
+  }
 }
 
 // CIRCLE, ARC, SPIRAL
@@ -722,6 +827,12 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
       width: $meter-large-size;
     }
   }
+
+  &.meter--xlarge {
+    .meter__minmax-container {
+      width: $meter-xlarge-size;
+    }
+  }
 }
 
 .meter--circle,
@@ -741,6 +852,12 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
     &.meter--large {
       .meter__legend {
         top: halve($meter-large-size);
+      }
+    }
+
+    &.meter--xlarge {
+      .meter__legend {
+        top: halve($meter-xlarge-size);
       }
     }
   }
@@ -784,6 +901,19 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
     .meter__value {
       top: halve($meter-large-size);
       max-width: $meter-large-size - round($inuit-base-spacing-unit * 3);
+    }
+  }
+
+  &.meter--xlarge {
+
+    svg.meter__graphic {
+      width: $meter-xlarge-size;
+      height: $meter-xlarge-size;
+    }
+
+    .meter__value {
+      top: halve($meter-xlarge-size);
+      max-width: $meter-xlarge-size - round($inuit-base-spacing-unit * 4);
     }
   }
 
@@ -840,6 +970,19 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
     .meter__value {
       top: halve($meter-large-size) + halve($inuit-base-spacing-unit);
       max-width: $meter-large-size - round($inuit-base-spacing-unit * 4.5);
+    }
+  }
+
+  &.meter--xlarge {
+
+    svg.meter__graphic {
+      width: $meter-xlarge-size;
+      height: $meter-arc-xlarge-size;
+    }
+
+    .meter__value {
+      top: halve($meter-xlarge-size) + halve($inuit-base-spacing-unit);
+      max-width: $meter-xlarge-size - round($inuit-base-spacing-unit * 6);
     }
   }
 }
@@ -916,6 +1059,24 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
       html.rtl & {
         margin-left: 0;
         margin-right: - ($meter-large-size - $meter-arc-large-size) + $inuit-base-spacing-unit;
+      }
+    }
+  }
+
+  &.meter--xlarge {
+
+    svg.meter__graphic {
+      width: $meter-arc-xlarge-size;
+      height: $meter-xlarge-size;
+    }
+
+    .meter__value {
+      top: halve($meter-xlarge-size);
+      margin-left: - ($meter-xlarge-size - $meter-arc-xlarge-size) + $inuit-base-spacing-unit;
+
+      html.rtl & {
+        margin-left: 0;
+        margin-right: - ($meter-xlarge-size - $meter-arc-xlarge-size) + $inuit-base-spacing-unit;
       }
     }
   }

@@ -16,6 +16,10 @@ var _reactDom = require('react-dom');
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
+var _Responsive = require('../utils/Responsive');
+
+var _Responsive2 = _interopRequireDefault(_Responsive);
+
 var _Legend = require('./Legend');
 
 var _Legend2 = _interopRequireDefault(_Legend);
@@ -65,6 +69,7 @@ var Meter = function (_Component) {
 
     var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Meter).call(this));
 
+    _this._onResponsive = _this._onResponsive.bind(_this);
     _this._initialTimeout = _this._initialTimeout.bind(_this);
     _this._layout = _this._layout.bind(_this);
     _this._onResize = _this._onResize.bind(_this);
@@ -75,12 +80,17 @@ var Meter = function (_Component) {
       _this.state.legendPlacement = 'bottom';
     }
     _this.state.initial = true;
+    _this.state.limitMeterSize = false;
     return _this;
   }
 
   _createClass(Meter, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
+      if (this.props.responsive) {
+        this._responsive = _Responsive2.default.start(this._onResponsive);
+      }
+
       this._initialTimer = setTimeout(this._initialTimeout, 10);
       window.addEventListener('resize', this._onResize);
       this._onResize();
@@ -98,6 +108,10 @@ var Meter = function (_Component) {
       clearTimeout(this._initialTimer);
       clearTimeout(this._resizeTimer);
       window.removeEventListener('resize', this._onResize);
+
+      if (this._responsive) {
+        this._responsive.stop();
+      }
     }
   }, {
     key: '_initialTimeout',
@@ -107,6 +121,15 @@ var Meter = function (_Component) {
         activeIndex: this.state.importantIndex
       });
       clearTimeout(this._initialTimer);
+    }
+  }, {
+    key: '_onResponsive',
+    value: function _onResponsive(small) {
+      if (small) {
+        this.setState({ limitMeterSize: true });
+      } else {
+        this.setState({ limitMeterSize: false });
+      }
     }
   }, {
     key: '_onActivate',
@@ -429,7 +452,12 @@ var Meter = function (_Component) {
         classes.push(CLASS_ROOT + '--stacked');
       }
       if (this.props.size) {
-        classes.push(CLASS_ROOT + '--' + this.props.size);
+        var responsiveSize = this.props.size;
+        // shrink Meter to medium size if large and up
+        if (this.state.limitMeterSize && (this.props.size === 'large' || this.props.size === 'xlarge')) {
+          responsiveSize = 'medium';
+        }
+        classes.push(CLASS_ROOT + '--' + responsiveSize);
       }
       if (this.state.series.length === 0) {
         classes.push(CLASS_ROOT + '--loading');
@@ -540,7 +568,7 @@ Meter.propTypes = {
     value: _react.PropTypes.number.isRequired,
     label: _react.PropTypes.string
   }), _react.PropTypes.number]),
-  size: _react.PropTypes.oneOf(['small', 'medium', 'large']),
+  size: _react.PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
   series: _react.PropTypes.arrayOf(_react.PropTypes.shape({
     label: _react.PropTypes.string,
     value: _react.PropTypes.number.isRequired,
@@ -558,7 +586,8 @@ Meter.propTypes = {
   type: _react.PropTypes.oneOf(['bar', 'arc', 'circle', 'spiral']),
   units: _react.PropTypes.string,
   value: _react.PropTypes.number,
-  vertical: _react.PropTypes.bool
+  vertical: _react.PropTypes.bool,
+  responsive: _react.PropTypes.bool
 };
 
 Meter.defaultProps = {
