@@ -63,7 +63,7 @@ function onClick (event, options) {
   let item = event.target;
   var matchFunction = item.matches || item.matchesElement || item.msMatchesSelector;
   if (matchFunction) {
-    while (item && !matchFunction(options.childSelector)) {
+    while (item && !matchFunction.bind(item, options.childSelector)()) {
       item = item.parentNode;
     }
   }
