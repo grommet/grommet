@@ -80,7 +80,7 @@
   &--selectable {
     .tile {
       cursor: pointer;
-      transition: background-color 0.2s;
+      transition: all 0.2s;
 
       &--selected {
         background-color: $selected-background-color;
