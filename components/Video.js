@@ -10,9 +10,9 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _classnames2 = require('classnames');
+var _classnames4 = require('classnames');
 
-var _classnames3 = _interopRequireDefault(_classnames2);
+var _classnames5 = _interopRequireDefault(_classnames4);
 
 var _Intl = require('../utils/Intl');
 
@@ -255,7 +255,7 @@ var Video = function (_Component) {
           var nextChapter = chapters[Math.min(chapters.length - 1, index + 1)];
           var lastChapter = chapters[chapters.length - 1];
 
-          var timelineClasses = (0, _classnames3.default)(CLASS_ROOT + '__timeline-chapter', _defineProperty({}, CLASS_ROOT + '__timeline-active', currentProgress !== 0 && (currentProgress >= chapter.time && currentProgress < nextChapter.time || index === chapters.length - 1 && currentProgress >= lastChapter.time)));
+          var timelineClasses = (0, _classnames5.default)(CLASS_ROOT + '__timeline-chapter', _defineProperty({}, CLASS_ROOT + '__timeline-active', currentProgress !== 0 && (currentProgress >= chapter.time && currentProgress < nextChapter.time || index === chapters.length - 1 && currentProgress >= lastChapter.time)));
 
           return _react2.default.createElement(
             'div',
@@ -282,20 +282,46 @@ var Video = function (_Component) {
         );
       }
 
+      var progressTicks = void 0;
+      if (this.props.timeline && this.props.duration) {
+
+        var _chapters = this.props.timeline.map(function (chapter, index, chapters) {
+          var percent = Math.round(chapter.time / this.props.duration * 100);
+          var currentProgress = this.state.progress;
+          var nextChapter = chapters[Math.min(chapters.length - 1, index + 1)];
+
+          var progressTicksClasses = (0, _classnames5.default)(CLASS_ROOT + '__progress-ticks-chapter', _defineProperty({}, CLASS_ROOT + '__progress-ticks-active', currentProgress !== 0 && currentProgress >= chapter.time && currentProgress < nextChapter.time));
+
+          return _react2.default.createElement('div', { key: chapter.time, className: progressTicksClasses,
+            style: { left: percent.toString() + '%' },
+            onClick: this._onClickChapter.bind(this, chapter.time) });
+        }, this);
+
+        progressTicks = _react2.default.createElement(
+          'div',
+          { className: CLASS_ROOT + '__progress-ticks' },
+          _chapters
+        );
+      }
+
       var progress = void 0;
       if (this.props.duration) {
-        // making sure percent is <= 100,
-        // so that progress bar does not extend beyond container width
+        var progressClass = (0, _classnames5.default)(CLASS_ROOT + '__progress', _defineProperty({}, CLASS_ROOT + '--has-timeline', this.props.timeline));
+
         var percent = Math.min(Math.round(this.state.progress / this.props.duration * 100), 100);
         progress = _react2.default.createElement(
           'div',
-          { className: CLASS_ROOT + '__progress' },
+          { className: progressClass },
           _react2.default.createElement('div', { className: CLASS_ROOT + '__progress-meter',
-            style: { width: percent.toString() + '%' } })
+            style: { width: percent.toString() + '%' } }),
+          progressTicks
         );
       }
 
       var onClickControl = this.props.onClick || this._onClickControl;
+      // when iconSize is small (mobile screen sizes), remove the extra padding
+      // so that the play control is centered
+      var emptyBox = this.state.iconSize === 'small' ? null : _react2.default.createElement(_Box2.default, null);
 
       return _react2.default.createElement(
         'div',
@@ -311,13 +337,13 @@ var Video = function (_Component) {
           videoHeader,
           _react2.default.createElement(
             _Box2.default,
-            { pad: 'none', align: 'center', justify: 'center' },
+            { pad: 'medium', align: 'center', justify: 'center' },
             _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + '__control', plain: true,
               primary: true, onClick: onClickControl,
               icon: controlIcon, a11yTitle: a11yControlButtonTitle }),
             title
           ),
-          _react2.default.createElement(_Box2.default, null)
+          emptyBox
         ),
         timeline,
         progress
