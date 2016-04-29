@@ -36,6 +36,7 @@ $image-large-width: $size-large; // 960px
 $graphic-size: round($inuit-base-spacing-unit * 8) !default; // 192px
 $graphic-small-size: round($inuit-base-spacing-unit * 4) !default; // 96px
 $graphic-large-size: round($inuit-base-spacing-unit * 12) !default; // 288px
+$graphic-xlarge-size: round($inuit-base-spacing-unit * 16) !default; // 384px
 
 // tile sizes allow for graphic + legend + padding
 $tile-size: round($inuit-base-spacing-unit * 8) !default; // 192px
