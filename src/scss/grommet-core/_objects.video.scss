@@ -15,6 +15,11 @@
     &__timeline {
       visibility: hidden;
     }
+
+    &__progress,
+    &--has-timeline {
+      bottom: 0px;
+    }
   }
 
   @include media-query(lap-and-up) {
@@ -33,6 +38,10 @@
     &--large {
       width: $video-large-width;
     }
+
+    &--has-timeline {
+      bottom: round($inuit-base-spacing-unit * 3);
+    }
   }
 
   &--full {
@@ -41,6 +50,7 @@
 
   video {
     width: 100%;
+    display: block;
   }
 
   &__summary {
@@ -89,8 +99,6 @@
     &-active {
       position: absolute;
       height: 100%;
-      padding-left: quarter($inuit-base-spacing-unit);
-      border-left: 2px solid $colored-icon-color;
       text-align: left;
       cursor: pointer;
 
@@ -102,6 +110,10 @@
       time {
         display: block;
         @include inuit-font-size($label-font-size, $inuit-base-spacing-unit);
+      }
+
+      label {
+        font-weight: bold;
       }
     }
 
@@ -121,15 +133,52 @@
 
   &__progress {
     position: absolute;
+    background-color: rgba(nth($brand-grey-colors, 3), 0.7);
     left: 0px;
     right: 0px;
-    bottom: 0px;
     height: quarter($inuit-base-spacing-unit);
     text-align: left;
 
     &-meter {
       height: 100%;
       background-color: $brand-color;
+    }
+
+    &:not(.video--has-timeline) {
+      bottom: 0px;
+    }
+  }
+
+&__progress-ticks {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: quarter($inuit-base-spacing-unit);
+    color: $colored-text-color;
+    background-color: rgba(nth($brand-grey-colors, 1), 0.7);
+
+    &-chapter,
+    &-active {
+      position: absolute;
+      height: quarter($inuit-base-spacing-unit);
+      border-left: 2px solid $colored-icon-color;
+      text-align: left;
+      cursor: pointer;
+
+      &:hover {
+        color: $active-colored-text-color;
+        border-color: $active-colored-icon-color;
+      }
+    }
+
+    &-active {
+      $brand-accent-color-index: 3;
+      @if ($brand-accent-color-index <= length($brand-accent-colors)) {
+        $chapter-current-color: nth($brand-accent-colors, $brand-accent-color-index);
+      } @else {
+        $chapter-current-color: $brand-color;
+      }
+      border-color: $chapter-current-color;
     }
   }
 
@@ -145,15 +194,30 @@
   &--playing {
     &:not(.video--interacting) {
       .video__control,
-      .video__timeline,
-      .video__progress {
+      .video__timeline {
         opacity: 0;
         transition: opacity 1s;
+      }
+
+      .video__progress {
+        bottom: 0px;
+        transition: ease 1s;
+      }
+
+      .video__progress-ticks {
+        bottom: quarter($inuit-base-spacing-unit);
+        transition: ease 1s;
       }
     }
 
     .video__title {
       visibility: hidden;
+    }
+
+    &--interacting {
+      .video--has-timeline {
+        bottom: round($inuit-base-spacing-unit * 3);
+      }
     }
   }
 }
