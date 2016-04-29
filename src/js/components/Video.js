@@ -225,20 +225,59 @@ export default class Video extends Component {
       );
     }
 
+    let progressTicks;
+    if (this.props.timeline && this.props.duration) {
+
+      let chapters = this.props.timeline.map(function (chapter, index, chapters) {
+        let percent = Math.round((chapter.time / this.props.duration) * 100);
+        let currentProgress = this.state.progress;
+        let nextChapter = chapters[Math.min(chapters.length - 1, index + 1)];
+
+        let progressTicksClasses = classnames(
+          `${CLASS_ROOT}__progress-ticks-chapter`,
+          {
+            [`${CLASS_ROOT}__progress-ticks-active`]: (currentProgress !== 0 && currentProgress >= chapter.time && currentProgress < nextChapter.time)
+          }
+        );
+
+        return (
+          <div key={chapter.time} className={progressTicksClasses}
+            style={{left: percent.toString() + '%'}}
+            onClick={this._onClickChapter.bind(this, chapter.time)}>
+          </div>
+        );
+      }, this);
+ 
+      progressTicks = (
+        <div className={`${CLASS_ROOT}__progress-ticks`}>
+          {chapters}
+        </div>
+      );
+    }
+
     let progress;
     if (this.props.duration) {
-      // making sure percent is <= 100,
-      // so that progress bar does not extend beyond container width
+      const progressClass = classnames(
+        `${CLASS_ROOT}__progress`,
+        {
+          [`${CLASS_ROOT}--has-timeline`]: this.props.timeline
+        }
+      );
+
       let percent = Math.min((Math.round((this.state.progress / this.props.duration) * 100)), 100);
       progress = (
-        <div className={`${CLASS_ROOT}__progress`}>
+        <div className={progressClass}>
           <div className={`${CLASS_ROOT}__progress-meter`}
             style={{width: percent.toString() + '%'}}></div>
+          {progressTicks}
         </div>
       );
     }
 
     let onClickControl = this.props.onClick || this._onClickControl;
+    // when iconSize is small (mobile screen sizes), remove the extra padding
+    // so that the play control is centered
+    let emptyBox = this.state.iconSize === 'small' ? null : <Box />;
 
     return (
       <div className={classes.join(' ')} onMouseMove={this._onMouseMove}>
@@ -247,13 +286,13 @@ export default class Video extends Component {
         </video>
         <Box pad="none" align="center" justify={videoSummaryJustify} className={`${CLASS_ROOT}__summary`}>
           {videoHeader}
-          <Box pad="none" align="center" justify="center">
+          <Box pad="medium" align="center" justify="center">
             <Button className={`${CLASS_ROOT}__control`} plain={true}
               primary={true} onClick={onClickControl}
               icon={controlIcon} a11yTitle={a11yControlButtonTitle} />
             {title}
           </Box>
-          <Box />
+          {emptyBox}
         </Box>
         {timeline}
         {progress}
