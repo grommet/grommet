@@ -242,7 +242,7 @@ export default class Video extends Component {
 
     return (
       <div className={classes.join(' ')} onMouseMove={this._onMouseMove}>
-        <video ref="video" poster={this.props.poster}>
+        <video className="video--poster" ref="video" poster={this.props.poster}>
           {this.props.children}
         </video>
         <Box pad="none" align="center" justify={videoSummaryJustify} className={`${CLASS_ROOT}__summary`}>
