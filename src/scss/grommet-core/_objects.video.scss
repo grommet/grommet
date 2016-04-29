@@ -175,10 +175,11 @@
       $brand-accent-color-index: 3;
       @if ($brand-accent-color-index <= length($brand-accent-colors)) {
         $chapter-current-color: nth($brand-accent-colors, $brand-accent-color-index);
+        border-color: $chapter-current-color;
       } @else {
         $chapter-current-color: $brand-color;
+        border-color: $chapter-current-color;
       }
-      border-color: $chapter-current-color;
     }
   }
 
