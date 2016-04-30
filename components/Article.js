@@ -136,7 +136,7 @@ var Article = function (_Component) {
   }, {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(props) {
-      if (props.selected) {
+      if (props.selected !== undefined) {
         this._onSelect(props.selected);
       }
     }
