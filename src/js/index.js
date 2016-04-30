@@ -49,6 +49,7 @@ var Grommet = {
   Tabs: require('./components/Tabs'),
   Tiles: require('./components/Tiles'),
   Tile: require('./components/Tile'),
+  Timestamp: require('./components/Timestamp'),
   Title: require('./components/Title'),
   Topology: require('./components/Topology'),
   Value: require('./components/Value'),

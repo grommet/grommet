@@ -1,0 +1,13 @@
+// (C) Copyright 2015 Hewlett Packard Enterprise Development LP
+
+.timestamp {
+
+  &--right {
+    text-align: right;
+  }
+
+  &__time {
+    text-transform: lowercase;
+    white-space: nowrap;
+  }
+}
