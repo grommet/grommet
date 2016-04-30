@@ -75,7 +75,7 @@ export default class Article extends Component {
   }
 
   componentWillReceiveProps (props) {
-    if (props.selected) {
+    if (props.selected !== undefined) {
       this._onSelect(props.selected);
     }
   }
