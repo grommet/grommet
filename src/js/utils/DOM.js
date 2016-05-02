@@ -75,5 +75,12 @@ export default {
     }
 
     return bestFirstFocusable;
+  },
+
+  isFormElement (element) {
+    const elementType = element ? element.tagName.toLowerCase() : undefined;
+    return elementType && (
+      elementType === 'input' || elementType === 'textarea'
+    );
   }
 };

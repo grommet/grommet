@@ -281,32 +281,38 @@ export default class Article extends Component {
   }
 
   _onNext (event, wrap) {
-    const { children } = this.props;
-    const { selectedIndex } = this.state;
-    const childCount = React.Children.count(children);
-    if (event) {
-      this._stop();
-      event.preventDefault();
-    }
-    const targetIndex = this._visibleIndexes()[0] + 1;
-    if (targetIndex !== selectedIndex) {
-      if (targetIndex < childCount) {
-        this._onSelect(Math.min(childCount - 1, targetIndex));
-      } else if (wrap) {
-        this._onSelect(1);
+    // only process if the focus is NOT in a form element
+    if (!DOMUtils.isFormElement(document.activeElement)) {
+      const { children } = this.props;
+      const { selectedIndex } = this.state;
+      const childCount = React.Children.count(children);
+      if (event) {
+        this._stop();
+        event.preventDefault();
+      }
+      const targetIndex = this._visibleIndexes()[0] + 1;
+      if (targetIndex !== selectedIndex) {
+        if (targetIndex < childCount) {
+          this._onSelect(Math.min(childCount - 1, targetIndex));
+        } else if (wrap) {
+          this._onSelect(1);
+        }
       }
     }
   }
 
   _onPrevious (event) {
-    const { selectedIndex } = this.state;
-    if (event) {
-      this._stop();
-      event.preventDefault();
-    }
-    const targetIndex = this._visibleIndexes()[0] - 1;
-    if (targetIndex !== selectedIndex) {
-      this._onSelect(Math.max(0, targetIndex));
+    // only process if the focus is NOT in a form element
+    if (!DOMUtils.isFormElement(document.activeElement)) {
+      const { selectedIndex } = this.state;
+      if (event) {
+        this._stop();
+        event.preventDefault();
+      }
+      const targetIndex = this._visibleIndexes()[0] - 1;
+      if (targetIndex !== selectedIndex) {
+        this._onSelect(Math.max(0, targetIndex));
+      }
     }
   }
 
@@ -522,8 +528,7 @@ export default class Article extends Component {
       <Box ref="component" tag="article" {...other}
         className={classes.join(' ')} onFocus={this._onFocusChange}
         onScroll={this._onScroll} onTouchStart={this._onTouchStart}
-        onTouchMove={this._onTouchMove}
-        primary={this.props.primary}>
+        onTouchMove={this._onTouchMove} primary={this.props.primary}>
         <a tabIndex="-1" aria-hidden='true'
           ref='anchorStep' />
         {children}
