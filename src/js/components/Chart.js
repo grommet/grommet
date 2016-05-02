@@ -73,10 +73,9 @@ export default class Chart extends Component {
     }
   }
 
-  _onRequestForNextLegend (e) {
-    e.preventDefault();
+  _onRequestForNextLegend (event) {
     if (document.activeElement === this.refs.chart) {
-
+      event.preventDefault();
       let totalBandCount = (
         ReactDOM.findDOMNode(this.refs.front).childNodes.length
       );
@@ -92,10 +91,9 @@ export default class Chart extends Component {
     }
   }
 
-  _onRequestForPreviousLegend (e) {
-    e.preventDefault();
+  _onRequestForPreviousLegend (event) {
     if (document.activeElement === this.refs.chart) {
-
+      event.preventDefault();
       let totalBandCount = (
         ReactDOM.findDOMNode(this.refs.front).childNodes.length
       );

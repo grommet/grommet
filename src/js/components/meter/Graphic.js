@@ -104,9 +104,9 @@ export default class Graphic extends Component {
     return this._sliceCommands(0, this.props.max, this.props.min.value);
   }
 
-  _onRequestForPreviousLegend (e) {
-    e.preventDefault();
+  _onRequestForPreviousLegend (event) {
     if (document.activeElement === this.refs.meter) {
+      event.preventDefault();
       var totalValueCount = (
         ReactDOM.findDOMNode(this.refs.meterValues).childNodes.length
       );
@@ -122,9 +122,9 @@ export default class Graphic extends Component {
     }
   }
 
-  _onRequestForNextLegend (e) {
-    e.preventDefault();
+  _onRequestForNextLegend (event) {
     if (document.activeElement === this.refs.meter) {
+      event.preventDefault();
       var totalValueCount = (
         ReactDOM.findDOMNode(this.refs.meterValues).childNodes.length
       );

@@ -271,9 +271,9 @@ export default class Distribution extends Component {
     return item.colorIndex || ('graph-' + (index + 1));
   }
 
-  _onPreviousDistribution (e) {
-    e.preventDefault();
+  _onPreviousDistribution (event) {
     if (document.activeElement === this.refs.distribution) {
+      event.preventDefault();
       var totalDistributionCount = (
         ReactDOM.findDOMNode(this.refs.distributionItems).childNodes.length
       );
@@ -289,9 +289,9 @@ export default class Distribution extends Component {
     }
   }
 
-  _onNextDistribution (e) {
-    e.preventDefault();
+  _onNextDistribution (event) {
     if (document.activeElement === this.refs.distribution) {
+      event.preventDefault();
       var totalDistributionCount = (
         ReactDOM.findDOMNode(this.refs.distributionItems).childNodes.length
       );
