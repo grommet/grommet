@@ -22,6 +22,18 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var CLASS_ROOT = 'timestamp';
 
+function showField(field, fields) {
+  var result = true;
+  if (fields) {
+    if (Array.isArray(fields)) {
+      result = fields.indexOf(field) !== -1;
+    } else {
+      result = field === fields;
+    }
+  }
+  return result;
+}
+
 var Timestamp = function (_Component) {
   _inherits(Timestamp, _Component);
 
@@ -34,31 +46,42 @@ var Timestamp = function (_Component) {
   _createClass(Timestamp, [{
     key: 'render',
     value: function render() {
+      var fields = this.props.fields;
+
       var classes = [CLASS_ROOT];
       classes.push(CLASS_ROOT + '--' + this.props.align);
       if (this.props.className) {
         classes.push(this.props.className);
       }
+
       var locale = (0, _Locale.getCurrentLocale)();
       var value = typeof this.props.value === 'string' ? new Date(this.props.value) : this.props.value;
-      var dateOptions = { year: 'numeric', month: 'short', day: 'numeric' };
-      var date = value.toLocaleDateString(locale, dateOptions);
-      var timeOptions = { hour: '2-digit', minute: '2-digit' };
-      var time = value.toLocaleTimeString(locale, timeOptions);
+
+      var date = void 0;
+      if (showField('date', fields)) {
+        var dateOptions = { year: 'numeric', month: 'short', day: 'numeric' };
+        date = _react2.default.createElement(
+          'span',
+          { className: CLASS_ROOT + '__date' },
+          value.toLocaleDateString(locale, dateOptions)
+        );
+      }
+
+      var time = void 0;
+      if (showField('time', fields)) {
+        var timeOptions = { hour: '2-digit', minute: '2-digit' };
+        time = _react2.default.createElement(
+          'span',
+          { className: CLASS_ROOT + '__time' },
+          value.toLocaleTimeString(locale, timeOptions)
+        );
+      }
       return _react2.default.createElement(
         'span',
         { className: classes.join(' ') },
-        _react2.default.createElement(
-          'span',
-          { className: CLASS_ROOT + '__date' },
-          date
-        ),
+        date,
         ' ',
-        _react2.default.createElement(
-          'span',
-          { className: CLASS_ROOT + '__time' },
-          time
-        )
+        time
       );
     }
   }]);
@@ -69,8 +92,11 @@ var Timestamp = function (_Component) {
 exports.default = Timestamp;
 
 
+var FIELD_TYPES = _react.PropTypes.oneOf(['date', 'time']);
+
 Timestamp.propTypes = {
   align: _react.PropTypes.oneOf(['left', 'right']),
+  fields: _react.PropTypes.oneOfType([_react.PropTypes.arrayOf(FIELD_TYPES), FIELD_TYPES]),
   value: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.object]).isRequired
 };
 
