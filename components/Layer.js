@@ -74,11 +74,7 @@ var LayerContents = function (_Component) {
   }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
-      var items = this.refs.container.getElementsByTagName('*');
-      var firstFocusable = _DOM2.default.getBestFirstFocusable(items);
-      if (firstFocusable) {
-        firstFocusable.focus();
-      }
+      this.refs.anchorStep.focus();
 
       this._keyboardHandlers = {
         tab: this._processTab
@@ -165,6 +161,8 @@ var LayerContents = function (_Component) {
       return _react2.default.createElement(
         'div',
         { ref: 'container', className: CLASS_ROOT + "__container" },
+        _react2.default.createElement('a', { tabIndex: '-1', 'aria-hidden': 'true',
+          ref: 'anchorStep' }),
         closer,
         this.props.children
       );
