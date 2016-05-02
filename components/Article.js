@@ -359,35 +359,41 @@ var Article = function (_Component) {
   }, {
     key: '_onNext',
     value: function _onNext(event, wrap) {
-      var children = this.props.children;
-      var selectedIndex = this.state.selectedIndex;
+      // only process if the focus is NOT in a form element
+      if (!_DOM2.default.isFormElement(document.activeElement)) {
+        var children = this.props.children;
+        var selectedIndex = this.state.selectedIndex;
 
-      var childCount = _react2.default.Children.count(children);
-      if (event) {
-        this._stop();
-        event.preventDefault();
-      }
-      var targetIndex = this._visibleIndexes()[0] + 1;
-      if (targetIndex !== selectedIndex) {
-        if (targetIndex < childCount) {
-          this._onSelect(Math.min(childCount - 1, targetIndex));
-        } else if (wrap) {
-          this._onSelect(1);
+        var childCount = _react2.default.Children.count(children);
+        if (event) {
+          this._stop();
+          event.preventDefault();
+        }
+        var targetIndex = this._visibleIndexes()[0] + 1;
+        if (targetIndex !== selectedIndex) {
+          if (targetIndex < childCount) {
+            this._onSelect(Math.min(childCount - 1, targetIndex));
+          } else if (wrap) {
+            this._onSelect(1);
+          }
         }
       }
     }
   }, {
     key: '_onPrevious',
     value: function _onPrevious(event) {
-      var selectedIndex = this.state.selectedIndex;
+      // only process if the focus is NOT in a form element
+      if (!_DOM2.default.isFormElement(document.activeElement)) {
+        var selectedIndex = this.state.selectedIndex;
 
-      if (event) {
-        this._stop();
-        event.preventDefault();
-      }
-      var targetIndex = this._visibleIndexes()[0] - 1;
-      if (targetIndex !== selectedIndex) {
-        this._onSelect(Math.max(0, targetIndex));
+        if (event) {
+          this._stop();
+          event.preventDefault();
+        }
+        var targetIndex = this._visibleIndexes()[0] - 1;
+        if (targetIndex !== selectedIndex) {
+          this._onSelect(Math.max(0, targetIndex));
+        }
       }
     }
   }, {
@@ -619,8 +625,7 @@ var Article = function (_Component) {
         _extends({ ref: 'component', tag: 'article' }, other, {
           className: classes.join(' '), onFocus: this._onFocusChange,
           onScroll: this._onScroll, onTouchStart: this._onTouchStart,
-          onTouchMove: this._onTouchMove,
-          primary: this.props.primary }),
+          onTouchMove: this._onTouchMove, primary: this.props.primary }),
         _react2.default.createElement('a', { tabIndex: '-1', 'aria-hidden': 'true',
           ref: 'anchorStep' }),
         children,

@@ -76,6 +76,10 @@ exports.default = {
     }
 
     return bestFirstFocusable;
+  },
+  isFormElement: function isFormElement(element) {
+    var elementType = element ? element.tagName.toLowerCase() : undefined;
+    return elementType && (elementType === 'input' || elementType === 'textarea');
   }
 };
 module.exports = exports['default'];

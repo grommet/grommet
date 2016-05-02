@@ -144,9 +144,9 @@ var Graphic = function (_Component) {
     }
   }, {
     key: '_onRequestForPreviousLegend',
-    value: function _onRequestForPreviousLegend(e) {
-      e.preventDefault();
+    value: function _onRequestForPreviousLegend(event) {
       if (document.activeElement === this.refs.meter) {
+        event.preventDefault();
         var totalValueCount = _reactDom2.default.findDOMNode(this.refs.meterValues).childNodes.length;
 
         if (this.props.activeIndex - 1 < 0) {
@@ -161,9 +161,9 @@ var Graphic = function (_Component) {
     }
   }, {
     key: '_onRequestForNextLegend',
-    value: function _onRequestForNextLegend(e) {
-      e.preventDefault();
+    value: function _onRequestForNextLegend(event) {
       if (document.activeElement === this.refs.meter) {
+        event.preventDefault();
         var totalValueCount = _reactDom2.default.findDOMNode(this.refs.meterValues).childNodes.length;
 
         if (this.props.activeIndex + 1 >= totalValueCount) {

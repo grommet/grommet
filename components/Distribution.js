@@ -321,9 +321,9 @@ var Distribution = function (_Component) {
     }
   }, {
     key: '_onPreviousDistribution',
-    value: function _onPreviousDistribution(e) {
-      e.preventDefault();
+    value: function _onPreviousDistribution(event) {
       if (document.activeElement === this.refs.distribution) {
+        event.preventDefault();
         var totalDistributionCount = _reactDom2.default.findDOMNode(this.refs.distributionItems).childNodes.length;
 
         if (this.state.activeIndex - 1 < 0) {
@@ -338,9 +338,9 @@ var Distribution = function (_Component) {
     }
   }, {
     key: '_onNextDistribution',
-    value: function _onNextDistribution(e) {
-      e.preventDefault();
+    value: function _onNextDistribution(event) {
       if (document.activeElement === this.refs.distribution) {
+        event.preventDefault();
         var totalDistributionCount = _reactDom2.default.findDOMNode(this.refs.distributionItems).childNodes.length;
 
         if (this.state.activeIndex + 1 >= totalDistributionCount) {

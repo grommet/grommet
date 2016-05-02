@@ -106,10 +106,9 @@ var Chart = function (_Component) {
     }
   }, {
     key: '_onRequestForNextLegend',
-    value: function _onRequestForNextLegend(e) {
-      e.preventDefault();
+    value: function _onRequestForNextLegend(event) {
       if (document.activeElement === this.refs.chart) {
-
+        event.preventDefault();
         var totalBandCount = _reactDom2.default.findDOMNode(this.refs.front).childNodes.length;
 
         if (this.state.highlightXIndex - 1 < 0) {
@@ -124,10 +123,9 @@ var Chart = function (_Component) {
     }
   }, {
     key: '_onRequestForPreviousLegend',
-    value: function _onRequestForPreviousLegend(e) {
-      e.preventDefault();
+    value: function _onRequestForPreviousLegend(event) {
       if (document.activeElement === this.refs.chart) {
-
+        event.preventDefault();
         var totalBandCount = _reactDom2.default.findDOMNode(this.refs.front).childNodes.length;
 
         if (this.state.highlightXIndex + 1 >= totalBandCount) {
