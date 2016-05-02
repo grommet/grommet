@@ -29,11 +29,7 @@ class LayerContents extends Component {
   }
 
   componentDidMount () {
-    var items = this.refs.container.getElementsByTagName('*');
-    var firstFocusable = DOMUtils.getBestFirstFocusable(items);
-    if (firstFocusable) {
-      firstFocusable.focus();
-    }
+    this.refs.anchorStep.focus();
 
     this._keyboardHandlers = {
       tab: this._processTab
@@ -120,6 +116,8 @@ class LayerContents extends Component {
 
     return (
       <div ref="container" className={CLASS_ROOT + "__container"}>
+        <a tabIndex="-1" aria-hidden='true'
+          ref='anchorStep' />
         {closer}
         {this.props.children}
       </div>
