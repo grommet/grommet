@@ -209,12 +209,13 @@ export default class Video extends Component {
         );
 
         return (
-          <div key={chapter.time} className={timelineClasses}
+          <Box key={chapter.time} className={timelineClasses}
+            pad={{vertical: 'small'}}
             style={{left: percent.toString() + '%'}}
             onClick={this._onClickChapter.bind(this, chapter.time)}>
             <label>{chapter.label}</label>
             <time>{time}</time>
-          </div>
+          </Box>
         );
       }, this);
 

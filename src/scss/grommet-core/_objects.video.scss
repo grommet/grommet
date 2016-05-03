@@ -113,7 +113,7 @@
       }
 
       label {
-        font-weight: bold;
+        font-weight: 600;
       }
     }
 
@@ -133,7 +133,7 @@
 
   &__progress {
     position: absolute;
-    background-color: rgba(nth($brand-grey-colors, 3), 0.7);
+    background-color: lighten(rgba(nth($brand-grey-colors, 3), 0.7), 20%);
     left: 0px;
     right: 0px;
     height: quarter($inuit-base-spacing-unit);
