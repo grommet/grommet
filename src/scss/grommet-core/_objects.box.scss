@@ -55,6 +55,22 @@
   width: 100vw;
 }
 
+.box--width-auto {
+  width: auto;
+}
+
+.box--width-inherit {
+  width: inherit;
+}
+
+.box--width-initial {
+  width: initial;
+}
+
+.box--width-max {
+  width: 100%;
+}
+
 .box--wrap {
   flex-wrap: wrap;
 }
