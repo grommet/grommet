@@ -247,6 +247,8 @@ var MenuDrop = function (_Component) {
 
       delete boxProps.onClick;
 
+      delete boxProps.size;
+
       // Put nested Menus inline
       var children = _react2.default.Children.map(this.props.children, function (child) {
         var result = child;
