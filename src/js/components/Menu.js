@@ -176,6 +176,8 @@ class MenuDrop extends Component {
 
     delete boxProps.onClick;
 
+    delete boxProps.size;
+    
     // Put nested Menus inline
     const children = React.Children.map(this.props.children, child => {
       let result = child;
