@@ -258,8 +258,9 @@ var Video = function (_Component) {
           var timelineClasses = (0, _classnames5.default)(CLASS_ROOT + '__timeline-chapter', _defineProperty({}, CLASS_ROOT + '__timeline-active', currentProgress !== 0 && (currentProgress >= chapter.time && currentProgress < nextChapter.time || index === chapters.length - 1 && currentProgress >= lastChapter.time)));
 
           return _react2.default.createElement(
-            'div',
+            _Box2.default,
             { key: chapter.time, className: timelineClasses,
+              pad: { vertical: 'small' },
               style: { left: percent.toString() + '%' },
               onClick: this._onClickChapter.bind(this, chapter.time) },
             _react2.default.createElement(
