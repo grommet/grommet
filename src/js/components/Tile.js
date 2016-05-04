@@ -10,13 +10,15 @@ const CLASS_ROOT = "tile";
 export default class Tile extends Component {
 
   render () {
-    const { children, className, onClick, wide, status, selected, hoverStyle, hoverColorIndex, hoverBorder } = this.props;
+    const { children, className, onClick, wide, status, selected, hoverStyle, hoverColorIndex, hoverBorder, hoverBorderSize } = this.props;
 
     if (selected) {
       console.log('Selected option has been deprecated, please use selected option at the Tiles level.');
     }
 
     const statusClass = status ? status.toLowerCase() : undefined;
+    // if Tiles flush is true, default borderSize to small (1px)
+    let borderSize = (hoverBorder) ? ((hoverBorderSize) ? hoverBorderSize : 'large') : 'small';
 
     const classes = classnames(
       CLASS_ROOT,
@@ -26,7 +28,8 @@ export default class Tile extends Component {
         [`${CLASS_ROOT}--wide`]: wide,
         [`${CLASS_ROOT}--selectable`]: onClick,
         [`${CLASS_ROOT}--selected`]: selected,
-        [`${hoverStyle}${(hoverStyle == 'border') ? ((hoverBorder) ? '-large' : '-small') : ''}-hover-color-index-${hoverColorIndex}`]: hoverStyle
+        [`${hoverStyle}${(hoverStyle == 'border') ? ((borderSize) ? `-${borderSize}` : '-medium') : ''}-hover-color-index-${hoverColorIndex}`]: hoverStyle,
+        [`${CLASS_ROOT}--hover-border-${borderSize}`]: borderSize
       }
     );
 
@@ -46,6 +49,7 @@ Tile.propTypes = {
   wide: PropTypes.bool,
   hoverStyle: PropTypes.oneOf(['border', 'background', 'none']),
   hoverColorIndex: PropTypes.string,
+  hoverBorderSize: PropTypes.oneOf(['small', 'medium', 'large']),
   ...Box.propTypes
 };
 
