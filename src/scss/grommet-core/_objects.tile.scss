@@ -36,11 +36,21 @@
     }
   }
 
-  &:not(.tiles--flush) > .tile {
-    margin: halve($inuit-base-spacing-unit);
+  &:not(.tiles--flush) {
+    > .tile {
+      margin: halve($inuit-base-spacing-unit);
 
-    &--wide {
-      flex-basis: calc(100% - #{$inuit-base-spacing-unit});
+      &--wide {
+        flex-basis: calc(100% - #{$inuit-base-spacing-unit});
+      }
+
+      &.tile--hover-border-medium {
+        margin: quarter($inuit-base-spacing-unit);
+      }
+
+      &.tile--hover-border-large {
+        margin: halve($inuit-base-spacing-unit);
+      }
     }
   }
 
