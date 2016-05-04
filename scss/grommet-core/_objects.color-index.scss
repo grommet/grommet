@@ -62,6 +62,11 @@
     box-shadow: 0 0 0 1px nth($brand-neutral-colors, $i);
   }
 
+  .border-medium-hover-color-index-neutral-#{$i}:hover,
+  .border-medium-hover-color-index-neutral-#{$i + length($brand-neutral-colors)}:hover {
+    box-shadow: 0 0 0 halve($inuit-base-spacing-unit) nth($brand-neutral-colors, $i);
+  }
+
   .border-large-hover-color-index-neutral-#{$i}:hover,
   .border-large-hover-color-index-neutral-#{$i + length($brand-neutral-colors)}:hover {
     box-shadow: 0 0 0 $inuit-base-spacing-unit nth($brand-neutral-colors, $i);
@@ -109,9 +114,14 @@
     background-color: rgba(nth($brand-accent-colors, $i), 0.3);
   }
 
-  .border-smallhover-color-index-accent-#{$i}:hover,
-  .border-smallhover-color-index-accent-#{$i + length($brand-accent-colors)}:hover {
+  .border-small-hover-color-index-accent-#{$i}:hover,
+  .border-small-hover-color-index-accent-#{$i + length($brand-accent-colors)}:hover {
     box-shadow: 0 0 0 1px nth($brand-accent-colors, $i);
+  }
+
+  .border-medium-hover-color-index-accent-#{$i}:hover,
+  .border-medium-hover-color-index-accent-#{$i + length($brand-accent-colors)}:hover {
+    box-shadow: 0 0 0 halve($inuit-base-spacing-unit) nth($brand-accent-colors, $i);
   }
 
   .border-large-hover-color-index-accent-#{$i}:hover,
@@ -144,6 +154,11 @@
   .border-small-hover-color-index-grey-#{$i}:hover,
   .border-small-hover-color-index-grey-#{$i + length($brand-grey-colors)}:hover {
     box-shadow: 0 0 0 1px nth($brand-grey-colors, $i);
+  }
+
+  .border-medium-hover-color-index-grey-#{$i}:hover,
+  .border-medium-hover-color-index-grey-#{$i + length($brand-grey-colors)}:hover {
+    box-shadow: 0 0 0 halve($inuit-base-spacing-unit) nth($brand-grey-colors, $i);
   }
 
   .border-large-hover-color-index-grey-#{$i}:hover,
@@ -185,6 +200,10 @@
     box-shadow: 0 0 0 1px $color;
   }
 
+  .border-medium-hover-color-index-#{$status}:hover {
+    box-shadow: 0 0 0 halve($inuit-base-spacing-unit) $color;
+  }
+
   .border-large-hover-color-index-#{$status}:hover {
     box-shadow: 0 0 0 $inuit-base-spacing-unit $color;
   }
@@ -214,6 +233,11 @@
   .border-small-hover-color-index-light-#{$i}:hover,
   .border-small-hover-color-index-light-#{$i + length($brand-light-colors)}:hover {
     box-shadow: 0 0 0 1px nth($brand-light-colors, $i);
+  }
+
+  .border-medium-hover-color-index-light-#{$i}:hover,
+  .border-medium-hover-color-index-light-#{$i + length($brand-light-colors)}:hover {
+    box-shadow: 0 0 0 halve($inuit-base-spacing-unit) nth($brand-light-colors, $i);
   }
 
   .border-large-hover-color-index-light-#{$i}:hover,

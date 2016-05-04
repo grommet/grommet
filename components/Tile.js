@@ -60,6 +60,7 @@ var Tile = function (_Component) {
       var hoverStyle = _props.hoverStyle;
       var hoverColorIndex = _props.hoverColorIndex;
       var hoverBorder = _props.hoverBorder;
+      var hoverBorderSize = _props.hoverBorderSize;
 
 
       if (selected) {
@@ -67,8 +68,10 @@ var Tile = function (_Component) {
       }
 
       var statusClass = status ? status.toLowerCase() : undefined;
+      // if Tiles flush is true, default borderSize to small (1px)
+      var borderSize = hoverBorder ? hoverBorderSize ? hoverBorderSize : 'large' : 'small';
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, className, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--status-' + statusClass, status), _defineProperty(_classnames, CLASS_ROOT + '--wide', wide), _defineProperty(_classnames, CLASS_ROOT + '--selectable', onClick), _defineProperty(_classnames, CLASS_ROOT + '--selected', selected), _defineProperty(_classnames, '' + hoverStyle + (hoverStyle == 'border' ? hoverBorder ? '-large' : '-small' : '') + '-hover-color-index-' + hoverColorIndex, hoverStyle), _classnames));
+      var classes = (0, _classnames3.default)(CLASS_ROOT, className, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--status-' + statusClass, status), _defineProperty(_classnames, CLASS_ROOT + '--wide', wide), _defineProperty(_classnames, CLASS_ROOT + '--selectable', onClick), _defineProperty(_classnames, CLASS_ROOT + '--selected', selected), _defineProperty(_classnames, '' + hoverStyle + (hoverStyle == 'border' ? borderSize ? '-' + borderSize : '-medium' : '') + '-hover-color-index-' + hoverColorIndex, hoverStyle), _defineProperty(_classnames, CLASS_ROOT + '--hover-border-' + borderSize, borderSize), _classnames));
 
       var boxProps = _Props2.default.pick(this.props, Object.keys(_Box2.default.propTypes));
 
@@ -90,7 +93,8 @@ Tile.propTypes = _extends({
   selected: _react.PropTypes.bool,
   wide: _react.PropTypes.bool,
   hoverStyle: _react.PropTypes.oneOf(['border', 'background', 'none']),
-  hoverColorIndex: _react.PropTypes.string
+  hoverColorIndex: _react.PropTypes.string,
+  hoverBorderSize: _react.PropTypes.oneOf(['small', 'medium', 'large'])
 }, _Box2.default.propTypes);
 
 Tile.defaultProps = {
