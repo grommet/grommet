@@ -3,6 +3,7 @@
 import React, { Component, PropTypes } from 'react';
 
 const CLASS_ROOT = "split";
+const BREAK_WIDTH = 720; //adds the breakpoint of single/multiple split
 
 export default class Split extends Component {
 
@@ -16,15 +17,6 @@ export default class Split extends Component {
   }
 
   componentDidMount () {
-    // figure out the break width
-    this._breakWidth = 720; // default
-    // CSS stores the break width in a hidden pseudo element
-    var splitElement = this.refs.split;
-    var after = window.getComputedStyle(splitElement, ':after');
-    if (after) {
-      this._breakWidth = parseInt(after.getPropertyValue('width'), 10);
-    }
-
     window.addEventListener('resize', this._onResize);
     this._layout();
   }
@@ -77,7 +69,7 @@ export default class Split extends Component {
   _layout () {
     var splitElement = this.refs.split;
     if (splitElement) {
-      if (splitElement.offsetWidth < this._breakWidth) {
+      if (splitElement.offsetWidth < BREAK_WIDTH) {
         this._setResponsive('single');
       } else {
         this._setResponsive('multiple');
