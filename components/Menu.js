@@ -144,7 +144,9 @@ var MenuDrop = function (_Component) {
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
-      this._originalFocusedElement.focus();
+      if (this._originalFocusedElement.focus) {
+        this._originalFocusedElement.focus();
+      }
       _KeyboardAccelerators2.default.stopListeningToKeyboard(this, this._keyboardHandlers);
     }
   }, {
