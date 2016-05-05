@@ -425,16 +425,14 @@ export default class Article extends Component {
   }
 
   _renderPagination () {
-    if (this.state.atBottom) {
-      const childCount = React.Children.count(this.props.children);
-      return (
-        <Box className="article__pagination" align="center">
-          <Box align="center">
-            <Paragraph size="large">{this.state.selectedIndex+1} of {childCount}</Paragraph>
-          </Box>
+    const childCount = React.Children.count(this.props.children);
+    return (
+      <Box className={`${CLASS_ROOT}__pagination`} align="center">
+        <Box align="center">
+          <Paragraph size="large">{this.state.selectedIndex + 1} of {childCount}</Paragraph>
         </Box>
-      );
-    }
+      </Box>
+    );
   }
 
   _renderControls () {
@@ -502,7 +500,7 @@ export default class Article extends Component {
     }
 
     let pagination;
-    if (this.props.pagination) {
+    if (this.props.pagination && this.state.atBottom && 'row' === this.props.direction) {
       pagination = this._renderPagination();
     }
 

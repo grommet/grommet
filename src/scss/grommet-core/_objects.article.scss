@@ -59,6 +59,10 @@
   position: fixed;
   z-index: 10;
 
+  .button__icon {
+    padding: halve($inuit-base-spacing-unit);
+  }
+
   @include media-query(lap-and-up) {
     .button__icon {
       background-color: lighten(rgba(nth($brand-grey-colors, 3), 0.5), 50%);
