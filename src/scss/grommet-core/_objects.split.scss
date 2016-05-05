@@ -4,18 +4,6 @@
   position: relative;
   overflow: visible;
 
-  // Used by Split.js to determine when to break.
-  // Align with responsive settings used for $breakpoints.
-  &:after {
-    position: absolute;
-    left: 0px;
-    content: ' ';
-    display: block;
-    width: $break-lap-and-up-min-width;
-    height: 0px;
-    z-index: -10;
-  }
-
   @include media-query(lap-and-up) {
     display: flex;
 

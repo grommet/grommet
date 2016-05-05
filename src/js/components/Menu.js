@@ -82,7 +82,9 @@ class MenuDrop extends Component {
   }
 
   componentWillUnmount () {
-    this._originalFocusedElement.focus();
+    if (this._originalFocusedElement.focus) {
+      this._originalFocusedElement.focus();
+    }
     KeyboardAccelerators.stopListeningToKeyboard(this, this._keyboardHandlers);
   }
 
@@ -177,7 +179,7 @@ class MenuDrop extends Component {
     delete boxProps.onClick;
 
     delete boxProps.size;
-    
+
     // Put nested Menus inline
     const children = React.Children.map(this.props.children, child => {
       let result = child;
