@@ -3,6 +3,7 @@
 import React, { Component, PropTypes, Children } from 'react';
 import {findDOMNode} from 'react-dom';
 import Box from './Box';
+import Paragraph from './Paragraph';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 import DOMUtils from '../utils/DOM';
 import Props from '../utils/Props';
@@ -41,7 +42,8 @@ export default class Article extends Component {
     this.state = {
       selectedIndex: props.selected || 0,
       playing: false,
-      showControls: this.props.controls
+      showControls: this.props.controls,
+      pagination: false
     };
   }
 
@@ -422,6 +424,17 @@ export default class Article extends Component {
     }
   }
 
+  _renderPagination () {
+    const childCount = React.Children.count(this.props.children);
+    return (
+      <Box className={`${CLASS_ROOT}__pagination`} align="center">
+        <Box align="center">
+          <Paragraph size="large">{this.state.selectedIndex + 1} of {childCount}</Paragraph>
+        </Box>
+      </Box>
+    );
+  }
+
   _renderControls () {
     const CONTROL_CLASS_PREFIX =
       `${CLASS_ROOT}__control ${CLASS_ROOT}__control`;
@@ -486,6 +499,11 @@ export default class Article extends Component {
       classes.push(this.props.className);
     }
 
+    let pagination;
+    if (this.props.pagination && this.state.atBottom && 'row' === this.props.direction) {
+      pagination = this._renderPagination();
+    }
+
     let controls;
     if (this.props.controls) {
       controls = this._renderControls();
@@ -533,6 +551,7 @@ export default class Article extends Component {
           ref='anchorStep' />
         {children}
         {controls}
+        {pagination}
       </Box>
     );
   }
@@ -542,6 +561,7 @@ Article.propTypes = {
   controls: PropTypes.bool,
   primary: PropTypes.bool,
   scrollStep: PropTypes.bool,
+  pagination: PropTypes.bool,
   ...Box.propTypes,
   a11yTitle: PropTypes.shape({
     next: PropTypes.string,

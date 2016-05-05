@@ -60,7 +60,19 @@
   z-index: 10;
 
   .button__icon {
-    padding: $inuit-base-spacing-unit;
+    padding: halve($inuit-base-spacing-unit);
+  }
+
+  @include media-query(lap-and-up) {
+    .button__icon {
+      background-color: lighten(rgba(nth($brand-grey-colors, 3), 0.5), 50%);
+    }
+  }
+
+   @include media-query(palm) {
+    .button__icon {
+      background-color: transparent;
+    }
   }
 }
 
@@ -103,5 +115,12 @@
 }
 
 .grommet article:not(.article) {
+  width: 100%;
+}
+
+.article__pagination {
+  position: fixed;
+  bottom: 0;
+  left: 0;
   width: 100%;
 }
