@@ -19,6 +19,11 @@
       visibility: hidden;
       width: 0px;
       height: 0px;
+
+      // IE11 specific fix for layer to hide content behind layer so scroll bar
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        display: none;
+      }
     }
   }
 
