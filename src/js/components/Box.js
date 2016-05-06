@@ -62,6 +62,7 @@ export default class Box extends Component {
     this._addPropertyClass(classes, CLASS_ROOT, 'separator');
     this._addPropertyClass(classes, CLASS_ROOT, 'size');
     this._addPropertyClass(classes, CLASS_ROOT, 'textAlign', 'text-align');
+    this._addPropertyClass(classes, CLASS_ROOT, 'width');
     this._addPropertyClass(classes, CLASS_ROOT, 'wrap');
     if (this.props.hasOwnProperty('flex')) {
       if (this.props.flex) {
@@ -200,6 +201,7 @@ Box.propTypes = {
     PropTypes.node,
     PropTypes.string
   ]),
+  width: PropTypes.oneOf(['inherit', 'initial', 'auto', 'max']),
   wrap: PropTypes.bool
 };
 
