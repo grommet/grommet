@@ -18,6 +18,10 @@ var _Paragraph = require('./Paragraph');
 
 var _Paragraph2 = _interopRequireDefault(_Paragraph);
 
+var _Table = require('./Table');
+
+var _Table2 = _interopRequireDefault(_Table);
+
 var _Heading = require('./Heading');
 
 var _Heading2 = _interopRequireDefault(_Heading);
@@ -31,6 +35,8 @@ var _Image = require('./Image');
 var _Image2 = _interopRequireDefault(_Image);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// (C) Copyright 2016 Hewlett Packard Enterprise Development LP
 
 var Markdown = function Markdown(props) {
   var content = props.content;
@@ -49,9 +55,6 @@ var Markdown = function Markdown(props) {
   }, {});
 
   var options = (0, _deepAssign2.default)({
-    p: {
-      component: _Paragraph2.default
-    },
     a: {
       component: _Anchor2.default
     },
@@ -60,11 +63,17 @@ var Markdown = function Markdown(props) {
       props: {
         caption: true
       }
+    },
+    p: {
+      component: _Paragraph2.default
+    },
+    table: {
+      component: _Table2.default
     }
   }, heading, components);
 
   return (0, _markdownToJsx2.default)(content, {}, options);
-}; // (C) Copyright 2016 Hewlett Packard Enterprise Development LP
+};
 
 Markdown.propTypes = {
   content: _react.PropTypes.string,
