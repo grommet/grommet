@@ -4,6 +4,7 @@ import { PropTypes } from 'react';
 import markdownToJSX from 'markdown-to-jsx';
 import deepAssign from 'deep-assign';
 import Paragraph from './Paragraph';
+import Table from './Table';
 import Heading from './Heading';
 import Anchor from './Anchor';
 import Image from './Image';
@@ -25,9 +26,6 @@ let Markdown = (props) => {
     }, {});
 
   const options = deepAssign({
-    p: {
-      component: Paragraph
-    },
     a: {
       component: Anchor
     },
@@ -36,6 +34,12 @@ let Markdown = (props) => {
       props: {
         caption: true
       }
+    },
+    p: {
+      component: Paragraph
+    },
+    table: {
+      component: Table
     }
   }, heading, components);
 
