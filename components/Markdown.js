@@ -72,7 +72,10 @@ var Markdown = function Markdown(props) {
     }
   }, heading, components);
 
-  return (0, _markdownToJsx2.default)(content, {}, options);
+  return (0, _markdownToJsx2.default)(content, {
+    breaks: true,
+    gfm: true
+  }, options);
 };
 
 Markdown.propTypes = {
