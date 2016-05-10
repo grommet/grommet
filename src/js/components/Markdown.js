@@ -44,7 +44,10 @@ let Markdown = (props) => {
   }, heading, components);
 
   return (
-    markdownToJSX(content, {}, options)
+    markdownToJSX(content, {
+      breaks: true,
+      gfm: true
+    }, options)
   );
 };
 
