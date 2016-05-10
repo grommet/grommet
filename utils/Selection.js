@@ -66,10 +66,9 @@ function onClick(event, options) {
   // Go up the DOM tree until we match the childSelector
   var item = event.target;
   var matchFunction = item.matches || item.matchesElement || item.msMatchesSelector;
-  if (matchFunction) {
-    while (item && !matchFunction.bind(item, options.childSelector)()) {
-      item = item.parentNode;
-    }
+  while (matchFunction && item && !matchFunction.bind(item, options.childSelector)()) {
+    item = item.parentNode;
+    matchFunction = item.matches || item.matchesElement || item.msMatchesSelector;
   }
 
   // determine the index of the clicked element
