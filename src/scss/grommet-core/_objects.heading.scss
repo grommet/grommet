@@ -18,6 +18,11 @@ h6.heading {
     font-weight: 600;
   }
 
+  &--uppercase {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+  }
+
   @include text-align();
   @include margin();
 }
