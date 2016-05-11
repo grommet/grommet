@@ -3,6 +3,7 @@
 import React, { Component, PropTypes, Children } from 'react';
 import {findDOMNode} from 'react-dom';
 import Box from './Box';
+import Paragraph from './Paragraph';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 import DOMUtils from '../utils/DOM';
 import Props from '../utils/Props';
@@ -439,19 +440,29 @@ export default class Article extends Component {
     if ('row' === this.props.direction) {
       if (! this.state.narrow || this.state.atBottom) {
         if (this.state.selectedIndex > 0) {
+          let controlSpacer = (!this.state.narrow) ? (<Paragraph size="large"> &nbsp; </Paragraph>) : null; 
           controls.push(
-            <Button key="previous" ref='previous'
-              plain={true} a11yTitle={a11yTitle.previous}
-              className={`${CONTROL_CLASS_PREFIX}-left`}
-              onClick={this._onPrevious} icon={<PreviousIcon size="large" />} />
+            <Box key="previous" ref='previous' className={`${CONTROL_CLASS_PREFIX}-left`} direction="row"
+            onClick={this._onPrevious} pad={{vertical: "small", horizontal: "medium"}}>
+              <Box justify="center">
+                <PreviousIcon size="large" />
+              </Box>
+              {controlSpacer}
+            </Box>
           );
         }
         if (this.state.selectedIndex < (childCount - 1)) {
+          let arrowPagination = (!this.state.narrow) ? (<Paragraph size="large">{this.state.selectedIndex + 1} of {childCount}</Paragraph>) : null; 
           controls.push(
-            <Button key="next" ref='next'
-              plain={true} a11yTitle={a11yTitle.next}
-              className={`${CONTROL_CLASS_PREFIX}-right`}
-              onClick={this._onNext} icon={<NextIcon size="large" />} />
+            <Box key="next" ref='next' className={`${CONTROL_CLASS_PREFIX}-right`} direction="row" 
+            onClick={this._onNext} pad="small">
+              <Box pad={{horizontal: "small"}}>
+                {arrowPagination}
+              </Box>
+              <Box justify="center" pad="small">
+                <NextIcon size="large" />
+              </Box>
+            </Box>
           );
         }
       }
@@ -476,6 +487,17 @@ export default class Article extends Component {
     return controls;
   }
 
+  _renderPagination () {
+    const childCount = React.Children.count(this.props.children);
+    return (
+      <Box className={`${CLASS_ROOT}__pagination`} align="center">
+        <Box align="center">
+          <Paragraph size="large">{this.state.selectedIndex + 1} of {childCount}</Paragraph>
+        </Box>
+      </Box>
+    );
+  }
+
   render () {
     let classes = [CLASS_ROOT];
     const other = Props.pick(this.props, Object.keys(Box.propTypes));
@@ -489,6 +511,11 @@ export default class Article extends Component {
     let controls;
     if (this.props.controls) {
       controls = this._renderControls();
+    }
+
+    let pagination;
+    if (this.props.pagination && this.state.atBottom && 'row' === this.props.direction) {
+      pagination = this._renderPagination();
     }
 
     let children = this.props.children;
@@ -533,6 +560,7 @@ export default class Article extends Component {
           ref='anchorStep' />
         {children}
         {controls}
+        {pagination}
       </Box>
     );
   }
