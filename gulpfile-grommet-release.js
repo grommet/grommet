@@ -9,7 +9,7 @@ import mkdirp from 'mkdirp';
 import grommetToolboxConfig, {getPackageJSON} from './grommet-toolbox.config';
 
 module.exports = function(gulp) {
-  gulp.task('release:bump', function(done) {
+  gulp.task('release:bump', (done) => {
     gulp.src('./')
       .pipe(prompt.prompt({
         type: 'input',
@@ -21,17 +21,12 @@ module.exports = function(gulp) {
           }
           return true;
         }
-      }, function(res) {
-        gulp.src('./docs/package.json')
-        .pipe(bump({
-          type: res.bump
-        })).pipe(gulp.dest('./docs'));
-
+      }, (res) => {
         gulp.src('./package.json')
         .pipe(bump({
           type: res.bump
         }))
-        .pipe(gulp.dest('./')).on('end', function() {
+        .pipe(gulp.dest('./')).on('end', () => {
           grommetToolboxConfig.copyAssets.push({
             filename: 'package.json',
             asset: JSON.stringify(getPackageJSON(), null, 2)
@@ -41,29 +36,29 @@ module.exports = function(gulp) {
       }));
   });
 
-  gulp.task('release:npm', function(done) {
+  gulp.task('release:npm', (done) => {
     process.chdir('dist');
     childProcess.spawn('npm', ['publish'], {
       stdio: 'inherit'
-    }).on('close', function() {
+    }).on('close', () => {
       process.chdir(__dirname);
       var version = 'v' + getPackageJSON().version;
       gulp.src('./')
         .pipe(git.add({
           args: '--all'
         }))
-        .pipe(git.commit(version)).on('end', function() {
-          git.push('origin', 'master', function(err) {
+        .pipe(git.commit(version)).on('end', () => {
+          git.push('origin', 'master', (err) => {
             if (err) {
               throw err;
             }
 
-            git.tag(version, version, function(err) {
+            git.tag(version, version, (err) => {
               if (err) {
                 throw err;
               }
 
-              git.push('origin', version, function(err) {
+              git.push('origin', version, (err) => {
                 if (err) {
                   throw err;
                 }
@@ -76,7 +71,7 @@ module.exports = function(gulp) {
     });
   });
 
-  gulp.task('release:createTmp', function(done) {
+  gulp.task('release:createTmp', (done) => {
     del.sync(['./tmp']);
     mkdirp('./tmp', function(err) {
       if (err) {
@@ -86,12 +81,12 @@ module.exports = function(gulp) {
     });
   });
 
-  gulp.task('release:bower', ['release:createTmp'], function(done) {
+  gulp.task('release:bower', ['release:createTmp'], (done) => {
     git.clone('https://github.com/grommet/grommet-bower.git',
       {
         cwd: './tmp/'
       },
-      function(err) {
+      (err) => {
         if (err) {
           throw err;
         }
@@ -103,18 +98,18 @@ module.exports = function(gulp) {
           .pipe(git.add({
             args: '--all'
           }))
-          .pipe(git.commit(version)).on('end', function() {
-            git.push('origin', 'master', function(err) {
+          .pipe(git.commit(version)).on('end', () => {
+            git.push('origin', 'master', (err) => {
               if (err) {
                 throw err;
               }
 
-              git.tag(version, version, function(err) {
+              git.tag(version, version, (err) => {
                 if (err) {
                   throw err;
                 }
 
-                git.push('origin', version, function(err) {
+                git.push('origin', version, (err) => {
                   if (err) {
                     throw err;
                   }
@@ -128,29 +123,29 @@ module.exports = function(gulp) {
     );
   });
 
-  gulp.task('release:stable', ['release:createTmp'], function(done) {
+  gulp.task('release:stable', ['release:createTmp'], (done) => {
     if (process.env.CI) {
       git.clone('https://' + process.env.GH_TOKEN + '@github.com/grommet/grommet.git',
         {
           cwd: './tmp/'
         },
-        function(err) {
+        (err) => {
           if (err) {
             throw err;
           }
 
           process.chdir('./tmp/grommet');
-          git.checkout('stable', function(err) {
+          git.checkout('stable', (err) => {
             if (err) {
               throw err;
             }
 
             del.sync(['./**/*']);
 
-            gulp.src('../../dist/**').pipe(gulp.dest('./')).on('end', function() {
+            gulp.src('../../dist/**').pipe(gulp.dest('./')).on('end', () => {
               git.status({
                 args: '--porcelain'
-              }, function(err, stdout) {
+              }, (err, stdout) => {
                 if (err) {
                   throw err;
                 }
@@ -160,8 +155,8 @@ module.exports = function(gulp) {
                     .pipe(git.add({
                       args: '--all'
                     }))
-                    .pipe(git.commit('Stable dev version update.')).on('end', function() {
-                      git.push('origin', 'stable', { quiet: true }, function(err) {
+                    .pipe(git.commit('Stable dev version update.')).on('end', () => {
+                      git.push('origin', 'stable', { quiet: true }, (err) => {
                         if (err) {
                           throw err;
                         }
@@ -186,11 +181,11 @@ module.exports = function(gulp) {
     }
   });
 
-  gulp.task('release:clean', function() {
+  gulp.task('release:clean', () => {
     del.sync(['./tmp']);
   });
 
-  gulp.task('release', function(done) {
+  gulp.task('release', (done) => {
     runSequence('release:bump', 'dist-bower', 'dist', 'release:npm', 'release:bower', 'release:clean', done);
   });
 };
