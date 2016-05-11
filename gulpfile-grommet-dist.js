@@ -115,7 +115,7 @@ module.exports = function(gulp) {
     });
   });
 
-  gulp.task('dist-css', function() {
+  gulp.task('dist-css', () => {
     gulp.src('src/scss/hpinc/*.scss')
       .pipe(sass({
         includePaths: [path.resolve(__dirname, './node_modules')]
@@ -150,7 +150,7 @@ module.exports = function(gulp) {
   });
 
   function distCss(path, name, minify) {
-    gulp.src(path)
+    return gulp.src(path)
       .pipe(sass({
         includePaths: ['node_modules']
       }))
@@ -159,26 +159,22 @@ module.exports = function(gulp) {
       .pipe(gulp.dest('dist-bower/css'));
   }
 
-  function distBower(config) {
+  function distBower(config, done) {
     return gulp.src('src/js/index.js')
       .pipe(gulpWebpack(config))
-      .pipe(gulp.dest('dist-bower'));
+      .pipe(gulp.dest('dist-bower')).on('end', done);
   }
 
-  gulp.task('dist-bower:exploded', function() {
-    distBower(bowerWebpackConfig);
+  gulp.task('dist-bower:exploded', function(done) {
+    distBower(bowerWebpackConfig, done);
   });
 
-  gulp.task('dist-bower:minified', function() {
-    distBower(bowerMinWebpackConfig);
+  gulp.task('dist-bower:minified', function(done) {
+    distBower(bowerMinWebpackConfig, done);
   });
 
-  gulp.task('dist-bower:preprocess', ['generate-index-icons'], function(done) {
+  gulp.task('dist-bower:preprocess', ['generate-index-icons'], (done) => {
     del.sync(['dist-bower']);
-    runSequence(['dist-bower:exploded', 'dist-bower:minified'], done);
-  });
-
-  gulp.task('dist-bower', ['dist-bower:preprocess'], function() {
 
     distCss('src/scss/grommet-core/*.scss', 'grommet.css');
     distCss('src/scss/grommet-core/*.scss', 'grommet.min.css', true);
@@ -189,9 +185,14 @@ module.exports = function(gulp) {
     distCss('src/scss/aruba/*.scss', 'grommet-aruba.css');
     distCss('src/scss/aruba/*.scss', 'grommet-aruba.min.css', true);
 
+    runSequence(['dist-bower:exploded', 'dist-bower:minified'], done);
+  });
+
+  gulp.task('dist-bower', ['dist-bower:preprocess'], () => {
+
     var bowerJSON = getPackageJSON();
     bowerJSON.dependencies = {
-      'react': '^0.14.2',
+      'react': '^15.0.2',
       'grommet': '^' + bowerJSON.version
     };
     bowerJSON.ignore = [];
