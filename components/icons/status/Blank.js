@@ -40,7 +40,7 @@ var Blank = function (_Component) {
         className += ' ' + this.props.className;
       }
       if (typeof this.props.a11yTitle === "undefined") {
-        // this.props.a11yTitle emplty string is an acceptable value. Only if undefined
+        // this.props.a11yTitle empty string is an acceptable value. Only if undefined
         // should use the default title value.
         a11yTitle = 'Blank';
       }
