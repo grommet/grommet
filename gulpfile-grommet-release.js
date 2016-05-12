@@ -6,7 +6,7 @@ import runSequence from 'run-sequence';
 import childProcess from 'child_process';
 import mkdirp from 'mkdirp';
 
-import { getPackageJSON } from './grommet-toolbox.config';
+import grommetToolboxConfig, { getPackageJSON } from './grommet-toolbox.config';
 
 module.exports = function(gulp) {
   gulp.task('release:bump', (done) => {
@@ -27,6 +27,10 @@ module.exports = function(gulp) {
           type: res.bump
         }))
         .pipe(gulp.dest('./')).on('end', () => {
+          grommetToolboxConfig.copyAssets.push({
+            filename: 'package.json',
+            asset: JSON.stringify(getPackageJSON(), null, 2)
+          });
           done();
         });
       }));
