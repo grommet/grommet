@@ -11,6 +11,7 @@ export default {
   area: 'Área',
   Bar: 'Bar',
   bar: 'bar',
+  Blank: 'Em branco',
   Box: 'Box',
   camera: 'Câmera',
   Category: 'Categoria',
