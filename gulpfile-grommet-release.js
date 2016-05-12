@@ -6,7 +6,7 @@ import runSequence from 'run-sequence';
 import childProcess from 'child_process';
 import mkdirp from 'mkdirp';
 
-import grommetToolboxConfig, { getPackageJSON } from './grommet-toolbox.config';
+import grommetToolboxConfig, {getPackageJSON} from './grommet-toolbox.config';
 
 module.exports = function(gulp) {
   gulp.task('release:bump', (done) => {
@@ -185,7 +185,11 @@ module.exports = function(gulp) {
     del.sync(['./tmp']);
   });
 
-  gulp.task('release', (done) => {
-    runSequence('release:bump', 'dist-bower', 'dist', 'release:npm', 'release:bower', 'release:clean', done);
+  gulp.task('release:prepare', (done) => {
+    runSequence('release:bump', 'dist-bower', 'dist', done);
+  });
+
+  gulp.task('release:perform', (done) => {
+    runSequence('release:npm', 'release:bower', 'release:clean', done);
   });
 };
