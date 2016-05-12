@@ -13,6 +13,7 @@ export default {
   area: 'area',
   Bar: 'Bar',
   bar: 'bar',
+  Blank: 'Blank',
   Box: 'Box',
   Category: 'Category',
   Circle: 'Circle',
