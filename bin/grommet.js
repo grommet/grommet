@@ -28,7 +28,7 @@ function nodeVersionSupported() {
 
 var npmVersion;
 function npmVersionSupported() {
-  npmVersion = Number(shelljs.exec('npm --version').output.toString().match(/^(\d+\.\d+)/)[1]);
+  npmVersion = Number(shelljs.exec('npm --version').stdout.toString().match(/^(\d+\.\d+)/)[1]);
   return npmVersion  >= 1.4;
 }
 
