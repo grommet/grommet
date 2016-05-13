@@ -13,13 +13,6 @@
 
   @include pad();
 
-  // IE11 fix to remove white gap when Tiles component is inside Layer
-  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-    .layer & {
-      height: 100%;
-    }
-  }
-
   &__container {
     display: flex;
     flex-direction: row;
@@ -72,11 +65,18 @@
     }
   }
 
-  &--fill.box--wrap {
-    justify-content: space-around;
+  &--fill {
+    // IE11 fix to remove extra gap in Tiles
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      height: 100%;
+    }
 
-    > .tile {
-      flex-grow: 1;
+    &.box--wrap {
+      justify-content: space-around;
+
+      > .tile {
+        flex-grow: 1;
+      }
     }
   }
 
