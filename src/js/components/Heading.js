@@ -18,6 +18,9 @@ export default class Heading extends Component {
     }
     if (this.props.margin) {
       classes.push(`${CLASS_ROOT}--margin-${this.props.margin}`);
+    }    
+    if (this.props.uppercase) {
+      classes.push(`${CLASS_ROOT}--uppercase`);
     }
     if (this.props.className) {
       classes.push(this.props.className);
@@ -38,7 +41,8 @@ Heading.propTypes = {
   margin: PropTypes.oneOf(['none', 'small', 'medium', 'large']),
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   strong: PropTypes.bool,
-  tag: PropTypes.string
+  tag: PropTypes.string,
+  uppercase: PropTypes.bool
 };
 
 Heading.defaultProps = {
