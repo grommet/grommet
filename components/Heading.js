@@ -45,6 +45,9 @@ var Heading = function (_Component) {
       if (this.props.margin) {
         classes.push(CLASS_ROOT + '--margin-' + this.props.margin);
       }
+      if (this.props.uppercase) {
+        classes.push(CLASS_ROOT + '--uppercase');
+      }
       if (this.props.className) {
         classes.push(this.props.className);
       }
@@ -70,7 +73,8 @@ Heading.propTypes = {
   margin: _react.PropTypes.oneOf(['none', 'small', 'medium', 'large']),
   size: _react.PropTypes.oneOf(['small', 'medium', 'large']),
   strong: _react.PropTypes.bool,
-  tag: _react.PropTypes.string
+  tag: _react.PropTypes.string,
+  uppercase: _react.PropTypes.bool
 };
 
 Heading.defaultProps = {
