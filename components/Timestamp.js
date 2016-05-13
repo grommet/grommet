@@ -22,7 +22,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var CLASS_ROOT = 'timestamp';
 
-function showField(field, fields) {
+function _showField(field, fields) {
   var result = true;
   if (fields) {
     if (Array.isArray(fields)) {
@@ -40,42 +40,69 @@ var Timestamp = function (_Component) {
   function Timestamp() {
     _classCallCheck(this, Timestamp);
 
-    return _possibleConstructorReturn(this, Object.getPrototypeOf(Timestamp).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Timestamp).call(this));
+
+    _this.state = {};
+    return _this;
   }
 
   _createClass(Timestamp, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this._formatForLocale(this.props);
+    }
+  }, {
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      this._formatForLocale(nextProps);
+    }
+  }, {
+    key: '_formatForLocale',
+    value: function _formatForLocale(props) {
+      var locale = (0, _Locale.getCurrentLocale)();
+      var value = typeof props.value === 'string' ? new Date(props.value) : props.value;
+
+      var date = void 0;
+      if (_showField('date', props.fields)) {
+        var dateOptions = { year: 'numeric', month: 'short', day: 'numeric' };
+        date = value.toLocaleDateString(locale, dateOptions);
+      }
+
+      var time = void 0;
+      if (_showField('time', props.fields)) {
+        var timeOptions = { hour: '2-digit', minute: '2-digit' };
+        time = value.toLocaleTimeString(locale, timeOptions);
+      }
+
+      this.setState({ date: date, time: time });
+    }
+  }, {
     key: 'render',
     value: function render() {
-      var fields = this.props.fields;
-
       var classes = [CLASS_ROOT];
       classes.push(CLASS_ROOT + '--' + this.props.align);
       if (this.props.className) {
         classes.push(this.props.className);
       }
 
-      var locale = (0, _Locale.getCurrentLocale)();
-      var value = typeof this.props.value === 'string' ? new Date(this.props.value) : this.props.value;
-
       var date = void 0;
-      if (showField('date', fields)) {
-        var dateOptions = { year: 'numeric', month: 'short', day: 'numeric' };
+      if (this.state.date) {
         date = _react2.default.createElement(
           'span',
           { className: CLASS_ROOT + '__date' },
-          value.toLocaleDateString(locale, dateOptions)
+          this.state.date
         );
       }
 
       var time = void 0;
-      if (showField('time', fields)) {
-        var timeOptions = { hour: '2-digit', minute: '2-digit' };
+      if (this.state.time) {
         time = _react2.default.createElement(
           'span',
           { className: CLASS_ROOT + '__time' },
-          value.toLocaleTimeString(locale, timeOptions)
+          this.state.time
         );
       }
+
       return _react2.default.createElement(
         'span',
         { className: classes.join(' ') },
@@ -97,7 +124,9 @@ var FIELD_TYPES = _react.PropTypes.oneOf(['date', 'time']);
 Timestamp.propTypes = {
   align: _react.PropTypes.oneOf(['left', 'right']),
   fields: _react.PropTypes.oneOfType([_react.PropTypes.arrayOf(FIELD_TYPES), FIELD_TYPES]),
-  value: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.object]).isRequired
+  value: _react.PropTypes.oneOfType([_react.PropTypes.string, // ISO-8601 string
+  _react.PropTypes.object // Date object
+  ]).isRequired
 };
 
 Timestamp.defaultProps = {
