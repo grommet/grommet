@@ -20,7 +20,8 @@
       width: 0px;
       height: 0px;
 
-      // IE11 specific fix for layer to hide content behind layer so scroll bar
+      // IE11 specific fix for layer to hide content behind layer and
+      // eliminate white gap under layer content (when content behind is taller)
       @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
         display: none;
       }
