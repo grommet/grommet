@@ -4,6 +4,20 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+function hash(input) {
+  var hash = 0,
+      i,
+      chr,
+      len;
+  if (input.length === 0) return hash;
+  for (i = 0, len = input.length; i < len; i++) {
+    chr = input.charCodeAt(i);
+    hash = (hash << 5) - hash + chr;
+    hash = hash & hash; // Convert to 32bit integer
+  }
+  return hash;
+};
+
 exports.default = {
   findScrollParents: function findScrollParents(element, horizontal) {
     var result = [];
@@ -80,6 +94,17 @@ exports.default = {
   isFormElement: function isFormElement(element) {
     var elementType = element ? element.tagName.toLowerCase() : undefined;
     return elementType && (elementType === 'input' || elementType === 'textarea');
+  },
+  generateId: function generateId(element) {
+    var id = void 0;
+    var elementId = element.getAttribute('id');
+    if (!elementId) {
+      id = hash(element.parentElement.innerHTML);
+      element.setAttribute('id', id);
+    } else {
+      id = elementId;
+    }
+    return id;
   }
 };
 module.exports = exports['default'];

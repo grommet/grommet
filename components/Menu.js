@@ -128,7 +128,7 @@ var MenuDrop = function (_Component) {
         menuItems[i].setAttribute('role', 'menuitem');
 
         if (!menuItems[i].getAttribute('id')) {
-          menuItems[i].setAttribute('id', menuItems[i].getAttribute('data-reactid'));
+          menuItems[i].setAttribute('id', 'menu_item_' + i);
         }
       }
 
@@ -347,7 +347,7 @@ var Menu = function (_Component2) {
       if (this.refs.control) {
         var controlElement = this.refs.control.firstChild;
         this.setState({
-          dropId: 'menu-drop-' + controlElement.getAttribute('data-reactid'),
+          dropId: 'menu-drop-' + _DOM2.default.generateId(controlElement),
           controlHeight: controlElement.clientHeight
         });
       }
