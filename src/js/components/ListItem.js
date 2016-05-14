@@ -13,7 +13,7 @@ export default class ListItem extends Component {
     const { children, className, onClick, selected } = this.props;
 
     if (selected) {
-      console.log('Selected option has been deprecated, please use selected option at the List level.');
+      console.warn('Selected option has been deprecated, please use selected option at the List level.');
     }
 
     const classes = classnames(
