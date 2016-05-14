@@ -1,4 +1,15 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+function hash(input) {
+  var hash = 0, i, chr, len;
+  if (input.length === 0) return hash;
+  for (i = 0, len = input.length; i < len; i++) {
+    chr = input.charCodeAt(i);
+    hash = ((hash << 5) - hash) + chr;
+    hash = hash & hash; // Convert to 32bit integer
+  }
+  return hash;
+};
+
 export default {
   findScrollParents (element, horizontal) {
     var result = [];
@@ -82,5 +93,17 @@ export default {
     return elementType && (
       elementType === 'input' || elementType === 'textarea'
     );
+  },
+
+  generateId (element) {
+    let id;
+    const elementId = element.getAttribute('id');
+    if (!elementId) {
+      id = hash(element.parentElement.innerHTML);
+      element.setAttribute('id', id);
+    } else {
+      id = elementId;
+    }
+    return id;
   }
 };
