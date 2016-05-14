@@ -65,15 +65,14 @@ class MenuDrop extends Component {
       menuItems[i].setAttribute('role', 'menuitem');
 
       if (!menuItems[i].getAttribute('id')) {
-        menuItems[i].setAttribute('id',
-          menuItems[i].getAttribute('data-reactid'));
+        menuItems[i].setAttribute('id', `menu_item_${i}`);
       }
     }
 
     container.setAttribute('aria-activedescendant',
       menuItems[0].getAttribute('id'));
 
-    let menuDrop = ReactDOM.findDOMNode(this.refs.menuDrop);
+    const menuDrop = ReactDOM.findDOMNode(this.refs.menuDrop);
     var items = menuDrop.getElementsByTagName('*');
     var firstFocusable = DOMUtils.getBestFirstFocusable(items);
     if (firstFocusable) {
@@ -275,7 +274,7 @@ export default class Menu extends Component {
     if (this.refs.control) {
       let controlElement = this.refs.control.firstChild;
       this.setState({
-        dropId: 'menu-drop-' + controlElement.getAttribute('data-reactid'),
+        dropId: 'menu-drop-' + DOMUtils.generateId(controlElement),
         controlHeight: controlElement.clientHeight
       });
     }
