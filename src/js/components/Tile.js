@@ -13,7 +13,7 @@ export default class Tile extends Component {
     const { children, className, onClick, wide, status, selected, hoverStyle, hoverColorIndex, hoverBorder, hoverBorderSize } = this.props;
 
     if (selected) {
-      console.log('Selected option has been deprecated, please use selected option at the Tiles level.');
+      console.warn('Selected option has been deprecated, please use selected option at the Tiles level.');
     }
 
     const statusClass = status ? status.toLowerCase() : undefined;

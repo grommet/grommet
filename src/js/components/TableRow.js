@@ -10,7 +10,7 @@ export default class TableRow extends Component {
     const { children, className, onClick, selected } = this.props;
 
     if (selected) {
-      console.log('Selected option has been deprecated, please use selected option at the Table level.');
+      console.warn('Selected option has been deprecated, please use selected option at the Table level.');
     }
 
     const classes = classnames(
