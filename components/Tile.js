@@ -64,7 +64,7 @@ var Tile = function (_Component) {
 
 
       if (selected) {
-        console.log('Selected option has been deprecated, please use selected option at the Tiles level.');
+        console.warn('Selected option has been deprecated, please use selected option at the Tiles level.');
       }
 
       var statusClass = status ? status.toLowerCase() : undefined;

@@ -48,7 +48,7 @@ var TableRow = function (_Component) {
 
 
       if (selected) {
-        console.log('Selected option has been deprecated, please use selected option at the Table level.');
+        console.warn('Selected option has been deprecated, please use selected option at the Table level.');
       }
 
       var classes = (0, _classnames3.default)(CLASS_ROOT, className, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--selected', selected), _defineProperty(_classnames, CLASS_ROOT + '--selectable', onClick), _classnames));
