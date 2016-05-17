@@ -102,10 +102,6 @@ header.header--primary {
     .header {
       @include media-query(lap-and-up) {
         position: fixed;
-
-        &:not(.header--float) {
-          background-color: $header-background-color;
-        }
       }
     }
   }

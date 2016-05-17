@@ -127,21 +127,12 @@ export default class Box extends Component {
       texture = <div className={CLASS_ROOT + "__texture"}>{this.props.texture}</div>;
     }
 
-    let eventRegex = /^on[A-Z].*$/;
-    let eventListeners = {};
-    Object.keys(this.props).forEach((prop) => {
-      if (eventRegex.test(prop)) {
-        eventListeners[prop] = this.props[prop];
-      }
-    });
-
     const Component = this.props.tag;
 
     if (this.props.appCentered) {
       return (
         <div {...restProps} ref="boxContainer" className={containerClasses.join(' ')}
-          style={style} role={this.props.role} {...a11yProps}
-          {...eventListeners}>
+          style={style} role={this.props.role} {...a11yProps}>
           {skipLinkAnchor}
           <Component id={this.props.id} className={classes.join(' ')}>
             {texture}
@@ -153,8 +144,7 @@ export default class Box extends Component {
       return (
         <Component {...restProps} ref="boxContainer" id={this.props.id}
           className={classes.join(' ')} style={style}
-          role={this.props.role} tabIndex={this.props.tabIndex} {...a11yProps}
-          {...eventListeners}>
+          role={this.props.role} tabIndex={this.props.tabIndex} {...a11yProps}>
           {skipLinkAnchor}
           {texture}
           {this.props.children}
