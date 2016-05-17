@@ -92,8 +92,6 @@ var Box = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this2 = this;
-
       var classes = [CLASS_ROOT];
       var containerClasses = [CLASS_ROOT + "__container"];
       var restProps = _Props2.default.omit(this.props, Object.keys(Box.propTypes));
@@ -174,21 +172,13 @@ var Box = function (_Component) {
         );
       }
 
-      var eventRegex = /^on[A-Z].*$/;
-      var eventListeners = {};
-      Object.keys(this.props).forEach(function (prop) {
-        if (eventRegex.test(prop)) {
-          eventListeners[prop] = _this2.props[prop];
-        }
-      });
-
       var Component = this.props.tag;
 
       if (this.props.appCentered) {
         return _react2.default.createElement(
           'div',
           _extends({}, restProps, { ref: 'boxContainer', className: containerClasses.join(' '),
-            style: style, role: this.props.role }, a11yProps, eventListeners),
+            style: style, role: this.props.role }, a11yProps),
           skipLinkAnchor,
           _react2.default.createElement(
             Component,
@@ -202,7 +192,7 @@ var Box = function (_Component) {
           Component,
           _extends({}, restProps, { ref: 'boxContainer', id: this.props.id,
             className: classes.join(' '), style: style,
-            role: this.props.role, tabIndex: this.props.tabIndex }, a11yProps, eventListeners),
+            role: this.props.role, tabIndex: this.props.tabIndex }, a11yProps),
           skipLinkAnchor,
           texture,
           this.props.children
