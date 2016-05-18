@@ -192,7 +192,8 @@ var Box = function (_Component) {
           Component,
           _extends({}, restProps, { ref: 'boxContainer', id: this.props.id,
             className: classes.join(' '), style: style,
-            role: this.props.role, tabIndex: this.props.tabIndex }, a11yProps),
+            role: this.props.role, tabIndex: this.props.tabIndex,
+            onClick: this.props.onClick }, a11yProps),
           skipLinkAnchor,
           texture,
           this.props.children
