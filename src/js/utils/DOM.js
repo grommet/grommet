@@ -99,8 +99,12 @@ export default {
     let id;
     const elementId = element.getAttribute('id');
     if (!elementId) {
-      id = hash(element.parentElement.innerHTML);
-      element.setAttribute('id', id);
+      // IE11 fix: check for parentNode instead of parentElement
+      const parentElement = element.parentElement || element.parentNode;
+      if (parentElement) {
+        id = hash(parentElement.innerHTML);
+        element.setAttribute('id', id);
+      }
     } else {
       id = elementId;
     }
