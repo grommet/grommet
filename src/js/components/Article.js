@@ -444,10 +444,12 @@ export default class Article extends Component {
           controls.push(
             <Box key="previous" ref='previous' className={`${CONTROL_CLASS_PREFIX}-left`} direction="row"
             onClick={this._onPrevious} pad={{vertical: "small", horizontal: "medium"}}>
+              <Box pad={{horizontal: "small"}}>
+                {controlSpacer}
+              </Box>
               <Box justify="center">
                 <PreviousIcon size="large" />
               </Box>
-              {controlSpacer}
             </Box>
           );
         }
