@@ -3,6 +3,7 @@
 import React, { Component, PropTypes, Children } from 'react';
 import {findDOMNode} from 'react-dom';
 import Box from './Box';
+import Paragraph from './Paragraph';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 import DOMUtils from '../utils/DOM';
 import Props from '../utils/Props';
@@ -339,14 +340,19 @@ export default class Article extends Component {
 
   _onSelect (selectedIndex) {
     const childElement = findDOMNode(this.refs[selectedIndex]);
+    const parentElement = childElement.parentNode;
+    const windowHeight = window.innerHeight + 24;
+    const atBottom = (Math.round(parentElement.scrollTop) >= parentElement.scrollHeight - parentElement.clientHeight);
+
     if (childElement) {
       if (selectedIndex !== this.state.selectedIndex) {
         // scroll child to top
         childElement.scrollTop = 0;
-
+        // ensures controls are displayed when selecting a new index and 
+        // scrollbar is at bottom of article
         this.setState({
           selectedIndex: selectedIndex,
-          atBottom: false
+          atBottom: atBottom
         }, () => {
           if (this.props.onSelect) {
             this.props.onSelect(selectedIndex);
@@ -356,6 +362,10 @@ export default class Article extends Component {
             this._updateHiddenElements();
           }
         });
+      } else if (childElement.scrollHeight <= windowHeight) {
+        // on initial chapter load, ensure arrows are rendered 
+        // when there are no scrollbars
+        this.setState({ atBottom: true });
       }
 
       const rect = childElement.getBoundingClientRect();
@@ -439,19 +449,26 @@ export default class Article extends Component {
     if ('row' === this.props.direction) {
       if (! this.state.narrow || this.state.atBottom) {
         if (this.state.selectedIndex > 0) {
+          let previousControlPad = (this.props.pagination) ? {vertical: "small", horizontal: "medium"} : "small";
           controls.push(
-            <Button key="previous" ref='previous'
-              plain={true} a11yTitle={a11yTitle.previous}
-              className={`${CONTROL_CLASS_PREFIX}-left`}
-              onClick={this._onPrevious} icon={<PreviousIcon size="large" />} />
+            <Box key="previous" ref='previous' className={`${CONTROL_CLASS_PREFIX}-left`} direction="row"
+            onClick={this._onPrevious} pad={previousControlPad}>
+              <Box justify="center" pad="small">
+                <PreviousIcon size="large" />
+              </Box>
+            </Box>
           );
         }
         if (this.state.selectedIndex < (childCount - 1)) {
+          let arrowPagination = (!this.state.narrow) && (this.props.pagination) ? (<Box pad={{horizontal: "small"}} justify="center"><Paragraph size="large" margin="none">{this.state.selectedIndex + 1} of {childCount}</Paragraph></Box>) : null; 
           controls.push(
-            <Button key="next" ref='next'
-              plain={true} a11yTitle={a11yTitle.next}
-              className={`${CONTROL_CLASS_PREFIX}-right`}
-              onClick={this._onNext} icon={<NextIcon size="large" />} />
+            <Box key="next" ref='next' className={`${CONTROL_CLASS_PREFIX}-right`} direction="row" 
+            onClick={this._onNext} pad="small">
+              {arrowPagination}
+              <Box justify="center" pad="small">
+                <NextIcon size="large" />
+              </Box>
+            </Box>
           );
         }
       }
@@ -476,11 +493,25 @@ export default class Article extends Component {
     return controls;
   }
 
+  _renderPagination () {
+    const childCount = React.Children.count(this.props.children);
+    return (
+      <Box className={`${CLASS_ROOT}__pagination`} align="center">
+        <Box align="center">
+          <Paragraph size="large">{this.state.selectedIndex + 1} of {childCount}</Paragraph>
+        </Box>
+      </Box>
+    );
+  }
+
   render () {
     let classes = [CLASS_ROOT];
     const other = Props.pick(this.props, Object.keys(Box.propTypes));
     if (this.props.scrollStep) {
       classes.push(`${CLASS_ROOT}--scroll-step`);
+    }
+    if (this.props.pagination) {
+      classes.push(`${CLASS_ROOT}--pagination`);
     }
     if (this.props.className) {
       classes.push(this.props.className);
@@ -489,6 +520,11 @@ export default class Article extends Component {
     let controls;
     if (this.props.controls) {
       controls = this._renderControls();
+    }
+
+    let pagination;
+    if (this.props.pagination && this.state.atBottom && 'row' === this.props.direction) {
+      pagination = this._renderPagination();
     }
 
     let children = this.props.children;
@@ -533,6 +569,7 @@ export default class Article extends Component {
           ref='anchorStep' />
         {children}
         {controls}
+        {pagination}
       </Box>
     );
   }
@@ -548,7 +585,8 @@ Article.propTypes = {
     previous: PropTypes.string
   }),
   onSelect: PropTypes.func,
-  selected: PropTypes.number
+  selected: PropTypes.number,
+  pagination: PropTypes.bool
 };
 
 Article.defaultProps = {

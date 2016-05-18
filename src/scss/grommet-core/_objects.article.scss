@@ -36,6 +36,20 @@
       @include media-query(palm) {
         overflow-y: scroll; // has to be scroll, not auto
         -webkit-overflow-scrolling: touch;
+
+        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+          // in order to hide the scrollbars next to the arrows in ie11
+          // overflow-y needs to be set back to auto
+          overflow-y: auto;
+        }
+
+        @supports (-ms-accelerator:true) {
+          // in order to hide the scrollbars next to the arrows in Edge
+          // overflow-y needs to be set back to auto
+          overflow-y: auto;
+        }
+
+
       }
     }
 
@@ -59,8 +73,20 @@
   position: fixed;
   z-index: 10;
 
-  .button__icon {
-    padding: $inuit-base-spacing-unit;
+  @include media-query(lap-and-up) {
+    .article--pagination & {
+      background-color: lighten(rgba(nth($brand-grey-colors, 3), 0.5), 50%);
+    }
+  }
+
+  @include media-query(palm) {
+    background-color: transparent;
+  }
+
+  &:hover {
+    .control-icon {
+      @include icon-color($active-icon-color);
+    }
   }
 }
 
@@ -104,4 +130,17 @@
 
 .grommet article:not(.article) {
   width: 100%;
+}
+
+.article__pagination {
+  @include media-query(lap-and-up) {
+    display: none;
+  }
+
+  @include media-query(palm) {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
 }
