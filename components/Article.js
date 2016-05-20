@@ -428,14 +428,19 @@ var Article = function (_Component) {
       var _this7 = this;
 
       var childElement = (0, _reactDom.findDOMNode)(this.refs[selectedIndex]);
+      var parentElement = childElement.parentNode;
+      var windowHeight = window.innerHeight + 24;
+      var atBottom = Math.round(parentElement.scrollTop) >= parentElement.scrollHeight - parentElement.clientHeight;
+
       if (childElement) {
         if (selectedIndex !== this.state.selectedIndex) {
           // scroll child to top
           childElement.scrollTop = 0;
-
+          // ensures controls are displayed when selecting a new index and
+          // scrollbar is at bottom of article
           this.setState({
             selectedIndex: selectedIndex,
-            atBottom: false
+            atBottom: atBottom
           }, function () {
             if (_this7.props.onSelect) {
               _this7.props.onSelect(selectedIndex);
@@ -445,6 +450,10 @@ var Article = function (_Component) {
               _this7._updateHiddenElements();
             }
           });
+        } else if (childElement.scrollHeight <= windowHeight) {
+          // on initial chapter load, ensure arrows are rendered
+          // when there are no scrollbars
+          this.setState({ atBottom: true });
         }
 
         var rect = childElement.getBoundingClientRect();
