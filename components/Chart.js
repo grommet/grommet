@@ -254,6 +254,11 @@ var Chart = function (_Component) {
 
       var graphWidth = width;
       var graphHeight = height;
+      if (this.props.legend && 'inline' === this.props.legend.position) {
+        // provides a buffer at the top of the graph to ensure
+        // none of the labels are cutoff by the bounds
+        graphHeight -= XAXIS_HEIGHT;
+      }
       if (this.props.thresholds) {
         graphWidth -= YAXIS_WIDTH;
       }
