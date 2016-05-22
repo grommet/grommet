@@ -96,6 +96,11 @@ var Header = function (_Component) {
       var other = _Props2.default.pick(this.props, Object.keys(_Box2.default.propTypes));
       if (this.props.fixed) {
         containerClasses.push(CLASS_ROOT + '__container--fixed');
+
+        // add default color index if none is provided
+        if (!this.props.colorIndex) {
+          containerClasses.push(CLASS_ROOT + '__container--fill');
+        }
       }
       if (this.props.float) {
         classes.push(CLASS_ROOT + '--float');
