@@ -496,7 +496,7 @@ export default class Article extends Component {
       classes.push(this.props.className);
     }
 
-    let controls;
+   let controls;
     if (this.props.controls) {
       controls = this._renderControls();
     }
@@ -539,7 +539,7 @@ export default class Article extends Component {
         className={classes.join(' ')} onFocus={this._onFocusChange}
         onScroll={this._onScroll} onTouchStart={this._onTouchStart}
         onTouchMove={this._onTouchMove} primary={this.props.primary}>
-        <a tabIndex="-1" aria-hidden='true'
+        <a aria-hidden='true'
           ref='anchorStep' />
         {children}
         {controls}
