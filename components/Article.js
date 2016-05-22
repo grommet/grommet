@@ -428,11 +428,12 @@ var Article = function (_Component) {
       var _this7 = this;
 
       var childElement = (0, _reactDom.findDOMNode)(this.refs[selectedIndex]);
-      var parentElement = childElement.parentNode;
       var windowHeight = window.innerHeight + 24;
-      var atBottom = Math.round(parentElement.scrollTop) >= parentElement.scrollHeight - parentElement.clientHeight;
 
       if (childElement) {
+        var parentElement = childElement.parentNode;
+        var atBottom = Math.round(parentElement.scrollTop) >= parentElement.scrollHeight - parentElement.clientHeight;
+
         if (selectedIndex !== this.state.selectedIndex) {
           // scroll child to top
           childElement.scrollTop = 0;
