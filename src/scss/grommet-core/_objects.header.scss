@@ -5,7 +5,7 @@
   width: 100%;
   margin-bottom: 0px;
 
-  a {
+  a:not(.button) {
     color: inherit;
     text-decoration: none;
 
@@ -87,6 +87,12 @@ header.header--primary {
 // header with container and wrapper elements
 .header__container {
   flex-shrink: 0;
+}
+
+.header__container--fill {
+  .header {
+    background-color: $header-background-color;
+  }
 }
 
 .header__container--fixed {
