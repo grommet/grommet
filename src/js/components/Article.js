@@ -339,11 +339,12 @@ export default class Article extends Component {
 
   _onSelect (selectedIndex) {
     const childElement = findDOMNode(this.refs[selectedIndex]);
-    const parentElement = childElement.parentNode;
     const windowHeight = window.innerHeight + 24;
-    const atBottom = (Math.round(parentElement.scrollTop) >= parentElement.scrollHeight - parentElement.clientHeight);
 
     if (childElement) {
+      const parentElement = childElement.parentNode;
+      const atBottom = (Math.round(parentElement.scrollTop) >= parentElement.scrollHeight - parentElement.clientHeight);
+
       if (selectedIndex !== this.state.selectedIndex) {
         // scroll child to top
         childElement.scrollTop = 0;
