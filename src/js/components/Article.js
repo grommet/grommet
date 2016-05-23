@@ -534,13 +534,30 @@ export default class Article extends Component {
 
     delete other.a11yTitle;
 
+    // Workaround firefox's accessibility tabbing
+    let notFirefox;
+    try {
+      const hasUserAgent = str => navigator.userAgent.indexOf(str) === -1;
+      notFirefox = hasUserAgent('Firefox');
+    } catch (e) {}
+
+    let addScrollStep;
+    if (notFirefox) {
+      addScrollStep = <a tabIndex="-1" aria-hidden='true' ref='anchorStep' />;
+    }
+
     return (
-      <Box ref="component" tag="article" {...other}
-        className={classes.join(' ')} onFocus={this._onFocusChange}
-        onScroll={this._onScroll} onTouchStart={this._onTouchStart}
-        onTouchMove={this._onTouchMove} primary={this.props.primary}>
-        <a tabIndex="-1" aria-hidden='true'
-          ref='anchorStep' />
+      <Box
+        ref="component"
+        tag="article"
+        {...other}
+        className={classes.join(' ')}
+        onFocus={this._onFocusChange}
+        onScroll={this._onScroll}
+        onTouchStart={this._onTouchStart}
+        onTouchMove={this._onTouchMove}
+        primary={this.props.primary}>
+        {addScrollStep}
         {children}
         {controls}
       </Box>
