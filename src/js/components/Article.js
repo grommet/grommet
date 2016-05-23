@@ -555,7 +555,8 @@ export default class Article extends Component {
         onFocus={this._onFocusChange}
         onScroll={this._onScroll}
         onTouchStart={this._onTouchStart}
-        onTouchMove={this._onTouchMove} primary={this.props.primary}>
+        onTouchMove={this._onTouchMove}
+        primary={this.props.primary}>
         {addScrollStep}
         {children}
         {controls}
