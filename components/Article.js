@@ -106,6 +106,7 @@ var Article = function (_Component) {
   _createClass(Article, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
+
       if (this.props.scrollStep) {
         this._keys = { up: this._onPrevious, down: this._onNext };
         if ('row' === this.props.direction) {
@@ -114,7 +115,9 @@ var Article = function (_Component) {
             right: this._onNext
           };
 
-          this._updateHiddenElements();
+          if (navigator.userAgent.indexOf("Firefox") === -1) {
+            this._updateHiddenElements();
+          }
         }
         //keys.space = this._onTogglePlay;
         _KeyboardAccelerators2.default.startListeningToKeyboard(this, this._keys);
@@ -132,13 +135,6 @@ var Article = function (_Component) {
       }
 
       this._onSelect(this.state.selectedIndex);
-    }
-  }, {
-    key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps(props) {
-      if (props.selected !== undefined) {
-        this._onSelect(props.selected);
-      }
     }
   }, {
     key: 'componentWillUnmount',
@@ -446,7 +442,8 @@ var Article = function (_Component) {
             if (_this7.props.onSelect) {
               _this7.props.onSelect(selectedIndex);
             }
-            if (_this7.props.direction === 'row') {
+            var isFirefox = navigator.userAgent.indexOf("Firefox") >= 0;
+            if (_this7.props.direction === 'row' && !isFirefox) {
               _this7.refs.anchorStep.focus();
               _this7._updateHiddenElements();
             }
@@ -597,19 +594,25 @@ var Article = function (_Component) {
         controls = this._renderControls();
       }
 
+      var isFirefox = navigator && navigator.userAgent.indexOf("Firefox") >= 0;
+
+      var anchorStepNode = void 0;
+      if (!isFirefox) {
+        anchorStepNode = _react2.default.createElement('a', { tabIndex: '-1', 'aria-hidden': 'true', ref: 'anchorStep' });
+      }
+
       var children = this.props.children;
       if (this.props.scrollStep || this.props.controls) {
         children = _react.Children.map(this.props.children, function (element, index) {
           if (element) {
             var elementClone = _react2.default.cloneElement(element, {
-              ref: index,
-              'aria-hidden': _this9.state.selectedIndex !== index
+              ref: index
             });
 
             var elementNode = elementClone;
 
             var ariaHidden = void 0;
-            if (_this9.state.selectedIndex !== index) {
+            if (!isFirefox && _this9.state.selectedIndex !== index) {
               ariaHidden = 'true';
             }
 
@@ -636,8 +639,7 @@ var Article = function (_Component) {
           className: classes.join(' '), onFocus: this._onFocusChange,
           onScroll: this._onScroll, onTouchStart: this._onTouchStart,
           onTouchMove: this._onTouchMove, primary: this.props.primary }),
-        _react2.default.createElement('a', { tabIndex: '-1', 'aria-hidden': 'true',
-          ref: 'anchorStep' }),
+        anchorStepNode,
         children,
         controls
       );
