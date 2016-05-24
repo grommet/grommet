@@ -355,7 +355,8 @@ export default class Article extends Component {
             this.props.onSelect(selectedIndex);
           }
           const isFirefox = navigator.userAgent.indexOf("Firefox") >= 0;
-          if (this.props.direction === 'row' && !isFirefox) {
+          const isEdge = navigator.userAgent.indexOf("isEdge") >= 0;
+          if (this.props.direction === 'row' && !isFirefox || !isEdge) {
             this.refs.anchorStep.focus();
             this._updateHiddenElements();
           }
@@ -500,9 +501,10 @@ export default class Article extends Component {
     }
 
     const isFirefox = navigator && navigator.userAgent.indexOf("Firefox") >= 0;
+    const isEdge = navigator && navigator.userAgent.indexOf("Edge") >= 0;
 
     let anchorStepNode;
-    if (!isFirefox) {
+    if (!isFirefox && !isEdge) {
       anchorStepNode = (
         <a tabIndex="-1" aria-hidden='true' ref='anchorStep' />
       );
@@ -519,7 +521,7 @@ export default class Article extends Component {
           let elementNode = elementClone;
 
           let ariaHidden;
-          if (!isFirefox && this.state.selectedIndex !== index) {
+          if (!isFirefox && !isEdge && this.state.selectedIndex !== index) {
             ariaHidden = 'true';
           }
 
