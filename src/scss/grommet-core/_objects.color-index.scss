@@ -14,6 +14,10 @@
 
 .background-color-index-brand {
   background-color: $brand-color;
+
+  &-a {
+    background-color: rgba($brand-color, 0.94);
+  }
 }
 
 @for $i from 1 through length($brand-neutral-colors) {
