@@ -55,7 +55,7 @@ export default class Article extends Component {
           right: this._onNext
         };
 
-        if (navigator && navigator.userAgent.indexOf("Firefox") === -1) {
+        if (typeof navigator !== 'undefined' && navigator.userAgent.indexOf("Firefox") === -1) {
           this._updateHiddenElements();
         }
       }
@@ -354,7 +354,7 @@ export default class Article extends Component {
           if (this.props.onSelect) {
             this.props.onSelect(selectedIndex);
           }
-          const isFirefox = navigator && navigator.userAgent.indexOf("Firefox") >= 0;
+          const isFirefox = typeof navigator !== 'undefined' && navigator.userAgent.indexOf("Firefox") >= 0;
           if (this.props.direction === 'row' && !isFirefox) {
             this.refs.anchorStep.focus();
             this._updateHiddenElements();
@@ -499,7 +499,7 @@ export default class Article extends Component {
       controls = this._renderControls();
     }
 
-    const isFirefox = navigator && navigator.userAgent.indexOf("Firefox") >= 0;
+    const isFirefox = typeof navigator !== 'undefined' && navigator.userAgent.indexOf("Firefox") >= 0;
 
     let anchorStepNode;
     if (!isFirefox) {
