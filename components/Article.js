@@ -115,7 +115,7 @@ var Article = function (_Component) {
             right: this._onNext
           };
 
-          if (navigator && navigator.userAgent.indexOf("Firefox") === -1) {
+          if (typeof navigator !== 'undefined' && navigator.userAgent.indexOf("Firefox") === -1) {
             this._updateHiddenElements();
           }
         }
@@ -442,7 +442,7 @@ var Article = function (_Component) {
             if (_this7.props.onSelect) {
               _this7.props.onSelect(selectedIndex);
             }
-            var isFirefox = navigator && navigator.userAgent.indexOf("Firefox") >= 0;
+            var isFirefox = typeof navigator !== 'undefined' && navigator.userAgent.indexOf("Firefox") >= 0;
             if (_this7.props.direction === 'row' && !isFirefox) {
               _this7.refs.anchorStep.focus();
               _this7._updateHiddenElements();
@@ -594,7 +594,7 @@ var Article = function (_Component) {
         controls = this._renderControls();
       }
 
-      var isFirefox = navigator && navigator.userAgent.indexOf("Firefox") >= 0;
+      var isFirefox = typeof navigator !== 'undefined' && navigator.userAgent.indexOf("Firefox") >= 0;
 
       var anchorStepNode = void 0;
       if (!isFirefox) {
