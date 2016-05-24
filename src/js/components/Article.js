@@ -55,7 +55,7 @@ export default class Article extends Component {
           right: this._onNext
         };
 
-        if (navigator.userAgent.indexOf("Firefox") === -1) {
+        if (navigator && navigator.userAgent.indexOf("Firefox") === -1) {
           this._updateHiddenElements();
         }
       }
@@ -354,7 +354,7 @@ export default class Article extends Component {
           if (this.props.onSelect) {
             this.props.onSelect(selectedIndex);
           }
-          const isFirefox = navigator.userAgent.indexOf("Firefox") >= 0;
+          const isFirefox = navigator && navigator.userAgent.indexOf("Firefox") >= 0;
           if (this.props.direction === 'row' && !isFirefox) {
             this.refs.anchorStep.focus();
             this._updateHiddenElements();
