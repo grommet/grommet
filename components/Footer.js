@@ -12,9 +12,13 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _classnames3 = require('classnames');
+var _reactDom = require('react-dom');
 
-var _classnames4 = _interopRequireDefault(_classnames3);
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _classnames4 = require('classnames');
+
+var _classnames5 = _interopRequireDefault(_classnames4);
 
 var _Box = require('./Box');
 
@@ -46,17 +50,66 @@ var Footer = function (_Component) {
   function Footer() {
     _classCallCheck(this, Footer);
 
-    return _possibleConstructorReturn(this, Object.getPrototypeOf(Footer).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Footer).call(this));
+
+    _this._alignMirror = _this._alignMirror.bind(_this);
+    _this._onResize = _this._onResize.bind(_this);
+    return _this;
   }
 
   _createClass(Footer, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      if (this.props.fixed) {
+        this._alignMirror();
+        window.addEventListener('resize', this._onResize);
+      }
+    }
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate() {
+      if (this.props.fixed) {
+        this._alignMirror();
+      }
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      if (this.props.fixed) {
+        window.removeEventListener('resize', this._onResize);
+      }
+    }
+  }, {
+    key: '_onResize',
+    value: function _onResize() {
+      this._alignMirror();
+    }
+  }, {
+    key: '_alignMirror',
+    value: function _alignMirror() {
+      var contentElement = _reactDom2.default.findDOMNode(this.refs.content);
+      var mirrorElement = this.refs.mirror;
+
+      // constrain fixed content to the width of the mirror
+      var mirrorRect = mirrorElement.getBoundingClientRect();
+      contentElement.style.width = Math.floor(mirrorRect.width) + 'px';
+
+      // align the mirror height with the content's height
+      var contentRect = contentElement.getBoundingClientRect();
+      mirrorElement.style.height = Math.floor(contentRect.height) + 'px';
+    }
+  }, {
     key: 'render',
     value: function render() {
-      var _classnames;
+      var _classnames, _classnames2;
 
-      var classes = (0, _classnames4.default)(CLASS_ROOT, this.props.className, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--' + this.props.size, this.props.size), _defineProperty(_classnames, CLASS_ROOT + '--float', this.props.float), _classnames));
+      var classes = (0, _classnames5.default)(CLASS_ROOT, this.props.className, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--' + this.props.size, this.props.size), _defineProperty(_classnames, CLASS_ROOT + '--float', this.props.float), _classnames));
 
-      var containerClasses = (0, _classnames4.default)(CLASS_ROOT + '__container', _defineProperty({}, CLASS_ROOT + '__container--float', this.props.float));
+      var containerClasses = (0, _classnames5.default)(CLASS_ROOT + '__container', (_classnames2 = {}, _defineProperty(_classnames2, CLASS_ROOT + '__container--float', this.props.float), _defineProperty(_classnames2, CLASS_ROOT + '__container--fixed', this.props.fixed), _defineProperty(_classnames2, CLASS_ROOT + '__container--fill',
+      // add default color index if none is provided
+      this.props.fixed && !this.props.colorIndex), _classnames2));
+
+      var wrapperClasses = (0, _classnames5.default)(CLASS_ROOT + '__wrapper', _defineProperty({}, CLASS_ROOT + '__wrapper--' + this.props.size, this.props.size));
 
       var footerSkipLink = void 0;
       if (this.props.primary) {
@@ -67,14 +120,33 @@ var Footer = function (_Component) {
       // don't transfer size to Box since it means something different
       delete boxProps.size;
 
-      return _react2.default.createElement(
-        _Box2.default,
-        _extends({}, boxProps, { tag: 'footer', className: classes,
-          containerClassName: containerClasses,
-          primary: false }),
-        footerSkipLink,
-        this.props.children
-      );
+      if (this.props.fixed) {
+        return _react2.default.createElement(
+          'div',
+          { className: containerClasses },
+          _react2.default.createElement('div', { ref: 'mirror', className: CLASS_ROOT + '__mirror' }),
+          _react2.default.createElement(
+            'div',
+            { className: wrapperClasses },
+            _react2.default.createElement(
+              _Box2.default,
+              _extends({ ref: 'content' }, boxProps, { tag: 'footer', className: classes,
+                primary: false }),
+              footerSkipLink,
+              this.props.children
+            )
+          )
+        );
+      } else {
+        return _react2.default.createElement(
+          _Box2.default,
+          _extends({}, boxProps, { tag: 'footer', className: classes,
+            containerClassName: containerClasses,
+            primary: false }),
+          footerSkipLink,
+          this.props.children
+        );
+      }
     }
   }]);
 
@@ -85,6 +157,7 @@ exports.default = Footer;
 ;
 
 Footer.propTypes = _extends({
+  fixed: _react.PropTypes.bool,
   float: _react.PropTypes.bool,
   size: _react.PropTypes.oneOf(['small', 'medium', 'large']),
   primary: _react.PropTypes.bool
