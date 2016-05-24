@@ -46,6 +46,7 @@ export default class Article extends Component {
   }
 
   componentDidMount () {
+
     if (this.props.scrollStep) {
       this._keys = {up: this._onPrevious, down: this._onNext};
       if ('row' === this.props.direction) {
@@ -54,7 +55,9 @@ export default class Article extends Component {
           right: this._onNext
         };
 
-        this._updateHiddenElements();
+        if (navigator.userAgent.indexOf("Firefox") === -1) {
+          this._updateHiddenElements();
+        }
       }
       //keys.space = this._onTogglePlay;
       KeyboardAccelerators.startListeningToKeyboard(this, this._keys);
@@ -72,12 +75,6 @@ export default class Article extends Component {
     }
 
     this._onSelect(this.state.selectedIndex);
-  }
-
-  componentWillReceiveProps (props) {
-    if (props.selected !== undefined) {
-      this._onSelect(props.selected);
-    }
   }
 
   componentWillUnmount () {
@@ -348,7 +345,7 @@ export default class Article extends Component {
       if (selectedIndex !== this.state.selectedIndex) {
         // scroll child to top
         childElement.scrollTop = 0;
-        // ensures controls are displayed when selecting a new index and 
+        // ensures controls are displayed when selecting a new index and
         // scrollbar is at bottom of article
         this.setState({
           selectedIndex: selectedIndex,
@@ -357,13 +354,14 @@ export default class Article extends Component {
           if (this.props.onSelect) {
             this.props.onSelect(selectedIndex);
           }
-          if (this.props.direction === 'row') {
+          const isFirefox = navigator.userAgent.indexOf("Firefox") >= 0;
+          if (this.props.direction === 'row' && !isFirefox) {
             this.refs.anchorStep.focus();
             this._updateHiddenElements();
           }
         });
       } else if (childElement.scrollHeight <= windowHeight) {
-        // on initial chapter load, ensure arrows are rendered 
+        // on initial chapter load, ensure arrows are rendered
         // when there are no scrollbars
         this.setState({ atBottom: true });
       }
@@ -501,19 +499,27 @@ export default class Article extends Component {
       controls = this._renderControls();
     }
 
+    const isFirefox = navigator && navigator.userAgent.indexOf("Firefox") >= 0;
+
+    let anchorStepNode;
+    if (!isFirefox) {
+      anchorStepNode = (
+        <a tabIndex="-1" aria-hidden='true' ref='anchorStep' />
+      );
+    }
+
     let children = this.props.children;
     if (this.props.scrollStep || this.props.controls) {
       children = Children.map(this.props.children, (element, index) => {
         if (element) {
           const elementClone = React.cloneElement(element, {
-            ref: index,
-            'aria-hidden': this.state.selectedIndex !== index
+            ref: index
           });
 
           let elementNode = elementClone;
 
           let ariaHidden;
-          if (this.state.selectedIndex !== index) {
+          if (!isFirefox && this.state.selectedIndex !== index) {
             ariaHidden = 'true';
           }
 
@@ -539,8 +545,7 @@ export default class Article extends Component {
         className={classes.join(' ')} onFocus={this._onFocusChange}
         onScroll={this._onScroll} onTouchStart={this._onTouchStart}
         onTouchMove={this._onTouchMove} primary={this.props.primary}>
-        <a tabIndex="-1" aria-hidden='true'
-          ref='anchorStep' />
+        {anchorStepNode}
         {children}
         {controls}
       </Box>
