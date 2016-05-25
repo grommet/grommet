@@ -61,7 +61,8 @@ export default class ImageField extends Component {
     let result;
     if (value) {
       result = (
-        <FormField label={label} help={help} className={CLASS_ROOT}>
+        <FormField label={label} help={help} className={CLASS_ROOT}
+          error={error}>
           <div className={`${CLASS_ROOT}__container`}>
             <img className={`${CLASS_ROOT}__image`} src={value.data} />
           </div>
