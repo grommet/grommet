@@ -111,7 +111,8 @@ var ImageField = function (_Component) {
       if (value) {
         result = _react2.default.createElement(
           _FormField2.default,
-          { label: label, help: help, className: CLASS_ROOT },
+          { label: label, help: help, className: CLASS_ROOT,
+            error: error },
           _react2.default.createElement(
             'div',
             { className: CLASS_ROOT + '__container' },
