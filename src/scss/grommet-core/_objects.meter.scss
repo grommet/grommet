@@ -53,6 +53,7 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
 .meter__value-container {
   position: relative;
   display: inline-block;
+  white-space: nowrap;
 }
 
 .meter__graphic-container {
@@ -734,10 +735,6 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
     margin: 0px auto;
   }
 
-  svg.meter__graphic {
-    display: block;
-  }
-
   .meter.series-pre {
     path {
       stroke-dashoffset: quadruple($meter-size);
@@ -811,11 +808,6 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
     width: $meter-size;
   }
 
-  .meter__value {
-    position: absolute;
-    left: 50%;
-  }
-
   &.meter--small {
     .meter__minmax-container {
       width: $meter-small-size;
@@ -876,6 +868,8 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
     top: halve($meter-size);
     @include transform(translateX(-50%) translateY(-50%));
     max-width: $meter-size - double($inuit-base-spacing-unit);
+    position: absolute;
+    left: 50%;
   }
 
   &.meter--small {
@@ -936,9 +930,7 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
   }
 
   .meter__value {
-    top: halve($meter-size) + halve($inuit-base-spacing-unit);
-    @include transform(translateX(-50%));
-    max-width: $meter-size - round($inuit-base-spacing-unit * 3);
+    margin-top: - ($inuit-base-spacing-unit + halve($inuit-base-spacing-unit));
   }
 
   &.meter--legend-right {
@@ -955,8 +947,7 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
     }
 
     .meter__value {
-      top: halve($meter-small-size) + halve($inuit-base-spacing-unit);
-      max-width: $meter-small-size - round($inuit-base-spacing-unit * 1.5);
+      margin-top: - double($inuit-base-spacing-unit);
     }
   }
 
@@ -968,8 +959,7 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
     }
 
     .meter__value {
-      top: halve($meter-large-size) + halve($inuit-base-spacing-unit);
-      max-width: $meter-large-size - round($inuit-base-spacing-unit * 4.5);
+      margin-top: - round($inuit-base-spacing-unit * 3);
     }
   }
 
@@ -981,8 +971,7 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
     }
 
     .meter__value {
-      top: halve($meter-xlarge-size) + halve($inuit-base-spacing-unit);
-      max-width: $meter-xlarge-size - round($inuit-base-spacing-unit * 6);
+      margin-top: - round($inuit-base-spacing-unit * 3.75);
     }
   }
 }
@@ -1120,11 +1109,12 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
 // SPIRAL
 
 .meter--spiral {
+  .meter__graphic-container {
+    vertical-align: top;
+  }
 
   .meter__value {
-    position: absolute;
-    top: 0px;
-    right: 0px;
+    display: inline-block;
     white-space: normal;
     text-align: right;
   }
