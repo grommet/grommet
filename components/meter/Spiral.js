@@ -30,7 +30,6 @@ var SPIRAL_WIDTH = _utils.baseDimension;
 var SPIRAL_RADIUS = _utils.baseDimension / 2 - _utils.baseUnit / 2;
 var RING_THICKNESS = _utils.baseUnit;
 // Allow for active value content next to a spiral meter
-var SPIRAL_TEXT_PADDING = _utils.baseUnit * 2;
 
 var Spiral = function (_Graphic) {
   _inherits(Spiral, _Graphic);
@@ -50,7 +49,7 @@ var Spiral = function (_Graphic) {
     key: '_stateFromProps',
     value: function _stateFromProps(props) {
       var viewBoxHeight = Math.max(SPIRAL_WIDTH, RING_THICKNESS * (props.series.length + 1) * 2);
-      var viewBoxWidth = viewBoxHeight + 2 * SPIRAL_TEXT_PADDING;
+      var viewBoxWidth = viewBoxHeight;
 
       var state = {
         startAngle: 0,
