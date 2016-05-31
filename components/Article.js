@@ -95,10 +95,14 @@ var Article = function (_Component) {
     _this._onResponsive = _this._onResponsive.bind(_this);
     _this._updateHiddenElements = _this._updateHiddenElements.bind(_this);
 
+    // Necessary to detect for Firefox or Edge to implement accessibility tabbing
+    var accessibilityTabbingCompatible = typeof navigator !== 'undefined' && navigator.userAgent.indexOf("Firefox") === -1 && navigator.userAgent.indexOf("Edge") === -1;
+
     _this.state = {
       selectedIndex: props.selected || 0,
       playing: false,
-      showControls: _this.props.controls
+      showControls: _this.props.controls,
+      accessibilityTabbingCompatible: accessibilityTabbingCompatible
     };
     return _this;
   }
@@ -115,8 +119,7 @@ var Article = function (_Component) {
             right: this._onNext
           };
 
-          // Necessary to detect for Firefox or Edge to implement accessibility tabbing
-          if (typeof navigator !== 'undefined' && navigator.userAgent.indexOf("Firefox") === -1) {
+          if (this.state.accessibilityTabbingCompatible) {
             this._updateHiddenElements();
           }
         }
@@ -453,9 +456,7 @@ var Article = function (_Component) {
             }
 
             // Necessary to detect for Firefox or Edge to implement accessibility tabbing
-            var isFirefox = navigator.userAgent.indexOf("Firefox") >= 0;
-            var isEdge = navigator.userAgent.indexOf("isEdge") >= 0;
-            if (_this7.props.direction === 'row' && !isFirefox || !isEdge) {
+            if (_this7.props.direction === 'row' && _this7.state.accessibilityTabbingCompatible) {
               _this7.refs.anchorStep.focus();
               _this7._updateHiddenElements();
             }
@@ -606,12 +607,8 @@ var Article = function (_Component) {
         controls = this._renderControls();
       }
 
-      // Necessary to detect for Firefox or Edge to implement accessibility tabbing
-      var isFirefox = navigator && navigator.userAgent.indexOf("Firefox") >= 0;
-      var isEdge = navigator && navigator.userAgent.indexOf("Edge") >= 0;
-
       var anchorStepNode = void 0;
-      if (!isFirefox && !isEdge) {
+      if (this.state.accessibilityTabbingCompatible) {
         anchorStepNode = _react2.default.createElement('a', { tabIndex: '-1', 'aria-hidden': 'true', ref: 'anchorStep' });
       }
 
@@ -626,7 +623,7 @@ var Article = function (_Component) {
             var elementNode = elementClone;
 
             var ariaHidden = void 0;
-            if (!isFirefox && !isEdge && _this9.state.selectedIndex !== index) {
+            if (_this9.state.selectedIndex !== index && _this9.state.accessibilityTabbingCompatible) {
               ariaHidden = 'true';
             }
 
