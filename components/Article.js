@@ -115,6 +115,7 @@ var Article = function (_Component) {
             right: this._onNext
           };
 
+          // Necessary to detect for Firefox or Edge to implement accessibility tabbing
           if (typeof navigator !== 'undefined' && navigator.userAgent.indexOf("Firefox") === -1) {
             this._updateHiddenElements();
           }
@@ -450,8 +451,11 @@ var Article = function (_Component) {
             if (_this7.props.onSelect) {
               _this7.props.onSelect(selectedIndex);
             }
-            var isFirefox = typeof navigator !== 'undefined' && navigator.userAgent.indexOf("Firefox") >= 0;
-            if (_this7.props.direction === 'row' && !isFirefox) {
+
+            // Necessary to detect for Firefox or Edge to implement accessibility tabbing
+            var isFirefox = navigator.userAgent.indexOf("Firefox") >= 0;
+            var isEdge = navigator.userAgent.indexOf("isEdge") >= 0;
+            if (_this7.props.direction === 'row' && !isFirefox || !isEdge) {
               _this7.refs.anchorStep.focus();
               _this7._updateHiddenElements();
             }
@@ -602,10 +606,12 @@ var Article = function (_Component) {
         controls = this._renderControls();
       }
 
-      var isFirefox = typeof navigator !== 'undefined' && navigator.userAgent.indexOf("Firefox") >= 0;
+      // Necessary to detect for Firefox or Edge to implement accessibility tabbing
+      var isFirefox = navigator && navigator.userAgent.indexOf("Firefox") >= 0;
+      var isEdge = navigator && navigator.userAgent.indexOf("Edge") >= 0;
 
       var anchorStepNode = void 0;
-      if (!isFirefox) {
+      if (!isFirefox && !isEdge) {
         anchorStepNode = _react2.default.createElement('a', { tabIndex: '-1', 'aria-hidden': 'true', ref: 'anchorStep' });
       }
 
@@ -620,7 +626,7 @@ var Article = function (_Component) {
             var elementNode = elementClone;
 
             var ariaHidden = void 0;
-            if (!isFirefox && _this9.state.selectedIndex !== index) {
+            if (!isFirefox && !isEdge && _this9.state.selectedIndex !== index) {
               ariaHidden = 'true';
             }
 
