@@ -77,6 +77,13 @@ export default class Article extends Component {
     this._onSelect(this.state.selectedIndex);
   }
 
+  componentWillReceiveProps (nextProps) {
+    // allow updates to selected props to trigger new chapter select
+    if ((typeof nextProps.selected !== 'undefined') && (nextProps.selected !== null) && (nextProps.selected !== this.state.selectedIndex)) {
+      this._onSelect(nextProps.selected);
+    }
+  }
+
   componentWillUnmount () {
     if (this.props.scrollStep) {
       KeyboardAccelerators.stopListeningToKeyboard(this, this._keys);
