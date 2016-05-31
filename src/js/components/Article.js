@@ -55,6 +55,7 @@ export default class Article extends Component {
           right: this._onNext
         };
 
+        // Necessary to detect for Firefox or Edge to implement accessibility tabbing
         if (typeof navigator !== 'undefined' && navigator.userAgent.indexOf("Firefox") === -1) {
           this._updateHiddenElements();
         }
@@ -354,6 +355,8 @@ export default class Article extends Component {
           if (this.props.onSelect) {
             this.props.onSelect(selectedIndex);
           }
+
+          // Necessary to detect for Firefox or Edge to implement accessibility tabbing
           const isFirefox = navigator.userAgent.indexOf("Firefox") >= 0;
           const isEdge = navigator.userAgent.indexOf("isEdge") >= 0;
           if (this.props.direction === 'row' && !isFirefox || !isEdge) {
@@ -500,6 +503,7 @@ export default class Article extends Component {
       controls = this._renderControls();
     }
 
+    // Necessary to detect for Firefox or Edge to implement accessibility tabbing
     const isFirefox = navigator && navigator.userAgent.indexOf("Firefox") >= 0;
     const isEdge = navigator && navigator.userAgent.indexOf("Edge") >= 0;
 
