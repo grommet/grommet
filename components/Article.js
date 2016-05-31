@@ -137,6 +137,14 @@ var Article = function (_Component) {
       this._onSelect(this.state.selectedIndex);
     }
   }, {
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      // allow updates to selected props to trigger new chapter select
+      if (typeof nextProps.selected !== 'undefined' && nextProps.selected !== null && nextProps.selected !== this.state.selectedIndex) {
+        this._onSelect(nextProps.selected);
+      }
+    }
+  }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
       if (this.props.scrollStep) {
