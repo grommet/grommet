@@ -38,10 +38,14 @@ export default class Article extends Component {
     this._onResponsive = this._onResponsive.bind(this);
     this._updateHiddenElements = this._updateHiddenElements.bind(this);
 
+    // Necessary to detect for Firefox or Edge to implement accessibility tabbing
+    const accessibilityTabbingCompatible = typeof navigator !== 'undefined' && navigator.userAgent.indexOf("Firefox") === -1 && navigator.userAgent.indexOf("Edge") === -1;
+
     this.state = {
       selectedIndex: props.selected || 0,
       playing: false,
-      showControls: this.props.controls
+      showControls: this.props.controls,
+      accessibilityTabbingCompatible: accessibilityTabbingCompatible
     };
   }
 
@@ -55,8 +59,7 @@ export default class Article extends Component {
           right: this._onNext
         };
 
-        // Necessary to detect for Firefox or Edge to implement accessibility tabbing
-        if (typeof navigator !== 'undefined' && navigator.userAgent.indexOf("Firefox") === -1) {
+        if (this.state.accessibilityTabbingCompatible) {
           this._updateHiddenElements();
         }
       }
@@ -364,9 +367,7 @@ export default class Article extends Component {
           }
 
           // Necessary to detect for Firefox or Edge to implement accessibility tabbing
-          const isFirefox = navigator.userAgent.indexOf("Firefox") >= 0;
-          const isEdge = navigator.userAgent.indexOf("isEdge") >= 0;
-          if (this.props.direction === 'row' && !isFirefox || !isEdge) {
+          if (this.props.direction === 'row' && this.state.accessibilityTabbingCompatible) {
             this.refs.anchorStep.focus();
             this._updateHiddenElements();
           }
@@ -510,12 +511,8 @@ export default class Article extends Component {
       controls = this._renderControls();
     }
 
-    // Necessary to detect for Firefox or Edge to implement accessibility tabbing
-    const isFirefox = navigator && navigator.userAgent.indexOf("Firefox") >= 0;
-    const isEdge = navigator && navigator.userAgent.indexOf("Edge") >= 0;
-
     let anchorStepNode;
-    if (!isFirefox && !isEdge) {
+    if (this.state.accessibilityTabbingCompatible) {
       anchorStepNode = (
         <a tabIndex="-1" aria-hidden='true' ref='anchorStep' />
       );
@@ -532,7 +529,7 @@ export default class Article extends Component {
           let elementNode = elementClone;
 
           let ariaHidden;
-          if (!isFirefox && !isEdge && this.state.selectedIndex !== index) {
+          if (this.state.selectedIndex !== index && this.state.accessibilityTabbingCompatible) {
             ariaHidden = 'true';
           }
 
