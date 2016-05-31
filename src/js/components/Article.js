@@ -55,6 +55,7 @@ export default class Article extends Component {
           right: this._onNext
         };
 
+        // Necessary to detect for Firefox or Edge to implement accessibility tabbing
         if (typeof navigator !== 'undefined' && navigator.userAgent.indexOf("Firefox") === -1) {
           this._updateHiddenElements();
         }
@@ -361,8 +362,11 @@ export default class Article extends Component {
           if (this.props.onSelect) {
             this.props.onSelect(selectedIndex);
           }
-          const isFirefox = typeof navigator !== 'undefined' && navigator.userAgent.indexOf("Firefox") >= 0;
-          if (this.props.direction === 'row' && !isFirefox) {
+
+          // Necessary to detect for Firefox or Edge to implement accessibility tabbing
+          const isFirefox = navigator.userAgent.indexOf("Firefox") >= 0;
+          const isEdge = navigator.userAgent.indexOf("isEdge") >= 0;
+          if (this.props.direction === 'row' && !isFirefox || !isEdge) {
             this.refs.anchorStep.focus();
             this._updateHiddenElements();
           }
@@ -506,10 +510,12 @@ export default class Article extends Component {
       controls = this._renderControls();
     }
 
-    const isFirefox = typeof navigator !== 'undefined' && navigator.userAgent.indexOf("Firefox") >= 0;
+    // Necessary to detect for Firefox or Edge to implement accessibility tabbing
+    const isFirefox = navigator && navigator.userAgent.indexOf("Firefox") >= 0;
+    const isEdge = navigator && navigator.userAgent.indexOf("Edge") >= 0;
 
     let anchorStepNode;
-    if (!isFirefox) {
+    if (!isFirefox && !isEdge) {
       anchorStepNode = (
         <a tabIndex="-1" aria-hidden='true' ref='anchorStep' />
       );
@@ -526,7 +532,7 @@ export default class Article extends Component {
           let elementNode = elementClone;
 
           let ariaHidden;
-          if (!isFirefox && this.state.selectedIndex !== index) {
+          if (!isFirefox && !isEdge && this.state.selectedIndex !== index) {
             ariaHidden = 'true';
           }
 
