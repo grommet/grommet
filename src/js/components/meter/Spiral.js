@@ -11,7 +11,6 @@ var SPIRAL_WIDTH = baseDimension;
 var SPIRAL_RADIUS = (baseDimension / 2) - (baseUnit / 2);
 var RING_THICKNESS = baseUnit;
 // Allow for active value content next to a spiral meter
-var SPIRAL_TEXT_PADDING = (baseUnit * 2);
 
 export default class Spiral extends Graphic {
 
@@ -24,7 +23,7 @@ export default class Spiral extends Graphic {
   _stateFromProps (props) {
     var viewBoxHeight = Math.max(SPIRAL_WIDTH,
       RING_THICKNESS * (props.series.length + 1) * 2);
-    var viewBoxWidth = viewBoxHeight + (2 * SPIRAL_TEXT_PADDING);
+    var viewBoxWidth = viewBoxHeight;
 
     var state = {
       startAngle: 0,

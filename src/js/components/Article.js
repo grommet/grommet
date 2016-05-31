@@ -55,7 +55,7 @@ export default class Article extends Component {
           right: this._onNext
         };
 
-        if (navigator.userAgent.indexOf("Firefox") === -1) {
+        if (typeof navigator !== 'undefined' && navigator.userAgent.indexOf("Firefox") === -1) {
           this._updateHiddenElements();
         }
       }

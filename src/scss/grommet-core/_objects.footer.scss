@@ -70,7 +70,8 @@
   }
 
   &--flush {
-    .footer__content {
+    .footer__content,
+    .footer__wrapper {
       padding-left: 0px;
       padding-right: 0px;
     }
@@ -86,19 +87,82 @@
     line-height: $small-footer-height;
   }
 
+  &--fixed {
+    .footer__wrapper {
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
+      z-index: 3;
+
+      &--fill {
+        .footer__wrapper {
+          background-color: $footer-background-color;
+        }
+      }
+    }
+
+    &.footer--primary {
+      .footer__wrapper {
+        position: fixed;
+
+        &--fill {
+          .footer__wrapper {
+            background-color: $footer-background-color;
+          }
+        }
+      }
+
+      .footer__content {
+        position: static;
+        background-color: transparent;
+      }
+    }
+  }
+
   &__container {
+    flex-shrink: 0;
+
     &--float {
       position: absolute;
       bottom: 0px;
       left: 0px;
       right: 0px;
-      padding-left: $inuit-base-spacing-unit;
-      padding-right: $inuit-base-spacing-unit;
+    }
+
+    &--fill {
+      .footer {
+        background-color: $footer-background-color;
+      }
+    }
+
+    &--fixed {
+      position: relative;
+
+      .footer__wrapper {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        z-index: 3;
+      }
+    }
+  }
+
+  .footer__wrapper {
+    height: $footer-height;
+
+    &--large {
+      height: $large-footer-height;
+    }
+
+    &--small {
+      height: $small-footer-height;
     }
   }
 
   *:not(.footer__container--float) > &--float {
-    position: absolute;
+    position: fixed;
     bottom: 0px;
     left: 0px;
     right: 0px;
