@@ -7,6 +7,7 @@ import Intl from '../../utils/Intl';
 import KeyboardAccelerators from '../../utils/KeyboardAccelerators';
 
 const CLASS_ROOT = classRoot;
+const MIN_WIDTH = 0.033;
 
 export default class Graphic extends Component {
 
@@ -93,7 +94,9 @@ export default class Graphic extends Component {
 
     let paths = series.map(function (item, itemIndex) {
       let path = this._renderSlice(trackIndex, item, itemIndex, startValue, threshold);
-      startValue += item.value;
+
+      startValue += Math.max(MIN_WIDTH * this.props.max.value, item.value);
+
       return path;
     }, this);
 
