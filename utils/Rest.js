@@ -34,10 +34,10 @@ function buildParams(object) {
         if (null !== value && undefined !== value) {
           if (Array.isArray(value)) {
             for (var i = 0; i < value.length; i++) {
-              params.push(property + '=' + value[i]);
+              params.push(property + '=' + encodeURIComponent(value[i]));
             }
           } else {
-            params.push(property + '=' + value);
+            params.push(property + '=' + encodeURIComponent(value));
           }
         }
       }
