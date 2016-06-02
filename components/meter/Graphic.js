@@ -35,6 +35,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = _utils.classRoot;
+var MIN_WIDTH = 0.033;
 
 var Graphic = function (_Component) {
   _inherits(Graphic, _Component);
@@ -131,7 +132,9 @@ var Graphic = function (_Component) {
 
       var paths = series.map(function (item, itemIndex) {
         var path = this._renderSlice(trackIndex, item, itemIndex, startValue, threshold);
-        startValue += item.value;
+
+        startValue += Math.max(MIN_WIDTH * this.props.max.value, item.value);
+
         return path;
       }, this);
 

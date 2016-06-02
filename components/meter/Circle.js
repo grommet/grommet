@@ -59,7 +59,9 @@ var Circle = function (_Graphic) {
     key: '_sliceCommands',
     value: function _sliceCommands(trackIndex, item, startValue) {
       var startAngle = (0, _utils.translateEndAngle)(this.state.startAngle, this.state.anglePer, startValue);
+
       var endAngle = Math.max(startAngle + (item.value > 0 ? RING_THICKNESS / 2 : 0), (0, _utils.translateEndAngle)(startAngle, this.state.anglePer, item.value));
+
       var radius = Math.max(1, CIRCLE_RADIUS - trackIndex * RING_THICKNESS);
       return (0, _utils.arcCommands)(CIRCLE_WIDTH / 2, CIRCLE_WIDTH / 2, radius, startAngle + this.state.angleOffset, endAngle + this.state.angleOffset);
     }
