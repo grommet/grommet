@@ -84,8 +84,7 @@ var Notification = function (_Component) {
             value: this.props.percentComplete,
             label: '',
             colorIndex: 'light-1'
-          }],
-          size: 'large' });
+          }] });
       }
 
       var timestamp = void 0;
