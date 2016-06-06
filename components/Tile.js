@@ -62,9 +62,10 @@ var Tile = function (_Component) {
       var hoverBorder = _props.hoverBorder;
       var hoverBorderSize = _props.hoverBorderSize;
 
+      var restProps = _Props2.default.omit(this.props, Object.keys(_Box2.default.propTypes));
 
       if (selected) {
-        console.warn('Selected option has been deprecated, please use selected option at the Tiles level.');
+        console.warn('Selected option has been deprecated, please use ' + 'selected option at the Tiles level.');
       }
 
       var statusClass = status ? status.toLowerCase() : undefined;
@@ -77,7 +78,7 @@ var Tile = function (_Component) {
 
       return _react2.default.createElement(
         _Box2.default,
-        _extends({}, boxProps, { className: classes }),
+        _extends({}, restProps, boxProps, { className: classes }),
         children
       );
     }
