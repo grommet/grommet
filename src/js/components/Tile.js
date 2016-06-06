@@ -10,15 +10,19 @@ const CLASS_ROOT = "tile";
 export default class Tile extends Component {
 
   render () {
-    const { children, className, onClick, wide, status, selected, hoverStyle, hoverColorIndex, hoverBorder, hoverBorderSize } = this.props;
+    const { children, className, onClick, wide, status, selected,
+      hoverStyle, hoverColorIndex, hoverBorder, hoverBorderSize } = this.props;
+    const restProps = Props.omit(this.props, Object.keys(Box.propTypes));
 
     if (selected) {
-      console.warn('Selected option has been deprecated, please use selected option at the Tiles level.');
+      console.warn('Selected option has been deprecated, please use ' +
+        'selected option at the Tiles level.');
     }
 
     const statusClass = status ? status.toLowerCase() : undefined;
     // if Tiles flush is true, default borderSize to small (1px)
-    let borderSize = (hoverBorder) ? ((hoverBorderSize) ? hoverBorderSize : 'large') : 'small';
+    let borderSize = (hoverBorder) ?
+      ((hoverBorderSize) ? hoverBorderSize : 'large') : 'small';
 
     const classes = classnames(
       CLASS_ROOT,
@@ -28,7 +32,9 @@ export default class Tile extends Component {
         [`${CLASS_ROOT}--wide`]: wide,
         [`${CLASS_ROOT}--selectable`]: onClick,
         [`${CLASS_ROOT}--selected`]: selected,
-        [`${hoverStyle}${(hoverStyle == 'border') ? ((borderSize) ? `-${borderSize}` : '-medium') : ''}-hover-color-index-${hoverColorIndex}`]: hoverStyle,
+        [`${hoverStyle}${(hoverStyle == 'border') ?
+          ((borderSize) ? `-${borderSize}` : '-medium') : ''
+        }-hover-color-index-${hoverColorIndex}`]: hoverStyle,
         [`${CLASS_ROOT}--hover-border-${borderSize}`]: borderSize
       }
     );
@@ -36,7 +42,7 @@ export default class Tile extends Component {
     const boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
 
     return (
-      <Box {...boxProps} className={classes}>
+      <Box {...restProps} {...boxProps} className={classes}>
         {children}
       </Box>
     );
