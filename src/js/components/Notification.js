@@ -46,8 +46,7 @@ export default class Notification extends Component {
             value: this.props.percentComplete,
             label: '',
             colorIndex: 'light-1'
-          }]}
-          size="large" />
+          }]} />
       );
     }
 
