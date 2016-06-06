@@ -63,6 +63,11 @@
   // hindering scrollbar usage
   margin: $inuit-base-spacing-unit;
 
+  // removes scrollbars from article control arrows in mobile
+  &.button--plain.button--icon {
+    overflow: hidden;
+  }
+
   .button__icon {
     padding: 0;
   }
