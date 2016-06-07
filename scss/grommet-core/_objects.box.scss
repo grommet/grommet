@@ -75,8 +75,13 @@
 }
 
 .box--full-vertical {
-  min-height: 100%;
-  height: 100vh;
+  min-height: 100vh;
+
+  // IE11 specific fix for aligning content vertically centered
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    min-height: 100%;
+    height: 100vh;
+  }
 }
 
 .box--direction-row {
