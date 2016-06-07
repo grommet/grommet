@@ -165,7 +165,13 @@ export default class Layer extends Component {
   componentWillUnmount () {
 
     if (this._originalFocusedElement) {
-      this._originalFocusedElement.focus();
+      if (this._originalFocusedElement.focus) {
+        this._originalFocusedElement.focus();
+      } else if (this._originalFocusedElement.parentNode &&
+        this._originalFocusedElement.parentNode.focus) {
+        // required for IE11 and Edge
+        this._originalFocusedElement.parentNode.focus();
+      }
     }
 
     this._removeLayer();
