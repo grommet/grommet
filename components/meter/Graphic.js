@@ -95,7 +95,7 @@ var Graphic = function (_Component) {
     }
   }, {
     key: '_renderSlice',
-    value: function _renderSlice(trackIndex, item, itemIndex, startValue, threshold) {
+    value: function _renderSlice(trackIndex, item, itemIndex, startValue, maxValue, threshold) {
       var path = void 0;
       if (!item.hidden) {
         var classes = [CLASS_ROOT + '__slice'];
@@ -111,7 +111,7 @@ var Graphic = function (_Component) {
 
         classes.push('color-index-' + item.colorIndex);
 
-        var commands = this._sliceCommands(trackIndex, item, startValue);
+        var commands = this._sliceCommands(trackIndex, item, startValue, maxValue);
 
         if (threshold) {
           path = (0, _utils.buildPath)(itemIndex, commands, classes, this.props.onActivate, item.onClick);
@@ -128,15 +128,21 @@ var Graphic = function (_Component) {
   }, {
     key: '_renderSlices',
     value: function _renderSlices(series, trackIndex, threshold) {
-      var startValue = this.props.min.value;
+      var _this2 = this;
+
+      var _props = this.props;
+      var min = _props.min;
+      var max = _props.max;
+
+      var startValue = min.value;
 
       var paths = series.map(function (item, itemIndex) {
-        var path = this._renderSlice(trackIndex, item, itemIndex, startValue, threshold);
+        var path = _this2._renderSlice(trackIndex, item, itemIndex, startValue, max.value, threshold);
 
-        startValue += Math.max(MIN_WIDTH * this.props.max.value, item.value);
+        startValue += Math.max(MIN_WIDTH * max.value, item.value);
 
         return path;
-      }, this);
+      });
 
       return paths;
     }
@@ -205,14 +211,18 @@ var Graphic = function (_Component) {
   }, {
     key: '_renderValues',
     value: function _renderValues() {
-      var _this2 = this;
+      var _this3 = this;
+
+      var _props2 = this.props;
+      var min = _props2.min;
+      var max = _props2.max;
 
       var values = void 0;
       if (this.props.stacked) {
         values = this._renderSlices(this.props.series, 0);
       } else {
         values = this.props.series.map(function (item, index) {
-          return _this2._renderSlice(index, item, index, _this2.props.min.value);
+          return _this3._renderSlice(index, item, index, min.value, max.value);
         });
       }
       if (values.length === 0) {
@@ -227,15 +237,19 @@ var Graphic = function (_Component) {
   }, {
     key: '_renderTracks',
     value: function _renderTracks() {
-      var _this3 = this;
+      var _this4 = this;
 
-      var trackValue = { value: this.props.max.value, colorIndex: 'unset' };
+      var _props3 = this.props;
+      var min = _props3.min;
+      var max = _props3.max;
+
+      var trackValue = { value: max.value, colorIndex: 'unset' };
       var tracks = void 0;
       if (this.props.stacked) {
-        tracks = this._renderSlice(0, trackValue, 0, this.props.min.value, true);
+        tracks = this._renderSlice(0, trackValue, 0, min.value, max.value, true);
       } else {
         tracks = this.props.series.map(function (item, index) {
-          return _this3._renderSlice(index, trackValue, index, _this3.props.min.value, true);
+          return _this4._renderSlice(index, trackValue, index, min.value, max.value, true);
         });
       }
       return _react2.default.createElement(
@@ -293,7 +307,7 @@ var Graphic = function (_Component) {
   }, {
     key: '_renderA11YDesc',
     value: function _renderA11YDesc() {
-      var _this4 = this;
+      var _this5 = this;
 
       var a11yDesc = this.props.a11yDesc;
       var units = this.props.units || '';
@@ -313,8 +327,8 @@ var Graphic = function (_Component) {
 
         if (this.props.thresholds) {
           (function () {
-            var thresholdLabel = _Intl2.default.getMessage(_this4.context.intl, 'Threshold');
-            _this4.props.thresholds.forEach(function (threshold) {
+            var thresholdLabel = _Intl2.default.getMessage(_this5.context.intl, 'Threshold');
+            _this5.props.thresholds.forEach(function (threshold) {
               if (threshold.ariaLabel) {
                 a11yDesc += ', ' + thresholdLabel + ': ' + threshold.ariaLabel;
               }
