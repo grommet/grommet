@@ -23,7 +23,7 @@ export default class Circle extends Graphic {
         " data values in a circle Meter");
     }
 
-    var state = {
+    const state = {
       startAngle: 0,
       anglePer: (! props.max) ? 0 : 360 / (props.max.value - props.min.value),
       angleOffset: 180,
@@ -34,17 +34,24 @@ export default class Circle extends Graphic {
     return state;
   }
 
-  _sliceCommands (trackIndex, item, startValue) {
-    var startAngle = translateEndAngle(
+  _sliceCommands (trackIndex, item, startValue, maxValue) {
+    const startAngle = translateEndAngle(
       this.state.startAngle, this.state.anglePer, startValue
     );
 
-    var endAngle = Math.max(
-      startAngle + (item.value > 0 ? (RING_THICKNESS / 2) : 0),
-      translateEndAngle(startAngle, this.state.anglePer, item.value)
-    );
+    var endAngle;
+    if (! item.value) {
+      endAngle = startAngle;
+    } else if (startValue + item.value >= maxValue) {
+      endAngle = 360;
+    } else {
+      endAngle = Math.min(360 - (RING_THICKNESS / 2),
+        Math.max(startAngle + (RING_THICKNESS / 2),
+          translateEndAngle(startAngle, this.state.anglePer, item.value)
+        ));
+    }
 
-    var radius = Math.max(1, CIRCLE_RADIUS - (trackIndex * RING_THICKNESS));
+    const radius = Math.max(1, CIRCLE_RADIUS - (trackIndex * RING_THICKNESS));
     return arcCommands(CIRCLE_WIDTH / 2, CIRCLE_WIDTH / 2, radius,
       startAngle + this.state.angleOffset,
       endAngle + this.state.angleOffset);
