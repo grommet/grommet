@@ -70,10 +70,17 @@
     }
   }
 
-  // Removing icon transition style for labeled menus
-  &.menu--labelled .control-icon {
-    @include media-query(lap-and-up) {
-      transition: none;
+  &.menu--labelled {
+    // IE11 fix to vertically center labelled menu control
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      line-height: $inuit-base-spacing-unit;
+    }
+
+    // Removing icon transition style for labeled menus
+    .control-icon {
+      @include media-query(lap-and-up) {
+        transition: none;
+      }
     }
   }
 }
