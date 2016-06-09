@@ -53,12 +53,34 @@ var Title = function (_Component) {
 
       var a11yTitle = this.props.a11yTitle || _Intl2.default.getMessage(this.context.intl, 'Title');
 
+      var content = void 0;
+      if (typeof this.props.children === 'string') {
+        content = _react2.default.createElement(
+          'span',
+          null,
+          this.props.children
+        );
+      } else if (Array.isArray(this.props.children)) {
+        content = this.props.children.map(function (child, index) {
+          if (child && typeof child === 'string') {
+            return _react2.default.createElement(
+              'span',
+              { key: 'title_' + index },
+              child
+            );
+          }
+          return child;
+        });
+      } else {
+        content = this.props.children;
+      }
+
       return _react2.default.createElement(
         _Box2.default,
         { align: 'center', direction: 'row', responsive: false,
           className: classes.join(' '), a11yTitle: a11yTitle,
           onClick: this.props.onClick },
-        this.props.children
+        content
       );
     }
   }]);
