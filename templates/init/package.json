@@ -12,6 +12,6 @@
     "babel-preset-react": "^6.3.13",
     "babel-register": "^6.5.2",
     "grommet-toolbox": "^0.1.0",
-    "gulp": "^3.9.0",
+    "gulp": "^3.9.0"
   }
 }
