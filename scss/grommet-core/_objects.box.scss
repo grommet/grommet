@@ -64,9 +64,13 @@
   max-width: 100%;
   width: 100vw;
   min-height: 100vh;
-  // min-height doesn't work for IE and vertical centering
-  // https://connect.microsoft.com/IE/feedback/details/816293/ie11-flexbox-with-min-height-not-vertically-aligning-with-align-items-center
   height: 100%;
+  // IE11 specific fix for aligning content vertically centered
+  // height gets over written by the > min-height
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    min-height: 100vh;
+    height: 50vh;
+  }
 }
 
 .box--full-horizontal {
@@ -78,9 +82,10 @@
   min-height: 100vh;
 
   // IE11 specific fix for aligning content vertically centered
+  // height gets over written by the > min-height
   @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-    min-height: 100%;
-    height: 100vh;
+    min-height: 100vh;
+    height: 50vh;
   }
 }
 
