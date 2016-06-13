@@ -31,12 +31,15 @@ export default class Columns extends Component {
 
   _layout () {
     const container = this.refs.container;
+    const children = React.Children.toArray(this.props.children);
     let count = 1;
     const child = container.childNodes[0];
     if (child) {
       const rect = container.getBoundingClientRect();
       const childRect = child.getBoundingClientRect();
-      count = Math.floor(rect.width / childRect.width);
+      const widestCount = Math.floor(rect.width / childRect.width);
+      const childrenPerColumn = Math.ceil(children.length / widestCount);
+      count = Math.ceil(children.length / childrenPerColumn);
     }
 
     if (count === 0) {
