@@ -167,30 +167,51 @@
   }
 }
 
+$logo-size: double($inuit-base-spacing-unit);
+$logo-dash-size: round($logo-size * 16);
+
+@include keyframes(draw-logo) {
+  0% {
+    stroke-dashoffset: $logo-dash-size;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
 .logo-icon {
-  width: double($inuit-base-spacing-unit);
-  height: double($inuit-base-spacing-unit);
+  width: $logo-size;
+  height: $logo-size;
 
   @include graph-stroke-color();
 
+  @include media-query(lap-and-up) {
+    path {
+      stroke-dasharray: $logo-dash-size $logo-dash-size;
+      stroke-dashoffset: 0;
+      @include animation('draw-logo 2.5s linear');
+    }
+  }
+
   &--small {
-    width: $inuit-base-spacing-unit;
-    height: $inuit-base-spacing-unit;
+    width: halve($logo-size);
+    height: halve($logo-size);
   }
 
   &--large {
-    width: quadruple($inuit-base-spacing-unit);
-    height: quadruple($inuit-base-spacing-unit);
+    width: double($logo-size);
+    height: double($logo-size);
   }
 
   &--xlarge {
-    width: round($inuit-base-spacing-unit * 6);
-    height: round($inuit-base-spacing-unit * 6);
+    width: quadruple($logo-size);
+    height: quadruple($logo-size);
   }
 
   &--huge {
-    width: round($inuit-base-spacing-unit * 12);
-    height: round($inuit-base-spacing-unit * 12);
+    width: round($logo-size * 8);
+    height: round($logo-size * 8);
   }
 }
 

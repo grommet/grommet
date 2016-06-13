@@ -62,12 +62,15 @@ var Columns = function (_Component) {
     key: '_layout',
     value: function _layout() {
       var container = this.refs.container;
+      var children = _react2.default.Children.toArray(this.props.children);
       var count = 1;
       var child = container.childNodes[0];
       if (child) {
         var rect = container.getBoundingClientRect();
         var childRect = child.getBoundingClientRect();
-        count = Math.floor(rect.width / childRect.width);
+        var widestCount = Math.floor(rect.width / childRect.width);
+        var childrenPerColumn = Math.ceil(children.length / widestCount);
+        count = Math.ceil(children.length / childrenPerColumn);
       }
 
       if (count === 0) {
