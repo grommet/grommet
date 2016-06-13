@@ -23,11 +23,27 @@ export default class Title extends Component {
     const a11yTitle = this.props.a11yTitle ||
       Intl.getMessage(this.context.intl, 'Title');
 
+    let content;
+    if( typeof this.props.children === 'string' ) {
+      content = (
+        <span>{this.props.children}</span>
+      );
+    } else if (Array.isArray(this.props.children)) {
+      content = this.props.children.map((child, index) => {
+        if (child && typeof child === 'string') {
+          return <span key={`title_${index}`}>{child}</span>;
+        }
+        return child;
+      });
+    } else {
+      content = this.props.children;
+    }
+
     return (
       <Box align="center" direction="row" responsive={false}
         className={classes.join(' ')} a11yTitle={a11yTitle}
         onClick={this.props.onClick}>
-        {this.props.children}
+        {content}
       </Box>
     );
   }

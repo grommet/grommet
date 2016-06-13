@@ -1,30 +1,54 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import request from 'superagent';
+export const headers = {
+  'Accept': 'application/json',
+  'Content-Type': 'application/json'
+};
 
-let _headers = {'Accept': 'application/json'};
-
-let _timeout = 10000; // 10s
-
-// convert params to string, to deal with array values
-function buildQueryParams(params) {
-  var result = [];
-  for (var property in params) {
-    if (params.hasOwnProperty(property)) {
-      var value = params[property];
-      if (null !== value && undefined !== value) {
-        if (Array.isArray(value)) {
-          for (var i = 0; i < value.length; i++) {
-            result.push(property + '=' + value[i]);
+// converts object to parameter array, handles arrays
+export function buildParams (object) {
+  let params = [];
+  if (object) {
+    for (const property in object) {
+      if (object.hasOwnProperty(property)) {
+        const value = object[property];
+        if (null !== value && undefined !== value) {
+          if (Array.isArray(value)) {
+            for (let i = 0; i < value.length; i++) {
+              params.push(property + '=' + encodeURIComponent(value[i]));
+            }
+          } else {
+            params.push(property + '=' + encodeURIComponent(value));
           }
-        } else {
-          result.push(property + '=' + value);
         }
       }
     }
   }
-  return result.join('&');
+  return params;
 }
+
+// joins params array and adds '?' prefix if needed
+export function buildQuery (object) {
+  const params = (Array.isArray(object) ? object : buildParams(object));
+  return (params.length > 0 ? `?${params.join('&')}` : '');
+}
+
+// reject promise of response isn't ok
+export function processStatus (response) {
+  if (response.ok) {
+    return Promise.resolve(response);
+  } else {
+    return Promise.reject(response.statusText || `Error ${response.status}`);
+  }
+}
+
+// Deprecated superagent functions
+
+import request from 'superagent';
+
+let _headers = { ...headers };
+
+let _timeout = 10000; // 10s
 
 export default {
 
@@ -41,14 +65,14 @@ export default {
   },
 
   head (uri, params) {
-    var op = request.head(uri).query(buildQueryParams(params));
+    var op = request.head(uri).query(buildParams(params).join('&'));
     op.timeout(_timeout);
     op.set(_headers);
     return op;
   },
 
   get (uri, params) {
-    var op = request.get(uri).query(buildQueryParams(params));
+    var op = request.get(uri).query(buildParams(params).join('&'));
     op.timeout(_timeout);
     op.set(_headers);
     return op;

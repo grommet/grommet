@@ -7,6 +7,7 @@ import Intl from '../../utils/Intl';
 import KeyboardAccelerators from '../../utils/KeyboardAccelerators';
 
 const CLASS_ROOT = classRoot;
+const MIN_WIDTH = 0.033;
 
 export default class Graphic extends Component {
 
@@ -54,7 +55,7 @@ export default class Graphic extends Component {
     return "";
   }
 
-  _renderSlice (trackIndex, item, itemIndex, startValue, threshold) {
+  _renderSlice (trackIndex, item, itemIndex, startValue, maxValue, threshold) {
     let path;
     if (! item.hidden) {
       let classes = [`${CLASS_ROOT}__slice`];
@@ -70,7 +71,7 @@ export default class Graphic extends Component {
 
       classes.push(`color-index-${item.colorIndex}`);
 
-      let commands = this._sliceCommands(trackIndex, item, startValue);
+      let commands = this._sliceCommands(trackIndex, item, startValue, maxValue);
 
       if (threshold) {
         path = buildPath(itemIndex, commands, classes,
@@ -89,13 +90,17 @@ export default class Graphic extends Component {
   }
 
   _renderSlices (series, trackIndex, threshold) {
-    let startValue = this.props.min.value;
+    const { min, max } = this.props;
+    let startValue = min.value;
 
-    let paths = series.map(function (item, itemIndex) {
-      let path = this._renderSlice(trackIndex, item, itemIndex, startValue, threshold);
-      startValue += item.value;
+    let paths = series.map((item, itemIndex) => {
+      let path = this._renderSlice(trackIndex, item, itemIndex, startValue,
+        max.value, threshold);
+
+      startValue += Math.max(MIN_WIDTH * max.value, item.value);
+
       return path;
-    }, this);
+    });
 
     return paths;
   }
@@ -164,12 +169,13 @@ export default class Graphic extends Component {
   }
 
   _renderValues () {
+    const { min, max } = this.props;
     let values;
     if (this.props.stacked) {
       values = this._renderSlices(this.props.series, 0);
     } else {
       values = this.props.series.map((item, index) => {
-        return this._renderSlice(index, item, index, this.props.min.value);
+        return this._renderSlice(index, item, index, min.value, max.value);
       });
     }
     if (values.length === 0) {
@@ -183,14 +189,15 @@ export default class Graphic extends Component {
   }
 
   _renderTracks () {
-    const trackValue = { value: this.props.max.value, colorIndex: 'unset' };
+    const { min, max } = this.props;
+    const trackValue = { value: max.value, colorIndex: 'unset' };
     let tracks;
     if (this.props.stacked) {
-      tracks = this._renderSlice(0, trackValue, 0, this.props.min.value, true);
+      tracks = this._renderSlice(0, trackValue, 0, min.value, max.value, true);
     } else {
-      tracks = this.props.series.map((item, index) => {
-        return this._renderSlice(index, trackValue, index, this.props.min.value, true);
-      });
+      tracks = this.props.series.map((item, index) => (
+        this._renderSlice(index, trackValue, index, min.value, max.value, true)
+      ));
     }
     return (
       <g className={`${CLASS_ROOT}__tracks`}>

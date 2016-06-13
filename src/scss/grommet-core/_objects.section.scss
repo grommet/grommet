@@ -34,11 +34,6 @@ section {
   > iframe {
     width: 100%;
     max-width: $readable-text-width;
-    height: 400px;
-
-    @include media-query(palm) {
-      height: 250px;
-    }
   }
 
   > ol,

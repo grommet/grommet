@@ -58,9 +58,18 @@
 .article__control {
   position: fixed;
   z-index: 10;
+  // using margin instead of padding for article control
+  // to prevent arrow from overlapping scrollbar and
+  // hindering scrollbar usage
+  margin: $inuit-base-spacing-unit;
+
+  // removes scrollbars from article control arrows in mobile
+  &.button--plain.button--icon {
+    overflow: hidden;
+  }
 
   .button__icon {
-    padding: $inuit-base-spacing-unit;
+    padding: 0;
   }
 }
 

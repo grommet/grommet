@@ -38,10 +38,14 @@ export default class Article extends Component {
     this._onResponsive = this._onResponsive.bind(this);
     this._updateHiddenElements = this._updateHiddenElements.bind(this);
 
+    // Necessary to detect for Firefox or Edge to implement accessibility tabbing
+    const accessibilityTabbingCompatible = typeof navigator !== 'undefined' && navigator.userAgent.indexOf("Firefox") === -1 && navigator.userAgent.indexOf("Edge") === -1;
+
     this.state = {
       selectedIndex: props.selected || 0,
       playing: false,
-      showControls: this.props.controls
+      showControls: this.props.controls,
+      accessibilityTabbingCompatible: accessibilityTabbingCompatible
     };
   }
 
@@ -55,7 +59,7 @@ export default class Article extends Component {
           right: this._onNext
         };
 
-        if (typeof navigator !== 'undefined' && navigator.userAgent.indexOf("Firefox") === -1) {
+        if (this.state.accessibilityTabbingCompatible) {
           this._updateHiddenElements();
         }
       }
@@ -75,6 +79,13 @@ export default class Article extends Component {
     }
 
     this._onSelect(this.state.selectedIndex);
+  }
+
+  componentWillReceiveProps (nextProps) {
+    // allow updates to selected props to trigger new chapter select
+    if ((typeof nextProps.selected !== 'undefined') && (nextProps.selected !== null) && (nextProps.selected !== this.state.selectedIndex)) {
+      this._onSelect(nextProps.selected);
+    }
   }
 
   componentWillUnmount () {
@@ -354,8 +365,9 @@ export default class Article extends Component {
           if (this.props.onSelect) {
             this.props.onSelect(selectedIndex);
           }
-          const isFirefox = typeof navigator !== 'undefined' && navigator.userAgent.indexOf("Firefox") >= 0;
-          if (this.props.direction === 'row' && !isFirefox) {
+
+          // Necessary to detect for Firefox or Edge to implement accessibility tabbing
+          if (this.props.direction === 'row' && this.state.accessibilityTabbingCompatible) {
             this.refs.anchorStep.focus();
             this._updateHiddenElements();
           }
@@ -499,10 +511,8 @@ export default class Article extends Component {
       controls = this._renderControls();
     }
 
-    const isFirefox = typeof navigator !== 'undefined' && navigator.userAgent.indexOf("Firefox") >= 0;
-
     let anchorStepNode;
-    if (!isFirefox) {
+    if (this.state.accessibilityTabbingCompatible) {
       anchorStepNode = (
         <a tabIndex="-1" aria-hidden='true' ref='anchorStep' />
       );
@@ -519,7 +529,7 @@ export default class Article extends Component {
           let elementNode = elementClone;
 
           let ariaHidden;
-          if (!isFirefox && this.state.selectedIndex !== index) {
+          if (this.state.selectedIndex !== index && this.state.accessibilityTabbingCompatible) {
             ariaHidden = 'true';
           }
 

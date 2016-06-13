@@ -114,4 +114,8 @@
   .error {
     color: map-get($brand-status-colors, critical);
   }
+
+  svg {
+    max-width: 100%;
+  }
 }
