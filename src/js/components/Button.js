@@ -48,7 +48,8 @@ export default class Button extends Component {
     return (
       <Tag href={this.props.href} id={this.props.id} type={this.props.type}
         className={classes} aria-label={this.props.a11yTitle}
-        onClick={this.props.onClick} disabled={!this.props.onClick}>
+        onClick={this.props.onClick}
+        disabled={!this.props.onClick && !this.props.href}>
         {icon}
         {children}
       </Tag>
