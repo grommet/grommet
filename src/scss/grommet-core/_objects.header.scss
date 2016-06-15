@@ -5,6 +5,12 @@
   width: 100%;
   margin-bottom: 0px;
 
+  // Height is needed to coerce IE11 into aligning center even though
+  // this is ignored by min-height. (Also needed on header--small.)
+  // We need to subtract 1 unit in order to allow min-height to
+  // keep the header height dynamic.
+  height: $header-height - 1;
+
   a:not(.button) {
     color: inherit;
     text-decoration: none;
@@ -30,6 +36,7 @@
 
 .header--small {
   min-height: $small-header-height;
+  height: $small-header-height - 1;
 
   .header__content {
     line-height: $small-header-height;
