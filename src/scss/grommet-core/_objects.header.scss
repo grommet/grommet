@@ -7,6 +7,8 @@
 
   // Height is needed to coerce IE11 into aligning center even though
   // this is ignored by min-height. (Also needed on header--small.)
+  // We need to subtract 1 unit in order to allow min-height to
+  // keep the header height dynamic.
   height: $header-height - 1;
 
   a:not(.button) {
