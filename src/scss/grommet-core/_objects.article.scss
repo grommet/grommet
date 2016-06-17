@@ -55,6 +55,10 @@
   }
 }
 
+.button.article__control.button--plain.button--icon {
+  overflow: hidden;
+}
+
 .article__control {
   position: fixed;
   z-index: 10;
