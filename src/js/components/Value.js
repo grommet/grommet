@@ -63,12 +63,12 @@ Value.propTypes = {
   align: PropTypes.oneOf(['start', 'center', 'end']),
   colorIndex: PropTypes.string,
   icon: PropTypes.node,
-  label: PropTypes.string,
+  label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   onClick: PropTypes.func,
   size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
   trendIcon: PropTypes.node,
-  value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
-  units: PropTypes.string
+  value: PropTypes.oneOfType([PropTypes.number, PropTypes.string, PropTypes.node]),
+  units: PropTypes.oneOfType([PropTypes.string, PropTypes.node])
 };
 
 Value.defaultProps = {
