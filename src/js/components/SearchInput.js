@@ -115,19 +115,21 @@ export default class SearchInput extends Component {
   _onAddDrop (event) {
     event.preventDefault();
     // Get values of suggestions, so we can highlight selected suggestion
-    let suggestionValues = this.props.suggestions.map((suggestion) => {
+    if (this.props.suggestions) {
+      let suggestionValues = this.props.suggestions.map((suggestion) => {
       if (typeof suggestion === 'object') {
-        return suggestion.value;
+          return suggestion.value;
       } else {
-        return suggestion;
+          return suggestion;
       }
-    });
-    let activeSuggestionIndex = suggestionValues.indexOf(this.props.value);
+      });
+      let activeSuggestionIndex = suggestionValues.indexOf(this.props.value);
 
-    this.setState({
+      this.setState({
       dropActive: true,
       activeSuggestionIndex: activeSuggestionIndex
-    });
+      });
+    }
   }
 
   _onRemoveDrop () {
