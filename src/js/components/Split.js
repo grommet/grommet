@@ -92,9 +92,10 @@ export default class Split extends Component {
       classes.push(this.props.className);
     }
 
+    let children = React.Children.toArray(this.props.children);
     return (
       <div ref="split" className={classes.join(' ')}>
-        {React.Children.toArray(this.props.children).map((Component, idx) => {
+        {children.map((Component, idx) => {
           let hidden = false;
           if ('single' === this.state.responsive) {
             if ('left' === this.props.priority) {
@@ -102,7 +103,9 @@ export default class Split extends Component {
                 hidden = true;
               }
             } else {
-              if (idx === 0) {
+              // Hide if idx is pointing to the first child
+              // and if we've got more than 1 child
+              if (idx === 0 && children.length > 1) {
                 hidden = true;
               }
             }
