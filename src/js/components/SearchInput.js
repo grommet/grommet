@@ -117,17 +117,16 @@ export default class SearchInput extends Component {
     // Get values of suggestions, so we can highlight selected suggestion
     if (this.props.suggestions) {
       let suggestionValues = this.props.suggestions.map((suggestion) => {
-      if (typeof suggestion === 'object') {
+        if (typeof suggestion === 'object') {
           return suggestion.value;
-      } else {
+        } else {
           return suggestion;
-      }
+        }
       });
       let activeSuggestionIndex = suggestionValues.indexOf(this.props.value);
-
       this.setState({
-      dropActive: true,
-      activeSuggestionIndex: activeSuggestionIndex
+        dropActive: true,
+        activeSuggestionIndex: activeSuggestionIndex
       });
     }
   }
