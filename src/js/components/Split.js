@@ -99,13 +99,15 @@ export default class Split extends Component {
           let hidden = false;
           if ('single' === this.state.responsive) {
             if ('left' === this.props.priority) {
+              // If priority = left and we're not
+              // the first child, then hide
               if (idx !== 0) {
                 hidden = true;
               }
             } else {
-              // Hide if idx is pointing to the first child
-              // and if we've got more than 1 child
-              if (idx === 0 && children.length > 1) {
+              // If priority = right and we're not
+              // the last child, then hide
+              if (idx !== children.length - 1) {
                 hidden = true;
               }
             }
