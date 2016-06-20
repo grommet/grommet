@@ -54,9 +54,25 @@
     right: 0px;
     z-index: 1;
 
+    &-outside {
+      @include media-query(lap-and-up) {
+        top: -48px;
+
+        svg {
+          stroke: #fff;
+        }
+      }
+    }
+
     .grommet.rtl & {
       right: auto;
       left: 0px;
+    }
+  }
+
+  &.layer--visible {
+    .layer__container {
+      overflow: visible;
     }
   }
 
