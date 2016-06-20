@@ -114,9 +114,9 @@ export default class Split extends Component {
           }
 
           if (hidden) {
-            return <span key={idx} style={{display: 'none'}}>{Component}</span>;
+            return <div key={idx} style={{display: 'none'}}>{Component}</div>;
           }
-          return <span key={idx}>{Component}</span>;
+          return <div key={idx}>{Component}</div>;
         })}
       </div>
     );
