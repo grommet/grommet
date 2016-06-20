@@ -3,7 +3,6 @@
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import Box from './Box';
-import Props from '../utils/Props';
 
 const CLASS_ROOT = 'section';
 
@@ -11,11 +10,12 @@ export default class Section extends Component {
   render () {
     var classes = classnames(CLASS_ROOT, this.props.className);
 
-    let boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
+    let boxProps = { ...this.props };
+    delete boxProps.className;
+    delete boxProps.children;
 
     return (
-      <Box {...boxProps} tag="section" className={classes}
-        primary={this.props.primary}>
+      <Box {...boxProps} tag="section" className={classes}>
         {this.props.children}
       </Box>
     );
