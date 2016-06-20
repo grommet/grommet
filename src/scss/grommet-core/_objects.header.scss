@@ -28,6 +28,7 @@
 
 .header--large {
   min-height: $large-header-height;
+  height: $large-header-height - 1;
 
   .header__content {
     line-height: $large-header-height;
