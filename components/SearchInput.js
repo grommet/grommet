@@ -158,19 +158,20 @@ var SearchInput = function (_Component) {
     value: function _onAddDrop(event) {
       event.preventDefault();
       // Get values of suggestions, so we can highlight selected suggestion
-      var suggestionValues = this.props.suggestions.map(function (suggestion) {
-        if ((typeof suggestion === 'undefined' ? 'undefined' : _typeof(suggestion)) === 'object') {
-          return suggestion.value;
-        } else {
-          return suggestion;
-        }
-      });
-      var activeSuggestionIndex = suggestionValues.indexOf(this.props.value);
-
-      this.setState({
-        dropActive: true,
-        activeSuggestionIndex: activeSuggestionIndex
-      });
+      if (this.props.suggestions) {
+        var suggestionValues = this.props.suggestions.map(function (suggestion) {
+          if ((typeof suggestion === 'undefined' ? 'undefined' : _typeof(suggestion)) === 'object') {
+            return suggestion.value;
+          } else {
+            return suggestion;
+          }
+        });
+        var activeSuggestionIndex = suggestionValues.indexOf(this.props.value);
+        this.setState({
+          dropActive: true,
+          activeSuggestionIndex: activeSuggestionIndex
+        });
+      }
     }
   }, {
     key: '_onRemoveDrop',
