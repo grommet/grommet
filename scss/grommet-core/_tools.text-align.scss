@@ -1,0 +1,25 @@
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+
+@mixin text-align {
+  &--align {
+    &-start {
+      text-align: left;
+
+      html.rtl & {
+        text-align: right;
+      }
+    }
+
+    &-center {
+      text-align: center;
+    }
+
+    &-right {
+      text-align: right;
+
+      html.rtl & {
+        text-align: left;
+      }
+    }
+  }
+}

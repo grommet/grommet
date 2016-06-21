@@ -1,0 +1,138 @@
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+
+@include keyframes(carousel-reveal) {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@include keyframes(carousel-hide) {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.carousel {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+
+  &__track {
+    display: flex;
+    max-width: none;
+    transition: all 0.8s;
+  }
+
+  .tiles.box--direction-row > .tile.carousel__item {
+    flex: 1 1 100%;
+    box-sizing: border-box;
+
+    > * {
+      width: 100%;
+    }
+  }
+
+  &__arrow {
+    @include animation('carousel-reveal 1s');
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+
+    .control-icon {
+      filter: drop-shadow(1px 1px 1px $button-drop-shadow-color);
+      -webkit-filter: drop-shadow(1px 1px 1px $button-drop-shadow-color);
+
+      polyline {
+        stroke: $colored-icon-color;
+        stroke-width: 1px;
+      }
+    }
+
+    &:hover {
+      .control-icon polyline {
+        stroke: $active-colored-icon-color;
+      }
+    }
+
+    &--next {
+      right: 0;
+    }
+
+    &--prev {
+      left: 0;
+    }
+  }
+
+  .control-icon-next {
+    right: 0;
+  }
+
+  .control-icon-previous {
+    left: 0;
+  }
+
+  &__controls {
+    @include animation('carousel-reveal 1s');
+    margin-left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    bottom: halve($inuit-base-spacing-unit);
+    text-align: center;
+    z-index: 1;
+  }
+
+  &__control {
+    display: inline-block;
+    width: round($inuit-base-spacing-unit * 1.5);
+    height: round($inuit-base-spacing-unit * 1.5);
+    stroke: $colored-icon-color;
+    fill: transparent;
+    cursor: pointer;
+    filter: drop-shadow(1px 1px 1px $button-drop-shadow-color);
+    -webkit-filter: drop-shadow(1px 1px 1px $button-drop-shadow-color);
+
+    &--active {
+      stroke: $brand-color;
+      fill: $brand-color;
+    }
+  }
+
+  &--hide-controls {
+    .control-icon-previous,
+    .control-icon-next,
+    .carousel__controls {
+      opacity: 0;
+      @include animation('carousel-hide 1s');
+    }
+  }
+
+  // Disable image dragging in carousel
+  img {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+  }
+}
+
+.carousel-controls {
+  &__control {
+    width: round($inuit-base-spacing-unit * 1.5);
+    height: round($inuit-base-spacing-unit * 1.5);
+    stroke: #fff;
+    fill: transparent;
+    cursor: pointer;
+    filter: drop-shadow(1px 1px 1px $button-drop-shadow-color);
+    -webkit-filter: drop-shadow(1px 1px 1px $button-drop-shadow-color);
+
+    &:hover {
+      stroke-width: 2px;
+    }
+
+    &--active {
+      stroke: $brand-color;
+      fill: $brand-color;
+    }
+  }
+}

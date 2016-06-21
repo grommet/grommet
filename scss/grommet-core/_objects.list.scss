@@ -1,0 +1,110 @@
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+
+.list {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  overflow: auto;
+
+  &__more,
+  &__empty {
+    padding-left: $inuit-base-spacing-unit;
+    padding-right: $inuit-base-spacing-unit;
+    padding-top: halve($inuit-base-spacing-unit);
+    padding-bottom: halve($inuit-base-spacing-unit);
+  }
+
+  &__empty {
+    color: $secondary-text-color;
+    font-style: italic;
+  }
+
+  .list-item {
+    max-width: none;
+
+    &:focus {
+      outline: $focus-border-color solid 1px;
+    }
+
+    &__image {
+      height: $inuit-base-spacing-unit;
+      width: $inuit-base-spacing-unit;
+      margin-right: $inuit-base-spacing-unit;
+      overflow: hidden;
+      flex: 0 0 auto;
+
+      img {
+        height: 100%;
+        width: 100%;
+        max-width: none;
+        object-fit: cover;
+      }
+    }
+
+    &__label,
+    &__annotation {
+      flex: 1;
+    }
+
+    &__annotation {
+      margin-left: $inuit-base-spacing-unit;
+      color: $secondary-text-color;
+    }
+
+    &--selectable {
+      cursor: pointer;
+
+      &:hover {
+        background-color: $hover-background-color;
+      }
+    }
+
+    &--selected {
+      background-color: $selected-background-color;
+      color: $selected-text-color;
+    }
+
+    &--row {
+      .list-item__annotation {
+        text-align: right;
+      }
+    }
+  }
+
+  &--selectable {
+    .list-item {
+      cursor: pointer;
+      transition: background-color 0.2s;
+
+      &--selected {
+        background-color: $selected-background-color;
+        color: $selected-text-color;
+      }
+
+      &:hover:not(.list-item--selected) {
+        background-color: $hover-background-color;
+        color: $hover-text-color;
+      }
+    }
+  }
+
+  &--small {
+    .list-item,
+    .list__more {
+      &__image {
+        height: halve($inuit-base-spacing-unit);
+        width: halve($inuit-base-spacing-unit);
+      }
+    }
+  }
+
+  &--large {
+    .list-item,
+    .list__more {
+      &__image {
+        height: double($inuit-base-spacing-unit);
+        width: double($inuit-base-spacing-unit);
+      }
+    }
+  }
+}

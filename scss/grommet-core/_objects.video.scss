@@ -1,0 +1,224 @@
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+
+.video {
+  position: relative;
+  height: auto;
+
+  @include media-query(palm) {
+    max-width: 100%;
+    width: 100vw;
+
+    &__title {
+      visibility: hidden;
+    }
+
+    &__timeline {
+      visibility: hidden;
+    }
+
+    &__progress,
+    &--has-timeline {
+      bottom: 0px;
+    }
+  }
+
+  @include media-query(lap-and-up) {
+    // width: $video-width;
+
+    &--small {
+      width: $video-small-width;
+
+      .video__control.button--primary {
+        width: double($inuit-base-spacing-unit);
+        height: double($inuit-base-spacing-unit);
+        border-radius: $inuit-base-spacing-unit;
+      }
+    }
+
+    &--large {
+      width: $video-large-width;
+    }
+
+    &--has-timeline {
+      bottom: round($inuit-base-spacing-unit * 3);
+    }
+  }
+
+  &--full {
+    width: 100%;
+  }
+
+  video {
+    width: 100%;
+    display: block;
+  }
+
+  &__summary {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: $inuit-base-spacing-unit;
+  }
+
+  &--video-header {
+    .video__summary {
+      padding: 0;
+    }
+  }
+
+  &__control.button--primary {
+    flex: 0 0 auto;
+    width: quadruple($inuit-base-spacing-unit);
+    height: quadruple($inuit-base-spacing-unit);
+    border-radius: double($inuit-base-spacing-unit);
+    background-color: rgba($brand-color, 0.8);
+
+    &:hover {
+      background-color: $brand-color;
+    }
+
+    @include media-query(palm) {
+      width: double($inuit-base-spacing-unit);
+      height: double($inuit-base-spacing-unit);
+    }
+  }
+
+  &__timeline {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    height: round($inuit-base-spacing-unit * 3);
+    color: $colored-text-color;
+    background-color: rgba(nth($brand-grey-colors, 1), 0.7);
+
+    &-chapter,
+    &-active {
+      position: absolute;
+      height: 100%;
+      text-align: left;
+      cursor: pointer;
+
+      &:hover {
+        color: $active-colored-text-color;
+        border-color: $active-colored-icon-color;
+      }
+
+      time {
+        display: block;
+        @include inuit-font-size($label-font-size, $inuit-base-spacing-unit);
+      }
+
+      label {
+        font-weight: 600;
+      }
+    }
+
+    &-active {
+      $brand-accent-color-index: 3;
+      @if ($brand-accent-color-index <= length($brand-accent-colors)) {
+        $chapter-current-color: nth($brand-accent-colors, $brand-accent-color-index);
+        color: $chapter-current-color;
+        border-color: $chapter-current-color;
+      } @else {
+        $chapter-current-color: $brand-color;
+        color: $chapter-current-color;
+        border-color: $chapter-current-color;
+      }
+    }
+  }
+
+  &__progress {
+    position: absolute;
+    background-color: lighten(rgba(nth($brand-grey-colors, 3), 0.7), 20%);
+    left: 0px;
+    right: 0px;
+    height: quarter($inuit-base-spacing-unit);
+    text-align: left;
+
+    &-meter {
+      height: 100%;
+      background-color: $brand-color;
+    }
+
+    &:not(.video--has-timeline) {
+      bottom: 0px;
+    }
+  }
+
+&__progress-ticks {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: quarter($inuit-base-spacing-unit);
+    color: $colored-text-color;
+    background-color: rgba(nth($brand-grey-colors, 1), 0.7);
+
+    &-chapter,
+    &-active {
+      position: absolute;
+      height: quarter($inuit-base-spacing-unit);
+      border-left: 2px solid $colored-icon-color;
+      text-align: left;
+      cursor: pointer;
+
+      &:hover {
+        color: $active-colored-text-color;
+        border-color: $active-colored-icon-color;
+      }
+    }
+
+    &-active {
+      $brand-accent-color-index: 3;
+      @if ($brand-accent-color-index <= length($brand-accent-colors)) {
+        $chapter-current-color: nth($brand-accent-colors, $brand-accent-color-index);
+        border-color: $chapter-current-color;
+      } @else {
+        $chapter-current-color: $brand-color;
+        border-color: $chapter-current-color;
+      }
+    }
+  }
+
+  &--titled {
+    .video__summary {
+      background-color: rgba(nth($brand-grey-colors, 1), 0.7);
+      color: $colored-text-color;
+      border-radius: $border-radius;
+      @include inuit-font-size($control-font-size);
+    }
+  }
+
+  &--playing {
+    &:not(.video--interacting) {
+      .video__control,
+      .video__timeline {
+        opacity: 0;
+        transition: opacity 1s;
+      }
+
+      .video__progress {
+        bottom: 0px;
+        transition: ease 1s;
+      }
+
+      .video__progress-ticks {
+        bottom: quarter($inuit-base-spacing-unit);
+        transition: ease 1s;
+      }
+    }
+
+    .video__title {
+      visibility: hidden;
+    }
+
+    &--interacting {
+      .video--has-timeline {
+        bottom: round($inuit-base-spacing-unit * 3);
+      }
+    }
+  }
+}

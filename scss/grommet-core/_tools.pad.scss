@@ -1,0 +1,113 @@
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+
+@mixin pad {
+  &--pad {
+    &-none {
+      padding: 0px;
+    }
+
+    &-small {
+      padding: halve($inuit-base-spacing-unit);
+    }
+
+    &-medium {
+      padding: $inuit-base-spacing-unit;
+    }
+
+    &-large {
+      padding: double($inuit-base-spacing-unit);
+    }
+
+    @include media-query(palm) {
+      &-small {
+        padding: quarter($inuit-base-spacing-unit);
+      }
+
+      &-medium {
+        padding: halve($inuit-base-spacing-unit);
+      }
+
+      &-large {
+        padding: $inuit-base-spacing-unit;
+      }
+    }
+
+    &-horizontal {
+      &-none {
+        padding-left: 0px;
+        padding-right: 0px;
+      }
+
+      &-small {
+        padding-left: halve($inuit-base-spacing-unit);
+        padding-right: halve($inuit-base-spacing-unit);
+      }
+
+      &-medium {
+        padding-left: $inuit-base-spacing-unit;
+        padding-right: $inuit-base-spacing-unit;
+      }
+
+      &-large {
+        padding-left: double($inuit-base-spacing-unit);
+        padding-right: double($inuit-base-spacing-unit);
+      }
+
+      @include media-query(palm) {
+        &-small {
+          padding-left: quarter($inuit-base-spacing-unit);
+          padding-right: quarter($inuit-base-spacing-unit);
+        }
+
+        &-medium {
+          padding-left: halve($inuit-base-spacing-unit);
+          padding-right: halve($inuit-base-spacing-unit);
+        }
+
+        &-large {
+          padding-left: $inuit-base-spacing-unit;
+          padding-right: $inuit-base-spacing-unit;
+        }
+      }
+    }
+
+    &-vertical {
+      &-none {
+        padding-top: 0px;
+        padding-bottom: 0px;
+      }
+
+      &-small {
+        padding-top: halve($inuit-base-spacing-unit);
+        padding-bottom: halve($inuit-base-spacing-unit);
+      }
+
+      &-medium {
+        padding-top: $inuit-base-spacing-unit;
+        padding-bottom: $inuit-base-spacing-unit;
+      }
+
+      &-large {
+        padding-top: double($inuit-base-spacing-unit);
+        padding-bottom: double($inuit-base-spacing-unit);
+      }
+
+      @include media-query(palm) {
+        &-small {
+          padding-top: quarter($inuit-base-spacing-unit);
+          padding-bottom: quarter($inuit-base-spacing-unit);
+        }
+
+        &-medium {
+          padding-top: halve($inuit-base-spacing-unit);
+          padding-bottom: halve($inuit-base-spacing-unit);
+        }
+
+        &-large {
+          padding-top: $inuit-base-spacing-unit;
+          padding-bottom: $inuit-base-spacing-unit;
+        }
+      }
+    }
+  }
+}

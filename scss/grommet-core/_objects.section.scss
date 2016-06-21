@@ -1,0 +1,69 @@
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+
+section:not(.section) {
+  padding-top: $inuit-base-spacing-unit;
+  padding-bottom: $inuit-base-spacing-unit;
+
+  &:first-of-type {
+    margin-top: 0px;
+    padding-top: 0px;
+  }
+}
+
+.section,
+section {
+
+  // IE11 fix to remove white gap when Section component is inside Layer
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .layer & {
+      height: 100%;
+    }
+  }
+
+  > img {
+    margin-top: $inuit-base-spacing-unit;
+    margin-bottom: $inuit-base-spacing-unit;
+    display: block;
+    height: auto;
+
+    @include media-query(palm) {
+      max-width: 100%;
+    }
+  }
+
+  > iframe {
+    width: 100%;
+    max-width: $readable-text-width;
+  }
+
+  > ol,
+  > ul {
+    @include media-query(palm) {
+      //padding-left: $inuit-base-spacing-unit;
+      //padding-right: $inuit-base-spacing-unit;
+      margin-left: 0px;
+      margin-bottom: $inuit-base-spacing-unit;
+    }
+  }
+
+  > dl {
+    > dt {
+      margin-top: $inuit-base-spacing-unit;
+      margin-bottom: quarter($inuit-base-spacing-unit);
+      text-transform: uppercase;
+
+      code {
+        text-transform: none;
+        white-space: pre-wrap;
+      }
+    }
+
+    > dd {
+      margin-left: 0px;
+
+      @include media-query(palm) {
+        padding-right: $inuit-base-spacing-unit;
+      }
+    }
+  }
+}

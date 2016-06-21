@@ -1,0 +1,232 @@
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+.grommet.layer {
+  position: relative;
+  z-index: 10; // stay above app header
+  background-color: $layer-overlay-background-color;
+  height: 100vh;
+
+  @include media-query(lap-and-up) {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+  }
+
+  @include media-query(palm) {
+    &:not(.layer--hidden) + .app {
+      visibility: hidden;
+      width: 0px;
+      height: 0px;
+
+      // IE11 specific fix for layer to hide content behind layer and
+      // eliminate white gap under layer content (when content behind is taller)
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        display: none;
+      }
+    }
+  }
+
+  .layer__container {
+    background-color: $layer-background-color;
+
+    @include media-query(palm) {
+      padding: 0 $inuit-base-spacing-unit;
+      min-height: 100%;
+      min-width: 100%;
+    }
+
+    @include media-query(lap-and-up) {
+      position: absolute;
+      max-height: 100%;
+      max-width: 100%;
+      overflow: auto;
+      padding: 0 double($inuit-base-spacing-unit);
+      border-radius: $border-radius;
+      box-shadow: $layer-box-shadow;
+    }
+  }
+
+  .layer__closer {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 1;
+
+    .grommet.rtl & {
+      right: auto;
+      left: 0px;
+    }
+  }
+
+  &.layer--flush {
+    .layer__container {
+      padding: 0px;
+    }
+  }
+
+  &.layer--align {
+    &-center:not(.layer--hidden) {
+
+      @include media-query(lap-and-up) {
+        .layer__container {
+          left: 50%;
+          top: 50%;
+          max-height: calc(100vh - #{double($inuit-base-spacing-unit)});
+          max-width: calc(100vw - #{double($inuit-base-spacing-unit)});
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+
+    &-left:not(.layer--hidden) {
+      .layer__container {
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+
+        @include media-query(lap-and-up) {
+          @include animation('slide-right 0.2s ease-in-out forwards');
+        }
+      }
+
+      .grommet.rtl & {
+        .layer__container {
+          left: auto;
+          right: 0px;
+
+          @include media-query(lap-and-up) {
+            @include animation('slide-left 0.2s ease-in-out forwards');
+          }
+        }
+      }
+    }
+
+    &-right:not(.layer--hidden) {
+      .layer__container {
+        top: 0px;
+        bottom: 0px;
+        right: 0px;
+
+        @include media-query(lap-and-up) {
+          @include animation('slide-left 0.2s ease-in-out forwards');
+        }
+      }
+
+      .grommet.rtl & {
+        .layer__container {
+          right: auto;
+          left: 0px;
+
+          @include media-query(lap-and-up) {
+            @include animation('slide-right 0.2s ease-in-out forwards');
+          }
+        }
+      }
+    }
+
+    &-top:not(.layer--hidden) {
+      @include media-query(lap-and-up) {
+        .layer__container {
+          left: 50%;
+          transform: translateX(-50%);
+
+          @include media-query(lap-and-up) {
+            @include animation('slide-down 0.2s ease-in-out forwards');
+          }
+        }
+      }
+    }
+
+    &-bottom:not(.layer--hidden) {
+      .layer__container {
+        bottom: 0px;
+      }
+    }
+  }
+
+  &.layer--hidden {
+
+    left: -100vw;
+    right: 100vw;
+    z-index: -1;
+
+    &.layer--align {
+
+      &-left {
+        right: auto;
+
+        .layer__container {
+          left: -100vw;
+        }
+      }
+    }
+
+    @include media-query(palm) {
+      display: none;
+    }
+
+    @include media-query(lap-and-up) {
+      &.layer--peek {
+
+        left: 0;
+        z-index: 10;
+
+        &.layer--align {
+
+          &-left {
+            right: auto;
+
+            .layer__container {
+              left: auto;
+              right: - halve($inuit-base-spacing-unit);
+              border-right: 10px solid $brand-color;
+              @include animation('peek-right 0.5s ease-in-out alternate 5');
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include keyframes(peek-right) {
+  0% {
+    right: - quarter($inuit-base-spacing-unit);
+  }
+
+  100% {
+    right: - halve($inuit-base-spacing-unit);
+  }
+}
+
+@include keyframes(slide-right) {
+  0% {
+    left: -100vw;
+  }
+
+  100% {
+    left: 0px;
+  }
+}
+
+@include keyframes(slide-left) {
+  0% {
+    right: -100vw;
+  }
+
+  100% {
+    right: 0px;
+  }
+}
+
+@include keyframes(slide-down) {
+  0% {
+    top: -100vh;
+  }
+
+  100% {
+    top: 0px;
+  }
+}

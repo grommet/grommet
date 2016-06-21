@@ -1,0 +1,131 @@
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+.distribution {
+  position: relative;
+}
+
+.distribution__graphic {
+  width: 100%;
+  height: $graphic-size;
+  max-height: calc(100vh - #{double($header-height)});
+}
+
+.distribution__background {
+  fill: $secondary-background-color;
+}
+
+.distribution__item--clickable {
+  cursor: pointer;
+}
+
+.distribution__item-box {
+  @include graph-fill-color();
+}
+
+.distribution__item-icons {
+  @include graph-stroke-color();
+}
+
+.distribution__label {
+  position: absolute;
+  // padding: quarter($inuit-base-spacing-unit) halve($inuit-base-spacing-unit);
+  font-family: $brand-large-number-font-family;
+  overflow: hidden;
+  text-align: left;
+  pointer-events: none;
+  @include filled-text-color();
+}
+
+.distribution__label-value {
+  display: block;
+  @include inuit-font-size($large-number-font-size);
+  font-weight: bold;
+}
+
+.distribution__label-units {
+  @include inuit-font-size($inuit-heading-size-3, inherit);
+  margin-left: quarter($inuit-base-spacing-unit);
+  font-weight: normal;
+}
+
+.distribution__label-label {
+  display: block;
+}
+
+.distribution__label--active {
+  color: $text-color;
+}
+
+.distribution__label--thin {
+  .distribution__label-value,
+  .distribution__label-label {
+    display: inline-block;
+  }
+}
+
+.distribution__label--small {
+  // padding: 0 halve($inuit-base-spacing-unit)
+  //   halve($inuit-base-spacing-unit) quarter($inuit-base-spacing-unit);
+
+  .distribution__label-value,
+  .distribution__label-units {
+    @include inuit-font-size($small-large-number-font-size, 1);
+    margin-right: 4px;
+  }
+}
+
+.distribution__label--icons {
+  padding: 0 halve($inuit-base-spacing-unit) halve($inuit-base-spacing-unit) 0;
+  background-color: $active-background-color;
+  color: $text-color;
+
+  .label-value {
+    line-height: 1;
+  }
+
+  .label-units {
+    color: $secondary-text-color;
+  }
+
+  .label-label {
+    display: block;
+  }
+}
+
+.distribution__loading-indicator {
+  stroke-width: $inuit-base-spacing-unit;
+  @include graph-stroke-color();
+}
+
+.distribution--icons {
+  .distribution__label {
+    padding: 0 halve($inuit-base-spacing-unit) halve($inuit-base-spacing-unit) 0;
+  }
+
+  .distribution__label-value {
+    line-height: 1;
+  }
+}
+
+.distribution--small {
+  .distribution__graphic {
+    height: $graphic-small-size;
+  }
+}
+
+.distribution--large {
+  .distribution__graphic {
+    height: $graphic-large-size;
+  }
+}
+
+.distribution--full {
+  height: 100%;
+
+  .distribution__graphic {
+    width: auto;
+    height: auto;
+    max-height: 100%;
+    max-width: 100%;
+  }
+}

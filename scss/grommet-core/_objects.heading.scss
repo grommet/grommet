@@ -1,0 +1,28 @@
+h1.heading,
+h2.heading,
+h3.heading,
+h4.heading,
+h5.heading,
+h6.heading {
+  margin-bottom: halve($inuit-base-spacing-unit);
+
+  &--large {
+    font-size: 125%;
+  }
+
+  &--small {
+    font-size: 75%;
+  }
+
+  &--strong {
+    font-weight: 600;
+  }
+
+  &--uppercase {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+  }
+
+  @include text-align();
+  @include margin();
+}

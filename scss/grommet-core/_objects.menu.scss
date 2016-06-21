@@ -1,0 +1,378 @@
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+.menu {
+  position: relative;
+  @include inuit-font-size($menu-font-size);
+
+  &:focus {
+    outline: none;
+
+    &:not(.menu--expanded):after {
+      content: '';
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      bottom: 0px;
+      right: 0px;
+      border: 1px solid $focus-border-color;
+      box-shadow: 0 0 1px 1px $focus-border-color;
+      pointer-events: none;
+    }
+  }
+
+  > * {
+    flex: 0 0 auto;
+  }
+
+  a:not(.button),
+  .anchor {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+      color: $link-hover-color;
+    }
+
+    &.active {
+      color: $brand-color-darker;
+
+      #{$dark-background-context} & {
+        color: $active-colored-text-color;
+      }
+    }
+  }
+
+  &.menu--controlled {
+    display: inline-block;
+    cursor: pointer;
+  }
+}
+
+.menu__control {
+  &:focus:not(.button--disabled) {
+    box-shadow: inset 0 0 1px 2px $focus-border-color;
+  }
+
+  &:hover {
+    .menu__control-label {
+      #{$dark-background-context} & {
+        color: $active-colored-text-color;
+      }
+    }
+  }
+
+  .control-icon-down {
+    width: halve($inuit-base-spacing-unit);
+
+    path,
+    polyline {
+      stroke-width: 4px;
+    }
+  }
+
+  &.menu--labelled {
+    // IE11 fix to vertically center labelled menu control
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      line-height: $inuit-base-spacing-unit;
+    }
+
+    // Removing icon transition style for labeled menus
+    .control-icon {
+      @include media-query(lap-and-up) {
+        transition: none;
+      }
+    }
+  }
+}
+
+.menu__drop {
+  @include inuit-font-size($menu-font-size);
+  max-height: 100vh;
+
+  // avoid flexbox shinking the content inside the drop container
+  > * {
+    flex-shrink: 0;
+  }
+
+  a:not(.anchor--disabled) {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .anchor {
+    padding: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit;
+    white-space: nowrap;
+    display: block;
+    text-decoration: none;
+
+    &.active,
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      background-color: $hover-background-color;
+      color: $link-hover-color;
+    }
+  }
+
+  .menu__control {
+    text-align: left;
+
+    .grommet.rtl & {
+      text-align: right;
+    }
+  }
+
+  .menu__label {
+    padding: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit;
+    font-weight: 600;
+  }
+
+  &.menu__drop--align-right {
+    text-align: right;
+
+    .grommet.rtl & {
+      text-align: left;
+    }
+
+    .menu__control {
+      text-align: right;
+
+      .grommet.rtl & {
+        text-align: left;
+      }
+    }
+
+    .menu__contents {
+      text-align: left;
+
+      .grommet.rtl & {
+        text-align: right;
+      }
+    }
+  }
+
+  .anchor__icon {
+    padding-left: 0;
+    vertical-align: middle;
+  }
+
+  .anchor--reverse .anchor__icon {
+    padding-right: 0;
+  }
+
+  &.menu__drop--small {
+    @include inuit-font-size($small-menu-font-size);
+
+    .anchor__icon {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  &.menu__drop--large {
+    @include inuit-font-size($large-menu-font-size);
+  }
+}
+
+.menu--inline {
+
+  &.menu--row {
+    line-height: double($inuit-base-spacing-unit);
+
+    &.box--justify-end {
+      > *:not(.control-icon) {
+        margin-left: $inuit-base-spacing-unit;
+        margin-right: 0;
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        .grommet.rtl & {
+          margin-right: $inuit-base-spacing-unit;
+          margin-left: 0;
+
+          &:first-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+
+    > *:not(.control-icon):not(.button) {
+      margin-left: 0;
+      margin-right: $inuit-base-spacing-unit;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      .grommet.rtl & {
+        margin-right: 0;
+        margin-left: $inuit-base-spacing-unit;
+
+        &:last-child {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  &.box--direction-row.box--responsive {
+    @include media-query(palm) {
+      > * {
+        margin-right: 0;
+
+        .grommet.rtl & {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  &.box--direction-column {
+    a:not(.button) {
+      margin-bottom: quarter($inuit-base-spacing-unit);
+    }
+  }
+
+  &.menu--small {
+    @include inuit-font-size($small-menu-font-size, inherit);
+  }
+
+  &.menu--large {
+    @include inuit-font-size($large-menu-font-size, inherit);
+  }
+}
+
+.menu--primary {
+
+  > .menu {
+    width: 100%;
+  }
+
+  > a:not(.button) {
+    padding: quarter($inuit-base-spacing-unit) $inuit-base-spacing-unit;
+    margin-bottom: 0px;
+    width: 100%;
+    border-width: $active-border-width;
+    border-color: transparent;
+    border-right-style: solid;
+
+    .grommet.rtl & {
+      border-right-style: none;
+      border-left-style: solid;
+    }
+
+    &:hover {
+      text-decoration: none;
+
+      &:not(.active) {
+        background-color: $hover-background-color;
+      }
+    }
+
+    &.active {
+      border-color: $brand-color;
+    }
+  }
+
+  @include media-query(palm) {
+    &.menu--down {
+      display: block;
+
+      > * {
+        display: block;
+      }
+    }
+  }
+}
+
+.menu--inline.menu:not(.box--direction-row),
+.menu__drop {
+
+  > hr {
+    margin: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit
+      round($inuit-base-spacing-unit * 0.75);
+    height: 1px;
+    background-color: $border-color;
+    border: none;
+  }
+
+  .menu__control-label {
+    font-size: $control-font-size;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  &.box--direction-column {
+    > .menu:not(:first-of-type) {
+      h2,
+      h3 {
+        margin-top: $inuit-base-spacing-unit;
+      }
+    }
+  }
+
+  // Customize the separator for nested menus
+  &.box.box--separator-top {
+    border-color: transparent;
+
+    &:before {
+      content: '';
+      margin: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit
+        round($inuit-base-spacing-unit * 0.75);
+      height: 1px;
+      background-color: $border-color;
+    }
+  }
+
+  &.menu--small {
+    > a {
+      padding: quarter($inuit-base-spacing-unit) 0;
+    }
+  }
+
+  &.menu--large {
+    > a {
+      padding: $inuit-base-spacing-unit 0;
+    }
+  }
+
+  @include media-query(palm) {
+    &.box--responsive {
+
+      > * {
+        margin-left: 0px;
+        margin-right: 0px;
+      }
+
+      .button {
+        width: 100%;
+        margin-bottom: halve($inuit-base-spacing-unit);
+      }
+
+      .menu {
+        margin-bottom: round($inuit-base-spacing-unit * 1.5);
+      }
+    }
+  }
+}
+
+@include media-query(palm) {
+  .menu__drop {
+    max-width: 100%;
+
+    // remove extra space under mobile menu drop button
+    &.box--responsive {
+      .button {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

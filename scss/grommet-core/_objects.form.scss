@@ -1,0 +1,71 @@
+// (C) Copyright 2014 Hewlett Packard Enterprise Development LP
+
+.form {
+  position: relative;
+  width: $form-width;
+  max-width: 100%;
+
+  @include media-query(lap-and-up) {
+    // For some reason, Tiles inside FormField doesn't determine its
+    // width correctly. Enforce it here.
+    .form-field .tiles__container {
+      max-width: $form-width;
+    }
+  }
+
+  @include pad();
+
+  > .header .header__wrapper { // TODO: clean up
+    background-color: inherit;
+  }
+
+  fieldset {
+    border: none;
+    margin: 0px;
+    margin-bottom: 2rem;
+    margin-top: $inuit-base-spacing-unit;
+
+    &:first-child {
+      margin-top: 0px;
+    }
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+
+    > legend {
+      @include inuit-font-size(24px);
+      font-weight: 600;
+      margin-bottom: halve($inuit-base-spacing-unit);
+    }
+
+    > *:not(.form-field) + .form-field {
+      margin-top: halve($inuit-base-spacing-unit);
+    }
+
+    > .form-field + *:not(.form-field):not(.form-fields) {
+      margin-top: $inuit-base-spacing-unit;
+    }
+
+    > .form-fields {
+      display: flex;
+      flex-direction: row;
+
+      .form-field {
+        margin-bottom: -1px;
+      }
+
+      > .button {
+        flex: 0 0 auto;
+      }
+    }
+  }
+
+  &--fill {
+    min-width: 0px;
+  }
+
+  &--compact {
+    max-width: $compact-form-width;
+  }
+}

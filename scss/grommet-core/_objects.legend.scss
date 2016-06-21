@@ -1,0 +1,132 @@
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+.legend {
+  text-align: left;
+  list-style-type: none;
+  white-space: normal;
+  display: inline-block;
+  margin: 0px;
+  line-height: $inuit-base-spacing-unit;
+
+  html.rtl & {
+    text-align: right;
+  }
+}
+
+.legend__item,
+.legend__total {
+  color: $secondary-text-color;
+
+  > * {
+    vertical-align: top;
+  }
+}
+
+.legend__item-label,
+.legend__total-label {
+  display: inline-block;
+  min-width: round($inuit-base-spacing-unit * 3);
+  text-align: left;
+}
+
+.legend__item-value,
+.legend__total-value {
+  display: inline-block;
+  width: round($inuit-base-spacing-unit * 3);
+  text-align: right;
+
+  html.rtl & {
+    text-align: left;
+  }
+}
+
+.legend__item-units,
+.legend__total-units {
+  display: inline-block;
+  margin-left: quarter($inuit-base-spacing-unit);
+
+  html.rtl & {
+    margin-left: 0;
+    margin-right: quarter($inuit-base-spacing-unit);
+  }
+}
+
+.legend__item {
+
+  svg.legend__item-swatch {
+    width: halve($inuit-base-spacing-unit);
+    height: halve($inuit-base-spacing-unit);
+    margin-top: quarter($inuit-base-spacing-unit);
+    margin-right: halve($inuit-base-spacing-unit);
+    overflow: visible;
+
+    @include graph-stroke-color();
+
+    html.rtl & {
+      margin-right: 0;
+      margin-left: halve($inuit-base-spacing-unit);
+    }
+
+    path {
+      stroke-width: halve($inuit-base-spacing-unit);
+      transition-property: stroke-width;
+      transition-duration: $base-animation-duration;
+      transition-timing-function: ease-in-out;
+    }
+  }
+}
+
+.legend__item--clickable {
+  cursor: pointer;
+}
+
+.legend__item--active {
+  color: $text-color;
+
+  svg.legend__item-swatch {
+    path {
+      stroke-width: halve($inuit-base-spacing-unit);
+    }
+  }
+}
+
+#{$dark-background-context} .legend__item--active {
+  color: $active-colored-text-color;
+}
+
+// need li to override .grommet li
+li.legend__total {
+  margin-left: $inuit-base-spacing-unit;
+
+  html.rtl & {
+    margin-left: 0;
+    margin-right: $inuit-base-spacing-unit;
+  }
+
+  > * {
+    margin-top: quarter($inuit-base-spacing-unit);
+    padding-top: quarter($inuit-base-spacing-unit);
+    border-top: 1px dotted $border-color;
+  }
+}
+
+.legend--single {
+
+  .legend__item-value {
+    @include inuit-font-size($large-number-font-size);
+    font-weight: bold;
+    width: auto;
+  }
+
+  .legend__item-units {
+    @include inuit-font-size($inuit-heading-size-3, inherit);
+    margin-left: quarter($inuit-base-spacing-unit);
+    color: $secondary-text-color;
+    font-weight: normal;
+
+    html.rtl & {
+      margin-left: 0;
+      margin-right: quarter($inuit-base-spacing-unit);
+    }
+  }
+}
