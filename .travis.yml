@@ -29,7 +29,7 @@ after_success:
       echo "https://${GH_TOKEN}:@github.com" > .git/credentials
       git config --global user.name "Grommet Community Bot"
       git config --global user.email "asouza@hp.com"
-      gulp dist --skipPreprocess
+      gulp dist
       gulp release:stable
     fi
   fi
