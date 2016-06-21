@@ -97,12 +97,12 @@ Value.propTypes = {
   align: _react.PropTypes.oneOf(['start', 'center', 'end']),
   colorIndex: _react.PropTypes.string,
   icon: _react.PropTypes.node,
-  label: _react.PropTypes.string,
+  label: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.node]),
   onClick: _react.PropTypes.func,
   size: _react.PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
   trendIcon: _react.PropTypes.node,
-  value: _react.PropTypes.oneOfType([_react.PropTypes.number, _react.PropTypes.string]).isRequired,
-  units: _react.PropTypes.string
+  value: _react.PropTypes.oneOfType([_react.PropTypes.number, _react.PropTypes.string, _react.PropTypes.node]),
+  units: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.node])
 };
 
 Value.defaultProps = {
