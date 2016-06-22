@@ -39,7 +39,6 @@
   th {
     // -1 to accommodate border
     padding: (halve($inuit-base-spacing-unit) - 1) halve($inuit-base-spacing-unit);
-    vertical-align: top;
     text-align: left;
 
     &:first-child {
