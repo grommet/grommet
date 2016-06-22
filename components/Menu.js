@@ -146,6 +146,9 @@ var MenuDrop = function (_Component) {
     value: function componentWillUnmount() {
       if (this._originalFocusedElement.focus) {
         this._originalFocusedElement.focus();
+      } else if (this._originalFocusedElement.parentNode && this._originalFocusedElement.parentNode.focus) {
+        // required for IE11 and Edge
+        this._originalFocusedElement.parentNode.focus();
       }
       _KeyboardAccelerators2.default.stopListeningToKeyboard(this, this._keyboardHandlers);
     }
