@@ -105,8 +105,13 @@ class LayerContents extends Component {
       let a11yTitle =
         `${closeLabel} ${this.props.a11yTitle || ''} ${layerLabel}`;
 
+      let classes = `${CLASS_ROOT}__closer`;
+      if (this.props.closerOutside) {
+        classes = `${classes} ${classes}-outside`;
+      }
+
       closer = (
-        <div className={CLASS_ROOT + "__closer"}>
+        <div className={classes}>
           <Button plain={true} onClick={this.props.onClose}>
             <CloseIcon a11yTitle={a11yTitle} />
           </Button>
@@ -194,6 +199,9 @@ export default class Layer extends Component {
     if (this.props.closer) {
       classes.push(CLASS_ROOT + "--closeable");
     }
+    if (this.props.closerOutside) {
+      classes.push(CLASS_ROOT + "--visible");
+    }
     if (this.props.className) {
       classes.push(this.props.className);
     }
@@ -263,6 +271,7 @@ Layer.propTypes = {
     PropTypes.node,
     PropTypes.bool
   ]),
+  closerOutside: PropTypes.bool,
   flush: PropTypes.bool,
   hidden: PropTypes.bool,
   peek: PropTypes.bool,
