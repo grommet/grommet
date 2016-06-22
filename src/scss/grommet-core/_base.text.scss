@@ -99,8 +99,12 @@
     font-weight: 600;
   }
 
-  code.hljs {
-    border: 1px solid $border-color;
+  code {
+    font-family: $code-font-family;
+
+    &.hljs {
+      border: 1px solid $border-color;
+    }
   }
 
   .large-number-font {
