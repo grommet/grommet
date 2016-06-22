@@ -83,6 +83,10 @@ class MenuDrop extends Component {
   componentWillUnmount () {
     if (this._originalFocusedElement.focus) {
       this._originalFocusedElement.focus();
+    } else if (this._originalFocusedElement.parentNode &&
+      this._originalFocusedElement.parentNode.focus) {
+      // required for IE11 and Edge
+      this._originalFocusedElement.parentNode.focus();
     }
     KeyboardAccelerators.stopListeningToKeyboard(this, this._keyboardHandlers);
   }
