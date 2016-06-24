@@ -300,7 +300,9 @@ var DateTime = function (_Component) {
       if (className) {
         classes.push(className);
       }
-      if ((typeof value === 'undefined' ? 'undefined' : _typeof(value)) === 'object') {
+      if (value instanceof Date) {
+        value = (0, _moment2.default)(value).format(format);
+      } else if (value && (typeof value === 'undefined' ? 'undefined' : _typeof(value)) === 'object') {
         value = value.format(format);
       }
       var Icon = TIME_REGEXP.test(format) ? _Clock2.default : _Calendar2.default;
