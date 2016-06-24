@@ -2,8 +2,9 @@
 
 import React, { Component, PropTypes } from 'react';
 import { getCurrentLocale } from '../utils/Locale';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = 'timestamp';
+const CLASS_ROOT = CSSClassnames.TIMESTAMP;
 
 function _showField(field, fields) {
   let result = true;

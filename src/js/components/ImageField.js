@@ -3,8 +3,9 @@ import FormField from './FormField';
 
 import Anchor from './Anchor';
 import UpgradeIcon from './icons/base/Upgrade';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = 'image-field';
+const CLASS_ROOT = CSSClassnames.IMAGE_FIELD;
 
 export default class ImageField extends Component {
 

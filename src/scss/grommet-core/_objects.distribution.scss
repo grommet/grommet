@@ -1,32 +1,32 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-.distribution {
+.#{$grommet-namespace}distribution {
   position: relative;
 }
 
-.distribution__graphic {
+.#{$grommet-namespace}distribution__graphic {
   width: 100%;
   height: $graphic-size;
   max-height: calc(100vh - #{double($header-height)});
 }
 
-.distribution__background {
+.#{$grommet-namespace}distribution__background {
   fill: $secondary-background-color;
 }
 
-.distribution__item--clickable {
+.#{$grommet-namespace}distribution__item--clickable {
   cursor: pointer;
 }
 
-.distribution__item-box {
+.#{$grommet-namespace}distribution__item-box {
   @include graph-fill-color();
 }
 
-.distribution__item-icons {
+.#{$grommet-namespace}distribution__item-icons {
   @include graph-stroke-color();
 }
 
-.distribution__label {
+.#{$grommet-namespace}distribution__label {
   position: absolute;
   // padding: quarter($inuit-base-spacing-unit) halve($inuit-base-spacing-unit);
   font-family: $brand-large-number-font-family;
@@ -36,45 +36,45 @@
   @include filled-text-color();
 }
 
-.distribution__label-value {
+.#{$grommet-namespace}distribution__label-value {
   display: block;
   @include inuit-font-size($large-number-font-size);
   font-weight: bold;
 }
 
-.distribution__label-units {
+.#{$grommet-namespace}distribution__label-units {
   @include inuit-font-size($inuit-heading-size-3, inherit);
   margin-left: quarter($inuit-base-spacing-unit);
   font-weight: normal;
 }
 
-.distribution__label-label {
+.#{$grommet-namespace}distribution__label-label {
   display: block;
 }
 
-.distribution__label--active {
+.#{$grommet-namespace}distribution__label--active {
   color: $text-color;
 }
 
-.distribution__label--thin {
-  .distribution__label-value,
-  .distribution__label-label {
+.#{$grommet-namespace}distribution__label--thin {
+  .#{$grommet-namespace}distribution__label-value,
+  .#{$grommet-namespace}distribution__label-label {
     display: inline-block;
   }
 }
 
-.distribution__label--small {
+.#{$grommet-namespace}distribution__label--small {
   // padding: 0 halve($inuit-base-spacing-unit)
   //   halve($inuit-base-spacing-unit) quarter($inuit-base-spacing-unit);
 
-  .distribution__label-value,
-  .distribution__label-units {
+  .#{$grommet-namespace}distribution__label-value,
+  .#{$grommet-namespace}distribution__label-units {
     @include inuit-font-size($small-large-number-font-size, 1);
     margin-right: 4px;
   }
 }
 
-.distribution__label--icons {
+.#{$grommet-namespace}distribution__label--icons {
   padding: 0 halve($inuit-base-spacing-unit) halve($inuit-base-spacing-unit) 0;
   background-color: $active-background-color;
   color: $text-color;
@@ -92,37 +92,37 @@
   }
 }
 
-.distribution__loading-indicator {
+.#{$grommet-namespace}distribution__loading-indicator {
   stroke-width: $inuit-base-spacing-unit;
   @include graph-stroke-color();
 }
 
-.distribution--icons {
-  .distribution__label {
+.#{$grommet-namespace}distribution--icons {
+  .#{$grommet-namespace}distribution__label {
     padding: 0 halve($inuit-base-spacing-unit) halve($inuit-base-spacing-unit) 0;
   }
 
-  .distribution__label-value {
+  .#{$grommet-namespace}distribution__label-value {
     line-height: 1;
   }
 }
 
-.distribution--small {
-  .distribution__graphic {
+.#{$grommet-namespace}distribution--small {
+  .#{$grommet-namespace}distribution__graphic {
     height: $graphic-small-size;
   }
 }
 
-.distribution--large {
-  .distribution__graphic {
+.#{$grommet-namespace}distribution--large {
+  .#{$grommet-namespace}distribution__graphic {
     height: $graphic-large-size;
   }
 }
 
-.distribution--full {
+.#{$grommet-namespace}distribution--full {
   height: 100%;
 
-  .distribution__graphic {
+  .#{$grommet-namespace}distribution__graphic {
     width: auto;
     height: auto;
     max-height: 100%;

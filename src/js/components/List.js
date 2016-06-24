@@ -4,8 +4,10 @@ import React, { Component, PropTypes } from 'react';
 import SpinningIcon from './icons/Spinning';
 import InfiniteScroll from '../utils/InfiniteScroll';
 import Selection from '../utils/Selection';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = "list";
+const CLASS_ROOT = CSSClassnames.LIST;
+const LIST_ITEM = CSSClassnames.LIST_ITEM;
 const SELECTED_CLASS = CLASS_ROOT + "-item--selected";
 
 export default class List extends Component {
@@ -23,7 +25,9 @@ export default class List extends Component {
   componentDidMount () {
     this._setSelection();
     if (this.props.onMore) {
-      this._scroll = InfiniteScroll.startListeningForScroll(this.refs.more, this.props.onMore);
+      this._scroll = InfiniteScroll.startListeningForScroll(
+        this.refs.more, this.props.onMore
+      );
     }
   }
 
@@ -57,7 +61,7 @@ export default class List extends Component {
   _setSelection () {
     Selection.setClassFromIndexes({
       containerElement: this.refs.list,
-      childSelector: '.list-item',
+      childSelector: `.${LIST_ITEM}`,
       selectedClass: SELECTED_CLASS,
       selectedIndexes: this.state.selected
     });
@@ -70,7 +74,7 @@ export default class List extends Component {
 
     let selected = Selection.onClick(event, {
       containerElement: this.refs.list,
-      childSelector: '.list-item',
+      childSelector: `.${LIST_ITEM}`,
       selectedClass: SELECTED_CLASS,
       multiSelect: ('multiple' === this.props.selectable),
       priorSelectedIndexes: this.state.selected

@@ -2,8 +2,10 @@
 
 import React, { Component, PropTypes } from 'react';
 import FormattedMessage from './FormattedMessage';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = "legend";
+const CLASS_ROOT = CSSClassnames.LEGEND;
+const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
 
 export default class Legend extends Component {
 
@@ -59,7 +61,7 @@ export default class Legend extends Component {
       var swatch;
       if (item.hasOwnProperty('colorIndex')) {
         swatch = (
-          <svg className={CLASS_ROOT + "__item-swatch color-index-" + colorIndex}
+          <svg className={`${CLASS_ROOT}__item-swatch ${COLOR_INDEX}-${colorIndex}`}
             viewBox="0 0 12 12">
             <path className={item.className} d="M 5 0 l 0 12" />
           </svg>

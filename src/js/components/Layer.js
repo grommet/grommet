@@ -7,8 +7,10 @@ import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 import DOMUtils from '../utils/DOM';
 import Button from './Button';
 import Intl from '../utils/Intl';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = "layer";
+const CLASS_ROOT = CSSClassnames.LAYER;
+const APP = CSSClassnames.APP;
 
 class LayerContents extends Component {
 
@@ -207,7 +209,7 @@ export default class Layer extends Component {
     }
     element.className = this._classesFromProps().join(' ');
     // insert before .app, if possible.
-    var appElements = document.querySelectorAll('.app');
+    var appElements = document.querySelectorAll(`.${APP}`);
     var beforeElement;
     if (appElements.length > 0) {
       beforeElement = appElements[0];
@@ -220,7 +222,7 @@ export default class Layer extends Component {
   _handleAriaHidden (hideOverlay) {
     const ariaHidden = hideOverlay || false;
     this._element.setAttribute('aria-hidden', ariaHidden);
-    const grommetApps = document.querySelectorAll('.app');
+    const grommetApps = document.querySelectorAll(`.${APP}`);
 
     if (grommetApps) {
       Array.prototype.slice.call(grommetApps).forEach((grommetApp) => {

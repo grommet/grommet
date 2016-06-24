@@ -1,9 +1,9 @@
-h1.heading,
-h2.heading,
-h3.heading,
-h4.heading,
-h5.heading,
-h6.heading {
+h1.#{$grommet-namespace}heading,
+h2.#{$grommet-namespace}heading,
+h3.#{$grommet-namespace}heading,
+h4.#{$grommet-namespace}heading,
+h5.#{$grommet-namespace}heading,
+h6.#{$grommet-namespace}heading {
   margin-bottom: halve($inuit-base-spacing-unit);
 
   &--large {

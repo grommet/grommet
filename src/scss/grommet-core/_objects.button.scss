@@ -17,7 +17,7 @@ $button-horizontal-padding: round($inuit-base-spacing-unit) - $button-border-wid
   min-width: $button-min-width;
   max-width: $button-max-width;
 
-  &:focus:not(.button--disabled) {
+  &:focus:not(.#{$grommet-namespace}button--disabled) {
     border-color: $focus-border-color;
     box-shadow: 0 0 1px 1px $focus-border-color;
   }
@@ -30,11 +30,11 @@ $button-horizontal-padding: round($inuit-base-spacing-unit) - $button-border-wid
 .grommet {
   input[type="button"],
   input[type="submit"],
-  button:not(.button) {
+  button:not(.#{$grommet-namespace}button) {
     @include basic-button();
   }
 
-  a.button {
+  a.#{$grommet-namespace}button {
     text-decoration: none;
 
     &:hover {
@@ -43,121 +43,127 @@ $button-horizontal-padding: round($inuit-base-spacing-unit) - $button-border-wid
   }
 }
 
-.button {
+.#{$grommet-namespace}button {
   @include basic-button();
-}
 
-.button__icon {
-  display: inline-block;
-  padding: halve($inuit-base-spacing-unit);
+  &__icon {
+    display: inline-block;
+    padding: halve($inuit-base-spacing-unit);
 
-  svg {
-    vertical-align: top;
+    svg {
+      vertical-align: top;
+    }
   }
-}
 
-.button,
-.button--icon,
-.button__icon {
   &:hover {
-    .control-icon {
+    .#{$grommet-namespace}control-icon {
       @include icon-color($active-icon-color);
       transition: none;
     }
   }
-}
 
-.button:not(.button--plain) {
-  .button__icon {
-    padding: 0;
-    margin-right: halve($inuit-base-spacing-unit);
-  }
-}
-
-.button--primary {
-  border-color: $brand-color;
-  background-color: $brand-color;
-  color: $active-colored-text-color;
-
-  // used for control icons (e.g. in video)
-  .control-icon {
-    @include icon-color($colored-icon-color);
-  }
-
-  &:hover:not(.button--disabled) {
-    color: $active-colored-text-color;
-
-   .button__icon .control-icon {
-      @include icon-color($active-colored-icon-color)
+  &--icon,
+  &__icon {
+    &:hover {
+      .#{$grommet-namespace}control-icon {
+        @include icon-color($active-icon-color);
+        transition: none;
+      }
     }
   }
-}
 
-.button--secondary {
-  border-color: $button-secondary-color;
-}
-
-.button--accent {
-  border-color: $button-accent-color;
-}
-
-.button--align-start {
-  text-align: left;
-
-  html.rtl & {
-    text-align: right;
-  }
-}
-
-.button--plain {
-  border: none;
-  padding: 0;
-  width: auto;
-  height: auto;
-  min-width: 0;
-  max-width: none;
-  font-weight: inherit;
-
-  &.button--primary {
-    background-color: $brand-color;
-  }
-
-  > span:not(.button__icon) {
-
-    &:first-child {
-      margin-left: halve($inuit-base-spacing-unit);
-    }
-
-    &:last-child {
+  &:not(.#{$grommet-namespace}button--plain) {
+    .#{$grommet-namespace}button__icon {
+      padding: 0;
       margin-right: halve($inuit-base-spacing-unit);
     }
   }
 
-  @include dark-background-context-icon();
-}
+  &--primary {
+    border-color: $brand-color;
+    background-color: $brand-color;
+    color: $active-colored-text-color;
 
-#{$dark-background-context} .button:not(.button--primary) {
-  border-color: $button-colored-border-color;
-  color: $colored-text-color;
+    // used for control icons (e.g. in video)
+    .#{$grommet-namespace}control-icon {
+      @include icon-color($colored-icon-color);
+    }
 
-  &.button--accent {
+    &:hover:not(.#{$grommet-namespace}button--disabled) {
+      color: $active-colored-text-color;
+
+     .#{$grommet-namespace}button__icon .#{$grommet-namespace}control-icon {
+        @include icon-color($active-colored-icon-color)
+      }
+    }
+  }
+
+  &--secondary {
+    border-color: $button-secondary-color;
+  }
+
+  &--accent {
     border-color: $button-accent-color;
+  }
+
+  &--align-start {
+    text-align: left;
+
+    html.rtl & {
+      text-align: right;
+    }
+  }
+
+  &--plain {
+    border: none;
+    padding: 0;
+    width: auto;
+    height: auto;
+    min-width: 0;
+    max-width: none;
+    font-weight: inherit;
+
+    &.#{$grommet-namespace}button--primary {
+      background-color: $brand-color;
+    }
+
+    > span:not(.#{$grommet-namespace}button__icon) {
+
+      &:first-child {
+        margin-left: halve($inuit-base-spacing-unit);
+      }
+
+      &:last-child {
+        margin-right: halve($inuit-base-spacing-unit);
+      }
+    }
+
+    @include dark-background-context-icon();
+  }
+
+  &--disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+
+  &--icon,
+  &:not(.#{$grommet-namespace}button--fill) {
+    flex: 0 0 auto;
+  }
+
+  &--fill {
+    width: 100%;
+    max-width: none;
+    //used to add full height for button inside a flex container
+    flex-grow: 1;
   }
 }
 
-.button--disabled {
-  opacity: 0.3;
-  cursor: default;
-}
+#{$dark-background-context} .#{$grommet-namespace}button:not(.#{$grommet-namespace}button--primary) {
+  border-color: $button-colored-border-color;
+  color: $colored-text-color;
 
-.button--icon,
-.button:not(.button--fill) {
-  flex: 0 0 auto;
-}
-
-.button--fill {
-  width: 100%;
-  max-width: none;
-  //used to add full height for button inside a flex container
-  flex-grow: 1;
+  &.#{$grommet-namespace}button--accent {
+    border-color: $button-accent-color;
+  }
 }

@@ -2,8 +2,9 @@
 
 import React, { Component, PropTypes } from 'react';
 import FormattedMessage from '../FormattedMessage';
+import CSSClassnames from '../../utils/CSSClassnames';
 
-const CLASS_ROOT = "logo-icon";
+const CLASS_ROOT = CSSClassnames.LOGO_ICON;
 
 export default class Grommet extends Component {
   render () {

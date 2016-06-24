@@ -1,8 +1,9 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = 'heading';
+const CLASS_ROOT = CSSClassnames.HEADING;
 
 export default class Heading extends Component {
   render() {
@@ -18,7 +19,7 @@ export default class Heading extends Component {
     }
     if (this.props.margin) {
       classes.push(`${CLASS_ROOT}--margin-${this.props.margin}`);
-    }    
+    }
     if (this.props.uppercase) {
       classes.push(`${CLASS_ROOT}--uppercase`);
     }

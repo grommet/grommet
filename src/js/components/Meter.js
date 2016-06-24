@@ -10,8 +10,9 @@ import Spiral from './meter/Spiral';
 import Circle from './meter/Circle';
 import Arc from './meter/Arc';
 import Intl from '../utils/Intl';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = "meter";
+const CLASS_ROOT = CSSClassnames.METER;
 
 const TYPE_COMPONENT = {
   'bar': Bar,

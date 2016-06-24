@@ -2,10 +2,13 @@
 
 import React, { Component } from 'react';
 import FormattedMessage from '../../FormattedMessage';
+import CSSClassnames from '../../../utils/CSSClassnames';
+
+const STATUS_ICON = CSSClassnames.STATUS_ICON;
 
 export default class Blank extends Component {
   render() {
-    var className = 'status-icon status-icon-blank';
+    var className = `${STATUS_ICON} ${STATUS_ICON}-blank`;
     var a11yTitle = this.props.a11yTitle;
     if (this.props.className) {
       className += ' ' + this.props.className;

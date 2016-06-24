@@ -3,7 +3,9 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
 
-const CLASS_ROOT = 'bricks';
+import CSSClassnames from '../utils/CSSClassnames';
+
+const CLASS_ROOT = CSSClassnames.BRICKS;
 
 export default class Bricks extends Component {
   render () {

@@ -3,8 +3,9 @@
 import React, { Component } from 'react';
 import Anchor from './Anchor';
 import Props from '../utils/Props';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = "tag";
+const CLASS_ROOT = CSSClassnames.TAG;
 
 export default class Tag extends Component {
 

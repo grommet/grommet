@@ -7,8 +7,10 @@ import Drop from '../utils/Drop';
 import Responsive from '../utils/Responsive';
 import Button from './Button';
 import SearchIcon from './icons/base/Search';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = "search";
+const CLASS_ROOT = CSSClassnames.SEARCH;
+const BACKGROUND_COLOR_INDEX = CSSClassnames.BACKGROUND_COLOR_INDEX;
 
 export default class Search extends Component {
 
@@ -262,7 +264,7 @@ export default class Search extends Component {
   _renderDrop () {
     let classes = classnames (
       {
-        [`background-color-index-${this.props.dropColorIndex}`]: this.props.dropColorIndex,
+        [`${BACKGROUND_COLOR_INDEX}-${this.props.dropColorIndex}`]: this.props.dropColorIndex,
         [`${CLASS_ROOT}__drop`]: true,
         [`${CLASS_ROOT}__drop--controlled`]: !(this.state.inline),
         [`${CLASS_ROOT}__drop--large`]: this.props.large

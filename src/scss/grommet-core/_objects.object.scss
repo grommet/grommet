@@ -3,7 +3,7 @@
 $attribute-name-width: round($inuit-base-spacing-unit * 8);
 $attribute-value-width: round($inuit-base-spacing-unit * 16);
 
-.object {
+.#{$grommet-namespace}object {
   overflow: auto;
 
   &__container {
@@ -42,20 +42,20 @@ $attribute-value-width: round($inuit-base-spacing-unit * 16);
     }
 
     &--container {
-      > .object__attribute-name {
+      > .#{$grommet-namespace}object__attribute-name {
         font-weight: bold;
       }
     }
 
     &--unset {
-      .object__attribute-value {
+      .#{$grommet-namespace}object__attribute-value {
         font-style: italic;
         color: $secondary-text-color;
       }
     }
 
     &--array {
-      > .object__attribute-value > ol {
+      > .#{$grommet-namespace}object__attribute-value > ol {
 
         > li {
           border-top: 1px solid $border-color;

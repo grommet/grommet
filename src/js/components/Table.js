@@ -5,8 +5,9 @@ import classnames from 'classnames';
 import SpinningIcon from './icons/Spinning';
 import InfiniteScroll from '../utils/InfiniteScroll';
 import Selection from '../utils/Selection';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = 'table';
+const CLASS_ROOT = CSSClassnames.TABLE;
 const SELECTED_CLASS = `${CLASS_ROOT}-row--selected`;
 // empirical number describing a minimum cell width for a
 // table to be presented in column-mode.

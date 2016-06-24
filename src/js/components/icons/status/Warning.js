@@ -2,10 +2,13 @@
 
 import React, { Component, PropTypes } from 'react';
 import FormattedMessage from '../../FormattedMessage';
+import CSSClassnames from '../../../utils/CSSClassnames';
+
+const STATUS_ICON = CSSClassnames.STATUS_ICON;
 
 export default class Warning extends Component {
   render() {
-    var className = 'status-icon status-icon-warning';
+    var className = `${STATUS_ICON} ${STATUS_ICON}-warning`;
     var a11yTitle = this.props.a11yTitle;
     if (this.props.className) {
       className += ' ' + this.props.className;
@@ -21,10 +24,10 @@ export default class Warning extends Component {
         <title id={warningTitleId}>
           <FormattedMessage id={a11yTitle} defaultMessage={a11yTitle} />
         </title>
-        <g className={"status-icon__base"}>
+        <g className={`${STATUS_ICON}__base`}>
           <path role="presentation" d="M12,0 L0,22 L24,22 L12,0 L12,0 Z" stroke="none"></path>
         </g>
-        <g className={"status-icon__detail"} strokeWidth="2" transform="translate(11.000000, 8.000000)">
+        <g className={`${STATUS_ICON}__detail`} strokeWidth="2" transform="translate(11.000000, 8.000000)">
           <path role="presentation" d="M1,0 L1,6" fill="none"></path>
           <path role="presentation" d="M1,8 L1,10" fill="none"></path>
         </g>

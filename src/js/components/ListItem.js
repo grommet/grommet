@@ -4,8 +4,9 @@ import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import Box from './Box';
 import Props from '../utils/Props';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = 'list-item';
+const CLASS_ROOT = CSSClassnames.LIST_ITEM;
 
 export default class ListItem extends Component {
 

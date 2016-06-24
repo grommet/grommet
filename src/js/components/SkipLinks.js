@@ -7,6 +7,9 @@ import Layer from './Layer';
 import Menu from './Menu';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 import Intl from '../utils/Intl';
+import CSSClassnames from '../utils/CSSClassnames';
+
+const CLASS_ROOT = CSSClassnames.SKIP_LINK_ANCHOR;
 
 export default class SkipLinks extends Component {
   constructor (props, context) {
@@ -49,7 +52,7 @@ export default class SkipLinks extends Component {
   }
 
   _checkForSkipLink (event) {
-    const skipLinks = document.querySelectorAll('.skip-link-anchor');
+    const skipLinks = document.querySelectorAll(`.${CLASS_ROOT}`);
     if (skipLinks.length > 0) {
       this._updateAnchors();
     } else if (this.state.anchors.length > 0) {
@@ -58,7 +61,7 @@ export default class SkipLinks extends Component {
   }
 
   _updateAnchors () {
-    let anchorElements = document.querySelectorAll('.skip-link-anchor');
+    let anchorElements = document.querySelectorAll(`.${CLASS_ROOT}`);
 
     let anchors = Array.prototype.map.call(anchorElements, function (anchorElement) {
       return {

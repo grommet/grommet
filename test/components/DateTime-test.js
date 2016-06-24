@@ -5,6 +5,9 @@ import React from 'react';
 import TestUtils from 'react-addons-test-utils';
 
 import DateTime from '../../src/js/components/DateTime';
+import CSSClassnames from '../../src/js/utils/CSSClassnames';
+
+const CLASS_ROOT = CSSClassnames.DATE_TIME;
 
 test('loads a DateTime', (t) => {
   t.plan(1);
@@ -14,7 +17,7 @@ test('loads a DateTime', (t) => {
   }));
   const dateTimeElement = shallowRenderer.getRenderOutput();
 
-  if (dateTimeElement.props.className.indexOf('date-time') > -1) {
+  if (dateTimeElement.props.className.indexOf(CLASS_ROOT) > -1) {
     t.pass('DateTime has class');
   } else {
     t.fail('DateTime does not have class');

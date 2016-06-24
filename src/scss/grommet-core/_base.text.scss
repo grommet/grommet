@@ -47,7 +47,7 @@
     }
 
     a,
-    a.anchor {
+    a.#{$grommet-namespace}anchor {
       color: inherit;
       text-decoration: none;
 

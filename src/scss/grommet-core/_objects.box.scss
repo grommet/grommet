@@ -1,6 +1,6 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-.box {
+.#{$grommet-namespace}box {
   display: flex;
   background-position: center center;
   background-size: cover;
@@ -16,133 +16,87 @@
   > .no-flex {
     flex: 0 0 auto;
   }
-}
 
-.box__texture {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  overflow: hidden;
-}
-
-.box__container {
-  padding-left: $inuit-base-spacing-unit;
-  padding-right: $inuit-base-spacing-unit;
-
-  .app--centered & > .box {
+  &__texture {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    max-width: $center-column-width;
-    margin-left: auto;
-    margin-right: auto;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+  }
 
-    @include media-query(palm) {
-      padding-left: 0px;
-      padding-right: 0px;
+  &__container {
+    padding-left: $inuit-base-spacing-unit;
+    padding-right: $inuit-base-spacing-unit;
+
+    .#{$grommet-namespace}app--centered & > .#{$grommet-namespace}box {
+      width: 100%;
+      max-width: $center-column-width;
+      margin-left: auto;
+      margin-right: auto;
+
+      @include media-query(palm) {
+        padding-left: 0px;
+        padding-right: 0px;
+      }
+    }
+
+    &--full {
+      max-width: 100%;
+      width: 100vw;
+    }
+
+    &--full-horizontal {
+      max-width: 100%;
+      width: 100vw;
     }
   }
-}
 
-.box__container--full {
-  max-width: 100%;
-  width: 100vw;
-}
+  &--wrap {
+    flex-wrap: wrap;
+  }
 
-.box__container--full-horizontal {
-  max-width: 100%;
-  width: 100vw;
-}
-
-.box--wrap {
-  flex-wrap: wrap;
-}
-
-.box--full {
-  position: relative;
-  max-width: 100%;
-  width: 100vw;
-  min-height: 100vh;
-  height: 100%;
-  // IE11 specific fix for aligning content vertically centered
-  // height gets over written by the > min-height
-  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  &--full {
+    position: relative;
+    max-width: 100%;
+    width: 100vw;
     min-height: 100vh;
-    height: 50vh;
-  }
-}
-
-.box--full-horizontal {
-  max-width: 100%;
-  width: 100vw;
-}
-
-.box--full-vertical {
-  min-height: 100vh;
-
-  // IE11 specific fix for aligning content vertically centered
-  // height gets over written by the > min-height
-  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-    min-height: 100vh;
-    height: 50vh;
-  }
-}
-
-.box--direction-row {
-  flex-direction: row;
-
-  &.box--reverse {
-    flex-direction: row-reverse;
-  }
-
-  &.box--pad-between {
-    &-small {
-      > *:not(:last-child) {
-        margin-right: halve($inuit-base-spacing-unit);
-
-        html.rtl & {
-          margin-right: 0;
-          margin-left: halve($inuit-base-spacing-unit);
-        }
-      }
+    height: 100%;
+    // IE11 specific fix for aligning content vertically centered
+    // height gets over written by the > min-height
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      min-height: 100vh;
+      height: 50vh;
     }
 
-    &-medium {
-      > *:not(:last-child) {
-        margin-right: $inuit-base-spacing-unit;
-
-        html.rtl & {
-          margin-right: 0;
-          margin-left: $inuit-base-spacing-unit;
-        }
-      }
+    &-horizontal {
+      max-width: 100%;
+      width: 100vw;
     }
 
-    &-large {
-      > *:not(:last-child) {
-        margin-right: double($inuit-base-spacing-unit);
+    &-vertical {
+      min-height: 100vh;
 
-        html.rtl & {
-          margin-right: 0;
-          margin-left: double($inuit-base-spacing-unit);
-        }
+      // IE11 specific fix for aligning content vertically centered
+      // height gets over written by the > min-height
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        min-height: 100vh;
+        height: 50vh;
       }
     }
+  }
 
-    @include media-query(palm) {
+  &--direction-row {
+    flex-direction: row;
+
+    &.#{$grommet-namespace}box--reverse {
+      flex-direction: row-reverse;
+    }
+
+    &.#{$grommet-namespace}box--pad-between {
       &-small {
-        > *:not(:last-child) {
-          margin-right: quarter($inuit-base-spacing-unit);
-
-          html.rtl & {
-            margin-right: 0;
-            margin-left: quarter($inuit-base-spacing-unit);
-          }
-        }
-      }
-
-      &-medium {
         > *:not(:last-child) {
           margin-right: halve($inuit-base-spacing-unit);
 
@@ -153,7 +107,7 @@
         }
       }
 
-      &-large {
+      &-medium {
         > *:not(:last-child) {
           margin-right: $inuit-base-spacing-unit;
 
@@ -163,226 +117,272 @@
           }
         }
       }
+
+      &-large {
+        > *:not(:last-child) {
+          margin-right: double($inuit-base-spacing-unit);
+
+          html.rtl & {
+            margin-right: 0;
+            margin-left: double($inuit-base-spacing-unit);
+          }
+        }
+      }
+
+      @include media-query(palm) {
+        &-small {
+          > *:not(:last-child) {
+            margin-right: quarter($inuit-base-spacing-unit);
+
+            html.rtl & {
+              margin-right: 0;
+              margin-left: quarter($inuit-base-spacing-unit);
+            }
+          }
+        }
+
+        &-medium {
+          > *:not(:last-child) {
+            margin-right: halve($inuit-base-spacing-unit);
+
+            html.rtl & {
+              margin-right: 0;
+              margin-left: halve($inuit-base-spacing-unit);
+            }
+          }
+        }
+
+        &-large {
+          > *:not(:last-child) {
+            margin-right: $inuit-base-spacing-unit;
+
+            html.rtl & {
+              margin-right: 0;
+              margin-left: $inuit-base-spacing-unit;
+            }
+          }
+        }
+      }
+    }
+
+    @include media-query(palm) {
+      &.#{$grommet-namespace}box--responsive {
+        flex-direction: column;
+
+        &:not(.#{$grommet-namespace}box--justify-center) {
+          align-items: stretch;
+        }
+
+        &.#{$grommet-namespace}box--reverse {
+          flex-direction: column-reverse;
+        }
+
+        &.#{$grommet-namespace}box--pad-between {
+          // make sure between padding switches directions
+          // on responsive
+          &-small {
+            > *:not(:last-child) {
+              margin-left: 0;
+              margin-right: 0;
+              margin-bottom: quarter($inuit-base-spacing-unit);
+            }
+          }
+
+          &-medium {
+            > *:not(:last-child) {
+              margin-left: 0;
+              margin-right: 0;
+              margin-bottom: halve($inuit-base-spacing-unit);
+            }
+          }
+
+          &-large {
+            > *:not(:last-child) {
+              margin-left: 0;
+              margin-right: 0;
+              margin-bottom: $inuit-base-spacing-unit;
+            }
+          }
+        }
+      }
     }
   }
 
-  @include media-query(palm) {
-    &.box--responsive {
-      flex-direction: column;
+  &--direction-column {
+    flex-direction: column;
 
-      &:not(.box--justify-center) {
-        align-items: stretch;
+    &.#{$grommet-namespace}box--reverse {
+      flex-direction: column-reverse;
+    }
+
+    > .#{$grommet-namespace}header.#{$grommet-namespace}box--direction-row,
+    > .#{$grommet-namespace}footer.#{$grommet-namespace}box--direction-row,
+    > .#{$grommet-namespace}header__container--fixed {
+      flex: 0 0 auto;
+    }
+
+    &.#{$grommet-namespace}box--pad-between {
+      &-small {
+        > *:not(:last-child) {
+          margin-bottom: halve($inuit-base-spacing-unit);
+        }
       }
 
-      &.box--reverse {
-        flex-direction: column-reverse;
+      &-medium {
+        > *:not(:last-child) {
+          margin-bottom: $inuit-base-spacing-unit;
+        }
       }
 
-      &.box--pad-between {
-        // make sure between padding switches directions
-        // on responsive
+      &-large {
+        > *:not(:last-child) {
+          margin-bottom: double($inuit-base-spacing-unit);
+        }
+      }
+
+      @include media-query(palm) {
         &-small {
           > *:not(:last-child) {
-            margin-left: 0;
-            margin-right: 0;
             margin-bottom: quarter($inuit-base-spacing-unit);
           }
         }
 
         &-medium {
           > *:not(:last-child) {
-            margin-left: 0;
-            margin-right: 0;
             margin-bottom: halve($inuit-base-spacing-unit);
           }
         }
 
         &-large {
           > *:not(:last-child) {
-            margin-left: 0;
-            margin-right: 0;
             margin-bottom: $inuit-base-spacing-unit;
           }
         }
       }
     }
   }
-}
 
-.box--direction-column {
-  flex-direction: column;
-
-  &.box--reverse {
-    flex-direction: column-reverse;
+  &--justify-start {
+    justify-content: flex-start;
   }
 
-  > .header.box--direction-row,
-  > .footer.box--direction-row,
-  > .header__container--fixed {
-    flex: 0 0 auto;
+  &--justify-center {
+    justify-content: center;
   }
 
-  &.box--pad-between {
+  &--justify-between {
+    justify-content: space-between;
+  }
+
+  &--justify-end {
+    justify-content: flex-end;
+  }
+
+  &--align-start {
+    align-items: flex-start;
+  }
+
+  &--align-center {
+    align-items: center;
+  }
+
+  &--align-end {
+    align-items: flex-end;
+  }
+
+  &--align-baseline {
+    align-items: baseline;
+  }
+
+  &--align-content-start {
+    align-content: flex-start;
+  }
+
+  &--align-content-end {
+    align-content: flex-end;
+  }
+
+  &--align-content-center {
+    align-content: center;
+  }
+
+  &--align-content-between {
+    align-content: space-between;
+  }
+
+  &--align-content-around {
+    align-content: space-around;
+  }
+
+  &--separator-top,
+  &--separator-horizontal,
+  &--separator-all {
+    border-top: 1px solid $border-color;
+  }
+
+  &--separator-bottom,
+  &--separator-horizontal,
+  &--separator-all {
+    border-bottom: 1px solid $border-color;
+  }
+
+  &--separator-left,
+  &--separator-vertical,
+  &--separator-all {
+    border-left: 1px solid $border-color;
+  }
+
+  &--separator-right,
+  &--separator-vertical,
+  &--separator-all {
+    border-right: 1px solid $border-color;
+  }
+
+  &--text-align {
+    &-left {
+      text-align: left;
+    }
+
+    &-center {
+      text-align: center;
+    }
+
+    &-right {
+      text-align: right;
+    }
+  }
+
+  &--clickable {
+    cursor: pointer;
+  }
+
+  &--size {
+    max-width: 100%;
+
+    .#{grommet-namespace}paragraph {
+      width: 100%;
+      max-width: 100%;
+      flex: 0 0 auto;
+    }
+
+    &-xsmall {
+      width: $size-xsmall;
+    }
+
     &-small {
-      > *:not(:last-child) {
-        margin-bottom: halve($inuit-base-spacing-unit);
-      }
+      width: $size-small;
     }
 
     &-medium {
-      > *:not(:last-child) {
-        margin-bottom: $inuit-base-spacing-unit;
-      }
+      width: $size-medium;
     }
 
     &-large {
-      > *:not(:last-child) {
-        margin-bottom: double($inuit-base-spacing-unit);
-      }
-    }
-
-    @include media-query(palm) {
-      &-small {
-        > *:not(:last-child) {
-          margin-bottom: quarter($inuit-base-spacing-unit);
-        }
-      }
-
-      &-medium {
-        > *:not(:last-child) {
-          margin-bottom: halve($inuit-base-spacing-unit);
-        }
-      }
-
-      &-large {
-        > *:not(:last-child) {
-          margin-bottom: $inuit-base-spacing-unit;
-        }
-      }
+      width: $size-large;
     }
   }
 }
 
-.box--justify-start {
-  justify-content: flex-start;
-}
-
-.box--justify-center {
-  justify-content: center;
-}
-
-.box--justify-between {
-  justify-content: space-between;
-}
-
-.box--justify-end {
-  justify-content: flex-end;
-}
-
-.box--align-start {
-  align-items: flex-start;
-}
-
-.box--align-center {
-  align-items: center;
-}
-
-.box--align-end {
-  align-items: flex-end;
-}
-
-.box--align-baseline {
-  align-items: baseline;
-}
-
-.box--align-content-start {
-  align-content: flex-start;
-}
-
-.box--align-content-end {
-  align-content: flex-end;
-}
-
-.box--align-content-center {
-  align-content: center;
-}
-
-.box--align-content-between {
-  align-content: space-between;
-}
-
-.box--align-content-around {
-  align-content: space-around;
-}
-
-.box--separator-top,
-.box--separator-horizontal,
-.box--separator-all {
-  border-top: 1px solid $border-color;
-}
-
-.box--separator-bottom,
-.box--separator-horizontal,
-.box--separator-all {
-  border-bottom: 1px solid $border-color;
-}
-
-.box--separator-left,
-.box--separator-vertical,
-.box--separator-all {
-  border-left: 1px solid $border-color;
-}
-
-.box--separator-right,
-.box--separator-vertical,
-.box--separator-all {
-  border-right: 1px solid $border-color;
-}
-
-#{$dark-background-context} .box[class*="box--separator"] {
+#{$dark-background-context} .#{$grommet-namespace}box[class*="#{$grommet-namespace}box--separator"] {
   border-color: $colored-border-color;
-}
-
-.box--text-align {
-  &-left {
-    text-align: left;
-  }
-
-  &-center {
-    text-align: center;
-  }
-
-  &-right {
-    text-align: right;
-  }
-}
-
-.box--clickable {
-  cursor: pointer;
-}
-
-.box--size {
-  max-width: 100%;
-
-  .paragraph {
-    width: 100%;
-    max-width: 100%;
-    flex: 0 0 auto;
-  }
-
-  &-xsmall {
-    width: $size-xsmall;
-  }
-
-  &-small {
-    width: $size-small;
-  }
-
-  &-medium {
-    width: $size-medium;
-  }
-
-  &-large {
-    width: $size-large;
-  }
 }

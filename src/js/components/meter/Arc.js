@@ -3,8 +3,10 @@
 import React from 'react';
 import { baseUnit, baseDimension, classRoot, translateEndAngle, arcCommands, polarToCartesian } from './utils';
 import Graphic from './Graphic';
+import CSSClassnames from '../../utils/CSSClassnames';
 
 const CLASS_ROOT = classRoot;
+const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
 
 const ARC_WIDTH = baseDimension;
 const ARC_HEIGHT = Math.round(baseDimension * 0.75);
@@ -93,7 +95,7 @@ export default class Arc extends Graphic {
           length);
       indicator = (
         <path fill="none"
-          className={CLASS_ROOT + "__slice-indicator color-index-" + item.colorIndex}
+          className={`${CLASS_ROOT}__slice-indicator ${COLOR_INDEX}-${item.colorIndex}`}
           d={indicatorCommands} />
       );
     }

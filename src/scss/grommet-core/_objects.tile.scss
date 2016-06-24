@@ -8,7 +8,7 @@
   }
 }
 
-.tiles {
+.#{$grommet-namespace}tiles {
   width: 100%;
 
   @include pad();
@@ -19,23 +19,23 @@
     align-items: center;
     width: 100%;
 
-    .tiles__left,
-    .tiles__right {
+    .#{$grommet-namespace}tiles__left,
+    .#{$grommet-namespace}tiles__right {
       flex: 0 0 auto;
     }
 
-    .tiles {
+    .#{$grommet-namespace}tiles {
       flex: 1;
       margin: 0px;
 
-      &.box--direction-row {
+      &.#{$grommet-namespace}box--direction-row {
         width: 100%;
         overflow: hidden;
       }
     }
   }
 
-  > .tile {
+  > .#{$grommet-namespace}tile {
     flex-grow: 0;
     flex-shrink: 0;
 
@@ -44,8 +44,8 @@
     }
   }
 
-  &:not(.tiles--flush) {
-    > .tile {
+  &:not(.#{$grommet-namespace}tiles--flush) {
+    > .#{$grommet-namespace}tile {
       margin: halve($inuit-base-spacing-unit);
       @include ie-tile-margin($inuit-base-spacing-unit);
 
@@ -53,12 +53,12 @@
         flex-basis: calc(100% - #{$inuit-base-spacing-unit});
       }
 
-      &.tile--hover-border-medium {
+      &.#{$grommet-namespace}tile--hover-border-medium {
         margin: quarter($inuit-base-spacing-unit);
         @include ie-tile-margin(halve($inuit-base-spacing-unit));
       }
 
-      &.tile--hover-border-large {
+      &.#{$grommet-namespace}tile--hover-border-large {
         margin: halve($inuit-base-spacing-unit);
         @include ie-tile-margin($inuit-base-spacing-unit);
       }
@@ -71,10 +71,10 @@
       height: 100%;
     }
 
-    &.box--wrap {
+    &.#{$grommet-namespace}box--wrap {
       justify-content: space-around;
 
-      > .tile {
+      > .#{$grommet-namespace}tile {
         flex-grow: 1;
       }
     }
@@ -83,7 +83,7 @@
   &--flush {
     padding: 0px;
 
-    > .tile {
+    > .#{$grommet-namespace}tile {
       margin: 0px;
 
       &--wide {
@@ -96,7 +96,7 @@
     position: relative;
     padding-bottom: double($inuit-base-spacing-unit);
 
-    .tiles__more {
+    .#{$grommet-namespace}tiles__more {
       position: absolute;
       bottom: 0px;
       left: 50%;
@@ -106,7 +106,7 @@
   }
 
   &--selectable {
-    .tile {
+    .#{$grommet-namespace}tile {
       cursor: pointer;
       transition: all 0.2s;
 
@@ -115,7 +115,7 @@
         color: $selected-text-color;
       }
 
-      &:hover:not(.tile--selected):not([class*="background-hover-color-index-"]) {
+      &:hover:not(.#{$grommet-namespace}tile--selected):not([class*="background-hover-color-index-"]) {
         background-color: $hover-background-color;
         color: $hover-text-color;
       }
@@ -123,7 +123,7 @@
   }
 
   &--small {
-    > .tile {
+    > .#{$grommet-namespace}tile {
       @include media-query(lap-and-up) {
         flex-basis: $tile-small-size;
       }
@@ -131,7 +131,7 @@
   }
 
   &--large {
-    > .tile {
+    > .#{$grommet-namespace}tile {
       @include media-query(lap-and-up) {
         flex-basis: $tile-large-size;
       }
@@ -143,11 +143,11 @@
   }
 }
 
-.tile {
+.#{$grommet-namespace}tile {
   overflow: hidden;
   transition: all 0.2s;
 
-  .status-icon {
+  .#{$grommet-namespace}status-icon {
     margin-right: quarter($inuit-base-spacing-unit);
 
     html.rtl & {
@@ -156,7 +156,7 @@
     }
   }
 
-  > .chart {
+  > .#{$grommet-namespace}chart {
     width: 100%;
   }
 
@@ -164,12 +164,12 @@
     cursor: pointer;
     transition: background-color 0.2s;
 
-    &.tile--selected {
+    &.#{$grommet-namespace}tile--selected {
       background-color: $selected-background-color;
       color: $selected-text-color;
     }
 
-    &:hover:not(.tile--selected) {
+    &:hover:not(.#{$grommet-namespace}tile--selected) {
       background-color: $hover-background-color;
       color: $hover-text-color;
     }

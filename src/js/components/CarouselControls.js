@@ -2,8 +2,9 @@
 
 import React, { Component, PropTypes } from 'react';
 import Box from './Box';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = "carousel-controls";
+const CLASS_ROOT = CSSClassnames.CAROUSEL_CONTROLS;
 
 export default class CarouselControls extends Component {
 

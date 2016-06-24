@@ -2,7 +2,9 @@
 
 import React, { Component, PropTypes } from 'react';
 
-const CLASS_ROOT = "check-box";
+import CSSClassnames from '../utils/CSSClassnames';
+
+const CLASS_ROOT = CSSClassnames.CHECK_BOX;
 
 export default class CheckBox extends Component {
 
