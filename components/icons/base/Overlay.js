@@ -18,6 +18,10 @@ var _FormattedMessage = require('../../../components/FormattedMessage');
 
 var _FormattedMessage2 = _interopRequireDefault(_FormattedMessage);
 
+var _CSSClassnames = require('../../../utils/CSSClassnames');
+
+var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -28,7 +32,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var CLASS_ROOT = 'control-icon';
+var CLASS_ROOT = _CSSClassnames2.default.CONTROL_ICON;
+var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
 
 var Icon = function (_Component) {
   _inherits(Icon, _Component);
@@ -53,7 +58,7 @@ var Icon = function (_Component) {
       var size = _props2.size;
 
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, CLASS_ROOT + '-overlay', className, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--' + size, size), _defineProperty(_classnames, 'color-index-' + colorIndex, colorIndex), _classnames));
+      var classes = (0, _classnames3.default)(CLASS_ROOT, CLASS_ROOT + '-overlay', className, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--' + size, size), _defineProperty(_classnames, COLOR_INDEX + '-' + colorIndex, colorIndex), _classnames));
 
       a11yTitle = a11yTitle || _react2.default.createElement(_FormattedMessage2.default, { id: 'overlay', defaultMessage: 'overlay' });
 

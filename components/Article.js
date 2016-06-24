@@ -253,11 +253,11 @@ var Article = function (_Component) {
         if (this._scrollingHorizontally) {
           // no-op
         } else if (!this._scrollingVertically) {
-            if (Math.abs(event.deltaY * 2) > Math.abs(event.deltaX)) {
-              // user is scrolling vertically
-              this._shortTimer('_scrollingVertically', 1000);
-            }
+          if (Math.abs(event.deltaY * 2) > Math.abs(event.deltaX)) {
+            // user is scrolling vertically
+            this._shortTimer('_scrollingVertically', 1000);
           }
+        }
       } else {
         // Give the user lots of control.
         var delta = event.deltaY;
