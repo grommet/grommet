@@ -46,6 +46,10 @@ var _Refresh = require('./icons/base/Refresh');
 
 var _Refresh2 = _interopRequireDefault(_Refresh);
 
+var _CSSClassnames = require('../utils/CSSClassnames');
+
+var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -56,7 +60,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var CLASS_ROOT = "video";
+var CLASS_ROOT = _CSSClassnames2.default.VIDEO;
+var BACKGROUND_COLOR_INDEX = _CSSClassnames2.default.BACKGROUND_COLOR_INDEX;
 
 var Video = function (_Component) {
   _inherits(Video, _Component);
@@ -204,7 +209,7 @@ var Video = function (_Component) {
         classes.push(CLASS_ROOT + '--video-header');
       }
       if (this.props.colorIndex) {
-        classes.push('background-color-index-' + this.props.colorIndex);
+        classes.push(BACKGROUND_COLOR_INDEX + '-' + this.props.colorIndex);
       }
       if (this.props.className) {
         classes.push(this.props.className);

@@ -10,11 +10,18 @@ var _react = require('react');
 
 var _reactDom = require('react-dom');
 
-var _DOM = require('../utils/DOM');
+var _DOM = require('./DOM');
 
 var _DOM2 = _interopRequireDefault(_DOM);
 
+var _CSSClassnames = require('./CSSClassnames');
+
+var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var CLASS_ROOT = _CSSClassnames2.default.DROP;
+var BACKGROUND_COLOR_INDEX = _CSSClassnames2.default.BACKGROUND_COLOR_INDEX;
 
 /*
  * Drop is a utility for rendering components like drop down menus layered above
@@ -90,9 +97,9 @@ exports.default = {
 
     // setup DOM
     drop.container = document.createElement('div');
-    drop.container.className = 'grommet drop ' + (drop.options.className || '');
+    drop.container.className = 'grommet ' + CLASS_ROOT + ' ' + (drop.options.className || '');
     if (drop.options.colorIndex) {
-      drop.container.className += ' background-color-index-' + drop.options.colorIndex;
+      drop.container.className += ' ' + BACKGROUND_COLOR_INDEX + '-' + drop.options.colorIndex;
     }
     // prepend in body to avoid browser scroll issues
     document.body.insertBefore(drop.container, document.body.firstChild);
@@ -163,6 +170,7 @@ exports.default = {
         left = controlRect.left + controlRect.width - width;
       }
     }
+
     if (left + width > windowWidth) {
       left -= left + width - windowWidth;
     } else if (left < 0) {

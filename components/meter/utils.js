@@ -10,7 +10,13 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _CSSClassnames = require('../../utils/CSSClassnames');
+
+var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var METER = _CSSClassnames2.default.METER;
 
 function polarToCartesian(centerX, centerY, radius, angleInDegrees) {
   var angleInRadians = (angleInDegrees - 90) * Math.PI / 180.0;
@@ -25,7 +31,7 @@ exports.default = {
   baseUnit: 24,
   baseDimension: 192, // 24 * 8
 
-  classRoot: 'meter',
+  classRoot: METER,
 
   propTypes: {
     activeIndex: _react.PropTypes.number,

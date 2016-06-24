@@ -1,15 +1,15 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-.radio-button {
+.#{$grommet-namespace}radio-button {
   margin-right: $inuit-base-spacing-unit;
   white-space: nowrap;
 
-  &:not(.radio-button--disabled) {
+  &:not(.#{$grommet-namespace}radio-button--disabled) {
     cursor: pointer;
   }
 
-  &:hover:not(.radio-button--disabled) {
-    .radio-button {
+  &:hover:not(.#{$grommet-namespace}radio-button--disabled) {
+    .#{$grommet-namespace}radio-button {
       &__control {
         border-color: $active-icon-color;
 
@@ -18,7 +18,7 @@
         }
       }
 
-      &__input:checked + .radio-button__control {
+      &__input:checked + .#{$grommet-namespace}radio-button__control {
         border-color: $active-icon-color;
 
         #{$dark-background-context} & {
@@ -40,14 +40,14 @@
     opacity: 0;
     position: absolute;
 
-    &:checked + .radio-button__control {
+    &:checked + .#{$grommet-namespace}radio-button__control {
       border-color: $brand-color;
 
       #{$dark-background-context} & {
         border-color: $active-colored-icon-color;
       }
 
-      + .radio-button__label {
+      + .#{$grommet-namespace}radio-button__label {
         color: $text-color;
 
         #{$dark-background-context} & {
@@ -56,7 +56,7 @@
       }
     }
 
-    &:checked + .radio-button__control:after {
+    &:checked + .#{$grommet-namespace}radio-button__control:after {
       content: "";
       display: block;
       position: absolute;
@@ -72,7 +72,7 @@
       }
     }
 
-    &:focus + .radio-button__control {
+    &:focus + .#{$grommet-namespace}radio-button__control {
       content: "";
       border-color: $focus-border-color;
       box-shadow: 0 0 1px 1px $focus-border-color;
@@ -110,7 +110,7 @@
   }
 
   &--disabled {
-    .radio-button__control {
+    .#{$grommet-namespace}radio-button__control {
       opacity: 0.5;
     }
   }

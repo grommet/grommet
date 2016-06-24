@@ -2,28 +2,28 @@
 
 $button-accent-color: #ff8d6d;
 
-.button {
+.#{$grommet-namespace}button {
   letter-spacing: 0.04167em;
 
-  &:not(.button--disabled):not(.button--plain):not(.button--fill) {
+  &:not(.#{$grommet-namespace}button--disabled):not(.#{$grommet-namespace}button--plain):not(.#{$grommet-namespace}button--fill) {
 
     &:hover {
       box-shadow: 0px 0px 0px 2px $button-border-color;
     }
 
-    &.button--primary {
+    &.#{$grommet-namespace}button--primary {
       &:hover {
         box-shadow: 0px 0px 0px 2px $brand-color;
       }
     }
 
-    &.button--secondary {
+    &.#{$grommet-namespace}button--secondary {
       &:hover {
         box-shadow: 0px 0px 0px 2px $button-secondary-color;
       }
     }
 
-    &.button--accent {
+    &.#{$grommet-namespace}button--accent {
       &:hover {
         box-shadow: 0px 0px 0px 2px $button-accent-color;
       }
@@ -35,19 +35,19 @@ $button-accent-color: #ff8d6d;
         box-shadow: 0px 0px 0px 2px $button-colored-border-color;
       }
 
-      &.button--primary {
+      &.#{$grommet-namespace}button--primary {
         &:hover {
           box-shadow: 0px 0px 0px 2px $brand-color;
         }
       }
 
-      &.button--secondary {
+      &.#{$grommet-namespace}button--secondary {
         &:hover {
           box-shadow: 0px 0px 0px 2px $button-colored-border-color;
         }
       }
 
-      &.button--accent {
+      &.#{$grommet-namespace}button--accent {
         &:hover {
           box-shadow: 0px 0px 0px 2px $button-accent-color;
         }
@@ -55,7 +55,7 @@ $button-accent-color: #ff8d6d;
     }
   }
 
-  &--fill:not(.button--disabled):not(.button--plain) {
+  &--fill:not(.#{$grommet-namespace}button--disabled):not(.#{$grommet-namespace}button--plain) {
     &:hover {
       padding: ($button-vertical-padding - ($button-border-width))
         ($button-horizontal-padding - ($button-border-width));

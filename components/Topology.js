@@ -16,6 +16,10 @@ var _Status = require('./icons/Status');
 
 var _Status2 = _interopRequireDefault(_Status);
 
+var _CSSClassnames = require('../utils/CSSClassnames');
+
+var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -24,7 +28,9 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var CLASS_ROOT = "topology";
+var CLASS_ROOT = _CSSClassnames2.default.TOPOLOGY;
+var STATUS_ICON = _CSSClassnames2.default.STATUS_ICON;
+var BACKGROUND_COLOR_INDEX = _CSSClassnames2.default.BACKGROUND_COLOR_INDEX;
 
 var Label = function (_Component) {
   _inherits(Label, _Component);
@@ -271,7 +277,7 @@ var Topology = function (_Component4) {
       } else {
         var rect = element.getBoundingClientRect();
         // see if the element has a status child, use that if it does
-        var statusElements = element.querySelectorAll('.status-icon');
+        var statusElements = element.querySelectorAll('.' + STATUS_ICON);
         if (statusElements.length === 1) {
           rect = statusElements[0].getBoundingClientRect();
         }
@@ -413,7 +419,7 @@ var Topology = function (_Component4) {
       this.props.links.forEach(function (link) {
         if (link.colorIndex && !colors[link.colorIndex]) {
           colorKeys.push(_react2.default.createElement('div', { key: link.colorIndex, ref: link.colorIndex,
-            className: "background-color-index-" + link.colorIndex }));
+            className: BACKGROUND_COLOR_INDEX + '-' + link.colorIndex }));
           colors[link.colorIndex] = true;
         }
       });

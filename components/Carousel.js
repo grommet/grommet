@@ -38,6 +38,10 @@ var _DOM = require('../utils/DOM');
 
 var _DOM2 = _interopRequireDefault(_DOM);
 
+var _CSSClassnames = require('../utils/CSSClassnames');
+
+var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -52,7 +56,7 @@ if (typeof window !== 'undefined') {
   Hammer = require('hammerjs');
 }
 
-var CLASS_ROOT = 'carousel';
+var CLASS_ROOT = _CSSClassnames2.default.CAROUSEL;
 
 var Carousel = function (_Component) {
   _inherits(Carousel, _Component);

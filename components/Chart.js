@@ -26,6 +26,10 @@ var _KeyboardAccelerators = require('../utils/KeyboardAccelerators');
 
 var _KeyboardAccelerators2 = _interopRequireDefault(_KeyboardAccelerators);
 
+var _CSSClassnames = require('../utils/CSSClassnames');
+
+var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -34,7 +38,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
-var CLASS_ROOT = "chart";
+var CLASS_ROOT = _CSSClassnames2.default.CHART;
+var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
 
 var DEFAULT_WIDTH = 384;
 var DEFAULT_HEIGHT = 192;
@@ -537,7 +542,7 @@ var Chart = function (_Component) {
             var x = Math.max(POINT_RADIUS + 1, Math.min(bounds.graphWidth - (POINT_RADIUS + 1), coordinate[0]));
             var value = item.values[index];
             points.push(_react2.default.createElement('circle', { key: index,
-              className: CLASS_ROOT + '__values-point color-index-' + colorIndex,
+              className: CLASS_ROOT + '__values-point ' + COLOR_INDEX + '-' + colorIndex,
               cx: x, cy: coordinate[1], r: POINT_RADIUS, onClick: value.onClick }));
           }
 
@@ -546,7 +551,7 @@ var Chart = function (_Component) {
 
         var linePath = void 0;
         if ('line' === _this2.props.type || _this2.props.points) {
-          var classes = [CLASS_ROOT + '__values-line', 'color-index-' + colorIndex];
+          var classes = [CLASS_ROOT + '__values-line', COLOR_INDEX + '-' + colorIndex];
           if (item.onClick) {
             classes.push(CLASS_ROOT + '__values-line--active');
           }
@@ -559,7 +564,7 @@ var Chart = function (_Component) {
           // and across to the bottom of where we started.
           var close = 'L' + coordinates[coordinates.length - 1][0] + ',' + bounds.graphBottom + 'L' + coordinates[0][0] + ',' + bounds.graphBottom + 'Z';
           var areaCommands = commands + close;
-          var _classes = [CLASS_ROOT + '__values-area', 'color-index-' + colorIndex];
+          var _classes = [CLASS_ROOT + '__values-area', COLOR_INDEX + '-' + colorIndex];
           if (item.onClick) {
             _classes.push(CLASS_ROOT + '__values-area--active');
           }
@@ -610,7 +615,7 @@ var Chart = function (_Component) {
           var stepBarBase = _this3._translateHeight(baseY);
           baseY += valueY;
 
-          var classes = [CLASS_ROOT + '__values-bar', 'color-index-' + colorIndex];
+          var classes = [CLASS_ROOT + '__values-bar', COLOR_INDEX + '-' + colorIndex];
           if (!_this3.props.legend || 'inline' === _this3.props.legend.position || xIndex === _this3.state.highlightXIndex) {
             classes.push(CLASS_ROOT + '__values-bar--highlight');
           }
@@ -775,7 +780,7 @@ var Chart = function (_Component) {
 
       var bars = this.props.thresholds.map(function (item, index) {
         var classes = [CLASS_ROOT + '__bar'];
-        classes.push('color-index-' + (item.colorIndex || 'graph-' + (index + 1)));
+        classes.push(COLOR_INDEX + '-' + (item.colorIndex || 'graph-' + (index + 1)));
         if (index < _this5.props.thresholds.length - 1) {
           end = _this5.props.thresholds[index + 1].value;
         } else {
@@ -913,7 +918,7 @@ var Chart = function (_Component) {
             coordinates = _this7._coordinates(value);
             var colorIndex = _this7._itemColorIndex(item, seriesIndex);
             return _react2.default.createElement('circle', { key: seriesIndex,
-              className: CLASS_ROOT + '__cursor-point color-index-' + colorIndex,
+              className: CLASS_ROOT + '__cursor-point ' + COLOR_INDEX + '-' + colorIndex,
               cx: x, cy: coordinates[1], r: Math.round(POINT_RADIUS * 1.2) });
           });
         }
@@ -998,7 +1003,7 @@ var Chart = function (_Component) {
         classes.push(CLASS_ROOT + '--loading');
         var valueClasses = [CLASS_ROOT + '__values'];
         valueClasses.push(CLASS_ROOT + '__values--loading');
-        valueClasses.push("color-index-loading");
+        valueClasses.push(COLOR_INDEX + '-loading');
         var commands = "M0," + this.state.height / 2 + " L" + this.state.width + "," + this.state.height / 2;
         values.push(_react2.default.createElement(
           'g',

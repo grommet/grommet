@@ -26,6 +26,10 @@ var _KeyboardAccelerators = require('../../utils/KeyboardAccelerators');
 
 var _KeyboardAccelerators2 = _interopRequireDefault(_KeyboardAccelerators);
 
+var _CSSClassnames = require('../../utils/CSSClassnames');
+
+var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -33,6 +37,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+
+var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
 
 var CLASS_ROOT = _utils.classRoot;
 var MIN_WIDTH = 0.033;
@@ -109,7 +115,7 @@ var Graphic = function (_Component) {
           classes.push(CLASS_ROOT + "__slice--clickable");
         }
 
-        classes.push('color-index-' + item.colorIndex);
+        classes.push(COLOR_INDEX + '-' + item.colorIndex);
 
         var commands = this._sliceCommands(trackIndex, item, startValue, maxValue);
 
@@ -204,7 +210,7 @@ var Graphic = function (_Component) {
     value: function _renderLoading() {
       var classes = [CLASS_ROOT + '__slice'];
       classes.push(CLASS_ROOT + '__slice--loading');
-      classes.push("color-index-loading");
+      classes.push(COLOR_INDEX + '-loading');
       var commands = this._loadingCommands();
       return [_react2.default.createElement('path', { key: 'loading', className: classes.join(' '), d: commands })];
     }

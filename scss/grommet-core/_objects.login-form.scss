@@ -1,6 +1,6 @@
 // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
-.login-form {
+.#{$grommet-namespace}login-form {
   position: relative;
   padding: $inuit-base-spacing-unit;
   background-color: $layer-background-color;
@@ -26,7 +26,7 @@
 
   &--align {
     &-start {
-      .login-form {
+      .#{$grommet-namespace}login-form {
         &__header {
           text-align: left;
 
@@ -42,7 +42,7 @@
     }
 
     &-end {
-      .login-form {
+      .#{$grommet-namespace}login-form {
         &__header {
           text-align: right;
 

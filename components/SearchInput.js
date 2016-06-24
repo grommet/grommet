@@ -34,6 +34,10 @@ var _Search = require('./icons/base/Search');
 
 var _Search2 = _interopRequireDefault(_Search);
 
+var _CSSClassnames = require('../utils/CSSClassnames');
+
+var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -44,7 +48,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
-var CLASS_ROOT = "search-input";
+var CLASS_ROOT = _CSSClassnames2.default.SEARCH_INPUT;
+var FORM_FIELD = _CSSClassnames2.default.FORM_FIELD;
 
 var SearchInput = function (_Component) {
   _inherits(SearchInput, _Component);
@@ -112,7 +117,7 @@ var SearchInput = function (_Component) {
         _KeyboardAccelerators2.default.startListeningToKeyboard(this, activeKeyboardHandlers);
 
         // If this is inside a FormField, place the drop in reference to it.
-        var control = (0, _DOM.findAncestor)(this.refs.component, 'form-field') || this.refs.component;
+        var control = (0, _DOM.findAncestor)(this.refs.component, FORM_FIELD) || this.refs.component;
         this._drop = _Drop2.default.add(control, this._renderDrop(), { align: { top: 'bottom', left: 'left' } });
       } else if (this.state.dropActive && prevState.dropActive) {
         this._drop.render(this._renderDrop());

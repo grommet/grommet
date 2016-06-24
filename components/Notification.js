@@ -34,6 +34,10 @@ var _Props = require('../utils/Props');
 
 var _Props2 = _interopRequireDefault(_Props);
 
+var _CSSClassnames = require('../utils/CSSClassnames');
+
+var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -44,7 +48,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var CLASS_ROOT = 'notification';
+var CLASS_ROOT = _CSSClassnames2.default.NOTIFICATION;
+var BACKGROUND_COLOR_INDEX = _CSSClassnames2.default.BACKGROUND_COLOR_INDEX;
 
 var Notification = function (_Component) {
   _inherits(Notification, _Component);
@@ -60,7 +65,7 @@ var Notification = function (_Component) {
     value: function render() {
       var _classnames;
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, CLASS_ROOT + '--status-' + this.props.status.toLowerCase(), 'background-color-index-' + this.props.status.toLowerCase(), this.props.className, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--' + this.props.size, this.props.size), _defineProperty(_classnames, CLASS_ROOT + '--disabled', !this.props.onClick), _classnames));
+      var classes = (0, _classnames3.default)(CLASS_ROOT, CLASS_ROOT + '--status-' + this.props.status.toLowerCase(), BACKGROUND_COLOR_INDEX + '-' + this.props.status.toLowerCase(), this.props.className, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--' + this.props.size, this.props.size), _defineProperty(_classnames, CLASS_ROOT + '--disabled', !this.props.onClick), _classnames));
 
       var status = void 0;
       if (this.props.status) {

@@ -36,6 +36,10 @@ var _Search = require('./icons/base/Search');
 
 var _Search2 = _interopRequireDefault(_Search);
 
+var _CSSClassnames = require('../utils/CSSClassnames');
+
+var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -46,7 +50,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var CLASS_ROOT = "search";
+var CLASS_ROOT = _CSSClassnames2.default.SEARCH;
+var BACKGROUND_COLOR_INDEX = _CSSClassnames2.default.BACKGROUND_COLOR_INDEX;
 
 var Search = function (_Component) {
   _inherits(Search, _Component);
@@ -322,7 +327,7 @@ var Search = function (_Component) {
     value: function _renderDrop() {
       var _classnames;
 
-      var classes = (0, _classnames5.default)((_classnames = {}, _defineProperty(_classnames, 'background-color-index-' + this.props.dropColorIndex, this.props.dropColorIndex), _defineProperty(_classnames, CLASS_ROOT + '__drop', true), _defineProperty(_classnames, CLASS_ROOT + '__drop--controlled', !this.state.inline), _defineProperty(_classnames, CLASS_ROOT + '__drop--large', this.props.large), _classnames));
+      var classes = (0, _classnames5.default)((_classnames = {}, _defineProperty(_classnames, BACKGROUND_COLOR_INDEX + '-' + this.props.dropColorIndex, this.props.dropColorIndex), _defineProperty(_classnames, CLASS_ROOT + '__drop', true), _defineProperty(_classnames, CLASS_ROOT + '__drop--controlled', !this.state.inline), _defineProperty(_classnames, CLASS_ROOT + '__drop--large', this.props.large), _classnames));
 
       var input = void 0;
       if (!this.state.inline) {

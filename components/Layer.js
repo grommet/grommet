@@ -38,6 +38,10 @@ var _Intl = require('../utils/Intl');
 
 var _Intl2 = _interopRequireDefault(_Intl);
 
+var _CSSClassnames = require('../utils/CSSClassnames');
+
+var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -46,7 +50,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var CLASS_ROOT = "layer";
+var CLASS_ROOT = _CSSClassnames2.default.LAYER;
+var APP = _CSSClassnames2.default.APP;
 
 var LayerContents = function (_Component) {
   _inherits(LayerContents, _Component);
@@ -263,7 +268,7 @@ var Layer = function (_Component2) {
       }
       element.className = this._classesFromProps().join(' ');
       // insert before .app, if possible.
-      var appElements = document.querySelectorAll('.app');
+      var appElements = document.querySelectorAll('.' + APP);
       var beforeElement;
       if (appElements.length > 0) {
         beforeElement = appElements[0];
@@ -277,7 +282,7 @@ var Layer = function (_Component2) {
     value: function _handleAriaHidden(hideOverlay) {
       var ariaHidden = hideOverlay || false;
       this._element.setAttribute('aria-hidden', ariaHidden);
-      var grommetApps = document.querySelectorAll('.app');
+      var grommetApps = document.querySelectorAll('.' + APP);
 
       if (grommetApps) {
         Array.prototype.slice.call(grommetApps).forEach(function (grommetApp) {

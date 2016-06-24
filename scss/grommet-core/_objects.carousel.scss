@@ -10,10 +10,31 @@
   100% { opacity: 0; }
 }
 
-.carousel {
+.#{$grommet-namespace}carousel {
   position: relative;
   max-width: 100%;
   overflow: hidden;
+
+  &-controls {
+    &__control {
+      width: round($inuit-base-spacing-unit * 1.5);
+      height: round($inuit-base-spacing-unit * 1.5);
+      stroke: #fff;
+      fill: transparent;
+      cursor: pointer;
+      filter: drop-shadow(1px 1px 1px $button-drop-shadow-color);
+      -webkit-filter: drop-shadow(1px 1px 1px $button-drop-shadow-color);
+
+      &:hover {
+        stroke-width: 2px;
+      }
+
+      &--active {
+        stroke: $brand-color;
+        fill: $brand-color;
+      }
+    }
+  }
 
   &__track {
     display: flex;
@@ -21,7 +42,7 @@
     transition: all 0.8s;
   }
 
-  .tiles.box--direction-row > .tile.carousel__item {
+  .#{$grommet-namespace}tiles.#{$grommet-namespace}box--direction-row > .#{$grommet-namespace}tile.#{$grommet-namespace}carousel__item {
     flex: 1 1 100%;
     box-sizing: border-box;
 
@@ -38,7 +59,7 @@
     transform: translateY(-50%);
     cursor: pointer;
 
-    .control-icon {
+    .#{$grommet-namespace}control-icon {
       filter: drop-shadow(1px 1px 1px $button-drop-shadow-color);
       -webkit-filter: drop-shadow(1px 1px 1px $button-drop-shadow-color);
 
@@ -49,7 +70,7 @@
     }
 
     &:hover {
-      .control-icon polyline {
+      .#{$grommet-namespace}control-icon polyline {
         stroke: $active-colored-icon-color;
       }
     }
@@ -63,11 +84,11 @@
     }
   }
 
-  .control-icon-next {
+  .#{$grommet-namespace}control-icon-next {
     right: 0;
   }
 
-  .control-icon-previous {
+  .#{$grommet-namespace}control-icon-previous {
     left: 0;
   }
 
@@ -98,9 +119,9 @@
   }
 
   &--hide-controls {
-    .control-icon-previous,
-    .control-icon-next,
-    .carousel__controls {
+    .#{$grommet-namespace}control-icon-previous,
+    .#{$grommet-namespace}control-icon-next,
+    .#{$grommet-namespace}carousel__controls {
       opacity: 0;
       @include animation('carousel-hide 1s');
     }
@@ -113,26 +134,5 @@
     -moz-user-drag: none;
     -o-user-drag: none;
     user-drag: none;
-  }
-}
-
-.carousel-controls {
-  &__control {
-    width: round($inuit-base-spacing-unit * 1.5);
-    height: round($inuit-base-spacing-unit * 1.5);
-    stroke: #fff;
-    fill: transparent;
-    cursor: pointer;
-    filter: drop-shadow(1px 1px 1px $button-drop-shadow-color);
-    -webkit-filter: drop-shadow(1px 1px 1px $button-drop-shadow-color);
-
-    &:hover {
-      stroke-width: 2px;
-    }
-
-    &--active {
-      stroke: $brand-color;
-      fill: $brand-color;
-    }
   }
 }

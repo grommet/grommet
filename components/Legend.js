@@ -14,6 +14,10 @@ var _FormattedMessage = require('./FormattedMessage');
 
 var _FormattedMessage2 = _interopRequireDefault(_FormattedMessage);
 
+var _CSSClassnames = require('../utils/CSSClassnames');
+
+var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -22,7 +26,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
-var CLASS_ROOT = "legend";
+var CLASS_ROOT = _CSSClassnames2.default.LEGEND;
+var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
 
 var Legend = function (_Component) {
   _inherits(Legend, _Component);
@@ -88,7 +93,7 @@ var Legend = function (_Component) {
         if (item.hasOwnProperty('colorIndex')) {
           swatch = _react2.default.createElement(
             'svg',
-            { className: CLASS_ROOT + "__item-swatch color-index-" + colorIndex,
+            { className: CLASS_ROOT + '__item-swatch ' + COLOR_INDEX + '-' + colorIndex,
               viewBox: '0 0 12 12' },
             _react2.default.createElement('path', { className: item.className, d: 'M 5 0 l 0 12' })
           );

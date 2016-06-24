@@ -20,6 +20,10 @@ var _Anchor = require('./Anchor');
 
 var _Anchor2 = _interopRequireDefault(_Anchor);
 
+var _CSSClassnames = require('../utils/CSSClassnames');
+
+var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -30,7 +34,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var CLASS_ROOT = 'brick';
+var CLASS_ROOT = _CSSClassnames2.default.BRICK;
+var BACKGROUND_COLOR_INDEX = _CSSClassnames2.default.BACKGROUND_COLOR_INDEX;
 var TYPE_SMALL = 'small';
 var TYPE_LARGE = 'large';
 var TYPE_WIDE = 'wide';
@@ -70,7 +75,7 @@ var Brick = function (_Component) {
 
       var clickable = this.props.href || this.props.onClick;
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, CLASS_ROOT + '--' + widthUnit + '-' + heightUnit, (_classnames = {}, _defineProperty(_classnames, 'background-color-index-' + this.props.colorIndex, this.props.colorIndex), _defineProperty(_classnames, CLASS_ROOT + '--clickable', clickable), _classnames), this.props.className);
+      var classes = (0, _classnames3.default)(CLASS_ROOT, CLASS_ROOT + '--' + widthUnit + '-' + heightUnit, (_classnames = {}, _defineProperty(_classnames, BACKGROUND_COLOR_INDEX + '-' + this.props.colorIndex, this.props.colorIndex), _defineProperty(_classnames, CLASS_ROOT + '--clickable', clickable), _classnames), this.props.className);
 
       var label = _react2.default.createElement(
         'div',

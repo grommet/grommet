@@ -22,15 +22,15 @@ var _SocialFacebook = require('./icons/base/SocialFacebook');
 
 var _SocialFacebook2 = _interopRequireDefault(_SocialFacebook);
 
-var _SocialGoogle = require('grommet/components/icons/base/SocialGoogle');
+var _SocialGoogle = require('./icons/base/SocialGoogle');
 
 var _SocialGoogle2 = _interopRequireDefault(_SocialGoogle);
 
-var _SocialLinkedin = require('grommet/components/icons/base/SocialLinkedin');
+var _SocialLinkedin = require('./icons/base/SocialLinkedin');
 
 var _SocialLinkedin2 = _interopRequireDefault(_SocialLinkedin);
 
-var _SocialEmail = require('grommet/components/icons/base/SocialEmail');
+var _SocialEmail = require('./icons/base/SocialEmail');
 
 var _SocialEmail2 = _interopRequireDefault(_SocialEmail);
 

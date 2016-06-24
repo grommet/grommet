@@ -50,6 +50,10 @@ var _LinkNext = require('./icons/base/LinkNext');
 
 var _LinkNext2 = _interopRequireDefault(_LinkNext);
 
+var _CSSClassnames = require('../utils/CSSClassnames');
+
+var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -58,8 +62,9 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var CLASS_ROOT = "tiles";
-var SELECTED_CLASS = "tile--selected";
+var CLASS_ROOT = _CSSClassnames2.default.TILES;
+var TILE = _CSSClassnames2.default.TILE;
+var SELECTED_CLASS = TILE + '--selected';
 
 var Tiles = function (_Component) {
   _inherits(Tiles, _Component);
@@ -183,15 +188,15 @@ var Tiles = function (_Component) {
 
         // mark any tiles that might be clipped
         var rect = tiles.getBoundingClientRect();
-        var children = tiles.querySelectorAll('.tile');
+        var children = tiles.querySelectorAll('.' + TILE);
         for (var i = 0; i < children.length; i += 1) {
           var child = children[i];
           var childRect = child.getBoundingClientRect();
           // 12 accounts for padding
           if (childRect.left + 12 < rect.left || childRect.right - 12 > rect.right) {
-            child.classList.add('tile--eclipsed');
+            child.classList.add(TILE + '--eclipsed');
           } else {
-            child.classList.remove('tile--eclipsed');
+            child.classList.remove(TILE + '--eclipsed');
           }
         }
       }
@@ -217,7 +222,7 @@ var Tiles = function (_Component) {
     value: function _setSelection() {
       _Selection2.default.setClassFromIndexes({
         containerElement: (0, _reactDom.findDOMNode)(this.refs.tiles),
-        childSelector: '.tile',
+        childSelector: '.' + TILE,
         selectedClass: SELECTED_CLASS,
         selectedIndexes: this.state.selected
       });
@@ -227,7 +232,7 @@ var Tiles = function (_Component) {
     value: function _onClick(event) {
       var selected = _Selection2.default.onClick(event, {
         containerElement: (0, _reactDom.findDOMNode)(this.refs.tiles),
-        childSelector: '.tile',
+        childSelector: '.' + TILE,
         selectedClass: SELECTED_CLASS,
         multiSelect: 'multiple' === this.props.selectable,
         priorSelectedIndexes: this.state.selected

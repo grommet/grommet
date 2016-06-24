@@ -10,6 +10,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _CSSClassnames = require('../utils/CSSClassnames');
+
+var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -18,7 +22,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2016 Hewlett Packard Enterprise Development LP
 
-var CLASS_ROOT = "value";
+var CLASS_ROOT = _CSSClassnames2.default.VALUE;
+var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
 
 var Value = function (_Component) {
   _inherits(Value, _Component);
@@ -43,7 +48,7 @@ var Value = function (_Component) {
         classes.push(CLASS_ROOT + '--interactive');
       }
       if (this.props.colorIndex) {
-        classes.push('color-index-' + this.props.colorIndex);
+        classes.push(COLOR_INDEX + '-' + this.props.colorIndex);
       }
       if (this.props.className) {
         classes.push(this.props.className);

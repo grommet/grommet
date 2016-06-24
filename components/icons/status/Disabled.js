@@ -14,6 +14,10 @@ var _FormattedMessage = require('../../FormattedMessage');
 
 var _FormattedMessage2 = _interopRequireDefault(_FormattedMessage);
 
+var _CSSClassnames = require('../../../utils/CSSClassnames');
+
+var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -21,6 +25,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+
+var STATUS_ICON = _CSSClassnames2.default.STATUS_ICON;
 
 var Disabled = function (_Component) {
   _inherits(Disabled, _Component);
@@ -34,7 +40,7 @@ var Disabled = function (_Component) {
   _createClass(Disabled, [{
     key: 'render',
     value: function render() {
-      var className = 'status-icon status-icon-disabled';
+      var className = STATUS_ICON + ' ' + STATUS_ICON + '-disabled';
       var a11yTitle = this.props.a11yTitle;
       if (this.props.className) {
         className += ' ' + this.props.className;
@@ -55,12 +61,12 @@ var Disabled = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { className: "status-icon__base" },
+          { className: STATUS_ICON + '__base' },
           _react2.default.createElement('path', { role: 'presentation', stroke: 'none', d: 'M21,24 L3,24 C1.3,24 0,22.7 0,21 L0,3 C0,1.3 1.3,0 3,0 L21,0 C22.7,0 24,1.3 24,3 L24,21 C24,22.7 22.7,24 21,24 L21,24 Z' })
         ),
         _react2.default.createElement(
           'g',
-          { className: "status-icon__detail", strokeWidth: '2' },
+          { className: STATUS_ICON + '__detail', strokeWidth: '2' },
           _react2.default.createElement('path', { d: 'M6,12 L18,12' })
         )
       );

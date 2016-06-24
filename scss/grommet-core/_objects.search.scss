@@ -1,6 +1,6 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-.search {
+.#{$grommet-namespace}search {
   display: inline-block;
 
   &:focus {
@@ -11,14 +11,14 @@
   }
 }
 
-.search--controlled {
+.#{$grommet-namespace}search--controlled {
   cursor: pointer;
 }
 
-.search__input {
+.#{$grommet-namespace}search__input {
   margin-right: 0px;
 
-  .header & {
+  .#{$grommet-namespace}header & {
     font-size: inherit;
     line-height: inherit;
   }
@@ -29,7 +29,7 @@
   }
 }
 
-.search__drop {
+.#{$grommet-namespace}search__drop {
   @include inuit-font-size($inuit-heading-size-4, inherit);
 
   @include media-query(palm) {
@@ -47,7 +47,7 @@
     }
   }
 
-  .search__suggestion {
+  .#{$grommet-namespace}search__suggestion {
     padding: quarter($inuit-base-spacing-unit) $inuit-base-spacing-unit;
     cursor: pointer;
 
@@ -64,25 +64,25 @@
   }
 }
 
-.search__drop-control {
+.#{$grommet-namespace}search__drop-control {
   vertical-align: top;
   height: double($inuit-base-spacing-unit);
 }
 
-.search__drop--controlled {
-  .search__drop-contents {
+.#{$grommet-namespace}search__drop--controlled {
+  .#{$grommet-namespace}search__drop-contents {
     display: inline-block;
   }
 }
 
-.search__drop--large {
+.#{$grommet-namespace}search__drop--large {
   line-height: quadruple($inuit-base-spacing-unit);
 }
 
-.search--inline {
+.#{$grommet-namespace}search--inline {
   position: relative;
 
-  .search__input {
+  .#{$grommet-namespace}search__input {
     width: 100%;
     box-sizing:  border-box;
     padding-left: (halve($inuit-base-spacing-unit) - $input-border-width);
@@ -105,12 +105,12 @@
       }
     }
 
-    .header &:not(:focus) {
+    .#{$grommet-namespace}header &:not(:focus) {
       border-color: transparent;
     }
   }
 
-  .control-icon-search {
+  .#{$grommet-namespace}control-icon-search {
     position: absolute;
     right: halve($inuit-base-spacing-unit);
     top: 50%;
@@ -124,8 +124,8 @@
   }
 }
 
-.search--small {
-  .search__input {
+.#{$grommet-namespace}search--small {
+  .#{$grommet-namespace}search__input {
     @include inuit-font-size($control-font-size, inherit);
     padding: (($inuit-base-spacing-unit - $control-font-size) - $input-border-width)
       ($control-font-size - $input-border-width);
@@ -138,14 +138,14 @@
     }
   }
 
-  // .control-icon-search {
+  // .#{$grommet-namespace}control-icon-search {
   //   height: halve($inuit-base-spacing-unit);
   //   width: halve($inuit-base-spacing-unit);
   // }
 }
 
-.search--large {
-  .search__input {
+.#{$grommet-namespace}search--large {
+  .#{$grommet-namespace}search__input {
     @include inuit-font-size($large-input-font-size, normal);
     padding: halve($inuit-base-spacing-unit) ($inuit-base-spacing-unit);
     padding-right: ($inuit-base-spacing-unit * 3);
@@ -171,7 +171,7 @@
     }
   }
 
-  .control-icon-search {
+  .#{$grommet-namespace}control-icon-search {
     right: $inuit-base-spacing-unit;
     width: double($inuit-base-spacing-unit);
     height: double($inuit-base-spacing-unit);
@@ -189,9 +189,9 @@
   }
 }
 
-.search--icon-align-start {
-  &.search--inline {
-    .search__input {
+.#{$grommet-namespace}search--icon-align-start {
+  &.#{$grommet-namespace}search--inline {
+    .#{$grommet-namespace}search__input {
       padding-left: (double($inuit-base-spacing-unit) - $input-border-width);
       padding-right: ($inuit-base-spacing-unit - $input-border-width);
 
@@ -201,13 +201,13 @@
       }
     }
 
-    .control-icon-search {
+    .#{$grommet-namespace}control-icon-search {
       left: halve($inuit-base-spacing-unit);
     }
   }
 
-  &.search--large {
-    .search__input {
+  &.#{$grommet-namespace}search--large {
+    .#{$grommet-namespace}search__input {
       padding-left: ($inuit-base-spacing-unit * 3);
       padding-right: $inuit-base-spacing-unit;
 
@@ -231,7 +231,7 @@
   }
 }
 
-.search--fill {
+.#{$grommet-namespace}search--fill {
   width: 100%;
   max-width: none;
   //used to add full height for button inside a flex container

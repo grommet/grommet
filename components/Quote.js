@@ -28,6 +28,10 @@ var _Props = require('../utils/Props');
 
 var _Props2 = _interopRequireDefault(_Props);
 
+var _CSSClassnames = require('../utils/CSSClassnames');
+
+var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -38,7 +42,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var CLASS_ROOT = 'quote';
+var CLASS_ROOT = _CSSClassnames2.default.QUOTE;
+var BORDER_COLOR_INDEX = _CSSClassnames2.default.BORDER_COLOR_INDEX;
 
 var Quote = function (_Component) {
   _inherits(Quote, _Component);
@@ -54,7 +59,7 @@ var Quote = function (_Component) {
     value: function render() {
       var _classnames;
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, this.props.className, (_classnames = {}, _defineProperty(_classnames, 'border-color-index-' + this.props.borderColorIndex, this.props.borderColorIndex), _defineProperty(_classnames, CLASS_ROOT + '--' + this.props.size, this.props.size), _defineProperty(_classnames, CLASS_ROOT + '--emphasize-credit', this.props.emphasizeCredit), _classnames));
+      var classes = (0, _classnames3.default)(CLASS_ROOT, this.props.className, (_classnames = {}, _defineProperty(_classnames, BORDER_COLOR_INDEX + '-' + this.props.borderColorIndex, this.props.borderColorIndex), _defineProperty(_classnames, CLASS_ROOT + '--' + this.props.size, this.props.size), _defineProperty(_classnames, CLASS_ROOT + '--emphasize-credit', this.props.emphasizeCredit), _classnames));
 
       var boxProps = _Props2.default.pick(this.props, Object.keys(_Box2.default.propTypes));
 

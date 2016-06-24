@@ -28,6 +28,10 @@ var _Intl = require('../utils/Intl');
 
 var _Intl2 = _interopRequireDefault(_Intl);
 
+var _CSSClassnames = require('../utils/CSSClassnames');
+
+var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -36,7 +40,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var CLASS_ROOT = "distribution";
+var CLASS_ROOT = _CSSClassnames2.default.DISTRIBUTION;
+var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
 
 var DEFAULT_WIDTH = 400;
 var DEFAULT_HEIGHT = 200;
@@ -395,7 +400,7 @@ var Distribution = function (_Component) {
     value: function _renderItemLabel(datum, labelRect, index) {
       var labelClasses = [CLASS_ROOT + '__label'];
       if (!datum.icon) {
-        labelClasses.push('color-index-' + this._itemColorIndex(datum, index));
+        labelClasses.push(COLOR_INDEX + '-' + this._itemColorIndex(datum, index));
       }
       if (datum.icon) {
         labelClasses.push(CLASS_ROOT + '__label--icons');
@@ -442,7 +447,7 @@ var Distribution = function (_Component) {
     value: function _renderItemBox(boxRect, colorIndex) {
       var boxClasses = [CLASS_ROOT + '__item-box'];
       if (colorIndex) {
-        boxClasses.push('color-index-' + colorIndex);
+        boxClasses.push(COLOR_INDEX + '-' + colorIndex);
       }
 
       return _react2.default.createElement('rect', { className: boxClasses.join(' '),
@@ -453,7 +458,7 @@ var Distribution = function (_Component) {
     key: '_renderItemIcon',
     value: function _renderItemIcon(icon, itemRect, colorIndex) {
       var iconClasses = [CLASS_ROOT + '__item-icons'];
-      iconClasses.push('color-index-' + colorIndex);
+      iconClasses.push(COLOR_INDEX + '-' + colorIndex);
 
       var icons = [];
       // fill box with icons
@@ -538,7 +543,7 @@ var Distribution = function (_Component) {
     key: '_renderLoading',
     value: function _renderLoading() {
       var loadingClasses = [CLASS_ROOT + '__loading-indicator'];
-      loadingClasses.push("color-index-loading");
+      loadingClasses.push(COLOR_INDEX + '-loading');
       var loadingHeight = this.state.height / 2;
       var loadingWidth = this.state.width;
       var commands = 'M0,' + loadingHeight + ' L' + loadingWidth + ',' + loadingHeight;

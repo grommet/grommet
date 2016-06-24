@@ -58,6 +58,10 @@ var _Down = require('./icons/base/Down');
 
 var _Down2 = _interopRequireDefault(_Down);
 
+var _CSSClassnames = require('../utils/CSSClassnames');
+
+var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -69,7 +73,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 // import CarouselControls from './CarouselControls';
 
 
-var CLASS_ROOT = 'article';
+var CLASS_ROOT = _CSSClassnames2.default.ARTICLE;
 var DEFAULT_PLAY_INTERVAL = 10000; // 10s
 
 var Article = function (_Component) {

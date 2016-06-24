@@ -1,6 +1,6 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-.grommet.layer {
+.grommet.#{$grommet-namespace}layer {
   position: relative;
   z-index: 10; // stay above app header
   background-color: $layer-overlay-background-color;
@@ -15,7 +15,7 @@
   }
 
   @include media-query(palm) {
-    &:not(.layer--hidden) + .app {
+    &:not(.#{$grommet-namespace}layer--hidden) + .#{$grommet-namespace}app {
       visibility: hidden;
       width: 0px;
       height: 0px;
@@ -28,7 +28,7 @@
     }
   }
 
-  .layer__container {
+  .#{$grommet-namespace}layer__container {
     background-color: $layer-background-color;
 
     @include media-query(palm) {
@@ -48,7 +48,7 @@
     }
   }
 
-  .layer__closer {
+  .#{$grommet-namespace}layer__closer {
     position: absolute;
     top: 0px;
     right: 0px;
@@ -60,17 +60,17 @@
     }
   }
 
-  &.layer--flush {
-    .layer__container {
+  &.#{$grommet-namespace}layer--flush {
+    .#{$grommet-namespace}layer__container {
       padding: 0px;
     }
   }
 
-  &.layer--align {
-    &-center:not(.layer--hidden) {
+  &.#{$grommet-namespace}layer--align {
+    &-center:not(.#{$grommet-namespace}layer--hidden) {
 
       @include media-query(lap-and-up) {
-        .layer__container {
+        .#{$grommet-namespace}layer__container {
           left: 50%;
           top: 50%;
           max-height: calc(100vh - #{double($inuit-base-spacing-unit)});
@@ -80,8 +80,8 @@
       }
     }
 
-    &-left:not(.layer--hidden) {
-      .layer__container {
+    &-left:not(.#{$grommet-namespace}layer--hidden) {
+      .#{$grommet-namespace}layer__container {
         top: 0px;
         bottom: 0px;
         left: 0px;
@@ -92,7 +92,7 @@
       }
 
       .grommet.rtl & {
-        .layer__container {
+        .#{$grommet-namespace}layer__container {
           left: auto;
           right: 0px;
 
@@ -103,8 +103,8 @@
       }
     }
 
-    &-right:not(.layer--hidden) {
-      .layer__container {
+    &-right:not(.#{$grommet-namespace}layer--hidden) {
+      .#{$grommet-namespace}layer__container {
         top: 0px;
         bottom: 0px;
         right: 0px;
@@ -115,7 +115,7 @@
       }
 
       .grommet.rtl & {
-        .layer__container {
+        .#{$grommet-namespace}layer__container {
           right: auto;
           left: 0px;
 
@@ -126,9 +126,9 @@
       }
     }
 
-    &-top:not(.layer--hidden) {
+    &-top:not(.#{$grommet-namespace}layer--hidden) {
       @include media-query(lap-and-up) {
-        .layer__container {
+        .#{$grommet-namespace}layer__container {
           left: 50%;
           transform: translateX(-50%);
 
@@ -139,25 +139,25 @@
       }
     }
 
-    &-bottom:not(.layer--hidden) {
-      .layer__container {
+    &-bottom:not(.#{$grommet-namespace}layer--hidden) {
+      .#{$grommet-namespace}layer__container {
         bottom: 0px;
       }
     }
   }
 
-  &.layer--hidden {
+  &.#{$grommet-namespace}layer--hidden {
 
     left: -100vw;
     right: 100vw;
     z-index: -1;
 
-    &.layer--align {
+    &.#{$grommet-namespace}layer--align {
 
       &-left {
         right: auto;
 
-        .layer__container {
+        .#{$grommet-namespace}layer__container {
           left: -100vw;
         }
       }
@@ -168,17 +168,17 @@
     }
 
     @include media-query(lap-and-up) {
-      &.layer--peek {
+      &.#{$grommet-namespace}layer--peek {
 
         left: 0;
         z-index: 10;
 
-        &.layer--align {
+        &.#{$grommet-namespace}layer--align {
 
           &-left {
             right: auto;
 
-            .layer__container {
+            .#{$grommet-namespace}layer__container {
               left: auto;
               right: - halve($inuit-base-spacing-unit);
               border-right: 10px solid $brand-color;
