@@ -233,7 +233,9 @@ export default class DateTime extends Component {
     if (className) {
       classes.push(className);
     }
-    if (typeof value === 'object') {
+    if (value instanceof Date) {
+      value = moment(value).format(format);
+    } else if ((value !== null) && (typeof value === 'object')) {
       value = value.format(format);
     }
     const Icon = (TIME_REGEXP.test(format) ? ClockIcon : CalendarIcon);
