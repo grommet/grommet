@@ -4,7 +4,7 @@ import gulp from 'gulp';
 import fs from 'fs';
 import coveralls from 'gulp-coveralls';
 
-import grommetToolbox from 'grommet-toolbox';
+import grommetToolbox from '../grommet-toolbox/src';
 
 import gulpDist from './gulpfile-grommet-dist';
 import gulpRelease from './gulpfile-grommet-release';
