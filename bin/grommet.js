@@ -93,6 +93,36 @@ var tasks = {
         }
       })
     }
+  },
+  'new': function(command) {
+    return function() {
+      if (!dependenciesSupported(command.env.nodeVersion, command.env.npmVersion)) {
+        process.exit(1);
+      }
+
+      var newAppPath = path.join(process.cwd(), command.options.app);
+
+      if (fileExists(newAppPath)) {
+        console.error('[grommet] Error while creating new app. Directory "'+command.options.app+'" already exists.');
+        process.exit(1);
+      }
+
+      mkdirp(newAppPath, function(err) {
+        if (err) {
+          console.error('[grommet] Error trying to create project: ' + err);
+          process.exit(1);
+        }
+
+        try {
+          var templateFolder = path.join(command.env.templatePath, 'new/**');
+          copyAssetsAndInstall(templateFolder, newAppPath, command);
+        } catch(err) {
+          shelljs.rm('-rf', newAppPath);
+          console.error('[grommet] Error while creating new app '+command.options.app+'.');
+          throw err;
+        }
+      })
+    }
   }
 };
 
@@ -124,6 +154,15 @@ switch(command.task) {
     command.options['app'] = options[1] || 'app-name';
     command.options['title'] = command.options.app.replace(/-|_/g, ' ').capitalize();
     break;
+  case 'new':
+    command.options['app'] = options[1];
+    if (!command.options.app) {
+      console.error('[grommet] Usage: grommet new <app-name> [description]');
+      process.exit(1);
+    }
+    command.options['title'] = command.options.app.replace(/-|_/g, ' ').capitalize();
+    command.options['description'] = options[2] || "";
+    break;
 }
 
 if (command.task in tasks) {
@@ -131,7 +170,7 @@ if (command.task in tasks) {
   gulp.start(command.task);
 } else {
   var allTaskNames = Object.keys(tasks).join('|');
-  console.log('[grommet] Command "' + command.task + '" not supported.');
-  console.log('[grommet] Usage: grommet <' + allTaskNames + '>');
+  console.error('[grommet] Command "' + command + '" not supported.');
+  console.error('[grommet] Usage: grommet <' + allTaskNames + '>');
   process.exit(1);
 }
