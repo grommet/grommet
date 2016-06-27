@@ -26,13 +26,13 @@ function npmVersionSupported(npmVersion) {
 }
 
 var tasks = {
-  'version': function() {
-    console.log(packageJSON.version);
-  },
   'init': function(done) {
     if (!nodeVersionSupported() || !npmVersionSupported(npmVersion)) {
       console.error('[grommet] Grommet requires Node v0.10+ and NPM 1.4.x+.');
-      console.error('[grommet] Currently you have Node ' + process.version + ' and NPM ' + npmVersion);
+      console.error(
+        '[grommet] Currently you have Node ' + process.version +
+        ' and NPM ' + npmVersion
+      );
       process.exit(1);
     }
 
@@ -60,16 +60,20 @@ var tasks = {
         });
       }
     });
-  },
-  'export': function() {
-    console.log('[REMOVED] All the example apps now live outside Grommet. Checkout Grommet organization in Github to learn more (https://github.com/grommet).');
   }
 };
 
 var grommetPath = path.join(__dirname, '..');
 var packageJSON = require(path.join(grommetPath, 'package.json'));
-var npmVersion = Number(shelljs.exec('npm --version', {silent:true}).stdout.toString().match(/^(\d+\.\d+)/)[1]);
+var npmVersion = Number(shelljs.exec('npm --version', {silent:true})
+  .stdout.toString().match(/^(\d+\.\d+)/)[1]);
 var argv = require('yargs').boolean('version').argv;
+
+if (argv.version) {
+  console.log(packageJSON.version);
+  process.exit(0);
+}
+
 var options = argv._;
 var command = options[0] || 'init';
 if (command === 'init') {
@@ -82,7 +86,7 @@ if (command in tasks) {
   gulp.start(command);
 } else {
   var allTaskNames = Object.keys(tasks).join('|');
-  console.log('[grommet] Command "'+command+'" not supported.');
-  console.log('[grommet] Usage: grommet <'+allTaskNames+'>');
+  console.log('[grommet] Command "' + command + '" not supported.');
+  console.log('[grommet] Usage: grommet <' + allTaskNames + '>');
   process.exit(1);
 }
