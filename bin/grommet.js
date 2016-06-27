@@ -27,7 +27,7 @@ function npmVersionSupported(npmVersion) {
 
 var tasks = {
   'version': function() {
-      console.log(packageJSON.version);
+    console.log(packageJSON.version);
   },
   'init': function(done) {
     if (!nodeVersionSupported() || !npmVersionSupported(npmVersion)) {
@@ -38,7 +38,7 @@ var tasks = {
 
     mkdirp('./' + app, function(err) {
       if (err) {
-      console.log('Error trying to create project: ' + err);
+        console.log('Error trying to create project: ' + err);
       } else {
         process.chdir('./' + app);
 
@@ -49,22 +49,22 @@ var tasks = {
         gulp.src(mobileIcon).pipe(gulp.dest('./src/img'));
         gulp.src(shortcutIcon).pipe(gulp.dest('./src/img'));
         gulp.src(templateFolder, { dot: true })
-          .pipe(template({
-            appName: app,
-            appTitle: title,
-            grommetVersion: packageJSON.version
+        .pipe(template({
+          appName: app,
+          appTitle: title,
+          grommetVersion: packageJSON.version
         }))
         .pipe(gulp.dest('./'))
         .pipe(install()).on('finish', function() {
           done();
         });
       }
-    })
+    });
   },
   'export': function() {
     console.log('[REMOVED] All the example apps now live outside Grommet. Checkout Grommet organization in Github to learn more (https://github.com/grommet).');
   }
-}
+};
 
 var grommetPath = path.join(__dirname, '..');
 var packageJSON = require(path.join(grommetPath, 'package.json'));
@@ -72,7 +72,7 @@ var npmVersion = Number(shelljs.exec('npm --version', {silent:true}).stdout.toSt
 var argv = require('yargs').boolean('version').argv;
 var options = argv._;
 var command = options[0] || 'init';
-if (command == 'init') {
+if (command === 'init') {
   var app = options[1] || 'app-name';
   var title = app.replace(/-|_/g, ' ').capitalize();
 }
