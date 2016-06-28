@@ -43,8 +43,8 @@ var tasks = {
         process.chdir('./' + app);
 
         var templateFolder = path.join(grommetPath, 'templates/init/**');
-        var mobileIcon = path.join(grommetPath, 'mobile-app-icon.png');
-        var shortcutIcon = path.join(grommetPath, 'shortcut-icon.png');
+        var mobileIcon = path.join(grommetPath, 'img/mobile-app-icon.png');
+        var shortcutIcon = path.join(grommetPath, 'img/shortcut-icon.png');
 
         gulp.src(mobileIcon).pipe(gulp.dest('./src/img'));
         gulp.src(shortcutIcon).pipe(gulp.dest('./src/img'));
