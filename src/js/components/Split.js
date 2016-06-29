@@ -70,7 +70,7 @@ export default class Split extends Component {
   _layout () {
     var splitElement = this.refs.split;
     if (splitElement) {
-      if (splitElement.offsetWidth < BREAK_WIDTH && this.props.showOnResponsive === 'primary') {
+      if (splitElement.offsetWidth < BREAK_WIDTH && this.props.showOnResponsive === 'priority') {
         this._setResponsive('single');
       } else {
         this._setResponsive('multiple');
