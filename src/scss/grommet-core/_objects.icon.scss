@@ -88,7 +88,7 @@
   }
 
   @each $status, $color in $brand-status-colors {
-    .control-icon-#{$status} {
+    .#{$grommet-namespace}control-icon-#{$status} {
       .#{$grommet-namespace}status-icon__base {
         fill: $color;
       }
