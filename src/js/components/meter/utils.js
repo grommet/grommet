@@ -1,6 +1,9 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 import React, { PropTypes } from 'react';
+import CSSClassnames from '../../utils/CSSClassnames';
+
+const METER = CSSClassnames.METER;
 
 function polarToCartesian (centerX, centerY, radius, angleInDegrees) {
   var angleInRadians = (angleInDegrees - 90) * Math.PI / 180.0;
@@ -15,7 +18,7 @@ export default {
   baseUnit: 24,
   baseDimension: 192, // 24 * 8
 
-  classRoot: 'meter',
+  classRoot: METER,
 
   propTypes: {
     activeIndex: PropTypes.number,

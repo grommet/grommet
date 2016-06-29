@@ -1,4 +1,4 @@
-.label {
+.#{$grommet-namespace}label {
   @include inuit-font-size($control-font-size);
 
   &--uppercase {

@@ -1,6 +1,6 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-.title {
+.#{$grommet-namespace}title {
   max-height: 100%;
   overflow: hidden;
   text-overflow: ellipsis;

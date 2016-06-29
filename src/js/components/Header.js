@@ -4,8 +4,9 @@ import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import Props from '../utils/Props';
 import Box from './Box';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = "header";
+const CLASS_ROOT = CSSClassnames.HEADER;
 
 export default class Header extends Component {
 

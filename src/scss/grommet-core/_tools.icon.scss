@@ -15,14 +15,14 @@
   #{$dark-background-context} & {
     color: $colored-text-color;
 
-    .control-icon {
+    .#{$grommet-namespace}control-icon {
       @include icon-color($colored-icon-color);
     }
 
     &:hover {
       color: $active-colored-text-color;
 
-     .control-icon {
+     .#{$grommet-namespace}control-icon {
         @include icon-color($active-colored-icon-color);
       }
     }

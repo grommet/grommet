@@ -3,7 +3,9 @@
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 
-const CLASS_ROOT = 'button';
+import CSSClassnames from '../utils/CSSClassnames';
+
+const CLASS_ROOT = CSSClassnames.BUTTON;
 
 export default class Button extends Component {
   render () {

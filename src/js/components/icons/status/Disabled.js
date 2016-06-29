@@ -2,10 +2,13 @@
 
 import React, { Component, PropTypes } from 'react';
 import FormattedMessage from '../../FormattedMessage';
+import CSSClassnames from '../../../utils/CSSClassnames';
+
+const STATUS_ICON = CSSClassnames.STATUS_ICON;
 
 export default class Disabled extends Component {
   render() {
-    var className = 'status-icon status-icon-disabled';
+    var className = `${STATUS_ICON} ${STATUS_ICON}-disabled`;
     var a11yTitle = this.props.a11yTitle;
     if (this.props.className) {
       className += ' ' + this.props.className;
@@ -21,10 +24,10 @@ export default class Disabled extends Component {
         <title id={disabledTitleId}>
           <FormattedMessage id={a11yTitle} defaultMessage={a11yTitle} />
         </title>
-        <g className={"status-icon__base"}>
+        <g className={`${STATUS_ICON}__base`}>
           <path role="presentation" stroke="none" d="M21,24 L3,24 C1.3,24 0,22.7 0,21 L0,3 C0,1.3 1.3,0 3,0 L21,0 C22.7,0 24,1.3 24,3 L24,21 C24,22.7 22.7,24 21,24 L21,24 Z"></path>
         </g>
-        <g className={"status-icon__detail"} strokeWidth="2">
+        <g className={`${STATUS_ICON}__detail`} strokeWidth="2">
           <path d="M6,12 L18,12"></path>
         </g>
       </svg>

@@ -3,8 +3,9 @@
 import React, { Component } from 'react';
 import Box from './Box';
 import Props from '../utils/Props';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = "tags";
+const CLASS_ROOT = CSSClassnames.TAGS;
 
 export default class Tags extends Component {
 

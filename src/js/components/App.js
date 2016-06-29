@@ -1,10 +1,13 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
+import classnames from 'classnames';
 import { getCurrentLocale } from '../utils/Locale';
 import SkipLinks from './SkipLinks';
 
-const CLASS_ROOT = 'app';
+import CSSClassnames from '../utils/CSSClassnames';
+
+const CLASS_ROOT = CSSClassnames.APP;
 
 let supportedLocales = ['en-US', 'pt-BR'];
 
@@ -41,27 +44,24 @@ export default class App extends Component {
       document.documentElement.setAttribute('lang', lang);
     }
     this.setState({lang: lang});
-
-    // Put the grommet class on the html element.
-    document.documentElement.classList.add('grommet');
   }
 
   render() {
-    var classes = ["grommet", CLASS_ROOT];
-    if (this.props.centered) {
-      classes.push(`${CLASS_ROOT}--centered`);
-    }
-    if (this.props.inline) {
-      classes.push(`${CLASS_ROOT}--inline`);
-    }
+    const { centered, children, className, inline } = this.props;
+    const { lang } = this.state;
 
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
+    const classes = classnames(
+      'grommet',
+      className,
+      CLASS_ROOT, {
+        [`${CLASS_ROOT}--centered`]: centered,
+        [`${CLASS_ROOT}--inline`]: inline
+      }
+    );
 
     return (
-      <div lang={this.state.lang} className={classes.join(' ')}>
-        {this.props.children}
+      <div lang={lang} className={classes}>
+        {children}
         <SkipLinks />
       </div>
     );

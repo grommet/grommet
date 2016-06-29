@@ -29,7 +29,7 @@
   }
 }
 
-.table {
+.#{$grommet-namespace}table {
 
   table {
     width: 100%;
@@ -76,7 +76,7 @@
   &--scrollable {
     position: relative;
 
-    .table__table {
+    .#{$grommet-namespace}table__table {
       thead {
         visibility: hidden;
       }
@@ -96,7 +96,7 @@
           transition: background-color 0.2s;
         }
 
-        &.table-row--selected {
+        &.#{$grommet-namespace}table-row--selected {
           td {
             background-color: $selected-background-color;
             color: $selected-text-color;
@@ -108,7 +108,7 @@
           }
         }
 
-        &:hover:not(.table-row--selected) {
+        &:hover:not(.#{$grommet-namespace}table-row--selected) {
           td {
             background-color: $hover-background-color;
             color: $hover-text-color;

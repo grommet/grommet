@@ -4,8 +4,9 @@ import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import Props from '../utils/Props';
 import Box from './Box';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = "tile";
+const CLASS_ROOT = CSSClassnames.TILE;
 
 export default class Tile extends Component {
 
@@ -32,7 +33,7 @@ export default class Tile extends Component {
         [`${CLASS_ROOT}--wide`]: wide,
         [`${CLASS_ROOT}--selectable`]: onClick,
         [`${CLASS_ROOT}--selected`]: selected,
-        [`${hoverStyle}${(hoverStyle == 'border') ?
+        [`${CSSClassnames.namespace}${hoverStyle}${(hoverStyle == 'border') ?
           ((borderSize) ? `-${borderSize}` : '-medium') : ''
         }-hover-color-index-${hoverColorIndex}`]: hoverStyle,
         [`${CLASS_ROOT}--hover-border-${borderSize}`]: borderSize

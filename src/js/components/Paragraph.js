@@ -2,8 +2,9 @@
 
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = 'paragraph';
+const CLASS_ROOT = CSSClassnames.PARAGRAPH;
 
 export default class Paragraph extends Component {
   render () {

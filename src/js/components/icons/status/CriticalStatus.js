@@ -2,10 +2,13 @@
 
 import React, { Component, PropTypes } from 'react';
 import FormattedMessage from '../../FormattedMessage';
+import CSSClassnames from '../../../utils/CSSClassnames';
+
+const STATUS_ICON = CSSClassnames.STATUS_ICON;
 
 export default class CriticalStatus extends Component {
   render() {
-    var className = 'status-icon status-icon-critical';
+    var className = `${STATUS_ICON} ${STATUS_ICON}-critical`;
     var a11yTitle = this.props.a11yTitle;
     if (this.props.className) {
       className += ' ' + this.props.className;
@@ -22,10 +25,10 @@ export default class CriticalStatus extends Component {
         <title id={criticalTitleId}>
           <FormattedMessage id={a11yTitle} defaultMessage={a11yTitle} />
         </title>
-        <g className={"status-icon__base"} stroke="none">
+        <g className={`${STATUS_ICON}__base`} stroke="none">
           <path role="presentation" d="M12,0 L24,12 L12,24 L0,12 Z"></path>
         </g>
-        <g className={"status-icon__detail"} fill="none">
+        <g className={`${STATUS_ICON}__detail`} fill="none">
           <path role="presentation" d="M8,8 L16,16" strokeWidth="2"></path>
           <path role="presentation" d="M8,16 L16,8" strokeWidth="2"></path>
         </g>

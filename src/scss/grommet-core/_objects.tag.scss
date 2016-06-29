@@ -1,4 +1,4 @@
-.tag {
+.#{$grommet-namespace}tag {
   @include basic-button();
   border-color: $button-secondary-color;
   margin: 0 halve($inuit-base-spacing-unit) halve($inuit-base-spacing-unit) 0;
@@ -11,7 +11,7 @@
 
   a,
   a:hover,
-  .anchor:hover:not(.anchor--disabled) {
+  .#{$grommet-namespace}anchor:hover:not(.#{$grommet-namespace}anchor--disabled) {
     color: $button-text-color;
     text-decoration: none;
   }
@@ -22,7 +22,7 @@
   }
 }
 
-#{$dark-background-context} .tag {
+#{$dark-background-context} .#{$grommet-namespace}tag {
   border-color: $button-colored-border-color;
 
   &:hover {

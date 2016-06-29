@@ -6,7 +6,7 @@ $form-vertical-padding: quarter($inuit-base-spacing-unit);
 $select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAABGdBTUEAALGPC/xhBQAAATdJREFUOBGlUjFqw0AQ1AWBCWpd+A1pXOYHJk38BZeSOkPS5BERaWRJTcCNH2A3xj9waRf+hGsJAoLLjNk77iLFIXhB7NzO3OjuGBUEgaqqaos+wXdL7eI4frqDg27bdoZ+vsHtLB5aGZOyLJ+VUmut9Rdmj0mSHAzX16EfY77HngH2TKHfUMcTXooDEAsKMFhlWXYvVKcJtxKzhTGj0Bpy0TTNK0xPED5EUfTOWV+Ro4Za7nE19spm+NtVHP7q03gn5Ca+Hf78RoxTfOZ5PiJmEXNGTA21xG51DEmmafqBtsM3DMNwic6bKMFDcqIB9Cv0l3Z1iRIMjphMiqKYC8Os2ohYtQM6b+hwwY8o8Qm8iLhag3uvbEiJQ0EjMfMiYnRuv2pIYV3XL4xHX0Rco39hRkni9Oe+bw49m1YsR5tyAAAAAElFTkSuQmCC);
 $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAABGdBTUEAALGPC/xhBQAAATtJREFUOBGdkk1KxEAQhdNiEPdZeIEk4MalNwhu9ApeQdCNhxBc6U5w4wHGjcwBAi4VMpDkCCYHkEDi+4bp0JNp/6ag6ErVey9VRZkgCExVVS/GmEzx1jYMwzxJkpMdKQxd150r8bGtGlw00DJWpK7rU8UzFT/lx2mavtma7y3L8khTvcr3VD+L4/gZHB0ujUTf93cA5E95nu/b2vSlBgYsHCsGbhTko23bK3W3EPAwiqIbcj6jBgYsHBczjmyT341i67+tZq1DSOxOf78mVgcPRVEcEGPE5IjB+Pa8IQhYO7kVcS5SFIbhI3ycmBw1MGCntjtNrL6XpySBdwlkGvNilc8kNp6Ij7uxQxfk7ou8xNdOxMXa2DuyLXIO6ugeIXx6Ihbnvj8KAmya5lKiC3x6Iq7Qv2JOCf8L6QsuVKvxz0iZVQAAAABJRU5ErkJggg==);
 
-.form-field {
+.#{$grommet-namespace}form-field {
   position: relative;
   padding: $form-vertical-padding $form-horizontal-padding;
   border: $input-border-width solid $border-color;
@@ -31,7 +31,7 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
     border-color: $colored-border-color;
   }
 
-  .form--fill & {
+  .#{$grommet-namespace}form--fill & {
     width: 100%;
   }
 
@@ -40,7 +40,7 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
   }
 }
 
-.form-field__label {
+.#{$grommet-namespace}form-field__label {
   display: block;
   @include inuit-font-size($label-font-size, $inuit-base-spacing-unit);
   color: $secondary-text-color;
@@ -50,18 +50,18 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
   }
 }
 
-.form-field__contents {
+.#{$grommet-namespace}form-field__contents {
   display: block;
   margin-left: - $form-horizontal-padding;
   margin-right: - $form-horizontal-padding;
 
-  > .box {
+  > .#{$grommet-namespace}box {
     input {
       border: none;
       padding: 0;
     }
 
-    .anchor {
+    .#{$grommet-namespace}anchor {
       color: $control-brand-color;
       text-decoration: none;
     }
@@ -74,9 +74,9 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
   > input[type=number],
   > input[type=file],
   > select,
-  > .search-input input,
-  > .calendar input,
-  > .date-time input,
+  > .#{$grommet-namespace}search-input input,
+  > .#{$grommet-namespace}calendar input,
+  > .#{$grommet-namespace}date-time input,
   > textarea {
     display: block;
     width: 100%;
@@ -104,9 +104,9 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
   > input[type=number],
   > input[type=file],
   > select,
-  > .search-input input,
-  > .calendar input,
-  > .date-time input {
+  > .#{$grommet-namespace}search-input input,
+  > .#{$grommet-namespace}calendar input,
+  > .#{$grommet-namespace}date-time input {
     // For IE11.
     height: $inuit-base-spacing-unit;
   }
@@ -161,8 +161,8 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
     resize: vertical;
   }
 
-  > .check-box,
-  > .radio-button {
+  > .#{$grommet-namespace}check-box,
+  > .#{$grommet-namespace}radio-button {
     display: block;
     @include inuit-font-size($content-font-size);
     margin-top: double($form-vertical-padding);
@@ -171,9 +171,9 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
     margin-right: $form-horizontal-padding;
   }
 
-  > .search-input,
-  > .calendar,
-  > .date-time {
+  > .#{$grommet-namespace}search-input,
+  > .#{$grommet-namespace}calendar,
+  > .#{$grommet-namespace}date-time {
     display: block;
 
     input {
@@ -181,8 +181,8 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
       margin-right: 0px;
     }
 
-    .search-input__control,
-    .calendar__control {
+    .#{$grommet-namespace}search-input__control,
+    .#{$grommet-namespace}calendar__control {
       top: auto;
       right: quarter($inuit-base-spacing-unit);
       transform: none;
@@ -195,7 +195,7 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
     }
   }
 
-  > .number-input {
+  > .#{$grommet-namespace}number-input {
     display: flex;
     padding-right: quarter($inuit-base-spacing-unit);
 
@@ -216,7 +216,7 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
 
       // For some reason, .number-input input causes form fields to be
       // too wide in compact forms.
-      .form--compact & {
+      .#{$grommet-namespace}form--compact & {
         width: round($inuit-base-spacing-unit * 6);
       }
     }
@@ -231,7 +231,7 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
     // }
   }
 
-  > .table--selectable {
+  > .#{$grommet-namespace}table--selectable {
     @include inuit-font-size($content-font-size);
 
     table {
@@ -244,23 +244,23 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
     }
   }
 
-  > .form-field {
+  > .#{$grommet-namespace}form-field {
     width: auto;
     margin-top: halve($inuit-base-spacing-unit);
     border: none;
 
-    > .form-field__label {
+    > .#{$grommet-namespace}form-field__label {
       border-top: 1px solid $border-color;
       padding-top: $form-vertical-padding;
     }
   }
 }
 
-.form-field__contents--hidden {
+.#{$grommet-namespace}form-field__contents--hidden {
   margin-top: 0px;
 }
 
-.form-field__help {
+.#{$grommet-namespace}form-field__help {
   display: block;
   @include inuit-font-size($label-font-size - 1);
   color: $secondary-text-color;
@@ -270,7 +270,7 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
   }
 }
 
-.form-field__error {
+.#{$grommet-namespace}form-field__error {
   display: block;
   float: right;
   color: map-get($brand-status-colors, critical);
@@ -286,15 +286,15 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
   }
 }
 
-.form-field--text {
+.#{$grommet-namespace}form-field--text {
   cursor: pointer;
 
-  .form-field__label {
+  .#{$grommet-namespace}form-field__label {
     cursor: pointer;
   }
 }
 
-.form-field--hidden {
+.#{$grommet-namespace}form-field--hidden {
 
   @include media-query(palm) {
     display: none;
@@ -312,12 +312,12 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
   }
 }
 
-.form-field--error {
+.#{$grommet-namespace}form-field--error {
   z-index: 1;
   border-color: map-get($brand-status-colors, critical);
 }
 
-.form-field--focus {
+.#{$grommet-namespace}form-field--focus {
   z-index: 2;
   border-color: $focus-border-color;
 
@@ -326,7 +326,7 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
   }
 }
 
-.form-field--size-large {
+.#{$grommet-namespace}form-field--size-large {
   font-size: $paragraph-large-font-size;
 
   input[type="text"] {
@@ -335,7 +335,7 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
   }
 }
 
-.form-field--strong {
+.#{$grommet-namespace}form-field--strong {
   input[type="text"] {
     font-weight: 600;
   }

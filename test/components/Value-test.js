@@ -5,6 +5,9 @@ import React from 'react';
 import TestUtils from 'react-addons-test-utils';
 
 import Value from '../../src/js/components/Value';
+import CSSClassnames from '../../src/js/utils/CSSClassnames';
+
+const CLASS_ROOT = CSSClassnames.VALUE;
 
 test('loads a Value', (t) => {
   t.plan(1);
@@ -14,7 +17,7 @@ test('loads a Value', (t) => {
   }));
   const element = shallowRenderer.getRenderOutput();
 
-  if (element.props.className.indexOf('value') > -1) {
+  if (element.props.className.indexOf(CLASS_ROOT) > -1) {
     t.pass('Value has class');
   } else {
     t.fail('Value does not have class');

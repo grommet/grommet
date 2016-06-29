@@ -1,6 +1,6 @@
 // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
-.notification {
+.#{$grommet-namespace}notification {
   @include inuit-font-size($control-font-size, $inuit-base-spacing-unit);
 
   &__message {
@@ -22,14 +22,14 @@
   }
 
   &--small {
-    .notification {
+    .#{$grommet-namespace}notification {
       &__message {
         @include inuit-font-size($control-font-size, $inuit-base-spacing-unit);
       }
     }
   }
 
-  &:not(.notification--disabled) {
+  &:not(.#{$grommet-namespace}notification--disabled) {
     cursor: pointer;
 
     &:hover {
@@ -42,25 +42,25 @@
     &--status-#{$status} {
       // background-color comes from background-color-index
 
-      .notification__status {
-        .status-icon__base {
+      .#{$grommet-namespace}notification__status {
+        .#{$grommet-namespace}status-icon__base {
           fill: $active-colored-text-color;
         }
 
-        .status-icon__detail {
+        .#{$grommet-namespace}status-icon__detail {
           stroke: $color;
           fill: $color;
         }
 
-        &.status-icon-unknown {
-          .status-icon__detail {
+        &.#{$grommet-namespace}status-icon-unknown {
+          .#{$grommet-namespace}status-icon__detail {
             stroke: $active-colored-text-color;
             fill: $active-colored-text-color;
           }
         }
       }
 
-      &:not(.notification--disabled) {
+      &:not(.#{$grommet-namespace}notification--disabled) {
         &:hover {
           box-shadow: 0px 0px 0px 2px $color;
         }

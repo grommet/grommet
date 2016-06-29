@@ -1,8 +1,9 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = "split";
+const CLASS_ROOT = CSSClassnames.SPLIT;
 const BREAK_WIDTH = 720; //adds the breakpoint of single/multiple split
 
 export default class Split extends Component {

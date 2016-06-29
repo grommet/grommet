@@ -2,8 +2,9 @@
 
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = 'radio-button';
+const CLASS_ROOT = CSSClassnames.RADIO_BUTTON;
 
 export default class RadioButton extends Component {
   render () {

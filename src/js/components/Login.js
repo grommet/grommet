@@ -1,6 +1,9 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
+import CSSClassnames from '../utils/CSSClassnames';
+
+const CLASS_ROOT = CSSClassnames.LOGIN;
 
 export default class Login extends Component {
   constructor(props, context) {
@@ -39,11 +42,11 @@ export default class Login extends Component {
   }
 
   render() {
-    var background = null;
+    var background;
     if (this.props.background) {
-      var classes = ['login__background'];
+      var classes = [`${CLASS_ROOT}__background`];
       if (this.state.orientation) {
-        classes.push('login__background--' + this.state.orientation);
+        classes.push(`${CLASS_ROOT}__background--${this.state.orientation}`);
       }
       background = (
         <img ref="background" className={classes.join(' ')}
@@ -52,9 +55,9 @@ export default class Login extends Component {
     }
 
     return (
-      <div className={"login"}>
+      <div className={CLASS_ROOT}>
         {background}
-        <div className={"login__container"}>
+        <div className={`${CLASS_ROOT}__container`}>
           {this.props.children}
         </div>
       </div>

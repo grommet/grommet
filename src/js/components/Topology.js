@@ -3,8 +3,11 @@
 import React, { Component, PropTypes } from 'react';
 import { findDOMNode } from 'react-dom';
 import Status from './icons/Status';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = "topology";
+const CLASS_ROOT = CSSClassnames.TOPOLOGY;
+const STATUS_ICON = CSSClassnames.STATUS_ICON;
+const BACKGROUND_COLOR_INDEX = CSSClassnames.BACKGROUND_COLOR_INDEX;
 
 class Label extends Component {
   render () {
@@ -192,7 +195,7 @@ export default class Topology extends Component {
     } else {
       let rect = element.getBoundingClientRect();
       // see if the element has a status child, use that if it does
-      let statusElements = element.querySelectorAll('.status-icon');
+      let statusElements = element.querySelectorAll(`.${STATUS_ICON}`);
       if (statusElements.length === 1) {
         rect = statusElements[0].getBoundingClientRect();
       }
@@ -331,7 +334,7 @@ export default class Topology extends Component {
     this.props.links.forEach(function (link) {
       if (link.colorIndex && ! colors[link.colorIndex]) {
         colorKeys.push(<div key={link.colorIndex} ref={link.colorIndex}
-          className={"background-color-index-" + link.colorIndex}></div>);
+          className={`${BACKGROUND_COLOR_INDEX}-${link.colorIndex}`}></div>);
         colors[link.colorIndex] = true;
       }
     });

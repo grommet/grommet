@@ -6,7 +6,10 @@ import Legend from './Legend';
 import Intl from '../utils/Intl';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 
-const CLASS_ROOT = "chart";
+import CSSClassnames from '../utils/CSSClassnames';
+
+const CLASS_ROOT = CSSClassnames.CHART;
+const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
 
 const DEFAULT_WIDTH = 384;
 const DEFAULT_HEIGHT = 192;
@@ -478,7 +481,7 @@ export default class Chart extends Component {
           const value = item.values[index];
           points.push(
             <circle key={index}
-              className={`${CLASS_ROOT}__values-point color-index-${colorIndex}`}
+              className={`${CLASS_ROOT}__values-point ${COLOR_INDEX}-${colorIndex}`}
               cx={x} cy={coordinate[1]} r={POINT_RADIUS} onClick={value.onClick} />
           );
         }
@@ -489,7 +492,7 @@ export default class Chart extends Component {
       let linePath;
       if ('line' === this.props.type || this.props.points) {
         let classes = [`${CLASS_ROOT}__values-line`,
-          `color-index-${colorIndex}`];
+          `${COLOR_INDEX}-${colorIndex}`];
         if (item.onClick) {
           classes.push(`${CLASS_ROOT}__values-line--active`);
         }
@@ -507,7 +510,7 @@ export default class Chart extends Component {
           'L' + coordinates[0][0] + ',' + bounds.graphBottom + 'Z';
         let areaCommands = commands + close;
         let classes = [`${CLASS_ROOT}__values-area`,
-          `color-index-${colorIndex}`];
+          `${COLOR_INDEX}-${colorIndex}`];
         if (item.onClick) {
           classes.push(`${CLASS_ROOT}__values-area--active`);
         }
@@ -553,7 +556,7 @@ export default class Chart extends Component {
         let stepBarBase = this._translateHeight(baseY);
         baseY += valueY;
 
-        let classes = [`${CLASS_ROOT}__values-bar`, `color-index-${colorIndex}`];
+        let classes = [`${CLASS_ROOT}__values-bar`, `${COLOR_INDEX}-${colorIndex}`];
         if (! this.props.legend ||
           'inline' === this.props.legend.position ||
           xIndex === this.state.highlightXIndex) {
@@ -714,7 +717,7 @@ export default class Chart extends Component {
 
     let bars = this.props.thresholds.map((item, index) => {
       let classes = [`${CLASS_ROOT}__bar`];
-      classes.push(`color-index-${(item.colorIndex || ('graph-' + (index + 1)))}`);
+      classes.push(`${COLOR_INDEX}-${(item.colorIndex || ('graph-' + (index + 1)))}`);
       if (index < (this.props.thresholds.length - 1)) {
         end = this.props.thresholds[index + 1].value;
       } else {
@@ -846,7 +849,7 @@ export default class Chart extends Component {
           let colorIndex = this._itemColorIndex(item, seriesIndex);
           return (
             <circle key={seriesIndex}
-              className={`${CLASS_ROOT}__cursor-point color-index-${colorIndex}`}
+              className={`${CLASS_ROOT}__cursor-point ${COLOR_INDEX}-${colorIndex}`}
               cx={x} cy={coordinates[1]} r={Math.round(POINT_RADIUS * 1.2)} />
           );
         });
@@ -929,7 +932,7 @@ export default class Chart extends Component {
       classes.push(`${CLASS_ROOT}--loading`);
       let valueClasses = [`${CLASS_ROOT}__values`];
       valueClasses.push(`${CLASS_ROOT}__values--loading`);
-      valueClasses.push("color-index-loading");
+      valueClasses.push(`${COLOR_INDEX}-loading`);
       let commands = "M0," + (this.state.height / 2) +
         " L" + this.state.width + "," + (this.state.height / 2);
       values.push(

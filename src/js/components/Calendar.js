@@ -11,8 +11,11 @@ import Button from './Button';
 import CalendarIcon from './icons/base/Calendar';
 import LinkPreviousIcon from './icons/base/LinkPrevious';
 import LinkNextIcon from './icons/base/LinkNext';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = "calendar";
+const CLASS_ROOT = CSSClassnames.CALENDAR;
+const FORM_FIELD = CSSClassnames.FORM_FIELD;
+
 
 export default class Calendar extends Component {
 
@@ -185,7 +188,7 @@ export default class Calendar extends Component {
 
       // If this is inside a FormField, place the drop in reference to it.
       const control =
-        findAncestor(this.refs.component, 'form-field') || this.refs.component;
+        findAncestor(this.refs.component, `.${FORM_FIELD}`) || this.refs.component;
       this._drop = Drop.add(control,
         this._renderDrop(), { align: {top: 'bottom', left: 'left'} });
 

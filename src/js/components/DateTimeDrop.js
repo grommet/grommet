@@ -10,8 +10,9 @@ import LinkPreviousIcon from './icons/base/LinkPrevious';
 import LinkNextIcon from './icons/base/LinkNext';
 import AddIcon from './icons/base/Add';
 import SubtractIcon from './icons/base/Subtract';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = "date-time-drop";
+const CLASS_ROOT = CSSClassnames.DATE_TIME_DROP;
 const WEEK_DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 const DATE_REGEXP = new RegExp('[MDY]');
 const TIME_REGEXP = new RegExp('[hHmsa]');

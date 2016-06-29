@@ -1,13 +1,13 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-.menu {
+.#{$grommet-namespace}menu {
   position: relative;
   @include inuit-font-size($menu-font-size);
 
   &:focus {
     outline: none;
 
-    &:not(.menu--expanded):after {
+    &:not(.#{$grommet-namespace}menu--expanded):after {
       content: '';
       position: absolute;
       top: 0px;
@@ -24,8 +24,8 @@
     flex: 0 0 auto;
   }
 
-  a:not(.button),
-  .anchor {
+  a:not(.#{$grommet-namespace}button),
+  .#{$grommet-namespace}anchor {
     text-decoration: none;
 
     &:hover {
@@ -42,26 +42,26 @@
     }
   }
 
-  &.menu--controlled {
+  &.#{$grommet-namespace}menu--controlled {
     display: inline-block;
     cursor: pointer;
   }
 }
 
-.menu__control {
-  &:focus:not(.button--disabled) {
+.#{$grommet-namespace}menu__control {
+  &:focus:not(.#{$grommet-namespace}button--disabled) {
     box-shadow: inset 0 0 1px 2px $focus-border-color;
   }
 
   &:hover {
-    .menu__control-label {
+    .#{$grommet-namespace}menu__control-label {
       #{$dark-background-context} & {
         color: $active-colored-text-color;
       }
     }
   }
 
-  .control-icon-down {
+  .#{$grommet-namespace}control-icon-down {
     width: halve($inuit-base-spacing-unit);
 
     path,
@@ -70,14 +70,14 @@
     }
   }
 
-  &.menu--labelled {
+  &.#{$grommet-namespace}menu--labelled {
     // IE11 fix to vertically center labelled menu control
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
       line-height: $inuit-base-spacing-unit;
     }
 
     // Removing icon transition style for labeled menus
-    .control-icon {
+    .#{$grommet-namespace}control-icon {
       @include media-query(lap-and-up) {
         transition: none;
       }
@@ -85,7 +85,7 @@
   }
 }
 
-.menu__drop {
+.#{$grommet-namespace}menu__drop {
   @include inuit-font-size($menu-font-size);
   max-height: 100vh;
 
@@ -94,7 +94,7 @@
     flex-shrink: 0;
   }
 
-  a:not(.anchor--disabled) {
+  a:not(.#{$grommet-namespace}anchor--disabled) {
     text-decoration: none;
 
     &:hover {
@@ -102,7 +102,7 @@
     }
   }
 
-  .anchor {
+  .#{$grommet-namespace}anchor {
     padding: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit;
     white-space: nowrap;
     display: block;
@@ -117,7 +117,7 @@
     }
   }
 
-  .menu__control {
+  .#{$grommet-namespace}menu__control {
     text-align: left;
 
     .grommet.rtl & {
@@ -125,19 +125,19 @@
     }
   }
 
-  .menu__label {
+  .#{$grommet-namespace}menu__label {
     padding: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit;
     font-weight: 600;
   }
 
-  &.menu__drop--align-right {
+  &.#{$grommet-namespace}menu__drop--align-right {
     text-align: right;
 
     .grommet.rtl & {
       text-align: left;
     }
 
-    .menu__control {
+    .#{$grommet-namespace}menu__control {
       text-align: right;
 
       .grommet.rtl & {
@@ -145,7 +145,7 @@
       }
     }
 
-    .menu__contents {
+    .#{$grommet-namespace}menu__contents {
       text-align: left;
 
       .grommet.rtl & {
@@ -154,36 +154,36 @@
     }
   }
 
-  .anchor__icon {
+  .#{$grommet-namespace}anchor__icon {
     padding-left: 0;
     vertical-align: middle;
   }
 
-  .anchor--reverse .anchor__icon {
+  .#{$grommet-namespace}anchor--reverse .#{$grommet-namespace}anchor__icon {
     padding-right: 0;
   }
 
-  &.menu__drop--small {
+  &.#{$grommet-namespace}menu__drop--small {
     @include inuit-font-size($small-menu-font-size);
 
-    .anchor__icon {
+    .#{$grommet-namespace}anchor__icon {
       padding-top: 0;
       padding-bottom: 0;
     }
   }
 
-  &.menu__drop--large {
+  &.#{$grommet-namespace}menu__drop--large {
     @include inuit-font-size($large-menu-font-size);
   }
 }
 
-.menu--inline {
+.#{$grommet-namespace}menu--inline {
 
-  &.menu--row {
+  &.#{$grommet-namespace}menu--row {
     line-height: double($inuit-base-spacing-unit);
 
-    &.box--justify-end {
-      > *:not(.control-icon) {
+    &.#{$grommet-namespace}box--justify-end {
+      > *:not(.#{$grommet-namespace}control-icon) {
         margin-left: $inuit-base-spacing-unit;
         margin-right: 0;
 
@@ -202,7 +202,7 @@
       }
     }
 
-    > *:not(.control-icon):not(.button) {
+    > *:not(.#{$grommet-namespace}control-icon):not(.#{$grommet-namespace}button) {
       margin-left: 0;
       margin-right: $inuit-base-spacing-unit;
 
@@ -221,7 +221,7 @@
     }
   }
 
-  &.box--direction-row.box--responsive {
+  &.#{$grommet-namespace}--direction-row.#{$grommet-namespace}box--responsive {
     @include media-query(palm) {
       > * {
         margin-right: 0;
@@ -233,28 +233,28 @@
     }
   }
 
-  &.box--direction-column {
-    a:not(.button) {
+  &.#{$grommet-namespace}box--direction-column {
+    a:not(.#{$grommet-namespace}button) {
       margin-bottom: quarter($inuit-base-spacing-unit);
     }
   }
 
-  &.menu--small {
+  &.#{$grommet-namespace}menu--small {
     @include inuit-font-size($small-menu-font-size, inherit);
   }
 
-  &.menu--large {
+  &.#{$grommet-namespace}menu--large {
     @include inuit-font-size($large-menu-font-size, inherit);
   }
 }
 
-.menu--primary {
+.#{$grommet-namespace}menu--primary {
 
-  > .menu {
+  > .#{$grommet-namespace}menu {
     width: 100%;
   }
 
-  > a:not(.button) {
+  > a:not(.#{$grommet-namespace}button) {
     padding: quarter($inuit-base-spacing-unit) $inuit-base-spacing-unit;
     margin-bottom: 0px;
     width: 100%;
@@ -281,7 +281,7 @@
   }
 
   @include media-query(palm) {
-    &.menu--down {
+    &.#{$grommet-namespace}menu--down {
       display: block;
 
       > * {
@@ -291,8 +291,8 @@
   }
 }
 
-.menu--inline.menu:not(.box--direction-row),
-.menu__drop {
+.#{$grommet-namespace}menu--inline.#{$grommet-namespace}menu:not(.#{$grommet-namespace}box--direction-row),
+.#{$grommet-namespace}menu__drop {
 
   > hr {
     margin: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit
@@ -302,7 +302,7 @@
     border: none;
   }
 
-  .menu__control-label {
+  .#{$grommet-namespace}menu__control-label {
     font-size: $control-font-size;
   }
 
@@ -310,8 +310,8 @@
     text-decoration: none;
   }
 
-  &.box--direction-column {
-    > .menu:not(:first-of-type) {
+  &.#{$grommet-namespace}box--direction-column {
+    > .#{$grommet-namespace}menu:not(:first-of-type) {
       h2,
       h3 {
         margin-top: $inuit-base-spacing-unit;
@@ -320,7 +320,7 @@
   }
 
   // Customize the separator for nested menus
-  &.box.box--separator-top {
+  &.#{$grommet-namespace}box.#{$grommet-namespace}box--separator-top {
     border-color: transparent;
 
     &:before {
@@ -332,32 +332,32 @@
     }
   }
 
-  &.menu--small {
+  &.#{$grommet-namespace}menu--small {
     > a {
       padding: quarter($inuit-base-spacing-unit) 0;
     }
   }
 
-  &.menu--large {
+  &.#{$grommet-namespace}menu--large {
     > a {
       padding: $inuit-base-spacing-unit 0;
     }
   }
 
   @include media-query(palm) {
-    &.box--responsive {
+    &.#{$grommet-namespace}box--responsive {
 
       > * {
         margin-left: 0px;
         margin-right: 0px;
       }
 
-      .button {
+      .#{$grommet-namespace}button {
         width: 100%;
         margin-bottom: halve($inuit-base-spacing-unit);
       }
 
-      .menu {
+      .#{$grommet-namespace}menu {
         margin-bottom: round($inuit-base-spacing-unit * 1.5);
       }
     }
@@ -365,12 +365,12 @@
 }
 
 @include media-query(palm) {
-  .menu__drop {
+  .#{$grommet-namespace}menu__drop {
     max-width: 100%;
 
     // remove extra space under mobile menu drop button
-    &.box--responsive {
-      .button {
+    &.#{$grommet-namespace}box--responsive {
+      .#{$grommet-namespace}button {
         margin-bottom: 0;
       }
     }

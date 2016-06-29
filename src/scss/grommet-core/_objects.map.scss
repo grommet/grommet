@@ -1,4 +1,4 @@
-.map {
+.#{$grommet-namespace}map {
   position: relative;
   padding: $inuit-base-spacing-unit;
 
@@ -63,7 +63,7 @@
       }
     }
 
-    .status-icon {
+    .#{$grommet-namespace}status-icon {
       margin-right: quarter($inuit-base-spacing-unit);
     }
 

@@ -7,8 +7,9 @@ import FormField from './FormField';
 import CheckBox from './CheckBox';
 import Button from './Button';
 import Footer from './Footer';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = "login-form";
+const CLASS_ROOT = CSSClassnames.LOGIN_FORM;
 
 export default class LoginForm extends Component {
 

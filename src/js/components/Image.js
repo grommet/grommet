@@ -4,8 +4,9 @@ import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 
 import Label from './Label';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = 'image';
+const CLASS_ROOT = CSSClassnames.IMAGE;
 
 export default class Image extends Component {
   render () {

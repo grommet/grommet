@@ -6,8 +6,9 @@ import classnames from 'classnames';
 import Box from './Box';
 import SkipLinkAnchor from './SkipLinkAnchor';
 import Props from '../utils/Props';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = 'footer';
+const CLASS_ROOT = CSSClassnames.FOOTER;
 
 export default class Footer extends Component {
 

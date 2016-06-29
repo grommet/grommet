@@ -2,8 +2,9 @@
 
 import React, { PropTypes, Component } from 'react';
 import classnames from 'classnames';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = 'headline';
+const CLASS_ROOT = CSSClassnames.HEADLINE;
 
 export default class Headline extends Component {
   render () {

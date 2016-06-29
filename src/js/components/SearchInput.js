@@ -8,8 +8,10 @@ import { findAncestor } from '../utils/DOM';
 import Button from './Button';
 
 import SearchIcon from './icons/base/Search';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = "search-input";
+const CLASS_ROOT = CSSClassnames.SEARCH_INPUT;
+const FORM_FIELD = CSSClassnames.FORM_FIELD;
 
 export default class SearchInput extends Component {
 
@@ -72,7 +74,7 @@ export default class SearchInput extends Component {
 
       // If this is inside a FormField, place the drop in reference to it.
       const control =
-        findAncestor(this.refs.component, 'form-field') || this.refs.component;
+        findAncestor(this.refs.component, FORM_FIELD) || this.refs.component;
       this._drop = Drop.add(control,
         this._renderDrop(), { align: {top: 'bottom', left: 'left'} });
     } else if (this.state.dropActive && prevState.dropActive) {

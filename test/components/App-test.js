@@ -5,6 +5,9 @@ import React from 'react';
 import TestUtils from 'react-addons-test-utils';
 
 import App from '../../src/js/components/App';
+import CSSClassnames from '../../src/js/utils/CSSClassnames';
+
+const CLASS_ROOT = CSSClassnames.APP;
 
 test('loads a basic App', (t) => {
   t.plan(1);
@@ -12,7 +15,7 @@ test('loads a basic App', (t) => {
   shallowRenderer.render(React.createElement(App));
   const appElement = shallowRenderer.getRenderOutput();
 
-  if (appElement.props.className.indexOf('app') > -1) {
+  if (appElement.props.className.indexOf(CLASS_ROOT) > -1) {
     t.pass('App has class');
   } else {
     t.fail('App does not have app class');
@@ -25,7 +28,7 @@ test('loads an inline App', (t) => {
   shallowRenderer.render(React.createElement(App, {inline: true}));
   const appElement = shallowRenderer.getRenderOutput();
 
-  if (appElement.props.className.indexOf('app--inline') > -1) {
+  if (appElement.props.className.indexOf(`${CLASS_ROOT}--inline`) > -1) {
     t.pass('App has inline class');
   } else {
     t.fail('App does not have inline class');
@@ -59,7 +62,7 @@ test('loads an App with body', (t) => {
   );
   const appElement = shallowRenderer.getRenderOutput();
 
-  if (appElement.props.className.indexOf('app') > -1) {
+  if (appElement.props.className.indexOf(CLASS_ROOT) > -1) {
     t.pass('App has class');
   } else {
     t.fail('App does not have app class');

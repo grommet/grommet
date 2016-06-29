@@ -4,9 +4,9 @@ import React, { Component, PropTypes } from 'react';
 import Anchor from './Anchor';
 import SocialTwitterIcon from './icons/base/SocialTwitter';
 import SocialFacebookIcon from './icons/base/SocialFacebook';
-import SocialGoogleIcon from 'grommet/components/icons/base/SocialGoogle';
-import SocialLinkedinIcon from 'grommet/components/icons/base/SocialLinkedin';
-import SocialEmailIcon from 'grommet/components/icons/base/SocialEmail';
+import SocialGoogleIcon from './icons/base/SocialGoogle';
+import SocialLinkedinIcon from './icons/base/SocialLinkedin';
+import SocialEmailIcon from './icons/base/SocialEmail';
 
 export default class SocialShare extends Component {
   render () {

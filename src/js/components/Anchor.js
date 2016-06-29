@@ -4,7 +4,9 @@ import React, { Children, Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import LinkNextIcon from './icons/base/LinkNext';
 
-const CLASS_ROOT = 'anchor';
+import CSSClassnames from '../utils/CSSClassnames';
+
+const CLASS_ROOT = CSSClassnames.ANCHOR;
 
 export default class Anchor extends Component {
 

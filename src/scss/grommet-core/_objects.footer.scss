@@ -1,11 +1,11 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-.footer {
+.#{$grommet-namespace}footer {
   min-height: $footer-height;
   line-height: $footer-height;
   width: 100%;
 
-  &.box--direction-row {
+  &.#{$grommet-namespace}--direction-row {
     > h1,
     > h2,
     > h3,
@@ -15,14 +15,12 @@
   }
 }
 
-.footer__content {
+.#{$grommet-namespace}footer__content {
   display: flex;
   justify-content: space-between;
   width: 100%;
   padding-left: $inuit-base-spacing-unit;
   padding-right: $inuit-base-spacing-unit;
-
-  @include flexible();
 
   > * {
     margin-right: double($inuit-base-spacing-unit);
@@ -34,11 +32,11 @@
   }
 }
 
-.footer--primary {
+.#{$grommet-namespace}footer--primary {
   height: auto;
   padding: $inuit-base-spacing-unit;
 
-  .footer__content {
+  .#{$grommet-namespace}footer__content {
     position: relative;
     color: $secondary-text-color;
     display: block;
@@ -53,8 +51,8 @@
   }
 }
 
-.footer--centered {
-  .footer__content {
+.#{$grommet-namespace}footer--centered {
+  .#{$grommet-namespace}footer__content {
     display: block;
     text-align: center;
 
@@ -66,26 +64,26 @@
   }
 }
 
-.footer--flush {
-  .footer__content,
-  .footer__wrapper {
+.#{$grommet-namespace}footer--flush {
+  .#{$grommet-namespace}footer__content,
+  .#{$grommet-namespace}footer__wrapper {
     padding-left: 0px;
     padding-right: 0px;
   }
 }
 
-.footer--large {
+.#{$grommet-namespace}footer--large {
   min-height: $large-footer-height;
   line-height: $large-footer-height;
 }
 
-.footer--small {
+.#{$grommet-namespace}footer--small {
   min-height: $small-footer-height;
   line-height: $small-footer-height;
 }
 
-.footer--fixed {
-  .footer__wrapper {
+.#{$grommet-namespace}footer--fixed {
+  .#{$grommet-namespace}footer__wrapper {
     position: absolute;
     bottom: 0px;
     left: 0px;
@@ -93,31 +91,31 @@
     z-index: 3;
 
     &--fill {
-      .footer__wrapper {
+      .#{$grommet-namespace}footer__wrapper {
         background-color: $footer-background-color;
       }
     }
   }
 
-  &.footer--primary {
-    .footer__wrapper {
+  &.#{$grommet-namespace}footer--primary {
+    .#{$grommet-namespace}footer__wrapper {
       position: fixed;
 
       &--fill {
-        .footer__wrapper {
+        .#{$grommet-namespace}footer__wrapper {
           background-color: $footer-background-color;
         }
       }
     }
 
-    .footer__content {
+    .#{$grommet-namespace}footer__content {
       position: static;
       background-color: transparent;
     }
   }
 }
 
-.footer__container {
+.#{$grommet-namespace}footer__container {
   flex-shrink: 0;
 
   &--float {
@@ -128,7 +126,7 @@
   }
 
   &--fill {
-    .footer {
+    .#{$grommet-namespace}footer {
       background-color: $footer-background-color;
     }
   }
@@ -137,7 +135,7 @@
     position: relative;
     width: 100%;
 
-    .footer__wrapper {
+    .#{$grommet-namespace}footer__wrapper {
       position: absolute;
       bottom: 0px;
       left: 0px;
@@ -147,7 +145,7 @@
   }
 }
 
-.footer__wrapper {
+.#{$grommet-namespace}footer__wrapper {
   height: $footer-height;
 
   &--large {
@@ -159,7 +157,7 @@
   }
 }
 
-*:not(.footer__container--float) > .footer--float {
+*:not(.#{$grommet-namespace}footer__container--float) > .#{$grommet-namespace}footer--float {
   position: fixed;
   bottom: 0px;
   left: 0px;

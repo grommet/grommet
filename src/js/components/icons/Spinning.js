@@ -1,8 +1,9 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 import React, { Component } from 'react';
+import CSSClassnames from '../../utils/CSSClassnames';
 
-var CLASS_ROOT = "icon-spinning";
+const CLASS_ROOT = CSSClassnames.SPINNING;
 
 export default class Spinning extends Component {
   render () {

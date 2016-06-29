@@ -5,6 +5,9 @@ import React from 'react';
 import TestUtils from 'react-addons-test-utils';
 
 import Attribute from '../../src/js/components/Attribute';
+import CSSClassnames from '../../src/js/utils/CSSClassnames';
+
+const CLASS_ROOT = CSSClassnames.ATTRIBUTE;
 
 test('loads a basic Attribute', (t) => {
   t.plan(6);
@@ -15,7 +18,7 @@ test('loads a basic Attribute', (t) => {
   }));
   const attributeElement = shallowRenderer.getRenderOutput();
 
-  if (attributeElement.props.className.indexOf('attribute') > -1) {
+  if (attributeElement.props.className.indexOf(CLASS_ROOT) > -1) {
     t.pass('Attribute has class');
   } else {
     t.fail('Atribute does not have class');
@@ -26,7 +29,7 @@ test('loads a basic Attribute', (t) => {
   );
 
   const labelElement = attributeElement.props.children[0];
-  if (labelElement.props.className.indexOf('attribute__label') > -1) {
+  if (labelElement.props.className.indexOf(`${CLASS_ROOT}__label`) > -1) {
     t.pass('Attribute has label class');
   } else {
     t.fail('Atribute does not have label class');
@@ -37,7 +40,7 @@ test('loads a basic Attribute', (t) => {
   );
 
   const contentsElement = attributeElement.props.children[1];
-  if (contentsElement.props.className.indexOf('attribute__contents') > -1) {
+  if (contentsElement.props.className.indexOf(`${CLASS_ROOT}__contents`) > -1) {
     t.pass('Attribute has contents class');
   } else {
     t.fail('Atribute does not have contents class');

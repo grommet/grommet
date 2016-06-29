@@ -3,7 +3,9 @@
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 
-const CLASS_ROOT = 'columns';
+import CSSClassnames from '../utils/CSSClassnames';
+
+const CLASS_ROOT = CSSClassnames.COLUMNS;
 
 export default class Columns extends Component {
 
