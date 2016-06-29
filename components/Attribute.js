@@ -56,6 +56,7 @@ var Attribute = function (_Component) {
   return Attribute;
 }(_react.Component);
 
+Attribute.displayName = 'Attribute';
 exports.default = Attribute;
 ;
 

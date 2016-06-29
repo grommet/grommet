@@ -360,6 +360,7 @@ var Video = function (_Component) {
   return Video;
 }(_react.Component);
 
+Video.displayName = 'Video';
 exports.default = Video;
 
 

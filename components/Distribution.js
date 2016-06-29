@@ -651,6 +651,7 @@ var Distribution = function (_Component) {
   return Distribution;
 }(_react.Component);
 
+Distribution.displayName = 'Distribution';
 exports.default = Distribution;
 
 

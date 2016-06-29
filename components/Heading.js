@@ -69,6 +69,7 @@ var Heading = function (_Component) {
   return Heading;
 }(_react.Component);
 
+Heading.displayName = 'Heading';
 exports.default = Heading;
 
 

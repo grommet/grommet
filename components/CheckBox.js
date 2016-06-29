@@ -110,6 +110,7 @@ var CheckBox = function (_Component) {
   return CheckBox;
 }(_react.Component);
 
+CheckBox.displayName = 'CheckBox';
 exports.default = CheckBox;
 
 

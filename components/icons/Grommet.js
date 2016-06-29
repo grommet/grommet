@@ -75,6 +75,7 @@ var Grommet = function (_Component) {
   return Grommet;
 }(_react.Component);
 
+Grommet.displayName = 'Grommet';
 exports.default = Grommet;
 
 

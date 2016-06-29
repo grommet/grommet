@@ -210,6 +210,7 @@ var Box = function (_Component) {
   return Box;
 }(_react.Component);
 
+Box.displayName = 'Box';
 exports.default = Box;
 
 

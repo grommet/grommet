@@ -117,6 +117,7 @@ var GrommetObject = function (_Component) {
   return GrommetObject;
 }(_react.Component);
 
+GrommetObject.displayName = 'GrommetObject';
 exports.default = GrommetObject;
 
 

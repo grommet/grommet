@@ -53,6 +53,7 @@ var FormFields = function (_Component) {
   return FormFields;
 }(_react.Component);
 
+FormFields.displayName = 'FormFields';
 exports.default = FormFields;
 ;
 module.exports = exports['default'];

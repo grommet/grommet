@@ -139,6 +139,7 @@ var Brick = function (_Component) {
   return Brick;
 }(_react.Component);
 
+Brick.displayName = 'Brick';
 exports.default = Brick;
 ;
 

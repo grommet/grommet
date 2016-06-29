@@ -94,6 +94,7 @@ var SocialShare = function (_Component) {
   return SocialShare;
 }(_react.Component);
 
+SocialShare.displayName = 'SocialShare';
 exports.default = SocialShare;
 ;
 

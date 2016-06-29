@@ -352,6 +352,7 @@ var Carousel = function (_Component) {
   return Carousel;
 }(_react.Component);
 
+Carousel.displayName = 'Carousel';
 exports.default = Carousel;
 
 

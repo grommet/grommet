@@ -76,6 +76,7 @@ var OK = function (_Component) {
   return OK;
 }(_react.Component);
 
+OK.displayName = 'OK';
 exports.default = OK;
 
 

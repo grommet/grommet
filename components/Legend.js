@@ -172,6 +172,7 @@ var Legend = function (_Component) {
   return Legend;
 }(_react.Component);
 
+Legend.displayName = 'Legend';
 exports.default = Legend;
 
 

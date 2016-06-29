@@ -53,6 +53,7 @@ var Bricks = function (_Component) {
   return Bricks;
 }(_react.Component);
 
+Bricks.displayName = 'Bricks';
 exports.default = Bricks;
 ;
 

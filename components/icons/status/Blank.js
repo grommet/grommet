@@ -66,5 +66,6 @@ var Blank = function (_Component) {
   return Blank;
 }(_react.Component);
 
+Blank.displayName = 'Blank';
 exports.default = Blank;
 module.exports = exports['default'];

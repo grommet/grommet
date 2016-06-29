@@ -49,6 +49,7 @@ var SkipLinkAnchor = function (_Component) {
   return SkipLinkAnchor;
 }(_react.Component);
 
+SkipLinkAnchor.displayName = 'SkipLinkAnchor';
 exports.default = SkipLinkAnchor;
 ;
 

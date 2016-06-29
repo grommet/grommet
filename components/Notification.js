@@ -140,6 +140,7 @@ var Notification = function (_Component) {
   return Notification;
 }(_react.Component);
 
+Notification.displayName = 'Notification';
 exports.default = Notification;
 ;
 

@@ -78,6 +78,7 @@ var CriticalStatus = function (_Component) {
   return CriticalStatus;
 }(_react.Component);
 
+CriticalStatus.displayName = 'CriticalStatus';
 exports.default = CriticalStatus;
 
 

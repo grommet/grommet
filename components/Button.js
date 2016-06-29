@@ -91,6 +91,7 @@ var Button = function (_Component) {
   return Button;
 }(_react.Component);
 
+Button.displayName = 'Button';
 exports.default = Button;
 ;
 

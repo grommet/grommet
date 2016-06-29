@@ -202,6 +202,7 @@ var LoginForm = function (_Component) {
   return LoginForm;
 }(_react.Component);
 
+LoginForm.displayName = 'LoginForm';
 exports.default = LoginForm;
 
 

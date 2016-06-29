@@ -91,6 +91,7 @@ var Tile = function (_Component) {
   return Tile;
 }(_react.Component);
 
+Tile.displayName = 'Tile';
 exports.default = Tile;
 
 

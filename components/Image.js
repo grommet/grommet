@@ -82,6 +82,7 @@ var Image = function (_Component) {
   return Image;
 }(_react.Component);
 
+Image.displayName = 'Image';
 exports.default = Image;
 ;
 

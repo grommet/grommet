@@ -177,6 +177,9 @@ var LayerContents = function (_Component) {
   return LayerContents;
 }(_react.Component);
 
+LayerContents.displayName = 'LayerContents';
+
+
 LayerContents.propTypes = {
   a11yTitle: _react.PropTypes.string,
   closer: _react.PropTypes.oneOfType([_react.PropTypes.node, _react.PropTypes.bool]),
@@ -322,6 +325,7 @@ var Layer = function (_Component2) {
   return Layer;
 }(_react.Component);
 
+Layer.displayName = 'Layer';
 exports.default = Layer;
 
 

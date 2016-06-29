@@ -550,6 +550,7 @@ var Meter = function (_Component) {
   return Meter;
 }(_react.Component);
 
+Meter.displayName = 'Meter';
 exports.default = Meter;
 
 

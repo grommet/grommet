@@ -68,6 +68,7 @@ var TableRow = function (_Component) {
   return TableRow;
 }(_react.Component);
 
+TableRow.displayName = 'TableRow';
 exports.default = TableRow;
 ;
 

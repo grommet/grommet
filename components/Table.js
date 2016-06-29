@@ -292,6 +292,7 @@ var Table = function (_Component) {
   return Table;
 }(_react.Component);
 
+Table.displayName = 'Table';
 exports.default = Table;
 
 

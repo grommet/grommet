@@ -157,6 +157,7 @@ var Footer = function (_Component) {
   return Footer;
 }(_react.Component);
 
+Footer.displayName = 'Footer';
 exports.default = Footer;
 ;
 

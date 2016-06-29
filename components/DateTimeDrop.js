@@ -327,6 +327,7 @@ var DateTimeDrop = function (_Component) {
   return DateTimeDrop;
 }(_react.Component);
 
+DateTimeDrop.displayName = 'DateTimeDrop';
 exports.default = DateTimeDrop;
 
 

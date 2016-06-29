@@ -1093,6 +1093,7 @@ var Chart = function (_Component) {
   return Chart;
 }(_react.Component);
 
+Chart.displayName = 'Chart';
 exports.default = Chart;
 
 

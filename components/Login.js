@@ -99,6 +99,7 @@ var Login = function (_Component) {
   return Login;
 }(_react.Component);
 
+Login.displayName = 'Login';
 exports.default = Login;
 
 

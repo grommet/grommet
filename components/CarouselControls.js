@@ -85,6 +85,7 @@ var CarouselControls = function (_Component) {
   return CarouselControls;
 }(_react.Component);
 
+CarouselControls.displayName = 'CarouselControls';
 exports.default = CarouselControls;
 
 

@@ -69,6 +69,7 @@ var Tags = function (_Component) {
   return Tags;
 }(_react.Component);
 
+Tags.displayName = 'Tags';
 exports.default = Tags;
 
 

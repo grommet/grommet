@@ -59,6 +59,7 @@ var Paragraph = function (_Component) {
   return Paragraph;
 }(_react.Component);
 
+Paragraph.displayName = 'Paragraph';
 exports.default = Paragraph;
 ;
 

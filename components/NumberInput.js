@@ -139,6 +139,7 @@ var NumberInput = function (_Component) {
   return NumberInput;
 }(_react.Component);
 
+NumberInput.displayName = 'NumberInput';
 exports.default = NumberInput;
 
 

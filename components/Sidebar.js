@@ -69,6 +69,7 @@ var Sidebar = function (_Component) {
   return Sidebar;
 }(_react.Component);
 
+Sidebar.displayName = 'Sidebar';
 exports.default = Sidebar;
 ;
 

@@ -55,6 +55,8 @@ var Label = function (_Component) {
   return Label;
 }(_react.Component);
 
+Label.displayName = 'Label';
+
 var Part = function (_Component2) {
   _inherits(Part, _Component2);
 
@@ -118,6 +120,9 @@ var Part = function (_Component2) {
 
   return Part;
 }(_react.Component);
+
+Part.displayName = 'Part';
+
 
 Part.propTypes = {
   align: _react.PropTypes.oneOf(['start', 'center', 'between', 'end', 'stretch']),
@@ -203,6 +208,9 @@ var Parts = function (_Component3) {
 
   return Parts;
 }(_react.Component);
+
+Parts.displayName = 'Parts';
+
 
 Parts.propTypes = {
   align: _react.PropTypes.oneOf(['start', 'center', 'between', 'end', 'stretch']),
@@ -446,6 +454,7 @@ var Topology = function (_Component4) {
   return Topology;
 }(_react.Component);
 
+Topology.displayName = 'Topology';
 exports.default = Topology;
 
 

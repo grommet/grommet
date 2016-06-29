@@ -116,6 +116,7 @@ var Columns = function (_Component) {
   return Columns;
 }(_react.Component);
 
+Columns.displayName = 'Columns';
 exports.default = Columns;
 
 

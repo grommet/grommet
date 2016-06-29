@@ -113,6 +113,7 @@ var Status = function (_Component) {
   return Status;
 }(_react.Component);
 
+Status.displayName = 'Status';
 exports.default = Status;
 
 

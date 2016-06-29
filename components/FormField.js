@@ -148,6 +148,7 @@ var FormField = function (_Component) {
   return FormField;
 }(_react.Component);
 
+FormField.displayName = 'FormField';
 exports.default = FormField;
 
 

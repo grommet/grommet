@@ -63,6 +63,7 @@ var Section = function (_Component) {
   return Section;
 }(_react.Component);
 
+Section.displayName = 'Section';
 exports.default = Section;
 ;
 

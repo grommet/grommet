@@ -293,6 +293,9 @@ var MenuDrop = function (_Component) {
   return MenuDrop;
 }(_react.Component);
 
+MenuDrop.displayName = 'MenuDrop';
+
+
 MenuDrop.propTypes = _extends({}, _Box2.default.propTypes, {
   control: _react.PropTypes.node,
   dropAlign: _Drop2.default.alignPropType,
@@ -572,6 +575,7 @@ var Menu = function (_Component2) {
   return Menu;
 }(_react.Component);
 
+Menu.displayName = 'Menu';
 exports.default = Menu;
 
 

@@ -199,6 +199,7 @@ var SkipLinks = function (_Component) {
   return SkipLinks;
 }(_react.Component);
 
+SkipLinks.displayName = 'SkipLinks';
 exports.default = SkipLinks;
 
 

@@ -118,6 +118,7 @@ var Tabs = function (_Component) {
   return Tabs;
 }(_react.Component);
 
+Tabs.displayName = 'Tabs';
 exports.default = Tabs;
 
 

@@ -57,6 +57,7 @@ var Headline = function (_Component) {
   return Headline;
 }(_react.Component);
 
+Headline.displayName = 'Headline';
 exports.default = Headline;
 ;
 

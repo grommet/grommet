@@ -173,6 +173,7 @@ var WorldMap = function (_Component) {
   return WorldMap;
 }(_react.Component);
 
+WorldMap.displayName = 'WorldMap';
 exports.default = WorldMap;
 
 

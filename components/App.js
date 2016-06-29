@@ -105,6 +105,7 @@ var App = function (_Component) {
   return App;
 }(_react.Component);
 
+App.displayName = 'App';
 exports.default = App;
 
 

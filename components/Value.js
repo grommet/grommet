@@ -95,6 +95,7 @@ var Value = function (_Component) {
   return Value;
 }(_react.Component);
 
+Value.displayName = 'Value';
 exports.default = Value;
 
 

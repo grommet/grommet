@@ -147,6 +147,7 @@ var ImageField = function (_Component) {
   return ImageField;
 }(_react.Component);
 
+ImageField.displayName = 'ImageField';
 exports.default = ImageField;
 
 

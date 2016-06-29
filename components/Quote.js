@@ -83,6 +83,7 @@ var Quote = function (_Component) {
   return Quote;
 }(_react.Component);
 
+Quote.displayName = 'Quote';
 exports.default = Quote;
 ;
 

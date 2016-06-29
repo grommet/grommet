@@ -96,6 +96,7 @@ var SVGIcon = function (_Component) {
   return SVGIcon;
 }(_react.Component);
 
+SVGIcon.displayName = 'SVGIcon';
 exports.default = SVGIcon;
 ;
 

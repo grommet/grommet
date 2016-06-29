@@ -156,6 +156,7 @@ var Header = function (_Component) {
   return Header;
 }(_react.Component);
 
+Header.displayName = 'Header';
 exports.default = Header;
 
 

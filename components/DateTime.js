@@ -322,6 +322,7 @@ var DateTime = function (_Component) {
   return DateTime;
 }(_react.Component);
 
+DateTime.displayName = 'DateTime';
 exports.default = DateTime;
 
 

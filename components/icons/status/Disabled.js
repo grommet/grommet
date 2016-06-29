@@ -76,6 +76,7 @@ var Disabled = function (_Component) {
   return Disabled;
 }(_react.Component);
 
+Disabled.displayName = 'Disabled';
 exports.default = Disabled;
 
 

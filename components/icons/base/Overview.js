@@ -88,6 +88,7 @@ var Icon = function (_Component) {
   return Icon;
 }(_react.Component);
 
+Icon.displayName = 'Icon';
 exports.default = Icon;
 ;
 

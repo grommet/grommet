@@ -209,6 +209,7 @@ var ResourceMap = function (_Component) {
   return ResourceMap;
 }(_react.Component);
 
+ResourceMap.displayName = 'ResourceMap';
 exports.default = ResourceMap;
 
 

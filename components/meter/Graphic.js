@@ -396,6 +396,7 @@ var Graphic = function (_Component) {
   return Graphic;
 }(_react.Component);
 
+Graphic.displayName = 'Graphic';
 exports.default = Graphic;
 
 

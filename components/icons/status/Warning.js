@@ -77,6 +77,7 @@ var Warning = function (_Component) {
   return Warning;
 }(_react.Component);
 
+Warning.displayName = 'Warning';
 exports.default = Warning;
 
 

@@ -664,6 +664,7 @@ var Article = function (_Component) {
   return Article;
 }(_react.Component);
 
+Article.displayName = 'Article';
 exports.default = Article;
 
 

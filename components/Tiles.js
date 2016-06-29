@@ -344,6 +344,7 @@ var Tiles = function (_Component) {
   return Tiles;
 }(_react.Component);
 
+Tiles.displayName = 'Tiles';
 exports.default = Tiles;
 
 

@@ -120,6 +120,7 @@ var Timestamp = function (_Component) {
   return Timestamp;
 }(_react.Component);
 
+Timestamp.displayName = 'Timestamp';
 exports.default = Timestamp;
 
 

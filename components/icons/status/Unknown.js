@@ -77,5 +77,6 @@ var Unknown = function (_Component) {
   return Unknown;
 }(_react.Component);
 
+Unknown.displayName = 'Unknown';
 exports.default = Unknown;
 module.exports = exports['default'];

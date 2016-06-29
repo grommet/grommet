@@ -65,6 +65,7 @@ var Form = function (_Component) {
   return Form;
 }(_react.Component);
 
+Form.displayName = 'Form';
 exports.default = Form;
 ;
 

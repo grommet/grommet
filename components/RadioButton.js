@@ -67,6 +67,7 @@ var RadioButton = function (_Component) {
   return RadioButton;
 }(_react.Component);
 
+RadioButton.displayName = 'RadioButton';
 exports.default = RadioButton;
 ;
 

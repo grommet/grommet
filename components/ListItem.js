@@ -80,6 +80,7 @@ var ListItem = function (_Component) {
   return ListItem;
 }(_react.Component);
 
+ListItem.displayName = 'ListItem';
 exports.default = ListItem;
 ;
 

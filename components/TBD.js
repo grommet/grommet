@@ -47,5 +47,6 @@ var TBD = function (_Component) {
   return TBD;
 }(_react.Component);
 
+TBD.displayName = 'TBD';
 exports.default = TBD;
 module.exports = exports['default'];

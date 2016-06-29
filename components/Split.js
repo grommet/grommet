@@ -149,6 +149,7 @@ var Split = function (_Component) {
   return Split;
 }(_react.Component);
 
+Split.displayName = 'Split';
 exports.default = Split;
 
 

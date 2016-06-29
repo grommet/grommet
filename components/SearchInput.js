@@ -291,6 +291,7 @@ var SearchInput = function (_Component) {
   return SearchInput;
 }(_react.Component);
 
+SearchInput.displayName = 'SearchInput';
 exports.default = SearchInput;
 
 

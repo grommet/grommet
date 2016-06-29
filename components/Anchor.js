@@ -102,6 +102,7 @@ var Anchor = function (_Component) {
   return Anchor;
 }(_react.Component);
 
+Anchor.displayName = 'Anchor';
 exports.default = Anchor;
 ;
 

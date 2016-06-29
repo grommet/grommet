@@ -172,6 +172,7 @@ var List = function (_Component) {
   return List;
 }(_react.Component);
 
+List.displayName = 'List';
 exports.default = List;
 
 

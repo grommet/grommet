@@ -55,5 +55,6 @@ var Label = function (_Component) {
   return Label;
 }(_react.Component);
 
+Label.displayName = 'Label';
 exports.default = Label;
 module.exports = exports['default'];

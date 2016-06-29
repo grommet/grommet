@@ -61,5 +61,6 @@ var Spinning = function (_Component) {
   return Spinning;
 }(_react.Component);
 
+Spinning.displayName = 'Spinning';
 exports.default = Spinning;
 module.exports = exports['default'];

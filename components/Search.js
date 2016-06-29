@@ -425,6 +425,7 @@ var Search = function (_Component) {
   return Search;
 }(_react.Component);
 
+Search.displayName = 'Search';
 exports.default = Search;
 
 

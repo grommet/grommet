@@ -92,6 +92,7 @@ var Title = function (_Component) {
   return Title;
 }(_react.Component);
 
+Title.displayName = 'Title';
 exports.default = Title;
 
 

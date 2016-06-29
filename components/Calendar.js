@@ -396,6 +396,7 @@ var Calendar = function (_Component) {
   return Calendar;
 }(_react.Component);
 
+Calendar.displayName = 'Calendar';
 exports.default = Calendar;
 
 
