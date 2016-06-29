@@ -1,6 +1,6 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-.control-icon {
+.#{$grommet-namespace}control-icon {
   display: inline-block;
   width: $inuit-base-spacing-unit;
   height: $inuit-base-spacing-unit;
@@ -77,26 +77,26 @@
   }
 }
 
-.status-icon {
+.#{$grommet-namespace}status-icon {
   width: $inuit-base-spacing-unit;
   height: $inuit-base-spacing-unit;
   vertical-align: middle;
   flex: 0 0 auto;
 
-  .status-icon__base {
+  .#{$grommet-namespace}status-icon__base {
     fill: map-get($brand-status-colors, unknown);
   }
 
   @each $status, $color in $brand-status-colors {
     .control-icon-#{$status} {
-      .status-icon__base {
+      .#{$grommet-namespace}status-icon__base {
         fill: $color;
       }
     }
   }
 
   &-label {
-    .status-icon__base {
+    .#{$grommet-namespace}status-icon__base {
       fill: map-get($brand-status-colors, unknown);
     }
   }
@@ -107,7 +107,7 @@
   }
 
   &-unknown {
-    .status-icon__detail {
+    .#{$grommet-namespace}status-icon__detail {
       fill: map-get($brand-status-colors, unknown);
       stroke: map-get($brand-status-colors, unknown);
     }
@@ -135,7 +135,7 @@
     margin-top: quarter($inuit-base-spacing-unit);
     margin-bottom: quarter($inuit-base-spacing-unit);
 
-    .status-icon__detail {
+    .#{$grommet-namespace}status-icon__detail {
       display: none;
     }
   }
@@ -145,18 +145,7 @@
   100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
 }
 
-.icon-changing {
-  width: $inuit-base-spacing-unit;
-  height: $inuit-base-spacing-unit;
-  @include animation('rotate 1.5s linear infinite');
-
-  &--small {
-    width: halve($inuit-base-spacing-unit);
-    height: halve($inuit-base-spacing-unit);
-  }
-}
-
-.icon-spinning {
+.#{$grommet-namespace}icon-spinning {
   width: $inuit-base-spacing-unit;
   height: $inuit-base-spacing-unit;
   @include animation('rotate 4s steps(4, end) infinite');
@@ -180,7 +169,7 @@ $logo-dash-size: round($logo-size * 16);
   }
 }
 
-.logo-icon {
+.#{$grommet-namespace}logo-icon {
   width: $logo-size;
   height: $logo-size;
 

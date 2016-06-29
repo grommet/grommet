@@ -15,7 +15,9 @@ import PreviousIcon from './icons/base/LinkPrevious';
 import UpIcon from './icons/base/Up';
 import DownIcon from './icons/base/Down';
 
-const CLASS_ROOT = 'article';
+import CSSClassnames from '../utils/CSSClassnames';
+
+const CLASS_ROOT = CSSClassnames.ARTICLE;
 const DEFAULT_PLAY_INTERVAL = 10000; // 10s
 
 export default class Article extends Component {

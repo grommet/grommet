@@ -7,15 +7,17 @@ import Box from './Box';
 import Meter from './Meter';
 import StatusIcon from './icons/Status';
 import Props from '../utils/Props';
+import CSSClassnames from '../utils/CSSClassnames';
 
-let CLASS_ROOT = 'notification';
+const CLASS_ROOT = CSSClassnames.NOTIFICATION;
+const BACKGROUND_COLOR_INDEX = CSSClassnames.BACKGROUND_COLOR_INDEX;
 
 export default class Notification extends Component {
   render () {
     let classes = classnames(
       CLASS_ROOT,
       `${CLASS_ROOT}--status-${this.props.status.toLowerCase()}`,
-      `background-color-index-${this.props.status.toLowerCase()}`,
+      `${BACKGROUND_COLOR_INDEX}-${this.props.status.toLowerCase()}`,
       this.props.className,
       {
         [`${CLASS_ROOT}--${this.props.size}`]: this.props.size,

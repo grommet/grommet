@@ -1,6 +1,6 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-.grommet .paragraph {
+.grommet .#{$grommet-namespace}paragraph {
 
   @include text-align();
   @include margin();
@@ -9,12 +9,12 @@
     text-decoration: none;
   }
 
-  &.paragraph--small {
+  &.#{$grommet-namespace}paragraph--small {
     font-size: $paragraph-small-font-size;
     line-height: $paragraph-small-line-height;
   }
 
-  &.paragraph--large {
+  &.#{$grommet-namespace}paragraph--large {
     font-size: $paragraph-large-font-size;
     line-height: $paragraph-large-line-height;
 
@@ -24,7 +24,7 @@
     }
   }
 
-  &.paragraph--xlarge {
+  &.#{$grommet-namespace}paragraph--xlarge {
     font-size: $paragraph-xlarge-font-size;
     line-height: $paragraph-xlarge-line-height;
 
@@ -34,7 +34,7 @@
     }
   }
 
-  &.paragraph--width-large {
+  &.#{$grommet-namespace}paragraph--width-large {
     width: $inuit-base-spacing-unit * 30;
     max-width: 100%;
   }

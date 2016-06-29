@@ -23,7 +23,9 @@ $brand-grey-colors: (#2d3034, #52555a, #999999);
 $brand-graph-colors: (#ec9b58, #0049a0, #886f9c, #5fbcdd, #7fba44);
 $focus-border-color: #ff4c00;
 
-.control-icon {
+@import '../grommet-core/settings';
+
+.#{$grommet-namespace}control-icon {
   path,
   line,
   polyline,

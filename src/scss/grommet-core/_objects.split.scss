@@ -1,67 +1,69 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-.split {
-  position: relative;
-  overflow: visible;
+.grommet {
+  .#{$grommet-namespace}split {
+    position: relative;
+    overflow: visible;
 
-  @include media-query(lap-and-up) {
-    display: flex;
+    @include media-query(lap-and-up) {
+      display: flex;
 
-    &--fixed {
-      > * {
-        position: relative;
-        height: 100vh;
-        overflow: auto;
-        -ms-overflow-style: -ms-autohiding-scrollbar;
-      }
-    }
-
-    &--flex-right {
-      > *:first-child:not(:last-child) {
-        flex: 0 0 auto;
+      &--fixed {
+        > * {
+          position: relative;
+          height: 100vh;
+          overflow: auto;
+          -ms-overflow-style: -ms-autohiding-scrollbar;
+        }
       }
 
-      > *:last-child {
-        flex: 1;
+      &--flex-right {
+        > *:first-child:not(:last-child) {
+          flex: 0 0 auto;
+        }
+
+        > *:last-child {
+          flex: 1;
+        }
       }
-    }
 
-    &--flex-left {
-      > *:last-child:not(:first-child),
-      > .object {
-        flex: 0 0 auto;
+      &--flex-left {
+        > *:last-child:not(:first-child),
+        > .object {
+          flex: 0 0 auto;
+        }
+
+        > *:first-child {
+          flex: 1;
+        }
       }
 
-      > *:first-child {
-        flex: 1;
+      &--flex-both {
+        > * {
+          flex: 1;
+        }
       }
-    }
 
-    &--flex-both {
-      > * {
-        flex: 1;
-      }
-    }
+      &--separator {
+        > * {
+          border-right: 1px solid $strong-border-color;
 
-    &--separator {
-      > * {
-        border-right: 1px solid $strong-border-color;
-
-        &:last-child {
-          border-right: none;
+          &:last-child {
+            border-right: none;
+          }
         }
       }
     }
-  }
 
-  @include media-query(palm) {
+    @include media-query(palm) {
 
-    &--separator {
-      > * {
-        border-bottom: 1px solid $strong-border-color;
+      &--separator {
+        > * {
+          border-bottom: 1px solid $strong-border-color;
 
-        &:last-child {
-          border-bottom: none;
+          &:last-child {
+            border-bottom: none;
+          }
         }
       }
     }

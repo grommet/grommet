@@ -11,8 +11,10 @@ import ExpandIcon from './icons/base/Expand';
 import PlayIcon from './icons/base/Play';
 import PauseIcon from './icons/base/Pause';
 import RefreshIcon from './icons/base/Refresh';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = "video";
+const CLASS_ROOT = CSSClassnames.VIDEO;
+const BACKGROUND_COLOR_INDEX = CSSClassnames.BACKGROUND_COLOR_INDEX;
 
 export default class Video extends Component {
 
@@ -143,7 +145,7 @@ export default class Video extends Component {
       classes.push(`${CLASS_ROOT}--video-header`);
     }
     if (this.props.colorIndex) {
-      classes.push(`background-color-index-${this.props.colorIndex}`);
+      classes.push(`${BACKGROUND_COLOR_INDEX}-${this.props.colorIndex}`);
     }
     if (this.props.className) {
       classes.push(this.props.className);
@@ -248,7 +250,7 @@ export default class Video extends Component {
           </div>
         );
       }, this);
- 
+
       progressTicks = (
         <div className={`${CLASS_ROOT}__progress-ticks`}>
           {chapters}

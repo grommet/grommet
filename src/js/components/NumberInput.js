@@ -5,8 +5,9 @@ import Button from './Button';
 
 import AddIcon from './icons/base/Add';
 import SubtractIcon from './icons/base/Subtract';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = "number-input";
+const CLASS_ROOT = CSSClassnames.NUMBER_INPUT;
 
 export default class NumberInput extends Component {
 

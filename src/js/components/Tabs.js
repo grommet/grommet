@@ -3,8 +3,9 @@
 import React, { Component, PropTypes } from 'react';
 import Intl from '../utils/Intl';
 import Box from './Box';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = "tabs";
+const CLASS_ROOT = CSSClassnames.TABS;
 
 export default class Tabs extends Component {
 

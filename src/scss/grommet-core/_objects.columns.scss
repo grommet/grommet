@@ -1,26 +1,26 @@
 // (C) Copyright 2016 Hewlett Packard Enterprise Development LP
 
-.columns {
+.#{$grommet-namespace}columns {
   display: flex;
   flex-direction: row;
   width: 100%;
-}
 
-.columns__column {
-  flex: 0 0 $tile-size;
-  display: flex;
-  flex-direction: column;
-}
-
-
-.columns--small {
-  > .columns__column {
-    flex-basis: $tile-small-size;
+  &__column {
+    flex: 0 0 $tile-size;
+    display: flex;
+    flex-direction: column;
   }
-}
 
-.columns--large {
-  > .columns__column {
-    flex-basis: $tile-large-size;
+
+  &--small {
+    > .#{$grommet-namespace}columns__column {
+      flex-basis: $tile-small-size;
+    }
+  }
+
+  &--large {
+    > .#{$grommet-namespace}__column {
+      flex-basis: $tile-large-size;
+    }
   }
 }

@@ -2,8 +2,9 @@
 
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = 'table-row';
+const CLASS_ROOT = CSSClassnames.TABLE_ROW;
 
 export default class TableRow extends Component {
   render () {

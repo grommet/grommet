@@ -13,8 +13,9 @@ import Box from './Box';
 import Button from './Button';
 import DropCaretIcon from './icons/base/Down';
 import MoreIcon from './icons/base/More';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = 'menu';
+const CLASS_ROOT = CSSClassnames.MENU;
 
 function isFunction (obj) {
   return obj && obj.constructor && obj.call && obj.apply;

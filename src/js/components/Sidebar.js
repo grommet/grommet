@@ -4,8 +4,9 @@ import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import Box from './Box';
 import Props from '../utils/Props';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = 'sidebar';
+const CLASS_ROOT = CSSClassnames.SIDEBAR;
 
 export default class Sidebar extends Component {
   render () {

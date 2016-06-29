@@ -2,8 +2,9 @@
 
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = 'form';
+const CLASS_ROOT = CSSClassnames.FORM;
 
 export default class Form extends Component {
   render () {

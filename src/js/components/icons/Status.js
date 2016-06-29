@@ -8,8 +8,9 @@ import Disabled from './status/Disabled';
 import Unknown from './status/Unknown';
 import Blank from './status/Blank';
 import Label from './status/Label';
+import CSSClassnames from '../../utils/CSSClassnames';
 
-const CLASS_ROOT = "status-icon";
+const CLASS_ROOT = CSSClassnames.STATUS_ICON;
 
 export default class Status extends Component {
 

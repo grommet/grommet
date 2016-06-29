@@ -7,7 +7,7 @@
   margin-right: auto;
 }
 
-.grommet.app {
+.grommet.#{$grommet-namespace}app {
 
   @include media-query(lap-and-up) {
     position: absolute;
@@ -17,14 +17,14 @@
     right: 0px;
     overflow: auto;
   }
-}
 
-.grommet.app--inline {
-  position: relative;
-}
+  &--inline {
+    position: relative;
+  }
 
-.grommet.app--centered {
-  > .split {
-    @include centered-content();
+  &--centered {
+    > .#{$grommet-namespace}split {
+      @include centered-content();
+    }
   }
 }

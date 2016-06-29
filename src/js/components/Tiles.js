@@ -12,9 +12,11 @@ import Selection from '../utils/Selection';
 
 import LinkPreviousIcon from './icons/base/LinkPrevious';
 import LinkNextIcon from './icons/base/LinkNext';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = "tiles";
-const SELECTED_CLASS = "tile--selected";
+const CLASS_ROOT = CSSClassnames.TILES;
+const TILE = CSSClassnames.TILE;
+const SELECTED_CLASS = `${TILE}--selected`;
 
 export default class Tiles extends Component {
 
@@ -123,16 +125,16 @@ export default class Tiles extends Component {
 
       // mark any tiles that might be clipped
       var rect = tiles.getBoundingClientRect();
-      var children = tiles.querySelectorAll('.tile');
+      var children = tiles.querySelectorAll(`.${TILE}`);
       for (var i = 0; i < children.length; i += 1) {
         var child = children[i];
         var childRect = child.getBoundingClientRect();
         // 12 accounts for padding
         if ((childRect.left + 12) < rect.left ||
           (childRect.right - 12) > rect.right) {
-          child.classList.add('tile--eclipsed');
+          child.classList.add(`${TILE}--eclipsed`);
         } else {
-          child.classList.remove('tile--eclipsed');
+          child.classList.remove(`${TILE}--eclipsed`);
         }
       }
     }
@@ -155,7 +157,7 @@ export default class Tiles extends Component {
   _setSelection () {
     Selection.setClassFromIndexes({
       containerElement: findDOMNode(this.refs.tiles),
-      childSelector: '.tile',
+      childSelector: `.${TILE}`,
       selectedClass: SELECTED_CLASS,
       selectedIndexes: this.state.selected
     });
@@ -164,7 +166,7 @@ export default class Tiles extends Component {
   _onClick (event) {
     let selected = Selection.onClick(event, {
       containerElement: findDOMNode(this.refs.tiles),
-      childSelector: '.tile',
+      childSelector: `.${TILE}`,
       selectedClass: SELECTED_CLASS,
       multiSelect: ('multiple' === this.props.selectable),
       priorSelectedIndexes: this.state.selected

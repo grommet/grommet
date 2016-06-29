@@ -5,6 +5,9 @@ import React from 'react';
 import TestUtils from 'react-addons-test-utils';
 
 import WorldMap from '../../src/js/components/WorldMap';
+import CSSClassnames from '../../src/js/utils/CSSClassnames';
+
+const CLASS_ROOT = CSSClassnames.WORLD_MAP;
 
 test('loads a WorldMap', (t) => {
   t.plan(1);
@@ -14,7 +17,7 @@ test('loads a WorldMap', (t) => {
   }));
   const worldMapElement = shallowRenderer.getRenderOutput();
 
-  if (worldMapElement.props.className.indexOf('world-map') > -1) {
+  if (worldMapElement.props.className.indexOf(CLASS_ROOT) > -1) {
     t.pass('WorldMap has class');
   } else {
     t.fail('WorldMap does not have class');

@@ -6,6 +6,9 @@ import TestUtils from 'react-addons-test-utils';
 
 import Button from '../../src/js/components/Button';
 import FakeIcon from '../mocks/FakeIcon';
+import CSSClassnames from '../../src/js/utils/CSSClassnames';
+
+const CLASS_ROOT = CSSClassnames.BUTTON;
 
 test('loads a basic Button', (t) => {
   t.plan(3);
@@ -16,13 +19,13 @@ test('loads a basic Button', (t) => {
   }));
   const buttonElement = shallowRenderer.getRenderOutput();
 
-  if (buttonElement.props.className.indexOf('button') > -1) {
+  if (buttonElement.props.className.indexOf(CLASS_ROOT) > -1) {
     t.pass('Button has class');
   } else {
     t.fail('Button does not have class');
   }
 
-  if (buttonElement.props.className.indexOf('button--disabled') > -1) {
+  if (buttonElement.props.className.indexOf(`${CLASS_ROOT}--disabled`) > -1) {
     t.pass('Button has disabled class');
   } else {
     t.fail('Button does not have disabled class');
@@ -41,13 +44,13 @@ test('loads a primary Button', (t) => {
   }));
   const buttonElement = shallowRenderer.getRenderOutput();
 
-  if (buttonElement.props.className.indexOf('button') > -1) {
+  if (buttonElement.props.className.indexOf(CLASS_ROOT) > -1) {
     t.pass('Button has class');
   } else {
     t.fail('Button does not have class');
   }
 
-  if (buttonElement.props.className.indexOf('button--primary') > -1) {
+  if (buttonElement.props.className.indexOf(`${CLASS_ROOT}--primary`) > -1) {
     t.pass('Button has primary class');
   } else {
     t.fail('Button does not have primary class');
@@ -68,13 +71,13 @@ test('loads a plain Button', (t) => {
   }));
   const buttonElement = shallowRenderer.getRenderOutput();
 
-  if (buttonElement.props.className.indexOf('button') > -1) {
+  if (buttonElement.props.className.indexOf(CLASS_ROOT) > -1) {
     t.pass('Button has class');
   } else {
     t.fail('Button does not have class');
   }
 
-  if (buttonElement.props.className.indexOf('button--plain') > -1) {
+  if (buttonElement.props.className.indexOf(`${CLASS_ROOT}--plain`) > -1) {
     t.pass('Button has plain class');
   } else {
     t.fail('Button does not have plain class');
@@ -94,7 +97,7 @@ test('loads a custom className Button', (t) => {
     className: 'testing'
   }));
   const buttonElement = shallowRenderer.getRenderOutput();
-  if (buttonElement.props.className.indexOf('button') > -1) {
+  if (buttonElement.props.className.indexOf(CLASS_ROOT) > -1) {
     t.pass('Button has class');
   } else {
     t.fail('Button does not have class');
@@ -119,13 +122,13 @@ test('loads an Button with an icon', (t) => {
   }));
   const buttonElement = shallowRenderer.getRenderOutput();
 
-  if (buttonElement.props.className.indexOf('button') > -1) {
+  if (buttonElement.props.className.indexOf(CLASS_ROOT) > -1) {
     t.pass('Button has class');
   } else {
     t.fail('Button does not have class');
   }
 
-  if (buttonElement.props.className.indexOf('button--icon') !== -1) {
+  if (buttonElement.props.className.indexOf(`${CLASS_ROOT}--icon`) !== -1) {
     t.pass('Button has icon class');
   } else {
     t.fail('Button does not have icon class');
@@ -147,13 +150,13 @@ test('loads an Button with a children icon', (t) => {
   }));
   const buttonElement = shallowRenderer.getRenderOutput();
 
-  if (buttonElement.props.className.indexOf('button') > -1) {
+  if (buttonElement.props.className.indexOf(CLASS_ROOT) > -1) {
     t.pass('Button has class');
   } else {
     t.fail('Button does not have button class');
   }
 
-  if (buttonElement.props.className.indexOf('button--icon') !== -1) {
+  if (buttonElement.props.className.indexOf(`${CLASS_ROOT}--icon`) !== -1) {
     t.pass('Button has icon class');
   } else {
     t.fail('Button does not have icon class');
@@ -175,7 +178,7 @@ test('loads an Button with a children text', (t) => {
   }));
   const buttonElement = shallowRenderer.getRenderOutput();
 
-  if (buttonElement.props.className.indexOf('button') > -1) {
+  if (buttonElement.props.className.indexOf(CLASS_ROOT) > -1) {
     t.pass('Button has class');
   } else {
     t.fail('Button does not have button class');

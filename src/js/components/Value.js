@@ -1,8 +1,10 @@
 // (C) Copyright 2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = "value";
+const CLASS_ROOT = CSSClassnames.VALUE;
+const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
 
 export default class Value extends Component {
 
@@ -18,7 +20,7 @@ export default class Value extends Component {
       classes.push(`${CLASS_ROOT}--interactive`);
     }
     if (this.props.colorIndex) {
-      classes.push(`color-index-${this.props.colorIndex}`);
+      classes.push(`${COLOR_INDEX}-${this.props.colorIndex}`);
     }
     if (this.props.className) {
       classes.push(this.props.className);

@@ -5,8 +5,10 @@ import classnames from 'classnames';
 import Box from './Box';
 import Paragraph from './Paragraph';
 import Props from '../utils/Props';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = 'quote';
+const CLASS_ROOT = CSSClassnames.QUOTE;
+const BORDER_COLOR_INDEX = CSSClassnames.BORDER_COLOR_INDEX;
 
 export default class Quote extends Component {
   render () {
@@ -14,7 +16,7 @@ export default class Quote extends Component {
       CLASS_ROOT,
       this.props.className,
       {
-        [`border-color-index-${this.props.borderColorIndex}`]: this.props.borderColorIndex,
+        [`${BORDER_COLOR_INDEX}-${this.props.borderColorIndex}`]: this.props.borderColorIndex,
         [`${CLASS_ROOT}--${this.props.size}`]: this.props.size,
         [`${CLASS_ROOT}--emphasize-credit`]: this.props.emphasizeCredit
       }

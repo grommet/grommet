@@ -9,8 +9,10 @@ import Button from './Button';
 import ClockIcon from './icons/base/Clock';
 import CalendarIcon from './icons/base/Calendar';
 import DateTimeDrop from './DateTimeDrop';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = "date-time";
+const CLASS_ROOT = CSSClassnames.DATE_TIME;
+const FORM_FIELD = CSSClassnames.FORM_FIELD;
 const FORMATS = {
   M: 'months',
   D: 'days',
@@ -197,7 +199,7 @@ export default class DateTime extends Component {
 
       // If this is inside a FormField, place the drop in reference to it.
       const control =
-        findAncestor(this.refs.component, 'form-field') || this.refs.component;
+        findAncestor(this.refs.component, `.${FORM_FIELD}`) || this.refs.component;
       this._drop = Drop.add(control,
         this._renderDrop(), { align: {top: 'bottom', left: 'left'} });
 
@@ -231,7 +233,9 @@ export default class DateTime extends Component {
     if (className) {
       classes.push(className);
     }
-    if (typeof value === 'object') {
+    if (value instanceof Date) {
+      value = moment(value).format(format);
+    } else if (value && typeof value === 'object') {
       value = value.format(format);
     }
     const Icon = (TIME_REGEXP.test(format) ? ClockIcon : CalendarIcon);

@@ -1,6 +1,6 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-.list {
+.#{$grommet-namespace}list {
   list-style-type: none;
   margin: 0px;
   padding: 0px;
@@ -19,7 +19,7 @@
     font-style: italic;
   }
 
-  .list-item {
+  .#{$grommet-namespace}list-item {
     max-width: none;
 
     &:focus {
@@ -65,14 +65,14 @@
     }
 
     &--row {
-      .list-item__annotation {
+      .#{$grommet-namespace}list-item__annotation {
         text-align: right;
       }
     }
   }
 
   &--selectable {
-    .list-item {
+    .#{$grommet-namespace}list-item {
       cursor: pointer;
       transition: background-color 0.2s;
 
@@ -81,7 +81,7 @@
         color: $selected-text-color;
       }
 
-      &:hover:not(.list-item--selected) {
+      &:hover:not(.#{$grommet-namespace}list-item--selected) {
         background-color: $hover-background-color;
         color: $hover-text-color;
       }
@@ -89,8 +89,8 @@
   }
 
   &--small {
-    .list-item,
-    .list__more {
+    .#{$grommet-namespace}list-item,
+    .#{$grommet-namespace}list__more {
       &__image {
         height: halve($inuit-base-spacing-unit);
         width: halve($inuit-base-spacing-unit);
@@ -99,8 +99,8 @@
   }
 
   &--large {
-    .list-item,
-    .list__more {
+    .#{$grommet-namespace}list-item,
+    .#{$grommet-namespace}list__more {
       &__image {
         height: double($inuit-base-spacing-unit);
         width: double($inuit-base-spacing-unit);

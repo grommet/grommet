@@ -3,8 +3,9 @@
 import React, { Component, PropTypes } from 'react';
 import Box from './Box';
 import Intl from '../utils/Intl';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = "title";
+const CLASS_ROOT = CSSClassnames.TITLE;
 
 export default class Title extends Component {
 

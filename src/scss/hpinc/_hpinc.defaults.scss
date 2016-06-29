@@ -25,7 +25,9 @@ $hpinc-fonts-path: "https://hpincfonts.s3.amazonaws.com";
   src: url("#{$hpinc-fonts-path}/hps-me-w27-regular-woff.woff") format('woff');
 }
 
-.control-icon {
+@import '../grommet-core/settings';
+
+.#{$grommet-namespace}control-icon {
   path,
   line,
   polyline,

@@ -5,8 +5,10 @@ import ReactDOM from 'react-dom';
 import Legend from './Legend';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 import Intl from '../utils/Intl';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = "distribution";
+const CLASS_ROOT = CSSClassnames.DISTRIBUTION;
+const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
 
 const DEFAULT_WIDTH = 400;
 const DEFAULT_HEIGHT = 200;
@@ -345,7 +347,7 @@ export default class Distribution extends Component {
   _renderItemLabel (datum, labelRect, index) {
     let labelClasses = [`${CLASS_ROOT}__label`];
     if (! datum.icon) {
-      labelClasses.push('color-index-' + this._itemColorIndex(datum, index));
+      labelClasses.push(`${COLOR_INDEX}-${this._itemColorIndex(datum, index)}`);
     }
     if (datum.icon) {
       labelClasses.push(`${CLASS_ROOT}__label--icons`);
@@ -385,7 +387,7 @@ export default class Distribution extends Component {
   _renderItemBox (boxRect, colorIndex) {
     let boxClasses = [`${CLASS_ROOT}__item-box`];
     if (colorIndex) {
-      boxClasses.push(`color-index-${colorIndex}`);
+      boxClasses.push(`${COLOR_INDEX}-${colorIndex}`);
     }
 
     return (
@@ -398,7 +400,7 @@ export default class Distribution extends Component {
 
   _renderItemIcon (icon, itemRect, colorIndex) {
     let iconClasses = [`${CLASS_ROOT}__item-icons`];
-    iconClasses.push(`color-index-${colorIndex}`);
+    iconClasses.push(`${COLOR_INDEX}-${colorIndex}`);
 
     let icons = [];
     // fill box with icons
@@ -477,7 +479,7 @@ export default class Distribution extends Component {
 
   _renderLoading () {
     let loadingClasses = [`${CLASS_ROOT}__loading-indicator`];
-    loadingClasses.push("color-index-loading");
+    loadingClasses.push(`${COLOR_INDEX}-loading`);
     let loadingHeight = this.state.height / 2;
     let loadingWidth = this.state.width;
     let commands = `M0,${loadingHeight} L${loadingWidth},${loadingHeight}`;

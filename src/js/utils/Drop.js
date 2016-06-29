@@ -2,7 +2,11 @@
 
 import { PropTypes } from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
-import DOM from '../utils/DOM';
+import DOM from './DOM';
+import CSSClassnames from './CSSClassnames';
+
+const CLASS_ROOT = CSSClassnames.DROP;
+const BACKGROUND_COLOR_INDEX = CSSClassnames.BACKGROUND_COLOR_INDEX;
 
 /*
  * Drop is a utility for rendering components like drop down menus layered above
@@ -91,10 +95,10 @@ export default {
 
     // setup DOM
     drop.container = document.createElement('div');
-    drop.container.className = `grommet drop ${drop.options.className || ''}`;
+    drop.container.className = `grommet ${CLASS_ROOT} ${drop.options.className || ''}`;
     if (drop.options.colorIndex) {
       drop.container.className +=
-        ` background-color-index-${drop.options.colorIndex}`;
+        ` ${BACKGROUND_COLOR_INDEX}-${drop.options.colorIndex}`;
     }
     // prepend in body to avoid browser scroll issues
     document.body.insertBefore(drop.container, document.body.firstChild);
@@ -169,6 +173,7 @@ export default {
         left = (controlRect.left + controlRect.width) - width;
       }
     }
+
     if ((left + width) > windowWidth) {
       left -= ((left + width) - windowWidth);
     } else if (left < 0) {

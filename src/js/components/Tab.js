@@ -2,8 +2,9 @@
 
 import React, { Component, PropTypes } from 'react';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = "tab";
+const CLASS_ROOT = CSSClassnames.TAB;
 
 export default class Tab extends Component {
 

@@ -1,8 +1,10 @@
 // (C) Copyright 2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = 'world-map';
+const CLASS_ROOT = CSSClassnames.WORLD_MAP;
+const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
 
 const CONTINENTS = [
   {
@@ -150,7 +152,7 @@ export default class WorldMap extends Component {
   _renderContinent (seriesData, index) {
     const continent = seriesData.continent;
     const colorIndex = seriesData.colorIndex || `graph-${index}`;
-    let classes = [`${CLASS_ROOT}__continent`, `color-index-${colorIndex}`];
+    let classes = [`${CLASS_ROOT}__continent`, `${COLOR_INDEX}-${colorIndex}`];
     if (index === this.state.activeIndex) {
       classes.push(`${CLASS_ROOT}__continent--active`);
     }

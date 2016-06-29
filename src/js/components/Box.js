@@ -5,8 +5,10 @@ import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 import Intl from '../utils/Intl';
 import Props from '../utils/Props';
 import SkipLinkAnchor from './SkipLinkAnchor';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = "box";
+const CLASS_ROOT = CSSClassnames.BOX;
+const BACKGROUND_COLOR_INDEX = CSSClassnames.BACKGROUND_COLOR_INDEX;
 
 export default class Box extends Component {
 
@@ -79,14 +81,14 @@ export default class Box extends Component {
     if (this.props.appCentered) {
       this._addPropertyClass(containerClasses, CLASS_ROOT + "__container", 'full');
       if (this.props.colorIndex) {
-        containerClasses.push("background-color-index-" + this.props.colorIndex);
+        containerClasses.push(`${BACKGROUND_COLOR_INDEX}-${this.props.colorIndex}`);
       }
       if (this.props.containerClassName) {
         containerClasses.push(this.props.containerClassName);
       }
     } else {
       if (this.props.colorIndex) {
-        classes.push("background-color-index-" + this.props.colorIndex);
+        classes.push(`${BACKGROUND_COLOR_INDEX}-${this.props.colorIndex}`);
       }
     }
 

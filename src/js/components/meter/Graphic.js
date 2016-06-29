@@ -5,6 +5,9 @@ import ReactDOM from 'react-dom';
 import { classRoot, propTypes, buildPath } from './utils';
 import Intl from '../../utils/Intl';
 import KeyboardAccelerators from '../../utils/KeyboardAccelerators';
+import CSSClassnames from '../../utils/CSSClassnames';
+
+const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
 
 const CLASS_ROOT = classRoot;
 const MIN_WIDTH = 0.033;
@@ -69,7 +72,7 @@ export default class Graphic extends Component {
         classes.push(CLASS_ROOT + "__slice--clickable");
       }
 
-      classes.push(`color-index-${item.colorIndex}`);
+      classes.push(`${COLOR_INDEX}-${item.colorIndex}`);
 
       let commands = this._sliceCommands(trackIndex, item, startValue, maxValue);
 
@@ -161,7 +164,7 @@ export default class Graphic extends Component {
   _renderLoading () {
     let classes = [`${CLASS_ROOT}__slice`];
     classes.push(`${CLASS_ROOT}__slice--loading`);
-    classes.push("color-index-loading");
+    classes.push(`${COLOR_INDEX}-loading`);
     let commands = this._loadingCommands();
     return [
       <path key="loading" className={classes.join(' ')} d={commands} />

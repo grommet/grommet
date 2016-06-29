@@ -1,6 +1,6 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-.headline {
+.#{$grommet-namespace}headline {
   @include inuit-font-size(48px, 1);
   font-weight: 100;
   margin-bottom: $inuit-base-spacing-unit;

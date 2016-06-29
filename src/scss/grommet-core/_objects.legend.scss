@@ -1,6 +1,6 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-.legend {
+.#{$grommet-namespace}legend {
   text-align: left;
   list-style-type: none;
   white-space: normal;
@@ -13,8 +13,8 @@
   }
 }
 
-.legend__item,
-.legend__total {
+.#{$grommet-namespace}legend__item,
+.#{$grommet-namespace}legend__total {
   color: $secondary-text-color;
 
   > * {
@@ -22,15 +22,15 @@
   }
 }
 
-.legend__item-label,
-.legend__total-label {
+.#{$grommet-namespace}legend__item-label,
+.#{$grommet-namespace}legend__total-label {
   display: inline-block;
   min-width: round($inuit-base-spacing-unit * 3);
   text-align: left;
 }
 
-.legend__item-value,
-.legend__total-value {
+.#{$grommet-namespace}legend__item-value,
+.#{$grommet-namespace}legend__total-value {
   display: inline-block;
   width: round($inuit-base-spacing-unit * 3);
   text-align: right;
@@ -40,8 +40,8 @@
   }
 }
 
-.legend__item-units,
-.legend__total-units {
+.#{$grommet-namespace}legend__item-units,
+.#{$grommet-namespace}legend__total-units {
   display: inline-block;
   margin-left: quarter($inuit-base-spacing-unit);
 
@@ -51,9 +51,9 @@
   }
 }
 
-.legend__item {
+.#{$grommet-namespace}legend__item {
 
-  svg.legend__item-swatch {
+  svg.#{$grommet-namespace}legend__item-swatch {
     width: halve($inuit-base-spacing-unit);
     height: halve($inuit-base-spacing-unit);
     margin-top: quarter($inuit-base-spacing-unit);
@@ -76,26 +76,26 @@
   }
 }
 
-.legend__item--clickable {
+.#{$grommet-namespace}legend__item--clickable {
   cursor: pointer;
 }
 
-.legend__item--active {
+.#{$grommet-namespace}legend__item--active {
   color: $text-color;
 
-  svg.legend__item-swatch {
+  svg.#{$grommet-namespace}legend__item-swatch {
     path {
       stroke-width: halve($inuit-base-spacing-unit);
     }
   }
 }
 
-#{$dark-background-context} .legend__item--active {
+#{$dark-background-context} .#{$grommet-namespace}legend__item--active {
   color: $active-colored-text-color;
 }
 
 // need li to override .grommet li
-li.legend__total {
+li.#{$grommet-namespace}legend__total {
   margin-left: $inuit-base-spacing-unit;
 
   html.rtl & {
@@ -110,15 +110,15 @@ li.legend__total {
   }
 }
 
-.legend--single {
+.#{$grommet-namespace}legend--single {
 
-  .legend__item-value {
+  .#{$grommet-namespace}legend__item-value {
     @include inuit-font-size($large-number-font-size);
     font-weight: bold;
     width: auto;
   }
 
-  .legend__item-units {
+  .#{$grommet-namespace}legend__item-units {
     @include inuit-font-size($inuit-heading-size-3, inherit);
     margin-left: quarter($inuit-base-spacing-unit);
     color: $secondary-text-color;

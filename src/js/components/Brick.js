@@ -3,8 +3,10 @@
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import Anchor from './Anchor';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = 'brick';
+const CLASS_ROOT = CSSClassnames.BRICK;
+const BACKGROUND_COLOR_INDEX = CSSClassnames.BACKGROUND_COLOR_INDEX;
 const TYPE_SMALL = 'small';
 const TYPE_LARGE = 'large';
 const TYPE_WIDE = 'wide';
@@ -36,7 +38,7 @@ export default class Brick extends Component {
       CLASS_ROOT,
       `${CLASS_ROOT}--${widthUnit}-${heightUnit}`,
       {
-        [`background-color-index-${this.props.colorIndex}`]: this.props.colorIndex,
+        [`${BACKGROUND_COLOR_INDEX}-${this.props.colorIndex}`]: this.props.colorIndex,
         [`${CLASS_ROOT}--clickable`]: clickable
       },
       this.props.className

@@ -8,6 +8,7 @@ import Button from './Button';
 import Previous from './icons/base/Previous';
 import Next from './icons/base/Next';
 import DOM from '../utils/DOM';
+import CSSClassnames from '../utils/CSSClassnames';
 
 // define window obj for react tests to run properly
 let Hammer = function() {};
@@ -15,7 +16,7 @@ if (typeof window !== 'undefined') {
   Hammer = require('hammerjs');
 }
 
-const CLASS_ROOT = 'carousel';
+const CLASS_ROOT = CSSClassnames.CAROUSEL;
 
 export default class Carousel extends Component {
 

@@ -3,8 +3,9 @@
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import Box from './Box';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = 'section';
+const CLASS_ROOT = CSSClassnames.SECTION;
 
 export default class Section extends Component {
   render () {

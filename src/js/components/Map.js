@@ -1,8 +1,9 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = "map";
+const CLASS_ROOT = CSSClassnames.MAP;
 
 export default class ResourceMap extends Component {
 

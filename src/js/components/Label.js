@@ -2,8 +2,9 @@
 
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = 'label';
+const CLASS_ROOT = CSSClassnames.LABEL;
 
 export default class Label extends Component {
   render () {
