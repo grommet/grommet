@@ -103,7 +103,7 @@ var Split = function (_Component) {
     value: function _layout() {
       var splitElement = this.refs.split;
       if (splitElement) {
-        if (splitElement.offsetWidth < BREAK_WIDTH) {
+        if (splitElement.offsetWidth < BREAK_WIDTH && this.props.showOnResponsive === 'priority') {
           this._setResponsive('single');
         } else {
           this._setResponsive('multiple');
@@ -156,12 +156,14 @@ Split.propTypes = {
   fixed: _react.PropTypes.bool,
   flex: _react.PropTypes.oneOf(['left', 'right', 'both']),
   priority: _react.PropTypes.oneOf(['left', 'right']),
-  separator: _react.PropTypes.bool
+  separator: _react.PropTypes.bool,
+  showOnResponsive: _react.PropTypes.oneOf(['priority', 'both'])
 };
 
 Split.defaultProps = {
   fixed: true,
   flex: 'both',
-  priority: 'right'
+  priority: 'right',
+  showOnResponsive: 'priority'
 };
 module.exports = exports['default'];
