@@ -69,7 +69,7 @@ export default class Split extends Component {
   _layout () {
     var splitElement = this.refs.split;
     if (splitElement) {
-      if (splitElement.offsetWidth < BREAK_WIDTH) {
+      if (splitElement.offsetWidth < BREAK_WIDTH && this.props.showOnResponsive === 'primary') {
         this._setResponsive('single');
       } else {
         this._setResponsive('multiple');
@@ -115,11 +115,13 @@ Split.propTypes = {
   fixed: PropTypes.bool,
   flex: PropTypes.oneOf(['left', 'right', 'both']),
   priority: PropTypes.oneOf(['left', 'right']),
-  separator: PropTypes.bool
+  separator: PropTypes.bool,
+  showOnResponsive: PropTypes.oneOf(['priority', 'both'])
 };
 
 Split.defaultProps = {
   fixed: true,
   flex: 'both',
-  priority: 'right'
+  priority: 'right',
+  showOnResponsive: 'priority'
 };
