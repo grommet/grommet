@@ -15,7 +15,7 @@ const CLASS_ROOT = CSSClassnames.STATUS_ICON;
 export default class Status extends Component {
 
   render () {
-    let classes = [CLASS_ROOT];
+    let classes = [];
     let { a11yTitle, size } = this.props;
 
     if (this.props.className) {
