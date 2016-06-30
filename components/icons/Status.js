@@ -64,7 +64,7 @@ var Status = function (_Component) {
   _createClass(Status, [{
     key: 'render',
     value: function render() {
-      var classes = [CLASS_ROOT];
+      var classes = [];
       var _props = this.props;
       var a11yTitle = _props.a11yTitle;
       var size = _props.size;
