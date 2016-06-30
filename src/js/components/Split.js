@@ -93,20 +93,32 @@ export default class Split extends Component {
       classes.push(this.props.className);
     }
 
-    var children;
-    if ('single' === this.state.responsive) {
-      if ('left' === this.props.priority) {
-        children = React.Children.toArray(this.props.children)[0];
-      } else {
-        children = React.Children.toArray(this.props.children).pop();
-      }
-    } else {
-      children = this.props.children;
-    }
-
+    let children = React.Children.toArray(this.props.children);
     return (
       <div ref="split" className={classes.join(' ')}>
-        {children}
+        {children.map((Component, idx) => {
+          let hidden = false;
+          if ('single' === this.state.responsive) {
+            if ('left' === this.props.priority) {
+              // If priority = left and we're not
+              // the first child, then hide
+              if (idx !== 0) {
+                hidden = true;
+              }
+            } else {
+              // If priority = right and we're not
+              // the last child, then hide
+              if (idx !== children.length - 1) {
+                hidden = true;
+              }
+            }
+          }
+
+          if (hidden) {
+            return <div key={idx} style={{display: 'none'}}>{Component}</div>;
+          }
+          return <div key={idx}>{Component}</div>;
+        })}
       </div>
     );
   }
