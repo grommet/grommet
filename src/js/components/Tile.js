@@ -7,6 +7,7 @@ import Box from './Box';
 import CSSClassnames from '../utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.TILE;
+const NAMESPACE = CSSClassnames.NAMESPACE;
 
 export default class Tile extends Component {
 
@@ -33,7 +34,7 @@ export default class Tile extends Component {
         [`${CLASS_ROOT}--wide`]: wide,
         [`${CLASS_ROOT}--selectable`]: onClick,
         [`${CLASS_ROOT}--selected`]: selected,
-        [`${CSSClassnames.namespace}${hoverStyle}${(hoverStyle == 'border') ?
+        [`${NAMESPACE}${hoverStyle}${(hoverStyle == 'border') ?
           ((borderSize) ? `-${borderSize}` : '-medium') : ''
         }-hover-color-index-${hoverColorIndex}`]: hoverStyle,
         [`${CLASS_ROOT}--hover-border-${borderSize}`]: borderSize
