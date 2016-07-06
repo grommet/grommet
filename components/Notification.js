@@ -121,7 +121,7 @@ var Notification = function (_Component) {
         status,
         _react2.default.createElement(
           _Box2.default,
-          null,
+          { full: 'horizontal' },
           _react2.default.createElement(
             'span',
             { className: CLASS_ROOT + '__message' },
