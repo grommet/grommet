@@ -7,6 +7,10 @@ import CSSClassnames from '../utils/CSSClassnames';
 const CLASS_ROOT = CSSClassnames.FORM;
 
 export default class Form extends Component {
+  reset () {
+    this.refs.formElem.reset();
+  }
+
   render () {
     let { className, compact, fill, pad } = this.props;
     let classes = classnames(
@@ -22,7 +26,7 @@ export default class Form extends Component {
     );
 
     return (
-      <form className={classes} onSubmit={this.props.onSubmit}>
+      <form className={classes} onSubmit={this.props.onSubmit} ref="formElem">
         {this.props.children}
       </form>
     );
@@ -39,7 +43,8 @@ Form.propTypes = {
       horizontal: PropTypes.oneOf(['none', 'small', 'medium', 'large']),
       vertical: PropTypes.oneOf(['none', 'small', 'medium', 'large'])
     })
-  ])
+  ]),
+  reset: PropTypes.func
 };
 
 Form.defaultProps = {
