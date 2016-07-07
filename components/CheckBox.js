@@ -4,6 +4,14 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
+var _keys = require('babel-runtime/core-js/object/keys');
+
+var _keys2 = _interopRequireDefault(_keys);
+
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -28,15 +36,17 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _Props = require('../utils/Props');
+
+var _Props2 = _interopRequireDefault(_Props);
+
 var _CSSClassnames = require('../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
-
-var CLASS_ROOT = _CSSClassnames2.default.CHECK_BOX;
+var CLASS_ROOT = _CSSClassnames2.default.CHECK_BOX; // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 var CheckBox = function (_Component) {
   (0, _inherits3.default)(CheckBox, _Component);
@@ -50,7 +60,7 @@ var CheckBox = function (_Component) {
     key: 'render',
     value: function render() {
       var classes = [CLASS_ROOT];
-
+      var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(CheckBox.propTypes));
       var label = void 0;
       var labelId = CLASS_ROOT + '-label';
       if (this.props.label) {
@@ -102,8 +112,9 @@ var CheckBox = function (_Component) {
 
       return _react2.default.createElement(
         'label',
-        { className: classes.join(' '),
-          'aria-labelledby': labelId },
+        (0, _extends3.default)({}, restProps, {
+          className: classes.join(' '),
+          'aria-labelledby': labelId }),
         this.props.reverse ? children.reverse() : children,
         hidden
       );
