@@ -3,6 +3,13 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+
+var _keys = require("babel-runtime/core-js/object/keys");
+
+var _keys2 = _interopRequireDefault(_keys);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 exports.default = {
@@ -18,7 +25,7 @@ exports.default = {
   },
   omit: function omit(props, fields) {
     var obj = {};
-    Object.keys(props).forEach(function (p) {
+    (0, _keys2.default)(props).forEach(function (p) {
       if ((fields || []).indexOf(p) === -1) {
         obj[p] = props[p];
       }

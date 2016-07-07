@@ -4,6 +4,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _stringify = require('babel-runtime/core-js/json/stringify');
+
+var _stringify2 = _interopRequireDefault(_stringify);
+
 var _Rest = require('./Rest');
 
 var _Rest2 = _interopRequireDefault(_Rest);
@@ -27,7 +31,7 @@ var state = {
 
 exports.default = {
   _sendMessage: function _sendMessage(op, id, url, params) {
-    state.ws.send(JSON.stringify({
+    state.ws.send((0, _stringify2.default)({
       op: op,
       id: id,
       url: url,

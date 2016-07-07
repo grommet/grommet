@@ -4,9 +4,33 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+var _extends2 = require('babel-runtime/helpers/extends');
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _extends3 = _interopRequireDefault(_extends2);
+
+var _keys = require('babel-runtime/core-js/object/keys');
+
+var _keys2 = _interopRequireDefault(_keys);
+
+var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
+
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = require('babel-runtime/helpers/createClass');
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = require('babel-runtime/helpers/inherits');
+
+var _inherits3 = _interopRequireDefault(_inherits2);
 
 var _react = require('react');
 
@@ -64,25 +88,19 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
-
 // import CarouselControls from './CarouselControls';
-
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = _CSSClassnames2.default.ARTICLE;
 var DEFAULT_PLAY_INTERVAL = 10000; // 10s
 
 var Article = function (_Component) {
-  _inherits(Article, _Component);
+  (0, _inherits3.default)(Article, _Component);
 
   function Article(props) {
-    _classCallCheck(this, Article);
+    (0, _classCallCheck3.default)(this, Article);
 
-    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Article).call(this, props));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Article).call(this, props));
 
     _this._onFocusChange = _this._onFocusChange.bind(_this);
     _this._onScroll = _this._onScroll.bind(_this);
@@ -111,7 +129,7 @@ var Article = function (_Component) {
     return _this;
   }
 
-  _createClass(Article, [{
+  (0, _createClass3.default)(Article, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
 
@@ -598,7 +616,7 @@ var Article = function (_Component) {
       var _this9 = this;
 
       var classes = [CLASS_ROOT];
-      var other = _Props2.default.pick(this.props, Object.keys(_Box2.default.propTypes));
+      var other = _Props2.default.pick(this.props, (0, _keys2.default)(_Box2.default.propTypes));
       if (this.props.scrollStep) {
         classes.push(CLASS_ROOT + '--scroll-step');
       }
@@ -650,7 +668,7 @@ var Article = function (_Component) {
 
       return _react2.default.createElement(
         _Box2.default,
-        _extends({ ref: 'component', tag: 'article' }, other, {
+        (0, _extends3.default)({ ref: 'component', tag: 'article' }, other, {
           className: classes.join(' '), onFocus: this._onFocusChange,
           onScroll: this._onScroll, onTouchStart: this._onTouchStart,
           onTouchMove: this._onTouchMove, primary: this.props.primary }),
@@ -660,7 +678,6 @@ var Article = function (_Component) {
       );
     }
   }]);
-
   return Article;
 }(_react.Component);
 
@@ -668,7 +685,7 @@ Article.displayName = 'Article';
 exports.default = Article;
 
 
-Article.propTypes = _extends({
+Article.propTypes = (0, _extends3.default)({
   controls: _react.PropTypes.bool,
   primary: _react.PropTypes.bool,
   scrollStep: _react.PropTypes.bool

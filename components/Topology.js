@@ -4,7 +4,25 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
+
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = require('babel-runtime/helpers/createClass');
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = require('babel-runtime/helpers/inherits');
+
+var _inherits3 = _interopRequireDefault(_inherits2);
 
 var _react = require('react');
 
@@ -22,26 +40,21 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = _CSSClassnames2.default.TOPOLOGY;
 var STATUS_ICON = _CSSClassnames2.default.STATUS_ICON;
 var BACKGROUND_COLOR_INDEX = _CSSClassnames2.default.BACKGROUND_COLOR_INDEX;
 
 var Label = function (_Component) {
-  _inherits(Label, _Component);
+  (0, _inherits3.default)(Label, _Component);
 
   function Label() {
-    _classCallCheck(this, Label);
-
-    return _possibleConstructorReturn(this, Object.getPrototypeOf(Label).apply(this, arguments));
+    (0, _classCallCheck3.default)(this, Label);
+    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Label).apply(this, arguments));
   }
 
-  _createClass(Label, [{
+  (0, _createClass3.default)(Label, [{
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
@@ -51,22 +64,20 @@ var Label = function (_Component) {
       );
     }
   }]);
-
   return Label;
 }(_react.Component);
 
 Label.displayName = 'Label';
 
 var Part = function (_Component2) {
-  _inherits(Part, _Component2);
+  (0, _inherits3.default)(Part, _Component2);
 
   function Part() {
-    _classCallCheck(this, Part);
-
-    return _possibleConstructorReturn(this, Object.getPrototypeOf(Part).apply(this, arguments));
+    (0, _classCallCheck3.default)(this, Part);
+    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Part).apply(this, arguments));
   }
 
-  _createClass(Part, [{
+  (0, _createClass3.default)(Part, [{
     key: 'render',
     value: function render() {
       var classes = [CLASS_ROOT + "__part"];
@@ -117,7 +128,6 @@ var Part = function (_Component2) {
       );
     }
   }]);
-
   return Part;
 }(_react.Component);
 
@@ -143,15 +153,14 @@ Part.defaultProps = {
 };
 
 var Parts = function (_Component3) {
-  _inherits(Parts, _Component3);
+  (0, _inherits3.default)(Parts, _Component3);
 
   function Parts() {
-    _classCallCheck(this, Parts);
-
-    return _possibleConstructorReturn(this, Object.getPrototypeOf(Parts).apply(this, arguments));
+    (0, _classCallCheck3.default)(this, Parts);
+    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Parts).apply(this, arguments));
   }
 
-  _createClass(Parts, [{
+  (0, _createClass3.default)(Parts, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
       this._makeUniform();
@@ -205,7 +214,6 @@ var Parts = function (_Component3) {
       );
     }
   }]);
-
   return Parts;
 }(_react.Component);
 
@@ -223,12 +231,12 @@ Parts.defaultProps = {
 };
 
 var Topology = function (_Component4) {
-  _inherits(Topology, _Component4);
+  (0, _inherits3.default)(Topology, _Component4);
 
   function Topology() {
-    _classCallCheck(this, Topology);
+    (0, _classCallCheck3.default)(this, Topology);
 
-    var _this4 = _possibleConstructorReturn(this, Object.getPrototypeOf(Topology).call(this));
+    var _this4 = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Topology).call(this));
 
     _this4._layout = _this4._layout.bind(_this4);
     _this4._onResize = _this4._onResize.bind(_this4);
@@ -244,7 +252,7 @@ var Topology = function (_Component4) {
     return _this4;
   }
 
-  _createClass(Topology, [{
+  (0, _createClass3.default)(Topology, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
       var topology = this.refs.topology;
@@ -450,7 +458,6 @@ var Topology = function (_Component4) {
       );
     }
   }]);
-
   return Topology;
 }(_react.Component);
 

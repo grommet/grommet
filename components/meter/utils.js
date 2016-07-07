@@ -4,7 +4,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
 
 var _react = require('react');
 
@@ -15,6 +17,8 @@ var _CSSClassnames = require('../../utils/CSSClassnames');
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 var METER = _CSSClassnames2.default.METER;
 
@@ -101,7 +105,7 @@ exports.default = {
 
       return _react2.default.createElement(
         'g',
-        _extends({ key: itemIndex, ref: a11yDescId }, a11yRoles),
+        (0, _extends3.default)({ key: itemIndex, ref: a11yDescId }, a11yRoles),
         titleComponent,
         _react2.default.createElement('path', { ref: activeSlice, className: classes.join(' '), d: commands,
           onFocus: onOver, onBlur: onOut, 'data-index': itemIndex,

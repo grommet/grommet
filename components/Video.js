@@ -4,7 +4,29 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
+
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = require('babel-runtime/helpers/createClass');
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = require('babel-runtime/helpers/inherits');
+
+var _inherits3 = _interopRequireDefault(_inherits2);
 
 var _react = require('react');
 
@@ -52,24 +74,17 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+var CLASS_ROOT = _CSSClassnames2.default.VIDEO; // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
-
-var CLASS_ROOT = _CSSClassnames2.default.VIDEO;
 var BACKGROUND_COLOR_INDEX = _CSSClassnames2.default.BACKGROUND_COLOR_INDEX;
 
 var Video = function (_Component) {
-  _inherits(Video, _Component);
+  (0, _inherits3.default)(Video, _Component);
 
   function Video() {
-    _classCallCheck(this, Video);
+    (0, _classCallCheck3.default)(this, Video);
 
-    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Video).call(this));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Video).call(this));
 
     _this._onResponsive = _this._onResponsive.bind(_this);
     _this._onPlaying = _this._onPlaying.bind(_this);
@@ -84,7 +99,7 @@ var Video = function (_Component) {
     return _this;
   }
 
-  _createClass(Video, [{
+  (0, _createClass3.default)(Video, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
       this._responsive = _Responsive2.default.start(this._onResponsive);
@@ -260,7 +275,7 @@ var Video = function (_Component) {
           var nextChapter = chapters[Math.min(chapters.length - 1, index + 1)];
           var lastChapter = chapters[chapters.length - 1];
 
-          var timelineClasses = (0, _classnames5.default)(CLASS_ROOT + '__timeline-chapter', _defineProperty({}, CLASS_ROOT + '__timeline-active', currentProgress !== 0 && (currentProgress >= chapter.time && currentProgress < nextChapter.time || index === chapters.length - 1 && currentProgress >= lastChapter.time)));
+          var timelineClasses = (0, _classnames5.default)(CLASS_ROOT + '__timeline-chapter', (0, _defineProperty3.default)({}, CLASS_ROOT + '__timeline-active', currentProgress !== 0 && (currentProgress >= chapter.time && currentProgress < nextChapter.time || index === chapters.length - 1 && currentProgress >= lastChapter.time)));
 
           return _react2.default.createElement(
             _Box2.default,
@@ -296,7 +311,7 @@ var Video = function (_Component) {
           var currentProgress = this.state.progress;
           var nextChapter = chapters[Math.min(chapters.length - 1, index + 1)];
 
-          var progressTicksClasses = (0, _classnames5.default)(CLASS_ROOT + '__progress-ticks-chapter', _defineProperty({}, CLASS_ROOT + '__progress-ticks-active', currentProgress !== 0 && currentProgress >= chapter.time && currentProgress < nextChapter.time));
+          var progressTicksClasses = (0, _classnames5.default)(CLASS_ROOT + '__progress-ticks-chapter', (0, _defineProperty3.default)({}, CLASS_ROOT + '__progress-ticks-active', currentProgress !== 0 && currentProgress >= chapter.time && currentProgress < nextChapter.time));
 
           return _react2.default.createElement('div', { key: chapter.time, className: progressTicksClasses,
             style: { left: percent.toString() + '%' },
@@ -312,7 +327,7 @@ var Video = function (_Component) {
 
       var progress = void 0;
       if (this.props.duration) {
-        var progressClass = (0, _classnames5.default)(CLASS_ROOT + '__progress', _defineProperty({}, CLASS_ROOT + '--has-timeline', this.props.timeline));
+        var progressClass = (0, _classnames5.default)(CLASS_ROOT + '__progress', (0, _defineProperty3.default)({}, CLASS_ROOT + '--has-timeline', this.props.timeline));
 
         var percent = Math.min(Math.round(this.state.progress / this.props.duration * 100), 100);
         progress = _react2.default.createElement(
@@ -356,7 +371,6 @@ var Video = function (_Component) {
       );
     }
   }]);
-
   return Video;
 }(_react.Component);
 

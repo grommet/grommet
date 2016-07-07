@@ -4,9 +4,37 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+var _extends2 = require('babel-runtime/helpers/extends');
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _extends3 = _interopRequireDefault(_extends2);
+
+var _keys = require('babel-runtime/core-js/object/keys');
+
+var _keys2 = _interopRequireDefault(_keys);
+
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
+
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = require('babel-runtime/helpers/createClass');
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = require('babel-runtime/helpers/inherits');
+
+var _inherits3 = _interopRequireDefault(_inherits2);
 
 var _react = require('react');
 
@@ -40,32 +68,25 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = _CSSClassnames2.default.NOTIFICATION;
 var BACKGROUND_COLOR_INDEX = _CSSClassnames2.default.BACKGROUND_COLOR_INDEX;
 
 var Notification = function (_Component) {
-  _inherits(Notification, _Component);
+  (0, _inherits3.default)(Notification, _Component);
 
   function Notification() {
-    _classCallCheck(this, Notification);
-
-    return _possibleConstructorReturn(this, Object.getPrototypeOf(Notification).apply(this, arguments));
+    (0, _classCallCheck3.default)(this, Notification);
+    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Notification).apply(this, arguments));
   }
 
-  _createClass(Notification, [{
+  (0, _createClass3.default)(Notification, [{
     key: 'render',
     value: function render() {
       var _classnames;
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, CLASS_ROOT + '--status-' + this.props.status.toLowerCase(), BACKGROUND_COLOR_INDEX + '-' + this.props.status.toLowerCase(), this.props.className, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--' + this.props.size, this.props.size), _defineProperty(_classnames, CLASS_ROOT + '--disabled', !this.props.onClick), _classnames));
+      var classes = (0, _classnames3.default)(CLASS_ROOT, CLASS_ROOT + '--status-' + this.props.status.toLowerCase(), BACKGROUND_COLOR_INDEX + '-' + this.props.status.toLowerCase(), this.props.className, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + this.props.size, this.props.size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--disabled', !this.props.onClick), _classnames));
 
       var status = void 0;
       if (this.props.status) {
@@ -113,11 +134,11 @@ var Notification = function (_Component) {
         );
       }
 
-      var boxProps = _Props2.default.pick(this.props, Object.keys(_Box2.default.propTypes));
+      var boxProps = _Props2.default.pick(this.props, (0, _keys2.default)(_Box2.default.propTypes));
 
       return _react2.default.createElement(
         _Box2.default,
-        _extends({}, boxProps, { className: classes, direction: 'row', responsive: false }),
+        (0, _extends3.default)({}, boxProps, { className: classes, direction: 'row', responsive: false }),
         status,
         _react2.default.createElement(
           _Box2.default,
@@ -136,7 +157,6 @@ var Notification = function (_Component) {
       );
     }
   }]);
-
   return Notification;
 }(_react.Component);
 
@@ -144,7 +164,7 @@ Notification.displayName = 'Notification';
 exports.default = Notification;
 ;
 
-Notification.propTypes = _extends({
+Notification.propTypes = (0, _extends3.default)({
   context: _react.PropTypes.node,
   message: _react.PropTypes.string.isRequired,
   percentComplete: _react.PropTypes.number,

@@ -4,7 +4,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
 
 var _enUS = require('./icons/en-US');
 
@@ -12,7 +14,7 @@ var _enUS2 = _interopRequireDefault(_enUS);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.default = _extends({
+exports.default = (0, _extends3.default)({
   IndexFilters: {
     filters: '{quantity, plural,\n  =0 {Filters}\n  =1 {one filter}\n  other {# filters}\n}'
   }
@@ -79,5 +81,6 @@ exports.default = _extends({
   uri: 'URI',
   Value: 'Value',
   Warning: 'Warning'
-});
+}); // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+
 module.exports = exports['default'];

@@ -4,9 +4,37 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
+var _keys = require('babel-runtime/core-js/object/keys');
+
+var _keys2 = _interopRequireDefault(_keys);
+
+var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
+
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = require('babel-runtime/helpers/createClass');
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = require('babel-runtime/helpers/inherits');
+
+var _inherits3 = _interopRequireDefault(_inherits2);
 
 var _react = require('react');
 
@@ -66,13 +94,7 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = _CSSClassnames2.default.MENU;
 
@@ -84,12 +106,12 @@ function isFunction(obj) {
 // so we can transfer the router context.
 
 var MenuDrop = function (_Component) {
-  _inherits(MenuDrop, _Component);
+  (0, _inherits3.default)(MenuDrop, _Component);
 
   function MenuDrop() {
-    _classCallCheck(this, MenuDrop);
+    (0, _classCallCheck3.default)(this, MenuDrop);
 
-    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(MenuDrop).call(this));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(MenuDrop).call(this));
 
     _this._onUpKeyPress = _this._onUpKeyPress.bind(_this);
     _this._onDownKeyPress = _this._onDownKeyPress.bind(_this);
@@ -97,7 +119,7 @@ var MenuDrop = function (_Component) {
     return _this;
   }
 
-  _createClass(MenuDrop, [{
+  (0, _createClass3.default)(MenuDrop, [{
     key: 'getChildContext',
     value: function getChildContext() {
       return {
@@ -251,7 +273,7 @@ var MenuDrop = function (_Component) {
       var colorIndex = _props.colorIndex;
       var onClick = _props.onClick;
 
-      var boxProps = _Props2.default.pick(this.props, Object.keys(_Box2.default.propTypes));
+      var boxProps = _Props2.default.pick(this.props, (0, _keys2.default)(_Box2.default.propTypes));
       delete boxProps.colorIndex; // manage colorIndex at the outer menuDrop element
 
       delete boxProps.onClick;
@@ -269,7 +291,7 @@ var MenuDrop = function (_Component) {
 
       var contents = [_react2.default.cloneElement(control, { key: 'control', fill: true }), _react2.default.createElement(
         _Box2.default,
-        _extends({}, boxProps, { key: 'nav', ref: 'navContainer',
+        (0, _extends3.default)({}, boxProps, { key: 'nav', ref: 'navContainer',
           role: 'menu', tag: 'nav', className: CLASS_ROOT + '__contents',
           primary: false }),
         children
@@ -279,7 +301,7 @@ var MenuDrop = function (_Component) {
         contents.reverse();
       }
 
-      var classes = (0, _classnames4.default)(CLASS_ROOT + '__drop', (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '__drop--align-right', dropAlign.right), _defineProperty(_classnames, CLASS_ROOT + '__drop--' + size, size), _classnames));
+      var classes = (0, _classnames4.default)(CLASS_ROOT + '__drop', (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__drop--align-right', dropAlign.right), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__drop--' + size, size), _classnames));
 
       return _react2.default.createElement(
         _Box2.default,
@@ -289,14 +311,13 @@ var MenuDrop = function (_Component) {
       );
     }
   }]);
-
   return MenuDrop;
 }(_react.Component);
 
 MenuDrop.displayName = 'MenuDrop';
 
 
-MenuDrop.propTypes = _extends({}, _Box2.default.propTypes, {
+MenuDrop.propTypes = (0, _extends3.default)({}, _Box2.default.propTypes, {
   control: _react.PropTypes.node,
   dropAlign: _Drop2.default.alignPropType,
   id: _react.PropTypes.string.isRequired,
@@ -314,12 +335,12 @@ MenuDrop.childContextTypes = {
 };
 
 var Menu = function (_Component2) {
-  _inherits(Menu, _Component2);
+  (0, _inherits3.default)(Menu, _Component2);
 
   function Menu(props) {
-    _classCallCheck(this, Menu);
+    (0, _classCallCheck3.default)(this, Menu);
 
-    var _this2 = _possibleConstructorReturn(this, Object.getPrototypeOf(Menu).call(this, props));
+    var _this2 = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Menu).call(this, props));
 
     _this2._onOpen = _this2._onOpen.bind(_this2);
     _this2._onClose = _this2._onClose.bind(_this2);
@@ -351,7 +372,7 @@ var Menu = function (_Component2) {
     return _this2;
   }
 
-  _createClass(Menu, [{
+  (0, _createClass3.default)(Menu, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
       if (this.refs.control) {
@@ -507,12 +528,12 @@ var Menu = function (_Component2) {
         this._renderControlContents()
       );
 
-      var boxProps = _Props2.default.pick(this.props, Object.keys(_Box2.default.propTypes));
+      var boxProps = _Props2.default.pick(this.props, (0, _keys2.default)(_Box2.default.propTypes));
       var onClick = this.props.closeOnClick ? this._onClose : this._onSink;
 
       return _react2.default.createElement(
         MenuDrop,
-        _extends({}, boxProps, this.context, {
+        (0, _extends3.default)({}, boxProps, this.context, {
           dropAlign: this.props.dropAlign,
           size: this.props.size,
           onClick: onClick,
@@ -526,10 +547,10 @@ var Menu = function (_Component2) {
     value: function render() {
       var _classnames2;
 
-      var classes = (0, _classnames4.default)(CLASS_ROOT, this.props.className, (_classnames2 = {}, _defineProperty(_classnames2, CLASS_ROOT + '--' + this.props.direction, this.props.direction), _defineProperty(_classnames2, CLASS_ROOT + '--' + this.props.size, this.props.size), _defineProperty(_classnames2, CLASS_ROOT + '--primary', this.props.primary), _defineProperty(_classnames2, CLASS_ROOT + '--inline', this.state.inline), _defineProperty(_classnames2, CLASS_ROOT + '--explode', 'explode' === this.state.inline), _defineProperty(_classnames2, CLASS_ROOT + '--controlled', !this.state.inline), _defineProperty(_classnames2, CLASS_ROOT + '__control', !this.state.inline), _defineProperty(_classnames2, CLASS_ROOT + '--labelled', !this.state.inline && this.props.label), _classnames2));
+      var classes = (0, _classnames4.default)(CLASS_ROOT, this.props.className, (_classnames2 = {}, (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--' + this.props.direction, this.props.direction), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--' + this.props.size, this.props.size), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--primary', this.props.primary), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--inline', this.state.inline), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--explode', 'explode' === this.state.inline), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--controlled', !this.state.inline), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '__control', !this.state.inline), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--labelled', !this.state.inline && this.props.label), _classnames2));
 
       if (this.state.inline) {
-        var boxProps = _Props2.default.pick(this.props, Object.keys(_Box2.default.propTypes));
+        var boxProps = _Props2.default.pick(this.props, (0, _keys2.default)(_Box2.default.propTypes));
         var label = void 0;
         if ('explode' === this.state.inline) {
           label = _react2.default.createElement(
@@ -541,7 +562,7 @@ var Menu = function (_Component2) {
 
         return _react2.default.createElement(
           _Box2.default,
-          _extends({}, boxProps, { tag: 'nav', id: this.props.id,
+          (0, _extends3.default)({}, boxProps, { tag: 'nav', id: this.props.id,
             className: classes, primary: false }),
           label,
           this.props.children
@@ -571,7 +592,6 @@ var Menu = function (_Component2) {
       }
     }
   }]);
-
   return Menu;
 }(_react.Component);
 
@@ -579,7 +599,7 @@ Menu.displayName = 'Menu';
 exports.default = Menu;
 
 
-Menu.propTypes = _extends({
+Menu.propTypes = (0, _extends3.default)({
   closeOnClick: _react.PropTypes.bool,
   dropAlign: _Drop2.default.alignPropType,
   dropColorIndex: _react.PropTypes.string,
