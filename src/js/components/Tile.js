@@ -15,6 +15,10 @@ export default class Tile extends Component {
     const { children, className, onClick, wide, status, selected,
       hoverStyle, hoverColorIndex, hoverBorder, hoverBorderSize } = this.props;
     const restProps = Props.omit(this.props, Object.keys(Box.propTypes));
+    delete restProps.hoverStyle;
+    delete restProps.hoverColorIndex;
+    delete restProps.hoverBorder;
+    delete restProps.hoverBorderSize;
 
     if (selected) {
       console.warn('Selected option has been deprecated, please use ' +
