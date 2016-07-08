@@ -88,6 +88,10 @@ var Tile = function (_Component) {
       var hoverBorderSize = _props.hoverBorderSize;
 
       var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(_Box2.default.propTypes));
+      delete restProps.hoverStyle;
+      delete restProps.hoverColorIndex;
+      delete restProps.hoverBorder;
+      delete restProps.hoverBorderSize;
 
       if (selected) {
         console.warn('Selected option has been deprecated, please use ' + 'selected option at the Tiles level.');
