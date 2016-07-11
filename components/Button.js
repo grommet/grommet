@@ -88,10 +88,13 @@ var Button = function (_Component) {
       }
 
       var Tag = this.props.href ? 'a' : 'button';
-
+      var type = void 0;
+      if (!this.props.href) {
+        type = this.props.type;
+      }
       return _react2.default.createElement(
         Tag,
-        { href: this.props.href, id: this.props.id, type: this.props.type,
+        { href: this.props.href, id: this.props.id, type: type,
           className: classes, 'aria-label': this.props.a11yTitle,
           onClick: this.props.onClick,
           disabled: !this.props.onClick && !this.props.href },
