@@ -127,70 +127,7 @@ export default class Video extends Component {
     }
   }
 
-  render () {
-    let classes = [CLASS_ROOT];
-    if (this.props.size) {
-      classes.push(`${CLASS_ROOT}--${this.props.size}`);
-    }
-    if (this.props.full) {
-      classes.push(`${CLASS_ROOT}--full`);
-    }
-    if (this.state.playing) {
-      classes.push(`${CLASS_ROOT}--playing`);
-    }
-    if (this.state.interacting) {
-      classes.push(`${CLASS_ROOT}--interacting`);
-    }
-    if (this.props.videoHeader) {
-      classes.push(`${CLASS_ROOT}--video-header`);
-    }
-    if (this.props.colorIndex) {
-      classes.push(`${BACKGROUND_COLOR_INDEX}-${this.props.colorIndex}`);
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
-
-    let controlIconSize = this.state.iconSize;
-    let controlIcon = (this.state.playing ?
-      <PauseIcon size={controlIconSize} /> : (this.state.ended ?
-        <RefreshIcon size={controlIconSize} /> :
-          <PlayIcon size={controlIconSize} />));
-    let a11yControlButtonMessage = (this.state.playing ?
-      'Pause Video' : (this.state.ended ?
-        'Restart Video' :
-          'Play Video'));
-    let a11yControlButtonTitle = Intl.getMessage(this.context.intl, a11yControlButtonMessage);
-
-    let videoHeader;
-    let videoSummaryJustify = 'between';
-    if (this.props.videoHeader) {
-      videoHeader = this.props.videoHeader;
-    } else if (this.props.allowFullScreen) {
-      let a11yExpandButtonTitle = Intl.getMessage(this.context.intl, 'Toggle Fullscreen');
-      // fallback to only displaying full screen icon in header
-      // if allowing fullscreen
-
-      videoHeader = (
-        <Box align="end" full="horizontal">
-          <Button plain={true} onClick={this._onFullScreen}
-            icon={<ExpandIcon />} a11yTitle={a11yExpandButtonTitle} />
-        </Box>
-      );
-    } else {
-      videoSummaryJustify = 'center';
-    }
-
-    let title;
-    if (this.props.title) {
-      classes.push(`${CLASS_ROOT}--titled`);
-      title = (
-        <Box align="center" justify="center" className={`${CLASS_ROOT}__title`}>
-          {this.props.title}
-        </Box>
-      );
-    }
-
+  _renderTimeline () {
     let timeline;
     if (this.props.timeline && this.props.duration) {
 
@@ -228,6 +165,71 @@ export default class Video extends Component {
       );
     }
 
+    return timeline;
+  }
+
+  _renderControls () {
+    let controlIconSize = this.state.iconSize;
+    let controlIcon = (this.state.playing ?
+      <PauseIcon size={controlIconSize} /> : (this.state.ended ?
+        <RefreshIcon size={controlIconSize} /> :
+          <PlayIcon size={controlIconSize} />));
+    let a11yControlButtonMessage = (this.state.playing ?
+      'Pause Video' : (this.state.ended ?
+        'Restart Video' :
+          'Play Video'));
+    let a11yControlButtonTitle = Intl.getMessage(this.context.intl, a11yControlButtonMessage);
+
+    let videoHeader;
+    let videoSummaryJustify = 'between';
+    if (this.props.videoHeader) {
+      videoHeader = this.props.videoHeader;
+    } else if (this.props.allowFullScreen) {
+      let a11yExpandButtonTitle = Intl.getMessage(this.context.intl, 'Toggle Fullscreen');
+      // fallback to only displaying full screen icon in header
+      // if allowing fullscreen
+
+      videoHeader = (
+        <Box align="end" full="horizontal">
+          <Button plain={true} onClick={this._onFullScreen}
+            icon={<ExpandIcon />} a11yTitle={a11yExpandButtonTitle} />
+        </Box>
+      );
+    } else {
+      videoSummaryJustify = 'center';
+    }
+
+    let title;
+    if (this.props.title) {
+      title = (
+        <Box align="center" justify="center" className={`${CLASS_ROOT}__title`}>
+          {this.props.title}
+        </Box>
+      );
+    }
+
+    let onClickControl = this.props.onClick || this._onClickControl;
+    // when iconSize is small (mobile screen sizes), remove the extra padding
+    // so that the play control is centered
+    let emptyBox = this.state.iconSize === 'small' ? null : <Box />;
+
+    let controlsContent = (
+      <Box pad="none" align="center" justify={videoSummaryJustify} className={`${CLASS_ROOT}__summary`}>
+        {videoHeader}
+        <Box pad="medium" align="center" justify="center">
+          <Button className={`${CLASS_ROOT}__control`} plain={true}
+            primary={true} onClick={onClickControl}
+            icon={controlIcon} a11yTitle={a11yControlButtonTitle} />
+          {title}
+        </Box>
+        {emptyBox}
+      </Box>
+    );
+
+    return controlsContent;
+  }
+
+  _renderProgress () {
     let progressTicks;
     if (this.props.timeline && this.props.duration) {
 
@@ -277,28 +279,44 @@ export default class Video extends Component {
       );
     }
 
-    let onClickControl = this.props.onClick || this._onClickControl;
-    // when iconSize is small (mobile screen sizes), remove the extra padding
-    // so that the play control is centered
-    let emptyBox = this.state.iconSize === 'small' ? null : <Box />;
+    return progress;
+  }
+
+  render () {
+    let classes = [CLASS_ROOT];
+    if (this.props.size) {
+      classes.push(`${CLASS_ROOT}--${this.props.size}`);
+    }
+    if (this.props.full) {
+      classes.push(`${CLASS_ROOT}--full`);
+    }
+    if (this.state.playing) {
+      classes.push(`${CLASS_ROOT}--playing`);
+    }
+    if (this.state.interacting) {
+      classes.push(`${CLASS_ROOT}--interacting`);
+    }
+    if (this.props.videoHeader) {
+      classes.push(`${CLASS_ROOT}--video-header`);
+    }
+    if (this.props.colorIndex) {
+      classes.push(`${BACKGROUND_COLOR_INDEX}-${this.props.colorIndex}`);
+    }
+    if (this.props.className) {
+      classes.push(this.props.className);
+    }
+    if (this.props.title) {
+      classes.push(`${CLASS_ROOT}--titled`);
+    }
 
     return (
       <div className={classes.join(' ')} onMouseMove={this._onMouseMove}>
-        <video ref="video" poster={this.props.poster}>
+        <video ref="video" poster={this.props.poster} autoPlay={this.props.autoPlay ? 'autoplay' : false}>
           {this.props.children}
         </video>
-        <Box pad="none" align="center" justify={videoSummaryJustify} className={`${CLASS_ROOT}__summary`}>
-          {videoHeader}
-          <Box pad="medium" align="center" justify="center">
-            <Button className={`${CLASS_ROOT}__control`} plain={true}
-              primary={true} onClick={onClickControl}
-              icon={controlIcon} a11yTitle={a11yControlButtonTitle} />
-            {title}
-          </Box>
-          {emptyBox}
-        </Box>
-        {timeline}
-        {progress}
+        {this.props.showControls ? this._renderControls() : undefined}
+        {this.props.showControls ? this._renderTimeline() : undefined}
+        {this.props.showControls ? this._renderProgress() : undefined}
       </div>
     );
   }
@@ -317,5 +335,12 @@ Video.propTypes = {
   title: PropTypes.node,
   videoHeader: PropTypes.node,
   onClick: PropTypes.func,
-  allowFullScreen: PropTypes.bool
+  allowFullScreen: PropTypes.bool,
+  autoPlay: PropTypes.bool,
+  showControls: PropTypes.bool
+};
+
+Video.defaultProps = {
+  autoPlay: false,
+  showControls: true
 };
