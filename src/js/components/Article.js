@@ -469,7 +469,11 @@ export default class Article extends Component {
             <Button key="previous" ref='previous'
               plain={true} a11yTitle={a11yTitle.previous}
               className={`${CONTROL_CLASS_PREFIX}-left`}
-              onClick={this._onPrevious} icon={<PreviousIcon size="large" />} />
+              onClick={this._onPrevious} icon={<PreviousIcon
+                a11yTitle='article-previous-title'
+                a11yTitleId='article-previous-title-id'
+                size="large" />
+              } />
           );
         }
         if (this.state.selectedIndex < (childCount - 1)) {
@@ -477,7 +481,10 @@ export default class Article extends Component {
             <Button key="next" ref='next'
               plain={true} a11yTitle={a11yTitle.next}
               className={`${CONTROL_CLASS_PREFIX}-right`}
-              onClick={this._onNext} icon={<NextIcon size="large" />} />
+              onClick={this._onNext} icon={<NextIcon size="large"
+                a11yTitle='article-next-title'
+                a11yTitleId='article-next-title-id' />
+              } />
           );
         }
       }
@@ -494,7 +501,8 @@ export default class Article extends Component {
         controls.push(
           <Button key="next" ref='next' plain={true} a11yTitle={a11yTitle.next}
             className={`${CONTROL_CLASS_PREFIX}-down`}
-            onClick={this._onNext}><DownIcon /></Button>
+            onClick={this._onNext}><DownIcon a11yTitle='article-down'
+              a11yTitleId='article-down-id' /></Button>
         );
       }
     }
