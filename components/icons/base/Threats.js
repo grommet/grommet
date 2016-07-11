@@ -87,8 +87,8 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'threats' },
-          _react2.default.createElement('rect', { id: '_x2E_svg_94_', x: '0', y: '1', fill: 'none', width: '24', height: '24' }),
+          null,
+          _react2.default.createElement('rect', { x: '0', y: '1', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M9,9V7h6v2v0.58c2.93,1.19,5,4.06,5,7.42\r c0,4.42-3.58,8-8,8s-8-3.58-8-8c0-3.36,2.07-6.23,5-7.42V9z M22,2v1c0,1.1046-0.8954,2-2,2h-1c-1.1046,0-2-0.8954-2-2v0\r c0-1.1046-0.8954-2-2-2h-1c-1.1046,0-2,0.8954-2,2v4 M15,20l-6-6 M9,20l6-6' })
         )
       );

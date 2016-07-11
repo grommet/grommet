@@ -87,8 +87,8 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'cubes' },
-          _react2.default.createElement('rect', { id: '_x2E_svg_153_', x: '1', y: '2.1147', fill: 'none', width: '24', height: '24' }),
+          null,
+          _react2.default.createElement('rect', { x: '1', y: '2.1147', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M1,14.0692l6-2.9545l6,2.9545v7.0909l-6,2.9545\r l-6-2.9545V14.0692z M1,14.0692l6,2.9545l6-2.9545 M7,17.1147v7 M13,21.1601l6,2.9545l6-2.9545v-7.0909l-6-2.9545l-6,2.9545\r V21.1601z M13,14.0692l6,2.9545l6-2.9545 M19,17.1147v7 M7,11.1601l6,2.9545l6-2.9545V4.0692l-6-2.9545L7,4.0692V11.1601z\r M7,4.0692l6,2.9545l6-2.9545 M13,7.1147v7' })
         )
       );

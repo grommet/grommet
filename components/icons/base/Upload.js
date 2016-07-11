@@ -87,8 +87,8 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'upload' },
-          _react2.default.createElement('rect', { id: '_x2E_svg_25_', y: '0.2041', fill: 'none', width: '24', height: '24' }),
+          null,
+          _react2.default.createElement('rect', { y: '0.2041', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M5,8.4142l7-7l7,7 M12,18.4142v-17 M1,16.4142v7h22\r v-7' })
         )
       );

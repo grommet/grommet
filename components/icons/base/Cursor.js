@@ -87,8 +87,8 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'cusror' },
-          _react2.default.createElement('rect', { id: '_x2E_svg_193_', x: '0', y: '1.2932', fill: 'none', width: '24', height: '24' }),
+          null,
+          _react2.default.createElement('rect', { x: '0', y: '1.2932', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('polygon', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', points: '20,15.2932 6,2.2932 6,21.2932 \r 10.3967,17.6293 13.1616,24.0808 16.8384,22.5056 14.0653,16.035 \t' })
         )
       );

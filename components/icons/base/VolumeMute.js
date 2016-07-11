@@ -88,7 +88,7 @@ var Icon = function (_Component) {
         _react2.default.createElement(
           'g',
           { id: 'volume-mute' },
-          _react2.default.createElement('rect', { id: '_x2E_svg_268_', y: '0', fill: 'none', width: '24', height: '24' }),
+          _react2.default.createElement('rect', { y: '0', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M1,12V8h5l6-5v18l-6-5H1V12' }),
           _react2.default.createElement('line', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', x1: '16', y1: '15.5', x2: '23', y2: '8.5' }),
           _react2.default.createElement('line', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', x1: '16', y1: '8.5', x2: '23', y2: '15.5' })

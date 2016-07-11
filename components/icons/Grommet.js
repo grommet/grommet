@@ -63,6 +63,7 @@ var Grommet = function (_Component) {
         classes.push(this.props.className);
       }
       var title = void 0;
+      var a11yTitleId = this.props.a11yTitleId;
       if (this.props.a11yTitle) {
         title = _react2.default.createElement(
           'title',
@@ -70,11 +71,13 @@ var Grommet = function (_Component) {
           _react2.default.createElement(_FormattedMessage2.default, { id: this.props.a11yTitle,
             defaultMessage: this.props.a11yTitle })
         );
+      } else {
+        a11yTitleId = undefined;
       }
       return _react2.default.createElement(
         'svg',
         { className: classes.join(' '), viewBox: '0 0 182 182', width: '182', height: '182',
-          version: '1.1', role: 'img', 'aria-labelledby': this.props.a11yTitleId },
+          version: '1.1', role: 'img', 'aria-labelledby': a11yTitleId },
         title,
         _react2.default.createElement('path', { role: 'presentation',
           d: 'M 91,91 m 0,-82 a 82,82 0 1,1 0,164 a 82,82 0 1,1 0,-164',

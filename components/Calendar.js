@@ -349,14 +349,16 @@ var Calendar = function (_Component) {
         _react2.default.createElement(
           _Header2.default,
           { justify: 'between' },
-          _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + "__previous", icon: _react2.default.createElement(_LinkPrevious2.default, null),
+          _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + "__previous", icon: _react2.default.createElement(_LinkPrevious2.default, { a11yTitle: 'calendar-previous-title',
+              a11yTitleId: 'calendar-previous-title-id' }),
             onClick: this._onPrevious }),
           _react2.default.createElement(
             _Title2.default,
             { className: CLASS_ROOT + "__title", responsive: false },
             this.state.reference.format('MMMM YYYY')
           ),
-          _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + "__next", icon: _react2.default.createElement(_LinkNext2.default, null),
+          _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + "__next", icon: _react2.default.createElement(_LinkNext2.default, { a11yTitle: 'calendar-next-title',
+              a11yTitleId: 'calendar-next-title-id' }),
             onClick: this._onNext })
         ),
         _react2.default.createElement(
@@ -401,7 +403,9 @@ var Calendar = function (_Component) {
           id: this.props.id, ref: 'calendarInput', name: this.props.name,
           value: this.props.value,
           onChange: this._onInputChange }),
-        _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + "__control", icon: _react2.default.createElement(_Calendar2.default, null),
+        _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + "__control", icon: _react2.default.createElement(_Calendar2.default, {
+            a11yTitle: 'calendar-icon-title',
+            a11yTitleId: 'calendar-icon-title-id' }),
           onClick: this._onOpen })
       );
     }

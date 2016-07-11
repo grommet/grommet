@@ -87,8 +87,8 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'monitor' },
-          _react2.default.createElement('rect', { id: '_x2E_svg_112_', fill: 'none', width: '24', height: '24' }),
+          null,
+          _react2.default.createElement('rect', { fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M23,16H1V2h22V16z M15,16H9v6h6V16z M5,22h14' })
         )
       );

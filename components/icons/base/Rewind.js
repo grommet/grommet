@@ -87,8 +87,8 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'rewind' },
-          _react2.default.createElement('rect', { id: '_x2E_svg_264_', x: '0.6576', y: '0.0293', fill: 'none', width: '24', height: '24' }),
+          null,
+          _react2.default.createElement('rect', { x: '0.6576', y: '0.0293', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('polygon', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', points: '1.6414,12.0293 14.6576,2.0293 \r 14.6576,7.7436 22.6576,2.0293 22.6576,22.0293 14.6576,16.3151 14.6576,22.0293 \t' })
         )
       );

@@ -87,8 +87,8 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'worksop' },
-          _react2.default.createElement('rect', { id: '_x2E_svg_241_', y: '0', fill: 'none', width: '24', height: '24' }),
+          null,
+          _react2.default.createElement('rect', { y: '0', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('polyline', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', points: '20,16 23,16 23,2 3,2 3,5 \t' }),
           _react2.default.createElement('rect', { x: '10', y: '0', width: '6', height: '4' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M10,10.5c0,1.933-1.567,3.5-3.5,3.5\r S3,12.433,3,10.5S4.567,7,6.5,7S10,8.567,10,10.5z M8,14H6c-2.7614,0-5,2.2386-5,5v4h11v-3.9515\r c0-0.6033,0.3584-1.1483,0.9169-1.3766C16.8134,16.0792,19,11,19,11l-2-2C11.7917,14.2083,8,14,8,14 M17,9l2-2' })

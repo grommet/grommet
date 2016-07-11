@@ -87,8 +87,8 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'alarm' },
-          _react2.default.createElement('rect', { id: '_x2E_svg_151_', fill: 'none', width: '24', height: '24' }),
+          null,
+          _react2.default.createElement('rect', { fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M21,12c0,4.9706-4.0294,9-9,9s-9-4.0294-9-9\r s4.0294-9,9-9S21,7.0294,21,12z M6,18l-4,4 M18,18l4,4 M9.46,3.37C8.71,1.96,7.22,1,5.5,1C3.01,1,1,3.01,1,5.5\r c0,1.72,0.96,3.21,2.37,3.96 M20.63,9.46C22.04,8.71,23,7.22,23,5.5C23,3.01,20.99,1,18.5,1c-1.72,0-3.21,0.96-3.96,2.37 M12,7v5\r l3,3' })
         )
       );

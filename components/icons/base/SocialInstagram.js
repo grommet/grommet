@@ -88,7 +88,7 @@ var Icon = function (_Component) {
         _react2.default.createElement(
           'g',
           { id: 'social-instagram' },
-          _react2.default.createElement('rect', { id: '_x2E_svg_305_', x: '0', y: '0', fill: 'none', width: '24', height: '24' }),
+          _react2.default.createElement('rect', { x: '0', y: '0', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { fillRule: 'evenodd', clipRule: 'evenodd', fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M20,22H4\r c-1.1046,0-2-0.8954-2-2V4c0-1.1046,0.8954-2,2-2h16c1.1046,0,2,0.8954,2,2v16C22,21.1046,21.1046,22,20,22z' }),
           _react2.default.createElement('path', { fillRule: 'evenodd', clipRule: 'evenodd', d: 'M22,10H2V4c0-1.1046,0.8954-2,2-2h16c1.1046,0,2,0.8954,2,2V10z' }),
           _react2.default.createElement('path', { fillRule: 'evenodd', clipRule: 'evenodd', fill: '#FFFFFF', d: 'M19.5,7.399h-2c-0.5523,0-1-0.4477-1-1v-2c0-0.5523,0.4477-1,1-1\r h2c0.5523,0,1,0.4477,1,1v2C20.5,6.9513,20.0523,7.399,19.5,7.399z' }),

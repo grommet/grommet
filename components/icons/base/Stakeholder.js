@@ -87,8 +87,8 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'stakeholder' },
-          _react2.default.createElement('rect', { id: '_x2E_svg_155_', x: '0.5', y: '0.0692', fill: 'none', width: '24', height: '24' }),
+          null,
+          _react2.default.createElement('rect', { x: '0.5', y: '0.0692', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M15,4.0692l6-2.9545l6,2.9545v7.0909l-6,2.9545\r l-6-2.9545V4.0692z M15,4.0692l6,2.9545l6-2.9545 M21,7.1147v7 M7,12.1147c0,0,0.04,0,0.02,0c-3.23,0.03-6.02,2.66-6.02,5.89v2.11\r h3 M3,20.1147h10v-2.11c0-3.23-2.76-5.86-5.98-5.89c-0.02,0-0.02,0-0.02,0 M7,4.1147c-2.2091,0-4,1.7909-4,4s1.7909,4,4,4\r s4-1.7909,4-4S9.2091,4.1147,7,4.1147z' })
         )
       );

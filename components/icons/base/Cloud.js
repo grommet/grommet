@@ -87,8 +87,8 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'cloud' },
-          _react2.default.createElement('rect', { id: '_x2E_svg_63_', x: '0', y: '0', fill: 'none', width: '24', height: '24' }),
+          null,
+          _react2.default.createElement('rect', { x: '0', y: '0', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M7.1,8V7c0-2.2091,1.7909-4,4-4h3\r c2.2091,0,4,1.7909,4,4v1c2.7729,0,5,2.2219,5,4.9948S20.8521,18,18.0792,18H11.4 M12.7,8H6.1208C3.3479,8,1.1,10.2375,1.1,13.0104\r S3.3271,18,6.1,18v1.1c0,2.2091,1.7909,4,4,4h3c2.2091,0,4-1.7909,4-4V19' })
         )
       );

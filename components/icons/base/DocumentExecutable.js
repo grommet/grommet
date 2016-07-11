@@ -88,7 +88,7 @@ var Icon = function (_Component) {
         _react2.default.createElement(
           'g',
           { id: 'document-executable' },
-          _react2.default.createElement('rect', { id: '_x2E_svg_284_', x: '0.5814', y: '0', fill: 'none', width: '24', height: '24' }),
+          _react2.default.createElement('rect', { x: '0.5814', y: '0', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('line', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', x1: '6', y1: '13', x2: '0', y2: '13' }),
           _react2.default.createElement('line', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', x1: '6', y1: '19', x2: '0', y2: '19' }),
           _react2.default.createElement('line', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', x1: '5', y1: '16.0001', x2: '0', y2: '16.0001' }),

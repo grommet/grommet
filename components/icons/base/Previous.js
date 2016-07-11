@@ -87,8 +87,8 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'previous' },
-          _react2.default.createElement('rect', { id: '_x2E_svg_262_', y: '1.2071', fill: 'none', width: '24', height: '24' }),
+          null,
+          _react2.default.createElement('rect', { y: '1.2071', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('polyline', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', points: '16.1397,0.7071 5.1397,11.7071 \r 16.1397,22.7071 \t' })
         )
       );

@@ -87,8 +87,8 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'satellite' },
-          _react2.default.createElement('rect', { id: '_x2E_svg_143_', x: '1', y: '0', fill: 'none', width: '24', height: '24' }),
+          null,
+          _react2.default.createElement('rect', { x: '1', y: '0', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M22,17.9467c-4.1421,4.1421-10.8579,4.1421-15,0\r s-4.1421-10.8579,0-15L22,17.9467z M7.015,18.0467c-3.31,0-6.015,2.9-6.015,5.9h12c0-1.12-0.37-2-1.02-3H12 M15,9.9467l4-4\r M20.5,1.9467c-1.3807,0-2.5,1.1193-2.5,2.5s1.1193,2.5,2.5,2.5s2.5-1.1193,2.5-2.5S21.8807,1.9467,20.5,1.9467z' })
         )
       );

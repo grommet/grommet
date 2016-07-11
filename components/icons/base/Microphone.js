@@ -87,8 +87,8 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'microphone' },
-          _react2.default.createElement('rect', { id: '_x2E_svg_21_', x: '0', y: '0', fill: 'none', width: '24', height: '24' }),
+          null,
+          _react2.default.createElement('rect', { x: '0', y: '0', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M19.9997,9.2101v2.04\r c0,4.3892-3.5708,7.96-7.96,7.96h-0.0801c-4.3892,0-7.96-3.5708-7.96-7.96v-2.04 M15.9997,11.2501v-6.08\r c0-2.187-1.773-3.96-3.96-3.96h-0.08c-2.187,0-3.96,1.773-3.96,3.96v6.08c0,2.187,1.773,3.96,3.96,3.96h0.08\r C14.2267,15.2101,15.9997,13.4372,15.9997,11.2501z M11.9997,19.2101v5' })
         )
       );

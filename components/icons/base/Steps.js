@@ -87,8 +87,8 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'steps' },
-          _react2.default.createElement('rect', { id: '_x2E_svg_124_', x: '0.5', y: '0', fill: 'none', width: '24', height: '24' }),
+          null,
+          _react2.default.createElement('rect', { x: '0.5', y: '0', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('polygon', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', points: '16,1.1 16,6.1 11,6.1 11,11.1 6,11.1 \r 6,16.1 1,16.1 1,23.1 6,23.1 11,23.1 16,23.1 23,23.1 23,1.1 \t' })
         )
       );

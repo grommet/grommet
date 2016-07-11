@@ -88,10 +88,10 @@ var Icon = function (_Component) {
         _react2.default.createElement(
           'g',
           { id: 'social-youtube' },
-          _react2.default.createElement('rect', { id: '_x2E_svg_310_', x: '2.0013', y: '0', fill: 'none', width: '24', height: '24' }),
+          _react2.default.createElement('rect', { x: '2.0013', y: '0', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement(
             'g',
-            { id: 'Lozenge' },
+            null,
             _react2.default.createElement(
               'g',
               null,

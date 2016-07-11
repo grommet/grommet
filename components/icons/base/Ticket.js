@@ -87,8 +87,8 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'ticket' },
-          _react2.default.createElement('rect', { id: '_x2E_svg_69_', y: '0', fill: 'none', width: '24', height: '24' }),
+          null,
+          _react2.default.createElement('rect', { y: '0', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M23,9c-1.66,0-3,1.34-3,3s1.34,3,3,3v5H1v-5\r c1.66,0,3-1.34,3-3S2.66,9,1,9V4h22V9z M17,8H7v8h10V8z' })
         )
       );

@@ -87,8 +87,8 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'compasss' },
-          _react2.default.createElement('rect', { id: '_x2E_svg_128_', x: '0', fill: 'none', width: '24', height: '24' }),
+          null,
+          _react2.default.createElement('rect', { x: '0', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('circle', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', cx: '12.0208', cy: '12', r: '11' }),
           _react2.default.createElement('path', { d: 'M8.4853,8.4645L6.0208,18l9.5355-2.4645L18.0208,6L8.4853,8.4645z M12.0208,14c-1.1046,0-2-0.8954-2-2s0.8954-2,2-2\r s2,0.8954,2,2S13.1254,14,12.0208,14z' })
         )

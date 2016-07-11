@@ -87,8 +87,8 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'radial' },
-          _react2.default.createElement('rect', { id: '_x2E_svg_36_', fill: 'none', width: '24', height: '24' }),
+          null,
+          _react2.default.createElement('rect', { fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('circle', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', cx: '12', cy: '12', r: '11' })
         )
       );

@@ -87,9 +87,9 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'filter_1_' },
-          _react2.default.createElement('rect', { id: '_x2E_svg_8_', x: '0', y: '0', fill: 'none', width: '24', height: '24' }),
-          _react2.default.createElement('polygon', { id: 'filter', fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', points: '1.5,2 1.5,2.5 9.5,12.5 \r 9.5,22.5 14.5,20.5 14.5,12.5 22.5,2.5 22.5,2 \t' })
+          null,
+          _react2.default.createElement('rect', { x: '0', y: '0', fill: 'none', width: '24', height: '24' }),
+          _react2.default.createElement('polygon', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', points: '1.5,2 1.5,2.5 9.5,12.5 \r 9.5,22.5 14.5,20.5 14.5,12.5 22.5,2.5 22.5,2 \t' })
         )
       );
     }

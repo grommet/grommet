@@ -87,8 +87,8 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'calendar' },
-          _react2.default.createElement('rect', { id: '_x2E_svg_34_', y: '0.2031', fill: 'none', width: '24', height: '24' }),
+          null,
+          _react2.default.createElement('rect', { y: '0.2031', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M23,23H1V4h22V23z M2,10h20 M6,4V0 M18,4V0' })
         )
       );

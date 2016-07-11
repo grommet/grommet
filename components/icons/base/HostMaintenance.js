@@ -88,7 +88,7 @@ var Icon = function (_Component) {
         _react2.default.createElement(
           'g',
           { id: 'host-maintenance' },
-          _react2.default.createElement('rect', { id: '_x2E_svg_217_', x: '0', fill: 'none', width: '24', height: '24' }),
+          _react2.default.createElement('rect', { x: '0', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M11.1,23H2V1h16v10 M3,8h14 M3,13h13.1 M3,18h11' }),
           _react2.default.createElement('rect', { x: '13', y: '3', width: '3', height: '3' }),
           _react2.default.createElement('path', { d: 'M23.3397,14.7645l-1.9941,1.9941l-1.4142-1.4142l1.994-1.994c-1.1101-0.5445-2.4819-0.3465-3.4083,0.5798\r c-0.9244,0.9244-1.1092,2.2919-0.5776,3.4064l-5.0793,5.079l1.4141,1.4141l5.0795-5.079c1.1144,0.5314,2.4817,0.3466,3.4061-0.5778\r C23.6861,17.2465,23.8842,15.8746,23.3397,14.7645z' })

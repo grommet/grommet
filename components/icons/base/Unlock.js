@@ -87,8 +87,8 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'unlock' },
-          _react2.default.createElement('rect', { id: '_x2E_svg_67_', x: '0', fill: 'none', width: '24', height: '24' }),
+          null,
+          _react2.default.createElement('rect', { x: '0', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M21,23H3V11h18V23z M18,7c0-3.3137-2.6863-6-6-6\r S6,3.6863,6,7v4 M14,17h-4' })
         )
       );

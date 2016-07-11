@@ -87,8 +87,8 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'book' },
-          _react2.default.createElement('rect', { id: '_x2E_svg_240_', y: '0', fill: 'none', width: '24', height: '24' }),
+          null,
+          _react2.default.createElement('rect', { y: '0', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M21,23H4.5C3.1193,23,2,21.8807,2,20.5v0\r C2,19.1193,3.1193,18,4.5,18H20V1H4.5C3.1193,1,2,2.1193,2,3.5V4v17 M19.5,18c-1.3807,0-2.5,1.1193-2.5,2.5v0\r c0,1.3807,1.1193,2.5,2.5,2.5 M9,1v10l3-2l3,2V2' })
         )
       );

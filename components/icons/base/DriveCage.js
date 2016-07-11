@@ -88,7 +88,7 @@ var Icon = function (_Component) {
         _react2.default.createElement(
           'g',
           { id: 'srive-cage' },
-          _react2.default.createElement('rect', { id: '_x2E_svg_205_', x: '0', y: '0', fill: 'none', width: '24', height: '24' }),
+          _react2.default.createElement('rect', { x: '0', y: '0', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('rect', { x: '18', y: '4', width: '2', height: '2' }),
           _react2.default.createElement('rect', { x: '18', y: '10', width: '2', height: '2' }),
           _react2.default.createElement('rect', { x: '18', y: '16', width: '2', height: '2' }),

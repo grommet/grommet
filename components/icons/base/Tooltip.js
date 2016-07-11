@@ -87,8 +87,8 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'tooltip' },
-          _react2.default.createElement('rect', { id: '_x2E_svg_139_', y: '0', fill: 'none', width: '24', height: '24' }),
+          null,
+          _react2.default.createElement('rect', { y: '0', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('polygon', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', points: '22.5,18 15.5001,18 11.4998,22.5 \r 7.4997,18 1.5,18 1.5,1 22.5,1 \t' }),
           _react2.default.createElement('rect', { x: '5.5', y: '8', width: '3', height: '3' }),
           _react2.default.createElement('rect', { x: '10.5', y: '8', width: '3', height: '3' }),

@@ -87,8 +87,8 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'scorecard' },
-          _react2.default.createElement('rect', { id: '_x2E_svg_211_', x: '0', y: '0', fill: 'none', width: '24', height: '24' }),
+          null,
+          _react2.default.createElement('rect', { x: '0', y: '0', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M16.5,4h5v20h-19V4h5 M16.5,2h-9v5h9V2z M7.5,19v-4\r M10.5,19v-6 M13.5,19v-5 M16.5,19v-8' })
         )
       );

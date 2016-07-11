@@ -87,8 +87,8 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'trigger' },
-          _react2.default.createElement('rect', { id: '_x2E_svg_169_', fill: 'none', width: '24', height: '24' }),
+          null,
+          _react2.default.createElement('rect', { fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('polygon', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', points: '9,1 4,14 10,14 7,23 8.75,23 20,9 14,9 \r 18,1 \t' })
         )
       );

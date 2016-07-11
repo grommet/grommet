@@ -581,13 +581,18 @@ var Article = function (_Component) {
             controls.push(_react2.default.createElement(_Button2.default, { key: 'previous', ref: 'previous',
               plain: true, a11yTitle: a11yTitle.previous,
               className: CONTROL_CLASS_PREFIX + '-left',
-              onClick: this._onPrevious, icon: _react2.default.createElement(_LinkPrevious2.default, { size: 'large' }) }));
+              onClick: this._onPrevious, icon: _react2.default.createElement(_LinkPrevious2.default, {
+                a11yTitle: 'article-previous-title',
+                a11yTitleId: 'article-previous-title-id',
+                size: 'large' }) }));
           }
           if (this.state.selectedIndex < childCount - 1) {
             controls.push(_react2.default.createElement(_Button2.default, { key: 'next', ref: 'next',
               plain: true, a11yTitle: a11yTitle.next,
               className: CONTROL_CLASS_PREFIX + '-right',
-              onClick: this._onNext, icon: _react2.default.createElement(_LinkNext2.default, { size: 'large' }) }));
+              onClick: this._onNext, icon: _react2.default.createElement(_LinkNext2.default, { size: 'large',
+                a11yTitle: 'article-next-title',
+                a11yTitleId: 'article-next-title-id' }) }));
           }
         }
       } else {
@@ -607,7 +612,8 @@ var Article = function (_Component) {
             { key: 'next', ref: 'next', plain: true, a11yTitle: a11yTitle.next,
               className: CONTROL_CLASS_PREFIX + '-down',
               onClick: this._onNext },
-            _react2.default.createElement(_Down2.default, null)
+            _react2.default.createElement(_Down2.default, { a11yTitle: 'article-down',
+              a11yTitleId: 'article-down-id' })
           ));
         }
       }

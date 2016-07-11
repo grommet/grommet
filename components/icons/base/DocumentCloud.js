@@ -88,7 +88,7 @@ var Icon = function (_Component) {
         _react2.default.createElement(
           'g',
           { id: 'document-cloud' },
-          _react2.default.createElement('rect', { id: '_x2E_svg_271_', x: '2', y: '0', fill: 'none', width: '24', height: '24' }),
+          _react2.default.createElement('rect', { x: '2', y: '0', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('polyline', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', points: '6,6 6,1 19.0002,1 24,5.9999 24,23 17,23 \r ' }),
           _react2.default.createElement('polyline', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', points: '18,2 18,7 24,7 \t' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M5.375,12.8537v-1c0-1.6569,1.3431-3,3-3h4\r c1.6569,0,3,1.3431,3,3v1l1,0c1.6569,0,3,1.3431,3,3v0c0,1.6569-1.3431,3-3,3H9.9996' }),

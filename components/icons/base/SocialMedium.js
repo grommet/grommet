@@ -88,11 +88,11 @@ var Icon = function (_Component) {
         _react2.default.createElement(
           'g',
           { id: 'social-medium', transform: 'matrix(1.3333333,0,0,-1.3333333,0,126.66667)' },
-          _react2.default.createElement('rect', { id: '_x2E_svg_296_', x: '-3', y: '74', fill: 'none', width: '24', height: '24' }),
+          _react2.default.createElement('rect', { x: '-3', y: '74', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement(
             'g',
-            { id: 'g12', transform: 'scale(0.1)' },
-            _react2.default.createElement('path', { id: 'path14', d: 'M180,906.9011h-7.119c-2.643,0-6.381-3.8127-6.381-6.2537v-88.4714c0-2.444,3.738-5.775,6.381-5.775H180v-21\r h-64.5v21H129v93.0001h-0.6615L96.8133,785.4011H72.4061L41.2875,899.4011H40.5v-93.0001H54v-21H0v21h6.9147\r c2.8476,0,6.5853,3.3311,6.5853,5.775v88.4714c0,2.4409-3.7377,6.2537-6.5853,6.2537H0v21h67.5246l22.1696-82.5h0.6099\r l22.3746,82.5H180V906.9011' })
+            { transform: 'scale(0.1)' },
+            _react2.default.createElement('path', { d: 'M180,906.9011h-7.119c-2.643,0-6.381-3.8127-6.381-6.2537v-88.4714c0-2.444,3.738-5.775,6.381-5.775H180v-21\r h-64.5v21H129v93.0001h-0.6615L96.8133,785.4011H72.4061L41.2875,899.4011H40.5v-93.0001H54v-21H0v21h6.9147\r c2.8476,0,6.5853,3.3311,6.5853,5.775v88.4714c0,2.4409-3.7377,6.2537-6.5853,6.2537H0v21h67.5246l22.1696-82.5h0.6099\r l22.3746,82.5H180V906.9011' })
           )
         )
       );

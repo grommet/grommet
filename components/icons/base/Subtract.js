@@ -87,9 +87,9 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'subtract_1_' },
-          _react2.default.createElement('rect', { id: '_x2E_svg_10_', x: '0', y: '0', fill: 'none', width: '24', height: '24' }),
-          _react2.default.createElement('line', { id: 'subtract', fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', x1: '0', y1: '12', x2: '24', y2: '12' })
+          null,
+          _react2.default.createElement('rect', { x: '0', y: '0', fill: 'none', width: '24', height: '24' }),
+          _react2.default.createElement('line', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', x1: '0', y1: '12', x2: '24', y2: '12' })
         )
       );
     }
