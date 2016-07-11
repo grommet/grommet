@@ -67,8 +67,8 @@ var Anchor = function (_Component) {
       if (this.props.icon) {
         icon = this.props.icon;
       } else if (this.props.primary) {
-        icon = _react2.default.createElement(_LinkNext2.default, { a11yTitle: 'anchor-next-title',
-          a11yTitleId: 'anchor-next-title-id' });
+        icon = _react2.default.createElement(_LinkNext2.default, { a11yTitle: this.props.id + 'anchor-next-title',
+          a11yTitleId: this.props.id + 'anchor-next-title-id' });
       }
 
       if (icon && !this.props.primary && !this.props.label) {
