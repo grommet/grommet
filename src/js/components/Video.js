@@ -311,7 +311,11 @@ export default class Video extends Component {
 
     return (
       <div className={classes.join(' ')} onMouseMove={this._onMouseMove}>
-        <video ref="video" poster={this.props.poster} autoPlay={this.props.autoPlay ? 'autoplay' : false}>
+        <video ref="video"
+          poster={this.props.poster}
+          autoPlay={this.props.autoPlay ? 'autoplay' : false}
+          loop={this.props.loop ? 'loop' : false}
+          muted={this.props.muted ? 'muted' : false}>
           {this.props.children}
         </video>
         {this.props.showControls ? this._renderControls() : undefined}
@@ -337,10 +341,14 @@ Video.propTypes = {
   onClick: PropTypes.func,
   allowFullScreen: PropTypes.bool,
   autoPlay: PropTypes.bool,
-  showControls: PropTypes.bool
+  showControls: PropTypes.bool,
+  muted: PropTypes.bool,
+  loop: PropTypes.bool
 };
 
 Video.defaultProps = {
   autoPlay: false,
-  showControls: true
+  showControls: true,
+  muted: false,
+  loop: false
 };
