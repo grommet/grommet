@@ -80,7 +80,7 @@ export default class Notification extends Component {
     return (
       <Box {...boxProps} className={classes} direction="row" responsive={false}>
         {status}
-        <Box>
+        <Box full="horizontal">
           <span className={`${CLASS_ROOT}__message`}>
             {this.props.message}
           </span>

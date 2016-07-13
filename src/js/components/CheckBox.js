@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
-
+import Props from '../utils/Props';
 import CSSClassnames from '../utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.CHECK_BOX;
@@ -20,7 +20,7 @@ export default class CheckBox extends Component {
 
   render () {
     let classes = [CLASS_ROOT];
-
+    let restProps = Props.omit(this.props, Object.keys(CheckBox.propTypes));
     let label;
     let labelId = `${CLASS_ROOT}-label`;
     if (this.props.label) {
@@ -70,7 +70,9 @@ export default class CheckBox extends Component {
     ];
 
     return (
-      <label className={classes.join(' ')}
+      <label
+        {...restProps}
+        className={classes.join(' ')}
         aria-labelledby={labelId}>
         {this.props.reverse ? children.reverse() : children}
         {hidden}
