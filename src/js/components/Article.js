@@ -512,7 +512,8 @@ export default class Article extends Component {
 
   render () {
     let classes = [CLASS_ROOT];
-    const other = Props.pick(this.props, Object.keys(Box.propTypes));
+    const boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
+    const restProps = Props.omit(this.props, Object.keys(Article.propTypes));
     if (this.props.scrollStep) {
       classes.push(`${CLASS_ROOT}--scroll-step`);
     }
@@ -562,10 +563,10 @@ export default class Article extends Component {
       }, this);
     }
 
-    delete other.a11yTitle;
+    delete boxProps.a11yTitle;
 
     return (
-      <Box ref="component" tag="article" {...other}
+      <Box {...restProps} {...boxProps} ref="component" tag="article"
         className={classes.join(' ')} onFocus={this._onFocusChange}
         onScroll={this._onScroll} onTouchStart={this._onTouchStart}
         onTouchMove={this._onTouchMove} primary={this.props.primary}>

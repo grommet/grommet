@@ -1,6 +1,6 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component, PropTypes, Children } from 'react';
 import CSSClassnames from '../utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.SPLIT;
@@ -29,7 +29,8 @@ export default class Split extends Component {
     // The 500ms delay is loosely tied to the CSS animation duration.
     // We want any animations to finish before triggering the resize.
     // TODO: consider using an animation end event instead of a timer.
-    if (this._nonNullChildCount(nextProps) !== this._nonNullChildCount(this.props)) {
+    if (this._nonNullChildCount(nextProps) !==
+      this._nonNullChildCount(this.props)) {
       clearTimeout(this._resizeTimer);
       this._resizeTimer = setTimeout(function () {
         var event = document.createEvent('HTMLEvents');
@@ -45,7 +46,7 @@ export default class Split extends Component {
 
   // Support function for componentWillReceiveProps()
   _nonNullChildCount (props) {
-    var result = 0;
+    let result = 0;
     React.Children.forEach(props.children, function (child) {
       if (child !== null) result += 1;
     });
@@ -68,9 +69,10 @@ export default class Split extends Component {
   }
 
   _layout () {
-    var splitElement = this.refs.split;
+    const splitElement = this.refs.split;
     if (splitElement) {
-      if (splitElement.offsetWidth < BREAK_WIDTH && this.props.showOnResponsive === 'priority') {
+      if (splitElement.offsetWidth < BREAK_WIDTH &&
+        this.props.showOnResponsive === 'priority') {
         this._setResponsive('single');
       } else {
         this._setResponsive('multiple');
@@ -79,7 +81,9 @@ export default class Split extends Component {
   }
 
   render () {
-    var classes = [CLASS_ROOT];
+    const { priority } = this.props;
+    const { responsive } = this.state;
+    let classes = [CLASS_ROOT];
     if (this.props.flex) {
       classes.push(CLASS_ROOT + "--flex-" + this.props.flex);
     }
@@ -93,32 +97,19 @@ export default class Split extends Component {
       classes.push(this.props.className);
     }
 
-    let children = React.Children.toArray(this.props.children);
+    const children = Children.map(this.props.children, (element, index) => {
+      // When we only have room to show one child, hide the appropriate one
+      if ('single' === responsive &&
+        (('left' === priority && index > 0) ||
+        ('right' === priority && index === 0))) {
+        element = React.cloneElement(element, { style: { display: 'none' } });
+      }
+      return element;
+    });
+
     return (
       <div ref="split" className={classes.join(' ')}>
-        {children.map((Component, idx) => {
-          let hidden = false;
-          if ('single' === this.state.responsive) {
-            if ('left' === this.props.priority) {
-              // If priority = left and we're not
-              // the first child, then hide
-              if (idx !== 0) {
-                hidden = true;
-              }
-            } else {
-              // If priority = right and we're not
-              // the last child, then hide
-              if (idx !== children.length - 1) {
-                hidden = true;
-              }
-            }
-          }
-
-          if (hidden) {
-            return <div key={idx} style={{display: 'none'}}>{Component}</div>;
-          }
-          return <div key={idx}>{Component}</div>;
-        })}
+        {children}
       </div>
     );
   }
