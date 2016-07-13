@@ -127,7 +127,8 @@ var Split = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this2 = this;
+      var priority = this.props.priority;
+      var responsive = this.state.responsive;
 
       var classes = [CLASS_ROOT];
       if (this.props.flex) {
@@ -143,41 +144,18 @@ var Split = function (_Component) {
         classes.push(this.props.className);
       }
 
-      var children = _react2.default.Children.toArray(this.props.children);
+      var children = _react.Children.map(this.props.children, function (element, index) {
+        // When we only have room to show one child, hide the appropriate one
+        if ('single' === responsive && ('left' === priority && index > 0 || 'right' === priority && index === 0)) {
+          element = _react2.default.cloneElement(element, { style: { display: 'none' } });
+        }
+        return element;
+      });
+
       return _react2.default.createElement(
         'div',
         { ref: 'split', className: classes.join(' ') },
-        children.map(function (Component, idx) {
-          var hidden = false;
-          if ('single' === _this2.state.responsive) {
-            if ('left' === _this2.props.priority) {
-              // If priority = left and we're not
-              // the first child, then hide
-              if (idx !== 0) {
-                hidden = true;
-              }
-            } else {
-              // If priority = right and we're not
-              // the last child, then hide
-              if (idx !== children.length - 1) {
-                hidden = true;
-              }
-            }
-          }
-
-          if (hidden) {
-            return _react2.default.createElement(
-              'div',
-              { key: idx, style: { display: 'none' } },
-              Component
-            );
-          }
-          return _react2.default.createElement(
-            'div',
-            { key: idx },
-            Component
-          );
-        })
+        children
       );
     }
   }]);

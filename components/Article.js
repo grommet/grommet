@@ -626,7 +626,8 @@ var Article = function (_Component) {
       var _this9 = this;
 
       var classes = [CLASS_ROOT];
-      var other = _Props2.default.pick(this.props, (0, _keys2.default)(_Box2.default.propTypes));
+      var boxProps = _Props2.default.pick(this.props, (0, _keys2.default)(_Box2.default.propTypes));
+      var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Article.propTypes));
       if (this.props.scrollStep) {
         classes.push(CLASS_ROOT + '--scroll-step');
       }
@@ -674,11 +675,11 @@ var Article = function (_Component) {
         }, this);
       }
 
-      delete other.a11yTitle;
+      delete boxProps.a11yTitle;
 
       return _react2.default.createElement(
         _Box2.default,
-        (0, _extends3.default)({ ref: 'component', tag: 'article' }, other, {
+        (0, _extends3.default)({}, restProps, boxProps, { ref: 'component', tag: 'article',
           className: classes.join(' '), onFocus: this._onFocusChange,
           onScroll: this._onScroll, onTouchStart: this._onTouchStart,
           onTouchMove: this._onTouchMove, primary: this.props.primary }),
