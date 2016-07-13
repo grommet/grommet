@@ -46,9 +46,12 @@ export default class Button extends Component {
     }
 
     let Tag = this.props.href ? 'a' : 'button';
-
+    let type;
+    if (!this.props.href) {
+      type = this.props.type;
+    }
     return (
-      <Tag href={this.props.href} id={this.props.id} type={this.props.type}
+      <Tag href={this.props.href} id={this.props.id} type={type}
         className={classes} aria-label={this.props.a11yTitle}
         onClick={this.props.onClick}
         disabled={!this.props.onClick && !this.props.href}>
