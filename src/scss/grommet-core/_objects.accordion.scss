@@ -1,0 +1,8 @@
+.grommet .accordion {
+
+  &__sub-headline {
+    margin-top: 0;
+    margin-bottom: $inuit-base-spacing-unit * 2;
+    max-width: $size-medium;
+  }
+}

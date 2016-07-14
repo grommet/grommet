@@ -2,6 +2,8 @@
 
 @import "inuit-list-bare/objects.list-bare";
 
+@import "objects.accordion";
+@import "objects.accordion-panel";
 @import "objects.anchor";
 @import "objects.app";
 @import "objects.article";
@@ -13,6 +15,7 @@
 @import "objects.carousel";
 @import "objects.chart";
 @import "objects.check-box";
+@import "objects.collapsible";
 @import "objects.color-index";
 @import "objects.columns";
 @import "objects.date-time";
