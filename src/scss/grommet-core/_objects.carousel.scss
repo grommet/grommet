@@ -136,3 +136,10 @@
     user-drag: none;
   }
 }
+
+// workaround for missing controls in Safari
+_::-webkit-:not(:root:root),
+.#{$grommet-namespace}carousel__control,
+.#{$grommet-namespace}carousel__arrow .#{$grommet-namespace}control-icon { 
+  -webkit-filter: url(#drop-shadow);
+}
