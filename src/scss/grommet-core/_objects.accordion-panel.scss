@@ -1,5 +1,10 @@
 .grommet .#{$grommet-namespace}accordion-panel {
 
+  > .#{$grommet-namespace}-box--clickable {
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
   .#{$grommet-namespace}heading,
   .#{$grommet-namespace}paragraph {
     max-width: $size-medium;
