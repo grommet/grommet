@@ -2,7 +2,7 @@
 
 .grommet .#{$grommet-namespace}accordion-panel {
 
-  > .#{$grommet-namespace}-box--clickable {
+  > .#{$grommet-namespace}box--clickable {
     user-select: none;
     -webkit-user-select: none;
   }
