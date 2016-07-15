@@ -207,6 +207,8 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
     input[type=number] {
       display: inline-block;
       flex: 1;
+      flex-basis: inherit; // required for firefox to prevent horizontal scrollbar
+      width: 0; // required to keep reset input width and let flex-grow handle it
       border: none;
       padding: 0 $form-horizontal-padding;
 
