@@ -2,11 +2,11 @@
 
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
-import Box from 'grommet/components/Box';
-import Heading from 'grommet/components/Heading';
-import ListItem from 'grommet/components/ListItem';
-import OpenIcon from 'grommet/components/icons/base/Add';
-import CloseIcon from 'grommet/components/icons/base/Subtract';
+import Box from './Box';
+import Heading from './Heading';
+import ListItem from './ListItem';
+import OpenIcon from './icons/base/Add';
+import CloseIcon from './icons/base/Subtract';
 import Collapsible from './Collapsible';
 
 import CSSClassnames from '../utils/CSSClassnames';

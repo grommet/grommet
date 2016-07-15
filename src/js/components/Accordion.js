@@ -2,10 +2,10 @@
 
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
-import Box from 'grommet/components/Box';
-import Headline from 'grommet/components/Headline';
-import List from 'grommet/components/List';
-import Paragraph from 'grommet/components/Paragraph';
+import Box from './Box';
+import Headline from './Headline';
+import List from './List';
+import Paragraph from './Paragraph';
 
 import CSSClassnames from '../utils/CSSClassnames';
 

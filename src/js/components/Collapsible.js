@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import TransitionGroup from 'react-addons-transition-group';
 import classnames from 'classnames';
+import Box from './Box';
 
 import CSSClassnames from '../utils/CSSClassnames';
 
