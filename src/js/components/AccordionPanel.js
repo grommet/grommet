@@ -27,7 +27,7 @@ export default class AccordionPanel extends Component {
   }
 
   render () {
-    const { animate, panelTitle, children } = this.props;
+    const { animate, title, children } = this.props;
 
     const classes = classnames(
       CLASS_ROOT,
@@ -53,7 +53,7 @@ export default class AccordionPanel extends Component {
           onClick={this._onClickPanel}
           responsive={false}
         >
-          <Heading tag="h2" margin="small">{panelTitle}</Heading>
+          <Heading tag="h2" margin="small">{title}</Heading>
           {panelControlIcon}
         </Box>
         <Box
@@ -70,5 +70,5 @@ export default class AccordionPanel extends Component {
 };
 
 AccordionPanel.propTypes = {
-  panelTitle: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired
 };
