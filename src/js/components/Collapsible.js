@@ -50,12 +50,14 @@ class Collapse extends Component {
 
 class Collapsible extends Component {
   render () {
+    const Component = this.props.animate ? TransitionGroup : Box;
+
     return (
-      <TransitionGroup>
+      <Component>
         {this.props.isOpen &&
           <Collapse {...this.props} />
         }
-      </TransitionGroup>
+      </Component>
     );
   }
 };

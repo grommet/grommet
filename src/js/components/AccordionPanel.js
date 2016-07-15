@@ -27,7 +27,7 @@ export default class AccordionPanel extends Component {
   }
 
   render () {
-    const { panelTitle, children } = this.props;
+    const { animate, panelTitle, children } = this.props;
 
     const classes = classnames(
       CLASS_ROOT,
@@ -60,7 +60,9 @@ export default class AccordionPanel extends Component {
           full="horizontal"
           pad={{horizontal: 'medium'}}
         >
-          <Collapsible isOpen={this.state.isOpen} children={children} />
+          <Collapsible isOpen={this.state.isOpen} animate={animate}>
+            {children}
+          </Collapsible>
         </Box>
       </ListItem>
     );

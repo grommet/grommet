@@ -13,7 +13,7 @@ const CLASS_ROOT = CSSClassnames.ACCORDION;
 
 export default class Accordion extends Component {
   render () {
-    const { headline, subHeadline, colorIndex, children } = this.props;
+    const { animate, headline, subHeadline, colorIndex, children } = this.props;
 
     const classes = classnames(
       CLASS_ROOT,
@@ -52,12 +52,19 @@ export default class Accordion extends Component {
       );
     }
 
+    const accordionChildren = React.Children.map(children, (child, index) => {
+      return React.cloneElement(child, {
+        id: 'accordion-panel-' + index,
+        animate
+      });
+    });
+
     return (
       <Box className={classes} colorIndex={colorIndex}>
         {content}
         <Box separator="top">
           <List>
-            {children}
+            {accordionChildren}
           </List>
         </Box>
       </Box>
@@ -66,7 +73,12 @@ export default class Accordion extends Component {
 };
 
 Accordion.propTypes = {
+  animate: PropTypes.bool,
   headline: PropTypes.string,
   subHeadline: PropTypes.string,
   colorIndex: PropTypes.string
+};
+
+Accordion.defaultProps = {
+  animate: true
 };
