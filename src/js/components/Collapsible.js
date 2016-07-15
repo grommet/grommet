@@ -5,7 +5,9 @@ import ReactDOM from 'react-dom';
 import TransitionGroup from 'react-addons-transition-group';
 import classnames from 'classnames';
 
-const CLASS_ROOT = 'collapsible';
+import CSSClassnames from '../utils/CSSClassnames';
+
+const CLASS_ROOT = CSSClassnames.COLLAPSIBLE;
 
 class Collapse extends Component {
   componentWillEnter (callback) {

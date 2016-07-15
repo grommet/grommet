@@ -1,7 +1,7 @@
-.grommet .accordion-panel {
+.grommet .#{$grommet-namespace}accordion-panel {
 
-  .heading,
-  .paragraph {
+  .#{$grommet-namespace}heading,
+  .#{$grommet-namespace}paragraph {
     max-width: $size-medium;
   }
 

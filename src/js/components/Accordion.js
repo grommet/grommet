@@ -7,7 +7,9 @@ import Headline from 'grommet/components/Headline';
 import List from 'grommet/components/List';
 import Paragraph from 'grommet/components/Paragraph';
 
-const CLASS_ROOT = 'accordion';
+import CSSClassnames from '../utils/CSSClassnames';
+
+const CLASS_ROOT = CSSClassnames.ACCORDION;
 
 export default class Accordion extends Component {
   render () {

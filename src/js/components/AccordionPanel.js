@@ -9,7 +9,9 @@ import OpenIcon from 'grommet/components/icons/base/Add';
 import CloseIcon from 'grommet/components/icons/base/Subtract';
 import Collapsible from './Collapsible';
 
-const CLASS_ROOT = 'accordion-panel';
+import CSSClassnames from '../utils/CSSClassnames';
+
+const CLASS_ROOT = CSSClassnames.ACCORDION_PANEL;
 
 export default class AccordionPanel extends Component {
   constructor (props) {
