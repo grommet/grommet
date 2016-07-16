@@ -12,8 +12,29 @@ import CSSClassnames from '../utils/CSSClassnames';
 const CLASS_ROOT = CSSClassnames.ACCORDION;
 
 export default class Accordion extends Component {
+  constructor(props) {
+    super(props);
+    this._activatePanel = this._activatePanel.bind(this);
+
+    this.state = {
+      activeIndex: props.initialIndex
+    };
+  }
+
+  _activatePanel (index) {
+    this.setState({activeIndex: index});
+  }
+
   render () {
-    const { animate, className, children, colorIndex, headline, subHeadline } = this.props;
+    const {
+      animate,
+      className,
+      children,
+      colorIndex,
+      headline,
+      subHeadline,
+      openMulti
+    } = this.props;
 
     const classes = classnames(
       CLASS_ROOT,
@@ -45,6 +66,10 @@ export default class Accordion extends Component {
     const accordionChildren = React.Children.map(children, (child, index) => {
       return React.cloneElement(child, {
         id: 'accordion-panel-' + index,
+        isOpen: !openMulti ? (this.state.activeIndex === index) : null,
+        onTitleClick: () => {
+          this._activatePanel(index);
+        },
         animate
       });
     });
@@ -70,5 +95,6 @@ Accordion.propTypes = {
 };
 
 Accordion.defaultProps = {
+  openMulti: false,
   animate: true
 };

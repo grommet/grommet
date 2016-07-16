@@ -18,12 +18,19 @@ export default class AccordionPanel extends Component {
     super(props);
     this._onClickPanel = this._onClickPanel.bind(this);
     this.state = {
-      isOpen: false
+      isOpen: props.isOpen || false
     };
+  }
+
+  componentWillReceiveProps (nextProps) {
+    if (this.props.isOpen !== nextProps.isOpen) {
+      this.setState({ isOpen: nextProps.isOpen });
+    }
   }
 
   _onClickPanel () {
     this.setState({ isOpen : !this.state.isOpen });
+    this.props.onTitleClick();
   }
 
   render () {
