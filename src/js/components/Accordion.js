@@ -13,41 +13,31 @@ const CLASS_ROOT = CSSClassnames.ACCORDION;
 
 export default class Accordion extends Component {
   render () {
-    const { animate, headline, subHeadline, colorIndex, children } = this.props;
+    const { animate, className, children, colorIndex, headline, subHeadline } = this.props;
 
     const classes = classnames(
       CLASS_ROOT,
-      this.props.className
+      className
     );
-
-    let headlineMarkup;
-    if (headline) {
-      headlineMarkup = (
-        <Headline size="large" strong={true} margin="none" align="center">
-          {headline}
-        </Headline>
-      );
-    }
-
-    let subHeadlineMarkup;
-    if (subHeadline) {
-      subHeadlineMarkup = (
-        <Paragraph
-          className={`${CLASS_ROOT}__sub-headline`}
-          size="large"
-          align="center"
-        >
-          {subHeadline}
-        </Paragraph>
-      );
-    }
 
     let content;
     if (headline || subHeadline) {
       content = (
         <Box align="center">
-          {headlineMarkup}
-          {subHeadlineMarkup}
+          {headline &&
+            <Headline size="large" strong={true} margin="none" align="center">
+              {headline}
+            </Headline>
+          }
+          {subHeadline &&
+            <Paragraph
+              className={`${CLASS_ROOT}__sub-headline`}
+              size="large"
+              align="center"
+            >
+              {subHeadline}
+            </Paragraph>
+          }
         </Box>
       );
     }

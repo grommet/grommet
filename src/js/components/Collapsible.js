@@ -63,4 +63,8 @@ class Collapsible extends Component {
   }
 };
 
+Collapsible.defaultProps = {
+  animate: true
+};
+
 export default Collapsible;

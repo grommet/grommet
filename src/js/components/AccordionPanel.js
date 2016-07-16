@@ -27,11 +27,11 @@ export default class AccordionPanel extends Component {
   }
 
   render () {
-    const { animate, title, children } = this.props;
+    const { animate, className, children, title } = this.props;
 
     const classes = classnames(
       CLASS_ROOT,
-      this.props.className,
+      className,
       {
         [`${CLASS_ROOT}--active`]: this.state.isOpen
       }
