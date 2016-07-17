@@ -2,7 +2,7 @@
 
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
-import Box from './Box';
+import Header from './Header';
 import Heading from './Heading';
 import ListItem from './ListItem';
 import TabNextIcon from './icons/base/TabNext';
@@ -45,7 +45,8 @@ export default class AccordionPanel extends Component {
 
     return (
       <ListItem className={classes} direction="column" pad="none">
-        <Box
+        <Header
+          className={`${CLASS_ROOT}-heading`}
           pad={{horizontal: 'medium', vertical: 'small'}}
           full="horizontal"
           direction="row"
@@ -54,17 +55,12 @@ export default class AccordionPanel extends Component {
           onClick={this._onClickPanel}
           responsive={false}
         >
-          <Heading tag="h2" margin="small">{title}</Heading>
+          <Heading tag="h2" margin="none">{title}</Heading>
           <TabNextIcon />
-        </Box>
-        <Box
-          full="horizontal"
-          pad={{horizontal: 'medium'}}
-        >
-          <Collapsible isOpen={this.state.isOpen} animate={animate}>
-            {children}
-          </Collapsible>
-        </Box>
+        </Header>
+        <Collapsible isOpen={this.state.isOpen} animate={animate}>
+          {children}
+        </Collapsible>
       </ListItem>
     );
   }

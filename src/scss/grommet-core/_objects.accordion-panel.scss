@@ -8,17 +8,12 @@
     }
   }
 
-  > .#{$grommet-namespace}box--clickable {
+  &-heading {
     user-select: none;
     -webkit-user-select: none;
   }
 
-  .#{$grommet-namespace}heading,
-  .#{$grommet-namespace}paragraph {
-    max-width: $size-medium;
-  }
-
-  div:focus {
+  header:focus {
     outline: none;
   }
 }
