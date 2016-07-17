@@ -3,7 +3,6 @@
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import Header from './Header';
-import Heading from './Heading';
 import ListItem from './ListItem';
 import TabNextIcon from './icons/base/TabNext';
 import Collapsible from './Collapsible';
@@ -33,7 +32,7 @@ export default class AccordionPanel extends Component {
   }
 
   render () {
-    const { animate, className, children, title } = this.props;
+    const { animate, className, children, heading } = this.props;
 
     const classes = classnames(
       CLASS_ROOT,
@@ -55,7 +54,7 @@ export default class AccordionPanel extends Component {
           onClick={this._onClickPanel}
           responsive={false}
         >
-          <Heading tag="h2" margin="none">{title}</Heading>
+          {heading}
           <TabNextIcon />
         </Header>
         <Collapsible isOpen={this.state.isOpen} animate={animate}>
@@ -68,5 +67,5 @@ export default class AccordionPanel extends Component {
 
 AccordionPanel.propTypes = {
   animate: PropTypes.bool,
-  title: PropTypes.string.isRequired
+  heading: PropTypes.node.isRequired
 };
