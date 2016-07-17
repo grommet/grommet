@@ -3,9 +3,7 @@
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import Box from './Box';
-import Headline from './Headline';
 import List from './List';
-import Paragraph from './Paragraph';
 
 import CSSClassnames from '../utils/CSSClassnames';
 
@@ -31,8 +29,6 @@ export default class Accordion extends Component {
       className,
       children,
       colorIndex,
-      headline,
-      subHeadline,
       openMulti
     } = this.props;
 
@@ -40,28 +36,6 @@ export default class Accordion extends Component {
       CLASS_ROOT,
       className
     );
-
-    let content;
-    if (headline || subHeadline) {
-      content = (
-        <Box align="center">
-          {headline &&
-            <Headline size="large" strong={true} margin="none" align="center">
-              {headline}
-            </Headline>
-          }
-          {subHeadline &&
-            <Paragraph
-              className={`${CLASS_ROOT}__sub-headline`}
-              size="large"
-              align="center"
-            >
-              {subHeadline}
-            </Paragraph>
-          }
-        </Box>
-      );
-    }
 
     const accordionChildren = React.Children.map(children, (child, index) => {
       return React.cloneElement(child, {
@@ -75,13 +49,10 @@ export default class Accordion extends Component {
     });
 
     return (
-      <Box className={classes} colorIndex={colorIndex}>
-        {content}
-        <Box separator="top">
-          <List>
-            {accordionChildren}
-          </List>
-        </Box>
+      <Box className={classes} colorIndex={colorIndex} separator="top">
+        <List>
+          {accordionChildren}
+        </List>
       </Box>
     );
   }
@@ -89,8 +60,6 @@ export default class Accordion extends Component {
 
 Accordion.propTypes = {
   animate: PropTypes.bool,
-  headline: PropTypes.string,
-  subHeadline: PropTypes.string,
   colorIndex: PropTypes.string
 };
 
