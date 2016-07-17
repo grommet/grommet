@@ -5,8 +5,7 @@ import classnames from 'classnames';
 import Box from './Box';
 import Heading from './Heading';
 import ListItem from './ListItem';
-import OpenIcon from './icons/base/Add';
-import CloseIcon from './icons/base/Subtract';
+import TabNextIcon from './icons/base/TabNext';
 import Collapsible from './Collapsible';
 
 import CSSClassnames from '../utils/CSSClassnames';
@@ -44,11 +43,6 @@ export default class AccordionPanel extends Component {
       }
     );
 
-    let panelControlIcon = <OpenIcon colorIndex="brand" />;
-    if (this.state.isOpen) {
-      panelControlIcon = <CloseIcon colorIndex="brand" />;
-    }
-
     return (
       <ListItem className={classes} direction="column" pad="none">
         <Box
@@ -61,7 +55,7 @@ export default class AccordionPanel extends Component {
           responsive={false}
         >
           <Heading tag="h2" margin="small">{title}</Heading>
-          {panelControlIcon}
+          <TabNextIcon />
         </Box>
         <Box
           full="horizontal"
@@ -77,5 +71,6 @@ export default class AccordionPanel extends Component {
 };
 
 AccordionPanel.propTypes = {
+  animate: PropTypes.bool,
   title: PropTypes.string.isRequired
 };
