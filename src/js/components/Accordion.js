@@ -49,7 +49,7 @@ export default class Accordion extends Component {
     });
 
     return (
-      <Box className={classes} colorIndex={colorIndex} separator="top">
+      <Box role="tablist" className={classes} colorIndex={colorIndex} separator="top">
         <List>
           {accordionChildren}
         </List>
