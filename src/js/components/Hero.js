@@ -81,7 +81,7 @@ export default class Hero extends Component {
       backgroundMarkup = <Box containerClassName={CLASS_ROOT + "__background"} appCentered={true} pad={pad} backgroundImage={`url(${backgroundImage})`} full={full} />;
     } else if (backgroundType === 'video') {
       backgroundMarkup = (
-        <Video className={CLASS_ROOT + "__background"}>
+        <Video className={CLASS_ROOT + "__background"} autoPlay={true} showControls={false}>
           <source src={backgroundVideoSource} type="video/mp4"/>
         </Video>
       );
