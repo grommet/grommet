@@ -58,15 +58,15 @@ export default class Hero extends Component {
   }
 
   render () {
-    const { backgroundImage, backgroundType, backgroundVideoLoop, backgroundVideoMuted, backgroundVideoPoster, backgroundVideoSource, flush, image, justify } = this.props;
+    const { backgroundImage, backgroundType, backgroundVideoLoop, backgroundVideoMuted, backgroundVideoPoster, backgroundVideoSource, children, className, flush, image, justify, responsiveBackgroundPosition, separator, size } = this.props;
 
     let classes = classnames(
       CLASS_ROOT,
-      this.props.className,
+      className,
       {
-        [`${CLASS_ROOT}--${this.props.size}`]: this.props.size,
-        [`${CLASS_ROOT}--bg-${this.props.responsiveBackgroundPosition}`]: this.props.responsiveBackgroundPosition,
-        [`${CLASS_ROOT}--mobile-separator`]: this.props.separator
+        [`${CLASS_ROOT}--${size}`]: size,
+        [`${CLASS_ROOT}--bg-${responsiveBackgroundPosition}`]: responsiveBackgroundPosition,
+        [`${CLASS_ROOT}--mobile-separator`]: separator
       }
     );
 
@@ -94,7 +94,7 @@ export default class Hero extends Component {
       contentMarkup = (
         <Box className={CLASS_ROOT + "__overlay"} justify={justify} align="center" primary={true} full={full} direction="row" >
           <Box pad={{horizontal: 'large', vertical: 'large', between: 'medium'}}>
-            {this.props.children}
+            {children}
           </Box>
         </Box>
       );
@@ -105,7 +105,7 @@ export default class Hero extends Component {
             {imageMarkup}
           </Box>
           <Box pad={{horizontal: 'large', vertical: 'large', between: 'medium'}}>
-            {this.props.children}
+            {children}
           </Box>
         </Box>
       );
