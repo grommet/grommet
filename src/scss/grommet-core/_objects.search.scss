@@ -41,9 +41,14 @@
     margin-right: 0px;
     box-sizing: border-box;
     width: 100%;
+    padding: halve($inuit-base-spacing-unit);
 
     @include media-query(palm) {
       width: calc(100vw - #{round($inuit-base-spacing-unit * 3)});
+    }
+
+    &:focus {
+      padding: (halve($inuit-base-spacing-unit) - $input-border-width);
     }
   }
 
@@ -87,12 +92,16 @@
     box-sizing:  border-box;
     padding-left: (halve($inuit-base-spacing-unit) - $input-border-width);
     padding-right: (double($inuit-base-spacing-unit) - $input-border-width);
+    padding-top: halve($inuit-base-spacing-unit);
+    padding-bottom: halve($inuit-base-spacing-unit);
     border-radius: 0;
     -webkit-appearance: none;
 
     &:focus {
       padding-left: (halve($inuit-base-spacing-unit) - ($input-border-width + 1));
       padding-right: (double($inuit-base-spacing-unit) - ($input-border-width + 1));
+      padding-top: (halve($inuit-base-spacing-unit) - $input-border-width);
+      padding-bottom: (halve($inuit-base-spacing-unit) - $input-border-width);
     }
 
     html.rtl & {

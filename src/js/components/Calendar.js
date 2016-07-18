@@ -256,12 +256,18 @@ export default class Calendar extends Component {
       <div id={CLASS_ROOT + "-drop"} className={CLASS_ROOT + "__drop"}
         onClick={this._onClose}>
         <Header justify="between">
-          <Button className={CLASS_ROOT + "__previous"} icon={<LinkPreviousIcon />}
+          <Button className={CLASS_ROOT + "__previous"} icon={
+              <LinkPreviousIcon a11yTitle='calendar-previous-title'
+                a11yTitleId='calendar-previous-title-id' />
+            }
             onClick={this._onPrevious} />
           <Title className={CLASS_ROOT + "__title"} responsive={false}>
             {this.state.reference.format('MMMM YYYY')}
           </Title>
-          <Button className={CLASS_ROOT + "__next"} icon={<LinkNextIcon />}
+          <Button className={CLASS_ROOT + "__next"} icon={
+              <LinkNextIcon a11yTitle='calendar-next-title'
+                a11yTitleId='calendar-next-title-id' />
+            }
             onClick={this._onNext} />
         </Header>
         <div className={CLASS_ROOT + "__grid"}>
@@ -293,7 +299,9 @@ export default class Calendar extends Component {
           id={this.props.id} ref="calendarInput" name={this.props.name}
           value={this.props.value}
           onChange={this._onInputChange} />
-        <Button className={CLASS_ROOT + "__control"} icon={<CalendarIcon />}
+        <Button className={CLASS_ROOT + "__control"} icon={<CalendarIcon
+          a11yTitle='calendar-icon-title'
+          a11yTitleId='calendar-icon-title-id' />}
           onClick={this._onOpen} />
       </div>
     );

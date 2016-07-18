@@ -219,13 +219,13 @@ export default class Article extends Component {
 
   _onScroll (event) {
     if ('row' === this.props.direction) {
+      const { selectedIndex } = this.state;
+      const childElement = findDOMNode(this.refs[selectedIndex]);
+      let rect = childElement.getBoundingClientRect();
       if (event.target === this._scrollParent) {
         // scrolling Article
         if (this._scrollingVertically) {
           // prevent Article horizontal scrolling while scrolling vertically
-          const { selectedIndex } = this.state;
-          const childElement = findDOMNode(this.refs[selectedIndex]);
-          const rect = childElement.getBoundingClientRect();
           this._scrollParent.scrollLeft += rect.left;
         } else {
           const scrollingRight = this._priorScrollLeft < this._scrollParent.scrollLeft;
@@ -246,9 +246,13 @@ export default class Article extends Component {
       } else if (event.target.parentNode === this._scrollParent) {
         // scrolling child
         // Has it scrolled near the bottom?
-        const grandchildren = event.target.children;
-        const lastGrandChild = grandchildren[grandchildren.length - 1];
-        const rect = lastGrandChild.getBoundingClientRect();
+        if (this.state.accessibilityTabbingCompatible) {
+          // only use lastGrandChild logic if we're not using Firefox or IE.
+          // causes flashing in Firefox, but required for Safari scrolling.
+          const grandchildren = event.target.children;
+          const lastGrandChild = grandchildren[grandchildren.length - 1];
+          rect = lastGrandChild.getBoundingClientRect();
+        }
         if (rect.bottom <= (window.innerHeight + 24)) {
           // at the bottom
           this.setState({ atBottom: true });
@@ -465,7 +469,11 @@ export default class Article extends Component {
             <Button key="previous" ref='previous'
               plain={true} a11yTitle={a11yTitle.previous}
               className={`${CONTROL_CLASS_PREFIX}-left`}
-              onClick={this._onPrevious} icon={<PreviousIcon size="large" />} />
+              onClick={this._onPrevious} icon={<PreviousIcon
+                a11yTitle='article-previous-title'
+                a11yTitleId='article-previous-title-id'
+                size="large" />
+              } />
           );
         }
         if (this.state.selectedIndex < (childCount - 1)) {
@@ -473,7 +481,10 @@ export default class Article extends Component {
             <Button key="next" ref='next'
               plain={true} a11yTitle={a11yTitle.next}
               className={`${CONTROL_CLASS_PREFIX}-right`}
-              onClick={this._onNext} icon={<NextIcon size="large" />} />
+              onClick={this._onNext} icon={<NextIcon size="large"
+                a11yTitle='article-next-title'
+                a11yTitleId='article-next-title-id' />
+              } />
           );
         }
       }
@@ -490,7 +501,8 @@ export default class Article extends Component {
         controls.push(
           <Button key="next" ref='next' plain={true} a11yTitle={a11yTitle.next}
             className={`${CONTROL_CLASS_PREFIX}-down`}
-            onClick={this._onNext}><DownIcon /></Button>
+            onClick={this._onNext}><DownIcon a11yTitle='article-down'
+              a11yTitleId='article-down-id' /></Button>
         );
       }
     }
@@ -500,7 +512,8 @@ export default class Article extends Component {
 
   render () {
     let classes = [CLASS_ROOT];
-    const other = Props.pick(this.props, Object.keys(Box.propTypes));
+    const boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
+    const restProps = Props.omit(this.props, Object.keys(Article.propTypes));
     if (this.props.scrollStep) {
       classes.push(`${CLASS_ROOT}--scroll-step`);
     }
@@ -550,10 +563,10 @@ export default class Article extends Component {
       }, this);
     }
 
-    delete other.a11yTitle;
+    delete boxProps.a11yTitle;
 
     return (
-      <Box ref="component" tag="article" {...other}
+      <Box {...restProps} {...boxProps} ref="component" tag="article"
         className={classes.join(' ')} onFocus={this._onFocusChange}
         onScroll={this._onScroll} onTouchStart={this._onTouchStart}
         onTouchMove={this._onTouchMove} primary={this.props.primary}>

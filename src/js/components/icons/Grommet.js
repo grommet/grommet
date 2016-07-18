@@ -20,6 +20,7 @@ export default class Grommet extends Component {
       classes.push(this.props.className);
     }
     let title;
+    let a11yTitleId = this.props.a11yTitleId;
     if (this.props.a11yTitle) {
       title = (
         <title id={this.props.a11yTitleId}>
@@ -27,10 +28,12 @@ export default class Grommet extends Component {
             defaultMessage={this.props.a11yTitle} />
         </title>
       );
+    } else {
+      a11yTitleId = undefined;
     }
     return (
       <svg className={classes.join(' ')} viewBox="0 0 182 182" width="182" height="182"
-        version="1.1" role="img" aria-labelledby={this.props.a11yTitleId}>
+        version="1.1" role="img" aria-labelledby={a11yTitleId}>
         {title}
         <path role="presentation"
           d="M 91,91 m 0,-82 a 82,82 0 1,1 0,164 a 82,82 0 1,1 0,-164"

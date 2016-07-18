@@ -43,6 +43,7 @@ export default {
   MAP: `${namespace}map`,
   MENU: `${namespace}menu`,
   METER: `${namespace}meter`,
+  NAMESPACE: `${namespace}`,
   NOTIFICATION: `${namespace}notification`,
   NUMBER_INPUT: `${namespace}number-input`,
   OBJECT: `${namespace}object`,

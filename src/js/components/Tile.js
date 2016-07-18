@@ -7,6 +7,7 @@ import Box from './Box';
 import CSSClassnames from '../utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.TILE;
+const NAMESPACE = CSSClassnames.NAMESPACE;
 
 export default class Tile extends Component {
 
@@ -14,6 +15,10 @@ export default class Tile extends Component {
     const { children, className, onClick, wide, status, selected,
       hoverStyle, hoverColorIndex, hoverBorder, hoverBorderSize } = this.props;
     const restProps = Props.omit(this.props, Object.keys(Box.propTypes));
+    delete restProps.hoverStyle;
+    delete restProps.hoverColorIndex;
+    delete restProps.hoverBorder;
+    delete restProps.hoverBorderSize;
 
     if (selected) {
       console.warn('Selected option has been deprecated, please use ' +
@@ -33,7 +38,7 @@ export default class Tile extends Component {
         [`${CLASS_ROOT}--wide`]: wide,
         [`${CLASS_ROOT}--selectable`]: onClick,
         [`${CLASS_ROOT}--selected`]: selected,
-        [`${CSSClassnames.namespace}${hoverStyle}${(hoverStyle == 'border') ?
+        [`${NAMESPACE}${hoverStyle}${(hoverStyle == 'border') ?
           ((borderSize) ? `-${borderSize}` : '-medium') : ''
         }-hover-color-index-${hoverColorIndex}`]: hoverStyle,
         [`${CLASS_ROOT}--hover-border-${borderSize}`]: borderSize

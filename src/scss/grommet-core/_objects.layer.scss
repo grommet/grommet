@@ -29,6 +29,8 @@
   }
 
   .#{$grommet-namespace}layer__container {
+    display: flex;
+    flex-direction: column;
     background-color: $layer-background-color;
 
     @include media-query(palm) {
