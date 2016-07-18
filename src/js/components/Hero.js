@@ -4,9 +4,6 @@ import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import CSSClassnames from '../utils/CSSClassnames';
 import Box from 'grommet/components/Box';
-import Headline from 'grommet/components/Headline';
-import Paragraph from 'grommet/components/Paragraph';
-import Anchor from 'grommet/components/Anchor';
 import Image from 'grommet/components/Image';
 import Video from 'grommet/components/Video';
 
@@ -61,7 +58,7 @@ export default class Hero extends Component {
   }
 
   render () {
-    const { backgroundImage, backgroundType, backgroundVideoSource, flush, image, justify } = this.props;
+    const { backgroundImage, backgroundType, backgroundVideoLoop, backgroundVideoMuted, backgroundVideoPoster, backgroundVideoSource, flush, image, justify } = this.props;
 
     let classes = classnames(
       CLASS_ROOT,
@@ -81,7 +78,7 @@ export default class Hero extends Component {
       backgroundMarkup = <Box containerClassName={CLASS_ROOT + "__background"} appCentered={true} pad={pad} backgroundImage={`url(${backgroundImage})`} full={full} />;
     } else if (backgroundType === 'video') {
       backgroundMarkup = (
-        <Video className={CLASS_ROOT + "__background"} autoPlay={true} showControls={false}>
+        <Video className={CLASS_ROOT + "__background"} autoPlay={true} showControls={false} loop={backgroundVideoLoop} muted={backgroundVideoMuted} poster={backgroundVideoPoster}>
           <source src={backgroundVideoSource} type="video/mp4"/>
         </Video>
       );
@@ -126,6 +123,9 @@ export default class Hero extends Component {
 Hero.propTypes = {
   backgroundImage: PropTypes.string,
   backgroundType: PropTypes.oneOf(['image', 'video']),
+  backgroundVideoLoop: PropTypes.bool,
+  backgroundVideoMuted: PropTypes.bool,
+  backgroundVideoPoster: PropTypes.string,
   backgroundVideoSource: PropTypes.string,
   darkTheme: PropTypes.bool,
   flush: PropTypes.bool,
@@ -137,6 +137,8 @@ Hero.propTypes = {
 };
 
 Hero.defaultProps = {
+  backgroundVideoLoop: false,
+  backgroundVideoMuted: true,
   darkTheme: true,
   flush: true,
   justify: 'end',
