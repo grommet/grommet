@@ -8,6 +8,8 @@ import Responsive from '../utils/Responsive';
 import Button from './Button';
 import Box from './Box';
 import ExpandIcon from './icons/base/Expand';
+import VolumeIcon from './icons/base/Volume';
+import VolumeMuteIcon from './icons/base/VolumeMute';
 import PlayIcon from './icons/base/Play';
 import PauseIcon from './icons/base/Pause';
 import RefreshIcon from './icons/base/Refresh';
@@ -26,6 +28,7 @@ export default class Video extends Component {
     this._onPause = this._onPause.bind(this);
     this._onEnded = this._onEnded.bind(this);
     this._onClickControl = this._onClickControl.bind(this);
+    this._onClickMute = this._onClickMute.bind(this);
     this._onMouseMove = this._onMouseMove.bind(this);
     this._onClickChapter = this._onClickChapter.bind(this);
     this._onFullScreen = this._onFullScreen.bind(this);
@@ -99,6 +102,11 @@ export default class Video extends Component {
     } else {
       video.play();
     }
+  }
+
+  _onClickMute () {
+    let video = this.refs.video;
+    video.muted = !video.muted;
   }
 
   _onMouseMove () {
@@ -191,6 +199,10 @@ export default class Video extends Component {
 
       videoHeader = (
         <Box align="end" full="horizontal">
+
+          <Button plain={true} onClick={this._onClickMute}
+            icon={<VolumeIcon />} />
+
           <Button plain={true} onClick={this._onFullScreen}
             icon={<ExpandIcon />} a11yTitle={a11yExpandButtonTitle} />
         </Box>
