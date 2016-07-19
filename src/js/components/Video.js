@@ -38,10 +38,6 @@ export default class Video extends Component {
 
   componentDidMount () {
     this._responsive = Responsive.start(this._onResponsive);
-    let video = this.refs.video;
-    video.addEventListener('playing', this._onPlaying);
-    video.addEventListener('pause', this._onPause);
-    video.addEventListener('ended', this._onEnded);
   }
 
   componentWillReceiveProps (nextProps) {
@@ -54,11 +50,6 @@ export default class Video extends Component {
   }
 
   componentWillUnmount () {
-    let video = this.refs.video;
-    video.removeEventListener('playing', this._onPlaying);
-    video.removeEventListener('pause', this._onPause);
-    video.removeEventListener('ended', this._onEnded);
-
     if (this._responsive) {
       this._responsive.stop();
     }
@@ -324,6 +315,9 @@ export default class Video extends Component {
     return (
       <div className={classes.join(' ')} onMouseMove={this._onMouseMove}>
         <video ref="video"
+          onPlaying={this._onPlaying}
+          onPause={this._onPause}
+          onEnded={this._onEnded}
           poster={this.props.poster}
           autoPlay={this.props.autoPlay ? 'autoplay' : false}
           loop={this.props.loop ? 'loop' : false}
