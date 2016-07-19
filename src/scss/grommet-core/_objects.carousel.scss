@@ -141,5 +141,6 @@
 _::-webkit-:not(:root:root),
 .#{$grommet-namespace}carousel__control,
 .#{$grommet-namespace}carousel__arrow .#{$grommet-namespace}control-icon { 
-  -webkit-filter: url(#drop-shadow);
+  -webkit-filter: none;
+  -webkit-svg-shadow: 1px 1px 1px $button-drop-shadow-color;
 }

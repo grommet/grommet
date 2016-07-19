@@ -221,27 +221,6 @@ export default class Carousel extends Component {
     return nextButton;
   }
 
-  _renderSVGDropShadow () {
-    // SVG fallback for missing controls in Safari
-    // floodColor corresponds to drop-shadow filter color in _objects.carousel.scss
-    return (
-      <svg width="0" height="0">
-        <defs>
-          <filter id="drop-shadow">
-            <feGaussianBlur in="SourceAlpha" stdDeviation="0.5"></feGaussianBlur>
-            <feOffset dx="0.25" dy="0.25" result="offsetblur"></feOffset>
-            <feFlood floodColor="rgba(170, 170, 170, 0.5)" floodOpacity="0.5"></feFlood>
-            <feComposite in2="offsetblur" operator="in"></feComposite>
-            <feMerge>
-              <feMergeNode/>
-              <feMergeNode in="SourceGraphic"></feMergeNode>
-            </feMerge>
-          </filter>
-        </defs>
-      </svg>
-    );
-  }
-
   render () {
     var classes = [CLASS_ROOT];
     if (this.state.hideControls) {
@@ -287,7 +266,6 @@ export default class Carousel extends Component {
     return (
       <div ref="carousel" className={classes.join(' ')}
         onMouseEnter={this._onMouseOver} onMouseLeave={this._onMouseOut}>
-        {this._renderSVGDropShadow()}
         <div className={CLASS_ROOT + "__track"}
           style={{ width: trackWidth, marginLeft: trackPosition }}>
           <Tiles fill={true} responsive={false} wrap={false} direction="row">
