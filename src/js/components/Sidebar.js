@@ -20,10 +20,11 @@ export default class Sidebar extends Component {
       }
     );
 
-    let boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
+    const boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
+    const restProps = Props.omit(this.props, Object.keys(Sidebar.propTypes));
 
     return (
-      <Box {...boxProps} className={classes}>
+      <Box {...restProps} {...boxProps} className={classes}>
         {this.props.children}
       </Box>
     );

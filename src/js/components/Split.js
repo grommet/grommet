@@ -97,11 +97,15 @@ export default class Split extends Component {
       classes.push(this.props.className);
     }
 
-    const children = Children.map(this.props.children, (element, index) => {
+    const elements = Children.toArray(this.props.children).filter(
+      (element) => element
+    );
+    const children = elements.map((element, index) => {
       // When we only have room to show one child, hide the appropriate one
       if ('single' === responsive &&
         (('left' === priority && index > 0) ||
-        ('right' === priority && index === 0))) {
+        ('right' === priority && index === 0 &&
+          elements.length > 1))) {
         element = React.cloneElement(element, { style: { display: 'none' } });
       }
       return element;
