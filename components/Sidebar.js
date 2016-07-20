@@ -76,10 +76,11 @@ var Sidebar = function (_Component) {
       var classes = (0, _classnames3.default)(CLASS_ROOT, this.props.className, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--fixed', this.props.fixed), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--full', this.props.full), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + this.props.size, this.props.size), _classnames));
 
       var boxProps = _Props2.default.pick(this.props, (0, _keys2.default)(_Box2.default.propTypes));
+      var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Sidebar.propTypes));
 
       return _react2.default.createElement(
         _Box2.default,
-        (0, _extends3.default)({}, boxProps, { className: classes }),
+        (0, _extends3.default)({}, restProps, boxProps, { className: classes }),
         this.props.children
       );
     }

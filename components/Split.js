@@ -144,9 +144,12 @@ var Split = function (_Component) {
         classes.push(this.props.className);
       }
 
-      var children = _react.Children.map(this.props.children, function (element, index) {
+      var elements = _react.Children.toArray(this.props.children).filter(function (element) {
+        return element;
+      });
+      var children = elements.map(function (element, index) {
         // When we only have room to show one child, hide the appropriate one
-        if ('single' === responsive && ('left' === priority && index > 0 || 'right' === priority && index === 0)) {
+        if ('single' === responsive && ('left' === priority && index > 0 || 'right' === priority && index === 0 && elements.length > 1)) {
           element = _react2.default.cloneElement(element, { style: { display: 'none' } });
         }
         return element;
