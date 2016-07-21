@@ -105,9 +105,11 @@ class Animate extends Component {
     const {
       enter,
       leave,
+      className,
       children,
       component,
       visible,
+      keep,
       ...props
     } = this.props;
 
@@ -124,12 +126,24 @@ class Animate extends Component {
       );
     });
 
+    let classes = className;
+    if (keep) {
+      classes = classnames(
+        CLASS_ROOT,
+        className,
+        {
+          [`${enter.animation}--enter`]: !this.props.visible
+        }
+      );
+    }
+
     return (
       <TransitionGroup
         {...props}
+        className={classes}
         component={component}
       >
-        {(visible || visible === undefined) &&
+        {(visible || visible === undefined || keep) &&
           animateChildren
         }
       </TransitionGroup>
