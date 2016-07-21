@@ -135,6 +135,7 @@ var Notification = function (_Component) {
       }
 
       var boxProps = _Props2.default.pick(this.props, (0, _keys2.default)(_Box2.default.propTypes));
+      var fullBox = boxProps.hasOwnProperty('full') ? boxProps.full : 'horizontal';
 
       return _react2.default.createElement(
         _Box2.default,
@@ -142,7 +143,7 @@ var Notification = function (_Component) {
         status,
         _react2.default.createElement(
           _Box2.default,
-          { full: 'horizontal' },
+          { full: fullBox },
           _react2.default.createElement(
             'span',
             { className: CLASS_ROOT + '__message' },
