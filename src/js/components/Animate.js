@@ -90,16 +90,7 @@ class AnimateChild extends Component {
   }
 
   render () {
-    const { className, children, component } = this.props;
-
-    const classes = classnames(
-      CLASS_ROOT,
-      className
-    );
-
-    const Component = component || 'div';
-
-    return <Component {...this.props} className={classes}>{children}</Component>;
+    return this.props.children;
   }
 };
 
@@ -115,7 +106,6 @@ class Animate extends Component {
       enter,
       leave,
       children,
-      childComponent,
       component,
       visible,
       ...props
@@ -125,7 +115,6 @@ class Animate extends Component {
       const key = (child && child.key) ? child.key : `animate-${index}`;
       return (
         <AnimateChild
-          component={childComponent}
           key={key}
           enter={enter}
           leave={leave}
