@@ -101,6 +101,43 @@ AnimateChild.defaultProps = {
 
 
 class Animate extends Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+      animationState: 'enter',
+      animation: props.enter.animation
+    };
+  }
+
+  componentWillReceiveProps (nextProps) {
+    const { visible, keep } = this.props;
+    const { animationState } = this.state;
+
+    if (keep && visible !== nextProps.visible) {
+      let state = '';
+      if (!nextProps.visible) {
+        state = (animationState === 'leave') ? 'enter' : 'leave';
+      }
+      this.setState({
+        animationState: state,
+        animation: state ? nextProps[state].animation : ''
+      });
+
+      // Reset animation state back to enter after leave animation is finished
+      if (state === 'leave') {
+        const node = ReactDOM.findDOMNode(this);
+        clearTimeout(this.animationTimer);
+        this.animationTimer = setTimeout(() => {
+          this.setState({
+            animationState: 'enter',
+            animation: nextProps.enter.animation
+          });
+        }, (parseFloat(getComputedStyle(node).transitionDuration) +
+        parseFloat(getComputedStyle(node).transitionDelay)) * 1000);
+      }
+    }
+  }
+
   render () {
     const {
       enter,
@@ -134,7 +171,7 @@ class Animate extends Component {
         CLASS_ROOT,
         className,
         {
-          [`${enter.animation}--enter`]: !this.props.visible
+          [`${this.state.animation}--${this.state.animationState}`]: !visible
         }
       );
       styles = {
