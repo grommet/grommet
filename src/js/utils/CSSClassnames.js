@@ -1,3 +1,5 @@
+// (C) Copyright 2016 Hewlett Packard Enterprise Development LP
+
 export const namespace = 'grommetux-';
 
 export default {
@@ -14,6 +16,15 @@ export default {
   CAROUSEL: `${namespace}carousel`,
   CAROUSEL_CONTROLS: `${namespace}carousel-controls`,
   CHART: `${namespace}chart`,
+  CHART_AXIS: `${namespace}chart-axis`,
+  CHART_BASE: `${namespace}chart-base`,
+  CHART_GRAPH: `${namespace}chart-graph`,
+  CHART_GRID: `${namespace}chart-grid`,
+  CHART_HOT_SPOTS: `${namespace}chart-hot-spots`,
+  CHART_LAYERS: `${namespace}chart-layers`,
+  CHART_RANGE: `${namespace}chart-range`,
+  CHART_STACK: `${namespace}chart-stack`,
+  CHART_THRESHOLD: `${namespace}chart-threshold`,
   CHECK_BOX: `${namespace}check-box`,
   COLOR_INDEX: `${namespace}color-index`,
   COLUMNS: `${namespace}columns`,

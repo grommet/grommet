@@ -1,6 +1,6 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-@include keyframes(reveal-chart) {
+@include keyframes(fade-in-chart) {
   0% {
     opacity: 0;
   }
@@ -10,169 +10,589 @@
   }
 }
 
+// .#{$grommet-namespace}chart {
+//   position: relative;
+//   display: block;
+// }
+
+.#{$grommet-namespace}chart__grid {
+  stroke: $border-color;
+}
+
+.#{$grommet-namespace}chart__graphic {
+  width: 100%;
+  height: $graphic-size;
+  max-height: calc(100vh - #{double($header-height)});
+}
+
+.#{$grommet-namespace}chart__values {
+
+  @include media-query(lap-and-up) {
+    g {
+      @include animation('fade-in-chart 1.5s');
+    }
+  }
+}
+
+.#{$grommet-namespace}chart__values-line {
+  stroke-width: 3px;
+  @include graph-stroke-color();
+
+  &--active {
+    cursor: pointer;
+  }
+}
+
+.#{$grommet-namespace}chart__values-area {
+  @include graph-fill-color-translucent(0.7);
+
+  &--active {
+    cursor: pointer;
+  }
+}
+
+.#{$grommet-namespace}chart__values-area--highlight {
+  @include graph-fill-color;
+}
+
+.#{$grommet-namespace}chart__values-bar {
+  @include graph-stroke-color-translucent(0.7);
+
+  &--highlight {
+    @include graph-stroke-color;
+  }
+
+  &--active {
+    cursor: pointer;
+  }
+}
+
+.#{$grommet-namespace}chart--segmented {
+  .#{$grommet-namespace}chart__values-bar {
+    stroke-dasharray: 12 6;
+  }
+}
+
+.#{$grommet-namespace}chart__values-point {
+  stroke-width: 3px;
+  @include graph-stroke-color();
+  fill: $background-color;
+}
+
+.#{$grommet-namespace}chart__values--loading {
+  stroke-width: $inuit-base-spacing-unit;
+  @include graph-stroke-color();
+}
+
+.#{$grommet-namespace}chart__threshold {
+  stroke-width: 2px;
+  stroke: $threshold-color;
+  pointer-events: none;
+}
+
+.#{$grommet-namespace}chart__yaxis .#{$grommet-namespace}chart__bar {
+  @include graph-fill-color-translucent(0.5);
+}
+
+.#{$grommet-namespace}chart__xaxis-index {
+  text {
+    fill: $secondary-text-color;
+  }
+}
+
+.#{$grommet-namespace}chart__xaxis-index--eclipse {
+  text {
+    fill: transparent;
+  }
+}
+
+.#{$grommet-namespace}chart__xaxis-index--highlight {
+  text {
+    fill: $text-color;
+  }
+}
+
+.#{$grommet-namespace}chart__front-xband-background {
+  fill: rgba(0, 0, 0, 0);
+}
+
+.#{$grommet-namespace}chart__cursor {
+  stroke: $cursor-color;
+  stroke-width: 2;
+  pointer-events: none;
+}
+
+.#{$grommet-namespace}chart__cursor-point {
+  stroke-width: 2;
+  @include graph-fill-color();
+}
+
+.#{$grommet-namespace}chart__legend--overlay {
+  padding: halve($inuit-base-spacing-unit);
+  pointer-events: none;
+
+  @include media-query(palm) {
+    margin: 0px auto;
+  }
+
+  @include media-query(lap-and-up) {
+    position: absolute;
+    left: 0px;
+    margin: 0px;
+    background-color: $active-background-color;
+  }
+}
+
+.#{$grommet-namespace}chart--area,
+.#{$grommet-namespace}chart--bar {
+  .#{$grommet-namespace}chart__gradient {
+    @include graph-fill-color-gradient();
+  }
+}
+
+.#{$grommet-namespace}chart--small {
+  .#{$grommet-namespace}chart__graphic {
+    height: $graphic-small-size;
+  }
+}
+
+.#{$grommet-namespace}chart--large {
+  .#{$grommet-namespace}chart__graphic {
+    height: $graphic-large-size;
+  }
+}
+
+.#{$grommet-namespace}chart--sparkline {
+  display: inline-block;
+  margin-right: quarter($inuit-base-spacing-unit);
+
+  .#{$grommet-namespace}chart__graphic {
+    width: auto;
+    height: $sparkline-height;
+  }
+
+  .#{$grommet-namespace}chart__values-bar,
+  .#{$grommet-namespace}chart__values-area {
+    @include graph-fill-color();
+  }
+}
+
+// New stuff
+
 .#{$grommet-namespace}chart {
   position: relative;
-  display: block;
+  display: flex;
+}
 
-  &__grid {
-    stroke: $border-color;
+.#{$grommet-namespace}chart--full {
+  width: 100%;
+}
+
+.#{$grommet-namespace}chart--vertical {
+  flex-direction: column;
+}
+
+.#{$grommet-namespace}chart:not(.#{$grommet-namespace}chart--vertical) {
+  flex-direction: row;
+}
+
+// Base
+
+.#{$grommet-namespace}chart-base--width-small {
+  width: $graphic-small-size;
+}
+
+.#{$grommet-namespace}chart-base--width-medium {
+  width: $graphic-size;
+}
+
+.#{$grommet-namespace}chart-base--width-large {
+  width: $graphic-large-size;
+}
+
+.#{$grommet-namespace}chart-base--width-full {
+  width: 100%;
+}
+
+.#{$grommet-namespace}chart-base--height-small {
+  height: $graphic-small-size;
+}
+
+.#{$grommet-namespace}chart-base--height-medium {
+  height: $graphic-size;
+}
+
+.#{$grommet-namespace}chart-base--height-large {
+  height: $graphic-large-size;
+}
+
+.#{$grommet-namespace}chart-base--height-sparkline {
+  height: $sparkline-height;
+  width: $sparkline-height * 4;
+}
+
+// Axis
+
+.#{$grommet-namespace}chart-axis {
+  flex: 0 0 auto; // when in Chart
+  display: flex;
+  flex-direction: row;
+}
+
+.#{$grommet-namespace}chart-axis__slot {
+  flex: 0 0;
+  display: flex;
+  flex-direction: column;
+  // to work around Safari repaint issues
+  -webkit-transform: translateZ(0);
+}
+
+.#{$grommet-namespace}chart-axis--ticks {
+  .#{$grommet-namespace}chart-axis__slot {
+    border-color: $border-color;
+    border-width: 1px;
+
+    #{$dark-background-context} & {
+      border-color: $colored-border-color;
+    }
+  }
+}
+
+.#{$grommet-namespace}chart-axis--vertical {
+  flex-direction: column-reverse;
+  // padding-top: round($inuit-base-spacing-unit / 3);
+  // padding-bottom: round($inuit-base-spacing-unit / 3);
+  margin-left: halve($inuit-base-spacing-unit);
+  margin-right: halve($inuit-base-spacing-unit);
+
+  .#{$grommet-namespace}chart-axis__slot {
+    min-width: 1em;
+    justify-content: flex-start;
+
+    &.#{$grommet-namespace}chart-axis__slot--flip {
+      justify-content: flex-end;
+    }
   }
 
-  &__graphic {
-    width: 100%;
-    height: $graphic-size;
-    max-height: calc(100vh - #{double($header-height)});
+  &.#{$grommet-namespace}chart-axis--align-start {
+    align-items: flex-start;
+
+    .#{$grommet-namespace}chart-axis__slot {
+      align-items: flex-start;
+    }
   }
 
-  &__values {
+  &.#{$grommet-namespace}chart-axis--align-end {
+    align-items: flex-end;
 
-    @include media-query(lap-and-up) {
-      g {
-        @include animation('reveal-chart 1.5s');
+    .#{$grommet-namespace}chart-axis__slot {
+      align-items: flex-end;
+    }
+  }
+
+  &.#{$grommet-namespace}chart-axis--ticks {
+    .#{$grommet-namespace}chart-axis__slot:not(.#{$grommet-namespace}chart-axis__slot--placeholder) {
+      border-top-style: solid;
+
+      &.#{$grommet-namespace}chart-axis__slot--flip {
+        border-top-style: none;
+        border-bottom-style: solid;
       }
     }
   }
 
-  &__values-line {
-    stroke-width: 3px;
+  &.#{$grommet-namespace}chart-axis--reverse {
+    flex-direction: column;
+
+    .#{$grommet-namespace}chart-axis__slot {
+      justify-content: flex-end;
+
+      &.#{$grommet-namespace}chart-axis__slot--flip {
+        justify-content: flex-start;
+      }
+    }
+  }
+}
+
+.#{$grommet-namespace}chart-axis:not(.#{$grommet-namespace}chart-axis--vertical) {
+  flex-direction: row;
+  // padding-left: round($inuit-base-spacing-unit / 3);
+  // padding-right: round($inuit-base-spacing-unit / 3);
+  margin-top: halve($inuit-base-spacing-unit);
+  margin-bottom: halve($inuit-base-spacing-unit);
+
+  .#{$grommet-namespace}chart-axis__slot {
+    min-height: $inuit-base-spacing-unit;
+    align-items: flex-end;
+
+    &.#{$grommet-namespace}chart-axis__slot--flip {
+      align-items: flex-start;
+    }
+  }
+
+  &.#{$grommet-namespace}chart-axis--align-start {
+    align-items: flex-start;
+
+    .#{$grommet-namespace}chart-axis__slot {
+      justify-content: flex-start;
+    }
+  }
+
+  &.#{$grommet-namespace}chart-axis--align-end {
+    align-items: flex-end;
+
+    .#{$grommet-namespace}chart-axis__slot {
+      justify-content: flex-end;
+    }
+  }
+
+  &.#{$grommet-namespace}chart-axis--ticks {
+    .#{$grommet-namespace}chart-axis__slot:not(.#{$grommet-namespace}chart-axis__slot--placeholder) {
+      border-right-style: solid;
+      padding: 0 quarter($inuit-base-spacing-unit);
+
+      &.#{$grommet-namespace}chart-axis__slot--flip {
+        border-right-style: none;
+        border-left-style: solid;
+      }
+    }
+  }
+}
+
+// Layers
+
+.#{$grommet-namespace}chart-layers {
+  position: absolute;
+  @include animation('fade-in-chart 0.5s');
+}
+
+.#{$grommet-namespace}chart-layers--height-small {
+  height: $graphic-small-size;
+}
+
+.#{$grommet-namespace}chart-layers--height-medium {
+  height: $graphic-size;
+}
+
+.#{$grommet-namespace}chart-layers--width-small {
+  width: $graphic-small-size;
+}
+
+.#{$grommet-namespace}chart-layers--width-medium {
+  width: $graphic-size;
+}
+
+.#{$grommet-namespace}chart-layers--width-full {
+  width: 100%;
+}
+
+@include keyframes(stretch-up-chart) {
+  0% {
+    max-height: 0;
+  }
+
+  100% {
+    max-height: 100%;
+  }
+}
+
+@include keyframes(stretch-right-chart) {
+  0% {
+    max-width: 0;
+  }
+
+  100% {
+    max-width: 100%;
+  }
+}
+
+.#{$grommet-namespace}chart-threshold,
+.#{$grommet-namespace}chart-grid,
+.#{$grommet-namespace}chart-graph--line,
+.#{$grommet-namespace}chart-graph--area,
+.#{$grommet-namespace}chart-graph--bar,
+.#{$grommet-namespace}chart-hot-spots,
+.#{$grommet-namespace}chart-range,
+.#{$grommet-namespace}chart-loading {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+// Loading
+
+.#{$grommet-namespace}chart-loading {
+  top: 0;
+  stroke-width: $inuit-base-spacing-unit;
+  stroke: $unset-color;
+  stroke-dasharray: 1 $inuit-base-spacing-unit;
+  stroke-dashoffset: 0;
+}
+
+// Stack
+
+.#{$grommet-namespace}chart-stack {
+  display: flex;
+}
+
+.#{$grommet-namespace}chart-stack--vertical {
+  flex-direction: column;
+}
+
+.#{$grommet-namespace}chart-stack:not(.#{$grommet-namespace}chart-stack--vertical) {
+  flex-direction: row;
+
+  > * {
+    flex: 0 0;
+  }
+}
+
+// HotSpots
+
+.#{$grommet-namespace}chart-hot-spots {
+  display: flex;
+  width: 100%;
+
+  > * {
+    flex: 0 0;
+  }
+}
+
+.#{$grommet-namespace}chart-hot-spots--vertical {
+  flex-direction: column;
+}
+
+.#{$grommet-namespace}chart-hot-spots:not(.#{$grommet-namespace}chart-hot-spots--vertical) {
+  flex-direction: row;
+}
+
+.#{$grommet-namespace}chart-hot-spots--clickable {
+  cursor: pointer;
+}
+
+// Range
+
+.#{$grommet-namespace}chart-range {
+  cursor: pointer;
+}
+
+.#{$grommet-namespace}chart-range__active {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: rgba($brand-color-lighter, 0.4);
+}
+
+.#{$grommet-namespace}chart-range--vertical {
+  .#{$grommet-namespace}chart-range__active {
+    flex-direction: column;
+  }
+}
+
+.#{$grommet-namespace}chart-range__active-start,
+.#{$grommet-namespace}chart-range__active-end {
+  flex: 0 0 $inuit-base-spacing-unit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba($brand-color-lighter, 0.3);
+
+  &:hover {
+    background-color: rgba($brand-color-lighter, 0.8);
+  }
+
+  svg {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+}
+
+.#{$grommet-namespace}chart-range--vertical {
+  .#{$grommet-namespace}chart-range__active {
+    flex-direction: column;
+  }
+
+  .#{$grommet-namespace}chart-range__active-start,
+  .#{$grommet-namespace}chart-range__active-end {
+    flex-direction: row;
+  }
+
+  svg {
+    transform: rotate(90deg);
+  }
+}
+
+// Grid
+
+.#{$grommet-namespace}chart-grid {
+  path {
+    stroke: $border-color;
+
+    #{$dark-background-context} & {
+      stroke: $colored-border-color;
+    }
+  }
+}
+
+// Threshold
+
+.#{$grommet-namespace}chart-threshold {
+  stroke: $border-color;
+  @include graph-stroke-color-translucent(0.7);
+  @include animation('fade-in-chart 1s');
+
+  #{$dark-background-context} & {
     @include graph-stroke-color();
+  }
+}
 
-    &--active {
-      cursor: pointer;
-    }
+// Graph
+
+.#{$grommet-namespace}chart-graph--line {
+  stroke-width: 3px;
+  @include graph-stroke-color-translucent(0.7);
+}
+
+.#{$grommet-namespace}chart-graph--bar {
+  stroke-width: 4px;
+  @include graph-stroke-color-translucent(0.7);
+}
+
+.#{$grommet-namespace}chart-graph--area {
+  stroke-width: 3px;
+  @include graph-fill-color-translucent(0.7);
+
+  &.#{$grommet-namespace}chart-graph--vertical {
+    @include animation('stretch-right-chart 1.5s');
   }
 
-  &__values-area {
-    @include graph-fill-color-translucent(0.7);
-
-    &--active {
-      cursor: pointer;
-    }
+  &:not(.#{$grommet-namespace}chart-graph--vertical) {
+    bottom: 0;
+    @include animation('stretch-up-chart 1.5s');
   }
 
-  &__values-area--highlight {
-    @include graph-fill-color;
+  .#{$grommet-namespace}chart-graph__point {
+    stroke: $background-color;
   }
+}
 
-  &__values-bar {
-    @include graph-stroke-color-translucent(0.7);
+.#{$grommet-namespace}chart-graph__point {
+  stroke: none;
+  @include graph-fill-color-translucent(0.9);
+  // fill: $background-color;
+  transition: r $base-animation-duration;
+  @include animation('fade-in-chart 0.3s');
+}
 
-    &--highlight {
-      @include graph-stroke-color;
-    }
+.#{$grommet-namespace}chart-graph__point--active {
+  stroke: $background-color;
+  @include graph-fill-color();
 
-    &--active {
-      cursor: pointer;
-    }
-  }
-
-  &--segmented {
-    .#{$grommet-namespace}chart__values-bar {
-      stroke-dasharray: 12 6;
-    }
-  }
-
-  &__values-point {
-    stroke-width: 3px;
-    @include graph-stroke-color();
-    fill: $background-color;
-  }
-
-  &__values--loading {
-    stroke-width: $inuit-base-spacing-unit;
-    @include graph-stroke-color();
-  }
-
-  &__threshold {
-    stroke-width: 2px;
-    stroke: $threshold-color;
-    pointer-events: none;
-  }
-
-  &__yaxis .#{$grommet-namespace}chart__bar {
-    @include graph-fill-color-translucent(0.5);
-  }
-
-  &__xaxis-index {
-    text {
-      fill: $secondary-text-color;
-    }
-  }
-
-  &__xaxis-index--eclipse {
-    text {
-      fill: transparent;
-    }
-  }
-
-  &__xaxis-index--highlight {
-    text {
-      fill: $text-color;
-    }
-  }
-
-  &__front-xband-background {
-    fill: rgba(0, 0, 0, 0);
-  }
-
-  &__cursor {
-    stroke: $cursor-color;
-    stroke-width: 2;
-    pointer-events: none;
-  }
-
-  &__cursor-point {
-    stroke-width: 2;
-    @include graph-fill-color();
-  }
-
-  &__legend--overlay {
-    padding: halve($inuit-base-spacing-unit);
-    pointer-events: none;
-
-    @include media-query(palm) {
-      margin: 0px auto;
-    }
-
-    @include media-query(lap-and-up) {
-      position: absolute;
-      left: 0px;
-      margin: 0px;
-      background-color: $active-background-color;
-    }
-  }
-
-  &--area,
-  &--bar {
-    .#{$grommet-namespace}chart__gradient {
-      @include graph-fill-color-gradient();
-    }
-  }
-
-  &--small {
-    .#{$grommet-namespace}chart__graphic {
-      height: $graphic-small-size;
-    }
-  }
-
-  &--large {
-    .#{$grommet-namespace}chart__graphic {
-      height: $graphic-large-size;
-    }
-  }
-
-  &--sparkline {
-    display: inline-block;
-    margin-right: quarter($inuit-base-spacing-unit);
-
-    .#{$grommet-namespace}chart__graphic {
-      width: auto;
-      height: $sparkline-height;
-    }
-
-    .#{$grommet-namespace}chart__values-bar,
-    .#{$grommet-namespace}chart__values-area {
-      @include graph-fill-color();
-    }
+  #{$dark-background-context} & {
+    stroke: $colored-active-background-color;
   }
 }

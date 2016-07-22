@@ -17,28 +17,36 @@
 .#{$grommet-namespace}legend__total {
   color: $secondary-text-color;
 
-  > * {
-    vertical-align: top;
+  #{$dark-background-context} & {
+    color: $inactive-colored-text-color;
   }
+
+  // > * {
+  //   vertical-align: top;
+  // }
 }
 
-.#{$grommet-namespace}legend__item-label,
-.#{$grommet-namespace}legend__total-label {
-  display: inline-block;
-  min-width: round($inuit-base-spacing-unit * 3);
-  text-align: left;
+.#{$grommet-namespace}legend__item-label {
+  margin-right: halve($inuit-base-spacing-unit);
 }
 
-.#{$grommet-namespace}legend__item-value,
-.#{$grommet-namespace}legend__total-value {
-  display: inline-block;
-  width: round($inuit-base-spacing-unit * 3);
-  text-align: right;
+// .#{$grommet-namespace}legend__item-label,
+// .#{$grommet-namespace}legend__total-label {
+//   display: inline-block;
+//   min-width: round($inuit-base-spacing-unit * 3);
+//   text-align: left;
+// }
 
-  html.rtl & {
-    text-align: left;
-  }
-}
+// .#{$grommet-namespace}legend__item-value,
+// .#{$grommet-namespace}legend__total-value {
+//   display: inline-block;
+//   width: round($inuit-base-spacing-unit * 3);
+//   text-align: right;
+//
+//   html.rtl & {
+//     text-align: left;
+//   }
+// }
 
 .#{$grommet-namespace}legend__item-units,
 .#{$grommet-namespace}legend__total-units {
@@ -52,11 +60,15 @@
 }
 
 .#{$grommet-namespace}legend__item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 
   svg.#{$grommet-namespace}legend__item-swatch {
     width: halve($inuit-base-spacing-unit);
     height: halve($inuit-base-spacing-unit);
-    margin-top: quarter($inuit-base-spacing-unit);
+    // margin-top: quarter($inuit-base-spacing-unit);
     margin-right: halve($inuit-base-spacing-unit);
     overflow: visible;
 
@@ -96,17 +108,18 @@
 
 // need li to override .grommet li
 li.#{$grommet-namespace}legend__total {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   margin-left: $inuit-base-spacing-unit;
+  margin-top: quarter($inuit-base-spacing-unit);
+  padding-top: quarter($inuit-base-spacing-unit);
+  border-top: 1px dotted $border-color;
 
   html.rtl & {
     margin-left: 0;
     margin-right: $inuit-base-spacing-unit;
-  }
-
-  > * {
-    margin-top: quarter($inuit-base-spacing-unit);
-    padding-top: quarter($inuit-base-spacing-unit);
-    border-top: 1px dotted $border-color;
   }
 }
 
