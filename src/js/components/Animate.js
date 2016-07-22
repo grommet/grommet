@@ -65,7 +65,7 @@ class AnimateChild extends Component {
     const enterClass = this.state.enterClass;
     node.classList.remove(`${enterClass}--enter`);
     if (duration) {
-      node.style.transitionDuration = `${duration / 1000}s`;
+      node.style.transitionDuration = `${duration}ms`;
     }
     node.classList.add('animate', `${enterClass}--enter-active`);
     setTimeout(() => {
@@ -79,7 +79,7 @@ class AnimateChild extends Component {
     const node = ReactDOM.findDOMNode(this);
 
     if (duration) {
-      node.style.transitionDuration = `${duration / 1000}s`;
+      node.style.transitionDuration = `${duration}ms`;
     }
 
     return setTimeout(() => {
@@ -110,6 +110,7 @@ class Animate extends Component {
       component,
       visible,
       keep,
+      style,
       ...props
     } = this.props;
 
@@ -127,6 +128,7 @@ class Animate extends Component {
     });
 
     let classes = className;
+    let styles = {...style};
     if (keep) {
       classes = classnames(
         CLASS_ROOT,
@@ -135,6 +137,11 @@ class Animate extends Component {
           [`${enter.animation}--enter`]: !this.props.visible
         }
       );
+      styles = {
+        ...style,
+        transitionDuration: `${enter.duration}ms`,
+        transitionDelay: `${enter.delay}ms`
+      };
     }
 
     return (
@@ -142,6 +149,7 @@ class Animate extends Component {
         {...props}
         className={classes}
         component={component}
+        style={styles}
       >
         {(visible || visible === undefined || keep) &&
           animateChildren
