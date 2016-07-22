@@ -3,6 +3,8 @@
 export const namespace = 'grommetux-';
 
 export default {
+  ACCORDION: `${namespace}accordion`,
+  ACCORDION_PANEL: `${namespace}accordion-panel`,
   ANCHOR: `${namespace}anchor`,
   APP: `${namespace}app`,
   ARTICLE: `${namespace}article`,
@@ -26,6 +28,7 @@ export default {
   CHART_STACK: `${namespace}chart-stack`,
   CHART_THRESHOLD: `${namespace}chart-threshold`,
   CHECK_BOX: `${namespace}check-box`,
+  COLLAPSIBLE: `${namespace}collapsible`,
   COLOR_INDEX: `${namespace}color-index`,
   COLUMNS: `${namespace}columns`,
   CONTROL_ICON: `${namespace}control-icon`,
