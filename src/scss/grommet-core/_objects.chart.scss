@@ -485,12 +485,6 @@
   background-color: rgba($brand-color-lighter, 0.4);
 }
 
-.#{$grommet-namespace}chart-range--vertical {
-  .#{$grommet-namespace}chart-range__active {
-    flex-direction: column;
-  }
-}
-
 .#{$grommet-namespace}chart-range__active-start,
 .#{$grommet-namespace}chart-range__active-end {
   flex: 0 0 $inuit-base-spacing-unit;
