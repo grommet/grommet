@@ -39,8 +39,8 @@ export default class Accordion extends Component {
     const accordionChildren = React.Children.map(children, (child, index) => {
       return React.cloneElement(child, {
         id: 'accordion-panel-' + index,
-        isOpen: !openMulti ? (this.state.activeIndex === index) : null,
-        onTitleClick: () => {
+        active: !openMulti ? (this.state.activeIndex === index) : null,
+        onActive: () => {
           this._activatePanel(index);
         },
         animate
@@ -61,7 +61,8 @@ export default class Accordion extends Component {
 
 Accordion.propTypes = {
   animate: PropTypes.bool,
-  colorIndex: PropTypes.string
+  openMulti: PropTypes.bool,
+  initialIndex: PropTypes.number
 };
 
 Accordion.defaultProps = {

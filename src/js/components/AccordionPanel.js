@@ -16,19 +16,19 @@ export default class AccordionPanel extends Component {
     super(props);
     this._onClickPanel = this._onClickPanel.bind(this);
     this.state = {
-      isOpen: props.isOpen || false
+      active: props.active || false
     };
   }
 
   componentWillReceiveProps (nextProps) {
-    if (this.props.isOpen !== nextProps.isOpen) {
-      this.setState({ isOpen: nextProps.isOpen });
+    if (this.props.active !== nextProps.active) {
+      this.setState({ active: nextProps.active });
     }
   }
 
   _onClickPanel () {
-    this.setState({ isOpen : !this.state.isOpen });
-    this.props.onTitleClick();
+    this.setState({ active : !this.state.active });
+    this.props.onActive();
   }
 
   render () {
@@ -38,7 +38,7 @@ export default class AccordionPanel extends Component {
       CLASS_ROOT,
       className,
       {
-        [`${CLASS_ROOT}--active`]: this.state.isOpen
+        [`${CLASS_ROOT}--active`]: this.state.active
       }
     );
 
@@ -46,7 +46,7 @@ export default class AccordionPanel extends Component {
       <ListItem className={classes} direction="column" pad="none">
         <Header
           role="tab"
-          className={`${CLASS_ROOT}-heading`}
+          className={`${CLASS_ROOT}-header`}
           pad={{horizontal: 'medium', vertical: 'small'}}
           full="horizontal"
           direction="row"
@@ -60,7 +60,7 @@ export default class AccordionPanel extends Component {
         </Header>
         <Collapsible
           role="tabpanel"
-          isOpen={this.state.isOpen}
+          active={this.state.active}
           animate={animate}
         >
           {children}
@@ -71,6 +71,8 @@ export default class AccordionPanel extends Component {
 };
 
 AccordionPanel.propTypes = {
+  active: PropTypes.bool,
   animate: PropTypes.bool,
-  heading: PropTypes.node.isRequired
+  heading: PropTypes.node.isRequired,
+  onActive: PropTypes.func
 };
