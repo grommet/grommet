@@ -2,7 +2,6 @@
 
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
-import Box from './Box';
 import List from './List';
 
 import CSSClassnames from '../utils/CSSClassnames';
@@ -28,8 +27,8 @@ export default class Accordion extends Component {
       animate,
       className,
       children,
-      colorIndex,
-      openMulti
+      openMulti,
+      ...props
     } = this.props;
 
     const classes = classnames(
@@ -49,11 +48,13 @@ export default class Accordion extends Component {
     });
 
     return (
-      <Box role="tablist" className={classes} colorIndex={colorIndex} separator="top">
-        <List>
-          {accordionChildren}
-        </List>
-      </Box>
+      <List
+        role="tablist"
+        className={classes}
+        {...props}
+      >
+        {accordionChildren}
+      </List>
     );
   }
 };
