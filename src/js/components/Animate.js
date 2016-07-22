@@ -120,9 +120,11 @@ class Animate extends Component {
       if (!nextProps.visible) {
         state = (animationState === 'leave') ? 'enter' : 'leave';
       }
+
+      const animateState = nextProps[state] || nextProps.enter;
       this.setState({
         animationState: state,
-        animation: state ? nextProps[state].animation : ''
+        animation: state ? animateState.animation : ''
       });
 
       // Reset animation state back to enter after leave animation is finished
@@ -187,7 +189,7 @@ class Animate extends Component {
       <TransitionGroup
         {...props}
         className={classes}
-        component={component}
+        component={component || 'div'}
         style={styles}
       >
         {(visible || visible === undefined || keep) &&
