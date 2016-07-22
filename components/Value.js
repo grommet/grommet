@@ -63,6 +63,9 @@ var Value = function (_Component) {
       if (this.props.colorIndex) {
         classes.push(COLOR_INDEX + '-' + this.props.colorIndex);
       }
+      if (this.props.active) {
+        classes.push(CLASS_ROOT + '--active');
+      }
       if (this.props.className) {
         classes.push(this.props.className);
       }
@@ -112,6 +115,7 @@ exports.default = Value;
 
 
 Value.propTypes = {
+  active: _react.PropTypes.bool,
   align: _react.PropTypes.oneOf(['start', 'center', 'end']),
   colorIndex: _react.PropTypes.string,
   icon: _react.PropTypes.node,

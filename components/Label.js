@@ -4,6 +4,14 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
+var _keys = require('babel-runtime/core-js/object/keys');
+
+var _keys2 = _interopRequireDefault(_keys);
+
 var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
@@ -40,9 +48,15 @@ var _CSSClassnames = require('../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
+var _Props = require('../utils/Props');
+
+var _Props2 = _interopRequireDefault(_Props);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.LABEL; // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+var CLASS_ROOT = _CSSClassnames2.default.LABEL;
 
 var Label = function (_Component) {
   (0, _inherits3.default)(Label, _Component);
@@ -58,10 +72,11 @@ var Label = function (_Component) {
       var _classnames;
 
       var classes = (0, _classnames3.default)(CLASS_ROOT, this.props.className, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--uppercase', this.props.uppercase), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--margin-' + this.props.margin, this.props.margin), _classnames));
+      var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Label.propTypes));
 
       return _react2.default.createElement(
         'label',
-        { className: classes, htmlFor: this.props.labelFor },
+        (0, _extends3.default)({}, restProps, { className: classes, htmlFor: this.props.labelFor }),
         this.props.children
       );
     }

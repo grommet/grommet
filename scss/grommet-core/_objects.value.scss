@@ -5,6 +5,14 @@
   @include text-align();
 }
 
+.#{$grommet-namespace}value--active {
+  color: $hover-text-color;
+
+  #{$dark-background-context} & {
+    color: $active-colored-text-color;
+  }
+}
+
 .#{$grommet-namespace}value__annotated {
   display: flex;
   flex-direction: row;

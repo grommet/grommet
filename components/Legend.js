@@ -38,7 +38,7 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.LEGEND; // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
+var CLASS_ROOT = _CSSClassnames2.default.LEGEND; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
 
@@ -95,7 +95,9 @@ var Legend = function (_Component) {
           legendClasses.push(CLASS_ROOT + "__item--clickable");
         }
         var colorIndex = this._itemColorIndex(item, index);
-        totalValue += item.value;
+        if (typeof item.value === 'number') {
+          totalValue += item.value;
+        }
 
         var valueClasses = [CLASS_ROOT + "__item-value"];
         if (1 === this.props.series.length) {
@@ -114,24 +116,37 @@ var Legend = function (_Component) {
 
         var label;
         if (item.hasOwnProperty('label')) {
-          label = _react2.default.createElement(
-            'span',
-            { className: CLASS_ROOT + "__item-label" },
-            item.label
-          );
+          if (swatch) {
+            label = _react2.default.createElement(
+              'span',
+              { className: CLASS_ROOT + "__item-label" },
+              swatch,
+              item.label
+            );
+          } else {
+            label = _react2.default.createElement(
+              'span',
+              { className: CLASS_ROOT + "__item-label" },
+              item.label
+            );
+          }
         }
 
         var value;
         if (item.hasOwnProperty('value')) {
+          var units;
+          if (item.units || this.props.units) {
+            units = _react2.default.createElement(
+              'span',
+              { className: CLASS_ROOT + "__item-units" },
+              item.units || this.props.units
+            );
+          }
           value = _react2.default.createElement(
             'span',
             { className: valueClasses.join(' ') },
             item.value,
-            _react2.default.createElement(
-              'span',
-              { className: CLASS_ROOT + "__item-units" },
-              item.units || this.props.units
-            )
+            units
           );
         }
 
@@ -140,8 +155,7 @@ var Legend = function (_Component) {
           { key: item.label || index, className: legendClasses.join(' '),
             onClick: item.onClick,
             onMouseOver: this._onActive.bind(this, index),
-            onMouseOut: this._onActive.bind(this, null) },
-          swatch,
+            onMouseOut: this._onActive.bind(this, undefined) },
           label,
           value
         );
@@ -150,8 +164,11 @@ var Legend = function (_Component) {
       // build legend from bottom to top, to align with Meter bar stacking
       items.reverse();
 
-      var total = null;
+      var total;
       if (this.props.total && this.props.series.length > 1) {
+        if (true !== this.props.total) {
+          totalValue = this.props.total;
+        }
         total = _react2.default.createElement(
           'li',
           { className: CLASS_ROOT + "__total" },
@@ -193,14 +210,14 @@ Legend.propTypes = {
   onActive: _react.PropTypes.func,
   series: _react.PropTypes.arrayOf(_react.PropTypes.shape({
     label: _react.PropTypes.string,
-    value: _react.PropTypes.number,
+    value: _react.PropTypes.oneOfType([_react.PropTypes.number, _react.PropTypes.node]),
     units: _react.PropTypes.string,
     colorIndex: _react.PropTypes.oneOfType([_react.PropTypes.number, // 1-6
     _react.PropTypes.string // status
     ]),
     onClick: _react.PropTypes.func
   })).isRequired,
-  total: _react.PropTypes.bool,
+  total: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.node]),
   units: _react.PropTypes.string,
   value: _react.PropTypes.number
 };

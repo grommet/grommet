@@ -52,7 +52,7 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
 
@@ -126,7 +126,6 @@ var Graphic = function (_Component) {
           activeMeterSlice = 'activeMeterSlice';
           classes.push(CLASS_ROOT + '__slice--active');
         }
-
         if (item.onClick) {
           classes.push(CLASS_ROOT + "__slice--clickable");
         }

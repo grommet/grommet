@@ -85,7 +85,7 @@ exports.default = {
   buildPath: function buildPath(itemIndex, commands, classes, onActivate, onClick, a11yDescId, a11yTitle, activeMeterSlice) {
     if (onActivate) {
       var onOver = onActivate.bind(null, itemIndex);
-      var onOut = onActivate.bind(null, null);
+      var onOut = onActivate.bind(null, undefined);
 
       var a11yRoles = {};
       var titleComponent = void 0;
