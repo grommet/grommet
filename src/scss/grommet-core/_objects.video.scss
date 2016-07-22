@@ -53,7 +53,7 @@
     display: block;
   }
 
-  &__summary {
+  &__overlay {
     position: absolute;
     top: 0;
     width: 100%;
@@ -63,8 +63,15 @@
     padding: $inuit-base-spacing-unit;
   }
 
+  &__controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
   &--video-header {
-    .#{$grommet-namespace}video__summary {
+    .#{$grommet-namespace}video__overlay {
       padding: 0;
     }
   }
@@ -180,15 +187,6 @@
         $chapter-current-color: $brand-color;
         border-color: $chapter-current-color;
       }
-    }
-  }
-
-  &--titled {
-    .#{$grommet-namespace}video__summary {
-      background-color: rgba(nth($brand-grey-colors, 1), 0.7);
-      color: $colored-text-color;
-      border-radius: $border-radius;
-      @include inuit-font-size($control-font-size);
     }
   }
 
