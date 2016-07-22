@@ -53,10 +53,12 @@ class AnimateChild extends Component {
     this.setState({enterClass});
     this.setState({leaveClass});
 
-    node.style.transitionDuration = '';
-    node.classList.remove('animate', `${leaveClass}--leave`);
-    node.classList.add(`${enterClass}--enter`);
-    setTimeout(callback, delay);
+    if (node) {
+      node.style.transitionDuration = '';
+      node.classList.remove('animate', `${leaveClass}--leave`);
+      node.classList.add(`${enterClass}--enter`);
+      setTimeout(callback, delay);
+    }
   }
 
   entered () {
