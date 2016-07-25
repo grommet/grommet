@@ -17,7 +17,8 @@ export default {
     'README.md',
     {
       asset: 'src/js/**',
-      babel: true
+      babel: true,
+      ignores: ['.DS_Store']
     },
     {
       asset: 'src/scss/**',
