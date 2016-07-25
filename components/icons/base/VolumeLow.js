@@ -87,7 +87,7 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'volume-low' },
+          null,
           _react2.default.createElement('rect', { y: '0', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M1,12V8h5l6-5v18l-6-5H1V12 M15,16\r c2.2091,0,4-1.7909,4-4s-1.7909-4-4-4' })
         )

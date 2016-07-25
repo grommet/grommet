@@ -87,7 +87,7 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'zoom-in' },
+          null,
           _react2.default.createElement('rect', { x: '0.5', y: '0.5', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('line', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', x1: '10', y1: '5', x2: '10', y2: '15' }),
           _react2.default.createElement('line', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', x1: '15', y1: '10', x2: '5', y2: '10' }),

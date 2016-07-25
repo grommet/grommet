@@ -87,7 +87,7 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'divide-four' },
+          null,
           _react2.default.createElement('rect', { y: '0', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M22,22H2V2h20V22z M7,2v21 M12,2v21 M17,2v21' })
         )

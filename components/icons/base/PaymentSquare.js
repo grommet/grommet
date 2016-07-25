@@ -87,7 +87,7 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'payment-square' },
+          null,
           _react2.default.createElement('rect', { x: '0', y: '0', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M17,20.8844H7c-2.2091,0-4-1.7909-4-4v-10\r c0-2.2091,1.7909-4,4-4h10c2.2091,0,4,1.7909,4,4v10C21,19.0936,19.2091,20.8844,17,20.8844z' }),
           _react2.default.createElement('path', { d: 'M14,8.8844h-4c-0.5523,0-1,0.4477-1,1v4c0,0.5523,0.4477,1,1,1h4c0.5523,0,1-0.4477,1-1v-4\r C15,9.3322,14.5523,8.8844,14,8.8844z' })

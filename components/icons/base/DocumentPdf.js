@@ -87,7 +87,7 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'document-pdf' },
+          null,
           _react2.default.createElement('rect', { x: '0.5', y: '0', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M1,13v7 M3,17c1.1046,0,2-0.8954,2-2s-0.8954-2-2-2\r H1v4H3z M8,19h3c1.1046,0,2-1.0945,2-2.2213V16v-0.7787C13,14.1158,12.1046,13,11,13H8V19z' }),
           _react2.default.createElement('line', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', x1: '21', y1: '13', x2: '15', y2: '13' }),

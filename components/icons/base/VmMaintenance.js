@@ -87,7 +87,7 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'vm-maintenance' },
+          null,
           _react2.default.createElement('rect', { x: '1', y: '0', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M23.6937,14.2495l-2.0349,2.0349l-1.4431-1.4432\r l2.0348-2.0348c-1.1328-0.5556-2.5327-0.3536-3.478,0.5917c-0.9433,0.9433-1.1319,2.3387-0.5894,3.476L13,22.0569l1.443,1.443\r l5.1833-5.1829c1.1372,0.5422,2.5324,0.3536,3.4757-0.5896C24.0472,16.7822,24.2493,15.3824,23.6937,14.2495z' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M15,13.5H5v-10h10V13.5z M18,11.5v-4H8v10h6\r M11,10.5H1v10h10V10.5z' })

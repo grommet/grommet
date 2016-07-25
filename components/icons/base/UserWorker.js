@@ -87,7 +87,7 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'user-worker' },
+          null,
           _react2.default.createElement('rect', { fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M18,7v1.5714C18,12.1218,15.5504,15,12,15\r s-6-2.8782-6-6.4286V7 M8.45,13.83C5.81,15.14,4,17.86,4,21v2h16v-2c0-2.21-0.9-4.21-2.34-5.66c-0.61-0.61-1.32-1.12-2.11-1.51\r M19,8c0-3.866-3.134-7-7-7S5,4.134,5,8H19z M10,4V2 M14,4V2 M3,8h18' })
         )

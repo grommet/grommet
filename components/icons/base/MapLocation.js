@@ -87,7 +87,7 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'map-location' },
+          null,
           _react2.default.createElement('rect', { x: '0', y: '1.0533', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('line', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', x1: '8.025', y1: '8', x2: '8.025', y2: '8' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M17.705,5.82l5.32,2.28v15l-7-3l-8,3l-7-3v-15\r l5.27,2.26 M8.025,23V12 M16.025,20v-8 M12.025,1C8.8389,1,6.256,3.5829,6.256,6.769c0,4.3989,5.769,9.2304,5.769,9.2304\r c2.2529-2.2529,5.769-4.7594,5.769-9.2304C17.794,3.5829,15.2111,1,12.025,1z' }),

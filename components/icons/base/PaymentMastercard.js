@@ -87,7 +87,7 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'payment-mastercard' },
+          null,
           _react2.default.createElement('rect', { x: '0', y: '0', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement(
             'g',

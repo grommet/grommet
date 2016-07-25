@@ -87,7 +87,7 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'command-line' },
+          null,
           _react2.default.createElement('rect', { y: '0', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M23,23H1V1h22V23z M5,15l3-3L5,9 M10,15h6 M22,5H2\r l0,0H22L22,5z M5,5L5,5V1l0,0V5z' })
         )

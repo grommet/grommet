@@ -87,7 +87,7 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'document-missing' },
+          null,
           _react2.default.createElement('rect', { x: '0', y: '0', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M3,9V1h13.0002L21,5.9999V23H3V9z M15,2v5h6 M9,12\r l6,6 M15,12l-6,6' })
         )

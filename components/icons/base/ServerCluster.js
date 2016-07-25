@@ -87,7 +87,7 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'server-cluster' },
+          null,
           _react2.default.createElement('rect', { y: '0', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M23,8.34H1v-7h22V8.34z M23,8.34H1v7h22V8.34z\r M23,15.34H1v7h22V15.34z' }),
           _react2.default.createElement('rect', { x: '13', y: '3.34', width: '2', height: '3' }),

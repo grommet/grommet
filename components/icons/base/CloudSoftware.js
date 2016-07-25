@@ -87,7 +87,7 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'cloud-software' },
+          null,
           _react2.default.createElement('rect', { x: '1', y: '0', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M8,7V5.9C8,3.6909,9.7909,2,12,2h4\r c2.2091,0,4,1.6909,4,3.9v1c2.7729,0,5,2.2469,5,5.0198S22.7729,17.05,20,17.05 M14,7H6.0208C3.2479,7,1,9.2271,1,12s2.2271,5,5,5\r M17,13H9v11h8V13z M10,17h6 M13,13v3' })
         )

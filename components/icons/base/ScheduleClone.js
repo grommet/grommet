@@ -87,7 +87,7 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'schedule-clone' },
+          null,
           _react2.default.createElement('rect', { x: '0', y: '0', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M17.0004,20h-16V4h16V20z M7.0004,20v4h16V8h-5\r M2.0004,8h14 M5.0004,4V1 M14.0004,12h-6 M6.0003,12h-2 M14.0004,16h-6 M6.0003,16h-2 M13.0004,4V1 M17.0004,12h6' })
         )

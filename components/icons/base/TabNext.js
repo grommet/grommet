@@ -87,7 +87,7 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'tab-next' },
+          null,
           _react2.default.createElement('rect', { x: '0', y: '0', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('polygon', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', points: '7.5,21.3768 7.5,3.0434 20.5,12.2101 \t' })
         )

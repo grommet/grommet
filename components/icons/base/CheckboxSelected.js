@@ -87,7 +87,7 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'checkbox-selected' },
+          null,
           _react2.default.createElement('rect', { x: '0', y: '0', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('rect', { x: '8', y: '8', width: '8', height: '8' }),
           _react2.default.createElement('rect', { x: '2', y: '2', fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', width: '20', height: '20' })

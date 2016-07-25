@@ -87,7 +87,7 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'cloud-download' },
+          null,
           _react2.default.createElement('rect', { x: '0', y: '0', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M12,12v8 M8,17l4,4l4-4 M18,19h0.0792\r c2.7729,0,4.9708-2.2323,4.9708-5.0052S21,9,18,9V8c0-2.2091-1.6909-4-3.9-4h-3C8.8909,4,7,5.7909,7,8v1 M12,9H6.1208\r C3.3479,9,1.1,11.2375,1.1,14.0104S3.3271,19,6.1,19H6' })
         )

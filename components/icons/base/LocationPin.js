@@ -87,7 +87,7 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'location-pin' },
+          null,
           _react2.default.createElement('rect', { y: '0.0208', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M21,10c0,6.75-9,13-9,13s-9-6.25-9-13\r c0-4.9706,4.0294-9,9-9S21,5.0294,21,10z M12,7c-1.6569,0-3,1.3431-3,3s1.3431,3,3,3s3-1.3431,3-3S13.6569,7,12,7z' })
         )

@@ -87,7 +87,7 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'tesxt-wrap' },
+          null,
           _react2.default.createElement('rect', { x: '0', y: '0', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M17,11h7 M17,7h7 M17,3h7 M17,15h7 M0,19h24 M0,23\r h24' }),
           _react2.default.createElement('rect', { x: '1', y: '2.9', fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', width: '13', height: '12.1' }),

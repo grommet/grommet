@@ -87,7 +87,7 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'document-conig' },
+          null,
           _react2.default.createElement('rect', { x: '0', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M3,11V1h13.0002L21,5.9999V23h-8 M15,1v6h6 M14,7\r M9,18c0-1.6542-1.3455-3-3-3s-3,1.3458-3,3s1.3455,3,3,3S9,19.6542,9,18z M9,18.0001L12,18 M8.1212,20.1214l2.1214,2.1212 M6,24\r l-0.0001-3 M3.8786,20.1212l-2.1212,2.1214 M0,18h3 M3.8787,15.8787l-2.1213-2.1213 M6,15v-3 M10.2426,13.7574l-2.1213,2.1213' })
         )

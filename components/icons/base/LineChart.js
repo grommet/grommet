@@ -87,7 +87,7 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'line-chart' },
+          null,
           _react2.default.createElement('rect', { x: '0.0196', y: '0', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M16.0196,4h7v7 M0.0196,22h24 M0.7071,16.3125\r L8.0196,9l5,5l9-9' })
         )

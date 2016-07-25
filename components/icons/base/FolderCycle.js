@@ -87,7 +87,7 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'folder-cycle' },
+          null,
           _react2.default.createElement('rect', { x: '0.0001', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M4.0001,23h-3V5l0-4h8l3,4h11v18h-4 M1.0001,9h22' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M7.0001,18c0-2.7614,2.2386-5,5-5\r c1.9848,0,3.6994,1.1565,4.5069,2.8323' }),

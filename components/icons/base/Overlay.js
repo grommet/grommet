@@ -88,10 +88,10 @@ var Icon = function (_Component) {
         _react2.default.createElement('defs', null),
         _react2.default.createElement(
           'g',
-          { id: 'Page-1', stroke: 'none', strokeWidth: '1', fill: 'none', fillRule: 'evenodd' },
+          { stroke: 'none', strokeWidth: '1', fill: 'none', fillRule: 'evenodd' },
           _react2.default.createElement(
             'g',
-            { id: 'new-window-24', stroke: '#000000', strokeWidth: '2' },
+            { stroke: '#000000', strokeWidth: '2' },
             _react2.default.createElement('path', { d: 'M1,1 L17,1 L17,17 L1,17 L1,1 Z M20,7 L23,7 L23,23 L7,23 L7,20 L7,20' })
           )
         )

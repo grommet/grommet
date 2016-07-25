@@ -87,7 +87,7 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'street-view' },
+          null,
           _react2.default.createElement('rect', { fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M16,5c0,2.2091-1.7909,4-4,4S8,7.2091,8,5\r s1.7909-4,4-4S16,2.7909,16,5z M12,9c0,0,0.04,0,0.02,0C8.79,9.03,6,11.66,6,14.89V17h3v6h6v-6h3v-2.11c0-3.23-2.76-5.86-5.98-5.89\r C12,9,12,9,12,9 M4,23h16' })
         )

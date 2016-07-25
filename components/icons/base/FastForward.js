@@ -87,7 +87,7 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'fast-forward' },
+          null,
           _react2.default.createElement('rect', { x: '0', y: '0.0293', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('polygon', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', points: '24.5081,12.0293 11.4919,2.0293 \r 11.4919,7.7436 3.4919,2.0293 3.4919,22.0293 11.4919,16.3151 11.4919,22.0293 \t' })
         )

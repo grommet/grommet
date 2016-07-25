@@ -87,7 +87,7 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'contact-us' },
+          null,
           _react2.default.createElement('rect', { x: '0', y: '0', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('polygon', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', points: '22.5,18.5 14.0001,18.5 5.5,22.5 5.5,18.5 \r 1.5,18.5 1.5,1.5 22.5,1.5 \t' }),
           _react2.default.createElement('rect', { x: '5.5', y: '8.5', width: '3', height: '3' }),

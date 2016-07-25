@@ -87,7 +87,7 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'radial-selected' },
+          null,
           _react2.default.createElement('rect', { fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('circle', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', cx: '12', cy: '12', r: '11' }),
           _react2.default.createElement('path', { d: 'M12,16c-2.2055,0-4-1.7945-4-4s1.7945-4,4-4s4,1.7945,4,4S14.2055,16,12,16z' })

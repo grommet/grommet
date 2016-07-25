@@ -87,7 +87,7 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'chapter-next' },
+          null,
           _react2.default.createElement('rect', { y: '0.0293', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('polygon', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', points: '23.0162,12.0293 10,2.0293 10,7.7436 \r 2,2.0293 2,22.0293 10,16.3151 10,22.0293 \t' }),
           _react2.default.createElement('line', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', x1: '24', y1: '2.0293', x2: '24', y2: '22.0293' })

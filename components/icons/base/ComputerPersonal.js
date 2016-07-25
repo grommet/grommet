@@ -87,7 +87,7 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'computer-personal' },
+          null,
           _react2.default.createElement('rect', { x: '1', y: '0', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M23,18.9467H3v-16h20V18.9467z M25,18.9467H1v4h24\r V18.9467z M20,5.9467H6v10h14V5.9467z' })
         )

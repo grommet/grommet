@@ -87,7 +87,7 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'table-add' },
+          null,
           _react2.default.createElement('rect', { x: '0', y: '0', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M26,17c0,3.866-3.134,7-7,7s-7-3.134-7-7\r s3.134-7,7-7S26,13.134,26,17z M22,1H1v4h21V1z M22,11V5H8H1v18h7h7 M8,5v18 M15,6v5l0,0 M15,24v-1v-0.26 M15,11L15,11H2 M2,17h10\r M22,15 M22,15 M23,17h-8 M19,21v-8' })
         )

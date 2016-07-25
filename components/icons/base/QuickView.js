@@ -87,7 +87,7 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'quick-view' },
+          null,
           _react2.default.createElement('rect', { y: '0', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M10,16.5c0,2.4853-2.0147,4.5-4.5,4.5\r S1,18.9853,1,16.5S3.0147,12,5.5,12S10,14.0147,10,16.5z M18.5,12c-2.4853,0-4.5,2.0147-4.5,4.5s2.0147,4.5,4.5,4.5\r s4.5-2.0147,4.5-4.5S20.9853,12,18.5,12z M14,16c0-1.1046-0.8954-2-2-2s-2,0.8954-2,2 M6,3L6,3C3.2386,3,1,5.2386,1,8v8 M23,16V8\r c0-2.7614-2.2386-5-5-5h0' })
         )

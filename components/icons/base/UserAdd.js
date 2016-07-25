@@ -87,7 +87,7 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'user-add' },
+          null,
           _react2.default.createElement('rect', { y: '0.5', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M15,6c0,2.7614-2.2386,5-5,5S5,8.7614,5,6\r s2.2386-5,5-5S15,3.2386,15,6z M18,23v-4c0-4.4183-3.5817-8-8-8h0c-4.4183,0-8,3.5817-8,8v4 M21,6v8 M25,10h-8 M6,23v-4 M14,23v-4' })
         )

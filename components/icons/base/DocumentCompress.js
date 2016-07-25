@@ -87,7 +87,7 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'document-compress' },
+          null,
           _react2.default.createElement('rect', { x: '0.5', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M4,9V1h13.0002L22,5.9999V23H3 M16,1v6h6 M15,7\r M0,12h5v1l-4,4v1h5 M9,11v8 M13,12v7 M16,16c1.1046,0,2-0.8954,2-2s-0.8954-2-2-2h-3v4H16z' })
         )

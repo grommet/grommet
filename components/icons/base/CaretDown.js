@@ -87,7 +87,7 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'carrot-down' },
+          null,
           _react2.default.createElement('rect', { x: '0', y: '0', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('polygon', { id: 'drop-carrot', fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', points: '4.8571,8 19.1429,8 \r 12,18 \t' })
         )

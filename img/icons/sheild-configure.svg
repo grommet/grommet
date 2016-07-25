@@ -3,7 +3,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 24 24.1389" enable-background="new 0 0 24 24.1389" xml:space="preserve">
-<g id="sheild-configure">
+<g>
 	<rect  x="0" y="0" fill="none" width="24" height="24"/>
 	<path fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" d="M12.0002,14.15c-1.6545,0-3-1.3458-3-3
 		s1.3455-3,3-3s3,1.3458,3,3S13.6547,14.15,12.0002,14.15z M18.0002,11.15l-3,0.0001 M16.2428,15.3926l-2.1214-2.1212 M12,14.15

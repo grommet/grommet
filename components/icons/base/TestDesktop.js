@@ -87,7 +87,7 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'test-desktop' },
+          null,
           _react2.default.createElement('rect', { x: '0', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M18.2174,1H23v18H1V1h5 M16,19H8v4h8V19z M5,23h14\r M8,1h8 M10,2v3.7727l-5,8.1818V15h7 M12,15h7v-1.0455l-5-8.1818V2 M16.4527,9.5795c-4.2577-2.3437-4.7917,1.946-8.5436-0.3977' })
         )

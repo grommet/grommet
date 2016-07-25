@@ -3,7 +3,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 25.9 25" enable-background="new 0 0 25.9 25" xml:space="preserve">
-<g id="cloud-computer">
+<g>
 	<rect  x="0.9" y="0" fill="none" width="24" height="24"/>
 	<path fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" d="M7.9,7V5.9c0-2.2091,1.7909-3.9,4-3.9h4
 		c2.2091,0,4,1.6909,4,3.9v1c2.7729,0,5,2.2469,5,5.0198s-2.2271,5.1302-5,5.1302 M13.9,7H5.9208C3.1479,7,1,9.2125,1,11.9854

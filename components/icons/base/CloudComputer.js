@@ -87,7 +87,7 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'cloud-computer' },
+          null,
           _react2.default.createElement('rect', { x: '0.9', y: '0', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M7.9,7V5.9c0-2.2091,1.7909-3.9,4-3.9h4\r c2.2091,0,4,1.6909,4,3.9v1c2.7729,0,5,2.2469,5,5.0198s-2.2271,5.1302-5,5.1302 M13.9,7H5.9208C3.1479,7,1,9.2125,1,11.9854\r S3.1271,17,5.9,17 M16.9,13h-8v7h8V13z M12.9,20v4 M9.9,24h6' })
         )

@@ -87,7 +87,7 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'folder-open' },
+          null,
           _react2.default.createElement('rect', { x: '0.2808', y: '0', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M20.2808,10h-16V7l0-5h6l2,4h8V10z M13.2808,10h-12\r l3,12h16l3-12H13.2808z' })
         )

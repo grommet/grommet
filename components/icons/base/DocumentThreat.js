@@ -87,7 +87,7 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'document-threat' },
+          null,
           _react2.default.createElement('rect', { x: '0.2083', y: '0', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M4.2083,4V1h13.0002l4.9998,4.9999V23h-9\r M16.2083,2v5h6 M4.2083,12.72C2.2083,13.5133,1,15.4267,1,17.6667C1,20.6133,3.5117,23,6.4583,23s5.25-2.3867,5.25-5.3333\r c0-2.24-1.5-4.1533-3.5-4.9467v-0.3867V11h-4v1.3333V12.72z M13.2083,7.6c0,0.8284-0.6716,1.5-1.5,1.5H11.375\r c-0.8284,0-1.5-0.6716-1.5-1.5v0c0-0.8284-0.6716-1.5-1.5-1.5H7.7083c-0.8284,0-1.5,0.6716-1.5,1.5v2.5' })
         )

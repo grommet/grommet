@@ -87,7 +87,7 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'shop-basket' },
+          null,
           _react2.default.createElement('rect', { x: '0', y: '0', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M11,12h10l-1,11h-9 M13,12H3l1,11h9 M23,8H1v4h22V8\r z M5,8l5-7.4 M14,0.6L19,8' })
         )

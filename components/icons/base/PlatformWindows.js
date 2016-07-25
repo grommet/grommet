@@ -87,7 +87,7 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'platform-windows' },
+          null,
           _react2.default.createElement('rect', { x: '0', y: '0', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { d: 'M0.0755,3.8445l9.778-1.3317\r l0.0043,9.4315L0.0846,12L0.0755,3.8445z M9.8488,13.0311l0.0076,9.4398l-9.7732-1.3437L0.0826,12.968L9.8488,13.0311z\r M11.0341,2.3387l12.9647-1.8922v11.378l-12.9647,0.1029L11.0341,2.3387z M24.0018,13.1199l-0.003,11.3267l-12.9647-1.8298\r l-0.0182-9.518L24.0018,13.1199z' })
         )

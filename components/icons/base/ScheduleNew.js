@@ -87,7 +87,7 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'schedule-new' },
+          null,
           _react2.default.createElement('rect', { x: '0.2465', y: '0', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M13,20H1V4h16v11 M2,8h14 M5,4V1 M14,12H8 M6,12H4\r M14,16H8 M6,16H4 M13,4V1 M20,16v9 M23.8973,18.2503l-7.7946,4.4993 M23.8967,22.7507l-7.7935-4.5013' })
         )

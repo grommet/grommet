@@ -177,7 +177,7 @@ var SkipLinks = function (_Component) {
             onFocus: this._onFocus,
             onClick: this._onClick(anchor.id),
             id: 'skipLayer_' + anchor.id,
-            key: anchor.id,
+            key: 'skipLayerItem_' + index,
             'aria-label': a11yLabel },
           anchor.label
         );

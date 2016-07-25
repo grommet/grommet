@@ -87,7 +87,7 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'contact-card' },
+          null,
           _react2.default.createElement('rect', { fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M9,9c0,1.6569-1.3431,3-3,3s-3-1.3431-3-3\r s1.3431-3,3-3S9,7.3431,9,9z M11,17.4545C11,14.6429,8.7662,12,5.9546,12h0.0682C3.2111,12,1,14.6429,1,17.4545V20h10V17.4545z\r M14,9h10 M14,13h7 M14,17h10' })
         )

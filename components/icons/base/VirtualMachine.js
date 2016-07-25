@@ -87,7 +87,7 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'virtual-machine' },
+          null,
           _react2.default.createElement('rect', { x: '1.5', y: '0.5', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M19,14H6V1h13V14z M23,6H10v13h13V6z M14,10H1v13\r h13V10z' })
         )

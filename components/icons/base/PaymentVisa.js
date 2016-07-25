@@ -87,7 +87,7 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'payment-visa' },
+          null,
           _react2.default.createElement('rect', { x: '0', y: '0', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { d: 'M16.475,3.8444l-4.3012,10.9967l-0.4746-2.1981c0-0.0002,0,0.0126,0,0.0126L10.1836,5.24\r C9.9188,4.2237,9.169,3.8444,8.2188,3.8444H1.1647L1.1089,4.2255c1.716,0.4154,3.2504,1.0384,4.5952,1.784l3.8893,13.9514\r l4.6285-0.0514l6.8871-16.065H16.475z' })
         )

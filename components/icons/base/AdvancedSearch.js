@@ -87,7 +87,7 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'advanced-search' },
+          null,
           _react2.default.createElement('rect', { x: '0', y: '0.0552', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M17,10.5c0,4.1421-3.3579,7.5-7.5,7.5\r S2,14.6421,2,10.5S5.3579,3,9.5,3S17,6.3579,17,10.5z M21,0v6 M18,3h6 M15,16l6,6' })
         )

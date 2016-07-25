@@ -87,7 +87,7 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'social-medium', transform: 'matrix(1.3333333,0,0,-1.3333333,0,126.66667)' },
+          { transform: 'matrix(1.3333333,0,0,-1.3333333,0,126.66667)' },
           _react2.default.createElement('rect', { x: '-3', y: '74', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement(
             'g',

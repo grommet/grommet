@@ -87,7 +87,7 @@ var Icon = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { id: 'platform-dropbox' },
+          null,
           _react2.default.createElement('rect', { x: '0.003', y: '0', fill: 'none', width: '24', height: '24' }),
           _react2.default.createElement('polygon', { points: '15.9985,1.8917 12.003,3.8961 20.009,7.8976 24,5.8961 \t' }),
           _react2.default.createElement('polygon', { points: '15.9985,15.5735 15.3293,15.2404 11.994,13.5675 8.6781,15.23 8.009,15.5646 7.3413,15.2315 3.997,13.5601 \r 3.997,18.997 12.003,23.0014 12.003,22.9865 20.009,18.9865 20.009,13.569 16.6677,15.2404 \t' }),
