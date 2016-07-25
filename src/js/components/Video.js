@@ -1,9 +1,9 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
-import classnames from 'classnames';
+// import classnames from 'classnames';
 
-import Box from './Box';
+// import Box from './Box';
 import CSSClassnames from '../utils/CSSClassnames';
 import VideoControls from './VideoControls';
 import VideoOverlay from './VideoOverlay';
@@ -13,29 +13,29 @@ const CLASS_ROOT = CSSClassnames.VIDEO;
 const BACKGROUND_COLOR_INDEX = CSSClassnames.BACKGROUND_COLOR_INDEX;
 
 const EVENTS = [
-    'onAbort',
-    'onCanPlay',
-    'onCanPlayThrough',
-    'onDurationChange',
-    'onEmptied',
-    'onEncrypted',
-    'onEnded',
-    'onError',
-    'onLoadedData',
-    'onLoadedMetadata',
-    'onLoadStart',
-    'onPause',
-    'onPlay',
-    'onPlaying',
-    'onProgress',
-    'onRateChange',
-    'onSeeked',
-    'onSeeking',
-    'onStalled',
-    'onSuspend',
-    'onTimeUpdate',
-    'onVolumeChange',
-    'onWaiting'
+  'onAbort',
+  'onCanPlay',
+  'onCanPlayThrough',
+  'onDurationChange',
+  'onEmptied',
+  'onEncrypted',
+  'onEnded',
+  'onError',
+  'onLoadedData',
+  'onLoadedMetadata',
+  'onLoadStart',
+  'onPause',
+  'onPlay',
+  'onPlaying',
+  'onProgress',
+  'onRateChange',
+  'onSeeked',
+  'onSeeking',
+  'onStalled',
+  'onSuspend',
+  'onTimeUpdate',
+  'onVolumeChange',
+  'onWaiting'
 ];
 
 export default class Video extends Component {
@@ -55,15 +55,6 @@ export default class Video extends Component {
     this.state = {};
   }
 
-  componentWillReceiveProps (nextProps) {
-    // Dynamically modifying a source element and its attribute when
-    // the element is already inserted in a video or audio element will
-    // have no effect.
-    // From HTML Specs: https://html.spec.whatwg.org/multipage/embedded-content.html#the-source-element
-    // Using forceUpdate to force redraw of video when receiving new <source>
-    this.forceUpdate();
-  }
-
   componentWillMount () {
     this._update = throttle(this._update.bind(this), 100).bind(this);
     this._mediaEventProps = EVENTS.reduce((p, c) => {
@@ -76,6 +67,15 @@ export default class Video extends Component {
 
       return p;
     }, {});
+  }
+
+  componentWillReceiveProps (nextProps) {
+    // Dynamically modifying a source element and its attribute when
+    // the element is already inserted in a video or audio element will
+    // have no effect.
+    // From HTML Specs: https://html.spec.whatwg.org/multipage/embedded-content.html#the-source-element
+    // Using forceUpdate to force redraw of video when receiving new <source>
+    this.forceUpdate();
   }
 
   _update () {
