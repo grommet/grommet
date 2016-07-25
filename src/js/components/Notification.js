@@ -76,11 +76,12 @@ export default class Notification extends Component {
     }
 
     let boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
+    let fullBox = boxProps.hasOwnProperty('full') ? boxProps.full : 'horizontal';
 
     return (
       <Box {...boxProps} className={classes} direction="row" responsive={false}>
         {status}
-        <Box full="horizontal">
+        <Box full={fullBox}>
           <span className={`${CLASS_ROOT}__message`}>
             {this.props.message}
           </span>
