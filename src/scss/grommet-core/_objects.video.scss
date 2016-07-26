@@ -70,6 +70,44 @@
     right: 0;
   }
 
+  &__progress-bar {
+    position: relative;
+    background-color: lighten(rgba(nth($brand-grey-colors, 3), 0.7), 20%);
+    transition: height 0.4s;
+    height: quarter($inuit-base-spacing-unit);
+    left: 0px;
+    right: 0px;
+
+    &:hover {
+      height: halve($inuit-base-spacing-unit);
+    }
+  }
+
+  &__progress-bar-fill {
+    width: 100%;
+    background-color: $brand-color;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+  }
+
+  &__progress-bar-input {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    cursor: pointer;
+    outline: none;
+  }
+
   &--video-header {
     .#{$grommet-namespace}video__overlay {
       padding: 0;

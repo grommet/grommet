@@ -24,6 +24,8 @@ export default class VideoOverlay extends Component {
     super();
 
     this._onResponsive = this._onResponsive.bind(this);
+    this._onProgressBarChange = this._onProgressBarChange.bind(this);
+
     this.state = { iconSize: 'large' };
   }
 
@@ -67,6 +69,30 @@ export default class VideoOverlay extends Component {
     );
   }
 
+  _onProgressBarChange(e) {
+    this.props.seek(e.target.value * this.props.duration / 100);
+  }
+
+  _renderProgressBar() {
+    const { percentagePlayed } = this.props;
+
+    return (
+      <Box pad="none" className={`${CLASS_ROOT}__progress-bar`} direction="row">
+        <div className={`${CLASS_ROOT}__progress-bar-fill`} style={{
+          width: percentagePlayed + '%'
+        }} />
+        <input className={`${CLASS_ROOT}__progress-bar-input`}
+          ref="input"
+          onChange={this._onProgressBarChange}
+          type="range"
+          min="0"
+          max="100"
+          value={percentagePlayed}
+          step="0.1" />
+      </Box>
+    );
+  }
+
   _renderTitle () {
     let title;
     if (this.props.title) {
@@ -98,23 +124,28 @@ export default class VideoOverlay extends Component {
     let a11yExpandButtonTitle = Intl.getMessage(this.context.intl, 'Toggle Fullscreen');
 
     let overlayContent = (
-      <Box pad="none" className={`${CLASS_ROOT}__controls`} direction="row" justify="between">
-        <div>
-          <Button plain={true} onClick={this.props.togglePlay}
-            icon={controlIcon} a11yTitle={a11yControlButtonTitle} />
+      <Box pad="none" className={`${CLASS_ROOT}__controls`} direction="column" justify="start">
 
-          {this._renderTitle()}
-        </div>
+        {this._renderProgressBar()}
 
-        <div>
-          {this._renderTime()}
+        <Box pad="none" direction="row" justify="between">
+          <div>
+            <Button plain={true} onClick={this.props.togglePlay}
+              icon={controlIcon} a11yTitle={a11yControlButtonTitle} />
 
-          <Button plain={true} onClick={this.props.toggleMute}
-            icon={this.props.muted ? <VolumeMuteIcon /> : <VolumeIcon />} />
+            {this._renderTitle()}
+          </div>
 
-          <Button plain={true} onClick={this.props.fullscreen}
-            icon={<ExpandIcon />} a11yTitle={a11yExpandButtonTitle} />
-        </div>
+          <div>
+            {this._renderTime()}
+
+            <Button plain={true} onClick={this.props.toggleMute}
+              icon={this.props.muted ? <VolumeMuteIcon /> : <VolumeIcon />} />
+
+            <Button plain={true} onClick={this.props.fullscreen}
+              icon={<ExpandIcon />} a11yTitle={a11yExpandButtonTitle} />
+          </div>
+       </Box>
       </Box>
     );
 
