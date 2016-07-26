@@ -22,7 +22,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var GrommetFormattedMessage = function GrommetFormattedMessage(props, context) {
   return context.intl ? _react2.default.createElement(_reactIntl.FormattedMessage, props) : _react2.default.createElement(
     'span',
-    { id: props.id },
+    { id: props.id.replace(' ', '_') },
     props.defaultMessage || props.id
   );
 };
