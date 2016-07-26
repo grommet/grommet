@@ -47,10 +47,16 @@ export default class VideoOverlay extends Component {
   }
 
   _formatTime (seconds) {
-    var date = new Date(null);
+    const date = new Date(null);
     seconds = isNaN(seconds) ? 0 : Math.floor(seconds);
     date.setSeconds(seconds);
-    return date.toISOString().substr(11, 8);
+
+    const dateISOString = date.toISOString();
+    if (seconds < 3600) {
+      return dateISOString.substr(14, 5);
+    }
+
+    return dateISOString.substr(11, 8);
   }
 
   _renderTime() {
