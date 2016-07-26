@@ -16,8 +16,8 @@ export default class Anchor extends Component {
       icon = this.props.icon;
     } else if (this.props.primary) {
       icon = (
-        <LinkNextIcon a11yTitle={`${this.props.id}anchor-next-title`}
-          a11yTitleId={`${this.props.id}anchor-next-title-id`} />
+        <LinkNextIcon a11yTitle={this.props.id || 'primary icon'}
+          a11yTitleId={this.props.id || 'anchor-next-title-id'} />
       );
     }
 
