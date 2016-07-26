@@ -3,7 +3,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 25 24.9141" enable-background="new 0 0 25 24.9141" xml:space="preserve">
-<g id="vm-maintenance">
+<g>
 	<rect  x="1" y="0" fill="none" width="24" height="24"/>
 	<path fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" d="M23.6937,14.2495l-2.0349,2.0349l-1.4431-1.4432
 		l2.0348-2.0348c-1.1328-0.5556-2.5327-0.3536-3.478,0.5917c-0.9433,0.9433-1.1319,2.3387-0.5894,3.476L13,22.0569l1.443,1.443

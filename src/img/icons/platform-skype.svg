@@ -3,7 +3,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
-<g id="platform-skype">
+<g>
 	<rect  x="0" y="0" fill="none" width="24" height="24"/>
 	<path d="M21.9582,14.0392c0.0821-0.5194,0.1254-1.0509,0.1254-1.5933c0-5.6373-4.5696-10.2069-10.2072-10.2069
 		c-0.5409,0-1.0738,0.0445-1.5928,0.1256C9.3435,1.7832,8.234,1.4466,7.0451,1.4466c-3.4065,0-6.168,2.7612-6.168,6.168
