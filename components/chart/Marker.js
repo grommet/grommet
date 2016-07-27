@@ -109,30 +109,36 @@ var Marker = function (_Component) {
       if (this.props.className) {
         classes.push(this.props.className);
       }
-      var commands = '';
 
-      if (vertical) {
-        var x = void 0;
-        if (count) {
-          x = (0, _utils.graphValue)(index, 0, count - 1, graphWidth);
-        } else if (max) {
-          x = (0, _utils.graphValue)(value, min, max, graphWidth);
+      var path = void 0;
+      if (count > 1 && index >= 1 && index < count || value >= min && value <= max) {
+        var commands = '';
+
+        if (vertical) {
+          var x = void 0;
+          if (count) {
+            x = (0, _utils.graphValue)(index, 0, count - 1, graphWidth);
+          } else if (max) {
+            x = (0, _utils.graphValue)(value, min, max, graphWidth);
+          }
+          if (reverse) {
+            x = graphWidth - x;
+          }
+          commands = 'M' + (x + _utils.padding) + ',0 L' + (x + _utils.padding) + ',' + height;
+        } else {
+          var y = void 0;
+          if (count) {
+            y = (0, _utils.graphValue)(index, 0, count - 1, graphHeight);
+          } else if (max) {
+            y = (0, _utils.graphValue)(value, min, max, graphHeight);
+          }
+          if (!reverse) {
+            y = graphHeight - y;
+          }
+          commands = 'M0,' + (y + _utils.padding) + ' L' + width + ',' + (y + _utils.padding);
         }
-        if (reverse) {
-          x = graphWidth - x;
-        }
-        commands = 'M' + (x + _utils.padding) + ',0 L' + (x + _utils.padding) + ',' + height;
-      } else {
-        var y = void 0;
-        if (count) {
-          y = (0, _utils.graphValue)(index, 0, count - 1, graphHeight);
-        } else if (max) {
-          y = (0, _utils.graphValue)(value, min, max, graphHeight);
-        }
-        if (!reverse) {
-          y = graphHeight - y;
-        }
-        commands = 'M0,' + (y + _utils.padding) + ' L' + width + ',' + (y + _utils.padding);
+
+        path = _react2.default.createElement('path', { fill: 'none', d: commands });
       }
 
       return _react2.default.createElement(
@@ -140,7 +146,7 @@ var Marker = function (_Component) {
         { ref: 'svg', className: classes.join(' '),
           viewBox: '0 0 ' + width + ' ' + height,
           preserveAspectRatio: 'none' },
-        _react2.default.createElement('path', { fill: 'none', d: commands })
+        path
       );
     }
   }]);

@@ -120,7 +120,7 @@ var Graph = function (_Component) {
       var scale = void 0,
           step = void 0;
       if (vertical) {
-        if (!values.length) {
+        if (values.length <= 1) {
           scale = 1;
           step = height - 2 * _utils.padding;
         } else {
@@ -128,7 +128,7 @@ var Graph = function (_Component) {
           step = (height - 2 * _utils.padding) / (values.length - 1);
         }
       } else {
-        if (!values.length) {
+        if (values.length <= 1) {
           scale = 1;
           step = width - 2 * _utils.padding;
         } else {
@@ -162,41 +162,46 @@ var Graph = function (_Component) {
         return coordinate;
       });
 
-      var pathProps = {};
-      var commands = void 0;
+      var path = void 0;
+      if (coordinates.length > 1) {
+        var pathProps = {};
+        var commands = void 0;
 
-      // Build the commands for this set of coordinates.
+        // Build the commands for this set of coordinates.
 
-      if ('area' === type || 'line' === type) {
-        commands = 'M' + coordinates.map(function (c) {
-          return c.join(',');
-        }).join(' L');
+        if ('area' === type || 'line' === type) {
+          commands = 'M' + coordinates.map(function (c) {
+            return c.join(',');
+          }).join(' L');
 
-        if ('area' === type) {
-          if (vertical) {
-            if (reverse) {
-              // Close the path by drawing to the left
-              // and across to the top of where we started.
-              commands += 'L' + _utils.padding + ',' + coordinates[coordinates.length - 1][1] + '\n              L' + _utils.padding + ',' + coordinates[0][1] + ' Z';
+          if ('area' === type) {
+            if (vertical) {
+              if (reverse) {
+                // Close the path by drawing to the left
+                // and across to the top of where we started.
+                commands += 'L' + _utils.padding + ',' + coordinates[coordinates.length - 1][1] + '\n                L' + _utils.padding + ',' + coordinates[0][1] + ' Z';
+              } else {
+                // Close the path by drawing to the left
+                // and across to the bottom of where we started.
+                commands += 'L' + _utils.padding + ',' + coordinates[coordinates.length - 1][1] + '\n                L' + _utils.padding + ',' + (height - _utils.padding) + ' Z';
+              }
             } else {
-              // Close the path by drawing to the left
-              // and across to the bottom of where we started.
-              commands += 'L' + _utils.padding + ',' + coordinates[coordinates.length - 1][1] + '\n              L' + _utils.padding + ',' + (height - _utils.padding) + ' Z';
+              // Close the path by drawing down to the bottom
+              // and across to the left of where we started.
+              commands += 'L' + coordinates[coordinates.length - 1][0] + ',' + (height - _utils.padding) + '\n              L' + coordinates[0][0] + ',' + (height - _utils.padding) + ' Z';
             }
+            pathProps.stroke = 'none';
           } else {
-            // Close the path by drawing down to the bottom
-            // and across to the left of where we started.
-            commands += 'L' + coordinates[coordinates.length - 1][0] + ',' + (height - _utils.padding) + '\n            L' + coordinates[0][0] + ',' + (height - _utils.padding) + ' Z';
+            pathProps.fill = 'none';
           }
-          pathProps.stroke = 'none';
-        } else {
+        } else if ('bar' === type) {
+          commands = coordinates.map(function (c) {
+            return 'M' + c.join(',') + 'L' + (vertical ? _utils.padding + ',' + c[1] : c[0] + ',' + (height - _utils.padding));
+          }).join(' ');
           pathProps.fill = 'none';
         }
-      } else if ('bar' === type) {
-        commands = coordinates.map(function (c) {
-          return 'M' + c.join(',') + 'L' + (vertical ? _utils.padding + ',' + c[1] : c[0] + ',' + (height - _utils.padding));
-        }).join(' ');
-        pathProps.fill = 'none';
+
+        path = _react2.default.createElement('path', (0, _extends3.default)({}, pathProps, { d: commands }));
       }
 
       return _react2.default.createElement(
@@ -207,7 +212,7 @@ var Graph = function (_Component) {
         _react2.default.createElement(
           'g',
           null,
-          _react2.default.createElement('path', (0, _extends3.default)({}, pathProps, { d: commands }))
+          path
         ),
         points
       );

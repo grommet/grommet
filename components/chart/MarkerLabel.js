@@ -87,9 +87,9 @@ var MarkerLabel = function (_Component) {
 
       var valueBasis = void 0;
       if (count) {
-        valueBasis = index / (count - 1) * 100.0;
+        valueBasis = index / Math.max(1, count - 1) * 100.0;
       } else {
-        valueBasis = (value - min) / (max - min) * 100.0;
+        valueBasis = (value - min) / Math.max(1, max - min) * 100.0;
       }
       return valueBasis;
     }
@@ -102,7 +102,8 @@ var MarkerLabel = function (_Component) {
     key: '_renderPlaceholder',
     value: function _renderPlaceholder(basis) {
       var classes = [CLASS_ROOT + '__slot', CLASS_ROOT + '__slot--placeholder'];
-      return _react2.default.createElement('div', { key: basis, className: classes.join(' '), style: { flexBasis: basis + '%' } });
+      return _react2.default.createElement('div', { key: 'placeholder', className: classes.join(' '),
+        style: { flexBasis: basis + '%' } });
     }
   }, {
     key: '_renderLabel',
@@ -126,7 +127,8 @@ var MarkerLabel = function (_Component) {
       }
       return _react2.default.createElement(
         'div',
-        { key: basis, className: classes.join(' '), style: { flexBasis: basis + '%' } },
+        { key: 'label', className: classes.join(' '),
+          style: { flexBasis: basis + '%' } },
         label
       );
     }
@@ -200,7 +202,7 @@ MarkerLabel.propTypes = {
   count: _react.PropTypes.number,
   height: _react.PropTypes.number, // only from Chart
   index: _react.PropTypes.number,
-  label: _react.PropTypes.node.isRequired,
+  label: _react.PropTypes.node,
   max: _react.PropTypes.number,
   min: _react.PropTypes.number,
   reverse: _react.PropTypes.bool,
