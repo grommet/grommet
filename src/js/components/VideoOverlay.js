@@ -68,7 +68,7 @@ export default class VideoOverlay extends Component {
     let overlayContent = (
       <Box pad="none" align="center" justify={videoOverlayJustify} className={`${CLASS_ROOT}__overlay`}>
         <Box pad="medium" align="center" justify="center">
-          <Button className={`${CLASS_ROOT}__control`} plain={true}
+          <Button plain={true}
             primary={true} onClick={this.props.togglePlay}
             icon={controlIcon} a11yTitle={a11yControlButtonTitle} />
         </Box>

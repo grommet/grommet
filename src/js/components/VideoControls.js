@@ -16,7 +16,6 @@ import RefreshIcon from './icons/base/Refresh';
 import CSSClassnames from '../utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.VIDEO;
-// const BACKGROUND_COLOR_INDEX = CSSClassnames.BACKGROUND_COLOR_INDEX;
 
 export default class VideoOverlay extends Component {
 
@@ -77,7 +76,7 @@ export default class VideoOverlay extends Component {
     const { percentagePlayed } = this.props;
 
     return (
-      <Box pad="none" className={`${CLASS_ROOT}__progress-bar`} direction="row">
+      <Box pad="none" className={`${CLASS_ROOT}__progress`} direction="row">
         <div className={`${CLASS_ROOT}__progress-bar-fill`} style={{
           width: percentagePlayed + '%'
         }} />
@@ -87,7 +86,7 @@ export default class VideoOverlay extends Component {
           type="range"
           min="0"
           max="100"
-          value={percentagePlayed}
+          value={percentagePlayed || ''}
           step="0.1" />
       </Box>
     );
@@ -124,11 +123,15 @@ export default class VideoOverlay extends Component {
     let a11yExpandButtonTitle = Intl.getMessage(this.context.intl, 'Toggle Fullscreen');
 
     let overlayContent = (
-      <Box pad="none" className={`${CLASS_ROOT}__controls`} direction="column" justify="start">
+      <Box pad="none"
+        className={`${CLASS_ROOT}__controls`}
+        direction="column" justify="start">
 
         {this._renderProgressBar()}
 
-        <Box pad="none" direction="row" justify="between">
+        <Box pad="none"
+          className={`${CLASS_ROOT}__controls-primary`} direction="row"
+          justify="between">
           <div>
             <Button plain={true} onClick={this.props.togglePlay}
               icon={controlIcon} a11yTitle={a11yControlButtonTitle} />

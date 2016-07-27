@@ -27,12 +27,6 @@
 
     &--small {
       width: $video-small-width;
-
-      .#{$grommet-namespace}video__control.#{$grommet-namespace}button--primary {
-        width: double($inuit-base-spacing-unit);
-        height: double($inuit-base-spacing-unit);
-        border-radius: $inuit-base-spacing-unit;
-      }
     }
 
     &--large {
@@ -70,42 +64,74 @@
     right: 0;
   }
 
-  &__progress-bar {
-    position: relative;
-    background-color: lighten(rgba(nth($brand-grey-colors, 3), 0.7), 20%);
-    transition: height 0.4s;
-    height: quarter($inuit-base-spacing-unit);
+  &__controls-primary {
+    height: round($inuit-base-spacing-unit * 3);
+    background-color: rgba(nth($brand-grey-colors, 1), 0.7);
+  }
+
+  &__play.#{$grommet-namespace}button--primary {
+    flex: 0 0 auto;
+    width: quadruple($inuit-base-spacing-unit);
+    height: quadruple($inuit-base-spacing-unit);
+    border-radius: double($inuit-base-spacing-unit);
+    background-color: none;
+  }
+
+  &__progress {
+    position: absolute;
     left: 0px;
     right: 0px;
+    bottom: round($inuit-base-spacing-unit * 3);
+    height: quarter($inuit-base-spacing-unit);
+    background-color: lighten(rgba(nth($brand-grey-colors, 3), 0.7), 20%);
+    transition: height 0.3s;
 
     &:hover {
       height: halve($inuit-base-spacing-unit);
+
+      .#{$grommet-namespace}video__progress-bar-fill:after {
+        opacity: 1;
+      }
+    }
+
+    input[type=range] {
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      border: 0;
+      cursor: pointer;
+      outline: none;
     }
   }
 
   &__progress-bar-fill {
     width: 100%;
+    height: 100%;
     background-color: $brand-color;
     position: absolute;
     bottom: 0;
     left: 0;
-    height: 100%;
-  }
 
-  &__progress-bar-input {
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    border: 0;
-    cursor: pointer;
-    outline: none;
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      right: -1 * halve($inuit-base-spacing-unit);
+      top: -1 * quarter($inuit-base-spacing-unit);
+      width: $inuit-base-spacing-unit;
+      height: $inuit-base-spacing-unit;
+      background-color: $brand-color;
+      border-radius: double($inuit-base-spacing-unit);
+      opacity: 0;
+      transition: opacity 0.4s ease-in-out;
+    }
   }
 
   &--video-header {
@@ -114,49 +140,17 @@
     }
   }
 
-  &__control.#{$grommet-namespace}button--primary {
-    flex: 0 0 auto;
-    width: quadruple($inuit-base-spacing-unit);
-    height: quadruple($inuit-base-spacing-unit);
-    border-radius: double($inuit-base-spacing-unit);
-    background-color: rgba($brand-color, 0.8);
-
-    &:hover {
-      background-color: $brand-color;
-    }
-
-    @include media-query(palm) {
-      width: double($inuit-base-spacing-unit);
-      height: double($inuit-base-spacing-unit);
-    }
-  }
-
   &--playing {
     &:not(.#{$grommet-namespace}video--interacting) {
-      .#{$grommet-namespace}video__control,
-      .#{$grommet-namespace}video__timeline {
+      .#{$grommet-namespace}video__controls-primary,
+      .#{$grommet-namespace}video__overlay {
         opacity: 0;
-        transition: opacity 1s;
+        transition: opacity 1s ease-in-out;
       }
 
       .#{$grommet-namespace}video__progress {
         bottom: 0px;
-        transition: ease 1s;
-      }
-
-      .#{$grommet-namespace}video__progress-ticks {
-        bottom: quarter($inuit-base-spacing-unit);
-        transition: ease 1s;
-      }
-    }
-
-    .#{$grommet-namespace}video__title {
-      visibility: hidden;
-    }
-
-    &--interacting {
-      .#{$grommet-namespace}video--has-timeline {
-        bottom: round($inuit-base-spacing-unit * 3);
+        transition: ease-in-out 1s;
       }
     }
   }
