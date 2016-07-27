@@ -1,5 +1,6 @@
 .grommet .#{$grommet-namespace}hero {
   position: relative;
+  overflow: hidden;
 
   &__background {
     position: absolute;
@@ -8,9 +9,33 @@
     left: 0;
     padding: 0;
 
-    * {
-      width: 100%;
-      height: 100%;
+    &-video {
+      overflow: hidden;
+
+      .#{$grommet-namespace}video {
+        min-height: 100%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        transform: translate(0%, -50%);
+
+        &::before {
+          content: "";
+          display: block;
+          height: 0px;
+          padding-bottom: 57%;
+        }
+
+        video {
+          width: auto;
+          height: 100%;
+          position: absolute;
+          top: 0px;
+          left: 50%;
+          transform: translate(-50%, 0%);
+        }
+      }
     }
   }
 
@@ -49,7 +74,7 @@
       height: 75vh;
 
       @include media-query(palm) {
-        height: 300px;
+        height: $inuit-base-spacing-unit * 12.5;
       }
     }
 
@@ -63,7 +88,7 @@
 
     .#{$grommet-namespace}hero__image {
       @include media-query(palm) {
-        height: 300px;
+        height: $inuit-base-spacing-unit * 12.5;
       }
     }
   }
@@ -79,7 +104,7 @@
       height: 60vh;
 
       @include media-query(palm) {
-        height: 270px;
+        height: $inuit-base-spacing-unit * 11.25;
       }
     }
 
@@ -93,7 +118,7 @@
 
     .#{$grommet-namespace}hero__image {
       @include media-query(palm) {
-        height: 270px;
+        height: $inuit-base-spacing-unit * 11.25;
       }
     }
   }

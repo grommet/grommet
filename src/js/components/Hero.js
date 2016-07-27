@@ -3,14 +3,12 @@
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import CSSClassnames from '../utils/CSSClassnames';
+import Responsive from '../utils/Responsive';
 import Box from 'grommet/components/Box';
 import Image from 'grommet/components/Image';
-import Video from 'grommet/components/Video';
 
 const CLASS_ROOT = CSSClassnames.HERO;
-const LIGHT_COLORINDEX = 'light-1';
-const DARK_COLORINDEX = 'grey-1';
-const PALM_BREAKPOINT = 720;
+const PALM_BREAKPOINT = Responsive.smallSize();
 
 export default class Hero extends Component {
 
@@ -20,7 +18,7 @@ export default class Hero extends Component {
     this._setBackgroundColorIndex = this._setBackgroundColorIndex.bind(this);
 
     this.state = {
-      colorIndex: props.darkTheme ? DARK_COLORINDEX : LIGHT_COLORINDEX,
+      colorIndex: props.colorIndex,
       reverse: (props.justify === 'start') ? true : false
     };
   }
@@ -38,12 +36,12 @@ export default class Hero extends Component {
   }
 
   _setBackgroundColorIndex () {
-    const { darkTheme } = this.props;
+    const { colorIndex } = this.props;
 
     if (window.innerWidth < PALM_BREAKPOINT) {
-      this.setState({ colorIndex: LIGHT_COLORINDEX });
+      this.setState({ colorIndex: 'light-1' });
     } else {
-      this.setState({ colorIndex: darkTheme ? DARK_COLORINDEX : LIGHT_COLORINDEX });
+      this.setState({ colorIndex: colorIndex });
     }
   }
 
@@ -58,7 +56,8 @@ export default class Hero extends Component {
   }
 
   render () {
-    const { backgroundImage, backgroundType, backgroundVideoLoop, backgroundVideoMuted, backgroundVideoPoster, backgroundVideoSource, children, className, flush, image, justify, responsiveBackgroundPosition, separator, size } = this.props;
+    const { backgroundImage, backgroundVideo, children, className, flush, image,
+     justify, responsiveBackgroundPosition, separator, size } = this.props;
 
     let classes = classnames(
       CLASS_ROOT,
@@ -74,13 +73,13 @@ export default class Hero extends Component {
     let pad = flush ? 'none' : 'large';
 
     let backgroundMarkup;
-    if (backgroundType === 'image') {
+    if (backgroundImage) {
       backgroundMarkup = <Box containerClassName={CLASS_ROOT + "__background"} appCentered={true} pad={pad} backgroundImage={`url(${backgroundImage})`} full={full} />;
-    } else if (backgroundType === 'video') {
+    } else if (backgroundVideo) {
       backgroundMarkup = (
-        <Video className={CLASS_ROOT + "__background"} autoPlay={true} showControls={false} loop={backgroundVideoLoop} muted={backgroundVideoMuted} poster={backgroundVideoPoster}>
-          <source src={backgroundVideoSource} type="video/mp4"/>
-        </Video>
+        <Box className={CLASS_ROOT + "__background " + CLASS_ROOT + "__background-video"} ref="video">
+          {backgroundVideo}
+        </Box>
       );
     }
 
@@ -122,12 +121,8 @@ export default class Hero extends Component {
 
 Hero.propTypes = {
   backgroundImage: PropTypes.string,
-  backgroundType: PropTypes.oneOf(['image', 'video']),
-  backgroundVideoLoop: PropTypes.bool,
-  backgroundVideoMuted: PropTypes.bool,
-  backgroundVideoPoster: PropTypes.string,
-  backgroundVideoSource: PropTypes.string,
-  darkTheme: PropTypes.bool,
+  backgroundVideo: PropTypes.object,
+  colorIndex: PropTypes.string,
   flush: PropTypes.bool,
   image: PropTypes.string,
   justify: PropTypes.oneOf(['start', 'center', 'end']),
@@ -137,9 +132,7 @@ Hero.propTypes = {
 };
 
 Hero.defaultProps = {
-  backgroundVideoLoop: false,
-  backgroundVideoMuted: true,
-  darkTheme: true,
+  colorIndex: 'grey-1',
   flush: true,
   justify: 'end',
   responsiveBackgroundPosition: 'center',
