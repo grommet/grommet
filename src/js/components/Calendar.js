@@ -285,20 +285,26 @@ export default class Calendar extends Component {
   }
 
   render () {
+    const { className, id, name, value, ...props } = this.props;
+
     var classes = [CLASS_ROOT];
     if (this.state.dropActive) {
       classes.push(CLASS_ROOT + "--active");
     }
-    if (this.props.className) {
-      classes.push(this.props.className);
+    if (className) {
+      classes.push(className);
     }
 
     return (
-      <div ref="component" className={classes.join(' ')}>
-        <input className={CLASS_ROOT + "__input"}
-          id={this.props.id} ref="calendarInput" name={this.props.name}
-          value={this.props.value}
-          onChange={this._onInputChange} />
+      <div ref="component" className={classes.join(' ')} {...props}>
+        <input
+          className={CLASS_ROOT + "__input"}
+          id={id}
+          ref="calendarInput"
+          name={name}
+          value={value}
+          onChange={this._onInputChange}
+        />
         <Button className={CLASS_ROOT + "__control"} icon={<CalendarIcon
           a11yTitle='calendar-icon-title'
           a11yTitleId='calendar-icon-title-id' />}
