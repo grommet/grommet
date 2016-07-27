@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Range = exports.HotSpots = exports.Threshold = exports.Bar = exports.Line = exports.Area = exports.Grid = exports.Base = exports.Stack = exports.Layers = exports.Axis = undefined;
+exports.Range = exports.HotSpots = exports.MarkerLabel = exports.Marker = exports.Bar = exports.Line = exports.Area = exports.Grid = exports.Base = exports.Layers = exports.Axis = undefined;
 
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
@@ -43,10 +43,6 @@ var _Layers = require('./Layers');
 
 var _Layers2 = _interopRequireDefault(_Layers);
 
-var _Stack = require('./Stack');
-
-var _Stack2 = _interopRequireDefault(_Stack);
-
 var _Base = require('./Base');
 
 var _Base2 = _interopRequireDefault(_Base);
@@ -67,9 +63,13 @@ var _Bar = require('./Bar');
 
 var _Bar2 = _interopRequireDefault(_Bar);
 
-var _Threshold = require('./Threshold');
+var _Marker = require('./Marker');
 
-var _Threshold2 = _interopRequireDefault(_Threshold);
+var _Marker2 = _interopRequireDefault(_Marker);
+
+var _MarkerLabel = require('./MarkerLabel');
+
+var _MarkerLabel2 = _interopRequireDefault(_MarkerLabel);
 
 var _HotSpots = require('./HotSpots');
 
@@ -109,6 +109,11 @@ var Chart = function (_Component) {
       // setTimeout(this._layout, 100);
     }
   }, {
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps() {
+      setTimeout(this._layout, 1);
+    }
+  }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
       window.removeEventListener('resize', this._onResize);
@@ -138,7 +143,7 @@ var Chart = function (_Component) {
           alignLeft = void 0,
           alignTop = void 0,
           alignHeight = void 0;
-      var alignBase = false;
+      var padAlign = true;
 
       if (horizontalAlignWith) {
         var elem = document.getElementById(horizontalAlignWith);
@@ -146,12 +151,12 @@ var Chart = function (_Component) {
           var rect = elem.getBoundingClientRect();
           alignWidth = rect.width;
           alignLeft = rect.left - chartRect.left;
+          padAlign = false;
         }
       } else if (base) {
         var _rect = base.getBoundingClientRect();
         alignWidth = _rect.width;
         alignLeft = _rect.left - chartRect.left;
-        alignBase = true;
       }
 
       if (verticalAlignWith) {
@@ -160,12 +165,12 @@ var Chart = function (_Component) {
           var _rect2 = _elem.getBoundingClientRect();
           alignHeight = _rect2.height;
           alignTop = _rect2.top - chartRect.top;
+          padAlign = false;
         }
       } else if (base) {
         var _rect3 = base.getBoundingClientRect();
         alignHeight = _rect3.height;
         alignTop = _rect3.top - chartRect.top;
-        alignBase = true;
       }
 
       this.setState({
@@ -173,7 +178,7 @@ var Chart = function (_Component) {
         alignLeft: alignLeft,
         alignHeight: alignHeight,
         alignTop: alignTop,
-        alignBase: alignBase
+        padAlign: padAlign
       });
 
       if (onMaxCount) {
@@ -204,7 +209,7 @@ var Chart = function (_Component) {
       var alignLeft = _state.alignLeft;
       var alignTop = _state.alignTop;
       var alignWidth = _state.alignWidth;
-      var alignBase = _state.alignBase;
+      var padAlign = _state.padAlign;
 
       var classes = [CLASS_ROOT];
       if (vertical) {
@@ -220,20 +225,24 @@ var Chart = function (_Component) {
         classes.push(this.props.className);
       }
 
+      // Align Axis children towards the Base|Layers|Chart
+      var axisAlign = 'end';
       var children = _react.Children.map(this.props.children, function (child) {
 
         // name comparison is to work around webpack alias issues in development
-        if (child && (child.type === _Axis2.default || child.type.name === 'Axis')) {
+        if (child && (child.type === _Axis2.default || child.type.name === 'Axis' || child.type === _MarkerLabel2.default || child.type.name === 'MarkerLabel')) {
 
           if (vertical) {
             child = _react2.default.cloneElement(child, {
-              width: alignBase ? alignWidth - 2 * _utils.padding : alignWidth,
-              style: { marginLeft: alignBase ? alignLeft + _utils.padding : alignLeft }
+              width: padAlign ? alignWidth - 2 * _utils.padding : alignWidth,
+              style: { marginLeft: padAlign ? alignLeft + _utils.padding : alignLeft },
+              align: axisAlign
             });
           } else {
             child = _react2.default.cloneElement(child, {
-              height: alignBase ? alignHeight - 2 * _utils.padding : alignHeight,
-              style: { marginTop: alignBase ? alignTop + _utils.padding : alignTop }
+              height: padAlign ? alignHeight - 2 * _utils.padding : alignHeight,
+              style: { marginTop: padAlign ? alignTop + _utils.padding : alignTop },
+              align: axisAlign
             });
           }
         } else if (child && (child.type === _Layers2.default || child.type.name === 'Layers')) {
@@ -243,6 +252,10 @@ var Chart = function (_Component) {
             width: alignWidth,
             style: { left: alignLeft, top: alignTop }
           });
+          axisAlign = 'start';
+        } else if (child && (child.type === Chart || child.type.name === 'Chart' || child.type === _Base2.default || child.type.name === 'Base')) {
+
+          axisAlign = 'start';
         }
 
         return child;
@@ -282,12 +295,12 @@ Chart.propTypes = {
 
 exports.Axis = _Axis2.default;
 exports.Layers = _Layers2.default;
-exports.Stack = _Stack2.default;
 exports.Base = _Base2.default;
 exports.Grid = _Grid2.default;
 exports.Area = _Area2.default;
 exports.Line = _Line2.default;
 exports.Bar = _Bar2.default;
-exports.Threshold = _Threshold2.default;
+exports.Marker = _Marker2.default;
+exports.MarkerLabel = _MarkerLabel2.default;
 exports.HotSpots = _HotSpots2.default;
 exports.Range = _Range2.default;

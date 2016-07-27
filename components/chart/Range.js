@@ -252,7 +252,7 @@ var Range = function (_Component) {
         var style = void 0;
         if (vertical) {
           style = {
-            marginTop: this._percentForIndex(start) + '%',
+            top: this._percentForIndex(start) + '%',
             height: this._percentForIndex(end - start) + '%'
           };
         } else {

@@ -85,56 +85,34 @@ var Axis = function (_Component) {
     key: '_buildItems',
     value: function _buildItems(props) {
       var count = props.count;
-      var values = props.values;
-      var min = props.min;
-      var max = props.max;
+      var labels = props.labels;
 
       var items = [];
-      if (count) {
-        var delta = (max - min) / (count - 1 || 1);
+      var basis = 100.0 / (count - 1);
 
-        var _loop = function _loop(index) {
-          var value = delta * index;
-          var item = void 0;
-          if (values) {
-            item = values.filter(function (item) {
-              return item.value === value;
-            })[0];
-          }
-          if (!item) {
-            item = { value: value };
-          }
-          if (0 === index) {
-            item.value = delta / 2;
-            item.flip = true;
-          }
-          items.push(item);
-        };
-
-        for (var index = 0; index <= count; index += 1) {
-          _loop(index);
+      var _loop = function _loop(index) {
+        var item = void 0;
+        if (labels) {
+          item = labels.filter(function (item) {
+            return item.index === index;
+          })[0];
         }
-      } else if (values && values.length > 0) {
-        if (values[0].value < min + (max - min) / 2) {
-          if (values[0].value > min) {
-            items.push({ value: values[0].value, placeholder: true });
-          }
-          if (values.length > 1) {
-            // take up half of the next item
-            items.push((0, _extends3.default)({}, values[0], {
-              value: values[0].value + (values[1].value - values[0].value) / 2,
-              flip: true
-            }));
-            items = items.concat(values.slice(1));
-          } else {
-            items.push((0, _extends3.default)({}, values[0], { value: max, flip: true }));
-          }
+        if (!item) {
+          item = { index: index };
+        }
+        if (0 === index) {
+          item.basis = basis / 2;
+          item.flip = true;
+        } else if (1 === index) {
+          item.basis = basis / 2;
         } else {
-          items = values.slice(0);
+          item.basis = basis;
         }
-        if (items[items.length - 1].value < max) {
-          items.push({ value: max, placeholder: true });
-        }
+        items.push(item);
+      };
+
+      for (var index = 0; index < count; index += 1) {
+        _loop(index);
       }
       return items;
     }
@@ -145,9 +123,6 @@ var Axis = function (_Component) {
       var vertical = _props.vertical;
       var reverse = _props.reverse;
       var align = _props.align;
-      var min = _props.min;
-      var max = _props.max;
-      var highlight = _props.highlight;
       var ticks = _props.ticks;
       var _state = this.state;
       var _state$size = _state.size;
@@ -181,19 +156,9 @@ var Axis = function (_Component) {
         style.width = width + 'px';
       }
 
-      var graphItems = items.map(function (item) {
-        return (0, _extends3.default)({}, item, {
-          graphValue: (0, _utils.graphValue)(item.value, min, max, vertical ? height : width)
-        });
-      });
-
-      var priorItem = void 0;
-      var basisItems = graphItems.map(function (item, index) {
+      var elements = items.map(function (item) {
 
         var classes = [CLASS_ROOT + '__slot'];
-        if (index === highlight) {
-          classes.push(CLASS_ROOT + '__slot--highlight');
-        }
         if (item.flip) {
           classes.push(CLASS_ROOT + '__slot--flip');
         }
@@ -203,31 +168,19 @@ var Axis = function (_Component) {
         if (item.colorIndex) {
           classes.push(COLOR_INDEX + '-' + item.colorIndex);
         }
-        var label = item.label;
-        if (typeof contents === 'string' || typeof contents === 'number') {
-          label = _react2.default.createElement(
-            'span',
-            null,
-            label
-          );
-        }
-
-        var delta = item.graphValue - (priorItem ? priorItem.graphValue : 0);
-        var basis = delta / ((vertical ? height : width) || 1) * 100;
-        var style = { flexBasis: basis + '%' };
-        priorItem = item;
 
         return _react2.default.createElement(
           'div',
-          { key: item.value, className: classes.join(' '), style: style },
-          label
+          { key: item.value || item.index, className: classes.join(' '),
+            style: { flexBasis: item.basis + '%' } },
+          item.label
         );
       });
 
       return _react2.default.createElement(
         'div',
         { ref: 'axis', className: classes.join(' '), style: style },
-        basisItems
+        elements
       );
     }
   }]);
@@ -239,26 +192,17 @@ exports.default = Axis;
 ;
 
 Axis.propTypes = {
-  align: _react.PropTypes.oneOf(['start', 'end']),
-  count: _react.PropTypes.number,
-  height: _react.PropTypes.number,
-  highlight: _react.PropTypes.number,
-  max: _react.PropTypes.number,
-  min: _react.PropTypes.number,
+  align: _react.PropTypes.oneOf(['start', 'end']), // only from Chart
+  count: _react.PropTypes.number.isRequired,
+  height: _react.PropTypes.number, // only from Chart
   reverse: _react.PropTypes.bool,
   ticks: _react.PropTypes.bool,
-  values: _react.PropTypes.arrayOf(_react.PropTypes.shape({
+  labels: _react.PropTypes.arrayOf(_react.PropTypes.shape({
     colorIndex: _react.PropTypes.string,
-    label: _react.PropTypes.node,
-    value: _react.PropTypes.number.isRequired
+    index: _react.PropTypes.number.isRequired,
+    label: _react.PropTypes.node.isRequired
   })),
   vertical: _react.PropTypes.bool,
-  width: _react.PropTypes.number
-};
-
-Axis.defaultProps = {
-  align: 'start',
-  max: 100,
-  min: 0
+  width: _react.PropTypes.number // only from Chart
 };
 module.exports = exports['default'];

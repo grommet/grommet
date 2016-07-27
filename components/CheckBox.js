@@ -141,7 +141,7 @@ CheckBox.propTypes = {
   checked: _react.PropTypes.bool,
   defaultChecked: _react.PropTypes.bool,
   disabled: _react.PropTypes.bool,
-  id: _react.PropTypes.string.isRequired,
+  id: _react.PropTypes.string,
   label: _react.PropTypes.node,
   name: _react.PropTypes.string,
   onChange: _react.PropTypes.func,

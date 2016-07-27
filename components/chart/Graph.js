@@ -101,7 +101,6 @@ var Graph = function (_Component) {
       var colorIndex = _props2.colorIndex;
       var vertical = _props2.vertical;
       var reverse = _props2.reverse;
-      var highlight = _props2.highlight;
       var max = _props2.max;
       var min = _props2.min;
       var values = _props2.values;
@@ -115,9 +114,6 @@ var Graph = function (_Component) {
       var classes = [CLASS_ROOT, CLASS_ROOT + '--' + type];
       if (vertical) {
         classes.push(CLASS_ROOT + '--vertical');
-      }
-      if (highlight) {
-        classes.push(CLASS_ROOT + '--highlight');
       }
       classes.push(COLOR_INDEX + '-' + (colorIndex || 'graph-1'));
 
@@ -228,7 +224,6 @@ Graph.propTypes = {
   activeIndex: _react.PropTypes.number,
   colorIndex: _react.PropTypes.string,
   height: _react.PropTypes.number,
-  highlight: _react.PropTypes.number,
   max: _react.PropTypes.number.isRequired,
   min: _react.PropTypes.number.isRequired,
   points: _react.PropTypes.bool,

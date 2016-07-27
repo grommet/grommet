@@ -63,13 +63,19 @@ var Base = function (_Component) {
   (0, _createClass3.default)(Base, [{
     key: 'render',
     value: function render() {
-      var _props = this.props;
-      var height = _props.height;
-      var width = _props.width;
+      var _this2 = this;
+
+      var vertical = this.props.vertical;
 
       var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Base.propTypes));
+      var childCount = _react.Children.count(this.props.children);
+      var width = !childCount && !this.props.width ? 'medium' : this.props.width;
+      var height = !childCount && !this.props.height ? 'medium' : this.props.height;
 
       var classes = [CLASS_ROOT];
+      if (vertical) {
+        classes.push(CLASS_ROOT + '--vertical');
+      }
       if (height) {
         classes.push(CLASS_ROOT + '--height-' + height);
       }
@@ -80,10 +86,22 @@ var Base = function (_Component) {
         classes.push(this.props.className);
       }
 
+      var children = this.props.children;
+      // We can't distribute children when vertical because our height isn't known.
+      if (!vertical) {
+        (function () {
+          // Round to hundredths of a % so things line up reasonably accurately
+          var basis = Math.floor(10000 / childCount) / 100.0 + '%';
+          children = _react.Children.map(_this2.props.children, function (child) {
+            return child ? _react2.default.cloneElement(child, { style: { flexBasis: basis } }) : child;
+          });
+        })();
+      }
+
       return _react2.default.createElement(
         'div',
         (0, _extends3.default)({}, restProps, { className: classes.join(' ') }),
-        this.props.children
+        children
       );
     }
   }]);
@@ -96,11 +114,7 @@ exports.default = Base;
 
 Base.propTypes = {
   height: _react.PropTypes.oneOf(['small', 'medium', 'large', 'sparkline']),
+  vertical: _react.PropTypes.bool,
   width: _react.PropTypes.oneOf(['small', 'medium', 'large', 'full'])
-};
-
-Base.defaultProps = {
-  height: 'medium',
-  width: 'medium'
 };
 module.exports = exports['default'];
