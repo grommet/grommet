@@ -123,13 +123,13 @@ Axis.propTypes = {
   align: PropTypes.oneOf(['start', 'end']), // only from Chart
   count: PropTypes.number.isRequired,
   height: PropTypes.number, // only from Chart
-  reverse: PropTypes.bool,
-  ticks: PropTypes.bool,
   labels: PropTypes.arrayOf(PropTypes.shape({
     colorIndex: PropTypes.string,
     index: PropTypes.number.isRequired,
     label: PropTypes.node.isRequired
   })),
+  reverse: PropTypes.bool,
+  ticks: PropTypes.bool,
   vertical: PropTypes.bool,
   width: PropTypes.number // only from Chart
 };

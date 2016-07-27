@@ -219,11 +219,11 @@ export default class Range extends Component {
 };
 
 Range.propTypes = {
-  count: PropTypes.number,
   active: PropTypes.shape({
     end: PropTypes.number.isRequired,
     start: PropTypes.number.isRequired
   }),
+  count: PropTypes.number.isRequired,
   onActive: PropTypes.func, // (start, end)
   vertical: PropTypes.bool
 };

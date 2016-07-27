@@ -36,6 +36,6 @@ export default class Layers extends Component {
 };
 
 Layers.propTypes = {
-  height: PropTypes.number,
-  width: PropTypes.number
+  height: PropTypes.number, // only from Chart
+  width: PropTypes.number // only from Chart
 };

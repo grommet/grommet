@@ -58,7 +58,7 @@ export default class HotSpots extends Component {
 
 HotSpots.propTypes = {
   activeIndex: PropTypes.number,
-  count: PropTypes.number,
+  count: PropTypes.number.isRequired,
   onActive: PropTypes.func,
   onClick: PropTypes.func,
   vertical: PropTypes.bool

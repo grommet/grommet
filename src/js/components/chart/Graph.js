@@ -168,15 +168,15 @@ export default class Graph extends Component {
 Graph.propTypes = {
   activeIndex: PropTypes.number,
   colorIndex: PropTypes.string,
-  height: PropTypes.number,
+  height: PropTypes.number, // only from Chart
   max: PropTypes.number.isRequired,
   min: PropTypes.number.isRequired,
   points: PropTypes.bool,
   reverse: PropTypes.bool,
   values: PropTypes.arrayOf(PropTypes.number).isRequired,
-  type: PropTypes.oneOf(['area', 'line', 'bar']).isRequired,
+  type: PropTypes.oneOf(['area', 'line', 'bar']).isRequired, // from extending component
   vertical: PropTypes.bool,
-  width: PropTypes.number
+  width: PropTypes.number // only from Chart
 };
 
 Graph.defaultProps = {
