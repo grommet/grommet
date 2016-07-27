@@ -47,6 +47,7 @@
   .#{$grommet-namespace}tiles__masonry-column {
     > .#{$grommet-namespace}tile {
       @include media-query(lap-and-up) {
+        min-width: $tile-size;
         max-width: $tile-size;
         flex-basis: auto;
       }
@@ -144,6 +145,7 @@
     .#{$grommet-namespace}tiles__masonry-column {
       > .#{$grommet-namespace}tile {
         @include media-query(lap-and-up) {
+          min-width: $tile-small-size;
           max-width: $tile-small-size;
           flex-basis: auto;
         }
@@ -161,6 +163,7 @@
     .#{$grommet-namespace}tiles__masonry-column {
       > .#{$grommet-namespace}tile {
         @include media-query(lap-and-up) {
+          min-width: $tile-large-size;
           max-width: $tile-large-size;
           flex-basis: auto;
         }

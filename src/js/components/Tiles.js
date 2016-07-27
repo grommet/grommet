@@ -141,7 +141,7 @@ export default class Tiles extends Component {
           return (currentMin > columnWidths[maxIndex]) ? index : maxIndex;
         }, 0);
 
-      maxColumnWidthIndex += 1; // return appropriate number of columns
+      return maxColumnWidthIndex + 1; // return appropriate number of columns
     }
 
     return maxColumnWidthIndex;
@@ -163,7 +163,7 @@ export default class Tiles extends Component {
       const rect = tiles.getBoundingClientRect();
       const children = tiles.querySelectorAll(`.${TILE}`);
 
-      children.map((child, index) => {
+      Array.from(children).map((child, index) => {
         const childRect = child.getBoundingClientRect();
         // 12 accounts for padding
         if ((childRect.left + 12) < rect.left ||
