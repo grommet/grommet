@@ -18,7 +18,9 @@ import CSSClassnames from '../utils/CSSClassnames';
 const CLASS_ROOT = CSSClassnames.TILES;
 const TILE = CSSClassnames.TILE;
 const SELECTED_CLASS = `${TILE}--selected`;
-const MIN_COLUMN_SIZE = 384;  // $tile-large-size = 384px
+const MIN_COLUMN_SIZE_LARGE = 384;  // $tile-large-size = 384px
+const MIN_COLUMN_SIZE = 192;  // $tile-size = 192px
+const MIN_COLUMN_SIZE_SMALL = 92; // $tile-small-size = 92px
 
 export default class Tiles extends Component {
 
@@ -31,8 +33,12 @@ export default class Tiles extends Component {
     this._onResize = this._onResize.bind(this);
     this._layout = this._layout.bind(this);
     this._onClick = this._onClick.bind(this);
+
+    const tileSize = this.props.size;
+    const minColumnWidth = (tileSize === 'small') ? MIN_COLUMN_SIZE_SMALL :
+      ((tileSize === 'large') ? MIN_COLUMN_SIZE_LARGE : MIN_COLUMN_SIZE);
     this._minColumnWidths = Array.apply(null, Array(this.props.numColumns))
-      .map((currentNumColumns, index) => (index + 1) * MIN_COLUMN_SIZE);
+      .map((currentNumColumns, index) => (index + 1) * minColumnWidth);
 
     this.state = {
       overflow: false,
