@@ -198,6 +198,22 @@
 
 // Base
 
+.#{$grommet-namespace}chart-base {
+  display: flex;
+}
+
+.#{$grommet-namespace}chart-base--vertical {
+  flex-direction: column;
+}
+
+.#{$grommet-namespace}chart-base:not(.#{$grommet-namespace}chart-base--vertical) {
+  flex-direction: row;
+
+  > * {
+    flex: 0 0;
+  }
+}
+
 .#{$grommet-namespace}chart-base--width-small {
   width: $graphic-small-size;
 }
@@ -311,6 +327,18 @@
         justify-content: flex-start;
       }
     }
+
+    &.#{$grommet-namespace}chart-axis--ticks {
+      .#{$grommet-namespace}chart-axis__slot {
+        border-top-style: none;
+        border-bottom-style: solid;
+
+        &.#{$grommet-namespace}chart-axis__slot--flip {
+          border-top-style: solid;
+          border-bottom-style: none;
+        }
+      }
+    }
   }
 }
 
@@ -355,6 +383,124 @@
         border-right-style: none;
         border-left-style: solid;
       }
+    }
+  }
+
+  &.#{$grommet-namespace}chart-axis--reverse {
+    flex-direction: row-reverse;
+
+    .#{$grommet-namespace}chart-axis__slot {
+      align-items: flex-start;
+
+      &.#{$grommet-namespace}chart-axis__slot--flip {
+        align-items: flex-end;
+      }
+    }
+
+    &.#{$grommet-namespace}chart-axis--ticks {
+      .#{$grommet-namespace}chart-axis__slot {
+        border-right-style: none;
+        border-left-style: solid;
+
+        &.#{$grommet-namespace}chart-axis__slot--flip {
+          border-right-style: solid;
+          border-left-style: none;
+        }
+      }
+    }
+  }
+}
+
+// MarkerLabel
+
+.#{$grommet-namespace}chart-marker-label {
+  flex: 0 0 auto; // when in Chart
+  display: flex;
+  flex-direction: row;
+}
+
+.#{$grommet-namespace}chart-marker-label__slot {
+  flex: 0 0;
+  display: flex;
+  flex-direction: column;
+  // to work around Safari repaint issues
+  -webkit-transform: translateZ(0);
+}
+
+.#{$grommet-namespace}chart-marker-label--vertical {
+  flex-direction: column-reverse;
+  // padding-top: round($inuit-base-spacing-unit / 3);
+  // padding-bottom: round($inuit-base-spacing-unit / 3);
+  margin-left: halve($inuit-base-spacing-unit);
+  margin-right: halve($inuit-base-spacing-unit);
+
+  .#{$grommet-namespace}chart-marker-label__slot {
+    min-width: 1em;
+    justify-content: flex-start;
+
+    &.#{$grommet-namespace}chart-marker-label__slot--flip {
+      justify-content: flex-end;
+    }
+  }
+
+  &.#{$grommet-namespace}chart-marker-label--align-start {
+    align-items: flex-start;
+
+    .#{$grommet-namespace}chart-marker-label__slot {
+      align-items: flex-start;
+    }
+  }
+
+  &.#{$grommet-namespace}chart-marker-label--align-end {
+    align-items: flex-end;
+
+    .#{$grommet-namespace}chart-marker-label__slot {
+      align-items: flex-end;
+    }
+  }
+
+  &.#{$grommet-namespace}chart-marker-label--reverse {
+    flex-direction: column;
+
+    .#{$grommet-namespace}chart-marker-label__slot {
+      justify-content: flex-end;
+
+      &.#{$grommet-namespace}chart-marker-label__slot--flip {
+        justify-content: flex-start;
+      }
+    }
+  }
+}
+
+.#{$grommet-namespace}chart-marker-label:not(.#{$grommet-namespace}chart-marker-label--vertical) {
+  flex-direction: row;
+  // padding-left: round($inuit-base-spacing-unit / 3);
+  // padding-right: round($inuit-base-spacing-unit / 3);
+  margin-top: halve($inuit-base-spacing-unit);
+  margin-bottom: halve($inuit-base-spacing-unit);
+
+  .#{$grommet-namespace}chart-marker-label__slot {
+    min-height: $inuit-base-spacing-unit;
+    align-items: flex-end;
+
+    &.#{$grommet-namespace}chart-marker-label__slot--flip {
+      align-items: flex-start;
+    }
+  }
+
+  &.#{$grommet-namespace}chart-marker-label--align-start {
+    align-items: flex-start;
+
+    .#{$grommet-namespace}chart-marker-label__slot {
+      justify-content: flex-start;
+    }
+  }
+
+  &.#{$grommet-namespace}chart-marker-label--align-end {
+    align-items: flex-end;
+
+    .#{$grommet-namespace}chart-marker-label__slot {
+      justify-content: flex-end;
     }
   }
 }
@@ -406,7 +552,7 @@
   }
 }
 
-.#{$grommet-namespace}chart-threshold,
+.#{$grommet-namespace}chart-marker,
 .#{$grommet-namespace}chart-grid,
 .#{$grommet-namespace}chart-graph--line,
 .#{$grommet-namespace}chart-graph--area,
@@ -428,24 +574,6 @@
   stroke: $unset-color;
   stroke-dasharray: 1 $inuit-base-spacing-unit;
   stroke-dashoffset: 0;
-}
-
-// Stack
-
-.#{$grommet-namespace}chart-stack {
-  display: flex;
-}
-
-.#{$grommet-namespace}chart-stack--vertical {
-  flex-direction: column;
-}
-
-.#{$grommet-namespace}chart-stack:not(.#{$grommet-namespace}chart-stack--vertical) {
-  flex-direction: row;
-
-  > * {
-    flex: 0 0;
-  }
 }
 
 // HotSpots
@@ -478,6 +606,7 @@
 }
 
 .#{$grommet-namespace}chart-range__active {
+  position: relative;
   height: 100%;
   display: flex;
   flex-direction: row;
@@ -532,9 +661,9 @@
   }
 }
 
-// Threshold
+// Marker
 
-.#{$grommet-namespace}chart-threshold {
+.#{$grommet-namespace}chart-marker {
   stroke: $border-color;
   @include graph-stroke-color-translucent(0.7);
   @include animation('fade-in-chart 1s');

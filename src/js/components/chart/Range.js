@@ -177,7 +177,7 @@ export default class Range extends Component {
       let style;
       if (vertical) {
         style = {
-          marginTop: `${this._percentForIndex(start)}%`,
+          top: `${this._percentForIndex(start)}%`,
           height: `${this._percentForIndex(end - start)}%`
         };
       } else {

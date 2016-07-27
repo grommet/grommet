@@ -44,16 +44,13 @@ export default class Graph extends Component {
   }
 
   render () {
-    const { colorIndex, vertical, reverse, highlight, max, min, values, type,
+    const { colorIndex, vertical, reverse, max, min, values, type,
       activeIndex } = this.props;
     const { height, width } = this.state;
 
     let classes = [CLASS_ROOT, `${CLASS_ROOT}--${type}`];
     if (vertical) {
       classes.push(`${CLASS_ROOT}--vertical`);
-    }
-    if (highlight) {
-      classes.push(`${CLASS_ROOT}--highlight`);
     }
     classes.push(`${COLOR_INDEX}-${colorIndex || 'graph-1'}`);
 
@@ -172,7 +169,6 @@ Graph.propTypes = {
   activeIndex: PropTypes.number,
   colorIndex: PropTypes.string,
   height: PropTypes.number,
-  highlight: PropTypes.number,
   max: PropTypes.number.isRequired,
   min: PropTypes.number.isRequired,
   points: PropTypes.bool,

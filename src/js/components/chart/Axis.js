@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
-import { graphValue, trackSize } from './utils';
+import { trackSize } from './utils';
 import CSSClassnames from '../../utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.CHART_AXIS;
@@ -36,53 +36,32 @@ export default class Axis extends Component {
   }
 
   _buildItems (props) {
-    const { count, values, min, max } = props;
+    const { count, labels } = props;
     let items = [];
-    if (count) {
-      const delta = (max - min) / (count - 1 || 1);
-      for (let index=0; index<=count; index+=1) {
-        const value = delta * index;
-        let item;
-        if (values) {
-          item = values.filter(item => item.value === value)[0];
-        }
-        if (! item) {
-          item = { value: value };
-        }
-        if (0 === index) {
-          item.value = delta / 2;
-          item.flip = true;
-        }
-        items.push(item);
+    const basis = 100.0 / (count - 1);
+    for (let index=0; index<count; index+=1) {
+      let item;
+      if (labels) {
+        item = labels.filter(item => item.index === index)[0];
       }
-    } else if (values && values.length > 0) {
-      if (values[0].value < (min + ((max - min) / 2))) {
-        if (values[0].value > min) {
-          items.push({ value: values[0].value, placeholder: true });
-        }
-        if (values.length > 1) {
-          // take up half of the next item
-          items.push({ ...values[0],
-            value: values[0].value + ((values[1].value - values[0].value) / 2),
-            flip: true
-          });
-          items = items.concat(values.slice(1));
-        } else {
-          items.push({ ...values[0], value: max, flip: true });
-        }
+      if (! item) {
+        item = { index: index };
+      }
+      if (0 === index) {
+        item.basis = basis / 2;
+        item.flip = true;
+      } else if (1 === index) {
+        item.basis = basis / 2;
       } else {
-        items = values.slice(0);
+        item.basis = basis;
       }
-      if (items[items.length - 1].value < max) {
-        items.push({ value:max, placeholder: true });
-      }
+      items.push(item);
     }
     return items;
   }
 
   render () {
-    const { vertical, reverse, align, min, max, highlight,
-      ticks } = this.props;
+    const { vertical, reverse, align, ticks } = this.props;
     const { size: { height, width }, items } = this.state;
 
     let classes = [CLASS_ROOT];
@@ -110,17 +89,9 @@ export default class Axis extends Component {
       style.width = `${width}px`;
     }
 
-    const graphItems = items.map(item => ({ ...item,
-      graphValue: graphValue(item.value, min, max, (vertical ? height : width))
-    }));
-
-    let priorItem;
-    let basisItems = graphItems.map((item, index) => {
+    let elements = items.map(item => {
 
       let classes = [`${CLASS_ROOT}__slot`];
-      if (index === highlight) {
-        classes.push(`${CLASS_ROOT}__slot--highlight`);
-      }
       if (item.flip) {
         classes.push(`${CLASS_ROOT}__slot--flip`);
       }
@@ -130,26 +101,18 @@ export default class Axis extends Component {
       if (item.colorIndex) {
         classes.push(`${COLOR_INDEX}-${item.colorIndex}`);
       }
-      let label = item.label;
-      if (typeof contents === 'string' || typeof contents === 'number') {
-        label = <span>{label}</span>;
-      }
-
-      const delta = item.graphValue - (priorItem ? priorItem.graphValue : 0);
-      const basis = (delta / ((vertical ? height : width) || 1)) * 100;
-      const style = { flexBasis: `${basis}%`};
-      priorItem = item;
 
       return (
-        <div key={item.value} className={classes.join(' ')} style={style}>
-          {label}
+        <div key={item.value || item.index} className={classes.join(' ')}
+          style={{ flexBasis: `${item.basis}%` }}>
+          {item.label}
         </div>
       );
     });
 
     return (
       <div ref="axis" className={classes.join(' ')} style={style}>
-        {basisItems}
+        {elements}
       </div>
     );
   }
@@ -157,25 +120,16 @@ export default class Axis extends Component {
 };
 
 Axis.propTypes = {
-  align: PropTypes.oneOf(['start', 'end']),
-  count: PropTypes.number,
-  height: PropTypes.number,
-  highlight: PropTypes.number,
-  max: PropTypes.number,
-  min: PropTypes.number,
+  align: PropTypes.oneOf(['start', 'end']), // only from Chart
+  count: PropTypes.number.isRequired,
+  height: PropTypes.number, // only from Chart
   reverse: PropTypes.bool,
   ticks: PropTypes.bool,
-  values: PropTypes.arrayOf(PropTypes.shape({
+  labels: PropTypes.arrayOf(PropTypes.shape({
     colorIndex: PropTypes.string,
-    label: PropTypes.node,
-    value: PropTypes.number.isRequired
+    index: PropTypes.number.isRequired,
+    label: PropTypes.node.isRequired
   })),
   vertical: PropTypes.bool,
-  width: PropTypes.number
-};
-
-Axis.defaultProps = {
-  align: 'start',
-  max: 100,
-  min: 0
+  width: PropTypes.number // only from Chart
 };
