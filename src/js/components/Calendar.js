@@ -109,12 +109,13 @@ export default class Calendar extends Component {
   }
 
   _onNextDayOrMonth (event) {
+    const { current, reference } = this.state;
+
     if (event.shiftKey) {
       this._onNext(event);
     } else {
       event.preventDefault();
       event.stopPropagation();
-      const { current, reference } = this.state;
       const nextDay = moment(current).add(1, 'days');
 
       if (! nextDay.isSame(reference, 'month')) {
@@ -126,12 +127,13 @@ export default class Calendar extends Component {
   }
 
   _onPreviousDayOrMonth (event) {
+    const { current, reference } = this.state;
+
     if (event.shiftKey) {
       this._onPrevious(event);
     } else {
       event.preventDefault();
       event.stopPropagation();
-      const { current, reference } = this.state;
       const previousDay = moment(current).subtract(1, 'days');
 
       if (! previousDay.isSame(reference, 'month')) {
@@ -271,10 +273,7 @@ export default class Calendar extends Component {
             }
             onClick={this._onPrevious}
           />
-          <Title
-            className={`${CLASS_ROOT}__title`}
-            responsive={false}
-          >
+          <Title className={`${CLASS_ROOT}__title`} responsive={false}>
             {reference.format('MMMM YYYY')}
           </Title>
           <Button
