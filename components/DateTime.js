@@ -72,6 +72,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var CLASS_ROOT = _CSSClassnames2.default.DATE_TIME;
 var FORM_FIELD = _CSSClassnames2.default.FORM_FIELD;
+var DATE_TIME_DROP = _CSSClassnames2.default.DATE_TIME_DROP;
 var FORMATS = {
   M: 'months',
   D: 'days',
@@ -93,6 +94,7 @@ var DateTime = function (_Component) {
 
     _this._onInputChange = _this._onInputChange.bind(_this);
     _this._onOpen = _this._onOpen.bind(_this);
+    _this._onControlClick = _this._onControlClick.bind(_this);
     _this._onClose = _this._onClose.bind(_this);
     _this._onNext = _this._onNext.bind(_this);
     _this._onPrevious = _this._onPrevious.bind(_this);
@@ -180,10 +182,8 @@ var DateTime = function (_Component) {
             onChange(value);
           }
         }
-      } else {
-        if (onChange) {
-          onChange(value);
-        }
+      } else if (onChange) {
+        onChange(value);
       }
     }
   }, {
@@ -191,6 +191,16 @@ var DateTime = function (_Component) {
     value: function _notify(date) {
       if (this.props.onChange) {
         this.props.onChange(date);
+      }
+    }
+  }, {
+    key: '_onControlClick',
+    value: function _onControlClick(event) {
+      event.preventDefault();
+      if (this.state.dropActive) {
+        this.setState({ dropActive: false, cursor: -1 });
+      } else {
+        this.setState({ dropActive: true });
       }
     }
   }, {
@@ -202,8 +212,9 @@ var DateTime = function (_Component) {
   }, {
     key: '_onClose',
     value: function _onClose(event) {
-      var drop = document.getElementById('date-time-drop');
-      if (!(0, _DOM.isDescendant)(this.refs.component, event.target) && !(0, _DOM.isDescendant)(drop, event.target)) {
+      var drop = document.getElementById(DATE_TIME_DROP);
+      var isCalendarOnly = !TIME_REGEXP.test(this.props.format);
+      if (!(0, _DOM.isDescendant)(this.refs.component, event.target) && !(0, _DOM.isDescendant)(drop, event.target) || isCalendarOnly) {
         this.setState({ dropActive: false, cursor: -1 });
       }
     }
@@ -301,6 +312,8 @@ var DateTime = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       var _props2 = this.props;
       var className = _props2.className;
       var format = _props2.format;
@@ -325,12 +338,15 @@ var DateTime = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        { ref: 'component', className: classes.join(' ') },
+        { ref: 'component', className: classes.join(' '),
+          onBlur: function onBlur() {
+            return _this2.setState({ dropActive: false, cursor: -1 });
+          } },
         _react2.default.createElement('input', { ref: 'input', className: CLASS_ROOT + '__input',
-          id: id, placeholder: format, name: name, value: value,
-          onChange: this._onInputChange, onFocus: this._onOpen }),
+          id: id, placeholder: format, name: name, value: value || '',
+          onChange: this._onInputChange }),
         _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + '__control', icon: _react2.default.createElement(Icon, null),
-          onClick: this._onOpen })
+          onClick: this._onControlClick })
       );
     }
   }]);

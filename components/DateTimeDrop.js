@@ -129,30 +129,46 @@ var DateTimeDrop = function (_Component) {
   }, {
     key: '_onDay',
     value: function _onDay(date) {
-      this.props.onChange(date);
+      var format = this.props.format;
+
+      this.props.onChange(date.format(format));
     }
   }, {
     key: '_onToday',
     value: function _onToday() {
+      var format = this.props.format;
+
       var today = (0, _moment2.default)().startOf('day').add(this.state.timeOfDay);
       this.setState({ value: today });
-      this.props.onChange(today);
+      this.props.onChange(today.format(format));
     }
   }, {
     key: '_onPrevious',
     value: function _onPrevious(scope) {
+      var format = this.props.format;
+
       var delta = scope === this.state.stepScope ? this.props.step : 1;
+      if (scope === 'ampm') {
+        delta = 12;
+        scope = 'hours';
+      }
       var value = (0, _moment2.default)(this.state.value).subtract(delta, scope);
       this.setState({ value: value });
-      this.props.onChange(value);
+      this.props.onChange(value.format(format));
     }
   }, {
     key: '_onNext',
     value: function _onNext(scope) {
+      var format = this.props.format;
+
       var delta = scope === this.state.stepScope ? this.props.step : 1;
+      if (scope === 'ampm') {
+        delta = 12;
+        scope = 'hours';
+      }
       var value = (0, _moment2.default)(this.state.value).add(delta, scope);
       this.setState({ value: value });
-      this.props.onChange(value);
+      this.props.onChange(value.format(format));
     }
   }, {
     key: '_renderDate',
