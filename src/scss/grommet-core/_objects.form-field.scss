@@ -119,6 +119,11 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
     padding-right: 0px;
   }
 
+  // Disable IE's clear field 'X' button
+  > input::-ms-clear {
+    display: none;
+  }
+
   > select {
     display: block;
     background-image: $select-drop-caret;
