@@ -177,7 +177,7 @@ export default class Range extends Component {
       let style;
       if (vertical) {
         style = {
-          marginTop: `${this._percentForIndex(start)}%`,
+          top: `${this._percentForIndex(start)}%`,
           height: `${this._percentForIndex(end - start)}%`
         };
       } else {
@@ -219,11 +219,11 @@ export default class Range extends Component {
 };
 
 Range.propTypes = {
-  count: PropTypes.number,
   active: PropTypes.shape({
     end: PropTypes.number.isRequired,
     start: PropTypes.number.isRequired
   }),
+  count: PropTypes.number.isRequired,
   onActive: PropTypes.func, // (start, end)
   vertical: PropTypes.bool
 };

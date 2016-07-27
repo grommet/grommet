@@ -6,13 +6,13 @@ import CSSClassnames from '../../utils/CSSClassnames';
 
 import Axis from './Axis';
 import Layers from './Layers';
-import Stack from './Stack';
 import Base from './Base';
 import Grid from './Grid';
 import Area from './Area';
 import Line from './Line';
 import Bar from './Bar';
-import Threshold from './Threshold';
+import Marker from './Marker';
+import MarkerLabel from './MarkerLabel';
 import HotSpots from './HotSpots';
 import Range from './Range';
 
@@ -35,6 +35,10 @@ export default class Chart extends Component {
     // setTimeout(this._layout, 100);
   }
 
+  componentWillReceiveProps () {
+    setTimeout(this._layout, 1);
+  }
+
   componentWillUnmount () {
     window.removeEventListener('resize', this._onResize);
   }
@@ -52,7 +56,7 @@ export default class Chart extends Component {
     const chartRect = chart.getBoundingClientRect();
     const base = this.refs.chart.querySelector(`.${CHART_BASE}`);
     let alignWidth, alignLeft, alignTop, alignHeight;
-    let alignBase = false;
+    let padAlign = true;
 
     if (horizontalAlignWith) {
       const elem = document.getElementById(horizontalAlignWith);
@@ -60,12 +64,12 @@ export default class Chart extends Component {
         const rect = elem.getBoundingClientRect();
         alignWidth = rect.width;
         alignLeft = rect.left - chartRect.left;
+        padAlign = false;
       }
     } else if (base) {
       const rect = base.getBoundingClientRect();
       alignWidth = rect.width;
       alignLeft = rect.left - chartRect.left;
-      alignBase = true;
     }
 
     if (verticalAlignWith) {
@@ -74,12 +78,12 @@ export default class Chart extends Component {
         const rect = elem.getBoundingClientRect();
         alignHeight = rect.height;
         alignTop = rect.top - chartRect.top;
+        padAlign = false;
       }
     } else if (base) {
       const rect = base.getBoundingClientRect();
       alignHeight = rect.height;
       alignTop = rect.top - chartRect.top;
-      alignBase = true;
     }
 
     this.setState({
@@ -87,7 +91,7 @@ export default class Chart extends Component {
       alignLeft: alignLeft,
       alignHeight: alignHeight,
       alignTop: alignTop,
-      alignBase: alignBase
+      padAlign: padAlign
     });
 
     if (onMaxCount) {
@@ -107,7 +111,7 @@ export default class Chart extends Component {
 
   render () {
     const { vertical, full, loading } = this.props;
-    const { alignHeight, alignLeft, alignTop, alignWidth, alignBase } = this.state;
+    const { alignHeight, alignLeft, alignTop, alignWidth, padAlign } = this.state;
     let classes = [CLASS_ROOT];
     if (vertical) {
       classes.push(`${CLASS_ROOT}--vertical`);
@@ -122,20 +126,27 @@ export default class Chart extends Component {
       classes.push(this.props.className);
     }
 
+    // Align Axis children towards the Base|Layers|Chart
+    let axisAlign = 'end';
     let children = Children.map(this.props.children, child => {
 
       // name comparison is to work around webpack alias issues in development
-      if (child && (child.type === Axis || child.type.name === 'Axis')) {
+      if (child && (
+        child.type === Axis || child.type.name === 'Axis' ||
+        child.type === MarkerLabel || child.type.name === 'MarkerLabel'
+      )) {
 
         if (vertical) {
           child = React.cloneElement(child, {
-            width: alignBase ? alignWidth - (2 * padding) : alignWidth,
-            style: { marginLeft: alignBase ? alignLeft + padding : alignLeft }
+            width: padAlign ? alignWidth - (2 * padding) : alignWidth,
+            style: { marginLeft: padAlign ? alignLeft + padding : alignLeft },
+            align: axisAlign
           });
         } else {
           child = React.cloneElement(child, {
-            height: alignBase ? alignHeight - (2 * padding) : alignHeight,
-            style: { marginTop: alignBase ? alignTop + padding : alignTop }
+            height: padAlign ? alignHeight - (2 * padding) : alignHeight,
+            style: { marginTop: padAlign ? alignTop + padding : alignTop },
+            align: axisAlign
           });
         }
 
@@ -146,7 +157,14 @@ export default class Chart extends Component {
           width: alignWidth,
           style: { left: alignLeft, top: alignTop }
         });
+        axisAlign = 'start';
 
+      } else if (child && (
+        child.type === Chart || child.type.name === 'Chart' ||
+        child.type === Base || child.type.name === 'Base'
+      )) {
+
+        axisAlign = 'start';
       }
 
       return child;
@@ -179,5 +197,5 @@ Chart.propTypes = {
   verticalAlignWith: PropTypes.string
 };
 
-export { Axis, Layers, Stack, Base, Grid, Area, Line, Bar, Threshold,
+export { Axis, Layers, Base, Grid, Area, Line, Bar, Marker, MarkerLabel,
   HotSpots, Range };
