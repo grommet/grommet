@@ -3,7 +3,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 24.003 24" enable-background="new 0 0 24.003 24" xml:space="preserve">
-<g id="platform-dropbox">
+<g>
 	<rect  x="0.003" y="0" fill="none" width="24" height="24"/>
 	<polygon points="15.9985,1.8917 12.003,3.8961 20.009,7.8976 24,5.8961 	"/>
 	<polygon points="15.9985,15.5735 15.3293,15.2404 11.994,13.5675 8.6781,15.23 8.009,15.5646 7.3413,15.2315 3.997,13.5601 
