@@ -303,11 +303,11 @@ exports.default = Range;
 ;
 
 Range.propTypes = {
-  count: _react.PropTypes.number,
   active: _react.PropTypes.shape({
     end: _react.PropTypes.number.isRequired,
     start: _react.PropTypes.number.isRequired
   }),
+  count: _react.PropTypes.number.isRequired,
   onActive: _react.PropTypes.func, // (start, end)
   vertical: _react.PropTypes.bool
 };

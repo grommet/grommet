@@ -223,15 +223,15 @@ exports.default = Graph;
 Graph.propTypes = {
   activeIndex: _react.PropTypes.number,
   colorIndex: _react.PropTypes.string,
-  height: _react.PropTypes.number,
+  height: _react.PropTypes.number, // only from Chart
   max: _react.PropTypes.number.isRequired,
   min: _react.PropTypes.number.isRequired,
   points: _react.PropTypes.bool,
   reverse: _react.PropTypes.bool,
   values: _react.PropTypes.arrayOf(_react.PropTypes.number).isRequired,
-  type: _react.PropTypes.oneOf(['area', 'line', 'bar']).isRequired,
+  type: _react.PropTypes.oneOf(['area', 'line', 'bar']).isRequired, // from extending component
   vertical: _react.PropTypes.bool,
-  width: _react.PropTypes.number
+  width: _react.PropTypes.number // only from Chart
 };
 
 Graph.defaultProps = {

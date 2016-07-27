@@ -195,13 +195,13 @@ Axis.propTypes = {
   align: _react.PropTypes.oneOf(['start', 'end']), // only from Chart
   count: _react.PropTypes.number.isRequired,
   height: _react.PropTypes.number, // only from Chart
-  reverse: _react.PropTypes.bool,
-  ticks: _react.PropTypes.bool,
   labels: _react.PropTypes.arrayOf(_react.PropTypes.shape({
     colorIndex: _react.PropTypes.string,
     index: _react.PropTypes.number.isRequired,
     label: _react.PropTypes.node.isRequired
   })),
+  reverse: _react.PropTypes.bool,
+  ticks: _react.PropTypes.bool,
   vertical: _react.PropTypes.bool,
   width: _react.PropTypes.number // only from Chart
 };

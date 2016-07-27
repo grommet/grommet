@@ -120,7 +120,7 @@ exports.default = HotSpots;
 
 HotSpots.propTypes = {
   activeIndex: _react.PropTypes.number,
-  count: _react.PropTypes.number,
+  count: _react.PropTypes.number.isRequired,
   onActive: _react.PropTypes.func,
   onClick: _react.PropTypes.func,
   vertical: _react.PropTypes.bool
