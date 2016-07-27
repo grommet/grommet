@@ -130,16 +130,21 @@ export default class Tiles extends Component {
 
   _getNumberColumns () {
     const tiles = findDOMNode(this.refs.tiles);
+    let maxColumnWidthIndex;
 
-    const maxColumnWidthIndex = this._minColumnWidths
-      .filter((currentMin) => {
-        return currentMin <= tiles.offsetWidth;
-      })
-      .reduce((maxIndex, currentMin, index, columnWidths) => {
-        return (currentMin > columnWidths[maxIndex]) ? index : maxIndex;
-      }, 0);
+    if (tiles) {
+      maxColumnWidthIndex = this._minColumnWidths
+        .filter((currentMin) => {
+          return currentMin <= tiles.offsetWidth;
+        })
+        .reduce((maxIndex, currentMin, index, columnWidths) => {
+          return (currentMin > columnWidths[maxIndex]) ? index : maxIndex;
+        }, 0);
 
-    return maxColumnWidthIndex + 1; // return appropriate number of columns
+      maxColumnWidthIndex += 1; // return appropriate number of columns
+    }
+
+    return maxColumnWidthIndex;
   }
 
   _layout () {
@@ -172,7 +177,7 @@ export default class Tiles extends Component {
       // check for appropriate number of columns, if using masonry option
       const { numColumns } = this.state;
       const newNumColumns = this._getNumberColumns();
-      if (numColumns !== newNumColumns) {
+      if (newNumColumns && (numColumns !== newNumColumns)) {
         this.setState({ numColumns: newNumColumns });
       }
     }
