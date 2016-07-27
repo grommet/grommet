@@ -44,7 +44,17 @@
     }
   }
 
+  .#{$grommet-namespace}tiles__masonry-column {
+    > .#{$grommet-namespace}tile {
+      @include media-query(lap-and-up) {
+        max-width: $tile-size;
+        flex-basis: auto;
+      }
+    }
+  }
+
   &:not(.#{$grommet-namespace}tiles--flush) {
+    .#{$grommet-namespace}tiles__masonry-column > .#{$grommet-namespace}tile,
     > .#{$grommet-namespace}tile {
       margin: halve($inuit-base-spacing-unit);
       @include ie-tile-margin($inuit-base-spacing-unit);
@@ -74,6 +84,7 @@
     &.#{$grommet-namespace}box--wrap {
       justify-content: space-around;
 
+      .#{$grommet-namespace}tiles__masonry-column > .#{$grommet-namespace}tile,
       > .#{$grommet-namespace}tile {
         flex-grow: 1;
       }
@@ -83,6 +94,7 @@
   &--flush {
     padding: 0px;
 
+    .#{$grommet-namespace}tiles__masonry-column > .#{$grommet-namespace}tile,
     > .#{$grommet-namespace}tile {
       margin: 0px;
 
@@ -128,12 +140,30 @@
         flex-basis: $tile-small-size;
       }
     }
+
+    .#{$grommet-namespace}tiles__masonry-column {
+      > .#{$grommet-namespace}tile {
+        @include media-query(lap-and-up) {
+          max-width: $tile-small-size;
+          flex-basis: auto;
+        }
+      }
+    }
   }
 
   &--large {
     > .#{$grommet-namespace}tile {
       @include media-query(lap-and-up) {
         flex-basis: $tile-large-size;
+      }
+    }
+
+    .#{$grommet-namespace}tiles__masonry-column {
+      > .#{$grommet-namespace}tile {
+        @include media-query(lap-and-up) {
+          max-width: $tile-large-size;
+          flex-basis: auto;
+        }
       }
     }
   }
@@ -156,6 +186,7 @@
     }
   }
 
+  .#{$grommet-namespace}tiles__masonry-column > .#{$grommet-namespace}chart,
   > .#{$grommet-namespace}chart {
     width: 100%;
   }
