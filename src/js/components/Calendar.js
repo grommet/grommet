@@ -1,6 +1,7 @@
 // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
+import classnames from 'classnames';
 import moment from 'moment';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 import Drop from '../utils/Drop';
@@ -238,16 +239,16 @@ export default class Calendar extends Component {
     while (date.valueOf() <= end.valueOf()) {
       const days = [];
       for (var i = 0; i < 7; i += 1) {
-        const classes = [`${CLASS_ROOT}__day`];
-        if (current && date.isSame(current)) {
-          classes.push(`${CLASS_ROOT}__day--active`);
-        }
-        if (! date.isSame(reference, 'month')) {
-          classes.push(`${CLASS_ROOT}__day--other-month`);
-        }
+        const classes = classnames(
+          `${CLASS_ROOT}__day`,
+          {
+            [`${CLASS_ROOT}__day--active`]: current && date.isSame(current),
+            [`${CLASS_ROOT}__day--other-month`]: !date.isSame(reference, 'month')
+          }
+        );
         days.push(
           <td key={date.valueOf()}>
-            <div className={classes.join(' ')}
+            <div className={classes}
               onClick={this._onClickDay.bind(this, moment(date))}>
               {date.date()}
             </div>
@@ -300,18 +301,25 @@ export default class Calendar extends Component {
   }
 
   render () {
-    const { className, id, name, value, ...props } = this.props;
+    const {
+      className,
+      id,
+      name,
+      value,
+      onChange, // eslint-disable-line no-unused-vars
+      ...props
+    } = this.props;
 
-    const classes = [CLASS_ROOT];
-    if (this.state.dropActive) {
-      classes.push(`${CLASS_ROOT}--active`);
-    }
-    if (className) {
-      classes.push(className);
-    }
+    const classes = classnames(
+      CLASS_ROOT,
+      className,
+      {
+        [`${CLASS_ROOT}--active`]: this.state.dropActive
+      }
+    );
 
     return (
-      <div ref="component" className={classes.join(' ')} {...props}>
+      <div ref="component" className={classes} {...props}>
         <input
           className={`${CLASS_ROOT}__input`}
           id={id}
