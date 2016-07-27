@@ -52,37 +52,44 @@ export default class Marker extends Component {
     if (this.props.className) {
       classes.push(this.props.className);
     }
-    let commands = '';
 
-    if (vertical) {
-      let x;
-      if (count) {
-        x = graphValue(index, 0, count - 1, graphWidth);
-      } else if (max) {
-        x = graphValue(value, min, max, graphWidth);
+    let path;
+    if ((count > 1 && index >= 1 && index < count) ||
+      (value >= min && value <= max)) {
+      let commands = '';
+
+      if (vertical) {
+        let x;
+        if (count) {
+          x = graphValue(index, 0, count - 1, graphWidth);
+        } else if (max) {
+          x = graphValue(value, min, max, graphWidth);
+        }
+        if (reverse) {
+          x = graphWidth - x;
+        }
+        commands = `M${x + padding},0 L${x + padding},${height}`;
+      } else {
+        let y;
+        if (count) {
+          y = graphValue(index, 0, count - 1, graphHeight);
+        } else if (max) {
+          y = graphValue(value, min, max, graphHeight);
+        }
+        if (! reverse) {
+          y = graphHeight - y;
+        }
+        commands = `M0,${y + padding} L${width},${y + padding}`;
       }
-      if (reverse) {
-        x = graphWidth - x;
-      }
-      commands = `M${x + padding},0 L${x + padding},${height}`;
-    } else {
-      let y;
-      if (count) {
-        y = graphValue(index, 0, count - 1, graphHeight);
-      } else if (max) {
-        y = graphValue(value, min, max, graphHeight);
-      }
-      if (! reverse) {
-        y = graphHeight - y;
-      }
-      commands = `M0,${y + padding} L${width},${y + padding}`;
+
+      path = <path fill="none" d={commands} />;
     }
 
     return (
       <svg ref="svg" className={classes.join(' ')}
         viewBox={`0 0 ${width} ${height}`}
         preserveAspectRatio="none">
-        <path fill="none" d={commands} />
+        {path}
       </svg>
     );
   }

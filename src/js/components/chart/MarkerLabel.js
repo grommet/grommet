@@ -35,9 +35,9 @@ export default class MarkerLabel extends Component {
     const { count, index, max, min, value } = props;
     let valueBasis;
     if (count) {
-      valueBasis = (index / (count - 1)) * 100.0;
+      valueBasis = (index / Math.max(1, (count - 1))) * 100.0;
     } else {
-      valueBasis = ((value - min) / (max - min)) * 100.0;
+      valueBasis = ((value - min) / Math.max(1, (max - min))) * 100.0;
     }
     return valueBasis;
   }
@@ -49,7 +49,8 @@ export default class MarkerLabel extends Component {
   _renderPlaceholder (basis) {
     const classes = [`${CLASS_ROOT}__slot`, `${CLASS_ROOT}__slot--placeholder`];
     return (
-      <div key={basis} className={classes.join(' ')} style={{ flexBasis: `${basis}%` }} />
+      <div key="placeholder" className={classes.join(' ')}
+        style={{ flexBasis: `${basis}%` }} />
     );
   }
 
@@ -67,7 +68,8 @@ export default class MarkerLabel extends Component {
       label = <span>{label}</span>;
     }
     return (
-      <div key={basis} className={classes.join(' ')} style={{ flexBasis: `${basis}%` }}>
+      <div key="label" className={classes.join(' ')}
+        style={{ flexBasis: `${basis}%` }}>
         {label}
       </div>
     );
@@ -127,7 +129,7 @@ MarkerLabel.propTypes = {
   count: PropTypes.number,
   height: PropTypes.number, // only from Chart
   index: PropTypes.number,
-  label: PropTypes.node.isRequired,
+  label: PropTypes.node,
   max: PropTypes.number,
   min: PropTypes.number,
   reverse: PropTypes.bool,
