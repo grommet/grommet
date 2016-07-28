@@ -46,7 +46,7 @@ export default class AccordionPanel extends Component {
       <ListItem className={classes} direction="column" pad="none">
         <Header
           role="tab"
-          className={`${CLASS_ROOT}-header`}
+          className={`${CLASS_ROOT}__header`}
           pad={{horizontal: 'medium', vertical: 'small'}}
           full="horizontal"
           direction="row"
@@ -56,7 +56,7 @@ export default class AccordionPanel extends Component {
           responsive={false}
         >
           {heading}
-          <TabNextIcon />
+          <TabNextIcon className={`${CLASS_ROOT}__control`} />
         </Header>
         <Collapsible
           role="tabpanel"
