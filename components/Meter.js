@@ -164,12 +164,15 @@ var Meter = function (_Component) {
   }, {
     key: '_onActivate',
     value: function _onActivate(index) {
+      var onActive = this.props.onActive;
+      var importantIndex = this.state.importantIndex;
+
       if (index === undefined) {
-        index = this.state.importantIndex;
+        index = importantIndex;
       }
       this.setState({ initial: false, activeIndex: index });
-      if (this.props.onActive) {
-        this.props.onActive(index);
+      if (onActive) {
+        onActive(index);
       }
     }
   }, {
@@ -182,7 +185,11 @@ var Meter = function (_Component) {
   }, {
     key: '_layout',
     value: function _layout() {
-      if (this.state.placeLegend) {
+      var _state = this.state;
+      var placeLegend = _state.placeLegend;
+      var legendPlacement = _state.legendPlacement;
+
+      if (placeLegend) {
         // legendPlacement based on available window orientation
         var ratio = window.innerWidth / window.innerHeight;
         if (ratio < 0.8) {
@@ -192,7 +199,7 @@ var Meter = function (_Component) {
         }
       }
 
-      if ('right' === this.state.legendPlacement) {
+      if ('right' === legendPlacement) {
         if (this.refs.legend) {
           var graphicHeight = this.refs.activeGraphic.offsetHeight;
           var legendHeight = _reactDom2.default.findDOMNode(this.refs.legend).offsetHeight;
@@ -381,18 +388,23 @@ var Meter = function (_Component) {
   }, {
     key: '_getActiveFields',
     value: function _getActiveFields() {
+      var _state2 = this.state;
+      var activeIndex = _state2.activeIndex;
+      var total = _state2.total;
+      var series = _state2.series;
+
       var fields = void 0;
-      if (undefined === this.state.activeIndex) {
+      if (undefined === activeIndex) {
         fields = {
-          value: this.state.total
+          value: total
         };
-        if (this.state.series.length > 1) {
+        if (series.length > 1) {
           fields.label = _Intl2.default.getMessage(this.context.intl, 'Total');
         }
       } else {
-        var active = this.state.series[this.state.activeIndex];
+        var active = series[activeIndex];
         if (!active) {
-          active = this.state.series[0];
+          active = series[0];
         }
         fields = {
           value: active.value,
@@ -440,20 +452,24 @@ var Meter = function (_Component) {
   }, {
     key: '_renderMinMax',
     value: function _renderMinMax(classes) {
+      var _state3 = this.state;
+      var min = _state3.min;
+      var max = _state3.max;
+
       var minLabel = void 0;
-      if (this.state.min.label) {
+      if (min.label) {
         minLabel = _react2.default.createElement(
           'div',
           { className: CLASS_ROOT + '__minmax-min' },
-          this.state.min.label
+          min.label
         );
       }
       var maxLabel = void 0;
-      if (this.state.max.label) {
+      if (max.label) {
         maxLabel = _react2.default.createElement(
           'div',
           { className: CLASS_ROOT + '__minmax-max' },
-          this.state.max.label
+          max.label
         );
       }
       var minMax = void 0;
@@ -475,44 +491,62 @@ var Meter = function (_Component) {
   }, {
     key: '_renderLegend',
     value: function _renderLegend() {
-      var total = (0, _typeof3.default)(this.props.legend) === 'object' && this.props.legend.total;
+      var _props = this.props;
+      var legend = _props.legend;
+      var units = _props.units;
+      var _state4 = this.state;
+      var activeIndex = _state4.activeIndex;
+      var series = _state4.series;
+
+      var total = (typeof legend === 'undefined' ? 'undefined' : (0, _typeof3.default)(legend)) === 'object' && legend.total;
       return _react2.default.createElement(_Legend2.default, { ref: 'legend', className: CLASS_ROOT + '__legend',
-        series: this.state.series,
-        units: this.props.units,
-        total: total,
-        activeIndex: this.state.activeIndex,
-        onActive: this._onActivate });
+        series: series, units: units, total: total,
+        activeIndex: activeIndex, onActive: this._onActivate });
     }
   }, {
     key: 'render',
     value: function render() {
+      var _props2 = this.props;
+      var active = _props2.active;
+      var label = _props2.label;
+      var legend = _props2.legend;
+      var size = _props2.size;
+      var stacked = _props2.stacked;
+      var type = _props2.type;
+      var vertical = _props2.vertical;
+      var _state5 = this.state;
+      var legendPlacement = _state5.legendPlacement;
+      var limitMeterSize = _state5.limitMeterSize;
+      var tallLegend = _state5.tallLegend;
+      var series = _state5.series;
+
       var classes = [CLASS_ROOT];
-      classes.push(CLASS_ROOT + '--' + this.props.type);
-      if (this.props.vertical) {
+      classes.push(CLASS_ROOT + '--' + type);
+      if (vertical) {
         classes.push(CLASS_ROOT + '--vertical');
       }
-      if (this.props.stacked) {
+      if (stacked) {
         classes.push(CLASS_ROOT + '--stacked');
       }
-      if (this.props.size) {
-        var responsiveSize = this.props.size;
+      if (size) {
+        var responsiveSize = size;
         // shrink Meter to medium size if large and up
-        if (this.state.limitMeterSize && (this.props.size === 'large' || this.props.size === 'xlarge')) {
+        if (limitMeterSize && (size === 'large' || size === 'xlarge')) {
           responsiveSize = 'medium';
         }
         classes.push(CLASS_ROOT + '--' + responsiveSize);
       }
-      if (this.state.series.length === 0) {
+      if (series.length === 0) {
         classes.push(CLASS_ROOT + '--loading');
-      } else if (this.state.series.length === 1) {
+      } else if (series.length === 1) {
         classes.push(CLASS_ROOT + '--single');
       } else {
-        classes.push(CLASS_ROOT + '--count-' + this.state.series.length);
+        classes.push(CLASS_ROOT + '--count-' + series.length);
       }
-      if (this.props.active) {
+      if (active) {
         classes.push(CLASS_ROOT + '--active');
       }
-      if (this.state.tallLegend) {
+      if (tallLegend) {
         classes.push(CLASS_ROOT + '--tall-legend');
       }
       if (this.props.className) {
@@ -522,29 +556,35 @@ var Meter = function (_Component) {
       var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Meter.propTypes));
 
       var minMax = this._renderMinMax(classes);
-      var activeValue = void 0;
-      if (this.props.label && this.state.series.length > 0) {
-        activeValue = this._renderActiveValue();
+      var labelElement = void 0;
+      if (label && true !== label) {
+        labelElement = _react2.default.createElement(
+          'div',
+          { className: CLASS_ROOT + '__label' },
+          label
+        );
+      } else if (label && series.length > 0) {
+        labelElement = this._renderActiveValue();
       }
-      var legend = void 0;
+      var legendElement = void 0;
       var a11yRole = void 0;
 
-      if (this.props.legend || this.props.series) {
+      if (legend || series) {
         a11yRole = 'tablist';
 
-        if (this.props.legend) {
-          if ('inline' !== this.props.legend.placement) {
-            legend = this._renderLegend();
+        if (legend) {
+          if ('inline' !== legend.placement) {
+            legendElement = this._renderLegend();
           } else {
             // Hide value (displaying total), if legend is inline
             // and total is set to false
-            if (!this.props.legend.total) {
-              activeValue = undefined;
+            if (!legend.total && true === label) {
+              labelElement = undefined;
             }
           }
-          classes.push(CLASS_ROOT + '--legend-' + this.state.legendPlacement);
-          if (this.props.legend.align) {
-            classes.push(CLASS_ROOT + '--legend-align-' + this.props.legend.align);
+          classes.push(CLASS_ROOT + '--legend-' + legendPlacement);
+          if (legend.align) {
+            classes.push(CLASS_ROOT + '--legend-align-' + legend.align);
           }
         }
       }
@@ -558,14 +598,14 @@ var Meter = function (_Component) {
         a11yRole: a11yRole,
         activeIndex: this.state.activeIndex,
         min: this.state.min, max: this.state.max,
-        legend: this.props.legend,
+        legend: legend,
         onActivate: this._onActivate,
-        series: this.state.series,
-        stacked: this.props.stacked,
+        series: series,
+        stacked: stacked,
         thresholds: this.state.thresholds,
         total: this.state.total,
         units: this.props.units,
-        vertical: this.props.vertical });
+        vertical: vertical });
 
       var graphicContainer = _react2.default.createElement(
         'div',
@@ -581,9 +621,9 @@ var Meter = function (_Component) {
           'div',
           { ref: 'activeGraphic', className: CLASS_ROOT + '__value-container' },
           graphicContainer,
-          activeValue
+          labelElement
         ),
-        legend
+        legendElement
       );
     }
   }]);
@@ -603,7 +643,7 @@ Meter.propTypes = {
   a11yDesc: _react.PropTypes.string,
   // deprecated in favor of activeIndex?
   important: _react.PropTypes.number,
-  label: _react.PropTypes.bool,
+  label: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.node]),
   // deprecated, caller can use Legend as needed
   legend: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.shape({
     align: _react.PropTypes.oneOf(['start', 'center', 'end']),

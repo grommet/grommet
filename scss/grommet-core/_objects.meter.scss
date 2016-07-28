@@ -748,6 +748,10 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
     stroke-linecap: square;
     stroke-width: $meter-indicator-width;
     stroke: $threshold-color;
+
+    #{$dark-background-context} & {
+      stroke: $colored-meter-background-color;
+    }
   }
 
   .#{$grommet-namespace}meter__values .#{$grommet-namespace}meter__slice {
@@ -857,6 +861,13 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
   svg.#{$grommet-namespace}meter__graphic {
     width: $meter-size;
     height: $meter-size;
+  }
+
+  .#{$grommet-namespace}meter__label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .#{$grommet-namespace}meter__value {

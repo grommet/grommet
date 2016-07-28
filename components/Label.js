@@ -71,7 +71,12 @@ var Label = function (_Component) {
     value: function render() {
       var _classnames;
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, this.props.className, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--uppercase', this.props.uppercase), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--margin-' + this.props.margin, this.props.margin), _classnames));
+      var _props = this.props;
+      var margin = _props.margin;
+      var size = _props.size;
+
+      margin = margin ? margin : 'small' === size ? 'none' : 'medium';
+      var classes = (0, _classnames3.default)(CLASS_ROOT, this.props.className, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--uppercase', this.props.uppercase), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--margin-' + margin, margin), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), _classnames));
       var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Label.propTypes));
 
       return _react2.default.createElement(
@@ -91,10 +96,11 @@ exports.default = Label;
 Label.propTypes = {
   labelFor: _react.PropTypes.string,
   margin: _react.PropTypes.oneOf(['none', 'small', 'medium', 'large']),
+  size: _react.PropTypes.oneOf(['small', 'medium']),
   uppercase: _react.PropTypes.bool
 };
 
 Label.defaultProps = {
-  margin: 'medium'
+  size: 'medium'
 };
 module.exports = exports['default'];
