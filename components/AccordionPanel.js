@@ -107,7 +107,7 @@ var AccordionPanel = function (_Component) {
           _Header2.default,
           {
             role: 'tab',
-            className: CLASS_ROOT + '-header',
+            className: CLASS_ROOT + '__header',
             pad: { horizontal: 'medium', vertical: 'small' },
             full: 'horizontal',
             direction: 'row',
@@ -117,7 +117,7 @@ var AccordionPanel = function (_Component) {
             responsive: false
           },
           heading,
-          _react2.default.createElement(_TabNext2.default, null)
+          _react2.default.createElement(_TabNext2.default, { className: CLASS_ROOT + '__control' })
         ),
         _react2.default.createElement(
           _Collapsible2.default,

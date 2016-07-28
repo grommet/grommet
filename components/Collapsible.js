@@ -83,6 +83,7 @@ var Collapse = function (_Component) {
     key: 'componentDidEnter',
     value: function componentDidEnter() {
       var node = _reactDom2.default.findDOMNode(this);
+      node.classList.remove('animate');
       node.style.height = '';
     }
   }, {
@@ -126,7 +127,7 @@ var Collapsible = function (_Component2) {
 
       return _react2.default.createElement(
         Component,
-        null,
+        { className: CLASS_ROOT + '__wrapper' },
         this.props.active && _react2.default.createElement(Collapse, this.props)
       );
     }
