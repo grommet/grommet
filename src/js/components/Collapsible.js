@@ -25,6 +25,7 @@ class Collapse extends Component {
 
   componentDidEnter () {
     const node = ReactDOM.findDOMNode(this);
+    node.classList.remove('animate');
     node.style.height = '';
   }
 
@@ -54,7 +55,7 @@ class Collapsible extends Component {
     const Component = this.props.animate ? TransitionGroup : Box;
 
     return (
-      <Component>
+      <Component className={`${CLASS_ROOT}__wrapper`}>
         {this.props.active &&
           <Collapse {...this.props} />
         }

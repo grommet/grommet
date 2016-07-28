@@ -3,12 +3,12 @@
 .#{$grommet-namespace}accordion-panel {
 
   &--active {
-    .#{$grommet-namespace}control-icon {
+    .#{$grommet-namespace}accordion-panel__control {
       transform: rotate(90deg);
     }
   }
 
-  &-header {
+  &__header {
     user-select: none;
     -webkit-user-select: none;
   }
