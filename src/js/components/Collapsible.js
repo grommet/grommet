@@ -25,6 +25,7 @@ class Collapse extends Component {
 
   componentDidEnter () {
     const node = ReactDOM.findDOMNode(this);
+    node.classList.remove('animate');
     node.style.height = '';
   }
 
