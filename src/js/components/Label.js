@@ -9,12 +9,15 @@ const CLASS_ROOT = CSSClassnames.LABEL;
 
 export default class Label extends Component {
   render () {
+    let { margin, size } = this.props;
+    margin = margin ? margin : ('small' === size ? 'none' : 'medium');
     let classes = classnames(
       CLASS_ROOT,
       this.props.className,
       {
         [`${CLASS_ROOT}--uppercase`]: this.props.uppercase,
-        [`${CLASS_ROOT}--margin-${this.props.margin}`]: this.props.margin
+        [`${CLASS_ROOT}--margin-${margin}`]: margin,
+        [`${CLASS_ROOT}--${size}`]: size
       }
     );
     const restProps = Props.omit(this.props, Object.keys(Label.propTypes));
@@ -30,9 +33,10 @@ export default class Label extends Component {
 Label.propTypes = {
   labelFor: PropTypes.string,
   margin: PropTypes.oneOf(['none', 'small', 'medium', 'large']),
+  size: PropTypes.oneOf(['small', 'medium']),
   uppercase: PropTypes.bool
 };
 
 Label.defaultProps = {
-  margin: 'medium'
+  size: 'medium'
 };
