@@ -5,6 +5,6 @@
 	 viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
 <g >
 	<rect  y="0" fill="none" width="24" height="24"/>
-	<path fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" d="M15,22V2h5v20H15z M9,22V2H4v20H9z"/>
+	<path fill="#000000" stroke="#000000" stroke-width="2" stroke-miterlimit="10" d="M15,22V2h5v20H15z M9,22V2H4v20H9z"/>
 </g>
 </svg>

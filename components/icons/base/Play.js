@@ -89,7 +89,7 @@ var Icon = function (_Component) {
           'g',
           null,
           _react2.default.createElement('rect', { y: '0.1658', fill: 'none', width: '24', height: '24' }),
-          _react2.default.createElement('polygon', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', points: '6,1.9658 6,22.3658 20,12.1658 \t' })
+          _react2.default.createElement('polygon', { fill: '#000000', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', points: '6,1.9658 6,22.3658 20,12.1658 \t' })
         )
       );
     }

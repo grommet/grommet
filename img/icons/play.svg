@@ -5,6 +5,6 @@
 	 viewBox="0 0 24 24.3317" enable-background="new 0 0 24 24.3317" xml:space="preserve">
 <g >
 	<rect  y="0.1658" fill="none" width="24" height="24"/>
-	<polygon fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" points="6,1.9658 6,22.3658 20,12.1658 	"/>
+	<polygon fill="#000000" stroke="#000000" stroke-width="2" stroke-miterlimit="10" points="6,1.9658 6,22.3658 20,12.1658 	"/>
 </g>
 </svg>
