@@ -12,15 +12,6 @@ Object.defineProperty(exports, "__esModule", {
 
 var SMALL_WIDTH_EM = 44.9375; // align with _settings.responsive.scss
 
-function _smallSize() {
-  var fontSize = '16px';
-  // unit tests don't have getComputedStyle
-  if (window.getComputedStyle) {
-    fontSize = window.getComputedStyle(document.documentElement).fontSize;
-  }
-  return SMALL_WIDTH_EM * parseFloat(fontSize);
-}
-
 exports.default = {
 
   // Track responsive sizing.
@@ -36,7 +27,7 @@ exports.default = {
       func: func,
       timer: null,
       small: null,
-      smallSize: _smallSize()
+      smallSize: this.smallSize()
     };
     responsive.onResize = this._onResize.bind(this, responsive);
     responsive.layout = this._check.bind(this, responsive);
@@ -66,6 +57,14 @@ exports.default = {
         responsive.func(false);
       }
     }
+  },
+  smallSize: function smallSize() {
+    var fontSize = '16px';
+    // unit tests don't have getComputedStyle
+    if (window.getComputedStyle) {
+      fontSize = window.getComputedStyle(document.documentElement).fontSize;
+    }
+    return SMALL_WIDTH_EM * parseFloat(fontSize);
   }
 };
 module.exports = exports['default'];

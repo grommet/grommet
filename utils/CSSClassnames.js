@@ -48,6 +48,7 @@ exports.default = {
   HEADER: namespace + 'header',
   HEADING: namespace + 'heading',
   HEADLINE: namespace + 'headline',
+  HERO: namespace + 'hero',
   IMAGE: namespace + 'image',
   IMAGE_FIELD: namespace + 'image-field',
   LABEL: namespace + 'label',
