@@ -51,6 +51,7 @@
     "mkdirp": "^0.5.1",
     "moment": "^2.13.0",
     "react": "^15.0.2",
+    "react-addons-transition-group": "^15.2.1",
     "react-dom": "^15.0.2",
     "react-gravatar": "^2.0.0",
     "react-intl": "^2.1.2",

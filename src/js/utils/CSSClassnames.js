@@ -1,6 +1,10 @@
+// (C) Copyright 2016 Hewlett Packard Enterprise Development LP
+
 export const namespace = 'grommetux-';
 
 export default {
+  ACCORDION: `${namespace}accordion`,
+  ACCORDION_PANEL: `${namespace}accordion-panel`,
   ANCHOR: `${namespace}anchor`,
   APP: `${namespace}app`,
   ARTICLE: `${namespace}article`,
@@ -14,7 +18,17 @@ export default {
   CAROUSEL: `${namespace}carousel`,
   CAROUSEL_CONTROLS: `${namespace}carousel-controls`,
   CHART: `${namespace}chart`,
+  CHART_AXIS: `${namespace}chart-axis`,
+  CHART_BASE: `${namespace}chart-base`,
+  CHART_GRAPH: `${namespace}chart-graph`,
+  CHART_GRID: `${namespace}chart-grid`,
+  CHART_HOT_SPOTS: `${namespace}chart-hot-spots`,
+  CHART_LAYERS: `${namespace}chart-layers`,
+  CHART_MARKER: `${namespace}chart-marker`,
+  CHART_MARKER_LABEL: `${namespace}chart-marker-label`,
+  CHART_RANGE: `${namespace}chart-range`,
   CHECK_BOX: `${namespace}check-box`,
+  COLLAPSIBLE: `${namespace}collapsible`,
   COLOR_INDEX: `${namespace}color-index`,
   COLUMNS: `${namespace}columns`,
   CONTROL_ICON: `${namespace}control-icon`,

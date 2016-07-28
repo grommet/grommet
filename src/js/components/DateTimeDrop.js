@@ -61,27 +61,39 @@ export default class DateTimeDrop extends Component {
   }
 
   _onDay (date) {
-    this.props.onChange(date);
+    const { format } = this.props;
+    this.props.onChange(date.format(format));
   }
 
   _onToday () {
+    const { format } = this.props;
     const today = moment().startOf('day').add(this.state.timeOfDay);
     this.setState({ value: today });
-    this.props.onChange(today);
+    this.props.onChange(today.format(format));
   }
 
   _onPrevious (scope) {
-    const delta = (scope === this.state.stepScope ? this.props.step : 1);
+    const { format } = this.props;
+    let delta = (scope === this.state.stepScope ? this.props.step : 1);
+    if (scope === 'ampm') {
+      delta = 12;
+      scope = 'hours';
+    }
     const value = moment(this.state.value).subtract(delta, scope);
     this.setState({ value: value });
-    this.props.onChange(value);
+    this.props.onChange(value.format(format));
   }
 
   _onNext (scope) {
-    const delta = (scope === this.state.stepScope ? this.props.step : 1);
+    const { format } = this.props;
+    let delta = (scope === this.state.stepScope ? this.props.step : 1);
+    if (scope === 'ampm') {
+      delta = 12;
+      scope = 'hours';
+    }
     const value = moment(this.state.value).add(delta, scope);
     this.setState({ value: value });
-    this.props.onChange(value);
+    this.props.onChange(value.format(format));
   }
 
   _renderDate () {

@@ -86,7 +86,7 @@ CheckBox.propTypes = {
   checked: PropTypes.bool,
   defaultChecked: PropTypes.bool,
   disabled: PropTypes.bool,
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
   label: PropTypes.node,
   name: PropTypes.string,
   onChange: PropTypes.func,

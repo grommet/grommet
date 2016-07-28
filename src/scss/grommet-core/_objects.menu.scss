@@ -33,11 +33,18 @@
       color: $link-hover-color;
     }
 
+    #{$dark-background-context} & {
+      &:hover {
+        background-color: $colored-hover-background-color;
+      }
+    }
+
     &.active {
       color: $brand-color-darker;
 
       #{$dark-background-context} & {
         color: $active-colored-text-color;
+        background-color: $colored-active-background-color;
       }
     }
   }
@@ -114,6 +121,19 @@
       text-decoration: none;
       background-color: $hover-background-color;
       color: $link-hover-color;
+    }
+
+    #{$dark-background-context} & {
+      &.active {
+        color: $active-colored-text-color;
+        background-color: $colored-active-background-color;
+      }
+
+      &:hover,
+      &:focus {
+        color: $active-colored-text-color;
+        background-color: $colored-hover-background-color;
+      }
     }
   }
 
@@ -233,11 +253,11 @@
     }
   }
 
-  &.#{$grommet-namespace}box--direction-column {
-    a:not(.#{$grommet-namespace}button) {
-      margin-bottom: quarter($inuit-base-spacing-unit);
-    }
-  }
+  // &.#{$grommet-namespace}box--direction-column {
+  //   a:not(.#{$grommet-namespace}button) {
+  //     margin-bottom: quarter($inuit-base-spacing-unit);
+  //   }
+  // }
 
   &.#{$grommet-namespace}menu--small {
     @include inuit-font-size($small-menu-font-size, inherit);
@@ -255,7 +275,7 @@
   }
 
   > a:not(.#{$grommet-namespace}button) {
-    padding: quarter($inuit-base-spacing-unit) $inuit-base-spacing-unit;
+    padding: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit;
     margin-bottom: 0px;
     width: 100%;
     border-width: $active-border-width;
@@ -277,6 +297,10 @@
 
     &.active {
       border-color: $brand-color;
+
+      #{$dark-background-context} & {
+        border-color: transparent;
+      }
     }
   }
 

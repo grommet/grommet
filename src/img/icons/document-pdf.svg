@@ -3,7 +3,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 24.5 24" enable-background="new 0 0 24.5 24" xml:space="preserve">
-<g id="document-pdf">
+<g>
 	<rect  x="0.5" y="0" fill="none" width="24" height="24"/>
 	<path fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" d="M1,13v7 M3,17c1.1046,0,2-0.8954,2-2s-0.8954-2-2-2
 		H1v4H3z M8,19h3c1.1046,0,2-1.0945,2-2.2213V16v-0.7787C13,14.1158,12.1046,13,11,13H8V19z"/>

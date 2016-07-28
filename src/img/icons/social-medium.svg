@@ -3,7 +3,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
-<g id="social-medium" transform="matrix(1.3333333,0,0,-1.3333333,0,126.66667)">
+<g transform="matrix(1.3333333,0,0,-1.3333333,0,126.66667)">
 	<rect  x="-3" y="74" fill="none" width="24" height="24"/>
 	<g  transform="scale(0.1)">
 		<path  d="M180,906.9011h-7.119c-2.643,0-6.381-3.8127-6.381-6.2537v-88.4714c0-2.444,3.738-5.775,6.381-5.775H180v-21

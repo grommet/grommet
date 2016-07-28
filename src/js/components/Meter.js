@@ -1,8 +1,8 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
-
+import Props from '../utils/Props';
 import Responsive from '../utils/Responsive';
 import Legend from './Legend';
 import Bar from './meter/Bar';
@@ -83,10 +83,13 @@ export default class Meter extends Component {
   }
 
   _onActivate (index) {
-    if (index === null) {
+    if (index === undefined) {
       index = this.state.importantIndex;
     }
     this.setState({initial: false, activeIndex: index});
+    if (this.props.onActive) {
+      this.props.onActive(index);
+    }
   }
 
   _onResize () {
@@ -121,7 +124,7 @@ export default class Meter extends Component {
       series = props.series;
     } else if (props.value || props.value === 0) {
       series = [
-        {value: props.value, important: true}
+        {value: props.value}
       ];
     }
 
@@ -188,10 +191,11 @@ export default class Meter extends Component {
   }
 
   _importantIndex (props, series) {
-    let result = null;
-    if (series.length === 1) {
-      result = 0;
-    }
+    let result = undefined;
+    // removed to ensure important is set solely based on props
+    // if (series.length === 1) {
+    //   result = 0;
+    // }
     if (props.hasOwnProperty('important')) {
       result = props.important;
     }
@@ -260,13 +264,20 @@ export default class Meter extends Component {
 
     let state = {
       importantIndex: importantIndex,
-      activeIndex: importantIndex,
+      // we should preserve activeIndex across property updates
+      // activeIndex: importantIndex,
       series: series,
       thresholds: thresholds,
       min: min,
       max: max,
       total: total
     };
+
+    if (props.hasOwnProperty('activeIndex')) {
+      state.activeIndex = props.activeIndex;
+    } else if (props.hasOwnProperty('active')) {
+      state.activeIndex = props.active ? 0 : undefined;
+    }
 
     // legend
     state.placeLegend = ! (props.legend && props.legend.placement);
@@ -279,11 +290,13 @@ export default class Meter extends Component {
 
   _getActiveFields () {
     let fields;
-    if (null === this.state.activeIndex) {
+    if (undefined === this.state.activeIndex) {
       fields = {
-        value: this.state.total,
-        label: Intl.getMessage(this.context.intl, 'Total')
+        value: this.state.total
       };
+      if (this.state.series.length > 1) {
+        fields.label = Intl.getMessage(this.context.intl, 'Total');
+      }
     } else {
       let active = this.state.series[this.state.activeIndex];
       if (!active) {
@@ -384,7 +397,8 @@ export default class Meter extends Component {
     if (this.props.size) {
       let responsiveSize = this.props.size;
       // shrink Meter to medium size if large and up
-      if (this.state.limitMeterSize && (this.props.size === 'large' || this.props.size === 'xlarge')) {
+      if (this.state.limitMeterSize &&
+        (this.props.size === 'large' || this.props.size === 'xlarge')) {
         responsiveSize = 'medium';
       }
       classes.push(`${CLASS_ROOT}--${responsiveSize}`);
@@ -396,7 +410,7 @@ export default class Meter extends Component {
     } else {
       classes.push(`${CLASS_ROOT}--count-${this.state.series.length}`);
     }
-    if (this.state.activeIndex !== null) {
+    if (this.props.active) {
       classes.push(`${CLASS_ROOT}--active`);
     }
     if (this.state.tallLegend) {
@@ -406,9 +420,11 @@ export default class Meter extends Component {
       classes.push(this.props.className);
     }
 
+    const restProps = Props.omit(this.props, Object.keys(Meter.propTypes));
+
     let minMax = this._renderMinMax(classes);
     let activeValue;
-    if (this.state.series.length > 0) {
+    if (this.props.label && this.state.series.length > 0) {
       activeValue = this._renderActiveValue();
     }
     let legend;
@@ -424,7 +440,7 @@ export default class Meter extends Component {
           // Hide value (displaying total), if legend is inline
           // and total is set to false
           if (!(this.props.legend.total)) {
-            activeValue = null;
+            activeValue = undefined;
           }
         }
         classes.push(`${CLASS_ROOT}--legend-${this.state.legendPlacement}`);
@@ -455,7 +471,7 @@ export default class Meter extends Component {
     );
 
     const graphicContainer = (
-      <div className={`${CLASS_ROOT}__graphic-container`}>
+      <div {...restProps} className={`${CLASS_ROOT}__graphic-container`}>
         {graphic}
         {minMax}
       </div>
@@ -475,11 +491,16 @@ export default class Meter extends Component {
 }
 
 Meter.propTypes = {
+  active: PropTypes.bool, // when single value
+  activeIndex: PropTypes.number, // for series values
   a11yTitle: PropTypes.string,
   a11yTitleId: PropTypes.string,
   a11yDescId: PropTypes.string,
   a11yDesc: PropTypes.string,
+  // deprecated in favor of activeIndex?
   important: PropTypes.number,
+  label: PropTypes.bool,
+  // deprecated, caller can use Legend as needed
   legend: PropTypes.oneOfType([
     PropTypes.bool,
     PropTypes.shape({
@@ -502,6 +523,7 @@ Meter.propTypes = {
     }),
     PropTypes.number
   ]),
+  onActive: PropTypes.func,
   size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
   series: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string,
@@ -527,6 +549,7 @@ Meter.propTypes = {
 Meter.defaultProps = {
   a11yTitleId: 'meter-title',
   a11yDescId: 'meter-desc',
+  label: true,
   type: 'bar'
 };
 

@@ -3,7 +3,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 24.1371 24.0009" enable-background="new 0 0 24.1371 24.0009" xml:space="preserve">
-<g id="platform-chrome">
+<g>
 	<rect  x="0.1371" y="0.0009" fill="none" width="24" height="24"/>
 	<path d="M6.0538,10.4666L2.6192,4.5177C4.8183,1.7644,8.2032,0,12.0009,0c4.3933,0,8.2344,2.3612,10.3257,5.8832h-9.7922
 		c-0.1759-0.0152-0.3537-0.0234-0.5335-0.0234C9.1442,5.8598,6.7369,7.8203,6.0538,10.4666z M16.2974,7.6177h6.8785

@@ -13,6 +13,7 @@ import CSSClassnames from '../utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.DATE_TIME;
 const FORM_FIELD = CSSClassnames.FORM_FIELD;
+const DATE_TIME_DROP = CSSClassnames.DATE_TIME_DROP;
 const FORMATS = {
   M: 'months',
   D: 'days',
@@ -31,6 +32,7 @@ export default class DateTime extends Component {
 
     this._onInputChange = this._onInputChange.bind(this);
     this._onOpen = this._onOpen.bind(this);
+    this._onControlClick = this._onControlClick.bind(this);
     this._onClose = this._onClose.bind(this);
     this._onNext = this._onNext.bind(this);
     this._onPrevious = this._onPrevious.bind(this);
@@ -106,10 +108,8 @@ export default class DateTime extends Component {
           onChange(value);
         }
       }
-    } else {
-      if (onChange) {
-        onChange(value);
-      }
+    } else if (onChange) {
+      onChange(value);
     }
   }
 
@@ -119,15 +119,25 @@ export default class DateTime extends Component {
     }
   }
 
+  _onControlClick (event) {
+    event.preventDefault();
+    if (this.state.dropActive) {
+      this.setState({dropActive: false, cursor: -1});
+    } else {
+      this.setState({dropActive: true});
+    }
+  }
+
   _onOpen (event) {
     event.preventDefault();
     this.setState({dropActive: true});
   }
 
   _onClose (event) {
-    const drop = document.getElementById('date-time-drop');
+    const drop = document.getElementById(DATE_TIME_DROP);
+    const isCalendarOnly = !TIME_REGEXP.test(this.props.format);
     if (! isDescendant(this.refs.component, event.target) &&
-      ! isDescendant(drop, event.target)) {
+      ! isDescendant(drop, event.target) || isCalendarOnly) {
       this.setState({dropActive: false, cursor: -1});
     }
   }
@@ -241,12 +251,13 @@ export default class DateTime extends Component {
     const Icon = (TIME_REGEXP.test(format) ? ClockIcon : CalendarIcon);
 
     return (
-      <div ref="component" className={classes.join(' ')}>
+      <div ref="component" className={classes.join(' ')}
+        onBlur={() => this.setState({dropActive: false, cursor: -1})}>
         <input ref="input" className={`${CLASS_ROOT}__input`}
-          id={id} placeholder={format} name={name} value={value}
-          onChange={this._onInputChange} onFocus={this._onOpen} />
+          id={id} placeholder={format} name={name} value={value || ''}
+          onChange={this._onInputChange} />
         <Button className={`${CLASS_ROOT}__control`} icon={<Icon />}
-          onClick={this._onOpen} />
+          onClick={this._onControlClick} />
       </div>
     );
   }

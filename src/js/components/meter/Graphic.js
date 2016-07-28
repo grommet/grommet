@@ -1,4 +1,4 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
@@ -67,7 +67,6 @@ export default class Graphic extends Component {
         activeMeterSlice = 'activeMeterSlice';
         classes.push(`${CLASS_ROOT}__slice--active`);
       }
-
       if (item.onClick) {
         classes.push(CLASS_ROOT + "__slice--clickable");
       }

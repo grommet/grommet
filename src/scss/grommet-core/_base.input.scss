@@ -23,6 +23,8 @@
     &:focus {
       border-width: $input-focus-border-width;
       border-color: $focus-border-color;
+      padding: (halve($inuit-base-spacing-unit) - ($input-border-width + 1))
+        ($inuit-base-spacing-unit - ($input-border-width + 1));
     }
 
     &::-moz-focus-inner {
