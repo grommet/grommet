@@ -59,6 +59,7 @@ export default class Anchor extends Component {
       <Component id={this.props.id} className={classes}
         href={this.props.href}
         target={this.props.target}
+        title={this.props.title}
         onClick={this.props.onClick}
         aria-label={this.props.a11yTitle}>
         {first}
@@ -80,6 +81,7 @@ Anchor.propTypes = {
   primary: PropTypes.bool,
   tag: PropTypes.string,
   target: PropTypes.string,
+  title: PropTypes.string,
   reverse: PropTypes.bool
 };
 
