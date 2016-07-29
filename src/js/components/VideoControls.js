@@ -4,9 +4,9 @@ import React, { Component } from 'react';
 // import classnames from 'classnames';
 
 import Intl from '../utils/Intl';
-import Responsive from '../utils/Responsive';
 import Button from './Button';
 import Box from './Box';
+import Heading from './Heading';
 import ExpandIcon from './icons/base/Expand';
 import VolumeIcon from './icons/base/Volume';
 import VolumeMuteIcon from './icons/base/VolumeMute';
@@ -17,34 +17,12 @@ import CSSClassnames from '../utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.VIDEO;
 
-export default class VideoOverlay extends Component {
+export default class VideoControls extends Component {
 
   constructor () {
     super();
 
-    this._onResponsive = this._onResponsive.bind(this);
     this._onProgressBarChange = this._onProgressBarChange.bind(this);
-
-    this.state = { iconSize: 'large' };
-  }
-
-  componentDidMount () {
-    this._responsive = Responsive.start(this._onResponsive);
-  }
-
-  componentWillUnmount () {
-    if (this._responsive) {
-      this._responsive.stop();
-    }
-  }
-
-  _onResponsive (small) {
-    if (small) {
-      this.setState({ iconSize: 'small' });
-    } else {
-      let iconSize = (('small' === this.props.size) ? null : 'large');
-      this.setState({ iconSize: iconSize });
-    }
   }
 
   _formatTime (seconds) {
@@ -62,9 +40,11 @@ export default class VideoOverlay extends Component {
 
   _renderTime() {
     return (
-      <div className={`${CLASS_ROOT}__time`}>
-        {this._formatTime(this.props.currentTime)} / {this._formatTime(this.props.duration)}
-      </div>
+      <Box pad={{ horizontal: 'small', vertical: 'none' }}>
+        <Heading tag="h3" margin="none" className={`${CLASS_ROOT}__time`}>
+          {this._formatTime(this.props.currentTime)} / {this._formatTime(this.props.duration)}
+        </Heading>
+      </Box>
     );
   }
 
@@ -96,9 +76,9 @@ export default class VideoOverlay extends Component {
     let title;
     if (this.props.title) {
       title = (
-        <span>
-          {this.props.title}
-        </span>
+        <Box pad={{ horizontal: 'small', vertical: 'none' }}>
+          <Heading tag="h3" margin="none">{this.props.title}</Heading>
+        </Box>
       );
     }
 
@@ -108,11 +88,10 @@ export default class VideoOverlay extends Component {
   render() {
     const { playing, ended } = this.props;
 
-    let controlIconSize = this.state.iconSize;
     let controlIcon = (playing ?
-      <PauseIcon size={controlIconSize} /> : (ended ?
-        <RefreshIcon size={controlIconSize} /> :
-          <PlayIcon size={controlIconSize} />));
+      <PauseIcon /> : (ended ?
+        <RefreshIcon /> :
+          <PlayIcon />));
 
     let a11yControlButtonMessage = (playing ?
       'Pause Video' : (ended ?
@@ -132,22 +111,19 @@ export default class VideoOverlay extends Component {
         <Box pad="none"
           className={`${CLASS_ROOT}__controls-primary`} direction="row"
           justify="between">
-          <div>
-            <Button plain={true} onClick={this.props.togglePlay}
-              icon={controlIcon} a11yTitle={a11yControlButtonTitle} />
+          <Box direction="row" align="center" pad={{ horizontal: 'small', vertical: 'none'}}>
+            <Button plain={true} primary={true} onClick={this.props.togglePlay} icon={controlIcon} a11yTitle={a11yControlButtonTitle} />
 
             {this._renderTitle()}
-          </div>
+          </Box>
 
-          <div>
+          <Box direction="row" align="center" pad={{ horizontal: 'small', vertical: 'none'}}>
             {this._renderTime()}
 
-            <Button plain={true} onClick={this.props.toggleMute}
-              icon={this.props.muted ? <VolumeMuteIcon /> : <VolumeIcon />} />
+            <Button plain={true} primary={true} onClick={this.props.toggleMute} icon={this.props.muted ? <VolumeMuteIcon /> : <VolumeIcon />} />
 
-            <Button plain={true} onClick={this.props.fullscreen}
-              icon={<ExpandIcon />} a11yTitle={a11yExpandButtonTitle} />
-          </div>
+            <Button plain={true} primary={true} onClick={this.props.fullscreen} icon={<ExpandIcon />} a11yTitle={a11yExpandButtonTitle} />
+          </Box>
        </Box>
       </Box>
     );

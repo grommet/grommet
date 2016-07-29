@@ -67,6 +67,26 @@
   &__controls-primary {
     height: round($inuit-base-spacing-unit * 3);
     background-color: rgba(nth($brand-grey-colors, 1), 0.9);
+    color: $inverse-color;
+
+    .#{$grommet-namespace}button--primary {
+      background-color: transparent;
+
+      &:active,
+      &:focus {
+        border-color: transparent;
+        box-shadow: none;
+
+        .#{$grommet-namespace}control-icon {
+          fill: $brand-color;
+          stroke: $brand-color;
+        }
+      }
+    }
+
+    h3 {
+      font-weight: 400;
+    }
   }
 
   &__play.#{$grommet-namespace}button--primary {
