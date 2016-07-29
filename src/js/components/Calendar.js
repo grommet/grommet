@@ -318,7 +318,7 @@ export default class Calendar extends Component {
     );
 
     return (
-      <div ref="component" className={classes} {...props}>
+      <div ref="component" className={classes}>
         <input
           className={`${CLASS_ROOT}__input`}
           id={id}
@@ -326,6 +326,7 @@ export default class Calendar extends Component {
           name={name}
           value={value}
           onChange={this._onInputChange}
+          {...props}
         />
         <Button
           className={`${CLASS_ROOT}__control`}
