@@ -52,10 +52,7 @@ var ResourceMap = function (_Component) {
     _this._onEnter = _this._onEnter.bind(_this);
     _this._onLeave = _this._onLeave.bind(_this);
 
-    _this.state = {
-      canvasWidth: 100,
-      canvasHeight: 100
-    };
+    _this.state = { canvasHeight: 100, canvasWidth: 100 };
     return _this;
   }
 
@@ -84,44 +81,76 @@ var ResourceMap = function (_Component) {
     value: function _coords(id, canvasRect) {
       var element = document.getElementById(id);
       var rect = element.getBoundingClientRect();
-      return [rect.left - canvasRect.left + rect.width / 2, rect.top - canvasRect.top + rect.height / 2];
+      var left = rect.left - canvasRect.left;
+      var top = rect.top - canvasRect.top;
+      var midX = left + rect.width / 2;
+      var midY = top + rect.height / 2;
+      return {
+        top: [midX, top],
+        bottom: [midX, top + rect.height],
+        left: [left, midY],
+        right: [left + rect.width, midY]
+      };
     }
   }, {
     key: '_draw',
     value: function _draw() {
       var _this2 = this;
 
+      var vertical = this.props.vertical;
+
       var canvasElement = this.refs.canvas;
       var highlightCanvasElement = this.refs.highlightCanvas;
       // don't draw if we don't have a canvas to draw on, such as a unit test
       if (canvasElement.getContext) {
         (function () {
-          var context = canvasElement.getContext('2d');
+          var baseContext = canvasElement.getContext('2d');
           var highlightContext = highlightCanvasElement.getContext('2d');
           var canvasRect = canvasElement.getBoundingClientRect();
-          context.clearRect(0, 0, canvasRect.width, canvasRect.height);
+          baseContext.clearRect(0, 0, canvasRect.width, canvasRect.height);
           highlightContext.clearRect(0, 0, canvasRect.width, canvasRect.height);
 
-          context.strokeStyle = '#000000';
-          context.lineWidth = 1;
+          baseContext.strokeStyle = '#000000';
+          baseContext.lineWidth = 1;
           highlightContext.strokeStyle = '#000000';
           highlightContext.lineWidth = 2;
 
           _this2.props.data.links.forEach(function (link) {
             var parentCoords = _this2._coords(link.parentId, canvasRect);
             var childCoords = _this2._coords(link.childId, canvasRect);
+            var context = _this2.state.activeId === link.parentId || _this2.state.activeId === link.childId ? highlightContext : baseContext;
 
-            if (_this2.state.activeId === link.parentId || _this2.state.activeId === link.childId) {
-              highlightContext.beginPath();
-              highlightContext.moveTo(parentCoords[0], parentCoords[1]);
-              highlightContext.lineTo(childCoords[0], childCoords[1]);
-              highlightContext.stroke();
+            context.beginPath();
+            var p1 = void 0,
+                p2 = void 0;
+            if (vertical) {
+              if (parentCoords.right[0] < childCoords.left[0]) {
+                p1 = parentCoords.right;
+                p2 = childCoords.left;
+              } else {
+                p1 = parentCoords.left;
+                p2 = childCoords.right;
+              }
             } else {
-              context.beginPath();
-              context.moveTo(parentCoords[0], parentCoords[1]);
-              context.lineTo(childCoords[0], childCoords[1]);
-              context.stroke();
+              if (parentCoords.bottom[1] < childCoords.top[1]) {
+                p1 = parentCoords.bottom;
+                p2 = childCoords.top;
+              } else {
+                p1 = parentCoords.top;
+                p2 = childCoords.bottom;
+              }
             }
+            context.moveTo(p1[0], p1[1]);
+            var midX = p1[0] + (p2[0] - p1[0]) / 2;
+            var midY = p1[1] + (p2[1] - p1[1]) / 2;
+            if (vertical) {
+              context.quadraticCurveTo(midX + (p1[0] - midX) / 2, p1[1], midX, midY);
+              context.quadraticCurveTo(midX - (p1[0] - midX) / 2, p2[1], p2[0], p2[1]);
+            } else {
+              context.quadraticCurveTo(p1[0], midY + (p1[1] - midY) / 2, midX, midY);
+              context.quadraticCurveTo(p2[0], midY - (p1[1] - midY) / 2, p2[0], p2[1]);
+            }
+            context.stroke();
           });
         })();
       }
