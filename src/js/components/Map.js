@@ -40,8 +40,8 @@ export default class ResourceMap extends Component {
   }
 
   _coords (id, canvasRect) {
-    var element = document.getElementById(id);
-    var rect = element.getBoundingClientRect();
+    const element = document.getElementById(id);
+    const rect = element.getBoundingClientRect();
     return [
       rect.left - canvasRect.left + (rect.width / 2),
       rect.top - canvasRect.top + (rect.height / 2)
@@ -49,13 +49,13 @@ export default class ResourceMap extends Component {
   }
 
   _draw () {
-    var canvasElement = this.refs.canvas;
-    var highlightCanvasElement = this.refs.highlightCanvas;
+    const canvasElement = this.refs.canvas;
+    const highlightCanvasElement = this.refs.highlightCanvas;
     // don't draw if we don't have a canvas to draw on, such as a unit test
     if (canvasElement.getContext) {
-      var context = canvasElement.getContext('2d');
-      var highlightContext = highlightCanvasElement.getContext('2d');
-      var canvasRect = canvasElement.getBoundingClientRect();
+      const context = canvasElement.getContext('2d');
+      const highlightContext = highlightCanvasElement.getContext('2d');
+      const canvasRect = canvasElement.getBoundingClientRect();
       context.clearRect(0, 0, canvasRect.width, canvasRect.height);
       highlightContext.clearRect(0, 0, canvasRect.width, canvasRect.height);
 
@@ -64,9 +64,9 @@ export default class ResourceMap extends Component {
       highlightContext.strokeStyle = '#000000';
       highlightContext.lineWidth = 2;
 
-      this.props.data.links.forEach(function (link) {
-        var parentCoords = this._coords(link.parentId, canvasRect);
-        var childCoords = this._coords(link.childId, canvasRect);
+      this.props.data.links.forEach(link => {
+        const parentCoords = this._coords(link.parentId, canvasRect);
+        const childCoords = this._coords(link.childId, canvasRect);
 
         if (this.state.activeId === link.parentId ||
           this.state.activeId === link.childId) {
@@ -80,12 +80,12 @@ export default class ResourceMap extends Component {
           context.lineTo(childCoords[0], childCoords[1]);
           context.stroke();
         }
-      }, this);
+      });
     }
   }
 
   _layout () {
-    var mapElement = this.refs.map;
+    const mapElement = this.refs.map;
     if (mapElement.scrollWidth !== this.state.canvasWidth ||
       mapElement.scrollHeight !== this.state.canvasHeight) {
       this.setState({
@@ -110,17 +110,17 @@ export default class ResourceMap extends Component {
   }
 
   _renderItems (items) {
-    return items.map(function (item, index) {
-      var classes = [CLASS_ROOT + "__item"];
-      var active = this.state.activeId === item.id ||
-        this.props.data.links.some(function (link) {
+    return items.map((item, index) => {
+      let classes = [`${CLASS_ROOT}__item`];
+      const active = this.state.activeId === item.id ||
+        this.props.data.links.some(link => {
           return ((link.parentId === item.id ||
             link.childId === item.id) &&
             (link.parentId === this.state.activeId ||
             link.childId === this.state.activeId));
-        }, this);
+        });
       if (active) {
-        classes.push(CLASS_ROOT + "__item--active");
+        classes.push(`${CLASS_ROOT}__item--active`);
       }
       return (
         <li key={index} id={item.id} className={classes.join(' ')}
@@ -129,43 +129,48 @@ export default class ResourceMap extends Component {
           {item.node}
         </li>
       );
-    }, this);
+    });
   }
 
   _renderCategories (categories) {
-    var result = categories.map(function (category) {
+    return categories.map(category => {
       return (
-        <li key={category.id} className={CLASS_ROOT + "__category"}>
-          <ul className={CLASS_ROOT + "__category-items"}>
-            {this._renderItems(category.items)}
-          </ul>
-          <div className={CLASS_ROOT + "__category-label"}>
+        <li key={category.id} className={`${CLASS_ROOT}__category`}>
+          <div className={`${CLASS_ROOT}__category-label`}>
             {category.label}
           </div>
+          <ul className={`${CLASS_ROOT}__category-items`}>
+            {this._renderItems(category.items)}
+          </ul>
         </li>
       );
-    }, this);
-    return result;
+    });
   }
 
   render () {
-    var classes = [CLASS_ROOT];
+    const { data, vertical } = this.props;
+    const { canvasHeight, canvasWidth } = this.state;
+    let className = [CLASS_ROOT];
+    if (vertical) {
+      className.push(`${CLASS_ROOT}--vertical`);
+    }
     if (this.props.className) {
-      classes.push(this.props.className);
+      className.push(this.props.className);
     }
 
-    var categories = [];
-    if (this.props.data.categories) {
-      categories = this._renderCategories(this.props.data.categories);
+    let categories;
+    if (data.categories) {
+      categories = this._renderCategories(data.categories);
     }
 
     return (
-      <div ref="map" className={classes.join(' ')}>
-        <canvas ref="canvas" className={CLASS_ROOT + "__canvas"}
-          width={this.state.canvasWidth} height={this.state.canvasHeight} />
-        <canvas ref="highlightCanvas" className={CLASS_ROOT + "__canvas " + CLASS_ROOT + "__canvas--highlight"}
-          width={this.state.canvasWidth} height={this.state.canvasHeight} />
-        <ol className={CLASS_ROOT + "__categories"}>
+      <div ref="map" className={className.join(' ')}>
+        <canvas ref="canvas" className={`${CLASS_ROOT}__canvas`}
+          width={canvasWidth} height={canvasHeight} />
+        <canvas ref="highlightCanvas"
+          className={`${CLASS_ROOT}__canvas ${CLASS_ROOT}__canvas--highlight`}
+          width={canvasWidth} height={canvasHeight} />
+        <ol className={`${CLASS_ROOT}__categories`}>
           {categories}
         </ol>
       </div>
@@ -188,5 +193,6 @@ ResourceMap.propTypes = {
       parentId: PropTypes.string,
       childId: PropTypes.string
     }))
-  }).isRequired
+  }).isRequired,
+  vertical: PropTypes.bool
 };
