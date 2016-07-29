@@ -57,7 +57,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // (C) Copyright 2016 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = _CSSClassnames2.default.HERO;
-var PALM_BREAKPOINT = _Responsive2.default.smallSize();
 
 var Hero = function (_Component) {
   (0, _inherits3.default)(Hero, _Component);
@@ -97,7 +96,7 @@ var Hero = function (_Component) {
       var colorIndex = this.props.colorIndex;
 
 
-      if (window.innerWidth < PALM_BREAKPOINT) {
+      if (window.innerWidth < _Responsive2.default.smallSize()) {
         this.setState({ colorIndex: 'light-1' });
       } else {
         this.setState({ colorIndex: colorIndex });
@@ -109,7 +108,7 @@ var Hero = function (_Component) {
       var justify = this.props.justify;
 
 
-      if (window.innerWidth < PALM_BREAKPOINT) {
+      if (window.innerWidth < _Responsive2.default.smallSize()) {
         this.setState({ reverse: false });
       } else {
         this.setState({ reverse: justify === 'start' ? true : false });
