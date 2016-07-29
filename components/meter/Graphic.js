@@ -129,8 +129,9 @@ var Graphic = function (_Component) {
         if (item.onClick) {
           classes.push(CLASS_ROOT + "__slice--clickable");
         }
-
-        classes.push(COLOR_INDEX + '-' + item.colorIndex);
+        if (item.colorIndex) {
+          classes.push(COLOR_INDEX + '-' + item.colorIndex);
+        }
 
         var commands = this._sliceCommands(trackIndex, item, startValue, maxValue);
 
@@ -266,7 +267,7 @@ var Graphic = function (_Component) {
       var min = _props3.min;
       var max = _props3.max;
 
-      var trackValue = { value: max.value, colorIndex: 'unset' };
+      var trackValue = { value: max.value };
       var tracks = void 0;
       if (this.props.stacked) {
         tracks = this._renderSlice(0, trackValue, 0, min.value, max.value, true, false);
