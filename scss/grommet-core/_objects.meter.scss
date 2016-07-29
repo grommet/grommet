@@ -46,6 +46,11 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
   stroke-width: $meter-slice-width;
 }
 
+.#{$grommet-namespace}meter__hot {
+  stroke-width: double($meter-slice-active-width);
+  stroke: rgba(0, 0, 0, 0.001);
+}
+
 .#{$grommet-namespace}meter__threshold {
   stroke: $threshold-color;
 }

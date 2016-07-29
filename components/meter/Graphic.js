@@ -117,7 +117,7 @@ var Graphic = function (_Component) {
     }
   }, {
     key: '_renderSlice',
-    value: function _renderSlice(trackIndex, item, itemIndex, startValue, maxValue, threshold) {
+    value: function _renderSlice(trackIndex, item, itemIndex, startValue, maxValue, track, threshold) {
       var path = void 0;
       if (!item.hidden) {
         var classes = [CLASS_ROOT + '__slice'];
@@ -135,6 +135,8 @@ var Graphic = function (_Component) {
         var commands = this._sliceCommands(trackIndex, item, startValue, maxValue);
 
         if (threshold) {
+          path = (0, _utils.buildPath)(itemIndex, commands, classes);
+        } else if (track) {
           path = (0, _utils.buildPath)(itemIndex, commands, classes, this.props.onActivate, item.onClick);
         } else {
           var a11yDescId = this.props.a11yDescId + '_' + itemIndex;
@@ -148,7 +150,7 @@ var Graphic = function (_Component) {
     }
   }, {
     key: '_renderSlices',
-    value: function _renderSlices(series, trackIndex, threshold) {
+    value: function _renderSlices(series, trackIndex, track, threshold) {
       var _this2 = this;
 
       var _props = this.props;
@@ -158,7 +160,7 @@ var Graphic = function (_Component) {
       var startValue = min.value;
 
       var paths = series.map(function (item, itemIndex) {
-        var path = _this2._renderSlice(trackIndex, item, itemIndex, startValue, max.value, threshold);
+        var path = _this2._renderSlice(trackIndex, item, itemIndex, startValue, max.value, track, threshold);
 
         startValue += Math.max(MIN_WIDTH * max.value, item.value);
 
@@ -267,10 +269,10 @@ var Graphic = function (_Component) {
       var trackValue = { value: max.value, colorIndex: 'unset' };
       var tracks = void 0;
       if (this.props.stacked) {
-        tracks = this._renderSlice(0, trackValue, 0, min.value, max.value, true);
+        tracks = this._renderSlice(0, trackValue, 0, min.value, max.value, true, false);
       } else {
         tracks = this.props.series.map(function (item, index) {
-          return _this4._renderSlice(index, trackValue, index, min.value, max.value, true);
+          return _this4._renderSlice(index, trackValue, index, min.value, max.value, true, false);
         });
       }
       return _react2.default.createElement(
@@ -283,7 +285,7 @@ var Graphic = function (_Component) {
     key: '_renderThresholds',
     value: function _renderThresholds() {
       var result = void 0;
-      var thresholds = this._renderSlices(this.props.thresholds, -0.4, true);
+      var thresholds = this._renderSlices(this.props.thresholds, -0.4, false, true);
       if (thresholds.length > 0) {
         result = _react2.default.createElement(
           'g',

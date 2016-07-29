@@ -108,7 +108,8 @@ exports.default = {
         (0, _extends3.default)({ key: itemIndex, ref: a11yDescId }, a11yRoles),
         titleComponent,
         _react2.default.createElement('path', { ref: activeSlice, className: classes.join(' '), d: commands,
-          onFocus: onOver, onBlur: onOut, 'data-index': itemIndex,
+          'data-index': itemIndex, onFocus: onOver, onBlur: onOut }),
+        _react2.default.createElement('path', { className: METER + '__hot', d: commands, fill: 'none',
           onMouseOver: onOver, onMouseOut: onOut,
           onClick: onClick })
       );
