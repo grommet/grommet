@@ -92,6 +92,50 @@ var Graph = function (_Component) {
         width: width || Math.floor(rect.width)
       });
     }
+
+    // Determines what the appropriate control coordinates are on
+    // either side of the coordinate at the specified index.
+    // This calculation is a simplified smoothing function that
+    // just looks at whether the line through this coordinate is
+    // ascending, descending or not. Peaks, valleys, and flats are
+    // treated the same.
+
+  }, {
+    key: '_controlCoordinates',
+    value: function _controlCoordinates(coordinates, index) {
+      var current = coordinates[index];
+      // Use previous and next coordinates when available, otherwise use
+      // the current coordinate for them.
+      var previous = current;
+      if (index > 0) {
+        previous = coordinates[index - 1];
+      }
+      var next = current;
+      if (index < coordinates.length - 1) {
+        next = coordinates[index + 1];
+      }
+
+      // Put the control X coordinates midway between the coordinates.
+      var deltaX = (current[0] - previous[0]) / 2;
+      var deltaY = void 0;
+
+      // Start with a flat slope. This works for peaks, valleys, and flats.
+      var first = [current[0] - deltaX, current[1]];
+      var second = [current[0] + deltaX, current[1]];
+
+      if (previous[1] < current[1] && current[1] < next[1]) {
+        // Ascending, use the minimum positive slope.
+        deltaY = Math.min((current[1] - previous[1]) / 2, (next[1] - current[1]) / 2);
+        first[1] = current[1] - deltaY;
+        second[1] = current[1] + deltaY;
+      } else if (previous[1] > current[1] && current[1] > next[1]) {
+        // Descending, use the minimum negative slope.
+        deltaY = Math.min((previous[1] - current[1]) / 2, (current[1] - next[1]) / 2);
+        first[1] = current[1] + deltaY;
+        second[1] = current[1] - deltaY;
+      }
+      return [first, second];
+    }
   }, {
     key: 'render',
     value: function render() {
@@ -103,6 +147,7 @@ var Graph = function (_Component) {
       var reverse = _props2.reverse;
       var max = _props2.max;
       var min = _props2.min;
+      var smooth = _props2.smooth;
       var values = _props2.values;
       var type = _props2.type;
       var activeIndex = _props2.activeIndex;
@@ -170,9 +215,32 @@ var Graph = function (_Component) {
         // Build the commands for this set of coordinates.
 
         if ('area' === type || 'line' === type) {
-          commands = 'M' + coordinates.map(function (c) {
-            return c.join(',');
-          }).join(' L');
+
+          if (smooth) {
+            (function () {
+              var controlCoordinates = coordinates.map(function (coord, index) {
+                return _this2._controlCoordinates(coordinates, index);
+              });
+              commands = '';
+              coordinates.forEach(function (coord, index) {
+                if (0 === index) {
+                  commands += 'M' + coord.join(',');
+                } else {
+                  // Use the previous right control coordinate and the current
+                  // left control coordinate. We do this because we calculate
+                  // the left and right sides for a particular index together,
+                  // so the path is smooth but the SVG C command needs the
+                  // right one from the previous index and the left one from
+                  // the current index.
+                  commands += ' C' + controlCoordinates[index - 1][1].join(',') + '\n                ' + controlCoordinates[index][0].join(',') + ' ' + coord.join(',');
+                }
+              });
+            })();
+          } else {
+            commands = 'M' + coordinates.map(function (c) {
+              return c.join(',');
+            }).join(' L');
+          }
 
           if ('area' === type) {
             if (vertical) {
@@ -233,6 +301,7 @@ Graph.propTypes = {
   min: _react.PropTypes.number.isRequired,
   points: _react.PropTypes.bool,
   reverse: _react.PropTypes.bool,
+  smooth: _react.PropTypes.bool,
   values: _react.PropTypes.arrayOf(_react.PropTypes.number).isRequired,
   type: _react.PropTypes.oneOf(['area', 'line', 'bar']).isRequired, // from extending component
   vertical: _react.PropTypes.bool,
