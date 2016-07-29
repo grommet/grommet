@@ -4,6 +4,18 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
+
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -27,6 +39,10 @@ var _inherits3 = _interopRequireDefault(_inherits2);
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
+
+var _classnames3 = require('classnames');
+
+var _classnames4 = _interopRequireDefault(_classnames3);
 
 var _moment = require('moment');
 
@@ -72,9 +88,8 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014 Hewlett Packard Enterprise Development LP
+var CLASS_ROOT = _CSSClassnames2.default.CALENDAR; // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
-var CLASS_ROOT = _CSSClassnames2.default.CALENDAR;
 var FORM_FIELD = _CSSClassnames2.default.FORM_FIELD;
 
 var Calendar = function (_Component) {
@@ -184,15 +199,20 @@ var Calendar = function (_Component) {
   }, {
     key: '_onNextDayOrMonth',
     value: function _onNextDayOrMonth(event) {
+      var _state = this.state;
+      var current = _state.current;
+      var reference = _state.reference;
+
+
       if (event.shiftKey) {
         this._onNext(event);
       } else {
         event.preventDefault();
         event.stopPropagation();
-        var nextDay = (0, _moment2.default)(this.state.current).add(1, 'days');
+        var nextDay = (0, _moment2.default)(current).add(1, 'days');
 
-        if (!nextDay.isSame(this.state.reference, 'month')) {
-          this.setState({ reference: this.state.reference.add(1, 'month'), current: nextDay });
+        if (!nextDay.isSame(reference, 'month')) {
+          this.setState({ reference: reference.add(1, 'month'), current: nextDay });
         } else {
           this.setState({ current: nextDay });
         }
@@ -201,14 +221,20 @@ var Calendar = function (_Component) {
   }, {
     key: '_onPreviousDayOrMonth',
     value: function _onPreviousDayOrMonth(event) {
+      var _state2 = this.state;
+      var current = _state2.current;
+      var reference = _state2.reference;
+
+
       if (event.shiftKey) {
         this._onPrevious(event);
       } else {
         event.preventDefault();
         event.stopPropagation();
-        var previousDay = (0, _moment2.default)(this.state.current).subtract(1, 'days');
-        if (!previousDay.isSame(this.state.reference, 'month')) {
-          this.setState({ reference: this.state.reference.subtract(1, 'month'), current: previousDay });
+        var previousDay = (0, _moment2.default)(current).subtract(1, 'days');
+
+        if (!previousDay.isSame(reference, 'month')) {
+          this.setState({ reference: reference.subtract(1, 'month'), current: previousDay });
         } else {
           this.setState({ current: previousDay });
         }
@@ -219,10 +245,14 @@ var Calendar = function (_Component) {
     value: function _onNextWeek(event) {
       event.preventDefault();
       event.stopPropagation();
-      var nextWeek = (0, _moment2.default)(this.state.current).add(1, 'week');
+      var _state3 = this.state;
+      var current = _state3.current;
+      var reference = _state3.reference;
 
-      if (!nextWeek.isSame(this.state.reference, 'month')) {
-        this.setState({ reference: this.state.reference.add(1, 'month'), current: nextWeek });
+      var nextWeek = (0, _moment2.default)(current).add(1, 'week');
+
+      if (!nextWeek.isSame(reference, 'month')) {
+        this.setState({ reference: reference.add(1, 'month'), current: nextWeek });
       } else {
         this.setState({ current: nextWeek });
       }
@@ -232,9 +262,14 @@ var Calendar = function (_Component) {
     value: function _onPreviousWeek(event) {
       event.preventDefault();
       event.stopPropagation();
-      var previousWeek = (0, _moment2.default)(this.state.current).subtract(1, 'week');
-      if (!previousWeek.isSame(this.state.reference, 'month')) {
-        this.setState({ reference: this.state.reference.subtract(1, 'month'), current: previousWeek });
+      var _state4 = this.state;
+      var current = _state4.current;
+      var reference = _state4.reference;
+
+      var previousWeek = (0, _moment2.default)(current).subtract(1, 'week');
+
+      if (!previousWeek.isSame(reference, 'month')) {
+        this.setState({ reference: reference.subtract(1, 'month'), current: previousWeek });
       } else {
         this.setState({ current: previousWeek });
       }
@@ -298,6 +333,10 @@ var Calendar = function (_Component) {
   }, {
     key: '_renderDrop',
     value: function _renderDrop() {
+      var _state5 = this.state;
+      var current = _state5.current;
+      var reference = _state5.reference;
+
       var weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
       var headerCells = weekDays.map(function (day) {
         return _react2.default.createElement(
@@ -307,7 +346,6 @@ var Calendar = function (_Component) {
         );
       });
 
-      var reference = this.state.reference;
       var start = (0, _moment2.default)(reference).startOf('month').startOf('week');
       var end = (0, _moment2.default)(reference).endOf('month').endOf('week');
       var date = (0, _moment2.default)(start);
@@ -316,19 +354,15 @@ var Calendar = function (_Component) {
       while (date.valueOf() <= end.valueOf()) {
         var days = [];
         for (var i = 0; i < 7; i += 1) {
-          var classes = [CLASS_ROOT + "__day"];
-          if (this.state.current && date.isSame(this.state.current)) {
-            classes.push(CLASS_ROOT + "__day--active");
-          }
-          if (!date.isSame(reference, 'month')) {
-            classes.push(CLASS_ROOT + "__day--other-month");
-          }
+          var _classnames;
+
+          var classes = (0, _classnames4.default)(CLASS_ROOT + '__day', (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__day--active', current && date.isSame(current)), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__day--other-month', !date.isSame(reference, 'month')), _classnames));
           days.push(_react2.default.createElement(
             'td',
             { key: date.valueOf() },
             _react2.default.createElement(
               'div',
-              { className: classes.join(' '),
+              { className: classes,
                 onClick: this._onClickDay.bind(this, (0, _moment2.default)(date)) },
               date.date()
             )
@@ -344,26 +378,32 @@ var Calendar = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        { id: CLASS_ROOT + "-drop", className: CLASS_ROOT + "__drop",
+        { id: CLASS_ROOT + '-drop', className: CLASS_ROOT + '__drop',
           onClick: this._onClose },
         _react2.default.createElement(
           _Header2.default,
           { justify: 'between' },
-          _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + "__previous", icon: _react2.default.createElement(_LinkPrevious2.default, { a11yTitle: 'calendar-previous-title',
+          _react2.default.createElement(_Button2.default, {
+            className: CLASS_ROOT + '__previous',
+            icon: _react2.default.createElement(_LinkPrevious2.default, { a11yTitle: 'calendar-previous-title',
               a11yTitleId: 'calendar-previous-title-id' }),
-            onClick: this._onPrevious }),
+            onClick: this._onPrevious
+          }),
           _react2.default.createElement(
             _Title2.default,
-            { className: CLASS_ROOT + "__title", responsive: false },
-            this.state.reference.format('MMMM YYYY')
+            { className: CLASS_ROOT + '__title', responsive: false },
+            reference.format('MMMM YYYY')
           ),
-          _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + "__next", icon: _react2.default.createElement(_LinkNext2.default, { a11yTitle: 'calendar-next-title',
+          _react2.default.createElement(_Button2.default, {
+            className: CLASS_ROOT + '__next',
+            icon: _react2.default.createElement(_LinkNext2.default, { a11yTitle: 'calendar-next-title',
               a11yTitleId: 'calendar-next-title-id' }),
-            onClick: this._onNext })
+            onClick: this._onNext
+          })
         ),
         _react2.default.createElement(
           'div',
-          { className: CLASS_ROOT + "__grid" },
+          { className: CLASS_ROOT + '__grid' },
           _react2.default.createElement(
             'table',
             null,
@@ -388,25 +428,36 @@ var Calendar = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var classes = [CLASS_ROOT];
-      if (this.state.dropActive) {
-        classes.push(CLASS_ROOT + "--active");
-      }
-      if (this.props.className) {
-        classes.push(this.props.className);
-      }
+      var _props = this.props;
+      var className = _props.className;
+      var id = _props.id;
+      var name = _props.name;
+      var value = _props.value;
+      var onChange = _props.onChange;
+      var props = (0, _objectWithoutProperties3.default)(_props, ['className', 'id', 'name', 'value', 'onChange']);
+
+
+      var classes = (0, _classnames4.default)(CLASS_ROOT, className, (0, _defineProperty3.default)({}, CLASS_ROOT + '--active', this.state.dropActive));
 
       return _react2.default.createElement(
         'div',
-        { ref: 'component', className: classes.join(' ') },
-        _react2.default.createElement('input', { className: CLASS_ROOT + "__input",
-          id: this.props.id, ref: 'calendarInput', name: this.props.name,
-          value: this.props.value,
-          onChange: this._onInputChange }),
-        _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + "__control", icon: _react2.default.createElement(_Calendar2.default, {
+        { ref: 'component', className: classes },
+        _react2.default.createElement('input', (0, _extends3.default)({
+          className: CLASS_ROOT + '__input',
+          id: id,
+          ref: 'calendarInput',
+          name: name,
+          value: value,
+          onChange: this._onInputChange
+        }, props)),
+        _react2.default.createElement(_Button2.default, {
+          className: CLASS_ROOT + '__control',
+          icon: _react2.default.createElement(_Calendar2.default, {
             a11yTitle: 'calendar-icon-title',
-            a11yTitleId: 'calendar-icon-title-id' }),
-          onClick: this._onOpen })
+            a11yTitleId: 'calendar-icon-title-id'
+          }),
+          onClick: this._onOpen
+        })
       );
     }
   }]);
