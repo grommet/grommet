@@ -83,12 +83,14 @@ export default class Meter extends Component {
   }
 
   _onActivate (index) {
+    const { onActive } = this.props;
+    const { importantIndex } = this.state;
     if (index === undefined) {
-      index = this.state.importantIndex;
+      index = importantIndex;
     }
     this.setState({initial: false, activeIndex: index});
-    if (this.props.onActive) {
-      this.props.onActive(index);
+    if (onActive) {
+      onActive(index);
     }
   }
 
@@ -99,9 +101,10 @@ export default class Meter extends Component {
   }
 
   _layout () {
-    if (this.state.placeLegend) {
+    const { placeLegend, legendPlacement } = this.state;
+    if (placeLegend) {
       // legendPlacement based on available window orientation
-      let ratio = window.innerWidth / window.innerHeight;
+      const ratio = window.innerWidth / window.innerHeight;
       if (ratio < 0.8) {
         this.setState({legendPlacement: 'bottom'});
       } else if (ratio > 1.2) {
@@ -109,10 +112,10 @@ export default class Meter extends Component {
       }
     }
 
-    if ('right' === this.state.legendPlacement) {
+    if ('right' === legendPlacement) {
       if (this.refs.legend) {
-        let graphicHeight = this.refs.activeGraphic.offsetHeight;
-        let legendHeight = ReactDOM.findDOMNode(this.refs.legend).offsetHeight;
+        const graphicHeight = this.refs.activeGraphic.offsetHeight;
+        const legendHeight = ReactDOM.findDOMNode(this.refs.legend).offsetHeight;
         this.setState({tallLegend: (legendHeight > graphicHeight)});
       }
     }
@@ -130,7 +133,7 @@ export default class Meter extends Component {
 
     // set color index
     if (series.length === 1 && props.thresholds) {
-      let item = series[0];
+      const item = series[0];
       if (! item.colorIndex) {
         // see which threshold color index to use
         let cumulative = 0;
@@ -162,7 +165,7 @@ export default class Meter extends Component {
       let priorValue = min.value;
       thresholds.push({ hidden: true });
       for (let i = 0; i < props.thresholds.length; i += 1) {
-        let threshold = props.thresholds[i];
+        const threshold = props.thresholds[i];
         // The value for the prior threshold ends at the beginning of this
         // threshold. Series drawing code expects the end value.
         thresholds[i].value = threshold.value - priorValue;
@@ -249,18 +252,18 @@ export default class Meter extends Component {
       seriesMax = this._seriesMax(props.series);
     }
     // Normalize min and max
-    let min = this._terminal(props.min || 0);
+    const min = this._terminal(props.min || 0);
     // Max could be provided in props or come from the total of
     // a multi-value series.
-    let max = this._terminal(props.max ||
+    const max = this._terminal(props.max ||
       (props.stacked ? Math.max(seriesMax, total || 0, 100) :
         (seriesMax || Math.max(total || 0, 100))));
     // Normalize simple threshold prop to an array, if needed.
-    let thresholds = this._normalizeThresholds(props, min, max);
+    const thresholds = this._normalizeThresholds(props, min, max);
     // Normalize simple value prop to a series, if needed.
-    let series = this._normalizeSeries(props, min, max, thresholds);
+    const series = this._normalizeSeries(props, min, max, thresholds);
     // Determine important index.
-    let importantIndex = this._importantIndex(props, series);
+    const importantIndex = this._importantIndex(props, series);
 
     let state = {
       importantIndex: importantIndex,
@@ -289,18 +292,19 @@ export default class Meter extends Component {
   }
 
   _getActiveFields () {
+    const { activeIndex, total, series } = this.state;
     let fields;
-    if (undefined === this.state.activeIndex) {
+    if (undefined === activeIndex) {
       fields = {
-        value: this.state.total
+        value: total
       };
-      if (this.state.series.length > 1) {
+      if (series.length > 1) {
         fields.label = Intl.getMessage(this.context.intl, 'Total');
       }
     } else {
-      let active = this.state.series[this.state.activeIndex];
+      let active = series[activeIndex];
       if (!active) {
-        active = this.state.series[0];
+        active = series[0];
       }
       fields = {
         value: active.value,
@@ -342,19 +346,20 @@ export default class Meter extends Component {
   }
 
   _renderMinMax (classes) {
+    const { min, max } = this.state;
     let minLabel;
-    if (this.state.min.label) {
+    if (min.label) {
       minLabel = (
         <div className={`${CLASS_ROOT}__minmax-min`}>
-          {this.state.min.label}
+          {min.label}
         </div>
       );
     }
     let maxLabel;
-    if (this.state.max.label) {
+    if (max.label) {
       maxLabel = (
         <div className={`${CLASS_ROOT}__minmax-max`}>
-          {this.state.max.label}
+          {max.label}
         </div>
       );
     }
@@ -374,46 +379,46 @@ export default class Meter extends Component {
   }
 
   _renderLegend () {
-    let total = (typeof this.props.legend === 'object' && this.props.legend.total);
+    const { legend, units } = this.props;
+    const { activeIndex, series } = this.state;
+    const total = (typeof legend === 'object' && legend.total);
     return (
       <Legend ref="legend" className={`${CLASS_ROOT}__legend`}
-        series={this.state.series}
-        units={this.props.units}
-        total={total}
-        activeIndex={this.state.activeIndex}
-        onActive={this._onActivate} />
+        series={series} units={units} total={total}
+        activeIndex={activeIndex} onActive={this._onActivate} />
     );
   }
 
   render () {
+    const { active, label, legend, size, stacked, type, vertical } = this.props;
+    const { legendPlacement, limitMeterSize, tallLegend, series } = this.state;
     let classes = [CLASS_ROOT];
-    classes.push(`${CLASS_ROOT}--${this.props.type}`);
-    if (this.props.vertical) {
+    classes.push(`${CLASS_ROOT}--${type}`);
+    if (vertical) {
       classes.push(`${CLASS_ROOT}--vertical`);
     }
-    if (this.props.stacked) {
+    if (stacked) {
       classes.push(`${CLASS_ROOT}--stacked`);
     }
-    if (this.props.size) {
-      let responsiveSize = this.props.size;
+    if (size) {
+      let responsiveSize = size;
       // shrink Meter to medium size if large and up
-      if (this.state.limitMeterSize &&
-        (this.props.size === 'large' || this.props.size === 'xlarge')) {
+      if (limitMeterSize && (size === 'large' || size === 'xlarge')) {
         responsiveSize = 'medium';
       }
       classes.push(`${CLASS_ROOT}--${responsiveSize}`);
     }
-    if (this.state.series.length === 0) {
+    if (series.length === 0) {
       classes.push(`${CLASS_ROOT}--loading`);
-    } else if (this.state.series.length === 1) {
+    } else if (series.length === 1) {
       classes.push(`${CLASS_ROOT}--single`);
     } else {
-      classes.push(`${CLASS_ROOT}--count-${this.state.series.length}`);
+      classes.push(`${CLASS_ROOT}--count-${series.length}`);
     }
-    if (this.props.active) {
+    if (active) {
       classes.push(`${CLASS_ROOT}--active`);
     }
-    if (this.state.tallLegend) {
+    if (tallLegend) {
       classes.push(`${CLASS_ROOT}--tall-legend`);
     }
     if (this.props.className) {
@@ -423,29 +428,35 @@ export default class Meter extends Component {
     const restProps = Props.omit(this.props, Object.keys(Meter.propTypes));
 
     let minMax = this._renderMinMax(classes);
-    let activeValue;
-    if (this.props.label && this.state.series.length > 0) {
-      activeValue = this._renderActiveValue();
+    let labelElement;
+    if (label && true !== label) {
+      labelElement = (
+        <div className={`${CLASS_ROOT}__label`}>
+          {label}
+        </div>
+      );
+    } else if (label && series.length > 0) {
+      labelElement = this._renderActiveValue();
     }
-    let legend;
+    let legendElement;
     let a11yRole;
 
-    if (this.props.legend || this.props.series) {
+    if (legend || series) {
       a11yRole = 'tablist';
 
-      if (this.props.legend) {
-        if ('inline' !== this.props.legend.placement) {
-          legend = this._renderLegend();
+      if (legend) {
+        if ('inline' !== legend.placement) {
+          legendElement = this._renderLegend();
         } else {
           // Hide value (displaying total), if legend is inline
           // and total is set to false
-          if (!(this.props.legend.total)) {
-            activeValue = undefined;
+          if (!(legend.total) && true === label) {
+            labelElement = undefined;
           }
         }
-        classes.push(`${CLASS_ROOT}--legend-${this.state.legendPlacement}`);
-        if (this.props.legend.align) {
-          classes.push(`${CLASS_ROOT}--legend-align-${this.props.legend.align}`);
+        classes.push(`${CLASS_ROOT}--legend-${legendPlacement}`);
+        if (legend.align) {
+          classes.push(`${CLASS_ROOT}--legend-align-${legend.align}`);
         }
       }
     }
@@ -460,14 +471,14 @@ export default class Meter extends Component {
         a11yRole={a11yRole}
         activeIndex={this.state.activeIndex}
         min={this.state.min} max={this.state.max}
-        legend={this.props.legend}
+        legend={legend}
         onActivate={this._onActivate}
-        series={this.state.series}
-        stacked={this.props.stacked}
+        series={series}
+        stacked={stacked}
         thresholds={this.state.thresholds}
         total={this.state.total}
         units={this.props.units}
-        vertical={this.props.vertical} />
+        vertical={vertical} />
     );
 
     const graphicContainer = (
@@ -481,9 +492,9 @@ export default class Meter extends Component {
       <div className={classes.join(' ')}>
         <div ref="activeGraphic" className={`${CLASS_ROOT}__value-container`}>
           {graphicContainer}
-          {activeValue}
+          {labelElement}
         </div>
-        {legend}
+        {legendElement}
       </div>
     );
   }
@@ -499,7 +510,7 @@ Meter.propTypes = {
   a11yDesc: PropTypes.string,
   // deprecated in favor of activeIndex?
   important: PropTypes.number,
-  label: PropTypes.bool,
+  label: PropTypes.oneOfType([PropTypes.bool, PropTypes.node]),
   // deprecated, caller can use Legend as needed
   legend: PropTypes.oneOfType([
     PropTypes.bool,

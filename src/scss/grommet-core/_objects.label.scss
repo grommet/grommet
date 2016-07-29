@@ -1,11 +1,19 @@
 .#{$grommet-namespace}label {
   @include inuit-font-size($control-font-size);
-
-  &--uppercase {
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-  }
-
   @include text-align();
   @include margin();
+}
+
+.#{$grommet-namespace}label--uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.#{$grommet-namespace}label--small {
+  @include inuit-font-size($label-font-size);
+  color: $secondary-text-color;
+
+  #{$dark-background-context} & {
+    color: $inactive-colored-text-color;
+  }
 }

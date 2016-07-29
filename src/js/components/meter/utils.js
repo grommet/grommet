@@ -94,7 +94,8 @@ export default {
         <g key={itemIndex} ref={a11yDescId} {...a11yRoles}>
           {titleComponent}
           <path ref={activeSlice} className={classes.join(' ')} d={commands}
-            onFocus={onOver} onBlur={onOut} data-index={itemIndex}
+            data-index={itemIndex} onFocus={onOver} onBlur={onOut} />
+          <path className={`${METER}__hot`} d={commands} fill="none"
             onMouseOver={onOver} onMouseOut={onOut}
             onClick={onClick} />
         </g>
