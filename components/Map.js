@@ -89,37 +89,41 @@ var ResourceMap = function (_Component) {
   }, {
     key: '_draw',
     value: function _draw() {
+      var _this2 = this;
+
       var canvasElement = this.refs.canvas;
       var highlightCanvasElement = this.refs.highlightCanvas;
       // don't draw if we don't have a canvas to draw on, such as a unit test
       if (canvasElement.getContext) {
-        var context = canvasElement.getContext('2d');
-        var highlightContext = highlightCanvasElement.getContext('2d');
-        var canvasRect = canvasElement.getBoundingClientRect();
-        context.clearRect(0, 0, canvasRect.width, canvasRect.height);
-        highlightContext.clearRect(0, 0, canvasRect.width, canvasRect.height);
+        (function () {
+          var context = canvasElement.getContext('2d');
+          var highlightContext = highlightCanvasElement.getContext('2d');
+          var canvasRect = canvasElement.getBoundingClientRect();
+          context.clearRect(0, 0, canvasRect.width, canvasRect.height);
+          highlightContext.clearRect(0, 0, canvasRect.width, canvasRect.height);
 
-        context.strokeStyle = '#000000';
-        context.lineWidth = 1;
-        highlightContext.strokeStyle = '#000000';
-        highlightContext.lineWidth = 2;
+          context.strokeStyle = '#000000';
+          context.lineWidth = 1;
+          highlightContext.strokeStyle = '#000000';
+          highlightContext.lineWidth = 2;
 
-        this.props.data.links.forEach(function (link) {
-          var parentCoords = this._coords(link.parentId, canvasRect);
-          var childCoords = this._coords(link.childId, canvasRect);
+          _this2.props.data.links.forEach(function (link) {
+            var parentCoords = _this2._coords(link.parentId, canvasRect);
+            var childCoords = _this2._coords(link.childId, canvasRect);
 
-          if (this.state.activeId === link.parentId || this.state.activeId === link.childId) {
-            highlightContext.beginPath();
-            highlightContext.moveTo(parentCoords[0], parentCoords[1]);
-            highlightContext.lineTo(childCoords[0], childCoords[1]);
-            highlightContext.stroke();
-          } else {
-            context.beginPath();
-            context.moveTo(parentCoords[0], parentCoords[1]);
-            context.lineTo(childCoords[0], childCoords[1]);
-            context.stroke();
-          }
-        }, this);
+            if (_this2.state.activeId === link.parentId || _this2.state.activeId === link.childId) {
+              highlightContext.beginPath();
+              highlightContext.moveTo(parentCoords[0], parentCoords[1]);
+              highlightContext.lineTo(childCoords[0], childCoords[1]);
+              highlightContext.stroke();
+            } else {
+              context.beginPath();
+              context.moveTo(parentCoords[0], parentCoords[1]);
+              context.lineTo(childCoords[0], childCoords[1]);
+              context.stroke();
+            }
+          });
+        })();
       }
     }
   }, {
@@ -153,67 +157,81 @@ var ResourceMap = function (_Component) {
   }, {
     key: '_renderItems',
     value: function _renderItems(items) {
+      var _this3 = this;
+
       return items.map(function (item, index) {
-        var classes = [CLASS_ROOT + "__item"];
-        var active = this.state.activeId === item.id || this.props.data.links.some(function (link) {
-          return (link.parentId === item.id || link.childId === item.id) && (link.parentId === this.state.activeId || link.childId === this.state.activeId);
-        }, this);
+        var classes = [CLASS_ROOT + '__item'];
+        var active = _this3.state.activeId === item.id || _this3.props.data.links.some(function (link) {
+          return (link.parentId === item.id || link.childId === item.id) && (link.parentId === _this3.state.activeId || link.childId === _this3.state.activeId);
+        });
         if (active) {
-          classes.push(CLASS_ROOT + "__item--active");
+          classes.push(CLASS_ROOT + '__item--active');
         }
         return _react2.default.createElement(
           'li',
           { key: index, id: item.id, className: classes.join(' '),
-            onMouseEnter: this._onEnter.bind(this, item.id),
-            onMouseLeave: this._onLeave.bind(this, item.id) },
+            onMouseEnter: _this3._onEnter.bind(_this3, item.id),
+            onMouseLeave: _this3._onLeave.bind(_this3, item.id) },
           item.node
         );
-      }, this);
+      });
     }
   }, {
     key: '_renderCategories',
     value: function _renderCategories(categories) {
-      var result = categories.map(function (category) {
+      var _this4 = this;
+
+      return categories.map(function (category) {
         return _react2.default.createElement(
           'li',
-          { key: category.id, className: CLASS_ROOT + "__category" },
-          _react2.default.createElement(
-            'ul',
-            { className: CLASS_ROOT + "__category-items" },
-            this._renderItems(category.items)
-          ),
+          { key: category.id, className: CLASS_ROOT + '__category' },
           _react2.default.createElement(
             'div',
-            { className: CLASS_ROOT + "__category-label" },
+            { className: CLASS_ROOT + '__category-label' },
             category.label
+          ),
+          _react2.default.createElement(
+            'ul',
+            { className: CLASS_ROOT + '__category-items' },
+            _this4._renderItems(category.items)
           )
         );
-      }, this);
-      return result;
+      });
     }
   }, {
     key: 'render',
     value: function render() {
-      var classes = [CLASS_ROOT];
+      var _props = this.props;
+      var data = _props.data;
+      var vertical = _props.vertical;
+      var _state = this.state;
+      var canvasHeight = _state.canvasHeight;
+      var canvasWidth = _state.canvasWidth;
+
+      var className = [CLASS_ROOT];
+      if (vertical) {
+        className.push(CLASS_ROOT + '--vertical');
+      }
       if (this.props.className) {
-        classes.push(this.props.className);
+        className.push(this.props.className);
       }
 
-      var categories = [];
-      if (this.props.data.categories) {
-        categories = this._renderCategories(this.props.data.categories);
+      var categories = void 0;
+      if (data.categories) {
+        categories = this._renderCategories(data.categories);
       }
 
       return _react2.default.createElement(
         'div',
-        { ref: 'map', className: classes.join(' ') },
-        _react2.default.createElement('canvas', { ref: 'canvas', className: CLASS_ROOT + "__canvas",
-          width: this.state.canvasWidth, height: this.state.canvasHeight }),
-        _react2.default.createElement('canvas', { ref: 'highlightCanvas', className: CLASS_ROOT + "__canvas " + CLASS_ROOT + "__canvas--highlight",
-          width: this.state.canvasWidth, height: this.state.canvasHeight }),
+        { ref: 'map', className: className.join(' ') },
+        _react2.default.createElement('canvas', { ref: 'canvas', className: CLASS_ROOT + '__canvas',
+          width: canvasWidth, height: canvasHeight }),
+        _react2.default.createElement('canvas', { ref: 'highlightCanvas',
+          className: CLASS_ROOT + '__canvas ' + CLASS_ROOT + '__canvas--highlight',
+          width: canvasWidth, height: canvasHeight }),
         _react2.default.createElement(
           'ol',
-          { className: CLASS_ROOT + "__categories" },
+          { className: CLASS_ROOT + '__categories' },
           categories
         )
       );
@@ -240,6 +258,7 @@ ResourceMap.propTypes = {
       parentId: _react.PropTypes.string,
       childId: _react.PropTypes.string
     }))
-  }).isRequired
+  }).isRequired,
+  vertical: _react.PropTypes.bool
 };
 module.exports = exports['default'];
