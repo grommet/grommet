@@ -106,7 +106,7 @@ var Part = function (_Component2) {
 
       var status;
       if (this.props.status) {
-        status = _react2.default.createElement(_Status2.default, { value: this.props.status, small: true });
+        status = _react2.default.createElement(_Status2.default, { value: this.props.status, size: 'small' });
       }
       var label;
       if (this.props.label) {
