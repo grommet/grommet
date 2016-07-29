@@ -16,10 +16,7 @@ export default class ResourceMap extends Component {
     this._onEnter = this._onEnter.bind(this);
     this._onLeave = this._onLeave.bind(this);
 
-    this.state = {
-      canvasWidth: 100,
-      canvasHeight: 100
-    };
+    this.state = { canvasHeight: 100, canvasWidth: 100 };
   }
 
   componentDidMount () {
@@ -42,44 +39,71 @@ export default class ResourceMap extends Component {
   _coords (id, canvasRect) {
     const element = document.getElementById(id);
     const rect = element.getBoundingClientRect();
-    return [
-      rect.left - canvasRect.left + (rect.width / 2),
-      rect.top - canvasRect.top + (rect.height / 2)
-    ];
+    const left = rect.left - canvasRect.left;
+    const top = rect.top - canvasRect.top;
+    const midX = left + (rect.width / 2);
+    const midY = top + (rect.height / 2);
+    return {
+      top: [midX, top],
+      bottom: [midX, top + rect.height],
+      left: [left, midY],
+      right: [left + rect.width, midY]
+    };
   }
 
   _draw () {
+    const { vertical } = this.props;
     const canvasElement = this.refs.canvas;
     const highlightCanvasElement = this.refs.highlightCanvas;
     // don't draw if we don't have a canvas to draw on, such as a unit test
     if (canvasElement.getContext) {
-      const context = canvasElement.getContext('2d');
+      const baseContext = canvasElement.getContext('2d');
       const highlightContext = highlightCanvasElement.getContext('2d');
       const canvasRect = canvasElement.getBoundingClientRect();
-      context.clearRect(0, 0, canvasRect.width, canvasRect.height);
+      baseContext.clearRect(0, 0, canvasRect.width, canvasRect.height);
       highlightContext.clearRect(0, 0, canvasRect.width, canvasRect.height);
 
-      context.strokeStyle = '#000000';
-      context.lineWidth = 1;
+      baseContext.strokeStyle = '#000000';
+      baseContext.lineWidth = 1;
       highlightContext.strokeStyle = '#000000';
       highlightContext.lineWidth = 2;
 
       this.props.data.links.forEach(link => {
         const parentCoords = this._coords(link.parentId, canvasRect);
         const childCoords = this._coords(link.childId, canvasRect);
+        const context = (this.state.activeId === link.parentId ||
+          this.state.activeId === link.childId) ? highlightContext : baseContext;
 
-        if (this.state.activeId === link.parentId ||
-          this.state.activeId === link.childId) {
-          highlightContext.beginPath();
-          highlightContext.moveTo(parentCoords[0], parentCoords[1]);
-          highlightContext.lineTo(childCoords[0], childCoords[1]);
-          highlightContext.stroke();
+        context.beginPath();
+        let p1, p2;
+        if (vertical) {
+          if (parentCoords.right[0] < childCoords.left[0]) {
+            p1 = parentCoords.right;
+            p2 = childCoords.left;
+          } else {
+            p1 = parentCoords.left;
+            p2 = childCoords.right;
+          }
         } else {
-          context.beginPath();
-          context.moveTo(parentCoords[0], parentCoords[1]);
-          context.lineTo(childCoords[0], childCoords[1]);
-          context.stroke();
+          if (parentCoords.bottom[1] < childCoords.top[1]) {
+            p1 = parentCoords.bottom;
+            p2 = childCoords.top;
+          } else {
+            p1 = parentCoords.top;
+            p2 = childCoords.bottom;
+          }
         }
+        context.moveTo(p1[0], p1[1]);
+        const midX = p1[0] + ((p2[0] - p1[0]) / 2);
+        const midY = p1[1] + ((p2[1] - p1[1]) / 2);
+        if (vertical) {
+          context.quadraticCurveTo(midX + ((p1[0] - midX) / 2), p1[1], midX, midY);
+          context.quadraticCurveTo(midX - ((p1[0] - midX) / 2), p2[1], p2[0], p2[1]);
+        } else {
+          context.quadraticCurveTo(p1[0], midY + ((p1[1] - midY) / 2), midX, midY);
+          context.quadraticCurveTo(p2[0], midY - ((p1[1] - midY) / 2), p2[0], p2[1]);
+        }
+        context.stroke();
       });
     }
   }
