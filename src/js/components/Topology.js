@@ -43,7 +43,7 @@ class Part extends Component {
 
     var status;
     if (this.props.status) {
-      status = <Status value={this.props.status} small={true} />;
+      status = <Status value={this.props.status} size="small" />;
     }
     var label;
     if (this.props.label) {
