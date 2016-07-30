@@ -63,7 +63,8 @@ export default class Legend extends Component {
       var swatch;
       if (item.hasOwnProperty('colorIndex')) {
         swatch = (
-          <svg className={`${CLASS_ROOT}__item-swatch ${COLOR_INDEX}-${colorIndex}`}
+          <svg
+            className={`${CLASS_ROOT}__item-swatch ${COLOR_INDEX}-${colorIndex}`}
             viewBox="0 0 12 12">
             <path className={item.className} d="M 5 0 l 0 12" />
           </svg>
@@ -99,7 +100,8 @@ export default class Legend extends Component {
               </span>
             );
           }
-          if (unitsValue.suffix || (typeof unitsValue === 'string' || unitsValue instanceof String)) {
+          if (unitsValue.suffix ||
+            (typeof unitsValue === 'string' || unitsValue instanceof String)) {
             unitsSuffix = (
               <span className={CLASS_ROOT + "__item-units"}>
                 {unitsValue.suffix || unitsValue}
@@ -138,12 +140,17 @@ export default class Legend extends Component {
       var unitsPrefix;
       var unitsSuffix;
 
-      if (this.props.units.prefix) {
+      if (this.props.units && this.props.units.prefix) {
         unitsPrefix = (
-          <span className={CLASS_ROOT + "__total-units"}>{this.props.units.prefix}</span>
+          <span className={CLASS_ROOT + "__total-units"}>
+            {this.props.units.prefix}
+          </span>
         );
       }
-      if (this.props.units.suffix || (typeof this.props.units === 'string' || this.props.units instanceof String)) {
+      if (this.props.units &&
+        (this.props.units.suffix ||
+          (typeof this.props.units === 'string' ||
+          this.props.units instanceof String))) {
         unitsSuffix = (
           <span className={CLASS_ROOT + "__total-units"}>
             {this.props.units.suffix || this.props.units}
