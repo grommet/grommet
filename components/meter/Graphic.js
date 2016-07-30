@@ -36,8 +36,6 @@ var _reactDom = require('react-dom');
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _utils = require('./utils');
-
 var _Intl = require('../../utils/Intl');
 
 var _Intl2 = _interopRequireDefault(_Intl);
@@ -50,13 +48,15 @@ var _CSSClassnames = require('../../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
+var _utils = require('./utils');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
+var CLASS_ROOT = _CSSClassnames2.default.METER;
 var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
 
-var CLASS_ROOT = _utils.classRoot;
 var MIN_WIDTH = 0.033;
 
 var Graphic = function (_Component) {

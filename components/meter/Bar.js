@@ -28,6 +28,8 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _Graphics = require('../../utils/Graphics');
+
 var _utils = require('./utils');
 
 var _Graphic2 = require('./Graphic');
@@ -36,9 +38,10 @@ var _Graphic3 = _interopRequireDefault(_Graphic2);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var BAR_LENGTH = _utils.baseDimension; // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var BAR_THICKNESS = _utils.baseUnit;
+var BAR_LENGTH = _utils.baseDimension;
+var BAR_THICKNESS = _Graphics.baseUnit;
 var MID_BAR_THICKNESS = BAR_THICKNESS / 2;
 
 var Bar = function (_Graphic) {

@@ -78,6 +78,7 @@ exports.default = {
   SPLIT: namespace + 'split',
   SPINNING: namespace + 'icon-spinning',
   STATUS_ICON: namespace + 'status-icon',
+  SUN_BURST: namespace + 'sun-burst',
   TAB: namespace + 'tab',
   TABLE: namespace + 'table',
   TABLE_ROW: namespace + 'table-row',

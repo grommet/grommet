@@ -28,6 +28,12 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _Graphics = require('../../utils/Graphics');
+
+var _CSSClassnames = require('../../utils/CSSClassnames');
+
+var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
+
 var _utils = require('./utils');
 
 var _Graphic2 = require('./Graphic');
@@ -36,11 +42,11 @@ var _Graphic3 = _interopRequireDefault(_Graphic2);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _utils.classRoot; // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+var CLASS_ROOT = _CSSClassnames2.default.METER; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var SPIRAL_WIDTH = _utils.baseDimension;
-var SPIRAL_RADIUS = _utils.baseDimension / 2 - _utils.baseUnit / 2;
-var RING_THICKNESS = _utils.baseUnit;
+var SPIRAL_RADIUS = _utils.baseDimension / 2 - _Graphics.baseUnit / 2;
+var RING_THICKNESS = _Graphics.baseUnit;
 // Allow for active value content next to a spiral meter
 
 var Spiral = function (_Graphic) {
@@ -78,10 +84,10 @@ var Spiral = function (_Graphic) {
   }, {
     key: '_sliceCommands',
     value: function _sliceCommands(trackIndex, item, startValue) {
-      var startAngle = (0, _utils.translateEndAngle)(this.state.startAngle, this.state.anglePer, startValue);
-      var endAngle = (0, _utils.translateEndAngle)(startAngle, this.state.anglePer, item.value);
+      var startAngle = (0, _Graphics.translateEndAngle)(this.state.startAngle, this.state.anglePer, startValue);
+      var endAngle = (0, _Graphics.translateEndAngle)(startAngle, this.state.anglePer, item.value);
       var radius = Math.min(SPIRAL_RADIUS, this.state.startRadius + trackIndex * RING_THICKNESS);
-      return (0, _utils.arcCommands)(SPIRAL_WIDTH / 2, SPIRAL_WIDTH / 2, radius, startAngle + this.state.angleOffset, endAngle + this.state.angleOffset);
+      return (0, _Graphics.arcCommands)(SPIRAL_WIDTH / 2, SPIRAL_WIDTH / 2, radius, startAngle + this.state.angleOffset, endAngle + this.state.angleOffset);
     }
   }, {
     key: '_renderThresholds',

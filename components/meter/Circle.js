@@ -30,13 +30,14 @@ var _Graphic2 = require('./Graphic');
 
 var _Graphic3 = _interopRequireDefault(_Graphic2);
 
+var _Graphics = require('../../utils/Graphics');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+var CIRCLE_WIDTH = _utils.baseDimension; // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var CIRCLE_WIDTH = _utils.baseDimension;
-var CIRCLE_RADIUS = _utils.baseDimension / 2 - _utils.baseUnit / 2;
-var RING_THICKNESS = _utils.baseUnit;
+var CIRCLE_RADIUS = _utils.baseDimension / 2 - _Graphics.baseUnit / 2;
+var RING_THICKNESS = _Graphics.baseUnit;
 
 var Circle = function (_Graphic) {
   (0, _inherits3.default)(Circle, _Graphic);
@@ -72,7 +73,7 @@ var Circle = function (_Graphic) {
   }, {
     key: '_sliceCommands',
     value: function _sliceCommands(trackIndex, item, startValue, maxValue) {
-      var startAngle = (0, _utils.translateEndAngle)(this.state.startAngle, this.state.anglePer, startValue);
+      var startAngle = (0, _Graphics.translateEndAngle)(this.state.startAngle, this.state.anglePer, startValue);
 
       var endAngle;
       if (!item.value) {
@@ -80,11 +81,11 @@ var Circle = function (_Graphic) {
       } else if (startValue + item.value >= maxValue) {
         endAngle = 360;
       } else {
-        endAngle = Math.min(360 - RING_THICKNESS / 2, Math.max(startAngle + RING_THICKNESS / 2, (0, _utils.translateEndAngle)(startAngle, this.state.anglePer, item.value)));
+        endAngle = Math.min(360 - RING_THICKNESS / 2, Math.max(startAngle + RING_THICKNESS / 2, (0, _Graphics.translateEndAngle)(startAngle, this.state.anglePer, item.value)));
       }
 
       var radius = Math.max(1, CIRCLE_RADIUS - trackIndex * RING_THICKNESS);
-      return (0, _utils.arcCommands)(CIRCLE_WIDTH / 2, CIRCLE_WIDTH / 2, radius, startAngle + this.state.angleOffset, endAngle + this.state.angleOffset);
+      return (0, _Graphics.arcCommands)(CIRCLE_WIDTH / 2, CIRCLE_WIDTH / 2, radius, startAngle + this.state.angleOffset, endAngle + this.state.angleOffset);
     }
   }]);
   return Circle;

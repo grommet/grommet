@@ -1,0 +1,85 @@
+// (C) Copyright 2016 Hewlett Packard Enterprise Development LP
+
+$sun-burst-slice-width: round($inuit-base-spacing-unit);
+$sun-burst-small-slice-width: round($inuit-base-spacing-unit / 2);
+$sun-burst-large-slice-width: round($inuit-base-spacing-unit * 1.5);
+$sun-burst-xlarge-slice-width: round($inuit-base-spacing-unit * 3);
+
+@include keyframes(fade-in) {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@include keyframes(draw-arc) {
+  0% {
+    stroke-dashoffset: - $graphic-size;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.#{$grommet-namespace}sun-burst {
+  width: $graphic-size;
+  max-width: 100%;
+  @include animation('fade-in 2.5s');
+}
+
+.#{$grommet-namespace}sun-burst__container {
+  position: relative;
+}
+
+.#{$grommet-namespace}sun-burst__label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.#{$grommet-namespace}sun-burst__slice {
+  stroke-linecap: butt;
+  stroke-dasharray: quadruple($graphic-size) quadruple($graphic-size);
+  stroke-dashoffset: 0;
+  stroke: $meter-background-color;
+  @include graph-stroke-color();
+  @include animation('draw-arc 1.5s linear');
+  transition: opacity $base-animation-duration;
+}
+
+.#{$grommet-namespace}sun-burst__slice--hot {
+  cursor: pointer;
+}
+
+.#{$grommet-namespace}sun-burst--active {
+  .#{$grommet-namespace}sun-burst__slice {
+    opacity: 0.7;
+  }
+
+  .#{$grommet-namespace}sun-burst__slice--active {
+    opacity: 1;
+  }
+}
+
+.#{$grommet-namespace}sun-burst--small {
+  width: $graphic-small-size;
+}
+
+.#{$grommet-namespace}sun-burst--large {
+  width: $graphic-large-size;
+}
+
+.#{$grommet-namespace}sun-burst--xlarge {
+  width: $graphic-xlarge-size;
+}
+
+.#{$grommet-namespace}sun-burst--full {
+  width: 100%;
+}
