@@ -683,6 +683,15 @@
 .#{$grommet-namespace}chart-graph--bar {
   stroke-width: 4px;
   @include graph-stroke-color-translucent(0.7);
+
+  &.#{$grommet-namespace}chart-graph--vertical {
+    @include animation('stretch-right-chart 1.5s');
+  }
+
+  &:not(.#{$grommet-namespace}chart-graph--vertical) {
+    bottom: 0;
+    @include animation('stretch-up-chart 1.5s');
+  }
 }
 
 .#{$grommet-namespace}chart-graph--area {
