@@ -1,7 +1,8 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-import {baseUnit, baseDimension, translateEndAngle, arcCommands} from './utils';
+import { baseDimension } from './utils';
 import Graphic from './Graphic';
+import { baseUnit, translateEndAngle, arcCommands } from '../../utils/Graphics';
 
 const CIRCLE_WIDTH = baseDimension;
 const CIRCLE_RADIUS = (baseDimension / 2) - (baseUnit / 2);

@@ -2,14 +2,14 @@
 
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
-import { classRoot, propTypes, buildPath } from './utils';
 import Intl from '../../utils/Intl';
 import KeyboardAccelerators from '../../utils/KeyboardAccelerators';
 import CSSClassnames from '../../utils/CSSClassnames';
+import { propTypes, buildPath } from './utils';
 
+const CLASS_ROOT = CSSClassnames.METER;
 const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
 
-const CLASS_ROOT = classRoot;
 const MIN_WIDTH = 0.033;
 
 export default class Graphic extends Component {
