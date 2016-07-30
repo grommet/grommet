@@ -134,19 +134,31 @@ var Legend = function (_Component) {
 
         var value;
         if (item.hasOwnProperty('value')) {
-          var units;
-          if (item.units || this.props.units) {
-            units = _react2.default.createElement(
-              'span',
-              { className: CLASS_ROOT + "__item-units" },
-              item.units || this.props.units
-            );
+          var unitsValue = item.units || this.props.units;
+          var unitsPrefix;
+          var unitsSuffix;
+          if (unitsValue) {
+            if (unitsValue.prefix) {
+              unitsPrefix = _react2.default.createElement(
+                'span',
+                { className: CLASS_ROOT + "__item-units" },
+                unitsValue.prefix
+              );
+            }
+            if (unitsValue.suffix || typeof unitsValue === 'string' || unitsValue instanceof String) {
+              unitsSuffix = _react2.default.createElement(
+                'span',
+                { className: CLASS_ROOT + "__item-units" },
+                unitsValue.suffix || unitsValue
+              );
+            }
           }
           value = _react2.default.createElement(
             'span',
             { className: valueClasses.join(' ') },
+            unitsPrefix,
             item.value,
-            units
+            unitsSuffix
           );
         }
 
@@ -169,6 +181,24 @@ var Legend = function (_Component) {
         if (true !== this.props.total) {
           totalValue = this.props.total;
         }
+        var unitsPrefix;
+        var unitsSuffix;
+
+        if (this.props.units.prefix) {
+          unitsPrefix = _react2.default.createElement(
+            'span',
+            { className: CLASS_ROOT + "__total-units" },
+            this.props.units.prefix
+          );
+        }
+        if (this.props.units.suffix || typeof this.props.units === 'string' || this.props.units instanceof String) {
+          unitsSuffix = _react2.default.createElement(
+            'span',
+            { className: CLASS_ROOT + "__total-units" },
+            this.props.units.suffix || this.props.units
+          );
+        }
+
         total = _react2.default.createElement(
           'li',
           { className: CLASS_ROOT + "__total" },
@@ -180,12 +210,9 @@ var Legend = function (_Component) {
           _react2.default.createElement(
             'span',
             { className: CLASS_ROOT + "__total-value" },
+            unitsPrefix,
             totalValue,
-            _react2.default.createElement(
-              'span',
-              { className: CLASS_ROOT + "__total-units" },
-              this.props.units
-            )
+            unitsSuffix
           )
         );
       }
@@ -211,14 +238,20 @@ Legend.propTypes = {
   series: _react.PropTypes.arrayOf(_react.PropTypes.shape({
     label: _react.PropTypes.string,
     value: _react.PropTypes.oneOfType([_react.PropTypes.number, _react.PropTypes.node]),
-    units: _react.PropTypes.string,
+    units: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.shape({
+      prefix: _react.PropTypes.string,
+      suffix: _react.PropTypes.string
+    })]),
     colorIndex: _react.PropTypes.oneOfType([_react.PropTypes.number, // 1-6
     _react.PropTypes.string // status
     ]),
     onClick: _react.PropTypes.func
   })).isRequired,
   total: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.node]),
-  units: _react.PropTypes.string,
+  units: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.shape({
+    prefix: _react.PropTypes.string,
+    suffix: _react.PropTypes.string
+  })]),
   value: _react.PropTypes.number
 };
 module.exports = exports['default'];

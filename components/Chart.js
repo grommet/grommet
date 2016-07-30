@@ -649,12 +649,24 @@ var Chart = function (_Component) {
           }
           var y = _this3.state.height - (stepBarHeight + stepBarBase);
 
+          var labeledValue = void 0;
+          var unitsValue = item.units || _this3.props.units;
+          if (unitsValue) {
+            if (unitsValue.prefix && unitsValue.suffix) {
+              labeledValue = '' + unitsValue.prefix + value[1] + ' ' + unitsValue.suffix;
+            } else if (unitsValue.prefix) {
+              labeledValue = '' + unitsValue.prefix + value[1];
+            } else if (unitsValue.suffix || typeof unitsValue === 'string' || unitsValue instanceof String) {
+              labeledValue = value[1] + ' ' + (unitsValue.suffix || unitsValue);
+            }
+          }
+
           if (_this3.props.legend && 'inline' === _this3.props.legend.position) {
             legend.push(_react2.default.createElement(
               'text',
               { key: 'bar-value_' + item.label || seriesIndex,
-                x: x, y: y, role: 'presentation', textAnchor: 'middle', fontSize: 24 },
-              value[1]
+                x: x, y: y, role: 'presentation', textAnchor: 'middle', fontSize: 16 },
+              labeledValue
             ));
           }
 
@@ -828,10 +840,22 @@ var Chart = function (_Component) {
         var stringify = [currentSeries.label];
 
         if (currentSeries.value !== undefined) {
-          stringify.push(': ' + currentSeries.value);
-
           if (currentSeries.units) {
-            stringify.push(' ' + currentSeries.units);
+            var _unitsSuffix = void 0;
+            var _unitsPrefix = currentSeries.units.prefix;
+
+            if (currentSeries.units.suffix || typeof currentSeries.units === 'string' || currentSeries.units instanceof String) {
+              _unitsSuffix = currentSeries.units.suffix || currentSeries.units;
+            }
+            if (_unitsPrefix && _unitsSuffix) {
+              stringify.push(': ' + _unitsPrefix + currentSeries.value + ' ' + _unitsSuffix);
+            } else if (_unitsPrefix) {
+              stringify.push(': ' + _unitsPrefix + currentSeries.value);
+            } else if (_unitsSuffix) {
+              stringify.push(': ' + currentSeries.value + ' ' + _unitsSuffix);
+            }
+          } else {
+            stringify.push(': ' + currentSeries.value);
           }
         }
 
@@ -839,9 +863,29 @@ var Chart = function (_Component) {
       }).join('; ');
 
       var totalText = '';
+      var labeledTotal = void 0;
+      var unitsPrefix = void 0;
+      var unitsSuffix = void 0;
+
+      if (this.props.units) {
+        if (this.props.units.prefix) {
+          unitsPrefix = this.props.units.prefix;
+        }
+        if (this.props.units.suffix || typeof this.props.units === 'string' || this.props.units instanceof String) {
+          unitsSuffix = this.props.units.suffix || this.props.units;
+        }
+        if (unitsPrefix && unitsSuffix) {
+          labeledTotal = '' + unitsPrefix + total + ' ' + unitsSuffix;
+        } else if (unitsPrefix) {
+          labeledTotal = '' + unitsPrefix + total;
+        } else if (unitsSuffix) {
+          labeledTotal = total + ' ' + unitsSuffix;
+        }
+      }
       if (this.props.legend.total) {
         var totalMessage = _Intl2.default.getMessage(this.context.intl, 'Total');
-        totalText = totalMessage + ': ' + total + this.props.units || '';
+        totalText = totalMessage + ': ' + labeledTotal || '';
+
         seriesText += ', ' + totalText;
       }
 
@@ -1128,7 +1172,10 @@ Chart.propTypes = {
     colorIndex: _react.PropTypes.string,
     onClick: _react.PropTypes.func,
     label: _react.PropTypes.string,
-    units: _react.PropTypes.string,
+    units: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.shape({
+      prefix: _react.PropTypes.string,
+      suffix: _react.PropTypes.string
+    })]),
     values: _react.PropTypes.arrayOf(_react.PropTypes.oneOfType([_react.PropTypes.arrayOf(_react.PropTypes.oneOfType([_react.PropTypes.number, _react.PropTypes.object // Date
     ])), _react.PropTypes.shape({
       onClick: _react.PropTypes.func,
@@ -1147,7 +1194,10 @@ Chart.propTypes = {
     colorIndex: _react.PropTypes.string
   })),
   type: _react.PropTypes.oneOf(['line', 'bar', 'area']),
-  units: _react.PropTypes.string,
+  units: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.shape({
+    prefix: _react.PropTypes.string,
+    suffix: _react.PropTypes.string
+  })]),
   xAxis: _react.PropTypes.oneOfType([_react.PropTypes.arrayOf(_react.PropTypes.shape({
     value: _react.PropTypes.oneOfType([_react.PropTypes.number, _react.PropTypes.object // Date
     ]).isRequired,
