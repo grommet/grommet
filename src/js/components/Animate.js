@@ -1,6 +1,6 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import TransitionGroup from 'react-addons-transition-group';
 import classnames from 'classnames';
@@ -94,6 +94,19 @@ class AnimateChild extends Component {
   render () {
     return this.props.children;
   }
+};
+
+AnimateChild.propTypes = {
+  enter: PropTypes.shape({
+    animation: PropTypes.string,
+    duration: PropTypes.number,
+    delay: PropTypes.number
+  }),
+  leave: PropTypes.shape({
+    animation: PropTypes.string,
+    duration: PropTypes.number,
+    delay: PropTypes.number
+  })
 };
 
 AnimateChild.defaultProps = {
@@ -198,6 +211,25 @@ class Animate extends Component {
       </TransitionGroup>
     );
   }
+};
+
+Animate.propTypes = {
+  component: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.func
+  ]),
+  enter: PropTypes.shape({
+    animation: PropTypes.string,
+    duration: PropTypes.number,
+    delay: PropTypes.number
+  }),
+  leave: PropTypes.shape({
+    animation: PropTypes.string,
+    duration: PropTypes.number,
+    delay: PropTypes.number
+  }),
+  keep: PropTypes.bool,
+  visible: PropTypes.bool
 };
 
 export default Animate;
