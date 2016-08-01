@@ -275,7 +275,13 @@ var Search = function (_Component) {
   }, {
     key: '_onEnter',
     value: function _onEnter(event) {
-      event.preventDefault(); // prevent submitting forms
+
+      // for not inline search the enter should NOT submit the form
+      // in this case double enter is required
+      if (!this.props.inline) {
+        event.preventDefault(); // prevent submitting forms
+      }
+
       this._onRemoveDrop();
       var suggestion = void 0;
       if (this.state.activeSuggestionIndex >= 0) {
@@ -286,13 +292,6 @@ var Search = function (_Component) {
             target: this.refs.input || this.refs.control,
             suggestion: suggestion
           }, true);
-        }
-      } else {
-        if (this.props.onSelect) {
-          this.props.onSelect({
-            target: this.refs.input || this.refs.control,
-            suggestion: suggestion
-          }, false);
         }
       }
     }
