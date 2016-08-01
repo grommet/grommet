@@ -606,7 +606,7 @@ Menu.propTypes = (0, _extends3.default)({
   dropColorIndex: _react.PropTypes.string,
   icon: _react.PropTypes.node,
   id: _react.PropTypes.string,
-  inline: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.oneOf('expand')]),
+  inline: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.oneOf(['expand'])]),
   label: _react.PropTypes.string,
   size: _react.PropTypes.oneOf(['small', 'medium', 'large'])
 }, _Box2.default.propTypes);
