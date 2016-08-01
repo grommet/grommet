@@ -519,7 +519,7 @@ Menu.propTypes = {
   dropColorIndex: PropTypes.string,
   icon: PropTypes.node,
   id: PropTypes.string,
-  inline: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf('expand')]),
+  inline: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['expand'])]),
   label: PropTypes.string,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   ...Box.propTypes
