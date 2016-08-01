@@ -44,6 +44,13 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
 
 .#{$grommet-namespace}meter__slice {
   stroke-width: $meter-slice-width;
+  fill: none;
+  stroke: $meter-background-color;
+}
+
+.#{$grommet-namespace}meter__hot {
+  stroke-width: double($meter-slice-active-width);
+  stroke: rgba(0, 0, 0, 0.001);
 }
 
 .#{$grommet-namespace}meter__threshold {
@@ -740,14 +747,16 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
     stroke-linecap: butt;
     stroke-dasharray: quadruple($meter-size) quadruple($meter-size);
     stroke-dashoffset: 0;
-    fill: none;
-    stroke: $meter-background-color;
   }
 
   .#{$grommet-namespace}meter__slice-indicator {
     stroke-linecap: square;
     stroke-width: $meter-indicator-width;
     stroke: $threshold-color;
+
+    #{$dark-background-context} & {
+      stroke: $colored-meter-background-color;
+    }
   }
 
   .#{$grommet-namespace}meter__values .#{$grommet-namespace}meter__slice {
@@ -857,6 +866,13 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
   svg.#{$grommet-namespace}meter__graphic {
     width: $meter-size;
     height: $meter-size;
+  }
+
+  .#{$grommet-namespace}meter__label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .#{$grommet-namespace}meter__value {

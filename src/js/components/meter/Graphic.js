@@ -2,14 +2,14 @@
 
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
-import { classRoot, propTypes, buildPath } from './utils';
 import Intl from '../../utils/Intl';
 import KeyboardAccelerators from '../../utils/KeyboardAccelerators';
 import CSSClassnames from '../../utils/CSSClassnames';
+import { propTypes, buildPath } from './utils';
 
+const CLASS_ROOT = CSSClassnames.METER;
 const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
 
-const CLASS_ROOT = classRoot;
 const MIN_WIDTH = 0.033;
 
 export default class Graphic extends Component {
@@ -58,7 +58,7 @@ export default class Graphic extends Component {
     return "";
   }
 
-  _renderSlice (trackIndex, item, itemIndex, startValue, maxValue, threshold) {
+  _renderSlice (trackIndex, item, itemIndex, startValue, maxValue, track, threshold) {
     let path;
     if (! item.hidden) {
       let classes = [`${CLASS_ROOT}__slice`];
@@ -70,12 +70,15 @@ export default class Graphic extends Component {
       if (item.onClick) {
         classes.push(CLASS_ROOT + "__slice--clickable");
       }
-
-      classes.push(`${COLOR_INDEX}-${item.colorIndex}`);
+      if (item.colorIndex) {
+        classes.push(`${COLOR_INDEX}-${item.colorIndex}`);
+      }
 
       let commands = this._sliceCommands(trackIndex, item, startValue, maxValue);
 
       if (threshold) {
+        path = buildPath(itemIndex, commands, classes);
+      } else if (track) {
         path = buildPath(itemIndex, commands, classes,
           this.props.onActivate, item.onClick);
       } else {
@@ -91,13 +94,13 @@ export default class Graphic extends Component {
     return path;
   }
 
-  _renderSlices (series, trackIndex, threshold) {
+  _renderSlices (series, trackIndex, track, threshold) {
     const { min, max } = this.props;
     let startValue = min.value;
 
     let paths = series.map((item, itemIndex) => {
       let path = this._renderSlice(trackIndex, item, itemIndex, startValue,
-        max.value, threshold);
+        max.value, track, threshold);
 
       startValue += Math.max(MIN_WIDTH * max.value, item.value);
 
@@ -192,13 +195,13 @@ export default class Graphic extends Component {
 
   _renderTracks () {
     const { min, max } = this.props;
-    const trackValue = { value: max.value, colorIndex: 'unset' };
+    const trackValue = { value: max.value };
     let tracks;
     if (this.props.stacked) {
-      tracks = this._renderSlice(0, trackValue, 0, min.value, max.value, true);
+      tracks = this._renderSlice(0, trackValue, 0, min.value, max.value, true, false);
     } else {
       tracks = this.props.series.map((item, index) => (
-        this._renderSlice(index, trackValue, index, min.value, max.value, true)
+        this._renderSlice(index, trackValue, index, min.value, max.value, true, false)
       ));
     }
     return (
@@ -210,7 +213,7 @@ export default class Graphic extends Component {
 
   _renderThresholds () {
     let result;
-    let thresholds = this._renderSlices(this.props.thresholds, -0.4, true);
+    let thresholds = this._renderSlices(this.props.thresholds, -0.4, false, true);
     if (thresholds.length > 0) {
       result = (
         <g className={`${CLASS_ROOT}__thresholds`}>

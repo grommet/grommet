@@ -581,11 +581,23 @@ export default class Chart extends Component {
         }
         const y = this.state.height - (stepBarHeight + stepBarBase);
 
+        let labeledValue;
+        let unitsValue = item.units || this.props.units;
+        if (unitsValue) {
+          if (unitsValue.prefix && unitsValue.suffix) {
+            labeledValue = `${unitsValue.prefix}${value[1]} ${unitsValue.suffix}`;
+          } else if (unitsValue.prefix) {
+            labeledValue = `${unitsValue.prefix}${value[1]}`;
+          } else if (unitsValue.suffix || (typeof unitsValue === 'string' || unitsValue instanceof String)) {
+            labeledValue = `${value[1]} ${unitsValue.suffix || unitsValue}`;
+          }
+        }
+
         if (this.props.legend && 'inline' === this.props.legend.position) {
           legend.push(
             <text key={'bar-value_' + item.label || seriesIndex}
-              x={x} y={y} role="presentation" textAnchor="middle" fontSize={24}>
-              {value[1]}
+              x={x} y={y} role="presentation" textAnchor="middle" fontSize={16}>
+              {labeledValue}
             </text>
           );
         }
@@ -754,10 +766,22 @@ export default class Chart extends Component {
       ];
 
       if (currentSeries.value !== undefined) {
-        stringify.push(': ' + currentSeries.value);
-
         if (currentSeries.units) {
-          stringify.push(' ' + currentSeries.units);
+          let unitsSuffix;
+          let unitsPrefix = currentSeries.units.prefix;
+
+          if (currentSeries.units.suffix || (typeof currentSeries.units === 'string' || currentSeries.units instanceof String)) {
+            unitsSuffix = currentSeries.units.suffix || currentSeries.units;
+          }
+          if (unitsPrefix && unitsSuffix) {
+            stringify.push(`: ${unitsPrefix}${currentSeries.value} ${unitsSuffix}`);
+          } else if (unitsPrefix) {
+            stringify.push(`: ${unitsPrefix}${currentSeries.value}`);
+          } else if (unitsSuffix) {
+            stringify.push(`: ${currentSeries.value} ${unitsSuffix}`);
+          }
+        } else {
+          stringify.push(`: ${currentSeries.value}`);
         }
       }
 
@@ -765,9 +789,29 @@ export default class Chart extends Component {
     }).join('; ');
 
     let totalText = '';
+    let labeledTotal;
+    let unitsPrefix;
+    let unitsSuffix;
+
+    if (this.props.units) {
+      if (this.props.units.prefix) {
+        unitsPrefix = this.props.units.prefix;
+      }
+      if (this.props.units.suffix || (typeof this.props.units === 'string' || this.props.units instanceof String)) {
+        unitsSuffix = this.props.units.suffix || this.props.units;
+      }
+      if (unitsPrefix && unitsSuffix) {
+        labeledTotal = `${unitsPrefix}${total} ${unitsSuffix}`;
+      } else if (unitsPrefix) {
+        labeledTotal = `${unitsPrefix}${total}`;
+      } else if (unitsSuffix) {
+        labeledTotal = `${total} ${unitsSuffix}`;
+      }
+    }
     if (this.props.legend.total) {
       let totalMessage = Intl.getMessage(this.context.intl, 'Total');
-      totalText = totalMessage + ': ' + total + this.props.units || '';
+      totalText = totalMessage + ': ' + labeledTotal || '';
+
       seriesText += ', ' + totalText;
     }
 
@@ -1036,7 +1080,13 @@ Chart.propTypes = {
       colorIndex: PropTypes.string,
       onClick: PropTypes.func,
       label: PropTypes.string,
-      units: PropTypes.string,
+      units: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.shape({
+          prefix: PropTypes.string,
+          suffix: PropTypes.string
+        })
+      ]),
       values: PropTypes.arrayOf(
         PropTypes.oneOfType([
           PropTypes.arrayOf(
@@ -1067,7 +1117,13 @@ Chart.propTypes = {
     colorIndex: PropTypes.string
   })),
   type: PropTypes.oneOf(['line', 'bar', 'area']),
-  units: PropTypes.string,
+  units: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.shape({
+      prefix: PropTypes.string,
+      suffix: PropTypes.string
+    })
+  ]),
   xAxis: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.shape({
       value: PropTypes.oneOfType([

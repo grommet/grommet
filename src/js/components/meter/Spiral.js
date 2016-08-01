@@ -1,11 +1,12 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React from 'react';
-import {baseUnit, baseDimension, classRoot, translateEndAngle,
-  arcCommands} from './utils';
+import { baseUnit, translateEndAngle, arcCommands } from '../../utils/Graphics';
+import CSSClassnames from '../../utils/CSSClassnames';
+import { baseDimension } from './utils';
 import Graphic from './Graphic';
 
-const CLASS_ROOT = classRoot;
+const CLASS_ROOT = CSSClassnames.METER;
 
 var SPIRAL_WIDTH = baseDimension;
 var SPIRAL_RADIUS = (baseDimension / 2) - (baseUnit / 2);

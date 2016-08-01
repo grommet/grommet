@@ -1,7 +1,8 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 import React from 'react';
-import {baseUnit, baseDimension} from './utils';
+import { baseUnit } from '../../utils/Graphics';
+import { baseDimension } from './utils';
 import Graphic from './Graphic';
 
 const BAR_LENGTH = baseDimension;

@@ -63,7 +63,8 @@ export default class Legend extends Component {
       var swatch;
       if (item.hasOwnProperty('colorIndex')) {
         swatch = (
-          <svg className={`${CLASS_ROOT}__item-swatch ${COLOR_INDEX}-${colorIndex}`}
+          <svg
+            className={`${CLASS_ROOT}__item-swatch ${COLOR_INDEX}-${colorIndex}`}
             viewBox="0 0 12 12">
             <path className={item.className} d="M 5 0 l 0 12" />
           </svg>
@@ -88,18 +89,31 @@ export default class Legend extends Component {
 
       var value;
       if (item.hasOwnProperty('value')) {
-        var units;
-        if (item.units || this.props.units) {
-          units = (
-            <span className={CLASS_ROOT + "__item-units"}>
-              {item.units || this.props.units}
-            </span>
-          );
+        var unitsValue = item.units || this.props.units;
+        var unitsPrefix;
+        var unitsSuffix;
+        if (unitsValue) {
+          if (unitsValue.prefix) {
+            unitsPrefix = (
+              <span className={CLASS_ROOT + "__item-units"}>
+                {unitsValue.prefix}
+              </span>
+            );
+          }
+          if (unitsValue.suffix ||
+            (typeof unitsValue === 'string' || unitsValue instanceof String)) {
+            unitsSuffix = (
+              <span className={CLASS_ROOT + "__item-units"}>
+                {unitsValue.suffix || unitsValue}
+              </span>
+            );
+          }
         }
         value = (
           <span className={valueClasses.join(' ')}>
+            {unitsPrefix}
             {item.value}
-            {units}
+            {unitsSuffix}
           </span>
         );
       }
@@ -123,14 +137,36 @@ export default class Legend extends Component {
       if (true !== this.props.total) {
         totalValue = this.props.total;
       }
+      var unitsPrefix;
+      var unitsSuffix;
+
+      if (this.props.units && this.props.units.prefix) {
+        unitsPrefix = (
+          <span className={CLASS_ROOT + "__total-units"}>
+            {this.props.units.prefix}
+          </span>
+        );
+      }
+      if (this.props.units &&
+        (this.props.units.suffix ||
+          (typeof this.props.units === 'string' ||
+          this.props.units instanceof String))) {
+        unitsSuffix = (
+          <span className={CLASS_ROOT + "__total-units"}>
+            {this.props.units.suffix || this.props.units}
+          </span>
+        );
+      }
+
       total = (
         <li className={CLASS_ROOT + "__total"}>
           <span className={CLASS_ROOT + "__total-label"}>
             <FormattedMessage id="Total" defaultMessage="Total" />
           </span>
           <span className={CLASS_ROOT + "__total-value"}>
+            {unitsPrefix}
             {totalValue}
-            <span className={CLASS_ROOT + "__total-units"}>{this.props.units}</span>
+            {unitsSuffix}
           </span>
         </li>
       );
@@ -155,7 +191,13 @@ Legend.propTypes = {
       PropTypes.number,
       PropTypes.node
     ]),
-    units: PropTypes.string,
+    units: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.shape({
+        prefix: PropTypes.string,
+        suffix: PropTypes.string
+      })
+    ]),
     colorIndex: PropTypes.oneOfType([
       PropTypes.number, // 1-6
       PropTypes.string // status
@@ -166,6 +208,12 @@ Legend.propTypes = {
     PropTypes.bool,
     PropTypes.node
   ]),
-  units: PropTypes.string,
+  units: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.shape({
+      prefix: PropTypes.string,
+      suffix: PropTypes.string
+    })
+  ]),
   value: PropTypes.number
 };

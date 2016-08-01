@@ -16,10 +16,7 @@ export default class ResourceMap extends Component {
     this._onEnter = this._onEnter.bind(this);
     this._onLeave = this._onLeave.bind(this);
 
-    this.state = {
-      canvasWidth: 100,
-      canvasHeight: 100
-    };
+    this.state = { canvasHeight: 100, canvasWidth: 100 };
   }
 
   componentDidMount () {
@@ -40,52 +37,79 @@ export default class ResourceMap extends Component {
   }
 
   _coords (id, canvasRect) {
-    var element = document.getElementById(id);
-    var rect = element.getBoundingClientRect();
-    return [
-      rect.left - canvasRect.left + (rect.width / 2),
-      rect.top - canvasRect.top + (rect.height / 2)
-    ];
+    const element = document.getElementById(id);
+    const rect = element.getBoundingClientRect();
+    const left = rect.left - canvasRect.left;
+    const top = rect.top - canvasRect.top;
+    const midX = left + (rect.width / 2);
+    const midY = top + (rect.height / 2);
+    return {
+      top: [midX, top],
+      bottom: [midX, top + rect.height],
+      left: [left, midY],
+      right: [left + rect.width, midY]
+    };
   }
 
   _draw () {
-    var canvasElement = this.refs.canvas;
-    var highlightCanvasElement = this.refs.highlightCanvas;
+    const { vertical } = this.props;
+    const canvasElement = this.refs.canvas;
+    const highlightCanvasElement = this.refs.highlightCanvas;
     // don't draw if we don't have a canvas to draw on, such as a unit test
     if (canvasElement.getContext) {
-      var context = canvasElement.getContext('2d');
-      var highlightContext = highlightCanvasElement.getContext('2d');
-      var canvasRect = canvasElement.getBoundingClientRect();
-      context.clearRect(0, 0, canvasRect.width, canvasRect.height);
+      const baseContext = canvasElement.getContext('2d');
+      const highlightContext = highlightCanvasElement.getContext('2d');
+      const canvasRect = canvasElement.getBoundingClientRect();
+      baseContext.clearRect(0, 0, canvasRect.width, canvasRect.height);
       highlightContext.clearRect(0, 0, canvasRect.width, canvasRect.height);
 
-      context.strokeStyle = '#000000';
-      context.lineWidth = 1;
+      baseContext.strokeStyle = '#000000';
+      baseContext.lineWidth = 1;
       highlightContext.strokeStyle = '#000000';
       highlightContext.lineWidth = 2;
 
-      this.props.data.links.forEach(function (link) {
-        var parentCoords = this._coords(link.parentId, canvasRect);
-        var childCoords = this._coords(link.childId, canvasRect);
+      this.props.data.links.forEach(link => {
+        const parentCoords = this._coords(link.parentId, canvasRect);
+        const childCoords = this._coords(link.childId, canvasRect);
+        const context = (this.state.activeId === link.parentId ||
+          this.state.activeId === link.childId) ? highlightContext : baseContext;
 
-        if (this.state.activeId === link.parentId ||
-          this.state.activeId === link.childId) {
-          highlightContext.beginPath();
-          highlightContext.moveTo(parentCoords[0], parentCoords[1]);
-          highlightContext.lineTo(childCoords[0], childCoords[1]);
-          highlightContext.stroke();
+        context.beginPath();
+        let p1, p2;
+        if (vertical) {
+          if (parentCoords.right[0] < childCoords.left[0]) {
+            p1 = parentCoords.right;
+            p2 = childCoords.left;
+          } else {
+            p1 = parentCoords.left;
+            p2 = childCoords.right;
+          }
         } else {
-          context.beginPath();
-          context.moveTo(parentCoords[0], parentCoords[1]);
-          context.lineTo(childCoords[0], childCoords[1]);
-          context.stroke();
+          if (parentCoords.bottom[1] < childCoords.top[1]) {
+            p1 = parentCoords.bottom;
+            p2 = childCoords.top;
+          } else {
+            p1 = parentCoords.top;
+            p2 = childCoords.bottom;
+          }
         }
-      }, this);
+        context.moveTo(p1[0], p1[1]);
+        const midX = p1[0] + ((p2[0] - p1[0]) / 2);
+        const midY = p1[1] + ((p2[1] - p1[1]) / 2);
+        if (vertical) {
+          context.quadraticCurveTo(midX + ((p1[0] - midX) / 2), p1[1], midX, midY);
+          context.quadraticCurveTo(midX - ((p1[0] - midX) / 2), p2[1], p2[0], p2[1]);
+        } else {
+          context.quadraticCurveTo(p1[0], midY + ((p1[1] - midY) / 2), midX, midY);
+          context.quadraticCurveTo(p2[0], midY - ((p1[1] - midY) / 2), p2[0], p2[1]);
+        }
+        context.stroke();
+      });
     }
   }
 
   _layout () {
-    var mapElement = this.refs.map;
+    const mapElement = this.refs.map;
     if (mapElement.scrollWidth !== this.state.canvasWidth ||
       mapElement.scrollHeight !== this.state.canvasHeight) {
       this.setState({
@@ -110,17 +134,17 @@ export default class ResourceMap extends Component {
   }
 
   _renderItems (items) {
-    return items.map(function (item, index) {
-      var classes = [CLASS_ROOT + "__item"];
-      var active = this.state.activeId === item.id ||
-        this.props.data.links.some(function (link) {
+    return items.map((item, index) => {
+      let classes = [`${CLASS_ROOT}__item`];
+      const active = this.state.activeId === item.id ||
+        this.props.data.links.some(link => {
           return ((link.parentId === item.id ||
             link.childId === item.id) &&
             (link.parentId === this.state.activeId ||
             link.childId === this.state.activeId));
-        }, this);
+        });
       if (active) {
-        classes.push(CLASS_ROOT + "__item--active");
+        classes.push(`${CLASS_ROOT}__item--active`);
       }
       return (
         <li key={index} id={item.id} className={classes.join(' ')}
@@ -129,43 +153,48 @@ export default class ResourceMap extends Component {
           {item.node}
         </li>
       );
-    }, this);
+    });
   }
 
   _renderCategories (categories) {
-    var result = categories.map(function (category) {
+    return categories.map(category => {
       return (
-        <li key={category.id} className={CLASS_ROOT + "__category"}>
-          <ul className={CLASS_ROOT + "__category-items"}>
-            {this._renderItems(category.items)}
-          </ul>
-          <div className={CLASS_ROOT + "__category-label"}>
+        <li key={category.id} className={`${CLASS_ROOT}__category`}>
+          <div className={`${CLASS_ROOT}__category-label`}>
             {category.label}
           </div>
+          <ul className={`${CLASS_ROOT}__category-items`}>
+            {this._renderItems(category.items)}
+          </ul>
         </li>
       );
-    }, this);
-    return result;
+    });
   }
 
   render () {
-    var classes = [CLASS_ROOT];
+    const { data, vertical } = this.props;
+    const { canvasHeight, canvasWidth } = this.state;
+    let className = [CLASS_ROOT];
+    if (vertical) {
+      className.push(`${CLASS_ROOT}--vertical`);
+    }
     if (this.props.className) {
-      classes.push(this.props.className);
+      className.push(this.props.className);
     }
 
-    var categories = [];
-    if (this.props.data.categories) {
-      categories = this._renderCategories(this.props.data.categories);
+    let categories;
+    if (data.categories) {
+      categories = this._renderCategories(data.categories);
     }
 
     return (
-      <div ref="map" className={classes.join(' ')}>
-        <canvas ref="canvas" className={CLASS_ROOT + "__canvas"}
-          width={this.state.canvasWidth} height={this.state.canvasHeight} />
-        <canvas ref="highlightCanvas" className={CLASS_ROOT + "__canvas " + CLASS_ROOT + "__canvas--highlight"}
-          width={this.state.canvasWidth} height={this.state.canvasHeight} />
-        <ol className={CLASS_ROOT + "__categories"}>
+      <div ref="map" className={className.join(' ')}>
+        <canvas ref="canvas" className={`${CLASS_ROOT}__canvas`}
+          width={canvasWidth} height={canvasHeight} />
+        <canvas ref="highlightCanvas"
+          className={`${CLASS_ROOT}__canvas ${CLASS_ROOT}__canvas--highlight`}
+          width={canvasWidth} height={canvasHeight} />
+        <ol className={`${CLASS_ROOT}__categories`}>
           {categories}
         </ol>
       </div>
@@ -188,5 +217,6 @@ ResourceMap.propTypes = {
       parentId: PropTypes.string,
       childId: PropTypes.string
     }))
-  }).isRequired
+  }).isRequired,
+  vertical: PropTypes.bool
 };

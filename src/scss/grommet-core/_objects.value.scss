@@ -17,6 +17,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
   @include inuit-font-size($value-font-size);
 
@@ -33,6 +34,27 @@
   display: inline-block;
   margin-top: quarter($inuit-base-spacing-unit);
   @include inuit-font-size($control-font-size);
+}
+
+.#{$grommet-namespace}value__value {
+  font-weight: 600;
+}
+
+.#{$grommet-namespace}value__units {
+  margin-left: 0.5rem;
+  font-weight: 100;
+}
+
+.#{$grommet-namespace}value--align-start {
+  .#{$grommet-namespace}value__annotated {
+    justify-content: flex-start;
+  }
+}
+
+.#{$grommet-namespace}value--align-end {
+  .#{$grommet-namespace}value__annotated {
+    justify-content: flex-end;
+  }
 }
 
 .#{$grommet-namespace}value--large {

@@ -43,8 +43,51 @@ export default class Graph extends Component {
     });
   }
 
+  // Determines what the appropriate control coordinates are on
+  // either side of the coordinate at the specified index.
+  // This calculation is a simplified smoothing function that
+  // just looks at whether the line through this coordinate is
+  // ascending, descending or not. Peaks, valleys, and flats are
+  // treated the same.
+  _controlCoordinates (coordinates, index) {
+    let current = coordinates[index];
+    // Use previous and next coordinates when available, otherwise use
+    // the current coordinate for them.
+    let previous = current;
+    if (index > 0) {
+      previous = coordinates[index - 1];
+    }
+    let next = current;
+    if (index < coordinates.length - 1) {
+      next = coordinates[index + 1];
+    }
+
+    // Put the control X coordinates midway between the coordinates.
+    let deltaX = (current[0] - previous[0]) / 2;
+    let deltaY;
+
+    // Start with a flat slope. This works for peaks, valleys, and flats.
+    let first = [current[0] - deltaX, current[1]];
+    let second = [current[0] + deltaX, current[1]];
+
+    if (previous[1] < current[1] && current[1] < next[1]) {
+      // Ascending, use the minimum positive slope.
+      deltaY = Math.min(((current[1] - previous[1]) / 2),
+        ((next[1] - current[1]) / 2));
+      first[1] = current[1] - deltaY;
+      second[1] = current[1] + deltaY;
+    } else if (previous[1] > current[1] && current[1] > next[1]) {
+      // Descending, use the minimum negative slope.
+      deltaY = Math.min(((previous[1] - current[1]) / 2),
+        ((current[1] - next[1]) / 2));
+      first[1] = current[1] + deltaY;
+      second[1] = current[1] - deltaY;
+    }
+    return [first, second];
+  }
+
   render () {
-    const { colorIndex, vertical, reverse, max, min, values, type,
+    const { colorIndex, vertical, reverse, max, min, smooth, values, type,
       activeIndex } = this.props;
     const { height, width } = this.state;
 
@@ -118,7 +161,29 @@ export default class Graph extends Component {
       // Build the commands for this set of coordinates.
 
       if ('area' === type || 'line' === type) {
-        commands = `M${coordinates.map(c => c.join(',')).join(' L')}`;
+
+        if (smooth) {
+          const controlCoordinates = coordinates.map((coord, index) => (
+            this._controlCoordinates(coordinates, index)
+          ));
+          commands = '';
+          coordinates.forEach((coord, index) => {
+            if (0 === index) {
+              commands += `M${coord.join(',')}`;
+            } else {
+              // Use the previous right control coordinate and the current
+              // left control coordinate. We do this because we calculate
+              // the left and right sides for a particular index together,
+              // so the path is smooth but the SVG C command needs the
+              // right one from the previous index and the left one from
+              // the current index.
+              commands += ` C${controlCoordinates[index-1][1].join(',')}
+                ${controlCoordinates[index][0].join(',')} ${coord.join(',')}`;
+            }
+          });
+        } else {
+          commands = `M${coordinates.map(c => c.join(',')).join(' L')}`;
+        }
 
         if ('area' === type) {
           if (vertical) {
@@ -178,6 +243,7 @@ Graph.propTypes = {
   min: PropTypes.number.isRequired,
   points: PropTypes.bool,
   reverse: PropTypes.bool,
+  smooth: PropTypes.bool,
   values: PropTypes.arrayOf(PropTypes.number).isRequired,
   type: PropTypes.oneOf(['area', 'line', 'bar']).isRequired, // from extending component
   vertical: PropTypes.bool,

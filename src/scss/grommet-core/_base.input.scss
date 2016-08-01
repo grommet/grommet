@@ -81,7 +81,7 @@
   @mixin range-track {
     width: 100%;
     height: $control-border-width;
-    background-color: $meter-background-color;
+    background-color: $control-background-color;
 
     #{$dark-background-context} & {
       background-color: $colored-meter-background-color;
@@ -181,7 +181,7 @@
     }
 
     &::-ms-fill-upper {
-      background: $meter-background-color;
+      background: $control-background-color;
       border-color: transparent;
 
       #{$dark-background-context} & {

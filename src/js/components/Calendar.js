@@ -1,6 +1,7 @@
 // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
+import classnames from 'classnames';
 import moment from 'moment';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 import Drop from '../utils/Drop';
@@ -43,7 +44,7 @@ export default class Calendar extends Component {
   }
 
   componentWillReceiveProps (newProps) {
-    var state = this._stateFromProps(newProps);
+    const state = this._stateFromProps(newProps);
     this.setState(state);
   }
 
@@ -108,15 +109,17 @@ export default class Calendar extends Component {
   }
 
   _onNextDayOrMonth (event) {
+    const { current, reference } = this.state;
+
     if (event.shiftKey) {
       this._onNext(event);
     } else {
       event.preventDefault();
       event.stopPropagation();
-      var nextDay = moment(this.state.current).add(1, 'days');
+      const nextDay = moment(current).add(1, 'days');
 
-      if (! nextDay.isSame(this.state.reference, 'month')) {
-        this.setState({reference: this.state.reference.add(1, 'month'), current: nextDay});
+      if (! nextDay.isSame(reference, 'month')) {
+        this.setState({reference: reference.add(1, 'month'), current: nextDay});
       } else {
         this.setState({current: nextDay});
       }
@@ -124,14 +127,17 @@ export default class Calendar extends Component {
   }
 
   _onPreviousDayOrMonth (event) {
+    const { current, reference } = this.state;
+
     if (event.shiftKey) {
       this._onPrevious(event);
     } else {
       event.preventDefault();
       event.stopPropagation();
-      var previousDay = moment(this.state.current).subtract(1, 'days');
-      if (! previousDay.isSame(this.state.reference, 'month')) {
-        this.setState({reference: this.state.reference.subtract(1, 'month'), current: previousDay});
+      const previousDay = moment(current).subtract(1, 'days');
+
+      if (! previousDay.isSame(reference, 'month')) {
+        this.setState({reference: reference.subtract(1, 'month'), current: previousDay});
       } else {
         this.setState({current: previousDay});
       }
@@ -141,10 +147,11 @@ export default class Calendar extends Component {
   _onNextWeek (event) {
     event.preventDefault();
     event.stopPropagation();
-    var nextWeek = moment(this.state.current).add(1, 'week');
+    const { current, reference } = this.state;
+    const nextWeek = moment(current).add(1, 'week');
 
-    if (! nextWeek.isSame(this.state.reference, 'month')) {
-      this.setState({reference: this.state.reference.add(1, 'month'), current: nextWeek});
+    if (! nextWeek.isSame(reference, 'month')) {
+      this.setState({reference: reference.add(1, 'month'), current: nextWeek});
     } else {
       this.setState({current: nextWeek});
     }
@@ -153,9 +160,11 @@ export default class Calendar extends Component {
   _onPreviousWeek (event) {
     event.preventDefault();
     event.stopPropagation();
-    var previousWeek = moment(this.state.current).subtract(1, 'week');
-    if (! previousWeek.isSame(this.state.reference, 'month')) {
-      this.setState({reference: this.state.reference.subtract(1, 'month'), current: previousWeek});
+    const { current, reference } = this.state;
+    const previousWeek = moment(current).subtract(1, 'week');
+
+    if (! previousWeek.isSame(reference, 'month')) {
+      this.setState({reference: reference.subtract(1, 'month'), current: previousWeek});
     } else {
       this.setState({current: previousWeek});
     }
@@ -170,7 +179,7 @@ export default class Calendar extends Component {
 
   _activation (dropActive) {
 
-    var listeners = {
+    const listeners = {
       esc: this._onClose,
       tab: this._onClose,
       right: this._onNextDayOrMonth,
@@ -205,11 +214,11 @@ export default class Calendar extends Component {
   }
 
   _stateFromProps (props) {
-    var result = {
+    const result = {
       current: null,
       reference: moment().startOf('day')
     };
-    var date = moment(props.value);
+    const date = moment(props.value);
     if (date.isValid()) {
       result.current = moment(date).startOf('day');
       result.reference = moment(date).startOf('day');
@@ -218,30 +227,30 @@ export default class Calendar extends Component {
   }
 
   _renderDrop () {
-    var weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-    var headerCells = weekDays.map(function (day) {
+    const { current, reference } = this.state;
+    const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    const headerCells = weekDays.map(function (day) {
       return <th key={day}>{day}</th>;
     });
 
-    var reference = this.state.reference;
-    var start = moment(reference).startOf('month').startOf('week');
-    var end = moment(reference).endOf('month').endOf('week');
-    var date = moment(start);
-    var rows = [];
+    const start = moment(reference).startOf('month').startOf('week');
+    const end = moment(reference).endOf('month').endOf('week');
+    const date = moment(start);
+    const rows = [];
 
     while (date.valueOf() <= end.valueOf()) {
-      var days = [];
+      const days = [];
       for (var i = 0; i < 7; i += 1) {
-        var classes = [CLASS_ROOT + "__day"];
-        if (this.state.current && date.isSame(this.state.current)) {
-          classes.push(CLASS_ROOT + "__day--active");
-        }
-        if (! date.isSame(reference, 'month')) {
-          classes.push(CLASS_ROOT + "__day--other-month");
-        }
+        const classes = classnames(
+          `${CLASS_ROOT}__day`,
+          {
+            [`${CLASS_ROOT}__day--active`]: current && date.isSame(current),
+            [`${CLASS_ROOT}__day--other-month`]: !date.isSame(reference, 'month')
+          }
+        );
         days.push(
           <td key={date.valueOf()}>
-            <div className={classes.join(' ')}
+            <div className={classes}
               onClick={this._onClickDay.bind(this, moment(date))}>
               {date.date()}
             </div>
@@ -253,24 +262,30 @@ export default class Calendar extends Component {
     }
 
     return (
-      <div id={CLASS_ROOT + "-drop"} className={CLASS_ROOT + "__drop"}
+      <div id={`${CLASS_ROOT}-drop`} className={`${CLASS_ROOT}__drop`}
         onClick={this._onClose}>
         <Header justify="between">
-          <Button className={CLASS_ROOT + "__previous"} icon={
-              <LinkPreviousIcon a11yTitle='calendar-previous-title'
-                a11yTitleId='calendar-previous-title-id' />
+          <Button
+            className={`${CLASS_ROOT}__previous`}
+            icon={
+              <LinkPreviousIcon a11yTitle="calendar-previous-title"
+                a11yTitleId="calendar-previous-title-id" />
             }
-            onClick={this._onPrevious} />
-          <Title className={CLASS_ROOT + "__title"} responsive={false}>
-            {this.state.reference.format('MMMM YYYY')}
+            onClick={this._onPrevious}
+          />
+          <Title className={`${CLASS_ROOT}__title`} responsive={false}>
+            {reference.format('MMMM YYYY')}
           </Title>
-          <Button className={CLASS_ROOT + "__next"} icon={
-              <LinkNextIcon a11yTitle='calendar-next-title'
-                a11yTitleId='calendar-next-title-id' />
+          <Button
+            className={`${CLASS_ROOT}__next`}
+            icon={
+              <LinkNextIcon a11yTitle="calendar-next-title"
+                a11yTitleId="calendar-next-title-id" />
             }
-            onClick={this._onNext} />
+            onClick={this._onNext}
+          />
         </Header>
-        <div className={CLASS_ROOT + "__grid"}>
+        <div className={`${CLASS_ROOT}__grid`}>
           <table>
             <thead>
               <tr>{headerCells}</tr>
@@ -285,24 +300,44 @@ export default class Calendar extends Component {
   }
 
   render () {
-    var classes = [CLASS_ROOT];
-    if (this.state.dropActive) {
-      classes.push(CLASS_ROOT + "--active");
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
+    const {
+      className,
+      id,
+      name,
+      value,
+      onChange, // eslint-disable-line no-unused-vars
+      ...props
+    } = this.props;
+
+    const classes = classnames(
+      CLASS_ROOT,
+      className,
+      {
+        [`${CLASS_ROOT}--active`]: this.state.dropActive
+      }
+    );
 
     return (
-      <div ref="component" className={classes.join(' ')}>
-        <input className={CLASS_ROOT + "__input"}
-          id={this.props.id} ref="calendarInput" name={this.props.name}
-          value={this.props.value}
-          onChange={this._onInputChange} />
-        <Button className={CLASS_ROOT + "__control"} icon={<CalendarIcon
-          a11yTitle='calendar-icon-title'
-          a11yTitleId='calendar-icon-title-id' />}
-          onClick={this._onOpen} />
+      <div ref="component" className={classes}>
+        <input
+          className={`${CLASS_ROOT}__input`}
+          id={id}
+          ref="calendarInput"
+          name={name}
+          value={value}
+          onChange={this._onInputChange}
+          {...props}
+        />
+        <Button
+          className={`${CLASS_ROOT}__control`}
+          icon={
+            <CalendarIcon
+              a11yTitle="calendar-icon-title"
+              a11yTitleId="calendar-icon-title-id"
+            />
+          }
+          onClick={this._onOpen}
+        />
       </div>
     );
   }
