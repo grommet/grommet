@@ -94,7 +94,9 @@
     width: quadruple($inuit-base-spacing-unit);
     height: quadruple($inuit-base-spacing-unit);
     border-radius: double($inuit-base-spacing-unit);
-    background-color: none;
+    border-width: 2px;
+    border-style: solid;
+    background-color: transparent;
   }
 
   &__progress {
@@ -138,6 +140,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
+    transition: width 0.3s;
 
     &:after {
       content: '';
