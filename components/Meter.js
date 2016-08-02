@@ -215,6 +215,9 @@ var Meter = function (_Component) {
         series = props.series;
       } else if (props.value || props.value === 0) {
         series = [{ value: props.value }];
+        if (props.colorIndex) {
+          series[0].colorIndex = props.colorIndex;
+        }
       }
 
       // set color index
@@ -641,6 +644,7 @@ Meter.propTypes = {
   a11yTitleId: _react.PropTypes.string,
   a11yDescId: _react.PropTypes.string,
   a11yDesc: _react.PropTypes.string,
+  colorIndex: _react.PropTypes.string,
   // deprecated in favor of activeIndex?
   important: _react.PropTypes.number,
   label: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.node]),
