@@ -116,7 +116,7 @@ var Graph = function (_Component) {
       }
 
       // Put the control X coordinates midway between the coordinates.
-      var deltaX = (current[0] - previous[0]) / 2;
+      var deltaX = (current[0] - previous[0]) / 2.4;
       var deltaY = void 0;
 
       // Start with a flat slope. This works for peaks, valleys, and flats.
