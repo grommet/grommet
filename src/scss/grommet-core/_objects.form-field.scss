@@ -6,6 +6,18 @@ $form-vertical-padding: quarter($inuit-base-spacing-unit);
 $select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAABGdBTUEAALGPC/xhBQAAATdJREFUOBGlUjFqw0AQ1AWBCWpd+A1pXOYHJk38BZeSOkPS5BERaWRJTcCNH2A3xj9waRf+hGsJAoLLjNk77iLFIXhB7NzO3OjuGBUEgaqqaos+wXdL7eI4frqDg27bdoZ+vsHtLB5aGZOyLJ+VUmut9Rdmj0mSHAzX16EfY77HngH2TKHfUMcTXooDEAsKMFhlWXYvVKcJtxKzhTGj0Bpy0TTNK0xPED5EUfTOWV+Ro4Za7nE19spm+NtVHP7q03gn5Ca+Hf78RoxTfOZ5PiJmEXNGTA21xG51DEmmafqBtsM3DMNwic6bKMFDcqIB9Cv0l3Z1iRIMjphMiqKYC8Os2ohYtQM6b+hwwY8o8Qm8iLhag3uvbEiJQ0EjMfMiYnRuv2pIYV3XL4xHX0Rco39hRkni9Oe+bw49m1YsR5tyAAAAAElFTkSuQmCC);
 $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAABGdBTUEAALGPC/xhBQAAATtJREFUOBGdkk1KxEAQhdNiEPdZeIEk4MalNwhu9ApeQdCNhxBc6U5w4wHGjcwBAi4VMpDkCCYHkEDi+4bp0JNp/6ag6ErVey9VRZkgCExVVS/GmEzx1jYMwzxJkpMdKQxd150r8bGtGlw00DJWpK7rU8UzFT/lx2mavtma7y3L8khTvcr3VD+L4/gZHB0ujUTf93cA5E95nu/b2vSlBgYsHCsGbhTko23bK3W3EPAwiqIbcj6jBgYsHBczjmyT341i67+tZq1DSOxOf78mVgcPRVEcEGPE5IjB+Pa8IQhYO7kVcS5SFIbhI3ycmBw1MGCntjtNrL6XpySBdwlkGvNilc8kNp6Ij7uxQxfk7ou8xNdOxMXa2DuyLXIO6ugeIXx6Ihbnvj8KAmya5lKiC3x6Iq7Qv2JOCf8L6QsuVKvxz0iZVQAAAABJRU5ErkJggg==);
 
+@mixin form-field-content {
+  display: block;
+  width: 100%;
+  border: none;
+  border-radius: 0px;
+  @include inuit-font-size($content-font-size);
+
+  #{$dark-background-context} & {
+    color: $active-colored-text-color;
+  }
+}
+
 .#{$grommet-namespace}form-field {
   position: relative;
   padding: $form-vertical-padding $form-horizontal-padding;
@@ -78,22 +90,21 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
   > .#{$grommet-namespace}calendar input,
   > .#{$grommet-namespace}date-time input,
   > textarea {
-    display: block;
-    width: 100%;
-    border: none;
+    @include form-field-content();
+  }
+
+  > input[type=text],
+  > input[type=range],
+  > input[type=email],
+  > input[type=password],
+  > input[type=number],
+  > input[type=file],
+  > select,
+  > textarea {
     padding: 0 $form-horizontal-padding;
-    border-radius: 0px;
-    @include inuit-font-size($content-font-size);
 
-    // Do not apply padding to range, because it will squish
-    // the slider track on focus
-    &:focus:not(input[type=range]) {
-      border: none;
+    &:focus {
       padding: 0 $form-horizontal-padding;
-    }
-
-    #{$dark-background-context} & {
-      color: $active-colored-text-color;
     }
   }
 
