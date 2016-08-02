@@ -18,9 +18,6 @@ import CSSClassnames from '../utils/CSSClassnames';
 const CLASS_ROOT = CSSClassnames.TILES;
 const TILE = CSSClassnames.TILE;
 const SELECTED_CLASS = `${TILE}--selected`;
-const MIN_COLUMN_SIZE_LARGE = 384;  // $tile-large-size = 384px
-const MIN_COLUMN_SIZE = 192;  // $tile-size = 192px
-const MIN_COLUMN_SIZE_SMALL = 92; // $tile-small-size = 92px
 
 export default class Tiles extends Component {
 
@@ -34,16 +31,11 @@ export default class Tiles extends Component {
     this._layout = this._layout.bind(this);
     this._onClick = this._onClick.bind(this);
 
-    const tileSize = this.props.size;
-    const minColumnWidth = (tileSize === 'small') ? MIN_COLUMN_SIZE_SMALL :
-      ((tileSize === 'large') ? MIN_COLUMN_SIZE_LARGE : MIN_COLUMN_SIZE);
-    this._minColumnWidths = Array.apply(null, Array(this.props.numColumns))
-      .map((currentNumColumns, index) => (index + 1) * minColumnWidth);
-
     this.state = {
       overflow: false,
       selected: Selection.normalizeIndexes(props.selected),
-      numColumns: this.props.numColumns
+      numColumns: this.props.numColumns,
+      columnBreakpoints: null
     };
   }
 
@@ -59,6 +51,22 @@ export default class Tiles extends Component {
       // give browser a chance to stabilize
       setTimeout(this._layout, 10);
     } else if (this.props.masonry) {
+      // grab CSS styles from DOM after component mounted
+      // default to medium tile size ($tile-size = 192px)
+      let minColumnWidth = 192;
+      const tile = document.querySelectorAll(`.${CLASS_ROOT}__masonry-column .${TILE}`);
+      if (tile && tile.length > 0) {
+        const columnTile = window.getComputedStyle(tile[0]);
+        if (columnTile && columnTile.width) {
+          minColumnWidth = parseFloat(columnTile.width);
+        }
+      }
+
+      // create array of breakpoints for 1 through this.props.numColumns
+      // number of columns of minColumnWidth width.
+      const columnBreakpoints = Array.apply(null, Array(this.props.numColumns))
+        .map((currentNumColumns, index) => (index + 1) * minColumnWidth);
+      this.setState({columnBreakpoints: columnBreakpoints});
       window.addEventListener('resize', this._onResize);
       setTimeout(this._layout, 10);
     }
@@ -129,11 +137,12 @@ export default class Tiles extends Component {
   }
 
   _getNumberColumns () {
+    const { columnBreakpoints } = this.state;
     const tiles = findDOMNode(this.refs.tiles);
     let maxColumnWidthIndex;
 
     if (tiles) {
-      maxColumnWidthIndex = this._minColumnWidths
+      maxColumnWidthIndex = columnBreakpoints
         .filter((currentMin) => {
           return currentMin <= tiles.offsetWidth;
         })
