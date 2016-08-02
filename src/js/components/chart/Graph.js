@@ -63,7 +63,7 @@ export default class Graph extends Component {
     }
 
     // Put the control X coordinates midway between the coordinates.
-    let deltaX = (current[0] - previous[0]) / 2;
+    let deltaX = (current[0] - previous[0]) / 2.4;
     let deltaY;
 
     // Start with a flat slope. This works for peaks, valleys, and flats.
