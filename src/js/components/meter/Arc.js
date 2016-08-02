@@ -1,11 +1,12 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 import React from 'react';
-import { baseUnit, baseDimension, classRoot, translateEndAngle, arcCommands, polarToCartesian } from './utils';
-import Graphic from './Graphic';
+import { baseUnit, translateEndAngle, arcCommands, polarToCartesian } from '../../utils/Graphics';
 import CSSClassnames from '../../utils/CSSClassnames';
+import { baseDimension } from './utils';
+import Graphic from './Graphic';
 
-const CLASS_ROOT = classRoot;
+const CLASS_ROOT = CSSClassnames.METER;
 const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
 
 const ARC_WIDTH = baseDimension;

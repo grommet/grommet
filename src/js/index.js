@@ -47,6 +47,7 @@ var Grommet = {
   Split: require('./components/Split'),
   SkipLinkAnchor: require('./components/SkipLinkAnchor'),
   SkipLinks: require('./components/SkipLinks'),
+  SunBurst: require('./components/SunBurst'),
   SVGIcon: require('./components/SVGIcon'),
   Tab: require('./components/Tab'),
   Table: require('./components/Table'),

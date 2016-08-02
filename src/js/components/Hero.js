@@ -8,7 +8,6 @@ import Box from 'grommet/components/Box';
 import Image from 'grommet/components/Image';
 
 const CLASS_ROOT = CSSClassnames.HERO;
-const PALM_BREAKPOINT = Responsive.smallSize();
 
 export default class Hero extends Component {
 
@@ -38,7 +37,7 @@ export default class Hero extends Component {
   _setBackgroundColorIndex () {
     const { colorIndex } = this.props;
 
-    if (window.innerWidth < PALM_BREAKPOINT) {
+    if (window.innerWidth < Responsive.smallSize()) {
       this.setState({ colorIndex: 'light-1' });
     } else {
       this.setState({ colorIndex: colorIndex });
@@ -48,7 +47,7 @@ export default class Hero extends Component {
   _setReverse () {
     const { justify } = this.props;
 
-    if (window.innerWidth < PALM_BREAKPOINT) {
+    if (window.innerWidth < Responsive.smallSize()) {
       this.setState({ reverse: false });
     } else {
       this.setState({ reverse: (justify === 'start') ? true : false });

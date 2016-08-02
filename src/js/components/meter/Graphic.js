@@ -2,14 +2,14 @@
 
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
-import { classRoot, propTypes, buildPath } from './utils';
 import Intl from '../../utils/Intl';
 import KeyboardAccelerators from '../../utils/KeyboardAccelerators';
 import CSSClassnames from '../../utils/CSSClassnames';
+import { propTypes, buildPath } from './utils';
 
+const CLASS_ROOT = CSSClassnames.METER;
 const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
 
-const CLASS_ROOT = classRoot;
 const MIN_WIDTH = 0.033;
 
 export default class Graphic extends Component {
@@ -70,8 +70,9 @@ export default class Graphic extends Component {
       if (item.onClick) {
         classes.push(CLASS_ROOT + "__slice--clickable");
       }
-
-      classes.push(`${COLOR_INDEX}-${item.colorIndex}`);
+      if (item.colorIndex) {
+        classes.push(`${COLOR_INDEX}-${item.colorIndex}`);
+      }
 
       let commands = this._sliceCommands(trackIndex, item, startValue, maxValue);
 
@@ -194,7 +195,7 @@ export default class Graphic extends Component {
 
   _renderTracks () {
     const { min, max } = this.props;
-    const trackValue = { value: max.value, colorIndex: 'unset' };
+    const trackValue = { value: max.value };
     let tracks;
     if (this.props.stacked) {
       tracks = this._renderSlice(0, trackValue, 0, min.value, max.value, true, false);
