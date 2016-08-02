@@ -1,6 +1,8 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 var Grommet = {
   // Components
+  Accordion: require('./components/Accordion'),
+  AccordionPanel: require('./components/AccordionPanel'),
   Anchor: require('./components/Anchor'),
   App: require('./components/App'),
   Article: require('./components/Article'),
