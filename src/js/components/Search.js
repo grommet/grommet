@@ -200,7 +200,13 @@ export default class Search extends Component {
   }
 
   _onEnter (event) {
-    event.preventDefault(); // prevent submitting forms
+
+    // for not inline search the enter should NOT submit the form
+    // in this case double enter is required
+    if (!this.props.inline) {
+      event.preventDefault(); // prevent submitting forms
+    }
+
     this._onRemoveDrop();
     let suggestion;
     if (this.state.activeSuggestionIndex >= 0) {
@@ -211,13 +217,6 @@ export default class Search extends Component {
           target: this.refs.input || this.refs.control,
           suggestion: suggestion
         }, true);
-      }
-    } else {
-      if (this.props.onSelect) {
-        this.props.onSelect({
-          target: this.refs.input || this.refs.control,
-          suggestion: suggestion
-        }, false);
       }
     }
   }
