@@ -204,6 +204,9 @@ export default class Video extends Component {
     if (this.props.title) {
       classes.push(`${CLASS_ROOT}--titled`);
     }
+    if (this.state.hasPlayed) {
+      classes.push(`${CLASS_ROOT}--has-played`);
+    }
 
     return (
       <div className={classes.join(' ')} onMouseMove={this._onMouseMove}>
