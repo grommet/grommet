@@ -42,24 +42,25 @@ export default class VideoOverlay extends Component {
   }
 
   render() {
-    const { playing, ended } = this.props;
+    const { hasPlayed, ended } = this.props;
+
+    // hide overlay after video has been played and has not reached the end
+    if (hasPlayed && !ended) {
+      return null;
+    }
 
     let controlIconSize = this.state.iconSize;
-    let controlIcon = (playing ?
-      <PauseIcon size={controlIconSize} /> : (ended ?
-        <RefreshIcon size={controlIconSize} /> :
-          <PlayIcon size={controlIconSize} />));
-    let a11yControlButtonMessage = (playing ?
-      'Pause Video' : (ended ?
-        'Restart Video' :
-          'Play Video'));
+    let controlIcon = (!hasPlayed && !ended) ?
+      <PlayIcon size={controlIconSize} /> :
+      <RefreshIcon size={controlIconSize} />;
+
+    let a11yControlButtonMessage = (!hasPlayed && !ended) ? 'Play Video' : 'Restart Video';
     let a11yControlButtonTitle = Intl.getMessage(this.context.intl, a11yControlButtonMessage);
 
     let videoOverlayJustify = 'between';
     if (!this.props.videoHeader) {
       videoOverlayJustify = 'center';
     }
-
 
     // when iconSize is small (mobile screen sizes), remove the extra padding
     // so that the play control is centered

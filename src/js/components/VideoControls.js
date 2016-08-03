@@ -86,7 +86,11 @@ export default class VideoControls extends Component {
   }
 
   render() {
-    const { playing, ended } = this.props;
+    const { hasPlayed, playing, ended } = this.props;
+
+    if (!hasPlayed) {
+      return null;
+    }
 
     let controlIcon = (playing ?
       <PauseIcon /> : (ended ?

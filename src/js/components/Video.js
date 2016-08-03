@@ -2,6 +2,7 @@
 
 import React, { Component, PropTypes } from 'react';
 // import classnames from 'classnames';
+import ReactDOM from 'react-dom';
 
 // import Box from './Box';
 import CSSClassnames from '../utils/CSSClassnames';
@@ -43,6 +44,7 @@ export default class Video extends Component {
   constructor () {
     super();
 
+    this._hasPlayed = false;
     this._play = this._play.bind(this);
     this._pause = this._pause.bind(this);
     this._togglePlay = this._togglePlay.bind(this);
@@ -79,6 +81,10 @@ export default class Video extends Component {
   }
 
   _update () {
+    if (!this._hasPlayed && !this._video.paused && !this._video.loading) {
+      this._hasPlayed = true;
+    }
+
     this.setState({
       duration: this._video.duration,
       currentTime: this._video.currentTime,
@@ -90,6 +96,7 @@ export default class Video extends Component {
       readyState: this._video.readyState,
 
       // computed values
+      hasPlayed: this._hasPlayed,
       playing: !this._video.paused && !this._video.loading,
       percentageBuffered: this._video.buffered.length && this._video.buffered.end(this._video.buffered.length - 1) / this._video.duration * 100,
       percentagePlayed: this._video.currentTime / this._video.duration * 100,
