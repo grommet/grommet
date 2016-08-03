@@ -129,6 +129,9 @@ export default class Meter extends Component {
       series = [
         {value: props.value}
       ];
+      if (props.colorIndex) {
+        series[0].colorIndex = props.colorIndex;
+      }
     }
 
     // set color index
@@ -508,6 +511,7 @@ Meter.propTypes = {
   a11yTitleId: PropTypes.string,
   a11yDescId: PropTypes.string,
   a11yDesc: PropTypes.string,
+  colorIndex: PropTypes.string,
   // deprecated in favor of activeIndex?
   important: PropTypes.number,
   label: PropTypes.oneOfType([PropTypes.bool, PropTypes.node]),
