@@ -7,6 +7,7 @@ import classnames from 'classnames';
 import Box from './Box';
 
 import CSSClassnames from '../utils/CSSClassnames';
+import Props from '../utils/Props';
 
 const CLASS_ROOT = CSSClassnames.COLLAPSIBLE;
 
@@ -45,7 +46,6 @@ class Collapse extends Component {
       CLASS_ROOT,
       this.props.className
     );
-
     return <div {...this.props} className={classes} />;
   }
 };
@@ -53,11 +53,13 @@ class Collapse extends Component {
 class Collapsible extends Component {
   render () {
     const Component = this.props.animate ? TransitionGroup : Box;
+    const collapseProps = Props.omit(this.props,
+      Object.keys(Collapsible.propTypes));
 
     return (
       <Component className={`${CLASS_ROOT}__wrapper`}>
         {this.props.active &&
-          <Collapse {...this.props} />
+          <Collapse {...collapseProps} />
         }
       </Component>
     );
