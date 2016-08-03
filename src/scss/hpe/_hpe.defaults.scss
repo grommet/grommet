@@ -18,12 +18,7 @@ $brand-link-color: inherit;
 $link-hover-color: #000;
 $brand-link-text-decoration: underline;
 $brand-grey-colors: (#333333, #3B3B3B, #434343, #666666);
-$brand-graph-colors: (
-  lighten(#425563, 15%),
-  lighten(#5F7A76, 20%),
-  lighten(#80746E, 10%),
-  lighten(#614767, 15%)
-);
+$brand-graph-colors: $brand-neutral-colors;
 
 // accent-2 is dark, so turn off only 1 and 3
 $dark-background-context:
