@@ -2,9 +2,7 @@
 
 import React, { Component, PropTypes } from 'react';
 // import classnames from 'classnames';
-import ReactDOM from 'react-dom';
 
-// import Box from './Box';
 import CSSClassnames from '../utils/CSSClassnames';
 import VideoControls from './VideoControls';
 import VideoOverlay from './VideoOverlay';
