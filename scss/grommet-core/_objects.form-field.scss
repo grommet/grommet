@@ -198,7 +198,8 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
     }
 
     .#{$grommet-namespace}search-input__control,
-    .#{$grommet-namespace}calendar__control {
+    .#{$grommet-namespace}calendar__control,
+    .#{$grommet-namespace}date-time__control {
       top: auto;
       right: quarter($inuit-base-spacing-unit);
       transform: none;

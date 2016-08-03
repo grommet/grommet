@@ -323,7 +323,8 @@ var DateTimeDrop = function (_Component) {
       }
       return _react2.default.createElement(
         _Box2.default,
-        { direction: 'row', className: CLASS_ROOT + "__time" },
+        { direction: 'row', className: CLASS_ROOT + "__time",
+          responsive: false },
         elements
       );
     }
@@ -345,8 +346,7 @@ var DateTimeDrop = function (_Component) {
 
       return _react2.default.createElement(
         _Box2.default,
-        { id: CLASS_ROOT, className: CLASS_ROOT, align: 'center',
-          onClick: this._onClose },
+        { id: CLASS_ROOT, className: CLASS_ROOT, align: 'center' },
         date,
         time
       );

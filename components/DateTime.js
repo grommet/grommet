@@ -94,8 +94,10 @@ var DateTime = function (_Component) {
 
     _this._onInputChange = _this._onInputChange.bind(_this);
     _this._onOpen = _this._onOpen.bind(_this);
+    _this._onForceClose = _this._onForceClose.bind(_this);
     _this._onControlClick = _this._onControlClick.bind(_this);
     _this._onClose = _this._onClose.bind(_this);
+    _this._onCloseDrop = _this._onCloseDrop.bind(_this);
     _this._onNext = _this._onNext.bind(_this);
     _this._onPrevious = _this._onPrevious.bind(_this);
     _this._cursorScope = _this._cursorScope.bind(_this);
@@ -197,11 +199,17 @@ var DateTime = function (_Component) {
     key: '_onControlClick',
     value: function _onControlClick(event) {
       event.preventDefault();
+      event.stopPropagation();
       if (this.state.dropActive) {
         this.setState({ dropActive: false, cursor: -1 });
       } else {
         this.setState({ dropActive: true });
       }
+    }
+  }, {
+    key: '_onForceClose',
+    value: function _onForceClose() {
+      this.setState({ dropActive: false, cursor: -1 });
     }
   }, {
     key: '_onOpen',
@@ -215,6 +223,14 @@ var DateTime = function (_Component) {
       var drop = document.getElementById(DATE_TIME_DROP);
       var isCalendarOnly = !TIME_REGEXP.test(this.props.format);
       if (!(0, _DOM.isDescendant)(this.refs.component, event.target) && !(0, _DOM.isDescendant)(drop, event.target) || isCalendarOnly) {
+        this.setState({ dropActive: false, cursor: -1 });
+      }
+    }
+  }, {
+    key: '_onCloseDrop',
+    value: function _onCloseDrop(event) {
+      var drop = document.getElementById(DATE_TIME_DROP);
+      if (!(0, _DOM.isDescendant)(drop, event.target)) {
         this.setState({ dropActive: false, cursor: -1 });
       }
     }
@@ -275,10 +291,9 @@ var DateTime = function (_Component) {
   }, {
     key: '_activation',
     value: function _activation(dropActive) {
-
       var listeners = {
-        esc: this._onClose,
-        tab: this._onClose,
+        esc: this._onForceClose,
+        tab: this._onCloseDrop,
         enter: this._onSelectDate,
         up: this._onPrevious,
         down: this._onNext
@@ -312,8 +327,6 @@ var DateTime = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this2 = this;
-
       var _props2 = this.props;
       var className = _props2.className;
       var format = _props2.format;
@@ -338,10 +351,7 @@ var DateTime = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        { ref: 'component', className: classes.join(' '),
-          onBlur: function onBlur() {
-            return _this2.setState({ dropActive: false, cursor: -1 });
-          } },
+        { ref: 'component', className: classes.join(' ') },
         _react2.default.createElement('input', { ref: 'input', className: CLASS_ROOT + '__input',
           id: id, placeholder: format, name: name, value: value || '',
           onChange: this._onInputChange }),
