@@ -42,7 +42,8 @@ export default class Tiles extends Component {
   componentDidMount () {
     this._setSelection();
     if (this.props.onMore) {
-      this._scroll = InfiniteScroll.startListeningForScroll(this.refs.more, this.props.onMore);
+      this._scroll = InfiniteScroll.startListeningForScroll(this.refs.more,
+        this.props.onMore);
     }
     if ('row' === this.props.direction) {
       window.addEventListener('resize', this._onResize);
@@ -54,7 +55,8 @@ export default class Tiles extends Component {
       // grab CSS styles from DOM after component mounted
       // default to medium tile size ($tile-size = 192px)
       let minColumnWidth = 192;
-      const tile = document.querySelectorAll(`.${CLASS_ROOT}__masonry-column .${TILE}`);
+      const tile =
+        document.querySelectorAll(`.${CLASS_ROOT}__masonry-column .${TILE}`);
       if (tile && tile.length > 0) {
         const columnTile = window.getComputedStyle(tile[0]);
         if (columnTile && columnTile.width) {
@@ -74,7 +76,9 @@ export default class Tiles extends Component {
 
   componentWillReceiveProps (nextProps) {
     if (nextProps.selected) {
-      this.setState({ selected: Selection.normalizeIndexes(nextProps.selected) });
+      this.setState({
+        selected: Selection.normalizeIndexes(nextProps.selected)
+      });
     }
     if (this._scroll) {
       InfiniteScroll.stopListeningForScroll(this._scroll);
@@ -83,11 +87,13 @@ export default class Tiles extends Component {
   }
 
   componentDidUpdate (prevProps, prevState) {
-    if (JSON.stringify(this.state.selected) !== JSON.stringify(prevState.selected)) {
+    if (JSON.stringify(this.state.selected) !==
+      JSON.stringify(prevState.selected)) {
       this._setSelection();
     }
     if (this.props.onMore && !this._scroll) {
-      this._scroll = InfiniteScroll.startListeningForScroll(this.refs.more, this.props.onMore);
+      this._scroll = InfiniteScroll.startListeningForScroll(this.refs.more,
+        this.props.onMore);
     }
     if ('row' === this.props.direction) {
       this._trackHorizontalScroll();
@@ -165,7 +171,8 @@ export default class Tiles extends Component {
       this.setState({
         overflow: (tiles.scrollWidth > (tiles.offsetWidth + 20)),
         overflowStart: (tiles.scrollLeft <= 20),
-        overflowEnd: (tiles.scrollLeft >= (tiles.scrollWidth - tiles.offsetWidth))
+        overflowEnd:
+          (tiles.scrollLeft >= (tiles.scrollWidth - tiles.offsetWidth))
       });
 
       // mark any tiles that might be clipped
@@ -228,7 +235,8 @@ export default class Tiles extends Component {
     const columnsArray = Array.apply(null, Array(numColumns));
     let columns = columnsArray.map((current, i) => {
       return (
-        <Box className={`${CLASS_ROOT}__masonry-column`} key={`column-${numColumns}-${i}`}>
+        <Box className={`${CLASS_ROOT}__masonry-column`}
+          key={`column-${numColumns}-${i}`}>
           {columnContents[`column-${i}`]}
         </Box>
       );

@@ -133,7 +133,8 @@ export default class DateTimeDrop extends Component {
 
     return [
       <Header key="header" justify="between" colorIndex="neutral-1">
-        <Button className={CLASS_ROOT + "__previous"} icon={<LinkPreviousIcon />}
+        <Button className={CLASS_ROOT + "__previous"}
+          icon={<LinkPreviousIcon />}
           onClick={this._onPrevious.bind(this, 'month')} />
         <Title className={CLASS_ROOT + "__title"} responsive={false}>
           {value.format('MMMM YYYY')}

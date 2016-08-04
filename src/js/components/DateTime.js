@@ -222,7 +222,8 @@ export default class DateTime extends Component {
 
       // If this is inside a FormField, place the drop in reference to it.
       const control =
-        findAncestor(this.refs.component, `.${FORM_FIELD}`) || this.refs.component;
+        findAncestor(this.refs.component, `.${FORM_FIELD}`) ||
+        this.refs.component;
       this._drop = Drop.add(control,
         this._renderDrop(), { align: {top: 'bottom', left: 'left'} });
 

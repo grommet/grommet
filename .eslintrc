@@ -40,9 +40,9 @@ rules:
   dot-notation: 2
   no-unused-vars: [2, args: none]
   semi: [2, "always"]
+  max-len: 2
 
   # DISABLED
-  max-len: 0
   #change soon back to max-len: [1, 80]
   no-underscore-dangle: 0
   new-cap: 0

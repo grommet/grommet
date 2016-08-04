@@ -213,7 +213,8 @@ export default class Graph extends Component {
         }
       } else if ('bar' === type) {
         commands = coordinates.map(c => (
-          `M${c.join(',')}L${vertical ? `${padding},${c[1]}` : `${c[0]},${height - padding}`}`
+          `M${c.join(',')}L${vertical ? `${padding},${c[1]}` :
+            `${c[0]},${height - padding}`}`
         )).join(' ');
         pathProps.fill = 'none';
       }
@@ -245,7 +246,8 @@ Graph.propTypes = {
   reverse: PropTypes.bool,
   smooth: PropTypes.bool,
   values: PropTypes.arrayOf(PropTypes.number).isRequired,
-  type: PropTypes.oneOf(['area', 'line', 'bar']).isRequired, // from extending component
+  // type comes from extending the component
+  type: PropTypes.oneOf(['area', 'line', 'bar']).isRequired,
   vertical: PropTypes.bool,
   width: PropTypes.number // only from Chart
 };
