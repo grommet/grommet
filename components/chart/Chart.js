@@ -85,6 +85,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var CLASS_ROOT = _CSSClassnames2.default.CHART;
 var CHART_BASE = _CSSClassnames2.default.CHART_BASE;
+var CHART_AXIS = _CSSClassnames2.default.CHART_AXIS;
+var CHART_MARKER_LABEL = _CSSClassnames2.default.CHART_MARKER_LABEL;
 
 var Chart = function (_Component) {
   (0, _inherits3.default)(Chart, _Component);
@@ -144,6 +146,16 @@ var Chart = function (_Component) {
           alignTop = void 0,
           alignHeight = void 0;
       var padAlign = true;
+
+      // Clear any previously set width and height on Axis and MarkerLabel
+      // children.
+      var children = chart.childNodes;
+      for (var i = 0; i < children.length; i++) {
+        var child = children[i];
+        if (child.classList.contains(CHART_AXIS) || child.classList.contains(CHART_MARKER_LABEL)) {
+          child.style.removeProperty('width');
+        }
+      }
 
       if (horizontalAlignWith) {
         var elem = document.getElementById(horizontalAlignWith);
