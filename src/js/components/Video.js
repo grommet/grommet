@@ -170,7 +170,10 @@ export default class Video extends Component {
       mute: this._mute,
       unmute: this._unmute,
       seek: this._seek,
-      fullscreen: this._fullscreen
+      fullscreen: this._fullscreen,
+      shareLink: this.props.shareLink,
+      shareHeadline: this.props.shareHeadline,
+      shareText: this.props.shareText
     }, this.state);
 
     return (
@@ -207,6 +210,9 @@ export default class Video extends Component {
     if (this.state.hasPlayed) {
       classes.push(`${CLASS_ROOT}--has-played`);
     }
+    if (this.state.ended) {
+      classes.push(`${CLASS_ROOT}--ended`);
+    }
 
     return (
       <div className={classes.join(' ')} onMouseMove={this._onMouseMove}>
@@ -237,6 +243,9 @@ Video.propTypes = {
   onClick: PropTypes.func,
   allowFullScreen: PropTypes.bool,
   autoPlay: PropTypes.bool,
+  shareLink: PropTypes.string,
+  shareHeadline: PropTypes.string,
+  shareText: PropTypes.string,
   showControls: PropTypes.bool,
   muted: PropTypes.bool,
   loop: PropTypes.bool
