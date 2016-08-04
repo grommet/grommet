@@ -18,6 +18,8 @@ import Range from './Range';
 
 const CLASS_ROOT = CSSClassnames.CHART;
 const CHART_BASE = CSSClassnames.CHART_BASE;
+const CHART_AXIS = CSSClassnames.CHART_AXIS;
+const CHART_MARKER_LABEL = CSSClassnames.CHART_MARKER_LABEL;
 
 export default class Chart extends Component {
 
@@ -57,6 +59,17 @@ export default class Chart extends Component {
     const base = this.refs.chart.querySelector(`.${CHART_BASE}`);
     let alignWidth, alignLeft, alignTop, alignHeight;
     let padAlign = true;
+
+    // Clear any previously set width and height on Axis and MarkerLabel
+    // children.
+    const children = chart.childNodes;
+    for (let i=0; i<children.length; i++) {
+      const child = children[i];
+      if (child.classList.contains(CHART_AXIS) ||
+        child.classList.contains(CHART_MARKER_LABEL)) {
+        child.style.removeProperty('width');
+      }
+    }
 
     if (horizontalAlignWith) {
       const elem = document.getElementById(horizontalAlignWith);
