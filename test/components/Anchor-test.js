@@ -112,7 +112,8 @@ test('loads an Anchor with an icon', (t) => {
     anchorElement.props.children.length, 2, 'Anchor has two children'
   );
   t.equal(
-    anchorElement.props.children[1], undefined, 'Anchor second child is undefined'
+    anchorElement.props.children[1], undefined,
+    'Anchor second child is undefined'
   );
 });
 
@@ -131,7 +132,8 @@ test('loads an Anchor with an icon and label', (t) => {
     t.fail('Anchor does not have anchor class');
   }
 
-  if (anchorElement.props.className.indexOf(`${CLASS_ROOT}--icon-label`) !== -1) {
+  if (anchorElement.props.className.indexOf(`${CLASS_ROOT}--icon-label`)
+    !== -1) {
     t.pass('Anchor has icon-label class');
   } else {
     t.fail('Anchor does not have icon-label class');
@@ -161,7 +163,8 @@ test('loads an Anchor with an icon and label reverse', (t) => {
     t.fail('Anchor does not have anchor class');
   }
 
-  if (anchorElement.props.className.indexOf(`${CLASS_ROOT}--icon-label`) !== -1) {
+  if (anchorElement.props.className.indexOf(`${CLASS_ROOT}--icon-label`)
+    !== -1) {
     t.pass('Anchor has icon-label class');
   } else {
     t.fail('Anchor does not have icon-label class');
@@ -199,7 +202,8 @@ test('loads an Anchor with a children icon', (t) => {
     anchorElement.props.children.length, 2, 'Anchor has two children'
   );
   t.equal(
-    anchorElement.props.children[0], undefined, 'Anchor first child is undefined'
+    anchorElement.props.children[0], undefined,
+    'Anchor first child is undefined'
   );
 });
 
@@ -221,7 +225,8 @@ test('loads an Anchor with a children text', (t) => {
     anchorElement.props.children.length, 2, 'Anchor has two children'
   );
   t.equal(
-    anchorElement.props.children[0], undefined, 'Anchor first child is undefined'
+    anchorElement.props.children[0], undefined,
+    'Anchor first child is undefined'
   );
   t.equal(
     anchorElement.props.children[1][0], 'test', 'Anchor has text children'
