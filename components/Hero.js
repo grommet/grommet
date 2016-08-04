@@ -139,7 +139,9 @@ var Hero = function (_Component) {
 
       var backgroundMarkup = void 0;
       if (backgroundImage) {
-        backgroundMarkup = _react2.default.createElement(_Box2.default, { containerClassName: CLASS_ROOT + "__background", appCentered: true, pad: pad, backgroundImage: 'url(' + backgroundImage + ')', full: full });
+        backgroundMarkup = _react2.default.createElement(_Box2.default, { containerClassName: CLASS_ROOT + "__background",
+          appCentered: true, pad: pad,
+          backgroundImage: 'url(' + backgroundImage + ')', full: full });
       } else if (backgroundVideo) {
         backgroundMarkup = _react2.default.createElement(
           _Box2.default,
@@ -157,25 +159,31 @@ var Hero = function (_Component) {
       if (justify === 'center') {
         contentMarkup = _react2.default.createElement(
           _Box2.default,
-          { className: CLASS_ROOT + "__overlay", justify: justify, align: 'center', primary: true, full: full, direction: 'row' },
+          { className: CLASS_ROOT + "__overlay", justify: justify,
+            align: 'center', primary: true, full: full, direction: 'row' },
           _react2.default.createElement(
             _Box2.default,
-            { pad: { horizontal: 'large', vertical: 'large', between: 'medium' } },
+            { pad: { horizontal: 'large', vertical: 'large',
+                between: 'medium' } },
             children
           )
         );
       } else {
         contentMarkup = _react2.default.createElement(
           _Box2.default,
-          { className: CLASS_ROOT + "__overlay", align: 'center', primary: true, full: full, direction: 'row', reverse: this.state.reverse },
+          { className: CLASS_ROOT + "__overlay", align: 'center',
+            primary: true, full: full, direction: 'row',
+            reverse: this.state.reverse },
           _react2.default.createElement(
             _Box2.default,
-            { className: CLASS_ROOT + "__image", align: 'center', justify: 'center' },
+            { className: CLASS_ROOT + "__image", align: 'center',
+              justify: 'center' },
             imageMarkup
           ),
           _react2.default.createElement(
             _Box2.default,
-            { pad: { horizontal: 'large', vertical: 'large', between: 'medium' } },
+            { pad: { horizontal: 'large', vertical: 'large',
+                between: 'medium' } },
             children
           )
         );

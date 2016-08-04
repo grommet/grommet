@@ -303,7 +303,8 @@ Graph.propTypes = {
   reverse: _react.PropTypes.bool,
   smooth: _react.PropTypes.bool,
   values: _react.PropTypes.arrayOf(_react.PropTypes.number).isRequired,
-  type: _react.PropTypes.oneOf(['area', 'line', 'bar']).isRequired, // from extending component
+  // type comes from extending the component
+  type: _react.PropTypes.oneOf(['area', 'line', 'bar']).isRequired,
   vertical: _react.PropTypes.bool,
   width: _react.PropTypes.number // only from Chart
 };

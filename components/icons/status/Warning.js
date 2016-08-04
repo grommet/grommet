@@ -57,14 +57,16 @@ var Warning = function (_Component) {
         className += ' ' + this.props.className;
       }
       if (typeof this.props.a11yTitle === "undefined") {
-        // this.props.a11yTitle emplty string is an acceptable value. Only if undefined
+        // this.props.a11yTitle emplty string is an acceptable value.
+        // Only if undefined
         // should use the default title value.
         a11yTitle = 'Warning';
       }
       var warningTitleId = 'warning-title';
       return _react2.default.createElement(
         'svg',
-        { className: className, viewBox: '0 0 24 24', role: 'img', 'aria-labelledby': warningTitleId, version: '1.1' },
+        { className: className, viewBox: '0 0 24 24', role: 'img',
+          'aria-labelledby': warningTitleId, version: '1.1' },
         _react2.default.createElement(
           'title',
           { id: warningTitleId },
@@ -73,11 +75,13 @@ var Warning = function (_Component) {
         _react2.default.createElement(
           'g',
           { className: STATUS_ICON + '__base' },
-          _react2.default.createElement('path', { role: 'presentation', d: 'M12,0 L0,22 L24,22 L12,0 L12,0 Z', stroke: 'none' })
+          _react2.default.createElement('path', { role: 'presentation', d: 'M12,0 L0,22 L24,22 L12,0 L12,0 Z',
+            stroke: 'none' })
         ),
         _react2.default.createElement(
           'g',
-          { className: STATUS_ICON + '__detail', strokeWidth: '2', transform: 'translate(11.000000, 8.000000)' },
+          { className: STATUS_ICON + '__detail', strokeWidth: '2',
+            transform: 'translate(11.000000, 8.000000)' },
           _react2.default.createElement('path', { role: 'presentation', d: 'M1,0 L1,6', fill: 'none' }),
           _react2.default.createElement('path', { role: 'presentation', d: 'M1,8 L1,10', fill: 'none' })
         )

@@ -65,8 +65,10 @@ var Spinning = function (_Component) {
           null,
           'Spinning'
         ),
-        _react2.default.createElement('circle', { stroke: '#ddd', strokeWidth: '4', strokeDasharray: '24px 8px', fill: 'none', cx: '24', cy: '24', r: '20' }),
-        _react2.default.createElement('circle', { stroke: '#333', strokeWidth: '4', strokeDasharray: '24px 104px', fill: 'none', cx: '24', cy: '24', r: '20' })
+        _react2.default.createElement('circle', { stroke: '#ddd', strokeWidth: '4', strokeDasharray: '24px 8px',
+          fill: 'none', cx: '24', cy: '24', r: '20' }),
+        _react2.default.createElement('circle', { stroke: '#333', strokeWidth: '4', strokeDasharray: '24px 104px',
+          fill: 'none', cx: '24', cy: '24', r: '20' })
       );
     }
   }]);

@@ -109,7 +109,7 @@ var Legend = function (_Component) {
           swatch = _react2.default.createElement(
             'svg',
             {
-              className: CLASS_ROOT + '__item-swatch ' + COLOR_INDEX + '-' + colorIndex,
+              className: CLASS_ROOT + '__item-swatch ' + (COLOR_INDEX + '-' + colorIndex),
               viewBox: '0 0 12 12' },
             _react2.default.createElement('path', { className: item.className, d: 'M 5 0 l 0 12' })
           );

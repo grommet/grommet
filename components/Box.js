@@ -203,7 +203,8 @@ var Box = function (_Component) {
       if (this.props.appCentered) {
         return _react2.default.createElement(
           'div',
-          (0, _extends3.default)({}, restProps, { ref: 'boxContainer', className: containerClasses.join(' '),
+          (0, _extends3.default)({}, restProps, { ref: 'boxContainer',
+            className: containerClasses.join(' '),
             style: style, role: this.props.role }, a11yProps),
           skipLinkAnchor,
           _react2.default.createElement(

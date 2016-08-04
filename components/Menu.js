@@ -274,7 +274,8 @@ var MenuDrop = function (_Component) {
       var onClick = _props.onClick;
 
       var boxProps = _Props2.default.pick(this.props, (0, _keys2.default)(_Box2.default.propTypes));
-      delete boxProps.colorIndex; // manage colorIndex at the outer menuDrop element
+      // manage colorIndex at the outer menuDrop element
+      delete boxProps.colorIndex;
 
       delete boxProps.onClick;
 
@@ -518,7 +519,7 @@ var Menu = function (_Component2) {
     value: function _renderMenuDrop() {
       var closeLabel = _Intl2.default.getMessage(this.context.intl, 'Close');
       var menuLabel = _Intl2.default.getMessage(this.context.intl, 'Menu');
-      var menuTitle = closeLabel + ' ' + (this.props.a11yTitle || this.props.label || '') + ' ' + menuLabel;
+      var menuTitle = closeLabel + ' ' + (this.props.a11yTitle || this.props.label || '') + ' ' + ('' + menuLabel);
 
       var control = _react2.default.createElement(
         _Button2.default,
@@ -572,7 +573,7 @@ var Menu = function (_Component2) {
         var controlContents = this._renderControlContents();
         var openLabel = _Intl2.default.getMessage(this.context.intl, 'Open');
         var menuLabel = _Intl2.default.getMessage(this.context.intl, 'Menu');
-        var menuTitle = openLabel + ' ' + (this.props.a11yTitle || this.props.label || '') + ' ' + menuLabel;
+        var menuTitle = openLabel + ' ' + (this.props.a11yTitle || this.props.label || '') + ' ' + ('' + menuLabel);
 
         return _react2.default.createElement(
           'div',

@@ -48,7 +48,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var CLASS_ROOT = _CSSClassnames2.default.CHART_BASE;
 
-// Placeholder that reserves space on the screen for Layers to be positioned over.
+// Placeholder that reserves space on the screen for Layers to be
+// positioned over.
 
 // (C) Copyright 2016 Hewlett Packard Enterprise Development LP
 
@@ -87,7 +88,8 @@ var Base = function (_Component) {
       }
 
       var children = this.props.children;
-      // We can't distribute children when vertical because our height isn't known.
+      // We can't distribute children when vertical because our height isn't
+      // known.
       if (!vertical) {
         (function () {
           // Round to hundredths of a % so things line up reasonably accurately

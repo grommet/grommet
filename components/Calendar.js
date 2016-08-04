@@ -234,7 +234,10 @@ var Calendar = function (_Component) {
         var previousDay = (0, _moment2.default)(current).subtract(1, 'days');
 
         if (!previousDay.isSame(reference, 'month')) {
-          this.setState({ reference: reference.subtract(1, 'month'), current: previousDay });
+          this.setState({
+            reference: reference.subtract(1, 'month'),
+            current: previousDay
+          });
         } else {
           this.setState({ current: previousDay });
         }
@@ -269,7 +272,10 @@ var Calendar = function (_Component) {
       var previousWeek = (0, _moment2.default)(current).subtract(1, 'week');
 
       if (!previousWeek.isSame(reference, 'month')) {
-        this.setState({ reference: reference.subtract(1, 'month'), current: previousWeek });
+        this.setState({
+          reference: reference.subtract(1, 'month'),
+          current: previousWeek
+        });
       } else {
         this.setState({ current: previousWeek });
       }

@@ -76,7 +76,8 @@ var Grommet = function (_Component) {
       }
       return _react2.default.createElement(
         'svg',
-        { className: classes.join(' '), viewBox: '0 0 182 182', width: '182', height: '182',
+        { className: classes.join(' '), viewBox: '0 0 182 182',
+          width: '182', height: '182',
           version: '1.1', role: 'img', 'aria-labelledby': a11yTitleId },
         title,
         _react2.default.createElement('path', { role: 'presentation',

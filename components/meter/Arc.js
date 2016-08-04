@@ -128,7 +128,7 @@ var Arc = function (_Graphic) {
         var y = ARC_WIDTH / 2;
         var indicatorCommands = singleIndicatorCommands(x, y, ARC_RADIUS, startAngle + this.state.angleOffset, endAngle + this.state.angleOffset, length);
         indicator = _react2.default.createElement('path', { fill: 'none',
-          className: CLASS_ROOT + '__slice-indicator ' + COLOR_INDEX + '-' + item.colorIndex,
+          className: CLASS_ROOT + '__slice-indicator ' + (COLOR_INDEX + '-' + item.colorIndex),
           d: indicatorCommands });
       }
 

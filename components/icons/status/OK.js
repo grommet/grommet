@@ -57,14 +57,16 @@ var OK = function (_Component) {
         className += ' ' + this.props.className;
       }
       if (typeof this.props.a11yTitle === "undefined") {
-        // this.props.a11yTitle emplty string is an acceptable value only if undefined
+        // this.props.a11yTitle emplty string is an acceptable value
+        // only if undefined
         // should it use the default title value
         a11yTitle = 'OK';
       }
       var okTitleId = 'ok-title';
       return _react2.default.createElement(
         'svg',
-        { className: className, viewBox: '0 0 24 24', role: 'img', 'aria-labelledby': okTitleId, version: '1.1' },
+        { className: className, viewBox: '0 0 24 24', role: 'img',
+          'aria-labelledby': okTitleId, version: '1.1' },
         _react2.default.createElement(
           'title',
           { id: okTitleId },
@@ -78,7 +80,8 @@ var OK = function (_Component) {
         _react2.default.createElement(
           'g',
           { className: STATUS_ICON + '__detail' },
-          _react2.default.createElement('path', { role: 'presentation', d: 'M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z', stroke: 'none' })
+          _react2.default.createElement('path', { role: 'presentation',
+            d: "M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 " + "L10,17.4 Z", stroke: 'none' })
         )
       );
     }

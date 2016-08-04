@@ -556,8 +556,9 @@ var Chart = function (_Component) {
             var x = Math.max(POINT_RADIUS + 1, Math.min(bounds.graphWidth - (POINT_RADIUS + 1), coordinate[0]));
             var value = item.values[index];
             points.push(_react2.default.createElement('circle', { key: index,
-              className: CLASS_ROOT + '__values-point ' + COLOR_INDEX + '-' + colorIndex,
-              cx: x, cy: coordinate[1], r: POINT_RADIUS, onClick: value.onClick }));
+              className: CLASS_ROOT + '__values-point ' + (COLOR_INDEX + '-' + colorIndex),
+              cx: x, cy: coordinate[1], r: POINT_RADIUS,
+              onClick: value.onClick }));
           }
 
           previousControlCoordinates = controlCoordinates;
@@ -726,7 +727,8 @@ var Chart = function (_Component) {
         x += bounds.barPadding;
         startX = x;
       }
-      return { x: x, anchor: anchor, startX: startX, endX: startX + MIN_LABEL_WIDTH };
+      return { x: x, anchor: anchor, startX: startX,
+        endX: startX + MIN_LABEL_WIDTH };
     }
   }, {
     key: '_labelOverlaps',
@@ -965,7 +967,8 @@ var Chart = function (_Component) {
       }
       // Offset it just a little if it is at an edge.
       var x = Math.max(1, Math.min(coordinates[0], this.state.bounds.graphWidth - 1));
-      var line = _react2.default.createElement('line', { fill: 'none', x1: x, y1: bounds.graphTop, x2: x, y2: bounds.graphBottom });
+      var line = _react2.default.createElement('line', { fill: 'none', x1: x, y1: bounds.graphTop, x2: x,
+        y2: bounds.graphBottom });
 
       var points = void 0;
       if (this.props.points) {
@@ -976,7 +979,7 @@ var Chart = function (_Component) {
             coordinates = _this7._coordinates(value);
             var colorIndex = _this7._itemColorIndex(item, seriesIndex);
             return _react2.default.createElement('circle', { key: seriesIndex,
-              className: CLASS_ROOT + '__cursor-point ' + COLOR_INDEX + '-' + colorIndex,
+              className: CLASS_ROOT + '__cursor-point ' + (COLOR_INDEX + '-' + colorIndex),
               cx: x, cy: coordinates[1], r: Math.round(POINT_RADIUS * 1.2) });
           });
         }

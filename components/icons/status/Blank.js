@@ -57,14 +57,16 @@ var Blank = function (_Component) {
         className += ' ' + this.props.className;
       }
       if (typeof this.props.a11yTitle === "undefined") {
-        // this.props.a11yTitle empty string is an acceptable value. Only if undefined
+        // this.props.a11yTitle empty string is an acceptable value.
+        // Only if undefined
         // should use the default title value.
         a11yTitle = 'Blank';
       }
       var blankTitleId = 'blank-title';
       return _react2.default.createElement(
         'svg',
-        { className: className, viewBox: '0 0 24 24', role: 'img', 'aria-labelledby': blankTitleId, version: '1.1' },
+        { className: className, viewBox: '0 0 24 24', role: 'img',
+          'aria-labelledby': blankTitleId, version: '1.1' },
         _react2.default.createElement(
           'title',
           { id: blankTitleId },

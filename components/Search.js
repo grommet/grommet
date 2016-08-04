@@ -157,7 +157,8 @@ var Search = function (_Component) {
       if (this.state.dropActive && !prevState.dropActive) {
         // Slow down adding the click handler,
         // otherwise the drop will close when the mouse is released.
-        // Not observable in Safari, 1ms is sufficient for Chrome, Firefox needs 100ms though. :(
+        // Not observable in Safari, 1ms is sufficient for Chrome,
+        // Firefox needs 100ms though. :(
         // TODO: re-evaluate how to solve this without a timeout.
         document.addEventListener('click', this._onRemoveDrop);
         _KeyboardAccelerators2.default.startListeningToKeyboard(this, activeKeyboardHandlers);

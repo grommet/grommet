@@ -169,7 +169,9 @@ var Tiles = function (_Component) {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
       if (nextProps.selected) {
-        this.setState({ selected: _Selection2.default.normalizeIndexes(nextProps.selected) });
+        this.setState({
+          selected: _Selection2.default.normalizeIndexes(nextProps.selected)
+        });
       }
       if (this._scroll) {
         _InfiniteScroll2.default.stopListeningForScroll(this._scroll);
@@ -344,7 +346,8 @@ var Tiles = function (_Component) {
       var columns = columnsArray.map(function (current, i) {
         return _react2.default.createElement(
           _Box2.default,
-          { className: CLASS_ROOT + '__masonry-column', key: 'column-' + numColumns + '-' + i },
+          { className: CLASS_ROOT + '__masonry-column',
+            key: 'column-' + numColumns + '-' + i },
           columnContents['column-' + i]
         );
       });

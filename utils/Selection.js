@@ -30,7 +30,8 @@ function clearClass(options) {
 }
 
 // Sets the selectedClass on all children whose index is in selectedIndexes.
-// options: {containerElement: , childSelector: , selectedClass: , selectedIndexes: []}
+// options: {containerElement: , childSelector: , selectedClass: ,
+//    selectedIndexes: []}
 function setClassFromIndexes(options) {
   clearClass(options);
   if (options.selectedIndexes) {
@@ -45,7 +46,8 @@ function setClassFromIndexes(options) {
   }
 }
 
-// Gets the selected selectedClass on all children whose index is in selectedIndexes.
+// Gets the selected selectedClass on all children whose index is in
+// selectedIndexes.
 // options: {containerElement: , childSelector: , selectedClass: }
 function getIndexesFromClass(options) {
   var items = options.containerElement.querySelectorAll(options.childSelector);

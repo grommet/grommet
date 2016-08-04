@@ -73,7 +73,8 @@ var Spiral = function (_Graphic) {
         startAngle: 0,
         anglePer: 270.0 / props.max.value,
         angleOffset: 180,
-        // The last spiral ends out near but not quite at the edge of the view box.
+        // The last spiral ends out near but not quite at the edge of the
+        // view box.
         startRadius: Math.max(SPIRAL_RADIUS, RING_THICKNESS * (props.series.length + 0.5)) - Math.max(0, props.series.length - 1) * RING_THICKNESS,
         viewBoxWidth: viewBoxWidth,
         viewBoxHeight: viewBoxHeight

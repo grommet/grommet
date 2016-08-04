@@ -82,7 +82,9 @@ var Login = function (_Component) {
       var windowRatio = window.innerWidth / window.innerHeight;
       var image = this.refs.background;
       var imageRatio = image.scrollWidth / image.scrollHeight;
-      this.setState({ orientation: windowRatio < imageRatio ? 'portrait' : 'landscape' });
+      this.setState({
+        orientation: windowRatio < imageRatio ? 'portrait' : 'landscape'
+      });
     }
   }, {
     key: 'render',

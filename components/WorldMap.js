@@ -151,7 +151,8 @@ var WorldMap = function (_Component) {
         area = _react2.default.createElement('path', { stroke: 'none', fill: '#fff', fillOpacity: '0.01',
           d: this.state.area[continent] });
       }
-      // We add the area so the mouse events work for the whole region, not just the dots
+      // We add the area so the mouse events work for the whole region,
+      // not just the dots
       return _react2.default.createElement(
         'g',
         { key: continent, id: continent, className: classes.join(' '),

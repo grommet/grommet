@@ -117,7 +117,8 @@ var Article = function (_Component) {
     _this._onResponsive = _this._onResponsive.bind(_this);
     _this._updateHiddenElements = _this._updateHiddenElements.bind(_this);
 
-    // Necessary to detect for Firefox or Edge to implement accessibility tabbing
+    // Necessary to detect for Firefox or Edge to implement accessibility
+    // tabbing
     var accessibilityTabbingCompatible = typeof navigator !== 'undefined' && navigator.userAgent.indexOf("Firefox") === -1 && navigator.userAgent.indexOf("Edge") === -1;
 
     _this.state = {
@@ -481,7 +482,8 @@ var Article = function (_Component) {
               _this7.props.onSelect(selectedIndex);
             }
 
-            // Necessary to detect for Firefox or Edge to implement accessibility tabbing
+            // Necessary to detect for Firefox or Edge to implement accessibility
+            // tabbing
             if (_this7.props.direction === 'row' && _this7.state.accessibilityTabbingCompatible) {
               _this7.refs.anchorStep.focus();
               _this7._updateHiddenElements();

@@ -37,7 +37,8 @@ var HORIZONTAL_ALIGN_OPTIONS = ['right', 'left'];
 
 exports.default = {
 
-  // How callers can validate a property for drop alignment which will be passed to add().
+  // How callers can validate a property for drop alignment which will be
+  // passed to add().
   alignPropType: _react.PropTypes.shape({
     top: _react.PropTypes.oneOf(VERTICAL_ALIGN_OPTIONS),
     bottom: _react.PropTypes.oneOf(VERTICAL_ALIGN_OPTIONS),

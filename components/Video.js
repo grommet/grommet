@@ -114,7 +114,9 @@ var Video = function (_Component) {
       // Dynamically modifying a source element and its attribute when
       // the element is already inserted in a video or audio element will
       // have no effect.
-      // From HTML Specs: https://html.spec.whatwg.org/multipage/embedded-content.html#the-source-element
+      // From HTML Specs:
+      // https://html.spec.whatwg.org/multipage/embedded-content.html
+      //   #the-source-element
       // Using forceUpdate to force redraw of video when receiving new <source>
       this.forceUpdate();
     }
@@ -291,7 +293,8 @@ var Video = function (_Component) {
 
       var controlsContent = _react2.default.createElement(
         _Box2.default,
-        { pad: 'none', align: 'center', justify: videoSummaryJustify, className: CLASS_ROOT + '__summary' },
+        { pad: 'none', align: 'center', justify: videoSummaryJustify,
+          className: CLASS_ROOT + '__summary' },
         videoHeader,
         _react2.default.createElement(
           _Box2.default,

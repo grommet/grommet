@@ -223,7 +223,8 @@ var DateTimeDrop = function (_Component) {
       return [_react2.default.createElement(
         _Header2.default,
         { key: 'header', justify: 'between', colorIndex: 'neutral-1' },
-        _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + "__previous", icon: _react2.default.createElement(_LinkPrevious2.default, null),
+        _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + "__previous",
+          icon: _react2.default.createElement(_LinkPrevious2.default, null),
           onClick: this._onPrevious.bind(this, 'month') }),
         _react2.default.createElement(
           _Title2.default,

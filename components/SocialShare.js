@@ -82,10 +82,10 @@ var SocialShare = function (_Component) {
 
       if (type === 'twitter') {
         socialIcon = _react2.default.createElement(_SocialTwitter2.default, { a11yTitle: 'Share on Twitter' });
-        href = 'https://twitter.com/intent/tweet?url=' + encodedLink + '&text=' + encodedText;
+        href = 'https://twitter.com/intent/tweet?url=' + (encodedLink + '&text=' + encodedText);
       } else if (type === 'linkedin') {
         socialIcon = _react2.default.createElement(_SocialLinkedin2.default, { a11yTitle: 'Share on LinkedIn' });
-        href = 'https://www.linkedin.com/shareArticle?mini=true&url=' + encodedLink + '&title=' + encodedTitle + '&summary=' + encodedText;
+        href = 'https://www.linkedin.com/shareArticle?mini=true&url=' + (encodedLink + '&title=' + encodedTitle + '&summary=' + encodedText);
       } else if (type === 'google') {
         socialIcon = _react2.default.createElement(_SocialGoogle2.default, { a11yTitle: 'Share on Google' });
         href = 'https://plus.google.com/share?url=' + encodedLink;
@@ -94,7 +94,7 @@ var SocialShare = function (_Component) {
         href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodedLink;
       } else if (type === 'email') {
         socialIcon = _react2.default.createElement(_SocialEmail2.default, { a11yTitle: 'Share on Email' });
-        href = 'mailto:?subject=' + encodedTitle + '&body=' + encodedText + '%0D%0A' + encodedLink;
+        href = 'mailto:?subject=' + (encodedTitle + '&body=' + encodedText + '%0D%0A' + encodedLink);
         target = '_self';
       }
 
