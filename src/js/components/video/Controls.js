@@ -14,6 +14,7 @@ import PlayIcon from '../icons/base/Play';
 import PauseIcon from '../icons/base/Pause';
 import RefreshIcon from '../icons/base/Refresh';
 import CSSClassnames from '../../utils/CSSClassnames';
+import VideoTime from './Time';
 
 const CLASS_ROOT = CSSClassnames.VIDEO;
 
@@ -36,18 +37,6 @@ export default class Controls extends Component {
     }
 
     return dateISOString.substr(11, 8);
-  }
-
-  _renderTime() {
-    return (
-      <Box pad={{ horizontal: 'small', vertical: 'none' }}>
-        <Heading tag="h3" margin="none" className={`${CLASS_ROOT}__time`}>
-          {this._formatTime(this.props.currentTime)}
-          /
-          {this._formatTime(this.props.duration)}
-        </Heading>
-      </Box>
-    );
   }
 
   _onProgressBarChange(e) {
@@ -88,7 +77,7 @@ export default class Controls extends Component {
   }
 
   render() {
-    const { hasPlayed, playing, ended } = this.props;
+    const { hasPlayed, playing, ended, currentTime, duration } = this.props;
 
     if (!hasPlayed) {
       return null;
@@ -128,7 +117,7 @@ export default class Controls extends Component {
 
           <Box direction="row" align="center"
             pad={{ horizontal: 'small', vertical: 'none'}}>
-            {this._renderTime()}
+            <VideoTime currentTime={currentTime} duration={duration} />
 
             <Button plain={true} primary={true}
               onClick={this.props.toggleMute} icon={this.props.muted ?
