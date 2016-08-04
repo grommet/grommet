@@ -1,11 +1,10 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
-// import classnames from 'classnames';
 
 import CSSClassnames from '../utils/CSSClassnames';
-import VideoControls from './VideoControls';
-import VideoOverlay from './VideoOverlay';
+import VideoControls from './video/Controls';
+import VideoOverlay from './video/Overlay';
 import throttle from 'lodash.throttle';
 
 const CLASS_ROOT = CSSClassnames.VIDEO;
@@ -52,6 +51,7 @@ export default class Video extends Component {
     this._unmute = this._unmute.bind(this);
     this._fullscreen = this._fullscreen.bind(this);
     this._onMouseMove = this._onMouseMove.bind(this);
+
     this.state = {};
   }
 

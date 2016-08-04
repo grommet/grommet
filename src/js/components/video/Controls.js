@@ -3,21 +3,21 @@
 import React, { Component } from 'react';
 // import classnames from 'classnames';
 
-import Intl from '../utils/Intl';
-import Button from './Button';
-import Box from './Box';
-import Heading from './Heading';
-import ExpandIcon from './icons/base/Expand';
-import VolumeIcon from './icons/base/Volume';
-import VolumeMuteIcon from './icons/base/VolumeMute';
-import PlayIcon from './icons/base/Play';
-import PauseIcon from './icons/base/Pause';
-import RefreshIcon from './icons/base/Refresh';
-import CSSClassnames from '../utils/CSSClassnames';
+import Intl from '../../utils/Intl';
+import Button from '../Button';
+import Box from '../Box';
+import Heading from '../Heading';
+import ExpandIcon from '../icons/base/Expand';
+import VolumeIcon from '../icons/base/Volume';
+import VolumeMuteIcon from '../icons/base/VolumeMute';
+import PlayIcon from '../icons/base/Play';
+import PauseIcon from '../icons/base/Pause';
+import RefreshIcon from '../icons/base/Refresh';
+import CSSClassnames from '../../utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.VIDEO;
 
-export default class VideoControls extends Component {
+export default class Controls extends Component {
 
   constructor () {
     super();

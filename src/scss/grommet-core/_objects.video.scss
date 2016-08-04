@@ -28,8 +28,6 @@
   }
 
   @include media-query(lap-and-up) {
-    // width: $video-width;
-
     &--small {
       width: $video-small-width;
     }
@@ -42,7 +40,7 @@
       bottom: round($inuit-base-spacing-unit * 3);
     }
 
-    &--playing:not(.#{$grommet-namespace}video--small) .#{$grommet-namespace}video__play,
+    &--has-played:not(.#{$grommet-namespace}video--small):not(.#{$grommet-namespace}video--ended) .#{$grommet-namespace}video__play,
     &--small .#{$grommet-namespace}video__controls,
     &--small .#{$grommet-namespace}video__replay {
       display: none;
