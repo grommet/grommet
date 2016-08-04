@@ -32,7 +32,8 @@ export default class Grommet extends Component {
       a11yTitleId = undefined;
     }
     return (
-      <svg className={classes.join(' ')} viewBox="0 0 182 182" width="182" height="182"
+      <svg className={classes.join(' ')} viewBox="0 0 182 182"
+        width="182" height="182"
         version="1.1" role="img" aria-labelledby={a11yTitleId}>
         {title}
         <path role="presentation"

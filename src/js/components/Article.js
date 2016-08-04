@@ -36,12 +36,17 @@ export default class Article extends Component {
     this._onTogglePlay = this._onTogglePlay.bind(this);
     this._onSelect = this._onSelect.bind(this);
     this._checkControls = this._checkControls.bind(this);
-    this._checkPreviousNextControls = this._checkPreviousNextControls.bind(this);
+    this._checkPreviousNextControls =
+      this._checkPreviousNextControls.bind(this);
     this._onResponsive = this._onResponsive.bind(this);
     this._updateHiddenElements = this._updateHiddenElements.bind(this);
 
-    // Necessary to detect for Firefox or Edge to implement accessibility tabbing
-    const accessibilityTabbingCompatible = typeof navigator !== 'undefined' && navigator.userAgent.indexOf("Firefox") === -1 && navigator.userAgent.indexOf("Edge") === -1;
+    // Necessary to detect for Firefox or Edge to implement accessibility
+    // tabbing
+    const accessibilityTabbingCompatible =
+      typeof navigator !== 'undefined' &&
+      navigator.userAgent.indexOf("Firefox") === -1 &&
+      navigator.userAgent.indexOf("Edge") === -1;
 
     this.state = {
       selectedIndex: props.selected || 0,
@@ -85,7 +90,9 @@ export default class Article extends Component {
 
   componentWillReceiveProps (nextProps) {
     // allow updates to selected props to trigger new chapter select
-    if ((typeof nextProps.selected !== 'undefined') && (nextProps.selected !== null) && (nextProps.selected !== this.state.selectedIndex)) {
+    if ((typeof nextProps.selected !== 'undefined') &&
+      (nextProps.selected !== null) &&
+      (nextProps.selected !== this.state.selectedIndex)) {
       this._onSelect(nextProps.selected);
     }
   }
@@ -147,7 +154,8 @@ export default class Article extends Component {
     const { children, direction } = this.props;
     let result = [];
     const childCount = React.Children.count(children);
-    const limit = ('row' === direction) ? window.innerWidth : window.innerHeight;
+    const limit = ('row' === direction) ? window.innerWidth :
+      window.innerHeight;
     for (let index = 0; index < childCount; index += 1) {
       const childElement = findDOMNode(this.refs[index]);
       const rect = childElement.getBoundingClientRect();
@@ -228,7 +236,8 @@ export default class Article extends Component {
           // prevent Article horizontal scrolling while scrolling vertically
           this._scrollParent.scrollLeft += rect.left;
         } else {
-          const scrollingRight = this._priorScrollLeft < this._scrollParent.scrollLeft;
+          const scrollingRight =
+            this._priorScrollLeft < this._scrollParent.scrollLeft;
           // once we stop scrolling, align with child boundaries
           clearTimeout(this._scrollTimer);
           this._scrollTimer = setTimeout(() => {
@@ -357,7 +366,9 @@ export default class Article extends Component {
 
     if (childElement) {
       const parentElement = childElement.parentNode;
-      const atBottom = (Math.round(parentElement.scrollTop) >= parentElement.scrollHeight - parentElement.clientHeight);
+      const atBottom =
+        (Math.round(parentElement.scrollTop) >=
+          parentElement.scrollHeight - parentElement.clientHeight);
 
       if (selectedIndex !== this.state.selectedIndex) {
         // scroll child to top
@@ -372,8 +383,10 @@ export default class Article extends Component {
             this.props.onSelect(selectedIndex);
           }
 
-          // Necessary to detect for Firefox or Edge to implement accessibility tabbing
-          if (this.props.direction === 'row' && this.state.accessibilityTabbingCompatible) {
+          // Necessary to detect for Firefox or Edge to implement accessibility
+          // tabbing
+          if (this.props.direction === 'row' &&
+            this.state.accessibilityTabbingCompatible) {
             this.refs.anchorStep.focus();
             this._updateHiddenElements();
           }
@@ -544,7 +557,8 @@ export default class Article extends Component {
           let elementNode = elementClone;
 
           let ariaHidden;
-          if (this.state.selectedIndex !== index && this.state.accessibilityTabbingCompatible) {
+          if (this.state.selectedIndex !== index &&
+            this.state.accessibilityTabbingCompatible) {
             ariaHidden = 'true';
           }
 

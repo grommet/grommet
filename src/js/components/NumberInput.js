@@ -41,7 +41,8 @@ export default class NumberInput extends Component {
     try {
       input.stepUp();
     } catch (e) {
-      // IE11 workaround. See known issue #5 at http://caniuse.com/#search=number
+      // IE11 workaround. See known issue #5 at
+      // http://caniuse.com/#search=number
       let value = (parseInt(input.value, 10) || 0) + (this.props.step || 1);
       if (this.props.max !== undefined) {
         value = Math.min(value, this.props.max);
@@ -56,7 +57,8 @@ export default class NumberInput extends Component {
     try {
       input.stepDown();
     } catch (e) {
-      // IE11 workaround. See known issue #5 at http://caniuse.com/#search=number
+      // IE11 workaround. See known issue #5 at
+      // http://caniuse.com/#search=number
       let value = (parseInt(input.value, 10) || 0) - (this.props.step || 1);
       if (this.props.min !== undefined) {
         value = Math.max(value, this.props.min);

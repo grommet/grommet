@@ -24,11 +24,11 @@ test('loads a Value', (t) => {
   } else {
     t.fail('Value does not have class');
   }
-  
+
   t.equal(
-    valueElement.props.children, 75, 'Value is 75' 
-  );  
-  
+    valueElement.props.children, 75, 'Value is 75'
+  );
+
 });
 
 test('loads a Value with units', (t) => {
@@ -38,7 +38,7 @@ test('loads a Value with units', (t) => {
     value: 75,
     units: '%'
   }));
-  const element = shallowRenderer.getRenderOutput();  
+  const element = shallowRenderer.getRenderOutput();
   const unitsElement = element.props.children[0].props.children[2];
 
   if (unitsElement.props.className.indexOf(`${CLASS_ROOT}__units`) > -1) {
@@ -48,8 +48,8 @@ test('loads a Value with units', (t) => {
   }
 
   t.equal(
-    unitsElement.props.children, '%', 'Value has % units' 
-  );  
+    unitsElement.props.children, '%', 'Value has % units'
+  );
 });
 
 test('loads a Value with label', (t) => {
@@ -69,8 +69,9 @@ test('loads a Value with label', (t) => {
   }
 
   t.equal(
-    labelElement.props.children, 'World wide coverage', 'Value has World wide coverage label' 
-  );  
+    labelElement.props.children, 'World wide coverage',
+    'Value has World wide coverage label' 
+  );
 });
 
 test('loads a Value in large size', (t) => {
@@ -86,7 +87,7 @@ test('loads a Value in large size', (t) => {
     t.pass('Value has large class');
   } else {
     t.fail('Value does not have large class');
-  }  
+  }
 });
 
 test('loads a Value in end alignment', (t) => {
@@ -102,7 +103,7 @@ test('loads a Value in end alignment', (t) => {
     t.pass('Value has end align class');
   } else {
     t.fail('Value does not have end align class');
-  }  
+  }
 });
 
 test('loads a Value with color index', (t) => {
@@ -118,7 +119,7 @@ test('loads a Value with color index', (t) => {
     t.pass('Value has color index class');
   } else {
     t.fail('Value does not have color index class');
-  }  
+  }
 });
 
 test('loads a Value with custom class', (t) => {
@@ -134,7 +135,7 @@ test('loads a Value with custom class', (t) => {
     t.pass('Value has custom class');
   } else {
     t.fail('Value does not have custom class');
-  }  
+  }
 });
 
 test('loads a Value with active class', (t) => {
@@ -150,7 +151,7 @@ test('loads a Value with active class', (t) => {
     t.pass('Value has active class');
   } else {
     t.fail('Value does not have active class');
-  }  
+  }
 });
 
 test('loads a Value with interactive class', (t) => {
@@ -168,5 +169,5 @@ test('loads a Value with interactive class', (t) => {
     t.pass('Value has interactive class');
   } else {
     t.fail('Value does not have interactive class');
-  }  
+  }
 });

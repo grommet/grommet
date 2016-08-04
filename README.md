@@ -6,7 +6,7 @@
 
 ### Documentation
 
-Visit the [grommet.io](http://grommet.io/) website for more information.
+Visit the [grommet.github.io](http://grommet.github.io/) website for more information.
 
 ### Support / Contributing
 
@@ -14,7 +14,7 @@ Before opening an issue or pull request, please read the [Contributing](https://
 
 ### Hello World
 
-  The quickest way to get started is to access the [Hello World](http://grommet.io/docs/develop/hello-world) page.
+  The quickest way to get started is to access the [Hello World](https://grommet.github.io/docs/hello-world) page.
 
 ### Install
 
@@ -30,7 +30,7 @@ Before opening an issue or pull request, please read the [Contributing](https://
     $ npm install -g grommet
   ```
 
-  Detailed instructions are on the [Get Started](http://grommet.io/docs/develop/get-started) page.
+  Detailed instructions are on the [Get Started](https://grommet.github.io/docs/get-started) page.
 
 ### Build
 

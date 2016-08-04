@@ -18,7 +18,8 @@ const HORIZONTAL_ALIGN_OPTIONS = ['right', 'left'];
 
 export default {
 
-  // How callers can validate a property for drop alignment which will be passed to add().
+  // How callers can validate a property for drop alignment which will be
+  // passed to add().
   alignPropType: PropTypes.shape({
     top: PropTypes.oneOf(VERTICAL_ALIGN_OPTIONS),
     bottom: PropTypes.oneOf(VERTICAL_ALIGN_OPTIONS),
@@ -55,7 +56,8 @@ export default {
     }
     if (options.align && options.align.bottom &&
       VERTICAL_ALIGN_OPTIONS.indexOf(options.align.bottom) === -1) {
-      console.warn("Warning: Invalid align.bottom value '" + options.align.bottom +
+      console.warn("Warning: Invalid align.bottom value '" +
+        options.align.bottom +
         "' supplied to Drop," +
         "expected one of [" + VERTICAL_ALIGN_OPTIONS.join(',') + "]");
     }
@@ -67,7 +69,8 @@ export default {
     }
     if (options.align && options.align.right &&
       HORIZONTAL_ALIGN_OPTIONS.indexOf(options.align.right) === -1) {
-      console.warn("Warning: Invalid align.right value '" + options.align.right +
+      console.warn("Warning: Invalid align.right value '" +
+        options.align.right +
         "' supplied to Drop," +
         "expected one of [" + HORIZONTAL_ALIGN_OPTIONS.join(',') + "]");
     }
@@ -95,7 +98,8 @@ export default {
 
     // setup DOM
     drop.container = document.createElement('div');
-    drop.container.className = `grommet ${CLASS_ROOT} ${drop.options.className || ''}`;
+    drop.container.className =
+      `grommet ${CLASS_ROOT} ${drop.options.className || ''}`;
     if (drop.options.colorIndex) {
       drop.container.className +=
         ` ${BACKGROUND_COLOR_INDEX}-${drop.options.colorIndex}`;

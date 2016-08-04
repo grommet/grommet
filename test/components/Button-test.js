@@ -138,7 +138,8 @@ test('loads an Button with an icon', (t) => {
     buttonElement.props.children.length, 2, 'Button has two children'
   );
   t.equal(
-    buttonElement.props.children[1], undefined, 'Button second child is undefined'
+    buttonElement.props.children[1], undefined,
+    'Button second child is undefined'
   );
 });
 
@@ -166,7 +167,8 @@ test('loads an Button with a children icon', (t) => {
     buttonElement.props.children.length, 2, 'Button has two children'
   );
   t.equal(
-    buttonElement.props.children[0], undefined, 'Button first child is undefined'
+    buttonElement.props.children[0], undefined,
+    'Button first child is undefined'
   );
 });
 
@@ -188,7 +190,8 @@ test('loads an Button with a children text', (t) => {
     buttonElement.props.children.length, 2, 'Button has two children'
   );
   t.equal(
-    buttonElement.props.children[0], undefined, 'Button first child is undefined'
+    buttonElement.props.children[0], undefined,
+    'Button first child is undefined'
   );
   t.equal(
     buttonElement.props.children[1][0], 'test', 'Button has text children'

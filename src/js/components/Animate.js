@@ -87,7 +87,8 @@ class AnimateChild extends Component {
     return setTimeout(() => {
       node.classList.remove(`${this.state.enterClass}--enter-active`);
       node.classList.add('animate', `${this.state.leaveClass}--leave`);
-      setTimeout(callback, parseFloat(getComputedStyle(node).transitionDuration) * 1000);
+      setTimeout(callback,
+        parseFloat(getComputedStyle(node).transitionDuration) * 1000);
     }, delay);
   }
 

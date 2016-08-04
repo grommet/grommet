@@ -4,7 +4,8 @@ import iconMessages from './icons/en-US';
 
 export default {
   IndexFilters: {
-    filters: '{quantity, plural,\n  =0 {Filters}\n  =1 {one filter}\n  other {# filters}\n}'
+    filters: '{quantity, plural,\n  =0 {Filters}\n  =1 {one filter}\n  ' +
+      'other {# filters}\n}'
   },
   ...iconMessages,
   Active: 'Active',

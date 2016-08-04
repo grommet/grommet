@@ -216,7 +216,8 @@ export default class Layer extends Component {
     } else {
       beforeElement = document.body.firstChild;
     }
-    this._element = beforeElement.parentNode.insertBefore(element, beforeElement);
+    this._element =
+      beforeElement.parentNode.insertBefore(element, beforeElement);
   }
 
   _handleAriaHidden (hideOverlay) {

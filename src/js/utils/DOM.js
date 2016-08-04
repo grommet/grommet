@@ -63,7 +63,8 @@ export default {
       var isValidTag = currentTag.match(validTags) && element.focus;
 
       if (currentTag === 'a') {
-        return isValidTag && element.childNodes.length > 0 && element.getAttribute('href');
+        return isValidTag && element.childNodes.length > 0 &&
+          element.getAttribute('href');
       } else if (currentTag === 'svg' || currentTag === 'div') {
         return isValidTag && element.hasAttribute('tabindex');
       }

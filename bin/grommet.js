@@ -177,6 +177,7 @@ switch(command.task) {
 }
 
 if (command.task in tasks) {
+  console.warn('This cli has been deprecated. Please use grommet-cli instead: https://github.com/grommet/grommet-cli');
   gulp.task(command.task, tasks[command.task](command));
   gulp.start(command.task);
 } else {

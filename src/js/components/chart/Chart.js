@@ -111,7 +111,8 @@ export default class Chart extends Component {
 
   render () {
     const { vertical, full, loading } = this.props;
-    const { alignHeight, alignLeft, alignTop, alignWidth, padAlign } = this.state;
+    const { alignHeight, alignLeft, alignTop, alignWidth, padAlign } =
+      this.state;
     let classes = [CLASS_ROOT];
     if (vertical) {
       classes.push(`${CLASS_ROOT}--vertical`);
@@ -150,7 +151,8 @@ export default class Chart extends Component {
           });
         }
 
-      } else if (child && (child.type === Layers || child.type.name === 'Layers')) {
+      } else if (child &&
+        (child.type === Layers || child.type.name === 'Layers')) {
 
         child = React.cloneElement(child, {
           height: alignHeight,

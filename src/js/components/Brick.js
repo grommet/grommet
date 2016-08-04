@@ -38,7 +38,8 @@ export default class Brick extends Component {
       CLASS_ROOT,
       `${CLASS_ROOT}--${widthUnit}-${heightUnit}`,
       {
-        [`${BACKGROUND_COLOR_INDEX}-${this.props.colorIndex}`]: this.props.colorIndex,
+        [`${BACKGROUND_COLOR_INDEX}-${this.props.colorIndex}`]:
+          this.props.colorIndex,
         [`${CLASS_ROOT}--clickable`]: clickable
       },
       this.props.className
@@ -52,15 +53,19 @@ export default class Brick extends Component {
 
     let style = {};
     if (this.props.texture && 'string' === typeof this.props.texture) {
-      style.background = "url(" + this.props.texture + ") no-repeat center center";
+      style.background =
+        "url(" + this.props.texture + ") no-repeat center center";
       style.backgroundSize = "cover";
     } else if (this.props.backgroundImage) {
-      style.background = "url(" + this.props.backgroundImage + ") no-repeat center center";
+      style.background =
+        "url(" + this.props.backgroundImage + ") no-repeat center center";
       style.backgroundSize = "cover";
     }
     let texture;
     if ('object' === typeof this.props.texture) {
-      texture = <div className={CLASS_ROOT + "__texture"}>{this.props.texture}</div>;
+      texture = (
+        <div className={CLASS_ROOT + "__texture"}>{this.props.texture}</div>
+      );
     }
 
     let brickContent = (
@@ -75,7 +80,8 @@ export default class Brick extends Component {
 
     if (clickable) {
       return (
-        <Anchor href={this.props.href} onClick={this.props.onClick} className={classes}>
+        <Anchor href={this.props.href} onClick={this.props.onClick}
+          className={classes}>
           <div className={`${CLASS_ROOT}__background`} style={style}>
             {brickContent}
           </div>
