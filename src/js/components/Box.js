@@ -54,7 +54,6 @@ export default class Box extends Component {
     let containerClasses = [CLASS_ROOT + "__container"];
     let restProps = Props.omit(this.props, Object.keys(Box.propTypes));
     this._addPropertyClass(classes, CLASS_ROOT, 'full');
-    this._addPropertyClass(classes, CLASS_ROOT, 'direction');
     this._addPropertyClass(classes, CLASS_ROOT, 'justify');
     this._addPropertyClass(classes, CLASS_ROOT, 'align');
     this._addPropertyClass(classes, CLASS_ROOT, 'alignContent', 'align-content');
@@ -76,6 +75,33 @@ export default class Box extends Component {
       if (this.props.size) {
         classes.push(`${CLASS_ROOT}--size`);
       }
+    }
+
+    if (this.props.columns) {
+      classes.push(`${CLASS_ROOT}--columns`);
+      // defaulting direction to row when using columns option
+      classes.push(`${CLASS_ROOT}--direction-row`);
+      if (isNaN(this.props.columns)) {
+        const { numColumns, mainColumn, fixed } = this.props.columns;
+        if (numColumns) {
+          classes.push(`${CLASS_ROOT}--columns-${numColumns}`);
+        }
+        if (mainColumn) {
+          if (mainColumn === 'start') {
+            classes.push(`${CLASS_ROOT}--columns-${numColumns}-66-33`);
+          }
+          if (mainColumn === 'end') {
+            classes.push(`${CLASS_ROOT}--columns-${numColumns}-33-66`);
+          }
+        }
+        if (fixed) {
+          classes.push(`${CLASS_ROOT}--columns-fixed`);
+        }
+      } else {
+        classes.push(`${CLASS_ROOT}--columns-${this.props.columns}`);
+      }
+    } else {
+      this._addPropertyClass(classes, CLASS_ROOT, 'direction');
     }
 
     if (this.props.appCentered) {
@@ -193,7 +219,15 @@ Box.propTypes = {
     PropTypes.node,
     PropTypes.string
   ]),
-  wrap: PropTypes.bool
+  wrap: PropTypes.bool,
+  columns: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.shape({
+      numColumns: PropTypes.number,
+      mainColumn: PropTypes.oneOf(['start', 'end']),
+      fixed: PropTypes.bool
+    })
+  ])
 };
 
 Box.contextTypes = {
