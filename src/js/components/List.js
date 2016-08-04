@@ -44,11 +44,13 @@ export default class List extends Component {
   }
 
   componentDidUpdate (prevProps, prevState) {
-    if (JSON.stringify(this.state.selected) !== JSON.stringify(prevState.selected)) {
+    if (JSON.stringify(this.state.selected) !==
+      JSON.stringify(prevState.selected)) {
       this._setSelection();
     }
     if (this.props.onMore && !this._scroll) {
-      this._scroll = InfiniteScroll.startListeningForScroll(this.refs.more, this.props.onMore);
+      this._scroll = InfiniteScroll.startListeningForScroll(this.refs.more,
+        this.props.onMore);
     }
   }
 

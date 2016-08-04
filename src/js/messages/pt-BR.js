@@ -2,7 +2,8 @@
 
 export default {
   IndexFilters: {
-    filters: '{quantity, plural,\n  =0 {Filtros}\n  =1 {um filtro}\n  other {# filtros}\n}'
+    filters: '{quantity, plural,\n  =0 {Filtros}\n  =1 {um filtro}\n  ' +
+      'other {# filtros}\n}'
   },
   Active: 'Ativos',
   add: 'add',

@@ -63,12 +63,13 @@ export default class SkipLinks extends Component {
   _updateAnchors () {
     let anchorElements = document.querySelectorAll(`.${CLASS_ROOT}`);
 
-    let anchors = Array.prototype.map.call(anchorElements, function (anchorElement) {
-      return {
-        id: anchorElement.getAttribute('id'),
-        label: anchorElement.textContent
-      };
-    });
+    let anchors = Array.prototype.map.call(anchorElements,
+      function (anchorElement) {
+        return {
+          id: anchorElement.getAttribute('id'),
+          label: anchorElement.textContent
+        };
+      });
 
     this.setState({anchors: anchors, routeChanged: false});
   }

@@ -73,7 +73,8 @@ Value.propTypes = {
   onClick: PropTypes.func,
   size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
   trendIcon: PropTypes.node,
-  value: PropTypes.oneOfType([PropTypes.number, PropTypes.string, PropTypes.node]),
+  value: PropTypes.oneOfType([PropTypes.number, PropTypes.string,
+    PropTypes.node]),
   units: PropTypes.oneOfType([PropTypes.string, PropTypes.node])
 };
 

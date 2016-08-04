@@ -52,12 +52,14 @@ export default class SearchInput extends Component {
     // the order here is important, need to turn off keys before turning on
 
     if (! this.state.focused && prevState.focused) {
-      KeyboardAccelerators.stopListeningToKeyboard(this, focusedKeyboardHandlers);
+      KeyboardAccelerators.stopListeningToKeyboard(this,
+        focusedKeyboardHandlers);
     }
 
     if (! this.state.dropActive && prevState.dropActive) {
       document.removeEventListener('click', this._onRemoveDrop);
-      KeyboardAccelerators.stopListeningToKeyboard(this, activeKeyboardHandlers);
+      KeyboardAccelerators.stopListeningToKeyboard(this,
+        activeKeyboardHandlers);
       if (this._drop) {
         this._drop.remove();
         this._drop = null;
@@ -65,12 +67,14 @@ export default class SearchInput extends Component {
     }
 
     if (this.state.focused && ! prevState.focused) {
-      KeyboardAccelerators.startListeningToKeyboard(this, focusedKeyboardHandlers);
+      KeyboardAccelerators.startListeningToKeyboard(this,
+        focusedKeyboardHandlers);
     }
 
     if (this.state.dropActive && ! prevState.dropActive) {
       document.addEventListener('click', this._onRemoveDrop);
-      KeyboardAccelerators.startListeningToKeyboard(this, activeKeyboardHandlers);
+      KeyboardAccelerators.startListeningToKeyboard(this,
+        activeKeyboardHandlers);
 
       // If this is inside a FormField, place the drop in reference to it.
       const control =
@@ -194,7 +198,8 @@ export default class SearchInput extends Component {
         let classes = classnames(
           {
             [`${CLASS_ROOT}__suggestion`]: true,
-            [`${CLASS_ROOT}__suggestion--active`]: index === this.state.activeSuggestionIndex
+            [`${CLASS_ROOT}__suggestion--active`]:
+              index === this.state.activeSuggestionIndex
           }
         );
         return (

@@ -41,7 +41,8 @@ export default class Box extends Component {
         classes.push(prefix + '--' + propertyPrefix + '-' + choice);
       } else if (typeof choice === 'object') {
         Object.keys(choice).forEach(function (key) {
-          classes.push(prefix + '--' + propertyPrefix + '-' + key + '-' + choice[key]);
+          classes.push(prefix + '--' + propertyPrefix + '-' + key + '-' +
+            choice[key]);
         });
       } else {
         classes.push(prefix + '--' + propertyPrefix);
@@ -57,7 +58,8 @@ export default class Box extends Component {
     this._addPropertyClass(classes, CLASS_ROOT, 'direction');
     this._addPropertyClass(classes, CLASS_ROOT, 'justify');
     this._addPropertyClass(classes, CLASS_ROOT, 'align');
-    this._addPropertyClass(classes, CLASS_ROOT, 'alignContent', 'align-content');
+    this._addPropertyClass(classes, CLASS_ROOT, 'alignContent',
+      'align-content');
     this._addPropertyClass(classes, CLASS_ROOT, 'reverse');
     this._addPropertyClass(classes, CLASS_ROOT, 'responsive');
     this._addPropertyClass(classes, CLASS_ROOT, 'pad');
@@ -79,9 +81,11 @@ export default class Box extends Component {
     }
 
     if (this.props.appCentered) {
-      this._addPropertyClass(containerClasses, CLASS_ROOT + "__container", 'full');
+      this._addPropertyClass(containerClasses,
+        CLASS_ROOT + "__container", 'full');
       if (this.props.colorIndex) {
-        containerClasses.push(`${BACKGROUND_COLOR_INDEX}-${this.props.colorIndex}`);
+        containerClasses.push(
+          `${BACKGROUND_COLOR_INDEX}-${this.props.colorIndex}`);
       }
       if (this.props.containerClassName) {
         containerClasses.push(this.props.containerClassName);
@@ -120,20 +124,24 @@ export default class Box extends Component {
     if (this.props.texture && 'string' === typeof this.props.texture) {
       style.backgroundImage = this.props.texture;
     } else if (this.props.backgroundImage) {
-      style.background = this.props.backgroundImage + " no-repeat center center";
+      style.background =
+        this.props.backgroundImage + " no-repeat center center";
       style.backgroundSize = "cover";
     }
     style = {...style, ...restProps.style};
     let texture;
     if ('object' === typeof this.props.texture) {
-      texture = <div className={CLASS_ROOT + "__texture"}>{this.props.texture}</div>;
+      texture = (
+        <div className={CLASS_ROOT + "__texture"}>{this.props.texture}</div>
+      );
     }
 
     const Component = this.props.tag;
 
     if (this.props.appCentered) {
       return (
-        <div {...restProps} ref="boxContainer" className={containerClasses.join(' ')}
+        <div {...restProps} ref="boxContainer"
+          className={containerClasses.join(' ')}
           style={style} role={this.props.role} {...a11yProps}>
           {skipLinkAnchor}
           <Component id={this.props.id} className={classes.join(' ')}>
@@ -161,7 +169,8 @@ export default class Box extends Component {
 Box.propTypes = {
   a11yTitle: PropTypes.string,
   align: PropTypes.oneOf(['start', 'center', 'end', 'baseline', 'stretch']),
-  alignContent: PropTypes.oneOf(['start', 'center', 'end', 'between', 'around', 'stretch']),
+  alignContent: PropTypes.oneOf(['start', 'center', 'end', 'between',
+    'around', 'stretch']),
   appCentered: PropTypes.bool,
   backgroundImage: PropTypes.string,
   children: PropTypes.any,
@@ -185,7 +194,8 @@ Box.propTypes = {
   reverse: PropTypes.bool,
   responsive: PropTypes.bool,
   role: PropTypes.string,
-  separator: PropTypes.oneOf(['top', 'bottom', 'left', 'right', 'horizontal', 'vertical', 'all', 'none']),
+  separator: PropTypes.oneOf(['top', 'bottom', 'left', 'right',
+    'horizontal', 'vertical', 'all', 'none']),
   size: PropTypes.oneOf(['auto', 'xsmall', 'small', 'medium', 'large', 'full']),
   tag: PropTypes.string,
   textAlign: PropTypes.oneOf(['left', 'center', 'right']),

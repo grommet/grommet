@@ -45,7 +45,9 @@ export default class Video extends Component {
     // Dynamically modifying a source element and its attribute when
     // the element is already inserted in a video or audio element will
     // have no effect.
-    // From HTML Specs: https://html.spec.whatwg.org/multipage/embedded-content.html#the-source-element
+    // From HTML Specs:
+    // https://html.spec.whatwg.org/multipage/embedded-content.html
+    //   #the-source-element
     // Using forceUpdate to force redraw of video when receiving new <source>
     this.forceUpdate();
   }
@@ -131,32 +133,38 @@ export default class Video extends Component {
     let timeline;
     if (this.props.timeline && this.props.duration) {
 
-      let chapters = this.props.timeline.map(function (chapter, index, chapters) {
-        let percent = Math.round((chapter.time / this.props.duration) * 100);
-        let seconds = (chapter.time % 60);
-        let time = Math.floor(chapter.time / 60) + ':' +
-          (seconds < 10 ? '0' + seconds : seconds);
-        let currentProgress = this.state.progress;
-        let nextChapter = chapters[Math.min(chapters.length - 1, index + 1)];
-        let lastChapter = chapters[chapters.length - 1];
+      let chapters = this.props.timeline.map(
+        function (chapter, index, chapters) {
+          let percent = Math.round((chapter.time / this.props.duration) * 100);
+          let seconds = (chapter.time % 60);
+          let time = Math.floor(chapter.time / 60) + ':' +
+            (seconds < 10 ? '0' + seconds : seconds);
+          let currentProgress = this.state.progress;
+          let nextChapter = chapters[Math.min(chapters.length - 1, index + 1)];
+          let lastChapter = chapters[chapters.length - 1];
 
-        let timelineClasses = classnames(
-          `${CLASS_ROOT}__timeline-chapter`,
-          {
-            [`${CLASS_ROOT}__timeline-active`]: (currentProgress !== 0 && ((currentProgress >= chapter.time && currentProgress < nextChapter.time) || (index === chapters.length - 1 && currentProgress >= lastChapter.time)))
-          }
-        );
+          let timelineClasses = classnames(
+            `${CLASS_ROOT}__timeline-chapter`,
+            {
+              [`${CLASS_ROOT}__timeline-active`]:
+                (currentProgress !== 0 &&
+                  ((currentProgress >= chapter.time &&
+                    currentProgress < nextChapter.time) ||
+                    (index === chapters.length - 1 &&
+                      currentProgress >= lastChapter.time)))
+            }
+          );
 
-        return (
-          <Box key={chapter.time} className={timelineClasses}
-            pad={{vertical: 'small'}}
-            style={{left: percent.toString() + '%'}}
-            onClick={this._onClickChapter.bind(this, chapter.time)}>
-            <label>{chapter.label}</label>
-            <time>{time}</time>
-          </Box>
-        );
-      }, this);
+          return (
+            <Box key={chapter.time} className={timelineClasses}
+              pad={{vertical: 'small'}}
+              style={{left: percent.toString() + '%'}}
+              onClick={this._onClickChapter.bind(this, chapter.time)}>
+              <label>{chapter.label}</label>
+              <time>{time}</time>
+            </Box>
+          );
+        }, this);
 
       timeline = (
         <div className={`${CLASS_ROOT}__timeline`}>
@@ -178,14 +186,16 @@ export default class Video extends Component {
       'Pause Video' : (this.state.ended ?
         'Restart Video' :
           'Play Video'));
-    let a11yControlButtonTitle = Intl.getMessage(this.context.intl, a11yControlButtonMessage);
+    let a11yControlButtonTitle =
+      Intl.getMessage(this.context.intl, a11yControlButtonMessage);
 
     let videoHeader;
     let videoSummaryJustify = 'between';
     if (this.props.videoHeader) {
       videoHeader = this.props.videoHeader;
     } else if (this.props.allowFullScreen) {
-      let a11yExpandButtonTitle = Intl.getMessage(this.context.intl, 'Toggle Fullscreen');
+      let a11yExpandButtonTitle =
+        Intl.getMessage(this.context.intl, 'Toggle Fullscreen');
       // fallback to only displaying full screen icon in header
       // if allowing fullscreen
 
@@ -214,7 +224,8 @@ export default class Video extends Component {
     let emptyBox = this.state.iconSize === 'small' ? null : <Box />;
 
     let controlsContent = (
-      <Box pad="none" align="center" justify={videoSummaryJustify} className={`${CLASS_ROOT}__summary`}>
+      <Box pad="none" align="center" justify={videoSummaryJustify}
+        className={`${CLASS_ROOT}__summary`}>
         {videoHeader}
         <Box pad="medium" align="center" justify="center">
           <Button className={`${CLASS_ROOT}__control`} plain={true}
@@ -233,25 +244,29 @@ export default class Video extends Component {
     let progressTicks;
     if (this.props.timeline && this.props.duration) {
 
-      let chapters = this.props.timeline.map(function (chapter, index, chapters) {
-        let percent = Math.round((chapter.time / this.props.duration) * 100);
-        let currentProgress = this.state.progress;
-        let nextChapter = chapters[Math.min(chapters.length - 1, index + 1)];
+      let chapters = this.props.timeline.map(
+        function (chapter, index, chapters) {
+          let percent = Math.round((chapter.time / this.props.duration) * 100);
+          let currentProgress = this.state.progress;
+          let nextChapter = chapters[Math.min(chapters.length - 1, index + 1)];
 
-        let progressTicksClasses = classnames(
-          `${CLASS_ROOT}__progress-ticks-chapter`,
-          {
-            [`${CLASS_ROOT}__progress-ticks-active`]: (currentProgress !== 0 && currentProgress >= chapter.time && currentProgress < nextChapter.time)
-          }
-        );
+          let progressTicksClasses = classnames(
+            `${CLASS_ROOT}__progress-ticks-chapter`,
+            {
+              [`${CLASS_ROOT}__progress-ticks-active`]:
+                (currentProgress !== 0 &&
+                  currentProgress >= chapter.time &&
+                  currentProgress < nextChapter.time)
+            }
+          );
 
-        return (
-          <div key={chapter.time} className={progressTicksClasses}
-            style={{left: percent.toString() + '%'}}
-            onClick={this._onClickChapter.bind(this, chapter.time)}>
-          </div>
-        );
-      }, this);
+          return (
+            <div key={chapter.time} className={progressTicksClasses}
+              style={{left: percent.toString() + '%'}}
+              onClick={this._onClickChapter.bind(this, chapter.time)}>
+            </div>
+          );
+        }, this);
 
       progressTicks = (
         <div className={`${CLASS_ROOT}__progress-ticks`}>
@@ -269,7 +284,9 @@ export default class Video extends Component {
         }
       );
 
-      let percent = Math.min((Math.round((this.state.progress / this.props.duration) * 100)), 100);
+      let percent =
+        Math.min((
+          Math.round((this.state.progress / this.props.duration) * 100)), 100);
       progress = (
         <div className={progressClass}>
           <div className={`${CLASS_ROOT}__progress-meter`}

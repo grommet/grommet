@@ -106,7 +106,8 @@ export default class Carousel extends Component {
     var carouselHeight = this.refs.carousel.offsetHeight;
     var startScroll = viewportHeight - (carouselHeight / 2);
 
-    if (this.props.autoplay && carouselTopPosition <= startScroll && carouselTopPosition >= -carouselHeight / 2) {
+    if (this.props.autoplay && carouselTopPosition <= startScroll &&
+      carouselTopPosition >= -carouselHeight / 2) {
       if (this.state.slide === false) {
         this._setSlideInterval();
         this.setState({

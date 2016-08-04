@@ -16,8 +16,10 @@ export default class Form extends Component {
         [`${CLASS_ROOT}--compact`]: compact,
         [`${CLASS_ROOT}--fill`]: fill,
         [`${CLASS_ROOT}--pad-${pad}`]: typeof pad === 'string',
-        [`${CLASS_ROOT}--pad-horizontal-${pad.horizontal}`]: typeof pad === 'object' && 'horizontal' in pad,
-        [`${CLASS_ROOT}--pad-vertical-${pad.vertical}`]: typeof pad === 'object' && 'vertical' in pad
+        [`${CLASS_ROOT}--pad-horizontal-${pad.horizontal}`]:
+          typeof pad === 'object' && 'horizontal' in pad,
+        [`${CLASS_ROOT}--pad-vertical-${pad.vertical}`]:
+          typeof pad === 'object' && 'vertical' in pad
       }
     );
 

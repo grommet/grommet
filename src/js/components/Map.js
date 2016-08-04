@@ -72,7 +72,8 @@ export default class ResourceMap extends Component {
         const parentCoords = this._coords(link.parentId, canvasRect);
         const childCoords = this._coords(link.childId, canvasRect);
         const context = (this.state.activeId === link.parentId ||
-          this.state.activeId === link.childId) ? highlightContext : baseContext;
+          this.state.activeId === link.childId) ? highlightContext :
+            baseContext;
 
         context.beginPath();
         let p1, p2;
@@ -97,11 +98,15 @@ export default class ResourceMap extends Component {
         const midX = p1[0] + ((p2[0] - p1[0]) / 2);
         const midY = p1[1] + ((p2[1] - p1[1]) / 2);
         if (vertical) {
-          context.quadraticCurveTo(midX + ((p1[0] - midX) / 2), p1[1], midX, midY);
-          context.quadraticCurveTo(midX - ((p1[0] - midX) / 2), p2[1], p2[0], p2[1]);
+          context.quadraticCurveTo(midX + ((p1[0] - midX) / 2), p1[1],
+            midX, midY);
+          context.quadraticCurveTo(midX - ((p1[0] - midX) / 2), p2[1],
+            p2[0], p2[1]);
         } else {
-          context.quadraticCurveTo(p1[0], midY + ((p1[1] - midY) / 2), midX, midY);
-          context.quadraticCurveTo(p2[0], midY - ((p1[1] - midY) / 2), p2[0], p2[1]);
+          context.quadraticCurveTo(p1[0], midY + ((p1[1] - midY) / 2),
+            midX, midY);
+          context.quadraticCurveTo(p2[0], midY - ((p1[1] - midY) / 2),
+            p2[0], p2[1]);
         }
         context.stroke();
       });

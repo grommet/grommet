@@ -171,12 +171,14 @@ export default class Distribution extends Component {
         // landscape, lay out left to right
         itemHeight = Math.min(remainingRect.height, edgeLength);
         itemWidth = Math.round(itemArea / itemHeight);
-        targetGroupValue = Math.round((itemWidth * remainingRect.height) / areaPer);
+        targetGroupValue =
+          Math.round((itemWidth * remainingRect.height) / areaPer);
       } else {
         // portrait, lay out top to bottom
         itemWidth = Math.min(remainingRect.width, edgeLength);
         itemHeight = Math.round(itemArea / itemWidth);
-        targetGroupValue = Math.round((itemHeight * remainingRect.width) / areaPer);
+        targetGroupValue =
+          Math.round((itemHeight * remainingRect.width) / areaPer);
       }
 
       // Group items until we reach the target group value.
@@ -363,7 +365,8 @@ export default class Distribution extends Component {
       labelClasses.push(`${CLASS_ROOT}__label--active`);
     }
 
-    const value = (datum.labelValue !== undefined ? datum.labelValue : datum.value);
+    const value =
+      (datum.labelValue !== undefined ? datum.labelValue : datum.value);
 
     return (
       <div key={index} className={labelClasses.join(' ')}
@@ -545,7 +548,8 @@ export default class Distribution extends Component {
 
     let activeDescendant;
     if (this.state.activeIndex >= 0) {
-      activeDescendant = `${this.props.a11yTitleId}_item_${this.state.activeIndex}`;
+      activeDescendant =
+        `${this.props.a11yTitleId}_item_${this.state.activeIndex}`;
     }
 
     let a11yTitleNode = (
@@ -567,7 +571,8 @@ export default class Distribution extends Component {
           viewBox={`0 0 ${this.state.width} ${this.state.height}`}
           preserveAspectRatio="none" tabIndex="0" role={role}
           aria-activedescendant={activeDescendant}
-          aria-labelledby={this.props.a11yTitleId + ' ' + this.props.a11yDescId}>
+          aria-labelledby={this.props.a11yTitleId + ' ' +
+            this.props.a11yDescId}>
           {background}
           {a11yTitleNode}
           {a11yDescNode}

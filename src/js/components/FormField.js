@@ -78,7 +78,9 @@ export default class FormField extends Component {
     let error;
     if (this.props.error) {
       classes.push(CLASS_ROOT + "--error");
-      error = <span className={CLASS_ROOT + "__error"}>{this.props.error}</span>;
+      error = (
+        <span className={CLASS_ROOT + "__error"}>{this.props.error}</span>
+      );
     }
     let help;
     if (this.props.help !== null && this.props.help !== undefined) {

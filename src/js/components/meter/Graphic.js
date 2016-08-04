@@ -20,7 +20,8 @@ export default class Graphic extends Component {
 
     this._onEnter = this._onEnter.bind(this);
     this._onRequestForNextLegend = this._onRequestForNextLegend.bind(this);
-    this._onRequestForPreviousLegend = this._onRequestForPreviousLegend.bind(this);
+    this._onRequestForPreviousLegend =
+      this._onRequestForPreviousLegend.bind(this);
   }
 
   componentDidMount () {
@@ -58,7 +59,8 @@ export default class Graphic extends Component {
     return "";
   }
 
-  _renderSlice (trackIndex, item, itemIndex, startValue, maxValue, track, threshold) {
+  _renderSlice (trackIndex, item, itemIndex, startValue, maxValue, track,
+    threshold) {
     let path;
     if (! item.hidden) {
       let classes = [`${CLASS_ROOT}__slice`];
@@ -74,7 +76,8 @@ export default class Graphic extends Component {
         classes.push(`${COLOR_INDEX}-${item.colorIndex}`);
       }
 
-      let commands = this._sliceCommands(trackIndex, item, startValue, maxValue);
+      let commands =
+        this._sliceCommands(trackIndex, item, startValue, maxValue);
 
       if (threshold) {
         path = buildPath(itemIndex, commands, classes);
@@ -198,10 +201,12 @@ export default class Graphic extends Component {
     const trackValue = { value: max.value };
     let tracks;
     if (this.props.stacked) {
-      tracks = this._renderSlice(0, trackValue, 0, min.value, max.value, true, false);
+      tracks =
+        this._renderSlice(0, trackValue, 0, min.value, max.value, true, false);
     } else {
       tracks = this.props.series.map((item, index) => (
-        this._renderSlice(index, trackValue, index, min.value, max.value, true, false)
+        this._renderSlice(index, trackValue, index, min.value, max.value,
+          true, false)
       ));
     }
     return (
@@ -213,7 +218,8 @@ export default class Graphic extends Component {
 
   _renderThresholds () {
     let result;
-    let thresholds = this._renderSlices(this.props.thresholds, -0.4, false, true);
+    let thresholds =
+      this._renderSlices(this.props.thresholds, -0.4, false, true);
     if (thresholds.length > 0) {
       result = (
         <g className={`${CLASS_ROOT}__thresholds`}>
@@ -296,7 +302,8 @@ export default class Graphic extends Component {
     let a11yTitle = this._renderA11YTitle();
     let a11yDesc = this._renderA11YDesc();
 
-    let activeDescendant = `${this.props.a11yDescId}_${this.props.activeIndex || 0}`;
+    let activeDescendant =
+      `${this.props.a11yDescId}_${this.props.activeIndex || 0}`;
 
     return (
       <svg ref="meter" className={`${CLASS_ROOT}__graphic`}
