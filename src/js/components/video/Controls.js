@@ -7,7 +7,6 @@ import Intl from '../../utils/Intl';
 import Button from '../Button';
 import Box from '../Box';
 import Heading from '../Heading';
-import ExpandIcon from '../icons/base/Expand';
 import VolumeIcon from '../icons/base/Volume';
 import VolumeMuteIcon from '../icons/base/VolumeMute';
 import PlayIcon from '../icons/base/Play';
@@ -15,6 +14,7 @@ import PauseIcon from '../icons/base/Pause';
 import RefreshIcon from '../icons/base/Refresh';
 import CSSClassnames from '../../utils/CSSClassnames';
 import VideoTime from './Time';
+import VideoFullscreenButton from './FullscreenButton';
 
 const CLASS_ROOT = CSSClassnames.VIDEO;
 
@@ -24,19 +24,6 @@ export default class Controls extends Component {
     super();
 
     this._onProgressBarChange = this._onProgressBarChange.bind(this);
-  }
-
-  _formatTime (seconds) {
-    const date = new Date(null);
-    seconds = isNaN(seconds) ? 0 : Math.floor(seconds);
-    date.setSeconds(seconds);
-
-    const dateISOString = date.toISOString();
-    if (seconds < 3600) {
-      return dateISOString.substr(14, 5);
-    }
-
-    return dateISOString.substr(11, 8);
   }
 
   _onProgressBarChange(e) {
@@ -77,7 +64,14 @@ export default class Controls extends Component {
   }
 
   render() {
-    const { hasPlayed, playing, ended, currentTime, duration } = this.props;
+    const {
+      hasPlayed,
+      playing,
+      ended,
+      currentTime,
+      duration,
+      fullscreen
+    } = this.props;
 
     if (!hasPlayed) {
       return null;
@@ -95,8 +89,6 @@ export default class Controls extends Component {
 
     let a11yControlButtonTitle =
       Intl.getMessage(this.context.intl, a11yControlButtonMessage);
-    let a11yExpandButtonTitle =
-      Intl.getMessage(this.context.intl, 'Toggle Fullscreen');
 
     let overlayContent = (
       <Box pad="none"
@@ -123,9 +115,7 @@ export default class Controls extends Component {
               onClick={this.props.toggleMute} icon={this.props.muted ?
                 <VolumeMuteIcon /> : <VolumeIcon />} />
 
-            <Button plain={true} primary={true}
-              onClick={this.props.fullscreen} icon={<ExpandIcon />}
-              a11yTitle={a11yExpandButtonTitle} />
+            <VideoFullscreenButton onClick={fullscreen} />
           </Box>
        </Box>
       </Box>

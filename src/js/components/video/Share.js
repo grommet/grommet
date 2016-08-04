@@ -30,7 +30,8 @@ export default class Overlay extends Component {
         <Box align="center">
           <Form pad={{vertical: 'small'}}>
             <FormField strong={true}>
-              <input ref="shareLink" className="share-link" type="text" value={shareLink}
+              <input ref="shareLink" className="share-link"
+                type="text" value={shareLink}
                 onClick={this._onClickShareLink} readOnly />
             </FormField>
           </Form>
