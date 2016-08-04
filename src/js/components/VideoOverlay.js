@@ -64,7 +64,8 @@ export default class VideoOverlay extends Component {
         'Restart Video' :
           'Play Video'));
 
-    let a11yControlButtonTitle = Intl.getMessage(this.context.intl, a11yControlButtonMessage);
+    let a11yControlButtonTitle =
+      Intl.getMessage(this.context.intl, a11yControlButtonMessage);
 
     let videoOverlayJustify = 'between';
     if (!this.props.videoHeader) {
@@ -74,7 +75,8 @@ export default class VideoOverlay extends Component {
     let replayLabel;
     let share;
     if (ended) {
-      replayLabel = <Heading tag="h3" strong={true} uppercase={true}>Replay</Heading>;
+      replayLabel =
+        <Heading tag="h3" strong={true} uppercase={true}>Replay</Heading>;
 
       if (shareLink) {
         share = (
@@ -86,10 +88,14 @@ export default class VideoOverlay extends Component {
               </FormField>
             </Form>
             <Box direction="row">
-              <SocialShare type="email" link={shareLink} title={shareHeadline} text={shareText} />
-              <SocialShare type="twitter" link={shareLink} text={shareHeadline} />
-              <SocialShare type="facebook" link={shareLink} />
-              <SocialShare type="linkedin" link={shareLink} title={shareHeadline} text={shareText} />
+              <SocialShare type="email" link={shareLink}
+                title={shareHeadline} text={shareText} />
+              <SocialShare type="twitter"
+                link={shareLink} text={shareHeadline} />
+              <SocialShare type="facebook"
+                link={shareLink} />
+              <SocialShare type="linkedin"
+                link={shareLink} title={shareHeadline} text={shareText} />
             </Box>
           </Box>
         );
@@ -101,7 +107,8 @@ export default class VideoOverlay extends Component {
     let emptyBox = this.state.iconSize === 'small' ? null : <Box />;
 
     let overlayContent = (
-      <Box pad="none" align="center" justify={videoOverlayJustify} className={`${CLASS_ROOT}__overlay`}>
+      <Box pad="none" align="center"
+        justify={videoOverlayJustify} className={`${CLASS_ROOT}__overlay`}>
         <Box pad="none" align="center" justify="center">
           <Button className={`${CLASS_ROOT}__play`} plain={true}
             primary={true} onClick={this.props.togglePlay}

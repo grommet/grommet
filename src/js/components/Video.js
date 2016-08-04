@@ -73,7 +73,9 @@ export default class Video extends Component {
     // Dynamically modifying a source element and its attribute when
     // the element is already inserted in a video or audio element will
     // have no effect.
-    // From HTML Specs: https://html.spec.whatwg.org/multipage/embedded-content.html#the-source-element
+    // From HTML Specs:
+    // https://html.spec.whatwg.org/multipage/embedded-content.html
+    //   #the-source-element
     // Using forceUpdate to force redraw of video when receiving new <source>
     this.forceUpdate();
   }
@@ -96,7 +98,9 @@ export default class Video extends Component {
       // computed values
       hasPlayed: this._hasPlayed,
       playing: !this._video.paused && !this._video.loading,
-      percentageBuffered: this._video.buffered.length && this._video.buffered.end(this._video.buffered.length - 1) / this._video.duration * 100,
+      percentageBuffered: this._video.buffered.length &&
+        this._video.buffered.end(this._video.buffered.length - 1) /
+        this._video.duration * 100,
       percentagePlayed: this._video.currentTime / this._video.duration * 100,
       loading: this._video.readyState < this._video.HAVE_ENOUGH_DATA
     });

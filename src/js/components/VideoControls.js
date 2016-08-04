@@ -42,7 +42,9 @@ export default class VideoControls extends Component {
     return (
       <Box pad={{ horizontal: 'small', vertical: 'none' }}>
         <Heading tag="h3" margin="none" className={`${CLASS_ROOT}__time`}>
-          {this._formatTime(this.props.currentTime)} / {this._formatTime(this.props.duration)}
+          {this._formatTime(this.props.currentTime)}
+          /
+          {this._formatTime(this.props.duration)}
         </Heading>
       </Box>
     );
@@ -102,8 +104,10 @@ export default class VideoControls extends Component {
         'Restart Video' :
           'Play Video'));
 
-    let a11yControlButtonTitle = Intl.getMessage(this.context.intl, a11yControlButtonMessage);
-    let a11yExpandButtonTitle = Intl.getMessage(this.context.intl, 'Toggle Fullscreen');
+    let a11yControlButtonTitle =
+      Intl.getMessage(this.context.intl, a11yControlButtonMessage);
+    let a11yExpandButtonTitle =
+      Intl.getMessage(this.context.intl, 'Toggle Fullscreen');
 
     let overlayContent = (
       <Box pad="none"
@@ -112,21 +116,27 @@ export default class VideoControls extends Component {
 
         {this._renderProgressBar()}
 
-        <Box pad="none"
-          className={`${CLASS_ROOT}__controls-primary`} direction="row"
-          justify="between">
-          <Box direction="row" align="center" pad={{ horizontal: 'small', vertical: 'none'}}>
-            <Button plain={true} primary={true} onClick={this.props.togglePlay} icon={controlIcon} a11yTitle={a11yControlButtonTitle} />
+        <Box pad="none" className={`${CLASS_ROOT}__controls-primary`}
+          direction="row" justify="between">
+          <Box direction="row" align="center"
+            pad={{ horizontal: 'small', vertical: 'none'}}>
+            <Button plain={true} primary={true} onClick={this.props.togglePlay}
+              icon={controlIcon} a11yTitle={a11yControlButtonTitle} />
 
             {this._renderTitle()}
           </Box>
 
-          <Box direction="row" align="center" pad={{ horizontal: 'small', vertical: 'none'}}>
+          <Box direction="row" align="center"
+            pad={{ horizontal: 'small', vertical: 'none'}}>
             {this._renderTime()}
 
-            <Button plain={true} primary={true} onClick={this.props.toggleMute} icon={this.props.muted ? <VolumeMuteIcon /> : <VolumeIcon />} />
+            <Button plain={true} primary={true}
+              onClick={this.props.toggleMute} icon={this.props.muted ?
+                <VolumeMuteIcon /> : <VolumeIcon />} />
 
-            <Button plain={true} primary={true} onClick={this.props.fullscreen} icon={<ExpandIcon />} a11yTitle={a11yExpandButtonTitle} />
+            <Button plain={true} primary={true}
+              onClick={this.props.fullscreen} icon={<ExpandIcon />}
+              a11yTitle={a11yExpandButtonTitle} />
           </Box>
        </Box>
       </Box>
