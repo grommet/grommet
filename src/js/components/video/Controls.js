@@ -1,7 +1,6 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component } from 'react';
-// import classnames from 'classnames';
 
 import Intl from '../../utils/Intl';
 import Button from '../Button';
@@ -15,40 +14,11 @@ import RefreshIcon from '../icons/base/Refresh';
 import CSSClassnames from '../../utils/CSSClassnames';
 import VideoTime from './Time';
 import VideoFullscreenButton from './FullscreenButton';
+import VideoProgressBar from './ProgressBar';
 
 const CLASS_ROOT = CSSClassnames.VIDEO;
 
 export default class Controls extends Component {
-
-  constructor () {
-    super();
-
-    this._onProgressBarChange = this._onProgressBarChange.bind(this);
-  }
-
-  _onProgressBarChange(e) {
-    this.props.seek(e.target.value * this.props.duration / 100);
-  }
-
-  _renderProgressBar() {
-    const { percentagePlayed } = this.props;
-
-    return (
-      <Box pad="none" className={`${CLASS_ROOT}__progress`} direction="row">
-        <div className={`${CLASS_ROOT}__progress-bar-fill`} style={{
-          width: percentagePlayed + '%'
-        }} />
-        <input className={`${CLASS_ROOT}__progress-bar-input`}
-          ref="input"
-          onChange={this._onProgressBarChange}
-          type="range"
-          min="0"
-          max="100"
-          value={percentagePlayed || ''}
-          step="0.1" />
-      </Box>
-    );
-  }
 
   _renderTitle () {
     let title;
@@ -70,6 +40,8 @@ export default class Controls extends Component {
       ended,
       currentTime,
       duration,
+      percentagePlayed,
+      seek,
       fullscreen
     } = this.props;
 
@@ -95,7 +67,8 @@ export default class Controls extends Component {
         className={`${CLASS_ROOT}__controls`}
         direction="column" justify="start">
 
-        {this._renderProgressBar()}
+        <VideoProgressBar progress={percentagePlayed}
+          duration={duration} onChange={seek} />
 
         <Box pad="none" className={`${CLASS_ROOT}__controls-primary`}
           direction="row" justify="between">
