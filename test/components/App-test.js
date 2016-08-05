@@ -2,20 +2,22 @@
 
 import {test} from 'tape';
 import React from 'react';
-import TestUtils from 'react-addons-test-utils';
+import { shallow } from 'enzyme';
 
 import App from '../../src/js/components/App';
 import CSSClassnames from '../../src/js/utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.APP;
 
+function setup(props) {
+  return shallow(<App {...props}/>);
+}
+
 test('loads a basic App', (t) => {
   t.plan(1);
-  const shallowRenderer = TestUtils.createRenderer();
-  shallowRenderer.render(React.createElement(App));
-  const appElement = shallowRenderer.getRenderOutput();
+  const appElement = setup();
 
-  if (appElement.props.className.indexOf(CLASS_ROOT) > -1) {
+  if (appElement.props().className.indexOf(CLASS_ROOT) > -1) {
     t.pass('App has class');
   } else {
     t.fail('App does not have app class');
@@ -24,11 +26,9 @@ test('loads a basic App', (t) => {
 
 test('loads an inline App', (t) => {
   t.plan(1);
-  const shallowRenderer = TestUtils.createRenderer();
-  shallowRenderer.render(React.createElement(App, {inline: true}));
-  const appElement = shallowRenderer.getRenderOutput();
+  const appElement = setup({inline: true});
 
-  if (appElement.props.className.indexOf(`${CLASS_ROOT}--inline`) > -1) {
+  if (appElement.props().className.indexOf(`${CLASS_ROOT}--inline`) > -1) {
     t.pass('App has inline class');
   } else {
     t.fail('App does not have inline class');
@@ -37,12 +37,9 @@ test('loads an inline App', (t) => {
 
 test('loads a custom className App', (t) => {
   t.plan(1);
-  const shallowRenderer = TestUtils.createRenderer();
+  const appElement = setup({className: 'testing'});
 
-  shallowRenderer.render(React.createElement(App, {className: 'testing'}));
-  const appElement = shallowRenderer.getRenderOutput();
-
-  if (appElement.props.className.indexOf('testing') > -1) {
+  if (appElement.props().className.indexOf('testing') > -1) {
     t.pass('App has testing class');
   } else {
     t.fail('App does not have testing class');
@@ -51,25 +48,21 @@ test('loads a custom className App', (t) => {
 
 test('loads an App with body', (t) => {
   t.plan(2);
-  const shallowRenderer = TestUtils.createRenderer();
-
   var AppWithBody = (
     <App><h2>App Body</h2></App>
   );
 
-  shallowRenderer.render(
-    AppWithBody
-  );
-  const appElement = shallowRenderer.getRenderOutput();
+  const appElement = shallow(AppWithBody);
 
-  if (appElement.props.className.indexOf(CLASS_ROOT) > -1) {
+  if (appElement.props().className.indexOf(CLASS_ROOT) > -1) {
     t.pass('App has class');
   } else {
     t.fail('App does not have app class');
   }
 
+  console.log(appElement.find('h2'));
   t.equal(
-    appElement.props.children[0].props.children, 'App Body',
+    appElement.find('h2').props().children, 'App Body',
     'App has body'
   );
 });
