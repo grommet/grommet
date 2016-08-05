@@ -59,6 +59,7 @@ Status.defaultProps = {value: 'unknown'};
 Status.propTypes = {
   a11yTitle: PropTypes.string,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
-  value: PropTypes.oneOf(['critical', 'warning', 'ok', 'unknown', 'disabled', 'label',
+  value: PropTypes.oneOf(['critical', 'warning', 'ok', 'unknown',
+    'disabled', 'label',
     'Critical', 'Warning', 'OK', 'Unknown', 'Disabled', 'Label', 'blank'])
 };

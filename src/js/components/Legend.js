@@ -64,7 +64,8 @@ export default class Legend extends Component {
       if (item.hasOwnProperty('colorIndex')) {
         swatch = (
           <svg
-            className={`${CLASS_ROOT}__item-swatch ${COLOR_INDEX}-${colorIndex}`}
+            className={`${CLASS_ROOT}__item-swatch ` +
+              `${COLOR_INDEX}-${colorIndex}`}
             viewBox="0 0 12 12">
             <path className={item.className} d="M 5 0 l 0 12" />
           </svg>

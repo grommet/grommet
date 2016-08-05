@@ -133,7 +133,8 @@ export default class DateTimeDrop extends Component {
 
     return [
       <Header key="header" justify="between" colorIndex="neutral-1">
-        <Button className={CLASS_ROOT + "__previous"} icon={<LinkPreviousIcon />}
+        <Button className={CLASS_ROOT + "__previous"}
+          icon={<LinkPreviousIcon />}
           onClick={this._onPrevious.bind(this, 'month')} />
         <Title className={CLASS_ROOT + "__title"} responsive={false}>
           {value.format('MMMM YYYY')}
@@ -217,7 +218,8 @@ export default class DateTimeDrop extends Component {
       );
     }
     return (
-      <Box direction="row" className={CLASS_ROOT + "__time"}>
+      <Box direction="row" className={CLASS_ROOT + "__time"}
+        responsive={false}>
         {elements}
       </Box>
     );
@@ -236,8 +238,7 @@ export default class DateTimeDrop extends Component {
     }
 
     return (
-      <Box id={CLASS_ROOT} className={CLASS_ROOT} align="center"
-        onClick={this._onClose}>
+      <Box id={CLASS_ROOT} className={CLASS_ROOT} align="center">
         {date}
         {time}
       </Box>

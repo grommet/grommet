@@ -178,7 +178,8 @@ class MenuDrop extends Component {
   render () {
     let { dropAlign, size, control, id, colorIndex, onClick } = this.props;
     let boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
-    delete boxProps.colorIndex; // manage colorIndex at the outer menuDrop element
+    // manage colorIndex at the outer menuDrop element
+    delete boxProps.colorIndex;
 
     delete boxProps.onClick;
 
@@ -187,8 +188,10 @@ class MenuDrop extends Component {
     // Put nested Menus inline
     const children = React.Children.map(this.props.children, child => {
       let result = child;
-      if (child && isFunction(child.type) && child.type.prototype._renderMenuDrop) {
-        result = React.cloneElement(child, {inline: 'explode', direction: 'column'});
+      if (child && isFunction(child.type) &&
+        child.type.prototype._renderMenuDrop) {
+        result = React.cloneElement(child,
+          {inline: 'explode', direction: 'column'});
       }
       return result;
     });
@@ -424,7 +427,8 @@ export default class Menu extends Component {
     let closeLabel = Intl.getMessage(this.context.intl, 'Close');
     let menuLabel = Intl.getMessage(this.context.intl, 'Menu');
     let menuTitle = (
-      `${closeLabel} ${this.props.a11yTitle || this.props.label || ''} ${menuLabel}`
+      `${closeLabel} ${this.props.a11yTitle || this.props.label || ''} ` +
+      `${menuLabel}`
     );
 
     let control = (
@@ -491,7 +495,8 @@ export default class Menu extends Component {
       let openLabel = Intl.getMessage(this.context.intl, 'Open');
       let menuLabel = Intl.getMessage(this.context.intl, 'Menu');
       let menuTitle = (
-        `${openLabel} ${this.props.a11yTitle || this.props.label || ''} ${menuLabel}`
+        `${openLabel} ${this.props.a11yTitle || this.props.label || ''} ` +
+        `${menuLabel}`
       );
 
       return (

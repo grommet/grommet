@@ -32,8 +32,10 @@ export default class DateTime extends Component {
 
     this._onInputChange = this._onInputChange.bind(this);
     this._onOpen = this._onOpen.bind(this);
+    this._onForceClose = this._onForceClose.bind(this);
     this._onControlClick = this._onControlClick.bind(this);
     this._onClose = this._onClose.bind(this);
+    this._onCloseDrop = this._onCloseDrop.bind(this);
     this._onNext = this._onNext.bind(this);
     this._onPrevious = this._onPrevious.bind(this);
     this._cursorScope = this._cursorScope.bind(this);
@@ -121,11 +123,16 @@ export default class DateTime extends Component {
 
   _onControlClick (event) {
     event.preventDefault();
+    event.stopPropagation();
     if (this.state.dropActive) {
       this.setState({dropActive: false, cursor: -1});
     } else {
       this.setState({dropActive: true});
     }
+  }
+
+  _onForceClose () {
+    this.setState({dropActive: false, cursor: -1});
   }
 
   _onOpen (event) {
@@ -138,6 +145,13 @@ export default class DateTime extends Component {
     const isCalendarOnly = !TIME_REGEXP.test(this.props.format);
     if (! isDescendant(this.refs.component, event.target) &&
       ! isDescendant(drop, event.target) || isCalendarOnly) {
+      this.setState({dropActive: false, cursor: -1});
+    }
+  }
+
+  _onCloseDrop (event) {
+    const drop = document.getElementById(DATE_TIME_DROP);
+    if (! isDescendant(drop, event.target)) {
       this.setState({dropActive: false, cursor: -1});
     }
   }
@@ -193,10 +207,9 @@ export default class DateTime extends Component {
   }
 
   _activation (dropActive) {
-
     var listeners = {
-      esc: this._onClose,
-      tab: this._onClose,
+      esc: this._onForceClose,
+      tab: this._onCloseDrop,
       enter: this._onSelectDate,
       up: this._onPrevious,
       down: this._onNext
@@ -209,7 +222,8 @@ export default class DateTime extends Component {
 
       // If this is inside a FormField, place the drop in reference to it.
       const control =
-        findAncestor(this.refs.component, `.${FORM_FIELD}`) || this.refs.component;
+        findAncestor(this.refs.component, `.${FORM_FIELD}`) ||
+        this.refs.component;
       this._drop = Drop.add(control,
         this._renderDrop(), { align: {top: 'bottom', left: 'left'} });
 
@@ -251,8 +265,7 @@ export default class DateTime extends Component {
     const Icon = (TIME_REGEXP.test(format) ? ClockIcon : CalendarIcon);
 
     return (
-      <div ref="component" className={classes.join(' ')}
-        onBlur={() => this.setState({dropActive: false, cursor: -1})}>
+      <div ref="component" className={classes.join(' ')}>
         <input ref="input" className={`${CLASS_ROOT}__input`}
           id={id} placeholder={format} name={name} value={value || ''}
           onChange={this._onInputChange} />

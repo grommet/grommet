@@ -134,7 +134,8 @@ export default {
 
     var keyCount = 0;
     for (var keyHandler in this._getKeyboardAcceleratorHandlers(element)) {
-      if (this._getKeyboardAcceleratorHandlers(element).hasOwnProperty(keyHandler)) {
+      if (this._getKeyboardAcceleratorHandlers(element).
+        hasOwnProperty(keyHandler)) {
         keyCount += 1;
       }
     }

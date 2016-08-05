@@ -16,7 +16,8 @@ export default class Quote extends Component {
       CLASS_ROOT,
       this.props.className,
       {
-        [`${BORDER_COLOR_INDEX}-${this.props.borderColorIndex}`]: this.props.borderColorIndex,
+        [`${BORDER_COLOR_INDEX}-${this.props.borderColorIndex}`]:
+          this.props.borderColorIndex,
         [`${CLASS_ROOT}--${this.props.size}`]: this.props.size,
         [`${CLASS_ROOT}--emphasize-credit`]: this.props.emphasizeCredit
       }
@@ -28,7 +29,9 @@ export default class Quote extends Component {
       <Box {...boxProps} className={classes}>
         <div>
           {this.props.children}
-          <Paragraph className={`${CLASS_ROOT}__credit`}>{this.props.credit}</Paragraph>
+          <Paragraph className={`${CLASS_ROOT}__credit`}>
+            {this.props.credit}
+          </Paragraph>
         </div>
       </Box>
     );

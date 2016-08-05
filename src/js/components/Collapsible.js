@@ -19,7 +19,8 @@ class Collapse extends Component {
     setTimeout(() => {
       node.classList.add('animate');
       node.style.height = `${contentHeight}px`;
-      setTimeout(callback, parseFloat(getComputedStyle(node).transitionDuration) * 1000);
+      setTimeout(callback,
+        parseFloat(getComputedStyle(node).transitionDuration) * 1000);
     });
   }
 
@@ -36,7 +37,8 @@ class Collapse extends Component {
     setTimeout(() => {
       node.classList.add('animate');
       node.style.height = 0;
-      setTimeout(callback, parseFloat(getComputedStyle(node).transitionDuration) * 1000);
+      setTimeout(callback,
+        parseFloat(getComputedStyle(node).transitionDuration) * 1000);
     });
   }
 

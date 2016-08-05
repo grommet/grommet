@@ -115,7 +115,8 @@ export default class Meter extends Component {
     if ('right' === legendPlacement) {
       if (this.refs.legend) {
         const graphicHeight = this.refs.activeGraphic.offsetHeight;
-        const legendHeight = ReactDOM.findDOMNode(this.refs.legend).offsetHeight;
+        const legendHeight =
+          ReactDOM.findDOMNode(this.refs.legend).offsetHeight;
         this.setState({tallLegend: (legendHeight > graphicHeight)});
       }
     }
@@ -129,6 +130,9 @@ export default class Meter extends Component {
       series = [
         {value: props.value}
       ];
+      if (props.colorIndex) {
+        series[0].colorIndex = props.colorIndex;
+      }
     }
 
     // set color index
@@ -172,7 +176,8 @@ export default class Meter extends Component {
         thresholds.push({
           label: threshold.label,
           colorIndex: threshold.colorIndex,
-          ariaLabel: `${threshold.value} ${props.units || ''} ${threshold.label || ''}`
+          ariaLabel:
+            `${threshold.value} ${props.units || ''} ${threshold.label || ''}`
         });
         priorValue = threshold.value;
         if (i === (props.thresholds.length - 1)) {
@@ -508,6 +513,7 @@ Meter.propTypes = {
   a11yTitleId: PropTypes.string,
   a11yDescId: PropTypes.string,
   a11yDesc: PropTypes.string,
+  colorIndex: PropTypes.string,
   // deprecated in favor of activeIndex?
   important: PropTypes.number,
   label: PropTypes.oneOfType([PropTypes.bool, PropTypes.node]),
