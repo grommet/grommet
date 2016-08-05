@@ -20,7 +20,6 @@ export default class ProgressBar extends Component {
   }
 
   _onProgressBarChange (e) {
-    console.log(e.target.value * this.props.duration / 100);
     this.props.onChange(e.target.value * this.props.duration / 100);
   }
 
