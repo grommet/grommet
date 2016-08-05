@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
+import classnames from 'classnames';
 import Intl from '../utils/Intl';
 import Box from './Box';
 import CSSClassnames from '../utils/CSSClassnames';
@@ -20,16 +21,25 @@ export default class Tabs extends Component {
     };
   }
 
+  componentWillReceiveProps(nextProps) {
+    if(this.state.activeIndex !== nextProps.activeIndex) {
+      this.setState({activeIndex: nextProps.activeIndex});
+    }
+  }
+
   _activateTab (index) {
     this.setState({activeIndex: index});
   }
 
   render () {
-    var classes = [CLASS_ROOT];
-    classes.push(CLASS_ROOT + '--justify-' + this.props.justify);
-    if (this.props.responsive) {
-      classes.push(CLASS_ROOT + '--responsive');
-    }
+    let classes = classnames(
+      CLASS_ROOT,
+      this.props.className,
+      {
+        [`${CLASS_ROOT}--justify-${this.props.justify}`]: this.props.justify,
+        [`${CLASS_ROOT}--responsive`]: this.props.responsive
+      }
+    );
 
     var activeContainer;
     var activeTitle;
@@ -58,11 +68,11 @@ export default class Tabs extends Component {
       activeTitle: activeTitle
     });
 
-    // TODO: Since there could be multiple Tabs on the page, we need a more
-    // robust means of identifying the association between title and aria label.
+    //TODO: Since there could be multiple Tabs on the page, we need a more
+    //robust means of identifying the association between title and aria label.
     return (
       <div role="tablist">
-        <ul className={classes.join(' ')}>
+        <ul className={classes}>
           {tabs}
         </ul>
         <div ref="tabContent" tabIndex="0" aria-label={tabContentTitle}
