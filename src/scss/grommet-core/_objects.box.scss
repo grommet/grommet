@@ -383,55 +383,56 @@
   }
 
   &--columns {
-    @include media-query(lap-and-up) {
-      flex-wrap: wrap;
-    }
-
-    &-1 {
-        justify-content: center;
+    &-one {
+      justify-content: center;
 
       > .#{$grommet-namespace}box {
-        width: 83%;
+        flex: 0 0 83%;
       }
     }
 
-    &-2 {
+    &-two {
       > .#{$grommet-namespace}box {
         flex: 0 0 50%;
       }
 
-      &-66-33 {
+      &-sixty-thirty {
         > .#{$grommet-namespace}box:nth-of-type(odd) {
           flex: 0 0 66.6666%;
         }
+
         > .#{$grommet-namespace}box:nth-of-type(even) {
           flex: 0 0 33.3333%;
         }
       }
 
-      &-33-66 {
+      &-thirty-sixty {
         > .#{$grommet-namespace}box:nth-of-type(even) {
           flex: 0 0 66.6666%;
         }
+
         > .#{$grommet-namespace}box:nth-of-type(odd) {
           flex: 0 0 33.3333%;
         }
       }
     }
 
-    &-3 {
+    &-three {
       > .#{$grommet-namespace}box {
         flex: 0 0 33.3333%;
       }
     }
 
-    &-4 {
+    &-four {
+      @include media-query(portable) {
+        flex-wrap: wrap;
+      }
+
       > .#{$grommet-namespace}box {
         flex: 0 0 25%;
 
         @include media-query(portable) {
           flex: 0 0 50%;
-          flex-direction: row;
         }
       }
     }

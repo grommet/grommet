@@ -9,6 +9,7 @@ import CSSClassnames from '../utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.BOX;
 const BACKGROUND_COLOR_INDEX = CSSClassnames.BACKGROUND_COLOR_INDEX;
+const NUMBERS = ['', 'one', 'two', 'three', 'four']; // for columns
 
 export default class Box extends Component {
 
@@ -81,24 +82,25 @@ export default class Box extends Component {
       classes.push(`${CLASS_ROOT}--columns`);
       // defaulting direction to row when using columns option
       classes.push(`${CLASS_ROOT}--direction-row`);
+      
       if (isNaN(this.props.columns)) {
         const { numColumns, mainColumn, fixed } = this.props.columns;
         if (numColumns) {
-          classes.push(`${CLASS_ROOT}--columns-${numColumns}`);
+          classes.push(`${CLASS_ROOT}--columns-${NUMBERS[numColumns]}`);
         }
         if (mainColumn) {
           if (mainColumn === 'start') {
-            classes.push(`${CLASS_ROOT}--columns-${numColumns}-66-33`);
+            classes.push(`${CLASS_ROOT}--columns-${NUMBERS[numColumns]}-sixty-thirty`);
           }
           if (mainColumn === 'end') {
-            classes.push(`${CLASS_ROOT}--columns-${numColumns}-33-66`);
+            classes.push(`${CLASS_ROOT}--columns-${NUMBERS[numColumns]}-thirty-sixty`);
           }
         }
         if (fixed) {
           classes.push(`${CLASS_ROOT}--columns-fixed`);
         }
       } else {
-        classes.push(`${CLASS_ROOT}--columns-${this.props.columns}`);
+        classes.push(`${CLASS_ROOT}--columns-${NUMBERS[this.props.columns]}`);
       }
     } else {
       this._addPropertyClass(classes, CLASS_ROOT, 'direction');
