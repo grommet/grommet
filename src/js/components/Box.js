@@ -79,28 +79,29 @@ export default class Box extends Component {
     }
 
     if (this.props.columns) {
+      const columnsPrefix = `${CLASS_ROOT}--columns-`;
       classes.push(`${CLASS_ROOT}--columns`);
       // defaulting direction to row when using columns option
       classes.push(`${CLASS_ROOT}--direction-row`);
-      
+
       if (isNaN(this.props.columns)) {
         const { numColumns, mainColumn, fixed } = this.props.columns;
         if (numColumns) {
-          classes.push(`${CLASS_ROOT}--columns-${NUMBERS[numColumns]}`);
+          classes.push(`${columnsPrefix}${NUMBERS[numColumns]}`);
         }
         if (mainColumn) {
           if (mainColumn === 'start') {
-            classes.push(`${CLASS_ROOT}--columns-${NUMBERS[numColumns]}-sixty-thirty`);
+            classes.push(`${columnsPrefix}${NUMBERS[numColumns]}-sixty-thirty`);
           }
           if (mainColumn === 'end') {
-            classes.push(`${CLASS_ROOT}--columns-${NUMBERS[numColumns]}-thirty-sixty`);
+            classes.push(`${columnsPrefix}${NUMBERS[numColumns]}-thirty-sixty`);
           }
         }
         if (fixed) {
-          classes.push(`${CLASS_ROOT}--columns-fixed`);
+          classes.push(`${columnsPrefix}fixed`);
         }
       } else {
-        classes.push(`${CLASS_ROOT}--columns-${NUMBERS[this.props.columns]}`);
+        classes.push(`${columnsPrefix}${NUMBERS[this.props.columns]}`);
       }
     } else {
       this._addPropertyClass(classes, CLASS_ROOT, 'direction');
