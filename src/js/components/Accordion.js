@@ -36,16 +36,18 @@ export default class Accordion extends Component {
       className
     );
 
-    const accordionChildren = React.Children.map(children, (child, index) => {
-      return React.cloneElement(child, {
-        id: 'accordion-panel-' + index,
-        active: !openMulti ? (this.state.activeIndex === index) : null,
-        onActive: () => {
-          this._activatePanel(index);
-        },
-        animate
+    const accordionChildren = React.Children
+      .map(children, (child, index) => {
+        return React.cloneElement(child, {
+          id: 'accordion-panel-' + index,
+          active: !openMulti ? (this.state.activeIndex === index)
+            : child.props.active,
+          onActive: () => {
+            this._activatePanel(index);
+          },
+          animate
+        });
       });
-    });
 
     return (
       <List
