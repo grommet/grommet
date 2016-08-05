@@ -4,6 +4,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -28,6 +32,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _classnames2 = require('classnames');
+
+var _classnames3 = _interopRequireDefault(_classnames2);
+
 var _Intl = require('../utils/Intl');
 
 var _Intl2 = _interopRequireDefault(_Intl);
@@ -42,9 +50,7 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
-
-var CLASS_ROOT = _CSSClassnames2.default.TABS;
+var CLASS_ROOT = _CSSClassnames2.default.TABS; // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 var Tabs = function (_Component) {
   (0, _inherits3.default)(Tabs, _Component);
@@ -64,6 +70,13 @@ var Tabs = function (_Component) {
   }
 
   (0, _createClass3.default)(Tabs, [{
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      if (this.state.activeIndex !== nextProps.activeIndex) {
+        this.setState({ activeIndex: nextProps.activeIndex });
+      }
+    }
+  }, {
     key: '_activateTab',
     value: function _activateTab(index) {
       this.setState({ activeIndex: index });
@@ -71,11 +84,9 @@ var Tabs = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var classes = [CLASS_ROOT];
-      classes.push(CLASS_ROOT + '--justify-' + this.props.justify);
-      if (this.props.responsive) {
-        classes.push(CLASS_ROOT + '--responsive');
-      }
+      var _classnames;
+
+      var classes = (0, _classnames3.default)(CLASS_ROOT, this.props.className, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--justify-' + this.props.justify, this.props.justify), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--responsive', this.props.responsive), _classnames));
 
       var activeContainer;
       var activeTitle;
@@ -104,14 +115,14 @@ var Tabs = function (_Component) {
         activeTitle: activeTitle
       });
 
-      // TODO: Since there could be multiple Tabs on the page, we need a more
-      // robust means of identifying the association between title and aria label.
+      //TODO: Since there could be multiple Tabs on the page, we need a more
+      //robust means of identifying the association between title and aria label.
       return _react2.default.createElement(
         'div',
         { role: 'tablist' },
         _react2.default.createElement(
           'ul',
-          { className: classes.join(' ') },
+          { className: classes },
           tabs
         ),
         _react2.default.createElement(
