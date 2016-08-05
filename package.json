@@ -24,7 +24,7 @@
     "node": ">= 4.4.0"
   },
   "scripts": {
-    "test": "gulp test:coverage"
+    "test": "jest"
   },
   "dependencies": {
     "classnames": "^2.2.3",
@@ -50,9 +50,9 @@
     "markdown-to-jsx": "^2.0.0",
     "mkdirp": "^0.5.1",
     "moment": "^2.13.0",
-    "react": "^15.0.2",
-    "react-addons-transition-group": "^15.2.1",
-    "react-dom": "^15.0.2",
+    "react": "^15.3.0",
+    "react-addons-transition-group": "^15.3.0",
+    "react-dom": "^15.3.0",
     "react-gravatar": "^2.0.0",
     "react-intl": "^2.1.2",
     "shelljs": "^0.7.0",
@@ -60,6 +60,7 @@
     "yargs": "^4.6.0"
   },
   "devDependencies": {
+    "babel-jest": "^14.0.2",
     "babel-plugin-add-module-exports": "^0.2.0",
     "babel-plugin-transform-object-rest-spread": "^6.3.13",
     "babel-plugin-transform-react-es6-displayname": "^1.0.0-beta1.4",
@@ -77,11 +78,17 @@
     "gulp-prompt": "^0.2.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.2.0",
+    "jest": "^14.0.1",
+    "react-test-renderer": "^15.3.0",
     "mkdirp": "^0.5.1",
-    "react-addons-test-utils": "^15.0.2",
+    "react-addons-test-utils": "^15.3.0",
     "run-sequence": "^1.1.5",
     "tape": "^4.5.1",
     "webpack": "^1.12.14",
     "webpack-stream": "^3.1.0"
+  },
+  "jest": {
+    "preprocessorIgnorePatterns": ["<rootDir>/dist/", "<rootDir>/node_modules/"],
+    "automock": false
   }
 }
