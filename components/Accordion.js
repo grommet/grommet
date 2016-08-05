@@ -93,7 +93,7 @@ var Accordion = function (_Component) {
       var accordionChildren = _react2.default.Children.map(children, function (child, index) {
         return _react2.default.cloneElement(child, {
           id: 'accordion-panel-' + index,
-          active: !openMulti ? _this2.state.activeIndex === index : null,
+          active: !openMulti ? _this2.state.activeIndex === index : child.props.active,
           onActive: function onActive() {
             _this2._activatePanel(index);
           },
