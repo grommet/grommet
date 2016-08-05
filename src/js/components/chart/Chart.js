@@ -30,13 +30,20 @@ export default class Chart extends Component {
 
   componentDidMount () {
     window.addEventListener('resize', this._onResize);
-    // this._onResize();
-    setTimeout(this._layout, 1);
-    // setTimeout(this._layout, 100);
+    this._layout();
   }
 
-  componentWillReceiveProps () {
-    setTimeout(this._layout, 1);
+  componentWillReceiveProps (nextProps) {
+    if (this.props.vertical !== nextProps.vertical) {
+      this.setState({ layoutNeeded: true });
+    }
+  }
+
+  componentDidUpdate () {
+    if (this.state.layoutNeeded) {
+      this._layout();
+      this.setState({ layoutNeeded: false });
+    }
   }
 
   componentWillUnmount () {
@@ -55,7 +62,7 @@ export default class Chart extends Component {
     const chart = this.refs.chart;
     const chartRect = chart.getBoundingClientRect();
     const base = this.refs.chart.querySelector(`.${CHART_BASE}`);
-    let alignWidth, alignLeft, alignTop, alignHeight;
+    let alignWidth, alignLeft, alignRight, alignHeight, alignTop, alignBottom;
     let padAlign = true;
 
     if (horizontalAlignWith) {
@@ -64,12 +71,14 @@ export default class Chart extends Component {
         const rect = elem.getBoundingClientRect();
         alignWidth = rect.width;
         alignLeft = rect.left - chartRect.left;
+        alignRight = chartRect.right - rect.right;
         padAlign = false;
       }
     } else if (base) {
       const rect = base.getBoundingClientRect();
       alignWidth = rect.width;
       alignLeft = rect.left - chartRect.left;
+      alignRight = chartRect.right - rect.right;
     }
 
     if (verticalAlignWith) {
@@ -78,19 +87,23 @@ export default class Chart extends Component {
         const rect = elem.getBoundingClientRect();
         alignHeight = rect.height;
         alignTop = rect.top - chartRect.top;
+        alignBottom = chartRect.bottom - rect.bottom;
         padAlign = false;
       }
     } else if (base) {
       const rect = base.getBoundingClientRect();
       alignHeight = rect.height;
       alignTop = rect.top - chartRect.top;
+      alignBottom = chartRect.bottom - rect.bottom;
     }
 
     this.setState({
       alignWidth: alignWidth,
       alignLeft: alignLeft,
+      alignRight: alignRight,
       alignHeight: alignHeight,
       alignTop: alignTop,
+      alignBottom: alignBottom,
       padAlign: padAlign
     });
 
@@ -111,8 +124,8 @@ export default class Chart extends Component {
 
   render () {
     const { vertical, full, loading } = this.props;
-    const { alignHeight, alignLeft, alignTop, alignWidth, padAlign } =
-      this.state;
+    const { alignBottom, alignHeight, alignLeft, alignRight, alignTop,
+      alignWidth, padAlign } = this.state;
     let classes = [CLASS_ROOT];
     if (vertical) {
       classes.push(`${CLASS_ROOT}--vertical`);
@@ -135,18 +148,28 @@ export default class Chart extends Component {
       if (child && (
         child.type === Axis || child.type.name === 'Axis' ||
         child.type === MarkerLabel || child.type.name === 'MarkerLabel'
-      )) {
+        )) {
 
         if (vertical) {
           child = React.cloneElement(child, {
-            width: padAlign ? alignWidth - (2 * padding) : alignWidth,
-            style: { marginLeft: padAlign ? alignLeft + padding : alignLeft },
+            style: {
+              marginLeft: padAlign ? alignLeft + padding : alignLeft,
+              marginRight: padAlign ? alignRight + padding : alignRight
+            },
             align: axisAlign
           });
         } else {
           child = React.cloneElement(child, {
-            height: padAlign ? alignHeight - (2 * padding) : alignHeight,
-            style: { marginTop: padAlign ? alignTop + padding : alignTop },
+            style: {
+              // We set the height just for Safari due to:
+              // http://stackoverflow.com/questions/35532987/
+              //    heights-rendering-differently-in-chrome-and-firefox/
+              //    35537510#35537510
+              // Chrome seems to have addressed this already.
+              height: padAlign ? alignHeight - (2 * padding) : alignHeight,
+              marginTop: padAlign ? alignTop + padding : alignTop,
+              marginBottom: padAlign ? alignBottom + padding : alignBottom
+            },
             align: axisAlign
           });
         }

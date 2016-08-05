@@ -1,7 +1,6 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
-import { trackSize } from './utils';
 import CSSClassnames from '../../utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.CHART_AXIS;
@@ -12,27 +11,12 @@ export default class Axis extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      size: { width: 0, height: 0 },
       items: this._buildItems(props)
     };
-    this._size = new trackSize(this.props, this._onSize.bind(this));
-  }
-
-  componentDidMount () {
-    this._size.start(this.refs.axis);
   }
 
   componentWillReceiveProps (nextProps) {
     this.setState({ items: this._buildItems(nextProps) });
-    this._size.reset(nextProps);
-  }
-
-  componentWillUnmount () {
-    this._size.stop();
-  }
-
-  _onSize (size) {
-    this.setState({ size: size });
   }
 
   _buildItems (props) {
@@ -61,8 +45,8 @@ export default class Axis extends Component {
   }
 
   render () {
-    const { vertical, reverse, align, ticks } = this.props;
-    const { size: { height, width }, items } = this.state;
+    const { align, reverse, ticks, vertical } = this.props;
+    const { items } = this.state;
 
     let classes = [CLASS_ROOT];
     if (reverse) {
@@ -79,14 +63,6 @@ export default class Axis extends Component {
     }
     if (this.props.className) {
       classes.push(this.props.className);
-    }
-
-    let style = {...this.props.style};
-    if (vertical && height) {
-      style.height = `${height}px`;
-    }
-    if (! vertical && width) {
-      style.width = `${width}px`;
     }
 
     let elements = items.map(item => {
@@ -111,7 +87,8 @@ export default class Axis extends Component {
     });
 
     return (
-      <div ref="axis" className={classes.join(' ')} style={style}>
+      <div ref="axis" id={this.props.id}
+        className={classes.join(' ')} style={this.props.style}>
         {elements}
       </div>
     );
@@ -122,7 +99,6 @@ export default class Axis extends Component {
 Axis.propTypes = {
   align: PropTypes.oneOf(['start', 'end']), // only from Chart
   count: PropTypes.number.isRequired,
-  height: PropTypes.number, // only from Chart
   labels: PropTypes.arrayOf(PropTypes.shape({
     colorIndex: PropTypes.string,
     index: PropTypes.number.isRequired,
@@ -130,6 +106,5 @@ Axis.propTypes = {
   })),
   reverse: PropTypes.bool,
   ticks: PropTypes.bool,
-  vertical: PropTypes.bool,
-  width: PropTypes.number // only from Chart
+  vertical: PropTypes.bool
 };
