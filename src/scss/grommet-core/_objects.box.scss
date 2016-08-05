@@ -388,31 +388,57 @@
 
       > .#{$grommet-namespace}box {
         flex: 0 0 83%;
+
+        @include media-query(palm) {
+          flex: 0 1 auto;
+        }
       }
     }
 
     &-two {
       > .#{$grommet-namespace}box {
         flex: 0 0 50%;
+
+        @include media-query(palm) {
+          flex: 0 1 auto;
+        }
       }
 
       &-sixty-thirty {
-        > .#{$grommet-namespace}box:nth-of-type(odd) {
-          flex: 0 0 66.6666%;
-        }
+        > .#{$grommet-namespace}box {
+          &:nth-of-type(odd) {
+            flex: 0 0 66.6666%;
+          }
 
-        > .#{$grommet-namespace}box:nth-of-type(even) {
-          flex: 0 0 33.3333%;
+          &:nth-of-type(even) {
+            flex: 0 0 33.3333%;
+          }
+
+          @include media-query(palm) {
+            &:nth-of-type(odd),
+            &:nth-of-type(even) {
+              flex: 0 1 auto;
+            }
+          }
         }
       }
 
       &-thirty-sixty {
-        > .#{$grommet-namespace}box:nth-of-type(even) {
-          flex: 0 0 66.6666%;
-        }
+        > .#{$grommet-namespace}box {
+          &:nth-of-type(even) {
+            flex: 0 0 66.6666%;
+          }
 
-        > .#{$grommet-namespace}box:nth-of-type(odd) {
-          flex: 0 0 33.3333%;
+          &:nth-of-type(odd) {
+            flex: 0 0 33.3333%;
+          }
+
+          @include media-query(palm) {
+            &:nth-of-type(odd),
+            &:nth-of-type(even) {
+              flex: 0 1 auto;
+            }
+          }
         }
       }
     }
@@ -420,6 +446,10 @@
     &-three {
       > .#{$grommet-namespace}box {
         flex: 0 0 33.3333%;
+
+        @include media-query(palm) {
+          flex: 0 1 auto;
+        }
       }
     }
 
@@ -434,11 +464,15 @@
         @include media-query(portable) {
           flex: 0 0 50%;
         }
+
+        @include media-query(palm) {
+          flex: 0 1 auto;
+        }
       }
     }
 
     &-fixed {
-      max-width: 1140px;
+      max-width: $inuit-base-spacing-unit * 47.5; // 1140px
       margin-left: auto;
       margin-right: auto;
     }
