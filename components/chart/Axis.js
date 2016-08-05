@@ -4,10 +4,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -32,16 +28,15 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _utils = require('./utils');
-
 var _CSSClassnames = require('../../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.CHART_AXIS; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
+var CLASS_ROOT = _CSSClassnames2.default.CHART_AXIS;
 var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
 
 var Axis = function (_Component) {
@@ -53,33 +48,15 @@ var Axis = function (_Component) {
     var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Axis).call(this, props));
 
     _this.state = {
-      size: { width: 0, height: 0 },
       items: _this._buildItems(props)
     };
-    _this._size = new _utils.trackSize(_this.props, _this._onSize.bind(_this));
     return _this;
   }
 
   (0, _createClass3.default)(Axis, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      this._size.start(this.refs.axis);
-    }
-  }, {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
       this.setState({ items: this._buildItems(nextProps) });
-      this._size.reset(nextProps);
-    }
-  }, {
-    key: 'componentWillUnmount',
-    value: function componentWillUnmount() {
-      this._size.stop();
-    }
-  }, {
-    key: '_onSize',
-    value: function _onSize(size) {
-      this.setState({ size: size });
     }
   }, {
     key: '_buildItems',
@@ -120,15 +97,11 @@ var Axis = function (_Component) {
     key: 'render',
     value: function render() {
       var _props = this.props;
-      var vertical = _props.vertical;
-      var reverse = _props.reverse;
       var align = _props.align;
+      var reverse = _props.reverse;
       var ticks = _props.ticks;
-      var _state = this.state;
-      var _state$size = _state.size;
-      var height = _state$size.height;
-      var width = _state$size.width;
-      var items = _state.items;
+      var vertical = _props.vertical;
+      var items = this.state.items;
 
 
       var classes = [CLASS_ROOT];
@@ -146,14 +119,6 @@ var Axis = function (_Component) {
       }
       if (this.props.className) {
         classes.push(this.props.className);
-      }
-
-      var style = (0, _extends3.default)({}, this.props.style);
-      if (vertical && height) {
-        style.height = height + 'px';
-      }
-      if (!vertical && width) {
-        style.width = width + 'px';
       }
 
       var elements = items.map(function (item) {
@@ -179,7 +144,8 @@ var Axis = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        { ref: 'axis', className: classes.join(' '), style: style },
+        { ref: 'axis', id: this.props.id,
+          className: classes.join(' '), style: this.props.style },
         elements
       );
     }
@@ -194,7 +160,6 @@ exports.default = Axis;
 Axis.propTypes = {
   align: _react.PropTypes.oneOf(['start', 'end']), // only from Chart
   count: _react.PropTypes.number.isRequired,
-  height: _react.PropTypes.number, // only from Chart
   labels: _react.PropTypes.arrayOf(_react.PropTypes.shape({
     colorIndex: _react.PropTypes.string,
     index: _react.PropTypes.number.isRequired,
@@ -202,7 +167,6 @@ Axis.propTypes = {
   })),
   reverse: _react.PropTypes.bool,
   ticks: _react.PropTypes.bool,
-  vertical: _react.PropTypes.bool,
-  width: _react.PropTypes.number // only from Chart
+  vertical: _react.PropTypes.bool
 };
 module.exports = exports['default'];

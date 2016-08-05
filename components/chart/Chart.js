@@ -104,14 +104,22 @@ var Chart = function (_Component) {
     key: 'componentDidMount',
     value: function componentDidMount() {
       window.addEventListener('resize', this._onResize);
-      // this._onResize();
-      setTimeout(this._layout, 1);
-      // setTimeout(this._layout, 100);
+      this._layout();
     }
   }, {
     key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps() {
-      setTimeout(this._layout, 1);
+    value: function componentWillReceiveProps(nextProps) {
+      if (this.props.vertical !== nextProps.vertical) {
+        this.setState({ layoutNeeded: true });
+      }
+    }
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate() {
+      if (this.state.layoutNeeded) {
+        this._layout();
+        this.setState({ layoutNeeded: false });
+      }
     }
   }, {
     key: 'componentWillUnmount',
@@ -141,8 +149,10 @@ var Chart = function (_Component) {
       var base = this.refs.chart.querySelector('.' + CHART_BASE);
       var alignWidth = void 0,
           alignLeft = void 0,
+          alignRight = void 0,
+          alignHeight = void 0,
           alignTop = void 0,
-          alignHeight = void 0;
+          alignBottom = void 0;
       var padAlign = true;
 
       if (horizontalAlignWith) {
@@ -151,12 +161,14 @@ var Chart = function (_Component) {
           var rect = elem.getBoundingClientRect();
           alignWidth = rect.width;
           alignLeft = rect.left - chartRect.left;
+          alignRight = chartRect.right - rect.right;
           padAlign = false;
         }
       } else if (base) {
         var _rect = base.getBoundingClientRect();
         alignWidth = _rect.width;
         alignLeft = _rect.left - chartRect.left;
+        alignRight = chartRect.right - _rect.right;
       }
 
       if (verticalAlignWith) {
@@ -165,19 +177,23 @@ var Chart = function (_Component) {
           var _rect2 = _elem.getBoundingClientRect();
           alignHeight = _rect2.height;
           alignTop = _rect2.top - chartRect.top;
+          alignBottom = chartRect.bottom - _rect2.bottom;
           padAlign = false;
         }
       } else if (base) {
         var _rect3 = base.getBoundingClientRect();
         alignHeight = _rect3.height;
         alignTop = _rect3.top - chartRect.top;
+        alignBottom = chartRect.bottom - _rect3.bottom;
       }
 
       this.setState({
         alignWidth: alignWidth,
         alignLeft: alignLeft,
+        alignRight: alignRight,
         alignHeight: alignHeight,
         alignTop: alignTop,
+        alignBottom: alignBottom,
         padAlign: padAlign
       });
 
@@ -205,8 +221,10 @@ var Chart = function (_Component) {
       var full = _props2.full;
       var loading = _props2.loading;
       var _state = this.state;
+      var alignBottom = _state.alignBottom;
       var alignHeight = _state.alignHeight;
       var alignLeft = _state.alignLeft;
+      var alignRight = _state.alignRight;
       var alignTop = _state.alignTop;
       var alignWidth = _state.alignWidth;
       var padAlign = _state.padAlign;
@@ -234,14 +252,24 @@ var Chart = function (_Component) {
 
           if (vertical) {
             child = _react2.default.cloneElement(child, {
-              width: padAlign ? alignWidth - 2 * _utils.padding : alignWidth,
-              style: { marginLeft: padAlign ? alignLeft + _utils.padding : alignLeft },
+              style: {
+                marginLeft: padAlign ? alignLeft + _utils.padding : alignLeft,
+                marginRight: padAlign ? alignRight + _utils.padding : alignRight
+              },
               align: axisAlign
             });
           } else {
             child = _react2.default.cloneElement(child, {
-              height: padAlign ? alignHeight - 2 * _utils.padding : alignHeight,
-              style: { marginTop: padAlign ? alignTop + _utils.padding : alignTop },
+              style: {
+                // We set the height just for Safari due to:
+                // http://stackoverflow.com/questions/35532987/
+                //    heights-rendering-differently-in-chrome-and-firefox/
+                //    35537510#35537510
+                // Chrome seems to have addressed this already.
+                height: padAlign ? alignHeight - 2 * _utils.padding : alignHeight,
+                marginTop: padAlign ? alignTop + _utils.padding : alignTop,
+                marginBottom: padAlign ? alignBottom + _utils.padding : alignBottom
+              },
               align: axisAlign
             });
           }
