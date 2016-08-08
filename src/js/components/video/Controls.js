@@ -42,6 +42,7 @@ export default class Controls extends Component {
       duration,
       percentagePlayed,
       seek,
+      allowFullScreen,
       fullscreen
     } = this.props;
 
@@ -88,7 +89,8 @@ export default class Controls extends Component {
               onClick={this.props.toggleMute} icon={this.props.muted ?
                 <VolumeMuteIcon /> : <VolumeIcon />} />
 
-            <VideoFullscreenButton onClick={fullscreen} />
+            {allowFullScreen ?
+              <VideoFullscreenButton onClick={fullscreen} /> : undefined}
           </Box>
        </Box>
       </Box>

@@ -221,6 +221,9 @@ export default class Video extends Component {
     return (
       <div className={classes.join(' ')} onMouseMove={this._onMouseMove}>
         <video ref={el => this._video = el}
+          poster={this.props.poster}
+          autoPlay={this.props.autoPlay ? 'autoplay' : false}
+          loop={this.props.loop ? 'loop' : false}
           muted={this.props.muted}
           {...this._mediaEventProps}>
           {this.props.children}
@@ -243,7 +246,6 @@ Video.propTypes = {
     time: PropTypes.number
   })),
   title: PropTypes.node,
-  videoHeader: PropTypes.node,
   onClick: PropTypes.func,
   allowFullScreen: PropTypes.bool,
   autoPlay: PropTypes.bool,

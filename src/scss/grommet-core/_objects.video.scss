@@ -166,12 +166,6 @@
     }
   }
 
-  &--video-header {
-    .#{$grommet-namespace}video__overlay {
-      padding: 0;
-    }
-  }
-
   &--playing {
     &:not(.#{$grommet-namespace}video--interacting) {
       .#{$grommet-namespace}video__controls-primary,
