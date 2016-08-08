@@ -4,14 +4,11 @@ import React, { Component } from 'react';
 
 import Intl from '../../utils/Intl';
 import Responsive from '../../utils/Responsive';
-import Button from '../Button';
 import Box from '../Box';
 import Heading from '../Heading';
-import PlayIcon from '../icons/base/Play';
-import PauseIcon from '../icons/base/Pause';
-import RefreshIcon from '../icons/base/Refresh';
-import CSSClassnames from '../../utils/CSSClassnames';
 import VideoShare from './Share';
+import VideoPlayButton from './PlayButton';
+import CSSClassnames from '../../utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.VIDEO;
 
@@ -41,38 +38,13 @@ export default class Overlay extends Component {
       replayContent = (
         <Box className={`${CLASS_ROOT}__replay`} align="center">
           <Heading tag="h3" strong={true} uppercase={true}>Replay</Heading>
-          <VideoShare shareLink={shareLink}
-            shareHeadline={shareHeadline} shareText={shareText} />
+          <VideoShare shareLink={shareLink} shareHeadline={shareHeadline}
+            shareText={shareText} />
         </Box>
       );
     }
 
     return replayContent;
-  }
-
-  _renderPlayButton() {
-    const { playing, ended, togglePlay } = this.props;
-
-    let controlIconSize = this.state.iconSize;
-    let controlIcon = (playing ?
-      <PauseIcon size={controlIconSize} /> : (ended ?
-        <RefreshIcon size={controlIconSize} /> :
-          <PlayIcon size={controlIconSize} />));
-    let a11yControlButtonMessage = (playing ?
-      'Pause Video' : (ended ?
-        'Restart Video' :
-          'Play Video'));
-
-    let a11yControlButtonTitle =
-      Intl.getMessage(this.context.intl, a11yControlButtonMessage);
-
-    return (
-      <Box pad="none" align="center" justify="center">
-        <Button className={`${CLASS_ROOT}__play`} plain={true}
-          primary={true} onClick={togglePlay}
-          icon={controlIcon} a11yTitle={a11yControlButtonTitle} />
-      </Box>
-    );
   }
 
   render() {
@@ -83,7 +55,11 @@ export default class Overlay extends Component {
     return (
       <Box pad="none" align="center" justify="center"
         className={`${CLASS_ROOT}__overlay`}>
-        {this._renderPlayButton()}
+        <VideoPlayButton iconSize={this.state.iconSize}
+          className={`${CLASS_ROOT}__play`}
+          playing={this.props.playing}
+          ended={this.props.ended}
+          togglePlay={this.props.togglePlay} />
         {this._renderReplayMenu()}
         {emptyBox}
       </Box>

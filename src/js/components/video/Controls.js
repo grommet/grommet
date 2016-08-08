@@ -8,13 +8,11 @@ import Box from '../Box';
 import Heading from '../Heading';
 import VolumeIcon from '../icons/base/Volume';
 import VolumeMuteIcon from '../icons/base/VolumeMute';
-import PlayIcon from '../icons/base/Play';
-import PauseIcon from '../icons/base/Pause';
-import RefreshIcon from '../icons/base/Refresh';
-import CSSClassnames from '../../utils/CSSClassnames';
 import VideoTime from './Time';
 import VideoFullscreenButton from './FullscreenButton';
 import VideoProgressBar from './ProgressBar';
+import VideoPlayButton from './PlayButton';
+import CSSClassnames from '../../utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.VIDEO;
 
@@ -33,8 +31,17 @@ export default class Controls extends Component {
     return title;
   }
 
+  _renderMuteButton () {
+    return (
+      <Button plain={true} primary={true}
+        onClick={this.props.toggleMute} icon={this.props.muted ?
+          <VolumeMuteIcon /> : <VolumeIcon />} />
+    );
+  }
+
   render() {
     const {
+      togglePlay,
       hasPlayed,
       playing,
       ended,
@@ -50,45 +57,24 @@ export default class Controls extends Component {
       return null;
     }
 
-    let controlIcon = (playing ?
-      <PauseIcon /> : (ended ?
-        <RefreshIcon /> :
-          <PlayIcon />));
-
-    let a11yControlButtonMessage = (playing ?
-      'Pause Video' : (ended ?
-        'Restart Video' :
-          'Play Video'));
-
-    let a11yControlButtonTitle =
-      Intl.getMessage(this.context.intl, a11yControlButtonMessage);
-
     let overlayContent = (
-      <Box pad="none"
-        className={`${CLASS_ROOT}__controls`}
+      <Box pad="none" className={`${CLASS_ROOT}__controls`}
         direction="column" justify="start">
-
         <VideoProgressBar progress={percentagePlayed}
           duration={duration} onChange={seek} />
-
         <Box pad="none" className={`${CLASS_ROOT}__controls-primary`}
           direction="row" justify="between">
           <Box direction="row" align="center"
             pad={{ horizontal: 'small', vertical: 'none'}}>
-            <Button plain={true} primary={true} onClick={this.props.togglePlay}
-              icon={controlIcon} a11yTitle={a11yControlButtonTitle} />
-
+            <VideoPlayButton
+              playing={this.props.playing} ended={this.props.ended}
+              togglePlay={this.props.togglePlay} />
             {this._renderTitle()}
           </Box>
-
           <Box direction="row" align="center"
             pad={{ horizontal: 'small', vertical: 'none'}}>
             <VideoTime currentTime={currentTime} duration={duration} />
-
-            <Button plain={true} primary={true}
-              onClick={this.props.toggleMute} icon={this.props.muted ?
-                <VolumeMuteIcon /> : <VolumeIcon />} />
-
+            {this._renderMuteButton()}
             {allowFullScreen ?
               <VideoFullscreenButton onClick={fullscreen} /> : undefined}
           </Box>
