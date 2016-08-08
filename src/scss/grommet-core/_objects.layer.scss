@@ -150,8 +150,8 @@
 
   &.#{$grommet-namespace}layer--hidden {
 
-    left: -100vw;
-    right: 100vw;
+    left: -100%;
+    right: 100%;
     z-index: -1;
 
     &.#{$grommet-namespace}layer--align {
