@@ -1,7 +1,6 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
-import { trackSize } from './utils';
 import CSSClassnames from '../../utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.CHART_MARKER_LABEL;
@@ -12,23 +11,12 @@ export default class MarkerLabel extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      size: { width: 0, height: 0 },
       valueBasis: this._valueBasis(props)
     };
-    this._size = new trackSize(this.props, this._onSize.bind(this));
-  }
-
-  componentDidMount () {
-    this._size.start(this.refs.markerLabel);
   }
 
   componentWillReceiveProps (nextProps) {
     this.setState({ valueBasis: this._valueBasis(nextProps) });
-    this._size.reset(nextProps);
-  }
-
-  componentWillUnmount () {
-    this._size.stop();
   }
 
   _valueBasis (props) {
@@ -40,10 +28,6 @@ export default class MarkerLabel extends Component {
       valueBasis = ((value - min) / Math.max(1, (max - min))) * 100.0;
     }
     return valueBasis;
-  }
-
-  _onSize (size) {
-    this.setState({ size: size });
   }
 
   _renderPlaceholder (basis) {
@@ -77,7 +61,7 @@ export default class MarkerLabel extends Component {
 
   render () {
     const { align, reverse, vertical } = this.props;
-    const { size: { height, width }, valueBasis } = this.state;
+    const { valueBasis } = this.state;
 
     let classes = [CLASS_ROOT];
     if (reverse) {
@@ -93,14 +77,6 @@ export default class MarkerLabel extends Component {
       classes.push(this.props.className);
     }
 
-    let style = {...this.props.style};
-    if (vertical && height) {
-      style.height = `${height}px`;
-    }
-    if (! vertical && width) {
-      style.width = `${width}px`;
-    }
-
     let firstItem, secondItem;
     if (valueBasis < 50) {
       // marker value in first half, align it after
@@ -113,7 +89,8 @@ export default class MarkerLabel extends Component {
     }
 
     return (
-      <div ref="markerLabel" className={classes.join(' ')} style={style}>
+      <div ref="markerLabel" id={this.props.id}
+        className={classes.join(' ')} style={this.props.style} >
         {firstItem}
         {secondItem}
       </div>
@@ -127,15 +104,13 @@ MarkerLabel.propTypes = {
   align: PropTypes.oneOf(['start', 'end']), // only from Chart
   colorIndex: PropTypes.string,
   count: PropTypes.number,
-  height: PropTypes.number, // only from Chart
   index: PropTypes.number,
   label: PropTypes.node,
   max: PropTypes.number,
   min: PropTypes.number,
   reverse: PropTypes.bool,
   value: PropTypes.number,
-  vertical: PropTypes.bool,
-  width: PropTypes.number // only from Chart
+  vertical: PropTypes.bool
 };
 
 MarkerLabel.defaultProps = {

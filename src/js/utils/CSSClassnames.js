@@ -84,6 +84,7 @@ export default {
   TILE: `${namespace}tile`,
   TILES: `${namespace}tiles`,
   TIMESTAMP: `${namespace}timestamp`,
+  TIP: `${namespace}tip`,
   TITLE: `${namespace}title`,
   TOPOLOGY: `${namespace}topology`,
   VALUE: `${namespace}value`,
