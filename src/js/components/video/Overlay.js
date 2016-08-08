@@ -2,8 +2,6 @@
 
 import React, { Component } from 'react';
 
-import Intl from '../../utils/Intl';
-import Responsive from '../../utils/Responsive';
 import Box from '../Box';
 import Heading from '../Heading';
 import VideoShare from './Share';
@@ -55,11 +53,13 @@ export default class Overlay extends Component {
     return (
       <Box pad="none" align="center" justify="center"
         className={`${CLASS_ROOT}__overlay`}>
-        <VideoPlayButton iconSize={this.state.iconSize}
-          className={`${CLASS_ROOT}__play`}
-          playing={this.props.playing}
-          ended={this.props.ended}
-          togglePlay={this.props.togglePlay} />
+        <Box pad="none" align="center" justify="center">
+          <VideoPlayButton iconSize={this.state.iconSize}
+            className={`${CLASS_ROOT}__play`}
+            playing={this.props.playing}
+            ended={this.props.ended}
+            togglePlay={this.props.togglePlay} />
+        </Box>
         {this._renderReplayMenu()}
         {emptyBox}
       </Box>

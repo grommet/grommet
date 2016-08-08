@@ -2,7 +2,6 @@
 
 import React, { Component } from 'react';
 
-import Intl from '../../utils/Intl';
 import Button from '../Button';
 import Box from '../Box';
 import Heading from '../Heading';
@@ -67,8 +66,8 @@ export default class Controls extends Component {
           <Box direction="row" align="center"
             pad={{ horizontal: 'small', vertical: 'none'}}>
             <VideoPlayButton
-              playing={this.props.playing} ended={this.props.ended}
-              togglePlay={this.props.togglePlay} />
+              playing={playing} ended={ended}
+              togglePlay={togglePlay} />
             {this._renderTitle()}
           </Box>
           <Box direction="row" align="center"
