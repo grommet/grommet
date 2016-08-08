@@ -237,7 +237,6 @@ export default class Video extends Component {
 
 Video.propTypes = {
   colorIndex: PropTypes.string,
-  duration: PropTypes.number,
   full: PropTypes.oneOf([true, 'horizontal', 'vertical', false]),
   poster: PropTypes.string,
   size: React.PropTypes.oneOf(['small', 'medium', 'large']),
