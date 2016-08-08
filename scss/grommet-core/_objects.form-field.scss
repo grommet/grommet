@@ -119,7 +119,9 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
   > .#{$grommet-namespace}calendar input,
   > .#{$grommet-namespace}date-time input {
     // For IE11.
-    height: $inuit-base-spacing-unit;
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      height: $inuit-base-spacing-unit;
+    }
   }
 
   > input[type=range] {
