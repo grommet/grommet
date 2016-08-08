@@ -81,6 +81,7 @@ export default class Video extends Component {
   }
 
   _update () {
+    // Set flag for Video first play
     if (!this._hasPlayed && !this._video.paused && !this._video.loading) {
       this._hasPlayed = true;
     }
@@ -157,11 +158,11 @@ export default class Video extends Component {
   }
 
   _onMouseMove () {
-    this.setState({interacting: true});
+    this.setState({ interacting: true});
     clearTimeout(this._moveTimer);
-    this._moveTimer = setTimeout(function () {
-      this.setState({interacting: false});
-    }.bind(this), 1000);
+    this._moveTimer = setTimeout(() => {
+      this.setState({ interacting: false });
+    }, 1000);
   }
 
   _renderControls () {
@@ -177,7 +178,8 @@ export default class Video extends Component {
       fullscreen: this._fullscreen,
       shareLink: this.props.shareLink,
       shareHeadline: this.props.shareHeadline,
-      shareText: this.props.shareText
+      shareText: this.props.shareText,
+      allowFullScreen: this.props.allowFullScreen
     }, this.state);
 
     return (
@@ -257,8 +259,9 @@ Video.propTypes = {
 };
 
 Video.defaultProps = {
+  allowFullScreen: true,
   autoPlay: false,
-  showControls: true,
+  loop: false,
   muted: false,
-  loop: false
+  showControls: true
 };

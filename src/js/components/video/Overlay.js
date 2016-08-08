@@ -24,16 +24,6 @@ export default class Overlay extends Component {
     this.state = { iconSize: 'large' };
   }
 
-  componentDidMount () {
-    this._responsive = Responsive.start(this._onResponsive);
-  }
-
-  componentWillUnmount () {
-    if (this._responsive) {
-      this._responsive.stop();
-    }
-  }
-
   _onResponsive (small) {
     if (small) {
       this.setState({ iconSize: 'small' });
@@ -43,8 +33,25 @@ export default class Overlay extends Component {
     }
   }
 
-  render() {
-    const { playing, ended, shareLink, shareHeadline, shareText } = this.props;
+  _renderReplayMenu() {
+    const { ended, shareLink, shareHeadline, shareText } = this.props;
+
+    let replayContent;
+    if (ended) {
+      replayContent = (
+        <Box className={`${CLASS_ROOT}__replay`} align="center">
+          <Heading tag="h3" strong={true} uppercase={true}>Replay</Heading>
+          <VideoShare shareLink={shareLink}
+            shareHeadline={shareHeadline} shareText={shareText} />
+        </Box>
+      );
+    }
+
+    return replayContent;
+  }
+
+  _renderPlayButton() {
+    const { playing, ended, togglePlay } = this.props;
 
     let controlIconSize = this.state.iconSize;
     let controlIcon = (playing ?
@@ -59,35 +66,27 @@ export default class Overlay extends Component {
     let a11yControlButtonTitle =
       Intl.getMessage(this.context.intl, a11yControlButtonMessage);
 
-    let replayContent;
-    if (ended) {
-      replayContent = (
-        <Box className={`${CLASS_ROOT}__replay`} align="center">
-          <Heading tag="h3" strong={true} uppercase={true}>Replay</Heading>
-          <VideoShare shareLink={shareLink}
-            shareHeadline={shareHeadline} shareText={shareText} />
-        </Box>
-      );
-    }
+    return (
+      <Box pad="none" align="center" justify="center">
+        <Button className={`${CLASS_ROOT}__play`} plain={true}
+          primary={true} onClick={togglePlay}
+          icon={controlIcon} a11yTitle={a11yControlButtonTitle} />
+      </Box>
+    );
+  }
 
+  render() {
     // when iconSize is small (mobile screen sizes), remove the extra padding
     // so that the play control is centered
     let emptyBox = this.state.iconSize === 'small' ? null : <Box />;
 
-    let overlayContent = (
-      <Box pad="none" align="center"
-        justify={(!this.props.videoHeader) ? 'center' : 'between'}
+    return (
+      <Box pad="none" align="center" justify="center"
         className={`${CLASS_ROOT}__overlay`}>
-        <Box pad="none" align="center" justify="center">
-          <Button className={`${CLASS_ROOT}__play`} plain={true}
-            primary={true} onClick={this.props.togglePlay}
-            icon={controlIcon} a11yTitle={a11yControlButtonTitle} />
-        </Box>
-        {replayContent}
+        {this._renderPlayButton()}
+        {this._renderReplayMenu()}
         {emptyBox}
       </Box>
     );
-
-    return overlayContent;
   }
 }
