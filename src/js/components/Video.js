@@ -10,32 +10,6 @@ import throttle from 'lodash.throttle';
 const CLASS_ROOT = CSSClassnames.VIDEO;
 const BACKGROUND_COLOR_INDEX = CSSClassnames.BACKGROUND_COLOR_INDEX;
 
-const EVENTS = [
-  'onAbort',
-  'onCanPlay',
-  'onCanPlayThrough',
-  'onDurationChange',
-  'onEmptied',
-  'onEncrypted',
-  'onEnded',
-  'onError',
-  'onLoadedData',
-  'onLoadedMetadata',
-  'onLoadStart',
-  'onPause',
-  'onPlay',
-  'onPlaying',
-  'onProgress',
-  'onRateChange',
-  'onSeeked',
-  'onSeeking',
-  'onStalled',
-  'onSuspend',
-  'onTimeUpdate',
-  'onVolumeChange',
-  'onWaiting'
-];
-
 export default class Video extends Component {
 
   constructor () {
@@ -57,16 +31,7 @@ export default class Video extends Component {
 
   componentWillMount () {
     this._update = throttle(this._update.bind(this), 100).bind(this);
-    this._mediaEventProps = EVENTS.reduce((p, c) => {
-      p[c] = () => {
-        if (c in this.props && typeof this.props[c] === 'function') {
-          this.props[c]();
-        }
-        this._update();
-      };
-
-      return p;
-    }, {});
+    this._mediaEventProps = this._injectUpdateVideoEvents();
   }
 
   componentWillReceiveProps (nextProps) {
@@ -78,6 +43,46 @@ export default class Video extends Component {
     //   #the-source-element
     // Using forceUpdate to force redraw of video when receiving new <source>
     this.forceUpdate();
+  }
+
+  _injectUpdateVideoEvents () {
+    const videoEvents = [
+      'onAbort',
+      'onCanPlay',
+      'onCanPlayThrough',
+      'onDurationChange',
+      'onEmptied',
+      'onEncrypted',
+      'onEnded',
+      'onError',
+      'onLoadedData',
+      'onLoadedMetadata',
+      'onLoadStart',
+      'onPause',
+      'onPlay',
+      'onPlaying',
+      'onProgress',
+      'onRateChange',
+      'onSeeked',
+      'onSeeking',
+      'onStalled',
+      'onSuspend',
+      'onTimeUpdate',
+      'onVolumeChange',
+      'onWaiting'
+    ];
+
+    return videoEvents.reduce((previousValue, currentValue) => {
+      previousValue[currentValue] = () => {
+        if (currentValue in this.props
+          && typeof this.props[currentValue] === 'function') {
+          this.props[currentValue]();
+        }
+        this._update();
+      };
+
+      return previousValue;
+    }, {});
   }
 
   _update () {
@@ -210,9 +215,6 @@ export default class Video extends Component {
     if (this.props.className) {
       classes.push(this.props.className);
     }
-    if (this.props.title) {
-      classes.push(`${CLASS_ROOT}--titled`);
-    }
     if (this.state.hasPlayed) {
       classes.push(`${CLASS_ROOT}--has-played`);
     }
@@ -247,7 +249,6 @@ Video.propTypes = {
     time: PropTypes.number
   })),
   title: PropTypes.node,
-  onClick: PropTypes.func,
   allowFullScreen: PropTypes.bool,
   autoPlay: PropTypes.bool,
   shareLink: PropTypes.string,

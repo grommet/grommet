@@ -16,11 +16,12 @@ export default class Time extends Component {
     date.setSeconds(seconds);
 
     const dateISOString = date.toISOString();
+    let time = dateISOString.substr(11, 8);
     if (seconds < 3600) {
-      return dateISOString.substr(14, 5);
+      time = dateISOString.substr(14, 5);
     }
 
-    return dateISOString.substr(11, 8);
+    return time;
   }
 
   render () {

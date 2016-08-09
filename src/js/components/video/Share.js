@@ -14,7 +14,6 @@ export default class Overlay extends Component {
     super();
 
     this._onClickShareLink = this._onClickShareLink.bind(this);
-    this.state = { iconSize: 'large' };
   }
 
   _onClickShareLink () {
