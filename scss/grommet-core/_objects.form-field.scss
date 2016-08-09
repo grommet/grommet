@@ -12,6 +12,8 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
   border: none;
   border-radius: 0px;
   @include inuit-font-size($content-font-size);
+  padding-left:
+    ($inuit-base-spacing-unit - ($input-border-width + 1));
 
   #{$dark-background-context} & {
     color: $active-colored-text-color;
@@ -118,9 +120,10 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
   > .#{$grommet-namespace}search-input input,
   > .#{$grommet-namespace}calendar input,
   > .#{$grommet-namespace}date-time input {
-    // For IE11.
+    height: $inuit-base-spacing-unit + halve($inuit-base-spacing-unit);
+    // for IE 11.
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-      height: $inuit-base-spacing-unit;
+      line-height: normal;
     }
   }
 
