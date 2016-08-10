@@ -389,6 +389,13 @@ var Menu = function (_Component2) {
       }
     }
   }, {
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      if (this.props.inline !== nextProps.inline) {
+        this.setState({ inline: nextProps.inline });
+      }
+    }
+  }, {
     key: 'componentDidUpdate',
     value: function componentDidUpdate(prevProps, prevState) {
       if (this.state.state !== prevState.state) {
