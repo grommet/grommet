@@ -40,6 +40,7 @@ export default class Article extends Component {
       this._checkPreviousNextControls.bind(this);
     this._onResponsive = this._onResponsive.bind(this);
     this._updateHiddenElements = this._updateHiddenElements.bind(this);
+    this._updateProgress = this._updateProgress.bind(this);
 
     // Necessary to detect for Firefox or Edge to implement accessibility
     // tabbing
@@ -83,6 +84,15 @@ export default class Article extends Component {
       if ('row' === this.props.direction && this.props.scrollStep) {
         this._responsive = Responsive.start(this._onResponsive);
       }
+    }
+
+    if (this.props.onProgress) {
+      window.addEventListener('scroll', (event) => {
+        this._updateProgress(event);
+      });
+
+      if (this.props.direction === 'row') 
+        this._responsive = Responsive.start(this._onResponsive);
     }
 
     this._onSelect(this.state.selectedIndex);
@@ -461,6 +471,35 @@ export default class Article extends Component {
     }
   }
 
+  _updateProgress(event) {
+    const article = findDOMNode(this.refs.component);
+    const articleRect = article.getBoundingClientRect();
+
+    let offset = (this.props.direction === 'column')
+      ? Math.abs(articleRect.top)
+      : Math.abs(articleRect.left);
+    let totalDistance = (this.props.direction === 'column')
+      ? window.innerHeight
+      : this._getChildrenWidth(
+          this.refs.component.refs.boxContainer.childNodes
+        );
+    let objectDistance = (this.props.direction === 'column')
+      ? articleRect.height
+      : articleRect.width;
+
+    // Covers row responding to column layout.
+    if (this.props.direction === 'row' && this.state.narrow 
+      && this.props.responsive !== false) {
+      offset = Math.abs(articleRect.top);
+      totalDistance = window.innerHeight;
+      objectDistance = articleRect.height;
+    }
+
+    const progress = Math.abs(offset / (objectDistance - totalDistance));
+    const scrollPercentRounded = Math.round(progress * 100);
+    this.props.onProgress(scrollPercentRounded);
+  }
+
   _renderControls () {
     const CONTROL_CLASS_PREFIX =
       `${CLASS_ROOT}__control ${CLASS_ROOT}__control`;
@@ -601,6 +640,7 @@ Article.propTypes = {
     next: PropTypes.string,
     previous: PropTypes.string
   }),
+  onProgress: PropTypes.func,
   onSelect: PropTypes.func,
   selected: PropTypes.number
 };
