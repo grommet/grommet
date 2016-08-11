@@ -79,10 +79,10 @@ var TIME_REGEXP = new RegExp('[hHmsa]');
 var DateTimeDrop = function (_Component) {
   (0, _inherits3.default)(DateTimeDrop, _Component);
 
-  function DateTimeDrop(props) {
+  function DateTimeDrop(props, context) {
     (0, _classCallCheck3.default)(this, DateTimeDrop);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(DateTimeDrop).call(this, props));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(DateTimeDrop).call(this, props, context));
 
     _this._onDay = _this._onDay.bind(_this);
     _this._onToday = _this._onToday.bind(_this);

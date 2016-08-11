@@ -47,10 +47,10 @@ var CLASS_ROOT = _CSSClassnames2.default.COLUMNS; // (C) Copyright 2014-2016 Hew
 var Columns = function (_Component) {
   (0, _inherits3.default)(Columns, _Component);
 
-  function Columns(props) {
+  function Columns(props, context) {
     (0, _classCallCheck3.default)(this, Columns);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Columns).call(this, props));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Columns).call(this, props, context));
 
     _this._onResize = _this._onResize.bind(_this);
     _this._layout = _this._layout.bind(_this);

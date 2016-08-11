@@ -74,10 +74,10 @@ var BACKGROUND_COLOR_INDEX = _CSSClassnames2.default.BACKGROUND_COLOR_INDEX;
 var Search = function (_Component) {
   (0, _inherits3.default)(Search, _Component);
 
-  function Search(props) {
+  function Search(props, context) {
     (0, _classCallCheck3.default)(this, Search);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Search).call(this, props));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Search).call(this, props, context));
 
     _this._onAddDrop = _this._onAddDrop.bind(_this);
     _this._onRemoveDrop = _this._onRemoveDrop.bind(_this);

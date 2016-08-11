@@ -47,10 +47,10 @@ var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
 var Graph = function (_Component) {
   (0, _inherits3.default)(Graph, _Component);
 
-  function Graph(props) {
+  function Graph(props, context) {
     (0, _classCallCheck3.default)(this, Graph);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Graph).call(this, props));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Graph).call(this, props, context));
 
     _this._onResize = _this._onResize.bind(_this);
     _this._layout = _this._layout.bind(_this);

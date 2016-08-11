@@ -74,10 +74,10 @@ var APP = _CSSClassnames2.default.APP;
 var LayerContents = function (_Component) {
   (0, _inherits3.default)(LayerContents, _Component);
 
-  function LayerContents() {
+  function LayerContents(props, context) {
     (0, _classCallCheck3.default)(this, LayerContents);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(LayerContents).call(this));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(LayerContents).call(this, props, context));
 
     _this._onClick = _this._onClick.bind(_this);
     _this._processTab = _this._processTab.bind(_this);

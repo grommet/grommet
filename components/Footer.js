@@ -71,10 +71,10 @@ var CLASS_ROOT = _CSSClassnames2.default.FOOTER; // (C) Copyright 2014-2015 Hewl
 var Footer = function (_Component) {
   (0, _inherits3.default)(Footer, _Component);
 
-  function Footer() {
+  function Footer(props, context) {
     (0, _classCallCheck3.default)(this, Footer);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Footer).call(this));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Footer).call(this, props, context));
 
     _this._alignMirror = _this._alignMirror.bind(_this);
     _this._onResize = _this._onResize.bind(_this);

@@ -95,10 +95,10 @@ var FORM_FIELD = _CSSClassnames2.default.FORM_FIELD;
 var Calendar = function (_Component) {
   (0, _inherits3.default)(Calendar, _Component);
 
-  function Calendar(props) {
+  function Calendar(props, context) {
     (0, _classCallCheck3.default)(this, Calendar);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Calendar).call(this, props));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Calendar).call(this, props, context));
 
     _this._onInputChange = _this._onInputChange.bind(_this);
     _this._onOpen = _this._onOpen.bind(_this);

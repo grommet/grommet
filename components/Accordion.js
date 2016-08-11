@@ -57,10 +57,10 @@ var CLASS_ROOT = _CSSClassnames2.default.ACCORDION;
 var Accordion = function (_Component) {
   (0, _inherits3.default)(Accordion, _Component);
 
-  function Accordion(props) {
+  function Accordion(props, context) {
     (0, _classCallCheck3.default)(this, Accordion);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Accordion).call(this, props));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Accordion).call(this, props, context));
 
     _this._activatePanel = _this._activatePanel.bind(_this);
 

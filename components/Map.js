@@ -41,10 +41,10 @@ var CLASS_ROOT = _CSSClassnames2.default.MAP;
 var ResourceMap = function (_Component) {
   (0, _inherits3.default)(ResourceMap, _Component);
 
-  function ResourceMap() {
+  function ResourceMap(props, context) {
     (0, _classCallCheck3.default)(this, ResourceMap);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(ResourceMap).call(this));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(ResourceMap).call(this, props, context));
 
     _this._onResize = _this._onResize.bind(_this);
     _this._layout = _this._layout.bind(_this);

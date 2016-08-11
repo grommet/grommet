@@ -45,10 +45,10 @@ var DOUBLE_PADDING = 2 * _utils.padding;
 var Marker = function (_Component) {
   (0, _inherits3.default)(Marker, _Component);
 
-  function Marker(props) {
+  function Marker(props, context) {
     (0, _classCallCheck3.default)(this, Marker);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Marker).call(this, props));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Marker).call(this, props, context));
 
     _this.state = {
       size: { width: 0, height: 0 },

@@ -58,10 +58,10 @@ var SELECTED_CLASS = CLASS_ROOT + "-item--selected";
 var List = function (_Component) {
   (0, _inherits3.default)(List, _Component);
 
-  function List(props) {
+  function List(props, context) {
     (0, _classCallCheck3.default)(this, List);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(List).call(this, props));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(List).call(this, props, context));
 
     _this._onClick = _this._onClick.bind(_this);
 

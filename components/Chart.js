@@ -69,10 +69,10 @@ var BAR_SEGMENT_HEIGHT = 18; // 12 + 6 tied to stroke-dashoffset in CSS
 var Chart = function (_Component) {
   (0, _inherits3.default)(Chart, _Component);
 
-  function Chart(props) {
+  function Chart(props, context) {
     (0, _classCallCheck3.default)(this, Chart);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Chart).call(this, props));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Chart).call(this, props, context));
 
     _this._onRequestForNextLegend = _this._onRequestForNextLegend.bind(_this);
     _this._onRequestForPreviousLegend = _this._onRequestForPreviousLegend.bind(_this);

@@ -74,10 +74,10 @@ var LABEL_PAD_HORIZONTAL = 12;
 var Distribution = function (_Component) {
   (0, _inherits3.default)(Distribution, _Component);
 
-  function Distribution(props) {
+  function Distribution(props, context) {
     (0, _classCallCheck3.default)(this, Distribution);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Distribution).call(this));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Distribution).call(this, props, context));
 
     _this._onEnter = _this._onEnter.bind(_this);
     _this._onPreviousDistribution = _this._onPreviousDistribution.bind(_this);

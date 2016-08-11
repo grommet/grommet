@@ -62,10 +62,10 @@ var MIN_WIDTH = 0.033;
 var Graphic = function (_Component) {
   (0, _inherits3.default)(Graphic, _Component);
 
-  function Graphic(props) {
+  function Graphic(props, context) {
     (0, _classCallCheck3.default)(this, Graphic);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Graphic).call(this));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Graphic).call(this, props, context));
 
     _this.state = _this._stateFromProps(props);
 

@@ -65,10 +65,10 @@ var CLASS_ROOT = _CSSClassnames2.default.LOGIN_FORM;
 var LoginForm = function (_Component) {
   (0, _inherits3.default)(LoginForm, _Component);
 
-  function LoginForm() {
+  function LoginForm(props, context) {
     (0, _classCallCheck3.default)(this, LoginForm);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(LoginForm).call(this));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(LoginForm).call(this, props, context));
 
     _this._onSubmit = _this._onSubmit.bind(_this);
     return _this;

@@ -42,10 +42,10 @@ var BREAK_WIDTH = 720; //adds the breakpoint of single/multiple split
 var Split = function (_Component) {
   (0, _inherits3.default)(Split, _Component);
 
-  function Split() {
+  function Split(props, context) {
     (0, _classCallCheck3.default)(this, Split);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Split).call(this));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Split).call(this, props, context));
 
     _this._onResize = _this._onResize.bind(_this);
     _this._layout = _this._layout.bind(_this);

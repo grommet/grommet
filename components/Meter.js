@@ -94,10 +94,10 @@ var TYPE_COMPONENT = {
 var Meter = function (_Component) {
   (0, _inherits3.default)(Meter, _Component);
 
-  function Meter(props) {
+  function Meter(props, context) {
     (0, _classCallCheck3.default)(this, Meter);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Meter).call(this));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Meter).call(this, props, context));
 
     _this._onResponsive = _this._onResponsive.bind(_this);
     _this._initialTimeout = _this._initialTimeout.bind(_this);

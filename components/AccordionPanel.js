@@ -63,10 +63,10 @@ var CLASS_ROOT = _CSSClassnames2.default.ACCORDION_PANEL; // (C) Copyright 2014-
 var AccordionPanel = function (_Component) {
   (0, _inherits3.default)(AccordionPanel, _Component);
 
-  function AccordionPanel(props) {
+  function AccordionPanel(props, context) {
     (0, _classCallCheck3.default)(this, AccordionPanel);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(AccordionPanel).call(this, props));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(AccordionPanel).call(this, props, context));
 
     _this._onClickPanel = _this._onClickPanel.bind(_this);
     _this.state = {

@@ -41,10 +41,10 @@ var CLASS_ROOT = _CSSClassnames2.default.FORM_FIELD;
 var FormField = function (_Component) {
   (0, _inherits3.default)(FormField, _Component);
 
-  function FormField() {
+  function FormField(props, context) {
     (0, _classCallCheck3.default)(this, FormField);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(FormField).call(this));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(FormField).call(this, props, context));
 
     _this._onFocus = _this._onFocus.bind(_this);
     _this._onBlur = _this._onBlur.bind(_this);

@@ -42,10 +42,10 @@ var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
 var MarkerLabel = function (_Component) {
   (0, _inherits3.default)(MarkerLabel, _Component);
 
-  function MarkerLabel(props) {
+  function MarkerLabel(props, context) {
     (0, _classCallCheck3.default)(this, MarkerLabel);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(MarkerLabel).call(this, props));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(MarkerLabel).call(this, props, context));
 
     _this.state = {
       valueBasis: _this._valueBasis(props)

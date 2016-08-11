@@ -74,7 +74,7 @@ var CLASS_ROOT = _CSSClassnames2.default.CAROUSEL;
 var Carousel = function (_Component) {
   (0, _inherits3.default)(Carousel, _Component);
 
-  function Carousel(props) {
+  function Carousel(props, context) {
     (0, _classCallCheck3.default)(this, Carousel);
 
     var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Carousel).call(this, props));

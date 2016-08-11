@@ -42,10 +42,10 @@ var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
 var Axis = function (_Component) {
   (0, _inherits3.default)(Axis, _Component);
 
-  function Axis(props) {
+  function Axis(props, context) {
     (0, _classCallCheck3.default)(this, Axis);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Axis).call(this, props));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Axis).call(this, props, context));
 
     _this.state = {
       items: _this._buildItems(props)

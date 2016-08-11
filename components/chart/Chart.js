@@ -89,10 +89,10 @@ var CHART_BASE = _CSSClassnames2.default.CHART_BASE;
 var Chart = function (_Component) {
   (0, _inherits3.default)(Chart, _Component);
 
-  function Chart() {
+  function Chart(props, context) {
     (0, _classCallCheck3.default)(this, Chart);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Chart).call(this));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Chart).call(this, props, context));
 
     _this._onResize = _this._onResize.bind(_this);
     _this._layout = _this._layout.bind(_this);

@@ -43,10 +43,10 @@ var CLASS_ROOT = _CSSClassnames2.default.CAROUSEL_CONTROLS; // (C) Copyright 201
 var CarouselControls = function (_Component) {
   (0, _inherits3.default)(CarouselControls, _Component);
 
-  function CarouselControls() {
+  function CarouselControls(props, context) {
     (0, _classCallCheck3.default)(this, CarouselControls);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(CarouselControls).call(this));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(CarouselControls).call(this, props, context));
 
     _this._onClick = _this._onClick.bind(_this);
     return _this;

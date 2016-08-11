@@ -45,10 +45,10 @@ var PAD_FACTOR = _Graphics.baseUnit * 8;
 var SunBurst = function (_Component) {
   (0, _inherits3.default)(SunBurst, _Component);
 
-  function SunBurst(props) {
+  function SunBurst(props, context) {
     (0, _classCallCheck3.default)(this, SunBurst);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(SunBurst).call(this));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(SunBurst).call(this, props, context));
 
     _this._layout = _this._layout.bind(_this);
     _this._onResize = _this._onResize.bind(_this);

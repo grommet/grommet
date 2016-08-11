@@ -52,10 +52,10 @@ var CLASS_ROOT = _CSSClassnames2.default.CHART_RANGE;
 var Range = function (_Component) {
   (0, _inherits3.default)(Range, _Component);
 
-  function Range() {
+  function Range(props, context) {
     (0, _classCallCheck3.default)(this, Range);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Range).call(this));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Range).call(this, props, context));
 
     _this._onMouseMove = _this._onMouseMove.bind(_this);
     _this._onMouseUp = _this._onMouseUp.bind(_this);

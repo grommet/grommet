@@ -55,10 +55,10 @@ var CLASS_ROOT = _CSSClassnames2.default.TABS; // (C) Copyright 2014-2015 Hewlet
 var Tabs = function (_Component) {
   (0, _inherits3.default)(Tabs, _Component);
 
-  function Tabs(props) {
+  function Tabs(props, context) {
     (0, _classCallCheck3.default)(this, Tabs);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Tabs).call(this, props));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Tabs).call(this, props, context));
 
     _this._activateTab = _this._activateTab.bind(_this);
 

@@ -69,10 +69,10 @@ var MIN_CELL_WIDTH = 96;
 var Table = function (_Component) {
   (0, _inherits3.default)(Table, _Component);
 
-  function Table(props) {
+  function Table(props, context) {
     (0, _classCallCheck3.default)(this, Table);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Table).call(this, props));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Table).call(this, props, context));
 
     _this._onClick = _this._onClick.bind(_this);
     _this._onResize = _this._onResize.bind(_this);

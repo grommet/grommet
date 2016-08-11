@@ -233,10 +233,10 @@ Parts.defaultProps = {
 var Topology = function (_Component4) {
   (0, _inherits3.default)(Topology, _Component4);
 
-  function Topology() {
+  function Topology(props, context) {
     (0, _classCallCheck3.default)(this, Topology);
 
-    var _this4 = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Topology).call(this));
+    var _this4 = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Topology).call(this, props, context));
 
     _this4._layout = _this4._layout.bind(_this4);
     _this4._onResize = _this4._onResize.bind(_this4);

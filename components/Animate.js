@@ -61,10 +61,10 @@ var CLASS_ROOT = 'animate';
 var AnimateChild = function (_Component) {
   (0, _inherits3.default)(AnimateChild, _Component);
 
-  function AnimateChild(props) {
+  function AnimateChild(props, context) {
     (0, _classCallCheck3.default)(this, AnimateChild);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(AnimateChild).call(this, props));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(AnimateChild).call(this, props, context));
 
     _this.state = {
       enterClass: '',
@@ -192,10 +192,10 @@ AnimateChild.defaultProps = {
 var Animate = function (_Component2) {
   (0, _inherits3.default)(Animate, _Component2);
 
-  function Animate(props) {
+  function Animate(props, context) {
     (0, _classCallCheck3.default)(this, Animate);
 
-    var _this3 = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Animate).call(this, props));
+    var _this3 = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Animate).call(this, props, context));
 
     _this3.state = {
       animationState: 'enter',

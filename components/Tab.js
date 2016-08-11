@@ -43,10 +43,10 @@ var CLASS_ROOT = _CSSClassnames2.default.TAB; // (C) Copyright 2014-2015 Hewlett
 var Tab = function (_Component) {
   (0, _inherits3.default)(Tab, _Component);
 
-  function Tab() {
+  function Tab(props, context) {
     (0, _classCallCheck3.default)(this, Tab);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Tab).call(this));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Tab).call(this, props, context));
 
     _this._processSpace = _this._processSpace.bind(_this);
     _this._onClickTab = _this._onClickTab.bind(_this);

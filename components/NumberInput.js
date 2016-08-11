@@ -51,10 +51,10 @@ var CLASS_ROOT = _CSSClassnames2.default.NUMBER_INPUT; // (C) Copyright 2014-201
 var NumberInput = function (_Component) {
   (0, _inherits3.default)(NumberInput, _Component);
 
-  function NumberInput() {
+  function NumberInput(props, context) {
     (0, _classCallCheck3.default)(this, NumberInput);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(NumberInput).call(this));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(NumberInput).call(this, props, context));
 
     _this._onAdd = _this._onAdd.bind(_this);
     _this._onSubtract = _this._onSubtract.bind(_this);

@@ -87,10 +87,10 @@ var TIME_REGEXP = new RegExp('[hmsa]');
 var DateTime = function (_Component) {
   (0, _inherits3.default)(DateTime, _Component);
 
-  function DateTime(props) {
+  function DateTime(props, context) {
     (0, _classCallCheck3.default)(this, DateTime);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(DateTime).call(this, props));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(DateTime).call(this, props, context));
 
     _this._onInputChange = _this._onInputChange.bind(_this);
     _this._onOpen = _this._onOpen.bind(_this);

@@ -53,10 +53,10 @@ function _showField(field, fields) {
 var Timestamp = function (_Component) {
   (0, _inherits3.default)(Timestamp, _Component);
 
-  function Timestamp() {
+  function Timestamp(props, context) {
     (0, _classCallCheck3.default)(this, Timestamp);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Timestamp).call(this));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Timestamp).call(this, props, context));
 
     _this.state = {};
     return _this;

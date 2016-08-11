@@ -104,10 +104,10 @@ var SELECTED_CLASS = TILE + '--selected';
 var Tiles = function (_Component) {
   (0, _inherits3.default)(Tiles, _Component);
 
-  function Tiles(props) {
+  function Tiles(props, context) {
     (0, _classCallCheck3.default)(this, Tiles);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Tiles).call(this, props));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Tiles).call(this, props, context));
 
     _this._onLeft = _this._onLeft.bind(_this);
     _this._onRight = _this._onRight.bind(_this);

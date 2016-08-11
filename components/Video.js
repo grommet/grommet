@@ -81,10 +81,10 @@ var BACKGROUND_COLOR_INDEX = _CSSClassnames2.default.BACKGROUND_COLOR_INDEX;
 var Video = function (_Component) {
   (0, _inherits3.default)(Video, _Component);
 
-  function Video() {
+  function Video(props, context) {
     (0, _classCallCheck3.default)(this, Video);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Video).call(this));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Video).call(this, props, context));
 
     _this._onResponsive = _this._onResponsive.bind(_this);
     _this._onPlaying = _this._onPlaying.bind(_this);

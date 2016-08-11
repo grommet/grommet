@@ -97,10 +97,10 @@ var DEFAULT_PLAY_INTERVAL = 10000; // 10s
 var Article = function (_Component) {
   (0, _inherits3.default)(Article, _Component);
 
-  function Article(props) {
+  function Article(props, context) {
     (0, _classCallCheck3.default)(this, Article);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Article).call(this, props));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Article).call(this, props, context));
 
     _this._onFocusChange = _this._onFocusChange.bind(_this);
     _this._onScroll = _this._onScroll.bind(_this);

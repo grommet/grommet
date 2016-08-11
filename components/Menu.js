@@ -108,10 +108,10 @@ function isFunction(obj) {
 var MenuDrop = function (_Component) {
   (0, _inherits3.default)(MenuDrop, _Component);
 
-  function MenuDrop() {
+  function MenuDrop(props, context) {
     (0, _classCallCheck3.default)(this, MenuDrop);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(MenuDrop).call(this));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(MenuDrop).call(this, props, context));
 
     _this._onUpKeyPress = _this._onUpKeyPress.bind(_this);
     _this._onDownKeyPress = _this._onDownKeyPress.bind(_this);
@@ -338,10 +338,10 @@ MenuDrop.childContextTypes = {
 var Menu = function (_Component2) {
   (0, _inherits3.default)(Menu, _Component2);
 
-  function Menu(props) {
+  function Menu(props, context) {
     (0, _classCallCheck3.default)(this, Menu);
 
-    var _this2 = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Menu).call(this, props));
+    var _this2 = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Menu).call(this, props, context));
 
     _this2._onOpen = _this2._onOpen.bind(_this2);
     _this2._onClose = _this2._onClose.bind(_this2);
