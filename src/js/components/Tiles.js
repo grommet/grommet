@@ -21,8 +21,8 @@ const SELECTED_CLASS = `${TILE}--selected`;
 
 export default class Tiles extends Component {
 
-  constructor (props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
     this._onLeft = this._onLeft.bind(this);
     this._onRight = this._onRight.bind(this);
     this._onScrollHorizontal = this._onScrollHorizontal.bind(this);

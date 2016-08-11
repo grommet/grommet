@@ -25,8 +25,8 @@ function isFunction (obj) {
 // so we can transfer the router context.
 class MenuDrop extends Component {
 
-  constructor() {
-    super();
+  constructor(props, context) {
+    super(props, context);
 
     this._onUpKeyPress = this._onUpKeyPress.bind(this);
     this._onDownKeyPress = this._onDownKeyPress.bind(this);
@@ -246,8 +246,8 @@ MenuDrop.childContextTypes = {
 
 export default class Menu extends Component {
 
-  constructor(props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
 
     this._onOpen = this._onOpen.bind(this);
     this._onClose = this._onClose.bind(this);

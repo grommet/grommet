@@ -23,8 +23,8 @@ const TYPE_COMPONENT = {
 
 export default class Meter extends Component {
 
-  constructor (props) {
-    super();
+  constructor(props, context) {
+    super(props, context);
 
     this._onResponsive = this._onResponsive.bind(this);
     this._initialTimeout = this._initialTimeout.bind(this);

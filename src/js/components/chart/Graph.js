@@ -9,8 +9,8 @@ const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
 
 export default class Graph extends Component {
 
-  constructor (props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
     this._onResize = this._onResize.bind(this);
     this._layout = this._layout.bind(this);
     this.state = { height: props.height || 1, width: props.width || 1 };

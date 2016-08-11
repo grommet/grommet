@@ -9,8 +9,8 @@ const CLASS_ROOT = CSSClassnames.COLUMNS;
 
 export default class Columns extends Component {
 
-  constructor (props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
     this._onResize = this._onResize.bind(this);
     this._layout = this._layout.bind(this);
     this.state = { count: 1 };

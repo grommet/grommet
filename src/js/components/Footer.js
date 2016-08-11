@@ -12,8 +12,8 @@ const CLASS_ROOT = CSSClassnames.FOOTER;
 
 export default class Footer extends Component {
 
-  constructor () {
-    super();
+  constructor(props, context) {
+    super(props, context);
     this._alignMirror = this._alignMirror.bind(this);
     this._onResize = this._onResize.bind(this);
   }

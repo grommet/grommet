@@ -9,8 +9,8 @@ const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
 
 export default class Legend extends Component {
 
-  constructor(props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
 
     this._onActive = this._onActive.bind(this);
 
