@@ -8,19 +8,19 @@ $brand-font-family: 'Open Sans', Arial, sans-serif;
 
 $brand-color: #ff8300;
 $brand-color-lighter: desaturate(lighten($brand-color, 50%), 20%);
-$brand-neutral-colors: (#545454, #767676, #989898);
+$brand-neutral-colors: (#646569, #004876, #9FD4C9);
 $brand-accent-colors: (#9fd4c9, #d5d848);
 $brand-status-colors: (
-  critical: #c8200d,
-  error: #c8200d,
-  warning: #e57118,
-  ok: #2aac24,
-  unknown: #999999,
-  disabled: #999999
+  critical: #FF4C00,
+  error: #FF4C00,
+  warning: #D5D654,
+  ok: #008375,
+  unknown: #C3C5C8,
+  disabled: #C3C5C8
 );
 $brand-link-color: $brand-color;
-$brand-grey-colors: (#2d3034, #52555a, #999999);
-$brand-graph-colors: (#ec9b58, #0049a0, #886f9c, #5fbcdd, #7fba44);
+$brand-grey-colors: (#646569, #C3C5C8, #F6F6F7);
+$brand-graph-colors: (#2E7CBE, #99DAF8, #F1F9F7, #F9F9EC);
 $focus-border-color: #ff4c00;
 
 @import '../grommet-core/settings';
@@ -32,7 +32,7 @@ $focus-border-color: #ff4c00;
   circle,
   rect,
   polygon {
-    stroke-width: 4px;
+    stroke-width: 2px;
     stroke-linecap: round;
     stroke-linejoin: round;
   }
