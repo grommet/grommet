@@ -4,9 +4,17 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
 var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _keys = require('babel-runtime/core-js/object/keys');
+
+var _keys2 = _interopRequireDefault(_keys);
 
 var _typeof2 = require('babel-runtime/helpers/typeof');
 
@@ -48,6 +56,10 @@ var _Drop = require('../utils/Drop');
 
 var _Drop2 = _interopRequireDefault(_Drop);
 
+var _Props = require('../utils/Props');
+
+var _Props2 = _interopRequireDefault(_Props);
+
 var _Responsive = require('../utils/Responsive');
 
 var _Responsive2 = _interopRequireDefault(_Responsive);
@@ -66,9 +78,8 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+var CLASS_ROOT = _CSSClassnames2.default.SEARCH; // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var CLASS_ROOT = _CSSClassnames2.default.SEARCH;
 var BACKGROUND_COLOR_INDEX = _CSSClassnames2.default.BACKGROUND_COLOR_INDEX;
 
 var Search = function (_Component) {
@@ -345,16 +356,17 @@ var Search = function (_Component) {
     value: function _renderDrop() {
       var _classnames;
 
+      var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Search.propTypes));
       var classes = (0, _classnames5.default)((_classnames = {}, (0, _defineProperty3.default)(_classnames, BACKGROUND_COLOR_INDEX + '-' + this.props.dropColorIndex, this.props.dropColorIndex), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__drop', true), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__drop--controlled', !this.state.inline), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__drop--large', this.props.large), _classnames));
 
       var input = void 0;
       if (!this.state.inline) {
-        input = _react2.default.createElement('input', { key: 'input', id: 'search-drop-input', type: 'search',
+        input = _react2.default.createElement('input', (0, _extends3.default)({}, restProps, { key: 'input', id: 'search-drop-input', type: 'search',
           autoComplete: 'off',
           defaultValue: this.props.defaultValue,
           value: this.props.value,
           className: CLASS_ROOT + '__input',
-          onChange: this._onChangeInput });
+          onChange: this._onChangeInput }));
       }
 
       var suggestions = void 0;
@@ -406,13 +418,14 @@ var Search = function (_Component) {
     value: function render() {
       var _classnames3;
 
+      var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Search.propTypes));
       var classes = (0, _classnames5.default)(CLASS_ROOT, (_classnames3 = {}, (0, _defineProperty3.default)(_classnames3, CLASS_ROOT + '--controlled', !this.state.inline), (0, _defineProperty3.default)(_classnames3, CLASS_ROOT + '--fill', this.props.fill), (0, _defineProperty3.default)(_classnames3, CLASS_ROOT + '--icon-align-' + this.props.iconAlign, this.props.iconAlign), (0, _defineProperty3.default)(_classnames3, CLASS_ROOT + '--inline', this.state.inline), (0, _defineProperty3.default)(_classnames3, CLASS_ROOT + '--large', this.props.large && !this.props.size), (0, _defineProperty3.default)(_classnames3, CLASS_ROOT + '--' + this.props.size, this.props.size), _classnames3), this.props.className);
 
       if (this.state.inline) {
         return _react2.default.createElement(
           'div',
           { className: classes },
-          _react2.default.createElement('input', { ref: 'input', type: 'search',
+          _react2.default.createElement('input', (0, _extends3.default)({}, restProps, { ref: 'input', type: 'search',
             id: this.props.id,
             placeholder: this.props.placeHolder,
             autoComplete: 'off',
@@ -421,7 +434,7 @@ var Search = function (_Component) {
             className: CLASS_ROOT + '__input',
             onFocus: this._onFocusInput,
             onBlur: this._onBlurInput,
-            onChange: this._onChangeInput }),
+            onChange: this._onChangeInput })),
           _react2.default.createElement(_Search2.default, null)
         );
       } else {
@@ -447,6 +460,7 @@ exports.default = Search;
 
 
 Search.propTypes = {
+  align: _react.PropTypes.string,
   defaultValue: _react.PropTypes.string,
   dropAlign: _Drop2.default.alignPropType,
   dropColorIndex: _react.PropTypes.string,
