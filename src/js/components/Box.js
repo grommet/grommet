@@ -9,6 +9,7 @@ import CSSClassnames from '../utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.BOX;
 const BACKGROUND_COLOR_INDEX = CSSClassnames.BACKGROUND_COLOR_INDEX;
+const NUMBERS = ['', 'one', 'two', 'three', 'four']; // for columns
 
 export default class Box extends Component {
 
@@ -55,7 +56,6 @@ export default class Box extends Component {
     let containerClasses = [CLASS_ROOT + "__container"];
     let restProps = Props.omit(this.props, Object.keys(Box.propTypes));
     this._addPropertyClass(classes, CLASS_ROOT, 'full');
-    this._addPropertyClass(classes, CLASS_ROOT, 'direction');
     this._addPropertyClass(classes, CLASS_ROOT, 'justify');
     this._addPropertyClass(classes, CLASS_ROOT, 'align');
     this._addPropertyClass(classes, CLASS_ROOT, 'alignContent',
@@ -78,6 +78,35 @@ export default class Box extends Component {
       if (this.props.size) {
         classes.push(`${CLASS_ROOT}--size`);
       }
+    }
+
+    if (this.props.columns) {
+      const columnsPrefix = `${CLASS_ROOT}--columns-`;
+      classes.push(`${CLASS_ROOT}--columns`);
+      // defaulting direction to row when using columns option
+      classes.push(`${CLASS_ROOT}--direction-row`);
+
+      if (isNaN(this.props.columns)) {
+        const { numColumns, mainColumn, fixed } = this.props.columns;
+        if (numColumns) {
+          classes.push(`${columnsPrefix}${NUMBERS[numColumns]}`);
+        }
+        if (mainColumn) {
+          if (mainColumn === 'start') {
+            classes.push(`${columnsPrefix}${NUMBERS[numColumns]}-sixty-thirty`);
+          }
+          if (mainColumn === 'end') {
+            classes.push(`${columnsPrefix}${NUMBERS[numColumns]}-thirty-sixty`);
+          }
+        }
+        if (fixed) {
+          classes.push(`${columnsPrefix}fixed`);
+        }
+      } else {
+        classes.push(`${columnsPrefix}${NUMBERS[this.props.columns]}`);
+      }
+    } else {
+      this._addPropertyClass(classes, CLASS_ROOT, 'direction');
     }
 
     if (this.props.appCentered) {
@@ -203,7 +232,15 @@ Box.propTypes = {
     PropTypes.node,
     PropTypes.string
   ]),
-  wrap: PropTypes.bool
+  wrap: PropTypes.bool,
+  columns: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.shape({
+      numColumns: PropTypes.number,
+      mainColumn: PropTypes.oneOf(['start', 'end']),
+      fixed: PropTypes.bool
+    })
+  ])
 };
 
 Box.contextTypes = {
