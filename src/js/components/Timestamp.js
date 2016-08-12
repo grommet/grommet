@@ -20,8 +20,8 @@ function _showField(field, fields) {
 
 export default class Timestamp extends Component {
 
-  constructor () {
-    super();
+  constructor(props, context) {
+    super(props, context);
     this.state = {};
   }
 

@@ -12,8 +12,8 @@ const BACKGROUND_COLOR_INDEX = CSSClassnames.BACKGROUND_COLOR_INDEX;
 
 export default class Video extends Component {
 
-  constructor () {
-    super();
+  constructor(props, context) {
+    super(props, context);
 
     this._hasPlayed = false;
     this._play = this._play.bind(this);

@@ -102,8 +102,8 @@ const FACTOR = 10;
 
 export default class WorldMap extends Component {
 
-  constructor () {
-    super();
+  constructor(props, context) {
+    super(props, context);
     this._onActivate = this._onActivate.bind(this);
     this._onDeactivate = this._onDeactivate.bind(this);
     this._renderContinent = this._renderContinent.bind(this);

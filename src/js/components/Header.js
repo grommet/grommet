@@ -10,8 +10,8 @@ const CLASS_ROOT = CSSClassnames.HEADER;
 
 export default class Header extends Component {
 
-  constructor() {
-    super();
+  constructor(props, context) {
+    super(props, context);
 
     this._onResize = this._onResize.bind(this);
   }

@@ -10,8 +10,8 @@ const CLASS_ROOT = CSSClassnames.TABS;
 
 export default class Tabs extends Component {
 
-  constructor(props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
 
     this._activateTab = this._activateTab.bind(this);
 

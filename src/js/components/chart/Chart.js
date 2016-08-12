@@ -21,8 +21,8 @@ const CHART_BASE = CSSClassnames.CHART_BASE;
 
 export default class Chart extends Component {
 
-  constructor () {
-    super();
+  constructor(props, context) {
+    super(props, context);
     this._onResize = this._onResize.bind(this);
     this._layout = this._layout.bind(this);
     this.state = { alignTop: 0, alignLeft: 0, alignHeight: 0, alignWidth: 0 };

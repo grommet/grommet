@@ -11,8 +11,8 @@ const CLASS_ROOT = CSSClassnames.HERO;
 
 export default class Hero extends Component {
 
-  constructor (props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
     this._setReverse = this._setReverse.bind(this);
     this._setBackgroundColorIndex = this._setBackgroundColorIndex.bind(this);
 

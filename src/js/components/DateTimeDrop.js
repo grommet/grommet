@@ -19,8 +19,8 @@ const TIME_REGEXP = new RegExp('[hHmsa]');
 
 export default class DateTimeDrop extends Component {
 
-  constructor(props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
 
     this._onDay = this._onDay.bind(this);
     this._onToday = this._onToday.bind(this);

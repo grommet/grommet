@@ -14,8 +14,8 @@ const APP = CSSClassnames.APP;
 
 class LayerContents extends Component {
 
-  constructor() {
-    super();
+  constructor(props, context) {
+    super(props, context);
 
     this._onClick = this._onClick.bind(this);
     this._processTab = this._processTab.bind(this);

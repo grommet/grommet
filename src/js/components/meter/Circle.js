@@ -10,8 +10,8 @@ const RING_THICKNESS = baseUnit;
 
 export default class Circle extends Graphic {
 
-  constructor (props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
     //needed in Graphic.js to fix minification issues
     this.displayName = 'Circle';
   }

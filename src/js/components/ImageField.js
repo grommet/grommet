@@ -9,8 +9,8 @@ const CLASS_ROOT = CSSClassnames.IMAGE_FIELD;
 
 export default class ImageField extends Component {
 
-  constructor () {
-    super();
+  constructor(props, context) {
+    super(props, context);
     this._onChange = this._onChange.bind(this);
     this._onDrop = this._onDrop.bind(this);
     this._onClear = this._onClear.bind(this);

@@ -11,8 +11,8 @@ const CLASS_ROOT = CSSClassnames.NUMBER_INPUT;
 
 export default class NumberInput extends Component {
 
-  constructor () {
-    super();
+  constructor(props, context) {
+    super(props, context);
 
     this._onAdd = this._onAdd.bind(this);
     this._onSubtract = this._onSubtract.bind(this);

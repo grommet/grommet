@@ -20,7 +20,7 @@ const CLASS_ROOT = CSSClassnames.CAROUSEL;
 
 export default class Carousel extends Component {
 
-  constructor (props) {
+  constructor(props, context) {
     super (props);
 
     this._onSelect = this._onSelect.bind(this);
