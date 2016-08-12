@@ -11,8 +11,8 @@ const DOUBLE_PADDING = 2 * padding;
 
 export default class Marker extends Component {
 
-  constructor (props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
     this.state = {
       size: { width: 0, height: 0 },
       graphHeight: 0,

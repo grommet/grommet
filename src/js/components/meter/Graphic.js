@@ -14,8 +14,8 @@ const MIN_WIDTH = 0.033;
 
 export default class Graphic extends Component {
 
-  constructor(props) {
-    super();
+  constructor(props, context) {
+    super(props, context);
     this.state = this._stateFromProps(props);
 
     this._onEnter = this._onEnter.bind(this);

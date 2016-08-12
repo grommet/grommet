@@ -24,8 +24,8 @@ const BAR_SEGMENT_HEIGHT = 18; // 12 + 6 tied to stroke-dashoffset in CSS
 
 export default class Chart extends Component {
 
-  constructor(props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
 
     this._onRequestForNextLegend = this._onRequestForNextLegend.bind(this);
     this._onRequestForPreviousLegend =

@@ -8,8 +8,8 @@ const CLASS_ROOT = CSSClassnames.CAROUSEL_CONTROLS;
 
 export default class CarouselControls extends Component {
 
-  constructor() {
-    super();
+  constructor(props, context) {
+    super(props, context);
 
     this._onClick = this._onClick.bind(this);
   }

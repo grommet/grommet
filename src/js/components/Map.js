@@ -7,8 +7,8 @@ const CLASS_ROOT = CSSClassnames.MAP;
 
 export default class ResourceMap extends Component {
 
-  constructor() {
-    super();
+  constructor(props, context) {
+    super(props, context);
 
     this._onResize = this._onResize.bind(this);
     this._layout = this._layout.bind(this);

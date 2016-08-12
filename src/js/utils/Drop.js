@@ -104,8 +104,6 @@ export default {
       drop.container.className +=
         ` ${BACKGROUND_COLOR_INDEX}-${drop.options.colorIndex}`;
     }
-    // prepend in body to avoid browser scroll issues
-    document.body.insertBefore(drop.container, document.body.firstChild);
     render(content, drop.container);
 
     drop.scrollParents = DOM.findScrollParents(drop.control);
@@ -120,6 +118,9 @@ export default {
 
     // position content
     this._place(drop);
+
+    // prepend in body to avoid browser scroll issues
+    document.body.insertBefore(drop.container, document.body.firstChild);
 
     return drop;
   },

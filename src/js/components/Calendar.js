@@ -20,8 +20,8 @@ const FORM_FIELD = CSSClassnames.FORM_FIELD;
 
 export default class Calendar extends Component {
 
-  constructor(props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
 
     this._onInputChange = this._onInputChange.bind(this);
     this._onOpen = this._onOpen.bind(this);

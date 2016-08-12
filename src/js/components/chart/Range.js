@@ -14,8 +14,8 @@ const CLASS_ROOT = CSSClassnames.CHART_RANGE;
 
 export default class Range extends Component {
 
-  constructor () {
-    super();
+  constructor(props, context) {
+    super(props, context);
     this._onMouseMove = this._onMouseMove.bind(this);
     this._onMouseUp = this._onMouseUp.bind(this);
     this.state = {};

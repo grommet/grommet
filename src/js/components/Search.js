@@ -14,8 +14,8 @@ const BACKGROUND_COLOR_INDEX = CSSClassnames.BACKGROUND_COLOR_INDEX;
 
 export default class Search extends Component {
 
-  constructor(props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
 
     this._onAddDrop = this._onAddDrop.bind(this);
     this._onRemoveDrop = this._onRemoveDrop.bind(this);
