@@ -78,10 +78,12 @@ var Box = function (_Component) {
   (0, _createClass3.default)(Box, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      if (this.props.onClick) {
+      var onClick = this.props.onClick;
+
+      if (onClick) {
         var clickCallback = function () {
           if (this.refs.boxContainer === document.activeElement) {
-            this.props.onClick();
+            onClick();
           }
         }.bind(this);
 
@@ -118,6 +120,25 @@ var Box = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _props = this.props;
+      var a11yTitle = _props.a11yTitle;
+      var appCentered = _props.appCentered;
+      var backgroundImage = _props.backgroundImage;
+      var children = _props.children;
+      var className = _props.className;
+      var colorIndex = _props.colorIndex;
+      var containerClassName = _props.containerClassName;
+      var flex = _props.flex;
+      var focusable = _props.focusable;
+      var id = _props.id;
+      var onClick = _props.onClick;
+      var primary = _props.primary;
+      var role = _props.role;
+      var size = _props.size;
+      var tag = _props.tag;
+      var tabIndex = _props.tabIndex;
+      var texture = _props.texture;
+
       var classes = [CLASS_ROOT];
       var containerClasses = [CLASS_ROOT + "__container"];
       var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Box.propTypes));
@@ -133,97 +154,102 @@ var Box = function (_Component) {
       this._addPropertyClass(classes, CLASS_ROOT, 'size');
       this._addPropertyClass(classes, CLASS_ROOT, 'textAlign', 'text-align');
       this._addPropertyClass(classes, CLASS_ROOT, 'wrap');
+
       if (this.props.hasOwnProperty('flex')) {
-        if (this.props.flex) {
+        if (flex) {
           classes.push('flex');
         } else {
           classes.push('no-flex');
         }
       }
       if (this.props.hasOwnProperty('size')) {
-        if (this.props.size) {
+        if (size) {
           classes.push(CLASS_ROOT + '--size');
         }
       }
 
-      if (this.props.appCentered) {
+      if (appCentered) {
         this._addPropertyClass(containerClasses, CLASS_ROOT + "__container", 'full');
-        if (this.props.colorIndex) {
-          containerClasses.push(BACKGROUND_COLOR_INDEX + '-' + this.props.colorIndex);
+        if (colorIndex) {
+          containerClasses.push(BACKGROUND_COLOR_INDEX + '-' + colorIndex);
         }
-        if (this.props.containerClassName) {
-          containerClasses.push(this.props.containerClassName);
+        if (containerClassName) {
+          containerClasses.push(containerClassName);
         }
       } else {
-        if (this.props.colorIndex) {
-          classes.push(BACKGROUND_COLOR_INDEX + '-' + this.props.colorIndex);
+        if (colorIndex) {
+          classes.push(BACKGROUND_COLOR_INDEX + '-' + colorIndex);
         }
       }
 
       var a11yProps = {};
-      if (this.props.onClick) {
+      if (onClick) {
         classes.push(CLASS_ROOT + "--clickable");
-        if (this.props.focusable) {
-          var boxLabel = this.props.a11yTitle || _Intl2.default.getMessage(this.context.intl, 'Box');
+        if (focusable) {
+          var boxLabel = a11yTitle || _Intl2.default.getMessage(this.context.intl, 'Box');
           a11yProps.tabIndex = 0;
           a11yProps["aria-label"] = boxLabel;
-          a11yProps.role = this.props.role || 'link';
+          a11yProps.role = role || 'link';
         }
       }
 
       var skipLinkAnchor = void 0;
-      if (this.props.primary) {
+      if (primary) {
         var mainContentLabel = _Intl2.default.getMessage(this.context.intl, 'Main Content');
         skipLinkAnchor = _react2.default.createElement(_SkipLinkAnchor2.default, { label: mainContentLabel });
       }
 
-      if (this.props.className) {
-        classes.push(this.props.className);
+      if (className) {
+        classes.push(className);
       }
 
       var style = {};
-      if (this.props.texture && 'string' === typeof this.props.texture) {
-        style.backgroundImage = this.props.texture;
-      } else if (this.props.backgroundImage) {
-        style.background = this.props.backgroundImage + " no-repeat center center";
+      if (texture && 'string' === typeof texture) {
+        if (texture.indexOf('url(') !== -1) {
+          style.backgroundImage = texture;
+        } else {
+          style.backgroundImage = 'url(' + texture + ')';
+        }
+      } else if (backgroundImage) {
+        style.background = backgroundImage + " no-repeat center center";
         style.backgroundSize = "cover";
       }
       style = (0, _extends3.default)({}, style, restProps.style);
-      var texture = void 0;
-      if ('object' === (0, _typeof3.default)(this.props.texture)) {
-        texture = _react2.default.createElement(
+      var textureMarkup = void 0;
+      if ('object' === (typeof texture === 'undefined' ? 'undefined' : (0, _typeof3.default)(texture))) {
+        textureMarkup = _react2.default.createElement(
           'div',
           { className: CLASS_ROOT + "__texture" },
-          this.props.texture
+          texture
         );
       }
 
-      var Component = this.props.tag;
+      var Component = tag;
 
-      if (this.props.appCentered) {
+      if (appCentered) {
         return _react2.default.createElement(
           'div',
           (0, _extends3.default)({}, restProps, { ref: 'boxContainer',
             className: containerClasses.join(' '),
-            style: style, role: this.props.role }, a11yProps),
+            style: style, role: role }, a11yProps),
           skipLinkAnchor,
           _react2.default.createElement(
             Component,
-            { id: this.props.id, className: classes.join(' ') },
-            texture,
-            this.props.children
+            { id: id, className: classes.join(' ') },
+            textureMarkup,
+            children
           )
         );
       } else {
         return _react2.default.createElement(
           Component,
-          (0, _extends3.default)({}, restProps, { ref: 'boxContainer', id: this.props.id,
+          (0, _extends3.default)({}, restProps, { ref: 'boxContainer', id: id,
             className: classes.join(' '), style: style,
-            role: this.props.role, tabIndex: this.props.tabIndex,
-            onClick: this.props.onClick }, a11yProps),
+            role: role, tabIndex: tabIndex,
+            onClick: onClick }, a11yProps),
           skipLinkAnchor,
-          texture,
-          this.props.children
+          textureMarkup,
+          children
         );
       }
     }
