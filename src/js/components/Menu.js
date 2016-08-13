@@ -73,12 +73,6 @@ class MenuDrop extends Component {
     container.setAttribute('aria-activedescendant',
       menuItems[0].getAttribute('id'));
 
-    const menuDrop = ReactDOM.findDOMNode(this.refs.menuDrop);
-    var items = menuDrop.getElementsByTagName('*');
-    var firstFocusable = DOMUtils.getBestFirstFocusable(items);
-    if (firstFocusable) {
-      firstFocusable.focus();
-    }
   }
 
   componentWillUnmount () {
@@ -345,7 +339,6 @@ export default class Menu extends Component {
               align: this.props.dropAlign,
               colorIndex: this.props.dropColorIndex
             });
-          this._drop.render(this._renderMenuDrop());
           break;
       }
     } else if (this.state.state === 'expanded') {
