@@ -57,6 +57,8 @@ var Tip = function (_Component) {
   (0, _createClass3.default)(Tip, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
+      var _this2 = this;
+
       var _props = this.props;
       var targetId = _props.targetId;
       var onClose = _props.onClose;
@@ -64,33 +66,37 @@ var Tip = function (_Component) {
 
       var target = document.getElementById(targetId);
       if (target) {
-        var classNames = [CLASS_ROOT + '__drop'];
-        var rect = target.getBoundingClientRect();
-        var align = {};
+        (function () {
+          var classNames = [CLASS_ROOT + '__drop'];
+          var rect = target.getBoundingClientRect();
+          var align = {};
 
-        if (rect.left < window.innerWidth - rect.right) {
-          align.left = 'left';
-          classNames.push(CLASS_ROOT + '__drop--left');
-        } else {
-          align.right = 'right';
-          classNames.push(CLASS_ROOT + '__drop--right');
-        }
-        if (rect.top < window.innerHeight - rect.bottom) {
-          align.top = 'bottom';
-          classNames.push(CLASS_ROOT + '__drop--top');
-        } else {
-          align.bottom = 'top';
-          classNames.push(CLASS_ROOT + '__drop--bottom');
-        }
+          if (rect.left < window.innerWidth - rect.right) {
+            align.left = 'left';
+            classNames.push(CLASS_ROOT + '__drop--left');
+          } else {
+            align.right = 'right';
+            classNames.push(CLASS_ROOT + '__drop--right');
+          }
+          if (rect.top < window.innerHeight - rect.bottom) {
+            align.top = 'bottom';
+            classNames.push(CLASS_ROOT + '__drop--top');
+          } else {
+            align.bottom = 'top';
+            classNames.push(CLASS_ROOT + '__drop--bottom');
+          }
 
-        this._drop = _Drop2.default.add(target, this._renderDrop(), {
-          align: align,
-          className: classNames.join(' '),
-          colorIndex: colorIndex
-        });
+          setTimeout(function () {
+            _this2._drop = _Drop2.default.add(target, _this2._renderDrop(), {
+              align: align,
+              className: classNames.join(' '),
+              colorIndex: colorIndex
+            });
+          }, 1);
 
-        target.addEventListener('click', onClose);
-        target.addEventListener('blur', onClose);
+          target.addEventListener('click', onClose);
+          target.addEventListener('blur', onClose);
+        })();
       }
     }
   }, {

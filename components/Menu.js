@@ -159,13 +159,6 @@ var MenuDrop = function (_Component) {
       }
 
       container.setAttribute('aria-activedescendant', menuItems[0].getAttribute('id'));
-
-      var menuDrop = _reactDom2.default.findDOMNode(this.refs.menuDrop);
-      var items = menuDrop.getElementsByTagName('*');
-      var firstFocusable = _DOM2.default.getBestFirstFocusable(items);
-      if (firstFocusable) {
-        firstFocusable.focus();
-      }
     }
   }, {
     key: 'componentWillUnmount',
@@ -430,7 +423,6 @@ var Menu = function (_Component2) {
               align: this.props.dropAlign,
               colorIndex: this.props.dropColorIndex
             });
-            this._drop.render(this._renderMenuDrop());
             break;
         }
       } else if (this.state.state === 'expanded') {
