@@ -32,11 +32,13 @@ export default class Tip extends Component {
         classNames.push(`${CLASS_ROOT}__drop--bottom`);
       }
 
-      this._drop = Drop.add(target, this._renderDrop(), {
-        align: align,
-        className: classNames.join(' '),
-        colorIndex: colorIndex
-      });
+      setTimeout(() => {
+        this._drop = Drop.add(target, this._renderDrop(), {
+          align: align,
+          className: classNames.join(' '),
+          colorIndex: colorIndex
+        });
+      }, 1);
 
       target.addEventListener('click', onClose);
       target.addEventListener('blur', onClose);
