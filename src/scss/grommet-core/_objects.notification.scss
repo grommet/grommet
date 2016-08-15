@@ -29,6 +29,10 @@
       margin-left: 0;
       margin-right: $inuit-base-spacing-unit;
     }
+
+    .#{$grommet-namespace}button__icon {
+      padding: 0;
+    }
   }
 
   &--small {

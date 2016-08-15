@@ -95,8 +95,7 @@ export default class Notification extends Component {
 
     let closeButton;
     closeButton = (
-      <Box direction="row" alignContent="start" responsive={false} flex={false}
-          pad={{horizontal: 'medium'}}>
+      <Box direction="row" align="start" responsive={false} flex={false}>
         <Button className={`${CLASS_ROOT}__close-button`}
           plain={true} onClick={this._onClickClose}
           icon={<CloseIcon className={`${CLASS_ROOT}__close`} />}
