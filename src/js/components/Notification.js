@@ -3,9 +3,13 @@
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import { FormattedDate } from 'react-intl';
+import Intl from '../utils/Intl';
 import Box from './Box';
+import Animate from './Animate';
 import Meter from './Meter';
+import Button from './Button';
 import StatusIcon from './icons/Status';
+import CloseIcon from './icons/base/Close';
 import Props from '../utils/Props';
 import CSSClassnames from '../utils/CSSClassnames';
 
@@ -13,6 +17,20 @@ const CLASS_ROOT = CSSClassnames.NOTIFICATION;
 const BACKGROUND_COLOR_INDEX = CSSClassnames.BACKGROUND_COLOR_INDEX;
 
 export default class Notification extends Component {
+
+  constructor (props, context) {
+    super(props, context);
+
+    this._onClickClose = this._onClickClose.bind(this);
+    this.state = {
+      isHidden: false
+    };
+  }
+
+  _onClickClose () {
+    this.setState({ isHidden: true });
+  }
+
   render () {
     let classes = classnames(
       CLASS_ROOT,
@@ -75,24 +93,44 @@ export default class Notification extends Component {
       );
     }
 
+    let closeButton;
+    closeButton = (
+      <Box direction="row" alignContent="start" responsive={false} flex={false}
+          pad={{horizontal: 'medium'}}>
+        <Button className={`${CLASS_ROOT}__close-button`}
+          plain={true} onClick={this._onClickClose}
+          icon={<CloseIcon className={`${CLASS_ROOT}__close`} />}
+          a11yTitle={
+            Intl.getMessage(this.context.intl, 'Close Notification')
+          } />
+      </Box>
+    );
+
     let boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
     let fullBox =
       boxProps.hasOwnProperty('full') ? boxProps.full : 'horizontal';
 
     return (
-      <Box {...boxProps} className={classes} direction="row" responsive={false}>
-        {status}
-        <Box full={fullBox}>
-          <span className={`${CLASS_ROOT}__message`}>
-            {this.props.message}
-          </span>
-          {this.props.context}
-          {timestamp}
-          {state}
-          {progress}
-          {this.props.children}
+      <Animate
+        enter={{ animation: 'fade', duration: 1000 }}
+        leave={{ animation: 'fade', duration: 1000 }}
+        visible={!this.state.isHidden}>
+        <Box {...boxProps} className={classes}
+          direction="row" responsive={false}>
+          {status}
+          <Box full={fullBox}>
+            <span className={`${CLASS_ROOT}__message`}>
+              {this.props.message}
+            </span>
+            {this.props.context}
+            {timestamp}
+            {state}
+            {progress}
+            {this.props.children}
+          </Box>
+          {closeButton}
         </Box>
-      </Box>
+      </Animate>
     );
   }
 };

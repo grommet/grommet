@@ -21,6 +21,16 @@
     }
   }
 
+  &__close-button {
+    flex: 0 0 auto;
+    margin-left: $inuit-base-spacing-unit;
+
+    html.rtl & {
+      margin-left: 0;
+      margin-right: $inuit-base-spacing-unit;
+    }
+  }
+
   &--small {
     .#{$grommet-namespace}notification {
       &__message {
@@ -54,10 +64,15 @@
 
         &.#{$grommet-namespace}status-icon-unknown {
           .#{$grommet-namespace}status-icon__detail {
-            stroke: $active-colored-text-color;
-            fill: $active-colored-text-color;
+            stroke: $color;
+            fill: $color;
           }
         }
+      }
+
+      .#{$grommet-namespace}notification__close {
+        stroke: $active-colored-text-color;
+        fill: $active-colored-text-color;
       }
 
       &:not(.#{$grommet-namespace}notification--disabled) {
