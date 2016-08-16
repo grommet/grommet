@@ -5,7 +5,7 @@ import React, { Component, PropTypes } from 'react';
 import CSSClassnames from '../utils/CSSClassnames';
 import VideoControls from './video/Controls';
 import VideoOverlay from './video/Overlay';
-import throttle from 'lodash.throttle';
+import throttle from '../utils/Throttle';
 
 const CLASS_ROOT = CSSClassnames.VIDEO;
 const BACKGROUND_COLOR_INDEX = CSSClassnames.BACKGROUND_COLOR_INDEX;
@@ -30,7 +30,7 @@ export default class Video extends Component {
   }
 
   componentWillMount () {
-    this._update = throttle(this._update.bind(this), 100).bind(this);
+    this._update = throttle(this._update.bind(this), 100, this);
     this._mediaEventProps = this._injectUpdateVideoEvents();
   }
 
