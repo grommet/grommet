@@ -18,16 +18,6 @@ const BACKGROUND_COLOR_INDEX = CSSClassnames.BACKGROUND_COLOR_INDEX;
 
 export default class Notification extends Component {
 
-  constructor (props, context) {
-    super(props, context);
-
-    this._onClickClose = this._onClickClose.bind(this);
-  }
-
-  _onClickClose () {
-    this.props.onClose();
-  }
-
   render () {
     let classes = classnames(
       CLASS_ROOT,
@@ -98,7 +88,7 @@ export default class Notification extends Component {
       closer = (
         <Box direction="row" align="start" responsive={false} flex={false}>
           <Button className={`${CLASS_ROOT}__close-button`}
-            plain={true} onClick={this._onClickClose}
+            plain={true} onClick={this.props.onClose}
             icon={<CloseIcon className={`${CLASS_ROOT}__close`} />}
             a11yTitle={
               Intl.getMessage(this.context.intl, 'Close Notification')
