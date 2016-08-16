@@ -104,6 +104,10 @@ export default {
       drop.container.className +=
         ` ${BACKGROUND_COLOR_INDEX}-${drop.options.colorIndex}`;
     }
+
+    // prepend in body to avoid browser scroll issues
+    document.body.insertBefore(drop.container, document.body.firstChild);
+
     render(content, drop.container);
 
     drop.scrollParents = DOM.findScrollParents(drop.control);
@@ -114,13 +118,30 @@ export default {
     drop.scrollParents.forEach(function (scrollParent) {
       scrollParent.addEventListener('scroll', drop.place);
     });
-    window.addEventListener('resize', drop.place);
+    window.addEventListener('resize', () => {
+      // we need to update scroll parents as Responsive options may change
+      // the parent for the target element
+      drop.scrollParents.forEach(function (scrollParent) {
+        scrollParent.removeEventListener('scroll', drop.place);
+      });
+
+      drop.scrollParents = DOM.findScrollParents(drop.control);
+
+      drop.scrollParents.forEach(function (scrollParent) {
+        scrollParent.addEventListener('scroll', drop.place);
+      });
+
+      drop.place();
+    });
 
     // position content
     this._place(drop);
 
-    // prepend in body to avoid browser scroll issues
-    document.body.insertBefore(drop.container, document.body.firstChild);
+    var items = drop.container.firstChild.getElementsByTagName('*');
+    var firstFocusable = DOM.getBestFirstFocusable(items);
+    if (firstFocusable) {
+      firstFocusable.focus();
+    }
 
     return drop;
   },
