@@ -155,6 +155,7 @@ var Graph = function (_Component) {
       var height = _state.height;
       var width = _state.width;
 
+      var pad = Math.min(width, height) < _utils.padding * 8 ? 2 : _utils.padding;
 
       var classes = [CLASS_ROOT, CLASS_ROOT + '--' + type];
       if (vertical) {
@@ -167,18 +168,18 @@ var Graph = function (_Component) {
       if (vertical) {
         if (values.length <= 1) {
           scale = 1;
-          step = height - 2 * _utils.padding;
+          step = height - 2 * pad;
         } else {
-          scale = (width - 2 * _utils.padding) / (max - min);
-          step = (height - 2 * _utils.padding) / (values.length - 1);
+          scale = (width - 2 * pad) / (max - min);
+          step = (height - 2 * pad) / (values.length - 1);
         }
       } else {
         if (values.length <= 1) {
           scale = 1;
-          step = width - 2 * _utils.padding;
+          step = width - 2 * pad;
         } else {
-          scale = (height - 2 * _utils.padding) / (max - min);
-          step = (width - 2 * _utils.padding) / (values.length - 1);
+          scale = (height - 2 * pad) / (max - min);
+          step = (width - 2 * pad) / (values.length - 1);
         }
       }
 
@@ -188,9 +189,9 @@ var Graph = function (_Component) {
       var coordinates = values.map(function (value, index) {
         var coordinate = void 0;
         if (vertical) {
-          coordinate = [(value - min) * scale + _utils.padding, (reverse ? index * step : height - 2 * _utils.padding - index * step) + _utils.padding];
+          coordinate = [(value - min) * scale + pad, (reverse ? index * step : height - 2 * pad - index * step) + pad];
         } else {
-          coordinate = [(reverse ? width - 2 * _utils.padding - index * step : index * step) + _utils.padding, height - 2 * _utils.padding - (value - min) * scale + _utils.padding];
+          coordinate = [(reverse ? width - 2 * pad - index * step : index * step) + pad, height - 2 * pad - (value - min) * scale + pad];
         }
 
         if ((_this2.props.points || index === activeIndex) && !_this2.props.sparkline) {
@@ -247,16 +248,16 @@ var Graph = function (_Component) {
               if (reverse) {
                 // Close the path by drawing to the left
                 // and across to the top of where we started.
-                commands += 'L' + _utils.padding + ',' + coordinates[coordinates.length - 1][1] + '\n                L' + _utils.padding + ',' + coordinates[0][1] + ' Z';
+                commands += 'L' + pad + ',' + coordinates[coordinates.length - 1][1] + '\n                L' + pad + ',' + coordinates[0][1] + ' Z';
               } else {
                 // Close the path by drawing to the left
                 // and across to the bottom of where we started.
-                commands += 'L' + _utils.padding + ',' + coordinates[coordinates.length - 1][1] + '\n                L' + _utils.padding + ',' + (height - _utils.padding) + ' Z';
+                commands += 'L' + pad + ',' + coordinates[coordinates.length - 1][1] + '\n                L' + pad + ',' + (height - pad) + ' Z';
               }
             } else {
               // Close the path by drawing down to the bottom
               // and across to the left of where we started.
-              commands += 'L' + coordinates[coordinates.length - 1][0] + ',' + (height - _utils.padding) + '\n              L' + coordinates[0][0] + ',' + (height - _utils.padding) + ' Z';
+              commands += 'L' + coordinates[coordinates.length - 1][0] + ',' + (height - pad) + '\n              L' + coordinates[0][0] + ',' + (height - pad) + ' Z';
             }
             pathProps.stroke = 'none';
           } else {
@@ -264,7 +265,7 @@ var Graph = function (_Component) {
           }
         } else if ('bar' === type) {
           commands = coordinates.map(function (c) {
-            return 'M' + c.join(',') + 'L' + (vertical ? _utils.padding + ',' + c[1] : c[0] + ',' + (height - _utils.padding));
+            return 'M' + c.join(',') + 'L' + (vertical ? pad + ',' + c[1] : c[0] + ',' + (height - pad));
           }).join(' ');
           pathProps.fill = 'none';
         }
