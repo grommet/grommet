@@ -90,6 +90,7 @@ export default class Graph extends Component {
     const { colorIndex, vertical, reverse, max, min, smooth, values, type,
       activeIndex } = this.props;
     const { height, width } = this.state;
+    const pad = Math.min(width, height) < (padding * 8) ? 2 : padding;
 
     let classes = [CLASS_ROOT, `${CLASS_ROOT}--${type}`];
     if (vertical) {
@@ -101,18 +102,18 @@ export default class Graph extends Component {
     if (vertical) {
       if (values.length <= 1) {
         scale = 1;
-        step = height - (2 * padding);
+        step = height - (2 * pad);
       } else {
-        scale = (width - (2 * padding)) / (max - min);
-        step = (height - (2 * padding)) / (values.length - 1);
+        scale = (width - (2 * pad)) / (max - min);
+        step = (height - (2 * pad)) / (values.length - 1);
       }
     } else {
       if (values.length <= 1) {
         scale = 1;
-        step = width - (2 * padding);
+        step = width - (2 * pad);
       } else {
-        scale = (height - (2 * padding)) / (max - min);
-        step = (width - (2 * padding)) / (values.length - 1);
+        scale = (height - (2 * pad)) / (max - min);
+        step = (width - (2 * pad)) / (values.length - 1);
       }
     }
 
@@ -123,15 +124,15 @@ export default class Graph extends Component {
       let coordinate;
       if (vertical) {
         coordinate = [
-          ((value - min) * scale) + padding,
+          ((value - min) * scale) + pad,
           (reverse ? (index * step) :
-            (height - (2 * padding)) - (index * step)) + padding
+            (height - (2 * pad)) - (index * step)) + pad
         ];
       } else {
         coordinate = [
-          (reverse ? (width - (2 * padding)) - (index * step) :
-            index * step) + padding,
-          ((height - (2 * padding)) - ((value - min) * scale)) + padding
+          (reverse ? (width - (2 * pad)) - (index * step) :
+            index * step) + pad,
+          ((height - (2 * pad)) - ((value - min) * scale)) + pad
         ];
       }
 
@@ -191,21 +192,21 @@ export default class Graph extends Component {
               // Close the path by drawing to the left
               // and across to the top of where we started.
               commands +=
-                `L${padding},${coordinates[coordinates.length - 1][1]}
-                L${padding},${coordinates[0][1]} Z`;
+                `L${pad},${coordinates[coordinates.length - 1][1]}
+                L${pad},${coordinates[0][1]} Z`;
             } else {
               // Close the path by drawing to the left
               // and across to the bottom of where we started.
               commands +=
-                `L${padding},${coordinates[coordinates.length - 1][1]}
-                L${padding},${height - padding} Z`;
+                `L${pad},${coordinates[coordinates.length - 1][1]}
+                L${pad},${height - pad} Z`;
             }
           } else {
             // Close the path by drawing down to the bottom
             // and across to the left of where we started.
             commands +=
-              `L${coordinates[coordinates.length - 1][0]},${height - padding}
-              L${coordinates[0][0]},${height - padding} Z`;
+              `L${coordinates[coordinates.length - 1][0]},${height - pad}
+              L${coordinates[0][0]},${height - pad} Z`;
           }
           pathProps.stroke = 'none';
         } else {
@@ -213,8 +214,8 @@ export default class Graph extends Component {
         }
       } else if ('bar' === type) {
         commands = coordinates.map(c => (
-          `M${c.join(',')}L${vertical ? `${padding},${c[1]}` :
-            `${c[0]},${height - padding}`}`
+          `M${c.join(',')}L${vertical ? `${pad},${c[1]}` :
+            `${c[0]},${height - pad}`}`
         )).join(' ');
         pathProps.fill = 'none';
       }
