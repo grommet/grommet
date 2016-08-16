@@ -22,13 +22,10 @@ export default class Notification extends Component {
     super(props, context);
 
     this._onClickClose = this._onClickClose.bind(this);
-    this.state = {
-      isHidden: false
-    };
   }
 
   _onClickClose () {
-    this.setState({ isHidden: true });
+    this.props.onClose();
   }
 
   render () {
@@ -93,9 +90,12 @@ export default class Notification extends Component {
       );
     }
 
-    let closeButton;
-    if (this.props.closer) {
-      closeButton = (
+    let closer;
+    if (typeof this.props.closer === 'object') {
+      closer = this.props.closer;
+
+    } else if (this.props.onClose && this.props.closer) {
+      closer = (
         <Box direction="row" align="start" responsive={false} flex={false}>
           <Button className={`${CLASS_ROOT}__close-button`}
             plain={true} onClick={this._onClickClose}
@@ -114,8 +114,7 @@ export default class Notification extends Component {
     return (
       <Animate
         enter={{ animation: 'fade', duration: 1000 }}
-        leave={{ animation: 'fade', duration: 1000 }}
-        visible={!this.state.isHidden}>
+        leave={{ animation: 'fade', duration: 1000 }}>
         <Box {...boxProps} className={classes}
           direction="row" responsive={false}>
           {status}
@@ -129,7 +128,7 @@ export default class Notification extends Component {
             {progress}
             {this.props.children}
           </Box>
-          {closeButton}
+          {closer}
         </Box>
       </Animate>
     );
@@ -137,9 +136,13 @@ export default class Notification extends Component {
 };
 
 Notification.propTypes = {
-  closer: PropTypes.bool,
+  closer: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.bool
+  ]),
   context: PropTypes.node,
   message: PropTypes.string.isRequired,
+  onClose: PropTypes.func,
   percentComplete: PropTypes.number,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   state: PropTypes.string,
