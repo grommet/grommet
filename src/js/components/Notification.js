@@ -94,16 +94,18 @@ export default class Notification extends Component {
     }
 
     let closeButton;
-    closeButton = (
-      <Box direction="row" align="start" responsive={false} flex={false}>
-        <Button className={`${CLASS_ROOT}__close-button`}
-          plain={true} onClick={this._onClickClose}
-          icon={<CloseIcon className={`${CLASS_ROOT}__close`} />}
-          a11yTitle={
-            Intl.getMessage(this.context.intl, 'Close Notification')
-          } />
-      </Box>
-    );
+    if (this.props.closer) {
+      closeButton = (
+        <Box direction="row" align="start" responsive={false} flex={false}>
+          <Button className={`${CLASS_ROOT}__close-button`}
+            plain={true} onClick={this._onClickClose}
+            icon={<CloseIcon className={`${CLASS_ROOT}__close`} />}
+            a11yTitle={
+              Intl.getMessage(this.context.intl, 'Close Notification')
+            } />
+        </Box>
+      );
+    }
 
     let boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
     let fullBox =
@@ -135,6 +137,7 @@ export default class Notification extends Component {
 };
 
 Notification.propTypes = {
+  closer: PropTypes.bool,
   context: PropTypes.node,
   message: PropTypes.string.isRequired,
   percentComplete: PropTypes.number,
@@ -150,6 +153,7 @@ Notification.contextTypes = {
 };
 
 Notification.defaultProps = {
+  closer: false,
   flush: true,
   status: 'unknown',
   pad: 'medium'
