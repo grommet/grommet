@@ -12,6 +12,10 @@ var _keys = require('babel-runtime/core-js/object/keys');
 
 var _keys2 = _interopRequireDefault(_keys);
 
+var _typeof2 = require('babel-runtime/helpers/typeof');
+
+var _typeof3 = _interopRequireDefault(_typeof2);
+
 var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
@@ -46,17 +50,33 @@ var _classnames3 = _interopRequireDefault(_classnames2);
 
 var _reactIntl = require('react-intl');
 
+var _Intl = require('../utils/Intl');
+
+var _Intl2 = _interopRequireDefault(_Intl);
+
 var _Box = require('./Box');
 
 var _Box2 = _interopRequireDefault(_Box);
+
+var _Animate = require('./Animate');
+
+var _Animate2 = _interopRequireDefault(_Animate);
 
 var _Meter = require('./Meter');
 
 var _Meter2 = _interopRequireDefault(_Meter);
 
+var _Button = require('./Button');
+
+var _Button2 = _interopRequireDefault(_Button);
+
 var _Status = require('./icons/Status');
 
 var _Status2 = _interopRequireDefault(_Status);
+
+var _Close = require('./icons/base/Close');
+
+var _Close2 = _interopRequireDefault(_Close);
 
 var _Props = require('../utils/Props');
 
@@ -134,26 +154,48 @@ var Notification = function (_Component) {
         );
       }
 
+      var closer = void 0;
+      if ((0, _typeof3.default)(this.props.closer) === 'object') {
+        closer = this.props.closer;
+      } else if (this.props.onClose && this.props.closer) {
+        closer = _react2.default.createElement(
+          _Box2.default,
+          { direction: 'row', align: 'start', responsive: false, flex: false },
+          _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + '__close-button',
+            plain: true, onClick: this.props.onClose,
+            icon: _react2.default.createElement(_Close2.default, { className: CLASS_ROOT + '__close' }),
+            a11yTitle: _Intl2.default.getMessage(this.context.intl, 'Close Notification') })
+        );
+      }
+
       var boxProps = _Props2.default.pick(this.props, (0, _keys2.default)(_Box2.default.propTypes));
       var fullBox = boxProps.hasOwnProperty('full') ? boxProps.full : 'horizontal';
 
       return _react2.default.createElement(
-        _Box2.default,
-        (0, _extends3.default)({}, boxProps, { className: classes, direction: 'row', responsive: false }),
-        status,
+        _Animate2.default,
+        {
+          enter: { animation: 'fade', duration: 1000 },
+          leave: { animation: 'fade', duration: 1000 } },
         _react2.default.createElement(
           _Box2.default,
-          { full: fullBox },
+          (0, _extends3.default)({}, boxProps, { className: classes,
+            direction: 'row', responsive: false }),
+          status,
           _react2.default.createElement(
-            'span',
-            { className: CLASS_ROOT + '__message' },
-            this.props.message
+            _Box2.default,
+            { full: fullBox },
+            _react2.default.createElement(
+              'span',
+              { className: CLASS_ROOT + '__message' },
+              this.props.message
+            ),
+            this.props.context,
+            timestamp,
+            state,
+            progress,
+            this.props.children
           ),
-          this.props.context,
-          timestamp,
-          state,
-          progress,
-          this.props.children
+          closer
         )
       );
     }
@@ -166,8 +208,10 @@ exports.default = Notification;
 ;
 
 Notification.propTypes = (0, _extends3.default)({
+  closer: _react.PropTypes.oneOfType([_react.PropTypes.node, _react.PropTypes.bool]),
   context: _react.PropTypes.node,
   message: _react.PropTypes.string.isRequired,
+  onClose: _react.PropTypes.func,
   percentComplete: _react.PropTypes.number,
   size: _react.PropTypes.oneOf(['small', 'medium', 'large']),
   state: _react.PropTypes.string,
@@ -179,6 +223,7 @@ Notification.contextTypes = {
 };
 
 Notification.defaultProps = {
+  closer: false,
   flush: true,
   status: 'unknown',
   pad: 'medium'
