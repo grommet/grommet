@@ -92,6 +92,7 @@ var Tile = function (_Component) {
       delete restProps.hoverColorIndex;
       delete restProps.hoverBorder;
       delete restProps.hoverBorderSize;
+      delete restProps.wide;
 
       if (selected) {
         console.warn('Selected option has been deprecated, please use ' + 'selected option at the Tiles level.');
