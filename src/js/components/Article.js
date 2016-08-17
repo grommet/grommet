@@ -87,9 +87,7 @@ export default class Article extends Component {
     }
 
     if (this.props.onProgress) {
-      window.addEventListener('scroll', (event) => {
-        this._updateProgress(event);
-      });
+      window.addEventListener('scroll', this._updateProgress);
 
       if (this.props.direction === 'row') 
         this._responsive = Responsive.start(this._onResponsive);
@@ -115,6 +113,9 @@ export default class Article extends Component {
     }
     if (this._responsive) {
       this._responsive.stop();
+    }
+    if (this.props.onProgress) {
+      window.removeEventListener('scroll', this._updateProgress);
     }
   }
 
