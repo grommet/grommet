@@ -55,12 +55,27 @@ export default class Tiles extends Component {
       // grab CSS styles from DOM after component mounted
       // default to medium tile size ($tile-size = 192px)
       let minColumnWidth = 192;
-      const tile =
-        document.querySelectorAll(`.${CLASS_ROOT}__masonry-column .${TILE}`);
-      if (tile && tile.length > 0) {
-        const columnTile = window.getComputedStyle(tile[0]);
-        if (columnTile && columnTile.width) {
-          minColumnWidth = parseFloat(columnTile.width);
+      if (!this.props.fill) {
+        const tiles = findDOMNode(this.refs.tiles);
+        const tile =
+          tiles.querySelectorAll(`.${CLASS_ROOT}__masonry-column .${TILE}`);
+        if (tile && tile.length > 0) {
+          const columnTile = window.getComputedStyle(tile[0]);
+          if (columnTile && columnTile.width) {
+            minColumnWidth = parseFloat(columnTile.width);
+          }
+        }
+      } else {
+        // when fill and masonry options are true, width gets
+        // overwritten, and is no longer retrievable from css
+        const { size } = this.props;
+        if (size) {
+          if (size === 'small') {
+            minColumnWidth = 96;  // $tile-small-size
+          }
+          if (size === 'large') {
+            minColumnWidth = 384; // $tile-large-size
+          }
         }
       }
 
