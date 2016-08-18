@@ -35,6 +35,14 @@ var _CSSClassnames = require('../../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
+var _Intl = require('../../utils/Intl');
+
+var _Intl2 = _interopRequireDefault(_Intl);
+
+var _Meter = require('../Meter');
+
+var _Meter2 = _interopRequireDefault(_Meter);
+
 var _Axis = require('./Axis');
 
 var _Axis2 = _interopRequireDefault(_Axis);
@@ -85,6 +93,29 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var CLASS_ROOT = _CSSClassnames2.default.CHART;
 var CHART_BASE = _CSSClassnames2.default.CHART_BASE;
+
+// remove tabIndex from child elements to avoid
+// multiple tabs inside a chart
+function mapChildrenTabIndex(children) {
+  return _react.Children.map(children, function (child) {
+    if (!child || !child.type) {
+      return;
+    }
+    if (child.type === _Meter2.default || child.type.name === 'Meter' || child.type === Chart || child.type.name === 'Chart') {
+      return _react2.default.cloneElement(child, {
+        tabIndex: '-1'
+      });
+    }
+    if (child.props.children) {
+      var childrenNoTabIndex = mapChildrenTabIndex(child.props.children);
+
+      return _react2.default.cloneElement(child, {
+        children: childrenNoTabIndex
+      });
+    }
+    return child;
+  });
+}
 
 var Chart = function (_Component) {
   (0, _inherits3.default)(Chart, _Component);
@@ -217,9 +248,11 @@ var Chart = function (_Component) {
     key: 'render',
     value: function render() {
       var _props2 = this.props;
-      var vertical = _props2.vertical;
+      var a11yTitle = _props2.a11yTitle;
       var full = _props2.full;
       var loading = _props2.loading;
+      var tabIndex = _props2.tabIndex;
+      var vertical = _props2.vertical;
       var _state = this.state;
       var alignBottom = _state.alignBottom;
       var alignHeight = _state.alignHeight;
@@ -228,6 +261,7 @@ var Chart = function (_Component) {
       var alignTop = _state.alignTop;
       var alignWidth = _state.alignWidth;
       var padAlign = _state.padAlign;
+      var intl = this.context.intl;
 
       var classes = [CLASS_ROOT];
       if (vertical) {
@@ -283,6 +317,17 @@ var Chart = function (_Component) {
           axisAlign = 'start';
         } else if (child && (child.type === Chart || child.type.name === 'Chart' || child.type === _Base2.default || child.type.name === 'Base')) {
 
+          child = _react2.default.cloneElement(child, {
+            tabIndex: '-1'
+          });
+
+          if (child.type === _Base2.default) {
+            var childrenNoTabIndex = mapChildrenTabIndex(child.props.children);
+
+            child = _react2.default.cloneElement(child, {
+              children: childrenNoTabIndex
+            });
+          }
           axisAlign = 'start';
         }
 
@@ -298,9 +343,12 @@ var Chart = function (_Component) {
         ));
       }
 
+      var ariaLabel = a11yTitle || _Intl2.default.getMessage(intl, 'Chart');
+
       return _react2.default.createElement(
         'div',
-        { ref: 'chart', className: classes.join(' ') },
+        { ref: 'chart', className: classes.join(' '), role: 'group',
+          tabIndex: tabIndex, 'aria-label': ariaLabel },
         children
       );
     }
@@ -312,11 +360,21 @@ Chart.displayName = 'Chart';
 exports.default = Chart;
 ;
 
+Chart.contextTypes = {
+  intl: _react.PropTypes.object
+};
+
+Chart.defaultProps = {
+  tabIndex: "0"
+};
+
 Chart.propTypes = {
+  a11yTitle: _react.PropTypes.string,
   full: _react.PropTypes.bool,
   horizontalAlignWith: _react.PropTypes.string,
   loading: _react.PropTypes.bool,
   onMaxCount: _react.PropTypes.func,
+  tabIndex: _react.PropTypes.string,
   vertical: _react.PropTypes.bool,
   verticalAlignWith: _react.PropTypes.string
 };

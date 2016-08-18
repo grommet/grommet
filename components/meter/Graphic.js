@@ -69,7 +69,6 @@ var Graphic = function (_Component) {
 
     _this.state = _this._stateFromProps(props);
 
-    _this._onEnter = _this._onEnter.bind(_this);
     _this._onRequestForNextLegend = _this._onRequestForNextLegend.bind(_this);
     _this._onRequestForPreviousLegend = _this._onRequestForPreviousLegend.bind(_this);
     return _this;
@@ -82,9 +81,7 @@ var Graphic = function (_Component) {
         left: this._onRequestForPreviousLegend,
         up: this._onRequestForPreviousLegend,
         right: this._onRequestForNextLegend,
-        down: this._onRequestForNextLegend,
-        enter: this._onEnter,
-        space: this._onEnter
+        down: this._onRequestForNextLegend
       };
       _KeyboardAccelerators2.default.startListeningToKeyboard(this, this._keyboardHandlers);
     }
@@ -121,9 +118,7 @@ var Graphic = function (_Component) {
       var path = void 0;
       if (!item.hidden) {
         var classes = [CLASS_ROOT + '__slice'];
-        var activeMeterSlice = void 0;
         if (itemIndex === this.props.activeIndex) {
-          activeMeterSlice = 'activeMeterSlice';
           classes.push(CLASS_ROOT + '__slice--active');
         }
         if (item.onClick) {
@@ -140,10 +135,9 @@ var Graphic = function (_Component) {
         } else if (track) {
           path = (0, _utils.buildPath)(itemIndex, commands, classes, this.props.onActivate, item.onClick);
         } else {
-          var a11yDescId = this.props.a11yDescId + '_' + itemIndex;
           var a11yTitle = item.value + ' ' + (item.label || this.props.units || '');
-
-          path = (0, _utils.buildPath)(itemIndex, commands, classes, this.props.onActivate, item.onClick, a11yDescId, a11yTitle, activeMeterSlice);
+          var role = this.props.series.length > 1 ? 'img' : undefined;
+          path = (0, _utils.buildPath)(itemIndex, commands, classes, this.props.onActivate, item.onClick, a11yTitle, role);
         }
       }
 
@@ -207,20 +201,6 @@ var Graphic = function (_Component) {
 
         //stop event propagation
         return true;
-      }
-    }
-  }, {
-    key: '_onEnter',
-    value: function _onEnter(event) {
-      if (document.activeElement === this.refs.meter) {
-        if (this.refs.activeMeterSlice) {
-          var index = this.refs.activeMeterSlice.getAttribute('data-index');
-
-          //trigger click on active meter slice
-          if (this.props.series[index].onClick) {
-            this.props.series[index].onClick();
-          }
-        }
       }
     }
   }, {
@@ -326,7 +306,7 @@ var Graphic = function (_Component) {
         a11yTitle = graphicTitle + ' ' + meterTitle;
       }
 
-      return a11yTitle;
+      return a11yTitle + '. ' + this._renderA11YDesc();
     }
   }, {
     key: '_renderA11YDesc',
@@ -378,30 +358,18 @@ var Graphic = function (_Component) {
       var inlineLegend = this._renderInlineLegend();
 
       var a11yTitle = this._renderA11YTitle();
-      var a11yDesc = this._renderA11YDesc();
 
-      var activeDescendant = this.props.a11yDescId + '_' + (this.props.activeIndex || 0);
+      var role = this.props.series.length > 1 ? 'group' : 'img';
 
       return _react2.default.createElement(
         'svg',
         { ref: 'meter', className: CLASS_ROOT + '__graphic',
-          tabIndex: '0', role: this.props.a11yRole,
+          tabIndex: this.props.tabIndex, role: role,
           width: this.state.viewBoxWidth,
           height: this.state.viewBoxHeight,
           viewBox: "0 0 " + this.state.viewBoxWidth + " " + this.state.viewBoxHeight,
           preserveAspectRatio: 'xMidYMid meet',
-          'aria-activedescendant': activeDescendant,
-          'aria-labelledby': this.props.a11yTitleId + ' ' + this.props.a11yDescId },
-        _react2.default.createElement(
-          'title',
-          { id: this.props.a11yTitleId },
-          a11yTitle
-        ),
-        _react2.default.createElement(
-          'desc',
-          { id: this.props.a11yDescId },
-          a11yDesc
-        ),
+          'aria-label': a11yTitle },
         tracks,
         thresholds,
         values,
@@ -418,8 +386,8 @@ exports.default = Graphic;
 
 
 Graphic.propTypes = (0, _extends3.default)({
-  a11yRole: _react.PropTypes.string,
   stacked: _react.PropTypes.bool,
+  tabIndex: _react.PropTypes.string,
   thresholds: _react.PropTypes.arrayOf(_react.PropTypes.shape({
     label: _react.PropTypes.string,
     value: _react.PropTypes.number.isRequired,
@@ -433,6 +401,6 @@ Graphic.contextTypes = {
 };
 
 Graphic.defaultProps = {
-  a11yRole: 'img'
+  tabIndex: '0'
 };
 module.exports = exports['default'];

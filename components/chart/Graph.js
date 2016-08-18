@@ -8,6 +8,10 @@ var _extends2 = require('babel-runtime/helpers/extends');
 
 var _extends3 = _interopRequireDefault(_extends2);
 
+var _toConsumableArray2 = require('babel-runtime/helpers/toConsumableArray');
+
+var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
+
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -38,10 +42,15 @@ var _CSSClassnames = require('../../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
+var _Intl = require('../../utils/Intl');
+
+var _Intl2 = _interopRequireDefault(_Intl);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.CHART_GRAPH; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
+var CLASS_ROOT = _CSSClassnames2.default.CHART_GRAPH;
 var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
 
 var Graph = function (_Component) {
@@ -54,6 +63,7 @@ var Graph = function (_Component) {
 
     _this._onResize = _this._onResize.bind(_this);
     _this._layout = _this._layout.bind(_this);
+    _this._renderA11YTitle = _this._renderA11YTitle.bind(_this);
     _this.state = { height: props.height || 1, width: props.width || 1 };
     return _this;
   }
@@ -137,20 +147,50 @@ var Graph = function (_Component) {
       return [first, second];
     }
   }, {
+    key: '_renderA11YTitle',
+    value: function _renderA11YTitle() {
+      var _props2 = this.props;
+      var a11yTitle = _props2.a11yTitle;
+      var max = _props2.max;
+      var min = _props2.min;
+      var type = _props2.type;
+      var values = _props2.values;
+      var intl = this.context.intl;
+
+
+      if (a11yTitle) {
+        return a11yTitle;
+      }
+
+      var typeLabel = _Intl2.default.getMessage(intl, type);
+
+      var minLabel = ', ' + _Intl2.default.getMessage(intl, 'Min') + ': ' + min;
+
+      var maxLabel = ', ' + _Intl2.default.getMessage(intl, 'Max') + ': ' + max;
+
+      var valueLabel = _Intl2.default.getMessage(intl, 'GraphValues', {
+        count: values.length,
+        highest: Math.max.apply(Math, (0, _toConsumableArray3.default)(values)).toString(),
+        smallest: Math.min.apply(Math, (0, _toConsumableArray3.default)(values)).toString()
+      });
+
+      return typeLabel + ' ' + minLabel + ' ' + maxLabel + '. ' + valueLabel;
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _this2 = this;
 
-      var _props2 = this.props;
-      var colorIndex = _props2.colorIndex;
-      var vertical = _props2.vertical;
-      var reverse = _props2.reverse;
-      var max = _props2.max;
-      var min = _props2.min;
-      var smooth = _props2.smooth;
-      var values = _props2.values;
-      var type = _props2.type;
-      var activeIndex = _props2.activeIndex;
+      var _props3 = this.props;
+      var activeIndex = _props3.activeIndex;
+      var colorIndex = _props3.colorIndex;
+      var max = _props3.max;
+      var min = _props3.min;
+      var reverse = _props3.reverse;
+      var smooth = _props3.smooth;
+      var type = _props3.type;
+      var values = _props3.values;
+      var vertical = _props3.vertical;
       var _state = this.state;
       var height = _state.height;
       var width = _state.width;
@@ -276,8 +316,8 @@ var Graph = function (_Component) {
       return _react2.default.createElement(
         'svg',
         { ref: 'graph', className: classes.join(' '),
-          viewBox: '0 0 ' + width + ' ' + height,
-          preserveAspectRatio: 'none' },
+          viewBox: '0 0 ' + width + ' ' + height, preserveAspectRatio: 'none',
+          role: 'img', 'aria-label': this._renderA11YTitle() },
         _react2.default.createElement(
           'g',
           null,
@@ -294,7 +334,17 @@ Graph.displayName = 'Graph';
 exports.default = Graph;
 ;
 
+Graph.contextTypes = {
+  intl: _react.PropTypes.object
+};
+
+Graph.defaultProps = {
+  min: 0,
+  max: 100
+};
+
 Graph.propTypes = {
+  a11yTitle: _react.PropTypes.string,
   activeIndex: _react.PropTypes.number,
   colorIndex: _react.PropTypes.string,
   height: _react.PropTypes.number, // only from Chart
@@ -308,10 +358,5 @@ Graph.propTypes = {
   type: _react.PropTypes.oneOf(['area', 'line', 'bar']).isRequired,
   vertical: _react.PropTypes.bool,
   width: _react.PropTypes.number // only from Chart
-};
-
-Graph.defaultProps = {
-  min: 0,
-  max: 100
 };
 module.exports = exports['default'];

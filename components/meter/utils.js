@@ -29,8 +29,6 @@ var baseDimension = exports.baseDimension = _Graphics.baseUnit * 8;
 
 var propTypes = exports.propTypes = {
   activeIndex: _react.PropTypes.number,
-  a11yDesc: _react.PropTypes.string,
-  a11yDescId: _react.PropTypes.string,
   a11yTitle: _react.PropTypes.string,
   a11yTitleId: _react.PropTypes.string,
   max: _react.PropTypes.shape({
@@ -54,32 +52,21 @@ var propTypes = exports.propTypes = {
   units: _react.PropTypes.string
 };
 
-function buildPath(itemIndex, commands, classes, onActivate, onClick, a11yDescId, a11yTitle, activeMeterSlice) {
+function buildPath(itemIndex, commands, classes, onActivate, onClick, a11yTitle, role) {
   if (onActivate) {
     var onOver = onActivate.bind(null, itemIndex);
     var onOut = onActivate.bind(null, undefined);
 
     var a11yRoles = {};
-    var titleComponent = void 0;
-    var activeSlice = void 0;
-    if (a11yTitle && a11yDescId) {
-      activeSlice = activeMeterSlice;
-      var pathTitleId = 'title_' + a11yDescId;
-      a11yRoles['aria-labelledby'] = pathTitleId;
-      a11yRoles.id = a11yDescId;
-      a11yRoles.role = 'tab';
-      titleComponent = _react2.default.createElement(
-        'title',
-        { id: pathTitleId },
-        a11yTitle
-      );
+    if (a11yTitle) {
+      a11yRoles['aria-label'] = a11yTitle;
+      a11yRoles.role = role;
     }
 
     return _react2.default.createElement(
       'g',
-      (0, _extends3.default)({ key: itemIndex, ref: a11yDescId }, a11yRoles),
-      titleComponent,
-      _react2.default.createElement('path', { ref: activeSlice, className: classes.join(' '), d: commands,
+      (0, _extends3.default)({ key: itemIndex }, a11yRoles),
+      _react2.default.createElement('path', { className: classes.join(' '), d: commands,
         'data-index': itemIndex, onFocus: onOver, onBlur: onOut }),
       _react2.default.createElement('path', { className: CLASS_ROOT + '__hot', d: commands, fill: 'none',
         onMouseOver: onOver, onMouseOut: onOut,

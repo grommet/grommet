@@ -8,8 +8,6 @@ var _react = require('react');
 
 exports.default = {
   activeIndex: _react.PropTypes.number,
-  a11yDesc: _react.PropTypes.string,
-  a11yDescId: _react.PropTypes.string,
   legend: _react.PropTypes.shape({
     position: _react.PropTypes.oneOf(['right', 'bottom', 'inline'])
   }),

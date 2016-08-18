@@ -79,7 +79,7 @@ var MarkerLabel = function (_Component) {
     key: '_renderPlaceholder',
     value: function _renderPlaceholder(basis) {
       var classes = [CLASS_ROOT + '__slot', CLASS_ROOT + '__slot--placeholder'];
-      return _react2.default.createElement('div', { key: 'placeholder', className: classes.join(' '),
+      return _react2.default.createElement('div', { key: 'placeholder', className: classes.join(' '), 'aria-hidden': 'true',
         style: { flexBasis: basis + '%' } });
     }
   }, {
@@ -98,7 +98,7 @@ var MarkerLabel = function (_Component) {
       if (typeof label === 'string' || typeof label === 'number') {
         label = _react2.default.createElement(
           'span',
-          null,
+          { 'aria-hidden': 'true' },
           label
         );
       }

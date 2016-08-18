@@ -144,7 +144,7 @@ var Marker = function (_Component) {
       return _react2.default.createElement(
         'svg',
         { ref: 'svg', className: classes.join(' '),
-          viewBox: '0 0 ' + width + ' ' + height,
+          viewBox: '0 0 ' + width + ' ' + height, 'aria-hidden': 'true',
           preserveAspectRatio: 'none' },
         path
       );

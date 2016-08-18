@@ -43,10 +43,12 @@ var trackSize = exports.trackSize = function () {
   (0, _createClass3.default)(trackSize, [{
     key: '_measure',
     value: function _measure() {
-      var rect = this._element.getBoundingClientRect();
-      this._size.width = this._width || Math.round(rect.width);
-      this._size.height = this._height || Math.round(rect.height);
-      this._onSize(this._size);
+      if (this._element) {
+        var rect = this._element.getBoundingClientRect();
+        this._size.width = this._width || Math.round(rect.width);
+        this._size.height = this._height || Math.round(rect.height);
+        this._onSize(this._size);
+      }
     }
   }, {
     key: '_onResize',

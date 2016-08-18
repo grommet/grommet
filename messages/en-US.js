@@ -43,6 +43,7 @@ exports.default = (0, _extends3.default)({
   Error: 'Error',
   Filter: 'Filter',
   Footer: 'Footer',
+  'GraphValues': 'Graph has {count} items. Highest is {highest}' + ' and smallest is {smallest}',
   'Grommet Logo': 'Grommet Logo',
   'Layer': 'Layer',
   line: 'line',

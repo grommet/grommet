@@ -515,6 +515,7 @@ var Meter = function (_Component) {
       var legend = _props2.legend;
       var size = _props2.size;
       var stacked = _props2.stacked;
+      var tabIndex = _props2.tabIndex;
       var type = _props2.type;
       var vertical = _props2.vertical;
       var _state5 = this.state;
@@ -570,10 +571,8 @@ var Meter = function (_Component) {
         labelElement = this._renderActiveValue();
       }
       var legendElement = void 0;
-      var a11yRole = void 0;
 
       if (legend || series) {
-        a11yRole = 'tablist';
 
         if (legend) {
           if ('inline' !== legend.placement) {
@@ -595,16 +594,13 @@ var Meter = function (_Component) {
       var GraphicComponent = TYPE_COMPONENT[this.props.type];
       var graphic = _react2.default.createElement(GraphicComponent, {
         a11yTitle: this.props.a11yTitle,
-        a11yTitleId: this.props.a11yTitleId,
-        a11yDesc: this.props.a11yDesc,
-        a11yDescId: this.props.a11yDescId,
-        a11yRole: a11yRole,
         activeIndex: this.state.activeIndex,
         min: this.state.min, max: this.state.max,
         legend: legend,
         onActivate: this._onActivate,
         series: series,
         stacked: stacked,
+        tabIndex: tabIndex,
         thresholds: this.state.thresholds,
         total: this.state.total,
         units: this.props.units,
@@ -641,9 +637,6 @@ Meter.propTypes = {
   active: _react.PropTypes.bool, // when single value
   activeIndex: _react.PropTypes.number, // for series values
   a11yTitle: _react.PropTypes.string,
-  a11yTitleId: _react.PropTypes.string,
-  a11yDescId: _react.PropTypes.string,
-  a11yDesc: _react.PropTypes.string,
   colorIndex: _react.PropTypes.string,
   // deprecated in favor of activeIndex?
   important: _react.PropTypes.number,
@@ -672,6 +665,7 @@ Meter.propTypes = {
     onClick: _react.PropTypes.func
   })),
   stacked: _react.PropTypes.bool,
+  tabIndex: _react.PropTypes.string,
   threshold: _react.PropTypes.number,
   thresholds: _react.PropTypes.arrayOf(_react.PropTypes.shape({
     label: _react.PropTypes.string,
@@ -686,8 +680,6 @@ Meter.propTypes = {
 };
 
 Meter.defaultProps = {
-  a11yTitleId: 'meter-title',
-  a11yDescId: 'meter-desc',
   label: true,
   type: 'bar'
 };
