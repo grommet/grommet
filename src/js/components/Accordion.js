@@ -27,6 +27,7 @@ export default class Accordion extends Component {
       animate,
       className,
       children,
+      icon,
       openMulti,
       ...props
     } = this.props;
@@ -45,7 +46,8 @@ export default class Accordion extends Component {
           onActive: () => {
             this._activatePanel(index);
           },
-          animate
+          animate,
+          icon
         });
       });
 
@@ -64,6 +66,10 @@ export default class Accordion extends Component {
 Accordion.propTypes = {
   animate: PropTypes.bool,
   openMulti: PropTypes.bool,
+  icon: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.bool
+  ]),
   initialIndex: PropTypes.number
 };
 

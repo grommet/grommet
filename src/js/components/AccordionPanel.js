@@ -32,7 +32,13 @@ export default class AccordionPanel extends Component {
   }
 
   render () {
-    const { animate, className, children, heading } = this.props;
+    const {
+      animate,
+      className,
+      children,
+      heading,
+      icon,
+    } = this.props;
 
     const classes = classnames(
       CLASS_ROOT,
@@ -41,6 +47,13 @@ export default class AccordionPanel extends Component {
         [`${CLASS_ROOT}--active`]: this.state.active
       }
     );
+
+    let controlIcon;
+    if (icon) {
+      controlIcon = icon;
+    } else if (icon === undefined) {
+      controlIcon = <TabNextIcon className={`${CLASS_ROOT}__control`} />;
+    }
 
     return (
       <ListItem className={classes} direction="column" pad="none">
@@ -56,7 +69,7 @@ export default class AccordionPanel extends Component {
           responsive={false}
         >
           {heading}
-          <TabNextIcon className={`${CLASS_ROOT}__control`} />
+          {controlIcon}
         </Header>
         <Collapsible
           role="tabpanel"
@@ -74,5 +87,9 @@ AccordionPanel.propTypes = {
   active: PropTypes.bool,
   animate: PropTypes.bool,
   heading: PropTypes.node.isRequired,
+  icon: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.bool
+  ]),
   onActive: PropTypes.func
 };
