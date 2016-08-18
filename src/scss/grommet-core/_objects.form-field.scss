@@ -95,7 +95,10 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
     @include form-field-content();
   }
 
-  > .#{$grommet-namespace}calendar input {
+
+  > .#{$grommet-namespace}search-input input,
+  > .#{$grommet-namespace}calendar input,
+  > .#{$grommet-namespace}date-time input {
     // align left padding with other form inputs
     padding-left: $inuit-base-spacing-unit;
   }
