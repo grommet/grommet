@@ -27,6 +27,7 @@ export default class Accordion extends Component {
       animate,
       className,
       children,
+      disabled,
       icon,
       openMulti,
       ...props
@@ -34,7 +35,10 @@ export default class Accordion extends Component {
 
     const classes = classnames(
       CLASS_ROOT,
-      className
+      className,
+      {
+        [`${CLASS_ROOT}--disabled`]: disabled
+      }
     );
 
     const accordionChildren = React.Children
@@ -47,6 +51,7 @@ export default class Accordion extends Component {
             this._activatePanel(index);
           },
           animate,
+          disabled,
           icon
         });
       });
@@ -65,6 +70,7 @@ export default class Accordion extends Component {
 
 Accordion.propTypes = {
   animate: PropTypes.bool,
+  disabled: PropTypes.bool,
   openMulti: PropTypes.bool,
   icon: PropTypes.oneOfType([
     PropTypes.element,

@@ -27,8 +27,10 @@ export default class AccordionPanel extends Component {
   }
 
   _onClickPanel () {
-    this.setState({ active : !this.state.active });
-    this.props.onActive();
+    if (!this.props.disabled) {
+      this.setState({ active : !this.state.active });
+      this.props.onActive();
+    }
   }
 
   render () {
@@ -87,6 +89,7 @@ export default class AccordionPanel extends Component {
 AccordionPanel.propTypes = {
   active: PropTypes.bool,
   animate: PropTypes.bool,
+  disabled: PropTypes.bool,
   heading: PropTypes.node.isRequired,
   icon: PropTypes.oneOfType([
     PropTypes.element,
