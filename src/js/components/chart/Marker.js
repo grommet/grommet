@@ -87,7 +87,7 @@ export default class Marker extends Component {
 
     return (
       <svg ref="svg" className={classes.join(' ')}
-        viewBox={`0 0 ${width} ${height}`}
+        viewBox={`0 0 ${width} ${height}`} aria-hidden='true'
         preserveAspectRatio="none">
         {path}
       </svg>

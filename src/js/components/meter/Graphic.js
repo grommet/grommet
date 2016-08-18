@@ -18,10 +18,10 @@ export default class Graphic extends Component {
     super(props, context);
     this.state = this._stateFromProps(props);
 
-    this._onEnter = this._onEnter.bind(this);
     this._onRequestForNextLegend = this._onRequestForNextLegend.bind(this);
-    this._onRequestForPreviousLegend =
-      this._onRequestForPreviousLegend.bind(this);
+    this._onRequestForPreviousLegend = (
+      this._onRequestForPreviousLegend.bind(this)
+    );
   }
 
   componentDidMount () {
@@ -29,9 +29,7 @@ export default class Graphic extends Component {
       left: this._onRequestForPreviousLegend,
       up: this._onRequestForPreviousLegend,
       right: this._onRequestForNextLegend,
-      down: this._onRequestForNextLegend,
-      enter: this._onEnter,
-      space: this._onEnter
+      down: this._onRequestForNextLegend
     };
     KeyboardAccelerators.startListeningToKeyboard(
       this, this._keyboardHandlers
@@ -64,9 +62,7 @@ export default class Graphic extends Component {
     let path;
     if (! item.hidden) {
       let classes = [`${CLASS_ROOT}__slice`];
-      let activeMeterSlice;
       if (itemIndex === this.props.activeIndex) {
-        activeMeterSlice = 'activeMeterSlice';
         classes.push(`${CLASS_ROOT}__slice--active`);
       }
       if (item.onClick) {
@@ -85,12 +81,12 @@ export default class Graphic extends Component {
         path = buildPath(itemIndex, commands, classes,
           this.props.onActivate, item.onClick);
       } else {
-        let a11yDescId = `${this.props.a11yDescId}_${itemIndex}`;
-        let a11yTitle = `${item.value} ${item.label || this.props.units || ''}`;
-
+        const a11yTitle = (
+          `${item.value} ${item.label || this.props.units || ''}`
+        );
+        const role = this.props.series.length > 1 ? 'img' : undefined;
         path = buildPath(itemIndex, commands, classes,
-          this.props.onActivate, item.onClick, a11yDescId,
-          a11yTitle, activeMeterSlice);
+          this.props.onActivate, item.onClick, a11yTitle, role);
       }
     }
 
@@ -150,19 +146,6 @@ export default class Graphic extends Component {
 
       //stop event propagation
       return true;
-    }
-  }
-
-  _onEnter (event) {
-    if (document.activeElement === this.refs.meter) {
-      if (this.refs.activeMeterSlice) {
-        let index = this.refs.activeMeterSlice.getAttribute('data-index');
-
-        //trigger click on active meter slice
-        if (this.props.series[index].onClick) {
-          this.props.series[index].onClick();
-        }
-      }
     }
   }
 
@@ -254,7 +237,7 @@ export default class Graphic extends Component {
       a11yTitle = `${graphicTitle} ${meterTitle}`;
     }
 
-    return a11yTitle;
+    return `${a11yTitle}. ${this._renderA11YDesc()}`;
   }
 
   _renderA11YDesc () {
@@ -300,25 +283,18 @@ export default class Graphic extends Component {
     let inlineLegend = this._renderInlineLegend();
 
     let a11yTitle = this._renderA11YTitle();
-    let a11yDesc = this._renderA11YDesc();
 
-    let activeDescendant =
-      `${this.props.a11yDescId}_${this.props.activeIndex || 0}`;
+    const role = this.props.series.length > 1 ? 'group' : 'img';
 
     return (
       <svg ref="meter" className={`${CLASS_ROOT}__graphic`}
-        tabIndex="0" role={this.props.a11yRole}
+        tabIndex={this.props.tabIndex} role={role}
         width={this.state.viewBoxWidth}
         height={this.state.viewBoxHeight}
         viewBox={"0 0 " + this.state.viewBoxWidth +
           " " + this.state.viewBoxHeight}
         preserveAspectRatio="xMidYMid meet"
-        aria-activedescendant={activeDescendant}
-        aria-labelledby={this.props.a11yTitleId + ' ' + this.props.a11yDescId}>
-        <title id={this.props.a11yTitleId}>
-          {a11yTitle}
-        </title>
-        <desc id={this.props.a11yDescId}>{a11yDesc}</desc>
+        aria-label={a11yTitle}>
         {tracks}
         {thresholds}
         {values}
@@ -330,8 +306,8 @@ export default class Graphic extends Component {
 }
 
 Graphic.propTypes = {
-  a11yRole: PropTypes.string,
   stacked: PropTypes.bool,
+  tabIndex: PropTypes.string,
   thresholds: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string,
     value: PropTypes.number.isRequired,
@@ -346,5 +322,5 @@ Graphic.contextTypes = {
 };
 
 Graphic.defaultProps = {
-  a11yRole: 'img'
+  tabIndex: '0'
 };
