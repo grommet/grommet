@@ -4,6 +4,14 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
+
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -205,7 +213,9 @@ var Range = function (_Component) {
       var _props4 = this.props;
       var active = _props4.active;
       var count = _props4.count;
+      var onActive = _props4.onActive;
       var vertical = _props4.vertical;
+      var otherProps = (0, _objectWithoutProperties3.default)(_props4, ['active', 'count', 'onActive', 'vertical']);
       var _state3 = this.state;
       var mouseDown = _state3.mouseDown;
       var mouseDownIndex = _state3.mouseDownIndex;
@@ -264,25 +274,25 @@ var Range = function (_Component) {
 
         indicator = _react2.default.createElement(
           'div',
-          { className: CLASS_ROOT + '__active', style: style,
-            onMouseDown: this._mouseDown('active') },
+          (0, _extends3.default)({}, otherProps, { className: CLASS_ROOT + '__active', style: style,
+            onMouseDown: this._mouseDown('active') }),
           _react2.default.createElement(
             'div',
             { className: CLASS_ROOT + '__active-start',
-              onMouseDown: this._mouseDown('start') },
+              onMouseDown: onActive ? this._mouseDown('start') : undefined },
             _react2.default.createElement(_Drag2.default, null)
           ),
           _react2.default.createElement(
             'div',
             { className: CLASS_ROOT + '__active-end',
-              onMouseDown: this._mouseDown('end') },
+              onMouseDown: onActive ? this._mouseDown('end') : undefined },
             _react2.default.createElement(_Drag2.default, null)
           )
         );
       }
 
       var onMouseMove = void 0;
-      if (mouseDown) {
+      if (onActive && mouseDown) {
         onMouseMove = this._onMouseMove;
       }
 
@@ -290,7 +300,8 @@ var Range = function (_Component) {
         'div',
         { ref: 'range', className: classes.join(' '),
           style: { padding: _utils.padding },
-          onMouseDown: this._mouseDown('range'), onMouseMove: onMouseMove },
+          onMouseDown: onActive ? this._mouseDown('range') : undefined,
+          onMouseMove: onMouseMove },
         indicator
       );
     }
