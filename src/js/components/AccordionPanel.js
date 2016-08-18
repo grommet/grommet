@@ -38,6 +38,7 @@ export default class AccordionPanel extends Component {
       children,
       heading,
       icon,
+      ...props
     } = this.props;
 
     const classes = classnames(
@@ -56,7 +57,7 @@ export default class AccordionPanel extends Component {
     }
 
     return (
-      <ListItem className={classes} direction="column" pad="none">
+      <ListItem className={classes} direction="column" pad="none" {...props}>
         <Header
           role="tab"
           className={`${CLASS_ROOT}__header`}
