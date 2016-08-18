@@ -4,8 +4,6 @@ import { PropTypes } from 'react';
 
 export default {
   activeIndex: PropTypes.number,
-  a11yDesc: PropTypes.string,
-  a11yDescId: PropTypes.string,
   legend: PropTypes.shape({
     position: PropTypes.oneOf(['right', 'bottom', 'inline'])
   }),

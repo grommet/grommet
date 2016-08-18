@@ -3,6 +3,7 @@
 import React, { Component, PropTypes } from 'react';
 import { padding, pointSize, debounceDelay } from './utils';
 import CSSClassnames from '../../utils/CSSClassnames';
+import Intl from '../../utils/Intl';
 
 const CLASS_ROOT = CSSClassnames.CHART_GRAPH;
 const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
@@ -13,6 +14,7 @@ export default class Graph extends Component {
     super(props, context);
     this._onResize = this._onResize.bind(this);
     this._layout = this._layout.bind(this);
+    this._renderA11YTitle = this._renderA11YTitle.bind(this);
     this.state = { height: props.height || 1, width: props.width || 1 };
   }
 
@@ -86,9 +88,32 @@ export default class Graph extends Component {
     return [first, second];
   }
 
+  _renderA11YTitle () {
+    const { a11yTitle, max, min, type, values } = this.props;
+    const { intl } = this.context;
+
+    if (a11yTitle) {
+      return a11yTitle;
+    }
+
+    const typeLabel = Intl.getMessage(intl, type);
+
+    let minLabel = `, ${Intl.getMessage(intl, 'Min')}: ${min}`;
+
+    let maxLabel = `, ${Intl.getMessage(intl, 'Max')}: ${max}`;
+
+    const valueLabel = Intl.getMessage(intl, 'GraphValues', {
+      count: values.length,
+      highest: Math.max(...values).toString(),
+      smallest: Math.min(...values).toString()
+    });
+
+    return `${typeLabel} ${minLabel} ${maxLabel}. ${valueLabel}`;
+  }
+
   render () {
-    const { colorIndex, vertical, reverse, max, min, smooth, values, type,
-      activeIndex } = this.props;
+    const { activeIndex, colorIndex, max, min, reverse, smooth, type,
+      values, vertical } = this.props;
     const { height, width } = this.state;
     const pad = Math.min(width, height) < (padding * 8) ? 2 : padding;
 
@@ -225,8 +250,8 @@ export default class Graph extends Component {
 
     return (
       <svg ref="graph" className={classes.join(' ')}
-        viewBox={`0 0 ${width} ${height}`}
-        preserveAspectRatio="none">
+        viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="none"
+        role="img" aria-label={this._renderA11YTitle()}>
         <g>
           {path}
         </g>
@@ -237,7 +262,17 @@ export default class Graph extends Component {
 
 };
 
+Graph.contextTypes = {
+  intl: PropTypes.object
+};
+
+Graph.defaultProps = {
+  min: 0,
+  max: 100
+};
+
 Graph.propTypes = {
+  a11yTitle: PropTypes.string,
   activeIndex: PropTypes.number,
   colorIndex: PropTypes.string,
   height: PropTypes.number, // only from Chart
@@ -251,9 +286,4 @@ Graph.propTypes = {
   type: PropTypes.oneOf(['area', 'line', 'bar']).isRequired,
   vertical: PropTypes.bool,
   width: PropTypes.number // only from Chart
-};
-
-Graph.defaultProps = {
-  min: 0,
-  max: 100
 };
