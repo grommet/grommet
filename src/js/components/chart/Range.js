@@ -135,7 +135,7 @@ export default class Range extends Component {
   }
 
   render () {
-    const { active, count, vertical } = this.props;
+    const { active, count, onActive, vertical, ...otherProps } = this.props;
     const { mouseDown, mouseDownIndex, mouseMoveIndex } = this.state;
 
     let classes = [CLASS_ROOT];
@@ -188,14 +188,14 @@ export default class Range extends Component {
       }
 
       indicator = (
-        <div className={`${CLASS_ROOT}__active`} style={style}
+        <div {...otherProps} className={`${CLASS_ROOT}__active`} style={style}
           onMouseDown={this._mouseDown('active')}>
           <div className={`${CLASS_ROOT}__active-start`}
-            onMouseDown={this._mouseDown('start')}>
+            onMouseDown={onActive ? this._mouseDown('start') : undefined}>
             <DragIcon />
           </div>
           <div className={`${CLASS_ROOT}__active-end`}
-            onMouseDown={this._mouseDown('end')}>
+            onMouseDown={onActive ? this._mouseDown('end') : undefined}>
             <DragIcon />
           </div>
         </div>
@@ -203,14 +203,15 @@ export default class Range extends Component {
     }
 
     let onMouseMove;
-    if (mouseDown) {
+    if (onActive && mouseDown) {
       onMouseMove = this._onMouseMove;
     }
 
     return (
       <div ref="range" className={classes.join(' ')}
         style={{ padding: padding }}
-        onMouseDown={this._mouseDown('range')} onMouseMove={onMouseMove}>
+        onMouseDown={onActive ? this._mouseDown('range') : undefined}
+        onMouseMove={onMouseMove}>
         {indicator}
       </div>
     );
