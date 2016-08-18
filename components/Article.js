@@ -134,7 +134,6 @@ var Article = function (_Component) {
   (0, _createClass3.default)(Article, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      var _this2 = this;
 
       if (this.props.scrollStep) {
         this._keys = { up: this._onPrevious, down: this._onNext };
@@ -164,9 +163,7 @@ var Article = function (_Component) {
       }
 
       if (this.props.onProgress) {
-        window.addEventListener('scroll', function (event) {
-          _this2._updateProgress(event);
-        });
+        window.addEventListener('scroll', this._updateProgress);
 
         if (this.props.direction === 'row') this._responsive = _Responsive2.default.start(this._onResponsive);
       }
@@ -191,6 +188,9 @@ var Article = function (_Component) {
       }
       if (this._responsive) {
         this._responsive.stop();
+      }
+      if (this.props.onProgress) {
+        window.removeEventListener('scroll', this._updateProgress);
       }
     }
   }, {
@@ -262,7 +262,7 @@ var Article = function (_Component) {
   }, {
     key: '_shortTimer',
     value: function _shortTimer(name, duration) {
-      var _this3 = this;
+      var _this2 = this;
 
       if (!this[name]) {
         this[name] = true;
@@ -270,13 +270,13 @@ var Article = function (_Component) {
       var timerName = this[name] + 'Timer';
       clearTimeout(this[timerName]);
       this[timerName] = setTimeout(function () {
-        _this3[name] = false;
+        _this2[name] = false;
       }, duration);
     }
   }, {
     key: '_onWheel',
     value: function _onWheel(event) {
-      var _this4 = this;
+      var _this3 = this;
 
       if ('row' === this.props.direction) {
         if (this._scrollingHorizontally) {
@@ -297,7 +297,7 @@ var Article = function (_Component) {
           clearInterval(this._wheelTimer);
           clearInterval(this._wheelLongTimer);
           this._wheelLongTimer = setTimeout(function () {
-            _this4._wheelLongTimer = null;
+            _this3._wheelLongTimer = null;
           }, 2000);
         } else if (!this._wheelLongTimer) {
           if (delta > 10) {
@@ -316,7 +316,7 @@ var Article = function (_Component) {
   }, {
     key: '_onScroll',
     value: function _onScroll(event) {
-      var _this5 = this;
+      var _this4 = this;
 
       if ('row' === this.props.direction) {
         var selectedIndex = this.state.selectedIndex;
@@ -330,20 +330,20 @@ var Article = function (_Component) {
             this._scrollParent.scrollLeft += rect.left;
           } else {
             (function () {
-              var scrollingRight = _this5._priorScrollLeft < _this5._scrollParent.scrollLeft;
+              var scrollingRight = _this4._priorScrollLeft < _this4._scrollParent.scrollLeft;
               // once we stop scrolling, align with child boundaries
-              clearTimeout(_this5._scrollTimer);
-              _this5._scrollTimer = setTimeout(function () {
-                if (!_this5._resizing) {
-                  var indexes = _this5._visibleIndexes();
+              clearTimeout(_this4._scrollTimer);
+              _this4._scrollTimer = setTimeout(function () {
+                if (!_this4._resizing) {
+                  var indexes = _this4._visibleIndexes();
                   if (indexes.length > 1 && scrollingRight) {
-                    _this5._onSelect(indexes[1]);
+                    _this4._onSelect(indexes[1]);
                   } else {
-                    _this5._onSelect(indexes[0]);
+                    _this4._onSelect(indexes[0]);
                   }
                 }
               }, 100);
-              _this5._priorScrollLeft = _this5._scrollParent.scrollLeft;
+              _this4._priorScrollLeft = _this4._scrollParent.scrollLeft;
             })();
           }
         } else if (event.target.parentNode === this._scrollParent) {
@@ -393,12 +393,12 @@ var Article = function (_Component) {
   }, {
     key: '_onResize',
     value: function _onResize() {
-      var _this6 = this;
+      var _this5 = this;
 
       clearTimeout(this._resizeTimer);
       this._resizeTimer = setTimeout(function () {
-        _this6._onSelect(_this6.state.selectedIndex);
-        _this6._shortTimer('_resizing', 1000);
+        _this5._onSelect(_this5.state.selectedIndex);
+        _this5._shortTimer('_resizing', 1000);
       }, 50);
     }
   }, {
@@ -444,10 +444,10 @@ var Article = function (_Component) {
   }, {
     key: '_start',
     value: function _start() {
-      var _this7 = this;
+      var _this6 = this;
 
       this._playTimer = setInterval(function () {
-        _this7._onNext(null, true);
+        _this6._onNext(null, true);
       }, DEFAULT_PLAY_INTERVAL);
       this.setState({ playing: true });
     }
@@ -470,7 +470,7 @@ var Article = function (_Component) {
   }, {
     key: '_onSelect',
     value: function _onSelect(selectedIndex) {
-      var _this8 = this;
+      var _this7 = this;
 
       var childElement = (0, _reactDom.findDOMNode)(this.refs[selectedIndex]);
       var windowHeight = window.innerHeight + 24;
@@ -488,15 +488,15 @@ var Article = function (_Component) {
             selectedIndex: selectedIndex,
             atBottom: atBottom
           }, function () {
-            if (_this8.props.onSelect) {
-              _this8.props.onSelect(selectedIndex);
+            if (_this7.props.onSelect) {
+              _this7.props.onSelect(selectedIndex);
             }
 
             // Necessary to detect for Firefox or Edge to implement accessibility
             // tabbing
-            if (_this8.props.direction === 'row' && _this8.state.accessibilityTabbingCompatible) {
-              _this8.refs.anchorStep.focus();
-              _this8._updateHiddenElements();
+            if (_this7.props.direction === 'row' && _this7.state.accessibilityTabbingCompatible) {
+              _this7.refs.anchorStep.focus();
+              _this7._updateHiddenElements();
             }
           });
         } else if (childElement.scrollHeight <= windowHeight) {
@@ -510,14 +510,14 @@ var Article = function (_Component) {
           if (rect.left !== 0) {
             this._scrollingHorizontally = true;
             _Scroll2.default.scrollBy(this._scrollParent, 'scrollLeft', rect.left, function () {
-              _this8._scrollingHorizontally = false;
+              _this7._scrollingHorizontally = false;
             });
           }
         } else {
           if (rect.top !== 0) {
             this._scrollingVertically = true;
             _Scroll2.default.scrollBy(this._scrollParent, 'scrollTop', rect.top, function () {
-              _this8._scrollingVertically = false;
+              _this7._scrollingVertically = false;
             });
           }
         }
@@ -526,12 +526,12 @@ var Article = function (_Component) {
   }, {
     key: '_onFocusChange',
     value: function _onFocusChange(e) {
-      var _this9 = this;
+      var _this8 = this;
 
       _react2.default.Children.forEach(this.props.children, function (element, index) {
-        var parent = (0, _reactDom.findDOMNode)(_this9.refs[index]);
+        var parent = (0, _reactDom.findDOMNode)(_this8.refs[index]);
         if (parent && parent.contains(e.target)) {
-          _this9._onSelect(index);
+          _this8._onSelect(index);
           return false;
         }
       });
@@ -656,7 +656,7 @@ var Article = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this10 = this;
+      var _this9 = this;
 
       var classes = [CLASS_ROOT];
       var boxProps = _Props2.default.pick(this.props, (0, _keys2.default)(_Box2.default.propTypes));
@@ -689,11 +689,11 @@ var Article = function (_Component) {
             var elementNode = elementClone;
 
             var ariaHidden = void 0;
-            if (_this10.state.selectedIndex !== index && _this10.state.accessibilityTabbingCompatible) {
+            if (_this9.state.selectedIndex !== index && _this9.state.accessibilityTabbingCompatible) {
               ariaHidden = 'true';
             }
 
-            if (_this10.props.controls) {
+            if (_this9.props.controls) {
               elementNode = _react2.default.createElement(
                 'div',
                 { 'aria-hidden': ariaHidden },
