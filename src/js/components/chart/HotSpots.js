@@ -38,11 +38,13 @@ export default class HotSpots extends Component {
 
   _onPreviousHotSpot () {
     if (document.activeElement.className.indexOf(CHART) !== -1) {
-      const { activeIndex, count, onActive } = this.props;
+      const { activeIndex, onActive } = this.props;
       const previousIndex = activeIndex - 1;
-      onActive(previousIndex < 0 ? count - 1 : previousIndex);
-      //stop event propagation
-      return true;
+      if (previousIndex >= 0) {
+        onActive(previousIndex);
+        //stop event propagation
+        return true;
+      }
     }
   }
 
@@ -50,9 +52,11 @@ export default class HotSpots extends Component {
     if (document.activeElement.className.indexOf(CHART) !== -1) {
       const { activeIndex, count, onActive } = this.props;
       const nextIndex = activeIndex + 1;
-      onActive(nextIndex >= count ? 0 : nextIndex);
-      //stop event propagation
-      return true;
+      if (nextIndex < count) {
+        onActive(nextIndex);
+        //stop event propagation
+        return true;
+      }
     }
   }
 

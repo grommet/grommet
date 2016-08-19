@@ -22,21 +22,25 @@ import Range from './Range';
 const CLASS_ROOT = CSSClassnames.CHART;
 const CHART_BASE = CSSClassnames.CHART_BASE;
 
-// remove tabIndex from child elements to avoid
-// multiple tabs inside a chart
-function mapChildrenTabIndex (children) {
+function traverseAndUpdateChildren (children) {
   return Children.map(children, child => {
     if (!child || !child.type) {
       return;
     }
+
+    // remove tabIndex from child elements to avoid
+    // multiple tabs inside a chart
     if (child.type === Meter || child.type.name === 'Meter' ||
       child.type === Chart || child.type.name === 'Chart') {
       return React.cloneElement(child, {
         tabIndex: '-1'
       });
     }
+
     if (child.props.children) {
-      const childrenNoTabIndex = mapChildrenTabIndex(child.props.children);
+      const childrenNoTabIndex = traverseAndUpdateChildren(
+        child.props.children
+      );
 
       return React.cloneElement(child, {
         children: childrenNoTabIndex
@@ -217,17 +221,20 @@ export default class Chart extends Component {
         child.type === Base || child.type.name === 'Base'
       )) {
 
-        child = React.cloneElement(child, {
-          tabIndex: '-1'
-        });
-
         if (child.type === Base) {
-          const childrenNoTabIndex = mapChildrenTabIndex(child.props.children);
+          const updatedChildren = traverseAndUpdateChildren(
+            child.props.children
+          );
 
           child = React.cloneElement(child, {
-            children: childrenNoTabIndex
+            children: updatedChildren
+          });
+        } else {
+          child = React.cloneElement(child, {
+            tabIndex: '-1'
           });
         }
+
         axisAlign = 'start';
       }
 

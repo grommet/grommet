@@ -3,6 +3,7 @@
 import React, { Component, PropTypes } from 'react';
 import FormattedMessage from './FormattedMessage';
 import CSSClassnames from '../utils/CSSClassnames';
+import { announce } from '../utils/Announcer';
 
 const CLASS_ROOT = CSSClassnames.LEGEND;
 const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
@@ -18,7 +19,15 @@ export default class Legend extends Component {
   }
 
   componentWillReceiveProps (newProps) {
-    this.setState({activeIndex: newProps.activeIndex});
+    if (newProps.activeIndex !== this.state.activeIndex) {
+      this.setState({activeIndex: newProps.activeIndex});
+    }
+  }
+
+  componentDidUpdate () {
+    if (this.props.announce) {
+      announce(this.refs.legend.textContent);
+    }
   }
 
   _onActive (index) {
@@ -120,8 +129,8 @@ export default class Legend extends Component {
       }
 
       return (
-        <li key={item.label || index} className={legendClasses.join(' ')}
-          onClick={item.onClick}
+        <li onClick={item.onClick}
+          key={item.label || index} className={legendClasses.join(' ')}
           onMouseOver={this._onActive.bind(this, index)}
           onMouseOut={this._onActive.bind(this, undefined)} >
           {label}
@@ -174,7 +183,7 @@ export default class Legend extends Component {
     }
 
     return (
-      <ol className={classes.join(' ')} role="presentation">
+      <ol ref='legend' className={classes.join(' ')} role="presentation">
         {items.reverse()}
         {total}
       </ol>
@@ -183,8 +192,13 @@ export default class Legend extends Component {
 
 }
 
+Legend.defaultProps = {
+  announce: false
+};
+
 Legend.propTypes = {
   activeIndex: PropTypes.number,
+  announce: PropTypes.bool,
   onActive: PropTypes.func,
   series: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string,

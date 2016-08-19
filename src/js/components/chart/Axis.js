@@ -2,6 +2,7 @@
 
 import React, { Component, PropTypes } from 'react';
 import CSSClassnames from '../../utils/CSSClassnames';
+import Intl from '../../utils/Intl';
 
 const CLASS_ROOT = CSSClassnames.CHART_AXIS;
 const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
@@ -47,6 +48,7 @@ export default class Axis extends Component {
   render () {
     const { align, reverse, ticks, vertical } = this.props;
     const { items } = this.state;
+    const { intl } = this.context;
 
     let classes = [CLASS_ROOT];
     if (reverse) {
@@ -77,9 +79,10 @@ export default class Axis extends Component {
       if (item.colorIndex) {
         classes.push(`${COLOR_INDEX}-${item.colorIndex}`);
       }
-
+      const role = item.label && item.label !== '' ? 'row' : undefined;
       return (
-        <div key={item.value || item.index} className={classes.join(' ')}
+        <div key={item.value || item.index}
+          className={classes.join(' ')} role={role}
           style={{ flexBasis: `${item.basis}%` }}>
           {item.label}
         </div>
@@ -87,13 +90,18 @@ export default class Axis extends Component {
     });
 
     return (
-      <div ref="axis" id={this.props.id}
+      <div ref="axis" id={this.props.id} role="rowgroup"
+        aria-label={`${vertical ? 'y' : 'x'} ${Intl.getMessage(intl, 'Axis')}`}
         className={classes.join(' ')} style={this.props.style}>
         {elements}
       </div>
     );
   }
 
+};
+
+Axis.contextTypes = {
+  intl: PropTypes.object
 };
 
 Axis.propTypes = {
