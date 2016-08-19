@@ -12,9 +12,9 @@ import Layer from './Layer';
 import Video from './Video';
 import WatchIcon from './icons/base/Watch';
 
-const CLASS_ROOT = 'content-card';
+const CLASS_ROOT = 'card';
 
-export default class ContentCard extends Component {
+export default class Card extends Component {
   constructor (props) {
     super(props);
     this._onClick = this._onClick.bind(this);
@@ -89,9 +89,9 @@ export default class ContentCard extends Component {
       className
     );
 
-    let onContentCardClick = onClick;
-    if (!onContentCardClick && video) {
-      onContentCardClick = this._onClick;
+    let onCardClick = onClick;
+    if (!onCardClick && video) {
+      onCardClick = this._onClick;
     }
 
     const contentContainer = (
@@ -134,7 +134,7 @@ export default class ContentCard extends Component {
     }
 
     return (
-      <Tile className={classes} onClick={onContentCardClick}
+      <Tile className={classes} onClick={onCardClick}
         pad={pad || cardPad} {...tileProps}>
         <Box className="flex" direction={direction} justify={cardJustify}
           full={cardFull} colorIndex="light-1">
@@ -147,7 +147,7 @@ export default class ContentCard extends Component {
   }
 };
 
-ContentCard.propTypes = {
+Card.propTypes = {
   thumbnail: PropTypes.string,
   description: PropTypes.string,
   heading: PropTypes.string,
@@ -164,6 +164,6 @@ ContentCard.propTypes = {
   ...Tile.propTypes
 };
 
-ContentCard.defaultProps = {
+Card.defaultProps = {
   direction: 'column'
 };
