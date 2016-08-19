@@ -35,6 +35,10 @@ export default {
   Filter: 'Filtro',
   filter: 'filtro',
   Footer: 'Rodapé',
+  'GraphValues': (
+    'Gráfico têm {count} itens. O maior é {highest}' +
+    ' e o menor é {smallest}'
+  ),
   'Grommet Logo': 'Gromment Logomarca',
   'Layer': 'Modal',
   line: 'linha',

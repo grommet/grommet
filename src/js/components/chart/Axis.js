@@ -8,8 +8,8 @@ const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
 
 export default class Axis extends Component {
 
-  constructor (props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
     this.state = {
       items: this._buildItems(props)
     };

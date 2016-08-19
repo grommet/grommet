@@ -9,8 +9,8 @@ import CSSClassnames from '../utils/CSSClassnames';
 const CLASS_ROOT = CSSClassnames.ACCORDION;
 
 export default class Accordion extends Component {
-  constructor(props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
     this._activatePanel = this._activatePanel.bind(this);
 
     this.state = {

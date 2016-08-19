@@ -11,8 +11,8 @@ const PAD_FACTOR = baseUnit * 8;
 
 export default class SunBurst extends Component {
 
-  constructor (props) {
-    super();
+  constructor(props, context) {
+    super(props, context);
 
     this._layout = this._layout.bind(this);
     this._onResize = this._onResize.bind(this);

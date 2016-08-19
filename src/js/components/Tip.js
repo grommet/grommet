@@ -2,6 +2,7 @@
 
 import React, { Component, PropTypes } from 'react';
 import Box from './Box';
+import classnames from 'classnames';
 import CSSClassnames from '../utils/CSSClassnames';
 import Drop from '../utils/Drop';
 
@@ -13,30 +14,41 @@ export default class Tip extends Component {
     const { targetId, onClose, colorIndex } = this.props;
     const target = document.getElementById(targetId);
     if (target) {
-      let classNames = [`${CLASS_ROOT}__drop`];
       const rect = target.getBoundingClientRect();
-      let align = {};
+      let align = {
+        left: (
+          rect.left < (window.innerWidth - rect.right) ? 'left' : undefined
+        ),
+        right: (
+          rect.left >= (window.innerWidth - rect.right) ? 'right' : undefined
+        ),
+        top: (
+          rect.top < (window.innerHeight - rect.bottom) ? 'bottom' : undefined
+        ),
+        bottom: (
+          rect.top >= (window.innerHeight - rect.bottom) ? 'top' : undefined
+        )
+      };
 
-      if (rect.left < (window.innerWidth - rect.right)) {
-        align.left = 'left';
-        classNames.push(`${CLASS_ROOT}__drop--left`);
-      } else {
-        align.right = 'right';
-        classNames.push(`${CLASS_ROOT}__drop--right`);
-      }
-      if (rect.top < (window.innerHeight - rect.bottom)) {
-        align.top = 'bottom';
-        classNames.push(`${CLASS_ROOT}__drop--top`);
-      } else {
-        align.bottom = 'top';
-        classNames.push(`${CLASS_ROOT}__drop--bottom`);
-      }
+      const classNames = classnames(
+        `${CLASS_ROOT}__drop`, {
+          [`${CLASS_ROOT}__drop--left`]: align.left,
+          [`${CLASS_ROOT}__drop--right`]: align.right,
+          [`${CLASS_ROOT}__drop--top`]: align.top,
+          [`${CLASS_ROOT}__drop--bottom`]: align.bottom
+        }
+      );
 
-      this._drop = Drop.add(target, this._renderDrop(), {
-        align: align,
-        className: classNames.join(' '),
-        colorIndex: colorIndex
-      });
+      // we need a timeout here to avoid wrong bounding rect
+      // for the target element
+      setTimeout(() => {
+        this._drop = Drop.add(target, this._renderDrop(), {
+          align: align,
+          className: classNames,
+          colorIndex: colorIndex,
+          responsive: false
+        });
+      }, 1);
 
       target.addEventListener('click', onClose);
       target.addEventListener('blur', onClose);

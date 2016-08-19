@@ -24,8 +24,8 @@ const LABEL_PAD_HORIZONTAL = 12;
 
 export default class Distribution extends Component {
 
-  constructor(props) {
-    super();
+  constructor(props, context) {
+    super(props, context);
 
     this._onEnter = this._onEnter.bind(this);
     this._onPreviousDistribution = this._onPreviousDistribution.bind(this);

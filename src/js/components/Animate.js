@@ -8,8 +8,8 @@ import classnames from 'classnames';
 const CLASS_ROOT = 'animate';
 
 class AnimateChild extends Component {
-  constructor (props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
     this.state = {
       enterClass: '',
       leaveClass: ''
@@ -117,8 +117,8 @@ AnimateChild.defaultProps = {
 
 
 class Animate extends Component {
-  constructor (props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
     this.state = {
       animationState: 'enter',
       animation: props.enter.animation

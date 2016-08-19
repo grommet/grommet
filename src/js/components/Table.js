@@ -15,8 +15,8 @@ const MIN_CELL_WIDTH = 96;
 
 export default class Table extends Component {
 
-  constructor(props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
 
     this._onClick = this._onClick.bind(this);
     this._onResize = this._onResize.bind(this);

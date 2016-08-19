@@ -8,8 +8,8 @@ const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
 
 export default class MarkerLabel extends Component {
 
-  constructor (props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
     this.state = {
       valueBasis: this._valueBasis(props)
     };
@@ -33,7 +33,7 @@ export default class MarkerLabel extends Component {
   _renderPlaceholder (basis) {
     const classes = [`${CLASS_ROOT}__slot`, `${CLASS_ROOT}__slot--placeholder`];
     return (
-      <div key="placeholder" className={classes.join(' ')}
+      <div key="placeholder" className={classes.join(' ')} aria-hidden='true'
         style={{ flexBasis: `${basis}%` }} />
     );
   }
@@ -49,7 +49,7 @@ export default class MarkerLabel extends Component {
       classes.push(`${COLOR_INDEX}-${colorIndex}`);
     }
     if (typeof label === 'string' || typeof label === 'number') {
-      label = <span>{label}</span>;
+      label = <span aria-hidden='true'>{label}</span>;
     }
     return (
       <div key="label" className={classes.join(' ')}

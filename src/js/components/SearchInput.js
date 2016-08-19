@@ -15,8 +15,8 @@ const FORM_FIELD = CSSClassnames.FORM_FIELD;
 
 export default class SearchInput extends Component {
 
-  constructor(props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
 
     this._onInputChange = this._onInputChange.bind(this);
     this._onAddDrop = this._onAddDrop.bind(this);

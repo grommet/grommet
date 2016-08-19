@@ -11,8 +11,8 @@ const MID_BAR_THICKNESS = BAR_THICKNESS / 2;
 
 export default class Bar extends Graphic {
 
-  constructor (props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
     //needed in Graphic.js to fix minification issues
     this.displayName = 'Bar';
   }

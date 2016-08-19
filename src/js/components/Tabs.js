@@ -10,8 +10,8 @@ const CLASS_ROOT = CSSClassnames.TABS;
 
 export default class Tabs extends Component {
 
-  constructor(props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
 
     this._activateTab = this._activateTab.bind(this);
 
@@ -22,7 +22,8 @@ export default class Tabs extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if(this.state.activeIndex !== nextProps.activeIndex) {
+    if(nextProps.activeIndex &&
+      this.state.activeIndex !== nextProps.activeIndex) {
       this.setState({activeIndex: nextProps.activeIndex});
     }
   }

@@ -25,8 +25,8 @@ function isFunction (obj) {
 // so we can transfer the router context.
 class MenuDrop extends Component {
 
-  constructor() {
-    super();
+  constructor(props, context) {
+    super(props, context);
 
     this._onUpKeyPress = this._onUpKeyPress.bind(this);
     this._onDownKeyPress = this._onDownKeyPress.bind(this);
@@ -73,12 +73,6 @@ class MenuDrop extends Component {
     container.setAttribute('aria-activedescendant',
       menuItems[0].getAttribute('id'));
 
-    const menuDrop = ReactDOM.findDOMNode(this.refs.menuDrop);
-    var items = menuDrop.getElementsByTagName('*');
-    var firstFocusable = DOMUtils.getBestFirstFocusable(items);
-    if (firstFocusable) {
-      firstFocusable.focus();
-    }
   }
 
   componentWillUnmount () {
@@ -246,8 +240,8 @@ MenuDrop.childContextTypes = {
 
 export default class Menu extends Component {
 
-  constructor(props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
 
     this._onOpen = this._onOpen.bind(this);
     this._onClose = this._onClose.bind(this);
@@ -289,6 +283,12 @@ export default class Menu extends Component {
 
     if (this.state.responsive) {
       this._responsive = Responsive.start(this._onResponsive);
+    }
+  }
+
+  componentWillReceiveProps (nextProps) {
+    if (this.props.inline !== nextProps.inline) {
+      this.setState({ inline: nextProps.inline });
     }
   }
 
@@ -339,7 +339,6 @@ export default class Menu extends Component {
               align: this.props.dropAlign,
               colorIndex: this.props.dropColorIndex
             });
-          this._drop.render(this._renderMenuDrop());
           break;
       }
     } else if (this.state.state === 'expanded') {

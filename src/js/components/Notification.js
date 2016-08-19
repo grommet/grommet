@@ -3,9 +3,13 @@
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import { FormattedDate } from 'react-intl';
+import Intl from '../utils/Intl';
 import Box from './Box';
+import Animate from './Animate';
 import Meter from './Meter';
+import Button from './Button';
 import StatusIcon from './icons/Status';
+import CloseIcon from './icons/base/Close';
 import Props from '../utils/Props';
 import CSSClassnames from '../utils/CSSClassnames';
 
@@ -13,6 +17,7 @@ const CLASS_ROOT = CSSClassnames.NOTIFICATION;
 const BACKGROUND_COLOR_INDEX = CSSClassnames.BACKGROUND_COLOR_INDEX;
 
 export default class Notification extends Component {
+
   render () {
     let classes = classnames(
       CLASS_ROOT,
@@ -75,31 +80,59 @@ export default class Notification extends Component {
       );
     }
 
+    let closer;
+    if (typeof this.props.closer === 'object') {
+      closer = this.props.closer;
+
+    } else if (this.props.onClose && this.props.closer) {
+      closer = (
+        <Box direction="row" align="start" responsive={false} flex={false}>
+          <Button className={`${CLASS_ROOT}__close-button`}
+            plain={true} onClick={this.props.onClose}
+            icon={<CloseIcon className={`${CLASS_ROOT}__close`} />}
+            a11yTitle={
+              Intl.getMessage(this.context.intl, 'Close Notification')
+            } />
+        </Box>
+      );
+    }
+
     let boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
     let fullBox =
       boxProps.hasOwnProperty('full') ? boxProps.full : 'horizontal';
 
     return (
-      <Box {...boxProps} className={classes} direction="row" responsive={false}>
-        {status}
-        <Box full={fullBox}>
-          <span className={`${CLASS_ROOT}__message`}>
-            {this.props.message}
-          </span>
-          {this.props.context}
-          {timestamp}
-          {state}
-          {progress}
-          {this.props.children}
+      <Animate
+        enter={{ animation: 'fade', duration: 1000 }}
+        leave={{ animation: 'fade', duration: 1000 }}>
+        <Box {...boxProps} className={classes}
+          direction="row" responsive={false}>
+          {status}
+          <Box full={fullBox}>
+            <span className={`${CLASS_ROOT}__message`}>
+              {this.props.message}
+            </span>
+            {this.props.context}
+            {timestamp}
+            {state}
+            {progress}
+            {this.props.children}
+          </Box>
+          {closer}
         </Box>
-      </Box>
+      </Animate>
     );
   }
 };
 
 Notification.propTypes = {
+  closer: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.bool
+  ]),
   context: PropTypes.node,
   message: PropTypes.string.isRequired,
+  onClose: PropTypes.func,
   percentComplete: PropTypes.number,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   state: PropTypes.string,
@@ -113,6 +146,7 @@ Notification.contextTypes = {
 };
 
 Notification.defaultProps = {
+  closer: false,
   flush: true,
   status: 'unknown',
   pad: 'medium'

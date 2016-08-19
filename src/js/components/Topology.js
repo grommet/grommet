@@ -146,8 +146,8 @@ Parts.defaultProps = {
 
 export default class Topology extends Component {
 
-  constructor () {
-    super();
+  constructor(props, context) {
+    super(props, context);
 
     this._layout = this._layout.bind(this);
     this._onResize = this._onResize.bind(this);
