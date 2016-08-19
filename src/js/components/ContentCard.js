@@ -10,7 +10,6 @@ import Paragraph from './Paragraph';
 import Anchor from './Anchor';
 import Layer from './Layer';
 import Video from './Video';
-import LinkNextIcon from './icons/base/LinkNext';
 import WatchIcon from './icons/base/Watch';
 
 const CLASS_ROOT = 'content-card';
@@ -25,13 +24,11 @@ export default class ContentCard extends Component {
   }
 
   _handleClick (event) {
-    const { video, link } = this.props;
+    const { video } = this.props;
 
     if (video) {
       event.preventDefault();
       this.setState({ activeVideo : !this.state.activeVideo });
-    } else if (link) {
-      window.location.href = link;
     }
   }
 
@@ -53,24 +50,13 @@ export default class ContentCard extends Component {
   }
 
   _renderLinkMarkup () {
-    const { link, linkIcon, linkText, onClick, video } = this.props;
-
+    const { link } = this.props;
     let linkMarkup;
-    let anchorLabel = linkText;
-    if (!linkText) {
-      anchorLabel = video ? 'Watch Now' : 'Learn More';
-    }
 
-    let anchorIcon = linkIcon;
-    if (!linkIcon) {
-      anchorIcon = video ? <WatchIcon /> : <LinkNextIcon />;
-    }
-
-    if (link || onClick || video) {
+    if (link) {
       linkMarkup = (
         <Box pad={{vertical: "small"}}>
-          <Anchor href={link} icon={anchorIcon} label={anchorLabel}
-            onClick={this._handleClick} />
+          {link}
         </Box>
       );
     }
@@ -82,23 +68,32 @@ export default class ContentCard extends Component {
     const { video } = this.props;
     const { activeVideo } = this.state;
     let videoMarkup;
+    let layerMarkup;
 
-    if (video && video.source && activeVideo) {
-      videoMarkup = (
-        <Layer onClose={this._handleClick} closer={true} flush={true}>
+    if (video && activeVideo) {
+      if (video.source) {
+        videoMarkup = (
           <Video>
             <source src={video.source} type={`video/${video.type}`}/>
           </Video>
+        );
+      } else {
+        videoMarkup = video;
+      }
+
+      layerMarkup = (
+        <Layer onClose={this._handleClick} closer={true} flush={true}>
+          {videoMarkup}
         </Layer>
       );
     }
 
-    return videoMarkup;
+    return layerMarkup;
   }
 
   render () {
-    const { thumbnail, description, heading, overline, link, onClick, video,
-      socialIcon, direction, contentPlacement, pad, className} = this.props;
+    const { thumbnail, description, heading, label, onClick, video,
+      socialIcon, direction, reverse, pad, className} = this.props;
     const tileProps = Props.pick(this.props, Object.keys(Tile.propTypes));
     delete tileProps.onClick;
     delete tileProps.pad;
@@ -107,19 +102,19 @@ export default class ContentCard extends Component {
       CLASS_ROOT,
       {
         [`${CLASS_ROOT}--direction-${direction}`]: direction,
-        [`${CLASS_ROOT}--selectable`]: (link || onClick || video)
+        [`${CLASS_ROOT}--selectable`]: (onClick || video)
       },
       className
     );
 
     let onContentCardClick = onClick;
-    if (!onContentCardClick && (link || video)) {
+    if (!onContentCardClick && video) {
       onContentCardClick = this._handleClick;
     }
 
     const contentMarkup = (
       <Box className={`${CLASS_ROOT}__content`} pad="medium">
-        <Heading tag="h5" uppercase={true} margin="none">{overline}</Heading>
+        <Heading tag="h5" uppercase={true} margin="none">{label}</Heading>
         <Heading tag="h2" strong={true}>{heading}</Heading>
         <Paragraph margin="none">{description}</Paragraph>
         {this._renderChildren()}
@@ -142,7 +137,7 @@ export default class ContentCard extends Component {
     let second = contentMarkup;
     let cardJustify;
 
-    if (contentPlacement === 'bottom') {
+    if (reverse) {
       first = contentMarkup;
       second = thumbnailMarkup;
       // align thumbnail to bottom of card for bottom cardPlacement
@@ -174,20 +169,20 @@ ContentCard.propTypes = {
   thumbnail: PropTypes.string,
   description: PropTypes.string,
   heading: PropTypes.string,
-  overline: PropTypes.string,
-  link: PropTypes.string,
-  linkIcon: PropTypes.element,
-  linkText: PropTypes.string,
-  video: PropTypes.shape({
-    source: PropTypes.string.isRequired,
-    type: PropTypes.string
-  }),
-  contentPlacement: PropTypes.oneOf(['top', 'bottom']),
+  label: PropTypes.string,
+  link: PropTypes.element,
+  video: PropTypes.oneOfType([
+    PropTypes.shape({
+      source: PropTypes.string.isRequired,
+      type: PropTypes.string
+    }),
+    PropTypes.element
+  ]),
+  reverse: PropTypes.bool,
   socialIcon: PropTypes.element,
   ...Tile.propTypes
 };
 
 ContentCard.defaultProps = {
-  contentPlacement: 'top',
   direction: 'column'
 };
