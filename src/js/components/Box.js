@@ -6,6 +6,7 @@ import Intl from '../utils/Intl';
 import Props from '../utils/Props';
 import SkipLinkAnchor from './SkipLinkAnchor';
 import CSSClassnames from '../utils/CSSClassnames';
+import { announce } from '../utils/Announcer';
 
 const CLASS_ROOT = CSSClassnames.BOX;
 const BACKGROUND_COLOR_INDEX = CSSClassnames.BACKGROUND_COLOR_INDEX;
@@ -28,6 +29,11 @@ export default class Box extends Component {
     }
   }
 
+  componentDidUpdate () {
+    if (this.props.announce) {
+      announce(this.refs.boxContainer.textContent);
+    }
+  }
   componentWillUnmount () {
     if (this.props.onClick) {
       KeyboardAccelerators.stopListeningToKeyboard(this);
@@ -177,6 +183,7 @@ export default class Box extends Component {
 
 Box.propTypes = {
   a11yTitle: PropTypes.string,
+  announce: PropTypes.bool,
   align: PropTypes.oneOf(['start', 'center', 'end', 'baseline', 'stretch']),
   alignContent: PropTypes.oneOf(['start', 'center', 'end', 'between',
     'around', 'stretch']),
@@ -220,6 +227,7 @@ Box.contextTypes = {
 };
 
 Box.defaultProps = {
+  announce: false,
   direction: 'column',
   pad: 'none',
   tag: 'div',

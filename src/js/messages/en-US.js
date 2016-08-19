@@ -11,6 +11,7 @@ export default {
   Active: 'Active',
   Alerts: 'Alerts',
   All: 'All',
+  AxisLabel: '{orientation} Axis',
   area: 'area',
   Bar: 'Bar',
   bar: 'bar',
@@ -32,6 +33,7 @@ export default {
   Error: 'Error',
   Filter: 'Filter',
   Footer: 'Footer',
+  HotSpotsLabel: 'HotSpots: press arrow keys to interect with it',
   'GraphValues': (
     'Graph has {count} items. Highest is {highest}' +
     ' and smallest is {smallest}'

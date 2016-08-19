@@ -46,7 +46,7 @@ export default class Axis extends Component {
   }
 
   render () {
-    const { align, reverse, ticks, vertical } = this.props;
+    const { a11yTitle, align, reverse, ticks, vertical } = this.props;
     const { items } = this.state;
     const { intl } = this.context;
 
@@ -89,9 +89,12 @@ export default class Axis extends Component {
       );
     });
 
+    const axisLabel = a11yTitle || Intl.getMessage(intl, 'AxisLabel', {
+      orientation: vertical ? 'y' : 'x'
+    });
+
     return (
-      <div ref="axis" id={this.props.id} role="rowgroup"
-        aria-label={`${vertical ? 'y' : 'x'} ${Intl.getMessage(intl, 'Axis')}`}
+      <div ref="axis" id={this.props.id} role='rowgroup' aria-label={axisLabel}
         className={classes.join(' ')} style={this.props.style}>
         {elements}
       </div>
@@ -105,6 +108,7 @@ Axis.contextTypes = {
 };
 
 Axis.propTypes = {
+  a11yTitle: PropTypes.string,
   align: PropTypes.oneOf(['start', 'end']), // only from Chart
   count: PropTypes.number.isRequired,
   labels: PropTypes.arrayOf(PropTypes.shape({

@@ -9,6 +9,7 @@ export default {
   add: 'add',
   Alerts: 'Alertas',
   All: 'Todos',
+  AxisLabel: 'Coordenada {orientation}',
   area: 'Área',
   Bar: 'Bar',
   bar: 'bar',
@@ -35,6 +36,7 @@ export default {
   Filter: 'Filtro',
   filter: 'filtro',
   Footer: 'Rodapé',
+  HotSpotsLabel: 'HotSpots: pressione setas de nevegação para interagir',
   'GraphValues': (
     'Gráfico têm {count} itens. O maior é {highest}' +
     ' e o menor é {smallest}'

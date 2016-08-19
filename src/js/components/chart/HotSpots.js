@@ -4,10 +4,10 @@ import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import { padding } from './utils';
 import CSSClassnames from '../../utils/CSSClassnames';
+import Intl from '../../utils/Intl';
 import KeyboardAccelerators from '../../utils/KeyboardAccelerators';
 
 const CLASS_ROOT = CSSClassnames.CHART_HOT_SPOTS;
-const CHART = CSSClassnames.CHART;
 
 // Interactive regions.
 
@@ -17,56 +17,66 @@ export default class HotSpots extends Component {
     super();
     this._onPreviousHotSpot = this._onPreviousHotSpot.bind(this);
     this._onNextHotSpot = this._onNextHotSpot.bind(this);
+    this._onHotSpotFocus = this._onHotSpotFocus.bind(this);
+    this._onHotSpotBlur = this._onHotSpotBlur.bind(this);
+    this._onHotSpotClick = this._onHotSpotClick.bind(this);
   }
 
-  componentDidMount () {
+  _onHotSpotFocus () {
     this._keyboardHandlers = {
       left: this._onPreviousHotSpot,
       up: this._onPreviousHotSpot,
       right: this._onNextHotSpot,
-      down: this._onNextHotSpot
+      down: this._onNextHotSpot,
+      enter: this._onHotSpotClick
     };
     KeyboardAccelerators.startListeningToKeyboard(
       this, this._keyboardHandlers
     );
   }
 
-  componentWillUnmount () {
+  _onHotSpotBlur () {
     KeyboardAccelerators.stopListeningToKeyboard(
       this, this._keyboardHandlers
     );
   }
 
   _onPreviousHotSpot () {
-    const className = document.activeElement.getAttribute('class');
-    if (className && className.indexOf(CHART) !== -1) {
-      const { activeIndex, onActive } = this.props;
-      const previousIndex = activeIndex - 1;
-      if (previousIndex >= 0) {
-        onActive(previousIndex);
-      }
-      //stop event propagation
-      return true;
+    const { activeIndex, onActive } = this.props;
+    const previousIndex = activeIndex - 1;
+    if (previousIndex >= 0) {
+      onActive(previousIndex);
     }
+    //stop event propagation
+    return true;
   }
 
   _onNextHotSpot () {
-    const className = document.activeElement.getAttribute('class');
-    if (className && className.indexOf(CHART) !== -1) {
-      const { activeIndex, count, onActive } = this.props;
-      const nextIndex = activeIndex + 1;
-      if (nextIndex < count) {
-        onActive(nextIndex);
-      }
-      //stop event propagation
-      return true;
+    const { activeIndex, count, onActive } = this.props;
+    const nextIndex = activeIndex + 1;
+    if (nextIndex < count) {
+      onActive(nextIndex);
+    }
+    //stop event propagation
+    return true;
+  }
+
+  _onHotSpotClick () {
+    const { activeIndex, onClick } = this.props;
+
+    if (activeIndex !== undefined && onClick) {
+      onClick(activeIndex);
     }
   }
 
   render () {
     const {
-      activeIndex, className, count, onActive, onClick, vertical
+      a11yTitle, activeIndex, className, count, onActive, onClick, vertical
     } = this.props;
+
+    const {
+      intl
+    } = this.context;
 
     const classes = classnames(
       CLASS_ROOT,
@@ -94,16 +104,20 @@ export default class HotSpots extends Component {
       }
       const style = { flexBasis: `${basis}%`};
       items.push(
-        <div key={index} className={bandClasses} style={style}
+        <div key={index} className={bandClasses} style={style} role='row'
           onMouseOver={onActive ? () => onActive(index) : undefined}
           onMouseOut={onActive ? () => onActive(undefined) : undefined}
           onClick={onClick ? () => onClick(index) : undefined} />
       );
     }
 
+    const hotSpotsLabel = a11yTitle || Intl.getMessage(intl, 'HotSpotsLabel');
+
     return (
       <div ref='hotSpots' className={classes} style={{ padding: padding }}
-        aria-hidden='true'>
+        tabIndex='0' onFocus={this._onHotSpotFocus}
+        onBlur={this._onHotSpotBlur} role='group'
+        aria-label={hotSpotsLabel}>
         {items}
       </div>
     );
@@ -111,7 +125,12 @@ export default class HotSpots extends Component {
 
 };
 
+HotSpots.contextTypes = {
+  intl: PropTypes.object
+};
+
 HotSpots.propTypes = {
+  a11yTitle: PropTypes.string,
   activeIndex: PropTypes.number,
   count: PropTypes.number.isRequired,
   onActive: PropTypes.func,
