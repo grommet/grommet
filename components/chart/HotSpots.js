@@ -86,7 +86,8 @@ var HotSpots = function (_Component) {
   }, {
     key: '_onPreviousHotSpot',
     value: function _onPreviousHotSpot() {
-      if (document.activeElement.className.indexOf(CHART) !== -1) {
+      var className = document.activeElement.getAttribute('class');
+      if (className && className.indexOf(CHART) !== -1) {
         var _props = this.props;
         var activeIndex = _props.activeIndex;
         var onActive = _props.onActive;
@@ -94,15 +95,16 @@ var HotSpots = function (_Component) {
         var previousIndex = activeIndex - 1;
         if (previousIndex >= 0) {
           onActive(previousIndex);
-          //stop event propagation
-          return true;
         }
+        //stop event propagation
+        return true;
       }
     }
   }, {
     key: '_onNextHotSpot',
     value: function _onNextHotSpot() {
-      if (document.activeElement.className.indexOf(CHART) !== -1) {
+      var className = document.activeElement.getAttribute('class');
+      if (className && className.indexOf(CHART) !== -1) {
         var _props2 = this.props;
         var activeIndex = _props2.activeIndex;
         var count = _props2.count;
@@ -111,9 +113,9 @@ var HotSpots = function (_Component) {
         var nextIndex = activeIndex + 1;
         if (nextIndex < count) {
           onActive(nextIndex);
-          //stop event propagation
-          return true;
         }
+        //stop event propagation
+        return true;
       }
     }
   }, {
