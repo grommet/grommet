@@ -18,6 +18,7 @@ export default class HotSpots extends Component {
     this._onPreviousHotSpot = this._onPreviousHotSpot.bind(this);
     this._onNextHotSpot = this._onNextHotSpot.bind(this);
   }
+
   componentDidMount () {
     this._keyboardHandlers = {
       left: this._onPreviousHotSpot,
@@ -37,26 +38,28 @@ export default class HotSpots extends Component {
   }
 
   _onPreviousHotSpot () {
-    if (document.activeElement.className.indexOf(CHART) !== -1) {
+    const className = document.activeElement.getAttribute('class');
+    if (className && className.indexOf(CHART) !== -1) {
       const { activeIndex, onActive } = this.props;
       const previousIndex = activeIndex - 1;
       if (previousIndex >= 0) {
         onActive(previousIndex);
-        //stop event propagation
-        return true;
       }
+      //stop event propagation
+      return true;
     }
   }
 
   _onNextHotSpot () {
-    if (document.activeElement.className.indexOf(CHART) !== -1) {
+    const className = document.activeElement.getAttribute('class');
+    if (className && className.indexOf(CHART) !== -1) {
       const { activeIndex, count, onActive } = this.props;
       const nextIndex = activeIndex + 1;
       if (nextIndex < count) {
         onActive(nextIndex);
-        //stop event propagation
-        return true;
       }
+      //stop event propagation
+      return true;
     }
   }
 
