@@ -94,20 +94,22 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var CLASS_ROOT = _CSSClassnames2.default.CHART;
 var CHART_BASE = _CSSClassnames2.default.CHART_BASE;
 
-// remove tabIndex from child elements to avoid
-// multiple tabs inside a chart
-function mapChildrenTabIndex(children) {
+function traverseAndUpdateChildren(children) {
   return _react.Children.map(children, function (child) {
     if (!child || !child.type) {
       return;
     }
+
+    // remove tabIndex from child elements to avoid
+    // multiple tabs inside a chart
     if (child.type === _Meter2.default || child.type.name === 'Meter' || child.type === Chart || child.type.name === 'Chart') {
       return _react2.default.cloneElement(child, {
         tabIndex: '-1'
       });
     }
+
     if (child.props.children) {
-      var childrenNoTabIndex = mapChildrenTabIndex(child.props.children);
+      var childrenNoTabIndex = traverseAndUpdateChildren(child.props.children);
 
       return _react2.default.cloneElement(child, {
         children: childrenNoTabIndex
@@ -317,17 +319,18 @@ var Chart = function (_Component) {
           axisAlign = 'start';
         } else if (child && (child.type === Chart || child.type.name === 'Chart' || child.type === _Base2.default || child.type.name === 'Base')) {
 
-          child = _react2.default.cloneElement(child, {
-            tabIndex: '-1'
-          });
-
           if (child.type === _Base2.default) {
-            var childrenNoTabIndex = mapChildrenTabIndex(child.props.children);
+            var updatedChildren = traverseAndUpdateChildren(child.props.children);
 
             child = _react2.default.cloneElement(child, {
-              children: childrenNoTabIndex
+              children: updatedChildren
+            });
+          } else {
+            child = _react2.default.cloneElement(child, {
+              tabIndex: '-1'
             });
           }
+
           axisAlign = 'start';
         }
 

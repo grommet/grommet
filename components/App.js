@@ -111,7 +111,8 @@ var App = function (_Component) {
         'div',
         { lang: lang, className: classes },
         children,
-        _react2.default.createElement(_SkipLinks2.default, null)
+        _react2.default.createElement(_SkipLinks2.default, null),
+        _react2.default.createElement('div', { className: CLASS_ROOT + '__announcer', 'aria-live': 'polite' })
       );
     }
   }]);

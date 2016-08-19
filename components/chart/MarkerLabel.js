@@ -32,11 +32,12 @@ var _CSSClassnames = require('../../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
+var _Announcer = require('../../utils/Announcer');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+var CLASS_ROOT = _CSSClassnames2.default.CHART_MARKER_LABEL; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-var CLASS_ROOT = _CSSClassnames2.default.CHART_MARKER_LABEL;
 var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
 
 var MarkerLabel = function (_Component) {
@@ -56,7 +57,16 @@ var MarkerLabel = function (_Component) {
   (0, _createClass3.default)(MarkerLabel, [{
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
-      this.setState({ valueBasis: this._valueBasis(nextProps) });
+      var nextValueBasis = this._valueBasis(nextProps);
+      if (nextValueBasis !== this.state.valueBasis) {
+        this.setState({
+          valueBasis: nextValueBasis
+        }, function () {
+          if (typeof nextProps.label === 'string' || typeof nextProps.label === 'number') {
+            (0, _Announcer.announce)(nextProps.label);
+          }
+        });
+      }
     }
   }, {
     key: '_valueBasis',
@@ -98,9 +108,14 @@ var MarkerLabel = function (_Component) {
       if (typeof label === 'string' || typeof label === 'number') {
         label = _react2.default.createElement(
           'span',
-          { 'aria-hidden': 'true' },
+          null,
           label
         );
+      } else {
+        // added for a11y to announce changes in the values
+        label = _react2.default.cloneElement(label, {
+          announce: true
+        });
       }
       return _react2.default.createElement(
         'div',

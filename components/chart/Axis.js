@@ -32,11 +32,14 @@ var _CSSClassnames = require('../../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
+var _Intl = require('../../utils/Intl');
+
+var _Intl2 = _interopRequireDefault(_Intl);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+var CLASS_ROOT = _CSSClassnames2.default.CHART_AXIS; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-var CLASS_ROOT = _CSSClassnames2.default.CHART_AXIS;
 var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
 
 var Axis = function (_Component) {
@@ -102,6 +105,7 @@ var Axis = function (_Component) {
       var ticks = _props.ticks;
       var vertical = _props.vertical;
       var items = this.state.items;
+      var intl = this.context.intl;
 
 
       var classes = [CLASS_ROOT];
@@ -133,10 +137,11 @@ var Axis = function (_Component) {
         if (item.colorIndex) {
           classes.push(COLOR_INDEX + '-' + item.colorIndex);
         }
-
+        var role = item.label && item.label !== '' ? 'row' : undefined;
         return _react2.default.createElement(
           'div',
-          { key: item.value || item.index, className: classes.join(' '),
+          { key: item.value || item.index,
+            className: classes.join(' '), role: role,
             style: { flexBasis: item.basis + '%' } },
           item.label
         );
@@ -144,7 +149,8 @@ var Axis = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        { ref: 'axis', id: this.props.id,
+        { ref: 'axis', id: this.props.id, role: 'rowgroup',
+          'aria-label': (vertical ? 'y' : 'x') + ' ' + _Intl2.default.getMessage(intl, 'Axis'),
           className: classes.join(' '), style: this.props.style },
         elements
       );
@@ -156,6 +162,10 @@ var Axis = function (_Component) {
 Axis.displayName = 'Axis';
 exports.default = Axis;
 ;
+
+Axis.contextTypes = {
+  intl: _react.PropTypes.object
+};
 
 Axis.propTypes = {
   align: _react.PropTypes.oneOf(['start', 'end']), // only from Chart

@@ -11,6 +11,8 @@
   // temporary flex grow capability
   > .flex {
     flex-grow: 1;
+    //need to fix flexbox issue with min-width: auto for some tags
+    min-width: 0;
   }
 
   > .no-flex {

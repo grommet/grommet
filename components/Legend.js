@@ -36,10 +36,13 @@ var _CSSClassnames = require('../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
+var _Announcer = require('../utils/Announcer');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.LEGEND; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
+var CLASS_ROOT = _CSSClassnames2.default.LEGEND;
 var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
 
 var Legend = function (_Component) {
@@ -59,7 +62,16 @@ var Legend = function (_Component) {
   (0, _createClass3.default)(Legend, [{
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(newProps) {
-      this.setState({ activeIndex: newProps.activeIndex });
+      if (newProps.activeIndex !== this.state.activeIndex) {
+        this.setState({ activeIndex: newProps.activeIndex });
+      }
+    }
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate() {
+      if (this.props.announce) {
+        (0, _Announcer.announce)(this.refs.legend.textContent);
+      }
     }
   }, {
     key: '_onActive',
@@ -165,8 +177,8 @@ var Legend = function (_Component) {
 
         return _react2.default.createElement(
           'li',
-          { key: item.label || index, className: legendClasses.join(' '),
-            onClick: item.onClick,
+          { onClick: item.onClick,
+            key: item.label || index, className: legendClasses.join(' '),
             onMouseOver: this._onActive.bind(this, index),
             onMouseOut: this._onActive.bind(this, undefined) },
           label,
@@ -220,7 +232,7 @@ var Legend = function (_Component) {
 
       return _react2.default.createElement(
         'ol',
-        { className: classes.join(' '), role: 'presentation' },
+        { ref: 'legend', className: classes.join(' '), role: 'presentation' },
         items.reverse(),
         total
       );
@@ -233,8 +245,13 @@ Legend.displayName = 'Legend';
 exports.default = Legend;
 
 
+Legend.defaultProps = {
+  announce: false
+};
+
 Legend.propTypes = {
   activeIndex: _react.PropTypes.number,
+  announce: _react.PropTypes.bool,
   onActive: _react.PropTypes.func,
   series: _react.PropTypes.arrayOf(_react.PropTypes.shape({
     label: _react.PropTypes.string,

@@ -32,11 +32,12 @@ var _CSSClassnames = require('../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
+var _Announcer = require('../utils/Announcer');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2016 Hewlett Packard Enterprise Development LP
+var CLASS_ROOT = _CSSClassnames2.default.VALUE; // (C) Copyright 2016 Hewlett Packard Enterprise Development LP
 
-var CLASS_ROOT = _CSSClassnames2.default.VALUE;
 var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
 
 var Value = function (_Component) {
@@ -48,6 +49,13 @@ var Value = function (_Component) {
   }
 
   (0, _createClass3.default)(Value, [{
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate() {
+      if (this.props.announce) {
+        (0, _Announcer.announce)(this.refs.value.textContent);
+      }
+    }
+  }, {
     key: 'render',
     value: function render() {
       var classes = [CLASS_ROOT];
@@ -90,7 +98,8 @@ var Value = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        { className: classes.join(' '), onClick: this.props.onClick },
+        { ref: 'value', className: classes.join(' '),
+          onClick: this.props.onClick },
         _react2.default.createElement(
           'div',
           { className: CLASS_ROOT + '__annotated' },
@@ -117,6 +126,7 @@ exports.default = Value;
 Value.propTypes = {
   active: _react.PropTypes.bool,
   align: _react.PropTypes.oneOf(['start', 'center', 'end']),
+  announce: _react.PropTypes.bool,
   colorIndex: _react.PropTypes.string,
   icon: _react.PropTypes.node,
   label: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.node]),
@@ -128,6 +138,7 @@ Value.propTypes = {
 };
 
 Value.defaultProps = {
-  align: 'center'
+  align: 'center',
+  announce: false
 };
 module.exports = exports['default'];
