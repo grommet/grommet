@@ -4,23 +4,23 @@
   display: flex;
   flex-direction: row;
   width: 100%;
+}
 
-  &__column {
-    flex: 0 0 $tile-size;
-    display: flex;
-    flex-direction: column;
+.#{$grommet-namespace}columns__column {
+  flex: 0 0 $tile-size;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.#{$grommet-namespace}columns--small {
+  > .#{$grommet-namespace}columns__column {
+    flex-basis: $tile-small-size;
   }
+}
 
-
-  &--small {
-    > .#{$grommet-namespace}columns__column {
-      flex-basis: $tile-small-size;
-    }
-  }
-
-  &--large {
-    > .#{$grommet-namespace}__column {
-      flex-basis: $tile-large-size;
-    }
+.#{$grommet-namespace}columns--large {
+  > .#{$grommet-namespace}__column {
+    flex-basis: $tile-large-size;
   }
 }
