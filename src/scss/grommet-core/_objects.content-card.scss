@@ -1,12 +1,5 @@
 $card-hover-color: #EBEBEB;
-$social-twitter-color: #1DA1F2;
-$social-facebook-color: #3B5998;
-$social-linkedin-color: #0077B5;
 
-@mixin social-icon-color($social-color) {
-  fill: $social-color;
-  stroke: $social-color;
-}
 
 @mixin truncate-paragraph($truncate-p-line-height, $truncate-p-font-size) {
   max-height: ($truncate-p-line-height * $truncate-p-font-size * 8);
@@ -35,12 +28,6 @@ $social-linkedin-color: #0077B5;
     }
   }
 
-  .#{$grommet-namespace}control-icon-watch,
-  .#{$grommet-namespace}anchor:hover .#{$grommet-namespace}control-icon-watch {
-    stroke: none;
-    fill: $control-brand-color;
-  }
-
   &__thumbnail {
     width: 100%;
     height: $inuit-base-spacing-unit * 11;
@@ -62,19 +49,6 @@ $social-linkedin-color: #0077B5;
   }
 
   &__content {
-    // custom social icon colors for twitter, facebook, and linkedin
-    .#{$grommet-namespace}control-icon-social-twitter {
-      @include social-icon-color($social-twitter-color);
-    }
-
-    .#{$grommet-namespace}control-icon-social-facebook {
-      @include social-icon-color($social-facebook-color);
-    }
-
-    .#{$grommet-namespace}control-icon-social-linkedin {
-      @include social-icon-color($social-linkedin-color);
-    }
-
     // truncate description paragraph after 8 lines
     .#{$grommet-namespace}paragraph {
       overflow: hidden;

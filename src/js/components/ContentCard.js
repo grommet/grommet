@@ -17,13 +17,13 @@ const CLASS_ROOT = 'content-card';
 export default class ContentCard extends Component {
   constructor (props) {
     super(props);
-    this._handleClick = this._handleClick.bind(this);
+    this._onClick = this._onClick.bind(this);
     this.state = {
       activeVideo: false
     };
   }
 
-  _handleClick (event) {
+  _onClick (event) {
     const { video } = this.props;
 
     if (video) {
@@ -32,46 +32,45 @@ export default class ContentCard extends Component {
     }
   }
 
-  _renderLinkMarkup () {
+  _renderLink () {
     const { link } = this.props;
-    let linkMarkup;
 
     if (link) {
-      linkMarkup = (
+      return (
         <Box pad={{vertical: "small"}}>
           {link}
         </Box>
       );
     }
 
-    return linkMarkup;
+    return null;
   }
 
-  _renderVideoMarkup () {
+  _renderVideo () {
     const { video } = this.props;
     const { activeVideo } = this.state;
-    let videoMarkup;
-    let layerMarkup;
+    let layerContent;
+    let videoLayer;
 
     if (video && activeVideo) {
       if (video.source) {
-        videoMarkup = (
+        layerContent = (
           <Video>
             <source src={video.source} type={`video/${video.type}`}/>
           </Video>
         );
       } else {
-        videoMarkup = video;
+        layerContent = video;
       }
 
-      layerMarkup = (
-        <Layer onClose={this._handleClick} closer={true} flush={true}>
-          {videoMarkup}
+      videoLayer = (
+        <Layer onClose={this._onClick} closer={true} flush={true}>
+          {layerContent}
         </Layer>
       );
     }
 
-    return layerMarkup;
+    return videoLayer;
   }
 
   render () {
@@ -92,22 +91,22 @@ export default class ContentCard extends Component {
 
     let onContentCardClick = onClick;
     if (!onContentCardClick && video) {
-      onContentCardClick = this._handleClick;
+      onContentCardClick = this._onClick;
     }
 
-    const contentMarkup = (
+    const contentContainer = (
       <Box className={`${CLASS_ROOT}__content`} pad="medium">
         <Heading tag="h5" uppercase={true} margin="none">{label}</Heading>
         <Heading tag="h2" strong={true}>{heading}</Heading>
         <Paragraph margin="none">{description}</Paragraph>
         {children}
-        {this._renderLinkMarkup()}
+        {this._renderLink()}
       </Box>
     );
 
-    let thumbnailMarkup;
+    let thumbnailContainer;
     if (thumbnail) {
-      thumbnailMarkup = (
+      thumbnailContainer = (
         <Box className={`${CLASS_ROOT}__thumbnail`}
           backgroundImage={`url(${thumbnail})`}
           justify="center" align="center">
@@ -116,13 +115,13 @@ export default class ContentCard extends Component {
       );
     }
 
-    let first = thumbnailMarkup;
-    let second = contentMarkup;
+    let first = thumbnailContainer;
+    let second = contentContainer;
     let cardJustify;
 
     if (reverse) {
-      first = contentMarkup;
-      second = thumbnailMarkup;
+      first = contentContainer;
+      second = thumbnailContainer;
       // align thumbnail to bottom of card for bottom cardPlacement
       cardJustify = 'between';
     }
@@ -141,7 +140,7 @@ export default class ContentCard extends Component {
           full={cardFull} colorIndex="light-1">
           {first}
           {second}
-          {this._renderVideoMarkup()}
+          {this._renderVideo()}
         </Box>
       </Tile>
     );
