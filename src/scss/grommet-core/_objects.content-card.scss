@@ -35,20 +35,6 @@ $social-linkedin-color: #0077B5;
     }
   }
 
-  &__social-icon {
-    .#{$grommet-namespace}control-icon-social-twitter {
-      @include social-icon-color($social-twitter-color);
-    }
-
-    .#{$grommet-namespace}control-icon-social-facebook {
-      @include social-icon-color($social-facebook-color);
-    }
-
-    .#{$grommet-namespace}control-icon-social-linkedin {
-      @include social-icon-color($social-linkedin-color);
-    }
-  }
-
   .#{$grommet-namespace}control-icon-watch,
   .#{$grommet-namespace}anchor:hover .#{$grommet-namespace}control-icon-watch {
     stroke: none;
@@ -76,6 +62,19 @@ $social-linkedin-color: #0077B5;
   }
 
   &__content {
+    // custom social icon colors for twitter, facebook, and linkedin
+    .#{$grommet-namespace}control-icon-social-twitter {
+      @include social-icon-color($social-twitter-color);
+    }
+
+    .#{$grommet-namespace}control-icon-social-facebook {
+      @include social-icon-color($social-facebook-color);
+    }
+
+    .#{$grommet-namespace}control-icon-social-linkedin {
+      @include social-icon-color($social-linkedin-color);
+    }
+
     // truncate description paragraph after 8 lines
     .#{$grommet-namespace}paragraph {
       overflow: hidden;

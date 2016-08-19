@@ -32,23 +32,6 @@ export default class ContentCard extends Component {
     }
   }
 
-  _renderChildren () {
-    const { children, socialIcon } = this.props;
-
-    if (socialIcon) {
-      return (
-        <Box className="flex" pad={{between: 'large'}}>
-          {children}
-          <Box className={`${CLASS_ROOT}__social-icon`} align="end">
-            {socialIcon}
-          </Box>
-        </Box>
-      );
-    }
-
-    return children;
-  }
-
   _renderLinkMarkup () {
     const { link } = this.props;
     let linkMarkup;
@@ -92,8 +75,8 @@ export default class ContentCard extends Component {
   }
 
   render () {
-    const { thumbnail, description, heading, label, onClick, video,
-      socialIcon, direction, reverse, pad, className} = this.props;
+    const { children, thumbnail, description, heading, label, onClick, video,
+      direction, reverse, pad, className} = this.props;
     const tileProps = Props.pick(this.props, Object.keys(Tile.propTypes));
     delete tileProps.onClick;
     delete tileProps.pad;
@@ -117,8 +100,8 @@ export default class ContentCard extends Component {
         <Heading tag="h5" uppercase={true} margin="none">{label}</Heading>
         <Heading tag="h2" strong={true}>{heading}</Heading>
         <Paragraph margin="none">{description}</Paragraph>
-        {this._renderChildren()}
-        {(!socialIcon) ? this._renderLinkMarkup() : null}
+        {children}
+        {this._renderLinkMarkup()}
       </Box>
     );
 
@@ -179,7 +162,6 @@ ContentCard.propTypes = {
     PropTypes.element
   ]),
   reverse: PropTypes.bool,
-  socialIcon: PropTypes.element,
   ...Tile.propTypes
 };
 
