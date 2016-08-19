@@ -44,6 +44,7 @@ export default {
   HEADING: `${namespace}heading`,
   HEADLINE: `${namespace}headline`,
   HERO: `${namespace}hero`,
+  HOTSPOT: `${namespace}hotspot`,
   IMAGE: `${namespace}image`,
   IMAGE_FIELD: `${namespace}image-field`,
   LABEL: `${namespace}label`,

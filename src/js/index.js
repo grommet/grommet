@@ -24,6 +24,7 @@ var Grommet = {
   Header: require('./components/Header'),
   Heading: require('./components/Heading'),
   Headline: require('./components/Headline'),
+  Hotspot: require('./components/Hotspot'),
   Image: require('./components/Image'),
   ImageField: require('./components/ImageField'),
   Grommet: require('./components/Grommet'),
