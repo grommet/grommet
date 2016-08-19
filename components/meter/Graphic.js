@@ -69,32 +69,46 @@ var Graphic = function (_Component) {
 
     _this.state = _this._stateFromProps(props);
 
-    _this._onRequestForNextLegend = _this._onRequestForNextLegend.bind(_this);
-    _this._onRequestForPreviousLegend = _this._onRequestForPreviousLegend.bind(_this);
+    _this._onNextBand = _this._onNextBand.bind(_this);
+    _this._onPreviousBand = _this._onPreviousBand.bind(_this);
+    _this._onGraphicFocus = _this._onGraphicFocus.bind(_this);
+    _this._onGraphicBlur = _this._onGraphicBlur.bind(_this);
+    _this._onBandClick = _this._onBandClick.bind(_this);
     return _this;
   }
 
   (0, _createClass3.default)(Graphic, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      this._keyboardHandlers = {
-        left: this._onRequestForPreviousLegend,
-        up: this._onRequestForPreviousLegend,
-        right: this._onRequestForNextLegend,
-        down: this._onRequestForNextLegend
-      };
-      _KeyboardAccelerators2.default.startListeningToKeyboard(this, this._keyboardHandlers);
-    }
-  }, {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(newProps) {
       var state = this._stateFromProps(newProps);
       this.setState(state);
     }
   }, {
-    key: 'componentWillUnmount',
-    value: function componentWillUnmount() {
+    key: '_onGraphicFocus',
+    value: function _onGraphicFocus() {
+      this._keyboardHandlers = {
+        left: this._onPreviousBand,
+        up: this._onPreviousBand,
+        right: this._onNextBand,
+        down: this._onNextBand,
+        enter: this._onBandClick
+      };
+      _KeyboardAccelerators2.default.startListeningToKeyboard(this, this._keyboardHandlers);
+    }
+  }, {
+    key: '_onGraphicBlur',
+    value: function _onGraphicBlur() {
       _KeyboardAccelerators2.default.stopListeningToKeyboard(this, this._keyboardHandlers);
+    }
+  }, {
+    key: '_onBandClick',
+    value: function _onBandClick() {
+      if (this.props.activeIndex !== undefined) {
+        var activeBand = this.props.series[this.props.activeIndex];
+        if (activeBand && activeBand.onClick) {
+          activeBand.onClick();
+        }
+      }
     }
 
     // override
@@ -170,38 +184,32 @@ var Graphic = function (_Component) {
       return this._sliceCommands(0, this.props.max, this.props.min.value);
     }
   }, {
-    key: '_onRequestForPreviousLegend',
-    value: function _onRequestForPreviousLegend(event) {
-      if (document.activeElement === this.refs.meter) {
-        event.preventDefault();
-        var totalValueCount = _reactDom2.default.findDOMNode(this.refs.meterValues).childNodes.length;
+    key: '_onPreviousBand',
+    value: function _onPreviousBand(event) {
+      event.preventDefault();
+      var activeIndex = this.props.activeIndex !== undefined ? this.props.activeIndex : -1;
 
-        if (this.props.activeIndex - 1 < 0) {
-          this.props.onActivate(totalValueCount - 1);
-        } else {
-          this.props.onActivate(this.props.activeIndex - 1);
-        }
-
-        //stop event propagation
-        return true;
+      if (activeIndex - 1 >= 0) {
+        this.props.onActivate(activeIndex - 1);
       }
+
+      //stop event propagation
+      return true;
     }
   }, {
-    key: '_onRequestForNextLegend',
-    value: function _onRequestForNextLegend(event) {
-      if (document.activeElement === this.refs.meter) {
-        event.preventDefault();
-        var totalValueCount = _reactDom2.default.findDOMNode(this.refs.meterValues).childNodes.length;
+    key: '_onNextBand',
+    value: function _onNextBand(event) {
+      event.preventDefault();
+      var activeIndex = this.props.activeIndex !== undefined ? this.props.activeIndex : -1;
 
-        if (this.props.activeIndex + 1 >= totalValueCount) {
-          this.props.onActivate(0);
-        } else {
-          this.props.onActivate(this.props.activeIndex + 1);
-        }
+      var totalBands = _reactDom2.default.findDOMNode(this.refs.meterValues).childNodes.length;
 
-        //stop event propagation
-        return true;
+      if (activeIndex + 1 < totalBands) {
+        this.props.onActivate(activeIndex + 1);
       }
+
+      //stop event propagation
+      return true;
     }
   }, {
     key: '_renderLoading',
@@ -364,12 +372,13 @@ var Graphic = function (_Component) {
       return _react2.default.createElement(
         'svg',
         { ref: 'meter', className: CLASS_ROOT + '__graphic',
-          tabIndex: this.props.tabIndex, role: role,
-          width: this.state.viewBoxWidth,
+          tabIndex: role === 'img' ? undefined : this.props.tabIndex || '0',
+          width: this.state.viewBoxWidth, role: role,
           height: this.state.viewBoxHeight,
           viewBox: "0 0 " + this.state.viewBoxWidth + " " + this.state.viewBoxHeight,
           preserveAspectRatio: 'xMidYMid meet',
-          'aria-label': a11yTitle },
+          'aria-label': a11yTitle, onFocus: this._onGraphicFocus,
+          onBlur: this._onGraphicBlur },
         tracks,
         thresholds,
         values,

@@ -60,11 +60,12 @@ var _CSSClassnames = require('../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
+var _Announcer = require('../utils/Announcer');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+var CLASS_ROOT = _CSSClassnames2.default.BOX; // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var CLASS_ROOT = _CSSClassnames2.default.BOX;
 var BACKGROUND_COLOR_INDEX = _CSSClassnames2.default.BACKGROUND_COLOR_INDEX;
 
 var Box = function (_Component) {
@@ -91,6 +92,13 @@ var Box = function (_Component) {
           enter: clickCallback,
           space: clickCallback
         });
+      }
+    }
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate() {
+      if (this.props.announce) {
+        (0, _Announcer.announce)(this.refs.boxContainer.textContent);
       }
     }
   }, {
@@ -263,6 +271,7 @@ exports.default = Box;
 
 Box.propTypes = {
   a11yTitle: _react.PropTypes.string,
+  announce: _react.PropTypes.bool,
   align: _react.PropTypes.oneOf(['start', 'center', 'end', 'baseline', 'stretch']),
   alignContent: _react.PropTypes.oneOf(['start', 'center', 'end', 'between', 'around', 'stretch']),
   appCentered: _react.PropTypes.bool,
@@ -298,6 +307,7 @@ Box.contextTypes = {
 };
 
 Box.defaultProps = {
+  announce: false,
   direction: 'column',
   pad: 'none',
   tag: 'div',

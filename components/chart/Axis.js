@@ -100,6 +100,7 @@ var Axis = function (_Component) {
     key: 'render',
     value: function render() {
       var _props = this.props;
+      var a11yTitle = _props.a11yTitle;
       var align = _props.align;
       var reverse = _props.reverse;
       var ticks = _props.ticks;
@@ -147,10 +148,13 @@ var Axis = function (_Component) {
         );
       });
 
+      var axisLabel = a11yTitle || _Intl2.default.getMessage(intl, 'AxisLabel', {
+        orientation: vertical ? 'y' : 'x'
+      });
+
       return _react2.default.createElement(
         'div',
-        { ref: 'axis', id: this.props.id, role: 'rowgroup',
-          'aria-label': (vertical ? 'y' : 'x') + ' ' + _Intl2.default.getMessage(intl, 'Axis'),
+        { ref: 'axis', id: this.props.id, role: 'rowgroup', 'aria-label': axisLabel,
           className: classes.join(' '), style: this.props.style },
         elements
       );
@@ -168,6 +172,7 @@ Axis.contextTypes = {
 };
 
 Axis.propTypes = {
+  a11yTitle: _react.PropTypes.string,
   align: _react.PropTypes.oneOf(['start', 'end']), // only from Chart
   count: _react.PropTypes.number.isRequired,
   labels: _react.PropTypes.arrayOf(_react.PropTypes.shape({

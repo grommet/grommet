@@ -253,7 +253,6 @@ var Chart = function (_Component) {
       var a11yTitle = _props2.a11yTitle;
       var full = _props2.full;
       var loading = _props2.loading;
-      var tabIndex = _props2.tabIndex;
       var vertical = _props2.vertical;
       var _state = this.state;
       var alignBottom = _state.alignBottom;
@@ -351,7 +350,7 @@ var Chart = function (_Component) {
       return _react2.default.createElement(
         'div',
         { ref: 'chart', className: classes.join(' '), role: 'group',
-          tabIndex: tabIndex, 'aria-label': ariaLabel },
+          'aria-label': ariaLabel },
         children
       );
     }
@@ -367,17 +366,12 @@ Chart.contextTypes = {
   intl: _react.PropTypes.object
 };
 
-Chart.defaultProps = {
-  tabIndex: "0"
-};
-
 Chart.propTypes = {
   a11yTitle: _react.PropTypes.string,
   full: _react.PropTypes.bool,
   horizontalAlignWith: _react.PropTypes.string,
   loading: _react.PropTypes.bool,
   onMaxCount: _react.PropTypes.func,
-  tabIndex: _react.PropTypes.string,
   vertical: _react.PropTypes.bool,
   verticalAlignWith: _react.PropTypes.string
 };

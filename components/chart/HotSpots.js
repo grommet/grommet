@@ -42,15 +42,19 @@ var _CSSClassnames = require('../../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
+var _Intl = require('../../utils/Intl');
+
+var _Intl2 = _interopRequireDefault(_Intl);
+
 var _KeyboardAccelerators = require('../../utils/KeyboardAccelerators');
 
 var _KeyboardAccelerators2 = _interopRequireDefault(_KeyboardAccelerators);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.CHART_HOT_SPOTS; // (C) Copyright 2016 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2016 Hewlett Packard Enterprise Development LP
 
-var CHART = _CSSClassnames2.default.CHART;
+var CLASS_ROOT = _CSSClassnames2.default.CHART_HOT_SPOTS;
 
 // Interactive regions.
 
@@ -64,58 +68,68 @@ var HotSpots = function (_Component) {
 
     _this._onPreviousHotSpot = _this._onPreviousHotSpot.bind(_this);
     _this._onNextHotSpot = _this._onNextHotSpot.bind(_this);
+    _this._onHotSpotFocus = _this._onHotSpotFocus.bind(_this);
+    _this._onHotSpotBlur = _this._onHotSpotBlur.bind(_this);
+    _this._onHotSpotClick = _this._onHotSpotClick.bind(_this);
     return _this;
   }
 
   (0, _createClass3.default)(HotSpots, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
+    key: '_onHotSpotFocus',
+    value: function _onHotSpotFocus() {
       this._keyboardHandlers = {
         left: this._onPreviousHotSpot,
         up: this._onPreviousHotSpot,
         right: this._onNextHotSpot,
-        down: this._onNextHotSpot
+        down: this._onNextHotSpot,
+        enter: this._onHotSpotClick
       };
       _KeyboardAccelerators2.default.startListeningToKeyboard(this, this._keyboardHandlers);
     }
   }, {
-    key: 'componentWillUnmount',
-    value: function componentWillUnmount() {
+    key: '_onHotSpotBlur',
+    value: function _onHotSpotBlur() {
       _KeyboardAccelerators2.default.stopListeningToKeyboard(this, this._keyboardHandlers);
     }
   }, {
     key: '_onPreviousHotSpot',
     value: function _onPreviousHotSpot() {
-      var className = document.activeElement.getAttribute('class');
-      if (className && className.indexOf(CHART) !== -1) {
-        var _props = this.props;
-        var activeIndex = _props.activeIndex;
-        var onActive = _props.onActive;
+      var _props = this.props;
+      var activeIndex = _props.activeIndex;
+      var onActive = _props.onActive;
 
-        var previousIndex = activeIndex - 1;
-        if (previousIndex >= 0) {
-          onActive(previousIndex);
-        }
-        //stop event propagation
-        return true;
+      var previousIndex = activeIndex - 1;
+      if (previousIndex >= 0) {
+        onActive(previousIndex);
       }
+      //stop event propagation
+      return true;
     }
   }, {
     key: '_onNextHotSpot',
     value: function _onNextHotSpot() {
-      var className = document.activeElement.getAttribute('class');
-      if (className && className.indexOf(CHART) !== -1) {
-        var _props2 = this.props;
-        var activeIndex = _props2.activeIndex;
-        var count = _props2.count;
-        var onActive = _props2.onActive;
+      var _props2 = this.props;
+      var activeIndex = _props2.activeIndex;
+      var count = _props2.count;
+      var onActive = _props2.onActive;
 
-        var nextIndex = activeIndex + 1;
-        if (nextIndex < count) {
-          onActive(nextIndex);
-        }
-        //stop event propagation
-        return true;
+      var nextIndex = activeIndex + 1;
+      if (nextIndex < count) {
+        onActive(nextIndex);
+      }
+      //stop event propagation
+      return true;
+    }
+  }, {
+    key: '_onHotSpotClick',
+    value: function _onHotSpotClick() {
+      var _props3 = this.props;
+      var activeIndex = _props3.activeIndex;
+      var onClick = _props3.onClick;
+
+
+      if (activeIndex !== undefined && onClick) {
+        onClick(activeIndex);
       }
     }
   }, {
@@ -123,13 +137,15 @@ var HotSpots = function (_Component) {
     value: function render() {
       var _classnames;
 
-      var _props3 = this.props;
-      var activeIndex = _props3.activeIndex;
-      var className = _props3.className;
-      var count = _props3.count;
-      var onActive = _props3.onActive;
-      var onClick = _props3.onClick;
-      var vertical = _props3.vertical;
+      var _props4 = this.props;
+      var a11yTitle = _props4.a11yTitle;
+      var activeIndex = _props4.activeIndex;
+      var className = _props4.className;
+      var count = _props4.count;
+      var onActive = _props4.onActive;
+      var onClick = _props4.onClick;
+      var vertical = _props4.vertical;
+      var intl = this.context.intl;
 
 
       var classes = (0, _classnames4.default)(CLASS_ROOT, className, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--vertical', vertical), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--clickable', onClick), _classnames));
@@ -146,7 +162,7 @@ var HotSpots = function (_Component) {
           basis = defaultBasis;
         }
         var style = { flexBasis: basis + '%' };
-        items.push(_react2.default.createElement('div', { key: index, className: bandClasses, style: style,
+        items.push(_react2.default.createElement('div', { key: index, className: bandClasses, style: style, role: 'row',
           onMouseOver: onActive ? function () {
             return onActive(index);
           } : undefined,
@@ -162,10 +178,14 @@ var HotSpots = function (_Component) {
         _loop(index);
       }
 
+      var hotSpotsLabel = a11yTitle || _Intl2.default.getMessage(intl, 'HotSpotsLabel');
+
       return _react2.default.createElement(
         'div',
         { ref: 'hotSpots', className: classes, style: { padding: _utils.padding },
-          'aria-hidden': 'true' },
+          tabIndex: '0', onFocus: this._onHotSpotFocus,
+          onBlur: this._onHotSpotBlur, role: 'group',
+          'aria-label': hotSpotsLabel },
         items
       );
     }
@@ -177,7 +197,12 @@ HotSpots.displayName = 'HotSpots';
 exports.default = HotSpots;
 ;
 
+HotSpots.contextTypes = {
+  intl: _react.PropTypes.object
+};
+
 HotSpots.propTypes = {
+  a11yTitle: _react.PropTypes.string,
   activeIndex: _react.PropTypes.number,
   count: _react.PropTypes.number.isRequired,
   onActive: _react.PropTypes.func,
