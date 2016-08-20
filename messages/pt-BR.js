@@ -74,6 +74,7 @@ exports.default = {
   'Skip to': 'Saltar para',
   State: 'Estado',
   Status: 'Situaçāo',
+  SubBurstLabel: 'SubBurst: pressione setas de nevegação para interagir',
   subtract: 'subtract',
   'Tab Contents': '{activeTitle} Conteúdo da Tab',
   Tasks: 'Tarefas',

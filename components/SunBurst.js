@@ -34,6 +34,14 @@ var _CSSClassnames = require('../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
+var _Intl = require('../utils/Intl');
+
+var _Intl2 = _interopRequireDefault(_Intl);
+
+var _KeyboardAccelerators = require('../utils/KeyboardAccelerators');
+
+var _KeyboardAccelerators2 = _interopRequireDefault(_KeyboardAccelerators);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var CLASS_ROOT = _CSSClassnames2.default.SUN_BURST; // (C) Copyright 2016 Hewlett Packard Enterprise Development LP
@@ -52,8 +60,15 @@ var SunBurst = function (_Component) {
 
     _this._layout = _this._layout.bind(_this);
     _this._onResize = _this._onResize.bind(_this);
+    _this._onPreviousSunBurst = _this._onPreviousSunBurst.bind(_this);
+    _this._onNextSunBurst = _this._onNextSunBurst.bind(_this);
+    _this._onParentSunBurst = _this._onParentSunBurst.bind(_this);
+    _this._onChildSunBurst = _this._onChildSunBurst.bind(_this);
+    _this._onSunBurstFocus = _this._onSunBurstFocus.bind(_this);
+    _this._onSunBurstBlur = _this._onSunBurstBlur.bind(_this);
+    _this._onSunBurstClick = _this._onSunBurstClick.bind(_this);
 
-    _this.state = { height: 100, width: 100 };
+    _this.state = { height: 100, width: 100, activeSunBurst: [-1] };
     return _this;
   }
 
@@ -75,6 +90,103 @@ var SunBurst = function (_Component) {
       window.removeEventListener('resize', this._onResize);
     }
   }, {
+    key: '_onSunBurstFocus',
+    value: function _onSunBurstFocus() {
+      this._keyboardHandlers = {
+        left: this._onPreviousSunBurst,
+        up: this._onParentSunBurst,
+        right: this._onNextSunBurst,
+        down: this._onChildSunBurst,
+        enter: this._onSunBurstClick
+      };
+      _KeyboardAccelerators2.default.startListeningToKeyboard(this, this._keyboardHandlers);
+    }
+  }, {
+    key: '_onSunBurstBlur',
+    value: function _onSunBurstBlur() {
+      _KeyboardAccelerators2.default.stopListeningToKeyboard(this, this._keyboardHandlers);
+    }
+  }, {
+    key: '_onPreviousSunBurst',
+    value: function _onPreviousSunBurst() {
+      var onActive = this.props.onActive;
+
+      var previousSunBurst = this.state.activeSunBurst.slice();
+
+      previousSunBurst[previousSunBurst.length - 1] -= 1;
+      var id = previousSunBurst.join(',');
+      if (this.refs[id]) {
+        onActive(previousSunBurst);
+        this.setState({ activeSunBurst: previousSunBurst });
+      }
+
+      //stop event propagation
+      return true;
+    }
+  }, {
+    key: '_onParentSunBurst',
+    value: function _onParentSunBurst(event) {
+      event.preventDefault();
+      var onActive = this.props.onActive;
+
+      var parentSunBurst = this.state.activeSunBurst.slice(0, this.state.activeSunBurst.length - 1);
+
+      var id = parentSunBurst.join(',');
+      if (this.refs[id]) {
+        onActive(parentSunBurst);
+        this.setState({ activeSunBurst: parentSunBurst });
+      }
+
+      //stop event propagation
+      return true;
+    }
+  }, {
+    key: '_onChildSunBurst',
+    value: function _onChildSunBurst(event) {
+      event.preventDefault();
+      var onActive = this.props.onActive;
+
+      var childSunBurst = this.state.activeSunBurst.slice();
+      childSunBurst.push(0);
+
+      var id = childSunBurst.join(',');
+      if (this.refs[id]) {
+        onActive(childSunBurst);
+        this.setState({ activeSunBurst: childSunBurst });
+      }
+
+      //stop event propagation
+      return true;
+    }
+  }, {
+    key: '_onNextSunBurst',
+    value: function _onNextSunBurst() {
+      var onActive = this.props.onActive;
+
+      var nextSunBurst = this.state.activeSunBurst.slice();
+
+      nextSunBurst[nextSunBurst.length - 1] += 1;
+      var id = nextSunBurst.join(',');
+      if (this.refs[id]) {
+        onActive(nextSunBurst);
+        this.setState({ activeSunBurst: nextSunBurst });
+      }
+
+      //stop event propagation
+      return true;
+    }
+  }, {
+    key: '_onSunBurstClick',
+    value: function _onSunBurstClick() {
+      var onClick = this.props.onClick;
+      var activeSunBurst = this.state.activeSunBurst;
+
+
+      if (this.refs[activeSunBurst.join(',')] && onClick) {
+        onClick(activeSunBurst);
+      }
+    }
+  }, {
     key: '_onResize',
     value: function _onResize() {
       // debounce
@@ -91,7 +203,7 @@ var SunBurst = function (_Component) {
     }
   }, {
     key: '_renderData',
-    value: function _renderData(path, data, total, centerX, centerY, radius, startAngle, endAngle) {
+    value: function _renderData(path, data, total, centerX, centerY, radius, startAngle, endAngle, role, value) {
       var _this2 = this;
 
       var _props = this.props;
@@ -128,8 +240,12 @@ var SunBurst = function (_Component) {
         var endAngle = (0, _Graphics.translateEndAngle)(startAngle, anglePer, datum.value);
         var commands = (0, _Graphics.arcCommands)(centerX, centerY, radius, startAngle, endAngle);
 
-        result.push(_react2.default.createElement('path', { key: datumPath.join(','), className: className.join(' '),
+        var id = datumPath.join(',');
+
+        result.push(_react2.default.createElement('path', { ref: id, key: id, className: className.join(' '),
           fill: 'none', strokeWidth: unit * 2, d: commands,
+          'aria-label': datum.children ? undefined : datum.value,
+          role: datum.children ? undefined : 'row',
           onMouseOver: onActive ? function () {
             return onActive(datumPath);
           } : undefined,
@@ -141,19 +257,25 @@ var SunBurst = function (_Component) {
           } : undefined }));
 
         if (datum.children) {
-          result = result.concat(_this2._renderData(datumPath, datum.children, datum.total, centerX, centerY, radius + unit * 2 + ringPad, startAngle, endAngle));
+          result = result.concat(_this2._renderData(datumPath, datum.children, datum.total, centerX, centerY, radius + unit * 2 + ringPad, startAngle, endAngle, 'group', datum.value));
         }
 
         // + 1 is for margin between slices
         startAngle = endAngle + 1;
       });
 
-      return result;
+      return _react2.default.createElement(
+        'g',
+        { key: '' + radius + total, role: role || 'rowgroup',
+          'aria-label': value || total },
+        result
+      );
     }
   }, {
     key: 'render',
     value: function render() {
       var _props2 = this.props;
+      var a11yTitle = _props2.a11yTitle;
       var active = _props2.active;
       var data = _props2.data;
       var label = _props2.label;
@@ -161,6 +283,8 @@ var SunBurst = function (_Component) {
       var _state = this.state;
       var width = _state.width;
       var height = _state.height;
+      var intl = this.context.intl;
+
 
       var unit = width / UNIT_FACTOR;
       var classes = [CLASS_ROOT];
@@ -187,18 +311,18 @@ var SunBurst = function (_Component) {
         );
       }
 
+      var sunBurstLabel = a11yTitle || _Intl2.default.getMessage(intl, 'SunBurstLabel');
+
       return _react2.default.createElement(
         'div',
         { className: CLASS_ROOT + '__container' },
         _react2.default.createElement(
           'svg',
           { ref: 'svg', className: classes.join(' '),
-            viewBox: '0 0 ' + width + ' ' + height },
-          _react2.default.createElement(
-            'g',
-            null,
-            paths
-          )
+            viewBox: '0 0 ' + width + ' ' + height, role: 'group',
+            'aria-label': sunBurstLabel, tabIndex: '0',
+            onFocus: this._onSunBurstFocus, onBlur: this._onSunBurstBlur },
+          paths
         ),
         labelElement
       );
@@ -211,7 +335,12 @@ SunBurst.displayName = 'SunBurst';
 exports.default = SunBurst;
 
 
+SunBurst.contextTypes = {
+  intl: _react.PropTypes.object
+};
+
 SunBurst.propTypes = {
+  a11yTitle: _react.PropTypes.string,
   active: _react.PropTypes.arrayOf(_react.PropTypes.number),
   data: _react.PropTypes.arrayOf(_react.PropTypes.shape({
     children: _react.PropTypes.arrayOf(_react.PropTypes.object),
