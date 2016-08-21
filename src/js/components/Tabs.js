@@ -22,7 +22,7 @@ export default class Tabs extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if(nextProps.activeIndex &&
+    if(typeof nextProps.activeIndex !== 'undefined' &&
       this.state.activeIndex !== nextProps.activeIndex) {
       this.setState({activeIndex: nextProps.activeIndex});
     }
