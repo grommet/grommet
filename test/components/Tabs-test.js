@@ -27,3 +27,20 @@ test('loads a basic Tabs', (t) => {
     t.fail('Tabs does not have class');
   }
 });
+
+test('updates activeIndex state when activeIndex prop changes', (t) => {
+  t.plan(4);
+  const component = TestUtils.renderIntoDocument(<Tabs />);
+
+  // test defaultProps state.
+  t.equal(component.state.activeIndex, 0);
+  // test state updating when activeIndex is truthy.
+  component.componentWillReceiveProps({activeIndex: 1});
+  t.equal(component.state.activeIndex, 1);
+  // test state updating when activeIndex is non-integer.
+  component.componentWillReceiveProps({activeIndex: null});
+  t.equal(component.state.activeIndex, 1);
+  // test state updating when activeIndex is falsey.
+  component.componentWillReceiveProps({activeIndex: 0});
+  t.equal(component.state.activeIndex, 0);
+});
