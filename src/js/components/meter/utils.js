@@ -10,8 +10,6 @@ export var baseDimension = baseUnit * 8;
 
 export var propTypes = {
   activeIndex: PropTypes.number,
-  a11yDesc: PropTypes.string,
-  a11yDescId: PropTypes.string,
   a11yTitle: PropTypes.string,
   a11yTitleId: PropTypes.string,
   max: PropTypes.shape({
@@ -36,31 +34,20 @@ export var propTypes = {
 };
 
 export function buildPath (itemIndex, commands, classes, onActivate,
-    onClick, a11yDescId, a11yTitle, activeMeterSlice) {
+    onClick, a11yTitle, role) {
   if (onActivate) {
     const onOver = onActivate.bind(null, itemIndex);
     const onOut = onActivate.bind(null, undefined);
 
     let a11yRoles = {};
-    let titleComponent;
-    let activeSlice;
-    if (a11yTitle && a11yDescId) {
-      activeSlice = activeMeterSlice;
-      let pathTitleId = `title_${a11yDescId}`;
-      a11yRoles['aria-labelledby'] = pathTitleId;
-      a11yRoles.id = a11yDescId;
-      a11yRoles.role = 'tab';
-      titleComponent = (
-        <title id={pathTitleId}>
-          {a11yTitle}
-        </title>
-      );
+    if (a11yTitle) {
+      a11yRoles['aria-label'] = a11yTitle;
+      a11yRoles.role = role;
     }
 
     return (
-      <g key={itemIndex} ref={a11yDescId} {...a11yRoles}>
-        {titleComponent}
-        <path ref={activeSlice} className={classes.join(' ')} d={commands}
+      <g key={itemIndex} {...a11yRoles}>
+        <path className={classes.join(' ')} d={commands}
           data-index={itemIndex} onFocus={onOver} onBlur={onOut} />
         <path className={`${CLASS_ROOT}__hot`} d={commands} fill="none"
           onMouseOver={onOver} onMouseOut={onOut}

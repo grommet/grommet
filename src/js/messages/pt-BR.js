@@ -9,6 +9,7 @@ export default {
   add: 'add',
   Alerts: 'Alertas',
   All: 'Todos',
+  AxisLabel: 'Coordenada {orientation}',
   area: 'Área',
   Bar: 'Bar',
   bar: 'bar',
@@ -35,6 +36,11 @@ export default {
   Filter: 'Filtro',
   filter: 'filtro',
   Footer: 'Rodapé',
+  HotSpotsLabel: 'HotSpots: pressione setas de nevegação para interagir',
+  'GraphValues': (
+    'Gráfico têm {count} itens. O maior é {highest}' +
+    ' e o menor é {smallest}'
+  ),
   'Grommet Logo': 'Gromment Logomarca',
   'Layer': 'Modal',
   line: 'linha',
@@ -67,6 +73,7 @@ export default {
   'Skip to': 'Saltar para',
   State: 'Estado',
   Status: 'Situaçāo',
+  SubBurstLabel: 'SubBurst: pressione setas de nevegação para interagir',
   subtract: 'subtract',
   'Tab Contents': '{activeTitle} Conteúdo da Tab',
   Tasks: 'Tarefas',

@@ -6,6 +6,7 @@ import Intl from '../utils/Intl';
 import Props from '../utils/Props';
 import SkipLinkAnchor from './SkipLinkAnchor';
 import CSSClassnames from '../utils/CSSClassnames';
+import { announce } from '../utils/Announcer';
 
 const CLASS_ROOT = CSSClassnames.BOX;
 const BACKGROUND_COLOR_INDEX = CSSClassnames.BACKGROUND_COLOR_INDEX;
@@ -13,10 +14,11 @@ const BACKGROUND_COLOR_INDEX = CSSClassnames.BACKGROUND_COLOR_INDEX;
 export default class Box extends Component {
 
   componentDidMount () {
-    if (this.props.onClick) {
+    const { onClick } = this.props;
+    if (onClick) {
       let clickCallback = function () {
         if (this.refs.boxContainer === document.activeElement) {
-          this.props.onClick();
+          onClick();
         }
       }.bind(this);
 
@@ -27,6 +29,11 @@ export default class Box extends Component {
     }
   }
 
+  componentDidUpdate () {
+    if (this.props.announce) {
+      announce(this.refs.boxContainer.textContent);
+    }
+  }
   componentWillUnmount () {
     if (this.props.onClick) {
       KeyboardAccelerators.stopListeningToKeyboard(this);
@@ -51,6 +58,9 @@ export default class Box extends Component {
   }
 
   render () {
+    const { a11yTitle, appCentered, backgroundImage, children, className,
+      colorIndex, containerClassName, flex, focusable, id, onClick, primary,
+      role, size, tag, tabIndex, texture } = this.props;
     let classes = [CLASS_ROOT];
     let containerClasses = [CLASS_ROOT + "__container"];
     let restProps = Props.omit(this.props, Object.keys(Box.propTypes));
@@ -67,98 +77,103 @@ export default class Box extends Component {
     this._addPropertyClass(classes, CLASS_ROOT, 'size');
     this._addPropertyClass(classes, CLASS_ROOT, 'textAlign', 'text-align');
     this._addPropertyClass(classes, CLASS_ROOT, 'wrap');
+
     if (this.props.hasOwnProperty('flex')) {
-      if (this.props.flex) {
+      if (flex) {
         classes.push('flex');
       } else {
         classes.push('no-flex');
       }
     }
     if (this.props.hasOwnProperty('size')) {
-      if (this.props.size) {
+      if (size) {
         classes.push(`${CLASS_ROOT}--size`);
       }
     }
 
-    if (this.props.appCentered) {
+    if (appCentered) {
       this._addPropertyClass(containerClasses,
         CLASS_ROOT + "__container", 'full');
-      if (this.props.colorIndex) {
+      if (colorIndex) {
         containerClasses.push(
-          `${BACKGROUND_COLOR_INDEX}-${this.props.colorIndex}`);
+          `${BACKGROUND_COLOR_INDEX}-${colorIndex}`);
       }
-      if (this.props.containerClassName) {
-        containerClasses.push(this.props.containerClassName);
+      if (containerClassName) {
+        containerClasses.push(containerClassName);
       }
     } else {
-      if (this.props.colorIndex) {
-        classes.push(`${BACKGROUND_COLOR_INDEX}-${this.props.colorIndex}`);
+      if (colorIndex) {
+        classes.push(`${BACKGROUND_COLOR_INDEX}-${colorIndex}`);
       }
     }
 
     let a11yProps = {};
-    if (this.props.onClick) {
+    if (onClick) {
       classes.push(CLASS_ROOT + "--clickable");
-      if (this.props.focusable) {
-        let boxLabel = this.props.a11yTitle ||
+      if (focusable) {
+        let boxLabel = a11yTitle ||
           Intl.getMessage(this.context.intl, 'Box');
         a11yProps.tabIndex = 0;
         a11yProps["aria-label"] = boxLabel;
-        a11yProps.role = this.props.role || 'link';
+        a11yProps.role = role || 'link';
       }
     }
 
     let skipLinkAnchor;
-    if (this.props.primary) {
+    if (primary) {
       let mainContentLabel = (
         Intl.getMessage(this.context.intl, 'Main Content')
       );
       skipLinkAnchor = <SkipLinkAnchor label={mainContentLabel} />;
     }
 
-    if (this.props.className) {
-      classes.push(this.props.className);
+    if (className) {
+      classes.push(className);
     }
 
     let style = {};
-    if (this.props.texture && 'string' === typeof this.props.texture) {
-      style.backgroundImage = this.props.texture;
-    } else if (this.props.backgroundImage) {
+    if (texture && 'string' === typeof texture) {
+      if (texture.indexOf('url(') !== -1) {
+        style.backgroundImage = texture;
+      } else {
+        style.backgroundImage = `url(${texture})`;
+      }
+    } else if (backgroundImage) {
       style.background =
-        this.props.backgroundImage + " no-repeat center center";
+        backgroundImage + " no-repeat center center";
       style.backgroundSize = "cover";
     }
     style = {...style, ...restProps.style};
-    let texture;
-    if ('object' === typeof this.props.texture) {
-      texture = (
-        <div className={CLASS_ROOT + "__texture"}>{this.props.texture}</div>
+    let textureMarkup;
+    if ('object' === typeof texture) {
+      textureMarkup = (
+        <div className={CLASS_ROOT + "__texture"}>{texture}</div>
       );
     }
 
-    const Component = this.props.tag;
+    const Component = tag;
 
-    if (this.props.appCentered) {
+    if (appCentered) {
       return (
         <div {...restProps} ref="boxContainer"
           className={containerClasses.join(' ')}
-          style={style} role={this.props.role} {...a11yProps}>
+          style={style} role={role} {...a11yProps}>
           {skipLinkAnchor}
-          <Component id={this.props.id} className={classes.join(' ')}>
-            {texture}
-            {this.props.children}
+          <Component id={id} className={classes.join(' ')}>
+            {textureMarkup}
+            {children}
           </Component>
         </div>
       );
     } else {
       return (
-        <Component {...restProps} ref="boxContainer" id={this.props.id}
+        <Component {...restProps} ref="boxContainer" id={id}
           className={classes.join(' ')} style={style}
-          role={this.props.role} tabIndex={this.props.tabIndex}
-          onClick={this.props.onClick} {...a11yProps}>
+          role={role} tabIndex={tabIndex}
+          onClick={onClick} {...a11yProps}>
           {skipLinkAnchor}
-          {texture}
-          {this.props.children}
+          {textureMarkup}
+          {children}
         </Component>
       );
     }
@@ -168,6 +183,7 @@ export default class Box extends Component {
 
 Box.propTypes = {
   a11yTitle: PropTypes.string,
+  announce: PropTypes.bool,
   align: PropTypes.oneOf(['start', 'center', 'end', 'baseline', 'stretch']),
   alignContent: PropTypes.oneOf(['start', 'center', 'end', 'between',
     'around', 'stretch']),
@@ -211,6 +227,7 @@ Box.contextTypes = {
 };
 
 Box.defaultProps = {
+  announce: false,
   direction: 'column',
   pad: 'none',
   tag: 'div',

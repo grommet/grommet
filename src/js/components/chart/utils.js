@@ -21,10 +21,12 @@ export class trackSize {
   }
 
   _measure () {
-    const rect = this._element.getBoundingClientRect();
-    this._size.width = this._width || Math.round(rect.width);
-    this._size.height = this._height || Math.round(rect.height);
-    this._onSize(this._size);
+    if (this._element) {
+      const rect = this._element.getBoundingClientRect();
+      this._size.width = this._width || Math.round(rect.width);
+      this._size.height = this._height || Math.round(rect.height);
+      this._onSize(this._size);
+    }
   }
 
   _onResize () {

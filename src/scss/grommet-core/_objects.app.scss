@@ -23,4 +23,11 @@
     margin-left: auto;
     margin-right: auto;
   }
+
+  .#{$grommet-namespace}app__announcer {
+    left: -100%;
+    right: 100%;
+    z-index: -1;
+    position: fixed;
+  }
 }

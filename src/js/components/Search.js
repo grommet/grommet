@@ -4,6 +4,7 @@ import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 import Drop from '../utils/Drop';
+import Props from '../utils/Props';
 import Responsive from '../utils/Responsive';
 import Button from './Button';
 import SearchIcon from './icons/base/Search';
@@ -267,6 +268,7 @@ export default class Search extends Component {
   }
 
   _renderDrop () {
+    let restProps = Props.omit(this.props, Object.keys(Search.propTypes));
     let classes = classnames (
       {
         [`${BACKGROUND_COLOR_INDEX}-${this.props.dropColorIndex}`]:
@@ -280,7 +282,7 @@ export default class Search extends Component {
     let input;
     if (! this.state.inline) {
       input = (
-        <input key="input" id="search-drop-input" type="search"
+        <input {...restProps} key="input" id="search-drop-input" type="search"
           autoComplete="off"
           defaultValue={this.props.defaultValue}
           value={this.props.value}
@@ -340,6 +342,7 @@ export default class Search extends Component {
   }
 
   render () {
+    let restProps = Props.omit(this.props, Object.keys(Search.propTypes));
     let classes = classnames(
       CLASS_ROOT,
       {
@@ -357,7 +360,7 @@ export default class Search extends Component {
     if (this.state.inline) {
       return (
         <div className={classes}>
-          <input ref="input" type="search"
+          <input {...restProps} ref="input" type="search"
             id={this.props.id}
             placeholder={this.props.placeHolder}
             autoComplete="off"
@@ -388,6 +391,7 @@ export default class Search extends Component {
 }
 
 Search.propTypes = {
+  align: PropTypes.string,
   defaultValue: PropTypes.string,
   dropAlign: Drop.alignPropType,
   dropColorIndex: PropTypes.string,
