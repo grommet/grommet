@@ -56,7 +56,6 @@ var Spiral = function (_Graphic) {
     (0, _classCallCheck3.default)(this, Spiral);
 
     //needed in Graphic.js to fix minification issues
-
     var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Spiral).call(this, props, context));
 
     _this.displayName = 'Spiral';

@@ -51,7 +51,6 @@ var Bar = function (_Graphic) {
     (0, _classCallCheck3.default)(this, Bar);
 
     //needed in Graphic.js to fix minification issues
-
     var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Bar).call(this, props, context));
 
     _this.displayName = 'Bar';

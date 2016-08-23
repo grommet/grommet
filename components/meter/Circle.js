@@ -46,7 +46,6 @@ var Circle = function (_Graphic) {
     (0, _classCallCheck3.default)(this, Circle);
 
     //needed in Graphic.js to fix minification issues
-
     var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Circle).call(this, props, context));
 
     _this.displayName = 'Circle';

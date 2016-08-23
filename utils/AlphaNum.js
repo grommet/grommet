@@ -9,7 +9,6 @@ exports.default = {
   // http://my.opera.com/GreyWyvern/blog/show.dml/1671288
   // Do not attempt to change '==' to '===' in the following
   // method. Avoid type comparison is done on purpose.
-
   compare: function compare(a, b) {
     function chunkify(t) {
       var tz = [],

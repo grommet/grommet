@@ -44,6 +44,10 @@ var _classnames2 = require('classnames');
 
 var _classnames3 = _interopRequireDefault(_classnames2);
 
+var _CSSClassnames = require('../utils/CSSClassnames');
+
+var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
+
 var _Props = require('../utils/Props');
 
 var _Props2 = _interopRequireDefault(_Props);
@@ -82,7 +86,9 @@ var _Watch2 = _interopRequireDefault(_Watch);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = 'card'; // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+
+var CLASS_ROOT = _CSSClassnames2.default.CARD;
 
 var Card = function (_Component) {
   (0, _inherits3.default)(Card, _Component);
@@ -213,8 +219,7 @@ var Card = function (_Component) {
           { className: CLASS_ROOT + '__thumbnail',
             backgroundImage: 'url(' + thumbnail + ')',
             justify: 'center', align: 'center' },
-          video ? _react2.default.createElement(_Anchor2.default, { icon: _react2.default.createElement(_Watch2.default, { size: 'xlarge' }) }) : null,
-          '}'
+          video ? _react2.default.createElement(_Anchor2.default, { icon: _react2.default.createElement(_Watch2.default, { size: 'xlarge' }) }) : null
         );
       }
 

@@ -20,6 +20,7 @@ exports.default = {
   BRICK: namespace + 'brick',
   BUTTON: namespace + 'button',
   CALENDAR: namespace + 'calendar',
+  CARD: namespace + 'card',
   CAROUSEL: namespace + 'carousel',
   CAROUSEL_CONTROLS: namespace + 'carousel-controls',
   CHART: namespace + 'chart',
