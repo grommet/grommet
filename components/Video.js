@@ -4,9 +4,13 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+var _extends2 = require('babel-runtime/helpers/extends');
 
-var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+var _extends3 = _interopRequireDefault(_extends2);
+
+var _assign = require('babel-runtime/core-js/object/assign');
+
+var _assign2 = _interopRequireDefault(_assign);
 
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
@@ -32,49 +36,25 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _classnames4 = require('classnames');
-
-var _classnames5 = _interopRequireDefault(_classnames4);
-
-var _Intl = require('../utils/Intl');
-
-var _Intl2 = _interopRequireDefault(_Intl);
-
-var _Responsive = require('../utils/Responsive');
-
-var _Responsive2 = _interopRequireDefault(_Responsive);
-
-var _Button = require('./Button');
-
-var _Button2 = _interopRequireDefault(_Button);
-
-var _Box = require('./Box');
-
-var _Box2 = _interopRequireDefault(_Box);
-
-var _Expand = require('./icons/base/Expand');
-
-var _Expand2 = _interopRequireDefault(_Expand);
-
-var _Play = require('./icons/base/Play');
-
-var _Play2 = _interopRequireDefault(_Play);
-
-var _Pause = require('./icons/base/Pause');
-
-var _Pause2 = _interopRequireDefault(_Pause);
-
-var _Refresh = require('./icons/base/Refresh');
-
-var _Refresh2 = _interopRequireDefault(_Refresh);
-
 var _CSSClassnames = require('../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
+var _Controls = require('./video/Controls');
+
+var _Controls2 = _interopRequireDefault(_Controls);
+
+var _Overlay = require('./video/Overlay');
+
+var _Overlay2 = _interopRequireDefault(_Overlay);
+
+var _Throttle = require('../utils/Throttle');
+
+var _Throttle2 = _interopRequireDefault(_Throttle);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.VIDEO; // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+var CLASS_ROOT = _CSSClassnames2.default.VIDEO; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var BACKGROUND_COLOR_INDEX = _CSSClassnames2.default.BACKGROUND_COLOR_INDEX;
 
@@ -86,27 +66,26 @@ var Video = function (_Component) {
 
     var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Video).call(this, props, context));
 
-    _this._onResponsive = _this._onResponsive.bind(_this);
-    _this._onPlaying = _this._onPlaying.bind(_this);
-    _this._onPause = _this._onPause.bind(_this);
-    _this._onEnded = _this._onEnded.bind(_this);
-    _this._onClickControl = _this._onClickControl.bind(_this);
+    _this._hasPlayed = false;
+    _this._play = _this._play.bind(_this);
+    _this._pause = _this._pause.bind(_this);
+    _this._togglePlay = _this._togglePlay.bind(_this);
+    _this._toggleMute = _this._toggleMute.bind(_this);
+    _this._seek = _this._seek.bind(_this);
+    _this._mute = _this._mute.bind(_this);
+    _this._unmute = _this._unmute.bind(_this);
+    _this._fullscreen = _this._fullscreen.bind(_this);
     _this._onMouseMove = _this._onMouseMove.bind(_this);
-    _this._onClickChapter = _this._onClickChapter.bind(_this);
-    _this._onFullScreen = _this._onFullScreen.bind(_this);
 
-    _this.state = { playing: false, progress: 0, iconSize: 'large' };
+    _this.state = {};
     return _this;
   }
 
   (0, _createClass3.default)(Video, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      this._responsive = _Responsive2.default.start(this._onResponsive);
-      var video = this.refs.video;
-      video.addEventListener('playing', this._onPlaying);
-      video.addEventListener('pause', this._onPause);
-      video.addEventListener('ended', this._onEnded);
+    key: 'componentWillMount',
+    value: function componentWillMount() {
+      this._update = (0, _Throttle2.default)(this._update.bind(this), 100, this);
+      this._mediaEventProps = this._injectUpdateVideoEvents();
     }
   }, {
     key: 'componentWillReceiveProps',
@@ -121,238 +100,149 @@ var Video = function (_Component) {
       this.forceUpdate();
     }
   }, {
-    key: 'componentWillUnmount',
-    value: function componentWillUnmount() {
-      var video = this.refs.video;
-      video.removeEventListener('playing', this._onPlaying);
-      video.removeEventListener('pause', this._onPause);
-      video.removeEventListener('ended', this._onEnded);
+    key: '_injectUpdateVideoEvents',
+    value: function _injectUpdateVideoEvents() {
+      var _this2 = this;
 
-      if (this._responsive) {
-        this._responsive.stop();
-      }
-    }
-  }, {
-    key: '_onResponsive',
-    value: function _onResponsive(small) {
-      if (small) {
-        this.setState({ iconSize: 'small' });
-      } else {
-        var iconSize = 'small' === this.props.size ? null : 'large';
-        this.setState({ iconSize: iconSize });
-      }
-    }
-  }, {
-    key: '_onPlaying',
-    value: function _onPlaying() {
-      var video = this.refs.video;
-      if (!this._progressTimer) {
-        this._progressTimer = setInterval(function () {
-          this.setState({ progress: this.state.progress + 0.5 });
-        }.bind(this), 500);
-      }
-      this.setState({ playing: true, progress: video.currentTime, ended: null });
-    }
-  }, {
-    key: '_onPause',
-    value: function _onPause() {
-      clearInterval(this._progressTimer);
-      this._progressTimer = null;
-      this.setState({ playing: false });
-    }
-  }, {
-    key: '_onEnded',
-    value: function _onEnded() {
-      clearInterval(this._progressTimer);
-      this._progressTimer = null;
-      this.setState({ playing: false, ended: true });
-    }
-  }, {
-    key: '_onClickControl',
-    value: function _onClickControl() {
-      var video = this.refs.video;
-      if (this.state.playing) {
-        video.pause();
-      } else {
-        video.play();
-      }
-    }
-  }, {
-    key: '_onMouseMove',
-    value: function _onMouseMove() {
-      this.setState({ interacting: true });
-      clearTimeout(this._moveTimer);
-      this._moveTimer = setTimeout(function () {
-        this.setState({ interacting: false });
-      }.bind(this), 1000);
-    }
-  }, {
-    key: '_onClickChapter',
-    value: function _onClickChapter(time) {
-      this.refs.video.currentTime = time;
-      this.setState({ progress: time });
-    }
-  }, {
-    key: '_onFullScreen',
-    value: function _onFullScreen() {
-      var video = this.refs.video;
+      var videoEvents = ['onAbort', 'onCanPlay', 'onCanPlayThrough', 'onDurationChange', 'onEmptied', 'onEncrypted', 'onEnded', 'onError', 'onLoadedData', 'onLoadedMetadata', 'onLoadStart', 'onPause', 'onPlay', 'onPlaying', 'onProgress', 'onRateChange', 'onSeeked', 'onSeeking', 'onStalled', 'onSuspend', 'onTimeUpdate', 'onVolumeChange', 'onWaiting'];
 
-      // check if webkit and mozilla fullscreen is available
-      if (video.webkitRequestFullScreen) {
-        video.webkitRequestFullScreen();
-      } else if (video.mozRequestFullScreen) {
-        video.mozRequestFullScreen();
+      return videoEvents.reduce(function (previousValue, currentValue) {
+        previousValue[currentValue] = function () {
+          if (currentValue in _this2.props && typeof _this2.props[currentValue] === 'function') {
+            _this2.props[currentValue]();
+          }
+          _this2._update();
+        };
+
+        return previousValue;
+      }, {});
+    }
+  }, {
+    key: '_update',
+    value: function _update() {
+      // Set flag for Video first play
+      if (!this._hasPlayed && !this._video.paused && !this._video.loading) {
+        this._hasPlayed = true;
+      }
+
+      this.setState({
+        duration: this._video.duration,
+        currentTime: this._video.currentTime,
+        buffered: this._video.buffered,
+        paused: this._video.paused,
+        muted: this._video.muted,
+        volume: this._video.volume,
+        ended: this._video.ended,
+        readyState: this._video.readyState,
+
+        // computed values
+        hasPlayed: this._hasPlayed,
+        playing: !this._video.paused && !this._video.loading,
+        percentageBuffered: this._video.buffered.length && this._video.buffered.end(this._video.buffered.length - 1) / this._video.duration * 100,
+        percentagePlayed: this._video.currentTime / this._video.duration * 100,
+        loading: this._video.readyState < this._video.HAVE_ENOUGH_DATA
+      });
+    }
+  }, {
+    key: '_play',
+    value: function _play() {
+      this._video.play();
+    }
+  }, {
+    key: '_pause',
+    value: function _pause() {
+      this._video.pause();
+    }
+  }, {
+    key: '_togglePlay',
+    value: function _togglePlay() {
+      if (this.state.paused) {
+        this._play();
+      } else {
+        this._pause();
+      }
+    }
+  }, {
+    key: '_seek',
+    value: function _seek(time) {
+      this._video.currentTime = time || this._video.currentTime;
+    }
+  }, {
+    key: '_unmute',
+    value: function _unmute() {
+      this._video.muted = false;
+    }
+  }, {
+    key: '_mute',
+    value: function _mute() {
+      this._video.muted = true;
+    }
+  }, {
+    key: '_toggleMute',
+    value: function _toggleMute() {
+      if (!this.state.muted) {
+        this._mute();
+      } else {
+        this._unmute();
+      }
+    }
+  }, {
+    key: '_fullscreen',
+    value: function _fullscreen() {
+      if (this._video.requestFullscreen) {
+        this._video.requestFullscreen();
+      } else if (this._video.msRequestFullscreen) {
+        this._video.msRequestFullscreen();
+      } else if (this._video.mozRequestFullScreen) {
+        this._video.mozRequestFullScreen();
+      } else if (this._video.webkitRequestFullscreen) {
+        this._video.webkitRequestFullscreen();
       } else {
         console.warn('Your browser doesn\'t support fullscreen.');
       }
     }
   }, {
-    key: '_renderTimeline',
-    value: function _renderTimeline() {
-      var timeline = void 0;
-      if (this.props.timeline && this.props.duration) {
+    key: '_onMouseMove',
+    value: function _onMouseMove() {
+      var _this3 = this;
 
-        var chapters = this.props.timeline.map(function (chapter, index, chapters) {
-          var percent = Math.round(chapter.time / this.props.duration * 100);
-          var seconds = chapter.time % 60;
-          var time = Math.floor(chapter.time / 60) + ':' + (seconds < 10 ? '0' + seconds : seconds);
-          var currentProgress = this.state.progress;
-          var nextChapter = chapters[Math.min(chapters.length - 1, index + 1)];
-          var lastChapter = chapters[chapters.length - 1];
-
-          var timelineClasses = (0, _classnames5.default)(CLASS_ROOT + '__timeline-chapter', (0, _defineProperty3.default)({}, CLASS_ROOT + '__timeline-active', currentProgress !== 0 && (currentProgress >= chapter.time && currentProgress < nextChapter.time || index === chapters.length - 1 && currentProgress >= lastChapter.time)));
-
-          return _react2.default.createElement(
-            _Box2.default,
-            { key: chapter.time, className: timelineClasses,
-              pad: { vertical: 'small' },
-              style: { left: percent.toString() + '%' },
-              onClick: this._onClickChapter.bind(this, chapter.time) },
-            _react2.default.createElement(
-              'label',
-              null,
-              chapter.label
-            ),
-            _react2.default.createElement(
-              'time',
-              null,
-              time
-            )
-          );
-        }, this);
-
-        timeline = _react2.default.createElement(
-          'div',
-          { className: CLASS_ROOT + '__timeline' },
-          chapters
-        );
-      }
-
-      return timeline;
+      this.setState({ interacting: true });
+      clearTimeout(this._moveTimer);
+      this._moveTimer = setTimeout(function () {
+        _this3.setState({ interacting: false });
+      }, 1000);
     }
   }, {
     key: '_renderControls',
     value: function _renderControls() {
-      var controlIconSize = this.state.iconSize;
-      var controlIcon = this.state.playing ? _react2.default.createElement(_Pause2.default, { size: controlIconSize }) : this.state.ended ? _react2.default.createElement(_Refresh2.default, { size: controlIconSize }) : _react2.default.createElement(_Play2.default, { size: controlIconSize });
-      var a11yControlButtonMessage = this.state.playing ? 'Pause Video' : this.state.ended ? 'Restart Video' : 'Play Video';
-      var a11yControlButtonTitle = _Intl2.default.getMessage(this.context.intl, a11yControlButtonMessage);
+      var extendedProps = (0, _assign2.default)({
+        title: this.props.title,
+        togglePlay: this._togglePlay,
+        toggleMute: this._toggleMute,
+        play: this._play,
+        pause: this._pause,
+        mute: this._mute,
+        unmute: this._unmute,
+        seek: this._seek,
+        fullscreen: this._fullscreen,
+        shareLink: this.props.shareLink,
+        shareHeadline: this.props.shareHeadline,
+        shareText: this.props.shareText,
+        allowFullScreen: this.props.allowFullScreen
+      }, this.state);
 
-      var videoHeader = void 0;
-      var videoSummaryJustify = 'between';
-      if (this.props.videoHeader) {
-        videoHeader = this.props.videoHeader;
-      } else if (this.props.allowFullScreen) {
-        var a11yExpandButtonTitle = _Intl2.default.getMessage(this.context.intl, 'Toggle Fullscreen');
-        // fallback to only displaying full screen icon in header
-        // if allowing fullscreen
-
-        videoHeader = _react2.default.createElement(
-          _Box2.default,
-          { align: 'end', full: 'horizontal' },
-          _react2.default.createElement(_Button2.default, { plain: true, onClick: this._onFullScreen,
-            icon: _react2.default.createElement(_Expand2.default, null), a11yTitle: a11yExpandButtonTitle })
-        );
-      } else {
-        videoSummaryJustify = 'center';
-      }
-
-      var title = void 0;
-      if (this.props.title) {
-        title = _react2.default.createElement(
-          _Box2.default,
-          { align: 'center', justify: 'center', className: CLASS_ROOT + '__title' },
-          this.props.title
-        );
-      }
-
-      var onClickControl = this.props.onClick || this._onClickControl;
-      // when iconSize is small (mobile screen sizes), remove the extra padding
-      // so that the play control is centered
-      var emptyBox = this.state.iconSize === 'small' ? null : _react2.default.createElement(_Box2.default, null);
-
-      var controlsContent = _react2.default.createElement(
-        _Box2.default,
-        { pad: 'none', align: 'center', justify: videoSummaryJustify,
-          className: CLASS_ROOT + '__summary' },
-        videoHeader,
-        _react2.default.createElement(
-          _Box2.default,
-          { pad: 'medium', align: 'center', justify: 'center' },
-          _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + '__control', plain: true,
-            primary: true, onClick: onClickControl,
-            icon: controlIcon, a11yTitle: a11yControlButtonTitle }),
-          title
-        ),
-        emptyBox
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(_Overlay2.default, extendedProps),
+        _react2.default.createElement(_Controls2.default, extendedProps)
       );
-
-      return controlsContent;
-    }
-  }, {
-    key: '_renderProgress',
-    value: function _renderProgress() {
-      var progressTicks = void 0;
-      if (this.props.timeline && this.props.duration) {
-
-        var chapters = this.props.timeline.map(function (chapter, index, chapters) {
-          var percent = Math.round(chapter.time / this.props.duration * 100);
-          var currentProgress = this.state.progress;
-          var nextChapter = chapters[Math.min(chapters.length - 1, index + 1)];
-
-          var progressTicksClasses = (0, _classnames5.default)(CLASS_ROOT + '__progress-ticks-chapter', (0, _defineProperty3.default)({}, CLASS_ROOT + '__progress-ticks-active', currentProgress !== 0 && currentProgress >= chapter.time && currentProgress < nextChapter.time));
-
-          return _react2.default.createElement('div', { key: chapter.time, className: progressTicksClasses,
-            style: { left: percent.toString() + '%' },
-            onClick: this._onClickChapter.bind(this, chapter.time) });
-        }, this);
-
-        progressTicks = _react2.default.createElement(
-          'div',
-          { className: CLASS_ROOT + '__progress-ticks' },
-          chapters
-        );
-      }
-
-      var progress = void 0;
-      if (this.props.duration) {
-        var progressClass = (0, _classnames5.default)(CLASS_ROOT + '__progress', (0, _defineProperty3.default)({}, CLASS_ROOT + '--has-timeline', this.props.timeline));
-
-        var percent = Math.min(Math.round(this.state.progress / this.props.duration * 100), 100);
-        progress = _react2.default.createElement(
-          'div',
-          { className: progressClass },
-          _react2.default.createElement('div', { className: CLASS_ROOT + '__progress-meter',
-            style: { width: percent.toString() + '%' } }),
-          progressTicks
-        );
-      }
-
-      return progress;
     }
   }, {
     key: 'render',
     value: function render() {
+      var _this4 = this;
+
       var classes = [CLASS_ROOT];
       if (this.props.size) {
         classes.push(CLASS_ROOT + '--' + this.props.size);
@@ -366,17 +256,17 @@ var Video = function (_Component) {
       if (this.state.interacting) {
         classes.push(CLASS_ROOT + '--interacting');
       }
-      if (this.props.videoHeader) {
-        classes.push(CLASS_ROOT + '--video-header');
-      }
       if (this.props.colorIndex) {
         classes.push(BACKGROUND_COLOR_INDEX + '-' + this.props.colorIndex);
       }
       if (this.props.className) {
         classes.push(this.props.className);
       }
-      if (this.props.title) {
-        classes.push(CLASS_ROOT + '--titled');
+      if (this.state.hasPlayed) {
+        classes.push(CLASS_ROOT + '--has-played');
+      }
+      if (this.state.ended) {
+        classes.push(CLASS_ROOT + '--ended');
       }
 
       return _react2.default.createElement(
@@ -384,16 +274,17 @@ var Video = function (_Component) {
         { className: classes.join(' '), onMouseMove: this._onMouseMove },
         _react2.default.createElement(
           'video',
-          { ref: 'video',
+          (0, _extends3.default)({ ref: function ref(el) {
+              return _this4._video = el;
+            },
             poster: this.props.poster,
             autoPlay: this.props.autoPlay ? 'autoplay' : false,
             loop: this.props.loop ? 'loop' : false,
-            muted: this.props.muted ? 'muted' : false },
+            muted: this.props.muted
+          }, this._mediaEventProps),
           this.props.children
         ),
-        this.props.showControls ? this._renderControls() : undefined,
-        this.props.showControls ? this._renderTimeline() : undefined,
-        this.props.showControls ? this._renderProgress() : undefined
+        this.props.showControls ? this._renderControls() : undefined
       );
     }
   }]);
@@ -406,7 +297,6 @@ exports.default = Video;
 
 Video.propTypes = {
   colorIndex: _react.PropTypes.string,
-  duration: _react.PropTypes.number,
   full: _react.PropTypes.oneOf([true, 'horizontal', 'vertical', false]),
   poster: _react.PropTypes.string,
   size: _react2.default.PropTypes.oneOf(['small', 'medium', 'large']),
@@ -415,19 +305,21 @@ Video.propTypes = {
     time: _react.PropTypes.number
   })),
   title: _react.PropTypes.node,
-  videoHeader: _react.PropTypes.node,
-  onClick: _react.PropTypes.func,
   allowFullScreen: _react.PropTypes.bool,
   autoPlay: _react.PropTypes.bool,
+  shareLink: _react.PropTypes.string,
+  shareHeadline: _react.PropTypes.string,
+  shareText: _react.PropTypes.string,
   showControls: _react.PropTypes.bool,
   muted: _react.PropTypes.bool,
   loop: _react.PropTypes.bool
 };
 
 Video.defaultProps = {
+  allowFullScreen: true,
   autoPlay: false,
-  showControls: true,
+  loop: false,
   muted: false,
-  loop: false
+  showControls: true
 };
 module.exports = exports['default'];
