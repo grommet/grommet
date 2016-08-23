@@ -27,12 +27,21 @@ export default class AccordionPanel extends Component {
   }
 
   _onClickPanel () {
-    this.setState({ active : !this.state.active });
-    this.props.onActive();
+    if (!this.props.disabled) {
+      this.setState({ active : !this.state.active });
+      this.props.onActive();
+    }
   }
 
   render () {
-    const { animate, className, children, heading } = this.props;
+    const {
+      animate,
+      className,
+      children,
+      heading,
+      icon,
+      ...props
+    } = this.props;
 
     const classes = classnames(
       CLASS_ROOT,
@@ -42,8 +51,15 @@ export default class AccordionPanel extends Component {
       }
     );
 
+    let controlIcon;
+    if (icon) {
+      controlIcon = icon;
+    } else if (icon === undefined) {
+      controlIcon = <TabNextIcon className={`${CLASS_ROOT}__control`} />;
+    }
+
     return (
-      <ListItem className={classes} direction="column" pad="none">
+      <ListItem className={classes} direction="column" pad="none" {...props}>
         <Header
           role="tab"
           className={`${CLASS_ROOT}__header`}
@@ -56,7 +72,7 @@ export default class AccordionPanel extends Component {
           responsive={false}
         >
           {heading}
-          <TabNextIcon className={`${CLASS_ROOT}__control`} />
+          {controlIcon}
         </Header>
         <Collapsible
           role="tabpanel"
@@ -73,6 +89,11 @@ export default class AccordionPanel extends Component {
 AccordionPanel.propTypes = {
   active: PropTypes.bool,
   animate: PropTypes.bool,
+  disabled: PropTypes.bool,
   heading: PropTypes.node.isRequired,
+  icon: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.bool
+  ]),
   onActive: PropTypes.func
 };
