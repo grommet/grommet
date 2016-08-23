@@ -64,6 +64,7 @@
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
     "del": "^2.2.0",
+    "enzyme": "^2.4.1",
     "grommet-toolbox": "^0.2.0",
     "gulp-bump": "^2.1.0",
     "gulp-coveralls": "^0.1.4",
@@ -77,6 +78,7 @@
     "mkdirp": "^0.5.1",
     "react-addons-test-utils": "^15.0.2",
     "run-sequence": "^1.1.5",
+    "sinon": "^1.17.5",
     "tape": "^4.5.1",
     "webpack": "^1.12.14",
     "webpack-stream": "^3.1.0"
