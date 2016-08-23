@@ -230,6 +230,7 @@ var Layer = function (_Component2) {
   (0, _createClass3.default)(Layer, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
+      window.scrollTo(0, 0);
       this._originalFocusedElement = document.activeElement;
       this._addLayer();
       this._renderLayer();
@@ -242,10 +243,15 @@ var Layer = function (_Component2) {
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
+      var _this3 = this;
 
       if (this._originalFocusedElement) {
         if (this._originalFocusedElement.focus) {
-          this._originalFocusedElement.focus();
+          // wait for the fixed positining to come back to normal
+          // see layer styling for reference
+          setTimeout(function () {
+            _this3._originalFocusedElement.focus();
+          }, 0);
         } else if (this._originalFocusedElement.parentNode && this._originalFocusedElement.parentNode.focus) {
           // required for IE11 and Edge
           this._originalFocusedElement.parentNode.focus();

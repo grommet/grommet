@@ -16,15 +16,10 @@
 
   @include media-query(palm) {
     &:not(.#{$grommet-namespace}layer--hidden) + .#{$grommet-namespace}app {
-      visibility: hidden;
-      width: 0px;
-      height: 0px;
-
-      // IE11 specific fix for layer to hide content behind layer and
-      // eliminate white gap under layer content (when content behind is taller)
-      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        display: none;
-      }
+      left: -100%;
+      right: 100%;
+      z-index: -1;
+      position: fixed;
     }
   }
 
@@ -153,6 +148,7 @@
     left: -100%;
     right: 100%;
     z-index: -1;
+    position: fixed;
 
     &.#{$grommet-namespace}layer--align {
 
@@ -163,10 +159,6 @@
           left: -100vw;
         }
       }
-    }
-
-    @include media-query(palm) {
-      display: none;
     }
 
     @include media-query(lap-and-up) {
