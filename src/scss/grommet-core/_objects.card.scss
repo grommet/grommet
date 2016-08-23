@@ -137,7 +137,7 @@ $card-hover-color: #EBEBEB;
   }
 
   &--selectable {
-    &:hover:not(.#{$grommet-namespace}tile--selected) {
+    &.#{$grommet-namespace}tile--selectable:hover:not(.#{$grommet-namespace}tile--selected) {
       // hide Tile hover border style (gets set by onClick prop)
       background-color: transparent;
     }
