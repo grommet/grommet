@@ -60,6 +60,7 @@ test('loads an App with body', (t) => {
     t.fail('App does not have app class');
   }
 
+  console.log(appElement.find('h2'));
   t.equal(
     appElement.find('h2').props().children, 'App Body',
     'App has body'
