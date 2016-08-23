@@ -7,7 +7,7 @@
 }
 
 .#{$grommet-namespace}columns__column {
-  flex: 0 0 $tile-size;
+  flex: 0 0 $size-medium;
   display: flex;
   flex-direction: column;
 }
@@ -15,12 +15,12 @@
 
 .#{$grommet-namespace}columns--small {
   > .#{$grommet-namespace}columns__column {
-    flex-basis: $tile-small-size;
+    flex-basis: $size-small;
   }
 }
 
 .#{$grommet-namespace}columns--large {
   > .#{$grommet-namespace}__column {
-    flex-basis: $tile-large-size;
+    flex-basis: $size-large;
   }
 }

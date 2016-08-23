@@ -84,5 +84,8 @@ export default class Columns extends Component {
 }
 
 Columns.propTypes = {
-  size: PropTypes.oneOf(['small', 'medium', 'large'])
+  count: PropTypes.number,
+  masonry: PropTypes.bool,
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  sort: PropTypes.oneOf(['column', 'row'])
 };

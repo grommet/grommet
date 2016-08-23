@@ -18,14 +18,14 @@
     flex-shrink: 0;
 
     @include media-query(lap-and-up) {
-      flex-basis: $tile-size;
+      flex-basis: $size-medium;
     }
   }
 
   .#{$grommet-namespace}tiles__masonry-column {
     > .#{$grommet-namespace}tile {
       @include media-query(lap-and-up) {
-        width: $tile-size;
+        width: $size-medium;
         flex-basis: auto;
       }
     }
@@ -138,14 +138,14 @@
 .#{$grommet-namespace}tiles--small {
   > .#{$grommet-namespace}tile {
     @include media-query(lap-and-up) {
-      flex-basis: $tile-small-size;
+      flex-basis: $size-small;
     }
   }
 
   .#{$grommet-namespace}tiles__masonry-column {
     > .#{$grommet-namespace}tile {
       @include media-query(lap-and-up) {
-        width: $tile-small-size;
+        width: $size-small;
         flex-basis: auto;
       }
     }
@@ -155,14 +155,14 @@
 .#{$grommet-namespace}tiles--large {
   > .#{$grommet-namespace}tile {
     @include media-query(lap-and-up) {
-      flex-basis: $tile-large-size;
+      flex-basis: $size-large;
     }
   }
 
   .#{$grommet-namespace}tiles__masonry-column {
     > .#{$grommet-namespace}tile {
       @include media-query(lap-and-up) {
-        width: $tile-large-size;
+        width: $size-large;
         flex-basis: auto;
       }
     }

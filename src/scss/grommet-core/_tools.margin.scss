@@ -1,6 +1,6 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-@mixin margin {
+@mixin vertical-margin {
   &--margin {
     &-none {
       margin-top: 0;
@@ -20,6 +20,246 @@
     &-large {
       margin-top: double($inuit-base-spacing-unit);
       margin-bottom: double($inuit-base-spacing-unit);
+    }
+  }
+}
+
+@mixin margin {
+  &--margin {
+    &-none {
+      margin: 0px;
+    }
+
+    &-small {
+      margin: halve($inuit-base-spacing-unit);
+    }
+
+    &-medium {
+      margin: $inuit-base-spacing-unit;
+    }
+
+    &-large {
+      margin: double($inuit-base-spacing-unit);
+    }
+
+    @include media-query(palm) {
+      &-small {
+        margin: quarter($inuit-base-spacing-unit);
+      }
+
+      &-medium {
+        margin: halve($inuit-base-spacing-unit);
+      }
+
+      &-large {
+        margin: $inuit-base-spacing-unit;
+      }
+    }
+
+    &-horizontal {
+      &-none {
+        margin-left: 0px;
+        margin-right: 0px;
+      }
+
+      &-small {
+        margin-left: halve($inuit-base-spacing-unit);
+        margin-right: halve($inuit-base-spacing-unit);
+      }
+
+      &-medium {
+        margin-left: $inuit-base-spacing-unit;
+        margin-right: $inuit-base-spacing-unit;
+      }
+
+      &-large {
+        margin-left: double($inuit-base-spacing-unit);
+        margin-right: double($inuit-base-spacing-unit);
+      }
+
+      @include media-query(palm) {
+        &-small {
+          margin-left: quarter($inuit-base-spacing-unit);
+          margin-right: quarter($inuit-base-spacing-unit);
+        }
+
+        &-medium {
+          margin-left: halve($inuit-base-spacing-unit);
+          margin-right: halve($inuit-base-spacing-unit);
+        }
+
+        &-large {
+          margin-left: $inuit-base-spacing-unit;
+          margin-right: $inuit-base-spacing-unit;
+        }
+      }
+    }
+
+    &-vertical {
+      &-none {
+        margin-top: 0px;
+        margin-bottom: 0px;
+      }
+
+      &-small {
+        margin-top: halve($inuit-base-spacing-unit);
+        margin-bottom: halve($inuit-base-spacing-unit);
+      }
+
+      &-medium {
+        margin-top: $inuit-base-spacing-unit;
+        margin-bottom: $inuit-base-spacing-unit;
+      }
+
+      &-large {
+        margin-top: double($inuit-base-spacing-unit);
+        margin-bottom: double($inuit-base-spacing-unit);
+      }
+
+      @include media-query(palm) {
+        &-small {
+          margin-top: quarter($inuit-base-spacing-unit);
+          margin-bottom: quarter($inuit-base-spacing-unit);
+        }
+
+        &-medium {
+          margin-top: halve($inuit-base-spacing-unit);
+          margin-bottom: halve($inuit-base-spacing-unit);
+        }
+
+        &-large {
+          margin-top: $inuit-base-spacing-unit;
+          margin-bottom: $inuit-base-spacing-unit;
+        }
+      }
+    }
+
+    &-left {
+      &-none {
+        margin-left: 0px;
+      }
+
+      &-small {
+        margin-left: halve($inuit-base-spacing-unit);
+      }
+
+      &-medium {
+        margin-left: $inuit-base-spacing-unit;
+      }
+
+      &-large {
+        margin-left: double($inuit-base-spacing-unit);
+      }
+
+      @include media-query(palm) {
+        &-small {
+          margin-left: quarter($inuit-base-spacing-unit);
+        }
+
+        &-medium {
+          margin-left: halve($inuit-base-spacing-unit);
+        }
+
+        &-large {
+          margin-left: $inuit-base-spacing-unit;
+        }
+      }
+    }
+
+    &-right {
+      &-none {
+        margin-right: 0px;
+      }
+
+      &-small {
+        margin-right: halve($inuit-base-spacing-unit);
+      }
+
+      &-medium {
+        margin-right: $inuit-base-spacing-unit;
+      }
+
+      &-large {
+        margin-right: double($inuit-base-spacing-unit);
+      }
+
+      @include media-query(palm) {
+        &-small {
+          margin-right: quarter($inuit-base-spacing-unit);
+        }
+
+        &-medium {
+          margin-right: halve($inuit-base-spacing-unit);
+        }
+
+        &-large {
+          margin-right: $inuit-base-spacing-unit;
+        }
+      }
+    }
+
+    &-top {
+      &-none {
+        margin-top: 0px;
+      }
+
+      &-small {
+        margin-top: halve($inuit-base-spacing-unit);
+      }
+
+      &-medium {
+        margin-top: $inuit-base-spacing-unit;
+      }
+
+      &-large {
+        margin-top: double($inuit-base-spacing-unit);
+      }
+
+      @include media-query(palm) {
+        &-small {
+          margin-top: quarter($inuit-base-spacing-unit);
+        }
+
+        &-medium {
+          margin-top: halve($inuit-base-spacing-unit);
+        }
+
+        &-large {
+          margin-top: $inuit-base-spacing-unit;
+        }
+      }
+    }
+
+    &-bottom {
+      &-none {
+        margin-bottom: 0px;
+      }
+
+      &-small {
+        margin-bottom: halve($inuit-base-spacing-unit);
+      }
+
+      &-medium {
+        margin-bottom: $inuit-base-spacing-unit;
+      }
+
+      &-large {
+        margin-bottom: double($inuit-base-spacing-unit);
+      }
+
+      @include media-query(palm) {
+        &-small {
+          margin-bottom: quarter($inuit-base-spacing-unit);
+        }
+
+        &-medium {
+          margin-bottom: halve($inuit-base-spacing-unit);
+        }
+
+        &-large {
+          margin-bottom: $inuit-base-spacing-unit;
+        }
+      }
     }
   }
 }

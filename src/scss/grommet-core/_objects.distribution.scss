@@ -6,7 +6,7 @@
 
 .#{$grommet-namespace}distribution__graphic {
   width: 100%;
-  height: $graphic-size;
+  height: $size-medium;
   max-height: calc(100vh - #{double($header-height)});
 }
 
@@ -109,13 +109,13 @@
 
 .#{$grommet-namespace}distribution--small {
   .#{$grommet-namespace}distribution__graphic {
-    height: $graphic-small-size;
+    height: $size-small;
   }
 }
 
 .#{$grommet-namespace}distribution--large {
   .#{$grommet-namespace}distribution__graphic {
-    height: $graphic-large-size;
+    height: $size-large;
   }
 }
 
