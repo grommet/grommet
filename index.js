@@ -83,6 +83,7 @@ var Grommet = {
   TBD: require('./components/TBD'),
   Icons: {
     Grommet: require('./components/icons/Grommet'),
+    Pulse: require('./components/icons/Pulse'),
     Spinning: require('./components/icons/Spinning'),
     Status: require('./components/icons/Status'),
     Base: require('./index-icons')
