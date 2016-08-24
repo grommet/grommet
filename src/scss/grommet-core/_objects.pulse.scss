@@ -30,7 +30,7 @@ $base-size: 40px;
   }
 }
 
-.#{$grommet-namespace}hotspot {
+.#{$grommet-namespace}pulse {
   display: inline-block;
   height: $base-size;
   width: $base-size;
@@ -43,13 +43,13 @@ $base-size: 40px;
     transform: scale(1.2);
     cursor: pointer;
 
-    .#{$grommet-namespace}hotspot__icon-pulse {
+    .#{$grommet-namespace}pulse__icon-anim {
       -webkit-animation: none;
       animation: none;
     }
   }
 
-  .#{$grommet-namespace}hotspot__icon {
+  .#{$grommet-namespace}pulse__icon {
     svg {
       width: $base-size;
       height: $base-size;
@@ -59,7 +59,7 @@ $base-size: 40px;
       stroke: nth($brand-grey-colors, 1);
     }
 
-    &-pulse {
+    &-anim {
       display: block;
       width: $base-size;
       height: $base-size;

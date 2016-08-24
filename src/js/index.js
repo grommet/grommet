@@ -38,7 +38,6 @@ var Grommet = {
   Header: require('./components/Header'),
   Heading: require('./components/Heading'),
   Headline: require('./components/Headline'),
-  Hotspot: require('./components/Hotspot'),
   Hero: require('./components/Hero'),
   Image: require('./components/Image'),
   ImageField: require('./components/ImageField'),
@@ -82,6 +81,7 @@ var Grommet = {
   TBD: require('./components/TBD'),
   Icons: {
     Grommet: require('./components/icons/Grommet'),
+    Pulse: require('./components/icons/Pulse'),
     Spinning: require('./components/icons/Spinning'),
     Status: require('./components/icons/Status'),
     Base: require('./index-icons')
