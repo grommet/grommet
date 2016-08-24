@@ -58,7 +58,7 @@ export default class CheckBox extends Component {
           checked={this.props.checked}
           defaultChecked={this.props.defaultChecked}
           onChange={this.props.onChange}
-          ref="input" />
+           />
         <span className={`${CLASS_ROOT}__control`}>
           <svg className={`${CLASS_ROOT}__control-check`} viewBox="0 0 24 24"
             preserveAspectRatio="xMidYMid meet">
