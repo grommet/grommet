@@ -2,6 +2,7 @@
 
 import React, { Component, PropTypes } from 'react';
 import CSSClassnames from '../../utils/CSSClassnames';
+import { announce } from '../../utils/Announcer';
 
 const CLASS_ROOT = CSSClassnames.CHART_MARKER_LABEL;
 const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
@@ -16,7 +17,17 @@ export default class MarkerLabel extends Component {
   }
 
   componentWillReceiveProps (nextProps) {
-    this.setState({ valueBasis: this._valueBasis(nextProps) });
+    const nextValueBasis = this._valueBasis(nextProps);
+    if (nextValueBasis !== this.state.valueBasis) {
+      this.setState({
+        valueBasis: nextValueBasis
+      }, () => {
+        if (typeof nextProps.label === 'string' ||
+          typeof nextProps.label === 'number') {
+          announce(nextProps.label);
+        }
+      });
+    }
   }
 
   _valueBasis (props) {
@@ -49,7 +60,11 @@ export default class MarkerLabel extends Component {
       classes.push(`${COLOR_INDEX}-${colorIndex}`);
     }
     if (typeof label === 'string' || typeof label === 'number') {
-      label = <span aria-hidden='true'>{label}</span>;
+      label = <span>{label}</span>;
+    } else { // added for a11y to announce changes in the values
+      label = React.cloneElement(label, {
+        announce: true
+      });
     }
     return (
       <div key="label" className={classes.join(' ')}

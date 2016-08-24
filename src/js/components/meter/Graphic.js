@@ -18,22 +18,11 @@ export default class Graphic extends Component {
     super(props, context);
     this.state = this._stateFromProps(props);
 
-    this._onRequestForNextLegend = this._onRequestForNextLegend.bind(this);
-    this._onRequestForPreviousLegend = (
-      this._onRequestForPreviousLegend.bind(this)
-    );
-  }
-
-  componentDidMount () {
-    this._keyboardHandlers = {
-      left: this._onRequestForPreviousLegend,
-      up: this._onRequestForPreviousLegend,
-      right: this._onRequestForNextLegend,
-      down: this._onRequestForNextLegend
-    };
-    KeyboardAccelerators.startListeningToKeyboard(
-      this, this._keyboardHandlers
-    );
+    this._onNextBand = this._onNextBand.bind(this);
+    this._onPreviousBand = this._onPreviousBand.bind(this);
+    this._onGraphicFocus = this._onGraphicFocus.bind(this);
+    this._onGraphicBlur = this._onGraphicBlur.bind(this);
+    this._onBandClick = this._onBandClick.bind(this);
   }
 
   componentWillReceiveProps (newProps) {
@@ -41,10 +30,32 @@ export default class Graphic extends Component {
     this.setState(state);
   }
 
-  componentWillUnmount () {
+  _onGraphicFocus () {
+    this._keyboardHandlers = {
+      left: this._onPreviousBand,
+      up: this._onPreviousBand,
+      right: this._onNextBand,
+      down: this._onNextBand,
+      enter: this._onBandClick
+    };
+    KeyboardAccelerators.startListeningToKeyboard(
+      this, this._keyboardHandlers
+    );
+  }
+
+  _onGraphicBlur () {
     KeyboardAccelerators.stopListeningToKeyboard(
       this, this._keyboardHandlers
     );
+  }
+
+  _onBandClick () {
+    if (this.props.activeIndex !== undefined) {
+      const activeBand = this.props.series[this.props.activeIndex];
+      if (activeBand && activeBand.onClick) {
+        activeBand.onClick();
+      }
+    }
   }
 
   // override
@@ -113,40 +124,36 @@ export default class Graphic extends Component {
     return this._sliceCommands(0, this.props.max, this.props.min.value);
   }
 
-  _onRequestForPreviousLegend (event) {
-    if (document.activeElement === this.refs.meter) {
-      event.preventDefault();
-      var totalValueCount = (
-        ReactDOM.findDOMNode(this.refs.meterValues).childNodes.length
-      );
+  _onPreviousBand (event) {
+    event.preventDefault();
+    const activeIndex = (
+      this.props.activeIndex !== undefined ? this.props.activeIndex : -1
+    );
 
-      if (this.props.activeIndex - 1 < 0) {
-        this.props.onActivate(totalValueCount - 1);
-      } else {
-        this.props.onActivate(this.props.activeIndex - 1);
-      }
-
-      //stop event propagation
-      return true;
+    if (activeIndex - 1 >= 0) {
+      this.props.onActivate(activeIndex - 1);
     }
+
+    //stop event propagation
+    return true;
   }
 
-  _onRequestForNextLegend (event) {
-    if (document.activeElement === this.refs.meter) {
-      event.preventDefault();
-      var totalValueCount = (
-        ReactDOM.findDOMNode(this.refs.meterValues).childNodes.length
-      );
+  _onNextBand (event) {
+    event.preventDefault();
+    const activeIndex = (
+      this.props.activeIndex !== undefined ? this.props.activeIndex : -1
+    );
 
-      if (this.props.activeIndex + 1 >= totalValueCount) {
-        this.props.onActivate(0);
-      } else {
-        this.props.onActivate(this.props.activeIndex + 1);
-      }
+    var totalBands = (
+      ReactDOM.findDOMNode(this.refs.meterValues).childNodes.length
+    );
 
-      //stop event propagation
-      return true;
+    if (activeIndex + 1 < totalBands) {
+      this.props.onActivate(activeIndex + 1);
     }
+
+    //stop event propagation
+    return true;
   }
 
   _renderLoading () {
@@ -288,13 +295,14 @@ export default class Graphic extends Component {
 
     return (
       <svg ref="meter" className={`${CLASS_ROOT}__graphic`}
-        tabIndex={this.props.tabIndex} role={role}
-        width={this.state.viewBoxWidth}
+        tabIndex={role === 'img' ? undefined : this.props.tabIndex || '0'}
+        width={this.state.viewBoxWidth} role={role}
         height={this.state.viewBoxHeight}
         viewBox={"0 0 " + this.state.viewBoxWidth +
           " " + this.state.viewBoxHeight}
         preserveAspectRatio="xMidYMid meet"
-        aria-label={a11yTitle}>
+        aria-label={a11yTitle} onFocus={this._onGraphicFocus}
+        onBlur={this._onGraphicBlur}>
         {tracks}
         {thresholds}
         {values}
