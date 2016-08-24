@@ -63,6 +63,7 @@ export default {
   NUMBER_INPUT: `${namespace}number-input`,
   OBJECT: `${namespace}object`,
   PARAGRAPH: `${namespace}paragraph`,
+  PULSE: `${namespace}pulse`,
   QUOTE: `${namespace}quote`,
   RADIO_BUTTON: `${namespace}radio-button`,
   SEARCH: `${namespace}search`,
