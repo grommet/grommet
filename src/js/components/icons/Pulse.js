@@ -9,7 +9,7 @@ const CLASS_ROOT = CSSClassnames.PULSE;
 
 export default class Pulse extends Component {
   render () {
-    const classes = classnames(CLASS_ROOT, this.props.className)
+    const classes = classnames(CLASS_ROOT, this.props.className);
 
     return (
       <div className={classes}>
