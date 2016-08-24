@@ -24,7 +24,7 @@ export default class Pulse extends Component {
 
 Pulse.propTypes = {
   className: PropTypes.string,
-  icon: PropTypes.object
+  icon: PropTypes.node
 };
 
 Pulse.defaultProps = {
