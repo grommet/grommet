@@ -9,24 +9,24 @@ const CLASS_ROOT = CSSClassnames.PULSE;
 
 export default class Pulse extends Component {
   render () {
-    const classes = (this.props.className)
-      ? classnames(
-          CLASS_ROOT,
-          this.props.className
-        )
-      : CLASS_ROOT;
+    const classes = classnames(CLASS_ROOT, this.props.className)
 
     return (
       <div className={classes}>
         <div className={`${CLASS_ROOT}__icon`}>
-          <Add />
+          {this.props.icon}
         </div>
-        <div className={`${CLASS_ROOT}__icon-anim`}></div>
+        <div className={`${CLASS_ROOT}__icon-anim`} />
       </div>
     );
   }
 }
 
 Pulse.propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
+  icon: PropTypes.object
+};
+
+Pulse.defaultProps = {
+  icon: <Add />
 };
