@@ -41,13 +41,13 @@
     "inuit-list-bare": "~0.3.0",
     "inuit-lists": "~0.1.0",
     "inuit-mixins": "~0.2.3",
-    "inuit-normalize": "~3.0.2",
+    "inuit-normalize": "~4.1.1",
     "inuit-page": "~0.2.1",
     "inuit-reset": "~0.1.1",
     "inuit-responsive-settings": "~0.1.2",
     "inuit-responsive-tools": "~0.1.1",
     "inuit-shared": "~0.1.5",
-    "markdown-to-jsx": "^2.0.0",
+    "markdown-to-jsx": "^3.0.0",
     "mkdirp": "^0.5.1",
     "moment": "^2.13.0",
     "react": "^15.0.2",
@@ -56,8 +56,8 @@
     "react-gravatar": "^2.0.0",
     "react-intl": "^2.1.2",
     "shelljs": "^0.7.0",
-    "superagent": "^1.1.0",
-    "yargs": "^4.6.0"
+    "superagent": "^2.2.0",
+    "yargs": "^5.0.0"
   },
   "devDependencies": {
     "babel-plugin-add-module-exports": "^0.2.0",

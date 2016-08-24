@@ -5,6 +5,7 @@ import React from 'react';
 import TestUtils from 'react-addons-test-utils';
 
 import Markdown from '../../src/js/components/Markdown';
+import Paragraph from '../../src/js/components/Paragraph';
 
 test('loads a paragraph Markdown', (t) => {
   t.plan(3);
@@ -22,15 +23,11 @@ test('loads a paragraph Markdown', (t) => {
   }));
   const markdownElement = shallowRenderer.getRenderOutput();
 
-  t.equal(
-    markdownElement.props.children.length, 1,
-    'Markdown has one children'
-  );
-  const paragraph = markdownElement.props.children[0];
-  if (paragraph.props.className.indexOf('testing') > -1) {
+  t.equal(markdownElement.type, Paragraph, 'Markdown uses Paragraph');
+  if (markdownElement.props.className.indexOf('testing') > -1) {
     t.pass('Markdown paragraph has custom class');
   } else {
     t.fail('Markdown paragraph does not have custom class');
   }
-  t.equal(paragraph.props.size, 'large', 'Markdown paragraph is large');
+  t.equal(markdownElement.props.size, 'large', 'Markdown paragraph is large');
 });
