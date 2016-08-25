@@ -6,7 +6,7 @@
 
 ### Documentation
 
-Visit the [grommet.github.io](http://grommet.github.io/) website for more information.
+Visit the [grommet.github.io](https://grommet.github.io/) website for more information.
 
 ### Support / Contributing
 
