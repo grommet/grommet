@@ -17,7 +17,7 @@ export default class Box extends Component {
     const { onClick } = this.props;
     if (onClick) {
       let clickCallback = function () {
-        if (this.refs.boxContainer === document.activeElement) {
+        if (this.boxContainerRef === document.activeElement) {
           onClick();
         }
       }.bind(this);
@@ -31,7 +31,7 @@ export default class Box extends Component {
 
   componentDidUpdate () {
     if (this.props.announce) {
-      announce(this.refs.boxContainer.textContent);
+      announce(this.boxContainerRef.textContent);
     }
   }
   componentWillUnmount () {
@@ -155,7 +155,7 @@ export default class Box extends Component {
 
     if (appCentered) {
       return (
-        <div {...restProps} ref="boxContainer"
+        <div {...restProps} ref={(ref) => this.boxContainerRef = ref}
           className={containerClasses.join(' ')}
           style={style} role={role} {...a11yProps}>
           {skipLinkAnchor}
@@ -167,8 +167,8 @@ export default class Box extends Component {
       );
     } else {
       return (
-        <Component {...restProps} ref="boxContainer" id={id}
-          className={classes.join(' ')} style={style}
+        <Component {...restProps} ref={(ref) => this.boxContainerRef = ref}
+          id={id} className={classes.join(' ')} style={style}
           role={role} tabIndex={tabIndex}
           onClick={onClick} {...a11yProps}>
           {skipLinkAnchor}

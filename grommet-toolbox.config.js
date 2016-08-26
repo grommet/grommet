@@ -93,6 +93,7 @@ export default {
   },
   distPreprocess: ['generate-index-icons', 'dist-css'],
   testPaths: [
-    '__tests__'
+    '__tests__',
+    '!__tests__/utils/'
   ]
 };

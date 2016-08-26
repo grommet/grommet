@@ -26,7 +26,7 @@ export default class List extends Component {
     this._setSelection();
     if (this.props.onMore) {
       this._scroll = InfiniteScroll.startListeningForScroll(
-        this.refs.more, this.props.onMore
+        this.moreRef, this.props.onMore
       );
     }
   }
@@ -49,7 +49,7 @@ export default class List extends Component {
       this._setSelection();
     }
     if (this.props.onMore && !this._scroll) {
-      this._scroll = InfiniteScroll.startListeningForScroll(this.refs.more,
+      this._scroll = InfiniteScroll.startListeningForScroll(this.moreRef,
         this.props.onMore);
     }
   }
@@ -61,12 +61,14 @@ export default class List extends Component {
   }
 
   _setSelection () {
-    Selection.setClassFromIndexes({
-      containerElement: this.refs.list,
-      childSelector: `.${LIST_ITEM}`,
-      selectedClass: SELECTED_CLASS,
-      selectedIndexes: this.state.selected
-    });
+    if (this.listRef) {
+      Selection.setClassFromIndexes({
+        containerElement: this.listRef,
+        childSelector: `.${LIST_ITEM}`,
+        selectedClass: SELECTED_CLASS,
+        selectedIndexes: this.state.selected
+      });
+    };
   }
 
   _onClick (event) {
@@ -75,7 +77,7 @@ export default class List extends Component {
     }
 
     let selected = Selection.onClick(event, {
-      containerElement: this.refs.list,
+      containerElement: this.listRef,
       childSelector: `.${LIST_ITEM}`,
       selectedClass: SELECTED_CLASS,
       multiSelect: ('multiple' === this.props.selectable),
@@ -117,14 +119,15 @@ export default class List extends Component {
     if (this.props.onMore) {
       classes.push(CLASS_ROOT + "--moreable");
       more = (
-        <li ref="more" className={CLASS_ROOT + "__more"}>
+        <li ref={(ref) => this.moreRef = ref} className={CLASS_ROOT + "__more"}>
           <SpinningIcon />
         </li>
       );
     }
 
     return (
-      <ul ref="list" className={classes.join(' ')} onClick={this._onClick}>
+      <ul ref={(ref) => this.listRef = ref}
+        className={classes.join(' ')} onClick={this._onClick}>
         {empty}
         {this.props.children}
         {more}
