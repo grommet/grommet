@@ -1,6 +1,6 @@
 // Checkbox-test.js
 import React from 'react';
-import Checkbox from '../../src/js/components/Checkbox.js';
+import Checkbox from '../../src/js/components/CheckBox';
 import renderer from 'react/lib/ReactTestRenderer';
 
 describe('Checkbox', () => {
