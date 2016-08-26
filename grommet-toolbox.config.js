@@ -92,8 +92,7 @@ export default {
     }
   },
   distPreprocess: ['generate-index-icons', 'dist-css'],
-  scsslint: true,
   testPaths: [
-    'test/**/*.js'
+    '__tests__'
   ]
 };
