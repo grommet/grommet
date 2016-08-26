@@ -97,7 +97,6 @@
   &__control-check {
     position: absolute;
     top: -2px;
-    left: -2px;
     display: none;
     width: $control-size;
     height: $control-size;
@@ -152,7 +151,7 @@
       width: double($control-size);
       height: $control-size;
       border-radius: $control-size;
-      background-color: $meter-background-color;
+      background-color: $control-background-color;
       border: none;
       transition: background-color 0.3s;
 

@@ -7,8 +7,8 @@ const CLASS_ROOT = CSSClassnames.FORM_FIELD;
 
 export default class FormField extends Component {
 
-  constructor() {
-    super();
+  constructor(props, context) {
+    super(props, context);
 
     this._onFocus = this._onFocus.bind(this);
     this._onBlur = this._onBlur.bind(this);
@@ -78,7 +78,9 @@ export default class FormField extends Component {
     let error;
     if (this.props.error) {
       classes.push(CLASS_ROOT + "--error");
-      error = <span className={CLASS_ROOT + "__error"}>{this.props.error}</span>;
+      error = (
+        <span className={CLASS_ROOT + "__error"}>{this.props.error}</span>
+      );
     }
     let help;
     if (this.props.help !== null && this.props.help !== undefined) {

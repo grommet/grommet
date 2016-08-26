@@ -18,7 +18,8 @@ const HORIZONTAL_ALIGN_OPTIONS = ['right', 'left'];
 
 export default {
 
-  // How callers can validate a property for drop alignment which will be passed to add().
+  // How callers can validate a property for drop alignment which will be
+  // passed to add().
   alignPropType: PropTypes.shape({
     top: PropTypes.oneOf(VERTICAL_ALIGN_OPTIONS),
     bottom: PropTypes.oneOf(VERTICAL_ALIGN_OPTIONS),
@@ -55,7 +56,8 @@ export default {
     }
     if (options.align && options.align.bottom &&
       VERTICAL_ALIGN_OPTIONS.indexOf(options.align.bottom) === -1) {
-      console.warn("Warning: Invalid align.bottom value '" + options.align.bottom +
+      console.warn("Warning: Invalid align.bottom value '" +
+        options.align.bottom +
         "' supplied to Drop," +
         "expected one of [" + VERTICAL_ALIGN_OPTIONS.join(',') + "]");
     }
@@ -67,7 +69,8 @@ export default {
     }
     if (options.align && options.align.right &&
       HORIZONTAL_ALIGN_OPTIONS.indexOf(options.align.right) === -1) {
-      console.warn("Warning: Invalid align.right value '" + options.align.right +
+      console.warn("Warning: Invalid align.right value '" +
+        options.align.right +
         "' supplied to Drop," +
         "expected one of [" + HORIZONTAL_ALIGN_OPTIONS.join(',') + "]");
     }
@@ -83,7 +86,8 @@ export default {
           bottom: align.bottom,
           left: align.left,
           right: align.right
-        }
+        },
+        responsive: options.responsive !== false ? true : options.responsive
       }
     };
     if (! drop.options.align.top && ! drop.options.align.bottom) {
@@ -95,13 +99,16 @@ export default {
 
     // setup DOM
     drop.container = document.createElement('div');
-    drop.container.className = `grommet ${CLASS_ROOT} ${drop.options.className || ''}`;
+    drop.container.className =
+      `grommet ${CLASS_ROOT} ${drop.options.className || ''}`;
     if (drop.options.colorIndex) {
       drop.container.className +=
         ` ${BACKGROUND_COLOR_INDEX}-${drop.options.colorIndex}`;
     }
+
     // prepend in body to avoid browser scroll issues
     document.body.insertBefore(drop.container, document.body.firstChild);
+
     render(content, drop.container);
 
     drop.scrollParents = DOM.findScrollParents(drop.control);
@@ -112,10 +119,34 @@ export default {
     drop.scrollParents.forEach(function (scrollParent) {
       scrollParent.addEventListener('scroll', drop.place);
     });
-    window.addEventListener('resize', drop.place);
+
+    // we intentionally skipped debounce as we believe resizing
+    // will not be a common action. Also the UI looks better if the Drop
+    // doesn’t lag to align with the control component.
+    window.addEventListener('resize', () => {
+      // we need to update scroll parents as Responsive options may change
+      // the parent for the target element
+      drop.scrollParents.forEach(function (scrollParent) {
+        scrollParent.removeEventListener('scroll', drop.place);
+      });
+
+      drop.scrollParents = DOM.findScrollParents(drop.control);
+
+      drop.scrollParents.forEach(function (scrollParent) {
+        scrollParent.addEventListener('scroll', drop.place);
+      });
+
+      drop.place();
+    });
 
     // position content
     this._place(drop);
+
+    var items = drop.container.firstChild.getElementsByTagName('*');
+    var firstFocusable = DOM.getBestFirstFocusable(items);
+    if (firstFocusable) {
+      firstFocusable.focus();
+    }
 
     return drop;
   },
@@ -194,10 +225,10 @@ export default {
       }
     } else if (align.bottom) {
       if ('bottom' === align.bottom) {
-        top = Math.max(0, controlRect.bottom - containerRect.height);
+        top = controlRect.bottom - containerRect.height;
         maxHeight = Math.max(controlRect.bottom, 0);
       } else {
-        top = Math.max(0, controlRect.top - containerRect.height);
+        top = controlRect.top - containerRect.height;
         maxHeight = Math.max(controlRect.top, 0);
       }
     }
@@ -208,19 +239,27 @@ export default {
       if (align.top && top > (windowHeight / 2)) {
         // We put it below, but there's more room above, put it above
         if (align.top === 'bottom') {
-          top = Math.max(controlRect.top - containerRect.height, 0);
+          if (drop.options.responsive) {
+            top = Math.max(controlRect.top - containerRect.height, 0);
+          }
           maxHeight = controlRect.top;
         } else {
-          top = Math.max(controlRect.bottom - containerRect.height, 0);
+          if (drop.options.responsive) {
+            top = Math.max(controlRect.bottom - containerRect.height, 0);
+          }
           maxHeight = controlRect.bottom;
         }
       } else if (align.bottom && maxHeight < (windowHeight / 2)) {
         // We put it above but there's more room below, put it below
         if (align.bottom === 'bottom') {
-          top = controlRect.top;
+          if (drop.options.responsive) {
+            top = controlRect.top;
+          }
           maxHeight = Math.min(windowHeight - top, windowHeight);
         } else {
-          top = controlRect.bottom;
+          if (drop.options.responsive) {
+            top = controlRect.bottom;
+          }
           maxHeight = Math.min(windowHeight - top,
             windowHeight - controlRect.height);
         }

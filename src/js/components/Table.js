@@ -15,8 +15,8 @@ const MIN_CELL_WIDTH = 96;
 
 export default class Table extends Component {
 
-  constructor(props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
 
     this._onClick = this._onClick.bind(this);
     this._onResize = this._onResize.bind(this);
@@ -58,7 +58,8 @@ export default class Table extends Component {
   }
 
   componentDidUpdate (prevProps, prevState) {
-    if (JSON.stringify(this.state.selected) !== JSON.stringify(prevState.selected)) {
+    if (JSON.stringify(this.state.selected) !==
+      JSON.stringify(prevState.selected)) {
       this._setSelection();
     }
     if (this.state.rebuildMirror && ! this.state.small) {
@@ -187,13 +188,16 @@ export default class Table extends Component {
       let mirrorCells = mirrorElement.querySelectorAll('thead tr th');
 
       let rect = tableElement.getBoundingClientRect();
-      mirrorElement.style.width = '' + Math.floor(rect.right - rect.left) + 'px';
+      mirrorElement.style.width =
+        '' + Math.floor(rect.right - rect.left) + 'px';
 
       let height = 0;
       for (let i = 0; i < cells.length; i++) {
         rect = cells[i].getBoundingClientRect();
-        mirrorCells[i].style.width = '' + Math.floor(rect.right - rect.left) + 'px';
-        mirrorCells[i].style.height = '' + Math.floor(rect.bottom - rect.top) + 'px';
+        mirrorCells[i].style.width =
+          '' + Math.floor(rect.right - rect.left) + 'px';
+        mirrorCells[i].style.height =
+          '' + Math.floor(rect.bottom - rect.top) + 'px';
         height = Math.max(height, Math.floor(rect.bottom - rect.top));
       }
       mirrorElement.style.height = '' + height + 'px';

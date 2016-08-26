@@ -2,11 +2,18 @@
 
 import React, { Component, PropTypes } from 'react';
 import CSSClassnames from '../utils/CSSClassnames';
+import { announce } from '../utils/Announcer';
 
 const CLASS_ROOT = CSSClassnames.VALUE;
 const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
 
 export default class Value extends Component {
+
+  componentDidUpdate () {
+    if (this.props.announce) {
+      announce(this.refs.value.textContent);
+    }
+  }
 
   render () {
     const classes = [CLASS_ROOT];
@@ -48,7 +55,8 @@ export default class Value extends Component {
     }
 
     return (
-      <div className={classes.join(' ')} onClick={this.props.onClick}>
+      <div ref='value' className={classes.join(' ')}
+        onClick={this.props.onClick}>
         <div className={`${CLASS_ROOT}__annotated`}>
           {this.props.icon}
           <span className={`${CLASS_ROOT}__value`}>
@@ -67,16 +75,19 @@ export default class Value extends Component {
 Value.propTypes = {
   active: PropTypes.bool,
   align: PropTypes.oneOf(['start', 'center', 'end']),
+  announce: PropTypes.bool,
   colorIndex: PropTypes.string,
   icon: PropTypes.node,
   label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   onClick: PropTypes.func,
   size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
   trendIcon: PropTypes.node,
-  value: PropTypes.oneOfType([PropTypes.number, PropTypes.string, PropTypes.node]),
+  value: PropTypes.oneOfType([PropTypes.number, PropTypes.string,
+    PropTypes.node]),
   units: PropTypes.oneOfType([PropTypes.string, PropTypes.node])
 };
 
 Value.defaultProps = {
-  align: 'center'
+  align: 'center',
+  announce: false
 };

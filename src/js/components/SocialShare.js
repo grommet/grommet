@@ -22,10 +22,12 @@ export default class SocialShare extends Component {
 
     if (type === 'twitter') {
       socialIcon = <SocialTwitterIcon a11yTitle='Share on Twitter' />;
-      href = `https://twitter.com/intent/tweet?url=${encodedLink}&text=${encodedText}`;
+      href = `https://twitter.com/intent/tweet?url=` +
+        `${encodedLink}&text=${encodedText}`;
     } else if (type === 'linkedin') {
       socialIcon = <SocialLinkedinIcon a11yTitle='Share on LinkedIn' />;
-      href = `https://www.linkedin.com/shareArticle?mini=true&url=${encodedLink}&title=${encodedTitle}&summary=${encodedText}`;
+      href = `https://www.linkedin.com/shareArticle?mini=true&url=` +
+        `${encodedLink}&title=${encodedTitle}&summary=${encodedText}`;
     } else if (type === 'google') {
       socialIcon = <SocialGoogleIcon a11yTitle='Share on Google' />;
       href = `https://plus.google.com/share?url=${encodedLink}`;
@@ -34,7 +36,8 @@ export default class SocialShare extends Component {
       href = `https://www.facebook.com/sharer/sharer.php?u=${encodedLink}`;
     } else if (type === 'email') {
       socialIcon = <SocialEmailIcon a11yTitle='Share on Email' />;
-      href = `mailto:?subject=${encodedTitle}&body=${encodedText}%0D%0A${encodedLink}`;
+      href = `mailto:?subject=` +
+        `${encodedTitle}&body=${encodedText}%0D%0A${encodedLink}`;
       target = '_self';
     }
 
@@ -45,7 +48,8 @@ export default class SocialShare extends Component {
 };
 
 SocialShare.propTypes = {
-  type: PropTypes.oneOf(['email', 'facebook', 'twitter', 'linkedin', 'google']).isRequired,
+  type: PropTypes.oneOf(['email', 'facebook', 'twitter', 'linkedin',
+    'google']).isRequired,
   link: PropTypes.string.isRequired,
   title: PropTypes.string,
   text: PropTypes.string

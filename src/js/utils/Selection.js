@@ -26,7 +26,8 @@ function clearClass (options) {
 }
 
 // Sets the selectedClass on all children whose index is in selectedIndexes.
-// options: {containerElement: , childSelector: , selectedClass: , selectedIndexes: []}
+// options: {containerElement: , childSelector: , selectedClass: ,
+//    selectedIndexes: []}
 function setClassFromIndexes (options) {
   clearClass(options);
   if (options.selectedIndexes) {
@@ -40,7 +41,8 @@ function setClassFromIndexes (options) {
   }
 }
 
-// Gets the selected selectedClass on all children whose index is in selectedIndexes.
+// Gets the selected selectedClass on all children whose index is in
+// selectedIndexes.
 // options: {containerElement: , childSelector: , selectedClass: }
 function getIndexesFromClass (options) {
   const items = options.containerElement
@@ -61,11 +63,13 @@ function onClick (event, options) {
 
   // Go up the DOM tree until we match the childSelector
   let item = event.target;
-  var matchFunction = item.matches || item.matchesElement || item.msMatchesSelector;
+  var matchFunction =
+    item.matches || item.matchesElement || item.msMatchesSelector;
   while (matchFunction && item &&
     !matchFunction.bind(item, options.childSelector)()) {
     item = item.parentNode;
-    matchFunction = item.matches || item.matchesElement || item.msMatchesSelector;
+    matchFunction =
+      item.matches || item.matchesElement || item.msMatchesSelector;
   }
 
   // determine the index of the clicked element
@@ -106,7 +110,8 @@ function onClick (event, options) {
         selectedIndexes.forEach(function (selectIndex, arrayIndex) {
           if (-1 === closestIndex) {
             closestIndex = selectIndex;
-          } else if (Math.abs(indexInContainer - selectIndex) < Math.abs(indexInContainer - closestIndex)) {
+          } else if (Math.abs(indexInContainer - selectIndex) <
+            Math.abs(indexInContainer - closestIndex)) {
             closestIndex = selectIndex;
           }
         });

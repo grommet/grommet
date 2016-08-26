@@ -1,51 +1,84 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
+import classnames from 'classnames';
+
+import Button from './Button';
+import CheckBox from './CheckBox';
 import FormattedMessage from './FormattedMessage';
 import Form from './Form';
 import FormField from './FormField';
-import CheckBox from './CheckBox';
-import Button from './Button';
 import Footer from './Footer';
+import Heading from './Heading';
+
 import CSSClassnames from '../utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.LOGIN_FORM;
 
 export default class LoginForm extends Component {
 
-  constructor() {
-    super();
+  constructor(props, context) {
+    super(props, context);
 
     this._onSubmit = this._onSubmit.bind(this);
+    this._onUsernameChange = this._onUsernameChange.bind(this);
+    this._onPasswordChange = this._onPasswordChange.bind(this);
+    this._onRememberMeChange = this._onRememberMeChange.bind(this);
+
+    this.state = {
+      password: '',
+      rememberMe: props.defaultValues.rememberMe,
+      username: props.defaultValues.username
+    };
   }
 
   componentDidMount () {
     this.refs.username.focus();
   }
 
+  _onUsernameChange (event) {
+    this.setState({ username: event.target.value });
+  }
+
+  _onPasswordChange (event) {
+    this.setState({ password: event.target.value });
+  }
+
+  _onRememberMeChange (event) {
+    this.setState({ rememberMe: event.target.checked });
+  }
+
   _onSubmit (event) {
     event.preventDefault();
+    const { onSubmit } = this.props;
+    let { password, rememberMe, username } = this.state;
 
-    let username = this.refs.username.value.trim();
-    let password = this.refs.password.value.trim();
-    let rememberMe = this.refs.rememberMe && this.refs.rememberMe.checked;
+    username = username.trim();
+    password = password.trim();
 
-    if (this.props.onSubmit) {
-      this.props.onSubmit({username, password, rememberMe});
+    if (onSubmit) {
+      onSubmit({username, password, rememberMe});
     }
   }
 
   render () {
-    let classes = [CLASS_ROOT];
-    if (this.props.align) {
-      classes.push(`${CLASS_ROOT}--align-${this.props.align}`);
-    }
+    const {
+      align, className, errors, forgotPassword,
+      logo, onSubmit, rememberMe, secondaryText, title, usernameType
+    } = this.props;
 
-    let errors = this.props.errors.map(function (error, index) {
-      let errorComponent = undefined;
+    let classes = classnames(
+      CLASS_ROOT,
+      className, {
+        [`${CLASS_ROOT}--align-${align}`]: align
+      }
+    );
+
+    let errorsNode = errors.map((error, index) => {
+      let errorComponent;
       if (error) {
         errorComponent = (
-          <div key={index} className={`${CLASS_ROOT}__error error`}>
+          <div key={index} className='error'>
             <FormattedMessage id={error} defaultMessage={error} />
           </div>
         );
@@ -53,91 +86,73 @@ export default class LoginForm extends Component {
       return errorComponent;
     });
 
-    let logo;
-    if (this.props.logo) {
-      logo = (
-        <div className={`${CLASS_ROOT}__logo`}>
-          {this.props.logo}
-        </div>
+    let titleNode;
+    if (title) {
+      titleNode = (
+        <Heading strong={true}>
+          {title}
+        </Heading>
       );
     }
 
-    let title;
-    if (this.props.title) {
-      title = (
-        <h1 className={`${CLASS_ROOT}__title`}>
-          <strong>{this.props.title}</strong>
-        </h1>
-      );
-    }
-
-    let secondaryText;
-    if (this.props.secondaryText) {
-      secondaryText = (
+    let secondaryTextNode;
+    if (secondaryText) {
+      secondaryTextNode = (
         <p className={`${CLASS_ROOT}__secondary-text secondary`}>
-          {this.props.secondaryText}
+          {secondaryText}
         </p>
       );
     }
 
-    let rememberMe;
-    if (this.props.rememberMe) {
-
-      let rememberMeLabel = (
-        <FormattedMessage id="Remember me" defaultMessage="Remember me" />
+    let rememberMeNode;
+    if (rememberMe) {
+      const rememberMeLabel = (
+        <FormattedMessage id='Remember me' defaultMessage='Remember me' />
       );
 
-      rememberMe = (
-        <CheckBox className={`${CLASS_ROOT}__remember-me`}
-          id="remember-me"
-          label={rememberMeLabel}
-          defaultChecked={this.props.defaultValues.rememberMe}
-          ref="rememberMe" />
+      rememberMeNode = (
+        <CheckBox label={rememberMeLabel} checked={this.state.rememberMe}
+          onChange={this._onRememberMeChange} />
       );
     }
 
-    let forgot;
-    if (this.props.forgotPassword) {
-      forgot = (
-        <div className={`${CLASS_ROOT}__forgot`}>
-          {this.props.forgotPassword}
-        </div>
-      );
-    }
+    const username = usernameType === 'email' ? (
+      <FormattedMessage id='Email' defaultMessage='Email' />
+    ) : (
+      <FormattedMessage id='Username' defaultMessage='Username' />
+    );
 
-    let username;
-    if (this.props.usernameType === 'email') {
-      username = <FormattedMessage id="Email" defaultMessage="Email" />;
-    } else {
-      username = <FormattedMessage id="Username" defaultMessage="Username" />;
-    }
-    let password = <FormattedMessage id="Password" defaultMessage="Password" />;
-    let login = <FormattedMessage id="Log In" defaultMessage="Log In" />;
+    const password = (
+      <FormattedMessage id='Password' defaultMessage='Password' />
+    );
+    const login = <FormattedMessage id='Log In' defaultMessage='Log In' />;
 
     return (
-      <Form className={classes.join(' ')} onSubmit={this._onSubmit}>
+      <Form className={classes} onSubmit={this._onSubmit}>
         <div className={`${CLASS_ROOT}__header`}>
           {logo}
-          {title}
-          {secondaryText}
+          {titleNode}
+          {secondaryTextNode}
         </div>
         <fieldset>
-          <FormField htmlFor="username" label={username}>
-            <input id="username" ref="username" type={this.props.usernameType}
-              defaultValue={this.props.defaultValues.username} />
+          <FormField htmlFor='username' label={username}>
+            <input type={usernameType} ref='username'
+              value={this.state.username}
+              onChange={this._onUsernameChange} />
           </FormField>
-          <FormField htmlFor="password" label={password}>
-            <input id="password" ref="password" type="password" />
+          <FormField htmlFor='password' label={password}>
+            <input type='password' value={this.state.password}
+              onChange={this._onPasswordChange} />
           </FormField>
-          {errors}
+          {errorsNode}
         </fieldset>
-        <Footer align={this.props.align} size="small" direction="column"
+        <Footer align={align} size='small' direction='column'
           pad={{vertical: 'medium', between: 'medium'}}>
-          {rememberMe}
-          <Button id={`${CLASS_ROOT}__submit`} primary={true} strong={true}
-            className={`${CLASS_ROOT}__submit`} type="submit" label={login}
-            onClick={this.props.onSubmit ? this._onSubmit : null} />
-          {forgot}
+          {rememberMeNode}
+          <Button primary={true} strong={true}
+            className={`${CLASS_ROOT}__submit`} type='submit' label={login}
+            onClick={onSubmit ? this._onSubmit : undefined} />
+          {forgotPassword}
         </Footer>
       </Form>
     );
@@ -147,6 +162,7 @@ export default class LoginForm extends Component {
 
 LoginForm.propTypes = {
   align: PropTypes.oneOf(['start', 'center', 'end', 'stretch']),
+  className: PropTypes.string,
   defaultValues: PropTypes.shape({
     username: PropTypes.string,
     rememberMe: PropTypes.bool

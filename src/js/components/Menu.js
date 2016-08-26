@@ -25,8 +25,8 @@ function isFunction (obj) {
 // so we can transfer the router context.
 class MenuDrop extends Component {
 
-  constructor() {
-    super();
+  constructor(props, context) {
+    super(props, context);
 
     this._onUpKeyPress = this._onUpKeyPress.bind(this);
     this._onDownKeyPress = this._onDownKeyPress.bind(this);
@@ -73,12 +73,6 @@ class MenuDrop extends Component {
     container.setAttribute('aria-activedescendant',
       menuItems[0].getAttribute('id'));
 
-    const menuDrop = ReactDOM.findDOMNode(this.refs.menuDrop);
-    var items = menuDrop.getElementsByTagName('*');
-    var firstFocusable = DOMUtils.getBestFirstFocusable(items);
-    if (firstFocusable) {
-      firstFocusable.focus();
-    }
   }
 
   componentWillUnmount () {
@@ -178,7 +172,8 @@ class MenuDrop extends Component {
   render () {
     let { dropAlign, size, control, id, colorIndex, onClick } = this.props;
     let boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
-    delete boxProps.colorIndex; // manage colorIndex at the outer menuDrop element
+    // manage colorIndex at the outer menuDrop element
+    delete boxProps.colorIndex;
 
     delete boxProps.onClick;
 
@@ -187,8 +182,10 @@ class MenuDrop extends Component {
     // Put nested Menus inline
     const children = React.Children.map(this.props.children, child => {
       let result = child;
-      if (child && isFunction(child.type) && child.type.prototype._renderMenuDrop) {
-        result = React.cloneElement(child, {inline: 'explode', direction: 'column'});
+      if (child && isFunction(child.type) &&
+        child.type.prototype._renderMenuDrop) {
+        result = React.cloneElement(child,
+          {inline: 'explode', direction: 'column'});
       }
       return result;
     });
@@ -243,8 +240,8 @@ MenuDrop.childContextTypes = {
 
 export default class Menu extends Component {
 
-  constructor(props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
 
     this._onOpen = this._onOpen.bind(this);
     this._onClose = this._onClose.bind(this);
@@ -286,6 +283,12 @@ export default class Menu extends Component {
 
     if (this.state.responsive) {
       this._responsive = Responsive.start(this._onResponsive);
+    }
+  }
+
+  componentWillReceiveProps (nextProps) {
+    if (this.props.inline !== nextProps.inline) {
+      this.setState({ inline: nextProps.inline });
     }
   }
 
@@ -336,7 +339,6 @@ export default class Menu extends Component {
               align: this.props.dropAlign,
               colorIndex: this.props.dropColorIndex
             });
-          this._drop.render(this._renderMenuDrop());
           break;
       }
     } else if (this.state.state === 'expanded') {
@@ -424,7 +426,8 @@ export default class Menu extends Component {
     let closeLabel = Intl.getMessage(this.context.intl, 'Close');
     let menuLabel = Intl.getMessage(this.context.intl, 'Menu');
     let menuTitle = (
-      `${closeLabel} ${this.props.a11yTitle || this.props.label || ''} ${menuLabel}`
+      `${closeLabel} ${this.props.a11yTitle || this.props.label || ''} ` +
+      `${menuLabel}`
     );
 
     let control = (
@@ -491,7 +494,8 @@ export default class Menu extends Component {
       let openLabel = Intl.getMessage(this.context.intl, 'Open');
       let menuLabel = Intl.getMessage(this.context.intl, 'Menu');
       let menuTitle = (
-        `${openLabel} ${this.props.a11yTitle || this.props.label || ''} ${menuLabel}`
+        `${openLabel} ${this.props.a11yTitle || this.props.label || ''} ` +
+        `${menuLabel}`
       );
 
       return (
@@ -519,7 +523,7 @@ Menu.propTypes = {
   dropColorIndex: PropTypes.string,
   icon: PropTypes.node,
   id: PropTypes.string,
-  inline: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf('expand')]),
+  inline: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['expand'])]),
   label: PropTypes.string,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   ...Box.propTypes

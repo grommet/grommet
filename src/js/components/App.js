@@ -63,6 +63,7 @@ export default class App extends Component {
       <div lang={lang} className={classes}>
         {children}
         <SkipLinks />
+        <div className={`${CLASS_ROOT}__announcer`} aria-live='polite' />
       </div>
     );
   }

@@ -1,6 +1,6 @@
 exports[`Checkbox has correct checked=true rendering 1`] = `
 <label
-  aria-labelledby="grommetux-check-box-label"
+  aria-label="Test Checkbox"
   className="grommetux-check-box">
   <span>
     <input
@@ -26,9 +26,7 @@ exports[`Checkbox has correct checked=true rendering 1`] = `
     </span>
   </span>
   <span
-    className="grommetux-check-box__label"
-    id="grommetux-check-box-label"
-    role="label">
+    className="grommetux-check-box__label">
     Test Checkbox
   </span>
 </label>
@@ -36,7 +34,7 @@ exports[`Checkbox has correct checked=true rendering 1`] = `
 
 exports[`Checkbox has correct default options 1`] = `
 <label
-  aria-labelledby="grommetux-check-box-label"
+  aria-label="Test Checkbox"
   className="grommetux-check-box">
   <span>
     <input
@@ -62,9 +60,7 @@ exports[`Checkbox has correct default options 1`] = `
     </span>
   </span>
   <span
-    className="grommetux-check-box__label"
-    id="grommetux-check-box-label"
-    role="label">
+    className="grommetux-check-box__label">
     Test Checkbox
   </span>
 </label>
@@ -72,7 +68,7 @@ exports[`Checkbox has correct default options 1`] = `
 
 exports[`Checkbox has correct disabled=true rendering 1`] = `
 <label
-  aria-labelledby="grommetux-check-box-label"
+  aria-label="Test Checkbox"
   className="grommetux-check-box grommetux-check-box--disabled">
   <span>
     <input
@@ -98,9 +94,7 @@ exports[`Checkbox has correct disabled=true rendering 1`] = `
     </span>
   </span>
   <span
-    className="grommetux-check-box__label"
-    id="grommetux-check-box-label"
-    role="label">
+    className="grommetux-check-box__label">
     Test Checkbox
   </span>
 </label>
@@ -108,12 +102,10 @@ exports[`Checkbox has correct disabled=true rendering 1`] = `
 
 exports[`Checkbox has correct reverse=true rendering 1`] = `
 <label
-  aria-labelledby="grommetux-check-box-label"
+  aria-label="Test Checkbox"
   className="grommetux-check-box">
   <span
-    className="grommetux-check-box__label"
-    id="grommetux-check-box-label"
-    role="label">
+    className="grommetux-check-box__label">
     Test Checkbox
   </span>
   <span>
@@ -144,7 +136,7 @@ exports[`Checkbox has correct reverse=true rendering 1`] = `
 
 exports[`Checkbox has correct toggle=true rendering 1`] = `
 <label
-  aria-labelledby="grommetux-check-box-label"
+  aria-label="Test Checkbox"
   className="grommetux-check-box grommetux-check-box--toggle">
   <span>
     <input
@@ -170,9 +162,7 @@ exports[`Checkbox has correct toggle=true rendering 1`] = `
     </span>
   </span>
   <span
-    className="grommetux-check-box__label"
-    id="grommetux-check-box-label"
-    role="label">
+    className="grommetux-check-box__label">
     Test Checkbox
   </span>
 </label>

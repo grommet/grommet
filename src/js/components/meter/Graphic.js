@@ -2,39 +2,27 @@
 
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
-import { classRoot, propTypes, buildPath } from './utils';
 import Intl from '../../utils/Intl';
 import KeyboardAccelerators from '../../utils/KeyboardAccelerators';
 import CSSClassnames from '../../utils/CSSClassnames';
+import { propTypes, buildPath } from './utils';
 
+const CLASS_ROOT = CSSClassnames.METER;
 const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
 
-const CLASS_ROOT = classRoot;
 const MIN_WIDTH = 0.033;
 
 export default class Graphic extends Component {
 
-  constructor(props) {
-    super();
+  constructor(props, context) {
+    super(props, context);
     this.state = this._stateFromProps(props);
 
-    this._onEnter = this._onEnter.bind(this);
-    this._onRequestForNextLegend = this._onRequestForNextLegend.bind(this);
-    this._onRequestForPreviousLegend = this._onRequestForPreviousLegend.bind(this);
-  }
-
-  componentDidMount () {
-    this._keyboardHandlers = {
-      left: this._onRequestForPreviousLegend,
-      up: this._onRequestForPreviousLegend,
-      right: this._onRequestForNextLegend,
-      down: this._onRequestForNextLegend,
-      enter: this._onEnter,
-      space: this._onEnter
-    };
-    KeyboardAccelerators.startListeningToKeyboard(
-      this, this._keyboardHandlers
-    );
+    this._onNextBand = this._onNextBand.bind(this);
+    this._onPreviousBand = this._onPreviousBand.bind(this);
+    this._onGraphicFocus = this._onGraphicFocus.bind(this);
+    this._onGraphicBlur = this._onGraphicBlur.bind(this);
+    this._onBandClick = this._onBandClick.bind(this);
   }
 
   componentWillReceiveProps (newProps) {
@@ -42,10 +30,32 @@ export default class Graphic extends Component {
     this.setState(state);
   }
 
-  componentWillUnmount () {
+  _onGraphicFocus () {
+    this._keyboardHandlers = {
+      left: this._onPreviousBand,
+      up: this._onPreviousBand,
+      right: this._onNextBand,
+      down: this._onNextBand,
+      enter: this._onBandClick
+    };
+    KeyboardAccelerators.startListeningToKeyboard(
+      this, this._keyboardHandlers
+    );
+  }
+
+  _onGraphicBlur () {
     KeyboardAccelerators.stopListeningToKeyboard(
       this, this._keyboardHandlers
     );
+  }
+
+  _onBandClick () {
+    if (this.props.activeIndex !== undefined) {
+      const activeBand = this.props.series[this.props.activeIndex];
+      if (activeBand && activeBand.onClick) {
+        activeBand.onClick();
+      }
+    }
   }
 
   // override
@@ -58,22 +68,23 @@ export default class Graphic extends Component {
     return "";
   }
 
-  _renderSlice (trackIndex, item, itemIndex, startValue, maxValue, track, threshold) {
+  _renderSlice (trackIndex, item, itemIndex, startValue, maxValue, track,
+    threshold) {
     let path;
     if (! item.hidden) {
       let classes = [`${CLASS_ROOT}__slice`];
-      let activeMeterSlice;
       if (itemIndex === this.props.activeIndex) {
-        activeMeterSlice = 'activeMeterSlice';
         classes.push(`${CLASS_ROOT}__slice--active`);
       }
       if (item.onClick) {
         classes.push(CLASS_ROOT + "__slice--clickable");
       }
+      if (item.colorIndex) {
+        classes.push(`${COLOR_INDEX}-${item.colorIndex}`);
+      }
 
-      classes.push(`${COLOR_INDEX}-${item.colorIndex}`);
-
-      let commands = this._sliceCommands(trackIndex, item, startValue, maxValue);
+      let commands =
+        this._sliceCommands(trackIndex, item, startValue, maxValue);
 
       if (threshold) {
         path = buildPath(itemIndex, commands, classes);
@@ -81,12 +92,12 @@ export default class Graphic extends Component {
         path = buildPath(itemIndex, commands, classes,
           this.props.onActivate, item.onClick);
       } else {
-        let a11yDescId = `${this.props.a11yDescId}_${itemIndex}`;
-        let a11yTitle = `${item.value} ${item.label || this.props.units || ''}`;
-
+        const a11yTitle = (
+          `${item.value} ${item.label || this.props.units || ''}`
+        );
+        const role = this.props.series.length > 1 ? 'img' : undefined;
         path = buildPath(itemIndex, commands, classes,
-          this.props.onActivate, item.onClick, a11yDescId,
-          a11yTitle, activeMeterSlice);
+          this.props.onActivate, item.onClick, a11yTitle, role);
       }
     }
 
@@ -113,53 +124,36 @@ export default class Graphic extends Component {
     return this._sliceCommands(0, this.props.max, this.props.min.value);
   }
 
-  _onRequestForPreviousLegend (event) {
-    if (document.activeElement === this.refs.meter) {
-      event.preventDefault();
-      var totalValueCount = (
-        ReactDOM.findDOMNode(this.refs.meterValues).childNodes.length
-      );
+  _onPreviousBand (event) {
+    event.preventDefault();
+    const activeIndex = (
+      this.props.activeIndex !== undefined ? this.props.activeIndex : -1
+    );
 
-      if (this.props.activeIndex - 1 < 0) {
-        this.props.onActivate(totalValueCount - 1);
-      } else {
-        this.props.onActivate(this.props.activeIndex - 1);
-      }
-
-      //stop event propagation
-      return true;
+    if (activeIndex - 1 >= 0) {
+      this.props.onActivate(activeIndex - 1);
     }
+
+    //stop event propagation
+    return true;
   }
 
-  _onRequestForNextLegend (event) {
-    if (document.activeElement === this.refs.meter) {
-      event.preventDefault();
-      var totalValueCount = (
-        ReactDOM.findDOMNode(this.refs.meterValues).childNodes.length
-      );
+  _onNextBand (event) {
+    event.preventDefault();
+    const activeIndex = (
+      this.props.activeIndex !== undefined ? this.props.activeIndex : -1
+    );
 
-      if (this.props.activeIndex + 1 >= totalValueCount) {
-        this.props.onActivate(0);
-      } else {
-        this.props.onActivate(this.props.activeIndex + 1);
-      }
+    var totalBands = (
+      ReactDOM.findDOMNode(this.refs.meterValues).childNodes.length
+    );
 
-      //stop event propagation
-      return true;
+    if (activeIndex + 1 < totalBands) {
+      this.props.onActivate(activeIndex + 1);
     }
-  }
 
-  _onEnter (event) {
-    if (document.activeElement === this.refs.meter) {
-      if (this.refs.activeMeterSlice) {
-        let index = this.refs.activeMeterSlice.getAttribute('data-index');
-
-        //trigger click on active meter slice
-        if (this.props.series[index].onClick) {
-          this.props.series[index].onClick();
-        }
-      }
-    }
+    //stop event propagation
+    return true;
   }
 
   _renderLoading () {
@@ -194,13 +188,15 @@ export default class Graphic extends Component {
 
   _renderTracks () {
     const { min, max } = this.props;
-    const trackValue = { value: max.value, colorIndex: 'unset' };
+    const trackValue = { value: max.value };
     let tracks;
     if (this.props.stacked) {
-      tracks = this._renderSlice(0, trackValue, 0, min.value, max.value, true, false);
+      tracks =
+        this._renderSlice(0, trackValue, 0, min.value, max.value, true, false);
     } else {
       tracks = this.props.series.map((item, index) => (
-        this._renderSlice(index, trackValue, index, min.value, max.value, true, false)
+        this._renderSlice(index, trackValue, index, min.value, max.value,
+          true, false)
       ));
     }
     return (
@@ -212,7 +208,8 @@ export default class Graphic extends Component {
 
   _renderThresholds () {
     let result;
-    let thresholds = this._renderSlices(this.props.thresholds, -0.4, false, true);
+    let thresholds =
+      this._renderSlices(this.props.thresholds, -0.4, false, true);
     if (thresholds.length > 0) {
       result = (
         <g className={`${CLASS_ROOT}__thresholds`}>
@@ -247,7 +244,7 @@ export default class Graphic extends Component {
       a11yTitle = `${graphicTitle} ${meterTitle}`;
     }
 
-    return a11yTitle;
+    return `${a11yTitle}. ${this._renderA11YDesc()}`;
   }
 
   _renderA11YDesc () {
@@ -293,24 +290,19 @@ export default class Graphic extends Component {
     let inlineLegend = this._renderInlineLegend();
 
     let a11yTitle = this._renderA11YTitle();
-    let a11yDesc = this._renderA11YDesc();
 
-    let activeDescendant = `${this.props.a11yDescId}_${this.props.activeIndex || 0}`;
+    const role = this.props.series.length > 1 ? 'group' : 'img';
 
     return (
       <svg ref="meter" className={`${CLASS_ROOT}__graphic`}
-        tabIndex="0" role={this.props.a11yRole}
-        width={this.state.viewBoxWidth}
+        tabIndex={role === 'img' ? undefined : this.props.tabIndex || '0'}
+        width={this.state.viewBoxWidth} role={role}
         height={this.state.viewBoxHeight}
         viewBox={"0 0 " + this.state.viewBoxWidth +
           " " + this.state.viewBoxHeight}
         preserveAspectRatio="xMidYMid meet"
-        aria-activedescendant={activeDescendant}
-        aria-labelledby={this.props.a11yTitleId + ' ' + this.props.a11yDescId}>
-        <title id={this.props.a11yTitleId}>
-          {a11yTitle}
-        </title>
-        <desc id={this.props.a11yDescId}>{a11yDesc}</desc>
+        aria-label={a11yTitle} onFocus={this._onGraphicFocus}
+        onBlur={this._onGraphicBlur}>
         {tracks}
         {thresholds}
         {values}
@@ -322,8 +314,8 @@ export default class Graphic extends Component {
 }
 
 Graphic.propTypes = {
-  a11yRole: PropTypes.string,
   stacked: PropTypes.bool,
+  tabIndex: PropTypes.string,
   thresholds: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string,
     value: PropTypes.number.isRequired,
@@ -338,5 +330,5 @@ Graphic.contextTypes = {
 };
 
 Graphic.defaultProps = {
-  a11yRole: 'img'
+  tabIndex: '0'
 };

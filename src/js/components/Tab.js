@@ -8,8 +8,8 @@ const CLASS_ROOT = CSSClassnames.TAB;
 
 export default class Tab extends Component {
 
-  constructor() {
-    super();
+  constructor(props, context) {
+    super(props, context);
 
     this._processSpace = this._processSpace.bind(this);
     this._onClickTab = this._onClickTab.bind(this);

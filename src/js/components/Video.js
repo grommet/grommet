@@ -1,285 +1,198 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
-import classnames from 'classnames';
 
-import Intl from '../utils/Intl';
-import Responsive from '../utils/Responsive';
-import Button from './Button';
-import Box from './Box';
-import ExpandIcon from './icons/base/Expand';
-import PlayIcon from './icons/base/Play';
-import PauseIcon from './icons/base/Pause';
-import RefreshIcon from './icons/base/Refresh';
 import CSSClassnames from '../utils/CSSClassnames';
+import VideoControls from './video/Controls';
+import VideoOverlay from './video/Overlay';
+import throttle from '../utils/Throttle';
 
 const CLASS_ROOT = CSSClassnames.VIDEO;
 const BACKGROUND_COLOR_INDEX = CSSClassnames.BACKGROUND_COLOR_INDEX;
 
 export default class Video extends Component {
 
-  constructor () {
-    super();
+  constructor(props, context) {
+    super(props, context);
 
-    this._onResponsive = this._onResponsive.bind(this);
-    this._onPlaying = this._onPlaying.bind(this);
-    this._onPause = this._onPause.bind(this);
-    this._onEnded = this._onEnded.bind(this);
-    this._onClickControl = this._onClickControl.bind(this);
+    this._hasPlayed = false;
+    this._play = this._play.bind(this);
+    this._pause = this._pause.bind(this);
+    this._togglePlay = this._togglePlay.bind(this);
+    this._toggleMute = this._toggleMute.bind(this);
+    this._seek = this._seek.bind(this);
+    this._mute = this._mute.bind(this);
+    this._unmute = this._unmute.bind(this);
+    this._fullscreen = this._fullscreen.bind(this);
     this._onMouseMove = this._onMouseMove.bind(this);
-    this._onClickChapter = this._onClickChapter.bind(this);
-    this._onFullScreen = this._onFullScreen.bind(this);
 
-    this.state = { playing: false, progress: 0, iconSize: 'large' };
+    this.state = {};
   }
 
-  componentDidMount () {
-    this._responsive = Responsive.start(this._onResponsive);
-    let video = this.refs.video;
-    video.addEventListener('playing', this._onPlaying);
-    video.addEventListener('pause', this._onPause);
-    video.addEventListener('ended', this._onEnded);
+  componentWillMount () {
+    this._update = throttle(this._update.bind(this), 100, this);
+    this._mediaEventProps = this._injectUpdateVideoEvents();
   }
 
   componentWillReceiveProps (nextProps) {
     // Dynamically modifying a source element and its attribute when
     // the element is already inserted in a video or audio element will
     // have no effect.
-    // From HTML Specs: https://html.spec.whatwg.org/multipage/embedded-content.html#the-source-element
+    // From HTML Specs:
+    // https://html.spec.whatwg.org/multipage/embedded-content.html
+    //   #the-source-element
     // Using forceUpdate to force redraw of video when receiving new <source>
     this.forceUpdate();
   }
 
-  componentWillUnmount () {
-    let video = this.refs.video;
-    video.removeEventListener('playing', this._onPlaying);
-    video.removeEventListener('pause', this._onPause);
-    video.removeEventListener('ended', this._onEnded);
+  _injectUpdateVideoEvents () {
+    const videoEvents = [
+      'onAbort',
+      'onCanPlay',
+      'onCanPlayThrough',
+      'onDurationChange',
+      'onEmptied',
+      'onEncrypted',
+      'onEnded',
+      'onError',
+      'onLoadedData',
+      'onLoadedMetadata',
+      'onLoadStart',
+      'onPause',
+      'onPlay',
+      'onPlaying',
+      'onProgress',
+      'onRateChange',
+      'onSeeked',
+      'onSeeking',
+      'onStalled',
+      'onSuspend',
+      'onTimeUpdate',
+      'onVolumeChange',
+      'onWaiting'
+    ];
 
-    if (this._responsive) {
-      this._responsive.stop();
-    }
+    return videoEvents.reduce((previousValue, currentValue) => {
+      previousValue[currentValue] = () => {
+        if (currentValue in this.props
+          && typeof this.props[currentValue] === 'function') {
+          this.props[currentValue]();
+        }
+        this._update();
+      };
+
+      return previousValue;
+    }, {});
   }
 
-  _onResponsive (small) {
-    if (small) {
-      this.setState({iconSize: 'small'});
+  _update () {
+    // Set flag for Video first play
+    if (!this._hasPlayed && !this._video.paused && !this._video.loading) {
+      this._hasPlayed = true;
+    }
+
+    this.setState({
+      duration: this._video.duration,
+      currentTime: this._video.currentTime,
+      buffered: this._video.buffered,
+      paused: this._video.paused,
+      muted: this._video.muted,
+      volume: this._video.volume,
+      ended: this._video.ended,
+      readyState: this._video.readyState,
+
+      // computed values
+      hasPlayed: this._hasPlayed,
+      playing: !this._video.paused && !this._video.loading,
+      percentageBuffered: this._video.buffered.length &&
+        this._video.buffered.end(this._video.buffered.length - 1) /
+        this._video.duration * 100,
+      percentagePlayed: this._video.currentTime / this._video.duration * 100,
+      loading: this._video.readyState < this._video.HAVE_ENOUGH_DATA
+    });
+  }
+
+  _play () {
+    this._video.play();
+  }
+
+  _pause () {
+    this._video.pause();
+  }
+
+  _togglePlay () {
+    if (this.state.paused) {
+      this._play();
     } else {
-      let iconSize = (('small' === this.props.size) ? null : 'large');
-      this.setState({iconSize: iconSize});
+      this._pause();
     }
   }
 
-  _onPlaying () {
-    let video = this.refs.video;
-    if (!this._progressTimer) {
-      this._progressTimer = setInterval(function () {
-        this.setState({progress: this.state.progress + 0.5});
-      }.bind(this), 500);
-    }
-    this.setState({ playing: true, progress: video.currentTime, ended: null });
+  _seek(time) {
+    this._video.currentTime = time || this._video.currentTime;
   }
 
-  _onPause () {
-    clearInterval(this._progressTimer);
-    this._progressTimer = null;
-    this.setState({ playing: false });
+  _unmute() {
+    this._video.muted = false;
   }
 
-  _onEnded () {
-    clearInterval(this._progressTimer);
-    this._progressTimer = null;
-    this.setState({ playing: false, ended: true });
+  _mute() {
+    this._video.muted = true;
   }
 
-  _onClickControl () {
-    let video = this.refs.video;
-    if (this.state.playing) {
-      video.pause();
+  _toggleMute () {
+    if (!this.state.muted) {
+      this._mute();
     } else {
-      video.play();
+      this._unmute();
     }
   }
 
-  _onMouseMove () {
-    this.setState({interacting: true});
-    clearTimeout(this._moveTimer);
-    this._moveTimer = setTimeout(function () {
-      this.setState({interacting: false});
-    }.bind(this), 1000);
-  }
-
-  _onClickChapter (time) {
-    this.refs.video.currentTime = time;
-    this.setState({progress: time});
-  }
-
-  _onFullScreen () {
-    let video = this.refs.video;
-
-    // check if webkit and mozilla fullscreen is available
-    if (video.webkitRequestFullScreen) {
-      video.webkitRequestFullScreen();
-    } else if (video.mozRequestFullScreen) {
-      video.mozRequestFullScreen();
+  _fullscreen() {
+    if (this._video.requestFullscreen) {
+      this._video.requestFullscreen();
+    } else if (this._video.msRequestFullscreen) {
+      this._video.msRequestFullscreen();
+    } else if (this._video.mozRequestFullScreen) {
+      this._video.mozRequestFullScreen();
+    } else if (this._video.webkitRequestFullscreen) {
+      this._video.webkitRequestFullscreen();
     } else {
       console.warn('Your browser doesn\'t support fullscreen.');
     }
   }
 
-  _renderTimeline () {
-    let timeline;
-    if (this.props.timeline && this.props.duration) {
-
-      let chapters = this.props.timeline.map(function (chapter, index, chapters) {
-        let percent = Math.round((chapter.time / this.props.duration) * 100);
-        let seconds = (chapter.time % 60);
-        let time = Math.floor(chapter.time / 60) + ':' +
-          (seconds < 10 ? '0' + seconds : seconds);
-        let currentProgress = this.state.progress;
-        let nextChapter = chapters[Math.min(chapters.length - 1, index + 1)];
-        let lastChapter = chapters[chapters.length - 1];
-
-        let timelineClasses = classnames(
-          `${CLASS_ROOT}__timeline-chapter`,
-          {
-            [`${CLASS_ROOT}__timeline-active`]: (currentProgress !== 0 && ((currentProgress >= chapter.time && currentProgress < nextChapter.time) || (index === chapters.length - 1 && currentProgress >= lastChapter.time)))
-          }
-        );
-
-        return (
-          <Box key={chapter.time} className={timelineClasses}
-            pad={{vertical: 'small'}}
-            style={{left: percent.toString() + '%'}}
-            onClick={this._onClickChapter.bind(this, chapter.time)}>
-            <label>{chapter.label}</label>
-            <time>{time}</time>
-          </Box>
-        );
-      }, this);
-
-      timeline = (
-        <div className={`${CLASS_ROOT}__timeline`}>
-          {chapters}
-        </div>
-      );
-    }
-
-    return timeline;
+  _onMouseMove () {
+    this.setState({ interacting: true});
+    clearTimeout(this._moveTimer);
+    this._moveTimer = setTimeout(() => {
+      this.setState({ interacting: false });
+    }, 1000);
   }
 
   _renderControls () {
-    let controlIconSize = this.state.iconSize;
-    let controlIcon = (this.state.playing ?
-      <PauseIcon size={controlIconSize} /> : (this.state.ended ?
-        <RefreshIcon size={controlIconSize} /> :
-          <PlayIcon size={controlIconSize} />));
-    let a11yControlButtonMessage = (this.state.playing ?
-      'Pause Video' : (this.state.ended ?
-        'Restart Video' :
-          'Play Video'));
-    let a11yControlButtonTitle = Intl.getMessage(this.context.intl, a11yControlButtonMessage);
+    let extendedProps = Object.assign({
+      title: this.props.title,
+      togglePlay: this._togglePlay,
+      toggleMute: this._toggleMute,
+      play: this._play,
+      pause: this._pause,
+      mute: this._mute,
+      unmute: this._unmute,
+      seek: this._seek,
+      fullscreen: this._fullscreen,
+      shareLink: this.props.shareLink,
+      shareHeadline: this.props.shareHeadline,
+      shareText: this.props.shareText,
+      allowFullScreen: this.props.allowFullScreen
+    }, this.state);
 
-    let videoHeader;
-    let videoSummaryJustify = 'between';
-    if (this.props.videoHeader) {
-      videoHeader = this.props.videoHeader;
-    } else if (this.props.allowFullScreen) {
-      let a11yExpandButtonTitle = Intl.getMessage(this.context.intl, 'Toggle Fullscreen');
-      // fallback to only displaying full screen icon in header
-      // if allowing fullscreen
-
-      videoHeader = (
-        <Box align="end" full="horizontal">
-          <Button plain={true} onClick={this._onFullScreen}
-            icon={<ExpandIcon />} a11yTitle={a11yExpandButtonTitle} />
-        </Box>
+    return (
+      <div>
+        <VideoOverlay {...extendedProps} />
+        <VideoControls {...extendedProps} />
+      </div>
       );
-    } else {
-      videoSummaryJustify = 'center';
-    }
-
-    let title;
-    if (this.props.title) {
-      title = (
-        <Box align="center" justify="center" className={`${CLASS_ROOT}__title`}>
-          {this.props.title}
-        </Box>
-      );
-    }
-
-    let onClickControl = this.props.onClick || this._onClickControl;
-    // when iconSize is small (mobile screen sizes), remove the extra padding
-    // so that the play control is centered
-    let emptyBox = this.state.iconSize === 'small' ? null : <Box />;
-
-    let controlsContent = (
-      <Box pad="none" align="center" justify={videoSummaryJustify} className={`${CLASS_ROOT}__summary`}>
-        {videoHeader}
-        <Box pad="medium" align="center" justify="center">
-          <Button className={`${CLASS_ROOT}__control`} plain={true}
-            primary={true} onClick={onClickControl}
-            icon={controlIcon} a11yTitle={a11yControlButtonTitle} />
-          {title}
-        </Box>
-        {emptyBox}
-      </Box>
-    );
-
-    return controlsContent;
-  }
-
-  _renderProgress () {
-    let progressTicks;
-    if (this.props.timeline && this.props.duration) {
-
-      let chapters = this.props.timeline.map(function (chapter, index, chapters) {
-        let percent = Math.round((chapter.time / this.props.duration) * 100);
-        let currentProgress = this.state.progress;
-        let nextChapter = chapters[Math.min(chapters.length - 1, index + 1)];
-
-        let progressTicksClasses = classnames(
-          `${CLASS_ROOT}__progress-ticks-chapter`,
-          {
-            [`${CLASS_ROOT}__progress-ticks-active`]: (currentProgress !== 0 && currentProgress >= chapter.time && currentProgress < nextChapter.time)
-          }
-        );
-
-        return (
-          <div key={chapter.time} className={progressTicksClasses}
-            style={{left: percent.toString() + '%'}}
-            onClick={this._onClickChapter.bind(this, chapter.time)}>
-          </div>
-        );
-      }, this);
-
-      progressTicks = (
-        <div className={`${CLASS_ROOT}__progress-ticks`}>
-          {chapters}
-        </div>
-      );
-    }
-
-    let progress;
-    if (this.props.duration) {
-      const progressClass = classnames(
-        `${CLASS_ROOT}__progress`,
-        {
-          [`${CLASS_ROOT}--has-timeline`]: this.props.timeline
-        }
-      );
-
-      let percent = Math.min((Math.round((this.state.progress / this.props.duration) * 100)), 100);
-      progress = (
-        <div className={progressClass}>
-          <div className={`${CLASS_ROOT}__progress-meter`}
-            style={{width: percent.toString() + '%'}}></div>
-          {progressTicks}
-        </div>
-      );
-    }
-
-    return progress;
   }
 
   render () {
@@ -296,31 +209,31 @@ export default class Video extends Component {
     if (this.state.interacting) {
       classes.push(`${CLASS_ROOT}--interacting`);
     }
-    if (this.props.videoHeader) {
-      classes.push(`${CLASS_ROOT}--video-header`);
-    }
     if (this.props.colorIndex) {
       classes.push(`${BACKGROUND_COLOR_INDEX}-${this.props.colorIndex}`);
     }
     if (this.props.className) {
       classes.push(this.props.className);
     }
-    if (this.props.title) {
-      classes.push(`${CLASS_ROOT}--titled`);
+    if (this.state.hasPlayed) {
+      classes.push(`${CLASS_ROOT}--has-played`);
+    }
+    if (this.state.ended) {
+      classes.push(`${CLASS_ROOT}--ended`);
     }
 
     return (
       <div className={classes.join(' ')} onMouseMove={this._onMouseMove}>
-        <video ref="video"
+        <video ref={el => this._video = el}
           poster={this.props.poster}
           autoPlay={this.props.autoPlay ? 'autoplay' : false}
           loop={this.props.loop ? 'loop' : false}
-          muted={this.props.muted ? 'muted' : false}>
+          muted={this.props.muted}
+          {...this._mediaEventProps}>
           {this.props.children}
         </video>
+
         {this.props.showControls ? this._renderControls() : undefined}
-        {this.props.showControls ? this._renderTimeline() : undefined}
-        {this.props.showControls ? this._renderProgress() : undefined}
       </div>
     );
   }
@@ -328,7 +241,6 @@ export default class Video extends Component {
 
 Video.propTypes = {
   colorIndex: PropTypes.string,
-  duration: PropTypes.number,
   full: PropTypes.oneOf([true, 'horizontal', 'vertical', false]),
   poster: PropTypes.string,
   size: React.PropTypes.oneOf(['small', 'medium', 'large']),
@@ -337,18 +249,20 @@ Video.propTypes = {
     time: PropTypes.number
   })),
   title: PropTypes.node,
-  videoHeader: PropTypes.node,
-  onClick: PropTypes.func,
   allowFullScreen: PropTypes.bool,
   autoPlay: PropTypes.bool,
+  shareLink: PropTypes.string,
+  shareHeadline: PropTypes.string,
+  shareText: PropTypes.string,
   showControls: PropTypes.bool,
   muted: PropTypes.bool,
   loop: PropTypes.bool
 };
 
 Video.defaultProps = {
+  allowFullScreen: true,
   autoPlay: false,
-  showControls: true,
+  loop: false,
   muted: false,
-  loop: false
+  showControls: true
 };

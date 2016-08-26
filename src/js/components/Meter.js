@@ -23,8 +23,8 @@ const TYPE_COMPONENT = {
 
 export default class Meter extends Component {
 
-  constructor (props) {
-    super();
+  constructor(props, context) {
+    super(props, context);
 
     this._onResponsive = this._onResponsive.bind(this);
     this._initialTimeout = this._initialTimeout.bind(this);
@@ -115,7 +115,8 @@ export default class Meter extends Component {
     if ('right' === legendPlacement) {
       if (this.refs.legend) {
         const graphicHeight = this.refs.activeGraphic.offsetHeight;
-        const legendHeight = ReactDOM.findDOMNode(this.refs.legend).offsetHeight;
+        const legendHeight =
+          ReactDOM.findDOMNode(this.refs.legend).offsetHeight;
         this.setState({tallLegend: (legendHeight > graphicHeight)});
       }
     }
@@ -129,6 +130,9 @@ export default class Meter extends Component {
       series = [
         {value: props.value}
       ];
+      if (props.colorIndex) {
+        series[0].colorIndex = props.colorIndex;
+      }
     }
 
     // set color index
@@ -172,7 +176,8 @@ export default class Meter extends Component {
         thresholds.push({
           label: threshold.label,
           colorIndex: threshold.colorIndex,
-          ariaLabel: `${threshold.value} ${props.units || ''} ${threshold.label || ''}`
+          ariaLabel:
+            `${threshold.value} ${props.units || ''} ${threshold.label || ''}`
         });
         priorValue = threshold.value;
         if (i === (props.thresholds.length - 1)) {
@@ -390,7 +395,9 @@ export default class Meter extends Component {
   }
 
   render () {
-    const { active, label, legend, size, stacked, type, vertical } = this.props;
+    const {
+      active, label, legend, size, stacked, tabIndex, type, vertical
+    } = this.props;
     const { legendPlacement, limitMeterSize, tallLegend, series } = this.state;
     let classes = [CLASS_ROOT];
     classes.push(`${CLASS_ROOT}--${type}`);
@@ -439,10 +446,8 @@ export default class Meter extends Component {
       labelElement = this._renderActiveValue();
     }
     let legendElement;
-    let a11yRole;
 
     if (legend || series) {
-      a11yRole = 'tablist';
 
       if (legend) {
         if ('inline' !== legend.placement) {
@@ -465,16 +470,13 @@ export default class Meter extends Component {
     let graphic = (
       <GraphicComponent
         a11yTitle={this.props.a11yTitle}
-        a11yTitleId={this.props.a11yTitleId}
-        a11yDesc={this.props.a11yDesc}
-        a11yDescId={this.props.a11yDescId}
-        a11yRole={a11yRole}
         activeIndex={this.state.activeIndex}
         min={this.state.min} max={this.state.max}
         legend={legend}
         onActivate={this._onActivate}
         series={series}
         stacked={stacked}
+        tabIndex={tabIndex}
         thresholds={this.state.thresholds}
         total={this.state.total}
         units={this.props.units}
@@ -505,9 +507,7 @@ Meter.propTypes = {
   active: PropTypes.bool, // when single value
   activeIndex: PropTypes.number, // for series values
   a11yTitle: PropTypes.string,
-  a11yTitleId: PropTypes.string,
-  a11yDescId: PropTypes.string,
-  a11yDesc: PropTypes.string,
+  colorIndex: PropTypes.string,
   // deprecated in favor of activeIndex?
   important: PropTypes.number,
   label: PropTypes.oneOfType([PropTypes.bool, PropTypes.node]),
@@ -544,6 +544,7 @@ Meter.propTypes = {
     onClick: PropTypes.func
   })),
   stacked: PropTypes.bool,
+  tabIndex: PropTypes.string,
   threshold: PropTypes.number,
   thresholds: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string,
@@ -558,8 +559,6 @@ Meter.propTypes = {
 };
 
 Meter.defaultProps = {
-  a11yTitleId: 'meter-title',
-  a11yDescId: 'meter-desc',
   label: true,
   type: 'bar'
 };

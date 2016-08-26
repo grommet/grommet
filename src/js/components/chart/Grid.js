@@ -10,8 +10,8 @@ const CLASS_ROOT = CSSClassnames.CHART_GRID;
 
 export default class Grid extends Component {
 
-  constructor () {
-    super();
+  constructor(props, context) {
+    super(props, context);
     this._onResize = this._onResize.bind(this);
     this._layout = this._layout.bind(this);
     this.state = { height: 1, width: 1 };
@@ -51,7 +51,8 @@ export default class Grid extends Component {
       const basis = ((width - (2 * padding)) / (columns - 1));
       for (let i=0; i<columns; i+=1) {
         let x = i * basis;
-        commands += `M${x + padding},${padding} L${x + padding},${height - padding} `;
+        commands +=
+          `M${x + padding},${padding} L${x + padding},${height - padding} `;
       }
     }
 
@@ -59,7 +60,8 @@ export default class Grid extends Component {
       const basis = ((height - (2 * padding)) / (rows - 1));
       for (let i=0; i<rows; i+=1) {
         let y = i * basis;
-        commands += `M${padding},${y + padding} L${width - padding},${y + padding} `;
+        commands +=
+          `M${padding},${y + padding} L${width - padding},${y + padding} `;
       }
     }
 

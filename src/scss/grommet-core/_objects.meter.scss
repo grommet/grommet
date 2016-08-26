@@ -44,6 +44,8 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
 
 .#{$grommet-namespace}meter__slice {
   stroke-width: $meter-slice-width;
+  fill: none;
+  stroke: $meter-background-color;
 }
 
 .#{$grommet-namespace}meter__hot {
@@ -745,8 +747,6 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
     stroke-linecap: butt;
     stroke-dasharray: quadruple($meter-size) quadruple($meter-size);
     stroke-dashoffset: 0;
-    fill: none;
-    stroke: $meter-background-color;
   }
 
   .#{$grommet-namespace}meter__slice-indicator {

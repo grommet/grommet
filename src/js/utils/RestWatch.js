@@ -81,7 +81,8 @@ export default {
   },
 
   initialize (socketUrl) {
-    if (!state.initialized && !state.ws && this.available() && (state.socketUrl || socketUrl)) {
+    if (!state.initialized && !state.ws && this.available() &&
+      (state.socketUrl || socketUrl)) {
       state.socketUrl = state.socketUrl || socketUrl;
       state.ws = new WebSocket(state.socketUrl);
       state.ws.onopen = this._onOpen.bind(this);

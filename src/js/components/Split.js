@@ -8,8 +8,8 @@ const BREAK_WIDTH = 720; //adds the breakpoint of single/multiple split
 
 export default class Split extends Component {
 
-  constructor () {
-    super();
+  constructor(props, context) {
+    super(props, context);
 
     this._onResize = this._onResize.bind(this);
     this._layout = this._layout.bind(this);

@@ -12,8 +12,8 @@ import CSSClassnames from '../utils/CSSClassnames';
 const CLASS_ROOT = CSSClassnames.ACCORDION_PANEL;
 
 export default class AccordionPanel extends Component {
-  constructor (props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
     this._onClickPanel = this._onClickPanel.bind(this);
     this.state = {
       active: props.active || false

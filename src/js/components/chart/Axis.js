@@ -1,38 +1,23 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
-import { trackSize } from './utils';
 import CSSClassnames from '../../utils/CSSClassnames';
+import Intl from '../../utils/Intl';
 
 const CLASS_ROOT = CSSClassnames.CHART_AXIS;
 const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
 
 export default class Axis extends Component {
 
-  constructor (props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
     this.state = {
-      size: { width: 0, height: 0 },
       items: this._buildItems(props)
     };
-    this._size = new trackSize(this.props, this._onSize.bind(this));
-  }
-
-  componentDidMount () {
-    this._size.start(this.refs.axis);
   }
 
   componentWillReceiveProps (nextProps) {
     this.setState({ items: this._buildItems(nextProps) });
-    this._size.reset(nextProps);
-  }
-
-  componentWillUnmount () {
-    this._size.stop();
-  }
-
-  _onSize (size) {
-    this.setState({ size: size });
   }
 
   _buildItems (props) {
@@ -61,8 +46,9 @@ export default class Axis extends Component {
   }
 
   render () {
-    const { vertical, reverse, align, ticks } = this.props;
-    const { size: { height, width }, items } = this.state;
+    const { a11yTitle, align, reverse, ticks, vertical } = this.props;
+    const { items } = this.state;
+    const { intl } = this.context;
 
     let classes = [CLASS_ROOT];
     if (reverse) {
@@ -81,14 +67,6 @@ export default class Axis extends Component {
       classes.push(this.props.className);
     }
 
-    let style = {...this.props.style};
-    if (vertical && height) {
-      style.height = `${height}px`;
-    }
-    if (! vertical && width) {
-      style.width = `${width}px`;
-    }
-
     let elements = items.map(item => {
 
       let classes = [`${CLASS_ROOT}__slot`];
@@ -101,17 +79,23 @@ export default class Axis extends Component {
       if (item.colorIndex) {
         classes.push(`${COLOR_INDEX}-${item.colorIndex}`);
       }
-
+      const role = item.label && item.label !== '' ? 'row' : undefined;
       return (
-        <div key={item.value || item.index} className={classes.join(' ')}
+        <div key={item.value || item.index}
+          className={classes.join(' ')} role={role}
           style={{ flexBasis: `${item.basis}%` }}>
           {item.label}
         </div>
       );
     });
 
+    const axisLabel = a11yTitle || Intl.getMessage(intl, 'AxisLabel', {
+      orientation: vertical ? 'y' : 'x'
+    });
+
     return (
-      <div ref="axis" className={classes.join(' ')} style={style}>
+      <div ref="axis" id={this.props.id} role='rowgroup' aria-label={axisLabel}
+        className={classes.join(' ')} style={this.props.style}>
         {elements}
       </div>
     );
@@ -119,10 +103,14 @@ export default class Axis extends Component {
 
 };
 
+Axis.contextTypes = {
+  intl: PropTypes.object
+};
+
 Axis.propTypes = {
+  a11yTitle: PropTypes.string,
   align: PropTypes.oneOf(['start', 'end']), // only from Chart
   count: PropTypes.number.isRequired,
-  height: PropTypes.number, // only from Chart
   labels: PropTypes.arrayOf(PropTypes.shape({
     colorIndex: PropTypes.string,
     index: PropTypes.number.isRequired,
@@ -130,6 +118,5 @@ Axis.propTypes = {
   })),
   reverse: PropTypes.bool,
   ticks: PropTypes.bool,
-  vertical: PropTypes.bool,
-  width: PropTypes.number // only from Chart
+  vertical: PropTypes.bool
 };

@@ -2,33 +2,35 @@
 
 import {test} from 'tape';
 import React from 'react';
-import TestUtils from 'react-addons-test-utils';
+import { shallow } from 'enzyme';
 
 import Attribute from '../../src/js/components/Attribute';
 import CSSClassnames from '../../src/js/utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.ATTRIBUTE;
 
+function setup(props) {
+  return shallow(<Attribute {...props}/>);
+}
+
 test('loads a basic Attribute', (t) => {
   t.plan(6);
-  const shallowRenderer = TestUtils.createRenderer();
-  shallowRenderer.render(React.createElement(Attribute, {
+  const attributeElement = setup({
     label: 'testLabel',
     children: 'testContent'
-  }));
-  const attributeElement = shallowRenderer.getRenderOutput();
+  });
 
-  if (attributeElement.props.className.indexOf(CLASS_ROOT) > -1) {
+  if (attributeElement.props().className.indexOf(CLASS_ROOT) > -1) {
     t.pass('Attribute has class');
   } else {
     t.fail('Atribute does not have class');
   }
 
   t.equal(
-    attributeElement.props.children.length, 2, 'Attribute has two children'
+    attributeElement.props().children.length, 2, 'Attribute has two children'
   );
 
-  const labelElement = attributeElement.props.children[0];
+  const labelElement = attributeElement.props().children[0];
   if (labelElement.props.className.indexOf(`${CLASS_ROOT}__label`) > -1) {
     t.pass('Attribute has label class');
   } else {
@@ -39,7 +41,7 @@ test('loads a basic Attribute', (t) => {
     labelElement.props.children, 'testLabel', 'Attribute has label'
   );
 
-  const contentsElement = attributeElement.props.children[1];
+  const contentsElement = attributeElement.props().children[1];
   if (contentsElement.props.className.indexOf(`${CLASS_ROOT}__contents`) > -1) {
     t.pass('Attribute has contents class');
   } else {

@@ -8,12 +8,11 @@ import Box from 'grommet/components/Box';
 import Image from 'grommet/components/Image';
 
 const CLASS_ROOT = CSSClassnames.HERO;
-const PALM_BREAKPOINT = Responsive.smallSize();
 
 export default class Hero extends Component {
 
-  constructor (props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
     this._setReverse = this._setReverse.bind(this);
     this._setBackgroundColorIndex = this._setBackgroundColorIndex.bind(this);
 
@@ -38,7 +37,7 @@ export default class Hero extends Component {
   _setBackgroundColorIndex () {
     const { colorIndex } = this.props;
 
-    if (window.innerWidth < PALM_BREAKPOINT) {
+    if (window.innerWidth < Responsive.smallSize()) {
       this.setState({ colorIndex: 'light-1' });
     } else {
       this.setState({ colorIndex: colorIndex });
@@ -48,7 +47,7 @@ export default class Hero extends Component {
   _setReverse () {
     const { justify } = this.props;
 
-    if (window.innerWidth < PALM_BREAKPOINT) {
+    if (window.innerWidth < Responsive.smallSize()) {
       this.setState({ reverse: false });
     } else {
       this.setState({ reverse: (justify === 'start') ? true : false });
@@ -64,7 +63,8 @@ export default class Hero extends Component {
       className,
       {
         [`${CLASS_ROOT}--${size}`]: size,
-        [`${CLASS_ROOT}--bg-${responsiveBackgroundPosition}`]: responsiveBackgroundPosition,
+        [`${CLASS_ROOT}--bg-${responsiveBackgroundPosition}`]:
+          responsiveBackgroundPosition,
         [`${CLASS_ROOT}--mobile-separator`]: separator
       }
     );
@@ -74,10 +74,15 @@ export default class Hero extends Component {
 
     let backgroundMarkup;
     if (backgroundImage) {
-      backgroundMarkup = <Box containerClassName={CLASS_ROOT + "__background"} appCentered={true} pad={pad} backgroundImage={`url(${backgroundImage})`} full={full} />;
+      backgroundMarkup = (
+        <Box containerClassName={CLASS_ROOT + "__background"}
+          appCentered={true} pad={pad}
+          backgroundImage={`url(${backgroundImage})`} full={full} />
+      );
     } else if (backgroundVideo) {
       backgroundMarkup = (
-        <Box className={CLASS_ROOT + "__background " + CLASS_ROOT + "__background-video"} ref="video">
+        <Box className={CLASS_ROOT + "__background " +
+          CLASS_ROOT + "__background-video"} ref="video">
           {backgroundVideo}
         </Box>
       );
@@ -91,19 +96,25 @@ export default class Hero extends Component {
     let contentMarkup;
     if (justify === 'center') {
       contentMarkup = (
-        <Box className={CLASS_ROOT + "__overlay"} justify={justify} align="center" primary={true} full={full} direction="row" >
-          <Box pad={{horizontal: 'large', vertical: 'large', between: 'medium'}}>
+        <Box className={CLASS_ROOT + "__overlay"} justify={justify}
+          align="center" primary={true} full={full} direction="row" >
+          <Box pad={{horizontal: 'large', vertical: 'large',
+            between: 'medium'}}>
             {children}
           </Box>
         </Box>
       );
     } else {
       contentMarkup = (
-        <Box className={CLASS_ROOT + "__overlay"} align="center" primary={true} full={full} direction="row" reverse={this.state.reverse} >
-          <Box className={CLASS_ROOT + "__image"} align="center" justify="center">
+        <Box className={CLASS_ROOT + "__overlay"} align="center"
+          primary={true} full={full} direction="row"
+          reverse={this.state.reverse} >
+          <Box className={CLASS_ROOT + "__image"} align="center"
+            justify="center">
             {imageMarkup}
           </Box>
-          <Box pad={{horizontal: 'large', vertical: 'large', between: 'medium'}}>
+          <Box pad={{horizontal: 'large', vertical: 'large',
+            between: 'medium'}}>
             {children}
           </Box>
         </Box>

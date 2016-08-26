@@ -3,16 +3,18 @@
 import React, { Component, PropTypes } from 'react';
 import { padding, pointSize, debounceDelay } from './utils';
 import CSSClassnames from '../../utils/CSSClassnames';
+import Intl from '../../utils/Intl';
 
 const CLASS_ROOT = CSSClassnames.CHART_GRAPH;
 const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
 
 export default class Graph extends Component {
 
-  constructor (props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
     this._onResize = this._onResize.bind(this);
     this._layout = this._layout.bind(this);
+    this._renderA11YTitle = this._renderA11YTitle.bind(this);
     this.state = { height: props.height || 1, width: props.width || 1 };
   }
 
@@ -63,7 +65,7 @@ export default class Graph extends Component {
     }
 
     // Put the control X coordinates midway between the coordinates.
-    let deltaX = (current[0] - previous[0]) / 2;
+    let deltaX = (current[0] - previous[0]) / 2.4;
     let deltaY;
 
     // Start with a flat slope. This works for peaks, valleys, and flats.
@@ -86,10 +88,34 @@ export default class Graph extends Component {
     return [first, second];
   }
 
+  _renderA11YTitle () {
+    const { a11yTitle, max, min, type, values } = this.props;
+    const { intl } = this.context;
+
+    if (a11yTitle) {
+      return a11yTitle;
+    }
+
+    const typeLabel = Intl.getMessage(intl, type);
+
+    let minLabel = `, ${Intl.getMessage(intl, 'Min')}: ${min}`;
+
+    let maxLabel = `, ${Intl.getMessage(intl, 'Max')}: ${max}`;
+
+    const valueLabel = Intl.getMessage(intl, 'GraphValues', {
+      count: values.length,
+      highest: Math.max(...values).toString(),
+      smallest: Math.min(...values).toString()
+    });
+
+    return `${typeLabel} ${minLabel} ${maxLabel}. ${valueLabel}`;
+  }
+
   render () {
-    const { colorIndex, vertical, reverse, max, min, smooth, values, type,
-      activeIndex } = this.props;
+    const { activeIndex, colorIndex, max, min, reverse, smooth, type,
+      values, vertical } = this.props;
     const { height, width } = this.state;
+    const pad = Math.min(width, height) < (padding * 8) ? 2 : padding;
 
     let classes = [CLASS_ROOT, `${CLASS_ROOT}--${type}`];
     if (vertical) {
@@ -101,18 +127,18 @@ export default class Graph extends Component {
     if (vertical) {
       if (values.length <= 1) {
         scale = 1;
-        step = height - (2 * padding);
+        step = height - (2 * pad);
       } else {
-        scale = (width - (2 * padding)) / (max - min);
-        step = (height - (2 * padding)) / (values.length - 1);
+        scale = (width - (2 * pad)) / (max - min);
+        step = (height - (2 * pad)) / (values.length - 1);
       }
     } else {
       if (values.length <= 1) {
         scale = 1;
-        step = width - (2 * padding);
+        step = width - (2 * pad);
       } else {
-        scale = (height - (2 * padding)) / (max - min);
-        step = (width - (2 * padding)) / (values.length - 1);
+        scale = (height - (2 * pad)) / (max - min);
+        step = (width - (2 * pad)) / (values.length - 1);
       }
     }
 
@@ -123,15 +149,15 @@ export default class Graph extends Component {
       let coordinate;
       if (vertical) {
         coordinate = [
-          ((value - min) * scale) + padding,
+          ((value - min) * scale) + pad,
           (reverse ? (index * step) :
-            (height - (2 * padding)) - (index * step)) + padding
+            (height - (2 * pad)) - (index * step)) + pad
         ];
       } else {
         coordinate = [
-          (reverse ? (width - (2 * padding)) - (index * step) :
-            index * step) + padding,
-          ((height - (2 * padding)) - ((value - min) * scale)) + padding
+          (reverse ? (width - (2 * pad)) - (index * step) :
+            index * step) + pad,
+          ((height - (2 * pad)) - ((value - min) * scale)) + pad
         ];
       }
 
@@ -191,21 +217,21 @@ export default class Graph extends Component {
               // Close the path by drawing to the left
               // and across to the top of where we started.
               commands +=
-                `L${padding},${coordinates[coordinates.length - 1][1]}
-                L${padding},${coordinates[0][1]} Z`;
+                `L${pad},${coordinates[coordinates.length - 1][1]}
+                L${pad},${coordinates[0][1]} Z`;
             } else {
               // Close the path by drawing to the left
               // and across to the bottom of where we started.
               commands +=
-                `L${padding},${coordinates[coordinates.length - 1][1]}
-                L${padding},${height - padding} Z`;
+                `L${pad},${coordinates[coordinates.length - 1][1]}
+                L${pad},${height - pad} Z`;
             }
           } else {
             // Close the path by drawing down to the bottom
             // and across to the left of where we started.
             commands +=
-              `L${coordinates[coordinates.length - 1][0]},${height - padding}
-              L${coordinates[0][0]},${height - padding} Z`;
+              `L${coordinates[coordinates.length - 1][0]},${height - pad}
+              L${coordinates[0][0]},${height - pad} Z`;
           }
           pathProps.stroke = 'none';
         } else {
@@ -213,7 +239,8 @@ export default class Graph extends Component {
         }
       } else if ('bar' === type) {
         commands = coordinates.map(c => (
-          `M${c.join(',')}L${vertical ? `${padding},${c[1]}` : `${c[0]},${height - padding}`}`
+          `M${c.join(',')}L${vertical ? `${pad},${c[1]}` :
+            `${c[0]},${height - pad}`}`
         )).join(' ');
         pathProps.fill = 'none';
       }
@@ -223,8 +250,8 @@ export default class Graph extends Component {
 
     return (
       <svg ref="graph" className={classes.join(' ')}
-        viewBox={`0 0 ${width} ${height}`}
-        preserveAspectRatio="none">
+        viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="none"
+        role="img" aria-label={this._renderA11YTitle()}>
         <g>
           {path}
         </g>
@@ -235,7 +262,17 @@ export default class Graph extends Component {
 
 };
 
+Graph.contextTypes = {
+  intl: PropTypes.object
+};
+
+Graph.defaultProps = {
+  min: 0,
+  max: 100
+};
+
 Graph.propTypes = {
+  a11yTitle: PropTypes.string,
   activeIndex: PropTypes.number,
   colorIndex: PropTypes.string,
   height: PropTypes.number, // only from Chart
@@ -245,12 +282,8 @@ Graph.propTypes = {
   reverse: PropTypes.bool,
   smooth: PropTypes.bool,
   values: PropTypes.arrayOf(PropTypes.number).isRequired,
-  type: PropTypes.oneOf(['area', 'line', 'bar']).isRequired, // from extending component
+  // type comes from extending the component
+  type: PropTypes.oneOf(['area', 'line', 'bar']).isRequired,
   vertical: PropTypes.bool,
   width: PropTypes.number // only from Chart
-};
-
-Graph.defaultProps = {
-  min: 0,
-  max: 100
 };

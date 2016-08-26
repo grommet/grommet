@@ -20,8 +20,8 @@ const FORM_FIELD = CSSClassnames.FORM_FIELD;
 
 export default class Calendar extends Component {
 
-  constructor(props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
 
     this._onInputChange = this._onInputChange.bind(this);
     this._onOpen = this._onOpen.bind(this);
@@ -137,7 +137,10 @@ export default class Calendar extends Component {
       const previousDay = moment(current).subtract(1, 'days');
 
       if (! previousDay.isSame(reference, 'month')) {
-        this.setState({reference: reference.subtract(1, 'month'), current: previousDay});
+        this.setState({
+          reference: reference.subtract(1, 'month'),
+          current: previousDay
+        });
       } else {
         this.setState({current: previousDay});
       }
@@ -164,7 +167,10 @@ export default class Calendar extends Component {
     const previousWeek = moment(current).subtract(1, 'week');
 
     if (! previousWeek.isSame(reference, 'month')) {
-      this.setState({reference: reference.subtract(1, 'month'), current: previousWeek});
+      this.setState({
+        reference: reference.subtract(1, 'month'),
+        current: previousWeek
+      });
     } else {
       this.setState({current: previousWeek});
     }
@@ -197,7 +203,8 @@ export default class Calendar extends Component {
 
       // If this is inside a FormField, place the drop in reference to it.
       const control =
-        findAncestor(this.refs.component, `.${FORM_FIELD}`) || this.refs.component;
+        findAncestor(this.refs.component, `.${FORM_FIELD}`) ||
+          this.refs.component;
       this._drop = Drop.add(control,
         this._renderDrop(), { align: {top: 'bottom', left: 'left'} });
 
@@ -245,7 +252,8 @@ export default class Calendar extends Component {
           `${CLASS_ROOT}__day`,
           {
             [`${CLASS_ROOT}__day--active`]: current && date.isSame(current),
-            [`${CLASS_ROOT}__day--other-month`]: !date.isSame(reference, 'month')
+            [`${CLASS_ROOT}__day--other-month`]:
+              !date.isSame(reference, 'month')
           }
         );
         days.push(

@@ -1,6 +1,8 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 var Grommet = {
   // Components
+  Accordion: require('./components/Accordion'),
+  AccordionPanel: require('./components/AccordionPanel'),
   Anchor: require('./components/Anchor'),
   App: require('./components/App'),
   Article: require('./components/Article'),
@@ -10,6 +12,20 @@ var Grommet = {
   Button: require('./components/Button'),
   Calendar: require('./components/Calendar'),
   Carousel: require('./components/Carousel'),
+  chart: {
+    Area: require('./components/chart/Area'),
+    Axis: require('./components/chart/Axis'),
+    Bar: require('./components/chart/Bar'),
+    Base: require('./components/chart/Base'),
+    Chart: require('./components/chart/Chart'),
+    Grid: require('./components/chart/Grid'),
+    HotSpots: require('./components/chart/HotSpots'),
+    Layers: require('./components/chart/Layers'),
+    Line: require('./components/chart/Line'),
+    Marker: require('./components/chart/Marker'),
+    MarkerLabel: require('./components/chart/MarkerLabel'),
+    Range: require('./components/chart/Range')
+  },
   Chart: require('./components/Chart'),
   CheckBox: require('./components/CheckBox'),
   Columns: require('./components/Columns'),
@@ -22,6 +38,7 @@ var Grommet = {
   Header: require('./components/Header'),
   Heading: require('./components/Heading'),
   Headline: require('./components/Headline'),
+  Hero: require('./components/Hero'),
   Image: require('./components/Image'),
   ImageField: require('./components/ImageField'),
   Grommet: require('./components/Grommet'),
@@ -47,6 +64,7 @@ var Grommet = {
   Split: require('./components/Split'),
   SkipLinkAnchor: require('./components/SkipLinkAnchor'),
   SkipLinks: require('./components/SkipLinks'),
+  SunBurst: require('./components/SunBurst'),
   SVGIcon: require('./components/SVGIcon'),
   Tab: require('./components/Tab'),
   Table: require('./components/Table'),
@@ -63,6 +81,7 @@ var Grommet = {
   TBD: require('./components/TBD'),
   Icons: {
     Grommet: require('./components/icons/Grommet'),
+    Pulse: require('./components/icons/Pulse'),
     Spinning: require('./components/icons/Spinning'),
     Status: require('./components/icons/Status'),
     Base: require('./index-icons')

@@ -13,28 +13,6 @@
 
   @include pad();
 
-  &__container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
-
-    .#{$grommet-namespace}tiles__left,
-    .#{$grommet-namespace}tiles__right {
-      flex: 0 0 auto;
-    }
-
-    .#{$grommet-namespace}tiles {
-      flex: 1;
-      margin: 0px;
-
-      &.#{$grommet-namespace}box--direction-row {
-        width: 100%;
-        overflow: hidden;
-      }
-    }
-  }
-
   > .#{$grommet-namespace}tile {
     flex-grow: 0;
     flex-shrink: 0;
@@ -44,103 +22,155 @@
     }
   }
 
-  &:not(.#{$grommet-namespace}tiles--flush) {
+  .#{$grommet-namespace}tiles__masonry-column {
     > .#{$grommet-namespace}tile {
+      @include media-query(lap-and-up) {
+        width: $tile-size;
+        flex-basis: auto;
+      }
+    }
+  }
+}
+
+.#{$grommet-namespace}tiles__container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+
+  .#{$grommet-namespace}tiles__left,
+  .#{$grommet-namespace}tiles__right {
+    flex: 0 0 auto;
+  }
+
+  .#{$grommet-namespace}tiles {
+    flex: 1;
+    margin: 0px;
+  }
+
+  .#{$grommet-namespace}tiles.#{$grommet-namespace}box--direction-row {
+    width: 100%;
+    overflow: hidden;
+  }
+}
+
+.#{$grommet-namespace}tiles:not(.#{$grommet-namespace}tiles--flush) {
+  .#{$grommet-namespace}tiles__masonry-column > .#{$grommet-namespace}tile,
+  > .#{$grommet-namespace}tile {
+    margin: halve($inuit-base-spacing-unit);
+    @include ie-tile-margin($inuit-base-spacing-unit);
+
+    &--wide {
+      flex-basis: calc(100% - #{$inuit-base-spacing-unit});
+    }
+
+    &.#{$grommet-namespace}tile--hover-border-medium {
+      margin: quarter($inuit-base-spacing-unit);
+      @include ie-tile-margin(halve($inuit-base-spacing-unit));
+    }
+
+    &.#{$grommet-namespace}tile--hover-border-large {
       margin: halve($inuit-base-spacing-unit);
       @include ie-tile-margin($inuit-base-spacing-unit);
-
-      &--wide {
-        flex-basis: calc(100% - #{$inuit-base-spacing-unit});
-      }
-
-      &.#{$grommet-namespace}tile--hover-border-medium {
-        margin: quarter($inuit-base-spacing-unit);
-        @include ie-tile-margin(halve($inuit-base-spacing-unit));
-      }
-
-      &.#{$grommet-namespace}tile--hover-border-large {
-        margin: halve($inuit-base-spacing-unit);
-        @include ie-tile-margin($inuit-base-spacing-unit);
-      }
     }
   }
+}
 
-  &--fill {
-    // IE11 fix to remove extra gap in Tiles
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-      height: 100%;
-    }
-
-    &.#{$grommet-namespace}box--wrap {
-      justify-content: space-around;
-
-      > .#{$grommet-namespace}tile {
-        flex-grow: 1;
-      }
-    }
+.#{$grommet-namespace}tiles--fill {
+  // IE11 fix to remove extra gap in Tiles
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    height: 100%;
   }
 
-  &--flush {
-    padding: 0px;
+  &.#{$grommet-namespace}box--wrap {
+    justify-content: space-around;
 
+    .#{$grommet-namespace}tiles__masonry-column > .#{$grommet-namespace}tile,
     > .#{$grommet-namespace}tile {
-      margin: 0px;
+      flex-grow: 1;
+    }
+  }
+}
 
-      &--wide {
-        flex-basis: 100%;
-      }
+.#{$grommet-namespace}tiles--flush {
+  padding: 0px;
+
+  .#{$grommet-namespace}tiles__masonry-column > .#{$grommet-namespace}tile,
+  > .#{$grommet-namespace}tile {
+    margin: 0px;
+
+    &--wide {
+      flex-basis: 100%;
+    }
+  }
+}
+
+.#{$grommet-namespace}tiles--moreable {
+  position: relative;
+  padding-bottom: double($inuit-base-spacing-unit);
+
+  .#{$grommet-namespace}tiles__more {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+}
+
+.#{$grommet-namespace}tiles--selectable {
+  .#{$grommet-namespace}tile {
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .#{$grommet-namespace}tile--selected {
+    background-color: $selected-background-color;
+    color: $selected-text-color;
+  }
+
+  .#{$grommet-namespace}tile:hover:not(.#{$grommet-namespace}tile--selected):not([class*="background-hover-color-index-"]) {
+    background-color: $hover-background-color;
+    color: $hover-text-color;
+  }
+}
+
+.#{$grommet-namespace}tiles--small {
+  > .#{$grommet-namespace}tile {
+    @include media-query(lap-and-up) {
+      flex-basis: $tile-small-size;
     }
   }
 
-  &--moreable {
-    position: relative;
-    padding-bottom: double($inuit-base-spacing-unit);
-
-    .#{$grommet-namespace}tiles__more {
-      position: absolute;
-      bottom: 0px;
-      left: 50%;
-      -webkit-transform: translateX(-50%);
-      transform: translateX(-50%);
-    }
-  }
-
-  &--selectable {
-    .#{$grommet-namespace}tile {
-      cursor: pointer;
-      transition: all 0.2s;
-
-      &--selected {
-        background-color: $selected-background-color;
-        color: $selected-text-color;
-      }
-
-      &:hover:not(.#{$grommet-namespace}tile--selected):not([class*="background-hover-color-index-"]) {
-        background-color: $hover-background-color;
-        color: $hover-text-color;
-      }
-    }
-  }
-
-  &--small {
+  .#{$grommet-namespace}tiles__masonry-column {
     > .#{$grommet-namespace}tile {
       @include media-query(lap-and-up) {
-        flex-basis: $tile-small-size;
+        width: $tile-small-size;
+        flex-basis: auto;
       }
     }
   }
+}
 
-  &--large {
+.#{$grommet-namespace}tiles--large {
+  > .#{$grommet-namespace}tile {
+    @include media-query(lap-and-up) {
+      flex-basis: $tile-large-size;
+    }
+  }
+
+  .#{$grommet-namespace}tiles__masonry-column {
     > .#{$grommet-namespace}tile {
       @include media-query(lap-and-up) {
-        flex-basis: $tile-large-size;
+        width: $tile-large-size;
+        flex-basis: auto;
       }
     }
   }
+}
 
-  &:focus {
-    outline: $focus-border-color solid 1px;
-  }
+.#{$grommet-namespace}tiles:focus {
+  outline: $focus-border-color solid 1px;
 }
 
 .#{$grommet-namespace}tile {
@@ -156,26 +186,27 @@
     }
   }
 
+  .#{$grommet-namespace}tiles__masonry-column > .#{$grommet-namespace}chart,
   > .#{$grommet-namespace}chart {
     width: 100%;
   }
+}
 
-  &--selectable {
-    cursor: pointer;
-    transition: background-color 0.2s;
+.#{$grommet-namespace}tile--selectable {
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
 
-    &.#{$grommet-namespace}tile--selected {
-      background-color: $selected-background-color;
-      color: $selected-text-color;
-    }
+.#{$grommet-namespace}tile--selectable.#{$grommet-namespace}tile--selected {
+  background-color: $selected-background-color;
+  color: $selected-text-color;
+}
 
-    &:hover:not(.#{$grommet-namespace}tile--selected) {
-      background-color: $hover-background-color;
-      color: $hover-text-color;
-    }
-  }
+.#{$grommet-namespace}tile--selectable:hover:not(.#{$grommet-namespace}tile--selected) {
+  background-color: $hover-background-color;
+  color: $hover-text-color;
+}
 
-  &--eclipsed {
-    opacity: 0.2;
-  }
+.#{$grommet-namespace}tile--eclipsed {
+  opacity: 0.2;
 }

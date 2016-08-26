@@ -1,74 +1,93 @@
 .#{$grommet-namespace}map {
   position: relative;
-  padding: $inuit-base-spacing-unit;
+  // padding: $inuit-base-spacing-unit;
+}
 
-  &__canvas {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    z-index: -1;
-    opacity: 0.1;
+.#{$grommet-namespace}map__canvas {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+  opacity: 0.2;
+}
 
-    &--highlight {
-      opacity: 1;
+.#{$grommet-namespace}map__canvas--highlight {
+  opacity: 1;
+}
+
+.#{$grommet-namespace}map__categories {
+  margin: 0px;
+  list-style-type: none;
+}
+
+.#{$grommet-namespace}map__category {
+  position: relative;
+  // padding-top: $inuit-base-spacing-unit;
+  margin-bottom: halve($inuit-base-spacing-unit);
+  max-width: none;
+}
+
+.#{$grommet-namespace}map__category-label {
+  // position: absolute;
+  // top: 0px;
+  // left: 0px;
+  @include inuit-font-size($label-font-size);
+  margin-bottom: halve($inuit-base-spacing-unit);
+}
+
+.#{$grommet-namespace}map__category-items {
+  margin: 0px;
+  list-style-type: none;
+  overflow: hidden;
+  text-align: center;
+}
+
+.#{$grommet-namespace}map__item {
+  display: inline-block;
+  width: $panel-width;
+  border: 1px solid $border-color;
+  margin-right: halve($inuit-base-spacing-unit);
+  margin-bottom: halve($inuit-base-spacing-unit);
+  padding: quarter($inuit-base-spacing-unit) halve($inuit-base-spacing-unit);
+  background-color: $background-color;
+  @include inuit-font-size($content-font-size);
+
+  > a {
+    display: block;
+    padding: quarter($inuit-base-spacing-unit) halve($inuit-base-spacing-unit);
+    transition: background-color 0.2s;
+
+    > * {
+      display: inline-block;
+    }
+
+    &:hover {
+      background-color: $hover-background-color;
     }
   }
 
-  &__categories {
-    margin: 0px;
-    list-style-type: none;
+  .#{$grommet-namespace}status-icon {
+    margin-right: quarter($inuit-base-spacing-unit);
+  }
+}
+
+.#{$grommet-namespace}map__item--active {
+  border-color: $strong-border-color;
+}
+
+.#{$grommet-namespace}map--vertical {
+  .#{$grommet-namespace}map__categories {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
-  &__category {
-    position: relative;
-    padding-top: $inuit-base-spacing-unit;
-    margin-bottom: halve($inuit-base-spacing-unit);
-    max-width: none;
-
-    &-label {
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      @include inuit-font-size($label-font-size);
-    }
-
-    &-items {
-      margin: 0px;
-      list-style-type: none;
-      overflow: hidden;
-      text-align: center;
-    }
+  .#{$grommet-namespace}map__category-items {
+    text-align: left;
   }
 
-  &__item {
-    display: inline-block;
-    width: $panel-width;
-    border: 1px solid $border-color;
-    margin-right: halve($inuit-base-spacing-unit);
-    margin-bottom: halve($inuit-base-spacing-unit);
-    background-color: $background-color;
-    @include inuit-font-size($content-font-size);
-
-    > a {
-      display: block;
-      padding: quarter($inuit-base-spacing-unit) halve($inuit-base-spacing-unit);
-      transition: background-color 0.2s;
-
-      > * {
-        display: inline-block;
-      }
-
-      &:hover {
-        background-color: $hover-background-color;
-      }
-    }
-
-    .#{$grommet-namespace}status-icon {
-      margin-right: quarter($inuit-base-spacing-unit);
-    }
-
-    &--active {
-      border-color: $strong-border-color;
-    }
+  .#{$grommet-namespace}map__item {
+    display: block;
+    margin-right: 0;
   }
 }

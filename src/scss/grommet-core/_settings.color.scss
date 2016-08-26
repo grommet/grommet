@@ -16,7 +16,7 @@ $brand-status-colors: (
   disabled: #a8a8a8
 ) !default;
 $brand-grey-colors: (#333333, #444444, #555555, #666666) !default;
-$brand-graph-colors: join(join((), $brand-accent-colors), $brand-neutral-colors) !default;
+$brand-graph-colors: $brand-neutral-colors !default;
 $brand-light-colors: (#ffffff, #f5f5f5) !default;
 
 $brand-color-lighter: lighten($brand-color, 23%) !default;
@@ -62,9 +62,10 @@ $icon-badge-background-color: nth($brand-accent-colors, 1);
 $icon-badge-text-color: $text-color;
 
 $unset-color: #ddd !default;
+$control-background-color: rgba($text-color, 0.2) !default;
 
 $meter-color: $brand-color !default;
-$meter-background-color: rgba($text-color, 0.2) !default;
+$meter-background-color: rgba(0, 0, 0, 0.1) !default;
 $colored-meter-background-color: rgba(#fff, 0.1) !default;
 $threshold-color: rgba($text-color, 0.2) !default;
 $cursor-color: $text-color !default;

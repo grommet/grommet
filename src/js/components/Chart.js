@@ -24,11 +24,12 @@ const BAR_SEGMENT_HEIGHT = 18; // 12 + 6 tied to stroke-dashoffset in CSS
 
 export default class Chart extends Component {
 
-  constructor(props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
 
     this._onRequestForNextLegend = this._onRequestForNextLegend.bind(this);
-    this._onRequestForPreviousLegend = this._onRequestForPreviousLegend.bind(this);
+    this._onRequestForPreviousLegend =
+      this._onRequestForPreviousLegend.bind(this);
     this._onMouseOver = this._onMouseOver.bind(this);
     this._onMouseOut = this._onMouseOut.bind(this);
     this._onResize = this._onResize.bind(this);
@@ -358,7 +359,8 @@ export default class Chart extends Component {
   _translateX (x) {
     let bounds = this.state.bounds;
     return Math.max(bounds.graphLeft,
-      Math.min(bounds.graphRight, Math.round((x - bounds.minX) * bounds.scaleX)));
+      Math.min(bounds.graphRight,
+        Math.round((x - bounds.minX) * bounds.scaleX)));
   }
 
   // Translates Y value to Y coordinate.
@@ -481,8 +483,10 @@ export default class Chart extends Component {
           const value = item.values[index];
           points.push(
             <circle key={index}
-              className={`${CLASS_ROOT}__values-point ${COLOR_INDEX}-${colorIndex}`}
-              cx={x} cy={coordinate[1]} r={POINT_RADIUS} onClick={value.onClick} />
+              className={`${CLASS_ROOT}__values-point ` +
+                `${COLOR_INDEX}-${colorIndex}`}
+              cx={x} cy={coordinate[1]} r={POINT_RADIUS}
+              onClick={value.onClick} />
           );
         }
 
@@ -556,7 +560,8 @@ export default class Chart extends Component {
         let stepBarBase = this._translateHeight(baseY);
         baseY += valueY;
 
-        let classes = [`${CLASS_ROOT}__values-bar`, `${COLOR_INDEX}-${colorIndex}`];
+        let classes = [`${CLASS_ROOT}__values-bar`,
+          `${COLOR_INDEX}-${colorIndex}`];
         if (! this.props.legend ||
           'inline' === this.props.legend.position ||
           xIndex === this.state.highlightXIndex) {
@@ -581,11 +586,25 @@ export default class Chart extends Component {
         }
         const y = this.state.height - (stepBarHeight + stepBarBase);
 
+        let labeledValue;
+        let unitsValue = item.units || this.props.units;
+        if (unitsValue) {
+          if (unitsValue.prefix && unitsValue.suffix) {
+            labeledValue =
+              `${unitsValue.prefix}${value[1]} ${unitsValue.suffix}`;
+          } else if (unitsValue.prefix) {
+            labeledValue = `${unitsValue.prefix}${value[1]}`;
+          } else if (unitsValue.suffix ||
+            (typeof unitsValue === 'string' || unitsValue instanceof String)) {
+            labeledValue = `${value[1]} ${unitsValue.suffix || unitsValue}`;
+          }
+        }
+
         if (this.props.legend && 'inline' === this.props.legend.position) {
           legend.push(
             <text key={'bar-value_' + item.label || seriesIndex}
-              x={x} y={y} role="presentation" textAnchor="middle" fontSize={24}>
-              {value[1]}
+              x={x} y={y} role="presentation" textAnchor="middle" fontSize={16}>
+              {labeledValue}
             </text>
           );
         }
@@ -644,7 +663,8 @@ export default class Chart extends Component {
       x += bounds.barPadding;
       startX = x;
     }
-    return {x: x, anchor: anchor, startX: startX, endX: startX + MIN_LABEL_WIDTH};
+    return { x: x, anchor: anchor, startX: startX,
+      endX: startX + MIN_LABEL_WIDTH };
   }
 
   _labelOverlaps (pos1, pos2) {
@@ -665,12 +685,14 @@ export default class Chart extends Component {
     if (this.state.highlightXIndex >= 0 &&
       bounds.xAxis.data.length > this.state.highlightXIndex) {
       highlightPosition =
-        this._labelPosition(bounds.xAxis.data[this.state.highlightXIndex].value, bounds);
+        this._labelPosition(bounds.xAxis.data[this.state.highlightXIndex].value,
+          bounds);
     }
     let lastPosition = null;
     if (bounds.xAxis.data.length > 0) {
       lastPosition =
-        this._labelPosition(bounds.xAxis.data[bounds.xAxis.data.length - 1].value, bounds);
+        this._labelPosition(
+          bounds.xAxis.data[bounds.xAxis.data.length - 1].value, bounds);
     }
 
     let labels = bounds.xAxis.data.map((obj, xIndex) => {
@@ -717,7 +739,8 @@ export default class Chart extends Component {
 
     let bars = this.props.thresholds.map((item, index) => {
       let classes = [`${CLASS_ROOT}__bar`];
-      classes.push(`${COLOR_INDEX}-${(item.colorIndex || ('graph-' + (index + 1)))}`);
+      classes.push(`${COLOR_INDEX}-${(item.colorIndex ||
+        ('graph-' + (index + 1)))}`);
       if (index < (this.props.thresholds.length - 1)) {
         end = this.props.thresholds[index + 1].value;
       } else {
@@ -754,10 +777,25 @@ export default class Chart extends Component {
       ];
 
       if (currentSeries.value !== undefined) {
-        stringify.push(': ' + currentSeries.value);
-
         if (currentSeries.units) {
-          stringify.push(' ' + currentSeries.units);
+          let unitsSuffix;
+          let unitsPrefix = currentSeries.units.prefix;
+
+          if (currentSeries.units.suffix ||
+            (typeof currentSeries.units === 'string' ||
+            currentSeries.units instanceof String)) {
+            unitsSuffix = currentSeries.units.suffix || currentSeries.units;
+          }
+          if (unitsPrefix && unitsSuffix) {
+            stringify.push(
+              `: ${unitsPrefix}${currentSeries.value} ${unitsSuffix}`);
+          } else if (unitsPrefix) {
+            stringify.push(`: ${unitsPrefix}${currentSeries.value}`);
+          } else if (unitsSuffix) {
+            stringify.push(`: ${currentSeries.value} ${unitsSuffix}`);
+          }
+        } else {
+          stringify.push(`: ${currentSeries.value}`);
         }
       }
 
@@ -765,9 +803,31 @@ export default class Chart extends Component {
     }).join('; ');
 
     let totalText = '';
+    let labeledTotal;
+    let unitsPrefix;
+    let unitsSuffix;
+
+    if (this.props.units) {
+      if (this.props.units.prefix) {
+        unitsPrefix = this.props.units.prefix;
+      }
+      if (this.props.units.suffix ||
+        (typeof this.props.units === 'string' ||
+        this.props.units instanceof String)) {
+        unitsSuffix = this.props.units.suffix || this.props.units;
+      }
+      if (unitsPrefix && unitsSuffix) {
+        labeledTotal = `${unitsPrefix}${total} ${unitsSuffix}`;
+      } else if (unitsPrefix) {
+        labeledTotal = `${unitsPrefix}${total}`;
+      } else if (unitsSuffix) {
+        labeledTotal = `${total} ${unitsSuffix}`;
+      }
+    }
     if (this.props.legend.total) {
       let totalMessage = Intl.getMessage(this.context.intl, 'Total');
-      totalText = totalMessage + ': ' + total + this.props.units || '';
+      totalText = totalMessage + ': ' + labeledTotal || '';
+
       seriesText += ', ' + totalText;
     }
 
@@ -834,9 +894,11 @@ export default class Chart extends Component {
       coordinates[0] += this.state.bounds.barPadding;
     }
     // Offset it just a little if it is at an edge.
-    let x = Math.max(1, Math.min(coordinates[0], this.state.bounds.graphWidth - 1));
+    let x = Math.max(1, Math.min(coordinates[0],
+      this.state.bounds.graphWidth - 1));
     let line = (
-      <line fill="none" x1={x} y1={bounds.graphTop} x2={x} y2={bounds.graphBottom} />
+      <line fill="none" x1={x} y1={bounds.graphTop} x2={x}
+        y2={bounds.graphBottom} />
     );
 
     let points;
@@ -849,7 +911,8 @@ export default class Chart extends Component {
           let colorIndex = this._itemColorIndex(item, seriesIndex);
           return (
             <circle key={seriesIndex}
-              className={`${CLASS_ROOT}__cursor-point ${COLOR_INDEX}-${colorIndex}`}
+              className={`${CLASS_ROOT}__cursor-point ` +
+                `${COLOR_INDEX}-${colorIndex}`}
               cx={x} cy={coordinates[1]} r={Math.round(POINT_RADIUS * 1.2)} />
           );
         });
@@ -1000,7 +1063,8 @@ export default class Chart extends Component {
           viewBox={"0 0 " + this.state.width + " " + this.state.height}
           preserveAspectRatio="none" role={role} tabIndex="0"
           aria-activedescendant={activeDescendant}
-          aria-labelledby={this.props.a11yTitleId + ' ' + this.props.a11yDescId}>
+          aria-labelledby={this.props.a11yTitleId + ' ' +
+            this.props.a11yDescId}>
           {a11yTitleNode}
           {a11yDescNode}
           {xAxis}
@@ -1036,7 +1100,13 @@ Chart.propTypes = {
       colorIndex: PropTypes.string,
       onClick: PropTypes.func,
       label: PropTypes.string,
-      units: PropTypes.string,
+      units: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.shape({
+          prefix: PropTypes.string,
+          suffix: PropTypes.string
+        })
+      ]),
       values: PropTypes.arrayOf(
         PropTypes.oneOfType([
           PropTypes.arrayOf(
@@ -1067,7 +1137,13 @@ Chart.propTypes = {
     colorIndex: PropTypes.string
   })),
   type: PropTypes.oneOf(['line', 'bar', 'area']),
-  units: PropTypes.string,
+  units: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.shape({
+      prefix: PropTypes.string,
+      suffix: PropTypes.string
+    })
+  ]),
   xAxis: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.shape({
       value: PropTypes.oneOfType([

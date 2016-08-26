@@ -20,8 +20,8 @@ function _showField(field, fields) {
 
 export default class Timestamp extends Component {
 
-  constructor () {
-    super();
+  constructor(props, context) {
+    super(props, context);
     this.state = {};
   }
 
@@ -35,7 +35,8 @@ export default class Timestamp extends Component {
 
   _formatForLocale (props) {
     const locale = getCurrentLocale();
-    const value = (typeof props.value === 'string') ? new Date(props.value) : props.value;
+    const value =
+      (typeof props.value === 'string') ? new Date(props.value) : props.value;
 
     let date;
     if (_showField('date', props.fields)) {

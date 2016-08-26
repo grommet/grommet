@@ -11,7 +11,9 @@ const BACKGROUND_COLOR_INDEX = CSSClassnames.BACKGROUND_COLOR_INDEX;
 
 class Label extends Component {
   render () {
-    return (<span className={CLASS_ROOT + "__label"}>{this.props.children}</span>);
+    return (
+      <span className={CLASS_ROOT + "__label"}>{this.props.children}</span>
+    );
   }
 }
 
@@ -144,8 +146,8 @@ Parts.defaultProps = {
 
 export default class Topology extends Component {
 
-  constructor () {
-    super();
+  constructor(props, context) {
+    super(props, context);
 
     this._layout = this._layout.bind(this);
     this._onResize = this._onResize.bind(this);
@@ -190,7 +192,8 @@ export default class Topology extends Component {
     var result;
     let element = document.getElementById(id);
     if (! element) {
-      console.log('!!! Topology is unable to find the link target with id:', id);
+      console.log('!!! Topology is unable to find the link target with id:',
+        id);
       result = [0, 0];
     } else {
       let rect = element.getBoundingClientRect();
@@ -248,11 +251,13 @@ export default class Topology extends Component {
             if (delta[0] > delta[1]) {
               // larger X delta
               cp1 = [p1[0],
-                Math.min(p1[1], p2[1]) + Math.max(linkOffset, (delta[1] / 2)) + (linkIndex * 2)];
+                Math.min(p1[1], p2[1]) +
+                  Math.max(linkOffset, (delta[1] / 2)) + (linkIndex * 2)];
               cp2 = [p2[0], cp1[1]];
             } else {
               // larger Y delta or equal
-              let cp1xDelta = Math.max(linkOffset, (delta[0] / 2) + (linkIndex * 2));
+              let cp1xDelta =
+                Math.max(linkOffset, (delta[0] / 2) + (linkIndex * 2));
               if (p1[0] > p2[0]) {
                 cp1 = [p2[0] + cp1xDelta, p1[1]];
               } else {
@@ -305,7 +310,8 @@ export default class Topology extends Component {
   _onMouseMove (event) {
     // debounce
     clearTimeout(this._mouseMoveTimer);
-    this._mouseMoveTimer = setTimeout(this._highlight.bind(this, event.target), 100);
+    this._mouseMoveTimer =
+      setTimeout(this._highlight.bind(this, event.target), 100);
   }
 
   _onMouseLeave () {
