@@ -1,39 +1,39 @@
 import React from 'react';
-import Checkbox from '../../src/js/components/CheckBox';
+import CheckBox from '../../src/js/components/CheckBox';
 import renderer from 'react/lib/ReactTestRenderer';
 
-describe('Checkbox', () => {
+describe('CheckBox', () => {
   it('has correct default options', () => {
     const component = renderer.create(
-      <Checkbox id="test" label="Test Checkbox"/>
+      <CheckBox id="test" label="Test CheckBox"/>
     );
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   it('has correct checked=true rendering', () => {
     const component = renderer.create(
-      <Checkbox id="test" checked={true} label="Test Checkbox"/>
+      <CheckBox id="test" checked={true} label="Test CheckBox"/>
     );
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   it('has correct disabled=true rendering', () => {
     const component = renderer.create(
-      <Checkbox id="test" disabled={true} label="Test Checkbox"/>
+      <CheckBox id="test" disabled={true} label="Test CheckBox"/>
     );
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   it('has correct reverse=true rendering', () => {
     const component = renderer.create(
-      <Checkbox id="test" reverse={true} label="Test Checkbox"/>
+      <CheckBox id="test" reverse={true} label="Test CheckBox"/>
     );
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   it('has correct toggle=true rendering', () => {
     const component = renderer.create(
-      <Checkbox id="test" toggle={true} label="Test Checkbox"/>
+      <CheckBox id="test" toggle={true} label="Test CheckBox"/>
     );
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();

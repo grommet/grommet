@@ -1,6 +1,6 @@
-exports[`Checkbox has correct checked=true rendering 1`] = `
+exports[`CheckBox has correct checked=true rendering 1`] = `
 <label
-  aria-label="Test Checkbox"
+  aria-label="Test CheckBox"
   className="grommetux-check-box">
   <span>
     <input
@@ -27,14 +27,14 @@ exports[`Checkbox has correct checked=true rendering 1`] = `
   </span>
   <span
     className="grommetux-check-box__label">
-    Test Checkbox
+    Test CheckBox
   </span>
 </label>
 `;
 
-exports[`Checkbox has correct default options 1`] = `
+exports[`CheckBox has correct default options 1`] = `
 <label
-  aria-label="Test Checkbox"
+  aria-label="Test CheckBox"
   className="grommetux-check-box">
   <span>
     <input
@@ -61,14 +61,14 @@ exports[`Checkbox has correct default options 1`] = `
   </span>
   <span
     className="grommetux-check-box__label">
-    Test Checkbox
+    Test CheckBox
   </span>
 </label>
 `;
 
-exports[`Checkbox has correct disabled=true rendering 1`] = `
+exports[`CheckBox has correct disabled=true rendering 1`] = `
 <label
-  aria-label="Test Checkbox"
+  aria-label="Test CheckBox"
   className="grommetux-check-box grommetux-check-box--disabled">
   <span>
     <input
@@ -95,18 +95,18 @@ exports[`Checkbox has correct disabled=true rendering 1`] = `
   </span>
   <span
     className="grommetux-check-box__label">
-    Test Checkbox
+    Test CheckBox
   </span>
 </label>
 `;
 
-exports[`Checkbox has correct reverse=true rendering 1`] = `
+exports[`CheckBox has correct reverse=true rendering 1`] = `
 <label
-  aria-label="Test Checkbox"
+  aria-label="Test CheckBox"
   className="grommetux-check-box">
   <span
     className="grommetux-check-box__label">
-    Test Checkbox
+    Test CheckBox
   </span>
   <span>
     <input
@@ -134,9 +134,9 @@ exports[`Checkbox has correct reverse=true rendering 1`] = `
 </label>
 `;
 
-exports[`Checkbox has correct toggle=true rendering 1`] = `
+exports[`CheckBox has correct toggle=true rendering 1`] = `
 <label
-  aria-label="Test Checkbox"
+  aria-label="Test CheckBox"
   className="grommetux-check-box grommetux-check-box--toggle">
   <span>
     <input
@@ -163,7 +163,7 @@ exports[`Checkbox has correct toggle=true rendering 1`] = `
   </span>
   <span
     className="grommetux-check-box__label">
-    Test Checkbox
+    Test CheckBox
   </span>
 </label>
 `;
