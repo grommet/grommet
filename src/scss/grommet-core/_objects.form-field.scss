@@ -95,6 +95,14 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
     @include form-field-content();
   }
 
+
+  > .#{$grommet-namespace}search-input input,
+  > .#{$grommet-namespace}calendar input,
+  > .#{$grommet-namespace}date-time input {
+    // align left padding with other form inputs
+    padding-left: $inuit-base-spacing-unit;
+  }
+
   > input[type=text],
   > input[type=email],
   > input[type=password],
@@ -146,6 +154,22 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
     // Extra padding is added by Firefox (more) and IE (less).
     // Leave it alone as Safari, Chrome, and Opera don't want this.
     // padding-left: #{$form-horizontal-padding - 2};
+
+    // Firefox hack for left-aligning select with other inputs.
+    _:-moz-tree-row(hover),
+    &,
+    &:focus {
+      padding-left: ($inuit-base-spacing-unit - ($input-border-width + 2));
+    }
+
+    // IE11 hack for left-aligning select with other inputs
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      padding-left: ($inuit-base-spacing-unit - ($input-border-width + 1));
+
+      &:focus {
+        padding-left: ($inuit-base-spacing-unit - ($input-border-width + 1));
+      }
+    }
 
     html.rtl & {
       background-position: center left #{$form-horizontal-padding - quarter($inuit-base-spacing-unit)};

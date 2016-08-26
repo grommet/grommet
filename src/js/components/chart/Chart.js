@@ -3,6 +3,9 @@
 import React, { Component, Children, PropTypes } from 'react';
 import { padding, debounceDelay } from './utils';
 import CSSClassnames from '../../utils/CSSClassnames';
+import Intl from '../../utils/Intl';
+
+import Meter from '../Meter';
 
 import Axis from './Axis';
 import Layers from './Layers';
@@ -18,6 +21,34 @@ import Range from './Range';
 
 const CLASS_ROOT = CSSClassnames.CHART;
 const CHART_BASE = CSSClassnames.CHART_BASE;
+
+function traverseAndUpdateChildren (children) {
+  return Children.map(children, child => {
+    if (!child || !child.type) {
+      return;
+    }
+
+    // remove tabIndex from child elements to avoid
+    // multiple tabs inside a chart
+    if (child.type === Meter || child.type.name === 'Meter' ||
+      child.type === Chart || child.type.name === 'Chart') {
+      return React.cloneElement(child, {
+        tabIndex: '-1'
+      });
+    }
+
+    if (child.props.children) {
+      const childrenNoTabIndex = traverseAndUpdateChildren(
+        child.props.children
+      );
+
+      return React.cloneElement(child, {
+        children: childrenNoTabIndex
+      });
+    }
+    return child;
+  });
+}
 
 export default class Chart extends Component {
 
@@ -123,9 +154,10 @@ export default class Chart extends Component {
   }
 
   render () {
-    const { vertical, full, loading } = this.props;
+    const { a11yTitle, full, loading, vertical } = this.props;
     const { alignBottom, alignHeight, alignLeft, alignRight, alignTop,
       alignWidth, padAlign } = this.state;
+    const { intl } = this.context;
     let classes = [CLASS_ROOT];
     if (vertical) {
       classes.push(`${CLASS_ROOT}--vertical`);
@@ -189,6 +221,20 @@ export default class Chart extends Component {
         child.type === Base || child.type.name === 'Base'
       )) {
 
+        if (child.type === Base) {
+          const updatedChildren = traverseAndUpdateChildren(
+            child.props.children
+          );
+
+          child = React.cloneElement(child, {
+            children: updatedChildren
+          });
+        } else {
+          child = React.cloneElement(child, {
+            tabIndex: '-1'
+          });
+        }
+
         axisAlign = 'start';
       }
 
@@ -204,8 +250,13 @@ export default class Chart extends Component {
       );
     }
 
+    const ariaLabel = (
+      a11yTitle || Intl.getMessage(intl, 'Chart')
+    );
+
     return (
-      <div ref="chart" className={classes.join(' ')}>
+      <div ref="chart" className={classes.join(' ')} role="group"
+        aria-label={ariaLabel}>
         {children}
       </div>
     );
@@ -213,7 +264,12 @@ export default class Chart extends Component {
 
 };
 
+Chart.contextTypes = {
+  intl: PropTypes.object
+};
+
 Chart.propTypes = {
+  a11yTitle: PropTypes.string,
   full: PropTypes.bool,
   horizontalAlignWith: PropTypes.string,
   loading: PropTypes.bool,
