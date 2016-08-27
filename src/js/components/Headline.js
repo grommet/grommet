@@ -1,4 +1,4 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { PropTypes, Component } from 'react';
 import classnames from 'classnames';

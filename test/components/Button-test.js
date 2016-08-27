@@ -1,4 +1,4 @@
-// (C) Copyright 2014-2015 Hewlett-Packard Development Company, L.P.
+// (C) Copyright 2014-2016 Hewlett-Packard Development Company, L.P.
 
 import {test} from 'tape';
 import React from 'react';

@@ -1,4 +1,4 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 function hash(input) {
   var hash = 0, i, chr, len;
   if (input.length === 0) return hash;

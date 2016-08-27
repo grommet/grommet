@@ -1,3 +1,5 @@
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
 import React from 'react';
 import CheckBox from '../../src/js/components/CheckBox';
 import renderer from 'react/lib/ReactTestRenderer';

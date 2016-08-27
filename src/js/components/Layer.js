@@ -1,4 +1,4 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
@@ -221,8 +221,10 @@ export default class Layer extends Component {
     } else {
       beforeElement = document.body.firstChild;
     }
-    this._element =
-      beforeElement.parentNode.insertBefore(element, beforeElement);
+    if (beforeElement) {
+      this._element =
+        beforeElement.parentNode.insertBefore(element, beforeElement);
+    }
   }
 
   _handleAriaHidden (hideOverlay) {
@@ -238,16 +240,18 @@ export default class Layer extends Component {
   }
 
   _renderLayer () {
-    this._element.className = this._classesFromProps().join(' ');
-    var contents = (
-      <LayerContents {...this.props}
-        history={this.context.history}
-        intl={this.context.intl}
-        router={this.context.router}
-        store={this.context.store} />
-    );
-    ReactDOM.render(contents, this._element);
-    this._handleAriaHidden(this.props.hidden);
+    if (this._element) {
+      this._element.className = this._classesFromProps().join(' ');
+      var contents = (
+        <LayerContents {...this.props}
+          history={this.context.history}
+          intl={this.context.intl}
+          router={this.context.router}
+          store={this.context.store} />
+      );
+      ReactDOM.render(contents, this._element);
+      this._handleAriaHidden(this.props.hidden);
+    }
   }
 
   _removeLayer () {

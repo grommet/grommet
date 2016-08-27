@@ -1,4 +1,4 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import path from 'path';
 
@@ -94,6 +94,7 @@ export default {
   distPreprocess: ['generate-index-icons', 'dist-css'],
   testPaths: [
     '__tests__',
-    '!__tests__/utils/'
+    '!__tests__/utils/',
+    '!__tests__/mocks/'
   ]
 };

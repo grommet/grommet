@@ -1,0 +1,147 @@
+exports[`Anchor calls onClick after rendering 1`] = `
+<a
+  aria-label={undefined}
+  className="grommetux-anchor"
+  href="test"
+  id={undefined}
+  onClick={[Function anonymous]}
+  target={undefined} />
+`;
+
+exports[`Anchor calls onClick after rendering 2`] = `
+<a
+  aria-label={undefined}
+  className="grommetux-anchor"
+  href="test"
+  id={undefined}
+  onClick={[Function anonymous]}
+  target={undefined} />
+`;
+
+exports[`Anchor has correct default options 1`] = `
+<a
+  aria-label={undefined}
+  className="grommetux-anchor"
+  href="test"
+  id={undefined}
+  onClick={undefined}
+  target={undefined} />
+`;
+
+exports[`Anchor has correct disabled=true rendering 1`] = `
+<a
+  aria-label={undefined}
+  className="grommetux-anchor grommetux-anchor--disabled"
+  href="test"
+  id={undefined}
+  onClick={undefined}
+  target={undefined} />
+`;
+
+exports[`Anchor has correct icon and label rendering 1`] = `
+<a
+  aria-label={undefined}
+  className="grommetux-anchor grommetux-anchor--animate-icon grommetux-anchor--icon grommetux-anchor--icon-label"
+  href={undefined}
+  id={undefined}
+  onClick={undefined}
+  target={undefined}>
+  <svg
+    height="24px"
+    role="img"
+    version="1.1"
+    viewBox="0 0 24 24.3616"
+    width="24px" />
+  test
+</a>
+`;
+
+exports[`Anchor has correct icon as a child rendering 1`] = `
+<a
+  aria-label={undefined}
+  className="grommetux-anchor grommetux-anchor--animate-icon grommetux-anchor--icon"
+  href={undefined}
+  id={undefined}
+  onClick={undefined}
+  target={undefined}>
+  <span
+    className="grommetux-anchor__icon">
+    <svg
+      height="24px"
+      role="img"
+      version="1.1"
+      viewBox="0 0 24 24.3616"
+      width="24px" />
+  </span>
+</a>
+`;
+
+exports[`Anchor has correct icon rendering 1`] = `
+<a
+  aria-label={undefined}
+  className="grommetux-anchor grommetux-anchor--animate-icon grommetux-anchor--icon"
+  href={undefined}
+  id={undefined}
+  onClick={undefined}
+  target={undefined}>
+  <span
+    className="grommetux-anchor__icon">
+    <svg
+      height="24px"
+      role="img"
+      version="1.1"
+      viewBox="0 0 24 24.3616"
+      width="24px" />
+  </span>
+</a>
+`;
+
+exports[`Anchor has correct primary=true rendering 1`] = `
+<a
+  aria-label={undefined}
+  className="grommetux-anchor grommetux-anchor--animate-icon grommetux-anchor--icon grommetux-anchor--primary"
+  href="test"
+  id={undefined}
+  onClick={undefined}
+  target={undefined}>
+  <svg
+    aria-labelledby="undefined-icon"
+    className="grommetux-control-icon grommetux-control-icon-link-next"
+    height="24px"
+    role="img"
+    version="1.1"
+    viewBox="0 0 24 24"
+    width="24px">
+    <title
+      id="undefined-icon">
+      undefined-icon
+    </title>
+    <g>
+      <rect
+        fill="none"
+        height="24"
+        width="24"
+        x="0"
+        y="0" />
+      <path
+        d="M13,3.9448l8,8l-8,8 M2,11.9448h19"
+        fill="none"
+        stroke="#000000"
+        strokeMiterlimit="10"
+        strokeWidth="2" />
+    </g>
+  </svg>
+</a>
+`;
+
+exports[`Anchor has correct text as a child rendering 1`] = `
+<a
+  aria-label={undefined}
+  className="grommetux-anchor"
+  href={undefined}
+  id={undefined}
+  onClick={undefined}
+  target={undefined}>
+  test
+</a>
+`;
