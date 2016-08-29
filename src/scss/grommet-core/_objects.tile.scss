@@ -94,9 +94,26 @@
     @include media-query(lap-and-up) {
       flex-grow: 1;
       flex-basis: 0;
+      min-width: $tile-size;
 
       & > .#{$grommet-namespace}tile {
         width: auto;
+      }
+    }
+  }
+
+  &.#{$grommet-namespace}tiles--large {
+    .#{$grommet-namespace}tiles__masonry-column {
+      @include media-query(lap-and-up) {
+        min-width: $tile-large-size;
+      }
+    }
+  }
+
+  &.#{$grommet-namespace}tiles--small {
+    .#{$grommet-namespace}tiles__masonry-column {
+      @include media-query(lap-and-up) {
+        min-width: $tile-small-size;
       }
     }
   }
