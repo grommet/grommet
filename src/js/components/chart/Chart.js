@@ -154,7 +154,7 @@ export default class Chart extends Component {
   }
 
   render () {
-    const { a11yTitle, full, loading, tabIndex, vertical } = this.props;
+    const { a11yTitle, full, loading, vertical } = this.props;
     const { alignBottom, alignHeight, alignLeft, alignRight, alignTop,
       alignWidth, padAlign } = this.state;
     const { intl } = this.context;
@@ -256,7 +256,7 @@ export default class Chart extends Component {
 
     return (
       <div ref="chart" className={classes.join(' ')} role="group"
-        tabIndex={tabIndex} aria-label={ariaLabel}>
+        aria-label={ariaLabel}>
         {children}
       </div>
     );
@@ -268,17 +268,12 @@ Chart.contextTypes = {
   intl: PropTypes.object
 };
 
-Chart.defaultProps = {
-  tabIndex: "0"
-};
-
 Chart.propTypes = {
   a11yTitle: PropTypes.string,
   full: PropTypes.bool,
   horizontalAlignWith: PropTypes.string,
   loading: PropTypes.bool,
   onMaxCount: PropTypes.func,
-  tabIndex: PropTypes.string,
   vertical: PropTypes.bool,
   verticalAlignWith: PropTypes.string
 };

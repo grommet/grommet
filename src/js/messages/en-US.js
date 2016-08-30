@@ -11,6 +11,7 @@ export default {
   Active: 'Active',
   Alerts: 'Alerts',
   All: 'All',
+  AxisLabel: '{orientation} Axis',
   area: 'area',
   Bar: 'Bar',
   bar: 'bar',
@@ -32,6 +33,7 @@ export default {
   Error: 'Error',
   Filter: 'Filter',
   Footer: 'Footer',
+  HotSpotsLabel: 'HotSpots: press arrow keys to interact with it',
   'GraphValues': (
     'Graph has {count} items. Highest is {highest}' +
     ' and smallest is {smallest}'
@@ -63,6 +65,7 @@ export default {
   Sort: 'Sort',
   State: 'State',
   Status: 'Status',
+  SunBurstLabel: 'SunBurst: press arrow keys to interact with it',
   'Tab Contents': '{activeTitle} Tab Contents',
   Tasks: 'Tasks',
   Time: 'Time',
