@@ -1,0 +1,8 @@
+exports[`Markdown has correct default options 1`] = `
+<p
+  className="grommetux-paragraph testing grommetux-paragraph--large"
+  dangerouslySetInnerHTML={undefined}
+  id={undefined}>
+  test
+</p>
+`;

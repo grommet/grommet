@@ -38,7 +38,7 @@ describe('Accordion', () => {
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
-  it('has correct initialIndex={0} rendering', () => {
+  it('has correct initialIndex=0 rendering', () => {
     const component = renderer.create(
       <Accordion initialIndex={0}>
         <AccordionPanel active heading="First Title">

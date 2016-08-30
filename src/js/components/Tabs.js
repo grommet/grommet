@@ -76,8 +76,8 @@ export default class Tabs extends Component {
         <ul className={classes}>
           {tabs}
         </ul>
-        <div ref="tabContent" tabIndex="0" aria-label={tabContentTitle}
-          role="tabpanel">
+        <div tabIndex="0"
+          aria-label={tabContentTitle} role="tabpanel">
           <Box className={CLASS_ROOT + '__content'}
             aria-label={tabContentTitle}>
             {activeContainer}

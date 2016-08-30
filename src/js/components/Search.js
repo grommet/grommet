@@ -49,7 +49,7 @@ export default class Search extends Component {
 
   componentWillReceiveProps (nextProps) {
     if (nextProps.suggestions && nextProps.suggestions.length > 0 &&
-      ! this.state.dropActive && this.refs.input === document.activeElement) {
+      ! this.state.dropActive && this.inputRef === document.activeElement) {
       this.setState({dropActive: true});
     } else if ((! nextProps.suggestions ||
       nextProps.suggestions.length === 0) &&
@@ -105,10 +105,10 @@ export default class Search extends Component {
         activeKeyboardHandlers);
 
       let baseElement;
-      if (this.refs.control) {
-        baseElement = this.refs.control.firstChild;
+      if (this.controlRef) {
+        baseElement = this.controlRef.firstChild;
       } else {
-        baseElement = this.refs.input;
+        baseElement = this.inputRef;
       }
       let dropAlign = this.props.dropAlign || {
         top: (this.state.inline ? 'bottom' : 'top'),
@@ -158,7 +158,7 @@ export default class Search extends Component {
   }
 
   _onFocusInput () {
-    this.refs.input.select();
+    this.inputRef.select();
     this.setState({
       activeSuggestionIndex: -1
     });
@@ -182,7 +182,7 @@ export default class Search extends Component {
       event.initEvent('change', true, true);
     }
     let controlInput = document.getElementById('search-drop-input');
-    let target = this.refs.input || controlInput;
+    let target = this.inputRef || controlInput;
     target.dispatchEvent(event);
     this.props.onDOMChange(event);
   }
@@ -221,7 +221,7 @@ export default class Search extends Component {
       this.setState({value: suggestion});
       if (this.props.onSelect) {
         this.props.onSelect({
-          target: this.refs.input || this.refs.control,
+          target: this.inputRef || this.controlRef,
           suggestion: suggestion
         }, true);
       }
@@ -233,7 +233,7 @@ export default class Search extends Component {
 
     if (this.props.onSelect) {
       this.props.onSelect({
-        target: this.refs.input || this.refs.control,
+        target: this.inputRef || this.controlRef,
         suggestion: suggestion
       }, true);
     }
@@ -253,7 +253,7 @@ export default class Search extends Component {
   }
 
   focus () {
-    let ref = this.refs.input || this.refs.control;
+    let ref = this.inputRef || this.controlRef;
     if (ref) {
       ref.focus();
     }
@@ -360,7 +360,7 @@ export default class Search extends Component {
     if (this.state.inline) {
       return (
         <div className={classes}>
-          <input {...restProps} ref="input" type="search"
+          <input {...restProps} ref={(ref) => this.inputRef = ref} type="search"
             id={this.props.id}
             placeholder={this.props.placeHolder}
             autoComplete="off"
@@ -376,7 +376,7 @@ export default class Search extends Component {
 
     } else {
       return (
-        <div ref="control">
+        <div ref={(ref) => this.controlRef = ref}>
           <Button id={this.props.id}
             className={classes}
             icon={<SearchIcon />}
