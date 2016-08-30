@@ -2,6 +2,7 @@
 
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
+import CSSClassnames from '../utils/CSSClassnames';
 import Props from '../utils/Props';
 import Box from './Box';
 import Tile from './Tile';
@@ -12,7 +13,7 @@ import Layer from './Layer';
 import Video from './Video';
 import WatchIcon from './icons/base/Watch';
 
-const CLASS_ROOT = 'card';
+const CLASS_ROOT = CSSClassnames.CARD;
 
 export default class Card extends Component {
   constructor (props) {
@@ -110,7 +111,7 @@ export default class Card extends Component {
         <Box className={`${CLASS_ROOT}__thumbnail`}
           backgroundImage={`url(${thumbnail})`}
           justify="center" align="center">
-          {(video) ? <Anchor icon={<WatchIcon size="xlarge" />} /> : null}}
+          {(video) ? <Anchor icon={<WatchIcon size="xlarge" />} /> : null}
         </Box>
       );
     }
