@@ -88,7 +88,8 @@ export default {
     },
     externals: {
       'react': 'React',
-      'react-dom': 'ReactDOM'
+      'react-dom': 'ReactDOM',
+      'react-addons-transition-group': 'React.addons.TransitionGroup'
     }
   },
   distPreprocess: ['generate-index-icons', 'dist-css'],
