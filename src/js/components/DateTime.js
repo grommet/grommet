@@ -65,7 +65,7 @@ export default class DateTime extends Component {
     }
 
     if (this.state.cursor >= 0) {
-      this.refs.input.setSelectionRange(this.state.cursor,this.state.cursor);
+      this.inputRef.setSelectionRange(this.state.cursor,this.state.cursor);
     }
   }
 
@@ -143,7 +143,7 @@ export default class DateTime extends Component {
   _onClose (event) {
     const drop = document.getElementById(DATE_TIME_DROP);
     const isCalendarOnly = !TIME_REGEXP.test(this.props.format);
-    if (! isDescendant(this.refs.component, event.target) &&
+    if (! isDescendant(this.containerRef, event.target) &&
       ! isDescendant(drop, event.target) || isCalendarOnly) {
       this.setState({dropActive: false, cursor: -1});
     }
@@ -190,7 +190,7 @@ export default class DateTime extends Component {
 
   _cursorScope () {
     const { format } = this.props;
-    const input = this.refs.input;
+    const input = this.inputRef;
     const value = input.value;
     const end = input.selectionEnd;
     this.setState({ cursor: end });
@@ -222,8 +222,8 @@ export default class DateTime extends Component {
 
       // If this is inside a FormField, place the drop in reference to it.
       const control =
-        findAncestor(this.refs.component, `.${FORM_FIELD}`) ||
-        this.refs.component;
+        findAncestor(this.containerRef, `.${FORM_FIELD}`) ||
+        this.containerRef;
       this._drop = Drop.add(control,
         this._renderDrop(), { align: {top: 'bottom', left: 'left'} });
 
@@ -265,10 +265,10 @@ export default class DateTime extends Component {
     const Icon = (TIME_REGEXP.test(format) ? ClockIcon : CalendarIcon);
 
     return (
-      <div ref="component" className={classes.join(' ')}>
-        <input ref="input" className={`${CLASS_ROOT}__input`}
-          id={id} placeholder={format} name={name} value={value || ''}
-          onChange={this._onInputChange} />
+      <div ref={(ref) => this.containerRef = ref} className={classes.join(' ')}>
+        <input ref={(ref) => this.inputRef = ref} placeholder={format}
+          className={`${CLASS_ROOT}__input`} id={id} name={name}
+          value={value || ''} onChange={this._onInputChange} />
         <Button className={`${CLASS_ROOT}__control`} icon={<Icon />}
           onClick={this._onControlClick} />
       </div>
