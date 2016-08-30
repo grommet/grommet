@@ -155,6 +155,7 @@ LayerContents.childContextTypes = {
 export default class Layer extends Component {
 
   componentDidMount () {
+    window.scrollTo(0, 0);
     this._originalFocusedElement = document.activeElement;
     this._addLayer();
     this._renderLayer();
@@ -168,7 +169,11 @@ export default class Layer extends Component {
 
     if (this._originalFocusedElement) {
       if (this._originalFocusedElement.focus) {
-        this._originalFocusedElement.focus();
+        // wait for the fixed positining to come back to normal
+        // see layer styling for reference
+        setTimeout(() => {
+          this._originalFocusedElement.focus();
+        }, 0);
       } else if (this._originalFocusedElement.parentNode &&
         this._originalFocusedElement.parentNode.focus) {
         // required for IE11 and Edge
