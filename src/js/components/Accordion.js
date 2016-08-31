@@ -50,11 +50,7 @@ export default class Accordion extends Component {
       });
 
     return (
-      <List
-        role="tablist"
-        className={classes}
-        {...props}
-      >
+      <List role="tablist" className={classes} {...props}>
         {accordionChildren}
       </List>
     );

@@ -1,0 +1,79 @@
+exports[`Pulse has correct className rendering 1`] = `
+<div
+  className="grommetux-pulse testing">
+  <div
+    className="grommetux-pulse__icon">
+    <svg
+      aria-labelledby="add-title"
+      className="grommetux-control-icon grommetux-control-icon-add"
+      height="24px"
+      role="img"
+      version="1.1"
+      viewBox="0 0 24 24"
+      width="24px">
+      <title
+        id="add-title">
+        <span
+          id="add">
+          add
+        </span>
+      </title>
+      <g>
+        <rect
+          fill="none"
+          height="24"
+          width="24"
+          x="0" />
+        <path
+          d="M0,12h24 M12,24V0"
+          fill="none"
+          stroke="#000000"
+          strokeMiterlimit="10"
+          strokeWidth="2" />
+      </g>
+    </svg>
+  </div>
+  <div
+    className="grommetux-pulse__icon-anim" />
+</div>
+`;
+
+exports[`Pulse has correct default options 1`] = `
+<div
+  className="grommetux-pulse">
+  <div
+    className="grommetux-pulse__icon">
+    <svg
+      aria-labelledby="add-title"
+      className="grommetux-control-icon grommetux-control-icon-add"
+      height="24px"
+      role="img"
+      version="1.1"
+      viewBox="0 0 24 24"
+      width="24px">
+      <title
+        id="add-title">
+        <span
+          id="add">
+          add
+        </span>
+      </title>
+      <g>
+        <rect
+          fill="none"
+          height="24"
+          width="24"
+          x="0" />
+        <path
+          d="M0,12h24 M12,24V0"
+          fill="none"
+          stroke="#000000"
+          strokeMiterlimit="10"
+          strokeWidth="2" />
+      </g>
+    </svg>
+  </div>
+  <div
+    className="grommetux-pulse__icon-anim" />
+</div>
+`;

@@ -1,4 +1,4 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import path from 'path';
 
@@ -88,12 +88,14 @@ export default {
     },
     externals: {
       'react': 'React',
-      'react-dom': 'ReactDOM'
+      'react-dom': 'ReactDOM',
+      'react-addons-transition-group': 'React.addons.TransitionGroup'
     }
   },
   distPreprocess: ['generate-index-icons', 'dist-css'],
-  scsslint: true,
   testPaths: [
-    'test/**/*.js'
+    '__tests__',
+    '!__tests__/utils/',
+    '!__tests__/mocks/'
   ]
 };

@@ -1,0 +1,33 @@
+exports[`Blank has correct className rendering 1`] = `
+<svg
+  aria-labelledby="blank-title"
+  className="grommetux-status-icon grommetux-status-icon-blank testing"
+  role="img"
+  version="1.1"
+  viewBox="0 0 24 24">
+  <title
+    id="blank-title">
+    <span
+      id="Blank">
+      Blank
+    </span>
+  </title>
+</svg>
+`;
+
+exports[`Blank has correct default options 1`] = `
+<svg
+  aria-labelledby="blank-title"
+  className="grommetux-status-icon grommetux-status-icon-blank"
+  role="img"
+  version="1.1"
+  viewBox="0 0 24 24">
+  <title
+    id="blank-title">
+    <span
+      id="Blank">
+      Blank
+    </span>
+  </title>
+</svg>
+`;

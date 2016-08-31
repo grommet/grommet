@@ -1,0 +1,133 @@
+exports[`Value has correct active=true rendering 1`] = `
+<div
+  className="grommetux-value grommetux-value--align-center grommetux-value--active"
+  onClick={undefined}>
+  <div
+    className="grommetux-value__annotated">
+    <span
+      className="grommetux-value__value">
+      75
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Value has correct className rendering 1`] = `
+<div
+  className="grommetux-value grommetux-value--align-center testing"
+  onClick={undefined}>
+  <div
+    className="grommetux-value__annotated">
+    <span
+      className="grommetux-value__value">
+      75
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Value has correct colorIndex rendering 1`] = `
+<div
+  className="grommetux-value grommetux-value--align-center grommetux-color-index-neutral-1"
+  onClick={undefined}>
+  <div
+    className="grommetux-value__annotated">
+    <span
+      className="grommetux-value__value">
+      75
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Value has correct default options 1`] = `
+<div
+  className="grommetux-value grommetux-value--align-center"
+  onClick={undefined}>
+  <div
+    className="grommetux-value__annotated">
+    <span
+      className="grommetux-value__value">
+      75
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Value has correct label rendering 1`] = `
+<div
+  className="grommetux-value grommetux-value--align-center"
+  onClick={undefined}>
+  <div
+    className="grommetux-value__annotated">
+    <span
+      className="grommetux-value__value">
+      75
+    </span>
+  </div>
+  <span
+    className="grommetux-value__label">
+    testing
+  </span>
+</div>
+`;
+
+exports[`Value has correct onClick rendering 1`] = `
+<div
+  className="grommetux-value grommetux-value--align-center grommetux-value--interactive"
+  onClick={[Function anonymous]}>
+  <div
+    className="grommetux-value__annotated">
+    <span
+      className="grommetux-value__value">
+      75
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Value has correct onClick rendering 2`] = `
+<div
+  className="grommetux-value grommetux-value--align-center grommetux-value--interactive"
+  onClick={[Function anonymous]}>
+  <div
+    className="grommetux-value__annotated">
+    <span
+      className="grommetux-value__value">
+      75
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Value has correct size="large" rendering 1`] = `
+<div
+  className="grommetux-value grommetux-value--large grommetux-value--align-center"
+  onClick={undefined}>
+  <div
+    className="grommetux-value__annotated">
+    <span
+      className="grommetux-value__value">
+      75
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Value has correct units=% rendering 1`] = `
+<div
+  className="grommetux-value grommetux-value--align-center"
+  onClick={undefined}>
+  <div
+    className="grommetux-value__annotated">
+    <span
+      className="grommetux-value__value">
+      75
+    </span>
+    <span
+      className="grommetux-value__units">
+      %
+    </span>
+  </div>
+</div>
+`;

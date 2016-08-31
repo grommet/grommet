@@ -1,4 +1,4 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 function hash(input) {
   var hash = 0, i, chr, len;
   if (input.length === 0) return hash;
@@ -97,18 +97,20 @@ export default {
   },
 
   generateId (element) {
-    let id;
-    const elementId = element.getAttribute('id');
-    if (!elementId) {
-      // IE11 fix: check for parentNode instead of parentElement
-      const parentElement = element.parentElement || element.parentNode;
-      if (parentElement) {
-        id = hash(parentElement.innerHTML);
-        element.setAttribute('id', id);
+    if (element) {
+      let id;
+      const elementId = element.getAttribute('id');
+      if (!elementId) {
+        // IE11 fix: check for parentNode instead of parentElement
+        const parentElement = element.parentElement || element.parentNode;
+        if (parentElement) {
+          id = hash(parentElement.innerHTML);
+          element.setAttribute('id', id);
+        }
+      } else {
+        id = elementId;
       }
-    } else {
-      id = elementId;
+      return id;
     }
-    return id;
   }
 };

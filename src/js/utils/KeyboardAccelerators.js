@@ -1,4 +1,4 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import { findDOMNode } from 'react-dom';
 import DOMUtils from './DOM';
@@ -87,26 +87,30 @@ export default {
   // be replaced, new handlers will be added.
   startListeningToKeyboard (component, handlers) {
     var element = findDOMNode(component);
-    this._initKeyboardAccelerators(element);
-    var keys = 0;
-    for (var key in handlers) {
-      if (handlers.hasOwnProperty(key)) {
-        var keyCode = key;
-        if (KEYS.hasOwnProperty(key)) {
-          keyCode = KEYS[key];
+    if (element) {
+      this._initKeyboardAccelerators(element);
+      var keys = 0;
+      for (var key in handlers) {
+        if (handlers.hasOwnProperty(key)) {
+          var keyCode = key;
+          if (KEYS.hasOwnProperty(key)) {
+            keyCode = KEYS[key];
+          }
+          keys += 1;
+          this._getKeyboardAcceleratorHandlers(element)[keyCode] = (
+            handlers[key]
+          );
         }
-        keys += 1;
-        this._getKeyboardAcceleratorHandlers(element)[keyCode] = handlers[key];
       }
-    }
 
-    if (keys > 0) {
-      if (!_isKeyboardAcceleratorListening) {
-        window.addEventListener("keydown", _onKeyboardAcceleratorKeyPress);
-        _isKeyboardAcceleratorListening = true;
-      }
-      if (!this._isComponentListening(element)) {
-        this._subscribeComponent(element);
+      if (keys > 0) {
+        if (!_isKeyboardAcceleratorListening) {
+          window.addEventListener("keydown", _onKeyboardAcceleratorKeyPress);
+          _isKeyboardAcceleratorListening = true;
+        }
+        if (!this._isComponentListening(element)) {
+          this._subscribeComponent(element);
+        }
       }
     }
   },

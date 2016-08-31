@@ -11,7 +11,7 @@ export default class Value extends Component {
 
   componentDidUpdate () {
     if (this.props.announce) {
-      announce(this.refs.value.textContent);
+      announce(this.valueRef.textContent);
     }
   }
 
@@ -55,8 +55,8 @@ export default class Value extends Component {
     }
 
     return (
-      <div ref='value' className={classes.join(' ')}
-        onClick={this.props.onClick}>
+      <div ref={(ref) => this.valueRef = ref}
+        className={classes.join(' ')} onClick={this.props.onClick}>
         <div className={`${CLASS_ROOT}__annotated`}>
           {this.props.icon}
           <span className={`${CLASS_ROOT}__value`}>

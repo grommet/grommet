@@ -1,0 +1,6 @@
+exports[`Headline has correct default options 1`] = `
+<div
+  className="grommetux-headline">
+  Testing
+</div>
+`;

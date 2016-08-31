@@ -1,0 +1,17 @@
+exports[`Paragraph has correct default options 1`] = `
+<p
+  className="grommetux-paragraph"
+  dangerouslySetInnerHTML={undefined}
+  id={undefined}>
+  Testing
+</p>
+`;
+
+exports[`Paragraph has correct size="large" options 1`] = `
+<p
+  className="grommetux-paragraph grommetux-paragraph--large"
+  dangerouslySetInnerHTML={undefined}
+  id={undefined}>
+  Testing
+</p>
+`;

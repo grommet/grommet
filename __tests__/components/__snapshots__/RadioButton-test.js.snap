@@ -1,0 +1,21 @@
+exports[`RadioButton has correct default options 1`] = `
+<label
+  className="grommetux-radio-button">
+  <input
+    checked={true}
+    className="grommetux-radio-button__input"
+    defaultChecked={undefined}
+    disabled={undefined}
+    id="choice"
+    name="choice"
+    onChange={undefined}
+    type="radio"
+    value={undefined} />
+  <span
+    className="grommetux-radio-button__control" />
+  <span
+    className="grommetux-radio-button__label">
+    Choice
+  </span>
+</label>
+`;

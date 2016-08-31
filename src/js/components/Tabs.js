@@ -1,4 +1,4 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
@@ -76,8 +76,8 @@ export default class Tabs extends Component {
         <ul className={classes}>
           {tabs}
         </ul>
-        <div ref="tabContent" tabIndex="0" aria-label={tabContentTitle}
-          role="tabpanel">
+        <div tabIndex="0"
+          aria-label={tabContentTitle} role="tabpanel">
           <Box className={CLASS_ROOT + '__content'}
             aria-label={tabContentTitle}>
             {activeContainer}

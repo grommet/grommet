@@ -1,4 +1,4 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
@@ -28,13 +28,15 @@ export default class Tab extends Component {
   }
 
   _processSpace (event) {
-    if (event.target === this.refs.tab) {
+    if (event.target === this.tabRef) {
       this._onClickTab(event);
     }
   }
 
   _onClickTab (event) {
-    event.preventDefault();
+    if (event) {
+      event.preventDefault();
+    }
     this.props.onRequestForActive();
   }
 
@@ -47,7 +49,8 @@ export default class Tab extends Component {
 
     return (
       <li className={classes.join(' ')} id={this.props.id}>
-        <a ref="tab" role="tab" href="#" onClick={this._onClickTab}
+        <a ref={(ref) => this.tabRef = ref} role="tab"
+          href="#" onClick={this._onClickTab}
           aria-expanded={this.props.active} aria-selected={this.props.active}
           className={CLASS_ROOT + "__link"} aria-labelledby={this.props.id}>
           <label className={CLASS_ROOT + '__label'} htmlFor={this.props.id}>

@@ -1,0 +1,34 @@
+exports[`Image has correct default options 1`] = `
+<img
+  alt={undefined}
+  className="grommetux-image grommetux-image--medium"
+  id={undefined}
+  src="test.png"
+  title={undefined} />
+`;
+
+exports[`Image has correct full="horizontal" and caption rendering 1`] = `
+<span
+  className="grommetux-image__container">
+  <img
+    alt={undefined}
+    className="grommetux-image grommetux-image--medium grommetux-image--full-horizontal"
+    id={undefined}
+    src="test.png"
+    title={undefined} />
+  <label
+    className="grommetux-label grommetux-image__caption grommetux-image__caption--medium grommetux-label--margin-medium grommetux-label--medium"
+    htmlFor={undefined}>
+    Testing
+  </label>
+</span>
+`;
+
+exports[`Image has correct size="thumb" rendering 1`] = `
+<img
+  alt={undefined}
+  className="grommetux-image grommetux-image--thumb"
+  id={undefined}
+  src="test.png"
+  title={undefined} />
+`;

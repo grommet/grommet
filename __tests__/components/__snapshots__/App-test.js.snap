@@ -1,0 +1,66 @@
+exports[`App has correct className rendering 1`] = `
+<div
+  className="grommet testing grommetux-app grommetux-app--centered"
+  lang="en-US">
+  <span
+    style={
+      Object {
+        "display": "none"
+      }
+    } />
+  <div
+    aria-live="polite"
+    className="grommetux-app__announcer" />
+</div>
+`;
+
+exports[`App has correct default options 1`] = `
+<div
+  className="grommet grommetux-app grommetux-app--centered"
+  lang="en-US">
+  <h2>
+    App Body
+  </h2>
+  <span
+    style={
+      Object {
+        "display": "none"
+      }
+    } />
+  <div
+    aria-live="polite"
+    className="grommetux-app__announcer" />
+</div>
+`;
+
+exports[`App has correct inline=true rendering 1`] = `
+<div
+  className="grommet grommetux-app grommetux-app--centered grommetux-app--inline"
+  lang="en-US">
+  <span
+    style={
+      Object {
+        "display": "none"
+      }
+    } />
+  <div
+    aria-live="polite"
+    className="grommetux-app__announcer" />
+</div>
+`;
+
+exports[`App has correct lang="pt=BR" rendering 1`] = `
+<div
+  className="grommet grommetux-app grommetux-app--centered"
+  lang="pt-BR">
+  <span
+    style={
+      Object {
+        "display": "none"
+      }
+    } />
+  <div
+    aria-live="polite"
+    className="grommetux-app__announcer" />
+</div>
+`;
