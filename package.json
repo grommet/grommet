@@ -60,7 +60,6 @@
     "yargs": "^5.0.0"
   },
   "devDependencies": {
-    "babel-jest": "^14.0.2",
     "babel-plugin-add-module-exports": "^0.2.0",
     "babel-plugin-transform-object-rest-spread": "^6.3.13",
     "babel-plugin-transform-react-es6-displayname": "^1.0.0-beta1.4",
