@@ -83,10 +83,8 @@ var App = function (_Component) {
   (0, _createClass3.default)(App, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      var lang = (0, _Locale.getCurrentLocale)();
-      if (this.props.lang) {
-        lang = this.props.lang;
-      }
+      var lang = this.props.lang || (0, _Locale.getCurrentLocale)();
+
       if (!document.documentElement.getAttribute('lang')) {
         document.documentElement.setAttribute('lang', lang);
       }
