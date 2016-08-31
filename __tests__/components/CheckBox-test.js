@@ -40,4 +40,11 @@ describe('CheckBox', () => {
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+  it('has correct className rendering', () => {
+    const component = renderer.create(
+      <CheckBox id="test" label="Test CheckBox" className="testing"/>
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
