@@ -142,6 +142,18 @@
   flex-basis: $size-large;
 }
 
+.#{$grommet-namespace}box--basis-xlarge {
+  flex-basis: $size-xlarge;
+}
+
+.#{$grommet-namespace}box--basis-xxlarge {
+  flex-basis: $size-xxlarge;
+}
+
+.#{$grommet-namespace}box--basis-full {
+  flex-basis: 100%;
+}
+
 .#{$grommet-namespace}box--basis-1-2 {
   flex-basis: 50%;
 }
@@ -156,6 +168,10 @@
 
 .#{$grommet-namespace}box--basis-1-4 {
   flex-basis: 25%;
+
+  @include media-query(portable) {
+    flex-basis: 50%;
+  }
 }
 
 .#{$grommet-namespace}box--basis-3-4 {
@@ -184,6 +200,10 @@
   width: $size-xlarge;
 }
 
+.#{$grommet-namespace}box--width-xxlarge {
+  width: $size-xxlarge;
+}
+
 // height
 
 .#{$grommet-namespace}box--height-xsmall {
@@ -204,6 +224,10 @@
 
 .#{$grommet-namespace}box--height-xlarge {
   height: $size-xlarge;
+}
+
+.#{$grommet-namespace}box--height-xxlarge {
+  height: $size-xxlarge;
 }
 
 // min-width
@@ -228,6 +252,62 @@
   min-width: $size-xlarge;
 }
 
+.#{$grommet-namespace}box--width-min-xxlarge {
+  min-width: $size-xxlarge;
+}
+
+// max-width
+
+.#{$grommet-namespace}box--width-max-xsmall {
+  max-width: $size-xsmall;
+}
+
+.#{$grommet-namespace}box--width-max-small {
+  max-width: $size-small;
+}
+
+.#{$grommet-namespace}box--width-max-medium {
+  max-width: $size-medium;
+}
+
+.#{$grommet-namespace}box--width-max-large {
+  max-width: $size-large;
+}
+
+.#{$grommet-namespace}box--width-max-xlarge {
+  max-width: $size-xlarge;
+}
+
+.#{$grommet-namespace}box--width-max-xxlarge {
+  max-width: $size-xxlarge;
+}
+
+// max-height
+
+.#{$grommet-namespace}box--height-max-xsmall {
+  max-height: $size-xsmall;
+}
+
+.#{$grommet-namespace}box--height-max-small {
+  max-height: $size-small;
+}
+
+.#{$grommet-namespace}box--height-max-medium {
+  max-height: $size-medium;
+}
+
+.#{$grommet-namespace}box--height-max-large {
+  max-height: $size-large;
+}
+
+.#{$grommet-namespace}box--height-max-xlarge {
+  max-height: $size-xlarge;
+}
+
+.#{$grommet-namespace}box--height-max-xxlarge {
+  max-height: $size-xxlarge;
+}
+
 // min-height
 
 .#{$grommet-namespace}box--height-min-xsmall {
@@ -248,6 +328,10 @@
 
 .#{$grommet-namespace}box--height-min-xlarge {
   min-height: $size-xlarge;
+}
+
+.#{$grommet-namespace}box--height-min-xxlarge {
+  min-height: $size-xxlarge;
 }
 
 // full
@@ -310,6 +394,11 @@
 
 .#{$grommet-namespace}box--size-large {
   width: $size-large;
+}
+
+// not necessary since this is the default
+.#{$grommet-namespace}box--size-auto {
+  width: auto;
 }
 
 // As a container of text
@@ -402,6 +491,11 @@
   align-items: baseline;
 }
 
+// not necessary since this is the default
+.#{$grommet-namespace}box--align-stretch {
+  align-items: stretch;
+}
+
 .#{$grommet-namespace}box--align-content-start {
   align-content: flex-start;
 }
@@ -420,6 +514,11 @@
 
 .#{$grommet-namespace}box--align-content-around {
   align-content: space-around;
+}
+
+// not necessary since this is the default
+.#{$grommet-namespace}box--align-content-stretch {
+  align-content: stretch;
 }
 
 // Container component padding (deprecate?)

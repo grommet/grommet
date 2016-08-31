@@ -126,7 +126,7 @@ $card-hover-color: #EBEBEB;
   &--direction-column {
     // allow column ContentCards not wrapped in Tiles to have
     // large Tile dimensions
-    width: $tile-large-size;
+    // width: $size-medium;
 
     @include media-query(palm) {
       padding-left: 0px;
