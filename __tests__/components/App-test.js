@@ -24,6 +24,13 @@ describe('App', () => {
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+  it('has correct lang="pt=BR" rendering', () => {
+    const component = renderer.create(
+      <App lang='pt-BR' />
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
   it('has correct className rendering', () => {
     const component = renderer.create(
       <App className='testing' />

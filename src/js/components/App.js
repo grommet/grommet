@@ -36,10 +36,8 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    var lang = getCurrentLocale();
-    if (this.props.lang) {
-      lang = this.props.lang;
-    }
+    var lang = this.props.lang || getCurrentLocale();
+
     if (!document.documentElement.getAttribute('lang')) {
       document.documentElement.setAttribute('lang', lang);
     }

@@ -48,3 +48,19 @@ exports[`App has correct inline=true rendering 1`] = `
     className="grommetux-app__announcer" />
 </div>
 `;
+
+exports[`App has correct lang="pt=BR" rendering 1`] = `
+<div
+  className="grommet grommetux-app grommetux-app--centered"
+  lang="pt-BR">
+  <span
+    style={
+      Object {
+        "display": "none"
+      }
+    } />
+  <div
+    aria-live="polite"
+    className="grommetux-app__announcer" />
+</div>
+`;
