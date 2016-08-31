@@ -45,7 +45,7 @@ var Grommet = function (_Component) {
 
   function Grommet() {
     (0, _classCallCheck3.default)(this, Grommet);
-    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Grommet).apply(this, arguments));
+    return (0, _possibleConstructorReturn3.default)(this, (Grommet.__proto__ || (0, _getPrototypeOf2.default)(Grommet)).apply(this, arguments));
   }
 
   (0, _createClass3.default)(Grommet, [{

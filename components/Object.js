@@ -38,7 +38,7 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = _CSSClassnames2.default.OBJECT;
 var LIST_ITEM = _CSSClassnames2.default.LIST_ITEM;
@@ -48,7 +48,7 @@ var GrommetObject = function (_Component) {
 
   function GrommetObject() {
     (0, _classCallCheck3.default)(this, GrommetObject);
-    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(GrommetObject).apply(this, arguments));
+    return (0, _possibleConstructorReturn3.default)(this, (GrommetObject.__proto__ || (0, _getPrototypeOf2.default)(GrommetObject)).apply(this, arguments));
   }
 
   (0, _createClass3.default)(GrommetObject, [{

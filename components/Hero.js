@@ -64,7 +64,7 @@ var Hero = function (_Component) {
   function Hero(props, context) {
     (0, _classCallCheck3.default)(this, Hero);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Hero).call(this, props, context));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (Hero.__proto__ || (0, _getPrototypeOf2.default)(Hero)).call(this, props, context));
 
     _this._setReverse = _this._setReverse.bind(_this);
     _this._setBackgroundColorIndex = _this._setBackgroundColorIndex.bind(_this);

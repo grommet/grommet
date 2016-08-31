@@ -38,7 +38,7 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.TAB; // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+var CLASS_ROOT = _CSSClassnames2.default.TAB; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var Tab = function (_Component) {
   (0, _inherits3.default)(Tab, _Component);
@@ -46,7 +46,7 @@ var Tab = function (_Component) {
   function Tab(props, context) {
     (0, _classCallCheck3.default)(this, Tab);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Tab).call(this, props, context));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (Tab.__proto__ || (0, _getPrototypeOf2.default)(Tab)).call(this, props, context));
 
     _this._processSpace = _this._processSpace.bind(_this);
     _this._onClickTab = _this._onClickTab.bind(_this);
@@ -70,19 +70,23 @@ var Tab = function (_Component) {
   }, {
     key: '_processSpace',
     value: function _processSpace(event) {
-      if (event.target === this.refs.tab) {
+      if (event.target === this.tabRef) {
         this._onClickTab(event);
       }
     }
   }, {
     key: '_onClickTab',
     value: function _onClickTab(event) {
-      event.preventDefault();
+      if (event) {
+        event.preventDefault();
+      }
       this.props.onRequestForActive();
     }
   }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       var classes = [CLASS_ROOT];
 
       if (this.props.active) {
@@ -94,7 +98,10 @@ var Tab = function (_Component) {
         { className: classes.join(' '), id: this.props.id },
         _react2.default.createElement(
           'a',
-          { ref: 'tab', role: 'tab', href: '#', onClick: this._onClickTab,
+          { ref: function ref(_ref) {
+              return _this2.tabRef = _ref;
+            }, role: 'tab',
+            href: '#', onClick: this._onClickTab,
             'aria-expanded': this.props.active, 'aria-selected': this.props.active,
             className: CLASS_ROOT + "__link", 'aria-labelledby': this.props.id },
           _react2.default.createElement(

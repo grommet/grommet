@@ -64,7 +64,7 @@ var Video = function (_Component) {
   function Video(props, context) {
     (0, _classCallCheck3.default)(this, Video);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Video).call(this, props, context));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (Video.__proto__ || (0, _getPrototypeOf2.default)(Video)).call(this, props, context));
 
     _this._hasPlayed = false;
     _this._play = _this._play.bind(_this);

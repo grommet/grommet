@@ -60,7 +60,7 @@ var Accordion = function (_Component) {
   function Accordion(props, context) {
     (0, _classCallCheck3.default)(this, Accordion);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Accordion).call(this, props, context));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (Accordion.__proto__ || (0, _getPrototypeOf2.default)(Accordion)).call(this, props, context));
 
     _this._activatePanel = _this._activatePanel.bind(_this);
 
@@ -103,10 +103,7 @@ var Accordion = function (_Component) {
 
       return _react2.default.createElement(
         _List2.default,
-        (0, _extends3.default)({
-          role: 'tablist',
-          className: classes
-        }, props),
+        (0, _extends3.default)({ role: 'tablist', className: classes }, props),
         accordionChildren
       );
     }

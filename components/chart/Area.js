@@ -35,7 +35,7 @@ var Area = function (_Graph) {
 
   function Area() {
     (0, _classCallCheck3.default)(this, Area);
-    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Area).apply(this, arguments));
+    return (0, _possibleConstructorReturn3.default)(this, (Area.__proto__ || (0, _getPrototypeOf2.default)(Area)).apply(this, arguments));
   }
 
   return Area;

@@ -94,7 +94,7 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = _CSSClassnames2.default.MENU;
 
@@ -111,7 +111,7 @@ var MenuDrop = function (_Component) {
   function MenuDrop(props, context) {
     (0, _classCallCheck3.default)(this, MenuDrop);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(MenuDrop).call(this, props, context));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (MenuDrop.__proto__ || (0, _getPrototypeOf2.default)(MenuDrop)).call(this, props, context));
 
     _this._onUpKeyPress = _this._onUpKeyPress.bind(_this);
     _this._onDownKeyPress = _this._onDownKeyPress.bind(_this);
@@ -334,7 +334,7 @@ var Menu = function (_Component2) {
   function Menu(props, context) {
     (0, _classCallCheck3.default)(this, Menu);
 
-    var _this2 = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Menu).call(this, props, context));
+    var _this2 = (0, _possibleConstructorReturn3.default)(this, (Menu.__proto__ || (0, _getPrototypeOf2.default)(Menu)).call(this, props, context));
 
     _this2._onOpen = _this2._onOpen.bind(_this2);
     _this2._onClose = _this2._onClose.bind(_this2);

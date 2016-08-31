@@ -42,7 +42,7 @@ var _Graphic3 = _interopRequireDefault(_Graphic2);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.METER; // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+var CLASS_ROOT = _CSSClassnames2.default.METER; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
 
@@ -66,7 +66,7 @@ var Arc = function (_Graphic) {
     (0, _classCallCheck3.default)(this, Arc);
 
     //needed in Graphic.js to fix minification issues
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Arc).call(this, props, context));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (Arc.__proto__ || (0, _getPrototypeOf2.default)(Arc)).call(this, props, context));
 
     _this.displayName = 'Arc';
     return _this;

@@ -82,7 +82,7 @@ var DateTimeDrop = function (_Component) {
   function DateTimeDrop(props, context) {
     (0, _classCallCheck3.default)(this, DateTimeDrop);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(DateTimeDrop).call(this, props, context));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (DateTimeDrop.__proto__ || (0, _getPrototypeOf2.default)(DateTimeDrop)).call(this, props, context));
 
     _this._onDay = _this._onDay.bind(_this);
     _this._onToday = _this._onToday.bind(_this);

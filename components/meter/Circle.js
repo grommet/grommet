@@ -34,7 +34,7 @@ var _Graphics = require('../../utils/Graphics');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CIRCLE_WIDTH = _utils.baseDimension; // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+var CIRCLE_WIDTH = _utils.baseDimension; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var CIRCLE_RADIUS = _utils.baseDimension / 2 - _Graphics.baseUnit / 2;
 var RING_THICKNESS = _Graphics.baseUnit;
@@ -46,7 +46,7 @@ var Circle = function (_Graphic) {
     (0, _classCallCheck3.default)(this, Circle);
 
     //needed in Graphic.js to fix minification issues
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Circle).call(this, props, context));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (Circle.__proto__ || (0, _getPrototypeOf2.default)(Circle)).call(this, props, context));
 
     _this.displayName = 'Circle';
     return _this;

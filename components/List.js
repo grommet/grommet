@@ -50,7 +50,7 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.LIST; // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+var CLASS_ROOT = _CSSClassnames2.default.LIST; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var LIST_ITEM = _CSSClassnames2.default.LIST_ITEM;
 var SELECTED_CLASS = CLASS_ROOT + "-item--selected";
@@ -61,7 +61,7 @@ var List = function (_Component) {
   function List(props, context) {
     (0, _classCallCheck3.default)(this, List);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(List).call(this, props, context));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (List.__proto__ || (0, _getPrototypeOf2.default)(List)).call(this, props, context));
 
     _this._onClick = _this._onClick.bind(_this);
 
@@ -76,7 +76,7 @@ var List = function (_Component) {
     value: function componentDidMount() {
       this._setSelection();
       if (this.props.onMore) {
-        this._scroll = _InfiniteScroll2.default.startListeningForScroll(this.refs.more, this.props.onMore);
+        this._scroll = _InfiniteScroll2.default.startListeningForScroll(this.moreRef, this.props.onMore);
       }
     }
   }, {
@@ -99,7 +99,7 @@ var List = function (_Component) {
         this._setSelection();
       }
       if (this.props.onMore && !this._scroll) {
-        this._scroll = _InfiniteScroll2.default.startListeningForScroll(this.refs.more, this.props.onMore);
+        this._scroll = _InfiniteScroll2.default.startListeningForScroll(this.moreRef, this.props.onMore);
       }
     }
   }, {
@@ -112,12 +112,14 @@ var List = function (_Component) {
   }, {
     key: '_setSelection',
     value: function _setSelection() {
-      _Selection2.default.setClassFromIndexes({
-        containerElement: this.refs.list,
-        childSelector: '.' + LIST_ITEM,
-        selectedClass: SELECTED_CLASS,
-        selectedIndexes: this.state.selected
-      });
+      if (this.listRef) {
+        _Selection2.default.setClassFromIndexes({
+          containerElement: this.listRef,
+          childSelector: '.' + LIST_ITEM,
+          selectedClass: SELECTED_CLASS,
+          selectedIndexes: this.state.selected
+        });
+      };
     }
   }, {
     key: '_onClick',
@@ -127,7 +129,7 @@ var List = function (_Component) {
       }
 
       var selected = _Selection2.default.onClick(event, {
-        containerElement: this.refs.list,
+        containerElement: this.listRef,
         childSelector: '.' + LIST_ITEM,
         selectedClass: SELECTED_CLASS,
         multiSelect: 'multiple' === this.props.selectable,
@@ -149,6 +151,8 @@ var List = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       var classes = [CLASS_ROOT];
       if (this.props.selectable) {
         classes.push(CLASS_ROOT + "--selectable");
@@ -171,14 +175,19 @@ var List = function (_Component) {
         classes.push(CLASS_ROOT + "--moreable");
         more = _react2.default.createElement(
           'li',
-          { ref: 'more', className: CLASS_ROOT + "__more" },
+          { ref: function ref(_ref) {
+              return _this2.moreRef = _ref;
+            }, className: CLASS_ROOT + "__more" },
           _react2.default.createElement(_Spinning2.default, null)
         );
       }
 
       return _react2.default.createElement(
         'ul',
-        { ref: 'list', className: classes.join(' '), onClick: this._onClick },
+        { ref: function ref(_ref2) {
+            return _this2.listRef = _ref2;
+          },
+          className: classes.join(' '), onClick: this._onClick },
         empty,
         this.props.children,
         more

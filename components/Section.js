@@ -46,7 +46,7 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = _CSSClassnames2.default.SECTION;
 
@@ -55,7 +55,7 @@ var Section = function (_Component) {
 
   function Section() {
     (0, _classCallCheck3.default)(this, Section);
-    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Section).apply(this, arguments));
+    return (0, _possibleConstructorReturn3.default)(this, (Section.__proto__ || (0, _getPrototypeOf2.default)(Section)).apply(this, arguments));
   }
 
   (0, _createClass3.default)(Section, [{

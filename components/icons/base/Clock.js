@@ -56,7 +56,7 @@ var Icon = function (_Component) {
 
   function Icon() {
     (0, _classCallCheck3.default)(this, Icon);
-    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Icon).apply(this, arguments));
+    return (0, _possibleConstructorReturn3.default)(this, (Icon.__proto__ || (0, _getPrototypeOf2.default)(Icon)).apply(this, arguments));
   }
 
   (0, _createClass3.default)(Icon, [{
@@ -89,7 +89,7 @@ var Icon = function (_Component) {
           'g',
           null,
           _react2.default.createElement('rect', { fill: 'none', width: '24', height: '24' }),
-          _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', d: 'M17,18 L12,13 L12,4\r M12,23 C18.0751,23 23,18.0751 23,12 C23,5.9249 18.0751,1 12,1\r C7.5627,1 1,4 1,12 C1,18.0751 5.9249,23 12,23 Z' })
+          _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', d: 'M17,18 L12,13 L12,4 M12,23 C18.0751,23 23,18.0751 23,12 C23,5.9249 18.0751,1 12,1 C7.5627,1 1,4 1,12 C1,18.0751 5.9249,23 12,23 Z' })
         )
       );
     }

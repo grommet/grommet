@@ -59,7 +59,7 @@ var SocialShare = function (_Component) {
 
   function SocialShare() {
     (0, _classCallCheck3.default)(this, SocialShare);
-    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(SocialShare).apply(this, arguments));
+    return (0, _possibleConstructorReturn3.default)(this, (SocialShare.__proto__ || (0, _getPrototypeOf2.default)(SocialShare)).apply(this, arguments));
   }
 
   (0, _createClass3.default)(SocialShare, [{

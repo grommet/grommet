@@ -18,7 +18,7 @@ var _Cookies2 = _interopRequireDefault(_Cookies);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var currentLocale = 'en-US'; // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+var currentLocale = 'en-US'; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 function normalizeLocale(locale) {
   var locales = locale.replace(/_/g, '-').split('-');

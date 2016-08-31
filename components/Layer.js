@@ -66,7 +66,7 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = _CSSClassnames2.default.LAYER;
 var APP = _CSSClassnames2.default.APP;
@@ -77,7 +77,7 @@ var LayerContents = function (_Component) {
   function LayerContents(props, context) {
     (0, _classCallCheck3.default)(this, LayerContents);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(LayerContents).call(this, props, context));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (LayerContents.__proto__ || (0, _getPrototypeOf2.default)(LayerContents)).call(this, props, context));
 
     _this._onClick = _this._onClick.bind(_this);
     _this._processTab = _this._processTab.bind(_this);
@@ -224,7 +224,7 @@ var Layer = function (_Component2) {
 
   function Layer() {
     (0, _classCallCheck3.default)(this, Layer);
-    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Layer).apply(this, arguments));
+    return (0, _possibleConstructorReturn3.default)(this, (Layer.__proto__ || (0, _getPrototypeOf2.default)(Layer)).apply(this, arguments));
   }
 
   (0, _createClass3.default)(Layer, [{
@@ -300,7 +300,9 @@ var Layer = function (_Component2) {
       } else {
         beforeElement = document.body.firstChild;
       }
-      this._element = beforeElement.parentNode.insertBefore(element, beforeElement);
+      if (beforeElement) {
+        this._element = beforeElement.parentNode.insertBefore(element, beforeElement);
+      }
     }
   }, {
     key: '_handleAriaHidden',
@@ -318,14 +320,16 @@ var Layer = function (_Component2) {
   }, {
     key: '_renderLayer',
     value: function _renderLayer() {
-      this._element.className = this._classesFromProps().join(' ');
-      var contents = _react2.default.createElement(LayerContents, (0, _extends3.default)({}, this.props, {
-        history: this.context.history,
-        intl: this.context.intl,
-        router: this.context.router,
-        store: this.context.store }));
-      _reactDom2.default.render(contents, this._element);
-      this._handleAriaHidden(this.props.hidden);
+      if (this._element) {
+        this._element.className = this._classesFromProps().join(' ');
+        var contents = _react2.default.createElement(LayerContents, (0, _extends3.default)({}, this.props, {
+          history: this.context.history,
+          intl: this.context.intl,
+          router: this.context.router,
+          store: this.context.store }));
+        _reactDom2.default.render(contents, this._element);
+        this._handleAriaHidden(this.props.hidden);
+      }
     }
   }, {
     key: '_removeLayer',

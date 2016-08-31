@@ -66,7 +66,7 @@ var AccordionPanel = function (_Component) {
   function AccordionPanel(props, context) {
     (0, _classCallCheck3.default)(this, AccordionPanel);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(AccordionPanel).call(this, props, context));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (AccordionPanel.__proto__ || (0, _getPrototypeOf2.default)(AccordionPanel)).call(this, props, context));
 
     _this._onClickPanel = _this._onClickPanel.bind(_this);
     _this.state = {

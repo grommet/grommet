@@ -38,7 +38,7 @@ var _Graphic3 = _interopRequireDefault(_Graphic2);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var BAR_LENGTH = _utils.baseDimension;
 var BAR_THICKNESS = _Graphics.baseUnit;
@@ -51,7 +51,7 @@ var Bar = function (_Graphic) {
     (0, _classCallCheck3.default)(this, Bar);
 
     //needed in Graphic.js to fix minification issues
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Bar).call(this, props, context));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (Bar.__proto__ || (0, _getPrototypeOf2.default)(Bar)).call(this, props, context));
 
     _this.displayName = 'Bar';
     return _this;

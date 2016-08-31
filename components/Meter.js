@@ -97,7 +97,7 @@ var Meter = function (_Component) {
   function Meter(props, context) {
     (0, _classCallCheck3.default)(this, Meter);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Meter).call(this, props, context));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (Meter.__proto__ || (0, _getPrototypeOf2.default)(Meter)).call(this, props, context));
 
     _this._onResponsive = _this._onResponsive.bind(_this);
     _this._initialTimeout = _this._initialTimeout.bind(_this);

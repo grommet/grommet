@@ -4,6 +4,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -28,6 +32,18 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _classnames2 = require('classnames');
+
+var _classnames3 = _interopRequireDefault(_classnames2);
+
+var _Button = require('./Button');
+
+var _Button2 = _interopRequireDefault(_Button);
+
+var _CheckBox = require('./CheckBox');
+
+var _CheckBox2 = _interopRequireDefault(_CheckBox);
+
 var _FormattedMessage = require('./FormattedMessage');
 
 var _FormattedMessage2 = _interopRequireDefault(_FormattedMessage);
@@ -40,17 +56,13 @@ var _FormField = require('./FormField');
 
 var _FormField2 = _interopRequireDefault(_FormField);
 
-var _CheckBox = require('./CheckBox');
-
-var _CheckBox2 = _interopRequireDefault(_CheckBox);
-
-var _Button = require('./Button');
-
-var _Button2 = _interopRequireDefault(_Button);
-
 var _Footer = require('./Footer');
 
 var _Footer2 = _interopRequireDefault(_Footer);
+
+var _Heading = require('./Heading');
+
+var _Heading2 = _interopRequireDefault(_Heading);
 
 var _CSSClassnames = require('../utils/CSSClassnames');
 
@@ -58,7 +70,7 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = _CSSClassnames2.default.LOGIN_FORM;
 
@@ -68,9 +80,18 @@ var LoginForm = function (_Component) {
   function LoginForm(props, context) {
     (0, _classCallCheck3.default)(this, LoginForm);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(LoginForm).call(this, props, context));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (LoginForm.__proto__ || (0, _getPrototypeOf2.default)(LoginForm)).call(this, props, context));
 
     _this._onSubmit = _this._onSubmit.bind(_this);
+    _this._onUsernameChange = _this._onUsernameChange.bind(_this);
+    _this._onPasswordChange = _this._onPasswordChange.bind(_this);
+    _this._onRememberMeChange = _this._onRememberMeChange.bind(_this);
+
+    _this.state = {
+      password: '',
+      rememberMe: props.defaultValues.rememberMe,
+      username: props.defaultValues.username
+    };
     return _this;
   }
 
@@ -80,108 +101,108 @@ var LoginForm = function (_Component) {
       this.refs.username.focus();
     }
   }, {
+    key: '_onUsernameChange',
+    value: function _onUsernameChange(event) {
+      this.setState({ username: event.target.value });
+    }
+  }, {
+    key: '_onPasswordChange',
+    value: function _onPasswordChange(event) {
+      this.setState({ password: event.target.value });
+    }
+  }, {
+    key: '_onRememberMeChange',
+    value: function _onRememberMeChange(event) {
+      this.setState({ rememberMe: event.target.checked });
+    }
+  }, {
     key: '_onSubmit',
     value: function _onSubmit(event) {
       event.preventDefault();
+      var onSubmit = this.props.onSubmit;
+      var _state = this.state;
+      var password = _state.password;
+      var rememberMe = _state.rememberMe;
+      var username = _state.username;
 
-      var username = this.refs.username.value.trim();
-      var password = this.refs.password.value.trim();
-      var rememberMe = this.refs.rememberMe && this.refs.rememberMe.checked;
 
-      if (this.props.onSubmit) {
-        this.props.onSubmit({ username: username, password: password, rememberMe: rememberMe });
+      username = username.trim();
+      password = password.trim();
+
+      if (onSubmit) {
+        onSubmit({ username: username, password: password, rememberMe: rememberMe });
       }
     }
   }, {
     key: 'render',
     value: function render() {
-      var classes = [CLASS_ROOT];
-      if (this.props.align) {
-        classes.push(CLASS_ROOT + '--align-' + this.props.align);
-      }
+      var _props = this.props;
+      var align = _props.align;
+      var className = _props.className;
+      var errors = _props.errors;
+      var forgotPassword = _props.forgotPassword;
+      var logo = _props.logo;
+      var onSubmit = _props.onSubmit;
+      var rememberMe = _props.rememberMe;
+      var secondaryText = _props.secondaryText;
+      var title = _props.title;
+      var usernameType = _props.usernameType;
 
-      var errors = this.props.errors.map(function (error, index) {
-        var errorComponent = undefined;
+
+      var classes = (0, _classnames3.default)(CLASS_ROOT, className, (0, _defineProperty3.default)({}, CLASS_ROOT + '--align-' + align, align));
+
+      var errorsNode = errors.map(function (error, index) {
+        var errorComponent = void 0;
         if (error) {
           errorComponent = _react2.default.createElement(
             'div',
-            { key: index, className: CLASS_ROOT + '__error error' },
+            { key: index, className: 'error' },
             _react2.default.createElement(_FormattedMessage2.default, { id: error, defaultMessage: error })
           );
         }
         return errorComponent;
       });
 
-      var logo = void 0;
-      if (this.props.logo) {
-        logo = _react2.default.createElement(
-          'div',
-          { className: CLASS_ROOT + '__logo' },
-          this.props.logo
+      var titleNode = void 0;
+      if (title) {
+        titleNode = _react2.default.createElement(
+          _Heading2.default,
+          { strong: true },
+          title
         );
       }
 
-      var title = void 0;
-      if (this.props.title) {
-        title = _react2.default.createElement(
-          'h1',
-          { className: CLASS_ROOT + '__title' },
-          _react2.default.createElement(
-            'strong',
-            null,
-            this.props.title
-          )
-        );
-      }
-
-      var secondaryText = void 0;
-      if (this.props.secondaryText) {
-        secondaryText = _react2.default.createElement(
+      var secondaryTextNode = void 0;
+      if (secondaryText) {
+        secondaryTextNode = _react2.default.createElement(
           'p',
           { className: CLASS_ROOT + '__secondary-text secondary' },
-          this.props.secondaryText
+          secondaryText
         );
       }
 
-      var rememberMe = void 0;
-      if (this.props.rememberMe) {
-
+      var rememberMeNode = void 0;
+      if (rememberMe) {
         var rememberMeLabel = _react2.default.createElement(_FormattedMessage2.default, { id: 'Remember me', defaultMessage: 'Remember me' });
 
-        rememberMe = _react2.default.createElement(_CheckBox2.default, { className: CLASS_ROOT + '__remember-me',
-          id: 'remember-me',
-          label: rememberMeLabel,
-          defaultChecked: this.props.defaultValues.rememberMe,
-          ref: 'rememberMe' });
+        rememberMeNode = _react2.default.createElement(_CheckBox2.default, { label: rememberMeLabel, checked: this.state.rememberMe,
+          onChange: this._onRememberMeChange });
       }
 
-      var forgot = void 0;
-      if (this.props.forgotPassword) {
-        forgot = _react2.default.createElement(
-          'div',
-          { className: CLASS_ROOT + '__forgot' },
-          this.props.forgotPassword
-        );
-      }
+      var username = usernameType === 'email' ? _react2.default.createElement(_FormattedMessage2.default, { id: 'Email', defaultMessage: 'Email' }) : _react2.default.createElement(_FormattedMessage2.default, { id: 'Username', defaultMessage: 'Username' });
 
-      var username = void 0;
-      if (this.props.usernameType === 'email') {
-        username = _react2.default.createElement(_FormattedMessage2.default, { id: 'Email', defaultMessage: 'Email' });
-      } else {
-        username = _react2.default.createElement(_FormattedMessage2.default, { id: 'Username', defaultMessage: 'Username' });
-      }
       var password = _react2.default.createElement(_FormattedMessage2.default, { id: 'Password', defaultMessage: 'Password' });
       var login = _react2.default.createElement(_FormattedMessage2.default, { id: 'Log In', defaultMessage: 'Log In' });
 
       return _react2.default.createElement(
         _Form2.default,
-        { className: classes.join(' '), onSubmit: this._onSubmit },
+        { className: classes, onSubmit: this._onSubmit },
         _react2.default.createElement(
           'div',
           { className: CLASS_ROOT + '__header' },
           logo,
-          title,
-          secondaryText
+          titleNode,
+          secondaryTextNode
         ),
         _react2.default.createElement(
           'fieldset',
@@ -189,25 +210,27 @@ var LoginForm = function (_Component) {
           _react2.default.createElement(
             _FormField2.default,
             { htmlFor: 'username', label: username },
-            _react2.default.createElement('input', { id: 'username', ref: 'username', type: this.props.usernameType,
-              defaultValue: this.props.defaultValues.username })
+            _react2.default.createElement('input', { type: usernameType, ref: 'username',
+              value: this.state.username,
+              onChange: this._onUsernameChange })
           ),
           _react2.default.createElement(
             _FormField2.default,
             { htmlFor: 'password', label: password },
-            _react2.default.createElement('input', { id: 'password', ref: 'password', type: 'password' })
+            _react2.default.createElement('input', { type: 'password', value: this.state.password,
+              onChange: this._onPasswordChange })
           ),
-          errors
+          errorsNode
         ),
         _react2.default.createElement(
           _Footer2.default,
-          { align: this.props.align, size: 'small', direction: 'column',
+          { align: align, size: 'small', direction: 'column',
             pad: { vertical: 'medium', between: 'medium' } },
-          rememberMe,
-          _react2.default.createElement(_Button2.default, { id: CLASS_ROOT + '__submit', primary: true, strong: true,
+          rememberMeNode,
+          _react2.default.createElement(_Button2.default, { primary: true, strong: true,
             className: CLASS_ROOT + '__submit', type: 'submit', label: login,
-            onClick: this.props.onSubmit ? this._onSubmit : null }),
-          forgot
+            onClick: onSubmit ? this._onSubmit : undefined }),
+          forgotPassword
         )
       );
     }
@@ -221,6 +244,7 @@ exports.default = LoginForm;
 
 LoginForm.propTypes = {
   align: _react.PropTypes.oneOf(['start', 'center', 'end', 'stretch']),
+  className: _react.PropTypes.string,
   defaultValues: _react.PropTypes.shape({
     username: _react.PropTypes.string,
     rememberMe: _react.PropTypes.bool

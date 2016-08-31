@@ -38,7 +38,7 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.CAROUSEL_CONTROLS; // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+var CLASS_ROOT = _CSSClassnames2.default.CAROUSEL_CONTROLS; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var CarouselControls = function (_Component) {
   (0, _inherits3.default)(CarouselControls, _Component);
@@ -46,7 +46,7 @@ var CarouselControls = function (_Component) {
   function CarouselControls(props, context) {
     (0, _classCallCheck3.default)(this, CarouselControls);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(CarouselControls).call(this, props, context));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (CarouselControls.__proto__ || (0, _getPrototypeOf2.default)(CarouselControls)).call(this, props, context));
 
     _this._onClick = _this._onClick.bind(_this);
     return _this;

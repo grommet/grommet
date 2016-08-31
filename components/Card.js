@@ -86,7 +86,7 @@ var _Watch2 = _interopRequireDefault(_Watch);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = _CSSClassnames2.default.CARD;
 
@@ -96,7 +96,7 @@ var Card = function (_Component) {
   function Card(props) {
     (0, _classCallCheck3.default)(this, Card);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Card).call(this, props));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (Card.__proto__ || (0, _getPrototypeOf2.default)(Card)).call(this, props));
 
     _this._onClick = _this._onClick.bind(_this);
     _this.state = {

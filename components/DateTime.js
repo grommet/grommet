@@ -90,7 +90,7 @@ var DateTime = function (_Component) {
   function DateTime(props, context) {
     (0, _classCallCheck3.default)(this, DateTime);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(DateTime).call(this, props, context));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (DateTime.__proto__ || (0, _getPrototypeOf2.default)(DateTime)).call(this, props, context));
 
     _this._onInputChange = _this._onInputChange.bind(_this);
     _this._onOpen = _this._onOpen.bind(_this);
@@ -132,7 +132,7 @@ var DateTime = function (_Component) {
       }
 
       if (this.state.cursor >= 0) {
-        this.refs.input.setSelectionRange(this.state.cursor, this.state.cursor);
+        this.inputRef.setSelectionRange(this.state.cursor, this.state.cursor);
       }
     }
   }, {
@@ -222,7 +222,7 @@ var DateTime = function (_Component) {
     value: function _onClose(event) {
       var drop = document.getElementById(DATE_TIME_DROP);
       var isCalendarOnly = !TIME_REGEXP.test(this.props.format);
-      if (!(0, _DOM.isDescendant)(this.refs.component, event.target) && !(0, _DOM.isDescendant)(drop, event.target) || isCalendarOnly) {
+      if (!(0, _DOM.isDescendant)(this.containerRef, event.target) && !(0, _DOM.isDescendant)(drop, event.target) || isCalendarOnly) {
         this.setState({ dropActive: false, cursor: -1 });
       }
     }
@@ -273,7 +273,7 @@ var DateTime = function (_Component) {
     value: function _cursorScope() {
       var format = this.props.format;
 
-      var input = this.refs.input;
+      var input = this.inputRef;
       var value = input.value;
       var end = input.selectionEnd;
       this.setState({ cursor: end });
@@ -305,7 +305,7 @@ var DateTime = function (_Component) {
         _KeyboardAccelerators2.default.startListeningToKeyboard(this, listeners);
 
         // If this is inside a FormField, place the drop in reference to it.
-        var control = (0, _DOM.findAncestor)(this.refs.component, '.' + FORM_FIELD) || this.refs.component;
+        var control = (0, _DOM.findAncestor)(this.containerRef, '.' + FORM_FIELD) || this.containerRef;
         this._drop = _Drop2.default.add(control, this._renderDrop(), { align: { top: 'bottom', left: 'left' } });
       } else {
 
@@ -327,6 +327,8 @@ var DateTime = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       var _props2 = this.props;
       var className = _props2.className;
       var format = _props2.format;
@@ -351,10 +353,14 @@ var DateTime = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        { ref: 'component', className: classes.join(' ') },
-        _react2.default.createElement('input', { ref: 'input', className: CLASS_ROOT + '__input',
-          id: id, placeholder: format, name: name, value: value || '',
-          onChange: this._onInputChange }),
+        { ref: function ref(_ref2) {
+            return _this2.containerRef = _ref2;
+          }, className: classes.join(' ') },
+        _react2.default.createElement('input', { ref: function ref(_ref) {
+            return _this2.inputRef = _ref;
+          }, placeholder: format,
+          className: CLASS_ROOT + '__input', id: id, name: name,
+          value: value || '', onChange: this._onInputChange }),
         _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + '__control', icon: _react2.default.createElement(Icon, null),
           onClick: this._onControlClick })
       );

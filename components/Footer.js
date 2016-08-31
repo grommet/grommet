@@ -66,7 +66,7 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.FOOTER; // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+var CLASS_ROOT = _CSSClassnames2.default.FOOTER; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var Footer = function (_Component) {
   (0, _inherits3.default)(Footer, _Component);
@@ -74,7 +74,7 @@ var Footer = function (_Component) {
   function Footer(props, context) {
     (0, _classCallCheck3.default)(this, Footer);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Footer).call(this, props, context));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (Footer.__proto__ || (0, _getPrototypeOf2.default)(Footer)).call(this, props, context));
 
     _this._alignMirror = _this._alignMirror.bind(_this);
     _this._onResize = _this._onResize.bind(_this);

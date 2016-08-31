@@ -65,7 +65,7 @@ var Graphic = function (_Component) {
   function Graphic(props, context) {
     (0, _classCallCheck3.default)(this, Graphic);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Graphic).call(this, props, context));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (Graphic.__proto__ || (0, _getPrototypeOf2.default)(Graphic)).call(this, props, context));
 
     _this.state = _this._stateFromProps(props);
 

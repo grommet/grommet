@@ -35,7 +35,7 @@ var Line = function (_Graph) {
 
   function Line() {
     (0, _classCallCheck3.default)(this, Line);
-    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Line).apply(this, arguments));
+    return (0, _possibleConstructorReturn3.default)(this, (Line.__proto__ || (0, _getPrototypeOf2.default)(Line)).apply(this, arguments));
   }
 
   return Line;

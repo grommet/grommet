@@ -46,7 +46,7 @@ var MarkerLabel = function (_Component) {
   function MarkerLabel(props, context) {
     (0, _classCallCheck3.default)(this, MarkerLabel);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(MarkerLabel).call(this, props, context));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (MarkerLabel.__proto__ || (0, _getPrototypeOf2.default)(MarkerLabel)).call(this, props, context));
 
     _this.state = {
       valueBasis: _this._valueBasis(props)

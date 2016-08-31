@@ -12,6 +12,10 @@ var _keys = require('babel-runtime/core-js/object/keys');
 
 var _keys2 = _interopRequireDefault(_keys);
 
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -36,68 +40,76 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Props = require('../utils/Props');
+var _classnames2 = require('classnames');
 
-var _Props2 = _interopRequireDefault(_Props);
+var _classnames3 = _interopRequireDefault(_classnames2);
 
 var _CSSClassnames = require('../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
+var _Props = require('../utils/Props');
+
+var _Props2 = _interopRequireDefault(_Props);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.CHECK_BOX; // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+var CLASS_ROOT = _CSSClassnames2.default.CHECK_BOX;
 
 var CheckBox = function (_Component) {
   (0, _inherits3.default)(CheckBox, _Component);
 
   function CheckBox() {
     (0, _classCallCheck3.default)(this, CheckBox);
-    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(CheckBox).apply(this, arguments));
+    return (0, _possibleConstructorReturn3.default)(this, (CheckBox.__proto__ || (0, _getPrototypeOf2.default)(CheckBox)).apply(this, arguments));
   }
 
   (0, _createClass3.default)(CheckBox, [{
     key: 'render',
     value: function render() {
-      var classes = [CLASS_ROOT];
+      var _classnames;
+
+      var _props = this.props;
+      var checked = _props.checked;
+      var className = _props.className;
+      var defaultChecked = _props.defaultChecked;
+      var disabled = _props.disabled;
+      var id = _props.id;
+      var label = _props.label;
+      var name = _props.name;
+      var onChange = _props.onChange;
+      var reverse = _props.reverse;
+      var toggle = _props.toggle;
+
+
+      var classes = (0, _classnames3.default)(CLASS_ROOT, className, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--toggle', toggle), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--disabled', disabled), _classnames));
       var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(CheckBox.propTypes));
-      var label = void 0;
-      var labelId = CLASS_ROOT + '-label';
-      if (this.props.label) {
-        label = _react2.default.createElement(
+
+      var labelNode = void 0;
+      if (label) {
+        labelNode = _react2.default.createElement(
           'span',
-          { key: 'label', role: 'label', id: labelId,
-            className: CLASS_ROOT + '__label' },
-          this.props.label
+          { key: 'label', className: CLASS_ROOT + '__label' },
+          label
         );
       }
 
-      if (this.props.toggle) {
-        classes.push(CLASS_ROOT + '--toggle');
-      }
-
       var hidden = void 0;
-      if (this.props.disabled) {
-        classes.push(CLASS_ROOT + '--disabled');
-        if (this.props.checked) {
-          hidden = _react2.default.createElement('input', { name: this.props.name, type: 'hidden', value: 'true' });
-        }
-      }
-
-      if (this.props.className) {
-        classes.push(this.props.className);
+      if (disabled && checked) {
+        hidden = _react2.default.createElement('input', { name: name, type: 'hidden', value: 'true' });
       }
 
       var children = [_react2.default.createElement(
         'span',
         { key: 'checkbox' },
         _react2.default.createElement('input', { tabIndex: '0', className: CLASS_ROOT + '__input',
-          id: this.props.id, name: this.props.name, type: 'checkbox',
-          disabled: this.props.disabled,
-          checked: this.props.checked,
-          defaultChecked: this.props.defaultChecked,
-          onChange: this.props.onChange,
-          ref: 'input' }),
+          id: id, name: name, type: 'checkbox',
+          disabled: disabled,
+          checked: checked,
+          defaultChecked: defaultChecked,
+          onChange: onChange }),
         _react2.default.createElement(
           'span',
           { className: CLASS_ROOT + '__control' },
@@ -108,26 +120,16 @@ var CheckBox = function (_Component) {
             _react2.default.createElement('path', { fill: 'none', d: 'M6,11.3 L10.3,16 L18,6.2' })
           )
         )
-      ), label];
+      ), labelNode];
 
       return _react2.default.createElement(
         'label',
         (0, _extends3.default)({}, restProps, {
-          className: classes.join(' '),
-          'aria-labelledby': labelId }),
-        this.props.reverse ? children.reverse() : children,
+          className: classes,
+          'aria-label': label }),
+        reverse ? children.reverse() : children,
         hidden
       );
-    }
-  }, {
-    key: 'checked',
-    set: function set(value) {
-      if ('refs' in this) {
-        this.refs.input.checked = !!value;
-      }
-    },
-    get: function get() {
-      return 'refs' in this ? this.refs.input.checked : null;
     }
   }]);
   return CheckBox;

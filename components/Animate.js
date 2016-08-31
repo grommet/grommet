@@ -64,7 +64,7 @@ var AnimateChild = function (_Component) {
   function AnimateChild(props, context) {
     (0, _classCallCheck3.default)(this, AnimateChild);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(AnimateChild).call(this, props, context));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (AnimateChild.__proto__ || (0, _getPrototypeOf2.default)(AnimateChild)).call(this, props, context));
 
     _this.state = {
       enterClass: '',
@@ -195,7 +195,7 @@ var Animate = function (_Component2) {
   function Animate(props, context) {
     (0, _classCallCheck3.default)(this, Animate);
 
-    var _this3 = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Animate).call(this, props, context));
+    var _this3 = (0, _possibleConstructorReturn3.default)(this, (Animate.__proto__ || (0, _getPrototypeOf2.default)(Animate)).call(this, props, context));
 
     _this3.state = {
       animationState: 'enter',

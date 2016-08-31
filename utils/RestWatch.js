@@ -15,7 +15,7 @@ var _Rest2 = _interopRequireDefault(_Rest);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var RECONNECT_TIMEOUT = 5000; // 5s
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var POLL_TIMEOUT = 10000; // 10s
 

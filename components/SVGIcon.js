@@ -71,7 +71,7 @@ var SVGIcon = function (_Component) {
 
   function SVGIcon() {
     (0, _classCallCheck3.default)(this, SVGIcon);
-    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(SVGIcon).apply(this, arguments));
+    return (0, _possibleConstructorReturn3.default)(this, (SVGIcon.__proto__ || (0, _getPrototypeOf2.default)(SVGIcon)).apply(this, arguments));
   }
 
   (0, _createClass3.default)(SVGIcon, [{

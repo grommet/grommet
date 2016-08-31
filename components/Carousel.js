@@ -63,7 +63,7 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // define window obj for react tests to run properly
-var Hammer = function Hammer() {}; // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+var Hammer = function Hammer() {}; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 if (typeof window !== 'undefined') {
   Hammer = require('hammerjs');
@@ -77,7 +77,7 @@ var Carousel = function (_Component) {
   function Carousel(props, context) {
     (0, _classCallCheck3.default)(this, Carousel);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Carousel).call(this, props));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (Carousel.__proto__ || (0, _getPrototypeOf2.default)(Carousel)).call(this, props));
 
     _this._onSelect = _this._onSelect.bind(_this);
     _this._onMouseOver = _this._onMouseOver.bind(_this);

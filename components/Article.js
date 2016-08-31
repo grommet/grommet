@@ -89,7 +89,7 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // import CarouselControls from './CarouselControls';
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = _CSSClassnames2.default.ARTICLE;
 var DEFAULT_PLAY_INTERVAL = 10000; // 10s
@@ -100,7 +100,7 @@ var Article = function (_Component) {
   function Article(props, context) {
     (0, _classCallCheck3.default)(this, Article);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Article).call(this, props, context));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (Article.__proto__ || (0, _getPrototypeOf2.default)(Article)).call(this, props, context));
 
     _this._onFocusChange = _this._onFocusChange.bind(_this);
     _this._onScroll = _this._onScroll.bind(_this);

@@ -80,7 +80,7 @@ var WorldMap = function (_Component) {
   function WorldMap(props, context) {
     (0, _classCallCheck3.default)(this, WorldMap);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(WorldMap).call(this, props, context));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (WorldMap.__proto__ || (0, _getPrototypeOf2.default)(WorldMap)).call(this, props, context));
 
     _this._onActivate = _this._onActivate.bind(_this);
     _this._onDeactivate = _this._onDeactivate.bind(_this);

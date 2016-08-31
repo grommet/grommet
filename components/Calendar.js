@@ -98,7 +98,7 @@ var Calendar = function (_Component) {
   function Calendar(props, context) {
     (0, _classCallCheck3.default)(this, Calendar);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Calendar).call(this, props, context));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (Calendar.__proto__ || (0, _getPrototypeOf2.default)(Calendar)).call(this, props, context));
 
     _this._onInputChange = _this._onInputChange.bind(_this);
     _this._onOpen = _this._onOpen.bind(_this);

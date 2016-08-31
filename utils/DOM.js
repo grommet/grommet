@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 function hash(input) {
   var hash = 0,
       i,
@@ -96,19 +96,21 @@ exports.default = {
     return elementType && (elementType === 'input' || elementType === 'textarea');
   },
   generateId: function generateId(element) {
-    var id = void 0;
-    var elementId = element.getAttribute('id');
-    if (!elementId) {
-      // IE11 fix: check for parentNode instead of parentElement
-      var parentElement = element.parentElement || element.parentNode;
-      if (parentElement) {
-        id = hash(parentElement.innerHTML);
-        element.setAttribute('id', id);
+    if (element) {
+      var id = void 0;
+      var elementId = element.getAttribute('id');
+      if (!elementId) {
+        // IE11 fix: check for parentNode instead of parentElement
+        var parentElement = element.parentElement || element.parentNode;
+        if (parentElement) {
+          id = hash(parentElement.innerHTML);
+          element.setAttribute('id', id);
+        }
+      } else {
+        id = elementId;
       }
-    } else {
-      id = elementId;
+      return id;
     }
-    return id;
   }
 };
 module.exports = exports['default'];

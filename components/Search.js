@@ -78,7 +78,7 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.SEARCH; // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+var CLASS_ROOT = _CSSClassnames2.default.SEARCH; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var BACKGROUND_COLOR_INDEX = _CSSClassnames2.default.BACKGROUND_COLOR_INDEX;
 
@@ -88,7 +88,7 @@ var Search = function (_Component) {
   function Search(props, context) {
     (0, _classCallCheck3.default)(this, Search);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Search).call(this, props, context));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (Search.__proto__ || (0, _getPrototypeOf2.default)(Search)).call(this, props, context));
 
     _this._onAddDrop = _this._onAddDrop.bind(_this);
     _this._onRemoveDrop = _this._onRemoveDrop.bind(_this);
@@ -124,7 +124,7 @@ var Search = function (_Component) {
   }, {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
-      if (nextProps.suggestions && nextProps.suggestions.length > 0 && !this.state.dropActive && this.refs.input === document.activeElement) {
+      if (nextProps.suggestions && nextProps.suggestions.length > 0 && !this.state.dropActive && this.inputRef === document.activeElement) {
         this.setState({ dropActive: true });
       } else if ((!nextProps.suggestions || nextProps.suggestions.length === 0) && this.state.inline) {
         this.setState({ dropActive: false });
@@ -175,10 +175,10 @@ var Search = function (_Component) {
         _KeyboardAccelerators2.default.startListeningToKeyboard(this, activeKeyboardHandlers);
 
         var baseElement = void 0;
-        if (this.refs.control) {
-          baseElement = this.refs.control.firstChild;
+        if (this.controlRef) {
+          baseElement = this.controlRef.firstChild;
         } else {
-          baseElement = this.refs.input;
+          baseElement = this.inputRef;
         }
         var dropAlign = this.props.dropAlign || {
           top: this.state.inline ? 'bottom' : 'top',
@@ -233,7 +233,7 @@ var Search = function (_Component) {
   }, {
     key: '_onFocusInput',
     value: function _onFocusInput() {
-      this.refs.input.select();
+      this.inputRef.select();
       this.setState({
         activeSuggestionIndex: -1
       });
@@ -258,7 +258,7 @@ var Search = function (_Component) {
         event.initEvent('change', true, true);
       }
       var controlInput = document.getElementById('search-drop-input');
-      var target = this.refs.input || controlInput;
+      var target = this.inputRef || controlInput;
       target.dispatchEvent(event);
       this.props.onDOMChange(event);
     }
@@ -301,7 +301,7 @@ var Search = function (_Component) {
         this.setState({ value: suggestion });
         if (this.props.onSelect) {
           this.props.onSelect({
-            target: this.refs.input || this.refs.control,
+            target: this.inputRef || this.controlRef,
             suggestion: suggestion
           }, true);
         }
@@ -314,7 +314,7 @@ var Search = function (_Component) {
 
       if (this.props.onSelect) {
         this.props.onSelect({
-          target: this.refs.input || this.refs.control,
+          target: this.inputRef || this.controlRef,
           suggestion: suggestion
         }, true);
       }
@@ -337,7 +337,7 @@ var Search = function (_Component) {
   }, {
     key: 'focus',
     value: function focus() {
-      var ref = this.refs.input || this.refs.control;
+      var ref = this.inputRef || this.controlRef;
       if (ref) {
         ref.focus();
       }
@@ -416,7 +416,8 @@ var Search = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _classnames3;
+      var _classnames3,
+          _this2 = this;
 
       var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Search.propTypes));
       var classes = (0, _classnames5.default)(CLASS_ROOT, (_classnames3 = {}, (0, _defineProperty3.default)(_classnames3, CLASS_ROOT + '--controlled', !this.state.inline), (0, _defineProperty3.default)(_classnames3, CLASS_ROOT + '--fill', this.props.fill), (0, _defineProperty3.default)(_classnames3, CLASS_ROOT + '--icon-align-' + this.props.iconAlign, this.props.iconAlign), (0, _defineProperty3.default)(_classnames3, CLASS_ROOT + '--inline', this.state.inline), (0, _defineProperty3.default)(_classnames3, CLASS_ROOT + '--large', this.props.large && !this.props.size), (0, _defineProperty3.default)(_classnames3, CLASS_ROOT + '--' + this.props.size, this.props.size), _classnames3), this.props.className);
@@ -425,7 +426,9 @@ var Search = function (_Component) {
         return _react2.default.createElement(
           'div',
           { className: classes },
-          _react2.default.createElement('input', (0, _extends3.default)({}, restProps, { ref: 'input', type: 'search',
+          _react2.default.createElement('input', (0, _extends3.default)({}, restProps, { ref: function ref(_ref) {
+              return _this2.inputRef = _ref;
+            }, type: 'search',
             id: this.props.id,
             placeholder: this.props.placeHolder,
             autoComplete: 'off',
@@ -440,7 +443,9 @@ var Search = function (_Component) {
       } else {
         return _react2.default.createElement(
           'div',
-          { ref: 'control' },
+          { ref: function ref(_ref2) {
+              return _this2.controlRef = _ref2;
+            } },
           _react2.default.createElement(_Button2.default, { id: this.props.id,
             className: classes,
             icon: _react2.default.createElement(_Search2.default, null),

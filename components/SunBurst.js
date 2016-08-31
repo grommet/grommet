@@ -56,7 +56,7 @@ var SunBurst = function (_Component) {
   function SunBurst(props, context) {
     (0, _classCallCheck3.default)(this, SunBurst);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(SunBurst).call(this, props, context));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (SunBurst.__proto__ || (0, _getPrototypeOf2.default)(SunBurst)).call(this, props, context));
 
     _this._layout = _this._layout.bind(_this);
     _this._onResize = _this._onResize.bind(_this);

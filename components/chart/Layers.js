@@ -47,7 +47,7 @@ var Layers = function (_Component) {
 
   function Layers() {
     (0, _classCallCheck3.default)(this, Layers);
-    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Layers).apply(this, arguments));
+    return (0, _possibleConstructorReturn3.default)(this, (Layers.__proto__ || (0, _getPrototypeOf2.default)(Layers)).apply(this, arguments));
   }
 
   (0, _createClass3.default)(Layers, [{

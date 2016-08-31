@@ -125,7 +125,7 @@ var Chart = function (_Component) {
   function Chart(props, context) {
     (0, _classCallCheck3.default)(this, Chart);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Chart).call(this, props, context));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (Chart.__proto__ || (0, _getPrototypeOf2.default)(Chart)).call(this, props, context));
 
     _this._onResize = _this._onResize.bind(_this);
     _this._layout = _this._layout.bind(_this);

@@ -54,7 +54,7 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = _CSSClassnames2.default.DISTRIBUTION;
 var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
@@ -77,7 +77,7 @@ var Distribution = function (_Component) {
   function Distribution(props, context) {
     (0, _classCallCheck3.default)(this, Distribution);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Distribution).call(this, props, context));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (Distribution.__proto__ || (0, _getPrototypeOf2.default)(Distribution)).call(this, props, context));
 
     _this._onEnter = _this._onEnter.bind(_this);
     _this._onPreviousDistribution = _this._onPreviousDistribution.bind(_this);

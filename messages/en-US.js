@@ -85,6 +85,6 @@ exports.default = (0, _extends3.default)({
   uri: 'URI',
   Value: 'Value',
   Warning: 'Warning'
-}); // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+}); // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 module.exports = exports['default'];

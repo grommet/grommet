@@ -1,6 +1,6 @@
 'use strict';
 
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 var Grommet = {
   // Components
   Accordion: require('./components/Accordion'),

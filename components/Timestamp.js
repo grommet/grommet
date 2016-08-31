@@ -36,7 +36,7 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.TIMESTAMP; // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+var CLASS_ROOT = _CSSClassnames2.default.TIMESTAMP; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 function _showField(field, fields) {
   var result = true;
@@ -56,7 +56,7 @@ var Timestamp = function (_Component) {
   function Timestamp(props, context) {
     (0, _classCallCheck3.default)(this, Timestamp);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Timestamp).call(this, props, context));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (Timestamp.__proto__ || (0, _getPrototypeOf2.default)(Timestamp)).call(this, props, context));
 
     _this.state = {};
     return _this;

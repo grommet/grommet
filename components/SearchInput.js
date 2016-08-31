@@ -75,7 +75,7 @@ var SearchInput = function (_Component) {
   function SearchInput(props, context) {
     (0, _classCallCheck3.default)(this, SearchInput);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(SearchInput).call(this, props, context));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (SearchInput.__proto__ || (0, _getPrototypeOf2.default)(SearchInput)).call(this, props, context));
 
     _this._onInputChange = _this._onInputChange.bind(_this);
     _this._onAddDrop = _this._onAddDrop.bind(_this);

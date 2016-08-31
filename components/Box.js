@@ -64,7 +64,7 @@ var _Announcer = require('../utils/Announcer');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.BOX; // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+var CLASS_ROOT = _CSSClassnames2.default.BOX; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var BACKGROUND_COLOR_INDEX = _CSSClassnames2.default.BACKGROUND_COLOR_INDEX;
 
@@ -73,7 +73,7 @@ var Box = function (_Component) {
 
   function Box() {
     (0, _classCallCheck3.default)(this, Box);
-    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Box).apply(this, arguments));
+    return (0, _possibleConstructorReturn3.default)(this, (Box.__proto__ || (0, _getPrototypeOf2.default)(Box)).apply(this, arguments));
   }
 
   (0, _createClass3.default)(Box, [{
@@ -83,7 +83,7 @@ var Box = function (_Component) {
 
       if (onClick) {
         var clickCallback = function () {
-          if (this.refs.boxContainer === document.activeElement) {
+          if (this.boxContainerRef === document.activeElement) {
             onClick();
           }
         }.bind(this);
@@ -98,7 +98,7 @@ var Box = function (_Component) {
     key: 'componentDidUpdate',
     value: function componentDidUpdate() {
       if (this.props.announce) {
-        (0, _Announcer.announce)(this.refs.boxContainer.textContent);
+        (0, _Announcer.announce)(this.boxContainerRef.textContent);
       }
     }
   }, {
@@ -128,6 +128,8 @@ var Box = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       var _props = this.props;
       var a11yTitle = _props.a11yTitle;
       var appCentered = _props.appCentered;
@@ -237,7 +239,9 @@ var Box = function (_Component) {
       if (appCentered) {
         return _react2.default.createElement(
           'div',
-          (0, _extends3.default)({}, restProps, { ref: 'boxContainer',
+          (0, _extends3.default)({}, restProps, { ref: function ref(_ref) {
+              return _this2.boxContainerRef = _ref;
+            },
             className: containerClasses.join(' '),
             style: style, role: role }, a11yProps),
           skipLinkAnchor,
@@ -251,8 +255,10 @@ var Box = function (_Component) {
       } else {
         return _react2.default.createElement(
           Component,
-          (0, _extends3.default)({}, restProps, { ref: 'boxContainer', id: id,
-            className: classes.join(' '), style: style,
+          (0, _extends3.default)({}, restProps, { ref: function ref(_ref2) {
+              return _this2.boxContainerRef = _ref2;
+            },
+            id: id, className: classes.join(' '), style: style,
             role: role, tabIndex: tabIndex,
             onClick: onClick }, a11yProps),
           skipLinkAnchor,

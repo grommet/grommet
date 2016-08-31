@@ -51,7 +51,7 @@ var Legend = function (_Component) {
   function Legend(props, context) {
     (0, _classCallCheck3.default)(this, Legend);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Legend).call(this, props, context));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (Legend.__proto__ || (0, _getPrototypeOf2.default)(Legend)).call(this, props, context));
 
     _this._onActive = _this._onActive.bind(_this);
 

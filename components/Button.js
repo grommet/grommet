@@ -49,7 +49,7 @@ var Button = function (_Component) {
 
   function Button() {
     (0, _classCallCheck3.default)(this, Button);
-    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Button).apply(this, arguments));
+    return (0, _possibleConstructorReturn3.default)(this, (Button.__proto__ || (0, _getPrototypeOf2.default)(Button)).apply(this, arguments));
   }
 
   (0, _createClass3.default)(Button, [{

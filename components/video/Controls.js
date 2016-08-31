@@ -77,7 +77,7 @@ var Controls = function (_Component) {
 
   function Controls() {
     (0, _classCallCheck3.default)(this, Controls);
-    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Controls).apply(this, arguments));
+    return (0, _possibleConstructorReturn3.default)(this, (Controls.__proto__ || (0, _getPrototypeOf2.default)(Controls)).apply(this, arguments));
   }
 
   (0, _createClass3.default)(Controls, [{

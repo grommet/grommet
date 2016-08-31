@@ -14,7 +14,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 // Allow callers to use key labels instead of key code numbers.
 // This makes their code easier to read.
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var KEYS = {
   backspace: 8,
@@ -94,26 +94,28 @@ exports.default = {
   // be replaced, new handlers will be added.
   startListeningToKeyboard: function startListeningToKeyboard(component, handlers) {
     var element = (0, _reactDom.findDOMNode)(component);
-    this._initKeyboardAccelerators(element);
-    var keys = 0;
-    for (var key in handlers) {
-      if (handlers.hasOwnProperty(key)) {
-        var keyCode = key;
-        if (KEYS.hasOwnProperty(key)) {
-          keyCode = KEYS[key];
+    if (element) {
+      this._initKeyboardAccelerators(element);
+      var keys = 0;
+      for (var key in handlers) {
+        if (handlers.hasOwnProperty(key)) {
+          var keyCode = key;
+          if (KEYS.hasOwnProperty(key)) {
+            keyCode = KEYS[key];
+          }
+          keys += 1;
+          this._getKeyboardAcceleratorHandlers(element)[keyCode] = handlers[key];
         }
-        keys += 1;
-        this._getKeyboardAcceleratorHandlers(element)[keyCode] = handlers[key];
       }
-    }
 
-    if (keys > 0) {
-      if (!_isKeyboardAcceleratorListening) {
-        window.addEventListener("keydown", _onKeyboardAcceleratorKeyPress);
-        _isKeyboardAcceleratorListening = true;
-      }
-      if (!this._isComponentListening(element)) {
-        this._subscribeComponent(element);
+      if (keys > 0) {
+        if (!_isKeyboardAcceleratorListening) {
+          window.addEventListener("keydown", _onKeyboardAcceleratorKeyPress);
+          _isKeyboardAcceleratorListening = true;
+        }
+        if (!this._isComponentListening(element)) {
+          this._subscribeComponent(element);
+        }
       }
     }
   },

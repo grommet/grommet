@@ -12,7 +12,7 @@ var _reactIntl = require('react-intl');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 // NOTE: This component is a temporary wrapper of react-intl FormattedMessage
 // to avoid errors being thrown if the context hasn't been wrapped by

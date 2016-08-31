@@ -56,7 +56,7 @@ var Icon = function (_Component) {
 
   function Icon() {
     (0, _classCallCheck3.default)(this, Icon);
-    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Icon).apply(this, arguments));
+    return (0, _possibleConstructorReturn3.default)(this, (Icon.__proto__ || (0, _getPrototypeOf2.default)(Icon)).apply(this, arguments));
   }
 
   (0, _createClass3.default)(Icon, [{

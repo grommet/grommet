@@ -69,21 +69,25 @@ var Collapse = function (_Component) {
 
   function Collapse() {
     (0, _classCallCheck3.default)(this, Collapse);
-    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Collapse).apply(this, arguments));
+    return (0, _possibleConstructorReturn3.default)(this, (Collapse.__proto__ || (0, _getPrototypeOf2.default)(Collapse)).apply(this, arguments));
   }
 
   (0, _createClass3.default)(Collapse, [{
     key: 'componentWillEnter',
     value: function componentWillEnter(callback) {
       var node = _reactDom2.default.findDOMNode(this);
-      var contentHeight = node.clientHeight;
-      node.classList.remove('animate');
-      node.style.height = 0;
-      setTimeout(function () {
-        node.classList.add('animate');
-        node.style.height = contentHeight + 'px';
-        setTimeout(callback, parseFloat(getComputedStyle(node).transitionDuration) * 1000);
-      });
+      if (node) {
+        (function () {
+          var contentHeight = node.clientHeight;
+          node.classList.remove('animate');
+          node.style.height = 0;
+          setTimeout(function () {
+            node.classList.add('animate');
+            node.style.height = contentHeight + 'px';
+            setTimeout(callback, parseFloat(getComputedStyle(node).transitionDuration) * 1000);
+          });
+        })();
+      }
     }
   }, {
     key: 'componentDidEnter',
@@ -96,13 +100,15 @@ var Collapse = function (_Component) {
     key: 'componentWillLeave',
     value: function componentWillLeave(callback) {
       var node = _reactDom2.default.findDOMNode(this);
-      var contentHeight = node.clientHeight;
-      node.style.height = contentHeight + 'px';
-      setTimeout(function () {
-        node.classList.add('animate');
-        node.style.height = 0;
-        setTimeout(callback, parseFloat(getComputedStyle(node).transitionDuration) * 1000);
-      });
+      if (node) {
+        var contentHeight = node.clientHeight;
+        node.style.height = contentHeight + 'px';
+        setTimeout(function () {
+          node.classList.add('animate');
+          node.style.height = 0;
+          setTimeout(callback, parseFloat(getComputedStyle(node).transitionDuration) * 1000);
+        });
+      }
     }
   }, {
     key: 'render',
@@ -122,7 +128,7 @@ var Collapsible = function (_Component2) {
 
   function Collapsible() {
     (0, _classCallCheck3.default)(this, Collapsible);
-    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Collapsible).apply(this, arguments));
+    return (0, _possibleConstructorReturn3.default)(this, (Collapsible.__proto__ || (0, _getPrototypeOf2.default)(Collapsible)).apply(this, arguments));
   }
 
   (0, _createClass3.default)(Collapsible, [{

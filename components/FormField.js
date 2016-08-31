@@ -34,7 +34,7 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = _CSSClassnames2.default.FORM_FIELD;
 
@@ -44,7 +44,7 @@ var FormField = function (_Component) {
   function FormField(props, context) {
     (0, _classCallCheck3.default)(this, FormField);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(FormField).call(this, props, context));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (FormField.__proto__ || (0, _getPrototypeOf2.default)(FormField)).call(this, props, context));
 
     _this._onFocus = _this._onFocus.bind(_this);
     _this._onBlur = _this._onBlur.bind(_this);

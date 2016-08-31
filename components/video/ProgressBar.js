@@ -46,7 +46,7 @@ var ProgressBar = function (_Component) {
   function ProgressBar() {
     (0, _classCallCheck3.default)(this, ProgressBar);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(ProgressBar).call(this));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (ProgressBar.__proto__ || (0, _getPrototypeOf2.default)(ProgressBar)).call(this));
 
     _this._onProgressBarChange = _this._onProgressBarChange.bind(_this);
     return _this;

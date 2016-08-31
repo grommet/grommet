@@ -56,7 +56,7 @@ var Overlay = function (_Component) {
   function Overlay() {
     (0, _classCallCheck3.default)(this, Overlay);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Overlay).call(this));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (Overlay.__proto__ || (0, _getPrototypeOf2.default)(Overlay)).call(this));
 
     _this._onClickShareLink = _this._onClickShareLink.bind(_this);
     return _this;

@@ -64,7 +64,7 @@ var HotSpots = function (_Component) {
   function HotSpots() {
     (0, _classCallCheck3.default)(this, HotSpots);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(HotSpots).call(this));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (HotSpots.__proto__ || (0, _getPrototypeOf2.default)(HotSpots)).call(this));
 
     _this._onPreviousHotSpot = _this._onPreviousHotSpot.bind(_this);
     _this._onNextHotSpot = _this._onNextHotSpot.bind(_this);

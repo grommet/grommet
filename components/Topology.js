@@ -40,7 +40,7 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = _CSSClassnames2.default.TOPOLOGY;
 var STATUS_ICON = _CSSClassnames2.default.STATUS_ICON;
@@ -51,7 +51,7 @@ var Label = function (_Component) {
 
   function Label() {
     (0, _classCallCheck3.default)(this, Label);
-    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Label).apply(this, arguments));
+    return (0, _possibleConstructorReturn3.default)(this, (Label.__proto__ || (0, _getPrototypeOf2.default)(Label)).apply(this, arguments));
   }
 
   (0, _createClass3.default)(Label, [{
@@ -74,7 +74,7 @@ var Part = function (_Component2) {
 
   function Part() {
     (0, _classCallCheck3.default)(this, Part);
-    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Part).apply(this, arguments));
+    return (0, _possibleConstructorReturn3.default)(this, (Part.__proto__ || (0, _getPrototypeOf2.default)(Part)).apply(this, arguments));
   }
 
   (0, _createClass3.default)(Part, [{
@@ -157,7 +157,7 @@ var Parts = function (_Component3) {
 
   function Parts() {
     (0, _classCallCheck3.default)(this, Parts);
-    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Parts).apply(this, arguments));
+    return (0, _possibleConstructorReturn3.default)(this, (Parts.__proto__ || (0, _getPrototypeOf2.default)(Parts)).apply(this, arguments));
   }
 
   (0, _createClass3.default)(Parts, [{
@@ -236,7 +236,7 @@ var Topology = function (_Component4) {
   function Topology(props, context) {
     (0, _classCallCheck3.default)(this, Topology);
 
-    var _this4 = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Topology).call(this, props, context));
+    var _this4 = (0, _possibleConstructorReturn3.default)(this, (Topology.__proto__ || (0, _getPrototypeOf2.default)(Topology)).call(this, props, context));
 
     _this4._layout = _this4._layout.bind(_this4);
     _this4._onResize = _this4._onResize.bind(_this4);

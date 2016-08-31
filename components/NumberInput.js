@@ -46,7 +46,7 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.NUMBER_INPUT; // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+var CLASS_ROOT = _CSSClassnames2.default.NUMBER_INPUT; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var NumberInput = function (_Component) {
   (0, _inherits3.default)(NumberInput, _Component);
@@ -54,7 +54,7 @@ var NumberInput = function (_Component) {
   function NumberInput(props, context) {
     (0, _classCallCheck3.default)(this, NumberInput);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(NumberInput).call(this, props, context));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (NumberInput.__proto__ || (0, _getPrototypeOf2.default)(NumberInput)).call(this, props, context));
 
     _this._onAdd = _this._onAdd.bind(_this);
     _this._onSubtract = _this._onSubtract.bind(_this);

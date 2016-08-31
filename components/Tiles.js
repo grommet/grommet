@@ -96,7 +96,7 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.TILES; // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+var CLASS_ROOT = _CSSClassnames2.default.TILES; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var TILE = _CSSClassnames2.default.TILE;
 var SELECTED_CLASS = TILE + '--selected';
@@ -107,7 +107,7 @@ var Tiles = function (_Component) {
   function Tiles(props, context) {
     (0, _classCallCheck3.default)(this, Tiles);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Tiles).call(this, props, context));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (Tiles.__proto__ || (0, _getPrototypeOf2.default)(Tiles)).call(this, props, context));
 
     _this._onLeft = _this._onLeft.bind(_this);
     _this._onRight = _this._onRight.bind(_this);

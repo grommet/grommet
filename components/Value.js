@@ -45,19 +45,21 @@ var Value = function (_Component) {
 
   function Value() {
     (0, _classCallCheck3.default)(this, Value);
-    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Value).apply(this, arguments));
+    return (0, _possibleConstructorReturn3.default)(this, (Value.__proto__ || (0, _getPrototypeOf2.default)(Value)).apply(this, arguments));
   }
 
   (0, _createClass3.default)(Value, [{
     key: 'componentDidUpdate',
     value: function componentDidUpdate() {
       if (this.props.announce) {
-        (0, _Announcer.announce)(this.refs.value.textContent);
+        (0, _Announcer.announce)(this.valueRef.textContent);
       }
     }
   }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       var classes = [CLASS_ROOT];
       if (this.props.size) {
         classes.push(CLASS_ROOT + '--' + this.props.size);
@@ -98,8 +100,10 @@ var Value = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        { ref: 'value', className: classes.join(' '),
-          onClick: this.props.onClick },
+        { ref: function ref(_ref) {
+            return _this2.valueRef = _ref;
+          },
+          className: classes.join(' '), onClick: this.props.onClick },
         _react2.default.createElement(
           'div',
           { className: CLASS_ROOT + '__annotated' },

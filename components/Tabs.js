@@ -50,7 +50,7 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.TABS; // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+var CLASS_ROOT = _CSSClassnames2.default.TABS; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var Tabs = function (_Component) {
   (0, _inherits3.default)(Tabs, _Component);
@@ -58,7 +58,7 @@ var Tabs = function (_Component) {
   function Tabs(props, context) {
     (0, _classCallCheck3.default)(this, Tabs);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Tabs).call(this, props, context));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (Tabs.__proto__ || (0, _getPrototypeOf2.default)(Tabs)).call(this, props, context));
 
     _this._activateTab = _this._activateTab.bind(_this);
 
@@ -127,8 +127,8 @@ var Tabs = function (_Component) {
         ),
         _react2.default.createElement(
           'div',
-          { ref: 'tabContent', tabIndex: '0', 'aria-label': tabContentTitle,
-            role: 'tabpanel' },
+          { tabIndex: '0',
+            'aria-label': tabContentTitle, role: 'tabpanel' },
           _react2.default.createElement(
             _Box2.default,
             { className: CLASS_ROOT + '__content',
