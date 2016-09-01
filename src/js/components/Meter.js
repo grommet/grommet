@@ -226,11 +226,24 @@ export default class Meter extends Component {
   }
 
   _seriesTotal (series) {
-    let total = 0;
-    series.some(function (item) {
-      total += item.value;
+    let values = [];
+    series.forEach(function(item) {
+      let decimalDigits;
+      try{
+        decimalDigits = item.value.toString().split(".")[1].length;
+      } catch(e) {
+        decimalDigits=0;
+      }
+      values.push(decimalDigits);
     });
-    return total;
+
+    let maxDecimalDigits = Math.pow(10, Math.max.apply(null, values));
+    let total = 0;
+
+    series.forEach(function(item) {
+      total += item.value * maxDecimalDigits;
+    });
+    return total = total / maxDecimalDigits;
   }
 
   _seriesMax (series) {
