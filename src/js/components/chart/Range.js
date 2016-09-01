@@ -80,9 +80,15 @@ export default class Range extends Component {
 
   _onMouseUp (event) {
     window.removeEventListener('mouseup', this._onMouseUp);
-    const { active, onActive } = this.props;
+    const { active, onActive, count } = this.props;
     const { mouseDown, mouseDownIndex, moved } = this.state;
-    const mouseUpIndex = this._mouseIndex(event);
+    let mouseUpIndex = this._mouseIndex(event);
+
+    if (mouseUpIndex < 0) {
+      mouseUpIndex = 0;
+    } else if (mouseUpIndex > count) {
+      mouseUpIndex = count;
+    }
 
     this.setState({
       mouseDown: false,
