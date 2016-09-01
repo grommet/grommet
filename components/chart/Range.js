@@ -152,12 +152,19 @@ var Range = function (_Component) {
       var _props3 = this.props;
       var active = _props3.active;
       var onActive = _props3.onActive;
+      var count = _props3.count;
       var _state2 = this.state;
       var mouseDown = _state2.mouseDown;
       var mouseDownIndex = _state2.mouseDownIndex;
       var moved = _state2.moved;
 
       var mouseUpIndex = this._mouseIndex(event);
+
+      if (mouseUpIndex < 0) {
+        mouseUpIndex = 0;
+      } else if (mouseUpIndex > count) {
+        mouseUpIndex = count;
+      }
 
       this.setState({
         mouseDown: false,
