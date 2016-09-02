@@ -22,7 +22,7 @@
     }
   }
 
-  .#{$grommet-namespace}tiles__masonry-column {
+  &:not(.#{$grommet-namespace}tiles--fill) .#{$grommet-namespace}tiles__masonry-column {
     > .#{$grommet-namespace}tile {
       @include media-query(lap-and-up) {
         width: $tile-size;
@@ -85,9 +85,36 @@
   &.#{$grommet-namespace}box--wrap {
     justify-content: space-around;
 
-    .#{$grommet-namespace}tiles__masonry-column > .#{$grommet-namespace}tile,
     > .#{$grommet-namespace}tile {
       flex-grow: 1;
+    }
+  }
+
+  .#{$grommet-namespace}tiles__masonry-column {
+    @include media-query(lap-and-up) {
+      flex-grow: 1;
+      flex-basis: 0;
+      min-width: $tile-size;
+
+      & > .#{$grommet-namespace}tile {
+        width: auto;
+      }
+    }
+  }
+
+  &.#{$grommet-namespace}tiles--large {
+    .#{$grommet-namespace}tiles__masonry-column {
+      @include media-query(lap-and-up) {
+        min-width: $tile-large-size;
+      }
+    }
+  }
+
+  &.#{$grommet-namespace}tiles--small {
+    .#{$grommet-namespace}tiles__masonry-column {
+      @include media-query(lap-and-up) {
+        min-width: $tile-small-size;
+      }
     }
   }
 }
@@ -142,7 +169,7 @@
     }
   }
 
-  .#{$grommet-namespace}tiles__masonry-column {
+  &:not(.#{$grommet-namespace}tiles--fill) .#{$grommet-namespace}tiles__masonry-column {
     > .#{$grommet-namespace}tile {
       @include media-query(lap-and-up) {
         width: $tile-small-size;
@@ -159,7 +186,7 @@
     }
   }
 
-  .#{$grommet-namespace}tiles__masonry-column {
+  &:not(.#{$grommet-namespace}tiles--fill) .#{$grommet-namespace}tiles__masonry-column {
     > .#{$grommet-namespace}tile {
       @include media-query(lap-and-up) {
         width: $tile-large-size;

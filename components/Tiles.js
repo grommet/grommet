@@ -143,15 +143,21 @@ var Tiles = function (_Component) {
         setTimeout(this._layout, 10);
       } else if (this.props.masonry) {
         (function () {
-          // grab CSS styles from DOM after component mounted
+          var tiles = (0, _reactDom.findDOMNode)(_this2.refs.tiles);
+          var tile = tiles.querySelectorAll('.' + CLASS_ROOT + '__masonry-column .' + TILE);
           // default to medium tile size ($tile-size = 192px)
           var minColumnWidth = 192;
-          var tile = document.querySelectorAll('.' + CLASS_ROOT + '__masonry-column .' + TILE);
-          if (tile && tile.length > 0) {
-            var columnTile = window.getComputedStyle(tile[0]);
-            if (columnTile && columnTile.width) {
-              minColumnWidth = parseFloat(columnTile.width);
-            }
+
+          if (!_this2.props.fill) {
+            // grab CSS styles from DOM after component mounted
+            minColumnWidth = _this2._getPropertyFromTile('width', tile);
+          } else {
+            var tileColumn = tiles.querySelectorAll('.' + CLASS_ROOT + '__masonry-column');
+            var tileFlexBasis = _this2._getPropertyFromTile('minWidth', tileColumn);
+            var tilePad = _this2._getPropertyFromTile('padding', tile) || _this2._getPropertyFromTile('padding-right', tile);
+
+            // take horizontal padding into account for column breakpoints
+            minColumnWidth = tilePad ? tileFlexBasis + tilePad * 2 : tileFlexBasis;
           }
 
           // create array of breakpoints for 1 through this.props.numColumns
@@ -236,6 +242,16 @@ var Tiles = function (_Component) {
         this._onRight();
       } else if (event.deltaX < -5) {
         this._onLeft();
+      }
+    }
+  }, {
+    key: '_getPropertyFromTile',
+    value: function _getPropertyFromTile(propertyName, tile) {
+      if (tile && tile.length > 0) {
+        var columnTile = window.getComputedStyle(tile[0]);
+        if (columnTile && columnTile[propertyName]) {
+          return parseFloat(columnTile[propertyName]);
+        }
       }
     }
   }, {
