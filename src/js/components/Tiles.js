@@ -52,16 +52,26 @@ export default class Tiles extends Component {
       // give browser a chance to stabilize
       setTimeout(this._layout, 10);
     } else if (this.props.masonry) {
-      // grab CSS styles from DOM after component mounted
+      const tiles = findDOMNode(this.refs.tiles);
+      const tile =
+        tiles.querySelectorAll(`.${CLASS_ROOT}__masonry-column .${TILE}`);
       // default to medium tile size ($tile-size = 192px)
       let minColumnWidth = 192;
-      const tile =
-        document.querySelectorAll(`.${CLASS_ROOT}__masonry-column .${TILE}`);
-      if (tile && tile.length > 0) {
-        const columnTile = window.getComputedStyle(tile[0]);
-        if (columnTile && columnTile.width) {
-          minColumnWidth = parseFloat(columnTile.width);
-        }
+
+      if (!this.props.fill) {
+        // grab CSS styles from DOM after component mounted
+        minColumnWidth = this._getPropertyFromTile('width', tile);
+      } else {
+        const tileColumn =
+          tiles.querySelectorAll(`.${CLASS_ROOT}__masonry-column`);
+        const tileFlexBasis =
+          this._getPropertyFromTile('minWidth', tileColumn);
+        let tilePad = this._getPropertyFromTile('padding', tile) ||
+          this._getPropertyFromTile('padding-right', tile);
+
+        // take horizontal padding into account for column breakpoints
+        minColumnWidth = (tilePad) ?
+          tileFlexBasis + (tilePad * 2) : tileFlexBasis;
       }
 
       // create array of breakpoints for 1 through this.props.numColumns
@@ -139,6 +149,15 @@ export default class Tiles extends Component {
       this._onRight();
     } else if (event.deltaX < -5) {
       this._onLeft();
+    }
+  }
+
+  _getPropertyFromTile (propertyName, tile) {
+    if (tile && tile.length > 0) {
+      const columnTile = window.getComputedStyle(tile[0]);
+      if (columnTile && columnTile[propertyName]) {
+        return parseFloat(columnTile[propertyName]);
+      }
     }
   }
 
