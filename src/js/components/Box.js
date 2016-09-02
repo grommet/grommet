@@ -248,7 +248,8 @@ Box.propTypes = {
   separator: PropTypes.oneOf(['top', 'bottom', 'left', 'right',
     'horizontal', 'vertical', 'all', 'none']),
   size: PropTypes.oneOfType([
-    PropTypes.oneOf(['auto', 'xsmall', 'small', 'medium', 'large', 'xxlarge', 'full']),
+    PropTypes.oneOf(['auto', 'xsmall', 'small', 'medium', 'large',
+      'xxlarge', 'full']),
     PropTypes.shape({
       height: PropTypes.oneOfType([
         PropTypes.oneOf(SIZES),
