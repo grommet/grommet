@@ -249,7 +249,7 @@ Box.propTypes = {
     'horizontal', 'vertical', 'all', 'none']),
   size: PropTypes.oneOfType([
     PropTypes.oneOf(['auto', 'xsmall', 'small', 'medium', 'large',
-      'xxlarge', 'full']),
+      'xlarge', 'xxlarge', 'full']),
     PropTypes.shape({
       height: PropTypes.oneOfType([
         PropTypes.oneOf(SIZES),
