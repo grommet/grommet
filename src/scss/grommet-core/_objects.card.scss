@@ -156,23 +156,27 @@ $card-hover-color: #EBEBEB;
   }
 
   &__label {
-    letter-spacing: normal;
-    margin-bottom: 0.25em;
+    &.#{$grommet-namespace}heading {
+      letter-spacing: normal;
+      margin-bottom: 0.25em;
+    }
   }
 
   &__heading {
-    margin-bottom: 0.125em;
+    &.#{$grommet-namespace}heading {
+      margin-bottom: 0.125em;
+    }
   }
 
-  &__description {
-    &.#{$grommet-namespace}cardparagraph {
+  &__paragraph {
+    &.#{$grommet-namespace}paragraph {
       margin-top: 0.125em;
       margin-bottom: 0.5em;
     }
   }
 
-  &__print {
-    &.#{$grommet-namespace}cardparagraph {
+  &__description {
+    &.#{$grommet-namespace}paragraph {
       margin-bottom: 0.333em;
     }
   }

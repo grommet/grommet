@@ -34,13 +34,14 @@ export default class Card extends Component {
   }
 
   _renderLink () {
-    const { link } = this.props;
+    const { link, linkIcon, linkText } = this.props;
 
     if (link) {
       return (
-        <Box pad={{vertical: "small"}}>
-          {link}
-        </Box>
+        <Anchor className={`${CLASS_ROOT}__link`} primary={true} href={link}
+          target="_blank" icon={linkIcon}>
+          {linkText}
+        </Anchor>
       );
     }
 
@@ -74,9 +75,36 @@ export default class Card extends Component {
     return videoLayer;
   }
 
+  _renderParagraph (contents, textSize, type) {
+    if (typeof contents === 'string') {
+      return (
+        <Paragraph
+          className={`${CLASS_ROOT}__${type}`}
+          size={textSize}
+          margin="none"
+        >
+          {contents}
+        </Paragraph>
+      );
+    } else if (Array.isArray(contents)) {
+      return contents.map((content, index) => (
+        <Paragraph
+          key={`${type}_${index}`}
+          className={`${CLASS_ROOT}__${type}`}
+          size={textSize}
+          margin="none"
+        >
+          {content}
+        </Paragraph>
+      ));
+    }
+    return null;
+  }
+
   render () {
-    const { children, thumbnail, description, heading, label, onClick, video,
-      direction, reverse, pad, className} = this.props;
+    const { children, thumbnail, description, heading, headingStrong, label,
+      onClick, video, direction, reverse, pad, className, textSize, paragraph
+    } = this.props;
     const tileProps = Props.pick(this.props, Object.keys(Tile.propTypes));
     delete tileProps.onClick;
     delete tileProps.pad;
@@ -90,6 +118,32 @@ export default class Card extends Component {
       className
     );
 
+    let labelTag;
+    let headingTag;
+    let paragraphSize;
+    let descriptionSize;
+    if (textSize === 'xlarge') {
+      labelTag = 'h3';
+      headingTag = 'h1';
+      paragraphSize = 'xlarge';
+      descriptionSize = 'large';
+    } else if (textSize === 'large') {
+      labelTag = 'h4';
+      headingTag = 'h1';
+      paragraphSize = 'xlarge';
+      descriptionSize = 'large';
+    } else if (textSize === 'medium') {
+      labelTag = 'h4';
+      headingTag = 'h2';
+      paragraphSize = 'large';
+      descriptionSize = 'medium';
+    } else {
+      labelTag = 'h5';
+      headingTag = 'h3';
+      paragraphSize = 'medium';
+      descriptionSize = 'small';
+    }
+
     let onCardClick = onClick;
     if (!onCardClick && video) {
       onCardClick = this._onClick;
@@ -98,14 +152,19 @@ export default class Card extends Component {
     const contentContainer = (
       <Box className={`${CLASS_ROOT}__content`} pad="medium">
         {label &&
-          <Heading tag="h5" uppercase={true} margin="none">{label}</Heading>
+          <Heading className={`${CLASS_ROOT}__label`}
+            tag={labelTag} margin="none" uppercase={true}>
+            {label}
+          </Heading>
         }
         {heading &&
-          <Heading tag="h2" strong={true}>{heading}</Heading>
+          <Heading className={`${CLASS_ROOT}__heading`}
+            tag={headingTag} strong={headingStrong} margin="none">
+            {heading}
+          </Heading>
         }
-        {description &&
-          <Paragraph margin="none">{description}</Paragraph>
-        }
+        {this._renderParagraph(paragraph, paragraphSize, 'paragraph')}
+        {this._renderParagraph(description, descriptionSize, 'description')}
         {children}
         {this._renderLink()}
       </Box>
@@ -156,10 +215,12 @@ export default class Card extends Component {
 
 Card.propTypes = {
   thumbnail: PropTypes.string,
-  description: PropTypes.string,
-  heading: PropTypes.string,
+  textSize: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
   label: PropTypes.string,
-  link: PropTypes.element,
+  heading: PropTypes.string,
+  headingStrong: PropTypes.bool,
+  paragraph: PropTypes.string,
+  description: PropTypes.string,
   video: PropTypes.oneOfType([
     PropTypes.shape({
       source: PropTypes.string.isRequired,
@@ -168,9 +229,16 @@ Card.propTypes = {
     PropTypes.element
   ]),
   reverse: PropTypes.bool,
+  link: PropTypes.string,
+  linkText: PropTypes.string,
+  linkIcon: PropTypes.element,
+  onClick: PropTypes.func,
   ...Tile.propTypes
 };
 
 Card.defaultProps = {
-  direction: 'column'
+  direction: 'column',
+  textSize: 'medium',
+  headingStrong: true,
+  linkText: 'Learn More'
 };
