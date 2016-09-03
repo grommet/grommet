@@ -97,9 +97,15 @@ export default class Card extends Component {
 
     const contentContainer = (
       <Box className={`${CLASS_ROOT}__content`} pad="medium">
-        <Heading tag="h5" uppercase={true} margin="none">{label}</Heading>
-        <Heading tag="h2" strong={true}>{heading}</Heading>
-        <Paragraph margin="none">{description}</Paragraph>
+        {label &&
+          <Heading tag="h5" uppercase={true} margin="none">{label}</Heading>
+        }
+        {heading &&
+          <Heading tag="h2" strong={true}>{heading}</Heading>
+        }
+        {description &&
+          <Paragraph margin="none">{description}</Paragraph>
+        }
         {children}
         {this._renderLink()}
       </Box>
