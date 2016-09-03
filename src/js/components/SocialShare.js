@@ -10,7 +10,7 @@ import SocialEmailIcon from './icons/base/SocialEmail';
 
 export default class SocialShare extends Component {
   render () {
-    const { type, link, text, title } = this.props;
+    const { colorIndex, type, link, text, title } = this.props;
 
     let socialIcon = undefined;
     let href = '';
@@ -21,21 +21,26 @@ export default class SocialShare extends Component {
     const encodedText = encodeURIComponent(text);
 
     if (type === 'twitter') {
-      socialIcon = <SocialTwitterIcon a11yTitle='Share on Twitter' />;
+      socialIcon = (<SocialTwitterIcon a11yTitle='Share on Twitter'
+        colorIndex={colorIndex} />);
       href = `https://twitter.com/intent/tweet?url=` +
         `${encodedLink}&text=${encodedText}`;
     } else if (type === 'linkedin') {
-      socialIcon = <SocialLinkedinIcon a11yTitle='Share on LinkedIn' />;
+      socialIcon = (<SocialLinkedinIcon a11yTitle='Share on LinkedIn'
+        colorIndex={colorIndex} />);
       href = `https://www.linkedin.com/shareArticle?mini=true&url=` +
         `${encodedLink}&title=${encodedTitle}&summary=${encodedText}`;
     } else if (type === 'google') {
-      socialIcon = <SocialGoogleIcon a11yTitle='Share on Google' />;
+      socialIcon = (<SocialGoogleIcon a11yTitle='Share on Google'
+        colorIndex={colorIndex} />);
       href = `https://plus.google.com/share?url=${encodedLink}`;
     } else if (type === 'facebook') {
-      socialIcon = <SocialFacebookIcon a11yTitle='Share on Facebook' />;
+      socialIcon = (<SocialFacebookIcon a11yTitle='Share on Facebook'
+        colorIndex={colorIndex} />);
       href = `https://www.facebook.com/sharer/sharer.php?u=${encodedLink}`;
     } else if (type === 'email') {
-      socialIcon = <SocialEmailIcon a11yTitle='Share on Email' />;
+      socialIcon = (<SocialEmailIcon a11yTitle='Share on Email'
+        colorIndex={colorIndex} />);
       href = `mailto:?subject=` +
         `${encodedTitle}&body=${encodedText}%0D%0A${encodedLink}`;
       target = '_self';
@@ -48,6 +53,7 @@ export default class SocialShare extends Component {
 };
 
 SocialShare.propTypes = {
+  colorIndex: PropTypes.string,
   type: PropTypes.oneOf(['email', 'facebook', 'twitter', 'linkedin',
     'google']).isRequired,
   link: PropTypes.string.isRequired,
