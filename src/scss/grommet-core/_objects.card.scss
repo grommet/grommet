@@ -154,4 +154,63 @@ $card-hover-color: #EBEBEB;
       }
     }
   }
+
+  &__label {
+    letter-spacing: normal;
+    margin-bottom: 0.25em;
+  }
+
+  &__heading {
+    margin-bottom: 0.125em;
+  }
+
+  &__description {
+    &.#{$grommet-namespace}cardparagraph {
+      margin-top: 0.125em;
+      margin-bottom: 0.5em;
+    }
+  }
+
+  &__print {
+    &.#{$grommet-namespace}cardparagraph {
+      margin-bottom: 0.333em;
+    }
+  }
+
+  &__link {
+    margin-top: 0.75em;
+  }
+
+  &--small {
+    .#{$grommet-namespace}card__headline {
+      @include media-query(portable) {
+        font-size: $h4-font-size;
+      }
+    }
+  }
+
+  &--medium {
+    .#{$grommet-namespace}card__headline {
+      @include media-query(portable) {
+        font-size: $h3-font-size;
+      }
+    }
+  }
+
+  &--large {
+    .#{$grommet-namespace}card__headline {
+      @include media-query(portable) {
+        font-size: $h2-font-size;
+      }
+    }
+  }
+
+  &--xlarge {
+    .#{$grommet-namespace}card__headline {
+      font-size: $large-large-number-font-size;
+      @include media-query(portable) {
+        font-size: $h1-font-size;
+      }
+    }
+  }
 }
