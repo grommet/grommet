@@ -15,7 +15,8 @@ export default class SocialShare extends Component {
     let socialIcon = undefined;
     let href = '';
     let target = '_blank';
-    const calculatedA11yTitle = a11yTitle || `Share on ${type.toUpperCase()}`;
+    const calculatedA11yTitle = a11yTitle ||
+      `Share on ${type.charAt(0).toUpperCase() + type.slice(1)}`;
 
     const encodedLink = encodeURIComponent(link);
     const encodedTitle = encodeURIComponent(title);

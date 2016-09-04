@@ -413,7 +413,7 @@ export default class Menu extends Component {
           {this.props.label}
         </span>,
         <DropCaretIcon key="caret" a11yTitle='menu-down'
-          a11yTitleId='menu-down-id' />
+          a11yTitleId={'menu-down-id-' + DOMUtils.generateUUID()} />
       ];
     }
     if (! icon && ! label) {
