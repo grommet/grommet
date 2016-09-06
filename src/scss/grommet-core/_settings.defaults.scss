@@ -4,18 +4,26 @@ $grommet-namespace: "grommetux-";
 
 $border-radius: 4px !default;
 
+// header/footer vertical sizing
+$small-header-height: round($inuit-base-spacing-unit * 2) !default;
 $header-height: round($inuit-base-spacing-unit * 3) !default;
 $large-header-height: round($inuit-base-spacing-unit * 4) !default;
-$small-header-height: round($inuit-base-spacing-unit * 2) !default;
-$footer-height: round($inuit-base-spacing-unit * 1.5) !default;
 $small-footer-height: round($inuit-base-spacing-unit) !default;
+$footer-height: round($inuit-base-spacing-unit * 1.5) !default;
 $large-footer-height: round($inuit-base-spacing-unit * 4) !default;
-$sparkline-height: $inuit-base-spacing-unit !default; // 24px
 
-$size-xsmall: round($inuit-base-spacing-unit * 20) !default; // 480px
-$size-small: round($inuit-base-spacing-unit * 24) !default; // 576px
-$size-medium: round($inuit-base-spacing-unit * 30) !default; // 720px
-$size-large: round($inuit-base-spacing-unit * 40) !default; // 960px
+// width t-shirt sizing
+$size-xsmall: round($inuit-base-spacing-unit * 4) !default; // 96px
+$size-small: round($inuit-base-spacing-unit * 8) !default; // 192px
+$size-medium: round($inuit-base-spacing-unit * 16) !default; // 384px
+$size-large: round($inuit-base-spacing-unit * 24) !default; // 576px
+$size-xlarge: round($inuit-base-spacing-unit * 30) !default; // 720px
+$size-xxlarge: round($inuit-base-spacing-unit * 40) !default; // 960px
+
+// $size-xsmall: round($inuit-base-spacing-unit * 20) !default; // 480px
+// $size-small: round($inuit-base-spacing-unit * 24) !default; // 576px
+// $size-medium: round($inuit-base-spacing-unit * 30) !default; // 720px
+// $size-large: round($inuit-base-spacing-unit * 40) !default; // 960px
 
 $center-column-width: round($inuit-base-spacing-unit * 40) !default; // 960px;
 $sidebar-width: round($inuit-base-spacing-unit * 14) !default; // 336px
@@ -35,16 +43,17 @@ $image-width: round($inuit-base-spacing-unit * 24) !default; // 576px
 $image-small-width: round($inuit-base-spacing-unit * 10) !default; // 240px
 $image-large-width: $size-large; // 960px
 
-$graphic-size: round($inuit-base-spacing-unit * 8) !default; // 192px
-$graphic-small-size: round($inuit-base-spacing-unit * 4) !default; // 96px
-$graphic-large-size: round($inuit-base-spacing-unit * 16) !default; // 288px
-$graphic-xlarge-size: round($inuit-base-spacing-unit * 24) !default; // 384px
+$sparkline-height: $inuit-base-spacing-unit !default; // 24px
+// $graphic-small-size: round($inuit-base-spacing-unit * 4) !default; // 96px
+// $graphic-size: round($inuit-base-spacing-unit * 8) !default; // 192px
+// $graphic-large-size: round($inuit-base-spacing-unit * 16) !default; // 384px
+// $graphic-xlarge-size: round($inuit-base-spacing-unit * 24) !default; // 576px
 
 // tile sizes allow for graphic + legend + padding
-$tile-size: round($inuit-base-spacing-unit * 8) !default; // 192px
-$tile-small-size: round($inuit-base-spacing-unit * 4) !default; // 96px
-$tile-large-size: round($inuit-base-spacing-unit * 16) !default; // 384px
-$tile-extra-large-size: round($inuit-base-spacing-unit * 24) !default; // 576px
+// $tile-small-size: round($inuit-base-spacing-unit * 4) !default; // 96px
+// $tile-size: round($inuit-base-spacing-unit * 8) !default; // 192px
+// $tile-large-size: round($inuit-base-spacing-unit * 16) !default; // 384px
+// $tile-extra-large-size: round($inuit-base-spacing-unit * 24) !default; // 576px
 
 $control-size: $inuit-base-spacing-unit !default; // 24px
 

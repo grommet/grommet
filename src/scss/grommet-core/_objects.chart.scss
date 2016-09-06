@@ -21,7 +21,7 @@
 
 .#{$grommet-namespace}chart__graphic {
   width: 100%;
-  height: $graphic-size;
+  height: $size-medium;
   max-height: calc(100vh - #{double($header-height)});
 }
 
@@ -152,13 +152,13 @@
 
 .#{$grommet-namespace}chart--small {
   .#{$grommet-namespace}chart__graphic {
-    height: $graphic-small-size;
+    height: $size-small;
   }
 }
 
 .#{$grommet-namespace}chart--large {
   .#{$grommet-namespace}chart__graphic {
-    height: $graphic-large-size;
+    height: $size-large;
   }
 }
 
@@ -215,15 +215,15 @@
 }
 
 .#{$grommet-namespace}chart-base--width-small {
-  width: $graphic-small-size;
+  width: $size-small;
 }
 
 .#{$grommet-namespace}chart-base--width-medium {
-  width: $graphic-size;
+  width: $size-medium;
 }
 
 .#{$grommet-namespace}chart-base--width-large {
-  width: $graphic-large-size;
+  width: $size-large;
 }
 
 .#{$grommet-namespace}chart-base--width-full {
@@ -231,15 +231,15 @@
 }
 
 .#{$grommet-namespace}chart-base--height-small {
-  height: $graphic-small-size;
+  height: $size-small;
 }
 
 .#{$grommet-namespace}chart-base--height-medium {
-  height: $graphic-size;
+  height: $size-medium;
 }
 
 .#{$grommet-namespace}chart-base--height-large {
-  height: $graphic-large-size;
+  height: $size-large;
 }
 
 .#{$grommet-namespace}chart-base--height-sparkline {
@@ -512,25 +512,25 @@
   @include animation('fade-in-chart 0.5s');
 }
 
-.#{$grommet-namespace}chart-layers--height-small {
-  height: $graphic-small-size;
-}
-
-.#{$grommet-namespace}chart-layers--height-medium {
-  height: $graphic-size;
-}
-
-.#{$grommet-namespace}chart-layers--width-small {
-  width: $graphic-small-size;
-}
-
-.#{$grommet-namespace}chart-layers--width-medium {
-  width: $graphic-size;
-}
-
-.#{$grommet-namespace}chart-layers--width-full {
-  width: 100%;
-}
+// .#{$grommet-namespace}chart-layers--height-small {
+//   height: $small-size;
+// }
+//
+// .#{$grommet-namespace}chart-layers--height-medium {
+//   height: $medium-size;
+// }
+//
+// .#{$grommet-namespace}chart-layers--width-small {
+//   width: $small-size;
+// }
+//
+// .#{$grommet-namespace}chart-layers--width-medium {
+//   width: $medium-size;
+// }
+//
+// .#{$grommet-namespace}chart-layers--width-full {
+//   width: 100%;
+// }
 
 @include keyframes(stretch-up-chart) {
   0% {

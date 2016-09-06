@@ -40,60 +40,72 @@ export default class Box extends Component {
     }
   }
 
-  _addPropertyClass (classes, prefix, property, classProperty) {
-    let choice = this.props[property];
-    let propertyPrefix = classProperty || property;
-    if (choice) {
-      if (typeof choice === 'string') {
-        classes.push(prefix + '--' + propertyPrefix + '-' + choice);
-      } else if (typeof choice === 'object') {
-        Object.keys(choice).forEach(function (key) {
-          classes.push(prefix + '--' + propertyPrefix + '-' + key + '-' +
-            choice[key]);
+  _normalize (string) {
+    return string.replace('/', '-');
+  }
+
+  _addPropertyClass (classes, property, options = {}) {
+    const value = (options.object || this.props)[property];
+    const elementName = options.elementName || CLASS_ROOT;
+    const prefix = options.prefix || property;
+    if (value) {
+      if (typeof value === 'string') {
+        classes.push(`${elementName}--${prefix}-${this._normalize(value)}`);
+      } else if (typeof value === 'object') {
+        Object.keys(value).forEach((key) => {
+          this._addPropertyClass(classes, key, {
+            object: value, prefix: `${prefix}-${key}` });
         });
       } else {
-        classes.push(prefix + '--' + propertyPrefix);
+        classes.push(`${elementName}--${this._normalize(prefix)}`);
       }
     }
   }
 
   render () {
     const { a11yTitle, appCentered, backgroundImage, children, className,
-      colorIndex, containerClassName, flex, focusable, id, onClick, primary,
+      colorIndex, containerClassName, focusable, id, onClick, primary,
       role, size, tag, tabIndex, texture } = this.props;
     let classes = [CLASS_ROOT];
-    let containerClasses = [CLASS_ROOT + "__container"];
+    let containerClasses = [`${CLASS_ROOT}__container`];
     let restProps = Props.omit(this.props, Object.keys(Box.propTypes));
-    this._addPropertyClass(classes, CLASS_ROOT, 'full');
-    this._addPropertyClass(classes, CLASS_ROOT, 'direction');
-    this._addPropertyClass(classes, CLASS_ROOT, 'justify');
-    this._addPropertyClass(classes, CLASS_ROOT, 'align');
-    this._addPropertyClass(classes, CLASS_ROOT, 'alignContent',
-      'align-content');
-    this._addPropertyClass(classes, CLASS_ROOT, 'reverse');
-    this._addPropertyClass(classes, CLASS_ROOT, 'responsive');
-    this._addPropertyClass(classes, CLASS_ROOT, 'pad');
-    this._addPropertyClass(classes, CLASS_ROOT, 'separator');
-    this._addPropertyClass(classes, CLASS_ROOT, 'size');
-    this._addPropertyClass(classes, CLASS_ROOT, 'textAlign', 'text-align');
-    this._addPropertyClass(classes, CLASS_ROOT, 'wrap');
+    this._addPropertyClass(classes, 'full');
+    this._addPropertyClass(classes, 'direction');
+    this._addPropertyClass(classes, 'justify');
+    this._addPropertyClass(classes, 'align');
+    this._addPropertyClass(classes, 'alignContent',
+      { prefix: 'align-content' });
+    this._addPropertyClass(classes, 'reverse');
+    this._addPropertyClass(classes, 'responsive');
+    this._addPropertyClass(classes, 'basis');
+    this._addPropertyClass(classes, 'flex');
+    this._addPropertyClass(classes, 'pad');
+    this._addPropertyClass(classes, 'margin');
+    this._addPropertyClass(classes, 'separator');
+    this._addPropertyClass(classes, 'textAlign', { prefix: 'text-align' });
+    this._addPropertyClass(classes, 'wrap');
 
     if (this.props.hasOwnProperty('flex')) {
-      if (flex) {
-        classes.push('flex');
-      } else {
-        classes.push('no-flex');
+      if (! this.props.flex) {
+        classes.push(`${CLASS_ROOT}--flex-off`);
       }
     }
-    if (this.props.hasOwnProperty('size')) {
+    if (size) {
+      if (typeof size === 'object') {
+        Object.keys(size).forEach((key) => {
+          this._addPropertyClass(classes, key, { object: size });
+        });
+      } else {
+        this._addPropertyClass(classes, 'size');
+      }
       if (size) {
         classes.push(`${CLASS_ROOT}--size`);
       }
     }
 
     if (appCentered) {
-      this._addPropertyClass(containerClasses,
-        CLASS_ROOT + "__container", 'full');
+      this._addPropertyClass(containerClasses, 'full',
+        { elementName: `${CLASS_ROOT}__container` });
       if (colorIndex) {
         containerClasses.push(
           `${BACKGROUND_COLOR_INDEX}-${colorIndex}`);
@@ -181,29 +193,49 @@ export default class Box extends Component {
 
 }
 
+const FIXED_SIZES = ['xsmall', 'small', 'medium', 'large', 'xlarge'];
+const RELATIVE_SIZES = ['full', '1/2', '1/3', '2/3', '1/4', '3/4'];
+const SIZES = FIXED_SIZES.concat(RELATIVE_SIZES);
+const MARGIN_SIZES = ['small', 'medium', 'large'];
+const PAD_SIZES = ['small', 'medium', 'large', 'none'];
+
 Box.propTypes = {
   a11yTitle: PropTypes.string,
   announce: PropTypes.bool,
   align: PropTypes.oneOf(['start', 'center', 'end', 'baseline', 'stretch']),
   alignContent: PropTypes.oneOf(['start', 'center', 'end', 'between',
     'around', 'stretch']),
-  appCentered: PropTypes.bool,
+  appCentered: PropTypes.bool, /// deprecate to separate container?
   backgroundImage: PropTypes.string,
+  basis: PropTypes.oneOf(SIZES),
   children: PropTypes.any,
   colorIndex: PropTypes.string,
-  containerClassName: PropTypes.string,
+  containerClassName: PropTypes.string, /// deprecate to separate container?
   direction: PropTypes.oneOf(['row', 'column']),
   focusable: PropTypes.bool,
-  flex: PropTypes.bool,
+  flex: PropTypes.oneOf(['grow', 'shrink', true, false]),
   full: PropTypes.oneOf([true, 'horizontal', 'vertical', false]),
+    /// deprecate to new size
   onClick: PropTypes.func,
   justify: PropTypes.oneOf(['start', 'center', 'between', 'end']),
-  pad: PropTypes.oneOfType([
-    PropTypes.oneOf(['none', 'small', 'medium', 'large']),
+  margin: PropTypes.oneOfType([
+    PropTypes.oneOf(MARGIN_SIZES),
     PropTypes.shape({
-      between: PropTypes.oneOf(['none', 'small', 'medium', 'large']),
-      horizontal: PropTypes.oneOf(['none', 'small', 'medium', 'large']),
-      vertical: PropTypes.oneOf(['none', 'small', 'medium', 'large'])
+      bottom: PropTypes.oneOf(MARGIN_SIZES),
+      horizontal: PropTypes.oneOf(MARGIN_SIZES),
+      left: PropTypes.oneOf(MARGIN_SIZES),
+      right: PropTypes.oneOf(MARGIN_SIZES),
+      top: PropTypes.oneOf(MARGIN_SIZES),
+      vertical: PropTypes.oneOf(MARGIN_SIZES)
+    })
+  ]),
+  pad: PropTypes.oneOfType([
+    PropTypes.oneOf(PAD_SIZES),
+    PropTypes.shape({
+      between: PropTypes.oneOf(PAD_SIZES),
+        /// deprecate to separate Spacer component, or separate Box?
+      horizontal: PropTypes.oneOf(PAD_SIZES),
+      vertical: PropTypes.oneOf(PAD_SIZES)
     })
   ]),
   primary: PropTypes.bool,
@@ -212,7 +244,25 @@ Box.propTypes = {
   role: PropTypes.string,
   separator: PropTypes.oneOf(['top', 'bottom', 'left', 'right',
     'horizontal', 'vertical', 'all', 'none']),
-  size: PropTypes.oneOf(['auto', 'xsmall', 'small', 'medium', 'large', 'full']),
+  size: PropTypes.oneOfType([
+    PropTypes.oneOf(['auto', 'xsmall', 'small', 'medium', 'large', 'full']),
+    PropTypes.shape({
+      height: PropTypes.oneOfType([
+        PropTypes.oneOf(SIZES),
+        PropTypes.shape({
+          max: PropTypes.oneOf(FIXED_SIZES),
+          min: PropTypes.oneOf(FIXED_SIZES)
+        })
+      ]),
+      width: PropTypes.oneOfType([
+        PropTypes.oneOf(SIZES),
+        PropTypes.shape({
+          max: PropTypes.oneOf(FIXED_SIZES),
+          min: PropTypes.oneOf(FIXED_SIZES)
+        })
+      ])
+    })
+  ]),
   tag: PropTypes.string,
   textAlign: PropTypes.oneOf(['left', 'center', 'right']),
   texture: PropTypes.oneOfType([
