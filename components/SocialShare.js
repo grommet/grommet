@@ -66,6 +66,7 @@ var SocialShare = function (_Component) {
     key: 'render',
     value: function render() {
       var _props = this.props;
+      var colorIndex = _props.colorIndex;
       var type = _props.type;
       var link = _props.link;
       var text = _props.text;
@@ -81,19 +82,24 @@ var SocialShare = function (_Component) {
       var encodedText = encodeURIComponent(text);
 
       if (type === 'twitter') {
-        socialIcon = _react2.default.createElement(_SocialTwitter2.default, { a11yTitle: 'Share on Twitter' });
+        socialIcon = _react2.default.createElement(_SocialTwitter2.default, { a11yTitle: 'Share on Twitter',
+          colorIndex: colorIndex });
         href = 'https://twitter.com/intent/tweet?url=' + (encodedLink + '&text=' + encodedText);
       } else if (type === 'linkedin') {
-        socialIcon = _react2.default.createElement(_SocialLinkedin2.default, { a11yTitle: 'Share on LinkedIn' });
+        socialIcon = _react2.default.createElement(_SocialLinkedin2.default, { a11yTitle: 'Share on LinkedIn',
+          colorIndex: colorIndex });
         href = 'https://www.linkedin.com/shareArticle?mini=true&url=' + (encodedLink + '&title=' + encodedTitle + '&summary=' + encodedText);
       } else if (type === 'google') {
-        socialIcon = _react2.default.createElement(_SocialGoogle2.default, { a11yTitle: 'Share on Google' });
+        socialIcon = _react2.default.createElement(_SocialGoogle2.default, { a11yTitle: 'Share on Google',
+          colorIndex: colorIndex });
         href = 'https://plus.google.com/share?url=' + encodedLink;
       } else if (type === 'facebook') {
-        socialIcon = _react2.default.createElement(_SocialFacebook2.default, { a11yTitle: 'Share on Facebook' });
+        socialIcon = _react2.default.createElement(_SocialFacebook2.default, { a11yTitle: 'Share on Facebook',
+          colorIndex: colorIndex });
         href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodedLink;
       } else if (type === 'email') {
-        socialIcon = _react2.default.createElement(_SocialEmail2.default, { a11yTitle: 'Share on Email' });
+        socialIcon = _react2.default.createElement(_SocialEmail2.default, { a11yTitle: 'Share on Email',
+          colorIndex: colorIndex });
         href = 'mailto:?subject=' + (encodedTitle + '&body=' + encodedText + '%0D%0A' + encodedLink);
         target = '_self';
       }
@@ -109,6 +115,7 @@ exports.default = SocialShare;
 ;
 
 SocialShare.propTypes = {
+  colorIndex: _react.PropTypes.string,
   type: _react.PropTypes.oneOf(['email', 'facebook', 'twitter', 'linkedin', 'google']).isRequired,
   link: _react.PropTypes.string.isRequired,
   title: _react.PropTypes.string,
