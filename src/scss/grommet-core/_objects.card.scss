@@ -186,7 +186,7 @@ $card-hover-color: #EBEBEB;
   }
 
   &--small {
-    .#{$grommet-namespace}card__headline {
+    .#{$grommet-namespace}card__heading {
       @include media-query(portable) {
         font-size: $h4-font-size;
       }
@@ -194,7 +194,7 @@ $card-hover-color: #EBEBEB;
   }
 
   &--medium {
-    .#{$grommet-namespace}card__headline {
+    .#{$grommet-namespace}card__heading {
       @include media-query(portable) {
         font-size: $h3-font-size;
       }
@@ -202,7 +202,7 @@ $card-hover-color: #EBEBEB;
   }
 
   &--large {
-    .#{$grommet-namespace}card__headline {
+    .#{$grommet-namespace}card__heading {
       @include media-query(portable) {
         font-size: $h2-font-size;
       }
@@ -210,7 +210,7 @@ $card-hover-color: #EBEBEB;
   }
 
   &--xlarge {
-    .#{$grommet-namespace}card__headline {
+    .#{$grommet-namespace}card__heading {
       font-size: $large-large-number-font-size;
 
       @include media-query(portable) {

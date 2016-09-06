@@ -113,7 +113,8 @@ export default class Card extends Component {
       CLASS_ROOT,
       {
         [`${CLASS_ROOT}--direction-${direction}`]: direction,
-        [`${CLASS_ROOT}--selectable`]: (onClick || video)
+        [`${CLASS_ROOT}--selectable`]: (onClick || video),
+        [`${CLASS_ROOT}--${textSize}`]: textSize
       },
       className
     );
