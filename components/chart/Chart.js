@@ -177,78 +177,82 @@ var Chart = function (_Component) {
       var vertical = _props.vertical;
       var onMaxCount = _props.onMaxCount;
 
-      var chart = this.refs.chart;
-      var chartRect = chart.getBoundingClientRect();
-      var base = this.refs.chart.querySelector('.' + CHART_BASE);
-      var alignWidth = void 0,
-          alignLeft = void 0,
-          alignRight = void 0,
-          alignHeight = void 0,
-          alignTop = void 0,
-          alignBottom = void 0;
-      var padAlign = true;
+      var chart = this.chartRef;
+      if (chart) {
+        var chartRect = chart.getBoundingClientRect();
+        var base = this.chartRef.querySelector('.' + CHART_BASE);
+        var alignWidth = void 0,
+            alignLeft = void 0,
+            alignRight = void 0,
+            alignHeight = void 0,
+            alignTop = void 0,
+            alignBottom = void 0;
+        var padAlign = true;
 
-      if (horizontalAlignWith) {
-        var elem = document.getElementById(horizontalAlignWith);
-        if (elem) {
-          var rect = elem.getBoundingClientRect();
-          alignWidth = rect.width;
-          alignLeft = rect.left - chartRect.left;
-          alignRight = chartRect.right - rect.right;
-          padAlign = false;
-        }
-      } else if (base) {
-        var _rect = base.getBoundingClientRect();
-        alignWidth = _rect.width;
-        alignLeft = _rect.left - chartRect.left;
-        alignRight = chartRect.right - _rect.right;
-      }
-
-      if (verticalAlignWith) {
-        var _elem = document.getElementById(verticalAlignWith);
-        if (_elem) {
-          var _rect2 = _elem.getBoundingClientRect();
-          alignHeight = _rect2.height;
-          alignTop = _rect2.top - chartRect.top;
-          alignBottom = chartRect.bottom - _rect2.bottom;
-          padAlign = false;
-        }
-      } else if (base) {
-        var _rect3 = base.getBoundingClientRect();
-        alignHeight = _rect3.height;
-        alignTop = _rect3.top - chartRect.top;
-        alignBottom = chartRect.bottom - _rect3.bottom;
-      }
-
-      this.setState({
-        alignWidth: alignWidth,
-        alignLeft: alignLeft,
-        alignRight: alignRight,
-        alignHeight: alignHeight,
-        alignTop: alignTop,
-        alignBottom: alignBottom,
-        padAlign: padAlign
-      });
-
-      if (onMaxCount) {
-        (function () {
-          var maxCount = void 0;
-          if (vertical) {
-            maxCount = Math.floor(alignWidth / (4 * _utils.padding));
-          } else {
-            maxCount = Math.floor(alignHeight / (4 * _utils.padding));
+        if (horizontalAlignWith) {
+          var elem = document.getElementById(horizontalAlignWith);
+          if (elem) {
+            var rect = elem.getBoundingClientRect();
+            alignWidth = rect.width;
+            alignLeft = rect.left - chartRect.left;
+            alignRight = chartRect.right - rect.right;
+            padAlign = false;
           }
-          if (maxCount !== _this2.state.maxCount) {
-            _this2.setState({ maxCount: maxCount }, function () {
-              onMaxCount(maxCount);
-            });
+        } else if (base) {
+          var _rect = base.getBoundingClientRect();
+          alignWidth = _rect.width;
+          alignLeft = _rect.left - chartRect.left;
+          alignRight = chartRect.right - _rect.right;
+        }
+
+        if (verticalAlignWith) {
+          var _elem = document.getElementById(verticalAlignWith);
+          if (_elem) {
+            var _rect2 = _elem.getBoundingClientRect();
+            alignHeight = _rect2.height;
+            alignTop = _rect2.top - chartRect.top;
+            alignBottom = chartRect.bottom - _rect2.bottom;
+            padAlign = false;
           }
-        })();
+        } else if (base) {
+          var _rect3 = base.getBoundingClientRect();
+          alignHeight = _rect3.height;
+          alignTop = _rect3.top - chartRect.top;
+          alignBottom = chartRect.bottom - _rect3.bottom;
+        }
+
+        this.setState({
+          alignWidth: alignWidth,
+          alignLeft: alignLeft,
+          alignRight: alignRight,
+          alignHeight: alignHeight,
+          alignTop: alignTop,
+          alignBottom: alignBottom,
+          padAlign: padAlign
+        });
+
+        if (onMaxCount) {
+          (function () {
+            var maxCount = void 0;
+            if (vertical) {
+              maxCount = Math.floor(alignWidth / (4 * _utils.padding));
+            } else {
+              maxCount = Math.floor(alignHeight / (4 * _utils.padding));
+            }
+            if (maxCount !== _this2.state.maxCount) {
+              _this2.setState({ maxCount: maxCount }, function () {
+                onMaxCount(maxCount);
+              });
+            }
+          })();
+        }
       }
     }
   }, {
     key: 'render',
     value: function render() {
+      var _this3 = this;
+
       var _props2 = this.props;
       var a11yTitle = _props2.a11yTitle;
       var full = _props2.full;
@@ -349,8 +353,10 @@ var Chart = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        { ref: 'chart', className: classes.join(' '), role: 'group',
-          'aria-label': ariaLabel },
+        { ref: function ref(_ref) {
+            return _this3.chartRef = _ref;
+          }, 'aria-label': ariaLabel,
+          className: classes.join(' '), role: 'group' },
         children
       );
     }

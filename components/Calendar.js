@@ -309,7 +309,7 @@ var Calendar = function (_Component) {
         _KeyboardAccelerators2.default.startListeningToKeyboard(this, listeners);
 
         // If this is inside a FormField, place the drop in reference to it.
-        var control = (0, _DOM.findAncestor)(this.refs.component, '.' + FORM_FIELD) || this.refs.component;
+        var control = (0, _DOM.findAncestor)(this.componentRef, '.' + FORM_FIELD) || this.componentRef;
         this._drop = _Drop2.default.add(control, this._renderDrop(), { align: { top: 'bottom', left: 'left' } });
       } else {
 
@@ -434,6 +434,8 @@ var Calendar = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       var _props = this.props;
       var className = _props.className;
       var id = _props.id;
@@ -447,14 +449,11 @@ var Calendar = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        { ref: 'component', className: classes },
-        _react2.default.createElement('input', (0, _extends3.default)({
-          className: CLASS_ROOT + '__input',
-          id: id,
-          ref: 'calendarInput',
-          name: name,
-          value: value,
-          onChange: this._onInputChange
+        { ref: function ref(_ref) {
+            return _this2.componentRef = _ref;
+          }, className: classes },
+        _react2.default.createElement('input', (0, _extends3.default)({ className: CLASS_ROOT + '__input',
+          id: id, name: name, value: value, onChange: this._onInputChange
         }, props)),
         _react2.default.createElement(_Button2.default, {
           className: CLASS_ROOT + '__control',

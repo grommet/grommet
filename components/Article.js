@@ -128,6 +128,8 @@ var Article = function (_Component) {
       showControls: _this.props.controls,
       accessibilityTabbingCompatible: accessibilityTabbingCompatible
     };
+
+    _this.childRef = {};
     return _this;
   }
 
@@ -153,7 +155,7 @@ var Article = function (_Component) {
         document.addEventListener('wheel', this._onWheel);
         window.addEventListener('resize', this._onResize);
 
-        this._scrollParent = (0, _reactDom.findDOMNode)(this.refs.component);
+        this._scrollParent = (0, _reactDom.findDOMNode)(this.componentRef);
 
         this._checkControls();
 
@@ -165,7 +167,9 @@ var Article = function (_Component) {
       if (this.props.onProgress) {
         window.addEventListener('scroll', this._updateProgress);
 
-        if (this.props.direction === 'row') this._responsive = _Responsive2.default.start(this._onResponsive);
+        if (this.props.direction === 'row') {
+          this._responsive = _Responsive2.default.start(this._onResponsive);
+        }
       }
 
       this._onSelect(this.state.selectedIndex);
@@ -197,9 +201,9 @@ var Article = function (_Component) {
     key: '_checkPreviousNextControls',
     value: function _checkPreviousNextControls(currentScroll, nextProp, prevProp) {
       if (currentScroll > 0) {
-        var nextStepNode = (0, _reactDom.findDOMNode)(this.refs[this.state.selectedIndex + 1]);
+        var nextStepNode = (0, _reactDom.findDOMNode)(this.childRef[this.state.selectedIndex + 1]);
 
-        var previousStepNode = (0, _reactDom.findDOMNode)(this.refs[this.state.selectedIndex - 1]);
+        var previousStepNode = (0, _reactDom.findDOMNode)(this.childRef[this.state.selectedIndex - 1]);
 
         if (nextStepNode) {
           var nextStepPosition = nextStepNode.getBoundingClientRect()[nextProp] * (this.state.selectedIndex + 1);
@@ -222,10 +226,10 @@ var Article = function (_Component) {
     key: '_checkControls',
     value: function _checkControls() {
       if (this.props.direction === 'row') {
-        var currentScroll = this.refs.component.refs.boxContainer.scrollLeft;
+        var currentScroll = this.componentRef.boxContainerRef.scrollLeft;
         this._checkPreviousNextControls(currentScroll, 'left', 'right');
       } else {
-        var _currentScroll = this.refs.component.refs.boxContainer.scrollTop;
+        var _currentScroll = this.componentRef.boxContainerRef.scrollTop;
         this._checkPreviousNextControls(_currentScroll, 'top', 'bottom');
       }
     }
@@ -240,7 +244,7 @@ var Article = function (_Component) {
       var childCount = _react2.default.Children.count(children);
       var limit = 'row' === direction ? window.innerWidth : window.innerHeight;
       for (var index = 0; index < childCount; index += 1) {
-        var childElement = (0, _reactDom.findDOMNode)(this.refs[index]);
+        var childElement = (0, _reactDom.findDOMNode)(this.childRef[index]);
         var rect = childElement.getBoundingClientRect();
         // ignore small drifts of 10 pixels on either end
         if ('row' === direction) {
@@ -321,7 +325,7 @@ var Article = function (_Component) {
       if ('row' === this.props.direction) {
         var selectedIndex = this.state.selectedIndex;
 
-        var childElement = (0, _reactDom.findDOMNode)(this.refs[selectedIndex]);
+        var childElement = (0, _reactDom.findDOMNode)(this.childRef[selectedIndex]);
         var rect = childElement.getBoundingClientRect();
         if (event.target === this._scrollParent) {
           // scrolling Article
@@ -472,7 +476,7 @@ var Article = function (_Component) {
     value: function _onSelect(selectedIndex) {
       var _this7 = this;
 
-      var childElement = (0, _reactDom.findDOMNode)(this.refs[selectedIndex]);
+      var childElement = (0, _reactDom.findDOMNode)(this.childRef[selectedIndex]);
       var windowHeight = window.innerHeight + 24;
 
       if (childElement) {
@@ -495,7 +499,7 @@ var Article = function (_Component) {
             // Necessary to detect for Firefox or Edge to implement accessibility
             // tabbing
             if (_this7.props.direction === 'row' && _this7.state.accessibilityTabbingCompatible) {
-              _this7.refs.anchorStep.focus();
+              _this7.anchorStepRef.focus();
               _this7._updateHiddenElements();
             }
           });
@@ -529,7 +533,7 @@ var Article = function (_Component) {
       var _this8 = this;
 
       _react2.default.Children.forEach(this.props.children, function (element, index) {
-        var parent = (0, _reactDom.findDOMNode)(_this8.refs[index]);
+        var parent = (0, _reactDom.findDOMNode)(_this8.childRef[index]);
         if (parent && parent.contains(e.target)) {
           _this8._onSelect(index);
           return false;
@@ -561,7 +565,7 @@ var Article = function (_Component) {
   }, {
     key: '_updateHiddenElements',
     value: function _updateHiddenElements() {
-      var component = (0, _reactDom.findDOMNode)(this.refs.component);
+      var component = (0, _reactDom.findDOMNode)(this.componentRef);
       var children = component.children;
       for (var i = 0; i < children.length; i++) {
         var child = children[i];
@@ -575,11 +579,11 @@ var Article = function (_Component) {
   }, {
     key: '_updateProgress',
     value: function _updateProgress(event) {
-      var article = (0, _reactDom.findDOMNode)(this.refs.component);
+      var article = (0, _reactDom.findDOMNode)(this.componentRef);
       var articleRect = article.getBoundingClientRect();
 
       var offset = this.props.direction === 'column' ? Math.abs(articleRect.top) : Math.abs(articleRect.left);
-      var totalDistance = this.props.direction === 'column' ? window.innerHeight : this._getChildrenWidth(this.refs.component.refs.boxContainer.childNodes);
+      var totalDistance = this.props.direction === 'column' ? window.innerHeight : this._getChildrenWidth(this.componentRef.boxContainerRef.childNodes);
       var objectDistance = this.props.direction === 'column' ? articleRect.height : articleRect.width;
 
       // Covers row responding to column layout.
@@ -611,7 +615,7 @@ var Article = function (_Component) {
       if ('row' === this.props.direction) {
         if (!this.state.narrow || this.state.atBottom) {
           if (this.state.selectedIndex > 0) {
-            controls.push(_react2.default.createElement(_Button2.default, { key: 'previous', ref: 'previous',
+            controls.push(_react2.default.createElement(_Button2.default, { key: 'previous',
               plain: true, a11yTitle: a11yTitle.previous,
               className: CONTROL_CLASS_PREFIX + '-left',
               onClick: this._onPrevious, icon: _react2.default.createElement(_LinkPrevious2.default, {
@@ -620,7 +624,7 @@ var Article = function (_Component) {
                 size: 'large' }) }));
           }
           if (this.state.selectedIndex < childCount - 1) {
-            controls.push(_react2.default.createElement(_Button2.default, { key: 'next', ref: 'next',
+            controls.push(_react2.default.createElement(_Button2.default, { key: 'next',
               plain: true, a11yTitle: a11yTitle.next,
               className: CONTROL_CLASS_PREFIX + '-right',
               onClick: this._onNext, icon: _react2.default.createElement(_LinkNext2.default, { size: 'large',
@@ -632,7 +636,7 @@ var Article = function (_Component) {
         if (this.state.selectedIndex > 0) {
           controls.push(_react2.default.createElement(
             _Button2.default,
-            { key: 'previous', ref: 'previous',
+            { key: 'previous',
               plain: true, a11yTitle: a11yTitle.previous,
               className: CONTROL_CLASS_PREFIX + '-up',
               onClick: this._onPrevious },
@@ -642,7 +646,8 @@ var Article = function (_Component) {
         if (this.state.selectedIndex < childCount - 1) {
           controls.push(_react2.default.createElement(
             _Button2.default,
-            { key: 'next', ref: 'next', plain: true, a11yTitle: a11yTitle.next,
+            { key: 'next',
+              plain: true, a11yTitle: a11yTitle.next,
               className: CONTROL_CLASS_PREFIX + '-down',
               onClick: this._onNext },
             _react2.default.createElement(_Down2.default, { a11yTitle: 'article-down',
@@ -675,7 +680,10 @@ var Article = function (_Component) {
 
       var anchorStepNode = void 0;
       if (this.state.accessibilityTabbingCompatible) {
-        anchorStepNode = _react2.default.createElement('a', { tabIndex: '-1', 'aria-hidden': 'true', ref: 'anchorStep' });
+        anchorStepNode = _react2.default.createElement('a', { tabIndex: '-1', 'aria-hidden': 'true',
+          ref: function ref(_ref) {
+            return _this9.anchorStepRef = _ref;
+          } });
       }
 
       var children = this.props.children;
@@ -683,7 +691,9 @@ var Article = function (_Component) {
         children = _react.Children.map(this.props.children, function (element, index) {
           if (element) {
             var elementClone = _react2.default.cloneElement(element, {
-              ref: index
+              ref: function ref(_ref2) {
+                return _this9.childRef[index] = _ref2;
+              }
             });
 
             var elementNode = elementClone;
@@ -712,10 +722,12 @@ var Article = function (_Component) {
 
       return _react2.default.createElement(
         _Box2.default,
-        (0, _extends3.default)({}, restProps, boxProps, { ref: 'component', tag: 'article',
-          className: classes.join(' '), onFocus: this._onFocusChange,
-          onScroll: this._onScroll, onTouchStart: this._onTouchStart,
-          onTouchMove: this._onTouchMove, primary: this.props.primary }),
+        (0, _extends3.default)({}, restProps, boxProps, { ref: function ref(_ref3) {
+            return _this9.componentRef = _ref3;
+          },
+          tag: 'article', className: classes.join(' '), primary: this.props.primary,
+          onFocus: this._onFocusChange, onScroll: this._onScroll,
+          onTouchStart: this._onTouchStart, onTouchMove: this._onTouchMove }),
         anchorStepNode,
         children,
         controls

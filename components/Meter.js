@@ -200,9 +200,9 @@ var Meter = function (_Component) {
       }
 
       if ('right' === legendPlacement) {
-        if (this.refs.legend) {
-          var graphicHeight = this.refs.activeGraphic.offsetHeight;
-          var legendHeight = _reactDom2.default.findDOMNode(this.refs.legend).offsetHeight;
+        if (this.legendRef) {
+          var graphicHeight = this.activeGraphicRef.offsetHeight;
+          var legendHeight = _reactDom2.default.findDOMNode(this.legendRef).offsetHeight;
           this.setState({ tallLegend: legendHeight > graphicHeight });
         }
       }
@@ -494,6 +494,8 @@ var Meter = function (_Component) {
   }, {
     key: '_renderLegend',
     value: function _renderLegend() {
+      var _this2 = this;
+
       var _props = this.props;
       var legend = _props.legend;
       var units = _props.units;
@@ -502,13 +504,18 @@ var Meter = function (_Component) {
       var series = _state4.series;
 
       var total = (typeof legend === 'undefined' ? 'undefined' : (0, _typeof3.default)(legend)) === 'object' && legend.total;
-      return _react2.default.createElement(_Legend2.default, { ref: 'legend', className: CLASS_ROOT + '__legend',
+      return _react2.default.createElement(_Legend2.default, { ref: function ref(_ref) {
+          return _this2.legendRef = _ref;
+        },
+        className: CLASS_ROOT + '__legend',
         series: series, units: units, total: total,
         activeIndex: activeIndex, onActive: this._onActivate });
     }
   }, {
     key: 'render',
     value: function render() {
+      var _this3 = this;
+
       var _props2 = this.props;
       var active = _props2.active;
       var label = _props2.label;
@@ -618,7 +625,10 @@ var Meter = function (_Component) {
         { className: classes.join(' ') },
         _react2.default.createElement(
           'div',
-          { ref: 'activeGraphic', className: CLASS_ROOT + '__value-container' },
+          { ref: function ref(_ref2) {
+              return _this3.activeGraphicRef = _ref2;
+            },
+            className: CLASS_ROOT + '__value-container' },
           graphicContainer,
           labelElement
         ),

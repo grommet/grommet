@@ -95,7 +95,7 @@ var Table = function (_Component) {
         this._alignMirror();
       }
       if (this.props.onMore) {
-        this._scroll = _InfiniteScroll2.default.startListeningForScroll(this.refs.more, this.props.onMore);
+        this._scroll = _InfiniteScroll2.default.startListeningForScroll(this.moreRef, this.props.onMore);
       }
       this._adjustBodyCells();
       window.addEventListener('resize', this._onResize);
@@ -128,7 +128,7 @@ var Table = function (_Component) {
         this._alignMirror();
       }
       if (this.props.onMore && !this._scroll) {
-        this._scroll = _InfiniteScroll2.default.startListeningForScroll(this.refs.more, this.props.onMore);
+        this._scroll = _InfiniteScroll2.default.startListeningForScroll(this.moreRef, this.props.onMore);
       }
       this._adjustBodyCells();
     }
@@ -144,10 +144,12 @@ var Table = function (_Component) {
   }, {
     key: '_container',
     value: function _container() {
-      var containerElement = this.refs.table;
-      var tableBodies = containerElement.getElementsByTagName("TBODY");
-      if (tableBodies.length > 0) {
-        containerElement = tableBodies[0];
+      var containerElement = this.tableRef;
+      if (containerElement) {
+        var tableBodies = containerElement.getElementsByTagName("TBODY");
+        if (tableBodies.length > 0) {
+          containerElement = tableBodies[0];
+        }
       }
       return containerElement;
     }
@@ -191,19 +193,25 @@ var Table = function (_Component) {
   }, {
     key: '_adjustBodyCells',
     value: function _adjustBodyCells() {
+      var _this2 = this;
+
       // adjust table body cells to have link to the header
       // so that in responsive mode it displays the text as content in css.
       // IMPORTANT: non-text header cells, such as icon, are rendered as empty
       // headers.
-      var headerCells = this.refs.table.querySelectorAll('thead th');
-      if (headerCells.length > 0) {
-        var rows = this.refs.table.querySelectorAll('tbody tr');
+      if (this.tableRef) {
+        (function () {
+          var headerCells = _this2.tableRef.querySelectorAll('thead th');
+          if (headerCells.length > 0) {
+            var rows = _this2.tableRef.querySelectorAll('tbody tr');
 
-        [].forEach.call(rows, function (row) {
-          [].forEach.call(row.cells, function (cell, index) {
-            cell.setAttribute('data-th', headerCells[index].innerText);
-          });
-        });
+            [].forEach.call(rows, function (row) {
+              [].forEach.call(row.cells, function (cell, index) {
+                cell.setAttribute('data-th', headerCells[index].innerText);
+              });
+            });
+          }
+        })();
       }
     }
   }, {
@@ -218,8 +226,8 @@ var Table = function (_Component) {
     value: function _layout() {
       this._alignMirror();
 
-      var availableSize = this.refs.container.offsetWidth;
-      var numberOfCells = this.refs.table.querySelectorAll('thead th').length;
+      var availableSize = this.containerRef.offsetWidth;
+      var numberOfCells = this.table.querySelectorAll('thead th').lengthRef;
 
       if (numberOfCells * MIN_CELL_WIDTH > availableSize) {
         this.setState({ small: true });
@@ -230,9 +238,9 @@ var Table = function (_Component) {
   }, {
     key: '_buildMirror',
     value: function _buildMirror() {
-      var tableElement = this.refs.table;
+      var tableElement = this.tableRef;
       var cells = tableElement.querySelectorAll('thead tr th');
-      var mirrorElement = this.refs.mirror;
+      var mirrorElement = this.mirrorRef;
       if (mirrorElement) {
         var mirrorRow = mirrorElement.querySelectorAll('thead tr')[0];
         while (mirrorRow.hasChildNodes()) {
@@ -246,10 +254,10 @@ var Table = function (_Component) {
   }, {
     key: '_alignMirror',
     value: function _alignMirror() {
-      if (this.refs.mirror) {
-        var tableElement = this.refs.table;
+      if (this.mirrorRef) {
+        var tableElement = this.tableRef;
         var cells = tableElement.querySelectorAll('thead tr th');
-        var mirrorElement = this.refs.mirror;
+        var mirrorElement = this.mirrorRef;
         var mirrorCells = mirrorElement.querySelectorAll('thead tr th');
 
         var rect = tableElement.getBoundingClientRect();
@@ -268,7 +276,8 @@ var Table = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _classnames;
+      var _classnames,
+          _this3 = this;
 
       var classes = (0, _classnames3.default)(CLASS_ROOT, this.props.className, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--small', this.state.small), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--selectable', this.props.selectable), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--scrollable', this.props.scrollable), _classnames));
 
@@ -276,7 +285,10 @@ var Table = function (_Component) {
       if (this.props.scrollable) {
         mirror = _react2.default.createElement(
           'table',
-          { ref: 'mirror', className: CLASS_ROOT + '__mirror' },
+          { ref: function ref(_ref) {
+              return _this3.mirrorRef = _ref;
+            },
+            className: CLASS_ROOT + '__mirror' },
           _react2.default.createElement(
             'thead',
             null,
@@ -289,19 +301,25 @@ var Table = function (_Component) {
       if (this.props.onMore) {
         more = _react2.default.createElement(
           'div',
-          { ref: 'more', className: CLASS_ROOT + '__more' },
+          { ref: function ref(_ref2) {
+              return _this3.moreRef = _ref2;
+            }, className: CLASS_ROOT + '__more' },
           _react2.default.createElement(_Spinning2.default, null)
         );
       }
 
       return _react2.default.createElement(
         'div',
-        { ref: 'container', className: classes },
+        { ref: function ref(_ref4) {
+            return _this3.containerRef = _ref4;
+          }, className: classes },
         mirror,
         _react2.default.createElement(
           'table',
-          { ref: 'table', className: CLASS_ROOT + '__table',
-            onClick: this._onClick },
+          { ref: function ref(_ref3) {
+              return _this3.tableRef = _ref3;
+            },
+            className: CLASS_ROOT + '__table', onClick: this._onClick },
           this.props.children
         ),
         more

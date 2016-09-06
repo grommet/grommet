@@ -162,8 +162,8 @@ var MarkerLabel = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        { ref: 'markerLabel', id: this.props.id,
-          className: classes.join(' '), style: this.props.style },
+        { id: this.props.id, className: classes.join(' '),
+          style: this.props.style },
         firstItem,
         secondItem
       );

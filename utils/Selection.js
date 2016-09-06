@@ -23,9 +23,11 @@ function normalizeIndexes(selectedIndexes) {
 // Clears any selected items
 // options: {containerElement: , selectedClass: }
 function clearClass(options) {
-  var items = options.containerElement.querySelectorAll("." + options.selectedClass);
-  for (var i = 0; i < items.length; i++) {
-    items[i].classList.remove(options.selectedClass);
+  if (options && options.containerElement) {
+    var items = options.containerElement.querySelectorAll("." + options.selectedClass);
+    for (var i = 0; i < items.length; i++) {
+      items[i].classList.remove(options.selectedClass);
+    }
   }
 }
 
@@ -34,7 +36,7 @@ function clearClass(options) {
 //    selectedIndexes: []}
 function setClassFromIndexes(options) {
   clearClass(options);
-  if (options.selectedIndexes) {
+  if (options && options.containerElement && options.selectedIndexes) {
     (function () {
       var items = options.containerElement.querySelectorAll(options.childSelector);
       options.selectedIndexes.forEach(function (index) {

@@ -95,7 +95,7 @@ var Graph = function (_Component) {
       var height = _props.height;
       var width = _props.width;
 
-      var graph = this.refs.graph;
+      var graph = this.graphRef;
       var rect = graph.parentNode.getBoundingClientRect();
       this.setState({
         height: height || Math.floor(rect.height),
@@ -315,7 +315,9 @@ var Graph = function (_Component) {
 
       return _react2.default.createElement(
         'svg',
-        { ref: 'graph', className: classes.join(' '),
+        { ref: function ref(_ref) {
+            return _this2.graphRef = _ref;
+          }, className: classes.join(' '),
           viewBox: '0 0 ' + width + ' ' + height, preserveAspectRatio: 'none',
           role: 'img', 'aria-label': this._renderA11YTitle() },
         _react2.default.createElement(

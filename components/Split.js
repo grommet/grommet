@@ -115,7 +115,7 @@ var Split = function (_Component) {
   }, {
     key: '_layout',
     value: function _layout() {
-      var splitElement = this.refs.split;
+      var splitElement = this.splitRef;
       if (splitElement) {
         if (splitElement.offsetWidth < BREAK_WIDTH && this.props.showOnResponsive === 'priority') {
           this._setResponsive('single');
@@ -127,6 +127,8 @@ var Split = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       var priority = this.props.priority;
       var responsive = this.state.responsive;
 
@@ -157,7 +159,9 @@ var Split = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        { ref: 'split', className: classes.join(' ') },
+        { ref: function ref(_ref) {
+            return _this2.splitRef;
+          }, className: classes.join(' ') },
         children
       );
     }

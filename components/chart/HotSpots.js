@@ -182,7 +182,7 @@ var HotSpots = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        { ref: 'hotSpots', className: classes, style: { padding: _utils.padding },
+        { className: classes, style: { padding: _utils.padding },
           tabIndex: '0', onFocus: this._onHotSpotFocus,
           onBlur: this._onHotSpotBlur, role: 'group',
           'aria-label': hotSpotsLabel },

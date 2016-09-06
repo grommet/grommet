@@ -44,11 +44,11 @@ var _Responsive = require('../utils/Responsive');
 
 var _Responsive2 = _interopRequireDefault(_Responsive);
 
-var _Box = require('grommet/components/Box');
+var _Box = require('./Box');
 
 var _Box2 = _interopRequireDefault(_Box);
 
-var _Image = require('grommet/components/Image');
+var _Image = require('./Image');
 
 var _Image2 = _interopRequireDefault(_Image);
 
@@ -145,7 +145,7 @@ var Hero = function (_Component) {
       } else if (backgroundVideo) {
         backgroundMarkup = _react2.default.createElement(
           _Box2.default,
-          { className: CLASS_ROOT + "__background " + CLASS_ROOT + "__background-video", ref: 'video' },
+          { className: CLASS_ROOT + "__background " + CLASS_ROOT + "__background-video" },
           backgroundVideo
         );
       }

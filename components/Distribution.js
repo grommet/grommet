@@ -324,7 +324,7 @@ var Distribution = function (_Component) {
         this.setState({ legendPosition: 'right' });
       }
 
-      var container = this.refs.container;
+      var container = this.containerRef;
       var rect = container.getBoundingClientRect();
       var width = Math.round(rect.width);
       var height = Math.round(rect.height);
@@ -343,9 +343,9 @@ var Distribution = function (_Component) {
   }, {
     key: '_onPreviousDistribution',
     value: function _onPreviousDistribution(event) {
-      if (document.activeElement === this.refs.distribution) {
+      if (document.activeElement === this.distributionRef) {
         event.preventDefault();
-        var totalDistributionCount = _reactDom2.default.findDOMNode(this.refs.distributionItems).childNodes.length;
+        var totalDistributionCount = _reactDom2.default.findDOMNode(this.distributionItemsRef).childNodes.length;
 
         if (this.state.activeIndex - 1 < 0) {
           this._onActivate(totalDistributionCount - 1);
@@ -360,9 +360,9 @@ var Distribution = function (_Component) {
   }, {
     key: '_onNextDistribution',
     value: function _onNextDistribution(event) {
-      if (document.activeElement === this.refs.distribution) {
+      if (document.activeElement === this.distributionRef) {
         event.preventDefault();
-        var totalDistributionCount = _reactDom2.default.findDOMNode(this.refs.distributionItems).childNodes.length;
+        var totalDistributionCount = _reactDom2.default.findDOMNode(this.distributionItemsRef).childNodes.length;
 
         if (this.state.activeIndex + 1 >= totalDistributionCount) {
           this._onActivate(0);
@@ -377,9 +377,9 @@ var Distribution = function (_Component) {
   }, {
     key: '_onEnter',
     value: function _onEnter(event) {
-      if (document.activeElement === this.refs.distribution) {
-        if (this.refs.activeDistribution) {
-          var index = this.refs.activeDistribution.getAttribute('data-index');
+      if (document.activeElement === this.distributionRef) {
+        if (this.activeDistributionRef) {
+          var index = this.activeDistributionRef.getAttribute('data-index');
 
           var activeDistribution = this.props.series.filter(function (item) {
             return item.value > 0;
@@ -405,10 +405,13 @@ var Distribution = function (_Component) {
   }, {
     key: '_renderLegend',
     value: function _renderLegend() {
-      return _react2.default.createElement(_Legend2.default, { ref: 'legend', className: CLASS_ROOT + "__legend",
-        series: this.props.series,
-        units: this.props.units,
-        activeIndex: this.state.activeIndex,
+      var _this3 = this;
+
+      return _react2.default.createElement(_Legend2.default, { ref: function ref(_ref) {
+          return _this3.legendRef = _ref;
+        },
+        className: CLASS_ROOT + "__legend", series: this.props.series,
+        units: this.props.units, activeIndex: this.state.activeIndex,
         onActive: this._onActivate });
     }
   }, {
@@ -506,6 +509,8 @@ var Distribution = function (_Component) {
   }, {
     key: '_renderItem',
     value: function _renderItem(datum, rect, index) {
+      var _this4 = this;
+
       var itemClass = CLASS_ROOT + '__item';
       var itemClasses = [itemClass];
 
@@ -513,9 +518,11 @@ var Distribution = function (_Component) {
         itemClasses.push(itemClass + '--clickable');
       }
 
-      var activeDistribution = void 0;
+      var activeDistributionRef = void 0;
       if (index === this.state.activeIndex) {
-        activeDistribution = 'activeDistribution';
+        activeDistributionRef = function activeDistributionRef(ref) {
+          return _this4.activeDistributionRef = ref;
+        };
       }
 
       var colorIndex = this._itemColorIndex(datum, index);
@@ -532,7 +539,7 @@ var Distribution = function (_Component) {
         { key: index, className: itemClasses.join(' '),
           onMouseOver: this._onActivate.bind(this, index),
           onMouseLeave: this._onDeactivate,
-          ref: activeDistribution, role: 'presentation',
+          ref: activeDistributionRef, role: 'presentation',
           'data-index': index, onClick: datum.onClick },
         contents
       );
@@ -540,19 +547,19 @@ var Distribution = function (_Component) {
   }, {
     key: '_renderBoxes',
     value: function _renderBoxes() {
-      var _this3 = this;
+      var _this5 = this;
 
       return this.state.items.map(function (item, index) {
-        return _this3._renderItem(item.datum, item.boxRect, index);
+        return _this5._renderItem(item.datum, item.boxRect, index);
       }, this);
     }
   }, {
     key: '_renderLabels',
     value: function _renderLabels() {
-      var _this4 = this;
+      var _this6 = this;
 
       return this.state.items.map(function (item, index) {
-        return _this4._renderItemLabel(item.datum, item.labelRect, index);
+        return _this6._renderItemLabel(item.datum, item.labelRect, index);
       }, this);
     }
   }, {
@@ -573,6 +580,8 @@ var Distribution = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _this7 = this;
+
       var classes = [CLASS_ROOT];
       classes.push(CLASS_ROOT + '--legend-' + this.state.legendPosition);
       if (this.props.size) {
@@ -641,10 +650,15 @@ var Distribution = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        { ref: 'container', className: classes.join(' ') },
+        { ref: function ref(_ref4) {
+            return _this7.containerRef = _ref4;
+          }, className: classes.join(' ') },
         _react2.default.createElement(
           'svg',
-          { ref: 'distribution', className: CLASS_ROOT + '__graphic',
+          { ref: function ref(_ref2) {
+              return _this7.distributionRef = _ref2;
+            },
+            className: CLASS_ROOT + '__graphic',
             viewBox: '0 0 ' + this.state.width + ' ' + this.state.height,
             preserveAspectRatio: 'none', tabIndex: '0', role: role,
             'aria-activedescendant': activeDescendant,
@@ -656,7 +670,10 @@ var Distribution = function (_Component) {
         ),
         _react2.default.createElement(
           'div',
-          { ref: 'distributionItems', className: CLASS_ROOT + '__labels' },
+          { ref: function ref(_ref3) {
+              return _this7.distributionItemsRef = _ref3;
+            },
+            className: CLASS_ROOT + '__labels' },
           labels
         ),
         legend

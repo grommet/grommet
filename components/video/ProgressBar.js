@@ -78,7 +78,6 @@ var ProgressBar = function (_Component) {
             width: progress + '%'
           } }),
         _react2.default.createElement('input', { className: CLASS_ROOT + '__progress-bar-input',
-          ref: 'input',
           onChange: this._onProgressBarChange,
           type: 'range',
           min: '0',

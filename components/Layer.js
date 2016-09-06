@@ -97,14 +97,14 @@ var LayerContents = function (_Component) {
   }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
-      this.refs.anchorStep.focus();
+      this.anchorStepRef.focus();
 
       this._keyboardHandlers = {
         tab: this._processTab
       };
 
       if (this.props.onClose) {
-        var layerParent = this.refs.container.parentNode;
+        var layerParent = this.containerRef.parentNode;
         this._keyboardHandlers.esc = this.props.onClose;
         layerParent.addEventListener('click', this._onClick.bind(this));
       }
@@ -121,7 +121,7 @@ var LayerContents = function (_Component) {
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
-      var layerParent = this.refs.container.parentNode;
+      var layerParent = this.containerRef.parentNode;
 
       _KeyboardAccelerators2.default.stopListeningToKeyboard(this, this._keyboardHandlers);
 
@@ -132,7 +132,7 @@ var LayerContents = function (_Component) {
   }, {
     key: '_onClick',
     value: function _onClick(event) {
-      var layerContents = this.refs.container;
+      var layerContents = this.containerRef;
 
       if (layerContents && !layerContents.contains(event.target)) {
         this.props.onClose();
@@ -141,7 +141,7 @@ var LayerContents = function (_Component) {
   }, {
     key: '_processTab',
     value: function _processTab(event) {
-      var items = this.refs.container.getElementsByTagName('*');
+      var items = this.containerRef.getElementsByTagName('*');
       items = _DOM2.default.filterByFocusable(items);
 
       if (!items || items.length === 0) {
@@ -161,6 +161,8 @@ var LayerContents = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       var closer = null;
 
       if ((0, _typeof3.default)(this.props.closer) === 'object') {
@@ -183,9 +185,14 @@ var LayerContents = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        { ref: 'container', className: CLASS_ROOT + "__container" },
+        { ref: function ref(_ref2) {
+            return _this2.containerRef = _ref2;
+          },
+          className: CLASS_ROOT + "__container" },
         _react2.default.createElement('a', { tabIndex: '-1', 'aria-hidden': 'true',
-          ref: 'anchorStep' }),
+          ref: function ref(_ref) {
+            return _this2.anchorStepRef = _ref;
+          } }),
         closer,
         this.props.children
       );
@@ -243,14 +250,14 @@ var Layer = function (_Component2) {
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
-      var _this3 = this;
+      var _this4 = this;
 
       if (this._originalFocusedElement) {
         if (this._originalFocusedElement.focus) {
           // wait for the fixed positining to come back to normal
           // see layer styling for reference
           setTimeout(function () {
-            _this3._originalFocusedElement.focus();
+            _this4._originalFocusedElement.focus();
           }, 0);
         } else if (this._originalFocusedElement.parentNode && this._originalFocusedElement.parentNode.focus) {
           // required for IE11 and Edge

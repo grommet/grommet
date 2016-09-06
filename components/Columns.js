@@ -79,27 +79,31 @@ var Columns = function (_Component) {
   }, {
     key: '_layout',
     value: function _layout() {
-      var container = this.refs.container;
-      var children = _react2.default.Children.toArray(this.props.children);
-      var count = 1;
-      var child = container.childNodes[0];
-      if (child) {
-        var rect = container.getBoundingClientRect();
-        var childRect = child.getBoundingClientRect();
-        var widestCount = Math.floor(rect.width / childRect.width);
-        var childrenPerColumn = Math.ceil(children.length / widestCount);
-        count = Math.ceil(children.length / childrenPerColumn);
-      }
+      var container = this.containerRef;
+      if (container) {
+        var children = _react2.default.Children.toArray(this.props.children);
+        var count = 1;
+        var child = container.childNodes[0];
+        if (child) {
+          var rect = container.getBoundingClientRect();
+          var childRect = child.getBoundingClientRect();
+          var widestCount = Math.floor(rect.width / childRect.width);
+          var childrenPerColumn = Math.ceil(children.length / widestCount);
+          count = Math.ceil(children.length / childrenPerColumn);
+        }
 
-      if (count === 0) {
-        count = 1;
-      }
+        if (count === 0) {
+          count = 1;
+        }
 
-      this.setState({ count: count });
+        this.setState({ count: count });
+      }
     }
   }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       var classes = (0, _classnames3.default)(CLASS_ROOT, this.props.className, (0, _defineProperty3.default)({}, CLASS_ROOT + '--' + this.props.size, this.props.size));
 
       var children = _react2.default.Children.toArray(this.props.children);
@@ -121,7 +125,9 @@ var Columns = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        { ref: 'container', className: classes },
+        { ref: function ref(_ref) {
+            return _this2.containerRef = _ref;
+          }, className: classes },
         columns
       );
     }

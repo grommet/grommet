@@ -197,8 +197,7 @@ var SkipLinks = function (_Component) {
         { id: 'skip-link-layer', hidden: !this.state.showLayer, align: 'top' },
         _react2.default.createElement(
           _Box2.default,
-          { ref: 'skipLinksLayer',
-            pad: { horizontal: 'small', vertical: 'medium' } },
+          { pad: { horizontal: 'small', vertical: 'medium' } },
           _react2.default.createElement(
             'h2',
             null,

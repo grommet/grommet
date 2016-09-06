@@ -76,14 +76,14 @@ var NumberInput = function (_Component) {
         event.initEvent('change', true, true);
       }
       // We use dispatchEvent to have the browser fill out the event fully.
-      this.refs.input.dispatchEvent(event);
+      this.inputRef.dispatchEvent(event);
       // Manually dispatched events aren't delivered by React, so we notify too.
       this.props.onChange(event);
     }
   }, {
     key: '_onAdd',
     value: function _onAdd() {
-      var input = this.refs.input;
+      var input = this.inputRef;
       try {
         input.stepUp();
       } catch (e) {
@@ -100,7 +100,7 @@ var NumberInput = function (_Component) {
   }, {
     key: '_onSubtract',
     value: function _onSubtract() {
-      var input = this.refs.input;
+      var input = this.inputRef;
       try {
         input.stepDown();
       } catch (e) {
@@ -117,6 +117,8 @@ var NumberInput = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       var classes = [CLASS_ROOT];
       var labelId = 'number-label';
       if (this.props.disabled) {
@@ -133,7 +135,10 @@ var NumberInput = function (_Component) {
         { className: classes.join(' '),
           'aria-describedby': this.props.ariaDescribedby,
           'aria-labelledby': labelId },
-        _react2.default.createElement('input', { ref: 'input', tabIndex: '0', className: CLASS_ROOT + "__input",
+        _react2.default.createElement('input', { ref: function ref(_ref) {
+            return _this2.inputRef = _ref;
+          },
+          tabIndex: '0', className: CLASS_ROOT + "__input",
           id: this.props.id, name: this.props.name, type: 'number',
           disabled: this.props.disabled,
           value: this.props.value,

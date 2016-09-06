@@ -135,7 +135,7 @@ var SearchInput = function (_Component) {
         _KeyboardAccelerators2.default.startListeningToKeyboard(this, activeKeyboardHandlers);
 
         // If this is inside a FormField, place the drop in reference to it.
-        var control = (0, _DOM.findAncestor)(this.refs.component, FORM_FIELD) || this.refs.component;
+        var control = (0, _DOM.findAncestor)(this.componentRef, FORM_FIELD) || this.componentRef;
         this._drop = _Drop2.default.add(control, this._renderDrop(), { align: { top: 'bottom', left: 'left' } });
       } else if (this.state.dropActive && prevState.dropActive) {
         this._drop.render(this._renderDrop());
@@ -164,7 +164,7 @@ var SearchInput = function (_Component) {
         event.initEvent('change', true, true);
       }
       // We use dispatchEvent to have the browser fill out the event fully.
-      this.refs.input.dispatchEvent(event);
+      this.inputRef.dispatchEvent(event);
       // Manually dispatched events aren't delivered by React, so we notify too.
       this.props.onDOMChange(event);
     }
@@ -224,7 +224,7 @@ var SearchInput = function (_Component) {
         var suggestion = this.props.suggestions[this.state.activeSuggestionIndex];
         this.setState({ value: suggestion });
         if (this.props.onSelect) {
-          this.props.onSelect({ target: this.refs.input, suggestion: suggestion });
+          this.props.onSelect({ target: this.inputRef, suggestion: suggestion });
         }
       }
     }
@@ -233,7 +233,7 @@ var SearchInput = function (_Component) {
     value: function _onClickSuggestion(suggestion) {
       this.setState({ value: suggestion, dropActive: false });
       if (this.props.onSelect) {
-        this.props.onSelect({ target: this.refs.input, suggestion: suggestion });
+        this.props.onSelect({ target: this.inputRef, suggestion: suggestion });
       }
     }
   }, {
@@ -247,7 +247,7 @@ var SearchInput = function (_Component) {
       });
       // delay to wait out subsequent render after state change
       setTimeout(function () {
-        _this2.refs.input.select();
+        _this2.inputRef.select();
       }, 10);
     }
   }, {
@@ -287,12 +287,19 @@ var SearchInput = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _this3 = this;
+
       var classes = (0, _classnames4.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--active', this.state.active), this.props.className);
 
       return _react2.default.createElement(
         'div',
-        { ref: 'component', className: classes },
-        _react2.default.createElement('input', { ref: 'input', className: CLASS_ROOT + '__input',
+        { ref: function ref(_ref2) {
+            return _this3.componentRef = _ref2;
+          }, className: classes },
+        _react2.default.createElement('input', { ref: function ref(_ref) {
+            return _this3.inputRef = _ref;
+          },
+          className: CLASS_ROOT + '__input',
           id: this.props.id, name: this.props.name,
           value: this._renderLabel(this.props.value),
           defaultValue: this._renderLabel(this.props.defaultValue),

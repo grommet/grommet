@@ -57,12 +57,14 @@ var FormField = function (_Component) {
   (0, _createClass3.default)(FormField, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      var contentsElement = this.refs.contents;
-      var inputElements = contentsElement.querySelectorAll('input, textarea, select');
-      if (inputElements.length === 1) {
-        this._inputElement = inputElements[0];
-        this._inputElement.addEventListener('focus', this._onFocus);
-        this._inputElement.addEventListener('blur', this._onBlur);
+      var contentsElement = this.contentsRef;
+      if (contentsElement) {
+        var inputElements = contentsElement.querySelectorAll('input, textarea, select');
+        if (inputElements.length === 1) {
+          this._inputElement = inputElements[0];
+          this._inputElement.addEventListener('focus', this._onFocus);
+          this._inputElement.addEventListener('blur', this._onBlur);
+        }
       }
     }
   }, {
@@ -94,6 +96,8 @@ var FormField = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       var classes = [CLASS_ROOT];
       if (this.state.focus) {
         classes.push(CLASS_ROOT + "--focus");
@@ -152,7 +156,10 @@ var FormField = function (_Component) {
         help,
         _react2.default.createElement(
           'span',
-          { ref: 'contents', className: CLASS_ROOT + "__contents" },
+          { ref: function ref(_ref) {
+              return _this2.contentsRef = _ref;
+            },
+            className: CLASS_ROOT + "__contents" },
           this.props.children
         )
       );

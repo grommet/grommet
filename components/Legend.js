@@ -70,7 +70,7 @@ var Legend = function (_Component) {
     key: 'componentDidUpdate',
     value: function componentDidUpdate() {
       if (this.props.announce) {
-        (0, _Announcer.announce)(this.refs.legend.textContent);
+        (0, _Announcer.announce)(this.legendRef.textContent);
       }
     }
   }, {
@@ -89,6 +89,8 @@ var Legend = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       var classes = [CLASS_ROOT];
       if (this.props.series.length === 1) {
         classes.push(CLASS_ROOT + "--single");
@@ -232,7 +234,10 @@ var Legend = function (_Component) {
 
       return _react2.default.createElement(
         'ol',
-        { ref: 'legend', className: classes.join(' '), role: 'presentation' },
+        { ref: function ref(_ref) {
+            return _this2.legendRef = _ref;
+          },
+          className: classes.join(' '), role: 'presentation' },
         items.reverse(),
         total
       );

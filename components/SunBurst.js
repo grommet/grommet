@@ -69,6 +69,8 @@ var SunBurst = function (_Component) {
     _this._onSunBurstClick = _this._onSunBurstClick.bind(_this);
 
     _this.state = { height: 100, width: 100, activeSunBurst: [-1] };
+
+    _this.sunBurstPaths = {};
     return _this;
   }
 
@@ -115,7 +117,7 @@ var SunBurst = function (_Component) {
 
       previousSunBurst[previousSunBurst.length - 1] -= 1;
       var id = previousSunBurst.join(',');
-      if (this.refs[id]) {
+      if (this.sunBurstPaths[id]) {
         onActive(previousSunBurst);
         this.setState({ activeSunBurst: previousSunBurst });
       }
@@ -132,7 +134,7 @@ var SunBurst = function (_Component) {
       var parentSunBurst = this.state.activeSunBurst.slice(0, this.state.activeSunBurst.length - 1);
 
       var id = parentSunBurst.join(',');
-      if (this.refs[id]) {
+      if (this.sunBurstPaths[id]) {
         onActive(parentSunBurst);
         this.setState({ activeSunBurst: parentSunBurst });
       }
@@ -150,7 +152,7 @@ var SunBurst = function (_Component) {
       childSunBurst.push(0);
 
       var id = childSunBurst.join(',');
-      if (this.refs[id]) {
+      if (this.sunBurstPaths[id]) {
         onActive(childSunBurst);
         this.setState({ activeSunBurst: childSunBurst });
       }
@@ -167,7 +169,7 @@ var SunBurst = function (_Component) {
 
       nextSunBurst[nextSunBurst.length - 1] += 1;
       var id = nextSunBurst.join(',');
-      if (this.refs[id]) {
+      if (this.sunBurstPaths[id]) {
         onActive(nextSunBurst);
         this.setState({ activeSunBurst: nextSunBurst });
       }
@@ -182,7 +184,7 @@ var SunBurst = function (_Component) {
       var activeSunBurst = this.state.activeSunBurst;
 
 
-      if (this.refs[activeSunBurst.join(',')] && onClick) {
+      if (this.sunBurstPaths[activeSunBurst.join(',')] && onClick) {
         onClick(activeSunBurst);
       }
     }
@@ -196,7 +198,7 @@ var SunBurst = function (_Component) {
   }, {
     key: '_layout',
     value: function _layout() {
-      var rect = this.refs.svg.getBoundingClientRect();
+      var rect = this.svgRef.getBoundingClientRect();
       if (rect.width !== this.state.width || rect.height !== this.state.height) {
         this.setState({ height: rect.height, width: rect.width });
       }
@@ -242,7 +244,10 @@ var SunBurst = function (_Component) {
 
         var id = datumPath.join(',');
 
-        result.push(_react2.default.createElement('path', { ref: id, key: id, className: className.join(' '),
+        result.push(_react2.default.createElement('path', { ref: function ref(_ref) {
+            return _this2.sunBurstPaths[id] = _ref;
+          }, id: id, key: id,
+          className: className.join(' '),
           fill: 'none', strokeWidth: unit * 2, d: commands,
           'aria-label': datum.children ? undefined : datum.value,
           role: datum.children ? undefined : 'row',
@@ -274,6 +279,8 @@ var SunBurst = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _this3 = this;
+
       var _props2 = this.props;
       var a11yTitle = _props2.a11yTitle;
       var active = _props2.active;
@@ -318,7 +325,9 @@ var SunBurst = function (_Component) {
         { className: CLASS_ROOT + '__container' },
         _react2.default.createElement(
           'svg',
-          { ref: 'svg', className: classes.join(' '),
+          { ref: function ref(_ref2) {
+              return _this3.svgRef = _ref2;
+            }, className: classes.join(' '),
             viewBox: '0 0 ' + width + ' ' + height, role: 'group',
             'aria-label': sunBurstLabel, tabIndex: '0',
             onFocus: this._onSunBurstFocus, onBlur: this._onSunBurstBlur },

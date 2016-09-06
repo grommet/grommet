@@ -142,7 +142,7 @@ var MenuDrop = function (_Component) {
       };
       _KeyboardAccelerators2.default.startListeningToKeyboard(this, this._keyboardHandlers);
 
-      var container = _reactDom2.default.findDOMNode(this.refs.navContainer);
+      var container = _reactDom2.default.findDOMNode(this.navContainerRef);
       var menuItems = container.childNodes;
       for (var i = 0; i < menuItems.length; i++) {
         var classes = menuItems[i].className.toString();
@@ -174,7 +174,7 @@ var MenuDrop = function (_Component) {
   }, {
     key: '_processTab',
     value: function _processTab(event) {
-      var container = _reactDom2.default.findDOMNode(this.refs.menuDrop);
+      var container = _reactDom2.default.findDOMNode(this.menuDropRef);
       var items = container.getElementsByTagName('*');
       items = _DOM2.default.filterByFocusable(items);
 
@@ -196,7 +196,7 @@ var MenuDrop = function (_Component) {
     key: '_onUpKeyPress',
     value: function _onUpKeyPress(event) {
       event.preventDefault();
-      var container = _reactDom2.default.findDOMNode(this.refs.navContainer);
+      var container = _reactDom2.default.findDOMNode(this.navContainerRef);
       var menuItems = container.childNodes;
       if (!this.activeMenuItem) {
         var lastMenuItem = menuItems[menuItems.length - 1];
@@ -227,7 +227,7 @@ var MenuDrop = function (_Component) {
     key: '_onDownKeyPress',
     value: function _onDownKeyPress(event) {
       event.preventDefault();
-      var container = _reactDom2.default.findDOMNode(this.refs.navContainer);
+      var container = _reactDom2.default.findDOMNode(this.navContainerRef);
       var menuItems = container.childNodes;
       if (!this.activeMenuItem) {
         this.activeMenuItem = menuItems[0];
@@ -256,7 +256,8 @@ var MenuDrop = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _classnames;
+      var _this2 = this,
+          _classnames;
 
       var _props = this.props;
       var dropAlign = _props.dropAlign;
@@ -285,7 +286,9 @@ var MenuDrop = function (_Component) {
 
       var contents = [_react2.default.cloneElement(control, { key: 'control', fill: true }), _react2.default.createElement(
         _Box2.default,
-        (0, _extends3.default)({}, boxProps, { key: 'nav', ref: 'navContainer',
+        (0, _extends3.default)({}, boxProps, { key: 'nav', ref: function ref(_ref) {
+            return _this2.navContainerRef = _ref;
+          },
           role: 'menu', tag: 'nav', className: CLASS_ROOT + '__contents',
           primary: false }),
         children
@@ -299,8 +302,10 @@ var MenuDrop = function (_Component) {
 
       return _react2.default.createElement(
         _Box2.default,
-        { ref: 'menuDrop', id: id, className: classes, colorIndex: colorIndex,
-          onClick: onClick },
+        { ref: function ref(_ref2) {
+            return _this2.menuDropRef = _ref2;
+          }, id: id, className: classes,
+          colorIndex: colorIndex, onClick: onClick },
         contents
       );
     }
@@ -334,14 +339,14 @@ var Menu = function (_Component2) {
   function Menu(props, context) {
     (0, _classCallCheck3.default)(this, Menu);
 
-    var _this2 = (0, _possibleConstructorReturn3.default)(this, (Menu.__proto__ || (0, _getPrototypeOf2.default)(Menu)).call(this, props, context));
+    var _this3 = (0, _possibleConstructorReturn3.default)(this, (Menu.__proto__ || (0, _getPrototypeOf2.default)(Menu)).call(this, props, context));
 
-    _this2._onOpen = _this2._onOpen.bind(_this2);
-    _this2._onClose = _this2._onClose.bind(_this2);
-    _this2._onSink = _this2._onSink.bind(_this2);
-    _this2._onResponsive = _this2._onResponsive.bind(_this2);
-    _this2._onFocusControl = _this2._onFocusControl.bind(_this2);
-    _this2._onBlurControl = _this2._onBlurControl.bind(_this2);
+    _this3._onOpen = _this3._onOpen.bind(_this3);
+    _this3._onClose = _this3._onClose.bind(_this3);
+    _this3._onSink = _this3._onSink.bind(_this3);
+    _this3._onResponsive = _this3._onResponsive.bind(_this3);
+    _this3._onFocusControl = _this3._onFocusControl.bind(_this3);
+    _this3._onBlurControl = _this3._onBlurControl.bind(_this3);
 
     var inline = void 0;
     if (props.hasOwnProperty('inline')) {
@@ -355,7 +360,7 @@ var Menu = function (_Component2) {
     } else {
       responsive = inline && 'row' === props.direction;
     }
-    _this2.state = {
+    _this3.state = {
       // state may be 'collapsed', 'focused' or 'expanded' (active).
       state: 'collapsed',
       initialInline: inline,
@@ -363,14 +368,14 @@ var Menu = function (_Component2) {
       responsive: responsive,
       dropId: 'menuDrop'
     };
-    return _this2;
+    return _this3;
   }
 
   (0, _createClass3.default)(Menu, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      if (this.refs.control) {
-        var controlElement = this.refs.control.firstChild;
+      if (this.controlRef) {
+        var controlElement = this.controlRef.firstChild;
         this.setState({
           dropId: 'menu-drop-' + _DOM2.default.generateId(controlElement),
           controlHeight: controlElement.clientHeight
@@ -419,7 +424,7 @@ var Menu = function (_Component2) {
             _KeyboardAccelerators2.default.stopListeningToKeyboard(this, focusedKeyboardHandlers);
             _KeyboardAccelerators2.default.startListeningToKeyboard(this, activeKeyboardHandlers);
             document.addEventListener('click', this._onClose);
-            this._drop = _Drop2.default.add(this.refs.control, this._renderMenuDrop(), {
+            this._drop = _Drop2.default.add(this.controlRef, this._renderMenuDrop(), {
               align: this.props.dropAlign,
               colorIndex: this.props.dropColorIndex
             });
@@ -546,7 +551,8 @@ var Menu = function (_Component2) {
   }, {
     key: 'render',
     value: function render() {
-      var _classnames2;
+      var _classnames2,
+          _this4 = this;
 
       var classes = (0, _classnames4.default)(CLASS_ROOT, this.props.className, (_classnames2 = {}, (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--' + this.props.direction, this.props.direction), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--' + this.props.size, this.props.size), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--primary', this.props.primary), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--inline', this.state.inline), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--explode', 'explode' === this.state.inline), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--controlled', !this.state.inline), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '__control', !this.state.inline), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--labelled', !this.state.inline && this.props.label), _classnames2));
 
@@ -576,7 +582,9 @@ var Menu = function (_Component2) {
 
         return _react2.default.createElement(
           'div',
-          { ref: 'control' },
+          { ref: function ref(_ref3) {
+              return _this4.controlRef = _ref3;
+            } },
           _react2.default.createElement(
             _Button2.default,
             { plain: true, id: this.props.id,

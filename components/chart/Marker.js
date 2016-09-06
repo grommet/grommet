@@ -62,7 +62,7 @@ var Marker = function (_Component) {
   (0, _createClass3.default)(Marker, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      this._size.start(this.refs.svg);
+      this._size.start(this.svgRef);
     }
   }, {
     key: 'componentWillReceiveProps',
@@ -86,6 +86,8 @@ var Marker = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       var _props = this.props;
       var colorIndex = _props.colorIndex;
       var count = _props.count;
@@ -143,7 +145,9 @@ var Marker = function (_Component) {
 
       return _react2.default.createElement(
         'svg',
-        { ref: 'svg', className: classes.join(' '),
+        { ref: function ref(_ref) {
+            return _this2.svgRef = _ref;
+          }, className: classes.join(' '),
           viewBox: '0 0 ' + width + ' ' + height, 'aria-hidden': 'true',
           preserveAspectRatio: 'none' },
         path

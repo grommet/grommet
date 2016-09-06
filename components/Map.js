@@ -99,8 +99,8 @@ var ResourceMap = function (_Component) {
 
       var vertical = this.props.vertical;
 
-      var canvasElement = this.refs.canvas;
-      var highlightCanvasElement = this.refs.highlightCanvas;
+      var canvasElement = this.canvasRef;
+      var highlightCanvasElement = this.highlightRef;
       // don't draw if we don't have a canvas to draw on, such as a unit test
       if (canvasElement.getContext) {
         (function () {
@@ -158,12 +158,14 @@ var ResourceMap = function (_Component) {
   }, {
     key: '_layout',
     value: function _layout() {
-      var mapElement = this.refs.map;
-      if (mapElement.scrollWidth !== this.state.canvasWidth || mapElement.scrollHeight !== this.state.canvasHeight) {
-        this.setState({
-          canvasWidth: mapElement.scrollWidth,
-          canvasHeight: mapElement.scrollHeight
-        });
+      var mapElement = this.mapRef;
+      if (mapElement) {
+        if (mapElement.scrollWidth !== this.state.canvasWidth || mapElement.scrollHeight !== this.state.canvasHeight) {
+          this.setState({
+            canvasWidth: mapElement.scrollWidth,
+            canvasHeight: mapElement.scrollHeight
+          });
+        }
       }
     }
   }, {
@@ -181,7 +183,7 @@ var ResourceMap = function (_Component) {
   }, {
     key: '_onLeave',
     value: function _onLeave() {
-      this.setState({ activeId: null });
+      this.setState({ activeId: undefined });
     }
   }, {
     key: '_renderItems',
@@ -230,6 +232,8 @@ var ResourceMap = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _this5 = this;
+
       var _props = this.props;
       var data = _props.data;
       var vertical = _props.vertical;
@@ -252,10 +256,16 @@ var ResourceMap = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        { ref: 'map', className: className.join(' ') },
-        _react2.default.createElement('canvas', { ref: 'canvas', className: CLASS_ROOT + '__canvas',
-          width: canvasWidth, height: canvasHeight }),
-        _react2.default.createElement('canvas', { ref: 'highlightCanvas',
+        { ref: function ref(_ref3) {
+            return _this5.mapRef = _ref3;
+          }, className: className.join(' ') },
+        _react2.default.createElement('canvas', { ref: function ref(_ref) {
+            return _this5.canvasRef = _ref;
+          }, width: canvasWidth,
+          height: canvasHeight, className: CLASS_ROOT + '__canvas' }),
+        _react2.default.createElement('canvas', { ref: function ref(_ref2) {
+            return _this5.highlightRef = _ref2;
+          },
           className: CLASS_ROOT + '__canvas ' + CLASS_ROOT + '__canvas--highlight',
           width: canvasWidth, height: canvasHeight }),
         _react2.default.createElement(

@@ -202,7 +202,7 @@ var Graphic = function (_Component) {
       event.preventDefault();
       var activeIndex = this.props.activeIndex !== undefined ? this.props.activeIndex : -1;
 
-      var totalBands = _reactDom2.default.findDOMNode(this.refs.meterValues).childNodes.length;
+      var totalBands = _reactDom2.default.findDOMNode(this.meterValuesRef).childNodes.length;
 
       if (activeIndex + 1 < totalBands) {
         this.props.onActivate(activeIndex + 1);
@@ -242,7 +242,10 @@ var Graphic = function (_Component) {
       }
       return _react2.default.createElement(
         'g',
-        { ref: 'meterValues', className: CLASS_ROOT + '__values' },
+        { ref: function ref(_ref) {
+            return _this3.meterValuesRef = _ref;
+          },
+          className: CLASS_ROOT + '__values' },
         values
       );
     }
@@ -371,7 +374,7 @@ var Graphic = function (_Component) {
 
       return _react2.default.createElement(
         'svg',
-        { ref: 'meter', className: CLASS_ROOT + '__graphic',
+        { className: CLASS_ROOT + '__graphic',
           tabIndex: role === 'img' ? undefined : this.props.tabIndex || '0',
           width: this.state.viewBoxWidth, role: role,
           height: this.state.viewBoxHeight,

@@ -174,7 +174,7 @@ var Parts = function (_Component3) {
     key: '_makeUniform',
     value: function _makeUniform() {
       if (this.props.uniform) {
-        var parts = this.refs.component.children;
+        var parts = this.componentRef.children;
         // clear old basis
         for (var i = 0; i < parts.length; i += 1) {
           parts[i].style.webkitFlexBasis = null;
@@ -199,6 +199,8 @@ var Parts = function (_Component3) {
   }, {
     key: 'render',
     value: function render() {
+      var _this4 = this;
+
       var classes = [CLASS_ROOT + "__parts"];
       classes.push(CLASS_ROOT + "__parts--direction-" + this.props.direction);
       if (this.props.align) {
@@ -209,7 +211,9 @@ var Parts = function (_Component3) {
       }
       return _react2.default.createElement(
         'div',
-        { ref: 'component', className: classes.join(' ') },
+        { ref: function ref(_ref) {
+            return _this4.componentRef = _ref;
+          }, className: classes.join(' ') },
         this.props.children
       );
     }
@@ -236,31 +240,35 @@ var Topology = function (_Component4) {
   function Topology(props, context) {
     (0, _classCallCheck3.default)(this, Topology);
 
-    var _this4 = (0, _possibleConstructorReturn3.default)(this, (Topology.__proto__ || (0, _getPrototypeOf2.default)(Topology)).call(this, props, context));
+    var _this5 = (0, _possibleConstructorReturn3.default)(this, (Topology.__proto__ || (0, _getPrototypeOf2.default)(Topology)).call(this, props, context));
 
-    _this4._layout = _this4._layout.bind(_this4);
-    _this4._onResize = _this4._onResize.bind(_this4);
-    _this4._onMouseMove = _this4._onMouseMove.bind(_this4);
-    _this4._onMouseLeave = _this4._onMouseLeave.bind(_this4);
+    _this5._layout = _this5._layout.bind(_this5);
+    _this5._onResize = _this5._onResize.bind(_this5);
+    _this5._onMouseMove = _this5._onMouseMove.bind(_this5);
+    _this5._onMouseLeave = _this5._onMouseLeave.bind(_this5);
 
-    _this4.state = {
+    _this5.state = {
       canvasWidth: 100,
       canvasHeight: 100,
       highlighting: false,
       highlights: {}
     };
-    return _this4;
+
+    _this5.linkRefs = {};
+    return _this5;
   }
 
   (0, _createClass3.default)(Topology, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      var topology = this.refs.topology;
-      topology.addEventListener('mousemove', this._onMouseMove);
-      topology.addEventListener('mouseleave', this._onMouseLeave);
-      window.addEventListener('resize', this._onResize);
-      this._layout();
-      this._cacheLinkIds(this.props.links);
+      var topology = this.topologyRef;
+      if (topology) {
+        topology.addEventListener('mousemove', this._onMouseMove);
+        topology.addEventListener('mouseleave', this._onMouseLeave);
+        window.addEventListener('resize', this._onResize);
+        this._layout();
+        this._cacheLinkIds(this.props.links);
+      }
     }
   }, {
     key: 'componentWillReceiveProps',
@@ -276,7 +284,7 @@ var Topology = function (_Component4) {
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
-      var topology = this.refs.topology;
+      var topology = this.topologyRef;
       topology.removeEventListener('mousemove', this._onMouseMove);
       topology.removeEventListener('mouseleave', this._onMouseLeave);
       clearTimeout(this._resizeTimer);
@@ -304,7 +312,7 @@ var Topology = function (_Component4) {
   }, {
     key: '_draw',
     value: function _draw() {
-      var canvasElement = this.refs.canvas;
+      var canvasElement = this.canvasRef;
       // don't draw if we don't have a canvas to draw on, such as a unit test
       if (canvasElement.getContext) {
         var context = canvasElement.getContext('2d');
@@ -314,7 +322,7 @@ var Topology = function (_Component4) {
 
         this.props.links.forEach(function (link, linkIndex) {
 
-          var key = this.refs[link.colorIndex];
+          var key = this.linkRefs[link.colorIndex];
           var style = window.getComputedStyle((0, _reactDom.findDOMNode)(key));
           var color = style.getPropertyValue('background-color');
           context.strokeStyle = color;
@@ -366,7 +374,7 @@ var Topology = function (_Component4) {
   }, {
     key: '_layout',
     value: function _layout() {
-      var element = this.refs.contents;
+      var element = this.contentsRef;
       if (element.scrollWidth !== this.state.canvasWidth || element.scrollHeight !== this.state.canvasHeight) {
         this.setState({
           canvasWidth: element.scrollWidth,
@@ -384,7 +392,7 @@ var Topology = function (_Component4) {
   }, {
     key: '_highlight',
     value: function _highlight(element) {
-      var topology = this.refs.topology;
+      var topology = this.topologyRef;
       var highlighting = false;
       var highlights = {};
       while (element && element !== topology) {
@@ -425,6 +433,8 @@ var Topology = function (_Component4) {
   }, {
     key: 'render',
     value: function render() {
+      var _this7 = this;
+
       var classes = [CLASS_ROOT];
       if (this.props.className) {
         classes.push(this.props.className);
@@ -433,21 +443,34 @@ var Topology = function (_Component4) {
       var colorKeys = [];
       var colors = {};
       this.props.links.forEach(function (link) {
+        var _this6 = this;
+
         if (link.colorIndex && !colors[link.colorIndex]) {
-          colorKeys.push(_react2.default.createElement('div', { key: link.colorIndex, ref: link.colorIndex,
+          colorKeys.push(_react2.default.createElement('div', { key: link.colorIndex,
+            ref: function ref(_ref2) {
+              return _this6.linkRefs[link.colorIndex] = _ref2;
+            },
             className: BACKGROUND_COLOR_INDEX + '-' + link.colorIndex }));
           colors[link.colorIndex] = true;
         }
-      });
+      }, this);
 
       return _react2.default.createElement(
         'div',
-        { ref: 'topology', className: classes.join(' ') },
-        _react2.default.createElement('canvas', { ref: 'canvas', className: CLASS_ROOT + "__canvas",
+        { ref: function ref(_ref5) {
+            return _this7.topologyRef = _ref5;
+          }, className: classes.join(' ') },
+        _react2.default.createElement('canvas', { ref: function ref(_ref3) {
+            return _this7.canvasRef = _ref3;
+          },
+          className: CLASS_ROOT + "__canvas",
           width: this.state.canvasWidth, height: this.state.canvasHeight }),
         _react2.default.createElement(
           'div',
-          { ref: 'contents', className: CLASS_ROOT + "__contents" },
+          { ref: function ref(_ref4) {
+              return _this7.contentsRef = _ref4;
+            },
+            className: CLASS_ROOT + "__contents" },
           this.props.children
         ),
         _react2.default.createElement(

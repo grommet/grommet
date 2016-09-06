@@ -80,7 +80,7 @@ var Login = function (_Component) {
     value: function _adjustBackground() {
       // make sure the background always fills the screen, preserve aspect ratio
       var windowRatio = window.innerWidth / window.innerHeight;
-      var image = this.refs.background;
+      var image = this.backgroundRef;
       var imageRatio = image.scrollWidth / image.scrollHeight;
       this.setState({
         orientation: windowRatio < imageRatio ? 'portrait' : 'landscape'
@@ -89,13 +89,17 @@ var Login = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       var background;
       if (this.props.background) {
         var classes = [CLASS_ROOT + '__background'];
         if (this.state.orientation) {
           classes.push(CLASS_ROOT + '__background--' + this.state.orientation);
         }
-        background = _react2.default.createElement('img', { ref: 'background', className: classes.join(' '),
+        background = _react2.default.createElement('img', { ref: function ref(_ref) {
+            return _this2.backgroundRef = _ref;
+          }, className: classes.join(' '),
           src: this.props.background });
       }
 

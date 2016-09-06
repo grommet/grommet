@@ -87,7 +87,7 @@ var Range = function (_Component) {
       var count = _props.count;
       var vertical = _props.vertical;
 
-      var rect = this.refs.range.getBoundingClientRect();
+      var rect = this.rangeRef.getBoundingClientRect();
       var total = vertical ? rect.height : rect.width;
       return Math.round(value / total * (count - 1));
     }
@@ -109,7 +109,7 @@ var Range = function (_Component) {
       var mouseDown = _state.mouseDown;
       var mouseDownIndex = _state.mouseDownIndex;
 
-      var rect = this.refs.range.getBoundingClientRect();
+      var rect = this.rangeRef.getBoundingClientRect();
       var value = vertical ? event.clientY - rect.top : event.clientX - rect.left;
       var index = this._valueToIndex(value);
 
@@ -217,6 +217,8 @@ var Range = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _this3 = this;
+
       var _props4 = this.props;
       var active = _props4.active;
       var count = _props4.count;
@@ -305,10 +307,11 @@ var Range = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        { ref: 'range', className: classes.join(' '),
-          style: { padding: _utils.padding },
-          onMouseDown: onActive ? this._mouseDown('range') : undefined,
-          onMouseMove: onMouseMove },
+        { ref: function ref(_ref) {
+            return _this3.rangeRef = _ref;
+          }, className: classes.join(' '),
+          style: { padding: _utils.padding }, onMouseMove: onMouseMove,
+          onMouseDown: onActive ? this._mouseDown('range') : undefined },
         indicator
       );
     }

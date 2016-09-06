@@ -111,8 +111,8 @@ var Footer = function (_Component) {
   }, {
     key: '_alignMirror',
     value: function _alignMirror() {
-      var contentElement = _reactDom2.default.findDOMNode(this.refs.content);
-      var mirrorElement = this.refs.mirror;
+      var contentElement = _reactDom2.default.findDOMNode(this.contentRef);
+      var mirrorElement = this.mirrorRef;
 
       // constrain fixed content to the width of the mirror
       var mirrorRect = mirrorElement.getBoundingClientRect();
@@ -125,7 +125,9 @@ var Footer = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _classnames, _classnames2;
+      var _classnames,
+          _classnames2,
+          _this2 = this;
 
       var classes = (0, _classnames5.default)(CLASS_ROOT, this.props.className, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + this.props.size, this.props.size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--float', this.props.float), _classnames));
 
@@ -148,13 +150,19 @@ var Footer = function (_Component) {
         return _react2.default.createElement(
           'div',
           { className: containerClasses },
-          _react2.default.createElement('div', { ref: 'mirror', className: CLASS_ROOT + '__mirror' }),
+          _react2.default.createElement('div', { ref: function ref(_ref) {
+              return _this2.mirrorRef = _ref;
+            },
+            className: CLASS_ROOT + '__mirror' }),
           _react2.default.createElement(
             'div',
             { className: wrapperClasses },
             _react2.default.createElement(
               _Box2.default,
-              (0, _extends3.default)({ ref: 'content' }, boxProps, { tag: 'footer', className: classes,
+              (0, _extends3.default)({ ref: function ref(_ref2) {
+                  return _this2.contentRef = _ref2;
+                }
+              }, boxProps, { tag: 'footer', className: classes,
                 primary: false }),
               footerSkipLink,
               this.props.children

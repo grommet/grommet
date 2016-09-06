@@ -101,20 +101,22 @@ var Carousel = function (_Component) {
   (0, _createClass3.default)(Carousel, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      this.setState({
-        width: this.refs.carousel.offsetWidth
-      });
+      if (this.carouselRef) {
+        this.setState({
+          width: this.carouselRef.offsetWidth
+        });
 
-      window.addEventListener('resize', this._onResize);
+        window.addEventListener('resize', this._onResize);
 
-      this.hammer = new Hammer(this.refs.carousel);
-      this._updateHammer();
+        this.hammer = new Hammer(this.carouselRef);
+        this._updateHammer();
 
-      this._handleScroll();
-      var scrollParents = _DOM2.default.findScrollParents(this.refs.carousel);
-      scrollParents.forEach(function (scrollParent) {
-        scrollParent.addEventListener('scroll', this._handleScroll);
-      }.bind(this));
+        this._handleScroll();
+        var scrollParents = _DOM2.default.findScrollParents(this.carouselRef);
+        scrollParents.forEach(function (scrollParent) {
+          scrollParent.addEventListener('scroll', this._handleScroll);
+        }.bind(this));
+      }
     }
   }, {
     key: 'componentDidUpdate',
@@ -128,7 +130,7 @@ var Carousel = function (_Component) {
 
       window.removeEventListener('resize', this._onResize);
 
-      var scrollParents = _DOM2.default.findScrollParents(this.refs.carousel);
+      var scrollParents = _DOM2.default.findScrollParents(this.carouselRef);
       scrollParents.forEach(function (scrollParent) {
         scrollParent.removeEventListener('scroll', this._handleScroll);
       }.bind(this));
@@ -168,8 +170,8 @@ var Carousel = function (_Component) {
     key: '_handleScroll',
     value: function _handleScroll() {
       var viewportHeight = document.documentElement.clientHeight;
-      var carouselTopPosition = this.refs.carousel.getBoundingClientRect().top;
-      var carouselHeight = this.refs.carousel.offsetHeight;
+      var carouselTopPosition = this.carouselRef.getBoundingClientRect().top;
+      var carouselHeight = this.carouselRef.offsetHeight;
       var startScroll = viewportHeight - carouselHeight / 2;
 
       if (this.props.autoplay && carouselTopPosition <= startScroll && carouselTopPosition >= -carouselHeight / 2) {
@@ -241,7 +243,7 @@ var Carousel = function (_Component) {
     key: '_onResize',
     value: function _onResize() {
       this.setState({
-        width: this.refs.carousel.offsetWidth
+        width: this.carouselRef.offsetWidth
       });
     }
   }, {
@@ -295,6 +297,8 @@ var Carousel = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _this3 = this;
+
       var classes = [CLASS_ROOT];
       if (this.state.hideControls) {
         classes.push(CLASS_ROOT + '--hide-controls');
@@ -338,7 +342,9 @@ var Carousel = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        { ref: 'carousel', className: classes.join(' '),
+        { ref: function ref(_ref) {
+            return _this3.carouselRef = _ref;
+          }, className: classes.join(' '),
           onMouseEnter: this._onMouseOver, onMouseLeave: this._onMouseOut },
         _react2.default.createElement(
           'div',

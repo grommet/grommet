@@ -133,7 +133,7 @@ var Tiles = function (_Component) {
 
       this._setSelection();
       if (this.props.onMore) {
-        this._scroll = _InfiniteScroll2.default.startListeningForScroll(this.refs.more, this.props.onMore);
+        this._scroll = _InfiniteScroll2.default.startListeningForScroll(this.moreRef, this.props.onMore);
       }
       if ('row' === this.props.direction) {
         window.addEventListener('resize', this._onResize);
@@ -143,7 +143,7 @@ var Tiles = function (_Component) {
         setTimeout(this._layout, 10);
       } else if (this.props.masonry) {
         (function () {
-          var tiles = (0, _reactDom.findDOMNode)(_this2.refs.tiles);
+          var tiles = (0, _reactDom.findDOMNode)(_this2.tilesRef);
           var tile = tiles.querySelectorAll('.' + CLASS_ROOT + '__masonry-column .' + TILE);
           // default to medium tile size ($tile-size = 192px)
           var minColumnWidth = 192;
@@ -191,7 +191,7 @@ var Tiles = function (_Component) {
         this._setSelection();
       }
       if (this.props.onMore && !this._scroll) {
-        this._scroll = _InfiniteScroll2.default.startListeningForScroll(this.refs.more, this.props.onMore);
+        this._scroll = _InfiniteScroll2.default.startListeningForScroll(this.moreRef, this.props.onMore);
       }
       if ('row' === this.props.direction) {
         this._trackHorizontalScroll();
@@ -207,7 +207,7 @@ var Tiles = function (_Component) {
         window.removeEventListener('resize', this._onResize);
         document.removeEventListener('wheel', this._onWheel);
         if (this._tracking) {
-          var tiles = (0, _reactDom.findDOMNode)(this.refs.tiles);
+          var tiles = (0, _reactDom.findDOMNode)(this.tilesRef);
           tiles.removeEventListener('scroll', this._onScrollHorizontal);
         }
       } else if (this.props.masonry) {
@@ -217,13 +217,13 @@ var Tiles = function (_Component) {
   }, {
     key: '_onLeft',
     value: function _onLeft() {
-      var tiles = (0, _reactDom.findDOMNode)(this.refs.tiles);
+      var tiles = (0, _reactDom.findDOMNode)(this.tilesRef);
       _Scroll2.default.scrollBy(tiles, 'scrollLeft', -tiles.offsetWidth);
     }
   }, {
     key: '_onRight',
     value: function _onRight() {
-      var tiles = (0, _reactDom.findDOMNode)(this.refs.tiles);
+      var tiles = (0, _reactDom.findDOMNode)(this.tilesRef);
       _Scroll2.default.scrollBy(tiles, 'scrollLeft', tiles.offsetWidth);
     }
   }, {
@@ -259,7 +259,7 @@ var Tiles = function (_Component) {
     value: function _getNumberColumns() {
       var columnBreakpoints = this.state.columnBreakpoints;
 
-      var tiles = (0, _reactDom.findDOMNode)(this.refs.tiles);
+      var tiles = (0, _reactDom.findDOMNode)(this.tilesRef);
       var maxColumnWidthIndex = void 0;
 
       if (tiles) {
@@ -286,7 +286,7 @@ var Tiles = function (_Component) {
       if ('row' === direction) {
         (function () {
           // determine if we have more tiles than room to fit
-          var tiles = (0, _reactDom.findDOMNode)(_this3.refs.tiles);
+          var tiles = (0, _reactDom.findDOMNode)(_this3.tilesRef);
           // 20 is to allow some fuzziness as scrollbars come and go
           _this3.setState({
             overflow: tiles.scrollWidth > tiles.offsetWidth + 20,
@@ -381,7 +381,7 @@ var Tiles = function (_Component) {
     key: '_trackHorizontalScroll',
     value: function _trackHorizontalScroll() {
       if (this.state.overflow && !this._tracking) {
-        var tiles = (0, _reactDom.findDOMNode)(this.refs.tiles);
+        var tiles = (0, _reactDom.findDOMNode)(this.tilesRef);
         tiles.addEventListener('scroll', this._onScrollHorizontal);
         this._tracking = true;
       }
@@ -390,7 +390,7 @@ var Tiles = function (_Component) {
     key: '_setSelection',
     value: function _setSelection() {
       _Selection2.default.setClassFromIndexes({
-        containerElement: (0, _reactDom.findDOMNode)(this.refs.tiles),
+        containerElement: (0, _reactDom.findDOMNode)(this.tilesRef),
         childSelector: '.' + TILE,
         selectedClass: SELECTED_CLASS,
         selectedIndexes: this.state.selected
@@ -400,7 +400,7 @@ var Tiles = function (_Component) {
     key: '_onClick',
     value: function _onClick(event) {
       var selected = _Selection2.default.onClick(event, {
-        containerElement: (0, _reactDom.findDOMNode)(this.refs.tiles),
+        containerElement: (0, _reactDom.findDOMNode)(this.tilesRef),
         childSelector: '.' + TILE,
         selectedClass: SELECTED_CLASS,
         multiSelect: 'multiple' === this.props.selectable,
@@ -444,7 +444,9 @@ var Tiles = function (_Component) {
       if (onMore) {
         more = _react2.default.createElement(
           'div',
-          { ref: 'more', className: CLASS_ROOT + '__more' },
+          { ref: function ref(_ref) {
+              return _this5.moreRef = _ref;
+            }, className: CLASS_ROOT + '__more' },
           _react2.default.createElement(_Spinning2.default, null)
         );
       }
@@ -465,7 +467,9 @@ var Tiles = function (_Component) {
 
       var contents = _react2.default.createElement(
         _Box2.default,
-        (0, _extends3.default)({ ref: 'tiles' }, other, {
+        (0, _extends3.default)({ ref: function ref(_ref2) {
+            return _this5.tilesRef = _ref2;
+          } }, other, {
           wrap: direction ? false : true,
           direction: direction ? direction : 'row',
           className: classes,

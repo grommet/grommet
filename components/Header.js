@@ -98,8 +98,8 @@ var Header = function (_Component) {
   }, {
     key: '_alignMirror',
     value: function _alignMirror() {
-      var contentElement = _reactDom2.default.findDOMNode(this.refs.content);
-      var mirrorElement = this.refs.mirror;
+      var contentElement = _reactDom2.default.findDOMNode(this.contentRef);
+      var mirrorElement = this.mirrorRef;
 
       // constrain fixed content to the width of the mirror
       var mirrorRect = mirrorElement.getBoundingClientRect();
@@ -112,6 +112,8 @@ var Header = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       var classes = [CLASS_ROOT];
       var containerClasses = [CLASS_ROOT + '__container'];
       var wrapperClasses = [CLASS_ROOT + '__wrapper'];
@@ -148,14 +150,19 @@ var Header = function (_Component) {
         return _react2.default.createElement(
           'div',
           { className: containerClasses.join(' ') },
-          _react2.default.createElement('div', { ref: 'mirror', className: CLASS_ROOT + '__mirror' }),
+          _react2.default.createElement('div', { ref: function ref(_ref) {
+              return _this2.mirrorRef = _ref;
+            },
+            className: CLASS_ROOT + '__mirror' }),
           _react2.default.createElement(
             'div',
             { className: wrapperClasses.join(' ') },
             _react2.default.createElement(
               _Box2.default,
-              (0, _extends3.default)({ ref: 'content', tag: this.props.header }, other, {
-                className: classes.join(' ') }),
+              (0, _extends3.default)({ ref: function ref(_ref2) {
+                  return _this2.contentRef = _ref2;
+                },
+                tag: this.props.header }, other, { className: classes.join(' ') }),
               this.props.children
             )
           )

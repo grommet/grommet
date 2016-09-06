@@ -126,9 +126,9 @@ var Chart = function (_Component) {
   }, {
     key: '_onRequestForNextLegend',
     value: function _onRequestForNextLegend(event) {
-      if (document.activeElement === this.refs.chart) {
+      if (document.activeElement === this.chartRef) {
         event.preventDefault();
-        var totalBandCount = _reactDom2.default.findDOMNode(this.refs.front).childNodes.length;
+        var totalBandCount = _reactDom2.default.findDOMNode(this.frontRef).childNodes.length;
 
         if (this.state.highlightXIndex - 1 < 0) {
           this._onMouseOver(totalBandCount - 1);
@@ -143,9 +143,9 @@ var Chart = function (_Component) {
   }, {
     key: '_onRequestForPreviousLegend',
     value: function _onRequestForPreviousLegend(event) {
-      if (document.activeElement === this.refs.chart) {
+      if (document.activeElement === this.chartRef) {
         event.preventDefault();
-        var totalBandCount = _reactDom2.default.findDOMNode(this.refs.front).childNodes.length;
+        var totalBandCount = _reactDom2.default.findDOMNode(this.frontRef).childNodes.length;
 
         if (this.state.highlightXIndex + 1 >= totalBandCount) {
           this._onMouseOver(0);
@@ -337,13 +337,13 @@ var Chart = function (_Component) {
   }, {
     key: '_alignLegend',
     value: function _alignLegend() {
-      if (this.state.highlightXIndex >= 0 && this.refs.cursor) {
+      if (this.state.highlightXIndex >= 0 && this.cursorRef) {
         var bounds = this.state.bounds;
-        var cursorElement = this.refs.cursor;
+        var cursorElement = this.cursorRef;
         var cursorRect = cursorElement.getBoundingClientRect();
-        var element = this.refs.chart;
+        var element = this.chartRef;
         var rect = element.getBoundingClientRect();
-        var legendElement = _reactDom2.default.findDOMNode(this.refs.legend);
+        var legendElement = _reactDom2.default.findDOMNode(this.legendRef);
         var legendRect = legendElement.getBoundingClientRect();
 
         var left = cursorRect.left - rect.left - legendRect.width - 1;
@@ -367,7 +367,7 @@ var Chart = function (_Component) {
       if (this.props.legend && 'overlay' === this.props.legend.position) {
         this._alignLegend();
       }
-      var element = this.refs.chart;
+      var element = this.chartRef;
       var rect = element.getBoundingClientRect();
       if (rect.width !== this.state.width || rect.height !== this.state.height) {
         var bounds = this._bounds(this.props.series, this.props.xAxis, rect.width, rect.height);
@@ -789,7 +789,9 @@ var Chart = function (_Component) {
 
       return _react2.default.createElement(
         'g',
-        { ref: 'xAxis', className: CLASS_ROOT + '__xaxis' },
+        { ref: function ref(_ref) {
+            return _this4.xAxisRef = _ref;
+          }, className: CLASS_ROOT + '__xaxis' },
         labels
       );
     }
@@ -828,7 +830,9 @@ var Chart = function (_Component) {
 
       return _react2.default.createElement(
         'g',
-        { ref: 'yAxis', className: CLASS_ROOT + '__yaxis' },
+        { ref: function ref(_ref2) {
+            return _this5.yAxisRef = _ref2;
+          }, className: CLASS_ROOT + '__yaxis' },
         bars
       );
     }
@@ -899,7 +903,7 @@ var Chart = function (_Component) {
 
   }, {
     key: '_renderXBands',
-    value: function _renderXBands(layer) {
+    value: function _renderXBands() {
       var _this6 = this;
 
       var className = CLASS_ROOT + '__' + layer;
@@ -918,13 +922,8 @@ var Chart = function (_Component) {
           x -= bounds.xStepWidth / 2;
         }
 
-        var onMouseOver = void 0;
-        var onMouseOut = void 0;
-        if ('front' === layer) {
-          onMouseOver = _this6._onMouseOver.bind(_this6, xIndex);
-          onMouseOut = _this6._onMouseOut.bind(_this6, xIndex);
-        }
-
+        var onMouseOver = _this6._onMouseOver.bind(_this6, xIndex);
+        var onMouseOut = _this6._onMouseOut.bind(_this6, xIndex);
         var xBandId = _this6.props.a11yTitleId + '_x_band_' + xIndex;
         var xBandTitleId = _this6.props.a11yTitleId + '_x_band_title_' + xIndex;
 
@@ -947,7 +946,9 @@ var Chart = function (_Component) {
 
       return _react2.default.createElement(
         'g',
-        { ref: layer, className: className },
+        { ref: function ref(_ref3) {
+            return _this6.frontRef = _ref3;
+          }, className: className },
         bands
       );
     }
@@ -987,7 +988,10 @@ var Chart = function (_Component) {
 
       return _react2.default.createElement(
         'g',
-        { ref: 'cursor', role: 'presentation', className: CLASS_ROOT + '__cursor' },
+        { ref: function ref(_ref4) {
+            return _this7.cursorRef = _ref4;
+          },
+          role: 'presentation', className: CLASS_ROOT + '__cursor' },
         line,
         points
       );
@@ -1018,10 +1022,14 @@ var Chart = function (_Component) {
   }, {
     key: '_renderLegend',
     value: function _renderLegend() {
+      var _this9 = this;
+
       var highlightSeries = this._getHighlightSeries(true);
       var classes = [CLASS_ROOT + '__legend', CLASS_ROOT + '__legend--' + (this.props.legend.position || 'overlay')];
 
-      return _react2.default.createElement(_Legend2.default, { ref: 'legend', className: classes.join(' '),
+      return _react2.default.createElement(_Legend2.default, { ref: function ref(_ref5) {
+          return _this9.legendRef = _ref5;
+        }, className: classes.join(' '),
         series: highlightSeries,
         total: this.props.legend.total,
         units: this.props.units });
@@ -1041,6 +1049,8 @@ var Chart = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _this10 = this;
+
       var classes = [CLASS_ROOT];
       classes.push(CLASS_ROOT + '--' + this.props.type);
       if (this.state.size) {
@@ -1099,7 +1109,7 @@ var Chart = function (_Component) {
       var activeDescendant = void 0;
       var role = 'img';
       if (this.props.legend) {
-        frontBands = this._renderXBands('front');
+        frontBands = this._renderXBands();
         activeDescendant = this.props.a11yTitleId + '_x_band_' + this.state.highlightXIndex;
         role = 'tablist';
       }
@@ -1128,7 +1138,10 @@ var Chart = function (_Component) {
         { className: classes.join(' ') },
         _react2.default.createElement(
           'svg',
-          { ref: 'chart', className: CLASS_ROOT + '__graphic',
+          { ref: function ref(_ref6) {
+              return _this10.chartRef = _ref6;
+            },
+            className: CLASS_ROOT + '__graphic',
             viewBox: "0 0 " + this.state.width + " " + this.state.height,
             preserveAspectRatio: 'none', role: role, tabIndex: '0',
             'aria-activedescendant': activeDescendant,

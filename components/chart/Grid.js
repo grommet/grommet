@@ -83,7 +83,7 @@ var Grid = function (_Component) {
       var height = _props.height;
       var width = _props.width;
 
-      var grid = this.refs.grid;
+      var grid = this.gridRef;
       var rect = grid.getBoundingClientRect();
       this.setState({ height: height || rect.height });
       this.setState({ width: width || rect.width });
@@ -91,6 +91,8 @@ var Grid = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       var _props2 = this.props;
       var columns = _props2.columns;
       var rows = _props2.rows;
@@ -118,7 +120,9 @@ var Grid = function (_Component) {
 
       return _react2.default.createElement(
         'svg',
-        { ref: 'grid', className: CLASS_ROOT,
+        { ref: function ref(_ref) {
+            return _this2.gridRef = _ref;
+          }, className: CLASS_ROOT,
           viewBox: '0 0 ' + width + ' ' + height,
           preserveAspectRatio: 'none' },
         _react2.default.createElement('path', { fill: 'none', d: commands })

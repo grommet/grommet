@@ -65,18 +65,20 @@ var Overlay = function (_Component) {
   (0, _createClass3.default)(Overlay, [{
     key: '_onClickShareLink',
     value: function _onClickShareLink() {
-      (0, _reactDom.findDOMNode)(this.refs.shareLink).select();
+      (0, _reactDom.findDOMNode)(this.shareLinkRef).select();
     }
   }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       var _props = this.props;
       var shareLink = _props.shareLink;
       var shareHeadline = _props.shareHeadline;
       var shareText = _props.shareText;
 
 
-      var shareContent = null;
+      var shareContent = void 0;
       if (shareLink) {
         shareContent = _react2.default.createElement(
           _Box2.default,
@@ -87,8 +89,10 @@ var Overlay = function (_Component) {
             _react2.default.createElement(
               _FormField2.default,
               { strong: true },
-              _react2.default.createElement('input', { ref: 'shareLink', className: 'share-link',
-                type: 'text', value: shareLink,
+              _react2.default.createElement('input', { ref: function ref(_ref) {
+                  return _this2.shareLinkRef = _ref;
+                },
+                className: 'share-link', type: 'text', value: shareLink,
                 onClick: this._onClickShareLink, readOnly: true })
             )
           ),

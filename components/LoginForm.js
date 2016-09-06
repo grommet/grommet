@@ -98,7 +98,9 @@ var LoginForm = function (_Component) {
   (0, _createClass3.default)(LoginForm, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      this.refs.username.focus();
+      if (this.usernameRef) {
+        this.usernameRef.focus();
+      }
     }
   }, {
     key: '_onUsernameChange',
@@ -136,6 +138,8 @@ var LoginForm = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       var _props = this.props;
       var align = _props.align;
       var className = _props.className;
@@ -210,7 +214,9 @@ var LoginForm = function (_Component) {
           _react2.default.createElement(
             _FormField2.default,
             { htmlFor: 'username', label: username },
-            _react2.default.createElement('input', { type: usernameType, ref: 'username',
+            _react2.default.createElement('input', { type: usernameType, ref: function ref(_ref) {
+                return _this2.usernameRef = _ref;
+              },
               value: this.state.username,
               onChange: this._onUsernameChange })
           ),

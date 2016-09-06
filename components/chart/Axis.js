@@ -154,7 +154,7 @@ var Axis = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        { ref: 'axis', id: this.props.id, role: 'rowgroup', 'aria-label': axisLabel,
+        { id: this.props.id, role: 'rowgroup', 'aria-label': axisLabel,
           className: classes.join(' '), style: this.props.style },
         elements
       );
