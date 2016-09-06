@@ -1,0 +1,69 @@
+exports[`LoginForm has correct default options 1`] = `
+<form
+  className="grommetux-form grommetux-login-form grommetux-form--pad-none"
+  onSubmit={[Function bound _onSubmit]}>
+  <div
+    className="grommetux-login-form__header" />
+  <fieldset>
+    <div
+      className="grommetux-form-field grommetux-form-field--text grommetux-form-field--size-medium"
+      onClick={[Function bound _onClick]}>
+      <label
+        className="grommetux-form-field__label"
+        htmlFor="username">
+        <span
+          id="Email">
+          Email
+        </span>
+      </label>
+      <span
+        className="grommetux-form-field__contents">
+        <input
+          onChange={[Function bound _onUsernameChange]}
+          type="email"
+          value="" />
+      </span>
+    </div>
+    <div
+      className="grommetux-form-field grommetux-form-field--text grommetux-form-field--size-medium"
+      onClick={[Function bound _onClick]}>
+      <label
+        className="grommetux-form-field__label"
+        htmlFor="password">
+        <span
+          id="Password">
+          Password
+        </span>
+      </label>
+      <span
+        className="grommetux-form-field__contents">
+        <input
+          onChange={[Function bound _onPasswordChange]}
+          type="password"
+          value="" />
+      </span>
+    </div>
+  </fieldset>
+  <footer
+    className="grommetux-box grommetux-box--direction-column grommetux-box--pad-vertical-medium grommetux-box--pad-between-medium grommetux-footer grommetux-footer--small"
+    id={undefined}
+    onClick={undefined}
+    role={undefined}
+    style={Object {}}
+    tabIndex={undefined}>
+    <button
+      aria-label={undefined}
+      className="grommetux-button grommetux-login-form__submit grommetux-button--primary"
+      disabled={false}
+      href={undefined}
+      id={undefined}
+      onClick={[Function bound _onSubmit]}
+      type="submit">
+      <span
+        id="Log_In">
+        Log In
+      </span>
+    </button>
+  </footer>
+</form>
+`;

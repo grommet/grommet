@@ -18,14 +18,16 @@ export default class FormField extends Component {
   }
 
   componentDidMount () {
-    const contentsElement = this.refs.contents;
-    const inputElements = (
-      contentsElement.querySelectorAll('input, textarea, select')
-    );
-    if (inputElements.length === 1) {
-      this._inputElement = inputElements[0];
-      this._inputElement.addEventListener('focus', this._onFocus);
-      this._inputElement.addEventListener('blur', this._onBlur);
+    const contentsElement = this.contentsRef;
+    if (contentsElement) {
+      const inputElements = (
+        contentsElement.querySelectorAll('input, textarea, select')
+      );
+      if (inputElements.length === 1) {
+        this._inputElement = inputElements[0];
+        this._inputElement.addEventListener('focus', this._onFocus);
+        this._inputElement.addEventListener('blur', this._onBlur);
+      }
     }
   }
 
@@ -101,7 +103,8 @@ export default class FormField extends Component {
         {error}
         {labelNode}
         {help}
-        <span ref="contents" className={CLASS_ROOT + "__contents"}>
+        <span ref={ref => this.contentsRef = ref}
+          className={CLASS_ROOT + "__contents"}>
           {this.props.children}
         </span>
       </div>

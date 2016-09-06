@@ -90,65 +90,67 @@ export default class Chart extends Component {
   _layout () {
     const { horizontalAlignWith, verticalAlignWith, vertical,
       onMaxCount } = this.props;
-    const chart = this.refs.chart;
-    const chartRect = chart.getBoundingClientRect();
-    const base = this.refs.chart.querySelector(`.${CHART_BASE}`);
-    let alignWidth, alignLeft, alignRight, alignHeight, alignTop, alignBottom;
-    let padAlign = true;
+    const chart = this.chartRef;
+    if (chart) {
+      const chartRect = chart.getBoundingClientRect();
+      const base = this.chartRef.querySelector(`.${CHART_BASE}`);
+      let alignWidth, alignLeft, alignRight, alignHeight, alignTop, alignBottom;
+      let padAlign = true;
 
-    if (horizontalAlignWith) {
-      const elem = document.getElementById(horizontalAlignWith);
-      if (elem) {
-        const rect = elem.getBoundingClientRect();
+      if (horizontalAlignWith) {
+        const elem = document.getElementById(horizontalAlignWith);
+        if (elem) {
+          const rect = elem.getBoundingClientRect();
+          alignWidth = rect.width;
+          alignLeft = rect.left - chartRect.left;
+          alignRight = chartRect.right - rect.right;
+          padAlign = false;
+        }
+      } else if (base) {
+        const rect = base.getBoundingClientRect();
         alignWidth = rect.width;
         alignLeft = rect.left - chartRect.left;
         alignRight = chartRect.right - rect.right;
-        padAlign = false;
       }
-    } else if (base) {
-      const rect = base.getBoundingClientRect();
-      alignWidth = rect.width;
-      alignLeft = rect.left - chartRect.left;
-      alignRight = chartRect.right - rect.right;
-    }
 
-    if (verticalAlignWith) {
-      const elem = document.getElementById(verticalAlignWith);
-      if (elem) {
-        const rect = elem.getBoundingClientRect();
+      if (verticalAlignWith) {
+        const elem = document.getElementById(verticalAlignWith);
+        if (elem) {
+          const rect = elem.getBoundingClientRect();
+          alignHeight = rect.height;
+          alignTop = rect.top - chartRect.top;
+          alignBottom = chartRect.bottom - rect.bottom;
+          padAlign = false;
+        }
+      } else if (base) {
+        const rect = base.getBoundingClientRect();
         alignHeight = rect.height;
         alignTop = rect.top - chartRect.top;
         alignBottom = chartRect.bottom - rect.bottom;
-        padAlign = false;
       }
-    } else if (base) {
-      const rect = base.getBoundingClientRect();
-      alignHeight = rect.height;
-      alignTop = rect.top - chartRect.top;
-      alignBottom = chartRect.bottom - rect.bottom;
-    }
 
-    this.setState({
-      alignWidth: alignWidth,
-      alignLeft: alignLeft,
-      alignRight: alignRight,
-      alignHeight: alignHeight,
-      alignTop: alignTop,
-      alignBottom: alignBottom,
-      padAlign: padAlign
-    });
+      this.setState({
+        alignWidth: alignWidth,
+        alignLeft: alignLeft,
+        alignRight: alignRight,
+        alignHeight: alignHeight,
+        alignTop: alignTop,
+        alignBottom: alignBottom,
+        padAlign: padAlign
+      });
 
-    if (onMaxCount) {
-      let maxCount;
-      if (vertical) {
-        maxCount = Math.floor(alignWidth / (4 * padding));
-      } else {
-        maxCount = Math.floor(alignHeight / (4 * padding));
-      }
-      if (maxCount !== this.state.maxCount) {
-        this.setState({ maxCount: maxCount }, () => {
-          onMaxCount(maxCount);
-        });
+      if (onMaxCount) {
+        let maxCount;
+        if (vertical) {
+          maxCount = Math.floor(alignWidth / (4 * padding));
+        } else {
+          maxCount = Math.floor(alignHeight / (4 * padding));
+        }
+        if (maxCount !== this.state.maxCount) {
+          this.setState({ maxCount: maxCount }, () => {
+            onMaxCount(maxCount);
+          });
+        }
       }
     }
   }
@@ -255,8 +257,8 @@ export default class Chart extends Component {
     );
 
     return (
-      <div ref="chart" className={classes.join(' ')} role="group"
-        aria-label={ariaLabel}>
+      <div ref={ref => this.chartRef = ref} aria-label={ariaLabel}
+        className={classes.join(' ')} role="group">
         {children}
       </div>
     );

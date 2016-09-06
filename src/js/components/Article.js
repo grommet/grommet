@@ -55,6 +55,8 @@ export default class Article extends Component {
       showControls: this.props.controls,
       accessibilityTabbingCompatible: accessibilityTabbingCompatible
     };
+
+    this.childRef = {};
   }
 
   componentDidMount () {
@@ -77,7 +79,7 @@ export default class Article extends Component {
       document.addEventListener('wheel', this._onWheel);
       window.addEventListener('resize', this._onResize);
 
-      this._scrollParent = findDOMNode(this.refs.component);
+      this._scrollParent = findDOMNode(this.componentRef);
 
       this._checkControls();
 
@@ -89,8 +91,9 @@ export default class Article extends Component {
     if (this.props.onProgress) {
       window.addEventListener('scroll', this._updateProgress);
 
-      if (this.props.direction === 'row') 
+      if (this.props.direction === 'row') {
         this._responsive = Responsive.start(this._onResponsive);
+      }
     }
 
     this._onSelect(this.state.selectedIndex);
@@ -122,11 +125,11 @@ export default class Article extends Component {
   _checkPreviousNextControls (currentScroll, nextProp, prevProp) {
     if (currentScroll > 0) {
       const nextStepNode = findDOMNode(
-        this.refs[this.state.selectedIndex + 1]
+        this.childRef[this.state.selectedIndex + 1]
       );
 
       const previousStepNode = findDOMNode(
-        this.refs[this.state.selectedIndex - 1]
+        this.childRef[this.state.selectedIndex - 1]
       );
 
       if (nextStepNode) {
@@ -153,10 +156,10 @@ export default class Article extends Component {
 
   _checkControls () {
     if (this.props.direction === 'row') {
-      const currentScroll = this.refs.component.refs.boxContainer.scrollLeft;
+      const currentScroll = this.componentRef.boxContainerRef.scrollLeft;
       this._checkPreviousNextControls(currentScroll, 'left', 'right');
     } else {
-      const currentScroll = this.refs.component.refs.boxContainer.scrollTop;
+      const currentScroll = this.componentRef.boxContainerRef.scrollTop;
       this._checkPreviousNextControls(currentScroll, 'top', 'bottom');
     }
   }
@@ -168,7 +171,7 @@ export default class Article extends Component {
     const limit = ('row' === direction) ? window.innerWidth :
       window.innerHeight;
     for (let index = 0; index < childCount; index += 1) {
-      const childElement = findDOMNode(this.refs[index]);
+      const childElement = findDOMNode(this.childRef[index]);
       const rect = childElement.getBoundingClientRect();
       // ignore small drifts of 10 pixels on either end
       if ('row' === direction) {
@@ -239,7 +242,7 @@ export default class Article extends Component {
   _onScroll (event) {
     if ('row' === this.props.direction) {
       const { selectedIndex } = this.state;
-      const childElement = findDOMNode(this.refs[selectedIndex]);
+      const childElement = findDOMNode(this.childRef[selectedIndex]);
       let rect = childElement.getBoundingClientRect();
       if (event.target === this._scrollParent) {
         // scrolling Article
@@ -372,7 +375,7 @@ export default class Article extends Component {
   }
 
   _onSelect (selectedIndex) {
-    const childElement = findDOMNode(this.refs[selectedIndex]);
+    const childElement = findDOMNode(this.childRef[selectedIndex]);
     const windowHeight = window.innerHeight + 24;
 
     if (childElement) {
@@ -398,7 +401,7 @@ export default class Article extends Component {
           // tabbing
           if (this.props.direction === 'row' &&
             this.state.accessibilityTabbingCompatible) {
-            this.refs.anchorStep.focus();
+            this.anchorStepRef.focus();
             this._updateHiddenElements();
           }
         });
@@ -429,7 +432,7 @@ export default class Article extends Component {
 
   _onFocusChange (e) {
     React.Children.forEach(this.props.children, (element, index) => {
-      let parent = findDOMNode(this.refs[index]);
+      let parent = findDOMNode(this.childRef[index]);
       if (parent && parent.contains(e.target)) {
         this._onSelect(index);
         return false;
@@ -460,7 +463,7 @@ export default class Article extends Component {
   }
 
   _updateHiddenElements () {
-    const component = findDOMNode(this.refs.component);
+    const component = findDOMNode(this.componentRef);
     const children = component.children;
     for (let i = 0; i < children.length; i++) {
       const child = children[i];
@@ -473,7 +476,7 @@ export default class Article extends Component {
   }
 
   _updateProgress(event) {
-    const article = findDOMNode(this.refs.component);
+    const article = findDOMNode(this.componentRef);
     const articleRect = article.getBoundingClientRect();
 
     let offset = (this.props.direction === 'column')
@@ -482,14 +485,14 @@ export default class Article extends Component {
     let totalDistance = (this.props.direction === 'column')
       ? window.innerHeight
       : this._getChildrenWidth(
-          this.refs.component.refs.boxContainer.childNodes
+          this.componentRef.boxContainerRef.childNodes
         );
     let objectDistance = (this.props.direction === 'column')
       ? articleRect.height
       : articleRect.width;
 
     // Covers row responding to column layout.
-    if (this.props.direction === 'row' && this.state.narrow 
+    if (this.props.direction === 'row' && this.state.narrow
       && this.props.responsive !== false) {
       offset = Math.abs(articleRect.top);
       totalDistance = window.innerHeight;
@@ -519,7 +522,7 @@ export default class Article extends Component {
       if (! this.state.narrow || this.state.atBottom) {
         if (this.state.selectedIndex > 0) {
           controls.push(
-            <Button key="previous" ref='previous'
+            <Button key="previous"
               plain={true} a11yTitle={a11yTitle.previous}
               className={`${CONTROL_CLASS_PREFIX}-left`}
               onClick={this._onPrevious} icon={<PreviousIcon
@@ -531,7 +534,7 @@ export default class Article extends Component {
         }
         if (this.state.selectedIndex < (childCount - 1)) {
           controls.push(
-            <Button key="next" ref='next'
+            <Button key="next"
               plain={true} a11yTitle={a11yTitle.next}
               className={`${CONTROL_CLASS_PREFIX}-right`}
               onClick={this._onNext} icon={<NextIcon size="large"
@@ -544,7 +547,7 @@ export default class Article extends Component {
     } else {
       if (this.state.selectedIndex > 0) {
         controls.push(
-          <Button key="previous" ref='previous'
+          <Button key="previous"
             plain={true} a11yTitle={a11yTitle.previous}
             className={`${CONTROL_CLASS_PREFIX}-up`}
             onClick={this._onPrevious}><UpIcon /></Button>
@@ -552,7 +555,8 @@ export default class Article extends Component {
       }
       if (this.state.selectedIndex < (childCount - 1)) {
         controls.push(
-          <Button key="next" ref='next' plain={true} a11yTitle={a11yTitle.next}
+          <Button key="next"
+            plain={true} a11yTitle={a11yTitle.next}
             className={`${CONTROL_CLASS_PREFIX}-down`}
             onClick={this._onNext}><DownIcon a11yTitle='article-down'
               a11yTitleId='article-down-id' /></Button>
@@ -582,7 +586,8 @@ export default class Article extends Component {
     let anchorStepNode;
     if (this.state.accessibilityTabbingCompatible) {
       anchorStepNode = (
-        <a tabIndex="-1" aria-hidden='true' ref='anchorStep' />
+        <a tabIndex="-1" aria-hidden='true'
+          ref={ref => this.anchorStepRef = ref} />
       );
     }
 
@@ -591,7 +596,7 @@ export default class Article extends Component {
       children = Children.map(this.props.children, (element, index) => {
         if (element) {
           const elementClone = React.cloneElement(element, {
-            ref: index
+            ref: (ref) => this.childRef[index] =ref
           });
 
           let elementNode = elementClone;
@@ -620,10 +625,10 @@ export default class Article extends Component {
     delete boxProps.a11yTitle;
 
     return (
-      <Box {...restProps} {...boxProps} ref="component" tag="article"
-        className={classes.join(' ')} onFocus={this._onFocusChange}
-        onScroll={this._onScroll} onTouchStart={this._onTouchStart}
-        onTouchMove={this._onTouchMove} primary={this.props.primary}>
+      <Box {...restProps} {...boxProps} ref={ref => this.componentRef = ref}
+        tag="article" className={classes.join(' ')} primary={this.props.primary}
+        onFocus={this._onFocusChange} onScroll={this._onScroll}
+        onTouchStart={this._onTouchStart} onTouchMove={this._onTouchMove}>
         {anchorStepNode}
         {children}
         {controls}

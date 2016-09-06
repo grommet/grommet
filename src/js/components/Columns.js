@@ -26,7 +26,7 @@ export default class Columns extends Component {
       // grab CSS styles from DOM after component mounted
       // default to small size ($size-small = 192px)
       let minColumnWidth = 192;
-      const container = findDOMNode(this.refs.container);
+      const container = findDOMNode(this.containerRef);
       const column = container.childNodes[0];
       const child = column.childNodes[0];
 
@@ -60,7 +60,7 @@ export default class Columns extends Component {
 
   _calculateMaxCount () {
     const { columnBreakpoints } = this.state;
-    const container = findDOMNode(this.refs.container);
+    const container = findDOMNode(this.containerRef);
     let maxColumnWidthIndex;
 
     if (container && columnBreakpoints) {
@@ -81,9 +81,9 @@ export default class Columns extends Component {
 
   _layout () {
     const { masonry } = this.props;
-    const container = this.refs.container;
+    const container = this.containerRef;
 
-    if (!masonry) {
+    if (container && !masonry) {
       // fills columns top to bottom, then left to right
       const children = React.Children.toArray(this.props.children);
       let count = 1;
@@ -174,7 +174,7 @@ export default class Columns extends Component {
     ));
 
     return (
-      <div ref="container" className={classes}>
+      <div ref={ref => this.containerRef = ref} className={classes}>
         {columns}
       </div>
     );

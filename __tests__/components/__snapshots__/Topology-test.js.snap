@@ -1,0 +1,2048 @@
+exports[`Topology has correct default options 1`] = `
+<div
+  className="grommetux-topology">
+  <canvas
+    className="grommetux-topology__canvas"
+    height={100}
+    width={100} />
+  <div
+    className="grommetux-topology__contents">
+    <div
+      className="grommetux-topology__parts grommetux-topology__parts--direction-row">
+      <div
+        className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate rack"
+        id={undefined}
+        onMouseEnter={undefined}
+        onMouseLeave={undefined}>
+        <div
+          className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate switch"
+          id={undefined}
+          onMouseEnter={undefined}
+          onMouseLeave={undefined}>
+          <div
+            className="grommetux-topology__parts grommetux-topology__parts--direction-row">
+            <div
+              className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch"
+              id="s1p1"
+              onMouseEnter={undefined}
+              onMouseLeave={undefined}>
+              <svg
+                aria-labelledby="ok-title"
+                className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24">
+                <title
+                  id="ok-title">
+                  <span
+                    id="OK">
+                    OK
+                  </span>
+                </title>
+                <g
+                  className="grommetux-status-icon__base">
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="12"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+                <g
+                  className="grommetux-status-icon__detail">
+                  <path
+                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+              </svg>
+              <span
+                className="grommetux-topology__label">
+                1
+              </span>
+            </div>
+            <div
+              className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch"
+              id="s1p2"
+              onMouseEnter={undefined}
+              onMouseLeave={undefined}>
+              <svg
+                aria-labelledby="ok-title"
+                className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24">
+                <title
+                  id="ok-title">
+                  <span
+                    id="OK">
+                    OK
+                  </span>
+                </title>
+                <g
+                  className="grommetux-status-icon__base">
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="12"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+                <g
+                  className="grommetux-status-icon__detail">
+                  <path
+                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+              </svg>
+              <span
+                className="grommetux-topology__label">
+                2
+              </span>
+            </div>
+            <div
+              className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch"
+              id="s1p3"
+              onMouseEnter={undefined}
+              onMouseLeave={undefined}>
+              <svg
+                aria-labelledby="ok-title"
+                className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24">
+                <title
+                  id="ok-title">
+                  <span
+                    id="OK">
+                    OK
+                  </span>
+                </title>
+                <g
+                  className="grommetux-status-icon__base">
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="12"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+                <g
+                  className="grommetux-status-icon__detail">
+                  <path
+                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+              </svg>
+              <span
+                className="grommetux-topology__label">
+                3
+              </span>
+            </div>
+            <div
+              className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch"
+              id="s1p4"
+              onMouseEnter={undefined}
+              onMouseLeave={undefined}>
+              <svg
+                aria-labelledby="ok-title"
+                className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24">
+                <title
+                  id="ok-title">
+                  <span
+                    id="OK">
+                    OK
+                  </span>
+                </title>
+                <g
+                  className="grommetux-status-icon__base">
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="12"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+                <g
+                  className="grommetux-status-icon__detail">
+                  <path
+                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+              </svg>
+              <span
+                className="grommetux-topology__label">
+                4
+              </span>
+            </div>
+            <div
+              className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch"
+              id="s1p5"
+              onMouseEnter={undefined}
+              onMouseLeave={undefined}>
+              <svg
+                aria-labelledby="ok-title"
+                className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24">
+                <title
+                  id="ok-title">
+                  <span
+                    id="OK">
+                    OK
+                  </span>
+                </title>
+                <g
+                  className="grommetux-status-icon__base">
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="12"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+                <g
+                  className="grommetux-status-icon__detail">
+                  <path
+                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+              </svg>
+              <span
+                className="grommetux-topology__label">
+                5
+              </span>
+            </div>
+            <div
+              className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch"
+              id="s1p6"
+              onMouseEnter={undefined}
+              onMouseLeave={undefined}>
+              <svg
+                aria-labelledby="ok-title"
+                className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24">
+                <title
+                  id="ok-title">
+                  <span
+                    id="OK">
+                    OK
+                  </span>
+                </title>
+                <g
+                  className="grommetux-status-icon__base">
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="12"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+                <g
+                  className="grommetux-status-icon__detail">
+                  <path
+                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+              </svg>
+              <span
+                className="grommetux-topology__label">
+                6
+              </span>
+            </div>
+            <div
+              className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch"
+              id="s1p7"
+              onMouseEnter={undefined}
+              onMouseLeave={undefined}>
+              <svg
+                aria-labelledby="ok-title"
+                className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24">
+                <title
+                  id="ok-title">
+                  <span
+                    id="OK">
+                    OK
+                  </span>
+                </title>
+                <g
+                  className="grommetux-status-icon__base">
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="12"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+                <g
+                  className="grommetux-status-icon__detail">
+                  <path
+                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+              </svg>
+              <span
+                className="grommetux-topology__label">
+                7
+              </span>
+            </div>
+            <div
+              className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch"
+              id="s1p8"
+              onMouseEnter={undefined}
+              onMouseLeave={undefined}>
+              <svg
+                aria-labelledby="ok-title"
+                className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24">
+                <title
+                  id="ok-title">
+                  <span
+                    id="OK">
+                    OK
+                  </span>
+                </title>
+                <g
+                  className="grommetux-status-icon__base">
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="12"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+                <g
+                  className="grommetux-status-icon__detail">
+                  <path
+                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+              </svg>
+              <span
+                className="grommetux-topology__label">
+                8
+              </span>
+            </div>
+          </div>
+          <span
+            className="grommetux-topology__label">
+            HP 3100 SI
+          </span>
+        </div>
+        <div
+          className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate enclosure"
+          id={undefined}
+          onMouseEnter={undefined}
+          onMouseLeave={undefined}>
+          <div
+            className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate em"
+            id={undefined}
+            onMouseEnter={undefined}
+            onMouseLeave={undefined}>
+            <span
+              className="grommetux-topology__label">
+              HP Virtual Connect FlexFabric-20/40 F8 Module
+            </span>
+          </div>
+          <div
+            className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate em"
+            id={undefined}
+            onMouseEnter={undefined}
+            onMouseLeave={undefined}>
+            <span
+              className="grommetux-topology__label">
+              HP Virtual Connect FlexFabric-20/40 F8 Module
+            </span>
+          </div>
+          <div
+            className="grommetux-topology__parts grommetux-topology__parts--direction-row">
+            <div
+              className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate em"
+              id={undefined}
+              onMouseEnter={undefined}
+              onMouseLeave={undefined}>
+              <div
+                className="grommetux-topology__parts grommetux-topology__parts--direction-column">
+                <div
+                  className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center"
+                  id="em1p1"
+                  onMouseEnter={undefined}
+                  onMouseLeave={undefined}>
+                  <svg
+                    aria-labelledby="ok-title"
+                    className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
+                    role="img"
+                    version="1.1"
+                    viewBox="0 0 24 24">
+                    <title
+                      id="ok-title">
+                      <span
+                        id="OK">
+                        OK
+                      </span>
+                    </title>
+                    <g
+                      className="grommetux-status-icon__base">
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="12"
+                        role="presentation"
+                        stroke="none" />
+                    </g>
+                    <g
+                      className="grommetux-status-icon__detail">
+                      <path
+                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                        role="presentation"
+                        stroke="none" />
+                    </g>
+                  </svg>
+                  <span
+                    className="grommetux-topology__label">
+                    1
+                  </span>
+                </div>
+                <div
+                  className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center"
+                  id="em1p2"
+                  onMouseEnter={undefined}
+                  onMouseLeave={undefined}>
+                  <svg
+                    aria-labelledby="ok-title"
+                    className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
+                    role="img"
+                    version="1.1"
+                    viewBox="0 0 24 24">
+                    <title
+                      id="ok-title">
+                      <span
+                        id="OK">
+                        OK
+                      </span>
+                    </title>
+                    <g
+                      className="grommetux-status-icon__base">
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="12"
+                        role="presentation"
+                        stroke="none" />
+                    </g>
+                    <g
+                      className="grommetux-status-icon__detail">
+                      <path
+                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                        role="presentation"
+                        stroke="none" />
+                    </g>
+                  </svg>
+                  <span
+                    className="grommetux-topology__label">
+                    2
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center grommetux-topology__part--demarcate fan"
+              id={undefined}
+              onMouseEnter={undefined}
+              onMouseLeave={undefined}>
+              <svg
+                aria-labelledby="ok-title"
+                className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24">
+                <title
+                  id="ok-title">
+                  <span
+                    id="OK">
+                    OK
+                  </span>
+                </title>
+                <g
+                  className="grommetux-status-icon__base">
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="12"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+                <g
+                  className="grommetux-status-icon__detail">
+                  <path
+                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+              </svg>
+              <span
+                className="grommetux-topology__label">
+                1
+              </span>
+            </div>
+            <div
+              className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate grommetux-topology__part--empty fan"
+              id={undefined}
+              onMouseEnter={undefined}
+              onMouseLeave={undefined} />
+            <div
+              className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center grommetux-topology__part--demarcate fan"
+              id={undefined}
+              onMouseEnter={undefined}
+              onMouseLeave={undefined}>
+              <svg
+                aria-labelledby="ok-title"
+                className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24">
+                <title
+                  id="ok-title">
+                  <span
+                    id="OK">
+                    OK
+                  </span>
+                </title>
+                <g
+                  className="grommetux-status-icon__base">
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="12"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+                <g
+                  className="grommetux-status-icon__detail">
+                  <path
+                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+              </svg>
+              <span
+                className="grommetux-topology__label">
+                3
+              </span>
+            </div>
+          </div>
+          <div
+            className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate em"
+            id={undefined}
+            onMouseEnter={undefined}
+            onMouseLeave={undefined}>
+            <span
+              className="grommetux-topology__label">
+              HP Virtual Connect FlexFabric-20/40 F8 Module
+            </span>
+          </div>
+          <div
+            className="grommetux-topology__parts grommetux-topology__parts--direction-row">
+            <div
+              className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate em"
+              id={undefined}
+              onMouseEnter={undefined}
+              onMouseLeave={undefined}>
+              <div
+                className="grommetux-topology__parts grommetux-topology__parts--direction-column">
+                <div
+                  className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center"
+                  id="em2p1"
+                  onMouseEnter={undefined}
+                  onMouseLeave={undefined}>
+                  <svg
+                    aria-labelledby="ok-title"
+                    className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
+                    role="img"
+                    version="1.1"
+                    viewBox="0 0 24 24">
+                    <title
+                      id="ok-title">
+                      <span
+                        id="OK">
+                        OK
+                      </span>
+                    </title>
+                    <g
+                      className="grommetux-status-icon__base">
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="12"
+                        role="presentation"
+                        stroke="none" />
+                    </g>
+                    <g
+                      className="grommetux-status-icon__detail">
+                      <path
+                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                        role="presentation"
+                        stroke="none" />
+                    </g>
+                  </svg>
+                  <span
+                    className="grommetux-topology__label">
+                    1
+                  </span>
+                </div>
+                <div
+                  className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center"
+                  id="em2p2"
+                  onMouseEnter={undefined}
+                  onMouseLeave={undefined}>
+                  <svg
+                    aria-labelledby="ok-title"
+                    className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
+                    role="img"
+                    version="1.1"
+                    viewBox="0 0 24 24">
+                    <title
+                      id="ok-title">
+                      <span
+                        id="OK">
+                        OK
+                      </span>
+                    </title>
+                    <g
+                      className="grommetux-status-icon__base">
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="12"
+                        role="presentation"
+                        stroke="none" />
+                    </g>
+                    <g
+                      className="grommetux-status-icon__detail">
+                      <path
+                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                        role="presentation"
+                        stroke="none" />
+                    </g>
+                  </svg>
+                  <span
+                    className="grommetux-topology__label">
+                    2
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center grommetux-topology__part--demarcate fan"
+              id={undefined}
+              onMouseEnter={undefined}
+              onMouseLeave={undefined}>
+              <svg
+                aria-labelledby="ok-title"
+                className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24">
+                <title
+                  id="ok-title">
+                  <span
+                    id="OK">
+                    OK
+                  </span>
+                </title>
+                <g
+                  className="grommetux-status-icon__base">
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="12"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+                <g
+                  className="grommetux-status-icon__detail">
+                  <path
+                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+              </svg>
+              <span
+                className="grommetux-topology__label">
+                4
+              </span>
+            </div>
+            <div
+              className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center grommetux-topology__part--demarcate fan"
+              id={undefined}
+              onMouseEnter={undefined}
+              onMouseLeave={undefined}>
+              <svg
+                aria-labelledby="ok-title"
+                className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24">
+                <title
+                  id="ok-title">
+                  <span
+                    id="OK">
+                    OK
+                  </span>
+                </title>
+                <g
+                  className="grommetux-status-icon__base">
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="12"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+                <g
+                  className="grommetux-status-icon__detail">
+                  <path
+                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+              </svg>
+              <span
+                className="grommetux-topology__label">
+                5
+              </span>
+            </div>
+            <div
+              className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center grommetux-topology__part--demarcate fan"
+              id={undefined}
+              onMouseEnter={undefined}
+              onMouseLeave={undefined}>
+              <svg
+                aria-labelledby="ok-title"
+                className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24">
+                <title
+                  id="ok-title">
+                  <span
+                    id="OK">
+                    OK
+                  </span>
+                </title>
+                <g
+                  className="grommetux-status-icon__base">
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="12"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+                <g
+                  className="grommetux-status-icon__detail">
+                  <path
+                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+              </svg>
+              <span
+                className="grommetux-topology__label">
+                6
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate rack"
+        id={undefined}
+        onMouseEnter={undefined}
+        onMouseLeave={undefined}>
+        <div
+          className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate switch"
+          id={undefined}
+          onMouseEnter={undefined}
+          onMouseLeave={undefined}>
+          <div
+            className="grommetux-topology__parts grommetux-topology__parts--direction-row">
+            <div
+              className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch"
+              id="s2p1"
+              onMouseEnter={undefined}
+              onMouseLeave={undefined}>
+              <svg
+                aria-labelledby="ok-title"
+                className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24">
+                <title
+                  id="ok-title">
+                  <span
+                    id="OK">
+                    OK
+                  </span>
+                </title>
+                <g
+                  className="grommetux-status-icon__base">
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="12"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+                <g
+                  className="grommetux-status-icon__detail">
+                  <path
+                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+              </svg>
+              <span
+                className="grommetux-topology__label">
+                1
+              </span>
+            </div>
+            <div
+              className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch"
+              id="s2p2"
+              onMouseEnter={undefined}
+              onMouseLeave={undefined}>
+              <svg
+                aria-labelledby="ok-title"
+                className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24">
+                <title
+                  id="ok-title">
+                  <span
+                    id="OK">
+                    OK
+                  </span>
+                </title>
+                <g
+                  className="grommetux-status-icon__base">
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="12"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+                <g
+                  className="grommetux-status-icon__detail">
+                  <path
+                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+              </svg>
+              <span
+                className="grommetux-topology__label">
+                2
+              </span>
+            </div>
+            <div
+              className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch"
+              id="s2p3"
+              onMouseEnter={undefined}
+              onMouseLeave={undefined}>
+              <svg
+                aria-labelledby="ok-title"
+                className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24">
+                <title
+                  id="ok-title">
+                  <span
+                    id="OK">
+                    OK
+                  </span>
+                </title>
+                <g
+                  className="grommetux-status-icon__base">
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="12"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+                <g
+                  className="grommetux-status-icon__detail">
+                  <path
+                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+              </svg>
+              <span
+                className="grommetux-topology__label">
+                3
+              </span>
+            </div>
+            <div
+              className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch"
+              id="s2p4"
+              onMouseEnter={undefined}
+              onMouseLeave={undefined}>
+              <svg
+                aria-labelledby="ok-title"
+                className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24">
+                <title
+                  id="ok-title">
+                  <span
+                    id="OK">
+                    OK
+                  </span>
+                </title>
+                <g
+                  className="grommetux-status-icon__base">
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="12"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+                <g
+                  className="grommetux-status-icon__detail">
+                  <path
+                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+              </svg>
+              <span
+                className="grommetux-topology__label">
+                4
+              </span>
+            </div>
+            <div
+              className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch"
+              id="s2p5"
+              onMouseEnter={undefined}
+              onMouseLeave={undefined}>
+              <svg
+                aria-labelledby="ok-title"
+                className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24">
+                <title
+                  id="ok-title">
+                  <span
+                    id="OK">
+                    OK
+                  </span>
+                </title>
+                <g
+                  className="grommetux-status-icon__base">
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="12"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+                <g
+                  className="grommetux-status-icon__detail">
+                  <path
+                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+              </svg>
+              <span
+                className="grommetux-topology__label">
+                5
+              </span>
+            </div>
+            <div
+              className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch"
+              id="s2p6"
+              onMouseEnter={undefined}
+              onMouseLeave={undefined}>
+              <svg
+                aria-labelledby="ok-title"
+                className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24">
+                <title
+                  id="ok-title">
+                  <span
+                    id="OK">
+                    OK
+                  </span>
+                </title>
+                <g
+                  className="grommetux-status-icon__base">
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="12"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+                <g
+                  className="grommetux-status-icon__detail">
+                  <path
+                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+              </svg>
+              <span
+                className="grommetux-topology__label">
+                6
+              </span>
+            </div>
+            <div
+              className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch"
+              id="s2p7"
+              onMouseEnter={undefined}
+              onMouseLeave={undefined}>
+              <svg
+                aria-labelledby="ok-title"
+                className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24">
+                <title
+                  id="ok-title">
+                  <span
+                    id="OK">
+                    OK
+                  </span>
+                </title>
+                <g
+                  className="grommetux-status-icon__base">
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="12"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+                <g
+                  className="grommetux-status-icon__detail">
+                  <path
+                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+              </svg>
+              <span
+                className="grommetux-topology__label">
+                7
+              </span>
+            </div>
+            <div
+              className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch"
+              id="s2p8"
+              onMouseEnter={undefined}
+              onMouseLeave={undefined}>
+              <svg
+                aria-labelledby="ok-title"
+                className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24">
+                <title
+                  id="ok-title">
+                  <span
+                    id="OK">
+                    OK
+                  </span>
+                </title>
+                <g
+                  className="grommetux-status-icon__base">
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="12"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+                <g
+                  className="grommetux-status-icon__detail">
+                  <path
+                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+              </svg>
+              <span
+                className="grommetux-topology__label">
+                8
+              </span>
+            </div>
+            <div
+              className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch"
+              id="s2p9"
+              onMouseEnter={undefined}
+              onMouseLeave={undefined}>
+              <svg
+                aria-labelledby="ok-title"
+                className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24">
+                <title
+                  id="ok-title">
+                  <span
+                    id="OK">
+                    OK
+                  </span>
+                </title>
+                <g
+                  className="grommetux-status-icon__base">
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="12"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+                <g
+                  className="grommetux-status-icon__detail">
+                  <path
+                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+              </svg>
+              <span
+                className="grommetux-topology__label">
+                9
+              </span>
+            </div>
+            <div
+              className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch"
+              id="s2p10"
+              onMouseEnter={undefined}
+              onMouseLeave={undefined}>
+              <svg
+                aria-labelledby="ok-title"
+                className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24">
+                <title
+                  id="ok-title">
+                  <span
+                    id="OK">
+                    OK
+                  </span>
+                </title>
+                <g
+                  className="grommetux-status-icon__base">
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="12"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+                <g
+                  className="grommetux-status-icon__detail">
+                  <path
+                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+              </svg>
+              <span
+                className="grommetux-topology__label">
+                10
+              </span>
+            </div>
+          </div>
+          <span
+            className="grommetux-topology__label">
+            HP 5920AF-24XG
+          </span>
+          <div
+            className="grommetux-topology__parts grommetux-topology__parts--direction-row">
+            <div
+              className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--reverse"
+              id="s2p11"
+              onMouseEnter={undefined}
+              onMouseLeave={undefined}>
+              <svg
+                aria-labelledby="ok-title"
+                className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24">
+                <title
+                  id="ok-title">
+                  <span
+                    id="OK">
+                    OK
+                  </span>
+                </title>
+                <g
+                  className="grommetux-status-icon__base">
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="12"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+                <g
+                  className="grommetux-status-icon__detail">
+                  <path
+                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+              </svg>
+              <span
+                className="grommetux-topology__label">
+                11
+              </span>
+            </div>
+            <div
+              className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--reverse"
+              id="s2p12"
+              onMouseEnter={undefined}
+              onMouseLeave={undefined}>
+              <svg
+                aria-labelledby="ok-title"
+                className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24">
+                <title
+                  id="ok-title">
+                  <span
+                    id="OK">
+                    OK
+                  </span>
+                </title>
+                <g
+                  className="grommetux-status-icon__base">
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="12"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+                <g
+                  className="grommetux-status-icon__detail">
+                  <path
+                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+              </svg>
+              <span
+                className="grommetux-topology__label">
+                12
+              </span>
+            </div>
+            <div
+              className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--reverse"
+              id="s2p13"
+              onMouseEnter={undefined}
+              onMouseLeave={undefined}>
+              <svg
+                aria-labelledby="ok-title"
+                className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24">
+                <title
+                  id="ok-title">
+                  <span
+                    id="OK">
+                    OK
+                  </span>
+                </title>
+                <g
+                  className="grommetux-status-icon__base">
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="12"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+                <g
+                  className="grommetux-status-icon__detail">
+                  <path
+                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+              </svg>
+              <span
+                className="grommetux-topology__label">
+                13
+              </span>
+            </div>
+            <div
+              className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--reverse"
+              id="s2p14"
+              onMouseEnter={undefined}
+              onMouseLeave={undefined}>
+              <svg
+                aria-labelledby="ok-title"
+                className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24">
+                <title
+                  id="ok-title">
+                  <span
+                    id="OK">
+                    OK
+                  </span>
+                </title>
+                <g
+                  className="grommetux-status-icon__base">
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="12"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+                <g
+                  className="grommetux-status-icon__detail">
+                  <path
+                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+              </svg>
+              <span
+                className="grommetux-topology__label">
+                14
+              </span>
+            </div>
+            <div
+              className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--reverse"
+              id="s2p15"
+              onMouseEnter={undefined}
+              onMouseLeave={undefined}>
+              <svg
+                aria-labelledby="ok-title"
+                className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24">
+                <title
+                  id="ok-title">
+                  <span
+                    id="OK">
+                    OK
+                  </span>
+                </title>
+                <g
+                  className="grommetux-status-icon__base">
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="12"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+                <g
+                  className="grommetux-status-icon__detail">
+                  <path
+                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+              </svg>
+              <span
+                className="grommetux-topology__label">
+                15
+              </span>
+            </div>
+            <div
+              className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--reverse"
+              id="s2p16"
+              onMouseEnter={undefined}
+              onMouseLeave={undefined}>
+              <svg
+                aria-labelledby="ok-title"
+                className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24">
+                <title
+                  id="ok-title">
+                  <span
+                    id="OK">
+                    OK
+                  </span>
+                </title>
+                <g
+                  className="grommetux-status-icon__base">
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="12"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+                <g
+                  className="grommetux-status-icon__detail">
+                  <path
+                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+              </svg>
+              <span
+                className="grommetux-topology__label">
+                16
+              </span>
+            </div>
+            <div
+              className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--reverse"
+              id="s2p17"
+              onMouseEnter={undefined}
+              onMouseLeave={undefined}>
+              <svg
+                aria-labelledby="ok-title"
+                className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24">
+                <title
+                  id="ok-title">
+                  <span
+                    id="OK">
+                    OK
+                  </span>
+                </title>
+                <g
+                  className="grommetux-status-icon__base">
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="12"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+                <g
+                  className="grommetux-status-icon__detail">
+                  <path
+                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+              </svg>
+              <span
+                className="grommetux-topology__label">
+                17
+              </span>
+            </div>
+            <div
+              className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--reverse"
+              id="s2p18"
+              onMouseEnter={undefined}
+              onMouseLeave={undefined}>
+              <svg
+                aria-labelledby="ok-title"
+                className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24">
+                <title
+                  id="ok-title">
+                  <span
+                    id="OK">
+                    OK
+                  </span>
+                </title>
+                <g
+                  className="grommetux-status-icon__base">
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="12"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+                <g
+                  className="grommetux-status-icon__detail">
+                  <path
+                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+              </svg>
+              <span
+                className="grommetux-topology__label">
+                18
+              </span>
+            </div>
+            <div
+              className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--reverse"
+              id="s2p19"
+              onMouseEnter={undefined}
+              onMouseLeave={undefined}>
+              <svg
+                aria-labelledby="ok-title"
+                className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24">
+                <title
+                  id="ok-title">
+                  <span
+                    id="OK">
+                    OK
+                  </span>
+                </title>
+                <g
+                  className="grommetux-status-icon__base">
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="12"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+                <g
+                  className="grommetux-status-icon__detail">
+                  <path
+                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+              </svg>
+              <span
+                className="grommetux-topology__label">
+                19
+              </span>
+            </div>
+            <div
+              className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--reverse"
+              id="s2p20"
+              onMouseEnter={undefined}
+              onMouseLeave={undefined}>
+              <svg
+                aria-labelledby="ok-title"
+                className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24">
+                <title
+                  id="ok-title">
+                  <span
+                    id="OK">
+                    OK
+                  </span>
+                </title>
+                <g
+                  className="grommetux-status-icon__base">
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="12"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+                <g
+                  className="grommetux-status-icon__detail">
+                  <path
+                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+              </svg>
+              <span
+                className="grommetux-topology__label">
+                20
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate enclosure"
+          id={undefined}
+          onMouseEnter={undefined}
+          onMouseLeave={undefined}>
+          <div
+            className="grommetux-topology__parts grommetux-topology__parts--direction-row">
+            <div
+              className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate em"
+              id={undefined}
+              onMouseEnter={undefined}
+              onMouseLeave={undefined}>
+              <div
+                className="grommetux-topology__parts grommetux-topology__parts--direction-column">
+                <div
+                  className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center"
+                  id="em3p1"
+                  onMouseEnter={undefined}
+                  onMouseLeave={undefined}>
+                  <svg
+                    aria-labelledby="ok-title"
+                    className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
+                    role="img"
+                    version="1.1"
+                    viewBox="0 0 24 24">
+                    <title
+                      id="ok-title">
+                      <span
+                        id="OK">
+                        OK
+                      </span>
+                    </title>
+                    <g
+                      className="grommetux-status-icon__base">
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="12"
+                        role="presentation"
+                        stroke="none" />
+                    </g>
+                    <g
+                      className="grommetux-status-icon__detail">
+                      <path
+                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                        role="presentation"
+                        stroke="none" />
+                    </g>
+                  </svg>
+                  <span
+                    className="grommetux-topology__label">
+                    1
+                  </span>
+                </div>
+                <div
+                  className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center"
+                  id="em3p2"
+                  onMouseEnter={undefined}
+                  onMouseLeave={undefined}>
+                  <svg
+                    aria-labelledby="ok-title"
+                    className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
+                    role="img"
+                    version="1.1"
+                    viewBox="0 0 24 24">
+                    <title
+                      id="ok-title">
+                      <span
+                        id="OK">
+                        OK
+                      </span>
+                    </title>
+                    <g
+                      className="grommetux-status-icon__base">
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="12"
+                        role="presentation"
+                        stroke="none" />
+                    </g>
+                    <g
+                      className="grommetux-status-icon__detail">
+                      <path
+                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                        role="presentation"
+                        stroke="none" />
+                    </g>
+                  </svg>
+                  <span
+                    className="grommetux-topology__label">
+                    2
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center grommetux-topology__part--demarcate fan"
+              id={undefined}
+              onMouseEnter={undefined}
+              onMouseLeave={undefined}>
+              <svg
+                aria-labelledby="ok-title"
+                className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24">
+                <title
+                  id="ok-title">
+                  <span
+                    id="OK">
+                    OK
+                  </span>
+                </title>
+                <g
+                  className="grommetux-status-icon__base">
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="12"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+                <g
+                  className="grommetux-status-icon__detail">
+                  <path
+                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+              </svg>
+              <span
+                className="grommetux-topology__label">
+                1
+              </span>
+            </div>
+            <div
+              className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center grommetux-topology__part--demarcate fan"
+              id={undefined}
+              onMouseEnter={undefined}
+              onMouseLeave={undefined}>
+              <svg
+                aria-labelledby="ok-title"
+                className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24">
+                <title
+                  id="ok-title">
+                  <span
+                    id="OK">
+                    OK
+                  </span>
+                </title>
+                <g
+                  className="grommetux-status-icon__base">
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="12"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+                <g
+                  className="grommetux-status-icon__detail">
+                  <path
+                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+              </svg>
+              <span
+                className="grommetux-topology__label">
+                2
+              </span>
+            </div>
+            <div
+              className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center grommetux-topology__part--demarcate fan"
+              id={undefined}
+              onMouseEnter={undefined}
+              onMouseLeave={undefined}>
+              <svg
+                aria-labelledby="ok-title"
+                className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24">
+                <title
+                  id="ok-title">
+                  <span
+                    id="OK">
+                    OK
+                  </span>
+                </title>
+                <g
+                  className="grommetux-status-icon__base">
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="12"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+                <g
+                  className="grommetux-status-icon__detail">
+                  <path
+                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+              </svg>
+              <span
+                className="grommetux-topology__label">
+                3
+              </span>
+            </div>
+          </div>
+          <div
+            className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate em"
+            id={undefined}
+            onMouseEnter={undefined}
+            onMouseLeave={undefined}>
+            <span
+              className="grommetux-topology__label">
+              HP Virtual Connect FlexFabric-20/40 F8 Module
+            </span>
+          </div>
+          <div
+            className="grommetux-topology__parts grommetux-topology__parts--direction-row">
+            <div
+              className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate em"
+              id={undefined}
+              onMouseEnter={undefined}
+              onMouseLeave={undefined}>
+              <div
+                className="grommetux-topology__parts grommetux-topology__parts--direction-column">
+                <div
+                  className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center"
+                  id="em4p1"
+                  onMouseEnter={undefined}
+                  onMouseLeave={undefined}>
+                  <svg
+                    aria-labelledby="ok-title"
+                    className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
+                    role="img"
+                    version="1.1"
+                    viewBox="0 0 24 24">
+                    <title
+                      id="ok-title">
+                      <span
+                        id="OK">
+                        OK
+                      </span>
+                    </title>
+                    <g
+                      className="grommetux-status-icon__base">
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="12"
+                        role="presentation"
+                        stroke="none" />
+                    </g>
+                    <g
+                      className="grommetux-status-icon__detail">
+                      <path
+                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                        role="presentation"
+                        stroke="none" />
+                    </g>
+                  </svg>
+                  <span
+                    className="grommetux-topology__label">
+                    1
+                  </span>
+                </div>
+                <div
+                  className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center"
+                  id="em4p2"
+                  onMouseEnter={undefined}
+                  onMouseLeave={undefined}>
+                  <svg
+                    aria-labelledby="ok-title"
+                    className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
+                    role="img"
+                    version="1.1"
+                    viewBox="0 0 24 24">
+                    <title
+                      id="ok-title">
+                      <span
+                        id="OK">
+                        OK
+                      </span>
+                    </title>
+                    <g
+                      className="grommetux-status-icon__base">
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="12"
+                        role="presentation"
+                        stroke="none" />
+                    </g>
+                    <g
+                      className="grommetux-status-icon__detail">
+                      <path
+                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                        role="presentation"
+                        stroke="none" />
+                    </g>
+                  </svg>
+                  <span
+                    className="grommetux-topology__label">
+                    2
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center grommetux-topology__part--demarcate fan"
+              id={undefined}
+              onMouseEnter={undefined}
+              onMouseLeave={undefined}>
+              <svg
+                aria-labelledby="ok-title"
+                className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24">
+                <title
+                  id="ok-title">
+                  <span
+                    id="OK">
+                    OK
+                  </span>
+                </title>
+                <g
+                  className="grommetux-status-icon__base">
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="12"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+                <g
+                  className="grommetux-status-icon__detail">
+                  <path
+                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+              </svg>
+              <span
+                className="grommetux-topology__label">
+                4
+              </span>
+            </div>
+            <div
+              className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center grommetux-topology__part--demarcate fan"
+              id={undefined}
+              onMouseEnter={undefined}
+              onMouseLeave={undefined}>
+              <svg
+                aria-labelledby="ok-title"
+                className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24">
+                <title
+                  id="ok-title">
+                  <span
+                    id="OK">
+                    OK
+                  </span>
+                </title>
+                <g
+                  className="grommetux-status-icon__base">
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="12"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+                <g
+                  className="grommetux-status-icon__detail">
+                  <path
+                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+              </svg>
+              <span
+                className="grommetux-topology__label">
+                5
+              </span>
+            </div>
+            <div
+              className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center grommetux-topology__part--demarcate fan"
+              id={undefined}
+              onMouseEnter={undefined}
+              onMouseLeave={undefined}>
+              <svg
+                aria-labelledby="ok-title"
+                className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24">
+                <title
+                  id="ok-title">
+                  <span
+                    id="OK">
+                    OK
+                  </span>
+                </title>
+                <g
+                  className="grommetux-status-icon__base">
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="12"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+                <g
+                  className="grommetux-status-icon__detail">
+                  <path
+                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                    role="presentation"
+                    stroke="none" />
+                </g>
+              </svg>
+              <span
+                className="grommetux-topology__label">
+                6
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="grommetux-topology__color-key">
+    <div
+      className="grommetux-background-color-index-graph-1" />
+    <div
+      className="grommetux-background-color-index-graph-2" />
+  </div>
+</div>
+`;

@@ -17,31 +17,31 @@ export default class Overlay extends Component {
   }
 
   _onClickShareLink () {
-    findDOMNode(this.refs.shareLink).select();
+    findDOMNode(this.shareLinkRef).select();
   }
 
   render() {
     const { shareLink, shareHeadline, shareText } = this.props;
 
-    let shareContent = null;
+    let shareContent;
     if (shareLink) {
       shareContent = (
-        <Box align="center">
+        <Box align='center'>
           <Form pad={{vertical: 'small'}}>
             <FormField strong={true}>
-              <input ref="shareLink" className="share-link"
-                type="text" value={shareLink}
+              <input ref={ref => this.shareLinkRef = ref}
+                className='share-link' type='text' value={shareLink}
                 onClick={this._onClickShareLink} readOnly />
             </FormField>
           </Form>
-          <Box direction="row">
-            <SocialShare type="email" link={shareLink}
+          <Box direction='row'>
+            <SocialShare type='email' link={shareLink}
               title={shareHeadline} text={shareText} />
-            <SocialShare type="twitter"
+            <SocialShare type='twitter'
               link={shareLink} text={shareHeadline} />
-            <SocialShare type="facebook"
+            <SocialShare type='facebook'
               link={shareLink} />
-            <SocialShare type="linkedin"
+            <SocialShare type='linkedin'
               link={shareLink} title={shareHeadline} text={shareText} />
           </Box>
         </Box>

@@ -34,6 +34,7 @@ export default class Box extends Component {
       announce(this.boxContainerRef.textContent);
     }
   }
+
   componentWillUnmount () {
     if (this.props.onClick) {
       KeyboardAccelerators.stopListeningToKeyboard(this);

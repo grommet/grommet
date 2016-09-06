@@ -104,8 +104,8 @@ export default class MarkerLabel extends Component {
     }
 
     return (
-      <div ref="markerLabel" id={this.props.id}
-        className={classes.join(' ')} style={this.props.style} >
+      <div id={this.props.id} className={classes.join(' ')}
+        style={this.props.style} >
         {firstItem}
         {secondItem}
       </div>

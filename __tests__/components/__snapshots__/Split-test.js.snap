@@ -1,0 +1,11 @@
+exports[`Split has correct default options 1`] = `
+<div
+  className="grommetux-split grommetux-split--flex-both grommetux-split--fixed">
+  <div>
+    left
+  </div>
+  <div>
+    right
+  </div>
+</div>
+`;

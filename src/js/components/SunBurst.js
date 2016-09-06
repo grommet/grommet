@@ -27,6 +27,8 @@ export default class SunBurst extends Component {
     this._onSunBurstClick = this._onSunBurstClick.bind(this);
 
     this.state = { height: 100, width: 100, activeSunBurst: [-1] };
+
+    this.sunBurstPaths = {};
   }
 
   componentDidMount () {
@@ -68,7 +70,7 @@ export default class SunBurst extends Component {
 
     previousSunBurst[previousSunBurst.length - 1] -= 1;
     const id = previousSunBurst.join(',');
-    if (this.refs[id]) {
+    if (this.sunBurstPaths[id]) {
       onActive(previousSunBurst);
       this.setState({ activeSunBurst: previousSunBurst });
     }
@@ -85,7 +87,7 @@ export default class SunBurst extends Component {
     );
 
     const id = parentSunBurst.join(',');
-    if (this.refs[id]) {
+    if (this.sunBurstPaths[id]) {
       onActive(parentSunBurst);
       this.setState({ activeSunBurst: parentSunBurst });
     }
@@ -101,7 +103,7 @@ export default class SunBurst extends Component {
     childSunBurst.push(0);
 
     const id = childSunBurst.join(',');
-    if (this.refs[id]) {
+    if (this.sunBurstPaths[id]) {
       onActive(childSunBurst);
       this.setState({ activeSunBurst: childSunBurst });
     }
@@ -116,7 +118,7 @@ export default class SunBurst extends Component {
 
     nextSunBurst[nextSunBurst.length - 1] += 1;
     const id = nextSunBurst.join(',');
-    if (this.refs[id]) {
+    if (this.sunBurstPaths[id]) {
       onActive(nextSunBurst);
       this.setState({ activeSunBurst: nextSunBurst });
     }
@@ -129,7 +131,7 @@ export default class SunBurst extends Component {
     const { onClick } = this.props;
     const { activeSunBurst } = this.state;
 
-    if (this.refs[activeSunBurst.join(',')] && onClick) {
+    if (this.sunBurstPaths[activeSunBurst.join(',')] && onClick) {
       onClick(activeSunBurst);
     }
   }
@@ -141,7 +143,7 @@ export default class SunBurst extends Component {
   }
 
   _layout () {
-    const rect = this.refs.svg.getBoundingClientRect();
+    const rect = this.svgRef.getBoundingClientRect();
     if (rect.width !== this.state.width || rect.height !== this.state.height) {
       this.setState({ height: rect.height, width: rect.width });
     }
@@ -182,7 +184,8 @@ export default class SunBurst extends Component {
       const id = datumPath.join(',');
 
       result.push(
-        <path ref={id} key={id} className={className.join(' ')}
+        <path ref={ref => this.sunBurstPaths[id] = ref} id={id} key={id}
+          className={className.join(' ')}
           fill="none" strokeWidth={unit * 2} d={commands}
           aria-label={datum.children ? undefined : datum.value}
           role={datum.children ? undefined: 'row'}
@@ -246,7 +249,7 @@ export default class SunBurst extends Component {
 
     return (
       <div className={`${CLASS_ROOT}__container`}>
-        <svg ref='svg' className={classes.join(' ')}
+        <svg ref={ref => this.svgRef = ref} className={classes.join(' ')}
           viewBox={`0 0 ${width} ${height}`} role='group'
           aria-label={sunBurstLabel} tabIndex='0'
           onFocus={this._onSunBurstFocus} onBlur={this._onSunBurstBlur}>

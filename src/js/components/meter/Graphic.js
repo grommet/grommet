@@ -145,7 +145,7 @@ export default class Graphic extends Component {
     );
 
     var totalBands = (
-      ReactDOM.findDOMNode(this.refs.meterValues).childNodes.length
+      ReactDOM.findDOMNode(this.meterValuesRef).childNodes.length
     );
 
     if (activeIndex + 1 < totalBands) {
@@ -180,7 +180,8 @@ export default class Graphic extends Component {
       values = this._renderLoading();
     }
     return (
-      <g ref="meterValues" className={`${CLASS_ROOT}__values`}>
+      <g ref={ref => this.meterValuesRef = ref}
+        className={`${CLASS_ROOT}__values`}>
         {values}
       </g>
     );
@@ -294,7 +295,7 @@ export default class Graphic extends Component {
     const role = this.props.series.length > 1 ? 'group' : 'img';
 
     return (
-      <svg ref="meter" className={`${CLASS_ROOT}__graphic`}
+      <svg className={`${CLASS_ROOT}__graphic`}
         tabIndex={role === 'img' ? undefined : this.props.tabIndex || '0'}
         width={this.state.viewBoxWidth} role={role}
         height={this.state.viewBoxHeight}
