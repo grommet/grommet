@@ -36,7 +36,7 @@
 }
 
 .#{$grommet-namespace}columns--large {
-  > .#{$grommet-namespace}__column {
+  > .#{$grommet-namespace}columns__column {
     flex-basis: $size-large;
   }
 }
