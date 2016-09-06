@@ -103,8 +103,8 @@ export default class Card extends Component {
 
   render () {
     const { children, thumbnail, description, heading, headingStrong, label,
-      onClick, video, direction, reverse, pad, className, textSize, paragraph
-    } = this.props;
+      onClick, video, direction, reverse, pad, className, textSize, paragraph,
+      transparent } = this.props;
     const tileProps = Props.pick(this.props, Object.keys(Tile.propTypes));
     delete tileProps.onClick;
     delete tileProps.pad;
@@ -203,7 +203,7 @@ export default class Card extends Component {
       <Tile className={classes} onClick={onCardClick}
         pad={pad || cardPad} {...tileProps}>
         <Box className="flex" direction={direction} justify={cardJustify}
-          full={cardFull} colorIndex="light-1">
+          full={cardFull} colorIndex={!transparent ? 'light-1' : ''}>
           {first}
           {second}
           {this._renderVideo()}
@@ -229,6 +229,7 @@ Card.propTypes = {
     PropTypes.element
   ]),
   reverse: PropTypes.bool,
+  transparent: PropTypes.bool,
   link: PropTypes.string,
   linkText: PropTypes.string,
   linkIcon: PropTypes.element,

@@ -212,8 +212,13 @@ $card-hover-color: #EBEBEB;
   &--xlarge {
     .#{$grommet-namespace}card__headline {
       font-size: $large-large-number-font-size;
+
       @include media-query(portable) {
         font-size: $h1-font-size;
+      }
+
+      @include media-query(palm) {
+        font-size: $h2-font-size;
       }
     }
   }
