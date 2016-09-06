@@ -138,7 +138,7 @@ exports.default = Timestamp;
 var FIELD_TYPES = _react.PropTypes.oneOf(['date', 'time']);
 
 Timestamp.propTypes = {
-  align: _react.PropTypes.oneOf(['left', 'right']),
+  align: _react.PropTypes.oneOf(['start', 'center', 'end']),
   fields: _react.PropTypes.oneOfType([_react.PropTypes.arrayOf(FIELD_TYPES), FIELD_TYPES]),
   value: _react.PropTypes.oneOfType([_react.PropTypes.string, // ISO-8601 string
   _react.PropTypes.object // Date object
