@@ -228,23 +228,27 @@ var Graph = function (_Component) {
       var points = [];
       var coordinates = values.map(function (value, index) {
         var coordinate = void 0;
-        if (vertical) {
-          coordinate = [(value - min) * scale + pad, (reverse ? index * step : height - 2 * pad - index * step) + pad];
-        } else {
-          coordinate = [(reverse ? width - 2 * pad - index * step : index * step) + pad, height - 2 * pad - (value - min) * scale + pad];
-        }
-
-        if ((_this2.props.points || index === activeIndex) && !_this2.props.sparkline) {
-          var _classes = [CLASS_ROOT + '__point', COLOR_INDEX + '-' + (colorIndex || 'graph-1')];
-          var radius = _utils.pointSize / 3;
-          if (index === activeIndex) {
-            _classes.push(CLASS_ROOT + '__point--active');
-            radius = _utils.pointSize / 2;
+        if (undefined !== value) {
+          if (vertical) {
+            coordinate = [(value - min) * scale + pad, (reverse ? index * step : height - 2 * pad - index * step) + pad];
+          } else {
+            coordinate = [(reverse ? width - 2 * pad - index * step : index * step) + pad, height - 2 * pad - (value - min) * scale + pad];
           }
-          points.push(_react2.default.createElement('circle', { key: index, className: _classes.join(' '),
-            cx: coordinate[0], cy: coordinate[1], r: radius }));
+
+          if ((_this2.props.points || index === activeIndex) && !_this2.props.sparkline) {
+            var _classes = [CLASS_ROOT + '__point', COLOR_INDEX + '-' + (colorIndex || 'graph-1')];
+            var radius = _utils.pointSize / 3;
+            if (index === activeIndex) {
+              _classes.push(CLASS_ROOT + '__point--active');
+              radius = _utils.pointSize / 2;
+            }
+            points.push(_react2.default.createElement('circle', { key: index, className: _classes.join(' '),
+              cx: coordinate[0], cy: coordinate[1], r: radius }));
+          }
         }
 
+        return coordinate;
+      }).filter(function (coordinate) {
         return coordinate;
       });
 
