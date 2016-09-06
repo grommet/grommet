@@ -76,7 +76,7 @@ exports.default = Headline;
 Headline.propTypes = {
   align: _react.PropTypes.oneOf(['start', 'center', 'end']),
   margin: _react.PropTypes.oneOf(['none', 'small', 'medium', 'large']),
-  size: _react.PropTypes.oneOf(['small', 'medium', 'large']),
+  size: _react.PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
   strong: _react.PropTypes.bool
 };
 module.exports = exports['default'];
