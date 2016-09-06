@@ -95,10 +95,16 @@ var Timestamp = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _props = this.props;
+      var align = _props.align;
+      var className = _props.className;
+
       var classes = [CLASS_ROOT];
-      classes.push(CLASS_ROOT + '--' + this.props.align);
-      if (this.props.className) {
-        classes.push(this.props.className);
+      if (align) {
+        classes.push(CLASS_ROOT + '--' + align);
+      }
+      if (className) {
+        classes.push(className);
       }
 
       var date = void 0;
@@ -143,9 +149,5 @@ Timestamp.propTypes = {
   value: _react.PropTypes.oneOfType([_react.PropTypes.string, // ISO-8601 string
   _react.PropTypes.object // Date object
   ]).isRequired
-};
-
-Timestamp.defaultProps = {
-  align: 'left'
 };
 module.exports = exports['default'];
