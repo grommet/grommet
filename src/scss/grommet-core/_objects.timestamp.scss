@@ -2,7 +2,11 @@
 
 .#{$grommet-namespace}timestamp {
 
-  &--right {
+  &--center {
+    text-align: center;
+  }
+
+  &--end {
     text-align: right;
   }
 

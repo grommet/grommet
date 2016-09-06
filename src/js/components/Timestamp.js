@@ -82,7 +82,7 @@ export default class Timestamp extends Component {
 const FIELD_TYPES = PropTypes.oneOf(['date', 'time']);
 
 Timestamp.propTypes = {
-  align: PropTypes.oneOf(['left', 'right']),
+  align: PropTypes.oneOf(['start', 'center', 'end']),
   fields: PropTypes.oneOfType([
     PropTypes.arrayOf(FIELD_TYPES),
     FIELD_TYPES
