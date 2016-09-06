@@ -31,3 +31,5 @@ gulp.task('dev', () =>
     'Running "gulp dev" at Grommet root folder is not supported. To test Grommet components locally clone the grommet-docs repo into your project.'
   )
 );
+
+gulp.task('pre-commit', ['jslint','scsslint','test']);
