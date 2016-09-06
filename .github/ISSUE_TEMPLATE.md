@@ -9,8 +9,8 @@
 ### URL, screen shot, or Codepen exhibiting the issue
 
 <!--
-  -- Here's a Codepen that serves as a nice starting point
-  -- for demonstrating an issue: http://codepen.io/grommet/pen/gaEGPY
+  -- Here's a Codepen template that serves as a nice starting point
+  -- for demonstrating an issue: http://codepen.io/pen?template=gaEGPY&editors=0010
   -->
 
 ### Steps to Reproduce

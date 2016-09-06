@@ -1,5 +1,9 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
+$social-twitter-color: #1DA1F2;
+$social-facebook-color: #3B5998;
+$social-linkedin-color: #0077B5;
+
 .#{$grommet-namespace}control-icon {
   display: inline-block;
   width: $inuit-base-spacing-unit;
@@ -218,4 +222,24 @@ $logo-dash-size: round($logo-size * 16);
       display: none;
     }
   }
+}
+
+.#{$grommet-namespace}control-icon-watch,
+.#{$grommet-namespace}anchor .#{$grommet-namespace}control-icon-watch,
+.#{$grommet-namespace}anchor:hover:not(.grommetux-anchor--disabled) .#{$grommet-namespace}control-icon-watch {
+  stroke: none;
+  fill: $control-brand-color;
+}
+
+// custom social icon colors for twitter, facebook, and linkedin
+.#{$grommet-namespace}control-icon-social-twitter {
+  @include icon-color($social-twitter-color);
+}
+
+.#{$grommet-namespace}control-icon-social-facebook {
+  @include icon-color($social-facebook-color);
+}
+
+.#{$grommet-namespace}control-icon-social-linkedin {
+  @include icon-color($social-linkedin-color);
 }

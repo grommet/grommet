@@ -3,6 +3,8 @@
 import React, { Component, PropTypes } from 'react';
 import { baseUnit, translateEndAngle, arcCommands } from '../utils/Graphics';
 import CSSClassnames from '../utils/CSSClassnames';
+import Intl from '../utils/Intl';
+import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 
 const CLASS_ROOT = CSSClassnames.SUN_BURST;
 const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
@@ -16,8 +18,15 @@ export default class SunBurst extends Component {
 
     this._layout = this._layout.bind(this);
     this._onResize = this._onResize.bind(this);
+    this._onPreviousSunBurst = this._onPreviousSunBurst.bind(this);
+    this._onNextSunBurst = this._onNextSunBurst.bind(this);
+    this._onParentSunBurst = this._onParentSunBurst.bind(this);
+    this._onChildSunBurst = this._onChildSunBurst.bind(this);
+    this._onSunBurstFocus = this._onSunBurstFocus.bind(this);
+    this._onSunBurstBlur = this._onSunBurstBlur.bind(this);
+    this._onSunBurstClick = this._onSunBurstClick.bind(this);
 
-    this.state = { height: 100, width: 100 };
+    this.state = { height: 100, width: 100, activeSunBurst: [-1] };
   }
 
   componentDidMount () {
@@ -34,6 +43,97 @@ export default class SunBurst extends Component {
     window.removeEventListener('resize', this._onResize);
   }
 
+  _onSunBurstFocus () {
+    this._keyboardHandlers = {
+      left: this._onPreviousSunBurst,
+      up: this._onParentSunBurst,
+      right: this._onNextSunBurst,
+      down: this._onChildSunBurst,
+      enter: this._onSunBurstClick
+    };
+    KeyboardAccelerators.startListeningToKeyboard(
+      this, this._keyboardHandlers
+    );
+  }
+
+  _onSunBurstBlur () {
+    KeyboardAccelerators.stopListeningToKeyboard(
+      this, this._keyboardHandlers
+    );
+  }
+
+  _onPreviousSunBurst () {
+    const { onActive } = this.props;
+    let previousSunBurst = this.state.activeSunBurst.slice();
+
+    previousSunBurst[previousSunBurst.length - 1] -= 1;
+    const id = previousSunBurst.join(',');
+    if (this.refs[id]) {
+      onActive(previousSunBurst);
+      this.setState({ activeSunBurst: previousSunBurst });
+    }
+
+    //stop event propagation
+    return true;
+  }
+
+  _onParentSunBurst (event) {
+    event.preventDefault();
+    const { onActive } = this.props;
+    let parentSunBurst = this.state.activeSunBurst.slice(
+      0, this.state.activeSunBurst.length - 1
+    );
+
+    const id = parentSunBurst.join(',');
+    if (this.refs[id]) {
+      onActive(parentSunBurst);
+      this.setState({ activeSunBurst: parentSunBurst });
+    }
+
+    //stop event propagation
+    return true;
+  }
+
+  _onChildSunBurst (event) {
+    event.preventDefault();
+    const { onActive } = this.props;
+    let childSunBurst = this.state.activeSunBurst.slice();
+    childSunBurst.push(0);
+
+    const id = childSunBurst.join(',');
+    if (this.refs[id]) {
+      onActive(childSunBurst);
+      this.setState({ activeSunBurst: childSunBurst });
+    }
+
+    //stop event propagation
+    return true;
+  }
+
+  _onNextSunBurst () {
+    const { onActive } = this.props;
+    let nextSunBurst = this.state.activeSunBurst.slice();
+
+    nextSunBurst[nextSunBurst.length - 1] += 1;
+    const id = nextSunBurst.join(',');
+    if (this.refs[id]) {
+      onActive(nextSunBurst);
+      this.setState({ activeSunBurst: nextSunBurst });
+    }
+
+    //stop event propagation
+    return true;
+  }
+
+  _onSunBurstClick () {
+    const { onClick } = this.props;
+    const { activeSunBurst } = this.state;
+
+    if (this.refs[activeSunBurst.join(',')] && onClick) {
+      onClick(activeSunBurst);
+    }
+  }
+
   _onResize () {
     // debounce
     clearTimeout(this._resizeTimer);
@@ -48,7 +148,7 @@ export default class SunBurst extends Component {
   }
 
   _renderData (path, data, total, centerX, centerY, radius, startAngle,
-    endAngle) {
+    endAngle, role, value) {
 
     const { active, onActive, onClick } = this.props;
     const { width } = this.state;
@@ -79,9 +179,13 @@ export default class SunBurst extends Component {
       const commands = arcCommands(centerX, centerY, radius,
         startAngle, endAngle);
 
+      const id = datumPath.join(',');
+
       result.push(
-        <path key={datumPath.join(',')} className={className.join(' ')}
+        <path ref={id} key={id} className={className.join(' ')}
           fill="none" strokeWidth={unit * 2} d={commands}
+          aria-label={datum.children ? undefined : datum.value}
+          role={datum.children ? undefined: 'row'}
           onMouseOver={onActive ? () => onActive(datumPath) : undefined}
           onMouseOut={onActive ? () => onActive(undefined) : undefined}
           onClick={onClick ? () => onClick(datumPath) : undefined} />
@@ -91,19 +195,27 @@ export default class SunBurst extends Component {
         result = result.concat(this._renderData(datumPath,
           datum.children, datum.total,
           centerX, centerY, radius + (unit * 2) + ringPad,
-          startAngle, endAngle));
+          startAngle, endAngle, 'group', datum.value));
       }
 
       // + 1 is for margin between slices
       startAngle = endAngle + 1;
     });
 
-    return result;
+
+    return (
+      <g key={`${radius}${total}`} role={role || 'rowgroup'}
+        aria-label={value || total}>
+        {result}
+      </g>
+    );
   }
 
   render () {
-    const { active, data, label, size } = this.props;
+    const { a11yTitle, active, data, label, size } = this.props;
     const { width, height } = this.state;
+    const { intl } = this.context;
+
     const unit = width / UNIT_FACTOR;
     let classes = [CLASS_ROOT];
     if (size) {
@@ -130,13 +242,15 @@ export default class SunBurst extends Component {
       );
     }
 
+    const sunBurstLabel = a11yTitle || Intl.getMessage(intl, 'SunBurstLabel');
+
     return (
       <div className={`${CLASS_ROOT}__container`}>
-        <svg ref="svg" className={classes.join(' ')}
-          viewBox={`0 0 ${width} ${height}`}>
-          <g>
-            {paths}
-          </g>
+        <svg ref='svg' className={classes.join(' ')}
+          viewBox={`0 0 ${width} ${height}`} role='group'
+          aria-label={sunBurstLabel} tabIndex='0'
+          onFocus={this._onSunBurstFocus} onBlur={this._onSunBurstBlur}>
+          {paths}
         </svg>
         {labelElement}
       </div>
@@ -145,7 +259,12 @@ export default class SunBurst extends Component {
 
 }
 
+SunBurst.contextTypes = {
+  intl: PropTypes.object
+};
+
 SunBurst.propTypes = {
+  a11yTitle: PropTypes.string,
   active: PropTypes.arrayOf(PropTypes.number),
   data: PropTypes.arrayOf(PropTypes.shape({
     children: PropTypes.arrayOf(PropTypes.object),
