@@ -12,6 +12,22 @@
   flex-direction: column;
 }
 
+.#{$grommet-namespace}columns--responsive {
+  > .#{$grommet-namespace}columns__column {
+    @include media-query(palm) {
+      flex: 0 1 auto;
+    }
+  }
+
+  &.#{$grommet-namespace}columns--small,
+  &.#{$grommet-namespace}columns--large {
+    > .#{$grommet-namespace}columns__column {
+      @include media-query(palm) {
+        flex: 0 1 auto;
+      }
+    }
+  }
+}
 
 .#{$grommet-namespace}columns--small {
   > .#{$grommet-namespace}columns__column {
@@ -23,4 +39,20 @@
   > .#{$grommet-namespace}__column {
     flex-basis: $size-large;
   }
+}
+
+.#{$grommet-namespace}columns--justify-start {
+  justify-content: flex-start;
+}
+
+.#{$grommet-namespace}columns--justify-center {
+  justify-content: center;
+}
+
+.#{$grommet-namespace}columns--justify-between {
+  justify-content: space-between;
+}
+
+.#{$grommet-namespace}columns--justify-end {
+  justify-content: flex-end;
 }
