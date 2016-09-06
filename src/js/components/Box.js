@@ -99,7 +99,10 @@ export default class Box extends Component {
         this._addPropertyClass(classes, 'size');
       }
       if (size) {
-        classes.push(`${CLASS_ROOT}--size`);
+        if (!(size.width && size.width.max)) {
+          // don't apply 100% max-width when size using size.width.max option
+          classes.push(`${CLASS_ROOT}--size`);
+        }
       }
     }
 
@@ -193,10 +196,10 @@ export default class Box extends Component {
 
 }
 
-const FIXED_SIZES = ['xsmall', 'small', 'medium', 'large', 'xlarge'];
+const FIXED_SIZES = ['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge'];
 const RELATIVE_SIZES = ['full', '1/2', '1/3', '2/3', '1/4', '3/4'];
 const SIZES = FIXED_SIZES.concat(RELATIVE_SIZES);
-const MARGIN_SIZES = ['small', 'medium', 'large'];
+const MARGIN_SIZES = ['small', 'medium', 'large', 'none'];
 const PAD_SIZES = ['small', 'medium', 'large', 'none'];
 
 Box.propTypes = {
@@ -245,7 +248,8 @@ Box.propTypes = {
   separator: PropTypes.oneOf(['top', 'bottom', 'left', 'right',
     'horizontal', 'vertical', 'all', 'none']),
   size: PropTypes.oneOfType([
-    PropTypes.oneOf(['auto', 'xsmall', 'small', 'medium', 'large', 'full']),
+    PropTypes.oneOf(['auto', 'xsmall', 'small', 'medium', 'large',
+      'xlarge', 'xxlarge', 'full']),
     PropTypes.shape({
       height: PropTypes.oneOfType([
         PropTypes.oneOf(SIZES),
