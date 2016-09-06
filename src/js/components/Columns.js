@@ -32,23 +32,25 @@ export default class Columns extends Component {
   }
 
   _layout () {
-    const container = this.refs.container;
-    const children = React.Children.toArray(this.props.children);
-    let count = 1;
-    const child = container.childNodes[0];
-    if (child) {
-      const rect = container.getBoundingClientRect();
-      const childRect = child.getBoundingClientRect();
-      const widestCount = Math.floor(rect.width / childRect.width);
-      const childrenPerColumn = Math.ceil(children.length / widestCount);
-      count = Math.ceil(children.length / childrenPerColumn);
-    }
+    const container = this.containerRef;
+    if (container) {
+      const children = React.Children.toArray(this.props.children);
+      let count = 1;
+      const child = container.childNodes[0];
+      if (child) {
+        const rect = container.getBoundingClientRect();
+        const childRect = child.getBoundingClientRect();
+        const widestCount = Math.floor(rect.width / childRect.width);
+        const childrenPerColumn = Math.ceil(children.length / widestCount);
+        count = Math.ceil(children.length / childrenPerColumn);
+      }
 
-    if (count === 0) {
-      count = 1;
-    }
+      if (count === 0) {
+        count = 1;
+      }
 
-    this.setState({ count: count });
+      this.setState({ count: count });
+    }
   }
 
   render() {
@@ -76,7 +78,7 @@ export default class Columns extends Component {
     ));
 
     return (
-      <div ref="container" className={classes}>
+      <div ref={ref => this.containerRef = ref} className={classes}>
         {columns}
       </div>
     );

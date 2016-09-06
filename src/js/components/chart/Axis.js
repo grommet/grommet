@@ -94,7 +94,7 @@ export default class Axis extends Component {
     });
 
     return (
-      <div ref="axis" id={this.props.id} role='rowgroup' aria-label={axisLabel}
+      <div id={this.props.id} role='rowgroup' aria-label={axisLabel}
         className={classes.join(' ')} style={this.props.style}>
         {elements}
       </div>

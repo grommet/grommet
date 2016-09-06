@@ -1,0 +1,37 @@
+exports[`Article has correct default options 1`] = `
+<article
+  className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-article"
+  id={undefined}
+  onClick={undefined}
+  onFocus={[Function bound _onFocusChange]}
+  onScroll={[Function bound _onScroll]}
+  onTouchMove={[Function bound _onTouchMove]}
+  onTouchStart={[Function bound _onTouchStart]}
+  role={undefined}
+  style={Object {}}
+  tabIndex={undefined}>
+  <a
+    aria-hidden="true"
+    tabIndex="-1" />
+  <h1
+    className="grommetux-heading"
+    dangerouslySetInnerHTML={undefined}
+    id={undefined}>
+    Title
+  </h1>
+  <section
+    className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-vertical-medium grommetux-section"
+    id={undefined}
+    onClick={undefined}
+    role={undefined}
+    style={Object {}}
+    tabIndex={undefined}>
+    <h2>
+      Heading
+    </h2>
+    <p>
+      Lorem ipsum ...
+    </p>
+  </section>
+</article>
+`;

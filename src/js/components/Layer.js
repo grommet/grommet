@@ -31,14 +31,14 @@ class LayerContents extends Component {
   }
 
   componentDidMount () {
-    this.refs.anchorStep.focus();
+    this.anchorStepRef.focus();
 
     this._keyboardHandlers = {
       tab: this._processTab
     };
 
     if (this.props.onClose) {
-      const layerParent = this.refs.container.parentNode;
+      const layerParent = this.containerRef.parentNode;
       this._keyboardHandlers.esc = this.props.onClose;
       layerParent.addEventListener('click', this._onClick.bind(this));
     }
@@ -57,7 +57,7 @@ class LayerContents extends Component {
   }
 
   componentWillUnmount () {
-    const layerParent = this.refs.container.parentNode;
+    const layerParent = this.containerRef.parentNode;
 
     KeyboardAccelerators.stopListeningToKeyboard(
       this, this._keyboardHandlers
@@ -69,7 +69,7 @@ class LayerContents extends Component {
   }
 
   _onClick (event) {
-    const layerContents = this.refs.container;
+    const layerContents = this.containerRef;
 
     if (layerContents && !layerContents.contains(event.target)) {
       this.props.onClose();
@@ -77,7 +77,7 @@ class LayerContents extends Component {
   }
 
   _processTab (event) {
-    var items = this.refs.container.getElementsByTagName('*');
+    var items = this.containerRef.getElementsByTagName('*');
     items = DOMUtils.filterByFocusable(items);
 
     if (!items || items.length === 0) {
@@ -117,9 +117,10 @@ class LayerContents extends Component {
     }
 
     return (
-      <div ref="container" className={CLASS_ROOT + "__container"}>
+      <div ref={ref => this.containerRef = ref}
+        className={CLASS_ROOT + "__container"}>
         <a tabIndex="-1" aria-hidden='true'
-          ref='anchorStep' />
+          ref={ref => this.anchorStepRef = ref} />
         {closer}
         {this.props.children}
       </div>

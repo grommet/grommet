@@ -258,7 +258,7 @@ export default class Distribution extends Component {
       this.setState({legendPosition: 'right'});
     }
 
-    const container = this.refs.container;
+    const container = this.containerRef;
     const rect = container.getBoundingClientRect();
     const width = Math.round(rect.width);
     const height = Math.round(rect.height);
@@ -276,10 +276,10 @@ export default class Distribution extends Component {
   }
 
   _onPreviousDistribution (event) {
-    if (document.activeElement === this.refs.distribution) {
+    if (document.activeElement === this.distributionRef) {
       event.preventDefault();
       var totalDistributionCount = (
-        ReactDOM.findDOMNode(this.refs.distributionItems).childNodes.length
+        ReactDOM.findDOMNode(this.distributionItemsRef).childNodes.length
       );
 
       if (this.state.activeIndex - 1 < 0) {
@@ -294,10 +294,10 @@ export default class Distribution extends Component {
   }
 
   _onNextDistribution (event) {
-    if (document.activeElement === this.refs.distribution) {
+    if (document.activeElement === this.distributionRef) {
       event.preventDefault();
       var totalDistributionCount = (
-        ReactDOM.findDOMNode(this.refs.distributionItems).childNodes.length
+        ReactDOM.findDOMNode(this.distributionItemsRef).childNodes.length
       );
 
       if (this.state.activeIndex + 1 >= totalDistributionCount) {
@@ -312,9 +312,9 @@ export default class Distribution extends Component {
   }
 
   _onEnter (event) {
-    if (document.activeElement === this.refs.distribution) {
-      if (this.refs.activeDistribution) {
-        let index = this.refs.activeDistribution.getAttribute('data-index');
+    if (document.activeElement === this.distributionRef) {
+      if (this.activeDistributionRef) {
+        let index = this.activeDistributionRef.getAttribute('data-index');
 
         let activeDistribution = this.props.series.filter(function(item) {
           return item.value > 0;
@@ -338,10 +338,9 @@ export default class Distribution extends Component {
 
   _renderLegend () {
     return (
-      <Legend ref="legend" className={CLASS_ROOT + "__legend"}
-        series={this.props.series}
-        units={this.props.units}
-        activeIndex={this.state.activeIndex}
+      <Legend ref={ref => this.legendRef = ref}
+        className={CLASS_ROOT + "__legend"} series={this.props.series}
+        units={this.props.units} activeIndex={this.state.activeIndex}
         onActive={this._onActivate} />
     );
   }
@@ -443,9 +442,9 @@ export default class Distribution extends Component {
       itemClasses.push(`${itemClass}--clickable`);
     }
 
-    let activeDistribution;
+    let activeDistributionRef;
     if (index === this.state.activeIndex) {
-      activeDistribution = 'activeDistribution';
+      activeDistributionRef = (ref) => this.activeDistributionRef = ref;
     }
 
     let colorIndex = this._itemColorIndex(datum, index);
@@ -461,7 +460,7 @@ export default class Distribution extends Component {
       <g key={index} className={itemClasses.join(' ')}
         onMouseOver={this._onActivate.bind(this, index)}
         onMouseLeave={this._onDeactivate}
-        ref={activeDistribution} role="presentation"
+        ref={activeDistributionRef} role="presentation"
         data-index={index} onClick={datum.onClick}>
         {contents}
       </g>
@@ -566,8 +565,9 @@ export default class Distribution extends Component {
     }
 
     return (
-      <div ref="container" className={classes.join(' ')}>
-        <svg ref="distribution" className={`${CLASS_ROOT}__graphic`}
+      <div ref={ref => this.containerRef = ref} className={classes.join(' ')}>
+        <svg ref={ref => this.distributionRef = ref}
+          className={`${CLASS_ROOT}__graphic`}
           viewBox={`0 0 ${this.state.width} ${this.state.height}`}
           preserveAspectRatio="none" tabIndex="0" role={role}
           aria-activedescendant={activeDescendant}
@@ -578,7 +578,8 @@ export default class Distribution extends Component {
           {a11yDescNode}
           {boxes}
         </svg>
-        <div ref="distributionItems" className={`${CLASS_ROOT}__labels`}>
+        <div ref={ref => this.distributionItemsRef = ref}
+          className={`${CLASS_ROOT}__labels`}>
           {labels}
         </div>
         {legend}

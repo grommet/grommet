@@ -53,8 +53,8 @@ export default class ResourceMap extends Component {
 
   _draw () {
     const { vertical } = this.props;
-    const canvasElement = this.refs.canvas;
-    const highlightCanvasElement = this.refs.highlightCanvas;
+    const canvasElement = this.canvasRef;
+    const highlightCanvasElement = this.highlightRef;
     // don't draw if we don't have a canvas to draw on, such as a unit test
     if (canvasElement.getContext) {
       const baseContext = canvasElement.getContext('2d');
@@ -114,13 +114,15 @@ export default class ResourceMap extends Component {
   }
 
   _layout () {
-    const mapElement = this.refs.map;
-    if (mapElement.scrollWidth !== this.state.canvasWidth ||
-      mapElement.scrollHeight !== this.state.canvasHeight) {
-      this.setState({
-        canvasWidth: mapElement.scrollWidth,
-        canvasHeight: mapElement.scrollHeight
-      });
+    const mapElement = this.mapRef;
+    if (mapElement) {
+      if (mapElement.scrollWidth !== this.state.canvasWidth ||
+        mapElement.scrollHeight !== this.state.canvasHeight) {
+        this.setState({
+          canvasWidth: mapElement.scrollWidth,
+          canvasHeight: mapElement.scrollHeight
+        });
+      }
     }
   }
 
@@ -135,7 +137,7 @@ export default class ResourceMap extends Component {
   }
 
   _onLeave () {
-    this.setState({activeId: null});
+    this.setState({activeId: undefined});
   }
 
   _renderItems (items) {
@@ -193,10 +195,10 @@ export default class ResourceMap extends Component {
     }
 
     return (
-      <div ref="map" className={className.join(' ')}>
-        <canvas ref="canvas" className={`${CLASS_ROOT}__canvas`}
-          width={canvasWidth} height={canvasHeight} />
-        <canvas ref="highlightCanvas"
+      <div ref={ref => this.mapRef = ref} className={className.join(' ')}>
+        <canvas ref={ref => this.canvasRef = ref} width={canvasWidth}
+          height={canvasHeight} className={`${CLASS_ROOT}__canvas`}  />
+        <canvas ref={ref => this.highlightRef = ref}
           className={`${CLASS_ROOT}__canvas ${CLASS_ROOT}__canvas--highlight`}
           width={canvasWidth} height={canvasHeight} />
         <ol className={`${CLASS_ROOT}__categories`}>

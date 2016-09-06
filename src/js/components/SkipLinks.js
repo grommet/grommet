@@ -133,8 +133,7 @@ export default class SkipLinks extends Component {
 
     return (
       <Layer id="skip-link-layer" hidden={!this.state.showLayer} align="top">
-        <Box ref="skipLinksLayer"
-          pad={{horizontal: 'small', vertical: 'medium'}}>
+        <Box pad={{horizontal: 'small', vertical: 'medium'}}>
           <h2>
             <FormattedMessage id="Skip to" defaultMessage="Skip to" />
           </h2>

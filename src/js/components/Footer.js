@@ -42,8 +42,8 @@ export default class Footer extends Component {
   }
 
   _alignMirror () {
-    var contentElement = ReactDOM.findDOMNode(this.refs.content);
-    var mirrorElement = this.refs.mirror;
+    var contentElement = ReactDOM.findDOMNode(this.contentRef);
+    var mirrorElement = this.mirrorRef;
 
     // constrain fixed content to the width of the mirror
     var mirrorRect = mirrorElement.getBoundingClientRect();
@@ -95,9 +95,11 @@ export default class Footer extends Component {
     if (this.props.fixed) {
       return (
         <div className={containerClasses}>
-          <div ref="mirror" className={`${CLASS_ROOT}__mirror`}></div>
+          <div ref={ref => this.mirrorRef = ref}
+            className={`${CLASS_ROOT}__mirror`} />
           <div className={wrapperClasses}>
-            <Box ref='content' {...boxProps} tag="footer" className={classes}
+            <Box ref={ref => this.contentRef = ref}
+              {...boxProps} tag="footer" className={classes}
               primary={false}>
               {footerSkipLink}
               {this.props.children}

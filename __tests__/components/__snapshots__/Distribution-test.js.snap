@@ -1,0 +1,33 @@
+exports[`Distribution has correct default options 1`] = `
+<div
+  className="grommetux-distribution grommetux-distribution--legend-bottom grommetux-distribution--loading">
+  <svg
+    aria-activedescendant="distribution-title_item_0"
+    aria-labelledby="distribution-title distribution-desc"
+    className="grommetux-distribution__graphic"
+    preserveAspectRatio="none"
+    role="img"
+    tabIndex="0"
+    viewBox="0 0 400 200">
+    <rect
+      className="grommetux-distribution__background"
+      height={200}
+      stroke="none"
+      width={400}
+      x={0}
+      y={0} />
+    <title
+      id="distribution-title">
+      Loading
+    </title>
+    <g>
+      <path
+        className="grommetux-distribution__loading-indicator grommetux-color-index-loading"
+        d="M0,100 L400,100"
+        stroke="none" />
+    </g>
+  </svg>
+  <div
+    className="grommetux-distribution__labels" />
+</div>
+`;

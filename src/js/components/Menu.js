@@ -53,7 +53,7 @@ class MenuDrop extends Component {
     };
     KeyboardAccelerators.startListeningToKeyboard(this, this._keyboardHandlers);
 
-    let container = ReactDOM.findDOMNode(this.refs.navContainer);
+    let container = ReactDOM.findDOMNode(this.navContainerRef);
     let menuItems = container.childNodes;
     for (let i = 0; i < menuItems.length; i++) {
       let classes = menuItems[i].className.toString();
@@ -87,7 +87,7 @@ class MenuDrop extends Component {
   }
 
   _processTab (event) {
-    let container = ReactDOM.findDOMNode(this.refs.menuDrop);
+    let container = ReactDOM.findDOMNode(this.menuDropRef);
     var items = container.getElementsByTagName('*');
     items = DOMUtils.filterByFocusable(items);
 
@@ -108,7 +108,7 @@ class MenuDrop extends Component {
 
   _onUpKeyPress (event) {
     event.preventDefault();
-    var container = ReactDOM.findDOMNode(this.refs.navContainer);
+    var container = ReactDOM.findDOMNode(this.navContainerRef);
     let menuItems = container.childNodes;
     if (!this.activeMenuItem) {
       let lastMenuItem = menuItems[menuItems.length - 1];
@@ -140,7 +140,7 @@ class MenuDrop extends Component {
 
   _onDownKeyPress (event) {
     event.preventDefault();
-    var container = ReactDOM.findDOMNode(this.refs.navContainer);
+    var container = ReactDOM.findDOMNode(this.navContainerRef);
     let menuItems = container.childNodes;
     if (!this.activeMenuItem) {
       this.activeMenuItem = menuItems[0];
@@ -192,7 +192,7 @@ class MenuDrop extends Component {
 
     let contents = [
       React.cloneElement(control, {key: 'control', fill: true}),
-      <Box {...boxProps} key="nav" ref="navContainer"
+      <Box {...boxProps} key="nav" ref={ref => this.navContainerRef = ref}
         role="menu" tag="nav" className={`${CLASS_ROOT}__contents`}
         primary={false}>
         {children}
@@ -212,8 +212,8 @@ class MenuDrop extends Component {
     );
 
     return (
-      <Box ref="menuDrop" id={id} className={classes} colorIndex={colorIndex}
-        onClick={onClick}>
+      <Box ref={ref => this.menuDropRef = ref} id={id} className={classes}
+        colorIndex={colorIndex} onClick={onClick}>
         {contents}
       </Box>
     );
@@ -273,8 +273,8 @@ export default class Menu extends Component {
   }
 
   componentDidMount () {
-    if (this.refs.control) {
-      let controlElement = this.refs.control.firstChild;
+    if (this.controlRef) {
+      let controlElement = this.controlRef.firstChild;
       this.setState({
         dropId: 'menu-drop-' + DOMUtils.generateId(controlElement),
         controlHeight: controlElement.clientHeight
@@ -333,7 +333,7 @@ export default class Menu extends Component {
             this, activeKeyboardHandlers
           );
           document.addEventListener('click', this._onClose);
-          this._drop = Drop.add(this.refs.control,
+          this._drop = Drop.add(this.controlRef,
             this._renderMenuDrop(),
             {
               align: this.props.dropAlign,
@@ -499,7 +499,7 @@ export default class Menu extends Component {
       );
 
       return (
-        <div ref="control">
+        <div ref={ref => this.controlRef = ref}>
           <Button plain={true} id={this.props.id}
             className={classes}
             tabIndex="0"

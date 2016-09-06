@@ -18,10 +18,12 @@ function normalizeIndexes (selectedIndexes) {
 // Clears any selected items
 // options: {containerElement: , selectedClass: }
 function clearClass (options) {
-  const items = options.containerElement
-    .querySelectorAll("." + options.selectedClass);
-  for (let i = 0; i < items.length; i++) {
-    items[i].classList.remove(options.selectedClass);
+  if (options && options.containerElement) {
+    const items = options.containerElement
+      .querySelectorAll("." + options.selectedClass);
+    for (let i = 0; i < items.length; i++) {
+      items[i].classList.remove(options.selectedClass);
+    }
   }
 }
 
@@ -30,7 +32,7 @@ function clearClass (options) {
 //    selectedIndexes: []}
 function setClassFromIndexes (options) {
   clearClass(options);
-  if (options.selectedIndexes) {
+  if (options && options.containerElement && options.selectedIndexes) {
     const items = options.containerElement
       .querySelectorAll(options.childSelector);
     options.selectedIndexes.forEach((index) => {

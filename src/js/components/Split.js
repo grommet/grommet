@@ -69,7 +69,7 @@ export default class Split extends Component {
   }
 
   _layout () {
-    const splitElement = this.refs.split;
+    const splitElement = this.splitRef;
     if (splitElement) {
       if (splitElement.offsetWidth < BREAK_WIDTH &&
         this.props.showOnResponsive === 'priority') {
@@ -112,7 +112,7 @@ export default class Split extends Component {
     });
 
     return (
-      <div ref="split" className={classes.join(' ')}>
+      <div ref={ref => this.splitRef} className={classes.join(' ')}>
         {children}
       </div>
     );

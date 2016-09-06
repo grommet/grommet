@@ -78,10 +78,10 @@ export default class Chart extends Component {
   }
 
   _onRequestForNextLegend (event) {
-    if (document.activeElement === this.refs.chart) {
+    if (document.activeElement === this.chartRef) {
       event.preventDefault();
       let totalBandCount = (
-        ReactDOM.findDOMNode(this.refs.front).childNodes.length
+        ReactDOM.findDOMNode(this.frontRef).childNodes.length
       );
 
       if (this.state.highlightXIndex - 1 < 0) {
@@ -96,10 +96,10 @@ export default class Chart extends Component {
   }
 
   _onRequestForPreviousLegend (event) {
-    if (document.activeElement === this.refs.chart) {
+    if (document.activeElement === this.chartRef) {
       event.preventDefault();
       let totalBandCount = (
-        ReactDOM.findDOMNode(this.refs.front).childNodes.length
+        ReactDOM.findDOMNode(this.frontRef).childNodes.length
       );
 
       if (this.state.highlightXIndex + 1 >= totalBandCount) {
@@ -283,13 +283,13 @@ export default class Chart extends Component {
 
   // Aligns the legend with the current position of the cursor, if any.
   _alignLegend () {
-    if (this.state.highlightXIndex >= 0 && this.refs.cursor) {
+    if (this.state.highlightXIndex >= 0 && this.cursorRef) {
       let bounds = this.state.bounds;
-      let cursorElement = this.refs.cursor;
+      let cursorElement = this.cursorRef;
       let cursorRect = cursorElement.getBoundingClientRect();
-      let element = this.refs.chart;
+      let element = this.chartRef;
       let rect = element.getBoundingClientRect();
-      let legendElement = ReactDOM.findDOMNode(this.refs.legend);
+      let legendElement = ReactDOM.findDOMNode(this.legendRef);
       let legendRect = legendElement.getBoundingClientRect();
 
       let left = cursorRect.left - rect.left - legendRect.width - 1;
@@ -310,7 +310,7 @@ export default class Chart extends Component {
     if (this.props.legend && 'overlay' === this.props.legend.position) {
       this._alignLegend();
     }
-    let element = this.refs.chart;
+    let element = this.chartRef;
     let rect = element.getBoundingClientRect();
     if (rect.width !== this.state.width || rect.height !== this.state.height) {
       let bounds = this._bounds(this.props.series, this.props.xAxis,
@@ -724,7 +724,7 @@ export default class Chart extends Component {
     });
 
     return (
-      <g ref="xAxis" className={`${CLASS_ROOT}__xaxis`}>
+      <g ref={ref => this.xAxisRef = ref} className={`${CLASS_ROOT}__xaxis`}>
         {labels}
       </g>
     );
@@ -761,7 +761,7 @@ export default class Chart extends Component {
     });
 
     return (
-      <g ref="yAxis" className={`${CLASS_ROOT}__yaxis`}>
+      <g ref={ref => this.yAxisRef = ref} className={`${CLASS_ROOT}__yaxis`}>
         {bars}
       </g>
     );
@@ -836,7 +836,7 @@ export default class Chart extends Component {
 
   // Create vertical rects for each X data point.
   // These are used to track the mouse hover.
-  _renderXBands (layer) {
+  _renderXBands () {
     let className = `${CLASS_ROOT}__${layer}`;
     let bounds = this.state.bounds;
 
@@ -853,13 +853,8 @@ export default class Chart extends Component {
         x -= (bounds.xStepWidth / 2);
       }
 
-      let onMouseOver;
-      let onMouseOut;
-      if ('front' === layer) {
-        onMouseOver = this._onMouseOver.bind(this, xIndex);
-        onMouseOut = this._onMouseOut.bind(this, xIndex);
-      }
-
+      let onMouseOver = this._onMouseOver.bind(this, xIndex);
+      let onMouseOut = this._onMouseOut.bind(this, xIndex);
       let xBandId = `${this.props.a11yTitleId}_x_band_${xIndex}`;
       let xBandTitleId = `${this.props.a11yTitleId}_x_band_title_${xIndex}`;
 
@@ -879,7 +874,7 @@ export default class Chart extends Component {
     });
 
     return (
-      <g ref={layer} className={className}>
+      <g ref={ref => this.frontRef = ref} className={className}>
         {bands}
       </g>
     );
@@ -920,7 +915,8 @@ export default class Chart extends Component {
     }
 
     return (
-      <g ref="cursor" role="presentation" className={`${CLASS_ROOT}__cursor`}>
+      <g ref={ref => this.cursorRef = ref}
+        role="presentation" className={`${CLASS_ROOT}__cursor`}>
         {line}
         {points}
       </g>
@@ -953,7 +949,7 @@ export default class Chart extends Component {
     ];
 
     return (
-      <Legend ref="legend" className={classes.join(' ')}
+      <Legend ref={ref => this.legendRef = ref} className={classes.join(' ')}
         series={highlightSeries}
         total={this.props.legend.total}
         units={this.props.units} />
@@ -1033,7 +1029,7 @@ export default class Chart extends Component {
     let activeDescendant;
     let role = 'img';
     if (this.props.legend) {
-      frontBands = this._renderXBands('front');
+      frontBands = this._renderXBands();
       activeDescendant = (
         `${this.props.a11yTitleId}_x_band_${this.state.highlightXIndex}`
       );
@@ -1059,7 +1055,8 @@ export default class Chart extends Component {
 
     return (
       <div className={classes.join(' ')}>
-        <svg ref="chart" className={`${CLASS_ROOT}__graphic`}
+        <svg ref={ref => this.chartRef = ref}
+          className={`${CLASS_ROOT}__graphic`}
           viewBox={"0 0 " + this.state.width + " " + this.state.height}
           preserveAspectRatio="none" role={role} tabIndex="0"
           aria-activedescendant={activeDescendant}

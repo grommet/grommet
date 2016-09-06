@@ -26,7 +26,7 @@ export default class Legend extends Component {
 
   componentDidUpdate () {
     if (this.props.announce) {
-      announce(this.refs.legend.textContent);
+      announce(this.legendRef.textContent);
     }
   }
 
@@ -183,7 +183,8 @@ export default class Legend extends Component {
     }
 
     return (
-      <ol ref='legend' className={classes.join(' ')} role="presentation">
+      <ol ref={ref => this.legendRef = ref}
+        className={classes.join(' ')} role="presentation">
         {items.reverse()}
         {total}
       </ol>
