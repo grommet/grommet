@@ -30,6 +30,6 @@ export default class Headline extends Component {
 Headline.propTypes = {
   align: PropTypes.oneOf(['start', 'center', 'end']),
   margin: PropTypes.oneOf(['none', 'small', 'medium', 'large']),
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
   strong: PropTypes.bool
 };
