@@ -1,0 +1,155 @@
+exports[`Carousel has correct default options 1`] = `
+<div
+  className="grommetux-carousel"
+  onMouseEnter={[Function bound _onMouseOver]}
+  onMouseLeave={[Function bound _onMouseOut]}>
+  <div
+    className="grommetux-carousel__track"
+    style={
+      Object {
+        "marginLeft": -0,
+        "width": 0
+      }
+    }>
+    <div
+      className="grommetux-box grommetux-box--direction-row grommetux-box--justify-start grommetux-box--pad-small grommetux-tiles grommetux-tiles--fill grommetux-tiles--flush"
+      id={undefined}
+      onClick={undefined}
+      role={undefined}
+      style={Object {}}
+      tabIndex={undefined}>
+      <div
+        className="grommetux-box grommetux-box--direction-column grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-none grommetux-tile grommetux-carousel__item grommetux-none-hover-color-index-disabled grommetux-tile--hover-border-small"
+        id={undefined}
+        onClick={undefined}
+        role={undefined}
+        style={Object {}}
+        tabIndex={undefined}>
+        <img
+          src="/img/carousel-1.png" />
+      </div>
+      <div
+        className="grommetux-box grommetux-box--direction-column grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-none grommetux-tile grommetux-carousel__item grommetux-none-hover-color-index-disabled grommetux-tile--hover-border-small"
+        id={undefined}
+        onClick={undefined}
+        role={undefined}
+        style={Object {}}
+        tabIndex={undefined}>
+        <img
+          src="/img/carousel-2.png" />
+      </div>
+    </div>
+  </div>
+  <button
+    aria-label={undefined}
+    className="grommetux-button grommetux-carousel__arrow grommetux-carousel__arrow--prev grommetux-button--plain grommetux-button--icon"
+    disabled={false}
+    href={undefined}
+    id={undefined}
+    onClick={[Function bound _slidePrev]}
+    type="button">
+    <span
+      className="grommetux-button__icon">
+      <svg
+        aria-labelledby="previous-title"
+        className="grommetux-control-icon grommetux-control-icon-previous grommetux-control-icon--large"
+        height="24px"
+        role="img"
+        version="1.1"
+        viewBox="0 0 24 25.2071"
+        width="24px">
+        <title
+          id="previous-title">
+          <span
+            id="previous">
+            previous
+          </span>
+        </title>
+        <g>
+          <rect
+            fill="none"
+            height="24"
+            width="24"
+            y="1.2071" />
+          <polyline
+            fill="none"
+            points="16.1397,0.7071 5.1397,11.7071 16.1397,22.7071 	"
+            stroke="#000000"
+            strokeMiterlimit="10"
+            strokeWidth="2" />
+        </g>
+      </svg>
+    </span>
+  </button>
+  <button
+    aria-label={undefined}
+    className="grommetux-button grommetux-carousel__arrow grommetux-carousel__arrow--next grommetux-button--plain grommetux-button--icon"
+    disabled={false}
+    href={undefined}
+    id={undefined}
+    onClick={[Function bound _slideNext]}
+    type="button">
+    <span
+      className="grommetux-button__icon">
+      <svg
+        aria-labelledby="next-title"
+        className="grommetux-control-icon grommetux-control-icon-next grommetux-control-icon--large"
+        height="24px"
+        role="img"
+        version="1.1"
+        viewBox="0 0 24 24"
+        width="24px">
+        <title
+          id="next-title">
+          <span
+            id="next">
+            next
+          </span>
+        </title>
+        <g>
+          <rect
+            fill="none"
+            height="24"
+            width="24"
+            x="0"
+            y="0" />
+          <polyline
+            fill="none"
+            points="8,1.2101 19,12.2101 8,23.2101 	"
+            stroke="#000000"
+            strokeMiterlimit="10"
+            strokeWidth="2" />
+        </g>
+      </svg>
+    </span>
+  </button>
+  <div
+    className="grommetux-box grommetux-box--direction-row grommetux-box--justify-center grommetux-box--pad-none grommetux-carousel__controls"
+    id={undefined}
+    onClick={undefined}
+    role={undefined}
+    style={Object {}}
+    tabIndex={undefined}>
+    <svg
+      className="grommetux-carousel__control grommetux-carousel__control--active"
+      onClick={[Function bound bound _onSelect]}
+      version="1.1"
+      viewBox="0 0 24 24">
+      <circle
+        cx={12}
+        cy={12}
+        r={6} />
+    </svg>
+    <svg
+      className="grommetux-carousel__control"
+      onClick={[Function bound bound _onSelect]}
+      version="1.1"
+      viewBox="0 0 24 24">
+      <circle
+        cx={12}
+        cy={12}
+        r={6} />
+    </svg>
+  </div>
+</div>
+`;

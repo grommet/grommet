@@ -78,7 +78,7 @@ export default class SearchInput extends Component {
 
       // If this is inside a FormField, place the drop in reference to it.
       const control =
-        findAncestor(this.refs.component, FORM_FIELD) || this.refs.component;
+        findAncestor(this.componentRef, FORM_FIELD) || this.componentRef;
       this._drop = Drop.add(control,
         this._renderDrop(), { align: {top: 'bottom', left: 'left'} });
     } else if (this.state.dropActive && prevState.dropActive) {
@@ -106,7 +106,7 @@ export default class SearchInput extends Component {
       event.initEvent('change', true, true);
     }
     // We use dispatchEvent to have the browser fill out the event fully.
-    this.refs.input.dispatchEvent(event);
+    this.inputRef.dispatchEvent(event);
     // Manually dispatched events aren't delivered by React, so we notify too.
     this.props.onDOMChange(event);
   }
@@ -160,7 +160,7 @@ export default class SearchInput extends Component {
       let suggestion = this.props.suggestions[this.state.activeSuggestionIndex];
       this.setState({value: suggestion});
       if (this.props.onSelect) {
-        this.props.onSelect({target: this.refs.input, suggestion: suggestion});
+        this.props.onSelect({target: this.inputRef, suggestion: suggestion});
       }
     }
   }
@@ -168,7 +168,7 @@ export default class SearchInput extends Component {
   _onClickSuggestion (suggestion) {
     this.setState({value: suggestion, dropActive: false});
     if (this.props.onSelect) {
-      this.props.onSelect({target: this.refs.input, suggestion: suggestion});
+      this.props.onSelect({target: this.inputRef, suggestion: suggestion});
     }
   }
 
@@ -179,7 +179,7 @@ export default class SearchInput extends Component {
     });
     // delay to wait out subsequent render after state change
     setTimeout(() => {
-      this.refs.input.select();
+      this.inputRef.select();
     }, 10);
   }
 
@@ -229,8 +229,9 @@ export default class SearchInput extends Component {
     );
 
     return (
-      <div ref="component" className={classes}>
-        <input ref="input" className={`${CLASS_ROOT}__input`}
+      <div ref={ref => this.componentRef = ref} className={classes}>
+        <input ref={ref => this.inputRef = ref}
+          className={`${CLASS_ROOT}__input`}
           id={this.props.id} name={this.props.name}
           value={this._renderLabel(this.props.value)}
           defaultValue={this._renderLabel(this.props.defaultValue)}

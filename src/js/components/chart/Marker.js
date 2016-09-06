@@ -22,7 +22,7 @@ export default class Marker extends Component {
   }
 
   componentDidMount () {
-    this._size.start(this.refs.svg);
+    this._size.start(this.svgRef);
   }
 
   componentWillReceiveProps (nextProps) {
@@ -86,7 +86,7 @@ export default class Marker extends Component {
     }
 
     return (
-      <svg ref="svg" className={classes.join(' ')}
+      <svg ref={ref => this.svgRef = ref} className={classes.join(' ')}
         viewBox={`0 0 ${width} ${height}`} aria-hidden='true'
         preserveAspectRatio="none">
         {path}

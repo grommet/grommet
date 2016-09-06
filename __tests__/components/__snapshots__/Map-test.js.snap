@@ -1,0 +1,95 @@
+exports[`Map has correct default options 1`] = `
+<div
+  className="grommetux-map">
+  <canvas
+    className="grommetux-map__canvas"
+    height={100}
+    width={100} />
+  <canvas
+    className="grommetux-map__canvas grommetux-map__canvas--highlight"
+    height={100}
+    width={100} />
+  <ol
+    className="grommetux-map__categories">
+    <li
+      className="grommetux-map__category">
+      <div
+        className="grommetux-map__category-label">
+        First category
+      </div>
+      <ul
+        className="grommetux-map__category-items">
+        <li
+          className="grommetux-map__item"
+          id="item-1-1"
+          onMouseEnter={[Function bound bound _onEnter]}
+          onMouseLeave={[Function bound bound _onLeave]}>
+          First item
+        </li>
+        <li
+          className="grommetux-map__item"
+          id="item-1-2"
+          onMouseEnter={[Function bound bound _onEnter]}
+          onMouseLeave={[Function bound bound _onLeave]}>
+          Second item
+        </li>
+        <li
+          className="grommetux-map__item"
+          id="item-1-3"
+          onMouseEnter={[Function bound bound _onEnter]}
+          onMouseLeave={[Function bound bound _onLeave]}>
+          Third item
+        </li>
+      </ul>
+    </li>
+    <li
+      className="grommetux-map__category">
+      <div
+        className="grommetux-map__category-label">
+        Second category
+      </div>
+      <ul
+        className="grommetux-map__category-items">
+        <li
+          className="grommetux-map__item"
+          id="item-2-1"
+          onMouseEnter={[Function bound bound _onEnter]}
+          onMouseLeave={[Function bound bound _onLeave]}>
+          Fourth item
+        </li>
+        <li
+          className="grommetux-map__item"
+          id="item-2-2"
+          onMouseEnter={[Function bound bound _onEnter]}
+          onMouseLeave={[Function bound bound _onLeave]}>
+          Fifth item
+        </li>
+      </ul>
+    </li>
+    <li
+      className="grommetux-map__category">
+      <div
+        className="grommetux-map__category-label">
+        Third category
+      </div>
+      <ul
+        className="grommetux-map__category-items">
+        <li
+          className="grommetux-map__item"
+          id="item-3-1"
+          onMouseEnter={[Function bound bound _onEnter]}
+          onMouseLeave={[Function bound bound _onLeave]}>
+          Sixth item
+        </li>
+        <li
+          className="grommetux-map__item"
+          id="item-3-2"
+          onMouseEnter={[Function bound bound _onEnter]}
+          onMouseLeave={[Function bound bound _onLeave]}>
+          Seventh item
+        </li>
+      </ul>
+    </li>
+  </ol>
+</div>
+`;

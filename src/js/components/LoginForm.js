@@ -33,7 +33,9 @@ export default class LoginForm extends Component {
   }
 
   componentDidMount () {
-    this.refs.username.focus();
+    if (this.usernameRef) {
+      this.usernameRef.focus();
+    }
   }
 
   _onUsernameChange (event) {
@@ -136,7 +138,7 @@ export default class LoginForm extends Component {
         </div>
         <fieldset>
           <FormField htmlFor='username' label={username}>
-            <input type={usernameType} ref='username'
+            <input type={usernameType} ref={ref => this.usernameRef = ref}
               value={this.state.username}
               onChange={this._onUsernameChange} />
           </FormField>

@@ -94,7 +94,7 @@ class Parts extends Component {
 
   _makeUniform () {
     if (this.props.uniform) {
-      let parts = this.refs.component.children;
+      let parts = this.componentRef.children;
       // clear old basis
       for (let i = 0; i < parts.length; i += 1) {
         parts[i].style.webkitFlexBasis = null;
@@ -127,7 +127,7 @@ class Parts extends Component {
       classes.push(this.props.className);
     }
     return (
-      <div ref="component" className={classes.join(' ')}>
+      <div ref={ref => this.componentRef = ref} className={classes.join(' ')}>
         {this.props.children}
       </div>
     );
@@ -160,15 +160,19 @@ export default class Topology extends Component {
       highlighting: false,
       highlights: {}
     };
+
+    this.linkRefs = {};
   }
 
   componentDidMount () {
-    var topology = this.refs.topology;
-    topology.addEventListener('mousemove', this._onMouseMove);
-    topology.addEventListener('mouseleave', this._onMouseLeave);
-    window.addEventListener('resize', this._onResize);
-    this._layout();
-    this._cacheLinkIds(this.props.links);
+    var topology = this.topologyRef;
+    if (topology) {
+      topology.addEventListener('mousemove', this._onMouseMove);
+      topology.addEventListener('mouseleave', this._onMouseLeave);
+      window.addEventListener('resize', this._onResize);
+      this._layout();
+      this._cacheLinkIds(this.props.links);
+    }
   }
 
   componentWillReceiveProps (nextProps) {
@@ -181,7 +185,7 @@ export default class Topology extends Component {
   }
 
   componentWillUnmount () {
-    var topology = this.refs.topology;
+    var topology = this.topologyRef;
     topology.removeEventListener('mousemove', this._onMouseMove);
     topology.removeEventListener('mouseleave', this._onMouseLeave);
     clearTimeout(this._resizeTimer);
@@ -211,7 +215,7 @@ export default class Topology extends Component {
   }
 
   _draw () {
-    var canvasElement = this.refs.canvas;
+    var canvasElement = this.canvasRef;
     // don't draw if we don't have a canvas to draw on, such as a unit test
     if (canvasElement.getContext) {
       var context = canvasElement.getContext('2d');
@@ -221,7 +225,7 @@ export default class Topology extends Component {
 
       this.props.links.forEach(function (link, linkIndex) {
 
-        let key = this.refs[link.colorIndex];
+        let key = this.linkRefs[link.colorIndex];
         let style = window.getComputedStyle(findDOMNode(key));
         let color = style.getPropertyValue('background-color');
         context.strokeStyle = color;
@@ -275,7 +279,7 @@ export default class Topology extends Component {
   }
 
   _layout () {
-    var element = this.refs.contents;
+    var element = this.contentsRef;
     if (element.scrollWidth !== this.state.canvasWidth ||
       element.scrollHeight !== this.state.canvasHeight) {
       this.setState({
@@ -292,7 +296,7 @@ export default class Topology extends Component {
   }
 
   _highlight (element) {
-    let topology = this.refs.topology;
+    let topology = this.topologyRef;
     let highlighting = false;
     let highlights = {};
     while (element && element !== topology) {
@@ -339,17 +343,20 @@ export default class Topology extends Component {
     var colors = {};
     this.props.links.forEach(function (link) {
       if (link.colorIndex && ! colors[link.colorIndex]) {
-        colorKeys.push(<div key={link.colorIndex} ref={link.colorIndex}
+        colorKeys.push(<div key={link.colorIndex}
+          ref={(ref) => this.linkRefs[link.colorIndex] = ref}
           className={`${BACKGROUND_COLOR_INDEX}-${link.colorIndex}`}></div>);
         colors[link.colorIndex] = true;
       }
-    });
+    }, this);
 
     return (
-      <div ref="topology" className={classes.join(' ')}>
-        <canvas ref="canvas" className={CLASS_ROOT + "__canvas"}
+      <div ref={ref => this.topologyRef = ref} className={classes.join(' ')}>
+        <canvas ref={ref => this.canvasRef = ref}
+          className={CLASS_ROOT + "__canvas"}
           width={this.state.canvasWidth} height={this.state.canvasHeight} />
-        <div ref="contents" className={CLASS_ROOT + "__contents"}>
+        <div ref={ref => this.contentsRef = ref}
+          className={CLASS_ROOT + "__contents"}>
           {this.props.children}
         </div>
         <div className={CLASS_ROOT + "__color-key"}>

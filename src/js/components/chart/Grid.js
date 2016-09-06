@@ -36,7 +36,7 @@ export default class Grid extends Component {
 
   _layout () {
     const { height, width } = this.props;
-    const grid = this.refs.grid;
+    const grid = this.gridRef;
     const rect = grid.getBoundingClientRect();
     this.setState({ height: height || rect.height });
     this.setState({ width: width || rect.width });
@@ -66,7 +66,7 @@ export default class Grid extends Component {
     }
 
     return (
-      <svg ref="grid" className={CLASS_ROOT}
+      <svg ref={ref => this.gridRef = ref} className={CLASS_ROOT}
         viewBox={`0 0 ${width} ${height}`}
         preserveAspectRatio="none">
         <path fill="none" d={commands} />

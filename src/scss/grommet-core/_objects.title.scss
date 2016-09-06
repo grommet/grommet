@@ -6,7 +6,7 @@
   text-overflow: ellipsis;
   font-weight: normal;
   white-space: nowrap;
-  @include inuit-font-size(24px, initial);
+  @include inuit-font-size(24px);
 
   @include media-query(lap-and-up) {
     font-weight: 600;

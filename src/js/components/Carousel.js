@@ -42,20 +42,22 @@ export default class Carousel extends Component {
   }
 
   componentDidMount () {
-    this.setState({
-      width: this.refs.carousel.offsetWidth
-    });
+    if (this.carouselRef) {
+      this.setState({
+        width: this.carouselRef.offsetWidth
+      });
 
-    window.addEventListener('resize', this._onResize);
+      window.addEventListener('resize', this._onResize);
 
-    this.hammer = new Hammer(this.refs.carousel);
-    this._updateHammer();
+      this.hammer = new Hammer(this.carouselRef);
+      this._updateHammer();
 
-    this._handleScroll();
-    var scrollParents = DOM.findScrollParents(this.refs.carousel);
-    scrollParents.forEach(function (scrollParent) {
-      scrollParent.addEventListener('scroll', this._handleScroll);
-    }.bind(this));
+      this._handleScroll();
+      var scrollParents = DOM.findScrollParents(this.carouselRef);
+      scrollParents.forEach(function (scrollParent) {
+        scrollParent.addEventListener('scroll', this._handleScroll);
+      }.bind(this));
+    }
   }
 
   componentDidUpdate () {
@@ -67,7 +69,7 @@ export default class Carousel extends Component {
 
     window.removeEventListener('resize', this._onResize);
 
-    var scrollParents = DOM.findScrollParents(this.refs.carousel);
+    var scrollParents = DOM.findScrollParents(this.carouselRef);
     scrollParents.forEach(function (scrollParent) {
       scrollParent.removeEventListener('scroll', this._handleScroll);
     }.bind(this));
@@ -102,8 +104,8 @@ export default class Carousel extends Component {
 
   _handleScroll () {
     var viewportHeight = document.documentElement.clientHeight;
-    var carouselTopPosition = this.refs.carousel.getBoundingClientRect().top;
-    var carouselHeight = this.refs.carousel.offsetHeight;
+    var carouselTopPosition = this.carouselRef.getBoundingClientRect().top;
+    var carouselHeight = this.carouselRef.offsetHeight;
     var startScroll = viewportHeight - (carouselHeight / 2);
 
     if (this.props.autoplay && carouselTopPosition <= startScroll &&
@@ -173,7 +175,7 @@ export default class Carousel extends Component {
 
   _onResize () {
     this.setState({
-      width: this.refs.carousel.offsetWidth
+      width: this.carouselRef.offsetWidth
     });
   }
 
@@ -265,7 +267,7 @@ export default class Carousel extends Component {
     }, this);
 
     return (
-      <div ref="carousel" className={classes.join(' ')}
+      <div ref={ref => this.carouselRef = ref} className={classes.join(' ')}
         onMouseEnter={this._onMouseOver} onMouseLeave={this._onMouseOut}>
         <div className={CLASS_ROOT + "__track"}
           style={{ width: trackWidth, marginLeft: trackPosition }}>

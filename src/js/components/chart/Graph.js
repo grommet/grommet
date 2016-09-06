@@ -37,7 +37,7 @@ export default class Graph extends Component {
 
   _layout () {
     const { height, width } = this.props;
-    const graph = this.refs.graph;
+    const graph = this.graphRef;
     const rect = graph.parentNode.getBoundingClientRect();
     this.setState({
       height: height || Math.floor(rect.height),
@@ -249,7 +249,7 @@ export default class Graph extends Component {
     }
 
     return (
-      <svg ref="graph" className={classes.join(' ')}
+      <svg ref={ref => this.graphRef = ref} className={classes.join(' ')}
         viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="none"
         role="img" aria-label={this._renderA11YTitle()}>
         <g>

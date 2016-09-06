@@ -42,7 +42,7 @@ export default class Tiles extends Component {
   componentDidMount () {
     this._setSelection();
     if (this.props.onMore) {
-      this._scroll = InfiniteScroll.startListeningForScroll(this.refs.more,
+      this._scroll = InfiniteScroll.startListeningForScroll(this.moreRef,
         this.props.onMore);
     }
     if ('row' === this.props.direction) {
@@ -52,7 +52,7 @@ export default class Tiles extends Component {
       // give browser a chance to stabilize
       setTimeout(this._layout, 10);
     } else if (this.props.masonry) {
-      const tiles = findDOMNode(this.refs.tiles);
+      const tiles = findDOMNode(this.tilesRef);
       const tile =
         tiles.querySelectorAll(`.${CLASS_ROOT}__masonry-column .${TILE}`);
       // default to medium tile size ($tile-size = 192px)
@@ -102,7 +102,7 @@ export default class Tiles extends Component {
       this._setSelection();
     }
     if (this.props.onMore && !this._scroll) {
-      this._scroll = InfiniteScroll.startListeningForScroll(this.refs.more,
+      this._scroll = InfiniteScroll.startListeningForScroll(this.moreRef,
         this.props.onMore);
     }
     if ('row' === this.props.direction) {
@@ -118,7 +118,7 @@ export default class Tiles extends Component {
       window.removeEventListener('resize', this._onResize);
       document.removeEventListener('wheel', this._onWheel);
       if (this._tracking) {
-        const tiles = findDOMNode(this.refs.tiles);
+        const tiles = findDOMNode(this.tilesRef);
         tiles.removeEventListener('scroll', this._onScrollHorizontal);
       }
     } else if (this.props.masonry) {
@@ -127,12 +127,12 @@ export default class Tiles extends Component {
   }
 
   _onLeft () {
-    const tiles = findDOMNode(this.refs.tiles);
+    const tiles = findDOMNode(this.tilesRef);
     Scroll.scrollBy(tiles, 'scrollLeft', - tiles.offsetWidth);
   }
 
   _onRight () {
-    const tiles = findDOMNode(this.refs.tiles);
+    const tiles = findDOMNode(this.tilesRef);
     Scroll.scrollBy(tiles, 'scrollLeft', tiles.offsetWidth);
   }
 
@@ -163,7 +163,7 @@ export default class Tiles extends Component {
 
   _getNumberColumns () {
     const { columnBreakpoints } = this.state;
-    const tiles = findDOMNode(this.refs.tiles);
+    const tiles = findDOMNode(this.tilesRef);
     let maxColumnWidthIndex;
 
     if (tiles) {
@@ -185,7 +185,7 @@ export default class Tiles extends Component {
     const { direction, masonry } = this.props;
     if ('row' === direction) {
       // determine if we have more tiles than room to fit
-      const tiles = findDOMNode(this.refs.tiles);
+      const tiles = findDOMNode(this.tilesRef);
       // 20 is to allow some fuzziness as scrollbars come and go
       this.setState({
         overflow: (tiles.scrollWidth > (tiles.offsetWidth + 20)),
@@ -272,7 +272,7 @@ export default class Tiles extends Component {
 
   _trackHorizontalScroll () {
     if (this.state.overflow && ! this._tracking) {
-      const tiles = findDOMNode(this.refs.tiles);
+      const tiles = findDOMNode(this.tilesRef);
       tiles.addEventListener('scroll', this._onScrollHorizontal);
       this._tracking = true;
     }
@@ -280,7 +280,7 @@ export default class Tiles extends Component {
 
   _setSelection () {
     Selection.setClassFromIndexes({
-      containerElement: findDOMNode(this.refs.tiles),
+      containerElement: findDOMNode(this.tilesRef),
       childSelector: `.${TILE}`,
       selectedClass: SELECTED_CLASS,
       selectedIndexes: this.state.selected
@@ -289,7 +289,7 @@ export default class Tiles extends Component {
 
   _onClick (event) {
     let selected = Selection.onClick(event, {
-      containerElement: findDOMNode(this.refs.tiles),
+      containerElement: findDOMNode(this.tilesRef),
       childSelector: `.${TILE}`,
       selectedClass: SELECTED_CLASS,
       multiSelect: ('multiple' === this.props.selectable),
@@ -333,7 +333,7 @@ export default class Tiles extends Component {
     let more = null;
     if (onMore) {
       more = (
-        <div ref="more" className={`${CLASS_ROOT}__more`}>
+        <div ref={ref => this.moreRef = ref} className={`${CLASS_ROOT}__more`}>
           <SpinningIcon />
         </div>
       );
@@ -354,7 +354,7 @@ export default class Tiles extends Component {
     }
 
     let contents = (
-      <Box ref="tiles" {...other}
+      <Box ref={ref => this.tilesRef = ref} {...other}
         wrap={direction ? false : true}
         direction={direction ? direction : 'row'}
         className={classes}

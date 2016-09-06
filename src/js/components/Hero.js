@@ -4,8 +4,8 @@ import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import CSSClassnames from '../utils/CSSClassnames';
 import Responsive from '../utils/Responsive';
-import Box from 'grommet/components/Box';
-import Image from 'grommet/components/Image';
+import Box from './Box';
+import Image from './Image';
 
 const CLASS_ROOT = CSSClassnames.HERO;
 
@@ -82,7 +82,7 @@ export default class Hero extends Component {
     } else if (backgroundVideo) {
       backgroundMarkup = (
         <Box className={CLASS_ROOT + "__background " +
-          CLASS_ROOT + "__background-video"} ref="video">
+          CLASS_ROOT + "__background-video"}>
           {backgroundVideo}
         </Box>
       );
