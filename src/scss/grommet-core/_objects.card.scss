@@ -168,14 +168,14 @@ $card-hover-color: #EBEBEB;
     }
   }
 
-  &__paragraph {
+  &__summary {
     &.#{$grommet-namespace}paragraph {
       margin-top: 0.125em;
       margin-bottom: 0.5em;
     }
   }
 
-  &__description {
+  &__details {
     &.#{$grommet-namespace}paragraph {
       margin-bottom: 0.333em;
     }

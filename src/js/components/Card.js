@@ -131,6 +131,7 @@ export default class Card extends Component {
       headingStrong, label, onClick, pad, reverse, summary, textSize, thumbnail,
       video } = this.props;
     const tileProps = Props.pick(this.props, Object.keys(Tile.propTypes));
+    delete tileProps.colorIndex;
     delete tileProps.onClick;
     delete tileProps.pad;
 
@@ -220,7 +221,7 @@ Card.propTypes = {
   heading: PropTypes.string,
   headingStrong: PropTypes.bool,
   label: PropTypes.string,
-  link: PropTypes.string,
+  link: PropTypes.element,
   onClick: PropTypes.func,
   reverse: PropTypes.bool,
   summary: PropTypes.node,
