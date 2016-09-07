@@ -112,7 +112,7 @@ export default class Split extends Component {
     });
 
     return (
-      <div ref={ref => this.splitRef} className={classes.join(' ')}>
+      <div ref={ref => this.splitRef = ref} className={classes.join(' ')}>
         {children}
       </div>
     );
