@@ -127,9 +127,9 @@ export default class Card extends Component {
   }
 
   render () {
-    const { children, thumbnail, details, heading, headingStrong, label,
-      onClick, video, direction, reverse, pad, className, textSize, summary,
-      colorIndex } = this.props;
+    const { children, className, colorIndex, details, direction, heading,
+      headingStrong, label, onClick, pad, reverse, summary, textSize, thumbnail,
+      video } = this.props;
     const tileProps = Props.pick(this.props, Object.keys(Tile.propTypes));
     delete tileProps.onClick;
     delete tileProps.pad;
@@ -216,13 +216,16 @@ export default class Card extends Component {
 };
 
 Card.propTypes = {
-  thumbnail: PropTypes.string,
-  textSize: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
-  label: PropTypes.string,
+  details: PropTypes.node,
   heading: PropTypes.string,
   headingStrong: PropTypes.bool,
+  label: PropTypes.string,
+  link: PropTypes.string,
+  onClick: PropTypes.func,
+  reverse: PropTypes.bool,
   summary: PropTypes.node,
-  details: PropTypes.node,
+  textSize: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
+  thumbnail: PropTypes.string,
   video: PropTypes.oneOfType([
     PropTypes.shape({
       source: PropTypes.string.isRequired,
@@ -230,15 +233,12 @@ Card.propTypes = {
     }),
     PropTypes.element
   ]),
-  reverse: PropTypes.bool,
-  link: PropTypes.string,
-  onClick: PropTypes.func,
   ...Tile.propTypes
 };
 
 Card.defaultProps = {
+  colorIndex: 'light-1',
   direction: 'column',
-  textSize: 'medium',
   headingStrong: true,
-  colorIndex: 'light-1'
+  textSize: 'medium'
 };
