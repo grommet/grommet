@@ -12,7 +12,7 @@ jest.mock('react-dom');
 describe('Calendar', () => {
   it('has correct default options', () => {
     const component = renderer.create(
-      <Calendar id="item1" name="item-1" />
+      <Calendar id="item1" name="item-1" value="2015-06-03" />
     );
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
