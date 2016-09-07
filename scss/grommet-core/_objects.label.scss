@@ -1,7 +1,7 @@
 .#{$grommet-namespace}label {
   @include inuit-font-size($control-font-size);
   @include text-align();
-  @include margin();
+  @include vertical-margin();
 }
 
 .#{$grommet-namespace}label--uppercase {

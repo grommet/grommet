@@ -513,13 +513,15 @@ exports.default = Tiles;
 
 Tiles.propTypes = (0, _extends3.default)({
   fill: _react.PropTypes.bool,
-  flush: _react.PropTypes.bool,
+  flush: _react.PropTypes.bool, /// deprecated to content components?
   onMore: _react.PropTypes.func,
   onSelect: _react.PropTypes.func,
   selectable: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.oneOf(['multiple'])]),
   selected: _react.PropTypes.oneOfType([_react.PropTypes.number, _react.PropTypes.arrayOf(_react.PropTypes.number)]),
   size: _react.PropTypes.oneOf(['small', 'medium', 'large']),
+  /// deprecated to content components?
   numColumns: _react.PropTypes.number,
+  /// deprecated to Columns
   masonry: _react.PropTypes.bool
 }, _Box2.default.propTypes);
 

@@ -1,25 +1,25 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-$meter-size: $graphic-size;
-$meter-small-size: $graphic-small-size;
-$meter-large-size: $graphic-large-size;
-$meter-xlarge-size: $graphic-xlarge-size;
+// $size-medium: $graphic-size;
+// $size-small: $graphic-small-size;
+// $size-large: $graphic-large-size;
+// $size-xlarge: $graphic-xlarge-size;
 
 $meter-slice-width: round($inuit-base-spacing-unit / 6);
 $meter-slice-active-width: round($inuit-base-spacing-unit / 2);
 $meter-threshold-slice-width: $meter-slice-width;
 $meter-indicator-width: round($inuit-base-spacing-unit / 6);
 
-$meter-arc-size: $meter-size - double($inuit-base-spacing-unit);
-$meter-arc-small-size: $meter-small-size - $inuit-base-spacing-unit;
-$meter-arc-large-size: $meter-large-size - round($inuit-base-spacing-unit * 3);
-$meter-arc-xlarge-size: $meter-xlarge-size - round($inuit-base-spacing-unit * 4);
+$meter-arc-size: $size-medium - double($inuit-base-spacing-unit);
+$meter-arc-small-size: $size-small - $inuit-base-spacing-unit;
+$meter-arc-large-size: $size-large - round($inuit-base-spacing-unit * 3);
+$meter-arc-xlarge-size: $size-xlarge - round($inuit-base-spacing-unit * 4);
 $meter-label-width: double($inuit-base-spacing-unit);
 $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
 
 @include keyframes(draw-meter) {
   0% {
-    stroke-dashoffset: $meter-size;
+    stroke-dashoffset: $size-medium;
   }
 
   100% {
@@ -29,7 +29,7 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
 
 @include keyframes(draw-arc) {
   0% {
-    stroke-dashoffset: - $meter-size;
+    stroke-dashoffset: - $size-medium;
   }
 
   100% {
@@ -182,7 +182,7 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
 
   .#{$grommet-namespace}meter__minmax-container {
     display: block;
-    width: $meter-size;
+    width: $size-medium;
   }
 
   .#{$grommet-namespace}meter__minmax {
@@ -191,19 +191,19 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
 
   &.#{$grommet-namespace}meter--small {
     .#{$grommet-namespace}meter__minmax-container {
-      width: $meter-small-size;
+      width: $size-small;
     }
   }
 
   &.#{$grommet-namespace}meter--large {
     .#{$grommet-namespace}meter__minmax-container {
-      width: $meter-large-size;
+      width: $size-large;
     }
   }
 
   &.#{$grommet-namespace}meter--xlarge {
     .#{$grommet-namespace}meter__minmax-container {
-      width: $meter-xlarge-size;
+      width: $size-xlarge;
     }
   }
 }
@@ -216,7 +216,7 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
   }
 
   .#{$grommet-namespace}meter__minmax-container {
-    height: $meter-size;
+    height: $size-medium;
   }
 
   .#{$grommet-namespace}meter__minmax {
@@ -252,19 +252,19 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
 
   &.#{$grommet-namespace}meter--small {
     .#{$grommet-namespace}meter__minmax-container {
-      height: $meter-small-size;
+      height: $size-small;
     }
   }
 
   &.#{$grommet-namespace}meter--large {
     .#{$grommet-namespace}meter__minmax-container {
-      height: $meter-large-size;
+      height: $size-large;
     }
   }
 
   &.#{$grommet-namespace}meter--xlarge {
     .#{$grommet-namespace}meter__minmax-container {
-      height: $meter-xlarge-size;
+      height: $size-xlarge;
     }
   }
 }
@@ -328,7 +328,7 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
 
   .#{$grommet-namespace}meter__slice {
     stroke-linecap: butt;
-    stroke-dasharray: $meter-size $meter-size;
+    stroke-dasharray: $size-medium $size-medium;
     stroke-dashoffset: 0;
   }
 
@@ -368,7 +368,7 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
     white-space: nowrap;
 
     svg.#{$grommet-namespace}meter__graphic {
-      height: $meter-size;
+      height: $size-medium;
     }
 
     .#{$grommet-namespace}meter__labeled-graphic {
@@ -378,7 +378,7 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
     .#{$grommet-namespace}meter__value {
       position: relative;
       vertical-align: top;
-      top: halve($meter-size);
+      top: halve($size-medium);
       @include transform(translateY(-50%));
       display: inline-block;
       // margin-left: halve($inuit-base-spacing-unit);
@@ -393,7 +393,7 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
     &.#{$grommet-namespace}meter--legend-right {
 
       .#{$grommet-namespace}meter__legend {
-        top: halve($meter-size);
+        top: halve($size-medium);
       }
 
       .#{$grommet-namespace}meter__value {
@@ -404,7 +404,7 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
     &.#{$grommet-namespace}meter--small {
 
       svg.#{$grommet-namespace}meter__graphic {
-        height: $meter-small-size;
+        height: $size-small;
       }
 
       &:not(.#{$grommet-namespace}meter--stacked) {
@@ -428,13 +428,13 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
       }
 
       .#{$grommet-namespace}meter__value {
-        top: halve($meter-small-size);
+        top: halve($size-small);
       }
 
       &.#{$grommet-namespace}meter--legend-right {
 
         .#{$grommet-namespace}meter__legend {
-          top: halve($meter-small-size);
+          top: halve($size-small);
         }
 
         .#{$grommet-namespace}meter__value {
@@ -445,7 +445,7 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
 
     &.#{$grommet-namespace}meter--large {
       svg.#{$grommet-namespace}meter__graphic {
-        height: $meter-large-size;
+        height: $size-large;
         width: round($inuit-base-spacing-unit * 1.5);
       }
 
@@ -470,19 +470,19 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
       }
 
       .#{$grommet-namespace}meter__value {
-        top: halve($meter-large-size);
+        top: halve($size-large);
       }
 
       &.#{$grommet-namespace}meter--legend-right {
         .#{$grommet-namespace}meter__legend {
-          top: halve($meter-large-size);
+          top: halve($size-large);
         }
       }
     }
 
     &.#{$grommet-namespace}meter--xlarge {
       svg.#{$grommet-namespace}meter__graphic {
-        height: $meter-xlarge-size;
+        height: $size-xlarge;
         width: round($inuit-base-spacing-unit * 2);
       }
 
@@ -507,12 +507,12 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
       }
 
       .#{$grommet-namespace}meter__value {
-        top: halve($meter-xlarge-size);
+        top: halve($size-xlarge);
       }
 
       &.#{$grommet-namespace}meter--legend-right {
         .#{$grommet-namespace}meter__legend {
-          top: halve($meter-xlarge-size);
+          top: halve($size-xlarge);
         }
       }
     }
@@ -532,7 +532,7 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
   }
 
   .#{$grommet-namespace}meter__graphic {
-    width: $meter-size;
+    width: $size-medium;
   }
 
   .#{$grommet-namespace}meter__value {
@@ -591,7 +591,7 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
   &.#{$grommet-namespace}meter--small {
 
     svg.#{$grommet-namespace}meter__graphic {
-      width: $meter-small-size;
+      width: $size-small;
     }
 
     .#{$grommet-namespace}meter__value-value,
@@ -644,7 +644,7 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
     line-height: round($inuit-base-spacing-unit * 1.5);
 
     svg.#{$grommet-namespace}meter__graphic {
-      width: $meter-large-size;
+      width: $size-large;
       height: round($inuit-base-spacing-unit * 1.5);
     }
 
@@ -687,7 +687,7 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
     line-height: round($inuit-base-spacing-unit * 2);
 
     svg.#{$grommet-namespace}meter__graphic {
-      width: $meter-xlarge-size;
+      width: $size-xlarge;
       height: round($inuit-base-spacing-unit * 2);
     }
 
@@ -739,13 +739,13 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
 
   .#{$grommet-namespace}meter.series-pre {
     path {
-      stroke-dashoffset: quadruple($meter-size);
+      stroke-dashoffset: quadruple($size-medium);
     }
   }
 
   .#{$grommet-namespace}meter__slice {
     stroke-linecap: butt;
-    stroke-dasharray: quadruple($meter-size) quadruple($meter-size);
+    stroke-dasharray: quadruple($size-medium) quadruple($size-medium);
     stroke-dashoffset: 0;
   }
 
@@ -809,24 +809,24 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
 .#{$grommet-namespace}meter--arc:not(.#{$grommet-namespace}meter--vertical) {
 
   .#{$grommet-namespace}meter__minmax-container {
-    width: $meter-size;
+    width: $size-medium;
   }
 
   &.#{$grommet-namespace}meter--small {
     .#{$grommet-namespace}meter__minmax-container {
-      width: $meter-small-size;
+      width: $size-small;
     }
   }
 
   &.#{$grommet-namespace}meter--large {
     .#{$grommet-namespace}meter__minmax-container {
-      width: $meter-large-size;
+      width: $size-large;
     }
   }
 
   &.#{$grommet-namespace}meter--xlarge {
     .#{$grommet-namespace}meter__minmax-container {
-      width: $meter-xlarge-size;
+      width: $size-xlarge;
     }
   }
 }
@@ -836,24 +836,24 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
 
   &.#{$grommet-namespace}meter--legend-right {
     .#{$grommet-namespace}meter__legend {
-      top: halve($meter-size);
+      top: halve($size-medium);
     }
 
     &.#{$grommet-namespace}meter--small {
       .#{$grommet-namespace}meter__legend {
-        top: halve($meter-small-size);
+        top: halve($size-small);
       }
     }
 
     &.#{$grommet-namespace}meter--large {
       .#{$grommet-namespace}meter__legend {
-        top: halve($meter-large-size);
+        top: halve($size-large);
       }
     }
 
     &.#{$grommet-namespace}meter--xlarge {
       .#{$grommet-namespace}meter__legend {
-        top: halve($meter-xlarge-size);
+        top: halve($size-xlarge);
       }
     }
   }
@@ -864,8 +864,8 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
 .#{$grommet-namespace}meter--circle {
 
   svg.#{$grommet-namespace}meter__graphic {
-    width: $meter-size;
-    height: $meter-size;
+    width: $size-medium;
+    height: $size-medium;
   }
 
   .#{$grommet-namespace}meter__label {
@@ -876,9 +876,9 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
   }
 
   .#{$grommet-namespace}meter__value {
-    top: halve($meter-size);
+    top: halve($size-medium);
     @include transform(translateX(-50%) translateY(-50%));
-    max-width: $meter-size - double($inuit-base-spacing-unit);
+    max-width: $size-medium - double($inuit-base-spacing-unit);
     position: absolute;
     left: 50%;
   }
@@ -886,39 +886,39 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
   &.#{$grommet-namespace}meter--small {
 
     svg.#{$grommet-namespace}meter__graphic {
-      width: $meter-small-size;
-      height: $meter-small-size;
+      width: $size-small;
+      height: $size-small;
     }
 
     .#{$grommet-namespace}meter__value {
-      top: halve($meter-small-size);
-      max-width: $meter-small-size - $inuit-base-spacing-unit;
+      top: halve($size-small);
+      max-width: $size-small - $inuit-base-spacing-unit;
     }
   }
 
   &.#{$grommet-namespace}meter--large {
 
     svg.#{$grommet-namespace}meter__graphic {
-      width: $meter-large-size;
-      height: $meter-large-size;
+      width: $size-large;
+      height: $size-large;
     }
 
     .#{$grommet-namespace}meter__value {
-      top: halve($meter-large-size);
-      max-width: $meter-large-size - round($inuit-base-spacing-unit * 3);
+      top: halve($size-large);
+      max-width: $size-large - round($inuit-base-spacing-unit * 3);
     }
   }
 
   &.#{$grommet-namespace}meter--xlarge {
 
     svg.#{$grommet-namespace}meter__graphic {
-      width: $meter-xlarge-size;
-      height: $meter-xlarge-size;
+      width: $size-xlarge;
+      height: $size-xlarge;
     }
 
     .#{$grommet-namespace}meter__value {
-      top: halve($meter-xlarge-size);
-      max-width: $meter-xlarge-size - round($inuit-base-spacing-unit * 4);
+      top: halve($size-xlarge);
+      max-width: $size-xlarge - round($inuit-base-spacing-unit * 4);
     }
   }
 
@@ -936,7 +936,7 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
 .#{$grommet-namespace}meter--arc:not(.#{$grommet-namespace}meter--vertical) {
 
   svg.#{$grommet-namespace}meter__graphic {
-    width: $meter-size;
+    width: $size-medium;
     height: $meter-arc-size;
   }
 
@@ -953,7 +953,7 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
   &.#{$grommet-namespace}meter--small {
 
     svg.#{$grommet-namespace}meter__graphic {
-      width: $meter-small-size;
+      width: $size-small;
       height: $meter-arc-small-size;
     }
 
@@ -965,7 +965,7 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
   &.#{$grommet-namespace}meter--large {
 
     svg.#{$grommet-namespace}meter__graphic {
-      width: $meter-large-size;
+      width: $size-large;
       height: $meter-arc-large-size;
     }
 
@@ -977,7 +977,7 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
   &.#{$grommet-namespace}meter--xlarge {
 
     svg.#{$grommet-namespace}meter__graphic {
-      width: $meter-xlarge-size;
+      width: $size-xlarge;
       height: $meter-arc-xlarge-size;
     }
 
@@ -992,20 +992,20 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
   svg.#{$grommet-namespace}meter__graphic {
     display: inline;
     width: $meter-arc-size;
-    height: $meter-size;
+    height: $size-medium;
   }
 
   .#{$grommet-namespace}meter__value {
     position: relative;
-    top: halve($meter-size);
+    top: halve($size-medium);
     @include transform(translateY(-50%));
     display: inline-block;
-    margin-left: - ($meter-size - $meter-arc-size) + $inuit-base-spacing-unit;
+    margin-left: - ($size-medium - $meter-arc-size) + $inuit-base-spacing-unit;
     vertical-align: top;
 
     html.rtl & {
       margin-left: 0;
-      margin-right: - ($meter-size - $meter-arc-size) + $inuit-base-spacing-unit;
+      margin-right: - ($size-medium - $meter-arc-size) + $inuit-base-spacing-unit;
     }
   }
 
@@ -1026,11 +1026,11 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
 
     svg.#{$grommet-namespace}meter__graphic {
       width: $meter-arc-small-size;
-      height: $meter-small-size;
+      height: $size-small;
     }
 
     .#{$grommet-namespace}meter__value {
-      top: halve($meter-small-size);
+      top: halve($size-small);
       margin-left: - halve($inuit-base-spacing-unit);
 
       html.rtl & {
@@ -1049,16 +1049,16 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
 
     svg.#{$grommet-namespace}meter__graphic {
       width: $meter-arc-large-size;
-      height: $meter-large-size;
+      height: $size-large;
     }
 
     .#{$grommet-namespace}meter__value {
-      top: halve($meter-large-size);
-      margin-left: - ($meter-large-size - $meter-arc-large-size) + $inuit-base-spacing-unit;
+      top: halve($size-large);
+      margin-left: - ($size-large - $meter-arc-large-size) + $inuit-base-spacing-unit;
 
       html.rtl & {
         margin-left: 0;
-        margin-right: - ($meter-large-size - $meter-arc-large-size) + $inuit-base-spacing-unit;
+        margin-right: - ($size-large - $meter-arc-large-size) + $inuit-base-spacing-unit;
       }
     }
   }
@@ -1067,37 +1067,37 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
 
     svg.#{$grommet-namespace}meter__graphic {
       width: $meter-arc-xlarge-size;
-      height: $meter-xlarge-size;
+      height: $size-xlarge;
     }
 
     .#{$grommet-namespace}meter__value {
-      top: halve($meter-xlarge-size);
-      margin-left: - ($meter-xlarge-size - $meter-arc-xlarge-size) + $inuit-base-spacing-unit;
+      top: halve($size-xlarge);
+      margin-left: - ($size-xlarge - $meter-arc-xlarge-size) + $inuit-base-spacing-unit;
 
       html.rtl & {
         margin-left: 0;
-        margin-right: - ($meter-xlarge-size - $meter-arc-xlarge-size) + $inuit-base-spacing-unit;
+        margin-right: - ($size-xlarge - $meter-arc-xlarge-size) + $inuit-base-spacing-unit;
       }
     }
   }
 
   &.#{$grommet-namespace}meter--minmax {
     .#{$grommet-namespace}meter__value {
-      margin-left: - halve($meter-size) + $inuit-base-spacing-unit;
+      margin-left: - halve($size-medium) + $inuit-base-spacing-unit;
 
       html.rtl & {
         margin-left: 0;
-        margin-right: - halve($meter-size) + $inuit-base-spacing-unit;
+        margin-right: - halve($size-medium) + $inuit-base-spacing-unit;
       }
     }
 
     &.#{$grommet-namespace}meter--small {
       .#{$grommet-namespace}meter__value {
-        margin-left: - ($meter-small-size - $meter-arc-small-size) - round($inuit-base-spacing-unit * 1.5);
+        margin-left: - ($size-small - $meter-arc-small-size) - round($inuit-base-spacing-unit * 1.5);
 
         html.rtl & {
           margin-left: 0;
-          margin-right: - ($meter-small-size - $meter-arc-small-size) - round($inuit-base-spacing-unit * 1.5);
+          margin-right: - ($size-small - $meter-arc-small-size) - round($inuit-base-spacing-unit * 1.5);
         }
       }
     }
