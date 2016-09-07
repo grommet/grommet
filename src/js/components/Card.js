@@ -6,6 +6,7 @@ import CSSClassnames from '../utils/CSSClassnames';
 import Props from '../utils/Props';
 import Box from './Box';
 import Tile from './Tile';
+import Label from './Label';
 import Heading from './Heading';
 import Paragraph from './Paragraph';
 import Anchor from './Anchor';
@@ -16,25 +17,25 @@ import WatchIcon from './icons/base/Watch';
 const CLASS_ROOT = CSSClassnames.CARD;
 const TEXT_TAGS = {
   xlarge: {
-    label: 'h3',
+    label: 'large',
     heading: 'h1',
     summary: 'xlarge',
     details: 'large'
   },
   large: {
-    label: 'h4',
+    label: 'medium',
     heading: 'h1',
     summary: 'xlarge',
     details: 'large'
   },
   medium: {
-    label: 'h4',
+    label: 'medium',
     heading: 'h2',
     summary: 'large',
     details: 'medium'
   },
   small: {
-    label: 'h5',
+    label: 'small',
     heading: 'h3',
     summary: 'medium',
     details: 'small'
@@ -155,10 +156,10 @@ export default class Card extends Component {
     const contentContainer = (
       <Box className={`${CLASS_ROOT}__content`} pad="medium">
         {label &&
-          <Heading className={`${CLASS_ROOT}__label`}
-            tag={tag.label} margin="none" uppercase={true}>
+          <Label className={`${CLASS_ROOT}__label`}
+            size={tag.label} margin="none" uppercase={true}>
             {label}
-          </Heading>
+          </Label>
         }
         {heading &&
           <Heading className={`${CLASS_ROOT}__heading`}
