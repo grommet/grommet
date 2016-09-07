@@ -10,8 +10,8 @@ $meter-slice-active-width: round($inuit-base-spacing-unit / 2);
 $meter-threshold-slice-width: $meter-slice-width;
 $meter-indicator-width: round($inuit-base-spacing-unit / 6);
 
-$meter-arc-size: $size-medium - double($inuit-base-spacing-unit);
-$meter-arc-small-size: $size-small - $inuit-base-spacing-unit;
+$meter-arc-size: $size-small - double($inuit-base-spacing-unit);
+$meter-arc-small-size: $size-xsmall - $inuit-base-spacing-unit;
 $meter-arc-large-size: $size-large - round($inuit-base-spacing-unit * 3);
 $meter-arc-xlarge-size: $size-xlarge - round($inuit-base-spacing-unit * 4);
 $meter-label-width: double($inuit-base-spacing-unit);
@@ -182,7 +182,7 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
 
   .#{$grommet-namespace}meter__minmax-container {
     display: block;
-    width: $size-medium;
+    width: $size-small;
   }
 
   .#{$grommet-namespace}meter__minmax {
@@ -216,7 +216,7 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
   }
 
   .#{$grommet-namespace}meter__minmax-container {
-    height: $size-medium;
+    height: $size-small;
   }
 
   .#{$grommet-namespace}meter__minmax {
@@ -368,7 +368,8 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
     white-space: nowrap;
 
     svg.#{$grommet-namespace}meter__graphic {
-      height: $size-medium;
+      height: $size-small;
+      min-width: $inuit-base-spacing-unit;
     }
 
     .#{$grommet-namespace}meter__labeled-graphic {
@@ -532,7 +533,8 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
   }
 
   .#{$grommet-namespace}meter__graphic {
-    width: $size-medium;
+    width: $size-small;
+    min-width: $size-xsmall;
   }
 
   .#{$grommet-namespace}meter__value {
@@ -809,7 +811,7 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
 .#{$grommet-namespace}meter--arc:not(.#{$grommet-namespace}meter--vertical) {
 
   .#{$grommet-namespace}meter__minmax-container {
-    width: $size-medium;
+    width: $size-small;
   }
 
   &.#{$grommet-namespace}meter--small {
@@ -864,8 +866,9 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
 .#{$grommet-namespace}meter--circle {
 
   svg.#{$grommet-namespace}meter__graphic {
-    width: $size-medium;
-    height: $size-medium;
+    width: $size-small;
+    min-width: $size-xsmall;
+    height: auto;
   }
 
   .#{$grommet-namespace}meter__label {
@@ -878,7 +881,7 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
   .#{$grommet-namespace}meter__value {
     top: halve($size-medium);
     @include transform(translateX(-50%) translateY(-50%));
-    max-width: $size-medium - double($inuit-base-spacing-unit);
+    max-width: $size-small - double($inuit-base-spacing-unit);
     position: absolute;
     left: 50%;
   }
@@ -936,8 +939,9 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
 .#{$grommet-namespace}meter--arc:not(.#{$grommet-namespace}meter--vertical) {
 
   svg.#{$grommet-namespace}meter__graphic {
-    width: $size-medium;
-    height: $meter-arc-size;
+    width: $size-small;
+    min-width: $size-xsmall;
+    height: auto;
   }
 
   .#{$grommet-namespace}meter__value {
@@ -992,7 +996,7 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
   svg.#{$grommet-namespace}meter__graphic {
     display: inline;
     width: $meter-arc-size;
-    height: $size-medium;
+    height: $size-small;
   }
 
   .#{$grommet-namespace}meter__value {
