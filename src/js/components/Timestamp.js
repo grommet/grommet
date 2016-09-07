@@ -54,10 +54,13 @@ export default class Timestamp extends Component {
   }
 
   render () {
+    const { align, className } = this.props;
     var classes = [CLASS_ROOT];
-    classes.push(CLASS_ROOT + '--' + this.props.align);
-    if (this.props.className) {
-      classes.push(this.props.className);
+    if (align) {
+      classes.push(CLASS_ROOT + '--' + align);
+    }
+    if (className) {
+      classes.push(className);
     }
 
     let date;
@@ -82,7 +85,7 @@ export default class Timestamp extends Component {
 const FIELD_TYPES = PropTypes.oneOf(['date', 'time']);
 
 Timestamp.propTypes = {
-  align: PropTypes.oneOf(['left', 'right']),
+  align: PropTypes.oneOf(['start', 'center', 'end']),
   fields: PropTypes.oneOfType([
     PropTypes.arrayOf(FIELD_TYPES),
     FIELD_TYPES
@@ -91,8 +94,4 @@ Timestamp.propTypes = {
     PropTypes.string, // ISO-8601 string
     PropTypes.object  // Date object
   ]).isRequired
-};
-
-Timestamp.defaultProps = {
-  align: 'left'
 };

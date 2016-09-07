@@ -3,7 +3,7 @@
 p.#{$grommet-namespace}paragraph {
 
   @include text-align();
-  @include margin();
+  @include vertical-margin();
 
   a {
     text-decoration: none;

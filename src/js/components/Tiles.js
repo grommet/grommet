@@ -398,7 +398,7 @@ export default class Tiles extends Component {
 
 Tiles.propTypes = {
   fill: PropTypes.bool,
-  flush: PropTypes.bool,
+  flush: PropTypes.bool, /// deprecated to content components?
   onMore: PropTypes.func,
   onSelect: PropTypes.func,
   selectable: PropTypes.oneOfType([
@@ -410,8 +410,11 @@ Tiles.propTypes = {
     PropTypes.arrayOf(PropTypes.number)
   ]),
   size: PropTypes.oneOf(['small', 'medium', 'large']),
+    /// deprecated to content components?
   numColumns: PropTypes.number,
+    /// deprecated to Columns
   masonry: PropTypes.bool,
+    /// deprecated to Columns
   ...Box.propTypes
 };
 

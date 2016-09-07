@@ -102,7 +102,7 @@ $card-hover-color: #EBEBEB;
   }
 
   &--direction-row {
-    max-width: $size-large;
+    max-width: $center-column-width;
 
     .#{$grommet-namespace}card__thumbnail {
       height: auto;
@@ -126,7 +126,7 @@ $card-hover-color: #EBEBEB;
   &--direction-column {
     // allow column ContentCards not wrapped in Tiles to have
     // large Tile dimensions
-    width: $tile-large-size;
+    // width: $size-medium;
 
     @include media-query(palm) {
       padding-left: 0px;

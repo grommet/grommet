@@ -837,7 +837,7 @@ export default class Chart extends Component {
   // Create vertical rects for each X data point.
   // These are used to track the mouse hover.
   _renderXBands () {
-    let className = `${CLASS_ROOT}__${layer}`;
+    let className = `${CLASS_ROOT}__front`;
     let bounds = this.state.bounds;
 
     let bands = bounds.xAxis.data.map((obj, xIndex) => {
