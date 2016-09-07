@@ -6,7 +6,7 @@ exports[`Calendar has correct default options 1`] = `
     id="item1"
     name="item-1"
     onChange={[Function bound _onInputChange]}
-    value="2016-09-06" />
+    value="2015-06-03" />
   <button
     aria-label={undefined}
     className="grommetux-button grommetux-calendar__control grommetux-button--plain grommetux-button--icon"
