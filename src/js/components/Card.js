@@ -34,14 +34,13 @@ export default class Card extends Component {
   }
 
   _renderLink () {
-    const { link, linkIcon, linkText } = this.props;
+    const { link } = this.props;
 
     if (link) {
       return (
-        <Anchor className={`${CLASS_ROOT}__link`} primary={true} href={link}
-          target="_blank" icon={linkIcon}>
-          {linkText}
-        </Anchor>
+        <Box pad={{vertical: "small"}}>
+          {link}
+        </Box>
       );
     }
 
