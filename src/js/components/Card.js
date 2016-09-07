@@ -14,6 +14,32 @@ import Video from './Video';
 import WatchIcon from './icons/base/Watch';
 
 const CLASS_ROOT = CSSClassnames.CARD;
+const TEXT_TAGS = {
+  xlarge: {
+    label: 'h3',
+    heading: 'h1',
+    summary: 'xlarge',
+    details: 'large'
+  },
+  large: {
+    label: 'h4',
+    heading: 'h1',
+    summary: 'xlarge',
+    details: 'large'
+  },
+  medium: {
+    label: 'h4',
+    heading: 'h2',
+    summary: 'large',
+    details: 'medium'
+  },
+  small: {
+    label: 'h5',
+    heading: 'h3',
+    summary: 'medium',
+    details: 'small'
+  }
+};
 
 export default class Card extends Component {
   constructor (props) {
@@ -101,8 +127,8 @@ export default class Card extends Component {
   }
 
   render () {
-    const { children, thumbnail, description, heading, headingStrong, label,
-      onClick, video, direction, reverse, pad, className, textSize, paragraph,
+    const { children, thumbnail, details, heading, headingStrong, label,
+      onClick, video, direction, reverse, pad, className, textSize, summary,
       transparent } = this.props;
     const tileProps = Props.pick(this.props, Object.keys(Tile.propTypes));
     delete tileProps.onClick;
@@ -118,53 +144,29 @@ export default class Card extends Component {
       className
     );
 
-    let labelTag;
-    let headingTag;
-    let paragraphSize;
-    let descriptionSize;
-    if (textSize === 'xlarge') {
-      labelTag = 'h3';
-      headingTag = 'h1';
-      paragraphSize = 'xlarge';
-      descriptionSize = 'large';
-    } else if (textSize === 'large') {
-      labelTag = 'h4';
-      headingTag = 'h1';
-      paragraphSize = 'xlarge';
-      descriptionSize = 'large';
-    } else if (textSize === 'medium') {
-      labelTag = 'h4';
-      headingTag = 'h2';
-      paragraphSize = 'large';
-      descriptionSize = 'medium';
-    } else {
-      labelTag = 'h5';
-      headingTag = 'h3';
-      paragraphSize = 'medium';
-      descriptionSize = 'small';
-    }
-
     let onCardClick = onClick;
     if (!onCardClick && video) {
       onCardClick = this._onClick;
     }
 
+    const tag = TEXT_TAGS[textSize];
+
     const contentContainer = (
       <Box className={`${CLASS_ROOT}__content`} pad="medium">
         {label &&
           <Heading className={`${CLASS_ROOT}__label`}
-            tag={labelTag} margin="none" uppercase={true}>
+            tag={tag.label} margin="none" uppercase={true}>
             {label}
           </Heading>
         }
         {heading &&
           <Heading className={`${CLASS_ROOT}__heading`}
-            tag={headingTag} strong={headingStrong} margin="none">
+            tag={tag.heading} strong={headingStrong} margin="none">
             {heading}
           </Heading>
         }
-        {this._renderParagraph(paragraph, paragraphSize, 'paragraph')}
-        {this._renderParagraph(description, descriptionSize, 'description')}
+        {this._renderParagraph(summary, tag.summary, 'summary')}
+        {this._renderParagraph(details, tag.details, 'details')}
         {children}
         {this._renderLink()}
       </Box>
@@ -219,8 +221,8 @@ Card.propTypes = {
   label: PropTypes.string,
   heading: PropTypes.string,
   headingStrong: PropTypes.bool,
-  paragraph: PropTypes.string,
-  description: PropTypes.string,
+  summary: PropTypes.node,
+  details: PropTypes.node,
   video: PropTypes.oneOfType([
     PropTypes.shape({
       source: PropTypes.string.isRequired,
