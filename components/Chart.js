@@ -906,7 +906,7 @@ var Chart = function (_Component) {
     value: function _renderXBands() {
       var _this6 = this;
 
-      var className = CLASS_ROOT + '__' + layer;
+      var className = CLASS_ROOT + '__front';
       var bounds = this.state.bounds;
 
       var bands = bounds.xAxis.data.map(function (obj, xIndex) {
