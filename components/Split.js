@@ -160,7 +160,7 @@ var Split = function (_Component) {
       return _react2.default.createElement(
         'div',
         { ref: function ref(_ref) {
-            return _this2.splitRef;
+            return _this2.splitRef = _ref;
           }, className: classes.join(' ') },
         children
       );
