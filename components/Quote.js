@@ -80,9 +80,24 @@ var Quote = function (_Component) {
     value: function render() {
       var _classnames;
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, this.props.className, (_classnames = {}, (0, _defineProperty3.default)(_classnames, BORDER_COLOR_INDEX + '-' + this.props.borderColorIndex, this.props.borderColorIndex), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + this.props.size, this.props.size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--emphasize-credit', this.props.emphasizeCredit), _classnames));
+      var _props = this.props;
+      var borderColorIndex = _props.borderColorIndex;
+      var children = _props.children;
+      var className = _props.className;
+      var credit = _props.credit;
+      var emphasizeCredit = _props.emphasizeCredit;
+      var size = _props.size;
+
+
+      var classes = (0, _classnames3.default)(CLASS_ROOT, className, (_classnames = {}, (0, _defineProperty3.default)(_classnames, BORDER_COLOR_INDEX + '-' + borderColorIndex, borderColorIndex), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--emphasize-credit', emphasizeCredit), _classnames));
 
       var boxProps = _Props2.default.pick(this.props, (0, _keys2.default)(_Box2.default.propTypes));
+
+      if (size === 'small') {
+        boxProps.pad = {
+          horizontal: 'medium', vertical: 'small'
+        };
+      }
 
       return _react2.default.createElement(
         _Box2.default,
@@ -90,11 +105,11 @@ var Quote = function (_Component) {
         _react2.default.createElement(
           'div',
           null,
-          this.props.children,
+          children,
           _react2.default.createElement(
             _Paragraph2.default,
             { className: CLASS_ROOT + '__credit' },
-            this.props.credit
+            credit
           )
         )
       );
