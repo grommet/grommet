@@ -1,0 +1,106 @@
+exports[`NumberInput has correct default options 1`] = `
+<span
+  aria-describedby={undefined}
+  aria-labelledby="number-label"
+  className="grommetux-number-input">
+  <input
+    className="grommetux-number-input__input"
+    defaultValue={undefined}
+    disabled={undefined}
+    id="item2"
+    max={undefined}
+    min={undefined}
+    name="item2"
+    onChange={undefined}
+    step={undefined}
+    tabIndex="0"
+    type="number"
+    value={10} />
+  <button
+    aria-label={undefined}
+    className="grommetux-button grommetux-number-input__subtract grommetux-button--plain grommetux-button--icon"
+    disabled={false}
+    href={undefined}
+    id={undefined}
+    onClick={[Function bound _onSubtract]}
+    type="button">
+    <span
+      className="grommetux-button__icon">
+      <svg
+        aria-labelledby="subtract-title"
+        className="grommetux-control-icon grommetux-control-icon-subtract"
+        height="24px"
+        role="img"
+        version="1.1"
+        viewBox="0 0 24 24"
+        width="24px">
+        <title
+          id="subtract-title">
+          <span
+            id="subtract">
+            subtract
+          </span>
+        </title>
+        <g>
+          <rect
+            fill="none"
+            height="24"
+            width="24"
+            x="0"
+            y="0" />
+          <line
+            fill="none"
+            stroke="#000000"
+            strokeMiterlimit="10"
+            strokeWidth="2"
+            x1="0"
+            x2="24"
+            y1="12"
+            y2="12" />
+        </g>
+      </svg>
+    </span>
+  </button>
+  <button
+    aria-label={undefined}
+    className="grommetux-button grommetux-number-input__add grommetux-button--plain grommetux-button--icon"
+    disabled={false}
+    href={undefined}
+    id={undefined}
+    onClick={[Function bound _onAdd]}
+    type="button">
+    <span
+      className="grommetux-button__icon">
+      <svg
+        aria-labelledby="add-title"
+        className="grommetux-control-icon grommetux-control-icon-add"
+        height="24px"
+        role="img"
+        version="1.1"
+        viewBox="0 0 24 24"
+        width="24px">
+        <title
+          id="add-title">
+          <span
+            id="add">
+            add
+          </span>
+        </title>
+        <g>
+          <rect
+            fill="none"
+            height="24"
+            width="24"
+            x="0" />
+          <path
+            d="M0,12h24 M12,24V0"
+            fill="none"
+            stroke="#000000"
+            strokeMiterlimit="10"
+            strokeWidth="2" />
+        </g>
+      </svg>
+    </span>
+  </button>
+</span>
+`;

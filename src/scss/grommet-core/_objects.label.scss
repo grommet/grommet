@@ -1,7 +1,8 @@
 .#{$grommet-namespace}label {
   @include inuit-font-size($control-font-size);
   @include text-align();
-  @include margin();
+  @include vertical-margin();
+  font-weight: 100;
 }
 
 .#{$grommet-namespace}label--uppercase {
@@ -16,4 +17,8 @@
   #{$dark-background-context} & {
     color: $inactive-colored-text-color;
   }
+}
+
+.#{$grommet-namespace}label--large {
+  @include inuit-font-size($control-large-font-size);
 }

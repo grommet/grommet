@@ -37,7 +37,7 @@ export default class Graph extends Component {
 
   _layout () {
     const { height, width } = this.props;
-    const graph = this.refs.graph;
+    const graph = this.graphRef;
     const rect = graph.parentNode.getBoundingClientRect();
     this.setState({
       height: height || Math.floor(rect.height),
@@ -147,37 +147,40 @@ export default class Graph extends Component {
     let points = [];
     const coordinates = values.map((value, index) => {
       let coordinate;
-      if (vertical) {
-        coordinate = [
-          ((value - min) * scale) + pad,
-          (reverse ? (index * step) :
-            (height - (2 * pad)) - (index * step)) + pad
-        ];
-      } else {
-        coordinate = [
-          (reverse ? (width - (2 * pad)) - (index * step) :
-            index * step) + pad,
-          ((height - (2 * pad)) - ((value - min) * scale)) + pad
-        ];
-      }
-
-      if ((this.props.points || index === activeIndex) &&
-        ! this.props.sparkline) {
-        const classes = [`${CLASS_ROOT}__point`,
-          `${COLOR_INDEX}-${colorIndex || 'graph-1'}`];
-        let radius = pointSize / 3;
-        if (index === activeIndex) {
-          classes.push(`${CLASS_ROOT}__point--active`);
-          radius = pointSize / 2;
+      if (undefined !== value) {
+        if (vertical) {
+          coordinate = [
+            ((value - min) * scale) + pad,
+            (reverse ? (index * step) :
+              (height - (2 * pad)) - (index * step)) + pad
+          ];
+        } else {
+          coordinate = [
+            (reverse ? (width - (2 * pad)) - (index * step) :
+              index * step) + pad,
+            ((height - (2 * pad)) - ((value - min) * scale)) + pad
+          ];
         }
-        points.push(
-          <circle key={index} className={classes.join(' ')}
-            cx={coordinate[0]} cy={coordinate[1]} r={radius} />
-        );
+
+        if ((this.props.points || index === activeIndex) &&
+          ! this.props.sparkline) {
+          const classes = [`${CLASS_ROOT}__point`,
+            `${COLOR_INDEX}-${colorIndex || 'graph-1'}`];
+          let radius = pointSize / 3;
+          if (index === activeIndex) {
+            classes.push(`${CLASS_ROOT}__point--active`);
+            radius = pointSize / 2;
+          }
+          points.push(
+            <circle key={index} className={classes.join(' ')}
+              cx={coordinate[0]} cy={coordinate[1]} r={radius} />
+          );
+        }
       }
 
       return coordinate;
-    });
+    })
+    .filter(coordinate => coordinate);
 
     let path;
     if (coordinates.length > 1) {
@@ -249,7 +252,7 @@ export default class Graph extends Component {
     }
 
     return (
-      <svg ref="graph" className={classes.join(' ')}
+      <svg ref={ref => this.graphRef = ref} className={classes.join(' ')}
         viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="none"
         role="img" aria-label={this._renderA11YTitle()}>
         <g>

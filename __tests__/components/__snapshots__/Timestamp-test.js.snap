@@ -1,6 +1,6 @@
 exports[`Timestamp has correct default options 1`] = `
 <span
-  className="grommetux-timestamp grommetux-timestamp--left">
+  className="grommetux-timestamp">
   <span
     className="grommetux-timestamp__date">
     Apr 7, 2015

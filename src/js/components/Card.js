@@ -6,6 +6,7 @@ import CSSClassnames from '../utils/CSSClassnames';
 import Props from '../utils/Props';
 import Box from './Box';
 import Tile from './Tile';
+import Label from './Label';
 import Heading from './Heading';
 import Paragraph from './Paragraph';
 import Anchor from './Anchor';
@@ -14,6 +15,28 @@ import Video from './Video';
 import WatchIcon from './icons/base/Watch';
 
 const CLASS_ROOT = CSSClassnames.CARD;
+const TEXT_TAGS = {
+  xlarge: {
+    label: 'large',
+    heading: 'h1',
+    text: 'large'
+  },
+  large: {
+    label: 'medium',
+    heading: 'h1',
+    text: 'large'
+  },
+  medium: {
+    label: 'medium',
+    heading: 'h2',
+    text: 'medium'
+  },
+  small: {
+    label: 'small',
+    heading: 'h3',
+    text: 'small'
+  }
+};
 
 export default class Card extends Component {
   constructor (props) {
@@ -74,18 +97,52 @@ export default class Card extends Component {
     return videoLayer;
   }
 
+  _renderParagraph (contents, textSize, type) {
+    if (typeof contents === 'string') {
+      return (
+        <Paragraph
+          className={`${CLASS_ROOT}__${type}`}
+          size={textSize}
+          margin="none"
+        >
+          {contents}
+        </Paragraph>
+      );
+    } else if (Array.isArray(contents)) {
+      return contents.map((content, index) => (
+        <Paragraph
+          key={`${type}_${index}`}
+          className={`${CLASS_ROOT}__${type}`}
+          size={textSize}
+          margin="none"
+        >
+          {content}
+        </Paragraph>
+      ));
+    }
+    return null;
+  }
+
   render () {
-    const { children, thumbnail, description, heading, label, onClick, video,
-      direction, reverse, pad, className} = this.props;
+    const { children, className, colorIndex, description, direction, heading,
+      headingStrong, label, onClick, pad, reverse, text, textSize, thumbnail,
+      video } = this.props;
     const tileProps = Props.pick(this.props, Object.keys(Tile.propTypes));
+    delete tileProps.colorIndex;
     delete tileProps.onClick;
     delete tileProps.pad;
+
+    if (description) {
+      console.warn('\'description\' prop has been renamed to \'text\'.' +
+        ' Support for \'description\' will be removed in a future release.');
+    }
 
     const classes = classnames(
       CLASS_ROOT,
       {
         [`${CLASS_ROOT}--direction-${direction}`]: direction,
-        [`${CLASS_ROOT}--selectable`]: (onClick || video)
+        [`${CLASS_ROOT}--selectable`]: (onClick || video),
+        [`${CLASS_ROOT}--${textSize}`]: textSize
       },
       className
     );
@@ -95,11 +152,23 @@ export default class Card extends Component {
       onCardClick = this._onClick;
     }
 
+    const tag = TEXT_TAGS[textSize];
+
     const contentContainer = (
       <Box className={`${CLASS_ROOT}__content`} pad="medium">
-        <Heading tag="h5" uppercase={true} margin="none">{label}</Heading>
-        <Heading tag="h2" strong={true}>{heading}</Heading>
-        <Paragraph margin="none">{description}</Paragraph>
+        {label &&
+          <Label className={`${CLASS_ROOT}__label`}
+            size={tag.label} margin="none" uppercase={true}>
+            {label}
+          </Label>
+        }
+        {heading &&
+          <Heading className={`${CLASS_ROOT}__heading`}
+            tag={tag.heading} strong={headingStrong} margin="none">
+            {heading}
+          </Heading>
+        }
+        {this._renderParagraph(text || description, tag.text, 'text')}
         {children}
         {this._renderLink()}
       </Box>
@@ -138,7 +207,7 @@ export default class Card extends Component {
       <Tile className={classes} onClick={onCardClick}
         pad={pad || cardPad} {...tileProps}>
         <Box className="flex" direction={direction} justify={cardJustify}
-          full={cardFull} colorIndex="light-1">
+          full={cardFull} colorIndex={colorIndex}>
           {first}
           {second}
           {this._renderVideo()}
@@ -149,11 +218,16 @@ export default class Card extends Component {
 };
 
 Card.propTypes = {
-  thumbnail: PropTypes.string,
   description: PropTypes.string,
   heading: PropTypes.string,
+  headingStrong: PropTypes.bool,
   label: PropTypes.string,
   link: PropTypes.element,
+  onClick: PropTypes.func,
+  reverse: PropTypes.bool,
+  text: PropTypes.node,
+  textSize: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
+  thumbnail: PropTypes.string,
   video: PropTypes.oneOfType([
     PropTypes.shape({
       source: PropTypes.string.isRequired,
@@ -161,10 +235,12 @@ Card.propTypes = {
     }),
     PropTypes.element
   ]),
-  reverse: PropTypes.bool,
   ...Tile.propTypes
 };
 
 Card.defaultProps = {
-  direction: 'column'
+  colorIndex: 'light-1',
+  direction: 'column',
+  headingStrong: true,
+  textSize: 'medium'
 };

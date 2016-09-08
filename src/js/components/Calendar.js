@@ -203,8 +203,8 @@ export default class Calendar extends Component {
 
       // If this is inside a FormField, place the drop in reference to it.
       const control =
-        findAncestor(this.refs.component, `.${FORM_FIELD}`) ||
-          this.refs.component;
+        findAncestor(this.componentRef, `.${FORM_FIELD}`) ||
+          this.componentRef;
       this._drop = Drop.add(control,
         this._renderDrop(), { align: {top: 'bottom', left: 'left'} });
 
@@ -326,16 +326,10 @@ export default class Calendar extends Component {
     );
 
     return (
-      <div ref="component" className={classes}>
-        <input
-          className={`${CLASS_ROOT}__input`}
-          id={id}
-          ref="calendarInput"
-          name={name}
-          value={value}
-          onChange={this._onInputChange}
-          {...props}
-        />
+      <div ref={ref => this.componentRef = ref} className={classes}>
+        <input className={`${CLASS_ROOT}__input`}
+          id={id} name={name} value={value} onChange={this._onInputChange}
+          {...props} />
         <Button
           className={`${CLASS_ROOT}__control`}
           icon={

@@ -1,0 +1,11 @@
+exports[`Footer has correct default options 1`] = `
+<footer
+  className="grommetux-box grommetux-box--direction-row grommetux-box--pad-none grommetux-footer"
+  id={undefined}
+  onClick={undefined}
+  role={undefined}
+  style={Object {}}
+  tabIndex={undefined}>
+  Testing
+</footer>
+`;

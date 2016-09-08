@@ -102,7 +102,7 @@ export default class HotSpots extends Component {
       } else {
         basis = defaultBasis;
       }
-      const style = { flexBasis: `${basis}%`};
+      const style = { flexBasis: `${basis}%` };
       items.push(
         <div key={index} className={bandClasses} style={style} role='row'
           onMouseOver={onActive ? () => onActive(index) : undefined}
@@ -114,7 +114,7 @@ export default class HotSpots extends Component {
     const hotSpotsLabel = a11yTitle || Intl.getMessage(intl, 'HotSpotsLabel');
 
     return (
-      <div ref='hotSpots' className={classes} style={{ padding: padding }}
+      <div className={classes} style={{ padding: padding }}
         tabIndex='0' onFocus={this._onHotSpotFocus}
         onBlur={this._onHotSpotBlur} role='group'
         aria-label={hotSpotsLabel}>

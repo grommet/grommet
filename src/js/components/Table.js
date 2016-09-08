@@ -37,7 +37,7 @@ export default class Table extends Component {
     }
     if (this.props.onMore) {
       this._scroll = InfiniteScroll.startListeningForScroll(
-        this.refs.more, this.props.onMore
+        this.moreRef, this.props.onMore
       );
     }
     this._adjustBodyCells();
@@ -71,7 +71,7 @@ export default class Table extends Component {
     }
     if (this.props.onMore && !this._scroll) {
       this._scroll = InfiniteScroll.startListeningForScroll(
-        this.refs.more, this.props.onMore
+        this.moreRef, this.props.onMore
       );
     }
     this._adjustBodyCells();
@@ -86,10 +86,12 @@ export default class Table extends Component {
   }
 
   _container () {
-    let containerElement = this.refs.table;
-    let tableBodies = containerElement.getElementsByTagName("TBODY");
-    if (tableBodies.length > 0) {
-      containerElement = tableBodies[0];
+    let containerElement = this.tableRef;
+    if (containerElement) {
+      let tableBodies = containerElement.getElementsByTagName("TBODY");
+      if (tableBodies.length > 0) {
+        containerElement = tableBodies[0];
+      }
     }
     return containerElement;
   }
@@ -134,15 +136,17 @@ export default class Table extends Component {
     // so that in responsive mode it displays the text as content in css.
     // IMPORTANT: non-text header cells, such as icon, are rendered as empty
     // headers.
-    let headerCells = this.refs.table.querySelectorAll('thead th');
-    if (headerCells.length > 0) {
-      let rows = this.refs.table.querySelectorAll('tbody tr');
+    if (this.tableRef) {
+      let headerCells = this.tableRef.querySelectorAll('thead th');
+      if (headerCells.length > 0) {
+        let rows = this.tableRef.querySelectorAll('tbody tr');
 
-      [].forEach.call(rows, (row) => {
-        [].forEach.call(row.cells, (cell, index) => {
-          cell.setAttribute('data-th', headerCells[index].innerText);
+        [].forEach.call(rows, (row) => {
+          [].forEach.call(row.cells, (cell, index) => {
+            cell.setAttribute('data-th', headerCells[index].innerText);
+          });
         });
-      });
+      }
     }
   }
 
@@ -155,8 +159,8 @@ export default class Table extends Component {
   _layout () {
     this._alignMirror();
 
-    let availableSize = this.refs.container.offsetWidth;
-    let numberOfCells = this.refs.table.querySelectorAll('thead th').length;
+    let availableSize = this.containerRef.offsetWidth;
+    let numberOfCells = this.table.querySelectorAll('thead th').lengthRef;
 
     if ((numberOfCells * MIN_CELL_WIDTH) > availableSize) {
       this.setState({small: true});
@@ -166,9 +170,9 @@ export default class Table extends Component {
   }
 
   _buildMirror () {
-    let tableElement = this.refs.table;
+    let tableElement = this.tableRef;
     let cells = tableElement.querySelectorAll('thead tr th');
-    let mirrorElement = this.refs.mirror;
+    let mirrorElement = this.mirrorRef;
     if (mirrorElement) {
       let mirrorRow = mirrorElement.querySelectorAll('thead tr')[0];
       while (mirrorRow.hasChildNodes()) {
@@ -181,10 +185,10 @@ export default class Table extends Component {
   }
 
   _alignMirror () {
-    if (this.refs.mirror) {
-      let tableElement = this.refs.table;
+    if (this.mirrorRef) {
+      let tableElement = this.tableRef;
       let cells = tableElement.querySelectorAll('thead tr th');
-      let mirrorElement = this.refs.mirror;
+      let mirrorElement = this.mirrorRef;
       let mirrorCells = mirrorElement.querySelectorAll('thead tr th');
 
       let rect = tableElement.getBoundingClientRect();
@@ -218,7 +222,8 @@ export default class Table extends Component {
     let mirror;
     if (this.props.scrollable) {
       mirror = (
-        <table ref="mirror" className={`${CLASS_ROOT}__mirror`}>
+        <table ref={ref => this.mirrorRef = ref}
+          className={`${CLASS_ROOT}__mirror`}>
           <thead>
             <tr></tr>
           </thead>
@@ -229,17 +234,17 @@ export default class Table extends Component {
     let more;
     if (this.props.onMore) {
       more = (
-        <div ref="more" className={`${CLASS_ROOT}__more`}>
+        <div ref={ref => this.moreRef = ref} className={`${CLASS_ROOT}__more`}>
           <SpinningIcon />
         </div>
       );
     }
 
     return (
-      <div ref="container" className={classes}>
+      <div ref={ref => this.containerRef = ref} className={classes}>
         {mirror}
-        <table ref="table" className={`${CLASS_ROOT}__table`}
-          onClick={this._onClick}>
+        <table ref={ref => this.tableRef = ref}
+          className={`${CLASS_ROOT}__table`} onClick={this._onClick}>
           {this.props.children}
         </table>
         {more}

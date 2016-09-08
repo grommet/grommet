@@ -32,7 +32,6 @@ export default class ProgressBar extends Component {
           width: progress + '%'
         }} />
         <input className={`${CLASS_ROOT}__progress-bar-input`}
-          ref="input"
           onChange={this._onProgressBarChange}
           type="range"
           min="0"

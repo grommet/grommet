@@ -1,0 +1,104 @@
+exports[`Video has correct default options 1`] = `
+<div
+  className="grommetux-video"
+  onMouseMove={[Function bound _onMouseMove]}>
+  <video
+    autoPlay={false}
+    loop={false}
+    muted={false}
+    onAbort={[Function anonymous]}
+    onCanPlay={[Function anonymous]}
+    onCanPlayThrough={[Function anonymous]}
+    onDurationChange={[Function anonymous]}
+    onEmptied={[Function anonymous]}
+    onEncrypted={[Function anonymous]}
+    onEnded={[Function anonymous]}
+    onError={[Function anonymous]}
+    onLoadStart={[Function anonymous]}
+    onLoadedData={[Function anonymous]}
+    onLoadedMetadata={[Function anonymous]}
+    onPause={[Function anonymous]}
+    onPlay={[Function anonymous]}
+    onPlaying={[Function anonymous]}
+    onProgress={[Function anonymous]}
+    onRateChange={[Function anonymous]}
+    onSeeked={[Function anonymous]}
+    onSeeking={[Function anonymous]}
+    onStalled={[Function anonymous]}
+    onSuspend={[Function anonymous]}
+    onTimeUpdate={[Function anonymous]}
+    onVolumeChange={[Function anonymous]}
+    onWaiting={[Function anonymous]}
+    poster={undefined}>
+    <source
+      src="/video/test.mp4"
+      type="video/mp4" />
+  </video>
+  <div>
+    <div
+      className="grommetux-box grommetux-box--direction-column grommetux-box--justify-center grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-none grommetux-video__overlay"
+      id={undefined}
+      onClick={undefined}
+      role={undefined}
+      style={Object {}}
+      tabIndex={undefined}>
+      <div
+        className="grommetux-box grommetux-box--direction-column grommetux-box--justify-center grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-none"
+        id={undefined}
+        onClick={undefined}
+        role={undefined}
+        style={Object {}}
+        tabIndex={undefined}>
+        <button
+          aria-label="Play Video"
+          className="grommetux-button grommetux-video__play grommetux-button--primary grommetux-button--plain grommetux-button--icon"
+          disabled={false}
+          href={undefined}
+          id={undefined}
+          onClick={[Function bound _togglePlay]}
+          type="button">
+          <span
+            className="grommetux-button__icon">
+            <svg
+              aria-labelledby="play-title"
+              className="grommetux-control-icon grommetux-control-icon-play grommetux-control-icon--large"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24.3317"
+              width="24px">
+              <title
+                id="play-title">
+                <span
+                  id="play">
+                  play
+                </span>
+              </title>
+              <g>
+                <rect
+                  fill="none"
+                  height="24"
+                  width="24"
+                  y="0.1658" />
+                <polygon
+                  fill="#000000"
+                  points="6,1.9658 6,22.3658 20,12.1658 	"
+                  stroke="#000000"
+                  strokeMiterlimit="10"
+                  strokeWidth="2" />
+              </g>
+            </svg>
+          </span>
+        </button>
+      </div>
+      <div
+        className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none"
+        id={undefined}
+        onClick={undefined}
+        role={undefined}
+        style={Object {}}
+        tabIndex={undefined} />
+    </div>
+  </div>
+</div>
+`;

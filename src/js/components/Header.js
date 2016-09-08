@@ -40,8 +40,8 @@ export default class Header extends Component {
   }
 
   _alignMirror () {
-    var contentElement = ReactDOM.findDOMNode(this.refs.content);
-    var mirrorElement = this.refs.mirror;
+    var contentElement = ReactDOM.findDOMNode(this.contentRef);
+    var mirrorElement = this.mirrorRef;
 
     // constrain fixed content to the width of the mirror
     var mirrorRect = mirrorElement.getBoundingClientRect();
@@ -88,10 +88,11 @@ export default class Header extends Component {
     if (this.props.fixed) {
       return (
         <div className={containerClasses.join(' ')}>
-          <div ref="mirror" className={`${CLASS_ROOT}__mirror`}></div>
+          <div ref={ref => this.mirrorRef = ref}
+            className={`${CLASS_ROOT}__mirror`} />
           <div className={wrapperClasses.join(' ')}>
-            <Box ref="content" tag={this.props.header} {...other}
-              className={classes.join(' ')}>
+            <Box ref={ref => this.contentRef = ref}
+              tag={this.props.header} {...other} className={classes.join(' ')}>
               {this.props.children}
             </Box>
           </div>

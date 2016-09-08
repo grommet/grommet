@@ -31,13 +31,13 @@ export default class NumberInput extends Component {
       event.initEvent('change', true, true);
     }
     // We use dispatchEvent to have the browser fill out the event fully.
-    this.refs.input.dispatchEvent(event);
+    this.inputRef.dispatchEvent(event);
     // Manually dispatched events aren't delivered by React, so we notify too.
     this.props.onChange(event);
   }
 
   _onAdd () {
-    const input = this.refs.input;
+    const input = this.inputRef;
     try {
       input.stepUp();
     } catch (e) {
@@ -53,7 +53,7 @@ export default class NumberInput extends Component {
   }
 
   _onSubtract () {
-    const input = this.refs.input;
+    const input = this.inputRef;
     try {
       input.stepDown();
     } catch (e) {
@@ -85,7 +85,8 @@ export default class NumberInput extends Component {
         aria-describedby={this.props.ariaDescribedby}
         aria-labelledby={labelId}>
 
-        <input ref="input" tabIndex="0" className={CLASS_ROOT + "__input"}
+        <input ref={ref => this.inputRef = ref}
+          tabIndex="0" className={CLASS_ROOT + "__input"}
           id={this.props.id} name={this.props.name} type="number"
           disabled={this.props.disabled}
           value={this.props.value}

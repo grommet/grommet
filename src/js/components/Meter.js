@@ -113,10 +113,10 @@ export default class Meter extends Component {
     }
 
     if ('right' === legendPlacement) {
-      if (this.refs.legend) {
-        const graphicHeight = this.refs.activeGraphic.offsetHeight;
+      if (this.legendRef) {
+        const graphicHeight = this.activeGraphicRef.offsetHeight;
         const legendHeight =
-          ReactDOM.findDOMNode(this.refs.legend).offsetHeight;
+          ReactDOM.findDOMNode(this.legendRef).offsetHeight;
         this.setState({tallLegend: (legendHeight > graphicHeight)});
       }
     }
@@ -388,7 +388,8 @@ export default class Meter extends Component {
     const { activeIndex, series } = this.state;
     const total = (typeof legend === 'object' && legend.total);
     return (
-      <Legend ref="legend" className={`${CLASS_ROOT}__legend`}
+      <Legend ref={ref => this.legendRef = ref}
+        className={`${CLASS_ROOT}__legend`}
         series={series} units={units} total={total}
         activeIndex={activeIndex} onActive={this._onActivate} />
     );
@@ -492,7 +493,8 @@ export default class Meter extends Component {
 
     return (
       <div className={classes.join(' ')}>
-        <div ref="activeGraphic" className={`${CLASS_ROOT}__value-container`}>
+        <div ref={ref => this.activeGraphicRef = ref}
+          className={`${CLASS_ROOT}__value-container`}>
           {graphicContainer}
           {labelElement}
         </div>

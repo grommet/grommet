@@ -30,7 +30,7 @@ export default class Range extends Component {
 
   _valueToIndex (value) {
     const { count, vertical } = this.props;
-    const rect = this.refs.range.getBoundingClientRect();
+    const rect = this.rangeRef.getBoundingClientRect();
     const total = vertical ? rect.height : rect.width;
     return Math.round((value / total) * (count - 1));
   }
@@ -43,7 +43,7 @@ export default class Range extends Component {
   _mouseIndex (event) {
     const { active, count, vertical } = this.props;
     const { mouseDown, mouseDownIndex } = this.state;
-    const rect = this.refs.range.getBoundingClientRect();
+    const rect = this.rangeRef.getBoundingClientRect();
     const value = (vertical ? (event.clientY - rect.top) :
       (event.clientX - rect.left));
     let index = this._valueToIndex(value);
@@ -214,10 +214,9 @@ export default class Range extends Component {
     }
 
     return (
-      <div ref="range" className={classes.join(' ')}
-        style={{ padding: padding }}
-        onMouseDown={onActive ? this._mouseDown('range') : undefined}
-        onMouseMove={onMouseMove}>
+      <div ref={ref => this.rangeRef = ref} className={classes.join(' ')}
+        style={{ padding: padding }} onMouseMove={onMouseMove}
+        onMouseDown={onActive ? this._mouseDown('range') : undefined}>
         {indicator}
       </div>
     );
