@@ -102,10 +102,11 @@ export default class Graph extends Component {
 
     let maxLabel = `, ${Intl.getMessage(intl, 'Max')}: ${max}`;
 
+    const definedValues = values.filter((value) => value);
     const valueLabel = Intl.getMessage(intl, 'GraphValues', {
       count: values.length,
-      highest: Math.max(...values).toString(),
-      smallest: Math.min(...values).toString()
+      highest: Math.max(...definedValues).toString(),
+      smallest: Math.min(...definedValues).toString()
     });
 
     return `${typeLabel} ${minLabel} ${maxLabel}. ${valueLabel}`;
