@@ -1,0 +1,193 @@
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+// ARC
+
+$meter-arc-size: $size-small - double($inuit-base-spacing-unit);
+$meter-arc-small-size: $size-xsmall - $inuit-base-spacing-unit;
+$meter-arc-large-size: $size-large - round($inuit-base-spacing-unit * 3);
+$meter-arc-xlarge-size: $size-xlarge - round($inuit-base-spacing-unit * 4);
+
+.#{$grommet-namespace}meter--arc:not(.#{$grommet-namespace}meter--vertical) {
+
+  svg.#{$grommet-namespace}meter__graphic {
+    width: $size-small;
+    min-width: $size-xsmall;
+    height: auto;
+  }
+
+  .#{$grommet-namespace}meter__value {
+    margin-top: - ($inuit-base-spacing-unit + halve($inuit-base-spacing-unit));
+  }
+
+  &.#{$grommet-namespace}meter--legend-right {
+    .#{$grommet-namespace}meter__legend {
+      top: halve($meter-arc-size);
+    }
+  }
+
+  &.#{$grommet-namespace}meter--small {
+
+    svg.#{$grommet-namespace}meter__graphic {
+      width: $size-small;
+      height: $meter-arc-small-size;
+    }
+
+    .#{$grommet-namespace}meter__value {
+      margin-top: - double($inuit-base-spacing-unit);
+    }
+  }
+
+  &.#{$grommet-namespace}meter--large {
+
+    svg.#{$grommet-namespace}meter__graphic {
+      width: $size-large;
+      height: $meter-arc-large-size;
+    }
+
+    .#{$grommet-namespace}meter__value {
+      margin-top: - round($inuit-base-spacing-unit * 3);
+    }
+  }
+
+  &.#{$grommet-namespace}meter--xlarge {
+
+    svg.#{$grommet-namespace}meter__graphic {
+      width: $size-xlarge;
+      height: $meter-arc-xlarge-size;
+    }
+
+    .#{$grommet-namespace}meter__value {
+      margin-top: - round($inuit-base-spacing-unit * 3.75);
+    }
+  }
+}
+
+.#{$grommet-namespace}meter--arc.#{$grommet-namespace}meter--vertical {
+
+  svg.#{$grommet-namespace}meter__graphic {
+    display: inline;
+    width: $meter-arc-size;
+    height: $size-small;
+  }
+
+  .#{$grommet-namespace}meter__value {
+    position: relative;
+    top: halve($size-medium);
+    @include transform(translateY(-50%));
+    display: inline-block;
+    margin-left: - ($size-medium - $meter-arc-size) + $inuit-base-spacing-unit;
+    vertical-align: top;
+
+    html.rtl & {
+      margin-left: 0;
+      margin-right: - ($size-medium - $meter-arc-size) + $inuit-base-spacing-unit;
+    }
+  }
+
+  .#{$grommet-namespace}meter__minmax-container {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: halve($inuit-base-spacing-unit);
+    padding-top: halve($inuit-base-spacing-unit);
+    padding-bottom: halve($inuit-base-spacing-unit);
+
+    html.rtl & {
+      margin-left: 0;
+      margin-right: halve($inuit-base-spacing-unit);
+    }
+  }
+
+  &.#{$grommet-namespace}meter--small {
+
+    svg.#{$grommet-namespace}meter__graphic {
+      width: $meter-arc-small-size;
+      height: $size-small;
+    }
+
+    .#{$grommet-namespace}meter__value {
+      top: halve($size-small);
+      margin-left: - halve($inuit-base-spacing-unit);
+
+      html.rtl & {
+        margin-left: 0;
+        margin-right: - halve($inuit-base-spacing-unit);
+      }
+    }
+
+    .#{$grommet-namespace}meter__minmax-container {
+      padding-top: 0px;
+      padding-bottom: 0px;
+    }
+  }
+
+  &.#{$grommet-namespace}meter--large {
+
+    svg.#{$grommet-namespace}meter__graphic {
+      width: $meter-arc-large-size;
+      height: $size-large;
+    }
+
+    .#{$grommet-namespace}meter__value {
+      top: halve($size-large);
+      margin-left: - ($size-large - $meter-arc-large-size) + $inuit-base-spacing-unit;
+
+      html.rtl & {
+        margin-left: 0;
+        margin-right: - ($size-large - $meter-arc-large-size) + $inuit-base-spacing-unit;
+      }
+    }
+  }
+
+  &.#{$grommet-namespace}meter--xlarge {
+
+    svg.#{$grommet-namespace}meter__graphic {
+      width: $meter-arc-xlarge-size;
+      height: $size-xlarge;
+    }
+
+    .#{$grommet-namespace}meter__value {
+      top: halve($size-xlarge);
+      margin-left: - ($size-xlarge - $meter-arc-xlarge-size) + $inuit-base-spacing-unit;
+
+      html.rtl & {
+        margin-left: 0;
+        margin-right: - ($size-xlarge - $meter-arc-xlarge-size) + $inuit-base-spacing-unit;
+      }
+    }
+  }
+
+  &.#{$grommet-namespace}meter--minmax {
+    .#{$grommet-namespace}meter__value {
+      margin-left: - halve($size-medium) + $inuit-base-spacing-unit;
+
+      html.rtl & {
+        margin-left: 0;
+        margin-right: - halve($size-medium) + $inuit-base-spacing-unit;
+      }
+    }
+
+    &.#{$grommet-namespace}meter--small {
+      .#{$grommet-namespace}meter__value {
+        margin-left: - ($size-small - $meter-arc-small-size) - round($inuit-base-spacing-unit * 1.5);
+
+        html.rtl & {
+          margin-left: 0;
+          margin-right: - ($size-small - $meter-arc-small-size) - round($inuit-base-spacing-unit * 1.5);
+        }
+      }
+    }
+  }
+
+  &.#{$grommet-namespace}meter--legend-right {
+
+    &.#{$grommet-namespace}meter--small {
+      .#{$grommet-namespace}meter__value {
+        min-width: $inuit-base-spacing-unit * 3 + halve(halve($inuit-base-spacing-unit));
+      }
+    }
+
+    .#{$grommet-namespace}meter__value {
+      min-width: $inuit-base-spacing-unit * 5;
+    }
+  }
+}

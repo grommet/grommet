@@ -1,0 +1,143 @@
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+// CIRCLE, ARC, SPIRAL
+
+@include keyframes(draw-meter-arc) {
+  0% {
+    stroke-dashoffset: - $size-medium;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.#{$grommet-namespace}meter--circle,
+.#{$grommet-namespace}meter--arc,
+.#{$grommet-namespace}meter--spiral {
+
+  @include media-query(palm) {
+    margin: 0px auto;
+  }
+
+  .#{$grommet-namespace}meter.series-pre {
+    path {
+      stroke-dashoffset: quadruple($size-medium);
+    }
+  }
+
+  .#{$grommet-namespace}meter__slice {
+    stroke-linecap: butt;
+    stroke-dasharray: quadruple($size-medium) quadruple($size-medium);
+    stroke-dashoffset: 0;
+  }
+
+  .#{$grommet-namespace}meter__slice-indicator {
+    stroke-linecap: square;
+    stroke-width: $meter-indicator-width;
+    stroke: $threshold-color;
+
+    #{$dark-background-context} & {
+      stroke: $colored-meter-background-color;
+    }
+  }
+
+  .#{$grommet-namespace}meter__values .#{$grommet-namespace}meter__slice {
+    @include graph-stroke-color();
+
+    &--clickable {
+      cursor: pointer;
+    }
+
+    @include media-query(lap-and-up) {
+      transition: stroke-width 0.2s;
+      @include animation('draw-meter-arc 1.5s linear');
+    }
+  }
+
+  .#{$grommet-namespace}meter__thresholds .#{$grommet-namespace}meter__slice,
+  .#{$grommet-namespace}meter__tracks .#{$grommet-namespace}meter__slice {
+    // stroke-width: $meter-threshold-slice-width;
+    @include graph-stroke-color-translucent(0.5);
+  }
+
+  .#{$grommet-namespace}meter__threshold {
+    //stroke-width: $inuit-base-spacing-unit;
+    stroke-linecap: butt;
+  }
+
+  .#{$grommet-namespace}meter__value-label {
+    display: block;
+  }
+}
+
+// CIRCLE, ARC
+
+.#{$grommet-namespace}meter--circle,
+.#{$grommet-namespace}meter--arc {
+
+  .#{$grommet-namespace}meter__value {
+    white-space: normal;
+    pointer-events: none;
+    text-align: center;
+  }
+
+  .#{$grommet-namespace}meter__value--active {
+    pointer-events: auto;
+    cursor: pointer;
+  }
+}
+
+.#{$grommet-namespace}meter--circle,
+.#{$grommet-namespace}meter--arc:not(.#{$grommet-namespace}meter--vertical) {
+
+  .#{$grommet-namespace}meter__minmax-container {
+    width: $size-small;
+  }
+
+  &.#{$grommet-namespace}meter--small {
+    .#{$grommet-namespace}meter__minmax-container {
+      width: $size-small;
+    }
+  }
+
+  &.#{$grommet-namespace}meter--large {
+    .#{$grommet-namespace}meter__minmax-container {
+      width: $size-large;
+    }
+  }
+
+  &.#{$grommet-namespace}meter--xlarge {
+    .#{$grommet-namespace}meter__minmax-container {
+      width: $size-xlarge;
+    }
+  }
+}
+
+.#{$grommet-namespace}meter--circle,
+.#{$grommet-namespace}meter--arc.#{$grommet-namespace}meter--vertical {
+
+  &.#{$grommet-namespace}meter--legend-right {
+    .#{$grommet-namespace}meter__legend {
+      top: halve($size-medium);
+    }
+
+    &.#{$grommet-namespace}meter--small {
+      .#{$grommet-namespace}meter__legend {
+        top: halve($size-small);
+      }
+    }
+
+    &.#{$grommet-namespace}meter--large {
+      .#{$grommet-namespace}meter__legend {
+        top: halve($size-large);
+      }
+    }
+
+    &.#{$grommet-namespace}meter--xlarge {
+      .#{$grommet-namespace}meter__legend {
+        top: halve($size-xlarge);
+      }
+    }
+  }
+}
