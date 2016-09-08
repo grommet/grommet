@@ -19,25 +19,21 @@ const TEXT_TAGS = {
   xlarge: {
     label: 'large',
     heading: 'h1',
-    summary: 'xlarge',
     details: 'large'
   },
   large: {
     label: 'medium',
     heading: 'h1',
-    summary: 'xlarge',
     details: 'large'
   },
   medium: {
     label: 'medium',
     heading: 'h2',
-    summary: 'large',
     details: 'medium'
   },
   small: {
     label: 'small',
     heading: 'h3',
-    summary: 'medium',
     details: 'small'
   }
 };
@@ -129,7 +125,7 @@ export default class Card extends Component {
 
   render () {
     const { children, className, colorIndex, details, direction, heading,
-      headingStrong, label, onClick, pad, reverse, summary, textSize, thumbnail,
+      headingStrong, label, onClick, pad, reverse, textSize, thumbnail,
       video } = this.props;
     const tileProps = Props.pick(this.props, Object.keys(Tile.propTypes));
     delete tileProps.colorIndex;
@@ -167,7 +163,6 @@ export default class Card extends Component {
             {heading}
           </Heading>
         }
-        {this._renderParagraph(summary, tag.summary, 'summary')}
         {this._renderParagraph(details, tag.details, 'details')}
         {children}
         {this._renderLink()}
@@ -225,7 +220,6 @@ Card.propTypes = {
   link: PropTypes.element,
   onClick: PropTypes.func,
   reverse: PropTypes.bool,
-  summary: PropTypes.node,
   textSize: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
   thumbnail: PropTypes.string,
   video: PropTypes.oneOfType([
