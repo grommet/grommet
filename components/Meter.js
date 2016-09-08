@@ -91,6 +91,18 @@ var TYPE_COMPONENT = {
   'spiral': _Spiral2.default
 };
 
+function getMaxDecimalDigits(series) {
+  var maxDigits = 0;
+  series.forEach(function (item) {
+    var currentDigitsGroup = /\.(\d*)$/.exec(item.value.toString());
+    if (currentDigitsGroup) {
+      var currentDigits = currentDigitsGroup[1].length;
+      maxDigits = Math.max(maxDigits, currentDigits);
+    }
+  });
+  return Math.pow(10, maxDigits);
+}
+
 var Meter = function (_Component) {
   (0, _inherits3.default)(Meter, _Component);
 
@@ -317,11 +329,13 @@ var Meter = function (_Component) {
   }, {
     key: '_seriesTotal',
     value: function _seriesTotal(series) {
+      var maxDecimalDigits = getMaxDecimalDigits(series);
       var total = 0;
-      series.some(function (item) {
-        total += item.value;
+      series.forEach(function (item) {
+        total += item.value * maxDecimalDigits;
       });
-      return total;
+
+      return total / maxDecimalDigits;
     }
   }, {
     key: '_seriesMax',
