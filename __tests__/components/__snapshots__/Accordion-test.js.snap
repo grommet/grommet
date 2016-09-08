@@ -11,7 +11,7 @@ exports[`Accordion has correct default options 1`] = `
     tabIndex={undefined}>
     <header
       aria-label="Box"
-      className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-medium grommetux-box--pad-vertical-small grommetux-box--clickable grommetux-header grommetux-accordion-panel__header"
+      className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-box--clickable grommetux-header grommetux-accordion-panel__header"
       id={undefined}
       onClick={[Function bound _onClickPanel]}
       role="tab"
@@ -68,7 +68,7 @@ exports[`Accordion has correct initialIndex=0 rendering 1`] = `
     tabIndex={undefined}>
     <header
       aria-label="Box"
-      className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-medium grommetux-box--pad-vertical-small grommetux-box--clickable grommetux-header grommetux-accordion-panel__header"
+      className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-box--clickable grommetux-header grommetux-accordion-panel__header"
       id={undefined}
       onClick={[Function bound _onClickPanel]}
       role="tab"
@@ -109,8 +109,12 @@ exports[`Accordion has correct initialIndex=0 rendering 1`] = `
     <span
       className="grommetux-collapsible__wrapper">
       <div
-        className="grommetux-collapsible"
-        role="tabpanel">
+        className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-collapsible"
+        id={undefined}
+        onClick={undefined}
+        role="tabpanel"
+        style={Object {}}
+        tabIndex={undefined}>
         <p>
           test 1
         </p>
@@ -126,7 +130,7 @@ exports[`Accordion has correct initialIndex=0 rendering 1`] = `
     tabIndex={undefined}>
     <header
       aria-label="Box"
-      className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-medium grommetux-box--pad-vertical-small grommetux-box--clickable grommetux-header grommetux-accordion-panel__header"
+      className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-box--clickable grommetux-header grommetux-accordion-panel__header"
       id={undefined}
       onClick={[Function bound _onClickPanel]}
       role="tab"
@@ -183,7 +187,7 @@ exports[`Accordion has correct initialIndex=0 rendering 2`] = `
     tabIndex={undefined}>
     <header
       aria-label="Box"
-      className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-medium grommetux-box--pad-vertical-small grommetux-box--clickable grommetux-header grommetux-accordion-panel__header"
+      className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-box--clickable grommetux-header grommetux-accordion-panel__header"
       id={undefined}
       onClick={[Function bound _onClickPanel]}
       role="tab"
@@ -224,8 +228,12 @@ exports[`Accordion has correct initialIndex=0 rendering 2`] = `
     <span
       className="grommetux-collapsible__wrapper">
       <div
-        className="grommetux-collapsible"
-        role="tabpanel">
+        className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-collapsible"
+        id={undefined}
+        onClick={undefined}
+        role="tabpanel"
+        style={Object {}}
+        tabIndex={undefined}>
         <p>
           test 1
         </p>
@@ -241,7 +249,7 @@ exports[`Accordion has correct initialIndex=0 rendering 2`] = `
     tabIndex={undefined}>
     <header
       aria-label="Box"
-      className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-medium grommetux-box--pad-vertical-small grommetux-box--clickable grommetux-header grommetux-accordion-panel__header"
+      className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-box--clickable grommetux-header grommetux-accordion-panel__header"
       id={undefined}
       onClick={[Function bound _onClickPanel]}
       role="tab"
@@ -282,8 +290,12 @@ exports[`Accordion has correct initialIndex=0 rendering 2`] = `
     <span
       className="grommetux-collapsible__wrapper">
       <div
-        className="grommetux-collapsible"
-        role="tabpanel">
+        className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-collapsible"
+        id={undefined}
+        onClick={undefined}
+        role="tabpanel"
+        style={Object {}}
+        tabIndex={undefined}>
         <p>
           test 2
         </p>
@@ -306,7 +318,7 @@ exports[`Accordion has correct openMulti=true rendering 1`] = `
     tabIndex={undefined}>
     <header
       aria-label="Box"
-      className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-medium grommetux-box--pad-vertical-small grommetux-box--clickable grommetux-header grommetux-accordion-panel__header"
+      className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-box--clickable grommetux-header grommetux-accordion-panel__header"
       id={undefined}
       onClick={[Function bound _onClickPanel]}
       role="tab"
@@ -347,8 +359,12 @@ exports[`Accordion has correct openMulti=true rendering 1`] = `
     <span
       className="grommetux-collapsible__wrapper">
       <div
-        className="grommetux-collapsible"
-        role="tabpanel">
+        className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-collapsible"
+        id={undefined}
+        onClick={undefined}
+        role="tabpanel"
+        style={Object {}}
+        tabIndex={undefined}>
         <p>
           test 1
         </p>
@@ -364,7 +380,7 @@ exports[`Accordion has correct openMulti=true rendering 1`] = `
     tabIndex={undefined}>
     <header
       aria-label="Box"
-      className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-medium grommetux-box--pad-vertical-small grommetux-box--clickable grommetux-header grommetux-accordion-panel__header"
+      className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-box--clickable grommetux-header grommetux-accordion-panel__header"
       id={undefined}
       onClick={[Function bound _onClickPanel]}
       role="tab"
@@ -405,8 +421,12 @@ exports[`Accordion has correct openMulti=true rendering 1`] = `
     <span
       className="grommetux-collapsible__wrapper">
       <div
-        className="grommetux-collapsible"
-        role="tabpanel">
+        className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-collapsible"
+        id={undefined}
+        onClick={undefined}
+        role="tabpanel"
+        style={Object {}}
+        tabIndex={undefined}>
         <p>
           test 2
         </p>
