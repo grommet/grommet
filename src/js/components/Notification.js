@@ -83,17 +83,13 @@ export default class Notification extends Component {
     let closer;
     if (typeof this.props.closer === 'object') {
       closer = this.props.closer;
-
     } else if (this.props.onClose && this.props.closer) {
       closer = (
-        <Box direction="row" align="start" responsive={false} flex={false}>
-          <Button className={`${CLASS_ROOT}__close-button`}
-            plain={true} onClick={this.props.onClose}
-            icon={<CloseIcon className={`${CLASS_ROOT}__close`} />}
-            a11yTitle={
-              Intl.getMessage(this.context.intl, 'Close Notification')
-            } />
-        </Box>
+        <Button plain={true} onClick={this.props.onClose}
+          icon={<CloseIcon className={`${CLASS_ROOT}__close`} />}
+          a11yTitle={
+            Intl.getMessage(this.context.intl, 'Close Notification')
+          } />
       );
     }
 
@@ -105,10 +101,12 @@ export default class Notification extends Component {
       <Animate
         enter={{ animation: 'fade', duration: 1000 }}
         leave={{ animation: 'fade', duration: 1000 }}>
-        <Box {...boxProps} className={classes}
-          direction="row" responsive={false}>
-          {status}
-          <Box full={fullBox}>
+        <Box {...boxProps} className={classes} pad='small'
+          direction="row" align="start" responsive={false}>
+          <Box pad='small'>
+            {status}
+          </Box>
+          <Box full={fullBox} pad='small'>
             <span className={`${CLASS_ROOT}__message`}>
               {this.props.message}
             </span>
