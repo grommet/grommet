@@ -124,13 +124,18 @@ export default class Card extends Component {
   }
 
   render () {
-    const { children, className, colorIndex, direction, heading, headingStrong,
-      label, onClick, pad, reverse, text, textSize, thumbnail, video
-    } = this.props;
+    const { children, className, colorIndex, description, direction, heading,
+      headingStrong, label, onClick, pad, reverse, text, textSize, thumbnail,
+      video } = this.props;
     const tileProps = Props.pick(this.props, Object.keys(Tile.propTypes));
     delete tileProps.colorIndex;
     delete tileProps.onClick;
     delete tileProps.pad;
+
+    if (description) {
+      console.warn('\'description\' prop has been renamed to \'text\'.' +
+        ' Support for \'description\' will be removed in a future release.');
+    }
 
     const classes = classnames(
       CLASS_ROOT,
@@ -163,7 +168,7 @@ export default class Card extends Component {
             {heading}
           </Heading>
         }
-        {this._renderParagraph(text, tag.text, 'text')}
+        {this._renderParagraph(text || description, tag.text, 'text')}
         {children}
         {this._renderLink()}
       </Box>
@@ -213,6 +218,7 @@ export default class Card extends Component {
 };
 
 Card.propTypes = {
+  description: PropTypes.string,
   heading: PropTypes.string,
   headingStrong: PropTypes.bool,
   label: PropTypes.string,
