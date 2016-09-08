@@ -19,26 +19,22 @@ const TEXT_TAGS = {
   xlarge: {
     label: 'large',
     heading: 'h1',
-    summary: 'xlarge',
-    details: 'large'
+    text: 'large'
   },
   large: {
     label: 'medium',
     heading: 'h1',
-    summary: 'xlarge',
-    details: 'large'
+    text: 'large'
   },
   medium: {
     label: 'medium',
     heading: 'h2',
-    summary: 'large',
-    details: 'medium'
+    text: 'medium'
   },
   small: {
     label: 'small',
     heading: 'h3',
-    summary: 'medium',
-    details: 'small'
+    text: 'small'
   }
 };
 
@@ -128,13 +124,18 @@ export default class Card extends Component {
   }
 
   render () {
-    const { children, className, colorIndex, details, direction, heading,
-      headingStrong, label, onClick, pad, reverse, summary, textSize, thumbnail,
+    const { children, className, colorIndex, description, direction, heading,
+      headingStrong, label, onClick, pad, reverse, text, textSize, thumbnail,
       video } = this.props;
     const tileProps = Props.pick(this.props, Object.keys(Tile.propTypes));
     delete tileProps.colorIndex;
     delete tileProps.onClick;
     delete tileProps.pad;
+
+    if (description) {
+      console.warn('\'description\' prop has been renamed to \'text\'.' +
+        ' Support for \'description\' will be removed in a future release.');
+    }
 
     const classes = classnames(
       CLASS_ROOT,
@@ -167,8 +168,7 @@ export default class Card extends Component {
             {heading}
           </Heading>
         }
-        {this._renderParagraph(summary, tag.summary, 'summary')}
-        {this._renderParagraph(details, tag.details, 'details')}
+        {this._renderParagraph(text || description, tag.text, 'text')}
         {children}
         {this._renderLink()}
       </Box>
@@ -218,14 +218,14 @@ export default class Card extends Component {
 };
 
 Card.propTypes = {
-  details: PropTypes.node,
+  description: PropTypes.string,
   heading: PropTypes.string,
   headingStrong: PropTypes.bool,
   label: PropTypes.string,
   link: PropTypes.element,
   onClick: PropTypes.func,
   reverse: PropTypes.bool,
-  summary: PropTypes.node,
+  text: PropTypes.node,
   textSize: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
   thumbnail: PropTypes.string,
   video: PropTypes.oneOfType([
