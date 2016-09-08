@@ -60,6 +60,10 @@ var _Tile = require('./Tile');
 
 var _Tile2 = _interopRequireDefault(_Tile);
 
+var _Label = require('./Label');
+
+var _Label2 = _interopRequireDefault(_Label);
+
 var _Heading = require('./Heading');
 
 var _Heading2 = _interopRequireDefault(_Heading);
@@ -86,9 +90,34 @@ var _Watch2 = _interopRequireDefault(_Watch);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+var CLASS_ROOT = _CSSClassnames2.default.CARD; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-var CLASS_ROOT = _CSSClassnames2.default.CARD;
+var TEXT_TAGS = {
+  xlarge: {
+    label: 'large',
+    heading: 'h1',
+    summary: 'xlarge',
+    details: 'large'
+  },
+  large: {
+    label: 'medium',
+    heading: 'h1',
+    summary: 'xlarge',
+    details: 'large'
+  },
+  medium: {
+    label: 'medium',
+    heading: 'h2',
+    summary: 'large',
+    details: 'medium'
+  },
+  small: {
+    label: 'small',
+    heading: 'h3',
+    summary: 'medium',
+    details: 'small'
+  }
+};
 
 var Card = function (_Component) {
   (0, _inherits3.default)(Card, _Component);
@@ -162,52 +191,87 @@ var Card = function (_Component) {
       return videoLayer;
     }
   }, {
+    key: '_renderParagraph',
+    value: function _renderParagraph(contents, textSize, type) {
+      if (typeof contents === 'string') {
+        return _react2.default.createElement(
+          _Paragraph2.default,
+          {
+            className: CLASS_ROOT + '__' + type,
+            size: textSize,
+            margin: 'none'
+          },
+          contents
+        );
+      } else if (Array.isArray(contents)) {
+        return contents.map(function (content, index) {
+          return _react2.default.createElement(
+            _Paragraph2.default,
+            {
+              key: type + '_' + index,
+              className: CLASS_ROOT + '__' + type,
+              size: textSize,
+              margin: 'none'
+            },
+            content
+          );
+        });
+      }
+      return null;
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _classnames;
 
       var _props = this.props;
       var children = _props.children;
-      var thumbnail = _props.thumbnail;
-      var description = _props.description;
+      var className = _props.className;
+      var colorIndex = _props.colorIndex;
+      var details = _props.details;
+      var direction = _props.direction;
       var heading = _props.heading;
+      var headingStrong = _props.headingStrong;
       var label = _props.label;
       var onClick = _props.onClick;
-      var video = _props.video;
-      var direction = _props.direction;
-      var reverse = _props.reverse;
       var pad = _props.pad;
-      var className = _props.className;
+      var reverse = _props.reverse;
+      var summary = _props.summary;
+      var textSize = _props.textSize;
+      var thumbnail = _props.thumbnail;
+      var video = _props.video;
 
       var tileProps = _Props2.default.pick(this.props, (0, _keys2.default)(_Tile2.default.propTypes));
+      delete tileProps.colorIndex;
       delete tileProps.onClick;
       delete tileProps.pad;
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--direction-' + direction, direction), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--selectable', onClick || video), _classnames), className);
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--direction-' + direction, direction), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--selectable', onClick || video), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + textSize, textSize), _classnames), className);
 
       var onCardClick = onClick;
       if (!onCardClick && video) {
         onCardClick = this._onClick;
       }
 
+      var tag = TEXT_TAGS[textSize];
+
       var contentContainer = _react2.default.createElement(
         _Box2.default,
         { className: CLASS_ROOT + '__content', pad: 'medium' },
-        _react2.default.createElement(
-          _Heading2.default,
-          { tag: 'h5', uppercase: true, margin: 'none' },
+        label && _react2.default.createElement(
+          _Label2.default,
+          { className: CLASS_ROOT + '__label',
+            size: tag.label, margin: 'none', uppercase: true },
           label
         ),
-        _react2.default.createElement(
+        heading && _react2.default.createElement(
           _Heading2.default,
-          { tag: 'h2', strong: true },
+          { className: CLASS_ROOT + '__heading',
+            tag: tag.heading, strong: headingStrong, margin: 'none' },
           heading
         ),
-        _react2.default.createElement(
-          _Paragraph2.default,
-          { margin: 'none' },
-          description
-        ),
+        this._renderParagraph(summary, tag.summary, 'summary'),
+        this._renderParagraph(details, tag.details, 'details'),
         children,
         this._renderLink()
       );
@@ -248,7 +312,7 @@ var Card = function (_Component) {
         _react2.default.createElement(
           _Box2.default,
           { className: 'flex', direction: direction, justify: cardJustify,
-            full: cardFull, colorIndex: 'light-1' },
+            full: cardFull, colorIndex: colorIndex },
           first,
           second,
           this._renderVideo()
@@ -264,19 +328,26 @@ exports.default = Card;
 ;
 
 Card.propTypes = (0, _extends3.default)({
-  thumbnail: _react.PropTypes.string,
-  description: _react.PropTypes.string,
+  details: _react.PropTypes.node,
   heading: _react.PropTypes.string,
+  headingStrong: _react.PropTypes.bool,
   label: _react.PropTypes.string,
   link: _react.PropTypes.element,
+  onClick: _react.PropTypes.func,
+  reverse: _react.PropTypes.bool,
+  summary: _react.PropTypes.node,
+  textSize: _react.PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
+  thumbnail: _react.PropTypes.string,
   video: _react.PropTypes.oneOfType([_react.PropTypes.shape({
     source: _react.PropTypes.string.isRequired,
     type: _react.PropTypes.string
-  }), _react.PropTypes.element]),
-  reverse: _react.PropTypes.bool
+  }), _react.PropTypes.element])
 }, _Tile2.default.propTypes);
 
 Card.defaultProps = {
-  direction: 'column'
+  colorIndex: 'light-1',
+  direction: 'column',
+  headingStrong: true,
+  textSize: 'medium'
 };
 module.exports = exports['default'];
