@@ -271,7 +271,7 @@ export default class Carousel extends Component {
         onMouseEnter={this._onMouseOver} onMouseLeave={this._onMouseOut}>
         <div className={CLASS_ROOT + "__track"}
           style={{
-            width: (trackWidth && trackWidth !== 0) ? trackWidth : '',
+            width: (trackWidth && trackWidth > 0) ? trackWidth : '',
             marginLeft: trackPosition
           }}>
           <Tiles fill={true} responsive={false} wrap={false} direction="row">
