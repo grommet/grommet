@@ -4,8 +4,6 @@ import React from 'react';
 import renderer from 'react/lib/ReactTestRenderer';
 
 import Card from '../../src/js/components/Card';
-import FakeIcon from '../mocks/FakeIcon';
-import Anchor from '../../src/js/components/Anchor';
 
 // needed because this:
 // https://github.com/facebook/jest/issues/1353
