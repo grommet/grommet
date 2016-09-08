@@ -84,7 +84,7 @@ exports[`SocialShare has correct google rendering 1`] = `
       width="24px">
       <title
         id="social-linkedin-title">
-        Share on LinkedIn
+        Share on Linkedin
       </title>
       <g>
         <path
@@ -117,7 +117,7 @@ exports[`SocialShare has correct linkedin rendering 1`] = `
       width="24px">
       <title
         id="social-linkedin-title">
-        Share on LinkedIn
+        Share on Linkedin
       </title>
       <g>
         <path
@@ -150,7 +150,7 @@ exports[`SocialShare has correct text rendering 1`] = `
       width="24px">
       <title
         id="social-linkedin-title">
-        Share on LinkedIn
+        Share on Linkedin
       </title>
       <g>
         <path
@@ -183,7 +183,7 @@ exports[`SocialShare has correct title rendering 1`] = `
       width="24px">
       <title
         id="social-linkedin-title">
-        Share on LinkedIn
+        Share on Linkedin
       </title>
       <g>
         <path
