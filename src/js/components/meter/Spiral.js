@@ -8,9 +8,9 @@ import Graphic from './Graphic';
 
 const CLASS_ROOT = CSSClassnames.METER;
 
-var SPIRAL_WIDTH = baseDimension;
-var SPIRAL_RADIUS = (baseDimension / 2) - (baseUnit / 2);
-var RING_THICKNESS = baseUnit;
+const SPIRAL_WIDTH = baseDimension;
+const SPIRAL_RADIUS = (baseDimension / 2) - (baseUnit / 2);
+const RING_THICKNESS = baseUnit;
 // Allow for active value content next to a spiral meter
 
 export default class Spiral extends Graphic {
@@ -22,11 +22,11 @@ export default class Spiral extends Graphic {
   }
 
   _stateFromProps (props) {
-    var viewBoxHeight = Math.max(SPIRAL_WIDTH,
+    const viewBoxHeight = Math.max(SPIRAL_WIDTH,
       RING_THICKNESS * (props.series.length + 1) * 2);
-    var viewBoxWidth = viewBoxHeight;
+    const viewBoxWidth = viewBoxHeight;
 
-    var state = {
+    const state = {
       startAngle: 0,
       anglePer: 270.0 / props.max.value,
       angleOffset: 180,
@@ -35,21 +35,23 @@ export default class Spiral extends Graphic {
       startRadius: Math.max(SPIRAL_RADIUS,
         RING_THICKNESS * (props.series.length + 0.5)) -
           (Math.max(0, (props.series.length - 1)) * RING_THICKNESS),
-      viewBoxWidth: viewBoxWidth,
-      viewBoxHeight: viewBoxHeight
+      viewBoxHeight: viewBoxHeight,
+      viewBoxRadius: viewBoxWidth / 2,
+      viewBoxWidth: viewBoxWidth
     };
 
     return state;
   }
 
   _sliceCommands (trackIndex, item, startValue) {
-    var startAngle = translateEndAngle(this.state.startAngle,
+    const { viewBoxRadius } = this.state;
+    const startAngle = translateEndAngle(this.state.startAngle,
       this.state.anglePer, startValue);
-    var endAngle = translateEndAngle(startAngle, this.state.anglePer,
+    const endAngle = translateEndAngle(startAngle, this.state.anglePer,
       item.value);
-    var radius = Math.min(SPIRAL_RADIUS,
+    const radius = Math.min(viewBoxRadius,
       this.state.startRadius + (trackIndex * RING_THICKNESS));
-    return arcCommands(SPIRAL_WIDTH / 2, SPIRAL_WIDTH / 2, radius,
+    return arcCommands(viewBoxRadius, viewBoxRadius, radius,
       startAngle + this.state.angleOffset,
       endAngle + this.state.angleOffset);
   }
@@ -59,16 +61,17 @@ export default class Spiral extends Graphic {
   }
 
   _renderTopLayer () {
-    var x = SPIRAL_RADIUS + RING_THICKNESS;
-    var y = SPIRAL_RADIUS + (RING_THICKNESS * 2.2);
-    var labels = this.props.series.map(function (item, index) {
-      var classes = [CLASS_ROOT + "__label"];
+    const { viewBoxRadius } = this.state;
+    const x = viewBoxRadius + (RING_THICKNESS * 0.5);
+    let y = viewBoxRadius + (RING_THICKNESS * 1.75);
+    const labels = this.props.series.map(function (item, index) {
+      let classes = [CLASS_ROOT + "__label"];
       if (index === this.props.activeIndex) {
         classes.push(CLASS_ROOT + "__label--active");
       }
 
-      var textX = x;
-      var textY = y;
+      const textX = x;
+      const textY = y;
 
       y += RING_THICKNESS;
 

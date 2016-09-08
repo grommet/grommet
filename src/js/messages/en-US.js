@@ -11,6 +11,7 @@ export default {
   Active: 'Active',
   Alerts: 'Alerts',
   All: 'All',
+  Arc: 'Arc',
   AxisLabel: '{orientation} Axis',
   area: 'area',
   Bar: 'Bar',
@@ -33,6 +34,7 @@ export default {
   Error: 'Error',
   Filter: 'Filter',
   Footer: 'Footer',
+  Grommet: 'Grommet',
   HotSpotsLabel: 'HotSpots: press arrow keys to interact with it',
   'GraphValues': (
     'Graph has {count} items. Highest is {highest}' +
@@ -63,6 +65,7 @@ export default {
   Search: 'Search',
   'Skip to': 'Skip to',
   Sort: 'Sort',
+  Spiral: 'Spiral',
   State: 'State',
   Status: 'Status',
   SunBurstLabel: 'SunBurst: press arrow keys to interact with it',
