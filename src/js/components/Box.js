@@ -65,7 +65,7 @@ export default class Box extends Component {
 
   render () {
     const { a11yTitle, appCentered, backgroundImage, children, className,
-      colorIndex, containerClassName, focusable, id, onClick, primary,
+      colorIndex, containerClassName, focusable, id, onClick, pad, primary,
       role, size, tag, tabIndex, texture } = this.props;
     let classes = [CLASS_ROOT];
     let containerClasses = [`${CLASS_ROOT}__container`];
@@ -104,6 +104,13 @@ export default class Box extends Component {
           // don't apply 100% max-width when size using size.width.max option
           classes.push(`${CLASS_ROOT}--size`);
         }
+      }
+    }
+
+    // needed to properly set flex-basis for 1/3 & 2/3 basis boxes
+    if (pad && pad.between && children) {
+      if (React.Children.count(children) % 3 === 0) {
+        classes.push(`${CLASS_ROOT}--pad-between-thirds`);
       }
     }
 

@@ -51,6 +51,7 @@ $card-hover-color: #EBEBEB;
   &__content {
     // truncate description paragraph after 8 lines
     .#{$grommet-namespace}paragraph {
+      max-width: none;
       overflow: hidden;
       display: -webkit-box;
       -webkit-line-clamp: 8;
