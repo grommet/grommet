@@ -12,25 +12,35 @@ const BORDER_COLOR_INDEX = CSSClassnames.BORDER_COLOR_INDEX;
 
 export default class Quote extends Component {
   render () {
-    let classes = classnames(
+    const {
+      borderColorIndex, children, className, credit, emphasizeCredit, size
+    } = this.props;
+
+    const classes = classnames(
       CLASS_ROOT,
-      this.props.className,
+      className,
       {
-        [`${BORDER_COLOR_INDEX}-${this.props.borderColorIndex}`]:
-          this.props.borderColorIndex,
-        [`${CLASS_ROOT}--${this.props.size}`]: this.props.size,
-        [`${CLASS_ROOT}--emphasize-credit`]: this.props.emphasizeCredit
+        [`${BORDER_COLOR_INDEX}-${borderColorIndex}`]:
+          borderColorIndex,
+        [`${CLASS_ROOT}--${size}`]: size,
+        [`${CLASS_ROOT}--emphasize-credit`]: emphasizeCredit
       }
     );
 
-    let boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
+    const boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
+
+    if (size === 'small') {
+      boxProps.pad = {
+        horizontal: 'medium', vertical: 'small'
+      };
+    }
 
     return (
       <Box {...boxProps} className={classes}>
         <div>
-          {this.props.children}
+          {children}
           <Paragraph className={`${CLASS_ROOT}__credit`}>
-            {this.props.credit}
+            {credit}
           </Paragraph>
         </div>
       </Box>
@@ -47,7 +57,7 @@ Quote.propTypes = {
 };
 
 Quote.defaultProps = {
-  pad: {horizontal: 'large', vertical: 'small'},
+  pad: { horizontal: 'large', vertical: 'small' },
   size: 'large',
   emphasizeCredit: true
 };

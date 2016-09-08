@@ -4,15 +4,16 @@
   max-width: 100%;
 
   &--small {
-    width: $size-xsmall;
+    width: $size-medium;
+    border-width: halve($inuit-base-spacing-unit);
   }
 
   &--medium {
-    width: $size-small;
+    width: $size-large;
   }
 
   &--large {
-    width: $size-medium;
+    width: $size-xlarge;
   }
 
   &--emphasize-credit &__credit {
