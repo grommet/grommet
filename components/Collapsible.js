@@ -114,7 +114,7 @@ var Collapse = function (_Component) {
     key: 'render',
     value: function render() {
       var classes = (0, _classnames2.default)(CLASS_ROOT, this.props.className);
-      return _react2.default.createElement('div', (0, _extends3.default)({}, this.props, { className: classes }));
+      return _react2.default.createElement(_Box2.default, (0, _extends3.default)({}, this.props, { className: classes }));
     }
   }]);
   return Collapse;

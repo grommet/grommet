@@ -96,6 +96,7 @@ var AccordionPanel = function (_Component) {
       var className = _props.className;
       var children = _props.children;
       var heading = _props.heading;
+      var pad = _props.pad;
 
 
       var classes = (0, _classnames3.default)(CLASS_ROOT, className, (0, _defineProperty3.default)({}, CLASS_ROOT + '--active', this.state.active));
@@ -108,7 +109,7 @@ var AccordionPanel = function (_Component) {
           {
             role: 'tab',
             className: CLASS_ROOT + '__header',
-            pad: { horizontal: 'medium', vertical: 'small' },
+            pad: pad,
             full: 'horizontal',
             direction: 'row',
             justify: 'between',
@@ -124,7 +125,8 @@ var AccordionPanel = function (_Component) {
           {
             role: 'tabpanel',
             active: this.state.active,
-            animate: animate
+            animate: animate,
+            pad: pad
           },
           children
         )

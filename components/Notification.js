@@ -158,14 +158,9 @@ var Notification = function (_Component) {
       if ((0, _typeof3.default)(this.props.closer) === 'object') {
         closer = this.props.closer;
       } else if (this.props.onClose && this.props.closer) {
-        closer = _react2.default.createElement(
-          _Box2.default,
-          { direction: 'row', align: 'start', responsive: false, flex: false },
-          _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + '__close-button',
-            plain: true, onClick: this.props.onClose,
-            icon: _react2.default.createElement(_Close2.default, { className: CLASS_ROOT + '__close' }),
-            a11yTitle: _Intl2.default.getMessage(this.context.intl, 'Close Notification') })
-        );
+        closer = _react2.default.createElement(_Button2.default, { plain: true, onClick: this.props.onClose,
+          icon: _react2.default.createElement(_Close2.default, { className: CLASS_ROOT + '__close' }),
+          a11yTitle: _Intl2.default.getMessage(this.context.intl, 'Close Notification') });
       }
 
       var boxProps = _Props2.default.pick(this.props, (0, _keys2.default)(_Box2.default.propTypes));
@@ -178,12 +173,17 @@ var Notification = function (_Component) {
           leave: { animation: 'fade', duration: 1000 } },
         _react2.default.createElement(
           _Box2.default,
-          (0, _extends3.default)({}, boxProps, { className: classes,
-            direction: 'row', responsive: false }),
-          status,
+          (0, _extends3.default)({}, boxProps, { className: classes, pad: 'small',
+            direction: 'row', align: 'start', responsive: false,
+            full: fullBox }),
           _react2.default.createElement(
             _Box2.default,
-            { full: fullBox },
+            { pad: 'small' },
+            status
+          ),
+          _react2.default.createElement(
+            _Box2.default,
+            { flex: true, pad: 'small' },
             _react2.default.createElement(
               'span',
               { className: CLASS_ROOT + '__message' },
