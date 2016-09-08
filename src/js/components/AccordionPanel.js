@@ -47,7 +47,6 @@ export default class AccordionPanel extends Component {
         <Header
           role="tab"
           className={`${CLASS_ROOT}__header`}
-          pad={{horizontal: 'medium', vertical: 'small'}}
           full="horizontal"
           direction="row"
           justify="between"
