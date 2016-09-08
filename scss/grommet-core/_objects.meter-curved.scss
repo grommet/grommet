@@ -2,9 +2,11 @@
 
 // CIRCLE, ARC, SPIRAL
 
+$meter-arc-dash-length: round($size-small * 3);
+
 @include keyframes(draw-meter-arc) {
   0% {
-    stroke-dashoffset: - $size-medium;
+    stroke-dashoffset: - $meter-arc-dash-length;
   }
 
   100% {
@@ -28,8 +30,6 @@
 
   .#{$grommet-namespace}meter__slice {
     stroke-linecap: butt;
-    stroke-dasharray: quadruple($size-medium) quadruple($size-medium);
-    stroke-dashoffset: 0;
   }
 
   .#{$grommet-namespace}meter__slice-indicator {
@@ -44,6 +44,8 @@
 
   .#{$grommet-namespace}meter__values .#{$grommet-namespace}meter__slice {
     @include graph-stroke-color();
+    stroke-dasharray: $meter-arc-dash-length $meter-arc-dash-length;
+    stroke-dashoffset: 0;
 
     &--clickable {
       cursor: pointer;
