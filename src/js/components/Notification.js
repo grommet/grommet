@@ -102,11 +102,12 @@ export default class Notification extends Component {
         enter={{ animation: 'fade', duration: 1000 }}
         leave={{ animation: 'fade', duration: 1000 }}>
         <Box {...boxProps} className={classes} pad='small'
-          direction="row" align="start" responsive={false}>
+          direction="row" align="start" responsive={false}
+          full={fullBox}>
           <Box pad='small'>
             {status}
           </Box>
-          <Box full={fullBox} pad='small'>
+          <Box flex={true} pad='small'>
             <span className={`${CLASS_ROOT}__message`}>
               {this.props.message}
             </span>
