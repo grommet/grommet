@@ -1,0 +1,44 @@
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+// SPIRAL
+
+.#{$grommet-namespace}meter--spiral {
+  .#{$grommet-namespace}meter__graphic-container {
+    vertical-align: top;
+  }
+
+  .#{$grommet-namespace}meter__value {
+    display: inline-block;
+    white-space: normal;
+    text-align: right;
+  }
+
+  .#{$grommet-namespace}meter__value-value {
+    display: block;
+    @include inuit-font-size($number-font-size);
+    margin-bottom: quarter($inuit-base-spacing-unit);
+  }
+
+  .#{$grommet-namespace}meter__value-units {
+    @include inuit-font-size($number-units-font-size);
+    color: $secondary-text-color;
+    margin-left: 0.2em;
+
+    html.rtl & {
+      margin-left: 0;
+      margin-right: 0.2em;
+    }
+  }
+
+  .#{$grommet-namespace}meter__value-label {
+    display: block;
+    @include inuit-font-size($label-font-size, $label-font-size + 2);
+  }
+}
+
+.#{$grommet-namespace}meter--loading {
+  .#{$grommet-namespace}meter__thresholds,
+  .#{$grommet-namespace}meter__value {
+    display: none;
+  }
+}
