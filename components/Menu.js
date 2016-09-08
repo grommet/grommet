@@ -511,7 +511,7 @@ var Menu = function (_Component2) {
           { key: 'label', className: CLASS_ROOT + '__control-label' },
           this.props.label
         ), _react2.default.createElement(_Down2.default, { key: 'caret', a11yTitle: 'menu-down',
-          a11yTitleId: 'menu-down-id' })];
+          a11yTitleId: 'menu-down-id-' + _DOM2.default.generateUUID() })];
       }
       if (!icon && !label) {
         icon = _react2.default.createElement(_More2.default, { key: 'icon' });
