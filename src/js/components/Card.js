@@ -19,22 +19,22 @@ const TEXT_TAGS = {
   xlarge: {
     label: 'large',
     heading: 'h1',
-    details: 'large'
+    text: 'large'
   },
   large: {
     label: 'medium',
     heading: 'h1',
-    details: 'large'
+    text: 'large'
   },
   medium: {
     label: 'medium',
     heading: 'h2',
-    details: 'medium'
+    text: 'medium'
   },
   small: {
     label: 'small',
     heading: 'h3',
-    details: 'small'
+    text: 'small'
   }
 };
 
@@ -124,9 +124,9 @@ export default class Card extends Component {
   }
 
   render () {
-    const { children, className, colorIndex, details, direction, heading,
-      headingStrong, label, onClick, pad, reverse, textSize, thumbnail,
-      video } = this.props;
+    const { children, className, colorIndex, direction, heading, headingStrong,
+      label, onClick, pad, reverse, text, textSize, thumbnail, video
+    } = this.props;
     const tileProps = Props.pick(this.props, Object.keys(Tile.propTypes));
     delete tileProps.colorIndex;
     delete tileProps.onClick;
@@ -163,7 +163,7 @@ export default class Card extends Component {
             {heading}
           </Heading>
         }
-        {this._renderParagraph(details, tag.details, 'details')}
+        {this._renderParagraph(text, tag.text, 'text')}
         {children}
         {this._renderLink()}
       </Box>
@@ -213,13 +213,13 @@ export default class Card extends Component {
 };
 
 Card.propTypes = {
-  details: PropTypes.node,
   heading: PropTypes.string,
   headingStrong: PropTypes.bool,
   label: PropTypes.string,
   link: PropTypes.element,
   onClick: PropTypes.func,
   reverse: PropTypes.bool,
+  text: PropTypes.node,
   textSize: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
   thumbnail: PropTypes.string,
   video: PropTypes.oneOfType([
