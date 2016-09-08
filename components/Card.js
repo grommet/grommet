@@ -96,26 +96,22 @@ var TEXT_TAGS = {
   xlarge: {
     label: 'large',
     heading: 'h1',
-    summary: 'xlarge',
-    details: 'large'
+    text: 'large'
   },
   large: {
     label: 'medium',
     heading: 'h1',
-    summary: 'xlarge',
-    details: 'large'
+    text: 'large'
   },
   medium: {
     label: 'medium',
     heading: 'h2',
-    summary: 'large',
-    details: 'medium'
+    text: 'medium'
   },
   small: {
     label: 'small',
     heading: 'h3',
-    summary: 'medium',
-    details: 'small'
+    text: 'small'
   }
 };
 
@@ -228,7 +224,7 @@ var Card = function (_Component) {
       var children = _props.children;
       var className = _props.className;
       var colorIndex = _props.colorIndex;
-      var details = _props.details;
+      var description = _props.description;
       var direction = _props.direction;
       var heading = _props.heading;
       var headingStrong = _props.headingStrong;
@@ -236,7 +232,7 @@ var Card = function (_Component) {
       var onClick = _props.onClick;
       var pad = _props.pad;
       var reverse = _props.reverse;
-      var summary = _props.summary;
+      var text = _props.text;
       var textSize = _props.textSize;
       var thumbnail = _props.thumbnail;
       var video = _props.video;
@@ -245,6 +241,10 @@ var Card = function (_Component) {
       delete tileProps.colorIndex;
       delete tileProps.onClick;
       delete tileProps.pad;
+
+      if (description) {
+        console.warn('\'description\' prop has been renamed to \'text\'.' + ' Support for \'description\' will be removed in a future release.');
+      }
 
       var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--direction-' + direction, direction), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--selectable', onClick || video), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + textSize, textSize), _classnames), className);
 
@@ -270,8 +270,7 @@ var Card = function (_Component) {
             tag: tag.heading, strong: headingStrong, margin: 'none' },
           heading
         ),
-        this._renderParagraph(summary, tag.summary, 'summary'),
-        this._renderParagraph(details, tag.details, 'details'),
+        this._renderParagraph(text || description, tag.text, 'text'),
         children,
         this._renderLink()
       );
@@ -328,14 +327,14 @@ exports.default = Card;
 ;
 
 Card.propTypes = (0, _extends3.default)({
-  details: _react.PropTypes.node,
+  description: _react.PropTypes.string,
   heading: _react.PropTypes.string,
   headingStrong: _react.PropTypes.bool,
   label: _react.PropTypes.string,
   link: _react.PropTypes.element,
   onClick: _react.PropTypes.func,
   reverse: _react.PropTypes.bool,
-  summary: _react.PropTypes.node,
+  text: _react.PropTypes.node,
   textSize: _react.PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
   thumbnail: _react.PropTypes.string,
   video: _react.PropTypes.oneOfType([_react.PropTypes.shape({
