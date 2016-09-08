@@ -168,10 +168,13 @@ var Graph = function (_Component) {
 
       var maxLabel = ', ' + _Intl2.default.getMessage(intl, 'Max') + ': ' + max;
 
+      var definedValues = values.filter(function (value) {
+        return value;
+      });
       var valueLabel = _Intl2.default.getMessage(intl, 'GraphValues', {
         count: values.length,
-        highest: Math.max.apply(Math, (0, _toConsumableArray3.default)(values)).toString(),
-        smallest: Math.min.apply(Math, (0, _toConsumableArray3.default)(values)).toString()
+        highest: Math.max.apply(Math, (0, _toConsumableArray3.default)(definedValues)).toString(),
+        smallest: Math.min.apply(Math, (0, _toConsumableArray3.default)(definedValues)).toString()
       });
 
       return typeLabel + ' ' + minLabel + ' ' + maxLabel + '. ' + valueLabel;
