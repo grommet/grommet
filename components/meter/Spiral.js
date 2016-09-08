@@ -75,8 +75,9 @@ var Spiral = function (_Graphic) {
         // The last spiral ends out near but not quite at the edge of the
         // view box.
         startRadius: Math.max(SPIRAL_RADIUS, RING_THICKNESS * (props.series.length + 0.5)) - Math.max(0, props.series.length - 1) * RING_THICKNESS,
-        viewBoxWidth: viewBoxWidth,
-        viewBoxHeight: viewBoxHeight
+        viewBoxHeight: viewBoxHeight,
+        viewBoxRadius: viewBoxWidth / 2,
+        viewBoxWidth: viewBoxWidth
       };
 
       return state;
@@ -84,10 +85,12 @@ var Spiral = function (_Graphic) {
   }, {
     key: '_sliceCommands',
     value: function _sliceCommands(trackIndex, item, startValue) {
+      var viewBoxRadius = this.state.viewBoxRadius;
+
       var startAngle = (0, _Graphics.translateEndAngle)(this.state.startAngle, this.state.anglePer, startValue);
       var endAngle = (0, _Graphics.translateEndAngle)(startAngle, this.state.anglePer, item.value);
-      var radius = Math.min(SPIRAL_RADIUS, this.state.startRadius + trackIndex * RING_THICKNESS);
-      return (0, _Graphics.arcCommands)(SPIRAL_WIDTH / 2, SPIRAL_WIDTH / 2, radius, startAngle + this.state.angleOffset, endAngle + this.state.angleOffset);
+      var radius = Math.min(viewBoxRadius, this.state.startRadius + trackIndex * RING_THICKNESS);
+      return (0, _Graphics.arcCommands)(viewBoxRadius, viewBoxRadius, radius, startAngle + this.state.angleOffset, endAngle + this.state.angleOffset);
     }
   }, {
     key: '_renderThresholds',
@@ -97,8 +100,10 @@ var Spiral = function (_Graphic) {
   }, {
     key: '_renderTopLayer',
     value: function _renderTopLayer() {
-      var x = SPIRAL_RADIUS + RING_THICKNESS;
-      var y = SPIRAL_RADIUS + RING_THICKNESS * 2.2;
+      var viewBoxRadius = this.state.viewBoxRadius;
+
+      var x = viewBoxRadius + RING_THICKNESS * 0.5;
+      var y = viewBoxRadius + RING_THICKNESS * 1.75;
       var labels = this.props.series.map(function (item, index) {
         var classes = [CLASS_ROOT + "__label"];
         if (index === this.props.activeIndex) {
