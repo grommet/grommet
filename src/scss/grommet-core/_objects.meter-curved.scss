@@ -2,11 +2,11 @@
 
 // CIRCLE, ARC, SPIRAL
 
-$meter-arc-dash-length: round($size-small * 3);
+$meter-circle-dash: round($meter-size-default * 3.2);
 
-@include keyframes(draw-meter-arc) {
+@include keyframes(draw-meter-circle) {
   0% {
-    stroke-dashoffset: - $meter-arc-dash-length;
+    stroke-dashoffset: - $meter-circle-dash;
   }
 
   100% {
@@ -24,7 +24,7 @@ $meter-arc-dash-length: round($size-small * 3);
 
   .#{$grommet-namespace}meter.series-pre {
     path {
-      stroke-dashoffset: quadruple($size-medium);
+      stroke-dashoffset: quadruple($meter-size-default);
     }
   }
 
@@ -44,31 +44,29 @@ $meter-arc-dash-length: round($size-small * 3);
 
   .#{$grommet-namespace}meter__values .#{$grommet-namespace}meter__slice {
     @include graph-stroke-color();
-    stroke-dasharray: $meter-arc-dash-length $meter-arc-dash-length;
-    stroke-dashoffset: 0;
 
     &--clickable {
       cursor: pointer;
     }
 
     @include media-query(lap-and-up) {
+      stroke-dasharray: $meter-circle-dash $meter-circle-dash;
+      stroke-dashoffset: 0;
       transition: stroke-width 0.2s;
-      @include animation('draw-meter-arc 1.5s linear');
+      @include animation('draw-meter-circle 1s ease-in');
     }
   }
 
   .#{$grommet-namespace}meter__thresholds .#{$grommet-namespace}meter__slice,
   .#{$grommet-namespace}meter__tracks .#{$grommet-namespace}meter__slice {
-    // stroke-width: $meter-threshold-slice-width;
     @include graph-stroke-color-translucent(0.5);
   }
 
   .#{$grommet-namespace}meter__threshold {
-    //stroke-width: $inuit-base-spacing-unit;
     stroke-linecap: butt;
   }
 
-  .#{$grommet-namespace}meter__value-label {
+  .#{$grommet-namespace}meter__value-label { // remove in 1.0
     display: block;
   }
 }
@@ -76,7 +74,7 @@ $meter-arc-dash-length: round($size-small * 3);
 // CIRCLE, ARC
 
 .#{$grommet-namespace}meter--circle,
-.#{$grommet-namespace}meter--arc {
+.#{$grommet-namespace}meter--arc { // remove in 1.0
 
   .#{$grommet-namespace}meter__value {
     white-space: normal;
@@ -90,7 +88,7 @@ $meter-arc-dash-length: round($size-small * 3);
   }
 }
 
-.#{$grommet-namespace}meter--circle,
+.#{$grommet-namespace}meter--circle, // remove in 1.0
 .#{$grommet-namespace}meter--arc:not(.#{$grommet-namespace}meter--vertical) {
 
   .#{$grommet-namespace}meter__minmax-container {
@@ -116,7 +114,7 @@ $meter-arc-dash-length: round($size-small * 3);
   }
 }
 
-.#{$grommet-namespace}meter--circle,
+.#{$grommet-namespace}meter--circle, // remove in 1.0
 .#{$grommet-namespace}meter--arc.#{$grommet-namespace}meter--vertical {
 
   &.#{$grommet-namespace}meter--legend-right {

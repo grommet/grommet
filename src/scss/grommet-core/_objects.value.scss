@@ -57,6 +57,28 @@
   }
 }
 
+.#{$grommet-namespace}value--xsmall {
+  .#{$grommet-namespace}value__annotated {
+    @include inuit-font-size($value-xsmall-font-size);
+  }
+
+  .#{$grommet-namespace}value__label {
+    margin-top: quarter($inuit-base-spacing-unit);
+    @include inuit-font-size($label-font-size);
+  }
+}
+
+.#{$grommet-namespace}value--small {
+  .#{$grommet-namespace}value__annotated {
+    @include inuit-font-size($value-small-font-size);
+  }
+
+  .#{$grommet-namespace}value__label {
+    margin-top: quarter($inuit-base-spacing-unit);
+    @include inuit-font-size($label-font-size);
+  }
+}
+
 .#{$grommet-namespace}value--large {
   .#{$grommet-namespace}value__annotated {
     @include inuit-font-size($value-large-font-size);
@@ -73,17 +95,6 @@
   .#{$grommet-namespace}value__label {
     margin-top: halve($inuit-base-spacing-unit);
     @include inuit-font-size($control-large-font-size);
-  }
-}
-
-.#{$grommet-namespace}value--small {
-  .#{$grommet-namespace}value__annotated {
-    @include inuit-font-size($value-small-font-size);
-  }
-
-  .#{$grommet-namespace}value__label {
-    margin-top: quarter($inuit-base-spacing-unit);
-    @include inuit-font-size($label-font-size);
   }
 }
 
