@@ -83,7 +83,7 @@
     margin-bottom: halve($inuit-base-spacing-unit);
   }
 
-  p {
+  p:not(.#{$grommet-namespace}paragraph) {
     margin-top: $inuit-base-spacing-unit;
     margin-bottom: $inuit-base-spacing-unit;
   }
