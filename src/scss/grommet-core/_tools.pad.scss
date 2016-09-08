@@ -1,34 +1,54 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
+$small-pad-lap: halve($inuit-base-spacing-unit);
+$medium-pad-lap: $inuit-base-spacing-unit;
+$large-pad-lap: double($inuit-base-spacing-unit);
+$xlarge-pad-lap: round($inuit-base-spacing-unit * 8);
+
+$small-pad-palm: quarter($inuit-base-spacing-unit);
+$medium-pad-palm: halve($inuit-base-spacing-unit);
+$large-pad-palm: $inuit-base-spacing-unit;
+$xlarge-pad-palm: double($inuit-base-spacing-unit);
+
 @mixin pad {
   &--pad {
     &-none {
       padding: 0px;
     }
 
-    &-small {
-      padding: halve($inuit-base-spacing-unit);
-    }
+    @include media-query(lap-and-up) {
+      &-small {
+        padding: $small-pad-lap;
+      }
 
-    &-medium {
-      padding: $inuit-base-spacing-unit;
-    }
+      &-medium {
+        padding: $medium-pad-lap;
+      }
 
-    &-large {
-      padding: double($inuit-base-spacing-unit);
+      &-large {
+        padding: $large-pad-lap;
+      }
+
+      &-xlarge {
+        padding: $xlarge-pad-lap;
+      }
     }
 
     @include media-query(palm) {
       &-small {
-        padding: quarter($inuit-base-spacing-unit);
+        padding: $small-pad-palm;
       }
 
       &-medium {
-        padding: halve($inuit-base-spacing-unit);
+        padding: $medium-pad-palm;
       }
 
       &-large {
-        padding: $inuit-base-spacing-unit;
+        padding: $large-pad-palm;
+      }
+
+      &-xlarge {
+        padding: $xlarge-pad-palm;
       }
     }
 
@@ -38,35 +58,47 @@
         padding-right: 0px;
       }
 
-      &-small {
-        padding-left: halve($inuit-base-spacing-unit);
-        padding-right: halve($inuit-base-spacing-unit);
-      }
+      @include media-query(lap-and-up) {
+        &-small {
+          padding-left: $small-pad-lap;
+          padding-right: $small-pad-lap;
+        }
 
-      &-medium {
-        padding-left: $inuit-base-spacing-unit;
-        padding-right: $inuit-base-spacing-unit;
-      }
+        &-medium {
+          padding-left: $medium-pad-lap;
+          padding-right: $medium-pad-lap;
+        }
 
-      &-large {
-        padding-left: double($inuit-base-spacing-unit);
-        padding-right: double($inuit-base-spacing-unit);
+        &-large {
+          padding-left: $large-pad-lap;
+          padding-right: $large-pad-lap;
+        }
+
+        &-xlarge {
+          padding-left: $xlarge-pad-lap;
+          padding-right: $xlarge-pad-lap;
+        }
       }
 
       @include media-query(palm) {
         &-small {
-          padding-left: quarter($inuit-base-spacing-unit);
-          padding-right: quarter($inuit-base-spacing-unit);
+          padding-left: $small-pad-palm;
+          padding-right: $small-pad-palm;
         }
 
         &-medium {
-          padding-left: halve($inuit-base-spacing-unit);
-          padding-right: halve($inuit-base-spacing-unit);
+          padding-left: $medium-pad-palm;
+          padding-right: $medium-pad-palm;
         }
 
         &-large {
-          padding-left: $inuit-base-spacing-unit;
-          padding-right: $inuit-base-spacing-unit;
+          padding-left: $large-pad-palm;
+          padding-right: $large-pad-palm;
+        }
+
+        &-xlarge {
+          padding-left: $xlarge-pad-palm;
+          padding-right: $xlarge-pad-palm;
         }
       }
     }
@@ -77,35 +109,47 @@
         padding-bottom: 0px;
       }
 
-      &-small {
-        padding-top: halve($inuit-base-spacing-unit);
-        padding-bottom: halve($inuit-base-spacing-unit);
-      }
+      @include media-query(lap-and-up) {
+        &-small {
+          padding-top: $small-pad-lap;
+          padding-bottom: $small-pad-lap;
+        }
 
-      &-medium {
-        padding-top: $inuit-base-spacing-unit;
-        padding-bottom: $inuit-base-spacing-unit;
-      }
+        &-medium {
+          padding-top: $medium-pad-lap;
+          padding-bottom: $medium-pad-lap;
+        }
 
-      &-large {
-        padding-top: double($inuit-base-spacing-unit);
-        padding-bottom: double($inuit-base-spacing-unit);
+        &-large {
+          padding-top: $large-pad-lap;
+          padding-bottom: $large-pad-lap;
+        }
+
+        &-xlarge {
+          padding-top: $xlarge-pad-lap;
+          padding-bottom: $xlarge-pad-lap;
+        }
       }
 
       @include media-query(palm) {
         &-small {
-          padding-top: quarter($inuit-base-spacing-unit);
-          padding-bottom: quarter($inuit-base-spacing-unit);
+          padding-top: $small-pad-palm;
+          padding-bottom: $small-pad-palm;
         }
 
         &-medium {
-          padding-top: halve($inuit-base-spacing-unit);
-          padding-bottom: halve($inuit-base-spacing-unit);
+          padding-top: $medium-pad-palm;
+          padding-bottom: $medium-pad-palm;
         }
 
         &-large {
-          padding-top: $inuit-base-spacing-unit;
-          padding-bottom: $inuit-base-spacing-unit;
+          padding-top: $large-pad-palm;
+          padding-bottom: $large-pad-palm;
+        }
+
+        &-xlarge {
+          padding-top: $xlarge-pad-palm;
+          padding-bottom: $xlarge-pad-palm;
         }
       }
     }

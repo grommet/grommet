@@ -32,7 +32,7 @@ export default class AccordionPanel extends Component {
   }
 
   render () {
-    const { animate, className, children, heading } = this.props;
+    const { animate, className, children, heading, pad } = this.props;
 
     const classes = classnames(
       CLASS_ROOT,
@@ -47,7 +47,7 @@ export default class AccordionPanel extends Component {
         <Header
           role="tab"
           className={`${CLASS_ROOT}__header`}
-          pad={{horizontal: 'medium', vertical: 'small'}}
+          pad={pad}
           full="horizontal"
           direction="row"
           justify="between"
@@ -62,6 +62,7 @@ export default class AccordionPanel extends Component {
           role="tabpanel"
           active={this.state.active}
           animate={animate}
+          pad={pad}
         >
           {children}
         </Collapsible>

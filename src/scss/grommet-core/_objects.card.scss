@@ -169,15 +169,9 @@ $card-hover-color: #EBEBEB;
     }
   }
 
-  &__summary {
+  &__text {
     &.#{$grommet-namespace}paragraph {
-      margin-top: 0.125em;
-      margin-bottom: 0.5em;
-    }
-  }
-
-  &__details {
-    &.#{$grommet-namespace}paragraph {
+      margin-top: 0.333em;
       margin-bottom: 0.333em;
     }
   }
