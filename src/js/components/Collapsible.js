@@ -52,7 +52,7 @@ class Collapse extends Component {
       CLASS_ROOT,
       this.props.className
     );
-    return <div {...this.props} className={classes} />;
+    return <Box {...this.props} className={classes} />;
   }
 };
 
