@@ -124,9 +124,9 @@ export default class Card extends Component {
   }
 
   render () {
-    const { children, className, colorIndex, description, direction, heading,
-      headingStrong, label, onClick, pad, reverse, text, textSize, thumbnail,
-      video } = this.props;
+    const { children, className, colorIndex, contentPad, description,
+      direction, heading, headingStrong, label, onClick, pad, reverse,
+      text, textSize, thumbnail, video } = this.props;
     const tileProps = Props.pick(this.props, Object.keys(Tile.propTypes));
     delete tileProps.colorIndex;
     delete tileProps.onClick;
@@ -155,7 +155,7 @@ export default class Card extends Component {
     const tag = TEXT_TAGS[textSize];
 
     const contentContainer = (
-      <Box className={`${CLASS_ROOT}__content`} pad="medium">
+      <Box className={`${CLASS_ROOT}__content`} pad={contentPad}>
         {label &&
           <Label className={`${CLASS_ROOT}__label`}
             size={tag.label} margin="none" uppercase={true}>
@@ -218,6 +218,7 @@ export default class Card extends Component {
 };
 
 Card.propTypes = {
+  contentPad: PropTypes.oneOf(['small', 'medium', 'large', 'none']),
   description: PropTypes.string,
   heading: PropTypes.string,
   headingStrong: PropTypes.bool,
