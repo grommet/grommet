@@ -662,27 +662,26 @@ Meter.propTypes = {
   activeIndex: _react.PropTypes.number, // for series values
   a11yTitle: _react.PropTypes.string,
   colorIndex: _react.PropTypes.string,
-  // deprecated in favor of activeIndex?
-  important: _react.PropTypes.number,
+  important: _react.PropTypes.number, // remove in 1.0, use activeIndex
   label: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.node]),
-  // deprecated, caller can use Legend as needed
-  legend: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.shape({
+  legend: _react.PropTypes.oneOfType([// remove in 1.0
+  _react.PropTypes.bool, _react.PropTypes.shape({
     align: _react.PropTypes.oneOf(['start', 'center', 'end']),
     placement: _react.PropTypes.oneOf(['right', 'bottom', 'inline']),
     total: _react.PropTypes.bool
   })]),
-  max: _react.PropTypes.oneOfType([_react.PropTypes.shape({
+  max: _react.PropTypes.oneOfType([_react.PropTypes.shape({ // remove in 1.0
     value: _react.PropTypes.number.isRequired,
     label: _react.PropTypes.string
   }), _react.PropTypes.number]),
-  min: _react.PropTypes.oneOfType([_react.PropTypes.shape({
+  min: _react.PropTypes.oneOfType([_react.PropTypes.shape({ // remove in 1.0
     value: _react.PropTypes.number.isRequired,
     label: _react.PropTypes.string
   }), _react.PropTypes.number]),
   onActive: _react.PropTypes.func,
-  size: _react.PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
+  size: _react.PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
   series: _react.PropTypes.arrayOf(_react.PropTypes.shape({
-    label: _react.PropTypes.string,
+    label: _react.PropTypes.string, // remove in 1.0
     value: _react.PropTypes.number.isRequired,
     colorIndex: _react.PropTypes.string,
     important: _react.PropTypes.bool,
@@ -697,7 +696,7 @@ Meter.propTypes = {
     colorIndex: _react.PropTypes.string
   })),
   type: _react.PropTypes.oneOf(['bar', 'arc', 'circle', 'spiral']),
-  units: _react.PropTypes.string,
+  units: _react.PropTypes.string, // remove in 1.0, have caller use label
   value: _react.PropTypes.number,
   vertical: _react.PropTypes.bool,
   responsive: _react.PropTypes.bool
