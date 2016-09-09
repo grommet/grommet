@@ -126,8 +126,12 @@ export default class List extends Component {
     }
 
     return (
-      <ul ref={(ref) => this.listRef = ref}
-        className={classes.join(' ')} onClick={this._onClick}>
+      <ul
+        ref={(ref) => this.listRef = ref}
+        className={classes.join(' ')}
+        onClick={this._onClick}
+        role={this.props.role}
+      >
         {empty}
         {this.props.children}
         {more}
@@ -148,4 +152,8 @@ List.propTypes = {
     PropTypes.number,
     PropTypes.arrayOf(PropTypes.number)
   ])
+};
+
+List.defaultProps = {
+  role: 'list'
 };
