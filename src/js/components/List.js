@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
+import classnames from 'classnames';
 import SpinningIcon from './icons/Spinning';
 import InfiniteScroll from '../utils/InfiniteScroll';
 import Selection from '../utils/Selection';
@@ -8,7 +9,7 @@ import CSSClassnames from '../utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.LIST;
 const LIST_ITEM = CSSClassnames.LIST_ITEM;
-const SELECTED_CLASS = CLASS_ROOT + "-item--selected";
+const SELECTED_CLASS = `${CLASS_ROOT}-item--selected`;
 
 export default class List extends Component {
 
@@ -107,18 +108,19 @@ export default class List extends Component {
       selectable
     } = this.props;
 
-    const classes = [CLASS_ROOT];
-    if (selectable) {
-      classes.push(CLASS_ROOT + "--selectable");
-    }
-    if (className) {
-      classes.push(className);
-    }
+    const classes = classnames(
+      CLASS_ROOT,
+      className,
+      {
+        [`${CLASS_ROOT}--selectable`]: selectable,
+        [`${CLASS_ROOT}--moreable`]: onMore
+      }
+    );
 
     let empty;
     if (emptyIndicator) {
       empty = (
-        <li className={CLASS_ROOT + "__empty"}>
+        <li className={`${CLASS_ROOT}__empty`}>
           {emptyIndicator}
         </li>
       );
@@ -126,9 +128,8 @@ export default class List extends Component {
 
     let more;
     if (onMore) {
-      classes.push(CLASS_ROOT + "--moreable");
       more = (
-        <li ref={(ref) => this.moreRef = ref} className={CLASS_ROOT + "__more"}>
+        <li ref={(ref) => this.moreRef = ref} className={`${CLASS_ROOT}__more`}>
           <SpinningIcon />
         </li>
       );
@@ -137,7 +138,7 @@ export default class List extends Component {
     return (
       <ul
         ref={(ref) => this.listRef = ref}
-        className={classes.join(' ')}
+        className={classes}
         onClick={this._onClick}
         role={role}
       >
