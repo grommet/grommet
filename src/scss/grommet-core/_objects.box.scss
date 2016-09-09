@@ -4,6 +4,10 @@
   &.#{$grommet-namespace}box--pad-between-thirds {
     > .#{$grommet-namespace}box--basis-1-3 {
       flex-basis: calc(33.33% - #{$pad-space * (2/3)});
+
+      @include media-query (palm) {
+        flex-basis: auto;
+      }
     }
   }
 
