@@ -4,6 +4,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -28,9 +32,17 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _classnames2 = require('classnames');
+
+var _classnames3 = _interopRequireDefault(_classnames2);
+
 var _CSSClassnames = require('../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
+
+var _Box = require('./Box');
+
+var _Box2 = _interopRequireDefault(_Box);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -50,7 +62,7 @@ var Split = function (_Component) {
     _this._onResize = _this._onResize.bind(_this);
     _this._layout = _this._layout.bind(_this);
 
-    _this.state = { responsive: null };
+    _this.state = { responsive: undefined };
     return _this;
   }
 
@@ -91,7 +103,7 @@ var Split = function (_Component) {
     value: function _nonNullChildCount(props) {
       var result = 0;
       _react2.default.Children.forEach(props.children, function (child) {
-        if (child !== null) result += 1;
+        if (child) result += 1;
       });
       return result;
     }
@@ -127,42 +139,49 @@ var Split = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this2 = this;
+      var _classnames,
+          _this2 = this;
 
-      var priority = this.props.priority;
+      var _props = this.props;
+      var children = _props.children;
+      var className = _props.className;
+      var fixed = _props.fixed;
+      var priority = _props.priority;
+      var separator = _props.separator;
+      var flex = this.props.flex;
       var responsive = this.state.responsive;
 
-      var classes = [CLASS_ROOT];
-      if (this.props.flex) {
-        classes.push(CLASS_ROOT + "--flex-" + this.props.flex);
-      }
-      if (this.props.fixed) {
-        classes.push(CLASS_ROOT + "--fixed");
-      }
-      if (this.props.separator) {
-        classes.push(CLASS_ROOT + "--separator");
-      }
-      if (this.props.className) {
-        classes.push(this.props.className);
-      }
+      var classes = (0, _classnames3.default)(CLASS_ROOT, className, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--flex-' + this.props.flex, flex), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--fixed', fixed), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--separator', separator), _classnames));
 
-      var elements = _react.Children.toArray(this.props.children).filter(function (element) {
+      var elements = _react.Children.toArray(children).filter(function (element) {
         return element;
       });
-      var children = elements.map(function (element, index) {
+
+      elements = elements.map(function (element, index) {
+        var hasFlex = true;
+        var className = '';
         // When we only have room to show one child, hide the appropriate one
         if ('single' === responsive && ('left' === priority && index > 0 || 'right' === priority && index === 0 && elements.length > 1)) {
-          element = _react2.default.cloneElement(element, { style: { display: 'none' } });
+          className += CLASS_ROOT + '--hidden';
+          flex = 'both';
+        } else if (elements.length > 1 && (flex === 'right' && index === 0 || flex === 'left' && index === elements.length - 1)) {
+          hasFlex = false;
+        } else {
+          className = CLASS_ROOT + '--full';
         }
-        return element;
+        return _react2.default.createElement(
+          _Box2.default,
+          { key: 'element_' + index, className: className, flex: hasFlex },
+          element
+        );
       });
 
       return _react2.default.createElement(
         'div',
         { ref: function ref(_ref) {
             return _this2.splitRef = _ref;
-          }, className: classes.join(' ') },
-        children
+          }, className: classes },
+        elements
       );
     }
   }]);
