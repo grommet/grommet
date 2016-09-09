@@ -1,5 +1,53 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
+@mixin spaced-flex-basis ($pad-space) {
+  &.#{$grommet-namespace}box--pad-between-thirds {
+    > .#{$grommet-namespace}box--basis-1-3 {
+      flex-basis: calc(33.33% - #{$pad-space * (2/3)});
+    }
+  }
+
+  > * {
+    &.#{$grommet-namespace}box--basis-1-2 {
+      flex-basis: calc(50% - #{$pad-space * 0.5});
+    }
+
+    &.#{$grommet-namespace}box--basis-1-3 {
+      flex-basis: calc(33.33% - #{$pad-space * 0.5});
+    }
+
+    &.#{$grommet-namespace}box--basis-2-3 {
+      flex-basis: calc(66.66% - #{$pad-space * 0.5});
+    }
+
+    &.#{$grommet-namespace}box--basis-1-4 {
+      flex-basis: calc(25% - #{$pad-space * 0.75});
+
+      @include media-query(portable) {
+        &:nth-of-type(2) {
+          margin-right: 0px;
+        }
+
+        flex-basis: calc(50% - #{$pad-space * 0.5});
+      }
+    }
+
+    &.#{$grommet-namespace}box--basis-3-4 {
+      flex-basis: calc(75% - #{$pad-space * 0.75});
+    }
+
+    @include media-query (palm) {
+      &.#{$grommet-namespace}box--basis-1-2,
+      &.#{$grommet-namespace}box--basis-1-3,
+      &.#{$grommet-namespace}box--basis-2-3,
+      &.#{$grommet-namespace}box--basis-1-4,
+      &.#{$grommet-namespace}box--basis-3-4 {
+        flex-basis: auto;
+      }
+    }
+  }
+}
+
 // temporary flex grow capability
 .flex {
   flex-grow: 1;
@@ -159,11 +207,12 @@
 }
 
 .#{$grommet-namespace}box--basis-1-3 {
-  flex-basis: 33%;
+  flex-basis: 33.33%;
 }
 
 .#{$grommet-namespace}box--basis-2-3 {
-  flex-basis: 67%;
+  flex-basis: 66.66%;
+
 }
 
 .#{$grommet-namespace}box--basis-1-4 {
@@ -538,6 +587,8 @@
 // Container component padding (deprecate?)
 
 .#{$grommet-namespace}box--direction-row.#{$grommet-namespace}box--pad-between-small {
+  @include spaced-flex-basis(halve($inuit-base-spacing-unit));
+
   > *:not(:last-child) {
     margin-right: halve($inuit-base-spacing-unit);
 
@@ -560,6 +611,8 @@
 }
 
 .#{$grommet-namespace}box--direction-row.#{$grommet-namespace}box--pad-between-medium {
+  @include spaced-flex-basis($inuit-base-spacing-unit);
+
   > *:not(:last-child) {
     margin-right: $inuit-base-spacing-unit;
 
@@ -582,6 +635,8 @@
 }
 
 .#{$grommet-namespace}box--direction-row.#{$grommet-namespace}box--pad-between-large {
+  @include spaced-flex-basis(double($inuit-base-spacing-unit));
+
   > *:not(:last-child) {
     margin-right: double($inuit-base-spacing-unit);
 

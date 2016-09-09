@@ -46,11 +46,13 @@ var _CSSClassnames = require('../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
+var _Responsive = require('../utils/Responsive');
+
+var _Responsive2 = _interopRequireDefault(_Responsive);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
-
-var CLASS_ROOT = _CSSClassnames2.default.COLUMNS;
+var CLASS_ROOT = _CSSClassnames2.default.COLUMNS; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var Columns = function (_Component) {
   (0, _inherits3.default)(Columns, _Component);
@@ -65,7 +67,8 @@ var Columns = function (_Component) {
     _this.state = {
       count: 1,
       maxCount: _this.props.maxCount,
-      columnBreakpoints: null
+      columnBreakpoints: null,
+      initMobile: false
     };
     return _this;
   }
@@ -73,31 +76,16 @@ var Columns = function (_Component) {
   (0, _createClass3.default)(Columns, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      var _this2 = this;
-
       if (this.props.masonry) {
-        (function () {
-          // grab CSS styles from DOM after component mounted
-          // default to small size ($size-small = 192px)
-          var minColumnWidth = 192;
-          var container = (0, _reactDom.findDOMNode)(_this2.containerRef);
-          var column = container.childNodes[0];
-          var child = column.childNodes[0];
+        var columnBreakpoints = this._getColumnBreakpoints();
+        var initialState = { columnBreakpoints: columnBreakpoints };
 
-          if (child) {
-            var childStyles = window.getComputedStyle(child);
-            if (childStyles && childStyles.width) {
-              minColumnWidth = parseFloat(childStyles.width);
-            }
-          }
-
-          // create array of breakpoints for 1 through this.props.maxCount
-          // number of columns of minColumnWidth width.
-          var columnBreakpoints = Array.apply(null, Array(_this2.props.maxCount)).map(function (currentMaxCount, index) {
-            return (index + 1) * minColumnWidth;
-          });
-          _this2.setState({ columnBreakpoints: columnBreakpoints });
-        })();
+        // make sure to recalculate columnBreakpoints if starting
+        // with smaller screen width and resizing
+        if (window.innerWidth <= _Responsive2.default.smallSize()) {
+          initialState.initMobile = true;
+        }
+        this.setState(initialState);
       }
 
       window.addEventListener('resize', this._onResize);
@@ -112,8 +100,49 @@ var Columns = function (_Component) {
   }, {
     key: '_onResize',
     value: function _onResize() {
-      clearTimeout(this._layoutTimer);
-      this._layoutTimer = setTimeout(this._layout, 50);
+      var _this2 = this;
+
+      var initMobile = this.state.initMobile;
+
+      if (initMobile) {
+        if (window.innerWidth > _Responsive2.default.smallSize()) {
+          var columnBreakpoints = this._getColumnBreakpoints();
+          this.setState({
+            initMobile: false,
+            columnBreakpoints: columnBreakpoints
+          }, function () {
+            clearTimeout(_this2._layoutTimer);
+            _this2._layoutTimer = setTimeout(_this2._layout, 50);
+          });
+        }
+      } else {
+        clearTimeout(this._layoutTimer);
+        this._layoutTimer = setTimeout(this._layout, 50);
+      }
+    }
+  }, {
+    key: '_getColumnBreakpoints',
+    value: function _getColumnBreakpoints() {
+      // grab CSS styles from DOM after component mounted
+      // default to small size ($size-small = 192px)
+      var minColumnWidth = 192;
+      var container = (0, _reactDom.findDOMNode)(this.containerRef);
+      var column = container.childNodes[0];
+      var child = column.childNodes[0];
+
+      if (child) {
+        var childStyles = window.getComputedStyle(child);
+        if (childStyles && childStyles.width) {
+          minColumnWidth = parseFloat(childStyles.width);
+        }
+      }
+
+      // create array of breakpoints for 1 through this.props.maxCount
+      // number of columns of minColumnWidth width.
+      var columnBreakpoints = Array.apply(null, Array(this.props.maxCount)).map(function (currentMaxCount, index) {
+        return (index + 1) * minColumnWidth;
+      });
+      return columnBreakpoints;
     }
   }, {
     key: '_calculateMaxCount',

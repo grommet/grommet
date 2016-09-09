@@ -152,6 +152,7 @@ var Box = function (_Component) {
       var focusable = _props.focusable;
       var id = _props.id;
       var onClick = _props.onClick;
+      var pad = _props.pad;
       var primary = _props.primary;
       var role = _props.role;
       var size = _props.size;
@@ -196,6 +197,13 @@ var Box = function (_Component) {
             // don't apply 100% max-width when size using size.width.max option
             classes.push(CLASS_ROOT + '--size');
           }
+        }
+      }
+
+      // needed to properly set flex-basis for 1/3 & 2/3 basis boxes
+      if (pad && pad.between && children) {
+        if (_react2.default.Children.count(children) % 3 === 0) {
+          classes.push(CLASS_ROOT + '--pad-between-thirds');
         }
       }
 

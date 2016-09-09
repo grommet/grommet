@@ -224,6 +224,7 @@ var Card = function (_Component) {
       var children = _props.children;
       var className = _props.className;
       var colorIndex = _props.colorIndex;
+      var contentPad = _props.contentPad;
       var description = _props.description;
       var direction = _props.direction;
       var heading = _props.heading;
@@ -257,7 +258,7 @@ var Card = function (_Component) {
 
       var contentContainer = _react2.default.createElement(
         _Box2.default,
-        { className: CLASS_ROOT + '__content', pad: 'medium' },
+        { className: CLASS_ROOT + '__content', pad: contentPad },
         label && _react2.default.createElement(
           _Label2.default,
           { className: CLASS_ROOT + '__label',
@@ -327,6 +328,7 @@ exports.default = Card;
 ;
 
 Card.propTypes = (0, _extends3.default)({
+  contentPad: _react.PropTypes.oneOf(['small', 'medium', 'large', 'none']),
   description: _react.PropTypes.string,
   heading: _react.PropTypes.string,
   headingStrong: _react.PropTypes.bool,
