@@ -491,7 +491,6 @@
   align-items: baseline;
 }
 
-// not necessary since this is the default
 .#{$grommet-namespace}box--align-stretch {
   align-items: stretch;
 }
@@ -516,9 +515,24 @@
   align-content: space-around;
 }
 
-// not necessary since this is the default
 .#{$grommet-namespace}box--align-content-stretch {
   align-content: stretch;
+}
+
+.#{$grommet-namespace}box--align-self-start {
+  align-self: flex-start;
+}
+
+.#{$grommet-namespace}box--align-self-end {
+  align-self: flex-end;
+}
+
+.#{$grommet-namespace}box--align-self-center {
+  align-self: center;
+}
+
+.#{$grommet-namespace}box--align-self-stretch {
+  align-self: stretch;
 }
 
 // Container component padding (deprecate?)

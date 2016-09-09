@@ -76,6 +76,8 @@ export default class Box extends Component {
     this._addPropertyClass(classes, 'align');
     this._addPropertyClass(classes, 'alignContent',
       { prefix: 'align-content' });
+    this._addPropertyClass(classes, 'alignSelf',
+      { prefix: 'align-self' });
     this._addPropertyClass(classes, 'reverse');
     this._addPropertyClass(classes, 'responsive');
     this._addPropertyClass(classes, 'basis');
@@ -209,6 +211,7 @@ Box.propTypes = {
   align: PropTypes.oneOf(['start', 'center', 'end', 'baseline', 'stretch']),
   alignContent: PropTypes.oneOf(['start', 'center', 'end', 'between',
     'around', 'stretch']),
+  alignSelf: PropTypes.oneOf(['start', 'center', 'end', 'stretch']),
   appCentered: PropTypes.bool, /// deprecate to separate container?
   backgroundImage: PropTypes.string,
   basis: PropTypes.oneOf(SIZES),
@@ -250,7 +253,7 @@ Box.propTypes = {
     'horizontal', 'vertical', 'all', 'none']),
   size: PropTypes.oneOfType([
     PropTypes.oneOf(['auto', 'xsmall', 'small', 'medium', 'large',
-      'xlarge', 'xxlarge', 'full']),
+      'xlarge', 'xxlarge', 'full']), // remove in 1.0, use size: {width: }
     PropTypes.shape({
       height: PropTypes.oneOfType([
         PropTypes.oneOf(SIZES),
