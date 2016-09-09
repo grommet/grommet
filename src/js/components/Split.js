@@ -1,7 +1,9 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes, Children } from 'react';
+import classnames from 'classnames';
 import CSSClassnames from '../utils/CSSClassnames';
+import Box from './Box';
 
 const CLASS_ROOT = CSSClassnames.SPLIT;
 const BREAK_WIDTH = 720; //adds the breakpoint of single/multiple split
@@ -14,7 +16,7 @@ export default class Split extends Component {
     this._onResize = this._onResize.bind(this);
     this._layout = this._layout.bind(this);
 
-    this.state = { responsive: null };
+    this.state = { responsive: undefined };
   }
 
   componentDidMount () {
@@ -48,7 +50,7 @@ export default class Split extends Component {
   _nonNullChildCount (props) {
     let result = 0;
     React.Children.forEach(props.children, function (child) {
-      if (child !== null) result += 1;
+      if (child) result += 1;
     });
     return result;
   }
@@ -81,39 +83,50 @@ export default class Split extends Component {
   }
 
   render () {
-    const { priority } = this.props;
+    const {
+      children, className, fixed, priority, separator
+    } = this.props;
+    let { flex } = this.props;
     const { responsive } = this.state;
-    let classes = [CLASS_ROOT];
-    if (this.props.flex) {
-      classes.push(CLASS_ROOT + "--flex-" + this.props.flex);
-    }
-    if (this.props.fixed) {
-      classes.push(CLASS_ROOT + "--fixed");
-    }
-    if (this.props.separator) {
-      classes.push(CLASS_ROOT + "--separator");
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
+    const classes = classnames(
+      CLASS_ROOT,
+      className, {
+        [`${CLASS_ROOT}--flex-${this.props.flex}`]: flex,
+        [`${CLASS_ROOT}--fixed`]: fixed,
+        [`${CLASS_ROOT}--separator`]: separator
+      }
+    );
 
-    const elements = Children.toArray(this.props.children).filter(
+    let elements = Children.toArray(children).filter(
       (element) => element
     );
-    const children = elements.map((element, index) => {
+
+    elements = elements.map((element, index) => {
+      let hasFlex = true;
+      let className = '';
       // When we only have room to show one child, hide the appropriate one
       if ('single' === responsive &&
         (('left' === priority && index > 0) ||
         ('right' === priority && index === 0 &&
           elements.length > 1))) {
-        element = React.cloneElement(element, { style: { display: 'none' } });
+        className += `${CLASS_ROOT}--hidden`;
+        flex = 'both';
+      } else if (elements.length > 1 && ((flex === 'right' && index === 0) ||
+        (flex === 'left' && index === elements.length - 1))) {
+        hasFlex = false;
+      } else {
+        className = `${CLASS_ROOT}--full`;
       }
-      return element;
+      return (
+        <Box key={`element_${index}`} className={className} flex={hasFlex}>
+          {element}
+        </Box>
+      );
     });
 
     return (
-      <div ref={ref => this.splitRef = ref} className={classes.join(' ')}>
-        {children}
+      <div ref={ref => this.splitRef = ref} className={classes}>
+        {elements}
       </div>
     );
   }
