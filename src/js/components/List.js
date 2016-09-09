@@ -98,25 +98,34 @@ export default class List extends Component {
   }
 
   render () {
-    var classes = [CLASS_ROOT];
-    if (this.props.selectable) {
+    const {
+      children,
+      className,
+      emptyIndicator,
+      onMore,
+      role,
+      selectable
+    } = this.props;
+
+    const classes = [CLASS_ROOT];
+    if (selectable) {
       classes.push(CLASS_ROOT + "--selectable");
     }
-    if (this.props.className) {
-      classes.push(this.props.className);
+    if (className) {
+      classes.push(className);
     }
 
     let empty;
-    if (this.props.emptyIndicator) {
+    if (emptyIndicator) {
       empty = (
         <li className={CLASS_ROOT + "__empty"}>
-          {this.props.emptyIndicator}
+          {emptyIndicator}
         </li>
       );
     }
 
-    var more;
-    if (this.props.onMore) {
+    let more;
+    if (onMore) {
       classes.push(CLASS_ROOT + "--moreable");
       more = (
         <li ref={(ref) => this.moreRef = ref} className={CLASS_ROOT + "__more"}>
@@ -130,10 +139,10 @@ export default class List extends Component {
         ref={(ref) => this.listRef = ref}
         className={classes.join(' ')}
         onClick={this._onClick}
-        role={this.props.role}
+        role={role}
       >
         {empty}
-        {this.props.children}
+        {children}
         {more}
       </ul>
     );
