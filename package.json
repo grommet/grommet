@@ -77,8 +77,9 @@
     "gulp-prompt": "^0.2.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.2.0",
-    "react-test-renderer": "^15.3.0",
+    "guppy-pre-commit": "^0.4.0",
     "mkdirp": "^0.5.1",
+    "react-test-renderer": "^15.3.0",
     "run-sequence": "^1.1.5",
     "webpack": "^1.12.14",
     "webpack-stream": "^3.1.0"
