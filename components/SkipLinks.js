@@ -187,7 +187,7 @@ var SkipLinks = function (_Component) {
       if (anchorElements.length > 0) {
         menuComponent = _react2.default.createElement(
           _Menu2.default,
-          { direction: 'row', responsive: false },
+          { direction: 'row', responsive: false, wrap: true },
           anchorElements
         );
       }

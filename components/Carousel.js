@@ -349,7 +349,10 @@ var Carousel = function (_Component) {
         _react2.default.createElement(
           'div',
           { className: CLASS_ROOT + "__track",
-            style: { width: trackWidth, marginLeft: trackPosition } },
+            style: {
+              width: trackWidth && trackWidth > 0 ? trackWidth : '',
+              marginLeft: trackPosition
+            } },
           _react2.default.createElement(
             _Tiles2.default,
             { fill: true, responsive: false, wrap: false, direction: 'row' },
