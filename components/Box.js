@@ -167,6 +167,7 @@ var Box = function (_Component) {
       this._addPropertyClass(classes, 'justify');
       this._addPropertyClass(classes, 'align');
       this._addPropertyClass(classes, 'alignContent', { prefix: 'align-content' });
+      this._addPropertyClass(classes, 'alignSelf', { prefix: 'align-self' });
       this._addPropertyClass(classes, 'reverse');
       this._addPropertyClass(classes, 'responsive');
       this._addPropertyClass(classes, 'basis');
@@ -306,6 +307,7 @@ Box.propTypes = {
   announce: _react.PropTypes.bool,
   align: _react.PropTypes.oneOf(['start', 'center', 'end', 'baseline', 'stretch']),
   alignContent: _react.PropTypes.oneOf(['start', 'center', 'end', 'between', 'around', 'stretch']),
+  alignSelf: _react.PropTypes.oneOf(['start', 'center', 'end', 'stretch']),
   appCentered: _react.PropTypes.bool, /// deprecate to separate container?
   backgroundImage: _react.PropTypes.string,
   basis: _react.PropTypes.oneOf(SIZES),
@@ -338,7 +340,8 @@ Box.propTypes = {
   responsive: _react.PropTypes.bool,
   role: _react.PropTypes.string,
   separator: _react.PropTypes.oneOf(['top', 'bottom', 'left', 'right', 'horizontal', 'vertical', 'all', 'none']),
-  size: _react.PropTypes.oneOfType([_react.PropTypes.oneOf(['auto', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge', 'full']), _react.PropTypes.shape({
+  size: _react.PropTypes.oneOfType([_react.PropTypes.oneOf(['auto', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge', 'full']), // remove in 1.0, use size: {width: }
+  _react.PropTypes.shape({
     height: _react.PropTypes.oneOfType([_react.PropTypes.oneOf(SIZES), _react.PropTypes.shape({
       max: _react.PropTypes.oneOf(FIXED_SIZES),
       min: _react.PropTypes.oneOf(FIXED_SIZES)
