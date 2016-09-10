@@ -57,7 +57,7 @@ class AnimateChild extends Component {
       node.style.transitionDuration = '';
       node.classList.remove('animate', `${leaveClass}--leave`);
       node.classList.add(`${enterClass}--enter`);
-      setTimeout(callback, delay);
+      setTimeout(callback, delay || 50);
     }
   }
 
