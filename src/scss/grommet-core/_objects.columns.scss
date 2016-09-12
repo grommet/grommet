@@ -11,7 +11,7 @@
 }
 
 .#{$grommet-namespace}columns__column {
-  flex: 0 0 $size-medium;
+  flex: 0 0 auto; //$size-medium;
   display: flex;
   flex-direction: column;
 }
