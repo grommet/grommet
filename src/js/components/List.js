@@ -104,8 +104,8 @@ export default class List extends Component {
       className,
       emptyIndicator,
       onMore,
-      role,
-      selectable
+      selectable,
+      ...props
     } = this.props;
 
     const classes = classnames(
@@ -140,7 +140,7 @@ export default class List extends Component {
         ref={(ref) => this.listRef = ref}
         className={classes}
         onClick={this._onClick}
-        role={role}
+        {...props}
       >
         {empty}
         {children}
