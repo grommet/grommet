@@ -55,9 +55,13 @@ var CLASS_ROOT = _CSSClassnames2.default.TIP; // (C) Copyright 2014-2016 Hewlett
 var Tip = function (_Component) {
   (0, _inherits3.default)(Tip, _Component);
 
-  function Tip() {
+  function Tip(props) {
     (0, _classCallCheck3.default)(this, Tip);
-    return (0, _possibleConstructorReturn3.default)(this, (Tip.__proto__ || (0, _getPrototypeOf2.default)(Tip)).apply(this, arguments));
+
+    var _this = (0, _possibleConstructorReturn3.default)(this, (Tip.__proto__ || (0, _getPrototypeOf2.default)(Tip)).call(this));
+
+    _this._getTarget = _this._getTarget.bind(_this);
+    return _this;
   }
 
   (0, _createClass3.default)(Tip, [{
@@ -66,11 +70,14 @@ var Tip = function (_Component) {
       var _this2 = this;
 
       var _props = this.props;
-      var targetId = _props.targetId;
       var onClose = _props.onClose;
       var colorIndex = _props.colorIndex;
+      var targetId = _props.targetId;
 
-      var target = document.getElementById(targetId);
+      if (targetId) {
+        console.warn('Tip: targetId prop has been deprecated use target instead');
+      }
+      var target = this._getTarget();
       if (target) {
         (function () {
           var _classnames;
@@ -104,16 +111,24 @@ var Tip = function (_Component) {
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
-      var _props2 = this.props;
-      var targetId = _props2.targetId;
-      var onClose = _props2.onClose;
+      var onClose = this.props.onClose;
 
-      var target = document.getElementById(targetId);
+      var target = this._getTarget();
       if (target) {
         this._drop.remove();
         target.removeEventListener('click', onClose);
         target.removeEventListener('blur', onClose);
       }
+    }
+  }, {
+    key: '_getTarget',
+    value: function _getTarget() {
+      var _props2 = this.props;
+      var target = _props2.target;
+      var targetId = _props2.targetId;
+
+
+      return document.getElementById(target || targetId) || document.querySelector('.' + (target || targetId));
     }
   }, {
     key: '_renderDrop',
@@ -144,7 +159,8 @@ exports.default = Tip;
 Tip.propTypes = {
   colorIndex: _react.PropTypes.string,
   onClose: _react.PropTypes.func.isRequired,
-  targetId: _react.PropTypes.string.isRequired
+  targetId: _react.PropTypes.string, // remove in 1.0, use size: {target: }
+  target: _react.PropTypes.string.isRequired
 };
 
 Tip.defaultProps = {
