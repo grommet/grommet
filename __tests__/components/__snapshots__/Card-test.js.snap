@@ -19,7 +19,7 @@ exports[`Card has correct default options 1`] = `
     }
     tabIndex={undefined} />
   <div
-    className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-medium grommetux-card__content"
+    className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--flex-grow grommetux-box--pad-medium grommetux-card__content"
     id={undefined}
     onClick={undefined}
     role={undefined}
@@ -49,7 +49,7 @@ exports[`Card renders a header with the set size 1`] = `
   style={Object {}}
   tabIndex={undefined}>
   <div
-    className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-medium grommetux-card__content"
+    className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--flex-grow grommetux-box--pad-medium grommetux-card__content"
     id={undefined}
     onClick={undefined}
     role={undefined}
@@ -73,7 +73,7 @@ exports[`Card renders correctly when reverse 1`] = `
   style={Object {}}
   tabIndex={undefined}>
   <div
-    className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-medium grommetux-card__content"
+    className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--flex-grow grommetux-box--pad-medium grommetux-card__content"
     id={undefined}
     onClick={undefined}
     role={undefined}
@@ -97,7 +97,7 @@ exports[`Card renders correctly when the direction is set to row 1`] = `
   style={Object {}}
   tabIndex={undefined}>
   <div
-    className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-medium grommetux-card__content"
+    className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--flex-grow grommetux-box--pad-medium grommetux-card__content"
     id={undefined}
     onClick={undefined}
     role={undefined}
@@ -121,7 +121,7 @@ exports[`Card renders correctly when the headingStrong is false 1`] = `
   style={Object {}}
   tabIndex={undefined}>
   <div
-    className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-medium grommetux-card__content"
+    className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--flex-grow grommetux-box--pad-medium grommetux-card__content"
     id={undefined}
     onClick={undefined}
     role={undefined}
@@ -145,7 +145,7 @@ exports[`Card renders correctly with a non-default colorIndex 1`] = `
   style={Object {}}
   tabIndex={undefined}>
   <div
-    className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-medium grommetux-card__content"
+    className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--flex-grow grommetux-box--pad-medium grommetux-card__content"
     id={undefined}
     onClick={undefined}
     role={undefined}

@@ -156,7 +156,7 @@ export default class Card extends Component {
     }
 
     const textContainer = (
-      <Box className={`${CLASS_ROOT}__content`} pad={contentPad}>
+      <Box className={`${CLASS_ROOT}__content`} pad={contentPad} flex="grow">
         {labelContent}
         {headingContent}
         {this._renderDescription(description, options.description)}
