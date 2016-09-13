@@ -7,37 +7,37 @@ import Props from '../utils/Props';
 import Box from './Box';
 import Label from './Label';
 import Heading from './Heading';
-import Paragraph from './Paragraph';
+import Markdown from './Markdown';
 import Anchor from './Anchor';
 import Layer from './Layer';
 import Video from './Video';
 import WatchIcon from './icons/base/Watch';
 
 const CLASS_ROOT = CSSClassnames.CARD;
-const TEXT_OPTIONS = {
-  xlarge: {
-    label: 'large',
-    heading: 'h1',
-    description: 'large'
-  },
-  large: {
-    label: 'medium',
-    heading: 'h1',
-    description: 'large'
-  },
-  medium: {
-    label: 'medium',
-    heading: 'h2',
-    description: 'medium'
-  },
-  small: {
-    label: 'small',
-    heading: 'h3',
-    description: 'small'
-  }
+
+const LABEL_SIZES = {
+  xlarge: 'large',
+  large: 'medium',
+  medium: 'medium',
+  small: 'small'
+};
+
+const DESCRIPTION_SIZES = {
+  xlarge: 'large',
+  large: 'large',
+  medium: 'medium',
+  small: 'small'
+};
+
+const HEADING_TAGS = {
+  xlarge: 'h1',
+  large: 'h1',
+  medium: 'h2',
+  small: 'h3'
 };
 
 export default class Card extends Component {
+
   constructor (props) {
     super(props);
     this._onClick = this._onClick.bind(this);
@@ -50,6 +50,34 @@ export default class Card extends Component {
       event.preventDefault();
       this.setState({ activeVideo : !this.state.activeVideo });
     }
+  }
+
+  _renderLabel () {
+    const { label, textSize } = this.props;
+    let result = label;
+    if (typeof label === 'string') {
+      const size = LABEL_SIZES[textSize];
+      result = (
+        <Label size={size} margin="none" uppercase={true}>
+          {label}
+        </Label>
+      );
+    }
+    return result;
+  }
+
+  _renderHeading () {
+    const { heading, headingStrong, textSize } = this.props;
+    let result = heading;
+    if (typeof heading === 'string') {
+      const tag = HEADING_TAGS[textSize];
+      result = (
+        <Heading tag={tag} strong={headingStrong}>
+          {heading}
+        </Heading>
+      );
+    }
+    return result;
   }
 
   _renderLink () {
@@ -65,13 +93,29 @@ export default class Card extends Component {
     return result;
   }
 
-  _renderVideo () {
+  _renderThumbnail () {
+    const { thumbnail, video } = this.props;
+    let result = thumbnail;
+    if (typeof thumbnail === 'string') {
+      const basis = 'row' === this.props.direction ? '1/3' : 'small';
+      result = (
+        <Box className={`${CLASS_ROOT}__thumbnail`}
+          backgroundImage={`url(${thumbnail})`} basis={basis} flex={false}
+          justify="center" align="center">
+          {(video) ? <Anchor icon={<WatchIcon size="xlarge" />} /> : null}
+        </Box>
+      );
+    }
+    return result;
+  }
+
+  _renderVideoLayer () {
     const { video } = this.props;
     const { activeVideo } = this.state;
-    let layerContent;
-    let videoLayer;
+    let result;
 
     if (video && activeVideo) {
+      let layerContent;
       if (video.source) {
         layerContent = (
           <Video>
@@ -82,48 +126,37 @@ export default class Card extends Component {
         layerContent = video;
       }
 
-      videoLayer = (
+      result = (
         <Layer onClose={this._onClick} closer={true} flush={true}>
           {layerContent}
         </Layer>
       );
     }
 
-    return videoLayer;
+    return result;
   }
 
-  _renderDescription (description, textSize, key="0") {
-    let result;
-    if (Array.isArray(description)) {
-      result = contents.map((item, index) => {
-        return this._renderDescription(item, textSize, index);
-      });
-    }
+  _renderDescription () {
+    const { description, textSize } = this.props;
+    let result = description;
     if (typeof description === 'string') {
-      result = (
-        <Paragraph key={key} className={`${CLASS_ROOT}__description`}
-          size={textSize} >
-          {description}
-        </Paragraph>
-      );
-    } else {
-      result = description;
+      const components = {
+        p: { props: { size: DESCRIPTION_SIZES[textSize] } }
+      };
+      result = <Markdown components={components} content={description} />;
     }
     return result;
   }
 
   render () {
-    const { children, className, contentPad, description,
-      direction, heading, headingStrong, label, onClick, reverse,
-      textSize, thumbnail, video } = this.props;
+    const { children, className, contentPad,
+      onClick, reverse, video } = this.props;
     const boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
 
     const classes = classnames(
       CLASS_ROOT,
       {
-        [`${CLASS_ROOT}--direction-${direction}`]: direction, /// revisit
-        [`${CLASS_ROOT}--selectable`]: (onClick || video), /// revisit
-        [`${CLASS_ROOT}--${textSize}`]: textSize /// rename -> --text-{size}?
+        [`${CLASS_ROOT}--selectable`]: (onClick || video)
       },
       className
     );
@@ -133,49 +166,22 @@ export default class Card extends Component {
       onCardClick = this._onClick;
     }
 
-    const options = TEXT_OPTIONS[textSize];
+    let thumbnail = this._renderThumbnail();
+    let label = this._renderLabel();
+    let heading = this._renderHeading();
+    let description = this._renderDescription();
+    let link = this._renderLink();
+    let videoLayer = this._renderVideoLayer();
 
-    let labelContent;
-    if (label) {
-      labelContent = (
-        <Label className={`${CLASS_ROOT}__label`}
-          size={options.label} margin="none" uppercase={true}>
-          {label}
-        </Label>
-      );
-    }
-
-    let headingContent;
-    if (heading) {
-      headingContent = (
-        <Heading className={`${CLASS_ROOT}__heading`}
-          tag={options.heading} strong={headingStrong}>
-          {heading}
-        </Heading>
-      );
-    }
-
-    const textContainer = (
+    const text = (
       <Box className={`${CLASS_ROOT}__content`} pad={contentPad}>
-        {labelContent}
-        {headingContent}
-        {this._renderDescription(description, options.description)}
+        {label}
+        {heading}
+        {description}
         {children}
-        {this._renderLink()}
+        {link}
       </Box>
     );
-
-    let thumbnailContainer;
-    if (thumbnail) {
-      const basis = 'row' === this.props.direction ? '1/3' : 'small';
-      thumbnailContainer = (
-        <Box className={`${CLASS_ROOT}__thumbnail`}
-          backgroundImage={`url(${thumbnail})`} basis={basis} flex={false}
-          justify="center" align="center">
-          {(video) ? <Anchor icon={<WatchIcon size="xlarge" />} /> : null}
-        </Box>
-      );
-    }
 
     let cardJustify;
     if (reverse) {
@@ -194,9 +200,9 @@ export default class Card extends Component {
     return (
       <Box {...boxProps} className={classes} justify={cardJustify}
         onClick={onCardClick}>
-        {thumbnailContainer}
-        {textContainer}
-        {this._renderVideo()}
+        {thumbnail}
+        {text}
+        {videoLayer}
       </Box>
     );
   }
@@ -204,13 +210,25 @@ export default class Card extends Component {
 
 Card.propTypes = {
   contentPad: Box.propTypes.pad,
-  description: PropTypes.node,
-  heading: PropTypes.node,
+  description: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.element
+  ]),
+  heading: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.element
+  ]),
   headingStrong: PropTypes.bool,
-  label: PropTypes.string,
+  label: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.element
+  ]),
   link: PropTypes.element,
   textSize: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
-  thumbnail: PropTypes.string,
+  thumbnail: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.element
+  ]),
   video: PropTypes.oneOfType([
     PropTypes.shape({
       source: PropTypes.string.isRequired,
