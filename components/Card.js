@@ -64,9 +64,9 @@ var _Heading = require('./Heading');
 
 var _Heading2 = _interopRequireDefault(_Heading);
 
-var _Paragraph = require('./Paragraph');
+var _Markdown = require('./Markdown');
 
-var _Paragraph2 = _interopRequireDefault(_Paragraph);
+var _Markdown2 = _interopRequireDefault(_Markdown);
 
 var _Anchor = require('./Anchor');
 
@@ -89,27 +89,26 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = _CSSClassnames2.default.CARD;
-var TEXT_OPTIONS = {
-  xlarge: {
-    label: 'large',
-    heading: 'h1',
-    description: 'large'
-  },
-  large: {
-    label: 'medium',
-    heading: 'h1',
-    description: 'large'
-  },
-  medium: {
-    label: 'medium',
-    heading: 'h2',
-    description: 'medium'
-  },
-  small: {
-    label: 'small',
-    heading: 'h3',
-    description: 'small'
-  }
+
+var LABEL_SIZES = {
+  xlarge: 'large',
+  large: 'medium',
+  medium: 'medium',
+  small: 'small'
+};
+
+var DESCRIPTION_SIZES = {
+  xlarge: 'large',
+  large: 'large',
+  medium: 'medium',
+  small: 'small'
+};
+
+var HEADING_TAGS = {
+  xlarge: 'h1',
+  large: 'h1',
+  medium: 'h2',
+  small: 'h3'
 };
 
 var Card = function (_Component) {
@@ -136,6 +135,43 @@ var Card = function (_Component) {
       }
     }
   }, {
+    key: '_renderLabel',
+    value: function _renderLabel() {
+      var _props = this.props;
+      var label = _props.label;
+      var textSize = _props.textSize;
+
+      var result = label;
+      if (typeof label === 'string') {
+        var size = LABEL_SIZES[textSize];
+        result = _react2.default.createElement(
+          _Label2.default,
+          { size: size, margin: 'none', uppercase: true },
+          label
+        );
+      }
+      return result;
+    }
+  }, {
+    key: '_renderHeading',
+    value: function _renderHeading() {
+      var _props2 = this.props;
+      var heading = _props2.heading;
+      var headingStrong = _props2.headingStrong;
+      var textSize = _props2.textSize;
+
+      var result = heading;
+      if (typeof heading === 'string') {
+        var tag = HEADING_TAGS[textSize];
+        result = _react2.default.createElement(
+          _Heading2.default,
+          { tag: tag, strong: headingStrong },
+          heading
+        );
+      }
+      return result;
+    }
+  }, {
     key: '_renderLink',
     value: function _renderLink() {
       var link = this.props.link;
@@ -151,15 +187,35 @@ var Card = function (_Component) {
       return result;
     }
   }, {
-    key: '_renderVideo',
-    value: function _renderVideo() {
+    key: '_renderThumbnail',
+    value: function _renderThumbnail() {
+      var _props3 = this.props;
+      var thumbnail = _props3.thumbnail;
+      var video = _props3.video;
+
+      var result = thumbnail;
+      if (typeof thumbnail === 'string') {
+        var basis = 'row' === this.props.direction ? '1/3' : 'small';
+        result = _react2.default.createElement(
+          _Box2.default,
+          { className: CLASS_ROOT + '__thumbnail',
+            backgroundImage: 'url(' + thumbnail + ')', basis: basis, flex: false,
+            justify: 'center', align: 'center' },
+          video ? _react2.default.createElement(_Anchor2.default, { icon: _react2.default.createElement(_Watch2.default, { size: 'xlarge' }) }) : null
+        );
+      }
+      return result;
+    }
+  }, {
+    key: '_renderVideoLayer',
+    value: function _renderVideoLayer() {
       var video = this.props.video;
       var activeVideo = this.state.activeVideo;
 
-      var layerContent = void 0;
-      var videoLayer = void 0;
+      var result = void 0;
 
       if (video && activeVideo) {
+        var layerContent = void 0;
         if (video.source) {
           layerContent = _react2.default.createElement(
             _Video2.default,
@@ -170,112 +226,67 @@ var Card = function (_Component) {
           layerContent = video;
         }
 
-        videoLayer = _react2.default.createElement(
+        result = _react2.default.createElement(
           _Layer2.default,
           { onClose: this._onClick, closer: true, flush: true },
           layerContent
         );
       }
 
-      return videoLayer;
+      return result;
     }
   }, {
     key: '_renderDescription',
-    value: function _renderDescription(description, textSize) {
-      var _this2 = this;
+    value: function _renderDescription() {
+      var _props4 = this.props;
+      var description = _props4.description;
+      var textSize = _props4.textSize;
 
-      var key = arguments.length <= 2 || arguments[2] === undefined ? "0" : arguments[2];
-
-      var result = void 0;
-      if (Array.isArray(description)) {
-        result = contents.map(function (item, index) {
-          return _this2._renderDescription(item, textSize, index);
-        });
-      }
+      var result = description;
       if (typeof description === 'string') {
-        result = _react2.default.createElement(
-          _Paragraph2.default,
-          { key: key, className: CLASS_ROOT + '__description',
-            size: textSize },
-          description
-        );
-      } else {
-        result = description;
+        var components = {
+          p: { props: { size: DESCRIPTION_SIZES[textSize] } }
+        };
+        result = _react2.default.createElement(_Markdown2.default, { components: components, content: description });
       }
       return result;
     }
   }, {
     key: 'render',
     value: function render() {
-      var _classnames;
-
-      var _props = this.props;
-      var children = _props.children;
-      var className = _props.className;
-      var contentPad = _props.contentPad;
-      var description = _props.description;
-      var direction = _props.direction;
-      var heading = _props.heading;
-      var headingStrong = _props.headingStrong;
-      var label = _props.label;
-      var onClick = _props.onClick;
-      var reverse = _props.reverse;
-      var textSize = _props.textSize;
-      var thumbnail = _props.thumbnail;
-      var video = _props.video;
+      var _props5 = this.props;
+      var children = _props5.children;
+      var className = _props5.className;
+      var contentPad = _props5.contentPad;
+      var onClick = _props5.onClick;
+      var reverse = _props5.reverse;
+      var video = _props5.video;
 
       var boxProps = _Props2.default.pick(this.props, (0, _keys2.default)(_Box2.default.propTypes));
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--direction-' + direction, direction), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--selectable', onClick || video), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + textSize, textSize), _classnames), className);
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--selectable', onClick || video), className);
 
       var onCardClick = onClick;
       if (!onCardClick && video) {
         onCardClick = this._onClick;
       }
 
-      var options = TEXT_OPTIONS[textSize];
+      var thumbnail = this._renderThumbnail();
+      var label = this._renderLabel();
+      var heading = this._renderHeading();
+      var description = this._renderDescription();
+      var link = this._renderLink();
+      var videoLayer = this._renderVideoLayer();
 
-      var labelContent = void 0;
-      if (label) {
-        labelContent = _react2.default.createElement(
-          _Label2.default,
-          { className: CLASS_ROOT + '__label',
-            size: options.label, margin: 'none', uppercase: true },
-          label
-        );
-      }
-
-      var headingContent = void 0;
-      if (heading) {
-        headingContent = _react2.default.createElement(
-          _Heading2.default,
-          { className: CLASS_ROOT + '__heading',
-            tag: options.heading, strong: headingStrong },
-          heading
-        );
-      }
-
-      var textContainer = _react2.default.createElement(
+      var text = _react2.default.createElement(
         _Box2.default,
         { className: CLASS_ROOT + '__content', pad: contentPad },
-        labelContent,
-        headingContent,
-        this._renderDescription(description, options.description),
+        label,
+        heading,
+        description,
         children,
-        this._renderLink()
+        link
       );
-
-      var thumbnailContainer = void 0;
-      if (thumbnail) {
-        var basis = 'row' === this.props.direction ? '1/3' : 'small';
-        thumbnailContainer = _react2.default.createElement(
-          _Box2.default,
-          { className: CLASS_ROOT + '__thumbnail',
-            backgroundImage: 'url(' + thumbnail + ')', basis: basis, flex: false,
-            justify: 'center', align: 'center' },
-          video ? _react2.default.createElement(_Anchor2.default, { icon: _react2.default.createElement(_Watch2.default, { size: 'xlarge' }) }) : null
-        );
-      }
 
       var cardJustify = void 0;
       if (reverse) {
@@ -295,9 +306,9 @@ var Card = function (_Component) {
         _Box2.default,
         (0, _extends3.default)({}, boxProps, { className: classes, justify: cardJustify,
           onClick: onCardClick }),
-        thumbnailContainer,
-        textContainer,
-        this._renderVideo()
+        thumbnail,
+        text,
+        videoLayer
       );
     }
   }]);
@@ -310,13 +321,13 @@ exports.default = Card;
 
 Card.propTypes = (0, _extends3.default)({
   contentPad: _Box2.default.propTypes.pad,
-  description: _react.PropTypes.node,
-  heading: _react.PropTypes.node,
+  description: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.element]),
+  heading: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.element]),
   headingStrong: _react.PropTypes.bool,
-  label: _react.PropTypes.string,
+  label: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.element]),
   link: _react.PropTypes.element,
   textSize: _react.PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
-  thumbnail: _react.PropTypes.string,
+  thumbnail: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.element]),
   video: _react.PropTypes.oneOfType([_react.PropTypes.shape({
     source: _react.PropTypes.string.isRequired,
     type: _react.PropTypes.string
