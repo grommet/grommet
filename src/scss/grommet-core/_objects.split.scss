@@ -4,6 +4,16 @@
   position: relative;
   overflow: visible;
 
+  &--hidden {
+    display: none;
+  }
+
+  &--full {
+    > * {
+      width: 100%;
+    }
+  }
+
   @include media-query(lap-and-up) {
     display: flex;
 
@@ -13,33 +23,6 @@
         height: 100vh;
         overflow: auto;
         -ms-overflow-style: -ms-autohiding-scrollbar;
-      }
-    }
-
-    &--flex-right {
-      > *:first-child:not(:last-child) {
-        flex: 0 0 auto;
-      }
-
-      > *:last-child {
-        flex: 1;
-      }
-    }
-
-    &--flex-left {
-      > *:last-child:not(:first-child),
-      > .object {
-        flex: 0 0 auto;
-      }
-
-      > *:first-child {
-        flex: 1;
-      }
-    }
-
-    &--flex-both {
-      > * {
-        flex: 1;
       }
     }
 

@@ -14,6 +14,9 @@
     outline: none;
     // margin-right: halve($inuit-base-spacing-unit);
     background-color: transparent; // inherit; doesn't work on IE
+    color: inherit;
+    font: inherit;
+    margin: 0;
 
     .grommet.rtl & {
       margin-right: 0;

@@ -80,7 +80,7 @@ Value.propTypes = {
   icon: PropTypes.node,
   label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   onClick: PropTypes.func,
-  size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
+  size: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
   trendIcon: PropTypes.node,
   value: PropTypes.oneOfType([PropTypes.number, PropTypes.string,
     PropTypes.node]),

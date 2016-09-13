@@ -524,11 +524,9 @@ Meter.propTypes = {
   activeIndex: PropTypes.number, // for series values
   a11yTitle: PropTypes.string,
   colorIndex: PropTypes.string,
-  // deprecated in favor of activeIndex?
-  important: PropTypes.number,
+  important: PropTypes.number, // remove in 1.0, use activeIndex
   label: PropTypes.oneOfType([PropTypes.bool, PropTypes.node]),
-  // deprecated, caller can use Legend as needed
-  legend: PropTypes.oneOfType([
+  legend: PropTypes.oneOfType([ // remove in 1.0
     PropTypes.bool,
     PropTypes.shape({
       align: PropTypes.oneOf(['start', 'center', 'end']),
@@ -537,23 +535,23 @@ Meter.propTypes = {
     })
   ]),
   max: PropTypes.oneOfType([
-    PropTypes.shape({
+    PropTypes.shape({ // remove in 1.0
       value: PropTypes.number.isRequired,
       label: PropTypes.string
     }),
     PropTypes.number
   ]),
   min: PropTypes.oneOfType([
-    PropTypes.shape({
+    PropTypes.shape({ // remove in 1.0
       value: PropTypes.number.isRequired,
       label: PropTypes.string
     }),
     PropTypes.number
   ]),
   onActive: PropTypes.func,
-  size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
+  size: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
   series: PropTypes.arrayOf(PropTypes.shape({
-    label: PropTypes.string,
+    label: PropTypes.string, // remove in 1.0
     value: PropTypes.number.isRequired,
     colorIndex: PropTypes.string,
     important: PropTypes.bool,
@@ -568,7 +566,7 @@ Meter.propTypes = {
     colorIndex: PropTypes.string
   })),
   type: PropTypes.oneOf(['bar', 'arc', 'circle', 'spiral']),
-  units: PropTypes.string,
+  units: PropTypes.string, // remove in 1.0, have caller use label
   value: PropTypes.number,
   vertical: PropTypes.bool,
   responsive: PropTypes.bool

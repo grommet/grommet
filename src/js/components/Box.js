@@ -65,7 +65,7 @@ export default class Box extends Component {
 
   render () {
     const { a11yTitle, appCentered, backgroundImage, children, className,
-      colorIndex, containerClassName, focusable, id, onClick, primary,
+      colorIndex, containerClassName, focusable, id, onClick, pad, primary,
       role, size, tag, tabIndex, texture } = this.props;
     let classes = [CLASS_ROOT];
     let containerClasses = [`${CLASS_ROOT}__container`];
@@ -76,6 +76,8 @@ export default class Box extends Component {
     this._addPropertyClass(classes, 'align');
     this._addPropertyClass(classes, 'alignContent',
       { prefix: 'align-content' });
+    this._addPropertyClass(classes, 'alignSelf',
+      { prefix: 'align-self' });
     this._addPropertyClass(classes, 'reverse');
     this._addPropertyClass(classes, 'responsive');
     this._addPropertyClass(classes, 'basis');
@@ -104,6 +106,13 @@ export default class Box extends Component {
           // don't apply 100% max-width when size using size.width.max option
           classes.push(`${CLASS_ROOT}--size`);
         }
+      }
+    }
+
+    // needed to properly set flex-basis for 1/3 & 2/3 basis boxes
+    if (pad && pad.between && children) {
+      if (React.Children.count(children) % 3 === 0) {
+        classes.push(`${CLASS_ROOT}--pad-between-thirds`);
       }
     }
 
@@ -209,6 +218,7 @@ Box.propTypes = {
   align: PropTypes.oneOf(['start', 'center', 'end', 'baseline', 'stretch']),
   alignContent: PropTypes.oneOf(['start', 'center', 'end', 'between',
     'around', 'stretch']),
+  alignSelf: PropTypes.oneOf(['start', 'center', 'end', 'stretch']),
   appCentered: PropTypes.bool, /// deprecate to separate container?
   backgroundImage: PropTypes.string,
   basis: PropTypes.oneOf(SIZES),
@@ -250,7 +260,7 @@ Box.propTypes = {
     'horizontal', 'vertical', 'all', 'none']),
   size: PropTypes.oneOfType([
     PropTypes.oneOf(['auto', 'xsmall', 'small', 'medium', 'large',
-      'xlarge', 'xxlarge', 'full']),
+      'xlarge', 'xxlarge', 'full']), // remove in 1.0, use size: {width: }
     PropTypes.shape({
       height: PropTypes.oneOfType([
         PropTypes.oneOf(SIZES),

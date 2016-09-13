@@ -8,7 +8,7 @@ exports[`Carousel has correct default options 1`] = `
     style={
       Object {
         "marginLeft": -0,
-        "width": 0
+        "width": ""
       }
     }>
     <div

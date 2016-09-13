@@ -5,7 +5,6 @@ import classnames from 'classnames';
 import CSSClassnames from '../utils/CSSClassnames';
 import Props from '../utils/Props';
 import Box from './Box';
-import Tile from './Tile';
 import Label from './Label';
 import Heading from './Heading';
 import Paragraph from './Paragraph';
@@ -15,26 +14,26 @@ import Video from './Video';
 import WatchIcon from './icons/base/Watch';
 
 const CLASS_ROOT = CSSClassnames.CARD;
-const TEXT_TAGS = {
+const TEXT_OPTIONS = {
   xlarge: {
     label: 'large',
     heading: 'h1',
-    text: 'large'
+    description: 'large'
   },
   large: {
     label: 'medium',
     heading: 'h1',
-    text: 'large'
+    description: 'large'
   },
   medium: {
     label: 'medium',
     heading: 'h2',
-    text: 'medium'
+    description: 'medium'
   },
   small: {
     label: 'small',
     heading: 'h3',
-    text: 'small'
+    description: 'small'
   }
 };
 
@@ -42,14 +41,11 @@ export default class Card extends Component {
   constructor (props) {
     super(props);
     this._onClick = this._onClick.bind(this);
-    this.state = {
-      activeVideo: false
-    };
+    this.state = { activeVideo: false };
   }
 
   _onClick (event) {
     const { video } = this.props;
-
     if (video) {
       event.preventDefault();
       this.setState({ activeVideo : !this.state.activeVideo });
@@ -58,16 +54,15 @@ export default class Card extends Component {
 
   _renderLink () {
     const { link } = this.props;
-
+    let result;
     if (link) {
-      return (
+      result = (
         <Box pad={{vertical: "small"}}>
           {link}
         </Box>
       );
     }
-
-    return null;
+    return result;
   }
 
   _renderVideo () {
@@ -97,52 +92,38 @@ export default class Card extends Component {
     return videoLayer;
   }
 
-  _renderParagraph (contents, textSize, type) {
-    if (typeof contents === 'string') {
-      return (
-        <Paragraph
-          className={`${CLASS_ROOT}__${type}`}
-          size={textSize}
-          margin="none"
-        >
-          {contents}
+  _renderDescription (description, textSize, key="0") {
+    let result;
+    if (Array.isArray(description)) {
+      result = contents.map((item, index) => {
+        return this._renderDescription(item, textSize, index);
+      });
+    }
+    if (typeof description === 'string') {
+      result = (
+        <Paragraph key={key} className={`${CLASS_ROOT}__description`}
+          size={textSize} >
+          {description}
         </Paragraph>
       );
-    } else if (Array.isArray(contents)) {
-      return contents.map((content, index) => (
-        <Paragraph
-          key={`${type}_${index}`}
-          className={`${CLASS_ROOT}__${type}`}
-          size={textSize}
-          margin="none"
-        >
-          {content}
-        </Paragraph>
-      ));
+    } else {
+      result = description;
     }
-    return null;
+    return result;
   }
 
   render () {
-    const { children, className, colorIndex, description, direction, heading,
-      headingStrong, label, onClick, pad, reverse, text, textSize, thumbnail,
-      video } = this.props;
-    const tileProps = Props.pick(this.props, Object.keys(Tile.propTypes));
-    delete tileProps.colorIndex;
-    delete tileProps.onClick;
-    delete tileProps.pad;
-
-    if (description) {
-      console.warn('\'description\' prop has been renamed to \'text\'.' +
-        ' Support for \'description\' will be removed in a future release.');
-    }
+    const { children, className, contentPad, description,
+      direction, heading, headingStrong, label, onClick, reverse,
+      textSize, thumbnail, video } = this.props;
+    const boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
 
     const classes = classnames(
       CLASS_ROOT,
       {
-        [`${CLASS_ROOT}--direction-${direction}`]: direction,
-        [`${CLASS_ROOT}--selectable`]: (onClick || video),
-        [`${CLASS_ROOT}--${textSize}`]: textSize
+        [`${CLASS_ROOT}--direction-${direction}`]: direction, /// revisit
+        [`${CLASS_ROOT}--selectable`]: (onClick || video), /// revisit
+        [`${CLASS_ROOT}--${textSize}`]: textSize /// rename -> --text-{size}?
       },
       className
     );
@@ -152,23 +133,33 @@ export default class Card extends Component {
       onCardClick = this._onClick;
     }
 
-    const tag = TEXT_TAGS[textSize];
+    const options = TEXT_OPTIONS[textSize];
 
-    const contentContainer = (
-      <Box className={`${CLASS_ROOT}__content`} pad="medium">
-        {label &&
-          <Label className={`${CLASS_ROOT}__label`}
-            size={tag.label} margin="none" uppercase={true}>
-            {label}
-          </Label>
-        }
-        {heading &&
-          <Heading className={`${CLASS_ROOT}__heading`}
-            tag={tag.heading} strong={headingStrong} margin="none">
-            {heading}
-          </Heading>
-        }
-        {this._renderParagraph(text || description, tag.text, 'text')}
+    let labelContent;
+    if (label) {
+      labelContent = (
+        <Label className={`${CLASS_ROOT}__label`}
+          size={options.label} margin="none" uppercase={true}>
+          {label}
+        </Label>
+      );
+    }
+
+    let headingContent;
+    if (heading) {
+      headingContent = (
+        <Heading className={`${CLASS_ROOT}__heading`}
+          tag={options.heading} strong={headingStrong}>
+          {heading}
+        </Heading>
+      );
+    }
+
+    const textContainer = (
+      <Box className={`${CLASS_ROOT}__content`} pad={contentPad}>
+        {labelContent}
+        {headingContent}
+        {this._renderDescription(description, options.description)}
         {children}
         {this._renderLink()}
       </Box>
@@ -176,56 +167,48 @@ export default class Card extends Component {
 
     let thumbnailContainer;
     if (thumbnail) {
+      const basis = 'row' === this.props.direction ? '1/3' : 'small';
       thumbnailContainer = (
         <Box className={`${CLASS_ROOT}__thumbnail`}
-          backgroundImage={`url(${thumbnail})`}
+          backgroundImage={`url(${thumbnail})`} basis={basis} flex={false}
           justify="center" align="center">
           {(video) ? <Anchor icon={<WatchIcon size="xlarge" />} /> : null}
         </Box>
       );
     }
 
-    let first = thumbnailContainer;
-    let second = contentContainer;
     let cardJustify;
-
     if (reverse) {
-      first = contentContainer;
-      second = thumbnailContainer;
-      // align thumbnail to bottom of card for bottom cardPlacement
+      // align thumbnail to bottom/right of card for bottom cardPlacement
       cardJustify = 'between';
     }
 
-    let cardPad = 'small';
-    let cardFull;
-    if (direction === 'row') {
-      cardPad = {vertical: 'small'};
-      cardFull = 'horizontal';
+    if (! this.props.size) {
+      if (this.props.direction === 'row') {
+        boxProps.size = { width: 'xlarge' };
+      } else {
+        boxProps.size = { width: 'medium' };
+      }
     }
 
     return (
-      <Tile className={classes} onClick={onCardClick}
-        pad={pad || cardPad} {...tileProps}>
-        <Box className="flex" direction={direction} justify={cardJustify}
-          full={cardFull} colorIndex={colorIndex}>
-          {first}
-          {second}
-          {this._renderVideo()}
-        </Box>
-      </Tile>
+      <Box {...boxProps} className={classes} justify={cardJustify}
+        onClick={onCardClick}>
+        {thumbnailContainer}
+        {textContainer}
+        {this._renderVideo()}
+      </Box>
     );
   }
 };
 
 Card.propTypes = {
-  description: PropTypes.string,
-  heading: PropTypes.string,
+  contentPad: Box.propTypes.pad,
+  description: PropTypes.node,
+  heading: PropTypes.node,
   headingStrong: PropTypes.bool,
   label: PropTypes.string,
   link: PropTypes.element,
-  onClick: PropTypes.func,
-  reverse: PropTypes.bool,
-  text: PropTypes.node,
   textSize: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
   thumbnail: PropTypes.string,
   video: PropTypes.oneOfType([
@@ -235,12 +218,12 @@ Card.propTypes = {
     }),
     PropTypes.element
   ]),
-  ...Tile.propTypes
+  ...Box.propTypes
 };
 
 Card.defaultProps = {
   colorIndex: 'light-1',
-  direction: 'column',
+  contentPad: 'medium',
   headingStrong: true,
   textSize: 'medium'
 };
