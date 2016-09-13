@@ -129,13 +129,13 @@ var Footer = function (_Component) {
           _classnames2,
           _this2 = this;
 
-      var classes = (0, _classnames5.default)(CLASS_ROOT, this.props.className, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + this.props.size, this.props.size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--float', this.props.float), _classnames));
+      var classes = (0, _classnames5.default)(CLASS_ROOT, this.props.className, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + this.props.size, this.props.size && typeof this.props.size === 'string'), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--float', this.props.float), _classnames));
 
       var containerClasses = (0, _classnames5.default)(CLASS_ROOT + '__container', (_classnames2 = {}, (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '__container--float', this.props.float), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '__container--fixed', this.props.fixed), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '__container--fill',
       // add default color index if none is provided
       this.props.fixed && !this.props.colorIndex), _classnames2));
 
-      var wrapperClasses = (0, _classnames5.default)(CLASS_ROOT + '__wrapper', (0, _defineProperty3.default)({}, CLASS_ROOT + '__wrapper--' + this.props.size, this.props.size));
+      var wrapperClasses = (0, _classnames5.default)(CLASS_ROOT + '__wrapper', (0, _defineProperty3.default)({}, CLASS_ROOT + '__wrapper--' + this.props.size, this.props.size && typeof this.props.size === 'string'));
 
       var footerSkipLink = void 0;
       if (this.props.primary) {
