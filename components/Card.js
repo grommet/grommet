@@ -311,7 +311,7 @@ exports.default = Card;
 Card.propTypes = (0, _extends3.default)({
   contentPad: _Box2.default.propTypes.pad,
   description: _react.PropTypes.node,
-  heading: _react.PropTypes.string,
+  heading: _react.PropTypes.node,
   headingStrong: _react.PropTypes.bool,
   label: _react.PropTypes.string,
   link: _react.PropTypes.element,
