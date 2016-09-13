@@ -205,7 +205,7 @@ export default class Card extends Component {
 Card.propTypes = {
   contentPad: Box.propTypes.pad,
   description: PropTypes.node,
-  heading: PropTypes.string,
+  heading: PropTypes.node,
   headingStrong: PropTypes.bool,
   label: PropTypes.string,
   link: PropTypes.element,
