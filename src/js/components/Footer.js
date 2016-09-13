@@ -59,7 +59,8 @@ export default class Footer extends Component {
       CLASS_ROOT,
       this.props.className,
       {
-        [`${CLASS_ROOT}--${this.props.size}`]: this.props.size,
+        [`${CLASS_ROOT}--${this.props.size}`]: (
+          this.props.size && typeof this.props.size === 'string'),
         [`${CLASS_ROOT}--float`]: this.props.float
       }
     );
@@ -79,7 +80,8 @@ export default class Footer extends Component {
     let wrapperClasses = classnames(
       `${CLASS_ROOT}__wrapper`,
       {
-        [`${CLASS_ROOT}__wrapper--${this.props.size}`]: this.props.size
+        [`${CLASS_ROOT}__wrapper--${this.props.size}`]: (
+          this.props.size && typeof this.props.size === 'string')
       }
     );
 
