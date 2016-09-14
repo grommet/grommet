@@ -8,6 +8,10 @@ var _extends2 = require('babel-runtime/helpers/extends');
 
 var _extends3 = _interopRequireDefault(_extends2);
 
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
 var _typeof2 = require('babel-runtime/helpers/typeof');
 
 var _typeof3 = _interopRequireDefault(_typeof2);
@@ -40,35 +44,38 @@ var _reactDom = require('react-dom');
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _Close = require('./icons/base/Close');
+var _classnames2 = require('classnames');
 
-var _Close2 = _interopRequireDefault(_Close);
-
-var _KeyboardAccelerators = require('../utils/KeyboardAccelerators');
-
-var _KeyboardAccelerators2 = _interopRequireDefault(_KeyboardAccelerators);
-
-var _DOM = require('../utils/DOM');
-
-var _DOM2 = _interopRequireDefault(_DOM);
+var _classnames3 = _interopRequireDefault(_classnames2);
 
 var _Button = require('./Button');
 
 var _Button2 = _interopRequireDefault(_Button);
 
-var _Intl = require('../utils/Intl');
+var _Close = require('./icons/base/Close');
 
-var _Intl2 = _interopRequireDefault(_Intl);
+var _Close2 = _interopRequireDefault(_Close);
 
 var _CSSClassnames = require('../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
+var _DOM = require('../utils/DOM');
+
+var _DOM2 = _interopRequireDefault(_DOM);
+
+var _Intl = require('../utils/Intl');
+
+var _Intl2 = _interopRequireDefault(_Intl);
+
+var _KeyboardAccelerators = require('../utils/KeyboardAccelerators');
+
+var _KeyboardAccelerators2 = _interopRequireDefault(_KeyboardAccelerators);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+var CLASS_ROOT = _CSSClassnames2.default.LAYER; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-var CLASS_ROOT = _CSSClassnames2.default.LAYER;
 var APP = _CSSClassnames2.default.APP;
 
 var LayerContents = function (_Component) {
@@ -97,7 +104,11 @@ var LayerContents = function (_Component) {
   }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
+      var onClose = this.props.onClose;
+
+
       this.anchorStepRef.focus();
+      this.anchorStepRef.scrollIntoView();
 
       this._keyboardHandlers = {
         tab: this._processTab
@@ -105,7 +116,7 @@ var LayerContents = function (_Component) {
 
       if (this.props.onClose) {
         var layerParent = this.containerRef.parentNode;
-        this._keyboardHandlers.esc = this.props.onClose;
+        this._keyboardHandlers.esc = onClose;
         layerParent.addEventListener('click', this._onClick.bind(this));
       }
 
@@ -114,7 +125,9 @@ var LayerContents = function (_Component) {
   }, {
     key: 'componentDidUpdate',
     value: function componentDidUpdate() {
-      if (this.props.hidden) {
+      var hidden = this.props.hidden;
+
+      if (hidden) {
         _KeyboardAccelerators2.default.stopListeningToKeyboard(this, this._keyboardHandlers);
       };
     }
@@ -132,10 +145,12 @@ var LayerContents = function (_Component) {
   }, {
     key: '_onClick',
     value: function _onClick(event) {
+      var onClose = this.props.onClose;
+
       var layerContents = this.containerRef;
 
       if (layerContents && !layerContents.contains(event.target)) {
-        this.props.onClose();
+        onClose();
       }
     }
   }, {
@@ -163,22 +178,29 @@ var LayerContents = function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      var closer = null;
+      var _props = this.props;
+      var a11yTitle = _props.a11yTitle;
+      var children = _props.children;
+      var closer = _props.closer;
+      var onClose = _props.onClose;
+      var intl = this.context.intl;
 
-      if ((0, _typeof3.default)(this.props.closer) === 'object') {
-        closer = this.props.closer;
-      } else if (this.props.onClose && this.props.closer) {
-        var closeLabel = _Intl2.default.getMessage(this.context.intl, 'Close');
-        var layerLabel = _Intl2.default.getMessage(this.context.intl, 'Layer');
-        var a11yTitle = closeLabel + ' ' + (this.props.a11yTitle || '') + ' ' + layerLabel;
 
-        closer = _react2.default.createElement(
+      var closerNode = void 0;
+      if ((typeof closer === 'undefined' ? 'undefined' : (0, _typeof3.default)(closer)) === 'object') {
+        closerNode = closer;
+      } else if (onClose && closer) {
+        var closeLabel = _Intl2.default.getMessage(intl, 'Close');
+        var layerLabel = _Intl2.default.getMessage(intl, 'Layer');
+        var _a11yTitle = closeLabel + ' ' + (_a11yTitle || '') + ' ' + layerLabel;
+
+        closerNode = _react2.default.createElement(
           'div',
-          { className: CLASS_ROOT + "__closer" },
+          { className: CLASS_ROOT + '__closer' },
           _react2.default.createElement(
             _Button2.default,
-            { plain: true, onClick: this.props.onClose },
-            _react2.default.createElement(_Close2.default, { a11yTitle: a11yTitle })
+            { plain: true, onClick: onClose },
+            _react2.default.createElement(_Close2.default, { a11yTitle: _a11yTitle })
           )
         );
       }
@@ -188,13 +210,13 @@ var LayerContents = function (_Component) {
         { ref: function ref(_ref2) {
             return _this2.containerRef = _ref2;
           },
-          className: CLASS_ROOT + "__container" },
+          className: CLASS_ROOT + '__container' },
         _react2.default.createElement('a', { tabIndex: '-1', 'aria-hidden': 'true',
           ref: function ref(_ref) {
             return _this2.anchorStepRef = _ref;
           } }),
-        closer,
-        this.props.children
+        closerNode,
+        children
       );
     }
   }]);
@@ -237,8 +259,8 @@ var Layer = function (_Component2) {
   (0, _createClass3.default)(Layer, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      window.scrollTo(0, 0);
       this._originalFocusedElement = document.activeElement;
+      this._originalScrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
       this._addLayer();
       this._renderLayer();
     }
@@ -258,10 +280,12 @@ var Layer = function (_Component2) {
           // see layer styling for reference
           setTimeout(function () {
             _this4._originalFocusedElement.focus();
+            window.scrollTo(0, _this4._originalScrollPosition);
           }, 0);
         } else if (this._originalFocusedElement.parentNode && this._originalFocusedElement.parentNode.focus) {
           // required for IE11 and Edge
           this._originalFocusedElement.parentNode.focus();
+          window.scrollTo(0, this._originalScrollPosition);
         }
       }
 
@@ -270,35 +294,30 @@ var Layer = function (_Component2) {
   }, {
     key: '_classesFromProps',
     value: function _classesFromProps() {
-      var classes = ['grommet', CLASS_ROOT];
-      if (this.props.align) {
-        classes.push(CLASS_ROOT + "--align-" + this.props.align);
-      }
-      if (this.props.flush) {
-        classes.push(CLASS_ROOT + "--flush");
-      }
-      if (this.props.hidden) {
-        classes.push(CLASS_ROOT + "--hidden");
-      }
-      if (this.props.peek) {
-        classes.push(CLASS_ROOT + "--peek");
-      }
-      if (this.props.closer) {
-        classes.push(CLASS_ROOT + "--closeable");
-      }
-      if (this.props.className) {
-        classes.push(this.props.className);
-      }
-      return classes;
+      var _classnames;
+
+      var _props2 = this.props;
+      var align = _props2.align;
+      var className = _props2.className;
+      var closer = _props2.closer;
+      var flush = _props2.flush;
+      var hidden = _props2.hidden;
+      var peek = _props2.peek;
+
+
+      return (0, _classnames3.default)('grommet', CLASS_ROOT, className, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--align-' + this.props.align, align), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--closeable', closer), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--flush', flush), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--hidden', hidden), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--peek', peek), _classnames));
     }
   }, {
     key: '_addLayer',
     value: function _addLayer() {
+      var id = this.props.id;
+
+
       var element = document.createElement('div');
-      if (this.props.id) {
-        element.id = this.props.id;
+      if (id) {
+        element.id = id;
       }
-      element.className = this._classesFromProps().join(' ');
+      element.className = this._classesFromProps();
       // insert before .app, if possible.
       var appElements = document.querySelectorAll('.' + APP);
       var beforeElement;
@@ -314,6 +333,8 @@ var Layer = function (_Component2) {
   }, {
     key: '_handleAriaHidden',
     value: function _handleAriaHidden(hideOverlay) {
+      var _this5 = this;
+
       var ariaHidden = hideOverlay || false;
       this._element.setAttribute('aria-hidden', ariaHidden);
       var grommetApps = document.querySelectorAll('.' + APP);
@@ -321,14 +342,23 @@ var Layer = function (_Component2) {
       if (grommetApps) {
         Array.prototype.slice.call(grommetApps).forEach(function (grommetApp) {
           grommetApp.setAttribute('aria-hidden', !ariaHidden);
-        });
+          if (ariaHidden) {
+            grommetApp.classList.remove(APP + '--hidden');
+            // this must be null to work
+            grommetApp.style.top = null;
+          } else {
+            grommetApp.classList.add(APP + '--hidden');
+            // scroll body content to the original elemnt
+            grommetApp.style.top = '-' + _this5._originalScrollPosition + 'px';
+          }
+        }, this);
       }
     }
   }, {
     key: '_renderLayer',
     value: function _renderLayer() {
       if (this._element) {
-        this._element.className = this._classesFromProps().join(' ');
+        this._element.className = this._classesFromProps();
         var contents = _react2.default.createElement(LayerContents, (0, _extends3.default)({}, this.props, {
           history: this.context.history,
           intl: this.context.intl,

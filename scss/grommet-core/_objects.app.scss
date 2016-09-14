@@ -13,6 +13,11 @@
     overflow: visible;
   }
 
+  // necessary to avoid scrolling the body when Layer is open
+  &--hidden {
+    position: fixed;
+  }
+
   &--inline {
     position: relative;
   }

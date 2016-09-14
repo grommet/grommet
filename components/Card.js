@@ -64,6 +64,10 @@ var _Heading = require('./Heading');
 
 var _Heading2 = _interopRequireDefault(_Heading);
 
+var _Headline = require('./Headline');
+
+var _Headline2 = _interopRequireDefault(_Headline);
+
 var _Markdown = require('./Markdown');
 
 var _Markdown2 = _interopRequireDefault(_Markdown);
@@ -86,29 +90,41 @@ var _Watch2 = _interopRequireDefault(_Watch);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
-
-var CLASS_ROOT = _CSSClassnames2.default.CARD;
+var CLASS_ROOT = _CSSClassnames2.default.CARD; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var LABEL_SIZES = {
-  xlarge: 'large',
+  xlarge: 'medium',
   large: 'medium',
   medium: 'medium',
-  small: 'small'
+  small: 'medium',
+  xsmall: 'small'
 };
 
-var DESCRIPTION_SIZES = {
-  xlarge: 'large',
-  large: 'large',
-  medium: 'medium',
-  small: 'small'
+var HEADLINE_SIZES = {
+  xlarge: 'medium',
+  large: 'medium'
 };
 
 var HEADING_TAGS = {
-  xlarge: 'h1',
-  large: 'h1',
-  medium: 'h2',
-  small: 'h3'
+  medium: 'h1',
+  small: 'h2',
+  xsmall: 'h3'
+};
+
+var PARAGRAPH_SIZES = {
+  xlarge: 'xlarge',
+  large: 'xlarge',
+  medium: 'large',
+  small: 'large',
+  xsmall: 'medium'
+};
+
+var PARAGRAPH_MARGINS = {
+  xlarge: 'large',
+  large: 'large',
+  medium: 'medium',
+  small: 'medium',
+  xsmall: 'small'
 };
 
 var Card = function (_Component) {
@@ -143,10 +159,9 @@ var Card = function (_Component) {
 
       var result = label;
       if (typeof label === 'string') {
-        var size = LABEL_SIZES[textSize];
         result = _react2.default.createElement(
           _Label2.default,
-          { size: size, margin: 'none', uppercase: true },
+          { size: LABEL_SIZES[textSize], margin: 'none', uppercase: true },
           label
         );
       }
@@ -162,12 +177,19 @@ var Card = function (_Component) {
 
       var result = heading;
       if (typeof heading === 'string') {
-        var tag = HEADING_TAGS[textSize];
-        result = _react2.default.createElement(
-          _Heading2.default,
-          { tag: tag, strong: headingStrong },
-          heading
-        );
+        if (HEADLINE_SIZES[textSize]) {
+          result = _react2.default.createElement(
+            _Headline2.default,
+            { size: HEADLINE_SIZES[textSize], strong: headingStrong },
+            heading
+          );
+        } else {
+          result = _react2.default.createElement(
+            _Heading2.default,
+            { tag: HEADING_TAGS[textSize], strong: headingStrong },
+            heading
+          );
+        }
       }
       return result;
     }
@@ -176,15 +198,7 @@ var Card = function (_Component) {
     value: function _renderLink() {
       var link = this.props.link;
 
-      var result = void 0;
-      if (link) {
-        result = _react2.default.createElement(
-          _Box2.default,
-          { pad: { vertical: "small" } },
-          link
-        );
-      }
-      return result;
+      return link;
     }
   }, {
     key: '_renderThumbnail',
@@ -245,7 +259,10 @@ var Card = function (_Component) {
       var result = description;
       if (typeof description === 'string') {
         var components = {
-          p: { props: { size: DESCRIPTION_SIZES[textSize] } }
+          p: { props: {
+              margin: PARAGRAPH_MARGINS[textSize],
+              size: PARAGRAPH_SIZES[textSize]
+            } }
         };
         result = _react2.default.createElement(_Markdown2.default, { components: components, content: description });
       }
@@ -326,7 +343,7 @@ Card.propTypes = (0, _extends3.default)({
   headingStrong: _react.PropTypes.bool,
   label: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.element]),
   link: _react.PropTypes.element,
-  textSize: _react.PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
+  textSize: _react.PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
   thumbnail: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.element]),
   video: _react.PropTypes.oneOfType([_react.PropTypes.shape({
     source: _react.PropTypes.string.isRequired,
@@ -338,6 +355,6 @@ Card.defaultProps = {
   colorIndex: 'light-1',
   contentPad: 'medium',
   headingStrong: true,
-  textSize: 'medium'
+  textSize: 'small'
 };
 module.exports = exports['default'];
