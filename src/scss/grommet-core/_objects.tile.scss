@@ -13,7 +13,8 @@
 
   @include pad();
 
-  > .#{$grommet-namespace}tile {
+  // remove in 1.0
+  > .#{$grommet-namespace}tile:not(.#{$grommet-namespace}box--size) {
     flex-grow: 0;
     flex-shrink: 0;
 
@@ -22,6 +23,7 @@
     }
   }
 
+  // remove in 1.0
   &:not(.#{$grommet-namespace}tiles--fill) .#{$grommet-namespace}tiles__masonry-column {
     > .#{$grommet-namespace}tile {
       @include media-query(lap-and-up) {
@@ -56,6 +58,7 @@
 
 .#{$grommet-namespace}tiles:not(.#{$grommet-namespace}tiles--flush) {
   .#{$grommet-namespace}tiles__masonry-column > .#{$grommet-namespace}tile,
+    // remove in 1.0
   > .#{$grommet-namespace}tile {
     margin: halve($inuit-base-spacing-unit);
     @include ie-tile-margin($inuit-base-spacing-unit);
@@ -90,6 +93,7 @@
     }
   }
 
+  // remove in 1.0
   .#{$grommet-namespace}tiles__masonry-column {
     @include media-query(lap-and-up) {
       flex-grow: 1;
@@ -102,6 +106,7 @@
     }
   }
 
+  // remove in 1.0
   &.#{$grommet-namespace}tiles--large {
     .#{$grommet-namespace}tiles__masonry-column {
       @include media-query(lap-and-up) {
@@ -110,6 +115,7 @@
     }
   }
 
+  // remove in 1.0
   &.#{$grommet-namespace}tiles--small {
     .#{$grommet-namespace}tiles__masonry-column {
       @include media-query(lap-and-up) {
@@ -122,6 +128,7 @@
 .#{$grommet-namespace}tiles--flush {
   padding: 0px;
 
+  // remove in 1.0
   .#{$grommet-namespace}tiles__masonry-column > .#{$grommet-namespace}tile,
   > .#{$grommet-namespace}tile {
     margin: 0px;
@@ -163,7 +170,7 @@
 }
 
 .#{$grommet-namespace}tiles--small {
-  > .#{$grommet-namespace}tile {
+  > .#{$grommet-namespace}tile:not(.#{$grommet-namespace}box--size) {
     @include media-query(lap-and-up) {
       flex-basis: $size-small;
     }
@@ -180,7 +187,7 @@
 }
 
 .#{$grommet-namespace}tiles--large {
-  > .#{$grommet-namespace}tile {
+  > .#{$grommet-namespace}tile:not(.#{$grommet-namespace}box--size) {
     @include media-query(lap-and-up) {
       flex-basis: $size-large;
     }
