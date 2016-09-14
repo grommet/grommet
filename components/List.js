@@ -204,13 +204,10 @@ var List = function (_Component) {
 
       return _react2.default.createElement(
         'ul',
-        (0, _extends3.default)({
-          ref: function ref(_ref2) {
+        (0, _extends3.default)({}, props, { ref: function ref(_ref2) {
             return _this2.listRef = _ref2;
-          },
-          className: classes,
-          onClick: this._onClick
-        }, props),
+          }, className: classes,
+          onClick: this._onClick }),
         empty,
         children,
         more
