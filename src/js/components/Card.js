@@ -7,6 +7,7 @@ import Props from '../utils/Props';
 import Box from './Box';
 import Label from './Label';
 import Heading from './Heading';
+import Headline from './Headline';
 import Markdown from './Markdown';
 import Anchor from './Anchor';
 import Layer from './Layer';
@@ -16,24 +17,38 @@ import WatchIcon from './icons/base/Watch';
 const CLASS_ROOT = CSSClassnames.CARD;
 
 const LABEL_SIZES = {
-  xlarge: 'large',
+  xlarge: 'medium',
   large: 'medium',
   medium: 'medium',
-  small: 'small'
+  small: 'medium',
+  xsmall: 'small'
 };
 
-const DESCRIPTION_SIZES = {
-  xlarge: 'large',
-  large: 'large',
-  medium: 'medium',
-  small: 'small'
+const HEADLINE_SIZES = {
+  xlarge: 'medium',
+  large: 'medium'
 };
 
 const HEADING_TAGS = {
-  xlarge: 'h1',
-  large: 'h1',
-  medium: 'h2',
-  small: 'h3'
+  medium: 'h1',
+  small: 'h2',
+  xsmall: 'h3'
+};
+
+const PARAGRAPH_SIZES = {
+  xlarge: 'xlarge',
+  large: 'xlarge',
+  medium: 'large',
+  small: 'large',
+  xsmall: 'medium'
+};
+
+const PARAGRAPH_MARGINS = {
+  xlarge: 'large',
+  large: 'large',
+  medium: 'medium',
+  small: 'medium',
+  xsmall: 'small'
 };
 
 export default class Card extends Component {
@@ -56,9 +71,8 @@ export default class Card extends Component {
     const { label, textSize } = this.props;
     let result = label;
     if (typeof label === 'string') {
-      const size = LABEL_SIZES[textSize];
       result = (
-        <Label size={size} margin="none" uppercase={true}>
+        <Label size={LABEL_SIZES[textSize]} margin="none" uppercase={true}>
           {label}
         </Label>
       );
@@ -70,27 +84,26 @@ export default class Card extends Component {
     const { heading, headingStrong, textSize } = this.props;
     let result = heading;
     if (typeof heading === 'string') {
-      const tag = HEADING_TAGS[textSize];
-      result = (
-        <Heading tag={tag} strong={headingStrong}>
-          {heading}
-        </Heading>
-      );
+      if (HEADLINE_SIZES[textSize]) {
+        result = (
+          <Headline size={HEADLINE_SIZES[textSize]} strong={headingStrong}>
+            {heading}
+          </Headline>
+        );
+      } else {
+        result = (
+          <Heading tag={HEADING_TAGS[textSize]} strong={headingStrong}>
+            {heading}
+          </Heading>
+        );
+      }
     }
     return result;
   }
 
   _renderLink () {
     const { link } = this.props;
-    let result;
-    if (link) {
-      result = (
-        <Box pad={{vertical: "small"}}>
-          {link}
-        </Box>
-      );
-    }
-    return result;
+    return link;
   }
 
   _renderThumbnail () {
@@ -141,7 +154,10 @@ export default class Card extends Component {
     let result = description;
     if (typeof description === 'string') {
       const components = {
-        p: { props: { size: DESCRIPTION_SIZES[textSize] } }
+        p: { props: {
+          margin: PARAGRAPH_MARGINS[textSize],
+          size: PARAGRAPH_SIZES[textSize]
+        } }
       };
       result = <Markdown components={components} content={description} />;
     }
@@ -224,7 +240,7 @@ Card.propTypes = {
     PropTypes.element
   ]),
   link: PropTypes.element,
-  textSize: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
+  textSize: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
   thumbnail: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.element
@@ -243,5 +259,5 @@ Card.defaultProps = {
   colorIndex: 'light-1',
   contentPad: 'medium',
   headingStrong: true,
-  textSize: 'medium'
+  textSize: 'small'
 };
