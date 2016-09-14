@@ -27,7 +27,11 @@ export default class Axis extends Component {
     for (let index=0; index<count; index+=1) {
       let item;
       if (labels) {
-        item = { ...labels.filter(item => item.index === index)[0] };
+        const labelItem = labels.filter(item => item.index === index)[0];
+        if (labelItem) {
+          // clone since we're decorating something the user provided
+          item = { ...labelItem };
+        }
       }
       if (! item) {
         item = { index: index };
