@@ -99,13 +99,7 @@ export default class List extends Component {
   }
 
   render () {
-    const {
-      children,
-      className,
-      emptyIndicator,
-      onMore,
-      selectable,
-      ...props
+    const { children, className, emptyIndicator, onMore, selectable, ...props
     } = this.props;
 
     const classes = classnames(
