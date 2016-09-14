@@ -110,6 +110,7 @@ ListItem.defaultProps = {
   align: 'center',
   direction: 'row',
   pad: { horizontal: 'medium', vertical: 'small' },
-  separator: 'bottom'
+  separator: 'bottom',
+  role: 'listitem'
 };
 module.exports = exports['default'];

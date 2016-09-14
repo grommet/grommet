@@ -4,6 +4,18 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
+
 var _stringify = require('babel-runtime/core-js/json/stringify');
 
 var _stringify2 = _interopRequireDefault(_stringify);
@@ -32,6 +44,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _classnames2 = require('classnames');
+
+var _classnames3 = _interopRequireDefault(_classnames2);
+
 var _Spinning = require('./icons/Spinning');
 
 var _Spinning2 = _interopRequireDefault(_Spinning);
@@ -50,10 +66,11 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.LIST; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
+var CLASS_ROOT = _CSSClassnames2.default.LIST;
 var LIST_ITEM = _CSSClassnames2.default.LIST_ITEM;
-var SELECTED_CLASS = CLASS_ROOT + "-item--selected";
+var SELECTED_CLASS = CLASS_ROOT + '-item--selected';
 
 var List = function (_Component) {
   (0, _inherits3.default)(List, _Component);
@@ -151,45 +168,51 @@ var List = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this2 = this;
+      var _classnames,
+          _this2 = this;
 
-      var classes = [CLASS_ROOT];
-      if (this.props.selectable) {
-        classes.push(CLASS_ROOT + "--selectable");
-      }
-      if (this.props.className) {
-        classes.push(this.props.className);
-      }
+      var _props = this.props;
+      var children = _props.children;
+      var className = _props.className;
+      var emptyIndicator = _props.emptyIndicator;
+      var onMore = _props.onMore;
+      var selectable = _props.selectable;
+      var props = (0, _objectWithoutProperties3.default)(_props, ['children', 'className', 'emptyIndicator', 'onMore', 'selectable']);
+
+
+      var classes = (0, _classnames3.default)(CLASS_ROOT, className, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--selectable', selectable), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--moreable', onMore), _classnames));
 
       var empty = void 0;
-      if (this.props.emptyIndicator) {
+      if (emptyIndicator) {
         empty = _react2.default.createElement(
           'li',
-          { className: CLASS_ROOT + "__empty" },
-          this.props.emptyIndicator
+          { className: CLASS_ROOT + '__empty' },
+          emptyIndicator
         );
       }
 
-      var more;
-      if (this.props.onMore) {
-        classes.push(CLASS_ROOT + "--moreable");
+      var more = void 0;
+      if (onMore) {
         more = _react2.default.createElement(
           'li',
           { ref: function ref(_ref) {
               return _this2.moreRef = _ref;
-            }, className: CLASS_ROOT + "__more" },
+            }, className: CLASS_ROOT + '__more' },
           _react2.default.createElement(_Spinning2.default, null)
         );
       }
 
       return _react2.default.createElement(
         'ul',
-        { ref: function ref(_ref2) {
+        (0, _extends3.default)({
+          ref: function ref(_ref2) {
             return _this2.listRef = _ref2;
           },
-          className: classes.join(' '), onClick: this._onClick },
+          className: classes,
+          onClick: this._onClick
+        }, props),
         empty,
-        this.props.children,
+        children,
         more
       );
     }
@@ -207,5 +230,9 @@ List.propTypes = {
   onSelect: _react.PropTypes.func,
   selectable: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.oneOf(['multiple'])]),
   selected: _react.PropTypes.oneOfType([_react.PropTypes.number, _react.PropTypes.arrayOf(_react.PropTypes.number)])
+};
+
+List.defaultProps = {
+  role: 'list'
 };
 module.exports = exports['default'];
