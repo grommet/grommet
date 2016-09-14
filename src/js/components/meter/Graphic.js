@@ -10,8 +10,6 @@ import { propTypes, buildPath } from './utils';
 const CLASS_ROOT = CSSClassnames.METER;
 const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
 
-const MIN_WIDTH = 0.033;
-
 export default class Graphic extends Component {
 
   constructor(props, context) {
@@ -112,7 +110,7 @@ export default class Graphic extends Component {
       let path = this._renderSlice(trackIndex, item, itemIndex, startValue,
         max.value, track, threshold);
 
-      startValue += Math.max(MIN_WIDTH * max.value, item.value);
+      startValue += item.value;
 
       return path;
     });
