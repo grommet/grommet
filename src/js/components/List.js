@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
+import classnames from 'classnames';
 import SpinningIcon from './icons/Spinning';
 import InfiniteScroll from '../utils/InfiniteScroll';
 import Selection from '../utils/Selection';
@@ -8,7 +9,7 @@ import CSSClassnames from '../utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.LIST;
 const LIST_ITEM = CSSClassnames.LIST_ITEM;
-const SELECTED_CLASS = CLASS_ROOT + "-item--selected";
+const SELECTED_CLASS = `${CLASS_ROOT}-item--selected`;
 
 export default class List extends Component {
 
@@ -98,38 +99,45 @@ export default class List extends Component {
   }
 
   render () {
-    var classes = [CLASS_ROOT];
-    if (this.props.selectable) {
-      classes.push(CLASS_ROOT + "--selectable");
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
+    const { children, className, emptyIndicator, onMore, selectable, ...props
+    } = this.props;
+
+    const classes = classnames(
+      CLASS_ROOT,
+      className,
+      {
+        [`${CLASS_ROOT}--selectable`]: selectable,
+        [`${CLASS_ROOT}--moreable`]: onMore
+      }
+    );
 
     let empty;
-    if (this.props.emptyIndicator) {
+    if (emptyIndicator) {
       empty = (
-        <li className={CLASS_ROOT + "__empty"}>
-          {this.props.emptyIndicator}
+        <li className={`${CLASS_ROOT}__empty`}>
+          {emptyIndicator}
         </li>
       );
     }
 
-    var more;
-    if (this.props.onMore) {
-      classes.push(CLASS_ROOT + "--moreable");
+    let more;
+    if (onMore) {
       more = (
-        <li ref={(ref) => this.moreRef = ref} className={CLASS_ROOT + "__more"}>
+        <li ref={(ref) => this.moreRef = ref} className={`${CLASS_ROOT}__more`}>
           <SpinningIcon />
         </li>
       );
     }
 
     return (
-      <ul ref={(ref) => this.listRef = ref}
-        className={classes.join(' ')} onClick={this._onClick}>
+      <ul
+        ref={(ref) => this.listRef = ref}
+        className={classes}
+        onClick={this._onClick}
+        {...props}
+      >
         {empty}
-        {this.props.children}
+        {children}
         {more}
       </ul>
     );
@@ -148,4 +156,8 @@ List.propTypes = {
     PropTypes.number,
     PropTypes.arrayOf(PropTypes.number)
   ])
+};
+
+List.defaultProps = {
+  role: 'list'
 };

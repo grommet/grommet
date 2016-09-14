@@ -1,12 +1,13 @@
 exports[`Accordion has correct default options 1`] = `
 <ul
   className="grommetux-list grommetux-accordion"
-  onClick={[Function bound _onClick]}>
+  onClick={[Function bound _onClick]}
+  role="tablist">
   <li
     className="grommetux-box grommetux-box--direction-column grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-none grommetux-box--separator-bottom grommetux-list-item grommetux-accordion-panel"
     id={undefined}
     onClick={undefined}
-    role={undefined}
+    role="listitem"
     style={Object {}}
     tabIndex={undefined}>
     <header
@@ -58,12 +59,14 @@ exports[`Accordion has correct default options 1`] = `
 exports[`Accordion has correct initialIndex=0 rendering 1`] = `
 <ul
   className="grommetux-list grommetux-accordion"
-  onClick={[Function bound _onClick]}>
+  initialIndex={0}
+  onClick={[Function bound _onClick]}
+  role="tablist">
   <li
     className="grommetux-box grommetux-box--direction-column grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-none grommetux-box--separator-bottom grommetux-list-item grommetux-accordion-panel grommetux-accordion-panel--active"
     id={undefined}
     onClick={undefined}
-    role={undefined}
+    role="listitem"
     style={Object {}}
     tabIndex={undefined}>
     <header
@@ -125,7 +128,7 @@ exports[`Accordion has correct initialIndex=0 rendering 1`] = `
     className="grommetux-box grommetux-box--direction-column grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-none grommetux-box--separator-bottom grommetux-list-item grommetux-accordion-panel"
     id={undefined}
     onClick={undefined}
-    role={undefined}
+    role="listitem"
     style={Object {}}
     tabIndex={undefined}>
     <header
@@ -177,12 +180,14 @@ exports[`Accordion has correct initialIndex=0 rendering 1`] = `
 exports[`Accordion has correct initialIndex=0 rendering 2`] = `
 <ul
   className="grommetux-list grommetux-accordion"
-  onClick={[Function bound _onClick]}>
+  initialIndex={0}
+  onClick={[Function bound _onClick]}
+  role="tablist">
   <li
     className="grommetux-box grommetux-box--direction-column grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-none grommetux-box--separator-bottom grommetux-list-item grommetux-accordion-panel"
     id={undefined}
     onClick={undefined}
-    role={undefined}
+    role="listitem"
     style={Object {}}
     tabIndex={undefined}>
     <header
@@ -244,7 +249,7 @@ exports[`Accordion has correct initialIndex=0 rendering 2`] = `
     className="grommetux-box grommetux-box--direction-column grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-none grommetux-box--separator-bottom grommetux-list-item grommetux-accordion-panel grommetux-accordion-panel--active"
     id={undefined}
     onClick={undefined}
-    role={undefined}
+    role="listitem"
     style={Object {}}
     tabIndex={undefined}>
     <header
@@ -308,12 +313,13 @@ exports[`Accordion has correct initialIndex=0 rendering 2`] = `
 exports[`Accordion has correct openMulti=true rendering 1`] = `
 <ul
   className="grommetux-list grommetux-accordion"
-  onClick={[Function bound _onClick]}>
+  onClick={[Function bound _onClick]}
+  role="tablist">
   <li
     className="grommetux-box grommetux-box--direction-column grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-none grommetux-box--separator-bottom grommetux-list-item grommetux-accordion-panel grommetux-accordion-panel--active"
     id={undefined}
     onClick={undefined}
-    role={undefined}
+    role="listitem"
     style={Object {}}
     tabIndex={undefined}>
     <header
@@ -375,7 +381,7 @@ exports[`Accordion has correct openMulti=true rendering 1`] = `
     className="grommetux-box grommetux-box--direction-column grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-none grommetux-box--separator-bottom grommetux-list-item grommetux-accordion-panel grommetux-accordion-panel--active"
     id={undefined}
     onClick={undefined}
-    role={undefined}
+    role="listitem"
     style={Object {}}
     tabIndex={undefined}>
     <header
