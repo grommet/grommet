@@ -436,7 +436,7 @@ var Tiles = function (_Component) {
       var overflow = this.state.overflow;
 
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, this.props.className, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--fill', this.props.fill), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--flush', this.props.flush), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + this.props.size, this.props.size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--selectable', this.props.selectable), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--moreable', this.props.onMore), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--overflowed', this.state.overflow), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--masonry', this.props.masonry), _classnames));
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--fill', this.props.fill), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--flush', this.props.flush), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + this.props.size, this.props.size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--selectable', this.props.selectable), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--moreable', this.props.onMore), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--overflowed', this.state.overflow), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--masonry', this.props.masonry), _classnames), this.props.className);
 
       var other = _Props2.default.pick(this.props, (0, _keys2.default)(_Box2.default.propTypes));
 
@@ -512,18 +512,16 @@ exports.default = Tiles;
 
 
 Tiles.propTypes = (0, _extends3.default)({
-  fill: _react.PropTypes.bool,
-  flush: _react.PropTypes.bool, /// deprecated to content components?
+  fill: _react.PropTypes.bool, // remove in 1.0, rely on Box props
+  flush: _react.PropTypes.bool, // remove in 1.0, already in Box
   onMore: _react.PropTypes.func,
   onSelect: _react.PropTypes.func,
   selectable: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.oneOf(['multiple'])]),
   selected: _react.PropTypes.oneOfType([_react.PropTypes.number, _react.PropTypes.arrayOf(_react.PropTypes.number)]),
-  size: _react.PropTypes.oneOf(['small', 'medium', 'large']),
-  /// deprecated to content components?
-  numColumns: _react.PropTypes.number,
-  /// deprecated to Columns
-  masonry: _react.PropTypes.bool
-}, _Box2.default.propTypes);
+  size: _react.PropTypes.oneOf(['small', 'medium', 'large']), // remove in 1.0
+  // already in Box
+  numColumns: _react.PropTypes.number, // remove in 1.0
+  masonry: _react.PropTypes.bool }, _Box2.default.propTypes);
 
 Tiles.defaultProps = {
   flush: true,

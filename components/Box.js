@@ -321,12 +321,12 @@ Box.propTypes = {
   basis: _react.PropTypes.oneOf(SIZES),
   children: _react.PropTypes.any,
   colorIndex: _react.PropTypes.string,
-  containerClassName: _react.PropTypes.string, /// deprecate to separate container?
+  containerClassName: _react.PropTypes.string,
   direction: _react.PropTypes.oneOf(['row', 'column']),
   focusable: _react.PropTypes.bool,
   flex: _react.PropTypes.oneOf(['grow', 'shrink', true, false]),
   full: _react.PropTypes.oneOf([true, 'horizontal', 'vertical', false]),
-  /// deprecate to new size
+  // remove in 1.0
   onClick: _react.PropTypes.func,
   justify: _react.PropTypes.oneOf(['start', 'center', 'between', 'end']),
   margin: _react.PropTypes.oneOfType([_react.PropTypes.oneOf(MARGIN_SIZES), _react.PropTypes.shape({
@@ -339,7 +339,6 @@ Box.propTypes = {
   })]),
   pad: _react.PropTypes.oneOfType([_react.PropTypes.oneOf(PAD_SIZES), _react.PropTypes.shape({
     between: _react.PropTypes.oneOf(PAD_SIZES),
-    /// deprecate to separate Spacer component, or separate Box?
     horizontal: _react.PropTypes.oneOf(PAD_SIZES),
     vertical: _react.PropTypes.oneOf(PAD_SIZES)
   })]),
