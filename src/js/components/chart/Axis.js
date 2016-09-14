@@ -27,7 +27,7 @@ export default class Axis extends Component {
     for (let index=0; index<count; index+=1) {
       let item;
       if (labels) {
-        item = labels.filter(item => item.index === index)[0];
+        item = { ...labels.filter(item => item.index === index)[0] };
       }
       if (! item) {
         item = { index: index };
