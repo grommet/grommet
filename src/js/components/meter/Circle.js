@@ -46,8 +46,8 @@ export default class Circle extends Graphic {
     } else if (startValue + item.value >= maxValue) {
       endAngle = 360;
     } else {
-      endAngle = Math.min(360 - (RING_THICKNESS / 2),
-        Math.max(startAngle + (RING_THICKNESS / 2),
+      endAngle = Math.min(360,
+        Math.max(startAngle,
           translateEndAngle(startAngle, this.state.anglePer, item.value)
         ));
     }
