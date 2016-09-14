@@ -80,7 +80,7 @@ var Circle = function (_Graphic) {
       } else if (startValue + item.value >= maxValue) {
         endAngle = 360;
       } else {
-        endAngle = Math.min(360 - RING_THICKNESS / 2, Math.max(startAngle + RING_THICKNESS / 2, (0, _Graphics.translateEndAngle)(startAngle, this.state.anglePer, item.value)));
+        endAngle = Math.min(360, Math.max(startAngle, (0, _Graphics.translateEndAngle)(startAngle, this.state.anglePer, item.value)));
       }
 
       var radius = Math.max(1, CIRCLE_RADIUS - trackIndex * RING_THICKNESS);

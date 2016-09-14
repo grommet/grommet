@@ -57,8 +57,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var CLASS_ROOT = _CSSClassnames2.default.METER;
 var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
 
-var MIN_WIDTH = 0.033;
-
 var Graphic = function (_Component) {
   (0, _inherits3.default)(Graphic, _Component);
 
@@ -171,7 +169,7 @@ var Graphic = function (_Component) {
       var paths = series.map(function (item, itemIndex) {
         var path = _this2._renderSlice(trackIndex, item, itemIndex, startValue, max.value, track, threshold);
 
-        startValue += Math.max(MIN_WIDTH * max.value, item.value);
+        startValue += item.value;
 
         return path;
       });
