@@ -130,12 +130,8 @@ export default class List extends Component {
     }
 
     return (
-      <ul
-        ref={(ref) => this.listRef = ref}
-        className={classes}
-        onClick={this._onClick}
-        {...props}
-      >
+      <ul {...props} ref={(ref) => this.listRef = ref} className={classes}
+        onClick={this._onClick}>
         {empty}
         {children}
         {more}
