@@ -23,6 +23,7 @@
     max-width: $size-small - double($inuit-base-spacing-unit);
     position: absolute;
     left: 50%;
+    top: 50%;
   }
 
   &.#{$grommet-namespace}meter--xsmall {
