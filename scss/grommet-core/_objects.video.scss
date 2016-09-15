@@ -25,11 +25,15 @@
 
   @include media-query(lap-and-up) {
     &--small {
-      width: $video-small-width;
+      width: $size-small;
+    }
+
+    &--medium {
+      width: $size-medium;
     }
 
     &--large {
-      width: $video-large-width;
+      width: $size-large;
     }
 
     &--has-timeline {

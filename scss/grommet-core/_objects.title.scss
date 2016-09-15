@@ -43,7 +43,7 @@
 
   svg,
   img {
-    max-width: $image-width;
+    max-width: $size-medium;
     flex: 0 0 auto;
 
     &:not(:last-child) {

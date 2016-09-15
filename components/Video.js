@@ -8,6 +8,10 @@ var _extends2 = require('babel-runtime/helpers/extends');
 
 var _extends3 = _interopRequireDefault(_extends2);
 
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
 var _assign = require('babel-runtime/core-js/object/assign');
 
 var _assign2 = _interopRequireDefault(_assign);
@@ -36,6 +40,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _classnames2 = require('classnames');
+
+var _classnames3 = _interopRequireDefault(_classnames2);
+
 var _CSSClassnames = require('../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
@@ -54,8 +62,9 @@ var _Throttle2 = _interopRequireDefault(_Throttle);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.VIDEO; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
+var CLASS_ROOT = _CSSClassnames2.default.VIDEO;
 var BACKGROUND_COLOR_INDEX = _CSSClassnames2.default.BACKGROUND_COLOR_INDEX;
 
 var Video = function (_Component) {
@@ -241,50 +250,43 @@ var Video = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this4 = this;
+      var _classnames,
+          _this4 = this;
 
-      var classes = [CLASS_ROOT];
-      if (this.props.size) {
-        classes.push(CLASS_ROOT + '--' + this.props.size);
-      }
-      if (this.props.full) {
-        classes.push(CLASS_ROOT + '--full');
-      }
-      if (this.state.playing) {
-        classes.push(CLASS_ROOT + '--playing');
-      }
-      if (this.state.interacting) {
-        classes.push(CLASS_ROOT + '--interacting');
-      }
-      if (this.props.colorIndex) {
-        classes.push(BACKGROUND_COLOR_INDEX + '-' + this.props.colorIndex);
-      }
-      if (this.props.className) {
-        classes.push(this.props.className);
-      }
-      if (this.state.hasPlayed) {
-        classes.push(CLASS_ROOT + '--has-played');
-      }
-      if (this.state.ended) {
-        classes.push(CLASS_ROOT + '--ended');
-      }
+      var _props = this.props;
+      var autoPlay = _props.autoPlay;
+      var className = _props.className;
+      var colorIndex = _props.colorIndex;
+      var full = _props.full;
+      var loop = _props.loop;
+      var muted = _props.muted;
+      var poster = _props.poster;
+      var showControls = _props.showControls;
+      var size = _props.size;
+      var _state = this.state;
+      var ended = _state.ended;
+      var hasPlayed = _state.hasPlayed;
+      var interacting = _state.interacting;
+      var playing = _state.playing;
+
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--full', full), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--interacting', interacting), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--playing', playing), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--hasPlayed', hasPlayed), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--ended', ended), (0, _defineProperty3.default)(_classnames, BACKGROUND_COLOR_INDEX + '--' + colorIndex, colorIndex), _classnames), className);
 
       return _react2.default.createElement(
         'div',
-        { className: classes.join(' '), onMouseMove: this._onMouseMove },
+        { className: classes, onMouseMove: this._onMouseMove },
         _react2.default.createElement(
           'video',
           (0, _extends3.default)({ ref: function ref(el) {
               return _this4._video = el;
             },
-            poster: this.props.poster,
-            autoPlay: this.props.autoPlay ? 'autoplay' : false,
-            loop: this.props.loop ? 'loop' : false,
-            muted: this.props.muted
+            poster: poster,
+            autoPlay: autoPlay ? 'autoplay' : false,
+            loop: loop ? 'loop' : false,
+            muted: muted
           }, this._mediaEventProps),
           this.props.children
         ),
-        this.props.showControls ? this._renderControls() : undefined
+        showControls ? this._renderControls() : undefined
       );
     }
   }]);
