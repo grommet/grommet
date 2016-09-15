@@ -207,7 +207,7 @@ var Table = function (_Component) {
 
             [].forEach.call(rows, function (row) {
               [].forEach.call(row.cells, function (cell, index) {
-                cell.setAttribute('data-th', headerCells[index].innerText);
+                cell.setAttribute('data-th', headerCells[index].innerText || headerCells[index].textContent);
               });
             });
           }
