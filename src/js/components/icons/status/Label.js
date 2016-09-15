@@ -14,7 +14,7 @@ export default class Label extends Component {
     return (
       <svg className={className} viewBox="0 0 24 24" version="1.1">
         <g className={`${STATUS_ICON}__base`}>
-          <circle cx="12" cy="12" r="12" stroke="none"></circle>
+          <circle cx="12" cy="12" r="12" stroke="none" />
         </g>
       </svg>
     );

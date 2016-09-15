@@ -25,7 +25,7 @@ export default class RadioButton extends Component {
           defaultChecked={this.props.defaultChecked}
           value={this.props.value}
           onChange={this.props.onChange} />
-        <span className={`${CLASS_ROOT}__control`}></span>
+        <span className={`${CLASS_ROOT}__control`} />
           <span className={`${CLASS_ROOT}__label`}>
             {this.props.label}
           </span>

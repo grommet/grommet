@@ -28,12 +28,12 @@ export default class Warning extends Component {
         </title>
         <g className={`${STATUS_ICON}__base`}>
           <path role="presentation" d="M12,0 L0,22 L24,22 L12,0 L12,0 Z"
-            stroke="none"></path>
+            stroke="none" />
         </g>
         <g className={`${STATUS_ICON}__detail`} strokeWidth="2"
           transform="translate(11.000000, 8.000000)">
-          <path role="presentation" d="M1,0 L1,6" fill="none"></path>
-          <path role="presentation" d="M1,8 L1,10" fill="none"></path>
+          <path role="presentation" d="M1,0 L1,6" fill="none" />
+          <path role="presentation" d="M1,8 L1,10" fill="none" />
         </g>
       </svg>
     );

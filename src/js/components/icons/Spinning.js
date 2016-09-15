@@ -19,9 +19,9 @@ export default class Spinning extends Component {
         role='img'>
         <title>Spinning</title>
         <circle stroke="#ddd" strokeWidth="4" strokeDasharray="24px 8px"
-          fill="none" cx="24" cy="24" r="20"></circle>
+          fill="none" cx="24" cy="24" r="20" />
         <circle stroke="#333" strokeWidth="4" strokeDasharray="24px 104px"
-          fill="none" cx="24" cy="24" r="20"></circle>
+          fill="none" cx="24" cy="24" r="20" />
       </svg>
     );
   }

@@ -26,11 +26,11 @@ export default class CriticalStatus extends Component {
           <FormattedMessage id={a11yTitle} defaultMessage={a11yTitle} />
         </title>
         <g className={`${STATUS_ICON}__base`} stroke="none">
-          <path role="presentation" d="M12,0 L24,12 L12,24 L0,12 Z"></path>
+          <path role="presentation" d="M12,0 L24,12 L12,24 L0,12 Z" />
         </g>
         <g className={`${STATUS_ICON}__detail`} fill="none">
-          <path role="presentation" d="M8,8 L16,16" strokeWidth="2"></path>
-          <path role="presentation" d="M8,16 L16,8" strokeWidth="2"></path>
+          <path role="presentation" d="M8,8 L16,16" strokeWidth="2" />
+          <path role="presentation" d="M8,16 L16,8" strokeWidth="2" />
         </g>
       </svg>
     );

@@ -26,11 +26,11 @@ describe('Accordion', () => {
   });
   it('has correct openMulti=true rendering', () => {
     const component = renderer.create(
-      <Accordion openMulti>
-        <AccordionPanel active heading="First Title">
+      <Accordion openMulti={true} active={[0,1]}>
+        <AccordionPanel heading="First Title">
           <p>test 1</p>
         </AccordionPanel>
-        <AccordionPanel active heading="Second Title">
+        <AccordionPanel heading="Second Title">
           <p>test 2</p>
         </AccordionPanel>
       </Accordion>
@@ -40,11 +40,11 @@ describe('Accordion', () => {
   });
   it('has correct initialIndex=0 rendering', () => {
     const component = renderer.create(
-      <Accordion initialIndex={0}>
-        <AccordionPanel active heading="First Title">
+      <Accordion active={0}>
+        <AccordionPanel heading="First Title">
           <p>test 1</p>
         </AccordionPanel>
-        <AccordionPanel active heading="Second Title">
+        <AccordionPanel heading="Second Title">
           <p>test 2</p>
         </AccordionPanel>
       </Accordion>

@@ -14,7 +14,7 @@ exports[`Accordion has correct default options 1`] = `
       aria-label="Box"
       className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-box--clickable grommetux-header grommetux-accordion-panel__header"
       id={undefined}
-      onClick={[Function bound _onClickPanel]}
+      onClick={[Function onChange]}
       role="tab"
       style={Object {}}
       tabIndex={0}>
@@ -59,7 +59,6 @@ exports[`Accordion has correct default options 1`] = `
 exports[`Accordion has correct initialIndex=0 rendering 1`] = `
 <ul
   className="grommetux-list grommetux-accordion"
-  initialIndex={0}
   onClick={[Function bound _onClick]}
   role="tablist">
   <li
@@ -73,7 +72,7 @@ exports[`Accordion has correct initialIndex=0 rendering 1`] = `
       aria-label="Box"
       className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-box--clickable grommetux-header grommetux-accordion-panel__header"
       id={undefined}
-      onClick={[Function bound _onClickPanel]}
+      onClick={[Function onChange]}
       role="tab"
       style={Object {}}
       tabIndex={0}>
@@ -135,7 +134,7 @@ exports[`Accordion has correct initialIndex=0 rendering 1`] = `
       aria-label="Box"
       className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-box--clickable grommetux-header grommetux-accordion-panel__header"
       id={undefined}
-      onClick={[Function bound _onClickPanel]}
+      onClick={[Function onChange]}
       role="tab"
       style={Object {}}
       tabIndex={0}>
@@ -180,7 +179,6 @@ exports[`Accordion has correct initialIndex=0 rendering 1`] = `
 exports[`Accordion has correct initialIndex=0 rendering 2`] = `
 <ul
   className="grommetux-list grommetux-accordion"
-  initialIndex={0}
   onClick={[Function bound _onClick]}
   role="tablist">
   <li
@@ -194,7 +192,7 @@ exports[`Accordion has correct initialIndex=0 rendering 2`] = `
       aria-label="Box"
       className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-box--clickable grommetux-header grommetux-accordion-panel__header"
       id={undefined}
-      onClick={[Function bound _onClickPanel]}
+      onClick={[Function onChange]}
       role="tab"
       style={Object {}}
       tabIndex={0}>
@@ -256,7 +254,7 @@ exports[`Accordion has correct initialIndex=0 rendering 2`] = `
       aria-label="Box"
       className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-box--clickable grommetux-header grommetux-accordion-panel__header"
       id={undefined}
-      onClick={[Function bound _onClickPanel]}
+      onClick={[Function onChange]}
       role="tab"
       style={Object {}}
       tabIndex={0}>
@@ -326,7 +324,7 @@ exports[`Accordion has correct openMulti=true rendering 1`] = `
       aria-label="Box"
       className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-box--clickable grommetux-header grommetux-accordion-panel__header"
       id={undefined}
-      onClick={[Function bound _onClickPanel]}
+      onClick={[Function onChange]}
       role="tab"
       style={Object {}}
       tabIndex={0}>
@@ -388,7 +386,7 @@ exports[`Accordion has correct openMulti=true rendering 1`] = `
       aria-label="Box"
       className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-box--clickable grommetux-header grommetux-accordion-panel__header"
       id={undefined}
-      onClick={[Function bound _onClickPanel]}
+      onClick={[Function onChange]}
       role="tab"
       style={Object {}}
       tabIndex={0}>

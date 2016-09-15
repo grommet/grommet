@@ -113,13 +113,13 @@ class LayerContents extends Component {
     } else if (onClose && closer) {
       const closeLabel = Intl.getMessage(intl, 'Close');
       const layerLabel = Intl.getMessage(intl, 'Layer');
-      const a11yTitle =
+      const closeIconTitle =
         `${closeLabel} ${a11yTitle || ''} ${layerLabel}`;
 
       closerNode = (
         <div className={`${CLASS_ROOT}__closer`}>
           <Button plain={true} onClick={onClose}>
-            <CloseIcon a11yTitle={a11yTitle} />
+            <CloseIcon a11yTitle={closeIconTitle} />
           </Button>
         </div>
       );

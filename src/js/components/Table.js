@@ -226,7 +226,7 @@ export default class Table extends Component {
         <table ref={ref => this.mirrorRef = ref}
           className={`${CLASS_ROOT}__mirror`}>
           <thead>
-            <tr></tr>
+            <tr />
           </thead>
         </table>
       );

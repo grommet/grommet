@@ -38,7 +38,7 @@ export default class Grommet extends Component {
         {title}
         <path role="presentation"
           d="M 91,91 m 0,-82 a 82,82 0 1,1 0,164 a 82,82 0 1,1 0,-164"
-          strokeWidth="18" stroke="#865CD6" fill="none"></path>
+          strokeWidth="18" stroke="#865CD6" fill="none" />
       </svg>
     );
   }

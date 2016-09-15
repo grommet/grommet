@@ -39,7 +39,7 @@ export default class CarouselControls extends Component {
         <svg key={index} className={controlClasses.join(' ')} version="1.1"
           viewBox="0 0 24 24" width="24px" height="24px"
           onClick={this._onClick.bind(this, index)}>
-          <circle cx={12} cy={12} r={6}></circle>
+          <circle cx={12} cy={12} r={6} />
         </svg>
       );
     }

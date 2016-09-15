@@ -32,7 +32,7 @@ export default class OK extends Component {
         <g className={`${STATUS_ICON}__detail`}>
           <path role="presentation"
             d={"M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 " +
-              "L10,17.4 Z"} stroke="none"></path>
+              "L10,17.4 Z"} stroke="none" />
         </g>
       </svg>
     );

@@ -94,7 +94,7 @@ export default class Tip extends Component {
   }
 
   render () {
-    return <span></span>;
+    return <span />;
   }
 
 }

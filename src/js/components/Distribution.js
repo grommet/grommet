@@ -395,8 +395,7 @@ export default class Distribution extends Component {
     return (
       <rect className={boxClasses.join(' ')}
         x={boxRect.x} y={boxRect.y}
-        width={boxRect.width} height={boxRect.height}>
-      </rect>
+        width={boxRect.width} height={boxRect.height} />
     );
   }
 
@@ -521,7 +520,7 @@ export default class Distribution extends Component {
     if (! this.state.allIcons) {
       background = (
         <rect className={`${CLASS_ROOT}__background`} x={0} y={0} stroke="none"
-          width={this.state.width} height={this.state.height}></rect>
+          width={this.state.width} height={this.state.height} />
       );
     }
 
