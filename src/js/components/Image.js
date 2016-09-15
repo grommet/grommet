@@ -2,7 +2,6 @@
 
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
-
 import Label from './Label';
 import CSSClassnames from '../utils/CSSClassnames';
 
