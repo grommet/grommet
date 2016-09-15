@@ -192,7 +192,7 @@ var LayerContents = function (_Component) {
       } else if (onClose && closer) {
         var closeLabel = _Intl2.default.getMessage(intl, 'Close');
         var layerLabel = _Intl2.default.getMessage(intl, 'Layer');
-        var _a11yTitle = closeLabel + ' ' + (_a11yTitle || '') + ' ' + layerLabel;
+        var closeIconTitle = closeLabel + ' ' + (a11yTitle || '') + ' ' + layerLabel;
 
         closerNode = _react2.default.createElement(
           'div',
@@ -200,7 +200,7 @@ var LayerContents = function (_Component) {
           _react2.default.createElement(
             _Button2.default,
             { plain: true, onClick: onClose },
-            _react2.default.createElement(_Close2.default, { a11yTitle: _a11yTitle })
+            _react2.default.createElement(_Close2.default, { a11yTitle: closeIconTitle })
           )
         );
       }

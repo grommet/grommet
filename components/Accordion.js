@@ -8,9 +8,13 @@ var _extends2 = require('babel-runtime/helpers/extends');
 
 var _extends3 = _interopRequireDefault(_extends2);
 
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+var _keys = require('babel-runtime/core-js/object/keys');
 
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
+var _keys2 = _interopRequireDefault(_keys);
+
+var _isInteger = require('babel-runtime/core-js/number/is-integer');
+
+var _isInteger2 = _interopRequireDefault(_isInteger);
 
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
@@ -48,11 +52,13 @@ var _CSSClassnames = require('../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
+var _Props = require('../utils/Props');
+
+var _Props2 = _interopRequireDefault(_Props);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
-
-var CLASS_ROOT = _CSSClassnames2.default.ACCORDION;
+var CLASS_ROOT = _CSSClassnames2.default.ACCORDION; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var Accordion = function (_Component) {
   (0, _inherits3.default)(Accordion, _Component);
@@ -62,48 +68,86 @@ var Accordion = function (_Component) {
 
     var _this = (0, _possibleConstructorReturn3.default)(this, (Accordion.__proto__ || (0, _getPrototypeOf2.default)(Accordion)).call(this, props, context));
 
-    _this._activatePanel = _this._activatePanel.bind(_this);
+    _this._onPanelChange = _this._onPanelChange.bind(_this);
 
+    var active = void 0;
+    if ((0, _isInteger2.default)(_this.props.active)) {
+      active = [_this.props.active];
+    } else {
+      active = _this.props.active || [];
+    }
+    if (props.initialIndex) {
+      console.warn('Accordion: initialIndex prop has been deprecated. Use active instead.');
+      active.push(props.initialIndex);
+    }
+    _react2.default.Children.forEach(props.children, function (child, index) {
+      if (child.props.active) {
+        console.warn('AccordionPanel: active prop has been deprecated.' + 'Use active prop at the Accordion component level.');
+        active.push(index);
+      }
+    });
     _this.state = {
-      activeIndex: props.initialIndex
+      active: active
     };
     return _this;
   }
 
   (0, _createClass3.default)(Accordion, [{
-    key: '_activatePanel',
-    value: function _activatePanel(index) {
-      this.setState({ activeIndex: index });
+    key: '_onPanelChange',
+    value: function _onPanelChange(index) {
+      var active = this.state.active;
+      var _props = this.props;
+      var onActive = _props.onActive;
+      var openMulti = _props.openMulti;
+
+
+      var activeIndex = active.indexOf(index);
+      if (activeIndex > -1) {
+        active.splice(activeIndex, 1);
+      } else {
+        if (openMulti) {
+          active.push(index);
+        } else {
+          active = [index];
+        }
+      }
+      this.setState({ active: active }, function () {
+        if (onActive) {
+          if (!openMulti) {
+            onActive(active[0]);
+          } else {
+            onActive(active);
+          }
+        }
+      });
     }
   }, {
     key: 'render',
     value: function render() {
       var _this2 = this;
 
-      var _props = this.props;
-      var animate = _props.animate;
-      var className = _props.className;
-      var children = _props.children;
-      var openMulti = _props.openMulti;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['animate', 'className', 'children', 'openMulti']);
+      var _props2 = this.props;
+      var animate = _props2.animate;
+      var className = _props2.className;
+      var children = _props2.children;
 
 
       var classes = (0, _classnames2.default)(CLASS_ROOT, className);
 
       var accordionChildren = _react2.default.Children.map(children, function (child, index) {
         return _react2.default.cloneElement(child, {
-          id: 'accordion-panel-' + index,
-          active: !openMulti ? _this2.state.activeIndex === index : child.props.active,
-          onActive: function onActive() {
-            _this2._activatePanel(index);
+          active: _this2.state.active.indexOf(index) > -1,
+          onChange: function onChange() {
+            _this2._onPanelChange(index);
           },
           animate: animate
         });
       });
 
+      var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Accordion.propTypes));
       return _react2.default.createElement(
         _List2.default,
-        (0, _extends3.default)({ role: 'tablist', className: classes }, props),
+        (0, _extends3.default)({ role: 'tablist', className: classes }, restProps),
         accordionChildren
       );
     }
@@ -116,9 +160,11 @@ exports.default = Accordion;
 ;
 
 Accordion.propTypes = {
+  active: _react.PropTypes.oneOfType([_react.PropTypes.number, _react.PropTypes.arrayOf(_react.PropTypes.number)]),
   animate: _react.PropTypes.bool,
+  onActive: _react.PropTypes.func,
   openMulti: _react.PropTypes.bool,
-  initialIndex: _react.PropTypes.number
+  initialIndex: _react.PropTypes.number // remove in 1.0, use {active: }
 };
 
 Accordion.defaultProps = {

@@ -63,71 +63,41 @@ var CLASS_ROOT = _CSSClassnames2.default.ACCORDION_PANEL; // (C) Copyright 2014-
 var AccordionPanel = function (_Component) {
   (0, _inherits3.default)(AccordionPanel, _Component);
 
-  function AccordionPanel(props, context) {
+  function AccordionPanel() {
     (0, _classCallCheck3.default)(this, AccordionPanel);
-
-    var _this = (0, _possibleConstructorReturn3.default)(this, (AccordionPanel.__proto__ || (0, _getPrototypeOf2.default)(AccordionPanel)).call(this, props, context));
-
-    _this._onClickPanel = _this._onClickPanel.bind(_this);
-    _this.state = {
-      active: props.active || false
-    };
-    return _this;
+    return (0, _possibleConstructorReturn3.default)(this, (AccordionPanel.__proto__ || (0, _getPrototypeOf2.default)(AccordionPanel)).apply(this, arguments));
   }
 
   (0, _createClass3.default)(AccordionPanel, [{
-    key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps(nextProps) {
-      if (this.props.active !== nextProps.active) {
-        this.setState({ active: nextProps.active });
-      }
-    }
-  }, {
-    key: '_onClickPanel',
-    value: function _onClickPanel() {
-      this.setState({ active: !this.state.active });
-      this.props.onActive();
-    }
-  }, {
     key: 'render',
     value: function render() {
       var _props = this.props;
+      var active = _props.active;
       var animate = _props.animate;
       var className = _props.className;
       var children = _props.children;
       var heading = _props.heading;
+      var onChange = _props.onChange;
       var pad = _props.pad;
 
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, className, (0, _defineProperty3.default)({}, CLASS_ROOT + '--active', this.state.active));
+      var classes = (0, _classnames3.default)(CLASS_ROOT, className, (0, _defineProperty3.default)({}, CLASS_ROOT + '--active', active));
 
       return _react2.default.createElement(
         _ListItem2.default,
         { className: classes, direction: 'column', pad: 'none' },
         _react2.default.createElement(
           _Header2.default,
-          {
-            role: 'tab',
-            className: CLASS_ROOT + '__header',
-            pad: pad,
-            full: 'horizontal',
-            direction: 'row',
-            justify: 'between',
-            align: 'center',
-            onClick: this._onClickPanel,
-            responsive: false
-          },
+          { role: 'tab', className: CLASS_ROOT + '__header', pad: pad,
+            full: 'horizontal', direction: 'row', justify: 'between', align: 'center',
+            onClick: onChange, responsive: false },
           heading,
           _react2.default.createElement(_TabNext2.default, { className: CLASS_ROOT + '__control' })
         ),
         _react2.default.createElement(
           _Collapsible2.default,
-          {
-            role: 'tabpanel',
-            active: this.state.active,
-            animate: animate,
-            pad: pad
-          },
+          { role: 'tabpanel', active: active, animate: animate,
+            pad: pad },
           children
         )
       );
@@ -141,9 +111,9 @@ exports.default = AccordionPanel;
 ;
 
 AccordionPanel.propTypes = {
-  active: _react.PropTypes.bool,
+  active: _react.PropTypes.bool, // remove in 1.0, use {active from Accordion}
   animate: _react.PropTypes.bool,
   heading: _react.PropTypes.node.isRequired,
-  onActive: _react.PropTypes.func
+  onChange: _react.PropTypes.func
 };
 module.exports = exports['default'];
