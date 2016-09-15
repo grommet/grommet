@@ -4,7 +4,7 @@ import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import FormattedMessage from './FormattedMessage';
 import CSSClassnames from '../utils/CSSClassnames';
-import { announce } from '../utils/Announcer';
+import Announcer from '../utils/Announcer';
 
 const CLASS_ROOT = CSSClassnames.LEGEND;
 const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
@@ -34,7 +34,7 @@ export default class Legend extends Component {
   componentDidUpdate () {
     const { announce } = this.props;
     if (announce) {
-      announce(this.legendRef.textContent);
+      Announcer.announce(this.legendRef.textContent);
     }
   }
 
