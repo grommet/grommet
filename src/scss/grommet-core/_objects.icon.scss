@@ -59,23 +59,21 @@ $social-linkedin-color: #0077B5;
     height: round($inuit-base-spacing-unit * 2);
   }
 
-  @include media-query(palm) {
-    &--xlarge,
-    &--huge {
-      width: round($inuit-base-spacing-unit * 2);
-      height: round($inuit-base-spacing-unit * 2);
-    }
+  &--xlarge {
+    width: round($inuit-base-spacing-unit * 6);
+    height: round($inuit-base-spacing-unit * 6);
   }
 
-  @include media-query(lap-and-up) {
-    &--xlarge {
-      width: round($inuit-base-spacing-unit * 6);
-      height: round($inuit-base-spacing-unit * 6);
-    }
+  &--huge {
+    width: round($inuit-base-spacing-unit * 12);
+    height: round($inuit-base-spacing-unit * 12);
+  }
 
-    &--huge {
-      width: round($inuit-base-spacing-unit * 12);
-      height: round($inuit-base-spacing-unit * 12);
+  &--xlarge.#{$grommet-namespace}control-icon--responsive,
+  &--huge.#{$grommet-namespace}control-icon--responsive {
+    @include media-query(palm) {
+      width: round($inuit-base-spacing-unit * 2);
+      height: round($inuit-base-spacing-unit * 2);
     }
   }
 }

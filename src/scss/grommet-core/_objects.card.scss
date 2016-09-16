@@ -46,7 +46,7 @@ $card-hover-color: #EBEBEB;
     }
   }
 
-  &__thumbnail {
+  // &__thumbnail {
   //   width: 100%;
   //   height: $inuit-base-spacing-unit * 11;
   //   flex-shrink: 1;
@@ -57,14 +57,7 @@ $card-hover-color: #EBEBEB;
   //     }
   //   }
   //
-    .#{$grommet-namespace}control-icon-watch {
-      @include media-query(palm) {
-        // don't shrink video WatchIcon when in mobile
-        width: round($inuit-base-spacing-unit * 6);
-        height: round($inuit-base-spacing-unit * 6);
-      }
-    }
-  }
+  // }
 
   &__content {
     // truncate text paragraphs after 8 lines
