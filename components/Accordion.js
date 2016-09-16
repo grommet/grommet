@@ -93,6 +93,13 @@ var Accordion = function (_Component) {
   }
 
   (0, _createClass3.default)(Accordion, [{
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(newProps) {
+      if (newProps.active !== this.state.active) {
+        this.setState({ active: newProps.active || [] });
+      }
+    }
+  }, {
     key: '_onPanelChange',
     value: function _onPanelChange(index) {
       var active = this.state.active;
