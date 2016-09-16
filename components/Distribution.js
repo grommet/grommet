@@ -697,8 +697,8 @@ Distribution.propTypes = {
   a11yDescId: _react.PropTypes.string,
   a11yDesc: _react.PropTypes.string,
   full: _react.PropTypes.bool,
-  legend: _react.PropTypes.bool,
-  legendTotal: _react.PropTypes.bool,
+  legend: _react.PropTypes.bool, // remove in 1.0
+  legendTotal: _react.PropTypes.bool, // remove in 1.0
   series: _react.PropTypes.arrayOf(_react.PropTypes.shape({
     label: _react.PropTypes.node,
     value: _react.PropTypes.number.isRequired,

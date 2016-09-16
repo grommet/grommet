@@ -473,7 +473,7 @@ Calendar.displayName = 'Calendar';
 exports.default = Calendar;
 
 
-Calendar.propTypes = {
+Calendar.propTypes = { // remove in 1.0, use DateTime
   id: _react.PropTypes.string,
   name: _react.PropTypes.string,
   onChange: _react.PropTypes.func,

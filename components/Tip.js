@@ -32,13 +32,13 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Box = require('./Box');
-
-var _Box2 = _interopRequireDefault(_Box);
-
 var _classnames2 = require('classnames');
 
 var _classnames3 = _interopRequireDefault(_classnames2);
+
+var _Box = require('./Box');
+
+var _Box2 = _interopRequireDefault(_Box);
 
 var _CSSClassnames = require('../utils/CSSClassnames');
 

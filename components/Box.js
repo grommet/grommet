@@ -316,7 +316,7 @@ Box.propTypes = {
   align: _react.PropTypes.oneOf(['start', 'center', 'end', 'baseline', 'stretch']),
   alignContent: _react.PropTypes.oneOf(['start', 'center', 'end', 'between', 'around', 'stretch']),
   alignSelf: _react.PropTypes.oneOf(['start', 'center', 'end', 'stretch']),
-  appCentered: _react.PropTypes.bool, /// deprecate to separate container?
+  appCentered: _react.PropTypes.bool,
   backgroundImage: _react.PropTypes.string,
   basis: _react.PropTypes.oneOf(SIZES),
   children: _react.PropTypes.any,
@@ -347,7 +347,7 @@ Box.propTypes = {
   responsive: _react.PropTypes.bool,
   role: _react.PropTypes.string,
   separator: _react.PropTypes.oneOf(['top', 'bottom', 'left', 'right', 'horizontal', 'vertical', 'all', 'none']),
-  size: _react.PropTypes.oneOfType([_react.PropTypes.oneOf(['auto', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge', 'full']), // remove in 1.0, use size: {width: }
+  size: _react.PropTypes.oneOfType([_react.PropTypes.oneOf(['auto', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge', 'full']), // remove in 1.0?, use basis
   _react.PropTypes.shape({
     height: _react.PropTypes.oneOfType([_react.PropTypes.oneOf(SIZES), _react.PropTypes.shape({
       max: _react.PropTypes.oneOf(FIXED_SIZES),

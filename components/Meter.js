@@ -664,6 +664,7 @@ Meter.propTypes = {
   colorIndex: _react.PropTypes.string,
   important: _react.PropTypes.number, // remove in 1.0, use activeIndex
   label: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.node]),
+  // remove PropTypes.bool in 1.0
   legend: _react.PropTypes.oneOfType([// remove in 1.0
   _react.PropTypes.bool, _react.PropTypes.shape({
     align: _react.PropTypes.oneOf(['start', 'center', 'end']),
