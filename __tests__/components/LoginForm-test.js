@@ -17,4 +17,21 @@ describe('LoginForm', () => {
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('onChange behaves properly', () => {
+    const onChangeFn = jest.fn();
+    const component = renderer.create(
+      <LoginForm onSubmit={() => {}} onChange={onChangeFn} />
+    );
+
+    component.getInstance()._onUsernameChange(
+      { target: { value: 'will@isthecoolest.com' }});
+    component.getInstance()._onPasswordChange(
+      { target: { value: 'm0desty' }});
+    component.getInstance()._onRememberMeChange(
+      { target: { value: true }});
+
+    expect(onChangeFn.mock.calls.length).toBe(3);
+    expect(onChangeFn.mock.calls[0][0].username).toBe('will@isthecoolest.com');
+  });
 });
