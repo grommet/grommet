@@ -90,7 +90,6 @@ var Axis = function (_Component) {
         }
         if (0 === index) {
           item.basis = basis / 2;
-          item.flip = true;
         } else if (1 === index) {
           item.basis = basis / 2;
         } else {
@@ -113,6 +112,7 @@ var Axis = function (_Component) {
       var reverse = _props.reverse;
       var ticks = _props.ticks;
       var vertical = _props.vertical;
+      var tickAlign = _props.tickAlign;
       var items = this.state.items;
       var intl = this.context.intl;
 
@@ -130,6 +130,9 @@ var Axis = function (_Component) {
       if (ticks) {
         classes.push(CLASS_ROOT + '--ticks');
       }
+      if (tickAlign) {
+        classes.push(CLASS_ROOT + '--ticks--' + tickAlign);
+      }
       if (this.props.className) {
         classes.push(this.props.className);
       }
@@ -137,9 +140,7 @@ var Axis = function (_Component) {
       var elements = items.map(function (item) {
 
         var classes = [CLASS_ROOT + '__slot'];
-        if (item.flip) {
-          classes.push(CLASS_ROOT + '__slot--flip');
-        }
+
         if (item.placeholder) {
           classes.push(CLASS_ROOT + '__slot--placeholder');
         }
@@ -147,12 +148,18 @@ var Axis = function (_Component) {
           classes.push(COLOR_INDEX + '-' + item.colorIndex);
         }
         var role = item.label && item.label !== '' ? 'row' : undefined;
+        var label = item.label ? _react2.default.createElement(
+          'span',
+          null,
+          item.label
+        ) : null;
+
         return _react2.default.createElement(
           'div',
           { key: item.value || item.index,
             className: classes.join(' '), role: role,
             style: { flexBasis: item.basis + '%' } },
-          item.label
+          label
         );
       });
 
@@ -190,6 +197,7 @@ Axis.propTypes = {
   })),
   reverse: _react.PropTypes.bool,
   ticks: _react.PropTypes.bool,
+  tickAlign: _react.PropTypes.oneOf(['start', 'end']),
   vertical: _react.PropTypes.bool
 };
 module.exports = exports['default'];
