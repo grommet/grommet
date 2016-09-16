@@ -77,7 +77,6 @@
     height: round($inuit-base-spacing-unit * 3);
     background-color: rgba(nth($brand-grey-colors, 1), 0.9);
     color: $inverse-color;
-    // transition: 0.4s ease-in-out;
 
     .#{$grommet-namespace}button--primary {
       background-color: transparent;
@@ -107,6 +106,7 @@
     border-width: 2px;
     border-style: solid;
     background-color: transparent;
+    color: $colored-icon-color;
   }
 
   &__progress {
@@ -121,7 +121,7 @@
     & + .#{$grommet-namespace}video__chapter-labels,
     & ~ .#{$grommet-namespace}video__controls-primary {
       transition: ease-in-out 0.3s;
-    }  
+    }
 
     &:hover {
       height: halve($inuit-base-spacing-unit);
@@ -216,8 +216,7 @@
           $chapter-current-color: nth($brand-accent-colors, $brand-accent-color-index);
           color: $chapter-current-color;
         } @else {
-          $chapter-current-color: $brand-color;
-          color: $chapter-current-color;
+          color: $inverse-color;
         }
 
         transition: ease-in-out 0.3s;
@@ -248,14 +247,14 @@
       height: 100%;
       z-index: 40;
       transition: ease-in-out 0.3s;
+      cursor: pointer;
 
       $brand-accent-color-index: 3;
       @if ($brand-accent-color-index <= length($brand-accent-colors)) {
         $chapter-current-color: nth($brand-accent-colors, $brand-accent-color-index);
         background-color: $chapter-current-color;
       } @else {
-        $chapter-current-color: $brand-color;
-        background-color: $chapter-current-color;
+        background-color: $inverse-color;
       }
 
       &-start {
