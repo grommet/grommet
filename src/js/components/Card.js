@@ -111,11 +111,15 @@ export default class Card extends Component {
     let result = thumbnail;
     if (typeof thumbnail === 'string') {
       const basis = 'row' === this.props.direction ? '1/3' : 'small';
+      const videoIcon = (video) ?
+        <Anchor icon={<WatchIcon responsive={false} size="xlarge" />} /> :
+        null;
+
       result = (
         <Box className={`${CLASS_ROOT}__thumbnail`}
           backgroundImage={`url(${thumbnail})`} basis={basis} flex={false}
           justify="center" align="center">
-          {(video) ? <Anchor icon={<WatchIcon size="xlarge" />} /> : null}
+          {videoIcon}
         </Box>
       );
     }
