@@ -5,7 +5,7 @@ exports[`Calendar has correct default options 1`] = `
   role="group">
   <div
     aria-label="AxisLabel"
-    className="grommetux-chart-axis grommetux-chart-axis--vertical grommetux-chart-axis--align-end grommetux-chart-axis--ticks"
+    className="grommetux-chart-axis grommetux-chart-axis--vertical grommetux-chart-axis--align-end grommetux-chart-axis--ticks grommetux-chart-axis--ticks--end"
     id={undefined}
     role="rowgroup"
     style={
@@ -22,9 +22,7 @@ exports[`Calendar has correct default options 1`] = `
         Object {
           "flexBasis": "12.5%"
         }
-      }>
-      <span />
-    </div>
+      } />
     <div
       className="grommetux-chart-axis__slot"
       role={undefined}
@@ -32,9 +30,7 @@ exports[`Calendar has correct default options 1`] = `
         Object {
           "flexBasis": "12.5%"
         }
-      }>
-      <span />
-    </div>
+      } />
     <div
       className="grommetux-chart-axis__slot"
       role="row"
@@ -54,9 +50,7 @@ exports[`Calendar has correct default options 1`] = `
         Object {
           "flexBasis": "25%"
         }
-      }>
-      <span />
-    </div>
+      } />
     <div
       className="grommetux-chart-axis__slot"
       role="row"

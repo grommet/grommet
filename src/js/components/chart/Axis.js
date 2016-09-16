@@ -85,11 +85,13 @@ export default class Axis extends Component {
         classes.push(`${COLOR_INDEX}-${item.colorIndex}`);
       }
       const role = item.label && item.label !== '' ? 'row' : undefined;
+      const label = item.label ? <span>{item.label}</span> : null;
+      
       return (
         <div key={item.value || item.index}
           className={classes.join(' ')} role={role}
           style={{ flexBasis: `${item.basis}%` }}>
-          <span>{item.label}</span>
+          {label}
         </div>
       );
     });
