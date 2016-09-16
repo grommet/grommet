@@ -219,7 +219,7 @@ Box.propTypes = {
   alignContent: PropTypes.oneOf(['start', 'center', 'end', 'between',
     'around', 'stretch']),
   alignSelf: PropTypes.oneOf(['start', 'center', 'end', 'stretch']),
-  appCentered: PropTypes.bool, /// deprecate to separate container?
+  appCentered: PropTypes.bool,
   backgroundImage: PropTypes.string,
   basis: PropTypes.oneOf(SIZES),
   children: PropTypes.any,
@@ -259,7 +259,7 @@ Box.propTypes = {
     'horizontal', 'vertical', 'all', 'none']),
   size: PropTypes.oneOfType([
     PropTypes.oneOf(['auto', 'xsmall', 'small', 'medium', 'large',
-      'xlarge', 'xxlarge', 'full']), // remove in 1.0, use size: {width: }
+      'xlarge', 'xxlarge', 'full']), // remove in 1.0?, use basis
     PropTypes.shape({
       height: PropTypes.oneOfType([
         PropTypes.oneOf(SIZES),

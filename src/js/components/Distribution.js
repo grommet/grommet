@@ -598,8 +598,8 @@ Distribution.propTypes = {
   a11yDescId: PropTypes.string,
   a11yDesc: PropTypes.string,
   full: PropTypes.bool,
-  legend: PropTypes.bool,
-  legendTotal: PropTypes.bool,
+  legend: PropTypes.bool, // remove in 1.0
+  legendTotal: PropTypes.bool, // remove in 1.0
   series: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.node,
     value: PropTypes.number.isRequired,

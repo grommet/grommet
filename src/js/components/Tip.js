@@ -1,8 +1,8 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
-import Box from './Box';
 import classnames from 'classnames';
+import Box from './Box';
 import CSSClassnames from '../utils/CSSClassnames';
 import Drop from '../utils/Drop';
 

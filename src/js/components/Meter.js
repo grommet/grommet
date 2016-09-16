@@ -526,6 +526,7 @@ Meter.propTypes = {
   colorIndex: PropTypes.string,
   important: PropTypes.number, // remove in 1.0, use activeIndex
   label: PropTypes.oneOfType([PropTypes.bool, PropTypes.node]),
+    // remove PropTypes.bool in 1.0
   legend: PropTypes.oneOfType([ // remove in 1.0
     PropTypes.bool,
     PropTypes.shape({

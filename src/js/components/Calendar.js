@@ -346,7 +346,7 @@ export default class Calendar extends Component {
 
 }
 
-Calendar.propTypes = {
+Calendar.propTypes = { // remove in 1.0, use DateTime
   id: PropTypes.string,
   name: PropTypes.string,
   onChange: PropTypes.func,
