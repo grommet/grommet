@@ -40,11 +40,13 @@ var _CSSClassnames = require('../../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
+var _FormatTime = require('../../utils/FormatTime');
+
+var _FormatTime2 = _interopRequireDefault(_FormatTime);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
-
-var CLASS_ROOT = _CSSClassnames2.default.VIDEO;
+var CLASS_ROOT = _CSSClassnames2.default.VIDEO; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var Time = function (_Component) {
   (0, _inherits3.default)(Time, _Component);
@@ -55,21 +57,6 @@ var Time = function (_Component) {
   }
 
   (0, _createClass3.default)(Time, [{
-    key: '_formatTime',
-    value: function _formatTime(seconds) {
-      var date = new Date(null);
-      seconds = isNaN(seconds) ? 0 : Math.floor(seconds);
-      date.setSeconds(seconds);
-
-      var dateISOString = date.toISOString();
-      var time = dateISOString.substr(11, 8);
-      if (seconds < 3600) {
-        time = dateISOString.substr(14, 5);
-      }
-
-      return time;
-    }
-  }, {
     key: 'render',
     value: function render() {
       var _props = this.props;
@@ -83,9 +70,9 @@ var Time = function (_Component) {
         _react2.default.createElement(
           _Heading2.default,
           { tag: 'h3', margin: 'none', className: CLASS_ROOT + '__time' },
-          this._formatTime(currentTime),
+          (0, _FormatTime2.default)(currentTime),
           ' / ',
-          this._formatTime(duration)
+          (0, _FormatTime2.default)(duration)
         )
       );
     }

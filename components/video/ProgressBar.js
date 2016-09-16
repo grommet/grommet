@@ -4,6 +4,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -28,6 +32,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _classnames2 = require('classnames');
+
+var _classnames3 = _interopRequireDefault(_classnames2);
+
 var _Box = require('../Box');
 
 var _Box2 = _interopRequireDefault(_Box);
@@ -38,7 +46,9 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.VIDEO; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+var CLASS_ROOT = _CSSClassnames2.default.VIDEO;
 
 var ProgressBar = function (_Component) {
   (0, _inherits3.default)(ProgressBar, _Component);
@@ -66,9 +76,53 @@ var ProgressBar = function (_Component) {
       this.props.onChange(e.target.value * this.props.duration / 100);
     }
   }, {
+    key: '_onChapterClick',
+    value: function _onChapterClick(time) {
+      this.props.onChange(time);
+    }
+  }, {
+    key: '_onMouseOver',
+    value: function _onMouseOver(index) {
+      this.props.onChapterHover(index);
+    }
+  }, {
+    key: '_renderChapterMarkers',
+    value: function _renderChapterMarkers() {
+      var _this2 = this;
+
+      var timeline = this.props.timeline;
+
+
+      if (timeline) {
+        var chapters = timeline.map(function (chapter, index, chapters) {
+          var percent = chapter.time / _this2.props.duration * 100;
+          var tickClasses = (0, _classnames3.default)(CLASS_ROOT + '__chapter-marker-tick', (0, _defineProperty3.default)({}, CLASS_ROOT + '__chapter-marker-tick-start', percent === 0));
+
+          return _react2.default.createElement(
+            'div',
+            { className: CLASS_ROOT + '__chapter-marker', key: chapter.time,
+              style: { width: percent + '%' } },
+            _react2.default.createElement('div', { className: tickClasses,
+              onMouseOver: _this2._onMouseOver.bind(_this2, index),
+              onMouseOut: _this2.props.onChapterHover,
+              onClick: _this2._onChapterClick.bind(_this2, chapter.time) }),
+            _react2.default.createElement('div', { className: CLASS_ROOT + '__chapter-marker-track' })
+          );
+        });
+
+        return _react2.default.createElement(
+          'div',
+          { className: CLASS_ROOT + '__chapter-markers' },
+          chapters
+        );
+      }
+    }
+  }, {
     key: 'render',
     value: function render() {
-      var progress = this.props.progress;
+      var _props = this.props;
+      var progress = _props.progress;
+      var timeline = _props.timeline;
 
 
       return _react2.default.createElement(
@@ -77,6 +131,7 @@ var ProgressBar = function (_Component) {
         _react2.default.createElement('div', { className: CLASS_ROOT + '__progress-bar-fill', style: {
             width: progress + '%'
           } }),
+        timeline ? this._renderChapterMarkers() : undefined,
         _react2.default.createElement('input', { className: CLASS_ROOT + '__progress-bar-input',
           onChange: this._onProgressBarChange,
           type: 'range',
@@ -97,7 +152,8 @@ exports.default = ProgressBar;
 ProgressBar.propTypes = {
   onClick: _react.PropTypes.func,
   duration: _react.PropTypes.number,
-  progress: _react.PropTypes.number
+  progress: _react.PropTypes.number,
+  onChapterHover: _react.PropTypes.func
 };
 
 ProgressBar.defaultProps = {

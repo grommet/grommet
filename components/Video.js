@@ -174,6 +174,10 @@ var Video = function (_Component) {
   }, {
     key: '_seek',
     value: function _seek(time) {
+      if (time === 0) {
+        return this._video.currentTime = time;
+      }
+
       this._video.currentTime = time || this._video.currentTime;
     }
   }, {
@@ -233,6 +237,7 @@ var Video = function (_Component) {
         mute: this._mute,
         unmute: this._unmute,
         seek: this._seek,
+        timeline: this.props.timeline,
         fullscreen: this._fullscreen,
         shareLink: this.props.shareLink,
         shareHeadline: this.props.shareHeadline,
@@ -286,7 +291,7 @@ var Video = function (_Component) {
           }, this._mediaEventProps),
           this.props.children
         ),
-        showControls ? this._renderControls() : undefined
+        showControls ? this._renderControls() : null
       );
     }
   }]);

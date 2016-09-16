@@ -4,6 +4,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -27,6 +31,10 @@ var _inherits3 = _interopRequireDefault(_inherits2);
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
+
+var _classnames2 = require('classnames');
+
+var _classnames3 = _interopRequireDefault(_classnames2);
 
 var _Button = require('../Button');
 
@@ -68,6 +76,10 @@ var _CSSClassnames = require('../../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
+var _FormatTime = require('../../utils/FormatTime');
+
+var _FormatTime2 = _interopRequireDefault(_FormatTime);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var CLASS_ROOT = _CSSClassnames2.default.VIDEO; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
@@ -77,10 +89,23 @@ var Controls = function (_Component) {
 
   function Controls() {
     (0, _classCallCheck3.default)(this, Controls);
-    return (0, _possibleConstructorReturn3.default)(this, (Controls.__proto__ || (0, _getPrototypeOf2.default)(Controls)).apply(this, arguments));
+
+    var _this = (0, _possibleConstructorReturn3.default)(this, (Controls.__proto__ || (0, _getPrototypeOf2.default)(Controls)).call(this));
+
+    _this._onChapterTickHover = _this._onChapterTickHover.bind(_this);
+
+    _this.state = {
+      activeChapterIndex: null
+    };
+    return _this;
   }
 
   (0, _createClass3.default)(Controls, [{
+    key: '_onChapterTickHover',
+    value: function _onChapterTickHover(index) {
+      this.setState({ activeChapterIndex: index });
+    }
+  }, {
     key: '_renderTitle',
     value: function _renderTitle() {
       var title = void 0;
@@ -105,6 +130,47 @@ var Controls = function (_Component) {
         onClick: this.props.toggleMute, icon: this.props.muted ? _react2.default.createElement(_VolumeMute2.default, null) : _react2.default.createElement(_Volume2.default, null) });
     }
   }, {
+    key: '_renderChapterLabels',
+    value: function _renderChapterLabels() {
+      var _this2 = this;
+
+      var timeline = this.props.timeline;
+      var activeChapterIndex = this.state.activeChapterIndex;
+
+
+      if (timeline) {
+        var chapterLabels = timeline.map(function (chapter, index, chapters) {
+          var _classnames;
+
+          var percent = chapter.time / _this2.props.duration * 100;
+          var classes = (0, _classnames3.default)(CLASS_ROOT + '__chapter-label', (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__chapter-label-start', percent === 0), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__chapter-label-active', activeChapterIndex === index), _classnames));
+
+          return _react2.default.createElement(
+            'div',
+            { className: classes, key: chapter.label,
+              style: { left: percent + '%' } },
+            _react2.default.createElement(
+              'span',
+              null,
+              chapter.label
+            ),
+            _react2.default.createElement(
+              'span',
+              null,
+              (0, _FormatTime2.default)(chapter.time)
+            )
+          );
+        });
+
+        return _react2.default.createElement(
+          _Box2.default,
+          { pad: 'none', className: CLASS_ROOT + '__chapter-labels',
+            direction: 'row' },
+          chapterLabels
+        );
+      }
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _props = this.props;
@@ -116,6 +182,7 @@ var Controls = function (_Component) {
       var duration = _props.duration;
       var percentagePlayed = _props.percentagePlayed;
       var seek = _props.seek;
+      var timeline = _props.timeline;
       var allowFullScreen = _props.allowFullScreen;
       var fullscreen = _props.fullscreen;
 
@@ -129,7 +196,9 @@ var Controls = function (_Component) {
         { pad: 'none', className: CLASS_ROOT + '__controls',
           direction: 'column', justify: 'start' },
         _react2.default.createElement(_ProgressBar2.default, { progress: percentagePlayed,
-          duration: duration, onChange: seek }),
+          onChapterHover: this._onChapterTickHover,
+          duration: duration, onChange: seek, timeline: timeline }),
+        timeline ? this._renderChapterLabels() : null,
         _react2.default.createElement(
           _Box2.default,
           { pad: 'none', className: CLASS_ROOT + '__controls-primary',
@@ -149,7 +218,7 @@ var Controls = function (_Component) {
               pad: { horizontal: 'small', vertical: 'none' } },
             _react2.default.createElement(_Time2.default, { currentTime: currentTime, duration: duration }),
             this._renderMuteButton(),
-            allowFullScreen ? _react2.default.createElement(_FullscreenButton2.default, { onClick: fullscreen }) : undefined
+            allowFullScreen ? _react2.default.createElement(_FullscreenButton2.default, { onClick: fullscreen }) : null
           )
         )
       );
