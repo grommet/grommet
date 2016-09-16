@@ -210,12 +210,14 @@ var Card = function (_Component) {
       var result = thumbnail;
       if (typeof thumbnail === 'string') {
         var basis = 'row' === this.props.direction ? '1/3' : 'small';
+        var videoIcon = video ? _react2.default.createElement(_Anchor2.default, { icon: _react2.default.createElement(_Watch2.default, { responsive: false, size: 'xlarge' }) }) : null;
+
         result = _react2.default.createElement(
           _Box2.default,
           { className: CLASS_ROOT + '__thumbnail',
             backgroundImage: 'url(' + thumbnail + ')', basis: basis, flex: false,
             justify: 'center', align: 'center' },
-          video ? _react2.default.createElement(_Anchor2.default, { icon: _react2.default.createElement(_Watch2.default, { size: 'xlarge' }) }) : null
+          videoIcon
         );
       }
       return result;

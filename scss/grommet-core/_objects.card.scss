@@ -39,6 +39,13 @@ $card-hover-color: #EBEBEB;
     }
   }
 
+  &.#{$grommet-namespace}box--responsive {
+    @include media-query(palm) {
+      width: auto;
+      margin: 0;
+    }
+  }
+
   // &__thumbnail {
   //   width: 100%;
   //   height: $inuit-base-spacing-unit * 11;
@@ -50,13 +57,6 @@ $card-hover-color: #EBEBEB;
   //     }
   //   }
   //
-  //   .#{$grommet-namespace}control-icon-watch {
-  //     @include media-query(palm) {
-  //       // don't shrink video WatchIcon when in mobile
-  //       width: round($inuit-base-spacing-unit * 6);
-  //       height: round($inuit-base-spacing-unit * 6);
-  //     }
-  //   }
   // }
 
   &__content {
@@ -111,6 +111,14 @@ $card-hover-color: #EBEBEB;
   div:focus,
   a:focus {
     outline: none;
+  }
+
+  &--direction-row {
+    @include media-query(palm) {
+      .#{$grommet-namespace}card__thumbnail {
+        flex-basis: $size-small;  // match basis for thumbnail in Card.js
+      }
+    }
   }
 
   // &--direction-row {
