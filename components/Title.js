@@ -4,6 +4,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -28,6 +32,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _classnames2 = require('classnames');
+
+var _classnames3 = _interopRequireDefault(_classnames2);
+
 var _Box = require('./Box');
 
 var _Box2 = _interopRequireDefault(_Box);
@@ -42,9 +50,7 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
-
-var CLASS_ROOT = _CSSClassnames2.default.TITLE;
+var CLASS_ROOT = _CSSClassnames2.default.TITLE; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var Title = function (_Component) {
   (0, _inherits3.default)(Title, _Component);
@@ -57,28 +63,29 @@ var Title = function (_Component) {
   (0, _createClass3.default)(Title, [{
     key: 'render',
     value: function render() {
-      var classes = [CLASS_ROOT];
-      if (this.props.responsive) {
-        classes.push(CLASS_ROOT + "--responsive");
-      }
-      if (this.props.onClick) {
-        classes.push(CLASS_ROOT + "--interactive");
-      }
-      if (this.props.className) {
-        classes.push(this.props.className);
-      }
+      var _classnames;
 
-      var a11yTitle = this.props.a11yTitle || _Intl2.default.getMessage(this.context.intl, 'Title');
+      var _props = this.props;
+      var a11yTitle = _props.a11yTitle;
+      var children = _props.children;
+      var className = _props.className;
+      var onClick = _props.onClick;
+      var responsive = _props.responsive;
+      var intl = this.context.intl;
+
+      var classes = (0, _classnames3.default)(CLASS_ROOT, className, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--responsive', responsive), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--interactive', onClick), _classnames));
+
+      var boxTitle = a11yTitle || _Intl2.default.getMessage(intl, 'Title');
 
       var content = void 0;
-      if (typeof this.props.children === 'string') {
+      if (typeof children === 'string') {
         content = _react2.default.createElement(
           'span',
           null,
-          this.props.children
+          children
         );
-      } else if (Array.isArray(this.props.children)) {
-        content = this.props.children.map(function (child, index) {
+      } else if (Array.isArray(children)) {
+        content = children.map(function (child, index) {
           if (child && typeof child === 'string') {
             return _react2.default.createElement(
               'span',
@@ -89,14 +96,14 @@ var Title = function (_Component) {
           return child;
         });
       } else {
-        content = this.props.children;
+        content = children;
       }
 
       return _react2.default.createElement(
         _Box2.default,
         { align: 'center', direction: 'row', responsive: false,
-          className: classes.join(' '), a11yTitle: a11yTitle,
-          onClick: this.props.onClick },
+          className: classes, a11yTitle: boxTitle,
+          onClick: onClick },
         content
       );
     }
