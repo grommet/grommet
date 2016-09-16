@@ -77,6 +77,7 @@
     height: round($inuit-base-spacing-unit * 3);
     background-color: rgba(nth($brand-grey-colors, 1), 0.9);
     color: $inverse-color;
+    // transition: 0.4s ease-in-out;
 
     .#{$grommet-namespace}button--primary {
       background-color: transparent;
@@ -117,11 +118,25 @@
     background-color: lighten(rgba(nth($brand-grey-colors, 3), 0.7), 20%);
     transition: height 0.3s;
 
+    & + .#{$grommet-namespace}video__chapter-labels,
+    & ~ .#{$grommet-namespace}video__controls-primary {
+      transition: ease-in-out 0.3s;
+    }  
+
     &:hover {
       height: halve($inuit-base-spacing-unit);
 
       .#{$grommet-namespace}video__progress-bar-fill:after {
         opacity: 1;
+      }
+
+      & + .#{$grommet-namespace}video__chapter-labels {
+        visibility: visible;
+      }
+
+      & ~ .#{$grommet-namespace}video__controls-primary {
+        visibility: hidden;
+        opacity: 0;
       }
     }
 
@@ -139,6 +154,7 @@
       border: none;
       cursor: pointer;
       outline: none;
+      z-index: 30;
     }
   }
 
@@ -150,6 +166,7 @@
     bottom: 0;
     left: 0;
     transition: width 0.3s;
+    z-index: 10;
 
     &:after {
       content: '';
@@ -163,12 +180,100 @@
       border-radius: double($inuit-base-spacing-unit);
       opacity: 0;
       transition: opacity 0.4s ease-in-out;
+      z-index: 20;
+    }
+  }
+
+  &__chapter-labels {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: round($inuit-base-spacing-unit * 3);
+    visibility: hidden;
+    background-color: rgba(nth($brand-grey-colors, 1), 0.9);
+    transition: 0.4s ease-in-out;
+
+    span {
+      display: block;
+      color: $colored-text-color;
+    }
+  }
+
+  &__chapter-label {
+    position: absolute;
+    top: halve($inuit-base-spacing-unit);
+
+    &-start {
+      span {
+        margin-left: halve($inuit-base-spacing-unit);
+      }
+    }
+
+    &-active {
+      span {
+        $brand-accent-color-index: 3;
+        @if ($brand-accent-color-index <= length($brand-accent-colors)) {
+          $chapter-current-color: nth($brand-accent-colors, $brand-accent-color-index);
+          color: $chapter-current-color;
+        } @else {
+          $chapter-current-color: $brand-color;
+          color: $chapter-current-color;
+        }
+
+        transition: ease-in-out 0.3s;
+      }
+    }
+  }
+
+  &__chapter-marker {
+    position: absolute;
+    height: 100%;
+    left: 0px;
+
+    &-track {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transition: ease-in-out 0.3s;
+    }
+
+    &-tick:hover + &-track {
+      background-color: lighten(rgba(nth($brand-grey-colors, 3), 0.7), 40%);
+    }
+
+    &-tick {
+      position: absolute;
+      right: -3px;
+      width: 3px;
+      height: 100%;
+      z-index: 40;
+      transition: ease-in-out 0.3s;
+
+      $brand-accent-color-index: 3;
+      @if ($brand-accent-color-index <= length($brand-accent-colors)) {
+        $chapter-current-color: nth($brand-accent-colors, $brand-accent-color-index);
+        background-color: $chapter-current-color;
+      } @else {
+        $chapter-current-color: $brand-color;
+        background-color: $chapter-current-color;
+      }
+
+      &-start {
+        right: auto;
+        left: 0px;
+      }
+
+      &:hover {
+        width: 8px;
+        right: -8px;
+      }
     }
   }
 
   &--playing {
     &:not(.#{$grommet-namespace}video--interacting) {
       .#{$grommet-namespace}video__controls-primary,
+      .#{$grommet-namespace}video__chapter-labels,
       .#{$grommet-namespace}video__overlay {
         opacity: 0;
         transition: opacity 1s ease-in-out;

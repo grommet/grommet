@@ -129,6 +129,10 @@ export default class Video extends Component {
   }
 
   _seek(time) {
+    if (time === 0) {
+      return this._video.currentTime = time;
+    }
+
     this._video.currentTime = time || this._video.currentTime;
   }
 
@@ -180,6 +184,7 @@ export default class Video extends Component {
       mute: this._mute,
       unmute: this._unmute,
       seek: this._seek,
+      timeline: this.props.timeline,
       fullscreen: this._fullscreen,
       shareLink: this.props.shareLink,
       shareHeadline: this.props.shareHeadline,
@@ -223,8 +228,7 @@ export default class Video extends Component {
           {...this._mediaEventProps}>
           {this.props.children}
         </video>
-
-        {showControls ? this._renderControls() : undefined}
+        {showControls ? this._renderControls() : null}
       </div>
     );
   }
