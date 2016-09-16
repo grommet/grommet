@@ -24,6 +24,7 @@
   }
 
   &.#{$grommet-namespace}columns--small,
+  &.#{$grommet-namespace}columns--medium,
   &.#{$grommet-namespace}columns--large {
     > .#{$grommet-namespace}columns__column {
       @include media-query(palm) {
@@ -36,6 +37,12 @@
 .#{$grommet-namespace}columns--small {
   > .#{$grommet-namespace}columns__column {
     flex-basis: $size-small;
+  }
+}
+
+.#{$grommet-namespace}columns--medium {
+  > .#{$grommet-namespace}columns__column {
+    flex-basis: $size-medium;
   }
 }
 
