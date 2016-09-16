@@ -40,6 +40,12 @@ export default class Accordion extends Component {
     };
   }
 
+  componentWillReceiveProps (newProps) {
+    if (newProps.active !== this.state.active) {
+      this.setState({active: newProps.active || []});
+    }
+  }
+
   _onPanelChange (index) {
     let { active } = this.state;
     const { onActive, openMulti } = this.props;
