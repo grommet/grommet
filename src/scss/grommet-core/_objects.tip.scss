@@ -2,6 +2,7 @@
 
 .grommet.#{$grommet-namespace}tip__drop {
   overflow: visible;
+  max-width: $size-small;
 }
 
 .#{$grommet-namespace}tip__drop {

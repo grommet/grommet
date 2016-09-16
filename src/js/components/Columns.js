@@ -220,5 +220,5 @@ Columns.propTypes = {
 Columns.defaultProps = {
   maxCount: 1,
   justify: 'start',
-  responsive: false
+  responsive: true
 };

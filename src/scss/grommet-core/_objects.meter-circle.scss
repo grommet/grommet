@@ -18,11 +18,11 @@
   }
 
   .#{$grommet-namespace}meter__value { // remove in 1.0
-    top: halve($size-medium);
     @include transform(translateX(-50%) translateY(-50%));
     max-width: $size-small - double($inuit-base-spacing-unit);
     position: absolute;
     left: 50%;
+    top: 50%;
   }
 
   &.#{$grommet-namespace}meter--xsmall {

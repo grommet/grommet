@@ -4,16 +4,16 @@
   max-width: 100%;
 }
 
+.#{$grommet-namespace}image--small {
+  width: $size-small;
+}
+
 .#{$grommet-namespace}image--medium {
-  width: $image-width;
+  width: $size-medium;
 }
 
 .#{$grommet-namespace}image--large {
-  width: $image-large-width;
-}
-
-.#{$grommet-namespace}image--small {
-  width: $image-small-width;
+  width: $size-large;
 }
 
 .#{$grommet-namespace}image--thumb {
@@ -49,14 +49,14 @@
   padding: halve($inuit-base-spacing-unit);
 }
 
+.#{$grommet-namespace}image__caption--small {
+  max-width: $size-small;
+}
+
 .#{$grommet-namespace}image__caption--medium {
-  max-width: $image-width;
+  max-width: $size-medium;
 }
 
 .#{$grommet-namespace}image__caption--large {
-  max-width: $image-large-width;
-}
-
-.#{$grommet-namespace}image__caption--small {
-  max-width: $image-small-width;
+  max-width: $size-large;
 }

@@ -45,7 +45,6 @@ let Markdown = (props) => {
 
   return (
     markdownToJSX(content, {
-      breaks: true,
       gfm: true
     }, options)
   );

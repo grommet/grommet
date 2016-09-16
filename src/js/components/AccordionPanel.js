@@ -12,58 +12,29 @@ import CSSClassnames from '../utils/CSSClassnames';
 const CLASS_ROOT = CSSClassnames.ACCORDION_PANEL;
 
 export default class AccordionPanel extends Component {
-  constructor(props, context) {
-    super(props, context);
-    this._onClickPanel = this._onClickPanel.bind(this);
-    this.state = {
-      active: props.active || false
-    };
-  }
-
-  componentWillReceiveProps (nextProps) {
-    if (this.props.active !== nextProps.active) {
-      this.setState({ active: nextProps.active });
-    }
-  }
-
-  _onClickPanel () {
-    this.setState({ active : !this.state.active });
-    this.props.onActive();
-  }
-
   render () {
-    const { animate, className, children, heading, pad } = this.props;
+    const {
+      active, animate, className, children, heading, onChange, pad
+    } = this.props;
 
     const classes = classnames(
       CLASS_ROOT,
       className,
       {
-        [`${CLASS_ROOT}--active`]: this.state.active
+        [`${CLASS_ROOT}--active`]: active
       }
     );
 
     return (
       <ListItem className={classes} direction="column" pad="none">
-        <Header
-          role="tab"
-          className={`${CLASS_ROOT}__header`}
-          pad={pad}
-          full="horizontal"
-          direction="row"
-          justify="between"
-          align="center"
-          onClick={this._onClickPanel}
-          responsive={false}
-        >
+        <Header role="tab" className={`${CLASS_ROOT}__header`} pad={pad}
+          full="horizontal" direction="row" justify="between" align="center"
+          onClick={onChange} responsive={false}>
           {heading}
           <TabNextIcon className={`${CLASS_ROOT}__control`} />
         </Header>
-        <Collapsible
-          role="tabpanel"
-          active={this.state.active}
-          animate={animate}
-          pad={pad}
-        >
+        <Collapsible role="tabpanel" active={active} animate={animate}
+          pad={pad}>
           {children}
         </Collapsible>
       </ListItem>
@@ -72,8 +43,8 @@ export default class AccordionPanel extends Component {
 };
 
 AccordionPanel.propTypes = {
-  active: PropTypes.bool,
+  active: PropTypes.bool, // remove in 1.0, use {active from Accordion}
   animate: PropTypes.bool,
   heading: PropTypes.node.isRequired,
-  onActive: PropTypes.func
+  onChange: PropTypes.func
 };

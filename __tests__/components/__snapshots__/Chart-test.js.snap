@@ -5,7 +5,7 @@ exports[`Calendar has correct default options 1`] = `
   role="group">
   <div
     aria-label="AxisLabel"
-    className="grommetux-chart-axis grommetux-chart-axis--vertical grommetux-chart-axis--align-end grommetux-chart-axis--ticks"
+    className="grommetux-chart-axis grommetux-chart-axis--vertical grommetux-chart-axis--align-end grommetux-chart-axis--ticks grommetux-chart-axis--ticks--end"
     id={undefined}
     role="rowgroup"
     style={
@@ -16,7 +16,7 @@ exports[`Calendar has correct default options 1`] = `
       }
     }>
     <div
-      className="grommetux-chart-axis__slot grommetux-chart-axis__slot--flip"
+      className="grommetux-chart-axis__slot"
       role={undefined}
       style={
         Object {
@@ -39,7 +39,9 @@ exports[`Calendar has correct default options 1`] = `
           "flexBasis": "25%"
         }
       }>
-      50
+      <span>
+        50
+      </span>
     </div>
     <div
       className="grommetux-chart-axis__slot"
@@ -57,7 +59,9 @@ exports[`Calendar has correct default options 1`] = `
           "flexBasis": "25%"
         }
       }>
-      100
+      <span>
+        100
+      </span>
     </div>
   </div>
   <div
@@ -385,14 +389,16 @@ exports[`Calendar has correct default options 1`] = `
         }
       }>
       <div
-        className="grommetux-chart-axis__slot grommetux-chart-axis__slot--flip"
+        className="grommetux-chart-axis__slot"
         role="row"
         style={
           Object {
             "flexBasis": "50%"
           }
         }>
-        2014
+        <span>
+          2014
+        </span>
       </div>
       <div
         className="grommetux-chart-axis__slot"
@@ -402,7 +408,9 @@ exports[`Calendar has correct default options 1`] = `
             "flexBasis": "50%"
           }
         }>
-        2015
+        <span>
+          2015
+        </span>
       </div>
     </div>
   </div>

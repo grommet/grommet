@@ -1,18 +1,27 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
-import Box from './Box';
 import classnames from 'classnames';
+import Box from './Box';
 import CSSClassnames from '../utils/CSSClassnames';
 import Drop from '../utils/Drop';
 
 const CLASS_ROOT = CSSClassnames.TIP;
 
+
 export default class Tip extends Component {
 
+  constructor (props) {
+    super();
+    this._getTarget = this._getTarget.bind(this);
+  }
+
   componentDidMount () {
-    const { targetId, onClose, colorIndex } = this.props;
-    const target = document.getElementById(targetId);
+    const { onClose, colorIndex, targetId } = this.props;
+    if (targetId) {
+      console.warn('Tip: targetId prop has been deprecated use target instead');
+    }
+    const target = this._getTarget();
     if (target) {
       const rect = target.getBoundingClientRect();
       let align = {
@@ -56,8 +65,8 @@ export default class Tip extends Component {
   }
 
   componentWillUnmount () {
-    const { targetId, onClose } = this.props;
-    const target = document.getElementById(targetId);
+    const { onClose } = this.props;
+    const target = this._getTarget();
     if (target) {
       this._drop.remove();
       target.removeEventListener('click', onClose);
@@ -65,6 +74,14 @@ export default class Tip extends Component {
     }
   }
 
+  _getTarget () {
+    const { target, targetId } = this.props;
+
+    return (
+      document.getElementById(target || targetId) ||
+      document.querySelector(`.${target || targetId}`)
+    );
+  }
   _renderDrop () {
     const { onClose } = this.props;
     return (
@@ -77,7 +94,7 @@ export default class Tip extends Component {
   }
 
   render () {
-    return <span></span>;
+    return <span />;
   }
 
 }
@@ -85,7 +102,8 @@ export default class Tip extends Component {
 Tip.propTypes = {
   colorIndex: PropTypes.string,
   onClose: PropTypes.func.isRequired,
-  targetId: PropTypes.string.isRequired
+  targetId: PropTypes.string, // remove in 1.0, use size: {target: }
+  target: PropTypes.string.isRequired
 };
 
 Tip.defaultProps = {

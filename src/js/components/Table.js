@@ -143,7 +143,8 @@ export default class Table extends Component {
 
         [].forEach.call(rows, (row) => {
           [].forEach.call(row.cells, (cell, index) => {
-            cell.setAttribute('data-th', headerCells[index].innerText);
+            cell.setAttribute('data-th', 
+              headerCells[index].innerText || headerCells[index].textContent);
           });
         });
       }
@@ -225,7 +226,7 @@ export default class Table extends Component {
         <table ref={ref => this.mirrorRef = ref}
           className={`${CLASS_ROOT}__mirror`}>
           <thead>
-            <tr></tr>
+            <tr />
           </thead>
         </table>
       );

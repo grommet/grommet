@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
-
+import classnames from 'classnames';
 import CSSClassnames from '../utils/CSSClassnames';
 import VideoControls from './video/Controls';
 import VideoOverlay from './video/Overlay';
@@ -129,6 +129,10 @@ export default class Video extends Component {
   }
 
   _seek(time) {
+    if (time === 0) {
+      return this._video.currentTime = time;
+    }
+
     this._video.currentTime = time || this._video.currentTime;
   }
 
@@ -180,6 +184,7 @@ export default class Video extends Component {
       mute: this._mute,
       unmute: this._unmute,
       seek: this._seek,
+      timeline: this.props.timeline,
       fullscreen: this._fullscreen,
       shareLink: this.props.shareLink,
       shareHeadline: this.props.shareHeadline,
@@ -196,44 +201,34 @@ export default class Video extends Component {
   }
 
   render () {
-    let classes = [CLASS_ROOT];
-    if (this.props.size) {
-      classes.push(`${CLASS_ROOT}--${this.props.size}`);
-    }
-    if (this.props.full) {
-      classes.push(`${CLASS_ROOT}--full`);
-    }
-    if (this.state.playing) {
-      classes.push(`${CLASS_ROOT}--playing`);
-    }
-    if (this.state.interacting) {
-      classes.push(`${CLASS_ROOT}--interacting`);
-    }
-    if (this.props.colorIndex) {
-      classes.push(`${BACKGROUND_COLOR_INDEX}-${this.props.colorIndex}`);
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
-    if (this.state.hasPlayed) {
-      classes.push(`${CLASS_ROOT}--has-played`);
-    }
-    if (this.state.ended) {
-      classes.push(`${CLASS_ROOT}--ended`);
-    }
+    let { autoPlay, className, colorIndex, full, loop, muted, poster,
+      showControls, size } = this.props;
+    let { ended, hasPlayed, interacting, playing} = this.state;
+    let classes = classnames(
+      CLASS_ROOT,
+      {
+        [`${CLASS_ROOT}--${size}`]: size,
+        [`${CLASS_ROOT}--full`]: full,
+        [`${CLASS_ROOT}--interacting`]: interacting,
+        [`${CLASS_ROOT}--playing`]: playing,
+        [`${CLASS_ROOT}--hasPlayed`]: hasPlayed,
+        [`${CLASS_ROOT}--ended`]: ended,
+        [`${BACKGROUND_COLOR_INDEX}--${colorIndex}`]: colorIndex
+      },
+      className
+    );
 
     return (
-      <div className={classes.join(' ')} onMouseMove={this._onMouseMove}>
+      <div className={classes} onMouseMove={this._onMouseMove}>
         <video ref={el => this._video = el}
-          poster={this.props.poster}
-          autoPlay={this.props.autoPlay ? 'autoplay' : false}
-          loop={this.props.loop ? 'loop' : false}
-          muted={this.props.muted}
+          poster={poster}
+          autoPlay={autoPlay ? 'autoplay' : false}
+          loop={loop ? 'loop' : false}
+          muted={muted}
           {...this._mediaEventProps}>
           {this.props.children}
         </video>
-
-        {this.props.showControls ? this._renderControls() : undefined}
+        {showControls ? this._renderControls() : null}
       </div>
     );
   }

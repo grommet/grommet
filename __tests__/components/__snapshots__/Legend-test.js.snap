@@ -1,7 +1,6 @@
 exports[`Legend has correct default options 1`] = `
 <ol
-  className="grommetux-legend"
-  role="presentation">
+  className="grommetux-legend">
   <li
     className="grommetux-legend__item"
     onClick={undefined}

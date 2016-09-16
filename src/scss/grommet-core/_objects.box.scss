@@ -231,7 +231,7 @@
 .#{$grommet-namespace}box--basis-1-4 {
   flex-basis: 25%;
 
-  @include media-query(portable) {
+  @include media-query(portable) { // needed?
     flex-basis: 50%;
   }
 }
@@ -501,6 +501,10 @@
 
     &.#{$grommet-namespace}box--reverse {
       flex-direction: column-reverse;
+    }
+
+    > .#{$grommet-namespace}box {
+      flex-basis: auto;
     }
   }
 }

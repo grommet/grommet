@@ -7,6 +7,7 @@
   font-weight: normal;
   white-space: nowrap;
   @include inuit-font-size(24px);
+  line-height: initial;
 
   @include media-query(lap-and-up) {
     font-weight: 600;
@@ -43,7 +44,7 @@
 
   svg,
   img {
-    max-width: $image-width;
+    max-width: $size-medium;
     flex: 0 0 auto;
 
     &:not(:last-child) {

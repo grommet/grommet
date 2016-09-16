@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
+import classnames from 'classnames';
 import Box from './Box';
 import Intl from '../utils/Intl';
 import CSSClassnames from '../utils/CSSClassnames';
@@ -10,40 +11,39 @@ const CLASS_ROOT = CSSClassnames.TITLE;
 export default class Title extends Component {
 
   render () {
-    const classes = [CLASS_ROOT];
-    if (this.props.responsive) {
-      classes.push(CLASS_ROOT + "--responsive");
-    }
-    if (this.props.onClick) {
-      classes.push(CLASS_ROOT + "--interactive");
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
+    const { a11yTitle, children, className, onClick, responsive } = this.props;
+    const { intl } = this.context;
+    const classes = classnames(
+      CLASS_ROOT,
+      className, {
+        [`${CLASS_ROOT}--responsive`]: responsive,
+        [`${CLASS_ROOT}--interactive`]: onClick
+      }
+    );
 
-    const a11yTitle = this.props.a11yTitle ||
-      Intl.getMessage(this.context.intl, 'Title');
+    const boxTitle = a11yTitle ||
+      Intl.getMessage(intl, 'Title');
 
     let content;
-    if( typeof this.props.children === 'string' ) {
+    if( typeof children === 'string' ) {
       content = (
-        <span>{this.props.children}</span>
+        <span>{children}</span>
       );
-    } else if (Array.isArray(this.props.children)) {
-      content = this.props.children.map((child, index) => {
+    } else if (Array.isArray(children)) {
+      content = children.map((child, index) => {
         if (child && typeof child === 'string') {
           return <span key={`title_${index}`}>{child}</span>;
         }
         return child;
       });
     } else {
-      content = this.props.children;
+      content = children;
     }
 
     return (
       <Box align="center" direction="row" responsive={false}
-        className={classes.join(' ')} a11yTitle={a11yTitle}
-        onClick={this.props.onClick}>
+        className={classes} a11yTitle={boxTitle}
+        onClick={onClick}>
         {content}
       </Box>
     );

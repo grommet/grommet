@@ -219,17 +219,17 @@ Box.propTypes = {
   alignContent: PropTypes.oneOf(['start', 'center', 'end', 'between',
     'around', 'stretch']),
   alignSelf: PropTypes.oneOf(['start', 'center', 'end', 'stretch']),
-  appCentered: PropTypes.bool, /// deprecate to separate container?
+  appCentered: PropTypes.bool,
   backgroundImage: PropTypes.string,
   basis: PropTypes.oneOf(SIZES),
   children: PropTypes.any,
   colorIndex: PropTypes.string,
-  containerClassName: PropTypes.string, /// deprecate to separate container?
+  containerClassName: PropTypes.string,
   direction: PropTypes.oneOf(['row', 'column']),
   focusable: PropTypes.bool,
   flex: PropTypes.oneOf(['grow', 'shrink', true, false]),
   full: PropTypes.oneOf([true, 'horizontal', 'vertical', false]),
-    /// deprecate to new size
+    // remove in 1.0
   onClick: PropTypes.func,
   justify: PropTypes.oneOf(['start', 'center', 'between', 'end']),
   margin: PropTypes.oneOfType([
@@ -247,7 +247,6 @@ Box.propTypes = {
     PropTypes.oneOf(PAD_SIZES),
     PropTypes.shape({
       between: PropTypes.oneOf(PAD_SIZES),
-        /// deprecate to separate Spacer component, or separate Box?
       horizontal: PropTypes.oneOf(PAD_SIZES),
       vertical: PropTypes.oneOf(PAD_SIZES)
     })
@@ -260,7 +259,7 @@ Box.propTypes = {
     'horizontal', 'vertical', 'all', 'none']),
   size: PropTypes.oneOfType([
     PropTypes.oneOf(['auto', 'xsmall', 'small', 'medium', 'large',
-      'xlarge', 'xxlarge', 'full']), // remove in 1.0, use size: {width: }
+      'xlarge', 'xxlarge', 'full']), // remove in 1.0?, use basis
     PropTypes.shape({
       height: PropTypes.oneOfType([
         PropTypes.oneOf(SIZES),

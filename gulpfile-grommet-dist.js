@@ -140,7 +140,7 @@ module.exports = function(gulp) {
       .pipe(minifyCss())
       .pipe(gulp.dest('dist/'));
 
-    return gulp.src('src/scss/grommet-core/*.scss')
+    return gulp.src('src/scss/vanilla/*.scss')
       .pipe(sass({
         includePaths: [path.resolve(__dirname, './node_modules')]
       }))

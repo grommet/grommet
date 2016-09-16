@@ -89,6 +89,19 @@ $button-horizontal-padding: round($inuit-base-spacing-unit) - $button-border-wid
       @include icon-color($colored-icon-color);
     }
 
+    .#{$grommet-namespace}video__controls-primary &,
+    &.#{$grommet-namespace}video__play {
+      .#{$grommet-namespace}control-icon {
+        @include icon-color($inverse-color);
+        opacity: 0.7;
+      }
+
+      .#{$grommet-namespace}control-icon:hover,
+      &:hover .#{$grommet-namespace}control-icon {
+        opacity: 1;
+      }
+    }
+
     &:hover:not(.#{$grommet-namespace}button--disabled) {
       color: $active-colored-text-color;
 

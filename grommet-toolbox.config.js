@@ -97,5 +97,6 @@ export default {
     '__tests__',
     '!__tests__/utils/',
     '!__tests__/mocks/'
-  ]
+  ],
+  preCommitTasks: ['generate-icons', 'jslint', 'scsslint', 'test']
 };

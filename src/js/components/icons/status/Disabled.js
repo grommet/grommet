@@ -30,10 +30,10 @@ export default class Disabled extends Component {
           <path role="presentation" stroke="none"
             d={"M21,24 L3,24 C1.3,24 0,22.7 0,21 L0,3 C0,1.3 1.3,0 3,0 " +
               "L21,0 C22.7,0 24,1.3 24,3 L24,21 C24,22.7 22.7,24 21,24 " +
-              "L21,24 Z"}></path>
+              "L21,24 Z"} />
         </g>
         <g className={`${STATUS_ICON}__detail`} strokeWidth="2">
-          <path d="M6,12 L18,12"></path>
+          <path d="M6,12 L18,12" />
         </g>
       </svg>
     );

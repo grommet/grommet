@@ -69,7 +69,7 @@ export default class Header extends Component {
       classes.push(`${CLASS_ROOT}--float`);
       containerClasses.push(`${CLASS_ROOT}__container--float`);
     }
-    if (this.props.size) {
+    if (this.props.size && typeof this.props.size === 'string') {
       classes.push(`${CLASS_ROOT}--${this.props.size}`);
       wrapperClasses.push(`${CLASS_ROOT}__wrapper--${this.props.size}`);
       // don't transfer size to Box since it means something different

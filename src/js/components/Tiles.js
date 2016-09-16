@@ -316,16 +316,20 @@ export default class Tiles extends Component {
 
     const classes = classnames(
       CLASS_ROOT,
-      this.props.className,
       {
         [`${CLASS_ROOT}--fill`]: this.props.fill,
+          // remove in 1.0
         [`${CLASS_ROOT}--flush`]: this.props.flush,
+          // remove in 1.0
         [`${CLASS_ROOT}--${this.props.size}`]: this.props.size,
+          // remove in 1.0
         [`${CLASS_ROOT}--selectable`]: this.props.selectable,
         [`${CLASS_ROOT}--moreable`]: this.props.onMore,
         [`${CLASS_ROOT}--overflowed`]: this.state.overflow,
         [`${CLASS_ROOT}--masonry`]: this.props.masonry
-      }
+          // remove in 1.0
+      },
+      this.props.className
     );
 
     const other = Props.pick(this.props, Object.keys(Box.propTypes));
@@ -397,8 +401,8 @@ export default class Tiles extends Component {
 }
 
 Tiles.propTypes = {
-  fill: PropTypes.bool,
-  flush: PropTypes.bool, /// deprecated to content components?
+  fill: PropTypes.bool, // remove in 1.0, rely on Box props
+  flush: PropTypes.bool, // remove in 1.0, already in Box
   onMore: PropTypes.func,
   onSelect: PropTypes.func,
   selectable: PropTypes.oneOfType([
@@ -409,12 +413,10 @@ Tiles.propTypes = {
     PropTypes.number,
     PropTypes.arrayOf(PropTypes.number)
   ]),
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
-    /// deprecated to content components?
-  numColumns: PropTypes.number,
-    /// deprecated to Columns
-  masonry: PropTypes.bool,
-    /// deprecated to Columns
+  size: PropTypes.oneOf(['small', 'medium', 'large']), // remove in 1.0
+    // already in Box
+  numColumns: PropTypes.number, // remove in 1.0
+  masonry: PropTypes.bool, // remove in 1.0
   ...Box.propTypes
 };
 

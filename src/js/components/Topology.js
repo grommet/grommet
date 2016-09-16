@@ -345,7 +345,7 @@ export default class Topology extends Component {
       if (link.colorIndex && ! colors[link.colorIndex]) {
         colorKeys.push(<div key={link.colorIndex}
           ref={(ref) => this.linkRefs[link.colorIndex] = ref}
-          className={`${BACKGROUND_COLOR_INDEX}-${link.colorIndex}`}></div>);
+          className={`${BACKGROUND_COLOR_INDEX}-${link.colorIndex}`} />);
         colors[link.colorIndex] = true;
       }
     }, this);

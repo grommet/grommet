@@ -1,6 +1,6 @@
 exports[`Columns has correct default options 1`] = `
 <div
-  className="grommetux-columns grommetux-columns--justify-start">
+  className="grommetux-columns grommetux-columns--justify-start grommetux-columns--responsive">
   <div
     className="grommetux-columns__column">
     <span>

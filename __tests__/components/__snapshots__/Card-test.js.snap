@@ -1,6 +1,6 @@
 exports[`Card has correct default options 1`] = `
 <div
-  className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--width-medium grommetux-box--size grommetux-background-color-index-light-1 grommetux-card grommetux-card--medium"
+  className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--width-medium grommetux-box--size grommetux-background-color-index-light-1 grommetux-card"
   id={undefined}
   onClick={undefined}
   role={undefined}
@@ -26,12 +26,12 @@ exports[`Card has correct default options 1`] = `
     style={Object {}}
     tabIndex={undefined}>
     <label
-      className="grommetux-label grommetux-card__label grommetux-label--uppercase grommetux-label--margin-none grommetux-label--medium"
+      className="grommetux-label grommetux-label--uppercase grommetux-label--margin-none grommetux-label--medium"
       htmlFor={undefined}>
       Featured Post
     </label>
     <h2
-      className="grommetux-heading grommetux-heading--strong grommetux-card__heading"
+      className="grommetux-heading grommetux-heading--strong"
       dangerouslySetInnerHTML={undefined}
       id={undefined}>
       The Key Steps to Reducing Software Spend
@@ -42,7 +42,7 @@ exports[`Card has correct default options 1`] = `
 
 exports[`Card renders a header with the set size 1`] = `
 <div
-  className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--width-medium grommetux-box--size grommetux-background-color-index-light-1 grommetux-card grommetux-card--large"
+  className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--width-medium grommetux-box--size grommetux-background-color-index-light-1 grommetux-card"
   id={undefined}
   onClick={undefined}
   role={undefined}
@@ -56,7 +56,7 @@ exports[`Card renders a header with the set size 1`] = `
     style={Object {}}
     tabIndex={undefined}>
     <label
-      className="grommetux-label grommetux-card__label grommetux-label--uppercase grommetux-label--margin-none grommetux-label--medium"
+      className="grommetux-label grommetux-label--uppercase grommetux-label--margin-none grommetux-label--medium"
       htmlFor={undefined}>
       Hello from Grommet
     </label>
@@ -66,7 +66,7 @@ exports[`Card renders a header with the set size 1`] = `
 
 exports[`Card renders correctly when reverse 1`] = `
 <div
-  className="grommetux-box grommetux-box--direction-column grommetux-box--justify-between grommetux-box--reverse grommetux-box--responsive grommetux-box--pad-none grommetux-box--width-medium grommetux-box--size grommetux-background-color-index-light-1 grommetux-card grommetux-card--medium"
+  className="grommetux-box grommetux-box--direction-column grommetux-box--justify-between grommetux-box--reverse grommetux-box--responsive grommetux-box--pad-none grommetux-box--width-medium grommetux-box--size grommetux-background-color-index-light-1 grommetux-card"
   id={undefined}
   onClick={undefined}
   role={undefined}
@@ -80,7 +80,7 @@ exports[`Card renders correctly when reverse 1`] = `
     style={Object {}}
     tabIndex={undefined}>
     <label
-      className="grommetux-label grommetux-card__label grommetux-label--uppercase grommetux-label--margin-none grommetux-label--medium"
+      className="grommetux-label grommetux-label--uppercase grommetux-label--margin-none grommetux-label--medium"
       htmlFor={undefined}>
       Hello from Grommet
     </label>
@@ -90,7 +90,7 @@ exports[`Card renders correctly when reverse 1`] = `
 
 exports[`Card renders correctly when the direction is set to row 1`] = `
 <div
-  className="grommetux-box grommetux-box--direction-row grommetux-box--responsive grommetux-box--pad-none grommetux-box--width-xlarge grommetux-box--size grommetux-background-color-index-light-1 grommetux-card grommetux-card--direction-row grommetux-card--medium"
+  className="grommetux-box grommetux-box--direction-row grommetux-box--responsive grommetux-box--pad-none grommetux-box--width-xlarge grommetux-box--size grommetux-background-color-index-light-1 grommetux-card"
   id={undefined}
   onClick={undefined}
   role={undefined}
@@ -104,7 +104,7 @@ exports[`Card renders correctly when the direction is set to row 1`] = `
     style={Object {}}
     tabIndex={undefined}>
     <label
-      className="grommetux-label grommetux-card__label grommetux-label--uppercase grommetux-label--margin-none grommetux-label--medium"
+      className="grommetux-label grommetux-label--uppercase grommetux-label--margin-none grommetux-label--medium"
       htmlFor={undefined}>
       Hello from Grommet
     </label>
@@ -114,7 +114,7 @@ exports[`Card renders correctly when the direction is set to row 1`] = `
 
 exports[`Card renders correctly when the headingStrong is false 1`] = `
 <div
-  className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--width-medium grommetux-box--size grommetux-background-color-index-light-1 grommetux-card grommetux-card--medium"
+  className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--width-medium grommetux-box--size grommetux-background-color-index-light-1 grommetux-card"
   id={undefined}
   onClick={undefined}
   role={undefined}
@@ -128,7 +128,7 @@ exports[`Card renders correctly when the headingStrong is false 1`] = `
     style={Object {}}
     tabIndex={undefined}>
     <label
-      className="grommetux-label grommetux-card__label grommetux-label--uppercase grommetux-label--margin-none grommetux-label--medium"
+      className="grommetux-label grommetux-label--uppercase grommetux-label--margin-none grommetux-label--medium"
       htmlFor={undefined}>
       Hello from Grommet
     </label>
@@ -138,7 +138,7 @@ exports[`Card renders correctly when the headingStrong is false 1`] = `
 
 exports[`Card renders correctly with a non-default colorIndex 1`] = `
 <div
-  className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--width-medium grommetux-box--size grommetux-background-color-index-light-2 grommetux-card grommetux-card--medium"
+  className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--width-medium grommetux-box--size grommetux-background-color-index-light-2 grommetux-card"
   id={undefined}
   onClick={undefined}
   role={undefined}

@@ -88,6 +88,7 @@ export default {
   TIMESTAMP: `${namespace}timestamp`,
   TIP: `${namespace}tip`,
   TITLE: `${namespace}title`,
+  TOAST: `${namespace}toast`,
   TOPOLOGY: `${namespace}topology`,
   VALUE: `${namespace}value`,
   VIDEO: `${namespace}video`,

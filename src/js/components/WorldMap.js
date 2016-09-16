@@ -164,7 +164,7 @@ export default class WorldMap extends Component {
       onClick = seriesData.onClick;
       area = (
         <path stroke="none" fill="#fff" fillOpacity="0.01"
-          d={this.state.area[continent]}></path>
+          d={this.state.area[continent]} />
       );
     }
     // We add the area so the mouse events work for the whole region,
@@ -173,7 +173,7 @@ export default class WorldMap extends Component {
       <g key={continent} id={continent} className={classes.join(' ')}
         onMouseOver={onMouseOver} onMouseLeave={onMouseLeave} onClick={onClick}>
         {area}
-        <path d={this.state.dots[continent]}></path>
+        <path d={this.state.dots[continent]} />
       </g>
     );
   }
