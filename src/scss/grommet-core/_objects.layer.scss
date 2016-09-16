@@ -183,6 +183,16 @@
       }
     }
   }
+
+  .#{$grommet-namespace}tiles {
+    overflow: auto;
+
+    &__more {
+      @include media-query(lap-and-up) {
+        position: relative;
+      }
+    }
+  }
 }
 
 @include keyframes(peek-right) {
