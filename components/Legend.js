@@ -4,6 +4,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -28,6 +32,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _classnames2 = require('classnames');
+
+var _classnames3 = _interopRequireDefault(_classnames2);
+
 var _FormattedMessage = require('./FormattedMessage');
 
 var _FormattedMessage2 = _interopRequireDefault(_FormattedMessage);
@@ -38,11 +46,12 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 var _Announcer = require('../utils/Announcer');
 
+var _Announcer2 = _interopRequireDefault(_Announcer);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+var CLASS_ROOT = _CSSClassnames2.default.LEGEND; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-var CLASS_ROOT = _CSSClassnames2.default.LEGEND;
 var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
 
 var Legend = function (_Component) {
@@ -54,6 +63,12 @@ var Legend = function (_Component) {
     var _this = (0, _possibleConstructorReturn3.default)(this, (Legend.__proto__ || (0, _getPrototypeOf2.default)(Legend)).call(this, props, context));
 
     _this._onActive = _this._onActive.bind(_this);
+    _this._renderSeries = _this._renderSeries.bind(_this);
+    _this._renderSwatch = _this._renderSwatch.bind(_this);
+    _this._renderLabel = _this._renderLabel.bind(_this);
+    _this._renderValue = _this._renderValue.bind(_this);
+    _this._renderTotal = _this._renderTotal.bind(_this);
+    _this._seriesTotal = _this._seriesTotal.bind(_this);
 
     _this.state = { activeIndex: _this.props.activeIndex };
     return _this;
@@ -69,16 +84,20 @@ var Legend = function (_Component) {
   }, {
     key: 'componentDidUpdate',
     value: function componentDidUpdate() {
-      if (this.props.announce) {
-        (0, _Announcer.announce)(this.legendRef.textContent);
+      var announce = this.props.announce;
+
+      if (announce) {
+        _Announcer2.default.announce(this.legendRef.textContent);
       }
     }
   }, {
     key: '_onActive',
     value: function _onActive(index) {
+      var onActive = this.props.onActive;
+
       this.setState({ activeIndex: index });
-      if (this.props.onActive) {
-        this.props.onActive(index);
+      if (onActive) {
+        onActive(index);
       }
     }
   }, {
@@ -87,159 +106,194 @@ var Legend = function (_Component) {
       return item.colorIndex || 'graph-' + (index + 1);
     }
   }, {
-    key: 'render',
-    value: function render() {
+    key: '_renderSwatch',
+    value: function _renderSwatch(item, index) {
+      var colorIndex = this._itemColorIndex(item, index);
+      return _react2.default.createElement(
+        'svg',
+        { className: CLASS_ROOT + '__item-swatch ' + COLOR_INDEX + '-' + colorIndex, viewBox: '0 0 12 12' },
+        _react2.default.createElement('path', { className: item.className, d: 'M 5 0 l 0 12' })
+      );
+    }
+  }, {
+    key: '_renderLabel',
+    value: function _renderLabel(item, swatch) {
+      if (swatch) {
+        return _react2.default.createElement(
+          'span',
+          { className: CLASS_ROOT + '__item-label' },
+          swatch,
+          item.label
+        );
+      } else {
+        return _react2.default.createElement(
+          'span',
+          { className: CLASS_ROOT + '__item-label' },
+          item.label
+        );
+      }
+    }
+  }, {
+    key: '_renderValue',
+    value: function _renderValue(item) {
+      var units = this.props.units;
+
+      var unitsValue = item.units || units;
+      var valueClasses = CLASS_ROOT + '__item-value';
+      var unitsPrefix = void 0;
+      var unitsSuffix = void 0;
+      if (unitsValue) {
+        if (unitsValue.prefix) {
+          unitsPrefix = _react2.default.createElement(
+            'span',
+            { className: CLASS_ROOT + '__item-units' },
+            unitsValue.prefix
+          );
+        }
+        if (unitsValue.suffix || typeof unitsValue === 'string' || unitsValue instanceof String) {
+          unitsSuffix = _react2.default.createElement(
+            'span',
+            { className: CLASS_ROOT + '__item-units' },
+            unitsValue.suffix || unitsValue
+          );
+        }
+      }
+      return _react2.default.createElement(
+        'span',
+        { className: valueClasses },
+        unitsPrefix,
+        item.value,
+        unitsSuffix
+      );
+    }
+  }, {
+    key: '_seriesTotal',
+    value: function _seriesTotal() {
+      var series = this.props.series;
+
+      var total = 0;
+      series.forEach(function (item) {
+        return total += item.value === 'number' ? item.value : 0;
+      });
+      return total;
+    }
+  }, {
+    key: '_renderSeries',
+    value: function _renderSeries() {
       var _this2 = this;
 
-      var classes = [CLASS_ROOT];
-      if (this.props.series.length === 1) {
-        classes.push(CLASS_ROOT + "--single");
-      }
-      if (this.props.className) {
-        classes.push(this.props.className);
-      }
+      var series = this.props.series;
+      var activeIndex = this.state.activeIndex;
 
-      var totalValue = 0;
-      var items = this.props.series.map(function (item, index) {
-        var legendClasses = [CLASS_ROOT + "__item"];
-        if (index === this.state.activeIndex) {
-          legendClasses.push(CLASS_ROOT + "__item--active");
-        }
-        if (item.onClick) {
-          legendClasses.push(CLASS_ROOT + "__item--clickable");
-        }
-        var colorIndex = this._itemColorIndex(item, index);
-        if (typeof item.value === 'number') {
-          totalValue += item.value;
-        }
 
-        var valueClasses = [CLASS_ROOT + "__item-value"];
-        if (1 === this.props.series.length) {
-          valueClasses.push("large-number-font");
-        }
+      return series.map(function (item, index) {
+        var _classnames;
 
-        var swatch;
+        var legendClasses = (0, _classnames3.default)(CLASS_ROOT + '__item', (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__item--active', index === activeIndex), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__item--clickable', item.onClick), _classnames));
+
+        var swatch = void 0;
         if (item.hasOwnProperty('colorIndex')) {
-          swatch = _react2.default.createElement(
-            'svg',
-            {
-              className: CLASS_ROOT + '__item-swatch ' + (COLOR_INDEX + '-' + colorIndex),
-              viewBox: '0 0 12 12' },
-            _react2.default.createElement('path', { className: item.className, d: 'M 5 0 l 0 12' })
-          );
+          swatch = _this2._renderSwatch(item, index);
         }
 
-        var label;
+        var label = void 0;
         if (item.hasOwnProperty('label')) {
-          if (swatch) {
-            label = _react2.default.createElement(
-              'span',
-              { className: CLASS_ROOT + "__item-label" },
-              swatch,
-              item.label
-            );
-          } else {
-            label = _react2.default.createElement(
-              'span',
-              { className: CLASS_ROOT + "__item-label" },
-              item.label
-            );
-          }
+          label = _this2._renderLabel(item, swatch);
         }
 
-        var value;
+        var value = void 0;
         if (item.hasOwnProperty('value')) {
-          var unitsValue = item.units || this.props.units;
-          var unitsPrefix;
-          var unitsSuffix;
-          if (unitsValue) {
-            if (unitsValue.prefix) {
-              unitsPrefix = _react2.default.createElement(
-                'span',
-                { className: CLASS_ROOT + "__item-units" },
-                unitsValue.prefix
-              );
-            }
-            if (unitsValue.suffix || typeof unitsValue === 'string' || unitsValue instanceof String) {
-              unitsSuffix = _react2.default.createElement(
-                'span',
-                { className: CLASS_ROOT + "__item-units" },
-                unitsValue.suffix || unitsValue
-              );
-            }
-          }
-          value = _react2.default.createElement(
-            'span',
-            { className: valueClasses.join(' ') },
-            unitsPrefix,
-            item.value,
-            unitsSuffix
-          );
+          value = _this2._renderValue(item);
         }
 
         return _react2.default.createElement(
           'li',
           { onClick: item.onClick,
-            key: item.label || index, className: legendClasses.join(' '),
-            onMouseOver: this._onActive.bind(this, index),
-            onMouseOut: this._onActive.bind(this, undefined) },
+            key: item.label || index, className: legendClasses,
+            onMouseOver: _this2._onActive.bind(_this2, index),
+            onMouseOut: _this2._onActive.bind(_this2, undefined) },
           label,
           value
         );
       }, this);
+    }
+  }, {
+    key: '_renderTotal',
+    value: function _renderTotal() {
+      var _props = this.props;
+      var total = _props.total;
+      var units = _props.units;
+
+      var totalValue = void 0;
+      if (total !== true) {
+        totalValue = total;
+      } else {
+        totalValue = this._seriesTotal();
+      }
+      var unitsPrefix = void 0;
+      var unitsSuffix = void 0;
+      if (units && units.prefix) {
+        unitsPrefix = _react2.default.createElement(
+          'span',
+          { className: CLASS_ROOT + '__total-units' },
+          units.prefix
+        );
+      }
+      if (units && (units.suffix || typeof units === 'string' || units instanceof String)) {
+        unitsSuffix = _react2.default.createElement(
+          'span',
+          { className: CLASS_ROOT + '__total-units' },
+          units.suffix || units
+        );
+      }
+
+      return _react2.default.createElement(
+        'li',
+        { className: CLASS_ROOT + '__total' },
+        _react2.default.createElement(
+          'span',
+          { className: CLASS_ROOT + '__total-label' },
+          _react2.default.createElement(_FormattedMessage2.default, { id: 'Total', defaultMessage: 'Total' })
+        ),
+        _react2.default.createElement(
+          'span',
+          { className: CLASS_ROOT + '__total-value' },
+          unitsPrefix,
+          totalValue,
+          unitsSuffix
+        )
+      );
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this3 = this;
+
+      var _props2 = this.props;
+      var className = _props2.className;
+      var series = _props2.series;
+      var total = _props2.total;
+
+
+      var classes = (0, _classnames3.default)(CLASS_ROOT, className);
+
+      var items = this._renderSeries();
 
       // build legend from bottom to top, to align with Meter bar stacking
       items.reverse();
 
-      var total;
-      if (this.props.total && this.props.series.length > 1) {
-        if (true !== this.props.total) {
-          totalValue = this.props.total;
-        }
-        var unitsPrefix;
-        var unitsSuffix;
-
-        if (this.props.units && this.props.units.prefix) {
-          unitsPrefix = _react2.default.createElement(
-            'span',
-            { className: CLASS_ROOT + "__total-units" },
-            this.props.units.prefix
-          );
-        }
-        if (this.props.units && (this.props.units.suffix || typeof this.props.units === 'string' || this.props.units instanceof String)) {
-          unitsSuffix = _react2.default.createElement(
-            'span',
-            { className: CLASS_ROOT + "__total-units" },
-            this.props.units.suffix || this.props.units
-          );
-        }
-
-        total = _react2.default.createElement(
-          'li',
-          { className: CLASS_ROOT + "__total" },
-          _react2.default.createElement(
-            'span',
-            { className: CLASS_ROOT + "__total-label" },
-            _react2.default.createElement(_FormattedMessage2.default, { id: 'Total', defaultMessage: 'Total' })
-          ),
-          _react2.default.createElement(
-            'span',
-            { className: CLASS_ROOT + "__total-value" },
-            unitsPrefix,
-            totalValue,
-            unitsSuffix
-          )
-        );
+      var totalNode = void 0;
+      if (total && series.length > 1) {
+        totalNode = this._renderTotal();
       }
 
       return _react2.default.createElement(
         'ol',
         { ref: function ref(_ref) {
-            return _this2.legendRef = _ref;
-          },
-          className: classes.join(' '), role: 'presentation' },
+            return _this3.legendRef = _ref;
+          }, className: classes },
         items.reverse(),
-        total
+        totalNode
       );
     }
   }]);
@@ -274,7 +328,6 @@ Legend.propTypes = {
   units: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.shape({
     prefix: _react.PropTypes.string,
     suffix: _react.PropTypes.string
-  })]),
-  value: _react.PropTypes.number
+  })])
 };
 module.exports = exports['default'];
