@@ -38,7 +38,6 @@ export default class Axis extends Component {
       }
       if (0 === index) {
         item.basis = basis / 2;
-        item.flip = true;
       } else if (1 === index) {
         item.basis = basis / 2;
       } else {
@@ -50,7 +49,8 @@ export default class Axis extends Component {
   }
 
   render () {
-    const { a11yTitle, align, reverse, ticks, vertical } = this.props;
+    const { a11yTitle, align, reverse, ticks, vertical, 
+      tickAlign } = this.props;
     const { items } = this.state;
     const { intl } = this.context;
 
@@ -67,6 +67,9 @@ export default class Axis extends Component {
     if (ticks) {
       classes.push(`${CLASS_ROOT}--ticks`);
     }
+    if (tickAlign) {
+      classes.push(`${CLASS_ROOT}--ticks--${tickAlign}`);
+    }
     if (this.props.className) {
       classes.push(this.props.className);
     }
@@ -74,9 +77,7 @@ export default class Axis extends Component {
     let elements = items.map(item => {
 
       let classes = [`${CLASS_ROOT}__slot`];
-      if (item.flip) {
-        classes.push(`${CLASS_ROOT}__slot--flip`);
-      }
+
       if (item.placeholder) {
         classes.push(`${CLASS_ROOT}__slot--placeholder`);
       }
@@ -84,11 +85,13 @@ export default class Axis extends Component {
         classes.push(`${COLOR_INDEX}-${item.colorIndex}`);
       }
       const role = item.label && item.label !== '' ? 'row' : undefined;
+      const label = item.label ? <span>{item.label}</span> : null;
+      
       return (
         <div key={item.value || item.index}
           className={classes.join(' ')} role={role}
           style={{ flexBasis: `${item.basis}%` }}>
-          {item.label}
+          {label}
         </div>
       );
     });
@@ -122,5 +125,6 @@ Axis.propTypes = {
   })),
   reverse: PropTypes.bool,
   ticks: PropTypes.bool,
+  tickAlign: PropTypes.oneOf(['start', 'end']),
   vertical: PropTypes.bool
 };

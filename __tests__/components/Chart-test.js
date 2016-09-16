@@ -23,7 +23,7 @@ describe('Calendar', () => {
   it('has correct default options', () => {
     const component = renderer.create(
       <Chart vertical={false}>
-        <Axis vertical={true} ticks={true} count={5}
+        <Axis vertical={true} ticks={true} count={5} tickAlign="end"
           labels={
             [{"index": 2, "label": "50"}, {"index": 4, "label": "100"}]
           } />

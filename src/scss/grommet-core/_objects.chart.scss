@@ -265,19 +265,17 @@
 
 .#{$grommet-namespace}chart-axis--ticks {
   .#{$grommet-namespace}chart-axis__slot {
-    border-color: $border-color;
-    border-width: 1px;
-
     #{$dark-background-context} & {
-      border-color: $colored-border-color;
+      &::before,
+      &::after {
+        background-color: $colored-border-color;
+      }
     }
   }
 }
 
 .#{$grommet-namespace}chart-axis--vertical {
   flex-direction: column-reverse;
-  // padding-top: round($inuit-base-spacing-unit / 3);
-  // padding-bottom: round($inuit-base-spacing-unit / 3);
   margin-left: halve($inuit-base-spacing-unit);
   margin-right: halve($inuit-base-spacing-unit);
 
@@ -285,8 +283,8 @@
     min-width: 1em;
     justify-content: flex-start;
 
-    &.#{$grommet-namespace}chart-axis__slot--flip {
-      justify-content: flex-end;
+    &:first-child {
+      flex-direction: column-reverse;
     }
   }
 
@@ -308,11 +306,24 @@
 
   &.#{$grommet-namespace}chart-axis--ticks {
     .#{$grommet-namespace}chart-axis__slot:not(.#{$grommet-namespace}chart-axis__slot--placeholder) {
-      border-top-style: solid;
+      &::before {
+        display: block;
+        content: "";
+        height: 1px;
+        width: halve(halve($inuit-base-spacing-unit));
+        background-color: $border-color;
+      }
+    }
 
-      &.#{$grommet-namespace}chart-axis__slot--flip {
-        border-top-style: none;
-        border-bottom-style: solid;
+    &.#{$grommet-namespace}chart-axis--ticks--start {
+      .#{$grommet-namespace}chart-axis__slot {
+        align-items: flex-start;
+      }
+    }
+
+    &.#{$grommet-namespace}chart-axis--ticks--end {
+      .#{$grommet-namespace}chart-axis__slot {
+        align-items: flex-end;
       }
     }
   }
@@ -321,22 +332,28 @@
     flex-direction: column;
 
     .#{$grommet-namespace}chart-axis__slot {
-      justify-content: flex-end;
+      justify-content: flex-start;
+      flex-direction: column-reverse;
 
-      &.#{$grommet-namespace}chart-axis__slot--flip {
+      &:first-child {
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+
+      &:last-child {
         justify-content: flex-start;
       }
     }
 
-    &.#{$grommet-namespace}chart-axis--ticks {
+    &.#{$grommet-namespace}chart-axis--ticks--start {
       .#{$grommet-namespace}chart-axis__slot {
-        border-top-style: none;
-        border-bottom-style: solid;
+        align-items: flex-start;
+      }
+    }
 
-        &.#{$grommet-namespace}chart-axis__slot--flip {
-          border-top-style: solid;
-          border-bottom-style: none;
-        }
+    &.#{$grommet-namespace}chart-axis--ticks--end {
+      .#{$grommet-namespace}chart-axis__slot {
+        align-items: flex-end;
       }
     }
   }
@@ -344,26 +361,32 @@
 
 .#{$grommet-namespace}chart-axis:not(.#{$grommet-namespace}chart-axis--vertical) {
   flex-direction: row;
-  // padding-left: round($inuit-base-spacing-unit / 3);
-  // padding-right: round($inuit-base-spacing-unit / 3);
   margin-top: halve($inuit-base-spacing-unit);
   margin-bottom: halve($inuit-base-spacing-unit);
 
   .#{$grommet-namespace}chart-axis__slot {
     min-height: $inuit-base-spacing-unit;
-    align-items: flex-end;
+    align-items: flex-start;
+    justify-content: flex-end;
+    flex-direction: row;
 
-    &.#{$grommet-namespace}chart-axis__slot--flip {
+    &:first-child {
       align-items: flex-start;
+      flex-direction: row-reverse;
+      padding-left: 0;
+    }
+
+    &::after {
+      display: block;
+      content: "";
+      height: halve(halve($inuit-base-spacing-unit));
+      width: 1px;
+      background-color: $border-color;
     }
   }
 
   &.#{$grommet-namespace}chart-axis--align-start {
     align-items: flex-start;
-
-    .#{$grommet-namespace}chart-axis__slot {
-      justify-content: flex-start;
-    }
   }
 
   &.#{$grommet-namespace}chart-axis--align-end {
@@ -375,13 +398,21 @@
   }
 
   &.#{$grommet-namespace}chart-axis--ticks {
-    .#{$grommet-namespace}chart-axis__slot:not(.#{$grommet-namespace}chart-axis__slot--placeholder) {
-      border-right-style: solid;
-      padding: 0 quarter($inuit-base-spacing-unit);
+    &.#{$grommet-namespace}chart-axis--ticks--end {
+      .#{$grommet-namespace}chart-axis__slot:not(.#{$grommet-namespace}chart-axis__slot--placeholder) {
+        align-items: flex-end;
+      }
+    }
 
-      &.#{$grommet-namespace}chart-axis__slot--flip {
-        border-right-style: none;
-        border-left-style: solid;
+    &.#{$grommet-namespace}chart-axis--ticks--start {
+      .#{$grommet-namespace}chart-axis__slot:not(.#{$grommet-namespace}chart-axis__slot--placeholder) {
+        align-items: flex-start;
+      }
+    }
+
+    .#{$grommet-namespace}chart-axis__slot:not(.#{$grommet-namespace}chart-axis__slot--placeholder) {
+      span {
+        padding: 0 quarter($inuit-base-spacing-unit);
       }
     }
   }
@@ -391,20 +422,16 @@
 
     .#{$grommet-namespace}chart-axis__slot {
       align-items: flex-start;
-
-      &.#{$grommet-namespace}chart-axis__slot--flip {
-        align-items: flex-end;
-      }
     }
 
     &.#{$grommet-namespace}chart-axis--ticks {
       .#{$grommet-namespace}chart-axis__slot {
-        border-right-style: none;
-        border-left-style: solid;
+        align-items: flex-start;
+        justify-content: flex-end;
+        flex-direction: row-reverse;
 
-        &.#{$grommet-namespace}chart-axis__slot--flip {
-          border-right-style: solid;
-          border-left-style: none;
+        &:first-child {
+          flex-direction: row;
         }
       }
     }
