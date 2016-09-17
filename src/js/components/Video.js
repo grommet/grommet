@@ -216,6 +216,10 @@ export default class Video extends Component {
       className
     );
 
+    if (this.props.duration) {
+      console.warn('Video: duration prop has been deprecated.');
+    }
+
     return (
       <div className={classes} onMouseMove={this._onMouseMove}>
         <video ref={el => this._video = el}
@@ -234,6 +238,7 @@ export default class Video extends Component {
 
 Video.propTypes = {
   colorIndex: PropTypes.string,
+  duration: PropTypes.number,
   full: PropTypes.oneOf([true, 'horizontal', 'vertical', false]),
   poster: PropTypes.string,
   size: React.PropTypes.oneOf(['small', 'medium', 'large']),
