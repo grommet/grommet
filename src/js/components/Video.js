@@ -175,7 +175,7 @@ export default class Video extends Component {
   _renderControls () {
     let extendedProps = Object.assign({
       title: this.props.title,
-      togglePlay: this._togglePlay,
+      togglePlay: this.props.onClick || this._togglePlay,
       toggleMute: this._toggleMute,
       play: this._play,
       pause: this._pause,
@@ -216,9 +216,14 @@ export default class Video extends Component {
       className
     );
 
-    if (this.props.duration) {
-      console.warn('Video: duration prop has been deprecated.');
-    }
+    let deprecatedProps = [];
+    if (this.props.onClick)
+      deprecatedProps.push('onClick');
+    if (this.props.duration)
+      deprecatedProps.push('duration');
+    if (deprecatedProps.length > 0)
+      console.warn(`Video: ${deprecatedProps.join(', ')} ` +
+        'prop has been deprecated.');
 
     return (
       <div className={classes} onMouseMove={this._onMouseMove}>
@@ -247,6 +252,7 @@ Video.propTypes = {
     time: PropTypes.number
   })),
   title: PropTypes.node,
+  onClick: PropTypes.func,
   allowFullScreen: PropTypes.bool,
   autoPlay: PropTypes.bool,
   shareLink: PropTypes.string,
