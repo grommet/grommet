@@ -13,7 +13,7 @@ import VideoFullscreenButton from './FullscreenButton';
 import VideoProgressBar from './ProgressBar';
 import VideoPlayButton from './PlayButton';
 import CSSClassnames from '../../utils/CSSClassnames';
-import FormatTime from '../../utils/FormatTime';
+import { formatTime } from '../../utils/FormatTime';
 
 const CLASS_ROOT = CSSClassnames.VIDEO;
 
@@ -25,7 +25,7 @@ export default class Controls extends Component {
     this._onChapterTickHover = this._onChapterTickHover.bind(this);
 
     this.state = {
-      activeChapterIndex: null
+      activeChapterIndex: undefined
     };
   }
 
@@ -55,26 +55,26 @@ export default class Controls extends Component {
   }
 
   _renderChapterLabels () {
-    const { timeline } = this.props;
+    const { duration, timeline } = this.props;
     const { activeChapterIndex } = this.state;
 
     if (timeline) {
       let chapterLabels = timeline.map((chapter, index, chapters) => {
-        let percent = (chapter.time / this.props.duration) * 100;
+        let percent = (chapter.time / duration) * 100;
         let classes = classnames(
           `${CLASS_ROOT}__chapter-label`,
           {
             [`${CLASS_ROOT}__chapter-label-start`]: percent === 0,
-            [`${CLASS_ROOT}__chapter-label-active`]: 
+            [`${CLASS_ROOT}__chapter-label-active`]:
               activeChapterIndex === index
           }
         );
 
         return (
           <div className={classes} key={chapter.label}
-            style={{left: percent + '%'}}>
+            style={{left: `${percent}%`}}>
             <span>{chapter.label}</span>
-            <span>{FormatTime(chapter.time)}</span>
+            <span>{formatTime(chapter.time)}</span>
           </div>
         );
       });
@@ -110,10 +110,10 @@ export default class Controls extends Component {
     let overlayContent = (
       <Box pad="none" className={`${CLASS_ROOT}__controls`}
         direction="column" justify="start">
-        <VideoProgressBar progress={percentagePlayed} 
+        <VideoProgressBar progress={percentagePlayed}
           onChapterHover={this._onChapterTickHover}
           duration={duration} onChange={seek} timeline={timeline} />
-        {timeline ? this._renderChapterLabels(): null}
+        {timeline ? this._renderChapterLabels() : undefined}
         <Box pad="none" className={`${CLASS_ROOT}__controls-primary`}
           direction="row" justify="between">
           <Box direction="row" align="center"
@@ -128,7 +128,7 @@ export default class Controls extends Component {
             <VideoTime currentTime={currentTime} duration={duration} />
             {this._renderMuteButton()}
             {allowFullScreen ?
-              <VideoFullscreenButton onClick={fullscreen} /> : null}
+              <VideoFullscreenButton onClick={fullscreen} /> : undefined}
           </Box>
        </Box>
       </Box>

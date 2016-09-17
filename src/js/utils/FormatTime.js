@@ -1,4 +1,4 @@
-export default function (seconds) {
+export function formatTime(seconds) {
   const date = new Date(null);
   seconds = isNaN(seconds) ? 0 : Math.floor(seconds);
   date.setSeconds(seconds);

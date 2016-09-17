@@ -129,11 +129,9 @@ export default class Video extends Component {
   }
 
   _seek(time) {
-    if (time === 0) {
-      return this._video.currentTime = time;
-    }
-
-    this._video.currentTime = time || this._video.currentTime;
+    this._video.currentTime = typeof time !== 'undefined'
+      ? time
+      : this._video.currentTime;
   }
 
   _unmute() {
@@ -228,7 +226,7 @@ export default class Video extends Component {
           {...this._mediaEventProps}>
           {this.props.children}
         </video>
-        {showControls ? this._renderControls() : null}
+        {showControls ? this._renderControls() : undefined}
       </div>
     );
   }

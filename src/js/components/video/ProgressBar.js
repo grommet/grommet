@@ -34,11 +34,11 @@ export default class ProgressBar extends Component {
   }
 
   _renderChapterMarkers () {
-    const { timeline } = this.props;
+    const { duration, timeline } = this.props;
 
     if (timeline) {
       let chapters = timeline.map((chapter, index, chapters) => {
-        let percent = (chapter.time / this.props.duration) * 100;
+        let percent = (chapter.time / duration) * 100;
         let tickClasses = classnames(
           `${CLASS_ROOT}__chapter-marker-tick`,
           {
@@ -48,7 +48,7 @@ export default class ProgressBar extends Component {
 
         return (
           <div className={`${CLASS_ROOT}__chapter-marker`} key={chapter.time}
-            style={{width: percent + '%'}}>
+            style={{width: `${percent}%`}}>
             <div className={tickClasses}
               onMouseOver={this._onMouseOver.bind(this, index)}
               onMouseOut={this.props.onChapterHover}
