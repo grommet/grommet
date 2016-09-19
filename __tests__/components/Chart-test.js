@@ -15,40 +15,40 @@ import Marker from '../../src/js/components/chart/Marker';
 import MarkerLabel from '../../src/js/components/chart/MarkerLabel';
 import Value from '../../src/js/components/Value';
 
-//import { normalization } from '../../src/js/components/chart/utils-normalization';
+import { normalization } from '../../src/js/components/chart/utils-normalization';
 
 // needed because this:
 // https://github.com/facebook/jest/issues/1353
 jest.mock('react-dom');
 
 describe('normalization', () => {
-  //it('normalize returns the proper values', () => {
-  //  const granularity = 3;
-  //  const inputArray = [
-  //    [[1,1],[4,3]],
-  //    [[4,4],[7,7]]
-  //  ];
-  //  const outputArray = [
-  //    [1, 3, undefined],
-  //    [undefined, 4, 7]
-  //  ];
-  //  const normalization = new normalization();
-  //  expect(normalization.normalize(inputArray, granularity).values).toEqual(outputArray);
-  //});
-  //
-  //it('normalize returns the proper values', () => {
-  //  const granularity = 4;
-  //  const inputArray = [
-  //    [[4,3]],
-  //    [[4,4],[8,7]]
-  //  ];
-  //  const outputArray = [
-  //    [3, undefined],
-  //    [4, 7]
-  //  ];
-  //  const normalization = new normalization();
-  //  expect(normalization.normalize(inputArray, granularity).values).toEqual(outputArray);
-  //});
+  it('normalize returns the proper values', () => {
+    const granularity = 3;
+    const inputArray = [
+      [[1, 1], [4, 3]],
+      [[4, 4], [7, 7]]
+    ];
+    const outputArray = [
+      [1, 3, undefined],
+      [undefined, 4, 7]
+    ];
+    const nTest1 = new normalization();
+    expect(nTest1.normalize(inputArray, granularity).values).toEqual(outputArray);
+  });
+
+  it('normalize returns the proper values', () => {
+    const granularity = 4;
+    const inputArray = [
+      [[4, 3]],
+      [[4, 4], [8, 7]]
+    ];
+    const outputArray = [
+      [3, undefined],
+      [4, 7]
+    ];
+    const nTest2 = new normalization();
+    expect(nTest2.normalize(inputArray, granularity).values).toEqual(outputArray);
+  });
 
   it('has correct default options', () => {
     const component = renderer.create(
