@@ -70,12 +70,18 @@ export class normalization {
    * return xAxis => [2,4,6,8,10]
    *
    *
-   * @param Series array of 2D arrays
+   * @param series array of 2D arrays
    * @param granularity the interval of the data points, uses '1' as default
    */
 
-  getXAxis(Series, granularity) {
-    const xValues = this.getXValues(flatten(Series));
+  getXAxis(series, granularity) {
+    let flat = series;
+    // Check whether the series has more than one set of values
+    if (Array.isArray(series[0][0])) {
+      flat = flatten(series);
+    }
+
+    const xValues = this.getXValues(flat);
     const max = this.getMaxVal(xValues);
     const min = this.getMinVal(xValues);
 
@@ -170,24 +176,43 @@ export class normalization {
    */
 
   normalize(Series, granularity) {
-    if (!Series) return {};
+    if (!Series || Series.length === 0) {
+      return { values: [] };
+    }
+
     let result = {};
     let normalizedYValues = [];
     const xAxis = this.getXAxis(Series, granularity);
 
-    Series.map(series => {
+    //Handling the case of single array that needs to be normalized
+    if (!Array.isArray(Series[0][0])) {
       let seriesYValues = [];
-      const seriesZip = zip(...series);
+      const SeriesZip = zip(...Series);
       xAxis.map(xValue => {
-        const index = sortedIndexOf(seriesZip[0], xValue);
+        const index = sortedIndexOf(SeriesZip[0], xValue);
         if (index > -1) {
-          seriesYValues.push(parseInt(seriesZip[1][index], 10));
+          seriesYValues.push(parseInt(SeriesZip[1][index], 10));
         } else {
           seriesYValues.push(undefined);
         }
       });
-      normalizedYValues.push(seriesYValues);
-    });
+      console.log(seriesYValues);
+      normalizedYValues = seriesYValues;
+    } else {
+      Series.map(series => {
+        let seriesYValues = [];
+        const seriesZip = zip(...series);
+        xAxis.map(xValue => {
+          const index = sortedIndexOf(seriesZip[0], xValue);
+          if (index > -1) {
+            seriesYValues.push(parseInt(seriesZip[1][index], 10));
+          } else {
+            seriesYValues.push(undefined);
+          }
+        });
+        normalizedYValues.push(seriesYValues);
+      });
+    }
     result.values = normalizedYValues;
     return result;
   };
