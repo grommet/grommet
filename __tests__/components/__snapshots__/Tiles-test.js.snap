@@ -35,3 +35,299 @@ exports[`Tiles has correct default options 1`] = `
   </div>
 </div>
 `;
+
+exports[`Tiles renders with the Fill, Flush Example. 1`] = `
+<div
+  className="grommetux-box grommetux-box--direction-row grommetux-box--justify-start grommetux-box--responsive grommetux-box--pad-small grommetux-box--wrap grommetux-tiles grommetux-tiles--fill grommetux-tiles--flush"
+  id={undefined}
+  onClick={undefined}
+  role={undefined}
+  style={Object {}}
+  tabIndex={undefined}>
+  <div
+    className="grommetux-box grommetux-box--direction-column grommetux-box--align-start grommetux-box--responsive grommetux-box--pad-none grommetux-background-color-index-neutral-1 grommetux-tile grommetux-none-hover-color-index-disabled grommetux-tile--hover-border-small"
+    id={undefined}
+    onClick={undefined}
+    role={undefined}
+    style={Object {}}
+    tabIndex={undefined}>
+    <h4
+      className="grommetux-box grommetux-box--direction-row grommetux-box--align-center grommetux-box--pad-horizontal-small grommetux-header grommetux-header--small"
+      id={undefined}
+      onClick={undefined}
+      role={undefined}
+      style={Object {}}
+      tabIndex={undefined}>
+      <strong>
+        Tile 1
+      </strong>
+    </h4>
+    <div
+      className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-small"
+      id={undefined}
+      onClick={undefined}
+      role={undefined}
+      style={Object {}}
+      tabIndex={undefined}>
+      <p>
+        Tile summary content.
+      </p>
+    </div>
+  </div>
+  <div
+    className="grommetux-box grommetux-box--direction-column grommetux-box--align-start grommetux-box--responsive grommetux-box--pad-none grommetux-background-color-index-neutral-2 grommetux-tile grommetux-none-hover-color-index-disabled grommetux-tile--hover-border-small"
+    id={undefined}
+    onClick={undefined}
+    role={undefined}
+    style={Object {}}
+    tabIndex={undefined}>
+    <h4
+      className="grommetux-box grommetux-box--direction-row grommetux-box--align-center grommetux-box--pad-horizontal-small grommetux-header grommetux-header--small"
+      id={undefined}
+      onClick={undefined}
+      role={undefined}
+      style={Object {}}
+      tabIndex={undefined}>
+      <strong>
+        Tile 2
+      </strong>
+    </h4>
+    <div
+      className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-small"
+      id={undefined}
+      onClick={undefined}
+      role={undefined}
+      style={Object {}}
+      tabIndex={undefined}>
+      <p>
+        Tile summary content.
+      </p>
+    </div>
+  </div>
+  <div
+    className="grommetux-box grommetux-box--direction-column grommetux-box--align-start grommetux-box--responsive grommetux-box--pad-none grommetux-background-color-index-neutral-3 grommetux-tile grommetux-none-hover-color-index-disabled grommetux-tile--hover-border-small"
+    id={undefined}
+    onClick={undefined}
+    role={undefined}
+    style={Object {}}
+    tabIndex={undefined}>
+    <h4
+      className="grommetux-box grommetux-box--direction-row grommetux-box--align-center grommetux-box--pad-horizontal-small grommetux-header grommetux-header--small"
+      id={undefined}
+      onClick={undefined}
+      role={undefined}
+      style={Object {}}
+      tabIndex={undefined}>
+      <strong>
+        Tile 3
+      </strong>
+    </h4>
+    <div
+      className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-small"
+      id={undefined}
+      onClick={undefined}
+      role={undefined}
+      style={Object {}}
+      tabIndex={undefined}>
+      <p>
+        Tile summary content.
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tiles renders with the Not flush, Centered Example 1`] = `
+<div
+  className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--justify-center grommetux-box--responsive grommetux-box--pad-small grommetux-box--wrap grommetux-background-color-index-light-2 grommetux-tiles"
+  id={undefined}
+  onClick={undefined}
+  role={undefined}
+  style={Object {}}
+  tabIndex={undefined}>
+  <div
+    className="grommetux-box grommetux-box--direction-column grommetux-box--align-start grommetux-box--responsive grommetux-box--pad-none grommetux-background-color-index-light-1 grommetux-tile grommetux-none-hover-color-index-disabled grommetux-tile--hover-border-large"
+    id={undefined}
+    onClick={undefined}
+    role={undefined}
+    style={Object {}}
+    tabIndex={undefined}>
+    <h4
+      className="grommetux-box grommetux-box--direction-row grommetux-box--align-center grommetux-box--pad-horizontal-small grommetux-header grommetux-header--small"
+      id={undefined}
+      onClick={undefined}
+      role={undefined}
+      style={Object {}}
+      tabIndex={undefined}>
+      <strong>
+        Tile 1
+      </strong>
+    </h4>
+    <div
+      className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-small"
+      id={undefined}
+      onClick={undefined}
+      role={undefined}
+      style={Object {}}
+      tabIndex={undefined}>
+      <p>
+        Tile summary content.
+      </p>
+    </div>
+    <footer
+      className="grommetux-box grommetux-box--direction-row grommetux-box--justify-between grommetux-box--pad-none grommetux-footer"
+      id={undefined}
+      onClick={undefined}
+      role={undefined}
+      style={Object {}}
+      tabIndex={undefined}>
+      <span />
+      <div>
+        <button
+          aria-label="Open  Menu"
+          className="grommetux-button grommetux-menu grommetux-menu--column grommetux-menu--controlled grommetux-menu__control grommetux-button--plain grommetux-button--icon"
+          disabled={false}
+          href={undefined}
+          id={undefined}
+          onClick={[Function bound _onOpen]}
+          type="button">
+          <span
+            className="grommetux-button__icon">
+            <svg
+              aria-labelledby="more-title"
+              className="grommetux-control-icon grommetux-control-icon-more"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px">
+              <title
+                id="more-title">
+                <span
+                  id="more">
+                  more
+                </span>
+              </title>
+              <g>
+                <rect
+                  fill="none"
+                  height="24"
+                  width="24"
+                  x="0"
+                  y="0" />
+                <rect
+                  height="4"
+                  width="4"
+                  x="0"
+                  y="10" />
+                <rect
+                  height="4"
+                  width="4"
+                  x="10"
+                  y="10" />
+                <rect
+                  height="4"
+                  width="4"
+                  x="20"
+                  y="10" />
+              </g>
+            </svg>
+          </span>
+        </button>
+      </div>
+    </footer>
+  </div>
+  <div
+    className="grommetux-box grommetux-box--direction-column grommetux-box--align-start grommetux-box--responsive grommetux-box--pad-none grommetux-background-color-index-light-1 grommetux-tile grommetux-none-hover-color-index-disabled grommetux-tile--hover-border-large"
+    id={undefined}
+    onClick={undefined}
+    role={undefined}
+    style={Object {}}
+    tabIndex={undefined}>
+    <h4
+      className="grommetux-box grommetux-box--direction-row grommetux-box--align-center grommetux-box--pad-horizontal-small grommetux-header grommetux-header--small"
+      id={undefined}
+      onClick={undefined}
+      role={undefined}
+      style={Object {}}
+      tabIndex={undefined}>
+      <strong>
+        Tile 2
+      </strong>
+    </h4>
+    <div
+      className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-small"
+      id={undefined}
+      onClick={undefined}
+      role={undefined}
+      style={Object {}}
+      tabIndex={undefined}>
+      <p>
+        Tile summary content.
+      </p>
+    </div>
+    <footer
+      className="grommetux-box grommetux-box--direction-row grommetux-box--justify-between grommetux-box--pad-none grommetux-footer"
+      id={undefined}
+      onClick={undefined}
+      role={undefined}
+      style={Object {}}
+      tabIndex={undefined}>
+      <span />
+      <div>
+        <button
+          aria-label="Open  Menu"
+          className="grommetux-button grommetux-menu grommetux-menu--column grommetux-menu--controlled grommetux-menu__control grommetux-button--plain grommetux-button--icon"
+          disabled={false}
+          href={undefined}
+          id={undefined}
+          onClick={[Function bound _onOpen]}
+          type="button">
+          <span
+            className="grommetux-button__icon">
+            <svg
+              aria-labelledby="more-title"
+              className="grommetux-control-icon grommetux-control-icon-more"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px">
+              <title
+                id="more-title">
+                <span
+                  id="more">
+                  more
+                </span>
+              </title>
+              <g>
+                <rect
+                  fill="none"
+                  height="24"
+                  width="24"
+                  x="0"
+                  y="0" />
+                <rect
+                  height="4"
+                  width="4"
+                  x="0"
+                  y="10" />
+                <rect
+                  height="4"
+                  width="4"
+                  x="10"
+                  y="10" />
+                <rect
+                  height="4"
+                  width="4"
+                  x="20"
+                  y="10" />
+              </g>
+            </svg>
+          </span>
+        </button>
+      </div>
+    </footer>
+  </div>
+</div>
+`;
