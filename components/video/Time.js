@@ -42,8 +42,6 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 var _FormatTime = require('../../utils/FormatTime');
 
-var _FormatTime2 = _interopRequireDefault(_FormatTime);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var CLASS_ROOT = _CSSClassnames2.default.VIDEO; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
@@ -70,9 +68,9 @@ var Time = function (_Component) {
         _react2.default.createElement(
           _Heading2.default,
           { tag: 'h3', margin: 'none', className: CLASS_ROOT + '__time' },
-          (0, _FormatTime2.default)(currentTime),
+          (0, _FormatTime.formatTime)(currentTime),
           ' / ',
-          (0, _FormatTime2.default)(duration)
+          (0, _FormatTime.formatTime)(duration)
         )
       );
     }

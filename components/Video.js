@@ -174,11 +174,7 @@ var Video = function (_Component) {
   }, {
     key: '_seek',
     value: function _seek(time) {
-      if (time === 0) {
-        return this._video.currentTime = time;
-      }
-
-      this._video.currentTime = time || this._video.currentTime;
+      this._video.currentTime = typeof time !== 'undefined' ? time : this._video.currentTime;
     }
   }, {
     key: '_unmute',
@@ -230,7 +226,8 @@ var Video = function (_Component) {
     value: function _renderControls() {
       var extendedProps = (0, _assign2.default)({
         title: this.props.title,
-        togglePlay: this._togglePlay,
+        videoHeader: this.props.videoHeader,
+        togglePlay: this.props.onClick || this._togglePlay,
         toggleMute: this._toggleMute,
         play: this._play,
         pause: this._pause,
@@ -276,6 +273,12 @@ var Video = function (_Component) {
 
       var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--full', full), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--interacting', interacting), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--playing', playing), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--hasPlayed', hasPlayed), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--ended', ended), (0, _defineProperty3.default)(_classnames, BACKGROUND_COLOR_INDEX + '--' + colorIndex, colorIndex), _classnames), className);
 
+      var deprecatedProps = [];
+      if (this.props.videoHeader) deprecatedProps.push('videoHeader');
+      if (this.props.onClick) deprecatedProps.push('onClick');
+      if (this.props.duration) deprecatedProps.push('duration');
+      if (deprecatedProps.length > 0) console.warn('Video: ' + deprecatedProps.join(', ') + ' ' + 'prop has been deprecated.');
+
       return _react2.default.createElement(
         'div',
         { className: classes, onMouseMove: this._onMouseMove },
@@ -291,7 +294,7 @@ var Video = function (_Component) {
           }, this._mediaEventProps),
           this.props.children
         ),
-        showControls ? this._renderControls() : null
+        showControls ? this._renderControls() : undefined
       );
     }
   }]);
@@ -304,6 +307,7 @@ exports.default = Video;
 
 Video.propTypes = {
   colorIndex: _react.PropTypes.string,
+  duration: _react.PropTypes.number, // remove in 1.0
   full: _react.PropTypes.oneOf([true, 'horizontal', 'vertical', false]),
   poster: _react.PropTypes.string,
   size: _react2.default.PropTypes.oneOf(['small', 'medium', 'large']),
@@ -312,6 +316,8 @@ Video.propTypes = {
     time: _react.PropTypes.number
   })),
   title: _react.PropTypes.node,
+  videoHeader: _react.PropTypes.node, // remove in 1.0
+  onClick: _react.PropTypes.func, // remove in 1.0
   allowFullScreen: _react.PropTypes.bool,
   autoPlay: _react.PropTypes.bool,
   shareLink: _react.PropTypes.string,

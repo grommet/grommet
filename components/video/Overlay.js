@@ -107,22 +107,29 @@ var Overlay = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _props2 = this.props;
+      var ended = _props2.ended;
+      var playing = _props2.playing;
+      var togglePlay = _props2.togglePlay;
+      var videoHeader = _props2.videoHeader;
       // when iconSize is small (mobile screen sizes), remove the extra padding
       // so that the play control is centered
+
       var emptyBox = this.state.iconSize === 'small' ? null : _react2.default.createElement(_Box2.default, null);
 
       return _react2.default.createElement(
         _Box2.default,
         { pad: 'none', align: 'center', justify: 'center',
           className: CLASS_ROOT + '__overlay' },
+        videoHeader,
         _react2.default.createElement(
           _Box2.default,
           { pad: 'none', align: 'center', justify: 'center' },
           _react2.default.createElement(_PlayButton2.default, { iconSize: this.state.iconSize,
             className: CLASS_ROOT + '__play',
-            playing: this.props.playing,
-            ended: this.props.ended,
-            togglePlay: this.props.togglePlay })
+            playing: playing,
+            ended: ended,
+            togglePlay: togglePlay })
         ),
         this._renderReplayMenu(),
         emptyBox

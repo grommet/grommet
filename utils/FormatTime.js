@@ -3,8 +3,8 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-exports.default = function (seconds) {
+exports.formatTime = formatTime;
+function formatTime(seconds) {
   var date = new Date(null);
   seconds = isNaN(seconds) ? 0 : Math.floor(seconds);
   date.setSeconds(seconds);
@@ -16,6 +16,4 @@ exports.default = function (seconds) {
   }
 
   return time;
-};
-
-module.exports = exports["default"];
+}

@@ -78,8 +78,6 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 var _FormatTime = require('../../utils/FormatTime');
 
-var _FormatTime2 = _interopRequireDefault(_FormatTime);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var CLASS_ROOT = _CSSClassnames2.default.VIDEO; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
@@ -95,7 +93,7 @@ var Controls = function (_Component) {
     _this._onChapterTickHover = _this._onChapterTickHover.bind(_this);
 
     _this.state = {
-      activeChapterIndex: null
+      activeChapterIndex: undefined
     };
     return _this;
   }
@@ -132,9 +130,9 @@ var Controls = function (_Component) {
   }, {
     key: '_renderChapterLabels',
     value: function _renderChapterLabels() {
-      var _this2 = this;
-
-      var timeline = this.props.timeline;
+      var _props = this.props;
+      var duration = _props.duration;
+      var timeline = _props.timeline;
       var activeChapterIndex = this.state.activeChapterIndex;
 
 
@@ -142,7 +140,7 @@ var Controls = function (_Component) {
         var chapterLabels = timeline.map(function (chapter, index, chapters) {
           var _classnames;
 
-          var percent = chapter.time / _this2.props.duration * 100;
+          var percent = chapter.time / duration * 100;
           var classes = (0, _classnames3.default)(CLASS_ROOT + '__chapter-label', (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__chapter-label-start', percent === 0), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__chapter-label-active', activeChapterIndex === index), _classnames));
 
           return _react2.default.createElement(
@@ -157,7 +155,7 @@ var Controls = function (_Component) {
             _react2.default.createElement(
               'span',
               null,
-              (0, _FormatTime2.default)(chapter.time)
+              (0, _FormatTime.formatTime)(chapter.time)
             )
           );
         });
@@ -173,18 +171,18 @@ var Controls = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _props = this.props;
-      var togglePlay = _props.togglePlay;
-      var hasPlayed = _props.hasPlayed;
-      var playing = _props.playing;
-      var ended = _props.ended;
-      var currentTime = _props.currentTime;
-      var duration = _props.duration;
-      var percentagePlayed = _props.percentagePlayed;
-      var seek = _props.seek;
-      var timeline = _props.timeline;
-      var allowFullScreen = _props.allowFullScreen;
-      var fullscreen = _props.fullscreen;
+      var _props2 = this.props;
+      var togglePlay = _props2.togglePlay;
+      var hasPlayed = _props2.hasPlayed;
+      var playing = _props2.playing;
+      var ended = _props2.ended;
+      var currentTime = _props2.currentTime;
+      var duration = _props2.duration;
+      var percentagePlayed = _props2.percentagePlayed;
+      var seek = _props2.seek;
+      var timeline = _props2.timeline;
+      var allowFullScreen = _props2.allowFullScreen;
+      var fullscreen = _props2.fullscreen;
 
 
       if (!hasPlayed) {
@@ -198,7 +196,7 @@ var Controls = function (_Component) {
         _react2.default.createElement(_ProgressBar2.default, { progress: percentagePlayed,
           onChapterHover: this._onChapterTickHover,
           duration: duration, onChange: seek, timeline: timeline }),
-        timeline ? this._renderChapterLabels() : null,
+        timeline ? this._renderChapterLabels() : undefined,
         _react2.default.createElement(
           _Box2.default,
           { pad: 'none', className: CLASS_ROOT + '__controls-primary',
@@ -218,7 +216,7 @@ var Controls = function (_Component) {
               pad: { horizontal: 'small', vertical: 'none' } },
             _react2.default.createElement(_Time2.default, { currentTime: currentTime, duration: duration }),
             this._renderMuteButton(),
-            allowFullScreen ? _react2.default.createElement(_FullscreenButton2.default, { onClick: fullscreen }) : null
+            allowFullScreen ? _react2.default.createElement(_FullscreenButton2.default, { onClick: fullscreen }) : undefined
           )
         )
       );

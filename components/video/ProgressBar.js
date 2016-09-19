@@ -90,12 +90,14 @@ var ProgressBar = function (_Component) {
     value: function _renderChapterMarkers() {
       var _this2 = this;
 
-      var timeline = this.props.timeline;
+      var _props = this.props;
+      var duration = _props.duration;
+      var timeline = _props.timeline;
 
 
       if (timeline) {
         var chapters = timeline.map(function (chapter, index, chapters) {
-          var percent = chapter.time / _this2.props.duration * 100;
+          var percent = chapter.time / duration * 100;
           var tickClasses = (0, _classnames3.default)(CLASS_ROOT + '__chapter-marker-tick', (0, _defineProperty3.default)({}, CLASS_ROOT + '__chapter-marker-tick-start', percent === 0));
 
           return _react2.default.createElement(
@@ -120,9 +122,9 @@ var ProgressBar = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _props = this.props;
-      var progress = _props.progress;
-      var timeline = _props.timeline;
+      var _props2 = this.props;
+      var progress = _props2.progress;
+      var timeline = _props2.timeline;
 
 
       return _react2.default.createElement(
