@@ -246,7 +246,7 @@ export default class Video extends Component {
 
 Video.propTypes = {
   colorIndex: PropTypes.string,
-  duration: PropTypes.number,
+  duration: PropTypes.number, // remove in 1.0
   full: PropTypes.oneOf([true, 'horizontal', 'vertical', false]),
   poster: PropTypes.string,
   size: React.PropTypes.oneOf(['small', 'medium', 'large']),
@@ -255,8 +255,8 @@ Video.propTypes = {
     time: PropTypes.number
   })),
   title: PropTypes.node,
-  videoHeader: PropTypes.node,
-  onClick: PropTypes.func,
+  videoHeader: PropTypes.node, // remove in 1.0
+  onClick: PropTypes.func, // remove in 1.0
   allowFullScreen: PropTypes.bool,
   autoPlay: PropTypes.bool,
   shareLink: PropTypes.string,
