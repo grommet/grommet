@@ -28,7 +28,7 @@ exports[`NumberInput has correct default options 1`] = `
       className="grommetux-button__icon">
       <svg
         aria-labelledby="subtract-title"
-        className="grommetux-control-icon grommetux-control-icon-subtract"
+        className="grommetux-control-icon grommetux-control-icon-subtract grommetux-control-icon--responsive"
         height="24px"
         role="img"
         version="1.1"
@@ -73,7 +73,7 @@ exports[`NumberInput has correct default options 1`] = `
       className="grommetux-button__icon">
       <svg
         aria-labelledby="add-title"
-        className="grommetux-control-icon grommetux-control-icon-add"
+        className="grommetux-control-icon grommetux-control-icon-add grommetux-control-icon--responsive"
         height="24px"
         role="img"
         version="1.1"

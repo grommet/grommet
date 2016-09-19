@@ -21,7 +21,7 @@ exports[`Accordion has correct default options 1`] = `
       First Title
       <svg
         aria-labelledby="tab-next-title"
-        className="grommetux-control-icon grommetux-control-icon-tab-next grommetux-accordion-panel__control"
+        className="grommetux-control-icon grommetux-control-icon-tab-next grommetux-accordion-panel__control grommetux-control-icon--responsive"
         height="24px"
         role="img"
         version="1.1"
@@ -79,7 +79,7 @@ exports[`Accordion has correct initialIndex=0 rendering 1`] = `
       First Title
       <svg
         aria-labelledby="tab-next-title"
-        className="grommetux-control-icon grommetux-control-icon-tab-next grommetux-accordion-panel__control"
+        className="grommetux-control-icon grommetux-control-icon-tab-next grommetux-accordion-panel__control grommetux-control-icon--responsive"
         height="24px"
         role="img"
         version="1.1"
@@ -141,7 +141,7 @@ exports[`Accordion has correct initialIndex=0 rendering 1`] = `
       Second Title
       <svg
         aria-labelledby="tab-next-title"
-        className="grommetux-control-icon grommetux-control-icon-tab-next grommetux-accordion-panel__control"
+        className="grommetux-control-icon grommetux-control-icon-tab-next grommetux-accordion-panel__control grommetux-control-icon--responsive"
         height="24px"
         role="img"
         version="1.1"
@@ -199,7 +199,7 @@ exports[`Accordion has correct initialIndex=0 rendering 2`] = `
       First Title
       <svg
         aria-labelledby="tab-next-title"
-        className="grommetux-control-icon grommetux-control-icon-tab-next grommetux-accordion-panel__control"
+        className="grommetux-control-icon grommetux-control-icon-tab-next grommetux-accordion-panel__control grommetux-control-icon--responsive"
         height="24px"
         role="img"
         version="1.1"
@@ -261,7 +261,7 @@ exports[`Accordion has correct initialIndex=0 rendering 2`] = `
       Second Title
       <svg
         aria-labelledby="tab-next-title"
-        className="grommetux-control-icon grommetux-control-icon-tab-next grommetux-accordion-panel__control"
+        className="grommetux-control-icon grommetux-control-icon-tab-next grommetux-accordion-panel__control grommetux-control-icon--responsive"
         height="24px"
         role="img"
         version="1.1"
@@ -331,7 +331,7 @@ exports[`Accordion has correct openMulti=true rendering 1`] = `
       First Title
       <svg
         aria-labelledby="tab-next-title"
-        className="grommetux-control-icon grommetux-control-icon-tab-next grommetux-accordion-panel__control"
+        className="grommetux-control-icon grommetux-control-icon-tab-next grommetux-accordion-panel__control grommetux-control-icon--responsive"
         height="24px"
         role="img"
         version="1.1"
@@ -393,7 +393,7 @@ exports[`Accordion has correct openMulti=true rendering 1`] = `
       Second Title
       <svg
         aria-labelledby="tab-next-title"
-        className="grommetux-control-icon grommetux-control-icon-tab-next grommetux-accordion-panel__control"
+        className="grommetux-control-icon grommetux-control-icon-tab-next grommetux-accordion-panel__control grommetux-control-icon--responsive"
         height="24px"
         role="img"
         version="1.1"

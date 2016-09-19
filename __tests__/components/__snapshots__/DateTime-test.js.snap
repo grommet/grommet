@@ -20,7 +20,7 @@ exports[`DateTime has correct default options 1`] = `
       className="grommetux-button__icon">
       <svg
         aria-labelledby="clock-title"
-        className="grommetux-control-icon grommetux-control-icon-clock"
+        className="grommetux-control-icon grommetux-control-icon-clock grommetux-control-icon--responsive"
         height="24px"
         role="img"
         version="1.1"

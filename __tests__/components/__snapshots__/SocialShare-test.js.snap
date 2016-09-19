@@ -10,7 +10,7 @@ exports[`SocialShare has correct email rendering 1`] = `
     className="grommetux-anchor__icon">
     <svg
       aria-labelledby="social-email-title"
-      className="grommetux-control-icon grommetux-control-icon-social-email"
+      className="grommetux-control-icon grommetux-control-icon-social-email grommetux-control-icon--responsive"
       height="24px"
       role="img"
       version="1.1"
@@ -43,7 +43,7 @@ exports[`SocialShare has correct facebook rendering 1`] = `
     className="grommetux-anchor__icon">
     <svg
       aria-labelledby="social-facebook-title"
-      className="grommetux-control-icon grommetux-control-icon-social-facebook"
+      className="grommetux-control-icon grommetux-control-icon-social-facebook grommetux-control-icon--responsive"
       height="24px"
       role="img"
       version="1.1"
@@ -76,7 +76,7 @@ exports[`SocialShare has correct google rendering 1`] = `
     className="grommetux-anchor__icon">
     <svg
       aria-labelledby="social-linkedin-title"
-      className="grommetux-control-icon grommetux-control-icon-social-linkedin"
+      className="grommetux-control-icon grommetux-control-icon-social-linkedin grommetux-control-icon--responsive"
       height="24px"
       role="img"
       version="1.1"
@@ -109,7 +109,7 @@ exports[`SocialShare has correct linkedin rendering 1`] = `
     className="grommetux-anchor__icon">
     <svg
       aria-labelledby="social-linkedin-title"
-      className="grommetux-control-icon grommetux-control-icon-social-linkedin"
+      className="grommetux-control-icon grommetux-control-icon-social-linkedin grommetux-control-icon--responsive"
       height="24px"
       role="img"
       version="1.1"
@@ -142,7 +142,7 @@ exports[`SocialShare has correct text rendering 1`] = `
     className="grommetux-anchor__icon">
     <svg
       aria-labelledby="social-linkedin-title"
-      className="grommetux-control-icon grommetux-control-icon-social-linkedin"
+      className="grommetux-control-icon grommetux-control-icon-social-linkedin grommetux-control-icon--responsive"
       height="24px"
       role="img"
       version="1.1"
@@ -175,7 +175,7 @@ exports[`SocialShare has correct title rendering 1`] = `
     className="grommetux-anchor__icon">
     <svg
       aria-labelledby="social-linkedin-title"
-      className="grommetux-control-icon grommetux-control-icon-social-linkedin"
+      className="grommetux-control-icon grommetux-control-icon-social-linkedin grommetux-control-icon--responsive"
       height="24px"
       role="img"
       version="1.1"
@@ -208,7 +208,7 @@ exports[`SocialShare has correct twitter rendering 1`] = `
     className="grommetux-anchor__icon">
     <svg
       aria-labelledby="social-twitter-title"
-      className="grommetux-control-icon grommetux-control-icon-social-twitter"
+      className="grommetux-control-icon grommetux-control-icon-social-twitter grommetux-control-icon--responsive"
       height="24px"
       role="img"
       version="1.1"
