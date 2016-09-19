@@ -34,7 +34,7 @@ export class normalization {
    * @param data
    * return an array of all the xValues from the series map
    */
-  static getXValues (data) {
+  getXValues (data) {
     if (!data) return [];
     return data.map(dataPoint => parseInt(dataPoint[0], 10));
   };
@@ -81,7 +81,7 @@ export class normalization {
 
     if (!granularity) {
       // Possible to implement a calculator that with a given data points
-      // calculate the optimized granularity
+      // will calculate the optimized granularity
       granularity = 1;
       console.warn('granularity was not defined for getXAxis calculation');
     }
@@ -102,8 +102,8 @@ export class normalization {
    * @param arr
    * return a numeric value
    */
-  static getMinVal (arr) {
-    Math.min.apply(Math, arr);
+  getMinVal (arr) {
+    return Math.min.apply(Math, arr);
   }
 
   /**
@@ -112,8 +112,8 @@ export class normalization {
    * @param arr
    * return a numeric value
    */
-  static getMaxVal (arr) {
-    Math.max.apply(Math, arr);
+  getMaxVal (arr) {
+    return Math.max.apply(Math, arr);
   }
 
   /**
