@@ -23,7 +23,7 @@ exports[`SearchInput has correct default options 1`] = `
       className="grommetux-button__icon">
       <svg
         aria-labelledby="search-title"
-        className="grommetux-control-icon grommetux-control-icon-search"
+        className="grommetux-control-icon grommetux-control-icon-search grommetux-control-icon--responsive"
         height="24px"
         role="img"
         version="1.1"
