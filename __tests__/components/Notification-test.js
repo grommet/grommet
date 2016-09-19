@@ -14,7 +14,7 @@ describe('Notification', () => {
     const component = renderer.create(
       <Notification message="You will need a tray. The food is hot." />
     );
-    let tree = component.toJSON();
+    const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   it('renders with status option given', () => {
@@ -22,7 +22,7 @@ describe('Notification', () => {
       <Notification status="warning"
         message="You will need a tray. The food is hot." />
     );
-    let tree = component.toJSON();
+    const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   it('renders with closer set to true', () => {
@@ -30,7 +30,7 @@ describe('Notification', () => {
       <Notification closer
         message="You will need a tray. The food is hot." />
     );
-    let tree = component.toJSON();
+    const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   it('renders with closer set to true', () => {
@@ -38,7 +38,7 @@ describe('Notification', () => {
       <Notification flush
         message="You will need a tray. The food is hot." />
     );
-    let tree = component.toJSON();
+    const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   it('renders with padding set', () => {
@@ -46,7 +46,7 @@ describe('Notification', () => {
       <Notification padding={{ horizontal: 'large', vertical: 'large' }}
         message="You will need a tray. The food is hot." />
     );
-    let tree = component.toJSON();
+    const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   it('renders with a padding', () => {
@@ -55,7 +55,7 @@ describe('Notification', () => {
         padding={{ horizontal: 'medium', vertical: 'medium' }}
         message="You will need a tray. The food is hot." />
     );
-    let tree = component.toJSON();
+    const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
 });
