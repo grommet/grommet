@@ -73,7 +73,7 @@ exports[`Carousel has correct default options 1`] = `
             y="1.2071" />
           <polyline
             fill="none"
-            points="16.1397,0.7071 5.1397,11.7071 16.1397,22.7071 	"
+            points="16.1397,0.7071 5.1397,11.7071  16.1397,22.7071 	"
             stroke="#000000"
             strokeMiterlimit="10"
             strokeWidth="2" />
