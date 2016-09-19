@@ -166,9 +166,10 @@ export default class Layer extends Component {
 
   componentDidMount () {
     this._originalFocusedElement = document.activeElement;
-    this._originalScrollPosition = (
-      document.documentElement.scrollTop || document.body.scrollTop
-    );
+    this._originalScrollPosition = {
+      top: window.scrollY,
+      left: window.scrollX
+    };
     this._addLayer();
     this._renderLayer();
   }
@@ -180,17 +181,21 @@ export default class Layer extends Component {
   componentWillUnmount () {
     if (this._originalFocusedElement) {
       if (this._originalFocusedElement.focus) {
-        // wait for the fixed positining to come back to normal
+        // wait for the fixed positioning to come back to normal
         // see layer styling for reference
         setTimeout(() => {
           this._originalFocusedElement.focus();
-          window.scrollTo(0, this._originalScrollPosition);
+          window.scrollTo(
+            this._originalScrollPosition.left, this._originalScrollPosition.top
+          );
         }, 0);
       } else if (this._originalFocusedElement.parentNode &&
         this._originalFocusedElement.parentNode.focus) {
         // required for IE11 and Edge
         this._originalFocusedElement.parentNode.focus();
-        window.scrollTo(0, this._originalScrollPosition);
+        window.scrollTo(
+          this._originalScrollPosition.left, this._originalScrollPosition.top
+        );
       }
     }
 
@@ -252,16 +257,19 @@ export default class Layer extends Component {
           grommetApp.classList.remove(`${APP}--hidden`);
           // this must be null to work
           grommetApp.style.top = null;
+          grommetApp.style.left = null;
         } else {
           grommetApp.classList.add(`${APP}--hidden`);
-          // scroll body content to the original elemnt
-          grommetApp.style.top = `-${this._originalScrollPosition}px`;
+          // scroll body content to the original position
+          grommetApp.style.top = `-${this._originalScrollPosition.top}px`;
+          grommetApp.style.left = `-${this._originalScrollPosition.left}px`;
         }
       }, this);
     }
   }
 
   _renderLayer () {
+    const { hidden } = this.props;
     if (this._element) {
       this._element.className = this._classesFromProps();
       const contents = (
@@ -271,8 +279,11 @@ export default class Layer extends Component {
           router={this.context.router}
           store={this.context.store} />
       );
-      ReactDOM.render(contents, this._element);
-      this._handleAriaHidden(this.props.hidden);
+      ReactDOM.render(contents, this._element, () => {
+        if (!hidden) {
+          this._handleAriaHidden(false);
+        }
+      });
     }
   }
 
