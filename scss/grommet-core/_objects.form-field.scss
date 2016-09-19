@@ -168,6 +168,11 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
 
       &:focus {
         padding-left: ($inuit-base-spacing-unit - ($input-border-width + 1));
+
+        #{$dark-background-context} & option {
+          // fix white dropdown text in IE11
+          color: $text-color;
+        }
       }
     }
 

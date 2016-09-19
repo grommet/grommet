@@ -71,9 +71,10 @@ var Icon = function (_Component) {
       var _props2 = this.props;
       var a11yTitle = _props2.a11yTitle;
       var size = _props2.size;
+      var responsive = _props2.responsive;
 
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, CLASS_ROOT + '-language', className, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames, COLOR_INDEX + '-' + colorIndex, colorIndex), _classnames));
+      var classes = (0, _classnames3.default)(CLASS_ROOT, CLASS_ROOT + '-language', className, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--responsive', responsive), (0, _defineProperty3.default)(_classnames, COLOR_INDEX + '-' + colorIndex, colorIndex), _classnames));
 
       a11yTitle = a11yTitle || _react2.default.createElement(_FormattedMessage2.default, { id: 'language', defaultMessage: 'language' });
 
@@ -105,11 +106,13 @@ Icon.propTypes = {
   a11yTitle: _react.PropTypes.string,
   a11yTitleId: _react.PropTypes.string,
   colorIndex: _react.PropTypes.string,
-  size: _react.PropTypes.oneOf(['small', 'medium', 'large', 'xlarge', 'huge'])
+  size: _react.PropTypes.oneOf(['small', 'medium', 'large', 'xlarge', 'huge']),
+  responsive: _react.PropTypes.bool
 };
 
 Icon.defaultProps = {
-  a11yTitleId: 'language-title'
+  a11yTitleId: 'language-title',
+  responsive: true
 };
 
 Icon.icon = true;
