@@ -14,7 +14,7 @@ describe('SkipLinks', () => {
     const component = renderer.create(
        <SkipLinks />
     );
-    let tree = component.toJSON();
+    const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
 });
