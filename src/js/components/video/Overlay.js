@@ -46,6 +46,7 @@ export default class Overlay extends Component {
   }
 
   render() {
+    const { ended, playing, togglePlay, videoHeader } = this.props;
     // when iconSize is small (mobile screen sizes), remove the extra padding
     // so that the play control is centered
     let emptyBox = this.state.iconSize === 'small' ? null : <Box />;
@@ -53,12 +54,13 @@ export default class Overlay extends Component {
     return (
       <Box pad="none" align="center" justify="center"
         className={`${CLASS_ROOT}__overlay`}>
+        {videoHeader}
         <Box pad="none" align="center" justify="center">
           <VideoPlayButton iconSize={this.state.iconSize}
             className={`${CLASS_ROOT}__play`}
-            playing={this.props.playing}
-            ended={this.props.ended}
-            togglePlay={this.props.togglePlay} />
+            playing={playing}
+            ended={ended}
+            togglePlay={togglePlay} />
         </Box>
         {this._renderReplayMenu()}
         {emptyBox}

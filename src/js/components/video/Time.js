@@ -5,7 +5,7 @@ import React, { Component, PropTypes } from 'react';
 import Box from '../Box';
 import Heading from '../Heading';
 import CSSClassnames from '../../utils/CSSClassnames';
-import FormatTime from '../../utils/FormatTime';
+import { formatTime } from '../../utils/FormatTime';
 
 const CLASS_ROOT = CSSClassnames.VIDEO;
 
@@ -17,7 +17,7 @@ export default class Time extends Component {
     return (
       <Box pad={{ horizontal: 'small', vertical: 'none' }}>
         <Heading tag="h3" margin="none" className={`${CLASS_ROOT}__time`}>
-          {FormatTime(currentTime)} / {FormatTime(duration)}
+          {formatTime(currentTime)} / {formatTime(duration)}
         </Heading>
       </Box>
     );

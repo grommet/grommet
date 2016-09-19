@@ -129,11 +129,9 @@ export default class Video extends Component {
   }
 
   _seek(time) {
-    if (time === 0) {
-      return this._video.currentTime = time;
-    }
-
-    this._video.currentTime = time || this._video.currentTime;
+    this._video.currentTime = typeof time !== 'undefined'
+      ? time
+      : this._video.currentTime;
   }
 
   _unmute() {
@@ -177,7 +175,8 @@ export default class Video extends Component {
   _renderControls () {
     let extendedProps = Object.assign({
       title: this.props.title,
-      togglePlay: this._togglePlay,
+      videoHeader: this.props.videoHeader,
+      togglePlay: this.props.onClick || this._togglePlay,
       toggleMute: this._toggleMute,
       play: this._play,
       pause: this._pause,
@@ -218,6 +217,17 @@ export default class Video extends Component {
       className
     );
 
+    const deprecatedProps = [];
+    if (this.props.videoHeader)
+      deprecatedProps.push('videoHeader');
+    if (this.props.onClick)
+      deprecatedProps.push('onClick');
+    if (this.props.duration)
+      deprecatedProps.push('duration');
+    if (deprecatedProps.length > 0)
+      console.warn(`Video: ${deprecatedProps.join(', ')} ` +
+        'prop has been deprecated.');
+
     return (
       <div className={classes} onMouseMove={this._onMouseMove}>
         <video ref={el => this._video = el}
@@ -228,7 +238,7 @@ export default class Video extends Component {
           {...this._mediaEventProps}>
           {this.props.children}
         </video>
-        {showControls ? this._renderControls() : null}
+        {showControls ? this._renderControls() : undefined}
       </div>
     );
   }
@@ -236,6 +246,7 @@ export default class Video extends Component {
 
 Video.propTypes = {
   colorIndex: PropTypes.string,
+  duration: PropTypes.number, // remove in 1.0
   full: PropTypes.oneOf([true, 'horizontal', 'vertical', false]),
   poster: PropTypes.string,
   size: React.PropTypes.oneOf(['small', 'medium', 'large']),
@@ -244,6 +255,8 @@ Video.propTypes = {
     time: PropTypes.number
   })),
   title: PropTypes.node,
+  videoHeader: PropTypes.node, // remove in 1.0
+  onClick: PropTypes.func, // remove in 1.0
   allowFullScreen: PropTypes.bool,
   autoPlay: PropTypes.bool,
   shareLink: PropTypes.string,
