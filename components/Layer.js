@@ -260,7 +260,10 @@ var Layer = function (_Component2) {
     key: 'componentDidMount',
     value: function componentDidMount() {
       this._originalFocusedElement = document.activeElement;
-      this._originalScrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+      this._originalScrollPosition = {
+        top: window.scrollY,
+        left: window.scrollX
+      };
       this._addLayer();
       this._renderLayer();
     }
@@ -276,16 +279,16 @@ var Layer = function (_Component2) {
 
       if (this._originalFocusedElement) {
         if (this._originalFocusedElement.focus) {
-          // wait for the fixed positining to come back to normal
+          // wait for the fixed positioning to come back to normal
           // see layer styling for reference
           setTimeout(function () {
             _this4._originalFocusedElement.focus();
-            window.scrollTo(0, _this4._originalScrollPosition);
+            window.scrollTo(_this4._originalScrollPosition.left, _this4._originalScrollPosition.top);
           }, 0);
         } else if (this._originalFocusedElement.parentNode && this._originalFocusedElement.parentNode.focus) {
           // required for IE11 and Edge
           this._originalFocusedElement.parentNode.focus();
-          window.scrollTo(0, this._originalScrollPosition);
+          window.scrollTo(this._originalScrollPosition.left, this._originalScrollPosition.top);
         }
       }
 
@@ -346,10 +349,12 @@ var Layer = function (_Component2) {
             grommetApp.classList.remove(APP + '--hidden');
             // this must be null to work
             grommetApp.style.top = null;
+            grommetApp.style.left = null;
           } else {
             grommetApp.classList.add(APP + '--hidden');
-            // scroll body content to the original elemnt
-            grommetApp.style.top = '-' + _this5._originalScrollPosition + 'px';
+            // scroll body content to the original position
+            grommetApp.style.top = '-' + _this5._originalScrollPosition.top + 'px';
+            grommetApp.style.left = '-' + _this5._originalScrollPosition.left + 'px';
           }
         }, this);
       }
@@ -357,6 +362,10 @@ var Layer = function (_Component2) {
   }, {
     key: '_renderLayer',
     value: function _renderLayer() {
+      var _this6 = this;
+
+      var hidden = this.props.hidden;
+
       if (this._element) {
         this._element.className = this._classesFromProps();
         var contents = _react2.default.createElement(LayerContents, (0, _extends3.default)({}, this.props, {
@@ -364,8 +373,11 @@ var Layer = function (_Component2) {
           intl: this.context.intl,
           router: this.context.router,
           store: this.context.store }));
-        _reactDom2.default.render(contents, this._element);
-        this._handleAriaHidden(this.props.hidden);
+        _reactDom2.default.render(contents, this._element, function () {
+          if (!hidden) {
+            _this6._handleAriaHidden(false);
+          }
+        });
       }
     }
   }, {
