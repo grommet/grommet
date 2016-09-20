@@ -63,7 +63,7 @@ exports.default = {
     scrollState.scrollParent.addEventListener("scroll", scrollState._onScroll);
     window.addEventListener("resize", scrollState._onResize);
     // check in case we're already at the bottom and the indicator is visible
-    if (scrollState.scrollParent === document) {
+    if (scrollState.scrollParent === document || scrollState.scrollParent === document.body) {
       var rect = indicatorElement.getBoundingClientRect();
       if (rect.top < window.innerHeight) {
         scrollState.scrollTimer = setTimeout(onEnd, SCROLL_MORE_INITIAL_DELAY);
