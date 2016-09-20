@@ -106,7 +106,7 @@ exports[`Anchor has correct primary=true rendering 1`] = `
   target={undefined}>
   <svg
     aria-labelledby="undefined-icon"
-    className="grommetux-control-icon grommetux-control-icon-link-next"
+    className="grommetux-control-icon grommetux-control-icon-link-next grommetux-control-icon--responsive"
     height="24px"
     role="img"
     version="1.1"

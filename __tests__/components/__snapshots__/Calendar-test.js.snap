@@ -19,7 +19,7 @@ exports[`Calendar has correct default options 1`] = `
       className="grommetux-button__icon">
       <svg
         aria-labelledby="calendar-icon-title-id"
-        className="grommetux-control-icon grommetux-control-icon-calendar"
+        className="grommetux-control-icon grommetux-control-icon-calendar grommetux-control-icon--responsive"
         height="24px"
         role="img"
         version="1.1"

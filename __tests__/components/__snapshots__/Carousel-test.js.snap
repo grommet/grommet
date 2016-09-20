@@ -52,7 +52,7 @@ exports[`Carousel has correct default options 1`] = `
       className="grommetux-button__icon">
       <svg
         aria-labelledby="previous-title"
-        className="grommetux-control-icon grommetux-control-icon-previous grommetux-control-icon--large"
+        className="grommetux-control-icon grommetux-control-icon-previous grommetux-control-icon--large grommetux-control-icon--responsive"
         height="24px"
         role="img"
         version="1.1"
@@ -93,7 +93,7 @@ exports[`Carousel has correct default options 1`] = `
       className="grommetux-button__icon">
       <svg
         aria-labelledby="next-title"
-        className="grommetux-control-icon grommetux-control-icon-next grommetux-control-icon--large"
+        className="grommetux-control-icon grommetux-control-icon-next grommetux-control-icon--large grommetux-control-icon--responsive"
         height="24px"
         role="img"
         version="1.1"
