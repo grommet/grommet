@@ -50,6 +50,101 @@ describe('normalization', () => {
     expect(nTest2.normalize(inputArray, granularity).values).toEqual(outputArray);
   });
 
+  test('normalize returns the proper values', () => {
+    const granularity = 1;
+    const inputArray = [
+      [[1,2],[3,3],[4,5]],
+      [[0,4],[6,7]]
+    ];
+    const outputArray = [
+      [undefined, 2, undefined, 3, 5, undefined, undefined],
+      [4, undefined, undefined, undefined, undefined, undefined, 7]
+    ];
+    const nTest3 = new normalization();
+    expect(nTest3.normalize(inputArray, granularity).values).toEqual(outputArray);
+  });
+
+  test('normalize returns the proper values', () => {
+    const granularity = 1;
+    const inputArray = [
+      [[1,2],[3,3],[4,5]],
+      [[1,4],[6,7],[8,9]]
+    ];
+    const outputArray = [
+      [2, undefined, 3, 5, undefined, undefined, undefined, undefined],
+      [4, undefined, undefined, undefined, undefined, 7, undefined, 9]
+    ];
+    const nTest4 = new normalization();
+    expect(nTest4.normalize(inputArray, granularity).values).toEqual(outputArray);
+  });
+
+  test('normalize returns the proper values', () => {
+    const granularity = 1;
+    const inputArray = [[1,2],[3,3],[4,5]];
+    const outputArray = [2, undefined, 3, 5];
+
+    const nTest5 = new normalization();
+    expect(nTest5.normalize(inputArray, granularity).values).toEqual(outputArray);
+  });
+
+  test('normalize returns the proper values', () => {
+    const granularity = 1;
+    const inputArray = [
+      [[1,2],[3,3],[4,5]],
+      [[0,4],[6,7]]
+    ];
+    const outputArray = [
+      [undefined, 2, undefined, 3, 5, undefined, undefined],
+      [4, undefined, undefined, undefined, undefined, undefined, 7]
+    ];
+
+    const nTest6 = new normalization();
+    expect(nTest6.normalize(inputArray, granularity).values).toEqual(outputArray);
+  });
+
+  test('normalize returns the proper values', () => {
+    const granularity = 2;
+    const inputArray = [
+      [[2,2],[4,3],[6,5]],
+      [[4,4],[8,7]]
+    ];
+    const outputArray = [
+      [2, 3, 5, undefined],
+      [undefined, 4, undefined, 7]
+    ];
+    const nTest7 = new normalization();
+    expect(nTest7.normalize(inputArray, granularity).values).toEqual(outputArray);
+  });
+
+  test('normalize returns the proper values', () => {
+    const granularity = 3;
+    const inputArray = [
+      [[1,1],[4,3]],
+      [[4,4],[7,7]]
+    ];
+    const outputArray = [
+      [1, 3, undefined],
+      [undefined, 4, 7]
+    ];
+
+    const nTest8 = new normalization();
+    expect(nTest8.normalize(inputArray, granularity).values).toEqual(outputArray);
+  });
+
+  test('normalize returns the proper values', () => {
+    const granularity = 4;
+    const inputArray = [
+      [[4,3]],
+      [[4,4],[8,7]]
+    ];
+    const outputArray = [
+      [3, undefined],
+      [4, 7]
+    ];
+    const nTest9 = new normalization();
+    expect(nTest9.normalize(inputArray, granularity).values).toEqual(outputArray);
+  });
+
   it('has correct default options', () => {
     const component = renderer.create(
       <Chart vertical={false}>
