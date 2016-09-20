@@ -179,3 +179,4 @@ describe('normalization', () => {
     expect(tree).toMatchSnapshot();
   });
 });
+
