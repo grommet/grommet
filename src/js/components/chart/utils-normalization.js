@@ -196,7 +196,6 @@ export class normalization {
           seriesYValues.push(undefined);
         }
       });
-      console.log(seriesYValues);
       normalizedYValues = seriesYValues;
     } else {
       Series.map(series => {
