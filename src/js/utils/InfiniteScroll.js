@@ -48,8 +48,8 @@ export default {
       scrollParent: DOM.findScrollParents(indicatorElement)[0]
     };
 
-    scrollState._onResize = _onResize.bind(null, scrollState);
-    scrollState._onScroll = _onScroll.bind(null, scrollState);
+    scrollState._onResize = _onResize.bind(this, scrollState);
+    scrollState._onScroll = _onScroll.bind(this, scrollState);
 
     scrollState.scrollParent.addEventListener("scroll", scrollState._onScroll);
     window.addEventListener("resize", scrollState._onResize);

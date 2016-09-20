@@ -143,7 +143,7 @@ export default class Table extends Component {
 
         [].forEach.call(rows, (row) => {
           [].forEach.call(row.cells, (cell, index) => {
-            cell.setAttribute('data-th', 
+            cell.setAttribute('data-th',
               headerCells[index].innerText || headerCells[index].textContent);
           });
         });
@@ -161,7 +161,7 @@ export default class Table extends Component {
     this._alignMirror();
 
     let availableSize = this.containerRef.offsetWidth;
-    let numberOfCells = this.table.querySelectorAll('thead th').lengthRef;
+    let numberOfCells = this.tableRef.querySelectorAll('thead th').lengthRef;
 
     if ((numberOfCells * MIN_CELL_WIDTH) > availableSize) {
       this.setState({small: true});
@@ -172,15 +172,17 @@ export default class Table extends Component {
 
   _buildMirror () {
     let tableElement = this.tableRef;
-    let cells = tableElement.querySelectorAll('thead tr th');
-    let mirrorElement = this.mirrorRef;
-    if (mirrorElement) {
-      let mirrorRow = mirrorElement.querySelectorAll('thead tr')[0];
-      while (mirrorRow.hasChildNodes()) {
-        mirrorRow.removeChild(mirrorRow.lastChild);
-      }
-      for (let i = 0; i < cells.length; i++) {
-        mirrorRow.appendChild(cells[i].cloneNode(true));
+    if (tableElement) {
+      let cells = tableElement.querySelectorAll('thead tr th');
+      let mirrorElement = this.mirrorRef;
+      if (mirrorElement) {
+        let mirrorRow = mirrorElement.querySelectorAll('thead tr')[0];
+        while (mirrorRow.hasChildNodes()) {
+          mirrorRow.removeChild(mirrorRow.lastChild);
+        }
+        for (let i = 0; i < cells.length; i++) {
+          mirrorRow.appendChild(cells[i].cloneNode(true));
+        }
       }
     }
   }
