@@ -3,7 +3,6 @@
 .grommet.#{$grommet-namespace}app {
 
   @include media-query(lap-and-up) {
-    position: absolute;
     top: 0px;
     bottom: 0px;
     left: 0px;

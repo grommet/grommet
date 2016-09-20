@@ -227,7 +227,7 @@ var Table = function (_Component) {
       this._alignMirror();
 
       var availableSize = this.containerRef.offsetWidth;
-      var numberOfCells = this.table.querySelectorAll('thead th').lengthRef;
+      var numberOfCells = this.tableRef.querySelectorAll('thead th').lengthRef;
 
       if (numberOfCells * MIN_CELL_WIDTH > availableSize) {
         this.setState({ small: true });
@@ -239,15 +239,17 @@ var Table = function (_Component) {
     key: '_buildMirror',
     value: function _buildMirror() {
       var tableElement = this.tableRef;
-      var cells = tableElement.querySelectorAll('thead tr th');
-      var mirrorElement = this.mirrorRef;
-      if (mirrorElement) {
-        var mirrorRow = mirrorElement.querySelectorAll('thead tr')[0];
-        while (mirrorRow.hasChildNodes()) {
-          mirrorRow.removeChild(mirrorRow.lastChild);
-        }
-        for (var i = 0; i < cells.length; i++) {
-          mirrorRow.appendChild(cells[i].cloneNode(true));
+      if (tableElement) {
+        var cells = tableElement.querySelectorAll('thead tr th');
+        var mirrorElement = this.mirrorRef;
+        if (mirrorElement) {
+          var mirrorRow = mirrorElement.querySelectorAll('thead tr')[0];
+          while (mirrorRow.hasChildNodes()) {
+            mirrorRow.removeChild(mirrorRow.lastChild);
+          }
+          for (var i = 0; i < cells.length; i++) {
+            mirrorRow.appendChild(cells[i].cloneNode(true));
+          }
         }
       }
     }
