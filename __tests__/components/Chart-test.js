@@ -145,11 +145,20 @@ describe('normalization', () => {
     expect(nTest9.normalize(inputArray, granularity).values).toEqual(outputArray);
   });
 
+  test('normalize returns the proper values', () => {
+    const granularity = 3;
+    const inputArray = [[0,2],[3,3]];
+    const outputArray = [2, 3];
+
+    const nTest10 = new normalization();
+    expect(nTest10.normalize(inputArray, granularity).values).toEqual(outputArray);
+  });
+
   it('has correct default options', () => {
     const component = renderer.create(
       <Chart vertical={false}>
         <Axis vertical={true} ticks={true} count={5} tickAlign="end"
-          labels={
+              labels={
             [{"index": 2, "label": "50"}, {"index": 4, "label": "100"}]
           } />
         <Chart vertical={true}>
@@ -167,9 +176,7 @@ describe('normalization', () => {
             <HotSpots count={12} activeIndex={11}/>
           </Layers>
           <Axis ticks={true} count={2}
-                labels={
-    [{"index": 0, "label": "2014"}, {"index": 1, "label": "2015"}]
-}/>
+                labels={[{"index": 0, "label": "2014"}, {"index": 1, "label": "2015"}]}/>
         </Chart>
         <MarkerLabel vertical={true} colorIndex="critical" label="90%"
                      value={90}/>
