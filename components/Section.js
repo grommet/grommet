@@ -65,13 +65,8 @@ var Section = function (_Component) {
 
       var boxProps = (0, _extends3.default)({}, this.props);
       delete boxProps.className;
-      delete boxProps.children;
 
-      return _react2.default.createElement(
-        _Box2.default,
-        (0, _extends3.default)({}, boxProps, { tag: 'section', className: classes }),
-        this.props.children
-      );
+      return _react2.default.createElement(_Box2.default, (0, _extends3.default)({}, boxProps, { tag: 'section', className: classes }));
     }
   }]);
   return Section;
@@ -81,9 +76,7 @@ Section.displayName = 'Section';
 exports.default = Section;
 ;
 
-Section.propTypes = (0, _extends3.default)({
-  primary: _react.PropTypes.bool
-}, _Box2.default.propTypes);
+Section.propTypes = (0, _extends3.default)({}, _Box2.default.propTypes);
 
 Section.defaultProps = {
   pad: { vertical: 'medium' }

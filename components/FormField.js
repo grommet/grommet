@@ -102,9 +102,6 @@ var FormField = function (_Component) {
       if (this.state.focus) {
         classes.push(CLASS_ROOT + "--focus");
       }
-      if (this.props.required) {
-        classes.push(CLASS_ROOT + "--required");
-      }
       if (this.props.hidden) {
         classes.push(CLASS_ROOT + "--hidden");
       }
@@ -178,7 +175,6 @@ FormField.propTypes = {
   hidden: _react.PropTypes.bool,
   htmlFor: _react.PropTypes.string,
   label: _react.PropTypes.node,
-  required: _react.PropTypes.bool,
   size: _react.PropTypes.oneOf(['medium', 'large']),
   strong: _react.PropTypes.bool
 };

@@ -114,6 +114,7 @@ AccordionPanel.propTypes = {
   active: _react.PropTypes.bool, // remove in 1.0, use {active from Accordion}
   animate: _react.PropTypes.bool,
   heading: _react.PropTypes.node.isRequired,
-  onChange: _react.PropTypes.func
+  onChange: _react.PropTypes.func,
+  pad: _Header2.default.propTypes.pad
 };
 module.exports = exports['default'];

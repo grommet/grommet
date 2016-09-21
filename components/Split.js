@@ -195,6 +195,7 @@ exports.default = Split;
 Split.propTypes = {
   fixed: _react.PropTypes.bool,
   flex: _react.PropTypes.oneOf(['left', 'right', 'both']),
+  onResponsive: _react.PropTypes.func,
   priority: _react.PropTypes.oneOf(['left', 'right']),
   separator: _react.PropTypes.bool,
   showOnResponsive: _react.PropTypes.oneOf(['priority', 'both'])

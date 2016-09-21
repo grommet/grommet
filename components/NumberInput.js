@@ -166,9 +166,9 @@ NumberInput.propTypes = {
   defaultValue: _react.PropTypes.number,
   disabled: _react.PropTypes.bool,
   id: _react.PropTypes.string,
-  name: _react.PropTypes.string,
   max: _react.PropTypes.number,
   min: _react.PropTypes.number,
+  name: _react.PropTypes.string,
   onChange: _react.PropTypes.func,
   step: _react.PropTypes.number,
   value: _react.PropTypes.number

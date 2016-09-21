@@ -304,10 +304,12 @@ var Meter = function (_Component) {
       //   result = 0;
       // }
       if (props.hasOwnProperty('important')) {
+        console.warn('Meter: important prop has been deprecated. ' + 'Use a activeIndex instead.');
         result = props.important;
       }
       series.some(function (data, index) {
         if (data.important) {
+          console.warn('Meter: seriesp[].important has been deprecated. ' + 'Use a activeIndex instead.');
           result = index;
           return true;
         }
@@ -687,14 +689,14 @@ Meter.propTypes = {
     label: _react.PropTypes.string
   }), _react.PropTypes.number]),
   onActive: _react.PropTypes.func,
-  size: _react.PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
   series: _react.PropTypes.arrayOf(_react.PropTypes.shape({
     label: _react.PropTypes.string, // remove in 1.0
     value: _react.PropTypes.number.isRequired,
     colorIndex: _react.PropTypes.string,
-    important: _react.PropTypes.bool,
+    important: _react.PropTypes.bool, // remove in 1.0, use activeIndex
     onClick: _react.PropTypes.func
   })),
+  size: _react.PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
   stacked: _react.PropTypes.bool,
   tabIndex: _react.PropTypes.string,
   threshold: _react.PropTypes.number,

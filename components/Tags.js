@@ -59,7 +59,11 @@ var Tags = function (_Component) {
 
   function Tags() {
     (0, _classCallCheck3.default)(this, Tags);
-    return (0, _possibleConstructorReturn3.default)(this, (Tags.__proto__ || (0, _getPrototypeOf2.default)(Tags)).apply(this, arguments));
+
+    var _this = (0, _possibleConstructorReturn3.default)(this, (Tags.__proto__ || (0, _getPrototypeOf2.default)(Tags)).call(this));
+
+    console.warn('Tags: component has been deprecated. Use Box instead.');
+    return _this;
   }
 
   (0, _createClass3.default)(Tags, [{

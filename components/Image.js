@@ -103,7 +103,6 @@ exports.default = Image;
 Image.propTypes = {
   alt: _react.PropTypes.string,
   caption: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.string]),
-  className: _react.PropTypes.string,
   full: _react.PropTypes.oneOf([true, 'horizontal', 'vertical', false]),
   id: _react.PropTypes.string,
   mask: _react.PropTypes.bool,

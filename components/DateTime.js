@@ -375,7 +375,6 @@ exports.default = DateTime;
 
 DateTime.propTypes = {
   format: _react.PropTypes.string,
-  id: _react.PropTypes.string,
   name: _react.PropTypes.string,
   onChange: _react.PropTypes.func,
   step: _react.PropTypes.number,

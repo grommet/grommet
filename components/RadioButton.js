@@ -56,6 +56,9 @@ var RadioButton = function (_Component) {
     key: 'render',
     value: function render() {
       var classes = (0, _classnames3.default)(CLASS_ROOT, this.props.className, (0, _defineProperty3.default)({}, CLASS_ROOT + '--disabled', this.props.disabled));
+      if (this.props.hasOwnProperty('value')) {
+        console.warn('RadioButton: value prop has been deprecated. ' + 'Use checked instead.');
+      }
 
       return _react2.default.createElement(
         'label',
@@ -85,12 +88,11 @@ exports.default = RadioButton;
 
 RadioButton.propTypes = {
   checked: _react.PropTypes.bool,
-  disabled: _react.PropTypes.bool,
   defaultChecked: _react.PropTypes.bool,
+  disabled: _react.PropTypes.bool,
   id: _react.PropTypes.string.isRequired,
   label: _react.PropTypes.node.isRequired,
   name: _react.PropTypes.string,
-  onChange: _react.PropTypes.func,
-  value: _react.PropTypes.string
+  onChange: _react.PropTypes.func
 };
 module.exports = exports['default'];

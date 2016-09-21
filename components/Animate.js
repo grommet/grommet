@@ -302,12 +302,12 @@ Animate.propTypes = {
     duration: _react.PropTypes.number,
     delay: _react.PropTypes.number
   }),
+  keep: _react.PropTypes.bool,
   leave: _react.PropTypes.shape({
     animation: _react.PropTypes.string,
     duration: _react.PropTypes.number,
     delay: _react.PropTypes.number
   }),
-  keep: _react.PropTypes.bool,
   visible: _react.PropTypes.bool
 };
 

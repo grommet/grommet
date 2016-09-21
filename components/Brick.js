@@ -161,7 +161,7 @@ Brick.displayName = 'Brick';
 exports.default = Brick;
 ;
 
-Brick.propTypes = {
+Brick.propTypes = { // remove in 1.0, use Box
   colorIndex: _react.PropTypes.string,
   href: _react.PropTypes.string,
   label: _react.PropTypes.string,

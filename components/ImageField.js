@@ -56,6 +56,7 @@ var ImageField = function (_Component) {
 
     var _this = (0, _possibleConstructorReturn3.default)(this, (ImageField.__proto__ || (0, _getPrototypeOf2.default)(ImageField)).call(this, props, context));
 
+    console.warn('ImageField: component has been deprecated.');
     _this._onChange = _this._onChange.bind(_this);
     _this._onDrop = _this._onDrop.bind(_this);
     _this._onClear = _this._onClear.bind(_this);

@@ -131,9 +131,9 @@ Anchor.propTypes = {
   label: _react.PropTypes.node,
   onClick: _react.PropTypes.func,
   primary: _react.PropTypes.bool,
+  reverse: _react.PropTypes.bool,
   tag: _react.PropTypes.string,
-  target: _react.PropTypes.string,
-  reverse: _react.PropTypes.bool
+  target: _react.PropTypes.string
 };
 
 Anchor.defaultProps = {

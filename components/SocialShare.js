@@ -117,12 +117,12 @@ exports.default = SocialShare;
 ;
 
 SocialShare.propTypes = {
+  a11yTitle: _react.PropTypes.string,
   colorIndex: _react.PropTypes.string,
-  type: _react.PropTypes.oneOf(['email', 'facebook', 'twitter', 'linkedin', 'google']).isRequired,
   link: _react.PropTypes.string.isRequired,
-  title: _react.PropTypes.string,
   text: _react.PropTypes.string,
-  a11yTitle: _react.PropTypes.string
+  title: _react.PropTypes.string,
+  type: _react.PropTypes.oneOf(['email', 'facebook', 'twitter', 'linkedin', 'google']).isRequired
 };
 
 SocialShare.defaultProps = {

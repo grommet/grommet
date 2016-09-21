@@ -68,5 +68,7 @@ Bricks.displayName = 'Bricks';
 exports.default = Bricks;
 ;
 
+// remove in 1.0, use Box
+
 Bricks.displayName = 'Bricks';
 module.exports = exports['default'];

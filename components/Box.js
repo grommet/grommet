@@ -319,7 +319,6 @@ Box.propTypes = {
   appCentered: _react.PropTypes.bool,
   backgroundImage: _react.PropTypes.string,
   basis: _react.PropTypes.oneOf(SIZES),
-  children: _react.PropTypes.any,
   colorIndex: _react.PropTypes.string,
   containerClassName: _react.PropTypes.string,
   direction: _react.PropTypes.oneOf(['row', 'column']),

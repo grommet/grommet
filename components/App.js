@@ -121,11 +121,12 @@ App.displayName = 'App';
 exports.default = App;
 
 
-App.defaultProps = {
-  centered: true
+App.propTypes = {
+  centered: _react.PropTypes.bool,
+  inline: _react.PropTypes.bool
 };
 
-App.propTypes = {
-  centered: _react.PropTypes.bool
+App.defaultProps = {
+  centered: true
 };
 module.exports = exports['default'];

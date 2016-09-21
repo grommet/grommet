@@ -88,7 +88,6 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import CarouselControls from './CarouselControls';
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = _CSSClassnames2.default.ARTICLE;
@@ -602,14 +601,7 @@ var Article = function (_Component) {
     value: function _renderControls() {
       var CONTROL_CLASS_PREFIX = CLASS_ROOT + '__control ' + CLASS_ROOT + '__control';
       var childCount = _react2.default.Children.count(this.props.children);
-      var controls = [
-        // Don't use CarouselControls for now
-        // <CarouselControls key="carousel"
-        //   className={CONTROL_CLASS_PREFIX + "carousel"}
-        //   count={childCount}
-        //   direction={this.props.direction}
-        //   selected={this.state.selectedIndex} onChange={this._onSelect} />
-      ];
+      var controls = [];
 
       var a11yTitle = this.props.a11yTitle || {};
       if ('row' === this.props.direction) {
@@ -742,9 +734,7 @@ exports.default = Article;
 
 
 Article.propTypes = (0, _extends3.default)({
-  controls: _react.PropTypes.bool,
-  primary: _react.PropTypes.bool,
-  scrollStep: _react.PropTypes.bool
+  controls: _react.PropTypes.bool
 }, _Box2.default.propTypes, {
   a11yTitle: _react.PropTypes.shape({
     next: _react.PropTypes.string,
@@ -752,6 +742,7 @@ Article.propTypes = (0, _extends3.default)({
   }),
   onProgress: _react.PropTypes.func,
   onSelect: _react.PropTypes.func,
+  scrollStep: _react.PropTypes.bool,
   selected: _react.PropTypes.number
 });
 

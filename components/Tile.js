@@ -121,12 +121,11 @@ exports.default = Tile;
 
 
 Tile.propTypes = (0, _extends3.default)({
-  selected: _react.PropTypes.bool,
-  wide: _react.PropTypes.bool, /// deprecated to Box.basis='full'
   hoverStyle: _react.PropTypes.oneOf(['border', 'background', 'none']),
   hoverColorIndex: _react.PropTypes.string,
-  hoverBorderSize: _react.PropTypes.oneOf(['small', 'medium', 'large'])
-}, _Box2.default.propTypes);
+  hoverBorderSize: _react.PropTypes.oneOf(['small', 'medium', 'large']),
+  selected: _react.PropTypes.bool,
+  wide: _react.PropTypes.bool }, _Box2.default.propTypes);
 
 Tile.defaultProps = {
   pad: 'none',

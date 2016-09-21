@@ -115,6 +115,7 @@ Button.propTypes = {
   accent: _react.PropTypes.bool,
   align: _react.PropTypes.oneOf(['start', 'center', 'end']),
   fill: _react.PropTypes.bool,
+  href: _react.PropTypes.string,
   icon: _react.PropTypes.element,
   id: _react.PropTypes.string,
   label: _react.PropTypes.node,

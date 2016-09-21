@@ -306,26 +306,26 @@ exports.default = Video;
 
 
 Video.propTypes = {
+  allowFullScreen: _react.PropTypes.bool,
+  autoPlay: _react.PropTypes.bool,
   colorIndex: _react.PropTypes.string,
   duration: _react.PropTypes.number, // remove in 1.0
   full: _react.PropTypes.oneOf([true, 'horizontal', 'vertical', false]),
+  loop: _react.PropTypes.bool,
+  muted: _react.PropTypes.bool,
+  onClick: _react.PropTypes.func, // remove in 1.0
   poster: _react.PropTypes.string,
+  shareLink: _react.PropTypes.string,
+  shareHeadline: _react.PropTypes.string,
+  shareText: _react.PropTypes.string,
+  showControls: _react.PropTypes.bool,
   size: _react2.default.PropTypes.oneOf(['small', 'medium', 'large']),
   timeline: _react.PropTypes.arrayOf(_react.PropTypes.shape({
     label: _react.PropTypes.string,
     time: _react.PropTypes.number
   })),
   title: _react.PropTypes.node,
-  videoHeader: _react.PropTypes.node, // remove in 1.0
-  onClick: _react.PropTypes.func, // remove in 1.0
-  allowFullScreen: _react.PropTypes.bool,
-  autoPlay: _react.PropTypes.bool,
-  shareLink: _react.PropTypes.string,
-  shareHeadline: _react.PropTypes.string,
-  shareText: _react.PropTypes.string,
-  showControls: _react.PropTypes.bool,
-  muted: _react.PropTypes.bool,
-  loop: _react.PropTypes.bool
+  videoHeader: _react.PropTypes.node // remove in 1.0
 };
 
 Video.defaultProps = {

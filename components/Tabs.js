@@ -62,8 +62,12 @@ var Tabs = function (_Component) {
 
     _this._activateTab = _this._activateTab.bind(_this);
 
+    if (props.initialIndex) {
+      console.warn('Tabs: initialIndex prop has been deprecated. ' + 'Use activeIndex instead.');
+    }
+
     _this.state = {
-      activeIndex: props.initialIndex,
+      activeIndex: props.activeIndex,
       justify: props.justify
     };
     return _this;
@@ -157,7 +161,7 @@ Tabs.contextTypes = {
 };
 
 Tabs.defaultProps = {
-  initialIndex: 0,
+  activeIndex: 0,
   justify: 'center',
   responsive: true
 };

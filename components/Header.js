@@ -140,10 +140,14 @@ var Header = function (_Component) {
         classes.push(CLASS_ROOT + '--splash');
       }
       if (this.props.strong) {
+        console.warn('Header: string prop has been deprecated. ' + 'Use a separate Heading instead.');
         classes.push(CLASS_ROOT + '--strong');
       }
       if (this.props.className) {
         classes.push(this.props.className);
+      }
+      if (this.props.tag) {
+        console.warn('Header: tag prop has been deprecated. ' + 'Use a separate Heading instead.');
       }
 
       if (this.props.fixed) {
@@ -189,9 +193,8 @@ Header.propTypes = (0, _extends3.default)({
   float: _react.PropTypes.bool,
   size: _react.PropTypes.oneOf(['small', 'medium', 'large']),
   splash: _react.PropTypes.bool,
-  strong: _react.PropTypes.bool,
-  tag: _react.PropTypes.string
-}, _Box2.default.propTypes);
+  strong: _react.PropTypes.bool, // remove in 1.0
+  tag: _react.PropTypes.string }, _Box2.default.propTypes);
 
 Header.defaultProps = {
   pad: { horizontal: 'none', vertical: 'none', between: 'small' },

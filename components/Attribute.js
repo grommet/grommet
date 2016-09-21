@@ -72,7 +72,7 @@ Attribute.displayName = 'Attribute';
 exports.default = Attribute;
 ;
 
-Attribute.propTypes = {
+Attribute.propTypes = { // remove in 1.0
   label: _react.PropTypes.string
 };
 module.exports = exports['default'];

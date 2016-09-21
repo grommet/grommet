@@ -1170,7 +1170,7 @@ Chart.displayName = 'Chart';
 exports.default = Chart;
 
 
-Chart.propTypes = {
+Chart.propTypes = { // remove in 1.0
   a11yTitle: _react.PropTypes.string,
   a11yTitleId: _react.PropTypes.string,
   a11yDescId: _react.PropTypes.string,

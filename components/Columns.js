@@ -289,7 +289,6 @@ exports.default = Columns;
 
 
 Columns.propTypes = {
-  count: _react.PropTypes.number,
   justify: _react.PropTypes.oneOf(['start', 'center', 'between', 'end']),
   masonry: _react.PropTypes.bool,
   maxCount: _react.PropTypes.number,
