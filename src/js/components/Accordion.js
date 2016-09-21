@@ -10,6 +10,7 @@ import Props from '../utils/Props';
 const CLASS_ROOT = CSSClassnames.ACCORDION;
 
 export default class Accordion extends Component {
+
   constructor(props, context) {
     super(props, context);
     this._onPanelChange = this._onPanelChange.bind(this);

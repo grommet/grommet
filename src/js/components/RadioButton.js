@@ -15,6 +15,12 @@ export default class RadioButton extends Component {
         [`${CLASS_ROOT}--disabled`]: this.props.disabled
       }
     );
+    if (this.props.hasOwnProperty('value')) {
+      console.warn(
+        'RadioButton: value prop has been deprecated. ' +
+        'Use checked instead.'
+      );
+    }
 
     return (
       <label className={classes}>
@@ -36,11 +42,10 @@ export default class RadioButton extends Component {
 
 RadioButton.propTypes = {
   checked: PropTypes.bool,
-  disabled: PropTypes.bool,
   defaultChecked: PropTypes.bool,
+  disabled: PropTypes.bool,
   id: PropTypes.string.isRequired,
   label: PropTypes.node.isRequired,
   name: PropTypes.string,
-  onChange: PropTypes.func,
-  value: PropTypes.string
+  onChange: PropTypes.func
 };

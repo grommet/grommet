@@ -52,7 +52,6 @@ Image.propTypes = {
   caption: PropTypes.oneOfType([
     PropTypes.bool, PropTypes.string
   ]),
-  className: PropTypes.string,
   full: PropTypes.oneOf([true, 'horizontal', 'vertical', false]),
   id: PropTypes.string,
   mask: PropTypes.bool,

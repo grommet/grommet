@@ -79,10 +79,20 @@ export default class Header extends Component {
       classes.push(`${CLASS_ROOT}--splash`);
     }
     if (this.props.strong) {
+      console.warn(
+        'Header: string prop has been deprecated. ' +
+        'Use a separate Heading instead.'
+      );
       classes.push(`${CLASS_ROOT}--strong`);
     }
     if (this.props.className) {
       classes.push(this.props.className);
+    }
+    if (this.props.tag) {
+      console.warn(
+        'Header: tag prop has been deprecated. ' +
+        'Use a separate Heading instead.'
+      );
     }
 
     if (this.props.fixed) {
@@ -115,8 +125,8 @@ Header.propTypes = {
   float: PropTypes.bool,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   splash: PropTypes.bool,
-  strong: PropTypes.bool,
-  tag: PropTypes.string,
+  strong: PropTypes.bool, // remove in 1.0
+  tag: PropTypes.string, // remove in 1.0
   ...Box.propTypes
 };
 

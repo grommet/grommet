@@ -67,6 +67,7 @@ Button.propTypes = {
   accent: PropTypes.bool,
   align: PropTypes.oneOf(['start', 'center', 'end']),
   fill: PropTypes.bool,
+  href: PropTypes.string,
   icon: PropTypes.element,
   id: PropTypes.string,
   label: PropTypes.node,

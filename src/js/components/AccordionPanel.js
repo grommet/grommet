@@ -46,5 +46,6 @@ AccordionPanel.propTypes = {
   active: PropTypes.bool, // remove in 1.0, use {active from Accordion}
   animate: PropTypes.bool,
   heading: PropTypes.node.isRequired,
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
+  pad: Header.propTypes.pad
 };

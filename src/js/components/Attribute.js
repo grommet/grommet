@@ -20,6 +20,6 @@ export default class Attribute extends Component {
   }
 };
 
-Attribute.propTypes = {
+Attribute.propTypes = { // remove in 1.0
   label: PropTypes.string
 };

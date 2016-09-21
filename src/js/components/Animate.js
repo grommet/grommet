@@ -224,12 +224,12 @@ Animate.propTypes = {
     duration: PropTypes.number,
     delay: PropTypes.number
   }),
+  keep: PropTypes.bool,
   leave: PropTypes.shape({
     animation: PropTypes.string,
     duration: PropTypes.number,
     delay: PropTypes.number
   }),
-  keep: PropTypes.bool,
   visible: PropTypes.bool
 };
 

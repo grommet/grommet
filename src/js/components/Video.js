@@ -245,26 +245,26 @@ export default class Video extends Component {
 }
 
 Video.propTypes = {
+  allowFullScreen: PropTypes.bool,
+  autoPlay: PropTypes.bool,
   colorIndex: PropTypes.string,
   duration: PropTypes.number, // remove in 1.0
   full: PropTypes.oneOf([true, 'horizontal', 'vertical', false]),
+  loop: PropTypes.bool,
+  muted: PropTypes.bool,
+  onClick: PropTypes.func, // remove in 1.0
   poster: PropTypes.string,
+  shareLink: PropTypes.string,
+  shareHeadline: PropTypes.string,
+  shareText: PropTypes.string,
+  showControls: PropTypes.bool,
   size: React.PropTypes.oneOf(['small', 'medium', 'large']),
   timeline: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string,
     time: PropTypes.number
   })),
   title: PropTypes.node,
-  videoHeader: PropTypes.node, // remove in 1.0
-  onClick: PropTypes.func, // remove in 1.0
-  allowFullScreen: PropTypes.bool,
-  autoPlay: PropTypes.bool,
-  shareLink: PropTypes.string,
-  shareHeadline: PropTypes.string,
-  shareText: PropTypes.string,
-  showControls: PropTypes.bool,
-  muted: PropTypes.bool,
-  loop: PropTypes.bool
+  videoHeader: PropTypes.node // remove in 1.0
 };
 
 Video.defaultProps = {

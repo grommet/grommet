@@ -222,7 +222,6 @@ Box.propTypes = {
   appCentered: PropTypes.bool,
   backgroundImage: PropTypes.string,
   basis: PropTypes.oneOf(SIZES),
-  children: PropTypes.any,
   colorIndex: PropTypes.string,
   containerClassName: PropTypes.string,
   direction: PropTypes.oneOf(['row', 'column']),

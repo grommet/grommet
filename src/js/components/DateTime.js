@@ -279,7 +279,6 @@ export default class DateTime extends Component {
 
 DateTime.propTypes = {
   format: PropTypes.string,
-  id: PropTypes.string,
   name: PropTypes.string,
   onChange: PropTypes.func,
   step: PropTypes.number,

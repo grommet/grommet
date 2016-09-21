@@ -112,9 +112,9 @@ NumberInput.propTypes = {
   defaultValue: PropTypes.number,
   disabled: PropTypes.bool,
   id: PropTypes.string,
-  name: PropTypes.string,
   max: PropTypes.number,
   min: PropTypes.number,
+  name: PropTypes.string,
   onChange: PropTypes.func,
   step: PropTypes.number,
   value: PropTypes.number

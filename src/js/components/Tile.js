@@ -58,11 +58,11 @@ export default class Tile extends Component {
 }
 
 Tile.propTypes = {
-  selected: PropTypes.bool,
-  wide: PropTypes.bool, /// deprecated to Box.basis='full'
   hoverStyle: PropTypes.oneOf(['border', 'background', 'none']),
   hoverColorIndex: PropTypes.string,
   hoverBorderSize: PropTypes.oneOf(['small', 'medium', 'large']),
+  selected: PropTypes.bool,
+  wide: PropTypes.bool, /// deprecated to Box.basis='full'
   ...Box.propTypes
 };
 

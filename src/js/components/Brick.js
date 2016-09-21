@@ -100,7 +100,7 @@ export default class Brick extends Component {
   }
 };
 
-Brick.propTypes = {
+Brick.propTypes = { // remove in 1.0, use Box
   colorIndex: PropTypes.string,
   href: PropTypes.string,
   label: PropTypes.string,

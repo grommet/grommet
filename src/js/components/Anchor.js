@@ -79,9 +79,9 @@ Anchor.propTypes = {
   label: PropTypes.node,
   onClick: PropTypes.func,
   primary: PropTypes.bool,
+  reverse: PropTypes.bool,
   tag: PropTypes.string,
-  target: PropTypes.string,
-  reverse: PropTypes.bool
+  target: PropTypes.string
 };
 
 Anchor.defaultProps = {

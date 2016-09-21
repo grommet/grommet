@@ -11,7 +11,7 @@ export default class TableRow extends Component {
     const { children, className, onClick, selected } = this.props;
 
     if (selected) {
-      console.warn('Selected option has been deprecated, please use ' +
+      console.warn('TableRow: selected prop has been deprecated. Use ' +
         'selected option at the Table level.');
     }
 
@@ -34,6 +34,5 @@ export default class TableRow extends Component {
 
 TableRow.propTypes = {
   onClick: PropTypes.func,
-  //Deprecated in 0.6.2
-  selected: PropTypes.bool
+  selected: PropTypes.bool // remove in 1.0
 };

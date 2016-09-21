@@ -1078,7 +1078,7 @@ export default class Chart extends Component {
 
 }
 
-Chart.propTypes = {
+Chart.propTypes = { // remove in 1.0
   a11yTitle: PropTypes.string,
   a11yTitleId: PropTypes.string,
   a11yDescId: PropTypes.string,

@@ -11,6 +11,9 @@ export default class ImageField extends Component {
 
   constructor(props, context) {
     super(props, context);
+    console.warn(
+      'ImageField: component has been deprecated.'
+    );
     this._onChange = this._onChange.bind(this);
     this._onDrop = this._onDrop.bind(this);
     this._onClear = this._onClear.bind(this);

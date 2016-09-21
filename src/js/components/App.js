@@ -67,10 +67,11 @@ export default class App extends Component {
   }
 }
 
-App.defaultProps = {
-  centered: true
+App.propTypes = {
+  centered: PropTypes.bool,
+  inline: PropTypes.bool
 };
 
-App.propTypes = {
-  centered: PropTypes.bool
+App.defaultProps = {
+  centered: true
 };

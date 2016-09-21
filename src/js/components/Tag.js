@@ -9,6 +9,13 @@ const CLASS_ROOT = CSSClassnames.TAG;
 
 export default class Tag extends Component {
 
+  constructor () {
+    super();
+    console.warn(
+      'Tag: component has been deprecated. Use Button instead.'
+    );
+  }
+
   render () {
     let classes = [CLASS_ROOT];
 

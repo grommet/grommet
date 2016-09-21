@@ -217,10 +217,18 @@ export default class Meter extends Component {
     //   result = 0;
     // }
     if (props.hasOwnProperty('important')) {
+      console.warn(
+        'Meter: important prop has been deprecated. ' +
+        'Use a activeIndex instead.'
+      );
       result = props.important;
     }
     series.some(function (data, index) {
       if (data.important) {
+        console.warn(
+          'Meter: seriesp[].important has been deprecated. ' +
+          'Use a activeIndex instead.'
+        );
         result = index;
         return true;
       }
@@ -572,14 +580,14 @@ Meter.propTypes = {
     PropTypes.number
   ]),
   onActive: PropTypes.func,
-  size: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
   series: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string, // remove in 1.0
     value: PropTypes.number.isRequired,
     colorIndex: PropTypes.string,
-    important: PropTypes.bool,
+    important: PropTypes.bool, // remove in 1.0, use activeIndex
     onClick: PropTypes.func
   })),
+  size: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
   stacked: PropTypes.bool,
   tabIndex: PropTypes.string,
   threshold: PropTypes.number,

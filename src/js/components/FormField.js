@@ -58,9 +58,6 @@ export default class FormField extends Component {
     if (this.state.focus) {
       classes.push(CLASS_ROOT + "--focus");
     }
-    if (this.props.required) {
-      classes.push(CLASS_ROOT + "--required");
-    }
     if (this.props.hidden) {
       classes.push(CLASS_ROOT + "--hidden");
     }
@@ -119,7 +116,6 @@ FormField.propTypes = {
   hidden: PropTypes.bool,
   htmlFor: PropTypes.string,
   label: PropTypes.node,
-  required: PropTypes.bool,
   size: PropTypes.oneOf(['medium', 'large']),
   strong: PropTypes.bool
 };
