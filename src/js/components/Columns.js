@@ -18,14 +18,20 @@ export default class Columns extends Component {
       count: 1,
       maxCount: this.props.maxCount,
       columnBreakpoints: null,
-      initMobile: false
+      initMobile: false,
+      margin: this.props.margin
     };
   }
 
   componentDidMount () {
     if (this.props.masonry) {
       const columnBreakpoints = this._getColumnBreakpoints();
-      let initialState = {columnBreakpoints: columnBreakpoints};
+      // resolves collapsed margin issue in Safari
+      const childMarginSize = this._getChildMarginSize();
+      let initialState = {
+        columnBreakpoints: columnBreakpoints,
+        margin: this.state.margin || childMarginSize
+      };
 
       // make sure to recalculate columnBreakpoints if starting
       // with smaller screen width and resizing
@@ -45,13 +51,16 @@ export default class Columns extends Component {
   }
 
   _onResize () {
-    const { initMobile } = this.state;
+    const { initMobile, margin } = this.state;
     if (initMobile) {
       if (window.innerWidth > Responsive.smallSize()) {
         const columnBreakpoints = this._getColumnBreakpoints();
+        const childMarginSize = margin || this._getChildMarginSize();
+
         this.setState({
           initMobile: false,
-          columnBreakpoints: columnBreakpoints
+          columnBreakpoints: columnBreakpoints,
+          margin: childMarginSize
         }, () => {
           clearTimeout(this._layoutTimer);
           this._layoutTimer = setTimeout(this._layout, 50);
@@ -61,6 +70,34 @@ export default class Columns extends Component {
       clearTimeout(this._layoutTimer);
       this._layoutTimer = setTimeout(this._layout, 50);
     }
+  }
+
+  _getChildMarginSize () {
+    let childMargin;
+    const container = findDOMNode(this.containerRef);
+    const column = container.childNodes[0];
+    const child = column.childNodes[0];
+
+    if (child) {
+      const childStyles = window.getComputedStyle(child);
+      if (childStyles) {
+        let childLeftMargin = childStyles.marginLeft ?
+          parseFloat(childStyles.marginLeft) :  0;
+        let childRightMargin = childStyles.marginRight ?
+          parseFloat(childStyles.marginRight) :  0;
+        childMargin = childLeftMargin + childRightMargin;
+
+        if (childMargin === 48) {
+          return 'large';
+        } else if (childMargin === 24) {
+          return 'medium';
+        } else if (childMargin === 12) {
+          return 'small';
+        }
+      }
+    }
+
+    return null;
   }
 
   _getColumnBreakpoints () {
@@ -74,7 +111,12 @@ export default class Columns extends Component {
     if (child) {
       const childStyles = window.getComputedStyle(child);
       if (childStyles && childStyles.width) {
-        minColumnWidth = parseFloat(childStyles.width);
+        let childLeftMargin = childStyles.marginLeft ?
+          parseFloat(childStyles.marginLeft) :  0;
+        let childRightMargin = childStyles.marginRight ?
+          parseFloat(childStyles.marginRight) :  0;
+        minColumnWidth =
+          parseFloat(childStyles.width) + childLeftMargin + childRightMargin;
       }
     }
 
@@ -183,11 +225,13 @@ export default class Columns extends Component {
 
   render () {
     const { justify, responsive, size } = this.props;
+    const { margin } = this.state;
     let classes = classnames(
       CLASS_ROOT,
       this.props.className,
       {
         [`${CLASS_ROOT}--justify-${justify}`]: justify,
+        [`${CLASS_ROOT}--margin-${margin}`]: margin,
         [`${CLASS_ROOT}--responsive`]: responsive,
         [`${CLASS_ROOT}--${size}`]: size
       }
@@ -211,6 +255,7 @@ export default class Columns extends Component {
 Columns.propTypes = {
   count: PropTypes.number,
   justify: PropTypes.oneOf(['start', 'center', 'between', 'end']),
+  margin: PropTypes.oneOf(['small', 'medium', 'large']),
   masonry: PropTypes.bool,
   maxCount: PropTypes.number,
   responsive: PropTypes.bool,
