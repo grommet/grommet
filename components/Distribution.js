@@ -602,6 +602,7 @@ var Distribution = function (_Component) {
 
       var legend = void 0;
       if (this.props.legend) {
+        console.warn('Distribution: legend prop has been deprecated. ' + 'Use a separate Legend instead.');
         legend = this._renderLegend();
       }
 

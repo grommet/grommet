@@ -72,6 +72,7 @@ var Brick = function (_Component) {
     value: function render() {
       var _classnames;
 
+      console.warn('Brick: component has been deprecated. Use Box instead.');
       var widthUnit = 1;
       var heightUnit = 1;
 

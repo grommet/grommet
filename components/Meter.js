@@ -423,6 +423,9 @@ var Meter = function (_Component) {
         if (!active) {
           active = series[0];
         }
+        if (active.label) {
+          console.warn('Meter: series[].label has been deprecated. ' + 'Use a separate Label instead.');
+        }
         fields = {
           value: active.value,
           label: active.label,
@@ -441,6 +444,7 @@ var Meter = function (_Component) {
       }
       var units = void 0;
       if (this.props.units) {
+        console.warn('Meter: units prop has been deprecated. ' + 'Use a separate Label instead.');
         units = _react2.default.createElement(
           'span',
           { className: CLASS_ROOT + '__value-units large-number-font' },
@@ -475,6 +479,7 @@ var Meter = function (_Component) {
 
       var minLabel = void 0;
       if (min.label) {
+        console.warn('Meter: min.label has been deprecated. ' + 'Use a separate Label instead.');
         minLabel = _react2.default.createElement(
           'div',
           { className: CLASS_ROOT + '__minmax-min' },
@@ -483,6 +488,7 @@ var Meter = function (_Component) {
       }
       var maxLabel = void 0;
       if (max.label) {
+        console.warn('Meter: max.label has been deprecated. ' + 'Use a separate Label instead.');
         maxLabel = _react2.default.createElement(
           'div',
           { className: CLASS_ROOT + '__minmax-max' },
@@ -596,6 +602,7 @@ var Meter = function (_Component) {
       if (legend || series) {
 
         if (legend) {
+          console.warn('Meter: legend prop has been deprecated. ' + 'Use a separate Legend instead.');
           if ('inline' !== legend.placement) {
             legendElement = this._renderLegend();
           } else {
@@ -692,7 +699,7 @@ Meter.propTypes = {
   tabIndex: _react.PropTypes.string,
   threshold: _react.PropTypes.number,
   thresholds: _react.PropTypes.arrayOf(_react.PropTypes.shape({
-    label: _react.PropTypes.string,
+    label: _react.PropTypes.string, // remove in 1.0?
     value: _react.PropTypes.number.isRequired,
     colorIndex: _react.PropTypes.string
   })),

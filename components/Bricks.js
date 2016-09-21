@@ -51,6 +51,7 @@ var Bricks = function (_Component) {
   (0, _createClass3.default)(Bricks, [{
     key: 'render',
     value: function render() {
+      console.warn('Bricks: component has been deprecated. Use Box instead.');
       var classes = (0, _classnames2.default)(CLASS_ROOT, this.props.className);
 
       return _react2.default.createElement(

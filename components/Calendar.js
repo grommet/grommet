@@ -100,6 +100,8 @@ var Calendar = function (_Component) {
 
     var _this = (0, _possibleConstructorReturn3.default)(this, (Calendar.__proto__ || (0, _getPrototypeOf2.default)(Calendar)).call(this, props, context));
 
+    console.warn('Calendar: component has been deprecated. Use DateTime instead.');
+
     _this._onInputChange = _this._onInputChange.bind(_this);
     _this._onOpen = _this._onOpen.bind(_this);
     _this._onClose = _this._onClose.bind(_this);

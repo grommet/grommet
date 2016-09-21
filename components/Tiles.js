@@ -458,6 +458,7 @@ var Tiles = function (_Component) {
 
       var children = this.props.children;
       if (masonry) {
+        console.warn('Tiles: masonry prop has been deprecated. ' + 'Use a Columns instead.');
         children = this._renderMasonryColumns();
       } else {
         children = _react.Children.map(this.props.children, function (element) {
