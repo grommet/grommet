@@ -10,6 +10,7 @@
 
 .#{$grommet-namespace}tiles {
   width: 100%;
+  overflow: auto;
 
   @include pad();
 
