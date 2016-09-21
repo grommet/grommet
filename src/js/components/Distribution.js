@@ -513,6 +513,10 @@ export default class Distribution extends Component {
 
     let legend;
     if (this.props.legend) {
+      console.warn(
+        'Distribution: legend prop has been deprecated. ' +
+        'Use a separate Legend instead.'
+      );
       legend = this._renderLegend();
     }
 

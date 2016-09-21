@@ -350,6 +350,10 @@ export default class Tiles extends Component {
 
     let children = this.props.children;
     if (masonry) {
+      console.warn(
+        'Tiles: masonry prop has been deprecated. ' +
+        'Use a Columns instead.'
+      );
       children = this._renderMasonryColumns();
     } else {
       children = Children.map(this.props.children, (element) => {

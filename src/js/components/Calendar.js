@@ -23,6 +23,10 @@ export default class Calendar extends Component {
   constructor(props, context) {
     super(props, context);
 
+    console.warn(
+      'Calendar: component has been deprecated. Use DateTime instead.'
+    );
+
     this._onInputChange = this._onInputChange.bind(this);
     this._onOpen = this._onOpen.bind(this);
     this._onClose = this._onClose.bind(this);
