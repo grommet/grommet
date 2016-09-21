@@ -88,7 +88,7 @@ export default class Header extends Component {
     if (this.props.className) {
       classes.push(this.props.className);
     }
-    if (this.props.tag) {
+    if (this.props.tag && 'header' !== this.props.tag) {
       console.warn(
         'Header: tag prop has been deprecated. ' +
         'Use a separate Heading instead.'
@@ -135,5 +135,5 @@ Header.defaultProps = {
   direction: 'row',
   align: 'center',
   responsive: false,
-  tag: 'header'
+  tag: 'header' // remove in 1.0
 };
