@@ -5,6 +5,7 @@
   z-index: 10; // stay above app header
   background-color: $layer-overlay-background-color;
   height: 100vh;
+  overflow: auto;
 
   @include media-query(lap-and-up) {
     position: fixed;
@@ -182,6 +183,10 @@
         }
       }
     }
+  }
+
+  .#{$grommet-namespace}tiles__more {
+    position: relative;
   }
 }
 
