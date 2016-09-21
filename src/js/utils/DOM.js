@@ -1,9 +1,4 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
-import CSSClassnames from '../utils/CSSClassnames';
-import Responsive from '../utils/Responsive';
-
-const LAYER_CLASS = CSSClassnames.LAYER;
-
 function hash(input) {
   var hash = 0, i, chr, len;
   if (input.length === 0) return hash;
@@ -35,11 +30,6 @@ export default {
     }
     if (result.length === 0) {
       result.push(document);
-    }
-    if (window.innerWidth <= Responsive.smallSize()
-      && result[0].classList
-      && result[0].classList.contains(LAYER_CLASS)) {
-      result = [document];
     }
     return result;
   },
