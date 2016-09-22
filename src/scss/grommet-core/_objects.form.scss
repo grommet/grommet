@@ -1,4 +1,4 @@
-// (C) Copyright 2014 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 .#{$grommet-namespace}form {
   position: relative;
@@ -60,12 +60,12 @@
       }
     }
   }
+}
 
-  &--fill {
-    min-width: 0px;
-  }
+.#{$grommet-namespace}form--fill {
+  min-width: 0px;
+}
 
-  &--compact {
-    max-width: $compact-form-width;
-  }
+.#{$grommet-namespace}form--compact {
+  max-width: $compact-form-width;
 }

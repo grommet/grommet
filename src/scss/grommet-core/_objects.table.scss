@@ -56,74 +56,74 @@
     @include inuit-font-size(20px);
     border-bottom: 1px solid $border-color;
   }
+}
 
-  &__mirror {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    right: 0px;
+.#{$grommet-namespace}table__mirror {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
 
-    > thead {
-      position: fixed;
-      background-color: $header-background-color;
+  > thead {
+    position: fixed;
+    background-color: $header-background-color;
+  }
+}
+
+.#{$grommet-namespace}table__more {
+  margin-top: $inuit-base-spacing-unit;
+  text-align: center;
+}
+
+.#{$grommet-namespace}table--scrollable {
+  position: relative;
+
+  .#{$grommet-namespace}table__table {
+    thead {
+      visibility: hidden;
+    }
+
+    th {
+      border-bottom: none;
     }
   }
+}
 
-  &__more {
-    margin-top: $inuit-base-spacing-unit;
-    text-align: center;
-  }
+.#{$grommet-namespace}table--selectable {
+  tbody {
+    tr {
+      cursor: pointer;
 
-  &--scrollable {
-    position: relative;
-
-    .#{$grommet-namespace}table__table {
-      thead {
-        visibility: hidden;
+      td {
+        transition: background-color 0.2s;
       }
 
-      th {
-        border-bottom: none;
-      }
-    }
-  }
-
-  &--selectable {
-    tbody {
-      tr {
-        cursor: pointer;
-
+      &.#{$grommet-namespace}table-row--selected {
         td {
-          transition: background-color 0.2s;
-        }
+          background-color: $selected-background-color;
+          color: $selected-text-color;
 
-        &.#{$grommet-namespace}table-row--selected {
-          td {
-            background-color: $selected-background-color;
-            color: $selected-text-color;
-
-            #{$dark-background-context} & {
-              background-color: $colored-active-background-color;
-              color: $active-colored-text-color;
-            }
+          #{$dark-background-context} & {
+            background-color: $colored-active-background-color;
+            color: $active-colored-text-color;
           }
         }
+      }
 
-        &:hover:not(.#{$grommet-namespace}table-row--selected) {
-          td {
-            background-color: $hover-background-color;
-            color: $hover-text-color;
+      &:hover:not(.#{$grommet-namespace}table-row--selected) {
+        td {
+          background-color: $hover-background-color;
+          color: $hover-text-color;
 
-            #{$dark-background-context} & {
-              color: $active-colored-text-color;
-            }
+          #{$dark-background-context} & {
+            color: $active-colored-text-color;
           }
         }
       }
     }
   }
+}
 
-  &--small {
-    @include small-table();
-  }
+.#{$grommet-namespace}table--small {
+  @include small-table();
 }

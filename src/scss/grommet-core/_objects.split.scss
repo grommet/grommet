@@ -4,48 +4,50 @@
   position: relative;
   overflow: visible;
 
-  &--hidden {
-    display: none;
-  }
-
-  &--full {
-    > * {
-      width: 100%;
-    }
-  }
-
   @include media-query(lap-and-up) {
     display: flex;
+  }
+}
 
-    &--fixed {
-      > * {
-        position: relative;
-        height: 100vh;
-        overflow: auto;
-        -ms-overflow-style: -ms-autohiding-scrollbar;
-      }
-    }
+.#{$grommet-namespace}split--hidden {
+  display: none;
+}
 
-    &--separator {
-      > * {
-        border-right: 1px solid $strong-border-color;
+.#{$grommet-namespace}split--full {
+  > * {
+    width: 100%;
+  }
+}
 
-        &:last-child {
-          border-right: none;
-        }
-      }
+@include media-query(lap-and-up) {
+  .#{$grommet-namespace}split--fixed {
+    > * {
+      position: relative;
+      height: 100vh;
+      overflow: auto;
+      -ms-overflow-style: -ms-autohiding-scrollbar;
     }
   }
 
-  @include media-query(palm) {
+  .#{$grommet-namespace}split--separator {
+    > * {
+      border-right: 1px solid $strong-border-color;
 
-    &--separator {
-      > * {
-        border-bottom: 1px solid $strong-border-color;
+      &:last-child {
+        border-right: none;
+      }
+    }
+  }
+}
 
-        &:last-child {
-          border-bottom: none;
-        }
+@include media-query(palm) {
+
+  .#{$grommet-namespace}split--separator {
+    > * {
+      border-bottom: 1px solid $strong-border-color;
+
+      &:last-child {
+        border-bottom: none;
       }
     }
   }

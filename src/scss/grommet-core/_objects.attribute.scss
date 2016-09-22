@@ -1,6 +1,6 @@
 // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
-.#{$grommet-namespace}attribute {
+.#{$grommet-namespace}attribute { // remove in 1.0
   margin-bottom: halve($inuit-base-spacing-unit);
 
   @include media-query(lap-and-up) {

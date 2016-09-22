@@ -8,34 +8,34 @@
   a {
     text-decoration: none;
   }
+}
 
-  &.#{$grommet-namespace}paragraph--small {
-    font-size: $paragraph-small-font-size;
-    line-height: $paragraph-small-line-height;
+.#{$grommet-namespace}paragraph--small {
+  font-size: $paragraph-small-font-size;
+  line-height: $paragraph-small-line-height;
+}
+
+.#{$grommet-namespace}paragraph--large {
+  font-size: $paragraph-large-font-size;
+  line-height: $paragraph-large-line-height;
+
+  a {
+    color: $brand-color;
+    font-weight: 600;
   }
+}
 
-  &.#{$grommet-namespace}paragraph--large {
-    font-size: $paragraph-large-font-size;
-    line-height: $paragraph-large-line-height;
+.#{$grommet-namespace}paragraph--xlarge {
+  font-size: $paragraph-xlarge-font-size;
+  line-height: $paragraph-xlarge-line-height;
 
-    a {
-      color: $brand-color;
-      font-weight: 600;
-    }
+  a {
+    color: $brand-color;
+    font-weight: 600;
   }
+}
 
-  &.#{$grommet-namespace}paragraph--xlarge {
-    font-size: $paragraph-xlarge-font-size;
-    line-height: $paragraph-xlarge-line-height;
-
-    a {
-      color: $brand-color;
-      font-weight: 600;
-    }
-  }
-
-  &.#{$grommet-namespace}paragraph--width-large {
-    width: $inuit-base-spacing-unit * 30;
-    max-width: 100%;
-  }
+.#{$grommet-namespace}paragraph--width-large {
+  width: $inuit-base-spacing-unit * 30;
+  max-width: 100%;
 }
