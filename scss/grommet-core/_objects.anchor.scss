@@ -36,96 +36,95 @@
 }
 
 .#{$grommet-namespace}anchor {
-
   @include anchor-style;
+}
 
-  &__icon {
-    display: inline-block;
-    padding: halve($inuit-base-spacing-unit);
+.#{$grommet-namespace}anchor__icon {
+  display: inline-block;
+  padding: halve($inuit-base-spacing-unit);
+}
 
-    &:hover {
-      .#{$grommet-namespace}control-icon {
-        @include icon-color($active-icon-color);
-      }
-    }
+.#{$grommet-namespace}anchor__icon:hover {
+  .#{$grommet-namespace}control-icon {
+    @include icon-color($active-icon-color);
   }
+}
 
-  &--primary,
-  &--icon-label {
-    @include inuit-font-size($control-font-size, $inuit-base-spacing-unit);
-    font-weight: 600;
-    text-decoration: none;
+.#{$grommet-namespace}anchor--primary,
+.#{$grommet-namespace}anchor--icon-label {
+  @include inuit-font-size($control-font-size, $inuit-base-spacing-unit);
+  font-weight: 600;
+  text-decoration: none;
 
-    .#{$grommet-namespace}control-icon {
-      vertical-align: middle;
-      margin-right: halve($inuit-base-spacing-unit);
-      @include icon-color($control-brand-color);
+  .#{$grommet-namespace}control-icon {
+    vertical-align: middle;
+    margin-right: halve($inuit-base-spacing-unit);
+    @include icon-color($control-brand-color);
 
-      html.rtl & {
-        margin-right: 0;
-        margin-left: halve($inuit-base-spacing-unit);
-      }
-    }
-
-    > span {
-      vertical-align: middle;
-    }
-
-    &:hover:not(.#{$grommet-namespace}anchor--disabled) {
-      .#{$grommet-namespace}control-icon {
-        @include icon-hover-grow($control-brand-color);
-      }
-    }
-  }
-
-  &--reverse {
-    .#{$grommet-namespace}control-icon {
+    html.rtl & {
       margin-right: 0;
       margin-left: halve($inuit-base-spacing-unit);
     }
   }
 
-  &--primary {
-    color: $control-brand-color;
-
-    // Only animate icon when it's a primary anchor
-    &.#{$grommet-namespace}anchor--animate-icon:not(.#{$grommet-namespace}anchor--disabled) {
-      &:hover {
-        .#{$grommet-namespace}control-icon {
-          transform: translateX(round($inuit-base-spacing-unit * 0.125));
-        }
-      }
-    }
+  > span { // too generic, change
+    vertical-align: middle;
   }
 
-  &--disabled {
-    opacity: 0.3;
-    cursor: default;
-
+  &:hover:not(.#{$grommet-namespace}anchor--disabled) {
     .#{$grommet-namespace}control-icon {
-      cursor: default;
+      @include icon-hover-grow($control-brand-color);
     }
-
-    &:hover {
-      color: inherit;
-      text-decoration: none;
-
-      &.#{$grommet-namespace}anchor--primary {
-        color: $control-brand-color;
-      }
-
-      &.#{$grommet-namespace}anchor:not(.#{$grommet-namespace}anchor--primary) {
-        color: $link-color;
-      }
-    }
-  }
-
-  &--icon {
-    display: inline-block;
   }
 }
 
-#{$dark-background-context} a {
+.#{$grommet-namespace}anchor--reverse {
+  .#{$grommet-namespace}control-icon {
+    margin-right: 0;
+    margin-left: halve($inuit-base-spacing-unit);
+  }
+}
+
+.#{$grommet-namespace}anchor--primary {
+  color: $control-brand-color;
+
+  // Only animate icon when it's a primary anchor
+  &.#{$grommet-namespace}anchor--animate-icon:not(.#{$grommet-namespace}anchor--disabled) {
+    &:hover {
+      .#{$grommet-namespace}control-icon {
+        transform: translateX(round($inuit-base-spacing-unit * 0.125));
+      }
+    }
+  }
+}
+
+.#{$grommet-namespace}anchor--disabled {
+  opacity: 0.3;
+  cursor: default;
+
+  .#{$grommet-namespace}control-icon {
+    cursor: default;
+  }
+}
+
+.#{$grommet-namespace}anchor--disabled:hover {
+  color: inherit;
+  text-decoration: none;
+
+  &.#{$grommet-namespace}anchor--primary {
+    color: $control-brand-color;
+  }
+
+  &.#{$grommet-namespace}anchor:not(.#{$grommet-namespace}anchor--primary) {
+    color: $link-color;
+  }
+}
+
+.#{$grommet-namespace}anchor--icon {
+  display: inline-block;
+}
+
+#{$dark-background-context} a { // to generic, change
   color: $colored-text-color;
 
   &:hover {

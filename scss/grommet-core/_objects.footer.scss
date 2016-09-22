@@ -4,14 +4,14 @@
   min-height: $footer-height;
   line-height: $footer-height;
   width: 100%;
+}
 
-  &.#{$grommet-namespace}--direction-row {
-    > h1,
-    > h2,
-    > h3,
-    > h4 {
-      margin-bottom: 0px;
-    }
+.#{$grommet-namespace}footer.#{$grommet-namespace}--direction-row {
+  > h1,
+  > h2,
+  > h3,
+  > h4 {
+    margin-bottom: 0px;
   }
 }
 
@@ -89,72 +89,72 @@
     left: 0px;
     right: 0px;
     z-index: 3;
+  }
 
-    &--fill {
-      .#{$grommet-namespace}footer__wrapper {
-        background-color: $footer-background-color;
-      }
+  .#{$grommet-namespace}footer__wrapper--fill {
+    .#{$grommet-namespace}footer__wrapper {
+      background-color: $footer-background-color;
+    }
+  }
+}
+
+.#{$grommet-namespace}footer--fixed.#{$grommet-namespace}footer--primary {
+  .#{$grommet-namespace}footer__wrapper {
+    position: fixed;
+  }
+
+  .#{$grommet-namespace}footer__wrapper--fill {
+    .#{$grommet-namespace}footer__wrapper {
+      background-color: $footer-background-color;
     }
   }
 
-  &.#{$grommet-namespace}footer--primary {
-    .#{$grommet-namespace}footer__wrapper {
-      position: fixed;
-
-      &--fill {
-        .#{$grommet-namespace}footer__wrapper {
-          background-color: $footer-background-color;
-        }
-      }
-    }
-
-    .#{$grommet-namespace}footer__content {
-      position: static;
-      background-color: transparent;
-    }
+  .#{$grommet-namespace}footer__content {
+    position: static;
+    background-color: transparent;
   }
 }
 
 .#{$grommet-namespace}footer__container {
   flex-shrink: 0;
+}
 
-  &--float {
+.#{$grommet-namespace}footer__container--float {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+.#{$grommet-namespace}footer__container--fill {
+  .#{$grommet-namespace}footer {
+    background-color: $footer-background-color;
+  }
+}
+
+.#{$grommet-namespace}footer__container--fixed {
+  position: relative;
+  width: 100%;
+
+  .#{$grommet-namespace}footer__wrapper {
     position: absolute;
     bottom: 0px;
     left: 0px;
     right: 0px;
-  }
-
-  &--fill {
-    .#{$grommet-namespace}footer {
-      background-color: $footer-background-color;
-    }
-  }
-
-  &--fixed {
-    position: relative;
-    width: 100%;
-
-    .#{$grommet-namespace}footer__wrapper {
-      position: absolute;
-      bottom: 0px;
-      left: 0px;
-      right: 0px;
-      z-index: 3;
-    }
+    z-index: 3;
   }
 }
 
 .#{$grommet-namespace}footer__wrapper {
   height: $footer-height;
+}
 
-  &--large {
-    height: $large-footer-height;
-  }
+.#{$grommet-namespace}footer__wrapper--large {
+  height: $large-footer-height;
+}
 
-  &--small {
-    height: $small-footer-height;
-  }
+.#{$grommet-namespace}footer__wrapper--small {
+  height: $small-footer-height;
 }
 
 *:not(.#{$grommet-namespace}footer__container--float) > .#{$grommet-namespace}footer--float {

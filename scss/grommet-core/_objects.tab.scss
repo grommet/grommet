@@ -38,26 +38,26 @@
       }
     }
   }
+}
 
-  &__label {
-    display: inline-block;
-    cursor: pointer;
-    padding-bottom: quarter($inuit-base-spacing-unit) + $active-border-width;
-    color: $secondary-text-color;
-    border-bottom: $active-border-width solid transparent;
+.#{$grommet-namespace}tab__label {
+  display: inline-block;
+  cursor: pointer;
+  padding-bottom: quarter($inuit-base-spacing-unit) + $active-border-width;
+  color: $secondary-text-color;
+  border-bottom: $active-border-width solid transparent;
+}
+
+.#{$grommet-namespace}tab--active,
+.#{$grommet-namespace}tab--active .#{$grommet-namespace}tab__link:hover {
+  .#{$grommet-namespace}tab__label {
+    color: $hover-text-color;
+    border-color: $hover-text-color;
   }
+}
 
-  &--active,
-  &--active .#{$grommet-namespace}tab__link:hover {
-    .#{$grommet-namespace}tab__label {
-      color: $hover-text-color;
-      border-color: $hover-text-color;
-    }
-  }
-
-  &:hover {
-    .#{$grommet-namespace}tab__label {
-      border-color: $border-color;
-    }
+.#{$grommet-namespace}tab:hover {
+  .#{$grommet-namespace}tab__label {
+    border-color: $border-color;
   }
 }
