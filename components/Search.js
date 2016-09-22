@@ -105,11 +105,12 @@ var Search = function (_Component) {
     _this._onResponsive = _this._onResponsive.bind(_this);
 
     _this.state = {
+      activeSuggestionIndex: -1,
       align: 'left',
       controlFocused: false,
-      inline: props.inline,
       dropActive: false,
-      activeSuggestionIndex: -1
+      inline: props.inline,
+      small: false
     };
     return _this;
   }
@@ -128,6 +129,9 @@ var Search = function (_Component) {
         this.setState({ dropActive: true });
       } else if ((!nextProps.suggestions || nextProps.suggestions.length === 0) && this.state.inline) {
         this.setState({ dropActive: false });
+      }
+      if (!this.state.small) {
+        this.setState({ inline: nextProps.inline });
       }
     }
   }, {
@@ -329,9 +333,9 @@ var Search = function (_Component) {
     key: '_onResponsive',
     value: function _onResponsive(small) {
       if (small) {
-        this.setState({ inline: false });
+        this.setState({ inline: false, small: small });
       } else {
-        this.setState({ inline: this.props.inline });
+        this.setState({ inline: this.props.inline, small: small });
       }
     }
   }, {
