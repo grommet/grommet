@@ -99,6 +99,25 @@ var Quote = function (_Component) {
         };
       }
 
+      var creditElement = void 0;
+      if (typeof credit === 'string') {
+        var content = credit;
+        if (emphasizeCredit) {
+          content = _react2.default.createElement(
+            'strong',
+            null,
+            content
+          );
+        }
+        creditElement = _react2.default.createElement(
+          _Paragraph2.default,
+          { className: CLASS_ROOT + '__credit' },
+          content
+        );
+      } else {
+        creditElement = credit;
+      }
+
       return _react2.default.createElement(
         _Box2.default,
         (0, _extends3.default)({}, boxProps, { className: classes }),
@@ -106,11 +125,7 @@ var Quote = function (_Component) {
           'div',
           null,
           children,
-          _react2.default.createElement(
-            _Paragraph2.default,
-            { className: CLASS_ROOT + '__credit' },
-            credit
-          )
+          creditElement
         )
       );
     }
@@ -125,7 +140,7 @@ exports.default = Quote;
 Quote.propTypes = (0, _extends3.default)({
   borderColorIndex: _react.PropTypes.string,
   size: _react.PropTypes.oneOf(['small', 'medium', 'large', 'full']),
-  credit: _react.PropTypes.string,
+  credit: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.element]),
   emphasizeCredit: _react.PropTypes.bool
 }, _Box2.default.propTypes);
 

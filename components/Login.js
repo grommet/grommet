@@ -46,6 +46,7 @@ var Login = function (_Component) {
 
     var _this = (0, _possibleConstructorReturn3.default)(this, (Login.__proto__ || (0, _getPrototypeOf2.default)(Login)).call(this, props, context));
 
+    console.warn('Login: component has been deprecated. Use Box instead.');
     _this._adjustBackground = _this._adjustBackground.bind(_this);
     _this._onResize = _this._onResize.bind(_this);
 
@@ -122,7 +123,7 @@ Login.displayName = 'Login';
 exports.default = Login;
 
 
-Login.propTypes = {
+Login.propTypes = { // remove in 1.0
   background: _react.PropTypes.string
 };
 module.exports = exports['default'];
