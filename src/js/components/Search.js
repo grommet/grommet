@@ -239,6 +239,12 @@ export default class Search extends Component {
     }
   }
 
+  _onMouseUp(event) {
+    // This fixes a Safari bug which prevents the input
+    // text from being selected on focus.
+    event.preventDefault();
+  }
+
   _onSink (event) {
     event.stopPropagation();
     event.nativeEvent.stopImmediatePropagation();
@@ -369,7 +375,8 @@ export default class Search extends Component {
             className={`${CLASS_ROOT}__input`}
             onFocus={this._onFocusInput}
             onBlur={this._onBlurInput}
-            onChange={this._onChangeInput} />
+            onChange={this._onChangeInput}
+            onMouseUp={this._onMouseUp} />
           <SearchIcon />
         </div>
       );
