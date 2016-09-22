@@ -8,6 +8,9 @@ const CLASS_ROOT = CSSClassnames.LOGIN;
 export default class Login extends Component {
   constructor(props, context) {
     super(props, context);
+    console.warn(
+      'Login: component has been deprecated. Use Box instead.'
+    );
     this._adjustBackground = this._adjustBackground.bind(this);
     this._onResize = this._onResize.bind(this);
 
@@ -67,6 +70,6 @@ export default class Login extends Component {
   }
 }
 
-Login.propTypes = {
+Login.propTypes = { // remove in 1.0
   background: PropTypes.string
 };
