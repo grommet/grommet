@@ -33,11 +33,12 @@ export default class Search extends Component {
     this._onResponsive = this._onResponsive.bind(this);
 
     this.state = {
+      activeSuggestionIndex: -1,
       align: 'left',
       controlFocused: false,
-      inline: props.inline,
       dropActive: false,
-      activeSuggestionIndex: -1
+      inline: props.inline,
+      small: false
     };
   }
 
@@ -50,25 +51,28 @@ export default class Search extends Component {
   componentWillReceiveProps (nextProps) {
     if (nextProps.suggestions && nextProps.suggestions.length > 0 &&
       ! this.state.dropActive && this.inputRef === document.activeElement) {
-      this.setState({dropActive: true});
+      this.setState({ dropActive: true });
     } else if ((! nextProps.suggestions ||
       nextProps.suggestions.length === 0) &&
       this.state.inline) {
-      this.setState({dropActive: false});
+      this.setState({ dropActive: false });
+    }
+    if (! this.state.small) {
+      this.setState({ inline: nextProps.inline });
     }
   }
 
   componentDidUpdate (prevProps, prevState) {
     // Set up keyboard listeners appropriate to the current state.
 
-    let activeKeyboardHandlers = {
+    const activeKeyboardHandlers = {
       esc: this._onRemoveDrop,
       tab: this._onRemoveDrop,
       up: this._onPreviousSuggestion,
       down: this._onNextSuggestion,
       enter: this._onEnter
     };
-    let focusedKeyboardHandlers = {
+    const focusedKeyboardHandlers = {
       space: this._onAddDrop
     };
 
@@ -110,7 +114,7 @@ export default class Search extends Component {
       } else {
         baseElement = this.inputRef;
       }
-      let dropAlign = this.props.dropAlign || {
+      const dropAlign = this.props.dropAlign || {
         top: (this.state.inline ? 'bottom' : 'top'),
         left: 'left'
       };
@@ -181,8 +185,8 @@ export default class Search extends Component {
       event = document.createEvent('Event');
       event.initEvent('change', true, true);
     }
-    let controlInput = document.getElementById('search-drop-input');
-    let target = this.inputRef || controlInput;
+    const controlInput = document.getElementById('search-drop-input');
+    const target = this.inputRef || controlInput;
     target.dispatchEvent(event);
     this.props.onDOMChange(event);
   }
@@ -246,14 +250,14 @@ export default class Search extends Component {
 
   _onResponsive (small) {
     if (small) {
-      this.setState({inline: false});
+      this.setState({ inline: false, small: small });
     } else {
-      this.setState({inline: this.props.inline});
+      this.setState({ inline: this.props.inline, small: small });
     }
   }
 
   focus () {
-    let ref = this.inputRef || this.controlRef;
+    const ref = this.inputRef || this.controlRef;
     if (ref) {
       ref.focus();
     }
@@ -342,7 +346,7 @@ export default class Search extends Component {
   }
 
   render () {
-    let restProps = Props.omit(this.props, Object.keys(Search.propTypes));
+    const restProps = Props.omit(this.props, Object.keys(Search.propTypes));
     let classes = classnames(
       CLASS_ROOT,
       {
