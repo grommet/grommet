@@ -324,6 +324,13 @@ var Search = function (_Component) {
       }
     }
   }, {
+    key: '_onMouseUp',
+    value: function _onMouseUp(event) {
+      // This fixes a Safari bug which prevents the input
+      // text from being selected on focus.
+      event.preventDefault();
+    }
+  }, {
     key: '_onSink',
     value: function _onSink(event) {
       event.stopPropagation();
@@ -441,7 +448,8 @@ var Search = function (_Component) {
             className: CLASS_ROOT + '__input',
             onFocus: this._onFocusInput,
             onBlur: this._onBlurInput,
-            onChange: this._onChangeInput })),
+            onChange: this._onChangeInput,
+            onMouseUp: this._onMouseUp })),
           _react2.default.createElement(_Search2.default, null)
         );
       } else {
