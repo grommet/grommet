@@ -4,10 +4,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
-
-var _defineProperty3 = _interopRequireDefault(_defineProperty2);
-
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -32,9 +28,9 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _classnames2 = require('classnames');
+var _classnames = require('classnames');
 
-var _classnames3 = _interopRequireDefault(_classnames2);
+var _classnames2 = _interopRequireDefault(_classnames);
 
 var _Button = require('./Button');
 
@@ -63,6 +59,14 @@ var _Footer2 = _interopRequireDefault(_Footer);
 var _Heading = require('./Heading');
 
 var _Heading2 = _interopRequireDefault(_Heading);
+
+var _Paragraph = require('./Paragraph');
+
+var _Paragraph2 = _interopRequireDefault(_Paragraph);
+
+var _Box = require('./Box');
+
+var _Box2 = _interopRequireDefault(_Box);
 
 var _CSSClassnames = require('../utils/CSSClassnames');
 
@@ -142,7 +146,6 @@ var LoginForm = function (_Component) {
 
       var _props = this.props;
       var align = _props.align;
-      var className = _props.className;
       var errors = _props.errors;
       var forgotPassword = _props.forgotPassword;
       var logo = _props.logo;
@@ -153,7 +156,8 @@ var LoginForm = function (_Component) {
       var usernameType = _props.usernameType;
 
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, className, (0, _defineProperty3.default)({}, CLASS_ROOT + '--align-' + align, align));
+      var classes = (0, _classnames2.default)(CLASS_ROOT, this.props.className);
+      var center = !align || 'stretch' === align || 'center' === align;
 
       var errorsNode = errors.map(function (error, index) {
         var errorComponent = void 0;
@@ -179,8 +183,8 @@ var LoginForm = function (_Component) {
       var secondaryTextNode = void 0;
       if (secondaryText) {
         secondaryTextNode = _react2.default.createElement(
-          'p',
-          { className: CLASS_ROOT + '__secondary-text secondary' },
+          _Paragraph2.default,
+          { margin: 'none' },
           secondaryText
         );
       }
@@ -200,10 +204,10 @@ var LoginForm = function (_Component) {
 
       return _react2.default.createElement(
         _Form2.default,
-        { className: classes, onSubmit: this._onSubmit },
+        { className: classes, pad: 'medium', onSubmit: this._onSubmit },
         _react2.default.createElement(
-          'div',
-          { className: CLASS_ROOT + '__header' },
+          _Box2.default,
+          { align: align },
           logo,
           titleNode,
           secondaryTextNode
@@ -230,11 +234,12 @@ var LoginForm = function (_Component) {
         ),
         _react2.default.createElement(
           _Footer2.default,
-          { align: align, size: 'small', direction: 'column',
-            pad: { vertical: 'medium', between: 'medium' } },
+          { size: 'small', direction: 'column',
+            align: center ? 'stretch' : 'start',
+            pad: { vertical: 'none', between: 'medium' } },
           rememberMeNode,
-          _react2.default.createElement(_Button2.default, { primary: true, strong: true,
-            className: CLASS_ROOT + '__submit', type: 'submit', label: login,
+          _react2.default.createElement(_Button2.default, { primary: true, strong: true, fill: center,
+            type: 'submit', label: login,
             onClick: onSubmit ? this._onSubmit : undefined }),
           forgotPassword
         )
@@ -250,7 +255,6 @@ exports.default = LoginForm;
 
 LoginForm.propTypes = {
   align: _react.PropTypes.oneOf(['start', 'center', 'end', 'stretch']),
-  className: _react.PropTypes.string,
   defaultValues: _react.PropTypes.shape({
     username: _react.PropTypes.string,
     rememberMe: _react.PropTypes.bool
@@ -266,6 +270,7 @@ LoginForm.propTypes = {
 };
 
 LoginForm.defaultProps = {
+  align: 'center',
   defaultValues: {
     username: '',
     rememberMe: false
