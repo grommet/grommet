@@ -12,6 +12,10 @@ var _keys = require('babel-runtime/core-js/object/keys');
 
 var _keys2 = _interopRequireDefault(_keys);
 
+var _toConsumableArray2 = require('babel-runtime/helpers/toConsumableArray');
+
+var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
+
 var _isInteger = require('babel-runtime/core-js/number/is-integer');
 
 var _isInteger2 = _interopRequireDefault(_isInteger);
@@ -95,14 +99,14 @@ var Accordion = function (_Component) {
   (0, _createClass3.default)(Accordion, [{
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(newProps) {
-      if (newProps.active !== this.state.active) {
+      if (newProps.active !== this.props.active) {
         this.setState({ active: newProps.active || [] });
       }
     }
   }, {
     key: '_onPanelChange',
     value: function _onPanelChange(index) {
-      var active = this.state.active;
+      var active = [].concat((0, _toConsumableArray3.default)(this.state.active));
       var _props = this.props;
       var onActive = _props.onActive;
       var openMulti = _props.openMulti;
