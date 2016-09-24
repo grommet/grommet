@@ -48,10 +48,6 @@ $fade-in-duration: 0.5s;
   transform: $args;
 }
 
-
-
-
-
 $animation-duration: 1s;
 
 @mixin slide-animation($opacity, $transform...) {
