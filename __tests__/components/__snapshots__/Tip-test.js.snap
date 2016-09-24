@@ -1,0 +1,15 @@
+exports[`SkipLinks has correct default options 1`] = `
+<div>
+  <div
+    id="test-target" />
+  <span />
+</div>
+`;
+
+exports[`SkipLinks renders with a different colorIndex value 1`] = `
+<div>
+  <div
+    id="test-target" />
+  <span />
+</div>
+`;

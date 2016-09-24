@@ -1,0 +1,9 @@
+exports[`SkipLinks has correct default options 1`] = `
+<a
+  aria-hidden="true"
+  className="grommetux-skip-link-anchor"
+  id="skip-link-beer_me"
+  tabIndex="-1">
+  Beer Me
+</a>
+`;

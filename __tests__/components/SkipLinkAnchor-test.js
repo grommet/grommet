@@ -3,7 +3,7 @@
 import React from 'react';
 import renderer from 'react/lib/ReactTestRenderer';
 
-import SkipLinks from '../../src/js/components/SkipLinks';
+import SkipLinkAnchor from '../../src/js/components/SkipLinkAnchor';
 
 // needed because this:
 // https://github.com/facebook/jest/issues/1353
@@ -12,9 +12,9 @@ jest.mock('react-dom');
 describe('SkipLinks', () => {
   it('has correct default options', () => {
     const component = renderer.create(
-       <SkipLinks />
+       <SkipLinkAnchor label="Beer Me" />
     );
-    const tree = component.toJSON();
+    let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
 });
