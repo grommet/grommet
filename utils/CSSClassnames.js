@@ -89,6 +89,7 @@ exports.default = {
   TAG: namespace + 'tag',
   TAGS: namespace + 'tags',
   TBD: namespace + 'tbd',
+  TEXT_INPUT: namespace + 'text-input',
   TILE: namespace + 'tile',
   TILES: namespace + 'tiles',
   TIMESTAMP: namespace + 'timestamp',
