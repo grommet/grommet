@@ -71,6 +71,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = _CSSClassnames2.default.DATE_TIME;
+var INPUT = _CSSClassnames2.default.INPUT;
 var FORM_FIELD = _CSSClassnames2.default.FORM_FIELD;
 var DATE_TIME_DROP = _CSSClassnames2.default.DATE_TIME_DROP;
 var FORMATS = {
@@ -359,7 +360,8 @@ var DateTime = function (_Component) {
         _react2.default.createElement('input', { ref: function ref(_ref) {
             return _this2.inputRef = _ref;
           }, placeholder: format,
-          className: CLASS_ROOT + '__input', id: id, name: name,
+          className: INPUT + ' ' + CLASS_ROOT + '__input',
+          id: id, name: name,
           value: value || '', onChange: this._onInputChange }),
         _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + '__control', icon: _react2.default.createElement(Icon, null),
           onClick: this._onControlClick })

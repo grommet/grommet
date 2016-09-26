@@ -48,6 +48,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var CLASS_ROOT = _CSSClassnames2.default.NUMBER_INPUT; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
+var INPUT = _CSSClassnames2.default.INPUT;
+
 var NumberInput = function (_Component) {
   (0, _inherits3.default)(NumberInput, _Component);
 
@@ -138,7 +140,7 @@ var NumberInput = function (_Component) {
         _react2.default.createElement('input', { ref: function ref(_ref) {
             return _this2.inputRef = _ref;
           },
-          tabIndex: '0', className: CLASS_ROOT + "__input",
+          tabIndex: '0', className: INPUT + ' ' + CLASS_ROOT + '__input',
           id: this.props.id, name: this.props.name, type: 'number',
           disabled: this.props.disabled,
           value: this.props.value,

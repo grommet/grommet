@@ -80,6 +80,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var CLASS_ROOT = _CSSClassnames2.default.SEARCH; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
+var INPUT = _CSSClassnames2.default.INPUT;
 var BACKGROUND_COLOR_INDEX = _CSSClassnames2.default.BACKGROUND_COLOR_INDEX;
 
 var Search = function (_Component) {
@@ -376,7 +377,7 @@ var Search = function (_Component) {
           autoComplete: 'off',
           defaultValue: this.props.defaultValue,
           value: this.props.value,
-          className: CLASS_ROOT + '__input',
+          className: INPUT + ' ' + CLASS_ROOT + '__input',
           onChange: this._onChangeInput }));
       }
 
@@ -445,7 +446,7 @@ var Search = function (_Component) {
             autoComplete: 'off',
             defaultValue: this._renderLabel(this.props.defaultValue),
             value: this._renderLabel(this.props.value),
-            className: CLASS_ROOT + '__input',
+            className: INPUT + ' ' + CLASS_ROOT + '__input',
             onFocus: this._onFocusInput,
             onBlur: this._onBlurInput,
             onChange: this._onChangeInput,

@@ -67,6 +67,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = _CSSClassnames2.default.SEARCH_INPUT;
+var INPUT = _CSSClassnames2.default.INPUT;
 var FORM_FIELD = _CSSClassnames2.default.FORM_FIELD;
 
 var SearchInput = function (_Component) {
@@ -299,7 +300,7 @@ var SearchInput = function (_Component) {
         _react2.default.createElement('input', { ref: function ref(_ref) {
             return _this3.inputRef = _ref;
           },
-          className: CLASS_ROOT + '__input',
+          className: INPUT + ' ' + CLASS_ROOT + '__input',
           id: this.props.id, name: this.props.name,
           value: this._renderLabel(this.props.value),
           defaultValue: this._renderLabel(this.props.defaultValue),
