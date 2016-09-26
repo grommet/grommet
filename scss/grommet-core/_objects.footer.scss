@@ -2,17 +2,7 @@
 
 .#{$grommet-namespace}footer {
   min-height: $footer-height;
-  line-height: $footer-height;
   width: 100%;
-}
-
-.#{$grommet-namespace}footer.#{$grommet-namespace}--direction-row {
-  > h1,
-  > h2,
-  > h3,
-  > h4 {
-    margin-bottom: 0px;
-  }
 }
 
 .#{$grommet-namespace}footer__content {
@@ -41,6 +31,7 @@
     color: $secondary-text-color;
     display: block;
 
+    // Have caller control via Paragraph in 1.0
     p {
       padding-top: halve($inuit-base-spacing-unit);
       margin: 0;
