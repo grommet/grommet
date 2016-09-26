@@ -11,6 +11,7 @@ import SearchIcon from './icons/base/Search';
 import CSSClassnames from '../utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.SEARCH;
+const INPUT = CSSClassnames.INPUT;
 const BACKGROUND_COLOR_INDEX = CSSClassnames.BACKGROUND_COLOR_INDEX;
 
 export default class Search extends Component {
@@ -296,7 +297,7 @@ export default class Search extends Component {
           autoComplete="off"
           defaultValue={this.props.defaultValue}
           value={this.props.value}
-          className={`${CLASS_ROOT}__input`}
+          className={`${INPUT} ${CLASS_ROOT}__input`}
           onChange={this._onChangeInput} />
       );
     }
@@ -376,7 +377,7 @@ export default class Search extends Component {
             autoComplete="off"
             defaultValue={this._renderLabel(this.props.defaultValue)}
             value={this._renderLabel(this.props.value)}
-            className={`${CLASS_ROOT}__input`}
+            className={`${INPUT} ${CLASS_ROOT}__input`}
             onFocus={this._onFocusInput}
             onBlur={this._onBlurInput}
             onChange={this._onChangeInput}

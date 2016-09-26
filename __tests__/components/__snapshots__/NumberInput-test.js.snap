@@ -4,7 +4,7 @@ exports[`NumberInput has correct default options 1`] = `
   aria-labelledby="number-label"
   className="grommetux-number-input">
   <input
-    className="grommetux-number-input__input"
+    className="grommetux-input grommetux-number-input__input"
     defaultValue={undefined}
     disabled={undefined}
     id="item2"

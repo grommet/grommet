@@ -3,7 +3,7 @@ exports[`SearchInput has correct default options 1`] = `
   className="grommetux-search-input">
   <input
     autoComplete="off"
-    className="grommetux-search-input__input"
+    className="grommetux-input grommetux-search-input__input"
     defaultValue={undefined}
     id="item1"
     name="item-1"

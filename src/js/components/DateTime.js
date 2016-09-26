@@ -12,6 +12,7 @@ import DateTimeDrop from './DateTimeDrop';
 import CSSClassnames from '../utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.DATE_TIME;
+const INPUT = CSSClassnames.INPUT;
 const FORM_FIELD = CSSClassnames.FORM_FIELD;
 const DATE_TIME_DROP = CSSClassnames.DATE_TIME_DROP;
 const FORMATS = {
@@ -267,7 +268,8 @@ export default class DateTime extends Component {
     return (
       <div ref={(ref) => this.containerRef = ref} className={classes.join(' ')}>
         <input ref={(ref) => this.inputRef = ref} placeholder={format}
-          className={`${CLASS_ROOT}__input`} id={id} name={name}
+          className={`${INPUT} ${CLASS_ROOT}__input`}
+          id={id} name={name}
           value={value || ''} onChange={this._onInputChange} />
         <Button className={`${CLASS_ROOT}__control`} icon={<Icon />}
           onClick={this._onControlClick} />

@@ -1,55 +1,11 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 .grommet {
-  input,
+  input:not(.#{$grommet-namespace}input),
   select,
   textarea {
     @include inuit-font-size($inuit-base-font-size);
-    // Align overall height with regular text line height, reduce
-    // top and bottom padding by an extra 2px.
-    padding: (halve($inuit-base-spacing-unit) - $input-border-width)
-      ($inuit-base-spacing-unit - $input-border-width);
-    border: $input-border-width solid $border-color;
-    border-radius: $border-radius;
-    outline: none;
-    // margin-right: halve($inuit-base-spacing-unit);
-    background-color: transparent; // inherit; doesn't work on IE
-    color: inherit;
-    font: inherit;
-    margin: 0;
-
-    .grommet.rtl & {
-      margin-right: 0;
-      margin-left: halve($inuit-base-spacing-unit);
-    }
-
-    &:focus {
-      border-width: $input-focus-border-width;
-      border-color: $focus-border-color;
-      padding: (halve($inuit-base-spacing-unit) - ($input-border-width + 1))
-        ($inuit-base-spacing-unit - ($input-border-width + 1));
-    }
-
-    &::-moz-focus-inner {
-      border: none;
-      outline: none;
-    }
-
-    &::-webkit-input-placeholder {
-      color: $placeholder-text-color;
-    }
-
-    &::-moz-placeholder {
-      color: $placeholder-text-color;
-    }
-
-    &:-ms-input-placeholder {
-       color: $placeholder-text-color;
-    }
-
-    &.error {
-      border-color: map-get($brand-status-colors, critical);
-    }
+    @include input();
   }
 
   input[type="button"],
@@ -67,10 +23,6 @@
     -moz-appearance: none;
     background: $small-drop-caret no-repeat center right halve($inuit-base-spacing-unit);
     cursor: pointer;
-
-    //&:hover {
-    //  background-color: $button-hover-background-color;
-    //}
 
     &::-moz-focus-inner {
       border: none;

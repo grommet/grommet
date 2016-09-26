@@ -2,12 +2,12 @@
 
 import React, { Component, PropTypes } from 'react';
 import Button from './Button';
-
 import AddIcon from './icons/base/Add';
 import SubtractIcon from './icons/base/Subtract';
 import CSSClassnames from '../utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.NUMBER_INPUT;
+const INPUT = CSSClassnames.INPUT;
 
 export default class NumberInput extends Component {
 
@@ -86,7 +86,7 @@ export default class NumberInput extends Component {
         aria-labelledby={labelId}>
 
         <input ref={ref => this.inputRef = ref}
-          tabIndex="0" className={CLASS_ROOT + "__input"}
+          tabIndex="0" className={`${INPUT} ${CLASS_ROOT}__input`}
           id={this.props.id} name={this.props.name} type="number"
           disabled={this.props.disabled}
           value={this.props.value}

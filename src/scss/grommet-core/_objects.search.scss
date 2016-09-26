@@ -16,12 +16,14 @@
 }
 
 .#{$grommet-namespace}search__input {
+  @include inuit-font-size($header-font-size);
   margin-right: 0px;
+  @include input();
 
-  .#{$grommet-namespace}header & {
-    font-size: inherit;
-    line-height: inherit;
-  }
+  // .#{$grommet-namespace}header & {
+  //   font-size: inherit;
+  //   line-height: inherit;
+  // }
 
   // Disable IE's clear icon
   &::-ms-clear {

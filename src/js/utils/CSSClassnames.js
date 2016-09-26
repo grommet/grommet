@@ -47,6 +47,7 @@ export default {
   HERO: `${namespace}hero`,
   IMAGE: `${namespace}image`,
   IMAGE_FIELD: `${namespace}image-field`,
+  INPUT: `${namespace}input`,
   LABEL: `${namespace}label`,
   LAYER: `${namespace}layer`,
   LEGEND: `${namespace}legend`,

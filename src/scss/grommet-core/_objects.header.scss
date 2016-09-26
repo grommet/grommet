@@ -13,15 +13,6 @@
     height: $header-height - 1;
   }
 
-  a:not(.#{$grommet-namespace}button) {
-    color: inherit;
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: none;
-    }
-  }
-
   .#{$grommet-namespace}status-icon {
     flex-grow: 0;
     flex-shrink: 0;
@@ -34,10 +25,6 @@
   @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
     height: $large-header-height - 1;
   }
-
-  .#{$grommet-namespace}header__content {
-    line-height: $large-header-height;
-  }
 }
 
 .#{$grommet-namespace}header--small {
@@ -46,38 +33,14 @@
   @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
     height: $small-header-height - 1;
   }
-
-  .#{$grommet-namespace}header__content {
-    line-height: $small-header-height;
-  }
-}
-
-header.#{$grommet-namespace}header {
-  @include inuit-font-size($header-font-size, inherit);
-  // @include transform(translate(0, 0));
-  // transition: -webkit-transform 0.5s;
-  // transition: transform 0.5s;
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5 {
-    margin-bottom: 0;
-  }
-
-  // &.#{$grommet-namespace}box--direction-row {
-  //   > * {
-  //     margin-bottom: 0px;
-  //   }
-  // }
 }
 
 .#{$grommet-namespace}header--splash {
   @include transform(translate(0, 40vh));
 }
 
-*:not(.#{$grommet-namespace}header__container--float) > header.#{$grommet-namespace}header--float {
+*:not(.#{$grommet-namespace}header__container--float)
+> header.#{$grommet-namespace}header--float {
   position: absolute;
   top: 0px;
   left: 0px;
