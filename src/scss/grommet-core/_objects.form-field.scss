@@ -91,6 +91,7 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
   > .#{$grommet-namespace}search-input input,
   > .#{$grommet-namespace}calendar input,
   > .#{$grommet-namespace}date-time input,
+  > .#{$grommet-namespace}text-input,
   > textarea {
     @include form-field-content();
   }
@@ -126,7 +127,8 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
   > select,
   > .#{$grommet-namespace}search-input input,
   > .#{$grommet-namespace}calendar input,
-  > .#{$grommet-namespace}date-time input {
+  > .#{$grommet-namespace}date-time input,
+  > .#{$grommet-namespace}text-input {
     height: $inuit-base-spacing-unit + halve($inuit-base-spacing-unit);
     // for IE 11.
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {

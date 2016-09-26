@@ -70,6 +70,7 @@ var Grommet = {
   Table: require('./components/Table'),
   TableRow: require('./components/TableRow'),
   Tabs: require('./components/Tabs'),
+  TextInput: require('./components/TextInput'),
   Tiles: require('./components/Tiles'),
   Tile: require('./components/Tile'),
   Timestamp: require('./components/Timestamp'),
