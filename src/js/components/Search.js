@@ -285,8 +285,7 @@ export default class Search extends Component {
         [`${BACKGROUND_COLOR_INDEX}-${this.props.dropColorIndex}`]:
           this.props.dropColorIndex,
         [`${CLASS_ROOT}__drop`]: true,
-        [`${CLASS_ROOT}__drop--controlled`]: !(this.state.inline),
-        [`${CLASS_ROOT}__drop--large`]: this.props.large
+        [`${CLASS_ROOT}__drop--controlled`]: !(this.state.inline)
       }
     );
 
@@ -361,8 +360,8 @@ export default class Search extends Component {
         [`${CLASS_ROOT}--fill`]: this.props.fill,
         [`${CLASS_ROOT}--icon-align-${this.props.iconAlign}`]:
           this.props.iconAlign,
+        [`${CLASS_ROOT}--pad-${this.props.pad}`]: this.props.pad,
         [`${CLASS_ROOT}--inline`]: this.state.inline,
-        [`${CLASS_ROOT}--large`]: this.props.large && ! this.props.size,
         [`${CLASS_ROOT}--${this.props.size}`]: this.props.size
       },
       this.props.className
@@ -408,14 +407,15 @@ Search.propTypes = {
   dropAlign: Drop.alignPropType,
   dropColorIndex: PropTypes.string,
   fill: PropTypes.bool,
-  iconAlign: React.PropTypes.oneOf(['start', 'end']),
-  id: React.PropTypes.string,
+  iconAlign: PropTypes.oneOf(['start', 'end']),
+  id: PropTypes.string,
   inline: PropTypes.bool,
   onDOMChange: PropTypes.func,
   onSelect: PropTypes.func,
+  pad: PropTypes.oneOf(['small', 'medium']),
   placeHolder: PropTypes.string,
   responsive: PropTypes.bool,
-  size: React.PropTypes.oneOf(['small', 'medium', 'large']),
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
   suggestions: PropTypes.arrayOf(
     PropTypes.oneOfType([
       PropTypes.shape({

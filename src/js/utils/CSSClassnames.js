@@ -70,6 +70,7 @@ export default {
   SEARCH: `${namespace}search`,
   SEARCH_INPUT: `${namespace}search-input`,
   SECTION: `${namespace}section`,
+  SELECT: `${namespace}select`,
   SIDEBAR: `${namespace}sidebar`,
   SKIP_LINK_ANCHOR: `${namespace}skip-link-anchor`,
   SKIP_LINKS: `${namespace}skip-links`,

@@ -243,3 +243,14 @@
   //used to add full height for button inside a flex container
   flex-grow: 1;
 }
+
+.#{$grommet-namespace}search--pad-medium.#{$grommet-namespace}search--inline {
+  .#{$grommet-namespace}search__input {
+    padding-left: ($inuit-base-spacing-unit - $input-border-width);
+    padding-right: ($inuit-base-spacing-unit - $input-border-width);
+  }
+
+  .#{$grommet-namespace}control-icon-search {
+    right: $inuit-base-spacing-unit;
+  }
+}

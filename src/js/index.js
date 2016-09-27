@@ -60,6 +60,7 @@ var Grommet = {
   Search: require('./components/Search'),
   SearchInput: require('./components/SearchInput'),
   Section: require('./components/Section'),
+  Select: require('./components/Select'),
   Sidebar: require('./components/Sidebar'),
   Split: require('./components/Split'),
   SkipLinkAnchor: require('./components/SkipLinkAnchor'),
