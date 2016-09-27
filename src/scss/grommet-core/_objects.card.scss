@@ -53,6 +53,10 @@ $card-hover-color: #EBEBEB;
 }
 
 .#{$grommet-namespace}card__content {
+  .#{$grommet-namespace}tiles & {
+    flex-grow: 1;
+  }
+
   // truncate text paragraphs after 8 lines
   .#{$grommet-namespace}paragraph {
     max-width: none;
