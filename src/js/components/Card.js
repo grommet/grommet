@@ -194,7 +194,7 @@ export default class Card extends Component {
     let videoLayer = this._renderVideoLayer();
 
     const text = (
-      <Box className={`${CLASS_ROOT}__content`} pad={contentPad}>
+      <Box className={`${CLASS_ROOT}__content`} flex={true} pad={contentPad}>
         {label}
         {heading}
         {description}
