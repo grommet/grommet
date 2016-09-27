@@ -1,3 +1,18 @@
+exports[`Timestamp displays second 1`] = `
+<span
+  className="grommetux-timestamp">
+  <span
+    className="grommetux-timestamp__date">
+    Apr 7, 2015
+  </span>
+   
+  <span
+    className="grommetux-timestamp__time">
+    10:00:01 AM
+  </span>
+</span>
+`;
+
 exports[`Timestamp has correct default options 1`] = `
 <span
   className="grommetux-timestamp">

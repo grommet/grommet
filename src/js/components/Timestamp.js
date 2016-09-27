@@ -46,7 +46,10 @@ export default class Timestamp extends Component {
 
     let time;
     if (_showField('time', props.fields)) {
-      const timeOptions = { hour: '2-digit', minute: '2-digit' };
+      const timeOptions = (props.seconds)
+        ? { hour: '2-digit', minute: '2-digit', second: '2-digit' }
+        : { hour: '2-digit', minute: '2-digit' };
+
       time = value.toLocaleTimeString(locale, timeOptions);
     }
 
@@ -90,6 +93,7 @@ Timestamp.propTypes = {
     PropTypes.arrayOf(FIELD_TYPES),
     FIELD_TYPES
   ]),
+  seconds: PropTypes.bool,
   value: PropTypes.oneOfType([
     PropTypes.string, // ISO-8601 string
     PropTypes.object  // Date object
