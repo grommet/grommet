@@ -369,7 +369,7 @@ var Search = function (_Component) {
       var _classnames;
 
       var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Search.propTypes));
-      var classes = (0, _classnames5.default)((_classnames = {}, (0, _defineProperty3.default)(_classnames, BACKGROUND_COLOR_INDEX + '-' + this.props.dropColorIndex, this.props.dropColorIndex), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__drop', true), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__drop--controlled', !this.state.inline), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__drop--large', this.props.large), _classnames));
+      var classes = (0, _classnames5.default)((_classnames = {}, (0, _defineProperty3.default)(_classnames, BACKGROUND_COLOR_INDEX + '-' + this.props.dropColorIndex, this.props.dropColorIndex), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__drop', true), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__drop--controlled', !this.state.inline), _classnames));
 
       var input = void 0;
       if (!this.state.inline) {
@@ -432,7 +432,7 @@ var Search = function (_Component) {
           _this2 = this;
 
       var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Search.propTypes));
-      var classes = (0, _classnames5.default)(CLASS_ROOT, (_classnames3 = {}, (0, _defineProperty3.default)(_classnames3, CLASS_ROOT + '--controlled', !this.state.inline), (0, _defineProperty3.default)(_classnames3, CLASS_ROOT + '--fill', this.props.fill), (0, _defineProperty3.default)(_classnames3, CLASS_ROOT + '--icon-align-' + this.props.iconAlign, this.props.iconAlign), (0, _defineProperty3.default)(_classnames3, CLASS_ROOT + '--inline', this.state.inline), (0, _defineProperty3.default)(_classnames3, CLASS_ROOT + '--large', this.props.large && !this.props.size), (0, _defineProperty3.default)(_classnames3, CLASS_ROOT + '--' + this.props.size, this.props.size), _classnames3), this.props.className);
+      var classes = (0, _classnames5.default)(CLASS_ROOT, (_classnames3 = {}, (0, _defineProperty3.default)(_classnames3, CLASS_ROOT + '--controlled', !this.state.inline), (0, _defineProperty3.default)(_classnames3, CLASS_ROOT + '--fill', this.props.fill), (0, _defineProperty3.default)(_classnames3, CLASS_ROOT + '--icon-align-' + this.props.iconAlign, this.props.iconAlign), (0, _defineProperty3.default)(_classnames3, CLASS_ROOT + '--pad-' + this.props.pad, this.props.pad), (0, _defineProperty3.default)(_classnames3, CLASS_ROOT + '--inline', this.state.inline), (0, _defineProperty3.default)(_classnames3, CLASS_ROOT + '--' + this.props.size, this.props.size), _classnames3), this.props.className);
 
       if (this.state.inline) {
         return _react2.default.createElement(
@@ -483,14 +483,15 @@ Search.propTypes = {
   dropAlign: _Drop2.default.alignPropType,
   dropColorIndex: _react.PropTypes.string,
   fill: _react.PropTypes.bool,
-  iconAlign: _react2.default.PropTypes.oneOf(['start', 'end']),
-  id: _react2.default.PropTypes.string,
+  iconAlign: _react.PropTypes.oneOf(['start', 'end']),
+  id: _react.PropTypes.string,
   inline: _react.PropTypes.bool,
   onDOMChange: _react.PropTypes.func,
   onSelect: _react.PropTypes.func,
+  pad: _react.PropTypes.oneOf(['small', 'medium']),
   placeHolder: _react.PropTypes.string,
   responsive: _react.PropTypes.bool,
-  size: _react2.default.PropTypes.oneOf(['small', 'medium', 'large']),
+  size: _react.PropTypes.oneOf(['small', 'medium', 'large']),
   suggestions: _react.PropTypes.arrayOf(_react.PropTypes.oneOfType([_react.PropTypes.shape({
     label: _react.PropTypes.node,
     value: _react.PropTypes.any
