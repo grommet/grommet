@@ -260,7 +260,6 @@ Card.propTypes = {
 };
 
 Card.defaultProps = {
-  colorIndex: 'light-1',
   contentPad: 'medium',
   headingStrong: true,
   textSize: 'small'
