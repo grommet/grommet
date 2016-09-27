@@ -299,7 +299,7 @@ var Card = function (_Component) {
 
       var text = _react2.default.createElement(
         _Box2.default,
-        { className: CLASS_ROOT + '__content', pad: contentPad },
+        { className: CLASS_ROOT + '__content', flex: true, pad: contentPad },
         label,
         heading,
         description,
@@ -354,7 +354,6 @@ Card.propTypes = (0, _extends3.default)({
 }, _Box2.default.propTypes);
 
 Card.defaultProps = {
-  colorIndex: 'light-1',
   contentPad: 'medium',
   headingStrong: true,
   textSize: 'small'

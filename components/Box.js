@@ -197,6 +197,10 @@ var Box = function (_Component) {
             // don't apply 100% max-width when size using size.width.max option
             classes.push(CLASS_ROOT + '--size');
           }
+          if (size.width && size.width.max) {
+            // allow widths to shrink, apply 100% width
+            classes.push(CLASS_ROOT + '--width-max');
+          }
         }
       }
 

@@ -109,12 +109,26 @@
 .#{$grommet-namespace}box--separator-vertical,
 .#{$grommet-namespace}box--separator-all {
   border-left: 1px solid $border-color;
+
+  @include media-query (palm) {
+    .#{$grommet-namespace}box--responsive.#{$grommet-namespace}box--direction-row & {
+      border-left: none;
+      border-top: 1px solid $border-color;
+    }
+  }
 }
 
 .#{$grommet-namespace}box--separator-right,
 .#{$grommet-namespace}box--separator-vertical,
 .#{$grommet-namespace}box--separator-all {
   border-right: 1px solid $border-color;
+
+  @include media-query (palm) {
+    .#{$grommet-namespace}box--responsive.#{$grommet-namespace}box--direction-row & {
+      border-right: none;
+      border-bottom: 1px solid $border-color;
+    }
+  }
 }
 
 #{$dark-background-context}
@@ -317,6 +331,9 @@
 }
 
 // max-width
+.#{$grommet-namespace}box--width-max {
+  width: 100%;
+}
 
 .#{$grommet-namespace}box--width-max-xsmall {
   max-width: $size-xsmall;
