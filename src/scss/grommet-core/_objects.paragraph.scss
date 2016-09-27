@@ -32,6 +32,9 @@
 }
 
 .#{$grommet-namespace}paragraph--width-large {
-  width: $inuit-base-spacing-unit * 30;
   max-width: 100%;
+
+  @include media-query(lap-and-up) {
+    width: $inuit-base-spacing-unit * 30;
+  }
 }
