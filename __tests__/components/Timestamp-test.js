@@ -14,9 +14,51 @@ describe('Timestamp', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('displays second', () => {
+  it('displays time', () => {
     const component = renderer.create(
-      <Timestamp value='4/7/2015 10:00:01 am' seconds={true}/>
+      <Timestamp value='4/7/2015 10:00:01 am' fields={"time"} />
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('displays time with seconds', () => {
+    const component = renderer.create(
+      <Timestamp value='4/7/2015 10:00:01 am' fields={["time", "seconds"]} />
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('displays date', () => {
+    const component = renderer.create(
+      <Timestamp value='4/7/2015 10:00:01 am' fields={"date"} />
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('displays date and time', () => {
+    const component = renderer.create(
+      <Timestamp value='4/7/2015 10:00:01 am' fields={["date", "time"]} />
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('displays date, time, seconds', () => {
+    const component = renderer.create(
+      <Timestamp value='4/7/2015 10:00:01 am' fields={
+        ["date", "time", "seconds"]
+      } />
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('aligns to end', () => {
+    const component = renderer.create(
+      <Timestamp value='4/7/2015 10:00:01 am' align="end" />
     );
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
