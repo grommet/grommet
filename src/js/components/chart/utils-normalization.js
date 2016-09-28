@@ -89,7 +89,6 @@ export class normalization {
       // Possible to implement a calculator that with a given data points
       // will calculate the optimized granularity
       granularity = 1;
-      console.warn('granularity was not defined for getXAxis calculation');
     }
 
     let normalizedXAxisLength = ( (max - min) / granularity) + 1;
