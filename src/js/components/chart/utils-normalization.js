@@ -36,7 +36,7 @@ export class normalization {
    */
   getXValues (data) {
     if (!data) return [];
-    return data.map(dataPoint => parseInt(dataPoint[0], 10));
+    return (data || []).map(dataPoint => parseInt(dataPoint[0], 10));
   };
 
   /**
