@@ -19,7 +19,7 @@ function announcePageLoaded(title) {
 }
 
 function announce(message) {
-  var mode = arguments.length <= 1 || arguments[1] === undefined ? 'assertive' : arguments[1];
+  var mode = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'assertive';
 
   var announcer = document.querySelector('.' + CLASS_ROOT + '__announcer');
   announcer.setAttribute('aria-live', mode);

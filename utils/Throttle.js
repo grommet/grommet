@@ -5,8 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 exports.default = function (fn) {
-  var threshhold = arguments.length <= 1 || arguments[1] === undefined ? 250 : arguments[1];
-  var scope = arguments.length <= 2 || arguments[2] === undefined ? this : arguments[2];
+  var threshhold = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 250;
+  var scope = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : this;
 
   var last = void 0;
   var deferTimer = void 0;

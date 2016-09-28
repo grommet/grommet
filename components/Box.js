@@ -118,7 +118,7 @@ var Box = function (_Component) {
     value: function _addPropertyClass(classes, property) {
       var _this2 = this;
 
-      var options = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
+      var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
 
       var value = (options.object || this.props)[property];
       var elementName = options.elementName || CLASS_ROOT;

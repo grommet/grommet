@@ -49,8 +49,8 @@ function getCurrentLocale() {
 }
 
 function getLocaleData() {
-  var appMessages = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
-  var locale = arguments.length <= 1 || arguments[1] === undefined ? getCurrentLocale() : arguments[1];
+  var appMessages = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var locale = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : getCurrentLocale();
 
   var grommetMessages = void 0;
   try {

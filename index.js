@@ -9,10 +9,7 @@ var Grommet = {
   App: require('./components/App'),
   Article: require('./components/Article'),
   Box: require('./components/Box'),
-  Brick: require('./components/Brick'),
-  Bricks: require('./components/Bricks'),
   Button: require('./components/Button'),
-  Calendar: require('./components/Calendar'),
   Carousel: require('./components/Carousel'),
   chart: {
     Area: require('./components/chart/Area'),
@@ -28,7 +25,6 @@ var Grommet = {
     MarkerLabel: require('./components/chart/MarkerLabel'),
     Range: require('./components/chart/Range')
   },
-  Chart: require('./components/Chart'),
   CheckBox: require('./components/CheckBox'),
   Columns: require('./components/Columns'),
   DateTime: require('./components/DateTime'),
@@ -98,7 +94,6 @@ var Grommet = {
   KeyboardAccelerators: require('./utils/KeyboardAccelerators'),
   Locale: require('./utils/Locale'),
   Rest: require('./utils/Rest'),
-  RestWatch: require('./utils/RestWatch'),
   Validator: require('./utils/Validator')
 };
 
