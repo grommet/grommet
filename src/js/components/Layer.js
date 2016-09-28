@@ -252,7 +252,7 @@ export default class Layer extends Component {
 
     if (grommetApps) {
       Array.prototype.slice.call(grommetApps).forEach((grommetApp) => {
-        grommetApp.setAttribute('aria-hidden', !ariaHidden);
+        grommetApp.setAttribute('aria-hidden', ariaHidden);
         if (ariaHidden) {
           grommetApp.classList.remove(`${APP}--hidden`);
           // this must be null to work
