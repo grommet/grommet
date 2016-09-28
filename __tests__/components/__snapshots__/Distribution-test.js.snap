@@ -1,6 +1,6 @@
 exports[`Distribution has correct default options 1`] = `
 <div
-  className="grommetux-distribution grommetux-distribution--legend-bottom grommetux-distribution--loading">
+  className="grommetux-distribution grommetux-distribution--loading">
   <svg
     aria-activedescendant="distribution-title_item_0"
     aria-labelledby="distribution-title distribution-desc"

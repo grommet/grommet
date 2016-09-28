@@ -232,7 +232,7 @@ Box.propTypes = {
   focusable: PropTypes.bool,
   flex: PropTypes.oneOf(['grow', 'shrink', true, false]),
   full: PropTypes.oneOf([true, 'horizontal', 'vertical', false]),
-    // remove in 1.0
+    // remove in 1.0?
   onClick: PropTypes.func,
   justify: PropTypes.oneOf(['start', 'center', 'between', 'end']),
   margin: PropTypes.oneOfType([

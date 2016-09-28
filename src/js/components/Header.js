@@ -78,21 +78,8 @@ export default class Header extends Component {
     if (this.props.splash) {
       classes.push(`${CLASS_ROOT}--splash`);
     }
-    if (this.props.strong) {
-      console.warn(
-        'Header: string prop has been deprecated. ' +
-        'Use a separate Heading instead.'
-      );
-      classes.push(`${CLASS_ROOT}--strong`);
-    }
     if (this.props.className) {
       classes.push(this.props.className);
-    }
-    if (this.props.tag && 'header' !== this.props.tag) {
-      console.warn(
-        'Header: tag prop has been deprecated. ' +
-        'Use a separate Heading instead.'
-      );
     }
 
     if (this.props.fixed) {
@@ -102,7 +89,7 @@ export default class Header extends Component {
             className={`${CLASS_ROOT}__mirror`} />
           <div className={wrapperClasses.join(' ')}>
             <Box ref={ref => this.contentRef = ref}
-              tag={this.props.header} {...other} className={classes.join(' ')}>
+              tag="header" {...other} className={classes.join(' ')}>
               {this.props.children}
             </Box>
           </div>
@@ -110,7 +97,7 @@ export default class Header extends Component {
       );
     } else {
       return (
-        <Box tag={this.props.header} {...other} className={classes.join(' ')}
+        <Box tag="header" {...other} className={classes.join(' ')}
           containerClassName={containerClasses.join(' ')}>
           {this.props.children}
         </Box>
@@ -125,8 +112,6 @@ Header.propTypes = {
   float: PropTypes.bool,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   splash: PropTypes.bool,
-  strong: PropTypes.bool, // remove in 1.0
-  tag: PropTypes.string, // remove in 1.0
   ...Box.propTypes
 };
 
@@ -134,6 +119,5 @@ Header.defaultProps = {
   pad: { horizontal: 'none', vertical: 'none', between: 'small'},
   direction: 'row',
   align: 'center',
-  responsive: false,
-  tag: 'header' // remove in 1.0
+  responsive: false
 };

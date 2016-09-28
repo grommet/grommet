@@ -66,7 +66,7 @@ export default class Graphic extends Component {
     return "";
   }
 
-  _renderSlice (trackIndex, item, itemIndex, startValue, maxValue, track,
+  _renderSlice (trackIndex, item, itemIndex, startValue, max, track,
     threshold) {
     let path;
     if (! item.hidden) {
@@ -81,8 +81,7 @@ export default class Graphic extends Component {
         classes.push(`${COLOR_INDEX}-${item.colorIndex}`);
       }
 
-      let commands =
-        this._sliceCommands(trackIndex, item, startValue, maxValue);
+      let commands = this._sliceCommands(trackIndex, item, startValue, max);
 
       if (threshold) {
         path = buildPath(itemIndex, commands, classes);
@@ -90,9 +89,7 @@ export default class Graphic extends Component {
         path = buildPath(itemIndex, commands, classes,
           this.props.onActivate, item.onClick);
       } else {
-        const a11yTitle = (
-          `${item.value} ${item.label || this.props.units || ''}`
-        );
+        const a11yTitle = `${item.value}`;
         const role = this.props.series.length > 1 ? 'img' : undefined;
         path = buildPath(itemIndex, commands, classes,
           this.props.onActivate, item.onClick, a11yTitle, role);
@@ -104,11 +101,11 @@ export default class Graphic extends Component {
 
   _renderSlices (series, trackIndex, track, threshold) {
     const { min, max } = this.props;
-    let startValue = min.value;
+    let startValue = min;
 
     let paths = series.map((item, itemIndex) => {
       let path = this._renderSlice(trackIndex, item, itemIndex, startValue,
-        max.value, track, threshold);
+        max, track, threshold);
 
       startValue += item.value;
 
@@ -119,7 +116,7 @@ export default class Graphic extends Component {
   }
 
   _loadingCommands () {
-    return this._sliceCommands(0, this.props.max, this.props.min.value);
+    return this._sliceCommands(0, { value: this.props.max }, this.props.min);
   }
 
   _onPreviousBand (event) {
@@ -171,7 +168,7 @@ export default class Graphic extends Component {
       values = this._renderSlices(this.props.series, 0);
     } else {
       values = this.props.series.map((item, index) => {
-        return this._renderSlice(index, item, index, min.value, max.value);
+        return this._renderSlice(index, item, index, min, max);
       });
     }
     if (values.length === 0) {
@@ -187,14 +184,14 @@ export default class Graphic extends Component {
 
   _renderTracks () {
     const { min, max } = this.props;
-    const trackValue = { value: max.value };
+    const trackValue = { value: max };
     let tracks;
     if (this.props.stacked) {
       tracks =
-        this._renderSlice(0, trackValue, 0, min.value, max.value, true, false);
+        this._renderSlice(0, trackValue, 0, min, max, true, false);
     } else {
       tracks = this.props.series.map((item, index) => (
-        this._renderSlice(index, trackValue, index, min.value, max.value,
+        this._renderSlice(index, trackValue, index, min, max,
           true, false)
       ));
     }
@@ -228,10 +225,6 @@ export default class Graphic extends Component {
     return null;
   }
 
-  _renderInlineLegend () {
-    return null;
-  }
-
   _renderA11YTitle () {
     let a11yTitle = this.props.a11yTitle;
     if (!a11yTitle) {
@@ -248,19 +241,18 @@ export default class Graphic extends Component {
 
   _renderA11YDesc () {
     let a11yDesc = this.props.a11yDesc;
-    let units = this.props.units || '';
     if (!a11yDesc) {
       let valueLabel = Intl.getMessage(this.context.intl, 'Value');
-      a11yDesc = `, ${valueLabel}: ${this._renderTotal()} ${units}`;
+      a11yDesc = `, ${valueLabel}: ${this._renderTotal()}`;
 
       if (this.props.min) {
         let minLabel = Intl.getMessage(this.context.intl, 'Min');
-        a11yDesc += `, ${minLabel}: ${this.props.min.value} ${units}`;
+        a11yDesc += `, ${minLabel}: ${this.props.min}`;
       }
 
       if (this.props.max) {
         let maxLabel = Intl.getMessage(this.context.intl, 'Max');
-        a11yDesc += `, ${maxLabel}: ${this.props.max.value} ${units}`;
+        a11yDesc += `, ${maxLabel}: ${this.props.max}`;
       }
 
       if (this.props.thresholds) {
@@ -286,7 +278,6 @@ export default class Graphic extends Component {
     let values = this._renderValues();
     let thresholds = this._renderThresholds();
     let topLayer = this._renderTopLayer();
-    let inlineLegend = this._renderInlineLegend();
 
     let a11yTitle = this._renderA11YTitle();
 
@@ -305,7 +296,6 @@ export default class Graphic extends Component {
         {tracks}
         {thresholds}
         {values}
-        {inlineLegend}
         {topLayer}
       </svg>
     );
@@ -316,7 +306,6 @@ Graphic.propTypes = {
   stacked: PropTypes.bool,
   tabIndex: PropTypes.string,
   thresholds: PropTypes.arrayOf(PropTypes.shape({
-    label: PropTypes.string,
     value: PropTypes.number.isRequired,
     colorIndex: PropTypes.string
   })).isRequired,

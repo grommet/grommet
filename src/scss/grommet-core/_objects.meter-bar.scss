@@ -52,14 +52,6 @@ $meter-bar-cross-default:
     @include graph-stroke-color-translucent(0.5);
   }
 
-  .#{$grommet-namespace}meter__value { // remove in 1.0
-    text-align: left;
-  }
-
-  .#{$grommet-namespace}meter__value-label { // remove in 1.0
-    @include inuit-font-size($label-font-size, $label-font-size + 2);
-  }
-
   // This should be a separate section but SCSS MergableSelector won't allow it. :(
   &.#{$grommet-namespace}meter--vertical {
     white-space: nowrap;
@@ -91,32 +83,6 @@ $meter-bar-cross-default:
 
     .#{$grommet-namespace}meter__labeled-graphic {
       display: inline-block;
-    }
-
-    .#{$grommet-namespace}meter__value { // remove in 1.0
-      position: relative;
-      vertical-align: top;
-      top: halve($meter-size-default);
-      @include transform(translateY(-50%));
-      display: inline-block;
-      // margin-left: halve($inuit-base-spacing-unit);
-    }
-
-    .#{$grommet-namespace}meter__minmax-container { // remove in 1.0
-      position: absolute;
-      top: 0px;
-      left: $meter-bar-cross-default;
-    }
-
-    &.#{$grommet-namespace}meter--legend-right { // remove in 1.0
-
-      .#{$grommet-namespace}meter__legend {
-        top: halve($meter-size-default);
-      }
-
-      .#{$grommet-namespace}meter__value {
-        min-width: $inuit-base-spacing-unit * 2 + halve($inuit-base-spacing-unit); //?
-      }
     }
 
     &.#{$grommet-namespace}meter--xsmall {
@@ -173,21 +139,6 @@ $meter-bar-cross-default:
           }
         }
       }
-
-      .#{$grommet-namespace}meter__value { // remove in 1.0
-        top: halve($size-small);
-      }
-
-      &.#{$grommet-namespace}meter--legend-right { // remove in 1.0
-
-        .#{$grommet-namespace}meter__legend {
-          top: halve($size-small);
-        }
-
-        .#{$grommet-namespace}meter__value {
-          min-width: double($meter-bar-cross-small) * 0.875;
-        }
-      }
     }
 
     &.#{$grommet-namespace}meter--medium {
@@ -214,16 +165,6 @@ $meter-bar-cross-default:
           .#{$grommet-namespace}meter__graphic {
             width: round($meter-bar-cross-medium * 4);
           }
-        }
-      }
-
-      .#{$grommet-namespace}meter__value { // remove in 1.0
-        top: halve($size-medium);
-      }
-
-      &.#{$grommet-namespace}meter--legend-right { // remove in 1.0
-        .#{$grommet-namespace}meter__legend {
-          top: halve($size-medium);
         }
       }
     }
@@ -254,16 +195,6 @@ $meter-bar-cross-default:
           }
         }
       }
-
-      .#{$grommet-namespace}meter__value { // remove in 1.0
-        top: halve($size-large);
-      }
-
-      &.#{$grommet-namespace}meter--legend-right { // remove in 1.0
-        .#{$grommet-namespace}meter__legend {
-          top: halve($size-large);
-        }
-      }
     }
 
     &.#{$grommet-namespace}meter--xlarge {
@@ -292,88 +223,15 @@ $meter-bar-cross-default:
           }
         }
       }
-
-      .#{$grommet-namespace}meter__value { // remove in 1.0
-        top: halve($size-xlarge);
-      }
-
-      &.#{$grommet-namespace}meter--legend-right { // remove in 1.0
-        .#{$grommet-namespace}meter__legend {
-          top: halve($size-xlarge);
-        }
-      }
     }
   }
 }
 
 .#{$grommet-namespace}meter--bar:not(.#{$grommet-namespace}meter--vertical) {
 
-  .#{$grommet-namespace}meter__minmax-container { // remove in 1.0
-    // display: inline-block;
-
-    > a {
-      vertical-align: top;
-      display: block;
-      height: $inuit-base-spacing-unit;
-    }
-  }
-
   .#{$grommet-namespace}meter__graphic {
     width: $size-small;
     min-width: $size-xsmall;
-  }
-
-  .#{$grommet-namespace}meter__value { // remove in 1.0
-    display: inline-block;
-    vertical-align: top;
-    margin-left: halve($inuit-base-spacing-unit);
-
-    html.rtl & {
-      margin-left: 0;
-      margin-right: halve($inuit-base-spacing-unit);
-    }
-  }
-
-  .#{$grommet-namespace}meter__value-value { // remove in 1.0
-    @include inuit-font-size($number-font-size);
-  }
-
-  .#{$grommet-namespace}meter__value-units { // remove in 1.0
-    @include inuit-font-size($number-units-font-size);
-  }
-
-  &.#{$grommet-namespace}meter--single,
-  &.#{$grommet-namespace}meter--stacked { // remove in 1.0
-
-    .#{$grommet-namespace}meter__value {
-      &-label {
-        display: inline-block;
-        margin-left: round($inuit-base-spacing-unit / 6);
-
-        html.rtl & {
-          margin-left: 0;
-          margin-right: round($inuit-base-spacing-unit / 6);
-        }
-      }
-    }
-
-    &.#{$grommet-namespace}meter--legend-right {
-      .#{$grommet-namespace}meter__value {
-        min-width: $inuit-base-spacing-unit * 3.5;
-      }
-    }
-  }
-
-  &.#{$grommet-namespace}meter--legend-right { // remove in 1.0
-
-    .#{$grommet-namespace}meter__legend {
-      top: 0px;
-      @include transform(none);
-    }
-
-    .#{$grommet-namespace}meter__value {
-      min-width: $inuit-base-spacing-unit * 2;
-    }
   }
 
   &.#{$grommet-namespace}meter--xsmall {
@@ -381,11 +239,6 @@ $meter-bar-cross-default:
     .#{$grommet-namespace}meter__graphic {
       width: $size-xsmall;
       height: $meter-bar-cross-xsmall;
-    }
-
-    .#{$grommet-namespace}meter__value-value,
-    .#{$grommet-namespace}meter__value-units { // remove in 1.0
-      @include inuit-font-size($inuit-base-font-size);
     }
 
     &.#{$grommet-namespace}meter--single,
@@ -423,11 +276,6 @@ $meter-bar-cross-default:
       height: $meter-bar-cross-small;
     }
 
-    .#{$grommet-namespace}meter__value-value,
-    .#{$grommet-namespace}meter__value-units { // remove in 1.0
-      @include inuit-font-size($inuit-base-font-size);
-    }
-
     &.#{$grommet-namespace}meter--single,
     &.#{$grommet-namespace}meter--stacked {
       .#{$grommet-namespace}meter__graphic {
@@ -451,19 +299,6 @@ $meter-bar-cross-default:
       &.#{$grommet-namespace}meter--count-4 {
         .#{$grommet-namespace}meter__graphic {
           height: round($meter-bar-cross-small * 4);
-        }
-      }
-    }
-
-    &.#{$grommet-namespace}meter--legend-right { // remove in 1.0
-
-      .#{$grommet-namespace}meter__value {
-        min-width: double($inuit-base-spacing-unit) * 0.875;
-      }
-
-      &.#{$grommet-namespace}meter--stacked {
-        .#{$grommet-namespace}meter__value {
-          min-width: $inuit-base-spacing-unit * 3;
         }
       }
     }
@@ -495,20 +330,6 @@ $meter-bar-cross-default:
         }
       }
     }
-
-    .#{$grommet-namespace}meter__value { // remove in 1.0
-      margin-left: $inuit-base-font-size;
-
-      html.rtl & {
-        margin-left: 0;
-        margin-right: $inuit-base-font-size;
-      }
-
-      &-value,
-      &-units {
-        @include inuit-font-size($number-font-size + 2, inherit);
-      }
-    }
   }
 
   &.#{$grommet-namespace}meter--large {
@@ -538,20 +359,6 @@ $meter-bar-cross-default:
         }
       }
     }
-
-    .#{$grommet-namespace}meter__value { // remove in 1.0
-      margin-left: $inuit-base-font-size;
-
-      html.rtl & {
-        margin-left: 0;
-        margin-right: $inuit-base-font-size;
-      }
-
-      &-value,
-      &-units {
-        @include inuit-font-size($number-font-size + 2, inherit);
-      }
-    }
   }
 
   &.#{$grommet-namespace}meter--xlarge {
@@ -578,20 +385,6 @@ $meter-bar-cross-default:
         .#{$grommet-namespace}meter__graphic {
           height: round($meter-bar-cross-xlarge * 4);
         }
-      }
-    }
-
-    .#{$grommet-namespace}meter__value { // remove in 1.0
-      margin-left: $inuit-base-spacing-unit;
-
-      html.rtl & {
-        margin-left: 0;
-        margin-right: $inuit-base-spacing-unit;
-      }
-
-      &-value,
-      &-units {
-        @include inuit-font-size($number-font-size + 6, inherit);
       }
     }
   }

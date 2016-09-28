@@ -28,7 +28,7 @@ export default class Spiral extends Graphic {
 
     const state = {
       startAngle: 0,
-      anglePer: 270.0 / props.max.value,
+      anglePer: 270.0 / props.max,
       angleOffset: 180,
       // The last spiral ends out near but not quite at the edge of the
       // view box.

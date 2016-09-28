@@ -59,17 +59,17 @@
   }
 }
 
-// temporary flex grow capability
-.flex { // remove in 1.0
-  flex-grow: 1;
-  // need to fix flexbox issue with min-width: auto for some tags
-  // https://weblog.west-wind.com/posts/2016/Feb/15/Flexbox-Containers-PRE-tags-and-managing-Overflow
-  min-width: 0;
-}
-
-.no-flex { // remove in 1.0
-  flex: 0 0 auto;
-}
+// // temporary flex grow capability
+// .flex { // remove in 1.0?
+//   flex-grow: 1;
+//   // need to fix flexbox issue with min-width: auto for some tags
+//   // https://weblog.west-wind.com/posts/2016/Feb/15/Flexbox-Containers-PRE-tags-and-managing-Overflow
+//   min-width: 0;
+// }
+//
+// .no-flex { // remove in 1.0?
+//   flex: 0 0 auto;
+// }
 
 .#{$grommet-namespace}box {
   display: flex;

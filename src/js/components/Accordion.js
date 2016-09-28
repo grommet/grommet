@@ -21,12 +21,6 @@ export default class Accordion extends Component {
     } else {
       active = this.props.active || [];
     }
-    if (props.initialIndex) {
-      console.warn(
-        'Accordion: initialIndex prop has been deprecated. Use active instead.'
-      );
-      active.push(props.initialIndex);
-    }
     React.Children.forEach(props.children, (child, index) => {
       if (child.props.active) {
         console.warn(
@@ -106,8 +100,7 @@ Accordion.propTypes = {
   ]),
   animate: PropTypes.bool,
   onActive: PropTypes.func,
-  openMulti: PropTypes.bool,
-  initialIndex: PropTypes.number // remove in 1.0, use {active: }
+  openMulti: PropTypes.bool
 };
 
 Accordion.defaultProps = {

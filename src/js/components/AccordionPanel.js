@@ -43,7 +43,7 @@ export default class AccordionPanel extends Component {
 };
 
 AccordionPanel.propTypes = {
-  active: PropTypes.bool, // remove in 1.0, use {active from Accordion}
+  active: PropTypes.bool, // set by Accordion
   animate: PropTypes.bool,
   heading: PropTypes.node.isRequired,
   onChange: PropTypes.func,

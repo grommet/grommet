@@ -175,8 +175,7 @@ export default class Video extends Component {
   _renderControls () {
     let extendedProps = Object.assign({
       title: this.props.title,
-      videoHeader: this.props.videoHeader,
-      togglePlay: this.props.onClick || this._togglePlay,
+      togglePlay: this._togglePlay,
       toggleMute: this._toggleMute,
       play: this._play,
       pause: this._pause,
@@ -217,17 +216,6 @@ export default class Video extends Component {
       className
     );
 
-    const deprecatedProps = [];
-    if (this.props.videoHeader)
-      deprecatedProps.push('videoHeader');
-    if (this.props.onClick)
-      deprecatedProps.push('onClick');
-    if (this.props.duration)
-      deprecatedProps.push('duration');
-    if (deprecatedProps.length > 0)
-      console.warn(`Video: ${deprecatedProps.join(', ')} ` +
-        'prop has been deprecated.');
-
     return (
       <div className={classes} onMouseMove={this._onMouseMove}>
         <video ref={el => this._video = el}
@@ -248,11 +236,9 @@ Video.propTypes = {
   allowFullScreen: PropTypes.bool,
   autoPlay: PropTypes.bool,
   colorIndex: PropTypes.string,
-  duration: PropTypes.number, // remove in 1.0
   full: PropTypes.oneOf([true, 'horizontal', 'vertical', false]),
   loop: PropTypes.bool,
   muted: PropTypes.bool,
-  onClick: PropTypes.func, // remove in 1.0
   poster: PropTypes.string,
   shareLink: PropTypes.string,
   shareHeadline: PropTypes.string,
@@ -263,8 +249,7 @@ Video.propTypes = {
     label: PropTypes.string,
     time: PropTypes.number
   })),
-  title: PropTypes.node,
-  videoHeader: PropTypes.node // remove in 1.0
+  title: PropTypes.node
 };
 
 Video.defaultProps = {

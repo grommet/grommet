@@ -13,26 +13,6 @@
   overflow: auto;
 
   @include pad();
-
-  // remove in 1.0
-  > .#{$grommet-namespace}tile:not(.#{$grommet-namespace}box--size) {
-    flex-grow: 0;
-    flex-shrink: 0;
-
-    @include media-query(lap-and-up) {
-      flex-basis: $size-medium;
-    }
-  }
-
-  // remove in 1.0
-  &:not(.#{$grommet-namespace}tiles--fill) .#{$grommet-namespace}tiles__masonry-column {
-    > .#{$grommet-namespace}tile {
-      @include media-query(lap-and-up) {
-        width: $size-medium;
-        flex-basis: auto;
-      }
-    }
-  }
 }
 
 .#{$grommet-namespace}tiles__container {
@@ -58,8 +38,6 @@
 }
 
 .#{$grommet-namespace}tiles:not(.#{$grommet-namespace}tiles--flush) {
-  .#{$grommet-namespace}tiles__masonry-column > .#{$grommet-namespace}tile,
-    // remove in 1.0
   > .#{$grommet-namespace}tile {
     margin: halve($inuit-base-spacing-unit);
     @include ie-tile-margin($inuit-base-spacing-unit);
@@ -93,44 +71,11 @@
       flex-grow: 1;
     }
   }
-
-  // remove in 1.0
-  .#{$grommet-namespace}tiles__masonry-column {
-    @include media-query(lap-and-up) {
-      flex-grow: 1;
-      flex-basis: 0;
-      min-width: $size-medium;
-
-      & > .#{$grommet-namespace}tile {
-        width: auto;
-      }
-    }
-  }
-
-  // remove in 1.0
-  &.#{$grommet-namespace}tiles--large {
-    .#{$grommet-namespace}tiles__masonry-column {
-      @include media-query(lap-and-up) {
-        min-width: $size-large;
-      }
-    }
-  }
-
-  // remove in 1.0
-  &.#{$grommet-namespace}tiles--small {
-    .#{$grommet-namespace}tiles__masonry-column {
-      @include media-query(lap-and-up) {
-        min-width: $size-small;
-      }
-    }
-  }
 }
 
 .#{$grommet-namespace}tiles--flush {
   padding: 0px;
 
-  // remove in 1.0
-  .#{$grommet-namespace}tiles__masonry-column > .#{$grommet-namespace}tile,
   > .#{$grommet-namespace}tile {
     margin: 0px;
 
@@ -176,30 +121,12 @@
       flex-basis: $size-small;
     }
   }
-
-  &:not(.#{$grommet-namespace}tiles--fill) .#{$grommet-namespace}tiles__masonry-column {
-    > .#{$grommet-namespace}tile {
-      @include media-query(lap-and-up) {
-        width: $size-small;
-        flex-basis: auto;
-      }
-    }
-  }
 }
 
 .#{$grommet-namespace}tiles--large {
   > .#{$grommet-namespace}tile:not(.#{$grommet-namespace}box--size) {
     @include media-query(lap-and-up) {
       flex-basis: $size-large;
-    }
-  }
-
-  &:not(.#{$grommet-namespace}tiles--fill) .#{$grommet-namespace}tiles__masonry-column {
-    > .#{$grommet-namespace}tile {
-      @include media-query(lap-and-up) {
-        width: $size-large;
-        flex-basis: auto;
-      }
     }
   }
 }
@@ -219,11 +146,6 @@
       margin-right: 0;
       margin-left: quarter($inuit-base-spacing-unit);
     }
-  }
-
-  .#{$grommet-namespace}tiles__masonry-column > .#{$grommet-namespace}chart,
-  > .#{$grommet-namespace}chart {
-    width: 100%;
   }
 }
 
