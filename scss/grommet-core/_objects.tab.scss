@@ -20,24 +20,6 @@
       padding-right: halve($inuit-base-spacing-unit);
     }
   }
-
-  a {
-    display: inline-block;
-    text-decoration: none;
-
-    &:hover,
-    &:visited,
-    &:link,
-    &:active {
-      text-decoration: none;
-    }
-
-    &:focus:not(tab--active .#{$grommet-namespace}tab__link) {
-      .#{$grommet-namespace}tab__label {
-        border-color: $border-color;
-      }
-    }
-  }
 }
 
 .#{$grommet-namespace}tab__label {
@@ -48,15 +30,14 @@
   border-bottom: $active-border-width solid transparent;
 }
 
-.#{$grommet-namespace}tab--active,
-.#{$grommet-namespace}tab--active .#{$grommet-namespace}tab__link:hover {
+.#{$grommet-namespace}tab--active {
   .#{$grommet-namespace}tab__label {
     color: $hover-text-color;
     border-color: $hover-text-color;
   }
 }
 
-.#{$grommet-namespace}tab:hover {
+.#{$grommet-namespace}tab:hover:not(.#{$grommet-namespace}tab--active) {
   .#{$grommet-namespace}tab__label {
     border-color: $border-color;
   }

@@ -344,7 +344,7 @@ var Layer = function (_Component2) {
 
       if (grommetApps) {
         Array.prototype.slice.call(grommetApps).forEach(function (grommetApp) {
-          grommetApp.setAttribute('aria-hidden', !ariaHidden);
+          grommetApp.setAttribute('aria-hidden', ariaHidden);
           if (ariaHidden) {
             grommetApp.classList.remove(APP + '--hidden');
             // this must be null to work

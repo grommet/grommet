@@ -40,17 +40,15 @@ var _Intl = require('../utils/Intl');
 
 var _Intl2 = _interopRequireDefault(_Intl);
 
-var _Box = require('./Box');
-
-var _Box2 = _interopRequireDefault(_Box);
-
 var _CSSClassnames = require('../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.TABS; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+var CLASS_ROOT = _CSSClassnames2.default.TABS;
 
 var Tabs = function (_Component) {
   (0, _inherits3.default)(Tabs, _Component);
@@ -61,10 +59,6 @@ var Tabs = function (_Component) {
     var _this = (0, _possibleConstructorReturn3.default)(this, (Tabs.__proto__ || (0, _getPrototypeOf2.default)(Tabs)).call(this, props, context));
 
     _this._activateTab = _this._activateTab.bind(_this);
-
-    if (props.initialIndex) {
-      console.warn('Tabs: initialIndex prop has been deprecated. ' + 'Use activeIndex instead.');
-    }
 
     _this.state = {
       activeIndex: props.activeIndex,
@@ -88,18 +82,26 @@ var Tabs = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _classnames;
+      var _classnames,
+          _this2 = this;
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, this.props.className, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--justify-' + this.props.justify, this.props.justify), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--responsive', this.props.responsive), _classnames));
+      var _props = this.props;
+      var children = _props.children;
+      var className = _props.className;
+      var justify = _props.justify;
+      var responsive = _props.responsive;
+      var activeIndex = this.state.activeIndex;
+      var intl = this.context.intl;
 
-      var activeContainer;
-      var activeTitle;
+      var classes = (0, _classnames3.default)(CLASS_ROOT, className, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--justify-' + justify, justify), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--responsive', responsive), _classnames));
 
-      var tabs = _react2.default.Children.map(this.props.children, function (tab, index) {
+      var activeContainer = void 0;
+      var activeTitle = void 0;
+      var tabs = _react2.default.Children.map(children, function (tab, index) {
 
         var tabProps = tab.props || tab._store.props || {};
 
-        var isTabActive = index === this.state.activeIndex;
+        var isTabActive = index === activeIndex;
 
         if (isTabActive) {
           activeContainer = tabProps.children;
@@ -109,18 +111,16 @@ var Tabs = function (_Component) {
         return _react2.default.cloneElement(tab, {
           active: isTabActive,
           id: 'tab-' + index,
-          onRequestForActive: function () {
-            this._activateTab(index);
-          }.bind(this)
+          onRequestForActive: function onRequestForActive() {
+            _this2._activateTab(index);
+          }
         });
-      }.bind(this));
+      }, this);
 
-      var tabContentTitle = _Intl2.default.getMessage(this.context.intl, 'Tab Contents', {
+      var tabContentTitle = _Intl2.default.getMessage(intl, 'Tab Contents', {
         activeTitle: activeTitle
       });
 
-      //TODO: Since there could be multiple Tabs on the page, we need a more
-      //robust means of identifying the association between title and aria label.
       return _react2.default.createElement(
         'div',
         { role: 'tablist' },
@@ -131,14 +131,8 @@ var Tabs = function (_Component) {
         ),
         _react2.default.createElement(
           'div',
-          { tabIndex: '0',
-            'aria-label': tabContentTitle, role: 'tabpanel' },
-          _react2.default.createElement(
-            _Box2.default,
-            { className: CLASS_ROOT + '__content',
-              'aria-label': tabContentTitle },
-            activeContainer
-          )
+          { 'aria-label': tabContentTitle, role: 'tabpanel' },
+          activeContainer
         )
       );
     }

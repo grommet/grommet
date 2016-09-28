@@ -4,6 +4,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -28,6 +32,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _classnames2 = require('classnames');
+
+var _classnames3 = _interopRequireDefault(_classnames2);
+
 var _KeyboardAccelerators = require('../utils/KeyboardAccelerators');
 
 var _KeyboardAccelerators2 = _interopRequireDefault(_KeyboardAccelerators);
@@ -38,76 +46,76 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.TAB; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+var CLASS_ROOT = _CSSClassnames2.default.TAB;
 
 var Tab = function (_Component) {
   (0, _inherits3.default)(Tab, _Component);
 
-  function Tab(props, context) {
+  function Tab() {
     (0, _classCallCheck3.default)(this, Tab);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (Tab.__proto__ || (0, _getPrototypeOf2.default)(Tab)).call(this, props, context));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (Tab.__proto__ || (0, _getPrototypeOf2.default)(Tab)).call(this));
 
-    _this._processSpace = _this._processSpace.bind(_this);
     _this._onClickTab = _this._onClickTab.bind(_this);
+    _this._startKeyboardListener = _this._startKeyboardListener.bind(_this);
+    _this._stopKeybardListener = _this._stopKeybardListener.bind(_this);
     return _this;
   }
 
   (0, _createClass3.default)(Tab, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      _KeyboardAccelerators2.default.startListeningToKeyboard(this, {
-        space: this._processSpace
-      });
+    key: '_startKeyboardListener',
+    value: function _startKeyboardListener() {
+      this._listeners = {
+        space: this._onClickTab,
+        enter: this._onClickTab
+      };
+      _KeyboardAccelerators2.default.startListeningToKeyboard(this.tabRef, this._listeners);
     }
   }, {
-    key: 'componentWillUnmount',
-    value: function componentWillUnmount() {
-      _KeyboardAccelerators2.default.stopListeningToKeyboard(this, {
-        space: this._processSpace
-      });
-    }
-  }, {
-    key: '_processSpace',
-    value: function _processSpace(event) {
-      if (event.target === this.tabRef) {
-        this._onClickTab(event);
-      }
+    key: '_stopKeybardListener',
+    value: function _stopKeybardListener() {
+      _KeyboardAccelerators2.default.stopListeningToKeyboard(this.tabRef, this._listeners);
     }
   }, {
     key: '_onClickTab',
     value: function _onClickTab(event) {
+      var onRequestForActive = this.props.onRequestForActive;
+
       if (event) {
         event.preventDefault();
       }
-      this.props.onRequestForActive();
+      onRequestForActive();
     }
   }, {
     key: 'render',
     value: function render() {
       var _this2 = this;
 
-      var classes = [CLASS_ROOT];
+      var _props = this.props;
+      var active = _props.active;
+      var id = _props.id;
+      var title = _props.title;
 
-      if (this.props.active) {
-        classes.push(CLASS_ROOT + "--active");
-      }
+
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--active', active));
 
       return _react2.default.createElement(
         'li',
-        { className: classes.join(' '), id: this.props.id },
+        { className: classes, id: id },
         _react2.default.createElement(
           'a',
-          { ref: function ref(_ref) {
+          { href: '#', role: 'tab', ref: function ref(_ref) {
               return _this2.tabRef = _ref;
-            }, role: 'tab',
-            href: '#', onClick: this._onClickTab,
-            'aria-expanded': this.props.active, 'aria-selected': this.props.active,
-            className: CLASS_ROOT + "__link", 'aria-labelledby': this.props.id },
+            },
+            onClick: this._onClickTab, 'aria-expanded': active,
+            onFocus: this._startKeyboardListener, 'aria-selected': active,
+            onBlur: this._stopKeybardListener },
           _react2.default.createElement(
             'label',
-            { className: CLASS_ROOT + '__label', htmlFor: this.props.id },
-            this.props.title
+            { className: CLASS_ROOT + '__label', htmlFor: id },
+            title
           )
         )
       );
