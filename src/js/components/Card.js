@@ -170,7 +170,7 @@ export default class Card extends Component {
 
   render () {
     const { children, className, contentPad,
-      onClick, reverse, truncateCopy, video } = this.props;
+      onClick, reverse, truncate, video } = this.props;
     const boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
 
     const classes = classnames(
@@ -196,7 +196,7 @@ export default class Card extends Component {
     const contentClasses = classnames(
       {
         [`${CLASS_ROOT}__content`]: true,
-        [`${CLASS_ROOT}__content--truncated`]: truncateCopy
+        [`${CLASS_ROOT}__content--truncated`]: truncate
       }
     );
 
@@ -256,7 +256,7 @@ Card.propTypes = {
     PropTypes.string,
     PropTypes.element
   ]),
-  truncateCopy: PropTypes.bool,
+  truncate: PropTypes.bool,
   video: PropTypes.oneOfType([
     PropTypes.shape({
       source: PropTypes.string.isRequired,

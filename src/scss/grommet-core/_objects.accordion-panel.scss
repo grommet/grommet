@@ -4,10 +4,6 @@
   header:focus {  // too generic, change
     outline: none;
   }
-
-  &.#{$grommet-namespace}list-item {
-    max-width: none;  // allow panel li to expand width fully
-  }
 }
 
 .#{$grommet-namespace}accordion-panel--active {
