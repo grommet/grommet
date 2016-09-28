@@ -44,7 +44,6 @@ var Grommet = {
   Legend: require('./components/Legend'),
   List: require('./components/List'),
   ListItem: require('./components/ListItem'),
-  Login: require('./components/Login'),
   LoginForm: require('./components/LoginForm'),
   Map: require('./components/Map'),
   Markdown: require('./components/Markdown'),
