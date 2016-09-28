@@ -12,10 +12,6 @@ var _keys = require('babel-runtime/core-js/object/keys');
 
 var _keys2 = _interopRequireDefault(_keys);
 
-var _typeof2 = require('babel-runtime/helpers/typeof');
-
-var _typeof3 = _interopRequireDefault(_typeof2);
-
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -40,10 +36,6 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = require('react-dom');
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
 var _Props = require('../utils/Props');
 
 var _Props2 = _interopRequireDefault(_Props);
@@ -51,10 +43,6 @@ var _Props2 = _interopRequireDefault(_Props);
 var _Responsive = require('../utils/Responsive');
 
 var _Responsive2 = _interopRequireDefault(_Responsive);
-
-var _Legend = require('./Legend');
-
-var _Legend2 = _interopRequireDefault(_Legend);
 
 var _Bar = require('./meter/Bar');
 
@@ -72,17 +60,15 @@ var _Arc = require('./meter/Arc');
 
 var _Arc2 = _interopRequireDefault(_Arc);
 
-var _Intl = require('../utils/Intl');
-
-var _Intl2 = _interopRequireDefault(_Intl);
-
 var _CSSClassnames = require('../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.METER; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+var CLASS_ROOT = _CSSClassnames2.default.METER;
 
 var TYPE_COMPONENT = {
   'bar': _Bar2.default,
@@ -113,14 +99,9 @@ var Meter = function (_Component) {
 
     _this._onResponsive = _this._onResponsive.bind(_this);
     _this._initialTimeout = _this._initialTimeout.bind(_this);
-    _this._layout = _this._layout.bind(_this);
-    _this._onResize = _this._onResize.bind(_this);
     _this._onActivate = _this._onActivate.bind(_this);
 
     _this.state = _this._stateFromProps(props);
-    if (_this.state.placeLegend) {
-      _this.state.legendPlacement = 'bottom';
-    }
     _this.state.initial = true;
     _this.state.limitMeterSize = false;
     return _this;
@@ -134,22 +115,17 @@ var Meter = function (_Component) {
       }
 
       this._initialTimer = setTimeout(this._initialTimeout, 10);
-      window.addEventListener('resize', this._onResize);
-      this._onResize();
     }
   }, {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
       var state = this._stateFromProps(nextProps);
       this.setState(state);
-      this._onResize();
     }
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
       clearTimeout(this._initialTimer);
-      clearTimeout(this._resizeTimer);
-      window.removeEventListener('resize', this._onResize);
 
       if (this._responsive) {
         this._responsive.stop();
@@ -160,7 +136,7 @@ var Meter = function (_Component) {
     value: function _initialTimeout() {
       this.setState({
         initial: false,
-        activeIndex: this.state.importantIndex
+        activeIndex: this.state.activeIndex
       });
       clearTimeout(this._initialTimer);
     }
@@ -176,52 +152,18 @@ var Meter = function (_Component) {
   }, {
     key: '_onActivate',
     value: function _onActivate(index) {
-      var onActive = this.props.onActive;
-      var importantIndex = this.state.importantIndex;
+      var _props = this.props;
+      var activeIndex = _props.activeIndex;
+      var onActive = _props.onActive;
 
-      if (index === undefined) {
-        index = importantIndex;
-      }
-      this.setState({ initial: false, activeIndex: index });
+      this.setState({ initial: false, activeIndex: activeIndex });
       if (onActive) {
         onActive(index);
       }
     }
   }, {
-    key: '_onResize',
-    value: function _onResize() {
-      // debounce
-      clearTimeout(this._resizeTimer);
-      this._resizeTimer = setTimeout(this._layout, 50);
-    }
-  }, {
-    key: '_layout',
-    value: function _layout() {
-      var _state = this.state;
-      var placeLegend = _state.placeLegend;
-      var legendPlacement = _state.legendPlacement;
-
-      if (placeLegend) {
-        // legendPlacement based on available window orientation
-        var ratio = window.innerWidth / window.innerHeight;
-        if (ratio < 0.8) {
-          this.setState({ legendPlacement: 'bottom' });
-        } else if (ratio > 1.2) {
-          this.setState({ legendPlacement: 'right' });
-        }
-      }
-
-      if ('right' === legendPlacement) {
-        if (this.legendRef) {
-          var graphicHeight = this.activeGraphicRef.offsetHeight;
-          var legendHeight = _reactDom2.default.findDOMNode(this.legendRef).offsetHeight;
-          this.setState({ tallLegend: legendHeight > graphicHeight });
-        }
-      }
-    }
-  }, {
     key: '_normalizeSeries',
-    value: function _normalizeSeries(props, min, max, thresholds) {
+    value: function _normalizeSeries(props, thresholds) {
       var series = [];
       if (props.series) {
         series = props.series;
@@ -268,7 +210,7 @@ var Meter = function (_Component) {
       if (props.thresholds) {
         // Convert thresholds from absolute values to cummulative,
         // so we can re-use the series drawing code.
-        var priorValue = min.value;
+        var priorValue = min;
         thresholds.push({ hidden: true });
         for (var i = 0; i < props.thresholds.length; i += 1) {
           var threshold = props.thresholds[i];
@@ -276,57 +218,20 @@ var Meter = function (_Component) {
           // threshold. Series drawing code expects the end value.
           thresholds[i].value = threshold.value - priorValue;
           thresholds.push({
-            label: threshold.label,
-            colorIndex: threshold.colorIndex,
-            ariaLabel: threshold.value + ' ' + (props.units || '') + ' ' + (threshold.label || '')
+            colorIndex: threshold.colorIndex
           });
           priorValue = threshold.value;
           if (i === props.thresholds.length - 1) {
-            thresholds[thresholds.length - 1].value = max.value - priorValue;
+            thresholds[thresholds.length - 1].value = max - priorValue;
           }
         }
       } else if (props.threshold) {
-        // let remaining = max.value - props.threshold;
         thresholds = [{ value: props.threshold, hidden: true }, {
-          value: max.value - props.threshold,
-          colorIndex: 'critical',
-          ariaLabel: props.threshold + ' ' + (props.units || '')
+          value: max - props.threshold,
+          colorIndex: 'critical'
         }];
       }
       return thresholds;
-    }
-  }, {
-    key: '_importantIndex',
-    value: function _importantIndex(props, series) {
-      var result = undefined;
-      // removed to ensure important is set solely based on props
-      // if (series.length === 1) {
-      //   result = 0;
-      // }
-      if (props.hasOwnProperty('important')) {
-        console.warn('Meter: important prop has been deprecated. ' + 'Use a activeIndex instead.');
-        result = props.important;
-      }
-      series.some(function (data, index) {
-        if (data.important) {
-          console.warn('Meter: seriesp[].important has been deprecated. ' + 'Use a activeIndex instead.');
-          result = index;
-          return true;
-        }
-        return false;
-      });
-      return result;
-    }
-
-    // Normalize min or max to an object.
-
-  }, {
-    key: '_terminal',
-    value: function _terminal(terminal) {
-      if (typeof terminal === 'number') {
-        terminal = { value: terminal };
-      }
-      return terminal;
     }
   }, {
     key: '_seriesTotal',
@@ -368,21 +273,16 @@ var Meter = function (_Component) {
         seriesMax = this._seriesMax(props.series);
       }
       // Normalize min and max
-      var min = this._terminal(props.min || 0);
+      var min = props.min || 0;
       // Max could be provided in props or come from the total of
       // a multi-value series.
-      var max = this._terminal(props.max || (props.stacked ? Math.max(seriesMax, total || 0, 100) : seriesMax || Math.max(total || 0, 100)));
+      var max = props.max || (props.stacked ? Math.max(seriesMax, total || 0, 100) : seriesMax || Math.max(total || 0, 100));
       // Normalize simple threshold prop to an array, if needed.
       var thresholds = this._normalizeThresholds(props, min, max);
       // Normalize simple value prop to a series, if needed.
-      var series = this._normalizeSeries(props, min, max, thresholds);
-      // Determine important index.
-      var importantIndex = this._importantIndex(props, series);
+      var series = this._normalizeSeries(props, thresholds);
 
       var state = {
-        importantIndex: importantIndex,
-        // we should preserve activeIndex across property updates
-        // activeIndex: importantIndex,
         series: series,
         thresholds: thresholds,
         min: min,
@@ -396,162 +296,49 @@ var Meter = function (_Component) {
         state.activeIndex = props.active ? 0 : undefined;
       }
 
-      // legend
-      state.placeLegend = !(props.legend && props.legend.placement);
-      if (!state.placeLegend) {
-        state.legendPlacement = props.legend.placement;
-      }
-
       return state;
     }
   }, {
     key: '_getActiveFields',
     value: function _getActiveFields() {
-      var _state2 = this.state;
-      var activeIndex = _state2.activeIndex;
-      var total = _state2.total;
-      var series = _state2.series;
+      var _state = this.state;
+      var activeIndex = _state.activeIndex;
+      var total = _state.total;
+      var series = _state.series;
 
       var fields = void 0;
       if (undefined === activeIndex) {
         fields = {
           value: total
         };
-        if (series.length > 1) {
-          fields.label = _Intl2.default.getMessage(this.context.intl, 'Total');
-        }
       } else {
         var active = series[activeIndex];
         if (!active) {
           active = series[0];
         }
-        if (active.label) {
-          console.warn('Meter: series[].label has been deprecated. ' + 'Use a separate Label instead.');
-        }
         fields = {
           value: active.value,
-          label: active.label,
           onClick: active.onClick
         };
       }
       return fields;
     }
   }, {
-    key: '_renderActiveValue',
-    value: function _renderActiveValue() {
-      var fields = this._getActiveFields();
-      var classes = [CLASS_ROOT + '__value'];
-      if (fields.onClick) {
-        classes.push(CLASS_ROOT + '__value--active');
-      }
-      var units = void 0;
-      if (this.props.units) {
-        console.warn('Meter: units prop has been deprecated. ' + 'Use a separate Label instead.');
-        units = _react2.default.createElement(
-          'span',
-          { className: CLASS_ROOT + '__value-units large-number-font' },
-          this.props.units
-        );
-      }
-
-      return _react2.default.createElement(
-        'div',
-        { 'aria-hidden': 'true', role: 'presentation',
-          className: classes.join(' '), onClick: fields.onClick },
-        _react2.default.createElement(
-          'span',
-          {
-            className: CLASS_ROOT + '__value-value large-number-font' },
-          fields.value,
-          units
-        ),
-        _react2.default.createElement(
-          'span',
-          { className: CLASS_ROOT + '__value-label' },
-          fields.label
-        )
-      );
-    }
-  }, {
-    key: '_renderMinMax',
-    value: function _renderMinMax(classes) {
-      var _state3 = this.state;
-      var min = _state3.min;
-      var max = _state3.max;
-
-      var minLabel = void 0;
-      if (min.label) {
-        console.warn('Meter: min.label has been deprecated. ' + 'Use a separate Label instead.');
-        minLabel = _react2.default.createElement(
-          'div',
-          { className: CLASS_ROOT + '__minmax-min' },
-          min.label
-        );
-      }
-      var maxLabel = void 0;
-      if (max.label) {
-        console.warn('Meter: max.label has been deprecated. ' + 'Use a separate Label instead.');
-        maxLabel = _react2.default.createElement(
-          'div',
-          { className: CLASS_ROOT + '__minmax-max' },
-          max.label
-        );
-      }
-      var minMax = void 0;
-      if (minLabel || maxLabel) {
-        minMax = _react2.default.createElement(
-          'div',
-          { className: CLASS_ROOT + '__minmax-container' },
-          _react2.default.createElement(
-            'div',
-            { className: CLASS_ROOT + '__minmax' },
-            minLabel,
-            maxLabel
-          )
-        );
-        classes.push(CLASS_ROOT + '--minmax');
-      }
-      return minMax;
-    }
-  }, {
-    key: '_renderLegend',
-    value: function _renderLegend() {
-      var _this2 = this;
-
-      var _props = this.props;
-      var legend = _props.legend;
-      var units = _props.units;
-      var _state4 = this.state;
-      var activeIndex = _state4.activeIndex;
-      var series = _state4.series;
-
-      var total = (typeof legend === 'undefined' ? 'undefined' : (0, _typeof3.default)(legend)) === 'object' && legend.total;
-      return _react2.default.createElement(_Legend2.default, { ref: function ref(_ref) {
-          return _this2.legendRef = _ref;
-        },
-        className: CLASS_ROOT + '__legend',
-        series: series, units: units, total: total,
-        activeIndex: activeIndex, onActive: this._onActivate });
-    }
-  }, {
     key: 'render',
     value: function render() {
-      var _this3 = this;
+      var _this2 = this;
 
       var _props2 = this.props;
       var active = _props2.active;
       var label = _props2.label;
-      var legend = _props2.legend;
       var size = _props2.size;
       var stacked = _props2.stacked;
       var tabIndex = _props2.tabIndex;
       var type = _props2.type;
       var vertical = _props2.vertical;
-      var _state5 = this.state;
-      var legendPlacement = _state5.legendPlacement;
-      var limitMeterSize = _state5.limitMeterSize;
-      var tallLegend = _state5.tallLegend;
-      var series = _state5.series;
+      var _state2 = this.state;
+      var limitMeterSize = _state2.limitMeterSize;
+      var series = _state2.series;
 
       var classes = [CLASS_ROOT];
       classes.push(CLASS_ROOT + '--' + type);
@@ -579,46 +366,19 @@ var Meter = function (_Component) {
       if (active) {
         classes.push(CLASS_ROOT + '--active');
       }
-      if (tallLegend) {
-        classes.push(CLASS_ROOT + '--tall-legend');
-      }
       if (this.props.className) {
         classes.push(this.props.className);
       }
 
       var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Meter.propTypes));
 
-      var minMax = this._renderMinMax(classes);
       var labelElement = void 0;
-      if (label && true !== label) {
+      if (label) {
         labelElement = _react2.default.createElement(
           'div',
           { className: CLASS_ROOT + '__label' },
           label
         );
-      } else if (label && series.length > 0) {
-        labelElement = this._renderActiveValue();
-      }
-      var legendElement = void 0;
-
-      if (legend || series) {
-
-        if (legend) {
-          console.warn('Meter: legend prop has been deprecated. ' + 'Use a separate Legend instead.');
-          if ('inline' !== legend.placement) {
-            legendElement = this._renderLegend();
-          } else {
-            // Hide value (displaying total), if legend is inline
-            // and total is set to false
-            if (!legend.total && true === label) {
-              labelElement = undefined;
-            }
-          }
-          classes.push(CLASS_ROOT + '--legend-' + legendPlacement);
-          if (legend.align) {
-            classes.push(CLASS_ROOT + '--legend-align-' + legend.align);
-          }
-        }
       }
 
       var GraphicComponent = TYPE_COMPONENT[this.props.type];
@@ -626,21 +386,18 @@ var Meter = function (_Component) {
         a11yTitle: this.props.a11yTitle,
         activeIndex: this.state.activeIndex,
         min: this.state.min, max: this.state.max,
-        legend: legend,
         onActivate: this._onActivate,
         series: series,
         stacked: stacked,
         tabIndex: tabIndex,
         thresholds: this.state.thresholds,
         total: this.state.total,
-        units: this.props.units,
         vertical: vertical });
 
       var graphicContainer = _react2.default.createElement(
         'div',
         (0, _extends3.default)({}, restProps, { className: CLASS_ROOT + '__graphic-container' }),
-        graphic,
-        minMax
+        graphic
       );
 
       return _react2.default.createElement(
@@ -648,14 +405,13 @@ var Meter = function (_Component) {
         { className: classes.join(' ') },
         _react2.default.createElement(
           'div',
-          { ref: function ref(_ref2) {
-              return _this3.activeGraphicRef = _ref2;
+          { ref: function ref(_ref) {
+              return _this2.activeGraphicRef = _ref;
             },
             className: CLASS_ROOT + '__value-container' },
           graphicContainer,
           labelElement
-        ),
-        legendElement
+        )
       );
     }
   }]);
@@ -671,49 +427,31 @@ Meter.propTypes = {
   activeIndex: _react.PropTypes.number, // for series values
   a11yTitle: _react.PropTypes.string,
   colorIndex: _react.PropTypes.string,
-  important: _react.PropTypes.number, // remove in 1.0, use activeIndex
-  label: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.node]),
-  // remove PropTypes.bool in 1.0
-  legend: _react.PropTypes.oneOfType([// remove in 1.0
-  _react.PropTypes.bool, _react.PropTypes.shape({
-    align: _react.PropTypes.oneOf(['start', 'center', 'end']),
-    placement: _react.PropTypes.oneOf(['right', 'bottom', 'inline']),
-    total: _react.PropTypes.bool
-  })]),
-  max: _react.PropTypes.oneOfType([_react.PropTypes.shape({ // remove in 1.0
-    value: _react.PropTypes.number.isRequired,
-    label: _react.PropTypes.string
-  }), _react.PropTypes.number]),
-  min: _react.PropTypes.oneOfType([_react.PropTypes.shape({ // remove in 1.0
-    value: _react.PropTypes.number.isRequired,
-    label: _react.PropTypes.string
-  }), _react.PropTypes.number]),
+  label: _react.PropTypes.node,
+  max: _react.PropTypes.number,
+  min: _react.PropTypes.number,
   onActive: _react.PropTypes.func,
   series: _react.PropTypes.arrayOf(_react.PropTypes.shape({
-    label: _react.PropTypes.string, // remove in 1.0
-    value: _react.PropTypes.number.isRequired,
     colorIndex: _react.PropTypes.string,
-    important: _react.PropTypes.bool, // remove in 1.0, use activeIndex
-    onClick: _react.PropTypes.func
+    onClick: _react.PropTypes.func,
+    label: _react.PropTypes.string, // only for Spiral
+    value: _react.PropTypes.number.isRequired
   })),
   size: _react.PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
   stacked: _react.PropTypes.bool,
   tabIndex: _react.PropTypes.string,
   threshold: _react.PropTypes.number,
   thresholds: _react.PropTypes.arrayOf(_react.PropTypes.shape({
-    label: _react.PropTypes.string, // remove in 1.0?
     value: _react.PropTypes.number.isRequired,
     colorIndex: _react.PropTypes.string
   })),
   type: _react.PropTypes.oneOf(['bar', 'arc', 'circle', 'spiral']),
-  units: _react.PropTypes.string, // remove in 1.0, have caller use label
   value: _react.PropTypes.number,
   vertical: _react.PropTypes.bool,
   responsive: _react.PropTypes.bool
 };
 
 Meter.defaultProps = {
-  label: true,
   type: 'bar'
 };
 

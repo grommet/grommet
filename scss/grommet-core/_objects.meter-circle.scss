@@ -17,14 +17,6 @@
     transform: translate(-50%, -50%);
   }
 
-  .#{$grommet-namespace}meter__value { // remove in 1.0
-    @include transform(translateX(-50%) translateY(-50%));
-    max-width: $size-small - double($inuit-base-spacing-unit);
-    position: absolute;
-    left: 50%;
-    top: 50%;
-  }
-
   &.#{$grommet-namespace}meter--xsmall {
 
     .#{$grommet-namespace}meter__graphic {
@@ -39,11 +31,6 @@
       width: $size-small;
       height: $size-small;
     }
-
-    .#{$grommet-namespace}meter__value { // remove in 1.0
-      top: halve($size-small);
-      max-width: $size-small - $inuit-base-spacing-unit;
-    }
   }
 
   &.#{$grommet-namespace}meter--medium {
@@ -51,11 +38,6 @@
     .#{$grommet-namespace}meter__graphic {
       width: $size-medium;
       height: $size-medium;
-    }
-
-    .#{$grommet-namespace}meter__value { // remove in 1.0
-      top: halve($size-medium);
-      max-width: $size-medium - $inuit-base-spacing-unit;
     }
   }
 
@@ -65,11 +47,6 @@
       width: $size-large;
       height: $size-large;
     }
-
-    .#{$grommet-namespace}meter__value { // remove in 1.0
-      top: halve($size-large);
-      max-width: $size-large - round($inuit-base-spacing-unit * 3);
-    }
   }
 
   &.#{$grommet-namespace}meter--xlarge {
@@ -77,20 +54,6 @@
     .#{$grommet-namespace}meter__graphic {
       width: $size-xlarge;
       height: $size-xlarge;
-    }
-
-    .#{$grommet-namespace}meter__value { // remove in 1.0
-      top: halve($size-xlarge);
-      max-width: $size-xlarge - round($inuit-base-spacing-unit * 4);
-    }
-  }
-
-  // remove in 1.0
-  &:not(.#{$grommet-namespace}meter--stacked):not(.#{$grommet-namespace}meter--single) {
-    .#{$grommet-namespace}meter__value {
-      position: static;
-      margin: 0 auto;
-      @include transform(none);
     }
   }
 }

@@ -329,7 +329,7 @@ Box.propTypes = {
   focusable: _react.PropTypes.bool,
   flex: _react.PropTypes.oneOf(['grow', 'shrink', true, false]),
   full: _react.PropTypes.oneOf([true, 'horizontal', 'vertical', false]),
-  // remove in 1.0
+  // remove in 1.0?
   onClick: _react.PropTypes.func,
   justify: _react.PropTypes.oneOf(['start', 'center', 'between', 'end']),
   margin: _react.PropTypes.oneOfType([_react.PropTypes.oneOf(MARGIN_SIZES), _react.PropTypes.shape({

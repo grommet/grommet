@@ -93,7 +93,7 @@ var Arc = function (_Graphic) {
 
       var state = {
         startAngle: 60,
-        anglePer: !props.max ? 0 : 240.0 / (props.max.value - props.min.value),
+        anglePer: !props.max ? 0 : 240.0 / (props.max - props.min),
         angleOffset: 180,
         viewBoxWidth: viewBoxDimensions[0],
         viewBoxHeight: viewBoxDimensions[1]

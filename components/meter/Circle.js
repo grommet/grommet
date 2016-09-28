@@ -61,7 +61,7 @@ var Circle = function (_Graphic) {
 
       var state = {
         startAngle: 0,
-        anglePer: !props.max ? 0 : 360 / (props.max.value - props.min.value),
+        anglePer: !props.max ? 0 : 360 / (props.max - props.min),
         angleOffset: 180,
         viewBoxWidth: CIRCLE_WIDTH,
         viewBoxHeight: CIRCLE_WIDTH
@@ -71,13 +71,13 @@ var Circle = function (_Graphic) {
     }
   }, {
     key: '_sliceCommands',
-    value: function _sliceCommands(trackIndex, item, startValue, maxValue) {
+    value: function _sliceCommands(trackIndex, item, startValue, max) {
       var startAngle = (0, _Graphics.translateEndAngle)(this.state.startAngle, this.state.anglePer, startValue);
 
       var endAngle;
       if (!item.value) {
         endAngle = startAngle;
-      } else if (startValue + item.value >= maxValue) {
+      } else if (startValue + item.value >= max) {
         endAngle = 360;
       } else {
         endAngle = Math.min(360, Math.max(startAngle, (0, _Graphics.translateEndAngle)(startAngle, this.state.anglePer, item.value)));

@@ -119,9 +119,7 @@ var Tiles = function (_Component) {
 
     _this.state = {
       overflow: false,
-      selected: _Selection2.default.normalizeIndexes(props.selected),
-      numColumns: _this.props.numColumns,
-      columnBreakpoints: null
+      selected: _Selection2.default.normalizeIndexes(props.selected)
     };
     return _this;
   }
@@ -129,8 +127,6 @@ var Tiles = function (_Component) {
   (0, _createClass3.default)(Tiles, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      var _this2 = this;
-
       this._setSelection();
       if (this.props.onMore) {
         this._scroll = _InfiniteScroll2.default.startListeningForScroll(this.moreRef, this.props.onMore);
@@ -141,34 +137,6 @@ var Tiles = function (_Component) {
         this._trackHorizontalScroll();
         // give browser a chance to stabilize
         setTimeout(this._layout, 10);
-      } else if (this.props.masonry) {
-        (function () {
-          var tiles = (0, _reactDom.findDOMNode)(_this2.tilesRef);
-          var tile = tiles.querySelectorAll('.' + CLASS_ROOT + '__masonry-column .' + TILE);
-          // default to medium tile size ($tile-size = 192px)
-          var minColumnWidth = 192;
-
-          if (!_this2.props.fill) {
-            // grab CSS styles from DOM after component mounted
-            minColumnWidth = _this2._getPropertyFromTile('width', tile);
-          } else {
-            var tileColumn = tiles.querySelectorAll('.' + CLASS_ROOT + '__masonry-column');
-            var tileFlexBasis = _this2._getPropertyFromTile('minWidth', tileColumn);
-            var tilePad = _this2._getPropertyFromTile('padding', tile) || _this2._getPropertyFromTile('padding-right', tile);
-
-            // take horizontal padding into account for column breakpoints
-            minColumnWidth = tilePad ? tileFlexBasis + tilePad * 2 : tileFlexBasis;
-          }
-
-          // create array of breakpoints for 1 through this.props.numColumns
-          // number of columns of minColumnWidth width.
-          var columnBreakpoints = Array.apply(null, Array(_this2.props.numColumns)).map(function (currentNumColumns, index) {
-            return (index + 1) * minColumnWidth;
-          });
-          _this2.setState({ columnBreakpoints: columnBreakpoints });
-          window.addEventListener('resize', _this2._onResize);
-          setTimeout(_this2._layout, 10);
-        })();
       }
     }
   }, {
@@ -210,8 +178,6 @@ var Tiles = function (_Component) {
           var tiles = (0, _reactDom.findDOMNode)(this.tilesRef);
           tiles.removeEventListener('scroll', this._onScrollHorizontal);
         }
-      } else if (this.props.masonry) {
-        window.removeEventListener('resize', this._onResize);
       }
     }
   }, {
@@ -245,50 +211,18 @@ var Tiles = function (_Component) {
       }
     }
   }, {
-    key: '_getPropertyFromTile',
-    value: function _getPropertyFromTile(propertyName, tile) {
-      if (tile && tile.length > 0) {
-        var columnTile = window.getComputedStyle(tile[0]);
-        if (columnTile && columnTile[propertyName]) {
-          return parseFloat(columnTile[propertyName]);
-        }
-      }
-    }
-  }, {
-    key: '_getNumberColumns',
-    value: function _getNumberColumns() {
-      var columnBreakpoints = this.state.columnBreakpoints;
-
-      var tiles = (0, _reactDom.findDOMNode)(this.tilesRef);
-      var maxColumnWidthIndex = void 0;
-
-      if (tiles) {
-        maxColumnWidthIndex = columnBreakpoints.filter(function (currentMin) {
-          return currentMin <= tiles.offsetWidth;
-        }).reduce(function (maxIndex, currentMin, index, columnWidths) {
-          return currentMin > columnWidths[maxIndex] ? index : maxIndex;
-        }, 0);
-
-        return maxColumnWidthIndex + 1; // return appropriate number of columns
-      }
-
-      return maxColumnWidthIndex;
-    }
-  }, {
     key: '_layout',
     value: function _layout() {
-      var _this3 = this;
+      var _this2 = this;
 
-      var _props = this.props;
-      var direction = _props.direction;
-      var masonry = _props.masonry;
+      var direction = this.props.direction;
 
       if ('row' === direction) {
         (function () {
           // determine if we have more tiles than room to fit
-          var tiles = (0, _reactDom.findDOMNode)(_this3.tilesRef);
+          var tiles = (0, _reactDom.findDOMNode)(_this2.tilesRef);
           // 20 is to allow some fuzziness as scrollbars come and go
-          _this3.setState({
+          _this2.setState({
             overflow: tiles.scrollWidth > tiles.offsetWidth + 20,
             overflowStart: tiles.scrollLeft <= 20,
             overflowEnd: tiles.scrollLeft >= tiles.scrollWidth - tiles.offsetWidth
@@ -308,14 +242,6 @@ var Tiles = function (_Component) {
             }
           });
         })();
-      } else if (masonry) {
-        // check for appropriate number of columns, if using masonry option
-        var numColumns = this.state.numColumns;
-
-        var newNumColumns = this._getNumberColumns();
-        if (newNumColumns && numColumns !== newNumColumns) {
-          this.setState({ numColumns: newNumColumns });
-        }
       }
     }
   }, {
@@ -333,42 +259,6 @@ var Tiles = function (_Component) {
       }
 
       return undefined;
-    }
-  }, {
-    key: '_renderMasonryColumns',
-    value: function _renderMasonryColumns() {
-      var _this4 = this;
-
-      var children = this.props.children;
-      var numColumns = this.state.numColumns;
-
-      var columnContents = {};
-
-      _react.Children.map(children, function (element, index) {
-        var currentColumn = index % numColumns;
-
-        if (!columnContents['column-' + currentColumn]) {
-          columnContents['column-' + currentColumn] = [];
-        }
-
-        // place children into appropriate column
-        var child = _this4._renderChild(element);
-        if (child) {
-          columnContents['column-' + currentColumn].push(child);
-        }
-      }, this);
-
-      var columnsArray = Array.apply(null, Array(numColumns));
-      var columns = columnsArray.map(function (current, i) {
-        return _react2.default.createElement(
-          _Box2.default,
-          { className: CLASS_ROOT + '__masonry-column',
-            key: 'column-' + numColumns + '-' + i },
-          columnContents['column-' + i]
-        );
-      });
-
-      return columns;
     }
   }, {
     key: '_onResize',
@@ -426,17 +316,16 @@ var Tiles = function (_Component) {
     key: 'render',
     value: function render() {
       var _classnames,
-          _this5 = this;
+          _this3 = this;
 
-      var _props2 = this.props;
-      var onMore = _props2.onMore;
-      var selectable = _props2.selectable;
-      var masonry = _props2.masonry;
-      var direction = _props2.direction;
+      var _props = this.props;
+      var onMore = _props.onMore;
+      var selectable = _props.selectable;
+      var direction = _props.direction;
       var overflow = this.state.overflow;
 
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--fill', this.props.fill), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--flush', this.props.flush), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + this.props.size, this.props.size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--selectable', this.props.selectable), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--moreable', this.props.onMore), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--overflowed', this.state.overflow), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--masonry', this.props.masonry), _classnames), this.props.className);
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--fill', this.props.fill), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--flush', this.props.flush), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--selectable', this.props.selectable), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--moreable', this.props.onMore), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--overflowed', this.state.overflow), _classnames), this.props.className);
 
       var other = _Props2.default.pick(this.props, (0, _keys2.default)(_Box2.default.propTypes));
 
@@ -445,7 +334,7 @@ var Tiles = function (_Component) {
         more = _react2.default.createElement(
           'div',
           { ref: function ref(_ref) {
-              return _this5.moreRef = _ref;
+              return _this3.moreRef = _ref;
             }, className: CLASS_ROOT + '__more' },
           _react2.default.createElement(_Spinning2.default, null)
         );
@@ -456,20 +345,14 @@ var Tiles = function (_Component) {
         onClickHandler = this._onClick;
       }
 
-      var children = this.props.children;
-      if (masonry) {
-        console.warn('Tiles: masonry prop has been deprecated. ' + 'Use a Columns instead.');
-        children = this._renderMasonryColumns();
-      } else {
-        children = _react.Children.map(this.props.children, function (element) {
-          return _this5._renderChild(element);
-        }, this);
-      }
+      var children = _react.Children.map(this.props.children, function (element) {
+        return _this3._renderChild(element);
+      });
 
       var contents = _react2.default.createElement(
         _Box2.default,
         (0, _extends3.default)({ ref: function ref(_ref2) {
-            return _this5.tilesRef = _ref2;
+            return _this3.tilesRef = _ref2;
           } }, other, {
           wrap: direction ? false : true,
           direction: direction ? direction : 'row',
@@ -513,21 +396,17 @@ exports.default = Tiles;
 
 
 Tiles.propTypes = (0, _extends3.default)({
-  fill: _react.PropTypes.bool, // remove in 1.0, rely on Box props
-  flush: _react.PropTypes.bool, // remove in 1.0, already in Box
+  fill: _react.PropTypes.bool,
+  flush: _react.PropTypes.bool,
   onMore: _react.PropTypes.func,
   onSelect: _react.PropTypes.func,
   selectable: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.oneOf(['multiple'])]),
-  selected: _react.PropTypes.oneOfType([_react.PropTypes.number, _react.PropTypes.arrayOf(_react.PropTypes.number)]),
-  size: _react.PropTypes.oneOf(['small', 'medium', 'large']), // remove in 1.0
-  // already in Box
-  numColumns: _react.PropTypes.number, // remove in 1.0
-  masonry: _react.PropTypes.bool }, _Box2.default.propTypes);
+  selected: _react.PropTypes.oneOfType([_react.PropTypes.number, _react.PropTypes.arrayOf(_react.PropTypes.number)])
+}, _Box2.default.propTypes);
 
 Tiles.defaultProps = {
   flush: true,
   justify: 'start',
-  pad: 'small',
-  numColumns: 1
+  pad: 'small'
 };
 module.exports = exports['default'];

@@ -36,10 +36,6 @@ var _reactDom = require('react-dom');
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _Legend = require('./Legend');
-
-var _Legend2 = _interopRequireDefault(_Legend);
-
 var _KeyboardAccelerators = require('../utils/KeyboardAccelerators');
 
 var _KeyboardAccelerators2 = _interopRequireDefault(_KeyboardAccelerators);
@@ -54,9 +50,8 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+var CLASS_ROOT = _CSSClassnames2.default.DISTRIBUTION; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-var CLASS_ROOT = _CSSClassnames2.default.DISTRIBUTION;
 var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
 
 var DEFAULT_WIDTH = 400;
@@ -89,7 +84,6 @@ var Distribution = function (_Component) {
     _this._placeItems = _this._placeItems.bind(_this);
 
     _this.state = _this._stateFromProps(props);
-    _this.state.legendPosition = 'bottom';
     _this.state.width = DEFAULT_WIDTH;
     _this.state.height = DEFAULT_HEIGHT;
     _this.state.activeIndex = 0;
@@ -316,14 +310,6 @@ var Distribution = function (_Component) {
   }, {
     key: '_layout',
     value: function _layout() {
-      // legendPosition based on available window orientation
-      var ratio = window.innerWidth / window.innerHeight;
-      if (ratio < 0.8) {
-        this.setState({ legendPosition: 'bottom' });
-      } else if (ratio > 1.2) {
-        this.setState({ legendPosition: 'right' });
-      }
-
       var container = this.containerRef;
       var rect = container.getBoundingClientRect();
       var width = Math.round(rect.width);
@@ -401,18 +387,6 @@ var Distribution = function (_Component) {
     key: '_onDeactivate',
     value: function _onDeactivate() {
       this.setState({ activeIndex: 0 });
-    }
-  }, {
-    key: '_renderLegend',
-    value: function _renderLegend() {
-      var _this3 = this;
-
-      return _react2.default.createElement(_Legend2.default, { ref: function ref(_ref) {
-          return _this3.legendRef = _ref;
-        },
-        className: CLASS_ROOT + "__legend", series: this.props.series,
-        units: this.props.units, activeIndex: this.state.activeIndex,
-        onActive: this._onActivate });
     }
   }, {
     key: '_renderItemLabel',
@@ -509,7 +483,7 @@ var Distribution = function (_Component) {
   }, {
     key: '_renderItem',
     value: function _renderItem(datum, rect, index) {
-      var _this4 = this;
+      var _this3 = this;
 
       var itemClass = CLASS_ROOT + '__item';
       var itemClasses = [itemClass];
@@ -521,7 +495,7 @@ var Distribution = function (_Component) {
       var activeDistributionRef = void 0;
       if (index === this.state.activeIndex) {
         activeDistributionRef = function activeDistributionRef(ref) {
-          return _this4.activeDistributionRef = ref;
+          return _this3.activeDistributionRef = ref;
         };
       }
 
@@ -547,19 +521,19 @@ var Distribution = function (_Component) {
   }, {
     key: '_renderBoxes',
     value: function _renderBoxes() {
-      var _this5 = this;
+      var _this4 = this;
 
       return this.state.items.map(function (item, index) {
-        return _this5._renderItem(item.datum, item.boxRect, index);
+        return _this4._renderItem(item.datum, item.boxRect, index);
       }, this);
     }
   }, {
     key: '_renderLabels',
     value: function _renderLabels() {
-      var _this6 = this;
+      var _this5 = this;
 
       return this.state.items.map(function (item, index) {
-        return _this6._renderItemLabel(item.datum, item.labelRect, index);
+        return _this5._renderItemLabel(item.datum, item.labelRect, index);
       }, this);
     }
   }, {
@@ -580,10 +554,9 @@ var Distribution = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this7 = this;
+      var _this6 = this;
 
       var classes = [CLASS_ROOT];
-      classes.push(CLASS_ROOT + '--legend-' + this.state.legendPosition);
       if (this.props.size) {
         classes.push(CLASS_ROOT + '--' + this.props.size);
       }
@@ -598,12 +571,6 @@ var Distribution = function (_Component) {
       }
       if (this.props.className) {
         classes.push(this.props.className);
-      }
-
-      var legend = void 0;
-      if (this.props.legend) {
-        console.warn('Distribution: legend prop has been deprecated. ' + 'Use a separate Legend instead.');
-        legend = this._renderLegend();
       }
 
       var background = void 0;
@@ -651,13 +618,13 @@ var Distribution = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        { ref: function ref(_ref4) {
-            return _this7.containerRef = _ref4;
+        { ref: function ref(_ref3) {
+            return _this6.containerRef = _ref3;
           }, className: classes.join(' ') },
         _react2.default.createElement(
           'svg',
-          { ref: function ref(_ref2) {
-              return _this7.distributionRef = _ref2;
+          { ref: function ref(_ref) {
+              return _this6.distributionRef = _ref;
             },
             className: CLASS_ROOT + '__graphic',
             viewBox: '0 0 ' + this.state.width + ' ' + this.state.height,
@@ -671,13 +638,12 @@ var Distribution = function (_Component) {
         ),
         _react2.default.createElement(
           'div',
-          { ref: function ref(_ref3) {
-              return _this7.distributionItemsRef = _ref3;
+          { ref: function ref(_ref2) {
+              return _this6.distributionItemsRef = _ref2;
             },
             className: CLASS_ROOT + '__labels' },
           labels
-        ),
-        legend
+        )
       );
     }
   }]);
@@ -698,8 +664,6 @@ Distribution.propTypes = {
   a11yDescId: _react.PropTypes.string,
   a11yDesc: _react.PropTypes.string,
   full: _react.PropTypes.bool,
-  legend: _react.PropTypes.bool, // remove in 1.0
-  legendTotal: _react.PropTypes.bool, // remove in 1.0
   series: _react.PropTypes.arrayOf(_react.PropTypes.shape({
     label: _react.PropTypes.node,
     value: _react.PropTypes.number.isRequired,

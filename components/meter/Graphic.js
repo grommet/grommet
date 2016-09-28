@@ -126,7 +126,7 @@ var Graphic = function (_Component) {
     }
   }, {
     key: '_renderSlice',
-    value: function _renderSlice(trackIndex, item, itemIndex, startValue, maxValue, track, threshold) {
+    value: function _renderSlice(trackIndex, item, itemIndex, startValue, max, track, threshold) {
       var path = void 0;
       if (!item.hidden) {
         var classes = [CLASS_ROOT + '__slice'];
@@ -140,14 +140,14 @@ var Graphic = function (_Component) {
           classes.push(COLOR_INDEX + '-' + item.colorIndex);
         }
 
-        var commands = this._sliceCommands(trackIndex, item, startValue, maxValue);
+        var commands = this._sliceCommands(trackIndex, item, startValue, max);
 
         if (threshold) {
           path = (0, _utils.buildPath)(itemIndex, commands, classes);
         } else if (track) {
           path = (0, _utils.buildPath)(itemIndex, commands, classes, this.props.onActivate, item.onClick);
         } else {
-          var a11yTitle = item.value + ' ' + (item.label || this.props.units || '');
+          var a11yTitle = '' + item.value;
           var role = this.props.series.length > 1 ? 'img' : undefined;
           path = (0, _utils.buildPath)(itemIndex, commands, classes, this.props.onActivate, item.onClick, a11yTitle, role);
         }
@@ -164,10 +164,10 @@ var Graphic = function (_Component) {
       var min = _props.min;
       var max = _props.max;
 
-      var startValue = min.value;
+      var startValue = min;
 
       var paths = series.map(function (item, itemIndex) {
-        var path = _this2._renderSlice(trackIndex, item, itemIndex, startValue, max.value, track, threshold);
+        var path = _this2._renderSlice(trackIndex, item, itemIndex, startValue, max, track, threshold);
 
         startValue += item.value;
 
@@ -179,7 +179,7 @@ var Graphic = function (_Component) {
   }, {
     key: '_loadingCommands',
     value: function _loadingCommands() {
-      return this._sliceCommands(0, this.props.max, this.props.min.value);
+      return this._sliceCommands(0, { value: this.props.max }, this.props.min);
     }
   }, {
     key: '_onPreviousBand',
@@ -232,7 +232,7 @@ var Graphic = function (_Component) {
         values = this._renderSlices(this.props.series, 0);
       } else {
         values = this.props.series.map(function (item, index) {
-          return _this3._renderSlice(index, item, index, min.value, max.value);
+          return _this3._renderSlice(index, item, index, min, max);
         });
       }
       if (values.length === 0) {
@@ -256,13 +256,13 @@ var Graphic = function (_Component) {
       var min = _props3.min;
       var max = _props3.max;
 
-      var trackValue = { value: max.value };
+      var trackValue = { value: max };
       var tracks = void 0;
       if (this.props.stacked) {
-        tracks = this._renderSlice(0, trackValue, 0, min.value, max.value, true, false);
+        tracks = this._renderSlice(0, trackValue, 0, min, max, true, false);
       } else {
         tracks = this.props.series.map(function (item, index) {
-          return _this4._renderSlice(index, trackValue, index, min.value, max.value, true, false);
+          return _this4._renderSlice(index, trackValue, index, min, max, true, false);
         });
       }
       return _react2.default.createElement(
@@ -300,11 +300,6 @@ var Graphic = function (_Component) {
       return null;
     }
   }, {
-    key: '_renderInlineLegend',
-    value: function _renderInlineLegend() {
-      return null;
-    }
-  }, {
     key: '_renderA11YTitle',
     value: function _renderA11YTitle() {
       var a11yTitle = this.props.a11yTitle;
@@ -323,19 +318,18 @@ var Graphic = function (_Component) {
       var _this5 = this;
 
       var a11yDesc = this.props.a11yDesc;
-      var units = this.props.units || '';
       if (!a11yDesc) {
         var valueLabel = _Intl2.default.getMessage(this.context.intl, 'Value');
-        a11yDesc = ', ' + valueLabel + ': ' + this._renderTotal() + ' ' + units;
+        a11yDesc = ', ' + valueLabel + ': ' + this._renderTotal();
 
         if (this.props.min) {
           var minLabel = _Intl2.default.getMessage(this.context.intl, 'Min');
-          a11yDesc += ', ' + minLabel + ': ' + this.props.min.value + ' ' + units;
+          a11yDesc += ', ' + minLabel + ': ' + this.props.min;
         }
 
         if (this.props.max) {
           var maxLabel = _Intl2.default.getMessage(this.context.intl, 'Max');
-          a11yDesc += ', ' + maxLabel + ': ' + this.props.max.value + ' ' + units;
+          a11yDesc += ', ' + maxLabel + ': ' + this.props.max;
         }
 
         if (this.props.thresholds) {
@@ -364,7 +358,6 @@ var Graphic = function (_Component) {
       var values = this._renderValues();
       var thresholds = this._renderThresholds();
       var topLayer = this._renderTopLayer();
-      var inlineLegend = this._renderInlineLegend();
 
       var a11yTitle = this._renderA11YTitle();
 
@@ -383,7 +376,6 @@ var Graphic = function (_Component) {
         tracks,
         thresholds,
         values,
-        inlineLegend,
         topLayer
       );
     }
@@ -399,7 +391,6 @@ Graphic.propTypes = (0, _extends3.default)({
   stacked: _react.PropTypes.bool,
   tabIndex: _react.PropTypes.string,
   thresholds: _react.PropTypes.arrayOf(_react.PropTypes.shape({
-    label: _react.PropTypes.string,
     value: _react.PropTypes.number.isRequired,
     colorIndex: _react.PropTypes.string
   })).isRequired,

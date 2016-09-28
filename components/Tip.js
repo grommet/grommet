@@ -72,11 +72,7 @@ var Tip = function (_Component) {
       var _props = this.props;
       var onClose = _props.onClose;
       var colorIndex = _props.colorIndex;
-      var targetId = _props.targetId;
 
-      if (targetId) {
-        console.warn('Tip: targetId prop has been deprecated use target instead');
-      }
       var target = this._getTarget();
       if (target) {
         (function () {
@@ -123,12 +119,10 @@ var Tip = function (_Component) {
   }, {
     key: '_getTarget',
     value: function _getTarget() {
-      var _props2 = this.props;
-      var target = _props2.target;
-      var targetId = _props2.targetId;
+      var target = this.props.target;
 
 
-      return document.getElementById(target || targetId) || document.querySelector('.' + (target || targetId));
+      return document.getElementById(target) || document.querySelector('.' + target);
     }
   }, {
     key: '_renderDrop',
@@ -159,7 +153,6 @@ exports.default = Tip;
 Tip.propTypes = {
   colorIndex: _react.PropTypes.string,
   onClose: _react.PropTypes.func.isRequired,
-  targetId: _react.PropTypes.string, // remove in 1.0, use size: {target: }
   target: _react.PropTypes.string.isRequired
 };
 

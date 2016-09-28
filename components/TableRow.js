@@ -55,20 +55,13 @@ var TableRow = function (_Component) {
   (0, _createClass3.default)(TableRow, [{
     key: 'render',
     value: function render() {
-      var _classnames;
-
       var _props = this.props;
       var children = _props.children;
       var className = _props.className;
       var onClick = _props.onClick;
-      var selected = _props.selected;
 
 
-      if (selected) {
-        console.warn('TableRow: selected prop has been deprecated. Use ' + 'selected option at the Table level.');
-      }
-
-      var classes = (0, _classnames3.default)(CLASS_ROOT, className, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--selected', selected), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--selectable', onClick), _classnames));
+      var classes = (0, _classnames3.default)(CLASS_ROOT, className, (0, _defineProperty3.default)({}, CLASS_ROOT + '--selectable', onClick));
 
       return _react2.default.createElement(
         'tr',
@@ -85,7 +78,6 @@ exports.default = TableRow;
 ;
 
 TableRow.propTypes = {
-  onClick: _react.PropTypes.func,
-  selected: _react.PropTypes.bool // remove in 1.0
+  onClick: _react.PropTypes.func
 };
 module.exports = exports['default'];

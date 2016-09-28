@@ -80,10 +80,6 @@ var Accordion = function (_Component) {
     } else {
       active = _this.props.active || [];
     }
-    if (props.initialIndex) {
-      console.warn('Accordion: initialIndex prop has been deprecated. Use active instead.');
-      active.push(props.initialIndex);
-    }
     _react2.default.Children.forEach(props.children, function (child, index) {
       if (child.props.active) {
         console.warn('AccordionPanel: active prop has been deprecated.' + 'Use active prop at the Accordion component level.');
@@ -174,8 +170,7 @@ Accordion.propTypes = {
   active: _react.PropTypes.oneOfType([_react.PropTypes.number, _react.PropTypes.arrayOf(_react.PropTypes.number)]),
   animate: _react.PropTypes.bool,
   onActive: _react.PropTypes.func,
-  openMulti: _react.PropTypes.bool,
-  initialIndex: _react.PropTypes.number // remove in 1.0, use {active: }
+  openMulti: _react.PropTypes.bool
 };
 
 Accordion.defaultProps = {
