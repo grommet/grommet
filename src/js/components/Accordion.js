@@ -21,15 +21,6 @@ export default class Accordion extends Component {
     } else {
       active = this.props.active || [];
     }
-    React.Children.forEach(props.children, (child, index) => {
-      if (child.props.active) {
-        console.warn(
-          'AccordionPanel: active prop has been deprecated.' +
-          'Use active prop at the Accordion component level.'
-        );
-        active.push(index);
-      }
-    });
     this.state = {
       active: active
     };

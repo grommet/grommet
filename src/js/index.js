@@ -36,7 +36,6 @@ var Grommet = {
   Headline: require('./components/Headline'),
   Hero: require('./components/Hero'),
   Image: require('./components/Image'),
-  ImageField: require('./components/ImageField'),
   Grommet: require('./components/Grommet'),
   Label: require('./components/Label'),
   Layer: require('./components/Layer'),

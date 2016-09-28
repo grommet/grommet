@@ -1,6 +1,6 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import classnames from 'classnames';
 import Box from './Box';
 import Props from '../utils/Props';
@@ -11,18 +11,12 @@ const CLASS_ROOT = CSSClassnames.LIST_ITEM;
 export default class ListItem extends Component {
 
   render () {
-    const { children, className, onClick, selected } = this.props;
-
-    if (selected) {
-      console.warn('Selected option has been deprecated, please use selected ' +
-        'option at the List level.');
-    }
+    const { children, className, onClick } = this.props;
 
     const classes = classnames(
       CLASS_ROOT,
       className,
       {
-        [`${CLASS_ROOT}--selected`]: selected,
         [`${CLASS_ROOT}--selectable`]: onClick
       }
     );
@@ -39,7 +33,6 @@ export default class ListItem extends Component {
 };
 
 ListItem.propTypes = {
-  selected: PropTypes.bool,
   ...Box.propTypes
 };
 
