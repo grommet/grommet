@@ -80,12 +80,6 @@ var Accordion = function (_Component) {
     } else {
       active = _this.props.active || [];
     }
-    _react2.default.Children.forEach(props.children, function (child, index) {
-      if (child.props.active) {
-        console.warn('AccordionPanel: active prop has been deprecated.' + 'Use active prop at the Accordion component level.');
-        active.push(index);
-      }
-    });
     _this.state = {
       active: active
     };

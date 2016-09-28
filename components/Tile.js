@@ -81,7 +81,6 @@ var Tile = function (_Component) {
       var onClick = _props.onClick;
       var wide = _props.wide;
       var status = _props.status;
-      var selected = _props.selected;
       var hoverStyle = _props.hoverStyle;
       var hoverColorIndex = _props.hoverColorIndex;
       var hoverBorder = _props.hoverBorder;
@@ -94,15 +93,11 @@ var Tile = function (_Component) {
       delete restProps.hoverBorderSize;
       delete restProps.wide;
 
-      if (selected) {
-        console.warn('Selected option has been deprecated, please use ' + 'selected option at the Tiles level.');
-      }
-
       var statusClass = status ? status.toLowerCase() : undefined;
       // if Tiles flush is true, default borderSize to small (1px)
       var borderSize = hoverBorder ? hoverBorderSize ? hoverBorderSize : 'large' : 'small';
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, className, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--status-' + statusClass, status), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--wide', wide), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--selectable', onClick), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--selected', selected), (0, _defineProperty3.default)(_classnames, '' + NAMESPACE + hoverStyle + (hoverStyle == 'border' ? borderSize ? '-' + borderSize : '-medium' : '') + '-hover-color-index-' + hoverColorIndex, hoverStyle), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--hover-border-' + borderSize, borderSize), _classnames));
+      var classes = (0, _classnames3.default)(CLASS_ROOT, className, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--status-' + statusClass, status), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--wide', wide), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--selectable', onClick), (0, _defineProperty3.default)(_classnames, '' + NAMESPACE + hoverStyle + (hoverStyle == 'border' ? borderSize ? '-' + borderSize : '-medium' : '') + '-hover-color-index-' + hoverColorIndex, hoverStyle), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--hover-border-' + borderSize, borderSize), _classnames));
 
       var boxProps = _Props2.default.pick(this.props, (0, _keys2.default)(_Box2.default.propTypes));
 
@@ -124,7 +119,6 @@ Tile.propTypes = (0, _extends3.default)({
   hoverStyle: _react.PropTypes.oneOf(['border', 'background', 'none']),
   hoverColorIndex: _react.PropTypes.string,
   hoverBorderSize: _react.PropTypes.oneOf(['small', 'medium', 'large']),
-  selected: _react.PropTypes.bool,
   wide: _react.PropTypes.bool }, _Box2.default.propTypes);
 
 Tile.defaultProps = {

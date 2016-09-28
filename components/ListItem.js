@@ -71,20 +71,13 @@ var ListItem = function (_Component) {
   (0, _createClass3.default)(ListItem, [{
     key: 'render',
     value: function render() {
-      var _classnames;
-
       var _props = this.props;
       var children = _props.children;
       var className = _props.className;
       var onClick = _props.onClick;
-      var selected = _props.selected;
 
 
-      if (selected) {
-        console.warn('Selected option has been deprecated, please use selected ' + 'option at the List level.');
-      }
-
-      var classes = (0, _classnames3.default)(CLASS_ROOT, className, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--selected', selected), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--selectable', onClick), _classnames));
+      var classes = (0, _classnames3.default)(CLASS_ROOT, className, (0, _defineProperty3.default)({}, CLASS_ROOT + '--selectable', onClick));
 
       var boxProps = _Props2.default.pick(this.props, (0, _keys2.default)(_Box2.default.propTypes));
 
@@ -102,9 +95,7 @@ ListItem.displayName = 'ListItem';
 exports.default = ListItem;
 ;
 
-ListItem.propTypes = (0, _extends3.default)({
-  selected: _react.PropTypes.bool
-}, _Box2.default.propTypes);
+ListItem.propTypes = (0, _extends3.default)({}, _Box2.default.propTypes);
 
 ListItem.defaultProps = {
   align: 'center',
