@@ -663,7 +663,7 @@ Distribution.propTypes = {
   a11yTitleId: _react.PropTypes.string,
   a11yDescId: _react.PropTypes.string,
   a11yDesc: _react.PropTypes.string,
-  full: _react.PropTypes.bool,
+  full: _react.PropTypes.bool, // deprecated, use size="full"
   series: _react.PropTypes.arrayOf(_react.PropTypes.shape({
     label: _react.PropTypes.node,
     value: _react.PropTypes.number.isRequired,
@@ -676,7 +676,7 @@ Distribution.propTypes = {
       svgElement: _react.PropTypes.node
     })
   })),
-  size: _react.PropTypes.oneOf(['small', 'medium', 'large']),
+  size: _react.PropTypes.oneOf(['small', 'medium', 'large', 'full']),
   units: _react.PropTypes.string,
   vertical: _react.PropTypes.bool
 };
