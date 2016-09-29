@@ -16,14 +16,8 @@
 }
 
 .#{$grommet-namespace}search__input {
-  @include inuit-font-size($header-font-size);
   margin-right: 0px;
   @include input();
-
-  // .#{$grommet-namespace}header & {
-  //   font-size: inherit;
-  //   line-height: inherit;
-  // }
 
   // Disable IE's clear icon
   &::-ms-clear {
@@ -137,7 +131,7 @@
 
 .#{$grommet-namespace}search--small {
   .#{$grommet-namespace}search__input {
-    @include inuit-font-size($control-font-size, inherit);
+    @include inuit-font-size($input-small-font-size, inherit);
     padding: (($inuit-base-spacing-unit - $control-font-size) - $input-border-width)
       ($control-font-size - $input-border-width);
     padding-right: ($inuit-base-spacing-unit - $input-border-width);
@@ -150,9 +144,15 @@
   }
 }
 
+.#{$grommet-namespace}search--medium {
+  .#{$grommet-namespace}search__input {
+    @include inuit-font-size($input-medium-font-size, inherit);
+  }
+}
+
 .#{$grommet-namespace}search--large {
   .#{$grommet-namespace}search__input {
-    @include inuit-font-size($large-input-font-size, normal);
+    @include inuit-font-size($input-large-font-size, normal);
     padding: halve($inuit-base-spacing-unit) ($inuit-base-spacing-unit);
     padding-right: ($inuit-base-spacing-unit * 3);
 
@@ -238,7 +238,7 @@
 }
 
 .#{$grommet-namespace}search--fill {
-  width: 100%;
+  // width: 100%;
   max-width: none;
   //used to add full height for button inside a flex container
   flex-grow: 1;

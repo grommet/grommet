@@ -11,7 +11,7 @@
 }
 
 .#{$grommet-namespace}label--small {
-  @include inuit-font-size($label-font-size);
+  @include inuit-font-size($content-small-font-size);
   color: $secondary-text-color;
 
   #{$dark-background-context} & {
@@ -20,5 +20,5 @@
 }
 
 .#{$grommet-namespace}label--large {
-  @include inuit-font-size($control-large-font-size);
+  @include inuit-font-size($content-large-font-size);
 }
