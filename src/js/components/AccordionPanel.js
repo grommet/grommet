@@ -47,22 +47,24 @@ export default class AccordionPanel extends Component {
     });
 
     return (
-      <ListItem className={classes} direction='column' pad='none'
-        aria-expanded={active} aria-selected={active} role='tab'
-        aria-label={heading}>
-        <Button fill={true} plain={true} onClick={this._onClickTab}>
-          <Header pad={pad} full='horizontal' direction='row' justify='between'
-            align='center' responsive={false}
-            className={`${CLASS_ROOT}__header`}>
-            {heading}
-            <TabNextIcon className={`${CLASS_ROOT}__control`} />
-          </Header>
-        </Button>
+      <div>
+        <ListItem className={classes} direction='column' pad='none'
+          aria-expanded={active} aria-selected={active} role='tab'
+          aria-label={heading}>
+          <Button fill={true} plain={true} onClick={this._onClickTab}>
+            <Header pad={pad} full='horizontal' direction='row'
+              justify='between' align='center' responsive={false}
+              className={`${CLASS_ROOT}__header`}>
+              {heading}
+              <TabNextIcon className={`${CLASS_ROOT}__control`} />
+            </Header>
+          </Button>
+        </ListItem>
         <Collapsible aria-label={tabContentTitle} role='tabpanel'
           active={active} animate={animate} pad={pad}>
           {children}
         </Collapsible>
-      </ListItem>
+      </div>
     );
   }
 };
