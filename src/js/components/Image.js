@@ -9,8 +9,7 @@ const CLASS_ROOT = CSSClassnames.IMAGE;
 
 export default class Image extends Component {
   render () {
-    let { alt, caption, className, full, id, size, src, title, mask } =
-      this.props;
+    const { caption, className, full, mask, size, ...props } = this.props;
     let classes = classnames(
       CLASS_ROOT,
       {
@@ -22,9 +21,9 @@ export default class Image extends Component {
       className
     );
 
-    const captionText = (typeof caption === 'string') ? caption : alt;
+    const captionText = (typeof caption === 'string') ? caption : props.alt;
     const imgNode = (
-      <img id={id} src={src} alt={alt} title={title} className={classes} />
+      <img {...props} className={classes} />
     );
 
     const labelRoot = `${CLASS_ROOT}__caption`;
@@ -53,7 +52,6 @@ Image.propTypes = {
     PropTypes.bool, PropTypes.string
   ]),
   full: PropTypes.oneOf([true, 'horizontal', 'vertical', false]),
-  id: PropTypes.string,
   mask: PropTypes.bool,
   size: PropTypes.oneOf(['small', 'medium', 'large', 'thumb']),
   src: PropTypes.string,
