@@ -159,7 +159,7 @@ $inner-pad: round($inuit-base-spacing-unit * 0.25);
 }
 
 .#{$grommet-namespace}topology__label {
-  font-size: $label-font-size;
+  font-size: $content-small-font-size;
   margin-left: halve($inuit-base-spacing-unit);
   margin-right: halve($inuit-base-spacing-unit);
 }

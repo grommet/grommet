@@ -40,7 +40,7 @@
 }
 
 .#{$grommet-namespace}notification__message {
-  @include inuit-font-size($control-large-font-size, $inuit-base-spacing-unit);
+  @include inuit-font-size($content-large-font-size, $inuit-base-spacing-unit);
 
   + * {
     margin-top: $inuit-base-spacing-unit;

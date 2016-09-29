@@ -41,6 +41,7 @@
 
 .#{$grommet-namespace}anchor__icon {
   display: inline-block;
+  height: double($inuit-base-spacing-unit);
   padding: halve($inuit-base-spacing-unit);
 }
 

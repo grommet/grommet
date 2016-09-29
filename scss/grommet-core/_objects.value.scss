@@ -64,7 +64,7 @@
 
   .#{$grommet-namespace}value__label {
     margin-top: quarter($inuit-base-spacing-unit);
-    @include inuit-font-size($label-font-size);
+    @include inuit-font-size($content-small-font-size);
   }
 }
 
@@ -75,7 +75,7 @@
 
   .#{$grommet-namespace}value__label {
     margin-top: quarter($inuit-base-spacing-unit);
-    @include inuit-font-size($label-font-size);
+    @include inuit-font-size($content-small-font-size);
   }
 }
 
@@ -94,7 +94,7 @@
 
   .#{$grommet-namespace}value__label {
     margin-top: halve($inuit-base-spacing-unit);
-    @include inuit-font-size($control-large-font-size);
+    @include inuit-font-size($content-large-font-size);
   }
 }
 
@@ -123,7 +123,7 @@
 
     .#{$grommet-namespace}value__label {
       margin-top: halve($inuit-base-spacing-unit);
-      @include inuit-font-size($control-large-font-size);
+      @include inuit-font-size($content-large-font-size);
     }
   }
 }

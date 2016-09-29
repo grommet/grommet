@@ -32,7 +32,7 @@
   // position: absolute;
   // top: 0px;
   // left: 0px;
-  @include inuit-font-size($label-font-size);
+  @include inuit-font-size($content-small-font-size);
   margin-bottom: halve($inuit-base-spacing-unit);
 }
 
