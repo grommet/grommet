@@ -43,7 +43,7 @@ export default class NumberInput extends Component {
     } catch (e) {
       // IE11 workaround. See known issue #5 at
       // http://caniuse.com/#search=number
-      let value = (parseInt(input.value, 10) || 0) + (this.props.step || 1);
+      let value = (parseFloat(input.value) || 0) + (this.props.step || 1);
       if (this.props.max !== undefined) {
         value = Math.min(value, this.props.max);
       }
@@ -59,7 +59,7 @@ export default class NumberInput extends Component {
     } catch (e) {
       // IE11 workaround. See known issue #5 at
       // http://caniuse.com/#search=number
-      let value = (parseInt(input.value, 10) || 0) - (this.props.step || 1);
+      let value = (parseFloat(input.value) || 0) - (this.props.step || 1);
       if (this.props.min !== undefined) {
         value = Math.max(value, this.props.min);
       }
