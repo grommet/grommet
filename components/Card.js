@@ -282,6 +282,7 @@ var Card = function (_Component) {
       var video = _props5.video;
 
       var boxProps = _Props2.default.pick(this.props, (0, _keys2.default)(_Box2.default.propTypes));
+      var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Card.propTypes));
 
       var classes = (0, _classnames3.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--selectable', onClick || video), className);
 
@@ -323,8 +324,8 @@ var Card = function (_Component) {
 
       return _react2.default.createElement(
         _Box2.default,
-        (0, _extends3.default)({}, boxProps, { className: classes, justify: cardJustify,
-          onClick: onCardClick }),
+        (0, _extends3.default)({}, boxProps, restProps, { className: classes,
+          justify: cardJustify, onClick: onCardClick }),
         thumbnail,
         text,
         videoLayer
