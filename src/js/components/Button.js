@@ -12,7 +12,7 @@ export default class Button extends Component {
     super();
     this.state = {
       mouseActive: false,
-      active: false
+      focus: false
     };
   }
   render () {
@@ -37,7 +37,7 @@ export default class Button extends Component {
       CLASS_ROOT,
       this.props.className,
       {
-        [`${CLASS_ROOT}--active`]: this.state.active,
+        [`${CLASS_ROOT}--focus`]: this.state.focus,
         [`${CLASS_ROOT}--primary`]: this.props.primary,
         [`${CLASS_ROOT}--secondary`]: this.props.secondary,
         [`${CLASS_ROOT}--accent`]: this.props.accent,
@@ -67,10 +67,10 @@ export default class Button extends Component {
         onMouseUp={() => this.setState({ mouseActive: false })}
         onFocus={() => {
           if (this.state.mouseActive === false) {
-            this.setState({ active: true });
+            this.setState({ focus: true });
           }
         }}
-        onBlur={() => this.setState({ active: false })}>
+        onBlur={() => this.setState({ focus: false })}>
         {icon}
         {children}
       </Tag>

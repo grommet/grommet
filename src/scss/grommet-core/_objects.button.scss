@@ -17,11 +17,6 @@ $button-horizontal-padding: round($inuit-base-spacing-unit) - $button-border-wid
   min-width: $button-min-width;
   max-width: $button-max-width;
 
-  &--active {
-    border-color: $focus-border-color;
-    box-shadow: 0 0 1px 1px $focus-border-color;
-  }
-
   @include media-query(lap-and-up) {
     transition: 0.1s ease-in-out;
   }
@@ -32,6 +27,11 @@ $button-horizontal-padding: round($inuit-base-spacing-unit) - $button-border-wid
   input[type="submit"],
   button:not(.#{$grommet-namespace}button) {
     @include basic-button();
+
+    &:focus {
+      border-color: $focus-border-color;
+      box-shadow: 0 0 1px 1px $focus-border-color;
+    }
   }
 
   a.#{$grommet-namespace}button {
@@ -45,6 +45,11 @@ $button-horizontal-padding: round($inuit-base-spacing-unit) - $button-border-wid
 
 .#{$grommet-namespace}button {
   @include basic-button();
+
+  &--focus {
+    border-color: $focus-border-color;
+    box-shadow: 0 0 1px 1px $focus-border-color;
+  }
 }
 
 .#{$grommet-namespace}button__icon {
@@ -81,7 +86,7 @@ $button-horizontal-padding: round($inuit-base-spacing-unit) - $button-border-wid
 }
 
 .#{$grommet-namespace}button--primary {
-  &:not(.#{$grommet-namespace}button--active) {
+  &:not(.#{$grommet-namespace}button--focus) {
     border-color: $brand-color;
   }
   background-color: $brand-color;
@@ -114,11 +119,11 @@ $button-horizontal-padding: round($inuit-base-spacing-unit) - $button-border-wid
   }
 }
 
-.#{$grommet-namespace}button--secondary:not(.#{$grommet-namespace}button--active) {
+.#{$grommet-namespace}button--secondary:not(.#{$grommet-namespace}button--focus) {
   border-color: $button-secondary-color;
 }
 
-.#{$grommet-namespace}button--accent:not(.#{$grommet-namespace}button--active) {
+.#{$grommet-namespace}button--accent:not(.#{$grommet-namespace}button--focus) {
   border-color: $button-accent-color;
 }
 
@@ -175,12 +180,12 @@ $button-horizontal-padding: round($inuit-base-spacing-unit) - $button-border-wid
 }
 
 #{$dark-background-context} .#{$grommet-namespace}button:not(.#{$grommet-namespace}button--primary) {
-  &:not(.#{$grommet-namespace}button--active) {
+  &:not(.#{$grommet-namespace}button--focus) {
     border-color: $button-colored-border-color;
   }
   color: $colored-text-color;
 
-  &.#{$grommet-namespace}button--accent:not(.#{$grommet-namespace}button--active) {
+  &.#{$grommet-namespace}button--accent:not(.#{$grommet-namespace}button--focus) {
     border-color: $button-accent-color;
   }
 }
