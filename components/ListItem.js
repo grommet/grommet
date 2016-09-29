@@ -80,10 +80,11 @@ var ListItem = function (_Component) {
       var classes = (0, _classnames3.default)(CLASS_ROOT, className, (0, _defineProperty3.default)({}, CLASS_ROOT + '--selectable', onClick));
 
       var boxProps = _Props2.default.pick(this.props, (0, _keys2.default)(_Box2.default.propTypes));
+      var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(ListItem.propTypes));
 
       return _react2.default.createElement(
         _Box2.default,
-        (0, _extends3.default)({}, boxProps, { tag: 'li', className: classes }),
+        (0, _extends3.default)({}, boxProps, restProps, { tag: 'li', className: classes }),
         children
       );
     }

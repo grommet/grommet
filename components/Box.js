@@ -231,7 +231,7 @@ var Box = function (_Component) {
         if (focusable) {
           var boxLabel = a11yTitle || _Intl2.default.getMessage(this.context.intl, 'Box');
           a11yProps.tabIndex = 0;
-          a11yProps["aria-label"] = boxLabel;
+          a11yProps["aria-label"] = this.props['aria-label'] || boxLabel;
           a11yProps.role = role || 'link';
         }
       }

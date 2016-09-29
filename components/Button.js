@@ -49,13 +49,21 @@ var Button = function (_Component) {
 
   function Button() {
     (0, _classCallCheck3.default)(this, Button);
-    return (0, _possibleConstructorReturn3.default)(this, (Button.__proto__ || (0, _getPrototypeOf2.default)(Button)).apply(this, arguments));
+
+    var _this = (0, _possibleConstructorReturn3.default)(this, (Button.__proto__ || (0, _getPrototypeOf2.default)(Button)).call(this));
+
+    _this.state = {
+      mouseActive: false,
+      active: false
+    };
+    return _this;
   }
 
   (0, _createClass3.default)(Button, [{
     key: 'render',
     value: function render() {
-      var _classnames;
+      var _classnames,
+          _this2 = this;
 
       var plain = this.props.plain !== undefined ? this.props.plain : this.props.icon && !this.props.label;
 
@@ -81,7 +89,7 @@ var Button = function (_Component) {
         return child;
       });
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, this.props.className, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--primary', this.props.primary), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--secondary', this.props.secondary), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--accent', this.props.accent), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--disabled', !this.props.onClick && !this.props.href), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--fill', this.props.fill), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--plain', plain), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--icon', this.props.icon || hasIcon), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--align-' + this.props.align, this.props.align), _classnames));
+      var classes = (0, _classnames3.default)(CLASS_ROOT, this.props.className, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--active', this.state.active), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--primary', this.props.primary), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--secondary', this.props.secondary), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--accent', this.props.accent), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--disabled', !this.props.onClick && !this.props.href), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--fill', this.props.fill), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--plain', plain), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--icon', this.props.icon || hasIcon), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--align-' + this.props.align, this.props.align), _classnames));
 
       if (!children) {
         children = this.props.label;
@@ -97,7 +105,21 @@ var Button = function (_Component) {
         { href: this.props.href, id: this.props.id, type: type,
           className: classes, 'aria-label': this.props.a11yTitle,
           onClick: this.props.onClick,
-          disabled: !this.props.onClick && !this.props.href },
+          disabled: !this.props.onClick && !this.props.href,
+          onMouseDown: function onMouseDown() {
+            return _this2.setState({ mouseActive: true });
+          },
+          onMouseUp: function onMouseUp() {
+            return _this2.setState({ mouseActive: false });
+          },
+          onFocus: function onFocus() {
+            if (_this2.state.mouseActive === false) {
+              _this2.setState({ active: true });
+            }
+          },
+          onBlur: function onBlur() {
+            return _this2.setState({ active: false });
+          } },
         icon,
         children
       );

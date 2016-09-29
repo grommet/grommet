@@ -118,6 +118,7 @@ var Header = function (_Component) {
       var containerClasses = [CLASS_ROOT + '__container'];
       var wrapperClasses = [CLASS_ROOT + '__wrapper'];
       var other = _Props2.default.pick(this.props, (0, _keys2.default)(_Box2.default.propTypes));
+      var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Header.propTypes));
       if (this.props.fixed) {
         containerClasses.push(CLASS_ROOT + '__container--fixed');
 
@@ -159,7 +160,8 @@ var Header = function (_Component) {
               (0, _extends3.default)({ ref: function ref(_ref2) {
                   return _this2.contentRef = _ref2;
                 },
-                tag: 'header' }, other, { className: classes.join(' ') }),
+                tag: 'header' }, other, restProps, {
+                className: classes.join(' ') }),
               this.props.children
             )
           )
@@ -167,7 +169,8 @@ var Header = function (_Component) {
       } else {
         return _react2.default.createElement(
           _Box2.default,
-          (0, _extends3.default)({ tag: 'header' }, other, { className: classes.join(' '),
+          (0, _extends3.default)({ tag: 'header' }, other, restProps, { role: this.props.role,
+            className: classes.join(' '),
             containerClassName: containerClasses.join(' ') }),
           this.props.children
         );

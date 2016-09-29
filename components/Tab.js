@@ -36,9 +36,9 @@ var _classnames2 = require('classnames');
 
 var _classnames3 = _interopRequireDefault(_classnames2);
 
-var _KeyboardAccelerators = require('../utils/KeyboardAccelerators');
+var _Button = require('./Button');
 
-var _KeyboardAccelerators2 = _interopRequireDefault(_KeyboardAccelerators);
+var _Button2 = _interopRequireDefault(_Button);
 
 var _CSSClassnames = require('../utils/CSSClassnames');
 
@@ -59,26 +59,10 @@ var Tab = function (_Component) {
     var _this = (0, _possibleConstructorReturn3.default)(this, (Tab.__proto__ || (0, _getPrototypeOf2.default)(Tab)).call(this));
 
     _this._onClickTab = _this._onClickTab.bind(_this);
-    _this._startKeyboardListener = _this._startKeyboardListener.bind(_this);
-    _this._stopKeybardListener = _this._stopKeybardListener.bind(_this);
     return _this;
   }
 
   (0, _createClass3.default)(Tab, [{
-    key: '_startKeyboardListener',
-    value: function _startKeyboardListener() {
-      this._listeners = {
-        space: this._onClickTab,
-        enter: this._onClickTab
-      };
-      _KeyboardAccelerators2.default.startListeningToKeyboard(this.tabRef, this._listeners);
-    }
-  }, {
-    key: '_stopKeybardListener',
-    value: function _stopKeybardListener() {
-      _KeyboardAccelerators2.default.stopListeningToKeyboard(this.tabRef, this._listeners);
-    }
-  }, {
     key: '_onClickTab',
     value: function _onClickTab(event) {
       var onRequestForActive = this.props.onRequestForActive;
@@ -91,8 +75,6 @@ var Tab = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this2 = this;
-
       var _props = this.props;
       var active = _props.active;
       var id = _props.id;
@@ -105,13 +87,9 @@ var Tab = function (_Component) {
         'li',
         { className: classes, id: id },
         _react2.default.createElement(
-          'a',
-          { href: '#', role: 'tab', ref: function ref(_ref) {
-              return _this2.tabRef = _ref;
-            },
-            onClick: this._onClickTab, 'aria-expanded': active,
-            onFocus: this._startKeyboardListener, 'aria-selected': active,
-            onBlur: this._stopKeybardListener },
+          _Button2.default,
+          { plain: true, role: 'tab', 'aria-selected': active,
+            onClick: this._onClickTab, 'aria-expanded': active },
           _react2.default.createElement(
             'label',
             { className: CLASS_ROOT + '__label', htmlFor: id },

@@ -17,7 +17,7 @@ $button-horizontal-padding: round($inuit-base-spacing-unit) - $button-border-wid
   min-width: $button-min-width;
   max-width: $button-max-width;
 
-  &:focus:not(.#{$grommet-namespace}button--disabled) {
+  &--active {
     border-color: $focus-border-color;
     box-shadow: 0 0 1px 1px $focus-border-color;
   }
@@ -81,7 +81,9 @@ $button-horizontal-padding: round($inuit-base-spacing-unit) - $button-border-wid
 }
 
 .#{$grommet-namespace}button--primary {
-  border-color: $brand-color;
+  &:not(.#{$grommet-namespace}button--active) {
+    border-color: $brand-color;
+  }
   background-color: $brand-color;
   color: $active-colored-text-color;
 
@@ -112,11 +114,11 @@ $button-horizontal-padding: round($inuit-base-spacing-unit) - $button-border-wid
   }
 }
 
-.#{$grommet-namespace}button--secondary {
+.#{$grommet-namespace}button--secondary:not(.#{$grommet-namespace}button--active) {
   border-color: $button-secondary-color;
 }
 
-.#{$grommet-namespace}button--accent {
+.#{$grommet-namespace}button--accent:not(.#{$grommet-namespace}button--active) {
   border-color: $button-accent-color;
 }
 
@@ -173,10 +175,12 @@ $button-horizontal-padding: round($inuit-base-spacing-unit) - $button-border-wid
 }
 
 #{$dark-background-context} .#{$grommet-namespace}button:not(.#{$grommet-namespace}button--primary) {
-  border-color: $button-colored-border-color;
+  &:not(.#{$grommet-namespace}button--active) {
+    border-color: $button-colored-border-color;
+  }
   color: $colored-text-color;
 
-  &.#{$grommet-namespace}button--accent {
+  &.#{$grommet-namespace}button--accent:not(.#{$grommet-namespace}button--active) {
     border-color: $button-accent-color;
   }
 }
