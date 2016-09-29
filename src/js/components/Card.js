@@ -196,7 +196,7 @@ export default class Card extends Component {
     const contentClasses = classnames(
       {
         [`${CLASS_ROOT}__content`]: true,
-        [`${CLASS_ROOT}__content--truncated`]: truncate
+        [`${CLASS_ROOT}__content--truncate`]: truncate
       }
     );
 
