@@ -571,7 +571,7 @@ Distribution.propTypes = {
   a11yTitleId: PropTypes.string,
   a11yDescId: PropTypes.string,
   a11yDesc: PropTypes.string,
-  full: PropTypes.bool,
+  full: PropTypes.bool, // deprecated, use size="full"
   series: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.node,
     value: PropTypes.number.isRequired,
@@ -584,7 +584,7 @@ Distribution.propTypes = {
       svgElement: PropTypes.node
     })
   })),
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  size: PropTypes.oneOf(['small', 'medium', 'large', 'full']),
   units: PropTypes.string,
   vertical: PropTypes.bool
 };
