@@ -57,6 +57,7 @@ export default class Header extends Component {
     var containerClasses = [`${CLASS_ROOT}__container`];
     var wrapperClasses = [`${CLASS_ROOT}__wrapper`];
     var other = Props.pick(this.props, Object.keys(Box.propTypes));
+    let restProps = Props.omit(this.props, Object.keys(Header.propTypes));
     if (this.props.fixed) {
       containerClasses.push(`${CLASS_ROOT}__container--fixed`);
 
@@ -89,7 +90,8 @@ export default class Header extends Component {
             className={`${CLASS_ROOT}__mirror`} />
           <div className={wrapperClasses.join(' ')}>
             <Box ref={ref => this.contentRef = ref}
-              tag="header" {...other} className={classes.join(' ')}>
+              tag="header" {...other} {...restProps}
+              className={classes.join(' ')}>
               {this.props.children}
             </Box>
           </div>
@@ -97,7 +99,8 @@ export default class Header extends Component {
       );
     } else {
       return (
-        <Box tag="header" {...other} className={classes.join(' ')}
+        <Box tag="header" {...other} {...restProps} role={this.props.role}
+          className={classes.join(' ')}
           containerClassName={containerClasses.join(' ')}>
           {this.props.children}
         </Box>

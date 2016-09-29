@@ -8,6 +8,13 @@ import CSSClassnames from '../utils/CSSClassnames';
 const CLASS_ROOT = CSSClassnames.BUTTON;
 
 export default class Button extends Component {
+  constructor () {
+    super();
+    this.state = {
+      mouseActive: false,
+      active: false
+    };
+  }
   render () {
     const plain = (this.props.plain !== undefined ? this.props.plain :
       (this.props.icon && ! this.props.label));
@@ -30,6 +37,7 @@ export default class Button extends Component {
       CLASS_ROOT,
       this.props.className,
       {
+        [`${CLASS_ROOT}--active`]: this.state.active,
         [`${CLASS_ROOT}--primary`]: this.props.primary,
         [`${CLASS_ROOT}--secondary`]: this.props.secondary,
         [`${CLASS_ROOT}--accent`]: this.props.accent,
@@ -54,7 +62,15 @@ export default class Button extends Component {
       <Tag href={this.props.href} id={this.props.id} type={type}
         className={classes} aria-label={this.props.a11yTitle}
         onClick={this.props.onClick}
-        disabled={!this.props.onClick && !this.props.href}>
+        disabled={!this.props.onClick && !this.props.href}
+        onMouseDown={() => this.setState({ mouseActive: true })}
+        onMouseUp={() => this.setState({ mouseActive: false })}
+        onFocus={() => {
+          if (this.state.mouseActive === false) {
+            this.setState({ active: true });
+          }
+        }}
+        onBlur={() => this.setState({ active: false })}>
         {icon}
         {children}
       </Tag>

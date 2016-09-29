@@ -22,9 +22,10 @@ export default class ListItem extends Component {
     );
 
     const boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
+    const restProps = Props.omit(this.props, Object.keys(ListItem.propTypes));
 
     return (
-      <Box {...boxProps} tag="li" className={classes}>
+      <Box {...boxProps} {...restProps} tag="li" className={classes}>
         {children}
       </Box>
     );

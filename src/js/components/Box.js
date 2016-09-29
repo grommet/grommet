@@ -143,7 +143,7 @@ export default class Box extends Component {
         let boxLabel = a11yTitle ||
           Intl.getMessage(this.context.intl, 'Box');
         a11yProps.tabIndex = 0;
-        a11yProps["aria-label"] = boxLabel;
+        a11yProps["aria-label"] = this.props['aria-label'] || boxLabel;
         a11yProps.role = role || 'link';
       }
     }

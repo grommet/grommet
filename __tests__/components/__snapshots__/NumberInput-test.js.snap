@@ -22,7 +22,11 @@ exports[`NumberInput has correct default options 1`] = `
     disabled={false}
     href={undefined}
     id={undefined}
+    onBlur={[Function onBlur]}
     onClick={[Function bound _onSubtract]}
+    onFocus={[Function onFocus]}
+    onMouseDown={[Function onMouseDown]}
+    onMouseUp={[Function onMouseUp]}
     type="button">
     <span
       className="grommetux-button__icon">
@@ -67,7 +71,11 @@ exports[`NumberInput has correct default options 1`] = `
     disabled={false}
     href={undefined}
     id={undefined}
+    onBlur={[Function onBlur]}
     onClick={[Function bound _onAdd]}
+    onFocus={[Function onFocus]}
+    onMouseDown={[Function onMouseDown]}
+    onMouseUp={[Function onMouseUp]}
     type="button">
     <span
       className="grommetux-button__icon">
