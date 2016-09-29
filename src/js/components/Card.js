@@ -172,6 +172,7 @@ export default class Card extends Component {
     const { children, className, contentPad,
       onClick, reverse, video } = this.props;
     const boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
+    const restProps = Props.omit(this.props, Object.keys(Card.propTypes));
 
     const classes = classnames(
       CLASS_ROOT,
@@ -218,8 +219,8 @@ export default class Card extends Component {
     }
 
     return (
-      <Box {...boxProps} className={classes} justify={cardJustify}
-        onClick={onCardClick}>
+      <Box {...boxProps} {...restProps} className={classes}
+        justify={cardJustify} onClick={onCardClick}>
         {thumbnail}
         {text}
         {videoLayer}
