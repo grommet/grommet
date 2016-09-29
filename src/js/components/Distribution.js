@@ -63,8 +63,14 @@ export default class Distribution extends Component {
     // preserve width and height we calculated already
     state.width = this.state.width;
     state.height = this.state.height;
-    // _layout is only needed if the component area changes, just place items
-    this.setState(state, this._placeItems);
+    state.needLayout = true;
+    this.setState(state);
+  }
+
+  componentDidUpdate () {
+    if (this.state.needLayout) {
+      this.setState({ needLayout: false, items: undefined }, this._layout);
+    }
   }
 
   componentWillUnmount () {
@@ -591,5 +597,6 @@ Distribution.propTypes = {
 
 Distribution.defaultProps = {
   a11yTitleId: 'distribution-title',
-  a11yDescId: 'distribution-desc'
+  a11yDescId: 'distribution-desc',
+  size: 'medium'
 };
