@@ -4,9 +4,17 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
 var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
@@ -57,14 +65,22 @@ var Paragraph = function (_Component) {
     value: function render() {
       var _classnames;
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, this.props.className, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + this.props.size, this.props.size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--align-' + this.props.align, this.props.align), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--margin-' + this.props.margin, this.props.margin), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--width-' + this.props.width, this.props.width), _classnames));
+      var _props = this.props;
+      var align = _props.align;
+      var children = _props.children;
+      var className = _props.className;
+      var margin = _props.margin;
+      var size = _props.size;
+      var width = _props.width;
+      var props = (0, _objectWithoutProperties3.default)(_props, ['align', 'children', 'className', 'margin', 'size', 'width']);
+
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--align-' + align, align), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--margin-' + margin, margin), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--width-' + width, width), _classnames), className);
 
       // we handle dangerouslySetInnerHTML to allow using Paragraph with Markdown.
       return _react2.default.createElement(
         'p',
-        { id: this.props.id, className: classes,
-          dangerouslySetInnerHTML: this.props.dangerouslySetInnerHTML },
-        this.props.children
+        (0, _extends3.default)({}, props, { className: classes }),
+        children
       );
     }
   }]);
@@ -77,7 +93,6 @@ exports.default = Paragraph;
 
 Paragraph.propTypes = {
   align: _react.PropTypes.oneOf(['start', 'center', 'end']),
-  id: _react.PropTypes.string,
   margin: _react.PropTypes.oneOf(['none', 'small', 'medium', 'large']),
   size: _react.PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
   width: _react.PropTypes.oneOf(['small', 'medium', 'large'])
