@@ -40,9 +40,9 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _classnames2 = require('classnames');
+var _classnames3 = require('classnames');
 
-var _classnames3 = _interopRequireDefault(_classnames2);
+var _classnames4 = _interopRequireDefault(_classnames3);
 
 var _CSSClassnames = require('../utils/CSSClassnames');
 
@@ -273,18 +273,21 @@ var Card = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _classnames2;
+
       var _props5 = this.props;
       var children = _props5.children;
       var className = _props5.className;
       var contentPad = _props5.contentPad;
       var onClick = _props5.onClick;
       var reverse = _props5.reverse;
+      var truncate = _props5.truncate;
       var video = _props5.video;
 
       var boxProps = _Props2.default.pick(this.props, (0, _keys2.default)(_Box2.default.propTypes));
       var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Card.propTypes));
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--selectable', onClick || video), className);
+      var classes = (0, _classnames4.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--selectable', onClick || video), className);
 
       var onCardClick = onClick;
       if (!onCardClick && video) {
@@ -298,9 +301,11 @@ var Card = function (_Component) {
       var link = this._renderLink();
       var videoLayer = this._renderVideoLayer();
 
+      var contentClasses = (0, _classnames4.default)((_classnames2 = {}, (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '__content', true), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '__content--truncate', truncate), _classnames2));
+
       var text = _react2.default.createElement(
         _Box2.default,
-        { className: CLASS_ROOT + '__content', flex: true, pad: contentPad },
+        { className: contentClasses, flex: true, pad: contentPad },
         label,
         heading,
         description,
@@ -348,6 +353,7 @@ Card.propTypes = (0, _extends3.default)({
   link: _react.PropTypes.element,
   textSize: _react.PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
   thumbnail: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.element]),
+  truncate: _react.PropTypes.bool,
   video: _react.PropTypes.oneOfType([_react.PropTypes.shape({
     source: _react.PropTypes.string.isRequired,
     type: _react.PropTypes.string
