@@ -54,7 +54,7 @@ var Button = function (_Component) {
 
     _this.state = {
       mouseActive: false,
-      active: false
+      focus: false
     };
     return _this;
   }
@@ -89,7 +89,7 @@ var Button = function (_Component) {
         return child;
       });
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, this.props.className, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--active', this.state.active), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--primary', this.props.primary), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--secondary', this.props.secondary), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--accent', this.props.accent), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--disabled', !this.props.onClick && !this.props.href), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--fill', this.props.fill), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--plain', plain), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--icon', this.props.icon || hasIcon), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--align-' + this.props.align, this.props.align), _classnames));
+      var classes = (0, _classnames3.default)(CLASS_ROOT, this.props.className, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--focus', this.state.focus), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--primary', this.props.primary), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--secondary', this.props.secondary), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--accent', this.props.accent), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--disabled', !this.props.onClick && !this.props.href), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--fill', this.props.fill), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--plain', plain), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--icon', this.props.icon || hasIcon), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--align-' + this.props.align, this.props.align), _classnames));
 
       if (!children) {
         children = this.props.label;
@@ -114,11 +114,11 @@ var Button = function (_Component) {
           },
           onFocus: function onFocus() {
             if (_this2.state.mouseActive === false) {
-              _this2.setState({ active: true });
+              _this2.setState({ focus: true });
             }
           },
           onBlur: function onBlur() {
-            return _this2.setState({ active: false });
+            return _this2.setState({ focus: false });
           } },
         icon,
         children

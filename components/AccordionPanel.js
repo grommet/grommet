@@ -110,20 +110,24 @@ var AccordionPanel = function (_Component) {
       });
 
       return _react2.default.createElement(
-        _ListItem2.default,
-        { className: classes, direction: 'column', pad: 'none',
-          'aria-expanded': active, 'aria-selected': active, role: 'tab',
-          'aria-label': heading },
+        'div',
+        null,
         _react2.default.createElement(
-          _Button2.default,
-          { fill: true, plain: true, onClick: this._onClickTab },
+          _ListItem2.default,
+          { className: classes, direction: 'column', pad: 'none',
+            'aria-expanded': active, 'aria-selected': active, role: 'tab',
+            'aria-label': heading },
           _react2.default.createElement(
-            _Header2.default,
-            { pad: pad, full: 'horizontal', direction: 'row', justify: 'between',
-              align: 'center', responsive: false,
-              className: CLASS_ROOT + '__header' },
-            heading,
-            _react2.default.createElement(_TabNext2.default, { className: CLASS_ROOT + '__control' })
+            _Button2.default,
+            { fill: true, plain: true, onClick: this._onClickTab },
+            _react2.default.createElement(
+              _Header2.default,
+              { pad: pad, full: 'horizontal', direction: 'row',
+                justify: 'between', align: 'center', responsive: false,
+                className: CLASS_ROOT + '__header' },
+              heading,
+              _react2.default.createElement(_TabNext2.default, { className: CLASS_ROOT + '__control' })
+            )
           )
         ),
         _react2.default.createElement(
