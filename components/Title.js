@@ -4,9 +4,17 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
 var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
@@ -69,11 +77,11 @@ var Title = function (_Component) {
       var a11yTitle = _props.a11yTitle;
       var children = _props.children;
       var className = _props.className;
-      var onClick = _props.onClick;
       var responsive = _props.responsive;
+      var props = (0, _objectWithoutProperties3.default)(_props, ['a11yTitle', 'children', 'className', 'responsive']);
       var intl = this.context.intl;
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, className, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--responsive', responsive), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--interactive', onClick), _classnames));
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--responsive', responsive), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--interactive', props.onClick), _classnames), className);
 
       var boxTitle = a11yTitle || _Intl2.default.getMessage(intl, 'Title');
 
@@ -89,7 +97,7 @@ var Title = function (_Component) {
           if (child && typeof child === 'string') {
             return _react2.default.createElement(
               'span',
-              { key: 'title_' + index },
+              { key: index },
               child
             );
           }
@@ -101,9 +109,8 @@ var Title = function (_Component) {
 
       return _react2.default.createElement(
         _Box2.default,
-        { align: 'center', direction: 'row', responsive: false,
-          className: classes, a11yTitle: boxTitle,
-          onClick: onClick },
+        (0, _extends3.default)({}, props, { align: 'center', direction: 'row', responsive: false,
+          className: classes, a11yTitle: boxTitle }),
         content
       );
     }

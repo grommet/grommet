@@ -4,6 +4,18 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
+
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -28,6 +40,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _classnames2 = require('classnames');
+
+var _classnames3 = _interopRequireDefault(_classnames2);
+
 var _CSSClassnames = require('../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
@@ -36,8 +52,9 @@ var _Announcer = require('../utils/Announcer');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.VALUE; // (C) Copyright 2016 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2016 Hewlett Packard Enterprise Development LP
 
+var CLASS_ROOT = _CSSClassnames2.default.VALUE;
 var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
 
 var Value = function (_Component) {
@@ -58,65 +75,61 @@ var Value = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this2 = this;
+      var _classnames,
+          _this2 = this;
 
-      var classes = [CLASS_ROOT];
-      if (this.props.size) {
-        classes.push(CLASS_ROOT + '--' + this.props.size);
-      }
-      if (this.props.align) {
-        classes.push(CLASS_ROOT + '--align-' + this.props.align);
-      }
-      if (this.props.onClick) {
-        classes.push(CLASS_ROOT + '--interactive');
-      }
-      if (this.props.colorIndex) {
-        classes.push(COLOR_INDEX + '-' + this.props.colorIndex);
-      }
-      if (this.props.active) {
-        classes.push(CLASS_ROOT + '--active');
-      }
-      if (this.props.className) {
-        classes.push(this.props.className);
-      }
+      var _props = this.props;
+      var active = _props.active;
+      var align = _props.align;
+      var className = _props.className;
+      var colorIndex = _props.colorIndex;
+      var icon = _props.icon;
+      var label = _props.label;
+      var size = _props.size;
+      var trendIcon = _props.trendIcon;
+      var units = _props.units;
+      var value = _props.value;
+      var props = (0, _objectWithoutProperties3.default)(_props, ['active', 'align', 'className', 'colorIndex', 'icon', 'label', 'size', 'trendIcon', 'units', 'value']);
 
-      var units = void 0;
-      if (this.props.units) {
-        units = _react2.default.createElement(
+      delete props.announce;
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--align-' + align, align), (0, _defineProperty3.default)(_classnames, COLOR_INDEX + '-' + colorIndex, colorIndex), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--interactive', props.onClick), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--active', active), _classnames), className);
+
+      var unitsSpan = void 0;
+      if (units) {
+        unitsSpan = _react2.default.createElement(
           'span',
           { className: CLASS_ROOT + '__units' },
-          this.props.units
+          units
         );
       }
 
-      var label = void 0;
-      if (this.props.label) {
-        label = _react2.default.createElement(
+      var labelSpan = void 0;
+      if (label) {
+        labelSpan = _react2.default.createElement(
           'span',
           { className: CLASS_ROOT + '__label' },
-          this.props.label
+          label
         );
       }
 
       return _react2.default.createElement(
         'div',
-        { ref: function ref(_ref) {
+        (0, _extends3.default)({ ref: function ref(_ref) {
             return _this2.valueRef = _ref;
-          },
-          className: classes.join(' '), onClick: this.props.onClick },
+          } }, props, { className: classes }),
         _react2.default.createElement(
           'div',
           { className: CLASS_ROOT + '__annotated' },
-          this.props.icon,
+          icon,
           _react2.default.createElement(
             'span',
             { className: CLASS_ROOT + '__value' },
-            this.props.value
+            value
           ),
-          units,
-          this.props.trendIcon
+          unitsSpan,
+          trendIcon
         ),
-        label
+        labelSpan
       );
     }
   }]);

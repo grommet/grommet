@@ -4,6 +4,18 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
+
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -28,15 +40,17 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _classnames2 = require('classnames');
+
+var _classnames3 = _interopRequireDefault(_classnames2);
+
 var _CSSClassnames = require('../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
-
-var CLASS_ROOT = _CSSClassnames2.default.MAP;
+var CLASS_ROOT = _CSSClassnames2.default.MAP; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var ResourceMap = function (_Component) {
   (0, _inherits3.default)(ResourceMap, _Component);
@@ -235,19 +249,15 @@ var ResourceMap = function (_Component) {
       var _this5 = this;
 
       var _props = this.props;
+      var className = _props.className;
       var data = _props.data;
       var vertical = _props.vertical;
+      var props = (0, _objectWithoutProperties3.default)(_props, ['className', 'data', 'vertical']);
       var _state = this.state;
       var canvasHeight = _state.canvasHeight;
       var canvasWidth = _state.canvasWidth;
 
-      var className = [CLASS_ROOT];
-      if (vertical) {
-        className.push(CLASS_ROOT + '--vertical');
-      }
-      if (this.props.className) {
-        className.push(this.props.className);
-      }
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--vertical', vertical), className);
 
       var categories = void 0;
       if (data.categories) {
@@ -256,9 +266,9 @@ var ResourceMap = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        { ref: function ref(_ref3) {
+        (0, _extends3.default)({ ref: function ref(_ref3) {
             return _this5.mapRef = _ref3;
-          }, className: className.join(' ') },
+          } }, props, { className: classes }),
         _react2.default.createElement('canvas', { ref: function ref(_ref) {
             return _this5.canvasRef = _ref;
           }, width: canvasWidth,
