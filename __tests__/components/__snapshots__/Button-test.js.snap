@@ -1,3 +1,20 @@
+exports[`Button has className property rendering 1`] = `
+<button
+  aria-label={undefined}
+  className="grommetux-button grommetux-button--disabled test"
+  disabled={true}
+  href={undefined}
+  id={undefined}
+  onBlur={[Function onBlur]}
+  onClick={undefined}
+  onFocus={[Function onFocus]}
+  onMouseDown={[Function onMouseDown]}
+  onMouseUp={[Function onMouseUp]}
+  type="button">
+  test
+</button>
+`;
+
 exports[`Button has correct default options 1`] = `
 <button
   aria-label={undefined}
@@ -96,6 +113,26 @@ exports[`Button has correct primary={true} rendering 1`] = `
   onMouseUp={[Function onMouseUp]}
   type="button">
   Test me
+</button>
+`;
+
+exports[`Button has microdata properties rendering 1`] = `
+<button
+  aria-label={undefined}
+  className="grommetux-button grommetux-button--disabled"
+  disabled={true}
+  href={undefined}
+  id={undefined}
+  itemProp="test"
+  itemScope={true}
+  itemType="http://schema.org/Article"
+  onBlur={[Function onBlur]}
+  onClick={undefined}
+  onFocus={[Function onFocus]}
+  onMouseDown={[Function onMouseDown]}
+  onMouseUp={[Function onMouseUp]}
+  type="button">
+  test
 </button>
 `;
 

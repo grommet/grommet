@@ -10,7 +10,7 @@ exports[`DateTime has correct default options 1`] = `
     value="4/7/2015 10:00 am" />
   <button
     aria-label={undefined}
-    className="grommetux-button grommetux-date-time__control grommetux-button--plain grommetux-button--icon"
+    className="grommetux-button grommetux-button--plain grommetux-button--icon grommetux-date-time__control"
     disabled={false}
     href={undefined}
     id={undefined}

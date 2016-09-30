@@ -13,7 +13,7 @@ exports[`SearchInput has correct default options 1`] = `
     value="one" />
   <button
     aria-label={undefined}
-    className="grommetux-button grommetux-search-input__control grommetux-button--plain grommetux-button--icon"
+    className="grommetux-button grommetux-button--plain grommetux-button--icon grommetux-search-input__control"
     disabled={false}
     href={undefined}
     id={undefined}

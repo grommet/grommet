@@ -48,7 +48,7 @@ exports[`Carousel has correct default options 1`] = `
   </div>
   <button
     aria-label="Previous Slide"
-    className="grommetux-button grommetux-carousel__arrow grommetux-carousel__arrow--prev grommetux-button--plain grommetux-button--icon"
+    className="grommetux-button grommetux-button--plain grommetux-button--icon grommetux-carousel__arrow grommetux-carousel__arrow--prev"
     disabled={false}
     href={undefined}
     id={undefined}
@@ -93,7 +93,7 @@ exports[`Carousel has correct default options 1`] = `
   </button>
   <button
     aria-label="Next Slide"
-    className="grommetux-button grommetux-carousel__arrow grommetux-carousel__arrow--next grommetux-button--plain grommetux-button--icon"
+    className="grommetux-button grommetux-button--plain grommetux-button--icon grommetux-carousel__arrow grommetux-carousel__arrow--next"
     disabled={false}
     href={undefined}
     id={undefined}
