@@ -7,7 +7,9 @@ exports[`Tabs has correct default options 1`] = `
       className="grommetux-tab grommetux-tab--active"
       id="tab-0">
       <button
+        aria-expanded={true}
         aria-label={undefined}
+        aria-selected={true}
         className="grommetux-button grommetux-button--plain"
         disabled={false}
         href={undefined}
@@ -17,6 +19,7 @@ exports[`Tabs has correct default options 1`] = `
         onFocus={[Function onFocus]}
         onMouseDown={[Function onMouseDown]}
         onMouseUp={[Function onMouseUp]}
+        role="tab"
         type="button">
         <label
           className="grommetux-tab__label"
@@ -29,7 +32,9 @@ exports[`Tabs has correct default options 1`] = `
       className="grommetux-tab"
       id="tab-1">
       <button
+        aria-expanded={false}
         aria-label={undefined}
+        aria-selected={false}
         className="grommetux-button grommetux-button--plain"
         disabled={false}
         href={undefined}
@@ -39,6 +44,7 @@ exports[`Tabs has correct default options 1`] = `
         onFocus={[Function onFocus]}
         onMouseDown={[Function onMouseDown]}
         onMouseUp={[Function onMouseUp]}
+        role="tab"
         type="button">
         <label
           className="grommetux-tab__label"
@@ -67,7 +73,9 @@ exports[`Tabs has correct initialIndex=0 rendering 1`] = `
       className="grommetux-tab grommetux-tab--active"
       id="tab-0">
       <button
+        aria-expanded={true}
         aria-label={undefined}
+        aria-selected={true}
         className="grommetux-button grommetux-button--plain"
         disabled={false}
         href={undefined}
@@ -77,6 +85,7 @@ exports[`Tabs has correct initialIndex=0 rendering 1`] = `
         onFocus={[Function onFocus]}
         onMouseDown={[Function onMouseDown]}
         onMouseUp={[Function onMouseUp]}
+        role="tab"
         type="button">
         <label
           className="grommetux-tab__label"
@@ -89,7 +98,9 @@ exports[`Tabs has correct initialIndex=0 rendering 1`] = `
       className="grommetux-tab"
       id="tab-1">
       <button
+        aria-expanded={false}
         aria-label={undefined}
+        aria-selected={false}
         className="grommetux-button grommetux-button--plain"
         disabled={false}
         href={undefined}
@@ -99,6 +110,7 @@ exports[`Tabs has correct initialIndex=0 rendering 1`] = `
         onFocus={[Function onFocus]}
         onMouseDown={[Function onMouseDown]}
         onMouseUp={[Function onMouseUp]}
+        role="tab"
         type="button">
         <label
           className="grommetux-tab__label"
@@ -127,7 +139,9 @@ exports[`Tabs has correct initialIndex=0 rendering 2`] = `
       className="grommetux-tab"
       id="tab-0">
       <button
+        aria-expanded={false}
         aria-label={undefined}
+        aria-selected={false}
         className="grommetux-button grommetux-button--plain"
         disabled={false}
         href={undefined}
@@ -137,6 +151,7 @@ exports[`Tabs has correct initialIndex=0 rendering 2`] = `
         onFocus={[Function onFocus]}
         onMouseDown={[Function onMouseDown]}
         onMouseUp={[Function onMouseUp]}
+        role="tab"
         type="button">
         <label
           className="grommetux-tab__label"
@@ -149,7 +164,9 @@ exports[`Tabs has correct initialIndex=0 rendering 2`] = `
       className="grommetux-tab grommetux-tab--active"
       id="tab-1">
       <button
+        aria-expanded={true}
         aria-label={undefined}
+        aria-selected={true}
         className="grommetux-button grommetux-button--plain"
         disabled={false}
         href={undefined}
@@ -159,6 +176,7 @@ exports[`Tabs has correct initialIndex=0 rendering 2`] = `
         onFocus={[Function onFocus]}
         onMouseDown={[Function onMouseDown]}
         onMouseUp={[Function onMouseUp]}
+        role="tab"
         type="button">
         <label
           className="grommetux-tab__label"
