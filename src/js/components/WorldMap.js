@@ -1,6 +1,7 @@
 // (C) Copyright 2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
+import classnames from 'classnames';
 import CSSClassnames from '../utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.WORLD_MAP;
@@ -179,12 +180,16 @@ export default class WorldMap extends Component {
   }
 
   render () {
-    const { series } = this.props;
+    const { className, series, ...props } = this.props;
     const { width, height } = this.state;
+    const classes = classnames(
+      CLASS_ROOT,
+      className
+    );
     const continents = series.map(this._renderContinent);
 
     return (
-      <svg className={CLASS_ROOT} version="1.1"
+      <svg {...props} className={classes} version="1.1"
         preserveAspectRatio="xMidYMid meet"
         width={`${width}px`} viewBox={`0 0 ${width} ${height}`}>
         <g stroke="none" fill="none" fillRule="evenodd">

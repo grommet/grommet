@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
+import classnames from 'classnames';
 import CSSClassnames from '../utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.MAP;
@@ -179,15 +180,15 @@ export default class ResourceMap extends Component {
   }
 
   render () {
-    const { data, vertical } = this.props;
+    const { className, data, vertical, ...props } = this.props;
     const { canvasHeight, canvasWidth } = this.state;
-    let className = [CLASS_ROOT];
-    if (vertical) {
-      className.push(`${CLASS_ROOT}--vertical`);
-    }
-    if (this.props.className) {
-      className.push(this.props.className);
-    }
+    const classes = classnames(
+      CLASS_ROOT,
+      {
+        [`${CLASS_ROOT}--vertical`]: vertical
+      },
+      className
+    );
 
     let categories;
     if (data.categories) {
@@ -195,7 +196,7 @@ export default class ResourceMap extends Component {
     }
 
     return (
-      <div ref={ref => this.mapRef = ref} className={className.join(' ')}>
+      <div ref={ref => this.mapRef = ref} {...props} className={classes}>
         <canvas ref={ref => this.canvasRef = ref} width={canvasWidth}
           height={canvasHeight} className={`${CLASS_ROOT}__canvas`}  />
         <canvas ref={ref => this.highlightRef = ref}

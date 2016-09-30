@@ -1,6 +1,6 @@
 exports[`Sidebar has correct default options 1`] = `
 <div
-  className="grommetux-box grommetux-box--full grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-sidebar grommetux-sidebar--full"
+  className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-sidebar grommetux-sidebar--full"
   id={undefined}
   onClick={undefined}
   role={undefined}
@@ -12,7 +12,7 @@ exports[`Sidebar has correct default options 1`] = `
 
 exports[`Sidebar has correct size="large" and fixed=true rendering 1`] = `
 <div
-  className="grommetux-box grommetux-box--full grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--size-large grommetux-box--size grommetux-sidebar grommetux-sidebar--fixed grommetux-sidebar--full grommetux-sidebar--large"
+  className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-sidebar grommetux-sidebar--fixed grommetux-sidebar--full grommetux-sidebar--large"
   id={undefined}
   onClick={undefined}
   role={undefined}

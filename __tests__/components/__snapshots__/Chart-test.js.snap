@@ -85,8 +85,7 @@ exports[`Calendar has correct default options 1`] = `
           }
         }>
         <div
-          className="grommetux-value grommetux-value--align-center"
-          onClick={undefined}>
+          className="grommetux-value grommetux-value--align-center">
           <div
             className="grommetux-value__annotated">
             <span
