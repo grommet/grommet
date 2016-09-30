@@ -1,6 +1,7 @@
 exports[`Label has correct default options 1`] = `
 <label
   className="grommetux-label grommetux-label--margin-medium grommetux-label--medium"
+  data-flavor="coconut"
   htmlFor={undefined}>
   Testing
 </label>

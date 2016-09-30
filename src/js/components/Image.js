@@ -10,7 +10,7 @@ const CLASS_ROOT = CSSClassnames.IMAGE;
 export default class Image extends Component {
   render () {
     const { caption, className, full, mask, size, ...props } = this.props;
-    let classes = classnames(
+    const classes = classnames(
       CLASS_ROOT,
       {
         [`${CLASS_ROOT}--${size}`]: size,

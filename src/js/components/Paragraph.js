@@ -11,7 +11,7 @@ export default class Paragraph extends Component {
     const {
       align, children, className, margin, size, width, ...props
     } = this.props;
-    var classes = classnames(
+    const classes = classnames(
       CLASS_ROOT,
       {
         [`${CLASS_ROOT}--${size}`]: size,
@@ -22,7 +22,6 @@ export default class Paragraph extends Component {
       className
     );
 
-    // we handle dangerouslySetInnerHTML to allow using Paragraph with Markdown.
     return (
       <p {...props} className={classes}>
         {children}

@@ -1,6 +1,7 @@
 exports[`Paragraph has correct default options 1`] = `
 <p
-  className="grommetux-paragraph">
+  className="grommetux-paragraph"
+  data-flavor="coconut">
   Testing
 </p>
 `;

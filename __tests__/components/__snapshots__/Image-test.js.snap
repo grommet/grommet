@@ -12,7 +12,7 @@ exports[`Image has correct full="horizontal" and caption rendering 1`] = `
     className="grommetux-image grommetux-image--medium grommetux-image--full-horizontal"
     src="test.png" />
   <label
-    className="grommetux-label grommetux-image__caption grommetux-image__caption--medium grommetux-label--margin-medium grommetux-label--medium"
+    className="grommetux-label grommetux-label--margin-medium grommetux-label--medium grommetux-image__caption grommetux-image__caption--medium"
     htmlFor={undefined}>
     Testing
   </label>
