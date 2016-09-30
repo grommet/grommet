@@ -364,15 +364,17 @@ var Meter = function (_Component) {
       var thresholds = _state2.thresholds;
       var total = _state2.total;
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + type, type), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--stacked', stacked), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--vertical', vertical), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--loading', series.length === 0), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--single', series.length === 1), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--count-' + series.length, series.length > 1), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--active', active), _classnames), className);
+
+      var responsiveSize = void 0;
       if (size) {
-        var responsiveSize = size;
+        responsiveSize = size;
         // shrink Meter to medium size if large and up
         if (limitMeterSize && (size === 'large' || size === 'xlarge')) {
           responsiveSize = 'medium';
         }
-        classes.push(CLASS_ROOT + '--' + responsiveSize);
       }
+
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + type, type), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--stacked', stacked), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--vertical', vertical), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--loading', series.length === 0), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--single', series.length === 1), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--count-' + series.length, series.length > 1), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + responsiveSize, responsiveSize), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--active', active), _classnames), className);
 
       var labelElement = void 0;
       if (label) {
