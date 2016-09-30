@@ -4,6 +4,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -28,6 +32,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _classnames2 = require('classnames');
+
+var _classnames3 = _interopRequireDefault(_classnames2);
+
 var _Locale = require('../utils/Locale');
 
 var _CSSClassnames = require('../utils/CSSClassnames');
@@ -36,7 +44,9 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.TIMESTAMP; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+var CLASS_ROOT = _CSSClassnames2.default.TIMESTAMP;
 
 function _showField(field, fields) {
   var result = true;
@@ -58,6 +68,7 @@ var Timestamp = function (_Component) {
 
     var _this = (0, _possibleConstructorReturn3.default)(this, (Timestamp.__proto__ || (0, _getPrototypeOf2.default)(Timestamp)).call(this, props, context));
 
+    _this._formatForLocale = _this._formatForLocale.bind(_this);
     _this.state = {};
     return _this;
   }
@@ -74,23 +85,66 @@ var Timestamp = function (_Component) {
     }
   }, {
     key: '_formatForLocale',
-    value: function _formatForLocale(props) {
+    value: function _formatForLocale(_ref) {
+      var value = _ref.value;
+      var fields = _ref.fields;
+
       var locale = (0, _Locale.getCurrentLocale)();
-      var value = typeof props.value === 'string' ? new Date(props.value) : props.value;
+      var dateObj = typeof value === 'string' ? new Date(value) : value;
 
+      // Date only.
       var date = void 0;
-      if (_showField('date', props.fields)) {
+      if (_showField('date', fields)) {
         var dateOptions = { year: 'numeric', month: 'short', day: 'numeric' };
-        date = value.toLocaleDateString(locale, dateOptions);
+        date = dateObj.toLocaleDateString(locale, dateOptions);
       }
 
+      // Hours, Minutes, and Seconds. 
+      // Time only.
       var time = void 0;
-      if (_showField('time', props.fields)) {
-        var timeOptions = { hour: '2-digit', minute: '2-digit' };
-        time = value.toLocaleTimeString(locale, timeOptions);
+      if (_showField('time', fields)) {
+        var timeOptions = !_showField('seconds', fields) ? { hour: '2-digit', minute: '2-digit' } : { hour: '2-digit', minute: '2-digit', second: '2-digit' };
+        time = dateObj.toLocaleTimeString(locale, timeOptions);
       }
 
-      this.setState({ date: date, time: time });
+      // Hours only.
+      var hours = void 0;
+      if (_showField('hours', fields) && !_showField('minutes', fields) && !_showField('time', fields)) {
+        var _timeOptions = { hour: '2-digit' };
+        hours = dateObj.toLocaleTimeString(locale, _timeOptions);
+      }
+
+      // Hours and Minutes.
+      if (_showField('hours', fields) && _showField('minutes', fields)) {
+        var _timeOptions2 = !_showField('seconds', fields) ? { hour: '2-digit', minute: '2-digit' } : { hour: '2-digit', minute: '2-digit', second: '2-digit' };
+        time = dateObj.toLocaleTimeString(locale, _timeOptions2);
+      }
+
+      // Minutes only.
+      var minutes = void 0;
+      if (_showField('minutes', fields) && !_showField('hours', fields) && !_showField('time', fields)) {
+        var _timeOptions3 = { minute: '2-digit' };
+        minutes = dateObj.toLocaleTimeString(locale, _timeOptions3);
+      }
+
+      // Seconds only.
+      var seconds = void 0;
+      if (_showField('seconds', fields) && !_showField('time', fields)) {
+        if (!_showField('hours', fields) || !_showField('minutes', fields)) {
+          var _timeOptions4 = { second: '2-digit' };
+          // This avoids spacing issues when Seconds is used with 
+          // Hours or Minutes.
+          seconds = Array.isArray(fields) ? ' ' + dateObj.toLocaleTimeString(locale, _timeOptions4) : dateObj.toLocaleTimeString(locale, _timeOptions4);
+        }
+      }
+
+      this.setState({
+        date: date,
+        time: time,
+        hours: hours,
+        minutes: minutes,
+        seconds: seconds
+      });
     }
   }, {
     key: 'render',
@@ -99,35 +153,27 @@ var Timestamp = function (_Component) {
       var align = _props.align;
       var className = _props.className;
 
-      var classes = [CLASS_ROOT];
-      if (align) {
-        classes.push(CLASS_ROOT + '--' + align);
-      }
-      if (className) {
-        classes.push(className);
-      }
 
-      var date = void 0;
-      if (this.state.date) {
-        date = _react2.default.createElement(
-          'span',
-          { className: CLASS_ROOT + '__date' },
-          this.state.date
-        );
-      }
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--' + align, align), className);
 
-      var time = void 0;
-      if (this.state.time) {
-        time = _react2.default.createElement(
-          'span',
-          { className: CLASS_ROOT + '__time' },
-          this.state.time
-        );
-      }
+      var date = this.state.date ? _react2.default.createElement(
+        'span',
+        { className: CLASS_ROOT + '__date' },
+        this.state.date
+      ) : null;
+
+      var time = this.state.time || this.state.hours || this.state.minutes || this.state.seconds ? _react2.default.createElement(
+        'span',
+        { className: CLASS_ROOT + '__time' },
+        this.state.time,
+        this.state.hours,
+        this.state.minutes,
+        this.state.seconds
+      ) : null;
 
       return _react2.default.createElement(
         'span',
-        { className: classes.join(' ') },
+        { className: classes },
         date,
         ' ',
         time
@@ -141,7 +187,7 @@ Timestamp.displayName = 'Timestamp';
 exports.default = Timestamp;
 
 
-var FIELD_TYPES = _react.PropTypes.oneOf(['date', 'time']);
+var FIELD_TYPES = _react.PropTypes.oneOf(['date', 'time', 'hours', 'minutes', 'seconds']);
 
 Timestamp.propTypes = {
   align: _react.PropTypes.oneOf(['start', 'center', 'end']),
@@ -149,5 +195,9 @@ Timestamp.propTypes = {
   value: _react.PropTypes.oneOfType([_react.PropTypes.string, // ISO-8601 string
   _react.PropTypes.object // Date object
   ]).isRequired
+};
+
+Timestamp.defaultProps = {
+  fields: ["date", "time"]
 };
 module.exports = exports['default'];
