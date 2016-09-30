@@ -84,49 +84,47 @@ export default class Split extends Component {
 
   render () {
     const {
-      children, className, fixed, priority, separator
+      children, className, fixed, flex, priority, separator, ...props
     } = this.props;
-    let { flex } = this.props;
+    delete props.onResponsive;
+    delete props.showOnResponsive;
     const { responsive } = this.state;
     const classes = classnames(
       CLASS_ROOT,
-      className, {
-        [`${CLASS_ROOT}--flex-${this.props.flex}`]: flex,
+      {
         [`${CLASS_ROOT}--fixed`]: fixed,
         [`${CLASS_ROOT}--separator`]: separator
-      }
+      },
+      className
     );
 
-    let elements = Children.toArray(children).filter(
-      (element) => element
-    );
-
-    elements = elements.map((element, index) => {
-      let hasFlex = true;
-      let className = '';
+    const filteredChildren = Children.toArray(children).filter(child => child);
+    const boxedChildren = filteredChildren.map((child, index) => {
+      let boxFlex = true;
+      let className;
       // When we only have room to show one child, hide the appropriate one
       if ('single' === responsive &&
         (('left' === priority && index > 0) ||
         ('right' === priority && index === 0 &&
-          elements.length > 1))) {
-        className += `${CLASS_ROOT}--hidden`;
-        flex = 'both';
-      } else if (elements.length > 1 && ((flex === 'right' && index === 0) ||
-        (flex === 'left' && index === elements.length - 1))) {
-        hasFlex = false;
+          filteredChildren.length > 1))) {
+        className = `${CLASS_ROOT}--hidden`;
+      } else if (filteredChildren.length > 1 &&
+        ((flex === 'right' && index === 0) ||
+        (flex === 'left' && index === filteredChildren.length - 1))) {
+        boxFlex = false;
       } else {
         className = `${CLASS_ROOT}--full`;
       }
       return (
-        <Box key={`element_${index}`} className={className} flex={hasFlex}>
-          {element}
+        <Box key={index} className={className} flex={boxFlex}>
+          {child}
         </Box>
       );
     });
 
     return (
-      <div ref={ref => this.splitRef = ref} className={classes}>
-        {elements}
+      <div ref={ref => this.splitRef = ref} {...props} className={classes}>
+        {boxedChildren}
       </div>
     );
   }
