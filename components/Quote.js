@@ -8,13 +8,13 @@ var _extends2 = require('babel-runtime/helpers/extends');
 
 var _extends3 = _interopRequireDefault(_extends2);
 
-var _keys = require('babel-runtime/core-js/object/keys');
-
-var _keys2 = _interopRequireDefault(_keys);
-
 var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
@@ -52,19 +52,14 @@ var _Paragraph = require('./Paragraph');
 
 var _Paragraph2 = _interopRequireDefault(_Paragraph);
 
-var _Props = require('../utils/Props');
-
-var _Props2 = _interopRequireDefault(_Props);
-
 var _CSSClassnames = require('../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+var CLASS_ROOT = _CSSClassnames2.default.QUOTE; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-var CLASS_ROOT = _CSSClassnames2.default.QUOTE;
 var BORDER_COLOR_INDEX = _CSSClassnames2.default.BORDER_COLOR_INDEX;
 
 var Quote = function (_Component) {
@@ -86,17 +81,13 @@ var Quote = function (_Component) {
       var className = _props.className;
       var credit = _props.credit;
       var emphasizeCredit = _props.emphasizeCredit;
-      var size = _props.size;
+      var props = (0, _objectWithoutProperties3.default)(_props, ['borderColorIndex', 'children', 'className', 'credit', 'emphasizeCredit']);
 
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, className, (_classnames = {}, (0, _defineProperty3.default)(_classnames, BORDER_COLOR_INDEX + '-' + borderColorIndex, borderColorIndex), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--emphasize-credit', emphasizeCredit), _classnames));
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, BORDER_COLOR_INDEX + '-' + borderColorIndex, borderColorIndex), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--small', 'small' === props.size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--emphasize-credit', emphasizeCredit), _classnames), className);
 
-      var boxProps = _Props2.default.pick(this.props, (0, _keys2.default)(_Box2.default.propTypes));
-
-      if (size === 'small') {
-        boxProps.pad = {
-          horizontal: 'medium', vertical: 'small'
-        };
+      if (props.size === 'small') {
+        props.pad = { horizontal: 'medium', vertical: 'small' };
       }
 
       var creditElement = void 0;
@@ -120,7 +111,7 @@ var Quote = function (_Component) {
 
       return _react2.default.createElement(
         _Box2.default,
-        (0, _extends3.default)({}, boxProps, { className: classes }),
+        (0, _extends3.default)({}, props, { className: classes }),
         _react2.default.createElement(
           'div',
           null,
