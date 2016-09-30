@@ -56,6 +56,14 @@ describe('Timestamp', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('displays a classname', () => {
+    const component = renderer.create(
+      <Timestamp value='4/7/2015 10:00:01 am' className="test" />
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('aligns to end', () => {
     const component = renderer.create(
       <Timestamp value='4/7/2015 10:00:01 am' align="end" />

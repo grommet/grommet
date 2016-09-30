@@ -1,7 +1,6 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
-
 import classnames from 'classnames';
 import { getCurrentLocale } from '../utils/Locale';
 import CSSClassnames from '../utils/CSSClassnames';
@@ -24,9 +23,8 @@ export default class Timestamp extends Component {
 
   constructor(props, context) {
     super(props, context);
-    this.state = {};
-
     this._formatForLocale = this._formatForLocale.bind(this);
+    this.state = {};
   }
 
   componentDidMount () {
@@ -110,10 +108,10 @@ export default class Timestamp extends Component {
 
     const classes = classnames(
       CLASS_ROOT,
-      className, { 
+      { 
         [`${CLASS_ROOT}--${align}`]: align 
-      }
-      
+      },
+      className
     );
 
 
