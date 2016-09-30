@@ -5,6 +5,18 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Range = exports.HotSpots = exports.MarkerLabel = exports.Marker = exports.Bar = exports.Line = exports.Area = exports.Grid = exports.Base = exports.Layers = exports.Axis = undefined;
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
+
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -29,7 +41,9 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _utils = require('./utils');
+var _classnames2 = require('classnames');
+
+var _classnames3 = _interopRequireDefault(_classnames2);
 
 var _CSSClassnames = require('../../utils/CSSClassnames');
 
@@ -38,6 +52,8 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 var _Intl = require('../../utils/Intl');
 
 var _Intl2 = _interopRequireDefault(_Intl);
+
+var _utils = require('./utils');
 
 var _Meter = require('../Meter');
 
@@ -89,9 +105,8 @@ var _Range2 = _interopRequireDefault(_Range);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2016 Hewlett Packard Enterprise Development LP
+var CLASS_ROOT = _CSSClassnames2.default.CHART; // (C) Copyright 2016 Hewlett Packard Enterprise Development LP
 
-var CLASS_ROOT = _CSSClassnames2.default.CHART;
 var CHART_BASE = _CSSClassnames2.default.CHART_BASE;
 
 function traverseAndUpdateChildren(children) {
@@ -251,13 +266,20 @@ var Chart = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this3 = this;
+      var _classnames,
+          _this3 = this;
 
       var _props2 = this.props;
       var a11yTitle = _props2.a11yTitle;
+      var className = _props2.className;
       var full = _props2.full;
       var loading = _props2.loading;
       var vertical = _props2.vertical;
+      var props = (0, _objectWithoutProperties3.default)(_props2, ['a11yTitle', 'className', 'full', 'loading', 'vertical']);
+
+      delete props.horizontalAlignWith;
+      delete props.onMaxCount;
+      delete props.verticalAlignWith;
       var _state = this.state;
       var alignBottom = _state.alignBottom;
       var alignHeight = _state.alignHeight;
@@ -268,19 +290,7 @@ var Chart = function (_Component) {
       var padAlign = _state.padAlign;
       var intl = this.context.intl;
 
-      var classes = [CLASS_ROOT];
-      if (vertical) {
-        classes.push(CLASS_ROOT + '--vertical');
-      }
-      if (full) {
-        classes.push(CLASS_ROOT + '--full');
-      }
-      if (loading) {
-        classes.push(CLASS_ROOT + '--loading');
-      }
-      if (this.props.className) {
-        classes.push(this.props.className);
-      }
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--full', full), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--loading', loading), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--vertical', vertical), _classnames), className);
 
       // Align Axis children towards the Base|Layers|Chart
       var axisAlign = 'end';
@@ -343,7 +353,7 @@ var Chart = function (_Component) {
       if (loading) {
         children.push(_react2.default.createElement(
           'svg',
-          { key: 'loading', className: CLASS_ROOT + '-loading',
+          { key: 'loading', className: classes,
             viewBox: '0 0 ' + alignWidth + ' ' + alignHeight },
           _react2.default.createElement('path', { d: 'M0,' + alignHeight / 2 + ' L' + alignWidth + ',' + alignHeight / 2 })
         ));
@@ -353,10 +363,10 @@ var Chart = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        { ref: function ref(_ref) {
+        (0, _extends3.default)({ ref: function ref(_ref) {
             return _this3.chartRef = _ref;
-          }, 'aria-label': ariaLabel,
-          className: classes.join(' '), role: 'group' },
+          } }, props, { className: classes,
+          'aria-label': ariaLabel, role: 'group' }),
         children
       );
     }

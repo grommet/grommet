@@ -8,9 +8,13 @@ var _extends2 = require('babel-runtime/helpers/extends');
 
 var _extends3 = _interopRequireDefault(_extends2);
 
-var _keys = require('babel-runtime/core-js/object/keys');
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
-var _keys2 = _interopRequireDefault(_keys);
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
@@ -36,13 +40,17 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Props = require('../utils/Props');
+var _classnames2 = require('classnames');
 
-var _Props2 = _interopRequireDefault(_Props);
+var _classnames3 = _interopRequireDefault(_classnames2);
 
 var _Responsive = require('../utils/Responsive');
 
 var _Responsive2 = _interopRequireDefault(_Responsive);
+
+var _CSSClassnames = require('../utils/CSSClassnames');
+
+var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 var _Bar = require('./meter/Bar');
 
@@ -59,10 +67,6 @@ var _Circle2 = _interopRequireDefault(_Circle);
 var _Arc = require('./meter/Arc');
 
 var _Arc2 = _interopRequireDefault(_Arc);
-
-var _CSSClassnames = require('../utils/CSSClassnames');
-
-var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -326,28 +330,41 @@ var Meter = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this2 = this;
+      var _classnames,
+          _this2 = this;
 
       var _props2 = this.props;
       var active = _props2.active;
+      var a11yTitle = _props2.a11yTitle;
+      var className = _props2.className;
       var label = _props2.label;
       var size = _props2.size;
       var stacked = _props2.stacked;
       var tabIndex = _props2.tabIndex;
       var type = _props2.type;
       var vertical = _props2.vertical;
-      var _state2 = this.state;
-      var limitMeterSize = _state2.limitMeterSize;
-      var series = _state2.series;
+      var props = (0, _objectWithoutProperties3.default)(_props2, ['active', 'a11yTitle', 'className', 'label', 'size', 'stacked', 'tabIndex', 'type', 'vertical']);
 
-      var classes = [CLASS_ROOT];
-      classes.push(CLASS_ROOT + '--' + type);
-      if (vertical) {
-        classes.push(CLASS_ROOT + '--vertical');
-      }
-      if (stacked) {
-        classes.push(CLASS_ROOT + '--stacked');
-      }
+      delete props.activeIndex;
+      delete props.colorIndex;
+      delete props.max;
+      delete props.min;
+      delete props.onActive;
+      delete props.series;
+      delete props.threshold;
+      delete props.thresholds;
+      delete props.value;
+      delete props.responsive;
+      var _state2 = this.state;
+      var activeIndex = _state2.activeIndex;
+      var limitMeterSize = _state2.limitMeterSize;
+      var max = _state2.max;
+      var min = _state2.min;
+      var series = _state2.series;
+      var thresholds = _state2.thresholds;
+      var total = _state2.total;
+
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + type, type), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--stacked', stacked), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--vertical', vertical), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--loading', series.length === 0), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--single', series.length === 1), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--count-' + series.length, series.length > 1), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--active', active), _classnames), className);
       if (size) {
         var responsiveSize = size;
         // shrink Meter to medium size if large and up
@@ -356,21 +373,6 @@ var Meter = function (_Component) {
         }
         classes.push(CLASS_ROOT + '--' + responsiveSize);
       }
-      if (series.length === 0) {
-        classes.push(CLASS_ROOT + '--loading');
-      } else if (series.length === 1) {
-        classes.push(CLASS_ROOT + '--single');
-      } else {
-        classes.push(CLASS_ROOT + '--count-' + series.length);
-      }
-      if (active) {
-        classes.push(CLASS_ROOT + '--active');
-      }
-      if (this.props.className) {
-        classes.push(this.props.className);
-      }
-
-      var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Meter.propTypes));
 
       var labelElement = void 0;
       if (label) {
@@ -383,26 +385,26 @@ var Meter = function (_Component) {
 
       var GraphicComponent = TYPE_COMPONENT[this.props.type];
       var graphic = _react2.default.createElement(GraphicComponent, {
-        a11yTitle: this.props.a11yTitle,
-        activeIndex: this.state.activeIndex,
-        min: this.state.min, max: this.state.max,
+        a11yTitle: a11yTitle,
+        activeIndex: activeIndex,
+        min: min, max: max,
         onActivate: this._onActivate,
         series: series,
         stacked: stacked,
         tabIndex: tabIndex,
-        thresholds: this.state.thresholds,
-        total: this.state.total,
+        thresholds: thresholds,
+        total: total,
         vertical: vertical });
 
       var graphicContainer = _react2.default.createElement(
         'div',
-        (0, _extends3.default)({}, restProps, { className: CLASS_ROOT + '__graphic-container' }),
+        (0, _extends3.default)({}, props, { className: CLASS_ROOT + '__graphic-container' }),
         graphic
       );
 
       return _react2.default.createElement(
         'div',
-        { className: classes.join(' ') },
+        { className: classes },
         _react2.default.createElement(
           'div',
           { ref: function ref(_ref) {

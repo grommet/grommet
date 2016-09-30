@@ -4,6 +4,14 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
+
 var _extends2 = require('babel-runtime/helpers/extends');
 
 var _extends3 = _interopRequireDefault(_extends2);
@@ -36,6 +44,10 @@ var _reactDom = require('react-dom');
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
+var _classnames2 = require('classnames');
+
+var _classnames3 = _interopRequireDefault(_classnames2);
+
 var _KeyboardAccelerators = require('../utils/KeyboardAccelerators');
 
 var _KeyboardAccelerators2 = _interopRequireDefault(_KeyboardAccelerators);
@@ -50,8 +62,9 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.DISTRIBUTION; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
+var CLASS_ROOT = _CSSClassnames2.default.DISTRIBUTION;
 var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
 
 var DEFAULT_WIDTH = 400;
@@ -317,7 +330,7 @@ var Distribution = function (_Component) {
   }, {
     key: '_layout',
     value: function _layout() {
-      var container = this.containerRef;
+      var container = this._containerRef;
       var rect = container.getBoundingClientRect();
       var width = Math.round(rect.width);
       var height = Math.round(rect.height);
@@ -336,7 +349,7 @@ var Distribution = function (_Component) {
   }, {
     key: '_onPreviousDistribution',
     value: function _onPreviousDistribution(event) {
-      if (document.activeElement === this.distributionRef) {
+      if (document.activeElement === this._distributionRef) {
         event.preventDefault();
         var totalDistributionCount = _reactDom2.default.findDOMNode(this.distributionItemsRef).childNodes.length;
 
@@ -353,7 +366,7 @@ var Distribution = function (_Component) {
   }, {
     key: '_onNextDistribution',
     value: function _onNextDistribution(event) {
-      if (document.activeElement === this.distributionRef) {
+      if (document.activeElement === this._distributionRef) {
         event.preventDefault();
         var totalDistributionCount = _reactDom2.default.findDOMNode(this.distributionItemsRef).childNodes.length;
 
@@ -370,7 +383,7 @@ var Distribution = function (_Component) {
   }, {
     key: '_onEnter',
     value: function _onEnter(event) {
-      if (document.activeElement === this.distributionRef) {
+      if (document.activeElement === this._distributionRef) {
         if (this.activeDistributionRef) {
           var index = this.activeDistributionRef.getAttribute('data-index');
 
@@ -423,8 +436,7 @@ var Distribution = function (_Component) {
         { key: index, className: labelClasses.join(' '),
           'data-box-index': index, role: 'tab',
           style: { top: labelRect.y, left: labelRect.x, maxWidth: labelRect.width,
-            maxHeight: labelRect.height },
-          id: this.props.a11yTitleId + '_item_' + index },
+            maxHeight: labelRect.height } },
         _react2.default.createElement(
           'span',
           { className: CLASS_ROOT + '__label-value' },
@@ -532,7 +544,7 @@ var Distribution = function (_Component) {
 
       return this.state.items.map(function (item, index) {
         return _this4._renderItem(item.datum, item.boxRect, index);
-      }, this);
+      });
     }
   }, {
     key: '_renderLabels',
@@ -541,7 +553,7 @@ var Distribution = function (_Component) {
 
       return this.state.items.map(function (item, index) {
         return _this5._renderItemLabel(item.datum, item.labelRect, index);
-      }, this);
+      });
     }
   }, {
     key: '_renderLoading',
@@ -561,86 +573,64 @@ var Distribution = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this6 = this;
+      var _classnames,
+          _this6 = this;
 
-      var classes = [CLASS_ROOT];
-      if (this.props.size) {
-        classes.push(CLASS_ROOT + '--' + this.props.size);
-      }
-      if (this.props.full) {
-        classes.push(CLASS_ROOT + '--full');
-      }
-      if (this.props.vertical) {
-        classes.push(CLASS_ROOT + '--vertical');
-      }
-      if (this.state.allIcons) {
-        classes.push(CLASS_ROOT + '--icons');
-      }
-      if (this.props.className) {
-        classes.push(this.props.className);
-      }
+      var _props = this.props;
+      var a11yTitle = _props.a11yTitle;
+      var className = _props.className;
+      var full = _props.full;
+      var size = _props.size;
+      var vertical = _props.vertical;
+      var props = (0, _objectWithoutProperties3.default)(_props, ['a11yTitle', 'className', 'full', 'size', 'vertical']);
+
+      delete props.series;
+      var intl = this.context.intl;
+      var _state = this.state;
+      var allIcons = _state.allIcons;
+      var height = _state.height;
+      var items = _state.items;
+      var width = _state.width;
+
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--full', full), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--icons', allIcons), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--vertical', vertical), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--loading', (items || []).length === 0), _classnames), className);
 
       var background = void 0;
       if (!this.state.allIcons) {
         background = _react2.default.createElement('rect', { className: CLASS_ROOT + '__background', x: 0, y: 0, stroke: 'none',
-          width: this.state.width, height: this.state.height });
+          width: width, height: height });
       }
 
       var boxes = [];
       var labels = void 0;
-      if (this.state.items) {
+      if (items) {
         boxes = this._renderBoxes();
         labels = this._renderLabels();
       }
 
       var role = 'tablist';
-      var a11yTitle = this.props.a11yTitle || _Intl2.default.getMessage(this.context.intl, 'Distribution');
+      var ariaLabel = a11yTitle || _Intl2.default.getMessage(intl, 'Distribution');
 
       if (boxes.length === 0) {
-        classes.push(CLASS_ROOT + '--loading');
         boxes.push(this._renderLoading());
         role = 'img';
-        a11yTitle = _Intl2.default.getMessage(this.context.intl, 'Loading');
-      }
-
-      var activeDescendant = void 0;
-      if (this.state.activeIndex >= 0) {
-        activeDescendant = this.props.a11yTitleId + '_item_' + this.state.activeIndex;
-      }
-
-      var a11yTitleNode = _react2.default.createElement(
-        'title',
-        { id: this.props.a11yTitleId },
-        a11yTitle
-      );
-
-      var a11yDescNode = void 0;
-      if (this.props.a11yDesc) {
-        a11yDescNode = _react2.default.createElement(
-          'desc',
-          { id: this.props.a11yDescId },
-          this.props.a11yDesc
-        );
+        ariaLabel = _Intl2.default.getMessage(intl, 'Loading');
       }
 
       return _react2.default.createElement(
         'div',
-        { ref: function ref(_ref3) {
-            return _this6.containerRef = _ref3;
-          }, className: classes.join(' ') },
+        (0, _extends3.default)({ ref: function ref(_ref3) {
+            return _this6._containerRef = _ref3;
+          } }, props, { className: classes }),
         _react2.default.createElement(
           'svg',
           { ref: function ref(_ref) {
-              return _this6.distributionRef = _ref;
+              return _this6._distributionRef = _ref;
             },
             className: CLASS_ROOT + '__graphic',
             viewBox: '0 0 ' + this.state.width + ' ' + this.state.height,
             preserveAspectRatio: 'none', tabIndex: '0', role: role,
-            'aria-activedescendant': activeDescendant,
-            'aria-labelledby': this.props.a11yTitleId + ' ' + this.props.a11yDescId },
+            'aria-label': ariaLabel },
           background,
-          a11yTitleNode,
-          a11yDescNode,
           boxes
         ),
         _react2.default.createElement(
@@ -667,9 +657,6 @@ Distribution.contextTypes = {
 
 Distribution.propTypes = {
   a11yTitle: _react.PropTypes.string,
-  a11yTitleId: _react.PropTypes.string,
-  a11yDescId: _react.PropTypes.string,
-  a11yDesc: _react.PropTypes.string,
   full: _react.PropTypes.bool, // deprecated, use size="full"
   series: _react.PropTypes.arrayOf(_react.PropTypes.shape({
     label: _react.PropTypes.node,
@@ -689,8 +676,6 @@ Distribution.propTypes = {
 };
 
 Distribution.defaultProps = {
-  a11yTitleId: 'distribution-title',
-  a11yDescId: 'distribution-desc',
   size: 'medium'
 };
 module.exports = exports['default'];

@@ -4,6 +4,14 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
+
 var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
@@ -273,7 +281,12 @@ var Legend = function (_Component) {
       var className = _props2.className;
       var series = _props2.series;
       var total = _props2.total;
+      var props = (0, _objectWithoutProperties3.default)(_props2, ['className', 'series', 'total']);
 
+      delete props.activeIndex;
+      delete props.announce;
+      delete props.onActive;
+      delete props.units;
 
       var classes = (0, _classnames3.default)(CLASS_ROOT, className);
 
@@ -289,9 +302,9 @@ var Legend = function (_Component) {
 
       return _react2.default.createElement(
         'ol',
-        { ref: function ref(_ref) {
+        (0, _extends3.default)({ ref: function ref(_ref) {
             return _this3.legendRef = _ref;
-          }, className: classes },
+          } }, props, { className: classes }),
         items.reverse(),
         totalNode
       );

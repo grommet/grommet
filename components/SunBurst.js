@@ -4,6 +4,18 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
+
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -28,6 +40,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _classnames2 = require('classnames');
+
+var _classnames3 = _interopRequireDefault(_classnames2);
+
 var _Graphics = require('../utils/Graphics');
 
 var _CSSClassnames = require('../utils/CSSClassnames');
@@ -44,8 +60,9 @@ var _KeyboardAccelerators2 = _interopRequireDefault(_KeyboardAccelerators);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.SUN_BURST; // (C) Copyright 2016 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2016 Hewlett Packard Enterprise Development LP
 
+var CLASS_ROOT = _CSSClassnames2.default.SUN_BURST;
 var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
 var UNIT_FACTOR = _Graphics.baseUnit * 0.75;
 var PAD_FACTOR = _Graphics.baseUnit * 8;
@@ -198,7 +215,7 @@ var SunBurst = function (_Component) {
   }, {
     key: '_layout',
     value: function _layout() {
-      var rect = this.svgRef.getBoundingClientRect();
+      var rect = this._containerRef.getBoundingClientRect();
       if (rect.width !== this.state.width || rect.height !== this.state.height) {
         this.setState({ height: rect.height, width: rect.width });
       }
@@ -279,32 +296,28 @@ var SunBurst = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this3 = this;
+      var _classnames,
+          _this3 = this;
 
       var _props2 = this.props;
       var a11yTitle = _props2.a11yTitle;
       var active = _props2.active;
+      var className = _props2.className;
       var data = _props2.data;
       var label = _props2.label;
       var size = _props2.size;
+      var props = (0, _objectWithoutProperties3.default)(_props2, ['a11yTitle', 'active', 'className', 'data', 'label', 'size']);
+
+      delete props.onActive;
+      delete props.onClick;
       var _state = this.state;
       var width = _state.width;
       var height = _state.height;
       var intl = this.context.intl;
 
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--active', active), _classnames), className);
 
       var unit = width / UNIT_FACTOR;
-      var classes = [CLASS_ROOT];
-      if (size) {
-        classes.push(CLASS_ROOT + '--' + size);
-      }
-      if (active) {
-        classes.push(CLASS_ROOT + '--active');
-      }
-      if (this.props.className) {
-        classes.push(this.props.className);
-      }
-
       var centerX = width / 2;
       var centerY = height / 2;
       var paths = this._renderData([], data, undefined, centerX, centerY, unit * 2, 0, 360);
@@ -322,12 +335,12 @@ var SunBurst = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        { className: CLASS_ROOT + '__container' },
+        (0, _extends3.default)({ ref: function ref(_ref2) {
+            return _this3._containerRef = _ref2;
+          } }, props, { className: classes }),
         _react2.default.createElement(
           'svg',
-          { ref: function ref(_ref2) {
-              return _this3.svgRef = _ref2;
-            }, className: classes.join(' '),
+          { className: CLASS_ROOT + '__graphic',
             viewBox: '0 0 ' + width + ' ' + height, role: 'group',
             'aria-label': sunBurstLabel, tabIndex: '0',
             onFocus: this._onSunBurstFocus, onBlur: this._onSunBurstBlur },
@@ -343,10 +356,6 @@ var SunBurst = function (_Component) {
 SunBurst.displayName = 'SunBurst';
 exports.default = SunBurst;
 
-
-SunBurst.contextTypes = {
-  intl: _react.PropTypes.object
-};
 
 SunBurst.propTypes = {
   a11yTitle: _react.PropTypes.string,
@@ -365,5 +374,9 @@ SunBurst.propTypes = {
 
 SunBurst.defaultProps = {
   size: 'medium'
+};
+
+SunBurst.contextTypes = {
+  intl: _react.PropTypes.object
 };
 module.exports = exports['default'];
