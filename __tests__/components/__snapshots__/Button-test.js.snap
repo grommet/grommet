@@ -1,7 +1,7 @@
 exports[`Button has className property rendering 1`] = `
 <button
   aria-label={undefined}
-  className="grommetux-button test grommetux-button--disabled"
+  className="grommetux-button grommetux-button--disabled test"
   disabled={true}
   href={undefined}
   id={undefined}

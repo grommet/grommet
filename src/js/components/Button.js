@@ -17,18 +17,16 @@ export default class Button extends Component {
   }
 
   render () {
-    const {a11yTitle, accent, align, children, className, fill, href, icon, id, 
-      label, onClick, plain, primary, secondary, type, ...props} = this.props;
+    const {
+      a11yTitle, accent, align, children, className, fill, href, icon, id, 
+      label, onClick, plain, primary, secondary, type, ...props
+    } = this.props;
 
-    const buttonPlain = (plain !== undefined ? plain :
-      (icon && ! label));
+    const buttonPlain = (plain !== undefined ? plain : (icon && ! label));
 
     let buttonIcon;
-    if (icon) {
-      buttonIcon = (<span className={`${CLASS_ROOT}__icon`}>
-        {icon}
-      </span>);
-    }
+    if (icon) buttonIcon =
+      <span className={`${CLASS_ROOT}__icon`}>{icon}</span>;
 
     let hasIcon = buttonIcon !== undefined;
     let buttonChildren = React.Children.map(children, child => {
@@ -39,9 +37,8 @@ export default class Button extends Component {
       return child;
     });
 
-    let classes = classnames(
+    const classes = classnames(
       CLASS_ROOT,
-      className,
       {
         [`${CLASS_ROOT}--focus`]: this.state.focus,
         [`${CLASS_ROOT}--primary`]: primary,
@@ -52,14 +49,15 @@ export default class Button extends Component {
         [`${CLASS_ROOT}--plain`]: buttonPlain,
         [`${CLASS_ROOT}--icon`]: icon || hasIcon,
         [`${CLASS_ROOT}--align-${align}`]: align
-      }
+      },
+      className
     );
 
     if (!buttonChildren) {
       buttonChildren = label;
     }
 
-    let Tag = href ? 'a' : 'button';
+    const Tag = href ? 'a' : 'button';
     let buttonType;
     if (!href) {
       buttonType = type;

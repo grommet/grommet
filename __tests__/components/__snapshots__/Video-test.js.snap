@@ -51,7 +51,7 @@ exports[`Video has correct default options 1`] = `
         tabIndex={undefined}>
         <button
           aria-label="Play Video"
-          className="grommetux-button grommetux-video__play grommetux-button--primary grommetux-button--plain grommetux-button--icon"
+          className="grommetux-button grommetux-button--primary grommetux-button--plain grommetux-button--icon grommetux-video__play"
           disabled={false}
           href={undefined}
           id={undefined}

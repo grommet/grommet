@@ -2,7 +2,7 @@ exports[`Search has correct default options 1`] = `
 <div>
   <button
     aria-label={undefined}
-    className="grommetux-button grommetux-search grommetux-search--controlled grommetux-search--icon-align-end grommetux-button--plain grommetux-button--icon"
+    className="grommetux-button grommetux-button--plain grommetux-button--icon grommetux-search grommetux-search--controlled grommetux-search--icon-align-end"
     disabled={false}
     href={undefined}
     id={undefined}

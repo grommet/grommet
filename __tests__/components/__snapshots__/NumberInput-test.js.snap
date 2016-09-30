@@ -18,7 +18,7 @@ exports[`NumberInput has correct default options 1`] = `
     value={10} />
   <button
     aria-label={undefined}
-    className="grommetux-button grommetux-number-input__subtract grommetux-button--plain grommetux-button--icon"
+    className="grommetux-button grommetux-button--plain grommetux-button--icon grommetux-number-input__subtract"
     disabled={false}
     href={undefined}
     id={undefined}
@@ -67,7 +67,7 @@ exports[`NumberInput has correct default options 1`] = `
   </button>
   <button
     aria-label={undefined}
-    className="grommetux-button grommetux-number-input__add grommetux-button--plain grommetux-button--icon"
+    className="grommetux-button grommetux-button--plain grommetux-button--icon grommetux-number-input__add"
     disabled={false}
     href={undefined}
     id={undefined}
