@@ -3,8 +3,6 @@
 import zip from 'lodash/zip';
 import flatten from 'lodash/flatten';
 import isInteger from 'lodash/isInteger';
-import sortedIndexOf from 'lodash/sortedIndexOf';
-
 
 /**
  * The normalize util includes a normalize method in order to help
@@ -180,7 +178,7 @@ export function normalize(Series, granularity) {
     let seriesYValues = [];
     const SeriesZip = zip(...Series);
     xAxis.map(xValue => {
-      const index = sortedIndexOf(SeriesZip[0], xValue);
+      const index = SeriesZip[0].indexOf(xValue);
       if (index > -1) {
         seriesYValues.push(parseInt(SeriesZip[1][index], 10));
       } else {
@@ -193,7 +191,7 @@ export function normalize(Series, granularity) {
       let seriesYValues = [];
       const seriesZip = zip(...series);
       xAxis.map(xValue => {
-        const index = sortedIndexOf(seriesZip[0], xValue);
+        const index = seriesZip[0].indexOf(xValue);
         if (index > -1) {
           seriesYValues.push(parseInt(seriesZip[1][index], 10));
         } else {
