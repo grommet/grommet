@@ -5,6 +5,7 @@ import classnames from 'classnames';
 import { FormattedDate } from 'react-intl';
 import Intl from '../utils/Intl';
 import Box from './Box';
+import Value from './Value';
 import Animate from './Animate';
 import Meter from './Meter';
 import Button from './Button';
@@ -48,12 +49,15 @@ export default class Notification extends Component {
     let progress;
     if (this.props.percentComplete || 0 === this.props.percentComplete) {
       progress = (
-        <Meter units="%"
-          series={[{
-            value: this.props.percentComplete,
-            label: '',
-            colorIndex: 'light-1'
-          }]} />
+        <span>
+          <Meter
+            series={[{
+              value: this.props.percentComplete,
+              colorIndex: 'light-1'
+            }]}
+          />
+          <Value value={this.props.percentComplete} units="%" size="small"/>
+        </span>
       );
     }
 
