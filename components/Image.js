@@ -4,9 +4,17 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
 var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
@@ -64,20 +72,17 @@ var Image = function (_Component) {
       var _classnames;
 
       var _props = this.props;
-      var alt = _props.alt;
       var caption = _props.caption;
       var className = _props.className;
       var full = _props.full;
-      var id = _props.id;
-      var size = _props.size;
-      var src = _props.src;
-      var title = _props.title;
       var mask = _props.mask;
+      var size = _props.size;
+      var props = (0, _objectWithoutProperties3.default)(_props, ['caption', 'className', 'full', 'mask', 'size']);
 
       var classes = (0, _classnames4.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--full', typeof full === 'boolean' && full), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--full-' + full, typeof full === 'string'), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--mask', mask), _classnames), className);
 
-      var captionText = typeof caption === 'string' ? caption : alt;
-      var imgNode = _react2.default.createElement('img', { id: id, src: src, alt: alt, title: title, className: classes });
+      var captionText = typeof caption === 'string' ? caption : props.alt;
+      var imgNode = _react2.default.createElement('img', (0, _extends3.default)({}, props, { className: classes }));
 
       var labelRoot = CLASS_ROOT + '__caption';
       var labelClasses = (0, _classnames4.default)(labelRoot, (0, _defineProperty3.default)({}, labelRoot + '--' + size, size));
@@ -104,7 +109,6 @@ Image.propTypes = {
   alt: _react.PropTypes.string,
   caption: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.string]),
   full: _react.PropTypes.oneOf([true, 'horizontal', 'vertical', false]),
-  id: _react.PropTypes.string,
   mask: _react.PropTypes.bool,
   size: _react.PropTypes.oneOf(['small', 'medium', 'large', 'thumb']),
   src: _react.PropTypes.string,
