@@ -15,7 +15,7 @@ import Marker from '../../src/js/components/chart/Marker';
 import MarkerLabel from '../../src/js/components/chart/MarkerLabel';
 import Value from '../../src/js/components/Value';
 
-import { normalize } from '../../src/js/components/chart/utils-normalization';
+import { normalize } from '../../src/js/components/chart/normalize';
 
 // needed because this:
 // https://github.com/facebook/jest/issues/1353
