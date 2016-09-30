@@ -2,6 +2,7 @@
 
 import React, { Component, PropTypes, Children } from 'react';
 import {findDOMNode} from 'react-dom';
+import classnames from 'classnames';
 import Box from './Box';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 import DOMUtils from '../utils/DOM';
@@ -560,15 +561,16 @@ export default class Article extends Component {
   }
 
   render () {
-    let classes = [CLASS_ROOT];
+    const classes = classnames(
+      CLASS_ROOT,
+      {
+        [`${CLASS_ROOT}--scroll-step`]: this.props.scrollStep
+      },
+      this.props.className
+    );
+
     const boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
     const restProps = Props.omit(this.props, Object.keys(Article.propTypes));
-    if (this.props.scrollStep) {
-      classes.push(`${CLASS_ROOT}--scroll-step`);
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
 
     let controls;
     if (this.props.controls) {
@@ -618,7 +620,7 @@ export default class Article extends Component {
 
     return (
       <Box {...restProps} {...boxProps} ref={ref => this.componentRef = ref}
-        tag="article" className={classes.join(' ')} primary={this.props.primary}
+        tag="article" className={classes} primary={this.props.primary}
         onFocus={this._onFocusChange} onScroll={this._onScroll}
         onTouchStart={this._onTouchStart} onTouchMove={this._onTouchMove}>
         {anchorStepNode}
