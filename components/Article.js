@@ -12,6 +12,10 @@ var _keys = require('babel-runtime/core-js/object/keys');
 
 var _keys2 = _interopRequireDefault(_keys);
 
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -37,6 +41,10 @@ var _react = require('react');
 var _react2 = _interopRequireDefault(_react);
 
 var _reactDom = require('react-dom');
+
+var _classnames2 = require('classnames');
+
+var _classnames3 = _interopRequireDefault(_classnames2);
 
 var _Box = require('./Box');
 
@@ -88,9 +96,8 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+var CLASS_ROOT = _CSSClassnames2.default.ARTICLE; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-var CLASS_ROOT = _CSSClassnames2.default.ARTICLE;
 var DEFAULT_PLAY_INTERVAL = 10000; // 10s
 
 var Article = function (_Component) {
@@ -655,15 +662,10 @@ var Article = function (_Component) {
     value: function render() {
       var _this9 = this;
 
-      var classes = [CLASS_ROOT];
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--scroll-step', this.props.scrollStep), this.props.className);
+
       var boxProps = _Props2.default.pick(this.props, (0, _keys2.default)(_Box2.default.propTypes));
       var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Article.propTypes));
-      if (this.props.scrollStep) {
-        classes.push(CLASS_ROOT + '--scroll-step');
-      }
-      if (this.props.className) {
-        classes.push(this.props.className);
-      }
 
       var controls = void 0;
       if (this.props.controls) {
@@ -717,7 +719,7 @@ var Article = function (_Component) {
         (0, _extends3.default)({}, restProps, boxProps, { ref: function ref(_ref3) {
             return _this9.componentRef = _ref3;
           },
-          tag: 'article', className: classes.join(' '), primary: this.props.primary,
+          tag: 'article', className: classes, primary: this.props.primary,
           onFocus: this._onFocusChange, onScroll: this._onScroll,
           onTouchStart: this._onTouchStart, onTouchMove: this._onTouchMove }),
         anchorStepNode,
