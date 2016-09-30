@@ -260,6 +260,16 @@ export default class Meter extends Component {
     const {
       activeIndex, limitMeterSize, max, min, series, thresholds, total
     } = this.state;
+
+    let responsiveSize;
+    if (size) {
+      responsiveSize = size;
+      // shrink Meter to medium size if large and up
+      if (limitMeterSize && (size === 'large' || size === 'xlarge')) {
+        responsiveSize = 'medium';
+      }
+    }
+
     const classes = classnames(
       CLASS_ROOT,
       {
@@ -269,18 +279,12 @@ export default class Meter extends Component {
         [`${CLASS_ROOT}--loading`]: series.length === 0,
         [`${CLASS_ROOT}--single`]: series.length === 1,
         [`${CLASS_ROOT}--count-${series.length}`]: series.length > 1,
+        [`${CLASS_ROOT}--${responsiveSize}`]: responsiveSize,
         [`${CLASS_ROOT}--active`]: active
       },
       className
     );
-    if (size) {
-      let responsiveSize = size;
-      // shrink Meter to medium size if large and up
-      if (limitMeterSize && (size === 'large' || size === 'xlarge')) {
-        responsiveSize = 'medium';
-      }
-      classes.push(`${CLASS_ROOT}--${responsiveSize}`);
-    }
+
 
     let labelElement;
     if (label) {
