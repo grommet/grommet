@@ -4,9 +4,17 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
 var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
@@ -100,14 +108,15 @@ var App = function (_Component) {
       var children = _props.children;
       var className = _props.className;
       var inline = _props.inline;
+      var props = (0, _objectWithoutProperties3.default)(_props, ['centered', 'children', 'className', 'inline']);
       var lang = this.state.lang;
 
 
-      var classes = (0, _classnames3.default)('grommet', className, CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--centered', centered), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--inline', inline), _classnames));
+      var classes = (0, _classnames3.default)('grommet', CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--centered', centered), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--inline', inline), _classnames), className);
 
       return _react2.default.createElement(
         'div',
-        { lang: lang, className: classes },
+        (0, _extends3.default)({ lang: lang, className: classes }, props),
         children,
         _react2.default.createElement(_SkipLinks2.default, null),
         _react2.default.createElement('div', { className: CLASS_ROOT + '__announcer', 'aria-live': 'polite' })
