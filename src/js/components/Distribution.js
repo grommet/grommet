@@ -2,6 +2,7 @@
 
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
+import classnames from 'classnames';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 import Intl from '../utils/Intl';
 import CSSClassnames from '../utils/CSSClassnames';
@@ -254,7 +255,7 @@ export default class Distribution extends Component {
   }
 
   _layout () {
-    const container = this.containerRef;
+    const container = this._containerRef;
     const rect = container.getBoundingClientRect();
     const width = Math.round(rect.width);
     const height = Math.round(rect.height);
@@ -272,7 +273,7 @@ export default class Distribution extends Component {
   }
 
   _onPreviousDistribution (event) {
-    if (document.activeElement === this.distributionRef) {
+    if (document.activeElement === this._distributionRef) {
       event.preventDefault();
       var totalDistributionCount = (
         ReactDOM.findDOMNode(this.distributionItemsRef).childNodes.length
@@ -290,7 +291,7 @@ export default class Distribution extends Component {
   }
 
   _onNextDistribution (event) {
-    if (document.activeElement === this.distributionRef) {
+    if (document.activeElement === this._distributionRef) {
       event.preventDefault();
       var totalDistributionCount = (
         ReactDOM.findDOMNode(this.distributionItemsRef).childNodes.length
@@ -308,7 +309,7 @@ export default class Distribution extends Component {
   }
 
   _onEnter (event) {
-    if (document.activeElement === this.distributionRef) {
+    if (document.activeElement === this._distributionRef) {
       if (this.activeDistributionRef) {
         let index = this.activeDistributionRef.getAttribute('data-index');
 
@@ -358,8 +359,7 @@ export default class Distribution extends Component {
       <div key={index} className={labelClasses.join(' ')}
         data-box-index={index} role="tab"
         style={{ top: labelRect.y, left: labelRect.x, maxWidth: labelRect.width,
-          maxHeight: labelRect.height }}
-        id={`${this.props.a11yTitleId}_item_${index}`}>
+          maxHeight: labelRect.height }}>
         <span className={`${CLASS_ROOT}__label-value`}>
           {value}
           <span className={`${CLASS_ROOT}__label-units`}>
@@ -456,13 +456,13 @@ export default class Distribution extends Component {
   _renderBoxes () {
     return this.state.items.map((item, index) => {
       return this._renderItem(item.datum, item.boxRect, index);
-    }, this);
+    });
   }
 
   _renderLabels () {
     return this.state.items.map((item, index) => {
       return this._renderItemLabel(item.datum, item.labelRect, index);
-    }, this);
+    });
   }
 
   _renderLoading () {
@@ -480,82 +480,56 @@ export default class Distribution extends Component {
   }
 
   render () {
-    let classes = [CLASS_ROOT];
-    if (this.props.size) {
-      classes.push(`${CLASS_ROOT}--${this.props.size}`);
-    }
-    if (this.props.full) {
-      classes.push(`${CLASS_ROOT}--full`);
-    }
-    if (this.props.vertical) {
-      classes.push(`${CLASS_ROOT}--vertical`);
-    }
-    if (this.state.allIcons) {
-      classes.push(`${CLASS_ROOT}--icons`);
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
+    const {
+      a11yTitle, className, full, size, vertical, ...props
+    } = this.props;
+    delete props.series;
+    const { intl } = this.context;
+    const { allIcons, height, items, width } = this.state;
+    const classes = classnames(
+      CLASS_ROOT,
+      {
+        [`${CLASS_ROOT}--full`]: full,
+        [`${CLASS_ROOT}--icons`]: allIcons,
+        [`${CLASS_ROOT}--${size}`]: size,
+        [`${CLASS_ROOT}--vertical`]: vertical,
+        [`${CLASS_ROOT}--loading`]: (items || []).length === 0
+      },
+      className
+    );
 
     let background;
     if (! this.state.allIcons) {
       background = (
         <rect className={`${CLASS_ROOT}__background`} x={0} y={0} stroke="none"
-          width={this.state.width} height={this.state.height} />
+          width={width} height={height} />
       );
     }
 
     let boxes = [];
     let labels;
-    if (this.state.items) {
+    if (items) {
       boxes = this._renderBoxes();
       labels = this._renderLabels();
     }
 
     let role = 'tablist';
-    let a11yTitle = (
-      this.props.a11yTitle ||
-      Intl.getMessage(this.context.intl, 'Distribution')
-    );
+    let ariaLabel = a11yTitle || Intl.getMessage(intl, 'Distribution');
 
     if (boxes.length === 0) {
-      classes.push(`${CLASS_ROOT}--loading`);
       boxes.push(this._renderLoading());
       role = 'img';
-      a11yTitle = Intl.getMessage(this.context.intl, 'Loading');
-    }
-
-    let activeDescendant;
-    if (this.state.activeIndex >= 0) {
-      activeDescendant =
-        `${this.props.a11yTitleId}_item_${this.state.activeIndex}`;
-    }
-
-    let a11yTitleNode = (
-      <title id={this.props.a11yTitleId}>{a11yTitle}</title>
-    );
-
-    let a11yDescNode;
-    if (this.props.a11yDesc) {
-      a11yDescNode = (
-        <desc id={this.props.a11yDescId}>
-          {this.props.a11yDesc}
-        </desc>
-      );
+      ariaLabel = Intl.getMessage(intl, 'Loading');
     }
 
     return (
-      <div ref={ref => this.containerRef = ref} className={classes.join(' ')}>
-        <svg ref={ref => this.distributionRef = ref}
+      <div ref={ref => this._containerRef = ref} {...props} className={classes}>
+        <svg ref={ref => this._distributionRef = ref}
           className={`${CLASS_ROOT}__graphic`}
           viewBox={`0 0 ${this.state.width} ${this.state.height}`}
           preserveAspectRatio="none" tabIndex="0" role={role}
-          aria-activedescendant={activeDescendant}
-          aria-labelledby={this.props.a11yTitleId + ' ' +
-            this.props.a11yDescId}>
+          aria-label={ariaLabel}>
           {background}
-          {a11yTitleNode}
-          {a11yDescNode}
           {boxes}
         </svg>
         <div ref={ref => this.distributionItemsRef = ref}
@@ -574,9 +548,6 @@ Distribution.contextTypes = {
 
 Distribution.propTypes = {
   a11yTitle: PropTypes.string,
-  a11yTitleId: PropTypes.string,
-  a11yDescId: PropTypes.string,
-  a11yDesc: PropTypes.string,
   full: PropTypes.bool, // deprecated, use size="full"
   series: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.node,
@@ -596,7 +567,5 @@ Distribution.propTypes = {
 };
 
 Distribution.defaultProps = {
-  a11yTitleId: 'distribution-title',
-  a11yDescId: 'distribution-desc',
   size: 'medium'
 };

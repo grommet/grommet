@@ -67,7 +67,8 @@ exports[`Calendar has correct default options 1`] = `
   <div
     aria-label="Chart"
     className="grommetux-chart grommetux-chart--vertical"
-    role="group">
+    role="group"
+    tabIndex="-1">
     <div
       className="grommetux-chart-marker-label grommetux-chart-marker-label--align-end"
       id={undefined}

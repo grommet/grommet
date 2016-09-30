@@ -197,9 +197,11 @@ export default class Legend extends Component {
   }
 
   render () {
-    const {
-      className, series, total
-    } = this.props;
+    const { className, series, total, ...props } = this.props;
+    delete props.activeIndex;
+    delete props.announce;
+    delete props.onActive;
+    delete props.units;
 
     const classes = classnames(
       CLASS_ROOT,
@@ -217,7 +219,7 @@ export default class Legend extends Component {
     }
 
     return (
-      <ol ref={ref => this.legendRef = ref} className={classes}>
+      <ol ref={ref => this.legendRef = ref} {...props} className={classes}>
         {items.reverse()}
         {totalNode}
       </ol>

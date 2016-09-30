@@ -1,6 +1,7 @@
 // (C) Copyright 2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
+import classnames from 'classnames';
 import { baseUnit, translateEndAngle, arcCommands } from '../utils/Graphics';
 import CSSClassnames from '../utils/CSSClassnames';
 import Intl from '../utils/Intl';
@@ -143,7 +144,7 @@ export default class SunBurst extends Component {
   }
 
   _layout () {
-    const rect = this.svgRef.getBoundingClientRect();
+    const rect = this._containerRef.getBoundingClientRect();
     if (rect.width !== this.state.width || rect.height !== this.state.height) {
       this.setState({ height: rect.height, width: rect.width });
     }
@@ -215,22 +216,23 @@ export default class SunBurst extends Component {
   }
 
   render () {
-    const { a11yTitle, active, data, label, size } = this.props;
+    const {
+      a11yTitle, active, className, data, label, size, ...props
+    } = this.props;
+    delete props.onActive;
+    delete props.onClick;
     const { width, height } = this.state;
     const { intl } = this.context;
+    const classes = classnames(
+      CLASS_ROOT,
+      {
+        [`${CLASS_ROOT}--${size}`]: size,
+        [`${CLASS_ROOT}--active`]: active
+      },
+      className
+    );
 
     const unit = width / UNIT_FACTOR;
-    let classes = [CLASS_ROOT];
-    if (size) {
-      classes.push(`${CLASS_ROOT}--${size}`);
-    }
-    if (active) {
-      classes.push(`${CLASS_ROOT}--active`);
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
-
     const centerX = width / 2;
     const centerY = height / 2;
     let paths = this._renderData([], data, undefined, centerX, centerY,
@@ -248,8 +250,8 @@ export default class SunBurst extends Component {
     const sunBurstLabel = a11yTitle || Intl.getMessage(intl, 'SunBurstLabel');
 
     return (
-      <div className={`${CLASS_ROOT}__container`}>
-        <svg ref={ref => this.svgRef = ref} className={classes.join(' ')}
+      <div ref={ref => this._containerRef = ref} {...props} className={classes}>
+        <svg className={`${CLASS_ROOT}__graphic`}
           viewBox={`0 0 ${width} ${height}`} role='group'
           aria-label={sunBurstLabel} tabIndex='0'
           onFocus={this._onSunBurstFocus} onBlur={this._onSunBurstBlur}>
@@ -261,10 +263,6 @@ export default class SunBurst extends Component {
   }
 
 }
-
-SunBurst.contextTypes = {
-  intl: PropTypes.object
-};
 
 SunBurst.propTypes = {
   a11yTitle: PropTypes.string,
@@ -283,4 +281,8 @@ SunBurst.propTypes = {
 
 SunBurst.defaultProps = {
   size: 'medium'
+};
+
+SunBurst.contextTypes = {
+  intl: PropTypes.object
 };
