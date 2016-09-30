@@ -38,4 +38,12 @@ describe('App', () => {
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+  it('has microdata properties rendering', () => {
+    const component = renderer.create(
+      <App itemScope={true} itemType="http://schema.org/Article"
+        itemProp="test"/>
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
