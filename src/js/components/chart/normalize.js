@@ -2,7 +2,6 @@
 
 import zip from 'lodash/zip';
 import flatten from 'lodash/flatten';
-import isInteger from 'lodash/isInteger';
 
 /**
  * The normalize util includes a normalize method in order to help
@@ -81,7 +80,7 @@ function getXAxis(series, granularity) {
   }
 
   let normalizedXAxisLength = ( (max - min) / granularity) + 1;
-  if (!isInteger(normalizedXAxisLength)) {
+  if (!Number.isInteger((normalizedXAxisLength))) {
     console.warn('X values are not corresponding to the given granularity');
     normalizedXAxisLength = Math.floor(normalizedXAxisLength);
   }
