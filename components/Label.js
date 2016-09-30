@@ -8,13 +8,13 @@ var _extends2 = require('babel-runtime/helpers/extends');
 
 var _extends3 = _interopRequireDefault(_extends2);
 
-var _keys = require('babel-runtime/core-js/object/keys');
-
-var _keys2 = _interopRequireDefault(_keys);
-
 var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
@@ -48,15 +48,9 @@ var _CSSClassnames = require('../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
-var _Props = require('../utils/Props');
-
-var _Props2 = _interopRequireDefault(_Props);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
-
-var CLASS_ROOT = _CSSClassnames2.default.LABEL;
+var CLASS_ROOT = _CSSClassnames2.default.LABEL; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var Label = function (_Component) {
   (0, _inherits3.default)(Label, _Component);
@@ -72,17 +66,21 @@ var Label = function (_Component) {
       var _classnames;
 
       var _props = this.props;
+      var children = _props.children;
+      var className = _props.className;
+      var labelFor = _props.labelFor;
       var margin = _props.margin;
       var size = _props.size;
+      var uppercase = _props.uppercase;
+      var props = (0, _objectWithoutProperties3.default)(_props, ['children', 'className', 'labelFor', 'margin', 'size', 'uppercase']);
 
-      margin = margin ? margin : 'small' === size ? 'none' : 'medium';
-      var classes = (0, _classnames3.default)(CLASS_ROOT, this.props.className, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--uppercase', this.props.uppercase), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--margin-' + margin, margin), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), _classnames));
-      var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Label.propTypes));
+      var labelMargin = margin ? margin : 'small' === size ? 'none' : 'medium';
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--uppercase', uppercase), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--margin-' + labelMargin, labelMargin), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), _classnames), className);
 
       return _react2.default.createElement(
         'label',
-        (0, _extends3.default)({}, restProps, { className: classes, htmlFor: this.props.labelFor }),
-        this.props.children
+        (0, _extends3.default)({}, props, { className: classes, htmlFor: labelFor }),
+        children
       );
     }
   }]);

@@ -76,7 +76,6 @@ var Paragraph = function (_Component) {
 
       var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--align-' + align, align), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--margin-' + margin, margin), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--width-' + width, width), _classnames), className);
 
-      // we handle dangerouslySetInnerHTML to allow using Paragraph with Markdown.
       return _react2.default.createElement(
         'p',
         (0, _extends3.default)({}, props, { className: classes }),
