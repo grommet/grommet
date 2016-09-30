@@ -49,15 +49,14 @@ export default class Notification extends Component {
     let progress;
     if (this.props.percentComplete || 0 === this.props.percentComplete) {
       progress = (
-        <span>
+        <Box direction="row" align="center">
           <Meter
             series={[{
               value: this.props.percentComplete,
               colorIndex: 'light-1'
-            }]}
-          />
+            }]}/>
           <Value value={this.props.percentComplete} units="%" size="small"/>
-        </span>
+        </Box>
       );
     }
 
