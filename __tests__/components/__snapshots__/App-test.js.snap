@@ -1,6 +1,6 @@
 exports[`App has correct className rendering 1`] = `
 <div
-  className="grommet testing grommetux-app grommetux-app--centered"
+  className="grommet grommetux-app grommetux-app--centered testing"
   lang="en-US">
   <span
     style={
@@ -53,6 +53,25 @@ exports[`App has correct lang="pt=BR" rendering 1`] = `
 <div
   className="grommet grommetux-app grommetux-app--centered"
   lang="pt-BR">
+  <span
+    style={
+      Object {
+        "display": "none"
+      }
+    } />
+  <div
+    aria-live="polite"
+    className="grommetux-app__announcer" />
+</div>
+`;
+
+exports[`App has microdata properties rendering 1`] = `
+<div
+  className="grommet grommetux-app grommetux-app--centered"
+  itemProp="test"
+  itemScope={true}
+  itemType="http://schema.org/Article"
+  lang="en-US">
   <span
     style={
       Object {
