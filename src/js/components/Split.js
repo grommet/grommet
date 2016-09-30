@@ -135,6 +135,7 @@ export default class Split extends Component {
 Split.propTypes = {
   fixed: PropTypes.bool,
   flex: PropTypes.oneOf(['left', 'right', 'both']),
+  onResponsive: PropTypes.func,
   priority: PropTypes.oneOf(['left', 'right']),
   separator: PropTypes.bool,
   showOnResponsive: PropTypes.oneOf(['priority', 'both'])

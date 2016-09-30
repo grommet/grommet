@@ -3,7 +3,7 @@ exports[`SearchInput has correct default options 1`] = `
   className="grommetux-search-input">
   <input
     autoComplete="off"
-    className="grommetux-search-input__input"
+    className="grommetux-input grommetux-search-input__input"
     defaultValue={undefined}
     id="item1"
     name="item-1"
@@ -17,7 +17,11 @@ exports[`SearchInput has correct default options 1`] = `
     disabled={false}
     href={undefined}
     id={undefined}
+    onBlur={[Function onBlur]}
     onClick={[Function bound _onAddDrop]}
+    onFocus={[Function onFocus]}
+    onMouseDown={[Function onMouseDown]}
+    onMouseUp={[Function onMouseUp]}
     type="button">
     <span
       className="grommetux-button__icon">

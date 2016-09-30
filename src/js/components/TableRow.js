@@ -8,18 +8,12 @@ const CLASS_ROOT = CSSClassnames.TABLE_ROW;
 
 export default class TableRow extends Component {
   render () {
-    const { children, className, onClick, selected } = this.props;
-
-    if (selected) {
-      console.warn('Selected option has been deprecated, please use ' +
-        'selected option at the Table level.');
-    }
+    const { children, className, onClick } = this.props;
 
     const classes = classnames(
       CLASS_ROOT,
       className,
       {
-        [`${CLASS_ROOT}--selected`]: selected,
         [`${CLASS_ROOT}--selectable`]: onClick
       }
     );
@@ -33,7 +27,5 @@ export default class TableRow extends Component {
 };
 
 TableRow.propTypes = {
-  onClick: PropTypes.func,
-  //Deprecated in 0.6.2
-  selected: PropTypes.bool
+  onClick: PropTypes.func
 };

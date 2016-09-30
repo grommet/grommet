@@ -11,6 +11,7 @@ import SearchIcon from './icons/base/Search';
 import CSSClassnames from '../utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.SEARCH_INPUT;
+const INPUT = CSSClassnames.INPUT;
 const FORM_FIELD = CSSClassnames.FORM_FIELD;
 
 export default class SearchInput extends Component {
@@ -231,7 +232,7 @@ export default class SearchInput extends Component {
     return (
       <div ref={ref => this.componentRef = ref} className={classes}>
         <input ref={ref => this.inputRef = ref}
-          className={`${CLASS_ROOT}__input`}
+          className={`${INPUT} ${CLASS_ROOT}__input`}
           id={this.props.id} name={this.props.name}
           value={this._renderLabel(this.props.value)}
           defaultValue={this._renderLabel(this.props.defaultValue)}

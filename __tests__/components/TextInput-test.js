@@ -3,16 +3,16 @@
 import React from 'react';
 import renderer from 'react/lib/ReactTestRenderer';
 
-import Calendar from '../../src/js/components/Calendar';
+import TextInput from '../../src/js/components/TextInput';
 
 // needed because this:
 // https://github.com/facebook/jest/issues/1353
 jest.mock('react-dom');
 
-describe('Calendar', () => {
+describe('TextInput', () => {
   it('has correct default options', () => {
     const component = renderer.create(
-      <Calendar id="item1" name="item-1" value="2015-06-03" />
+       <TextInput id="item1" name="item-1" value="one" />
     );
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();

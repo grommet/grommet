@@ -2,12 +2,12 @@
 
 import React, { Component, PropTypes } from 'react';
 import Button from './Button';
-
 import AddIcon from './icons/base/Add';
 import SubtractIcon from './icons/base/Subtract';
 import CSSClassnames from '../utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.NUMBER_INPUT;
+const INPUT = CSSClassnames.INPUT;
 
 export default class NumberInput extends Component {
 
@@ -43,7 +43,7 @@ export default class NumberInput extends Component {
     } catch (e) {
       // IE11 workaround. See known issue #5 at
       // http://caniuse.com/#search=number
-      let value = (parseInt(input.value, 10) || 0) + (this.props.step || 1);
+      let value = (parseFloat(input.value) || 0) + (this.props.step || 1);
       if (this.props.max !== undefined) {
         value = Math.min(value, this.props.max);
       }
@@ -59,7 +59,7 @@ export default class NumberInput extends Component {
     } catch (e) {
       // IE11 workaround. See known issue #5 at
       // http://caniuse.com/#search=number
-      let value = (parseInt(input.value, 10) || 0) - (this.props.step || 1);
+      let value = (parseFloat(input.value) || 0) - (this.props.step || 1);
       if (this.props.min !== undefined) {
         value = Math.max(value, this.props.min);
       }
@@ -86,7 +86,7 @@ export default class NumberInput extends Component {
         aria-labelledby={labelId}>
 
         <input ref={ref => this.inputRef = ref}
-          tabIndex="0" className={CLASS_ROOT + "__input"}
+          tabIndex="0" className={`${INPUT} ${CLASS_ROOT}__input`}
           id={this.props.id} name={this.props.name} type="number"
           disabled={this.props.disabled}
           value={this.props.value}
@@ -112,9 +112,9 @@ NumberInput.propTypes = {
   defaultValue: PropTypes.number,
   disabled: PropTypes.bool,
   id: PropTypes.string,
-  name: PropTypes.string,
   max: PropTypes.number,
   min: PropTypes.number,
+  name: PropTypes.string,
   onChange: PropTypes.func,
   step: PropTypes.number,
   value: PropTypes.number

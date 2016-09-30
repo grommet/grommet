@@ -170,8 +170,9 @@ export default class Card extends Component {
 
   render () {
     const { children, className, contentPad,
-      onClick, reverse, video } = this.props;
+      onClick, reverse, truncate, video } = this.props;
     const boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
+    const restProps = Props.omit(this.props, Object.keys(Card.propTypes));
 
     const classes = classnames(
       CLASS_ROOT,
@@ -193,8 +194,15 @@ export default class Card extends Component {
     let link = this._renderLink();
     let videoLayer = this._renderVideoLayer();
 
+    const contentClasses = classnames(
+      {
+        [`${CLASS_ROOT}__content`]: true,
+        [`${CLASS_ROOT}__content--truncate`]: truncate
+      }
+    );
+
     const text = (
-      <Box className={`${CLASS_ROOT}__content`} pad={contentPad}>
+      <Box className={contentClasses} flex={true} pad={contentPad}>
         {label}
         {heading}
         {description}
@@ -218,8 +226,8 @@ export default class Card extends Component {
     }
 
     return (
-      <Box {...boxProps} className={classes} justify={cardJustify}
-        onClick={onCardClick}>
+      <Box {...boxProps} {...restProps} className={classes}
+        justify={cardJustify} onClick={onCardClick}>
         {thumbnail}
         {text}
         {videoLayer}
@@ -249,6 +257,7 @@ Card.propTypes = {
     PropTypes.string,
     PropTypes.element
   ]),
+  truncate: PropTypes.bool,
   video: PropTypes.oneOfType([
     PropTypes.shape({
       source: PropTypes.string.isRequired,
@@ -260,7 +269,6 @@ Card.propTypes = {
 };
 
 Card.defaultProps = {
-  colorIndex: 'light-1',
   contentPad: 'medium',
   headingStrong: true,
   textSize: 'small'

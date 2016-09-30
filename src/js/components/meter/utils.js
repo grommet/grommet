@@ -12,25 +12,16 @@ export var propTypes = {
   activeIndex: PropTypes.number,
   a11yTitle: PropTypes.string,
   a11yTitleId: PropTypes.string,
-  max: PropTypes.shape({
-    value: PropTypes.number,
-    label: PropTypes.string
-  }).isRequired,
-  min: PropTypes.shape({
-    value: PropTypes.number,
-    label: PropTypes.string
-  }).isRequired,
+  max: PropTypes.number.isRequired,
+  min: PropTypes.number.isRequired,
   onActivate: PropTypes.func.isRequired,
-  // size: PropTypes.oneOf(['small', 'medium', 'large']).isRequired,
   series: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string,
     value: PropTypes.number.isRequired,
     colorIndex: PropTypes.string,
-    important: PropTypes.bool,
     onClick: PropTypes.func
   })).isRequired,
-  total: PropTypes.number,
-  units: PropTypes.string
+  total: PropTypes.number
 };
 
 export function buildPath (itemIndex, commands, classes, onActivate,

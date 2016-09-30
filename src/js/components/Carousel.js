@@ -1,6 +1,8 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
+import classnames from 'classnames';
+import Hammer from 'hammerjs';
 import Box from './Box';
 import Tiles from './Tiles';
 import Tile from './Tile';
@@ -9,23 +11,19 @@ import Previous from './icons/base/Previous';
 import Next from './icons/base/Next';
 import DOM from '../utils/DOM';
 import CSSClassnames from '../utils/CSSClassnames';
-
-// define window obj for react tests to run properly
-let Hammer = function() {};
-if (typeof window !== 'undefined') {
-  Hammer = require('hammerjs');
-}
+import Intl from '../utils/Intl';
+import { announce } from '../utils/Announcer';
 
 const CLASS_ROOT = CSSClassnames.CAROUSEL;
 
 export default class Carousel extends Component {
 
   constructor(props, context) {
-    super (props);
+    super(props, context);
 
     this._onSelect = this._onSelect.bind(this);
-    this._onMouseOver = this._onMouseOver.bind(this);
-    this._onMouseOut = this._onMouseOut.bind(this);
+    this._stopAutoplay = this._stopAutoplay.bind(this);
+    this._startAutoplay = this._startAutoplay.bind(this);
     this._onResize = this._onResize.bind(this);
     this._slidePrev = this._slidePrev.bind(this);
     this._slideNext = this._slideNext.bind(this);
@@ -53,10 +51,10 @@ export default class Carousel extends Component {
       this._updateHammer();
 
       this._handleScroll();
-      var scrollParents = DOM.findScrollParents(this.carouselRef);
-      scrollParents.forEach(function (scrollParent) {
+      const scrollParents = DOM.findScrollParents(this.carouselRef);
+      scrollParents.forEach((scrollParent) => {
         scrollParent.addEventListener('scroll', this._handleScroll);
-      }.bind(this));
+      }, this);
     }
   }
 
@@ -69,10 +67,10 @@ export default class Carousel extends Component {
 
     window.removeEventListener('resize', this._onResize);
 
-    var scrollParents = DOM.findScrollParents(this.carouselRef);
-    scrollParents.forEach(function (scrollParent) {
+    const scrollParents = DOM.findScrollParents(this.carouselRef);
+    scrollParents.forEach((scrollParent) => {
       scrollParent.removeEventListener('scroll', this._handleScroll);
-    }.bind(this));
+    }, this);
 
     this._unmountHammer();
   }
@@ -103,14 +101,16 @@ export default class Carousel extends Component {
   }
 
   _handleScroll () {
-    var viewportHeight = document.documentElement.clientHeight;
-    var carouselTopPosition = this.carouselRef.getBoundingClientRect().top;
-    var carouselHeight = this.carouselRef.offsetHeight;
-    var startScroll = viewportHeight - (carouselHeight / 2);
+    const { autoplay } = this.props;
+    const { slide } = this.state;
+    const viewportHeight = document.documentElement.clientHeight;
+    const carouselTopPosition = this.carouselRef.getBoundingClientRect().top;
+    const carouselHeight = this.carouselRef.offsetHeight;
+    const startScroll = viewportHeight - (carouselHeight / 2);
 
-    if (this.props.autoplay && carouselTopPosition <= startScroll &&
+    if (autoplay && carouselTopPosition <= startScroll &&
       carouselTopPosition >= -carouselHeight / 2) {
-      if (this.state.slide === false) {
+      if (slide === false) {
         this._setSlideInterval();
         this.setState({
           slide: true
@@ -125,18 +125,28 @@ export default class Carousel extends Component {
   }
 
   _setSlideInterval () {
-    this._slideAnimation = setInterval(function() {
-      var activeIndex = this.state.activeIndex;
-      var numSlides = this.props.children.length;
+    const { autoplaySpeed } = this.props;
+    clearInterval(this._slideAnimation);
+    this._slideAnimation = setInterval(function () {
+      const { children, infinite } = this.props;
+      const { activeIndex } = this.state;
+      const { intl } = this.context;
+      const numSlides = children.length;
 
       this.setState({
         activeIndex: (activeIndex + 1) % numSlides
+      }, () => {
+        const slideNumber = Intl.getMessage(intl, 'Slide Number', {
+          slideNumber: this.state.activeIndex + 1
+        });
+        const activatedMessage = Intl.getMessage(intl, 'Activated');
+        announce(`${slideNumber} ${activatedMessage}`, 'polite');
       });
 
-      if (!this.props.infinite && activeIndex === numSlides - 1) {
+      if (!infinite && activeIndex === numSlides - 1) {
         clearInterval(this._slideAnimation);
       }
-    }.bind(this), this.props.autoplaySpeed);
+    }.bind(this), autoplaySpeed);
   }
 
   _onSelect (index) {
@@ -147,26 +157,30 @@ export default class Carousel extends Component {
     }
   }
 
-  _onMouseOver () {
-    if (this.props.autoplay) {
+  _stopAutoplay () {
+    const { autoplay, persistentNav } = this.props;
+    if (autoplay) {
       clearInterval(this._slideAnimation);
     }
 
-    if (!this.props.persistentNav) {
+    if (!persistentNav) {
       this.setState({
         hideControls: false
       });
     }
   }
 
-  _onMouseOut () {
-    if (this.props.autoplay &&
-        (this.props.infinite ||
-          this.state.activeIndex !== this.props.children.length - 1)) {
+  _startAutoplay () {
+    const { activeIndex } = this.state;
+    const { autoplay, children, infinite, persistentNav } = this.props;
+    if (autoplay && (infinite || activeIndex !== children.length - 1) &&
+      // making sure to only start autoplay if the focus is not inside
+      // the carousel
+      !this.carouselRef.contains(document.activeElement)) {
       this._setSlideInterval();
     }
 
-    if (!this.props.persistentNav) {
+    if (!persistentNav) {
       this.setState({
         hideControls: true
       });
@@ -180,28 +194,34 @@ export default class Carousel extends Component {
   }
 
   _slidePrev () {
-    var numSlides = this.props.children.length;
+    const { children } = this.props;
+    const { activeIndex } = this.state;
+    const numSlides = children.length;
     this.setState({
-      activeIndex: (this.state.activeIndex + numSlides - 1) % numSlides
+      activeIndex: (activeIndex + numSlides - 1) % numSlides
     });
   }
 
   _slideNext () {
-    var numSlides = this.props.children.length;
+    const { children } = this.props;
+    const { activeIndex } = this.state;
+    const numSlides = children.length;
     this.setState({
-      activeIndex: (this.state.activeIndex + 1) % numSlides
+      activeIndex: (activeIndex + 1) % numSlides
     });
   }
 
   _renderPrevButton () {
-    let prevButton = undefined;
-    if (this.props.infinite || this.state.activeIndex !== 0) {
+    const { infinite } = this.props;
+    const { activeIndex } = this.state;
+    const { intl } = this.context;
+    let prevButton;
+    if (infinite || activeIndex !== 0) {
+      const prevMessage = Intl.getMessage(intl, 'Previous Slide');
       prevButton = (
-        <Button
-          className={CLASS_ROOT + '__arrow ' + CLASS_ROOT + '__arrow--prev'}
-          plain={true} onClick={this._slidePrev}>
-          <Previous size="large" />
-        </Button>
+        <Button icon={<Previous size="large" />} a11yTitle={prevMessage}
+          className={`${CLASS_ROOT}__arrow ${CLASS_ROOT}__arrow--prev`}
+          onClick={this._slidePrev} />
       );
     }
 
@@ -209,15 +229,16 @@ export default class Carousel extends Component {
   }
 
   _renderNextButton () {
-    let nextButton = undefined;
-    if (this.props.infinite ||
-      this.state.activeIndex !== this.props.children.length - 1) {
+    const { children, infinite } = this.props;
+    const { activeIndex } = this.state;
+    const { intl } = this.context;
+    let nextButton;
+    if (infinite || activeIndex !== children.length - 1) {
+      const nextMessage = Intl.getMessage(intl, 'Next Slide');
       nextButton = (
-        <Button
-          className={CLASS_ROOT + '__arrow ' + CLASS_ROOT + '__arrow--next'}
-          plain={true} onClick={this._slideNext}>
-          <Next size="large" />
-        </Button>
+        <Button icon={<Next size="large" />} a11yTitle={nextMessage}
+          className={`${CLASS_ROOT}__arrow ${CLASS_ROOT}__arrow--next`}
+          onClick={this._slideNext} />
       );
     }
 
@@ -225,51 +246,65 @@ export default class Carousel extends Component {
   }
 
   render () {
-    var classes = [CLASS_ROOT];
-    if (this.state.hideControls) {
-      classes.push(CLASS_ROOT + '--hide-controls');
-    }
+    const { a11yTitle, children, className } = this.props;
+    const { activeIndex, hideControls, width } = this.state;
+    const { intl } = this.context;
+    const classes = classnames(
+      CLASS_ROOT,
+      className, {
+        [`${CLASS_ROOT}--hide-controls`]: hideControls
+      }
+    );
 
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
+    const trackWidth = width * children.length;
+    const trackPosition = -(width * activeIndex);
 
-    var index = -1;
-    var children = this.props.children;
-
-    var width = this.state.width;
-    var trackWidth = width * children.length;
-
-    var trackPosition = -(width * this.state.activeIndex);
-
-    var tiles = React.Children.map(children, function (child) {
+    const tiles = React.Children.map(children, (child, index) => {
+      const ariaHidden = activeIndex !== index ? true : false;
       return (
-        <Tile className={CLASS_ROOT + "__item"}>
+        <Tile className={`${CLASS_ROOT}__item`} aria-hidden={ariaHidden}>
           {child}
         </Tile>
       );
-    }, this);
+    });
 
-    var controls = React.Children.map(children, function (child) {
-      index += 1;
-      var controlClasses = [CLASS_ROOT + "__control"];
-      if (index === this.state.activeIndex) {
-        controlClasses.push(CLASS_ROOT + "__control--active");
+    const controls = React.Children.map(children, (child, index) => {
+      const active = index === activeIndex;
+      const controlClasses = classnames(
+        `${CLASS_ROOT}__control`, {
+          [`${CLASS_ROOT}__control--active`]: active
+        }
+      );
+      const activateMessage = Intl.getMessage(intl, 'Activate');
+      const slideNumberMessage = Intl.getMessage(intl, 'Slide Number', {
+        slideNumber: index + 1
+      });
+
+      let currentlyActiveMessage = '';
+      if (active) {
+        currentlyActiveMessage = (
+          `(${Intl.getMessage(intl, 'Currently Active')})`
+        );
       }
-
       return (
-        <svg className={controlClasses.join(' ')}
-          viewBox="0 0 24 24" version="1.1"
-          onClick={this._onSelect.bind(this, index)}>
-          <circle cx={12} cy={12} r={6} />
-        </svg>
+        <Button plain={true} onClick={this._onSelect.bind(this, index)}
+          a11yTitle={
+            `${activateMessage} ${slideNumberMessage} ${currentlyActiveMessage}`
+          }>
+          <svg className={controlClasses} viewBox="0 0 24 24" version="1.1">
+            <circle cx={12} cy={12} r={6} />
+          </svg>
+        </Button>
       );
     }, this);
 
+    const carouselMessage = a11yTitle || Intl.getMessage(intl, 'Carousel');
     return (
-      <div ref={ref => this.carouselRef = ref} className={classes.join(' ')}
-        onMouseEnter={this._onMouseOver} onMouseLeave={this._onMouseOut}>
-        <div className={CLASS_ROOT + "__track"}
+      <div ref={ref => this.carouselRef = ref} className={classes}
+        role='group' aria-label={carouselMessage}
+        onFocus={this._stopAutoplay} onBlur={this._startAutoplay}
+        onMouseOver={this._stopAutoplay} onMouseOut={this._startAutoplay}>
+        <div className={`${CLASS_ROOT}__track`}
           style={{
             width: (trackWidth && trackWidth > 0) ? trackWidth : '',
             marginLeft: trackPosition
@@ -289,11 +324,8 @@ export default class Carousel extends Component {
   }
 }
 
-Carousel.propTypes = {
-  autoplay: PropTypes.bool,
-  autoplaySpeed: PropTypes.number,
-  infinite: PropTypes.bool,
-  persistentNav: PropTypes.bool
+Carousel.contextTypes = {
+  intl: PropTypes.object
 };
 
 Carousel.defaultProps = {
@@ -301,4 +333,12 @@ Carousel.defaultProps = {
   autoplaySpeed: 5000,
   infinite: true,
   persistentNav: true
+};
+
+Carousel.propTypes = {
+  a11yTitle: PropTypes.string,
+  autoplay: PropTypes.bool,
+  autoplaySpeed: PropTypes.number,
+  infinite: PropTypes.bool,
+  persistentNav: PropTypes.bool
 };

@@ -10,6 +10,8 @@ import Form from './Form';
 import FormField from './FormField';
 import Footer from './Footer';
 import Heading from './Heading';
+import Paragraph from './Paragraph';
+import Box from './Box';
 
 import CSSClassnames from '../utils/CSSClassnames';
 
@@ -65,18 +67,14 @@ export default class LoginForm extends Component {
 
   render () {
     const {
-      align, className, errors, forgotPassword,
+      align, errors, forgotPassword,
       logo, onSubmit, rememberMe, secondaryText, title, usernameType
     } = this.props;
 
-    let classes = classnames(
-      CLASS_ROOT,
-      className, {
-        [`${CLASS_ROOT}--align-${align}`]: align
-      }
-    );
+    const classes = classnames(CLASS_ROOT, this.props.className);
+    const center = ! align || 'stretch' === align || 'center' === align;
 
-    let errorsNode = errors.map((error, index) => {
+    const errorsNode = errors.map((error, index) => {
       let errorComponent;
       if (error) {
         errorComponent = (
@@ -90,26 +88,18 @@ export default class LoginForm extends Component {
 
     let titleNode;
     if (title) {
-      titleNode = (
-        <Heading strong={true}>
-          {title}
-        </Heading>
-      );
+      titleNode = <Heading strong={true}>{title}</Heading>;
     }
 
     let secondaryTextNode;
     if (secondaryText) {
-      secondaryTextNode = (
-        <p className={`${CLASS_ROOT}__secondary-text secondary`}>
-          {secondaryText}
-        </p>
-      );
+      secondaryTextNode = <Paragraph margin="none">{secondaryText}</Paragraph>;
     }
 
     let rememberMeNode;
     if (rememberMe) {
       const rememberMeLabel = (
-        <FormattedMessage id='Remember me' defaultMessage='Remember me' />
+        <FormattedMessage id="Remember me" defaultMessage="Remember me" />
       );
 
       rememberMeNode = (
@@ -119,40 +109,41 @@ export default class LoginForm extends Component {
     }
 
     const username = usernameType === 'email' ? (
-      <FormattedMessage id='Email' defaultMessage='Email' />
+      <FormattedMessage id="Email" defaultMessage="Email" />
     ) : (
-      <FormattedMessage id='Username' defaultMessage='Username' />
+      <FormattedMessage id="Username" defaultMessage="Username" />
     );
 
     const password = (
-      <FormattedMessage id='Password' defaultMessage='Password' />
+      <FormattedMessage id="Password" defaultMessage="Password" />
     );
-    const login = <FormattedMessage id='Log In' defaultMessage='Log In' />;
+    const login = <FormattedMessage id="Log In" defaultMessage="Log In" />;
 
     return (
-      <Form className={classes} onSubmit={this._onSubmit}>
-        <div className={`${CLASS_ROOT}__header`}>
+      <Form className={classes} pad="medium" onSubmit={this._onSubmit}>
+        <Box align={align}>
           {logo}
           {titleNode}
           {secondaryTextNode}
-        </div>
+        </Box>
         <fieldset>
-          <FormField htmlFor='username' label={username}>
+          <FormField htmlFor="username" label={username}>
             <input type={usernameType} ref={ref => this.usernameRef = ref}
               value={this.state.username}
               onChange={this._onUsernameChange} />
           </FormField>
-          <FormField htmlFor='password' label={password}>
-            <input type='password' value={this.state.password}
+          <FormField htmlFor="password" label={password}>
+            <input type="password" value={this.state.password}
               onChange={this._onPasswordChange} />
           </FormField>
           {errorsNode}
         </fieldset>
-        <Footer align={align} size='small' direction='column'
-          pad={{vertical: 'medium', between: 'medium'}}>
+        <Footer size="small" direction="column"
+          align={center ? 'stretch' : 'start'}
+          pad={{vertical: 'none', between: 'medium'}}>
           {rememberMeNode}
-          <Button primary={true} strong={true}
-            className={`${CLASS_ROOT}__submit`} type='submit' label={login}
+          <Button primary={true} strong={true} fill={center}
+            type="submit" label={login}
             onClick={onSubmit ? this._onSubmit : undefined} />
           {forgotPassword}
         </Footer>
@@ -164,7 +155,6 @@ export default class LoginForm extends Component {
 
 LoginForm.propTypes = {
   align: PropTypes.oneOf(['start', 'center', 'end', 'stretch']),
-  className: PropTypes.string,
   defaultValues: PropTypes.shape({
     username: PropTypes.string,
     rememberMe: PropTypes.bool
@@ -180,6 +170,7 @@ LoginForm.propTypes = {
 };
 
 LoginForm.defaultProps = {
+  align: 'center',
   defaultValues: {
     username: '',
     rememberMe: false

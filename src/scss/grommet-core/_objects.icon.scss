@@ -34,47 +34,47 @@ $social-linkedin-color: #0077B5;
     transition: all $base-animation-duration ease-in-out;
   }
 
-  &__badge {
-    circle {
-      fill: $icon-badge-background-color;
-    }
-
-    text {
-      stroke: $icon-badge-text-color;
-      fill: $icon-badge-text-color;
-    }
-  }
-
   #{$dark-background-context} &:not([class*="color-index"]) {
     @include icon-color($colored-icon-color);
   }
+}
 
-  &--active {
-    fill: $active-icon-color;
-    stroke: $active-icon-color;
+.#{$grommet-namespace}control-icon__badge {
+  circle {
+    fill: $icon-badge-background-color;
   }
 
-  &--large {
+  text {
+    stroke: $icon-badge-text-color;
+    fill: $icon-badge-text-color;
+  }
+}
+
+.#{$grommet-namespace}control-icon--active {
+  fill: $active-icon-color;
+  stroke: $active-icon-color;
+}
+
+.#{$grommet-namespace}control-icon--large {
+  width: round($inuit-base-spacing-unit * 2);
+  height: round($inuit-base-spacing-unit * 2);
+}
+
+.#{$grommet-namespace}control-icon--xlarge {
+  width: round($inuit-base-spacing-unit * 6);
+  height: round($inuit-base-spacing-unit * 6);
+}
+
+.#{$grommet-namespace}control-icon--huge {
+  width: round($inuit-base-spacing-unit * 12);
+  height: round($inuit-base-spacing-unit * 12);
+}
+
+.#{$grommet-namespace}control-icon--xlarge.#{$grommet-namespace}control-icon--responsive,
+.#{$grommet-namespace}control-icon--huge.#{$grommet-namespace}control-icon--responsive {
+  @include media-query(palm) {
     width: round($inuit-base-spacing-unit * 2);
     height: round($inuit-base-spacing-unit * 2);
-  }
-
-  &--xlarge {
-    width: round($inuit-base-spacing-unit * 6);
-    height: round($inuit-base-spacing-unit * 6);
-  }
-
-  &--huge {
-    width: round($inuit-base-spacing-unit * 12);
-    height: round($inuit-base-spacing-unit * 12);
-  }
-
-  &--xlarge.#{$grommet-namespace}control-icon--responsive,
-  &--huge.#{$grommet-namespace}control-icon--responsive {
-    @include media-query(palm) {
-      width: round($inuit-base-spacing-unit * 2);
-      height: round($inuit-base-spacing-unit * 2);
-    }
   }
 }
 
@@ -87,50 +87,50 @@ $social-linkedin-color: #0077B5;
   .#{$grommet-namespace}status-icon__base {
     fill: map-get($brand-status-colors, unknown);
   }
+}
 
-  &-label {
-    .#{$grommet-namespace}status-icon__base {
-      fill: map-get($brand-status-colors, unknown);
-    }
+.#{$grommet-namespace}status-icon-label {
+  .#{$grommet-namespace}status-icon__base {
+    fill: map-get($brand-status-colors, unknown);
   }
+}
 
-  &__detail {
-    fill: $background-color;
-    stroke: $background-color;
+.#{$grommet-namespace}status-icon__detail {
+  fill: $background-color;
+  stroke: $background-color;
+}
+
+.#{$grommet-namespace}status-icon-unknown {
+  .#{$grommet-namespace}status-icon__detail {
+    fill: map-get($brand-status-colors, unknown);
+    stroke: map-get($brand-status-colors, unknown);
   }
+}
 
-  &-unknown {
-    .#{$grommet-namespace}status-icon__detail {
-      fill: map-get($brand-status-colors, unknown);
-      stroke: map-get($brand-status-colors, unknown);
-    }
-  }
+.#{$grommet-namespace}status-icon--large {
+  width: double($inuit-base-spacing-unit);
+  height: double($inuit-base-spacing-unit);
+}
 
-  &--large {
-    width: double($inuit-base-spacing-unit);
-    height: double($inuit-base-spacing-unit);
-  }
+.#{$grommet-namespace}status-icon--xlarge {
+  width: round($inuit-base-spacing-unit * 6);
+  height: round($inuit-base-spacing-unit * 6);
+}
 
-  &--xlarge {
-    width: round($inuit-base-spacing-unit * 6);
-    height: round($inuit-base-spacing-unit * 6);
-  }
+.#{$grommet-namespace}status-icon--huge {
+  width: round($inuit-base-spacing-unit * 12);
+  height: round($inuit-base-spacing-unit * 12);
+}
 
-  &--huge {
-    width: round($inuit-base-spacing-unit * 12);
-    height: round($inuit-base-spacing-unit * 12);
-  }
+.#{$grommet-namespace}status-icon--small {
+  width: halve($inuit-base-spacing-unit);
+  height: halve($inuit-base-spacing-unit);
+  // adjust margin so it aligns with text better
+  margin-top: quarter($inuit-base-spacing-unit);
+  margin-bottom: quarter($inuit-base-spacing-unit);
 
-  &--small {
-    width: halve($inuit-base-spacing-unit);
-    height: halve($inuit-base-spacing-unit);
-    // adjust margin so it aligns with text better
-    margin-top: quarter($inuit-base-spacing-unit);
-    margin-bottom: quarter($inuit-base-spacing-unit);
-
-    .#{$grommet-namespace}status-icon__detail {
-      display: none;
-    }
+  .#{$grommet-namespace}status-icon__detail {
+    display: none;
   }
 }
 
@@ -150,11 +150,11 @@ $social-linkedin-color: #0077B5;
   width: $inuit-base-spacing-unit;
   height: $inuit-base-spacing-unit;
   @include animation('rotate 4s steps(4, end) infinite');
+}
 
-  &--small {
-    width: halve($inuit-base-spacing-unit);
-    height: halve($inuit-base-spacing-unit);
-  }
+.#{$grommet-namespace}icon-spinning--small {
+  width: halve($inuit-base-spacing-unit);
+  height: halve($inuit-base-spacing-unit);
 }
 
 $logo-size: double($inuit-base-spacing-unit);
@@ -183,26 +183,26 @@ $logo-dash-size: round($logo-size * 16);
       @include animation('draw-logo 2.5s linear');
     }
   }
+}
 
-  &--small {
-    width: halve($logo-size);
-    height: halve($logo-size);
-  }
+.#{$grommet-namespace}logo-icon--small {
+  width: halve($logo-size);
+  height: halve($logo-size);
+}
 
-  &--large {
-    width: double($logo-size);
-    height: double($logo-size);
-  }
+.#{$grommet-namespace}logo-icon--large {
+  width: double($logo-size);
+  height: double($logo-size);
+}
 
-  &--xlarge {
-    width: quadruple($logo-size);
-    height: quadruple($logo-size);
-  }
+.#{$grommet-namespace}logo-icon--xlarge {
+  width: quadruple($logo-size);
+  height: quadruple($logo-size);
+}
 
-  &--huge {
-    width: round($logo-size * 8);
-    height: round($logo-size * 8);
-  }
+.#{$grommet-namespace}logo-icon--huge {
+  width: round($logo-size * 8);
+  height: round($logo-size * 8);
 }
 
 .right-left-icon {

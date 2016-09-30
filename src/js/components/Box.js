@@ -106,6 +106,10 @@ export default class Box extends Component {
           // don't apply 100% max-width when size using size.width.max option
           classes.push(`${CLASS_ROOT}--size`);
         }
+        if (size.width && size.width.max) {
+          // allow widths to shrink, apply 100% width
+          classes.push(`${CLASS_ROOT}--width-max`);
+        }
       }
     }
 
@@ -139,7 +143,7 @@ export default class Box extends Component {
         let boxLabel = a11yTitle ||
           Intl.getMessage(this.context.intl, 'Box');
         a11yProps.tabIndex = 0;
-        a11yProps["aria-label"] = boxLabel;
+        a11yProps["aria-label"] = this.props['aria-label'] || boxLabel;
         a11yProps.role = role || 'link';
       }
     }
@@ -222,14 +226,13 @@ Box.propTypes = {
   appCentered: PropTypes.bool,
   backgroundImage: PropTypes.string,
   basis: PropTypes.oneOf(SIZES),
-  children: PropTypes.any,
   colorIndex: PropTypes.string,
   containerClassName: PropTypes.string,
   direction: PropTypes.oneOf(['row', 'column']),
   focusable: PropTypes.bool,
   flex: PropTypes.oneOf(['grow', 'shrink', true, false]),
   full: PropTypes.oneOf([true, 'horizontal', 'vertical', false]),
-    // remove in 1.0
+    // remove in 1.0?
   onClick: PropTypes.func,
   justify: PropTypes.oneOf(['start', 'center', 'between', 'end']),
   margin: PropTypes.oneOfType([

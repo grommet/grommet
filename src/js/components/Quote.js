@@ -35,13 +35,26 @@ export default class Quote extends Component {
       };
     }
 
+    let creditElement;
+    if (typeof credit === 'string') {
+      let content = credit;
+      if (emphasizeCredit) {
+        content = <strong>{content}</strong>;
+      }
+      creditElement = (
+        <Paragraph className={`${CLASS_ROOT}__credit`}>
+          {content}
+        </Paragraph>
+      );
+    } else {
+      creditElement = credit;
+    }
+
     return (
       <Box {...boxProps} className={classes}>
         <div>
           {children}
-          <Paragraph className={`${CLASS_ROOT}__credit`}>
-            {credit}
-          </Paragraph>
+          {creditElement}
         </div>
       </Box>
     );
@@ -51,7 +64,7 @@ export default class Quote extends Component {
 Quote.propTypes = {
   borderColorIndex: PropTypes.string,
   size: PropTypes.oneOf(['small', 'medium', 'large', 'full']),
-  credit: PropTypes.string,
+  credit: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   emphasizeCredit: PropTypes.bool,
   ...Box.propTypes
 };

@@ -9,32 +9,30 @@
   list-style: none;
   border-bottom: 1px solid $border-color;
 
-  &--justify {
-    &-center {
-      justify-content: center;
-    }
-
-    &-start {
-      justify-content: flex-start;
-    }
-
-    &-end {
-      justify-content: flex-end;
-    }
-
-    &-start,
-    &-center,
-    &-end {
-      &.#{$grommet-namespace}tabs--responsive {
-        @include media-query(palm) {
-          flex-direction: column;
-          text-align: center;
-        }
-      }
-    }
-  }
-
   + div:focus {
     outline: none;
+  }
+}
+
+.#{$grommet-namespace}tabs--justify-center {
+  justify-content: center;
+}
+
+.#{$grommet-namespace}tabs--justify-start {
+  justify-content: flex-start;
+}
+
+.#{$grommet-namespace}tabs--justify-end {
+  justify-content: flex-end;
+}
+
+.#{$grommet-namespace}tabs--justify-start,
+.#{$grommet-namespace}tabs--justify-center,
+.#{$grommet-namespace}tabs--justify-end {
+  &.#{$grommet-namespace}tabs--responsive {
+    @include media-query(palm) {
+      flex-direction: column;
+      text-align: center;
+    }
   }
 }

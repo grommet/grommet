@@ -8,7 +8,6 @@ import DOMUtils from '../utils/DOM';
 import Props from '../utils/Props';
 import Scroll from '../utils/Scroll';
 import Responsive from '../utils/Responsive';
-// import CarouselControls from './CarouselControls';
 import Button from './Button';
 import NextIcon from './icons/base/LinkNext';
 import PreviousIcon from './icons/base/LinkPrevious';
@@ -508,14 +507,7 @@ export default class Article extends Component {
     const CONTROL_CLASS_PREFIX =
       `${CLASS_ROOT}__control ${CLASS_ROOT}__control`;
     const childCount = React.Children.count(this.props.children);
-    let controls = [
-      // Don't use CarouselControls for now
-      // <CarouselControls key="carousel"
-      //   className={CONTROL_CLASS_PREFIX + "carousel"}
-      //   count={childCount}
-      //   direction={this.props.direction}
-      //   selected={this.state.selectedIndex} onChange={this._onSelect} />
-    ];
+    let controls = [];
 
     const a11yTitle = this.props.a11yTitle || {};
     if ('row' === this.props.direction) {
@@ -639,8 +631,6 @@ export default class Article extends Component {
 
 Article.propTypes = {
   controls: PropTypes.bool,
-  primary: PropTypes.bool,
-  scrollStep: PropTypes.bool,
   ...Box.propTypes,
   a11yTitle: PropTypes.shape({
     next: PropTypes.string,
@@ -648,6 +638,7 @@ Article.propTypes = {
   }),
   onProgress: PropTypes.func,
   onSelect: PropTypes.func,
+  scrollStep: PropTypes.bool,
   selected: PropTypes.number
 };
 

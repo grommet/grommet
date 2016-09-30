@@ -6,56 +6,54 @@ exports[`Tabs has correct default options 1`] = `
     <li
       className="grommetux-tab grommetux-tab--active"
       id="tab-0">
-      <a
-        aria-expanded={true}
-        aria-labelledby="tab-0"
-        aria-selected={true}
-        className="grommetux-tab__link"
-        href="#"
+      <button
+        aria-label={undefined}
+        className="grommetux-button grommetux-button--plain"
+        disabled={false}
+        href={undefined}
+        id={undefined}
+        onBlur={[Function onBlur]}
         onClick={[Function bound _onClickTab]}
-        role="tab">
+        onFocus={[Function onFocus]}
+        onMouseDown={[Function onMouseDown]}
+        onMouseUp={[Function onMouseUp]}
+        type="button">
         <label
           className="grommetux-tab__label"
           htmlFor="tab-0">
           Tab Title
         </label>
-      </a>
+      </button>
     </li>
     <li
       className="grommetux-tab"
       id="tab-1">
-      <a
-        aria-expanded={false}
-        aria-labelledby="tab-1"
-        aria-selected={false}
-        className="grommetux-tab__link"
-        href="#"
+      <button
+        aria-label={undefined}
+        className="grommetux-button grommetux-button--plain"
+        disabled={false}
+        href={undefined}
+        id={undefined}
+        onBlur={[Function onBlur]}
         onClick={[Function bound _onClickTab]}
-        role="tab">
+        onFocus={[Function onFocus]}
+        onMouseDown={[Function onMouseDown]}
+        onMouseUp={[Function onMouseUp]}
+        type="button">
         <label
           className="grommetux-tab__label"
           htmlFor="tab-1">
           Tab Title 2
         </label>
-      </a>
+      </button>
     </li>
   </ul>
   <div
     aria-label="Tab Contents"
-    role="tabpanel"
-    tabIndex="0">
-    <div
-      aria-label="Tab Contents"
-      className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-tabs__content"
-      id={undefined}
-      onClick={undefined}
-      role={undefined}
-      style={Object {}}
-      tabIndex={undefined}>
-      <h1>
-        test
-      </h1>
-    </div>
+    role="tabpanel">
+    <h1>
+      test
+    </h1>
   </div>
 </div>
 `;
@@ -68,56 +66,54 @@ exports[`Tabs has correct initialIndex=0 rendering 1`] = `
     <li
       className="grommetux-tab grommetux-tab--active"
       id="tab-0">
-      <a
-        aria-expanded={true}
-        aria-labelledby="tab-0"
-        aria-selected={true}
-        className="grommetux-tab__link"
-        href="#"
+      <button
+        aria-label={undefined}
+        className="grommetux-button grommetux-button--plain"
+        disabled={false}
+        href={undefined}
+        id={undefined}
+        onBlur={[Function onBlur]}
         onClick={[Function bound _onClickTab]}
-        role="tab">
+        onFocus={[Function onFocus]}
+        onMouseDown={[Function onMouseDown]}
+        onMouseUp={[Function onMouseUp]}
+        type="button">
         <label
           className="grommetux-tab__label"
           htmlFor="tab-0">
           Tab Title
         </label>
-      </a>
+      </button>
     </li>
     <li
       className="grommetux-tab"
       id="tab-1">
-      <a
-        aria-expanded={false}
-        aria-labelledby="tab-1"
-        aria-selected={false}
-        className="grommetux-tab__link"
-        href="#"
+      <button
+        aria-label={undefined}
+        className="grommetux-button grommetux-button--plain"
+        disabled={false}
+        href={undefined}
+        id={undefined}
+        onBlur={[Function onBlur]}
         onClick={[Function bound _onClickTab]}
-        role="tab">
+        onFocus={[Function onFocus]}
+        onMouseDown={[Function onMouseDown]}
+        onMouseUp={[Function onMouseUp]}
+        type="button">
         <label
           className="grommetux-tab__label"
           htmlFor="tab-1">
           Tab Title 2
         </label>
-      </a>
+      </button>
     </li>
   </ul>
   <div
     aria-label="Tab Contents"
-    role="tabpanel"
-    tabIndex="0">
-    <div
-      aria-label="Tab Contents"
-      className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-tabs__content"
-      id={undefined}
-      onClick={undefined}
-      role={undefined}
-      style={Object {}}
-      tabIndex={undefined}>
-      <h1>
-        test
-      </h1>
-    </div>
+    role="tabpanel">
+    <h1>
+      test
+    </h1>
   </div>
 </div>
 `;
@@ -130,56 +126,54 @@ exports[`Tabs has correct initialIndex=0 rendering 2`] = `
     <li
       className="grommetux-tab"
       id="tab-0">
-      <a
-        aria-expanded={false}
-        aria-labelledby="tab-0"
-        aria-selected={false}
-        className="grommetux-tab__link"
-        href="#"
+      <button
+        aria-label={undefined}
+        className="grommetux-button grommetux-button--plain"
+        disabled={false}
+        href={undefined}
+        id={undefined}
+        onBlur={[Function onBlur]}
         onClick={[Function bound _onClickTab]}
-        role="tab">
+        onFocus={[Function onFocus]}
+        onMouseDown={[Function onMouseDown]}
+        onMouseUp={[Function onMouseUp]}
+        type="button">
         <label
           className="grommetux-tab__label"
           htmlFor="tab-0">
           Tab Title
         </label>
-      </a>
+      </button>
     </li>
     <li
       className="grommetux-tab grommetux-tab--active"
       id="tab-1">
-      <a
-        aria-expanded={true}
-        aria-labelledby="tab-1"
-        aria-selected={true}
-        className="grommetux-tab__link"
-        href="#"
+      <button
+        aria-label={undefined}
+        className="grommetux-button grommetux-button--plain"
+        disabled={false}
+        href={undefined}
+        id={undefined}
+        onBlur={[Function onBlur]}
         onClick={[Function bound _onClickTab]}
-        role="tab">
+        onFocus={[Function onFocus]}
+        onMouseDown={[Function onMouseDown]}
+        onMouseUp={[Function onMouseUp]}
+        type="button">
         <label
           className="grommetux-tab__label"
           htmlFor="tab-1">
           Tab Title 2
         </label>
-      </a>
+      </button>
     </li>
   </ul>
   <div
     aria-label="Tab Contents"
-    role="tabpanel"
-    tabIndex="0">
-    <div
-      aria-label="Tab Contents"
-      className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-tabs__content"
-      id={undefined}
-      onClick={undefined}
-      role={undefined}
-      style={Object {}}
-      tabIndex={undefined}>
-      <h1>
-        test 2
-      </h1>
-    </div>
+    role="tabpanel">
+    <h1>
+      test 2
+    </h1>
   </div>
 </div>
 `;

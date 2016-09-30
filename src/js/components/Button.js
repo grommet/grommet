@@ -8,6 +8,13 @@ import CSSClassnames from '../utils/CSSClassnames';
 const CLASS_ROOT = CSSClassnames.BUTTON;
 
 export default class Button extends Component {
+  constructor () {
+    super();
+    this.state = {
+      mouseActive: false,
+      focus: false
+    };
+  }
   render () {
     const plain = (this.props.plain !== undefined ? this.props.plain :
       (this.props.icon && ! this.props.label));
@@ -30,6 +37,7 @@ export default class Button extends Component {
       CLASS_ROOT,
       this.props.className,
       {
+        [`${CLASS_ROOT}--focus`]: this.state.focus,
         [`${CLASS_ROOT}--primary`]: this.props.primary,
         [`${CLASS_ROOT}--secondary`]: this.props.secondary,
         [`${CLASS_ROOT}--accent`]: this.props.accent,
@@ -54,7 +62,15 @@ export default class Button extends Component {
       <Tag href={this.props.href} id={this.props.id} type={type}
         className={classes} aria-label={this.props.a11yTitle}
         onClick={this.props.onClick}
-        disabled={!this.props.onClick && !this.props.href}>
+        disabled={!this.props.onClick && !this.props.href}
+        onMouseDown={() => this.setState({ mouseActive: true })}
+        onMouseUp={() => this.setState({ mouseActive: false })}
+        onFocus={() => {
+          if (this.state.mouseActive === false) {
+            this.setState({ focus: true });
+          }
+        }}
+        onBlur={() => this.setState({ focus: false })}>
         {icon}
         {children}
       </Tag>
@@ -67,6 +83,7 @@ Button.propTypes = {
   accent: PropTypes.bool,
   align: PropTypes.oneOf(['start', 'center', 'end']),
   fill: PropTypes.bool,
+  href: PropTypes.string,
   icon: PropTypes.element,
   id: PropTypes.string,
   label: PropTypes.node,

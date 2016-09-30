@@ -2,7 +2,6 @@
 
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
-import Legend from './Legend';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 import Intl from '../utils/Intl';
 import CSSClassnames from '../utils/CSSClassnames';
@@ -37,7 +36,6 @@ export default class Distribution extends Component {
     this._placeItems = this._placeItems.bind(this);
 
     this.state = this._stateFromProps(props);
-    this.state.legendPosition = 'bottom';
     this.state.width = DEFAULT_WIDTH;
     this.state.height = DEFAULT_HEIGHT;
     this.state.activeIndex = 0;
@@ -65,8 +63,14 @@ export default class Distribution extends Component {
     // preserve width and height we calculated already
     state.width = this.state.width;
     state.height = this.state.height;
-    // _layout is only needed if the component area changes, just place items
-    this.setState(state, this._placeItems);
+    state.needLayout = true;
+    this.setState(state);
+  }
+
+  componentDidUpdate () {
+    if (this.state.needLayout) {
+      this.setState({ needLayout: false, items: undefined }, this._layout);
+    }
   }
 
   componentWillUnmount () {
@@ -250,14 +254,6 @@ export default class Distribution extends Component {
   }
 
   _layout () {
-    // legendPosition based on available window orientation
-    let ratio = window.innerWidth / window.innerHeight;
-    if (ratio < 0.8) {
-      this.setState({legendPosition: 'bottom'});
-    } else if (ratio > 1.2) {
-      this.setState({legendPosition: 'right'});
-    }
-
     const container = this.containerRef;
     const rect = container.getBoundingClientRect();
     const width = Math.round(rect.width);
@@ -334,15 +330,6 @@ export default class Distribution extends Component {
 
   _onDeactivate () {
     this.setState({activeIndex: 0});
-  }
-
-  _renderLegend () {
-    return (
-      <Legend ref={ref => this.legendRef = ref}
-        className={CLASS_ROOT + "__legend"} series={this.props.series}
-        units={this.props.units} activeIndex={this.state.activeIndex}
-        onActive={this._onActivate} />
-    );
   }
 
   _renderItemLabel (datum, labelRect, index) {
@@ -494,7 +481,6 @@ export default class Distribution extends Component {
 
   render () {
     let classes = [CLASS_ROOT];
-    classes.push(`${CLASS_ROOT}--legend-${this.state.legendPosition}`);
     if (this.props.size) {
       classes.push(`${CLASS_ROOT}--${this.props.size}`);
     }
@@ -509,11 +495,6 @@ export default class Distribution extends Component {
     }
     if (this.props.className) {
       classes.push(this.props.className);
-    }
-
-    let legend;
-    if (this.props.legend) {
-      legend = this._renderLegend();
     }
 
     let background;
@@ -581,7 +562,6 @@ export default class Distribution extends Component {
           className={`${CLASS_ROOT}__labels`}>
           {labels}
         </div>
-        {legend}
       </div>
     );
   }
@@ -597,9 +577,7 @@ Distribution.propTypes = {
   a11yTitleId: PropTypes.string,
   a11yDescId: PropTypes.string,
   a11yDesc: PropTypes.string,
-  full: PropTypes.bool,
-  legend: PropTypes.bool, // remove in 1.0
-  legendTotal: PropTypes.bool, // remove in 1.0
+  full: PropTypes.bool, // deprecated, use size="full"
   series: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.node,
     value: PropTypes.number.isRequired,
@@ -612,12 +590,13 @@ Distribution.propTypes = {
       svgElement: PropTypes.node
     })
   })),
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  size: PropTypes.oneOf(['small', 'medium', 'large', 'full']),
   units: PropTypes.string,
   vertical: PropTypes.bool
 };
 
 Distribution.defaultProps = {
   a11yTitleId: 'distribution-title',
-  a11yDescId: 'distribution-desc'
+  a11yDescId: 'distribution-desc',
+  size: 'medium'
 };

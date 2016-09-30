@@ -6,7 +6,7 @@ exports[`Meter has correct default options 1`] = `
     <div
       className="grommetux-meter__graphic-container">
       <svg
-        aria-label="Bar Meter. , Value: 40 , Min: 0 , Max: 100 "
+        aria-label="Bar Meter. , Value: 40, Max: 100"
         className="grommetux-meter__graphic"
         height={24}
         onBlur={[Function bound _onGraphicBlur]}
@@ -37,7 +37,7 @@ exports[`Meter has correct default options 1`] = `
         <g
           className="grommetux-meter__values">
           <g
-            aria-label="40 "
+            aria-label="40"
             role={undefined}>
             <path
               className="grommetux-meter__slice grommetux-color-index-graph-1"

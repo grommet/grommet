@@ -2,7 +2,7 @@ exports[`DateTime has correct default options 1`] = `
 <div
   className="grommetux-date-time">
   <input
-    className="grommetux-date-time__input"
+    className="grommetux-input grommetux-date-time__input"
     id={undefined}
     name={undefined}
     onChange={[Function bound _onInputChange]}
@@ -14,7 +14,11 @@ exports[`DateTime has correct default options 1`] = `
     disabled={false}
     href={undefined}
     id={undefined}
+    onBlur={[Function onBlur]}
     onClick={[Function bound _onControlClick]}
+    onFocus={[Function onFocus]}
+    onMouseDown={[Function onMouseDown]}
+    onMouseUp={[Function onMouseUp]}
     type="button">
     <span
       className="grommetux-button__icon">

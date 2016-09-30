@@ -3,12 +3,16 @@
 import React from 'react';
 import renderer from 'react/lib/ReactTestRenderer';
 
-import Attribute from '../../src/js/components/Attribute';
+import Select from '../../src/js/components/Select';
 
-describe('Attribute', () => {
+// needed because this:
+// https://github.com/facebook/jest/issues/1353
+jest.mock('react-dom');
+
+describe('Select', () => {
   it('has correct default options', () => {
     const component = renderer.create(
-      <Attribute label='testLabel'>testContent</Attribute>
+       <Select id="item1" name="item-1" value="one" />
     );
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();

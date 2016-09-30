@@ -105,7 +105,7 @@ exports[`Anchor has correct primary=true rendering 1`] = `
   onClick={undefined}
   target={undefined}>
   <svg
-    aria-labelledby="undefined-icon"
+    aria-labelledby="anchor-next-title-id"
     className="grommetux-control-icon grommetux-control-icon-link-next grommetux-control-icon--responsive"
     height="24px"
     role="img"
@@ -113,8 +113,8 @@ exports[`Anchor has correct primary=true rendering 1`] = `
     viewBox="0 0 24 24"
     width="24px">
     <title
-      id="undefined-icon">
-      undefined-icon
+      id="anchor-next-title-id">
+      link next
     </title>
     <g>
       <rect

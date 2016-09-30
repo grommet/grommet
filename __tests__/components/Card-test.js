@@ -14,10 +14,7 @@ describe('Card', () => {
     const component = renderer.create(
       <Card thumbnail="http://grommet.github.io/img/carousel-1.png"
         label="Featured Post"
-        heading="The Key Steps to Reducing Software Spend"
-        text="HPE Software Licensing and Management Solutions can
-            help you optimize your software investments through control of
-            complex negotiations and renewal processes" />
+        heading="The Key Steps to Reducing Software Spend" />
     );
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();

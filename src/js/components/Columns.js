@@ -209,7 +209,6 @@ export default class Columns extends Component {
 }
 
 Columns.propTypes = {
-  count: PropTypes.number,
   justify: PropTypes.oneOf(['start', 'center', 'between', 'end']),
   masonry: PropTypes.bool,
   maxCount: PropTypes.number,

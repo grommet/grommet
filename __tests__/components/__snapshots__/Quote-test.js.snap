@@ -8,10 +8,6 @@ exports[`Quote has correct default options 1`] = `
   tabIndex={undefined}>
   <div>
     Testing
-    <p
-      className="grommetux-paragraph grommetux-quote__credit"
-      dangerouslySetInnerHTML={undefined}
-      id={undefined} />
   </div>
 </div>
 `;

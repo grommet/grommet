@@ -7,10 +7,7 @@ var Grommet = {
   App: require('./components/App'),
   Article: require('./components/Article'),
   Box: require('./components/Box'),
-  Brick: require('./components/Brick'),
-  Bricks: require('./components/Bricks'),
   Button: require('./components/Button'),
-  Calendar: require('./components/Calendar'),
   Carousel: require('./components/Carousel'),
   chart: {
     Area: require('./components/chart/Area'),
@@ -26,7 +23,6 @@ var Grommet = {
     MarkerLabel: require('./components/chart/MarkerLabel'),
     Range: require('./components/chart/Range')
   },
-  Chart: require('./components/Chart'),
   CheckBox: require('./components/CheckBox'),
   Columns: require('./components/Columns'),
   DateTime: require('./components/DateTime'),
@@ -40,14 +36,12 @@ var Grommet = {
   Headline: require('./components/Headline'),
   Hero: require('./components/Hero'),
   Image: require('./components/Image'),
-  ImageField: require('./components/ImageField'),
   Grommet: require('./components/Grommet'),
   Label: require('./components/Label'),
   Layer: require('./components/Layer'),
   Legend: require('./components/Legend'),
   List: require('./components/List'),
   ListItem: require('./components/ListItem'),
-  Login: require('./components/Login'),
   LoginForm: require('./components/LoginForm'),
   Map: require('./components/Map'),
   Markdown: require('./components/Markdown'),
@@ -60,6 +54,7 @@ var Grommet = {
   Search: require('./components/Search'),
   SearchInput: require('./components/SearchInput'),
   Section: require('./components/Section'),
+  Select: require('./components/Select'),
   Sidebar: require('./components/Sidebar'),
   Split: require('./components/Split'),
   SkipLinkAnchor: require('./components/SkipLinkAnchor'),
@@ -70,6 +65,7 @@ var Grommet = {
   Table: require('./components/Table'),
   TableRow: require('./components/TableRow'),
   Tabs: require('./components/Tabs'),
+  TextInput: require('./components/TextInput'),
   Tiles: require('./components/Tiles'),
   Tile: require('./components/Tile'),
   Timestamp: require('./components/Timestamp'),
@@ -94,7 +90,6 @@ var Grommet = {
   KeyboardAccelerators: require('./utils/KeyboardAccelerators'),
   Locale: require('./utils/Locale'),
   Rest: require('./utils/Rest'),
-  RestWatch: require('./utils/RestWatch'),
   Validator: require('./utils/Validator')
 };
 

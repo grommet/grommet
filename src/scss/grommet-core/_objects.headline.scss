@@ -4,6 +4,8 @@
   font-weight: 100;
   margin-bottom: $inuit-base-spacing-unit;
   max-width: 100%;
+  @include text-align();
+  @include vertical-margin();
 
   @include media-query(lap-and-up) {
     @include inuit-font-size(64px, 1);
@@ -11,33 +13,30 @@
   @include media-query(palm) {
     @include inuit-font-size(48px, 1);
   }
+}
 
-  &--xlarge {
-    @include media-query(lap-and-up) {
-      @include inuit-font-size(192px, 1);
-    }
-    @include media-query(palm) {
-      @include inuit-font-size(72px, 1);
-    }
+.#{$grommet-namespace}headline--xlarge {
+  @include media-query(lap-and-up) {
+    @include inuit-font-size(192px, 1);
   }
-
-  &--large {
-    @include media-query(lap-and-up) {
-      @include inuit-font-size(96px, 1);
-    }
-    @include media-query(palm) {
-      @include inuit-font-size(60px, 1);
-    }
+  @include media-query(palm) {
+    @include inuit-font-size(72px, 1);
   }
+}
 
-  &--small {
-    @include inuit-font-size(30px, 1);
+.#{$grommet-namespace}headline--large {
+  @include media-query(lap-and-up) {
+    @include inuit-font-size(96px, 1);
   }
-
-  &--strong {
-    font-weight: 600;
+  @include media-query(palm) {
+    @include inuit-font-size(60px, 1);
   }
+}
 
-  @include text-align();
-  @include vertical-margin();
+.#{$grommet-namespace}headline--small {
+  @include inuit-font-size(30px, 1);
+}
+
+.#{$grommet-namespace}headline--strong {
+  font-weight: 600;
 }

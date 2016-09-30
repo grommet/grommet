@@ -2,21 +2,17 @@
   border-width: $inuit-base-spacing-unit;
   border-style: solid;
   max-width: 100%;
+}
 
-  &--small {
-    width: $size-medium;
-    border-width: halve($inuit-base-spacing-unit);
-  }
+.#{$grommet-namespace}quote--small {
+  width: $size-medium;
+  border-width: halve($inuit-base-spacing-unit);
+}
 
-  &--medium {
-    width: $size-large;
-  }
+.#{$grommet-namespace}quote--medium {
+  width: $size-large;
+}
 
-  &--large {
-    width: $size-xlarge;
-  }
-
-  &--emphasize-credit &__credit {
-    font-weight: 600;
-  }
+.#{$grommet-namespace}quote--large {
+  width: $size-xlarge;
 }

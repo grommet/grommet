@@ -57,6 +57,7 @@ export default class Header extends Component {
     var containerClasses = [`${CLASS_ROOT}__container`];
     var wrapperClasses = [`${CLASS_ROOT}__wrapper`];
     var other = Props.pick(this.props, Object.keys(Box.propTypes));
+    let restProps = Props.omit(this.props, Object.keys(Header.propTypes));
     if (this.props.fixed) {
       containerClasses.push(`${CLASS_ROOT}__container--fixed`);
 
@@ -78,9 +79,6 @@ export default class Header extends Component {
     if (this.props.splash) {
       classes.push(`${CLASS_ROOT}--splash`);
     }
-    if (this.props.strong) {
-      classes.push(`${CLASS_ROOT}--strong`);
-    }
     if (this.props.className) {
       classes.push(this.props.className);
     }
@@ -92,7 +90,8 @@ export default class Header extends Component {
             className={`${CLASS_ROOT}__mirror`} />
           <div className={wrapperClasses.join(' ')}>
             <Box ref={ref => this.contentRef = ref}
-              tag={this.props.header} {...other} className={classes.join(' ')}>
+              tag="header" {...other} {...restProps}
+              className={classes.join(' ')}>
               {this.props.children}
             </Box>
           </div>
@@ -100,7 +99,8 @@ export default class Header extends Component {
       );
     } else {
       return (
-        <Box tag={this.props.header} {...other} className={classes.join(' ')}
+        <Box tag="header" {...other} {...restProps} role={this.props.role}
+          className={classes.join(' ')}
           containerClassName={containerClasses.join(' ')}>
           {this.props.children}
         </Box>
@@ -115,8 +115,6 @@ Header.propTypes = {
   float: PropTypes.bool,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   splash: PropTypes.bool,
-  strong: PropTypes.bool,
-  tag: PropTypes.string,
   ...Box.propTypes
 };
 
@@ -124,6 +122,5 @@ Header.defaultProps = {
   pad: { horizontal: 'none', vertical: 'none', between: 'small'},
   direction: 'row',
   align: 'center',
-  responsive: false,
-  tag: 'header'
+  responsive: false
 };
