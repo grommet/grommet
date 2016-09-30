@@ -4,7 +4,6 @@ import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import Box from './Box';
 import Paragraph from './Paragraph';
-import Props from '../utils/Props';
 import CSSClassnames from '../utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.QUOTE;
@@ -13,26 +12,22 @@ const BORDER_COLOR_INDEX = CSSClassnames.BORDER_COLOR_INDEX;
 export default class Quote extends Component {
   render () {
     const {
-      borderColorIndex, children, className, credit, emphasizeCredit, size
+      borderColorIndex, children, className, credit, emphasizeCredit,
+      ...props
     } = this.props;
 
     const classes = classnames(
       CLASS_ROOT,
-      className,
       {
-        [`${BORDER_COLOR_INDEX}-${borderColorIndex}`]:
-          borderColorIndex,
-        [`${CLASS_ROOT}--${size}`]: size,
+        [`${BORDER_COLOR_INDEX}-${borderColorIndex}`]: borderColorIndex,
+        [`${CLASS_ROOT}--small`]: 'small' === props.size,
         [`${CLASS_ROOT}--emphasize-credit`]: emphasizeCredit
-      }
+      },
+      className
     );
 
-    const boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
-
-    if (size === 'small') {
-      boxProps.pad = {
-        horizontal: 'medium', vertical: 'small'
-      };
+    if (props.size === 'small') {
+      props.pad = { horizontal: 'medium', vertical: 'small' };
     }
 
     let creditElement;
@@ -51,7 +46,7 @@ export default class Quote extends Component {
     }
 
     return (
-      <Box {...boxProps} className={classes}>
+      <Box {...props} className={classes}>
         <div>
           {children}
           {creditElement}
