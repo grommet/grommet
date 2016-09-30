@@ -46,7 +46,6 @@ export default class Anchor extends Component {
 
     let classes = classnames(
       CLASS_ROOT,
-      className,
       {
         [`${CLASS_ROOT}--animate-icon`]: hasIcon && animateIcon !== false,
         [`${CLASS_ROOT}--disabled`]: disabled,
@@ -54,7 +53,8 @@ export default class Anchor extends Component {
         [`${CLASS_ROOT}--icon-label`]: hasIcon && label,
         [`${CLASS_ROOT}--primary`]: primary,
         [`${CLASS_ROOT}--reverse`]: reverse
-      }
+      },
+      className
     );
 
     if (!anchorChildren) {
