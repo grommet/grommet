@@ -4,9 +4,17 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
 var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
@@ -146,42 +154,44 @@ var Split = function (_Component) {
       var children = _props.children;
       var className = _props.className;
       var fixed = _props.fixed;
+      var flex = _props.flex;
       var priority = _props.priority;
       var separator = _props.separator;
-      var flex = this.props.flex;
+      var props = (0, _objectWithoutProperties3.default)(_props, ['children', 'className', 'fixed', 'flex', 'priority', 'separator']);
+
+      delete props.onResponsive;
+      delete props.showOnResponsive;
       var responsive = this.state.responsive;
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, className, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--flex-' + this.props.flex, flex), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--fixed', fixed), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--separator', separator), _classnames));
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--fixed', fixed), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--separator', separator), _classnames), className);
 
-      var elements = _react.Children.toArray(children).filter(function (element) {
-        return element;
+      var filteredChildren = _react.Children.toArray(children).filter(function (child) {
+        return child;
       });
-
-      elements = elements.map(function (element, index) {
-        var hasFlex = true;
-        var className = '';
+      var boxedChildren = filteredChildren.map(function (child, index) {
+        var boxFlex = true;
+        var className = void 0;
         // When we only have room to show one child, hide the appropriate one
-        if ('single' === responsive && ('left' === priority && index > 0 || 'right' === priority && index === 0 && elements.length > 1)) {
-          className += CLASS_ROOT + '--hidden';
-          flex = 'both';
-        } else if (elements.length > 1 && (flex === 'right' && index === 0 || flex === 'left' && index === elements.length - 1)) {
-          hasFlex = false;
+        if ('single' === responsive && ('left' === priority && index > 0 || 'right' === priority && index === 0 && filteredChildren.length > 1)) {
+          className = CLASS_ROOT + '--hidden';
+        } else if (filteredChildren.length > 1 && (flex === 'right' && index === 0 || flex === 'left' && index === filteredChildren.length - 1)) {
+          boxFlex = false;
         } else {
           className = CLASS_ROOT + '--full';
         }
         return _react2.default.createElement(
           _Box2.default,
-          { key: 'element_' + index, className: className, flex: hasFlex },
-          element
+          { key: index, className: className, flex: boxFlex },
+          child
         );
       });
 
       return _react2.default.createElement(
         'div',
-        { ref: function ref(_ref) {
+        (0, _extends3.default)({ ref: function ref(_ref) {
             return _this2.splitRef = _ref;
-          }, className: classes },
-        elements
+          } }, props, { className: classes }),
+        boxedChildren
       );
     }
   }]);
