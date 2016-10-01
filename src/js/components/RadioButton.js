@@ -8,26 +8,22 @@ const CLASS_ROOT = CSSClassnames.RADIO_BUTTON;
 
 export default class RadioButton extends Component {
   render () {
-    let classes = classnames(
+    const { className, label, ...props } = this.props;
+    const classes = classnames(
       CLASS_ROOT,
-      this.props.className,
       {
-        [`${CLASS_ROOT}--disabled`]: this.props.disabled
-      }
+        [`${CLASS_ROOT}--disabled`]: props.disabled
+      },
+      className
     );
 
     return (
       <label className={classes}>
-        <input className={`${CLASS_ROOT}__input`}
-          id={this.props.id} name={this.props.name} type="radio"
-          disabled={this.props.disabled}
-          checked={this.props.checked}
-          defaultChecked={this.props.defaultChecked}
-          value={this.props.value}
-          onChange={this.props.onChange} />
+        <input {...props} className={`${CLASS_ROOT}__input`}
+          type="radio" />
         <span className={`${CLASS_ROOT}__control`} />
           <span className={`${CLASS_ROOT}__label`}>
-            {this.props.label}
+            {label}
           </span>
       </label>
     );
