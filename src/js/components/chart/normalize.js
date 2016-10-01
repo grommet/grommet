@@ -1,7 +1,6 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import zip from 'lodash/zip';
-import flatten from 'lodash/flatten';
 
 /**
  * The normalize util includes a normalize method in order to help
@@ -202,4 +201,9 @@ export function normalize(Series, granularity) {
   }
   result.values = normalizedYValues;
   return result;
+}
+
+
+function flatten(series) {
+  return series.reduce((x, y) => x.concat(y));
 }
