@@ -4,9 +4,17 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
 var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
@@ -55,23 +63,23 @@ var RadioButton = function (_Component) {
   (0, _createClass3.default)(RadioButton, [{
     key: 'render',
     value: function render() {
-      var classes = (0, _classnames3.default)(CLASS_ROOT, this.props.className, (0, _defineProperty3.default)({}, CLASS_ROOT + '--disabled', this.props.disabled));
+      var _props = this.props;
+      var className = _props.className;
+      var label = _props.label;
+      var props = (0, _objectWithoutProperties3.default)(_props, ['className', 'label']);
+
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--disabled', props.disabled), className);
 
       return _react2.default.createElement(
         'label',
         { className: classes },
-        _react2.default.createElement('input', { className: CLASS_ROOT + '__input',
-          id: this.props.id, name: this.props.name, type: 'radio',
-          disabled: this.props.disabled,
-          checked: this.props.checked,
-          defaultChecked: this.props.defaultChecked,
-          value: this.props.value,
-          onChange: this.props.onChange }),
+        _react2.default.createElement('input', (0, _extends3.default)({}, props, { className: CLASS_ROOT + '__input',
+          type: 'radio' })),
         _react2.default.createElement('span', { className: CLASS_ROOT + '__control' }),
         _react2.default.createElement(
           'span',
           { className: CLASS_ROOT + '__label' },
-          this.props.label
+          label
         )
       );
     }

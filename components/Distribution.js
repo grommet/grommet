@@ -4,13 +4,13 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
-
-var _defineProperty3 = _interopRequireDefault(_defineProperty2);
-
 var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
 
 var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
+
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
 
 var _extends2 = require('babel-runtime/helpers/extends');
 
@@ -44,9 +44,9 @@ var _reactDom = require('react-dom');
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _classnames2 = require('classnames');
+var _classnames6 = require('classnames');
 
-var _classnames3 = _interopRequireDefault(_classnames2);
+var _classnames7 = _interopRequireDefault(_classnames6);
 
 var _KeyboardAccelerators = require('../utils/KeyboardAccelerators');
 
@@ -60,11 +60,12 @@ var _CSSClassnames = require('../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
+var _Announcer = require('../utils/Announcer');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+var CLASS_ROOT = _CSSClassnames2.default.DISTRIBUTION; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-var CLASS_ROOT = _CSSClassnames2.default.DISTRIBUTION;
 var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
 
 var DEFAULT_WIDTH = 400;
@@ -100,6 +101,7 @@ var Distribution = function (_Component) {
     _this.state.width = DEFAULT_WIDTH;
     _this.state.height = DEFAULT_HEIGHT;
     _this.state.activeIndex = 0;
+    _this.state.mouseActive = false;
     return _this;
   }
 
@@ -351,11 +353,8 @@ var Distribution = function (_Component) {
     value: function _onPreviousDistribution(event) {
       if (document.activeElement === this._distributionRef) {
         event.preventDefault();
-        var totalDistributionCount = _reactDom2.default.findDOMNode(this.distributionItemsRef).childNodes.length;
 
-        if (this.state.activeIndex - 1 < 0) {
-          this._onActivate(totalDistributionCount - 1);
-        } else {
+        if (this.state.activeIndex - 1 >= 0) {
           this._onActivate(this.state.activeIndex - 1);
         }
 
@@ -370,9 +369,7 @@ var Distribution = function (_Component) {
         event.preventDefault();
         var totalDistributionCount = _reactDom2.default.findDOMNode(this.distributionItemsRef).childNodes.length;
 
-        if (this.state.activeIndex + 1 >= totalDistributionCount) {
-          this._onActivate(0);
-        } else {
+        if (this.state.activeIndex + 1 < totalDistributionCount) {
           this._onActivate(this.state.activeIndex + 1);
         }
 
@@ -401,7 +398,16 @@ var Distribution = function (_Component) {
   }, {
     key: '_onActivate',
     value: function _onActivate(index) {
-      this.setState({ activeIndex: index });
+      var _this3 = this;
+
+      var intl = this.context.intl;
+
+      this.setState({ activeIndex: index }, function () {
+        var activeMessage = _this3.activeDistributionRef.getAttribute('aria-label');
+        var clickable = _this3.state.items[_this3.state.activeIndex].datum.onClick;
+        var enterSelectMessage = _Intl2.default.getMessage(intl, 'Enter Select');
+        (0, _Announcer.announce)(activeMessage + ' ' + (clickable ? enterSelectMessage : ''));
+      });
     }
   }, {
     key: '_onDeactivate',
@@ -411,30 +417,18 @@ var Distribution = function (_Component) {
   }, {
     key: '_renderItemLabel',
     value: function _renderItemLabel(datum, labelRect, index) {
-      var labelClasses = [CLASS_ROOT + '__label'];
-      if (!datum.icon) {
-        labelClasses.push(COLOR_INDEX + '-' + this._itemColorIndex(datum, index));
-      }
-      if (datum.icon) {
-        labelClasses.push(CLASS_ROOT + '__label--icons');
-      }
-      if (labelRect.width < SMALL_SIZE || labelRect.height < SMALL_SIZE) {
-        labelClasses.push(CLASS_ROOT + '__label--small');
-      }
-      if (labelRect.height < THIN_HEIGHT) {
-        labelClasses.push(CLASS_ROOT + '__label--thin');
-      }
+      var _classnames;
 
-      if (index === this.state.activeIndex) {
-        labelClasses.push(CLASS_ROOT + '__label--active');
-      }
+      var activeIndex = this.state.activeIndex;
+
+      var labelClasses = (0, _classnames7.default)(CLASS_ROOT + '__label', (_classnames = {}, (0, _defineProperty3.default)(_classnames, COLOR_INDEX + '-' + this._itemColorIndex(datum, index), !datum.icon), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__label--icons', datum.icon), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__label--small', labelRect.width < SMALL_SIZE || labelRect.height < SMALL_SIZE), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__label--thin', labelRect.height < THIN_HEIGHT), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__label--active', index === activeIndex), _classnames));
 
       var value = datum.labelValue !== undefined ? datum.labelValue : datum.value;
 
       return _react2.default.createElement(
         'div',
-        { key: index, className: labelClasses.join(' '),
-          'data-box-index': index, role: 'tab',
+        { key: index, className: labelClasses,
+          'data-box-index': index, role: 'presentation',
           style: { top: labelRect.y, left: labelRect.x, maxWidth: labelRect.width,
             maxHeight: labelRect.height } },
         _react2.default.createElement(
@@ -457,20 +451,15 @@ var Distribution = function (_Component) {
   }, {
     key: '_renderItemBox',
     value: function _renderItemBox(boxRect, colorIndex) {
-      var boxClasses = [CLASS_ROOT + '__item-box'];
-      if (colorIndex) {
-        boxClasses.push(COLOR_INDEX + '-' + colorIndex);
-      }
+      var boxClasses = (0, _classnames7.default)(CLASS_ROOT + '__item-box', (0, _defineProperty3.default)({}, COLOR_INDEX + '-' + colorIndex, colorIndex));
 
-      return _react2.default.createElement('rect', { className: boxClasses.join(' '),
-        x: boxRect.x, y: boxRect.y,
+      return _react2.default.createElement('rect', { className: boxClasses, x: boxRect.x, y: boxRect.y,
         width: boxRect.width, height: boxRect.height });
     }
   }, {
     key: '_renderItemIcon',
     value: function _renderItemIcon(icon, itemRect, colorIndex) {
-      var iconClasses = [CLASS_ROOT + '__item-icons'];
-      iconClasses.push(COLOR_INDEX + '-' + colorIndex);
+      var iconClasses = (0, _classnames7.default)(CLASS_ROOT + '__item-icons', COLOR_INDEX + '-' + colorIndex);
 
       var icons = [];
       // fill box with icons
@@ -495,26 +484,24 @@ var Distribution = function (_Component) {
 
       return _react2.default.createElement(
         'g',
-        { className: iconClasses.join(' ') },
+        { className: iconClasses },
         icons
       );
     }
   }, {
     key: '_renderItem',
     value: function _renderItem(datum, rect, index) {
-      var _this3 = this;
+      var _this4 = this;
 
-      var itemClass = CLASS_ROOT + '__item';
-      var itemClasses = [itemClass];
+      var units = this.props.units;
 
-      if (datum.onClick) {
-        itemClasses.push(itemClass + '--clickable');
-      }
+
+      var itemClasses = (0, _classnames7.default)(CLASS_ROOT + '__item', (0, _defineProperty3.default)({}, CLASS_ROOT + '__item--clickable', datum.onClick));
 
       var activeDistributionRef = void 0;
       if (index === this.state.activeIndex) {
         activeDistributionRef = function activeDistributionRef(ref) {
-          return _this3.activeDistributionRef = ref;
+          return _this4.activeDistributionRef = ref;
         };
       }
 
@@ -527,12 +514,15 @@ var Distribution = function (_Component) {
         contents = this._renderItemBox(rect, colorIndex);
       }
 
+      var value = datum.labelValue !== undefined ? datum.labelValue : datum.value;
+      var labelMessage = value + ' ' + (units || '') + ', ' + datum.label;
+
       return _react2.default.createElement(
         'g',
-        { key: index, className: itemClasses.join(' '),
+        { key: index, className: itemClasses,
           onMouseOver: this._onActivate.bind(this, index),
-          onMouseLeave: this._onDeactivate,
-          ref: activeDistributionRef, role: 'presentation',
+          onMouseLeave: this._onDeactivate, role: 'row',
+          ref: activeDistributionRef, 'aria-label': labelMessage,
           'data-index': index, onClick: datum.onClick },
         contents
       );
@@ -540,41 +530,44 @@ var Distribution = function (_Component) {
   }, {
     key: '_renderBoxes',
     value: function _renderBoxes() {
-      var _this4 = this;
+      var _this5 = this;
 
       return this.state.items.map(function (item, index) {
-        return _this4._renderItem(item.datum, item.boxRect, index);
+        return _this5._renderItem(item.datum, item.boxRect, index);
       });
     }
   }, {
     key: '_renderLabels',
     value: function _renderLabels() {
-      var _this5 = this;
+      var _this6 = this;
 
       return this.state.items.map(function (item, index) {
-        return _this5._renderItemLabel(item.datum, item.labelRect, index);
+        return _this6._renderItemLabel(item.datum, item.labelRect, index);
       });
     }
   }, {
     key: '_renderLoading',
     value: function _renderLoading() {
-      var loadingClasses = [CLASS_ROOT + '__loading-indicator'];
-      loadingClasses.push(COLOR_INDEX + '-loading');
-      var loadingHeight = this.state.height / 2;
-      var loadingWidth = this.state.width;
+      var _state = this.state;
+      var height = _state.height;
+      var width = _state.width;
+
+      var loadingClasses = (0, _classnames7.default)(CLASS_ROOT + '__loading-indicator', COLOR_INDEX + '-loading');
+      var loadingHeight = height / 2;
+      var loadingWidth = width;
       var commands = 'M0,' + loadingHeight + ' L' + loadingWidth + ',' + loadingHeight;
 
       return _react2.default.createElement(
         'g',
         { key: 'loading' },
-        _react2.default.createElement('path', { stroke: 'none', className: loadingClasses.join(' '), d: commands })
+        _react2.default.createElement('path', { stroke: 'none', className: loadingClasses, d: commands })
       );
     }
   }, {
     key: 'render',
     value: function render() {
-      var _classnames,
-          _this6 = this;
+      var _classnames4,
+          _this7 = this;
 
       var _props = this.props;
       var a11yTitle = _props.a11yTitle;
@@ -586,16 +579,18 @@ var Distribution = function (_Component) {
 
       delete props.series;
       var intl = this.context.intl;
-      var _state = this.state;
-      var allIcons = _state.allIcons;
-      var height = _state.height;
-      var items = _state.items;
-      var width = _state.width;
+      var _state2 = this.state;
+      var allIcons = _state2.allIcons;
+      var focus = _state2.focus;
+      var height = _state2.height;
+      var items = _state2.items;
+      var mouseActive = _state2.mouseActive;
+      var width = _state2.width;
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--full', full), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--icons', allIcons), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--vertical', vertical), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--loading', (items || []).length === 0), _classnames), className);
+      var classes = (0, _classnames7.default)(CLASS_ROOT, className, (_classnames4 = {}, (0, _defineProperty3.default)(_classnames4, CLASS_ROOT + '--full', full), (0, _defineProperty3.default)(_classnames4, CLASS_ROOT + '--icons', allIcons), (0, _defineProperty3.default)(_classnames4, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames4, CLASS_ROOT + '--vertical', vertical), (0, _defineProperty3.default)(_classnames4, CLASS_ROOT + '--loading', (items || []).length === 0), _classnames4));
 
       var background = void 0;
-      if (!this.state.allIcons) {
+      if (!allIcons) {
         background = _react2.default.createElement('rect', { className: CLASS_ROOT + '__background', x: 0, y: 0, stroke: 'none',
           width: width, height: height });
       }
@@ -607,7 +602,7 @@ var Distribution = function (_Component) {
         labels = this._renderLabels();
       }
 
-      var role = 'tablist';
+      var role = 'group';
       var ariaLabel = a11yTitle || _Intl2.default.getMessage(intl, 'Distribution');
 
       if (boxes.length === 0) {
@@ -616,29 +611,48 @@ var Distribution = function (_Component) {
         ariaLabel = _Intl2.default.getMessage(intl, 'Loading');
       }
 
+      var graphicClasses = (0, _classnames7.default)(CLASS_ROOT + '__graphic', (0, _defineProperty3.default)({}, CLASS_ROOT + '__graphic--focus', focus));
+
       return _react2.default.createElement(
         'div',
         (0, _extends3.default)({ ref: function ref(_ref3) {
-            return _this6._containerRef = _ref3;
+            return _this7._containerRef = _ref3;
           } }, props, { className: classes }),
         _react2.default.createElement(
           'svg',
           { ref: function ref(_ref) {
-              return _this6._distributionRef = _ref;
+              return _this7._distributionRef = _ref;
             },
-            className: CLASS_ROOT + '__graphic',
+            className: graphicClasses,
             viewBox: '0 0 ' + this.state.width + ' ' + this.state.height,
             preserveAspectRatio: 'none', tabIndex: '0', role: role,
-            'aria-label': ariaLabel },
+            'aria-label': ariaLabel,
+            onMouseDown: function onMouseDown() {
+              return _this7.setState({ mouseActive: true });
+            },
+            onMouseUp: function onMouseUp() {
+              return _this7.setState({ mouseActive: false });
+            },
+            onFocus: function onFocus() {
+              if (mouseActive === false) {
+                _this7.setState({ focus: true });
+              }
+            },
+            onBlur: function onBlur() {
+              return _this7.setState({
+                focus: false
+              });
+            } },
           background,
           boxes
         ),
         _react2.default.createElement(
           'div',
           { ref: function ref(_ref2) {
-              return _this6.distributionItemsRef = _ref2;
+              return _this7.distributionItemsRef = _ref2;
             },
-            className: CLASS_ROOT + '__labels' },
+            className: CLASS_ROOT + '__labels', role: 'presentation',
+            'aria-hidden': true },
           labels
         )
       );
@@ -657,7 +671,7 @@ Distribution.contextTypes = {
 
 Distribution.propTypes = {
   a11yTitle: _react.PropTypes.string,
-  full: _react.PropTypes.bool, // deprecated, use size="full"
+  full: _react.PropTypes.bool, // deprecated, use size='full'
   series: _react.PropTypes.arrayOf(_react.PropTypes.shape({
     label: _react.PropTypes.node,
     value: _react.PropTypes.number.isRequired,

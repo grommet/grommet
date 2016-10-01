@@ -10,6 +10,12 @@
   position: absolute;
   top: 0px;
   left: 0px;
+  outline: none;
+}
+
+.#{$grommet-namespace}distribution__graphic--focus {
+  border-color: $focus-border-color;
+  box-shadow: 0 0 1px 1px $focus-border-color;
 }
 
 .#{$grommet-namespace}distribution__background {
