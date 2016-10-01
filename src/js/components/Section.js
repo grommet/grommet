@@ -9,13 +9,14 @@ const CLASS_ROOT = CSSClassnames.SECTION;
 
 export default class Section extends Component {
   render () {
-    var classes = classnames(CLASS_ROOT, this.props.className);
-
-    let boxProps = { ...this.props };
-    delete boxProps.className;
+    const { className, ...props } = this.props;
+    const classes = classnames(
+      CLASS_ROOT,
+      className
+    );
 
     return (
-      <Box {...boxProps} tag="section" className={classes} />
+      <Box {...props} tag="section" className={classes} />
     );
   }
 };
