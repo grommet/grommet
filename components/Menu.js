@@ -305,7 +305,7 @@ var MenuDrop = function (_Component) {
         { ref: function ref(_ref2) {
             return _this2.menuDropRef = _ref2;
           }, id: id, className: classes,
-          colorIndex: colorIndex, onClick: onClick },
+          colorIndex: colorIndex, onClick: onClick, tabIndex: '-1' },
         contents
       );
     }
@@ -426,7 +426,8 @@ var Menu = function (_Component2) {
             document.addEventListener('click', this._onClose);
             this._drop = _Drop2.default.add(this.controlRef, this._renderMenuDrop(), {
               align: this.props.dropAlign,
-              colorIndex: this.props.dropColorIndex
+              colorIndex: this.props.dropColorIndex,
+              focusControl: true
             });
             break;
         }

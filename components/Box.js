@@ -156,8 +156,8 @@ var Box = function (_Component) {
       var primary = _props.primary;
       var role = _props.role;
       var size = _props.size;
-      var tag = _props.tag;
       var tabIndex = _props.tabIndex;
+      var tag = _props.tag;
       var texture = _props.texture;
 
       var classes = [CLASS_ROOT];
@@ -230,7 +230,7 @@ var Box = function (_Component) {
         classes.push(CLASS_ROOT + "--clickable");
         if (focusable) {
           var boxLabel = a11yTitle || _Intl2.default.getMessage(this.context.intl, 'Box');
-          a11yProps.tabIndex = 0;
+          a11yProps.tabIndex = tabIndex || 0;
           a11yProps["aria-label"] = this.props['aria-label'] || boxLabel;
           a11yProps.role = role || 'link';
         }
