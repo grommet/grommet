@@ -432,7 +432,6 @@ export default class Menu extends Component {
     let control = (
       <Button plain={true} className={`${CLASS_ROOT}__control`}
         a11yTitle={menuTitle}
-        style={{lineHeight: this.state.controlHeight + 'px'}}
         onClick={this._onClose}>
         {this._renderControlContents()}
       </Button>
@@ -509,7 +508,6 @@ export default class Menu extends Component {
           <Button {...props} plain={true}
             className={classes}
             tabIndex="0"
-            style={{lineHeight: this.state.controlHeight + 'px'}}
             onClick={this._onOpen}
             a11yTitle={menuTitle}
             onFocus={this._onFocusControl}
