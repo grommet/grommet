@@ -2,7 +2,6 @@
 
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
-import Hammer from 'hammerjs';
 import Box from './Box';
 import Tiles from './Tiles';
 import Tile from './Tile';
@@ -47,6 +46,7 @@ export default class Carousel extends Component {
 
       window.addEventListener('resize', this._onResize);
 
+      const Hammer = require('hammerjs');
       this.hammer = new Hammer(this.carouselRef);
       this._updateHammer();
 
