@@ -53,8 +53,8 @@ class MenuDrop extends Component {
     };
     KeyboardAccelerators.startListeningToKeyboard(this, this._keyboardHandlers);
 
-    let container = ReactDOM.findDOMNode(this.navContainerRef);
-    let menuItems = container.childNodes;
+    const container = ReactDOM.findDOMNode(this.navContainerRef);
+    const menuItems = container.childNodes;
     for (let i = 0; i < menuItems.length; i++) {
       let classes = menuItems[i].className.toString();
       let tagName = menuItems[i].tagName.toLowerCase();
@@ -88,7 +88,7 @@ class MenuDrop extends Component {
 
   _processTab (event) {
     let container = ReactDOM.findDOMNode(this.menuDropRef);
-    var items = container.getElementsByTagName('*');
+    let items = container.getElementsByTagName('*');
     items = DOMUtils.filterByFocusable(items);
 
     if (!items || items.length === 0) {
@@ -108,7 +108,7 @@ class MenuDrop extends Component {
 
   _onUpKeyPress (event) {
     event.preventDefault();
-    var container = ReactDOM.findDOMNode(this.navContainerRef);
+    const container = ReactDOM.findDOMNode(this.navContainerRef);
     let menuItems = container.childNodes;
     if (!this.activeMenuItem) {
       let lastMenuItem = menuItems[menuItems.length - 1];
@@ -140,7 +140,7 @@ class MenuDrop extends Component {
 
   _onDownKeyPress (event) {
     event.preventDefault();
-    var container = ReactDOM.findDOMNode(this.navContainerRef);
+    const container = ReactDOM.findDOMNode(this.navContainerRef);
     let menuItems = container.childNodes;
     if (!this.activeMenuItem) {
       this.activeMenuItem = menuItems[0];
@@ -170,17 +170,16 @@ class MenuDrop extends Component {
   }
 
   render () {
-    let { dropAlign, size, control, id, colorIndex, onClick } = this.props;
-    let boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
-    // manage colorIndex at the outer menuDrop element
-    delete boxProps.colorIndex;
-
-    delete boxProps.onClick;
-
-    delete boxProps.size;
+    const {
+      dropAlign, size, children, control, id, colorIndex, onClick, ...props
+    } = this.props;
+    delete props.history;
+    delete props.intl;
+    delete props.router;
+    delete props.store;
 
     // Put nested Menus inline
-    const children = React.Children.map(this.props.children, child => {
+    const menuDropChildren = React.Children.map(children, child => {
       let result = child;
       if (child && isFunction(child.type) &&
         child.type.prototype._renderMenuDrop) {
@@ -192,10 +191,10 @@ class MenuDrop extends Component {
 
     let contents = [
       React.cloneElement(control, {key: 'control', fill: true}),
-      <Box {...boxProps} key="nav" ref={ref => this.navContainerRef = ref}
+      <Box {...props} key="nav" ref={ref => this.navContainerRef = ref}
         role="menu" tag="nav" className={`${CLASS_ROOT}__contents`}
         primary={false}>
-        {children}
+        {menuDropChildren}
       </Box>
     ];
 
@@ -221,19 +220,19 @@ class MenuDrop extends Component {
 }
 
 MenuDrop.propTypes = {
-  ...Box.propTypes,
   control: PropTypes.node,
   dropAlign: Drop.alignPropType,
   id: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
   router: PropTypes.any,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
-  store: PropTypes.any
+  store: PropTypes.any,
+  ...Box.propTypes
 };
 
 MenuDrop.childContextTypes = {
-  intl: PropTypes.any,
   history: PropTypes.any,
+  intl: PropTypes.any,
   router: PropTypes.any,
   store: PropTypes.any
 };
