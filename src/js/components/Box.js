@@ -66,7 +66,7 @@ export default class Box extends Component {
   render () {
     const { a11yTitle, appCentered, backgroundImage, children, className,
       colorIndex, containerClassName, focusable, id, onClick, pad, primary,
-      role, size, tag, tabIndex, texture } = this.props;
+      role, size, tabIndex, tag, texture } = this.props;
     let classes = [CLASS_ROOT];
     let containerClasses = [`${CLASS_ROOT}__container`];
     let restProps = Props.omit(this.props, Object.keys(Box.propTypes));
@@ -142,7 +142,7 @@ export default class Box extends Component {
       if (focusable) {
         let boxLabel = a11yTitle ||
           Intl.getMessage(this.context.intl, 'Box');
-        a11yProps.tabIndex = 0;
+        a11yProps.tabIndex = tabIndex || 0;
         a11yProps["aria-label"] = this.props['aria-label'] || boxLabel;
         a11yProps.role = role || 'link';
       }

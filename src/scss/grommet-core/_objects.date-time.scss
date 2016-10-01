@@ -44,6 +44,7 @@
   table {
     width: 100%;
     margin-bottom: 0;
+    outline: none;
   }
 
   th,
@@ -58,6 +59,13 @@
   }
 }
 
+.#{$grommet-namespace}date-time-drop__grid--focus {
+  table {
+    border-color: $focus-border-color;
+    box-shadow: 0 0 1px 1px $focus-border-color;
+  }
+}
+
 .#{$grommet-namespace}date-time-drop__day {
   display: inline-block;
   cursor: pointer;
@@ -67,7 +75,8 @@
   transition: background-color 0.3s;
 }
 
-.#{$grommet-namespace}date-time-drop__day:hover {
+.#{$grommet-namespace}date-time-drop__day:hover,
+.#{$grommet-namespace}date-time-drop__day--hover {
   background-color: $hover-background-color;
   color: $hover-text-color;
 }

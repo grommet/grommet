@@ -213,7 +213,7 @@ class MenuDrop extends Component {
 
     return (
       <Box ref={ref => this.menuDropRef = ref} id={id} className={classes}
-        colorIndex={colorIndex} onClick={onClick}>
+        colorIndex={colorIndex} onClick={onClick} tabIndex='-1'>
         {contents}
       </Box>
     );
@@ -337,7 +337,8 @@ export default class Menu extends Component {
             this._renderMenuDrop(),
             {
               align: this.props.dropAlign,
-              colorIndex: this.props.dropColorIndex
+              colorIndex: this.props.dropColorIndex,
+              focusControl: true
             });
           break;
       }
