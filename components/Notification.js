@@ -58,6 +58,10 @@ var _Box = require('./Box');
 
 var _Box2 = _interopRequireDefault(_Box);
 
+var _Value = require('./Value');
+
+var _Value2 = _interopRequireDefault(_Value);
+
 var _Animate = require('./Animate');
 
 var _Animate2 = _interopRequireDefault(_Animate);
@@ -88,9 +92,8 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+var CLASS_ROOT = _CSSClassnames2.default.NOTIFICATION; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-var CLASS_ROOT = _CSSClassnames2.default.NOTIFICATION;
 var BACKGROUND_COLOR_INDEX = _CSSClassnames2.default.BACKGROUND_COLOR_INDEX;
 
 var Notification = function (_Component) {
@@ -125,12 +128,16 @@ var Notification = function (_Component) {
 
       var progress = void 0;
       if (this.props.percentComplete || 0 === this.props.percentComplete) {
-        progress = _react2.default.createElement(_Meter2.default, { units: '%',
-          series: [{
-            value: this.props.percentComplete,
-            label: '',
-            colorIndex: 'light-1'
-          }] });
+        progress = _react2.default.createElement(
+          _Box2.default,
+          { direction: 'row', align: 'center' },
+          _react2.default.createElement(_Meter2.default, {
+            series: [{
+              value: this.props.percentComplete,
+              colorIndex: 'light-1'
+            }] }),
+          _react2.default.createElement(_Value2.default, { value: this.props.percentComplete, units: '%', size: 'small' })
+        );
       }
 
       var timestamp = void 0;
