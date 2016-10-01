@@ -36,10 +36,6 @@ var _classnames3 = require('classnames');
 
 var _classnames4 = _interopRequireDefault(_classnames3);
 
-var _hammerjs = require('hammerjs');
-
-var _hammerjs2 = _interopRequireDefault(_hammerjs);
-
 var _Box = require('./Box');
 
 var _Box2 = _interopRequireDefault(_Box);
@@ -80,7 +76,9 @@ var _Announcer = require('../utils/Announcer');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.CAROUSEL; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+var CLASS_ROOT = _CSSClassnames2.default.CAROUSEL;
 
 var Carousel = function (_Component) {
   (0, _inherits3.default)(Carousel, _Component);
@@ -121,7 +119,8 @@ var Carousel = function (_Component) {
 
         window.addEventListener('resize', this._onResize);
 
-        this.hammer = new _hammerjs2.default(this.carouselRef);
+        var _Hammer = require('hammerjs');
+        this.hammer = new _Hammer(this.carouselRef);
         this._updateHammer();
 
         this._handleScroll();
@@ -168,7 +167,7 @@ var Carousel = function (_Component) {
 
       if (this.hammer) {
         this.hammer.get('swipe').set({
-          direction: _hammerjs2.default.DIRECTION_HORIZONTAL
+          direction: Hammer.DIRECTION_HORIZONTAL
         });
 
         this.hammer.off('panend');
