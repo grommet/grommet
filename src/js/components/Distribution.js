@@ -275,7 +275,7 @@ export default class Distribution extends Component {
   }
 
   _onPreviousDistribution (event) {
-    if (document.activeElement === this._distributionRef) {
+    if (this._distributionRef.contains(document.activeElement)) {
       event.preventDefault();
 
       if (this.state.activeIndex - 1 >= 0) {
@@ -288,7 +288,7 @@ export default class Distribution extends Component {
   }
 
   _onNextDistribution (event) {
-    if (document.activeElement === this._distributionRef) {
+    if (this._distributionRef.contains(document.activeElement)) {
       event.preventDefault();
       var totalDistributionCount = (
         ReactDOM.findDOMNode(this.distributionItemsRef).childNodes.length
@@ -304,7 +304,7 @@ export default class Distribution extends Component {
   }
 
   _onEnter (event) {
-    if (document.activeElement === this._distributionRef) {
+    if (this._distributionRef.contains(document.activeElement)) {
       if (this.activeDistributionRef) {
         let index = this.activeDistributionRef.getAttribute('data-index');
 
@@ -325,8 +325,8 @@ export default class Distribution extends Component {
     this.setState({ activeIndex: index }, () => {
       let activeMessage = this.activeDistributionRef.getAttribute('aria-label');
       const clickable = this.state.items[this.state.activeIndex].datum.onClick;
-      const enterSelectMessage = Intl.getMessage(intl, 'Enter Select');
-      announce(`${activeMessage} ${clickable ? (enterSelectMessage) : ''}`);
+      const enterSelectMessage = `(${Intl.getMessage(intl, 'Enter Select')})`;
+      announce(`${activeMessage} ${clickable ? enterSelectMessage : ''}`);
     });
   }
 
@@ -443,12 +443,13 @@ export default class Distribution extends Component {
 
     const value =
       (datum.labelValue !== undefined ? datum.labelValue : datum.value);
-    const labelMessage = `${value} ${units || ''}, ${datum.label}`;
+    const labelMessage = `${value} ${units || ''} ${datum.label}`;
 
     return (
       <g key={index} className={itemClasses}
         onMouseOver={this._onActivate.bind(this, index)}
-        onMouseLeave={this._onDeactivate} role='row'
+        onMouseLeave={this._onDeactivate} tabIndex='-1'
+        role={datum.onClick ? 'button' : 'row'}
         ref={activeDistributionRef} aria-label={labelMessage}
         data-index={index} onClick={datum.onClick}>
         {contents}
@@ -521,7 +522,8 @@ export default class Distribution extends Component {
 
     let role = 'group';
     let ariaLabel = a11yTitle || Intl.getMessage(intl, 'Distribution');
-
+    const navigationHelpMessage = Intl.getMessage(intl, 'Navigation Help');
+    ariaLabel += ` (${navigationHelpMessage})`;
     if (boxes.length === 0) {
       boxes.push(this._renderLoading());
       role = 'img';
