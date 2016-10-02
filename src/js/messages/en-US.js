@@ -67,6 +67,7 @@ export default {
   modified: 'Modified',
   monitor: 'monitor',
   Name: 'Name',
+  'Navigation Help': 'Use arrow keys to navigate',
   'Next Month': 'Next Month',
   'Next Slide': 'Next Slide',
   OK: 'OK',

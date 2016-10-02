@@ -130,7 +130,7 @@ export default class DateTimeDrop extends Component {
   _onPreviousRow (event) {
     event.preventDefault();
     const { activeCell } = this.state;
-    if (document.activeElement === this.tableRef) {
+    if (this.tableRef.contains(document.activeElement)) {
       if (activeCell[0] - 1 >= 0) {
         activeCell[0] = activeCell[0] - 1;
         this.setState({ activeCell: activeCell }, this._announceActiveCell);
@@ -141,7 +141,7 @@ export default class DateTimeDrop extends Component {
   _onPreviousDay (event) {
     event.preventDefault();
     const { activeCell } = this.state;
-    if (document.activeElement === this.tableRef) {
+    if (this.tableRef.contains(document.activeElement)) {
       if (activeCell[1] - 1 >= 0) {
         activeCell[1] = activeCell[1] - 1;
         this.setState({ activeCell: activeCell }, this._announceActiveCell);
@@ -152,7 +152,7 @@ export default class DateTimeDrop extends Component {
   _onNextRow (event) {
     event.preventDefault();
     const { dateRows, activeCell } = this.state;
-    if (document.activeElement === this.tableRef) {
+    if (this.tableRef.contains(document.activeElement)) {
       if (activeCell[0] + 1 <= dateRows.length - 1) {
         activeCell[0] = activeCell[0] + 1;
         this.setState({ activeCell: activeCell }, this._announceActiveCell);
@@ -163,7 +163,7 @@ export default class DateTimeDrop extends Component {
   _onNextDay (event) {
     event.preventDefault();
     const { activeCell } = this.state;
-    if (document.activeElement === this.tableRef) {
+    if (this.tableRef.contains(document.activeElement)) {
       if (activeCell[1] + 1 <= WEEK_DAYS.length - 1) {
         activeCell[1] = activeCell[1] + 1;
         this.setState({ activeCell: activeCell }, this._announceActiveCell);
@@ -173,7 +173,7 @@ export default class DateTimeDrop extends Component {
 
   _onSelectDay () {
     const { activeCell, dateRows } = this.state;
-    if (document.activeElement === this.tableRef) {
+    if (this.tableRef.contains(document.activeElement)) {
       const date = dateRows[activeCell[0]][activeCell[1]];
       this._onDay(date);
     }
@@ -234,7 +234,11 @@ export default class DateTimeDrop extends Component {
     }
     const newValue = moment(value).add(delta, scope);
     this.setState({ value: newValue }, () => {
-      announce(newValue.format('MMMM YYYY'));
+      if (scope === 'month') {
+        announce(newValue.format('MMMM YYYY'));
+      } else {
+        announce(newValue.format(format));
+      }
     });
     onChange(newValue.format(format));
   }
@@ -259,10 +263,20 @@ export default class DateTimeDrop extends Component {
             [`${CLASS_ROOT}__day--other-month`]: !date.isSame(value, 'month')
           }
         );
+        const weekDay = WEEK_DAYS[columnIndex];
+        const day = dateRows[rowIndex][columnIndex].date();
         return (
           <td key={date.valueOf()}>
-            <div className={classes}
-              onClick={this._onDay.bind(this, moment(date))}>
+            <div className={classes} tabIndex='-1'
+              onClick={this._onDay.bind(this, moment(date))}
+              aria-label={`${weekDay} ${day}`}
+              role='button'
+              onFocus={() => this.setState({
+                activeCell: [rowIndex, columnIndex]
+              })}
+              onBlur={() => this.setState({
+                activeCell: this.state.originalActiveCell
+              })}>
               {date.date()}
             </div>
           </td>
@@ -276,6 +290,7 @@ export default class DateTimeDrop extends Component {
     const nextMonthMessage = Intl.getMessage(intl, 'Next Month');
     const todayMessage = Intl.getMessage(intl, 'Today');
     const dateSelectorMessage = Intl.getMessage(intl, 'Date Selector');
+    const navigationHelpMessage = Intl.getMessage(intl, 'Navigation Help');
 
     const gridClasses = classnames(
       `${CLASS_ROOT}__grid`, {
@@ -295,8 +310,8 @@ export default class DateTimeDrop extends Component {
           onClick={this._onNext.bind(this, 'month')} />
       </Header>,
       <div key='grid' className={gridClasses}>
-        <table ref={(ref) => this.tableRef = ref}
-          aria-label={dateSelectorMessage} tabIndex="0"
+        <table ref={(ref) => this.tableRef = ref} tabIndex='0'
+          aria-label={`${dateSelectorMessage} (${navigationHelpMessage})`}
           onMouseDown={() => this.setState({ mouseActive: true })}
           onMouseUp={() => this.setState({ mouseActive: false })}
           onFocus={() => {

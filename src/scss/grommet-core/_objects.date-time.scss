@@ -69,6 +69,7 @@
 .#{$grommet-namespace}date-time-drop__day {
   display: inline-block;
   cursor: pointer;
+  outline: none;
   width: round($inuit-base-spacing-unit * 1.5);
   height: round($inuit-base-spacing-unit * 1.5);
   padding: quarter($inuit-base-spacing-unit);
