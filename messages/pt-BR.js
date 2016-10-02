@@ -72,6 +72,7 @@ exports.default = {
   monitor: 'monitor',
   more: 'mais',
   Name: 'Nome',
+  'Navigation Help': 'Use as setas para navegar',
   'Next Month': 'Próximo Mês',
   'Next Slide': 'Próximo Slide',
   OK: 'OK',

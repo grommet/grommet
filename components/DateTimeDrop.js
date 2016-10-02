@@ -223,7 +223,7 @@ var DateTimeDrop = function (_Component) {
       event.preventDefault();
       var activeCell = this.state.activeCell;
 
-      if (document.activeElement === this.tableRef) {
+      if (this.tableRef.contains(document.activeElement)) {
         if (activeCell[0] - 1 >= 0) {
           activeCell[0] = activeCell[0] - 1;
           this.setState({ activeCell: activeCell }, this._announceActiveCell);
@@ -236,7 +236,7 @@ var DateTimeDrop = function (_Component) {
       event.preventDefault();
       var activeCell = this.state.activeCell;
 
-      if (document.activeElement === this.tableRef) {
+      if (this.tableRef.contains(document.activeElement)) {
         if (activeCell[1] - 1 >= 0) {
           activeCell[1] = activeCell[1] - 1;
           this.setState({ activeCell: activeCell }, this._announceActiveCell);
@@ -251,7 +251,7 @@ var DateTimeDrop = function (_Component) {
       var dateRows = _state3.dateRows;
       var activeCell = _state3.activeCell;
 
-      if (document.activeElement === this.tableRef) {
+      if (this.tableRef.contains(document.activeElement)) {
         if (activeCell[0] + 1 <= dateRows.length - 1) {
           activeCell[0] = activeCell[0] + 1;
           this.setState({ activeCell: activeCell }, this._announceActiveCell);
@@ -264,7 +264,7 @@ var DateTimeDrop = function (_Component) {
       event.preventDefault();
       var activeCell = this.state.activeCell;
 
-      if (document.activeElement === this.tableRef) {
+      if (this.tableRef.contains(document.activeElement)) {
         if (activeCell[1] + 1 <= WEEK_DAYS.length - 1) {
           activeCell[1] = activeCell[1] + 1;
           this.setState({ activeCell: activeCell }, this._announceActiveCell);
@@ -278,7 +278,7 @@ var DateTimeDrop = function (_Component) {
       var activeCell = _state4.activeCell;
       var dateRows = _state4.dateRows;
 
-      if (document.activeElement === this.tableRef) {
+      if (this.tableRef.contains(document.activeElement)) {
         var date = dateRows[activeCell[0]][activeCell[1]];
         this._onDay(date);
       }
@@ -361,7 +361,11 @@ var DateTimeDrop = function (_Component) {
       }
       var newValue = (0, _moment2.default)(value).add(delta, scope);
       this.setState({ value: newValue }, function () {
-        (0, _Announcer.announce)(newValue.format('MMMM YYYY'));
+        if (scope === 'month') {
+          (0, _Announcer.announce)(newValue.format('MMMM YYYY'));
+        } else {
+          (0, _Announcer.announce)(newValue.format(format));
+        }
       });
       onChange(newValue.format(format));
     }
@@ -392,13 +396,27 @@ var DateTimeDrop = function (_Component) {
           var _classnames;
 
           var classes = (0, _classnames4.default)(CLASS_ROOT + '__day', (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__day--active', date.isSame(value, 'day')), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__day--hover', !date.isSame(value, 'day') && [rowIndex, columnIndex].toString() === activeCell.toString()), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__day--other-month', !date.isSame(value, 'month')), _classnames));
+          var weekDay = WEEK_DAYS[columnIndex];
+          var day = dateRows[rowIndex][columnIndex].date();
           return _react2.default.createElement(
             'td',
             { key: date.valueOf() },
             _react2.default.createElement(
               'div',
-              { className: classes,
-                onClick: _this2._onDay.bind(_this2, (0, _moment2.default)(date)) },
+              { className: classes, tabIndex: '-1',
+                onClick: _this2._onDay.bind(_this2, (0, _moment2.default)(date)),
+                'aria-label': weekDay + ' ' + day,
+                role: 'button',
+                onFocus: function onFocus() {
+                  return _this2.setState({
+                    activeCell: [rowIndex, columnIndex]
+                  });
+                },
+                onBlur: function onBlur() {
+                  return _this2.setState({
+                    activeCell: _this2.state.originalActiveCell
+                  });
+                } },
               date.date()
             )
           );
@@ -415,6 +433,7 @@ var DateTimeDrop = function (_Component) {
       var nextMonthMessage = _Intl2.default.getMessage(intl, 'Next Month');
       var todayMessage = _Intl2.default.getMessage(intl, 'Today');
       var dateSelectorMessage = _Intl2.default.getMessage(intl, 'Date Selector');
+      var navigationHelpMessage = _Intl2.default.getMessage(intl, 'Navigation Help');
 
       var gridClasses = (0, _classnames4.default)(CLASS_ROOT + '__grid', (0, _defineProperty3.default)({}, CLASS_ROOT + '__grid--focus', focus));
       return [_react2.default.createElement(
@@ -438,8 +457,8 @@ var DateTimeDrop = function (_Component) {
           'table',
           { ref: function ref(_ref) {
               return _this2.tableRef = _ref;
-            },
-            'aria-label': dateSelectorMessage, tabIndex: '0',
+            }, tabIndex: '0',
+            'aria-label': dateSelectorMessage + ' (' + navigationHelpMessage + ')',
             onMouseDown: function onMouseDown() {
               return _this2.setState({ mouseActive: true });
             },
